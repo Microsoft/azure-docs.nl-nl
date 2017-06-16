@@ -22,14 +22,14 @@ ms.lasthandoff: 01/20/2017
 
 ---
 # <a name="create-a-xamarinforms-app"></a>Een Xamarin.Forms-app maken
-[!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
+[!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-windows-selector-get-started.md)]
 
 ## <a name="overview"></a>Overzicht
 Deze zelfstudie laat zien hoe u een cloudgebaseerde back-endservice toevoegt aan een mobiele Xamarin.Forms-app met een back-end voor Azure Mobile Apps. U maakt zowel een nieuwe back-end voor Mobile Apps als een eenvoudige Xamarin.Forms-app voor *takenlijsten* die app-gegevens opslaat in Azure.
 
 Het voltooien van deze zelfstudie is een vereiste voor alle andere zelfstudies over Mobile Apps voor Xamarin.Forms.
 
-## <a name="prerequisites"></a>Vereisten
+## <a name="prerequisites"></a>Zelfstudi
 Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 
 * Een actief Azure-account. Als u geen account hebt, kunt u zich aanmelden voor een proefversie van Azure en maximaal tien gratis mobiele apps krijgen die u ook na de proefperiode kunt blijven gebruiken. Zie [Gratis proefversie van Azure](https://azure.microsoft.com/pricing/free-trial/) voor meer informatie.
@@ -81,10 +81,10 @@ Deze sectie gaat over het uitvoeren van het Xamarin iOS-project voor iOS-apparat
 3. In het dialoogvenster **Configuration Manager** schakelt u de selectievakjes **Bouwen** en **Implementeren** van het iOS-project in.
 4. Druk op de toets **F5** om het project te bouwen en de app te starten in de iPhone-emulator.
    
-   > [!NOTE]
-   > Als u problemen ondervindt bij het bouwen, voert u NuGet Package Manager uit en voert u een update uit naar de nieuwste versie van de Xamarin-ondersteuningspakketten. Soms kunnen de Quickstart-projecten achterblijven bij updates naar de nieuwste versie.    
-   > 
-   > 
+    [!NOTE]
+    Als u problemen ondervindt bij het bouwen, voert u NuGet Package Manager uit en voert u een update uit naar de nieuwste versie van de Xamarin-ondersteuningspakketten. Soms kunnen de Quickstart-projecten achterblijven bij updates naar de nieuwste versie.    
+    
+   
 
 Typ in de app zinvolle tekst, zoals *Xamarin leren kennen*, en klik vervolgens op de knop **+**.
 
@@ -122,7 +122,7 @@ Typ in de app zinvolle tekst, zoals *Xamarin leren kennen*, en klik vervolgens o
 Hierdoor wordt een POST-aanvraag verzonden naar de nieuwe back-end voor mobiele apps die wordt gehost in Azure. De gegevens van de aanvraag worden opgenomen in de takentabel. Items die zijn opgeslagen in de tabel, worden geretourneerd door de back-end voor mobiele apps en de gegevens worden weergegeven in de lijst.
 
 > [!NOTE]
-> U vindt de code die toegang geeft tot de back-end voor mobiele apps in het TodoItemManager.cs C#-bestand van het 'portable class library'-project van uw oplossing.
+> U vindt de code die toegang geeft tot de back-end voor mobile apps in het TodoItemManager.cs C#-bestand van het 'portable class library'-project van uw oplossing.
 > 
 > 
 

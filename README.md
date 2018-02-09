@@ -38,7 +38,7 @@ U kunt herbruikbare blokken met conAtent maken die moeten worden opgenomen in ee
 Alle artikelen in deze bibliotheek gebruiken GitHub-markdown.  Hier volgt een lijst van resources.
 
 * [Basisprincipes van markdown](https://help.github.com/articles/markdown-basics/)
-* [Afdrukbare cheatsheet voor markdown](./contributor-guide/media/documents/markdown-cheatsheet.pdf?raw=true)
+* [Afdrukbare cheatsheet voor markdown](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 
 
 ## <a name="labels"></a>Labels

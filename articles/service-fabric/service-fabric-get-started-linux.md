@@ -42,10 +42,9 @@ Het installeren van de Service Fabric-runtime en -SDK op Windows Subsystem voor 
     * Ubuntu 16.04 (`Xenial Xerus`)
 
 * Zorg ervoor dat het pakket `apt-transport-https` is geïnstalleerd:
-
-      ```bash
-      sudo apt-get install apt-transport-https
-      ```
+  ```bash
+  sudo apt-get install apt-transport-https
+  ```
 
 
 ## <a name="installation-methods"></a>Installatiemethoden

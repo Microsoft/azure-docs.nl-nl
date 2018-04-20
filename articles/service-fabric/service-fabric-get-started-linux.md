@@ -43,9 +43,9 @@ Het installeren van de Service Fabric-runtime en -SDK op Windows Subsystem voor 
 
 * Zorg ervoor dat het pakket `apt-transport-https` is geïnstalleerd:
 
-      ```bash
-      sudo apt-get install apt-transport-https
-      ```
+  ```bash
+  sudo apt-get install apt-transport-https
+  ```
 
 
 ## <a name="installation-methods"></a>Installatiemethoden

@@ -4,25 +4,25 @@ Welkom bij de open-source [documentatie](https://docs.microsoft.com/azure) van [
 
 ## <a name="getting-started"></a>Aan de slag
 
-Bijdragen aan open source is meer dan alleen het leveren van updates, deze wordt ook laten weten wanneer er een probleem. Lees onze [die bijdragen aan richtlijnen](.github/CONTRIBUTING.md) voor meer informatie.
+Bijdragen aan open source is meer dan alleen het leveren van updates, het is ook ons laten weten wanneer er een probleem is. Lees onze [Bijdrage begeleiding](.github/CONTRIBUTING.md) voor meer informatie.
 
 ### <a name="prerequisites"></a>Vereisten
 
-U hebt besloten om een bijdrage, die is erg handig bieden! Er zijn een paar hulpprogramma's die nodig zijn om bij te dragen naar de documentatie.
+U heeft besloten om een bijdrage, die is geweldig! Er zijn een paar hulpprogramma's die nodig zijn om bijdragen te leveren aan de documentatie.
 
-Een bijdrage levert aan de documentatie van een GitHub-account vereist, als u geen account hebt, volgt u de instructies voor het [GitHub-account instellen](https://docs.microsoft.com/contribute/get-started-setup-github) van onze gids voor inzenders.
+Om een bijdrage te leveren aan de documentatie heeft u een GitHub-account nodig, als u geen account heeft, kunt u met behulp van de [GitHub-account hulp](https://docs.microsoft.com/contribute/get-started-setup-github)-gids van onze bijdragers een account creëren.
 
 #### <a name="download"></a>Downloaden
 
-De volgende hulpprogramma's installeren:
+Installeer de volgende hulpprogramma's:
 
 * [Git](https://git-scm.com/download)
 * [Visual Studio Code](https://code.visualstudio.com/Download)
-* [Docs-Ontwerppakket](https://marketplace.visualstudio.com/items?itemName=docsmsft.docs-authoring-pack) -extensie voor Visual Studio Code
+* [Docs-Ontwerppakket](https://marketplace.visualstudio.com/items?itemName=docsmsft.docs-authoring-pack)-extensie voor Visual Studio Code
 
 #### <a name="install"></a>Installeren
 
-Volg de instructies de [installatie-inhoud ontwerpprogramma's](https://docs.microsoft.com/contribute/get-started-setup-tools) van onze gids voor inzenders.
+Volg de instructies in de [installatie-inhoud ontwerpprogramma's](https://docs.microsoft.com/contribute/get-started-setup-tools)-gids van onze bijdragers.
 
 ## <a name="license"></a>Licentie
 

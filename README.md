@@ -8,7 +8,7 @@ Bijdragen aan open source is meer dan alleen het leveren van updates, het is ook
 
 ### <a name="prerequisites"></a>Vereisten
 
-U heeft besloten om een bijdrage, die is geweldig! Er zijn een paar hulpprogramma's die nodig zijn om bijdragen te leveren aan de documentatie.
+U hebt besloten om een bijdrage te leveren. Dat is geweldig! U hebt een aantal hulpprogramma's nodig om bijdragen te leveren aan de documentatie.
 
 Om een bijdrage te leveren aan de documentatie heeft u een GitHub-account nodig, als u geen account heeft, kunt u met behulp van de [GitHub-account hulp](https://docs.microsoft.com/contribute/get-started-setup-github)-gids van onze bijdragers een account creëren.
 

@@ -1,6 +1,6 @@
 ---
 title: Web-app-analyse voor ASP.NET instellen met Azure Application Insights | Microsoft Docs
-description: Configureer prestaties, Beschik baarheid en hulpprogram ma's voor analyse van gebruikers gedrag voor uw ASP.NET-website, die on-premises of in azure wordt gehost.
+description: Configureer prestaties, Beschikbaarheid en hulpprogramma's voor analyse van gebruikersgedrag voor uw ASP.NET-website, die on-premises of in Azure wordt gehost.
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
@@ -32,9 +32,9 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 ## <a name="ide"></a> Stap 1: de Application Insights-SDK toevoegen
 
 > [!IMPORTANT]
-> De scherm afbeeldingen in dit voor beeld zijn gebaseerd op Visual Studio 2017 versie 15.9.9 en hoger. De ervaring om Application Insights toe te voegen, is afhankelijk van zowel de versie van Visual Studio als het sjabloon type ASP.NET. Oudere versies kunnen alternatieve tekst bevatten, zoals "Configure Application Insights".
+> De schermafbeeldingen in dit voorbeeld zijn gebaseerd op Visual Studio 2017 versie 15.9.9 en hoger. De ervaring om Application Insights toe te voegen, is afhankelijk van zowel de versie van Visual Studio als het sjabloontype ASP.NET. Oudere versies kunnen alternatieve tekst bevatten, zoals "Configure Application Insights".
 
-Klik met de rechter muisknop op de naam van uw web-app in de Solution Explorer en kies  >  **toevoegen** **Application Insights Telemetry**
+Klik met de rechtermuisknop op de naam van uw web-app in de Solution Explorer en kies  >  **toevoegen** **Application Insights Telemetry**
 
 ![Schermopname van Solution Explorer waarin Application Insights is gemarkeerd](./media/asp-net/add-telemetry-new.png)
 

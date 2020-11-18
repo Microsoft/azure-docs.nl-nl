@@ -13,12 +13,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: e8eab3a1054541b1ef7fc6d2e65089f01f0df3c0
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: ad3980db6348867e92664e314326d23b4274abcc
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517152"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701565"
 ---
 # <a name="design-secure-applications-on-azure"></a>Veilige toepassingen ontwerpen in azure
 In dit artikel bieden we beveiligings activiteiten en-controles waarmee u rekening moet houden bij het ontwerpen van toepassingen voor de Cloud. Trainings bronnen samen met beveiligings vragen en concepten die u kunt overwegen tijdens de vereisten en ontwerp fasen van micro soft [Security Development Lifecycle (SDL)](/previous-versions/windows/desktop/cc307891(v=msdn.10)) , worden gedekt. Het doel is om u te helpen bij het definiëren van activiteiten en Azure-Services die u kunt gebruiken om een veiligere toepassing te ontwerpen.
@@ -217,7 +217,7 @@ Gebruik platform verificatie-en autorisatie mechanismen in plaats van aangepaste
 
 Het concept van de [minimale bevoegdheid](https://en.wikipedia.org/wiki/Principle_of_least_privilege) betekent dat gebruikers het nauw keurige toegangs niveau en het beheer kunnen geven dat ze nodig hebben om hun taken uit te voeren en niets meer te doen.
 
-Moet een software ontwikkelaar domein beheerders rechten hebben? Moet een administratief mede werker toegang hebben tot de besturings elementen voor beheer op hun personal computer? Het evalueren van de toegang tot de software is niet anders. Als u gebruikmaakt [van op rollen gebaseerd toegangs beheer (RBAC)](../../role-based-access-control/overview.md) om gebruikers verschillende vaardig heden en instanties in uw toepassing te geven, geeft u iedereen geen toegang tot alles. Door de toegang te beperken tot wat vereist is voor elke rol, beperkt u het risico van een beveiligings probleem dat optreedt.
+Moet een software ontwikkelaar domein beheerders rechten hebben? Moet een administratief mede werker toegang hebben tot de besturings elementen voor beheer op hun personal computer? Het evalueren van de toegang tot de software is niet anders. Als u op [rollen gebaseerd toegangs beheer (Azure RBAC) van Azure](../../role-based-access-control/overview.md) gebruikt om gebruikers verschillende vaardig heden en instanties in uw toepassing te geven, geeft u iedereen geen toegang tot alles. Door de toegang te beperken tot wat vereist is voor elke rol, beperkt u het risico van een beveiligings probleem dat optreedt.
 
 Zorg ervoor dat uw toepassing [minimale bevoegdheden](/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models#in-applications) afdwingt in de bijbehorende toegangs patronen.
 
@@ -233,7 +233,7 @@ Implementeer just *-in-time* -toegang (JIT) om de belichtings tijd van bevoegdhe
 
 ### <a name="require-re-authentication-for-important-transactions"></a>Nieuwe verificatie vereisen voor belang rijke trans acties
 
-[Cross-site-aanvraag vervalsing](/aspnet/core/security/anti-request-forgery?view=aspnetcore-2.1) (ook wel bekend als *XSRF* of *CSRF* ) is een aanval voor webhostende apps waarin een schadelijke Web-App de interactie beïnvloedt tussen een client browser en een web-app die die browser vertrouwt. Aanvallen op aanvraag vervalsing op meerdere sites zijn mogelijk omdat webbrowsers sommige typen verificatie tokens automatisch laten verzenden met elke aanvraag naar een website.
+[Cross-site-aanvraag vervalsing](/aspnet/core/security/anti-request-forgery?view=aspnetcore-2.1) (ook wel bekend als *XSRF* of *CSRF*) is een aanval voor webhostende apps waarin een schadelijke Web-App de interactie beïnvloedt tussen een client browser en een web-app die die browser vertrouwt. Aanvallen op aanvraag vervalsing op meerdere sites zijn mogelijk omdat webbrowsers sommige typen verificatie tokens automatisch laten verzenden met elke aanvraag naar een website.
 Deze vorm van exploitatie is ook bekend als een aanval of *sessie* met *één klik* , omdat de aanval de eerder geauthenticeerde sessie van de gebruiker benut.
 
 De beste manier om dit soort aanvallen te tegen komen, is door de gebruiker te vragen om iets dat alleen de gebruiker kan opgeven vóór elke belang rijke trans actie, zoals een aankoop, het deactiveren van accounts of het wijzigen van een wacht woord. U kunt de gebruiker vragen om het wacht woord opnieuw in te voeren, een CAPTCHA te volt ooien of een geheim token in te dienen dat alleen de gebruiker zou hebben. De meest voorkomende benadering is het geheime token.
@@ -244,7 +244,7 @@ Het verlies van sleutels en referenties is een veelvoorkomend probleem. Het enig
 
 Plaats altijd uw sleutels, certificaten, geheimen en verbindings reeksen in een oplossing voor sleutel beheer. U kunt een gecentraliseerde oplossing gebruiken waarin sleutels en geheimen worden opgeslagen in Hardware Security modules (Hsm's). Azure biedt u een HSM in de Cloud met [Azure Key Vault](../../key-vault/general/overview.md).
 
-Key Vault is een *geheim archief* : het is een gecentraliseerde Cloud service voor het opslaan van toepassings geheimen. Key Vault uw vertrouwelijke gegevens veilig houdt door toepassings geheimen op één centrale locatie te bewaren en beveiligde toegang, machtigings beheer en logboek registratie van toegang te bieden.
+Key Vault is een *geheim archief*: het is een gecentraliseerde Cloud service voor het opslaan van toepassings geheimen. Key Vault uw vertrouwelijke gegevens veilig houdt door toepassings geheimen op één centrale locatie te bewaren en beveiligde toegang, machtigings beheer en logboek registratie van toegang te bieden.
 
 Geheimen worden opgeslagen in afzonderlijke *kluizen*. Elke kluis heeft zijn eigen configuratie-en beveiligings beleid om de toegang te beheren. U krijgt toegang tot uw gegevens via een REST API of via een client-SDK die beschikbaar is voor de meeste programmeer talen.
 

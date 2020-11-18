@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/08/2020
-ms.openlocfilehash: faa98f1c52cfe2dd0e19f085f4d33dedb6f01851
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ac2690a5f18bb58c29b433f4a07e52096bbd268b
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88934885"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701582"
 ---
 # <a name="fuzzy-search-to-correct-misspellings-and-typos"></a>Fuzzy zoeken om spel fouten en typfouten te corrigeren
 
@@ -73,7 +73,7 @@ In azure Cognitive Search, naast de term en afstand (Maxi maal 2), zijn er geen 
 
 ## <a name="testing-fuzzy-search"></a>Zoek actie op fuzzy testen
 
-Voor eenvoudige tests raden wij u aan [Zoek Verkenner](search-explorer.md) of [postman te plaatsen](search-get-started-postman.md) voor het herhalen van een query-expressie. Beide hulpprogram ma's zijn interactief. Dit betekent dat u snel meerdere varianten van een periode kunt door lopen en de reacties die terugkomen te evalueren.
+Voor eenvoudige tests raden wij u aan [Zoek Verkenner](search-explorer.md) of [postman te plaatsen](search-get-started-rest.md) voor het herhalen van een query-expressie. Beide hulpprogram ma's zijn interactief. Dit betekent dat u snel meerdere varianten van een periode kunt door lopen en de reacties die terugkomen te evalueren.
 
 Als de resultaten dubbel zinnig zijn, kunt u met [treffers markeren](search-pagination-page-layout.md#hit-highlighting) de overeenkomst in het antwoord identificeren. 
 

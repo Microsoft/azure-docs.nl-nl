@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: 11629338a808ae0f83ac513b6475dce7a53814da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d889c82142cda60b920f7b29bd91755cbc34f525
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88190164"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701446"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Toegangsbeheer in Azure Data Lake Storage Gen1
 
@@ -144,7 +144,7 @@ De groep die eigenaar is kan worden gewijzigd door:
 > [!NOTE]
 > De groep die eigenaar is, kan de ACL's van een bestand of map *niet* wijzigen.
 >
-> Voor accounts die zijn gemaakt op of vóór 1 september 2018, is de groep die eigenaar is ingesteld op de gebruiker die het account heeft gemaakt in het geval van de hoofdmap voor **Case 1**hierboven.  Eén gebruikers account is niet geldig voor het opgeven van machtigingen via de groep die eigenaar is. Daarom worden er geen machtigingen verleend door deze standaard instelling. U kunt deze machtiging toewijzen aan een geldige gebruikers groep.
+> Voor accounts die zijn gemaakt op of vóór 1 september 2018, is de groep die eigenaar is ingesteld op de gebruiker die het account heeft gemaakt in het geval van de hoofdmap voor **Case 1** hierboven.  Eén gebruikers account is niet geldig voor het opgeven van machtigingen via de groep die eigenaar is. Daarom worden er geen machtigingen verleend door deze standaard instelling. U kunt deze machtiging toewijzen aan een geldige gebruikers groep.
 
 
 ## <a name="access-check-algorithm"></a>Algoritme voor toegangscontrole
@@ -194,7 +194,7 @@ def access_check( user, desired_perms, path ) :
 
 ### <a name="the-mask"></a>Het masker
 
-Zoals geïllustreerd in het algoritme voor toegangs controle, beperkt het masker de toegang voor **benoemde gebruikers**, de **groep die eigenaar**is en **benoemde groepen**.  
+Zoals geïllustreerd in het algoritme voor toegangs controle, beperkt het masker de toegang voor **benoemde gebruikers**, de **groep die eigenaar** is en **benoemde groepen**.  
 
 > [!NOTE]
 > Voor een nieuw Data Lake Storage Gen1-account wordt het masker voor de toegangs-ACL van de hoofdmap (/) standaard ingesteld op LSU.
@@ -216,7 +216,7 @@ Wanneer een nieuw bestand of een nieuwe map wordt gemaakt onder een bestaande ma
 
 ### <a name="umask"></a>umask
 
-Bij het maken van een bestand of map wordt umask gebruikt om te wijzigen hoe de standaard-Acl's worden ingesteld voor het onderliggende item. umask is een 9-bits waarde voor bovenliggende mappen die een LSU-waarde bevat voor de **gebruiker**, de **groep die eigenaar**is en **andere**.
+Bij het maken van een bestand of map wordt umask gebruikt om te wijzigen hoe de standaard-Acl's worden ingesteld voor het onderliggende item. umask is een 9-bits waarde voor bovenliggende mappen die een LSU-waarde bevat voor de **gebruiker**, de **groep die eigenaar** is en **andere**.
 
 De umask voor Azure Data Lake Storage Gen1 is een constante waarde die is ingesteld op 007. Deze waarde wordt omgezet in
 
@@ -280,7 +280,11 @@ Vermeldingen worden in de ACL's opgeslagen als GUID's die zijn gekoppeld aan geb
 
 ### <a name="why-do-i-sometimes-see-guids-in-the-acls-when-im-using-the-azure-portal"></a>Waarom zie ik soms GUID's in de ACL's wanneer ik Azure Portal gebruik?
 
-Er wordt een GUID weergegeven wanneer een gebruiker niet meer bestaat in Azure AD. Dit gebeurt doorgaans wanneer gebruikers het bedrijf verlaten of hun accounts zijn verwijderd in Azure AD.
+Er wordt een GUID weergegeven wanneer een gebruiker niet meer bestaat in Azure AD. Dit gebeurt doorgaans wanneer gebruikers het bedrijf verlaten of hun accounts zijn verwijderd in Azure AD. Zorg er ook voor dat u de juiste ID gebruikt voor het instellen van Acl's (hieronder genoemde details).
+
+### <a name="when-using-service-principal-what-id-should-i-use-to-set-acls"></a>Welke ID moet ik gebruiken om Acl's in te stellen wanneer de service-principal wordt gebruikt?
+
+Ga in azure Portal naar **Azure Active Directory-> bedrijfs toepassingen** en selecteer uw toepassing. Op het tabblad **overzicht** moet een object-id worden weer gegeven. Dit is wat er moet worden gebruikt bij het toevoegen van acl's voor gegevens toegang (en geen toepassings-id).
 
 ### <a name="does-data-lake-storage-gen1-support-inheritance-of-acls"></a>Ondersteunt Data Lake Storage Gen1 overname van Acl's?
 

@@ -8,12 +8,12 @@ ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 08/26/2020
-ms.openlocfilehash: aad953483749d676844221f7e519f50c50b63ad4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a8f1fa07b94072d37cf83320b6c8956d3b412f12
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88948637"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701113"
 ---
 # <a name="synonyms-in-azure-cognitive-search"></a>Synoniemen in azure Cognitive Search
 
@@ -23,7 +23,7 @@ In azure Cognitive Search wordt de uitbrei ding van synoniemen uitgevoerd op het
 
 ## <a name="create-synonyms"></a>Synoniemen maken
 
-Er is geen portal ondersteuning voor het maken van synoniemen, maar u kunt de REST API of .NET SDK gebruiken. Om aan de slag te gaan met REST, raden we u aan om [postman](search-get-started-postman.md) en formulering van aanvragen te gebruiken met behulp van deze API: [Create synoniem Maps](/rest/api/searchservice/create-synonym-map). Voor C#-ontwikkel aars kunt u aan de slag met [synoniemen toevoegen in azure cognitieve Zoek opdrachten met C#](search-synonyms-tutorial-sdk.md).
+Er is geen portal ondersteuning voor het maken van synoniemen, maar u kunt de REST API of .NET SDK gebruiken. Om aan de slag te gaan met REST, raden we u aan [postman of Visual Studio code](search-get-started-rest.md) en formulering van aanvragen te gebruiken met deze API: [Create synoniem Maps](/rest/api/searchservice/create-synonym-map). Voor C#-ontwikkel aars kunt u aan de slag met [synoniemen toevoegen in azure cognitieve Zoek opdrachten met C#](search-synonyms-tutorial-sdk.md).
 
 Als u gebruikmaakt van door de [klant beheerde sleutels](search-security-manage-encryption-keys.md) voor versleuteling aan de service zijde, kunt u die beveiliging ook Toep assen op de inhoud van uw synoniemen kaart.
 

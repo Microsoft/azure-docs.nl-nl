@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: aee3f5602d0bd1ff12717d903d662ce4605de61d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: ee37ab90910058378172223a3435047346f5fe7c
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683757"
+ms.locfileid: "94701778"
 ---
 # <a name="windows-virtual-desktop-rdp-shortpath-preview"></a>RDP-shortpath van Windows virtueel bureau blad (preview-versie)
 
@@ -176,7 +176,7 @@ Als u wilt controleren of verbindingen gebruikmaken van RDP-shortpath, opent u h
 Controleren of de sessie gebruikmaakt van RDP shortpath Trans Port:
 
 1. Maak verbinding met het bureau blad van de virtuele machine met behulp van de Windows-client voor virtueel bureau blad.
-2. Start de Logboeken en ga naar het volgende knoop punt: **Logboeken toepassingen en Services > micro soft > Windows > RemoteDesktopServices-RdpCoreCDV > operationeel**
+2. Start de Logboeken en navigeer naar het volgende knoop punt: **Logboeken van toepassingen en Services > micro soft > Windows > RemoteDesktopServices-RdpCoreCDV > micro soft-Windows-RemoteDesktopServices-RdpCoreCDV/operationeel**
 3. Zoek naar gebeurtenis-ID 131 om te bepalen of RDP shortpath-Trans Port wordt gebruikt.
 
 ### <a name="using-log-analytics-to-verify-shortpath-connectivity"></a>De shortpath-verbinding controleren met behulp van Log Analytics

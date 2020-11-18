@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: rdhillon
 ms.custom: ''
-ms.openlocfilehash: 53f10996a7f15e32261f151600163f41df4e58ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a080c3953c48227301052a0bb151c8cba96e515a
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91666769"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94737333"
 ---
 # <a name="manage-data-exfiltration-to-azure-storage-accounts-with-virtual-network-service-endpoint-policies-using-the-azure-cli"></a>Gegevens exfiltration beheren om accounts te Azure Storage met het eindpunt beleid van een virtueel netwerk met behulp van de Azure CLI
 
@@ -37,11 +37,11 @@ In dit artikel leert u het volgende:
 * Controleer de toegang tot het toegestane opslag account vanuit het subnet.
 * Controleren of de toegang is geweigerd voor het niet-toegestane opslag account van het subnet.
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor deze snelstart de Azure CLI versie 2.0.28 of later uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren]( /cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren. 
+- Voor dit artikel is versie 2.0.28 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
@@ -335,7 +335,7 @@ U ontvangt de `user@myVmPrivate:~$` prompt. De Azure-bestands share is gekoppeld
 
 ### <a name="confirm-access-is-denied-to-storage-account"></a>Bevestigen dat toegang tot opslagaccount wordt geweigerd
 
-Maak vanuit dezelfde VM- *VM myvmprivate*een map voor een koppel punt:
+Maak vanuit dezelfde VM- *VM myvmprivate* een map voor een koppel punt:
 
 ```bash
 sudo mkdir /mnt/MyAzureFileShare2

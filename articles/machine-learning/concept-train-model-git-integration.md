@@ -1,20 +1,20 @@
 ---
 title: Git-integratie voor Azure Machine Learning
 titleSuffix: Azure Machine Learning
-description: Meer informatie over hoe Azure Machine Learning integreert met een lokale Git-opslag plaats. Bij het verzenden van een trainings uitvoering vanuit een lokale map die een Git-opslag plaats is, wordt informatie over opslag plaats, vertakking en huidige door Voer bijgehouden als onderdeel van de uitvoering.
+description: Meer informatie over hoe Azure Machine Learning integreert met een lokale Git-opslag plaats voor het bijhouden van opslag plaats, vertakking en huidige doorvoer informatie als onderdeel van een trainings uitvoering.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.author: jordane
 author: jpe316
-ms.date: 03/05/2020
-ms.openlocfilehash: f13773a8e3e78451dfb587e55c40a20d1b4b385c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 11/16/2020
+ms.openlocfilehash: 989fc7cb66cf5381d174a3aad12f84f5b055aab8
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324771"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701633"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Git-integratie voor Azure Machine Learning
 

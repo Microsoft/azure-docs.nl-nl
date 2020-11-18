@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: genli
-ms.openlocfilehash: e1acfc3216ccfaeac035f1ff31e82c7b67c17daf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f950cb63b5083a85ab5420434abdd9a720115b1a
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76119615"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734545"
 ---
 # <a name="troubleshoot-a-faulty-azure-vm-by-using-nested-virtualization-in-azure"></a>Problemen met een defecte virtuele machine in azure oplossen met geneste virtualisatie in azure
 
@@ -56,7 +56,7 @@ Als u de beschadigde VM wilt koppelen, moet de virtuele machine van de werk ruim
 
 9.  Selecteer in de sectie **migratie** de optie **volgende**
 
-10. Selecteer **volgende**in het gedeelte **standaard archieven** .
+10. Selecteer **volgende** in het gedeelte **standaard archieven** .
 
 11. Schakel het selectie vakje in als u de server automatisch opnieuw wilt opstarten als dat nodig is.
 
@@ -72,9 +72,9 @@ Als u de beschadigde VM wilt koppelen, moet de virtuele machine van de werk ruim
 
 3.  Open schijf beheer (diskmgmt. msc). Zorg ervoor dat de schijf van de defecte VM is ingesteld op **offline**.
 
-4.  Open Hyper-V-beheer: in **Serverbeheer**selecteert u de **hyper-v-rol**. Klik met de rechter muisknop op de server en selecteer **Hyper-V-beheer**.
+4.  Open Hyper-V-beheer: in **Serverbeheer** selecteert u de **hyper-v-rol**. Klik met de rechter muisknop op de server en selecteer **Hyper-V-beheer**.
 
-5.  Klik in Hyper-V-beheer met de rechter muisknop op de virtuele machine voor herstel en selecteer vervolgens **nieuwe**VM  >  **Virtual Machine**  >  **volgende**.
+5.  Klik in Hyper-V-beheer met de rechter muisknop op de virtuele machine voor herstel en selecteer vervolgens **nieuwe** VM  >  **Virtual Machine**  >  **volgende**.
 
 6.  Typ een naam voor de virtuele machine en selecteer vervolgens **volgende**.
 
@@ -92,11 +92,11 @@ Als u de beschadigde VM wilt koppelen, moet de virtuele machine van de werk ruim
 
 12. Klik met de rechter muisknop op de virtuele machine die u hebt gemaakt en selecteer **instellingen**.
 
-13. Selecteer **IDE-controller 0**, selecteer **harde schijf**en klik vervolgens op **toevoegen**.
+13. Selecteer **IDE-controller 0**, selecteer **harde schijf** en klik vervolgens op **toevoegen**.
 
     ![de afbeelding over het toevoegen van nieuwe harde schijf](media/troubleshoot-vm-by-use-nested-virtualization/create-new-drive.png)    
 
-14. Selecteer bij **fysieke harde schijf**de schijf van de defecte virtuele machine die u hebt gekoppeld aan de Azure VM. Als er geen schijven worden weer gegeven, controleert u of de schijf is ingesteld op offline met behulp van schijf beheer.
+14. Selecteer bij **fysieke harde schijf** de schijf van de defecte virtuele machine die u hebt gekoppeld aan de Azure VM. Als er geen schijven worden weer gegeven, controleert u of de schijf is ingesteld op offline met behulp van schijf beheer.
 
     ![de afbeelding over het koppelen van de schijf](media/troubleshoot-vm-by-use-nested-virtualization/mount-disk.png)  
 
@@ -111,7 +111,7 @@ Als u de beschadigde VM wilt koppelen, moet de virtuele machine van de werk ruim
 
 1.  Nadat u de VM weer online hebt gezet, sluit u de virtuele machine in Hyper-V-beheer af.
 
-2.  [Ontkoppel de gerepareerde besturingssysteem schijf en ontkoppel deze](troubleshoot-recovery-disks-portal-windows.md#unmount-and-detach-original-virtual-hard-disk
+2.  [Ontkoppel de gerepareerde besturingssysteem schijf en ontkoppel deze](troubleshoot-recovery-disks-portal-windows.md#unmount-and-detach-the-original-virtual-hard-disk
 ).
 3.  [Vervang de besturingssysteem schijf die wordt gebruikt door de virtuele machine door de gerepareerde besturingssysteem schijf](troubleshoot-recovery-disks-portal-windows.md#swap-the-os-disk-for-the-vm
 ).

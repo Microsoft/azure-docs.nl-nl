@@ -7,12 +7,12 @@ ms.service: security
 ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 01/16/2019
-ms.openlocfilehash: 93b25e65914ce603b4a969eda7fd7c048704e466
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: a7396c9a29c7d9f69dbe6a9cc5cd085c72ebafde
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410008"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700943"
 ---
 # <a name="azure-service-fabric-security-best-practices"></a>Best practices voor Azure Service Fabric-beveiliging
 Het implementeren van een toepassing op Azure is snel, eenvoudig en voordelig. Raadpleeg de lijst met essentiële en aanbevolen procedures voor het implementeren van beveiligde clusters in uw toepassing voordat u uw Cloud toepassing in productie implementeert.
@@ -60,7 +60,7 @@ Er zijn drie [scenario's](../../service-fabric/service-fabric-cluster-security.m
 -   Beveiliging van knoop punt naar knoop punt: dit scenario beveiligt de communicatie tussen de virtuele machines en de computers in het cluster. Deze vorm van beveiliging zorgt ervoor dat alleen de computers die gemachtigd zijn om lid te worden van het cluster, toepassingen en services in het cluster kunnen hosten.
 In dit scenario kunnen de clusters die worden uitgevoerd op Azure of zelfstandige clusters die worden uitgevoerd in Windows, gebruikmaken van [certificaat beveiliging](../../service-fabric/service-fabric-windows-cluster-x509-security.md) of [Windows-beveiliging](../../service-fabric/service-fabric-windows-cluster-windows-security.md) voor Windows Server-machines.
 -   Beveiliging van client naar knoop punt: dit scenario beveiligt de communicatie tussen een Service Fabric-client en de afzonderlijke knoop punten in het cluster.
--   Role-Based Access Control (RBAC): in dit scenario worden afzonderlijke identiteiten (certificaten, Azure AD, enzovoort) gebruikt voor elke beheerder en gebruikersrol die toegang heeft tot het cluster. U geeft de rol-id's op wanneer u het cluster maakt.
+-   Service Fabric op rollen gebaseerd toegangs beheer (Service Fabric RBAC): in dit scenario worden afzonderlijke identiteiten (certificaten, Azure AD, enzovoort) gebruikt voor elke beheerder en gebruikersrol die toegang heeft tot het cluster. U geeft de rol-id's op wanneer u het cluster maakt.
 
 >[!NOTE]
 >**Beveiligings aanbeveling voor Azure-clusters:** Gebruik Azure AD-beveiliging voor het verifiëren van clients en certificaten voor beveiliging tussen knoop punten.
@@ -172,7 +172,7 @@ Zie [Wat is Azure Key Vault?](../../key-vault/general/overview.md)voor meer info
 Nadat u de toepassingen hebt gemaakt om uw cluster te vertegenwoordigen, wijst u uw gebruikers toe aan de rollen die worden ondersteund door Service Fabric: alleen-lezen en beheerder. U kunt deze rollen toewijzen met behulp van de Azure Portal.
 
 >[!NOTE]
-> Zie voor meer informatie over het gebruik van rollen in Service Fabric [Access Control voor service Fabric-clients op basis van rollen](../../service-fabric/service-fabric-cluster-security-roles.md).
+> Zie [service Fabric op rollen gebaseerd toegangs beheer voor service Fabric-clients](../../service-fabric/service-fabric-cluster-security-roles.md)voor meer informatie over het gebruik van rollen in service Fabric.
 
 Azure Service Fabric ondersteunt twee typen toegangs beheer voor clients die zijn verbonden met een [service Fabric cluster](../../service-fabric/service-fabric-cluster-creation-via-arm.md): beheerder en gebruiker. De Cluster beheerder kan toegangs beheer gebruiken om de toegang tot bepaalde cluster bewerkingen voor verschillende groepen gebruikers te beperken. Met toegangs beheer wordt het cluster beter beveiligd.
 

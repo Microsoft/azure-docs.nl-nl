@@ -1,7 +1,7 @@
 ---
 title: Resources versus code-uitbrei ding maken en beheren (preview-versie)
 titleSuffix: Azure Machine Learning
-description: Resources maken en beheren met de VS code-extensie
+description: Meer informatie over het maken en beheren van Azure Machine Learning-resources met behulp van de Azure Machine Learning Visual Studio code extension.
 services: machine-learning
 author: luisquintanilla
 ms.author: luquinta
@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
-ms.date: 09/30/2020
-ms.openlocfilehash: 2e410cbc7813031929ea040b2cc4fb2967b99c1b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 11/16/2020
+ms.openlocfilehash: f8eb18b190b72381f1a93575eb39b3d19d8d431b
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319354"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701412"
 ---
 # <a name="manage-azure-machine-learning-resources-with-the-vs-code-extension-preview"></a>Azure Machine Learning resources beheren met de extensie VS (preview)
 
@@ -56,7 +56,7 @@ Alternatieve methoden voor het maken van een werk ruimte zijn onder andere:
 1. Vouw het knoop punt abonnement uit met uw werk ruimte.
 1. Klik met de rechter muisknop op de werk ruimte die u wilt verwijderen.
 1. Selecteer of u wilt verwijderen:
-    - *Alleen de werk ruimte* : met deze optie wordt **alleen** de Azure-resource van de werk ruimte verwijderd. De resource groep, opslag accounts en andere resources waaraan de werk ruimte is gekoppeld, bevinden zich nog in Azure.
+    - *Alleen de werk ruimte*: met deze optie wordt **alleen** de Azure-resource van de werk ruimte verwijderd. De resource groep, opslag accounts en andere resources waaraan de werk ruimte is gekoppeld, bevinden zich nog in Azure.
     - *Met gekoppelde resources: met* deze optie worden de werk ruimte **en** alle bijbehorende resources verwijderd.
 
 ## <a name="datastores"></a>Gegevensarchieven
@@ -80,7 +80,7 @@ Zie [data stores](concept-data.md#datastores)voor meer informatie.
     1. Kies het type gegevens opslag.
     1. Selecteer uw opslag resource. U kunt een opslag resource kiezen die aan uw werk ruimte is gekoppeld of een wille keurige geldige opslag resource in uw Azure-abonnementen selecteren.
     1. Kies de container waarin uw gegevens zich in de eerder geselecteerde opslag Resource bevinden.
-1. Een configuratie bestand wordt weer gegeven in VS code. Als u tevreden bent met uw configuratie bestand, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
+1. Een configuratie bestand wordt weer gegeven in VS code. Als u tevreden bent met uw configuratie bestand, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
 
 ### <a name="manage-a-datastore"></a>Een gegevens opslag beheren
 
@@ -96,8 +96,8 @@ Zie [data stores](concept-data.md#datastores)voor meer informatie.
 
 De uitbrei ding ondersteunt momenteel de volgende typen gegevensset:
 
-- *In tabel vorm* : Hiermee kunt u gegevens realiseren in een data frame (Pandas of PySpark).
-- *Bestand* : een bestand of verzameling bestanden. Hiermee kunt u bestanden downloaden of koppelen aan uw compute.
+- *In tabel vorm*: Hiermee kunt u gegevens realiseren in een data frame (Pandas of PySpark).
+- *Bestand*: een bestand of verzameling bestanden. Hiermee kunt u bestanden downloaden of koppelen aan uw compute.
 
 Zie [gegevens sets](concept-data.md#datasets) voor meer informatie.
 
@@ -159,12 +159,12 @@ Zie [omgevingen](concept-environments.md)voor meer informatie.
 1. In de prompt:
     1. Geef een naam op voor uw omgeving
     1. Definieer de configuratie van uw omgeving:
-        - *Gecuratore omgevingen* : vooraf geconfigureerde omgevingen in azure machine learning. U kunt de omgeving verder aanpassen door de `dependencies` eigenschap in het JSON-bestand te wijzigen. Meer informatie over [gecuratore omgevingen](resource-curated-environments.md).
-        - *Conda afhankelijkheden bestand* : voor Anaconda-omgevingen kan het bestand dat de omgevings definitie bevat, worden gegeven.
-        - *PIP-vereisten bestand* : voor PIP-omgevingen kan het bestand dat uw omgevings definitie bevat, worden gegeven.
-        - *Bestaande Conda-omgeving* : met deze optie zoekt u naar de Conda-omgevingen in uw lokale PC en probeert u een omgeving te bouwen vanuit de geselecteerde omgeving.
-        - *Aangepast* : uw eigen kanalen en afhankelijkheden definiëren
-    1. Een configuratie bestand wordt geopend in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
+        - *Gecuratore omgevingen*: vooraf geconfigureerde omgevingen in azure machine learning. U kunt de omgeving verder aanpassen door de `dependencies` eigenschap in het JSON-bestand te wijzigen. Meer informatie over [gecuratore omgevingen](resource-curated-environments.md).
+        - *Conda afhankelijkheden bestand*: voor Anaconda-omgevingen kan het bestand dat de omgevings definitie bevat, worden gegeven.
+        - *PIP-vereisten bestand*: voor PIP-omgevingen kan het bestand dat uw omgevings definitie bevat, worden gegeven.
+        - *Bestaande Conda-omgeving*: met deze optie zoekt u naar de Conda-omgevingen in uw lokale PC en probeert u een omgeving te bouwen vanuit de geselecteerde omgeving.
+        - *Aangepast*: uw eigen kanalen en afhankelijkheden definiëren
+    1. Een configuratie bestand wordt geopend in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
 
 ### <a name="view-environment-configurations"></a>Omgevings configuraties weer geven
 
@@ -182,7 +182,7 @@ De afhankelijkheden en configuraties voor een specifieke omgeving in de extensie
 1. Vouw het knoop punt abonnement uit met uw werk ruimte.
 1. Vouw het knoop punt **omgevingen** in uw werk ruimte uit.
 1. Klik met de rechter muisknop op de omgeving die u wilt weer geven en selecteer **omgeving bewerken**.
-1. Als u de wijzigingen hebt aangebracht en u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code-opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
+1. Als u de wijzigingen hebt aangebracht en u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code-opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
 
 ## <a name="experiments"></a>Experimenten
 
@@ -307,7 +307,7 @@ Zie [Compute-doelen](concept-compute-target.md#train)voor meer informatie.
 1. Vouw het knoop punt abonnement uit met uw werk ruimte.
 1. Vouw het knoop punt **reken clusters** in uw werk ruimte uit.
 1. Klik met de rechter muisknop op de compute die u wilt bewerken en selecteer **reken bewerking bewerken**.
-1. Een configuratie bestand voor uw Compute wordt geopend in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
+1. Een configuratie bestand voor uw Compute wordt geopend in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
 
 ### <a name="delete-compute"></a>Reken proces verwijderen
 
@@ -327,15 +327,15 @@ Een uitvoerings configuratie maken in de extensie:
     1. Kies of maak een nieuwe omgeving.
     1. Typ de naam van het script dat u wilt uitvoeren of druk op **Enter** om te bladeren naar het script op de lokale computer.
     1. Beschrijving Kies of u een gegevens referentie wilt maken voor het uitvoeren van uw trainings programma. Als u dit doet, wordt u gevraagd een gegevensset te definiëren in de configuratie van de uitvoering.
-        1. Selecteer een van de geregistreerde gegevens sets die u wilt koppelen aan de configuratie uitvoeren een configuratie bestand voor uw gegevensset wordt geopend in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
-    1. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
+        1. Selecteer een van de geregistreerde gegevens sets die u wilt koppelen aan de configuratie uitvoeren een configuratie bestand voor uw gegevensset wordt geopend in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
+    1. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
 
 ### <a name="edit-run-configuration"></a>Uitvoerings configuratie bewerken
 
 1. Vouw het knoop punt abonnement uit met uw werk ruimte.
 1. Breid het knoop punt reken cluster uit in het knoop punt **reken clusters** van uw werk ruimte.
 1. Klik met de rechter muisknop op de uitvoerings configuratie die u wilt bewerken en selecteer configuratie voor het uitvoeren van de **bewerking**.
-1. Een configuratie bestand voor de configuratie van de uitvoering wordt geopend in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
+1. Een configuratie bestand voor de configuratie van de uitvoering wordt geopend in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
 
 ### <a name="delete-run-configuration"></a>Uitvoerings configuratie verwijderen
 
@@ -357,7 +357,7 @@ Zie [modellen](concept-azure-machine-learning-architecture.md#models) voor meer 
     1. Geef een naam op voor uw model
     1. Kies of uw model een bestand of map is.
     1. Zoek het model op uw lokale computer.
-    1. Een configuratie bestand voor uw model in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
+    1. Een configuratie bestand voor uw model in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
 
 ### <a name="view-model-properties"></a>Model eigenschappen weer geven
 
@@ -401,7 +401,7 @@ Zie [Web Service-eind punten](concept-azure-machine-learning-architecture.md#web
     1. Geef een naam op voor uw model.
     1. Geef het script op dat moet worden uitgevoerd wanneer het model wordt Gescored.
     1. Geef een Conda-afhankelijkheids bestand op.
-    1. Een configuratie bestand voor uw implementatie wordt weer gegeven in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
+    1. Een configuratie bestand voor uw implementatie wordt weer gegeven in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
 
 > [!NOTE]
 > U kunt ook met de rechter muisknop op een geregistreerd model in het knoop punt *modellen* klikken en **service implementeren van geregistreerd model** selecteren.
@@ -421,7 +421,7 @@ Naast het maken en verwijderen van implementaties, kunt u de instellingen die zi
 1. Vouw het knoop punt **eind punten** in uw werk ruimte uit.
 1. Klik met de rechter muisknop op de implementatie die u wilt beheren:
     - Als u instellingen wilt bewerken, selecteert u **service bewerken**.
-        - Een configuratie bestand voor uw implementatie wordt weer gegeven in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht ( **> opdracht palet weer geven** ) en typt u **Azure ml: opslaan en door gaan**.
+        - Een configuratie bestand voor uw implementatie wordt weer gegeven in de editor. Als u tevreden bent met uw configuratie, selecteert u **opslaan en door gaan** of opent u het palet met de VS code opdracht (**> opdracht palet weer geven**) en typt u **Azure ml: opslaan en door gaan**.
     - Selecteer **service-eigenschappen weer geven** om configuratie-instellingen voor implementatie weer te geven.
 
 ## <a name="next-steps"></a>Volgende stappen

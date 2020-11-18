@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: vamahtan
 ms.author: vamahtan
-ms.date: 11/13/2020
-ms.openlocfilehash: ac56aab233c9d07ea7e82a4eefc4918746e3bdbe
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.date: 11/17/2020
+ms.openlocfilehash: 730178d974ba95db968332ac669f701486b513bd
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592512"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94738523"
 ---
 # <a name="co-sell-partner-engagement"></a>Betrokkenheid van partner bij collectieve verkoop
 
@@ -30,7 +30,7 @@ Het programma voor co-verkoop is beschikbaar voor software die is **gebouwd met 
 
 Aanbiedingen die de **gemotiveerd-status van Azure IP-co-sell bereiken,** profiteren van de volgende extra Marketplace-voor delen:
 
-- De kosten voor Marketplace-service zijn gereduceerd van 20% tot 10%. Deze korting is van toepassing op uw IaaS-of SaaS-aanbieding die wordt verkocht via de commerciële Marketplace. Zie [gereduceerde service kosten](marketplace-commercial-transaction-capabilities-and-considerations.md#reduced-service-fee) voor meer informatie.
+- De kosten voor Marketplace-service zijn gereduceerd van 20% tot 10%. Deze korting is van toepassing op uw IaaS-of SaaS-aanbieding die wordt verkocht via de commerciële Marketplace. Zie voor meer informatie [commerciële Marketplace-service kosten](marketplace-commercial-transaction-capabilities-and-considerations.md#commercial-marketplace-service-fees) voor meer informatie.
 - Cloud Solution Provider (CSP)-partners ontvangen een stimulans van 10% om uw IaaS of SaaS-aanbieding te verkopen. Meer informatie over het CSP-programma op het [Cloud Solution Provider-programma](cloud-solution-providers.md).
 - Verkoop van uw aanbieding via commerciële Marketplace draagt bij aan de verplichtingen van Azure-verbruik van klanten. In aanmerking komende klanten zien de aanbieding als **' in aanmerking komende Azure-voor delen '** in azure Portal. Zie voor [delen van Azure-verbruik](azure-consumption-commitment-benefit.md)voor meer informatie.
 - Aanbiedingen die **Azure IP gemotiveerd** of **Business Applications co-sell gemotiveerd-** status kunnen behalen, ontvangen de badge **' preferente oplossingen '** in de winkel. De badge profileert de kwaliteit, prestaties en mogelijkheid van een aanbieding om klant behoeften in een bepaalde branche verticaal of oplossings gebied aan te pakken. Meer informatie vindt u op de [Aanbevolen oplossingen in Microsoft AppSource en Azure Marketplace](preferred-solutions.md).
@@ -54,7 +54,7 @@ De volgende tabel bevat de stappen en vereisten om uw Marketplace te laten profi
 Start uw directe verkoop traject rechtstreeks in het partner centrum volgens onderstaande stappen. Zie [optie voor co-sell in Partner Center](./partner-center-portal/commercial-marketplace-co-sell.md)voor meer informatie.
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
-1. Selecteer in het linkerdeel venster de optie **Commercial Marketplace**  >  - **overzicht** en selecteer vervolgens het aanbod dat u wilt samen verkopen.
+1. Selecteer in het linkerdeel venster de optie **Commercial Marketplace**  >  -**overzicht** en selecteer vervolgens het aanbod dat u wilt samen verkopen.
 
     > [!NOTE]
     > U kunt lid worden van het programma voor gezamenlijke verkoop met een nieuwe aanbieding die nog niet is gepubliceerd of met een aanbieding die al is gepubliceerd.
@@ -63,15 +63,15 @@ Start uw directe verkoop traject rechtstreeks in het partner centrum volgens ond
 
     :::image type="content" source="media/co-sell/co-sell-with-microsoft-tab.png" alt-text="In deze afbeelding ziet u de locatie van het tabblad samen met micro soft.":::
 
-1. Geef de details van de algemene vermelding op om micro soft-verkopers te helpen uw aanbieding snel te sorteren en te ontdekken in de sectie **aanbieding** . ( *Vereist: alle velden.* )
+1. Geef de details van de algemene vermelding op om micro soft-verkopers te helpen uw aanbieding snel te sorteren en te ontdekken in de sectie **aanbieding** . (*Vereist: alle velden.*)
 
     :::image type="content" source="media/co-sell/co-sell-listing-section.png" alt-text="Deze afbeelding toont de sectie vermelding van het tabblad samen verkopen.":::  
 
-1. Geef details op over uw aanbieding en upload onderpand in het gedeelte **documenten** . Micro soft-verkopers gebruiken deze informatie om uw aanbieding te adviseren en te verkopen. ( *Vereist: klant één semafoon en presentatie deck van de klant.* )
+1. Geef details op over uw aanbieding en upload onderpand in het gedeelte **documenten** . Micro soft-verkopers gebruiken deze informatie om uw aanbieding te adviseren en te verkopen. (*Vereist: klant één semafoon en presentatie deck van de klant.*)
 
     :::image type="content" source="media/co-sell/co-sell-documents-section.png" alt-text="Deze afbeelding toont de sectie documenten op het tabblad samen verkopen.":::
 
-1. Upload verkoop contactpersoongegevens in het gedeelte **contact personen** . Micro soft-verkopers kunnen contact personen bereiken om meer informatie over uw aanbieding aan te vragen. ( *Vereist: een contact persoon voor elke geografie waarin uw aanbieding beschikbaar wordt gesteld.* )
+1. Upload verkoop contactpersoongegevens in het gedeelte **contact personen** . Micro soft-verkopers kunnen contact personen bereiken om meer informatie over uw aanbieding aan te vragen. (*Vereist: een contact persoon voor elke geografie waarin uw aanbieding beschikbaar wordt gesteld.*)
 
     :::image type="content" source="media/co-sell/co-sell-contacts-section.png" alt-text="Deze afbeelding toont de sectie contact personen op het tabblad samen verkopen.":::
 

@@ -3,7 +3,7 @@ title: Gezichten met Azure Media Analytics redigeren | Microsoft Docs
 description: Azure Media Redactor is een Azure Media Analytics media processor die schaal bare gezichts redactie in de Cloud biedt. In dit artikel wordt beschreven hoe u met Azure Media Analytics gezichten kunt redigeren.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,31 +11,34 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
+ms.date: 11/17/2020
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a5b5759f0a7fff0f76e8c65cbf879fcd06337712
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: df2962c8d428694a663acddf5922829f8b913b92
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92017180"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94737486"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Gezichten met Azure Media Analytics redigeren
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 ## <a name="overview"></a>Overzicht
-**Azure media Redactor** is een [Azure Media Analytics](./legacy-components.md) media processor (MP) dat schaal bare gezichts redactie in de Cloud biedt. Met gezichts redactie kunt u uw video aanpassen zodat u de gezichten van geselecteerde personen kunt vervagen. U kunt de gezichts redactie service gebruiken in de scenario's voor open bare veiligheid en nieuws media. Een paar minuten van beeld materiaal dat meerdere gezichten bevat, kan uren duren om hand matig te worden geredigeerd, maar bij deze service zijn slechts enkele eenvoudige stappen vereist voor het redactie proces van het gezicht. Zie [deze](https://azure.microsoft.com/blog/azure-media-redactor/) blog voor meer informatie.
+
+**Azure media Redactor** is een [Azure Media Analytics](./legacy-components.md) media processor (MP) dat schaal bare gezichts redactie in de Cloud biedt. Met gezichts redactie kunt u uw video aanpassen zodat u de gezichten van geselecteerde personen kunt vervagen. U kunt de gezichts redactie service gebruiken in de scenario's voor open bare veiligheid en nieuws media. Een paar minuten van beeld materiaal dat meerdere gezichten bevat, kan uren duren om hand matig te worden geredigeerd, maar bij deze service zijn slechts enkele eenvoudige stappen vereist voor het redactie proces van het gezicht.
 
 Dit artikel bevat informatie over **Azure media Redactor** en laat zien hoe u deze kunt gebruiken met Media Services SDK voor .net.
 
 ## <a name="face-redaction-modes"></a>Modus voor redactie van gezicht
+
 Gezichts redactie werkt door het detecteren van gezichten in elk frame van de video en bij het volgen van het gezichts object in de loop van de tijd, zodat dezelfde persoon van andere hoeken ook kan worden vervaagd. Het geautomatiseerde redactie proces is complex en produceert niet altijd 100% van de gewenste uitvoer. Daarom biedt Media Analytics u een aantal manieren om de uiteindelijke uitvoer te wijzigen.
 
 Naast een volledig automatische modus, is er een twee richtings werk stroom, waarmee de selectie/de selectie van gevonden gezichten via een lijst met Id's mogelijk is. Als u een wille keurig aantal aanpassingen per kader wilt maken, gebruikt het MP een meta gegevensbestand in JSON-indeling. Deze werk stroom is opgesplitst in de modi **analyseren** en **redactie** . U kunt de twee modi combi neren in één fase waarmee beide taken in één taak worden uitgevoerd. deze modus heet **gecombineerd**.
 
 ### <a name="combined-mode"></a>Gecombineerde modus
+
 Dit produceert automatisch een geredigeerde MP4 zonder hand matige invoer.
 
 | Fase | Bestandsnaam | Opmerkingen |
@@ -44,13 +47,8 @@ Dit produceert automatisch een geredigeerde MP4 zonder hand matige invoer.
 | Invoer configuratie |Vooraf ingestelde taak configuratie |{' version ': ' 1.0 ', ' opties ': {' mode ': ' gecombineerd '}} |
 | Uitvoer activum |foo_redacted.mp4 |Video met vervaging toegepast |
 
-#### <a name="input-example"></a>Invoer voorbeeld:
-[deze video weer geven](https://ampdemo.azureedge.net/?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fed99001d-72ee-4f91-9fc0-cd530d0adbbc%2FDancing.mp4)
-
-#### <a name="output-example"></a>Voorbeeld van uitvoer:
-[deze video weer geven](https://ampdemo.azureedge.net/?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc6608001-e5da-429b-9ec8-d69d8f3bfc79%2Fdance_redacted.mp4)
-
 ### <a name="analyze-mode"></a>Analyse modus
+
 De **analyse** fase van de werk stroom met twee slagen neemt een video-invoer en produceert een JSON-bestand met gezichts locaties en JPG-afbeeldingen van elk gedetecteerd gezicht.
 
 | Fase | Bestandsnaam | Opmerkingen |
@@ -60,58 +58,59 @@ De **analyse** fase van de werk stroom met twee slagen neemt een video-invoer en
 | Uitvoer activum |foo_annotations.jsop |Aantekening gegevens van gezichts locaties in JSON-indeling. Dit kan worden bewerkt door de gebruiker om de vervagings kaders te wijzigen. Zie het voor beeld hieronder. |
 | Uitvoer activum |foo_thumb% 06d.jpg [foo_thumb000001.jpg, foo_thumb000002.jpg] |Een bijgesneden jpg van elk gedetecteerd gezicht, waarbij het nummer de labelId van het gezicht aangeeft |
 
-#### <a name="output-example"></a>Voorbeeld van uitvoer:
+#### <a name="output-example"></a>Uitvoer voorbeeld
 
 ```json
+{
+  "version": 1,
+  "timescale": 24000,
+  "offset": 0,
+  "framerate": 23.976,
+  "width": 1280,
+  "height": 720,
+  "fragments": [
     {
-      "version": 1,
-      "timescale": 24000,
-      "offset": 0,
-      "framerate": 23.976,
-      "width": 1280,
-      "height": 720,
-      "fragments": [
-        {
-          "start": 0,
-          "duration": 48048,
-          "interval": 1001,
-          "events": [
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            [
-              {
-                "index": 13,
-                "id": 1138,
-                "x": 0.29537,
-                "y": -0.18987,
-                "width": 0.36239,
-                "height": 0.80335
-              },
-              {
-                "index": 13,
-                "id": 2028,
-                "x": 0.60427,
-                "y": 0.16098,
-                "width": 0.26958,
-                "height": 0.57943
-              }
-            ],
+      "start": 0,
+      "duration": 48048,
+      "interval": 1001,
+      "events": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "index": 13,
+            "id": 1138,
+            "x": 0.29537,
+            "y": -0.18987,
+            "width": 0.36239,
+            "height": 0.80335
+          },
+          {
+            "index": 13,
+            "id": 2028,
+            "x": 0.60427,
+            "y": 0.16098,
+            "width": 0.26958,
+            "height": 0.57943
+          }
+        ],
 
-    … truncated
+    ... truncated
 ```
 
 ### <a name="redact-mode"></a>Modus redactie
+
 De tweede fase van de werk stroom vergt een groter aantal invoer waarden die in één activum moeten worden gecombineerd.
 
 Dit omvat een lijst met Id's voor vervagen, de oorspronkelijke video en de JSON van de aantekeningen. In deze modus wordt de annotaties gebruikt om vervaging toe te passen op de invoer video.
@@ -127,13 +126,12 @@ De uitvoer van de analyse fase bevat niet de oorspronkelijke video. De video moe
 | Uitvoer activum |foo_redacted.mp4 |Video met vervaging toegepast op basis van aantekeningen |
 
 #### <a name="example-output"></a>Voorbeeld uitvoer
+
 Dit is de uitvoer van een IDList waarvoor een ID is geselecteerd.
 
-[deze video weer geven](https://ampdemo.azureedge.net/?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fad6e24a2-4f9c-46ee-9fa7-bf05e20d19ac%2Fdance_redacted1.mp4)
-
 Voor beeld foo_IDList.txt
- 
-```output
+
+```
 1
 2
 3
@@ -141,20 +139,26 @@ Voor beeld foo_IDList.txt
 
 ## <a name="blur-types"></a>Vervagings typen
 
-In de **gecombineerde** of **redactie** modus zijn er vijf verschillende vervagings modi waaruit u kunt kiezen via de JSON-invoer configuratie: **laag**, **med**, **hoog**, **vak**en **zwart**. Standaard wordt **med** gebruikt.
+In de **gecombineerde** of **redactie** modus zijn er vijf verschillende vervagings modi waaruit u kunt kiezen via de JSON-invoer configuratie: **laag**, **med**, **hoog**, **vak** en **zwart**. Standaard wordt **med** gebruikt.
 
 Hieronder vindt u voor beelden van de vervagings typen die hieronder worden beschreven.
 
-### <a name="example-json"></a>Voor beeld JSON:
+### <a name="example-json"></a>Voor beeld JSON
 
 ```json
-    {'version':'1.0', 'options': {'Mode': 'Combined', 'BlurType': 'High'}}
+{
+    'version':'1.0',
+    'options': {
+        'Mode': 'Combined',
+        'BlurType': 'High'
+    }
+}
 ```
 
 #### <a name="low"></a>Beperkt
 
 ![Beperkt](./media/media-services-face-redaction/blur1.png)
- 
+
 #### <a name="med"></a>STB
 
 ![STB](./media/media-services-face-redaction/blur2.png)
@@ -193,11 +197,11 @@ Het volgende programma laat zien hoe u:
             }
     ```
 
-3. Down load de JSON-uitvoer bestanden. 
+3. Down load de JSON-uitvoer bestanden.
 
-#### <a name="create-and-configure-a-visual-studio-project"></a>Maak en configureer een Visual Studio-project.
+### <a name="create-and-configure-a-visual-studio-project"></a>Maak en configureer een Visual Studio-project.
 
-Stel uw ontwikkel omgeving in en vul het app.config bestand in met verbindings informatie, zoals beschreven in [Media Services ontwikkeling met .net](media-services-dotnet-how-to-use.md). 
+Stel uw ontwikkel omgeving in en vul het app.config bestand in met verbindings informatie, zoals beschreven in [Media Services ontwikkeling met .net](media-services-dotnet-how-to-use.md).
 
 #### <a name="example"></a>Voorbeeld
 
@@ -374,9 +378,11 @@ namespace FaceRedaction
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Feedback geven
+
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Verwante koppelingen
+
 [Overzicht van Azure Media Services Analytics](./legacy-components.md)
 
 [Demo's Azure Media Analytics](https://azuremedialabs.azurewebsites.net/demos/Analytics.html)

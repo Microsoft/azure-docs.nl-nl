@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c6dd64ae8b7b7307d7dcd510d1fdb877365c6f36
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 8dc2eb898c12e374bc503c5a05f00eb20667443b
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675959"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701837"
 ---
 # <a name="quickstart-create-a-search-index-using-the-legacy-microsoftazuresearch-v10-client-library"></a>Snelstartgids: een zoek index maken met behulp van de verouderde client bibliotheek van micro soft. Azure. Search V10 toevoegen
 
@@ -55,7 +55,7 @@ Voor aanroepen naar de service zijn voor elke aanvraag een URL-eindpunt en een t
 
    Haal ook de querysleutel op. Het is een aanbevolen procedure voor het uitgeven van queryaanvragen met alleen-lezen-toegang.
 
-![Een HTTP-eindpunt en toegangssleutel ophalen](media/search-get-started-postman/get-url-key.png "Een HTTP-eindpunt en toegangssleutel ophalen")
+![Een HTTP-eindpunt en toegangssleutel ophalen](media/search-get-started-rest/get-url-key.png "Een HTTP-eindpunt en toegangssleutel ophalen")
 
 Voor alle aanvragen is een API-sleutel vereist op elke aanvraag die naar uw service wordt verzonden. Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
@@ -71,7 +71,7 @@ Voor dit project gebruikt u versie 10 van het `Microsoft.Azure.Search` NuGet-pak
 
 1. Selecteer onder **Hulpprogramma's** > **NuGet-pakketbeheer** de optie **NuGet-pakketten voor oplossing beheren...** . 
 
-1. Klik op **Bladeren** .
+1. Klik op **Bladeren**.
 
 1. Zoek `Microsoft.Azure.Search` en selecteer versie 10.
 
@@ -86,9 +86,9 @@ Voor dit project gebruikt u versie 10 van het `Microsoft.Azure.Search` NuGet-pak
 
 1. Zoek bij Nieuw item toevoegen naar 'JSON' om een JSON-lijst met itemtypen te retourneren.
 
-1. Kies **JSON-bestand** , geef het bestand de naam 'appsettings.json' en klik op **Toevoegen** . 
+1. Kies **JSON-bestand**, geef het bestand de naam 'appsettings.json' en klik op **Toevoegen**. 
 
-1. Voeg het bestand toe aan uw uitvoermap. Klik met de rechtermuisknop op appsettings.json en selecteer **Eigenschappen** . Selecteer bij **Naar uitvoermap kopiëren** de optie **Kopiëren indien nieuwer** .
+1. Voeg het bestand toe aan uw uitvoermap. Klik met de rechtermuisknop op appsettings.json en selecteer **Eigenschappen**. Selecteer bij **Naar uitvoermap kopiëren** de optie **Kopiëren indien nieuwer**.
 
 1. Kopieer de volgende JSON in uw nieuwe JSON-bestand. 
 
@@ -201,7 +201,7 @@ De Hotels-index bestaat uit eenvoudige en complexe velden. Een eenvoudig veld is
     > [!NOTE]
     > In de .NET SDK moeten velden expliciet worden aangeduid als [`IsSearchable`](/dotnet/api/microsoft.azure.search.models.field.issearchable), [`IsFilterable`](/dotnet/api/microsoft.azure.search.models.field.isfilterable), [`IsSortable`](/dotnet/api/microsoft.azure.search.models.field.issortable) en [`IsFacetable`](/dotnet/api/microsoft.azure.search.models.field.isfacetable). Dit gedrag is het tegengestelde van de REST API, waarmee kenmerken op basis van gegevenstype impliciet worden ingeschakeld (eenvoudige tekenreeksvelden zijn bijvoorbeeld automatisch doorzoekbaar).
 
-    In uw index van het type `string` moet exact één veld worden aangewezen als het *sleutelveld* ; hierdoor wordt elk document uniek geïdentificeerd. In dit schema is de sleutel `HotelId`.
+    In uw index van het type `string` moet exact één veld worden aangewezen als het *sleutelveld*; hierdoor wordt elk document uniek geïdentificeerd. In dit schema is de sleutel `HotelId`.
 
     In deze index wordt voor de beschrijvingsvelden het optionele kenmerk [`analyzer`](/dotnet/api/microsoft.azure.search.models.field.analyzer) gebruikt. Dit wordt opgegeven wanneer u de Lucene-standaardanalyse wilt overschrijven. Voor het veld `description_fr` wordt de Franse Lucene-analyse ([FrLucene](/dotnet/api/microsoft.azure.search.models.analyzername.frlucene)) gebruikt, omdat hierin Franse tekst wordt opgeslagen. Voor `description` wordt de optionele Microsoft-taalanalyse ([EnMicrosoft](/dotnet/api/microsoft.azure.search.models.analyzername.enmicrosoft)) gebruikt.
 

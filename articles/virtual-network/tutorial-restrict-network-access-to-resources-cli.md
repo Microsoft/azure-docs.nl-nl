@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2018
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2be9b5e6fd489b331982d31693bf810d488d92b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a1eab081a7c1e83a57ef4735c6eb5248d92defc
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87484144"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734103"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-cli"></a>Netwerk toegang tot PaaS-resources beperken met virtuele netwerk service-eind punten met behulp van de Azure CLI
 
@@ -35,11 +35,11 @@ Met service-eindpunten voor virtuele netwerken kunt u de netwerktoegang tot somm
 * Toegang tot een resource vanaf een subnet bevestigen
 * Bevestigen dat toegang wordt geweigerd aan een resource vanaf een subnet en internet
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor deze snelstart de Azure CLI versie 2.0.28 of later uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren]( /cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren. 
+- Voor dit artikel is versie 2.0.28 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
@@ -322,7 +322,7 @@ Probeer de Azure-bestands share te koppelen aan de map die u hebt gemaakt. In di
 sudo mount --types cifs //storage-account-name>.file.core.windows.net/my-file-share /mnt/MyAzureFileShare --options vers=3.0,username=<storage-account-name>,password=<storage-account-key>,dir_mode=0777,file_mode=0777,serverino
 ```
 
-De toegang wordt geweigerd en er wordt een fout bericht weer gegeven `mount error(13): Permission denied` omdat de *VM myvmpublic* -vm in het *open bare* subnet wordt geïmplementeerd. Het *Openbare* subnet heeft geen service-eindpunt ingeschakeld voor Azure Storage en het opslagaccount staat alleen netwerktoegang toe van het *Privé*-subnet, en niet van het *Openbare*subnet.
+De toegang wordt geweigerd en er wordt een fout bericht weer gegeven `mount error(13): Permission denied` omdat de *VM myvmpublic* -vm in het *open bare* subnet wordt geïmplementeerd. Het *Openbare* subnet heeft geen service-eindpunt ingeschakeld voor Azure Storage en het opslagaccount staat alleen netwerktoegang toe van het *Privé*-subnet, en niet van het *Openbare* subnet.
 
 Sluit de SSH-sessie af op de *VM myvmpublic* -VM.
 

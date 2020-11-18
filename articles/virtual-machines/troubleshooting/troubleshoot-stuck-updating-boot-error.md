@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/09/2018
 ms.author: genli
-ms.openlocfilehash: a41c1f634c030106dd6936676010fea32da8d436
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe2d444bbdc09ed5ab0205d4139591e3288e3358
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86084015"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734562"
 ---
 # <a name="azure-vm-startup-is-stuck-at-windows-update"></a>Opstarten van Azure VM is vastgelopen op Windows Update
 
@@ -44,7 +44,7 @@ Het update proces kan enige tijd in beslag nemen, afhankelijk van het aantal upd
 
 1. Maak een moment opname van de besturingssysteem schijf van de betrokken VM als back-up. Zie [snap shot a disk](../windows/snapshot-copy-managed-disk.md)(Engelstalig) voor meer informatie. 
 2. [Koppel de besturingssysteem schijf aan een herstel-VM](troubleshoot-recovery-disks-portal-windows.md).
-3. Zodra de besturingssysteem schijf is gekoppeld op de herstel-VM, voert u **diskmgmt. msc** uit om schijf beheer te openen en ervoor te zorgen dat de gekoppelde schijf **online**is. Noteer de stationsletter die is toegewezen aan de gekoppelde besturingssysteem schijf die de map \Windows heeft. Als de schijf is versleuteld, ontsleutelt u de schijf voordat u verdergaat met de volgende stappen in dit document.
+3. Zodra de besturingssysteem schijf is gekoppeld op de herstel-VM, voert u **diskmgmt. msc** uit om schijf beheer te openen en ervoor te zorgen dat de gekoppelde schijf **online** is. Noteer de stationsletter die is toegewezen aan de gekoppelde besturingssysteem schijf die de map \Windows heeft. Als de schijf is versleuteld, ontsleutelt u de schijf voordat u verdergaat met de volgende stappen in dit document.
 
 4. Open een opdracht prompt exemplaar met verhoogde bevoegdheid (als administrator uitvoeren). Voer de volgende opdracht uit om de lijst op te halen van de update pakketten die zich op de gekoppelde besturingssysteem schijf bevinden:
 
@@ -80,4 +80,4 @@ Het update proces kan enige tijd in beslag nemen, afhankelijk van het aantal upd
     > [!NOTE] 
     > Afhankelijk van de grootte van het pakket, neemt het hulp programma DISM even de tijd om de verwijdering te verwerken. Normaal gesp roken wordt het proces binnen 16 minuten voltooid.
 
-7. [Ontkoppel de besturingssysteem schijf en maak de virtuele machine opnieuw](troubleshoot-recovery-disks-portal-windows.md#unmount-and-detach-original-virtual-hard-disk). Controleer vervolgens of het probleem is opgelost.
+7. [Ontkoppel de besturingssysteem schijf en maak de virtuele machine opnieuw](troubleshoot-recovery-disks-portal-windows.md#unmount-and-detach-the-original-virtual-hard-disk). Controleer vervolgens of het probleem is opgelost.

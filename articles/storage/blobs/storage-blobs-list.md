@@ -9,12 +9,12 @@ ms.date: 11/16/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0bd2b295e5e4d4d5ea6e25869c8c109ff8bbbf38
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 906df01587201561fbbfea0661d0885864042925
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660760"
+ms.locfileid: "94701310"
 ---
 # <a name="list-blobs-with-net"></a>Blobs weer geven met .NET
 
@@ -64,6 +64,10 @@ U kunt BLOB-meta gegevens met de resultaten retour neren.
 - Als u de .NET V12 SDK gebruikt, geeft u de **meta gegevens** waarde voor de [BlobTraits](https://docs.microsoft.com/dotnet/api/azure.storage.blobs.models.blobtraits) -inventarisatie op.
 
 - Als u de .NET V11 SDK gebruikt, geeft u de **meta gegevens** waarde voor de [BlobListingDetails](/dotnet/api/microsoft.azure.storage.blob.bloblistingdetails) -inventarisatie op. Azure Storage bevat meta gegevens voor elke geretourneerde blob, dus u hoeft niet een van de **FetchAttributes** -methoden in deze context aan te roepen om de BLOB-meta gegevens op te halen.
+
+### <a name="list-blob-versions-or-snapshots"></a>BLOB-versies of moment opnamen weer geven
+
+Als u BLOB-versies of moment opnamen wilt weer geven met de .NET V12-client bibliotheek, geeft u de para meter [BlobStates](/dotnet/api/azure.storage.blobs.models.blobstates) op met het veld **versie** of **moment opname** . Versies en moment opnamen worden weer gegeven van oudste naar nieuwste. Zie [BLOB-versies](versioning-enable.md#list-blob-versions)weer geven voor meer informatie over versies van vermeldingen.
 
 ### <a name="flat-listing-versus-hierarchical-listing"></a>Platte aanbieding versus hiërarchische lijst
 

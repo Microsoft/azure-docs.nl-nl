@@ -4,27 +4,27 @@ description: In dit artikel worden de prijs-, facturerings-, facturerings-en uit
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 11/18/2020
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: c6ce256db907589ace7e77157397257732564fb6
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 9a975ee863e81a9f542e717d734f12db850f749e
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130320"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94738319"
 ---
 # <a name="commercial-marketplace-transact-capabilities"></a>De Transact-mogelijkheden voor commerciële Marketplace
 
-In dit artikel worden de prijs-, facturerings-, facturerings-en uitbetalings overwegingen voor de micro soft Commercial Marketplace beschreven. 
+In dit artikel worden de prijs-, facturerings-, facturerings-en uitbetalings overwegingen voor de micro soft Commercial Marketplace beschreven.
 
 ## <a name="transactions-by-listing-option"></a>De optie trans acties per aanbieding
 
-De uitgever of micro soft is verantwoordelijk voor het beheer van software licentie transacties voor aanbiedingen in de commerciële Marketplace. De optie die u kiest voor uw aanbieding bepaalt wie de trans actie beheert. Zie [een optie voor een vermelding kiezen](./determine-your-listing-type.md#choose-a-listing-option) voor Beschik baarheid en uitleg van elke publicatie optie.
+De uitgever of micro soft is verantwoordelijk voor het beheer van software licentie transacties voor aanbiedingen in de commerciële Marketplace. De optie die u kiest voor uw aanbieding bepaalt wie de trans actie beheert. Zie [Inleiding tot aanbiedings opties](determine-your-listing-type.md) voor Beschik baarheid en uitleg van elke publicatie optie
 
 ### <a name="contact-me-free-trial-and-byol-options"></a>Contact opnemen, gratis proef versie en BYOL-opties
 
-Uitgevers kunnen kiezen voor de _contact persoon_ en _gratis proef versie_ , opties voor promotie-en gebruikers verwervings doeleinden. Voor sommige aanbiedings typen kunnen uitgevers kiezen voor de optie uw eigen licentie (BYOL) meenemen zodat klanten een abonnement op uw aanbieding kunnen kopen met een licentie die hij of zij rechtstreeks van u heeft gekocht. Met deze opties neemt micro soft niet rechtstreeks deel aan de software licentie transacties van de uitgever en zijn er geen transactie kosten in rekening gebracht. 
+Uitgevers kunnen kiezen voor de _contact persoon_ en _gratis proef versie_, opties voor promotie-en gebruikers verwervings doeleinden. Voor sommige aanbiedings typen kunnen uitgevers kiezen voor de optie uw eigen licentie (BYOL) meenemen zodat klanten een abonnement op uw aanbieding kunnen kopen met een licentie die hij of zij rechtstreeks van u heeft gekocht. Met deze opties neemt micro soft niet rechtstreeks deel aan de software licentie transacties van de uitgever en zijn er geen transactie kosten in rekening gebracht.
 
 Uitgevers zijn verantwoordelijk voor de ondersteuning van alle aspecten van de software licentie transacties. Dit omvat, maar is niet beperkt tot order, verwerking, meting, facturering, facturering, betaling en incasso. Met de optie contact opnemen met mij kunnen uitgevers 100% van de licentie kosten voor de uitgever van de software blijven ontvangen van de klant.
 
@@ -84,7 +84,15 @@ Voor scenario's voor het publiceren van Transact kunt u een software licentie gr
 
 Naast het gebruik van aanbiedings typen en facturerings modellen om een aanbieding te geld verdienen, kunt u een persoonlijke aanbieding uitvoeren, compleet met onderhandelde, gefactureerde prijzen of aangepaste configuraties. Persoonlijke aanbiedingen worden door alle drie de opties voor het publiceren van transacts ondersteund.
 
-Met deze optie kunnen hogere of lagere prijzen worden gemaakt dan voor de openbaar beschik bare aanbieding. Persoonlijke aanbiedingen kunnen worden gebruikt om korting te bieden of een Premium toe te voegen aan een aanbieding. Persoonlijke aanbiedingen kunnen worden gemaakt voor een of meer klanten door wit: hun Azure-abonnement wordt weer gegeven op het niveau van de aanbieding.
+Met deze optie kunnen hogere of lagere prijzen worden gemaakt dan voor de openbaar beschik bare aanbieding. U kunt privé aanbiedingen gebruiken om korting te bieden of een Premium toe te voegen aan een aanbieding. U kunt persoonlijke aanbiedingen beschikbaar maken voor een of meer klanten door wit-hun Azure-abonnement weer te geven op het niveau van de aanbieding.
+
+### <a name="commercial-marketplace-service-fees"></a>Kosten voor commerciële Marketplace-service
+
+Er worden 20% Standard Store-service kosten in rekening gebracht wanneer klanten uw koop aanbieding kopen via de commerciële Marketplace. Zie sectie 5c van de [micro soft Publisher-overeenkomst](https://go.microsoft.com/fwlink/?LinkID=699560)voor meer informatie over deze kosten.
+
+Voor bepaalde transactable-aanbiedingen die u publiceert naar de commerciële Marketplace, kunt u in aanmerking komen voor een lagere winkel service tarief van 10%. Voor een aanbieding die in aanmerking komt, moet deze door micro soft zijn aangewezen als Azure IP-gemotiveerd. Voor het einde van elke kalender maand moet aan de voor waarden worden voldaan ten minste vijf werk dagen voordat de maandelijkse kosten voor Marketplace-service voor de maand worden ontvangen.
+
+De lagere kosten voor Marketplace-service zijn van toepassing op Azure IP gemotiveerd SaaS, Vm's, beheerde apps en alle andere gekwalificeerde transactable IaaS-oplossingen die beschikbaar worden gesteld via de commerciële Marketplace. Betaalde SaaS-aanbiedingen die zijn gekoppeld aan een micro soft teams-app of ten minste twee Microsoft 365-invoeg toepassingen (Excel, Power Point, Word, Outlook en share point) en naar Microsoft AppSource worden gepubliceerd, ontvangen ook deze korting.
 
 ### <a name="examples"></a>Voorbeelden
 
@@ -143,10 +151,6 @@ In dit scenario betaalt micro soft de $100,00 voor uw software licentie en wordt
 |---------|---------|
 |Micro soft betaalt u 80% van uw licentie kosten <br> \* Micro soft betaalt u 90% van de licentie kosten voor alle gekwalificeerde SaaS-apps   |   $80,00 per maand <br> \* $90,00 per maand    |
 |Micro soft bewaart 20% van de licentie kosten <br> \* Micro soft houdt 10% van de licentie kosten voor alle gekwalificeerde SaaS-apps.  |  $20,00 per maand <br> \* $10,00     |
-
-### <a name="reduced-service-fee"></a>Beperkte service kosten
-
-Voor bepaalde aanbiedingen die u publiceert op commerciële Marketplace, verlaagt micro soft de kosten voor Marketplace-service van 20% (zoals beschreven in de [overeenkomst voor micro soft Publisher](https://go.microsoft.com/fwlink/?LinkID=699560)) tot 10%. Voor uw aanbieding (en) die u wilt kwalificeren, moeten uw aanbieding (en) zijn aangewezen door micro soft als Azure IP-gemotiveerd. Voor het einde van elke kalender maand moet aan de voor waarden worden voldaan ten minste vijf werk dagen voordat de maandelijkse kosten voor Marketplace-service voor de maand worden ontvangen. De lagere kosten voor Marketplace-service zijn van toepassing op Azure IP gemotiveerd SaaS, Vm's, beheerde apps en alle andere gekwalificeerd transactable-IaaS aanbiedingen die beschikbaar worden gesteld via de commerciële Marketplace. Betaalde SaaS-aanbiedingen die zijn gekoppeld aan een micro soft teams-app of ten minste twee Microsoft 365-invoeg toepassingen (Excel, Power Point, Word, Outlook en share point) en die op AppSource zijn gepubliceerd, ontvangen deze korting ook.
 
 ### <a name="customer-invoicing-payment-billing-and-collections"></a>Facturering, betaling, facturering en verzamelingen van klanten
 

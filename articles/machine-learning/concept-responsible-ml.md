@@ -1,20 +1,20 @@
 ---
 title: Wat is er verantwoordelijk machine learning (preview-versie)
 titleSuffix: Azure Machine Learning
-description: Meer informatie over de verantwoordelijke machine learning is en hoe u deze kunt gebruiken in Azure Machine Learning
+description: Meer informatie over de verantwoordelijke machine learning is en hoe u deze kunt gebruiken met Azure Machine Learning om inzicht te krijgen in modellen, gegevens te beschermen en de levens cyclus van het model te beheren.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.author: luquinta
 author: luisquintanilla
-ms.date: 08/05/2020
-ms.openlocfilehash: f2ece76ef3594cadfa1fcda89259ee18eb1f9084
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 11/16/2020
+ms.openlocfilehash: ff85ed669fb7c3ac43e322eb747c537a30801920
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324852"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701429"
 ---
 # <a name="what-is-responsible-machine-learning-preview"></a>Wat is er verantwoordelijk machine learning? (preview)
 

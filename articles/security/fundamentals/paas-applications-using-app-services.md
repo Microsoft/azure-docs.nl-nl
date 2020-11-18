@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/18/2019
 ms.author: terrylan
-ms.openlocfilehash: e583bb1b9cad79ee3e48e838d81d6a504c44f72c
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 849743dd756eff27ec0670cc39d2419c60538183
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408087"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701011"
 ---
 # <a name="best-practices-for-securing-paas-web-and-mobile-applications-using-azure-app-service"></a>Aanbevolen procedures voor het beveiligen van PaaS web-en mobiele toepassingen met Azure App Service
 
@@ -33,7 +33,7 @@ Azure App Service is een PaaS-aanbieding (platform-as-a-Service) waarmee u web-e
 App Service biedt een OAuth 2,0-Service voor uw ID-provider. OAuth 2,0 richt zich op de vereenvoudiging van client ontwikkelaars en biedt specifieke autorisatie stromen voor webtoepassingen, desktop toepassingen en mobiele telefoons. Azure AD maakt gebruik van OAuth 2,0 zodat u toegang tot mobiele en webtoepassingen kunt autoriseren. Zie [verificatie en autorisatie in azure app service](../../app-service/overview-authentication-authorization.md)voor meer informatie.
 
 ## <a name="restrict-access-based-on-role"></a>Toegang beperken op basis van rol
-Het beperken van de toegang is van cruciaal belang voor organisaties die beveiligings beleid voor gegevens toegang willen afdwingen. U kunt op rollen gebaseerd toegangs beheer (RBAC) gebruiken om machtigingen toe te wijzen aan gebruikers, groepen en toepassingen bij een bepaald bereik, zoals de beveiligings principes van de nood zaak om te kennen en te voldoen aan bevoegdheden. Zie [Wat is Azure Role-based Access Control (Azure RBAC)](../../role-based-access-control/overview.md)voor meer informatie over het verlenen van gebruikers toegang tot toepassingen.
+Het beperken van de toegang is van cruciaal belang voor organisaties die beveiligings beleid voor gegevens toegang willen afdwingen. U kunt Azure RBAC (op rollen gebaseerd toegangs beheer) gebruiken om machtigingen toe te wijzen aan gebruikers, groepen en toepassingen bij een bepaald bereik, zoals de beveiligings principes van de nood zaak om te kennen en te voldoen aan bevoegdheden. Zie [Wat is Azure Role-based Access Control (Azure RBAC)](../../role-based-access-control/overview.md)voor meer informatie over het verlenen van gebruikers toegang tot toepassingen.
 
 ## <a name="protect-your-keys"></a>Uw sleutels beveiligen
 Het maakt niet uit hoe goed uw beveiliging is als u uw abonnements sleutels kwijtraakt. Met Azure Sleutelkluis kunt u de cryptografische sleutels en geheimen beveiligen die door cloudtoepassingen en -services worden gebruikt. Met Key Vault kunt u sleutels en geheimen versleutelen (zoals verificatie sleutels, sleutels voor opslag accounts, sleutels voor gegevens versleuteling,. PFX-bestanden en wacht woorden) met behulp van sleutels die worden beveiligd door Hardware Security modules (Hsm's). Voor extra zekerheid kunt u de sleutels importeren of genereren in HSM's. U kunt Key Vault ook gebruiken om uw TLS-certificaten te beheren met automatische verlenging. Zie [Wat is Azure Key Vault](../../key-vault/general/overview.md) voor meer informatie.

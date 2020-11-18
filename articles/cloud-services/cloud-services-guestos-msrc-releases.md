@@ -10,14 +10,14 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 11/13/2020
+ms.date: 11/17/2020
 ms.author: yohaddad
-ms.openlocfilehash: 8919ae8f43cd699b0ff79afc7ac39cbb39d2798e
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 5a5e448660583204d424358e571c4bfb74890e8d
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94626753"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94737826"
 ---
 # <a name="azure-guest-os"></a>Azure-gast besturingssysteem
 In de volgende tabellen ziet u de micro soft Security Response Center-updates (MSRC) die zijn toegepast op het Azure-gast besturingssysteem. Zoek in dit artikel om te bepalen of een bepaalde update van toepassing is op het gast besturingssysteem dat u gebruikt. Updates worden altijd uitgevoerd voor de desbetreffende [familie][family-explain] waarin ze zijn geïntroduceerd.
@@ -78,34 +78,31 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 
 
 ## <a name="october-2020-guest-os"></a>2020-gast besturingssysteem van oktober
->[!NOTE] 
-
->Het besturings systeem van oktober gast wordt momenteel geïmplementeerd naar Cloud service-Vm's die zijn geconfigureerd voor automatische updates. Wanneer de implementatie is voltooid, wordt deze versie beschikbaar gesteld voor hand matige updates via de Azure Portal-en configuratie bestanden. De volgende patches zijn opgenomen in het gast besturingssysteem van oktober. Deze lijst is onderhevig aan wijzigingen. 
 
 | Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
 | --- | --- | --- | --- | --- |
-|  Rel 20-10 |  [4577010]  |  Cumulatieve update voor IE | 2,103, 3,90, 4,83 | 8 sep 2020 |
-|  Rel 20-10 |  [4580325]  |  Flash-Update | 3,90, 4,83, 5,48, 6,24 | 13 oktober 2020 |
-|  Rel 20-10 |  [4577668]  |  Meest recente cumulatieve update | 6,24 | 13 oktober 2020 |
-|  Rel 20-10 |  [4580346]  |  Meest recente cumulatieve update | 5,48 | 13 oktober 2020 |
-|  Rel 20-10 |  [4580970]  |  Onderhouds stack-update | 2,103 | 13 oktober 2020 |
-|  Rel 20-10 |  [4580345]  |  Maandelijks samen vouwen | 2,103 | 13 oktober 2020 |
-|  Rel 20-10 |  [4578952]  |  .NET Framework 3.5.1-beveiliging en-kwaliteit samen vouwen | 2,103 | 13 oktober 2020 |
-|  Rel 20-10 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 2,103 | 13 oktober 2020 |
-|  Rel 20-10 |  [4566426]  |  Onderhouds stack-update | 3,90 | Jul 14, 2020 |
-|  Rel 20-10 |  [4580382]  |  Maandelijks samen vouwen | 3,90 | 13 oktober 2020 |
-|  Rel 20-10 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 3,90 | 13 oktober 2020 |
-|  Rel 20-10 |  [4578954]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 3,90 | 13 oktober 2020 |
-|  Rel 20-10 |  [4566425]  |  Onderhouds stack-update | 4,83 | Jul 14, 2020 |
-|  Rel 20-10 |  [4580347]  |  Maandelijks samen vouwen | 4,83 | 13 oktober 2020 |
-|  Rel 20-10 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 4,83 | 13 oktober 2020 |
-|  Rel 20-10 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 4,83 | 13 oktober 2020 |
-|  Rel 20-10 |  [4578013]  |  Zelfstandige beveiligings update | 4,83 | 19 augustus 2020 |
-|  Rel 20-10 |  [4576750]  |  Onderhouds stack-update | 5,48 | 8 sep 2020 |
-|  Rel 20-10 |  [4494175]  |  Micro | 5,48 | 1 sep, 2020 |
-|  Rel 20-10 |  [4577667]  |  Onderhouds stack-update | 6,24 | 13 oktober 2020 |
-|  Rel 20-10 |  [4578966]  |  Cumulatieve update van .NET Framework 3,5 en 4.7.2 | 6,24 | 13 oktober 2020 |
-|  Rel 20-10 |  [4494174]  |  Micro | 6,24 | 3 sep, 2020 |
+|  Rel 20-10 |  [4577010]  |  Cumulatieve update voor IE | [2,103], [3,90], [4,83] | 8 sep 2020 |
+|  Rel 20-10 |  [4580325]  |  Flash-Update | [3,90], [4,83], [5,48], [6,24] | 13 oktober 2020 |
+|  Rel 20-10 |  [4577668]  |  Meest recente cumulatieve update | [6,24] | 13 oktober 2020 |
+|  Rel 20-10 |  [4580346]  |  Meest recente cumulatieve update | [5,48] | 13 oktober 2020 |
+|  Rel 20-10 |  [4580970]  |  Onderhouds stack-update | [2,103] | 13 oktober 2020 |
+|  Rel 20-10 |  [4580345]  |  Maandelijks samen vouwen | [2,103] | 13 oktober 2020 |
+|  Rel 20-10 |  [4578952]  |  .NET Framework 3.5.1-beveiliging en-kwaliteit samen vouwen | [2,103] | 13 oktober 2020 |
+|  Rel 20-10 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | [2,103] | 13 oktober 2020 |
+|  Rel 20-10 |  [4566426]  |  Onderhouds stack-update | [3,90] | Jul 14, 2020 |
+|  Rel 20-10 |  [4580382]  |  Maandelijks samen vouwen | [3,90] | 13 oktober 2020 |
+|  Rel 20-10 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | [3,90] | 13 oktober 2020 |
+|  Rel 20-10 |  [4578954]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | [3,90] | 13 oktober 2020 |
+|  Rel 20-10 |  [4566425]  |  Onderhouds stack-update | [4,83] | Jul 14, 2020 |
+|  Rel 20-10 |  [4580347]  |  Maandelijks samen vouwen | [4,83] | 13 oktober 2020 |
+|  Rel 20-10 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | [4,83] | 13 oktober 2020 |
+|  Rel 20-10 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | [4,83] | 13 oktober 2020 |
+|  Rel 20-10 |  [4578013]  |  Zelfstandige beveiligings update | [4,83] | 19 augustus 2020 |
+|  Rel 20-10 |  [4576750]  |  Onderhouds stack-update | [5,48] | 8 sep 2020 |
+|  Rel 20-10 |  [4494175]  |  Micro | [5,48] | 1 sep, 2020 |
+|  Rel 20-10 |  [4577667]  |  Onderhouds stack-update | [6,24] | 13 oktober 2020 |
+|  Rel 20-10 |  [4578966]  |  Cumulatieve update van .NET Framework 3,5 en 4.7.2 | [6,24] | 13 oktober 2020 |
+|  Rel 20-10 |  [4494174]  |  Micro | [6,24] | 3 sep, 2020 |
 
 
 [4577010]: https://support.microsoft.com/kb/4577010
@@ -130,6 +127,11 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 [4577667]: https://support.microsoft.com/kb/4577667
 [4578966]: https://support.microsoft.com/kb/4578966
 [4494174]: https://support.microsoft.com/kb/4494174
+[2,103]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[3,90]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[4,83]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[5,48]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[6,24]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
 
 
 ## <a name="september-2020-guest-os"></a>September 2020-gast besturingssysteem
@@ -1885,7 +1887,7 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 | MS15-014 |[3004361] |Beveiligingslek in SMB kan leiden tot bypass van beveiligings functies |4,17, 3,24, 2,36 |N.v.t. |
 | MS15-015 |[3031432] |Beveiligings probleem in micro soft Windows kan leiden tot uitbrei ding van bevoegdheden |4,17, 3,24, 2,36 |N.v.t. |
 | MS15-016 |[3029944] |Beveiligings probleem in micro soft graphics component kan leiden tot vrijgeven van informatie |4,17, 3,24, 2,36 |N.v.t. |
-| N.v.t. |[3004375] |Update voor het verbeteren van de controle van Windows-opdracht regel<p/>**Opmerking** : dit is geïnstalleerd, maar de register sleutel om deze in te scha kelen is uitgeschakeld |4,17, 3,24, 2,36 |N.v.t. |
+| N.v.t. |[3004375] |Update voor het verbeteren van de controle van Windows-opdracht regel<p/>**Opmerking**: dit is geïnstalleerd, maar de register sleutel om deze in te scha kelen is uitgeschakeld |4,17, 3,24, 2,36 |N.v.t. |
 
 ## <a name="january-2015-guest-os"></a>Januari 2015-gast besturingssysteem
 | Bulletin-ID | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |

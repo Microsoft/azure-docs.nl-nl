@@ -1,7 +1,7 @@
 ---
-title: Migreren naar verbindings monitor (preview) van Netwerkprestatiemeter
+title: Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
 titleSuffix: Azure Network Watcher
-description: Meer informatie over hoe u kunt migreren naar verbindings monitor (preview) van Netwerkprestatiemeter.
+description: Meer informatie over het migreren naar verbindings monitor vanuit Netwerkprestatiemeter.
 services: network-watcher
 documentationcenter: na
 author: vinynigam
@@ -12,19 +12,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/20/2020
 ms.author: vinigam
-ms.openlocfilehash: dcbb82c1315e6150ddcfadbb52b2976447329b87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07194348e6f9f75953f33ffea95dece5f3831355
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441830"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701616"
 ---
-# <a name="migrate-to-connection-monitor-preview-from-network-performance-monitor"></a>Migreren naar verbindings monitor (preview) van Netwerkprestatiemeter
+# <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
 
-U kunt tests migreren van Netwerkprestatiemeter (NPM) naar een nieuwe, verbeterde verbindings monitor (preview) met één klik en met een downtime van nul. Zie [verbindings monitor (preview)](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview)voor meer informatie over de voor delen.
+U kunt tests migreren van Netwerkprestatiemeter (NPM) naar een nieuwe, verbeterde verbindings monitor met één klik en met een downtime van nul. Zie [verbindings monitor](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview)voor meer informatie over de voor delen.
 
 >[!NOTE]
-> Alleen tests van een service verbindings monitor kunnen worden gemigreerd naar de verbindings monitor (preview-versie).
+> Alleen tests van de service verbindings monitor kunnen worden gemigreerd naar de verbindings monitor.
 >
 
 ## <a name="key-points-to-note"></a>Belangrijkste punten om te noteren
@@ -32,11 +32,11 @@ U kunt tests migreren van Netwerkprestatiemeter (NPM) naar een nieuwe, verbeterd
 De migratie helpt de volgende resultaten te produceren:
 
 * On-premises agents en Firewall instellingen werken op dezelfde locatie. Er zijn geen wijzigingen vereist. Log Analytics agents die zijn geïnstalleerd op virtuele machines van Azure, moeten worden vervangen door de Network Watcher extensie.
-* Bestaande testen worden toegewezen aan de verbindings monitor (preview) > test groep > test-indeling. Als u **bewerken**selecteert, kunt u de eigenschappen van de nieuwe verbindings monitor (preview) bekijken en wijzigen, een sjabloon downloaden om wijzigingen aan te brengen en de sjabloon indienen via Azure Resource Manager.
+* Bestaande testen worden toegewezen aan de verbindings monitor > test groep > test-indeling. Als u **bewerken** selecteert, kunt u de eigenschappen van de nieuwe verbindings monitor weer geven en wijzigen, een sjabloon downloaden om deze wijzigingen aan te brengen en de sjabloon indienen via Azure Resource Manager.
 * Agents verzenden gegevens naar de Log Analytics-werk ruimte en de metrieken.
 * Gegevens bewaking:
    * **Gegevens in log Analytics**: vóór de migratie blijven de gegevens in de werk ruimte waarin NPM is geconfigureerd in de tabel NetworkMonitoring. Na de migratie worden de gegevens verplaatst naar de tabel NetworkMonitoring en de tabel ConnectionMonitor_CL in dezelfde werk ruimte. Nadat de tests zijn uitgeschakeld in NPM, worden de gegevens alleen opgeslagen in de tabel ConnectionMonitor_CL.
-   * **Waarschuwingen op basis van Logboeken, Dash boards en integraties**: u moet de query's hand matig bewerken op basis van de nieuwe ConnectionMonitor_CL tabel. Zie [netwerk connectiviteit controleren met verbindings monitor (preview)](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#metrics-in-azure-monitor)als u de waarschuwingen in metrische gegevens opnieuw wilt maken.
+   * **Waarschuwingen op basis van Logboeken, Dash boards en integraties**: u moet de query's hand matig bewerken op basis van de nieuwe ConnectionMonitor_CL tabel. Zie [netwerk connectiviteit controleren met verbindings monitor](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#metrics-in-azure-monitor)als u de waarschuwingen in metrische gegevens opnieuw wilt maken.
     
 ## <a name="prerequisites"></a>Vereisten
 
@@ -45,11 +45,11 @@ De migratie helpt de volgende resultaten te produceren:
 
 ## <a name="migrate-the-tests"></a>De tests migreren
 
-Ga als volgt te werk om de tests te migreren van Netwerkprestatiemeter naar verbindings monitor (preview):
+Ga als volgt te werk om de tests te migreren van Netwerkprestatiemeter naar verbindings monitor:
 
-1. Selecteer in Network Watcher **verbindings monitor**en selecteer vervolgens het tabblad **tests migreren van NPM** . 
+1. Selecteer in Network Watcher **verbindings monitor** en selecteer vervolgens het tabblad **tests migreren van NPM** . 
 
-    ![Scherm opname van het deel venster ' tests migreren van NPM ' in Network Watcher | Verbindings monitor (preview-versie).](./media/connection-monitor-2-preview/migrate-npm-to-cm-preview.png)
+    ![Scherm opname van het deel venster ' tests migreren van NPM ' in Network Watcher | Verbindings monitor.](./media/connection-monitor-2-preview/migrate-npm-to-cm-preview.png)
     
 1. Selecteer uw abonnement en werk ruimte in de vervolg keuzelijst en selecteer vervolgens de NPM-functie die u wilt migreren. Op dit moment kunt u alleen testen migreren vanuit de service verbindings monitor.  
 1. Selecteer **importeren** om de tests te migreren.
@@ -60,9 +60,9 @@ Nadat de migratie is gestart, worden de volgende wijzigingen doorgevoerd:
    * Bewakings gegevens worden nu opgeslagen in dezelfde Log Analytics werk ruimte waarin NPM is ingeschakeld, in een nieuwe tabel met de naam Connectionmonitor_CL. 
    * De test naam wordt getransporteerd als de naam van de test groep. De beschrijving van de test wordt niet gemigreerd.
    * De bron-en doel-eind punten worden gemaakt en gebruikt in de nieuwe test groep. Voor on-premises agents worden de eind punten opgemaakt als `<workspaceName>_"endpoint"_<FQDN of on-premises machine>` . Als de migratie tests agents bevatten die niet worden uitgevoerd in azure, moet u de agents inschakelen en opnieuw migreren.
-   * De doel poort en het probing-interval worden verplaatst naar een test configuratie met de naam *TC_ \<testname> * en *TC_ \<testname> _AppThresholds*. Het protocol wordt ingesteld op basis van de poort waarden. De drempel waarden voor geslaagde pogingen en andere optionele eigenschappen blijven leeg.
+   * De doel poort en het probing-interval worden verplaatst naar een test configuratie met de naam *TC_ \<testname>* en *TC_ \<testname> _AppThresholds*. Het protocol wordt ingesteld op basis van de poort waarden. De drempel waarden voor geslaagde pogingen en andere optionele eigenschappen blijven leeg.
 * NPM is niet uitgeschakeld, dus de gemigreerde tests kunnen gegevens blijven verzenden naar de NetworkMonitoring en ConnectionMonitor_CL tabellen. Deze aanpak zorgt ervoor dat bestaande waarschuwingen en integraties op basis van het logboek niet worden beïnvloed.
-* De zojuist gemaakte verbindings monitor is zichtbaar in de verbindings monitor (preview).
+* De zojuist gemaakte verbindings monitor is zichtbaar in de verbindings monitor.
 
 Na de migratie, moet u het volgende doen:
 * Schakel de tests in NPM hand matig uit. Totdat u dit doet, worden er nog steeds kosten in rekening gebracht. 
@@ -72,6 +72,6 @@ Na de migratie, moet u het volgende doen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over verbindings monitor (preview):
-* [Migreren van verbindings monitor naar verbindings monitor (preview-versie)](migrate-to-connection-monitor-preview-from-connection-monitor.md)
-* [Verbindings monitor (preview-versie) maken met behulp van de Azure Portal](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview-create-using-portal)
+Zie voor meer informatie over verbindings monitor:
+* [Migreren van verbindings monitor naar verbindings monitor](migrate-to-connection-monitor-preview-from-connection-monitor.md)
+* [Verbindings monitor maken met behulp van de Azure Portal](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview-create-using-portal)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: 84db7f58c292cf0a9d01cf90da4b847691f601fb
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 0c1e84695ce40b489fb1005325d501ea241cdaf1
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491627"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94738098"
 ---
 # <a name="monitoring-azure-virtual-machines-with-azure-monitor"></a>Virtuele Azure-machines bewaken met Azure Monitor
 In dit artikel wordt beschreven hoe u Azure Monitor kunt gebruiken om bewakings gegevens van virtuele Azure-machines te verzamelen en analyseren om hun status te behouden. Virtuele machines kunnen worden bewaakt voor Beschik baarheid en prestaties met Azure Monitor zoals elke [andere Azure-resource](monitor-azure-resource.md), maar ze zijn uniek van andere resources, aangezien u ook de gast besturingssystemen en het systeem en de werk belastingen die hierop worden uitgevoerd, moet bewaken. 
@@ -207,7 +207,7 @@ Als u bijvoorbeeld een waarschuwing wilt maken waarmee wordt gecontroleerd of vi
 
 ```kusto
 Heartbeat
-| where TimeGenerated < ago(10m)
+| where TimeGenerated > ago(10m)
 | where ResourceGroup == "my-resource-group"
 | summarize max(TimeGenerated) by Computer
 ```
@@ -218,7 +218,7 @@ Als u een waarschuwing wilt maken als er een uitzonderlijk aantal mislukte aanme
 
 ```kusto
 Event
-| where TimeGenerated < ago(1hr)
+| where TimeGenerated > ago(1hr)
 | where EventID == 4625
 ```
 

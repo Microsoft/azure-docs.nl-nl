@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: bde95006865a2aab2da4a5d6d27ccccc14d74d12
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 8e12a74ee689ba7b013b1c4a6881deac78680be0
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408919"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701045"
 ---
 # <a name="security-control-v2-data-protection"></a>Beveiligings controle v2: gegevens beveiliging
 
@@ -34,9 +34,9 @@ U kunt Azure SQL Information Protection gebruiken om te helpen bij het classific
 
 - [Azure SQL-gegevens detectie implementeren](../../azure-sql/database/data-discovery-and-classification-overview.md)
 
-**Verantwoordelijkheid** : gedeeld
+**Verantwoordelijkheid**: gedeeld
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)  
 
@@ -50,19 +50,19 @@ U kunt Azure SQL Information Protection gebruiken om te helpen bij het classific
 |--|--|--|--|
 | DP-2 | 13,2, 2,10 | SC-7, AC-4 |
 
-Beveilig gevoelige gegevens door de toegang te beperken met behulp van Azure Role based Access Control (Azure RBAC), op netwerk gebaseerde toegangs beheer functies en specifieke besturings elementen in Azure-Services (zoals versleuteling in SQL en andere data bases). 
+Beveilig gevoelige gegevens door de toegang te beperken met behulp van Azure RBAC (op rollen gebaseerd toegangs beheer), op netwerk gebaseerde toegangs controle en specifieke besturings elementen in Azure-Services (zoals versleuteling in SQL en andere data bases). 
 
 Om ervoor te zorgen dat het toegangs beheer consistent is, moeten alle typen toegangs beheer worden afgestemd op de strategie van uw bedrijfs segmentatie. De strategie voor bedrijfs segmentatie moet ook worden geïnformeerd over de locatie van gevoelige of bedrijfs kritieke gegevens en systemen.
 
 Voor het onderliggende platform, dat wordt beheerd door micro soft, behandelt micro soft alle klant inhoud als gevoelig en bescherming tegen verlies en bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure beveiligd blijven, heeft micro soft enkele standaard besturings elementen voor gegevens bescherming geïmplementeerd.
 
-- [Access Control op basis van Azure Role (RBAC)](../../role-based-access-control/overview.md)
+- [Azure RBAC (op rollen gebaseerd toegangsbeheer van Azure)](../../role-based-access-control/overview.md)
 
 - [Informatie over beveiliging van klanten in azure](../fundamentals/protection-customer-data.md)
 
-**Verantwoordelijkheid** : gedeeld
+**Verantwoordelijkheid**: gedeeld
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
 
@@ -88,9 +88,9 @@ Als dat nodig is voor de naleving van preventie van gegevens verlies (DLP), kunt
 
 - [Azure Storage ATP inschakelen](../../storage/common/azure-defender-storage-configure.md?tabs=azure-security-center)
 
-**Verantwoordelijkheid** : gedeeld
+**Verantwoordelijkheid**: gedeeld
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Beveiligings bewerkingen](/azure/cloud-adoption-framework/organize/cloud-security) 
 
@@ -116,9 +116,9 @@ Azure biedt standaard versleuteling voor gegevens in transit tussen Azure-data c
 
 - [Dubbele versleuteling voor Azure-gegevens in transit](../fundamentals/double-encryption.md#data-in-transit)
 
-**Verantwoordelijkheid** : gedeeld
+**Verantwoordelijkheid**: gedeeld
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Beveiligingsarchitectuur](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 
@@ -146,9 +146,9 @@ Azure biedt standaard versleuteling voor Data-at-rest. Voor zeer gevoelige gegev
 
 - [Gegevens bij dubbele versleuteling in de rest van Azure](../fundamentals/double-encryption.md#data-at-rest)
 
-**Verantwoordelijkheid** : gedeeld
+**Verantwoordelijkheid**: gedeeld
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Beveiligingsarchitectuur](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 

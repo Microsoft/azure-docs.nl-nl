@@ -1,26 +1,24 @@
 ---
 title: Beoordeling van ML-modellen verdeling in python (preview-versie)
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het beoordelen van de verdeling van uw modellen in Azure Machine Learning
+description: Meer informatie over het beoordelen en beperken van de verdeling van uw machine learning-modellen met behulp van Fairlearn en de Azure Machine Learning python SDK.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.author: mesameki
 author: mesameki
 ms.reviewer: luquinta
-ms.date: 09/01/2020
+ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: bf819e5cff8c6ef008b0e55e156ba3531936b489
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 3fbd4990fd330960bb8dbce2e2a8d1bcb578cf2a
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337879"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701181"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Gebruik Azure Machine Learning met het open-source pakket Fairlearn om de verdeling van ML-modellen te beoordelen (preview-versie)
-
-
 
 In deze hand leiding vindt u informatie over het gebruik van het [Fairlearn](https://fairlearn.github.io/) open-source python-pakket met Azure machine learning om de volgende taken uit te voeren:
 
@@ -306,7 +304,7 @@ Als u geïnteresseerd bent in het vergelijken van meerdere modellen en u wilt zi
     ```
 
 
-    Net als bij de vorige sectie kunt u een van de hierboven beschreven paden volgen (via **experimenten** of **modellen** ) in azure machine learning Studio om toegang te krijgen tot het visualisatie dashboard en de twee modellen te vergelijken met de voor waarden van verdeling en prestaties.
+    Net als bij de vorige sectie kunt u een van de hierboven beschreven paden volgen (via **experimenten** of **modellen**) in azure machine learning Studio om toegang te krijgen tot het visualisatie dashboard en de twee modellen te vergelijken met de voor waarden van verdeling en prestaties.
 
 
 ## <a name="upload-unmitigated-and-mitigated-fairness-insights"></a>Niet-verholpen en verkleinde verdeling-inzichten uploaden

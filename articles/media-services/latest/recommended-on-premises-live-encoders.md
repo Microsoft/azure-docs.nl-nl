@@ -6,15 +6,15 @@ keywords: code ring; encoders; media
 author: johndeu
 manager: johndeu
 ms.author: johndeu
-ms.date: 08/31/2020
+ms.date: 11/10/2020
 ms.topic: conceptual
 ms.service: media-services
-ms.openlocfilehash: 3532032f8fd3ac6e673d3913fd13f7f83ae7759e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 88de41ae62e3a81fdb51981afe42135649bf34b4
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89295356"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734307"
 ---
 # <a name="verified-on-premises-live-streaming-encoders"></a>Geverifieerde on-premises live streaming encoders
 
@@ -22,7 +22,7 @@ ms.locfileid: "89295356"
 
 In Azure Media Services vertegenwoordigt een [live gebeurtenis](/rest/api/media/liveevents) (kanaal) een pijp lijn voor het verwerken van live-streaming-inhoud. De live-gebeurtenis ontvangt Live invoer stromen op een van de volgende twee manieren.
 
-* Een on-premises Live Encoder verzendt een gegevensgestuurde multi-bitrate RTMP-of Smooth Streaming (gefragmenteerde MP4)-stream naar de live gebeurtenis die niet is ingeschakeld voor het uitvoeren van Live code ring met Media Services. De opgenomen streams passeren Live gebeurtenissen zonder verdere verwerking. Deze methode wordt **Pass-Through**genoemd. We raden u aan om met het Live coderings programma multi-bitrate streams te verzenden in plaats van een single-bitrate stream naar een Pass-through live-gebeurtenis om Adaptive Bitrate Streaming toe te staan aan de client. 
+* Een on-premises Live Encoder verzendt een gegevensgestuurde multi-bitrate RTMP-of Smooth Streaming (gefragmenteerde MP4)-stream naar de live gebeurtenis die niet is ingeschakeld voor het uitvoeren van Live code ring met Media Services. De opgenomen streams passeren Live gebeurtenissen zonder verdere verwerking. Deze methode wordt **Pass-Through** genoemd. We raden u aan om met het Live coderings programma multi-bitrate streams te verzenden in plaats van een single-bitrate stream naar een Pass-through live-gebeurtenis om Adaptive Bitrate Streaming toe te staan aan de client. 
 
     Als u multi-bitrate streams gebruikt voor de Pass-through live-gebeurtenis, moeten de grootte van de video-GOP terug en de video fragmenten op verschillende bitsnelheden worden gesynchroniseerd om onverwacht gedrag bij het afspelen te voor komen.
 
@@ -50,6 +50,7 @@ Bij het streamen via RTMPS controleert u de instellingen voor de firewall en/of 
 > Encoders moeten TLS 1,2 ondersteunen bij het gebruik van de RTMP-protocollen.
 
 - Adobe Flash Media Live Encoder 3.2
+- [Anti-Digital](http://www.antixdigital.com/) Live StreamZ (voorheen SelenioFlex Live)
 - [Blackmagic ATEM mini-en ATEM mini PRO](https://www.blackmagicdesign.com/products/atemmini)
 - [Cambria Live 4,3](https://www.capellasystems.net/products/cambria-live/)
 - Elementair Live (versie 2.14.15 en hoger)
@@ -78,11 +79,11 @@ Media Services raadt u aan om een van de volgende Live coderings Programma's te 
 > Encoders moeten TLS 1,2 ondersteunen bij het gebruik van HTTPS-protocollen.
 
 - Ateme TITAN Live
+- [Anti-Digital](http://www.antixdigital.com/) Live StreamZ (voorheen SelenioFlex Live)
 - Cisco Digital Media Encoder 2200
 - Elementaire Live (versie 2.14.15 en hoger vanwege de TLS 1,2-vereiste)
 - Envivio 4Caster C4 Gen III 
 - [Ffmpeg](https://www.ffmpeg.org)
-- Denk aan de communicatie selenio MCP3
 - Media Excel Hero Live en Hero 4K (UHD/HEVC)
 
 > [!TIP]

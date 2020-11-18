@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: babd40e0e3a3b7a254a8410313c5d4e3bb2832f0
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 26e30b42906a3d8d7a3fcdc013537104a85f32fe
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686771"
+ms.locfileid: "94701854"
 ---
 # <a name="java-code-samples-for-azure-cognitive-search"></a>Java-code voorbeelden voor Azure Cognitive Search
 
@@ -47,5 +47,5 @@ De volgende voor beelden hebben een bijbehorend artikel in [Azure Cognitive Sear
 
 | Voorbeelden | Beschrijving | 
 |---------|-------------|
-| [Snelstartgids](https://github.com/Azure-Samples/azure-search-java-samples/tree/master/Quickstart) | Bron code voor [Quick Start: Maak een zoek index](search-get-started-javascript.md). In dit voor beeld worden de REST-Api's aangeroepen. |
+| [Snelstartgids](https://github.com/Azure-Samples/azure-search-java-samples/tree/master/quickstart) | Bron code voor [Quick Start: een zoek index maken in Java](search-get-started-java.md). In dit voor beeld worden de REST-Api's aangeroepen. |
 | [Search-java-indexer-demo](https://github.com/Azure-Samples/azure-search-java-samples/tree/master/search-java-indexer-demo) | Toont een Azure Cosmos DB Indexeer functie in Java. In dit voor beeld worden de REST-Api's aangeroepen. |

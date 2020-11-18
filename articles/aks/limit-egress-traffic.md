@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: jpalma
 ms.date: 11/09/2020
 author: palma21
-ms.openlocfilehash: e3b755ca3ca5338acfc1918bd2085d9fba18b8ac
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: a1d045e66771026d2b4cf7ad44fd6943d2d407f4
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380208"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701599"
 ---
 # <a name="control-egress-traffic-for-cluster-nodes-in-azure-kubernetes-service-aks"></a>Uitgaand verkeer beheren voor cluster knooppunten in azure Kubernetes service (AKS)
 
@@ -209,8 +209,10 @@ De volgende FQDN/toepassings regels zijn vereist voor AKS-clusters waarvoor de A
 
 | FQDN                                          | Poort      | Gebruik      |
 |-----------------------------------------------|-----------|----------|
-| **`gov-prod-policy-data.trafficmanager.net`** | **`HTTPS:443`** | Dit adres wordt gebruikt voor een juiste werking van Azure Policy. (momenteel als preview-versie in AKS) |
-| **`raw.githubusercontent.com`**               | **`HTTPS:443`** | Dit adres wordt gebruikt om het ingebouwde beleid van GitHub te halen om te zorgen voor een juiste werking van Azure Policy. (momenteel als preview-versie in AKS) |
+| **`data.policy.core.windows.net`** | **`HTTPS:443`** | Dit adres wordt gebruikt om het Kubernetes-beleid op te halen en de status van de cluster naleving te rapporteren aan de beleids service. |
+| **`store.policy.core.windows.net`** | **`HTTPS:443`** | Dit adres wordt gebruikt voor het ophalen van de gate keeper artefacten van ingebouwde beleids regels. |
+| **`gov-prod-policy-data.trafficmanager.net`** | **`HTTPS:443`** | Dit adres wordt gebruikt voor een juiste werking van Azure Policy.  |
+| **`raw.githubusercontent.com`**               | **`HTTPS:443`** | Dit adres wordt gebruikt om het ingebouwde beleid van GitHub te halen om te zorgen voor een juiste werking van Azure Policy. |
 | **`dc.services.visualstudio.com`**            | **`HTTPS:443`** | Azure Policy-invoeg toepassing waarmee telemetriegegevens worden verzonden naar het apps Insights-eind punt. |
 
 ## <a name="restrict-egress-traffic-using-azure-firewall"></a>Uitgaand verkeer beperken met behulp van Azure firewall

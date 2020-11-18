@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/15/2020
-ms.openlocfilehash: 3aa4a1917711f8997c282ba577c33e7a7f94472b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa7c06c3bad59bad11fa288631042cca86109706
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88932879"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701130"
 ---
 # <a name="create-a-basic-search-index-in-azure-cognitive-search"></a>Een eenvoudige zoek index maken in azure Cognitive Search
 
 In azure Cognitive Search slaat een *zoek index* Zoek bare inhoud op die wordt gebruikt voor volledige tekst en gefilterde query's. Een index wordt gedefinieerd door een schema en opgeslagen in de service, met het importeren van gegevens na een tweede stap. 
 
-Indexen bevatten *documenten*. Een document is conceptueel gezien een enkele eenheid van Doorzoek bare gegevens in uw index. Een detail handelaar kan voor elk product een document hebben, een nieuws organisatie heeft mogelijk een document voor elk artikel, enzovoort. Deze concepten toewijzen aan meer vertrouwde database equivalenten: een *zoek index* is gelijk aan een *tabel*en *documenten* zijn ongeveer gelijk aan *rijen* in een tabel.
+Indexen bevatten *documenten*. Een document is conceptueel gezien een enkele eenheid van Doorzoek bare gegevens in uw index. Een detail handelaar kan voor elk product een document hebben, een nieuws organisatie heeft mogelijk een document voor elk artikel, enzovoort. Deze concepten toewijzen aan meer vertrouwde database equivalenten: een *zoek index* is gelijk aan een *tabel* en *documenten* zijn ongeveer gelijk aan *rijen* in een tabel.
 
 De fysieke structuur van een index wordt bepaald door het schema, met velden die zijn gemarkeerd als doorzoekbaar, wat resulteert in een omgekeerde index die voor dat veld is gemaakt. 
 
@@ -37,7 +37,7 @@ Het aankomen van een laatste index ontwerp is een iteratief proces. Het is gebru
 
 1. Bepaal of u [**import gegevens**](search-import-data-portal.md)kunt gebruiken. De wizard voert alles-in-één indexering op basis van Indexeer functie uit als de bron gegevens afkomstig zijn uit een [ondersteund gegevens bron type in azure](search-indexer-overview.md#supported-data-sources).
 
-1. Als u geen **import gegevens**kunt gebruiken, begint u met **index toevoegen** om het schema te definiëren.
+1. Als u geen **import gegevens** kunt gebruiken, begint u met **index toevoegen** om het schema te definiëren.
 
    ![Opdracht index toevoegen](media/search-what-is-an-index/add-index.png "Opdracht index toevoegen")
 
@@ -59,7 +59,7 @@ Het aankomen van een laatste index ontwerp is een iteratief proces. Het is gebru
 
    ![Index pagina met kenmerken op gegevens type toevoegen](media/search-what-is-an-index//field-definitions.png "Index pagina met kenmerken op gegevens type toevoegen")
 
-1. Down load het index schema met [Get index (rest API)](/rest/api/searchservice/get-index) en een hulp programma voor het testen van webtoepassingen zoals in het [bericht](search-get-started-postman.md). U hebt nu een JSON-weer gave van de index die u kunt aanpassen voor code.
+1. Down load het index schema met [Get index (rest API)](/rest/api/searchservice/get-index) en een hulp programma voor het testen van webtoepassingen zoals in het [bericht](search-get-started-rest.md). U hebt nu een JSON-weer gave van de index die u kunt aanpassen voor code.
 
 1. [Laad uw index met gegevens](search-what-is-data-import.md). Azure Cognitive Search accepteert JSON-documenten. Als u gegevens wilt laden via een programma, kunt u postman gebruiken met JSON-documenten in de aanvraag lading. Als uw gegevens niet eenvoudig kunnen worden uitgedrukt als JSON, is deze stap het meest arbeids intensief. 
 
@@ -70,7 +70,7 @@ Het aankomen van een laatste index ontwerp is een iteratief proces. Het is gebru
 Plan tijdens de ontwikkeling regel matig opnieuw samen stellen. Omdat fysieke structuren in de service zijn gemaakt, is het [verwijderen en opnieuw maken van indexen](search-howto-reindex.md) nood zakelijk voor de meeste wijzigingen in een bestaande veld definitie. U kunt ook met een subset van uw gegevens werken om het opnieuw opbouwen sneller te laten verlopen. 
 
 > [!Tip]
-> Code in plaats van een portal-benadering wordt aanbevolen voor het samen werken aan index ontwerp en het importeren van gegevens. Als alternatief kunt u hulpprogram ma's zoals [postman en de rest API](search-get-started-postman.md) nuttig vinden bij het testen van het haalbaarheids test wanneer ontwikkel projecten nog steeds in vroege fasen zijn. U kunt incrementele wijzigingen aanbrengen in een index definitie in een aanvraag tekst en vervolgens de aanvraag verzenden naar uw service om een index opnieuw te maken met behulp van een bijgewerkt schema.
+> Code in plaats van een portal-benadering wordt aanbevolen voor het samen werken aan index ontwerp en het importeren van gegevens. Als alternatief kunt u hulpprogram ma's zoals [postman en Visual Studio code](search-get-started-rest.md) nuttig vinden bij het testen van de test omgeving wanneer ontwikkel projecten nog steeds in vroege fasen zijn. U kunt incrementele wijzigingen aanbrengen in een index definitie in een aanvraag tekst en vervolgens de aanvraag verzenden naar uw service om een index opnieuw te maken met behulp van een bijgewerkt schema.
 
 ## <a name="index-schema"></a>Index schema
 
@@ -238,7 +238,7 @@ Een standaard Score profiel werkt achter de schermen om een zoek score te bereke
 
 De grootte van een index wordt bepaald door de grootte van de documenten die u uploadt, plus de index configuratie, zoals of u Voorst Ellen opneemt en hoe u kenmerken instelt voor afzonderlijke velden. 
 
-In de volgende scherm afbeelding ziet u de index opslag patronen die voortkomen uit verschillende combi Naties van kenmerken. De index is gebaseerd op de voor **beeld-index**van onroerend goed, die u eenvoudig kunt maken met behulp van de wizard gegevens importeren. Hoewel de index schema's niet worden weer gegeven, kunt u de kenmerken afleiden op basis van de naam van de index. *Realestate-Doorzoek bare* index kan bijvoorbeeld het kenmerk doorzoekbaar hebben geselecteerd en niets anders, de index die *realestate* kan worden opgehaald, is geselecteerd en niets anders, enzovoort.
+In de volgende scherm afbeelding ziet u de index opslag patronen die voortkomen uit verschillende combi Naties van kenmerken. De index is gebaseerd op de voor **beeld-index** van onroerend goed, die u eenvoudig kunt maken met behulp van de wizard gegevens importeren. Hoewel de index schema's niet worden weer gegeven, kunt u de kenmerken afleiden op basis van de naam van de index. *Realestate-Doorzoek bare* index kan bijvoorbeeld het kenmerk doorzoekbaar hebben geselecteerd en niets anders, de index die *realestate* kan worden opgehaald, is geselecteerd en niets anders, enzovoort.
 
 ![Index grootte op basis van kenmerk selectie](./media/search-what-is-an-index/realestate-index-size.png "Index grootte op basis van kenmerk selectie")
 

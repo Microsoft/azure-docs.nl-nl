@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: 6cd696bf0853b1e6bafc06f2e99b2808970fed25
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 6bcdb4a48f71e28514229116c10bd25747b55616
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686724"
+ms.locfileid: "94701820"
 ---
 # <a name="javascript-code-samples-for-azure-cognitive-search"></a>Java script-code voorbeelden voor Azure Cognitive Search
 
@@ -38,7 +38,7 @@ De Azure SDK voor Java bevat talloze voor beelden en een aan de slag- [pagina](h
 | [Indexeer functies](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/javascript/src/indexers) |  Demonstreert hoe [Indexeer functies](search-indexer-overview.md)maken, bijwerken, ophalen, weer geven, opnieuw instellen en verwijderen.|
 | [Vaardig heden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/javascript/src/skillSets) |   Demonstreert hoe u [vaardig heden](cognitive-search-working-with-skillsets.md) kunt maken, bijwerken, ophalen, weer geven en verwijderen die zijn gekoppeld aan Indexeer functies en die op AI gebaseerde verrijking uitvoeren tijdens het indexeren. |
 | [synonymMaps](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/javascript/src/synonymMaps) | Laat zien hoe u [synoniemen kaarten](search-synonyms.md)kunt maken, bijwerken, ophalen, weer geven en verwijderen.  |
-| [Query's](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/javascript/src/readonlyQuery.js) | Query's zijn alleen-lezen. Deze voorbeeld query wordt uitgevoerd op een open bare index die wordt gehost door micro soft.  |
+| [Query's](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/javascript/src/readonlyQuery.js) | Demonstreert de uitvoering van query's op een open bare alleen-lezen index die wordt gehost door micro soft.  |
 
 ## <a name="typescript-samples"></a>TypeScript-voorbeelden
 
@@ -51,7 +51,7 @@ De SDK biedt ook type script-voor beelden, die hier worden weer gegeven voor uw 
 | [Indexeer functies](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/typescript/src/indexers) |  Demonstreert hoe [Indexeer functies](search-indexer-overview.md)maken, bijwerken, ophalen, weer geven, opnieuw instellen en verwijderen.|
 | [Vaardig heden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/typescript/src/skillSets) |   Demonstreert hoe u [vaardig heden](cognitive-search-working-with-skillsets.md) kunt maken, bijwerken, ophalen, weer geven en verwijderen die zijn gekoppeld aan Indexeer functies en die op AI gebaseerde verrijking uitvoeren tijdens het indexeren. |
 | [synonymMaps](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/samples/typescript/src/synonymMaps) | Laat zien hoe u [synoniemen kaarten](search-synonyms.md)kunt maken, bijwerken, ophalen, weer geven en verwijderen.  |
-| [Query's](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/typescript/src/readonlyQuery.js) | Demonstreert de uitvoering van query's op een open bare alleen-lezen index die wordt gehost door micro soft.  |
+| [Query's](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/typescript/src/readonlyQuery.ts) | Demonstreert de uitvoering van query's op een open bare alleen-lezen index die wordt gehost door micro soft.  |
 
 ## <a name="documentation-samples"></a>Documentatievoorbeelden
 
@@ -59,7 +59,7 @@ De volgende voor beelden hebben een bijbehorend artikel in [Azure Cognitive Sear
 
 | Voorbeelden | Beschrijving | 
 |---------|-------------|
-| [Snelstartgids](https://github.com/Azure-Samples/azure-search-javascript-samples/tree/master/Quickstart) | Bron code voor [Quick Start: een zoek index maken in Java script](search-get-started-javascript.md).  |
+| [Snelstartgids](https://github.com/Azure-Samples/azure-search-javascript-samples/tree/master/quickstart/v11) | Bron code voor [Quick Start: een zoek index maken in Java script](search-get-started-javascript.md).  |
 
 ## <a name="standalone-samples"></a>Zelfstandige voor beelden
 

@@ -6,19 +6,19 @@ ms.author: flborn
 ms.date: 02/07/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a193fdf82ed5e9a785c6c01db4931fb05e9aaac7
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 58c07654c174f5b94512574cb4c279d35897dc71
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205741"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701939"
 ---
 # <a name="sky-reflections"></a>Luchtreflecties
 
 In azure rendering op afstand wordt een hemel patroon gebruikt om objecten realistisch te lichten. Voor uitgebreide Reality-toepassingen moet dit patroon eruitzien als uw echte omgeving, om ervoor te zorgen dat objecten overtuigend worden weer gegeven. In dit artikel wordt beschreven hoe u het patroon van de lucht wijzigt.
 
 > [!NOTE]
-> Het lucht patroon wordt ook wel een *omgevings kaart*genoemd. Deze voor waarden worden door elkaar gebruikt.
+> Het lucht patroon wordt ook wel een *omgevings kaart* genoemd. Deze voor waarden worden door elkaar gebruikt.
 
 ## <a name="object-lighting"></a>Object verlichting
 
@@ -146,4 +146,3 @@ Externe rendering van Azure biedt een aantal ingebouwde omgevings kaarten die al
 * [Lampen](../../overview/features/lights.md)
 * [Materialen](../../concepts/materials.md)
 * [Patronen](../../concepts/textures.md)
-* [Het opdracht regel programma TexConv](../../resources/tools/tex-conv.md)

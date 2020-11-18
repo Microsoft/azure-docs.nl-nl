@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/25/2020
-ms.openlocfilehash: d41146b01b6b81804cdba31fbbf2541ba7ae0f03
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: a3c44d667b6baaf16e109dfb88c22c16a1ea2ce1
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372370"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697200"
 ---
 # <a name="how-to-index-json-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>JSON-blobs indexeren met behulp van een BLOB-Indexeer functie in azure Cognitive Search
 
@@ -53,7 +53,7 @@ Op de pagina **gegevens bron** moet de bron **Azure Blob Storage** zijn, met de 
 
 + **Te extra heren gegevens** moeten *inhoud en meta gegevens* zijn. Als u deze optie kiest, kan de wizard een index schema afleiden en de velden voor importeren toewijzen.
    
-+ De **parserings modus** moet worden ingesteld op *JSON* , *JSON-matrix* of JSON- *lijnen*. 
++ De **parserings modus** moet worden ingesteld op *JSON*, *JSON-matrix* of JSON- *lijnen*. 
 
   *JSON* -gelet elke BLOB als één Zoek document, die als een onafhankelijk item in de zoek resultaten wordt weer gegeven. 
 
@@ -108,7 +108,7 @@ U kunt de REST API gebruiken voor het indexeren van JSON-blobs, het volgen van e
 
 Aan het einde van deze sectie kunt u de code van de [rest-voorbeeld](#rest-example) weergave bekijken, waarin wordt uitgelegd hoe u alle drie de objecten maakt. Deze sectie bevat ook informatie over [JSON-parserings modi](#parsing-modes), [één BLOB](#parsing-single-blobs), [JSON-matrices](#parsing-arrays)en [geneste matrices](#nested-json-arrays).
 
-Voor op code gebaseerde JSON-indexering gebruikt u [postman](search-get-started-postman.md) en de rest API om deze objecten te maken:
+Voor op code gebaseerde JSON-indexering gebruikt u [postman of Visual Studio code](search-get-started-rest.md) en de rest API om deze objecten te maken:
 
 + [TabIndex](/rest/api/searchservice/create-index)
 + [gegevens bron](/rest/api/searchservice/create-data-source)
@@ -126,7 +126,7 @@ JSON-blobs in Azure Blob-opslag zijn meestal één JSON-document of een JSON-mat
 
 ### <a name="1---assemble-inputs-for-the-request"></a>1-invoer voor de aanvraag samen stellen
 
-Voor elke aanvraag moet u de service naam en de beheerders sleutel voor Azure Cognitive Search (in de kop POST) en de naam en sleutel van het opslag account voor de Blob-opslag opgeven. U kunt [postman](search-get-started-postman.md) gebruiken om HTTP-aanvragen te verzenden naar Azure Cognitive Search.
+Voor elke aanvraag moet u de service naam en de beheerders sleutel voor Azure Cognitive Search (in de kop POST) en de naam en sleutel van het opslag account voor de Blob-opslag opgeven. U kunt een [Web-API-test programma](search-get-started-rest.md) gebruiken om HTTP-aanvragen te verzenden naar Azure Cognitive Search.
 
 Kopieer de volgende vier waarden naar Klad blok, zodat u ze in een aanvraag kunt plakken:
 

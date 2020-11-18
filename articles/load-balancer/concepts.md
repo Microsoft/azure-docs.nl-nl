@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/13/2020
 ms.author: allensu
-ms.openlocfilehash: 28c3e4ade2c78a1a77ef7263463803e40727ba8f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 3f8c288f950f34e1764c50e8eb74a8a73b39b3d7
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92315312"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698526"
 ---
 # <a name="azure-load-balancer-algorithm"></a>Algoritme voor Azure Load Balancer
 
@@ -63,4 +63,4 @@ Load Balancer communiceert niet rechtstreeks met TCP of UDP of met de toepassing
 - Meer informatie over [Azure Load Balancer](load-balancer-overview.md).
 - Meer informatie over [Statuscontroles](load-balancer-custom-probe-overview.md).
 - Meer informatie over [Diagnostische tests van Standard Load Balancer](load-balancer-standard-diagnostics.md).
-- Meer informatie over [Netwerkbeveiligingsgroepen](../virtual-network/security-overview.md).
+- Meer informatie over [Netwerkbeveiligingsgroepen](../virtual-network/network-security-groups-overview.md).

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: 10c7d4146d61f5b589b29bc8faad5fa8e60a293a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae8fd7f405beb20d516835ccb80b86e769fd0393
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88924024"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697081"
 ---
 # <a name="how-to-rebuild-an-index-in-azure-cognitive-search"></a>Een index opnieuw samen stellen in azure Cognitive Search
 
@@ -91,7 +91,7 @@ Wanneer u de index laadt, wordt de omgekeerde index van elk veld gevuld met alle
 
 Zodra het eerste document is geladen, kunt u beginnen met het uitvoeren van een query op een index. Als u de ID van een document kent, retourneert het [opzoek document rest API](/rest/api/searchservice/lookup-document) het specifieke document. Voor uitgebreid testen moet u wachten tot de index volledig is geladen en vervolgens query's gebruiken om de context te controleren die u verwacht te zien.
 
-U kunt [Search Explorer](search-explorer.md) of een hulp programma voor het testen van webtoepassingen gebruiken, zoals [na](search-get-started-postman.md) het controleren op bijgewerkte inhoud.
+U kunt [Search Explorer](search-explorer.md) of een hulp programma voor het testen van webtoepassingen zoals [postman of Visual Studio code](search-get-started-rest.md) gebruiken om te controleren op bijgewerkte inhoud.
 
 Als u een veld hebt toegevoegd of een andere naam hebt gegeven, gebruikt u [$Select](search-query-odata-select.md) om dat veld te retour neren: `search=*&$select=document-id,my-new-field,some-old-field&$count=true`
 

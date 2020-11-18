@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: e2c6f627c69316b8f146d3ac82b8d29801ec3902
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 834e4fe8c7b3923f40a07c02c0310200db222308
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91740680"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697251"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Een eenvoudige query maken in azure Cognitive Search
 
@@ -27,13 +27,13 @@ Een alternatieve query syntaxis is [volledige lucene](query-lucene-syntax.md), w
 
 De volgende voor beelden maken gebruik van een NYC-zoek index voor taken die bestaat uit taken die beschikbaar zijn op basis van een gegevensset die wordt verschaft door de [stad New York open data](https://nycopendata.socrata.com/) Initiative. Deze gegevens mogen niet als actueel of volledig worden beschouwd. De index bevindt zich op een sandbox-service van micro soft. Dit betekent dat u geen Azure-abonnement of Azure Cognitive Search nodig hebt om deze query's uit te proberen.
 
-Wat u nodig hebt, is postman of een gelijkwaardig hulp programma voor het uitgeven van een HTTP-aanvraag op GET. Zie voor meer informatie [Quick Start: Verken Azure Cognitive Search rest API met behulp van Postman](search-get-started-postman.md).
+Wat u nodig hebt, is postman of een gelijkwaardig hulp programma voor het uitgeven van een HTTP-aanvraag op GET. Zie voor meer informatie [Quick Start: Verken Azure Cognitive Search rest API](search-get-started-rest.md).
 
 ### <a name="set-the-request-header"></a>De aanvraag header instellen
 
 1. Stel in de aanvraag header het **inhouds type** in op `application/json` .
 
-2. Voeg een **API-sleutel**toe en stel deze in op deze teken reeks: `252044BE3886FE4A8E3BAA4F595114BB` . Dit is een query sleutel voor de sandbox-zoek service die als host fungeert voor de index van de NYC-taken.
+2. Voeg een **API-sleutel** toe en stel deze in op deze teken reeks: `252044BE3886FE4A8E3BAA4F595114BB` . Dit is een query sleutel voor de sandbox-zoek service die als host fungeert voor de index van de NYC-taken.
 
 Nadat u de aanvraag header hebt opgegeven, kunt u deze opnieuw gebruiken voor alle query's in dit artikel, zodat alleen de teken reeks **Search =** wordt uitgewisseld. 
 
@@ -43,7 +43,7 @@ Nadat u de aanvraag header hebt opgegeven, kunt u deze opnieuw gebruiken voor al
 
 Request is een GET-opdracht die wordt gekoppeld aan een URL met het Azure Cognitive Search-eind punt en de zoek teken reeks.
 
-  :::image type="content" source="media/search-query-lucene-examples/postman-basic-url-request-elements.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/postman-basic-url-request-elements.png" alt-text="OPHALEN van header van Postman-aanvraag" border="false":::
 
 URL-samen stelling heeft de volgende elementen:
 
@@ -97,7 +97,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 Antwoord voor deze query moet er ongeveer uitzien als in de volgende scherm afbeelding.
 
-  :::image type="content" source="media/search-query-lucene-examples/postman-sample-results.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/postman-sample-results.png" alt-text="Postman-voorbeeld antwoord" border="false":::
 
 Mogelijk hebt u de zoek Score in het antwoord gezien. Een uniforme Score van 1 treedt op als er geen positie is, omdat de zoek opdracht niet in volledige tekst is gezocht, of omdat er geen criteria zijn toegepast. Voor Null-Zoek opdrachten zonder criteria worden rijen in een wille keurige volg orde weer gegeven. Wanneer u werkelijke criteria opneemt, ziet u dat zoek scores worden weer geven in betekenis volle waarden.
 
@@ -133,7 +133,7 @@ POST /indexes/nycjobs/docs/search?api-version=2020-06-30
 
 Samen gebruikt, wordt het filter eerst op de volledige index toegepast, waarna de zoek opdracht wordt uitgevoerd op de resultaten van het filter. Filters zijn dus nuttig om de resultaten van de zoekopdracht te verbeteren, doordat het aantal documenten dat moet worden doorzocht, wordt verminderd.
 
-  :::image type="content" source="media/search-query-simple-examples/filtered-query.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/filtered-query.png" alt-text="Query-antwoord filteren" border="false":::
 
 Als u dit in postman wilt proberen met behulp van GET, kunt u deze teken reeks plakken:
 
@@ -167,7 +167,7 @@ POST /indexes/nycjobs/docs/search?api-version=2020-06-30
       "count": "true"
     }
 ```
-  :::image type="content" source="media/search-query-simple-examples/rangefilternumeric.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/rangefilternumeric.png" alt-text="Bereik filter voor numerieke bereiken" border="false":::
 
 
 ```http
@@ -181,7 +181,7 @@ POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     }
 ```
 
-  :::image type="content" source="media/search-query-simple-examples/rangefiltertext.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/rangefiltertext.png" alt-text="Bereik filter voor tekstbereiken" border="false":::
 
 U kunt dit ook uitproberen in postman met GET:
 
@@ -251,14 +251,14 @@ Met behulp van de standaard Search mode (alle) worden de 2800-documenten geretou
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchMode=any&search="fire department"  -"Metrotech Center"
 ```
 
-  :::image type="content" source="media/search-query-simple-examples/searchmodeany.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/searchmodeany.png" alt-text="Zoek modus any" border="false":::
 
 Search mode wijzigen om `all` een cumulatief effect op criteria af te dwingen en een kleinere set resultaten te retour neren-21 documenten-die bestaan uit documenten met de volledige zin "brand Department", min die taken op het Metrotech Center-adres.
 
 ```http
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchMode=all&search="fire department"  -"Metrotech Center"
 ```
-  :::image type="content" source="media/search-query-simple-examples/searchmodeall.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-simple-examples/searchmodeall.png" alt-text="Zoek modus Alles" border="false":::
 
 ## <a name="example-8-structuring-results"></a>Voor beeld 8: resultaten structureren
 
@@ -295,6 +295,6 @@ Aanvullende Naslag informatie over syntaxis, query architectuur en voor beelden 
 
 + [Voor beelden van Lucene-syntaxis query's voor het maken van geavanceerde query's](search-query-lucene-examples.md)
 + [Hoe zoeken in de volledige tekst werkt in Azure Cognitive Search](search-lucene-query-architecture.md)
-+ [Vereenvoudigde querysyntaxis](/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Eenvoudige query syntaxis](/rest/api/searchservice/simple-query-syntax-in-azure-search)
 + [Volledige lucene-query](/rest/api/searchservice/lucene-query-syntax-in-azure-search)
 + [De syntaxis filter en OrderBy](/rest/api/searchservice/odata-expression-syntax-for-azure-search)

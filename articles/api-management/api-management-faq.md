@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 351503db52e4c62414cd5dcbae1f750032a37eb7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eea3c8525d31a3ca551e9cbc7d21d7dde163b5cc
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542271"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697982"
 ---
 # <a name="azure-api-management-faqs"></a>Veelgestelde vragen over Azure API Management
 Krijg antwoorden op veelgestelde vragen, patronen en aanbevolen procedures voor Azure API Management.
@@ -71,18 +71,7 @@ Ja, u kunt API Management programmatisch beheren met behulp van:
 * De [service-implementatie](/powershell/module/wds) -en [Service Management](/powershell/azure/servicemanagement/overview) Power shell-cmdlets.
 
 ### <a name="how-do-i-add-a-user-to-the-administrators-group"></a>Hoe voeg ik een gebruiker toe aan de groep Beheerders?
-U kunt als volgt een gebruiker toevoegen aan de groep Administrators:
-
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Ga naar de resource groep met de API Management instantie die u wilt bijwerken.
-3. Wijs in API Management de rol van **API Management-service Inzender** toe aan de gebruiker.
-
-De zojuist toegevoegde mede werker kan nu Azure PowerShell- [cmdlets](/powershell/azure/)gebruiken. U kunt als volgt aanmelden als beheerder:
-
-1. Gebruik de `Connect-AzAccount` cmdlet om u aan te melden.
-2. Stel de context in op het abonnement dat de service heeft met behulp van `Set-AzContext -SubscriptionID <subscriptionGUID>` .
-3. Een URL voor eenmalige aanmelding ophalen met behulp van `Get-AzApiManagementSsoToken -ResourceGroupName <rgName> -Name <serviceName>` .
-4. Gebruik de URL voor toegang tot de beheer Portal.
+Beheerders groepen is een onveranderbare systeem groep. Beheerders van Azure-abonnementen zijn lid van deze groep. U kunt geen gebruiker toevoegen aan deze groep. Zie [groepen maken en gebruiken voor het beheren van ontwikkelaars accounts in Azure API Management](./api-management-howto-create-groups.md) voor meer informatie.
 
 ### <a name="why-is-the-policy-that-i-want-to-add-unavailable-in-the-policy-editor"></a>Waarom is het beleid dat ik wil toevoegen, niet beschikbaar in de beleids editor?
 Als het beleid dat u wilt toevoegen lichter gekleurd of grijs wordt weer gegeven in de beleids editor, moet u ervoor zorgen dat u het juiste bereik voor het beleid hebt. Elke beleids instructie is ontworpen voor gebruik in specifieke bereiken en beleids secties. Zie de sectie gebruik van het beleid in [API management-beleid](./api-management-policies.md)voor het controleren van de beleids secties en-bereiken voor een beleid.

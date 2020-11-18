@@ -6,18 +6,18 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 09/18/2019
 ms.author: allensu
-ms.openlocfilehash: eb3605249578b15d67bdd9764490d61812b21c18
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68a2cb6926cb41956711a9e3c15d21c250d27f0b
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84808450"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698467"
 ---
 # <a name="move-azure-internal-load-balancer-to-another-region-using-the-azure-portal"></a>Verplaats de interne Azure-Load Balancer naar een andere regio met behulp van de Azure Portal
 
 Er zijn verschillende scenario's waarin u uw bestaande interne load balancer van de ene naar de andere regio wilt verplaatsen. U kunt bijvoorbeeld een interne load balancer maken met dezelfde configuratie voor testen. Het is ook mogelijk dat u een interne load balancer naar een andere regio wilt verplaatsen als onderdeel van de planning voor nood herstel.
 
-Interne load balancers van Azure kunnen niet van de ene regio naar de andere worden verplaatst. U kunt echter een Azure Resource Manager sjabloon gebruiken om de bestaande configuratie en het virtuele netwerk van een interne load balancer te exporteren.  U kunt de resource vervolgens in een andere regio zetten door de load balancer en het virtuele netwerk naar een sjabloon te exporteren, de para meters te wijzigen zodat deze overeenkomen met de doel regio en vervolgens de sjablonen te implementeren in de nieuwe regio.  Voor meer informatie over Resource Manager en sjablonen raadpleegt [u Quick Start: Azure Resource Manager sjablonen maken en implementeren met behulp van de Azure Portal](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal).
+Interne load balancers van Azure kunnen niet van de ene regio naar de andere worden verplaatst. U kunt echter een Azure Resource Manager sjabloon gebruiken om de bestaande configuratie en het virtuele netwerk van een interne load balancer te exporteren.  U kunt de resource vervolgens in een andere regio zetten door de load balancer en het virtuele netwerk naar een sjabloon te exporteren, de para meters te wijzigen zodat deze overeenkomen met de doel regio en vervolgens de sjablonen te implementeren in de nieuwe regio.  Voor meer informatie over Resource Manager en sjablonen raadpleegt [u Quick Start: Azure Resource Manager sjablonen maken en implementeren met behulp van de Azure Portal](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -32,7 +32,7 @@ Interne load balancers van Azure kunnen niet van de ene regio naar de andere wor
 
 - Controleer of u met uw Azure-abonnement interne load balancers kunt maken in de doel regio die wordt gebruikt. Neem contact op met ondersteuning voor het inschakelen van het vereiste quotum.
 
-- Zorg ervoor dat uw abonnement voldoende bronnen heeft ter ondersteuning van het toevoegen van load balancers voor dit proces.  Zie [Azure-abonnement en service limieten, quota's en beperkingen](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits)
+- Zorg ervoor dat uw abonnement voldoende bronnen heeft ter ondersteuning van het toevoegen van load balancers voor dit proces.  Zie [Azure-abonnement en service limieten, quota's en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits)
 
 
 ## <a name="prepare-and-move"></a>Voorbereiden en verplaatsen
@@ -188,7 +188,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
 
 17. Controleer onder **instellingen** of de naam overeenkomt met de naam die u hebt ingevoerd in de bovenstaande para meters-editor.
 
-18. Schakel het selectie vakje onder **voor waarden**in.
+18. Schakel het selectie vakje onder **voor waarden** in.
 
 19. Klik op de knop **aanschaffen** om het virtuele doel netwerk te implementeren.
 
@@ -273,7 +273,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
                 "tier": "Regional"
             },
         ```
-      Zie [overzicht van Azure Standard Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview) voor meer informatie over de verschillen tussen de Basic-en Standard SKU load balancers
+      Zie [overzicht van Azure Standard Load Balancer](./load-balancer-overview.md) voor meer informatie over de verschillen tussen de Basic-en Standard SKU load balancers
 
     * Taakverdelings **regels** : u kunt regels voor taak verdeling toevoegen aan of verwijderen uit de configuratie door vermeldingen toe te voegen aan of te verwijderen uit de sectie **loadBalancingRules** van de **template.jsvoor** het bestand:
 
@@ -305,7 +305,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
                     }
                 ]
         ```
-       Zie [Wat is Azure Load Balancer?](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) voor meer informatie over taakverdelings regels.
+       Zie [Wat is Azure Load Balancer?](./load-balancer-overview.md) voor meer informatie over taakverdelings regels.
 
     * **Tests** : u kunt een test voor de Load Balancer in de configuratie toevoegen of verwijderen door vermeldingen toe te voegen aan de sectie **tests** van de **template.jsin** het bestand:
 
@@ -325,7 +325,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
                     }
                 ],
         ```
-       Zie [Load Balancer Health probe](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview) (Engelstalig) voor meer informatie over Azure Load Balancer status tests
+       Zie [Load Balancer Health probe](./load-balancer-custom-probe-overview.md) (Engelstalig) voor meer informatie over Azure Load Balancer status tests
 
     * **Binnenkomende NAT-regels** : u kunt binnenkomende NAT-regels voor de Load Balancer toevoegen of verwijderen door vermeldingen toe te voegen aan de sectie **inboundNatRules** van de **template.jsvoor** het volgende bestand:
 
@@ -373,7 +373,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
             }
         }
         ```
-        Zie [Wat is Azure Load Balancer?](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) voor meer informatie over binnenkomende NAT-regels.
+        Zie [Wat is Azure Load Balancer?](./load-balancer-overview.md) voor meer informatie over binnenkomende NAT-regels.
 
 12. Klik op **Opslaan** in de online editor.
 
@@ -385,7 +385,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
 
 17. Controleer onder **instellingen** of de naam overeenkomt met de naam die u hebt ingevoerd in de bovenstaande para meters-editor.  Controleer of de resource-Id's zijn ingevuld voor virtuele netwerken in de configuratie.
 
-18. Schakel het selectie vakje onder **voor waarden**in.
+18. Schakel het selectie vakje onder **voor waarden** in.
 
 19. Klik op de knop **aanschaffen** om het virtuele doel netwerk te implementeren.
 
@@ -402,5 +402,5 @@ Als u de wijzigingen wilt door voeren en het virtuele netwerk en interne load ba
 In deze zelf studie hebt u een interne Azure-load balancer verplaatst van de ene regio naar de andere en de bron resources opgeschoond.  Raadpleeg voor meer informatie over het verplaatsen van resources tussen regio's en herstel na nood gevallen in Azure:
 
 
-- [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)
-- [Virtuele Azure-machines verplaatsen naar een andere regio](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate)
+- [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](../azure-resource-manager/management/move-resource-group-and-subscription.md)
+- [Virtuele Azure-machines verplaatsen naar een andere regio](../site-recovery/azure-to-azure-tutorial-migrate.md)

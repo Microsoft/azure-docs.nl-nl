@@ -44,6 +44,8 @@
       href: concepts-identity.md
     - name: Op rollen gebaseerd toegangsbeheer
       href: concepts-role-based-access-control.md
+    - name: Privéclouds bewaken en herstellen
+      href: concepts-monitor-repair-private-cloud.md
     - name: Upgrades voor privéclouds
       href: concepts-upgrades.md
 - name: Instructiegidsen

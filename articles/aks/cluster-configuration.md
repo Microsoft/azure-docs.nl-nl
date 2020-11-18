@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: d93a43a44a9ccff4e7918e556b9d759e270d2f42
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 352c057a74d1be5f440041b9f13127e8730edf82
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072081"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698067"
 ---
 # <a name="configure-an-aks-cluster"></a>Een AKS-cluster configureren
 
@@ -46,7 +46,7 @@ De `UseCustomizedUbuntuPreview` functie registreren:
 az feature register --name UseCustomizedUbuntuPreview --namespace Microsoft.ContainerService
 ```
 
-Het kan enkele minuten duren voordat de status als **geregistreerd**wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
+Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedUbuntuPreview')].{Name:name,State:properties.state}"
@@ -78,27 +78,28 @@ az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-gro
 
 Als u knooppunt Pools met de AKS Ubuntu 16,04-installatie kopie wilt maken, kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` .
 
+## <a name="container-runtime-configuration"></a>Container-runtime configuratie
 
-## <a name="container-runtime-configuration-preview"></a>Container runtime-configuratie (preview-versie)
+Een container-runtime is software die containers uitvoert en container installatie kopieën beheert op een knoop punt. De runtime helpt bij het samen vatting van de specifieke functionaliteit van het besturings systeem (OS) voor het uitvoeren van containers in Linux of Windows. AKS-clusters met Kubernetes versie 1,19-knooppunt groepen en meer gebruiken `containerd` als container runtime. AKS-clusters die gebruikmaken van Kubernetes vóór v 1.19 voor knooppunt groepen gebruiken [Moby](https://mobyproject.org/) (upstream docker) als container runtime.
 
-Een container-runtime is software die containers uitvoert en container installatie kopieën beheert op een knoop punt. De runtime helpt bij het samen vatting van de specifieke functionaliteit van het besturings systeem (OS) voor het uitvoeren van containers in Linux of Windows. Vandaag AKS maakt gebruik van [Moby](https://mobyproject.org/) (upstream docker) als container runtime. 
-    
 ![Docker CRI 1](media/cluster-configuration/docker-cri.png)
 
-[`Containerd`](https://containerd.io/) is een [OCI](https://opencontainers.org/) (open container Initiative) compatibele kern container-runtime die de minimale set vereiste functionaliteit biedt om containers uit te voeren en installatie kopieën op een knoop punt te beheren. Het is [gedoneerd](https://www.cncf.io/announcement/2017/03/29/containerd-joins-cloud-native-computing-foundation/) aan de Cloud systeem eigen Compute Foundation (CNCF) in maart 2017. De huidige Moby-versie die AKS gebruikt, maakt al gebruik van en is gebaseerd op `containerd` , zoals hierboven wordt weer gegeven. 
+[`Containerd`](https://containerd.io/) is een [OCI](https://opencontainers.org/) (open container Initiative) compatibele kern container-runtime die de minimale set vereiste functionaliteit biedt om containers uit te voeren en installatie kopieën op een knoop punt te beheren. Het is [gedoneerd](https://www.cncf.io/announcement/2017/03/29/containerd-joins-cloud-native-computing-foundation/) aan de Cloud systeem eigen Compute Foundation (CNCF) in maart 2017. De huidige Moby-versie die AKS gebruikt, is al in gebruik en is gebaseerd op `containerd` , zoals hierboven wordt weer gegeven.
 
-Met een container knooppunt en knooppunt groepen, in plaats van te praten met de `dockershim` , wordt de kubelet `containerd` via de INVOEG toepassing cri (container runtime-Interface) rechtstreeks gecommuniceerd, waarbij extra hops in de stroom worden verwijderd in vergelijking met de DOCKer cri-implementatie. Als zodanig ziet u hoe beter pod opstart latentie en minder bronnen (CPU en geheugen) worden gebruikt.
+Met een `containerd` knoop punt-en knooppunt groep, in plaats van te praten met de `dockershim` , wordt de kubelet `containerd` via de invoeg toepassing cri (container runtime-Interface) rechtstreeks gecommuniceerd, waarbij extra hops in de stroom worden verwijderd in vergelijking met de docker cri-implementatie. Als zodanig ziet u hoe beter pod opstart latentie en minder bronnen (CPU en geheugen) worden gebruikt.
 
 Door te gebruiken `containerd` voor AKS-knoop punten, verbetert de opstart latentie van Pod en wordt het gebruik van knooppunt bronnen door de container runtime afgenomen. Deze verbeteringen worden door deze nieuwe architectuur ingeschakeld, waarbij kubelet rechtstreeks naar de `containerd` cri-invoeg toepassing praat terwijl de Moby/docker-architectuur kubelet de `dockershim` en de docker-Engine zonder problemen zou kunnen praten voordat `containerd` ze bereiken, waardoor er extra hops in de stroom zijn.
 
 ![Docker CRI 2](media/cluster-configuration/containerd-cri.png)
 
-`Containerd` werkt bij elke GA-versie van kubernetes in AKS en in elke upstream-kubernetes-versie hoger dan v 1,10, en ondersteunt alle functies kubernetes en AKS.
+`Containerd` werkt bij elke GA-versie van Kubernetes in AKS en in elke upstream-versie van Kubernetes hoger dan v 1.19, en biedt ondersteuning voor alle Kubernetes-en AKS-functies.
 
 > [!IMPORTANT]
-> Nadat het `containerd` algemeen beschikbaar is op AKS, is dit de standaard optie en alleen beschikbaar voor container runtime op nieuwe clusters. U kunt nog steeds Moby nodepools en clusters op oudere ondersteunde versies gebruiken totdat deze ondersteuning bieden. 
+> Clusters met knooppunt groepen die zijn gemaakt op Kubernetes v 1.19 of meer standaard `containerd` voor de container runtime. Clusters met knooppunt Pools op een ondersteunde Kubernetes-versie lager dan 1,19 `Moby` worden ontvangen voor de container runtime, maar worden bijgewerkt naar een moment dat `ContainerD` de Kubernetes-versie van de knooppunt groep wordt bijgewerkt naar v 1.19 of hoger. U kunt nog steeds gebruikmaken `Moby` van knooppunt Pools en clusters op oudere ondersteunde versies totdat deze ondersteuning bieden.
 > 
-> We raden u aan om uw workloads te testen op `containerd` knooppunt groepen voordat u een upgrade uitvoert of nieuwe clusters maakt met deze container-runtime.
+> Het wordt sterk aanbevolen om uw workloads te testen op AKS-knooppunt Pools met `containerD` voordat u clusters op 1,19 of hoger gebruikt.
+
+In de volgende sectie wordt uitgelegd hoe u AKS kunt gebruiken en testen met `containerD` clusters die nog geen Kubernetes-versie 1,19 of hoger gebruiken, of die zijn gemaakt voordat deze functie algemeen beschikbaar werd, door gebruik te maken van de voor beeld-runtime configuratie van de container.
 
 ### <a name="use-containerd-as-your-container-runtime-preview"></a>Gebruiken `containerd` als uw container runtime (preview-versie)
 
@@ -124,7 +125,7 @@ az feature register --name UseCustomizedUbuntuPreview --namespace Microsoft.Cont
 
 ```
 
-Het kan enkele minuten duren voordat de status als **geregistreerd**wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
+Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedContainerRuntime')].{Name:name,State:properties.state}"
@@ -193,7 +194,7 @@ De `Gen2VMPreview` functie registreren:
 az feature register --name Gen2VMPreview --namespace Microsoft.ContainerService
 ```
 
-Het kan enkele minuten duren voordat de status als **geregistreerd**wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
+Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/Gen2VMPreview')].{Name:name,State:properties.state}"
@@ -250,7 +251,7 @@ De `EnableEphemeralOSDiskPreview` functie registreren:
 az feature register --name EnableEphemeralOSDiskPreview --namespace Microsoft.ContainerService
 ```
 
-Het kan enkele minuten duren voordat de status als **geregistreerd**wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
+Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableEphemeralOSDiskPreview')].{Name:name,State:properties.state}"

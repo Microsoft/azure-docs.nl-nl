@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/14/2019
 ms.author: allensu
-ms.openlocfilehash: 97541a4f8d86b90bf6045fc2a9e5abbe86aee5cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c322620e1d66182937be41bb02d48fd1469f459
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88717333"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697557"
 ---
 # <a name="standard-load-balancer-diagnostics-with-metrics-alerts-and-resource-health"></a>Diagnose van Standard Load Balancer met metrische gegevens, meldingen en status van resources
 
 Azure Standard Load Balancer maakt de volgende diagnostische mogelijkheden beschikbaar:
 
-* **Multi-dimensionale metrische gegevens en waarschuwingen**: biedt multi-dimensionale diagnostische mogelijkheden via [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) voor standaard Load Balancer configuraties. U kunt uw standaard load balancer-resources bewaken, beheren en problemen oplossen.
+* **Multi-dimensionale metrische gegevens en waarschuwingen**: biedt multi-dimensionale diagnostische mogelijkheden via [Azure Monitor](../azure-monitor/overview.md) voor standaard Load Balancer configuraties. U kunt uw standaard load balancer-resources bewaken, beheren en problemen oplossen.
 
 * **Resource status**: de resource Health status van uw Load Balancer is beschikbaar op de pagina Resource Health onder monitor. Deze automatische controle informeert u over de huidige Beschik baarheid van uw Load Balancer-resource.
 
@@ -70,7 +70,7 @@ De metrische gegevens voor uw Standard Load Balancer resources weer geven:
 
 ### <a name="retrieve-multi-dimensional-metrics-programmatically-via-apis"></a>Via Api's multi-dimensionale metrieken ophalen
 
-Zie [Azure Monitoring rest API-overzicht](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough#retrieve-metric-definitions-multi-dimensional-api)voor API-richt lijnen voor het ophalen van multi-dimensionale metrische definities en waarden. Deze metrische gegevens kunnen worden geschreven naar een opslag account met behulp van de optie ' alle metrische gegevens '. 
+Zie [Azure Monitoring rest API-overzicht](../azure-monitor/platform/rest-api-walkthrough.md#retrieve-metric-definitions-multi-dimensional-api)voor API-richt lijnen voor het ophalen van multi-dimensionale metrische definities en waarden. Deze metrische gegevens kunnen worden geschreven naar een opslag account met behulp van de optie ' alle metrische gegevens '. 
 
 ### <a name="configure-alerts-for-multi-dimensional-metrics"></a>Waarschuwingen voor multi-dimensionale metrische gegevens configureren ###
 
@@ -138,9 +138,9 @@ Gebruik **gemiddelde** als de aggregatie voor de meeste scenario's.
 #### <a name="how-do-i-check-my-outbound-connection-statistics"></a>Hoe kan ik de statistieken van mijn uitgaande verbinding controleren? 
 <details>
   <summary>Uitvouwen</summary>
-Met de metrische gegevens van de SNAT-verbindingen wordt het volume van de geslaagde en mislukte verbindingen voor [uitgaande stromen](https://aka.ms/lboutbound)beschreven.
+Met de metrische gegevens van de SNAT-verbindingen wordt het volume van de geslaagde en mislukte verbindingen voor [uitgaande stromen](./load-balancer-outbound-connections.md)beschreven.
 
-Een volume met mislukte verbindingen van meer dan nul geeft de SNAT-poort uitputting aan. U moet verder onderzoeken om te bepalen wat deze fouten kunnen veroorzaken. Er is een fout opgetreden in de SNAT-poort als er een [uitgaande stroom](https://aka.ms/lboutbound)niet tot stand kan worden gebracht. Raadpleeg het artikel over uitgaande verbindingen voor meer informatie over de scenario's en mechanismen op het werk, en om te leren hoe u het probleem kunt verhelpen en ontwerpen om te voor komen dat de SNAT-poort uitgeput raakt. 
+Een volume met mislukte verbindingen van meer dan nul geeft de SNAT-poort uitputting aan. U moet verder onderzoeken om te bepalen wat deze fouten kunnen veroorzaken. Er is een fout opgetreden in de SNAT-poort als er een [uitgaande stroom](./load-balancer-outbound-connections.md)niet tot stand kan worden gebracht. Raadpleeg het artikel over uitgaande verbindingen voor meer informatie over de scenario's en mechanismen op het werk, en om te leren hoe u het probleem kunt verhelpen en ontwerpen om te voor komen dat de SNAT-poort uitgeput raakt. 
 
 Statistieken voor de SNAT-verbinding ophalen:
 1. Selecteer het metrische type voor de **SNAT-verbindingen** en **som** als aggregatie. 
@@ -157,17 +157,17 @@ Statistieken voor de SNAT-verbinding ophalen:
   <summary>Uitvouwen</summary>
 De metrische gegevens van de SNAT-poorten traceren hoeveel SNAT-poorten worden gebruikt voor het onderhouden van uitgaande stromen. Dit geeft aan hoeveel unieke stromen er tot stand worden gebracht tussen een Internet bron en een back-end-VM of virtuele-machine schaalset die zich achter een load balancer bevindt en geen openbaar IP-adres heeft. Door het aantal SNAT-poorten te vergelijken dat u gebruikt met de toegewezen statistieken voor de SNAT-poorten, kunt u bepalen of uw service zich voordoet of het risico op overschrijding van de SNAT en de resulterende uitgaande stroom storing. 
 
-Als uw metrische gegevens duiden op een risico op [uitgaand stroom](https://aka.ms/lboutbound) storingen, raadpleegt u het artikel en neemt u stappen om dit te beperken om de service status te garanderen.
+Als uw metrische gegevens duiden op een risico op [uitgaand stroom](./load-balancer-outbound-connections.md) storingen, raadpleegt u het artikel en neemt u stappen om dit te beperken om de service status te garanderen.
 
 Het gebruik en de toewijzing van het SNAT-poort weer geven:
 1. Stel de tijd aggregatie van de grafiek in op 1 minuut om ervoor te zorgen dat de gewenste gegevens worden weer gegeven.
 1. **Gebruikte SNAT-poorten** en/of **toegewezen SNAT-poorten** selecteren als meet type en **gemiddelde** als de aggregatie
     * Deze metrische gegevens zijn standaard het gemiddelde aantal SNAT-poorten dat is toegewezen aan of gebruikt door elke back-end-VM of VMSS, die overeenkomt met alle open bare frontend-Ip's die zijn toegewezen aan de Load Balancer, geaggregeerd via TCP en UDP.
     * De totale SNAT-poorten weer geven die worden gebruikt door of toegewezen voor de load balancer metrische aggregatie **som** gebruiken
-1. Filteren op een specifiek **protocol type**, een reeks **back-ip's**en/of frontend- **IP-adressen**.
+1. Filteren op een specifiek **protocol type**, een reeks **back-ip's** en/of frontend- **IP-adressen**.
 1. Als u de status per back-end-of front-end-exemplaar wilt bewaken, moet u 
     * Bij het splitsen van notities kan één metriek tegelijk worden weer gegeven. 
-1. Als u bijvoorbeeld het SNAT-gebruik wilt bewaken voor TCP-stromen per computer, voegt u **gemiddeld**toe, gesplitst op **back-end-ip's** en filteren op **protocol type**. 
+1. Als u bijvoorbeeld het SNAT-gebruik wilt bewaken voor TCP-stromen per computer, voegt u **gemiddeld** toe, gesplitst op **back-end-ip's** en filteren op **protocol type**. 
 
 ![Toewijzing en gebruik van SNAT](./media/load-balancer-standard-diagnostics/snat-usage-and-allocation.png)
 
@@ -181,7 +181,7 @@ Het gebruik en de toewijzing van het SNAT-poort weer geven:
 #### <a name="how-do-i-check-inboundoutbound-connection-attempts-for-my-service"></a>Hoe kan ik controleren op inkomende/uitgaande Verbindings pogingen voor mijn service?
 <details>
   <summary>Uitvouwen</summary>
-De metrische SYN-pakketten beschrijft het volume TCP SYN-pakketten, die zijn aangekomen of verzonden (voor [uitgaande stromen](https://aka.ms/lboutbound)) die zijn gekoppeld aan een specifieke front-end. U kunt deze metrische gegevens gebruiken om de TCP-verbindings pogingen met uw service te begrijpen.
+De metrische SYN-pakketten beschrijft het volume TCP SYN-pakketten, die zijn aangekomen of verzonden (voor [uitgaande stromen](./load-balancer-outbound-connections.md)) die zijn gekoppeld aan een specifieke front-end. U kunt deze metrische gegevens gebruiken om de TCP-verbindings pogingen met uw service te begrijpen.
 
 Gebruik **totaal** als de aggregatie voor de meeste scenario's.
 
@@ -240,7 +240,7 @@ De status van uw open bare Standard Load Balancer-resources weer geven:
 
    *Afbeelding: de Service Health koppeling op Azure Monitor*
 
-2. Selecteer **resource Health**en controleer of de **abonnements-id** en het **resource type = Load Balancer** zijn geselecteerd.
+2. Selecteer **resource Health** en controleer of de **abonnements-id** en het **resource type = Load Balancer** zijn geselecteerd.
 
    ![Status van resource status](./media/load-balancer-standard-diagnostics/LBHealth3.png)
 
@@ -252,7 +252,7 @@ De status van uw open bare Standard Load Balancer-resources weer geven:
 
    *Afbeelding: Load Balancer resource status weer geven*
  
-De beschrijving van de algemene resource status is beschikbaar in de [RHC-documentatie](https://docs.microsoft.com/azure/service-health/resource-health-overview). Zie de onderstaande tabel voor specifieke statussen voor de Azure Load Balancer: 
+De beschrijving van de algemene resource status is beschikbaar in de [RHC-documentatie](../service-health/resource-health-overview.md). Zie de onderstaande tabel voor specifieke statussen voor de Azure Load Balancer: 
 
 | Status van resource status | Beschrijving |
 | --- | --- |
@@ -263,7 +263,7 @@ De beschrijving van de algemene resource status is beschikbaar in de [RHC-docume
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [Standard Load Balancer](load-balancer-standard-overview.md).
-- Meer informatie over de [uitgaande connectiviteit van de Load Balancer](https://aka.ms/lboutbound).
-- Meer informatie over [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview).
-- Meer informatie over de [Azure Monitor rest API](https://docs.microsoft.com/rest/api/monitor/) en [hoe u metrische gegevens kunt ophalen via rest API](/rest/api/monitor/metrics/list).
+- Meer informatie over [Standard Load Balancer](./load-balancer-overview.md).
+- Meer informatie over de [uitgaande connectiviteit van de Load Balancer](./load-balancer-outbound-connections.md).
+- Meer informatie over [Azure monitor](../azure-monitor/overview.md).
+- Meer informatie over de [Azure Monitor rest API](/rest/api/monitor/) en [hoe u metrische gegevens kunt ophalen via rest API](/rest/api/monitor/metrics/list).

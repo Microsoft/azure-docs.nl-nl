@@ -2,13 +2,13 @@
 title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
-ms.date: 09/04/2020
-ms.openlocfilehash: f9e31f902d36cf84fc559337f3c69529cf1c014b
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.date: 11/17/2020
+ms.openlocfilehash: c447a08b4422929f042315370b5888f3db0626e4
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91949119"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697727"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
@@ -72,7 +72,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Microsoft.DataLakeAnalytics | [Data Lake Analytics](../../data-lake-analytics/index.yml) |
 | Microsoft.DataLakeStore | [Azure Data Lake Storage Gen2](../../storage/blobs/data-lake-storage-introduction.md) |
 | Micro soft. DataMigration | [Azure Database Migration Service](../../dms/index.yml) |
-| Micro soft. DataProtection | Gegevensbescherming |
+| Micro soft. DataProtection | Gegevensbeveiliging |
 | Micro soft. DataShare | [Azure Data Share](../../data-share/index.yml) |
 | Micro soft. DBforMariaDB | [Azure Database for MariaDB](../../mariadb/index.yml) |
 | Micro soft. DBforMySQL | [Azure Database for MySQL](../../mysql/index.yml) |
@@ -135,7 +135,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Micro soft. peering | [Azure Peering Service](../../peering-service/index.yml) |
 | Microsoft.PolicyInsights | [Azure Policy](../../governance/policy/index.yml) |
-| Micro soft. Portal<sup>1</sup> | [Azure-portal](../../azure-portal/index.yml) |
+| Micro soft. Portal<sup>1</sup> | [Azure Portal](../../azure-portal/index.yml) |
 | Micro soft. PowerBI | [Power BI](/power-bi/power-bi-overview) |
 | Micro soft. PowerBIDedicated | [Power BI Embedded](/azure/power-bi-embedded/) |
 | Micro soft. PowerPlatform | [Power Platform](/power-platform/) |
@@ -151,7 +151,6 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Microsoft.Scheduler | [Scheduler](../../scheduler/index.yml) |
 | Microsoft.Search | [Azure Cognitive Search](../../search/index.yml) |
 | Microsoft.Security | [Beveiligingscentrum](../../security-center/index.yml) |
-| Micro soft. SecurityGraph | [Beveiligingscentrum](../../security-center/index.yml) |
 | Micro soft. SecurityInsights | [Azure Sentinel](../../sentinel/index.yml) |
 | Micro soft. SerialConsole<sup>1</sup> | [Azure Serial console voor Windows](../../virtual-machines/troubleshooting/serial-console-windows.md) |
 | Microsoft.ServiceBus | [Service Bus](/azure/service-bus/) |
@@ -162,7 +161,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Micro soft. SoftwarePlan | Licentie |
 | Micro soft. Solutions | [Azure Managed Applications](../managed-applications/index.yml) |
 | Microsoft.Sql | [Azure SQL Database](../../azure-sql/database/index.yml)<br /> [Azure SQL Managed Instance](../../azure-sql/managed-instance/index.yml) <br />[Azure Synapse Analytics](/azure/sql-data-warehouse/) |
-| Micro soft. SqlVirtualMachine | [SQL Server op Azure Virtual Machines](../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) |
+| Micro soft. SqlVirtualMachine | [SQL Server op virtuele machines in Azure](../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) |
 | Microsoft.Storage | [Storage](../../storage/index.yml) |
 | Micro soft. StorageCache | [Azure HPC Cache](../../hpc-cache/index.yml) |
 | Micro soft. StorageSync | [Storage](../../storage/index.yml) |
@@ -174,10 +173,10 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Micro soft. TimeSeriesInsights | [Azure Time Series Insights](../../time-series-insights/index.yml) |
 | Micro soft. token | Token |
 | Microsoft.VirtualMachineImages | [Azure Image Builder](../../virtual-machines/linux/image-builder-overview.md) |
-| micro soft. Visual Studio | [Azure DevOps](/azure/devops/?view=azure-devops) |
+| micro soft. Visual Studio | [Azure DevOps](/azure/devops/) |
 | Micro soft. VMware | [Azure VMware Solution](../../azure-vmware/index.yml) |
 | Micro soft. VMwareCloudSimple | [Azure VMware Solution by CloudSimple](../../vmware-cloudsimple/index.md) |
-| Micro soft. VSOnline | [Azure DevOps](/azure/devops/?view=azure-devops) |
+| Micro soft. VSOnline | [Azure DevOps](/azure/devops/) |
 | Microsoft.Web | [App Service](../../app-service/index.yml)<br />[Azure Functions](../../azure-functions/index.yml) |
 | Micro soft. WindowsDefenderATP | [Microsoft Defender Advanced Threat Protection](../../security-center/security-center-wdatp.md) |
 | Micro soft. WindowsESU | Uitgebreide beveiligings updates |

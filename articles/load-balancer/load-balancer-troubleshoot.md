@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/28/2020
 ms.author: allensu
-ms.openlocfilehash: 22922972049ec78cc26f4d060fa1981d1f23a3ce
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: a1a8df6d503ec5f5bf9c1e739e5ecf6486a85776
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912443"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94697417"
 ---
 # <a name="troubleshoot-azure-load-balancer"></a>Problemen met Azure Load Balancer oplossen
 
@@ -35,7 +35,7 @@ Wanneer de externe clients naar de back-end-Vm's via de load balancer gaan, word
 
 **Validatie en oplossing**
 
-Standaard ILBs zijn **standaard veilig** . Basis-ILBs die verbinding maken met Internet via een *verborgen* openbaar IP-adres. Dit is niet kunt voor productie werkbelastingen omdat het IP-adres niet statisch of vergrendeld is via Nsg's waarvan u de eigenaar bent. Als u onlangs van een Basic-ILB hebt overgezet naar een standaard-ILB, moet u een openbaar IP-adres maken via een [uitgaande alleen](egress-only.md) -configuratie die het IP-adres vergrendelt via nsg's. U kunt ook een [NAT-gateway](../virtual-network/nat-overview.md) op uw subnet gebruiken.
+Standaard ILBs zijn **standaard veilig**. Basis-ILBs die verbinding maken met Internet via een *verborgen* openbaar IP-adres. Dit is niet kunt voor productie werkbelastingen omdat het IP-adres niet statisch of vergrendeld is via Nsg's waarvan u de eigenaar bent. Als u onlangs van een Basic-ILB hebt overgezet naar een standaard-ILB, moet u een openbaar IP-adres maken via een [uitgaande alleen](egress-only.md) -configuratie die het IP-adres vergrendelt via nsg's. U kunt ook een [NAT-gateway](../virtual-network/nat-overview.md) op uw subnet gebruiken.
 
 ## <a name="symptom-vms-behind-the-load-balancer-are-not-responding-to-health-probes"></a>Symptoom: Vm's achter de Load Balancer reageren niet op status controles
 Voor de back-endservers die deel uitmaken van de load balancerset, moeten ze de controle van de test door geven. Zie [informatie over Load Balancer probe](load-balancer-custom-probe-overview.md)(Engelstalig) voor meer informatie over status controles. 
@@ -60,7 +60,7 @@ Als de virtuele machine in orde is, maar niet op de test reageert, kan het zijn 
 1. Meld u aan bij de back-end-VM. 
 2. Open een opdracht prompt en voer de volgende opdracht uit om te controleren of er een toepassing luistert op de test poort:   
             netstat: een
-3. Als de poort status niet wordt weer gegeven als **luistert** , configureert u de juiste poort. 
+3. Als de poort status niet wordt weer gegeven als **luistert**, configureert u de juiste poort. 
 4. U kunt ook een andere poort selecteren, die wordt weer gegeven als **Luis teren** en Load Balancer configuratie dienovereenkomstig bijwerken.              
 
 ### <a name="cause-3-firewall-or-a-network-security-group-is-blocking-the-port-on-the-load-balancer-backend-pool-vms"></a>Oorzaak 3: Firewall of een netwerk beveiligings groep blokkeert de poort op de load balancer Vm's van de back-end-groep  
@@ -87,7 +87,7 @@ Als alle voor gaande oorzaken correct worden gevalideerd en opgelost en de back-
         - Als er geen binnenkomende pakketten worden waargenomen op de back-end-VM-groep, is er mogelijk een netwerk beveiligings groep of een UDR mis-configuratie die het verkeer blokkeert. 
         - Als er geen uitgaande pakketten worden waargenomen op de back-end-VM-groep, moet de virtuele machine worden gecontroleerd op ongerelateerde problemen (de toepassing blokkeert bijvoorbeeld de test poort). 
     - Controleer of de test pakketten worden afgedwongen voor een andere bestemming (mogelijk via UDR-instellingen) voordat de load balancer wordt bereikt. Dit kan ervoor zorgen dat het verkeer nooit de back-end-VM bereikt. 
-* Wijzig het test type (bijvoorbeeld HTTP in TCP) en configureer de bijbehorende poort in de Acl's voor netwerk beveiligings groepen en de firewall om te controleren of het probleem wordt veroorzaakt door de configuratie van de test reactie. Zie [configuratie endpoint Load Balancing Health probe](https://blogs.msdn.microsoft.com/mast/2016/01/26/endpoint-load-balancing-heath-probe-configuration-details/)(Engelstalig) voor meer informatie over Health probe configuratie.
+* Wijzig het test type (bijvoorbeeld HTTP in TCP) en configureer de bijbehorende poort in de Acl's voor netwerk beveiligings groepen en de firewall om te controleren of het probleem wordt veroorzaakt door de configuratie van de test reactie. Zie [configuratie endpoint Load Balancing Health probe](/archive/blogs/mast/endpoint-load-balancing-heath-probe-configuration-details)(Engelstalig) voor meer informatie over Health probe configuratie.
 
 ## <a name="symptom-vms-behind-load-balancer-are-not-responding-to-traffic-on-the-configured-data-port"></a>Symptoom: Vm's achter Load Balancer reageren niet op verkeer op de geconfigureerde gegevens poort
 
@@ -133,7 +133,7 @@ Als uw toepassing die wordt gehost in de back-end-VM van een Load Balancer probe
 
 Als er een intern Load Balancer is geconfigureerd in een VNet en een van de back-end-Vm's van de deel nemer probeert toegang te krijgen tot de interne Load Balancer frontend, kunnen er fouten optreden wanneer de stroom wordt toegewezen aan de oorspronkelijke virtuele machine. Een dergelijk scenario wordt niet ondersteund.
 
-**Oplossing** Er zijn verschillende manieren om dit scenario op te heffen, met inbegrip van het gebruik van een proxy. Evalueer Application Gateway of andere proxy's van derden (bijvoorbeeld nginx of haproxy). Zie [overzicht van Application Gateway](../application-gateway/application-gateway-introduction.md) voor meer informatie over Application Gateway.
+**Oplossing** Er zijn verschillende manieren om dit scenario op te heffen, met inbegrip van het gebruik van een proxy. Evalueer Application Gateway of andere proxy's van derden (bijvoorbeeld nginx of haproxy). Zie [overzicht van Application Gateway](../application-gateway/overview.md) voor meer informatie over Application Gateway.
 
 **Details** Interne load balancers vertalen geen uitgaande oorspronkelijke verbindingen met de front-end van een interne Load Balancer, omdat beide zich in een privé-IP-adres ruimte bevinden. Open bare load balancers bieden [uitgaande verbindingen](load-balancer-outbound-connections.md) van privé-IP-adressen in het virtuele netwerk naar open bare IP-adressen. Voor interne load balancers vermijdt deze benadering de potentiële SNAT-poort uitputting binnen een unieke interne IP-adres ruimte, waarbij omzetting niet vereist is.
 
@@ -143,7 +143,7 @@ Wanneer de stroom wordt teruggeleid naar zichzelf, lijkt de uitgaande stroom van
 
 Het symptoom voor dit scenario bestaat uit terugkerende verbindingstime-outs wanneer de stroom naar dezelfde back-end terugkeert als de stroom. Veelvoorkomende tijdelijke oplossingen omvatten het invoegen van een proxy laag achter de interne Load Balancer en het gebruik van regels voor het door sturen van direct server return-stijl (DSR). Zie meerdere front-ends [voor Azure Load Balancer](load-balancer-multivip-overview.md)voor meer informatie.
 
-U kunt een intern Load Balancer combi neren met elke proxy van derden of interne [Application Gateway](../application-gateway/application-gateway-introduction.md) gebruiken voor proxy SCENARIO'S met http/https. U kunt een open bare Load Balancer gebruiken om dit probleem te verhelpen, maar het resulterende scenario is gevoelig voor de [uitputting](load-balancer-outbound-connections.md)van de SNAT. Vermijd deze tweede benadering, tenzij u deze zorgvuldig beheert.
+U kunt een intern Load Balancer combi neren met elke proxy van derden of interne [Application Gateway](../application-gateway/overview.md) gebruiken voor proxy SCENARIO'S met http/https. U kunt een open bare Load Balancer gebruiken om dit probleem te verhelpen, maar het resulterende scenario is gevoelig voor de [uitputting](load-balancer-outbound-connections.md)van de SNAT. Vermijd deze tweede benadering, tenzij u deze zorgvuldig beheert.
 
 ## <a name="symptom-cannot-change-backend-port-for-existing-lb-rule-of-a-load-balancer-which-has-vm-scale-set-deployed-in-the-backend-pool"></a>Symptoom: kan de back-uppoort niet wijzigen voor een bestaande LB-regel van een load balancer die een VM-Schaalset in de back-endadresgroep heeft geïmplementeerd. 
 ### <a name="cause--the-backend-port-cannot-be-modified-for-a-load-balancing-rule-thats-used-by-a-health-probe-for-load-balancer-referenced-by-vm-scale-set"></a>Oorzaak: de backend-poort kan niet worden gewijzigd voor een taakverdelings regel die wordt gebruikt door een status test voor load balancer waarnaar wordt verwezen door de VM-Schaalset.
@@ -172,4 +172,3 @@ Als u besluit een ondersteunings aanvraag te openen, verzamelt u de volgende inf
 ## <a name="next-steps"></a>Volgende stappen
 
 Als de voor gaande stappen het probleem niet oplossen, opent u een [ondersteunings ticket](https://azure.microsoft.com/support/options/).
-

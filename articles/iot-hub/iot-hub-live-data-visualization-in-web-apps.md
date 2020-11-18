@@ -12,12 +12,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: 35df99d0a30b0952521281fa0d6bb95ce0509695
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 8f7baca94d653d9851c506068ccf7ecf84063641
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92740992"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832174"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-in-a-web-application"></a>Real-time sensor gegevens visualiseren vanuit uw Azure IoT hub in een webtoepassing
 
@@ -51,13 +51,7 @@ In deze zelf studie leert u hoe u real-time sensor gegevens visualiseren die uw 
 
 * In de stappen in dit artikel wordt ervan uitgegaan dat u een Windows-ontwikkel computer hebt. u kunt deze stappen echter eenvoudig uitvoeren op een Linux-systeem in uw voorkeurs shell.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Voer de volgende opdracht uit om de Microsoft Azure IoT-extensie voor Azure CLI aan uw CLI Shell-instantie toe te voegen. Met de IoT-extensie worden IoT Hub-, IoT Edge- en IoT DPS-specifieke (Device Provisioning Service) opdrachten toegevoegd aan Azure CLI.
-
-```azurecli-interactive
-az extension add --name azure-iot
-```
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="add-a-consumer-group-to-your-iot-hub"></a>Een Consumer groep toevoegen aan uw IoT-hub
 
@@ -128,7 +122,7 @@ set IotHubConnectionString=YourIoTHubConnectionString
 set EventHubConsumerGroup=YourConsumerGroupName
 ```
 
-## <a name="run-the-web-app"></a>De web-app uitvoeren
+## <a name="run-the-web-app"></a>Voer de web-app uit
 
 1. Zorg ervoor dat het apparaat wordt uitgevoerd en dat er gegevens worden verzonden.
 
@@ -253,7 +247,7 @@ Als u problemen ondervindt met dit voor beeld, probeert u de stappen in de volge
 
 ### <a name="azure-app-service-issues"></a>Azure App Service problemen
 
-* Ga in Azure Portal naar uw web-app. Selecteer onder **bewaking** in het linkerdeel venster de optie **app service logboeken** . Schakel **toepassings Logboeken (bestands systeem)** in op, stel **niveau** in op fout en selecteer vervolgens **Opslaan** . Open vervolgens **logboek stroom** (onder **bewaking** ).
+* Ga in Azure Portal naar uw web-app. Selecteer onder **bewaking** in het linkerdeel venster de optie **app service logboeken**. Schakel **toepassings Logboeken (bestands systeem)** in op, stel **niveau** in op fout en selecteer vervolgens **Opslaan**. Open vervolgens **logboek stroom** (onder **bewaking**).
 
 * Vanuit uw web-app in Azure Portal selecteert u onder **ontwikkelingsprogram Ma's**  **console** en valideert u node-en NPM-versies met `node -v` en `npm -v` .
 

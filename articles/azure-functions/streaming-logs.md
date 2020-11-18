@@ -3,13 +3,13 @@ title: Uitvoerings logboeken streamen in Azure Functions
 description: 115-145 tekens, inclusief spaties. Dit uittreksel wordt bij de zoekresultaten weergegeven.
 ms.date: 9/1/2020
 ms.topic: how-to
-ms.custom: contperfq2
-ms.openlocfilehash: 61756afb5111da3d5573e967a6ca13f25354aef5
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.custom: contperfq2, devx-track-azurecli
+ms.openlocfilehash: 68b9d567fe0f2959c809a25c3669b9529cf093b8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92216093"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832876"
 ---
 # <a name="enable-streaming-execution-logs-in-azure-functions"></a>Streaming-uitvoerings logboeken inschakelen in Azure Functions
 
@@ -29,7 +29,7 @@ U kunt beide typen logboek stromen weer geven in de portal.
 
 ### <a name="built-in-log-streaming"></a>Ingebouwde logboekstreaming
 
-Als u streaming-logboeken wilt weer geven in de portal, selecteert u het tabblad **platform functies** in uw functie-app. Klik vervolgens onder **bewaking**op **logboek streaming**.
+Als u streaming-logboeken wilt weer geven in de portal, selecteert u het tabblad **platform functies** in uw functie-app. Klik vervolgens onder **bewaking** op **logboek streaming**.
 
 ![Streaming-logboeken inschakelen in de portal](./media/functions-monitoring/enable-streaming-logs-portal.png)
 
@@ -41,7 +41,7 @@ Hiermee wordt uw app verbonden met de service logboek streaming en worden toepas
 
 Als u de Live Metrics Stream voor uw app wilt weer geven, selecteert u het tabblad **overzicht** van de functie-app. Wanneer u Application Insights hebt ingeschakeld, ziet u een **Application Insights** koppeling onder **geconfigureerde onderdelen**. Met deze koppeling gaat u naar de Application Insights-pagina voor uw app.
 
-Selecteer **Live Metrics stream**in Application Insights. [Voorbeeld logboek vermeldingen](configure-monitoring.md#configure-sampling) worden weer gegeven onder voor **beeld-telemetrie**.
+Selecteer **Live Metrics stream** in Application Insights. [Voorbeeld logboek vermeldingen](configure-monitoring.md#configure-sampling) worden weer gegeven onder voor **beeld-telemetrie**.
 
 ![Live Metrics Stream weer geven in de portal](./media/functions-monitoring/live-metrics-stream.png) 
 

@@ -7,12 +7,12 @@ ms.custom: references_regions
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: 9827f79f8407bd04468f1b4456aec9d6a8793a6f
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: a7bdc1ee22d3672160122cad65b18de99f743cc7
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506291"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94747686"
 ---
 # <a name="configure-log-analytics-workspace-for-azure-monitor-for-vms"></a>Log Analytics-werkruimte voor Azure Monitor voor VM's configureren
 Azure Monitor voor VM's verzamelt gegevens uit een of meer Log Analytics-werk ruimten in Azure Monitor. Voordat u agents voorbereidt, moet u een werk ruimte maken en configureren. In dit artikel worden de vereisten van de werk ruimte beschreven en om deze voor Azure Monitor voor VM's te configureren.
@@ -38,7 +38,7 @@ Open Log Analytics-werk ruimten in de Azure Portal in het menu **log Analytics-w
 U kunt een nieuwe Log Analytics-werk ruimte maken met behulp van een van de volgende methoden. Zie de [implementatie van uw Azure monitor-logboeken ontwerpen](../platform/design-logs-deployment.md) voor hulp bij het bepalen van het aantal werk ruimten dat u in uw omgeving moet gebruiken en hoe u de toegangs strategie kunt ontwerpen.
 
 
-* [Azure-portal](../../azure-monitor/learn/quick-create-workspace.md)
+* [Azure Portal](../../azure-monitor/learn/quick-create-workspace.md)
 * [Azure-CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)
 * [PowerShell](../platform/powershell-workspace-configuration.md)
 * [Azure Resource Manager](../samples/resource-manager-workspace.md)
@@ -78,7 +78,7 @@ Voordat een Log Analytics-werk ruimte kan worden gebruikt met Azure Monitor voor
 > Wanneer u de *VMInsights* -oplossing aan de werk ruimte toevoegt, worden alle bestaande virtuele machines die zijn verbonden met de werk ruimte, verzonden naar InsightsMetrics. Gegevens voor de andere gegevens typen worden pas verzameld wanneer u de Dependency Agent toevoegt aan de bestaande virtuele machines die zijn verbonden met de werk ruimte.
 
 ### <a name="azure-portal"></a>Azure Portal
-Er zijn drie opties voor het configureren van een bestaande werk ruimte vanuit het Azure Portal.
+Er zijn drie opties voor het configureren van een bestaande werk ruimte met behulp van de Azure Portal. Deze worden hieronder beschreven.
 
 Als u één werk ruimte wilt configureren, selecteert u de **andere opties voor onboarding** en configureert u vervolgens **een werk ruimte**. Selecteer een abonnement en een werk ruimte en klik vervolgens op **configureren**.
 

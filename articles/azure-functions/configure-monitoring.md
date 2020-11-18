@@ -3,13 +3,13 @@ title: Bewaking configureren voor Azure Functions
 description: Leer hoe u uw functie-app kunt verbinden met Application Insights voor bewaking en het configureren van gegevens verzameling.
 ms.date: 8/31/2020
 ms.topic: how-to
-ms.custom: contperfq2
-ms.openlocfilehash: 50705eeedf9c985a053600a8c0b27c823231e9a3
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.custom: contperfq2, devx-track-azurecli
+ms.openlocfilehash: f5b1b00c534abf1e7f82d2aca69dd4763b40d5ad
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217181"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833075"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Bewaking voor Azure Functions configureren
 
@@ -228,7 +228,7 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
 
 ## <a name="enable-application-insights-integration"></a>Application Insights-integratie inschakelen
 
-Voor een functie-app voor het verzenden van gegevens naar Application Insights, moet de instrumentatie sleutel van een Application Insights resource bekend zijn. De sleutel moet een app-instelling met de naam **APPINSIGHTS_INSTRUMENTATIONKEY**hebben.
+Voor een functie-app voor het verzenden van gegevens naar Application Insights, moet de instrumentatie sleutel van een Application Insights resource bekend zijn. De sleutel moet een app-instelling met de naam **APPINSIGHTS_INSTRUMENTATIONKEY** hebben.
 
 Wanneer u de functie-app maakt [in de Azure Portal](functions-create-first-azure-function.md), vanaf de opdracht regel met behulp van [Azure functions core tools](functions-create-first-azure-function-azure-cli.md), of met behulp van [Visual Studio code](functions-create-first-function-vs-code.md), Application Insights integratie standaard ingeschakeld. De Application Insights resource heeft dezelfde naam als de functie-app en wordt gemaakt in dezelfde regio of in de dichtstbijzijnde regio.
 
@@ -238,14 +238,14 @@ Als u wilt controleren welke Application Insights resource wordt gemaakt, select
 
 ![Application Insights inschakelen tijdens het maken van een functie-app](media/functions-monitoring/enable-ai-new-function-app.png)
 
-Wanneer u **maken**kiest, wordt er een Application Insights resource gemaakt met uw functie-app, die de `APPINSIGHTS_INSTRUMENTATIONKEY` set in toepassings instellingen bevat. Alles is klaar voor gebruik.
+Wanneer u **maken** kiest, wordt er een Application Insights resource gemaakt met uw functie-app, die de `APPINSIGHTS_INSTRUMENTATIONKEY` set in toepassings instellingen bevat. Alles is klaar voor gebruik.
 
 <a id="manually-connect-an-app-insights-resource"></a>
 ### <a name="add-to-an-existing-function-app"></a>Toevoegen aan een bestaande functie-app 
 
 Als er geen Application Insights resources zijn gemaakt met uw functie-app, gebruikt u de volgende stappen om de resource te maken. U kunt vervolgens de instrumentatie sleutel van die resource toevoegen als een [toepassings instelling](functions-how-to-use-azure-function-app-settings.md#settings) in uw functie-app.
 
-1. Zoek in het [Azure Portal](https://portal.azure.com)naar en selecteer **functie-app**en kies vervolgens uw functie-app. 
+1. Zoek in het [Azure Portal](https://portal.azure.com)naar en selecteer **functie-app** en kies vervolgens uw functie-app. 
 
 1. Selecteer bovenaan het venster de banner **Application Insights is not configured** (Application Insights is niet geconfigureerd). Als u deze banner niet ziet staan, is Application Insights al ingeschakeld voor uw app.
 
@@ -258,7 +258,7 @@ Als er geen Application Insights resources zijn gemaakt met uw functie-app, gebr
     | **Nieuwe resourcenaam** | Unieke app-naam | Het is het gemakkelijkst om dezelfde naam als voor uw functie-app te gebruiken. Deze naam moet uniek zijn in uw abonnement. | 
     | **Locatie** | Europa -west | Gebruik, indien mogelijk, dezelfde [regio](https://azure.microsoft.com/regions/) als uw functie-app, of een nabijgelegen regio. |
 
-    :::image type="content" source="media/configure-monitoring/ai-general.png" alt-text="Enable Application Insights from the portal"::: (Een Application Insights-resource maken)
+    :::image type="content" source="media/configure-monitoring/ai-general.png" alt-text="Create an Application Insights resource"::: (Een Application Insights-resource maken)
 
 1. Selecteer **Toepassen**. 
 

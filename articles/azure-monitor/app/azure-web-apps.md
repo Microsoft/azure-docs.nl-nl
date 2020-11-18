@@ -4,12 +4,12 @@ description: Bewaking van toepassings prestaties voor Azure app Services. Grafie
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js, devx-track-dotnet
-ms.openlocfilehash: c78a43f9efb263c08dad21218636f21121b9732c
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: f46d00f97dab18b0c7c1d4a5742a87308f814e9e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93377799"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832892"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Azure App Service-prestaties bewaken
 
@@ -36,7 +36,7 @@ Er zijn twee manieren om toepassings bewaking in te scha kelen voor door Azure-a
 
 ## <a name="enable-agent-based-monitoring"></a>Bewaking op basis van agent inschakelen
 
-# <a name="net"></a>[.NET](#tab/net)
+# <a name="aspnet"></a>[ASP.NET](#tab/net)
 
 > [!NOTE]
 > De combi natie van APPINSIGHTS_JAVASCRIPT_ENABLED en urlCompression wordt niet ondersteund. Zie de uitleg in de [sectie probleem oplossing](#troubleshooting)voor meer informatie.
@@ -59,7 +59,7 @@ Er zijn twee manieren om toepassings bewaking in te scha kelen voor door Azure-a
  
  Hieronder vindt u een overzicht van de gegevens die voor elke route worden verzameld:
         
-| Gegevens | .NET Basic-verzameling | .NET aanbevolen verzameling |
+| Gegevens | ASP.NET Basic-verzameling | Aanbevolen verzameling ASP.NET |
 | --- | --- | --- |
 | Voegt trends toe voor CPU, geheugen en I/O-gebruik |Ja |Ja |
 | Verzamelt gebruikstrends en maakt correlatie mogelijk van beschikbaarheidsresultaten tot transacties | Ja |Ja |
@@ -73,11 +73,11 @@ Er zijn twee manieren om toepassings bewaking in te scha kelen voor door Azure-a
 
     * Raadpleeg de [code](https://github.com/microsoft/ApplicationInsights-dotnet/blob/master/BASE/Test/ServerTelemetryChannel.Test/TelemetryChannel.Tests/AdaptiveSamplingTelemetryProcessorTest.cs) en de [bijbehorende documentatie](./sampling.md)voor een lijst met ondersteunde instellingen voor adaptieve bemonsterings-telemetrie.
 
-# <a name="net-core"></a>[.NET Core](#tab/netcore)
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/netcore)
 
-De volgende versies van .NET core worden ondersteund: ASP.NET Core 2,1, ASP.NET Core 2,2, ASP.NET Core 3,0, ASP.NET Core 3,1
+De volgende versies van ASP.NET Core worden ondersteund: ASP.NET Core 2,1, ASP.NET Core 2,2, ASP.NET Core 3,0, ASP.NET Core 3,1
 
-Het is **niet mogelijk** om het volledige Framework te richten op basis van .net core, op zichzelf gebaseerde implementatie en op Linux gebaseerde toepassingen die op agent/op extensie gebaseerde bewaking niet worden ondersteund. ([Hand matige instrumentatie](./asp-net-core.md) via code werkt in alle eerdere scenario's.)
+Het is **niet mogelijk** om het volledige Framework te richten op basis van ASP.net core, een zelfstandige implementatie en toepassingen die op Linux zijn gebaseerd. ([Hand matige instrumentatie](./asp-net-core.md) via code werkt in alle eerdere scenario's.)
 
 1. **Selecteer Application Insights** in het deel venster Azure van het configuratie scherm voor uw app service.
 
@@ -90,7 +90,7 @@ Het is **niet mogelijk** om het volledige Framework te richten op basis van .net
 
      ![Uw web-app instrumenteren](./media/azure-web-apps/create-resource-01.png)
 
-2. Nadat u hebt opgegeven welke resource moet worden gebruikt, kunt u kiezen hoe Application Insights gegevens per platform wilt verzamelen voor uw toepassing. .NET core biedt **Aanbevolen verzameling** of **uitgeschakeld** voor ASP.net Core 2,1, 2,2, 3,0 en 3,1.
+2. Nadat u hebt opgegeven welke resource moet worden gebruikt, kunt u kiezen hoe Application Insights gegevens per platform wilt verzamelen voor uw toepassing. ASP.NET Core biedt **Aanbevolen verzameling** of **uitgeschakeld** voor ASP.net Core 2,1, 2,2, 3,0 en 3,1.
 
     ![Opties per platform kiezen](./media/azure-web-apps/choose-options-new-net-core.png)
 
@@ -111,7 +111,7 @@ Python App Service gebaseerde webtoepassingen bieden momenteel geen ondersteunin
 
 ## <a name="enable-client-side-monitoring"></a>Bewaking aan client zijde inschakelen
 
-# <a name="net"></a>[.NET](#tab/net)
+# <a name="aspnet"></a>[ASP.NET](#tab/net)
 
 Bewaking aan client zijde is opt-in voor ASP.NET. Bewaking aan client zijde inschakelen:
 
@@ -126,9 +126,9 @@ Bewaking aan client zijde is opt-in voor ASP.NET. Bewaking aan client zijde insc
 
 Als u bewaking aan client zijde wilt uitschakelen, verwijdert u het gekoppelde sleutel waardepaar uit de toepassings instellingen of stelt u de waarde in op false.
 
-# <a name="net-core"></a>[.NET Core](#tab/netcore)
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/netcore)
 
-Bewaking aan client zijde is **standaard ingeschakeld** voor .net Core-Apps met **Aanbevolen verzameling** , ongeacht of de app-instelling ' APPINSIGHTS_JAVASCRIPT_ENABLED ' aanwezig is.
+Bewaking aan client zijde is **standaard ingeschakeld** voor ASP.net Core-Apps met de **Aanbevolen verzameling**, ongeacht of de app-instelling APPINSIGHTS_JAVASCRIPT_ENABLED aanwezig is.
 
 Als u de bewaking aan client zijde om een of andere reden wilt uitschakelen:
 
@@ -348,7 +348,7 @@ Als de upgrade wordt uitgevoerd vanaf een eerdere versie dan 2.5.1, controleert 
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-Hieronder vindt u stapsgewijze richt lijnen voor het oplossen van problemen met de bewaking van extensies en agents voor .NET-en .NET core-toepassingen die worden uitgevoerd op Azure-app Services.
+Hieronder vindt u stapsgewijze richt lijnen voor het oplossen van problemen met behulp van uitbrei dingen op basis van ASP.NET en ASP.NET Core op Azure-app Services gebaseerde toepassingen.
 
 > [!NOTE]
 > De aanbevolen benadering voor het bewaken van Java-toepassingen is het gebruik van de automatische instrumentatie zonder de code te wijzigen. Volg de richt lijnen voor [Application Insights Java 3,0-agent](./java-in-process-agent.md).
@@ -372,16 +372,31 @@ Hieronder vindt u stapsgewijze richt lijnen voor het oplossen van problemen met 
 
     * Controleer of er geen vermeldingen zijn voor `AppAlreadyInstrumented` , `AppContainsDiagnosticSourceAssembly` , en `AppContainsAspNetTelemetryCorrelationAssembly` .
         * Als een van deze vermeldingen bestaat, verwijdert u de volgende pakketten uit uw toepassing: `Microsoft.ApplicationInsights` , `System.Diagnostics.DiagnosticSource` en `Microsoft.AspNet.TelemetryCorrelation` .
+        * Alleen voor ASP.NET Core-Apps: voor het geval uw toepassing naar een Application Insights pakket verwijst, bijvoorbeeld als u eerder met de SDK van de [ASP.net core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core)hebt geinstrumenteerd (of geprobeerd om uw app te instrumenteren), is het inschakelen van de app Service-integratie mogelijk niet van kracht en worden de gegevens mogelijk niet weer gegeven in Application Insights. Om het probleem op te lossen, schakelt u in portal ' interop met Application Insights SDK ' in en gaat u de gegevens in Application Insights bekijken 
+        > [!IMPORTANT]
+        > Deze functionaliteit is beschikbaar als preview-versie 
+
+        ![De instelling van de bestaande app inschakelen](./media/azure-web-apps/netcore-sdk-interop.png)
+
+        De gegevens worden nu verzonden met methode zonder code, zelfs als Application Insights SDK oorspronkelijk is gebruikt of als poging is gedaan te worden gebruikt.
+
+        > [!IMPORTANT]
+        > Als de toepassing die Application Insights SDK gebruikt, een telemetrie verzendt, wordt deze telemetrie uitgeschakeld, met andere woorden, aangepaste telemetrie-indien aanwezig, zoals bijvoorbeeld een track * ()-methode en eventuele aangepaste instellingen, zoals steek proeven, worden uitgeschakeld. 
+
+
+### <a name="php-and-wordpress-are-not-supported"></a>PHP en WordPress worden niet ondersteund
+
+PHP-en WordPress-sites worden niet ondersteund. Er is momenteel geen officieel ondersteunde SDK/agent voor bewaking aan server zijde van deze werk belastingen. Hand matig de client-side-trans acties op een PHP-of WordPress-site instrumenteren door de Java script-client toe te voegen aan uw webpagina's kan worden uitgevoerd met behulp van de [Java script SDK](./javascript.md).
 
 De onderstaande tabel bevat een gedetailleerdere uitleg van de betekenis van deze waarden, de onderliggende oorzaken en aanbevolen oplossingen:
 
 |Probleem waarde|Uitleg|Herstellen
 |---- |----|---|
 | `AppAlreadyInstrumented:true` | Deze waarde geeft aan dat de uitbrei ding heeft gedetecteerd dat er al een aspect van de SDK aanwezig is in de toepassing en dat deze wordt teruggedraaid. Dit kan worden veroorzaakt door een verwijzing naar `System.Diagnostics.DiagnosticSource` ,  `Microsoft.AspNet.TelemetryCorrelation` of `Microsoft.ApplicationInsights`  | Verwijder de verwijzingen. Sommige van deze verwijzingen worden standaard toegevoegd vanuit bepaalde Visual Studio-sjablonen, en oudere versies van Visual Studio kunnen verwijzingen toevoegen aan `Microsoft.ApplicationInsights` .
-|`AppAlreadyInstrumented:true` | Als de toepassing is gericht op .NET Core 2,1 of 2,2, en verwijst naar [micro soft. AspNetCore. all](https://www.nuget.org/packages/Microsoft.AspNetCore.All) meta package, wordt het Application Insights en wordt er een uitbrei ding van de extensie. | Klanten op .NET Core 2.1 2.2 worden [Aanbevolen](https://github.com/aspnet/Announcements/issues/287) het meta-pakket micro soft. AspNetCore. app te gebruiken.|
+|`AppAlreadyInstrumented:true` | Als de toepassing is gericht op ASP.NET Core 2,1 of 2,2, geeft deze waarde aan dat de uitbrei ding heeft gedetecteerd dat een bepaald aspect van de SDK al aanwezig is in de toepassing en wordt er een back-up | Klanten op .NET Core 2.1 2.2 worden [Aanbevolen](https://github.com/aspnet/Announcements/issues/287) het meta-pakket micro soft. AspNetCore. app te gebruiken. Schakel daarnaast ' interop met Application Insights SDK ' in de portal in (Zie de bovenstaande instructies).|
 |`AppAlreadyInstrumented:true` | Deze waarde kan ook worden veroorzaakt door de aanwezigheid van de bovenstaande dll-bestanden in de app-map van een vorige implementatie. | Reinig de app-map om er zeker van te zijn dat deze DLL-bestanden worden verwijderd. Controleer de bin-map van uw lokale app en de map Wwwroot op het App Service. (Ga als volgt te werk om de map wwwroot van uw App Service web-app te controleren: Advanced tools (kudu) > debug console > CMD > home\site\wwwroot).
 |`AppContainsAspNetTelemetryCorrelationAssembly: true` | Deze waarde geeft aan dat de uitbrei ding verwijzingen naar `Microsoft.AspNet.TelemetryCorrelation` in de toepassing heeft gedetecteerd en dat deze wordt teruggedraaid. | Verwijder de verwijzing.
-|`AppContainsDiagnosticSourceAssembly**:true`|Deze waarde geeft aan dat de uitbrei ding verwijzingen naar `System.Diagnostics.DiagnosticSource` in de toepassing heeft gedetecteerd en dat deze wordt teruggedraaid.| Verwijder de verwijzing.
+|`AppContainsDiagnosticSourceAssembly**:true`|Deze waarde geeft aan dat de uitbrei ding verwijzingen naar `System.Diagnostics.DiagnosticSource` in de toepassing heeft gedetecteerd en dat deze wordt teruggedraaid.| Verwijder de verwijzing voor ASP.NET. 
 |`IKeyExists:false`|Deze waarde geeft aan dat de instrumentatie sleutel niet aanwezig is in de AppSetting, `APPINSIGHTS_INSTRUMENTATIONKEY` . Mogelijke oorzaken: de waarden zijn mogelijk per ongeluk verwijderd, verg eten de waarden in het Automation-script in te stellen, enzovoort. | Zorg ervoor dat de instelling aanwezig is in de App Service toepassings instellingen.
 
 ### <a name="appinsights_javascript_enabled-and-urlcompression-is-not-supported"></a>APPINSIGHTS_JAVASCRIPT_ENABLED en urlCompression worden niet ondersteund
@@ -397,13 +412,9 @@ Bekijk de opmerkingen bij de [release](https://github.com/MohanGsk/ApplicationIn
 
 ### <a name="default-website-deployed-with-web-apps-does-not-support-automatic-client-side-monitoring"></a>De standaard website die wordt geïmplementeerd met Web Apps biedt geen ondersteuning voor automatische bewaking aan client zijde
 
-Wanneer u een web-app maakt met de `ASP.NET` of `.NET Core` Runtimes in azure-app Services, wordt één statische HTML-pagina geïmplementeerd als een start website. De statische webpagina laadt ook een door .NET beheerd webonderdeel in IIS. Hiermee kan bewaking zonder code aan server zijde worden getest, maar wordt automatische bewaking aan client zijde niet ondersteund.
+Wanneer u een web-app maakt met de `ASP.NET` of `ASP.NET Core` Runtimes in azure-app Services, wordt één statische HTML-pagina geïmplementeerd als een start website. De statische webpagina laadt ook een door ASP.NET beheerd webonderdeel in IIS. Hiermee kan bewaking zonder code aan server zijde worden getest, maar wordt automatische bewaking aan client zijde niet ondersteund.
 
 Als u serverloze servers en bewaking aan client zijde voor ASP.NET of ASP.NET Core wilt testen in een web-app Azure-app Services, raden we u aan de officiële hand leidingen te volgen voor het [maken van een ASP.net core web-app](../../app-service/quickstart-dotnetcore.md) en het [maken van een ASP.NET Framework-web-app](../../app-service/quickstart-dotnet-framework.md) en vervolgens de instructies in het huidige artikel om de bewaking in te scha kelen.
-
-### <a name="php-and-wordpress-are-not-supported"></a>PHP en WordPress worden niet ondersteund
-
-PHP-en WordPress-sites worden niet ondersteund. Er is momenteel geen officieel ondersteunde SDK/agent voor bewaking aan server zijde van deze werk belastingen. Hand matig de client-side-trans acties op een PHP-of WordPress-site instrumenteren door de Java script-client toe te voegen aan uw webpagina's kan worden uitgevoerd met behulp van de [Java script SDK](./javascript.md).
 
 ### <a name="connection-string-and-instrumentation-key"></a>Verbindings reeks en instrumentatie sleutel
 

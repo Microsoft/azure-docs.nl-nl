@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 67e1f1dff43939ce7ef279db57bee4b18bd12dc8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 45393f116149f6cf16763d2d7033f8425df235bf
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88213948"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832990"
 ---
 # <a name="azure-blob-storage-trigger-for-azure-functions"></a>Azure Blob-opslag trigger voor Azure Functions
 
@@ -21,6 +21,16 @@ Voor de Azure Blob Storage-trigger is een opslag account voor algemeen gebruik v
 
 Zie het [overzicht](./functions-bindings-storage-blob.md)voor meer informatie over de installatie-en configuratie details.
 
+## <a name="polling"></a>Navragen
+
+Polling werkt als een hybride tussen het inspecteren van Logboeken en het uitvoeren van periodieke container scans. Blobs worden gescand in groepen van 10.000 tegelijk met een vervolg token dat tussen intervallen wordt gebruikt.
+
+> [!WARNING]
+> Daarnaast [worden opslag logboeken gemaakt op basis van ' Best effort '](/rest/api/storageservices/About-Storage-Analytics-Logging) . Er is geen garantie dat alle gebeurtenissen worden vastgelegd. Onder bepaalde omstandigheden kunnen Logboeken worden gemist.
+> 
+> Als u snellere of meer betrouw bare BLOB-verwerking nodig hebt, kunt u overwegen om een [wachtrij bericht](../storage/queues/storage-dotnet-how-to-use-queues.md) te maken wanneer u de BLOB maakt. Gebruik vervolgens een [wachtrij trigger](functions-bindings-storage-queue.md) in plaats van een BLOB-trigger om de BLOB te verwerken. Een andere optie is het gebruik van Event Grid. Raadpleeg de zelf studie voor het [automatiseren van het formaat van geüploade afbeeldingen met behulp van Event grid](../event-grid/resize-images-on-storage-blob-upload-event.md).
+>
+
 ## <a name="alternatives"></a>Alternatieven
 
 ### <a name="event-grid-trigger"></a>Event Grid trigger
@@ -29,7 +39,7 @@ De [trigger](functions-bindings-event-grid.md) van de Event Grid heeft ook ingeb
 
 - **Alleen-Blob Storage-accounts**: [alleen-Blob Storage-accounts](../storage/common/storage-account-overview.md#types-of-storage-accounts) worden ondersteund voor BLOB-invoer-en uitvoer bindingen, maar niet voor BLOB-triggers.
 
-- **Hoge**schaal: High Scale kan soepel worden gedefinieerd als containers met meer dan 100.000 blobs in deze of opslag accounts met meer dan 100 BLOB-updates per seconde.
+- **Hoge** schaal: High Scale kan soepel worden gedefinieerd als containers met meer dan 100.000 blobs in deze of opslag accounts met meer dan 100 BLOB-updates per seconde.
 
 - **Latentie minimaliseren**: als de functie-app zich in het verbruiks abonnement bevindt, kan er een vertraging van 10 minuten zijn bij het verwerken van nieuwe blobs als een functie-app niet actief is geweest. Om deze latentie te voor komen, kunt u overschakelen naar een App Service plan met Always ingeschakeld. U kunt ook een [Event grid trigger](functions-bindings-event-grid.md) gebruiken met uw Blob Storage-account. Zie de [Event grid zelf studie](../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2Fazure%2Fazure-functions%2Ftoc.json)voor een voor beeld.
 
@@ -321,7 +331,7 @@ In het volgende voor beeld ziet u hoe u een afzonderlijke binding maakt met de n
 "path": "input/{blobname}.{blobextension}",
 ```
 
-Als de BLOB de naam *original-Blob1.txt*heeft, zijn de waarden van de `blobname` `blobextension` variabelen en in functie code *oorspronkelijk-Blob1* en *txt*.
+Als de BLOB de naam *original-Blob1.txt* heeft, zijn de waarden van de `blobname` `blobextension` variabelen en in functie code *oorspronkelijk-Blob1* en *txt*.
 
 ### <a name="filter-on-blob-name"></a>Filteren op blobnaam
 
@@ -331,7 +341,7 @@ Het volgende voor beeld wordt alleen geactiveerd op blobs in de `input` containe
 "path": "input/original-{name}",
 ```
 
-Als de naam van de BLOB *original-Blob1.txt*is, is de waarde van de `name` variabele in functie code `Blob1.txt` .
+Als de naam van de BLOB *original-Blob1.txt* is, is de waarde van de `name` variabele in functie code `Blob1.txt` .
 
 ### <a name="filter-on-file-type"></a>Filteren op bestands type
 
@@ -349,7 +359,7 @@ Als u wilt zoeken naar accolades in bestands namen, plaatst u de accolades met b
 "path": "images/{{20140101}}-{name}",
 ```
 
-Als de BLOB de naam * {20140101}-soundfile.mp3*heeft, `name` wordt de waarde van de variabele in de functie code *soundfile.mp3*.
+Als de BLOB de naam *{20140101}-soundfile.mp3* heeft, `name` wordt de waarde van de variabele in de functie code *soundfile.mp3*.
 
 ## <a name="metadata"></a>Metagegevens
 
@@ -382,11 +392,11 @@ Meta gegevens zijn niet beschikbaar in Java.
 
 ## <a name="blob-receipts"></a>BLOB-ontvangst bewijzen
 
-De Azure Functions runtime zorgt ervoor dat er geen blob-activering meer dan één keer wordt aangeroepen voor dezelfde nieuwe of bijgewerkte blob. Om te bepalen of een bepaalde BLOB-versie is verwerkt, worden de *BLOB-ontvangst bevestigingen*onderhouden.
+De Azure Functions runtime zorgt ervoor dat er geen blob-activering meer dan één keer wordt aangeroepen voor dezelfde nieuwe of bijgewerkte blob. Om te bepalen of een bepaalde BLOB-versie is verwerkt, worden de *BLOB-ontvangst bevestigingen* onderhouden.
 
 Azure Functions worden BLOB-ontvangsten opgeslagen in een container met de naam *Azure-webjobs-hosts* in het Azure-opslag account voor uw functie-app (gedefinieerd door de app `AzureWebJobsStorage` -instelling). Een BLOB-ontvangst heeft de volgende informatie:
 
-* De geactiveerde functie (' naam van de* &lt; functie-app>*. Vervullen. * &lt; functie naam>*, bijvoorbeeld: "MyFunctionApp. functions. CopyBlob")
+* De geactiveerde functie (' naam van de *&lt; functie-app>*. Vervullen. *&lt; functie naam>*, bijvoorbeeld: "MyFunctionApp. functions. CopyBlob")
 * De container naam
 * Het BLOB-type ("BlockBlob" of "PageBlob")
 * De BLOB-naam
@@ -398,9 +408,9 @@ Als u het opnieuw verwerken van een BLOB wilt afdwingen, verwijdert u de BLOB-on
 
 Wanneer een BLOB-activerings functie mislukt voor een bepaalde blob, worden Azure Functions de nieuwe pogingen standaard een totaal van vijf keer uitgevoerd.
 
-Als alle 5 pogingen mislukken, Azure Functions een bericht aan een opslag wachtrij met de naam *webjobs-sjabloon blobtrigger-Poison*toevoegen. Het maximum aantal nieuwe pogingen kan worden geconfigureerd. Dezelfde MaxDequeueCount-instelling wordt gebruikt voor de verwerking van verontreinigde BLOB-verwerking en verontreinigde wachtrij berichten. Het wachtrij bericht voor verontreinigde blobs is een JSON-object dat de volgende eigenschappen bevat:
+Als alle 5 pogingen mislukken, Azure Functions een bericht aan een opslag wachtrij met de naam *webjobs-sjabloon blobtrigger-Poison* toevoegen. Het maximum aantal nieuwe pogingen kan worden geconfigureerd. Dezelfde MaxDequeueCount-instelling wordt gebruikt voor de verwerking van verontreinigde BLOB-verwerking en verontreinigde wachtrij berichten. Het wachtrij bericht voor verontreinigde blobs is een JSON-object dat de volgende eigenschappen bevat:
 
-* FunctionId (in de indeling * &lt; functie app name>*. Vervullen. * &lt; functie naam>*)
+* FunctionId (in de indeling *&lt; functie app name>*. Vervullen. *&lt; functie naam>*)
 * BlobType ("BlockBlob" of "PageBlob")
 * ContainerName
 * BlobName
@@ -413,16 +423,6 @@ De BLOB-trigger maakt intern gebruik van een wachtrij, waardoor het maximum aant
 [Het verbruiks plan](functions-scale.md#how-the-consumption-and-premium-plans-work) beperkt een functie-app op één virtuele machine (VM) tot 1,5 GB aan geheugen. Het geheugen wordt gebruikt door elk gelijktijdig uitgevoerde functie-exemplaar en door de functions-runtime zelf. Als een door BLOB geactiveerde functie de volledige Blob in het geheugen laadt, is de maximale hoeveelheid geheugen die door de functie wordt gebruikt alleen voor blobs 24 * maximum grootte van BLOB. Een functie-app met drie door BLOB geactiveerde functies en de standaard instellingen hebben bijvoorbeeld een Maxi maal per VM gelijktijdigheid van 3 * 24 = 72 functie aanroepen.
 
 Java script-en Java-functies laden de volledige Blob in het geheugen, en C#-functies doen dat als u verbinding `string` maakt met of `Byte[]` .
-
-## <a name="polling"></a>Navragen
-
-Polling werkt als een hybride tussen het inspecteren van Logboeken en het uitvoeren van periodieke container scans. Blobs worden gescand in groepen van 10.000 tegelijk met een vervolg token dat tussen intervallen wordt gebruikt.
-
-> [!WARNING]
-> Daarnaast [worden opslag logboeken gemaakt op basis van ' Best effort '](/rest/api/storageservices/About-Storage-Analytics-Logging) . Er is geen garantie dat alle gebeurtenissen worden vastgelegd. Onder bepaalde omstandigheden kunnen Logboeken worden gemist.
-> 
-> Als u snellere of meer betrouw bare BLOB-verwerking nodig hebt, kunt u overwegen om een [wachtrij bericht](../storage/queues/storage-dotnet-how-to-use-queues.md) te maken wanneer u de BLOB maakt. Gebruik vervolgens een [wachtrij trigger](functions-bindings-storage-queue.md) in plaats van een BLOB-trigger om de BLOB te verwerken. Een andere optie is het gebruik van Event Grid. Raadpleeg de zelf studie voor het [automatiseren van het formaat van geüploade afbeeldingen met behulp van Event grid](../event-grid/resize-images-on-storage-blob-upload-event.md).
->
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/15/2020
-ms.openlocfilehash: a8890db90fa9f76b676a5fb944f74a773b00c8cd
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 80280702748040e12d1d3d048644e6a16c926256
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92737512"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832374"
 ---
 # <a name="source-transformation-in-mapping-data-flow"></a>Bron transformatie in gegevens stroom toewijzen
 
@@ -50,6 +50,7 @@ Toewijzing van gegevens stroom volgt de aanpak van extractie, laden en transform
 | [Azure SQL Database](connector-azure-sql-database.md#mapping-data-flow-properties) | | ✓/- |
 | [Azure SQL Managed instance (preview-versie)](connector-azure-sql-managed-instance.md#mapping-data-flow-properties) | | ✓/- |
 | [Azure Cosmos DB (SQL API)](connector-azure-cosmos-db.md#mapping-data-flow-properties) | | ✓/- |
+| [Hive](connector-hive.md#mapping-data-flow-properties) | | -/✓ | 
 | [Snowflake](connector-snowflake.md) | | ✓/✓ |
 
 De instellingen die specifiek zijn voor deze connectors bevinden zich op het tabblad **bron opties** . Voor beelden van gegevens-en gegevensstroom scripts in deze instellingen vindt u in de documentatie van de connector.
@@ -64,13 +65,13 @@ Ontwikkelings waarden voor gegevensset-para meters kunnen worden geconfigureerd 
 
 ![Scherm opname van het tabblad Bron instellingen.](media/data-flow/source1.png "Scherm opname van het tabblad Bron instellingen.")
 
-**Naam van de uitvoer stroom** : de naam van de bron transformatie.
+**Naam van de uitvoer stroom**: de naam van de bron transformatie.
 
-**Bron type** : Kies of u een inline-gegevensset of een bestaand DataSet-object wilt gebruiken.
+**Bron type**: Kies of u een inline-gegevensset of een bestaand DataSet-object wilt gebruiken.
 
-**Verbinding testen** : test of de Spark-service van de gegevens stroom verbinding kan maken met de gekoppelde service die in de bron-gegevensset wordt gebruikt. De foutopsporingsmodus moet zijn ingeschakeld om deze functie in te scha kelen.
+**Verbinding testen**: test of de Spark-service van de gegevens stroom verbinding kan maken met de gekoppelde service die in de bron-gegevensset wordt gebruikt. De foutopsporingsmodus moet zijn ingeschakeld om deze functie in te scha kelen.
 
-**Schema-drift** : [schema-drift](concepts-data-flow-schema-drift.md) is de mogelijkheid van Data Factory om flexibele schema's in uw gegevens stromen systeem eigen te verwerken zonder dat er expliciet kolom wijzigingen hoeven te worden gedefinieerd.
+**Schema-drift**: [schema-drift](concepts-data-flow-schema-drift.md) is de mogelijkheid van Data Factory om flexibele schema's in uw gegevens stromen systeem eigen te verwerken zonder dat er expliciet kolom wijzigingen hoeven te worden gedefinieerd.
 
 * Schakel het selectie vakje **schema-drift toestaan** in als de bron kolommen vaak worden gewijzigd. Met deze instelling kunnen alle binnenkomende bron velden door de trans formaties worden getransporteerd naar de sink.
 
@@ -78,9 +79,9 @@ Ontwikkelings waarden voor gegevensset-para meters kunnen worden geconfigureerd 
 
 **Schema valideren:** Als **validatie schema** is geselecteerd, kan de gegevens stroom niet worden uitgevoerd als de binnenkomende bron gegevens niet overeenkomen met het gedefinieerde schema van de gegevensset.
 
-**Aantal regels overs Laan** : het veld **aantal regel items overs Laan** geeft aan hoeveel regels aan het begin van de gegevensset moeten worden genegeerd.
+**Aantal regels overs Laan**: het veld **aantal regel items overs Laan** geeft aan hoeveel regels aan het begin van de gegevensset moeten worden genegeerd.
 
-**Sampling** : Schakel **steek proeven** in om het aantal rijen van de bron te beperken. Gebruik deze instelling wanneer u gegevens uit uw bron test of van uw source gebruikt voor fout opsporing.
+**Sampling**: Schakel **steek proeven** in om het aantal rijen van de bron te beperken. Gebruik deze instelling wanneer u gegevens uit uw bron test of van uw source gebruikt voor fout opsporing.
 
 Als u wilt valideren of uw bron juist is geconfigureerd, schakelt u de foutopsporingsmodus in en haalt u een voor beeld van de gegevens op. Zie [debug mode (foutopsporingsmodus](concepts-data-flow-debug-mode.md)) voor meer informatie.
 

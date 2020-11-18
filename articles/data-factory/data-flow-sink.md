@@ -4,17 +4,16 @@ description: Meer informatie over het configureren van een Sink-trans formatie i
 author: kromerm
 ms.author: makromer
 ms.reviewer: daperlov
-manager: anandsub
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 11/02/2020
-ms.openlocfilehash: 2e26028c47e8c96f8c1adabc468ee6f03e3cb19c
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.date: 11/17/2020
+ms.openlocfilehash: d45f5d5d1d61372ed959334519aa865c22d70748
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427272"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832480"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Trans formatie sinken bij toewijzing van gegevens stroom
 
@@ -65,13 +64,9 @@ In de volgende video wordt een aantal verschillende Sink-opties voor door tekst 
 
 ![Scherm opname van de Sink-instellingen.](media/data-flow/sink-settings.png "Scherm opname van de Sink-instellingen.")
 
-**Schema-drift** : [schema-drift](concepts-data-flow-schema-drift.md) is de mogelijkheid van Data Factory om flexibele schema's in uw gegevens stromen systeem eigen te verwerken zonder dat er expliciet kolom wijzigingen hoeven te worden gedefinieerd. Schakel **schema-drift toestaan** in voor het schrijven van aanvullende kolommen boven op wat is gedefinieerd in het sink data-schema.
+**Schema-drift**: [schema-drift](concepts-data-flow-schema-drift.md) is de mogelijkheid van Data Factory om flexibele schema's in uw gegevens stromen systeem eigen te verwerken zonder dat er expliciet kolom wijzigingen hoeven te worden gedefinieerd. Schakel **schema-drift toestaan** in voor het schrijven van aanvullende kolommen boven op wat is gedefinieerd in het sink data-schema.
 
-**Schema valideren** : als validate schema is geselecteerd, mislukt de gegevens stroom als een van de kolommen van het binnenkomende bron schema niet wordt gevonden in de bron projectie of als de gegevens typen niet overeenkomen. Gebruik deze instelling om af te dwingen dat de bron gegevens voldoen aan het contract van uw gedefinieerde projectie. Het is handig in database bron scenario's om te signaleren dat kolom namen of typen zijn gewijzigd.
-
-**Tempdb gebruiken:** Data Factory maakt standaard gebruik van een globale tijdelijke tabel om gegevens op te slaan als onderdeel van het laad proces. U kunt ook de optie ' TempDB gebruiken ' uitschakelen en in plaats daarvan vragen om Data Factory de tijdelijke Holding tabel op te slaan in een gebruikers database die zich in de Data Base bevindt die wordt gebruikt voor deze sink.
-
-![Tijdelijke data base gebruiken](media/data-flow/tempdb.png "Tijdelijke data base gebruiken")
+**Schema valideren**: als validate schema is geselecteerd, mislukt de gegevens stroom als een van de kolommen van het binnenkomende bron schema niet wordt gevonden in de bron projectie of als de gegevens typen niet overeenkomen. Gebruik deze instelling om af te dwingen dat de bron gegevens voldoen aan het contract van uw gedefinieerde projectie. Het is handig in database bron scenario's om te signaleren dat kolom namen of typen zijn gewijzigd.
 
 ## <a name="cache-sink"></a>Cache-Sink
 
@@ -109,9 +104,14 @@ Standaard worden gegevens in een niet-deterministische volg orde naar meerdere s
 
 ![Aangepaste Sink-ordening](media/data-flow/cache-2.png "Aangepaste Sink-ordening")
 
+## <a name="error-row-handling"></a>Verwerking van foutrijen
+
+Bij het schrijven naar data bases kunnen bepaalde gegevens rijen mislukken vanwege beperkingen die zijn ingesteld door de bestemming. Standaard mislukt een uitvoering van de gegevens stroom bij de eerste fout die wordt uitgevoerd. In bepaalde connectors kunt u ervoor kiezen om **door te gaan** met een fout waarmee uw gegevens stroom kan worden voltooid, zelfs als afzonderlijke rijen fouten bevatten. Deze functie is momenteel alleen beschikbaar in Azure SQL Database. Zie voor meer informatie [fout rijen verwerken in Azure SQL DB](connector-azure-sql-database.md#error-row-handling).
+
 ## <a name="data-preview-in-sink"></a>Voor beeld van gegevens in Sink
 
 Wanneer u een voor beeld van een gegevens ophaalt op een cluster voor fout opsporing, worden er geen gegevens naar uw Sink geschreven. Een moment opname van de gegevens die worden weer gegeven, maar er wordt niets naar uw bestemming geschreven. Als u het schrijven van gegevens naar uw Sink wilt testen, voert u een pijplijn fout opsporing uit vanaf het pijp lijn papier.
 
 ## <a name="next-steps"></a>Volgende stappen
+
 Nu u de gegevens stroom hebt gemaakt, voegt u een [gegevens stroom activiteit toe aan uw pijp lijn](concepts-data-flow-overview.md).

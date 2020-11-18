@@ -3,13 +3,13 @@ title: API Management integreren met Service Fabric in azure
 description: Meer informatie over hoe u snel aan de slag kunt gaan met Azure API Management en verkeer naar een back-end-service in Service Fabric routeren.
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.custom: mvc
-ms.openlocfilehash: 40f8c53394292a85f6fd032e445d79ed82e2d4e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 61a13d80fd67751d77bc77199fa433143ad92048
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86260262"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831681"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>API Management integreren met Service Fabric in azure
 
@@ -146,7 +146,7 @@ Met [Microsoft.ApiManagement/service/apis](/azure/templates/microsoft.apimanagem
 Geef deze waarden op als u een API-bewerking voor de front-end wilt toevoegen:
 
 * **displayName** en **description** beschrijven de bewerking. Gebruik voor dit artikel ' Values '.
-* **method** is het HTTP-woord.  Geef voor dit artikel **Get**op.
+* **method** is het HTTP-woord.  Geef voor dit artikel **Get** op.
 * **urlTemplate** wordt toegevoegd aan de basis-URL van de API en identificeert één HTTP-bewerking.  Voor dit artikel gebruikt `/api/values` u als u de .net-back-end-service hebt toegevoegd of `getMessage` Als u de Java-back-end-service hebt toegevoegd.  De standaardinstelling is dat het URL-pad dat hier wordt opgegeven, het URL-pad is dat naar de service van Service Fabric in de back-end wordt verzonden. Als u hier het URL-pad opgeeft dat ook door de service wordt gebruikt, zoals '/api/values', werkt de bewerking zonder verdere aanpassingen. U kunt hier ook een URL-pad opgeven dat verschilt van het URL-pad dat wordt gebruikt door de service van Service Fabric in de back-end. In dat geval moet u later ook een opdracht voor wijziging van het pad opgeven in het beleid voor de bewerking.
 
 ### <a name="microsoftapimanagementserviceapispolicies"></a>Microsoft.ApiManagement/service/apis/policies

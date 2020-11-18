@@ -10,13 +10,13 @@ author: gvashishtha
 ms.date: 09/23/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
-ms.custom: deploy
-ms.openlocfilehash: eed1a3d403a6012e2010a6b9a47a60f815044565
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.custom: deploy, devx-track-azurecli
+ms.openlocfilehash: cfa40332c45eac23d062b83bb789c25f1906ae24
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685899"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831630"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Hoge prestaties met een Triton-inrichtings server (preview-versie) 
 

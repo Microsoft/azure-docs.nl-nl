@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: has-adal-ref, devx-track-js, devx-track-csharp
-ms.openlocfilehash: e9a1afd1d998fcb3ba715c890cc4deac1f0a7da5
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: ee4dd70faab9ed44b1aa6ca8ca0ec517c7746f66
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517713"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832527"
 ---
 # <a name="security-frame-authentication--mitigations"></a>Beveiligings frame: verificatie | Oplossingen
 
@@ -30,7 +30,7 @@ ms.locfileid: "94517713"
 | **Webtoepassing**    | <ul><li>[Overweeg het gebruik van een standaard verificatie mechanisme om te verifiëren bij de webtoepassing](#standard-authn-web-app)</li><li>[Toepassingen moeten mislukte verificatie scenario's veilig afhandelen](#handle-failed-authn)</li><li>[Stapsgewijze of adaptieve verificatie inschakelen](#step-up-adaptive-authn)</li><li>[Zorg ervoor dat de beheer interfaces op de juiste manier worden vergrendeld](#admin-interface-lockdown)</li><li>[Veilig verg eten wachtwoord functionaliteiten implementeren](#forgot-pword-fxn)</li><li>[Zorg ervoor dat wacht woord-en account beleid worden geïmplementeerd](#pword-account-policy)</li><li>[Besturings elementen implementeren om te voor komen dat gebruikers naam inventarisatie](#controls-username-enum)</li></ul> |
 | **Database** | <ul><li>[Gebruik, indien mogelijk, Windows-verificatie om verbinding te maken met SQL Server](#win-authn-sql)</li><li>[Gebruik, indien mogelijk, Azure Active Directory verificatie om verbinding te maken met SQL Database](#aad-authn-sql)</li><li>[Wanneer de SQL-verificatie modus wordt gebruikt, moet u ervoor zorgen dat het account en het wachtwoord beleid worden afgedwongen op SQL Server](#authn-account-pword)</li><li>[Geen SQL-verificatie gebruiken in Inge sloten data bases](#autn-contained-db)</li></ul> |
 | **Azure Event Hub** | <ul><li>[Authenticatie referenties per apparaat gebruiken met SaS-tokens](#authn-sas-tokens)</li></ul> |
-| **Azure-vertrouwens grens** | <ul><li>[Azure-Multi-Factor Authentication voor Azure-beheerders inschakelen](#multi-factor-azure-admin)</li></ul> |
+| **Azure-vertrouwens grens** | <ul><li>[Azure AD Multi-Factor Authentication voor Azure-beheerders inschakelen](#multi-factor-azure-admin)</li></ul> |
 | **Grens van Service Fabric vertrouwen** | <ul><li>[Anonieme toegang tot Service Fabric cluster beperken](#anon-access-cluster)</li><li>[Zorg ervoor dat Service Fabric client-naar-knoop punt-certificaat verschilt van knoop punt-naar-knoop punt](#fabric-cn-nn)</li><li>[AAD gebruiken om clients te verifiëren voor service Fabric-clusters](#aad-client-fabric)</li><li>[Zorg ervoor dat service Fabric-certificaten worden verkregen van een goedgekeurde certificerings instantie (CA)](#fabric-cert-ca)</li></ul> |
 | **Identiteits server** | <ul><li>[Standaard verificatie scenario's gebruiken die worden ondersteund door de identiteits server](#standard-authn-id)</li><li>[De standaard token cache van de identiteits server overschrijven met een schaalbaar alternatief](#override-token)</li></ul> |
 | **Grens van computer vertrouwen** | <ul><li>[Zorg ervoor dat de binaire bestanden van de geïmplementeerde toepassing digitaal zijn ondertekend](#binaries-signed)</li></ul> |
@@ -173,7 +173,7 @@ ms.locfileid: "94517713"
 | **Referenties**              | [Overzicht van Event Hubs verificatie en beveiligings model](../../event-hubs/authenticate-shared-access-signature.md) |
 | **Stappen** | <p>Het beveiligings model van Event Hubs is gebaseerd op een combi natie van Shared Access Signature (SAS)-tokens en gebeurtenis uitgevers. De naam van de uitgever vertegenwoordigt de DeviceID die het token ontvangt. Dit helpt bij het koppelen van de tokens die zijn gegenereerd met de betreffende apparaten.</p><p>Alle berichten worden gelabeld met de maker aan de service zijde die de detectie van in-nettolading vervalste pogingen toestaat. Genereer bij het verifiëren van apparaten een SaS-Token per apparaat binnen het bereik van een unieke Uitgever.</p>|
 
-## <a name="enable-azure-multi-factor-authentication-for-azure-administrators"></a><a id="multi-factor-azure-admin"></a>Azure-Multi-Factor Authentication voor Azure-beheerders inschakelen
+## <a name="enable-azure-ad-multi-factor-authentication-for-azure-administrators"></a><a id="multi-factor-azure-admin"></a>Azure AD Multi-Factor Authentication voor Azure-beheerders inschakelen
 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
@@ -181,7 +181,7 @@ ms.locfileid: "94517713"
 | **SDL-fase**               | Implementatie |
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
-| **Referenties**              | [Wat is Azure Multi-Factor Authentication?](../../active-directory/authentication/concept-mfa-howitworks.md) |
+| **Referenties**              | [Wat is Azure AD Multi-Factor Authentication?](../../active-directory/authentication/concept-mfa-howitworks.md) |
 | **Stappen** | <p>Multi-factor Authentication (MFA) is een verificatie methode waarbij meer dan één verificatie methode is vereist en waarmee een kritieke tweede beveiligingslaag wordt toegevoegd aan gebruikers aanmeldingen en trans acties. Het werkt door twee of meer van de volgende verificatie methoden te vereisen:</p><ul><li>Iets dat u kent (doorgaans een wacht woord)</li><li>Iets dat u hebt (een vertrouwd apparaat dat niet eenvoudig kan worden gedupliceerd, zoals een telefoon)</li><li>Iets dat u bent (biometrie)</li><ul>|
 
 ## <a name="restrict-anonymous-access-to-service-fabric-cluster"></a><a id="anon-access-cluster"></a>Anonieme toegang tot Service Fabric cluster beperken

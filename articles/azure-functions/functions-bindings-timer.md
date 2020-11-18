@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 6423ec481c65155b511e398885b4954522bbb376
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: 6baebdab06a72d3a4af05b4d2e04bc9eee6acb60
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93025898"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833007"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Timer trigger voor Azure Functions
 
@@ -163,7 +163,7 @@ Er wordt een exemplaar van het [object Timer](#usage) door gegeven als het eerst
 
 # <a name="python"></a>[Python](#tab/python)
 
-In het volgende voor beeld wordt een timer trigger binding gebruikt waarvan de configuratie wordt beschreven in de *function.jsin* het bestand. De daad werkelijke [python-functie](functions-reference-python.md) die gebruikmaakt van de binding, wordt beschreven in het bestand *__init__ . py* . Het object dat is door gegeven aan de functie, is van het type [Azure. functions. TimerRequest-object](/python/api/azure-functions/azure.functions.timerrequest). De functie logica schrijft naar de logboeken die aangeven of de huidige aanroep wordt veroorzaakt door een gemist schema voorval.
+In het volgende voor beeld wordt een timer trigger binding gebruikt waarvan de configuratie wordt beschreven in de *function.jsin* het bestand. De daad werkelijke [python-functie](functions-reference-python.md) die gebruikmaakt van de binding, wordt beschreven in het bestand *__init__. py* . Het object dat is door gegeven aan de functie, is van het type [Azure. functions. TimerRequest-object](/python/api/azure-functions/azure.functions.timerrequest). De functie logica schrijft naar de logboeken die aangeven of de huidige aanroep wordt veroorzaakt door een gemist schema voorval.
 
 Hier vindt u de bindings gegevens in de *function.js* in het bestand:
 
@@ -300,7 +300,7 @@ Elk veld kan een van de volgende typen waarden hebben:
 |Type  |Voorbeeld  |Wanneer geactiveerd  |
 |---------|---------|---------|
 |Een specifieke waarde |<nobr>"0 5 * * * *"</nobr>|op hh: 05:00 waarbij UU elk uur (één keer per uur)|
-|Alle waarden ( `*` )|<nobr>"0 * 5 * * *"</nobr>|bij 5: mm: 00 elke dag, waarbij mm elke minuut van het uur is (60 keer per dag)|
+|Alle waarden ( `*` )|<nobr>"0 * 5 * * *"</nobr>|bij 5: mm: 00 elke dag, waarbij mm elke minuut van het uur is (60 keer binnen het opgegeven uur)|
 |Een bereik ( `-` operator)|<nobr>"5-7 * * * * *"</nobr>|op uu: mm: 05, uu: mm: 06 en uu: mm: 07 waarbij UU: mm elke minuut van elk uur (3 keer per minuut)|
 |Een reeks waarden ( `,` operator)|<nobr>"5, 8, 10 * * * * *"</nobr>|op uu: mm: 05, uu: mm: 08 en uu: mm: 10 waarbij UU: mm elke minuut van elk uur (3 keer per minuut)|
 |Een interval waarde ( `/` operator)|<nobr>"0 */5 * * * *"</nobr>|op uu: 00:00, uu: 05:00, uu: 10:00, enzovoort: 55:00 waarbij UU elk uur (12 keer per uur)|
@@ -336,7 +336,7 @@ De getallen in een CRON-expressie verwijzen naar een datum en tijd, niet een tij
 
 In tegens telling tot een CRON-expressie `TimeSpan` specificeert een waarde het tijds interval tussen elke functie aanroep. Wanneer een functie wordt voltooid nadat deze langer dan het opgegeven interval is uitgevoerd, roept de timer de functie opnieuw aan.
 
-Wordt weer gegeven als een teken reeks, de `TimeSpan` notatie is `hh:mm:ss` `hh` kleiner dan 24. Als de eerste twee cijfers 24 of hoger zijn, is de notatie `dd:hh:mm` . Enkele voorbeelden:
+Wordt weer gegeven als een teken reeks, de `TimeSpan` notatie is `hh:mm:ss` `hh` kleiner dan 24. Als de eerste twee cijfers 24 of hoger zijn, is de notatie `dd:hh:mm` . Hier volgen enkele voorbeelden:
 
 | Voorbeeld      | Wanneer geactiveerd |
 |--------------|----------------|

@@ -3,12 +3,12 @@ title: host.jsbij verwijzing voor Azure Functions 1. x
 description: Referentie documentatie voor de Azure Functions host.jsin het bestand met de V1-runtime.
 ms.topic: conceptual
 ms.date: 10/19/2018
-ms.openlocfilehash: 32848c725d5c99e3814e86447d604839502054c0
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 588ab6723015f34d15e4a46ec4f7324302b13b81
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167714"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832820"
 ---
 # <a name="hostjson-reference-for-azure-functions-1x"></a>host.jsbij verwijzing voor Azure Functions 1. x
 
@@ -93,7 +93,8 @@ Voor de volgende voorbeeld *host.jsop* bestanden zijn alle mogelijke opties opge
     "serviceBus": {
       "maxConcurrentCalls": 16,
       "prefetchCount": 100,
-      "autoRenewTimeout": "00:05:00"
+      "autoRenewTimeout": "00:05:00",
+      "autoComplete": true
     },
     "singleton": {
       "lockPeriod": "00:00:15",
@@ -286,6 +287,7 @@ Configuratie-instelling voor de [SendGrind-uitvoer binding](functions-bindings-s
     "sendGrid": {
         "from": "Contoso Group <admin@contoso.com>"
     }
+}    
 ```
 
 |Eigenschap  |Standaard | Beschrijving |
@@ -301,7 +303,8 @@ Configuratie-instelling voor [Service Bus triggers en bindingen](functions-bindi
     "serviceBus": {
       "maxConcurrentCalls": 16,
       "prefetchCount": 100,
-      "autoRenewTimeout": "00:05:00"
+      "autoRenewTimeout": "00:05:00",
+      "autoComplete": true
     }
 }
 ```
@@ -310,7 +313,8 @@ Configuratie-instelling voor [Service Bus triggers en bindingen](functions-bindi
 |---------|---------|---------| 
 |maxConcurrentCalls|16|Het maximum aantal gelijktijdige aanroepen naar de retour aanroep dat de bericht pomp moet initiëren. De functie runtime verwerkt standaard meerdere berichten tegelijk. Als u wilt dat de runtime slechts één wachtrij of onderwerp bericht per keer verwerkt, stelt `maxConcurrentCalls` u in op 1. | 
 |prefetchCount|n.v.t.|De standaard PrefetchCount die wordt gebruikt door de onderliggende MessageReceiver.| 
-|autoRenewTimeout|00:05:00|De maximale duur waarbinnen de bericht vergrendeling automatisch wordt vernieuwd.| 
+|autoRenewTimeout|00:05:00|De maximale duur waarbinnen de bericht vergrendeling automatisch wordt vernieuwd.|
+|Automatisch aanvullen|true|Indien true, wordt de bericht verwerking door de trigger automatisch voltooid wanneer de bewerking is uitgevoerd. Als false is ingesteld, is het de verantwoordelijkheid van de functie om het bericht te volt ooien voordat het wordt geretourneerd.|
 
 ## <a name="singleton"></a>Singleton
 

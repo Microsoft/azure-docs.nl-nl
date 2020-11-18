@@ -9,12 +9,12 @@ ms.author: marobert
 ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 939c36cd62dab4362232aef0da8701b34a88c6ff
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 96e10bc19d59b60824a908c67816a21ca80326d0
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92202953"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832803"
 ---
 # <a name="authenticate-to-azure-communication-services"></a>Verifiëren bij Azure Communication Services
 
@@ -29,7 +29,7 @@ In de volgende tabel worden de verificatie opties beschreven die worden onderste
 | Beheer | Ondersteund     | Niet ondersteund      |
 | Sms            | Ondersteund     | Niet ondersteund      |
 | Chat           | Niet ondersteund | Ondersteund          |
-| Gesp        | Niet ondersteund | Ondersteund          |
+| Aanroepen        | Niet ondersteund | Ondersteund          |
 
 Elke autorisatie optie wordt hieronder beschreven:
 
@@ -72,11 +72,11 @@ Als u geen client bibliotheek gebruikt om HTTP-aanvragen te maken voor de REST A
 
 Met tokens voor gebruikers toegang kunnen uw client toepassingen rechtstreeks worden geverifieerd op Azure Communication Services. Hiervoor moet u een vertrouwde service instellen waarmee uw toepassings gebruikers worden geverifieerd en de tokens voor gebruikers toegang worden verleend aan de beheer-client bibliotheek. Ga naar de conceptuele documentatie over de [client-en server architectuur](./client-and-server-architecture.md) voor meer informatie over onze architectuur overwegingen.
 
-De `CommunicationClientCredential` klasse bevat de logica voor het verstrekken van token referenties voor gebruikers toegang aan de client bibliotheken en het beheren van hun levens duur.
+De `CommunicationUserCredential` klasse bevat de logica voor het verstrekken van token referenties voor gebruikers toegang aan de client bibliotheken en het beheren van hun levens duur.
 
 ### <a name="initialize-the-client-libraries"></a>De client bibliotheken initialiseren
 
-Voor het initialiseren van Azure Communication Services-client bibliotheken waarvoor token authenticatie van gebruikers toegang is vereist, maakt u eerst een instantie van de `CommunicationClientCredential` klasse en gebruikt u deze om een API-client te initialiseren.
+Voor het initialiseren van Azure Communication Services-client bibliotheken waarvoor token authenticatie van gebruikers toegang is vereist, maakt u eerst een instantie van de `CommunicationUserCredential` klasse en gebruikt u deze om een API-client te initialiseren.
 
 De volgende code fragmenten laten zien hoe u de chat-client bibliotheek met een token voor gebruikers toegang initialiseert:
 

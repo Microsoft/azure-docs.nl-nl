@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 886597e5490acb94f43d840dc5a3d22092e45849
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 94cb40522a9e463fea2efae329daf910b5386cdd
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698753"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832599"
 ---
 # <a name="azure-identity-management-and-access-control-security-best-practices"></a>Aanbevolen procedures voor de beveiliging van Azure Identity Management en Access Control
 
@@ -157,7 +157,7 @@ Als u meerdere tenants hebt of gebruikers in staat wilt stellen [hun eigen wacht
 
 U kunt het beste verificatie in twee stappen vereisen voor al uw gebruikers. Dit omvat beheerders en andere gebruikers in uw organisatie die aanzienlijke gevolgen kunnen hebben als hun account is aangetast (bijvoorbeeld financiële officieren).
 
-Er zijn meerdere opties voor het vereisen van verificatie in twee stappen. De beste optie voor u is afhankelijk van uw doelen, de Azure AD-editie die u uitvoert en uw licentie programma. Zie [verificatie in twee stappen vereisen voor een gebruiker](../../active-directory/authentication/howto-mfa-userstates.md) om de beste optie voor u te bepalen. Raadpleeg de pagina met prijzen voor [Azure AD](https://azure.microsoft.com/pricing/details/active-directory/) en [Azure multi-factor Authentication](https://azure.microsoft.com/pricing/details/multi-factor-authentication/) voor meer informatie over licenties en prijzen.
+Er zijn meerdere opties voor het vereisen van verificatie in twee stappen. De beste optie voor u is afhankelijk van uw doelen, de Azure AD-editie die u uitvoert en uw licentie programma. Zie [verificatie in twee stappen vereisen voor een gebruiker](../../active-directory/authentication/howto-mfa-userstates.md) om de beste optie voor u te bepalen. Raadpleeg de pagina met prijzen voor [Azure AD](https://azure.microsoft.com/pricing/details/active-directory/) en [Azure AD multi-factor Authentication](https://azure.microsoft.com/pricing/details/multi-factor-authentication/) voor meer informatie over licenties en prijzen.
 
 Hieronder vindt u opties en voor delen voor het inschakelen van verificatie in twee stappen:
 
@@ -170,14 +170,14 @@ Hieronder vindt u opties en voor delen voor het inschakelen van verificatie in t
 Deze methode is beschikbaar voor alle licentie categorieën, maar kan niet worden gemengd met het bestaande beleid voor voorwaardelijke toegang. U vindt meer informatie in de [standaard instellingen van Azure AD-beveiliging](../../active-directory/fundamentals/concept-fundamentals-security-defaults.md)
 
 **Optie 2**: [Schakel multi-factor Authentication in door de gebruikers status te wijzigen](../../active-directory/authentication/howto-mfa-userstates.md).   
-**Voor deel**: dit is de traditionele methode voor het vereisen van verificatie in twee stappen. Het werkt met [azure multi-factor Authentication in de Cloud en azure multi-factor Authentication-Server](../../active-directory/authentication/concept-mfa-howitworks.md). Wanneer u deze methode gebruikt, moeten gebruikers elke keer dat ze zich aanmelden een verificatie in twee stappen uitvoeren en het beleid voor voorwaardelijke toegang negeren.
+**Voor deel**: dit is de traditionele methode voor het vereisen van verificatie in twee stappen. Het werkt met [Azure AD-multi-factor Authentication in de Cloud en azure multi-factor Authentication-Server](../../active-directory/authentication/concept-mfa-howitworks.md). Wanneer u deze methode gebruikt, moeten gebruikers elke keer dat ze zich aanmelden een verificatie in twee stappen uitvoeren en het beleid voor voorwaardelijke toegang negeren.
 
-Als u wilt weten waar Multi-Factor Authentication moet worden ingeschakeld, raadpleegt u [welke versie van Azure MFA het meest geschikt is voor mijn organisatie?](../../active-directory/authentication/concept-mfa-howitworks.md).
+Als u wilt weten waar Multi-Factor Authentication moet worden ingeschakeld, raadpleegt u [welke versie van Azure AD MFA het meest geschikt is voor mijn organisatie?](../../active-directory/authentication/concept-mfa-howitworks.md).
 
 **Optie 3**: [multi-factor Authentication met beleid voor voorwaardelijke toegang inschakelen](../../active-directory/authentication/howto-mfa-getstarted.md).
 **Voor deel**: met deze optie kunt u een verificatie in twee stappen onder specifieke voor waarden vragen door gebruik te maken van [voorwaardelijke toegang](../../active-directory/conditional-access/concept-conditional-access-policy-common.md). Specifieke voor waarden kunnen gebruikers zich aanmelden vanaf verschillende locaties, niet-vertrouwde apparaten of toepassingen die u als riskant beschouwt. Als u specifieke voor waarden definieert waarvoor u verificatie in twee stappen nodig hebt, kunt u voor uw gebruikers geen constante vragen stellen, wat een onaangename gebruikers ervaring kan zijn.
 
-Dit is de meest flexibele manier om verificatie in twee stappen voor uw gebruikers in te scha kelen. Het inschakelen van een beleid voor voorwaardelijke toegang werkt alleen voor Azure-Multi-Factor Authentication in de Cloud en is een Premium-functie van Azure AD. Meer informatie over deze methode vindt u in [Azure multi-factor Authentication op basis van de Cloud implementeren](../../active-directory/authentication/howto-mfa-getstarted.md).
+Dit is de meest flexibele manier om verificatie in twee stappen voor uw gebruikers in te scha kelen. Het inschakelen van een beleid voor voorwaardelijke toegang werkt alleen voor Azure AD-Multi-Factor Authentication in de Cloud en is een Premium-functie van Azure AD. Meer informatie over deze methode vindt u in de [implementatie van Azure AD-multi-factor Authentication](../../active-directory/authentication/howto-mfa-getstarted.md)in de Cloud.
 
 **Optie 4**: multi-factor Authentication met beleid voor voorwaardelijke toegang inschakelen door te evalueren [op risico gebaseerd beleid voor voorwaardelijke toegang](../../active-directory/conditional-access/howto-conditional-access-policy-risk.md).   
 **Voor deel**: met deze optie kunt u:
@@ -269,7 +269,7 @@ Evalueer de accounts die zijn toegewezen of die in aanmerking komen voor de rol 
 **Aanbevolen procedure**: vereisen dat alle essentiële beheerders accounts een wacht woord hebben (bij voor keur) of vereisen dat multi-factor Authentication.
 **Details**: gebruik de [Microsoft Authenticator-app](../../active-directory/authentication/howto-authentication-passwordless-phone.md) om u aan te melden bij een Azure ad-account zonder een wacht woord te gebruiken. Net als [Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-identity-verification)gebruikt de Microsoft Authenticator verificatie op basis van een sleutel om een gebruikers referentie in te scha kelen die is gekoppeld aan een apparaat en gebruikmaakt van biometrische verificatie of een pincode.
 
-Azure Multi-Factor Authentication vereisen bij het aanmelden voor alle afzonderlijke gebruikers die permanent zijn toegewezen aan een of meer van de Azure AD-beheerders rollen: globale beheerder, bevoegde rol beheerder, Exchange Online beheerder en share point online-beheerder. Schakel [multi-factor Authentication in voor uw beheerders accounts](../../active-directory/authentication/howto-mfa-userstates.md) en zorg ervoor dat het beheerders account van de gebruiker is geregistreerd.
+Azure AD Multi-Factor Authentication vereisen bij aanmelding voor alle afzonderlijke gebruikers die permanent zijn toegewezen aan een of meer van de Azure AD-beheerders rollen: globale beheerder, bevoegde rol beheerder, Exchange Online beheerder en share point online-beheerder. Schakel [multi-factor Authentication in voor uw beheerders accounts](../../active-directory/authentication/howto-mfa-userstates.md) en zorg ervoor dat het beheerders account van de gebruiker is geregistreerd.
 
 **Aanbevolen procedure**: voor essentiële beheerders accounts beschikt u over een beheer werkstation waar productie taken niet zijn toegestaan (bijvoorbeeld bladeren en e-mail). Hiermee worden uw beheerders accounts beschermd tegen aanvals vectoren die Browse en e-mail gebruiken en het risico van een belang rijk incident aanzienlijk verminderen.
 **Details**: gebruik een beheer werkstation. Kies een niveau voor beveiliging van werk station:

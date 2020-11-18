@@ -8,18 +8,18 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 08/27/2020
+ms.date: 11/16/2020
 ms.author: juliako
-ms.openlocfilehash: 6eecaaff836d3253d382fdf0280f9a15c3a7b00b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf48f873127a12c3cabb28da33d34cedcda2793b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89050859"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831563"
 ---
 # <a name="examine-the-video-indexer-output"></a>De Video Indexer uitvoer controleren
 
-Wanneer een video wordt geïndexeerd, Video Indexer poduces de JSON-inhoud die de details van de opgegeven video inzichten bevat. De inzichten zijn onder andere: transcripten, OCRs, gezichten, onderwerpen, blokken, enzovoort. Elk inzicht type bevat exemplaren van peri Oden die laten zien wanneer het inzicht in de video wordt weer gegeven. 
+Wanneer een video wordt geïndexeerd, maakt Video Indexer de JSON-inhoud die de details van de opgegeven video inzichten bevat. De inzichten zijn onder andere: transcripten, OCRs, gezichten, onderwerpen, blokken, enzovoort. Elk inzicht type bevat exemplaren van peri Oden die laten zien wanneer het inzicht in de video wordt weer gegeven. 
 
 U kunt de samen vatting van de video visueel bekijken door op de knop **afspelen** op de video op de [video indexer](https://www.videoindexer.ai/) website te drukken. 
 
@@ -58,7 +58,7 @@ Zie [video Insights weer geven en bewerken](video-indexer-view-edit.md)voor meer
 |accountId|De VI-account-ID van de afspeel lijst.|
 |id|De ID van de afspeel lijst.|
 |naam|De naam van de afspeel lijst.|
-|description|De beschrijving van de afspeel lijst.|
+|beschrijving|De beschrijving van de afspeel lijst.|
 |userName|De naam van de gebruiker die de afspeel lijst heeft gemaakt.|
 |toegevoegd|De aanmaak tijd van de afspeel lijst.|
 |privacyMode|De privacy-modus van de afspeel lijst (privé/openbaar).|
@@ -187,6 +187,7 @@ Een gezicht kan een ID, een naam, een miniatuur, andere meta gegevens en een lij
 |textualContentModeration|[TextualContentModeration](#textualcontentmoderation) Insight.|
 |emoties| [Emoties](#emotions) Insight.|
 |onderwerp|De [onderwerpen](#topics) begrijpen.|
+|luidsprekers|De [sprekers](#speakers) inzicht.|
 
 Voorbeeld:
 
@@ -222,36 +223,45 @@ vaak|Een lijst met tijds bereiken van dit blok.|
 |---|---|
 |id|De regel-ID.|
 |tekst|De transcriptie zelf.|
+|betrouwbaarheid|De nauw keurigheid van de transcriptie.|
+|speakerId|De ID van de spreker.|
 |language|De transcript taal. Bedoeld ter ondersteuning van transcripten waarbij elke regel een andere taal kan hebben.|
 |vaak|Een lijst met peri Oden waarin deze regel wordt weer gegeven. Als de instantie een transcript heeft, heeft deze slechts één exemplaar.|
 
 Voorbeeld:
 
 ```json
-"transcript": [
+"transcript":[
 {
-    "id": 0,
-    "text": "Hi I'm Doug from office.",
-    "language": "en-US",
-    "instances": [
-    {
-        "start": "00:00:00.5100000",
-        "end": "00:00:02.7200000"
-    }
-    ]
+  "id":1,
+  "text":"Well, good morning everyone and welcome to",
+  "confidence":0.8839,
+  "speakerId":1,
+  "language":"en-US",
+  "instances":[
+     {
+    "adjustedStart":"0:00:10.21",
+    "adjustedEnd":"0:00:12.81",
+    "start":"0:00:10.21",
+    "end":"0:00:12.81"
+     }
+  ]
 },
 {
-    "id": 1,
-    "text": "I have a guest. It's Michelle.",
-    "language": "en-US",
-    "instances": [
-    {
-        "start": "00:00:02.7200000",
-        "end": "00:00:03.9600000"
-    }
-    ]
-}
-] 
+  "id":2,
+  "text":"ignite 2016. Your mission at Microsoft is to empower every",
+  "confidence":0.8944,
+  "speakerId":2,
+  "language":"en-US",
+  "instances":[
+     {
+    "adjustedStart":"0:00:12.81",
+    "adjustedEnd":"0:00:17.03",
+    "start":"0:00:12.81",
+    "end":"0:00:17.03"
+     }
+  ]
+},
 ```
 
 #### <a name="ocr"></a>optische
@@ -331,7 +341,7 @@ Als gezichten (zonder animatie tekens) aanwezig zijn, gebruikt Video Indexer Fac
 |id|De face-ID.|
 |naam|De naam van het gezicht. Dit kan ' onbekend #0, een geïdentificeerde beroemdheden of een door de klant getrainde persoon zijn.|
 |betrouwbaarheid|De gezichts-id-betrouw baarheid.|
-|description|Een beschrijving van de beroemdheden. |
+|beschrijving|Een beschrijving van de beroemdheden. |
 |thumbnailId|De ID van de miniatuur van het gezicht.|
 |knownPersonId|De interne ID van een bekende persoon.|
 |referenceId|Als het een Bing-beroemdheden is, is dit de Bing-ID.|
@@ -519,7 +529,7 @@ Merk namen van bedrijven en producten die worden herkend in de spraak naar tekst
 |naam|De naam van het merk.|
 |referenceId | Het achtervoegsel van de brand Wikipedia-URL. "Target_Corporation" is bijvoorbeeld het achtervoegsel van [https://en.wikipedia.org/wiki/Target_Corporation](https://en.wikipedia.org/wiki/Target_Corporation) .
 |referenceUrl | De Wikipedia-URL van het merk, indien aanwezig. Bijvoorbeeld [https://en.wikipedia.org/wiki/Target_Corporation](https://en.wikipedia.org/wiki/Target_Corporation) .
-|description|De beschrijving van de Brands.|
+|beschrijving|De beschrijving van de Brands.|
 |tags|Een lijst met vooraf gedefinieerde labels die aan dit merk zijn gekoppeld.|
 |betrouwbaarheid|De betrouw bare waarde van de Video Indexer merk detector (0-1).|
 |vaak|Een lijst met tijds bereiken van dit merk. Elk exemplaar heeft een brandType, waarmee wordt aangegeven of dit merk zich in het transcript of in de OCR bevindt.|
@@ -827,6 +837,42 @@ Video Indexer van de belangrijkste onderwerpen van transcripten wordt verduideli
 . . .
 ```
 
+#### <a name="speakers"></a>luidsprekers
+
+|Naam|Beschrijving|
+|---|---|
+|id|De ID van de spreker.|
+|naam|De naam van de spreker in de vorm van "speaker # *<number>* " bijvoorbeeld: "speaker #1".|
+|vaak |Een lijst met peri Oden waarin deze spreker is verschenen.|
+
+```json
+"speakers":[
+{
+  "id":1,
+  "name":"Speaker #1",
+  "instances":[
+     {
+    "adjustedStart":"0:00:10.21",
+    "adjustedEnd":"0:00:12.81",
+    "start":"0:00:10.21",
+    "end":"0:00:12.81"
+     }
+  ]
+},
+{
+  "id":2,
+  "name":"Speaker #2",
+  "instances":[
+     {
+    "adjustedStart":"0:00:12.81",
+    "adjustedEnd":"0:00:17.03",
+    "start":"0:00:12.81",
+    "end":"0:00:17.03"
+     }
+  ]
+},
+` ` `
+```
 ## <a name="next-steps"></a>Volgende stappen
 
 [Video Indexer ontwikkelaars Portal](https://api-portal.videoindexer.ai)

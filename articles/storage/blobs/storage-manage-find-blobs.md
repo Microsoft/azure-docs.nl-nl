@@ -9,12 +9,12 @@ ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: klaasl
 ms.custom: references_regions
-ms.openlocfilehash: 8f1ea67605be3aee6257c293aea3db617d885645
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 3174dbd36d9bb39ce606ec12f88397f795e91526
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370250"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832429"
 ---
 # <a name="manage-and-find-azure-blob-data-with-blob-index-tags-preview"></a>Azure Blob-gegevens beheren en vinden met Blob index Tags (preview)
 
@@ -327,6 +327,7 @@ In deze sectie worden bekende problemen en voor waarden voor de open bare previe
 - Wanneer het bereik van het filter is beperkt tot één container, `@container` kan de eigenschap alleen worden door gegeven als alle index Tags in de filter expressie gelijkheids controles zijn (Key = waarde).
 - Wanneer u de operator Range gebruikt met de `AND` voor waarde, kunt u alleen dezelfde index code sleutel naam ( `"Age" > '013' AND "Age" < '100'` ) opgeven.
 - Versie beheer en BLOB-index worden niet ondersteund. BLOB-index Tags blijven behouden voor versies, maar worden niet door gegeven aan de BLOB-index engine.
+- Er is geen API om te bepalen of index Tags worden geïndexeerd.
 - Failover van account wordt niet ondersteund. De BLOB-index wordt mogelijk niet goed bijgewerkt na een failover.
 - Levenscyclus beheer ondersteunt alleen gelijkheids controles met overeenkomende BLOB-index.
 - `Copy Blob` kopieert geen blob-index Tags van de bron-BLOB naar de nieuwe doel-blob. U kunt de labels opgeven die u wilt Toep assen op de doel-BLOB tijdens de Kopieer bewerking.

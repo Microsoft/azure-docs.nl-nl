@@ -3,16 +3,16 @@ title: Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-ve
 description: Met Log Analytics gegevens export kunt u voortdurend gegevens van geselecteerde tabellen uit uw Log Analytics-werk ruimte exporteren naar een Azure-opslag account of Azure Event Hubs wanneer het wordt verzameld.
 ms.subservice: logs
 ms.topic: conceptual
-ms.custom: references_regions
+ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 19d464f0148572f30ecd0c3ab1dcee7bd0315b87
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: adac986cfa1a975ced7ef579c088ed2739778bf5
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427799"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841804"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -63,7 +63,7 @@ Er zijn momenteel geen extra kosten verbonden aan de functie voor het exporteren
 
 ## <a name="export-destinations"></a>Export doelen
 
-### <a name="storage-account"></a>Storage-account
+### <a name="storage-account"></a>Opslagaccount
 Gegevens worden elk uur naar opslag accounts verzonden. De gegevens export configuratie maakt een container voor elke tabel in het opslag account met de naam *am,* gevolgd door de naam van de tabel. De tabel *SecurityEvent* wordt bijvoorbeeld verzonden naar een container met de naam *am-SecurityEvent*.
 
 Het BLOB-pad van het opslag account is *WorkspaceResourceId =/Subscriptions/Subscription-id/ResourceGroups/ \<resource-group\> /providers/Microsoft.operationalinsights/Workspaces/ \<workspace\> /y = \<four-digit numeric year\> /m = \<two-digit numeric month\> /d = \<two-digit numeric day\> /h = \<two-digit 24-hour clock hour\> /m = 00/PT1H.jsop*. Omdat toevoeg-blobs zijn beperkt tot 50.000-schrijf bewerkingen in opslag, kan het aantal geëxporteerde blobs worden uitgebreid als het aantal toegevoegde waarden hoog is. Het naamgevings patroon voor blobs in zo'n geval zou worden PT1H_ #. json, waarbij # het aantal incrementele blobs is.
@@ -100,7 +100,7 @@ De volgende Azure-resource provider moet zijn geregistreerd voor uw abonnement o
 
 - Microsoft.Insights
 
-Deze resource provider is waarschijnlijk al geregistreerd voor de meeste gebruikers van Azure Monitor. Als u wilt controleren, gaat u naar **abonnementen** in het Azure Portal. Selecteer uw abonnement en klik vervolgens op **resource providers** in het gedeelte **instellingen** van het menu. Zoek **micro soft. Insights**. Als de status is **geregistreerd** , is deze al geregistreerd. Als dat niet het geval is, klikt u op **registreren** om het te registreren.
+Deze resource provider is waarschijnlijk al geregistreerd voor de meeste gebruikers van Azure Monitor. Als u wilt controleren, gaat u naar **abonnementen** in het Azure Portal. Selecteer uw abonnement en klik vervolgens op **resource providers** in het gedeelte **instellingen** van het menu. Zoek **micro soft. Insights**. Als de status is **geregistreerd**, is deze al geregistreerd. Als dat niet het geval is, klikt u op **registreren** om het te registreren.
 
 U kunt ook een van de beschik bare methoden gebruiken om een resource provider te registreren zoals beschreven in [Azure-resource providers en-typen](../../azure-resource-manager/management/resource-providers-and-types.md). Hieronder volgt een voor beeld van een opdracht met behulp van Power shell:
 

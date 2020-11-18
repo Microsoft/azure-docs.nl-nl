@@ -12,12 +12,12 @@ author: joesackmsft
 ms.author: josack
 ms.reviewer: sstein
 ms.date: 02/13/2019
-ms.openlocfilehash: f0f9d2affe39eaf74d4c0a537658d655a0c150d7
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: fe49dce276a15d9d7bc8ddaa5618c0e43dec62e9
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789570"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841220"
 ---
 # <a name="new-dba-in-the-cloud--managing-azure-sql-database-after-migration"></a>Nieuwe DBA in de Cloud: Azure SQL Database na migratie beheren
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -49,7 +49,7 @@ Zodra u deze metrische gegevens hebt toegevoegd, kunt u ze in het **bewakings** 
 
 ![Servicelaagbewaking van databaseprestaties.](./media/manage-data-after-migrating-to-database/sqldb_service_tier_monitoring.png)
 
-U kunt ook meldingen configureren voor prestatiewaarden. Klik op de knop **Melding toevoegen** in het venster **Metrische gegevens** . Volg de wizard om de melding te configureren. U hebt de keuze om een melding weer te geven als de metrische gegevens een bepaalde drempelwaarde overschrijden of als het meetpunt onder een bepaalde drempelwaarde komt.
+U kunt ook meldingen configureren voor prestatiewaarden. Klik op de knop **Melding toevoegen** in het venster **Metrische gegevens**. Volg de wizard om de melding te configureren. U hebt de keuze om een melding weer te geven als de metrische gegevens een bepaalde drempelwaarde overschrijden of als het meetpunt onder een bepaalde drempelwaarde komt.
 
 Als u bijvoorbeeld verwacht dat de workload van de database zal toenemen, kunt u configureren dat er een e-mailmelding wordt verstuurd wanneer de database 80% van een van de prestatiewaarden heeft bereikt. U kunt dit als een vroege waarschuwing gebruiken om te bepalen wanneer u mogelijk moet overschakelen naar de volgende hoogste reken grootte.
 
@@ -106,7 +106,7 @@ Er zijn twee verificatie methoden beschikbaar in SQL Database:
 
 De traditionele Windows-verificatie wordt niet ondersteund. Azure Active Directory (Azure AD) is een gecentraliseerde service voor identiteits-en toegangs beheer. Zo kunt u eenvoudig een eenmalige aanmelding (SSO) voor alle mede werkers in uw organisatie bieden. Dit betekent dat de referenties worden gedeeld in alle Azure-Services voor een eenvoudigere verificatie. 
 
-Azure AD biedt ondersteuning voor [azure multi-factor Authentication](authentication-mfa-ssms-overview.md) en met een [paar klikken](../../active-directory/hybrid/how-to-connect-install-express.md) Azure AD kan worden geïntegreerd met Windows Server Active Directory. SQL-verificatie werkt precies zoals u deze in het verleden hebt gebruikt. U geeft een gebruikers naam en wacht woord op en u kunt gebruikers verifiëren voor elke Data Base op een bepaalde server. Hierdoor kunnen SQL Database en Azure Synapse Analytics (voorheen SQL Data Warehouse) gebruikers accounts voor Multi-Factor Authentication en gast aanbieden binnen een Azure AD-domein. Als u al een on-premises Active Directory hebt, kunt u de adres lijst met Azure Active Directory om uw directory uit te breiden naar Azure.
+Azure AD biedt ondersteuning voor [Azure AD-multi-factor Authentication](authentication-mfa-ssms-overview.md) en met een [paar klikken](../../active-directory/hybrid/how-to-connect-install-express.md) Azure AD kan worden geïntegreerd met Windows Server Active Directory. SQL-verificatie werkt precies zoals u deze in het verleden hebt gebruikt. U geeft een gebruikers naam en wacht woord op en u kunt gebruikers verifiëren voor elke Data Base op een bepaalde server. Hierdoor kunnen SQL Database en Azure Synapse Analytics (voorheen SQL Data Warehouse) gebruikers accounts voor Multi-Factor Authentication en gast aanbieden binnen een Azure AD-domein. Als u al een on-premises Active Directory hebt, kunt u de adres lijst met Azure Active Directory om uw directory uit te breiden naar Azure.
 
 |**Als u...**|**SQL Database/Azure Synapse Analytics**|
 |---|---|
@@ -320,11 +320,11 @@ SQL Database maakt gebruik van een aantal slimme technieken waarmee de IT-server
 
 ### <a name="how-do-i-export-and-import-data-as-bacpac-files-from-sql-database-using-the-azure-portal"></a>Hoe kan ik gegevens exporteren en importeren als BACPAC-bestanden vanuit SQL Database met behulp van de Azure Portal
 
-- **Exporteren** : u kunt uw data base in Azure SQL database exporteren als een BACPAC-bestand van de Azure Portal
+- **Exporteren**: u kunt uw data base in Azure SQL database exporteren als een BACPAC-bestand van de Azure Portal
 
    ![data base exporteren](./media/manage-data-after-migrating-to-database/database-export1.png)
 
-- **Importeren** : u kunt gegevens ook importeren als een BACPAC-bestand in uw data base in Azure SQL database met behulp van de Azure Portal.
+- **Importeren**: u kunt gegevens ook importeren als een BACPAC-bestand in uw data base in Azure SQL database met behulp van de Azure Portal.
 
    ![data base importeren](./media/manage-data-after-migrating-to-database/import1.png)
 

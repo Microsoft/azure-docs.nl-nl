@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 11/09/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 45357092784bd9c8821a81b07ce3c381c4ce7989
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 7819c934ab97d597d52d4809c11e5c59fb87c89a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410501"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840662"
 ---
 # <a name="localization-string-ids"></a>Id's van lokalisatiereeksen
 
@@ -27,33 +27,44 @@ Het **lokalisatie** -element biedt ondersteuning voor meerdere land instellingen
 
 De volgende Id's worden gebruikt voor een inhouds definitie met een ID van `api.signuporsignin` en een [zelf-bevestigd technisch profiel](self-asserted-technical-profile.md).
 
-| Id | Standaardwaarde |
-| -- | ------------- |
-| **local_intro_email** | Meld u aan met uw bestaande account |
-| **logonIdentifier_email** | E-mailadres |
-| **requiredField_email** | Voer uw e-mail adres in |
-| **invalid_email** | Voer een geldig e-mail adres in |
-| **email_pattern** | ^ [a-zA-Z0-9.! # $% & ' ' *+/=? ^ _ \` { \| } ~-] + @ [a-zA-Z0-9-] + (?: \\ . [ a-zA-Z0-9-] +)*$ |
-| **local_intro_username** | Meld u aan met uw gebruikers naam |
-| **logonIdentifier_username** | Gebruikersnaam |
-| **requiredField_username** | Voer uw gebruikers naam in |
-| **password** | Wachtwoord |
-| **requiredField_password** | Voer uw wacht woord in |
-| **invalid_password** | Het wacht woord dat u hebt opgegeven, heeft niet de verwachte indeling. |
-| **forgotpassword_link** | Bent u uw wachtwoord vergeten? |
-| **createaccount_intro** | Hebt u geen account? |
-| **createaccount_link** | Nu registreren |
-| **divider_title** | OF |
-| **cancel_message** | De gebruiker is het wacht woord verg eten |
-| **button_signin** | Aanmelden |
-| **social_intro** | Meld u aan met uw sociale account |
-  **remember_me** |Blijf aangemeld. |
-| **unknown_error** | U ondervindt problemen bij het aanmelden. Probeert u het later nog eens. |
+| Id | Standaardwaarde | Versie van pagina-indeling |
+| -- | ------------- | ------ |
+| **forgotpassword_link** | Bent u uw wachtwoord vergeten? | `All` |
+| **createaccount_intro** | Hebt u geen account? | `All` |
+| **button_signin** | Aanmelden | `All` |
+| **social_intro** | Meld u aan met uw sociale account | `All` |
+| **remember_me** |Blijf aangemeld. | `All` |
+| **unknown_error** | U ondervindt problemen bij het aanmelden. Probeert u het later nog eens. | `All` |
+| **divider_title** | OF | `All` |
+| **local_intro_email** | Meld u aan met uw bestaande account | `< 2.0.0` |
+| **logonIdentifier_email** | E-mailadres | `< 2.0.0` |
+| **requiredField_email** | Voer uw e-mail adres in | `< 2.0.0` |
+| **invalid_email** | Voer een geldig e-mail adres in | `< 2.0.0` |
+| **email_pattern** | ^ [a-zA-Z0-9.! # $% & ' ' \* +/=? ^ \_ \` { \| } ~-] + @ [a-zA-Z0-9-] + (?: \\ . [ a-zA-Z0-9-] +) \* $ |`< 2.0.0` |
+| **local_intro_username** | Meld u aan met uw gebruikers naam | `< 2.0.0` |
+| **logonIdentifier_username** | Gebruikersnaam | `< 2.0.0` |
+| **requiredField_username** | Voer uw gebruikers naam in | `< 2.0.0` |
+| **password** | Wachtwoord | `< 2.0.0` |
+| **requiredField_password** | Voer uw wacht woord in | `< 2.0.0` |
+| **createaccount_link** | Nu registreren | `< 2.0.0` |
+| **cancel_message** | De gebruiker is het wacht woord verg eten | `< 2.0.0` |
+| **invalid_password** | Het wacht woord dat u hebt opgegeven, heeft niet de verwachte indeling. | `< 2.0.0` |
+| **createaccount_one_link** | Nu registreren | `>= 2.0.0` |
+| **createaccount_two_links** | Meld u aan met {0} of {1} | `>= 2.0.0` |
+| **createaccount_three_links** | Meld u aan met {0} , {1} of {2} | `>= 2.0.0` |
+| **local_intro_generic** | Meld u aan met uw {0} | `>= 2.1.0` |
+| **requiredField_generic** | Voer uw {0} | `>= 2.1.0` |
+| **invalid_generic** | Voer een geldige {0} | `>= 2.1.1` |
+| **sectiekop** | Aanmelden | `>= 2.1.1` |
+
+
+> [!NOTE]
+> * Tijdelijke aanduidingen zoals worden {0} automatisch ingevuld met de `DisplayName` waarde van `ClaimType` . 
+> * `ClaimType`Zie [Aanmelden of aanmelden voor beeld](#signupsigninexample)voor meer informatie over het lokaliseren van.
 
 In het volgende voor beeld ziet u het gebruik van een aantal van de elementen van de gebruikers interface op de registratie-of aanmeldings pagina:
 
-![UX-elementen voor registratie of aanmeldings pagina](./media/localization-string-ids/localization-susi.png)
-
+![UX-elementen voor registratie of aanmeldings pagina](./media/localization-string-ids/localization-susi-2.png)
 
 ### <a name="sign-up-or-sign-in-identity-providers"></a>Registratie-en registratie-id-providers
 
@@ -95,32 +106,28 @@ In het volgende voor beeld wordt de Facebook-ID-provider naar Arabisch gelokalis
 | **UserMessageIfUserAccountLocked** | Uw account is tijdelijk vergrendeld om onbevoegd gebruik te voor komen. Probeer het later opnieuw. |
 | **AADRequestsThrottled** | Er zijn op dit moment te veel aanvragen. Wacht enige tijd en probeer het opnieuw. |
 
+<a name="signupsigninexample"></a>
 ### <a name="sign-up-or-sign-in-example"></a>Registreren of aanmelden voor beeld
 
 ```xml
 <LocalizedResources Id="api.signuporsignin.en">
   <LocalizedStrings>
-    <LocalizedString ElementType="UxElement" StringId="logonIdentifier_email">Email Address</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="requiredField_email">Please enter your email</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="logonIdentifier_username">Username</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="password">Password</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="createaccount_link">Sign up now</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="requiredField_username">Please enter your user name</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="createaccount_intro">Don't have an account?</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="forgotpassword_link">Forgot your password?</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="divider_title">OR</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="cancel_message">The user has forgotten their password</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="button_signin">Sign in</LocalizedString>
+    <LocalizedString ElementType="ClaimType" ElementId="email" StringId="DisplayName">Email Address</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="heading">Sign in</LocalizedString>
     <LocalizedString ElementType="UxElement" StringId="social_intro">Sign in with your social account</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="local_intro_generic">Sign in with your {0}</LocalizedString>
     <LocalizedString ElementType="UxElement" StringId="requiredField_password">Please enter your password</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="invalid_password">The password you entered is not in the expected format.</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="local_intro_username">Sign in with your user name</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="local_intro_email">Sign in with your existing account</LocalizedString>
-    <LocalizedString ElementType="UxElement" StringId="invalid_email">Please enter a valid email address</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="requiredField_generic">Please enter your {0}</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="invalid_generic">Please enter a valid {0}</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="createaccount_one_link">Sign up now</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="createaccount_two_links">Sign up with {0} or {1}</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="createaccount_three_links">Sign up with {0}, {1}, or {2}</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="forgotpassword_link">Forgot your password?</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="button_signin">Sign in</LocalizedString>
+    <LocalizedString ElementType="UxElement" StringId="divider_title">OR</LocalizedString>
     <LocalizedString ElementType="UxElement" StringId="unknown_error">We are having trouble signing you in. Please try again later.</LocalizedString>
     <!-- Uncomment the remember_me only if the keep me signed in is activated. 
     <LocalizedString ElementType="UxElement" StringId="remember_me">Keep me signed in</LocalizedString> -->
-    <LocalizedString ElementType="UxElement" StringId="email_pattern">^[a-zA-Z0-9.!#$%&amp;’'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$</LocalizedString>
     <LocalizedString ElementType="ClaimsProvider" StringId="FacebookExchange">Facebook</LocalizedString>
     <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfInvalidPassword">Your password is incorrect.</LocalizedString>
     <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfPasswordExpired">Your password has expired.</LocalizedString>
@@ -163,7 +170,7 @@ Hieronder ziet u de Id's voor een inhouds definitie met een ID van `api.localacc
 | **ver_incorrect_format** | Onjuiste indeling. |
 | **ver_but_edit** | E-mail wijzigen |
 | **ver_but_verify** | Code verifiëren |
-| **alert_no** | No |
+| **alert_no** | Nee |
 | **ver_info_msg** | De verificatie code is verzonden naar het postvak in. Kopieer het naar het invoervak hieronder. |
 | **profieldag** | Dag |
 | **ver_fail_throttled** | Er zijn te veel aanvragen om dit e-mail adres te controleren. Wacht even en probeer het opnieuw. |
@@ -433,9 +440,9 @@ Hier volgen de Id's voor het [ondersteunings fout bericht van het onderhouds ser
 </LocalizedResources>
 ```
 
-## <a name="azure-mfa-error-messages"></a>Azure MFA-fout berichten
+## <a name="azure-ad-mfa-error-messages"></a>Azure AD MFA-fout berichten
 
-Hier volgen de Id's voor een fout bericht over het [technische profiel van Azure MFA](multi-factor-auth-technical-profile.md) :
+Hier volgen de Id's voor een fout bericht over het [technische profiel van Azure AD MFA](multi-factor-auth-technical-profile.md) :
 
 | Id | Standaardwaarde |
 | -- | ------------- |
@@ -446,7 +453,7 @@ Hier volgen de Id's voor een fout bericht over het [technische profiel van Azure
 |UserMessageIfThrottled | Uw aanvraag is beperkt. Probeer het later opnieuw.|
 |UserMessageIfWrongCodeEntered|Er is een onjuiste code ingevoerd. Probeer het opnieuw.|
 
-### <a name="azure-mfa-example"></a>Voor beeld van Azure MFA
+### <a name="azure-ad-mfa-example"></a>Azure AD MFA-voor beeld
 
 ```xml
 <LocalizedResources Id="api.localaccountsignup.en">

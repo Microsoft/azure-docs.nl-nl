@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: 0812716ab9d952969ccfc14fc0a1e833fae1c9e1
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b52cc38c40d8b6a39961ab28d9f0600ea7ee2201
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94653790"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841900"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -81,7 +81,7 @@ Azure Data Explorer is een snelle en zeer schaalbare service voor gegevensverken
 
 ### <a name="how-do-i-retrieve-log-data"></a>Hoe kan ik logboek gegevens ophalen?
 Alle gegevens worden opgehaald uit een Log Analytics-werk ruimte met behulp van een logboek query die is geschreven met Kusto query language (KQL). U kunt uw eigen query's schrijven of oplossingen en inzichten gebruiken die logboek query's bevatten voor een bepaalde toepassing of service. Zie [overzicht van logboek query's in azure monitor](log-query/log-query-overview.md).
-
+p
 ### <a name="can-i-delete-data-from-a-log-analytics-workspace"></a>Kan ik gegevens verwijderen uit een Log Analytics-werk ruimte?
 Gegevens worden uit een werk ruimte verwijderd op basis van de [Bewaar periode](platform/manage-cost-storage.md#change-the-data-retention-period). U kunt specifieke gegevens verwijderen voor privacy-of nalevings redenen. Zie [persoonlijke gegevens exporteren en verwijderen](platform/personal-data-mgmt.md#how-to-export-and-delete-private-data) voor meer informatie.
 
@@ -594,10 +594,6 @@ De OpenTelemetry-collector wordt beschreven in het [github Leesmij-bestand](http
 
 
 ## <a name="azure-monitor-for-containers"></a>Azure Monitor voor containers
-
-### <a name="health-feature-is-in-private-preview"></a>De status functie is in een persoonlijke preview
-
-We zijn van plan een reeks wijzigingen aan te brengen om functionaliteit toe te voegen en uw feedback te verhelpen. Het status onderdeel gaat aan het eind van juni 2020 over naar een persoonlijke preview en Raadpleeg de volgende [aankondiging van Azure updates](https://azure.microsoft.com/updates/ci-health-limited-preview/)voor meer informatie.
 
 ### <a name="what-does-other-processes-represent-under-the-node-view"></a>Wat staan *andere processen* onder de knooppunt weergave?
 

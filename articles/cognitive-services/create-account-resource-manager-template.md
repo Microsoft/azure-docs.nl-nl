@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.topic: quickstart
 ms.date: 09/14/2020
 ms.author: aahi
-ms.custom: subject-armqs
-ms.openlocfilehash: 9ca92bf81acd72260d89404051f941b317ee3e1d
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.custom: subject-armqs, devx-track-azurecli
+ms.openlocfilehash: 4afaad77fdff7a1ba80a385e9f2c3d8ddef8ab96
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363388"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842104"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-an-arm-template"></a>Quickstart: Een Cognitive Services-resource maken met behulp van een ARM-sjabloon
 
@@ -60,7 +60,7 @@ Er is één Azure-resource gedefinieerd in de sjabloon:
     |Waarde  |Beschrijving  |
     |---------|---------|
     | **Abonnement** | Selecteer een Azure-abonnement. |
-    | **Resourcegroep** | Selecteer **Nieuwe maken** , geef een unieke naam op voor de resourcegroep en klik vervolgens op **OK**. |
+    | **Resourcegroep** | Selecteer **Nieuwe maken**, geef een unieke naam op voor de resourcegroep en klik vervolgens op **OK**. |
     | **Regio** | Selecteer een regio.  Bijvoorbeeld **VS - Oost** |
     | **Naam van Cognitive Service** | Vervang dit door een unieke naam voor de resource. U hebt de naam nodig in de volgende sectie, wanneer u de implementatie valideert. |
     | **Locatie** | Vervang dit door de hierboven gebruikte regio. |

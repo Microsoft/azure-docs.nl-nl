@@ -3,19 +3,19 @@ title: Hand matig een failover initiëren op een SQL-beheerd exemplaar
 description: Meer informatie over het hand matig failover van primaire en secundaire replica's op Azure SQL Managed instance.
 services: sql-database
 ms.service: sql-managed-instance
-ms.custom: seo-lt-2019, sqldbrb=1
+ms.custom: seo-lt-2019, sqldbrb=1, devx-track-azurecli
 ms.devlang: ''
 ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
 ms.date: 08/31/2020
-ms.openlocfilehash: ebf36c99e6c4dd636c41086d4c72fd6761f6d5ca
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 7bcdabdb4e49d198b9acb7a1c57312b31a5b4fff
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791627"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842223"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>Door de gebruiker geïnitieerde hand matige failover op een SQL-beheerd exemplaar
 
@@ -140,7 +140,7 @@ Het is niet mogelijk om dezelfde uitvoer te zien met de categorie GP als hierbov
 
 > [!IMPORTANT]
 > Functionele beperkingen van door de gebruiker gestarte hand matige failover zijn:
-> - Er kan één (1) failover worden gestart op hetzelfde beheerde exemplaar om de **30 minuten** .
+> - Er kan één (1) failover worden gestart op hetzelfde beheerde exemplaar om de **30 minuten**.
 > - Voor BC-instanties moet er een quorum van replica's bestaan voor het accepteren van de failover-aanvraag.
 > - Voor BC-instanties is het niet mogelijk om op te geven welke secundaire replica moet worden gelezen om de failover te initiëren.
 

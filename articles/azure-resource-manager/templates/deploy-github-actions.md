@@ -3,13 +3,13 @@ title: Resource Manager-sjablonen implementeren met behulp van GitHub-acties
 description: Hierin wordt beschreven hoe u Azure Resource Manager-sjablonen implementeert met behulp van GitHub-acties.
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.custom: github-actions-azure
-ms.openlocfilehash: 69974a8db30f12b255a4bab57ebfa32ba78f67ed
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: github-actions-azure, devx-track-azurecli
+ms.openlocfilehash: adb0b9d9a7da19c45904a5d222573e1880915b12
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746098"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841679"
 ---
 # <a name="deploy-azure-resource-manager-templates-by-using-github-actions"></a>Azure Resource Manager sjablonen implementeren met behulp van GitHub-acties
 
@@ -75,7 +75,7 @@ U moet geheimen maken voor uw Azure-referenties, resource groep en abonnementen.
 
 1. In [GitHub](https://github.com/), bladert u in uw opslagplaats.
 
-1. Selecteer **Instellingen > Geheimen > Nieuwe geheimen** .
+1. Selecteer **Instellingen > Geheimen > Nieuwe geheimen**.
 
 1. Plak de volledige JSON-uitvoer van de Azure CLI-opdracht in het waardeveld van het geheim. Geef het geheim de naam `AZURE_CREDENTIALS`.
 
@@ -95,12 +95,12 @@ U kunt het bestand plaatsen op een wille keurige plaats in de opslag plaats. In 
 
 ## <a name="create-workflow"></a>Werkstroom maken
 
-Het werk stroom bestand moet worden opgeslagen in de map **. github/werk stromen** in de hoofdmap van uw opslag plaats. De extensie van een werk stroom bestand kan **. yml** of **. yaml** .
+Het werk stroom bestand moet worden opgeslagen in de map **. github/werk stromen** in de hoofdmap van uw opslag plaats. De extensie van een werk stroom bestand kan **. yml** of **. yaml**.
 
 1. Selecteer in de GitHub-opslag plaats **acties** in het bovenste menu.
-1. Selecteer **nieuwe werk stroom** .
-1. Selecteer **zelf een werk stroom instellen** .
-1. Wijzig de naam van het werk stroom bestand als u de voor keur geeft aan een andere naam dan **Main. yml** . Bijvoorbeeld: **deployStorageAccount. yml** .
+1. Selecteer **nieuwe werk stroom**.
+1. Selecteer **zelf een werk stroom instellen**.
+1. Wijzig de naam van het werk stroom bestand als u de voor keur geeft aan een andere naam dan **Main. yml**. Bijvoorbeeld: **deployStorageAccount. yml**.
 1. Vervang de inhoud van het yml-bestand door het volgende:
 
     ```yml
@@ -136,12 +136,12 @@ Het werk stroom bestand moet worden opgeslagen in de map **. github/werk stromen
 
     De eerste sectie van het werk stroom bestand bevat:
 
-    - **naam** : de naam van de werk stroom.
-    - **op** : de naam van de GitHub-gebeurtenissen die de werk stroom activeren. De werk stroom wordt geactiveerd wanneer er sprake is van een push gebeurtenis in de hoofd vertakking, waardoor ten minste één van de opgegeven bestanden wordt gewijzigd. De twee bestanden zijn het werk stroom bestand en het sjabloon bestand.
+    - **naam**: de naam van de werk stroom.
+    - **op**: de naam van de GitHub-gebeurtenissen die de werk stroom activeren. De werk stroom wordt geactiveerd wanneer er sprake is van een push gebeurtenis in de hoofd vertakking, waardoor ten minste één van de opgegeven bestanden wordt gewijzigd. De twee bestanden zijn het werk stroom bestand en het sjabloon bestand.
 
-1. Selecteer **door voeren starten** .
-1. Selecteer **rechtstreeks door voeren naar de hoofd vertakking** .
-1. Selecteer **nieuw bestand door voeren** (of **wijzigingen door voeren** ).
+1. Selecteer **Doorvoeren starten**.
+1. Selecteer **rechtstreeks door voeren naar de hoofd vertakking**.
+1. Selecteer **nieuw bestand door voeren** (of **wijzigingen door voeren**).
 
 Omdat de werk stroom zo is geconfigureerd dat deze wordt geactiveerd door het werk stroom bestand of het sjabloon bestand dat wordt bijgewerkt, wordt de werk stroom meteen gestart nadat u de wijzigingen hebt doorgevoerd.
 

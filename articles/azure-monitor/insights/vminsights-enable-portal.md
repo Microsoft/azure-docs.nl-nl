@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: ba6ae9262fb0e55c53e1b1421c075e555fae8d98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55e5ff2af62c903efeab5c4932eae0c9dc9b535c
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87328235"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842308"
 ---
 # <a name="enable-azure-monitor-for-single-virtual-machine-or-virtual-machine-scale-set-in-the-azure-portal"></a>Azure Monitor inschakelen voor een enkele virtuele-machine of een virtuele-machineschaalset in Azure Portal
 In dit artikel wordt beschreven hoe u Azure Monitor voor VM's inschakelt voor een virtuele machine of virtuele-machine schaalset met behulp van de Azure Portal. Deze procedure kan worden gebruikt voor het volgende:
@@ -27,7 +27,7 @@ In dit artikel wordt beschreven hoe u Azure Monitor voor VM's inschakelt voor ee
 
 ## <a name="enable-azure-monitor-for-vms"></a>Azure Monitor voor VM's inschakelen
 
-Selecteer in de Azure Portal **virtuele machines**, **virtuele-machine schaal sets**of **machines-Azure-boog** en selecteer een resource in de lijst. Selecteer in de sectie **bewaking** van het menu **inzichten** en **Schakel**vervolgens in. In het volgende voor beeld ziet u een virtuele machine van Azure, maar het menu is vergelijkbaar voor virtuele-machine schaal sets van Azure of Azure Arc.
+Selecteer in de Azure Portal **virtuele machines**, **virtuele-machine schaal sets** of **servers-Azure-boog** en selecteer een resource in de lijst. Selecteer in de sectie **bewaking** van het menu **inzichten** en **Schakel** vervolgens in. In het volgende voor beeld ziet u een virtuele machine van Azure, maar het menu is vergelijkbaar voor virtuele-machine schaal sets van Azure of Azure Arc.
 
 ![Azure Monitor voor VM's voor een VM inschakelen](media/vminsights-enable-single-vm/enable-vminsights-vm-portal.png)
 

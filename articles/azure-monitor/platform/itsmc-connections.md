@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: a75dd24769a4f1af018981ffcec279afc2a88b5a
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: f7980ca7bc6f23c383ea013c2b017b3bd61e2d25
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682415"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842291"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>ITSM-producten/-services verbinden met IT-servicebeheerconnector
 Dit artikel bevat informatie over het configureren van de verbinding tussen uw ITSM-product/-service en de IT Service Management-connector (ITSMC) in Log Analytics om uw werk items centraal te beheren. Zie [overzicht](./itsmc-overview.md)voor meer informatie over ITSMC.
@@ -41,6 +41,7 @@ Zorg ervoor dat aan de volgende vereisten wordt voldaan:
 - Hybride verbinding is gemaakt en geconfigureerd. Meer informatie: [de hybride verbinding configureren](#configure-the-hybrid-connection).
 - Ondersteunde versies van Service Manager: 2012 R2 of 2016.
 - Gebruikersrol:  [Geavanceerde operator](/previous-versions/system-center/service-manager-2010-sp1/ff461054(v=technet.10)).
+- De waarschuwingen die vanaf Azure Monitor worden verzonden, kunnen nu worden gemaakt in System Center Service Manager incidenten.
 
 > [!NOTE]
 > 
@@ -186,7 +187,7 @@ De volgende secties bevatten informatie over het aansluiten van uw ServiceNow-pr
 Zorg ervoor dat aan de volgende vereisten wordt voldaan:
 - ITSMC is geïnstalleerd. Meer informatie: [het toevoegen van de IT Service Management-connector-oplossing](./itsmc-overview.md#add-it-service-management-connector).
 - ServiceNow ondersteunde versies: Orlando, New York, Madrid, Londen, Kingston, Jakarta, Istanboel, Helsinki, Genève.
-- De waarschuwingen die via Azure Monitor worden verzonden, kunnen nu worden gemaakt in ServiceNow een van de volgende elementen: gebeurtenissen, Incedents of waarschuwingen.
+- De waarschuwingen die via Azure Monitor worden verzonden, kunnen nu worden gemaakt in ServiceNow een van de volgende elementen: gebeurtenissen, incidenten of waarschuwingen.
 > [!NOTE]
 > ITSMC biedt alleen ondersteuning voor de officiële SaaS-aanbieding van de service. Persoonlijke implementaties van de service worden nu niet ondersteund. 
 

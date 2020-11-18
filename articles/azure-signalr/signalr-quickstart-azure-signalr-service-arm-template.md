@@ -4,15 +4,15 @@ description: In deze quickstart leert u hoe u een Azure SignalR-service maakt me
 author: sffamily
 ms.service: signalr
 ms.topic: quickstart
-ms.custom: subject-armqs
+ms.custom: subject-armqs, devx-track-azurecli
 ms.author: zhshang
 ms.date: 10/02/2020
-ms.openlocfilehash: a7e8183f21ab49fe4662470d30e52977dd89153a
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 4ab029048b37a4dcb44ef405249dcb9e20de70cf
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289920"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841612"
 ---
 # <a name="quickstart-use-an-arm-template-to-deploy-azure-signalr-service"></a>Quickstart: een Azure SignalR-service implementeren met behulp van een ARM-sjabloon
 
@@ -62,17 +62,17 @@ Selecteer de volgende koppeling om Azure SignalR Service te implementeren met be
 
 [:::image type="content" source="../media/template-deployments/deploy-to-azure.svg" alt-text="Knop voor het implementeren van Azure SignalR Service in Azure met behulp van de ARM-sjabloon in Azure Portal.":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-signalr%2fazuredeploy.json)
 
-Op de pagina **Een Azure SignalR-service implementeren** :
+Op de pagina **Een Azure SignalR-service implementeren**:
 
 1. Wijzig desgewenst **Abonnement** van de standaardinstelling in een ander abonnement.
 
-2. Selecteer voor **Resourcegroep** de optie **Nieuwe maken** , voer een naam in voor de nieuwe resourcegroep en selecteer **OK**.
+2. Selecteer voor **Resourcegroep** de optie **Nieuwe maken**, voer een naam in voor de nieuwe resourcegroep en selecteer **OK**.
 
 3. Als u een nieuwe resourcegroep hebt gemaakt, selecteert u een **Regio** voor de resourcegroep.
 
-4. Voer desgewenst een nieuwe **naam** en de **locatie** in (zoals **eastus2** ) van de Azure SignalR-service. Als u geen naam opgeeft, wordt deze automatisch gegenereerd. De locatie voor de Azure SignalR-service kan verschillen van de regio van de resourcegroep. Als u geen locatie opgeeft, wordt deze ingesteld op de regio van de resourcegroep.
+4. Voer desgewenst een nieuwe **naam** en de **locatie** in (zoals **eastus2**) van de Azure SignalR-service. Als u geen naam opgeeft, wordt deze automatisch gegenereerd. De locatie voor de Azure SignalR-service kan verschillen van de regio van de resourcegroep. Als u geen locatie opgeeft, wordt deze ingesteld op de regio van de resourcegroep.
 
-5. Kies de **prijscategorie** ( **Free_F1** of **Standard_S1** ), voer de **capaciteit** (het aantal SignalR-eenheden) in en kies de **servicemodus** **Standaard** (hiervoor is een centrale server vereist), **Serverloos** (er wordt geen serververbinding toegestaan) of **Klassiek** (alleen routeren naar de centrale server als de hub is verbonden met de server). Schakel **Connectiviteitslogboeken** of **Messaging-logboeken** in.
+5. Kies de **prijscategorie** (**Free_F1** of **Standard_S1**), voer de **capaciteit** (het aantal SignalR-eenheden) in en kies de **servicemodus** **Standaard** (hiervoor is een centrale server vereist), **Serverloos** (er wordt geen serververbinding toegestaan) of **Klassiek** (alleen routeren naar de centrale server als de hub is verbonden met de server). Schakel **Connectiviteitslogboeken** of **Messaging-logboeken** in.
 
     > [!NOTE]
     > De capaciteit van de prijscategorie **Free_F1** is beperkt tot 1 eenheid.
@@ -92,12 +92,12 @@ Gebruik de volgende code om de Azure SignalR-service te implementeren met behulp
 
 * De naam en regio van de nieuwe Azure SignalR-service
 * De naam en regio van een nieuwe resourcegroep
-* De Azure-prijscategorie ( **Free_F1** of **Standard_S1** )
+* De Azure-prijscategorie (**Free_F1** of **Standard_S1**)
 * De capaciteit van de SignalR-eenheid (1, 2, 5, 10, 20, 50 of 100)
   > [!NOTE]
   > De capaciteit van de prijscategorie **Free_F1** is beperkt tot 1 eenheid.
 * De servicemodus: **Standaard** (een centrale server is vereist), **Serverloos** (verbinding met de server is niet toegestaan) of **Klassiek** (alleen routeren naar een centrale server als de hub is verbonden met de server)
-* Of logboeken voor connectiviteit of berichten moeten worden ingeschakeld ( **waar** of **niet waar** )
+* Of logboeken voor connectiviteit of berichten moeten worden ingeschakeld (**waar** of **niet waar**)
 
 ```azurepowershell-interactive
 $serviceName = Read-Host -Prompt "Enter a name for the new Azure SignalR Service"
@@ -137,12 +137,12 @@ Gebruik de volgende code om de Azure SignalR-service te implementeren met behulp
 
 * De naam en regio van de nieuwe Azure SignalR-service
 * De naam en regio van een nieuwe resourcegroep
-* De Azure-prijscategorie ( **Free_F1** of **Standard_S1** )
+* De Azure-prijscategorie (**Free_F1** of **Standard_S1**)
 * De capaciteit van de SignalR-eenheid (1, 2, 5, 10, 20, 50 of 100)
     > [!NOTE]
     > De capaciteit van de prijscategorie **Free_F1** is beperkt tot 1 eenheid.
 * De servicemodus: **Standaard** (een centrale server is vereist), **Serverloos** (verbinding met de server is niet toegestaan) of **Klassiek** (alleen routeren naar een centrale server als de hub is verbonden met de server)
-* Of logboeken voor connectiviteit of berichten moeten worden ingeschakeld ( **waar** of **niet waar** )
+* Of logboeken voor connectiviteit of berichten moeten worden ingeschakeld (**waar** of **niet waar**)
 
 ```azurecli-interactive
 read -p "Enter a name for the new Azure SignalR Service: " serviceName &&

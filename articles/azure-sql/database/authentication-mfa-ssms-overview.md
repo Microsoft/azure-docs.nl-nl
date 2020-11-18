@@ -13,12 +13,12 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 09/28/2020
 tags: azure-synapse
-ms.openlocfilehash: 3b81572266f6ee5bd90662a98988d41479f399cc
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 9afad44bcf67478a81e75c17d0ff8ffc6d8c65aa
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92674998"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841125"
 ---
 # <a name="using-multi-factor-azure-active-directory-authentication"></a>Multi-factor Azure Active Directory-verificatie gebruiken
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -41,13 +41,13 @@ Er zijn twee niet-interactieve verificatie modellen voor Azure AD, die kunnen wo
 - `Azure Active Directory - Password`
 - `Azure Active Directory - Integrated`
 
-De interactieve methode die ook Azure Multi-Factor Authentication (MFA) ondersteunt: 
+De interactieve methode die ook Azure AD Multi-Factor Authentication (MFA) ondersteunt, is: 
 
 - `Azure Active Directory - Universal with MFA`
 
-Azure MFA helpt bij het bewaken van de toegang tot uw gegevens en toepassingen en komt tegemoet aan de wensen van gebruikers die een eenvoudige aanmeldprocedure willen. Azure MFA biedt krachtige verificatie met een scala aan gebruikersvriendelijke verificatieopties (zoals telefoonoproepen, sms-berichten, smartcards met pincode of melding in mobiele app), zodat gebruikers de gewenste methode kunnen kiezen. Bij interactieve MFA met Azure AD kunnen er pop-upvensters worden weergegeven voor validatie.
+Azure AD MFA helpt de toegang tot gegevens en toepassingen te beschermen terwijl de vraag naar gebruikers wordt gevergaderd voor een eenvoudig aanmeldings proces. Azure MFA biedt krachtige verificatie met een scala aan gebruikersvriendelijke verificatieopties (zoals telefoonoproepen, sms-berichten, smartcards met pincode of melding in mobiele app), zodat gebruikers de gewenste methode kunnen kiezen. Bij interactieve MFA met Azure AD kunnen er pop-upvensters worden weergegeven voor validatie.
 
-Zie [multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md)voor een beschrijving van Azure multi-factor Authentication.
+Zie [multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md)voor een beschrijving van Azure AD multi-factor Authentication.
 Zie [Azure SQL database multi-factor Authentication configureren voor SQL Server Management Studio](authentication-mfa-ssms-configure.md)voor configuratie stappen.
 
 ### <a name="azure-ad-domain-name-or-tenant-id-parameter"></a>Azure AD-domeinnaam of tenant-id als parameter
@@ -58,7 +58,7 @@ Alle gast gebruikers die willen worden geverifieerd met universele verificatie, 
 
 
 1. Open een verbinding in SSMS. Voer de naam van uw server in en selecteer **Azure Active Directory-Universal met MFA-** verificatie. Voeg de **gebruikers naam** toe waarmee u zich wilt aanmelden.
-1. Selecteer het vak **Opties** en ga naar het tabblad **verbindings eigenschappen** . In het dialoog venster **verbinding maken met data base vult u** het dialoog venster in voor uw data base. Schakel het selectievakje **AD-domeinnaam of tenant-id** in en geef de gegevens van de verificatie-instantie op, zoals de domeinnaam ( **contosotest.onmicrosoft.com** ) of de GUID van de tenant-id. 
+1. Selecteer het vak **Opties** en ga naar het tabblad **verbindings eigenschappen** . In het dialoog venster **verbinding maken met data base vult u** het dialoog venster in voor uw data base. Schakel het selectievakje **AD-domeinnaam of tenant-id** in en geef de gegevens van de verificatie-instantie op, zoals de domeinnaam (**contosotest.onmicrosoft.com**) of de GUID van de tenant-id. 
 
    ![Scherm afbeelding van het tabblad verbindings eigenschappen met de instellingen voor verbinding maken met data base en AD-domein naam of Tenant-ID.](./media/authentication-mfa-ssms-overview/mfa-tenant-ssms.png)
 
@@ -69,7 +69,7 @@ Als u SSMS 18. x of hoger uitvoert, is de AD-domein naam of Tenant-ID niet lange
 ### <a name="azure-ad-business-to-business-support"></a>Ondersteuning voor Azure AD B2B
 
 > [!IMPORTANT]
-> Ondersteuning voor gast gebruikers om verbinding te maken met Azure SQL Database, SQL Managed instance en Azure Synapse zonder dat een groep deel uitmaakt van een **open bare preview** . Zie voor meer informatie [Azure AD-gast gebruikers maken en instellen als een Azure AD-beheerder](authentication-aad-guest-users.md).
+> Ondersteuning voor gast gebruikers om verbinding te maken met Azure SQL Database, SQL Managed instance en Azure Synapse zonder dat een groep deel uitmaakt van een **open bare preview**. Zie voor meer informatie [Azure AD-gast gebruikers maken en instellen als een Azure AD-beheerder](authentication-aad-guest-users.md).
 
 Azure AD-gebruikers die worden ondersteund voor Azure AD B2B-scenario's als gast gebruikers (Zie [Wat is Azure B2B Collaboration](../../active-directory/external-identities/what-is-b2b.md)) kunnen verbinding maken met SQL database en Azure Synapse alleen als onderdeel van de leden van een groep die in de gekoppelde Azure AD is gemaakt en hand matig worden toegewezen met de instructie [Create User (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql) in een bepaalde data base. Als bijvoorbeeld `steve@gmail.com` wordt uitgenodigd voor Azure AD `contosotest` (met het Azure AD `contosotest.onmicrosoft.com` -domein), wordt een Azure AD-groep, zoals `usergroup` moet worden gemaakt in de Azure AD die het `steve@gmail.com` lid bevat. Vervolgens moet deze groep worden gemaakt voor een specifieke data base (bijvoorbeeld `MyDatabase` ) door een Azure AD SQL-beheerder of Azure AD dbo door de Transact-SQL-instructie uit te voeren `CREATE USER [usergroup] FROM EXTERNAL PROVIDER` . 
 
@@ -100,4 +100,4 @@ Nadat de database gebruiker is gemaakt, kan de gebruiker `steve@gmail.com` zich 
 - [Een BACPAC-bestand importeren in een nieuwe data base](database-import.md)  
 - [Database naar een BACPAC-bestand exporteren](database-export.md)  
 - Interface van C# interface [IUniversalAuthProvider](/dotnet/api/microsoft.sqlserver.dac.iuniversalauthprovider)  
-- Wanneer u **Azure Active Directory-universele met MFA-** verificatie gebruikt, is ADAL tracering beschikbaar vanaf [SSMS 17,3](/sql/ssms/download-sql-server-management-studio-ssms). Standaard uitgeschakeld, u kunt ADAL tracering inschakelen via het menu **extra** , **Opties** , onder **Azure-Services** , Azure- **Cloud** , **ADAL uitvoervenster traceer niveau** , gevolgd door **uitvoer**  in te scha kelen in het menu **weer gave** . De traceringen zijn beschikbaar in het uitvoer venster wanneer u **Azure Active Directory optie** selecteert.
+- Wanneer u **Azure Active Directory-universele met MFA-** verificatie gebruikt, is ADAL tracering beschikbaar vanaf [SSMS 17,3](/sql/ssms/download-sql-server-management-studio-ssms). Standaard uitgeschakeld, u kunt ADAL tracering inschakelen via het menu **extra**, **Opties** , onder **Azure-Services**, Azure- **Cloud**, **ADAL uitvoervenster traceer niveau**, gevolgd door **uitvoer**  in te scha kelen in het menu **weer gave** . De traceringen zijn beschikbaar in het uitvoer venster wanneer u **Azure Active Directory optie** selecteert.

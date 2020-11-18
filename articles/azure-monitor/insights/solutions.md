@@ -6,13 +6,13 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/16/2020
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c64e01253652ea3b49ad6221f161bb78f499b6ed
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: c38fa77951aaeb5559dc2030f1401a896d7c238d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150529"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841917"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Bewakings oplossingen in Azure Monitor
 
@@ -20,7 +20,7 @@ Bewakings oplossingen in Azure Monitor bieden een analyse van de werking van een
 
 ## <a name="use-monitoring-solutions"></a>Bewakingsoplossingen gebruiken
 
-Op de pagina **overzicht** van oplossingen in azure monitor wordt een tegel weer gegeven voor elke oplossing die in een log Analytics-werk ruimte is geïnstalleerd. Als u deze pagina wilt openen, gaat u naar **Azure monitor** in het [Azure Portal](https://ms.portal.azure.com). Selecteer in het menu **inzichten** **meer** om de Insights- **hub**te openen en klik vervolgens op **log Analytics-werk ruimten**.
+Op de pagina **overzicht** van oplossingen in azure monitor wordt een tegel weer gegeven voor elke oplossing die in een log Analytics-werk ruimte is geïnstalleerd. Als u deze pagina wilt openen, gaat u naar **Azure monitor** in het [Azure Portal](https://ms.portal.azure.com). Selecteer in het menu **inzichten** **meer** om de Insights- **hub** te openen en klik vervolgens op **log Analytics-werk ruimten**.
 
 [![Insights-hub](media/solutions/insights-hub.png)](media/solutions/insights-hub.png#lightbox)
 
@@ -37,7 +37,7 @@ Bewakings oplossingen kunnen meerdere typen Azure-resources bevatten en u kunt a
 
 Gebruik de volgende procedure om de bewakings oplossingen weer te geven die in uw abonnement zijn geïnstalleerd.
 
-1. Ga naar [Azure Portal](https://ms.portal.azure.com). Zoek en selecteer **oplossingen**.
+1. Ga naar de [Azure Portal](https://ms.portal.azure.com). Zoek en selecteer **oplossingen**.
 1. Oplossingen die in al uw werk ruimten zijn geïnstalleerd, worden weer gegeven. De naam van de oplossing wordt gevolgd door de naam van de werk ruimte waarin deze is geïnstalleerd.
 1. Gebruik de vervolg keuzelijsten aan de bovenkant van het scherm om te filteren op abonnement of resource groep.
 
@@ -180,7 +180,7 @@ az monitor log-analytics solution create --resource-group MyResourceGroup \
    - Selecteer de knop **Cloud shell** in de menu balk in de rechter bovenhoek van de [Azure Portal](https://portal.azure.com)
 
    > [!IMPORTANT]
-   > Hoewel de Power shell-module **AZ. MonitoringSolutions** in preview is, moet u deze afzonderlijk installeren met behulp van de `Install-Module` cmdlet. Nadat deze Power shell-module algemeen beschikbaar is, maakt deze deel uit van toekomstige AZ Power shell-module releases en is deze standaard beschikbaar in Azure Cloud Shell.
+   > Hoewel de Power shell-module **AZ. MonitoringSolutions** in preview is, moet u deze afzonderlijk installeren met behulp van de `Install-Module` cmdlet. Nadat de PowerShell-module algemeen beschikbaar is geworden, wordt deze onderdeel van toekomstige releases van de Az PowerShell-module en is deze standaard beschikbaar vanuit Azure Cloud Shell.
 
    ```azurepowershell-interactive
    Install-Module -Name Az.MonitoringSolutions

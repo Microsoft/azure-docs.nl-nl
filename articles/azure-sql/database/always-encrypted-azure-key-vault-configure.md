@@ -5,19 +5,19 @@ keywords: gegevens versleuteling, versleutelings sleutel, Cloud versleuteling
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
-ms.custom: sqldbrb=1
+ms.custom: sqldbrb=1, devx-track-azurecli
 ms.devlang: ''
 ms.topic: how-to
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 ms.date: 11/02/2020
-ms.openlocfilehash: 45aca00adab8ef5b33a376af34642261c5e73255
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 257abf03994c7006b1c3789174f550515dcd309a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321630"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841458"
 ---
 # <a name="configure-always-encrypted-by-using-azure-key-vault"></a>Always Encrypted configureren met behulp van Azure Key Vault 
 
@@ -55,7 +55,7 @@ Als u de *toepassings-id en-* *sleutel* wilt ophalen, volgt u de stappen in [Cre
 
 ## <a name="create-a-key-vault-to-store-your-keys"></a>Een sleutel kluis maken om uw sleutels op te slaan
 
-Nu uw client-app is geconfigureerd en u uw toepassings-ID hebt, is het tijd om een sleutel kluis te maken en het toegangs beleid te configureren, zodat u en uw toepassing toegang hebben tot de geheimen van de kluis (de Always Encrypted sleutels). De machtigingen *maken* , *ophalen* , *lijst* , *ondertekenen* , *verifiëren* , *wrapKey* en *sleutel uitpakken* zijn vereist voor het maken van een nieuwe kolom hoofd sleutel en voor het instellen van versleuteling met SQL Server Management Studio.
+Nu uw client-app is geconfigureerd en u uw toepassings-ID hebt, is het tijd om een sleutel kluis te maken en het toegangs beleid te configureren, zodat u en uw toepassing toegang hebben tot de geheimen van de kluis (de Always Encrypted sleutels). De machtigingen *maken*, *ophalen*, *lijst*, *ondertekenen*, *verifiëren*, *wrapKey* en *sleutel uitpakken* zijn vereist voor het maken van een nieuwe kolom hoofd sleutel en voor het instellen van versleuteling met SQL Server Management Studio.
 
 U kunt snel een sleutel kluis maken door het volgende script uit te voeren. Zie [Wat is Azure Key Vault?](../../key-vault/general/overview.md)voor een gedetailleerde uitleg van deze opdrachten en meer informatie over het maken en configureren van een sleutel kluis.
 
@@ -146,12 +146,12 @@ GO
 
 SSMS biedt een wizard waarmee u Always Encrypted eenvoudig kunt configureren door de kolom hoofd sleutel, kolom versleutelings sleutel en versleutelde kolommen in te stellen.
 
-1. Vouw **data bases**  >  **Clinic** -  >  **tabellen** uit.
+1. Vouw **data bases**  >  **Clinic**-  >  **tabellen** uit.
 2. Klik met de rechter muisknop op de tabel **patiënten** en selecteer **kolommen versleutelen** om de wizard always encrypted te openen:
 
     ![Scherm afbeelding die de versleutelings kolommen markeert... menu optie.](./media/always-encrypted-azure-key-vault-configure/encrypt-columns.png)
 
-De wizard Always Encrypted bevat de volgende secties: **kolom selectie** , **configuratie van hoofd sleutel** , **validatie** en **samen vatting**.
+De wizard Always Encrypted bevat de volgende secties: **kolom selectie**, **configuratie van hoofd sleutel**, **validatie** en **samen vatting**.
 
 ### <a name="column-selection"></a>Kolom selectie
 
@@ -576,7 +576,7 @@ U kunt zien dat de versleutelde kolommen geen lees bare gegevens bevatten.
 
    ![Scherm opname die laat zien dat de versleutelde kolommen geen lees bare gegevens bevatten.](./media/always-encrypted-azure-key-vault-configure/ssms-encrypted.png)
 
-Als u SSMS wilt gebruiken om toegang te krijgen tot de Lees bare gegevens, moet u eerst controleren of de gebruiker de juiste machtigingen heeft voor de Azure Key Vault: *Get* , *sleutel uitpakken* en *verify*. Zie [Column Master-sleutels maken en opslaan (always encrypted)](/sql/relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted)voor meer informatie.
+Als u SSMS wilt gebruiken om toegang te krijgen tot de Lees bare gegevens, moet u eerst controleren of de gebruiker de juiste machtigingen heeft voor de Azure Key Vault: *Get*, *sleutel uitpakken* en *verify*. Zie [Column Master-sleutels maken en opslaan (always encrypted)](/sql/relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted)voor meer informatie.
 
 Voeg vervolgens de para meter voor de *kolom versleutelings instelling = ingeschakeld* toe tijdens de verbinding.
 

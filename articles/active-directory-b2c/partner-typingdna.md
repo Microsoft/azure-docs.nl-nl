@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 06/25/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: f7d89942ad5209b854b8df486ad3e59a3976edfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: edbc944e77d2483d32574f8044c72fc3d1292e2a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259048"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840431"
 ---
 # <a name="tutorial-for-configuring-typingdna-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van TypingDNA met Azure Active Directory B2C
 
 In dit overzicht leert u hoe u een voor beeld van een online-betalings toepassing kunt integreren in Azure Active Directory B2C met de APP TypingDNA. Met behulp van de TypingDNA-app kunnen Azure AD B2C klanten voldoen aan de PSD2-transactie vereisten ( [betalings Services](https://www.typingdna.com/use-cases/sca-strong-customer-authentication) ) door middel van toetsaanslag dynamiek en sterke klant authenticatie. Meer informatie over TypingDNA vindt u [hier](https://www.typingdna.com/).
 
- Azure AD B2C maakt gebruik van de technologieën van TypingDNA om de gebruikers kenmerken vast te leggen en ze te laten registreren en analyseren voor de kennis van elke authenticatie. Hiermee wordt een beveiligingslaag toegevoegd met betrekking tot de riskiness van een verificatie en worden de risico niveaus geëvalueerd. Azure AD B2C kunt andere mechanismen aanroepen om het vertrouwen van de gebruiker aan te geven, wie ze claimen door Azure MFA aan te roepen, e-mail verificatie te forceren of enige andere aangepaste logica voor uw scenario.
+ Azure AD B2C maakt gebruik van de technologieën van TypingDNA om de gebruikers kenmerken vast te leggen en ze te laten registreren en analyseren voor de kennis van elke authenticatie. Hiermee wordt een beveiligingslaag toegevoegd met betrekking tot de riskiness van een verificatie en worden de risico niveaus geëvalueerd. Azure AD B2C kunt andere mechanismen aanroepen om het vertrouwen van de gebruiker te verzorgen dat ze worden claimd door Azure AD MFA aan te roepen, e-mail verificatie te forceren of enige andere aangepaste logica voor uw scenario.
 
 >[!NOTE]
 > Dit voorbeeld beleid is gebaseerd op [SocialAndLocalAccountsWithMfa](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/SocialAndLocalAccountsWithMfa) Starter Pack.
@@ -113,7 +113,7 @@ Deze drempel waarden moeten worden aangepast aan uw use-case.
 
 - Nadat uw API de heeft geëvalueerd `net_score` , moet deze een Booleaanse claim retour neren naar B2C- `promptMFA` .
 
-- De `promptMFA` claim wordt binnen een voor waarde gebruikt om Azure MFA voorwaardelijk uit te voeren.
+- De `promptMFA` claim wordt binnen een pre-voor waarde gebruikt om Azure AD MFA voorwaardelijk uit te voeren.
 
 ```xml
 

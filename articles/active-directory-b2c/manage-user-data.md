@@ -11,12 +11,12 @@ ms.date: 05/06/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: b7cc772e2a2e44a72af5e47a794c8b0f36aa9786
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48c79306d376c2faa1089886881a7b5e9a792c86
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85387640"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840539"
 ---
 # <a name="manage-user-data-in-azure-active-directory-b2c"></a>Gebruikers gegevens beheren in Azure Active Directory B2C
 
@@ -52,7 +52,7 @@ Azure AD B2C gebruikers gegevens beperkt zijn tot:
 
 In het volgende voor beeld van een gegevens stroom exporteren, de stappen die worden beschreven als uitgevoerd door de toepassing, kunnen ook worden uitgevoerd door een back-end-proces of een gebruiker met een beheerdersrol in de map:
 
-1. De gebruiker meldt zich aan bij de toepassing. Azure AD B2C wordt zo nodig verificatie afgedwongen met Azure Multi-Factor Authentication.
+1. De gebruiker meldt zich aan bij de toepassing. Azure AD B2C wordt zo nodig verificatie afgedwongen met Azure AD Multi-Factor Authentication.
 2. De toepassing gebruikt de gebruikers referenties om een Microsoft Graph API-bewerking aan te roepen om de gebruikers kenmerken op te halen. De Microsoft Graph-API biedt de kenmerk gegevens in JSON-indeling. Afhankelijk van het schema, kunt u de inhoud van het ID-token zo instellen dat alle persoonlijke gegevens over een gebruiker worden meegenomen.
 3. De toepassing haalt de controle activiteit voor gebruikers op. De Microsoft Graph-API levert de gebeurtenis gegevens aan de toepassing.
 4. De toepassing aggregeert de gegevens en maakt deze beschikbaar voor de gebruiker.

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 11/16/2020
-ms.openlocfilehash: 6dd855695a155e924f7c46bdb17449c5e6504ca6
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 4e3f31442c5fa645e27a640d8facf86aed20aa75
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/18/2020
-ms.locfileid: "94745357"
+ms.locfileid: "94842478"
 ---
 # <a name="stream-analytics-and-power-bi-a-real-time-analytics-dashboard-for-streaming-data"></a>Stream Analytics en Power BI: een real-time analyse dashboard voor het streamen van gegevens
 
@@ -221,7 +221,7 @@ Op basis van deze configuratie kunt u de oorspronkelijke query wijzigen in het v
 ```
 
 ### <a name="renew-authorization"></a>Autorisatie vernieuwen
-Als het wacht woord is gewijzigd sinds de taak is gemaakt of de laatste keer is geverifieerd, moet u uw Power BI-account opnieuw verifiëren. Als Azure Multi-Factor Authentication is geconfigureerd op uw Azure Active Directory-Tenant (Azure AD), moet u Power BI autorisatie ook elke twee weken vernieuwen. Als u het abonnement niet verlengt, ziet u symptomen zoals een gebrek aan taak uitvoer of een `Authenticate user error` in de bewerkings Logboeken.
+Als het wacht woord is gewijzigd sinds de taak is gemaakt of de laatste keer is geverifieerd, moet u uw Power BI-account opnieuw verifiëren. Als Azure AD Multi-Factor Authentication is geconfigureerd op uw Azure Active Directory-Tenant (Azure AD), moet u ook Power BI autorisatie elke twee weken vernieuwen. Als u het abonnement niet verlengt, ziet u symptomen zoals een gebrek aan taak uitvoer of een `Authenticate user error` in de bewerkings Logboeken.
 
 Als een taak wordt gestart nadat het token is verlopen, treedt er een fout op en wordt de taak mislukt. U kunt dit probleem oplossen door de taak die wordt uitgevoerd, te stoppen en naar uw Power BI-uitvoer te gaan. Om gegevens verlies te voor komen, selecteert u de koppeling **autorisatie vernieuwen** en start u de taak opnieuw vanaf de **laatste keer** dat deze is gestopt.
 

@@ -10,12 +10,12 @@ ms.topic: troubleshooting
 ms.date: 08/13/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c1b51792c86cfce15fa718040dfcbcc13997ee26
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87ea77540e5fcaac0c4231403473d25ebae46aac
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85384954"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840250"
 ---
 # <a name="troubleshoot-azure-ad-b2c-custom-policies-and-identity-experience-framework"></a>Problemen met Azure AD B2C aangepaste beleids regels en het Framework voor identiteits ervaring oplossen
 
@@ -64,7 +64,7 @@ Veelvoorkomende validatie fouten zijn onder andere:
 
 * Gebruik [Fiddler](https://www.telerik.com/fiddler)om de uitwisseling van berichten tussen uw client browser en Azure AD B2C te traceren. Het kan u helpen een indicatie te krijgen van waar uw gebruikers zich niet meer in de Orchestration-stappen bevinden.
 
-* Gebruik in de **ontwikkelings modus** [Application Insights](troubleshoot-with-application-insights.md) om de activiteit van uw gebruikers traject voor identiteits ervaring te traceren. In de **ontwikkel modus**kunt u de uitwisseling van claims bekijken tussen het Framework voor identiteits ervaring en de verschillende claim providers die zijn gedefinieerd door technische profielen, zoals id-providers, API-gebaseerde services, de Azure AD B2C gebruikers lijst en andere services, zoals Azure multi-factor Authentication.
+* Gebruik in de **ontwikkelings modus** [Application Insights](troubleshoot-with-application-insights.md) om de activiteit van uw gebruikers traject voor identiteits ervaring te traceren. In de **ontwikkelings modus** kunt u de uitwisseling van claims tussen het Framework voor identiteits ervaring en de verschillende claim providers zien die zijn gedefinieerd door technische profielen, zoals id-providers, API-gebaseerde services, de Azure AD B2C gebruikers lijst en andere services, zoals Azure AD multi-factor Authentication.
 
 ## <a name="recommended-practices"></a>Aanbevolen procedures
 

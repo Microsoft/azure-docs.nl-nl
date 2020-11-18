@@ -6,13 +6,13 @@ ms.author: b-juche
 ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: how-to
-ms.date: 09/22/2020
-ms.openlocfilehash: eebb0a8dc23a6a442a170dcc6e19495f96ce2921
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.date: 11/17/2020
+ms.openlocfilehash: 83d6e051f520737e750e6c46c192eb698e7bf0e3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930590"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842254"
 ---
 # <a name="mount-or-unmount-a-volume-for-windows-or-linux-virtual-machines"></a>Een volume voor Windows- of Linux-VM's koppelen of ontkoppelen 
 
@@ -22,11 +22,11 @@ U kunt indien nodig een volume koppelen of ontkoppelen voor virtuele Windows-of 
 
 * U moet ten minste één export beleid hebben om toegang te kunnen krijgen tot een NFS-volume.
 * Als u een NFS-volume met succes wilt koppelen, moet u ervoor zorgen dat de volgende NFS-poorten zijn geopend tussen de client en de NFS-volumes:
-    * 111 = `RPCBIND/Portmapper`
-    * 635 = `mountd`
-    * 2049 = `nfs`
-    * 4045 = `nlockmgr` (alleen NFSv3)
-    * 4046 = `status` (alleen NFSv3)
+    * 111 TCP/UDP = `RPCBIND/Portmapper`
+    * 635 TCP/UDP = `mountd`
+    * 2049 TCP/UDP = `nfs`
+    * 4045 TCP/UDP = `nlockmgr` (alleen NFSv3)
+    * 4046 TCP/UDP = `status` (alleen NFSv3)
 
 ## <a name="steps"></a>Stappen
 

@@ -11,12 +11,12 @@ ms.date: 08/13/2019
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a5bfdada12229070568bb9b0556471ea5aab306f
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: a2c39d9809204328a6eba30c073b1fa81795924a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94575948"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840284"
 ---
 # <a name="language-customization-in-azure-active-directory-b2c"></a>Taal aanpassing in Azure Active Directory B2C
 
@@ -28,9 +28,9 @@ U gebruikt taal aanpassing om te selecteren in welke talen uw gebruikers stroom 
 
 Mogelijk hebt u niet het controle niveau nodig over de talen die uw klant ziet. Als u geen `ui_locales` para meter opgeeft, wordt de gebruikers ervaring bepaald door de instellingen van de browser. U kunt nog steeds bepalen in welke talen uw gebruikers stroom wordt vertaald door deze toe te voegen als een ondersteunde taal. Als de browser van een klant is ingesteld om een taal weer te geven die u niet wilt ondersteunen, wordt in plaats daarvan de taal weer gegeven die u als standaard waarde hebt geselecteerd in ondersteunde cult uren.
 
-* **gebruikers interface-land instellingen opgegeven taal** : nadat u de taal aanpassing hebt ingeschakeld, wordt uw gebruikers stroom vertaald naar de taal die u hier opgeeft.
-* Door **browser aangevraagde taal** : als er geen `ui_locales` para meter is opgegeven, wordt uw gebruikers stroom vertaald naar de door de browser aangevraagde taal, *als de taal wordt ondersteund*.
-* **Standaard taal van beleid** : als in de browser geen taal is opgegeven of als er een niet wordt ondersteund, wordt de gebruikers stroom vertaald naar de standaard taal van de gebruikers stroom.
+* **gebruikers interface-land instellingen opgegeven taal**: nadat u de taal aanpassing hebt ingeschakeld, wordt uw gebruikers stroom vertaald naar de taal die u hier opgeeft.
+* Door **browser aangevraagde taal**: als er geen `ui_locales` para meter is opgegeven, wordt uw gebruikers stroom vertaald naar de door de browser aangevraagde taal, *als de taal wordt ondersteund*.
+* **Standaard taal van beleid**: als in de browser geen taal is opgegeven of als er een niet wordt ondersteund, wordt de gebruikers stroom vertaald naar de standaard taal van de gebruikers stroom.
 
 > [!NOTE]
 > Als u aangepaste gebruikers kenmerken gebruikt, moet u uw eigen vertalingen opgeven. Zie [uw teken reeksen aanpassen](#customize-your-strings)voor meer informatie.
@@ -200,7 +200,7 @@ Chrome en Firefox hebben beide aanvragen voor de ingestelde taal. Als het een on
 
 ## <a name="supported-languages"></a>Ondersteunde talen
 
-Azure AD B2C biedt ondersteuning voor de volgende talen. De talen van de gebruikers stroom worden door Azure AD B2C verschaft. De multi-factor Authentication (MFA)-meldingen talen worden door [Azure MFA](../active-directory/authentication/concept-mfa-howitworks.md)verschaft.
+Azure AD B2C biedt ondersteuning voor de volgende talen. De talen van de gebruikers stroom worden door Azure AD B2C verschaft. De meldingen voor multi-factor Authentication (MFA) worden geleverd door [Azure AD MFA](../active-directory/authentication/concept-mfa-howitworks.md).
 
 | Taal              | Taalcode | Gebruikersstromen         | MFA-meldingen  |
 |-----------------------| :-----------: | :----------------: | :----------------: |

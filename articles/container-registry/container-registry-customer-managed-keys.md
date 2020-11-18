@@ -4,12 +4,12 @@ description: Meer informatie over het versleutelen van uw Azure container Regist
 ms.topic: article
 ms.date: 09/30/2020
 ms.custom: ''
-ms.openlocfilehash: 6eaae5266277a6a65c7cecaa761b75e3a41ebe87
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: ad81a94910cb1ed09634801f8706182e17947225
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91940664"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842563"
 ---
 # <a name="encrypt-registry-using-a-customer-managed-key"></a>REGI ster versleutelen met een door de klant beheerde sleutel
 
@@ -104,7 +104,7 @@ keyvaultID=$(az keyvault show --resource-group <resource-group-name> --name <key
 
 ### <a name="enable-key-vault-access"></a>Sleutel kluis toegang inschakelen
 
-Configureer een beleid voor de sleutel kluis zodat de identiteit er toegang toe heeft. In de volgende opdracht [AZ set-Policy][az-keyvault-set-policy] , geeft u de principal-id van de beheerde identiteit door die u hebt gemaakt, die eerder is opgeslagen in een omgevings variabele. Stel de sleutel machtigingen in op **Get**, **sleutel uitpakken**en **wrapKey**.  
+Configureer een beleid voor de sleutel kluis zodat de identiteit er toegang toe heeft. In de volgende opdracht [AZ set-Policy][az-keyvault-set-policy] , geeft u de principal-id van de beheerde identiteit door die u hebt gemaakt, die eerder is opgeslagen in een omgevings variabele. Stel de sleutel machtigingen in op **Get**, **sleutel uitpakken** en **wrapKey**.  
 
 ```azurecli
 az keyvault set-policy \
@@ -210,7 +210,7 @@ U gebruikt de naam van de identiteit in latere stappen.
 
 ### <a name="create-a-key-vault"></a>Een sleutelkluis maken
 
-Voor stappen voor het maken van een sleutel kluis raadpleegt u [Quick Start: een geheim instellen en ophalen uit Azure Key Vault met behulp van de Azure Portal](../key-vault/secrets/quick-create-portal.md).
+Voor stappen voor het maken van een sleutel kluis raadpleegt u [Quick Start: een Azure Key Vault maken met de Azure Portal](../key-vault/general/quick-create-portal.md).
 
 Wanneer u een sleutel kluis maakt voor een door de klant beheerde sleutel, schakelt u op het tabblad **basis beginselen** de volgende beveiligings instellingen in: **voorlopig verwijderen** en **beveiliging opschonen**. Deze instellingen helpen gegevens verlies te voor komen dat wordt veroorzaakt door onbedoelde sleutel-of sleutel kluis verwijderingen.
 
@@ -222,16 +222,16 @@ Configureer een beleid voor de sleutel kluis zodat de identiteit er toegang toe 
 
 1. Navigeer naar uw sleutel kluis.
 1. Selecteer **instellingen**  >  **toegangs beleid > + toegangs beleid toe te voegen**.
-1. Selecteer **belang rijke machtigingen**en selecteer **ophalen**, **uitpakken sleutel**en **Terugloop sleutel**.
+1. Selecteer **belang rijke machtigingen** en selecteer **ophalen**, **uitpakken sleutel** en **Terugloop sleutel**.
 1. Selecteer **Principal selecteren** en selecteer de resource naam van de door de gebruiker toegewezen beheerde identiteit.  
-1. Selecteer **toevoegen**en selecteer vervolgens **Opslaan**.
+1. Selecteer **toevoegen** en selecteer vervolgens **Opslaan**.
 
 ![Een sleutel kluis toegangs beleid maken](./media/container-registry-customer-managed-keys/add-key-vault-access-policy.png)
 
  U kunt ook [Azure RBAC voor Key Vault](../key-vault/general/rbac-guide.md) (preview) gebruiken om machtigingen toe te wijzen aan de identiteit voor toegang tot de sleutel kluis. Wijs bijvoorbeeld de Key Vault versleutelings functie van crypto grafie-service toe aan de identiteit.
 
 1. Navigeer naar uw sleutel kluis.
-1. Selecteer **toegangs beheer (IAM)**  >  **+**  >  **toewijzing toevoegen**toevoegen.
+1. Selecteer **toegangs beheer (IAM)**  >  **+**  >  **toewijzing toevoegen** toevoegen.
 1. In het venster **roltoewijzing toevoegen** :
     1. Selecteer **Key Vault rol crypto grafie-versleuteling (preview)** . 
     1. Toegang toewijzen aan door de **gebruiker toegewezen beheerde identiteit**.
@@ -248,17 +248,17 @@ Configureer een beleid voor de sleutel kluis zodat de identiteit er toegang toe 
 ### <a name="create-azure-container-registry"></a>Azure Container Registry maken
 
 1. Selecteer **Een resource maken** > **Containers** > **Container Registry**.
-1. Op het tabblad **basis beginselen** selecteert of maakt u een resource groep en voert u een register naam in. Selecteer **Premium**in **SKU**.
+1. Op het tabblad **basis beginselen** selecteert of maakt u een resource groep en voert u een register naam in. Selecteer **Premium** in **SKU**.
 1. Selecteer op het tabblad **versleuteling** in door de **klant beheerde sleutel** **ingeschakeld**.
-1. Selecteer in **identiteit**de beheerde identiteit die u hebt gemaakt.
-1. Selecteer bij **versleuteling**de optie **selecteren in Key Vault**.
+1. Selecteer in **identiteit** de beheerde identiteit die u hebt gemaakt.
+1. Selecteer bij **versleuteling** de optie **selecteren in Key Vault**.
 1. Selecteer in het venster **sleutel selecteren uit Azure Key Vault** de sleutel kluis, sleutel en versie die u in de voor gaande sectie hebt gemaakt.
 1. Selecteer in het tabblad **versleuteling** de optie **controleren + maken**.
 1. Selecteer **maken** om het register exemplaar te implementeren.
 
 ![Een containerregister maken in de Azure-portal](./media/container-registry-customer-managed-keys/create-encrypted-registry.png)
 
-Als u de versleutelings status van het REGI ster in de portal wilt bekijken, gaat u naar het REGI ster. Selecteer bij **instellingen**de optie  **versleuteling**.
+Als u de versleutelings status van het REGI ster in de portal wilt bekijken, gaat u naar het REGI ster. Selecteer bij **instellingen** de optie  **versleuteling**.
 
 ## <a name="enable-customer-managed-key---template"></a>Door de klant beheerde sleutel inschakelen-sjabloon
 
@@ -448,12 +448,12 @@ Gebruik de **versleutelings** instellingen van het REGI ster om de sleutel versi
 Als u bijvoorbeeld een nieuwe sleutel versie wilt genereren en configureren:
 
 1. Navigeer in de portal naar het REGI ster.
-1. Selecteer onder **instellingen**de optie **versleutelings**  >  **sleutel wijzigen**.
+1. Selecteer onder **instellingen** de optie **versleutelings**  >  **sleutel wijzigen**.
 1. Selecteer **sleutel selecteren**
 
     ![De sleutel in de Azure Portal draaien](./media/container-registry-customer-managed-keys/rotate-key.png)
-1. Selecteer in het venster **sleutel selecteren uit Azure Key Vault** de sleutel kluis en de sleutel die u eerder hebt geconfigureerd, en selecteer in **versie**de optie **nieuwe maken**.
-1. Selecteer in het venster **een sleutel maken** de optie **genereren**en vervolgens **maken**.
+1. Selecteer in het venster **sleutel selecteren uit Azure Key Vault** de sleutel kluis en de sleutel die u eerder hebt geconfigureerd, en selecteer in **versie** de optie **nieuwe maken**.
+1. Selecteer in het venster **een sleutel maken** de optie **genereren** en vervolgens **maken**.
 1. Voltooi de sleutel selectie en selecteer **Opslaan**.
 
 ## <a name="revoke-key"></a>Sleutel intrekken
@@ -492,15 +492,15 @@ De identiteit toegang verlenen tot uw sleutel kluis:
 
 1. Navigeer naar uw sleutel kluis.
 1. Selecteer **instellingen**  >  **toegangs beleid > + toegangs beleid toe te voegen**.
-1. Selecteer **belang rijke machtigingen**en selecteer **ophalen**, **uitpakken sleutel**en **Terugloop sleutel**.
+1. Selecteer **belang rijke machtigingen** en selecteer **ophalen**, **uitpakken sleutel** en **Terugloop sleutel**.
 1. Selecteer **Principal selecteren** en zoek naar de object-id van de door het systeem toegewezen beheerde identiteit, of de naam van het REGI ster.  
-1. Selecteer **toevoegen**en selecteer vervolgens **Opslaan**.
+1. Selecteer **toevoegen** en selecteer vervolgens **Opslaan**.
 
 De versleutelings instellingen van het REGI ster bijwerken voor het gebruik van de identiteit:
 
 1. Navigeer in de portal naar het REGI ster.
-1. Selecteer onder **instellingen**de optie **versleutelings**  >  **sleutel wijzigen**.
-1. In **identiteit**selecteert u **systeem toegewezen**en selecteert u **Opslaan**.
+1. Selecteer onder **instellingen** de optie **versleutelings**  >  **sleutel wijzigen**.
+1. In **identiteit** selecteert u **systeem toegewezen** en selecteert u **Opslaan**.
 
 ### <a name="enable-key-vault-bypass"></a>Schakel overs laan voor sleutel kluis
 

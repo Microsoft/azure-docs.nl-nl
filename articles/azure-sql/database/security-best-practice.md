@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: 578f3244381c94552a159589478781640629271f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c7a94a24bd825249859ff699ab82ce4d3ae8fce1
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92788635"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842240"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Playbook voor het adresseren van algemene beveiligings vereisten met Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -80,11 +80,11 @@ Centraal identiteits beheer biedt de volgende voor delen:
 - Vereenvoudigd en flexibel machtigings beheer.
 - Beheer van toepassingen op schaal.
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik Azure Active Directory-verificatie (Azure AD) voor gecentraliseerd identiteits beheer.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Maak een Azure AD-Tenant en [Maak gebruikers](../../active-directory/fundamentals/add-users-azure-active-directory.md) voor het vertegenwoordigen van personen en het maken van [service-principals](../../active-directory/develop/app-objects-and-service-principals.md) voor apps, services en hulpprogram ma's voor automatisering. Service-principals zijn gelijk aan service accounts in Windows en Linux.
 
@@ -112,19 +112,19 @@ Centraal identiteits beheer biedt de volgende voor delen:
 > - Het Azure AD-toegangs token wordt opgeslagen in de cache aan de client zijde en de levens duur is afhankelijk van de configuratie van het token. Zie het artikel [levens duur van Configureer bare tokens in azure Active Directory](../../active-directory/develop/active-directory-configurable-token-lifetimes.md)
 > - Zie voor hulp bij het oplossen van problemen met Azure AD-verificatie de volgende blog: [problemen met Azure AD oplossen](https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991).
 
-### <a name="azure-multi-factor-authentication"></a>Azure Multi-Factor Authentication
+### <a name="azure-ad-multi-factor-authentication"></a>Azure AD-Multi-Factor Authentication
 
 > Vermeld in: OSA-Oefen #2, ISO-Access Control (AC)
 
-Azure Multi-Factor Authentication biedt extra beveiliging doordat er meer dan één vorm van verificatie is vereist.
+Azure AD Multi-Factor Authentication biedt extra beveiliging doordat er meer dan één vorm van verificatie is vereist.
 
-**Implementeren** :
+**Implementeren**:
 
 - [Multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md) in azure AD inschakelen met behulp van voorwaardelijke toegang en interactieve verificatie gebruiken.
 
 - Het alternatief is om Multi-Factor Authentication in te scha kelen voor het hele Azure AD-of AD-domein.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Voorwaardelijke toegang activeren in azure AD (Premium-abonnement vereist).
   - Zie het artikel [voorwaardelijke toegang in azure AD](../../active-directory/conditional-access/overview.md).  
@@ -144,7 +144,7 @@ Azure Multi-Factor Authentication biedt extra beveiliging doordat er meer dan é
     - [bcp-hulp programma](/sql/tools/bcp-utility): Option-G (interactief)
 
 - Implementeer uw toepassingen om verbinding te maken met Azure SQL Database of een door Azure SQL beheerd exemplaar met behulp van interactieve verificatie met Multi-Factor Authentication ondersteuning.
-  - Zie het artikel [verbinding maken met Azure SQL database met Azure multi-factor Authentication](active-directory-interactive-connect-azure-sql-db.md).
+  - Zie het artikel [verbinding maken met Azure SQL database met Azure AD multi-factor Authentication](active-directory-interactive-connect-azure-sql-db.md).
   > [!NOTE]
   > Deze verificatie modus vereist identiteiten op basis van gebruikers. In gevallen waarin een vertrouwd identiteits model wordt gebruikt dat afzonderlijke gebruikers verificatie van Azure AD overs Laan (bijvoorbeeld door beheerde identiteiten te gebruiken voor Azure-resources), is Multi-Factor Authentication niet van toepassing.
 
@@ -154,11 +154,11 @@ Azure Multi-Factor Authentication biedt extra beveiliging doordat er meer dan é
 
 Verificatie methoden op basis van wacht woorden zijn een zwakkere vorm van verificatie. Referenties kunnen worden aangetast of per ongeluk worden verwijderd.
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik een geïntegreerde Azure AD-verificatie waarmee het gebruik van wacht woorden wordt voor komen.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Gebruik verificatie op basis van eenmalige aanmelding met Windows-referenties. Verdeel het on-premises AD-domein met Azure AD en gebruik geïntegreerde Windows-verificatie (voor computers die lid zijn van een domein met Azure AD).
   - Zie het artikel [SSMS-ondersteuning voor Azure AD Integrated-verificatie](authentication-aad-configure.md#active-directory-integrated-authentication).
@@ -167,11 +167,11 @@ Verificatie methoden op basis van wacht woorden zijn een zwakkere vorm van verif
 
 > Vermeld in: OSA-oefen #4, ISO-Access Control (AC)
 
-**Implementeren** :
+**Implementeren**:
 
 - Hiermee wordt beheerde identiteit van Azure ingeschakeld. U kunt ook geïntegreerde of op certificaten gebaseerde verificatie gebruiken.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - [Beheerde identiteiten gebruiken voor Azure-resources](../../active-directory/managed-identities-azure-resources/overview.md).
   - [Door het systeem toegewezen beheerde identiteit](../../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md)
@@ -188,11 +188,11 @@ Verificatie methoden op basis van wacht woorden zijn een zwakkere vorm van verif
 
 Als wacht woorden niet kunnen worden voor komen, moet u ervoor zorgen dat deze zijn beveiligd.
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik Azure Key Vault om wacht woorden en geheimen op te slaan. Gebruik Multi-Factor Authentication voor Azure SQL Database met Azure AD-gebruikers, indien van toepassing.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Als u geen wacht woorden of geheimen kunt voor komen, slaat u gebruikers wachtwoorden en toepassings geheimen op in Azure Key Vault en beheert u de toegang via Key Vault toegangs beleid.
 
@@ -202,11 +202,11 @@ Als wacht woorden niet kunnen worden voor komen, moet u ervoor zorgen dat deze z
 
 SQL-verificatie verwijst naar de verificatie van een gebruiker bij het maken van verbinding met Azure SQL Database of een door SQL beheerd exemplaar met behulp van gebruikers naam en wacht woord. Er moet een aanmelding worden gemaakt op elke server of een beheerd exemplaar en een gebruiker die in elke Data Base is gemaakt.
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik SQL-verificatie.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Als server-of exemplaar beheerder maakt u aanmeldingen en gebruikers. Tenzij u Inge sloten database gebruikers met wacht woorden gebruikt, worden alle wacht woorden opgeslagen in de data base Master.
   - Zie het artikel [over het beheren en verlenen van database toegang tot SQL database, SQL Managed instance en Azure Synapse Analytics](logins-create-manage.md).
@@ -221,7 +221,7 @@ Toegangs beheer (ook wel autorisatie genoemd) is het proces van het beheren en b
 
 Het principe van de minimale bevoegdheid geeft aan dat gebruikers niet meer bevoegdheden moeten hebben dan nodig zijn om hun taken uit te voeren. Zie het artikel [net genoeg beheer](/powershell/scripting/learn/remoting/jea/overview)voor meer informatie.
 
-**Implementeren** :
+**Implementeren**:
 
 Wijs alleen de benodigde [machtigingen](/sql/relational-databases/security/permissions-database-engine) toe om de vereiste taken uit te voeren:
 
@@ -236,7 +236,7 @@ Wijs alleen de benodigde [machtigingen](/sql/relational-databases/security/permi
        - [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql)
        - [SERVER FUNCTIE WIJZIGEN](/sql/t-sql/statements/alter-server-role-transact-sql)
     1. Wijs vervolgens machtigingen toe aan rollen.
-       - [Geef](/sql/t-sql/statements/grant-transact-sql)
+       - [GRANT](/sql/t-sql/statements/grant-transact-sql)
   - Zorg ervoor dat u geen gebruikers toewijst aan overbodige rollen.
 
 - In Azure Resource Manager:
@@ -244,7 +244,7 @@ Wijs alleen de benodigde [machtigingen](/sql/relational-databases/security/permi
     - [Ingebouwde Azure-rollen](../../role-based-access-control/built-in-roles.md)
     - [Aangepaste Azure-rollen](../../role-based-access-control/custom-roles.md)
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 De volgende aanbevolen procedures zijn optioneel, maar leiden tot betere beheersbaarheid en ondersteuning van uw beveiligings strategie:
 
@@ -281,7 +281,7 @@ De volgende aanbevolen procedures zijn optioneel, maar leiden tot betere beheers
 
 Schei ding van taken, ook wel schei ding van taken genoemd, beschrijft de vereiste om gevoelige taken te splitsen in meerdere taken die aan verschillende gebruikers zijn toegewezen. Schei ding van taken helpt gegevens schendingen te voor komen.
 
-**Implementeren** :
+**Implementeren**:
 
 - Bepaal het vereiste niveau van schei ding van taken. Voorbeelden:
   - Tussen ontwikkel-en test-en productie omgevingen
@@ -308,7 +308,7 @@ Schei ding van taken, ook wel schei ding van taken genoemd, beschrijft de vereis
   - Menselijke tussen komst in processen.
   - Controle spoor – Zie [essentiële beveiligings gebeurtenissen controleren](#audit-critical-security-events)voor meer informatie over de controle.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Zorg ervoor dat er verschillende accounts worden gebruikt voor ontwikkelings-en test-en productie omgevingen. Verschillende accounts helpen te voldoen aan de schei ding van test-en productie systemen.
 
@@ -338,7 +338,7 @@ Voor de lezers die dieper willen zijn in SoD, raden we de volgende bronnen aan:
 - Voor Azure SQL Database en SQL Managed instance:  
   - [Toegang tot databases beheren en verlenen](logins-create-manage.md)
   - [Schei ding van functies voor de toepassings ontwikkelaar](/previous-versions/sql/sql-server-2008/cc974525(v=sql.100))
-  - [Scheiding van taken](https://www.microsoft.com/download/details.aspx?id=39269)
+  - [Schei ding van taken](https://www.microsoft.com/download/details.aspx?id=39269)
   - [Opgeslagen procedures ondertekenen](/dotnet/framework/data/adonet/sql/signing-stored-procedures-in-sql-server)
 
 - Voor Azure resource management:
@@ -352,7 +352,7 @@ Voor de lezers die dieper willen zijn in SoD, raden we de volgende bronnen aan:
 
 Schei ding van taken is niet beperkt tot de gegevens in een Data Base, maar bevat toepassings code. Schadelijke code kan beveiligings controles mogelijk omzeilen. Voordat u aangepaste code naar productie implementeert, is het essentieel om te controleren wat er wordt geïmplementeerd.
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik een Data Base-hulp programma zoals Azure Data Studio dat broncode beheer ondersteunt.
 
@@ -360,7 +360,7 @@ Schei ding van taken is niet beperkt tot de gegevens in een Data Base, maar beva
 
 - Voordat de hoofd vertakking wordt doorgevoerd, moet een persoon (met uitzonde ring van de auteur van de code zelf) de code controleren op mogelijke verhoging van de bevoegdheids Risico's en kwaad aardige gegevens wijzigingen om te beschermen tegen fraude en Rogue-toegang. Dit kan worden gedaan met behulp van broncode beheer mechanismen.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Standardization: het helpt bij het implementeren van een standaard procedure die moet worden gevolgd voor code-updates.
 
@@ -383,7 +383,7 @@ Gegevens beveiliging is een reeks mogelijkheden voor het beveiligen van belang r
 > [!NOTE]
 > Micro soft verklaart Azure SQL Database en SQL Managed instance als compatibel met FIPS 140-2 level 1. Dit wordt gedaan na het controleren van het strikte gebruik van FIPS 140-2 level 1 aanvaard bare algoritmen en FIPS 140-2 level 1 gevalideerde instanties van deze algoritmen, inclusief consistentie met vereiste sleutel lengten, sleutel beheer, sleutel genereren en sleutel opslag. Deze verklaring is bedoeld om onze klanten in staat te stellen te voldoen aan de behoeften of vereisten voor het gebruik van gevalideerde FIPS 140-2 level 1-exemplaren in de verwerking van gegevens of levering van systemen of toepassingen. We definiëren de termen ' compatibel met FIPS 140-2 level 1 ' en ' FIPS 140-2 level 1-naleving ' die in de bovenstaande verklaring worden gebruikt om de beoogde toepas baarheid te demonstreren voor het Amerikaanse en het Canadese overheids gebruik van de verschillende term ' FIPS 140-2 level 1 Validated '.
 
-### <a name="encrypt-data-in-transit"></a>Gegevens in transit versleutelen
+### <a name="encrypt-data-in-transit"></a>Actieve gegevens versleutelen
 
 > Vermeld in: OSA-Oefen #6, ISO-controle groep: crypto grafie
 
@@ -395,12 +395,12 @@ Beveiligt uw gegevens terwijl gegevens tussen uw client en server worden verplaa
 
 Versleuteling op rest is de cryptografische beveiliging van gegevens wanneer deze persistent is in de data base, het logboek en de back-upbestanden.
 
-**Implementeren** :
+**Implementeren**:
 
 - [Transparent data base Encryption (TDE)](transparent-data-encryption-tde-overview.md) met door service beheerde sleutels zijn standaard ingeschakeld voor data bases die zijn gemaakt na 2017 in Azure SQL database en SQL Managed instance.
 - Als de data base wordt gemaakt op basis van een herstel bewerking met een on-premises server, wordt in een beheerd exemplaar de TDE-instelling van de oorspronkelijke data base nageleefd. Als TDE niet is ingeschakeld voor de oorspronkelijke Data Base, is het raadzaam om TDE hand matig in te scha kelen voor het beheerde exemplaar.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Sla geen gegevens op waarvoor versleuteling is vereist in de data base Master. De hoofd database kan niet worden versleuteld met TDE.
 
@@ -414,11 +414,11 @@ Gegevens in gebruik zijn de gegevens die in het geheugen van het database systee
 
 De beleids regels die bepalen welke gegevens gevoelig zijn en of de gevoelige gegevens in het geheugen moeten worden versleuteld en niet toegankelijk zijn voor beheerders in platte tekst, zijn specifiek voor uw organisatie en nalevings regels die u moet naleven. Raadpleeg de gerelateerde vereiste: [Identificeer en herken gevoelige gegevens](#identify-and-tag-sensitive-data).
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik [Always encrypted](/sql/relational-databases/security/encryption/always-encrypted-database-engine) om ervoor te zorgen dat gevoelige gegevens niet worden weer gegeven in niet-gecodeerde tekst in Azure SQL database of SQL Managed instance, zelfs in het geheugen/in gebruik. Always Encrypted beveiligt de gegevens van database beheerders (Dba's) en Cloud beheerders (of ongeldige Actors die hoge privileges, maar niet-geautoriseerde gebruikers kunnen imiteren) en biedt u meer controle over wie toegang heeft tot uw gegevens.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Always Encrypted is geen vervanging voor het versleutelen van gegevens in rust (TDE) of in transit (SSL/TLS). Always Encrypted mag niet worden gebruikt voor niet-gevoelige gegevens om de gevolgen voor de prestaties en functionaliteit te minimaliseren. Het gebruik van Always Encrypted in combi natie met TDE en Transport Layer Security (TLS) wordt aanbevolen voor een uitgebreide beveiliging van gegevens die onderweg zijn, in-transit en in gebruik.
 
@@ -446,7 +446,7 @@ De beleids regels die bepalen welke gegevens gevoelig zijn en of de gevoelige ge
 
 Versleuteling kan worden gebruikt als een manier om ervoor te zorgen dat alleen specifieke toepassings gebruikers die toegang hebben tot cryptografische sleutels, de gegevens kunnen weer geven of bijwerken.
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik versleuteling op mapniveau (CLE). Zie het artikel [een kolom met gegevens versleutelen](/sql/relational-databases/security/encryption/encrypt-a-column-of-data) voor meer informatie.
 - Gebruik Always Encrypted, maar houd rekening met de beperkingen. De beperkingen worden hieronder weer gegeven.
@@ -472,14 +472,14 @@ Houd er rekening mee dat Always Encrypted voornamelijk is ontworpen voor het bev
 
 Een andere techniek om te voor komen dat niet-geautoriseerde gebruikers gegevens weer geven, is om de gegevens te bedekken of te maskeren en de gegevens typen en-indelingen te behouden, zodat gebruikers toepassingen kunnen door gaan met het verwerken en weer geven van de gegevens.
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik [dynamische gegevens maskering voor het afdekken](/sql/relational-databases/security/dynamic-data-masking) van tabel kolommen.
 
 > [!NOTE]
 > Always Encrypted werkt niet met dynamische gegevens maskering. Het is niet mogelijk om dezelfde kolom te versleutelen en te maskeren, wat impliceert dat u de gegevens die in gebruik zijn, moet bepalen of de gegevens voor uw app-gebruikers worden gemaskeerd via dynamische gegevens maskering.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 > [!NOTE]
 > Dynamische gegevens maskering kan niet worden gebruikt voor het beveiligen van gegevens van gebruikers met hoge bevoegdheden. Maskerings beleid is niet van toepassing op gebruikers met beheerders toegang, zoals db_owner.
@@ -499,11 +499,11 @@ Netwerk beveiliging heeft betrekking op toegangs beheer en aanbevolen procedures
 
 Best practices voor het voor komen van client computers en-toepassingen met bekende beveiligings problemen (bijvoorbeeld met oudere TLS-protocollen en coderings suites) om verbinding te maken met Azure SQL Database en SQL Managed instance.
 
-**Implementeren** :
+**Implementeren**:
 
 - Zorg ervoor dat client computers die verbinding maken met Azure SQL Database en SQL Managed instance gebruikmaken van  [Transport Layer Security (TLS)](security-overview.md#transport-layer-security-encryption-in-transit).
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Al uw apps en hulpprogram ma's configureren om verbinding te maken met SQL Database waarvoor versleuteling is ingeschakeld
   - Versleutelen = on, TrustServerCertificate = uit (of gelijkwaardig met stuur Programma's die niet van micro soft zijn).
@@ -524,7 +524,7 @@ Minimaliseer het aantal functies dat door een kwaadwillende gebruiker kan worden
 
 > Vermeld in: OSA-Oefen #5
 
-**Implementeren** :
+**Implementeren**:
 
 In SQL Database:
 
@@ -536,7 +536,7 @@ In SQL Managed instance:
 
 - Volg de richt lijnen in [netwerk vereisten](../managed-instance/connectivity-architecture-overview.md#network-requirements).
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - De toegang tot Azure SQL Database en SQL Managed instance beperken door verbinding te maken met een persoonlijk eind punt (bijvoorbeeld met behulp van een pad naar een persoonlijke gegevens):
   - Een beheerd exemplaar kan worden geïsoleerd in een virtueel netwerk om externe toegang te voor komen. Toepassingen en hulpprogram ma's die zich in hetzelfde virtuele netwerk in dezelfde regio bevinden, hebben rechtstreeks toegang tot de toepassing. Toepassingen en hulpprogram ma's die zich in verschillende regio's bevinden, kunnen gebruikmaken van Virtual-to-Virtual netwerk-verbinding of ExpressRoute-circuit peering om verbinding te maken. De klant moet netwerk beveiligings groepen (NSG) gebruiken om de toegang via poort 1433 alleen te beperken tot bronnen die toegang nodig hebben tot een beheerd exemplaar.
@@ -560,7 +560,7 @@ In SQL Managed instance:
 
 ### <a name="configure-power-bi-for-secure-connections-to-sql-databasesql-managed-instance"></a>Power BI configureren voor beveiligde verbindingen met een door SQL Database/SQL beheerd exemplaar
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Gebruik waar mogelijk het pad voor persoonlijke gegevens voor Power BI Desktop.
 
@@ -572,7 +572,7 @@ In SQL Managed instance:
 
 ### <a name="configure-app-service-for-secure-connections-to-sql-databasesql-managed-instance"></a>App Service configureren voor beveiligde verbindingen met een door SQL Database/SQL beheerd exemplaar
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Voor een eenvoudige web-app moet u voor het verbinden van het open bare eind punt **Azure-Services toestaan** in te stellen op.
 
@@ -586,7 +586,7 @@ In SQL Managed instance:
 
 ### <a name="configure-azure-virtual-machine-hosting-for-secure-connections-to-sql-databasesql-managed-instance"></a>Virtuele Azure-machine hosting configureren voor beveiligde verbindingen met een door SQL Database/SQL beheerd exemplaar
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Gebruik een combi natie van regels voor toestaan en weigeren op de Nsg's van virtuele machines van Azure om te bepalen welke regio's toegankelijk zijn vanaf de virtuele machine.
 
@@ -610,7 +610,7 @@ DDoS-aanvallen (Distributed Denial of service) zijn pogingen door een kwaadwille
 
 > Vermeld in: OSA-Oefen #9
 
-**Implementeren** :
+**Implementeren**:
 
 DDoS Protection wordt automatisch ingeschakeld als onderdeel van het Azure-platform. Het bevat permanente verkeers bewaking en real-time beperking van aanvallen op netwerk niveau op open bare eind punten.
 
@@ -618,7 +618,7 @@ DDoS Protection wordt automatisch ingeschakeld als onderdeel van het Azure-platf
 
 - Gebruik [Advanced Threat Protection voor Azure SQL database](threat-detection-overview.md) om DOS-aanvallen (Denial of service) te detecteren op data bases.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Volg de procedures die zijn beschreven in [minimaliseren](#minimize-attack-surface) kwets baarheid, waarmee bedreigingen van DDoS-aanvallen tot een minimum worden beperkt.
 
@@ -637,7 +637,7 @@ Deze sectie heeft betrekking op mogelijkheden voor het detecteren van afwijkende
 
 Met geavanceerde beveiliging tegen bedreigingen kunt u potentiële bedreigingen detecteren en erop reageren wanneer deze optreden door beveiligings waarschuwingen te bieden voor afwijkende activiteiten.
 
-**Implementeren** :
+**Implementeren**:
 
 - [Geavanceerde bedreigings beveiliging voor SQL](threat-detection-overview.md#alerts) gebruiken om ongebruikelijke en mogelijk schadelijke pogingen om toegang te krijgen tot data bases, waaronder:
   - SQL-injectie aanval.
@@ -645,7 +645,7 @@ Met geavanceerde beveiliging tegen bedreigingen kunt u potentiële bedreigingen 
   - Misbruik van bevoegdheden.
   - Data exfiltration.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - [Azure Defender voor SQL](azure-defender-for-sql.md)configureren   voor een specifieke server of een beheerd exemplaar. U kunt ook Azure Defender voor SQL voor alle servers en beheerde exemplaren in een abonnement configureren door over te scha kelen op [Azure Security Center Standard-laag](../../security-center/security-center-pricing.md).
 
@@ -655,13 +655,13 @@ Met geavanceerde beveiliging tegen bedreigingen kunt u potentiële bedreigingen 
 
 Het bijhouden van database gebeurtenissen helpt u bij het begrijpen van database activiteiten. U kunt inzicht krijgen in verschillen en afwijkingen die kunnen wijzen op problemen met het bedrijf of vermoedelijke beveiligings schendingen. Het biedt ook de mogelijkheid om te voldoen aan nalevings normen.
 
-**Implementeren** :
+**Implementeren**:
 
 - Schakel [SQL database controle](../../azure-sql/database/auditing-overview.md) of [beheer van beheerde exemplaren](../managed-instance/auditing-configure.md) in om database gebeurtenissen bij te houden en te schrijven naar een audit logboek in uw Azure Storage-account, log Analytics werk ruimte (preview) of event hubs (preview).
 
 - Audit logboeken kunnen worden geschreven naar een Azure Storage-account, naar een Log Analytics-werk ruimte voor gebruik door Azure Monitor Logboeken of om Event Hub te gebruiken voor het gebruik van Event Hub. U kunt een wille keurige combi natie van deze opties configureren en er worden controle logboeken naar elke optie geschreven.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Door [SQL database controle](../../azure-sql/database/auditing-overview.md) op de server of de [controle van beheerde exemplaren](../managed-instance/auditing-configure.md) te configureren om gebeurtenissen te controleren, worden alle bestaande en nieuw gemaakte data bases op die server gecontroleerd.
 - Standaard bevat het controle beleid alle acties (query's, opgeslagen procedures en geslaagde en mislukte aanmeldingen) voor de data bases, wat kan leiden tot grote hoeveel heden audit Logboeken. Het is raadzaam dat klanten [controle configureren voor verschillende soorten acties en actie groepen met behulp van Power shell](./auditing-overview.md#manage-auditing). Met deze configuratie kunt u het aantal gecontroleerde acties beheren en het risico op gebeurtenis verlies minimaliseren. Met aangepaste controle configuraties kunnen klanten alleen de controle gegevens vastleggen die nodig zijn.
@@ -670,7 +670,7 @@ Het bijhouden van database gebeurtenissen helpt u bij het begrijpen van database
 > [!NOTE]
 > Als u controle inschakelt op Log Analytics, worden er kosten in rekening gebracht op basis van opname tarieven. Houd rekening met de gekoppelde kosten met behulp van deze [optie](https://azure.microsoft.com/pricing/details/monitor/)of overweeg de audit logboeken op te slaan in een Azure-opslag account.
 
-**Meer bronnen** :
+**Meer bronnen**:
 
 - [SQL Database controle](../../azure-sql/database/auditing-overview.md)
 - [SQL Server controle](/sql/relational-databases/security/auditing/sql-server-audit-database-engine)
@@ -679,12 +679,12 @@ Het bijhouden van database gebeurtenissen helpt u bij het begrijpen van database
 
 Beperk de toegang tot het opslag account ter ondersteuning van de schei ding van taken en het scheiden van DBA van Audi tors.
 
-**Implementeren** :
+**Implementeren**:
 
 - Zorg er bij het opslaan van audit logboeken voor Azure Storage voor dat toegang tot het opslag account is beperkt tot de minimale beveiligings principes. Bepaal wie toegang heeft tot het opslag account.
 - Zie [toegang tot Azure Storage autoriseren](../../storage/common/storage-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)voor meer informatie.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Het beheren van de toegang tot het controle doel is een belang rijk concept voor het scheiden van de DBA van Audi tors.
 
@@ -698,11 +698,11 @@ In deze sectie worden de verschillende aspecten en aanbevolen procedures voor he
 
 Verbeter uw database beveiliging proactief door mogelijke beveiligings lekken in de Data Base op te sporen en te verhelpen.
 
-**Implementeren** :
+**Implementeren**:
 
 - Schakel [evaluatie van SQL-beveiligings](/sql/relational-databases/security/sql-vulnerability-assessment) problemen (VA) in om uw data base te scannen op beveiligings kwesties en om automatisch periodiek te worden uitgevoerd op uw data bases.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Voer in eerste instantie VA uit in uw data bases en herhaal dit door mislukte controles op te lossen. Stel basis lijnen in voor acceptabele configuraties totdat de scan _schoon_ is of alle controles zijn geslaagd.  
 
@@ -712,7 +712,7 @@ Verbeter uw database beveiliging proactief door mogelijke beveiligings lekken in
 
 - Los de controles op en werk basis lijnen bij, indien van toepassing. Maak ticket items voor het oplossen van acties en volg deze totdat ze zijn opgelost.
 
-**Meer bronnen** :
+**Meer bronnen**:
 
 - [Evaluatie van SQL-beveiligingsproblemen](/sql/relational-databases/security/sql-vulnerability-assessment)
 - [De evaluatie service van SQL-beveiligings problemen helpt u bij het identificeren van database lekken](sql-vulnerability-assessment.md)
@@ -721,14 +721,14 @@ Verbeter uw database beveiliging proactief door mogelijke beveiligings lekken in
 
 Detecteer kolommen die mogelijk gevoelige gegevens bevatten. Wat wordt beschouwd als gevoelige gegevens sterk, is afhankelijk van de klant, de nalevings verordening, enzovoort, en moet worden geëvalueerd door de gebruikers die verantwoordelijk zijn voor die gegevens. Classificeer de kolommen voor het gebruik van geavanceerde bewakings-en beveiligings scenario's op basis van gevoeligheid.
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik [SQL-gegevens detectie en-classificatie](data-discovery-and-classification-overview.md) voor het detecteren, classificeren, labelen en beveiligen van gevoelige gegevens in uw data bases.
   - Bekijk de classificatie aanbevelingen die zijn gemaakt door de geautomatiseerde detectie in het dash board voor SQL-gegevens detectie en-classificatie. Accepteer de relevante classificaties, zodat uw gevoelige gegevens permanent zijn gelabeld met classificatie labels.
   - Hand matig classificaties toevoegen voor aanvullende gevoelige gegevens velden die niet door het geautomatiseerde mechanisme zijn gedetecteerd.
 - Zie [SQL-gegevens detectie en-classificatie](/sql/relational-databases/security/sql-data-discovery-and-classification)voor meer informatie.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Bewaak het classificatie dashboard regel matig voor een nauw keurige evaluatie van de classificatie status van de data base. Een rapport over de status van de database classificatie kan worden geëxporteerd of afgedrukt voor naleving en controle doeleinden.
 
@@ -740,12 +740,12 @@ Detecteer kolommen die mogelijk gevoelige gegevens bevatten. Wat wordt beschouwd
 
 Bewaak wie gevoelige gegevens opent en query's vastlegt op gevoelige gegevens in audit Logboeken.
 
-**Implementeren** :
+**Implementeren**:
 
 - Gebruik een combinatie van SQL Audit en de gegevensclassificatie.
   - In uw [SQL database controle](../../azure-sql/database/auditing-overview.md) logboek kunt u de toegang tot gevoelige gegevens bijhouden. U kunt ook informatie weer geven zoals de gegevens die zijn geopend, evenals het gevoeligheids label. Zie [gegevens detectie en-classificatie](data-discovery-and-classification-overview.md) en [toegang tot gevoelige gegevens controleren](data-discovery-and-classification-overview.md#audit-sensitive-data)voor meer informatie.
 
-**Aanbevolen procedures** :
+**Aanbevolen procedures**:
 
 - Zie Aanbevolen procedures voor de secties auditing en gegevens classificatie:
   - [Kritieke beveiligings gebeurtenissen controleren](#audit-critical-security-events)
@@ -755,7 +755,7 @@ Bewaak wie gevoelige gegevens opent en query's vastlegt op gevoelige gegevens in
 
 Gebruik een systeem voor beveiligings beheer met geïntegreerde infra structuur dat de beveiligings postuur van uw Data Centers (inclusief data bases in SQL Database) versterkt. Bekijk een lijst met aanbevelingen met betrekking tot de beveiliging van uw data bases en de nalevings status.
 
-**Implementeren** :
+**Implementeren**:
 
 - Bewaak SQL-gerelateerde beveiligings aanbevelingen en actieve bedreigingen in [Azure Security Center](https://azure.microsoft.com/documentation/services/security-center/).
 
@@ -769,11 +769,11 @@ Data exfiltration is het niet-geautoriseerd kopiëren, overdragen of ophalen van
 
 Als u verbinding maakt met de server via een openbaar eind punt, wordt een gegevens exfiltration risico als klanten vereist zijn om hun firewalls te openen voor open bare Ip's.  
 
-**Scenario 1** : een toepassing op een virtuele Azure-machine maakt verbinding met een data base in Azure SQL database. Een Rogue actor krijgt toegang tot de virtuele machine en brengt deze in de orde. In dit scenario betekent gegevens exfiltration dat een externe entiteit die de Rogue-VM gebruikt verbinding maakt met de data base, persoonlijke gegevens kopieert en opslaat in een Blob-opslag of een andere SQL Database in een ander abonnement.
+**Scenario 1**: een toepassing op een virtuele Azure-machine maakt verbinding met een data base in Azure SQL database. Een Rogue actor krijgt toegang tot de virtuele machine en brengt deze in de orde. In dit scenario betekent gegevens exfiltration dat een externe entiteit die de Rogue-VM gebruikt verbinding maakt met de data base, persoonlijke gegevens kopieert en opslaat in een Blob-opslag of een andere SQL Database in een ander abonnement.
 
-**Scenario 2** : een Rouge-DBA. Dit scenario wordt vaak veroorzaakt door beveiligings gevoelige klanten van gereguleerde industrieën. In dit scenario kan een gebruiker met een hoge bevoegdheid gegevens kopiëren van Azure SQL Database naar een ander abonnement dat niet wordt beheerd door de eigenaar van de gegevens.
+**Scenario 2**: een Rouge-DBA. Dit scenario wordt vaak veroorzaakt door beveiligings gevoelige klanten van gereguleerde industrieën. In dit scenario kan een gebruiker met een hoge bevoegdheid gegevens kopiëren van Azure SQL Database naar een ander abonnement dat niet wordt beheerd door de eigenaar van de gegevens.
 
-**Mogelijke oplossingen** :
+**Mogelijke oplossingen**:
 
 Vandaag, Azure SQL Database en SQL Managed instance bieden de volgende technieken voor het beperken van gegevens exfiltration bedreigingen:
 

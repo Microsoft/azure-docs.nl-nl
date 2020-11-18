@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 09/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7417e2d39371066a5c5e8576040cbe22e7632043
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d61471e07dda8fcf0c715dcffe85ad3e39ed8ac3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90562873"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840369"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Over technische profielen in Azure Active Directory B2C aangepast beleid
 
@@ -30,7 +30,7 @@ Met een technisch profiel kunnen deze soorten scenario's worden ingeschakeld:
 
 - [Application Insights](application-insights-technical-profile.md) -gebeurtenis gegevens worden verzonden naar [Application Insights](../azure-monitor/app/app-insights-overview.md).
 - [Azure Active Directory](active-directory-technical-profile.md) : biedt ondersteuning voor het Azure Active Directory B2C gebruikers beheer.
-- [Azure multi-factor Authentication](multi-factor-auth-technical-profile.md) : biedt ondersteuning voor het controleren van een telefoon nummer met behulp van Azure multi-factor Authentication (MFA). 
+- [Azure ad multi-factor Authentication](multi-factor-auth-technical-profile.md) : biedt ondersteuning voor het controleren van een telefoon nummer met behulp van azure AD multi-factor Authentication (MFA). 
 - [Claims transformeren](claims-transformation-technical-profile.md) : claim trans formaties voor uitvoer aanroepen om claims waarden te manipuleren, claims te valideren of standaard waarden in te stellen voor een set uitvoer claims.
 - [Id-token Hint](id-token-hint.md) : valideert `id_token_hint` JWT-token handtekening, de naam van de verlener en de token doelgroep en extraheert de claim van het inkomende token.
 - [JWT-token Uitgever](jwt-issuer-technical-profile.md) : er wordt een JWT-token verzonden dat terugkeert naar de Relying Party-toepassing.

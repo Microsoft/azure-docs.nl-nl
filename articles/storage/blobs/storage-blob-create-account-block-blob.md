@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 10/30/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 53033226702ea1033fe4ae94f60c62cacbae6596
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 65a60425f09e9cd7a3e06ca1624621ed8b9fdcbd
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124965"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842060"
 ---
 # <a name="create-a-blockblobstorage-account"></a>Een BlockBlobStorage-account maken
 
@@ -34,7 +34,7 @@ Geen.
 
 Voor dit procedure-artikel is de Azure PowerShell AZ versie 1.2.0 of hoger vereist. Voer `Get-Module -ListAvailable Az` uit om uw huidige versie te vinden. Als u PowerShell wilt installeren of upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-Az-ps).
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 U kunt u aanmelden bij Azure en Azure CLI-opdrachten uitvoeren. Dit kan op twee manieren:
 
@@ -61,7 +61,7 @@ U kunt Azure CLI ook lokaal installeren en gebruiken. Voor dit procedure-artikel
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Meld u aan bij [Azure Portal](https://portal.azure.com).
+Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -71,7 +71,7 @@ Meld u aan bij uw Azure-abonnement met de `Connect-AzAccount` opdracht en volg d
 Connect-AzAccount
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Meld u aan bij de [Azure Portal](https://portal.azure.com)om Azure Cloud shell te starten.
 
@@ -88,9 +88,9 @@ az login
 ## <a name="portal"></a>[Portal](#tab/azure-portal)
 Voer de volgende stappen uit om een BlockBlobStorage-account te maken in de Azure Portal:
 
-1. Selecteer in de Azure Portal **alle services** > de **opslag** categorie > **opslag accounts** .
+1. Selecteer in de Azure Portal **alle services** > de **opslag** categorie > **opslag accounts**.
 
-2. Selecteer onder **opslag accounts** de optie **toevoegen** .
+2. Selecteer onder **opslag accounts** de optie **toevoegen**.
 
 3. Selecteer in het veld **abonnement** het abonnement waarin u het opslag account wilt maken.
 
@@ -108,19 +108,19 @@ Voer de volgende stappen uit om een BlockBlobStorage-account te maken in de Azur
 
    |Veld     |Waarde  |
    |---------|---------|
-   |**Prestaties**    |  Selecteer **Premium** .   |
-   |**Type account**    | Selecteer **BlockBlobStorage** .      |
-   |**Replicatie**    |  Behoud de standaard instelling van **lokaal redundante opslag (LRS)** .      |
+   |**Prestaties**    |  Selecteer **Premium**.   |
+   |**Type account**    | Selecteer **BlockBlobStorage**.      |
+   |**Replicatie**    |  Behoud de standaard instelling van **lokaal redundante opslag (LRS)**.      |
 
    ![Geeft een portal-gebruikers interface weer voor het maken van een blok-Blob-opslag account](media/storage-blob-create-account-block-blob/create-block-blob-storage-account.png)
 
 8. Kies het tabblad **Geavanceerd** .
 
-9. Als u uw opslag account voor gegevens analyse wilt optimaliseren, stelt u **hiërarchische naam ruimte** in op **ingeschakeld** . Als dat niet het geval is, moet u deze optie op de standaard waarde instellen. Wanneer u deze instelling inschakelt voor uw BlockBlobStorage-account, krijgt u de [Premium-laag voor data Lake Storage](premium-tier-for-data-lake-storage.md).  Zie [Inleiding tot Azure data Lake Storage Gen2](data-lake-storage-introduction.md)voor meer informatie over data Lake Storage.
+9. Als u uw opslag account voor gegevens analyse wilt optimaliseren, stelt u **hiërarchische naam ruimte** in op **ingeschakeld**. Als dat niet het geval is, moet u deze optie op de standaard waarde instellen. Wanneer u deze instelling inschakelt voor uw BlockBlobStorage-account, krijgt u de [Premium-laag voor data Lake Storage](premium-tier-for-data-lake-storage.md).  Zie [Inleiding tot Azure data Lake Storage Gen2](data-lake-storage-introduction.md)voor meer informatie over data Lake Storage.
 
 8. Selecteer **controleren + maken** om de instellingen voor het opslag account te controleren.
 
-9. Selecteer **Maken** .
+9. Selecteer **Maken**.
 
 ## <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
@@ -159,7 +159,7 @@ Voer de volgende stappen uit om een BlockBlobStorage-account te maken in de Azur
    ```
    Als u uw opslag account wilt optimaliseren voor gegevens analyse, voegt u toe `-EnableHierarchicalNamespace $True` aan de opdracht. Wanneer u deze instelling inschakelt voor uw BlockBlobStorage-account, krijgt u de [Premium-laag voor data Lake Storage](premium-tier-for-data-lake-storage.md).  Zie [Inleiding tot Azure data Lake Storage Gen2](data-lake-storage-introduction.md)voor meer informatie over data Lake Storage.
 
-## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+## <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u een account voor een blok-BLOB wilt maken met behulp van de Azure CLI, moet u eerst Azure CLI v installeren. 2.0.46 of een latere versie. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli).
 

@@ -11,16 +11,16 @@ ms.date: 10/15/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e328caa80a0e63f68f2563bc91a6405341ad064e
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: c0ab4d367d2ca9fd59c26ce8d36b5f80dcb832c8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92102065"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840624"
 ---
 # <a name="enable-multi-factor-authentication-in-azure-active-directory-b2c"></a>Multi-factor Authentication inschakelen in Azure Active Directory B2C
 
-Azure Active Directory B2C (Azure AD B2C) kan rechtstreeks worden geïntegreerd met [Azure multi-factor Authentication](../active-directory/authentication/multi-factor-authentication.md) zodat u een tweede beveiligingslaag kunt toevoegen om u aan te melden en zich aan te melden bij uw toepassingen. U schakelt multi-factor Authentication in zonder één regel code te schrijven. Als u al registraties hebt gemaakt en gebruikers stromen hebt aangemeld, kunt u nog steeds multi-factor Authentication inschakelen.
+Azure Active Directory B2C (Azure AD B2C) kan rechtstreeks worden geïntegreerd met [Azure AD multi-factor Authentication](../active-directory/authentication/multi-factor-authentication.md) zodat u een tweede beveiligingslaag kunt toevoegen om u aan te melden en zich aan te melden bij uw toepassingen. U schakelt multi-factor Authentication in zonder één regel code te schrijven. Als u al registraties hebt gemaakt en gebruikers stromen hebt aangemeld, kunt u nog steeds multi-factor Authentication inschakelen.
 
 Deze functie helpt toepassingen bij het afhandelen van scenario's zoals:
 
@@ -35,7 +35,7 @@ Deze functie helpt toepassingen bij het afhandelen van scenario's zoals:
 1. Selecteer **gebruikers stromen**.
 1. Selecteer de gebruikers stroom waarvoor u MFA wilt inschakelen. Bijvoorbeeld *B2C_1_signinsignup*.
 1. Selecteer **Eigenschappen**.
-1. Selecteer in de sectie multi- **Factor Authentication** de gewenste **MFA-methode**en selecteer vervolgens onder **MFA Enforcement** de optie **altijd aan**of ** [voorwaardelijk](conditional-access-user-flow.md) (aanbevolen)**. Voor voorwaardelijk, maakt u beleid voor [voorwaardelijke toegang](conditional-access-identity-protection-setup.md) en geeft u de apps op waarop u het beleid wilt Toep assen. 
+1. Selecteer in de sectie multi- **Factor Authentication** de gewenste **MFA-methode** en selecteer vervolgens onder **MFA Enforcement** de optie **altijd aan** of **[voorwaardelijk](conditional-access-user-flow.md) (aanbevolen)**. Voor voorwaardelijk, maakt u beleid voor [voorwaardelijke toegang](conditional-access-identity-protection-setup.md) en geeft u de apps op waarop u het beleid wilt Toep assen. 
 1. Selecteer Opslaan. MFA is nu ingeschakeld voor deze gebruikers stroom.
 
 U kunt de **gebruikers stroom uitvoeren** gebruiken om de ervaring te controleren. Bevestig het volgende scenario:

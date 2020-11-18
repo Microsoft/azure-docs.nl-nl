@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het oplossen van fouten die 
 ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 08/30/2019
-ms.openlocfilehash: 6da91248c197eae12fbc59f2da8c5294d95117b6
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 343ad80a6b68de352424fa8f16686fcece921954
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173843"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840913"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Back-upfouten op virtuele machines van Azure oplossen
 
@@ -88,7 +88,7 @@ Fout bericht: de installatie van de extensie is mislukt met de fout ' COM+ kan n
 De back-upbewerking is mislukt vanwege een probleem met de Windows service **com+-systeem** toepassing.  Volg deze stappen om dit probleem op te lossen:
 
 * Probeer de Windows service **com+-systeem toepassing** te starten/opnieuw te starten (vanaf een opdracht prompt met verhoogde bevoegdheid **-net start COMSysApp**).
-* Zorg ervoor dat **Distributed Transaction Coordinator** service wordt uitgevoerd als **netwerk service** account. Als dat niet het geval is, wijzigt u deze in uitvoeren als **netwerk service** account en start u **com+-systeem toepassing**opnieuw.
+* Zorg ervoor dat **Distributed Transaction Coordinator** service wordt uitgevoerd als **netwerk service** account. Als dat niet het geval is, wijzigt u deze in uitvoeren als **netwerk service** account en start u **com+-systeem toepassing** opnieuw.
 * Als de service niet opnieuw kan worden gestart, installeert u **Distributed Transaction Coordinator** -service opnieuw door de volgende stappen uit te voeren:
   * Stop de MSDTC-service
   * Open een opdrachtprompt (cmd)
@@ -107,7 +107,7 @@ Deze fout treedt op omdat de VSS-schrijvers een slechte status hebben. Azure Bac
 Stap 1: Start de VSS-schrijvers opnieuw op met een onjuiste status.
 
 * Voer uit vanaf een opdracht prompt met verhoogde bevoegdheid ```vssadmin list writers``` .
-* De uitvoer bevat alle VSS-schrijvers en hun status. Voor elke VSS Writer met een status die niet **[1] stabiel**is, start u de service van de betreffende VSS Writer opnieuw.
+* De uitvoer bevat alle VSS-schrijvers en hun status. Voor elke VSS Writer met een status die niet **[1] stabiel** is, start u de service van de betreffende VSS Writer opnieuw.
 * Als u de service opnieuw wilt starten, voert u de volgende opdrachten uit vanaf een opdracht prompt met verhoogde bevoegdheid:
 
  ```net stop serviceName``` <br>
@@ -124,8 +124,8 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v SnapshotWithoutThre
 
 Stap 3: als de stappen 1 en 2 het probleem niet hebben opgelost, wordt de fout mogelijk veroorzaakt door een time-out voor VSS-schrijvers vanwege een beperkt aantal IOPS.<br>
 
-Als u wilt controleren, gaat u naar ***systeem-en logboeken toepassings logboeken*** en controleert u of het volgende fout bericht wordt weer gegeven:<br>
-*Er is een time-out opgetreden voor de provider van schaduw kopieën terwijl er wordt geschreven naar het volume dat wordt gekopieerd. Dit komt waarschijnlijk door buitensporige activiteiten op het volume door een toepassing of een systeem service. Probeer het later opnieuw wanneer de activiteit op het volume is verminderd.*<br>
+Als u wilt controleren, gaat u naar ***systeem en logboeken toepassings logboeken** _ en controleert u of het volgende fout bericht wordt weer gegeven:<br>
+Er is een time-out opgetreden tijdens het _The van de provider voor schaduw kopieën terwijl er wordt geschreven naar het volume dat wordt gekopieerd Dit komt waarschijnlijk door buitensporige activiteiten op het volume door een toepassing of een systeem service. Probeer het later opnieuw wanneer de activiteit op het volume is verminderd. *<br>
 
 Oplossing:
 
@@ -196,7 +196,7 @@ Als u de machtigingen in de map **MachineKeys** ziet die afwijkt van de standaar
 2. Alle certificaten verwijderen waarnaar wordt **uitgegeven in** is het klassieke implementatie model of de **Windows Azure CRP-certificaat Generator**:
 
    * [Certificaten op een lokale computer console openen](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in).
-   * Onder **persoonlijke**  >  **certificaten**verwijdert u alle certificaten waarbij **uitgegeven aan** is het klassieke implementatie model of de **Windows Azure CRP-certificaat Generator**.
+   * Onder **persoonlijke**  >  **certificaten** verwijdert u alle certificaten waarbij **uitgegeven aan** is het klassieke implementatie model of de **Windows Azure CRP-certificaat Generator**.
 3. Activeer een VM-back-uptaak.
 
 ### <a name="extensionstuckindeletionstate---extension-state-is-not-supportive-to-backup-operation"></a>De ExtensionStuckInDeletionState-extensie status is geen ondersteuning voor de back-upbewerking
@@ -207,7 +207,7 @@ Fout bericht: de extensie status is geen ondersteuning voor de back-upbewerking
 De back-upbewerking is mislukt vanwege een inconsistente status van de back-upextensie. Volg deze stappen om dit probleem op te lossen:
 
 * Zorg ervoor dat de gastagent geïnstalleerd en responsief is
-* Ga vanuit het Azure Portal naar de **Virtual Machine**  >  extensies van**alle instellingen**  >  **Extensions** van de virtuele machine
+* Ga vanuit het Azure Portal naar de **Virtual Machine**  >  extensies van **alle instellingen**  >  **Extensions** van de virtuele machine
 * Selecteer de back-upextensie VmSnapshot of VmSnapshotLinux en selecteer **verwijderen**.
 * Voer de back-upbewerking opnieuw uit nadat u de back-upextensie hebt verwijderd
 * De volgende back-upbewerking installeert de nieuwe extensie in de gewenste status
@@ -244,7 +244,7 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 
 Deze opdracht zorgt ervoor dat de momentopnamen worden gemaakt via host in plaats van Guest. Probeer de back-upbewerking opnieuw.
 
-**Stap 2**: Probeer het back-upschema te wijzigen in een keer wanneer de virtuele machine minder belasting heeft (zoals minder CPU of IOps)
+**Stap 2**: Probeer het back-upschema te wijzigen in een keer wanneer de virtuele machine minder belasting heeft (zoals minder CPU of IOPS)
 
 **Stap 3**: Probeer [de grootte van de virtuele machine te verg Roten](https://docs.microsoft.com/azure/virtual-machines/windows/resize-vm) en voer de bewerking opnieuw uit
 
@@ -283,7 +283,7 @@ Fout code: VmNotInDesirableState <br/> Fout bericht: de VM bevindt zich niet in 
 * Als de virtuele machine zich in een tijdelijke status bevindt tussen het **uitvoeren** en **Afsluiten**, wacht u totdat de status is gewijzigd. Activeer vervolgens de back-uptaak.
 * Als de virtuele machine een virtuele Linux-machine is en **gebruikmaakt van de** Security-Enhanced Linux-kernel-module, sluit u het pad van de Azure Linux-agent uit het beveiligings beleid uit en controleert u of de back-upextensie is geïnstalleerd.
 
-* De VM-agent is niet aanwezig op de virtuele machine: <br>Installeer de vereiste onderdelen en de VM-agent. Start vervolgens de bewerking opnieuw. | Meer informatie over de installatie van de [VM-agent en het valideren](#vm-agent)van de installatie van de VM-agent.
+* De VM-agent is niet aanwezig op de virtuele machine: <br>Installeer de vereiste onderdelen en de VM-agent. Start vervolgens de bewerking opnieuw. | Lees meer over de installatie van de [VM-agent en het valideren](#vm-agent)van de installatie van de VM-agent.
 
 ### <a name="extensionsnapshotfailednosecurenetwork---the-snapshot-operation-failed-because-of-failure-to-create-a-secure-network-communication-channel"></a>ExtensionSnapshotFailedNoSecureNetwork-de momentopname bewerking is mislukt vanwege een fout bij het maken van een beveiligd kanaal voor netwerk communicatie
 
@@ -298,7 +298,7 @@ Fout code: ExtensionSnapshotFailedNoSecureNetwork <br/> Fout bericht: de momento
 Fout code: ExtensionVCRedistInstallationFailure <br/> Fout bericht: de momentopname bewerking is mislukt vanwege een fout bij het installeren van Visual C++ Redistributable voor Visual Studio 2012.
 
 * Ga naar `C:\Packages\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot\agentVersion` en installeer vcredist2013_x64.<br/>Zorg ervoor dat de waarde van de register sleutel die de service-installatie toestaat, is ingesteld op de juiste waarde. Stel de **begin** waarde in **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Msiserver** in op **3** en niet **4**. <br><br>Als u nog steeds problemen ondervindt met de installatie, start u de installatie service opnieuw door **Msiexec/unregister** gevolgd door **Msiexec/register** vanaf een opdracht prompt met verhoogde bevoegdheid uit te voeren.
-* Controleer het gebeurtenis logboek om te controleren of u merkt problemen hebt. Bijvoorbeeld: *product: micro soft Visual C++ 2013 x64 mini maal runtime-12.0.21005--error 1401. de sleutel kan niet worden gemaakt: Software\Classes.  Systeem fout 5.  Controleer of u voldoende toegangs rechten voor deze sleutel hebt of neem contact op met het ondersteunings personeel.* <br><br> Zorg ervoor dat de beheerder of het gebruikers account voldoende machtigingen heeft om de register sleutel **HKEY_LOCAL_MACHINE\SOFTWARE\Classes**bij te werken. Geef voldoende machtigingen op en start de Windows Azure-gast agent opnieuw.<br><br> <li> Als er antivirus producten aanwezig zijn, moet u ervoor zorgen dat ze beschikken over de juiste uitsluitings regels voor het toestaan van de installatie.
+* Controleer het gebeurtenis logboek om te controleren of u merkt problemen hebt. Bijvoorbeeld: *product: micro soft Visual C++ 2013 x64 mini maal runtime-12.0.21005--error 1401. de sleutel kan niet worden gemaakt: Software\Classes.  Systeem fout 5.  Controleer of u voldoende toegangs rechten voor deze sleutel hebt of neem contact op met het ondersteunings personeel.* <br><br> Zorg ervoor dat de beheerder of het gebruikers account voldoende machtigingen heeft om de register sleutel **HKEY_LOCAL_MACHINE\SOFTWARE\Classes** bij te werken. Geef voldoende machtigingen op en start de Windows Azure-gast agent opnieuw.<br><br> <li> Als er antivirus producten aanwezig zijn, moet u ervoor zorgen dat ze beschikken over de juiste uitsluitings regels voor het toestaan van de installatie.
 
 ### <a name="usererrorrequestdisallowedbypolicy---an-invalid-policy-is-configured-on-the-vm-which-is-preventing-snapshot-operation"></a>UserErrorRequestDisallowedByPolicy: er is een ongeldig beleid geconfigureerd op de VM, waardoor de momentopnamebewerking niet kan worden uitgevoerd
 
@@ -321,8 +321,8 @@ Als u een Azure Policy hebt dat de [Tags in uw omgeving bepaalt](../governance/p
 
 Als u na het terugzetten de schijven offline hebt gezet, kunt u het volgende doen:
 
-* Controleer of de computer waarop het script wordt uitgevoerd, voldoet aan de vereisten van het besturings systeem. [Meer informatie](./backup-azure-restore-files-from-vm.md#system-requirements).  
-* Zorg ervoor dat u niet naar dezelfde bron herstelt. u [vindt hier meer informatie](./backup-azure-restore-files-from-vm.md#original-backed-up-machine-versus-another-machine).
+* Controleer of de computer waarop het script wordt uitgevoerd, voldoet aan de vereisten van het besturings systeem. [Meer informatie](./backup-azure-restore-files-from-vm.md#step-3-os-requirements-to-successfully-run-the-script).  
+* Zorg ervoor dat u niet naar dezelfde bron herstelt. u [vindt hier meer informatie](./backup-azure-restore-files-from-vm.md#step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script).
 
 ### <a name="usererrorinstantrpnotfound---restore-failed-because-the-snapshot-of-the-vm-was-not-found"></a>UserErrorInstantRpNotFound-herstel is mislukt omdat de moment opname van de virtuele machine niet is gevonden
 

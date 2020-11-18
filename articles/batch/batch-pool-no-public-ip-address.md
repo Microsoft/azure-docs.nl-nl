@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 10/08/2020
 ms.author: peshultz
 ms.custom: references_regions
-ms.openlocfilehash: fcc0538dfef1581a244ae5fd9a3515be3470026c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09a5632f969117e69e68bbe0df2bfbab9a8a102b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91850928"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842132"
 ---
 # <a name="create-an-azure-batch-pool-without-public-ip-addresses"></a>Een Azure Batch-pool zonder openbare IP-adressen maken
 
@@ -34,7 +34,7 @@ Als u de toegang tot deze knoop punten wilt beperken en de detectie van deze kno
 - **Een Azure-VNet**. Als u uw pool in een [virtueel netwerk](batch-virtual-network.md)maakt, volgt u deze vereisten en configuraties. Als u een VNet met een of meer subnetten vooraf wilt voorbereiden, kunt u de Azure Portal, Azure PowerShell, de Azure Command-Line-interface (CLI) of een andere methode gebruiken.
   - Het VNet moet in hetzelfde abonnement en dezelfde regio voorkomen als het Batch-account dat u gebruikt om de pool te maken.
   - Het subnet dat is opgegeven voor de pool moet voldoende vrije IP-adressen hebben voor het aantal virtuele machines voor de pool, ofwel de som van de `targetDedicatedNodes`- en `targetLowPriorityNodes`-eigenschappen van de pool. Als het subnet onvoldoende vrije IP-adressen heeft, wijst de pool de rekenknooppunten gedeeltelijk toe en wordt een fout weergegeven voor het aanpassen van de grootte.
-  - U moet de persoonlijke-koppelings service en het eindpunt netwerk beleid uitschakelen. Dit kan worden gedaan met behulp van Azure CLI: ```az network vnet subnet update --vnet-name <vnetname> -n <subnetname> --disable-private-endpoint-network-policies --disable-private-link-service-network-policies```
+  - U moet de persoonlijke-koppelings service en het eindpunt netwerk beleid uitschakelen. Dit kan worden gedaan met behulp van Azure CLI: ```az network vnet subnet update --vnet-name <vnetname> -n <subnetname> --resouce-group <resourcegroup> --disable-private-endpoint-network-policies --disable-private-link-service-network-policies```
 
 > [!IMPORTANT]
 > Voor elke knoop punt met 100 toegewezen of lage prioriteit worden met batch één persoonlijke-koppelings service en één load balancer toegewezen. De beperkingen die voor deze resources gelden, worden bepaald door de [resourcequota](../azure-resource-manager/management/azure-subscription-service-limits.md) van het abonnement. Voor grote Pools moet u mogelijk [een quotum verhoging aanvragen](batch-quota-limit.md#increase-a-quota) voor een of meer van deze resources. Daarnaast moeten er geen resource vergrendelingen worden toegepast op resources die zijn gemaakt door batch, omdat hierdoor het opruimen van resources als gevolg van door de gebruiker geïnitieerde acties wordt voor komen, zoals het verwijderen van een pool of het wijzigen van de grootte in nul.
@@ -48,13 +48,13 @@ Als u de toegang tot deze knoop punten wilt beperken en de detectie van deze kno
 ## <a name="create-a-pool-without-public-ip-addresses-in-the-azure-portal"></a>Een pool maken zonder open bare IP-adressen in de Azure Portal
 
 1. Ga in Azure Portal naar uw Batch-account.
-1. Selecteer **Pools**in het venster **instellingen** aan de linkerkant.
+1. Selecteer **Pools** in het venster **instellingen** aan de linkerkant.
 1. Selecteer in het venster **groepen** de optie **toevoegen**.
 1. Selecteer in het venster **groep toevoegen** de optie die u wilt gebruiken in de vervolg keuzelijst **afbeeldings type** .
 1. Selecteer de juiste **Uitgever/aanbieding/SKU** van uw installatie kopie.
-1. Geef de resterende vereiste instellingen op, zoals de **knooppunt grootte**, het **doel toegewezen knoop punten**en **knoop punten met een lage prioriteit**, evenals de gewenste optionele instellingen.
+1. Geef de resterende vereiste instellingen op, zoals de **knooppunt grootte**, het **doel toegewezen knoop punten** en **knoop punten met een lage prioriteit**, evenals de gewenste optionele instellingen.
 1. Selecteer desgewenst een virtueel netwerk en een subnet dat u wilt gebruiken. Dit virtuele netwerk moet zich in dezelfde resource groep bevinden als de groep die u maakt.
-1. Selecteer **NoPublicIPAddresses**in het **inrichtings type voor IP-adressen**.
+1. Selecteer **NoPublicIPAddresses** in het **inrichtings type voor IP-adressen**.
 
 ![Scherm opname van het NoPublicIPAddresses voor het toevoegen van een groep, waarbij de selectie is ingeschakeld.](./media/batch-pool-no-public-ip-address/create-pool-without-public-ip-address.png)
 

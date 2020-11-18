@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d3d044be923e5d7a621b72a926db0b4ce9a09b72
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 096d771cbf6e02a67903da7d5ce495890cc6828d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93122721"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840488"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c"></a>Stel aanmelding via de telefoon in en meld u aan met aangepast beleid in Azure AD B2C
 
@@ -35,7 +35,7 @@ Met de telefoon registratie en aanmelding kan de gebruiker zich aanmelden voor d
 > [!NOTE]
 > We raden u ten zeerste aan om informatie over toestemming op te nemen in uw registratie-en aanmeldings ervaring, vergelijkbaar met de onderstaande voorbeeld tekst. Deze voorbeeld tekst is alleen ter informatie bedoeld. Raadpleeg de korte hand leiding voor code controle op de [website van CTIA](https://www.ctia.org/programs) en neem contact op met uw eigen juridische of compliance-experts voor hulp bij de uiteindelijke configuratie van tekst en onderdelen om te voldoen aan uw eigen vereisten voor naleving:
 >
-> *Als u uw telefoon nummer opgeeft, stemt u in met het ontvangen van een eenmalige wachtwoord code die door SMS wordt verzonden om u aan te melden bij *&lt; het invoegen: de &gt; naam van uw toepassing* . Standaard bericht-en gegevens tarieven kunnen van toepassing zijn.*
+> *Als u uw telefoon nummer opgeeft, stemt u in met het ontvangen van een eenmalige wachtwoord code die door SMS wordt verzonden om u aan te melden bij *&lt; het invoegen: de &gt; naam van uw toepassing*. Standaard bericht-en gegevens tarieven kunnen van toepassing zijn.*
 >
 > *&lt;invoegen: een koppeling naar de privacyverklaring&gt;*<br/>*&lt;invoegen: een koppeling naar uw service voorwaarden&gt;*
 
@@ -60,15 +60,15 @@ Als de gebruiker nog geen account voor uw toepassing heeft, kan deze er een make
 
 ![Aanmelding van de gebruiker wordt gestart](media/phone-authentication/phone-signup-start.png)
 
-Er wordt een eenmalige verificatie code verzonden naar het telefoon nummer van de gebruiker. De gebruiker voert de **verificatie code** op de registratie pagina in en selecteert vervolgens **code controleren** . (Als de gebruiker de code niet kan ophalen, kunnen ze **nieuwe code verzenden** selecteren.)
+Er wordt een eenmalige verificatie code verzonden naar het telefoon nummer van de gebruiker. De gebruiker voert de **verificatie code** op de registratie pagina in en selecteert vervolgens **code controleren**. (Als de gebruiker de code niet kan ophalen, kunnen ze **nieuwe code verzenden** selecteren.)
 
 ![De gebruiker verifieert code tijdens de telefoon registratie](media/phone-authentication/phone-signup-verify-code.png)
 
- De gebruiker voert andere gevraagde gegevens op de registratie pagina in, bijvoorbeeld de **weergave naam** , de voor **naam** en de **naam (land** en telefoon nummer blijven ingevuld). Als de gebruiker een ander telefoon nummer wil gebruiken, kunnen ze het **wijzigings nummer** kiezen om de aanmelding opnieuw te starten. Wanneer u klaar bent, selecteert de gebruiker **door gaan** .
+ De gebruiker voert andere gevraagde gegevens op de registratie pagina in, bijvoorbeeld de **weergave naam**, de voor **naam** en de **naam (land** en telefoon nummer blijven ingevuld). Als de gebruiker een ander telefoon nummer wil gebruiken, kunnen ze het **wijzigings nummer** kiezen om de aanmelding opnieuw te starten. Wanneer u klaar bent, selecteert de gebruiker **door gaan**.
 
 ![Gebruiker bevat aanvullende informatie](media/phone-authentication/phone-signup-additional-info.png)
 
-Vervolgens wordt de gebruiker gevraagd een herstel bericht op te geven. De gebruiker voert het e-mail adres in en selecteert vervolgens **verificatie code verzenden** . Er wordt een code verzonden naar het postvak in van het e-mail adres van de gebruiker, die ze kunnen ophalen en invoeren in het vak **verificatie code** . Vervolgens selecteert de gebruiker **code verifiëren** . 
+Vervolgens wordt de gebruiker gevraagd een herstel bericht op te geven. De gebruiker voert het e-mail adres in en selecteert vervolgens **verificatie code verzenden**. Er wordt een code verzonden naar het postvak in van het e-mail adres van de gebruiker, die ze kunnen ophalen en invoeren in het vak **verificatie code** . Vervolgens selecteert de gebruiker **code verifiëren**. 
 
 Zodra de code is geverifieerd, selecteert de gebruiker **maken** om hun account te maken. Of als de gebruiker een ander e-mail adres wil gebruiken, kunnen ze de optie **E-mail wijzigen** kiezen.
 
@@ -108,13 +108,13 @@ Bij de volgende stappen wordt ervan uitgegaan dat u de [vereiste onderdelen](#pr
 
 1. Vervang in elk bestand de teken reeks door `yourtenant` de naam van uw Azure AD B2C-Tenant. Als de naam van uw B2C-Tenant bijvoorbeeld *contosob2c* is, worden alle exemplaren van `yourtenant.onmicrosoft.com` `contosob2c.onmicrosoft.com` .
 
-1. Volg de stappen in de sectie [toepassings-Id's toevoegen aan het aangepaste beleid](custom-policy-get-started.md#add-application-ids-to-the-custom-policy) van aan de [slag met aangepast beleid in azure Active Directory B2C](custom-policy-get-started.md). In dit geval moet `/phone-number-passwordless/` **`Phone_Email_Base.xml`** u bijwerken met de **toepassings-id's (client)** van de twee toepassingen die u hebt geregistreerd bij het volt ooien van de vereisten, *IdentityExperienceFramework* en *ProxyIdentityExperienceFramework* .
+1. Volg de stappen in de sectie [toepassings-Id's toevoegen aan het aangepaste beleid](custom-policy-get-started.md#add-application-ids-to-the-custom-policy) van aan de [slag met aangepast beleid in azure Active Directory B2C](custom-policy-get-started.md). In dit geval moet `/phone-number-passwordless/` **`Phone_Email_Base.xml`** u bijwerken met de **toepassings-id's (client)** van de twee toepassingen die u hebt geregistreerd bij het volt ooien van de vereisten, *IdentityExperienceFramework* en *ProxyIdentityExperienceFramework*.
 
 ## <a name="upload-the-policy-files"></a>De beleids bestanden uploaden
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en navigeer naar uw Azure AD B2C-Tenant.
-1. Onder **beleids regels** selecteert u **identiteits ervaring-Framework** .
-1. Selecteer **aangepast beleid uploaden** .
+1. Onder **beleids regels** selecteert u **identiteits ervaring-Framework**.
+1. Selecteer **aangepast beleid uploaden**.
 1. Upload de beleids bestanden in de volgende volg orde:
     1. *Phone_Email_Base.xml*
     1. *SignUpOrSignInWithPhone.xml*
@@ -128,9 +128,9 @@ Wanneer u elk bestand uploadt, voegt Azure het voor voegsel toe `B2C_1A_` .
 
 ## <a name="test-the-custom-policy"></a>Het aangepaste beleid testen
 
-1. Selecteer **B2C_1A_SignUpOrSignInWithPhone** onder **aangepast beleid** .
+1. Selecteer **B2C_1A_SignUpOrSignInWithPhone** onder **aangepast beleid**.
 1. Onder **toepassing selecteren** selecteert u de *webapp1* -toepassing die u hebt geregistreerd bij het volt ooien van de vereisten.
-1. Kies bij **Selecteer antwoord** -URL `https://jwt.ms` .
+1. Kies bij **Selecteer antwoord**-URL `https://jwt.ms` .
 1. Selecteer **nu uitvoeren** en meld u aan met een e-mail adres of telefoon nummer.
 1. Selecteer **nu opnieuw uitvoeren** en meld u aan met hetzelfde account om te controleren of u de juiste configuratie hebt.
 
@@ -153,7 +153,7 @@ GET https://graph.microsoft.com/v1.0/users?$filter=identities/any(c:c/issuerAssi
 ## <a name="next-steps"></a>Volgende stappen
 
 U kunt het aangepaste beleid voor het registreren van de telefoon en het aanmelden van het Starter Pack (en andere Starter Packs) vinden op GitHub: [Azure-samples/Active-Directory-B2C-Custom-Policy-starterpack/scenarios/telefoon nummer-wacht woord][starter-pack-phone] voor de Starter Pack-beleids bestanden gebruiken multi-factor Authentication-technische profielen en claim transformaties voor telefoon nummers:
-* [Een Azure Multi-Factor Authentication Technical-profiel definiëren](multi-factor-auth-technical-profile.md)
+* [Een Azure AD Multi-Factor Authentication technisch profiel definiëren](multi-factor-auth-technical-profile.md)
 * [Claim transformaties voor telefoon nummers definiëren](phone-number-claims-transformations.md)
 
 <!-- LINKS - External -->

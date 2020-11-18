@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van beveiligings functies in Azure
 ms.reviewer: utraghuv
 ms.topic: conceptual
 ms.date: 06/08/2017
-ms.openlocfilehash: 5a408dc07e83e790a63f8a252d4ed3f84bf66be4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c671b1b54b937f518f7179bb6940f31a28a78d4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89181677"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94841015"
 ---
 # <a name="security-features-to-help-protect-hybrid-backups-that-use-azure-backup"></a>Beveiligings functies voor het beveiligen van hybride back-ups die gebruikmaken van Azure Backup
 
@@ -35,23 +35,23 @@ Problemen met betrekking tot beveiligings problemen, zoals malware, Ransomware e
 Als u een Recovery Services kluis maakt, kunt u alle beveiligings functies gebruiken. Als u met een bestaande kluis werkt, schakelt u de beveiligings functies in door de volgende stappen uit te voeren:
 
 1. Meld u aan bij de Azure Portal met uw Azure-referenties.
-2. Selecteer **Bladeren**en typ **Recovery Services**.
+2. Selecteer **Bladeren** en typ **Recovery Services**.
 
     ![Scherm afbeelding van de optie Azure Portal bladeren](./media/backup-azure-security-feature/browse-to-rs-vaults.png) <br/>
 
     De lijst met Recovery Services-kluizen wordt weergegeven. Selecteer een kluis in deze lijst. Het geselecteerde kluisdashboard wordt geopend.
-3. Selecteer in de lijst met items onder **instellingen**de optie **Eigenschappen**.
+3. Selecteer in de lijst met items onder **instellingen** de optie **Eigenschappen**.
 
     ![Scherm afbeelding van Recovery Services kluis opties](./media/backup-azure-security-feature/vault-list-properties.png)
-4. Selecteer bij **beveiligings instellingen**de optie **bijwerken**.
+4. Selecteer bij **beveiligings instellingen** de optie **bijwerken**.
 
     ![Scherm afbeelding van Recovery Services kluis eigenschappen](./media/backup-azure-security-feature/security-settings-update.png)
 
     Met de koppeling bijwerken wordt het deel venster **beveiligings instellingen** geopend, met een overzicht van de functies en kunt u deze inschakelen.
-5. In de vervolg keuzelijst **hebt u azure multi-factor Authentication geconfigureerd?** Selecteer een waarde om te bevestigen of u [Azure multi-factor Authentication](../active-directory/authentication/concept-mfa-howitworks.md)hebt ingeschakeld. Als deze is ingeschakeld, wordt u gevraagd om te verifiëren vanaf een ander apparaat (bijvoorbeeld een mobiele telefoon) terwijl u zich aanmeldt bij de Azure Portal.
+5. In de vervolg keuzelijst **hebt u Azure ad multi-factor Authentication geconfigureerd?** Selecteer een waarde om te bevestigen of u [azure AD-multi-factor Authentication](../active-directory/authentication/concept-mfa-howitworks.md)hebt ingeschakeld. Als deze is ingeschakeld, wordt u gevraagd om te verifiëren vanaf een ander apparaat (bijvoorbeeld een mobiele telefoon) terwijl u zich aanmeldt bij de Azure Portal.
 
-   Wanneer u kritieke bewerkingen in een back-up uitvoert, moet u een beveiligings pincode invoeren die beschikbaar is op de Azure Portal. Als Azure Multi-Factor Authentication wordt ingeschakeld, wordt er een beveiligingslaag toegevoegd. Alleen geautoriseerde gebruikers met geldige Azure-referenties en vanaf een tweede apparaat worden geverifieerd, hebben toegang tot de Azure Portal.
-6. Als u de beveiligings instellingen wilt opslaan, selecteert u **inschakelen** en selecteert u **Opslaan**. U kunt alleen **inschakelen** selecteren nadat u een waarde hebt geselecteerd in de lijst met **geconfigureerde Azure multi-factor Authentication?** in de vorige stap.
+   Wanneer u kritieke bewerkingen in een back-up uitvoert, moet u een beveiligings pincode invoeren die beschikbaar is op de Azure Portal. Als u Azure AD Multi-Factor Authentication inschakelt, wordt er een beveiligingslaag toegevoegd. Alleen geautoriseerde gebruikers met geldige Azure-referenties en vanaf een tweede apparaat worden geverifieerd, hebben toegang tot de Azure Portal.
+6. Als u de beveiligings instellingen wilt opslaan, selecteert u **inschakelen** en selecteert u **Opslaan**. U kunt alleen **inschakelen** selecteren nadat u een waarde hebt geselecteerd in de lijst met **GECONFIGUREERDe Azure AD-multi-factor Authentication?** in de vorige stap.
 
     ![Scherm opname van beveiligings instellingen](./media/backup-azure-security-feature/enable-security-settings-dpm-update.png)
 
@@ -89,8 +89,8 @@ Als onderdeel van het toevoegen van een extra beveiligingslaag voor kritieke bew
 Deze pincode ontvangen:
 
 1. Meld u aan bij Azure Portal.
-2. Blader naar **Recovery Services**eigenschappen van de kluis  >  **instellingen**  >  **Properties**.
-3. Onder **BEVEILIGINGS pincode**selecteert u **genereren**. Hiermee opent u een deel venster dat de pincode bevat die moet worden ingevoerd in de gebruikers interface van de Azure Recovery Services-agent.
+2. Blader naar **Recovery Services** eigenschappen van de kluis  >  **instellingen**  >  **Properties**.
+3. Onder **BEVEILIGINGS pincode** selecteert u **genereren**. Hiermee opent u een deel venster dat de pincode bevat die moet worden ingevoerd in de gebruikers interface van de Azure Recovery Services-agent.
     Deze pincode is slechts vijf minuten geldig en wordt na die periode automatisch gegenereerd.
 
 ### <a name="maintain-a-minimum-retention-range"></a>Een minimale Bewaar termijn onderhouden

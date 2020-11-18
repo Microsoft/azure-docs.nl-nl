@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: c7f71d24ab516044a0ce48ad40f78bc659268866
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59aa6f5560917651d8f60c667145b0953bf72ef5
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91442171"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660862"
 ---
 # <a name="transition-to-openvpn-protocol-or-ikev2-from-sstp"></a>Overgang naar het OpenVPN-protocol of IKEv2 van SSTP
 
@@ -58,9 +58,9 @@ U kunt indien gewenst OpenVPN naast IKEv2 inschakelen. OpenVPN is op TLS gebasee
 
 ![punt-naar-site](./media/ikev2-openvpn-from-sstp/sstptoopenvpn.png "OpenVPN")
 
-Zodra de gateway is geconfigureerd, kunnen bestaande clients geen verbinding maken totdat u [de openvpn-clients implementeert en configureert](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-openvpn-clients).
+Zodra de gateway is geconfigureerd, kunnen bestaande clients geen verbinding maken totdat u [de openvpn-clients implementeert en configureert](./vpn-gateway-howto-openvpn-clients.md).
 
-Als u Windows 10 gebruikt, kunt u ook de [Azure VPN-client voor Windows](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-client#to-download-the-azure-vpn-client) gebruiken
+Als u Windows 10 gebruikt, kunt u ook de [Azure VPN-client voor Windows](./openvpn-azure-ad-client.md#to-download-the-azure-vpn-client) gebruiken
 
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen

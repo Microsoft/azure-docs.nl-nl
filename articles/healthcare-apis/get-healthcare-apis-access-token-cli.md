@@ -8,26 +8,18 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: matjazl
-ms.openlocfilehash: 7528f9d4e3b3043af1e4790c063eb6ddc6d9a828
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d1c4cfcb15d97a2c54a04344f0bd098f65c1392
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87849009"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660369"
 ---
 # <a name="get-access-token-for-azure-api-for-fhir-using-azure-cli"></a>Toegangs token voor Azure API voor FHIR ophalen met behulp van Azure CLI
 
 In dit artikel leert u hoe u een toegangs token kunt verkrijgen voor de Azure API voor FHIR met behulp van de Azure CLI. Wanneer u [de Azure-API voor FHIR inricht](fhir-paas-portal-quickstart.md), configureert u een set gebruikers of service-principals die toegang hebben tot de service. Als uw gebruikers object-ID in de lijst met toegestane object-Id's staat, kunt u toegang krijgen tot de service met behulp van een token dat is verkregen met behulp van de Azure CLI.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-## <a name="sign-in-with-azure-cli"></a>Aanmelden met Azure CLI
-
-Voordat u een token kunt verkrijgen, moet u zich aanmelden met de gebruiker waarvoor u een token wilt verkrijgen:
-
-```azurecli-interactive
-az login
-```
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 ## <a name="obtain-a-token"></a>Een token verkrijgen
 

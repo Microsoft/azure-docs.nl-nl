@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: 548393353d38082c175cde20eef1e93017cdd31a
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.openlocfilehash: eef78ffefe8fe13e6f160e38a05405a80d6e46f8
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94639206"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660947"
 ---
 # <a name="windows-virtual-desktop-rdp-shortpath-preview"></a>RDP-shortpath van Windows virtueel bureau blad (preview-versie)
 
@@ -151,6 +151,7 @@ Volg de [documentatie voor de netwerk beveiligings groep](../virtual-machines/wi
 
 * **Bron**  -  **Een** of het IP-bereik waar de clients zich bevinden
 * **Poort bereik van bron** -* *\** _ _ **bestemming**  -  **Any**
+* Poortbereiken van **doel**  -  **3390**
 * **Protocol**  -  **UDP**
 * **Actie**  -  **Toestaan**
 * Wijzig desgewenst de **prioriteit**. De prioriteit is van invloed op de volg orde waarin regels worden toegepast: de lagere numerieke waarde, de eerdere regel wordt toegepast.
@@ -243,8 +244,13 @@ Als u RDP-shortpath voor een specifieke client wilt uitschakelen, kunt u de volg
 Als u RDP-shortpath voor een specifieke sessiehost wilt uitschakelen, kunt u de volgende groepsbeleid gebruiken om de UDP-ondersteuning uit te scha kelen:
 
 1. Voer **gpedit. msc** uit op de sessiehost.
-2. Navigeer naar **computer configuratie > beheer sjablonen > Windows-onderdelen > Extern bureaublad-services > verbinding met extern bureaublad host** >-verbindingen.
+2. Navigeer naar **computer configuratie > beheer sjablonen > Windows-onderdelen > Extern bureaublad-services > verbinding met extern bureaublad host**>-verbindingen.
 3. Stel de instelling **RDP-transport protocollen selecteren** alleen in op **TCP**
+
+## <a name="feedback"></a>Feedback
+
+We horen graag van u over uw ervaringen met deze open bare preview.
+* Voor vragen, aanvragen, opmerkingen en andere feedback [gebruikt u dit feedback formulier](https://aka.ms/RDPShortpathFeedback).
 
 ## <a name="next-steps"></a>Volgende stappen
 

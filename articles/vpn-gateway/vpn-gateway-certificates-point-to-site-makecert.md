@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 926de9f3fd357cd9d9ca067e4f7beff7d03eec95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55e22ebec5853d6b4f10b53be8e24f4dbebe4e1f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89394179"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659774"
 ---
 # <a name="generate-and-export-certificates-for-point-to-site-connections-using-makecert"></a>Certificaten voor punt-naar-site-verbindingen genereren en exporteren met MakeCert
 
@@ -26,7 +26,7 @@ We raden u aan om de [Windows 10 Power shell-stappen](vpn-gateway-certificates-p
 
 De volgende stappen laten zien hoe u een zelfondertekend certificaat maakt met behulp van MakeCert. Deze stappen zijn niet specifiek voor het implementatie model. Ze zijn geldig voor Resource Manager en klassiek.
 
-1. Down load en Installeer [makecert](https://msdn.microsoft.com/library/windows/desktop/aa386968(v=vs.85).aspx).
+1. Down load en Installeer [makecert](/windows/win32/seccrypto/makecert).
 2. Na de installatie kunt u het hulp programma makecert.exe in dit pad vinden: C:\Program Files (x86) \Windows Kits\10\bin \<arch> . Het is echter wel mogelijk dat het is geïnstalleerd op een andere locatie. Open een opdracht prompt als beheerder en navigeer naar de locatie van het hulp programma MakeCert. U kunt het volgende voor beeld gebruiken om de juiste locatie aan te passen:
 
    ```cmd

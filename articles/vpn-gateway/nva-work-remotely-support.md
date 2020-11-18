@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: scottnap
-ms.openlocfilehash: 4783016e472907392f2d379efa0fed2d90ed21bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: beb59674d678ed9c61c9ee0b425da7032794ca64
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89595356"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660607"
 ---
 # <a name="working-remotely-network-virtual-appliance-nva-considerations-for-remote-work"></a>Op afstand werken: NVA-overwegingen (Network Virtual Appliance) voor extern werk
 
@@ -30,7 +30,7 @@ Alle belang rijke NVA-leveranciers in azure Marketplace moeten aanbevelingen heb
 
 - **Capaciteit en aantal gelijktijdige gebruikers** : dit aantal is met name belang rijk voor punt-naar-site-VPN-gebruikers, omdat elke verbonden gebruiker één versleutelde tunnel (IPSec of SSL-VPN) heeft gemaakt.  
 - **Cumulatieve door Voer** : wat is de cumulatieve band breedte die u nodig hebt om te voldoen aan het aantal gebruikers dat u nodig hebt om externe toegang te bieden.
-- **De VM-grootte die u nodig** hebt: gebruik altijd VM-grootten die worden aanbevolen door de NVA-leverancier.  Als u een punt-naar-site-VPN-verbinding wilt maken, moet u een grotere VM-grootte gebruiken, zoals dv2- [en DSv2-serie](https://docs.microsoft.com/azure/virtual-machines/dv2-dsv2-series "Dv2-en Dsv2-serie") vm's. Deze Vm's hebben vaak meer Vcpu's en kunnen meer gelijktijdige VPN-sessies afhandelen.  Grotere VM-grootten in azure hebben niet alleen meer virtuele kernen, maar hebben een meer geaggregeerde bandbreedte capaciteit dan kleinere VM-grootten.
+- **De VM-grootte die u nodig** hebt: gebruik altijd VM-grootten die worden aanbevolen door de NVA-leverancier.  Als u een punt-naar-site-VPN-verbinding wilt maken, moet u een grotere VM-grootte gebruiken, zoals dv2- [en DSv2-serie](../virtual-machines/dv2-dsv2-series.md "Dv2-en Dsv2-serie") vm's. Deze Vm's hebben vaak meer Vcpu's en kunnen meer gelijktijdige VPN-sessies afhandelen.  Grotere VM-grootten in azure hebben niet alleen meer virtuele kernen, maar hebben een meer geaggregeerde bandbreedte capaciteit dan kleinere VM-grootten.
     > **Belang rijk:** Elke leverancier gebruikt verschillende bronnen.  Als het niet duidelijk is welke instantie grootte u moet gebruiken voor de geschatte gebruikers belasting, neemt u rechtstreeks contact op met de software leverancier en vraagt u deze om een aanbeveling.
 - **Aantal exemplaren** : als u verwacht een groot aantal gebruikers en verbindingen te hebben, zijn er beperkingen voor het schalen van de grootte van uw NVA-exemplaar.  Overweeg het implementeren van meerdere VM-exemplaren.
 - **IPSec VPN versus SSL VPN** -in algemene IPSec-VPN-implementaties werken beter dan SSL-VPN-implementaties.  

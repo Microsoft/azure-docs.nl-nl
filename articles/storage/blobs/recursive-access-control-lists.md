@@ -9,18 +9,18 @@ ms.date: 11/03/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ff86b95f9d6a02c9ea24837b782ce729cdcacded
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 2ab554f45de30bb676d2933a4a1268b6831ae4f5
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577138"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659917"
 ---
 # <a name="set-access-control-lists-acls-recursively-for-azure-data-lake-storage-gen2"></a>Acl's (toegangs beheer lijsten) recursief instellen voor Azure Data Lake Storage Gen2
 
 ACL-overname is al beschikbaar voor nieuwe onderliggende items die zijn gemaakt onder een bovenliggende map. U kunt nu ook recursief toevoegen, bijwerken en verwijderen van de Acl's voor bestaande onderliggende items van een bovenliggende map zonder dat u deze wijzigingen afzonderlijk voor elk onderliggend item hoeft aan te brengen.
 
-[Bibliotheken](#libraries)  |  Voor [beelden](#code-samples)  |  [Aanbevolen procedures](#best-practice-guidelines)  |  [Feedback geven](#provide-feedback)
+[Bibliotheken](#libraries)  |  Voor [beelden](#code-samples)  |  [Aanbevolen procedures](#best-practice-guidelines)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -1153,13 +1153,7 @@ Als u de latentie wilt beperken, raden we u aan het recursieve ACL-proces uit te
 
 Het maximum aantal Acl's dat u kunt Toep assen op een map of bestand is 32 toegangs-Acl's en standaard-32-Acl's. Zie [Toegangsbeheer in Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control) voor meer informatie.
 
-<a id="provide-feedback"></a>
-
-### <a name="provide-feedback-or-report-issues"></a>Feedback geven of problemen melden
-
-U kunt uw feedback geven of een probleem melden op  [recursiveACLfeedback@microsoft.com](mailto:recursiveACLfeedback@microsoft.com) .
-
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 - [Toegangsbeheer in Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
 - [Bekende problemen](data-lake-storage-known-issues.md)

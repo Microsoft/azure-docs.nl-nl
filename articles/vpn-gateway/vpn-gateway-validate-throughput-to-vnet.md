@@ -10,12 +10,12 @@ ms.topic: troubleshooting
 ms.date: 09/02/2020
 ms.author: radwiv
 ms.reviewer: chadmat;genli
-ms.openlocfilehash: d2347c0688ca58698831019a193d03fe2c6721e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2d5b51e8cfbfcb5f771e9da524231f8ddfc40a9e
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89398504"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660930"
 ---
 # <a name="how-to-validate-vpn-throughput-to-a-virtual-network"></a>VPN-doorvoer naar een virtueel netwerk valideren
 
@@ -119,7 +119,7 @@ Down load [iPerf](https://iperf.fr/download/iperf_3.1/iperf-3.1.2-win64.zip). Zi
 1. Nadat u de voor gaande stappen hebt voltooid, voert u dezelfde stappen uit met de functies die zijn omgekeerd, zodat het server knooppunt nu het client knooppunt is en vice versa.
 
 > [!Note]
-> Iperf is niet het enige hulp programma. [NTTTCP is een alternatieve oplossing voor testen](https://docs.microsoft.com/azure/virtual-network/virtual-network-bandwidth-testing).
+> Iperf is niet het enige hulp programma. [NTTTCP is een alternatieve oplossing voor testen](../virtual-network/virtual-network-bandwidth-testing.md).
 
 ## <a name="test-vms-running-windows"></a>Vm's met Windows testen
 
@@ -225,7 +225,7 @@ Met name de analyse van pakket Capture-traceringen (wireshark/Network Monitor) d
 
 Zelfs als de algemene door Voer die is beoordeeld met de vorige stappen (iPERF/NTTTCP/etc..) goed was, kunt u trage bestands omgaan ervaren wanneer u Windows Verkenner gebruikt, of door middel van het slepen en neerzetten via een RDP-sessie. Dit probleem wordt meestal veroorzaakt door een van de volgende factoren:
 
-* Voor het kopiëren van bestanden, zoals Windows Verkenner en RDP, worden niet meerdere threads gebruikt tijdens het kopiëren. Gebruik voor betere prestaties een multi-threaded Copy-toepassing zoals [RichCopy](https://technet.microsoft.com/magazine/2009.04.utilityspotlight.aspx) om bestanden te kopiëren met behulp van 16-of 32-threads. Als u het thread nummer voor het kopiëren van bestanden in RichCopy wilt wijzigen, klikt u op **actie**  >  **kopiëren opties**  >  **bestand kopiëren**.
+* Voor het kopiëren van bestanden, zoals Windows Verkenner en RDP, worden niet meerdere threads gebruikt tijdens het kopiëren. Gebruik voor betere prestaties een multi-threaded Copy-toepassing zoals [RichCopy](/previous-versions/technet-magazine/dd547088(v=msdn.10)) om bestanden te kopiëren met behulp van 16-of 32-threads. Als u het thread nummer voor het kopiëren van bestanden in RichCopy wilt wijzigen, klikt u op **actie**  >  **kopiëren opties**  >  **bestand kopiëren**.
 
    ![Problemen bij het kopiëren van bestanden vertragen](./media/vpn-gateway-validate-throughput-to-vnet/Richcopy.png)<br>
 
@@ -233,7 +233,7 @@ Zelfs als de algemene door Voer die is beoordeeld met de vorige stappen (iPERF/N
    > Niet alle toepassingen werken hetzelfde en niet alle threads worden gebruikt voor alle toepassingen en processen. Als u de test uitvoert, ziet u dat sommige threads leeg zijn en geen nauw keurige doorvoer resultaten opleveren.
    > Als u de prestaties van de bestands overdracht van uw toepassing wilt controleren, gebruikt u multi-thread door het aantal threads achter elkaar of afnemend te verhogen om de optimale door Voer van de toepassing of bestands overdracht te vinden.
 
-* Onvoldoende VM-Lees-en schrijf snelheid. Zie [Azure Storage Troubleshooting](../storage/common/storage-e2e-troubleshooting.md)(Engelstalig) voor meer informatie.
+* Onvoldoende VM-Lees-en schrijf snelheid. Zie [Azure Storage Troubleshooting](/previous-versions/azure/storage/common/storage-e2e-troubleshooting)(Engelstalig) voor meer informatie.
 
 ## <a name="on-premises-device-external-facing-interface"></a>On-premises apparaat extern gerichte interface
 

@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 11/13/2018
 ms.author: guybo
-ms.openlocfilehash: 80272896bd314a1f5f05094afa83568e077ab480
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d4d055c0cd20d1b9598c408753334458d709276
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87368197"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660624"
 ---
 # <a name="prepare-a-debian-vhd-for-azure"></a>Een Debian-VHD voorbereiden voor Azure
 ## <a name="prerequisites"></a>Vereisten
@@ -58,7 +58,7 @@ Er zijn hulpprogram ma's beschikbaar voor het genereren van Debian-Vhd's voor Az
     # sudo update-grub
     ```
 
-6. Voeg Azure-opslag plaatsen van Debian toe aan/etc/apt/sources.List voor Debian 8 of 9:
+6. Voeg Azure-opslag plaatsen van Debian toe aan/etc/apt/sources.List voor een Debian 8, 9 of 10:
 
     **Debian 8. x "Jessie"**
 
@@ -85,7 +85,18 @@ Er zijn hulpprogram ma's beschikbaar voor het genereren van Debian-Vhd's voor Az
     deb http://debian-archive.trafficmanager.net/debian stretch-backports main
     deb-src http://debian-archive.trafficmanager.net/debian stretch-backports main
     ```
-
+    
+    **Debian 10. x "Buster"**
+    ```config-grub
+    deb http://debian-archive.trafficmanager.net/debian buster main
+    deb-src http://debian-archive.trafficmanager.net/debian buster main
+    deb http://debian-archive.trafficmanager.net/debian-security buster/updates main
+    deb-src http://debian-archive.trafficmanager.net/debian-security buster/updates main
+    deb http://debian-archive.trafficmanager.net/debian buster-updates main
+    deb-src http://debian-archive.trafficmanager.net/debian buster-updates main
+    deb http://debian-archive.trafficmanager.net/debian buster-backports main
+    deb-src http://debian-archive.trafficmanager.net/debian buster-backports main
+    ```
 
 7. De Azure Linux-agent installeren:
 

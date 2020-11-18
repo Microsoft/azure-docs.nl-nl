@@ -8,17 +8,17 @@ ms.subservice: iomt
 ms.topic: conceptual
 ms.date: 08/03/2020
 ms.author: punagpal
-ms.openlocfilehash: 63484361a6d5a331fd9dc646c53627918ce8b246
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: f348a8d8755402d6426f19eabc432f54e3fb8e42
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630546"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659655"
 ---
 # <a name="azure-iot-connector-for-fhir-preview-mapping-templates"></a>Toewijzingssjablonen in Azure IoT Connector for FHIR (preview)
 In dit artikel wordt uitgelegd hoe u Azure IoT connector kunt configureren voor snelle bronnen voor de gezondheids zorg (FHIR&#174;) * met toewijzings sjablonen.
 
-De Azure IoT connector voor FHIR vereist twee typen toewijzings sjablonen op basis van JSON. Het eerste type, **apparaattoewijzing** , is verantwoordelijk voor het toewijzen van de nettoladingen van apparaten die zijn verzonden naar het `devicedata` eind punt van de Azure Event hub. Het extraheert typen, apparaat-id's, meting datum en meet waarde (n). Het tweede type, **FHIR-toewijzing** , bepaalt de toewijzing voor FHIR-resource. Hiermee kunt u de lengte van de observatie periode, het gegevens type FHIR dat wordt gebruikt voor het opslaan van de waarden en terminologie code (s), configureren. 
+De Azure IoT connector voor FHIR vereist twee typen toewijzings sjablonen op basis van JSON. Het eerste type, **apparaattoewijzing**, is verantwoordelijk voor het toewijzen van de nettoladingen van apparaten die zijn verzonden naar het `devicedata` eind punt van de Azure Event hub. Het extraheert typen, apparaat-id's, meting datum en meet waarde (n). Het tweede type, **FHIR-toewijzing**, bepaalt de toewijzing voor FHIR-resource. Hiermee kunt u de lengte van de observatie periode, het gegevens type FHIR dat wordt gebruikt voor het opslaan van de waarden en terminologie code (s), configureren. 
 
 De toewijzings sjablonen zijn samengesteld in een JSON-document op basis van hun type. Deze JSON-documenten worden vervolgens toegevoegd aan uw Azure IoT-connector voor FHIR via de Azure Portal. Het document apparaattoewijzing wordt toegevoegd via de pagina apparaattoewijzing **configureren** en het FHIR-toewijzings document via de pagina **toewijzing van FHIR configureren** .
 
@@ -60,7 +60,7 @@ De nettolading voor inhoud zelf is een Azure Event hub-bericht, dat bestaat uit 
 ```
 
 ### <a name="mapping-with-json-path"></a>Toewijzing met JSON-pad
-De twee typen van de inhouds sjabloon voor het apparaat die nu worden ondersteund, zijn afhankelijk van het JSON-pad naar de vereiste sjabloon en geëxtraheerde waarden. Meer informatie over het JSON-pad vindt u [hier](https://goessner.net/articles/JsonPath/). Beide sjabloon typen gebruiken de [JSON .net-implementatie](https://www.newtonsoft.com/json/help/html/QueryJsonSelectTokenJsonPath.htm) voor het oplossen van EXPRESSIES van JSON-paden.
+De drie typen van de inhouds sjabloon voor een apparaat die nu worden ondersteund, zijn afhankelijk van het JSON-pad naar de vereiste sjabloon en geëxtraheerde waarden. Meer informatie over het JSON-pad vindt u [hier](https://goessner.net/articles/JsonPath/). Alle drie sjabloon typen gebruiken de [JSON .net-implementatie](https://www.newtonsoft.com/json/help/html/QueryJsonSelectTokenJsonPath.htm) voor het oplossen van EXPRESSIES van JSON-paden.
 
 #### <a name="jsonpathcontenttemplate"></a>JsonPathContentTemplate
 Met de JsonPathContentTemplate kunt u waarden uit een event hub-bericht vergelijken en extra heren met behulp van JSON-pad.
@@ -71,8 +71,8 @@ Met de JsonPathContentTemplate kunt u waarden uit een event hub-bericht vergelij
 |**TypeMatchExpression**|De JSON-padexpressie die wordt geëvalueerd op basis van de nettolading van de Event hub. Als er een overeenkomende JToken wordt gevonden, wordt de sjabloon als een overeenkomst beschouwd. Alle volgende expressies worden geëvalueerd op basis van de geëxtraheerde JToken die hier overeenkomen.|`$..[?(@heartRate)]`
 |**TimestampExpression**|De expressie JSON-pad om de time stamp-waarde voor de OccurenceTimeUtc van de meting te extra heren.|`$.endDate`
 |**DeviceIdExpression**|De expressie JSON-pad voor het uitpakken van de apparaat-id.|`$.deviceId`
-|**PatientIdExpression**|*Optioneel* : de expressie voor het JSON-pad om de patiënt-id op te halen.|`$.patientId`
-|**EncounterIdExpression**|*Optioneel* : de expressie van het JSON-pad om de ondertredende id op te halen.|`$.encounterId`
+|**PatientIdExpression**|*Optioneel*: de expressie voor het JSON-pad om de patiënt-id op te halen.|`$.patientId`
+|**EncounterIdExpression**|*Optioneel*: de expressie van het JSON-pad om de ondertredende id op te halen.|`$.encounterId`
 |**Values []. ValueName**|De naam die moet worden gekoppeld aan de waarde die is geëxtraheerd door de volgende expressie. Wordt gebruikt om de vereiste waarde/component in de FHIR-toewijzings sjabloon te koppelen. |`hr`
 |**Values []. ValueExpression**|De expressie voor het JSON-pad om de vereiste waarde op te halen.|`$.heartRate`
 |**Values []. Vereist**|Moet de waarde aanwezig zijn in de payload.  Als dit niet wordt gevonden, wordt er geen meting gegenereerd en wordt er een InvalidOperationException gegenereerd.|`true`
@@ -251,10 +251,12 @@ Met de JsonPathContentTemplate kunt u waarden uit een event hub-bericht vergelij
     }
 }
 ```
+
 #### <a name="iotjsonpathcontenttemplate"></a>IotJsonPathContentTemplate
+
 De IotJsonPathContentTemplate is vergelijkbaar met de JsonPathContentTemplate, met uitzonde ring van de DeviceIdExpression en TimestampExpression niet vereist zijn.
 
-De veronderstelling bij het gebruik van deze sjabloon is dat de berichten die worden geëvalueerd, worden verzonden met behulp van de [apparaat-sdk's van Azure IOT hub](../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks). Wanneer u deze Sdk's gebruikt, wordt de identiteit van het apparaat (ervan uitgaande dat de apparaat-id van Azure IOT hub/centraal is geregistreerd als een id voor een apparaatbestand op de doel FHIR-server) en de tijds tempel van het bericht bekend. Als u de Sdk's van Azure IoT Hub apparaat gebruikt, maar aangepaste eigenschappen gebruikt in de bericht tekst van de apparaat-id of meting tijds tempel, kunt u nog steeds de JsonPathContentTemplate gebruiken.
+De veronderstelling bij het gebruik van deze sjabloon is dat de berichten die worden geëvalueerd, worden verzonden met behulp van de [azure IOT hub apparaat sdk's](../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks) of  [export gegevens (verouderd)](../iot-central/core/howto-export-data-legacy.md) van [Azure IOT Central](../iot-central/core/overview-iot-central.md). Wanneer u deze Sdk's gebruikt, wordt de identiteit van het apparaat (ervan uitgaande dat de apparaat-id van Azure IOT hub/centraal is geregistreerd als een id voor een apparaatbestand op de doel FHIR-server) en de tijds tempel van het bericht bekend. Als u de Sdk's van Azure IoT Hub apparaat gebruikt, maar aangepaste eigenschappen gebruikt in de bericht tekst van de apparaat-id of meting tijds tempel, kunt u nog steeds de JsonPathContentTemplate gebruiken.
 
 *Opmerking: wanneer de IotJsonPathContentTemplate wordt gebruikt, moet de TypeMatchExpression worden omgezet in het hele bericht als een JToken. Zie de onderstaande voor beelden.* 
 ##### <a name="examples"></a>Voorbeelden
@@ -329,6 +331,101 @@ De veronderstelling bij het gebruik van deze sjabloon is dat de berichten die wo
             "valueName": "diastolic"
         }
     ]
+}
+```
+
+#### <a name="iotcentraljsonpathcontenttemplate"></a>IotCentralJsonPathContentTemplate
+
+De IotCentralJsonPathContentTemplate vereist ook DeviceIdExpression en TimestampExpression, en wordt gebruikt wanneer berichten die worden geëvalueerd, worden verzonden via de functie [gegevens exporteren](../iot-central/core/howto-export-data.md) van [Azure IOT Central](../iot-central/core/overview-iot-central.md). Wanneer u deze functie gebruikt, wordt de identiteit van het apparaat (ervan uitgaande dat de apparaat-id van Azure IOT Central is geregistreerd als een id voor een apparaatbestand op de doel FHIR-server) en de tijds tempel van het bericht bekend. Als u de functie gegevens export van Azure IoT Central gebruikt maar aangepaste eigenschappen gebruikt in de bericht tekst van de apparaat-id of meting tijds tempel, kunt u nog steeds de JsonPathContentTemplate gebruiken.
+
+*Opmerking: wanneer de IotCentralJsonPathContentTemplate wordt gebruikt, moet de TypeMatchExpression worden omgezet in het hele bericht als een JToken. Zie de onderstaande voor beelden.* 
+##### <a name="examples"></a>Voorbeelden
+---
+**Hart frequentie**
+
+*Bericht*
+```json
+{
+    "applicationId": "1dffa667-9bee-4f16-b243-25ad4151475e",
+    "messageSource": "telemetry",
+    "deviceId": "1vzb5ghlsg1",
+    "schema": "default@v1",
+    "templateId": "urn:qugj6vbw5:___qbj_27r",
+    "enqueuedTime": "2020-08-05T22:26:55.455Z",
+    "telemetry": {
+        "HeartRate": "88",
+    },
+    "enrichments": {
+      "userSpecifiedKey": "sampleValue"
+    },
+    "messageProperties": {
+      "messageProp": "value"
+    }
+}
+```
+*Sjabloon*
+```json
+{
+    "templateType": "IotCentralJsonPathContent",
+    "template": {
+        "typeName": "heartrate",
+        "typeMatchExpression": "$..[?(@telemetry.HeartRate)]",
+        "values": [
+            {
+                "required": "true",
+                "valueExpression": "$.telemetry.HeartRate",
+                "valueName": "hr"
+            }
+        ]
+    }
+}
+```
+---
+**Bloed druk**
+
+*Bericht*
+```json
+{
+    "applicationId": "1dffa667-9bee-4f16-b243-25ad4151475e",
+    "messageSource": "telemetry",
+    "deviceId": "1vzb5ghlsg1",
+    "schema": "default@v1",
+    "templateId": "urn:qugj6vbw5:___qbj_27r",
+    "enqueuedTime": "2020-08-05T22:26:55.455Z",
+    "telemetry": {
+        "BloodPressure": {
+            "Diastolic": "87",
+            "Systolic": "123"
+        }
+    },
+    "enrichments": {
+      "userSpecifiedKey": "sampleValue"
+    },
+    "messageProperties": {
+      "messageProp": "value"
+    }
+}
+```
+*Sjabloon*
+```json
+{
+    "templateType": "IotCentralJsonPathContent",
+    "template": {
+        "typeName": "bloodPressure",
+        "typeMatchExpression": "$..[?(@telemetry.BloodPressure.Diastolic && @telemetry.BloodPressure.Systolic)]",
+        "values": [
+            {
+                "required": "true",
+                "valueExpression": "$.telemetry.BloodPressure.Diastolic",
+                "valueName": "bp_diastolic"
+            },
+            {
+                "required": "true",
+                "valueExpression": "$.telemetry.BloodPressure.Systolic",
+                "valueName": "bp_systolic"
+            }
+        ]
+    }
 }
 ```
 

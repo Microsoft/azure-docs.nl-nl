@@ -8,19 +8,19 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: yushwang
-ms.openlocfilehash: 93916bb1eb92447da45ebae7ccb2e61c5af1dd9b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 168bb9e06c73ec27ec1304813023889c9549b8e6
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441575"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660692"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection-classic"></a>Een site-naar-site-verbinding met een VNet toevoegen met een bestaande VPN-gateway verbinding (klassiek)
 
 [!INCLUDE [deployment models](../../includes/vpn-gateway-classic-deployment-model-include.md)]
 
 > [!div class="op_single_selector"]
-> * [Azure-portal](vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)
+> * [Azure Portal](vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)
 > * [PowerShell (klassiek)](vpn-gateway-multi-site.md)
 >
 >
@@ -71,8 +71,8 @@ Als u al een site-naar-site-VPN hebt met een dynamische routerings gateway, fant
 2. Configureer uw nieuwe gateway en maak uw VPN-tunnel. Zie voor instructies [het type SKU en VPN opgeven](vpn-gateway-howto-site-to-site-classic-portal.md#sku). Zorg ervoor dat u het routerings type opgeeft als dynamisch.
 
 ### <a name="if-you-dont-have-a-site-to-site-virtual-network"></a>Als u geen site-naar-site-virtueel netwerk hebt:
-1. Maak uw site-naar-site-virtueel netwerk met behulp van deze instructies: [Maak een Virtual Network met een site-naar-site-VPN-verbinding](vpn-gateway-site-to-site-create.md).  
-2. Een dynamische routerings gateway configureren met behulp van deze instructies: [Configure a VPN gateway](vpn-gateway-configure-vpn-gateway-mp.md). Zorg ervoor dat u **dynamische route ring** selecteert voor uw gateway type.
+1. Maak uw site-naar-site-virtueel netwerk met behulp van deze instructies: [Maak een Virtual Network met een site-naar-site-VPN-verbinding](./vpn-gateway-howto-site-to-site-classic-portal.md).  
+2. Een dynamische routerings gateway configureren met behulp van deze instructies: [Configure a VPN gateway](./vpn-gateway-howto-site-to-site-classic-portal.md). Zorg ervoor dat u **dynamische route ring** selecteert voor uw gateway type.
 
 ## <a name="2-export-the-network-configuration-file"></a><a name="export"></a>2. het netwerk configuratie bestand exporteren
 

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 10/01/2020
+ms.date: 11/16/2020
 ms.author: alkohli
-ms.openlocfilehash: b193247fee843796da0cb2fcfc1a874b1a1b72fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 00ba711661d69bbaf53ff51fb2cb833d9b1c1ae2
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91660918"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660420"
 ---
 # <a name="azure-data-box-limits"></a>Azure Data Box limieten
 
@@ -28,7 +28,7 @@ Houd rekening met deze beperkingen tijdens het implementeren en uitvoeren van uw
 - Data Box kunt Maxi maal 500.000.000 bestanden opslaan voor importeren en exporteren.
 - Data Box ondersteunt Maxi maal 512 containers of shares in de Cloud. De mappen op het hoogste niveau binnen de gebruikers share worden containers of Azure-bestands shares in de Cloud. 
 - Data Box gebruiks capaciteit kan kleiner zijn dan 80 TB vanwege het gebruik van ReFS-meta gegevens ruimte.
-- Data Box ondersteunt Maxi maal vijf client verbindingen tegelijk op een NFS-share. 
+- Data Box ondersteunt Maxi maal 10 client verbindingen tegelijk op een NFS-share.
 
 ## <a name="azure-storage-limits"></a>Limieten voor Azure Storage
 

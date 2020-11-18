@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 03/26/2020
 ms.author: genli
-ms.openlocfilehash: dbf0d096827ec1af16e6d38d405709e48175ae89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 908602dff3be2f392bc595f0074db7f95b8936a9
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88035943"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660981"
 ---
 # <a name="troubleshooting-azure-point-to-site-connection-problems"></a>Problemen oplossen: Azure Point-to-site-verbindings problemen
 
@@ -35,7 +35,7 @@ Dit probleem treedt op als het client certificaat ontbreekt in **Certificaten-Hu
 
 Voer de volgende stappen uit om dit probleem op te lossen:
 
-1. Certificaat beheer openen: Klik op **Start**, typ **computer certificaten beheren**en klik vervolgens op **computer certificaten beheren** in het Zoek resultaat.
+1. Certificaat beheer openen: Klik op **Start**, typ **computer certificaten beheren** en klik vervolgens op **computer certificaten beheren** in het Zoek resultaat.
 
 2. Zorg ervoor dat de volgende certificaten zich op de juiste locatie bevinden:
 
@@ -137,7 +137,7 @@ Dit probleem treedt op vanwege een onjuist gateway type.
 
 ### <a name="solution"></a>Oplossing
 
-Het VPN-gateway type moet **VPN**zijn en het VPN-type moet **RouteBased**zijn.
+Het VPN-gateway type moet **VPN** zijn en het VPN-type moet **RouteBased** zijn.
 
 ## <a name="vpn-client-error-azure-vpn-custom-script-failed"></a>VPN-client fout: aangepast Azure VPN-script is mislukt 
 
@@ -168,7 +168,7 @@ Pak het configuratie pakket voor de VPN-client uit en zoek het CER-bestand. Voer
 1. Open mmc.exe.
 2. Voeg de module **certificaten** toe.
 3. Selecteer het **computer** account voor de lokale computer.
-4. Klik met de rechter muisknop op het knoop punt **vertrouwde basis certificerings instanties** . Klik op **alle taken**  >  **importeren**en blader naar het CER-bestand dat u hebt geëxtraheerd uit het configuratie pakket voor de VPN-client.
+4. Klik met de rechter muisknop op het knoop punt **vertrouwde basis certificerings instanties** . Klik op **alle taken**  >  **importeren** en blader naar het CER-bestand dat u hebt geëxtraheerd uit het configuratie pakket voor de VPN-client.
 5. Start de computer opnieuw op. 
 6. Probeer de VPN-client te installeren.
 
@@ -274,7 +274,7 @@ U verwijdert de punt-naar-site-VPN-verbinding en installeert vervolgens de VPN-c
 
 ### <a name="solution"></a>Oplossing
 
-Om het probleem op te lossen, verwijdert u de oude VPN-client configuratie bestanden van **C:\Users\UserName\AppData\Roaming\Microsoft\Network\Connections \<VirtualNetworkId> **en voert u het installatie programma voor de VPN-client opnieuw uit.
+Om het probleem op te lossen, verwijdert u de oude VPN-client configuratie bestanden van **C:\Users\UserName\AppData\Roaming\Microsoft\Network\Connections \<VirtualNetworkId>** en voert u het installatie programma voor de VPN-client opnieuw uit.
 
 ## <a name="point-to-site-vpn-client-cannot-resolve-the-fqdn-of-the-resources-in-the-local-domain"></a>Punt-naar-site-VPN-client kan de FQDN van de bronnen in het lokale domein niet omzetten
 
@@ -298,7 +298,7 @@ Dit probleem kan zich voordoen als de VPN-client de routes van de Azure VPN-gate
 
 ### <a name="solution"></a>Oplossing
 
-U kunt dit probleem oplossen door de [Azure VPN-gateway opnieuw](vpn-gateway-resetgw-classic.md)in te stellen. Om ervoor te zorgen dat de nieuwe routes worden gebruikt, moeten de punt-naar-site-VPN-clients opnieuw worden gedownload nadat de peering van het virtuele netwerk is geconfigureerd.
+U kunt dit probleem oplossen door de [Azure VPN-gateway opnieuw](./reset-gateway.md)in te stellen. Om ervoor te zorgen dat de nieuwe routes worden gebruikt, moeten de punt-naar-site-VPN-clients opnieuw worden gedownload nadat de peering van het virtuele netwerk is geconfigureerd.
 
 ## <a name="error-the-revocation-function-was-unable-to-check-revocation-because-the-revocation-server-was-offlineerror-0x80092013"></a>Fout: de intrekkings functie kan het intrekken niet controleren omdat de intrekkings server offline is. (Fout 0x80092013) "
 
@@ -335,7 +335,7 @@ Het NIC-stuur programma is verouderd.
 
 Het NIC-stuur programma bijwerken:
 
-1. Klik op **Start**, typ **Apparaatbeheer**en selecteer deze in de lijst met resultaten. Als u wordt gevraagd om een beheerders wachtwoord of een bevestiging, typt u het wacht woord of geeft u een bevestiging.
+1. Klik op **Start**, typ **Apparaatbeheer** en selecteer deze in de lijst met resultaten. Als u wordt gevraagd om een beheerders wachtwoord of een bevestiging, typt u het wacht woord of geeft u een bevestiging.
 2. Zoek in de categorieën **netwerk adapters** de NIC die u wilt bijwerken.  
 3. Dubbel klik op de naam van het apparaat, selecteer **stuur programma bijwerken**, selecteer **automatisch zoeken naar bijgewerkte stuur programma-software**.
 4.  Als Windows geen nieuw stuurprogramma kan vinden, kunt u ernaar zoeken op de website van de fabrikant van het apparaat en de aanwijzingen aldaar opvolgen.
@@ -362,7 +362,7 @@ Dit wordt veroorzaakt doordat er een onjuist gateway type is geconfigureerd.
 
 ### <a name="solution"></a>Oplossing
 
-Het type van de Azure VPN-gateway moet VPN zijn en het VPN-type moet **RouteBased**zijn.
+Het type van de Azure VPN-gateway moet VPN zijn en het VPN-type moet **RouteBased** zijn.
 
 ## <a name="vpn-package-installer-doesnt-complete"></a>Het installatie programma voor het VPN-pakket is niet voltooid
 
@@ -372,7 +372,7 @@ Dit probleem kan worden veroorzaakt door de vorige VPN-client installaties.
 
 ### <a name="solution"></a>Oplossing
 
-Verwijder de oude configuratie bestanden voor de VPN-client van **C:\Users\UserName\AppData\Roaming\Microsoft\Network\Connections \<VirtualNetworkId> ** en voer het installatie programma voor de VPN-client opnieuw uit. 
+Verwijder de oude configuratie bestanden voor de VPN-client van **C:\Users\UserName\AppData\Roaming\Microsoft\Network\Connections \<VirtualNetworkId>** en voer het installatie programma voor de VPN-client opnieuw uit. 
 
 ## <a name="the-vpn-client-hibernates-or-sleep-after-some-time"></a>De VPN-client wordt na enige tijd in de slaap stand gezet
 

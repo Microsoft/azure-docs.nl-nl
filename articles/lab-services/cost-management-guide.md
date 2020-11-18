@@ -5,12 +5,12 @@ author: rbest
 ms.author: rbest
 ms.date: 08/16/2020
 ms.topic: article
-ms.openlocfilehash: 98e04ba6bb1310935c4893a3616dfd68c2e99a55
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 29f6be5319c5a142ad3ea0d73deb2f95d8cb0d7a
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88797629"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659723"
 ---
 # <a name="cost-management-for-azure-lab-services"></a>Kosten beheer voor Azure Lab Services
 
@@ -31,7 +31,7 @@ In deze schatting worden mogelijk niet alle mogelijke kosten weer gegeven. Er zi
 
 ## <a name="analyze-the-previous-months-usage"></a>Het gebruik van de vorige maand analyseren
 
-De kosten analyse is voor het controleren van het gebruik van de vorige maand om u te helpen bij het bepalen van eventuele aanpassingen van het lab. U vindt de uitsplitsing van de kosten van het [abonnement in de kosten analyse van abonnementen](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis). In de Azure Portal kunt u **abonnementen** invoeren in het zoekvak en vervolgens de optie **abonnementen** selecteren. 
+De kosten analyse is voor het controleren van het gebruik van de vorige maand om u te helpen bij het bepalen van eventuele aanpassingen van het lab. U vindt de uitsplitsing van de kosten van het [abonnement in de kosten analyse van abonnementen](../cost-management-billing/costs/quick-acm-cost-analysis.md). In de Azure Portal kunt u **abonnementen** invoeren in het zoekvak en vervolgens de optie **abonnementen** selecteren. 
 
 > [!div class="mx-imgBorder"]
 > ![Scherm opname van het zoekvak en de optie abonnementen.](./media/cost-management-guide/subscription-search.png)
@@ -46,7 +46,7 @@ Selecteer **kosten analyse** in het linkerdeel venster onder **Cost Management**
 > [!div class="mx-imgBorder"]
 > ![Scherm opname van de kosten analyse van een abonnement op een grafiek.](./media/cost-management-guide/subscription-cost-analysis.png)
 
-Dit dash board biedt gedetailleerde kosten analyse, waaronder de mogelijkheid om te exporteren naar verschillende bestands typen volgens een schema. Zie [Cost Management + facturering Overview](https://docs.microsoft.com/azure/cost-management-billing/cost-management-billing-overview)(Engelstalig) voor meer informatie.
+Dit dash board biedt gedetailleerde kosten analyse, waaronder de mogelijkheid om te exporteren naar verschillende bestands typen volgens een schema. Zie [Cost Management + facturering Overview](../cost-management-billing/cost-management-billing-overview.md)(Engelstalig) voor meer informatie.
 
 U kunt filteren op resource type. Met `microsoft.labservices/labaccounts` worden alleen de kosten weer gegeven die zijn gekoppeld aan Lab-Services.
 
@@ -57,7 +57,7 @@ De volgende scherm afbeelding is een voor beeld van een kosten analyse.
 > [!div class="mx-imgBorder"]
 > ![Scherm afbeelding van een voor beeld van een kosten analyse voor een abonnement.](./media/cost-management-guide/cost-analysis.png)
 
-Standaard zijn er zes kolommen: **resource**, **resource type**, **locatie**, **resource groeps naam**, **Tags**en **kosten**. De kolom **resource** bevat informatie over het lab-account, de naam van het lab en de VM. De rijen met het lab-account, de naam van het lab en de standaard waarde (tweede en derde rij) zijn de kosten voor het lab. De gebruikte Vm's hebben kosten die u kunt zien voor de rijen met het lab-account, de naam van het lab, de standaard naam en de VM. 
+Standaard zijn er zes kolommen: **resource**, **resource type**, **locatie**, **resource groeps naam**, **Tags** en **kosten**. De kolom **resource** bevat informatie over het lab-account, de naam van het lab en de VM. De rijen met het lab-account, de naam van het lab en de standaard waarde (tweede en derde rij) zijn de kosten voor het lab. De gebruikte Vm's hebben kosten die u kunt zien voor de rijen met het lab-account, de naam van het lab, de standaard naam en de VM. 
 
 In dit voor beeld geeft het toevoegen van de eerste en tweede rij (beide beginnen met **aaalab/dockerlab**) u de totale kosten voor het Lab ' dockerlab ' in het lab-account ' aaalab '.
 
@@ -70,7 +70,7 @@ Als u de totale kosten voor de galerie met afbeeldingen wilt ophalen, wijzigt u 
 
 Sommige universiteiten hebben het lab-account en de resource groep gebruikt als manieren om de klassen van elkaar te scheiden. Elke klasse heeft een eigen lab-account en resource groep. 
 
-Voeg in het deel venster kosten analyse een filter toe op basis van de naam van de resource groep met de juiste naam voor de resource groep voor de klasse. Alleen de kosten voor die klasse zijn dan zichtbaar. Dit maakt een duidelijk beeld van de klassen mogelijk wanneer u de kosten bekijkt. U kunt de functie voor [geplande export](https://docs.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data) van de kosten analyse gebruiken om de kosten van elke klasse in afzonderlijke bestanden te downloaden.
+Voeg in het deel venster kosten analyse een filter toe op basis van de naam van de resource groep met de juiste naam voor de resource groep voor de klasse. Alleen de kosten voor die klasse zijn dan zichtbaar. Dit maakt een duidelijk beeld van de klassen mogelijk wanneer u de kosten bekijkt. U kunt de functie voor [geplande export](../cost-management-billing/costs/tutorial-export-acm-data.md) van de kosten analyse gebruiken om de kosten van elke klasse in afzonderlijke bestanden te downloaden.
 
 ## <a name="manage-costs"></a>Kosten beheren
 
@@ -90,7 +90,7 @@ U kunt deze instellingen configureren op het niveau van het lab-account en het l
 > [!NOTE]
 > Deze instelling is alleen beschikbaar voor virtuele Windows-machines.
 
-Wanneer de instelling **gebruikers verbinding verbreken wanneer de virtuele machines niet actief** is is ingeschakeld, wordt de verbinding van de gebruiker met alle computers in het lab verbroken wanneer het Windows-besturings systeem de sessie als niet-actief wordt beschouwd (inclusief de virtuele machine van de sjabloon). De [definitie van het Windows-besturings systeem die niet actief](https://docs.microsoft.com/windows/win32/taskschd/task-idle-conditions#detecting-the-idle-state) is, gebruikt twee criteria: 
+Wanneer de instelling **gebruikers verbinding verbreken wanneer de virtuele machines niet actief** is is ingeschakeld, wordt de verbinding van de gebruiker met alle computers in het lab verbroken wanneer het Windows-besturings systeem de sessie als niet-actief wordt beschouwd (inclusief de virtuele machine van de sjabloon). De [definitie van het Windows-besturings systeem die niet actief](/windows/win32/taskschd/task-idle-conditions#detecting-the-idle-state) is, gebruikt twee criteria: 
 
 * Verzuim van gebruiker: geen toetsen bord of muis invoer.
 * Gebrek aan Resource verbruik: alle processors en alle schijven zijn gedurende een bepaald percentage tijd niet actief.
@@ -107,7 +107,7 @@ Als u niet-actieve virtuele Windows-machines die zijn losgekoppeld automatisch w
 Als u de instellingen bijvoorbeeld als volgt configureert:
  
 * **Gebruikers loskoppelen wanneer virtuele machines niet actief zijn**: 15 minuten nadat de status niet actief is gedetecteerd.
-* **Virtuele machines uitschakelen wanneer gebruikers**verbinding maken: 5 minuten nadat de gebruiker de verbinding heeft verbroken.
+* **Virtuele machines uitschakelen wanneer gebruikers** verbinding maken: 5 minuten nadat de gebruiker de verbinding heeft verbroken.
  
 De virtuele Windows-machines worden automatisch 20 minuten afgesloten nadat de gebruiker deze heeft gestopt. 
  
@@ -122,7 +122,7 @@ De virtuele **machines uitschakelen wanneer gebruikers de verbinding verbreken**
 * Voor Linux wordt een SSH-verbinding verbroken.
  
 > [!NOTE]
-> Alleen [specifieke distributies en versies van Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/diagnostics-linux#supported-linux-distributions) worden ondersteund.
+> Alleen [specifieke distributies en versies van Linux](../virtual-machines/extensions/diagnostics-linux.md#supported-linux-distributions) worden ondersteund.
  
 U kunt opgeven hoe lang de virtuele machines moeten wachten totdat de gebruiker opnieuw verbinding maakt voordat deze automatisch wordt afgesloten. 
 

@@ -3,12 +3,12 @@ title: Certificaten in een Azure Service Fabric-cluster beheren
 description: Hierin wordt beschreven hoe u nieuwe certificaten, rollover certificaat en certificaat kunt toevoegen aan of verwijderen uit een Service Fabric-cluster.
 ms.topic: conceptual
 ms.date: 11/13/2018
-ms.openlocfilehash: b1ccf83e666f9106a31809ff41d55062826be78c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dd4440d76bed9d110c13baab9f4e67b3a5c64c0
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88869742"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660896"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Certificaten voor een Service Fabric-cluster in Azure toevoegen of verwijderen
 Het is raadzaam om vertrouwd te raken met de manier waarop Service Fabric X. 509-certificaten gebruikt en dat u vertrouwd bent met de [beveiligings scenario's](service-fabric-cluster-security.md)voor het cluster. Voordat u verder gaat, moet u weten wat een cluster certificaat is en wat wordt gebruikt voor.
@@ -18,7 +18,7 @@ De standaard methode voor het laden van het certificaat van de SDK van Azure ser
 Met Service Fabric kunt u twee cluster certificaten, een primaire en een secundaire, opgeven wanneer u certificaat beveiliging configureert tijdens het maken van het cluster, naast client certificaten. Raadpleeg het [maken van een Azure-cluster via de portal](service-fabric-cluster-creation-via-portal.md) of [het maken van een Azure-cluster via Azure Resource Manager](service-fabric-cluster-creation-via-arm.md) voor meer informatie over het instellen van de clusters tijdens het maken van een tijd. Als u per keer een cluster certificaat opgeeft, wordt dit gebruikt als het primaire certificaat. Nadat het cluster is gemaakt, kunt u een nieuw certificaat toevoegen als secundair.
 
 > [!NOTE]
-> Voor een beveiligd cluster hebt u altijd ten minste één geldig (niet ingetrokken en niet-verlopen) cluster certificaat (primair of secundair) geïmplementeerd (als dat niet het geval is, werkt het cluster niet meer). 90 dagen voordat alle geldige certificaten verlopen, genereert het systeem een waarschuwings tracering en ook een waarschuwings status gebeurtenis op het knoop punt. Er is momenteel geen e-mail bericht of andere meldingen die Service Fabric in dit artikel worden verzonden. 
+> Voor een beveiligd cluster hebt u altijd ten minste één geldig (niet ingetrokken en niet-verlopen) cluster certificaat (primair of secundair) geïmplementeerd (als dat niet het geval is, werkt het cluster niet meer). 90 dagen voordat alle geldige certificaten verlopen, genereert het systeem een waarschuwings tracering en een waarschuwings status gebeurtenis op het knoop punt. Dit zijn momenteel de enige meldingen Service Fabric worden verzonden met betrekking tot het verlopen van het certificaat.
 > 
 > 
 
@@ -26,7 +26,7 @@ Met Service Fabric kunt u twee cluster certificaten, een primaire en een secunda
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="add-a-secondary-cluster-certificate-using-the-portal"></a>Een secundair cluster certificaat toevoegen met behulp van de portal
-Het secundaire cluster certificaat kan niet worden toegevoegd via de Azure Portal, Azure Power shell gebruiken. Het proces wordt verderop in dit document beschreven.
+Het secundaire cluster certificaat kan niet worden toegevoegd via de Azure Portal; gebruik Azure PowerShell. Het proces wordt verderop in dit document beschreven.
 
 ## <a name="remove-a-cluster-certificate-using-the-portal"></a>Een cluster certificaat verwijderen via de portal
 Voor een beveiligd cluster hebt u altijd Mini maal één geldig certificaat (niet ingetrokken en niet verlopen) nodig. Het certificaat dat het meest voor de volgende verval datum is geïmplementeerd, wordt in gebruik en de verwijdering van het cluster werkt niet meer. Zorg ervoor dat u alleen het certificaat verwijdert dat is verlopen of dat een ongebruikt certificaat dat het kortste verloopt.
@@ -197,7 +197,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName <Resource Group that your clus
 
 ```
 
-Implementeer de sjabloon in uw resource groep. Gebruik dezelfde resource groep als waarin uw cluster momenteel is geïmplementeerd. Voer de New-AzResourceGroupDeployment opdracht uit. U hoeft de modus niet op te geven, omdat de standaard waarde **Incrementeel**is.
+Implementeer de sjabloon in uw resource groep. Gebruik dezelfde resource groep als waarin uw cluster momenteel is geïmplementeerd. Voer de New-AzResourceGroupDeployment opdracht uit. U hoeft de modus niet op te geven, omdat de standaard waarde **Incrementeel** is.
 
 > [!NOTE]
 > Als u de modus instelt op voltooid, kunt u per ongeluk resources verwijderen die zich niet in uw sjabloon bevinden. In dit scenario gebruikt u dit dus niet.

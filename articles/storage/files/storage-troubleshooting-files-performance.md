@@ -4,15 +4,15 @@ description: Los problemen met bekende prestaties op met Azure-bestands shares. 
 author: gunjanj
 ms.service: storage
 ms.topic: troubleshooting
-ms.date: 09/15/2020
+ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 3e6490babb5a4e68c1ecd931251ea4eb99d6c3f5
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 6e4eb37477a335ae93b9982692c238d05c81000b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630138"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660284"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Prestatie problemen met Azure file shares oplossen
 
@@ -35,8 +35,8 @@ Als u wilt controleren of uw share wordt beperkt, kunt u Azure-metrische gegeven
 1. Selecteer **trans acties** als metrische gegevens.
 
 1. Voeg een filter toe voor het **antwoord type** en controleer vervolgens of er aanvragen van een van de volgende respons codes zijn:
-   * **SuccessWithThrottling** : voor Server Message Block (SMB)
-   * **ClientThrottlingError** : voor rest
+   * **SuccessWithThrottling**: voor Server Message Block (SMB)
+   * **ClientThrottlingError**: voor rest
 
    ![Scherm afbeelding van de opties voor de metrische gegevens voor Premium-bestands shares, met een eigenschappen Filter van het type antwoord.](media/storage-troubleshooting-premium-fileshares/metrics.png)
 
@@ -83,10 +83,11 @@ De virtuele client machine (VM) bevindt zich in een andere regio dan de bestands
 ## <a name="client-unable-to-achieve-maximum-throughput-supported-by-the-network"></a>De client kan geen maximale door voer worden gerealiseerd die door het netwerk wordt ondersteund
 
 ### <a name="cause"></a>Oorzaak
-Een mogelijke oorzaak is een gebrek aan SMB-ondersteuning voor meerdere kanalen. Azure Files ondersteunt momenteel slechts één kanaal, dus er is slechts één verbinding tussen de client-VM en de server. Deze enkele verbinding wordt vastgelegd op één kern op de client-VM, zodat de maximale door Voer die uit een virtuele machine kan worden behaald, is gebonden aan één kern.
+Een mogelijke oorzaak is een gebrek aan SMB-ondersteuning voor meerdere kanalen voor standaard bestands shares. Azure Files ondersteunt momenteel slechts één kanaal, dus er is slechts één verbinding tussen de client-VM en de server. Deze enkele verbinding wordt vastgelegd op één kern op de client-VM, zodat de maximale door Voer die uit een virtuele machine kan worden behaald, is gebonden aan één kern.
 
 ### <a name="workaround"></a>Tijdelijke oplossing
 
+- Schakel voor Premium-bestands shares [SMB meerdere kanalen in voor een FileStorage-account](storage-files-enable-smb-multichannel.md).
 - Het verkrijgen van een virtuele machine met een grotere kern kan helpen de door voer te verbeteren.
 - Als de client toepassing vanaf meerdere Vm's wordt uitgevoerd, wordt de door Voer verhoogd.
 - Gebruik waar mogelijk REST Api's.
@@ -101,7 +102,7 @@ Dit is een bekend probleem met de implementatie van de SMB-client op Linux.
 
 - De belasting over meerdere Vm's spreiden.
 - Gebruik op dezelfde VM meerdere koppel punten met een **nosharesock** -optie en verspreid de belasting over deze koppel punten.
-- Probeer in Linux te koppelen met een **nostrictsync** -optie om te voor komen dat een SMB-leegmaak bewerking wordt afgedwongen bij elke **fsync** -aanroep. Voor Azure Files heeft deze optie geen invloed op de consistentie van gegevens, maar dit kan leiden tot verlopen meta gegevens van bestanden in mapweergaven ( **ls-l-** opdracht). Het rechtstreeks opvragen van meta gegevens van bestanden met behulp van de **stat** -opdracht retourneert de meest recente bestands-meta gegevens.
+- Probeer in Linux te koppelen met een **nostrictsync** -optie om te voor komen dat een SMB-leegmaak bewerking wordt afgedwongen bij elke **fsync** -aanroep. Voor Azure Files heeft deze optie geen invloed op de consistentie van gegevens, maar dit kan leiden tot verlopen meta gegevens van bestanden in mapweergaven (**ls-l-** opdracht). Het rechtstreeks opvragen van meta gegevens van bestanden met behulp van de **stat** -opdracht retourneert de meest recente bestands-meta gegevens.
 
 ## <a name="high-latencies-for-metadata-heavy-workloads-involving-extensive-openclose-operations"></a>Hoge latentie voor meta gegevens-zware workloads met uitgebreide open/close-bewerkingen
 
@@ -170,18 +171,65 @@ Meer dan de verwachte latentie bij het openen van Azure-bestands shares voor I/O
 
 - Installeer de beschik bare [hotfix](https://support.microsoft.com/help/3114025/slow-performance-when-you-access-azure-files-storage-from-windows-8-1).
 
+## <a name="smb-multichannel-option-not-visible-under-file-share-settings"></a>De optie SMB meerdere kanalen wordt niet weer gegeven onder instellingen voor bestands share. 
+
+### <a name="cause"></a>Oorzaak
+
+Het abonnement is niet geregistreerd voor de functie, of de regio en het account type worden niet ondersteund.
+
+### <a name="solution"></a>Oplossing
+
+Zorg ervoor dat uw abonnement is geregistreerd voor de functie SMB meerdere kanalen. Zie [aan](storage-files-enable-smb-multichannel.md#getting-started) de slag om te controleren of het account soort FileStorage is (Premium file-account) op de pagina account overzicht. 
+
+## <a name="smb-multichannel-is-not-being-triggered"></a>SMB meerdere kanalen wordt niet geactiveerd.
+
+### <a name="cause"></a>Oorzaak
+
+Recente wijzigingen in de configuratie-instellingen van SMB meerdere kanalen zonder opnieuw koppelen.
+
+### <a name="solution"></a>Oplossing
+ 
+-   Nadat alle wijzigingen in de Windows SMB-client of de SMB-instellingen voor meerdere kanalen zijn geconfigureerd, moet u de share ontkoppelen, 60 seconden wachten en de share opnieuw koppelen om het multi kanaal te activeren.
+-   Voor Windows client-besturings systeem genereren IO-belasting met hoge wachtrij diepte wachtrij diepte = 8, bijvoorbeeld het kopiëren van een bestand om SMB meerdere kanalen te activeren.  Voor het besturings systeem van de server wordt SMB meerdere kanalen geactiveerd met wachtrij diepte = 1. Dit betekent dat zodra u een IO-bewerking naar de share start.
+
+## <a name="high-latency-on-web-sites-hosted-on-file-shares"></a>Hoge latentie op websites die worden gehost op bestands shares 
+
+### <a name="cause"></a>Oorzaak  
+
+Een hoog aantal bericht wijzigingen in bestands shares kan leiden tot aanzienlijke hoge latentie. Dit gebeurt meestal met websites die worden gehost op bestands shares met een diepe geneste mapstructuur. Een typisch scenario is een door IIS gehoste webtoepassing waarbij bestands wijzigings meldingen worden ingesteld voor elke directory in de standaard configuratie. Elke wijziging (ReadDirectoryChangesW) op de share die door de SMB-client wordt geregistreerd, wordt een wijzigings melding van de bestands service naar de client verzonden, waardoor systeem bronnen worden gebruikt. het probleem verloopt met het aantal wijzigingen. Dit kan ertoe leiden dat delen worden beperkt en dus resulteren in een hogere latentie van de client zijde. 
+
+U kunt de metrische gegevens van Azure in de portal gebruiken om te bevestigen. 
+
+1. Ga in het Azure Portal naar uw opslag account. 
+1. Selecteer in het linkermenu, onder bewaking, metrische gegevens. 
+1. Selecteer bestand als metrische naam ruimte voor het bereik van uw opslag account. 
+1. Selecteer trans acties als metrische gegevens. 
+1. Voeg een filter toe voor ResponseType en controleer of er aanvragen zijn met een antwoord code van SuccessWithThrottling (voor SMB) of ClientThrottlingError (voor REST).
+
+### <a name="solution"></a>Oplossing 
+
+- Als de melding voor bestands wijzigingen niet wordt gebruikt, schakelt u de bestands wijzigings melding uit (voor keur).
+    - [Melding voor bestands wijzigingen uitschakelen](https://support.microsoft.com/help/911272/fix-asp-net-2-0-connected-applications-on-a-web-site-may-appear-to-sto) door FCNMode bij te werken. 
+    - Werk het polling interval van het IIS-werk proces (W3WP) bij naar 0 door `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\W3SVC\Parameters\ConfigPollMilliSeconds ` in uw REGI ster in te stellen en het W3wp-proces opnieuw te starten. Zie [algemene register sleutels die worden gebruikt door een groot aantal IIS-onderdelen](/troubleshoot/iis/use-registry-keys#registry-keys-that-apply-to-iis-worker-process-w3wp)voor meer informatie over deze instelling.
+- De frequentie verhogen van het polling-interval voor bestands wijzigings meldingen om het volume te verminderen.
+    - Werk het polling interval van het W3WP werk proces bij naar een hogere waarde (bijvoorbeeld 10mins of 30mins) op basis van uw vereiste. Stel `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\W3SVC\Parameters\ConfigPollMilliSeconds ` [in het REGI ster in](/troubleshoot/iis/use-registry-keys#registry-keys-that-apply-to-iis-worker-process-w3wp) en start het W3wp-proces opnieuw.
+- Als de toegewezen fysieke map van uw website geneste mapstructuur heeft, kunt u proberen het bereik van de bestands wijzigings melding te beperken om het meldings volume te verminderen.
+    - IIS gebruikt standaard configuratie van Web.config-bestanden in de fysieke map waaraan de virtuele map is toegewezen, evenals in onderliggende mappen in die fysieke map. Als u geen Web.config-bestanden in onderliggende directory's wilt gebruiken, geeft u False op voor het kenmerk allowSubDirConfig in de virtuele map. Meer informatie vindt u [hier](/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#virtual-directories). 
+
+Stel de instelling ' allowSubDirConfig ' van de virtuele IIS-map in Web.Config in op false om toegewezen fysieke onderliggende mappen van het bereik uit te sluiten.  
+
 ## <a name="how-to-create-an-alert-if-a-file-share-is-throttled"></a>Een waarschuwing maken als een bestands share wordt beperkt
 
 1. Ga in het Azure Portal naar uw opslag account.
 1. Selecteer in de sectie **controle** de optie **waarschuwingen** en selecteer vervolgens **nieuwe waarschuwings regel**.
-1. Selecteer **Resource bewerken** , selecteer het **Bestands bron type** voor het opslag account en selecteer vervolgens **gereed**. Als de naam van het opslag account bijvoorbeeld *Contoso* is, selecteert u de resource contoso/file.
+1. Selecteer **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en selecteer vervolgens **gereed**. Als de naam van het opslag account bijvoorbeeld *Contoso* is, selecteert u de resource contoso/file.
 1. Selecteer **voor waarde selecteren** om een voor waarde toe te voegen.
 1. Selecteer in de lijst met signalen die worden ondersteund voor het opslag account de metrische gegevens van de **trans acties** .
 1. Selecteer in het deel venster **signaal logica configureren** in de vervolg keuzelijst **dimensie naam** de optie **antwoord type**.
 1. Selecteer in de vervolg keuzelijst **dimensie waarden** **SUCCESSWITHTHROTTLING** (voor SMB) of **ClientThrottlingError** (voor rest).
 
    > [!NOTE]
-   > Als noch de **SuccessWithThrottling** noch de **ClientThrottlingError** -dimensie waarde wordt weer gegeven, betekent dit dat de resource niet is beperkt. Als u de dimensie waarde wilt toevoegen, klikt u naast de vervolg keuzelijst **dimensie waarden** op **aangepaste waarde toevoegen** , voert u **SuccessWithThrottling** of **ClientThrottlingError** in, selecteert u **OK** en herhaalt u stap 7.
+   > Als noch de **SuccessWithThrottling** noch de **ClientThrottlingError** -dimensie waarde wordt weer gegeven, betekent dit dat de resource niet is beperkt. Als u de dimensie waarde wilt toevoegen, klikt u naast de vervolg keuzelijst **dimensie waarden** op **aangepaste waarde toevoegen**, voert u **SuccessWithThrottling** of **ClientThrottlingError** in, selecteert u **OK** en herhaalt u stap 7.
 
 1. Selecteer in de vervolg keuzelijst **dimensie naam** de optie **Bestands share**.
 1. Selecteer in de vervolg keuzelijst **dimensie waarden** de bestands share of shares waarop u een waarschuwing wilt ontvangen.
@@ -189,7 +237,7 @@ Meer dan de verwachte latentie bij het openen van Azure-bestands shares voor I/O
    > [!NOTE]
    > Als de bestands share een standaard bestands share is, selecteert u **alle huidige en toekomstige waarden**. In de vervolg keuzelijst dimensie waarden worden de bestands shares niet weer gegeven omdat er geen metrische gegevens beschikbaar zijn voor standaard bestands shares. Het beperken van waarschuwingen voor standaard bestands shares wordt geactiveerd als een bestands share in het opslag account wordt beperkt en de waarschuwing niet identificeert welke bestands share is beperkt. Omdat metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, wordt u aangeraden één bestands share per opslag account te gebruiken.
 
-1. Definieer de waarschuwings parameters door de **drempel waarde** , de **operator** , **de granulariteit van de aggregatie** en de **frequentie van de evaluatie** in te voeren en selecteer vervolgens **gereed**.
+1. Definieer de waarschuwings parameters door de **drempel waarde**, de **operator**, **de granulariteit van de aggregatie** en de **frequentie van de evaluatie** in te voeren en selecteer vervolgens **gereed**.
 
     > [!TIP]
     > Als u een statische drempel waarde gebruikt, kan het meet diagram u helpen een redelijke drempelwaarde te bepalen als de bestands share momenteel wordt beperkt. Als u een dynamische drempel waarde gebruikt, worden de berekende drempel waarden in de grafiek weer gegeven op basis van recente gegevens.
@@ -204,7 +252,7 @@ Zie [overzicht van waarschuwingen in Microsoft Azure]( https://docs.microsoft.co
 
 1. Ga in het Azure Portal naar uw opslag account.
 1. Selecteer in de sectie **controle** de optie **waarschuwingen** en selecteer vervolgens **nieuwe waarschuwings regel**.
-1. Selecteer **Resource bewerken** , selecteer het **Bestands bron type** voor het opslag account en selecteer vervolgens **gereed**. Als de naam van het opslag account bijvoorbeeld *Contoso* is, selecteert u de resource contoso/file.
+1. Selecteer **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en selecteer vervolgens **gereed**. Als de naam van het opslag account bijvoorbeeld *Contoso* is, selecteert u de resource contoso/file.
 1. Selecteer **voor waarde selecteren** om een voor waarde toe te voegen.
 1. Selecteer in de lijst met signalen die worden ondersteund voor het opslag **account de waarde** voor uitgaand verkeer.
 
@@ -213,16 +261,16 @@ Zie [overzicht van waarschuwingen in Microsoft Azure]( https://docs.microsoft.co
 
 1. Schuif omlaag. Selecteer in de vervolg keuzelijst **dimensie naam** de optie **Bestands share**.
 1. Selecteer in de vervolg keuzelijst **dimensie waarden** de bestands share of shares waarop u een waarschuwing wilt ontvangen.
-1. Definieer de waarschuwings parameters door waarden te selecteren in de **operator** , **drempel waarde** , **aggregatie granulatie** en **frequentie van** vervolg keuzelijsten en selecteer vervolgens **gereed**.
+1. Definieer de waarschuwings parameters door waarden te selecteren in de **operator**, **drempel waarde**, **aggregatie granulatie** en **frequentie van** vervolg keuzelijsten en selecteer vervolgens **gereed**.
 
    De metrische gegevens voor uitgang, binnenkomen en trans acties worden per minuut weer gegeven, maar u hebt een uitgangs-, ingangs-en I/O per seconde ingericht. Als uw ingerichte uitvoer bijvoorbeeld 90 &nbsp; mebibytes per seconde (MIB/s) is en u wilt dat uw drempel waarde 80 &nbsp; procent van de ingerichte uitvoer is, selecteert u de volgende waarschuwings parameters: 
-   - Voor **drempel waarde** : *75497472* 
-   - Voor **operator** : *groter dan of gelijk aan*
-   - Voor **aggregatie type** : *gemiddeld*
+   - Voor **drempel waarde**: *75497472* 
+   - Voor **operator**: *groter dan of gelijk aan*
+   - Voor **aggregatie type**: *gemiddeld*
    
    Afhankelijk van hoe ruis uw waarschuwing moet zijn, kunt u ook waarden voor **aggregatie granulatie** en **frequentie van de evaluatie** selecteren. Als u bijvoorbeeld wilt dat uw waarschuwing de gemiddelde ingang gedurende de periode van één uur bekijkt en u wilt dat uw waarschuwings regel elk uur wordt uitgevoerd, selecteert u het volgende:
-   - Voor **granulatie van aggregatie** : *1 uur*
-   - Voor de **frequentie van de evaluatie** : *1 uur*
+   - Voor **granulatie van aggregatie**: *1 uur*
+   - Voor de **frequentie van de evaluatie**: *1 uur*
 
 1. Selecteer **actie groep selecteren** en voeg vervolgens een actie groep (bijvoorbeeld E-mail of SMS) toe aan de waarschuwing door een bestaande actie groep te selecteren of door een nieuwe te maken.
 1. Voer de details van de waarschuwing in, zoals naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
@@ -232,9 +280,9 @@ Zie [overzicht van waarschuwingen in Microsoft Azure]( https://docs.microsoft.co
     > - Als u een melding wilt ontvangen dat uw Premium-bestands share bijna wordt beperkt *vanwege de ingerichte* inkomende inkomen, volgt u de voor gaande instructies, maar met de volgende wijziging:
     >    - Selecteer in stap 5 de **ingangs** metriek in **plaats van** uitgaand.
     >
-    > - Als u een melding wilt ontvangen dat uw Premium-bestands share bijna wordt beperkt *vanwege ingerichte IOPS* , volgt u de voor gaande instructies, maar met de volgende wijzigingen:
+    > - Als u een melding wilt ontvangen dat uw Premium-bestands share bijna wordt beperkt *vanwege ingerichte IOPS*, volgt u de voor gaande instructies, maar met de volgende wijzigingen:
     >    - In stap 5 selecteert u de metrische gegevens van de **trans actie** in **plaats van een** aflopende waarde.
-    >    - In stap 10 is de enige optie voor **aggregatie type** *totaal*. De drempel waarde is daarom afhankelijk van de geselecteerde aggregatie granulatie. Als u bijvoorbeeld wilt dat uw drempel 80 &nbsp; procent van de ingerichte basis lijn IOPS is en u *1 uur* selecteert voor de **granulariteit van aggregatie** , is uw **drempel waarde** uw basislijn IOPS (in bytes) &times; &nbsp; 0,8 &times; &nbsp; 3600. 
+    >    - In stap 10 is de enige optie voor **aggregatie type** *totaal*. De drempel waarde is daarom afhankelijk van de geselecteerde aggregatie granulatie. Als u bijvoorbeeld wilt dat uw drempel 80 &nbsp; procent van de ingerichte basis lijn IOPS is en u *1 uur* selecteert voor de **granulariteit van aggregatie**, is uw **drempel waarde** uw basislijn IOPS (in bytes) &times; &nbsp; 0,8 &times; &nbsp; 3600. 
 
 Zie [overzicht van waarschuwingen in Microsoft Azure]( https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)voor meer informatie over het configureren van waarschuwingen in azure monitor.
 

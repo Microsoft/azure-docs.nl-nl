@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 087ee796fbd3c0563b8019a062acab9c7ad80bb1
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 2ffc524c14b9ba281d7e386f7f8c726093f11dbf
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579382"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661015"
 ---
 # <a name="query-azure-cosmos-db-data-with-serverless-sql-pool-in-azure-synapse-link-preview"></a>Query's uitvoeren op Azure Cosmos DB gegevens met serverloze SQL-groep in azure Synapse-koppeling (preview-versie)
 
@@ -25,7 +25,7 @@ Voor het uitvoeren van query's in Azure Cosmos DB wordt de volledige [selectie](
 In dit artikel leert u hoe u een query kunt schrijven met een serverloze SQL-groep waarmee gegevens worden opgevraagd van Azure Cosmos DB containers die Synapse-koppeling zijn ingeschakeld. In [deze](./tutorial-data-analyst.md) zelf studie vindt u meer informatie over het bouwen van SERVERloze SQL-pool weergaven over Azure Cosmos DB containers en het verbinden ervan met Power bi modellen. 
 
 > [!IMPORTANT]
-> In deze zelf studie wordt een container met [Azure Cosmos DB goed gedefinieerd schema](../../cosmos-db/analytical-store-introduction.md#schema-representation)gebruikt. De query-ervaring die serverloze SQL-pool biedt voor [Azure Cosmos DB schema met volledige betrouw baarheid](#full-fidelity-schema) is tijdelijk gedrag dat wordt gewijzigd op basis van de feedback van de preview-versie. Vertrouw niet op het schema van de functie van de resultatenset `OPENROWSET` zonder `WITH` component waarmee gegevens worden gelezen uit een container met een volledig coderings schema, omdat de query-ervaring kan worden gewijzigd en uitgelijnd met een goed gedefinieerd schema. Plaats uw feedback op het [Feedback forum van Azure Synapse Analytics](https://feedback.azure.com/forums/307516-azure-synapse-analytics) of neem contact op met het [product team van Synapse link](mailto:cosmosdbsynapselink@microsoft.com) om feedback te geven.
+> In deze zelf studie wordt een container met een [Azure Cosmos DB goed gedefinieerd schema](../../cosmos-db/analytical-store-introduction.md#schema-representation)gebruikt. De query-ervaring dat de serverloze SQL-pool voorziet in een [Azure Cosmos DB volledig betrouw bare schema](#full-fidelity-schema) is tijdelijk gedrag dat wordt gewijzigd op basis van de feedback van de preview-versie. Vertrouw niet op het schema van de resultatenset van de `OPENROWSET` functie zonder de- `WITH` component waarmee gegevens worden gelezen uit een container met een schema met volledige betrouw baarheid, omdat de query-ervaring mogelijk kan worden uitgelijnd en wordt gewijzigd op basis van het goed gedefinieerde schema. Post uw feedback in het [Feedback forum van Azure Synapse Analytics](https://feedback.azure.com/forums/307516-azure-synapse-analytics) of neem contact op met het [product team](mailto:cosmosdbsynapselink@microsoft.com) van de Synapse-koppeling om feedback te geven.
 
 ## <a name="overview"></a>Overzicht
 

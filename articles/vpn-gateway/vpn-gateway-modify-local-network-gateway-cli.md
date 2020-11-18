@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: d5656b60b3c94720ad0a5952f8f6524f90dc6c17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aadb2107cd009ac58cf8edb12853b10a5a0e3677
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89392626"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659995"
 ---
 # <a name="modify-local-network-gateway-settings-using-the-azure-cli"></a>Instellingen voor lokale netwerk gateway wijzigen met behulp van Azure CLI
 
@@ -27,7 +27,7 @@ Soms worden de instellingen voor het adres voorvoegsel of het IP-adres van de ga
 
 ## <a name="before-you-begin"></a><a name="before"></a>Voordat u begint
 
-Installeer de meest recente versie van de CLI-opdrachten (2,0 of hoger). Zie [Azure CLI 2.0 installeren](https://docs.microsoft.com/cli/azure/install-azure-cli) voor meer informatie over het installeren van de CLI-opdrachten.
+Installeer de nieuwste versie van de CLI-opdrachten (2.0 of hoger). Zie [Azure CLI 2.0 installeren](/cli/azure/install-azure-cli) voor meer informatie over het installeren van de CLI-opdrachten.
 
 [!INCLUDE [CLI-login](../../includes/vpn-gateway-cli-login-include.md)]
 
@@ -42,4 +42,3 @@ Installeer de meest recente versie van de CLI-opdrachten (2,0 of hoger). Zie [Az
 ## <a name="next-steps"></a>Volgende stappen
 
 U kunt uw gateway verbinding controleren. Zie [een gateway verbinding controleren](vpn-gateway-verify-connection-resource-manager.md).
-

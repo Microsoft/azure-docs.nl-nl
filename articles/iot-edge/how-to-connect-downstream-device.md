@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-js
-ms.openlocfilehash: 979ed3d21986ad43d805446a520a59333a6798ed
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 78600b7b57a7c30fc609434a700f13fa21e079ce
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149320"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659638"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Een downstreamapparaat verbinden met een Azure IoT Edge-gateway
 
@@ -63,7 +63,7 @@ Als u een downstream-apparaat wilt verbinden met een IoT Edge gateway, hebt u tw
 
 De uitdaging van het veilig verbinden van downstream-apparaten met IoT Edge is net hetzelfde als elke andere beveiligde client/server-communicatie die plaatsvindt via internet. Een client en een server communiceren veilig via internet via [trans port Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security). TLS is gebouwd met behulp van standaard-constructies met een [open bare-sleutel infrastructuur (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure) met de naam certificaten. TLS is een redelijk gepaarde specificatie en behandelt een breed scala aan onderwerpen met betrekking tot het beveiligen van twee eind punten. In deze sectie vindt u een overzicht van de concepten die relevant zijn voor u om apparaten veilig te verbinden met een IoT Edge gateway.
 
-Wanneer een client verbinding maakt met een server, presenteert de server een keten van certificaten, die de *server certificaat keten*wordt genoemd. Een certificaat keten omvat doorgaans een basis certificaat voor certificerings instanties (CA), een of meer tussenliggende CA-certificaten en uiteindelijk het server certificaat zelf. Een-client brengt een vertrouwens relatie met een server tot stand door de hele server certificaat keten te controleren. Deze client validatie van de server certificaat keten wordt de *validatie van de server keten*genoemd. De-client vraagt de server om te bewijzen dat de persoonlijke sleutel die is gekoppeld aan het server certificaat in een proces *wordt genoemd.* De combi natie van validatie van de server keten en het bewijs van bezit wordt *Server verificatie*genoemd. Voor het valideren van een server certificaat keten heeft een client een kopie nodig van het basis-CA-certificaat dat is gebruikt voor het maken (of uitgeven) van het server certificaat. Normaal gesp roken wordt bij het maken van verbinding met websites een browser vooraf geconfigureerd met veelgebruikte CA-certificaten, zodat de client naadloos proces heeft.
+Wanneer een client verbinding maakt met een server, presenteert de server een keten van certificaten, die de *server certificaat keten* wordt genoemd. Een certificaat keten omvat doorgaans een basis certificaat voor certificerings instanties (CA), een of meer tussenliggende CA-certificaten en uiteindelijk het server certificaat zelf. Een-client brengt een vertrouwens relatie met een server tot stand door de hele server certificaat keten te controleren. Deze client validatie van de server certificaat keten wordt de *validatie van de server keten* genoemd. De-client vraagt de server om te bewijzen dat de persoonlijke sleutel die is gekoppeld aan het server certificaat in een proces *wordt genoemd.* De combi natie van validatie van de server keten en het bewijs van bezit wordt *Server verificatie* genoemd. Voor het valideren van een server certificaat keten heeft een client een kopie nodig van het basis-CA-certificaat dat is gebruikt voor het maken (of uitgeven) van het server certificaat. Normaal gesp roken wordt bij het maken van verbinding met websites een browser vooraf geconfigureerd met veelgebruikte CA-certificaten, zodat de client naadloos proces heeft.
 
 Wanneer een apparaat verbinding maakt met Azure IoT Hub, is het apparaat de client en is de IoT Hub-Cloud service de server. De IoT Hub Cloud service wordt ondersteund door een basis-CA-certificaat met de naam **Baltimore Cyber Trust Root**, dat openbaar beschikbaar is en veel wordt gebruikt. Omdat de IoT Hub CA-certificaat al op de meeste apparaten is geïnstalleerd, gebruiken veel TLS-implementaties (OpenSSL, Schannel, LibreSSL) deze automatisch tijdens de validatie van het server certificaat. Een apparaat dat verbinding maakt met IoT Hub kan problemen ondervinden met het proberen verbinding te maken met een IoT Edge gateway.
 
@@ -109,7 +109,7 @@ import-certificate  <file path>\azure-iot-test-only.root.ca.cert.pem -certstorel
 U kunt certificaten ook installeren met het hulp programma **certlm** :
 
 1. Zoek in het menu Start naar en selecteer **computer certificaten beheren**. Een hulp programma met de naam **certlm** wordt geopend.
-2. Navigeer naar **certificaten-**  >  **vertrouwde basis certificerings instanties**op de lokale computer.
+2. Navigeer naar **certificaten-**  >  **vertrouwde basis certificerings instanties** op de lokale computer.
 3. Klik met de rechter muisknop op **certificaten** en selecteer **alle taken**  >  **importeren**. De wizard Certificaat importeren moet worden gestart.
 4. Volg de stappen als gericht en importeer het certificaat bestand `<path>/azure-iot-test-only.root.ca.cert.pem` . Als u klaar bent, ziet u het bericht ' is geïmporteerd '.
 
@@ -168,11 +168,15 @@ In deze sectie wordt een voorbeeld toepassing geïntroduceerd om een Azure IoT C
 3. Werk in het bestand iotedge_downstream_device_sample. c de variabelen **Connections Tring** en **edge_ca_cert_path** bij.
 4. Raadpleeg de SDK-documentatie voor instructies over het uitvoeren van het voor beeld op het apparaat.
 
+
 De Azure IoT Device SDK voor C biedt een optie voor het registreren van een CA-certificaat bij het instellen van de client. Met deze bewerking wordt het certificaat nergens geïnstalleerd, maar wordt in plaats daarvan een teken reeks indeling gebruikt van het certificaat in het geheugen. Het opgeslagen certificaat wordt aan de onderliggende TLS-stack gegeven tijdens het tot stand brengen van een verbinding.
 
 ```C
 (void)IoTHubDeviceClient_SetOption(device_handle, OPTION_TRUSTED_CERT, cert_string);
 ```
+
+>[!NOTE]
+> De methode voor het registreren van een CA-certificaat bij het instellen van de client kan worden gewijzigd als een [beheerd](https://github.com/Azure/azure-iot-sdk-c#packages-and-libraries) pakket of bibliotheek wordt gebruikt. De [ARDUINO IDE-gebaseerde bibliotheek](https://github.com/azure/azure-iot-arduino) vereist bijvoorbeeld dat het CA-certificaat wordt toegevoegd aan een certificaten matrix die is gedefinieerd in een globaal [certificaat. c](https://github.com/Azure/azure-iot-sdk-c/blob/master/certs/certs.c) -bestand, in plaats van de bewerking te gebruiken `IoTHubDeviceClient_LL_SetOption` .  
 
 Als u op Windows-hosts geen OpenSSL of een andere TLS-bibliotheek gebruikt, wordt de SDK standaard gebruikt voor het gebruik van Schannel. Voor het werken met Schannel moet het IoT Edge basis-CA-certificaat in het Windows-certificaat archief worden geïnstalleerd en niet worden ingesteld met behulp van de `IoTHubDeviceClient_SetOption` bewerking.
 

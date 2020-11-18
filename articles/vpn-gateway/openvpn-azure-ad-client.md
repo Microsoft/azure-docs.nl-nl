@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/15/2020
 ms.author: alzam
-ms.openlocfilehash: 09d39acc867124acfd5c3c38d5c26053218972e7
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 7c2c1930b8f801db7f70baa5b713a641606be644
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92109099"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661168"
 ---
 # <a name="azure-active-directory-authentication-configure-a-vpn-client-for-p2s-openvpn-protocol-connections"></a>Azure Active Directory verificatie: een VPN-client configureren voor P2S OpenVPN-protocol verbindingen
 
@@ -66,7 +66,7 @@ Wanneer u een werk profiel hebt en dit moet worden gedistribueerd naar andere ge
 
     ![Scherm afbeelding met de geselecteerde knop toevoegen en de actie importeren gemarkeerd in de linkerbenedenhoek van het venster.](./media/openvpn-azure-ad-client/import/import1.jpg)
 
-2. Blader naar het profiel XML-bestand en selecteer het. Selecteer **openen**terwijl het bestand is geselecteerd.
+2. Blader naar het profiel XML-bestand en selecteer het. Selecteer **openen** terwijl het bestand is geselecteerd.
 
     ![Scherm opname van het geselecteerde profiel x m l-bestand.](./media/openvpn-azure-ad-client/import/import2.jpg)
 
@@ -160,7 +160,7 @@ Ja, met de [KB4577063](https://support.microsoft.com/help/4577063/windows-10-upd
 
 ### <a name="how-do-i-add-dns-suffixes-to-the-vpn-client"></a>Hoe kan ik DNS-achtervoegsels toevoegen aan de VPN-client?
 
-U kunt het gedownloade XML-profiel bestand wijzigen ** \<dnssuffixes> \<dnssufix> \</dnssufix> \</dnssuffixes> ** en de Tags toevoegen
+U kunt het gedownloade XML-profiel bestand wijzigen **\<dnssuffixes> \<dnssufix> \</dnssufix> \</dnssuffixes>** en de Tags toevoegen
 
 ```
 <azvpnprofile>
@@ -178,7 +178,7 @@ U kunt het gedownloade XML-profiel bestand wijzigen ** \<dnssuffixes> \<dnssufix
 
 ### <a name="how-do-i-add-custom-dns-servers-to-the-vpn-client"></a>Hoe kan ik aangepaste DNS-servers toevoegen aan de VPN-client?
 
-U kunt het gedownloade XML-profiel bestand wijzigen ** \<dnsservers> \<dnsserver> \</dnsserver> \</dnsservers> ** en de Tags toevoegen
+U kunt het gedownloade XML-profiel bestand wijzigen **\<dnsservers> \<dnsserver> \</dnsserver> \</dnsservers>** en de Tags toevoegen
 
 ```
 <azvpnprofile>
@@ -194,12 +194,12 @@ U kunt het gedownloade XML-profiel bestand wijzigen ** \<dnsservers> \<dnsserver
 ```
 
 > [!NOTE]
-> De OpenVPN Azure AD-client maakt gebruik van NRPT-vermeldingen (DNS Name Resolution Policy Table), wat betekent dat de DNS-servers niet worden vermeld onder de uitvoer van `ipconfig /all` . Raadpleeg [Get-DnsClientNrptPolicy](https://docs.microsoft.com/powershell/module/dnsclient/get-dnsclientnrptpolicy?view=win10-ps&preserve-view=true) in Power shell om uw DNS-instellingen in gebruik te bevestigen.
+> De OpenVPN Azure AD-client maakt gebruik van NRPT-vermeldingen (DNS Name Resolution Policy Table), wat betekent dat de DNS-servers niet worden vermeld onder de uitvoer van `ipconfig /all` . Raadpleeg [Get-DnsClientNrptPolicy](/powershell/module/dnsclient/get-dnsclientnrptpolicy?preserve-view=true&view=win10-ps) in Power shell om uw DNS-instellingen in gebruik te bevestigen.
 >
 
 ### <a name="how-do-i-add-custom-routes-to-the-vpn-client"></a>Hoe kan ik aangepaste routes toevoegen aan de VPN-client?
 
-U kunt het gedownloade XML-profiel bestand wijzigen ** \<includeroutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</includeroutes> ** en de Tags toevoegen
+U kunt het gedownloade XML-profiel bestand wijzigen **\<includeroutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</includeroutes>** en de Tags toevoegen
 
 ```
 <azvpnprofile>
@@ -217,7 +217,7 @@ U kunt het gedownloade XML-profiel bestand wijzigen ** \<includeroutes> \<route>
 
 ### <a name="how-do-i-block-exclude-routes-from-the-vpn-client"></a>Hoe kan ik blok keren (uitsluiten) routes van de VPN-client?
 
-U kunt het gedownloade XML-profiel bestand wijzigen ** \<excluderoutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</excluderoutes> ** en de Tags toevoegen
+U kunt het gedownloade XML-profiel bestand wijzigen **\<excluderoutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</excluderoutes>** en de Tags toevoegen
 
 ```
 <azvpnprofile>

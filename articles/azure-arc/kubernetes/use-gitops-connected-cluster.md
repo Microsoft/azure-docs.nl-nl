@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: GitOps gebruiken voor een Azure Arc-cluster configuratie (preview-versie)
 keywords: GitOps, Kubernetes, K8s, azure, Arc, Azure Kubernetes service, containers
-ms.openlocfilehash: 1a8839c2463494ba0e165bf9e1a5d22245fac8df
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: ce6c754c308d2979db9b1b8eb36e7858e8a91c3c
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371253"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659791"
 ---
 # <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Configuraties implementeren met behulp van GitOps op het Kubernetes-cluster waarvoor Arc is ingeschakeld (preview)
 
@@ -99,7 +99,7 @@ Dit zijn de ondersteunde scenario's voor de waarde van de para meter---Repositor
 | Scenario | Indeling | Beschrijving |
 | ------------- | ------------- | ------------- |
 | Openbaar Git-opslag plaats | http [s]://Server/repo.git of git://server/repo.git   | Openbaar Git-opslag plaats  |
-| Privé Git opslag plaats – SSH-sleutels-gemaakt op basis van stromen | SSH://[user@] Server/opslag plaats. git of [user@] server: opslag plaats. git | De open bare sleutel die wordt gegenereerd door stroom moet worden toegevoegd aan het gebruikers account of opslag plaats in uw Git-service provider. [Hier](#apply-configuration-from-a-private-git-repository) vindt u meer informatie |
+| Privé Git opslag plaats – SSH-sleutels-gemaakt op basis van stromen | SSH://[user@] Server/opslag plaats. git of [user@] server: opslag plaats. git | De open bare sleutel die wordt gegenereerd door stroom moet worden toegevoegd aan het gebruikers account in uw Git-service provider. Als de sleutel Deploy wordt toegevoegd aan opslag plaats in plaats van met een gebruikers account, gebruikt u `git@` in plaats van `user@` . [Hier](#apply-configuration-from-a-private-git-repository) vindt u meer informatie |
 
 Deze scenario's worden ondersteund door stroom, maar nog niet door sourceControlConfiguration.
 
@@ -222,16 +222,26 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 3. Selecteer de configuratie die gebruikmaakt van de persoonlijke Git-opslag plaats.
 4. Kopieer in het context venster dat wordt geopend onder aan het venster de **open bare sleutel van de opslag plaats**.
 
-**De open bare sleutel toevoegen als een Deploy-sleutel voor de Git-opslag plaats**
+Als u GitHub gebruikt, kunt u een van de volgende twee opties gebruiken:
 
-1. Open GitHub, navigeer naar uw opslag plaats, naar **instellingen**en **Implementeer sleutels**
-2. Klik op  **Deploy-sleutel toevoegen**
+**Optie 1: de open bare sleutel toevoegen aan uw gebruikers account**
+
+1. Open GitHub en klik op uw profiel pictogram in de rechter bovenhoek van de pagina.
+2. Klik op **instellingen**
+3. Klik op **SSH-en GPG-sleutels**
+4. Klik op **nieuwe SSH-sleutel**
+5. Een titel opgeven
+6. Plak de open bare sleutel (min eventuele omringende aanhalings tekens)
+7. Klik op **SSH-sleutel toevoegen**
+
+**Optie 2: de open bare sleutel toevoegen als een Deploy-sleutel voor de Git-opslag plaats**
+
+1. Open GitHub, navigeer naar uw opslag plaats, naar **instellingen** en **Implementeer sleutels**
+2. Klik op **Deploy-sleutel toevoegen**
 3. Een titel opgeven
 4. **Schrijf toegang toestaan** inschakelen
 5. Plak de open bare sleutel (min eventuele omringende aanhalings tekens)
 6. Klik op **sleutel toevoegen**
-
-Zie de documentatie van GitHub voor meer informatie over het beheren van deze sleutels.
 
 **Als u een Azure DevOps-opslag plaats gebruikt, voegt u de sleutel toe aan uw SSH-sleutels**
 

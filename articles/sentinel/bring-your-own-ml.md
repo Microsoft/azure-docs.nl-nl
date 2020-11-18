@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: yelevin
-ms.openlocfilehash: 17c0ba7306ab4cc51fe8bbe3709d5b6bc85fa487
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6a891a301d5869603a7d90d28bb9063d7d5bdb1d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91344649"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660573"
 ---
 # <a name="bring-your-own-machine-learning-ml-into-azure-sentinel"></a>Breng uw eigen Machine Learning (ML) over naar Azure Sentinel
 
@@ -32,7 +32,7 @@ ML detectie modellen kunnen worden aangepast aan afzonderlijke omgevingen en aan
 
 ## <a name="what-is-the-bring-your-own-machine-learning-byo-ml-platform"></a>Wat is het gebruik van uw eigen Machine Learning-platform (BYO-ML)?
 
-Voor organisaties met een capaciteit van meer dan het bouwen van aangepaste ML-modellen voor hun unieke bedrijfs behoeften bieden we het **BYO-ml platform**. Het platform maakt gebruik van de [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/what-is-azure-databricks) / [Apache Spark](http://spark.apache.org/) omgeving en Jupyter-notebooks voor het produceren van de ml-omgeving. Deze bevat de volgende onderdelen:
+Voor organisaties met een capaciteit van meer dan het bouwen van aangepaste ML-modellen voor hun unieke bedrijfs behoeften bieden we het **BYO-ml platform**. Het platform maakt gebruik van de [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks) / [Apache Spark](http://spark.apache.org/) omgeving en Jupyter-notebooks voor het produceren van de ml-omgeving. Deze bevat de volgende onderdelen:
 
 - een BYO-ML-pakket, dat bibliotheken bevat die u helpen bij het openen van gegevens en het terugbrengen van de resultaten naar Log Analytics (LA), zodat u de resultaten kunt integreren met uw detectie, onderzoek en jacht. 
 
@@ -95,7 +95,7 @@ Nu u bekend bent met de belangrijkste onderdelen van het BYO-ML platform, is hie
 
 ### <a name="setup-the-databricksspark-environment"></a>De Databricks/Spark-omgeving instellen
 
-Als u er nog geen hebt, moet u uw eigen Databricks-omgeving instellen. Raadpleeg het [Databricks Snelstartgids](https://docs.microsoft.com/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal?tabs=azure-portal) -document voor instructies.
+Als u er nog geen hebt, moet u uw eigen Databricks-omgeving instellen. Raadpleeg het [Databricks Snelstartgids](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal?tabs=azure-portal) -document voor instructies.
 
 ### <a name="auto-export-instruction"></a>Instructie voor automatisch exporteren
 
@@ -103,7 +103,7 @@ Als u aangepaste ML-modellen wilt maken op basis van uw eigen gegevens in Sentin
 
 Voor dit voor beeld moet u uw trainings gegevens voor het logboek bestands share toegang hebben in de Azure Blob-opslag. De indeling van de gegevens wordt gedocumenteerd in het notitie blok en de bibliotheken.
 
-U kunt uw gegevens automatisch exporteren vanuit Log Analytics met behulp van de [Azure-opdracht regel interface (CLI)](https://docs.microsoft.com/cli/azure/monitor/log-analytics). 
+U kunt uw gegevens automatisch exporteren vanuit Log Analytics met behulp van de [Azure-opdracht regel interface (CLI)](/cli/azure/monitor/log-analytics). 
 
 U moet de rol **Inzender** in uw log Analytics-werk ruimte, uw opslag account en uw EventHub-bron toewijzen om de opdrachten uit te voeren. 
 
@@ -159,13 +159,13 @@ Zodra u het Score item hebt gepland, kunt u de module in het Score notitieblok g
 
 Ga terug naar uw Azure-Sentinel-Portal om uw gescoorde resultaten te bekijken met gerelateerde logboek gegevens. In **logboeken** > aangepaste logboeken ziet u de resultaten in de **AnomalousResourceAccessResult_CL** tabel (of uw eigen aangepaste tabel naam). U kunt deze resultaten gebruiken om uw onderzoek en jacht te verbeteren.
 
-:::image type="content" source="./media/bring-your-own-ml/anomalous-resource-access-logs.png" alt-text="machine learning Framework":::
+:::image type="content" source="./media/bring-your-own-ml/anomalous-resource-access-logs.png" alt-text="afwijkende bron toegangs logboeken":::
 
 ### <a name="build-custom-analytics-rule-with-ml-results"></a>Aangepaste analyse regel bouwen met ML-resultaten
 
 Zodra u de resultaten van de ML hebt bevestigd in de tabel met aangepaste logboeken en u tevreden bent met de betrouw baarheid van de scores, kunt u een detectie maken op basis van de resultaten. Ga naar **Analytics** vanuit de Azure-Sentinel-Portal en [Maak een nieuwe detectie regel](tutorial-detect-threats-custom.md). Hieronder ziet u een voor beeld waarin de query wordt gebruikt om de detectie te maken.
 
-:::image type="content" source="./media/bring-your-own-ml/create-byo-ml-analytics-rule.png" alt-text="machine learning Framework":::
+:::image type="content" source="./media/bring-your-own-ml/create-byo-ml-analytics-rule.png" alt-text="aangepaste analyse regel maken voor B-O M L detecties":::
 
 ### <a name="view-and-respond-to-incidents"></a>Incidenten weer geven en erop reageren
 Zodra u de analyse regel hebt ingesteld op basis van de MILLILITERs resultaten, wordt er een incident gegenereerd en weer gegeven op de pagina **incidenten** in azure Sentinel als er resultaten boven de drempel waarde vallen die u hebt ingesteld in de query. 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 09/11/2020
-ms.openlocfilehash: e72acb532a33d0b3751bb8ad5051b1a3df4d7514
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 584e1e943f215aa4a69368fb71cb3053b1444a01
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491474"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660216"
 ---
 # <a name="common-questions-about-the-microsoft-commercial-marketplace"></a>Veelgestelde vragen over de micro soft Commercial Marketplace
 
@@ -87,7 +87,7 @@ De commerciële Marketplace werkt met behulp van een agentuur model. De klant on
 
 Als uitgever kunt u de gebruiks voorwaarden voor uw software oplossing instellen, die klanten moeten accepteren als onderdeel van de aankoop stroom. Om alles te vereenvoudigen en te versnellen, bieden we een standaard contract dat u kunt gebruiken in uw voor waarden. Hierdoor kunnen klanten het standaard contract één keer bekijken, goed keuring van juridische en kopende teams verkrijgen en vervolgens zich richten op de wijzigingen voor elke aanbieding.
 
-U kunt wijzigingen aanbrengen die van toepassing zijn op alle klanten, of u kunt de wijzigingen specifiek door voeren voor bepaalde klanten. U kunt uw voor waarden ook volledig aanpassen, die kunnen worden ingevoerd in een tekstvak of worden gehost op een website die wordt weer gegeven als een webadres.
+U kunt wijzigingen aanbrengen die van toepassing zijn op alle klanten, of u kunt de wijzigingen specifiek door voeren voor bepaalde klanten. U kunt de voor waarden ook volledig aanpassen, die kunnen worden ingevoerd in een tekstvak in partner centrum.
 
 Zie voor meer informatie [het standaard contract voor de micro soft Commercial Marketplace](standard-contract.md).
 
@@ -99,10 +99,10 @@ Ja, de Azure Government Marketplace is beschikbaar in Azure Government regio's e
 
 Er zijn vier relevante rollen die van toepassing zijn op Partner Center-toegang.
 
-- *Manager* : biedt machtigingen voor het beheren van partner centrum-gebruikers in de Directory en het maken en bijwerken van aanbiedingen.
-- *Ontwikkelaar* : Hiermee kan een gebruiker aanbiedingen maken en bijwerken.
-- *Financiële bijdrager* : biedt machtigingen voor het weer geven van uitbetalings rapportage.
-- *Eigenaar* : kan het uitbetalings account en het BTW-profiel instellen. De gebruiker die de uitgever overeenkomst heeft geaccepteerd, wordt standaard de eigenaar.
+- *Manager*: biedt machtigingen voor het beheren van partner centrum-gebruikers in de Directory en het maken en bijwerken van aanbiedingen.
+- *Ontwikkelaar*: Hiermee kan een gebruiker aanbiedingen maken en bijwerken.
+- *Financiële bijdrager*: biedt machtigingen voor het weer geven van uitbetalings rapportage.
+- *Eigenaar*: kan het uitbetalings account en het BTW-profiel instellen. De gebruiker die de uitgever overeenkomst heeft geaccepteerd, wordt standaard de eigenaar.
 
 Azure Active Directory (Azure AD) *globale beheerders* machtigingen zijn nodig voor het maken van nieuwe gebruikers accounts of het uitnodigen van Gast accounts in de onderliggende map. Het partner centrum past Azure AD toe op het identiteits model en de Azure AD-instantie van een organisatie wordt vaak beheerd en beheerd door de IT-of beveiligings teams.
 

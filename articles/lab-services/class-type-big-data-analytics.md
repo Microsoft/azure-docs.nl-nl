@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: nicolela
-ms.openlocfilehash: 6ae4e658985a3974b311171e83e6243dfc4a1ae9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5eb9cd00350c41645d4427e30a6f25a6c163358c
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85444026"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659893"
 ---
 # <a name="set-up-a-lab-for-big-data-analytics-using-docker-deployment-of-hortonworks-data-platform"></a>Een Lab instellen voor big data Analytics met docker-implementatie van HortonWorks-gegevens platform
 
@@ -28,11 +28,11 @@ Als u dit Lab wilt instellen, hebt u een Azure-abonnement en een Lab-account nod
 
 ### <a name="lab-account-settings"></a>Instellingen van Lab-account
 
-Schakel de instellingen die worden beschreven in de onderstaande tabel voor het lab-account in. Zie [Marketplace-installatie kopieën die beschikbaar zijn voor Lab-makers opgeven](https://docs.microsoft.com/azure/lab-services/classroom-labs/specify-marketplace-images)voor meer informatie over het inschakelen van Marketplace-installatie kopieën.
+Schakel de instellingen die worden beschreven in de onderstaande tabel voor het lab-account in. Zie [Marketplace-installatie kopieën die beschikbaar zijn voor Lab-makers opgeven](./specify-marketplace-images.md)voor meer informatie over het inschakelen van Marketplace-installatie kopieën.
 
 | Account instelling Lab | Instructies |
 | ------------------- | ------------ |
-|Marketplace-installatie kopie| Schakel de Windows 10 Pro-installatie kopie in voor gebruik binnen uw Lab-account.|
+|Marketplace-installatiekopie| Schakel de Windows 10 Pro-installatie kopie in voor gebruik binnen uw Lab-account.|
 
 ### <a name="lab-settings"></a>Lab-instellingen
 
@@ -40,7 +40,7 @@ Gebruik de instellingen in de onderstaande tabel bij het instellen van een leslo
 
 | Lab-instellingen | Waarde/instructies |
 | ------------ | ------------------ |
-|Grootte van virtuele machine| Gemiddeld (geneste virtualisatie). Deze VM-grootte is het meest geschikt voor relationele data bases, caching in het geheugen en analyse.  Deze grootte biedt ook ondersteuning voor geneste virtualisatie.|  
+|Grootte van de virtuele machine| Gemiddeld (geneste virtualisatie). Deze VM-grootte is het meest geschikt voor relationele data bases, caching in het geheugen en analyse.  Deze grootte biedt ook ondersteuning voor geneste virtualisatie.|  
 |Installatie kopie van virtuele machine| Windows 10 Pro|
 
 > [!NOTE] 
@@ -89,7 +89,7 @@ In deze sectie implementeert u HDP sandbox en opent u vervolgens ook toegang tot
     > Wanneer u het meest recente zip-bestand voor HDP downloadt, moet u ervoor zorgen dat u het zip-bestand *niet* in een mappad opslaat dat witruimte bevat.
 
     > [!NOTE] 
-    > Als u een uitzonde ring ontvangt tijdens de implementatie waarbij het **station niet is gedeeld**, moet u uw C-station met docker delen zodat de Linux-containers van HDP toegang hebben tot lokale Windows-bestanden.  Om dit probleem op te lossen, klikt u op [het pictogram docker op de Windows-systeem balk](https://docs.docker.com/docker-for-windows/#docker-settings-dialog) om het menu docker-bureau blad te openen en **instellingen**te selecteren.  Wanneer **het dialoog venster instellingen van docker** wordt geopend, selecteert u **resources > het delen van bestanden** en controleert u het station **C** .  Vervolgens kunt u de stappen voor het implementeren van HDP sandbox herhalen.
+    > Als u een uitzonde ring ontvangt tijdens de implementatie waarbij het **station niet is gedeeld**, moet u uw C-station met docker delen zodat de Linux-containers van HDP toegang hebben tot lokale Windows-bestanden.  Om dit probleem op te lossen, klikt u op [het pictogram docker op de Windows-systeem balk](https://docs.docker.com/docker-for-windows/#docker-settings-dialog) om het menu docker-bureau blad te openen en **instellingen** te selecteren.  Wanneer **het dialoog venster instellingen van docker** wordt geopend, selecteert u **resources > het delen van bestanden** en controleert u het station **C** .  Vervolgens kunt u de stappen voor het implementeren van HDP sandbox herhalen.
 
 1. Zodra de docker-containers voor HDP sandbox zijn geïmplementeerd en worden uitgevoerd, kunt u toegang krijgen tot de omgeving door uw browser te starten en de instructies van Cloudera te volgen voor het openen van de [welkomst pagina](https://www.cloudera.com/tutorials/learning-the-ropes-of-the-hdp-sandbox.html#welcome-page) van de sandbox en het HDP-dash board te starten.
 

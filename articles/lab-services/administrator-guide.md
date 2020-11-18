@@ -3,12 +3,12 @@ title: Azure Lab Services-beheerders handleiding | Microsoft Docs
 description: Deze hand leiding helpt beheerders die Lab-accounts maken en beheren met behulp van Azure Lab Services.
 ms.topic: article
 ms.date: 10/20/2020
-ms.openlocfilehash: 8670a9d56575dbfb6d3e565ec97191581dc612a8
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: b1fadc58926b00c75ab888dad86e45b181059a38
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491032"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659842"
 ---
 # <a name="azure-lab-services---administrator-guide"></a>Azure Lab Services-beheerders handleiding
 IT-beheerders die de cloud resources van een universiteit beheren, zijn doorgaans verantwoordelijk voor het instellen van het lab-account voor hun school. Zodra een Lab-account is ingesteld, maken beheerders of docenten Labs die zijn opgenomen in het lab-account. Dit artikel bevat een overzicht op hoog niveau van de betrokken Azure-resources en de richt lijnen voor het maken van deze.
@@ -19,7 +19,7 @@ IT-beheerders die de cloud resources van een universiteit beheren, zijn doorgaan
 - Lab-accounts, Galerie met gedeelde afbeeldingen en installatie kopie versies worden gehost in uw abonnement.
 - U kunt uw Lab-account en de galerie met gedeelde installatie kopieën in dezelfde resource groep hebben. In dit diagram bevinden ze zich in verschillende resource groepen.
 
-Meer informatie over de architectuur vindt u in het artikel: [beginselen](https://docs.microsoft.com/azure/lab-services/classroom-labs-fundamentals) van de architectuur van Labs
+Meer informatie over de architectuur vindt u in het artikel: [beginselen](./classroom-labs-fundamentals.md) van de architectuur van Labs
 
 ## <a name="subscription"></a>Abonnement
 Uw universiteit heeft een of meer Azure-abonnementen. Een abonnement wordt gebruikt voor het beheren van facturering en beveiliging voor alle Azure-resources\services die erin worden gebruikt, met inbegrip van Lab-accounts.
@@ -58,7 +58,7 @@ De volgende lijst geeft een overzicht van scenario's waarin meer dan één Lab-a
 
 - **Afzonderlijk budget per Lab-account**
   
-    In plaats van alle Lab-kosten te rapporteren via één Lab-account, hebt u mogelijk een beter, gescheiden budget nodig. U kunt bijvoorbeeld Lab-accounts maken voor de reken kundige afdeling van uw universiteit, de afdeling computer wetenschappen, enzovoort, om het budget tussen afdelingen te scheiden.  U kunt vervolgens de kosten voor elk individueel Lab-account weer geven met behulp van [Azure Cost Management](https://docs.microsoft.com/azure/cost-management-billing/cost-management-billing-overview).
+    In plaats van alle Lab-kosten te rapporteren via één Lab-account, hebt u mogelijk een beter, gescheiden budget nodig. U kunt bijvoorbeeld Lab-accounts maken voor de reken kundige afdeling van uw universiteit, de afdeling computer wetenschappen, enzovoort, om het budget tussen afdelingen te scheiden.  U kunt vervolgens de kosten voor elk individueel Lab-account weer geven met behulp van [Azure Cost Management](../cost-management-billing/cost-management-billing-overview.md).
 
 - **Prototype Labs isoleren van active\production Labs**
   
@@ -141,18 +141,18 @@ De locatie waar een Lab zich bevindt, is afhankelijk van de volgende factoren:
 
   - **Het lab-account is gekoppeld aan een virtueel netwerk (VNet)**
   
-    Een Lab-account kan worden [gekoppeld aan een VNet](https://docs.microsoft.com/azure/lab-services/classroom-labs/how-to-connect-peer-virtual-network) wanneer ze zich in dezelfde regio bevinden.  Wanneer een Lab-account is gekoppeld aan een VNet, worden er automatisch Labs gemaakt in dezelfde regio als het lab-account en het VNet.
+    Een Lab-account kan worden [gekoppeld aan een VNet](./how-to-connect-peer-virtual-network.md) wanneer ze zich in dezelfde regio bevinden.  Wanneer een Lab-account is gekoppeld aan een VNet, worden er automatisch Labs gemaakt in dezelfde regio als het lab-account en het VNet.
 
     > [!NOTE]
-    > Wanneer een Lab-account is gekoppeld aan een VNet, wordt de instelling voor het kiezen van Lab- **Maker voor de optie Lab-locatie toestaan** uitgeschakeld. Meer informatie over deze instelling vindt u in het artikel: [Lab Creator toestaan om de locatie voor het lab te kiezen](https://docs.microsoft.com/azure/lab-services/classroom-labs/allow-lab-creator-pick-lab-location).
+    > Wanneer een Lab-account is gekoppeld aan een VNet, wordt de instelling voor het kiezen van Lab- **Maker voor de optie Lab-locatie toestaan** uitgeschakeld. Meer informatie over deze instelling vindt u in het artikel: [Lab Creator toestaan om de locatie voor het lab te kiezen](./allow-lab-creator-pick-lab-location.md).
     
-  - * * Er zijn geen VNet-peered * *_en_* _ Lab-makers mogen geen lab-location_ kiezen.
+  - * * Er zijn geen VNet-peered **_en_* _ Lab-makers mogen geen lab-location_ kiezen.
   
-    Als er **geen** VNet is dat is gekoppeld aan het lab-account *en* [Lab-makers mogen de Lab-locatie **niet** kiezen](https://docs.microsoft.com/azure/lab-services/classroom-labs/allow-lab-creator-pick-lab-location), worden er automatisch Labs gemaakt in een regio die beschik bare VM-capaciteit heeft.  Met name Azure Lab Services zoekt naar Beschik baarheid in [regio's die zich binnen dezelfde geografie bevinden als het lab-account](https://azure.microsoft.com/global-infrastructure/regions).
+    Als er **geen** VNet is dat is gekoppeld aan het lab-account *en* [Lab-makers mogen de Lab-locatie **niet** kiezen](./allow-lab-creator-pick-lab-location.md), worden er automatisch Labs gemaakt in een regio die beschik bare VM-capaciteit heeft.  Met name Azure Lab Services zoekt naar Beschik baarheid in [regio's die zich binnen dezelfde geografie bevinden als het lab-account](https://azure.microsoft.com/global-infrastructure/regions).
 
-  - * * Er zijn geen VNet-peered * *_en_* _ Lab-makers mogen de test omgeving kiezen location_ *
+  - * * Er zijn geen VNet-peered **_en_* _ Lab-makers mogen de test omgeving kiezen location_ *
        
-    Als er **geen** VNet-peered en [Lab-makers zijn toegestaan om de Lab-locatie te kiezen](https://docs.microsoft.com/azure/lab-services/classroom-labs/allow-lab-creator-pick-lab-location), zijn de locaties die kunnen worden geselecteerd door de Lab-Maker gebaseerd op de beschik bare capaciteit.
+    Als er **geen** VNet-peered en [Lab-makers zijn toegestaan om de Lab-locatie te kiezen](./allow-lab-creator-pick-lab-location.md), zijn de locaties die kunnen worden geselecteerd door de Lab-Maker gebaseerd op de beschik bare capaciteit.
 
 > [!NOTE]
 > Om ervoor te zorgen dat er voldoende VM-capaciteit voor een regio is, is het belang rijk dat u eerst capaciteit aanvraagt via het lab-account of bij het maken van het lab.
@@ -169,18 +169,18 @@ Wanneer beheerders of Lab-makers een lab maken, kunnen ze kiezen uit de volgende
 
 | Grootte | Specificaties | Reeks | Voorgesteld gebruik |
 | ---- | ----- | ------ | ------------- |
-| Klein| <ul><li>2 kernen</li><li>3,5 GB RAM-GEHEUGEN</li> | [Standard_A2_v2](https://docs.microsoft.com/azure/virtual-machines/av2-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) | Deze grootte is het meest geschikt voor de opdracht regel, de webbrowser openen, webservers met weinig verkeer, kleine tot middel grote data bases. |
-| Normaal | <ul><li>4 kernen</li><li>7 GB RAM-GEHEUGEN</li> | [Standard_A4_v2](https://docs.microsoft.com/azure/virtual-machines/av2-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) | Deze grootte is het meest geschikt voor relationele data bases, caching in het geheugen en analyse. |
-| Gemiddeld (geneste virtualisatie) | <ul><li>4 kernen</li><li>16 GB RAM-GEHEUGEN</li></ul> | [Standard_D4s_v3](https://docs.microsoft.com/azure/virtual-machines/dv3-dsv3-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json#dsv3-series) | Deze grootte is het meest geschikt voor relationele data bases, caching in het geheugen en analyse.
-| Groot | <ul><li>8 kernen</li><li>16 GB RAM-GEHEUGEN</li></ul>  | [Standard_A8_v2](https://docs.microsoft.com/azure/virtual-machines/av2-series) | Deze grootte is het meest geschikt voor toepassingen die snellere Cpu's nodig hebben, betere prestaties van de lokale schijf, grote data bases, grote geheugen caches.  Deze grootte biedt ook ondersteuning voor geneste virtualisatie. |
-| Groot (geneste virtualisatie) | <ul><li>8 kernen</li><li>32 GB RAM</li></ul>  | [Standard_D8s_v3](https://docs.microsoft.com/azure/virtual-machines/dv3-dsv3-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json#dsv3-series) | Deze grootte is het meest geschikt voor toepassingen die snellere Cpu's nodig hebben, betere prestaties van de lokale schijf, grote data bases, grote geheugen caches. |
-| Kleine GPU (visualisatie) | <ul><li>6 kernen</li><li>56 GB RAM-GEHEUGEN</li>  | [Standard_NV6](https://docs.microsoft.com/azure/virtual-machines/nv-series) | Deze grootte is het meest geschikt voor externe visualisatie, streaming, games, code ring met behulp van frameworks zoals OpenGL en DirectX. |
-| Kleine GPU (Compute) | <ul><li>6 kernen</li><li>56 GB RAM-GEHEUGEN</li></ul>  | [Standard_NC6](https://docs.microsoft.com/azure/virtual-machines/nc-series) |Deze grootte is het meest geschikt voor computer-intensieve toepassingen, zoals kunst matige intelligentie en diep gaande lessen. |
-| Gemiddelde GPU (visualisatie) | <ul><li>12 kernen</li><li>112 GB RAM-GEHEUGEN</li></ul>  | [Standard_NV12](https://docs.microsoft.com/azure/virtual-machines/nv-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) | Deze grootte is het meest geschikt voor externe visualisatie, streaming, games, code ring met behulp van frameworks zoals OpenGL en DirectX. |
+| Klein| <ul><li>2 kernen</li><li>3,5 GB RAM-GEHEUGEN</li> | [Standard_A2_v2](../virtual-machines/av2-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Deze grootte is het meest geschikt voor de opdracht regel, de webbrowser openen, webservers met weinig verkeer, kleine tot middel grote data bases. |
+| Normaal | <ul><li>4 kernen</li><li>7 GB RAM-GEHEUGEN</li> | [Standard_A4_v2](../virtual-machines/av2-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Deze grootte is het meest geschikt voor relationele data bases, caching in het geheugen en analyse. |
+| Gemiddeld (geneste virtualisatie) | <ul><li>4 kernen</li><li>16 GB RAM-GEHEUGEN</li></ul> | [Standard_D4s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#dsv3-series) | Deze grootte is het meest geschikt voor relationele data bases, caching in het geheugen en analyse.
+| Groot | <ul><li>8 kernen</li><li>16 GB RAM-GEHEUGEN</li></ul>  | [Standard_A8_v2](../virtual-machines/av2-series.md) | Deze grootte is het meest geschikt voor toepassingen die snellere Cpu's nodig hebben, betere prestaties van de lokale schijf, grote data bases, grote geheugen caches.  Deze grootte biedt ook ondersteuning voor geneste virtualisatie. |
+| Groot (geneste virtualisatie) | <ul><li>8 kernen</li><li>32 GB RAM</li></ul>  | [Standard_D8s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#dsv3-series) | Deze grootte is het meest geschikt voor toepassingen die snellere Cpu's nodig hebben, betere prestaties van de lokale schijf, grote data bases, grote geheugen caches. |
+| Kleine GPU (visualisatie) | <ul><li>6 kernen</li><li>56 GB RAM-GEHEUGEN</li>  | [Standard_NV6](../virtual-machines/nv-series.md) | Deze grootte is het meest geschikt voor externe visualisatie, streaming, games, code ring met behulp van frameworks zoals OpenGL en DirectX. |
+| Kleine GPU (Compute) | <ul><li>6 kernen</li><li>56 GB RAM-GEHEUGEN</li></ul>  | [Standard_NC6](../virtual-machines/nc-series.md) |Deze grootte is het meest geschikt voor computer-intensieve toepassingen, zoals kunst matige intelligentie en diep gaande lessen. |
+| Gemiddelde GPU (visualisatie) | <ul><li>12 kernen</li><li>112 GB RAM-GEHEUGEN</li></ul>  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Deze grootte is het meest geschikt voor externe visualisatie, streaming, games, code ring met behulp van frameworks zoals OpenGL en DirectX. |
 
 ## <a name="manage-identity"></a>Identiteit beheren
 
-Met behulp [van Azure RBAC (op rollen gebaseerd toegangs beheer)](https://docs.microsoft.com/azure/role-based-access-control/overview)kunnen de volgende rollen worden toegewezen om toegang te geven tot Lab-accounts en-Labs:
+Met behulp [van Azure RBAC (op rollen gebaseerd toegangs beheer)](../role-based-access-control/overview.md)kunnen de volgende rollen worden toegewezen om toegang te geven tot Lab-accounts en-Labs:
 
 - **Labeigenaar**
 
@@ -200,7 +200,7 @@ Met behulp [van Azure RBAC (op rollen gebaseerd toegangs beheer)](https://docs.m
 
 - **Labmaker**
 
-    Als u Labs wilt maken binnen een Lab-account, moeten docenten lid zijn van de rol **Lab Creator** .  Wanneer een docent een Lab maakt, worden deze automatisch toegevoegd als een eigenaar van het lab.  Raadpleeg de zelf studie over het [toevoegen van een gebruiker aan de rol **Lab Creator**](https://docs.microsoft.com/azure/lab-services/classroom-labs/tutorial-setup-lab-account#add-a-user-to-the-lab-creator-role). 
+    Als u Labs wilt maken binnen een Lab-account, moeten docenten lid zijn van de rol **Lab Creator** .  Wanneer een docent een Lab maakt, worden deze automatisch toegevoegd als een eigenaar van het lab.  Raadpleeg de zelf studie over het [toevoegen van een gebruiker aan de rol **Lab Creator**](./tutorial-setup-lab-account.md#add-a-user-to-the-lab-creator-role). 
 
 - **Lab-owner\contributor**
   
@@ -217,7 +217,7 @@ Met behulp [van Azure RBAC (op rollen gebaseerd toegangs beheer)](https://docs.m
 Hier volgen enkele tips voor het toewijzen van rollen:
    - Normaal gesp roken moeten alleen beheerders lid zijn van de **eigenaar** van een Lab-account of **Inzender** rollen. mogelijk hebt u meer dan één owner\contributor.
    - Om ervoor te zorgen dat een docent nieuwe Labs kan maken en de door hen gemaakte Labs kan beheren. u hoeft alleen toegang toe te wijzen aan de rol **Lab Creator** .
-   - Om ervoor te zorgen dat een docent specifieke Labs kan beheren, maar *niet* de mogelijkheid om nieuwe Labs te maken. u moet toegang tot de rol **eigenaar** of **Inzender** toewijzen voor elk van de Labs die ze zullen beheren.  U kunt bijvoorbeeld zowel een docent als een onderwijs assistent toestaan om een lab te maken.  Raadpleeg de hand leiding voor het [toevoegen van een gebruiker als eigenaar van een Lab](https://docs.microsoft.com/azure/lab-services/classroom-labs/how-to-add-user-lab-owner).
+   - Om ervoor te zorgen dat een docent specifieke Labs kan beheren, maar *niet* de mogelijkheid om nieuwe Labs te maken. u moet toegang tot de rol **eigenaar** of **Inzender** toewijzen voor elk van de Labs die ze zullen beheren.  U kunt bijvoorbeeld zowel een docent als een onderwijs assistent toestaan om een lab te maken.  Raadpleeg de hand leiding voor het [toevoegen van een gebruiker als eigenaar van een Lab](./how-to-add-user-lab-owner.md).
 
 ## <a name="pricing"></a>Prijzen
 
@@ -274,4 +274,3 @@ De volgende stappen zijn gebruikelijk voor het instellen van een test omgeving.
 - [Hand leiding voor Lab-installatie](setup-guide.md)
 - [Kostenbeheer voor labs](cost-management-guide.md)
 - [Azure Lab Services binnen teams gebruiken](lab-services-within-teams-overview.md)
-

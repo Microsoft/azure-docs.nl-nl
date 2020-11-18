@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 11/16/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2ebf383c1a904027d3ff5a1864ea9f50e87a5fa8
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 0bd2b295e5e4d4d5ea6e25869c8c109ff8bbbf38
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093290"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660760"
 ---
 # <a name="list-blobs-with-net"></a>Blobs weer geven met .NET
 
@@ -51,11 +51,7 @@ De Overloads voor deze methoden bieden extra opties voor het beheren van de mani
 
 ### <a name="manage-how-many-results-are-returned"></a>Bepalen hoeveel resultaten er worden geretourneerd
 
-Standaard retourneert een lijst bewerking Maxi maal 5000 resultaten per keer, maar u kunt het aantal resultaten opgeven dat elke vermelding moet retour neren. In de voor beelden in dit artikel ziet u hoe u dit doet.
-
-Als een lijst bewerking meer dan 5000 blobs retourneert, of als het aantal blobs dat beschikbaar is, groter is dan het aantal dat u hebt opgegeven, retourneert Azure Storage een *vervolg token* met de lijst met blobs. Een vervolg token is een ondoorzichtige waarde die u kunt gebruiken om de volgende set resultaten op te halen uit Azure Storage.
-
-Controleer in uw code de waarde van het vervolg token om te bepalen of deze null is. Wanneer het vervolg token null is, is de set met resultaten voltooid. Als het vervolg token niet null is, roept u de vermelding opnieuw aan, waarbij u in het vervolg token de volgende set resultaten ophaalt, totdat het vervolg token null is.
+Standaard retourneert een lijst bewerking Maxi maal 5000 resultaten per keer, maar u kunt het aantal resultaten opgeven dat elke vermelding moet retour neren. In de voor beelden in dit artikel ziet u hoe u resultaten kunt retour neren op pagina's.
 
 ### <a name="filter-results-with-a-prefix"></a>Resultaten filteren met een voor voegsel
 
@@ -63,7 +59,7 @@ Als u de lijst met blobs wilt filteren, geeft u een teken reeks op voor de `pref
 
 ### <a name="return-metadata"></a>Meta gegevens retour neren
 
-U kunt BLOB-meta gegevens met de resultaten retour neren. 
+U kunt BLOB-meta gegevens met de resultaten retour neren.
 
 - Als u de .NET V12 SDK gebruikt, geeft u de **meta gegevens** waarde voor de [BlobTraits](https://docs.microsoft.com/dotnet/api/azure.storage.blobs.models.blobtraits) -inventarisatie op.
 
@@ -90,6 +86,10 @@ Als u de functie hiërarchische naam ruimte hebt ingeschakeld voor uw account, z
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ListBlobsFlatListing":::
 
 # <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+
+Als een lijst bewerking meer dan 5000 blobs retourneert, of als het aantal blobs dat beschikbaar is, groter is dan het aantal dat u hebt opgegeven, retourneert Azure Storage een *vervolg token* met de lijst met blobs. Een vervolg token is een ondoorzichtige waarde die u kunt gebruiken om de volgende set resultaten op te halen uit Azure Storage.
+
+Controleer in uw code de waarde van het vervolg token om te bepalen of deze null is. Wanneer het vervolg token null is, is de set met resultaten voltooid. Als het vervolg token niet null is, roept u de vermelding opnieuw aan, waarbij u in het vervolg token de volgende set resultaten ophaalt, totdat het vervolg token null is.
 
 ```csharp
 private static async Task ListBlobsFlatListingAsync(CloudBlobContainer container, int? segmentSize)

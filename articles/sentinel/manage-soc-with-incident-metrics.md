@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2020
 ms.author: yelevin
-ms.openlocfilehash: 9d8d0fc46a463bda31595988d807854ef146d333
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 408913fed864ee5f966b96c81afbfee4b2dc8678
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88761714"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660726"
 ---
 # <a name="manage-your-soc-better-with-incident-metrics"></a>Uw SOC beter beheren met metrische gegevens over incidenten
 
@@ -39,7 +39,7 @@ De **SecurityIncident** -tabel is ingebouwd in azure Sentinel. U vindt het met d
 
 Telkens wanneer u een incident maakt of bijwerkt, wordt er een nieuw logboek item toegevoegd aan de tabel. Zo kunt u de wijzigingen bijhouden die in incidenten zijn aangebracht, en nog krachtigere SOC-metrische gegevens maken, maar u moet mindful zijn wanneer u query's voor deze tabel maakt, omdat u mogelijk dubbele vermeldingen voor een incident moet verwijderen (afhankelijk van de exacte query die u uitvoert). 
 
-Als u bijvoorbeeld een lijst wilt weer geven met alle incidenten die zijn gesorteerd op het incident nummer, maar u alleen het meest recente logboek per incident wilt retour neren, kunt u dit doen met behulp van de [samenvatte operator](https://docs.microsoft.com/azure/data-explorer/kusto/query/summarizeoperator) KQL in combi natie met de `arg_max()` [aggregatie functie](https://docs.microsoft.com/azure/data-explorer/kusto/query/arg-max-aggfunction):
+Als u bijvoorbeeld een lijst wilt weer geven met alle incidenten die zijn gesorteerd op het incident nummer, maar u alleen het meest recente logboek per incident wilt retour neren, kunt u dit doen met behulp van de [samenvatte operator](/azure/data-explorer/kusto/query/summarizeoperator) KQL in combi natie met de `arg_max()` [aggregatie functie](/azure/data-explorer/kusto/query/arg-max-aggfunction):
 
 
 ```Kusto
@@ -82,9 +82,9 @@ Om de **SecurityIncidents** -tabel aan te vullen, hebben we u een out-of-the-box
 
 U kunt deze nieuwe werkmap sjabloon vinden door **werkmappen** te kiezen in het menu van de Azure-Sentinel navigatie en het tabblad **sjablonen** te selecteren. Kies de efficiëntie van de **beveiligings bewerkingen** in de galerie en klik op een van de knoppen **opgeslagen werkmap weer geven** en **sjabloon weer geven** .
 
-:::image type="content" source="./media/manage-soc-with-incident-metrics/security-incidents-workbooks-gallery.png" alt-text="Tabel met beveiligings incidenten":::
+:::image type="content" source="./media/manage-soc-with-incident-metrics/security-incidents-workbooks-gallery.png" alt-text="Galerie met beveiligings incidenten werkmappen":::
 
-:::image type="content" source="./media/manage-soc-with-incident-metrics/security-operations-workbook-1.png" alt-text="Tabel met beveiligings incidenten":::
+:::image type="content" source="./media/manage-soc-with-incident-metrics/security-operations-workbook-1.png" alt-text="Werk blad met beveiligings incidenten voltooid":::
 
 U kunt de sjabloon gebruiken om uw eigen aangepaste werkmappen te maken die zijn afgestemd op uw specifieke behoeften.
 

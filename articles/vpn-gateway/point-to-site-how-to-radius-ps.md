@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: bce381ba4916bc58d2c7acf8d69b323dbdf972aa
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 64a4eb1b473c8944dadea4e1ee4323dfe4e9bcde
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544780"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661117"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-radius-authentication-powershell"></a>Een punt-naar-site-verbinding met een VNet configureren met RADIUS-verificatie: Power shell
 
@@ -73,7 +73,7 @@ U kunt de volgende voorbeeldwaarden gebruiken om een testomgeving te maken of ze
 
 * **Naam: VNet1**
 * **Adresruimte: 192.168.0.0/16** en **10.254.0.0/16**<br>Voor dit voorbeeld gebruiken we meer dan één adresruimte om te verduidelijken dat deze configuratie met meerdere adresruimten werkt. Meerdere adresruimten zijn echter niet vereist voor deze configuratie.
-* **Subnetnaam: FrontEnd**
+* **Subnetnaam: front-end**
   * **Subnetadresbereik: 192.168.1.0/24**
 * **Subnetnaam: BackEnd**
   * **Subnetadresbereik: 10.254.1.0/24**
@@ -119,7 +119,7 @@ Met de volgende stappen maakt u een resource groep en een virtueel netwerk in de
    ```azurepowershell-interactive
    New-AzResourceGroup -Name "TestRG" -Location "East US"
    ```
-2. Maak de subnetconfiguraties voor het virtuele netwerk, noem deze *FrontEnd* , *BackEnd* en *GatewaySubnet* . Deze voorvoegsels moeten deel uitmaken van de VNet-adresruimte die u hebt opgegeven.
+2. Maak de subnetconfiguraties voor het virtuele netwerk, noem deze *FrontEnd*, *BackEnd* en *GatewaySubnet*. Deze voorvoegsels moeten deel uitmaken van de VNet-adresruimte die u hebt opgegeven.
 
    ```azurepowershell-interactive
    $fesub = New-AzVirtualNetworkSubnetConfig -Name "FrontEnd" -AddressPrefix "192.168.1.0/24"  
@@ -152,7 +152,7 @@ Voordat u de gateway van het virtuele netwerk maakt en configureert, moet uw RAD
 2. Configureer de VPN-gateway als een RADIUS-client op de RADIUS. Wanneer u deze RADIUS-client toevoegt, geeft u de GatewaySubnet van het virtuele netwerk op die u hebt gemaakt. 
 3. Zodra de RADIUS-server is ingesteld, haalt u het IP-adres van de RADIUS-server en het gedeelde geheim op dat RADIUS-clients moeten gebruiken om met de RADIUS-server te communiceren. Als de RADIUS-server zich in het Azure-VNet bevindt, gebruikt u het CA-IP-adres van de RADIUS-server-VM.
 
-Het artikel [Network Policy Server (NPS)](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) bevat richt lijnen over het configureren van een Windows RADIUS-server (NPS) voor AD-domein authenticatie.
+Het artikel [Network Policy Server (NPS)](/windows-server/networking/technologies/nps/nps-top) bevat richt lijnen over het configureren van een Windows RADIUS-server (NPS) voor AD-domein authenticatie.
 
 ## <a name="4-create-the-vpn-gateway"></a>4. <a name="creategw"></a> de VPN-gateway maken
 
@@ -252,7 +252,7 @@ Met de VPN-client configuratie kunnen apparaten verbinding maken met een VNet vi
 
 ### <a name="connect-from-a-mac-vpn-client"></a>Verbinding maken vanaf een Mac VPN-client
 
-Zoek in het dialoogvenster Netwerk het clientprofiel dat u wilt gebruiken en klik op **Verbinding maken** .
+Zoek in het dialoogvenster Netwerk het clientprofiel dat u wilt gebruiken en klik op **Verbinding maken**.
 
   ![Mac-verbinding](./media/vpn-gateway-howto-point-to-site-rm-ps/applyconnect.png)
 
@@ -292,4 +292,4 @@ Deze veelgestelde vragen zijn van toepassing op P2S met behulp van RADIUS-verifi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Wanneer de verbinding is voltooid, kunt u virtuele machines aan uw virtuele netwerken toevoegen. Zie [Virtuele machines](https://docs.microsoft.com/azure/) voor meer informatie. Zie [Azure and Linux VM Network Overview](../virtual-machines/linux/azure-vm-network-overview.md) (Overzicht van Azure- en Linux-VM-netwerken) voor meer informatie over netwerken en virtuele machines.
+Wanneer de verbinding is voltooid, kunt u virtuele machines aan uw virtuele netwerken toevoegen. Zie [Virtuele machines](../index.yml) voor meer informatie. Zie [Azure and Linux VM Network Overview](../virtual-machines/network-overview.md) (Overzicht van Azure- en Linux-VM-netwerken) voor meer informatie over netwerken en virtuele machines.

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2019
 ms.author: yelevin
-ms.openlocfilehash: cceeb1fc9715dfd7b1ac714c424421c51d292757
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca483d993290e4d66ba257d4cb5de7fc3c952405
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85552288"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660828"
 ---
 # <a name="hunt-for-threats-with-azure-sentinel"></a>Zoeken naar bedreigingen met Azure Sentinel
 
@@ -66,7 +66,7 @@ Met Azure Sentinel-jacht kunt u profiteren van de volgende mogelijkheden:
 
 ## <a name="query-language"></a>Querytaal 
 
-Jacht in azure Sentinel is gebaseerd op de Kusto-query taal. Zie [Query Language Reference (Engelstalig](/azure/azure-monitor/log-query/get-started-queries)) voor meer informatie over de query taal en ondersteunde Opera tors.
+Jacht in azure Sentinel is gebaseerd op de Kusto-query taal. Zie [Query Language Reference (Engelstalig](../azure-monitor/log-query/get-started-queries.md)) voor meer informatie over de query taal en ondersteunde Opera tors.
 
 ## <a name="public-hunting-query-github-repository"></a>GitHub-opslag plaats voor open bare jacht-query's
 

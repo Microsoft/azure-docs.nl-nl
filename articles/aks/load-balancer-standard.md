@@ -4,15 +4,15 @@ titleSuffix: Azure Kubernetes Service
 description: Meer informatie over het gebruik van een open bare load balancer met een standaard-SKU om uw services beschikbaar te maken met Azure Kubernetes service (AKS).
 services: container-service
 ms.topic: article
-ms.date: 06/14/2020
+ms.date: 11/14/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 51cb79e942b9d92876bd4d0e2cc27bb5ee0337bf
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: b42a952b096f533f916879a11fdb6b6583fa8592
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634868"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660352"
 ---
 # <a name="use-a-public-standard-load-balancer-in-azure-kubernetes-service-aks"></a>Een open bare Standard Load Balancer gebruiken in azure Kubernetes service (AKS)
 
@@ -87,6 +87,9 @@ Wanneer u de open bare load balancer van de standaard-SKU gebruikt, is er een se
 * Het aantal toegewezen uitgaande poorten aanpassen aan elk knoop punt van het cluster
 * De time-outinstelling voor niet-actieve verbindingen configureren
 
+> [!IMPORTANT]
+> Er kan slechts één uitgaande IP-optie (beheerde Ip's, uw eigen IP-adres of IP-voor voegsel) op een bepaald moment worden gebruikt.
+
 ### <a name="scale-the-number-of-managed-outbound-public-ips"></a>Het aantal beheerde uitgaande open bare Ip's schalen
 
 Azure Load Balancer biedt een uitgaande verbinding van een virtueel netwerk naast binnenkomend. Met uitgaande regels kunt u de uitgaande Network Address Translation van open bare Standard Load Balancer eenvoudig configureren.
@@ -120,10 +123,11 @@ Wanneer u een *standaard* -SKU Load Balancer gebruikt, maakt het AKS-cluster sta
 
 Een openbaar IP-adres dat door AKS is gemaakt, wordt beschouwd als een door AKS beheerde resource. Dit betekent dat de levens cyclus van het open bare IP-adres is bedoeld om te worden beheerd door AKS en vereist geen gebruikers actie rechtstreeks op de open bare IP-resource. U kunt ook uw eigen aangepaste open bare IP-adres of openbaar IP-voor voegsel toewijzen tijdens het maken van het cluster. Uw aangepaste Ip's kunnen ook worden bijgewerkt op de load balancer eigenschappen van een bestaand cluster.
 
-> [!NOTE]
-> Aangepaste open bare IP-adressen moeten worden gemaakt en het eigendom zijn van de gebruiker. Beheerde open bare IP-adressen die door AKS worden gemaakt, kunnen niet opnieuw worden gebruikt als een eigen aangepast IP-adres, omdat het beheer conflicten kan veroorzaken.
+Vereisten voor het gebruik van uw eigen open bare IP of voor voegsel:
 
-Voordat u deze bewerking uitvoert, moet u ervoor zorgen dat u voldoet aan de [vereisten en beperkingen](../virtual-network/public-ip-address-prefix.md#constraints) die nodig zijn om uitgaande Ip's of uitgaande IP-voor voegsels te configureren.
+- Aangepaste open bare IP-adressen moeten worden gemaakt en het eigendom zijn van de gebruiker. Beheerde open bare IP-adressen die door AKS worden gemaakt, kunnen niet opnieuw worden gebruikt als een eigen aangepast IP-adres, omdat het beheer conflicten kan veroorzaken.
+- U moet ervoor zorgen dat de AKS-cluster identiteit (Service-Principal of beheerde identiteit) machtigingen heeft voor toegang tot het uitgaande IP-adres. Volgens de [vereiste lijst met open bare IP-machtigingen](kubernetes-service-principal.md#networking).
+- Zorg ervoor dat u voldoet aan de [vereisten en beperkingen](../virtual-network/public-ip-address-prefix.md#constraints) die nodig zijn voor het configureren van uitgaande Ip's of uitgaande IP-voor voegsels.
 
 #### <a name="update-the-cluster-with-your-own-outbound-public-ip"></a>Het cluster bijwerken met uw eigen uitgaande open bare IP-adres
 

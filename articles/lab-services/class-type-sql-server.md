@@ -5,22 +5,22 @@ author: emaher
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
-ms.openlocfilehash: 9fc0a965869207ba8d1b4eb6f45e878ae4b93c3a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50f71ee1ce59f5809fe8905c58f0399cf484f11a
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88079019"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659706"
 ---
 # <a name="set-up-a-lab-to-manage-and-develop-with-sql-server"></a>Een Lab instellen om te beheren en te ontwikkelen met SQL Server
 
 In dit artikel wordt beschreven hoe u een Lab instelt voor een basis SQL Server-en ontwikkelings klasse in Azure Lab Services.  Database concepten zijn een van de in de meeste computer wetenschappen geschoolde cursussen. Structured Query Language (SQL) is een internationale standaard.  SQL is de standaard taal voor het beheer van relationele data bases, zoals het toevoegen, openen en beheren van inhoud in een Data Base.  Het wordt het meest vermeld voor de snelle verwerking, bewezen betrouw baarheid, het gemak en de flexibiliteit van gebruik.
 
-In dit artikel laten we zien hoe u een virtuele-machine sjabloon kunt instellen in een Lab met [Visual Studio 2019](https://visualstudio.microsoft.com/vs/), [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)en [Azure Data Studio](https://github.com/microsoft/azuredatastudio).  Voor dit lab wordt één gedeelde [SQL Server-Data Base](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview) gebruikt voor het hele Lab. [Azure SQL database](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview) is platform as a Service (PaaS) data base engine-aanbieding van Azure.
+In dit artikel laten we zien hoe u een virtuele-machine sjabloon kunt instellen in een Lab met [Visual Studio 2019](https://visualstudio.microsoft.com/vs/), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)en [Azure Data Studio](https://github.com/microsoft/azuredatastudio).  Voor dit lab wordt één gedeelde [SQL Server-Data Base](../azure-sql/database/sql-database-paas-overview.md) gebruikt voor het hele Lab. [Azure SQL database](../azure-sql/database/sql-database-paas-overview.md) is platform as a Service (PaaS) data base engine-aanbieding van Azure.
 
 ## <a name="lab-configuration"></a>Lab-configuratie
 
-Als u dit Lab wilt instellen, hebt u een Azure-abonnement en een Lab-account nodig om aan de slag te gaan. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint. Zodra u een Azure-abonnement hebt ontvangen, kunt u een nieuw Lab-account maken in Azure Lab Services. Zie [zelf studie voor het instellen van een Lab-account](https://docs.microsoft.com/azure/lab-services/classroom-labs/tutorial-setup-lab-account)voor meer informatie over het maken van een nieuw Lab-account. U kunt ook een bestaand Lab-account gebruiken.
+Als u dit Lab wilt instellen, hebt u een Azure-abonnement en een Lab-account nodig om aan de slag te gaan. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint. Zodra u een Azure-abonnement hebt ontvangen, kunt u een nieuw Lab-account maken in Azure Lab Services. Zie [zelf studie voor het instellen van een Lab-account](./tutorial-setup-lab-account.md)voor meer informatie over het maken van een nieuw Lab-account. U kunt ook een bestaand Lab-account gebruiken.
 
 ### <a name="lab-account-settings"></a>Instellingen van Lab-account
 
@@ -28,7 +28,7 @@ Schakel de instellingen die worden beschreven in de onderstaande tabel voor het 
 
 | Account instelling Lab | Instructies |
 | ------------------- | ------------ |
-| Marketplace-installatie kopie | Schakel de installatie kopie van de Visual Studio 2019-Community (meest recente versie) op Windows 10 Enter prise N (x64) in voor gebruik binnen uw Lab-account. |
+| Marketplace-installatiekopie | Schakel de installatie kopie van de Visual Studio 2019-Community (meest recente versie) op Windows 10 Enter prise N (x64) in voor gebruik binnen uw Lab-account. |
 
 ### <a name="shared-resource-configuration"></a>Configuratie van gedeelde bronnen
 
@@ -37,12 +37,12 @@ Als u een gedeelde bron in Lab-Services wilt gebruiken, moet u eerst het virtuel
 >[!WARNING]
 >Gedeelde bronnen voor een lab moeten worden ingesteld voordat het lab wordt gemaakt.  Als het vnet niet is gekoppeld [aan het lab-account](how-to-connect-peer-virtual-network.md) *voordat* het lab wordt gemaakt, heeft het Lab geen toegang tot de gedeelde bron.
 
-Nu de netwerk zijde van dingen wordt verwerkt, kunt u een SQL Server Data Base maken.  We gaan een [afzonderlijke data base](https://docs.microsoft.com/azure/sql-database/sql-database-single-database-get-started?tabs=azure-portal) maken, omdat dit de snelste implementatie optie is voor Azure SQL database.  Voor andere implementatie opties maakt u een [elastische pool](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool#creating-a-new-sql-database-elastic-pool-using-the-azure-portal), een [beheerd exemplaar](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started)of een [virtuele SQL-machine](https://docs.microsoft.com/azure/virtual-machines/windows/sql/quickstart-sql-vm-create-portal).
+Nu de netwerk zijde van dingen wordt verwerkt, kunt u een SQL Server Data Base maken.  We gaan een [afzonderlijke data base](../azure-sql/database/single-database-create-quickstart.md?tabs=azure-portal) maken, omdat dit de snelste implementatie optie is voor Azure SQL database.  Voor andere implementatie opties maakt u een [elastische pool](../azure-sql/database/elastic-pool-overview.md#creating-a-new-sql-database-elastic-pool-using-the-azure-portal), een [beheerd exemplaar](../azure-sql/managed-instance/instance-create-quickstart.md)of een [virtuele SQL-machine](../azure-sql/virtual-machines/windows/sql-vm-create-portal-quickstart.md).
 
 1. Kies in het menu Azure Portal de optie **nieuwe resource maken**.
 2. Kies **SQL database** en klik op de knop **maken** .
 3. Selecteer op het tabblad **basis beginselen** van het formulier **Create SQL database** de resource groep voor de data base.  We gebruiken *sqldb-RG*.
-4. Voer *classlabdb*in bij **database naam**.
+4. Voer *classlabdb* in bij **database naam**.
 5. Klik onder de **Server** instelling op **Nieuw maken** om een nieuwe server te maken voor de data base.
 6. Voer de server naam in de flyout **nieuwe server** in.  We gebruiken *classlabdbserver*.  De server naam moet wereld wijd uniek zijn.
 7. Voer *azureuser* in voor de aanmelding van de **Server beheerder**.
@@ -55,11 +55,11 @@ Nu de netwerk zijde van dingen wordt verwerkt, kunt u een SQL Server Data Base m
 14. Kies op het tabblad netwerk de optie persoonlijk eind punt voor de **verbindings methode**.
 15. Klik onder de sectie **privé-eind punten** op **persoonlijk eind punt toevoegen**.
 16. Kies in de flyout **persoonlijk eind punt maken** dezelfde resource groep als uw virtuele netwerk dat is gekoppeld aan het lab-account.
-17. Kies bij **locatie**dezelfde locatie als het virtuele netwerk.
-18. Voer bij **naam** *labsql-endpt*in.
+17. Kies bij **locatie** dezelfde locatie als het virtuele netwerk.
+18. Voer bij **naam** *labsql-endpt* in.
 19. Zorg ervoor dat de subresource van de doel groep is ingesteld op SqlServer.
-20. Kies voor **virtueel netwerk**hetzelfde virtuele netwerk dat is gekoppeld aan het lab-account.
-21. Kies bij **subnet**het subnet waarvoor u het eind punt wilt hosten.  Het IP-adres dat is toegewezen aan het eind punt, is afkomstig uit het bereik dat is toegewezen aan dat subnet.
+20. Kies voor **virtueel netwerk** hetzelfde virtuele netwerk dat is gekoppeld aan het lab-account.
+21. Kies bij **subnet** het subnet waarvoor u het eind punt wilt hosten.  Het IP-adres dat is toegewezen aan het eind punt, is afkomstig uit het bereik dat is toegewezen aan dat subnet.
 22. Stel **integratie met privé-DNS** in op **Nee**. Ter vereenvoudiging gebruiken we de DNS-server van Azure via de eigen privé-DNS-zone of onze eigen DNS-servers.
 23. Klik op **OK**.
 24. Klik op **volgende: aanvullende instellingen**.
@@ -75,29 +75,29 @@ Gebruik de instellingen in de onderstaande tabel bij het instellen van een leslo
 
 | Lab-instellingen | Waarde/instructies |
 | ------------ | ------------------ |
-| Grootte van virtuele machine | Gemiddeld. Deze grootte is het meest geschikt voor relationele data bases, caching in het geheugen en analyse. |
+| Grootte van de virtuele machine | Gemiddeld. Deze grootte is het meest geschikt voor relationele data bases, caching in het geheugen en analyse. |
 | Installatie kopie van virtuele machine | Visual Studio 2019-Community (meest recente versie) op Windows 10 Enter prise N (x64) |
 
 Nu het lab is gemaakt, gaan we de sjabloon machine wijzigen met de software die we nodig hebben.
 
 ## <a name="visual-studio"></a>Visual Studio
 
-De hierboven gekozen afbeelding bevat [Visual Studio 2019 Community](https://visualstudio.microsoft.com/vs/community/).  Alle werk belastingen en gereedschappen sets zijn al geïnstalleerd op de installatie kopie.  Gebruik het installatie programma van Visual Studio om [eventueel optionele hulpprogram ma's te installeren](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2019) .  [Meld u aan bij Visual Studio](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio?view=vs-2019#how-to-sign-in-to-visual-studio) om de Community-editie te ontgrendelen.
+De hierboven gekozen afbeelding bevat [Visual Studio 2019 Community](https://visualstudio.microsoft.com/vs/community/).  Alle werk belastingen en gereedschappen sets zijn al geïnstalleerd op de installatie kopie.  Gebruik het installatie programma van Visual Studio om [eventueel optionele hulpprogram ma's te installeren](/visualstudio/install/modify-visual-studio?view=vs-2019) .  [Meld u aan bij Visual Studio](/visualstudio/ide/signing-in-to-visual-studio?view=vs-2019#how-to-sign-in-to-visual-studio) om de Community-editie te ontgrendelen.
 
-Visual Studio bevat het hulp programma voor het **opslaan en verwerken van gegevens** , dat SQL Server Data Tools bevat (SSDT).  Zie [SQL Server Data Tools Overview](https://docs.microsoft.com/sql/ssdt/sql-server-data-tools?view=sql-server-ver15)voor meer informatie over de mogelijkheden van SSDT.  Zie [verbinding maken met een Data Base en bladeren door bestaande objecten](https://docs.microsoft.com/sql/ssdt/how-to-connect-to-a-database-and-browse-existing-objects?view=sql-server-ver15)om te controleren of de verbinding met de gedeelde SQL Server voor de klasse is geslaagd. Als u wordt gevraagd om de sjabloon computer-IP toe te voegen aan de [lijst met toegestane computers](https://docs.microsoft.com/azure/azure-sql/database/firewall-configure) die verbinding kunnen maken met uw SQL Server-exemplaar.
+Visual Studio bevat het hulp programma voor het **opslaan en verwerken van gegevens** , dat SQL Server Data Tools bevat (SSDT).  Zie [SQL Server Data Tools Overview](/sql/ssdt/sql-server-data-tools?view=sql-server-ver15)voor meer informatie over de mogelijkheden van SSDT.  Zie [verbinding maken met een Data Base en bladeren door bestaande objecten](/sql/ssdt/how-to-connect-to-a-database-and-browse-existing-objects?view=sql-server-ver15)om te controleren of de verbinding met de gedeelde SQL Server voor de klasse is geslaagd. Als u wordt gevraagd om de sjabloon computer-IP toe te voegen aan de [lijst met toegestane computers](../azure-sql/database/firewall-configure.md) die verbinding kunnen maken met uw SQL Server-exemplaar.
 
-Visual Studio biedt ondersteuning voor verschillende werk belastingen, inclusief **Web-& Cloud** -en **Desktop & mobiele** werk belastingen.  Beide werk belastingen ondersteunen SQL Server als een gegevens bron. Zie [een ASP.net core-en SQL database-app bouwen in azure app service](https://docs.microsoft.com/azure/app-service/tutorial-dotnetcore-sqldb-app) zelf studie voor meer informatie over het gebruik van ASP.NET Core naar SQL Server.  Gebruik de [System. data. SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) -bibliotheek om verbinding te maken met een SQL database vanuit een [Xamarin](https://docs.microsoft.com/xamarin) -app.
+Visual Studio biedt ondersteuning voor verschillende werk belastingen, inclusief **Web-& Cloud** -en **Desktop & mobiele** werk belastingen.  Beide werk belastingen ondersteunen SQL Server als een gegevens bron. Zie [een ASP.net core-en SQL database-app bouwen in azure app service](../app-service/tutorial-dotnetcore-sqldb-app.md) zelf studie voor meer informatie over het gebruik van ASP.NET Core naar SQL Server.  Gebruik de [System. data. SqlClient](/dotnet/api/system.data.sqlclient) -bibliotheek om verbinding te maken met een SQL database vanuit een [Xamarin](/xamarin) -app.
 
 ## <a name="install-azure-data-studio"></a>Installeer Azure Data Studio
 
 [Azure Data Studio](https://github.com/microsoft/azuredatastudio) is een multi-data base, platform omgeving voor meerdere platforms voor data professionals die gebruikmaken van de familie van on-premises en Cloud gegevens platformen in Windows, MacOS en Linux.
 
-1. Down load het [installatie programma voor het Azure Data Studio *systeem* voor Windows](https://go.microsoft.com/fwlink/?linkid=2127432). Ga naar de download pagina van [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download) om installatie Programma's te vinden voor andere ondersteunde besturings systemen.
+1. Down load het [installatie programma voor het Azure Data Studio *systeem* voor Windows](https://go.microsoft.com/fwlink/?linkid=2127432). Ga naar de download pagina van [Azure Data Studio](/sql/azure-data-studio/download) om installatie Programma's te vinden voor andere ondersteunde besturings systemen.
 2. Selecteer op de pagina **gebruiksrecht overeenkomst** **de optie Ik ga akkoord met de overeenkomst**. Klik op **Volgende**.
 3. Klik op de pagina **Bestemmingslocatie selecteren** op **Volgende**.
 4. Klik op de pagina **Map van het menu Start selecteren** op **Volgende**.
 5. Schakel op de pagina **extra taken selecteren** het **pictogram bureau blad maken** in als u een bureaublad pictogram wilt.  Klik op **Volgende**.
-6. Klik op **volgende**wanneer **u klaar bent om te installeren**.
+6. Klik op **volgende** wanneer **u klaar bent om te installeren**.
 7. Wacht totdat het installatie programma wordt uitgevoerd.  Klik op **Voltooien**.
 
 Nu u Azure Data Studio hebt geïnstalleerd, kunt u de verbinding met Azure SQL Database instellen.
@@ -113,7 +113,7 @@ Nu u Azure Data Studio hebt geïnstalleerd, kunt u de verbinding met Azure SQL D
 
 ## <a name="install-sql-server-management-studio"></a>Installeer SQL Server Management Studio
 
-[SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) is een geïntegreerde omgeving voor het beheren van een SQL-infra structuur.  SSMS is een hulp programma dat door database beheerders wordt gebruikt om de gegevens infrastructuur te implementeren, te bewaken en bij te werken.
+[SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) is een geïntegreerde omgeving voor het beheren van een SQL-infra structuur.  SSMS is een hulp programma dat door database beheerders wordt gebruikt om de gegevens infrastructuur te implementeren, te bewaken en bij te werken.
 
 1. [Down load SQL Server Management Studio](https://aka.ms/ssmsfullsetup). Start het installatie programma zodra het is gedownload.
 2. Klik op de pagina **Welkom** op **installeren**.
@@ -121,7 +121,7 @@ Nu u Azure Data Studio hebt geïnstalleerd, kunt u de verbinding met Azure SQL D
 4. Start SQL Server-Management Studio.  
 5. Klik op de pagina **afhankelijkheids configuratie proces** op **sluiten**.
 
-Niet dat SSMS is geïnstalleerd, kunt u [verbinding maken en query's uitvoeren op een SQL Server](https://docs.microsoft.com/sql/ssms/tutorials/connect-query-sql-server). Gebruik de volgende waarden bij het instellen van de verbinding:
+Niet dat SSMS is geïnstalleerd, kunt u [verbinding maken en query's uitvoeren op een SQL Server](/sql/ssms/tutorials/connect-query-sql-server). Gebruik de volgende waarden bij het instellen van de verbinding:
 
 - Server type: data base-engine
 - Server naam: *classlabdbserver.database.Windows.net*

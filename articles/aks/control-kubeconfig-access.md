@@ -4,18 +4,18 @@ description: Meer informatie over het beheren van de toegang tot het Kubernetes-
 services: container-service
 ms.topic: article
 ms.date: 05/06/2020
-ms.openlocfilehash: c73c4a0ae46c3d2ac3a64543473bd6639d03b434
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 371628b02ebecee23697e996ee0d484688167875
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88009287"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684811"
 ---
 # <a name="use-azure-role-based-access-control-to-define-access-to-the-kubernetes-configuration-file-in-azure-kubernetes-service-aks"></a>Gebruik Azure op rollen gebaseerd toegangs beheer voor het definiëren van toegang tot het Kubernetes-configuratie bestand in azure Kubernetes service (AKS)
 
 U kunt met het hulp programma communiceren met Kubernetes-clusters `kubectl` . De Azure CLI biedt een eenvoudige manier om de toegangs referenties en configuratie gegevens op te halen om verbinding te maken met uw AKS-clusters met behulp van `kubectl` . Als u wilt beperken wie de gegevens van de Kubernetes-configuratie (*kubeconfig*) kan ophalen en de machtigingen die ze hebben, wilt beperken, kunt u gebruikmaken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
 
-Dit artikel laat u zien hoe u RBAC-rollen kunt toewijzen die de configuratie-informatie voor een AKS-cluster beperken.
+In dit artikel wordt beschreven hoe u Azure-rollen toewijst die de configuratie gegevens voor een AKS-cluster kunnen beperken.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -38,7 +38,7 @@ De twee ingebouwde rollen zijn:
   * Hiermee hebt u toegang tot *micro soft. container service/managedClusters/listClusterUserCredential/Action* API call. Deze API-aanroep [vermeldt de gebruikers referenties van het cluster][api-cluster-user].
   * Downloadt *kubeconfig* voor de *clusterUser* -rol.
 
-Deze RBAC-rollen kunnen worden toegepast op een Azure Active Directory (AD) gebruiker of groep.
+Deze Azure-rollen kunnen worden toegepast op een Azure Active Directory (AD) gebruiker of groep.
 
 > [!NOTE]
 > Voor clusters die gebruikmaken van Azure AD, hebben gebruikers met de rol *clusterUser* een leeg *kubeconfig* -bestand waarin wordt gevraagd om zich aan te melden. Wanneer gebruikers eenmaal zijn aangemeld, hebben ze toegang tot de gebruikers-of groeps instellingen van Azure AD. Gebruikers met de rol *clusterAdmin* hebben beheerders toegang.
@@ -71,7 +71,7 @@ az role assignment create \
 ```
 
 > [!TIP]
-> Als u machtigingen wilt toewijzen aan een Azure AD-groep, werkt u de `--assignee` para meter die wordt weer gegeven in het vorige voor beeld bij met de object-id voor de *groep* in plaats van een *gebruiker*. Als u de object-ID voor een groep wilt ophalen, gebruikt u de opdracht [AZ Ad Group show][az-ad-group-show] . In het volgende voor beeld wordt de object-ID van de Azure AD-groep met de naam *appdev*opgehaald: `az ad group show --group appdev --query objectId -o tsv`
+> Als u machtigingen wilt toewijzen aan een Azure AD-groep, werkt u de `--assignee` para meter die wordt weer gegeven in het vorige voor beeld bij met de object-id voor de *groep* in plaats van een *gebruiker*. Als u de object-ID voor een groep wilt ophalen, gebruikt u de opdracht [AZ Ad Group show][az-ad-group-show] . In het volgende voor beeld wordt de object-ID van de Azure AD-groep met de naam *appdev* opgehaald: `az ad group show --group appdev --query objectId -o tsv`
 
 U kunt de voor gaande toewijzing wijzigen naar de *gebruikersrol cluster* als dat nodig is.
 
@@ -92,7 +92,7 @@ In de volgende voorbeeld uitvoer ziet u dat de roltoewijzing is gemaakt:
 
 ## <a name="get-and-verify-the-configuration-information"></a>De configuratie gegevens ophalen en verifiëren
 
-Als RBAC-rollen zijn toegewezen, gebruikt u de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] om de *kubeconfig* -definitie voor uw AKS-cluster op te halen. In het volgende voor beeld worden de referenties van de *beheerder* opgehaald, die goed werken als de gebruiker de *rol cluster beheerder*heeft gekregen:
+Als u Azure-rollen hebt toegewezen, gebruikt u de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] om de *kubeconfig* -definitie voor uw AKS-cluster op te halen. In het volgende voor beeld worden de referenties van de *beheerder* opgehaald, die goed werken als de gebruiker de *rol cluster beheerder* heeft gekregen:
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --admin

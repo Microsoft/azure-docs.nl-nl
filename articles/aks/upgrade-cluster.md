@@ -3,13 +3,13 @@ title: Een AKS-cluster (Azure Kubernetes Service) upgraden
 description: Meer informatie over hoe u een AKS-cluster (Azure Kubernetes service) bijwerkt om de nieuwste functies en beveiligings updates te downloaden.
 services: container-service
 ms.topic: article
-ms.date: 10/21/2020
-ms.openlocfilehash: 046c010cdd811b53ef8ef35624ed41a673af43d3
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.date: 11/17/2020
+ms.openlocfilehash: 262905c9f840850795ba9555912e81eca61369d1
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461444"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683230"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Een AKS-cluster (Azure Kubernetes Service) upgraden
 
@@ -35,7 +35,7 @@ az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --outpu
 > [!NOTE]
 > Wanneer u een ondersteund AKS-cluster bijwerkt, kunnen secundaire versies van Kubernetes niet worden overgeslagen. Bijvoorbeeld: upgrades tussen *1.12. x*  ->  *1.13. x* of *1.13. x*  ->  *1.14. x* zijn toegestaan, maar *1.12. x*  ->  *1.14. x* is niet.
 >
-> Als u een upgrade wilt uitvoeren, van *1.12. x*  ->  *1.14. x*, moet u eerst een upgrade uitvoeren van *1.12. x*  ->  *1.13. x*en vervolgens een upgrade uitvoeren van *1.13. x*  ->  *1.14. x*.
+> Als u een upgrade wilt uitvoeren, van *1.12. x*  ->  *1.14. x*, moet u eerst een upgrade uitvoeren van *1.12. x*  ->  *1.13. x* en vervolgens een upgrade uitvoeren van *1.13. x*  ->  *1.14. x*.
 >
 > Het overs laan van meerdere versies kan alleen worden uitgevoerd wanneer u een upgrade uitvoert van een niet-ondersteunde versie terug naar een ondersteunde versie. U kunt bijvoorbeeld een upgrade uitvoeren van een niet-ondersteund *1,10. x* --> een ondersteunde *1.15. x* kan worden voltooid.
 
@@ -51,7 +51,7 @@ Als er geen upgrade beschikbaar is, krijgt u het volgende:
 ERROR: Table output unavailable. Use the --query option to specify an appropriate query. Use --debug for more info.
 ```
 
-## <a name="customize-node-surge-upgrade-preview"></a>Upgrade van overspanning van knoop punt aanpassen (preview-versie)
+## <a name="customize-node-surge-upgrade"></a>Upgrade van overspanning van knoop punt aanpassen
 
 > [!Important]
 > Voor het overschrijden van knoop punten is abonnements quota vereist voor het aangevraagde maximum piek aantal voor elke upgrade bewerking. Een cluster met vijf knooppunt groepen, elk met een aantal van vier knoop punten, heeft bijvoorbeeld een totaal van 20 knoop punten. Als elke knooppunt groep een maximale piek waarde van 50% heeft, is extra reken-en IP-quotum van 10 knoop punten (2 knoop punten * 5 groepen) vereist om de upgrade te volt ooien.
@@ -66,21 +66,7 @@ AKS accepteert zowel gehele waarden als een percentage voor de maximale piek waa
 
 Tijdens een upgrade kan de maximale piek waarde 1 en een maximum waarde gelijk zijn aan het aantal knoop punten in de knooppunt groep. U kunt grotere waarden instellen, maar het maximum aantal knoop punten dat voor de maximale piek wordt gebruikt, is niet groter dan het aantal knoop punten in de pool op het moment van de upgrade.
 
-### <a name="set-up-the-preview-feature-for-customizing-node-surge-upgrade"></a>De preview-functie voor het aanpassen van de overspannings upgrade voor een knoop punt instellen
-
-```azurecli-interactive
-# register the preview feature
-az feature register --namespace "Microsoft.ContainerService" --name "MaxSurgePreview"
-```
-
-Het duurt enkele minuten voordat de registratie is uitgevoerd. Gebruik de onderstaande opdracht om te controleren of de functie is geregistreerd:
-
-```azurecli-interactive
-# Verify the feature is registered:
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/MaxSurgePreview')].{Name:name,State:properties.state}"
-```
-
-Tijdens de preview-versie hebt u de *AKS-preview cli-* extensie nodig om de maximale piek te gebruiken. Gebruik de opdracht [AZ extension add][az-extension-add] en controleer vervolgens of er beschik bare updates zijn met behulp van de opdracht [AZ extension update][az-extension-update] :
+Tot CLI-versie 2.16.0 + hebt u de CLI *-extensie AKS-preview* nodig voor het gebruik van maximale piek spanning. Gebruik de opdracht [AZ extension add][az-extension-add] en controleer vervolgens of er beschik bare updates zijn met behulp van de opdracht [AZ extension update][az-extension-update] :
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -107,7 +93,7 @@ az aks nodepool update -n mynodepool -g MyResourceGroup --cluster-name MyManaged
 
 ## <a name="upgrade-an-aks-cluster"></a>Een AKS-cluster upgraden
 
-Met een lijst met beschik bare versies voor uw AKS-cluster gebruikt u de opdracht [AZ AKS upgrade][az-aks-upgrade] . Tijdens het upgrade proces voegt AKS een nieuw buffer knooppunt toe (of net als veel knoop punten die zijn geconfigureerd voor [maximale piek spanning](#customize-node-surge-upgrade-preview)) aan het cluster waarop de opgegeven Kubernetes-versie wordt uitgevoerd. Vervolgens wordt een van de oude knoop punten [Cordon en][kubernetes-drain] verwerkt om de onderbreking van het uitvoeren van toepassingen tot een minimum te beperken (als u de maximale piek gebruikt, wordt de [Cordon en][kubernetes-drain] het verwerkings Stop net zo veel knoop punten als het aantal opgegeven buffer knooppunten). Wanneer het oude knoop punt volledig is ontslagen, wordt de installatie kopie van de nieuwe versie geschaald en wordt het knoop punt de buffer voor het volgende knoop punt wordt bijgewerkt. Dit proces wordt herhaald totdat alle knoop punten in het cluster zijn bijgewerkt. Aan het einde van het proces wordt het laatste geleegde knoop punt verwijderd, waarbij het bestaande aantal agent knooppunten behouden blijft.
+Met een lijst met beschik bare versies voor uw AKS-cluster gebruikt u de opdracht [AZ AKS upgrade][az-aks-upgrade] . Tijdens het upgrade proces voegt AKS een nieuw buffer knooppunt toe (of net als veel knoop punten die zijn geconfigureerd voor [maximale piek spanning](#customize-node-surge-upgrade)) aan het cluster waarop de opgegeven Kubernetes-versie wordt uitgevoerd. Vervolgens wordt een van de oude knoop punten [Cordon en][kubernetes-drain] verwerkt om de onderbreking van het uitvoeren van toepassingen tot een minimum te beperken (als u de maximale piek gebruikt, wordt de [Cordon en][kubernetes-drain] het verwerkings Stop net zo veel knoop punten als het aantal opgegeven buffer knooppunten). Wanneer het oude knoop punt volledig is ontslagen, wordt de installatie kopie van de nieuwe versie geschaald en wordt het knoop punt de buffer voor het volgende knoop punt wordt bijgewerkt. Dit proces wordt herhaald totdat alle knoop punten in het cluster zijn bijgewerkt. Aan het einde van het proces wordt het laatste geleegde knoop punt verwijderd, waarbij het bestaande aantal agent knooppunten behouden blijft.
 
 ```azurecli-interactive
 az aks upgrade \
@@ -127,7 +113,7 @@ Als u wilt controleren of de upgrade is voltooid, gebruikt u de opdracht [AZ AKS
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-In de volgende voorbeeld uitvoer ziet u dat het cluster nu *1.13.10*uitvoert:
+In de volgende voorbeeld uitvoer ziet u dat het cluster nu *1.13.10* uitvoert:
 
 ```json
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn

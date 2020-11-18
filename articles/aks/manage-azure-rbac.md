@@ -1,5 +1,5 @@
 ---
-title: RBAC beheren in Kubernetes vanuit Azure
+title: Azure RBAC in Kubernetes beheren vanuit Azure
 titleSuffix: Azure Kubernetes Service
 description: Meer informatie over het gebruik van Azure RBAC voor Kubernetes-autorisatie met Azure Kubernetes service (AKS).
 services: container-service
@@ -7,23 +7,23 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 3f878389f22f3928bc1fc8c89b04353583326da6
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: a2a385b2be4e1005a7aabd76261b3190ecd2a506
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346040"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684216"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Azure RBAC gebruiken voor Kubernetes-autorisatie (preview)
 
 U kunt nu al gebruikmaken [van geïntegreerde verificatie tussen Azure Active Directory (Azure AD) en AKS](managed-aad.md). Als deze integratie is ingeschakeld, kunnen klanten Azure AD-gebruikers,-groepen of-service-principals gebruiken als onderwerpen in Kubernetes RBAC. Zie [hier](azure-ad-rbac.md)meer informatie.
-Met deze functie kunt u gebruikers identiteiten en referenties voor Kubernetes niet afzonderlijk beheren. U moet echter nog steeds Azure RBAC en Kubernetes RBAC afzonderlijk instellen en beheren. Zie [hier](concepts-identity.md)voor meer informatie over verificatie, autorisatie en RBAC op AKS.
+Met deze functie kunt u gebruikers identiteiten en referenties voor Kubernetes niet afzonderlijk beheren. U moet echter nog steeds Azure RBAC en Kubernetes RBAC afzonderlijk instellen en beheren. Meer informatie over verificatie en autorisatie met RBAC op AKS vindt u [hier](concepts-identity.md).
 
 In dit document wordt een nieuwe aanpak behandeld waarmee u het uniforme beheer en toegangs beheer kunt gebruiken voor Azure-resources, AKS en Kubernetes-resources.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-De mogelijkheid om RBAC voor Kubernetes-resources van Azure te beheren biedt u de keuze voor het beheren van RBAC voor de cluster bronnen met behulp van Azure-of native Kubernetes-mechanismen. Wanneer deze functie is ingeschakeld, worden Azure AD-principals alleen gevalideerd door Azure RBAC, terwijl reguliere Kubernetes-gebruikers en-service accounts uitsluitend worden gevalideerd door Kubernetes RBAC. Zie [hier](concepts-identity.md#azure-rbac-for-kubernetes-authorization-preview)voor meer informatie over verificatie, autorisatie en RBAC op AKS.
+De mogelijkheid om RBAC voor Kubernetes-resources van Azure te beheren biedt u de keuze voor het beheren van RBAC voor de cluster bronnen met behulp van Azure-of native Kubernetes-mechanismen. Wanneer deze functie is ingeschakeld, worden Azure AD-principals alleen gevalideerd door Azure RBAC, terwijl reguliere Kubernetes-gebruikers en-service accounts uitsluitend worden gevalideerd door Kubernetes RBAC. Meer informatie over verificatie en autorisatie met RBAC op AKS vindt u [hier](concepts-identity.md#azure-rbac-for-kubernetes-authorization-preview).
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
@@ -272,7 +272,7 @@ az group delete -n MyResourceGroup
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Lees [hier](concepts-identity.md)meer over AKS-verificatie, autorisatie en RBAC.
+- Lees [hier](concepts-identity.md)meer over AKS-verificatie, autorisatie, Kubernetes RBAC en Azure RBAC.
 - Lees [hier](../role-based-access-control/overview.md)meer over Azure RBAC.
 - Lees [hier](../role-based-access-control/resource-provider-operations.md#microsoftcontainerservice)meer over de acties die u kunt gebruiken om aangepaste Azure-rollen voor Kubernetes-autorisatie te definiëren.
 

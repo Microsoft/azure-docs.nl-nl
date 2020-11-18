@@ -1,20 +1,20 @@
 ---
-title: Azure AD en RBAC gebruiken voor clusters
+title: Gebruik Azure AD en Kubernetes RBAC voor clusters
 titleSuffix: Azure Kubernetes Service
-description: Meer informatie over het gebruik van Azure Active Directory groepslid maatschap voor het beperken van de toegang tot cluster bronnen met behulp van op rollen gebaseerd toegangs beheer (RBAC) in azure Kubernetes service (AKS)
+description: Meer informatie over het gebruik van Azure Active Directory groepslid maatschap voor het beperken van de toegang tot cluster bronnen met behulp van Kubernetes op basis van rollen (Kubernetes RBAC) in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
 ms.date: 07/21/2020
-ms.openlocfilehash: 2845a091c8a89f22e8892141dd2dad26d6049447
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f49e9f6b4f5aaf58ff055043b52cfe99e3e39f19
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88006839"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684284"
 ---
-# <a name="control-access-to-cluster-resources-using-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Toegang tot cluster bronnen beheren met op rollen gebaseerd toegangs beheer en Azure Active Directory identiteiten in de Azure Kubernetes-service
+# <a name="control-access-to-cluster-resources-using-kubernetes-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Toegang tot cluster bronnen beheren met op rollen gebaseerd toegangs beheer en Azure Active Directory-identiteiten in de Azure Kubernetes-service
 
-Azure Kubernetes service (AKS) kan worden geconfigureerd om Azure Active Directory (AD) te gebruiken voor gebruikers verificatie. In deze configuratie meldt u zich aan bij een AKS-cluster met behulp van een Azure AD-verificatie token. U kunt ook op rollen gebaseerd toegangs beheer (RBAC) configureren om de toegang tot cluster bronnen te beperken op basis van de identiteit of het groepslid maatschap van een gebruiker.
+Azure Kubernetes service (AKS) kan worden geconfigureerd om Azure Active Directory (AD) te gebruiken voor gebruikers verificatie. In deze configuratie meldt u zich aan bij een AKS-cluster met behulp van een Azure AD-verificatie token. U kunt ook Kubernetes met op rollen gebaseerd toegangs beheer (Kubernetes RBAC) configureren om de toegang tot cluster bronnen te beperken op basis van de identiteit of het lidmaatschap van een gebruiker.
 
 In dit artikel wordt beschreven hoe u Azure AD-groepslid maatschap kunt gebruiken voor het beheren van de toegang tot naam ruimten en cluster bronnen met behulp van Kubernetes RBAC in een AKS-cluster. Voor beelden van groepen en gebruikers worden gemaakt in azure AD, vervolgens worden rollen en RoleBindings in het AKS-cluster gemaakt om de juiste machtigingen te verlenen voor het maken en weer geven van resources.
 
@@ -44,13 +44,13 @@ AKS_ID=$(az aks show \
     --query id -o tsv)
 ```
 
-Maak de eerste voorbeeld groep in azure AD voor ontwikkel aars van toepassingen met behulp van de opdracht [AZ Ad Group Create][az-ad-group-create] . In het volgende voor beeld wordt een groep met de naam *appdev*gemaakt:
+Maak de eerste voorbeeld groep in azure AD voor ontwikkel aars van toepassingen met behulp van de opdracht [AZ Ad Group Create][az-ad-group-create] . In het volgende voor beeld wordt een groep met de naam *appdev* gemaakt:
 
 ```azurecli-interactive
 APPDEV_ID=$(az ad group create --display-name appdev --mail-nickname appdev --query objectId -o tsv)
 ```
 
-Maak nu een Azure-roltoewijzing voor de groep *appdev* met de opdracht [AZ Role Assignment Create][az-role-assignment-create] . Met deze toewijzing kan elk lid van de groep `kubectl` worden gebruikt voor interactie met een AKS-cluster door hen de gebruikersrol *Azure Kubernetes service cluster*te verlenen.
+Maak nu een Azure-roltoewijzing voor de groep *appdev* met de opdracht [AZ Role Assignment Create][az-role-assignment-create] . Met deze toewijzing kan elk lid van de groep `kubectl` worden gebruikt voor interactie met een AKS-cluster door hen de gebruikersrol *Azure Kubernetes service cluster* te verlenen.
 
 ```azurecli-interactive
 az role assignment create \
@@ -68,7 +68,7 @@ Maak een tweede voor beeld van een groep met de naam *opssre*:
 OPSSRE_ID=$(az ad group create --display-name opssre --mail-nickname opssre --query objectId -o tsv)
 ```
 
-Maak opnieuw een Azure-roltoewijzing om leden van de groep de *Azure Kubernetes service-cluster*gebruikersrol te verlenen:
+Maak opnieuw een Azure-roltoewijzing om leden van de groep de *Azure Kubernetes service-cluster* gebruikersrol te verlenen:
 
 ```azurecli-interactive
 az role assignment create \
@@ -79,7 +79,7 @@ az role assignment create \
 
 ## <a name="create-demo-users-in-azure-ad"></a>Demo-gebruikers maken in azure AD
 
-Met twee voor beelden van groepen die zijn gemaakt in azure AD voor onze toepassings ontwikkelaars en SREs, kunt u nu twee voor beeld-gebruikers maken. Als u de RBAC-integratie aan het einde van het artikel wilt testen, meldt u zich aan bij het AKS-cluster met deze accounts.
+Met twee voor beelden van groepen die zijn gemaakt in azure AD voor onze toepassings ontwikkelaars en SREs, kunt u nu twee voor beeld-gebruikers maken. Als u de Kubernetes RBAC-integratie aan het einde van het artikel wilt testen, meldt u zich aan bij het AKS-cluster met deze accounts.
 
 Maak het eerste gebruikers account in azure AD met behulp van de opdracht [AZ AD user create][az-ad-user-create] .
 
@@ -129,7 +129,7 @@ Maak een naam ruimte in het AKS-cluster met behulp van de [kubectl maken naam ru
 kubectl create namespace dev
 ```
 
-In Kubernetes definiëren *rollen* de machtigingen die moeten worden verleend en worden deze *RoleBindings* toegepast op de gewenste gebruikers of groepen. Deze toewijzingen kunnen worden toegepast op een bepaalde naam ruimte of in het hele cluster. Zie [using RBAC Authorization][rbac-authorization](Engelstalig) voor meer informatie.
+In Kubernetes definiëren *rollen* de machtigingen die moeten worden verleend en worden deze *RoleBindings* toegepast op de gewenste gebruikers of groepen. Deze toewijzingen kunnen worden toegepast op een bepaalde naam ruimte of in het hele cluster. Zie [using KUBERNETES RBAC Authorization][rbac-authorization](Engelstalig) voor meer informatie.
 
 Maak eerst een rol voor de naam ruimte van de *ontwikkelaar* . Met deze rol worden volledige machtigingen verleend aan de naam ruimte. In productie omgevingen kunt u meer gedetailleerde machtigingen opgeven voor verschillende gebruikers of groepen.
 
@@ -410,5 +410,5 @@ Zie [Aanbevolen procedures voor verificatie en autorisatie in AKS][operator-best
 [az-ad-user-create]: /cli/azure/ad/user#az-ad-user-create
 [az-ad-group-member-add]: /cli/azure/ad/group/member#az-ad-group-member-add
 [az-ad-group-show]: /cli/azure/ad/group#az-ad-group-show
-[rbac-authorization]: concepts-identity.md#kubernetes-role-based-access-control-rbac
+[rbac-authorization]: concepts-identity.md#kubernetes-role-based-access-control-kubernetes-rbac
 [operator-best-practices-identity]: operator-best-practices-identity.md

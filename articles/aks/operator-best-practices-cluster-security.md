@@ -5,12 +5,12 @@ description: Meer informatie over de aanbevolen procedures voor cluster operator
 services: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: 9cb51cb0f5b902553bda0b881c8392d74905c4bc
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 9ef019e682511e13af46194d26aec48c1555f70e
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073628"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683298"
 ---
 # <a name="best-practices-for-cluster-security-and-upgrades-in-azure-kubernetes-service-aks"></a>Aanbevolen procedures voor de beveiliging en upgrades van het cluster in azure Kubernetes service (AKS)
 
@@ -19,7 +19,7 @@ Wanneer u clusters beheert in azure Kubernetes service (AKS), is de beveiliging 
 Dit artikel is gericht op het beveiligen van uw AKS-cluster. In deze zelfstudie leert u procedures om het volgende te doen:
 
 > [!div class="checklist"]
-> * Gebruik Azure Active Directory en op rollen gebaseerd toegangs beheer (RBAC) om toegang tot de API-server te beveiligen
+> * Gebruik Azure Active Directory en Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) om toegang tot de API-server te beveiligen
 > * Toegang tot knooppunt bronnen beveiligen container
 > * Een AKS-cluster upgraden naar de nieuwste versie van Kubernetes
 > * Knoop punten up-to-date houden en automatisch beveiligings patches Toep assen
@@ -30,7 +30,7 @@ U kunt ook [integratie van Azure Kubernetes Services met Security Center][securi
 
 ## <a name="secure-access-to-the-api-server-and-cluster-nodes"></a>Veilige toegang tot de API-server en cluster knooppunten
 
-**Best Practice-richt lijnen** voor het beveiligen van de toegang tot de Kubernetes API-Server is een van de belangrijkste dingen die u kunt doen om uw cluster te beveiligen. Kubernetes op rollen gebaseerd toegangs beheer (RBAC) integreren met Azure Active Directory om de toegang tot de API-server te beheren. Met deze besturings elementen kunt u AKS op dezelfde manier beveiligen als u de toegang tot uw Azure-abonnementen beveiligt.
+**Best Practice-richt lijnen** voor het beveiligen van de toegang tot de Kubernetes API-Server is een van de belangrijkste dingen die u kunt doen om uw cluster te beveiligen. Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) integreren met Azure Active Directory om de toegang tot de API-server te beheren. Met deze besturings elementen kunt u AKS op dezelfde manier beveiligen als u de toegang tot uw Azure-abonnementen beveiligt.
 
 De Kubernetes API-server biedt één verbindings punt voor aanvragen voor het uitvoeren van acties binnen een cluster. Als u de toegang tot de API-server wilt beveiligen en controleren, beperkt u de toegang en geeft u de mini maal privileged Access permissions vereist. Deze methode is niet uniek voor Kubernetes, maar is vooral belang rijk wanneer het AKS-cluster logisch is geïsoleerd voor gebruik door meerdere tenants.
 
@@ -38,11 +38,11 @@ Azure Active Directory (AD) biedt een oplossing voor identiteits beheer op bedri
 
 ![Azure Active Directory integratie voor AKS-clusters](media/operator-best-practices-cluster-security/aad-integration.png)
 
-Gebruik Kubernetes RBAC en Azure AD-integratie om de API-server te beveiligen en geef het minste aantal machtigingen op dat is vereist voor een bereikset van bronnen, zoals een enkele naam ruimte. Verschillende gebruikers of groepen in azure AD kunnen verschillende RBAC-rollen krijgen. Met deze gedetailleerde machtigingen kunt u de toegang tot de API-server beperken en een duidelijke controle spoor van de uitgevoerde acties geven.
+Gebruik Kubernetes RBAC en Azure AD-integratie om de API-server te beveiligen en geef het minste aantal machtigingen op dat is vereist voor een bereikset van bronnen, zoals een enkele naam ruimte. Verschillende gebruikers of groepen in azure AD kunnen verschillende Kubernetes-rollen krijgen. Met deze gedetailleerde machtigingen kunt u de toegang tot de API-server beperken en een duidelijke controle spoor van de uitgevoerde acties geven.
 
-De aanbevolen best practice is groepen te gebruiken om toegang te bieden tot bestanden en mappen en afzonderlijke identiteiten, Azure AD- *groepslid* maatschap te gebruiken om gebruikers te verbinden met RBAC-rollen in plaats van afzonderlijke *gebruikers*. Wanneer het groepslid maatschap van een gebruiker wordt gewijzigd, worden de toegangs machtigingen voor het AKS-cluster dienovereenkomstig gewijzigd. Als u de gebruiker rechtstreeks aan een rol koppelt, kan de taak functie worden gewijzigd. De lidmaatschappen van Azure AD-groepen worden bijgewerkt, maar de machtigingen voor het AKS-cluster komen niet overeen met die. In dit scenario wordt de gebruiker afgemeld dat er meer machtigingen worden verleend dan een gebruiker vereist.
+De aanbevolen best practice is groepen te gebruiken om toegang te bieden tot bestanden en mappen en afzonderlijke identiteiten, Azure AD- *groepslid* maatschap te gebruiken om gebruikers te binden aan Kubernetes-rollen in plaats van afzonderlijke *gebruikers*. Wanneer het groepslid maatschap van een gebruiker wordt gewijzigd, worden de toegangs machtigingen voor het AKS-cluster dienovereenkomstig gewijzigd. Als u de gebruiker rechtstreeks aan een rol koppelt, kan de taak functie worden gewijzigd. De lidmaatschappen van Azure AD-groepen worden bijgewerkt, maar de machtigingen voor het AKS-cluster komen niet overeen met die. In dit scenario wordt de gebruiker afgemeld dat er meer machtigingen worden verleend dan een gebruiker vereist.
 
-Zie [Aanbevolen procedures voor verificatie en autorisatie in AKS][aks-best-practices-identity]voor meer informatie over Azure AD-integratie en RBAC.
+Zie [Aanbevolen procedures voor verificatie en autorisatie in AKS][aks-best-practices-identity]voor meer informatie over Azure AD-integratie, Kubernetes RBAC en Azure RBAC.
 
 ## <a name="secure-container-access-to-resources"></a>Toegang tot resources beveiligen met de container
 
@@ -53,7 +53,7 @@ Op dezelfde manier als u gebruikers of groepen het minste aantal vereiste bevoeg
 Voor een gedetailleerdere controle van container acties, kunt u ook ingebouwde Linux-beveiligings functies gebruiken, zoals *AppArmor* en *seccomp*. Deze functies worden gedefinieerd op knooppunt niveau en vervolgens geïmplementeerd via een pod-manifest. Ingebouwde Linux-beveiligings functies zijn alleen beschikbaar voor Linux-knoop punten en van peulen.
 
 > [!NOTE]
-> Kubernetes-omgevingen, in AKS of elders, zijn niet volledig veilig voor gebruik van een vijandend multi tenant. Aanvullende beveiligings functies, zoals *AppArmor*, *Seccomp*, *pod Security Policies*of meer verfijnde op rollen gebaseerd toegangs beheer (RBAC) voor knoop punten maken aanvallen moeilijker. Voor echte beveiliging bij het uitvoeren van vijandelijke multi tenant-workloads is een Hyper Visor echter het enige beveiligings niveau dat u moet vertrouwen. Het beveiligings domein voor Kubernetes wordt het hele cluster, niet een afzonderlijk knoop punt. Voor dit soort vijandelijke multi tenant-workloads moet u fysiek geïsoleerde clusters gebruiken.
+> Kubernetes-omgevingen, in AKS of elders, zijn niet volledig veilig voor gebruik van een vijandend multi tenant. Aanvullende beveiligings functies, zoals *AppArmor*, *Seccomp*, *pod Security Policies* of meer fijnere Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) voor knoop punten maken aanvallen moeilijker. Voor echte beveiliging bij het uitvoeren van vijandelijke multi tenant-workloads is een Hyper Visor echter het enige beveiligings niveau dat u moet vertrouwen. Het beveiligings domein voor Kubernetes wordt het hele cluster, niet een afzonderlijk knoop punt. Voor dit soort vijandelijke multi tenant-workloads moet u fysiek geïsoleerde clusters gebruiken.
 
 ### <a name="app-armor"></a>App-beveiliging
 
@@ -117,7 +117,7 @@ Zie [AppArmor-profielen in Kubernetes][k8s-apparmor]voor meer informatie over Ap
 
 ### <a name="secure-computing"></a>Veilig computing
 
-Hoewel AppArmor werkt voor een Linux-toepassing, werkt [seccomp (*SEC*ureren *comp*uting)][seccomp] op proces niveau. Seccomp is ook een Linux kernel Security-module en wordt standaard ondersteund door de docker-runtime die wordt gebruikt door AKS-knoop punten. Met seccomp kan het proces aanroepen dat containers kunnen worden uitgevoerd. U maakt filters waarmee wordt gedefinieerd welke acties moeten worden toegestaan of geweigerd. vervolgens gebruikt u annotaties in een pod YAML-manifest om te koppelen aan het seccomp-filter. Hiermee wordt de best practice voor het verlenen van de container de minimale machtigingen die nodig zijn om te kunnen worden uitgevoerd, en niet meer.
+Hoewel AppArmor werkt voor een Linux-toepassing, werkt [seccomp (*SEC* ureren *comp* uting)][seccomp] op proces niveau. Seccomp is ook een Linux kernel Security-module en wordt standaard ondersteund door de docker-runtime die wordt gebruikt door AKS-knoop punten. Met seccomp kan het proces aanroepen dat containers kunnen worden uitgevoerd. U maakt filters waarmee wordt gedefinieerd welke acties moeten worden toegestaan of geweigerd. vervolgens gebruikt u annotaties in een pod YAML-manifest om te koppelen aan het seccomp-filter. Hiermee wordt de best practice voor het verlenen van de container de minimale machtigingen die nodig zijn om te kunnen worden uitgevoerd, en niet meer.
 
 Als u seccomp in actie wilt zien, maakt u een filter waarmee u geen machtigingen voor een bestand kunt wijzigen. [SSH][aks-ssh] naar een AKS-knoop punt en maak vervolgens een seccomp-filter met de naam */var/lib/kubelet/seccomp/Prevent-chmod* en plak de volgende inhoud:
 

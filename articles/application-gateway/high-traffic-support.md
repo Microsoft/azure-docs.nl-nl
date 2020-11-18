@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 03/24/2020
 ms.author: caya
-ms.openlocfilehash: 3854e7f3c19f1724a2df1508c9fa519809e07ba9
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 2c5c017ac0faf443a38fc43dfd27c7e776cb52a0
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658669"
+ms.locfileid: "94683378"
 ---
 # <a name="application-gateway-high-traffic-support"></a>Ondersteuning voor intensief verkeer in Application Gateway
 
@@ -30,6 +30,8 @@ Raadpleeg de [documentatie over metrische gegevens](./application-gateway-metric
 ### <a name="set-your-instance-count-based-on-your-peak-cpu-usage"></a>Stel het aantal exemplaren in op basis van het CPU-gebruik van de piek
 Als u een v1 SKU-gateway gebruikt, hebt u de mogelijkheid om uw Application Gateway tot 32 exemplaren in te stellen voor schalen. Controleer het CPU-gebruik van uw Application Gateway in de afgelopen maand voor pieken van meer dan 80%. het is een meet waarde die u kunt bewaken. Het is raadzaam om het aantal instanties in te stellen op basis van het piek gebruik en met een extra buffer van 10% tot 20%, zodat er geen verkeer kan worden verwerkt.
 
+:::image type="content" source="./media/application-gateway-covid-guidelines/v1-cpu-utilization-inline.png" alt-text="Metrische gegevens over het CPU-gebruik van v1" lightbox="./media/application-gateway-covid-guidelines/v1-cpu-utilization-exp.png":::
+
 ### <a name="use-the-v2-sku-over-v1-for-its-autoscaling-capabilities-and-performance-benefits"></a>Gebruik v2 SKU over v1 voor de mogelijkheden voor automatisch schalen en prestaties
 De v2-SKU biedt automatisch schalen om ervoor te zorgen dat uw Application Gateway kan worden geschaald naarmate het verkeer toeneemt. Het biedt ook andere aanzienlijke prestatie voordelen, zoals 5x betere TLS-offload-prestaties, snellere implementatie-en update tijden, zone redundantie en meer in vergelijking met v1. Zie onze [v2-documentatie](./application-gateway-autoscaling-zone-redundant.md) voor meer informatie en Raadpleeg de [migratie documentatie](./migrate-v1-v2.md) voor v1 tot v2 voor meer informatie over het migreren van uw bestaande v1 SKU-gateways naar v2 SKU. 
 
@@ -41,6 +43,8 @@ Voor de SKU van Application Gateway v2 kunt u het maximum aantal exemplaren inst
 
 Controleer de grootte van het subnet en het beschik bare IP-adres in uw subnet en stel uw maximum aantal exemplaren in op basis van dat. Als er onvoldoende ruimte beschikbaar is op uw subnet, moet u de gateway opnieuw maken in hetzelfde subnet of een ander subnetwerk dat voldoende capaciteit heeft. 
 
+:::image type="content" source="./media/application-gateway-covid-guidelines/v2-autoscaling-max-instances-inline.png" alt-text="V2-configuratie voor automatisch schalen" lightbox="./media/application-gateway-covid-guidelines/v2-autoscaling-max-instances-exp.png":::
+
 ### <a name="set-your-minimum-instance-count-based-on-your-average-compute-unit-usage"></a>Stel het minimum aantal exemplaren in op basis van uw gemiddelde Compute unit-gebruik
 
 Voor de SKU van Application Gateway v2 neemt automatisch schalen zes tot zeven minuten in beslag en het inrichten van een extra set exemplaren die klaar zijn om verkeer te nemen. Als er vervolgens korte pieken in het verkeer zijn, kunnen uw bestaande gateway-exemplaren onder spanning raken. Dit kan leiden tot onverwachte latentie of verlies van verkeer. 
@@ -48,6 +52,8 @@ Voor de SKU van Application Gateway v2 neemt automatisch schalen zes tot zeven m
 Het is raadzaam om het minimum aantal exemplaren in te stellen op een optimaal niveau. Als u bijvoorbeeld 50 exemplaren nodig hebt voor het afhandelen van het verkeer bij piek belasting, is het instellen van het minimum aantal van 25 tot 30 een goed idee in plaats van op <10, zodat zelfs wanneer er sprake is van korte bursts van verkeer, Application Gateway zou kunnen afhandelen en voldoende tijd moeten bieden om automatisch te kunnen worden geschaald en van kracht worden.
 
 Controleer de metriek van de reken eenheid voor de afgelopen maand. Metrische reken eenheid is een weer gave van het CPU-gebruik van uw gateway en op basis van het piek gebruik gedeeld door 10, kunt u het minimum aantal exemplaren instellen dat vereist is. Houd er rekening mee dat 1 toepassings gateway-exemplaar mini maal 10 reken eenheden kan verwerken
+
+:::image type="content" source="./media/application-gateway-covid-guidelines/compute-unit-metrics-inline.png" alt-text="V2 metrische reken eenheden" lightbox="./media/application-gateway-covid-guidelines/compute-unit-metrics-exp.png":::
 
 ## <a name="manual-scaling-for-application-gateway-v2-sku-standard_v2waf_v2"></a>Hand matig schalen voor Application Gateway v2 SKU (Standard_v2/WAF_v2)
 
@@ -79,6 +85,17 @@ Maak een waarschuwing wanneer de reactie status van Application Gateway 4xx of 5
 
 Maak een waarschuwing wanneer de drempel waarde voor het aantal mislukte aanvragen wordt overschreden. U moet de gateway in productie observeren om een statische drempel te bepalen of om een dynamische drempel waarde voor de waarschuwing te gebruiken.
 
+### <a name="example-setting-up-an-alert-for-more-than-100-failed-requests-in-the-last-5-minutes"></a>Voor beeld: instellen van een waarschuwing voor meer dan 100 mislukte aanvragen in de afgelopen vijf minuten
+
+Dit voor beeld laat zien hoe u de Azure Portal kunt gebruiken om een waarschuwing in te stellen wanneer het aantal mislukte aanvragen in de afgelopen 5 minuten meer is dan 100.
+1. Navigeer naar uw **Application Gateway**.
+2. Selecteer in het linkerdeel venster **metrische gegevens** op het tabblad **bewaking** . 
+3. Een metrische waarde voor **mislukte aanvragen** toevoegen.
+4. Klik op **nieuwe waarschuwings regel** en Definieer uw voor waarde en acties
+5. Klik op **waarschuwings regel maken** om de waarschuwing te maken en in te scha kelen
+
+:::image type="content" source="./media/application-gateway-covid-guidelines/create-alerts-inline.png" alt-text="V2 waarschuwingen maken" lightbox="./media/application-gateway-covid-guidelines/create-alerts-exp.png":::
+
 ## <a name="alerts-for-application-gateway-v2-sku-standard_v2waf_v2"></a>Waarschuwingen voor de SKU van Application Gateway v2 (Standard_v2/WAF_v2)
 
 ### <a name="alert-if-compute-unit-utilization-crosses-75-of-average-usage"></a>Waarschuwen als het gebruik van de reken eenheid met 75% van het gemiddelde gebruik bijsnijdt 
@@ -91,9 +108,9 @@ In dit voor beeld ziet u hoe u de Azure Portal kunt gebruiken om een waarschuwin
 1. Navigeer naar uw **Application Gateway**.
 2. Selecteer in het linkerdeel venster **metrische gegevens** op het tabblad **bewaking** . 
 3. Een metriek toevoegen voor **gemiddelde huidige reken eenheden**. 
-![WAF metric instellen](./media/application-gateway-covid-guidelines/waf-setup-metrics.png)
 4. Als u uw minimum aantal instanties hebt ingesteld op uw gemiddelde CU-gebruik, kunt u een waarschuwing instellen wanneer 75% van de minimum instanties in gebruik zijn. Als uw gemiddelde gebruik bijvoorbeeld 10 CUs is, stelt u een waarschuwing in op 7,5. Hiermee wordt u gewaarschuwd als het gebruik toeneemt en u tijd hebt om te reageren. U kunt het minimum verhogen als u denkt dat dit verkeer wordt ondervangen om u te waarschuwen dat verkeer kan toenemen. 
-![WAF-waarschuwing instellen](./media/application-gateway-covid-guidelines/waf-setup-monitoring-alert.png)
+
+:::image type="content" source="./media/application-gateway-covid-guidelines/compute-unit-alert-inline.png" alt-text="V2-waarschuwingen voor Compute-eenheden" lightbox="./media/application-gateway-covid-guidelines/compute-unit-alert-exp.png":::
 
 > [!NOTE]
 > U kunt instellen dat de waarschuwing wordt uitgevoerd bij een lager of hoger CU-gebruiks percentage, afhankelijk van hoe gevoelig u wilt zijn voor mogelijke verkeers pieken.
@@ -122,8 +139,8 @@ Met deze metriek wordt het tijds interval aangegeven tussen het begin van het to
 
 Dit is het interval vanaf het moment dat Application Gateway de eerste byte van de HTTP-aanvraag ontvangt naar het tijdstip waarop de laatste reactie byte is verzonden naar de client. Moet een waarschuwing maken als de reactie latentie van de back-end meer heeft dan de gebruikelijke drempel waarde. Ze kunnen bijvoorbeeld instellen dat ze worden gewaarschuwd wanneer de totale tijds duur van meer dan 30% van de gebruikelijke waarde wordt verhoogd.
 
-## <a name="set-up-waf-with-geofiltering-and-bot-protection-to-stop-attacks"></a>WAF met geofiltering en bot-beveiliging instellen om aanvallen te stoppen
-Als u voor uw toepassing een extra beveiligingslaag wilt, gebruikt u de Application Gateway WAF_v2 SKU voor WAF-mogelijkheden. U kunt de v2-SKU zo configureren dat alleen toegang tot uw toepassingen vanuit een bepaald land/regio of landen/regio's is toegestaan. U stelt een aangepaste regel voor WAF in om verkeer expliciet toe te staan of te blok keren op basis van de geolocatie. Zie [geofilterende aangepaste regels](../web-application-firewall/ag/geomatch-custom-rules.md) en [aangepaste regels configureren op Application Gateway WAF_v2 SKU via Power shell](../web-application-firewall/ag/configure-waf-custom-rules.md)voor meer informatie.
+## <a name="set-up-waf-with-geo-filtering-and-bot-protection-to-stop-attacks"></a>WAF met geo-filtering en bot-beveiliging instellen om aanvallen te stoppen
+Als u voor uw toepassing een extra beveiligingslaag wilt, gebruikt u de Application Gateway WAF_v2 SKU voor WAF-mogelijkheden. U kunt de v2-SKU zo configureren dat alleen toegang tot uw toepassingen vanuit een bepaald land/regio of landen/regio's is toegestaan. U stelt een aangepaste regel voor WAF in om verkeer expliciet toe te staan of te blok keren op basis van de geografische locatie. Zie voor meer informatie [aangepaste regels voor geo-filtering](../web-application-firewall/ag/geomatch-custom-rules.md) en [aangepaste regels configureren op Application Gateway WAF_v2 SKU via Power shell](../web-application-firewall/ag/configure-waf-custom-rules.md).
 
 Schakel bot-beveiliging in om bekende beschadigde bots te blok keren. Dit verlaagt de hoeveelheid verkeer die wordt ontvangen naar uw toepassing. Zie [bot Protection with set up instructies](../web-application-firewall/ag/configure-waf-custom-rules.md)(Engelstalig) voor meer informatie.
 

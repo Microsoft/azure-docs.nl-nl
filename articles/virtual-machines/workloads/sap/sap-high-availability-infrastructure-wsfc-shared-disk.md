@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1af2e741b2ab8a6a0aa6257272798961f5962c43
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 4538654b255aad99ff00477134c9eeb5845e50d6
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167335"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682754"
 ---
 # <a name="prepare-the-azure-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster-and-shared-disk-for-sap-ascsscs"></a>De Azure-infra structuur voor SAP HA voorbereiden met behulp van een Windows-failovercluster en een gedeelde schijf voor SAP ASCS/SCS
 
@@ -165,7 +165,7 @@ ms.locfileid: "92167335"
 In dit artikel worden de stappen beschreven die u moet uitvoeren om de Azure-infra structuur voor te bereiden voor het installeren en configureren van een High-Availability SAP ASCS/SCS-exemplaar op een Windows-failovercluster met behulp van een *gedeelde cluster schijf* als optie voor het clusteren van een SAP ASCS-exemplaar.
 In de documentatie worden twee alternatieven voor *gedeelde cluster schijven* weer gegeven:
 
-- [Gedeelde Azure-schijven](../../windows/disks-shared.md)
+- [Gedeelde Azure-schijven](../../disks-shared.md)
 - Met de [Data keeper-cluster versie van Sios](https://us.sios.com/products/datakeeper-cluster/) gespiegelde opslag maken, waarmee geclusterde gedeelde schijf wordt gesimuleerd 
 
 De gepresenteerde configuratie is afhankelijk van [Azure proximity placement groups (PPG)](./sap-proximity-placement-scenarios.md) om een optimale netwerk LATENTIE voor SAP-workloads te krijgen. De documentatie heeft geen betrekking op de laag van de data base.  
@@ -213,17 +213,17 @@ De volgende lijst bevat de configuratie van de (A) SCS/ERS-load balancer. De con
 - Back-end-configuratie  
     Voeg alle virtuele machines toe die deel moeten uitmaken van het (A) SCS/ERS-cluster. In dit voor beeld Vm's **PR1-ascs-10** en **PR1-ascs-11**.
 - Test poort
-    - Poort 620**Nr** . de standaard optie voor protocol (TCP), interval (5), beschadigde drempel waarde (2)
+    - Poort 620 **Nr** . de standaard optie voor protocol (TCP), interval (5), beschadigde drempel waarde (2)
 - Taakverdelings regels
     - Als u Standard Load Balancer gebruikt, selecteert u HA-poorten
     - Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
-        - 32**nr** TCP
-        - 36**nr** TCP
-        - 39**nr** TCP
-        - 81**nr** TCP
-        - 5**nr**13 TCP
-        - 5**nr**14 TCP
-        - 5**nr**16 TCP
+        - 32 **nr** TCP
+        - 36 **nr** TCP
+        - 39 **nr** TCP
+        - 81 **nr** TCP
+        - 5 **nr** 13 TCP
+        - 5 **nr** 14 TCP
+        - 5 **nr** 16 TCP
 
     - Zorg ervoor dat time-out voor inactiviteit (minuten) is ingesteld op de maximum waarde 30 en dat zwevend IP-adres (Direct Server Return) is ingeschakeld.
 
@@ -237,17 +237,17 @@ Als de wachtrij voor het plaatsen van replicatie Server 2 (ERS2) ook is gecluste
   De virtuele machines zijn al toegevoegd aan de back-ILB.  
 
 - 2e test poort
-    - Poort 621**Nr**  
+    - Poort 621 **Nr**  
     De standaard optie voor protocol (TCP), interval (5), beschadigde drempel waarde (2) behouden
 
 - 2e regels voor taak verdeling
     - Als u Standard Load Balancer gebruikt, selecteert u HA-poorten
     - Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
-        - 32**nr** TCP
-        - 33**nr** TCP
-        - 5**nr**13 TCP
-        - 5**nr**14 TCP
-        - 5**nr**16 TCP
+        - 32 **nr** TCP
+        - 33 **nr** TCP
+        - 5 **nr** 13 TCP
+        - 5 **nr** 14 TCP
+        - 5 **nr** 16 TCP
 
     - Zorg ervoor dat time-out voor inactiviteit (minuten) is ingesteld op de maximum waarde 30 en dat zwevend IP-adres (Direct Server Return) is ingeschakeld.
 
@@ -466,13 +466,13 @@ Voordat u de SIOS-software installeert, maakt u de domein gebruiker DataKeeperSv
 
    _Eerste pagina van de data keeper-installatie van SIOS_
 
-2. Selecteer **Ja**in het dialoog venster.
+2. Selecteer **Ja** in het dialoog venster.
 
    ![Afbeelding 32: data keeper informeert dat een service wordt uitgeschakeld][sap-ha-guide-figure-3032]
 
    _Data keeper informeert u dat een service wordt uitgeschakeld_
 
-3. In het dialoog venster wordt u aangeraden domein- **of Server account**te selecteren.
+3. In het dialoog venster wordt u aangeraden domein- **of Server account** te selecteren.
 
    ![Afbeelding 33: selectie van de gebruiker voor SIOS data keeper][sap-ha-guide-figure-3033]
 

@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/26/2020
 ms.author: thomasge
-ms.openlocfilehash: fdbef15bb7831fedd7c375d565e0cde10f9b9a9e
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: f229075d0bad4f9522e02e30bdabc1d42bb086cf
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380429"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684182"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>AKS-beheerde Azure Active Directory-integratie
 
@@ -18,14 +18,14 @@ Azure AD-integratie met AKS is ontworpen om de Azure AD-integratie ervaring te v
 
 ## <a name="azure-ad-authentication-overview"></a>Overzicht van Azure AD-verificatie
 
-Cluster beheerders kunnen op rollen gebaseerd toegangs beheer (RBAC) Kubernetes configureren op basis van de identiteit van een gebruiker of het lidmaatschap van de Directory groep. Azure AD-verificatie wordt geleverd voor AKS-clusters met OpenID Connect Connect. OpenID Connect Connect is een id-laag die boven op het OAuth 2,0-protocol is gebouwd. Voor meer informatie over OpenID Connect Connect raadpleegt u de [Open-ID Connect-documentatie][open-id-connect].
+Cluster beheerders kunnen Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) configureren op basis van de identiteit van een gebruiker of het lidmaatschap van de Directory groep. Azure AD-verificatie wordt geleverd voor AKS-clusters met OpenID Connect Connect. OpenID Connect Connect is een id-laag die boven op het OAuth 2,0-protocol is gebouwd. Voor meer informatie over OpenID Connect Connect raadpleegt u de [Open-ID Connect-documentatie][open-id-connect].
 
 Meer informatie over de Azure AD-integratie stroom vindt u in de [documentatie over integratie concepten van Azure Active Directory](concepts-identity.md#azure-active-directory-integration).
 
 ## <a name="limitations"></a>Beperkingen 
 
 * AKS-beheerde Azure AD-integratie kan niet worden uitgeschakeld
-* niet-RBAC ingeschakelde clusters worden niet ondersteund voor door AKS beheerde Azure AD-integratie
+* niet-Kubernetes RBAC ingeschakelde clusters worden niet ondersteund voor door AKS beheerde Azure AD-integratie
 * Het wijzigen van de Azure AD-Tenant die is gekoppeld aan AKS beheerde Azure AD-integratie, wordt niet ondersteund
 
 ## <a name="prerequisites"></a>Vereisten
@@ -136,7 +136,7 @@ az aks get-credentials --resource-group myResourceGroup --name myManagedCluster 
 
 ## <a name="enable-aks-managed-azure-ad-integration-on-your-existing-cluster"></a>Door AKS beheerde Azure AD-integratie inschakelen op uw bestaande cluster
 
-U kunt AKS-beheerde Azure AD-integratie inschakelen op uw bestaande RBAC-cluster. Zorg ervoor dat u uw beheerders groep instelt om toegang te houden tot uw cluster.
+U kunt AKS-beheerde Azure AD-integratie inschakelen op uw bestaande Kubernetes RBAC-cluster. Zorg ervoor dat u uw beheerders groep instelt om toegang te houden tot uw cluster.
 
 ```azurecli-interactive
 az aks update -g MyResourceGroup -n MyManagedCluster --enable-aad --aad-admin-group-object-ids <id-1> [--aad-tenant-id <id>]

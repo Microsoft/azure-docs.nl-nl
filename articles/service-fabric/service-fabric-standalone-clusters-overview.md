@@ -3,12 +3,12 @@ title: Overzicht van zelfstandige Service Fabric clusters
 description: Service Fabric-clusters worden uitgevoerd op Windows Server en Linux, wat betekent dat u Service Fabric toepassingen kunt implementeren en hosten overal waar u Windows Server of Linux moet uitvoeren.
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.openlocfilehash: c57d1ef6db295400ad986adadb804fb942a723e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3162a3d02510ce8efab6c5bcac0f1fdd2b2539b
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91841064"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683995"
 ---
 # <a name="overview-of-service-fabric-standalone-clusters"></a>Overzicht van Service Fabric zelfstandige clusters
 
@@ -43,10 +43,10 @@ Naast client certificaten kan Azure Active Directory ook worden geconfigureerd v
 
 Lees voor meer informatie [client-naar-knoop punt beveiliging](service-fabric-cluster-security.md#client-to-node-security)
 
-### <a name="role-based-access-control-rbac"></a>RBAC (op rollen gebaseerd toegangsbeheer)
+### <a name="service-fabric-role-based-access-control"></a>Service Fabric op rollen gebaseerd toegangs beheer
 Service Fabric biedt ook ondersteuning voor toegangs beheer om de toegang tot bepaalde cluster bewerkingen voor verschillende groepen gebruikers te beperken. Dit helpt het cluster beter te beveiligen. Twee typen toegangs beheer worden ondersteund voor clients die verbinding maken met een cluster: beheerdersrol en gebruikersrol.  
 
-Lees [Access Control op basis van rollen (RBAC)](service-fabric-cluster-security.md#role-based-access-control-rbac)voor meer informatie.
+Lees [service Fabric op rollen gebaseerd toegangs beheer](service-fabric-cluster-security.md#service-fabric-role-based-access-control)voor meer informatie.
 
 ## <a name="scaling"></a>Schalen
 

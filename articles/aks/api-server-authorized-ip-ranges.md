@@ -4,12 +4,12 @@ description: Meer informatie over het beveiligen van uw cluster met behulp van e
 services: container-service
 ms.topic: article
 ms.date: 09/21/2020
-ms.openlocfilehash: 99c6b173d96bbd54f12a0edc501d49e8c65caf01
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9828682fa71d023356b174d528c2137ed29f368d
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613727"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682499"
 ---
 # <a name="secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Veilige toegang tot de API-server met behulp van geautoriseerde IP-adresbereiken in azure Kubernetes service (AKS)
 
@@ -21,7 +21,7 @@ Dit artikel laat u zien hoe u met de API-server geautoriseerde IP-adresbereiken 
 
 In dit artikel wordt beschreven hoe u een AKS-cluster maakt met behulp van de Azure CLI.
 
-U moet de Azure CLI-versie 2.0.76 of hoger hebben geïnstalleerd en geconfigureerd. Voer  `az --version` uit om de versie te bekijken. Als u wilt installeren of upgraden, raadpleegt u [Azure cli installeren][install-azure-cli].
+U moet de Azure CLI-versie 2.0.76 of hoger hebben geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ### <a name="limitations"></a>Beperkingen
 
@@ -31,9 +31,9 @@ De functie voor door de API-server geautoriseerde IP-bereiken heeft de volgende 
 
 ## <a name="overview-of-api-server-authorized-ip-ranges"></a>Overzicht van door de API server geautoriseerde IP-adresbereiken
 
-De Kubernetes API-server is hoe de onderliggende Kubernetes-Api's worden weer gegeven. Dit onderdeel biedt de interactie voor beheer hulpprogramma's, zoals `kubectl` of het Kubernetes-dash board. AKS biedt een cluster beheer vlak met één Tenant, met een speciale API-server. Standaard wordt aan de API-server een openbaar IP-adres toegewezen. u moet de toegang beheren via op rollen gebaseerd toegangs beheer (RBAC).
+De Kubernetes API-server is hoe de onderliggende Kubernetes-Api's worden weer gegeven. Dit onderdeel biedt de interactie voor beheer hulpprogramma's, zoals `kubectl` of het Kubernetes-dash board. AKS biedt een cluster beheer vlak met één Tenant, met een speciale API-server. Standaard wordt aan de API-server een openbaar IP-adres toegewezen. u moet de toegang beheren via Kubernetes op basis van rollen (Kubernetes RBAC) of Azure RBAC.
 
-Als u de toegang tot de anderszins toegankelijke AKS Control vlak/API-server wilt beveiligen, kunt u geautoriseerde IP-bereiken inschakelen en gebruiken. Met deze geautoriseerde IP-bereiken zijn alleen gedefinieerde IP-adresbereiken toegestaan om te communiceren met de API-server. Een aanvraag naar de API-server vanaf een IP-adres dat geen deel uitmaakt van deze toegestane IP-bereiken, wordt geblokkeerd. Blijf RBAC gebruiken om gebruikers en de acties die ze aanvragen te autoriseren.
+Als u de toegang tot de anderszins toegankelijke AKS Control vlak/API-server wilt beveiligen, kunt u geautoriseerde IP-bereiken inschakelen en gebruiken. Met deze geautoriseerde IP-bereiken zijn alleen gedefinieerde IP-adresbereiken toegestaan om te communiceren met de API-server. Een aanvraag naar de API-server vanaf een IP-adres dat geen deel uitmaakt van deze toegestane IP-bereiken, wordt geblokkeerd. Blijf Kubernetes RBAC of Azure RBAC gebruiken om gebruikers en de acties die ze aanvragen te autoriseren.
 
 Zie [Kubernetes core-concepten voor AKS][concepts-clusters-workloads]voor meer informatie over de API-server en andere cluster onderdelen.
 

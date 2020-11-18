@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5126ae94d8c751952964aaf4df0736a5e546ff36
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c914afb3a72ccac4753a1942b6c4303850654a2e
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963632"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682635"
 ---
 # <a name="install-sap-netweaver-ha-on-a-windows-failover-cluster-and-shared-disk-for-an-sap-ascsscs-instance-in-azure"></a>SAP NetWeaver HA installeren op een Windows-failovercluster en gedeelde schijf voor een SAP ASCS/SCS-exemplaar in azure
 
@@ -149,7 +149,7 @@ ms.locfileid: "91963632"
 
 In dit artikel wordt beschreven hoe u een SAP-systeem met hoge Beschik baarheid installeert en configureert in azure met behulp van een Windows Server-failovercluster en een gedeelde cluster schijf voor het clusteren van een SAP ASCS/SCS-exemplaar. Zoals beschreven in [architectuur gids: cluster a SAP ASCS/SCS-exemplaar op een Windows-failovercluster met behulp van een gedeelde cluster schijf][sap-high-availability-guide-wsfc-shared-disk], zijn er twee alternatieven voor *gedeelde cluster schijven*:
 
-- [Gedeelde Azure-schijven](../../windows/disks-shared.md)
+- [Gedeelde Azure-schijven](../../disks-shared.md)
 - Met de [Data keeper-cluster versie van Sios](https://us.sios.com/products/datakeeper-cluster/) gespiegelde opslag maken, waarmee geclusterde gedeelde schijf wordt gesimuleerd 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -250,7 +250,7 @@ Gebruik de test functionaliteit van de interne load balancer om ervoor te zorgen
 Dit werkt echter niet in sommige cluster configuraties, omdat er slechts één exemplaar actief is. De andere instantie is passief en kan geen enkele werk belasting accepteren. Een test functionaliteit helpt wanneer de interne load balancer van Azure detecteert welk exemplaar actief is en alleen gericht is op het actieve exemplaar.  
 
 > [!IMPORTANT]
-> In dit voor beeld is de **ProbePort** ingesteld op 620**Nr**. Voor het SAP ASCS-exemplaar met nummer **00** is 620**00**. U moet de configuratie aanpassen zodat deze overeenkomt met uw SAP-instantie nummers en uw SAP-SID.
+> In dit voor beeld is de **ProbePort** ingesteld op 620 **Nr**. Voor het SAP ASCS-exemplaar met nummer **00** is 620 **00**. U moet de configuratie aanpassen zodat deze overeenkomt met uw SAP-instantie nummers en uw SAP-SID.
 
 Als u een test poort wilt toevoegen, voert u deze Power shell-module uit op een van de cluster-Vm's:
 

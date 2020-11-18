@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: troubleshooting
 ms.date: 05/7/2020
 ms.author: errobin
-ms.openlocfilehash: c37c0e9b914854ff41053526740d3454c5c23f90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b75c85b85674def84d9fcee62549a6458abf9174
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91628992"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684834"
 ---
 # <a name="troubleshooting-outbound-connections-failures"></a><a name="obconnecttsg"></a> Problemen met mislukte uitgaande verbindingen oplossen
 
@@ -63,7 +63,7 @@ Twee virtuele machines in de back-end-pool zouden bijvoorbeeld 1024 SNAT-poorten
 Als u uitbreidt naar de volgende grotere laag van de back-endadresgroep, is er mogelijk een time-out opgestaan voor sommige van uw uitgaande verbindingen als toegewezen poorten opnieuw moeten worden toegewezen.  Als u slechts een aantal SNAT-poorten gebruikt, kunt u uitschalen over de volgende grotere back-inconsequential.  De helft van de bestaande poorten wordt opnieuw toegewezen telkens wanneer u overstapt naar de volgende back-endadresgroep.  Als u dit niet wilt doen, moet u uw implementatie vorm geven in de laag grootte.  Of zorg ervoor dat uw toepassing zo nodig kan detecteren en probeer het opnieuw.  TCP-keepalives kunnen worden gebruikt om te detecteren wanneer de SNAT-poorten niet meer werken omdat ze opnieuw moeten worden toegewezen.
 
 ## <a name="use-keepalives-to-reset-the-outbound-idle-timeout"></a><a name="idletimeout"></a>Keepalives gebruiken om de uitgaande time-out voor inactiviteit opnieuw in te stellen
-Uitgaande verbindingen hebben een time-out van 4 minuten. Deze time-out is aanpasbaar via [Uitgaande regels](../load-balancer/load-balancer-outbound-rules-overview.md#idletimeout). U kunt ook Trans Port (bijvoorbeeld TCP-keepalives) of keepalives op toepassings niveau gebruiken om een niet-actieve stroom te vernieuwen en deze time-out voor inactiviteit zo nodig opnieuw in te stellen.  
+Uitgaande verbindingen hebben een time-out van 4 minuten. Deze time-out is aanpasbaar via [Uitgaande regels](outbound-rules.md). U kunt ook Trans Port (bijvoorbeeld TCP-keepalives) of keepalives op toepassings niveau gebruiken om een niet-actieve stroom te vernieuwen en deze time-out voor inactiviteit zo nodig opnieuw in te stellen.  
 
 Bij het gebruik van TCP-keepalives is het voldoende om deze in te scha kelen aan één zijde van de verbinding. Het is bijvoorbeeld voldoende om ze alleen in te scha kelen op de server om de niet-actieve timer van de stroom opnieuw in te stellen en het is niet nodig voor beide zijden voor het starten van TCP-keepalives.  Er bestaan soort gelijke concepten voor Application Layer, waaronder client-server configuraties voor data bases.  Controleer de server zijde voor welke opties bestaan voor toepassingsspecifieke keepalives.
 

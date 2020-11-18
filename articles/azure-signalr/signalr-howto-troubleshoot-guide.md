@@ -1,19 +1,19 @@
 ---
 title: Gids voor probleemoplossing voor Azure SignalR Service
-description: Learn
+description: Meer informatie over het oplossen van veelvoorkomende problemen
 author: YanJin
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: 5b8360134ace3852fb3c7fbe458ca2572f45b624
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 11ea348a80bc226b6a96bea1e7c023ee9c06b13a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663589"
+ms.locfileid: "94684114"
 ---
-# <a name="troubleshooting-guide"></a>Handleiding voor het oplossen van problemen
+# <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Probleemoplossings gids voor veelvoorkomende problemen met de Azure signalerings service
 
 In deze richt lijnen vindt u nuttige richt lijnen voor probleem oplossing op basis van de veelvoorkomende problemen die klanten in de afgelopen jaren hebben behaald en opgelost.
 
@@ -347,3 +347,9 @@ Neem ASP.NET Core een voor beeld (ASP.NET één is vergelijkbaar):
 
     * [ASP.NET java script-client](https://github.com/Azure/azure-signalr/tree/dev/samples/AspNet.ChatSample/AspNet.ChatSample.JavaScriptClient/wwwroot/index.html#L71)
 
+## <a name="next-steps"></a>Volgende stappen
+
+In deze hand leiding hebt u geleerd hoe u de veelvoorkomende problemen kunt afhandelen. U kunt ook meer algemene probleemoplossings methoden leren. 
+
+> [!div class="nextstepaction"]
+> [Problemen met connectiviteit en aflevering van berichten oplossen](./signalr-howto-troubleshoot-method.md)

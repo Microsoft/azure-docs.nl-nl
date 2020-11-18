@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/02/2020
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 285fa34db3886cf405a3682438a27a17c75d81ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c42e9c31397e9313898d7029366bc8de169d368e
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91666697"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683825"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Istio installeren en gebruiken in azure Kubernetes service (AKS)
 
@@ -35,7 +35,7 @@ In dit artikel leert u het volgende:
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Voor de stappen in dit artikel wordt ervan uitgegaan dat u een AKS-cluster hebt gemaakt (Kubernetes `1.16` en hoger, met RBAC ingeschakeld) en een `kubectl` verbinding met het cluster tot stand hebt gebracht. Als u hulp nodig hebt bij een van deze items, raadpleegt u de [AKS Quick][aks-quickstart]start.
+Voor de stappen die in dit artikel worden beschreven, wordt ervan uitgegaan dat u een AKS-cluster hebt gemaakt (Kubernetes `1.16` en hoger, met KUBERNETES RBAC is ingeschakeld) en een `kubectl` verbinding met het cluster tot stand hebt gebracht. Als u hulp nodig hebt bij een van deze items, raadpleegt u de [AKS Quick][aks-quickstart]start.
 
 Zorg ervoor dat u de Istio-documentatie over [prestaties en schaal baarheid](https://istio.io/docs/concepts/performance-and-scalability/) hebt gelezen om inzicht te krijgen in de aanvullende bron vereisten voor het uitvoeren van Istio in uw AKS-cluster. De kern-en geheugen vereisten variëren op basis van uw specifieke werk belasting. Kies het juiste aantal knoop punten en de VM-grootte voor uw installatie.
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/14/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: b42a952b096f533f916879a11fdb6b6583fa8592
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 5da7f2a11be7562313b709a8af72ccd709165cfa
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660352"
+ms.locfileid: "94684199"
 ---
 # <a name="use-a-public-standard-load-balancer-in-azure-kubernetes-service-aks"></a>Een open bare Standard Load Balancer gebruiken in azure Kubernetes service (AKS)
 
@@ -225,7 +225,7 @@ az aks update \
     --load-balancer-outbound-ports 4000
 ```
 
-Dit voor beeld geeft u 4000 toegewezen uitgaande poorten voor elk knoop punt in mijn cluster, en met 7 *4000 ip's per knoop punt * 100 knoop punten = 400k totale aantal poorten < = 448k totaal aantal poorten = 7 ip's * 64k poorten per IP-adres*. Hierdoor kunt u veilig schalen naar 100-knoop punten en een standaard upgrade bewerking uitvoeren. Het is essentieel dat u voldoende poorten toewijst voor extra knoop punten die nodig zijn voor de upgrade en andere bewerkingen. AKS is standaard ingesteld op één buffer knooppunt voor de upgrade. in dit voor beeld is het 4000 vrije poorten op een wille keurig moment. Als u [maxSurge-waarden](upgrade-cluster.md#customize-node-surge-upgrade-preview)gebruikt, vermenigvuldigt u de uitgaande poorten per knoop punt met uw maxSurge-waarde.
+Dit voor beeld geeft u 4000 toegewezen uitgaande poorten voor elk knoop punt in mijn cluster, en met 7 *4000 ip's per knoop punt * 100 knoop punten = 400k totale aantal poorten < = 448k totaal aantal poorten = 7 ip's * 64k poorten per IP-adres*. Hierdoor kunt u veilig schalen naar 100-knoop punten en een standaard upgrade bewerking uitvoeren. Het is essentieel dat u voldoende poorten toewijst voor extra knoop punten die nodig zijn voor de upgrade en andere bewerkingen. AKS is standaard ingesteld op één buffer knooppunt voor de upgrade. in dit voor beeld is het 4000 vrije poorten op een wille keurig moment. Als u [maxSurge-waarden](upgrade-cluster.md#customize-node-surge-upgrade)gebruikt, vermenigvuldigt u de uitgaande poorten per knoop punt met uw maxSurge-waarde.
 
 Als u meer dan 100 knoop punten veilig wilt gaan, moet u meer Ip's toevoegen.
 

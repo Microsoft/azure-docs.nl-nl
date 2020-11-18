@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 69541ec652188bc3826b7829fbc5c182193d6ba9
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: d66f3099ba225fbdd2bfc3d54db56ffd8ed2c43f
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92670944"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684029"
 ---
 # <a name="use-intelligent-routing-and-canary-releases-with-istio-in-azure-kubernetes-service-aks"></a>Intelligente route ring en Canarische releases gebruiken met Istio in azure Kubernetes service (AKS)
 
@@ -33,13 +33,13 @@ In dit artikel leert u het volgende:
 > [!NOTE]
 > Dit scenario is getest op Istio-versie `1.3.2` .
 
-Voor de stappen in dit artikel wordt ervan uitgegaan dat u een AKS-cluster hebt gemaakt (Kubernetes `1.13` en hoger, met RBAC ingeschakeld) en een `kubectl` verbinding met het cluster tot stand hebt gebracht. U hebt ook Istio geïnstalleerd in uw cluster.
+Voor de stappen in dit artikel wordt ervan uitgegaan dat u een AKS-cluster hebt gemaakt (Kubernetes `1.13` en hoger, met KUBERNETES RBAC is ingeschakeld) en een `kubectl` verbinding met het cluster tot stand hebt gebracht. U hebt ook Istio geïnstalleerd in uw cluster.
 
 Als u hulp nodig hebt bij een van deze items, raadpleegt u de [AKS Quick][aks-quickstart] start en [installeert u Istio in AKS][istio-install] Guidance (Engelstalig).
 
 ## <a name="about-this-application-scenario"></a>Over dit toepassings scenario
 
-De voor beeld-AKS stem-app biedt twee stem opties ( **katten** of **honden** ) aan gebruikers. Er is een opslag onderdeel waarmee het aantal stemmen voor elke optie wordt gehandhaafd. Daarnaast bevat een analyse component waarmee details over de stemmen voor elke optie worden verstrekt.
+De voor beeld-AKS stem-app biedt twee stem opties (**katten** of **honden**) aan gebruikers. Er is een opslag onderdeel waarmee het aantal stemmen voor elke optie wordt gehandhaafd. Daarnaast bevat een analyse component waarmee details over de stemmen voor elke optie worden verstrekt.
 
 In dit toepassings scenario begint u met `1.0` het implementeren van de versie van de stem-app en versie `1.0` van het onderdeel analyse. De analyse component biedt eenvoudige tellingen voor het aantal stemmen. De stem-app en het analyse onderdeel communiceren met `1.0` de versie van het opslag onderdeel, dat wordt ondersteund door redis.
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b3dc49e3e2d8492882507918a59edb0b9da41fcf
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: f9bfcaa1299f4aacbc11110308ba14093b09f7d5
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167250"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684301"
 ---
 # <a name="cluster-an-sap-ascsscs-instance-on-a-windows-failover-cluster-by-using-a-cluster-shared-disk-in-azure"></a>Een SAP ASCS/SCS-exemplaar op een Windows-failovercluster clusteren met behulp van een gedeelde cluster schijf in azure
 
@@ -122,7 +122,7 @@ _SAP ASCS/SCS HA-architectuur met gedeelde schijf_
 
 Er zijn twee opties voor gedeelde schijven in een Windows-failovercluster in Azure:
 
-- [Gedeelde Azure-schijven](../../windows/disks-shared.md) -functie, waarmee Azure Managed Disk gelijktijdig aan meerdere vm's kan worden gekoppeld. 
+- [Gedeelde Azure-schijven](../../disks-shared.md) -functie, waarmee Azure Managed Disk gelijktijdig aan meerdere vm's kan worden gekoppeld. 
 - Software van derden gebruiken [SIOS data keeper cluster Edition](https://us.sios.com/products/datakeeper-cluster) om een gespiegelde opslag te maken die gedeelde cluster opslag simuleert. 
 
 Houd bij het selecteren van de technologie voor gedeelde schijf rekening met de volgende overwegingen:
@@ -131,7 +131,7 @@ Houd bij het selecteren van de technologie voor gedeelde schijf rekening met de 
 - Hiermee kunt u Azure Managed Disk aan meerdere Vm's tegelijk koppelen zonder dat extra software hoeft te worden onderhouden en gebruikt 
 - U werkt met één gedeelde Azure-schijf op één opslag cluster. Dat heeft gevolgen voor de betrouw baarheid van uw SAP-oplossing.
 - Momenteel is de enige ondersteunde implementatie met Azure gedeelde Premium-schijf in de Beschikbaarheidsset. Een gedeelde Azure-schijf wordt niet ondersteund in de zonegebonden-implementatie.     
-- Zorg ervoor dat u een Azure Premium-schijf inricht met een minimale schijf grootte die is opgegeven in [Premium-SSD bereik](../../windows/disks-shared.md#disk-sizes) om aan het vereiste aantal vm's tegelijk te kunnen koppelen (meestal 2 voor SAP ASCS Windows-failovercluster). 
+- Zorg ervoor dat u een Azure Premium-schijf inricht met een minimale schijf grootte die is opgegeven in [Premium-SSD bereik](../../disks-shared.md#disk-sizes) om aan het vereiste aantal vm's tegelijk te kunnen koppelen (meestal 2 voor SAP ASCS Windows-failovercluster). 
 - Een gedeelde Azure-schijf wordt niet ondersteund voor SAP-workloads, omdat deze geen ondersteuning biedt voor implementatie in een Beschikbaarheidsset of zonegebonden-implementatie.  
  
 **SIOS**
@@ -142,19 +142,19 @@ Houd bij het selecteren van de technologie voor gedeelde schijf rekening met de 
 
 ### <a name="shared-disk-using-azure-shared-disk"></a>Gedeelde schijf met behulp van een gedeelde Azure-schijf
 
-Micro soft biedt [gedeelde Azure-schijven](../../windows/disks-shared.md), die kunnen worden gebruikt voor het implementeren van SAP ASCS/SCS hoge Beschik baarheid met een optie voor een gedeelde schijf.
+Micro soft biedt [gedeelde Azure-schijven](../../disks-shared.md), die kunnen worden gebruikt voor het implementeren van SAP ASCS/SCS hoge Beschik baarheid met een optie voor een gedeelde schijf.
 
 #### <a name="prerequisites-and-limitations"></a>Vereisten en beperkingen
 
 Momenteel kunt u Azure Premium-SSD-schijven gebruiken als een gedeelde Azure-schijf voor het SAP ASCS/SCS-exemplaar. De volgende beperkingen zijn momenteel aanwezig:
 
 -  [Azure Ultra Disk](../../disks-types.md#ultra-disk) wordt niet ondersteund als een gedeelde Azure-schijf voor SAP-workloads. Het is momenteel niet mogelijk om virtuele Azure-machines te plaatsen met behulp van Azure Ultra disk in de Beschikbaarheidsset
--  Een [gedeelde Azure-schijf](../../windows/disks-shared.md) met Premium-SSD schijven wordt alleen ondersteund met vm's in de beschikbaarheidsset. Het wordt niet ondersteund in Beschikbaarheidszones-implementatie. 
+-  Een [gedeelde Azure-schijf](../../disks-shared.md) met Premium-SSD schijven wordt alleen ondersteund met vm's in de beschikbaarheidsset. Het wordt niet ondersteund in Beschikbaarheidszones-implementatie. 
 -  De waarde [maxShares](../../disks-shared-enable.md?tabs=azure-cli#disk-sizes) voor de gedeelde Azure-schijf bepaalt hoeveel cluster knooppunten de gedeelde schijf kunnen gebruiken. Normaal gesp roken kunt u met het SAP ASCS/SCS-exemplaar twee knoop punten in een Windows-failovercluster configureren. Daarom moet de waarde voor `maxShares` zijn ingesteld op twee.
 -  Alle SAP-ASCS/SCS-cluster-Vm's moeten worden geïmplementeerd in dezelfde [plaatsings groep voor Azure nabijheid](../../windows/proximity-placement-groups.md).   
    Hoewel u Windows-cluster-Vm's in een Beschikbaarheidsset met een gedeelde Azure-schijf zonder PPG implementeert, zorgt PPG ervoor dat de fysieke nabijheid van Azure gedeelde schijven en de cluster-Vm's worden gesloten, waardoor er minder latentie tussen de virtuele machines en de opslaglaag kan worden bereikt.    
 
-Raadpleeg de sectie [beperkingen](../../linux/disks-shared.md#limitations) van de documentatie van Azure Shared disk voor meer informatie over de beperkingen voor een gedeelde Azure-schijf.
+Raadpleeg de sectie [beperkingen](../../disks-shared.md#limitations) van de documentatie van Azure Shared disk voor meer informatie over de beperkingen voor een gedeelde Azure-schijf.
 
 > [!IMPORTANT]
 > Wanneer u een Windows-failovercluster met SAP ASCS/SCS implementeert met een gedeelde Azure-schijf, moet u er rekening mee houden dat uw implementatie met één gedeelde schijf in één opslag cluster wordt uitgevoerd. Uw SAP ASCS/SCS-exemplaar wordt beïnvloed, in het geval van problemen met het opslag cluster, waar de gedeelde Azure-schijf wordt geïmplementeerd.    
@@ -166,7 +166,7 @@ Raadpleeg de sectie [beperkingen](../../linux/disks-shared.md#limitations) van d
 
 Zowel Windows Server 2016 als 2019 worden ondersteund (gebruik de meest recente Data Center-installatie kopieën).
 
-We raden u ten zeerste aan **Windows Server 2019 Data Center**te gebruiken als:
+We raden u ten zeerste aan **Windows Server 2019 Data Center** te gebruiken als:
 - Windows 2019 failover cluster-service is Azure-compatibel
 - Er is een integratie en bewustzijn van Azure host-onderhoud toegevoegd en de ervaring is verbeterd door bewaking voor Azure Schedule-gebeurtenissen.
 - U kunt de naam van een gedistribueerde netwerk gebruiken (dit is de standaard optie). Daarom is er geen specifiek IP-adres nodig voor de naam van het cluster netwerk. Bovendien hoeft u dit IP-adres niet te configureren op de interne Azure-Load Balancer. 

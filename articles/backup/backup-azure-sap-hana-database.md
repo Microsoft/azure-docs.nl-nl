@@ -3,12 +3,12 @@ title: Back-ups maken van een SAP HANA Data Base naar Azure met Azure Backup
 description: In dit artikel vindt u informatie over het maken van een back-up van een SAP HANA Data Base naar Azure virtual machines met de Azure Backup-service.
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: 28c9716bfb2dd0a6ac380d9ffd6dcd7fd5eb4978
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: f7957670b3ba98c640ebc53c6427273ca75a4e6d
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649433"
+ms.locfileid: "94682843"
 ---
 # <a name="back-up-sap-hana-databases-in-azure-vms"></a>Back-ups maken van SAP HANA-databases in virtuele Azure-machines
 
@@ -144,7 +144,7 @@ Geef als volgt de beleidsinstellingen op:
 1. Geef bij **Beleidsnaam** een naam voor het nieuwe beleid op.
 
    ![Beleids naam invoeren](./media/backup-azure-sap-hana-database/policy-name.png)
-2. In **Beleid voor een volledige back-up** selecteert u een **back-upfrequentie** en kiest u **Dagelijks** of **Wekelijks**.
+1. In **Beleid voor een volledige back-up** selecteert u een **back-upfrequentie** en kiest u **Dagelijks** of **Wekelijks**.
    * **Dagelijks**: Selecteer het uur en de tijd zone waarin de back-uptaak wordt gestart.
        * U moet een volledige back-up uitvoeren. U kunt deze optie niet uitschakelen.
        * Selecteer **Volledige back-up** om het beleid te bekijken.
@@ -153,16 +153,16 @@ Geef als volgt de beleidsinstellingen op:
 
    ![Back-upfrequentie selecteren](./media/backup-azure-sap-hana-database/backup-frequency.png)
 
-3. In **Bewaartermijn** configureert u de bewaarinstellingen voor de volledige back-up.
+1. In **Bewaartermijn** configureert u de bewaarinstellingen voor de volledige back-up.
     * Alle opties zijn standaard geselecteerd. Wis de limieten voor het Bewaar bereik die u niet wilt gebruiken en stel de beperkingen in die u doet.
     * De minimale bewaarperiode voor elk type back-up (volledig/differentieel/logboek) is zeven dagen.
     * Herstelpunten worden getagd voor retentie op basis van de bewaarperiode. Als u een dagelijkse volledige back-up selecteert, wordt slechts één volledige back-up per dag geactiveerd.
     * De back-up voor een specifieke dag wordt getagd en bewaard op basis van de wekelijkse bewaarperiode en uw instellingen.
     * De maandelijkse en jaarlijkse bewaarperioden werken op soortgelijke wijze.
 
-4. In het menu voor het **beleid voor een volledige back-up** selecteert u **OK** om de instellingen te accepteren.
-5. Selecteer **differentiële back-up** om een differentieel beleid toe te voegen.
-6. In **Beleid voor een differentiële back-up** selecteert u **Inschakelen** om de frequentie- en bewaarinstellingen te openen.
+1. In het menu voor het **beleid voor een volledige back-up** selecteert u **OK** om de instellingen te accepteren.
+1. Selecteer **differentiële back-up** om een differentieel beleid toe te voegen.
+1. In **Beleid voor een differentiële back-up** selecteert u **Inschakelen** om de frequentie- en bewaarinstellingen te openen.
     * U kunt maximaal één differentiële back-up per dag activeren.
     * Differentiële back-ups kunnen maximaal 180 dagen worden bewaard. Als dat voor u te kort is, moet u volledige back-ups gebruiken.
 
@@ -170,22 +170,22 @@ Geef als volgt de beleidsinstellingen op:
 
     > [!NOTE]
     > Incrementele back-ups worden nu ondersteund in de open bare preview-versie. U kunt kiezen voor een differentieel of een incrementele back-up, maar niet voor beide.
-7. Selecteer in **Incrementeel back-upbeleid** **inschakelen** om de besturings elementen frequentie en retentie te openen.
+1. Selecteer in **Incrementeel back-upbeleid** **inschakelen** om de besturings elementen frequentie en retentie te openen.
     * U kunt Maxi maal één incrementele back-up per dag activeren.
     * Incrementele back-ups kunnen Maxi maal 180 dagen worden bewaard. Als dat voor u te kort is, moet u volledige back-ups gebruiken.
 
     ![Incrementeel back-upbeleid](./media/backup-azure-sap-hana-database/incremental-backup-policy.png)
 
-7. Selecteer **OK** om het beleid op te slaan en terug te gaan naar het hoofdmenu **Back-upbeleid**.
-8. Selecteer **Logboekback-up** als u een back-upbeleid voor een transactielogboek wilt toevoegen;
+1. Selecteer **OK** om het beleid op te slaan en terug te gaan naar het hoofdmenu **Back-upbeleid**.
+1. Selecteer **Logboekback-up** als u een back-upbeleid voor een transactielogboek wilt toevoegen;
     * Selecteer in **logboek back-up** de optie **inschakelen**.  Dit kan niet worden uitgeschakeld omdat SAP HANA alle logboek back-ups beheert.
     * Stel de besturings elementen voor de frequentie en de retentie in.
 
     > [!NOTE]
     > Logboek back-ups gaan alleen naar de stroom nadat een geslaagde volledige back-up is voltooid.
 
-9. Selecteer **OK** om het beleid op te slaan en terug te gaan naar het hoofdmenu **Back-upbeleid**.
-10. Zodra u het back-upbeleid hebt gedefinieerd, selecteert u **OK**.
+1. Selecteer **OK** om het beleid op te slaan en terug te gaan naar het hoofdmenu **Back-upbeleid**.
+1. Zodra u het back-upbeleid hebt gedefinieerd, selecteert u **OK**.
 
 > [!NOTE]
 > Elke logboek back-up wordt gekoppeld aan de vorige volledige back-up om een herstel keten te vormen. Deze volledige back-up wordt bewaard totdat de retentie van de laatste back-up van het logboek is verlopen. Dit kan betekenen dat de volledige back-up gedurende een extra periode wordt bewaard om ervoor te zorgen dat alle logboeken kunnen worden hersteld. We gaan ervan uit dat een gebruiker een wekelijkse volledige back-up, een dagelijks differentieel en twee uur logboeken heeft. Deze zijn allemaal 30 dagen bewaard. Maar de wekelijkse volledige kan echter echt worden opgeruimd/verwijderd wanneer de volgende volledige back-up beschikbaar is, dat wil zeggen na 30 en 7 dagen. Een voor beeld: een wekelijkse volledige back-up gebeurt op een zestiende. Volgens het Bewaar beleid moet het worden bewaard tot dec 16de. De laatste keer dat de back-up van het logboek is gemaakt voor deze volledige, wordt de volgende geplande volledige, op nov 22. Totdat dit logboek beschikbaar is tot dec 22, kan de zestien 16de volledig niet worden verwijderd. Tot en met dec 22 wordt dus de ge16dede volledige nov bewaard.

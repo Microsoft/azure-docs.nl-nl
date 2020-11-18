@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van veelvoorkomende problemen bij
 services: container-service
 ms.topic: troubleshooting
 ms.date: 06/20/2020
-ms.openlocfilehash: d15e381baf3abdb77f63b17cbd1d33b24f5d3321
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: aefb33325c1a5bf8e94d47106147d4c7c4f0f1ca
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286764"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684165"
 ---
 # <a name="aks-troubleshooting"></a>AKS-problemen oplossen
 
@@ -46,7 +46,7 @@ In de volgende drie (3) gevallen treedt er een fout op onvoldoende subnet-groott
    1. Als Kubenet wordt gebruikt, treedt dit op wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of buffer nodes needed to upgrade` .
    1. Als u Azure CNI gebruikt, treedt dit op wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of buffer nodes needed to upgrade times (*) the node pool's --max-pod value` .
    
-   Standaard hebben AKS-clusters een maximale piek waarde (upgrade buffer) van één (1), maar dit upgrade gedrag kan worden aangepast door de [maximale piek waarde van een knooppunt groep](upgrade-cluster.md#customize-node-surge-upgrade-preview) in te stellen, waardoor het aantal beschik bare ip's dat nodig is voor het volt ooien van een upgrade, wordt verhoogd.
+   Standaard hebben AKS-clusters een maximale piek waarde (upgrade buffer) van één (1), maar dit upgrade gedrag kan worden aangepast door de [maximale piek waarde van een knooppunt groep](upgrade-cluster.md#customize-node-surge-upgrade) in te stellen, waardoor het aantal beschik bare ip's dat nodig is voor het volt ooien van een upgrade, wordt verhoogd.
 
 1. AKS maken of AKS Nodepool toevoegen
    1. Als Kubenet wordt gebruikt, treedt dit op wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of nodes requested for the node pool` .
@@ -86,13 +86,13 @@ AKS heeft HA-besturings plannen die verticaal schalen op basis van het aantal ke
 
 Deze time-outs kunnen betrekking hebben op het interne verkeer tussen knoop punten die worden geblokkeerd. Controleer of dit verkeer niet wordt geblokkeerd, bijvoorbeeld door [netwerk beveiligings groepen](concepts-security.md#azure-network-security-groups) op het subnet voor de knoop punten van uw cluster.
 
-## <a name="im-trying-to-enable-role-based-access-control-rbac-on-an-existing-cluster-how-can-i-do-that"></a>Ik probeer Role-Based Access Control (RBAC) in te scha kelen op een bestaand cluster. Hoe kan ik dat doen?
+## <a name="im-trying-to-enable-kubernetes-role-based-access-control-kubernetes-rbac-on-an-existing-cluster-how-can-i-do-that"></a>Ik probeer op Kubernetes (op rollen gebaseerd toegangs beheer) in te scha kelen op een bestaand cluster. Hoe kan ik dat doen?
 
-Het inschakelen van op rollen gebaseerd toegangs beheer (RBAC) op bestaande clusters wordt op dit moment niet ondersteund, moet worden ingesteld bij het maken van nieuwe clusters. RBAC is standaard ingeschakeld bij gebruik van CLI, portal of een API-versie die hoger is dan `2020-03-01` .
+Het inschakelen van Kubernetes op basis van op rollen gebaseerd toegangs beheer (Kubernetes RBAC) op bestaande clusters wordt op dit moment niet ondersteund, moet worden ingesteld bij het maken van nieuwe clusters. Kubernetes RBAC is standaard ingeschakeld bij gebruik van CLI, portal of een API-versie die hoger is dan `2020-03-01` .
 
-## <a name="i-created-a-cluster-with-rbac-enabled-and-now-i-see-many-warnings-on-the-kubernetes-dashboard-the-dashboard-used-to-work-without-any-warnings-what-should-i-do"></a>Ik heb een cluster gemaakt waarop RBAC is ingeschakeld en nu ziet u veel waarschuwingen op het Kubernetes-dash board. Het dash board dat wordt gebruikt om zonder waarschuwingen te werken. Wat moet ik doen?
+## <a name="i-created-a-cluster-with-kubernetes-rbac-enabled-and-now-i-see-many-warnings-on-the-kubernetes-dashboard-the-dashboard-used-to-work-without-any-warnings-what-should-i-do"></a>Ik heb een cluster gemaakt waarop Kubernetes RBAC is ingeschakeld en nu ziet u veel waarschuwingen op het Kubernetes-dash board. Het dash board dat wordt gebruikt om zonder waarschuwingen te werken. Wat moet ik doen?
 
-De reden voor de waarschuwingen is dat RBAC is ingeschakeld voor het cluster en dat toegang tot het dash board is nu standaard beperkt. Over het algemeen is deze aanpak goed, omdat de standaard belichting van het dash board aan alle gebruikers van het cluster kan leiden tot beveiligings Risico's. Als u het dash board nog steeds wilt inschakelen, volgt u de stappen in [dit blog bericht](https://pascalnaber.wordpress.com/2018/06/17/access-dashboard-on-aks-with-rbac-enabled/).
+De reden voor de waarschuwingen is dat op het cluster Kubernetes RBAC is ingeschakeld en dat toegang tot het dash board nu standaard wordt beperkt. Over het algemeen is deze aanpak goed, omdat de standaard belichting van het dash board aan alle gebruikers van het cluster kan leiden tot beveiligings Risico's. Als u het dash board nog steeds wilt inschakelen, volgt u de stappen in [dit blog bericht](https://pascalnaber.wordpress.com/2018/06/17/access-dashboard-on-aks-with-rbac-enabled/).
 
 ## <a name="i-cant-get-logs-by-using-kubectl-logs-or-i-cant-connect-to-the-api-server-im-getting-error-from-server-error-dialing-backend-dial-tcp-what-should-i-do"></a>Ik kan geen logboeken ophalen met behulp van kubectl-Logboeken of ik kan geen verbinding maken met de API-server. Ik krijg de fout melding van server: fout bij het kiezen van de back-end: Dial TCP.... Wat moet ik doen?
 
@@ -154,10 +154,10 @@ Volg de *voordat u begint* met de stappen in het juiste document om een AKS-clus
 Naam beperkingen worden geïmplementeerd door zowel het Azure-platform als de AKS. Als een resource naam of-para meter een van deze beperkingen uitbreekt, wordt er een fout bericht weer gegeven waarin u wordt gevraagd een andere invoer op te geven. De volgende algemene richt lijnen zijn van toepassing:
 
 * Cluster namen moeten 1-63 tekens lang zijn. De enige toegestane tekens zijn letters, cijfers, streepjes en onderstrepings teken. Het eerste en laatste teken moeten een letter of cijfer zijn.
-* De naam van het AKS-knoop punt/ *MC_* resource groep combineert de naam van de resource groep en de resource naam. De automatisch gegenereerde syntaxis van `MC_resourceGroupName_resourceName_AzureRegion` mag niet langer zijn dan 80 tekens. Als dat nodig is, vermindert u de lengte van de naam van de resource groep of de AKS-cluster naam. U kunt ook [de naam van de resource groep voor het knoop punt aanpassen](cluster-configuration.md#custom-resource-group-name)
+* De naam van het AKS-knoop punt/*MC_* resource groep combineert de naam van de resource groep en de resource naam. De automatisch gegenereerde syntaxis van `MC_resourceGroupName_resourceName_AzureRegion` mag niet langer zijn dan 80 tekens. Als dat nodig is, vermindert u de lengte van de naam van de resource groep of de AKS-cluster naam. U kunt ook [de naam van de resource groep voor het knoop punt aanpassen](cluster-configuration.md#custom-resource-group-name)
 * De *dnsPrefix* moet beginnen en eindigen met alfanumerieke waarden en moet tussen de 1-54 tekens lang zijn. Geldige tekens zijn alfanumerieke waarden en afbreek streepjes (-). De *dnsPrefix* mag geen speciale tekens bevatten, zoals een punt (.).
 * Namen van AKS-knooppunt groepen moeten allemaal kleine letters zijn en 1-11 tekens bevatten voor Linux-knooppunt Pools en 1-6 tekens voor Windows-knooppunt groepen. De naam moet beginnen met een letter en de enige toegestane tekens zijn letters en cijfers.
-* De *Administrator-gebruikers naam* , waarmee de gebruikers naam van de beheerder voor Linux-knoop punten wordt ingesteld, moet beginnen met een letter, mag alleen letters, cijfers, afbreek streepjes en onderstrepings tekens bevatten en een maximale lengte van 64 karakters hebben.
+* De *Administrator-gebruikers naam*, waarmee de gebruikers naam van de beheerder voor Linux-knoop punten wordt ingesteld, moet beginnen met een letter, mag alleen letters, cijfers, afbreek streepjes en onderstrepings tekens bevatten en een maximale lengte van 64 karakters hebben.
 
 ## <a name="im-receiving-errors-when-trying-to-create-update-scale-delete-or-upgrade-cluster-that-operation-is-not-allowed-as-another-operation-is-in-progress"></a>Ik ontvang fouten bij het maken, bijwerken, schalen, verwijderen of upgraden van een cluster. deze bewerking is niet toegestaan omdat er een andere bewerking wordt uitgevoerd.
 
@@ -167,7 +167,7 @@ Cluster bewerkingen zijn beperkt wanneer er nog een eerdere bewerking wordt uitg
 
 Op basis van de uitvoer van de cluster status:
 
-* Als het cluster zich in een andere inrichtings status bevindt dan *geslaagd* of *mislukt* , wacht u totdat de bewerking ( *bijwerken/bijwerken/maken/schalen/verwijderen/migreren* ) is voltooid. Wanneer de vorige bewerking is voltooid, voert u de laatste cluster bewerking opnieuw uit.
+* Als het cluster zich in een andere inrichtings status bevindt dan *geslaagd* of *mislukt*, wacht u totdat de bewerking (*bijwerken/bijwerken/maken/schalen/verwijderen/migreren*) is voltooid. Wanneer de vorige bewerking is voltooid, voert u de laatste cluster bewerking opnieuw uit.
 
 * Als de upgrade van het cluster is mislukt, volgt u de stappen [die worden beschreven waarbij ik fouten ontvang dat mijn cluster de status Mislukt heeft en dat de upgrade of schaal aanpassing pas werkt als het probleem is opgelost](#im-receiving-errors-that-my-cluster-is-in-failed-state-and-upgrading-or-scaling-will-not-work-until-it-is-fixed).
 
@@ -476,7 +476,7 @@ Deze fout wordt veroorzaakt door een upstream voor de race van het cluster voor 
 
 ### <a name="slow-disk-attachment-getazuredisklun-takes-10-to-15-minutes-and-you-receive-an-error"></a>Een trage schijf bijlage duurt 10 tot 15 minuten en er wordt een fout bericht weer gegeven
 
-Bij Kubernetes-versies **ouder dan 1.15.0** , wordt er mogelijk een fout bericht weer gegeven, zoals **fout WaitForAttach kan geen LUN vinden voor de schijf**.  De tijdelijke oplossing voor dit probleem is om ongeveer 15 minuten te wachten en probeer het opnieuw.
+Bij Kubernetes-versies **ouder dan 1.15.0**, wordt er mogelijk een fout bericht weer gegeven, zoals **fout WaitForAttach kan geen LUN vinden voor de schijf**.  De tijdelijke oplossing voor dit probleem is om ongeveer 15 minuten te wachten en probeer het opnieuw.
 
 
 ### <a name="why-do-upgrades-to-kubernetes-116-fail-when-using-node-labels-with-a-kubernetesio-prefix"></a>Waarom worden upgrades naar Kubernetes 1,16 mislukt wanneer u knooppunt labels gebruikt met een kubernetes.io-voor voegsel

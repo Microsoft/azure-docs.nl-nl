@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe u de real-time-weer gave van co
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: references_regions
-ms.openlocfilehash: 4966ab0d64745c36ee53f27ba4063714f18e35da
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6fdd2d0a97357a2126ff37c0840b1f7da2859da5
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648103"
+ms.locfileid: "94682669"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>De functie voor live data (preview) instellen
 
@@ -136,7 +136,7 @@ Aan elk Azure AD-account moet machtigingen worden verleend voor de juiste Api's 
 >[!IMPORTANT]
 >Als de gebruiker aan wie u de RBAC-binding hebt verleend, zich in dezelfde Azure AD-Tenant bevindt, wijst u machtigingen toe op basis van de userPrincipalName. Als de gebruiker zich in een andere Azure AD-Tenant bevindt, wordt er een query voor en gebruikt de objectId-eigenschap.
 
-Zie [RBAC-binding maken](../../aks/azure-ad-integration-cli.md#create-rbac-binding)voor meer informatie over het configureren van uw AKS-cluster **ClusterRoleBinding**.
+Zie [Create KUBERNETES RBAC binding](../../aks/azure-ad-integration-cli.md#create-kubernetes-rbac-binding)voor meer informatie over het configureren van uw AKS-cluster **ClusterRoleBinding**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

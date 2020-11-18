@@ -4,12 +4,12 @@ description: Meer informatie over beveiligings scenario's voor een Azure Service
 ms.topic: conceptual
 ms.date: 08/14/2018
 ms.custom: sfrev
-ms.openlocfilehash: 8d6f3e94a735a6a8880d726890f1eb7ac346c755
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 642356f08a946cae5d2b2d395aaddd8e4dad27ed
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946192"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682788"
 ---
 # <a name="service-fabric-cluster-security-scenarios"></a>Beveiligings scenario's voor Service Fabric cluster
 
@@ -19,7 +19,7 @@ Dit artikel bevat een overzicht van beveiligings scenario's voor Azure-clusters 
 
 * Beveiliging van knoop punt naar knoop punt
 * Beveiliging van client naar knoop punt
-* RBAC (op rollen gebaseerd toegangsbeheer)
+* Service Fabric op rollen gebaseerd toegangs beheer
 
 ## <a name="node-to-node-security"></a>Beveiliging van knoop punt naar knoop punt
 
@@ -60,7 +60,7 @@ Clusters die worden uitgevoerd op Azure en zelfstandige clusters waarop Windows 
 
 Stel de client-naar-knoop punt certificaat beveiliging in wanneer u het cluster maakt, in de Azure Portal, met behulp van een resource manager-sjabloon of met behulp van een zelfstandige JSON-sjabloon. Als u het certificaat wilt maken, geeft u een client certificaat voor de beheerder of een gebruikers certificaat op. Als best practice moeten de client certificaten van de client en de gebruiker die u opgeeft, afwijken van de primaire en secundaire certificaten die u opgeeft voor [beveiliging](#node-to-node-security)tussen knoop punten. Cluster certificaten hebben dezelfde rechten als client beheerders certificaten. Ze moeten echter alleen worden gebruikt door het cluster en niet door gebruikers met beheerders rechten als beveiligings best practice.
 
-Clients die verbinding maken met het cluster met behulp van het beheerders certificaat, hebben volledige toegang tot beheer mogelijkheden. Clients die verbinding maken met het cluster met behulp van het client certificaat alleen-lezen gebruiker hebben alleen lees toegang tot beheer mogelijkheden. Deze certificaten worden gebruikt voor de RBAC die verderop in dit artikel wordt beschreven.
+Clients die verbinding maken met het cluster met behulp van het beheerders certificaat, hebben volledige toegang tot beheer mogelijkheden. Clients die verbinding maken met het cluster met behulp van het client certificaat alleen-lezen gebruiker hebben alleen lees toegang tot beheer mogelijkheden. Deze certificaten worden gebruikt voor de Service Fabric RBAC die verderop in dit artikel wordt beschreven.
 
 Zie [een cluster instellen met behulp van een Azure Resource Manager sjabloon](service-fabric-cluster-creation-via-arm.md)voor meer informatie over het instellen van certificaat beveiliging in een cluster voor Azure.
 
@@ -85,13 +85,13 @@ Voor Service Fabric clusters die zijn geïmplementeerd in een openbaar netwerk d
 
 Als u Windows Server 2012 R2 en Windows Active Directory, kunt u voor zelfstandige Windows Server-clusters het beste Windows-beveiliging gebruiken met door groepen beheerde service accounts. Gebruik anders Windows-beveiliging met Windows-accounts.
 
-## <a name="role-based-access-control-rbac"></a>RBAC (op rollen gebaseerd toegangsbeheer)
+## <a name="service-fabric-role-based-access-control"></a>Service Fabric op rollen gebaseerd toegangs beheer
 
 U kunt toegangs beheer gebruiken om de toegang tot bepaalde cluster bewerkingen voor verschillende groepen gebruikers te beperken. Dit helpt het cluster beter te beveiligen. Twee typen toegangs beheer worden ondersteund voor clients die verbinding maken met een cluster: beheerdersrol en gebruikersrol.
 
 Gebruikers aan wie de beheerdersrol is toegewezen, hebben volledige toegang tot beheer mogelijkheden, waaronder lees-en schrijf mogelijkheden. Gebruikers aan wie de gebruikersrol is toegewezen, hebben standaard alleen lees toegang tot beheer mogelijkheden (bijvoorbeeld query mogelijkheden). Ze kunnen ook toepassingen en services omzetten.
 
-Stel de client rollen beheerder en gebruiker in wanneer u het cluster maakt. Wijs rollen toe door afzonderlijke identiteiten (bijvoorbeeld door het gebruik van certificaten of Azure AD) op te geven voor elk type rol. Zie [op rollen gebaseerde Access Control voor service Fabric-clients](service-fabric-cluster-security-roles.md)voor meer informatie over standaard instellingen voor toegangs beheer en het wijzigen van de standaard instellingen.
+Stel de client rollen beheerder en gebruiker in wanneer u het cluster maakt. Wijs rollen toe door afzonderlijke identiteiten (bijvoorbeeld door het gebruik van certificaten of Azure AD) op te geven voor elk type rol. Zie [service Fabric op rollen gebaseerd toegangs beheer voor service Fabric-clients](service-fabric-cluster-security-roles.md)voor meer informatie over standaard instellingen voor toegangs beheer en het wijzigen van de standaard instellingen.
 
 ## <a name="x509-certificates-and-service-fabric"></a>X. 509-certificaten en-Service Fabric
 

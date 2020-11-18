@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 77ea96b1bd1b1d661bb835e7bb48d58ce4c3e118
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: dc66de09a5918b19c60aaa0d3e9ab662876dc31a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92309158"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684318"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Azure-beveiligings basislijn voor Service Fabric
 
@@ -144,7 +144,7 @@ Implementeer de door u gewenste firewall oplossing op elk van de netwerk grenzen
 
 **Hulp**: Definieer en implementeer standaard beveiligings configuraties voor netwerk bronnen die betrekking hebben op uw Azure service Fabric-cluster. Gebruik Azure Policy aliassen in de naam ruimten ' micro soft. ServiceFabric ' en ' micro soft. Network ' om aangepaste beleids regels te maken om de netwerk configuratie van uw Azure Service Fabric-cluster te controleren of af te dwingen.
 
-U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties te vereenvoudigen door het verpakken van sleutel omgevings artefacten, zoals Azure Resource Manager sjablonen, RBAC-besturings elementen en-beleid, in één blauw druk-definitie. Pas de blauw druk toe op nieuwe abonnementen en omgevingen en Verfijn de controle en het beheer via versies.
+U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties te vereenvoudigen door het verpakken van sleutel omgevings artefacten, zoals Azure Resource Manager sjablonen, Azure RBAC-besturings elementen en-beleid, in één blauw druk-definitie. Pas de blauw druk toe op nieuwe abonnementen en omgevingen en Verfijn de controle en het beheer via versies.
 
 * [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
@@ -616,7 +616,7 @@ Gebruik een oplossing van derden voor het uitvoeren van evaluatie van beveiligin
 
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5,2: geautomatiseerde oplossing voor patch beheer voor besturings systemen implementeren
 
-**Hulp**bij het automatisch bijwerken van installatie kopieën van besturings systemen op de schaal sets voor virtuele machines van uw Azure service Fabric-cluster.
+**Hulp** bij het automatisch bijwerken van installatie kopieën van besturings systemen op de schaal sets voor virtuele machines van uw Azure service Fabric-cluster.
 
 U kunt ook de hand matige trigger voor upgrades van installatie kopieën van de schaalset gebruiken om de patches voor het besturings systeem eerst te testen voordat u naar de productie gaat. Houd er rekening mee dat de optie hand matige trigger geen ingebouwde terugdraai actie biedt. BESTURINGSSYSTEEM patches bewaken met behulp van Updatebeheer van Azure Automation.
 
@@ -634,7 +634,7 @@ U kunt ook de hand matige trigger voor upgrades van installatie kopieën van de 
 
 ### <a name="53-deploy-automated-patch-management-solution-for-third-party-software-titles"></a>5,3: Implementeer een oplossing voor geautomatiseerd patch beheer voor software titels van derden
 
-**Hulp**bij het automatisch bijwerken van installatie kopieën van besturings systemen op de schaal sets voor virtuele machines van uw Azure service Fabric-cluster. Patch Orchestration Application (POA) is een alternatieve oplossing die is bedoeld voor Service Fabric clusters die buiten Azure worden gehost. POA kan worden gebruikt met Azure-clusters, met een extra hosting overhead.
+**Hulp** bij het automatisch bijwerken van installatie kopieën van besturings systemen op de schaal sets voor virtuele machines van uw Azure service Fabric-cluster. Patch Orchestration Application (POA) is een alternatieve oplossing die is bedoeld voor Service Fabric clusters die buiten Azure worden gehost. POA kan worden gebruikt met Azure-clusters, met een extra hosting overhead.
 
 * [Patch beheer voor Service Fabric cluster knooppunten](./service-fabric-best-practices-infrastructure-as-code.md#azure-virtual-machine-operating-system-automatic-upgrade-configuration)
 
@@ -716,7 +716,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
 
 Niet toegestane resourcetypen
 
@@ -1008,7 +1008,7 @@ Raadpleeg de documentatie van uw anti-malware voor configuratie regels als u gee
 
 ### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: volledige back-ups van het systeem uitvoeren en een back-up maken van door de klant beheerde sleutels
 
-**Hulp**bij het inschakelen van de service voor het terugzetten van back-ups in uw service Fabric-cluster en het maken van een back-upbeleid om stateful Services periodiek en op aanvraag uit te voeren. Back-ups van door de klant beheerde sleutels binnen Azure Key Vault.
+**Hulp** bij het inschakelen van de service voor het terugzetten van back-ups in uw service Fabric-cluster en het maken van een back-upbeleid om stateful Services periodiek en op aanvraag uit te voeren. Back-ups van door de klant beheerde sleutels binnen Azure Key Vault.
 
 * [Periodieke back-ups maken en herstellen in een Azure Service Fabric-cluster](./service-fabric-backuprestoreservice-quickstart-azurecluster.md)
 

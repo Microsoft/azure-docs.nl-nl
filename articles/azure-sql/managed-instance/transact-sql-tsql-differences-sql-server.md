@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 11/10/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 23a620f8031335e5a950df96427b11251f0ec042
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 610ab649d64351b0897ef7358cdaf9280fe3ba55
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649310"
+ms.locfileid: "94684915"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -521,7 +521,7 @@ Systeem databases worden niet gerepliceerd naar het secundaire exemplaar in een 
 - De maximale bestands grootte van `tempdb` mag niet groter zijn dan 24 GB per kern op een algemeen laag. De maximale `tempdb` grootte van een bedrijfskritiek laag wordt beperkt door de opslag grootte van het SQL-beheerde exemplaar. `Tempdb` de grootte van het logboek bestand is beperkt tot 120 GB op Algemeen laag. Sommige query's retour neren mogelijk een fout als deze meer dan 24 GB per kern nodig heeft `tempdb` of als er meer dan 120 GB aan logboek gegevens worden geproduceerd.
 - `Tempdb` is altijd onderverdeeld in 12 gegevens bestanden: 1 primair, ook wel Master, Data File en 11 niet-primaire gegevens bestanden genoemd. Kan de bestands structuur niet wijzigen en er kunnen geen nieuwe bestanden aan worden toegevoegd `tempdb` . 
 - [ `tempdb` Meta gegevens](/sql/relational-databases/databases/tempdb-database?view=sql-server-ver15#memory-optimized-tempdb-metadata)die zijn geoptimaliseerd voor geheugen, een nieuwe SQL Server 2019 in-Memory database functie, worden niet ondersteund.
-- Objecten die in de model database zijn gemaakt, kunnen niet automatisch worden gemaakt `tempdb` na het opnieuw opstarten of een failover omdat de `tempdb` oorspronkelijke object lijst niet wordt opgehaald uit de gerepliceerde model database. 
+- Objecten die in de model database zijn gemaakt, kunnen niet automatisch worden gemaakt `tempdb` na het opnieuw opstarten of een failover, omdat de `tempdb` initiële objecten lijst niet wordt opgehaald uit de model database. U moet objecten `tempdb` hand matig maken na elke herstart of een failover.
 
 ### <a name="msdb"></a>MSDB
 

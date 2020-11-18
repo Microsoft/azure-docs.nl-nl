@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: 260631e36d113b6ccd190f66ce61caa7ba1b187b
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 2dba9fbcbddbc7a66763636986f3d98f4f95332c
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900888"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683128"
 ---
 # <a name="use-the-azure-disk-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Gebruik de Azure Disk container Storage interface (CSI)-Stuur Programma's in azure Kubernetes service (AKS) (preview)
 Het stuur programma voor de Azure Disk container Storage interface (CSI) is een stuur programma voor [CSI-specificatie](https://github.com/container-storage-interface/spec/blob/master/spec.md)dat door Azure Kubernetes service (AKS) wordt gebruikt voor het beheren van de levens cyclus van Azure-schijven.
@@ -275,7 +275,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 ## <a name="shared-disk"></a>Gedeelde schijf
 
-[Gedeelde Azure-schijven](../virtual-machines/windows/disks-shared.md) is een Azure Managed disks-functie waarmee u tegelijkertijd een Azure-schijf kunt koppelen aan agent knooppunten. Als u een beheerde schijf aan meerdere agent knooppunten koppelt, kunt u bijvoorbeeld nieuwe, geclusterde toepassingen implementeren of migreren naar Azure.
+[Gedeelde Azure-schijven](../virtual-machines/disks-shared.md) is een Azure Managed disks-functie waarmee u tegelijkertijd een Azure-schijf kunt koppelen aan agent knooppunten. Als u een beheerde schijf aan meerdere agent knooppunten koppelt, kunt u bijvoorbeeld nieuwe, geclusterde toepassingen implementeren of migreren naar Azure.
 
 > [!IMPORTANT] 
 > Op dit moment wordt alleen het onbewerkte blok apparaat ( `volumeMode: Block` ) ondersteund door het Azure Disk CSI-stuur programma. Toepassingen moeten de coördinatie en controle van schrijf bewerkingen, lees-, vergrendelings-, cache-, koppelings-en omheinings gegevens op de gedeelde schijf beheren, die wordt weer gegeven als een onbewerkt blok apparaat.

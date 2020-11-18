@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 03/11/2020
-ms.openlocfilehash: d9f25fc419a92d125dffe5c14b9b4c19cd795c6e
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 30b09d43cbe510318ac4f48e0655d5483491c215
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318454"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682771"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Door de klant beheerde sleutels instellen om gegevens in rust te versleutelen voor integratie service omgevingen (ISEs) in Azure Logic Apps
 
@@ -39,7 +39,7 @@ In dit onderwerp wordt beschreven hoe u uw eigen versleutelings sleutel instelt 
 
 * Een Azure-sleutel kluis met de opties **voorlopig verwijderen** en **niet opschonen** ingeschakeld
 
-  Zie [Azure Key Vault overzicht van voorlopig verwijderen](../key-vault/general/soft-delete-overview.md) en [door de klant beheerde sleutels configureren met Azure Key Vault](../storage/common/customer-managed-keys-configure-key-vault.md)voor meer informatie over het inschakelen van deze eigenschappen. Als u niet bekend bent met Azure Key Vault, kunt [u leren hoe u een sleutel kluis maakt](../key-vault/secrets/quick-create-portal.md#create-a-vault) met behulp van de Azure portal of met behulp van de Azure PowerShell opdracht [New-AzKeyVault](/powershell/module/az.keyvault/new-azkeyvault).
+  Zie [Azure Key Vault overzicht van voorlopig verwijderen](../key-vault/general/soft-delete-overview.md) en [door de klant beheerde sleutels configureren met Azure Key Vault](../storage/common/customer-managed-keys-configure-key-vault.md)voor meer informatie over het inschakelen van deze eigenschappen. Als u niet bekend bent met [Azure Key Vault](../key-vault/general/overview.md), kunt u leren hoe u een sleutel kluis maakt met behulp van [Azure Portal](../key-vault/general/quick-create-portal.md), [Azure cli](../key-vault/general/quick-create-cli.md)of [Azure PowerShell](../key-vault/general/quick-create-powershell.md).
 
 * In uw sleutel kluis is dit een sleutel die is gemaakt met de volgende eigenschaps waarden:
 
@@ -203,7 +203,7 @@ Voor deze taak kunt u de Azure PowerShell [set-AzKeyVaultAccessPolicy](/powershe
 
 1. Open uw Azure-sleutel kluis in de [Azure Portal](https://portal.azure.com).
 
-1. Selecteer in uw sleutel kluis menu **toegangs**beleid  >  **toevoegen toegangs beleid**, bijvoorbeeld:
+1. Selecteer in uw sleutel kluis menu **toegangs** beleid  >  **toevoegen toegangs beleid**, bijvoorbeeld:
 
    ![Toegangs beleid voor door het systeem toegewezen beheerde identiteit toevoegen](./media/customer-managed-keys-integration-service-environment/add-ise-access-policy-key-vault.png)
 
@@ -219,7 +219,7 @@ Voor deze taak kunt u de Azure PowerShell [set-AzKeyVaultAccessPolicy](/powershe
 
       ![Selecteer sleutel beheer > sleutel machtigingen](./media/customer-managed-keys-integration-service-environment/select-key-permissions.png)
 
-   1. Selecteer voor **Select Principal** **geen geselecteerd**. Nadat het **hoofd** venster is geopend, zoekt en selecteert u uw ISE in het zoekvak. Wanneer u klaar bent, kiest **u**  >  **toevoegen**selecteren.
+   1. Selecteer voor **Select Principal** **geen geselecteerd**. Nadat het **hoofd** venster is geopend, zoekt en selecteert u uw ISE in het zoekvak. Wanneer u klaar bent, kiest **u**  >  **toevoegen** selecteren.
 
       ![Selecteer de ISE die u als Principal wilt gebruiken](./media/customer-managed-keys-integration-service-environment/select-service-principal-ise.png)
 

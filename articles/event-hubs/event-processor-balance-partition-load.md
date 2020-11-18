@@ -3,15 +3,15 @@ title: De verdeling van partities verdelen over meerdere exemplaren-Azure Event 
 description: Hierin wordt beschreven hoe u de belasting van partities op meerdere exemplaren van uw toepassing kunt verdelen met behulp van een gebeurtenis processor en de Azure Event Hubs SDK.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 8bf3f05b823a784f4f3fc2074719ed346f769f5e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 03aeebb376c74e62a1bd935ac1fec4f178b63f4f
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88933790"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685134"
 ---
 # <a name="balance-partition-load-across-multiple-instances-of-your-application"></a>De verdeling van partities verdelen over meerdere exemplaren van uw toepassing
-U kunt de toepassing voor het verwerken van gebeurtenissen schalen door meerdere exemplaren van de toepassing uit te voeren en de belasting tussen zichzelf te verdelen. In de oudere versies heeft [EventProcessorHost](event-hubs-event-processor-host.md) u de mogelijkheid om de belasting te verdelen tussen meerdere exemplaren van uw programma en controlepunt gebeurtenissen tijdens ontvangst. In de nieuwere versies (5,0 en hoger), **EventProcessorClient** (.net en Java) of **EventHubConsumerClient** (python en Java script) kunt u hetzelfde doen. Het ontwikkelings model wordt eenvoudiger gemaakt met behulp van gebeurtenissen. U abonneert u op de gebeurtenissen waarin u bent geïnteresseerd door een gebeurtenis-handler te registreren.
+U kunt de toepassing voor het verwerken van gebeurtenissen schalen door meerdere exemplaren van de toepassing uit te voeren en de belasting tussen zichzelf te verdelen. In de oudere versies heeft [EventProcessorHost](event-hubs-event-processor-host.md) u de mogelijkheid om de belasting te verdelen tussen meerdere exemplaren van uw programma en controlepunt gebeurtenissen tijdens ontvangst. In de nieuwere versies (5,0 en hoger), **EventProcessorClient** (.net en Java) of **EventHubConsumerClient** (python en Java script) kunt u hetzelfde doen. Het ontwikkelings model wordt eenvoudiger gemaakt met behulp van gebeurtenissen. U abonneert u op de gebeurtenissen waarin u bent geïnteresseerd door een gebeurtenis-handler te registreren. Als u de oude versie van de client bibliotheek gebruikt, raadpleegt u de volgende migratie handleidingen: [.net](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md), [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/servicebus/azure-messaging-servicebus/migration-guide.md), [python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/servicebus/azure-servicebus/migration_guide.md)en [Java script](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/servicebus/service-bus/migrationguide.md).
 
 In dit artikel wordt een voorbeeld scenario beschreven voor het gebruik van meerdere instanties voor het lezen van gebeurtenissen van een Event Hub. vervolgens krijgt u informatie over de functies van de client voor gebeurtenis verwerking. Hiermee kunt u gebeurtenissen van meerdere partities tegelijk ontvangen en taak verdeling met andere consumenten die gebruikmaken van dezelfde Event Hub en Consumer-groep.
 
@@ -37,7 +37,7 @@ Bij het ontwerpen van de gebruiker in een gedistribueerde omgeving moet het scen
 
 U hoeft niet uw eigen oplossing te bouwen om aan deze vereisten te voldoen. De Azure Event Hubs Sdk's bieden deze functionaliteit. In .NET-of Java-Sdk's gebruikt u een event processor-client (EventProcessorClient) en in Python-en Java script-Sdk's gebruikt u EventHubConsumerClient. In de oude versie van SDK was het event processor host (EventProcessorHost) die deze functies ondersteunt.
 
-Voor het meren deel van de productie scenario's wordt u aangeraden de gebeurtenis verwerker-client te gebruiken voor het lezen en verwerken van gebeurtenissen. De processor-client is bedoeld om een robuuste ervaring te bieden voor het verwerken van gebeurtenissen voor alle partities van een Event Hub in een uitvoerings-en fout tolerante manier, terwijl u een manier hebt om de voortgang ervan te controlepunt. Client voor gebeurtenis processoren kunnen ook samen werken in de context van een Consumer groep voor een bepaalde Event Hub. Clients beheren automatisch distributie en taak verdeling als instanties beschikbaar of niet beschikbaar zijn voor de groep.
+Voor het meren deel van de productie scenario's wordt u aangeraden de gebeurtenis verwerker-client te gebruiken voor het lezen en verwerken van gebeurtenissen. De processor-client is bedoeld om een robuuste ervaring te bieden voor het verwerken van gebeurtenissen voor alle partities van een Event Hub in een uitvoerings-en fout tolerante manier, terwijl u een manier hebt om de voortgang ervan te controlepunt. Event processor-clients kunnen samen werken in de context van een Consumer groep voor een bepaalde Event Hub. Clients beheren automatisch distributie en taak verdeling als instanties beschikbaar of niet beschikbaar zijn voor de groep.
 
 ## <a name="partition-ownership-tracking"></a>Het bijhouden van de eigendom van partities
 
@@ -45,7 +45,7 @@ Een gebeurtenis processor instantie is doorgaans eigenaar en verwerkt gebeurteni
 
 Elke gebeurtenis processor krijgt een unieke id en eigendom van de claims van partities door een vermelding toe te voegen aan of bij te werken in een controlepunt opslag. Alle gebeurtenis verwerkers communiceren periodiek met deze Store om de eigen verwerkings status bij te werken en om meer te weten te komen over andere actieve instanties. Deze gegevens worden vervolgens gebruikt om de belasting te verdelen over de actieve processors. Nieuwe exemplaren kunnen worden toegevoegd aan de verwerkings groep om omhoog te schalen. Wanneer instanties uitvallen, hetzij als gevolg van fouten of als u omlaag wilt schalen, wordt het eigendom van de partitie op de juiste wijze overgedragen aan andere actieve processors.
 
-De partitie van eigendoms records in de controlepunt opslag houden de naam van Event Hubs naam ruimte, de Event Hub name, de gebruikers groep, de gebeurtenis processor-id (ook wel eigenaar genoemd), de partitie-ID en het tijdstip van de laatste wijziging.
+De partitie van de eigendoms records in de controlepunt opslag houden de naam van Event Hubs naam ruimte, de Event Hub name, de gebruikers groep, de gebeurtenis processor-id (ook wel eigenaar genoemd), de partitie-ID en het tijdstip van de laatste wijziging.
 
 
 
@@ -58,7 +58,7 @@ De partitie van eigendoms records in de controlepunt opslag houden de naam van E
 |                                    |                | :                  |                                      |              |                     |
 | mynamespace.servicebus.windows.net | myeventhub     | myconsumergroup    | 844bd8fb-1f3a-4580-984d-6324f9e208af | 15           | 2020-01-15T01:22:00 |
 
-Elk gebeurtenis processor exemplaar verkrijgt het eigendom van een partitie en begint met de verwerking van de partitie van het laatste bekende [controle punt](# Checkpointing). Als een processor mislukt (VM wordt afgesloten), worden deze door andere instanties gedetecteerd door te kijken naar het tijdstip van de laatste wijziging. Andere exemplaren proberen eigenaar te worden van de partities die voorheen eigendom waren van het inactieve exemplaar, en het archief van het controle punt garandeert dat slechts één van de exemplaren slaagt bij het claimen van het eigendom van een partitie. Op een bepaald moment is er dus slechts één processor die gebeurtenissen van een partitie ontvangt.
+Elk gebeurtenis processor exemplaar verkrijgt het eigendom van een partitie en begint met de verwerking van de partitie van het laatste bekende [controle punt](# Checkpointing). Als een processor mislukt (VM wordt afgesloten), worden deze door andere instanties gedetecteerd door te kijken naar het tijdstip van de laatste wijziging. Andere exemplaren proberen eigenaar te worden van de partities die voorheen eigendom waren van het inactieve exemplaar, en het archief van het controle punt garandeert dat slechts één van de exemplaren slaagt bij het claimen van het eigendom van een partitie. Op een bepaald moment is er dus Maxi maal één processor die gebeurtenissen van een partitie ontvangt.
 
 ## <a name="receive-messages"></a>Berichten ontvangen
 
@@ -70,7 +70,7 @@ We raden u aan om dingen relatief snel te doen. Dat wil zeggen, zo weinig mogeli
 
 *Controle punten* is een proces waarbij een gebeurtenis processor de positie van de laatste uitgevoerde gebeurtenis binnen een partitie markeert of doorvoert. Het markeren van een controle punt wordt doorgaans uitgevoerd binnen de functie waarmee de gebeurtenissen worden verwerkt en plaatsvindt per partitie binnen een Consumer groep. 
 
-Als een gebeurtenis processor de verbinding met een partitie verbreekt, kan een ander exemplaar de verwerking van de partitie op het controle punt hervatten dat eerder is vastgelegd door de laatste processor van die partitie in die Consumer groep. Wanneer de processor verbinding maakt, wordt de offset door gegeven aan de Event Hub om de locatie op te geven waar u wilt beginnen met lezen. Op deze manier kunt u controle punten gebruiken om gebeurtenissen te markeren als ' voltooid ' door downstream-toepassingen en om tolerantie te bieden wanneer een gebeurtenis processor uitvalt. Het is mogelijk om terug te keren naar de oudere gegevens door een lagere offset van dit controlepuntproces op te geven. 
+Als een gebeurtenis processor de verbinding met een partitie verbreekt, kan een ander exemplaar de verwerking van de partitie op het controle punt hervatten dat eerder is vastgelegd door de laatste processor van die partitie in die Consumer groep. Wanneer de processor verbinding maakt, wordt de offset door gegeven aan de Event Hub om de locatie op te geven waar u wilt beginnen met lezen. Op deze manier kunt u controle punten gebruiken om gebeurtenissen te markeren als ' voltooid ' door downstream-toepassingen en om tolerantie te bieden wanneer een gebeurtenis processor uitvalt. Het is mogelijk om terug te gaan naar oudere gegevens door een lagere verschuiving van dit controle punt te specificeren. 
 
 Wanneer het controle punt wordt uitgevoerd om een gebeurtenis te markeren als verwerkt, wordt een vermelding in het opslag punt archief toegevoegd of bijgewerkt met de offset en het Volg nummer van de gebeurtenis. Gebruikers moeten bepalen hoe vaak het controle punt moet worden bijgewerkt. Het bijwerken na elke geslaagde gebeurtenis kan gevolgen hebben voor prestaties en kosten omdat hiermee een schrijf bewerking wordt geactiveerd voor de onderliggende controlepunt opslag. Het is ook mogelijk om een controle punt te maken voor elke gebeurtenis, een bericht in de wachtrij waarin een Service Bus wachtrij een betere optie is dan een Event Hub. Het idee achter Event Hubs is dat u ten minste één keer op grote schaal krijgt. Door uw downstream-systemen idempotent te maken, is het eenvoudig om fouten te herstellen of opnieuw op te starten. Dit leidt ertoe dat dezelfde gebeurtenissen meerdere keren worden ontvangen.
 
@@ -83,7 +83,7 @@ Wanneer het controle punt wordt uitgevoerd om een gebeurtenis te markeren als ve
 
 ## <a name="thread-safety-and-processor-instances"></a>Thread veiligheid en processor instanties
 
-De functie waarmee de gebeurtenissen worden verwerkt, wordt standaard opeenvolgend aangeroepen voor een bepaalde partitie. Volgende gebeurtenissen en aanroepen van deze functie van dezelfde partitie wachtrij worden achter de schermen geplaatst, terwijl de gebeurtenis pomp blijft draaien op de achtergrond van andere threads. Houd er rekening mee dat gebeurtenissen van verschillende partities gelijktijdig kunnen worden verwerkt en dat alle gedeelde statussen die worden geopend via partities, moeten worden gesynchroniseerd.
+De functie waarmee de gebeurtenissen worden verwerkt, wordt standaard opeenvolgend aangeroepen voor een bepaalde partitie. Volgende gebeurtenissen en aanroepen van deze functie van dezelfde partitie wachtrij worden achter de schermen geplaatst, terwijl de gebeurtenis pomp blijft draaien op de achtergrond van andere threads. Gebeurtenissen van verschillende partities kunnen gelijktijdig worden verwerkt en alle gedeelde statussen die worden geopend via partities, moeten worden gesynchroniseerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie de volgende Quick Start:

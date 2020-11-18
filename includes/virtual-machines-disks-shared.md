@@ -1,6 +1,6 @@
 ---
-title: bestand opnemen
-description: bestand opnemen
+title: Include-bestand
+description: Include-bestand
 services: virtual-machines
 author: roygara
 ms.service: virtual-machines
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/14/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 6f819d9b6ba4d74612da304aafea0118f9094bde
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7831eaaa478a3f28ff158d5c9599abaf8a107c15
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91451548"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684428"
 ---
 Gedeelde Azure-schijven is een nieuwe functie voor Azure Managed disks waarmee u tegelijkertijd een beheerde schijf kunt koppelen aan meerdere virtuele machines (Vm's). Als u een beheerde schijf aan meerdere Vm's koppelt, kunt u nieuwe, geclusterde toepassingen implementeren of migreren naar Azure.
 
@@ -54,9 +54,9 @@ Enkele populaire toepassingen die worden uitgevoerd op WSFC zijn:
 ### <a name="linux"></a>Linux
 
 Gedeelde Azure-schijven worden ondersteund op:
-- [SUSE SLE voor SAP en SUSE SLE HA 15 SP1 en hoger](https://documentation.suse.com/sle-ha/15-SP1/single-html/SLE-HA-guide/index.html)
+- [SUSE SLE voor SAP en SUSE SLE HA 15 SP1 en hoger](https://www.suse.com/c/azure-shared-disks-excercise-w-sles-for-sap-or-sle-ha/)
 - [Ubuntu 18,04 en hoger](https://discourse.ubuntu.com/t/ubuntu-high-availability-corosync-pacemaker-shared-disk-environments/14874)
-- [RHEL Developer Preview voor een versie van RHEL 8](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/index)
+- [RHEL Developer Preview voor een versie van RHEL 8](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/deploying_red_hat_enterprise_linux_8_on_public_cloud_platforms/index?lb_target=production#azure-configuring-shared-block-storage_configuring-rhel-high-availability-on-azure)
 - [Oracle Enter prise Linux](https://docs.oracle.com/en/operating-systems/oracle-linux/8/availability/hacluster-1.html)
 
 Linux-clusters kunnen gebruikmaken van cluster managers zoals [pacemaker](https://wiki.clusterlabs.org/wiki/Pacemaker). Pacemaker bouwt voort op [corosync](http://corosync.github.io/corosync/), waardoor cluster communicatie mogelijk wordt voor toepassingen die in Maxi maal beschik bare omgevingen worden geïmplementeerd. Enkele algemene geclusterde bestands systemen zijn [ocfs2](https://oss.oracle.com/projects/ocfs2/) en [gfs2](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/global_file_system_2/ch-overview-gfs2). U kunt SCSI-permanente reserve ringen (SCSI PR) en/of STONITH block device (SBD)-clustering modellen gebruiken voor arbitrating toegang tot de schijf. Bij gebruik van SCSI-PR kunt u reserve ringen en registraties manipuleren met behulp van hulpprogram ma's als [fence_scsi](http://manpages.ubuntu.com/manpages/eoan/man8/fence_scsi.8.html) en [sg_persist](https://linux.die.net/man/8/sg_persist).
@@ -131,19 +131,19 @@ In de volgende voor beelden ziet u een aantal scenario's waarin u kunt zien hoe 
 
 Hier volgt een voor beeld van een WSFC-netwerk met twee knoop punten met geclusterde gedeelde volumes. Met deze configuratie hebben beide Vm's gelijktijdig schrijf toegang tot de schijf, wat resulteert in de vertraging voor `ReadWrite` de twee virtuele machines en de gashendel die niet wordt `ReadOnly` gebruikt.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-example.png" alt-text="Een afbeelding van een tabel waarin de ' ReadOnly '-of ' Lees-en schrijf toegang ' wordt weer gegeven voor reserverings houder, geregistreerd en andere.":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-example.png" alt-text="CSV twee-knoop punt-zeer voor beeld":::
 
 ##### <a name="two-node-cluster-without-cluster-share-volumes"></a>Cluster met twee knoop punten zonder cluster share volumes
 
 Hier volgt een voor beeld van een WSFC met twee knoop punten die geen geclusterde gedeelde volumes gebruikt. Met deze configuratie heeft slechts één virtuele machine schrijf toegang tot de schijf. Dit leidt ertoe dat de `ReadWrite` beperking alleen voor de primaire virtuele machine wordt gebruikt en dat de `ReadOnly` beperking alleen wordt gebruikt door de secundaire.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-no-csv.png" alt-text="Een afbeelding van een tabel waarin de ' ReadOnly '-of ' Lees-en schrijf toegang ' wordt weer gegeven voor reserverings houder, geregistreerd en andere.":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-no-csv.png" alt-text="CSV-twee knoop punten geen CSV Ultra disk-voor beeld":::
 
 ##### <a name="four-node-linux-cluster"></a>Linux-cluster met vier knoop punten
 
 Hier volgt een voor beeld van een Linux-cluster met vier knoop punten met één schrijver en drie scale-out lezers. Met deze configuratie heeft slechts één virtuele machine schrijf toegang tot de schijf. Dit leidt ertoe dat de `ReadWrite` beperking alleen wordt gebruikt voor de primaire virtuele machine en `ReadOnly` dat de beperking wordt gesplitst door de secundaire vm's.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-four-node-example.png" alt-text="Een afbeelding van een tabel waarin de ' ReadOnly '-of ' Lees-en schrijf toegang ' wordt weer gegeven voor reserverings houder, geregistreerd en andere.":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-four-node-example.png" alt-text="Voor beeld van een super beperking van vier knoop punten":::
 
 #### <a name="ultra-pricing"></a>Hoge prijzen
 

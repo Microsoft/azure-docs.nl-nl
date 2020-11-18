@@ -8,22 +8,18 @@ ms.date: 09/30/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 1efd4baf80c9ba30b1d1ea35390386bc4e7659d3
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 661d4ba575eafa4e261a1c92c1112a259b95eac7
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747779"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683588"
 ---
 # <a name="enable-shared-disk"></a>Gedeelde schijf inschakelen
 
 In dit artikel wordt beschreven hoe u de functie gedeelde schijven voor Azure Managed disks inschakelt. Gedeelde Azure-schijven is een nieuwe functie voor Azure Managed disks waarmee u gelijktijdig een beheerde schijf kunt koppelen aan meerdere virtuele machines (Vm's). Als u een beheerde schijf aan meerdere Vm's koppelt, kunt u nieuwe, geclusterde toepassingen implementeren of migreren naar Azure. 
 
-Als u op zoek bent naar algemene informatie over Managed disks waarop gedeelde schijven zijn ingeschakeld, raadpleegt u:
-
-* Voor Linux: [gedeelde Azure-schijven](linux/disks-shared.md)
-
-* Voor Windows: [gedeelde Azure-schijven](windows/disks-shared.md)
+Als u op zoek bent naar algemene informatie over beheerde schijven waarop gedeelde schijven zijn ingeschakeld, raadpleegt u [gedeelde Azure-schijven](disks-shared.md).
 
 ## <a name="limitations"></a>Beperkingen
 
@@ -46,7 +42,7 @@ Voor het implementeren van een beheerde schijf waarop de functie gedeelde schijf
 > [!IMPORTANT]
 > De waarde van `maxShares` kan alleen worden ingesteld of gewijzigd wanneer een schijf van alle virtuele machines wordt ontkoppeld. Zie de [schijf grootten](#disk-sizes) voor de toegestane waarden voor `maxShares` .
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 az disk create -g myResourceGroup -n mySharedDisk --size-gb 1024 -l westcentralus --sku Premium_LRS --max-shares 2
@@ -76,7 +72,7 @@ Als u een beheerde schijf met de functie gedeelde schijf wilt implementeren, wij
 > De waarde van `maxShares` kan alleen worden ingesteld of gewijzigd wanneer een schijf van alle virtuele machines wordt ontkoppeld. Zie de [schijf grootten](#disk-sizes) voor de toegestane waarden voor `maxShares` .
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ##### <a name="regional-disk-example"></a>Voor beeld van regionale schijf
 

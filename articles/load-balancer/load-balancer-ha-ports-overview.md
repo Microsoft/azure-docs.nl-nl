@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2019
 ms.author: allensu
-ms.openlocfilehash: b0b19eaa86269feff28c73275e4db4a3d332b3df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 01f6d5b5ef816127fe5f0c689132326f6157731d
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91664870"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684407"
 ---
 # <a name="high-availability-ports-overview"></a>Overzicht van poorten met hoge Beschik baarheid
 
@@ -66,7 +66,7 @@ De functie HA-poorten is beschikbaar in alle wereld wijde Azure-regio's.
 
 Deze configuratie is een configuratie van basis HA-poorten. U kunt een taakverdelings regel voor HA-poorten configureren op één front-end-IP-adres door het volgende te doen:
 1. Schakel bij het configureren van Standard Load Balancer het selectie vakje **ha-poorten** in de Load Balancer regel configuratie in.
-2. Selecteer **uitgeschakeld**voor **zwevend IP-adres**.
+2. Selecteer **uitgeschakeld** voor **zwevend IP-adres**.
 
 Bij deze configuratie is geen enkele andere configuratie van regel voor taak verdeling op de huidige load balancer resource toegestaan. Ook is er geen andere interne load balancer resource configuratie toegestaan voor de opgegeven reeks back-end-exemplaren.
 
@@ -99,5 +99,4 @@ U kunt *één* open bare Standard Load Balancer bron configureren voor de back-e
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Meer informatie over het configureren van ha-poorten voor uw ILB via Portal](tutorial-load-balancer-standard-internal-portal.md#create-a-load-balancer-rule), [Power shell](load-balancer-get-started-ilb-arm-ps.md#create-the-configuration-rules-probe-and-load-balancer), [cli](load-balancer-get-started-ilb-arm-cli.md#create-the-load-balancer-rule)of [sjablonen](quickstart-load-balancer-standard-internal-template.md).
-- [Meer informatie over Standard Load Balancer](load-balancer-standard-overview.md)
+- [Meer informatie over Standard Load Balancer](load-balancer-overview.md)

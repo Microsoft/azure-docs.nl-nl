@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/02/2020
 ms.author: inhenkel
-ms.openlocfilehash: 33aed32c30f298fd3432f4cebcc28b9c20974545
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: ed436336b9b1f9f5815938d13315e821694e5f1c
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309067"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685168"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-with-azure-monitor"></a>Media Services metrische gegevens en Diagnostische logboeken met Azure Monitor bewaken
 
@@ -67,8 +67,8 @@ De volgende Media Services gegevens [stromen voor streaming-eind punten](/rest/a
 |Aanvragen|Aanvragen|Geeft het totale aantal HTTP-aanvragen dat door het streaming-eind punt wordt geleverd.|
 |Uitgaand verkeer|Uitgaand verkeer|Totaal aantal uitgaande bytes per minuut per streaming-eind punt.|
 |SuccessE2ELatency|Geslaagde end-to-end-latentie|Tijds duur vanaf het moment waarop het streaming-eind punt de aanvraag bij het verzenden van de laatste byte van het antwoord heeft ontvangen.|
-|CPU-gebruik| CPU-gebruik voor Premium streaming-eind punten. Deze gegevens zijn niet beschikbaar voor standaard streaming-eind punten. |
-|Uitgangs band breedte | Uitgangs band breedte in bits per seconde.|
+|CPU-gebruik| | CPU-gebruik voor Premium streaming-eind punten. Deze gegevens zijn niet beschikbaar voor standaard streaming-eind punten. |
+|Uitgangs band breedte | | Uitgangs band breedte in bits per seconde.|
 
 ### <a name="metrics-are-useful"></a>Metrische gegevens zijn handig
 

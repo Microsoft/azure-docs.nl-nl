@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: sql
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 424a1ef7a73b5abbdba0d89ededb44cb9efdd116
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 9d15d681a114b0f364e8e33adc786b4d0ba7df0e
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340985"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684556"
 ---
 # <a name="query-folders-and-multiple-files"></a>Query uitvoeren op mappen en meerdere bestanden  
 

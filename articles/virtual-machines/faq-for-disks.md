@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/15/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 8a762cfd1ecb4e290417b5d24b0ae75f6e10baf1
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 3d199ae202cbe99176f3ca5d0ae82ecdeec84ca4
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973697"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684505"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Veelgestelde vragen over Azure IaaS VM-schijven en beheerde en onbeheerde Premium-schijven
 
@@ -171,7 +171,7 @@ Nee, dit wordt alleen ondersteund voor Ultra schijven en Premium SSD Managed dis
 
 **Welke regio's ondersteunen gedeelde schijven?**
 
-Zie het [conceptuele artikel](./linux/disks-shared.md)voor regionale informatie.
+Zie het [conceptuele artikel](disks-shared.md)voor regionale informatie.
 
 **Kunnen gedeelde schijven worden gebruikt als een besturingssysteem schijf?**
 
@@ -179,7 +179,7 @@ Nee, gedeelde schijven worden alleen ondersteund voor gegevens schijven.
 
 **Welke schijf grootten ondersteunen gedeelde schijven?**
 
-Zie het [conceptuele artikel](./linux/disks-shared.md)voor een ondersteunde grootte.
+Zie het [conceptuele artikel](disks-shared.md)voor een ondersteunde grootte.
 
 **Als ik een bestaande schijf heb, kan ik dan gedeelde schijven inschakelen?**
 

@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 07/31/2020
-ms.openlocfilehash: a8b5ec48b64341ad9eabd087d7ee20bb703198c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c09f741b37e06010a0bfbab40317980793240e29
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88816232"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683502"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Veelgestelde vragen over Azure Red Hat open Shift
 
@@ -186,13 +186,13 @@ Zie voor meer informatie de open Shift-documentatie over het uitschakelen van ze
 
 ### <a name="which-unix-rights-in-iaas-are-available-for-mastersinfraapp-nodes"></a>Welke UNIX-rechten (in IaaS) zijn beschikbaar voor modellen/infra structuur/app-knoop punten?
 
-Voor 4. x-clusters is toegang tot knoop punten beschikbaar via de rol cluster beheerder. Zie voor meer informatie [RBAC-overzicht](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).
+Voor 4. x-clusters is toegang tot knoop punten beschikbaar via de rol cluster beheerder. Zie [KUBERNETES RBAC Overview](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html)(Engelstalig) voor meer informatie.
 
 Voor 3,11-clusters is toegang tot knoop punten verboden.
 
 ### <a name="which-ocp-rights-do-we-have-cluster-admin-project-admin"></a>Welke OCP-rechten hebben we? Cluster-beheerder? Project-beheerder?
 
-Voor 4. x-clusters is de rol cluster-beheerder beschikbaar. Zie voor meer informatie [RBAC-overzicht](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).
+Voor 4. x-clusters is de rol cluster-beheerder beschikbaar. Zie [KUBERNETES RBAC Overview](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html)(Engelstalig) voor meer informatie.
 
 Voor 3,11-clusters raadpleegt u het [overzicht van Cluster beheer](https://docs.openshift.com/aro/admin_guide/index.html) voor meer informatie.
 

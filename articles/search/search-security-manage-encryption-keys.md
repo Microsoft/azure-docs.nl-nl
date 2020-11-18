@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/02/2020
 ms.custom: references_regions
-ms.openlocfilehash: 7f2df005a8d3211ba53aadb16370624c4f530eb3
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 95ac4ed83a4486665ce378972ea7d6423c2482d5
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94575863"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682907"
 ---
 # <a name="configure-customer-managed-keys-for-data-encryption-in-azure-cognitive-search"></a>Door de klant beheerde sleutels voor gegevens versleuteling configureren in azure Cognitive Search
 
@@ -46,7 +46,7 @@ Als u een andere regio gebruikt, of een service die is gemaakt vóór 1 augustus
 De volgende hulpprogram ma's en services worden in dit scenario gebruikt.
 
 + [Azure-Cognitive Search](search-create-service-portal.md) op een [factureer bare laag](search-sku-tier.md#tiers) (Basic of hoger, in een wille keurige regio).
-+ [Azure Key Vault](../key-vault/secrets/quick-create-portal.md#create-a-vault) in hetzelfde abonnement als Azure Cognitive Search. De sleutel kluis moet de beveiliging **voorlopig verwijderen** en **leegmaken** hebben ingeschakeld.
++ [Azure Key Vault](../key-vault/general/overview.md)kunt u een sleutel kluis maken met behulp van [Azure Portal](../key-vault//general/quick-create-portal.md), [Azure cli](../key-vault//general/quick-create-cli.md)of [Azure PowerShell](../key-vault//general/quick-create-powershell.md). in hetzelfde abonnement als Azure Cognitive Search. De sleutel kluis moet de beveiliging **voorlopig verwijderen** en **leegmaken** hebben ingeschakeld.
 + [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md). Als u er nog geen hebt, [stelt u een nieuwe Tenant](../active-directory/develop/quickstart-create-new-tenant.md)in.
 
 U moet een zoek toepassing hebben die het versleutelde object kan maken. In deze code verwijzen we naar een sleutel kluis sleutel en Active Directory registratie gegevens. Deze code kan een werk-app zijn, of prototype code, zoals de [C#-code voorbeeld DotNetHowToEncryptionUsingCMK](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToEncryptionUsingCMK).
@@ -116,7 +116,7 @@ Sla deze stap over als u al een sleutel in Azure Key Vault hebt.
 
 1. Selecteer **maken** om de implementatie te starten.
 
-1. Noteer de sleutel-id: deze bestaat uit de **sleutel waarde-URI** , de naam van de **sleutel** en de **sleutel versie**. U hebt de id nodig om een versleutelde index in azure Cognitive Search te definiëren.
+1. Noteer de sleutel-id: deze bestaat uit de **sleutel waarde-URI**, de naam van de **sleutel** en de **sleutel versie**. U hebt de id nodig om een versleutelde index in azure Cognitive Search te definiëren.
 
    :::image type="content" source="media/search-manage-encryption-keys/cmk-key-identifier.png" alt-text="Een nieuwe sleutel kluis sleutel maken":::
 
@@ -158,7 +158,7 @@ Toegangs machtigingen kunnen op elk gewenst moment worden ingetrokken. Na intrek
 
    :::image type="content" source="media/search-manage-encryption-keys/cmk-access-policy-permissions.png" alt-text="Sleutel kluis toegangs beleid-Principal selecteren":::
 
-1. In **sleutel machtigingen** kiest u *ophalen* , de *toets indrukken* en de *ingepakte sleutel*.
+1. In **sleutel machtigingen** kiest u *ophalen*, de *toets indrukken* en de *ingepakte sleutel*.
 
 1. Selecteer in **geheime machtigingen** *ophalen*.
 

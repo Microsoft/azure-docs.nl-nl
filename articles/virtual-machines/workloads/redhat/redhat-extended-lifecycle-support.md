@@ -1,5 +1,5 @@
 ---
-title: Uitgebreide ondersteuning voor levenscyclus Red Hat Enterprise Linux
+title: Uitgebreide levenscyclusondersteuning voor Red Hat Enterprise Linux
 description: Meer informatie over het toevoegen van ondersteuning voor Red Hat Enter prise uitgebreide levens cyclus op
 author: mathapli
 ms.service: virtual-machines-linux
@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/16/2020
 ms.author: mathapli
 ms.reviewer: cynthn
-ms.openlocfilehash: e7c9f9b158d01204536712f8024ed098cd7a5037
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: 124ff65087887a437e0b82fbd7b1e4c72e4f7b4c
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372871"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684352"
 ---
 # <a name="red-hat-enterprise-linux-rhel-extended-lifecycle-support"></a>Ondersteuning voor uitgebreide levenscyclus Red Hat Enterprise Linux (RHEL)
 In dit artikel vindt u informatie over de uitgebreide levenscyclus ondersteuning voor Red Hat Enter prise-installatie kopieën:
@@ -40,7 +40,7 @@ Vanaf 30 november 2020 zal Red Hat Enterprise Linux 6 het einde van de onderhoud
 
 #### <a name="what-is-the-process-to-add-extended-life-cycle-support-els-repositories-to-continue-to-receive-software-maintenance-bug-and-security-fixes-and--support-for-red-hat-enterprise-linux-6"></a>Wat is het proces voor het toevoegen van ELS-opslag plaatsen (Extended levenscyclus Cycle) om software onderhoud (bug-en beveiligings oplossingen) en ondersteuning voor Red Hat Enterprise Linux 6 te blijven ontvangen?
 
-Het end-to-end-proces voor het aanmelden voor de ELS is binnenkort beschikbaar (uiterlijk op 15 november, 2020).
+Het end-to-end-proces voor het aanmelden voor de ELS is binnenkort beschikbaar (laatste op 30 november, 2020).
 
 ## <a name="next-steps"></a>Volgende stappen
 

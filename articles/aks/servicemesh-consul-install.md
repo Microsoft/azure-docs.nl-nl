@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: dastrebe
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 2f47ded22209a9d53510c7d0a2f8270096161354
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c5ad53c0040009e9ed1f28072540b46ce7b0b9a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86244124"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683916"
 ---
 # <a name="install-and-use-consul-in-azure-kubernetes-service-aks"></a>Consul installeren en gebruiken in azure Kubernetes service (AKS)
 
@@ -33,7 +33,7 @@ In dit artikel leert u het volgende:
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Voor de stappen in dit artikel wordt ervan uitgegaan dat u een AKS-cluster hebt gemaakt (Kubernetes `1.13` en hoger, met RBAC ingeschakeld) en een `kubectl` verbinding met het cluster tot stand hebt gebracht. Als u hulp nodig hebt bij een van deze items, raadpleegt u de [AKS Quick][aks-quickstart]start. Zorg ervoor dat uw cluster ten minste drie knoop punten in de Linux-knooppunt groep bevat.
+Voor de stappen die in dit artikel worden beschreven, wordt ervan uitgegaan dat u een AKS-cluster hebt gemaakt (Kubernetes `1.13` en hoger, met KUBERNETES RBAC is ingeschakeld) en een `kubectl` verbinding met het cluster tot stand hebt gebracht. Als u hulp nodig hebt bij een van deze items, raadpleegt u de [AKS Quick][aks-quickstart]start. Zorg ervoor dat uw cluster ten minste drie knoop punten in de Linux-knooppunt groep bevat.
 
 U hebt [helm][helm] nodig om deze instructies te volgen en consul te installeren. Het is raadzaam dat u de nieuwste stabiele versie correct hebt geïnstalleerd en geconfigureerd in uw cluster. Als u hulp nodig hebt bij het installeren van helm, raadpleegt u de [AKS helm Installation guidance][helm-install](Engelstalig). Alle consul-peulen moeten ook worden gepland om te worden uitgevoerd op Linux-knoop punten.
 

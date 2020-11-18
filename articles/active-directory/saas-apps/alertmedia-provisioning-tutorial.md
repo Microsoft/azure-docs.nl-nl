@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 086f79239fd4f6b01f4b76d1385598bac52bb471
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 9a7c19e30c6c26d7bf7f11d6f03a0acaee160c9a
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358964"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578600"
 ---
 # <a name="tutorial-configure-alertmedia-for-automatic-user-provisioning"></a>Zelfstudie: AlertMedia configureren voor automatische gebruikersinrichting
 
@@ -95,9 +95,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
     ![Tabblad Inrichten - Automatisch](common/provisioning-automatic.png)
 
 5. Voer in de sectie **Referenties voor beheerder** de **Tenant-URL** van AlertMedia in een van de volgende indelingen in.
-      * (geen aangepast domein) https://dashboard.alertmedia.com/api/scim/v3
+      * (geen aangepast domein) `https://dashboard.alertmedia.com/api/scim/v3`
 
-      * (aangepast domein) https://subdomain.alertmedia.com/api/scim/v3
+      * (aangepast domein) `https://subdomain.alertmedia.com/api/scim/v3`
 
       Voer de waarde van **Token voor geheim** in die eerder in stap 2 is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met AlertMedia. Als de verbinding mislukt, moet u controleren of uw AlertMedia-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 

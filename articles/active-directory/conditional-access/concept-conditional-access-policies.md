@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5361460f7816dd4a3b2b53deecd9d360f98ad1d3
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 74e4ca34a69b121ce5b92ad52125dc317e3aea43
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145364"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837665"
 ---
 # <a name="building-a-conditional-access-policy"></a>Beleid voor voorwaardelijke toegang bouwen
 
@@ -101,7 +101,7 @@ Toegang blok keren alleen dat houdt in dat de toegang onder de opgegeven toewijz
 
 De granting Control kan de afdwinging van een of meer besturings elementen activeren. 
 
-- Multi-factor Authentication (Azure Multi-Factor Authentication) vereisen
+- Multi-factor Authentication (Azure AD Multi-Factor Authentication) vereisen
 - Vereisen dat het apparaat wordt gemarkeerd als compatibel (intune)
 - Hybride Azure AD-gekoppeld apparaat is vereist
 - Goedgekeurde client-apps vereisen
@@ -134,7 +134,7 @@ Beheerders kunnen ervoor kiezen om een van de vorige besturings elementen of all
 Een beleid voor voorwaardelijke toegang moet mini maal het volgende bevatten om af te dwingen:
 
 - De **naam** van het beleid.
-- **Sneltoetsen**
+- **Toewijzingen**
    - **Gebruikers en/of groepen** waarop het beleid moet worden toegepast.
    - **Cloud-apps of-acties** waarop het beleid moet worden toegepast.
 - **Besturingselementen voor toegang**
@@ -150,7 +150,7 @@ Het artikel [common Conditional Access policies](concept-conditional-access-poli
 
 [Aanmeld gedrag simuleren met het What If hulp programma voor voorwaardelijke toegang](troubleshoot-conditional-access-what-if.md)
 
-[Planning van een cloudgebaseerde Azure Multi-Factor Authentication-implementatie](../authentication/howto-mfa-getstarted.md)
+[Een implementatie van Azure AD Multi-Factor Authentication in de Cloud plannen](../authentication/howto-mfa-getstarted.md)
 
 [Apparaatcompatibiliteit beheren met intune](/intune/device-compliance-get-started)
 

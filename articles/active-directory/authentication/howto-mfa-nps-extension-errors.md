@@ -1,6 +1,6 @@
 ---
-title: Problemen met de Azure MFA NPS-extensie oplossen-Azure Active Directory
-description: Help-informatie over het oplossen van problemen met de NPS-extensie voor Azure Multi-Factor Authentication
+title: Problemen oplossen met de NPS-extensie voor Azure AD MFA-Azure Active Directory
+description: Help-informatie over het oplossen van problemen met de NPS-extensie voor Azure AD Multi-Factor Authentication
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -12,16 +12,16 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 406b53f833edabafe620b05ccb6acfadffabf5ae
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 03736f468148ee633aff22718dc000220ab7efe4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964363"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839026"
 ---
-# <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Resolve error messages from the NPS extension for Azure Multi-Factor Authentication (Foutberichten van de NPS-extensie voor Azure Multi-Factor Authentication oplossen)
+# <a name="resolve-error-messages-from-the-nps-extension-for-azure-ad-multi-factor-authentication"></a>Fout berichten oplossen vanuit de NPS-extensie voor Azure AD Multi-Factor Authentication
 
-Als u problemen ondervindt met de NPS-extensie voor Azure Multi-Factor Authentication, kunt u dit artikel gebruiken om sneller een oplossing te bereiken. NPS-extensie Logboeken vindt u in Logboeken onder **aangepaste weer gaven**  >  **Server rollen**  >  **Services voor netwerk beleid en-toegang** op de server waarop de NPS-extensie is geïnstalleerd.
+Als u problemen ondervindt met de NPS-extensie voor Azure AD Multi-Factor Authentication, kunt u dit artikel gebruiken om sneller een oplossing te bereiken. NPS-extensie Logboeken vindt u in Logboeken onder **aangepaste weer gaven**  >  **Server rollen**  >  **Services voor netwerk beleid en-toegang** op de server waarop de NPS-extensie is geïnstalleerd.
 
 ## <a name="troubleshooting-steps-for-common-errors"></a>Probleemoplossings stappen voor veelvoorkomende fouten
 
@@ -30,12 +30,12 @@ Als u problemen ondervindt met de NPS-extensie voor Azure Multi-Factor Authentic
 | **CONTACT_SUPPORT** | [Neem contact op met de ondersteuning](#contact-microsoft-support)en vermeld de lijst met stappen voor het verzamelen van Logboeken. Geef zoveel informatie op als u wilt weten wat er is gebeurd vóór de fout, waaronder Tenant-ID en user principal name (UPN). |
 | **CLIENT_CERT_INSTALL_ERROR** | Er is mogelijk een probleem met de manier waarop het client certificaat is geïnstalleerd of gekoppeld aan uw Tenant. Volg de instructies in [Troubleshooting the MFA-extensie voor het](howto-mfa-nps-extension.md#troubleshooting) uitvoeren van problemen met client certificaten. |
 | **ESTS_TOKEN_ERROR** | Volg de instructies in [Troubleshooting the MFA-extensie voor het](howto-mfa-nps-extension.md#troubleshooting) uitvoeren van problemen met client certificaten en ADAL-tokens. |
-| **HTTPS_COMMUNICATION_ERROR** | De NPS-server kan geen reacties ontvangen van Azure MFA. Controleer of de firewalls zijn geopend in twee richtingen voor verkeer naar en van https://adnotifications.windowsazure.com |
+| **HTTPS_COMMUNICATION_ERROR** | De NPS-server kan geen reacties ontvangen van Azure AD MFA. Controleer of de firewalls zijn geopend in twee richtingen voor verkeer naar en van https://adnotifications.windowsazure.com |
 | **HTTP_CONNECT_ERROR** | Op de server waarop de NPS-extensie wordt uitgevoerd, controleert u of u kunt bereiken  `https://adnotifications.windowsazure.com` en `https://login.microsoftonline.com/` . Als deze sites niet worden geladen, kunt u problemen met de connectiviteit op die server oplossen. |
-| **NPS-extensie voor Azure MFA:** <br> De NPS-extensie voor Azure MFA voert alleen secundaire verificatie voor RADIUS-aanvragen uit in de AccessAccept-status. Er is een aanvraag ontvangen voor de gebruikers naam van de gebruiker met de reactie status AccessReject, aanvraag wordt genegeerd. | Deze fout weerspiegelt meestal een verificatie fout in AD of de NPS-server kan geen reacties ontvangen van Azure AD. Controleer of de firewalls zijn geopend voor verkeer naar en van `https://adnotifications.windowsazure.com` en `https://login.microsoftonline.com` met behulp van de poorten 80 en 443. Het is ook belang rijk om te controleren of op het tabblad inbel netwerk toegangs machtigingen de instelling is ingesteld op toegang beheren via NPS-netwerk beleid. Deze fout kan ook worden geactiveerd als aan de gebruiker geen licentie is toegewezen. |
+| **NPS-extensie voor Azure AD MFA:** <br> De NPS-extensie voor Azure AD MFA voert alleen secundaire verificatie voor RADIUS-aanvragen uit in de AccessAccept-status. Er is een aanvraag ontvangen voor de gebruikers naam van de gebruiker met de reactie status AccessReject, aanvraag wordt genegeerd. | Deze fout weerspiegelt meestal een verificatie fout in AD of de NPS-server kan geen reacties ontvangen van Azure AD. Controleer of de firewalls zijn geopend voor verkeer naar en van `https://adnotifications.windowsazure.com` en `https://login.microsoftonline.com` met behulp van de poorten 80 en 443. Het is ook belang rijk om te controleren of op het tabblad inbel netwerk toegangs machtigingen de instelling is ingesteld op toegang beheren via NPS-netwerk beleid. Deze fout kan ook worden geactiveerd als aan de gebruiker geen licentie is toegewezen. |
 | **REGISTRY_CONFIG_ERROR** | Er ontbreekt een sleutel in het REGI ster voor de toepassing. Dit kan zijn omdat het [Power shell-script](howto-mfa-nps-extension.md#install-the-nps-extension) niet is uitgevoerd na de installatie. Het fout bericht moet de ontbrekende sleutel bevatten. Zorg ervoor dat u beschikt over de sleutel onder HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa. |
 | **REQUEST_FORMAT_ERROR** <br> Er ontbreekt een verplicht userName\Identifier kenmerk van de RADIUS-aanvraag. Controleren of NPS RADIUS-aanvragen ontvangt | Deze fout weerspiegelt meestal een installatie probleem. De NPS-extensie moet worden geïnstalleerd in NPS-servers die RADIUS-aanvragen kunnen ontvangen. NPS-servers die zijn geïnstalleerd als afhankelijkheden voor services als RDG en RRAS ontvangen geen RADIUS-aanvragen. De NPS-extensie werkt niet wanneer deze wordt geïnstalleerd via dergelijke installaties en er zijn fouten opgetreden omdat de gegevens van de verificatie aanvraag niet kunnen worden gelezen. |
-| **REQUEST_MISSING_CODE** | Zorg ervoor dat het protocol voor wachtwoord versleuteling tussen de NPS-en NAS-servers de secundaire verificatie methode ondersteunt die u gebruikt. **Pap** ondersteunt alle verificatie methoden van Azure MFA in de Cloud: telefoon oproep, tekst bericht in één richting, melding van mobiele app en verificatie code voor mobiele apps. Ondersteuning voor telefonische en **EAP** -telefoon **gesprekken en mobiele** app-meldingen. |
+| **REQUEST_MISSING_CODE** | Zorg ervoor dat het protocol voor wachtwoord versleuteling tussen de NPS-en NAS-servers de secundaire verificatie methode ondersteunt die u gebruikt. **Pap** ondersteunt alle verificatie methoden van Azure AD MFA in de Cloud: telefoon oproep, tekst bericht in één richting, melding van mobiele app en verificatie code voor mobiele apps. Ondersteuning voor telefonische en **EAP** -telefoon **gesprekken en mobiele** app-meldingen. |
 | **USERNAME_CANONICALIZATION_ERROR** | Controleer of de gebruiker aanwezig is in uw on-premises Active Directory-exemplaar en of de NPS-service machtigingen heeft voor toegang tot de Directory. Als u vertrouwens relaties tussen forests gebruikt, [neemt u contact op met de ondersteuning](#contact-microsoft-support) voor verdere hulp. |
 
 ### <a name="alternate-login-id-errors"></a>Alternatieve aanmeldings-ID-fouten
@@ -55,7 +55,7 @@ Als u problemen ondervindt met de NPS-extensie voor Azure Multi-Factor Authentic
 | **AuthenticationMethodNotSupported** | De opgegeven verificatie methode wordt niet ondersteund. | Verzamel alle logboeken die deze fout bevatten en [Neem contact op met de ondersteuning](#contact-microsoft-support). Wanneer u contact opneemt met ondersteuning, geeft u de gebruikers naam en de secundaire verificatie methode op die de fout heeft veroorzaakt. |
 | **BecAccessDenied** | MSODS BEC-aanroep heeft toegang geweigerd, waarschijnlijk is de gebruikers naam niet gedefinieerd in de Tenant | De gebruiker is aanwezig in Active Directory on-premises, maar wordt niet gesynchroniseerd met Azure AD via AD Connect. Of de gebruiker ontbreekt voor de Tenant. Voeg de gebruiker toe aan Azure AD en laat ze hun verificatie methoden toevoegen volgens de instructies in [uw instellingen beheren voor verificatie in twee stappen](../user-help/multi-factor-authentication-end-user-manage-settings.md). |
 | **InvalidFormat** of **StrongAuthenticationServiceInvalidParameter** | Het telefoon nummer heeft een niet-herken bare indeling | Laat de gebruiker hun telefoon nummers voor de verificatie corrigeren. |
-| **InvalidSession** | De opgegeven sessie is ongeldig of is mogelijk verlopen | Het volt ooien van de sessie heeft meer dan drie minuten geduurd. Controleer of de gebruiker de verificatie code invoert of reageert op de app-melding binnen drie minuten na het initiëren van de verificatie aanvraag. Als het probleem niet is opgelost, controleert u of er geen netwerk latenties zijn tussen de client, de NAS-server, de NPS-server en het Azure MFA-eind punt.  |
+| **InvalidSession** | De opgegeven sessie is ongeldig of is mogelijk verlopen | Het volt ooien van de sessie heeft meer dan drie minuten geduurd. Controleer of de gebruiker de verificatie code invoert of reageert op de app-melding binnen drie minuten na het initiëren van de verificatie aanvraag. Als het probleem niet is opgelost, controleert u of er geen netwerk latenties zijn tussen de client, de NAS-server, de NPS-server en het Azure AD MFA-eind punt.  |
 | **NoDefaultAuthenticationMethodIsConfigured** | Er is geen standaard authenticatie methode voor de gebruiker geconfigureerd | Laat de gebruiker hun verificatie methoden toevoegen of controleren aan de hand van de instructies in [uw instellingen beheren voor verificatie in twee stappen](../user-help/multi-factor-authentication-end-user-manage-settings.md). Controleer of de gebruiker een standaard verificatie methode heeft gekozen en die methode voor hun account heeft geconfigureerd. |
 | **OathCodePinIncorrect** | Er is een onjuiste code en pincode ingevoerd. | Deze fout wordt niet verwacht in de NPS-extensie. Als uw gebruiker dit ondervindt, [neemt u contact op met de ondersteuning](#contact-microsoft-support) voor hulp bij het oplossen van problemen. |
 | **ProofDataNotFound** | Er zijn geen bewijs gegevens geconfigureerd voor de opgegeven verificatie methode. | Laat de gebruiker een andere verificatie methode proberen of Voeg een of meer nieuwe verificatie methoden toe volgens de instructies in [uw instellingen beheren voor verificatie in twee stappen](../user-help/multi-factor-authentication-end-user-manage-settings.md). [Neem contact op met de ondersteuning](#contact-microsoft-support)als de gebruiker deze fout blijft zien nadat u hebt bevestigd dat de verificatie methode juist is ingesteld. |
@@ -99,7 +99,7 @@ Als uw gebruikers problemen ondervinden [met verificatie in twee stappen](../use
 
 ### <a name="health-check-script"></a>Status controle script
 
-Het [Azure MFA-status controle script](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) voor de NPS-extensie voert een eenvoudige status controle uit bij het oplossen van problemen met de NPS-extensie. Voer het script uit en kies optie 3.
+Met het [Azure AD MFA-status controle script](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) voor de NPS-extensie wordt een eenvoudige status controle uitgevoerd bij het oplossen van problemen met de NPS-extensie. Voer het script uit en kies optie 3.
 
 ### <a name="contact-microsoft-support"></a>Contact opnemen met Microsoft Ondersteuning
 

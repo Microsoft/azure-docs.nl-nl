@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66df1bbe531c072ff5aa2bebe7b197201e6931a2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 0b0b34ce55a0896fb804a48779c9c1007c8c340f
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077724"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838209"
 ---
 # <a name="plan-and-deploy-on-premises-azure-active-directory-password-protection"></a>On-premises Azure Active Directory wachtwoord beveiliging plannen en implementeren
 
@@ -142,8 +142,8 @@ De Microsoft Azure AD connect agent Updater-service wordt naast de Azure AD-prox
 
 Er zijn twee vereiste installatie Programma's voor een on-premises Azure AD-implementatie voor wachtwoord beveiliging:
 
-* Azure AD-agent voor wachtwoord beveiliging DC ( *AzureADPasswordProtectionDCAgentSetup.msi* )
-* Azure AD-wachtwoord beveiligings proxy ( *AzureADPasswordProtectionProxySetup.exe* )
+* Azure AD-agent voor wachtwoord beveiliging DC (*AzureADPasswordProtectionDCAgentSetup.msi*)
+* Azure AD-wachtwoord beveiligings proxy (*AzureADPasswordProtectionProxySetup.exe*)
 
 Down load de installatie Programma's vanuit het [micro soft Download centrum](https://www.microsoft.com/download/details.aspx?id=57071).
 
@@ -201,7 +201,7 @@ Voer de volgende stappen uit om de Azure AD-proxy service voor wachtwoord beveil
 
     Wanneer deze opdracht eenmaal is uitgevoerd voor een Azure AD-proxy service voor wachtwoord beveiliging, worden er aanvullende aanroepen van de functie geslaagd, maar dit is niet nodig.
 
-    De `Register-AzureADPasswordProtectionProxy` cmdlet ondersteunt de volgende drie verificatie modi. De eerste twee modi ondersteunen Azure Multi-Factor Authentication, maar de derde modus niet.
+    De `Register-AzureADPasswordProtectionProxy` cmdlet ondersteunt de volgende drie verificatie modi. De eerste twee modi ondersteunen Azure AD Multi-Factor Authentication, maar de derde modus niet.
 
     > [!TIP]
     > De eerste keer dat deze cmdlet wordt uitgevoerd voor een specifieke Azure-Tenant, kan er een merkbaar vertraging optreden. Als er geen fout wordt gerapporteerd, hoeft u zich geen zorgen te maken over deze vertraging.
@@ -231,11 +231,11 @@ Voer de volgende stappen uit om de Azure AD-proxy service voor wachtwoord beveil
         ```
 
         > [!NOTE]
-        > Deze modus mislukt als Azure Multi-Factor Authentication is vereist voor uw account. In dat geval gebruikt u een van de twee voor gaande verificatie modi, of gebruikt u in plaats daarvan een ander account waarvoor MFA niet vereist is.
+        > Deze modus mislukt als Azure AD Multi-Factor Authentication is vereist voor uw account. In dat geval gebruikt u een van de twee voor gaande verificatie modi, of gebruikt u in plaats daarvan een ander account waarvoor MFA niet vereist is.
         >
         > U ziet misschien ook MFA vereist als registratie van Azure-apparaten (die wordt gebruikt onder de voor vallen van Azure AD-wachtwoord beveiliging), is geconfigureerd om wereld wijd MFA te vereisen. Als tijdelijke oplossing voor deze vereiste kunt u een ander account gebruiken dat MFA ondersteunt met een van de twee vorige verificatie modi, of u kunt ook tijdelijk de MFA-vereiste voor de Azure Device Registration versoepelen.
         >
-        > Als u deze wijziging wilt aanbrengen, zoekt en selecteert u **Azure Active Directory** in de Azure Portal en selecteert u vervolgens **apparaten > Apparaatinstellingen** . Set **vereisen multi-factor auth om apparaten toe te voegen** aan *Nee* . Zorg ervoor dat u deze instelling opnieuw configureert op *Ja* zodra de registratie is voltooid.
+        > Als u deze wijziging wilt aanbrengen, zoekt en selecteert u **Azure Active Directory** in de Azure Portal en selecteert u vervolgens **apparaten > Apparaatinstellingen**. Set **vereisen multi-factor auth om apparaten toe te voegen** aan *Nee*. Zorg ervoor dat u deze instelling opnieuw configureert op *Ja* zodra de registratie is voltooid.
         >
         > U wordt aangeraden MFA-vereisten alleen voor test doeleinden te gebruiken.
 
@@ -252,7 +252,7 @@ Voer de volgende stappen uit om de Azure AD-proxy service voor wachtwoord beveil
     
     Deze stap wordt eenmaal per forest uitgevoerd.
 
-    De `Register-AzureADPasswordProtectionForest` cmdlet ondersteunt de volgende drie verificatie modi. De eerste twee modi ondersteunen Azure Multi-Factor Authentication, maar de derde modus niet.
+    De `Register-AzureADPasswordProtectionForest` cmdlet ondersteunt de volgende drie verificatie modi. De eerste twee modi ondersteunen Azure AD Multi-Factor Authentication, maar de derde modus niet.
 
     > [!TIP]
     > De eerste keer dat deze cmdlet wordt uitgevoerd voor een specifieke Azure-Tenant, kan er een merkbaar vertraging optreden. Als er geen fout wordt gerapporteerd, hoeft u zich geen zorgen te maken over deze vertraging.
@@ -282,11 +282,11 @@ Voer de volgende stappen uit om de Azure AD-proxy service voor wachtwoord beveil
         ```
 
         > [!NOTE]
-        > Deze modus mislukt als Azure Multi-Factor Authentication is vereist voor uw account. In dat geval gebruikt u een van de twee voor gaande verificatie modi, of gebruikt u in plaats daarvan een ander account waarvoor MFA niet vereist is.
+        > Deze modus mislukt als Azure AD Multi-Factor Authentication is vereist voor uw account. In dat geval gebruikt u een van de twee voor gaande verificatie modi, of gebruikt u in plaats daarvan een ander account waarvoor MFA niet vereist is.
         >
         > U ziet misschien ook MFA vereist als registratie van Azure-apparaten (die wordt gebruikt onder de voor vallen van Azure AD-wachtwoord beveiliging), is geconfigureerd om wereld wijd MFA te vereisen. Als tijdelijke oplossing voor deze vereiste kunt u een ander account gebruiken dat MFA ondersteunt met een van de twee vorige verificatie modi, of u kunt ook tijdelijk de MFA-vereiste voor de Azure Device Registration versoepelen.
         >
-        > Als u deze wijziging wilt aanbrengen, zoekt en selecteert u **Azure Active Directory** in de Azure Portal en selecteert u vervolgens **apparaten > Apparaatinstellingen** . Set **vereisen multi-factor auth om apparaten toe te voegen** aan *Nee* . Zorg ervoor dat u deze instelling opnieuw configureert op *Ja* zodra de registratie is voltooid.
+        > Als u deze wijziging wilt aanbrengen, zoekt en selecteert u **Azure Active Directory** in de Azure Portal en selecteert u vervolgens **apparaten > Apparaatinstellingen**. Set **vereisen multi-factor auth om apparaten toe te voegen** aan *Nee*. Zorg ervoor dat u deze instelling opnieuw configureert op *Ja* zodra de registratie is voltooid.
         >
         > U wordt aangeraden MFA-vereisten alleen voor test doeleinden te gebruiken.
 

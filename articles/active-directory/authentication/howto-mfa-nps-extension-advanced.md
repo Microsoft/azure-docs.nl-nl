@@ -1,5 +1,5 @@
 ---
-title: De Azure MFA NPS-extensie configureren-Azure Active Directory
+title: De Azure AD MFA NPS-extensie configureren-Azure Active Directory
 description: Nadat u de NPS-uitbrei ding hebt geïnstalleerd, gebruikt u deze stappen voor geavanceerde configuratie, zoals toegestane IP-lijsten en UPN-vervanging.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,22 +11,22 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a9156f84e5189b38a2c15f257bd6a47ac3db130
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 55c6457ec73c9fe9b39d607f26ffe2a577cc200d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964397"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839043"
 ---
 # <a name="advanced-configuration-options-for-the-nps-extension-for-multi-factor-authentication"></a>Geavanceerde configuratieopties voor de NPS-extensie voor Multi-Factor Authentication
 
-De Network Policy Server (NPS) uitbrei ding breidt Azure Multi-Factor Authentication-functies in de Cloud uit naar uw on-premises infra structuur. In dit artikel wordt ervan uitgegaan dat u de uitbrei ding al hebt geïnstalleerd en wilt weten hoe u de uitbrei ding voor uw behoeften kunt aanpassen. 
+De uitbrei ding Network Policy Server (NPS) breidt de Azure AD-Multi-Factor Authentication van uw Cloud uit in uw on-premises infra structuur. In dit artikel wordt ervan uitgegaan dat u de uitbrei ding al hebt geïnstalleerd en wilt weten hoe u de uitbrei ding voor uw behoeften kunt aanpassen. 
 
 ## <a name="alternate-login-id"></a>Alternatieve aanmeldings-ID
 
 Aangezien de NPS-extensie verbinding maakt met zowel uw on-premises als in de Cloud, kan er een probleem optreden waarbij uw on-premises UPN (User Principal Names) niet overeenkomen met de namen in de Cloud. Gebruik alternatieve aanmeldings-Id's om dit probleem op te lossen. 
 
-U kunt binnen de NPS-uitbrei ding een Active Directory kenmerk opgeven dat moet worden gebruikt in plaats van de UPN voor Azure Multi-Factor Authentication. Zo kunt u uw on-premises resources beveiligen met verificatie in twee stappen zonder uw lokale Upn's te wijzigen. 
+U kunt binnen de NPS-uitbrei ding een Active Directory kenmerk opgeven dat moet worden gebruikt in plaats van de UPN voor Azure AD-Multi-Factor Authentication. Zo kunt u uw on-premises resources beveiligen met verificatie in twee stappen zonder uw lokale Upn's te wijzigen. 
 
 Als u alternatieve aanmeldings-Id's wilt configureren, gaat u naar `HKLM\SOFTWARE\Microsoft\AzureMfa` en bewerkt u de volgende register waarden:
 
@@ -55,4 +55,4 @@ Wanneer een aanvraag afkomstig is van een IP-adres dat in de is `IP_WHITELIST` ,
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Resolve error messages from the NPS extension for Azure Multi-Factor Authentication](howto-mfa-nps-extension-errors.md) (Foutberichten van de NPS-extensie voor Azure Multi-Factor Authentication oplossen)
+[Fout berichten oplossen vanuit de NPS-extensie voor Azure AD Multi-Factor Authentication](howto-mfa-nps-extension-errors.md)

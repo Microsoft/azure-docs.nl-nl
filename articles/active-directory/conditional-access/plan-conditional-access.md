@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e44cb38435ca86ad7cd4709d5e99f5cf41fcf91
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 20b51cc747d3a24b1437eda988397a2e999f6ab3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366323"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837478"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>Een implementatie van voorwaardelijke toegang plannen
 
@@ -73,7 +73,7 @@ De volgende bronnen kunnen nuttig zijn als u meer informatie wilt over voorwaard
 * [Hoe kan ik voorwaardelijke toegang implementeren?](https://youtu.be/c_izIRNJNuk)
 * [Hoe kan ik CA-beleid implementeren voor eind gebruikers?](https://youtu.be/0_Fze7Zpyvc)
 * [Voorwaardelijke toegang met apparaatbesturingen](https://youtu.be/NcONUf-jeS4)
-* [Voorwaardelijke toegang met Azure MFA](https://youtu.be/Tbc-SU97G-w)
+* [Voorwaardelijke toegang met Azure AD MFA](https://youtu.be/Tbc-SU97G-w)
 * [Voorwaardelijke toegang in Enterprise Mobility + Security](https://youtu.be/A7IrxAH87wc)
 
 
@@ -105,7 +105,7 @@ Wanneer nieuwe beleids regels gereed zijn voor uw omgeving, implementeert u deze
 ## <a name="understand-ca-policy-components"></a>Informatie over CA-beleids onderdelen
 CA-beleid is if-then-instructies: als aan een toewijzing wordt voldaan, past u deze toegangs elementen toe.
 
-Bij het configureren van CA-beleid worden de voor waarden *toewijzingen*genoemd. Met CA-beleid kunt u toegangs beheer op de apps van uw organisatie afdwingen op basis van bepaalde toewijzingen.
+Bij het configureren van CA-beleid worden de voor waarden *toewijzingen* genoemd. Met CA-beleid kunt u toegangs beheer op de apps van uw organisatie afdwingen op basis van bepaalde toewijzingen.
 
 
 Zie [buil ding a CA Policy](concept-conditional-access-policies.md)(Engelstalig) voor meer informatie.

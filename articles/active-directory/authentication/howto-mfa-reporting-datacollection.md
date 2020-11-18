@@ -1,6 +1,6 @@
 ---
-title: Azure MFA-verzameling voor gebruikers gegevens-Azure Active Directory
-description: Welke informatie wordt gebruikt om gebruikers te helpen bij het verifiëren van Azure Multi-Factor Authentication?
+title: Azure AD MFA-verzameling voor gebruikers gegevens-Azure Active Directory
+description: Welke informatie wordt gebruikt om gebruikers te helpen bij het verifiëren van Azure AD Multi-Factor Authentication?
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,22 +11,22 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03ec8eddf55c6b3e90b56501a2e3b657bef6fc8c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ed0d4b754911dda49776379fb318390eae411000
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964193"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839009"
 ---
-# <a name="azure-multi-factor-authentication-user-data-collection"></a>Verzameling van Azure Multi-Factor Authentication-gebruikers gegevens
+# <a name="azure-ad-multi-factor-authentication-user-data-collection"></a>Azure AD-Multi-Factor Authentication voor het verzamelen van gebruikers gegevens
 
-In dit document wordt uitgelegd hoe u gebruikers gegevens kunt vinden die zijn verzameld door Azure Multi-Factor Authentication-server (MFA server) en Azure MFA (op basis van de Cloud) in de gebeurtenis die u wilt verwijderen.
+In dit document wordt uitgelegd hoe u gebruikers gegevens kunt vinden die zijn verzameld door Azure Multi-Factor Authentication-server (MFA server) en Azure AD MFA (op basis van de Cloud) in de gebeurtenis die u wilt verwijderen.
 
 [!INCLUDE [gdpr-hybrid-note](../../../includes/gdpr-hybrid-note.md)]
 
 ## <a name="information-collected"></a>Verzamelde gegevens
 
-MFA-server, de NPS-extensie en de Windows Server 2016 Azure MFA-adapter AD FS verzamelen en bewaren de volgende informatie voor 90 dagen.
+MFA-server, de NPS-extensie en de Windows Server 2016 Azure AD MFA-adapter AD FS de volgende informatie te verzamelen en op te slaan voor 90 dagen.
 
 Verificatie pogingen (gebruikt voor rapportage en probleem oplossing):
 
@@ -89,7 +89,7 @@ Blokken (gebruikt voor het bepalen van de geblokkeerde status en voor rapportage
 - Landnummer
 - Telefoonnummer
 - Telefoon nummer geformatteerd
-- Toestelnummer
+- Extensie
 - Extensie wissen
 - Geblokkeerd
 - Reden voor blok kering
@@ -109,7 +109,7 @@ Bypass (gebruikt voor rapportage):
 - Landnummer
 - Telefoonnummer
 - Telefoon nummer geformatteerd
-- Toestelnummer
+- Extensie
 - Extensie wissen
 - Reden voor bypass
 - Tijds tempel van voltooiing
@@ -163,26 +163,26 @@ Gebruik de [micro soft-privacyverklaring](https://portal.azure.com/#blade/Micros
 
 - Het kan tot 30 dagen duren voordat gegevens volledig worden verwijderd.
 
-## <a name="gather-data-from-windows-server-2016-azure-mfa-ad-fs-adapter"></a>Gegevens verzamelen van Windows Server 2016 Azure MFA AD FS-adapter
+## <a name="gather-data-from-windows-server-2016-azure-ad-mfa-ad-fs-adapter"></a>Gegevens verzamelen van Windows Server 2016 Azure AD MFA AD FS-adapter
 
 Gebruik de [micro soft-privacy-Portal](https://portal.azure.com/#blade/Microsoft_Azure_Policy/UserPrivacyMenuBlade/Overview) om een aanvraag voor het exporteren te maken. 
 
 - MFA-informatie is opgenomen in de export, waardoor uren of dagen kunnen worden voltooid.
 - Instanties van de gebruikers naam in de gebeurtenis logboeken van AD FS tracering/fout opsporing (indien ingeschakeld) worden beschouwd als operationeel en dubbel naar de gegevens die worden verstrekt in de export.
 
-## <a name="delete-data-from-windows-server-2016-azure-mfa-ad-fs-adapter"></a>Gegevens verwijderen van Windows Server 2016 Azure MFA AD FS-adapter
+## <a name="delete-data-from-windows-server-2016-azure-ad-mfa-ad-fs-adapter"></a>Gegevens verwijderen van Windows Server 2016 Azure AD MFA AD FS-adapter
 
 Gebruik de [micro soft-privacyverklaring](https://portal.azure.com/#blade/Microsoft_Azure_Policy/UserPrivacyMenuBlade/Overview) om een aanvraag voor het sluiten van accounts te maken voor het verwijderen van alle gegevens van de MFA-Cloud service die voor deze gebruiker zijn verzameld.
 
 - Het kan tot 30 dagen duren voordat gegevens volledig worden verwijderd.
 
-## <a name="gather-data-for-azure-mfa"></a>Gegevens verzamelen voor Azure MFA
+## <a name="gather-data-for-azure-ad-mfa"></a>Gegevens verzamelen voor Azure AD MFA
 
 Gebruik de [micro soft-privacy-Portal](https://portal.azure.com/#blade/Microsoft_Azure_Policy/UserPrivacyMenuBlade/Overview) om een aanvraag voor het exporteren te maken.
 
 - MFA-informatie is opgenomen in de export, waardoor uren of dagen kunnen worden voltooid.
 
-## <a name="delete-data-for-azure-mfa"></a>Gegevens voor Azure MFA verwijderen
+## <a name="delete-data-for-azure-ad-mfa"></a>Gegevens voor Azure AD MFA verwijderen
 
 Gebruik de [micro soft-privacyverklaring](https://portal.azure.com/#blade/Microsoft_Azure_Policy/UserPrivacyMenuBlade/Overview) om een aanvraag voor het sluiten van accounts te maken voor het verwijderen van alle gegevens van de MFA-Cloud service die voor deze gebruiker zijn verzameld.
 

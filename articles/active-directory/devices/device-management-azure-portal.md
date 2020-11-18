@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: hafowler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ab17e5c0a024fec938f1b588cc4ce69bf16a878
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a4077ade7de93470aaf03acef1dc1cefca8bd3d4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93083249"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837359"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Apparaat-id's beheren in Azure Portal
 
@@ -38,8 +38,8 @@ Op de pagina **alle apparaten** kunt u het volgende doen:
 
 U kunt de portal voor apparaten openen met de volgende stappen:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Blader naar **Azure Active Directory**  >  **apparaten** .
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Blader naar **Azure Active Directory**  >  **apparaten**.
 
 ## <a name="manage-devices"></a>Apparaten beheren
 
@@ -71,7 +71,7 @@ Met beide opties kunnen beheerders het volgende doen:
 
 ### <a name="manage-an-intune-device"></a>Een intune-apparaat beheren
 
-Als u intune-beheerder bent, kunt u apparaten beheren waarop MDM is gemarkeerd **Microsoft intune** . Als het apparaat niet is inge schreven bij Microsoft Intune, wordt de optie beheren grijs weer gegeven.
+Als u intune-beheerder bent, kunt u apparaten beheren waarop MDM is gemarkeerd **Microsoft intune**. Als het apparaat niet is inge schreven bij Microsoft Intune, wordt de optie beheren grijs weer gegeven.
 
 ### <a name="enable-or-disable-an-azure-ad-device"></a>Een Azure AD-apparaat in-of uitschakelen
 
@@ -139,8 +139,8 @@ De functie voor beeld filtering inschakelen in de weer gave **alle apparaten** :
 
 ![Preview-functionaliteit voor filteren inschakelen](./media/device-management-azure-portal/device-filter-preview-enable.png)
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Blader naar **Azure Active Directory**  >  **apparaten** .
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Blader naar **Azure Active Directory**  >  **apparaten**.
 1. Selecteer de banner waarin wordt **vermeld, probeer de nieuwe verbeteringen voor het filteren van apparaten uit. Klik om de preview-versie in te scha kelen.**
 
 U kunt nu **filters toevoegen** aan uw weer gave **alle apparaten** .
@@ -158,19 +158,19 @@ U moet een van de volgende rollen zijn toegewezen om Apparaatinstellingen weer t
 
 ![Apparaatinstellingen met betrekking tot Azure AD](./media/device-management-azure-portal/device-settings-azure-portal.png)
 
-- **Gebruikers kunnen apparaten toevoegen aan Azure AD** : met deze instelling kunt u de gebruikers selecteren die hun apparaten als aan Azure AD gekoppelde apparaten kunnen registreren. De standaardwaarde is **alle** .
+- **Gebruikers kunnen apparaten toevoegen aan Azure AD** : met deze instelling kunt u de gebruikers selecteren die hun apparaten als aan Azure AD gekoppelde apparaten kunnen registreren. De standaardwaarde is **alle**.
 
 > [!NOTE]
 > **Gebruikers mogen apparaten toevoegen aan de Azure AD** -instelling is alleen van toepassing op Azure AD-deelname op Windows 10.
 
 - **Aanvullende lokale beheerders op aan Azure AD gekoppelde apparaten** : u kunt de gebruikers selecteren die lokale beheerders rechten op een apparaat krijgen. Deze gebruikers worden toegevoegd aan de rol van het *apparaat Administrators* in azure AD. Globale beheerders in azure AD en eigen aren van apparaten krijgen standaard lokale beheerders rechten. Deze optie is een Premium Edition-mogelijkheid die beschikbaar is via producten als Azure AD Premium of de Enter prise Mobility Suite (EMS).
 - **Gebruikers kunnen hun apparaten registreren bij Azure AD** . u moet deze instelling configureren zodat Windows 10 Personal-, Ios-, Android-en macOS-apparaten kunnen worden geregistreerd bij Azure AD. Als u **geen** selecteert, mogen apparaten zich niet registreren bij Azure AD. Inschrijving met Microsoft Intune of het beheer van mobiele apparaten (MDM) voor Microsoft 365 vereist registratie. Als u een van deze services hebt geconfigureerd, is **Alles** **geselecteerd en is er geen beschikbaar** .
-- **Multi-factor Authentication vereisen voor het toevoegen van apparaten** : u kunt kiezen of gebruikers een extra verificatie factor moeten opgeven om hun apparaat toe te voegen aan Azure AD. De standaard waarde is **Nee** . U wordt aangeraden multi-factor Authentication te vereisen bij het registreren van een apparaat. Voordat u multi-factor Authentication inschakelt voor deze service, moet u ervoor zorgen dat multi-factor Authentication is geconfigureerd voor de gebruikers die hun apparaten registreren. Zie aan de slag [met Azure multi-factor Authentication](../authentication/concept-mfa-howitworks.md)voor meer informatie over de verschillende Azure multi-factor Authentication-Services. 
+- **Multi-factor Authentication vereisen voor het toevoegen van apparaten** : u kunt kiezen of gebruikers een extra verificatie factor moeten opgeven om hun apparaat toe te voegen aan Azure AD. De standaard waarde is **Nee**. U wordt aangeraden multi-factor Authentication te vereisen bij het registreren van een apparaat. Voordat u multi-factor Authentication inschakelt voor deze service, moet u ervoor zorgen dat multi-factor Authentication is geconfigureerd voor de gebruikers die hun apparaten registreren. Zie aan de slag [met Azure AD-multi-factor Authentication](../authentication/concept-mfa-howitworks.md)voor meer informatie over de verschillende azure AD multi-factor Authentication Services. 
 
 > [!NOTE]
 > **Vereisen dat multi-factor Authentication wordt toegevoegd** aan de instelling apparaten is van toepassing op apparaten die zijn opgenomen in azure AD of Azure AD. Deze instelling is niet van toepassing op hybride apparaten die deel uitmaken van Azure AD.
 
-- **Maximum aantal apparaten** : met deze instelling kunt u het maximum aantal aan Azure AD gekoppelde of Azure AD geregistreerde apparaten selecteren dat een gebruiker in azure AD kan hebben. Als een gebruiker dit quotum bereikt, kunnen ze geen extra apparaten toevoegen totdat een of meer van de bestaande apparaten worden verwijderd. De standaard waarde is **50** .
+- **Maximum aantal apparaten** : met deze instelling kunt u het maximum aantal aan Azure AD gekoppelde of Azure AD geregistreerde apparaten selecteren dat een gebruiker in azure AD kan hebben. Als een gebruiker dit quotum bereikt, kunnen ze geen extra apparaten toevoegen totdat een of meer van de bestaande apparaten worden verwijderd. De standaard waarde is **50**.
 
 > [!NOTE]
 > De instelling **maximum aantal apparaten** is van toepassing op apparaten die zijn geregistreerd bij Azure AD of Azure AD. Deze instelling is niet van toepassing op hybride apparaten die deel uitmaken van Azure AD.
@@ -198,7 +198,7 @@ Het controle logboek heeft een standaard lijst weergave waarin het volgende word
 
 U kunt de lijstweergave aanpassen door te klikken op **Kolommen** op de werkbalk.
 
-:::image type="content" source="./media/device-management-azure-portal/64.png" alt-text="Scherm afbeelding van een tabel in de sectie activiteit van de pagina apparaten waarin de datum, het doel, de actor en de activiteit voor vier audit logboeken worden weer gegeven." border="false":::
+:::image type="content" source="./media/device-management-azure-portal/64.png" alt-text="Scherm afbeelding van de werk balk van de pagina apparaten. Het kolommen item is gemarkeerd." border="false":::
 
 Als u de gerapporteerde gegevens wilt beperken tot een niveau dat geschikt is voor u, kunt u de controlegegevens filteren met de volgende velden:
 
@@ -211,7 +211,7 @@ Als u de gerapporteerde gegevens wilt beperken tot een niveau dat geschikt is vo
 
 Naast de filters kunt u zoeken naar specifieke vermeldingen.
 
-:::image type="content" source="./media/device-management-azure-portal/65.png" alt-text="Scherm afbeelding van een tabel in de sectie activiteit van de pagina apparaten waarin de datum, het doel, de actor en de activiteit voor vier audit logboeken worden weer gegeven." border="false":::
+:::image type="content" source="./media/device-management-azure-portal/65.png" alt-text="Scherm afbeelding van filter besturings elementen voor controle gegevens, met categorie, resource type activiteit, activiteit, datum bereik, doel en actor velden en een zoek veld." border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

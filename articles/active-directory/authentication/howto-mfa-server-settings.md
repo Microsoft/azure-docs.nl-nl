@@ -11,19 +11,19 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70777c80cdee99f13050d7cd342f22d59da13d73
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 3da7c3afa6b414e3d7df3bb58766d1ab7657dbc4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964107"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838958"
 ---
 # <a name="configure-mfa-server-settings"></a>MFA-server instellingen configureren
 
 Dit artikel helpt u bij het beheren van de Azure MFA-server instellingen in de Azure Portal.
 
 > [!IMPORTANT]
-> Met ingang van 1 juli 2019 biedt micro soft geen MFA-server meer voor nieuwe implementaties. Nieuwe klanten die multi-factor Authentication van hun gebruikers willen vereisen, moeten gebruikmaken van Azure Multi-Factor Authentication op basis van de Cloud. Bestaande klanten die MFA-server voorafgaand aan 1 juli hebben geactiveerd, kunnen de nieuwste versie downloaden, toekomstige updates en activerings referenties genereren.
+> Met ingang van 1 juli 2019 biedt micro soft geen MFA-server meer voor nieuwe implementaties. Nieuwe klanten die multi-factor Authentication van hun gebruikers willen vereisen, moeten gebruikmaken van Azure AD-Multi-Factor Authentication in de Cloud. Bestaande klanten die MFA-server voorafgaand aan 1 juli hebben geactiveerd, kunnen de nieuwste versie downloaden, toekomstige updates en activerings referenties genereren.
 
 De volgende MFA-server instellingen zijn beschikbaar:
 
@@ -41,7 +41,7 @@ Met de functie eenmalig overs Laan kan een gebruiker één keer verifiëren zond
 Voer de volgende stappen uit om een eenmalige bypass te maken:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als beheerder.
-1. Zoek en selecteer **Azure Active Directory**en ga naar **beveiliging**  >  **MFA**  >  **eenmalig overs Laan**.
+1. Zoek en selecteer **Azure Active Directory** en ga naar **beveiliging**  >  **MFA**  >  **eenmalig overs Laan**.
 1. Selecteer **Toevoegen**.
 1. Selecteer, indien nodig, de replicatie groep voor de bypass.
 1. Voer de gebruikers naam in als `username\@domain.com` . Voer het aantal seconden in dat de bypass moet duren en de reden voor het overs Laan.
@@ -60,7 +60,7 @@ Caching wordt hoofd zakelijk gebruikt wanneer on-premises systemen, zoals VPN, m
 
 Voer de volgende stappen uit om caching in te stellen:
 
-1. Blader naar **Azure Active Directory**regels voor de  >  **beveiliging**  >  **MFA**-  >  **cache**.
+1. Blader naar **Azure Active Directory** regels voor de  >  **beveiliging**  >  **MFA**-  >  **cache**.
 1. Selecteer **Toevoegen**.
 1. Selecteer het **cache type** in de vervolg keuzelijst. Voer het maximum aantal **cache seconden in**.
 1. Selecteer indien nodig een verificatie type en geef een toepassing op.

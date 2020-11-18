@@ -1,6 +1,6 @@
 ---
-title: Details van de aanmeldings gebeurtenis voor Azure Multi-Factor Authentication-Azure Active Directory
-description: Meer informatie over het weer geven van aanmeldings activiteiten voor Azure Multi-Factor Authentication gebeurtenissen en status berichten.
+title: Details van de aanmeldings gebeurtenis voor Azure AD-Multi-Factor Authentication-Azure Active Directory
+description: Meer informatie over het weer geven van aanmeldings activiteiten voor Azure AD Multi-Factor Authentication-gebeurtenissen en status berichten.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -12,16 +12,16 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 676b8b6fbb56536ec3a49100f5de1419ac417bb6
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 6a103f1f518a838e0746d363ee613dd1625b0bd4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964142"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838975"
 ---
-# <a name="use-the-sign-ins-report-to-review-azure-multi-factor-authentication-events"></a>Het rapport aanmeldingen gebruiken om Azure Multi-Factor Authentication-gebeurtenissen te controleren
+# <a name="use-the-sign-ins-report-to-review-azure-ad-multi-factor-authentication-events"></a>Het rapport aanmeldingen gebruiken om Azure AD-Multi-Factor Authentication gebeurtenissen te controleren
 
-Als u Azure Multi-Factor Authentication-gebeurtenissen wilt controleren en begrijpen, kunt u het rapport met aanmeldingen voor Azure Active Directory (Azure AD) gebruiken. In dit rapport worden verificatie gegevens weer gegeven voor gebeurtenissen wanneer een gebruiker wordt gevraagd om multi-factor Authentication, en als er beleid voor voorwaardelijke toegang in gebruik is. Zie [overzicht van rapporten voor aanmeldings activiteiten in azure AD](../reports-monitoring/concept-sign-ins.md)voor meer informatie over het aanmeldingen-rapport.
+Als u Azure AD-Multi-Factor Authentication gebeurtenissen wilt controleren en begrijpen, kunt u het rapport met het Azure Active Directory (Azure AD)-aanmeldingen gebruiken. In dit rapport worden verificatie gegevens weer gegeven voor gebeurtenissen wanneer een gebruiker wordt gevraagd om multi-factor Authentication, en als er beleid voor voorwaardelijke toegang in gebruik is. Zie [overzicht van rapporten voor aanmeldings activiteiten in azure AD](../reports-monitoring/concept-sign-ins.md)voor meer informatie over het aanmeldingen-rapport.
 
 In dit artikel wordt beschreven hoe u het rapport Azure AD-aanmeldingen weergeeft in de Azure Portal en vervolgens de MSOnline v1 Power shell-module.
 
@@ -39,7 +39,7 @@ Het rapport aanmeldingen bevat informatie over het gebruik van beheerde toepassi
 Voer de volgende stappen uit om het rapport registratie-activiteiten in de [Azure Portal](https://portal.azure.com)weer te geven. U kunt ook query's uitvoeren op gegevens met behulp van de [rapportage-API](../reports-monitoring/concept-reporting-api.md).
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) met een account met machtigingen op het niveau van *globale beheerder*.
-1. Zoek en selecteer **Azure Active Directory**en kies vervolgens **gebruikers** in het menu aan de linkerkant.
+1. Zoek en selecteer **Azure Active Directory** en kies vervolgens **gebruikers** in het menu aan de linkerkant.
 1. Onder *activiteit* in het menu aan de linkerkant selecteert u **aanmeldingen**.
 1. Er wordt een lijst met aanmeldings gebeurtenissen weer gegeven, met inbegrip van de status. U kunt een gebeurtenis selecteren om meer details weer te geven.
 
@@ -121,34 +121,34 @@ De volgende tabel kan helpen bij het oplossen van gebeurtenissen die gebruikmake
 
 | Aanroep resultaat | Beschrijving | Uitgebreide beschrijving |
 | --- | --- | --- |
-| SUCCESS_WITH_PIN | PINCODE ingevoerd | De gebruiker heeft een pincode ingevoerd. Als de verificatie is geslaagd, wordt de juiste pincode ingevoerd. Als verificatie is geweigerd, wordt er een onjuiste pincode ingevoerd of is de gebruiker ingesteld op de standaard modus. |
+| SUCCESS_WITH_PIN | PINCODE ingevoerd | De gebruiker heeft een pincode ingevoerd.  Als de verificatie is geslaagd, wordt de juiste pincode ingevoerd.  Als verificatie is geweigerd, wordt er een onjuiste pincode ingevoerd of is de gebruiker ingesteld op de standaard modus. |
 | SUCCESS_NO_PIN | Alleen # ingevoerd | Als de gebruiker is ingesteld op pincode modus en de verificatie wordt geweigerd, betekent dit dat de gebruiker de pincode niet heeft ingevoerd en alleen #.  Als de gebruiker is ingesteld op de standaard modus en de verificatie slaagt, betekent dit dat de gebruiker alleen de waarde # heeft opgegeven als in de standaard modus. |
-| SUCCESS_WITH_PIN_BUT_TIMEOUT | # Niet ingedrukt na invoer | De gebruiker heeft geen DTMF-cijfers verzonden omdat # niet is ingevoerd. Andere ingevoerde cijfers worden niet verzonden, tenzij # wordt ingevoerd om aan te geven dat de invoer is voltooid. |
-|SUCCESS_NO_PIN_BUT_TIMEOUT | Geen telefoon invoer-time-out | De oproep is beantwoord, maar er is geen reactie. Dit geeft meestal aan dat de oproep is opgehaald via voice mail. |
+| SUCCESS_WITH_PIN_BUT_TIMEOUT | # Niet ingedrukt na invoer | De gebruiker heeft geen DTMF-cijfers verzonden omdat # niet is ingevoerd.  Andere ingevoerde cijfers worden niet verzonden, tenzij # wordt ingevoerd om aan te geven dat de invoer is voltooid. |
+|SUCCESS_NO_PIN_BUT_TIMEOUT | Geen telefoon invoer-time-out | De oproep is beantwoord, maar er is geen reactie.  Dit geeft meestal aan dat de oproep is opgehaald via voice mail. |
 | SUCCESS_PIN_EXPIRED | De pincode is verlopen en niet gewijzigd | De pincode van de gebruiker is verlopen en er wordt gevraagd om deze te wijzigen, maar de wijziging van de pincode is niet voltooid. |
 | SUCCESS_USED_CACHE | Gebruikte cache | De authenticatie is geslaagd zonder Multi-Factor Authentication aanroep, omdat een eerdere geslaagde verificatie voor dezelfde gebruikers naam is opgetreden binnen de geconfigureerde tijds duur van de cache. |
-| SUCCESS_BYPASSED_AUTH | Verificatie overs Laan | De verificatie is geslaagd met behulp van een One-Time overs laan die voor de gebruiker wordt gestart. Bekijk het rapport geschiedenis van overgeslagen gebruikers voor meer informatie over de bypass. |
+| SUCCESS_BYPASSED_AUTH | Verificatie overs Laan | De verificatie is geslaagd met behulp van een One-Time overs laan die voor de gebruiker wordt gestart.  Bekijk het rapport geschiedenis van overgeslagen gebruikers voor meer informatie over de bypass. |
 | SUCCESS_USED_IP_BASED_CACHE | Gebruikte IP-cache | De verificatie is geslaagd zonder een Multi-Factor Authentication aanroep sinds een eerdere geslaagde verificatie voor dezelfde gebruikers naam, hetzelfde verificatie type, toepassings naam en IP-adres binnen de geconfigureerde tijds duur van de cache. |
 | SUCCESS_USED_APP_BASED_CACHE | Gebruikte cache op basis van apps | De verificatie is geslaagd zonder Multi-Factor Authentication aanroep sinds een eerdere geslaagde authenticatie voor dezelfde gebruikers naam, hetzelfde authenticatie type en toepassings naam binnen de geconfigureerde tijds duur van de cache. |
-| SUCCESS_INVALID_INPUT | Ongeldige telefoon invoer | Het antwoord dat is verzonden vanaf de telefoon, is ongeldig. Dit kan afkomstig zijn van een faxapparaat of modem of de gebruiker heeft * opgegeven als onderdeel van de pincode. |
-| SUCCESS_USER_BLOCKED | De gebruiker is geblokkeerd | Het telefoon nummer van de gebruiker is geblokkeerd. Een geblokkeerd nummer kan door de gebruiker worden geïnitieerd tijdens een authenticatie oproep of door een beheerder met behulp van de Azure Portal. <br> Opmerking: een geblokkeerd nummer is ook een byproduct van een fraude waarschuwing. |
+| SUCCESS_INVALID_INPUT | Ongeldige telefoon invoer | Het antwoord dat is verzonden vanaf de telefoon, is ongeldig.  Dit kan afkomstig zijn van een faxapparaat of modem of de gebruiker heeft * opgegeven als onderdeel van de pincode. |
+| SUCCESS_USER_BLOCKED | De gebruiker is geblokkeerd | Het telefoon nummer van de gebruiker is geblokkeerd.  Een geblokkeerd nummer kan door de gebruiker worden geïnitieerd tijdens een authenticatie oproep of door een beheerder met behulp van de Azure Portal. <br> Opmerking: een geblokkeerd nummer is ook een byproduct van een fraude waarschuwing. |
 | SUCCESS_SMS_AUTHENTICATED | Tekst bericht geverifieerd | Voor een test bericht in twee richtingen heeft de gebruiker goed gereageerd met de eenmalige wachtwoord code (OTP) of OTP + pincode. |
-| SUCCESS_SMS_SENT | SMS-bericht verzonden | Voor tekst bericht is het SMS-bericht dat de eenmalige wachtwoord code (OTP) heeft verzonden. De gebruiker voert de OTP of OTP + pincode in de toepassing in om de verificatie te volt ooien. |
+| SUCCESS_SMS_SENT | SMS-bericht verzonden | Voor tekst bericht is het SMS-bericht dat de eenmalige wachtwoord code (OTP) heeft verzonden.  De gebruiker voert de OTP of OTP + pincode in de toepassing in om de verificatie te volt ooien. |
 | SUCCESS_PHONE_APP_AUTHENTICATED | Geverifieerde mobiele app | De gebruiker is geverifieerd via de mobiele app. |
 | SUCCESS_OATH_CODE_PENDING | OATH-code in behandeling | De gebruiker is om hun OATH-code gevraagd, maar heeft niet gereageerd. |
 | SUCCESS_OATH_CODE_VERIFIED | OATH-code geverifieerd | De gebruiker heeft een geldige OATH-code ingevoerd wanneer daarom wordt gevraagd. |
 | SUCCESS_FALLBACK_OATH_CODE_VERIFIED | OATH-code voor terugval gecontroleerd | De gebruiker heeft de verificatie geweigerd met behulp van de primaire Multi-Factor Authentication methode en vervolgens een geldige OATH-code voor terugval gegeven. |
 | SUCCESS_FALLBACK_SECURITY_QUESTIONS_ANSWERED | Terugval beveiligings vragen beantwoord | De gebruiker heeft de verificatie geweigerd met behulp van de primaire Multi-Factor Authentication methode en vervolgens zijn de beveiligings vragen op de juiste wijze beantwoord voor terugval. |
-| FAILED_PHONE_BUSY | Verificatie wordt al uitgevoerd | Multi-Factor Authentication is al bezig met het verwerken van een verificatie voor deze gebruiker. Dit wordt vaak veroorzaakt door RADIUS-clients die meerdere verificatie aanvragen verzenden tijdens dezelfde aanmelding. |
-| CONFIG_ISSUE | Telefoon onbereikbaar | Er is geprobeerd om een aanroep uit te voeren, maar deze kan niet worden geplaatst of niet worden beantwoord. Dit omvat het gespreks signaal, het Fast Busy-signaal (verbinding verbroken), Tri-tinten (getal niet meer in de service), er is een time-out opgetreden tijdens het belsignaal, enzovoort. |
-| FAILED_INVALID_PHONENUMBER | Ongeldige indeling van telefoon nummer | Het telefoon nummer heeft een ongeldige indeling. Telefoon nummers moeten numeriek zijn en moeten 10 cijfers bevatten voor land nummer + 1 (Verenigde Staten & Canada). |
+| FAILED_PHONE_BUSY | Verificatie wordt al uitgevoerd | Multi-Factor Authentication is al bezig met het verwerken van een verificatie voor deze gebruiker.  Dit wordt vaak veroorzaakt door RADIUS-clients die meerdere verificatie aanvragen verzenden tijdens dezelfde aanmelding. |
+| CONFIG_ISSUE | Telefoon onbereikbaar | Er is geprobeerd om een aanroep uit te voeren, maar deze kan niet worden geplaatst of niet worden beantwoord.  Dit omvat het gespreks signaal, het Fast Busy-signaal (verbinding verbroken), Tri-tinten (getal niet meer in de service), er is een time-out opgetreden tijdens het belsignaal, enzovoort. |
+| FAILED_INVALID_PHONENUMBER | Ongeldige indeling van telefoon nummer | Het telefoon nummer heeft een ongeldige indeling.  Telefoon nummers moeten numeriek zijn en moeten 10 cijfers bevatten voor land nummer + 1 (Verenigde Staten & Canada). |
 | FAILED_USER_HUNGUP_ON_US | Gebruiker heeft opgehangen | De gebruiker heeft de telefoon beantwoord, maar vervolgens opgehangen zonder op knoppen te drukken. |
-| FAILED_INVALID_EXTENSION | Ongeldige extensie | De extensie bevat ongeldige tekens. Alleen cijfers, komma's, * en # zijn toegestaan. Er kan ook een @-voor voegsel worden gebruikt. |
+| FAILED_INVALID_EXTENSION | Ongeldige extensie | De extensie bevat ongeldige tekens.  Alleen cijfers, komma's, * en # zijn toegestaan.  Er kan ook een @-voor voegsel worden gebruikt. |
 | FAILED_FRAUD_CODE_ENTERED | Fraude code ingevoerd | De gebruiker heeft gekozen voor het melden van fraude tijdens de oproep, wat leidt tot een geweigerde authenticatie en een geblokkeerd telefoon nummer.| 
 | FAILED_SERVER_ERROR | Kan de aanroep niet plaatsen | De oproep kan niet door de Multi-Factor Authentication-service worden geplaatst. |
-| FAILED_SMS_NOT_SENT | SMS-bericht kan niet worden verzonden | Het SMS-bericht kan niet worden verzonden. De verificatie is geweigerd. |
-| FAILED_SMS_OTP_INCORRECT | OTP van SMS-bericht onjuist | De gebruiker heeft een onjuiste eenmalige wachtwoord code (OTP) ingevoerd in het SMS-bericht dat ze hebben ontvangen. De verificatie is geweigerd. |
-| FAILED_SMS_OTP_PIN_INCORRECT | SMS-bericht OTP + pincode onjuist | De gebruiker heeft een onjuiste eenmalige wachtwoord code (OTP) en/of een onjuiste gebruikers pincode ingevoerd. De verificatie is geweigerd. |
+| FAILED_SMS_NOT_SENT | SMS-bericht kan niet worden verzonden | Het SMS-bericht kan niet worden verzonden.  De verificatie is geweigerd. |
+| FAILED_SMS_OTP_INCORRECT | OTP van SMS-bericht onjuist | De gebruiker heeft een onjuiste eenmalige wachtwoord code (OTP) ingevoerd in het SMS-bericht dat ze hebben ontvangen.  De verificatie is geweigerd. |
+| FAILED_SMS_OTP_PIN_INCORRECT | SMS-bericht OTP + pincode onjuist | De gebruiker heeft een onjuiste eenmalige wachtwoord code (OTP) en/of een onjuiste gebruikers pincode ingevoerd.  De verificatie is geweigerd. |
 | FAILED_SMS_MAX_OTP_RETRY_REACHED | Maximum aantal OTP-pogingen voor SMS-bericht overschreden | De gebruiker heeft het maximum aantal OTP-pogingen (one-time wachtwoord code) overschreden. |
 | FAILED_PHONE_APP_DENIED | Mobiele app geweigerd | De gebruiker heeft de verificatie in de mobiele app geweigerd door op de knop weigeren te drukken. |
 | FAILED_PHONE_APP_INVALID_PIN | Ongeldige pincode voor mobiele app | De gebruiker heeft een ongeldige pincode ingevoerd tijdens de verificatie in de mobiele app. |

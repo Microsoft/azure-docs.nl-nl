@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d33721a70f0a9d4cfb26516d2f252424cc924f8
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 6deb0c005b5ed7daf5b30bea8a65ee70d8b460c5
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92503807"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837461"
 ---
 # <a name="configure-authentication-session-management-with-conditional-access"></a>Beheer van verificatiesessies met voorwaardelijke toegang configureren
 
@@ -90,7 +90,7 @@ Voorwaardelijke toegang is een Azure AD Premium mogelijkheid en vereist een Prem
 > [!WARNING]
 > Als u de configuratie van de [Configureer bare levens duur van tokens](../develop/active-directory-configurable-token-lifetimes.md) gebruikt die momenteel beschikbaar is in de preview-versie, is het niet mogelijk om twee verschillende beleids regels te maken voor dezelfde combi natie van gebruiker of app: een met deze functie en een andere met een Configureer bare levens duur van tokens. Micro soft is van plan de Configureer bare levens duur van tokens voor vernieuwings-en sessie token levensduur op 30 januari 2021 aan te trekken en te vervangen door de beheer functie voor de verificatie van de voorwaardelijke toegang.  
 >
-> Voordat u de aanmeldings frequentie inschakelt, moet u ervoor zorgen dat andere instellingen voor opnieuw verifiëren zijn uitgeschakeld in uw Tenant. Als ' MFA op vertrouwde apparaten onthouden ' is ingeschakeld, moet u deze uitschakelen voordat u de aanmeldings frequentie gebruikt. Als u deze twee instellingen samen gebruikt, kan dit ertoe leiden dat gebruikers onverwachts worden gevraagd. Voor meer informatie over het opnieuw verifiëren van de verificatie en de levens duur van de sessie raadpleegt u het artikel, [Optimaliseer de prompts voor herverificatie en de levens duur van sessies voor Azure multi-factor Authentication](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
+> Voordat u de aanmeldings frequentie inschakelt, moet u ervoor zorgen dat andere instellingen voor opnieuw verifiëren zijn uitgeschakeld in uw Tenant. Als ' MFA op vertrouwde apparaten onthouden ' is ingeschakeld, moet u deze uitschakelen voordat u de aanmeldings frequentie gebruikt. Als u deze twee instellingen samen gebruikt, kan dit ertoe leiden dat gebruikers onverwachts worden gevraagd. Voor meer informatie over het opnieuw verifiëren van de verificatie en de levens duur van de sessie raadpleegt u het artikel, [Optimaliseer de prompts voor herverificatie en de levens duur van sessies voor Azure AD multi-factor Authentication](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 
 ### <a name="policy-1-sign-in-frequency-control"></a>Beleid 1: regel voor aanmeldings frequentie
 

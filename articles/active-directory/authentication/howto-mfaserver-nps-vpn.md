@@ -11,21 +11,21 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d28ecfeb9312a6bf5a0b37e07919f9d781de50ea
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 1ba0d359079a8999b3c4f2a41f4beadb835ccacc
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968579"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838226"
 ---
 # <a name="advanced-scenarios-with-azure-mfa-server-and-third-party-vpn-solutions"></a>Geavanceerde scenario's met Azure MFA-server en VPN-oplossingen van derden
 
 Azure Multi-Factor Authentication-server (Azure MFA-server) kan worden gebruikt om naadloos verbinding te maken met verschillende VPN-oplossingen van derden. Dit artikel richt zich op Cisco &reg; ASA VPN-apparaat, Citrix NetScaler SSL VPN-apparaat en de Juniper netwerken beveiligde toegang/Pulse Secure SSL VPN-apparaat veilig verbinden. We hebben configuratie handleidingen gemaakt om deze drie algemene apparaten te verhelpen. De Azure MFA-server kan ook worden geïntegreerd met de meeste andere systemen die gebruikmaken van RADIUS, LDAP, IIS of op claims gebaseerde verificatie om te AD FS. Meer informatie vindt u in de [Azure MFA-server configuraties](howto-mfaserver-deploy.md#next-steps).
 
 > [!IMPORTANT]
-> Vanaf 1 juli 2019 biedt micro soft geen MFA-server meer voor nieuwe implementaties. Nieuwe klanten die multi-factor Authentication (MFA) vereisen tijdens aanmeldings gebeurtenissen, moeten Azure Multi-Factor Authentication op basis van de Cloud gebruiken.
+> Vanaf 1 juli 2019 biedt micro soft geen MFA-server meer voor nieuwe implementaties. Nieuwe klanten die multi-factor Authentication (MFA) willen vereisen tijdens aanmeldings gebeurtenissen, moeten gebruikmaken van Azure AD-Multi-Factor Authentication in de Cloud.
 >
-> Zie [zelf studie: aanmeldings gebeurtenissen voor gebruikers beveiligen met Azure multi-factor Authentication](tutorial-enable-azure-mfa.md)om aan de slag te gaan met MFA op basis van de Cloud.
+> Zie [zelf studie: aanmeldings gebeurtenissen voor gebruikers beveiligen met Azure AD multi-factor Authentication](tutorial-enable-azure-mfa.md)om aan de slag te gaan met MFA op basis van de Cloud.
 >
 > Als u op de cloud gebaseerde MFA gebruikt, raadpleegt u [uw VPN-infra structuur integreren met Azure MFA](howto-mfa-nps-extension-vpn.md).
 >

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59f83d232874a7702598b6ea5fdd458c101e7e79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7585c91e42b2d3591532756c1ead9ea60b7035e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266575"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837580"
 ---
 # <a name="custom-controls-preview"></a>Aangepaste besturings elementen (preview-versie)
 
@@ -35,7 +35,7 @@ De optie voor het maken van een aangepast besturings element bevindt zich in de 
 
 ![Aangepaste besturings elementen interface in voorwaardelijke toegang](./media/controls/custom-controls-conditional-access.png)
 
-Als u op **nieuw aangepast besturings element**klikt, wordt een Blade geopend met een tekstvak voor de JSON-gegevens van uw besturings element.  
+Als u op **nieuw aangepast besturings element** klikt, wordt een Blade geopend met een tekstvak voor de JSON-gegevens van uw besturings element.  
 
 ![Nieuw aangepast besturings element](./media/controls/new-custom-controls-conditional-access.png)
 
@@ -53,7 +53,7 @@ Als u een aangepast besturings element wilt bewerken, moet u het huidige besturi
 
 ## <a name="known-limitations"></a>Bekende beperkingen
 
-Aangepaste besturings elementen kunnen niet worden gebruikt met automatisering van identiteits beveiliging waarvoor Azure Multi-Factor Authentication is vereist, Azure AD self-service password reset (SSPR), voldoen aan de vereisten voor de multi-factor Authentication-claim om rollen in privileged Identity Manager (PIM) te verhogen, als onderdeel van de inschrijving van intune-apparaten of bij het toevoegen van apparaten aan Azure AD.
+Aangepaste besturings elementen kunnen niet worden gebruikt met automatisering van identiteits beveiliging waarvoor Azure AD-Multi-Factor Authentication, selfservice voor wachtwoord herstel (SSPR) van Azure AD zijn vereist, voldoen aan de vereisten voor de multi-factor Authentication-claim voor het verhogen van de rollen in privileged Identity Manager (PIM), als onderdeel van de inschrijving van intune-apparaten of bij het toevoegen van apparaten aan Azure AD.
 
 ## <a name="next-steps"></a>Volgende stappen
 

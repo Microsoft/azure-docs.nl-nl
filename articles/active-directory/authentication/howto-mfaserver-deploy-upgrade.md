@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cb442a913ac8bde869144de1a75869a39b12398
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 53f7b0877c1b816bd41226f9207f7dc950eadfd1
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966896"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838515"
 ---
 # <a name="upgrade-to-the-latest-azure-multi-factor-authentication-server"></a>Upgraden naar de nieuwste versie van Azure Multi-Factor Authentication Server
 
@@ -25,9 +25,9 @@ Dit artikel begeleidt u bij het upgraden van Azure Multi-Factor Authentication (
 Als u een upgrade uitvoert van v6. x of ouder naar v7. x of hoger, worden alle onderdelen gewijzigd van .NET 2,0 naar .NET 4,5. Voor alle onderdelen is ook micro soft Visual C++ 2015 Redistributable update 1 of hoger vereist. Het installatie programma van de MFA-server installeert zowel de x86-als de x64-versie van deze onderdelen als ze nog niet zijn geïnstalleerd. Als de gebruikers Portal en de webservice voor mobiele apps op verschillende servers worden uitgevoerd, moet u deze pakketten installeren voordat u deze onderdelen bijwerkt. U kunt in het [micro soft Download centrum](https://www.microsoft.com/download/)zoeken naar de meest recente update voor micro soft Visual C++ 2015. 
 
 > [!IMPORTANT]
-> Vanaf 1 juli 2019 biedt micro soft geen MFA-server meer voor nieuwe implementaties. Nieuwe klanten die multi-factor Authentication (MFA) vereisen tijdens aanmeldings gebeurtenissen, moeten Azure Multi-Factor Authentication op basis van de Cloud gebruiken.
+> Vanaf 1 juli 2019 biedt micro soft geen MFA-server meer voor nieuwe implementaties. Nieuwe klanten die multi-factor Authentication (MFA) willen vereisen tijdens aanmeldings gebeurtenissen, moeten gebruikmaken van Azure AD-Multi-Factor Authentication in de Cloud.
 >
-> Zie [zelf studie: aanmeldings gebeurtenissen voor gebruikers beveiligen met Azure multi-factor Authentication](tutorial-enable-azure-mfa.md)om aan de slag te gaan met MFA op basis van de Cloud.
+> Zie [zelf studie: aanmeldings gebeurtenissen voor gebruikers beveiligen met Azure AD multi-factor Authentication](tutorial-enable-azure-mfa.md)om aan de slag te gaan met MFA op basis van de Cloud.
 >
 > Bestaande klanten die MFA-server vóór 1 juli hebben geactiveerd 2019, kunnen de meest recente versie downloaden, toekomstige updates en activerings referenties genereren.
 
@@ -102,7 +102,7 @@ Deze instructies zijn alleen van toepassing als u Multi-Factor Authentication-se
 
    Als er een fout optreedt met de melding, is ' micro soft Visual C++ 2015 Redistributable update 1 of hoger vereist, ' down load en installeer het meest recente update pakket in het [micro soft Download centrum](https://www.microsoft.com/download/). Installeer zowel de x86-als de x64-versie.
 
-3. Ga naar **AD FS**-  >  **verificatie beleid**globaal multi-  >  **Factor Authentication-beleid bewerken**. Schakel **WindowsAzureMultiFactorAuthentication** of **AzureMFAServerAuthentication** uit (afhankelijk van de huidige versie geïnstalleerd).
+3. Ga naar **AD FS**-  >  **verificatie beleid** globaal multi-  >  **Factor Authentication-beleid bewerken**. Schakel **WindowsAzureMultiFactorAuthentication** of **AzureMFAServerAuthentication** uit (afhankelijk van de huidige versie geïnstalleerd).
 
    Nadat deze stap is voltooid, is verificatie in twee stappen via MFA server pas beschikbaar in dit AD FS cluster als u stap 8 hebt voltooid.
 
@@ -110,7 +110,7 @@ Deze instructies zijn alleen van toepassing als u Multi-Factor Authentication-se
 5. Registreer de nieuwe AD FS-adapter door het Register-MultiFactorAuthenticationAdfsAdapter.ps1 Power shell-script uit te voeren. Dit geldt voor alle servers in hetzelfde AD FS cluster, omdat er een centrale configuratie is.
 6. Start de AD FS-service opnieuw op elke server die is verwijderd uit de AD FS-farm.
 7. Voeg de bijgewerkte servers weer toe aan de AD FS-Farm en verwijder de andere servers uit de farm.
-8. Ga naar **AD FS**-  >  **verificatie beleid**globaal multi-  >  **Factor Authentication-beleid bewerken**. Controleer **AzureMfaServerAuthentication**.
+8. Ga naar **AD FS**-  >  **verificatie beleid** globaal multi-  >  **Factor Authentication-beleid bewerken**. Controleer **AzureMfaServerAuthentication**.
 9. Herhaal stap 2 voor het bijwerken van de servers die nu zijn verwijderd uit de AD FS Farm en start de AD FS-service op die servers opnieuw.
 10. Voeg deze servers weer toe aan de AD FS-farm.
 

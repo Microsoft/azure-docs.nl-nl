@@ -11,19 +11,19 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee0c5093fc1dab69e0502b8ed1efe42fa63f1eb9
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 06c37eaf63b79b171e5a21d807262cfb359d416c
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363722"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838074"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Een Azure Active Directory self-service voor het opnieuw instellen van wacht woorden plannen
 
 > [!IMPORTANT]
 > Dit implementatie plan bevat richt lijnen en aanbevolen procedures voor het implementeren van selfservice voor wachtwoord herstel (SSPR) van Azure AD.
 >
-> **Als u een eind gebruiker bent en wilt terugkeren naar uw account, gaat [https://aka.ms/sspr](https://aka.ms/sspr) **u naar.
+> **Als u een eind gebruiker bent en wilt terugkeren naar uw account, gaat [https://aka.ms/sspr](https://aka.ms/sspr)** u naar.
 
 [Self-service voor wachtwoord herstel (SSPR)](https://www.youtube.com/watch?v=tnb2Qf4hTP8) is een functie van Azure Active Directory (AD) waarmee gebruikers hun wacht woord opnieuw kunnen instellen zonder contact op te nemen met IT-mede werkers. De gebruikers kunnen een snelle blok kering opheffen en blijven werken, ongeacht waar ze zijn of het tijdstip van de dag. Door de mede werkers in staat te stellen zichzelf te deblokkeren, kan uw organisatie de niet-productieve tijd en hoge ondersteunings kosten voor de meest voorkomende problemen met betrekking tot het wacht woord verlagen.
 
@@ -54,7 +54,7 @@ De belangrijkste voor delen van het inschakelen van SSPR zijn:
 
 * **Flexibiliteit en beveiliging**. SSPR maakt ondernemingen toegang tot de beveiliging en flexibiliteit die een Cloud platform biedt. Beheerders kunnen instellingen wijzigen om nieuwe beveiligings vereisten toe te passen en deze wijzigingen door te laten draaien aan gebruikers zonder hun aanmelding te onderbreken.
 
-* **Robuuste controle en bijhouden**van het gebruik. Een organisatie kan ervoor zorgen dat de bedrijfs systemen veilig blijven terwijl de gebruikers hun eigen wacht woorden opnieuw instellen. Robuuste audit logboeken bevatten informatie over elke stap van het proces voor het opnieuw instellen van het wacht woord. Deze logboeken zijn beschikbaar via een API en kunnen de gebruiker de gegevens importeren in een SIEM-systeem (Security Incident and Event monitoring).
+* **Robuuste controle en bijhouden** van het gebruik. Een organisatie kan ervoor zorgen dat de bedrijfs systemen veilig blijven terwijl de gebruikers hun eigen wacht woorden opnieuw instellen. Robuuste audit logboeken bevatten informatie over elke stap van het proces voor het opnieuw instellen van het wacht woord. Deze logboeken zijn beschikbaar via een API en kunnen de gebruiker de gegevens importeren in een SIEM-systeem (Security Incident and Event monitoring).
 
 ### <a name="licensing"></a>Licentieverlening
 
@@ -115,7 +115,7 @@ Voordat u SSPR implementeert, kunt u ervoor kiezen om het aantal en de gemiddeld
 
 Micro soft raadt organisaties aan de gecombineerde registratie-ervaring voor SSPR en multi-factor Authentication in te scha kelen. Wanneer u deze gecombineerde registratie-ervaring inschakelt, hoeven gebruikers slechts eenmaal hun registratie gegevens te selecteren om beide functies in te scha kelen.
 
-Voor de gecombineerde registratie-ervaring is het niet vereist dat organisaties zowel SSPR als Azure Multi-Factor Authentication inschakelen. Gecombineerde registratie biedt organisaties een betere gebruikers ervaring. Zie voor meer informatie [registratie van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md)
+De gecombineerde registratie-ervaring vereist niet dat organisaties zowel de SSPR als de Azure AD-Multi-Factor Authentication inschakelen. Gecombineerde registratie biedt organisaties een betere gebruikers ervaring. Zie voor meer informatie [registratie van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md)
 
 ## <a name="plan-the-deployment-project"></a>Het implementatie project plannen
 
@@ -154,14 +154,14 @@ De volgende instellingen zijn vereist om SSPR samen met aanbevolen waarden in te
 | **SSPR-eigenschappen** | Self-service voor wacht woord opnieuw instellen is ingeschakeld | **Geselecteerde** groep voor pilot/ **all** voor productie |
 | **Verificatiemethoden** | Verificatie methoden die nodig zijn om te registreren | Altijd 1 meer dan vereist voor opnieuw instellen |
 |   | Verificatie methoden die nodig zijn om opnieuw in te stellen | Een of twee |
-| **Registratie** | Vereisen dat gebruiker zich bij aanmelding registreren | Ja |
+| **Registratie** | Vereisen dat gebruiker zich bij aanmelding registreren | Yes |
 |   | Het aantal dagen waarna gebruikers wordt gevraagd om de verificatiegegevens opnieuw te bevestigen | 90 – 180 dagen |
-| **Meldingen** | Gebruikers een melding tonen over het opnieuw instellen van hun wachtwoord | Ja |
-|   | Alle beheerders waarschuwen wanneer andere beheerders hun wachtwoord opnieuw instellen | Ja |
-| **Aanpassing** | Help Desk-koppeling aanpassen | Ja |
+| **Meldingen** | Gebruikers een melding tonen over het opnieuw instellen van hun wachtwoord | Yes |
+|   | Alle beheerders waarschuwen wanneer andere beheerders hun wachtwoord opnieuw instellen | Yes |
+| **Aanpassing** | Help Desk-koppeling aanpassen | Yes |
 |   | Aangepaste e-mail adres of URL voor de Help Desk | Ondersteunings site of e-mail adres |
-| **On-premises integratie** | Wacht woorden terugschrijven naar on-premises AD | Ja |
-|   | Gebruikers toestaan om het account te ontgrendelen zonder het wacht woord opnieuw in te stellen | Ja |
+| **On-premises integratie** | Wacht woorden terugschrijven naar on-premises AD | Yes |
+|   | Gebruikers toestaan om het account te ontgrendelen zonder het wacht woord opnieuw in te stellen | Yes |
 
 ### <a name="sspr-properties"></a>SSPR-eigenschappen
 
@@ -321,7 +321,7 @@ Audit logboeken voor registratie en het opnieuw instellen van wacht woorden zijn
 
 ### <a name="authentication-methods--usage-and-insights"></a>Verificatie methoden-gebruik en inzichten
 
-[Gebruik en inzichten](./howto-authentication-methods-usage-insights.md) bieden inzicht in hoe verificatie methoden voor functies zoals Azure MFA en SSPR in uw organisatie werken. Deze rapportage mogelijkheid voorziet uw organisatie van de middelen om inzicht te krijgen in de methoden die worden geregistreerd en hoe ze kunnen worden gebruikt.
+[Gebruik en inzichten](./howto-authentication-methods-usage-insights.md) bieden inzicht in hoe verificatie methoden voor functies zoals Azure AD MFA en SSPR in uw organisatie werken. Deze rapportage mogelijkheid voorziet uw organisatie van de middelen om inzicht te krijgen in de methoden die worden geregistreerd en hoe ze kunnen worden gebruikt.
 
 ### <a name="troubleshoot"></a>Problemen oplossen
 

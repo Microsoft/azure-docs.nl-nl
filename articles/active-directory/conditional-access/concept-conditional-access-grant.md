@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b763a1cda91886946bba211f589c37940e7c3ae1
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: a779fee89d52442207358cf90c8cf87e7ef221c2
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042796"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837648"
 ---
 # <a name="conditional-access-grant"></a>Voorwaardelijke toegang: verlenen
 
@@ -34,7 +34,7 @@ Blok is een krachtig besturings element dat moet worden beheerd met de juiste ke
 
 Beheerders kunnen ervoor kiezen om een of meer besturings elementen af te dwingen bij het verlenen van toegang. Deze besturings elementen bevatten de volgende opties: 
 
-- [Multi-factor Authentication (Azure Multi-Factor Authentication) vereisen](../authentication/concept-mfa-howitworks.md)
+- [Multi-factor Authentication (Azure AD Multi-Factor Authentication) vereisen](../authentication/concept-mfa-howitworks.md)
 - [Vereisen dat het apparaat wordt gemarkeerd als compatibel (Microsoft Intune)](/intune/protect/device-compliance-get-started)
 - [Hybride Azure AD-aangesloten apparaat vereisen](../devices/concept-azure-ad-join-hybrid.md)
 - [Goedgekeurde client-apps vereisen](app-based-conditional-access.md)
@@ -50,7 +50,7 @@ Voor voorwaardelijke toegang is standaard alle geselecteerde besturings elemente
 
 ### <a name="require-multi-factor-authentication"></a>Multi-Factor Authentication vereisen
 
-Als u dit selectie vakje inschakelt, moeten gebruikers Azure Multi-Factor Authentication uitvoeren. Meer informatie over het implementeren van Azure Multi-Factor Authentication vindt u in het artikel [planning van een Azure-implementatie op basis van de cloud multi-factor Authentication](../authentication/howto-mfa-getstarted.md).
+Als u dit selectie vakje inschakelt, moeten gebruikers Azure AD-Multi-Factor Authentication uitvoeren. Meer informatie over het implementeren van Azure AD-Multi-Factor Authentication vindt u in het artikel [planning van een Azure AD-multi-factor Authentication implementatie](../authentication/howto-mfa-getstarted.md)in de Cloud.
 
 ### <a name="require-device-to-be-marked-as-compliant"></a>Vereisen dat het apparaat moet worden gemarkeerd als compatibel
 

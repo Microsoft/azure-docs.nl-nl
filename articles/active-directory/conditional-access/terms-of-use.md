@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3781a87bde283de3b798f840274db1dd5ea3ac7e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 9c1b07534c702e509b2b664fbee585aa2cff69f6
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366493"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837597"
 ---
 # <a name="azure-active-directory-terms-of-use"></a>Gebruiks voorwaarden van Azure Active Directory
 
@@ -41,7 +41,7 @@ Azure AD-gebruiks voorwaarden hebben de volgende mogelijkheden:
 - Vereisen dat werk nemers of gasten uw gebruiks voorwaarden accepteren voordat ze toegang krijgen.
 - Vereisen dat werk nemers of gasten uw gebruiks voorwaarden op elk apparaat accepteren voordat ze toegang krijgen.
 - Vereisen dat werk nemers of gasten uw gebruiks voorwaarden in een terugkerend schema accepteren.
-- Vereisen dat werk nemers of gasten uw gebruiks voorwaarden accepteren voordat ze beveiligings gegevens registreren in azure Multi-Factor Authentication (MFA).
+- Vereisen dat werk nemers of gasten uw gebruiks voorwaarden accepteren voordat ze beveiligings gegevens registreren in azure AD Multi-Factor Authentication (MFA).
 - Vereisen dat werk nemers uw gebruiks voorwaarden accepteren voordat ze beveiligings gegevens registreren in azure AD selfservice voor wachtwoord herstel (SSPR).
 - Algemene Gebruiks voorwaarden voor alle gebruikers in uw organisatie.
 - Specifieke gebruiks voorwaarden presen teren op basis van de kenmerken van een gebruiker (bijvoorbeeld artsen versus verpleegkundigen of binnenlandse werknemers versus werknemers in het buitenland) met behulp van [dynamische groepen](../enterprise-users/groups-dynamic-membership.md).
@@ -82,7 +82,7 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
 
 1. Voer in het vak **naam** een naam in voor de gebruiks voorwaarden die worden gebruikt in de Azure Portal.
 1. Voer in het vak **weergave naam** een titel in die gebruikers zien wanneer ze zich aanmelden.
-1. Voor **Gebruiksvoorwaarden document**bladert u naar uw voltooide voor waarden van PDF en selecteert u deze.
+1. Voor **Gebruiksvoorwaarden document** bladert u naar uw voltooide voor waarden van PDF en selecteert u deze.
 1. Selecteer de taal voor uw gebruiks voorwaarden document. Via de taaloptie kunt u meerdere gebruiksvoorwaarden uploaden, elk met een andere taal. Welke versie van de gebruiksvoorwaarden aan een eindgebruiker wordt weergegeven, is gebaseerd op de browservoorkeuren.
 1. Als u wilt dat eind gebruikers de gebruiks voorwaarden kunnen bekijken voordat ze ze kunnen accepteren, stelt u **gebruikers verplichten om de gebruiks voorwaarden uit te breiden** naar **aan.**
 1. Als eind gebruikers de gebruiks voorwaarden moeten accepteren op elk apparaat waartoe ze toegang hebben, stelt u **gebruikers verplicht om op elk apparaat** in te stemmen **.** Gebruikers kunnen verplicht zijn om extra toepassingen te installeren als deze optie is ingeschakeld. Zie [gebruiks voorwaarden per apparaat](#per-device-terms-of-use)voor meer informatie.
@@ -113,7 +113,7 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
 
    Het is mogelijk om de **verlopende** en duur te gebruiken **voordat de nieuwe acceptatie (dagen)** instellingen samen houdt, maar u kunt er ook voor gebruiken.
 
-1. Gebruik onder **voorwaardelijke toegang**de lijst **afdwingen met beleids sjablonen voor voorwaardelijke toegang** om de sjabloon te selecteren voor het afdwingen van de gebruiks voorwaarden.
+1. Gebruik onder **voorwaardelijke toegang** de lijst **afdwingen met beleids sjablonen voor voorwaardelijke toegang** om de sjabloon te selecteren voor het afdwingen van de gebruiks voorwaarden.
 
    ![De vervolg keuzelijst voorwaardelijke toegang om een beleids sjabloon te selecteren](./media/terms-of-use/conditional-access-templates.png)
 
@@ -161,7 +161,7 @@ In de Gebruiksrechtovereenkomst-blade ziet u de aantallen gebruikers die al dan 
 
 ## <a name="view-azure-ad-audit-logs"></a>Audit logboeken van Azure AD weer geven
 
-Als u aanvullende activiteiten wilt weer geven, bevatten Azure AD-gebruiks voorwaarden audit Logboeken. Elke toestemming van de gebruiker activeert een gebeurtenis in de audit logboeken die **30 dagen**worden bewaard. U kunt deze logboeken bekijken in de portal of downloaden als CSV-bestand.
+Als u aanvullende activiteiten wilt weer geven, bevatten Azure AD-gebruiks voorwaarden audit Logboeken. Elke toestemming van de gebruiker activeert een gebeurtenis in de audit logboeken die **30 dagen** worden bewaard. U kunt deze logboeken bekijken in de portal of downloaden als CSV-bestand.
 
 Gebruik de volgende procedure om aan de slag te gaan met Azure AD-audit logboeken:
 
@@ -253,7 +253,7 @@ Met de optie gebruikers moeten toestemming geven voor **elke Apparaatinstellinge
 Hier volgt een lijst met de ondersteunde platforms en software.
 
 > [!div class="mx-tableFixed"]
-> |  | iOS | Android | Windows 10 | Anders |
+> |  | iOS | Android | Windows 10 | Overige |
 > | --- | --- | --- | --- | --- |
 > | **Systeemeigen app** | Ja | Ja | Ja |  |
 > | **Microsoft Edge** | Ja | Ja | Ja |  |

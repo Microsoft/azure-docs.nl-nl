@@ -1,6 +1,6 @@
 ---
-title: Verificatie methoden voor Azure Multi-Factor Authentication-Azure Active Directory beheren
-description: Meer informatie over het configureren van Azure Active Directory gebruikers instellingen voor Azure Multi-Factor Authentication
+title: Verificatie methoden beheren voor Azure AD-Multi-Factor Authentication-Azure Active Directory
+description: Meer informatie over het configureren van Azure Active Directory gebruikers instellingen voor Azure AD Multi-Factor Authentication
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,21 +11,21 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla, dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6309ef6793858051ceaf3c3b33edb9f830b26710
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 1117b5194dae92a8025594ed71fc629670d875cf
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378041"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838924"
 ---
-# <a name="manage-user-authentication-methods-for-azure-multi-factor-authentication"></a>Gebruikers verificatie methoden voor Azure Multi-Factor Authentication beheren
+# <a name="manage-user-authentication-methods-for-azure-ad-multi-factor-authentication"></a>Gebruikers authenticatie methoden voor Azure AD Multi-Factor Authentication beheren
 
 Gebruikers in azure AD hebben twee verschillende sets contact gegevens:  
 
 - Contact gegevens van open bare profielen, die worden beheerd in het gebruikers profiel en die zichtbaar zijn voor leden van uw organisatie. Voor gebruikers die zijn gesynchroniseerd vanaf de on-premises Active Directory, wordt deze informatie beheerd in een on-premises Windows Server-Active Directory Domain Services.
 - Verificatie methoden, die altijd privé blijven en alleen worden gebruikt voor verificatie, waaronder multi-factor Authentication (MFA). Beheerders kunnen deze methoden beheren in de Blade verificatie methode van een gebruiker en gebruikers kunnen hun methoden beheren op de pagina beveiligings gegevens van MyAccount.
 
-Bij het beheren van Azure Multi-Factor Authentication-methoden voor uw gebruikers kunnen verificatie beheerders het volgende doen: 
+Bij het beheren van Azure AD Multi-Factor Authentication-methoden voor uw gebruikers kunnen verificatie beheerders het volgende doen: 
 
 1. Voeg verificatie methoden toe voor een specifieke gebruiker, met inbegrip van telefoon nummers die worden gebruikt voor MFA.
 1. Het wacht woord van een gebruiker opnieuw instellen.
@@ -111,11 +111,11 @@ Voer de volgende stappen uit om de app-wacht woorden van een gebruiker te verwij
 1. Selecteer aan de linkerkant **Azure Active Directory**  >  **gebruikers**  >  **alle gebruikers**.
 1. Selecteer **Multi-Factor Authentication**. Mogelijk moet u naar rechts schuiven om deze menu optie weer te geven. Selecteer de onderstaande scherm afbeelding om het volledige Azure Portal venster en de menu locatie te bekijken: [ ![ Selecteer multi-factor Authentication in het venster gebruikers in azure AD.](media/howto-mfa-userstates/selectmfa-cropped.png)](media/howto-mfa-userstates/selectmfa.png#lightbox)
 1. Schakel het selectie vakje in naast de gebruiker of gebruikers die u wilt beheren. Er wordt aan de rechter kant een lijst met opties voor snelle stappen weer gegeven.
-1. Selecteer **gebruikers instellingen beheren** en schakel het selectie vakje in om **alle bestaande app-wacht woorden te verwijderen die door de geselecteerde gebruikers zijn gegenereerd** , zoals wordt weer gegeven in het volgende voor beeld: ![ alle bestaande app-wacht woorden verwijderen](./media/howto-mfa-userdevicesettings/deleteapppasswords.png)
+1. Selecteer **gebruikers instellingen beheren** en schakel het selectie vakje in om **alle bestaande app-wacht woorden te verwijderen die door de geselecteerde gebruikers zijn gegenereerd**, zoals wordt weer gegeven in het volgende voor beeld: ![ alle bestaande app-wacht woorden verwijderen](./media/howto-mfa-userdevicesettings/deleteapppasswords.png)
 1. Selecteer **Opslaan** en **sluiten**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel wordt uitgelegd hoe u afzonderlijke gebruikers instellingen kunt configureren. Zie [instellingen van Azure-multi-factor Authentication configureren](howto-mfa-mfasettings.md)voor het configureren van de algemene instellingen van Azure multi-factor Authentication service.
+In dit artikel wordt uitgelegd hoe u afzonderlijke gebruikers instellingen kunt configureren. Zie [instellingen van Azure AD-multi-factor Authentication configureren](howto-mfa-mfasettings.md)voor het configureren van algemene azure AD multi-factor Authentication-Service-instellingen.
 
-Als uw gebruikers hulp nodig hebben, raadpleegt u de [Gebruikers handleiding voor Azure multi-factor Authentication](../user-help/multi-factor-authentication-end-user-first-time.md).
+Als uw gebruikers hulp nodig hebben, raadpleegt u de [Gebruikers handleiding voor Azure AD multi-factor Authentication](../user-help/multi-factor-authentication-end-user-first-time.md).

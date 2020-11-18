@@ -11,37 +11,37 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da68e21aa279ea2503a21ce35eee52f8e49d1434
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 81f4407ee7721332a4143952d1720151bb70d8c9
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89049091"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837535"
 ---
-# <a name="conditional-access-securing-security-info-registration"></a>Voorwaardelijke toegang: registratie van beveiligings gegevens beveiligen
+# <a name="conditional-access-securing-security-info-registration"></a>Voorwaardelijke toegang: Veilige registratie van beveiligingsinformatie
 
-Beveiligen wanneer en hoe gebruikers zich registreren voor Azure Multi-Factor Authentication en self-service voor wacht woord opnieuw instellen is nu mogelijk met gebruikers acties in het beleid voor voorwaardelijke toegang. Deze preview-functie is beschikbaar voor organisaties die de [gecombineerde registratie preview](../authentication/concept-registration-mfa-sspr-combined.md)hebben ingeschakeld. Deze functionaliteit kan worden ingeschakeld in organisaties waar ze voor waarden zoals een vertrouwde netwerk locatie willen gebruiken om de toegang te beperken tot registratie voor Azure Multi-Factor Authentication en self-service voor wachtwoord herstel (SSPR). Zie het artikel [voorwaardelijke toegang: voor waarden](concept-conditional-access-conditions.md)voor meer informatie over bruikbare omstandigheden.
+Beveiligen wanneer en hoe gebruikers zich registreren voor Azure AD Multi-Factor Authentication en self-service voor wachtwoord herstel is nu mogelijk met gebruikers acties in het beleid voor voorwaardelijke toegang. Deze preview-functie is beschikbaar voor organisaties die de [gecombineerde registratie preview](../authentication/concept-registration-mfa-sspr-combined.md)hebben ingeschakeld. Deze functionaliteit kan worden ingeschakeld in organisaties waar ze voor waarden zoals een vertrouwde netwerk locatie willen gebruiken om de toegang te beperken tot registratie voor Azure AD Multi-Factor Authentication en self-service voor wachtwoord herstel (SSPR). Zie het artikel [voorwaardelijke toegang: voor waarden](concept-conditional-access-conditions.md)voor meer informatie over bruikbare omstandigheden.
 
 ## <a name="create-a-policy-to-require-registration-from-a-trusted-location"></a>Een beleid maken om registratie van een vertrouwde locatie te vereisen
 
 Het volgende beleid is van toepassing op alle geselecteerde gebruikers die zich willen registreren met de gecombineerde registratie-ervaring en blokkeert de toegang tenzij ze verbinding maken vanaf een locatie die is gemarkeerd als vertrouwd netwerk.
 
-1. Blader in het **Azure Portal**naar **Azure Active Directory**  >  **Security**  >  **voorwaardelijke toegang**voor beveiliging.
+1. Blader in het **Azure Portal** naar **Azure Active Directory**  >  **Security**  >  **voorwaardelijke toegang** voor beveiliging.
 1. Selecteer **Nieuw beleid**.
 1. Voer bij naam een naam in voor dit beleid. Bijvoorbeeld **registratie van gegevens over gecombineerde beveiliging op vertrouwde netwerken**.
-1. Onder **toewijzingen**selecteert u **gebruikers en groepen**en selecteert u de gebruikers en groepen waarop u dit beleid wilt Toep assen.
+1. Onder **toewijzingen** selecteert u **gebruikers en groepen** en selecteert u de gebruikers en groepen waarop u dit beleid wilt Toep assen.
 
    > [!WARNING]
    > Gebruikers moeten zijn ingeschakeld voor de [gecombineerde registratie](../authentication/howto-registration-mfa-sspr-combined.md).
 
-1. Onder **Cloud-apps of-acties**selecteert u **gebruikers acties**, check **Security Information registreren**.
+1. Onder **Cloud-apps of-acties** selecteert u **gebruikers acties**, check **Security Information registreren**.
 1. Onder **voor waarden**  >  **locaties**.
    1. Configureer **Ja**.
-   1. **Een wille keurige locatie**bevatten.
-   1. **Alle vertrouwde locaties**uitsluiten.
+   1. **Een wille keurige locatie** bevatten.
+   1. **Alle vertrouwde locaties** uitsluiten.
    1. Selecteer **gereed** op de Blade locaties.
    1. Selecteer **gereed** op de Blade voor waarden.
-1. Onder **voor waarden**  >  **client-apps (preview)** stelt u **configureren** op **Ja**in en selecteert u **gereed**.
+1. Onder **voor waarden**  >  **client-apps (preview)** stelt u **configureren** op **Ja** in en selecteert u **gereed**.
 1. Onder **toegangs beheer**  >  **verlenen**.
    1. Selecteer **toegang blok keren**.
    1. Klik vervolgens op **Selecteren**.
@@ -54,7 +54,7 @@ Sommige kunnen ervoor kiezen om de apparaatstatus te gebruiken in plaats van loc
 
 6. Onder **voor waarden**  >  **Apparaatstatus (preview-versie)**.
    1. Configureer **Ja**.
-   1. **Alle Apparaatstatus**toevoegen.
+   1. **Alle Apparaatstatus** toevoegen.
    1. **Hybride Azure AD-join** en/of **apparaat dat is gemarkeerd als compatibel** uitsluiten voor apparaat
    1. Selecteer **gereed** op de Blade locaties.
    1. Selecteer **gereed** op de Blade voor waarden.

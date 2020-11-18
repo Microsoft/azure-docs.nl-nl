@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ae5995340640e9cda16634cf76b9953d7d663c2
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b7ac03ff017f8beefe7cc487cdc32741ac1c5a35
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966658"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838175"
 ---
 # <a name="troubleshooting-combined-security-information-registration"></a>Problemen met het registreren van gecombineerde beveiligings gegevens oplossen
 
@@ -34,13 +34,13 @@ De volgende tabel geeft een lijst van alle controle gebeurtenissen die worden ge
 | --- | --- | --- | --- |
 | Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd | Geslaagd | Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd. | Deze gebeurtenis treedt op wanneer de registratie van een gebruiker is voltooid.|
 | Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd | Fout | De gebruiker heeft de registratie van beveiligings gegevens geannuleerd. | Deze gebeurtenis treedt op wanneer een gebruiker de registratie van de interrupt-modus annuleert.|
-| Geregistreerde beveiligings gegevens van gebruiker | Geslaagd | Geregistreerde *methode*van gebruiker. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode registreert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.| 
+| Geregistreerde beveiligings gegevens van gebruiker | Geslaagd | Geregistreerde *methode* van gebruiker. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode registreert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.| 
 | Door de gebruiker gecontroleerde beveiligings gegevens | Geslaagd | De gebruiker heeft beveiligings gegevens gecontroleerd. | Deze gebeurtenis treedt op wanneer een gebruiker **ziet** dat deze goed wordt geselecteerd op de pagina beveiligings gegevens controleren.|
 | Door de gebruiker gecontroleerde beveiligings gegevens | Fout | De gebruiker heeft geen beveiligings gegevens kunnen controleren. | Deze gebeurtenis treedt op wanneer een gebruiker **ziet** dat deze goed wordt geselecteerd op de pagina beveiligings gegevens controleren, maar er is een fout opgetreden op de back-end.|
 | Door gebruiker verwijderde beveiligings gegevens | Geslaagd | De door de gebruiker verwijderde *methode*. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode verwijdert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.|
-| Door gebruiker verwijderde beveiligings gegevens | Fout | De gebruiker kan de *methode*niet verwijderen. | Deze gebeurtenis treedt op wanneer een gebruiker een methode probeert te verwijderen, maar de poging om een of andere reden mislukt. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.|
-| Door de gebruiker gewijzigde standaard beveiligings gegevens | Geslaagd | De gebruiker heeft de standaard beveiligings gegevens voor de *methode*gewijzigd. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode wijzigt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
-| Door de gebruiker gewijzigde standaard beveiligings gegevens | Fout | Gebruiker kan de standaard beveiligings gegevens voor de *methode*niet wijzigen. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode probeert te wijzigen, maar de poging om een of andere reden mislukt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
+| Door gebruiker verwijderde beveiligings gegevens | Fout | De gebruiker kan de *methode* niet verwijderen. | Deze gebeurtenis treedt op wanneer een gebruiker een methode probeert te verwijderen, maar de poging om een of andere reden mislukt. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.|
+| Door de gebruiker gewijzigde standaard beveiligings gegevens | Geslaagd | De gebruiker heeft de standaard beveiligings gegevens voor de *methode* gewijzigd. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode wijzigt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
+| Door de gebruiker gewijzigde standaard beveiligings gegevens | Fout | Gebruiker kan de standaard beveiligings gegevens voor de *methode* niet wijzigen. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode probeert te wijzigen, maar de poging om een of andere reden mislukt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
 
 ## <a name="troubleshooting-interrupt-mode"></a>Problemen met de interrupt-modus oplossen
 
@@ -151,10 +151,10 @@ Voer de volgende stappen uit om de bijgewerkte ervaring voor uw gebruikers uit t
 
 1. Meld u aan bij de Azure Portal als een gebruikers beheerder.
 2. Ga naar **Azure Active Directory**  >  **gebruikers instellingen**  >  **instellingen voor de preview-functies van het toegangs venster beheren**.
-3. Onder **gebruikers kunnen preview-functies gebruiken voor het registreren en beheren van beveiligings gegevens**, de selector instellen op **geen**en vervolgens **Opslaan**selecteren.
+3. Onder **gebruikers kunnen preview-functies gebruiken voor het registreren en beheren van beveiligings gegevens**, de selector instellen op **geen** en vervolgens **Opslaan** selecteren.
 
 Gebruikers worden niet langer gevraagd om zich te registreren met behulp van de bijgewerkte ervaring.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over gecombineerde registratie voor Self-service voor wachtwoord herstel en Azure Multi-Factor Authentication](concept-registration-mfa-sspr-combined.md)
+* [Meer informatie over gecombineerde registratie voor Self-service voor wachtwoord herstel en Azure AD Multi-Factor Authentication](concept-registration-mfa-sspr-combined.md)

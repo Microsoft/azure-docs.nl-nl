@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ca23c1503b01c1aa9523edc2576599d7b6ab458
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: daa3f3b1687b01005f32cbd2665c84b933c993b8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91992813"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837614"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
@@ -126,7 +126,7 @@ In het volgende voor beeld heeft een beheerder van de voorwaardelijke toegang ee
 ## <a name="enable-or-disable-cae-preview"></a>CAE in-of uitschakelen (preview-versie)
 
 1. Meld u aan bij de **Azure Portal** als beheerder voor voorwaardelijke toegang, beveiligings beheerder of globale beheerder
-1. Blader naar **Azure Active Directory**  >  **Security**  >  **evaluatie van continue toegang**van de beveiliging.
+1. Blader naar **Azure Active Directory**  >  **Security**  >  **evaluatie van continue toegang** van de beveiliging.
 1. Kies **voor beeld inschakelen**.
 
 Op deze pagina kunt u optioneel de gebruikers en groepen beperken die aan de preview-versie worden onderworpen.
@@ -140,7 +140,7 @@ Op deze pagina kunt u optioneel de gebruikers en groepen beperken die aan de pre
 Voor CAE hebben we alleen inzicht in benoemde op IP gebaseerde benoemde locaties. We hebben geen inzicht in andere locatie-instellingen, zoals door [MFA vertrouwde IP-adressen](../authentication/howto-mfa-mfasettings.md#trusted-ips) of locaties op basis van een land. Wanneer de gebruiker afkomstig is van een door MFA vertrouwd IP-adres of vertrouwde locaties met door MFA vertrouwde Ip's of land locatie, wordt de CAE niet afgedwongen nadat de gebruiker naar een andere locatie is verplaatst. In dergelijke gevallen geven we een CAE-token van 1 uur zonder onmiddellijke controle op IP-afdwinging uit.
 
 > [!IMPORTANT]
-> Bij het configureren van locaties voor continue toegang, gebruikt u alleen de [voor waarde voor voorwaardelijke toegang op basis van een IP-](../conditional-access/location-condition.md#preview-features) adres en configureert u alle IP-adressen, **met inbegrip van IPv4 en IPv6**, die kunnen worden weer gegeven door uw ID-provider en bronnen provider. Gebruik geen land locatie voorwaarden of de functie voor vertrouwde IP-adressen die beschikbaar is op de pagina Service-instellingen van Azure Multi-Factor Authentication.
+> Bij het configureren van locaties voor continue toegang, gebruikt u alleen de [voor waarde voor voorwaardelijke toegang op basis van een IP-](../conditional-access/location-condition.md#preview-features) adres en configureert u alle IP-adressen, **met inbegrip van IPv4 en IPv6**, die kunnen worden weer gegeven door uw ID-provider en bronnen provider. Gebruik geen land locatie voorwaarden of de functie voor vertrouwde IP-adressen die beschikbaar is op de pagina Service-instellingen van Azure AD Multi-Factor Authentication.
 
 ### <a name="ip-address-configuration"></a>IP-adresconfiguratie
 

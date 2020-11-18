@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e22e4cdbfaf90eb9bba30fc26dc3495f767216f1
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c8c67f72a7f0d77284dbb34104754793b36bb8d4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968336"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94838141"
 ---
 # <a name="enable-combined-security-information-registration-in-azure-active-directory"></a>Registratie van gecombineerde beveiligings gegevens inschakelen in Azure Active Directory
 
-Vóór de gecombineerde registratie hebben gebruikers de verificatie methoden voor Azure Multi-Factor Authentication en self-service voor wachtwoord herstel (SSPR) afzonderlijk geregistreerd. Het is bekend dat er soort gelijke methoden werden gebruikt voor Azure Multi-Factor Authentication en SSPR, maar dat ze voor beide functies moesten registreren. Met gecombineerde registratie kunnen gebruikers zich eenmaal registreren en profiteren van de voor delen van Azure Multi-Factor Authentication en SSPR.
+Vóór de gecombineerde registratie hebben gebruikers de verificatie methoden voor Azure AD Multi-Factor Authentication en self-service voor wachtwoord herstel (SSPR) afzonderlijk geregistreerd. Het is bekend dat er soort gelijke methoden werden gebruikt voor Azure AD Multi-Factor Authentication en SSPR, maar dat ze voor beide functies moesten registreren. Met gecombineerde registratie kunnen gebruikers zich eenmaal registreren en profiteren van de voor delen van Azure AD-Multi-Factor Authentication en SSPR.
 
 > [!NOTE]
 > Vanaf 15 augustus 2020 worden alle nieuwe Azure AD-tenants automatisch ingeschakeld voor gecombineerde registratie.
@@ -40,7 +40,7 @@ Voer de volgende stappen uit om gecombineerde registratie in te scha kelen:
    ![De gecombineerde beveiligings informatie-ervaring voor gebruikers inschakelen](media/howto-registration-mfa-sspr-combined/enable-the-combined-security-info.png)
 
 > [!NOTE]
-> Nadat u gecombineerde registratie hebt ingeschakeld, kunnen gebruikers die hun telefoon nummer of mobiele app via de nieuwe ervaring registreren of bevestigen, ze gebruiken voor Azure Multi-Factor Authentication en SSPR als deze methoden zijn ingeschakeld in de Azure Multi-Factor Authentication-en SSPR-beleid.
+> Nadat u gecombineerde registratie hebt ingeschakeld, kunnen gebruikers die hun telefoon nummer of mobiele app via de nieuwe ervaring registreren of bevestigen, ze gebruiken voor Azure AD Multi-Factor Authentication en SSPR als deze methoden zijn ingeschakeld in de Azure AD-Multi-Factor Authentication en SSPR-beleid.
 >
 > Als u deze ervaring vervolgens uitschakelt, zijn gebruikers die naar de vorige registratie pagina van SSPR op `https://aka.ms/ssprsetup` zijn verplicht om multi-factor Authentication uit te voeren voordat ze toegang krijgen tot de pagina.
 
@@ -52,7 +52,7 @@ Als u de *lijst site toewijzing met zone* hebt geconfigureerd in Internet Explor
 
 ## <a name="conditional-access-policies-for-combined-registration"></a>Beleid voor voorwaardelijke toegang voor gecombineerde registratie
 
-Als u wilt beveiligen wanneer en hoe gebruikers zich registreren voor Azure Multi-Factor Authentication en self-service voor wachtwoord herstel, kunt u gebruikers acties gebruiken in het beleid voor voorwaardelijke toegang. Deze functionaliteit kan worden ingeschakeld in organisaties die gebruikers willen registreren voor Azure Multi-Factor Authentication en SSPR vanaf een centrale locatie, zoals een vertrouwde netwerk locatie tijdens het uitvoeren van een HR-onboarding.
+Als u wilt beveiligen wanneer en hoe gebruikers zich registreren voor Azure AD Multi-Factor Authentication en self-service voor wachtwoord herstel, kunt u gebruikers acties gebruiken in het beleid voor voorwaardelijke toegang. Deze functionaliteit kan worden ingeschakeld in organisaties die gebruikers willen registreren voor Azure AD Multi-Factor Authentication en SSPR vanaf een centrale locatie, zoals een vertrouwde netwerk locatie tijdens HR-onboarding.
 
 > [!NOTE]
 > Dit beleid is alleen van toepassing wanneer een gebruiker toegang heeft tot een gecombineerde registratie pagina. Dit beleid dwingt geen MFA-inschrijving af wanneer een gebruiker toegang heeft tot andere toepassingen.
@@ -65,7 +65,7 @@ Zie [Wat is de locatie voorwaarde in azure Active Directory voorwaardelijke toeg
 
 Voer de volgende stappen uit om een beleid te maken dat van toepassing is op alle geselecteerde gebruikers die zich willen registreren met behulp van de gecombineerde registratie-ervaring, en blokkeert de toegang tenzij ze verbinding maken vanaf een locatie die is gemarkeerd als vertrouwd netwerk:
 
-1. Blader in het **Azure Portal**naar **Azure Active Directory**  >  **Security**  >  **voorwaardelijke toegang**voor beveiliging.
+1. Blader in het **Azure Portal** naar **Azure Active Directory**  >  **Security**  >  **voorwaardelijke toegang** voor beveiliging.
 1. Selecteer **+ Nieuw beleid**.
 1. Voer een naam in voor dit beleid, zoals de *registratie van gecombineerde beveiligings gegevens op vertrouwde netwerken*.
 1. Onder **Toewijzingen** selecteert u **Gebruikers en groepen**. Kies de gebruikers en groepen waarop u dit beleid wilt Toep assen en selecteer vervolgens **gereed**.
@@ -73,23 +73,23 @@ Voer de volgende stappen uit om een beleid te maken dat van toepassing is op all
    > [!WARNING]
    > Gebruikers moeten zijn ingeschakeld voor gecombineerde registratie.
 
-1. Selecteer onder **Cloud-apps of acties**de optie **gebruikers acties**. Controleer **beveiligings gegevens registreren**en selecteer vervolgens **gereed**.
+1. Selecteer onder **Cloud-apps of acties** de optie **gebruikers acties**. Controleer **beveiligings gegevens registreren** en selecteer vervolgens **gereed**.
 
     ![Een beleid voor voorwaardelijke toegang maken om de registratie van beveiligings gegevens te beheren](media/howto-registration-mfa-sspr-combined/require-registration-from-trusted-location.png)
 
-1. Configureer onder **voor waarden**  >  **locaties**de volgende opties:
+1. Configureer onder **voor waarden**  >  **locaties** de volgende opties:
    1. Configureer **Ja**.
-   1. **Een wille keurige locatie**bevatten.
-   1. **Alle vertrouwde locaties**uitsluiten.
+   1. **Een wille keurige locatie** bevatten.
+   1. **Alle vertrouwde locaties** uitsluiten.
 1. Selecteer **gereed** in het venster *locaties* en selecteer vervolgens **gereed** in het venster *voor waarden* .
-1. Onder **toegangs beheer**  >  **toekennen**kiest u **toegang blok keren**en **selecteert**u vervolgens.
+1. Onder **toegangs beheer**  >  **toekennen** kiest u **toegang blok keren** en **selecteert** u vervolgens.
 1. Stel **Beleid inschakelen** in op **Aan**.
-1. Selecteer **maken**om het beleid te volt ooien.
+1. Selecteer **maken** om het beleid te volt ooien.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Als u hulp nodig hebt, raadpleegt u [problemen met het registreren van gecombineerde beveiligings gegevens oplossen](howto-registration-mfa-sspr-combined-troubleshoot.md) of meer informatie over [de locatie voorwaarde in azure AD voorwaardelijke toegang?](../conditional-access/location-condition.md)
 
-Zodra gebruikers zijn ingeschakeld voor gecombineerde registratie, kunt u de [selfservice voor wachtwoord herstel inschakelen](tutorial-enable-sspr.md) en [Azure-multi-factor Authentication inschakelen](tutorial-enable-azure-mfa.md).
+Zodra gebruikers zijn ingeschakeld voor gecombineerde registratie, kunt u de [selfservice voor wachtwoord herstel inschakelen](tutorial-enable-sspr.md) en [Azure AD-multi-factor Authentication inschakelen](tutorial-enable-azure-mfa.md).
 
 Als dat nodig is, leert u hoe u [gebruikers dwingt om verificatie methoden opnieuw te registreren](howto-mfa-userdevicesettings.md#manage-user-authentication-options).

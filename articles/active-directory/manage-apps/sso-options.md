@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: kenwith
 ms.reviewer: arvindh, japere
-ms.openlocfilehash: 5c02733167db5071b1f2a9c5e04dc05a069fda3c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f7ec8a913634322be5a1eb854972cfa2a0217381
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604203"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94651920"
 ---
 # <a name="single-sign-on-options-in-azure-ad"></a>Opties voor eenmalige aanmelding in Azure AD
 
@@ -49,7 +49,7 @@ In de volgende tabel vindt u een overzicht van de methoden voor eenmalige aanmel
 | [Gekoppeld](#linked-sign-on) | cloud en on-premises | Kies voor een gekoppelde aanmelding wanneer de toepassing is geconfigureerd voor eenmalige aanmelding in een andere id-providerservice. Bij deze optie wordt geen eenmalige aanmelding toegevoegd aan de toepassing. Voor de toepassing is echter mogelijk al een eenmalige aanmelding geïmplementeerd met behulp van een andere service, zoals Active Directory Federation Services.|
 | [Uitgeschakeld](#disabled-sso) | cloud en on-premises | Kies voor een uitgeschakelde eenmalige aanmelding wanneer de app niet gereed is om te worden geconfigureerd voor eenmalige aanmelding. Deze modus is de standaardinstelling bij het maken van de app.|
 | [Geïntegreerde Windows-verificatie](#integrated-windows-authentication-iwa-sso) | alleen on-premises | Kies eenmalige aanmelding met geïntegreerde Windows-verificatie voor toepassingen die gebruikmaken van [geïntegreerde Windows-verificatie](/aspnet/web-api/overview/security/integrated-windows-authentication) of claimbewuste toepassingen. Voor geïntegreerde Windows-verificatie maken de Application Proxy-connectors gebruik van beperkte Kerberos-delegering om gebruikers te verifiëren voor de toepassing. |
-| [Op basis van headers](#header-based-sso) | alleen on-premises | Gebruik eenmalige aanmelding op basis van headers wanneer de toepassing headers gebruikt voor verificatie. Voor eenmalige aanmelding op basis van headers is PingAccess voor Azure AD vereist. Application Proxy gebruikt Azure AD om de gebruiker te verifiëren en geeft vervolgens het verkeer door via de connectorservice.  |
+| [Op basis van headers](#header-based-sso) | alleen on-premises | Gebruik eenmalige aanmelding op basis van headers wanneer de toepassing headers gebruikt voor verificatie. Application Proxy gebruikt Azure AD om de gebruiker te verifiëren en geeft vervolgens het verkeer door via de connectorservice.  |
 
 ## <a name="openid-connect-and-oauth"></a>OpenID Connect en OAuth
 
@@ -59,7 +59,7 @@ Zie voor meer informatie:
 
 - [OAuth 2.0](../develop/v2-oauth2-auth-code-flow.md)
 - [OpenID Connect 1.0](../develop/v2-protocols-oidc.md)
-- [Handleiding voor ontwikkelaars van Microsoft Identity Platform](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide).
+- [Handleiding voor ontwikkelaars van Microsoft Identity Platform](../develop/index.yml).
 
 ## <a name="saml-sso"></a>Eenmalige aanmelding op basis van SAML
 
@@ -137,7 +137,7 @@ Met gekoppelde aanmelding kan Azure AD eenmalige aanmelding bieden voor een toep
 
 ### <a name="linked-sign-on-for-application-migration"></a>Gekoppelde aanmelding voor de migratie van toepassingen
 
-Een gekoppelde aanmelding kan een consistente gebruikerstoepassing bieden tijdens het migreren van toepassingen gedurende een bepaalde periode. Als u toepassingen migreert naar Azure Active Directory, kunt u een gekoppelde aanmelding gebruiken om snel koppelingen te publiceren naar alle toepassingen die u wilt migreren.  Gebruikers kunnen alle koppelingen vinden in de [MyApps-portal](../user-help/active-directory-saas-access-panel-introduction.md) of het [programma voor het starten van Microsoft 365-toepassingen](https://support.office.com/article/meet-the-office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a). Gebruikers weten niet dat ze toegang hebben tot een gekoppelde toepassing of een gemigreerde toepassing.  
+Een gekoppelde aanmelding kan een consistente gebruikerstoepassing bieden tijdens het migreren van toepassingen gedurende een bepaalde periode. Als u toepassingen migreert naar Azure Active Directory, kunt u een gekoppelde aanmelding gebruiken om snel koppelingen te publiceren naar alle toepassingen die u wilt migreren.  Gebruikers kunnen alle koppelingen vinden in de [MyApps-portal](../user-help/my-apps-portal-end-user-access.md) of het [programma voor het starten van Microsoft 365-toepassingen](https://support.office.com/article/meet-the-office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a). Gebruikers weten niet dat ze toegang hebben tot een gekoppelde toepassing of een gemigreerde toepassing.  
 
 Wanneer een gebruiker eenmaal is geverifieerd met een gekoppelde toepassing, moet er een accountrecord worden gemaakt voordat de eindgebruiker toegang via eenmalige aanmelding wordt geboden. Het inrichten van deze accountrecord kan automatisch plaatsvinden of kan handmatig door een beheerder worden uitgevoerd.
 
@@ -180,24 +180,14 @@ In dit diagram wordt de stroom weergegeven voor een gebruiker die toegang wil kr
 
 ## <a name="header-based-sso"></a>Eenmalige aanmelding op basis van headers
 
-Eenmalige aanmelding op basis van headers kan worden gebruikt voor toepassingen die HTTP-headers gebruiken voor de verificatie. Deze aanmeldingsmethode maakt gebruik van een externe verificatieservice met de naam PingAccess. Een gebruiker hoeft zich alleen te verifiëren bij Azure AD.
+Eenmalige aanmelding op basis van headers kan worden gebruikt voor toepassingen die HTTP-headers gebruiken voor de verificatie.
 
-Kies voor een eenmalige aanmelding op basis van headers wanneer Application Proxy en PingAccess zijn geconfigureerd voor de toepassing.
+Kies voor een eenmalige aanmelding op basis van headers wanneer Application Proxy zijn geconfigureerd voor de on-premises toepassing.
 
-Raadpleeg [Verificatie op basis van headers voor eenmalige aanmelding met Application Proxy](application-proxy-configure-single-sign-on-with-ping-access.md) als u een verificatie op basis van headers wilt configureren.
+Raadpleeg [Op header gebaseerde SSO](application-proxy-configure-single-sign-on-with-headers.md) voor meer informatie over op header gebaseerde verificatie.
 
-### <a name="what-is-pingaccess-for-azure-ad"></a>Wat is PingAccess voor Azure AD?
-
-Wanneer gebruikers PingAccess voor Azure AD gebruiken, kunnen ze via eenmalige aanmelding toegang krijgen tot toepassingen waarin headers worden gebruikt voor verificatie. Application Proxy behandelt deze toepassingen hetzelfde als andere, waarbij Azure AD wordt gebruikt om de toegang te verifiëren en vervolgens het verkeer door te geven via de connectorservice. Nadat de verificatie is uitgevoerd, zet de PingAccess-service het Azure AD-toegangstoken om in een headerindeling die naar de toepassing wordt verzonden.
-
-De gebruikers merken hier niets van wanneer ze zich aanmelden om uw bedrijfstoepassingen te gebruiken. Ze kunnen nog steeds vanaf elke locatie op elk apparaat werken. De Application Proxy-connectors sturen extern verkeer door naar alle toepassingen, waarbij ze automatisch de taakverdeling blijven uitvoeren.
-
-### <a name="how-do-i-get-a-license-for-pingaccess"></a>Hoe kan ik een licentie voor PingAccess krijgen?
-
-Omdat deze werkwijze mogelijk wordt gemaakt door een samenwerking tussen Azure AD en PingAccess, hebt u licenties nodig voor beide services. Azure AD Premium-abonnementen omvatten echter een basislicentie voor PingAccess die kan worden gebruikt voor maximaal twintig toepassingen. Als u meer dan twintig toepassingen op basis van headers wilt publiceren, kunt u een aanvullende licentie verkrijgen via PingAccess.
-
-Zie [Azure Active Directory-edities](../fundamentals/active-directory-whatis.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Quickstartreeks over toepassingsbeheer](view-applications-portal.md)
 * [Een implementatie van eenmalige aanmelding plannen](plan-sso-deployment.md)
+* [Eenmalige aanmelding bij on-premises apps](application-proxy-config-sso-how-to.md)

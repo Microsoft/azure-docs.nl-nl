@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/14/2020
+ms.date: 11/03/2020
 ms.author: jeedes
-ms.openlocfilehash: fe591c55065372245d95210ab0282a0070c96434
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 764342f237452d9322d44c86ebdb41691b44495d
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318791"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360714"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Zelfstudie: Integratie van eenmalige aanmelding in Azure Active Directory met Amazon Web Services (AWS)
 
@@ -27,6 +27,9 @@ In deze zelfstudie leert u hoe u Amazon Web Services (AWS) kunt integreren met A
 * Uw accounts op één centrale locatie beheren: de Azure-portal.
 
 Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
+
+> [!Note]
+> Azure AD biedt geen ondersteuning voor de integratie van eenmalige aanmelding met AWS SSO, dit is een ander product van AWS. Hoewel AWS dit [hier](https://docs.aws.amazon.com/singlesignon/latest/userguide/azure-ad-idp.html) vermeldt, raadt Azure AD klanten aan om in de plaats daarvan AWS IAM-integratie te gebruiken zodat u betere beveiligingscontroles kunt bekomen met behulp van beleid voor voorwaardelijke toegang op individuele accounts, en deze toepassingen ook beter kunt beheren.
 
 ![Diagram van de relatie tussen Azure Active Directory en AWS](./media/amazon-web-service-tutorial/tutorial_amazonwebservices_image.png)
 
@@ -61,7 +64,6 @@ U hebt het volgende nodig om aan de slag te gaan:
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Amazon Web Services (AWS) ondersteunt door **SP en IDP** gestarte SSO
-* Zodra u Amazon Web Services (AWS) hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad)
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
@@ -84,7 +86,7 @@ Configureer en test eenmalige aanmelding van Azure Active Directory met Amazon W
 U moet de volgende bouwstenen voltooien om eenmalige aanmelding van Azure Active Directory voor Amazon Web Services (AWS) te configureren en testen:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
-    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B. Simon.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
     1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** : zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
 1. **[Eenmalige aanmelding voor Amazon Web Services (AWS) configureren](#configure-amazon-web-services-aws-sso)** : de instellingen voor eenmalige aanmelding aan de clientzijde configureren.
     1. **[Testgebruiker voor Amazon Web Services (AWS) maken](#create-amazon-web-services-aws-test-user)** : als u een tegenhanger van B. Simon in Amazon Web Services (AWS) wilt hebben die is gekoppeld aan de Azure Active Directory-weergave van de gebruiker.
@@ -215,7 +217,7 @@ In dit gedeelte gaat u B. Simon toestemming geven voor gebruik van eenmalige aan
   
     d. Selecteer **Volgende: Permissions**.
 
-9. Voeg in het dialoogvenster **Attach permissions policies** het juiste beleid voor uw organisatie toe. Selecteer vervolgens**Volgende: Review**.  
+9. Voeg in het dialoogvenster **Attach permissions policies** het juiste beleid voor uw organisatie toe. Selecteer vervolgens **Volgende: Review**.  
 
     ![Schermopname van het dialoogvenster Attach permissions policy][33]
 
@@ -223,7 +225,7 @@ In dit gedeelte gaat u B. Simon toestemming geven voor gebruik van eenmalige aan
 
     ![Schermopname van het dialoogvenster Review][34]
 
-    a. In **Role name**voert u de naam van uw rol in.
+    a. In **Role name** voert u de naam van uw rol in.
 
     b. Voer bij **Role description** de omschrijving van de rol in.
 
@@ -364,37 +366,40 @@ Het doel van deze sectie is het maken van een gebruiker met de naam B. Simon in 
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel Amazon Web Services (AWS) klikt, zou u automatisch moeten worden aangemeld bij het exemplaar van Amazon Web Services (AWS) waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
+
+* Klik in Azure Portal op **Deze toepassing testen**. Dit zorgt voor een omleiding naar de aanmeldings-URL voor Amazon Web Services (AWS) waar de aanmeldingsstroom gestart kan worden.  
+
+* Ga rechtstreeks naar de aanmeldings-URL van Amazon Web Services (AWS) en start de aanmeldingsstroom daar.
+
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
+
+* Klik op **Deze toepassing testen** in de Azure-portal. U wordt automatisch aangemeld bij het exemplaar van Amazon Web Services (AWS) waarvoor u eenmalige aanmelding hebt ingesteld. 
+
+U kunt ook het Microsoft-toegangsvenster gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in het toegangsvenster op de tegel Amazon Web Services (AWS) klikt en als deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij het exemplaar van Amazon Web Services (AWS) waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+
 
 ## <a name="known-issues"></a>Bekende problemen
 
  * In de sectie **Inrichten** onder de subsectie **Toewijzingen**, wordt het bericht 'Laden...' weergeven, maar nooit de kenmerktoewijzingen. De enige inrichtingswerkstroom die tegenwoordig wordt ondersteund is het importeren van de rollen van AWS naar Azure Active Directory voor selectie tijdens de toewijzing van de gebruiker of groep. De kenmerktoewijzingen hiervoor zijn vooraf bepaald en kunnen niet worden geconfigureerd.
 
- * De sectie **Inrichten** ondersteunt alleen de invoer van één set referenties per AWS-tenant tegelijk. Alle geïmporteerde rollen worden geschreven naar de eigenschap `appRoles` van het Azure Active Directory [`servicePrincipal`-object](/graph/api/resources/serviceprincipal?view=graph-rest-beta) voor de AWS-tenant.
+ * De sectie **Inrichten** ondersteunt alleen de invoer van één set referenties per AWS-tenant tegelijk. Alle geïmporteerde rollen worden geschreven naar de eigenschap `appRoles` van het Azure Active Directory [`servicePrincipal`-object](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) voor de AWS-tenant.
 
    Meerdere AWS-tenants (vertegenwoordigd door `servicePrincipals`) kunnen worden toegevoegd aan Azure Active Directory vanuit de galerie voor het inrichten. Er is echter een bekend probleem waarbij niet alle geïmporteerde rollen automatisch kunnen worden geschreven uit meerdere AWS-`servicePrincipals` die worden gebruikt voor het inrichten van de `servicePrincipal` die wordt gebruikt voor eenmalige aanmelding.
 
-   Als tijdelijke oplossing kunt u de [Microsoft Graph API](/graph/api/resources/serviceprincipal?view=graph-rest-beta) gebruiken om alle `appRoles` op te halen die zijn geïmporteerd in elke AWS-`servicePrincipal` waar de inrichting is geconfigureerd. U kunt deze tekenreeksen vervolgens toevoegen aan de AWS-`servicePrincipal` waar eenmalige aanmelding is geconfigureerd.
+   Als tijdelijke oplossing kunt u de [Microsoft Graph API](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) gebruiken om alle `appRoles` op te halen die zijn geïmporteerd in elke AWS-`servicePrincipal` waar de inrichting is geconfigureerd. U kunt deze tekenreeksen vervolgens toevoegen aan de AWS-`servicePrincipal` waar eenmalige aanmelding is geconfigureerd.
 
 * Rollen moeten voldoen aan de volgende vereisten om in aanmerking te komen voor importeren vanuit AWS in Azure Active Directory:
 
   * Rollen moeten precies één SAML-provider hebben gedefinieerd in AWS
+  * De gecombineerde lengte van de ARN (Amazon-resourcenaam) voor de rol en de ARN voor de bijbehorende SAML-provider moet korter zijn dan 120 tekens
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="next-steps"></a>Volgende stappen
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+Zodra u Amazon Web Services (AWS) hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad)
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-
-- [Probeer Amazon Web Services (AWS) met Azure Active Directory](https://aad.portal.azure.com/)
-
-- [Wat is sessiebeheer in Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
-
-- [Amazon Web Services (AWS) beveiligen met geavanceerde zichtbaarheid en besturingselementen](/cloud-app-security/protect-aws)
 
 [11]: ./media/amazon-web-service-tutorial/ic795031.png
 [12]: ./media/amazon-web-service-tutorial/ic795032.png

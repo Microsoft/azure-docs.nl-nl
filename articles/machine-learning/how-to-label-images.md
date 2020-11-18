@@ -1,23 +1,23 @@
 ---
 title: Tags toevoegen aan afbeeldingen in een labelproject
 title.suffix: Azure Machine Learning
-description: Leer hoe u de hulpprogramma's voor het toevoegen van tags aan gegevens gebruikt in een Azure Machine Learning-labelproject.
+description: Leer hoe u de hulpprogramma's voor het toevoegen van tags aan gegevens gebruikt om snel gegevens voor te bereiden voor machine learning in een Azure Machine Learning-labelproject.
 author: sdgilley
 ms.author: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: e34fa4af08be898785acbc6f00aa735c1412ec47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4392086146642e18b1fdef28a9e602bdbb5b0b18
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90897571"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542181"
 ---
 # <a name="tag-images-in-a-labeling-project"></a>Tags toevoegen aan afbeeldingen in een labelproject 
 
-Nadat uw projectbeheerder [een labelproject](https://docs.microsoft.com/azure/machine-learning/how-to-create-labeling-projects#create-a-labeling-project) in Azure Machine Learning heeft gemaakt, kunt u het hulpprogramma voor het toevoegen van labels (openbare preview-versie) gebruiken om snel gegevens voor een Machine Learning-project voor te bereiden. In dit artikel wordt het volgende beschreven:
+Nadat uw projectbeheerder [een labelproject](./how-to-create-labeling-projects.md#create-a-labeling-project) in Azure Machine Learning heeft gemaakt, kunt u het hulpprogramma voor het toevoegen van labels gebruiken om snel gegevens voor een Machine Learning-project voor te bereiden. In dit artikel wordt het volgende beschreven:
 
 > [!div class="checklist"]
 > * Toegang krijgen tot uw labelprojecten
@@ -127,6 +127,28 @@ Als u *alle* begrenzingsvakken in de huidige afbeelding wilt verwijderen, select
 
 Nadat u de begrenzingsvakken voor een afbeelding hebt gemaakt, selecteert u **Indienen** om uw werk op te slaan, anders wordt uw werk in uitvoering niet opgeslagen.
 
+## <a name="tag-images-and-specify-polygons-for-image-segmentation"></a>Afbeeldingen labelen en veelhoeken tekenen om afbeeldingen te segmenteren 
+
+Als u een project van het type 'Instantiesegmentatie (veelhoek)' heeft, dan voegt u één of meer veelhoeken toe aan de afbeelding en past u voor elke veelhoek een label toe. Afbeeldingen kunnen over meerdere begrenzingsveelhoeken beschikken, elk met één tag. Gebruik **Gedetailleerde instructies weergeven** om te bepalen of er meerdere begrenzingsveelhoeken worden gebruikt in uw project.
+
+1. Selecteer een tag voor de veelhoek die u wilt maken.
+1. Selecteer de tool **Veelhoekregio tekenen** ![tool Veelhoek tekenen](./media/how-to-label-images/polygon-tool.png) of druk op 'P'.
+3. Klik voor elk punt in de veelhoek.  Wanneer uw vorm af is, dubbelklikt u om te voltooien.
+
+    :::image type="content" source="media/how-to-label-images/polygon.gif" alt-text="Veelhoeken maken voor kat en hond":::
+
+Als u een veelhoeken wilt verwijderen, klikt u op het X-vormige doel dat naast de veelhoek wordt weergegeven zodra het vak is gemaakt.
+
+Als u het label voor een veelhoek wilt wijzigen, selecteert u de tool **Gebied verplaatsen**, klikt u op de veelhoek en selecteert u de juiste tag.
+
+U kunt bestaande veelhoeken bewerken. U kunt dit gedrag veranderen met behulp van de tool **Regio's vergrendelen/ontgrendelen** ![Veelhoeken bewerken met de tool Regio's vergrendelen/ontgrendelen](./media/how-to-label-images/lock-bounding-boxes-tool.png) of met de 'L'-toets. Als regio's zijn vergrendeld, kunt u alleen de vorm of locatie van een nieuwe veelhoek wijzigen.
+
+Gebruik de tool **Veelhoekpunten toevoegen of verwijderen** ![tool Veelhoekpunten toevoegen of verwijderen](./media/how-to-label-images/add-remove-points-tool.png) om druk op 'U' om een bestaande veelhoek te wijzigen. Klik op de veelhoek om een punt toe te voegen of te verwijderen. Als u een regio niet kunt bewerken, hebt u waarschijnlijk het hulpprogramma **Regio's vergrendelen/ontgrendelen** ingeschakeld.
+
+Als u *alle* veelhoeken in de huidige afbeelding wilt verwijderen, selecteert u het hulpprogramma **Alle regio's verwijderen** ![hulpprogramma Alle regio's verwijderen](./media/how-to-label-images/delete-regions-tool.png).
+
+Nadat u de veelhoeken voor een afbeelding hebt gemaakt, selecteert u **Indienen** om uw werk op te slaan, anders wordt uw werk in uitvoering niet opgeslagen.
+
 ## <a name="finish-up"></a>Voltooien
 
 Wanneer u een pagina met getagde gegevens indient, worden nieuwe niet-gelabelde gegevens aan u toegewezen vanuit een werkwachtrij. Als er geen niet-gelabelde gegevens meer beschikbaar zijn, krijgt u een bericht waarin dit wordt vermeld, naast een koppeling naar de startpagina van de portal.
@@ -135,5 +157,4 @@ Wanneer u klaar bent met labelen, selecteert u uw naam in de rechterbovenhoek va
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Informatie over [Modellen voor de classificatie van afbeeldingen trainen in Azure](https://docs.microsoft.com/azure/machine-learning/tutorial-train-models-with-aml)
-
+* Informatie over [Modellen voor de classificatie van afbeeldingen trainen in Azure](./tutorial-train-models-with-aml.md)

@@ -5,27 +5,28 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 10/06/2020
+ms.date: 11/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3d03d0267ff4fb16042d5cc2016e87139b88281a
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: e7e65d5d2941765df98b3bf3b7fb8ff2e89b7e9f
+ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056579"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94411198"
 ---
 # <a name="tutorial-create-a-user-vpn-connection-using-azure-virtual-wan"></a>Zelfstudie: Een VPN-verbinding voor gebruikers maken met Azure Virtual WAN
 
-In deze zelfstudie leert u hoe u Virtual WAN kunt gebruiken om verbinding te maken met uw resources in Azure via een VPN-verbinding met IPsec/IKE (IKEv2)- of OpenVPN. Voor dit soort verbinding moet een client op de clientcomputer worden geconfigureerd. Zie voor meer informatie over Virtual WAN het [Overzicht van Virtual WAN](virtual-wan-about.md)
+In deze zelfstudie leert u hoe u Virtual WAN kunt gebruiken om verbinding te maken met uw resources in Azure via een VPN-verbinding met IPsec/IKE (IKEv2)- of OpenVPN. Voor dit type verbinding moet de VPN-client op de clientcomputer zijn geconfigureerd. Zie voor meer informatie over Virtual WAN het [Overzicht van Virtual WAN](virtual-wan-about.md).
 
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
-> * Een WAN maken
+> * Een virtueel WAN maken
 > * Een P2S-configuratie maken
-> * Een hub maken
+> * Een virtuele hub maken
 > * DNS-servers opgeven
-> * Een VPN-clientprofiel downloaden
+> * Het configuratiepakket voor het VPN-clientprofiel genereren
+> * VPN-clients configureren
 > * Uw virtuele WAN weergeven
 
 ![Virtual WAN-diagram](./media/virtual-wan-about/virtualwanp2s.png)
@@ -42,27 +43,28 @@ In deze zelfstudie leert u het volgende:
 
 Een punt-naar-site-configuratie (P2S) definieert de parameters om verbinding te maken met externe clients.
 
-[!INCLUDE [Create client profiles](../../includes/virtual-wan-p2s-configuration-include.md)]
+[!INCLUDE [Create P2S configuration](../../includes/virtual-wan-p2s-configuration-include.md)]
 
-## <a name="create-hub-with-point-to-site-gateway"></a><a name="hub"></a>Hub maken met punt-naar-site-gateway
+## <a name="create-virtual-hub-and-gateway"></a><a name="hub"></a>Virtuele hub en gateway maken
 
 [!INCLUDE [Create hub](../../includes/virtual-wan-p2s-hub-include.md)]
 
 ## <a name="specify-dns-server"></a><a name="dns"></a>DNS-servers opgeven
 
-Met de virtuele VPN-gateways voor WAN-gebruikers kunt u maximaal vijf DNS-servers opgeven. U kunt dit configureren tijdens het maken van de hub of wijzigen op een later tijdstip. Ga hiervoor naar de virtuele hub. Selecteer onder **Gebruikers-VPN (punt-naar-site)** **configureren** en voer het/de IP-adress(sen) van de DNS-server in het/de tekstvak(ken) **Aangepaste DNS-servers** in.
+U kunt deze instelling configureren tijdens het maken van de hub of deze wijzigen op een later tijdstip. Zoek de virtuele hub om deze te wijzigen. Selecteer onder **Gebruikers-VPN (punt-naar-site)** **configureren** en voer het/de IP-adress(sen) van de DNS-server in het/de tekstvak(ken) **Aangepaste DNS-servers** in. U kunt maximaal 5 DNS-servers opgeven.
 
    :::image type="content" source="media/virtual-wan-point-to-site-portal/custom-dns.png" alt-text="Aangepaste DNS" lightbox="media/virtual-wan-point-to-site-portal/custom-dns-expand.png":::
 
-## <a name="download-vpn-profile"></a><a name="download"></a>VPN-profiel downloaden
+## <a name="generate-vpn-client-profile-package"></a><a name="download"></a>Het pakket voor het VPN-clientprofiel genereren
 
-Gebruik het VPN-profiel om uw clients te configureren.
+Genereer en download het pakket voor het VPN-clientprofiel om uw VPN-clients te configureren.
 
 [!INCLUDE [Download profile](../../includes/virtual-wan-p2s-download-profile-include.md)]
 
-### <a name="configure-user-vpn-clients"></a>VPN-clients voor gebruikers configureren
+## <a name="configure-vpn-clients"></a><a name="configure-client"></a>VPN-clients configureren
 
-Gebruik het gedownloade profiel om de clients voor externe toegang te configureren. De procedure verschilt per besturingssysteem. Volg daarom de instructies voor uw systeem.
+Gebruik het gedownloade profielpakket om de VPN-clients voor externe toegang te configureren. De procedure is anders voor elk besturingssysteem. Volg de instructies die van toepassing zijn op uw systeem.
+Zodra u klaar bent met het configureren van uw client, kunt u verbinding maken.
 
 [!INCLUDE [Configure clients](../../includes/virtual-wan-p2s-configure-clients-include.md)]
 

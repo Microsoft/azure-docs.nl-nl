@@ -9,16 +9,16 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.author: yelevin
-ms.openlocfilehash: b1188e533039b0137cebb22652d9921418c41deb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b37675d46d501fc43446eafc83d6c0a02f238177
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89659655"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655949"
 ---
 # <a name="connect-azure-defender-alert-data-from-azure-security-center"></a>Azure Defender-waarschuwings gegevens van Azure Security Center verbinden
 
-Gebruik de Azure Defender-waarschuwings connector om Azure Defender-waarschuwingen van [Azure Security Center](../security-center/security-center-intro.md) op te nemen en ze in de Azure-Sentinel te streamen. 
+Gebruik de Azure Defender-waarschuwings connector om Azure Defender-waarschuwingen van [Azure Security Center](../security-center/security-center-introduction.md) op te nemen en ze in de Azure-Sentinel te streamen. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -32,9 +32,9 @@ Gebruik de Azure Defender-waarschuwings connector om Azure Defender-waarschuwing
 
 1. Selecteer in de galerie met gegevens connectors de optie **Azure Defender-waarschuwingen van ASC** (kan nog steeds worden aangeroepen Azure Security Center) en klik op de knop voor het openen van de **connector pagina** .
 
-1. Klik onder **configuratie**op **verbinden** naast elk abonnement waarvan u de waarschuwingen wilt streamen naar Azure Sentinel. De knop verbinding maken is alleen beschikbaar als u de vereiste machtigingen hebt.
+1. Klik onder **configuratie** op **verbinden** naast elk abonnement waarvan u de waarschuwingen wilt streamen naar Azure Sentinel. De knop verbinding maken is alleen beschikbaar als u de vereiste machtigingen hebt.
 
-1. U kunt selecteren of u wilt dat de waarschuwingen van Azure Defender automatisch incidenten genereren in azure Sentinel. Schakel onder **incidenten maken**de optie **ingeschakeld** in om de standaard analyse regel in te scha kelen waarmee automatisch incidenten worden gemaakt op basis van waarschuwingen. U kunt deze regel vervolgens onder **analyse**bewerken op het tabblad  **actieve regels** .
+1. U kunt selecteren of u wilt dat de waarschuwingen van Azure Defender automatisch incidenten genereren in azure Sentinel. Schakel onder **incidenten maken** de optie **ingeschakeld** in om de standaard analyse regel in te scha kelen waarmee automatisch incidenten worden gemaakt op basis van waarschuwingen. U kunt deze regel vervolgens onder **analyse** bewerken op het tabblad  **actieve regels** .
 
 1. Als u het relevante schema in Log Analytics voor de Azure Defender-waarschuwingen wilt gebruiken, zoekt u naar **SecurityAlert**.
 

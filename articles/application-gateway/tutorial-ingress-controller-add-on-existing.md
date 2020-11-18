@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: caya
-ms.openlocfilehash: 10f78167b9c3f557fa16061cfac8aad080519415
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 7a7a3669c5462adba3828bb1fd6c2fc9c4b3213c
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397124"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566160"
 ---
 # <a name="tutorial-enable-application-gateway-ingress-controller-add-on-for-an-existing-aks-cluster-with-an-existing-application-gateway-through-azure-cli-preview"></a>Zelfstudie: De invoegtoepassing Application Gateway Ingress Controller inschakelen voor een bestaand AKS cluster met een bestaande Application Gateway via Azure CLI (preview)
 
@@ -29,38 +29,25 @@ In deze zelfstudie leert u het volgende:
 > * Een voorbeeldtoepassing implementeren met behulp van AGIC voor inkomend verkeer op het AKS-cluster
 > * Controleren of de toepassing bereikbaar is via Application Gateway
 
-## <a name="prerequisites"></a>Vereisten
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+ - Voor deze zelfstudie is versie 2.0.4 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor deze zelfstudie de Azure CLI (versie 2.0.4 of hoger) uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+ - Registreer de functievlag *AKS-IngressApplicationGatewayAddon* met behulp van de opdracht [az feature register](https://docs.microsoft.com/cli/azure/feature#az-feature-register) zoals getoond in het volgende voorbeeld. Zolang de invoegtoepassing nog in preview is, hoeft u dit slechts één keer per abonnement te doen:
+     ```azurecli-interactive
+     az feature register --name AKS-IngressApplicationGatewayAddon --namespace microsoft.containerservice
+     ```
+    Het kan enkele minuten duren voordat de status Geregistreerd wordt weergegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](https://docs.microsoft.com/cli/azure/feature#az-feature-register):
+     ```azurecli-interactive
+     az feature list -o table --query "[?contains(name, 'microsoft.containerservice/AKS-IngressApplicationGatewayAddon')].{Name:name,State:properties.state}"
+     ```
 
-Registreer de functievlag *AKS-IngressApplicationGatewayAddon* met behulp van de opdracht [az feature register](/cli/azure/feature#az-feature-register) zoals getoond in het volgende voorbeeld. Zolang de invoegtoepassing nog in preview is, hoeft u dit slechts één keer per abonnement te doen:
-```azurecli-interactive
-az feature register --name AKS-IngressApplicationGatewayAddon --namespace microsoft.containerservice
-```
-
-Het kan enkele minuten duren voordat de status Geregistreerd wordt weergegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature#az-feature-register):
-```azurecli-interactive
-az feature list -o table --query "[?contains(name, 'microsoft.containerservice/AKS-IngressApplicationGatewayAddon')].{Name:name,State:properties.state}"
-```
-
-Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider Microsoft.ContainerService met behulp van de opdracht [az provider register](/cli/azure/provider#az-provider-register):
-```azurecli-interactive
-az provider register --namespace Microsoft.ContainerService
-```
-
-Zorg ervoor dat u de aks-preview extensie installeert/updatet voor deze zelfstudie. Gebruik de volgende Azure CLI-opdrachten
-```azurecli-interactive
-az extension add --name aks-preview
-az extension list
-```
-```azurecli-interactive
-az extension update --name aks-preview
-az extension list
-```
+ - Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider Microsoft.ContainerService met behulp van de opdracht [az provider register](https://docs.microsoft.com/cli/azure/provider#az-provider-register):
+    ```azurecli-interactive
+    az provider register --namespace Microsoft.ContainerService
+    ```
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
@@ -84,7 +71,7 @@ Zie [hier](/cli/azure/aks?view=azure-cli-latest#az-aks-create) referentiemateria
 
 ## <a name="deploy-a-new-application-gateway"></a>Een nieuwe Azure Application Gateway implementeren 
 
-U implementeert nu een nieuwe Application Gateway om te simuleren dat er een bestaande Application Gateway is die u wilt gebruiken om het verkeer naar uw AKS-cluster te verdelen, *myCluster*. De naam van de Application Gateway wordt *myApplicationGateway* , maar u moet eerst een openbare IP-resource maken, *myPublicIp* , en een nieuw virtueel netwerk met de naam *myVnet* en adresruimte 11.0.0.0/8, alsmede een subnetmet adresruimte 11.1.0.0/16 en de naam *mySubnet* , en uw Application Gateway implementeren in *mySubnet* met behulp van *myPublicIp*. 
+U implementeert nu een nieuwe Application Gateway om te simuleren dat er een bestaande Application Gateway is die u wilt gebruiken om het verkeer naar uw AKS-cluster te verdelen, *myCluster*. De naam van de Application Gateway wordt *myApplicationGateway*, maar u moet eerst een openbare IP-resource maken, *myPublicIp*, en een nieuw virtueel netwerk met de naam *myVnet* en adresruimte 11.0.0.0/8, alsmede een subnetmet adresruimte 11.1.0.0/16 en de naam *mySubnet*, en uw Application Gateway implementeren in *mySubnet* met behulp van *myPublicIp*. 
 
 Wanneer u een AKS-cluster en Application Gateway in afzonderlijke virtuele netwerken gebruikt, mogen de adresruimten van de twee virtuele netwerken elkaar niet overlappen. De standaardadresruimte waarin een AKS-cluster wordt geïmplementeerd is 10.0.0.0/8; daarom stellen we het adresvoorvoegsel van het virtuele Application Gateway-netwerk in op 11.0.0.0/8. 
 
@@ -99,7 +86,7 @@ az network application-gateway create -n myApplicationGateway -l canadacentral -
 
 ## <a name="enable-the-agic-add-on-in-existing-aks-cluster-with-existing-application-gateway"></a>De AGIC-invoegtoepassing inschakelen in bestaand AKS-cluster met bestaande Application Gateway 
 
-Nu schakelt u de AGIC-invoegtoepassing in het AKS-cluster in dat u hebt gemaakt, *myCluster* , en geeft u op dat de AGIC-invoegtoepassing de bestaande Application Gateway moet gebruiken die u hebt gemaakt, *myApplicationGateway*. Zorg ervoor dat u aan het begin van deze zelfstudie de aks-preview extensie hebt toegevoegd of bijgewerkt. 
+Nu schakelt u de AGIC-invoegtoepassing in het AKS-cluster in dat u hebt gemaakt, *myCluster*, en geeft u op dat de AGIC-invoegtoepassing de bestaande Application Gateway moet gebruiken die u hebt gemaakt, *myApplicationGateway*. Zorg ervoor dat u aan het begin van deze zelfstudie de aks-preview extensie hebt toegevoegd of bijgewerkt. 
 
 ```azurecli-interactive
 appgwId=$(az network application-gateway show -n myApplicationGateway -g myResourceGroup -o tsv --query "id") 

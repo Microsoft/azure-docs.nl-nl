@@ -2,18 +2,18 @@
 title: Overzicht van servers met Azure Arc
 description: Lees meer informatie over het gebruik van Azure Arc voor servers om servers te beheren die buiten Azure worden gehost alsof het Azure-resources zijn.
 keywords: azure automation, DSC, powershell, configuratie van gewenste status, updatebeheer, bijhouden van wijzigingen, inventaris, runbooks, python, grafisch, hybride
-ms.date: 10/15/2020
+ms.date: 11/04/2020
 ms.topic: overview
-ms.openlocfilehash: 01de579d2e1ea84c0e9da4ceafbd33dbad4c6e27
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: b9d38b2395d922e3e2a7daec654cd73de7267ee1
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92460849"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93360578"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Wat zijn servers met Azure Arc?
 
-Met Azure Arc voor servers kunt u uw Windows- en Linux-machines die buiten Azure worden gehost, beheren in uw bedrijfsnetwerk of via een andere cloudprovider, op dezelfde manier als systeemeigen Azure-VM's. Wanneer een hybride machine aan Azure wordt gekoppeld, wordt deze een gekoppelde machine en wordt deze behandeld als een resource in Azure. Elke gekoppelde machine heeft een resource-id, wordt beheerd als onderdeel van een resourcegroep binnen een abonnement en profiteert van standaard Azure-constructies zoals Azure Policy en tags toepassen. Serviceproviders die de on-premises infrastructuur van een klant beheren, kunnen met behulp van [Azure Lighthouse](../../lighthouse/how-to/manage-hybrid-infrastructure-arc.md) met Azure Arc hun hybride machines beheren in meerdere klantomgevingen, net als ze vandaag de dag met systeemeigen Azure-resources doen.
+Met servers met Azure Arc kunt u uw Windows- en Linux-machines die buiten Azure worden gehost, in uw bedrijfsnetwerk of via een andere cloudprovider, beheren op eenzelfde manier als systeemeigen Azure-VM's. Wanneer een hybride machine aan Azure wordt gekoppeld, wordt deze een gekoppelde machine en wordt deze behandeld als een resource in Azure. Elke gekoppelde machine heeft een resource-id, is opgenomen in een resourcegroep en profiteert van standaard Azure-constructies, zoals Azure Policy en het toepassen van tags. Serviceproviders die de on-premises infrastructuur van een klant beheren, kunnen met behulp van [Azure Lighthouse](../../lighthouse/how-to/manage-hybrid-infrastructure-arc.md) met Azure Arc hun hybride machines beheren in meerdere klantomgevingen, net als ze vandaag de dag met systeemeigen Azure-resources doen.
 
 Om deze ervaring te bieden voor hybride machines die buiten Azure worden gehost, moet de Azure Connected Machine-agent worden geïnstalleerd op elke machine die u aan Azure wilt koppelen. Deze agent levert geen andere functionaliteit en vervangt de [Log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md) van Azure niet. De Log Analytics-agent voor Windows en Linux is vereist wanneer u het besturingssysteem en workloads op de machine proactief wilt monitoren, deze wilt beheren met Automation-runbooks of oplossingen zoals Updatebeheer, of andere Azure-services zoals [Azure Security Center](../../security-center/security-center-introduction.md) wilt gebruiken.
 
@@ -29,7 +29,10 @@ Wanneer u uw machine verbindt met servers met Azure Arc, kunt u de volgende conf
 
 - Vereenvoudig de implementatie met andere Azure-services zoals Azure Automation [State Configuration](../../automation/automation-dsc-overview.md) en Azure Monitor Log Analytics-werkruimte door gebruik te maken van de ondersteunde [Azure VM-extensies](manage-vm-extensions.md) voor uw niet-Azure Windows- of Linux-machine. Dit omvat het uitvoeren van configuratie na de implementatie of software-installatie met behulp van de aangepaste scriptextensie.
 
-- Gebruik [Updatebeheer](../../automation/update-management/update-mgmt-overview.md) in Azure Automation om updates van het besturingssysteem voor uw Windows- en Linux-servers te beheren.
+- Gebruik [Updatebeheer](../../automation/update-management/update-mgmt-overview.md) in Azure Automation om updates van het besturingssysteem voor uw Windows- en Linux-servers te beheren
+
+    > [!NOTE]
+    > Op dit moment wordt het rechtstreeks inschakelen van Updatebeheer vanaf een server met Azure Arc niet ondersteund. Raadpleeg [Updatebeheer inschakelen vanuit uw Automation-account](../../automation/update-management/enable-from-automation-account.md) om te zien wat de vereisten zijn en hoe u updatebeheer voor uw server inschakelt.
 
 - Neem uw niet-Azure-servers op voor het detecteren van bedreigingen en proactief toezicht op potentiële beveiligingsrisico's met behulp van [Azure Security Center](../../security-center/security-center-introduction.md).
 
@@ -41,11 +44,11 @@ Aanmeldingsgegevens die zijn verzameld en opgeslagen in een Log Analytics-werkru
 
 Zie de pagina met [Azure-producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc) voor een definitieve lijst met ondersteunde regio's voor servers met Azure Arc.
 
-In de meeste gevallen moet de locatie die u selecteert bij het maken van het installatiescript de Azure-regio zijn die geografisch het dichtst bij de locatie van uw machine ligt. Data-at-rest wordt opgeslagen in de Azure-geografie die de door u opgegeven regio bevat. Dit kan ook van invloed zijn op welke regio u kiest als u gegevenslocatievereisten hebt. Als de Azure-regio waaraan uw machine is gekoppeld wordt beïnvloed door een storing, heeft dit geen invloed op de gekoppelde machine, maar beheerbewerkingen die gebruikmaken van Azure kunnen mogelijk niet worden voltooid. Als u meerdere locaties hebt die een geografisch redundante service ondersteunen, kunt u bij een regionale storing het beste de machines in elke locatie aan een andere Azure-regio koppelen.
+In de meeste gevallen moet de locatie die u selecteert bij het maken van het installatiescript de Azure-regio zijn die geografisch het dichtst bij de locatie van uw machine ligt. Data-at-rest wordt opgeslagen in de Azure-geografie die de door u opgegeven regio bevat. Dit kan ook van invloed zijn op welke regio u kiest als u gegevenslocatievereisten hebt. Als de Azure-regio waaraan uw machine is gekoppeld, wordt getroffen door een storing, heeft dit geen invloed op de gekoppelde machine, maar beheerbewerkingen die gebruikmaken van Azure kunnen mogelijk niet worden voltooid. Als u meerdere locaties hebt die een geografisch redundante service ondersteunen, kunt u bij een regionale storing het beste de machines in elke locatie aan een andere Azure-regio koppelen.
 
 ### <a name="agent-status"></a>Agenstatus
 
-De Connected Machine-agent stuurt elke 5 minuten een standaard heartbeat-bericht naar de service. Als de service de heartbeat-berichten van een machine niet meer ontvangt, wordt de machine als offline beschouwd en wordt de status in de portal na 15 tot 30 minuten automatisch gewijzigd in **Verbinding verbroken** . Wanneer er weer een heartbeat-bericht van de Connected Machine-agent wordt ontvangen, wordt de status van de machine automatisch gewijzigd in **Verbonden** .
+De Connected Machine-agent stuurt elke 5 minuten een standaard heartbeat-bericht naar de service. Als de service de heartbeat-berichten van een machine niet meer ontvangt, wordt de machine als offline beschouwd en wordt de status in de portal na 15 tot 30 minuten automatisch gewijzigd in **Verbinding verbroken**. Wanneer er weer een heartbeat-bericht van de Connected Machine-agent wordt ontvangen, wordt de status van de machine automatisch gewijzigd in **Verbonden**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

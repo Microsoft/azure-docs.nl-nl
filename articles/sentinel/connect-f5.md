@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/20/2020
 ms.author: yelevin
-ms.openlocfilehash: 63e20467750e9a4b0c85de33180d4fa51831e59b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 81a0f0e01827c48518f2eb1fba062e9e6536d9df
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85555421"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655694"
 ---
 # <a name="connect-f5-asm-to-azure-sentinel"></a>Verbinding maken met F5 ASM naar Azure Sentinel
 
@@ -32,7 +32,7 @@ In dit artikel wordt uitgelegd hoe u de F5 ASM Data Connector kunt gebruiken om 
    - Stel het **externe-opslag type** in op **CEF**.
    - Stel het **protocol** in op **TCP**.
    - Stel het **IP-adres** in op het IP-adres van de syslog-server.
-   - Stel het **poort nummer** in op **514**of de poort die u voor het gebruik van uw agent hebt ingesteld.
+   - Stel het **poort nummer** in op **514** of de poort die u voor het gebruik van uw agent hebt ingesteld.
    - U kunt de **maximale grootte van de query teken reeks** instellen op de grootte die u in uw agent hebt ingesteld.
 
 1. Zoek naar om het relevante schema in Log Analytics te gebruiken voor CEF-gebeurtenissen `CommonSecurityLog` .
@@ -43,6 +43,5 @@ In dit artikel wordt uitgelegd hoe u de F5 ASM Data Connector kunt gebruiken om 
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u met F5 ASM verbinding maakt met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
-- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats.md).
+- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](./tutorial-detect-threats-built-in.md).
 - [Gebruik werkmappen](tutorial-monitor-your-data.md) om uw gegevens te bewaken.
-

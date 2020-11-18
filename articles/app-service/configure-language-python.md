@@ -2,15 +2,15 @@
 title: Linux Python-apps configureren
 description: Meer informatie over het configureren van de Python-container waarin web-apps worden uitgevoerd, met behulp van de Azure-portal en de Azure CLI.
 ms.topic: quickstart
-ms.date: 10/06/2020
+ms.date: 11/06/2020
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 935baef209811146d0b60f4fc02986818fd103a7
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 9e0e9098959231d4283608e8191081ae2df6737a
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92743798"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94425912"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Een Linux Python-app voor Azure App Service configureren
 
@@ -22,11 +22,11 @@ In deze handleiding vindt u belangrijke concepten en instructies voor Python-ont
 
 U kunt de [Azure-portal](https://portal.azure.com) of de Azure CLI gebruiken voor het configureren:
 
-- **Azure-portal** : gebruik de pagina **Instellingen** > **Configuratie** zoals beschreven in [Een App Service-app configureren in de Azure-portal](configure-common.md).
+- **Azure-portal**: gebruik de pagina **Instellingen** > **Configuratie** zoals beschreven in [Een App Service-app configureren in de Azure-portal](configure-common.md).
 
-- **Azure CLI** : u hebt twee opties.
+- **Azure CLI**: u hebt twee opties.
 
-    - Voer opdrachten uit in de [Azure Cloud Shell](../cloud-shell/overview.md), die u kunt openen met behulp van de knop **Probeer het nu** in de rechterbovenhoek van codeblokken.
+    - Voer opdrachten uit in de [Azure Cloud Shell](../cloud-shell/overview.md).
     - Voer opdrachten lokaal uit door de nieuwste versie van de [Azure CLI](/cli/azure/install-azure-cli) te installeren en u vervolgens aan te melden bij Azure met [az login](/cli/azure/reference-index#az-login).
     
 > [!NOTE]
@@ -34,13 +34,13 @@ U kunt de [Azure-portal](https://portal.azure.com) of de Azure CLI gebruiken voo
 
 ## <a name="configure-python-version"></a>Python-versie configureren
 
-- **Azure-portal** : gebruik het tabblad **Algemene instellingen** op de pagina **Configuratie** , zoals wordt beschreven in [Algemene instellingen configureren](configure-common.md#configure-general-settings) voor Linux-containers.
+- **Azure-portal**: gebruik het tabblad **Algemene instellingen** op de pagina **Configuratie**, zoals wordt beschreven in [Algemene instellingen configureren](configure-common.md#configure-general-settings) voor Linux-containers.
 
-- **Azure CLI** :
+- **Azure CLI**:
 
     -  Geef de huidige Python-versie weer met [az webapp config show](/cli/azure/webapp/config#az_webapp_config_show):
     
-        ```azurecli-interactive
+        ```azurecli
         az webapp config show --resource-group <resource-group-name> --name <app-name> --query linuxFxVersion
         ```
         
@@ -48,13 +48,13 @@ U kunt de [Azure-portal](https://portal.azure.com) of de Azure CLI gebruiken voo
     
     - Stel de Python-versie in met [az webapp config set](/cli/azure/webapp/config#az_webapp_config_set)
         
-        ```azurecli-interactive
+        ```azurecli
         az webapp config set --resource-group <resource-group-name> --name <app-name> --linux-fx-version "PYTHON|3.7"
         ```
     
     - Geef alle Python-versies die worden ondersteund in Azure App Service weer met [az webapp list-runtimes](/cli/azure/webapp#az_webapp_list_runtimes):
     
-        ```azurecli-interactive
+        ```azurecli
         az webapp list-runtimes --linux | grep PYTHON
         ```
     
@@ -82,6 +82,8 @@ De instellingen `PRE_BUILD_COMMAND`, `POST_BUILD_COMMAND` en `DISABLE_COLLECTSTA
 
 Zie [Oryx-configuratie](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md) voor aanvullende instellingen voor het aanpassen van bouwautomatisering. 
 
+Zie [Toegang tot implementatielogboeken](#access-deployment-logs) voor toegang tot de build- en implementatielogboeken.
+
 Zie [hoe Python-apps worden gedetecteerd en gebouwd met Oryx](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/python.md) voor meer informatie over de manier waarop Python-apps door App Service worden uitgevoerd en gebouwd in Linux.
 
 > [!NOTE]
@@ -90,7 +92,7 @@ Zie [hoe Python-apps worden gedetecteerd en gebouwd met Oryx](https://github.com
 > Als een instelling met de naam `SCM_DO_BUILD_DURING_DEPLOYMENT` `true` of 1 bevat, wordt een Oryx-build geactiveerd tijdens de implementatie. De instelling is true (waar) wanneer u implementeert met behulp van Git, de Azure CLI-opdracht `az webapp up` en Visual Studio code.
 
 > [!NOTE]
-> Gebruik altijd relatieve paden in alle pre- en post-buildscripts, omdat de buildcontainer waarin Oryx wordt uitgevoerd, een andere container is dan de runtimecontainer waarin de app wordt uitgevoerd. Vertrouw er nooit op dat de app-projectmap exact binnen de container wordt geplaatst (bijvoorbeeld onder *site/wwwroot* ).
+> Gebruik altijd relatieve paden in alle pre- en post-buildscripts, omdat de buildcontainer waarin Oryx wordt uitgevoerd, een andere container is dan de runtimecontainer waarin de app wordt uitgevoerd. Vertrouw er nooit op dat de app-projectmap exact binnen de container wordt geplaatst (bijvoorbeeld onder *site/wwwroot*).
 
 ## <a name="production-settings-for-django-apps"></a>Productie-instellingen voor Django-apps
 
@@ -102,7 +104,7 @@ In de volgende tabel vindt u een beschrijving van de relevante productie-instell
 | --- | --- |
 | `SECRET_KEY` | Sla de waarde op in een App Service-instelling, zoals wordt beschreven op [App-instellingen openen als omgevingsvariabelen](#access-app-settings-as-environment-variables). U kunt ook [de waarde opslaan als een geheim in Azure Key Vault](/azure/key-vault/secrets/quick-create-python). |
 | `DEBUG` | Maak een `DEBUG`-instelling op App Service met de waarde 0 (false) en laad de waarde als een omgevingsvariabele. Maak in uw ontwikkelomgeving een `DEBUG`-omgevingsvariabele met de waarde 1 (niet waar). |
-| `ALLOWED_HOSTS` | In een productieomgeving is voor Django vereist dat u de URL van de app opneemt in de `ALLOWED_HOSTS`-matrix van *settings.py* . U kunt deze URL tijdens runtime ophalen met de code, `os.environ['WEBSITE_HOSTNAME']`. App Service stelt de omgevingsvariabele `WEBSITE_HOSTNAME` automatisch in op de URL van de app. |
+| `ALLOWED_HOSTS` | In een productieomgeving is voor Django vereist dat u de URL van de app opneemt in de `ALLOWED_HOSTS`-matrix van *settings.py*. U kunt deze URL tijdens runtime ophalen met de code, `os.environ['WEBSITE_HOSTNAME']`. App Service stelt de omgevingsvariabele `WEBSITE_HOSTNAME` automatisch in op de URL van de app. |
 | `DATABASES` | Definieer instellingen in App Service voor de databaseverbinding en laad deze als omgevingsvariabelen om de woordenlijst [`DATABASES`](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-DATABASES) in te vullen. U kunt de waarden (met name de gebruikersnaam en het wachtwoord) ook opslaan als [Azure Key Vault-geheimen](/azure/key-vault/secrets/quick-create-python). |
 
 ## <a name="container-characteristics"></a>Containerkenmerken
@@ -112,7 +114,7 @@ Python-apps die zijn geïmplementeerd in App Service worden uitgevoerd binnen ee
 Deze container heeft de volgende kenmerken:
 
 - Apps worden uitgevoerd met behulp van de [WSGI HTTP-server Gunicorn](https://gunicorn.org/), met de aanvullende argumenten `--bind=0.0.0.0 --timeout 600`.
-    - U kunt configuratie-instellingen voor Gunicorn opgeven via een *gunicorn.conf.py* -bestand in de hoofdmap van het project, zoals wordt beschreven in het [Gunicorn-configuratieoverzicht](https://docs.gunicorn.org/en/stable/configure.html#configuration-file) (docs.gunicorn.org). U kunt ook [de opstartopdracht aanpassen](#customize-startup-command).
+    - U kunt configuratie-instellingen voor Gunicorn opgeven via een *gunicorn.conf.py*-bestand in de hoofdmap van het project, zoals wordt beschreven in het [Gunicorn-configuratieoverzicht](https://docs.gunicorn.org/en/stable/configure.html#configuration-file) (docs.gunicorn.org). U kunt ook [de opstartopdracht aanpassen](#customize-startup-command).
 
     - Als u uw web-app wilt beveiligen tegen onbedoelde of opzettelijke DDOS-aanvallen, wordt Gunicorn uitgevoerd achter een omgekeerde Nginx-proxy, zoals beschreven in [Deploy Gunicorn](https://docs.gunicorn.org/en/latest/deploy.html) (Gunicorn implementeren, docs.gunicorn.org).
 
@@ -164,25 +166,29 @@ Als de hoofdmodule van de app in een ander bestand is opgenomen, gebruikt u een 
 
 ### <a name="default-behavior"></a>Standaardgedrag
 
-Als de App Service geen aangepaste opdracht, Django-app of Flask-app vindt, wordt er een standaard alleen-lezen-app uitgevoerd. Deze bevindt zich in de map _opt/defaultsite_ . De standaard-app wordt als volgt weergegeven:
+Als de App Service geen aangepaste opdracht, Django-app of Flask-app vindt, wordt er een standaard alleen-lezen-app uitgevoerd. Deze bevindt zich in de map _opt/defaultsite_ en wordt in de volgende afbeelding weergegeven.
 
-![Standaard App Service op Linux-webpagina](media/configure-language-python/default-python-app.png)
+Als u code hebt geïmplementeerd en nog steeds de standaard-app ziet, raadpleegt u [Probleemoplossing: de app wordt niet weergegeven](#app-doesnt-appear).
+
+[![Standaard App Service op Linux-webpagina](media/configure-language-python/default-python-app.png)](#app-doesnt-appear)
+
+Als u een geïmplementeerde app verwacht te zien in plaats van de standaard-app, raadpleegt u [Probleemoplossing: de app wordt niet weergegeven](#app-doesnt-appear).
 
 ## <a name="customize-startup-command"></a>Opstartopdracht aanpassen
 
-Zoals u eerder in dit artikel hebt kunnen lezen, kunt u configuratie-instellingen voor Gunicorn opgeven via een *gunicorn.conf.py* -bestand in de hoofdmap van het project, zoals wordt beschreven in het [Gunicorn-configuratieoverzicht](https://docs.gunicorn.org/en/stable/configure.html#configuration-file).
+Zoals u eerder in dit artikel hebt kunnen lezen, kunt u configuratie-instellingen voor Gunicorn opgeven via een *gunicorn.conf.py*-bestand in de hoofdmap van het project, zoals wordt beschreven in het [Gunicorn-configuratieoverzicht](https://docs.gunicorn.org/en/stable/configure.html#configuration-file).
 
-Als een dergelijke configuratie niet voldoende is, kunt u het opstartgedrag van de container beheren door een aangepaste opstartopdracht of meerdere opdrachten in een opstartopdrachtbestand op te geven. U kunt elke gewenste naam voor het opstartopdrachtbestand gebruiken, zoals *startup.sh* , *startup.cmd* , *startup.txt* , enzovoort.
+Als een dergelijke configuratie niet voldoende is, kunt u het opstartgedrag van de container beheren door een aangepaste opstartopdracht of meerdere opdrachten in een opstartopdrachtbestand op te geven. U kunt elke gewenste naam voor het opstartopdrachtbestand gebruiken, zoals *startup.sh*, *startup.cmd*, *startup.txt*, enzovoort.
 
 In alle opdrachten moeten relatieve paden naar de hoofdmap van het project worden gebruikt.
 
 Een opstartopdracht of opdrachtbestand opgeven:
 
-- **Azure-portal** : selecteer de **configuratiepagina** van de app en selecteer vervolgens **Algemene instellingen** . Geef de volledige tekst van de opstartopdracht of de naam van uw opstartopdrachtbestand op in het veld **Opstartopdracht** . Selecteer vervolgens **Opslaan** om de wijzigingen toe te passen. Zie [Algemene instellingen configureren](configure-common.md#configure-general-settings) voor Linux-containers.
+- **Azure-portal**: selecteer de **configuratiepagina** van de app en selecteer vervolgens **Algemene instellingen**. Geef de volledige tekst van de opstartopdracht of de naam van uw opstartopdrachtbestand op in het veld **Opstartopdracht**. Selecteer vervolgens **Opslaan** om de wijzigingen toe te passen. Zie [Algemene instellingen configureren](configure-common.md#configure-general-settings) voor Linux-containers.
 
-- **Azure CLI** : gebruik de opdracht [az webapp config set](/cli/azure/webapp/config#az_webapp_config_set) met de parameter `--startup-file` om de opstartopdracht of het opstartbestand in te stellen:
+- **Azure CLI**: gebruik de opdracht [az webapp config set](/cli/azure/webapp/config#az_webapp_config_set) met de parameter `--startup-file` om de opstartopdracht of het opstartbestand in te stellen:
 
-    ```azurecli-interactive
+    ```azurecli
     az webapp config set --resource-group <resource-group-name> --name <app-name> --startup-file "<custom-command>"
     ```
         
@@ -192,7 +198,7 @@ App Service negeert eventuele fouten die optreden tijdens de verwerking van een 
 
 ### <a name="example-startup-commands"></a>Voorbeelden van opstartopdrachten
 
-- **Gunicorn argumenten toegevoegd** : In het volgende voorbeeld wordt `--workers=4` toegevoegd aan een Gunicorn-opdrachtregel voor het starten van een Django-app: 
+- **Gunicorn argumenten toegevoegd**: In het volgende voorbeeld wordt `--workers=4` toegevoegd aan een Gunicorn-opdrachtregel voor het starten van een Django-app: 
 
     ```bash
     # <module-path> is the relative path to the folder that contains the module
@@ -202,7 +208,7 @@ App Service negeert eventuele fouten die optreden tijdens de verwerking van een 
 
     Zie voor meer informatie [Running Gunicorn](https://docs.gunicorn.org/en/stable/run.html) (Gunicorn uitvoeren, docs.gunicorn.org).
 
-- **Productielogboekregistratie inschakelen voor Django** : Voeg de argumenten `--access-logfile '-'` en `--error-logfile '-'` toe aan de opdrachtregel:
+- **Productielogboekregistratie inschakelen voor Django**: Voeg de argumenten `--access-logfile '-'` en `--error-logfile '-'` toe aan de opdrachtregel:
 
     ```bash    
     # '-' for the log files means stdout for --access-logfile and stderr for --error-logfile.
@@ -213,7 +219,7 @@ App Service negeert eventuele fouten die optreden tijdens de verwerking van een 
 
     Zie [Gunicorn logging](https://docs.gunicorn.org/en/stable/settings.html#logging) (Gunicorn-logboekregistratie, docs.gunicorn.org).
     
-- **Aangepaste Flask-hoofdmodule** : in App Service wordt standaard ervan uitgegaan dat de hoofdmodule van een Flask-app *application.py* of *app.py* is. Als uw hoofdmodule een andere naam heeft, moet u de opstartopdracht aanpassen. Als u bijvoorbeeld een Flask-app hebt waarvan de hoofdmodule *hello.py* is, en het Flask-app-object in dit bestand `myapp` heet, ziet de opdracht er als volgt uit:
+- **Aangepaste Flask-hoofdmodule**: in App Service wordt standaard ervan uitgegaan dat de hoofdmodule van een Flask-app *application.py* of *app.py* is. Als uw hoofdmodule een andere naam heeft, moet u de opstartopdracht aanpassen. Als u bijvoorbeeld een Flask-app hebt waarvan de hoofdmodule *hello.py* is, en het Flask-app-object in dit bestand `myapp` heet, ziet de opdracht er als volgt uit:
 
     ```bash
     gunicorn --bind=0.0.0.0 --timeout 600 hello:myapp
@@ -225,7 +231,7 @@ App Service negeert eventuele fouten die optreden tijdens de verwerking van een 
     gunicorn --bind=0.0.0.0 --timeout 600 --chdir website hello:myapp
     ```
     
-- **Een niet-Gunicorn-server gebruiken** : Als u een andere webserver wilt gebruiken, zoals [aiohttp](https://aiohttp.readthedocs.io/en/stable/web_quickstart.html), gebruikt u de juiste opdracht als opstartopdracht of in het opstartopdrachtbestand:
+- **Een niet-Gunicorn-server gebruiken**: Als u een andere webserver wilt gebruiken, zoals [aiohttp](https://aiohttp.readthedocs.io/en/stable/web_quickstart.html), gebruikt u de juiste opdracht als opstartopdracht of in het opstartopdrachtbestand:
 
     ```bash
     python3.7 -m aiohttp.web -H localhost -P 8080 package.module:init_func
@@ -258,33 +264,81 @@ Populaire webframeworks bieden toegang tot de `X-Forwarded-*`-informatie in het 
 
 Als u logboeken wilt openen via de Azure-portal, selecteert u **Bewaking** > **Logboekstream** in het menu aan de linkerkant van uw app.
 
+## <a name="access-deployment-logs"></a>Toegang tot implementatielogboeken
+
+Wanneer u uw code implementeert, voert App Service het buildproces uit dat eerder in de sectie [Automatisering van de build aanpassen](#customize-build-automation) is beschreven. Omdat de build in een eigen container wordt uitgevoerd, worden buildlogboeken afzonderlijk van de diagnostische logboeken van de app opgeslagen.
+
+Gebruik de volgende stappen om toegang te krijgen tot de implementatielogboeken:
+
+1. Selecteer voor uw web-app in Azure Portal **Implementatie** > **Implementatiecentrum (preview)** in het linkermenu.
+1. Selecteer op het tabblad **Logboeken** de **doorvoer-id** voor de meest recente doorvoer.
+1. Op de weergegeven pagina **Logboekdetails** selecteert u de koppeling **Logboeken weergeven...** die naast 'Oryx-build uitvoeren...' wordt weergegeven.
+
+Buildproblemen zoals onjuiste afhankelijkheden in *requirements.txt* en fouten in scripts van vóór of na de build-compilatie worden in deze logboeken weergegeven. Er worden ook fouten weergegeven als uw vereistenbestand niet exact de naam *requirements.txt* heeft of niet wordt weergegeven in de hoofdmap van uw project.
+
 ## <a name="open-ssh-session-in-browser"></a>SSH-sessie in de browser openen
 
 [!INCLUDE [Open SSH session in browser](../../includes/app-service-web-ssh-connect-builtin-no-h.md)]
 
+Wanneer u verbinding hebt gemaakt met de SSH-sessie, ziet u het bericht 'SSH CONNECTION ESTABLISHED' onderaan het venster. Als er fouten worden weergegeven zoals 'SSH_CONNECTION_CLOSED' of een bericht dat de container opnieuw wordt gestart, kan een dergelijke fout voorkomen dat de app-container wordt gestart. Zie [Probleemoplossing](#troubleshooting) voor stappen om mogelijke problemen te onderzoeken.
+
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-- **U ziet de standaard-app nadat de code van uw eigen app is toegepast.** De standaard-app wordt weergegeven omdat u de code van uw app niet hebt toegepast op App Service, of omdat App Service uw app-code niet heeft kunnen vinden en daarom de standaard-app heeft uitgevoerd.
+In het algemeen is de eerste stap bij probleemoplossing het gebruik van diagnostische gegevens van App Service:
+
+1. Selecteer voor uw web-app in Azure Portal **Problemen vaststellen en oplossen** vanuit het menu links.
+1. Selecteer **Beschikbaarheid en prestaties**.
+1. Bekijk de informatie in de opties **Toepassingslogboeken**, **Containercrash** en **Containerproblemen**, waar de meest voorkomende problemen worden weergegeven.
+
+Controleer vervolgens de [Implementatielogboeken](#access-deployment-logs) en de [app-logboeken](#access-diagnostic-logs) op eventuele foutberichten. In deze logboeken worden vaak specifieke problemen vastgesteld die de implementatie of het starten van apps kunnen voorkomen. De build kan bijvoorbeeld mislukken als uw bestand *requirement.txt* de verkeerde bestandsnaam heeft of niet aanwezig is in de hoofdmap van het project.
+
+In de volgende secties vindt u aanvullende richtlijnen voor specifieke problemen.
+
+- [De app wordt niet weergegeven - de standaard-app wordt weergegeven](#app-doesnt-appear)
+- [De app wordt niet weergegeven - bericht 'Service niet beschikbaar'](#service-unavailable)
+- [Kan setup.py of requirements.txt niet vinden](#could-not-find-setuppy-or-requirementstxt)
+- [Wachtwoorden worden niet weergegeven in SSH-sessies wanneer deze worden getypt](#other-issues)
+- [Opdrachten in de SSH-sessie worden afgekapt weergegeven](#other-issues)
+- [Statische assets worden niet weergegeven in een Django-app](#other-issues)
+- [Fatal: SSL connection is required](#other-issues)
+
+#### <a name="app-doesnt-appear"></a>De app wordt niet weergegeven
+
+- **U ziet de standaard-app nadat de code van uw eigen app is toegepast.** De [standaard-app](#default-behavior) wordt weergegeven omdat u de code van uw app niet hebt toegepast op App Service, of omdat App Service uw app-code niet heeft kunnen vinden en daarom de standaard-app heeft uitgevoerd.
 
     - Start de App Service opnieuw op en wacht 15-20 seconden voordat u de app opnieuw controleert.
     
-    - Zorg ervoor dat u App Service voor Linux gebruikt in plaats van een Windows-exemplaar. Voer vanuit de Azure CLI de opdracht `az webapp show --resource-group <resource-group-name> --name <app-name> --query kind` uit, waarbij u `<resource-group-name>` en `<app-service-name>` dienovereenkomstig vervangt. Als het goed is, ziet u `app,linux` als uitvoer. Als dit niet het geval is, maakt u de App Service opnieuw en kiest u Linux.
+    - Zorg ervoor dat u App Service voor Linux gebruikt in plaats van een Windows-exemplaar. Voer vanuit de Azure CLI de opdracht `az webapp show --resource-group <resource-group-name> --name <app-name> --query kind` uit, waarbij u `<resource-group-name>` en `<app-name>` dienovereenkomstig vervangt. Als het goed is, ziet u `app,linux` als uitvoer. Als dit niet het geval is, maakt u de App Service opnieuw en kiest u Linux.
     
-    - Gebruik SSH of de Kudu-console om rechtstreeks verbinding te maken met de App Service en controleer of uw bestanden in *site/wwwroot* staan. Als uw bestanden niet bestaan, controleert u uw implementatieproces en implementeert u de app opnieuw.
+    - Gebruik [SSH](#open-ssh-session-in-browser) om rechtstreeks verbinding te maken met de App Service-container en controleer of uw bestanden in *site/wwwroot* staan. Als uw bestanden niet bestaan, gebruikt u de volgende stappen:
+      1. Maak een app-instelling met de naam `SCM_DO_BUILD_DURING_DEPLOYMENT` met de waarde 1, implementeer uw code opnieuw, wacht enkele minuten en probeer vervolgens opnieuw toegang te krijgen tot de app. Zie [Een App Service-app configureren in Azure Portal](configure-common.md) voor meer informatie over het maken van app-instellingen.
+      1. Controleer uw implementatieproces, [controleer de implementatielogboeken](#access-deployment-logs), corrigeer eventuele fouten en implementeer de app opnieuw.
     
     - Als uw bestanden bestaan, heeft App Service uw specifieke opstartbestand niet kunnen identificeren. Controleer of de app is gestructureerd zoals App Service dat verwacht voor [Django](#django-app) of [Flask](#flask-app), of gebruik een [aangepaste opstartopdracht](#customize-startup-command).
 
-- **U ziet het bericht 'Service niet beschikbaar' in de browser.** De browser heeft een time-out gegenereerd in afwachting van een reactie van App Service. Dat betekent dat de App Service de Gunicorn-server heeft gestart, maar dat de argumenten die de app-code opgeeft onjuist zijn.
+- <a name="service-unavailable"></a>**U ziet het bericht 'Service niet beschikbaar' in de browser.** De browser heeft een time-out gegenereerd in afwachting van een reactie van App Service. Dat betekent dat App Service de Gunicorn-server heeft gestart, maar dat de app zelf niet is gestart. Dit probleem kan erop duiden dat de Gunicorn-argumenten onjuist zijn of dat er een fout is opgetreden in de app-code.
 
     - Vernieuw de browser, met name als u gebruikmaakt van de laagste prijscategorieën in uw App Service-plan. Het is bijvoorbeeld mogelijk dat het opstarten van de app langer duurt wanneer gebruik wordt gemaakt van de gratis prijscategorie en reageert na het vernieuwen van de browser.
 
     - Controleer of de app is gestructureerd zoals App Service dat verwacht voor [Django](#django-app) of [Flask](#flask-app), of gebruik een [aangepaste opstartopdracht](#customize-startup-command).
 
-    - Controleer de [logboekstream](#access-diagnostic-logs) op eventuele foutberichten.
+    - Controleer de [logboekstream van de app](#access-diagnostic-logs) op eventuele foutberichten. In de logboeken worden eventuele fouten in de app-code weergegeven.
+
+#### <a name="could-not-find-setuppy-or-requirementstxt"></a>Kan setup.py of requirements.txt niet vinden
 
 - **De logboekstream bevat 'Kan setup.py of requirements.txt niet vinden; PIP-installatie wordt niet uitgevoerd.'** : Het bestand *requirements.txt* is niet gevonden door het Oryx-bouwproces.
 
-    - Gebruik SSH of de Kudu-console om rechtstreeks verbinding te maken met App Service en controleer of *requirements.txt* zich direct onder *site/wwwroot* bevindt. Als dat niet het geval is, moet u ervoor zorgen dat het bestand in uw opslagplaats staat en deel uitmaakt van uw implementatie. Als het zich in een afzonderlijke map bevindt, verplaatst u het naar de hoofdmap.
+    - Maak verbinding met de container van de web-app via [SSH](#open-ssh-session-in-browser) en controleer of de naam *requirements.txt* correct is en zich direct onder *site/wwwroot* bevindt. Als dat niet het geval is, moet u ervoor zorgen dat het bestand in uw opslagplaats staat en deel uitmaakt van uw implementatie. Als het zich in een afzonderlijke map bevindt, verplaatst u het naar de hoofdmap.
+
+#### <a name="other-issues"></a>Overige problemen
+
+- **Wachtwoorden worden niet weergegeven in de SSH-sessie wanneer deze worden getypt**: Uit veiligheidsoverwegingen houdt de SSH-sessie uw wachtwoord verborgen terwijl u typt. De tekens worden echter vastgelegd, dus typ uw wachtwoord zoals gebruikelijk en druk op **Enter** wanneer u klaar bent.
+
+- **Opdrachten in de SSH-sessie worden afgekapt weergegeven**: De editor mag geen opdrachten met regelafbreking bevatten, maar ze moeten wel goed worden uitgevoerd.
+
+- **Statische assets worden niet weergegeven in een Django-app**: Zorg ervoor dat u de [WhiteNoise-module](http://whitenoise.evans.io/en/stable/django.html) hebt ingeschakeld
+
+- **U ziet het bericht 'Fatal: SSL connection is required'** : Controleer alle gebruikersnamen en wachtwoorden die worden gebruikt voor toegang tot bronnen (zoals databases) vanuit de app.
 
 ## <a name="next-steps"></a>Volgende stappen
 

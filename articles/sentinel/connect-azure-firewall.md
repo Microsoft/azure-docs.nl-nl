@@ -9,12 +9,12 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 08/30/2020
 ms.author: yelevin
-ms.openlocfilehash: 05a2869152def0fc9a44defaa21f0643d9fdbb08
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4dffaac329f1581d9082fd8ab2c314f52b1730ab
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504873"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656017"
 ---
 # <a name="connect-data-from-azure-firewall"></a>Verbinding maken met gegevens van Azure Firewall
 
@@ -26,7 +26,7 @@ Azure Firewall is een beheerde, cloudgebaseerde netwerkbeveiligingsservice die u
 
 U kunt Azure Firewall-logboeken verbinden met Azure-Sentinel, zodat u logboek gegevens in werkmappen weer geven, kunt gebruiken om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek te verbeteren.
 
-Meer informatie over het [bewaken van Azure firewall-logboeken](https://docs.microsoft.com/azure/firewall/tutorial-diagnostics).
+Meer informatie over het [bewaken van Azure firewall-logboeken](../firewall/firewall-diagnostics.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -42,7 +42,7 @@ Meer informatie over het [bewaken van Azure firewall-logboeken](https://docs.mic
 
     1. Selecteer de koppeling **Open Azure firewall resource >** .
 
-    1. Selecteer **Diagnostische instellingen**in het navigatie menu van **firewalls** .
+    1. Selecteer **Diagnostische instellingen** in het navigatie menu van **firewalls** .
 
     1. Selecteer **+ Diagnostische instelling toevoegen** onder aan de lijst.
 
@@ -50,7 +50,7 @@ Meer informatie over het [bewaken van Azure firewall-logboeken](https://docs.mic
     
     1. Schakel het selectie vakje **verzenden naar log Analytics** in. Er worden twee nieuwe velden weer gegeven. Kies het relevante **abonnement** en de **log Analytics werk ruimte** (waar Azure Sentinel zich bevindt).
 
-    1. Schakel de selectie vakjes in van de regel typen waarvan u de logboeken wilt opnemen. We raden **AzureFirewallApplicationRule** en **AzureFirewallNetworkRule**aan.
+    1. Schakel de selectie vakjes in van de regel typen waarvan u de logboeken wilt opnemen. We raden **AzureFirewallApplicationRule** en **AzureFirewallNetworkRule** aan.
 
     1. Selecteer **Opslaan** boven aan het scherm.
 

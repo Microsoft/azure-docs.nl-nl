@@ -11,12 +11,12 @@ ms.topic: troubleshooting
 ms.date: 04/23/2019
 ms.author: kenwith
 ms.reviewer: asteen, japere
-ms.openlocfilehash: b18eb0f8d57c06e82d243c10bf038a861bcf88d1
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: c28e79c9a6f8c489a97d360c4fe142d431b5ab5d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042707"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656544"
 ---
 # <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Problemen met Kerberos-beperkte overdrachts configuraties voor toepassings proxy oplossen
 
@@ -87,10 +87,10 @@ De corresponderende vermeldingen in het gebeurtenis logboek worden weer gegeven 
 
 ![Gebeurtenis 12027 van het gebeurtenis logboek van de toepassings proxy](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic5.png)
 
-1. Gebruik een **A** -record in uw interne DNS voor het adres van de toepassing, niet een **CNAME** .
+1. Gebruik een **A** -record in uw interne DNS voor het adres van de toepassing, niet een **CNAME**.
 1. Bevestig dat de host van de connector het recht heeft om te delegeren aan de SPN van het aangewezen doel account. Bevestig dat **een verificatie protocol gebruiken** is geselecteerd. Zie het artikel over SSO- [configuratie](application-proxy-configure-single-sign-on-with-kcd.md)voor meer informatie.
 1. Controleer of er slechts één exemplaar van de SPN bestaat in azure AD. Probleem `setspn -x` vanaf een opdracht prompt op een domeinlid die lid is van een domein.
-1. Controleer of er een domein beleid wordt afgedwongen waardoor de [maximale grootte van de uitgegeven Kerberos-tokens](https://blogs.technet.microsoft.com/askds/2012/09/12/maxtokensize-and-windows-8-and-windows-server-2012/)wordt beperkt. Met dit beleid wordt voor komen dat de connector een token krijgt als dit buitensporig te groot is.
+1. Controleer of er een domein beleid wordt afgedwongen waardoor de [maximale grootte van de uitgegeven Kerberos-tokens](/archive/blogs/askds/maxtokensize-and-windows-8-and-windows-server-2012)wordt beperkt. Met dit beleid wordt voor komen dat de connector een token krijgt als dit buitensporig te groot is.
 
 Een netwerk tracering die de uitwisselingen tussen de connector-host en een domein KDC vastlegt, is de volgende beste stap om meer details op laag niveau te verkrijgen over de problemen. Zie het [artikel grondige problemen oplossen](https://aka.ms/proxytshootpaper)voor meer informatie.
 
@@ -102,20 +102,20 @@ De gebruiker van het Kerberos-ticket dat door de connector wordt verschaft. In d
 
 1. Door de interne URL van de toepassing te gebruiken die in de portal is gedefinieerd, controleert u of de toepassing rechtstreeks toegankelijk is vanuit de browser op de host van de connector. U kunt zich vervolgens aanmelden. Meer informatie vindt u op de pagina connector **problemen oplossen** .
 1. Controleer nog steeds op de connector-host of de verificatie tussen de browser en de toepassing Kerberos gebruikt. Ga in dat geval op een van de volgende manieren te werk:
-1. Voer DevTools ( **F12** ) uit in Internet Explorer of gebruik [Fiddler](https://blogs.msdn.microsoft.com/crminthefield/2012/10/10/using-fiddler-to-check-for-kerberos-auth/) van de host van de connector. Ga naar de toepassing met behulp van de interne URL. Inspecteer de aangeboden WWW-autorisatie headers die worden geretourneerd in het antwoord van de toepassing om er zeker van te zijn dat Negotiate of Kerberos aanwezig is.
+1. Voer DevTools (**F12**) uit in Internet Explorer of gebruik [Fiddler](https://blogs.msdn.microsoft.com/crminthefield/2012/10/10/using-fiddler-to-check-for-kerberos-auth/) van de host van de connector. Ga naar de toepassing met behulp van de interne URL. Inspecteer de aangeboden WWW-autorisatie headers die worden geretourneerd in het antwoord van de toepassing om er zeker van te zijn dat Negotiate of Kerberos aanwezig is.
 
-   - De volgende Kerberos-blob die in het antwoord van de browser naar de toepassing wordt geretourneerd, begint met **YII** . Deze letters geven aan dat Kerberos actief is. Micro soft NT LAN Manager (NTLM), aan de andere kant, begint altijd met **TlRMTVNTUAAB** , die een NTLM-beveiligings provider (NTLMSSP) leest bij het decoderen van base64. Als u **TlRMTVNTUAAB** ziet aan het begin van de blob, is Kerberos niet beschikbaar. Als u **TlRMTVNTUAAB** niet ziet, is Kerberos waarschijnlijk beschikbaar.
+   - De volgende Kerberos-blob die in het antwoord van de browser naar de toepassing wordt geretourneerd, begint met **YII**. Deze letters geven aan dat Kerberos actief is. Micro soft NT LAN Manager (NTLM), aan de andere kant, begint altijd met **TlRMTVNTUAAB**, die een NTLM-beveiligings provider (NTLMSSP) leest bij het decoderen van base64. Als u **TlRMTVNTUAAB** ziet aan het begin van de blob, is Kerberos niet beschikbaar. Als u **TlRMTVNTUAAB** niet ziet, is Kerberos waarschijnlijk beschikbaar.
 
       > [!NOTE]
       > Als u Fiddler gebruikt, moet u voor deze methode de uitgebreide beveiliging tijdelijk uitschakelen voor de configuratie van de toepassing in IIS.
 
       ![Venster browser netwerk inspectie](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic6.png)
 
-   - De BLOB in deze afbeelding begint niet met **TIRMTVNTUAAB** . In dit voor beeld is Kerberos beschikbaar en wordt de Kerberos-BLOB niet gestart met **YII** .
+   - De BLOB in deze afbeelding begint niet met **TIRMTVNTUAAB**. In dit voor beeld is Kerberos beschikbaar en wordt de Kerberos-BLOB niet gestart met **YII**.
 
 1. Verwijder tijdelijk NTLM van de lijst providers op de IIS-site. Open de app rechtstreeks vanuit Internet Explorer op de connector-host. NTLM bevindt zich niet meer in de lijst met providers. U kunt de toepassing openen door alleen Kerberos te gebruiken. Als de toegang mislukt, is er mogelijk een probleem met de configuratie van de toepassing. Kerberos-verificatie werkt niet.
 
-   - Als Kerberos niet beschikbaar is, controleert u de verificatie-instellingen van de toepassing in IIS. Zorg ervoor dat **Negotiate** bovenaan wordt weer gegeven, met NTLM alleen. Als u **niet onderhandelen** , **Kerberos of Negotiate** of **PKU2U** ziet, moet u alleen door gaan als Kerberos functioneel is.
+   - Als Kerberos niet beschikbaar is, controleert u de verificatie-instellingen van de toepassing in IIS. Zorg ervoor dat **Negotiate** bovenaan wordt weer gegeven, met NTLM alleen. Als u **niet onderhandelen**, **Kerberos of Negotiate** of **PKU2U** ziet, moet u alleen door gaan als Kerberos functioneel is.
 
      ![Windows-verificatie providers](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic7.png)
 
@@ -138,11 +138,11 @@ De gebruiker van het Kerberos-ticket dat door de connector wordt verschaft. In d
 
       ![SPN-configuratie in de Azure Portal](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic11.png)
 
-   - Ga naar IIS en selecteer de optie **Configuratie-editor** voor de toepassing. Navigeer naar **System. webserver/Security/Authentication/windowsAuthentication** . Zorg ervoor dat de waarde **UseAppPoolCredentials** is ingesteld op **True** .
+   - Ga naar IIS en selecteer de optie **Configuratie-editor** voor de toepassing. Navigeer naar **System. webserver/Security/Authentication/windowsAuthentication**. Zorg ervoor dat de waarde **UseAppPoolCredentials** is ingesteld op **True**.
 
       ![Optie voor de referentie van de IIS-configuratie app-groepen](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic12.png)
 
-      Wijzig deze waarde in **True** . Verwijder alle Kerberos-tickets in de cache van de back-endserver door de volgende opdracht uit te voeren:
+      Wijzig deze waarde in **True**. Verwijder alle Kerberos-tickets in de cache van de back-endserver door de volgende opdracht uit te voeren:
 
       ```powershell
       Get-WmiObject Win32_LogonSession | Where-Object {$_.AuthenticationPackage -ne 'NTLM'} | ForEach-Object {klist.exe purge -li ([Convert]::ToString($_.LogonId, 16))}
@@ -152,7 +152,7 @@ Zie [de Kerberos-client ticket cache voor alle sessies leegmaken](https://galler
 
 Als u de kernelmodus hebt ingeschakeld, worden de prestaties van Kerberos-bewerkingen verbeterd. Het is ook mogelijk dat het ticket voor de aangevraagde service wordt ontsleuteld met behulp van het computer account. Dit account wordt ook wel het lokale systeem genoemd. Stel deze waarde in op **True** om KCD te verbreekt wanneer de toepassing wordt gehost op meer dan één server in een farm.
 
-- Schakel als extra controle ook **uitgebreide** beveiliging uit. In sommige scenario's is **uitgebreide** beveiliging KCD wanneer het is ingeschakeld in specifieke configuraties. In dergelijke gevallen is een toepassing gepubliceerd als een submap van de standaard website. Deze toepassing is alleen geconfigureerd voor anonieme verificatie. Alle dialoog vensters worden grijs weer gegeven, waarmee wordt voorgesteld dat onderliggende objecten geen actieve instellingen overnemen. Als dat mogelijk is, wordt u aangeraden deze waarde te testen, maar niet te verg eten om deze in te **scha kelen** .
+- Schakel als extra controle ook **uitgebreide** beveiliging uit. In sommige scenario's is **uitgebreide** beveiliging KCD wanneer het is ingeschakeld in specifieke configuraties. In dergelijke gevallen is een toepassing gepubliceerd als een submap van de standaard website. Deze toepassing is alleen geconfigureerd voor anonieme verificatie. Alle dialoog vensters worden grijs weer gegeven, waarmee wordt voorgesteld dat onderliggende objecten geen actieve instellingen overnemen. Als dat mogelijk is, wordt u aangeraden deze waarde te testen, maar niet te verg eten om deze in te **scha kelen**.
 
   Met deze extra controle wordt u op schema gezet om uw gepubliceerde toepassing te gebruiken. U kunt extra connectors instellen die ook zijn geconfigureerd voor delegeren. Lees voor meer informatie de uitgebreide technische [procedure voor het oplossen van problemen met de Azure-AD-toepassingsproxy](https://aka.ms/proxytshootpaper).
 

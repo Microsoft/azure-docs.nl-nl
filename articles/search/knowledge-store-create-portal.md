@@ -8,12 +8,12 @@ manager: nitinme
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/30/2020
-ms.openlocfilehash: 75cacf0dc899f47d55c44e5262b23bae73bfa7ab
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: df6da5ce1dcd5213b3e54abe54c087bfdd8480c5
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88924364"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94379970"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-knowledge-store-in-the-azure-portal"></a>Quickstart: Een Azure Cognitive Search-kennisarchief maken in het Azure-portal
 
@@ -21,7 +21,7 @@ Kennisarchief is een functie van Azure Cognitive Search die uitvoer van een pijp
 
 Een pijplijn aanvaardt ongestructureerde tekst- en afbeeldingsinhoud, past door Cognitive Services aangedreven AI (zoals OCR en natuurlijke taalverwerking) toe en voert nieuwe structuren en informatie uit die niet eerder bestonden. Een van de fysieke artefacten die een pijplijn maakt is een [kennisarchief](knowledge-store-concept-intro.md), dat u kunt openen via tools om inhoud te analyseren en doorzoeken.
 
-In deze quickstart combineert u services en gegevens in de Azure-cloud om een kennisarchief te maken. Zodra alles gereed is, voert u de wizard **Gegevens importeren** uit in het portal om alles samen op te halen. Het eindresultaat is oorspronkelijke tekstinhoud plus door AI gegenereerde inhoud die u kunt bekijken in het portal ([Storage Explorer](knowledge-store-view-storage-explorer.md)).
+In deze quickstart combineert u services en gegevens in de Azure-cloud om een kennisarchief te maken. Zodra alles gereed is, voert u de wizard **Gegevens importeren** uit in het portal om alles samen op te halen. Het eindresultaat is oorspronkelijke tekstinhoud plus door AI gegenereerde inhoud die u kunt bekijken in de portal ([Storage Explorer](knowledge-store-view-storage-explorer.md)).
 
 ## <a name="prerequisites"></a>Vereisten
 

@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: c1edbaf394a4abd36e47843a6f419eb9d62f08d7
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: b2497a49703ab675bde50c7845995c92de32f376
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340305"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657173"
 ---
 # <a name="add-storage-targets"></a>Opslagdoelen toevoegen
 
@@ -103,9 +103,9 @@ Stappen voor het toevoegen van de Azure-rollen:
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
-
 ### <a name="prerequisite-storage-account-access"></a>Vereiste: toegang tot het opslag account
+
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 Voordat u een Blob-opslag doel toevoegt, controleert u of de cache de juiste rollen heeft voor toegang tot het opslag account en of de firewall instellingen het maken van het opslag doel toestaan.
 
@@ -217,7 +217,7 @@ Wanneer u klaar bent, klikt u op **OK** om het opslag doel toe te voegen.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 Gebruik de Azure CLI [-opdracht AZ HPC-cache NFS-Storage-doel add](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target#ext-hpc-cache-az-hpc-cache-nfs-storage-target-add) om het opslag doel te maken.
 
@@ -301,7 +301,7 @@ Lees [opslag doelen bewerken](hpc-cache-edit-storage.md) voor meer informatie.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 Gebruik de optie [AZ HPC-cache Storage doel List](/cli/azure/ext/hpc-cache/hpc-cache/storage-target#ext-hpc-cache-az-hpc-cache-storage-target-list) om de bestaande opslag doelen voor een cache weer te geven. Geef de naam van de cache en de resource groep op (tenzij u deze wereld wijd hebt ingesteld).
 

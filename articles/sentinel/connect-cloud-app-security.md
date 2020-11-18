@@ -1,6 +1,6 @@
 ---
 title: Cloud App Security gegevens verbinden met Azure Sentinel | Microsoft Docs
-description: Meer informatie over het gebruik van de Microsoft Cloud App Security-connector (MCAS) voor het streamen van waarschuwingen en Cloud Discovery logboeken van MCAS naar Azure Sentinel. 
+description: Meer informatie over het gebruik van de Microsoft Cloud App Security-connector (MCAS) voor het streamen van waarschuwingen en Cloud Discovery logboeken van MCAS naar Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,22 +14,22 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/24/2020
 ms.author: yelevin
-ms.openlocfilehash: 5c67f517ffd3704644fbe8041f3ac1e7b0d1f09c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9827e93f793ef47a835aa0a5fb2005e2830a0824
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904551"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655711"
 ---
 # <a name="connect-data-from-microsoft-cloud-app-security"></a>Verbinding maken met gegevens van Microsoft Cloud App Security 
 
-Met de [Microsoft Cloud app Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) -connector (MCAS) kunt u waarschuwingen streamen en [Cloud Discovery logboeken](https://docs.microsoft.com/cloud-app-security/tutorial-shadow-it) van MCAS naar Azure Sentinel. Hiermee krijgt u inzicht in uw Cloud-apps, kunt u geavanceerde analyses verkrijgen om Cyber dreigingen te identificeren en te bestrijden en te bepalen hoe uw gegevens worden verplaatst.
+Met de [Microsoft Cloud app Security](/cloud-app-security/what-is-cloud-app-security) -connector (MCAS) kunt u waarschuwingen streamen en [Cloud Discovery logboeken](/cloud-app-security/tutorial-shadow-it) van MCAS naar Azure Sentinel. Hiermee krijgt u inzicht in uw Cloud-apps, kunt u geavanceerde analyses verkrijgen om Cyber dreigingen te identificeren en te bestrijden en te bepalen hoe uw gegevens worden verplaatst.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Uw gebruiker moet lees-en schrijf machtigingen hebben voor de werk ruimte.
 - Uw gebruiker moet over de machtigingen globale beheerder of beveiligings beheerder beschikken voor de Tenant van de werk ruimte.
-- Als u Cloud Discovery-Logboeken in azure Sentinel wilt streamen, [schakelt u Azure Sentinel in als uw Siem in Microsoft Cloud app Security](https://aka.ms/AzureSentinelMCAS).
+- Als u Cloud Discovery-Logboeken in azure Sentinel wilt streamen, [schakelt u Azure Sentinel in als uw Siem in Microsoft Cloud app Security](/cloud-app-security/siem-sentinel).
 
 > [!IMPORTANT]
 > Opname van Cloud Discovery Logboeken is momenteel beschikbaar als open bare preview.
@@ -38,7 +38,7 @@ Met de [Microsoft Cloud app Security](https://docs.microsoft.com/cloud-app-secur
  
 ## <a name="connect-to-cloud-app-security"></a>Verbinding maken met Cloud App Security
 
-Als u Cloud App Security al hebt, controleert u of deze is [ingeschakeld in uw netwerk](https://docs.microsoft.com/cloud-app-security/getting-started-with-cloud-app-security).
+Als u Cloud App Security al hebt, controleert u of deze is [ingeschakeld in uw netwerk](/cloud-app-security/getting-started-with-cloud-app-security).
 Als Cloud App Security is geïmplementeerd en opnamet van uw gegevens, kunnen de waarschuwings gegevens eenvoudig worden gestreamd naar Azure Sentinel.
 
 
@@ -48,7 +48,7 @@ Als Cloud App Security is geïmplementeerd en opnamet van uw gegevens, kunnen de
 
 1. Klik op **wijzigingen Toep assen**.
 
-1. U kunt selecteren of u de waarschuwingen van Azure Defender wilt ontvangen van Azure Security Center om automatisch incidenten te genereren in azure Sentinel. Schakel onder **incidenten maken**de optie **ingeschakeld** in om de standaard analyse regel in te scha kelen waarmee automatisch incidenten worden gemaakt op basis van waarschuwingen. U kunt deze regel vervolgens onder **analyse**bewerken op het tabblad  **actieve regels** .
+1. U kunt selecteren of u de waarschuwingen van Azure Defender wilt ontvangen van Azure Security Center om automatisch incidenten te genereren in azure Sentinel. Schakel onder **incidenten maken** de optie **ingeschakeld** in om de standaard analyse regel in te scha kelen waarmee automatisch incidenten worden gemaakt op basis van waarschuwingen. U kunt deze regel vervolgens onder **analyse** bewerken op het tabblad  **actieve regels** .
 
 1. Als u het relevante schema in Log Analytics voor Cloud App Security-waarschuwingen wilt gebruiken, typt u `SecurityAlert` in het query venster. Typ voor het Cloud Discovery logboeken schema `McasShadowItReporting` .
 
@@ -60,4 +60,4 @@ Als Cloud App Security is geïmplementeerd en opnamet van uw gegevens, kunnen de
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u Microsoft Cloud App Security kunt verbinden met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
-- Ga aan de slag met het detecteren van bedreigingen met Azure Sentinel, met behulp [van ingebouwde](tutorial-detect-threats.md) of [aangepaste](tutorial-detect-threats-custom.md) regels.
+- Ga aan de slag met het detecteren van bedreigingen met Azure Sentinel, met behulp [van ingebouwde](./tutorial-detect-threats-built-in.md) of [aangepaste](tutorial-detect-threats-custom.md) regels.

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 97873c9f59dc0d99293d2b1ebaf87af309dbcf47
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 432104c7e2cb9486dfb47a793ae73829d8705b60
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92208291"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655813"
 ---
 # <a name="connect-data-sources"></a>Verbinding maken met gegevensbronnen
 
@@ -137,17 +137,17 @@ U kunt de agent ook hand matig implementeren op een bestaande Azure-VM, op een v
 | AzureActivity | Overzicht van [Azure activiteit](connect-azure-activity.md) en [activiteiten logboeken](../azure-monitor/platform/platform-logs-overview.md) verbinden| &#10003; | |
 | Audit logs bevat | [Verbinding maken met Azure AD](connect-azure-active-directory.md)  | &#10003; | |
 | SigninLogs | [Verbinding maken met Azure AD](connect-azure-active-directory.md)  | &#10003; | |
-| AzureFirewall |[Azure Diagnostics](../firewall/tutorial-diagnostics.md) | &#10003; | |
-| InformationProtectionLogs_CL  | [Azure Information Protection rapporten](https://docs.microsoft.com/azure/information-protection/reports-aip)<br>[Verbinding maken met Azure Information Protection](connect-azure-information-protection.md)  | &#10003; | Dit maakt gewoonlijk gebruik van de functie **InformationProtectionEvents** naast het gegevens type. Zie [de rapporten wijzigen en aangepaste query's maken](https://docs.microsoft.com/azure/information-protection/reports-aip#how-to-modify-the-reports-and-create-custom-queries) voor meer informatie|
+| AzureFirewall |[Azure Diagnostics](../firewall/firewall-diagnostics.md) | &#10003; | |
+| InformationProtectionLogs_CL  | [Azure Information Protection rapporten](/azure/information-protection/reports-aip)<br>[Verbinding maken met Azure Information Protection](connect-azure-information-protection.md)  | &#10003; | Dit maakt gewoonlijk gebruik van de functie **InformationProtectionEvents** naast het gegevens type. Zie [de rapporten wijzigen en aangepaste query's maken](/azure/information-protection/reports-aip#how-to-modify-the-reports-and-create-custom-queries) voor meer informatie|
 | AzureNetworkAnalytics_CL  | Verkeers [analyse](../network-watcher/traffic-analytics.md) van [Traffic analytic-schema](../network-watcher/traffic-analytics.md)  | | |
 | CommonSecurityLog  | [Verbinding maken met CEF](connect-common-event-format.md)  | &#10003; | |
 | OfficeActivity | [Verbinding maken met Office 365](connect-office-365.md) | &#10003; | |
-| SecurityEvents | [Verbinding maken met Windows-beveiligingsgebeurtenissen](connect-windows-security-events.md)  | &#10003; | Zie voor de werkmappen met Inveilige protocollen [onveilige protocollen werkmap instellen](/azure/sentinel/quickstart-get-visibility#use-built-in-workbooks)  |
+| SecurityEvents | [Verbinding maken met Windows-beveiligingsgebeurtenissen](connect-windows-security-events.md)  | &#10003; | Zie voor de werkmappen met Inveilige protocollen [onveilige protocollen werkmap instellen](./quickstart-get-visibility.md#use-built-in-workbooks)  |
 | Syslog | [Verbinding maken met Syslog](connect-syslog.md) | &#10003; | |
-| Micro soft Web Application firewall (WAF)-(AzureDiagnostics) |[Verbinding maken met micro soft Web Application firewall](connect-microsoft-waf.md) | &#10003; | |
+| Micro soft Web Application firewall (WAF)-(AzureDiagnostics) |[Verbinding maken met micro soft Web Application firewall](./connect-azure-waf.md) | &#10003; | |
 | SymantecICDx_CL | [Symantec verbinden](connect-symantec.md) | &#10003; | |
 | ThreatIntelligenceIndicator  | [Verbinding maken met bedreigingsinformatie](connect-threat-intelligence.md)  | &#10003; | |
-| VMConnection <br> ServiceMapComputer_CL<br> ServiceMapProcess_CL|  [Toewijzing van Azure Monitor-service](../azure-monitor/insights/service-map.md)<br>[Voor bereiding op Azure Monitor VM Insights](../azure-monitor/insights/vminsights-onboard.md) <br> [Azure Monitor VM Insights inschakelen](../azure-monitor/insights/vminsights-enable-overview.md) <br> [Eén virtuele machine on-boarding gebruiken](../azure-monitor/insights/vminsights-enable-single-vm.md)<br>  [On-boarding gebruiken via het beleid](../azure-monitor/insights/vminsights-enable-at-scale-policy.md)| &#10007; | VM Insights-werkmap  |
+| VMConnection <br> ServiceMapComputer_CL<br> ServiceMapProcess_CL|  [Toewijzing van Azure Monitor-service](../azure-monitor/insights/service-map.md)<br>[Voor bereiding op Azure Monitor VM Insights](../azure-monitor/insights/vminsights-enable-overview.md) <br> [Azure Monitor VM Insights inschakelen](../azure-monitor/insights/vminsights-enable-overview.md) <br> [Eén virtuele machine on-boarding gebruiken](../azure-monitor/insights/vminsights-enable-portal.md)<br>  [On-boarding gebruiken via het beleid](../azure-monitor/insights/vminsights-enable-policy.md)| &#10007; | VM Insights-werkmap  |
 | DnsEvents | [DNS verbinden](connect-dns.md) | &#10003; | |
 | W3CIISLog | [IIS-logboeken verbinden](../azure-monitor/platform/data-sources-iis-logs.md)  | &#10007; | |
 | WireData | [Bedradings gegevens verbinden](../azure-monitor/insights/wire-data.md) | &#10007; | |
@@ -157,7 +157,7 @@ U kunt de agent ook hand matig implementeren op een bestaande Azure-VM, op een v
 | ASC SecurityAlert  | [Azure Defender-waarschuwingen verbinden](connect-azure-security-center.md) vanuit Azure Security Center  | &#10003; | |
 | MCAS SecurityAlert  | [Microsoft Cloud App Security verbinden](connect-cloud-app-security.md)  | &#10003; | |
 | SecurityAlert | | | |
-| Voor-en naactiviteit (gebeurtenis) | [Verbinding maken](https://azure.microsoft.com/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center)<br> [Windows-gebeurtenissen verbinden](../azure-monitor/platform/data-sources-windows-events.md) <br> [De ophaal-parser ophalen](https://github.com/Azure/Azure-Sentinel/blob/master/Parsers/Sysmon/Sysmon-v10.42-Parser.txt)| &#10007; | De garbagecollection-verzameling wordt niet standaard op virtuele machines geïnstalleerd. [Zie voor](https://docs.microsoft.com/sysinternals/downloads/sysmon)meer informatie over het installeren van de opschoon agent. |
+| Voor-en naactiviteit (gebeurtenis) | [Verbinding maken](https://azure.microsoft.com/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center)<br> [Windows-gebeurtenissen verbinden](../azure-monitor/platform/data-sources-windows-events.md) <br> [De ophaal-parser ophalen](https://github.com/Azure/Azure-Sentinel/blob/master/Parsers/Sysmon/Sysmon-v10.42-Parser.txt)| &#10007; | De garbagecollection-verzameling wordt niet standaard op virtuele machines geïnstalleerd. [Zie voor](/sysinternals/downloads/sysmon)meer informatie over het installeren van de opschoon agent. |
 | ConfigurationData  | [VM-inventarisatie automatiseren](../automation/change-tracking/overview.md)| &#10007; | |
 | ConfigurationChange  | [VM-tracking automatiseren](../automation/change-tracking/overview.md) | &#10007; | |
 | F5 BIG-IP | [Verbinding maken met F5 BIG-IP](https://devcentral.f5.com/s/articles/Integrating-the-F5-BIGIP-with-Azure-Sentinel)  | &#10007; | |

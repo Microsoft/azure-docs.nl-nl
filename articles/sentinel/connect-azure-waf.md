@@ -9,16 +9,16 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: yelevin
-ms.openlocfilehash: 8f21b415ef36442d6ac1aac518cd1327f70b8927
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c554f3582e67622a5a1739c9e410328c902d491b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88263986"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655898"
 ---
 # <a name="connect-data-from-azure-web-application-firewall-waf"></a>Gegevens verbinden vanuit Azure Web Application firewall (WAF)
 
-Webtoepassingen zijn in toenemende mate het doel van aanvallen die gebruikmaken van algemeen bekende beveiligingsproblemen. Azure Web Application firewall (WAF) biedt gecentraliseerde beveiliging van uw webtoepassingen tegen veelvoorkomende aanvallen en bedreigingen, zoals code injectie en cross-site scripting. Azure WAF kan worden geïmplementeerd op de [Azure-toepassing gateway](https://docs.microsoft.com/azure/web-application-firewall/ag/ag-overview) service, de [Azure front-deur](https://docs.microsoft.com/azure/web-application-firewall/afds/afds-overview) service en via een [Azure Content Delivery Network (CDN)](https://docs.microsoft.com/azure/web-application-firewall/cdn/cdn-overview) WAF-beleid (dit is momenteel beschikbaar in de open bare preview).
+Webtoepassingen zijn in toenemende mate het doel van aanvallen die gebruikmaken van algemeen bekende beveiligingsproblemen. Azure Web Application firewall (WAF) biedt gecentraliseerde beveiliging van uw webtoepassingen tegen veelvoorkomende aanvallen en bedreigingen, zoals code injectie en cross-site scripting. Azure WAF kan worden geïmplementeerd op de [Azure-toepassing gateway](../web-application-firewall/ag/ag-overview.md) service, de [Azure front-deur](../web-application-firewall/afds/afds-overview.md) service en via een [Azure Content Delivery Network (CDN)](../web-application-firewall/cdn/cdn-overview.md) WAF-beleid (dit is momenteel beschikbaar in de open bare preview).
 U kunt Azure WAF-logboeken verbinden met Azure Sentinel, zodat u de logboek gegevens in een werkmap kan bekijken, kunt gebruiken om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek te verbeteren.
 
 ## <a name="prerequisites"></a>Vereisten

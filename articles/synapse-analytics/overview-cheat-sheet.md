@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 04/15/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: c8ae47f89dcddd2253abd21239eb1a9bffee27c7
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b3ae2c958b479f5f131de871b64663c2754713b6
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307819"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94330425"
 ---
 # <a name="azure-synapse-analytics-cheat-sheet"></a>Cheatsheet voor Azure Synapse Analytics
 
@@ -26,7 +26,7 @@ Het cheatsheet voor Azure Synapse Analytics bevat een overzicht van de basisconc
 
 Een **Synapse-werkruimte** is een beveiligbare samenwerkingsgrens voor het uitvoeren van zakelijke cloudanalyses in Azure. Een werkruimte wordt geïmplementeerd in een specifieke regio en heeft een gekoppeld ADLS Gen2-account en -bestandssysteem (voor het opslaan van tijdelijke gegevens). Een werkruimte bevindt zich onder een resourcegroep.
 
-Met een werkruimte kunt u analyses uitvoeren met SQL en Apache Spark. Resources die beschikbaar zijn voor SQL en Spark Analytics, zijn georganiseerd in SQL- en Spark- **pools**. 
+Met een werkruimte kunt u analyses uitvoeren met SQL en Apache Spark. Resources die beschikbaar zijn voor SQL en Spark Analytics, zijn georganiseerd in SQL- en Spark-**pools**. 
 
 ## <a name="synapse-sql"></a>Synapse SQL
 
@@ -40,6 +40,7 @@ Maak en gebruik **serverloze Apache Spark-pools** in uw Synapse-werkruimte als u
 | Termijn                         | Definitie      |
 |:---                                 |:---                 |
 | **SQL-aanvraag**  |   Bewerking zoals een queryuitvoering via een toegewezen SQL-pool of serverloze SQL-pool. |
+|**SQL-script**| Een set met SQL-opdrachten die zijn opgeslagen in een bestand. Een SQL-script kan een of meer SQL-instructies bevatten. Het kan worden gebruikt om SQL-aanvragen uit te voeren via een toegewezen SQL-pool of een serverloze SQL-pool.|
 
 ## <a name="spark-terminology"></a>Spark-terminologie
 | Termijn                         | Definitie      |
@@ -48,17 +49,24 @@ Maak en gebruik **serverloze Apache Spark-pools** in uw Synapse-werkruimte als u
 | **Apache Spark-pool**  | 0-to-N in Spark ingerichte resources en de bijbehorende databases kunnen in een werkruimte worden geïmplementeerd. Een Spark-pool kan automatisch worden onderbroken, hervat en geschaald.  |
 | **Spark-toepassing**  |   Het bestaat uit een stuurprogrammaproces en een reeks uitvoeringsprocedures. Een Spark-toepassing wordt uitgevoerd in een serverloze Spark-pool.            |
 | **Spark-sessie**  |   Uniform invoerpunt van een Spark-toepassing. Een sessie biedt een manier om te communiceren met de verschillende functies van Spark en met een kleiner aantal constructs. Als u een notebook wilt uitvoeren, moet u een sessie maken. Een sessie kan worden geconfigureerd om te worden uitgevoerd op een specifiek aantal uitvoerders van een specifiek formaat. De standaardconfiguratie voor een notebook-sessie is om op twee middelgrote uitvoerders te worden uitgevoerd. |
-|**Gegevensintegratie**| Biedt de mogelijkheid om gegevens op te nemen in verschillende bronnen en activiteiten te organiseren die worden uitgevoerd binnen of buiten een werkruimte.| 
-|**Artefacten**| Een concept dat alle objecten omvat die een gebruiker nodig heeft om gegevensbronnen te beheren, te ontwikkelen, te organiseren en te visualiseren.|
 |**Notebook**| Interactieve en reactieve interface voor gegevenswetenschap en engineering die ondersteuning biedt voor Scala, PySpark, C# en SparkSQL. |
 |**Spark-taakdefinitie**|Interface voor het verzenden van een Spark-taak met een assembly-JAR die de code en de bijbehorende afhankelijkheden bevat.|
+
+## <a name="pipelines-terminology"></a>Terminologie van pijplijnen
+| Termijn                         | Definitie      |
+|:---                                 |:---                 |
+|**Gegevensintegratie**| Biedt de mogelijkheid om gegevens op te nemen in verschillende bronnen en activiteiten te organiseren die worden uitgevoerd binnen of buiten een werkruimte.| 
 |**Gegevensstroom**|  Biedt een volledig visuele ervaring zonder codering om big data-transformatie uit te voeren. Alle optimalisatie- en uitvoeringstaken worden op serverloze wijze afgehandeld. |
-|**SQL-script**| Een set met SQL-opdrachten die zijn opgeslagen in een bestand. Een SQL-script kan een of meer SQL-instructies bevatten. Het kan worden gebruikt om SQL-aanvragen uit te voeren via een toegewezen SQL-pool of een serverloze SQL-pool.|
 |**Pijplijn**| Een logische groep activiteiten die samen een taak uitvoeren.|
 |**Activiteit**| Staat voor acties die moeten worden uitgevoerd op gegevens, zoals het kopiëren van gegevens of het uitvoeren van een notebook of een SQL-script.|
 |**Trigger**| Voert een pijplijn uit. Deze kan handmatig of automatisch worden uitgevoerd (planning, tumblingvenster of op gebeurtenis gebaseerd).|
+|**Integratiegegevensset**|  Een weergave van gegevens met een naam die simpelweg verwijst naar de gegevens die in een activiteit moeten worden gebruikt als invoer en uitvoer. Deze hoort bij een gekoppelde service.|
+
+## <a name="general-terminology"></a>Algemene terminologie
+| Termijn                         | Definitie      |
+|:---                                 |:---                 |
+|**Artefacten**| Een concept dat alle objecten omvat die een gebruiker nodig heeft om gegevensbronnen te beheren, te ontwikkelen, te organiseren en te visualiseren.|
 |**Gekoppelde service**| Verbindingsreeksen waarmee de verbindingsgegevens worden gedefinieerd die nodig zijn om de werkruimte aan externe resources te koppelen.|
-|**Gegevensset**|  Een weergave van gegevens met een naam die simpelweg verwijst naar de gegevens die in een activiteit moeten worden gebruikt als invoer en uitvoer. Deze hoort bij een gekoppelde service.|
 
 ## <a name="next-steps"></a>Volgende stappen
 

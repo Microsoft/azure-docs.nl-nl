@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: e7713239391b49663328a7a058f8f6fd5b444335
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b08e834233e1ce12392d940cb0ccc0bef7e96158
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341328"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337743"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>OPENROWSET gebruiken met behulp van serverloze SQL-pool (preview) in Azure Synapse Analytics
 
@@ -129,7 +129,7 @@ Hieronder vindt u de relevante <storage account path> waarden voor koppeling aan
 Een pad binnen de opslag dat verwijst naar de map of het bestand dat u wilt lezen. Als het pad naar een container of map verwijst, worden alle bestanden in die specifieke container of map gelezen. Bestanden in submappen worden uitgesloten. 
 
 U kunt jokertekens gebruiken om meerdere bestanden of mappen op te geven. Het gebruik van meerdere, niet-opeenvolgende jokertekens is toegestaan.
-Hieronder ziet u een voorbeeld waarmee alle *CSV-* bestanden worden gelezen die beginnen met *population* uit alle mappen die beginnen met */csv/population* :  
+Hieronder ziet u een voorbeeld waarmee alle *CSV-* bestanden worden gelezen die beginnen met *population* uit alle mappen die beginnen met */csv/population*:  
 `https://sqlondemandstorage.blob.core.windows.net/csv/population*/population*.csv`
 
 Als u opgeeft dat unstructured_data_path een map is, haalt een serverloze SQL-pool-query bestanden op uit die map. 
@@ -261,12 +261,12 @@ Parquet-bestanden bevatten typebeschrijvingen voor elke kolom. In de volgende ta
 | BINARY |UTF8 |varchar \*(UTF8-sortering) |
 | BINARY |STRING |varchar \*(UTF8-sortering) |
 | BINARY |ENUM|varchar \*(UTF8-sortering) |
-| BINARY |UUID |uniqueidentifier |
+| FIXED_LEN_BYTE_ARRAY |UUID |uniqueidentifier |
 | BINARY |DECIMAL |decimal |
-| BINARY |JSON |varchar(max) \*(UTF8-sortering) |
-| BINARY |BSON |varbinary(max) |
+| BINARY |JSON |varchar(8000) \*(UTF8-sortering) |
+| BINARY |BSON | Niet ondersteund |
 | FIXED_LEN_BYTE_ARRAY |DECIMAL |decimal |
-| BYTE_ARRAY |INTERVAL |varchar(max), geserialiseerd naar gestandaardiseerde indeling |
+| BYTE_ARRAY |INTERVAL | Niet ondersteund |
 | INT32 |INT(8, true) |smallint |
 | INT32 |INT(16, true) |smallint |
 | INT32 |INT(32, true) |int |
@@ -275,14 +275,14 @@ Parquet-bestanden bevatten typebeschrijvingen voor elke kolom. In de volgende ta
 | INT32 |INT(32, false) |bigint |
 | INT32 |DATE |date |
 | INT32 |DECIMAL |decimal |
-| INT32 |TIME (MILLIS )|tijd |
+| INT32 |TIME (MILLIS)|tijd |
 | INT64 |INT(64, true) |bigint |
-| INT64 |INT(64, false ) |decimal(20,0) |
+| INT64 |INT(64, false) |decimal(20,0) |
 | INT64 |DECIMAL |decimal |
-| INT64 |TIME (MICROS / NANOS) |tijd |
-|INT64 |TIMESTAMP (MILLIS / MICROS / NANOS) |datetime2 |
-|[Complex type](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#lists) |LIST |varchar(max), geserialiseerd naar JSON |
-|[Complex type](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#maps)|MAP|varchar(max), geserialiseerd naar JSON |
+| INT64 |TIME (MICROS) |time-TIME (NANOS) wordt niet ondersteund |
+|INT64 |TIMESTAMP (MILLIS / MICROS) |datetime2 - TIMESTAMP(NANOS) wordt niet ondersteund |
+|[Complex type](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#lists) |LIST |varchar(8000), geserialiseerd naar JSON |
+|[Complex type](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#maps)|MAP|varchar(8000), geserialiseerd naar JSON |
 
 ## <a name="examples"></a>Voorbeelden
 

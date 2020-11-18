@@ -12,12 +12,12 @@ ms.date: 08/13/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: 860d29d3fff2187e770a5ff00b7145fc188a497c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: e43ad9dedf4212e9b30a08f0c978cb8d1a86776c
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426487"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657411"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-sso-to-your-apps-with-application-proxy"></a>Beperkte Kerberos-overdracht voor eenmalige aanmelding (SSO) voor uw apps met toepassings proxy
 
@@ -42,9 +42,9 @@ In dit diagram wordt de stroom uitgelegd wanneer een gebruiker toegang probeert 
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat met eenmalige aanmelding voor IWA-toepassingen, moet u ervoor zorgen dat uw omgeving klaar is met de volgende instellingen en configuraties:
 
-* Uw apps, zoals share point web apps, zijn ingesteld op het gebruik van geïntegreerde Windows-authenticatie. Zie [Enable support for Kerberos Authentication](https://technet.microsoft.com/library/dd759186.aspx)(Engelstalig) voor meer informatie, of voor share point Zie [Kerberos-verificatie plannen in share point 2013](https://technet.microsoft.com/library/ee806870.aspx).
+* Uw apps, zoals share point web apps, zijn ingesteld op het gebruik van geïntegreerde Windows-authenticatie. Zie [Enable support for Kerberos Authentication](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759186(v=ws.11))(Engelstalig) voor meer informatie, of voor share point Zie [Kerberos-verificatie plannen in share point 2013](/SharePoint/security-for-sharepoint-server/kerberos-authentication-planning).
 * Al uw apps hebben [service-principal-namen](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spns-setspn-syntax-setspn-exe.aspx).
-* De server waarop de-connector wordt uitgevoerd en de server waarop de app wordt uitgevoerd, zijn lid van het domein en een deel van hetzelfde domein of vertrouwende domeinen. Zie [een computer toevoegen aan een domein](https://technet.microsoft.com/library/dd807102.aspx)voor meer informatie over het toevoegen van domeinen aan een domein.
+* De server waarop de-connector wordt uitgevoerd en de server waarop de app wordt uitgevoerd, zijn lid van het domein en een deel van hetzelfde domein of vertrouwende domeinen. Zie [een computer toevoegen aan een domein](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807102(v=ws.11))voor meer informatie over het toevoegen van domeinen aan een domein.
 * De server die de connector uitvoert, heeft toegang om het kenmerk TokenGroupsGlobalAndUniversal voor gebruikers te lezen. Deze standaard instelling is mogelijk van invloed op de beveiligings beveiliging van de omgeving.
 
 ### <a name="configure-active-directory"></a>Active Directory configureren
@@ -61,7 +61,7 @@ De configuratie van de Active Directory varieert, afhankelijk van of de connecto
    ![Scherm opname van connector-SVR venster Eigenschappen](./media/application-proxy-configure-single-sign-on-with-kcd/properties.jpg)
 
 #### <a name="connector-and-application-server-in-different-domains"></a>Connector en toepassings server in verschillende domeinen
-1. Zie [Kerberos-beperkte delegering over domeinen](https://technet.microsoft.com/library/hh831477.aspx)voor een lijst met vereisten voor het werken met KCD in verschillende domeinen.
+1. Zie [Kerberos-beperkte delegering over domeinen](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))voor een lijst met vereisten voor het werken met KCD in verschillende domeinen.
 2. Gebruik de `principalsallowedtodelegateto` eigenschap van het service account (computer of toegewezen domein gebruikers account) van de webtoepassing om Kerberos-verificatie overdracht van de toepassings proxy (connector) in te scha kelen. De toepassings server wordt uitgevoerd in de context van `webserviceaccount` en de overdracht van de server is `connectorcomputeraccount` . Voer de onderstaande opdrachten uit op een domein controller (waarop Windows Server 2012 R2 of hoger wordt uitgevoerd) in het domein van `webserviceaccount` . Gebruik platte namen (niet-UPN) voor beide accounts.
 
    Als het `webserviceaccount` een computer account is, gebruikt u deze opdrachten:
@@ -85,7 +85,7 @@ De configuratie van de Active Directory varieert, afhankelijk van of de connecto
    ```
 
 ## <a name="configure-single-sign-on"></a>Eenmalige aanmelding configureren 
-1. Publiceer uw toepassing volgens de instructies in [toepassingen publiceren met toepassings proxy](application-proxy-add-on-premises-application.md). Zorg ervoor dat u **Azure Active Directory** selecteert als **methode voor verificatie**vooraf.
+1. Publiceer uw toepassing volgens de instructies in [toepassingen publiceren met toepassings proxy](application-proxy-add-on-premises-application.md). Zorg ervoor dat u **Azure Active Directory** selecteert als **methode voor verificatie** vooraf.
 2. Als uw toepassing wordt weer gegeven in de lijst met bedrijfs toepassingen, selecteert u deze en klikt u op **eenmalige aanmelding**.
 3. Stel de modus voor eenmalige aanmelding in op **geïntegreerde Windows-verificatie**.  
 4. Voer de **interne toepassings-SPN** van de toepassings server in. In dit voor beeld is de SPN voor de gepubliceerde toepassing http/www. contoso. com. Deze SPN moet zich bevinden in de lijst met services waarnaar de connector gedelegeerde referenties kan presen teren. 
@@ -153,4 +153,3 @@ Maar in sommige gevallen wordt de aanvraag verzonden naar de back-end-toepassing
 
 * [Een toepassings proxy toepassing configureren voor het gebruik van beperkte Kerberos-delegering](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 * [Problemen met toepassingsproxy oplossen (Engelstalig artikel)](application-proxy-troubleshoot.md)
-

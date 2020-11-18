@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f8494852bcff49602645c940470b529302f119f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09e813e0dff09885f104e43099b10d6f6f8a7f9b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88165070"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657428"
 ---
 # <a name="how-to-enable-native-client-applications-to-interact-with-proxy-applications"></a>Systeem eigen client toepassingen inschakelen voor interactie met proxy toepassingen
 
@@ -31,7 +31,7 @@ Voor het ondersteunen van systeem eigen client toepassingen accepteert toepassin
 
 ![Relatie tussen eind gebruikers, Azure AD en gepubliceerde toepassingen](./media/application-proxy-configure-native-client-application/richclientflow.png)
 
-Als u systeem eigen toepassingen wilt publiceren, gebruikt u de micro soft-verificatie bibliotheek, die zorgt voor verificatie en veel client omgevingen ondersteunt. Toepassings proxy past in de [desktop-app die een web-API aanroept namens een ondertekend gebruikers](https://docs.microsoft.com/azure/active-directory/develop/authentication-flows-app-scenarios#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) scenario.
+Als u systeem eigen toepassingen wilt publiceren, gebruikt u de micro soft-verificatie bibliotheek, die zorgt voor verificatie en veel client omgevingen ondersteunt. Toepassings proxy past in de [desktop-app die een web-API aanroept namens een ondertekend gebruikers](../develop/authentication-flows-app-scenarios.md#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) scenario.
 
 Dit artikel begeleidt u stapsgewijs door de vier stappen voor het publiceren van een systeem eigen toepassing met toepassings proxy en de Azure AD-verificatie bibliotheek.
 
@@ -44,8 +44,8 @@ Publiceer uw proxy toepassing, net zoals elke andere toepassing en wijs gebruike
 U moet uw toepassing nu als volgt registreren in azure AD:
 
 1. Meld u aan bij de [Azure Active Directory Portal](https://aad.portal.azure.com/). Het **dash board** voor het **Azure Active Directory-beheer centrum** wordt weer gegeven.
-1. Selecteer **Azure Active Directory**in de zijbalk. De pagina overzicht van **Azure Active Directory** wordt weer gegeven.
-1. Selecteer **app-registraties**in de terzijde van Azure AD-overzicht. De lijst met alle app-registraties wordt weer gegeven.
+1. Selecteer **Azure Active Directory** in de zijbalk. De pagina overzicht van **Azure Active Directory** wordt weer gegeven.
+1. Selecteer **app-registraties** in de terzijde van Azure AD-overzicht. De lijst met alle app-registraties wordt weer gegeven.
 1. Selecteer **Nieuwe registratie**. De pagina **een toepassing registreren** wordt weer gegeven.
 
    ![Een nieuwe app-registratie maken in de Azure Portal](./media/application-proxy-configure-native-client-application/create.png)
@@ -56,8 +56,8 @@ U moet uw toepassing nu als volgt registreren in azure AD:
    - Als u alleen accounts wilt richten die intern zijn voor uw organisatie, selecteert u **alleen accounts in deze organisatie Directory**.
    - Als u alleen zakelijke of educatieve klanten wilt richten, selecteert u **accounts in een organisatorische Directory**.
    - Als u de breedste set met micro soft-identiteiten wilt richten, selecteert u **accounts in een organisatorische map en persoonlijke micro soft-accounts**.
-1. Onder **omleidings-URI**selecteert u **open bare client (mobiele & bureau blad)** en typt u de omleidings-URI `https://login.microsoftonline.com/common/oauth2/nativeclient` voor uw toepassing.
-1. Selecteer en lees het **micro soft-platform beleid**en selecteer vervolgens **registreren**. Er wordt een overzichts pagina voor de nieuwe toepassings registratie gemaakt en weer gegeven.
+1. Onder **omleidings-URI** selecteert u **open bare client (mobiele & bureau blad)** en typt u de omleidings-URI `https://login.microsoftonline.com/common/oauth2/nativeclient` voor uw toepassing.
+1. Selecteer en lees het **micro soft-platform beleid** en selecteer vervolgens **registreren**. Er wordt een overzichts pagina voor de nieuwe toepassings registratie gemaakt en weer gegeven.
 
 Zie [toepassingen integreren met Azure Active Directory](../develop/quickstart-register-app.md)voor meer gedetailleerde informatie over het maken van een nieuwe toepassings registratie.
 
@@ -68,7 +68,7 @@ Nu u uw systeem eigen toepassing hebt geregistreerd, kunt u deze toegang verlene
 1. Selecteer in de zijbalk van de pagina nieuwe toepassings registratie de optie **API-machtigingen**. De pagina **API-machtigingen** voor de nieuwe toepassings registratie wordt weer gegeven.
 1. Selecteer **een machtiging toevoegen**. De pagina **API-machtigingen voor aanvragen** wordt weer gegeven.
 1. Selecteer onder de instelling **een API selecteren** de optie **api's mijn organisatie gebruikt**. Er wordt een lijst weer gegeven met de toepassingen in uw directory die Api's beschikbaar maken.
-1. Typ in het zoekvak of blader naar de proxy toepassing die u in [stap 1: uw proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-native-client-application#step-1-publish-your-proxy-application)toepassing hebt gepubliceerd en selecteer vervolgens de proxy toepassing.
+1. Typ in het zoekvak of blader naar de proxy toepassing die u in [stap 1: uw proxy](#step-1-publish-your-proxy-application)toepassing hebt gepubliceerd en selecteer vervolgens de proxy toepassing.
 1. Selecteer in de sectie **Wat is het type machtigingen dat uw toepassing vereist?** het machtigings type. Als uw systeem eigen toepassing toegang moet hebben tot de proxy toepassings-API als de aangemelde gebruiker, kiest u **gedelegeerde machtigingen**.
 1. Selecteer in de kop **machtigingen selecteren** de gewenste machtiging en selecteer vervolgens **machtigingen toevoegen**. De pagina **API-machtigingen** voor uw systeem eigen toepassing toont nu de API voor proxy toepassing en de machtiging die u hebt toegevoegd.
 

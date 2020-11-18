@@ -9,12 +9,12 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: yelevin
-ms.openlocfilehash: e8e44f69965af1987bd5f023644d966b3caf1c77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5d98a834ed4f87fb95a13e666967a7b2d80975d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89505849"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656051"
 ---
 # <a name="connect-data-from-azure-ddos-protection"></a>Verbinding maken met gegevens van Azure DDoS Protection
 
@@ -22,15 +22,15 @@ ms.locfileid: "89505849"
 > De Azure DDoS Protection gegevens connector in azure Sentinel is momenteel beschikbaar als open bare preview.
 > Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Met DDoS-aanvallen (Distributed Denial of service) wordt geprobeerd om de resources van een toepassing te laten uitgeputen, waardoor de toepassing niet beschikbaar is voor legitieme gebruikers. DDoS-aanvallen kunnen worden gericht op elk eindpunt dat openbaar bereikbaar is via internet. [Azure DDoS Protection](../virtual-network/ddos-protection-overview.md), gecombineerd met aanbevolen procedures voor het ontwerpen van toepassingen, biedt een robuuste verdediging tegen DDoS-aanvallen. U kunt Azure DDoS Protection-logboeken verbinden met Azure-Sentinel, zodat u logboek gegevens in werkmappen weer geven, kunt gebruiken om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek te verbeteren. 
+Met DDoS-aanvallen (Distributed Denial of service) wordt geprobeerd om de resources van een toepassing te laten uitgeputen, waardoor de toepassing niet beschikbaar is voor legitieme gebruikers. DDoS-aanvallen kunnen worden gericht op elk eindpunt dat openbaar bereikbaar is via internet. [Azure DDoS Protection](../ddos-protection/ddos-protection-overview.md), gecombineerd met aanbevolen procedures voor het ontwerpen van toepassingen, biedt een robuuste verdediging tegen DDoS-aanvallen. U kunt Azure DDoS Protection-logboeken verbinden met Azure-Sentinel, zodat u logboek gegevens in werkmappen weer geven, kunt gebruiken om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek te verbeteren. 
 
 ## <a name="prerequisites"></a>Vereisten
 
 - U moet lees-en schrijf machtigingen hebben voor de Azure Sentinel-werk ruimte.
 
-- U moet beschikken over een geconfigureerd [Azure DDoS Standard-beveiligings plan](../virtual-network/manage-ddos-protection.md#create-a-ddos-protection-plan).
+- U moet beschikken over een geconfigureerd [Azure DDoS Standard-beveiligings plan](../ddos-protection/manage-ddos-protection.md#create-a-ddos-protection-plan).
 
-- U moet een geconfigureerd [virtueel netwerk hebben waarvoor Azure DDoS Standard is ingeschakeld](../virtual-network/manage-ddos-protection.md#enable-ddos-for-a-new-virtual-network).
+- U moet een geconfigureerd [virtueel netwerk hebben waarvoor Azure DDoS Standard is ingeschakeld](../ddos-protection/manage-ddos-protection.md#enable-ddos-protection-for-a-new-virtual-network).
 
 ## <a name="connect-to-azure-ddos-protection"></a>Verbinding maken met Azure DDoS Protection
     
@@ -49,7 +49,7 @@ Met DDoS-aanvallen (Distributed Denial of service) wordt geprobeerd om de resour
 
        - Schakel het selectie vakje **verzenden naar log Analytics** in. Er worden twee nieuwe velden weer gegeven. Kies het relevante **abonnement** en de **log Analytics werk ruimte** (waar Azure Sentinel zich bevindt).
 
-       - Schakel de selectie vakjes in van de regel typen waarvan u de logboeken wilt opnemen. U kunt het beste **DDoSProtectionNotifications**, **DDoSMitigationFlowLogs**en **DDoSMitigationReports**.
+       - Schakel de selectie vakjes in van de regel typen waarvan u de logboeken wilt opnemen. U kunt het beste **DDoSProtectionNotifications**, **DDoSMitigationFlowLogs** en **DDoSMitigationReports**.
 
     1. Klik boven aan het scherm op **Opslaan** . Herhaal dit proces voor alle extra firewalls (open bare IP-adressen) waarvoor u DDoS-beveiliging hebt ingeschakeld.
 

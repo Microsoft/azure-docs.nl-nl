@@ -1,19 +1,19 @@
 ---
 title: 'Zelfstudie: Een server ontwerpen - Azure PowerShell - Azure Database for MySQL'
 description: In deze zelfstudie wordt uitgelegd hoe u een Azure Database for MySQL-server en -database maakt en beheert met PowerShell.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.devlang: azurepowershell
 ms.topic: tutorial
 ms.date: 04/29/2020
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: b5dd66b16674e1441865f796153e7508acc854d0
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: fd8294d60ed0af4e8d1eeb8a3cd07c737b69aadd
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92543743"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94533579"
 ---
 # <a name="tutorial-design-an-azure-database-for-mysql-using-powershell"></a>Zelfstudie: Een Azure Database for MySQL ontwerpen met PowerShell
 
@@ -56,7 +56,7 @@ Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
 
 Maak een [Azure-resourcegroep](../azure-resource-manager/management/overview.md) met de cmdlet [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en groepsgewijs worden beheerd.
 
-In het volgende voorbeeld wordt een resourcegroep met de naam **myresourcegroup** gemaakt in de regio **US – West** .
+In het volgende voorbeeld wordt een resourcegroep met de naam **myresourcegroup** gemaakt in de regio **US – West**.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name myresourcegroup -Location westus
@@ -66,7 +66,7 @@ New-AzResourceGroup -Name myresourcegroup -Location westus
 
 Maak een Azure Database for MySQL-server met de cmdlet `New-AzMySqlServer`. Een server kan meerdere databases beheren. Een aparte database wordt doorgaans gebruikt voor elk project of voor elke gebruiker.
 
-In het volgende voorbeeld wordt een MySQL-server gemaakt in de regio **US - west** . De server heeft de naam **mydemoserver** en bevindt zich in de resourcegroep **myresourcegroup** . De serverbeheerder kan zich aanmelden met **myadmin** . De server is een Gen 5-server in de prijscategorie Algemeen en beschikt over twee vCores. Daarnaast is geografisch redundante back-ups ingeschakeld. Noteer het wachtwoord dat in de eerste regel van het voorbeeld wordt gebruikt, aangezien dit het wachtwoord voor het beheerdersaccount van de MySQL-server is.
+In het volgende voorbeeld wordt een MySQL-server gemaakt in de regio **US - west**. De server heeft de naam **mydemoserver** en bevindt zich in de resourcegroep **myresourcegroup**. De serverbeheerder kan zich aanmelden met **myadmin**. De server is een Gen 5-server in de prijscategorie Algemeen en beschikt over twee vCores. Daarnaast is geografisch redundante back-ups ingeschakeld. Noteer het wachtwoord dat in de eerste regel van het voorbeeld wordt gebruikt, aangezien dit het wachtwoord voor het beheerdersaccount van de MySQL-server is.
 
 > [!TIP]
 > Een servernaam wordt toegewezen aan een DNS-naam en moet wereldwijd uniek zijn in Azure.
@@ -82,7 +82,7 @@ De parameterwaarde voor de **SKU** volgt de conventie **prijscategorie\_compute-
 - `-Sku GP_Gen5_32` komt overeen met Algemeen gebruik, Gen 5 en 32 vCores.
 - `-Sku MO_Gen5_2` komt overeen met Geoptimaliseerd voor geheugen, Gen 5 en 2 vCores.
 
-Meer informatie over geldige **SKU** -waarden per regio en de categorieën vindt u in [Prijscategorieën voor Azure Database for MySQL](./concepts-pricing-tiers.md).
+Meer informatie over geldige **SKU**-waarden per regio en de categorieën vindt u in [Prijscategorieën voor Azure Database for MySQL](./concepts-pricing-tiers.md).
 
 Overweeg het gebruik van de prijscategorie Basic als lichte reken- en I/O-capaciteit voldoende is voor uw workload.
 
@@ -104,7 +104,7 @@ New-AzMySqlFirewallRule -Name AllowMyIP -ResourceGroupName myresourcegroup -Serv
 
 ## <a name="get-the-connection-information"></a>De verbindingsgegevens ophalen
 
-Als u verbinding met uw server wilt maken, moet u hostgegevens en toegangsreferenties opgeven. Gebruik het volgende voorbeeld om de verbindingsgegevens te bepalen. Noteer de waarden voor **FullyQualifiedDomainName** en de **AdministratorLogin** .
+Als u verbinding met uw server wilt maken, moet u hostgegevens en toegangsreferenties opgeven. Gebruik het volgende voorbeeld om de verbindingsgegevens te bepalen. Noteer de waarden voor **FullyQualifiedDomainName** en de **AdministratorLogin**.
 
 ```azurepowershell-interactive
 Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
@@ -207,6 +207,24 @@ De locatie en prijscategorie van de herstelde server zijn hetzelfde als die van 
 Nadat het herstelproces is voltooid, zoekt u de nieuwe server en controleert u of de gegevens correct zijn hersteld. De aanmeldingsnaam en het wachtwoord voor de nieuwe server zijn hetzelfde als voor de bestaande server op het moment dat de herstelbewerking werd gestart. Het wachtwoord kan worden gewijzigd op de pagina **Overzicht** van de nieuwe server.
 
 De nieuwe server die is gemaakt tijdens een herstelbewerking, bevat niet de VNet-service-eindpunten die bestonden op de oorspronkelijke server. Deze regels moeten afzonderlijk worden ingesteld voor de nieuwe server. Firewallregels van de oorspronkelijke server worden hersteld.
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Als u de resources uit deze zelfstudie niet voor een andere quickstart of zelfstudie nodig hebt, kunt u ze verwijderen door het volgende voorbeeld uit te voeren.
+
+> [!CAUTION]
+> In het volgende voorbeeld worden de opgegeven resourcegroep en alle resources erin verwijderd.
+> Als resources buiten het bereik van deze zelfstudie in de opgegeven resourcegroep bestaan, worden ze ook verwijderd.
+
+```azurepowershell-interactive
+Remove-AzResourceGroup -Name myresourcegroup
+```
+
+Als u alleen de server wilt verwijderen die u in deze zelfstudie hebt gemaakt zonder de resourcegroep te verwijderen, gebruikt u de cmdlet `Remove-AzMySqlServer`.
+
+```azurepowershell-interactive
+Remove-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

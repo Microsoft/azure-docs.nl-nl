@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/09/2020
 ms.author: yelevin
-ms.openlocfilehash: 161e2d424611661619b99ecac3515aac6a8464e0
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 7d52b76601a617f62ae5b10fa38841ef2608bf49
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94428659"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656987"
 ---
 # <a name="monitor-the-health-of-your-data-connectors-with-this-azure-sentinel-workbook"></a>De status van uw gegevens connectors controleren met deze Azure Sentinel-werkmap
 
@@ -42,12 +42,12 @@ Deze werkmap bevat drie secties met tabbladen:
 
 1. Het tabblad **overzicht** bevat de algemene status van het opnemen van gegevens in de geselecteerde werk ruimte: volume metingen, EPS-tarieven en tijdstip laatste ontvangen logboek.
 
-1. Het tabblad **afwijkingen van gegevens verzameling** helpt u bij het detecteren van afwijkingen in het proces voor het verzamelen van gegevens, op tabel en gegevens bron. Elk tabblad toont afwijkingen voor een bepaalde tabel (het tabblad **Algemeen** bevat een verzameling tabellen). De afwijkingen worden berekend met behulp van de functie **series_decompose_anomalies ()** die een **afwijkende Score** retourneert. Meer [informatie over deze functie](https://docs.microsoft.com/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?WT.mc_id=Portal-fx). Stel de volgende para meters in voor de functie die moet worden geëvalueerd:
+1. Het tabblad **afwijkingen van gegevens verzameling** helpt u bij het detecteren van afwijkingen in het proces voor het verzamelen van gegevens, op tabel en gegevens bron. Elk tabblad toont afwijkingen voor een bepaalde tabel (het tabblad **Algemeen** bevat een verzameling tabellen). De afwijkingen worden berekend met behulp van de functie **series_decompose_anomalies ()** die een **afwijkende Score** retourneert. [Meer informatie over deze functie](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?WT.mc_id=Portal-fx). Stel de volgende para meters in voor de functie die moet worden geëvalueerd:
 
-    - **AnomaliesTimeRange** : deze tijd kiezer is alleen van toepassing op de weer gave afwijkingen van gegevens verzameling.
-    - **SampleInterval** : het tijds interval waarin gegevens worden bemonsterd binnen het opgegeven tijds bereik. De afwijkings score wordt alleen berekend op de gegevens van het laatste interval.
-    - **PositiveAlertThreshold** : deze waarde bepaalt de drempel waarde voor de positieve afwijkings Score. Decimale waarden worden geaccepteerd.
-    - **NegativeAlertThreshold** : met deze waarde wordt de drempel waarde voor de negatieve afwijkings Score gedefinieerd. Decimale waarden worden geaccepteerd.
+    - **AnomaliesTimeRange**: Deze tijdkiezer is alleen van toepassing op de weergave van afwijkingen in gegevensverzameling.
+    - **SampleInterval**: Het tijdsinterval waarin gegevens worden bemonsterd binnen het opgegeven tijdsbereik. De afwijkingsscore wordt alleen berekend voor de gegevens van het laatste interval.
+    - **PositiveAlertThreshold**: Deze waarde definieert de drempelwaarde voor de positieve afwijkingsscore. Decimale waarden worden geaccepteerd.
+    - **NegativeAlertThreshold**: Deze waarde definieert de drempelwaarde voor de negatieve afwijkingsscore. Decimale waarden worden geaccepteerd.
 
         :::image type="content" source="media/monitor-data-connector-health/data-health-workbook-2.png" alt-text="pagina afwijkingen van de gegevens connector status controle-werkmap" lightbox="media/monitor-data-connector-health/data-health-workbook-2.png":::
 

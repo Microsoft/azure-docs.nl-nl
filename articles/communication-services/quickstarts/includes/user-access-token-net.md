@@ -2,20 +2,20 @@
 title: bestand opnemen
 description: bestand opnemen
 services: azure-communication-services
-author: matthewrobertson
-manager: nimag
+author: tomaschladek
+manager: nmurav
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
 ms.date: 08/20/2020
 ms.topic: include
 ms.custom: include file
-ms.author: marobert
-ms.openlocfilehash: 5c9066f369183de3b4cfe19cc5635e8f1b4a94a2
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.author: tchladek
+ms.openlocfilehash: 50819e8746860e72feda194915f75c4630677d0c
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91779775"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506228"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -27,16 +27,16 @@ ms.locfileid: "91779775"
 
 ### <a name="create-a-new-c-application"></a>Een nieuwe C#-toepassing maken
 
-Gebruik in een consolevenster (zoals cmd, PowerShell of Bash) de opdracht `dotnet new` om een nieuwe console-app te maken met de naam `UserAccessTokensQuickstart`. Met deze opdracht maakt u een eenvoudig Hallo wereld-C#-project met één bronbestand: **Program.cs**.
+Gebruik in een consolevenster (zoals cmd, PowerShell of Bash) de opdracht `dotnet new` om een nieuwe console-app te maken met de naam `AccessTokensQuickstart`. Met deze opdracht maakt u een eenvoudig Hallo wereld-C#-project met één bronbestand: **Program.cs**.
 
 ```console
-dotnet new console -o UserAccessTokensQuickstart
+dotnet new console -o AccessTokensQuickstart
 ```
 
 Wijzig uw map in de zojuist gemaakte app-map en gebruik de opdracht `dotnet build` om uw toepassing te compileren.
 
 ```console
-cd UserAccessTokensQuickstart
+cd AccessTokensQuickstart
 dotnet build
 ```
 
@@ -62,22 +62,19 @@ Gebruik de volgende code om te beginnen:
 using System;
 using Azure.Communication.Administration;
 
-namespace UserAccessTokensQuickstart
+namespace AccessTokensQuickstart
 {
     class Program
     {
         static async System.Threading.Tasks.Task Main(string[] args)
         {
-            Console.WriteLine("Azure Communication Services - User Access Tokens Quickstart");
+            Console.WriteLine("Azure Communication Services - Access Tokens Quickstart");
 
             // Quickstart code goes here
         }
     }
 }
 ```
-
-[!INCLUDE [User Access Tokens Object Model](user-access-tokens-object-model.md)]
-
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
 Initialiseer een `CommunicationIdentityClient` met uw verbindingsreeks. Met de onderstaande code wordt de verbindingsreeks voor de resource opgehaald uit een omgevingsvariabele met de naam `COMMUNICATION_SERVICES_CONNECTION_STRING`. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../create-communication-resource.md#store-your-connection-string).
@@ -91,47 +88,57 @@ string ConnectionString = Environment.GetEnvironmentVariable("COMMUNICATION_SERV
 var client = new CommunicationIdentityClient(ConnectionString);
 ```
 
-## <a name="create-a-user"></a>Een gebruiker maken
+## <a name="create-an-identity"></a>Een identiteit maken
 
-Azure Communication Services onderhoudt een lichte identiteitsmap. Gebruik de methode `createUser` om een nieuwe vermelding in de map te maken met een unieke `Id`. U moet een toewijzing onderhouden tussen de gebruikers van uw toepassing en de door de Communication Services gegenereerde identiteiten (bijv. door ze op te slaan in de database van uw toepassingsserver).
+Azure Communication Services onderhoudt een lichte identiteitsmap. Gebruik de methode `createUser` om een nieuwe vermelding in de map te maken met een unieke `Id`. Sla de ontvangen identiteit op met een toewijzing aan gebruikers van uw toepassing. U kunt dit bijvoorbeeld doen door ze op te slaan in de database van uw toepassingsserver. De identiteit is later vereist voor het uitgeven van toegangstokens.
 
 ```csharp
-var userResponse = await client.CreateUserAsync();
-var user = userResponse.Value;
-Console.WriteLine($"\nCreated a user with ID: {user.Id}");
+var identityResponse = await client.CreateUserAsync();
+var identity = identityResponse.Value;
+Console.WriteLine($"\nCreated an identity with ID: {identity.Id}");
 ```
 
-## <a name="issue-user-access-tokens"></a>Tokens voor gebruikerstoegang uitgeven
+## <a name="issue-identity-access-tokens"></a>Toegangstokens voor de identiteit verlenen
 
-Gebruik de methode `issueToken` om een toegangstoken voor een Communication Services-gebruiker uit te geven. Als u de optionele `user` parameter niet opgeeft, wordt er een nieuwe gebruiker gemaakt en geretourneerd met het token.
+Gebruik de methode `issueToken` om een toegangstoken voor de al bestaande Communication Services-identiteit uit te geven. Met de parameter `scopes` wordt een set primitieven gedefinieerd, waarmee dit toegangstoken wordt geautoriseerd. Raadpleeg de [lijst met ondersteunde acties](../../concepts/authentication.md). Er kan een nieuw exemplaar van de parameter `communicationUser` worden samengesteld op basis van de tekenreeksweergave van de Azure Communication Service-identiteit.
 
 ```csharp
-// Issue an access token with the "voip" scope for a new user
-var tokenResponse = await client.IssueTokenAsync(user, scopes: new [] { CommunicationTokenScope.VoIP });
+// Issue an access token with the "voip" scope for an identity
+var tokenResponse = await client.IssueTokenAsync(identity, scopes: new [] { CommunicationTokenScope.VoIP });
 var token =  tokenResponse.Value.Token;
 var expiresOn = tokenResponse.Value.ExpiresOn;
-Console.WriteLine($"\nIssued a token with 'voip' scope that expires at {expiresOn}:");
+Console.WriteLine($"\nIssued an access token with 'voip' scope that expires at {expiresOn}:");
 Console.WriteLine(token);
 ```
 
-Tokens voor gebruikerstoegang zijn kortdurige referenties die opnieuw moeten worden uitgegeven om te voor komen dat uw gebruikers problemen ondervinden met de service. De antwoordeigenschap `expiresOn` geeft de levensduur van het token aan.
+Toegangstokens zijn kortdurende referenties die opnieuw moeten worden uitgegeven. Als u dit niet doet, kan dit leiden tot onderbrekingen van de gebruikerservaring van uw toepassing. De antwoordeigenschap `expiresOn` geeft de levensduur van het toegangstoken aan. 
 
-## <a name="revoke-user-access-tokens"></a>Tokens voor gebruikerstoegang intrekken
+## <a name="refresh-access-tokens"></a>Toegangstokens vernieuwen
 
-In sommige gevallen moet u de tokens voor gebruikerstoegang wellicht intrekken, bijvoorbeeld wanneer een gebruiker het wachtwoord wijzigt dat wordt gebruikt voor verificatie bij uw service. Deze functionaliteit is beschikbaar via de clientbibliotheek voor beheer van Azure Communication Services.
+Als u een toegangstoken wilt vernieuwen, gebruikt u het `CommunicationUser`-object om het opnieuw uit te geven:
 
 ```csharp  
-await client.RevokeTokensAsync(user);
-Console.WriteLine($"\nSuccessfully revoked all tokens for user with ID: {user.Id}");
+// Value existingIdentity represents identity of Azure Communication Services stored during identity creation
+identity = new CommunicationUser(existingIdentity);
+tokenResponse = await client.IssueTokenAsync(identity, scopes: new [] { CommunicationTokenScope.VoIP });
 ```
 
-## <a name="delete-a-user"></a>Een gebruiker verwijderen
+## <a name="revoke-access-tokens"></a>Toegangstokens intrekken
 
-Als u een identiteit verwijdert, worden alle actieve tokens ingetrokken en wordt voorkomen dat nieuwe tokens voor de identiteiten worden uitgegeven. Ook wordt alle persistente inhoud verwijderd die aan de gebruiker is gekoppeld.
+In sommige gevallen kunt u toegangstokens expliciet intrekken. Wanneer de gebruiker van een toepassing bijvoorbeeld het wachtwoord wijzigt dat wordt gebruikt voor verificatie bij uw service. Met de methode `RevokeTokensAsync` worden alle actieve toegangstokens die zijn verleend aan de identiteit ongeldig gemaakt.
+
+```csharp  
+await client.RevokeTokensAsync(identity);
+Console.WriteLine($"\nSuccessfully revoked all access tokens for identity with ID: {identity.Id}");
+```
+
+## <a name="delete-an-identity"></a>Een identiteit verwijderen
+
+Als u een identiteit verwijdert, worden alle actieve toegangstokens ingetrokken en wordt voorkomen dat er toegangstokens voor de identiteiten worden uitgegeven. Ook wordt alle persistente inhoud verwijderd die aan de identiteit is gekoppeld.
 
 ```csharp
-await client.DeleteUserAsync(user);
-Console.WriteLine($"\nDeleted the user with ID: {user.Id}");
+await client.DeleteUserAsync(identity);
+Console.WriteLine($"\nDeleted the identity with ID: {identity.Id}");
 ```
 
 ## <a name="run-the-code"></a>De code uitvoeren

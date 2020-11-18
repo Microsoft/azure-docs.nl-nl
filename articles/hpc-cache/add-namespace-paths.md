@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: 090e3f93d025fe87ad5b89a98193574595f3d632
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a39b6973767b72e69a82750ab8d0d487c733eda0
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91614579"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657105"
 ---
 # <a name="set-up-the-aggregated-namespace"></a>De geaggregeerde naam ruimte instellen
 
@@ -57,7 +57,7 @@ Laad de pagina **naam ruimte** -instellingen vanuit het Azure Portal. Op deze pa
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 Wanneer u de Azure CLI gebruikt, moet u een pad naar een naam ruimte toevoegen wanneer u het opslag doel maakt. Lees [een nieuw Azure Blob-opslag doel toevoegen](hpc-cache-add-storage.md?tabs=azure-cli#add-a-new-azure-blob-storage-target) voor meer informatie.
 
@@ -119,7 +119,7 @@ Vul deze waarden in voor elk pad naar de naam ruimte:
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 Wanneer u de Azure CLI gebruikt, moet u ten minste één pad naar de naam ruimte toevoegen wanneer u het opslag doel maakt. Lees [een nieuw NFS-opslag doel toevoegen](hpc-cache-add-storage.md?tabs=azure-cli#add-a-new-nfs-storage-target) voor meer informatie.
 

@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: 867cfa1321106c24354b29ea803a4fb914a6778d
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 77bd5e3b7a258ef83e5de4ec645ea70578fb9dfb
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341377"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657088"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Een HPC-cache van Azure maken
 
@@ -29,9 +29,9 @@ Klik op de onderstaande afbeelding om een [video demonstratie](https://azure.mic
 
 ![scherm afbeelding van de pagina project details in Azure Portal](media/hpc-cache-create-basics.png)
 
-Selecteer in **Project Details**het abonnement en de resource groep die als host moet fungeren voor de cache.
+Selecteer in **Project Details** het abonnement en de resource groep die als host moet fungeren voor de cache.
 
-Stel in **service Details**de naam van de cache en de andere kenmerken in:
+Stel in **service Details** de naam van de cache en de andere kenmerken in:
 
 * Locatie: Selecteer een van de [ondersteunde regio's](hpc-cache-overview.md#region-availability).
 * Virtueel netwerk: u kunt een bestaande selecteren of een nieuw virtueel netwerk maken.
@@ -102,7 +102,7 @@ Wanneer het maken is voltooid, wordt er een melding weer gegeven met een koppeli
 
 ## <a name="create-the-cache-with-azure-cli"></a>De cache maken met Azure CLI
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 > [!NOTE]
 > De Azure CLI biedt momenteel geen ondersteuning voor het maken van een cache met door de klant beheerde versleutelings sleutels. Gebruik de Azure Portal.

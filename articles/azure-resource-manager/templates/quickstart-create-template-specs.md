@@ -2,15 +2,15 @@
 title: Sjabloonspecificatie maken en implementeren
 description: Meer informatie over het maken van ene sjabloonspecificatie op basis van een ARM-sjabloon. Implementeer de sjabloonspecificatie vervolgens naar een resourcegroep in uw abonnement.
 author: tfitzmac
-ms.date: 10/02/2020
+ms.date: 11/10/2020
 ms.topic: quickstart
 ms.author: tomfitz
-ms.openlocfilehash: e1bd2f3da8204cf5947d0cf423cd57b023674608
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.openlocfilehash: 96ef5796aac1d0ee02e6bbafc40b7d3bcdea4e2f
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91728774"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506359"
 ---
 # <a name="quickstart-create-and-deploy-template-spec-preview"></a>Quickstart: Sjabloonspecificatie maken en implementeren (preview)
 
@@ -29,7 +29,7 @@ Een Azure-account met een actief abonnement. [Gratis een account maken](https://
 
 De sjabloonspecificatie is een resourcetype met de naam **Microsoft.Resources/templateSpecs**. U kunt Azure PowerShell, Azure CLI of een ARM-sjabloon gebruiken om uw sjabloonspecificatie te maken. Voor alle opties hebt u een ARM-sjabloon nodig die is verpakt in de sjabloonspecificatie.
 
-Voor PowerShell en CLI wordt de ARM-sjabloon als parameter aan de opdracht doorgegeven. De ARM-sjabloon die in de sjabloonspecificatie wordt opgenomen, wordt ingesloten in de definitie van de sjabloonspecificatie.
+Voor PowerShell en de CLI wordt de ARM-sjabloon als parameter aan de opdracht doorgegeven. De ARM-sjabloon die in de sjabloonspecificatie wordt opgenomen, wordt ingesloten in de definitie van de sjabloonspecificatie.
 
 Deze opties worden hieronder weergegeven.
 
@@ -88,7 +88,7 @@ Deze opties worden hieronder weergegeven.
 1. Wanneer u een ARM-sjabloon gebruikt om de sjabloonspecificatie te maken, wordt de sjabloon ingesloten in de resourcedefinitie. Kopieer de volgende sjabloon en sla deze lokaal op als **azuredeploy.json**. In deze quickstart wordt ervan uitgegaan dat u hebt opgeslagen naar het pad **c:\Templates\azuredeploy.json**, maar u kunt elk pad gebruiken.
 
     > [!NOTE]
-    > In de ingesloten sjabloon moeten alle vierkante haken links worden voorafgegaan (escaped) door een tweede vierkante haak links. Gebruik `[[` in plaats van `[`.
+    > In de ingesloten sjabloon moeten alle [sjabloonexpressies](template-expressions.md) worden voorafgegaan (escaped) door een tweede vierkante haak links. Gebruik `"[[` in plaats van `"[`. JSON-matrices gebruiken nog steeds één vierkante haak links.
 
     ```json
     {

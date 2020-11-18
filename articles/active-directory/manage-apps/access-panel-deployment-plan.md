@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: kenwith
-ms.openlocfilehash: cc36fccf84807621b8b3a186979ccfd000fe48f3
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 8e345b27fdb2604c0c3264d6935cb9cff8aeec9c
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92372477"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656731"
 ---
 # <a name="plan-an-azure-active-directory-my-apps-deployment"></a>Een Azure Active Directory implementatie van mijn apps plannen
 
@@ -54,10 +54,10 @@ Azure AD mijn apps voor delen bedrijven op de volgende manieren:
 
 Mijn apps is gratis en er zijn geen licenties nodig om op basis niveau te gebruiken. Voor het aantal objecten in uw directory en de aanvullende functies die u wilt implementeren, kunnen echter extra licenties nodig zijn. Enkele algemene scenario's voor Azure AD met licentie vereisten zijn onder andere de volgende beveiligings functies:
 
-* [Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-how-it-works)
-* [Groepslid maatschap](https://docs.microsoft.com/azure/active-directory/active-directory-manage-groups)
-* [Self-service voor wachtwoord opnieuw instellen](https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr)
-* [Azure Active Directory Identity Protection](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection)
+* [Azure Multi-Factor Authentication](../authentication/concept-mfa-howitworks.md)
+* [Groepslid maatschap](../fundamentals/active-directory-manage-groups.md)
+* [Self-service voor wachtwoord opnieuw instellen](../authentication/tutorial-enable-sspr.md)
+* [Azure Active Directory Identity Protection](../identity-protection/overview-identity-protection.md)
 
 Raadpleeg de [volledige licentie handleiding voor Azure AD](https://azure.microsoft.com/pricing/details/active-directory/).
 
@@ -65,8 +65,8 @@ Raadpleeg de [volledige licentie handleiding voor Azure AD](https://azure.micros
 
 Voer de volgende vereisten uit voordat u met dit project begint:
 
-* [SSO van de toepassing integreren](https://docs.microsoft.com/azure/active-directory/manage-apps/plan-sso-deployment)
-* [Azure AD-gebruikers-en-groeps infrastructuur beheren](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups)
+* [SSO van de toepassing integreren](./plan-sso-deployment.md)
+* [Azure AD-gebruikers-en-groeps infrastructuur beheren](../fundamentals/active-directory-manage-groups.md)
 
 ## <a name="plan-azure-ad-my-apps-deployment"></a>Implementatie van Azure AD-apps plannen
 
@@ -166,23 +166,23 @@ Voor de beste ervaring met de pagina mijn apps begint u met de integratie van Cl
 
 Gebruik federatieve SSO met Azure AD (OpenID Connect Connect/SAML) wanneer een toepassing dit ondersteunt, in plaats van SSO op basis van wacht woord en ADFS.
 
-Zie voor meer informatie over het implementeren en configureren van uw SaaS-toepassingen het [SaaS SSO-implementatie plan](https://aka.ms/deploymentplans/sso).
+Zie voor meer informatie over het implementeren en configureren van uw SaaS-toepassingen het [SaaS SSO-implementatie plan](./plan-sso-deployment.md).
 
 #### <a name="plan-to-deploy-the-my-apps-browser-extension"></a>De implementatie van de browser uitbreiding van mijn apps plannen
 
-Wanneer gebruikers zich aanmelden bij SSO-toepassingen op basis van wacht woorden, moeten ze de uitbrei ding voor beveiligde aanmelding van mijn apps installeren en gebruiken. De uitbrei ding voert een script uit dat het wacht woord verzendt naar het aanmeld formulier van de toepassing. Gebruikers wordt gevraagd de uitbrei ding te installeren wanneer ze de SSO-toepassing op basis van een wacht woord voor het eerst starten. Meer informatie over de uitbrei ding vindt u in deze documentatie over het [installeren van de browser uitbreiding mijn apps](access-panel-extension-problem-installing.md).
+Wanneer gebruikers zich aanmelden bij SSO-toepassingen op basis van wacht woorden, moeten ze de uitbrei ding voor beveiligde aanmelding van mijn apps installeren en gebruiken. De uitbrei ding voert een script uit dat het wacht woord verzendt naar het aanmeld formulier van de toepassing. Gebruikers wordt gevraagd de uitbrei ding te installeren wanneer ze de SSO-toepassing op basis van een wacht woord voor het eerst starten. Meer informatie over de uitbrei ding vindt u in deze documentatie over het [installeren van de browser uitbreiding mijn apps]().
 
-Als u SSO-toepassingen op basis van wacht woorden moet integreren, moet u een mechanisme definiëren om de uitbrei ding op schaal te implementeren met [ondersteunde browsers](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction). Opties zijn onder andere:
+Als u SSO-toepassingen op basis van wacht woorden moet integreren, moet u een mechanisme definiëren om de uitbrei ding op schaal te implementeren met [ondersteunde browsers](../user-help/my-apps-portal-end-user-access.md). Een aantal opties:
 
-* [groepsbeleid voor Internet Explorer](https://azure.microsoft.com/documentation/articles/active-directory-saas-ie-group-policy/)
-* [Configuration Manager voor Internet Explorer](https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers)
-* [Door de gebruiker gestuurde down load en configuratie voor Chrome, Firefox, micro soft Edge of IE](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+* [groepsbeleid voor Internet Explorer]()
+* [Configuration Manager voor Internet Explorer](/configmgr/core/clients/deploy/deploy-clients-to-windows-computers)
+* [Door de gebruiker gestuurde down load en configuratie voor Chrome, Firefox, micro soft Edge of IE](../user-help/my-apps-portal-end-user-access.md)
 
 Gebruikers die geen SSO-toepassingen op basis van wacht woorden gebruiken, profiteren ook van de uitbrei ding. Deze voor delen zijn onder andere de mogelijkheid om apps te starten vanaf de zoek balk, toegang te verkrijgen tot recent gebruikte toepassingen en een koppeling naar de pagina mijn apps te maken.
 
 #### <a name="plan-for-mobile-access"></a>Mobile Access plannen
 
-Een browser die is beveiligd met intune-beleid (micro soft Edge of Intune Managed Browser) is nodig voor mobiele gebruikers die SSO-toepassingen op basis van wacht woorden starten. Met een met beleid beveiligde browser kan de overdracht van het wacht woord dat voor de toepassing is opgeslagen, worden overgedragen. Micro soft Edge of de Managed browser biedt een aantal functies voor het beveiligen van webgegevens. U kunt ook micro soft Edge gebruiken voor zakelijke scenario's op iOS-en Android-apparaten. Micro soft Edge ondersteunt dezelfde beheer scenario's als de Intune Managed Browser en verbetert de gebruikers ervaring. Meer informatie: [webtoegang beheren met een door Microsoft intune-beleid beveiligde browser](https://docs.microsoft.com/intune/app-configuration-managed-browser).
+Een browser die is beveiligd met intune-beleid (micro soft Edge of Intune Managed Browser) is nodig voor mobiele gebruikers die SSO-toepassingen op basis van wacht woorden starten. Met een met beleid beveiligde browser kan de overdracht van het wacht woord dat voor de toepassing is opgeslagen, worden overgedragen. Micro soft Edge of de Managed browser biedt een aantal functies voor het beveiligen van webgegevens. U kunt ook micro soft Edge gebruiken voor zakelijke scenario's op iOS-en Android-apparaten. Micro soft Edge ondersteunt dezelfde beheer scenario's als de Intune Managed Browser en verbetert de gebruikers ervaring. Meer informatie: [webtoegang beheren met een door Microsoft intune-beleid beveiligde browser](/intune/app-configuration-managed-browser).
 
 ## <a name="plan-your-my-apps-deployment"></a>Uw implementatie van mijn apps plannen
 
@@ -248,7 +248,7 @@ Voor controle-, rapportage-en nood herstel back-ups Documenteer de vereiste Down
 
 Nadat een toepassing is geconfigureerd voor SSO, krijgen groepen toegang toegewezen. Gebruikers in de toegewezen groepen hebben toegang en ze zien de toepassing in hun apps en het start programma voor apps van Microsoft 365.
 
-Zie [gebruikers en groepen toewijzen aan een toepassing in Active Directory](methods-for-assigning-users-and-groups.md).
+Zie [gebruikers en groepen toewijzen aan een toepassing in Active Directory](./assign-user-or-group-access-portal.md).
 
 Als tijdens het testen of de implementatie de groepen wilt toevoegen, maar nog niet toestaan dat de toepassingen in mijn apps worden weer gegeven, raadpleegt u [een toepassing verbergen van gebruikers ervaring in azure Active Directory](hide-application-from-user-portal.md).
 
@@ -294,7 +294,7 @@ De volgende tests moeten worden uitgevoerd met apparaten in bedrijfs eigendom en
 
 ### <a name="rollback-steps"></a>Stappen voor ongedaan maken
 
-Het is belang rijk om te plannen wat u moet doen als uw implementatie niet volgens de planning wordt uitgevoerd. Als de SSO-configuratie mislukt tijdens de implementatie, moet u weten hoe u [SSO-problemen oplost](https://docs.microsoft.com/azure/active-directory/hybrid/tshoot-connect-sso) en de gevolgen voor uw gebruikers vermindert. In uitzonderlijke omstandigheden is het mogelijk om [SSO terug te draaien](../manage-apps/plan-sso-deployment.md#rollback-process).
+Het is belang rijk om te plannen wat u moet doen als uw implementatie niet volgens de planning wordt uitgevoerd. Als de SSO-configuratie mislukt tijdens de implementatie, moet u weten hoe u [SSO-problemen oplost](../hybrid/tshoot-connect-sso.md) en de gevolgen voor uw gebruikers vermindert. In uitzonderlijke omstandigheden is het mogelijk om [SSO terug te draaien](../manage-apps/plan-sso-deployment.md#rollback-process).
 
 
 ## <a name="manage-your-implementation"></a>Uw implementatie beheren
@@ -312,4 +312,4 @@ Gebruik de rol met de minst privileged om een vereiste taak in Azure Active Dire
 U kunt [privileged Identity Management](../privileged-identity-management/pim-configure.md) gebruiken om uw rollen te beheren om extra controle, controle en toegangs beoordeling te bieden voor gebruikers met mapmachtigingen.
 
 ## <a name="next-steps"></a>Volgende stappen
-[Een implementatie van Azure Multi-Factor Authentication plannen](https://aka.ms/deploymentplans/mfa)
+[Een implementatie van Azure Multi-Factor Authentication plannen](../authentication/howto-mfa-getstarted.md)

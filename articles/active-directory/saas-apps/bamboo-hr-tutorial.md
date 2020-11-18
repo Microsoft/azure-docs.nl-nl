@@ -9,33 +9,29 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/19/2018
+ms.date: 11/02/2020
 ms.author: jeedes
-ms.openlocfilehash: ab1e46f3bcd4c54e49f68d649777857d7a054234
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 8025728ffc40aca27807068eff29f5a889a8d76e
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92457449"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94331393"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bamboohr"></a>Zelfstudie: Azure Active Directory-integratie met BambooHR
 
-In deze zelfstudie leert u hoe u BambooHR integreert met Azure Active Directory (Azure AD).
-De integratie van BambooHR met Azure AD heeft de volgende voordelen:
+In deze zelfstudie leert u hoe u BambooHR integreert met Azure Active Directory (Azure AD). Wanneer u BambooHR integreert met Microsoft Azure Active Directory, kunt u het volgende:
 
-* U kunt in Azure AD beheren wie toegang tot BambooHR heeft.
-* U kunt inschakelen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij BambooHR (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* In Microsoft Azure AD beheren wie toegang heeft tot BambooHR.
+* Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij BambooHR.
+* Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-U hebt het volgende nodig om Azure AD-integratie met BambooHR te configureren:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Een abonnement op BambooHR waarvoor eenmalige aanmelding is ingeschakeld
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* Een BambooHR-abonnement waarvoor eenmalige aanmelding (SSO) is ingeschakeld.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -43,70 +39,58 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * BambooHR ondersteunt door **SP** geïnitieerde eenmalige aanmelding
 
+> [!NOTE]
+> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
+
+
 ## <a name="adding-bamboohr-from-the-gallery"></a>BambooHR uit de galerie toevoegen
 
 Als u de integratie van BambooHR in Azure AD wilt configureren, moet u BambooHR uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-**Als u BambooHR uit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak de tekst **BambooHR**.
+1. Selecteer **BambooHR** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+## <a name="configure-and-test-azure-ad-sso-for-bamboohr"></a>Eenmalige aanmelding van Azure Active Directory voor BambooHR configureren en testen
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+Configureer en test eenmalige aanmelding van Azure AD bij BambooHR met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in BambooHR.
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+Voer de volgende stappen uit om eenmalige aanmelding van Azure AD bij BambooHR te configureren en te testen:
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
+    * **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
+2. **[Eenmalige aanmelding bij BambooHR configureren](#configure-bamboohr-sso)** : als u de instellingen voor eenmalige aanmelding aan de app-zijde wilt configureren.
+    * **[Testgebruiker voor BambooHR maken](#create-bamboohr-test-user)**: als u een equivalent van Britta Simon in BambooHR wilt maken dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
+3. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-4. Typ **BambooHR** in het zoekvak, selecteer **BambooHR** in het resultaatdeelvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-     ![BambooHR in de lijst met resultaten](common/search-new-app.png)
+1. Ga in Azure Portal naar de integratiepagina van de app **BambooHR**, ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
-
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met BambooHR op basis van een testgebruiker met de naam **Britta Simon** .
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in BambooHR tot stand is gebracht.
-
-Voer het volgende uit om eenmalige aanmelding van Azure AD met BambooHR te configureren en testen:
-
-1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor BambooHR configureren](#configure-bamboohr-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wil configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor BambooHR maken](#create-bamboohr-test-user)** : als u een equivalent van Britta Simon in BambooHR wilt maken dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
-6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met BambooHR te configureren:
-
-1. In [Azure Portal](https://portal.azure.com/) selecteert u op de integratiepagina van de **BambooHR** -toepassing de optie **Eenmalige aanmelding** .
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 4. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
 
-    ![Informatie over BambooHR-domein en -URL's voor eenmalige aanmelding](common/sp-identifier.png)
-
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<company>.bamboohr.com`
 
-    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `BambooHR-SAML`
+    b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
+
+    | Antwoord-URL |
+    |-----------|
+    | `https://<company>.bamboohr.com/saml/consume.php` |
+    | `https://<company>.bamboohr.co.uk/saml/consume.php` |
 
     > [!NOTE]
-    > De waarde voor **Aanmeldings-URL** is niet echt. Werk de waarde bij met de werkelijke aanmeldings-URL. Neem contact op met het [ondersteuningsteam van BambooHR](https://www.bamboohr.com/contact.php) om de waarde te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en antwoord-URL. Neem contact op met het [ondersteuningsteam van BambooHR](https://www.bamboohr.com/contact.php) om de waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 4. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Base64)** te downloaden uit de opgegeven opties overeenkomstig uw behoeften, en slaat u dit op uw computer op.
 
@@ -116,13 +100,32 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met BambooHR t
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    a. Aanmeldings-URL
 
-    b. Azure AD-id
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-    c. Afmeldings-URL
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-### <a name="configure-bamboohr-single-sign-on"></a>BambooHR voor eenmalige aanmelding configureren
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
+
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+
+In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot BambooHR.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **BambooHR** in de lijst met toepassingen.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+## <a name="configure-bamboohr-sso"></a>Eenmalige aanmelding bij BambooHR configureren
 
 1. Meld u in een nieuw venster als beheerder aan bij de bedrijfssite van BambooHR.
 
@@ -130,104 +133,54 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met BambooHR t
    
     ![De pagina voor eenmalige aanmelding met BambooHR](./media/bamboo-hr-tutorial/ic796691.png "Eenmalige aanmelding")   
 
-    a. Selecteer **Apps** .
+    a. Selecteer **Apps**.
    
-    b. In het deelvenster **Apps** selecteert u **Eenmalige aanmelding** .
+    b. In het deelvenster **Apps** selecteert u **Eenmalige aanmelding**.
    
-    c. Selecteer **Eenmalige aanmelding op basis van SAML** .
+    c. Selecteer **Eenmalige aanmelding op basis van SAML**.
 
-3. Doe het volgende in het deelvenster **Eenmalige aanmelding op basis van SAML** :
+3. Doe het volgende in het deelvenster **Eenmalige aanmelding op basis van SAML**:
    
     ![Het deelvenster eenmalige aanmelding SAML](./media/bamboo-hr-tutorial/IC796692.png "Eenmalige aanmelding met SAML")
    
     a. Plak in het vak **Aanmeldings-URL voor eenmalige aanmelding** de **Aanmeldings-URL** die u in stap 6 vanuit Azure Portal hebt gekopieerd.
       
-    b. Open in Kladblok het base-64 gecodeerde certificaat dat u hebt gedownload vanuit Azure Portal, kopieer de inhoud en plak deze in het vak **X.509-certificaat** .
+    b. Open in Kladblok het base-64 gecodeerde certificaat dat u hebt gedownload vanuit Azure Portal, kopieer de inhoud en plak deze in het vak **X.509-certificaat**.
    
-    c. Selecteer **Opslaan** .
-
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
-
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
-
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
-
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![Knop Nieuwe gebruiker](common/new-user.png)
-
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
-
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het veld **Naam** **Britta Simon** in.
-  
-    b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
-    Bijvoorbeeld: BrittaSimon@contoso.com
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
-
-    d. Klik op **Create** .
-
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot BambooHR.
-
-1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **BambooHR** .
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Typ en selecteer **BambooHR** in de lijst met toepassingen.
-
-    ![De link BambooHR in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
-
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
-
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
-
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+    c. Selecteer **Opslaan**.
 
 ### <a name="create-bamboohr-test-user"></a>Testgebruiker voor BambooHR maken
 
 Als u wilt dat Azure AD-gebruikers zich bij BambooHR kunnen aanmelden, stelt u ze als volgt handmatig in BambooHR in:
 
-1. Meld u bij uw **BambooHR** -site aan als beheerder.
+1. Meld u bij uw **BambooHR**-site aan als beheerder.
 
 2. Selecteer **Instellingen** in de werkbalk bovenaan.
    
     ![De knop Settings](./media/bamboo-hr-tutorial/IC796694.png "Instelling")
 
-3. Selecteer **Overzicht** .
+3. Selecteer **Overzicht**.
 
 4. Selecteer **Beveiliging** > **Gebruikers** in het linkerdeelvenster.
 
 5. Typ de gebruikersnaam, het wachtwoord en het e-mailadres van het geldige Azure AD-account dat u wilt instellen.
 
-6. Selecteer **Opslaan** .
+6. Selecteer **Opslaan**.
         
 >[!NOTE]
 >U kunt ook BambooHR-hulpprogramma's en -API's voor het maken van gebruikersaccounts gebruiken om Azure AD-gebruikersaccounts in te stellen.
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
+### <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel van BambooHR klikt, zou u automatisch moeten worden aangemeld bij de instantie van BambooHR waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+1. Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van BambooHR, waar u de aanmeldingsstroom kunt starten. 
 
-## <a name="additional-resources"></a>Aanvullende resources
+2. Ga rechtstreeks naar de aanmeldings-URL van BambooHR en start de aanmeldingsstroom daar.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de BambooHR-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor BambooHR. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+## <a name="next-steps"></a>Volgende stappen
+
+Wanneer u BambooHR hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor in realtime beveiliging wordt geboden tegen exfiltratie en infiltratie van gevoelige gegevens van uw organisatie. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

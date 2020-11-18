@@ -11,22 +11,22 @@ ms.topic: how-to
 ms.date: 10/24/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 6688875385d34fcbece964d43827c6d62ae7ced4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bef120e754c84798b2d1b48f4f00fbb8f5fb3c1d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88587766"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656374"
 ---
 # <a name="configure-custom-domains-with-azure-ad-application-proxy"></a>Aangepaste domeinen configureren met Azure AD-toepassingsproxy
 
-Wanneer u een toepassing publiceert via Azure Active Directory-toepassingsproxy, maakt u een externe URL voor uw gebruikers. Met deze URL wordt het standaard domein *yourtenant.msappproxy.net*opgehaald. Als u bijvoorbeeld een app met de naam *uitgaven* in uw Tenant met de naam *Contoso*publiceert, is de externe URL *https: \/ /expenses-contoso.msappproxy.net*. Als u uw eigen domein naam wilt gebruiken in plaats van *msappproxy.net*, kunt u een aangepast domein voor uw toepassing configureren. 
+Wanneer u een toepassing publiceert via Azure Active Directory-toepassingsproxy, maakt u een externe URL voor uw gebruikers. Met deze URL wordt het standaard domein *yourtenant.msappproxy.net* opgehaald. Als u bijvoorbeeld een app met de naam *uitgaven* in uw Tenant met de naam *Contoso* publiceert, is de externe URL *https: \/ /expenses-contoso.msappproxy.net*. Als u uw eigen domein naam wilt gebruiken in plaats van *msappproxy.net*, kunt u een aangepast domein voor uw toepassing configureren. 
 
 ## <a name="benefits-of-custom-domains"></a>Voor delen van aangepaste domeinen
 
 Het is een goed idee om waar mogelijk aangepaste domeinen voor uw apps in te stellen. Enkele redenen voor het gebruik van aangepaste domeinen zijn:
 
-- Koppelingen tussen apps werken zelfs buiten het bedrijfs netwerk. Zonder een aangepast domein geldt dat als uw app hardcoded interne koppelingen naar doelen buiten de toepassings proxy heeft, de koppelingen niet extern kunnen worden omgezet. Als uw interne en externe Url's hetzelfde zijn, kunt u dit probleem vermijden. Als u geen aangepaste domeinen kunt gebruiken, raadpleegt u [hardcoded koppelingen omleiden voor apps die zijn gepubliceerd met Azure AD-toepassingsproxy](../application-proxy-link-translation.md) voor andere manieren om dit probleem op te lossen. 
+- Koppelingen tussen apps werken zelfs buiten het bedrijfs netwerk. Zonder een aangepast domein geldt dat als uw app hardcoded interne koppelingen naar doelen buiten de toepassings proxy heeft, de koppelingen niet extern kunnen worden omgezet. Als uw interne en externe Url's hetzelfde zijn, kunt u dit probleem vermijden. Als u geen aangepaste domeinen kunt gebruiken, raadpleegt u [hardcoded koppelingen omleiden voor apps die zijn gepubliceerd met Azure AD-toepassingsproxy](./application-proxy-configure-hard-coded-link-translation.md) voor andere manieren om dit probleem op te lossen. 
   
 - Uw gebruikers hebben een gemakkelijke ervaring, omdat ze naar de app kunnen gaan met dezelfde URL binnen of buiten uw netwerk. Ze hoeven geen andere interne en externe Url's te leren of hun huidige locatie bij te houden. 
 
@@ -42,7 +42,7 @@ Er zijn verschillende opties voor het instellen van uw DNS-configuratie, afhanke
 
 ### <a name="same-internal-and-external-url-different-internal-and-external-behavior"></a>Dezelfde interne en externe URL, verschillend intern en extern gedrag 
 
-Als u niet wilt dat uw interne gebruikers worden omgeleid via de toepassings proxy, kunt u een *Split-DNS-server*instellen. Een gesplitste DNS-infra structuur stuurt interne hosts naar een interne domein naam server en externe hosts naar een externe domein naam server, voor naam omzetting. 
+Als u niet wilt dat uw interne gebruikers worden omgeleid via de toepassings proxy, kunt u een *Split-DNS-server* instellen. Een gesplitste DNS-infra structuur stuurt interne hosts naar een interne domein naam server en externe hosts naar een externe domein naam server, voor naam omzetting. 
 
 ![Split-brain DNS](./media/application-proxy-configure-custom-domain/split-brain-dns.png)
 
@@ -74,7 +74,7 @@ Uw app publiceren via een toepassings proxy met een aangepast domein:
 
 1. Selecteer voor een nieuwe app in Azure Active Directory **Enter prise-toepassingen** in het linkernavigatievenster. Selecteer **Nieuwe toepassing**. Selecteer in de sectie **On-premises toepassingen** de optie **Een on-premises toepassing toevoegen**. 
    
-   Voor een app die al in **bedrijfs toepassingen**is, selecteert u deze in de lijst en selecteert u vervolgens **toepassings proxy** in de linkernavigatiebalk. 
+   Voor een app die al in **bedrijfs toepassingen** is, selecteert u deze in de lijst en selecteert u vervolgens **toepassings proxy** in de linkernavigatiebalk. 
 
 2. Voer op de pagina instellingen van toepassings proxy een **naam** in als u uw eigen on-premises toepassing wilt toevoegen.
 
@@ -109,7 +109,7 @@ Uw app publiceren via een toepassings proxy met een aangepast domein:
 
 Uw toepassing is nu ingesteld voor het gebruik van het aangepaste domein. Zorg ervoor dat u gebruikers toewijst aan uw toepassing voordat u deze test of uitgeeft. 
 
-Als u het domein voor een app wilt wijzigen, selecteert u een ander domein in de vervolg keuzelijst in **externe URL** op de pagina **toepassings proxy** van de app. Upload een certificaat voor het bijgewerkte domein, indien nodig, en werk de DNS-record bij. Als u het aangepaste domein dat u wilt in de vervolg keuzelijst in de **externe URL**niet ziet, wordt het mogelijk niet gecontroleerd.
+Als u het domein voor een app wilt wijzigen, selecteert u een ander domein in de vervolg keuzelijst in **externe URL** op de pagina **toepassings proxy** van de app. Upload een certificaat voor het bijgewerkte domein, indien nodig, en werk de DNS-record bij. Als u het aangepaste domein dat u wilt in de vervolg keuzelijst in de **externe URL** niet ziet, wordt het mogelijk niet gecontroleerd.
 
 Zie [zelf studie: een on-premises toepassing toevoegen voor externe toegang via toepassings proxy in azure Active Directory](application-proxy-add-on-premises-application.md)voor meer gedetailleerde instructies voor de toepassings proxy.
 
@@ -123,7 +123,7 @@ U moet een PFX-certificaat gebruiken om ervoor te zorgen dat alle vereiste tusse
 
 De meest voorkomende methoden voor certificaat handtekeningen worden ondersteund, zoals een alternatieve naam voor het onderwerp (SAN). 
 
-U kunt Joker certificaten gebruiken zolang het Joker teken overeenkomt met de externe URL. U moet joker tekens gebruiken voor [toepassingen met Joker](application-proxy-wildcard.md)tekens. Als u het certificaat wilt gebruiken om ook toegang te krijgen tot subdomeinen, moet u de joker tekens subdomein toevoegen als alternatieve namen voor het onderwerp in hetzelfde certificaat. Een certificaat voor * \* . Adventure-Works.com* werkt bijvoorbeeld niet voor * \* . apps.Adventure-Works.com* tenzij u * \* . apps.Adventure-Works.com* toevoegt als alternatieve naam voor het onderwerp. 
+U kunt Joker certificaten gebruiken zolang het Joker teken overeenkomt met de externe URL. U moet joker tekens gebruiken voor [toepassingen met Joker](application-proxy-wildcard.md)tekens. Als u het certificaat wilt gebruiken om ook toegang te krijgen tot subdomeinen, moet u de joker tekens subdomein toevoegen als alternatieve namen voor het onderwerp in hetzelfde certificaat. Een certificaat voor *\* . Adventure-Works.com* werkt bijvoorbeeld niet voor *\* . apps.Adventure-Works.com* tenzij u *\* . apps.Adventure-Works.com* toevoegt als alternatieve naam voor het onderwerp. 
 
 U kunt certificaten gebruiken die zijn uitgegeven door uw eigen open bare-sleutel infrastructuur (PKI) als de certificaat keten is geïnstalleerd op uw client apparaten. InTune kan deze certificaten implementeren op beheerde apparaten. Voor niet-beheerde apparaten moet u deze certificaten hand matig installeren. 
 
@@ -135,7 +135,7 @@ Alle certificaat beheer gaat via de afzonderlijke toepassings pagina's. Ga naar 
 
 Zodra een certificaat is geüpload voor een toepassing, wordt het ook automatisch toegepast op **nieuwe** apps die gebruikmaken van hetzelfde certificaat. U moet het certificaat opnieuw uploaden voor bestaande apps in uw Tenant.
 
-Wanneer een certificaat verloopt, wordt een waarschuwing weer gegeven waarin u wordt gevraagd om een ander certificaat te uploaden. Als het certificaat wordt ingetrokken, zien uw gebruikers mogelijk een beveiligings waarschuwing bij het openen van de app. Als u het certificaat voor een app wilt bijwerken, gaat u naar de pagina **toepassings proxy** voor de app, selecteert u **certificaat**en uploadt u een nieuw certificaat. Als het oude certificaat niet door andere apps wordt gebruikt, wordt het automatisch verwijderd. 
+Wanneer een certificaat verloopt, wordt een waarschuwing weer gegeven waarin u wordt gevraagd om een ander certificaat te uploaden. Als het certificaat wordt ingetrokken, zien uw gebruikers mogelijk een beveiligings waarschuwing bij het openen van de app. Als u het certificaat voor een app wilt bijwerken, gaat u naar de pagina **toepassings proxy** voor de app, selecteert u **certificaat** en uploadt u een nieuw certificaat. Als het oude certificaat niet door andere apps wordt gebruikt, wordt het automatisch verwijderd. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

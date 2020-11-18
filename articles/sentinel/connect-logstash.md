@@ -15,19 +15,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2020
 ms.author: yelevin
-ms.openlocfilehash: 7fe47289dcc6b6d6af4d13b36b5c3b1dae3baaf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 247abafd7abec38e43794b76268ee52538aee508
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89664222"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655677"
 ---
 # <a name="use-logstash-to-connect-data-sources-to-azure-sentinel"></a>Logstash gebruiken om gegevens bronnen te verbinden met Azure Sentinel
 
 > [!IMPORTANT]
 > Gegevens opname met behulp van de Logstash-uitvoer-invoeg toepassing is momenteel beschikbaar als open bare preview. Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Met de nieuwe uitvoer-invoeg toepassing van Azure Sentinel voor de **Logstash-engine voor gegevens verzameling**kunt u nu elk type logboek dat u wilt door Logstash rechtstreeks naar uw log Analytics-werk ruimte verzenden in azure Sentinel. Uw logboeken worden verzonden naar een aangepaste tabel die u gaat definiëren met behulp van de uitvoer-invoeg toepassing.
+Met de nieuwe uitvoer-invoeg toepassing van Azure Sentinel voor de **Logstash-engine voor gegevens verzameling** kunt u nu elk type logboek dat u wilt door Logstash rechtstreeks naar uw log Analytics-werk ruimte verzenden in azure Sentinel. Uw logboeken worden verzonden naar een aangepaste tabel die u gaat definiëren met behulp van de uitvoer-invoeg toepassing.
 
 Zie aan de slag [met Logstash](https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html)voor meer informatie over het werken met de Logstash-engine voor het verzamelen van gegevens.
 
@@ -48,8 +48,8 @@ De Logstash-engine bestaat uit drie onderdelen:
 
 De Azure Sentinel output-invoeg toepassing voor Logstash verzendt gegevens in JSON-indeling naar uw Log Analytics-werk ruimte met behulp van de Log Analytics HTTP-gegevens verzamelaar REST API. De gegevens worden opgenomen in aangepaste Logboeken.
 
-- Meer informatie over de [Log Analytics rest API](https://docs.microsoft.com/rest/api/loganalytics/create-request).
-- Meer informatie over [aangepaste logboeken](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-custom-logs).
+- Meer informatie over de [Log Analytics rest API](/rest/api/loganalytics/create-request).
+- Meer informatie over [aangepaste logboeken](../azure-monitor/platform/data-sources-custom-logs.md).
 
 ## <a name="deploy-the-azure-sentinel-output-plugin-in-logstash"></a>De Azure Sentinel output-invoeg toepassing implementeren in Logstash
 
@@ -57,7 +57,7 @@ De Azure Sentinel output-invoeg toepassing voor Logstash verzendt gegevens in JS
 
 De Azure Sentinel output-invoeg toepassing is beschikbaar in de Logstash-verzameling.
 
-- Volg de instructies in het document Logstash [Working with pluginss](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) voor het installeren van de ***micro soft-Logstash-output-Azure-loganalytics*** -invoeg toepassing.
+- Volg de instructies in het document Logstash [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) voor het installeren van de **_micro soft-Logstash-output-Azure-loganalytics_* _-invoeg toepassing.
    
 - Als uw Logstash-systeem geen Internet toegang heeft, volgt u de instructies in het Logstash [offline-invoeg toepassing](https://www.elastic.co/guide/en/logstash/current/offline-plugins.html) voor het beheren van een offline-invoeg toepassing. (Hiervoor moet u een ander Logstash-systeem met Internet toegang maken.)
 
@@ -67,7 +67,7 @@ Gebruik de informatie in de Logstash- [structuur van een config file](https://ww
 
 | Veldnaam | Gegevenstype | Beschrijving |
 |----------------|---------------|-----------------|
-| `workspace_id` | tekenreeks | Voer uw werk ruimte-ID-GUID in. * |
+| `workspace_id` | tekenreeks | Voer uw werk ruimte-ID-GUID in. _ |
 | `workspace_key` | tekenreeks | Voer de GUID van de primaire sleutel van uw werk ruimte in. * |
 | `custom_log_table_name` | tekenreeks | Stel de naam in van de tabel waarin de logboeken worden opgenomen. Er kan slechts één tabel naam per uitvoer-invoeg toepassing worden geconfigureerd. De logboek tabel wordt weer gegeven in azure Sentinel onder **Logboeken**, in **tabellen** in de categorie **aangepaste logboeken** met een `_CL` achtervoegsel. |
 | `endpoint` | tekenreeks | Optioneel veld. Standaard is dit het Log Analytics-eind punt. Gebruik dit veld om een alternatief eind punt in te stellen. |
@@ -162,7 +162,7 @@ Hier volgen enkele voor beelden van configuraties met een aantal verschillende o
 
 1. Als u records in de tabel wilt weer geven, moet u een query uitvoeren op de tabel met behulp van de tabel naam als schema.
 
-   :::image type="content" source="./media/connect-logstash/logstash-custom-logs-query.png" alt-text="Scherm opname van aangepaste logboeken van log-opslag.":::
+   :::image type="content" source="./media/connect-logstash/logstash-custom-logs-query.png" alt-text="Scherm opname van de query voor aangepaste logboeken van log-opslag.":::
 
 ## <a name="monitor-output-plugin-audit-logs"></a>Audit logboeken voor uitvoer van invoeg toepassingen bewaken
 

@@ -1,6 +1,6 @@
 ---
 title: Azure Information Protection verbinden met Azure Sentinel
-description: Informatie over logboek registratie van Azure Information Protection naar Azure Sentinel door de Azure Information Protection Data Connector te configureren. 
+description: Informatie over logboek registratie van Azure Information Protection naar Azure Sentinel door de Azure Information Protection Data Connector te configureren.
 services: sentinel
 author: yelevin
 manager: rkarlin
@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: yelevin
-ms.openlocfilehash: 160912ef53b5c079d026c5d16230f49eadf66366
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 82ea47037902ce3a9449f71a9edf62cb80863d4b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88794431"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655983"
 ---
 # <a name="connect-data-from-azure-information-protection"></a>Verbinding maken met gegevens van Azure Information Protection
 
@@ -25,7 +25,7 @@ ms.locfileid: "88794431"
 
 U kunt logboek registratie gegevens van [Azure Information Protection](https://azure.microsoft.com/services/information-protection/) naar Azure Sentinel streamen door de Azure Information Protection Data Connector te configureren. Azure Information Protection helpt u bij het beheren en beveiligen van uw gevoelige gegevens, ongeacht of deze zijn opgeslagen in de Cloud of on-premises.
 
-Als [centrale rapportage voor Azure Information Protection](https://docs.microsoft.com/azure/information-protection/reports-aip) al zo is geconfigureerd dat logboek registratie gegevens van deze service worden opgeslagen in dezelfde log Analytics werk ruimte als u momenteel hebt geselecteerd voor Azure Sentinel, kunt u de configuratie van deze gegevens connector overs Laan. De logboek gegevens van Azure Information Protection zijn al beschikbaar voor Azure Sentinel.
+Als [centrale rapportage voor Azure Information Protection](/azure/information-protection/reports-aip) al zo is geconfigureerd dat logboek registratie gegevens van deze service worden opgeslagen in dezelfde log Analytics werk ruimte als u momenteel hebt geselecteerd voor Azure Sentinel, kunt u de configuratie van deze gegevens connector overs Laan. De logboek gegevens van Azure Information Protection zijn al beschikbaar voor Azure Sentinel.
 
 Als de logboek gegevens van Azure Information Protection echter naar een andere Log Analytics-werk ruimte gaan dan die die u momenteel hebt geselecteerd voor Azure Sentinel, voert u een van de volgende handelingen uit:
 
@@ -51,7 +51,7 @@ Als de logboek gegevens van Azure Information Protection echter naar een andere 
 
 - Machtigingen voor het lezen van en schrijven naar de Log Analytics werk ruimte die u gebruikt voor de Azure-Sentinel en Azure Information Protection.
 
-- Azure Information Protection is toegevoegd aan de Azure Portal. Zie [Azure Information Protection toevoegen aan de Azure Portal](https://docs.microsoft.com/azure/information-protection/quickstart-viewpolicy#add-azure-information-protection-to-the-azure-portal)als u hulp nodig hebt bij deze stap.
+- Azure Information Protection is toegevoegd aan de Azure Portal. Zie [Azure Information Protection toevoegen aan de Azure Portal](/azure/information-protection/quickstart-viewpolicy#add-azure-information-protection-to-the-azure-portal)als u hulp nodig hebt bij deze stap.
 
 ## <a name="connect-to-azure-information-protection"></a>Verbinding maken met Azure Information Protection
 
@@ -61,7 +61,7 @@ Gebruik de volgende instructies als u geen Log Analytics werk ruimte voor Azure 
 
 2. Selecteer de **pagina connector openen**.
 
-3. Selecteer onder **configuratie**de optie **verbinding maken Azure Information Protection logboeken**.
+3. Selecteer onder **configuratie** de optie **verbinding maken Azure Information Protection logboeken**.
 
 4. Selecteer op de Blade **analyse configureren (preview)** de werk ruimte die u momenteel gebruikt voor Azure Sentinel. Als u een andere werk ruimte selecteert, zijn de rapport gegevens van Azure Information Protection niet beschikbaar voor Azure Sentinel.
 
@@ -69,7 +69,7 @@ Gebruik de volgende instructies als u geen Log Analytics werk ruimte voor Azure 
 
 6. De rapport gegevens van Azure Information Protection worden opgeslagen in de **InformationProtectionLogs_CL** tabel in de geselecteerde werk ruimte. 
     
-    Als u het relevante schema in Azure Monitor voor deze rapport gegevens wilt gebruiken, zoekt u naar **InformationProtectionEvents**. Zie de sectie [beschrijvende schema verwijzing voor gebeurtenis functies](https://docs.microsoft.com/azure/information-protection/reports-aip#friendly-schema-reference-for-event-functions) in de Azure Information Protection-documentatie voor meer informatie over deze gebeurtenis functies.
+    Als u het relevante schema in Azure Monitor voor deze rapport gegevens wilt gebruiken, zoekt u naar **InformationProtectionEvents**. Zie de sectie [beschrijvende schema verwijzing voor gebeurtenis functies](/azure/information-protection/reports-aip#friendly-schema-reference-for-event-functions) in de Azure Information Protection-documentatie voor meer informatie over deze gebeurtenis functies.
 
 ## <a name="next-steps"></a>Volgende stappen
 

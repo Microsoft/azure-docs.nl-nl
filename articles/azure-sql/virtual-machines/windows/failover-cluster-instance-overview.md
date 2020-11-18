@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 1b8dae471729b42b1c302c6c45033ddc808c7b43
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 5845a3bdc4b86fbbe44c92779e5aae95044eb6b2
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289297"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556366"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Exemplaren van failoverclusters met SQL Server op virtuele Azure-machines (VM's).
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -60,10 +60,10 @@ In de rest van deze sectie vindt u een overzicht van de voordelen en beperkingen
 
 [Gedeelde Azure-schijven](../../../virtual-machines/windows/disks-shared.md) is een functie van [Azure Managed Disks](../../../virtual-machines/managed-disks-overview.md). Windows Server Failover Clustering ondersteunt het gebruik van gedeelde Azure-schijven met een exemplaar van een failovercluster. 
 
-**Ondersteund besturingssysteem** : Alle   
-**Ondersteunde SQL-versie** : Alle     
+**Ondersteund besturingssysteem**: Alle   
+**Ondersteunde SQL-versie**: Alle     
 
-**Voordelen** : 
+**Voordelen**: 
 - Handig voor toepassingen die moeten worden gemigreerd naar Azure, met behoud van hun architectuur voor hoge beschikbaarheid en herstel na noodgevallen (HADR). 
 - Geclusterde toepassingen kunnen ongewijzigd naar Azure worden gemigreerd door de ondersteuning voor SCSI PR (SCSI Persistent Reservations). 
 - Biedt ondersteuning voor opslag met Azure Premium SSD en Azure Ultra Disk-opslag.
@@ -71,7 +71,7 @@ In de rest van deze sectie vindt u een overzicht van de voordelen en beperkingen
 - Ondersteunt FileStream.
 
 
-**Beperkingen** : 
+**Beperkingen**: 
 - Virtuele machines moeten in dezelfde beschikbaarheidsset en dezelfde nabijheidsplaatsingsgroep worden geplaatst.
 - Beschikbaarheidszones worden niet ondersteund.
 - Caching op Premium SSD-schijven wordt niet ondersteund.
@@ -82,8 +82,8 @@ Zie [Create an FCI with Azure shared disks (SQL Server on Azure VMs)](failover-c
 
 [Storage Spaces Direct](/windows-server/storage/storage-spaces/storage-spaces-direct-overview) is een Windows Server-functie die wordt ondersteund met failoverclustering op virtuele Azure-machines. De functie biedt een virtueel SAN op basis van software.
 
-**Ondersteund besturingssysteem** : Windows Server 2016 en hoger   
-**Ondersteunde SQL-versie** : SQL Server 2016 en hoger   
+**Ondersteund besturingssysteem**: Windows Server 2016 en hoger   
+**Ondersteunde SQL-versie**: SQL Server 2016 en hoger   
 
 
 **Voordelen:** 
@@ -104,8 +104,8 @@ Zie [Create an FCI with Storage Spaces Direct (SQL Server on Azure VMs)](failove
 
 [Premium-bestandsshares](../../../storage/files/storage-how-to-create-premium-fileshare.md) zijn een functie van [Azure Files](../../../storage/files/index.yml). Premium-bestandsshares worden opgeslagen op een SSD en hebben een consistent lage latentie. Ze worden volledig ondersteund voor gebruik met exemplaren van failoverclusters voor SQL Server 2012 of hoger met Windows Server 2012 of hoger. Premium-bestandsshares bieden meer flexibiliteit, omdat u een bestandsshare zonder downtime kunt vergroten of verkleinen en schalen.
 
-**Ondersteund besturingssysteem** : Windows Server 2012 en hoger   
-**Ondersteunde SQL-versie** : SQL Server 2012 en hoger   
+**Ondersteund besturingssysteem**: Windows Server 2012 en hoger   
+**Ondersteunde SQL-versie**: SQL Server 2012 en hoger   
 
 **Voordelen:** 
 - Oplossing voor uitsluitend gedeelde opslag voor virtuele machines verspreid over meerdere beschikbaarheidszones. 
@@ -122,8 +122,8 @@ Zie [Create an FCI with a premium file share (SQL Server on Azure VMs)](failover
 
 Er zijn oplossingen voor clustering met ondersteunde partneropslag. 
 
-**Ondersteund besturingssysteem** : Alle   
-**Ondersteunde SQL-versie** : Alle   
+**Ondersteund besturingssysteem**: Alle   
+**Ondersteunde SQL-versie**: Alle   
 
 Een voorbeeld is om SIOS DataKeeper als opslag te gebruiken. Zie voor meer informatie het blogbericht [Failover clustering and SIOS DataKeeper](https://azure.microsoft.com/blog/high-availability-for-a-file-share-using-wsfc-ilb-and-3rd-party-software-sios-datakeeper/).
 
@@ -131,8 +131,8 @@ Een voorbeeld is om SIOS DataKeeper als opslag te gebruiken. Zie voor meer infor
 
 U kunt ook gedeelde blokopslag op een iSCSI-doel beschikbaar maken via Azure ExpressRoute. 
 
-**Ondersteund besturingssysteem** : Alle   
-**Ondersteunde SQL-versie** : Alle   
+**Ondersteund besturingssysteem**: Alle   
+**Ondersteunde SQL-versie**: Alle   
 
 NetApp Private Storage (NPS) biedt bijvoorbeeld een iSCSI-doel aan voor Azure-VM's via ExpressRoute met Equinix.
 
@@ -148,10 +148,11 @@ Raadpleeg [HADR-verbindingen routeren naar SQL Server in Azure-VM's](hadr-cluste
 
 Houd rekening met de volgende beperkingen voor exemplaren van failoverclusters met SQL Server op virtuele Azure-machines. 
 
-### <a name="lightweight-resource-provider"></a>Lichtgewicht resourceprovider   
-Op dit moment worden exemplaren van failoverclusters met SQL Server op virtuele Azure-machines alleen ondersteund met de [beheermodus Lichtgewicht](sql-server-iaas-agent-extension-automate-management.md#management-modes) van de [SQL Server IaaS Agent-extensie](sql-server-iaas-agent-extension-automate-management.md). Als u wilt overschakelen van de volledige extensiemodus naar lichtgewicht, verwijdert u de resource van de **virtuele SQL-machine** voor de bijbehorende VM's en registreert u deze vervolgens in de lichtgewicht modus bij de resourceprovider van de SQL-VM. Wanneer u de resource van de **virtuele SQL-machine** verwijdert met behulp van de Azure-portal, schakelt u het selectievakje naast de juiste virtuele machine uit. 
+### <a name="lightweight-extension-support"></a>Ondersteuning voor Lichtgewicht-extensie   
 
-De volledige extensie ondersteunt functies zoals automatische back-ups en patches, en geavanceerd portalbeheer. Deze functies werken niet voor VM's met SQL Server nadat de agent opnieuw is geïnstalleerd in de modus voor lichtgewicht beheer.
+Op dit moment worden exemplaren van failoverclusters met SQL Server op virtuele Azure-machines alleen ondersteund met de [beheermodus Lichtgewicht](sql-server-iaas-agent-extension-automate-management.md#management-modes) van de SQL Server IaaS Agent-extensie. Als u wilt overschakelen van de volledige extensiemodus naar lichtgewicht, verwijdert u de resource van de **virtuele SQL-machine** voor de bijbehorende VM's en registreert u deze vervolgens in de modus lichtgewicht bij de extensie SQL IaaS-agent. Wanneer u de resource van de **virtuele SQL-machine** verwijdert met behulp van Azure Portal, schakelt u het selectievakje naast de juiste virtuele machine uit om te voorkomen dat de VM wordt verwijderd. 
+
+De volledige extensie ondersteunt functies zoals automatische back-ups en patches, en geavanceerd portalbeheer. Deze functies werken niet voor VM's met SQL Server die in de beheermodus Lichtgewicht zijn geregistreerd.
 
 ### <a name="msdtc"></a>MSDTC 
 

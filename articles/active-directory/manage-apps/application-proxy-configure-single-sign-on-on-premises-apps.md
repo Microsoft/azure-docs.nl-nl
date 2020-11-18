@@ -16,18 +16,18 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90838b0b613c043ae41a71c76b5e9023d21df3a6
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: e7d51aa7e75d7e94d1c2ac66d7edb92a3ef9395b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93025847"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657462"
 ---
 # <a name="saml-single-sign-on-for-on-premises-applications-with-application-proxy"></a>Eenmalige aanmelding via SAML voor on-premises toepassingen met toepassings proxy
 
 U kunt eenmalige aanmelding (SSO) bieden voor on-premises toepassingen die zijn beveiligd met SAML-verificatie en externe toegang bieden tot deze toepassingen via toepassings proxy. Met eenmalige aanmelding via SAML wordt Azure Active Directory (Azure AD) geverifieerd bij de toepassing met behulp van het Azure AD-account van de gebruiker. Azure AD geeft de aanmeldingsgegevens door aan de toepassing via een verbindingsprotocol. U kunt ook gebruikers aan specifieke toepassings rollen toewijzen op basis van de regels die u in uw SAML-claims definieert. Door toepassings proxy naast SAML SSO in te scha kelen, hebben uw gebruikers externe toegang tot de toepassing en een naadloze SSO-ervaring.
 
-De toepassingen moeten SAML-tokens kunnen gebruiken die zijn uitgegeven door **Azure Active Directory** . Deze configuratie is niet van toepassing op toepassingen die gebruikmaken van een on-premises ID-provider. Voor deze scenario's wordt u aangeraden [resources te bekijken voor het migreren van toepassingen naar Azure AD](migration-resources.md).
+De toepassingen moeten SAML-tokens kunnen gebruiken die zijn uitgegeven door **Azure Active Directory**. Deze configuratie is niet van toepassing op toepassingen die gebruikmaken van een on-premises ID-provider. Voor deze scenario's wordt u aangeraden [resources te bekijken voor het migreren van toepassingen naar Azure AD](migration-resources.md).
 
 SAML SSO met Application proxy werkt ook met de SAML-token Encryption-functie. Zie [Configure Azure AD SAML token Encryption](howto-saml-token-encryption.md)(Engelstalig) voor meer informatie.
 
@@ -39,11 +39,11 @@ De volgende protocol diagrammen beschrijven de volg orde van eenmalige aanmeldin
 
 ## <a name="create-an-application-and-set-up-saml-sso"></a>Een toepassing maken en SAML SSO instellen
 
-1. Selecteer in de Azure Portal **Azure Active Directory > bedrijfs toepassingen** en selecteer **nieuwe toepassing** .
+1. Selecteer in de Azure Portal **Azure Active Directory > bedrijfs toepassingen** en selecteer **nieuwe toepassing**.
 
-2. Voer de weergave naam voor de nieuwe toepassing in, selecteer **een andere toepassing integreren die u niet in de galerie vindt** en selecteer vervolgens **maken** .
+2. Voer de weergave naam voor de nieuwe toepassing in, selecteer **een andere toepassing integreren die u niet in de galerie vindt** en selecteer vervolgens **maken**.
 
-3. Op de **overzichts** pagina van de app selecteert u **eenmalige aanmelding** .
+3. Op de **overzichts** pagina van de app selecteert u **eenmalige aanmelding**.
 
 4. Selecteer **SAML** als de methode voor eenmalige aanmelding.
 
@@ -70,9 +70,9 @@ Voordat u SSO voor on-premises toepassingen kunt bieden, moet u toepassings prox
 
 ## <a name="update-the-saml-configuration"></a>De SAML-configuratie bijwerken
 
-1. Selecteer, terwijl de toepassing nog geopend is in de Azure Portal, **eenmalige aanmelding** . 
+1. Selecteer, terwijl de toepassing nog geopend is in de Azure Portal, **eenmalige aanmelding**. 
 
-2. Ga in de pagina **eén Sign-On met SAML instellen** , naar de kop **basis-SAML-configuratie** en selecteer het **bewerkings** pictogram (een potlood). Zorg ervoor dat de **externe URL** die u in de toepassings proxy hebt geconfigureerd, is ingevuld in de velden **id** , **antwoord-URL** en **afmeldings-URL** . Deze Url's zijn vereist voor een juiste werking van de toepassings proxy. 
+2. Ga in de pagina **eén Sign-On met SAML instellen** , naar de kop **basis-SAML-configuratie** en selecteer het **bewerkings** pictogram (een potlood). Zorg ervoor dat de **externe URL** die u in de toepassings proxy hebt geconfigureerd, is ingevuld in de velden **id**, **antwoord-URL** en **afmeldings-URL** . Deze Url's zijn vereist voor een juiste werking van de toepassings proxy. 
 
 3. Bewerk de **antwoord-URL** die u eerder hebt geconfigureerd zodat het domein bereikbaar is op Internet via de toepassings proxy. Als uw **externe URL** bijvoorbeeld is `https://contosotravel-f128.msappproxy.net` en de oorspronkelijke antwoord- **URL** was `https://contosotravel.com/acs` , moet u de oorspronkelijke **antwoord-URL** bijwerken naar `https://contosotravel-f128.msappproxy.net/acs` .
 
@@ -97,5 +97,5 @@ Wanneer u al deze stappen hebt voltooid, moet uw app actief zijn. De app testen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Hoe biedt Azure AD-toepassingsproxy eenmalige aanmelding?](application-proxy-single-sign-on.md)
+- [Hoe biedt Azure AD-toepassingsproxy eenmalige aanmelding?](./what-is-single-sign-on.md)
 - [Problemen met toepassingsproxy oplossen](application-proxy-troubleshoot.md)

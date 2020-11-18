@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/20/2020
+ms.date: 10/28/2020
 ms.author: jeedes
-ms.openlocfilehash: a5e7e46041e339646e4813a4cce61046f2a57e5e
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 2102ea1ef4afb6d7f3ce96e4cd7ead0e7af08bf0
+ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319069"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93129436"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-8x8"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met 8x8
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u 8x8 integreert met Azure Active Directory (Azur
 * In Azure AD beheren wie er toegang heeft tot 8x8.
 * Uw gebruikers zich met hun Azure AD-account automatisch laten aanmelden bij 8x8.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -44,8 +42,6 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * 8x8 ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
 
-* Zodra u 8x8 hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
-
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één instantie in één tenant kan worden geconfigureerd.
 
@@ -53,7 +49,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Voor het configureren van de integratie van 8x8 met Microsoft Azure Active Directory moet u 8x8 vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
@@ -64,7 +60,7 @@ Voor het configureren van de integratie van 8x8 met Microsoft Azure Active Direc
 
 Configureer en test eenmalige aanmelding van Azure AD met 8x8 met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in 8x8.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met 8x8 te configureren en te testen:
+Voer de volgende stappen uit om eenmalige aanmelding van Microsoft Azure Active Directory bij 8x8 te configureren en te testen:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -77,7 +73,7 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met 8x8 te conf
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **8x8** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in Azure Portal op de integratiepagina van de app **8x8** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -130,10 +126,10 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 Het volgende deel van de zelfstudie is afhankelijk van uw soort abonnement op 8x8.
 
-* Raadpleeg [8x8 Configuration Manager configureren](#configure-8x8-configuration-manager) voor 8x8-edities en X Series-klanten die gebruikmaken van Configuration Manager voor het beheer.
+* Raadpleeg [8x8-beheerconsole configureren](#configure-8x8-admin-console) voor 8x8-edities en X Series-klanten die gebruikmaken van Configuration Manager voor het beheer.
 * Raadpleeg [8x8 Account Manager configureren](#configure-8x8-account-manager) voor Virtual Office-klanten die gebruikmaken van Account Manager voor het beheer.
 
-### <a name="configure-8x8-configuration-manager"></a>8x8 Configuration Manager configureren
+### <a name="configure-8x8-admin-console"></a>8X8-beheerconsole configureren
 
 1. Als u de configuratie in 8x8 wilt automatiseren, moet u **My Apps-browserextensie voor veilig aanmelden** installeren door op **De extensie installeren** te klikken.
 
@@ -143,7 +139,7 @@ Het volgende deel van de zelfstudie is afhankelijk van uw soort abonnement op 8x
 
     ![Instelling configureren](common/setup-sso.png)
 
-1. Als u 8X8 handmatig wilt instellen, meldt u zich als beheerder aan bij de [Configuration Manager](https://vo-cm.8x8.com/) van 8x8.
+1. Als u 8X8 handmatig wilt instellen, meldt u zich als beheerder aan bij de [beheerconsole](https://admin.8x8.com/) van 8x8.
 
 1. Klik op de startpagina op **Identity Management**.
 
@@ -153,9 +149,9 @@ Het volgende deel van de zelfstudie is afhankelijk van uw soort abonnement op 8x
 
     ![Schermopname met de opties voor eenmalige aanmelding (SSO) en Microsoft Azure AD.](./media/8x8virtualoffice-tutorial/configure2.png)
 
-1. Kopieer de drie URL's en het handtekeningcertificaat van de pagina **Eenmalige aanmelding met SAML instellen** in Azure AD naar de sectie **Microsoft Azure AD SAML Settings** in 8x8 Configuration Manager.
+1. Kopieer de drie URL's en het handtekeningcertificaat van de pagina **Eenmalige aanmelding met SAML instellen** in Azure AD naar de sectie **SAML-instellingen van Microsoft Azure AD** in de 8x8-beheerconsole.
 
-    ![8x8 Configuration Manager](./media/8x8virtualoffice-tutorial/configure3.png)
+    ![8x8-beheerconsole](./media/8x8virtualoffice-tutorial/configure3.png)
 
     a. Kopieer de **aanmeldings-URL** naar **IDP Login URL**.
 
@@ -175,7 +171,7 @@ Het volgende deel van de zelfstudie is afhankelijk van uw soort abonnement op 8x
 
     ![Schermopname waarop de tegel Virtual Office-accountbeheer is gemarkeerd.](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_001.png)
 
-1. Selecteer het **bedrijfs**account dat u wilt beheren en klik op **Aanmelden**.
+1. Selecteer het **bedrijfs** account dat u wilt beheren en klik op **Aanmelden**.
 
     ![Schermopname waarop de opties voor het bedrijf en de aanmeldingsknop zijn gemarkeerd.](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_002.png)
 
@@ -211,20 +207,21 @@ In deze sectie gaat u in 8x8 een gebruiker maken met de naam Britta Simon. Werk 
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel 8x8 klikt, wordt u automatisch aangemeld bij de instantie van 8x8 waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van 8x8, waar u de aanmeldingsstroom kunt starten.  
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* Ga rechtstreeks naar de aanmeldings-URL van 8x8 en start de aanmeldingsstroom daar.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+* Klik op **Deze app testen** in Azure Portal. U wordt automatisch aangemeld bij de instantie van 8x8 waarvoor u eenmalige aanmelding hebt ingesteld 
 
-- [8x8 met Azure AD uitproberen](https://aad.portal.azure.com/)
+U kunt ook het Microsoft-toegangsvenster gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in Toegangsvenster op de tegel 8x8 klikt en als deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de app voor het starten van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij de instantie van 8x8 waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
-- [Wat is sessiebeheer in Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
 
-- [8x8 beveiligen met geavanceerde zichtbaarheid en besturingselementen](/cloud-app-security/proxy-intro-aad)
+## <a name="next-steps"></a>Volgende stappen
+
+Zodra u 8x8 hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

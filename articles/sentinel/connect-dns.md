@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2019
 ms.author: yelevin
-ms.openlocfilehash: a88696ba69fdf53f5c7e15d174b126d69f4230ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7701fc6d90fd9ebc7ec29f0ffdd7d050c58c036c
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85555438"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655660"
 ---
 # <a name="connect-your-domain-name-server"></a>De domein naam server verbinden
 
@@ -46,11 +46,11 @@ De volgende tabel beschrijft de verbonden bronnen die worden ondersteund door de
 | [Windows-agents](../azure-monitor/platform/agent-windows.md) | Ja | De oplossing verzamelt DNS-gegevens van Windows-agents. |
 | [Linux-agents](../azure-monitor/learn/quick-collect-linux-computer.md) | Nee | De oplossing verzamelt geen DNS-gegevens van direct Linux-agents. |
 | [Beheergroep System Center Operations Manager](../azure-monitor/platform/om-agents.md) | Ja | De oplossing verzamelt DNS-gegevens van agents in een verbonden Operations Manager-beheer groep. Een directe verbinding van de Operations Manager agent naar Azure Monitor is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
-| [Azure-opslag account](../azure-monitor/platform/collect-azure-metrics-logs.md) | Nee | Azure Storage wordt niet gebruikt door de oplossing. |
+| [Azure Storage-account](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) | Nee | Azure Storage wordt niet gebruikt door de oplossing. |
 
 ### <a name="data-collection-details"></a>Details van gegevens verzameling
 
-De oplossing verzamelt DNS-inventarisatie-en DNS-gegevens over gebeurtenissen van de DNS-servers waarop een Log Analytics-agent is geïnstalleerd. Inventaris-gerelateerde gegevens, zoals het aantal DNS-servers, zones en bron records, worden verzameld door de DNS Power shell-cmdlets uit te voeren. De gegevens worden elke twee dagen bijgewerkt. De gebeurtenis gegevens worden in realtime verzameld van de [analyse-en audit logboeken](https://technet.microsoft.com/library/dn800669.aspx#enhanc) die zijn opgenomen in de verbeterde DNS-logboek registratie en diagnoses in Windows Server 2012 R2.
+De oplossing verzamelt DNS-inventarisatie-en DNS-gegevens over gebeurtenissen van de DNS-servers waarop een Log Analytics-agent is geïnstalleerd. Inventaris-gerelateerde gegevens, zoals het aantal DNS-servers, zones en bron records, worden verzameld door de DNS Power shell-cmdlets uit te voeren. De gegevens worden elke twee dagen bijgewerkt. De gebeurtenis gegevens worden in realtime verzameld van de [analyse-en audit logboeken](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800669(v=ws.11)#enhanc) die zijn opgenomen in de verbeterde DNS-logboek registratie en diagnoses in Windows Server 2012 R2.
 
 
 ## <a name="connect-your-dns-appliance"></a>Uw DNS-apparaat koppelen
@@ -65,7 +65,7 @@ De oplossing verzamelt DNS-inventarisatie-en DNS-gegevens over gebeurtenissen va
 2. Als uw DNS-computer geen Azure-VM is:
     1. Klik op **agent installeren op niet-Azure-machines**.
     1. Selecteer in het venster **direct agent** de optie **Windows-agent (64 bits) downloaden** of **Windows-agent (32 bits) downloaden**.
-    1. Installeer de agent op uw DNS-computer. Kopieer de **werk ruimte-id**, **primaire sleutel**en **secundaire sleutel** en gebruik deze wanneer u hierom wordt gevraagd tijdens de installatie.
+    1. Installeer de agent op uw DNS-computer. Kopieer de **werk ruimte-id**, **primaire sleutel** en **secundaire sleutel** en gebruik deze wanneer u hierom wordt gevraagd tijdens de installatie.
 
 3. Als u het relevante schema in Log Analytics voor de DNS-logboeken wilt gebruiken, zoekt u naar **DnsEvents**.
 
@@ -76,7 +76,7 @@ Zoek in Log Analytics naar het schema **DnsEvents** en controleer of er gebeurte
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 Als opzoek Query's niet worden weer gegeven in azure Sentinel, volgt u deze stappen zodat de query's correct worden weer gegeven:
-1. Schakel de [DNS-analyse-Logboeken in op uw servers](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800669(v=ws.11)).
+1. Schakel de [DNS-analyse-Logboeken in op uw servers](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800669(v=ws.11)).
 2. Zorg ervoor dat DNSEvents worden weer gegeven in de lijst Log Analytics verzameling.
 3. Schakel [Azure DNS Analytics](../azure-monitor/insights/dns-analytics.md)in.
 4. Wijzig in Azure DNS Analytics, onder **configuratie**, een van de instellingen, sla het bestand op en wijzig het vervolgens opnieuw als dat nodig is en sla het vervolgens opnieuw op.

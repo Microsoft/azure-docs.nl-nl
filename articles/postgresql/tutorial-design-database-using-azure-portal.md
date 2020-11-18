@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.custom: tutorial, mvc
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: 7af3386a618fdcc58facb1d67c26692312d30a89
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 179d4124e28abfffa83b16cfdb418d8e860192d8
+ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92535770"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93337129"
 ---
 # <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Zelfstudie: Een Azure Database for PostgreSQL - Single Server ontwerpen met behulp van Azure Portal
 
@@ -58,7 +58,7 @@ Volg deze stappen voor het maken van een Azure Database voor PostgreSQL-server:
     Wachtwoord |Uw wachtwoord| Een nieuw wachtwoord voor het beheerdersaccount voor de server. Dit wachtwoord moet tussen 8 en 128 tekens bevatten. Uw wachtwoord moet tekens bevatten uit drie van de volgende categorieën: Nederlandse hoofdletters, Nederlandse kleine letters, cijfers (0 tot en met 9) en niet-alfanumerieke tekens (!, $, #, %, enzovoort).
     Locatie|De regio het dichtst bij uw gebruikers| De locatie die zich het dichtst bij uw gebruikers bevindt.
     Versie|De meest recente primaire versie| De nieuwste primaire versie van PostgreSQL, tenzij u specifieke andere vereisten hebt.
-    Compute en opslag | **Algemeen** , **Gen 5** , **2 vCores** , **5 GB** , **7 dagen** , **Geografisch redundant** | De reken-, opslag- en back-upconfiguraties voor de nieuwe server. Selecteer **Server configureren**. Selecteer vervolgens het tabblad **Algemeen**. *Gen 5* , *4 vCores* , *100 GB* en *7 dagen* zijn de standaardwaarden voor respectievelijk **compute-generatie** , **vCore** , **opslag** en **bewaartermijn voor back-up**. U kunt deze schuifregelaars laten zoals ze zijn of ze aanpassen. Als u serverback-ups in geografisch redundante opslag wilt inschakelen, selecteert u **Geografisch redundant** in het gedeelte **Redundantieopties voor back-up**. Selecteer **OK** om deze geselecteerde prijscategorie op te slaan. Deze selecties worden afgebeeld in de volgende schermopname.
+    Compute en opslag | **Algemeen**, **Gen 5**, **2 vCores**, **5 GB**, **7 dagen**, **Geografisch redundant** | De reken-, opslag- en back-upconfiguraties voor de nieuwe server. Selecteer **Server configureren**. Selecteer vervolgens het tabblad **Algemeen**. *Gen 5*, *4 vCores*, *100 GB* en *7 dagen* zijn de standaardwaarden voor respectievelijk **compute-generatie**, **vCore**, **opslag** en **bewaartermijn voor back-up**. U kunt deze schuifregelaars laten zoals ze zijn of ze aanpassen. Als u serverback-ups in geografisch redundante opslag wilt inschakelen, selecteert u **Geografisch redundant** in het gedeelte **Redundantieopties voor back-up**. Selecteer **OK** om deze geselecteerde prijscategorie op te slaan. Deze selecties worden afgebeeld in de volgende schermopname.
 
    > [!NOTE]
    > Overweeg het gebruik van de prijscategorie Basic als lichte reken- en I/O-capaciteit voldoende is voor uw workload. Servers die zijn gemaakt in de prijscategorie Basic kunnen later niet meer worden geschaald voor Algemeen gebruik of Geoptimaliseerd voor geheugen. Zie de pagina met [prijzen](https://azure.microsoft.com/pricing/details/postgresql/) voor meer informatie.
@@ -75,7 +75,7 @@ Volg deze stappen voor het maken van een Azure Database voor PostgreSQL-server:
 
     :::image type="content" source="./media/quickstart-create-database-portal/3-notifications.png" alt-text="Het deelvenster Meldingen":::
    
-   Standaard word een **postgres** -database op uw server gemaakt. De database [postgres](https://www.postgresql.org/docs/9.6/static/app-initdb.html) is een standaarddatabase die kan worden gebruikt door gebruikers, hulpprogramma's en toepassingen van derden. (De andere standaarddatabase is **azure_maintenance**. De functie van de database is het scheiden van beheerde serviceprocessen van acties van de gebruiker. U hebt geen toegang tot deze database.)
+   Standaard word een **postgres**-database op uw server gemaakt. De database [postgres](https://www.postgresql.org/docs/9.6/static/app-initdb.html) is een standaarddatabase die kan worden gebruikt door gebruikers, hulpprogramma's en toepassingen van derden. (De andere standaarddatabase is **azure_maintenance**. De functie van de database is het scheiden van beheerde serviceprocessen van acties van de gebruiker. U hebt geen toegang tot deze database.)
 
 
 ## <a name="configure-a-server-level-firewall-rule"></a>Een serverfirewallregel configureren
@@ -138,7 +138,7 @@ Als op uw clientcomputer PostgreSQL is geïnstalleerd, kunt u een lokale instant
    CREATE DATABASE mypgsqldb;
    ```
 
-3. Voer na de prompt de volgende opdracht uit om verbinding te maken met de zojuist gemaakte database **mypgsqldb** :
+3. Voer na de prompt de volgende opdracht uit om verbinding te maken met de zojuist gemaakte database **mypgsqldb**:
    ```sql
    \c mypgsqldb
    ```
@@ -196,21 +196,26 @@ Stel dat u deze tabel per ongeluk hebt verwijderd. Dit is iets wat u niet eenvou
 
    :::image type="content" source="./media/tutorial-design-database-using-azure-portal/10-azure-portal-restore.png" alt-text="Azure Portal: opties voor het herstellen van formulieren":::
 
-   - **Herstelpunt** : selecteer een tijdstip voorafgaand aan het moment waarop de server is gewijzigd
-   - **Doelserver** : geef de naam op van de nieuwe server waarnaar u wilt herstellen
-   - **Locatie** : u kunt de regio niet selecteren, standaard is deze hetzelfde als die van de bronserver
-   - **Prijscategorie** : u kunt deze waarde niet wijzigen als u een server gaat herstellen. Deze is hetzelfde als de bronserver. 
+   - **Herstelpunt**: selecteer een tijdstip voorafgaand aan het moment waarop de server is gewijzigd
+   - **Doelserver**: geef de naam op van de nieuwe server waarnaar u wilt herstellen
+   - **Locatie**: u kunt de regio niet selecteren, standaard is deze hetzelfde als die van de bronserver
+   - **Prijscategorie**: u kunt deze waarde niet wijzigen als u een server gaat herstellen. Deze is hetzelfde als de bronserver. 
 3. Klik op **OK** om [de server te herstellen naar een tijdstip](./howto-restore-server-portal.md) voordat de tabel is toegevoegd. Als u een server herstelt naar een eerder tijdstip, wordt er een nieuw exemplaar gemaakt van de oorspronkelijke server met de inhoud zoals die aanwezig was op het tijdstip dat u opgeeft. Dit tijdstip moet wel binnen de bewaarperiode liggen die wordt gehanteerd voor uw [prijscategorie](./concepts-pricing-tiers.md).
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+In de voorgaande stappen hebt u Azure-resources in een resourcegroep gemaakt. Als u deze resources in de toekomst niet nodig denkt te hebben, kunt u de servergroep verwijderen. Druk op de knop *Verwijderen* op de pagina *Overzicht* voor uw servergroep. Wanneer u daarom op een pop-uppagina wordt gevraagd, bevestigt u de naam van de servergroep en klikt u op de laatste knop *Verwijderen*.
 
 ## <a name="next-steps"></a>Volgende stappen
 In deze zelfstudie hebt u geleerd hoe u Azure Portal en andere hulpprogramma's kunt gebruiken voor het volgende:
 > [!div class="checklist"]
 > * Een Azure-database voor PostgreSQL-server maken
 > * De serverfirewall configureren
-> * Het hulpprogramma [**psql**](https://www.postgresql.org/docs/9.6/static/app-psql.html) gebruiken om een database te maken
+> * Het hulpprogramma **psql** gebruiken om een database te maken
 > * Voorbeeldgegevens laden
 > * Querygegevens
 > * Gegevens bijwerken
 > * Gegevens terugzetten
 
-Als u meer informatie wilt over het gebruik van de Azure CLI voor vergelijkbare taken, gaat u verder met deze zelfstudie: [Uw eerste Azure Database for PostgreSQL ontwerpen met de Azure CLI](tutorial-design-database-using-azure-cli.md)
+> [!div class="nextstepaction"]
+>[Uw eerste Azure Database for PostgreSQL ontwerpen met Azure CLI](tutorial-design-database-using-azure-cli.md)

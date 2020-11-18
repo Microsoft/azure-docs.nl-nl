@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/08/2020
 ms.author: cherylmc
-ms.openlocfilehash: 7680c7ad4b2c5c8b8c1c13fb2344575659eda140
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: 346536f5797841a850ef97dc4667110eafa721a4
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91892818"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656953"
 ---
 # <a name="create-a-site-to-site-connection-using-the-azure-portal-classic"></a>Een site-naar-site-verbinding maken met behulp van Azure Portal (klassiek)
 
@@ -43,13 +43,13 @@ Controleer voordat u met de configuratie begint, of aan de volgende criteria is 
 
 In de voorbeelden in dit artikel worden de volgende waarden gebruikt. U kunt deze waarden gebruiken om een testomgeving te maken of ze raadplegen om meer inzicht te krijgen in de voorbeelden in dit artikel. Wanneer u werkt met IP-adres waarden voor adres ruimte, kunt u het beste met de netwerk beheerder instemmen om overlappende adres ruimten te voor komen, wat van invloed kan zijn op route ring. Vervang in dat geval de IP-adres waarden met uw eigen als u een werkende verbinding wilt maken.
 
-* **Resourcegroep: **TestRG1
+* **Resource groep:** TestRG1
 * **VNet-naam:** TestVNet1
 * **Adres ruimte:** 10.11.0.0/16
-* **Subnetnaam:** Front
+* **Subnetnaam:** FrontEnd
 * **Adres bereik van subnet:** 10.11.0.0/24
 * **Gatewaysubnet**: 10.11.255.0/27
-* **Regio:** (VS) vs-Oost
+* **Regio:** (US) US - oost
 * **Lokale sitenaam:** Site2
 * **Clientadresruimte:** de adresruimte op uw on-premises site.
 
@@ -73,7 +73,7 @@ Als u een virtueel netwerk maakt om te gebruiken met een S2S-verbinding, moet u 
 
 De lokale site verwijst doorgaans naar uw on-premises locatie. Het bevat het IP-adres van het VPN-apparaat waarmee u verbinding gaat maken en de IP-adresbereiken die via de VPN-gateway naar het VPN-apparaat worden gerouteerd.
 
-1. Selecteer op de pagina voor uw VNet onder **instellingen**de optie **site-naar-site-verbindingen**.
+1. Selecteer op de pagina voor uw VNet onder **instellingen** de optie **site-naar-site-verbindingen**.
 1. Op de pagina site-naar-site-verbindingen selecteert u **+ toevoegen**.
 1. Op de pagina **een VPN-verbinding en gateway configureren** voor het **verbindings type**, moet **u site-naar-site** geselecteerd laten. Voor deze oefening moet u een combi natie van de [voorbeeld waarden](#values) en uw eigen waarden gebruiken.
 
@@ -135,7 +135,7 @@ Als u verbindingsproblemen ondervindt, raadpleegt u de sectie **Problemen oploss
 
 ## <a name="how-to-reset-a-vpn-gateway"></a><a name="reset"></a>Een VPN-gateway opnieuw instellen
 
-Het opnieuw instellen van een Azure VPN-gateway is handig als u cross-premises VPN-connectiviteit verliest in een of meer Site-to-Site VPN-tunnels. In een dergelijke situatie functioneren al uw on-premises VPN-apparaten naar behoren, maar kunnen ze geen IPSec-tunnels tot stand brengen met de Azure VPN-gateways. Zie [Een VPN-gateway opnieuw instellen](vpn-gateway-resetgw-classic.md#resetclassic) voor de stappen.
+Het opnieuw instellen van een Azure VPN-gateway is handig als u cross-premises VPN-connectiviteit verliest in een of meer Site-to-Site VPN-tunnels. In een dergelijke situatie functioneren al uw on-premises VPN-apparaten naar behoren, maar kunnen ze geen IPSec-tunnels tot stand brengen met de Azure VPN-gateways. Zie [Een VPN-gateway opnieuw instellen](./reset-gateway.md#resetclassic) voor de stappen.
 
 ## <a name="how-to-change-a-gateway-sku"></a><a name="changesku"></a>Een gateway-SKU wijzigen
 
@@ -143,5 +143,5 @@ Zie [het formaat van een gateway-SKU](vpn-gateway-about-SKUS-legacy.md#classicre
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Wanneer de verbinding is voltooid, kunt u virtuele machines aan uw virtuele netwerken toevoegen. Zie [Virtuele machines](https://docs.microsoft.com/azure/) voor meer informatie.
+* Wanneer de verbinding is voltooid, kunt u virtuele machines aan uw virtuele netwerken toevoegen. Zie [Virtuele machines](../index.yml) voor meer informatie.
 * Zie [over geforceerde](vpn-gateway-about-forced-tunneling.md)tunneling voor meer informatie over geforceerde tunneling.

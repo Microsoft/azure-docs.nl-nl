@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: fdd43a017e584a07d61d41e1af06d30db2f30ac7
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 3ed55387034a383e402d027fd5cab60c4a59c23c
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92542774"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657037"
 ---
 # <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>Back-up en replicatie instellen voor Apache HBase en Apache Phoenix op HDInsight
 
@@ -173,7 +173,7 @@ In ons voorbeeld:
 
 ## <a name="snapshots"></a>Momentopnamen
 
-Met [moment opnamen](https://hbase.apache.org/book.html#ops.snapshots) kunt u een tijdrovende back-up maken van gegevens in uw HBase-opslag plaats. Moment opnamen hebben minimale overhead en zijn binnen enkele seconden voltooid, omdat een momentopname bewerking in feite een meta gegevens bewerking is die de namen van alle bestanden in de opslag op dat moment vastlegt. Op het moment van een moment opname worden er geen werkelijke gegevens gekopieerd. Moment opnamen zijn afhankelijk van het onveranderbare karakter van de gegevens die zijn opgeslagen in HDFS, waarbij updates, verwijderingen en invoegingen worden weer gegeven als nieuwe gegevens. U kunt een moment opname op hetzelfde cluster herstellen ( *klonen* ) of een moment opname exporteren naar een ander cluster.
+Met [moment opnamen](https://hbase.apache.org/book.html#ops.snapshots) kunt u een tijdrovende back-up maken van gegevens in uw HBase-opslag plaats. Moment opnamen hebben minimale overhead en zijn binnen enkele seconden voltooid, omdat een momentopname bewerking in feite een meta gegevens bewerking is die de namen van alle bestanden in de opslag op dat moment vastlegt. Op het moment van een moment opname worden er geen werkelijke gegevens gekopieerd. Moment opnamen zijn afhankelijk van het onveranderbare karakter van de gegevens die zijn opgeslagen in HDFS, waarbij updates, verwijderingen en invoegingen worden weer gegeven als nieuwe gegevens. U kunt een moment opname op hetzelfde cluster herstellen (*klonen*) of een moment opname exporteren naar een ander cluster.
 
 Als u een moment opname wilt maken, maakt u een SSH-verbinding met het hoofd knooppunt van uw HDInsight HBase-cluster en start u de `hbase` shell:
 
@@ -217,6 +217,12 @@ Als u geen secundair Azure Storage-account hebt gekoppeld aan uw bron cluster of
 
 ```console
 hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -Dfs.azure.account.key.myaccount.blob.core.windows.net=mykey -snapshot 'Snapshot1' -copy-to 'wasbs://secondcluster@myaccount.blob.core.windows.net/hbase'
+```
+
+Als uw doel cluster een ADLS gen 2-cluster is, wijzigt u de voor gaande opdracht in aanpassen voor de configuraties die worden gebruikt door ADLS gen 2:
+
+```console
+hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -Dfs.azure.account.key.<account_name>.dfs.core.windows.net=<key> -Dfs.azure.account.auth.type.<account_name>.dfs.core.windows.net=SharedKey -Dfs.azure.always.use.https.<account_name>.dfs.core.windows.net=false -Dfs.azure.account.keyprovider.<account_name>.dfs.core.windows.net=org.apache.hadoop.fs.azurebfs.services.SimpleKeyProvider -snapshot 'Snapshot1' -copy-to 'abfs://<container>@<account_name>.dfs.core.windows.net/hbase'
 ```
 
 Nadat de moment opname is geëxporteerd, moet u SSH in het hoofd knooppunt van het doel cluster en de moment opname herstellen met behulp van de `restore_snapshot` opdracht zoals eerder beschreven.

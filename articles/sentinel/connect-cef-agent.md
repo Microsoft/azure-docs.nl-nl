@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 2f90a7c954fc8930f69dfee3e7b56b394225405a
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 512e5e0140038b27b7ffc9f2affb4a0e5b28b41b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94516734"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655830"
 ---
 # <a name="step-1-deploy-the-log-forwarder"></a>Stap 1: de logboek-doorstuur server implementeren
 
@@ -48,7 +48,7 @@ In deze stap wijst en configureert u de Linux-computer waarmee de logboeken word
  
 1. Klik in het navigatie menu van de Azure-Sentinel op **Data connectors**. Klik in de lijst met connectors op de tegel **algemene gebeurtenis indeling (CEF)** en klik vervolgens op de knop **pagina connector openen** op de rechter benedenhoek. 
 
-1. Onder **1,2 Installeer de CEF-Collector op de Linux-computer** , kopieer de koppeling die u hebt gemaakt onder **Voer het volgende script uit om de CEF-Collector te installeren en toe te passen** , of uit de onderstaande tekst (waarbij de werk ruimte-id en de primaire sleutel worden toegepast in plaats van de tijdelijke aanduidingen):
+1. Onder **1,2 Installeer de CEF-Collector op de Linux-computer**, kopieer de koppeling die u hebt gemaakt onder **Voer het volgende script uit om de CEF-Collector te installeren en toe te passen**, of uit de onderstaande tekst (waarbij de werk ruimte-id en de primaire sleutel worden toegepast in plaats van de tijdelijke aanduidingen):
 
     ```bash
     sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]`
@@ -212,5 +212,4 @@ Kies een syslog-daemon om de juiste beschrijving te bekijken.
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u de Log Analytics-agent implementeert voor het verbinden van CEF-apparaten met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
-- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats.md).
-
+- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](./tutorial-detect-threats-built-in.md).

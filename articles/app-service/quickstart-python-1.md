@@ -5,14 +5,15 @@ ms.topic: quickstart
 ms.date: 09/22/2020
 ms.custom: seo-python-october2019, cli-validate, devx-track-python
 zone_pivot_groups: python-frameworks-01
-ms.openlocfilehash: eef0a4f24ba65fea4bb33c68f7e7d15f592e808d
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+adobe-target: true
+ms.openlocfilehash: 8b88b8ef81dc8186c122a24896d85114ef8a163d
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92915465"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506461"
 ---
-# <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Quickstart: Een Python-app maken in Azure App Service op Linux
+# <a name="quickstart-create-a-python-app-in-azure-app-service-for-linux"></a>Quickstart: Een Python-app maken in Azure App Service voor Linux
 
 In deze quickstart implementeert u een Python-web-app op [App Service op Linux](overview.md#app-service-on-linux), een uiterst schaalbare webhostingservice van Azure. Gebruik de lokale [Azure-opdrachtregelinterface (CLI)](/cli/azure/install-azure-cli) op een Mac-, Linux- of Windows-computer om een voorbeeld te implementeren met behulp van deFlask- of Django-frameworks. De web-app die u configureert, maakt gebruik van een gratis App Service-laag, zodat u geen kosten opdoet in de loop van dit artikel.
 
@@ -99,7 +100,7 @@ Het voorbeeld bevat framework-specifieke code die door Azure App Service wordt h
 
 ## <a name="deploy-the-sample"></a>Het voorbeeld implementeren
 
-Implementeer de code in uw lokale map ( *python-docs-hello-world* ) met behulp van de `az webapp up`-opdracht:
+Implementeer de code in uw lokale map (*python-docs-hello-world*) met behulp van de `az webapp up`-opdracht:
 
 ```azurecli
 az webapp up --sku F1 --name <app-name>
@@ -107,7 +108,7 @@ az webapp up --sku F1 --name <app-name>
 
 - Als de `az`-opdracht niet wordt herkend, controleert u of de Azure CLI is geïnstalleerd volgens de beschrijving in [Uw initiële omgeving instellen](#set-up-your-initial-environment).
 - Als de `webapp`-opdracht niet wordt herkend, komt dat omdat uw Azure CLI-versie 2.0.80 of hoger is. Als dat niet zo is, [installeert u de nieuwste versie](/cli/azure/install-azure-cli).
-- Vervang `<app_name>` door een naam die in de volledige Azure-omgeving uniek is ( *geldige tekens zijn `a-z`, `0-9` en `-`* ). Het is handig om een combinatie van uw bedrijfsnaam en een app-id te gebruiken.
+- Vervang `<app_name>` door een naam die in de volledige Azure-omgeving uniek is (*geldige tekens zijn `a-z`, `0-9` en `-`* ). Het is handig om een combinatie van uw bedrijfsnaam en een app-id te gebruiken.
 - Met het argument `--sku F1` maakt u de web-app in de prijscategorie Gratis. Laat dit argument weg om een snellere Premium-laag te gebruiken, waarmee u kosten per uur in rekening worden gebracht.
 - U kunt eventueel het argument `--location <location-name>` toevoegen, waarbij `<location_name>` een beschikbare Azure-regio is. U kunt een lijst met toegestane regio's voor uw Azure-account ophalen door de [`az account list-locations`](/cli/azure/appservice#az-appservice-list-locations)-opdracht uit te voeren.
 - Als de fout 'Kan de runtimestack van uw app niet automatisch detecteren' wordt weergegeven, moet u controleren of u de opdracht uitvoert in de map *python-docs-hello-world* (Flask) of de map *python-docs-hello-django* (Django), die het bestand *requirements.txt* bevat. (Zie [Problemen met automatische detectie oplossen met az webapp up](https://github.com/Azure/app-service-linux-docs/blob/master/AzWebAppUP/runtime_detection.md) (GitHub) voor meer informatie.)
@@ -227,7 +228,7 @@ Sla de wijzigingen op en implementeer de app opnieuw met de opdracht `az webapp 
 az webapp up
 ```
 
-Met deze opdracht worden waarden gebruikt die lokaal in de cache worden opgeslagen in het bestand *.azure/config* , met inbegrip van de app-naam, de resourcegroep en het App Service-plan.
+Met deze opdracht worden waarden gebruikt die lokaal in de cache worden opgeslagen in het bestand *.azure/config*, met inbegrip van de app-naam, de resourcegroep en het App Service-plan.
 
 Zodra de implementatie is voltooid, schakelt u terug naar het browservenster om `http://<app-name>.azurewebsites.net` te openen. Vernieuw de pagina. Als het goed is, wordt hier het volgende aangepast bericht weergegeven:
 

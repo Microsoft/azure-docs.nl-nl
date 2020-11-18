@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
-ms.openlocfilehash: 9ff70e7c05ca8de49f560fba3d59f0609785b8c4
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 9ac4aa9e93ac296913d7a62e83b182d673015bae
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636772"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655966"
 ---
 # <a name="connect-azure-stack-hub-virtual-machines-to-azure-sentinel"></a>Azure Stack hub virtuele machines verbinden met Azure Sentinel
 
@@ -34,8 +34,8 @@ Nadat u Azure Stack hub-machines hebt verbonden, kiest u uit een galerie met Das
 
 Voeg de extensie van de virtuele machine **Azure monitor, update en configuratie beheer** toe aan de virtuele machines die worden uitgevoerd op uw Azure stack hub. 
 
-1. Meld u in een nieuw browser tabblad aan bij uw [Azure stack hub-Portal](https://docs.microsoft.com/azure-stack/user/azure-stack-use-portal#access-the-portal).
-2. Ga naar de pagina **virtuele machines** en selecteer de virtuele machine die u met Azure Sentinel wilt beveiligen. Zie voor meer informatie over het maken van een virtuele machine op Azure Stack hub [een Windows Server-VM maken met de Azure stack-hub Portal](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-windows-portal) of [een Linux-Server-VM maken met behulp van de Azure stack hub-Portal](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-linux-portal).
+1. Meld u in een nieuw browser tabblad aan bij uw [Azure stack hub-Portal](/azure-stack/user/azure-stack-use-portal#access-the-portal).
+2. Ga naar de pagina **virtuele machines** en selecteer de virtuele machine die u met Azure Sentinel wilt beveiligen. Zie voor meer informatie over het maken van een virtuele machine op Azure Stack hub [een Windows Server-VM maken met de Azure stack-hub Portal](/azure-stack/user/azure-stack-quick-windows-portal) of [een Linux-Server-VM maken met behulp van de Azure stack hub-Portal](/azure-stack/user/azure-stack-quick-linux-portal).
 3. Selecteer **Extensies**. De lijst met virtuele machine-extensies die op deze virtuele machine is geïnstalleerd, wordt weergegeven.
 4. Klik op de knop **Add**. De menublade **Nieuwe resource** wordt geopend en toont de lijst met beschikbare extensies van virtuele machines. 
 5. Selecteer de uitbrei ding **Azure monitor, update en configuratie beheer** en klik op **maken**. Het venster **extensie configuratie installeren** wordt geopend.
@@ -53,7 +53,7 @@ Zie [Windows-computers verbinden](../azure-monitor/platform/agent-windows.md#ins
 
 Zie [Probleemoplossing voor Linux-agent voor Log Analytics](../azure-monitor/platform/agent-linux-troubleshoot.md) voor meer informatie over het oplossen van problemen met agents in Linux.
 
-In de Azure-Sentinel-Portal op Azure, onder **virtual machines** , hebt u een overzicht van alle vm's en computers, samen met hun status. 
+In de Azure-Sentinel-Portal op Azure, onder **virtual machines**, hebt u een overzicht van alle vm's en computers, samen met hun status. 
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 Wanneer u deze niet meer nodig hebt, kunt u de extensie uit de virtuele machine verwijderen via de Azure Stack hub-Portal.
@@ -61,8 +61,8 @@ Wanneer u deze niet meer nodig hebt, kunt u de extensie uit de virtuele machine 
 De extensie verwijderen:
 
 1. Open de **Azure stack hub-Portal**.
-2. Ga naar de pagina **Virtuele machines** , selecteer de virtuele machine waarvan u de extensie wilt verwijderen.
-3. Selecteer **Extensies** , de extensie **Microsoft.EnterpriseCloud.Monitoring**.
+2. Ga naar de pagina **Virtuele machines**, selecteer de virtuele machine waarvan u de extensie wilt verwijderen.
+3. Selecteer **Extensies**, de extensie **Microsoft.EnterpriseCloud.Monitoring**.
 4. Klik op **installatie ongedaan maken** en bevestig uw selectie.
 
 ## <a name="next-steps"></a>Volgende stappen

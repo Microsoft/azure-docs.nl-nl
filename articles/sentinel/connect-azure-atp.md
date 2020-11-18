@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: 319e0d29ef297f2a675128d498820a2d5b8ac42e
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: b0cafcbc9fa6f0fcb31f44b44dfbe4fc3e10c17d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579518"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656068"
 ---
 # <a name="connect-data-from-microsoft-defender-for-identity-formerly-azure-advanced-threat-protection"></a>Gegevens van micro soft Defender verbinden voor identiteit (voorheen Azure Advanced Threat Protection)
 
@@ -27,7 +27,7 @@ ms.locfileid: "94579518"
 > De micro soft Defender for Identity Data Connector in azure Sentinel is momenteel beschikbaar als open bare preview.
 > Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-U kunt Logboeken van [micro soft Defender streamen voor identiteiten](https://docs.microsoft.com/azure-advanced-threat-protection/what-is-atp) in azure Sentinel met één klik.
+U kunt Logboeken van [micro soft Defender streamen voor identiteiten](/azure-advanced-threat-protection/what-is-atp) in azure Sentinel met één klik.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -36,7 +36,7 @@ U kunt Logboeken van [micro soft Defender streamen voor identiteiten](https://do
 
 ## <a name="connect-to-microsoft-defender-for-identity"></a>Verbinding maken met micro soft Defender voor identiteit
 
-Zorg ervoor dat de preview-versie van micro soft Defender voor identiteit is [ingeschakeld in uw netwerk](https://docs.microsoft.com/azure-advanced-threat-protection/install-atp-step1).
+Zorg ervoor dat de preview-versie van micro soft Defender voor identiteit is [ingeschakeld in uw netwerk](/azure-advanced-threat-protection/install-atp-step1).
 Als micro soft Defender voor identiteit wordt geïmplementeerd en uw gegevens worden opgenomen, kunnen de verdachte waarschuwingen eenvoudig worden gestreamd naar Azure Sentinel. Het kan tot 24 uur duren voordat de waarschuwingen streamen naar Azure Sentinel starten.
 
 
@@ -57,4 +57,3 @@ Als micro soft Defender voor identiteit wordt geïmplementeerd en uw gegevens wo
 In dit document hebt u geleerd hoe u micro soft Defender kunt verbinden voor identiteiten voor Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
 - Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats-built-in.md).
-

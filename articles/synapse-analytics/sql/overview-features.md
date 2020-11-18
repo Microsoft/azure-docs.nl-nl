@@ -9,27 +9,27 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: fe30a2a0885e1a579eb32ad84ef467f7162febe4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 03995166df5d40f7f8be7054aed0727be254ed73
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310331"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94376890"
 ---
 # <a name="transact-sql-features-supported-in-azure-synapse-sql"></a>Transact-SQL-functies die worden ondersteund in Azure Synapse SQL
 
 Azure Synapse SQL is een analyseservice voor big data waarmee u uw gegevens kunt opvragen en analyseren met behulp van de taal T-SQL. U kunt voor gegevensanalyse een standaard ANSI-compatibel dialect gebruiken van een SQL-taal die op SQL Server en Azure SQL Database wordt gebruikt. 
 
-De Transact-SQL-taal die in serverloze en ingerichte Synapse SQL-modellen wordt gebruikt, kan verwijzen naar verschillende objecten; de set ondersteunde functies kan onderling enigszins verschillen. Op deze pagina vindt u een overzicht van de belangrijkste verschillen in de Transact-SQL-taal tussen de verbruiksmodellen van Synapse SQL.
+De Transact-SQL-taal die in serverloze en toegewezen Synapse SQL-modellen wordt gebruikt, kan verwijzen naar verschillende objecten; de set ondersteunde functies kan onderling enigszins verschillen. Op deze pagina vindt u een overzicht van de belangrijkste verschillen in de Transact-SQL-taal tussen de verbruiksmodellen van Synapse SQL.
 
 ## <a name="database-objects"></a>Databaseobjecten
 
 Met verbruiksmodellen in Synapse SQL kunt u verschillende databaseobjecten gebruiken. De vergelijking van ondersteunde objecttypen wordt weergegeven in de volgende tabel:
 
-|   | Ingericht | Serverloos |
+|   | Toegewezen | Serverloos |
 | --- | --- | --- |
 | **Tabellen** | [Ja](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Nee, een serverloos model kan alleen query's uitvoeren op externe gegevens in [Azure Storage](#storage-options) |
-| **Weergaven** | [Ja](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Weergaven kunnen [querytaalelementen](#query-language) gebruiken die beschikbaar zijn in het ingerichte model. | [Ja](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Weergaven kunnen [querytaalelementen](#query-language) gebruiken die beschikbaar zijn in een serverloos model. |
+| **Weergaven** | [Ja](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Weergaven kunnen [querytaalelementen](#query-language) gebruiken die beschikbaar zijn in het toegewezen model. | [Ja](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Weergaven kunnen [querytaalelementen](#query-language) gebruiken die beschikbaar zijn in een serverloos model. |
 | **Schema's** | [Ja](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | [Ja](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) |
 | **Tijdelijke tabellen** | [Ja](../sql-data-warehouse/sql-data-warehouse-tables-temporary.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) | Nee |
 | **Procedures** | [Ja](/sql/t-sql/statements/create-procedure-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Nee |
@@ -48,7 +48,7 @@ Met verbruiksmodellen in Synapse SQL kunt u verschillende databaseobjecten gebru
 
 Querytalen die in Synapse SQL worden gebruikt, kunnen afhankelijk van het verbruiksmodel verschillende ondersteunde functies hebben. De volgende tabel toont een overzicht van de belangrijkste verschillen in de querytaal in Transact-SQL-dialecten:
 
-|   | Ingericht | Serverloos |
+|   | Toegewezen | Serverloos |
 | --- | --- | --- |
 | **SELECT-instructie** | Ja. De Transact-SQL-querycomponenten [FOR XML/FOR JSON](/sql/t-sql/queries/select-for-clause-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) en [MATCH](/sql/t-sql/queries/match-sql-graph?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) worden niet ondersteund. | Ja. Transact-SQL-querycomponenten [FOR XML](/sql/t-sql/queries/select-for-clause-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), [MATCH](/sql/t-sql/queries/match-sql-graph?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), [PREDICT](/sql/t-sql/queries/predict-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) en queryhints worden niet ondersteund. [OFFSET/FETCH](/sql/t-sql/queries/select-order-by-clause-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#using-offset-and-fetch-to-limit-the-rows-returned) en [PIVOT/UNPIVOT](/sql/t-sql/queries/from-using-pivot-and-unpivot?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) kunnen worden gebruikt om systeemobjecten (geen externe gegevens) op te vragen. |
 | **INSERT-instructie** | Ja | Nee |
@@ -73,7 +73,7 @@ Querytalen die in Synapse SQL worden gebruikt, kunnen afhankelijk van het verbru
 
 Met Synapse SQL kunt u ingebouwde beveiligingsfuncties gebruiken om uw gegevens te beveiligen en de toegang te beheren. In de volgende tabel worden de belangrijkste verschillen vergeleken tussen de Synapse SQL-verbruiksmodellen.
 
-|   | Ingericht | Serverloos |
+|   | Toegewezen | Serverloos |
 | --- | --- | --- |
 | **Aanmeldingen** | N.v.t. (alleen opgenomen gebruikers worden ondersteund in databases) | Ja |
 | **Gebruikers** |  N.v.t. (alleen opgenomen gebruikers worden ondersteund in databases) | Ja |
@@ -109,7 +109,7 @@ Toegewezen SQL-pools en serverloze SQL-pools gebruiken de Transact-SQL-standaard
 
 U kunt verschillende hulpprogramma's gebruiken om verbinding te maken met Synapse SQL om gegevens op te vragen.
 
-|   | Ingericht | Serverloos |
+|   | Toegewezen | Serverloos |
 | --- | --- | --- |
 | **Synapse Studio** | Ja, SQL-scripts | Ja, SQL-scripts |
 | **Power BI** | Ja | [Ja](tutorial-connect-power-bi-desktop.md) |
@@ -120,13 +120,13 @@ U kunt verschillende hulpprogramma's gebruiken om verbinding te maken met Synaps
 > [!NOTE]
 > U kunt SSMS gebruiken om verbinding te maken met een serverloze SQL-pool (preview-versie) en query's uit te voeren. Het wordt gedeeltelijk ondersteund vanaf versie 18.5, maar u kunt de tool gebruiken om alleen verbinding te maken en query's uit te voeren.
 
-De meeste toepassingen gebruiken de standaard Transact-SQL-taal om gegevens op te vragen bij zowel ingerichte als serverloze verbruiksmodellen van Synapse SQL.
+Voor de meeste toepassingen wordt de standaard Transact-SQL-taal gebruikt om gegevens op te vragen bij zowel toegewezen als serverloze verbruiksmodellen van Synapse SQL.
 
 ## <a name="storage-options"></a>Opslagopties
 
 Geanalyseerde gegevens kunnen op verschillende opslagtypen worden opgeslagen. De volgende tabel bevat een lijst van alle beschikbare opslagopties:
 
-|   | Ingericht | Serverloos |
+|   | Toegewezen | Serverloos |
 | --- | --- | --- |
 | **Interne opslag** | Ja | Nee |
 | **Azure Data Lake v2** | Ja | Ja |
@@ -137,7 +137,7 @@ Geanalyseerde gegevens kunnen op verschillende opslagtypen worden opgeslagen. De
 
 Geanalyseerde gegevens kunnen in verschillende bestandsindelingen worden opgeslagen. De volgende tabel bevat een lijst van alle beschikbare gegevensindelingen die kunnen worden geanalyseerd:
 
-|   | Ingericht | Serverloos |
+|   | Toegewezen | Serverloos |
 | --- | --- | --- |
 | **Met scheidingstekens** | [Ja](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | [Ja](query-single-csv-file.md) |
 | **CSV** | Ja (het gebruik van meerdere scheidingstekens wordt niet ondersteund) | [Ja](query-single-csv-file.md) |

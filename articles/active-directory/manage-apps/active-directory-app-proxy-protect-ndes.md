@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.date: 01/17/2020
 ms.author: kenwith
 ms.reviewer: mimart
-ms.openlocfilehash: a385a339122197b7055ef6f54b8e37edea8eae4a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0682115727068c928418d97fbf92ed32897c39d4
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88078934"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656748"
 ---
 # <a name="integrate-with-azure-ad-application-proxy-on-a-network-device-enrollment-service-ndes-server"></a>Integreren met Azure AD-toepassingsproxy op een server met een registratie service voor netwerk apparaten (NDES)
 
@@ -26,7 +26,7 @@ Met Azure Active Directory (AD) toepassings proxy kunt u toepassingen in uw netw
 
 Als u geen ervaring hebt met Azure AD-toepassingsproxy en meer informatie wilt, raadpleegt u [externe toegang tot on-premises toepassingen via Azure AD-toepassingsproxy](application-proxy.md).
 
-Azure AD-toepassingsproxy is gebaseerd op Azure. Het biedt u een enorme hoeveelheid netwerk bandbreedte en server infrastructuur voor betere beveiliging tegen gedistribueerde Denial-of-service-aanvallen (DDOS) en een uitstekende Beschik baarheid. Bovendien is het niet nodig om externe firewall poorten te openen voor uw on-premises netwerk en is er geen DMZ-server vereist. Al het verkeer is afkomstig van binnenkomend. Zie [zelf studie: een on-premises toepassing toevoegen voor externe toegang via toepassings proxy in azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#prepare-your-on-premises-environment)voor een volledige lijst met uitgaande poorten.
+Azure AD-toepassingsproxy is gebaseerd op Azure. Het biedt u een enorme hoeveelheid netwerk bandbreedte en server infrastructuur voor betere beveiliging tegen gedistribueerde Denial-of-service-aanvallen (DDOS) en een uitstekende Beschik baarheid. Bovendien is het niet nodig om externe firewall poorten te openen voor uw on-premises netwerk en is er geen DMZ-server vereist. Al het verkeer is afkomstig van binnenkomend. Zie [zelf studie: een on-premises toepassing toevoegen voor externe toegang via toepassings proxy in azure Active Directory](./application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment)voor een volledige lijst met uitgaande poorten.
 
 > Azure AD-toepassingsproxy is een functie die alleen beschikbaar is als u de Premium-of Basic-edities van Azure Active Directory gebruikt. Zie [Azure Active Directory prijzen](https://azure.microsoft.com/pricing/details/active-directory/)voor meer informatie. 
 > Als u licenties voor Enter prise Mobility Suite (EMS) hebt, komt u in aanmerking voor deze oplossing te gebruiken.
@@ -52,7 +52,7 @@ Azure AD-toepassingsproxy is gebaseerd op Azure. Het biedt u een enorme hoeveelh
         > [!NOTE]
         > Het globale of toepassings beheerders account dat wordt gebruikt om de connector te registreren, moet deel uitmaken van dezelfde map waar u de Application proxy-service inschakelt.
         >
-        > Als het Azure AD-domein bijvoorbeeld *contoso.com*is, moet de beheerder van de globale groep/toepassing `admin@contoso.com` een andere geldige alias hebben op dat domein.
+        > Als het Azure AD-domein bijvoorbeeld *contoso.com* is, moet de beheerder van de globale groep/toepassing `admin@contoso.com` een andere geldige alias hebben op dat domein.
 
    * Als verbeterde beveiliging van Internet Explorer is ingeschakeld voor de server waarop u de connector installeert, is het registratie scherm mogelijk geblokkeerd. Als u toegang wilt toestaan, volgt u de instructies in het fout bericht of schakelt u de verbeterde beveiliging van Internet Explorer uit tijdens het installatie proces.
    * Zie [problemen met toepassings proxy oplossen](application-proxy-troubleshoot.md)als de registratie van de connector mislukt.
@@ -70,7 +70,7 @@ Azure AD-toepassingsproxy is gebaseerd op Azure. Het biedt u een enorme hoeveelh
 
    ![Zorg ervoor dat u de juiste belanghebbenden gebruikt](./media/active-directory-app-proxy-protect-ndes/azure-active-directory-enterprise-applications.png)
 
-1. Selecteer **+ nieuwe toepassing**en selecteer vervolgens de optie **on-premises toepassing**. 
+1. Selecteer **+ nieuwe toepassing** en selecteer vervolgens de optie **on-premises toepassing**. 
 
 1. Configureer de volgende velden in het veld **uw eigen on-premises toepassing toevoegen**:
 
@@ -96,4 +96,4 @@ Azure AD-toepassingsproxy is gebaseerd op Azure. Het biedt u een enorme hoeveelh
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Met Azure AD-toepassingsproxy geïntegreerd met NDES, publiceert u toepassingen voor gebruikers om toegang te krijgen. Zie [toepassingen publiceren met Azure AD-toepassingsproxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)voor meer informatie.
+Met Azure AD-toepassingsproxy geïntegreerd met NDES, publiceert u toepassingen voor gebruikers om toegang te krijgen. Zie [toepassingen publiceren met Azure AD-toepassingsproxy](./application-proxy-add-on-premises-application.md)voor meer informatie.

@@ -11,14 +11,14 @@ ms.topic: quickstart
 ms.date: 04/04/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: db18c71b09cd9beb58799ad4fbcbc944061153fb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6471d1b5a5ad2b8ba34080ae1220872fa0e2e232
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87921755"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421053"
 ---
-# <a name="quickstart-set-up-sign-in-for-a-single-page-app-using-azure-active-directory-b2c"></a>Snelstartgids: aanmelden instellen voor een app met één pagina met Azure Active Directory B2C
+# <a name="quickstart-set-up-sign-in-for-a-single-page-app-using-azure-active-directory-b2c"></a>Quickstart: Aanmelding instellen voor een app met één pagina met behulp van Azure Active Directory B2C
 
 Azure Active Directory B2C (Azure AD B2C) bevat functionaliteit voor identiteitsbeheer in de cloud ter bescherming van uw toepassing, bedrijf en klanten. Met Azure AD B2C zijn uw toepassingen in staat om zich met behulp van open-standaardprotocollen te verifiëren bij sociaalnetwerk- en Enterprise-accounts. In deze snelstart gebruikt u een toepassing met één pagina. Deze toepassing wordt gebruikt voor het aanmelden via een id-provider voor sociale netwerken en voor het aanroepen van een met Azure AD B2C beveiligde web-API.
 
@@ -29,12 +29,12 @@ Azure Active Directory B2C (Azure AD B2C) bevat functionaliteit voor identiteits
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org/en/download/)
 - Sociaal account van Facebook, Google of Microsoft
-- Codevoorbeeld van GitHub: [active-directory-b2c-javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp)
+- Codevoorbeeld uit GitHub: [ms-identity-b2c-javascript-spa](https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa)
 
-    U kunt [het ZIP-archief downloaden](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp/archive/master.zip) of de opslagplaats klonen:
+    U kunt [het ZIP-archief downloaden](https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa/archive/main.zip) of de opslagplaats klonen:
 
     ```console
-    git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp.git
+    git clone https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa.git
     ```
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
@@ -42,7 +42,6 @@ Azure Active Directory B2C (Azure AD B2C) bevat functionaliteit voor identiteits
 1. Start de server door de volgende opdrachten uit te voeren vanaf de Node.js-opdrachtprompt:
 
     ```console
-    cd active-directory-b2c-javascript-msal-singlepageapp
     npm install && npm update
     npm start
     ```
@@ -60,7 +59,7 @@ Azure Active Directory B2C (Azure AD B2C) bevat functionaliteit voor identiteits
 ## <a name="sign-in-using-your-account"></a>Aanmelden met uw account
 
 1. Selecteer **Aanmelden** om het gebruikerstraject te starten.
-1. Azure AD B2C opent een aanmeldingspagina voor een fictief bedrijf genaamd Fabrikam voor het voorbeeld van de webtoepassing. Selecteer de knop van de id-provider voor sociale netwerken die u wilt gebruiken om u aan te melden via een id-provider voor sociale netwerken.
+1. Azure AD B2C opent een aanmeldingspagina voor een fictief bedrijf met de naam 'Fabrikam' voor het voorbeeld van de web-app. Selecteer de knop van de id-provider voor sociale netwerken die u wilt gebruiken om u aan te melden via een id-provider voor sociale netwerken.
 
     ![De pagina Aanmelden of Registreren met de knoppen van de id-provider](./media/quickstart-single-page-app/sign-in-or-sign-up-spa.png)
 

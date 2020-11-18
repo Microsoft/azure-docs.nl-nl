@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/08/2020
 ms.author: cherylmc
-ms.openlocfilehash: a66b76350da6f3b3804dac73a7aeb9f54d2e34eb
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 42b0945de55775f55f20cefdeb547cb5d6492c06
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91938369"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657071"
 ---
 # <a name="configure-a-point-to-site-connection-by-using-certificate-authentication-classic"></a>Een punt-naar-site-verbinding configureren met behulp van verificatie via een certificaat (klassiek)
 
@@ -58,10 +58,10 @@ Gebruik de volgende waarden om een testomgeving te maken of verwijs ernaar om me
 * **Resource groep:** TestRG
 * **VNet-naam:** VNet1
 * **Adres ruimte:** 192.168.0.0/16 <br>In dit voorbeeld gebruiken we slechts één adresruimte. U kunt meer dan één adresruimte voor uw VNet hebben.
-* **Subnetnaam:** Front
+* **Subnetnaam:** FrontEnd
 * **Adres bereik van subnet:** 192.168.1.0/24
 * **Gatewaysubnet**: 10.11.255.0/27
-* **Regio:** (VS) vs-Oost
+* **Regio:** (US) US - oost
 * **Adres ruimte van client:** 172.16.201.0/24 <br> VPN-clients die verbinding maken met het VNet via deze punt-naar-site-verbinding, ontvangen een IP-adres van de opgegeven pool.
 * **Verbindings type**: Selecteer **punt-naar-site**.
 * **GatewaySubnet-adres bereik (CIDR-blok):** 192.168.200.0/24
@@ -114,7 +114,7 @@ Als u zelfondertekende certificaten gebruikt, moeten ze worden gemaakt met behul
 Wanneer de gateway is gemaakt, uploadt u het CER-bestand (dat de informatie over de openbare sleutel bevat) voor een vertrouwd basiscertificaat voor de Azure-server. Uploadt de persoonlijke sleutel voor het basiscertificaat niet. Nadat u het certificaat hebt geüpload, kan Azure daarmee clients met een geïnstalleerd clientcertificaat (gemaakt op basis van het vertrouwde basiscertificaat) verifiëren. Indien nodig kunt u later aanvullende vertrouwde basiscertificaatbestanden uploaden (maximaal 20).
 
 1. Navigeer naar het virtuele netwerk dat u hebt gemaakt.
-1. Onder **instellingen**selecteert u **punt-naar-site-verbindingen**.
+1. Onder **instellingen** selecteert u **punt-naar-site-verbindingen**.
 1. Selecteer **certificaat beheren**.
 1. Selecteer **Uploaden**.
 1. Selecteer in het deel venster **een certificaat uploaden** het mappictogram en navigeer naar het certificaat dat u wilt uploaden.
@@ -137,7 +137,7 @@ U kunt hetzelfde configuratiepakket voor de VPN-client gebruiken op elke clientc
 
 1. Azure genereert een pakket met de specifieke instellingen die de client nodig heeft. Telkens wanneer u wijzigingen aanbrengt in het VNet of de gateway, moet u een nieuw client configuratie pakket downloaden en installeren op uw client computers.
 1. Nadat het pakket is gegenereerd, selecteert u **downloaden**.
-1. Installeer het client configuratie pakket op uw client computer. Als u een SmartScreen-pop-upvenster ziet met de melding dat uw PC door Windows is beveiligd, selecteert u **meer info**en selecteert u vervolgens **toch uitvoeren**. U kunt het pakket ook opslaan en op andere clientcomputers installeren.
+1. Installeer het client configuratie pakket op uw client computer. Als u een SmartScreen-pop-upvenster ziet met de melding dat uw PC door Windows is beveiligd, selecteert u **meer info** en selecteert u vervolgens **toch uitvoeren**. U kunt het pakket ook opslaan en op andere clientcomputers installeren.
 
 ### <a name="install-a-client-certificate"></a>Een clientcertificaat installeren
 
@@ -154,7 +154,7 @@ Wanneer u een clientcertificaat installeert, hebt u het wachtwoord nodig dat is 
 1. Ga op de client computer naar VPN-instellingen.
 1. Selecteer de VPN-verbinding die u hebt gemaakt. Als u de voorbeeld instellingen hebt gebruikt, krijgt de verbinding de naam **groep TestRG VNet1**.
 1. Selecteer **Verbinding maken**.
-1. Selecteer **verbinding maken**in het vak Windows Azure Virtual Network. Als er een pop-upbericht over het certificaat wordt weer gegeven, selecteert u **door gaan** met verhoogde bevoegdheden en **Ja** om de configuratie wijzigingen te accepteren.
+1. Selecteer **verbinding maken** in het vak Windows Azure Virtual Network. Als er een pop-upbericht over het certificaat wordt weer gegeven, selecteert u **door gaan** met verhoogde bevoegdheden en **Ja** om de configuratie wijzigingen te accepteren.
 1. Wanneer de verbinding is geslaagd, ziet u een **verbonden** melding.
 
 [!INCLUDE [verify-client-certificates](../../includes/vpn-gateway-certificates-verify-client-cert-include.md)]
@@ -191,7 +191,7 @@ U kunt Maxi maal 20 vertrouwde. cer-bestanden van het basis certificaat toevoege
 
 ### <a name="remove-a-trusted-root-certificate"></a>Een vertrouwd basiscertificaat verwijderen
 
-1. Selecteer **certificaat beheren**in de sectie **punt-naar-site-verbindingen** van de pagina voor uw VNet.
+1. Selecteer **certificaat beheren** in de sectie **punt-naar-site-verbindingen** van de pagina voor uw VNet.
 1. Selecteer het beletsel teken naast het certificaat dat u wilt verwijderen en selecteer vervolgens **verwijderen**.
 
 ## <a name="to-revoke-a-client-certificate"></a>Een clientcertificaat intrekken
@@ -202,9 +202,9 @@ De algemene procedure is het basiscertificaat te gebruiken om de toegang te behe
 
 U kunt een clientcertificaat intrekken door de vingerafdruk toe te voegen aan de intrekkingslijst.
 
-1. Haal de vingerafdruk voor het clientcertificaat op. Zie voor meer informatie [De vingerafdruk van een certificaat ophalen](https://msdn.microsoft.com/library/ms734695.aspx).
+1. Haal de vingerafdruk voor het clientcertificaat op. Zie voor meer informatie [De vingerafdruk van een certificaat ophalen](/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate).
 1. Kopieer de gegevens naar een teksteditor en verwijder de spaties, zodat u een doorlopende tekenreeks overhoudt.
-1. Navigeer naar **punt-naar-site-VPN-verbinding**en selecteer vervolgens **certificaat beheren**.
+1. Navigeer naar **punt-naar-site-VPN-verbinding** en selecteer vervolgens **certificaat beheren**.
 1. Selecteer **Intrekkingslijst** om de pagina **Intrekkingslijst** te openen.
 1. Plak in **Vingerafdruk** de vingerafdruk van het certificaat als een doorlopende regel tekst, zonder spaties.
 1. Selecteer **+ toevoegen aan lijst** om de vinger afdruk toe te voegen aan de CERTIFICAATINTREKKINGSLIJST (CRL).
@@ -217,8 +217,8 @@ Wanneer het bijwerken is voltooid, kan het certificaat niet langer worden gebrui
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Wanneer de verbinding is voltooid, kunt u virtuele machines aan uw virtuele netwerken toevoegen. Zie [Virtuele machines](https://docs.microsoft.com/azure/) voor meer informatie.
+* Wanneer de verbinding is voltooid, kunt u virtuele machines aan uw virtuele netwerken toevoegen. Zie [Virtuele machines](../index.yml) voor meer informatie.
 
-* Zie [Overzicht van VM-netwerken in Azure en onder Linux](../virtual-machines/linux/network-overview.md) voor meer informatie over netwerken en virtuele Linux-machines.
+* Zie [Overzicht van VM-netwerken in Azure en onder Linux](../virtual-machines/network-overview.md) voor meer informatie over netwerken en virtuele Linux-machines.
 
 * Voor informatie over probleemoplossing voor P2S bekijkt u [Troubleshoot Azure point-to-site connections](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md) (Problemen met punt-naar-site-verbindingen in Azure oplossen).

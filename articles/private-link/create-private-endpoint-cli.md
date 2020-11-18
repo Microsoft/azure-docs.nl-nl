@@ -1,198 +1,283 @@
 ---
-title: Quickstart – Een Azure privé-eindpunt maken met behulp van de Azure CLI
-description: Meer informatie over Azure-privé-eindpunt in deze Quickstart
+title: Quickstart – Een Azure-privé-eindpunt maken met behulp van Azure CLI
+description: Gebruik deze quickstart om te leren hoe u een privé-eindpunt maakt met Azure CLI.
 services: private-link
-author: malopMSFT
+author: asudbring
 ms.service: private-link
 ms.topic: quickstart
-ms.date: 09/16/2019
+ms.date: 11/07/2020
 ms.author: allensu
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: e7c098ba06086781306960f76978aac9e4fa06bc
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: bba912930a9dff0a79e0b0d81025b7524c238db0
+ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87502661"
+ms.lasthandoff: 11/08/2020
+ms.locfileid: "94368675"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-cli"></a>Quickstart: Een privé-eindpunt maken met behulp van Azure CLI
 
-Een privé-eindpunt is de fundamentele bouwsteen voor een Private Link in Azure. Het biedt Azure-resources, zoals virtuele machines, de mogelijkheid om Private Link-resources te gebruiken om privé met elkaar communiceren. In deze quickstart leert u hoe u een VM maakt in een virtueel netwerk, een server met een privé-eindpunt in SQL Database met behulp van Azure CLI. Vervolgens hebt u toegang tot de VM en kunt u veilig toegang krijgen tot de Private Link-resource (een privé server in SQL Database in dit voorbeeld).
+Ga aan de slag met Azure Private Link door een privé-eindpunt te gebruiken om veilig verbinding te maken met een Azure-web-app.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+In deze quickstart maakt u een privé-eindpunt voor een Azure-web-app en implementeert u een virtuele machine om de privé-verbinding te testen.  
 
-Als u ervoor kiest om Azure CLI lokaal te installeren en te gebruiken, moet u voor deze snelstart versie 2.0.28 of hoger van Azure CLI uitvoeren. Voer `az --version` uit om na te gaan welke versie er is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) voor installatie- of upgrade-informatie.
+Er kunnen privé-eindpunten worden gemaakt voor verschillende soorten Azure-services, zoals Azure SQL en Azure Storage.
+
+## <a name="prerequisites"></a>Vereisten
+
+* Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+* Een Azure-web-app met een **PremiumV2**- of hoger app-serviceplan geïmplementeerd in uw Azure-abonnement.  
+    * Zie voor meer informatie en een voorbeeld [Quickstart: Een ASP.NET Core-web-app maken in Azure](../app-service/quickstart-dotnetcore.md). 
+    * Zie voor een gedetailleerde zelfstudie over het maken van een web-app en een eindpunt [Zelfstudie: Verbinding maken met een web-app met behulp van een privé-eindpunt in Azure](tutorial-private-endpoint-webapp-portal.md).
+* Meld u aan bij de Azure-portal en controleer of uw abonnement actief is door `az login` uit te voeren.
+* Controleer uw Azure CLI-versie in een terminal- of opdrachtvenster door `az --version` uit te voeren. Bekijk de [meest recente releaseopmerkingen](/cli/azure/release-notes-azure-cli?tabs=azure-cli) voor de nieuwste versie.
+  * Als u de nieuwste versie niet hebt, werkt u uw installatie bij door de [installatiehandleiding voor uw besturingssysteem of platform](/cli/azure/install-azure-cli) te volgen.
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Voordat u een resource kunt maken, moet u een resourcegroep maken die het Virtual Network host. Maak een resourcegroep maken met [az group create](/cli/azure/group). Dit voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *westcentralus*:
+Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
+
+Maak een resourcegroep maken met [az group create](/cli/azure/group#az_group_create):
+
+* Met de naam **CreatePrivateEndpointQS-rg**. 
+* Op de locatie **eastus**.
 
 ```azurecli-interactive
-az group create --name myResourceGroup --location westcentralus
+az group create \
+    --name CreatePrivateEndpointQS-rg \
+    --location eastus
 ```
 
-## <a name="create-a-virtual-network"></a>Een Virtual Network maken
+## <a name="create-a-virtual-network-and-bastion-host"></a>Een virtueel netwerk en Bastion-host maken
 
-Maak een Virtual Network met [az network vnet create](/cli/azure/network/vnet). In dit voorbeeld wordt een standaard Virtual Network gemaakt met de naam *myVirtualNetwork* met één subnet genaamd *mySubnet*:
+In deze sectie leert u een virtueel netwerk, subnet en Bastion-host te maken. 
+
+De Bastion-host wordt gebruikt om veilig verbinding te maken met de virtuele machine om het privé-eindpunt te testen.
+
+Maak een virtueel netwerk met [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create)
+
+* Met de naam **myVNet**.
+* Adresvoorvoegsel van **10.0.0.0/16**.
+* Subnet met de naam **myBackendSubnet**.
+* Subnetvoorvoegsel van **10.0.0.0/24**.
+* In de resourcegroep **CreatePrivateEndpointQS-rg**.
+* Locatie **VS - Oost**.
 
 ```azurecli-interactive
 az network vnet create \
- --name myVirtualNetwork \
- --resource-group myResourceGroup \
- --subnet-name mySubnet
+    --resource-group CreatePrivateEndpointQS-rg\
+    --location eastus \
+    --name myVNet \
+    --address-prefixes 10.0.0.0/16 \
+    --subnet-name myBackendSubnet \
+    --subnet-prefixes 10.0.0.0/24
 ```
 
-## <a name="disable-subnet-private-endpoint-policies"></a>Beleid voor privé-eindpunten van subnet uitschakelen
-
-Azure implementeert resources in een subnet binnen een virtueel netwerk, dus moet u het subnet maken of bijwerken om beleid voor privé-eindpunt netwerk uit te schakelen. Update een subnet-configuratie met de naam *mySubnet* met [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update):
+Werk het subnet bij om het beleid voor het privé-eindpuntnetwerk uit te schakelen met [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update):
 
 ```azurecli-interactive
 az network vnet subnet update \
- --name mySubnet \
- --resource-group myResourceGroup \
- --vnet-name myVirtualNetwork \
- --disable-private-endpoint-network-policies true
+    --name myBackendSubnet \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --vnet-name myVNet \
+    --disable-private-endpoint-network-policies true
 ```
 
-## <a name="create-the-vm"></a>De virtuele machine maken
+Gebruik [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create) om een openbaar IP-adres voor de Bastion-host te maken:
 
-Maak een VM met az vm create. Wanneer u hierom wordt gevraagd, geeft u een wachtwoord op dat moet worden gebruikt als de aanmeldingsreferenties voor de VM. In het volgende voorbeeld wordt een VM gemaakt met de naam *myVm*:
+* Maak een standaard zoneredundant openbaar IP-adres met de naam **myBastionIP**.
+* In **CreatePrivateEndpointQS-rg**.
+
+```azurecli-interactive
+az network public-ip create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name myBastionIP \
+    --sku Standard
+```
+
+Gebruik [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) om een bastionsubnet te maken:
+
+* met de naam **AzureBastionSubnet**.
+* Adresvoorvoegsel van **10.0.1.0/24**.
+* In virtueel netwerk **myVnet**.
+* In de resourcegroep **CreatePrivateEndpointQS-rg**.
+
+```azurecli-interactive
+az network vnet subnet create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name AzureBastionSubnet \
+    --vnet-name myVNet \
+    --address-prefixes 10.0.1.0/24
+```
+
+Gebruik [az network bastion create](/cli/azure/network/bastion#az-network-bastion-create) om een Bastion-host te maken:
+
+* met de naam **myBastionHost**.
+* In **CreatePrivateEndpointQS-rg**.
+* Gekoppeld aan het openbare IP-adres **myBastionIP**.
+* Gekoppeld aan het virtuele netwerk **myVNet**.
+* Op de locatie **eastus**.
+
+```azurecli-interactive
+az network bastion create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name myBastionHost \
+    --public-ip-address myBastionIP \
+    --vnet-name myVNet \
+    --location eastus
+```
+
+De Azure Bastion kan een paar minuten nodig hebben om te implementeren.
+
+## <a name="create-test-virtual-machine"></a>Virtuele testmachine maken
+
+In deze sectie maakt u een virtuele machine die wordt gebruikt om het persoonlijke eindpunt te testen.
+
+Maak een VM met  [az vm create](/cli/azure/vm#az_vm_create). Wanneer u hierom wordt gevraagd, geeft u een wachtwoord op dat moet worden gebruikt als de referenties voor de VM:
+
+* Met de naam **myVM**.
+* In **CreatePrivateEndpointQS-rg**.
+* In netwerk **myVNet**.
+* In subnet **myBackendSubnet**.
+* Serverinstallatiekopie **Win2019Datacenter**.
 
 ```azurecli-interactive
 az vm create \
-  --resource-group myResourceGroup \
-  --name myVm \
-  --image Win2019Datacenter
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name myVM \
+    --image Win2019Datacenter \
+    --public-ip-address "" \
+    --vnet-name myVNet \
+    --subnet myBackendSubnet \
+    --admin-username azureuser
 ```
 
-Het openbare IP-adres van de virtuele machine van VM noteren. U gebruikt dit adres om in de volgende stap verbinding te maken met de virtuele machine via internet.
+## <a name="create-private-endpoint"></a>Privé-eindpunt maken
 
-## <a name="create-a-server-in-sql-database"></a>Een server maken in de SQL Database
+In dit gedeelte maakt u het privé-eindpunt.
 
-Maak een server met de opdracht az sql server create in de SQL Database. Houd er rekening mee dat de naam van uw server uniek moet zijn in Azure, dus vervang de tijdelijke aanduiding tussen vierkante haken door uw eigen unieke waarde:
+Gebruik [az webapp list](/cli/azure/webapp#az_webapp_list) om de resource-id van de web-app die u eerder hebt gemaakt in een shellvariabele te plaatsen.
 
-```azurecli-interactive
-# Create a server in the resource group
-az sql server create \
-    --name "myserver"\
-    --resource-group myResourceGroup \
-    --location WestUS \
-    --admin-user "sqladmin" \
-    --admin-password "CHANGE_PASSWORD_1"
+Gebruik [az network private-endpoint create](/cli/azure/network/private-endpoint#az_network_private_endpoint_create) om het eindpunt en de verbinding te maken:
 
-# Create a database in the server with zone redundancy as false
-az sql db create \
-    --resource-group myResourceGroup  \
-    --server myserver \
-    --name mySampleDatabase \
-    --sample-name AdventureWorksLT \
-    --edition GeneralPurpose \
-    --family Gen4 \
-    --capacity 1
-```
-
-De server-id is vergelijkbaar met ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/myserver.``` U gebruikt de server-id in de volgende stap.
-
-## <a name="create-the-private-endpoint"></a>Privé-eindpunt maken
-
-Maak een privé-eindpunt voor de logische SQL Server in uw Virtual Network:
+* Met de naam **myPrivateEndpoint**.
+* In de resourcegroep **CreatePrivateEndpointQS-rg**.
+* In virtueel netwerk **myVnet**.
+* In subnet **myBackendSubnet**.
+* Verbinding met de naam **myConnection**.
+* Uw web-app **\<webapp-resource-group-name>** .
 
 ```azurecli-interactive
-az network private-endpoint create \  
-    --name myPrivateEndpoint \  
-    --resource-group myResourceGroup \  
-    --vnet-name myVirtualNetwork  \  
-    --subnet mySubnet \  
-    --private-connection-resource-id "<server ID>" \  
-    --group-ids sqlServer \  
+id=$(az webapp list \
+    --resource-group <webapp-resource-group-name> \
+    --query '[].[id]' \
+    --output tsv)
+
+az network private-endpoint create \
+    --name myPrivateEndpoint \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --vnet-name myVNet --subnet myBackendSubnet \
+    --private-connection-resource-id $id \
+    --group-id sites \
     --connection-name myConnection  
- ```
+```
 
 ## <a name="configure-the-private-dns-zone"></a>Privé-DNS-zone configureren
 
-Maak een Privé-DNS-zone voor SQL Database-domein, maak een koppelingslink met het Virtual Network en maak een DNS-zonegroep om het privé-eindpunt aan de Privé-DNS-zone te koppelen. 
+In dit gedeelte maakt en configureert u de privé-DNS-zone met behulp van [az network private-dns zone create](/cli/azure/ext/privatedns/network/private-dns/zone#ext_privatedns_az_network_private_dns_zone_create).  
+
+U gebruikt [az network private-dns link vnet create](/cli/azure/ext/privatedns/network/private-dns/link/vnet#ext_privatedns_az_network_private_dns_link_vnet_create) om de koppeling van het virtuele netwerk met de DNS-zone te maken.
+
+U maakt een DNS-zonegroep met [az network private-endpoint dns-zone-group create](/cli/azure/network/private-endpoint/dns-zone-group#az_network_private_endpoint_dns_zone_group_create).
+
+* Zone met de naam **privatelink.azurewebsites.net**
+* In virtueel netwerk **myVnet**.
+* In de resourcegroep **CreatePrivateEndpointQS-rg**.
+* DNS-koppeling met de naam **myDNSLink**.
+* Gekoppeld aan **myPrivateEndpoint**.
+* Zonegroep met de naam **MyZoneGroup**.
 
 ```azurecli-interactive
-az network private-dns zone create --resource-group myResourceGroup \
-   --name  "privatelink.database.windows.net"
-az network private-dns link vnet create --resource-group myResourceGroup \
-   --zone-name  "privatelink.database.windows.net"\
-   --name MyDNSLink \
-   --virtual-network myVirtualNetwork \
-   --registration-enabled false
+az network private-dns zone create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --name "privatelink.azurewebsites.net"
+
+az network private-dns link vnet create \
+    --resource-group CreatePrivateEndpointQS-rg \
+    --zone-name "privatelink.azurewebsites.net" \
+    --name MyDNSLink \
+    --virtual-network myVNet \
+    --registration-enabled false
+
 az network private-endpoint dns-zone-group create \
-   --resource-group myResourceGroup \
+   --resource-group CreatePrivateEndpointQS-rg \
    --endpoint-name myPrivateEndpoint \
    --name MyZoneGroup \
-   --private-dns-zone "privatelink.database.windows.net" \
-   --zone-name sql
+   --private-dns-zone "privatelink.azurewebsites.net" \
+   --zone-name webapp
 ```
 
-## <a name="connect-to-a-vm-from-the-internet"></a>Verbinding maken met een virtuele machine via internet
+## <a name="test-connectivity-to-private-endpoint"></a>Privé-eindpuntconnectiviteit testen
 
-Maak als volgt verbinding met de VM *myVm* van Internet:
+In deze sectie gebruikt u de virtuele machine die u in de vorige stap hebt gemaakt, om verbinding te maken met de SQL-server via het privé-eindpunt.
 
-1. Voer in de zoekbalk van de portal *myVm* in.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) 
+ 
+2. Selecteer **Resourcegroepen** in het linkernavigatievenster.
 
-1. Selecteer de knop **Verbinding maken**. Na het selecteren van de knop **Verbinden** wordt **Verbinden met virtuele machine** geopend.
+3. Selecteer **CreatePrivateEndpointQS-rg**.
 
-1. Selecteer **RDP-bestand downloaden**. In Azure wordt een *RDP*-bestand (Remote Desktop Protocol) gemaakt en het bestand wordt gedownload naar de computer.
+4. Selecteer **myVM**.
 
-1. Open het downloaded.rdp*-bestand.
+5. Selecteer op de overzichtspagina voor **myVM** de optie **Verbinding maken** en daarna **Bastion**.
 
-    1. Selecteer **Verbinding maken** wanneer hierom wordt gevraagd.
+6. Selecteer de blauwe knop **Bastion gebruiken**.
 
-    1. Voer de gebruikersnaam en het wachtwoord in die u hebt opgegeven bij het maken van de virtuele machine.
+7. Voer de gebruikersnaam en het wachtwoord in die u hebt ingevoerd bij het maken van de virtuele machine.
 
-        > [!NOTE]
-        > Mogelijk moet u **Meer opties** > **Een ander account gebruiken** selecteren om de referenties op te geven die u hebt ingevoerd tijdens het maken van de VM.
+8. Open Windows PowerShell op de server nadat u verbinding hebt gemaakt.
 
-1. Selecteer **OK**.
+9. Voer `nslookup <your-webapp-name>.azurewebsites.net` in. Vervang **\<your-webapp-name>** door de naam van de web-app die u in de voorgaande stappen hebt gemaakt.  U ontvangt een bericht dat er ongeveer als volgt uitziet:
 
-1. Er wordt mogelijk een certificaatwaarschuwing weergegeven tijdens het aanmelden. Als er een certificaatwaarschuwing wordt weergegeven, selecteert u **Ja** of **Doorgaan**.
-
-1. Wanneer het VM-bureaublad wordt weergegeven, minimaliseert u het om terug te gaan naar het lokale bureaublad.  
-
-## <a name="access-sql-database-privately-from-the-vm"></a>Privé-toegang tot SQL Database vanuit de VM
-
-In deze sectie maakt u verbinding met de SQL Database van de VM met behulp van het privé-eindpunt.
-
-1. Open PowerShell in het extern bureaublad van *myVM*.
-2. Voer nslookupmyserver.database.windows.net in
-
-   U ontvangt een bericht dat er ongeveer als volgt uitziet:
-
-    ```
+    ```powershell
     Server:  UnKnown
     Address:  168.63.129.16
+
     Non-authoritative answer:
-    Name:    myserver.privatelink.database.windows.net
+    Name:    mywebapp8675.privatelink.azurewebsites.net
     Address:  10.0.0.5
-    Aliases:  myserver.database.windows.net
+    Aliases:  mywebapp8675.azurewebsites.net
     ```
 
-3. Installeer SQL Server Management Studio
-4. Typ of selecteer in Verbinding maken met server de volgende gegevens:
+    Een privé IP-adres van **10.0.0.5** wordt voor de naam van de web-app geretourneerd.  Dit adres bevindt zich in het subnet van het virtuele netwerk dat u eerder hebt gemaakt.
 
-   - Servertype: Selecteer Database Engine.
-   - Servernaam: Selecteer myserver.database.windows.net
-   - Gebruikersnaam: Voer een gebruikersnaam in die tijdens het maken is opgegeven.
-   - Wachtwoord: Voer een wachtwoord in dat tijdens het maken is opgegeven.
-   - Wachtwoord onthouden: Selecteer Ja.
+10. Open Internet Explorer in de bastionverbinding met **myVM**.
 
-5. Selecteer **Verbinden**.
-6. Blader in het menu aan de linkerkant door **Databases**.
-7. (Optioneel) U kunt *mydatabase* maken of er een query op uitvoeren
-8. Sluit de externe bureaubladverbinding met *myVm*.
+11. Voer de URL van de web-app in: **https://\<your-webapp-name>.azurewebsites.net**.
 
-## <a name="clean-up-resources"></a>Resources opschonen
+12. U ziet de standaardpagina voor web-apps als uw toepassing niet is geïmplementeerd:
 
-U kunt az group delete gebruiken om de resourcegroep en alle resources die deze bevat te verwijderen, als deze niet meer nodig zijn:
+    :::image type="content" source="./media/create-private-endpoint-portal/web-app-default-page.png" alt-text="Standaardpagina van web-app." border="true":::
+
+13. Verbreek de verbinding met **myVM**.
+
+## <a name="clean-up-resources"></a>Resources opschonen 
+Wanneer u klaar bent met het privé-eindpunt en de VM, gebruikt u [az group delete](/cli/azure/group#az_group_delete) om de resourcegroep en alle resources daarin te verwijderen:
 
 ```azurecli-interactive
-az group delete --name myResourceGroup --yes
+az group delete \
+    --name CreatePrivateEndpointQS-rg
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [Azure Private Link](private-link-overview.md)
+In deze quickstart hebt u het volgende gemaakt:
+
+* Een virtueel netwerk en Bastion-host.
+* Een virtuele machine.
+* Een privé-eindpunt voor een Azure-web-app.
+
+U hebt de virtuele machine gebruikt voor het veilig testen van de connectiviteit van de web-app via het privé-eindpunt.
+
+Zie voor meer informatie over de services die een privé-eindpunt ondersteunen:
+> [!div class="nextstepaction"]
+> [Beschikbaarheid van Private Link](private-link-overview.md#availability)

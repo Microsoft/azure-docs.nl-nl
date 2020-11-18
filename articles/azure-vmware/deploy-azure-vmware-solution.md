@@ -3,13 +3,13 @@ title: Azure VMware Solution implementeren en configureren
 description: Meer informatie over hoe u gegevens verzameld in de planningsfase kunt gebruiken voor het implementeren van de Azure VMware Solution-privécloud.
 ms.topic: tutorial
 ms.author: tredavis
-ms.date: 10/02/2020
-ms.openlocfilehash: 0839048c2d0ad5944566a48f54cca07a4daeb754
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.date: 11/09/2020
+ms.openlocfilehash: 264ad99b21150f391c367eba2da31f0d08f4ab08
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152031"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94336332"
 ---
 # <a name="deploy-and-configure-azure-vmware-solution"></a>Azure VMware Solution implementeren en configureren
 
@@ -35,7 +35,7 @@ Gebruik de informatie die u hebt verzameld in het artikel [De implementatie van 
 ## <a name="create-the-jump-box"></a>De jumpbox maken
 
 >[!IMPORTANT]
->Als u de optie **Virtueel netwerk** leeg hebt gelaten tijdens de eerste inrichtingsstap op het scherm **Een Privécloud maken** , voltooi dan de zelfstudie [Netwerken configureren voor uw VMware-privécloud](tutorial-configure-networking.md) **voordat** u verdergaat met dit onderdeel.  
+>Als u de optie **Virtueel netwerk** leeg hebt gelaten tijdens de eerste inrichtingsstap op het scherm **Een Privécloud maken**, voltooi dan de zelfstudie [Netwerken configureren voor uw VMware-privécloud](tutorial-configure-networking.md) **voordat** u verdergaat met dit onderdeel.  
 
 Na de implementatie van Azure VMware Solution maakt u de jumpbox van het virtueel netwerk die verbinding maakt met vCenter en NSX. Wanneer u ExpressRoute-circuits en ExpressRoute Global Reach hebt geconfigureerd, is de jumpbox niet meer nodig.  Maar het is handig om vCenter en NSX te bereiken in uw Azure VMware Solution.  
 
@@ -59,7 +59,7 @@ De jumpbox bevindt zich in het virtuele netwerk waar Azure VMware Solution verbi
 
 In de lijst met effectieve routes ziet u de netwerken die zijn gemaakt als onderdeel van de Azure VMware Solution-implementatie. U ziet meerdere netwerken die zijn afgeleid van het [`/22`netwerk dat u gedefinieerd hebt](production-ready-deployment-steps.md#ip-address-segment) tijdens de [implementatiestap](#deploy-azure-vmware-solution) eerder in dit artikel.
 
-:::image type="content" source="media/pre-deployment/azure-vmware-solution-effective-routes.png" alt-text="De Azure VMware Solution-jumpbox maken" lightbox="media/pre-deployment/azure-vmware-solution-effective-routes.png":::
+:::image type="content" source="media/pre-deployment/azure-vmware-solution-effective-routes.png" alt-text="Controleer de netwerkroutes die zijn geadverteerd van Azure VMware Solution naar Azure Virtual Network" lightbox="media/pre-deployment/azure-vmware-solution-effective-routes.png":::
 
 In dit voorbeeld werd het 10.74.72.0/22-netwerk ingevoerd tijdens de implementatie van de /24-netwerken.  Als u iets dergelijks ziet, kunt u verbinding maken met vCenter in Azure VMware Solution.
 
@@ -67,7 +67,7 @@ In dit voorbeeld werd het 10.74.72.0/22-netwerk ingevoerd tijdens de implementat
 
 Meld u aan bij de jumpbox die u in de vorige stap hebt aangemaakt. Zodra u bent aangemeld, opent u een webbrowser en gaat u naar en meldt u zich aan bij de beheerconsole van vCenter en NSX-T.  
 
-U kunt de IP-adressen en referenties van de beheerconsole van vCenter en NSX controleren in het Azure-portaal.  Selecteer uw privécloud en selecteer vervolgens in de weergave **Overzicht** de optie **Identiteit > Standaard** . 
+U kunt de IP-adressen en referenties van de beheerconsole van vCenter en NSX controleren in het Azure-portaal.  Selecteer uw privécloud en selecteer vervolgens in de weergave **Overzicht** de optie **Identiteit > Standaard**. 
 
 ## <a name="create-a-network-segment-on-azure-vmware-solution"></a>Een netwerksegment maken in Azure VMware Solution
 
@@ -97,10 +97,10 @@ Omdat DNS vereist is, identificeert u de DNS-server die u wilt gebruiken.
 
 Als u DHCP wilt gebruiken op uw NSX-T-segment(en), ga dan verder met dit onderdeel. Zoniet, ga dan naar het onderdeel [Een virtuele machine toevoegen aan het NSX-T-netwerksegment](#add-a-vm-on-the-nsx-t-network-segment).  
 
-Nu u het NSX-T-netwerksegment hebt gemaakt, kunt u een van de volgende dingen doen:
+Nu u het NSX-T-netwerksegment hebt gemaakt, kunt u op twee manieren DHCP in Azure VMware Solution maken en beheren:
 
-* Gebruik NSX-T als de DHCP-server voor de gemaakte segment(en). Voor deze optie moet u [een DHCP-server maken in NSX-T](manage-dhcp.md#create-dhcp-server) en [doorsturen naar die server](manage-dhcp.md#create-dhcp-relay-service).
-* DHCP-aanvragen van het NSX-T-segment(en) naar een andere DHCP-server in uw omgeving doorsturen. Voor deze optie [voert u enkel de relay-configuratie uit,](manage-dhcp.md#create-dhcp-relay-service).
+* Als u NSX-T gebruikt om uw DHCP-server te hosten, moet u [een DHCP-server maken](manage-dhcp.md#create-a-dhcp-server) en [deze doorsturen naar die server](manage-dhcp.md#create-dhcp-relay-service). 
+* Als u een externe DHCP-server van derden in uw netwerk gebruikt, moet u [een DHCP-doorgifteservice maken](manage-dhcp.md#create-dhcp-relay-service).  Voor deze optie [voert u enkel de relay-configuratie uit,](manage-dhcp.md#create-dhcp-relay-service).
 
 
 ## <a name="add-a-vm-on-the-nsx-t-network-segment"></a>Een virtuele machine toevoegen aan het NSX-T-netwerksegment

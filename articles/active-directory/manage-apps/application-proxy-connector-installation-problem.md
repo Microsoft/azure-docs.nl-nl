@@ -11,12 +11,12 @@ ms.topic: troubleshooting
 ms.date: 05/21/2018
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 7babe23426cafe01cadc7a5557f91896aa9bbae4
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 0b7fee330f93097b561714ecc938eaf3fee8f2b5
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108198"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657326"
 ---
 # <a name="problem-installing-the-application-proxy-agent-connector"></a>Probleem bij het installeren van de connector voor de toepassingsproxyagent
 
@@ -39,7 +39,7 @@ Wanneer de installatie van een connector mislukt, is de hoofd oorzaak meestal ee
 
 **Doel stelling:** Controleer of de connector computer verbinding kan maken met het eind punt van de toepassings proxy en de aanmeldings pagina van micro soft.
 
-1.  Voer op de connector server een poort test uit met behulp van [Telnet](https://docs.microsoft.com/windows-server/administration/windows-commands/telnet) of een ander hulp programma voor poort testen om te controleren of de poorten 443 en 80 zijn geopend.
+1.  Voer op de connector server een poort test uit met behulp van [Telnet](/windows-server/administration/windows-commands/telnet) of een ander hulp programma voor poort testen om te controleren of de poorten 443 en 80 zijn geopend.
 
 2.  Als een van deze poorten niet is geslaagd, controleert u of de firewall of de back-end-proxy toegang heeft tot de vereiste domeinen en poorten Zie, [uw on-premises omgeving voorbereiden](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment).
 
@@ -76,14 +76,14 @@ Controleer de vinger afdruk van het huidige client certificaat. Het certificaat 
 
 De mogelijke **IsInUserStore** waarden zijn **True** en **False**. Als de waarde **True** is, wordt het automatisch verlengde certificaat opgeslagen in de persoonlijke container in het certificaat archief van de netwerk service. De waarde **False** betekent dat het client certificaat is gemaakt tijdens de installatie of registratie die is gestart door Register-AppProxyConnector opdracht en dat het is opgeslagen in de persoonlijke container in het certificaat archief van de lokale computer.
 
-Als de waarde **True**is, volgt u deze stappen om het certificaat te verifiëren:
-1. [PsTools.zip](https://docs.microsoft.com/sysinternals/downloads/pstools) downloaden
-2. Extraheer [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec) uit het pakket en voer **PsExec-i-u ' NT Authority\Network service ' uit cmd.exe** uit vanaf een opdracht prompt met verhoogde bevoegdheid.
+Als de waarde **True** is, volgt u deze stappen om het certificaat te verifiëren:
+1. [PsTools.zip](/sysinternals/downloads/pstools) downloaden
+2. Extraheer [PsExec](/sysinternals/downloads/psexec) uit het pakket en voer **PsExec-i-u ' NT Authority\Network service ' uit cmd.exe** uit vanaf een opdracht prompt met verhoogde bevoegdheid.
 3. **Certmgr. msc** uitvoeren in de zojuist verschenen opdracht prompt
 4. Vouw in de beheer console de persoonlijke container uit en klik op certificaten
 5. Zoek het certificaat dat is uitgegeven door **connectorregistrationca.msappproxy.net**
 
-Als de waarde **False**is, volgt u deze stappen om het certificaat te verifiëren:
+Als de waarde **False** is, volgt u deze stappen om het certificaat te verifiëren:
 1. Voer **certlm. msc** uit
 2. Vouw in de beheer console de persoonlijke container uit en klik op certificaten
 3. Zoek het certificaat dat is uitgegeven door **connectorregistrationca.msappproxy.net**
@@ -101,7 +101,7 @@ Import-module AppProxyPSModule
 Register-AppProxyConnector
 ```
 
-Zie [een script voor installatie zonder toezicht maken voor de Azure AD-toepassingsproxy-connector voor](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-register-connector-powershell) meer informatie over de Register-AppProxyConnector opdracht.
+Zie [een script voor installatie zonder toezicht maken voor de Azure AD-toepassingsproxy-connector voor](./application-proxy-register-connector-powershell.md) meer informatie over de Register-AppProxyConnector opdracht.
 
 ## <a name="verify-admin-is-used-to-install-the-connector"></a>Controleren of beheerder wordt gebruikt voor het installeren van de connector
 
@@ -109,7 +109,7 @@ Zie [een script voor installatie zonder toezicht maken voor de Azure AD-toepassi
 
 **Controleren of de referenties juist zijn:**
 
-Verbinding maken met `https://login.microsoftonline.com` dezelfde referenties en deze gebruiken. Zorg ervoor dat de aanmelding is geslaagd. U kunt de gebruikersrol controleren door naar **Azure Active Directory**  - &gt; **gebruikers en groepen**  - &gt; **alle gebruikers**te gaan. 
+Verbinding maken met `https://login.microsoftonline.com` dezelfde referenties en deze gebruiken. Zorg ervoor dat de aanmelding is geslaagd. U kunt de gebruikersrol controleren door naar **Azure Active Directory**  - &gt; **gebruikers en groepen**  - &gt; **alle gebruikers** te gaan. 
 
 Selecteer uw gebruikers account en vervolgens ' Directory-rol ' in het resulterende menu. Controleer of de geselecteerde rol ' toepassings beheerder ' is. Als u in deze stappen geen toegang hebt tot een van de pagina's, hebt u niet de vereiste rol.
 

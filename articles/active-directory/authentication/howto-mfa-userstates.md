@@ -21,13 +21,13 @@ ms.locfileid: "91964159"
 ---
 # <a name="enable-per-user-azure-multi-factor-authentication-to-secure-sign-in-events"></a>Microsoft Azure Multi-Factor Authentication per gebruiker inschakelen om aanmeldingsgebeurtenissen te beveiligen
 
-Als u aanmeldings gebeurtenissen van gebruikers wilt beveiligen in azure AD, kunt u multi-factor Authentication (MFA) vereisen. Het inschakelen van Azure Multi-Factor Authentication met beleids regels voor voorwaardelijke toegang is de aanbevolen benadering om gebruikers te beschermen. Voorwaardelijke toegang is een Azure AD Premium P1 of P2-functie waarmee u regels kunt Toep assen zodat MFA zo nodig in bepaalde scenario's wordt vereist. Zie [zelf studie: aanmeldings gebeurtenissen voor beveiligde gebruikers met Azure multi-factor Authentication](tutorial-enable-azure-mfa.md)om aan de slag te gaan met behulp van voorwaardelijke toegang.
+Als u aanmeldingsgebeurtenissen van gebruikers wilt beveiligen in Azure AD, kunt u multi-factor Authentication (MFA) vereisen. Het inschakelen van Azure Multi-Factor Authentication met beleids regels voor voorwaardelijke toegang is de aanbevolen benadering om gebruikers te beschermen. Voorwaardelijke toegang is een Azure AD Premium P1 of P2-functie waarmee u regels kunt toepassen zodat MFA zo nodig in bepaalde scenario's wordt vereist. Zie [zelf studie: aanmeldings gebeurtenissen voor beveiligde gebruikers met Azure multi-factor Authentication](tutorial-enable-azure-mfa.md)om aan de slag te gaan met behulp van voorwaardelijke toegang.
 
 Voor Azure AD-gratis tenants zonder voorwaardelijke toegang kunt u de [standaard instellingen voor beveiliging gebruiken om gebruikers te beveiligen](../fundamentals/concept-fundamentals-security-defaults.md). Gebruikers wordt om een MFA gevraagd als dat nodig is, maar u kunt niet uw eigen regels definiëren om het gedrag te bepalen.
 
 Indien nodig kunt u elk account inschakelen voor Azure Multi-Factor Authentication per gebruiker. Wanneer gebruikers afzonderlijk worden ingeschakeld, voeren ze multi-factor Authentication telkens uit wanneer ze zich aanmelden (met enkele uitzonde ringen, bijvoorbeeld wanneer ze zich aanmelden bij vertrouwde IP-adressen of als de functie _MFA op vertrouwde apparaten onthouden_ is ingeschakeld).
 
-Het wijzigen van de gebruikers status wordt niet aanbevolen, tenzij uw Azure AD-licenties geen voorwaardelijke toegang bevatten en u geen standaard instellingen voor beveiliging wilt gebruiken. Zie [functies en licenties voor Azure multi-factor Authentication](concept-mfa-licensing.md)voor meer informatie over de verschillende manieren om MFA in te scha kelen.
+Het wijzigen van de gebruikersstatus wordt niet aanbevolen, tenzij uw Azure AD-licenties geen voorwaardelijke toegang bevatten en u geen standaard instellingen voor beveiliging wilt gebruiken. Zie [functies en licenties voor Azure multi-factor Authentication](concept-mfa-licensing.md)voor meer informatie over de verschillende manieren om MFA in te scha kelen.
 
 > [!IMPORTANT]
 >
@@ -39,15 +39,15 @@ Het wijzigen van de gebruikers status wordt niet aanbevolen, tenzij uw Azure AD-
 
 ## <a name="azure-multi-factor-authentication-user-states"></a>Gebruikers statussen van Azure Multi-Factor Authentication
 
-De status van een gebruiker geeft aan of een beheerder deze heeft inge schreven bij Azure Multi-Factor Authentication per gebruiker. Gebruikers accounts in azure Multi-Factor Authentication de volgende drie statussen hebben:
+De status van een gebruiker geeft aan of een beheerder deze heeft ingeschreven bij Azure Multi-Factor Authentication per gebruiker. Gebruikers accounts in azure Multi-Factor Authentication de volgende drie statussen hebben:
 
 | Staat | Beschrijving | Beïnvloede verouderde verificatie | Browser-apps die worden beïnvloed | Betrokken moderne verificatie |
 |:---:| --- |:---:|:--:|:--:|
-| Uitgeschakeld | De standaard status voor een gebruiker die niet is inge schreven bij Azure Multi-Factor Authentication per gebruiker. | Nee | Nee | Nee |
-| Ingeschakeld | De gebruiker is inge schreven bij Azure Multi-Factor Authentication per gebruiker, maar kan nog steeds hun wacht woord gebruiken voor verouderde verificatie. Als de gebruiker nog geen MFA-verificatie methoden heeft geregistreerd, krijgen ze een prompt om de volgende keer dat ze zich aanmelden te registreren met moderne authenticatie (zoals via een webbrowser). | Nee. Verouderde verificatie blijft werken totdat het registratie proces is voltooid. | Ja. Nadat de sessie is verlopen, is de registratie van Azure Multi-Factor Authentication vereist.| Ja. Nadat het toegangs token is verlopen, is de registratie van Azure Multi-Factor Authentication vereist. |
-| Afgedwongen | De gebruiker is inge schreven per gebruiker in azure Multi-Factor Authentication. Als de gebruiker nog geen verificatie methoden heeft geregistreerd, krijgen ze een prompt om de volgende keer dat ze zich aanmelden te registreren met moderne authenticatie (zoals via een webbrowser). Gebruikers die de registratie in de *ingeschakelde* status volt ooien, worden automatisch verplaatst naar de status *afgedwongen* . | Ja. Apps vereisen app-wacht woorden. | Ja. Azure Multi-Factor Authentication is vereist bij het aanmelden. | Ja. Azure Multi-Factor Authentication is vereist bij het aanmelden. |
+| Uitgeschakeld | De standaard status voor een gebruiker die niet is ingeschreven bij Azure Multi-Factor Authentication per gebruiker. | Nee | Nee | Nee |
+| Ingeschakeld | De gebruiker is ingeschreven bij Azure Multi-Factor Authentication per gebruiker, maar kan nog steeds hun wachtwoord gebruiken voor verouderde verificatie. Als de gebruiker nog geen MFA-verificatie methoden heeft geregistreerd, krijgen ze een prompt om de volgende keer dat ze zich aanmelden te registreren met moderne authenticatie (zoals via een webbrowser). | Nee. Verouderde verificatie blijft werken totdat het registratie proces is voltooid. | Ja. Nadat de sessie is verlopen, is de registratie van Azure Multi-Factor Authentication vereist.| Ja. Nadat het toegangstoken is verlopen, is de registratie van Azure Multi-Factor Authentication vereist. |
+| Afgedwongen | De gebruiker is ingeschreven per gebruiker in Azure Multi-Factor Authentication. Als de gebruiker nog geen verificatie methoden heeft geregistreerd, krijgen ze een prompt om de volgende keer dat ze zich aanmelden te registreren met moderne authenticatie (zoals via een webbrowser). Gebruikers die de registratie in de *ingeschakelde* status voltooien, worden automatisch verplaatst naar de status *afgedwongen* . | Ja. Apps vereisen app-wacht woorden. | Ja. Azure Multi-Factor Authentication is vereist bij het aanmelden. | Ja. Azure Multi-Factor Authentication is vereist bij het aanmelden. |
 
-Alle gebruikers worden *uitgeschakeld*. Wanneer u gebruikers inschrijft in azure Multi-Factor Authentication per gebruiker, verandert de status in *ingeschakeld*. Wanneer ingeschakelde gebruikers zich aanmelden en het registratie proces volt ooien, wordt de status ervan gewijzigd in *afgedwongen*. Beheerders kunnen gebruikers verplaatsen tussen statussen, waaronder van *afgedwongen* in *ingeschakeld* of *uitgeschakeld*.
+Alle gebruikers worden *uitgeschakeld*. Wanneer u gebruikers inschrijft in Azure Multi-Factor Authentication per gebruiker, verandert de status in *ingeschakeld*. Wanneer ingeschakelde gebruikers zich aanmelden en het registratie proces voltooien, wordt de status ervan gewijzigd in *afgedwongen*. Beheerders kunnen gebruikers verplaatsen tussen statussen, waaronder van *afgedwongen* in *ingeschakeld* of *uitgeschakeld*.
 
 > [!NOTE]
 > Als MFA per gebruiker opnieuw wordt ingeschakeld voor een gebruiker en de gebruiker zich niet opnieuw registreert, wordt de MFA-status niet overgezet van *ingeschakeld* om te worden *afgedwongen* in de gebruikers interface voor MFA-beheer. De beheerder moet de gebruiker rechtstreeks verplaatsen naar *afgedwongen*.
@@ -64,16 +64,16 @@ Als u de gebruikers status wilt weer geven en beheren, voert u de volgende stapp
 
 ## <a name="change-the-status-for-a-user"></a>De status voor een gebruiker wijzigen
 
-Voer de volgende stappen uit om de Azure-Multi-Factor Authentication status per gebruiker voor een gebruiker te wijzigen:
+Voer de volgende stappen uit om de Azure Multi-Factor Authentication status per gebruiker voor een gebruiker te wijzigen:
 
-1. Volg de vorige stappen om [de status van een gebruiker weer te geven](#view-the-status-for-a-user) om toegang te krijgen tot de pagina Azure multi-factor Authentication- **gebruikers** .
+1. Volg de vorige stappen om [de status van een gebruiker weer te geven](#view-the-status-for-a-user) om toegang te krijgen tot de pagina Azure Multi-Factor Authentication- **gebruikers** .
 1. Zoek de gebruiker die u wilt inschakelen voor Azure Multi-Factor Authentication per gebruiker. Mogelijk moet u de weer gave boven aan **gebruikers**wijzigen.
    ![Selecteer de gebruiker waarvan u de status wilt wijzigen van het tabblad gebruikers](./media/howto-mfa-userstates/enable1.png)
 1. Schakel het selectie vakje in naast de naam (en) van de gebruiker (s) waarvan u de status wilt wijzigen.
 1. Klik aan de rechter kant onder **snelle stappen**op **inschakelen** of **uitschakelen**. In het volgende voor beeld heeft de gebruiker *John Smith* een vinkje naast hun naam en wordt ingeschakeld voor gebruik: ![ Schakel geselecteerde gebruiker inschakelen door op inschakelen te klikken in het menu snelle stappen](./media/howto-mfa-userstates/user1.png)
 
    > [!TIP]
-   > *Ingeschakelde* gebruikers worden automatisch overgeschakeld naar *afgedwongen* wanneer ze zich registreren voor Azure multi-factor Authentication. Wijzig de gebruikers status niet hand matig in *afdwinging* tenzij de gebruiker al is geregistreerd of wanneer de gebruiker een onderbreking in de verbindingen met verouderde verificatie protocollen kan ondervinden.
+   > *Ingeschakelde* gebruikers worden automatisch overgeschakeld naar *afgedwongen* wanneer ze zich registreren voor Azure Multi-Factor Authentication. Wijzig de gebruikers status niet handmatig in *afdwinging* tenzij de gebruiker al is geregistreerd of wanneer de gebruiker een onderbreking in de verbindingen met verouderde verificatie protocollen kan ondervinden.
 
 1. Bevestig uw selectie in het pop-upvenster dat wordt geopend.
 
@@ -87,7 +87,7 @@ Als u de gebruikers status wilt wijzigen met behulp van [Azure AD Power shell](/
 * *Afgedwongen*
 * *Uitgeschakeld*  
 
-Over het algemeen moet u gebruikers niet rechtstreeks naar de status *afgedwongen* verplaatsen, tenzij ze al zijn geregistreerd voor MFA. Als u dit doet, werken verouderde verificatie-apps niet meer omdat de gebruiker geen Azure-Multi-Factor Authentication registratie heeft door lopen en een [app-wacht woord](howto-mfa-app-passwords.md)heeft verkregen. Dit kan in sommige gevallen gewenst zijn, maar heeft invloed op de gebruikers ervaring totdat de gebruiker zich registreert.
+Over het algemeen moet u gebruikers niet rechtstreeks naar de status *afgedwongen* verplaatsen, tenzij ze al zijn geregistreerd voor MFA. Als u dit doet, werken verouderde verificatie-apps niet meer omdat de gebruiker geen Azure Multi-Factor Authentication registratie heeft door lopen en een [app-wacht woord](howto-mfa-app-passwords.md)heeft verkregen. Dit kan in sommige gevallen gewenst zijn, maar heeft invloed op de gebruikers ervaring totdat de gebruiker zich registreert.
 
 Als u aan de slag wilt gaan, installeert u de *MSOnline* -module met behulp van [install-module](/powershell/module/powershellget/install-module) als volgt:
 
@@ -101,7 +101,7 @@ Maak vervolgens verbinding via [Connect-MsolService](/powershell/module/msonline
 Connect-MsolService
 ```
 
-In het volgende voor beeld Power shell-script wordt MFA ingeschakeld voor een individuele gebruiker met de naam *bsimon@contoso.com* :
+In het volgende voor beeld PowerShell-script wordt MFA ingeschakeld voor een individuele gebruiker met de naam *bsimon@contoso.com* :
 
 ```PowerShell
 $st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
@@ -113,7 +113,7 @@ $sta = @($st)
 Set-MsolUser -UserPrincipalName bsimon@contoso.com -StrongAuthenticationRequirements $sta
 ```
 
-Het gebruik van Power shell is een goede optie wanneer u gebruikers bulksgewijs wilt kunnen inschakelen. Het volgende script herhaalt een lijst met gebruikers en schakelt MFA in voor hun accounts. Definieer de gebruikers accounts die op de eerste regel `$users` als volgt zijn ingesteld:
+Het gebruik van PowerShell is een goede optie wanneer u gebruikers bulksgewijs wilt kunnen inschakelen. Het volgende script herhaalt een lijst met gebruikers en schakelt MFA in voor hun accounts. Definieer de gebruikers accounts die op de eerste regel `$users` als volgt zijn ingesteld:
 
    ```PowerShell
    # Define your list of users to update state in bulk
@@ -184,8 +184,8 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie  [instellingen van Azure-multi-factor Authentication configureren](howto-mfa-mfasettings.md)als u Azure multi-factor Authentication-instellingen wilt configureren.
+Zie  [instellingen van Azure-multi-factor Authentication configureren](howto-mfa-mfasettings.md)als u Azure Multi-Factor Authentication-instellingen wilt configureren.
 
-Zie [Manage User Settings with azure multi-factor Authentication](howto-mfa-userdevicesettings.md)om gebruikers instellingen voor Azure multi-factor Authentication te beheren.
+Zie [Manage User Settings with azure multi-factor Authentication](howto-mfa-userdevicesettings.md)om gebruikers instellingen voor Azure Multi-Factor Authentication te beheren.
 
 Zie [Azure multi-factor Authentication-rapporten](howto-mfa-reporting.md)als u wilt weten waarom een gebruiker is gevraagd of niet wordt gevraagd MFA uit te voeren.

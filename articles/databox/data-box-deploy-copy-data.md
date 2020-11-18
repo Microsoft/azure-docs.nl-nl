@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 10/20/2020
+ms.date: 11/11/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 7ecccd64921b2d95155318fe91c897725e340b7e
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: c68f76e56f49f055466f7332d7751ac468e034d8
+ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94334666"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94616736"
 ---
 ::: zone target="docs"
 
@@ -74,7 +74,7 @@ Als u een hostcomputer met Windows Server gebruikt, voert u deze stappen uit om 
 
     ![Toegangsreferenties voor SMB-shares ophalen](media/data-box-deploy-copy-data/get-share-credentials1.png)
 
-2. Kopieer in het dialoogvenster Verbinding maken met share en gegevens kopiëren de **Gebruikersnaam** en het **Wachtwoord** voor de share. Als het wachtwoord speciale tekens bevat, plaatst u het tussen dubbele aanhalingstekens. Selecteer vervolgens **OK**.
+2. Kopieer in het dialoogvenster Verbinding maken met share en gegevens kopiëren de **Gebruikersnaam** en het **Wachtwoord** voor de share. Selecteer vervolgens **OK**.
     
     ![Gebruikersnaam en wachtwoord voor een share ophalen](media/data-box-deploy-copy-data/get-share-credentials2.png)
 
@@ -87,11 +87,11 @@ Als u een hostcomputer met Windows Server gebruikt, voert u deze stappen uit om 
     - Azure-pagina-blob - `\\10.126.76.138\utSAC1_202006051000_PageBlob`
     - Azure Files - `\\10.126.76.138\utSAC1_202006051000_AzFile`
 
-4. Voer het wachtwoord voor de share in wanneer er om wordt gevraagd. Het volgende voorbeeld laat zien hoe u verbinding met een share kunt maken via de voorgaande opdracht.
+4. Voer het wachtwoord voor de share in wanneer er om wordt gevraagd. Als het wachtwoord speciale tekens bevat, plaatst u het tussen dubbele aanhalingstekens. Het volgende voorbeeld laat zien hoe u verbinding met een share kunt maken via de voorgaande opdracht.
 
     ```
     C:\Users\Databoxuser>net use \\10.126.76.138\utSAC1_202006051000_BlockBlob /u:testuser1
-    Enter the password for 'testuser1' to connect to '10.126.76.138':
+    Enter the password for 'testuser1' to connect to '10.126.76.138': "ab1c2def$3g45%6h7i&j8kl9012345"
     The command completed successfully.
     ```
 

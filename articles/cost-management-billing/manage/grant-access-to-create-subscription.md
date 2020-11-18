@@ -8,12 +8,12 @@ ms.reviewer: amberb
 ms.topic: conceptual
 ms.date: 08/26/2020
 ms.author: banders
-ms.openlocfilehash: 02919cf2e35fdd4d981f3fde53085c2174f11bd1
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: c13670df26e5d0f7774b5a2aac81f656de94c960
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132564"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844707"
 ---
 # <a name="grant-access-to-create-azure-enterprise-subscriptions-preview"></a>Toegang verlenen voor het maken van Azure Enterprise-abonnementen (preview)
 
@@ -23,7 +23,7 @@ Als Azure-klant op [Enterprise Agreement (EA)](https://azure.microsoft.com/prici
 
 ## <a name="grant-access"></a>Toegang verlenen
 
-Als u [abonnementen wilt maken onder een inschrijvingsaccount](programmatically-create-subscription.md), moeten gebruikers de Azure RBAC [Eigenaar-rol](../../role-based-access-control/built-in-roles.md#owner) hebben voor dat account. U kunt een gebruiker of een groep gebruikers de Azure RBAC-eigenaarrol verlenen voor een inschrijvingsaccount door de volgende stappen uit te voeren:
+Als u [abonnementen wilt maken onder een inschrijvingsaccount](programmatically-create-subscription-enterprise-agreement.md), moeten gebruikers de Azure RBAC [Eigenaar-rol](../../role-based-access-control/built-in-roles.md#owner) hebben voor dat account. U kunt een gebruiker of een groep gebruikers de Azure RBAC-eigenaarrol verlenen voor een inschrijvingsaccount door de volgende stappen uit te voeren:
 
 1. Haal de object-ID op van het inschrijvingsaccount waaraan u toegang wilt verlenen
 
@@ -174,7 +174,7 @@ Als u [abonnementen wilt maken onder een inschrijvingsaccount](programmatically-
     az role assignment create --role Owner --assignee-object-id <userObjectId> --scope /providers/Microsoft.Billing/enrollmentAccounts/<enrollmentAccountObjectId>
     ```
 
-    Zodra een gebruiker een Azure RBAC-eigenaar wordt voor uw inschrijvingsaccount, kan deze [programmatisch abonnementen maken](programmatically-create-subscription.md) onder het account. Een abonnement dat is gemaakt door een gemachtigde gebruiker heeft nog steeds de oorspronkelijke eigenaar van het account als servicebeheerder, maar heeft standaard ook de gemachtigde gebruiker als Azure RBAC-eigenaar.
+    Zodra een gebruiker een Azure RBAC-eigenaar wordt voor uw inschrijvingsaccount, kan deze [programmatisch abonnementen maken](programmatically-create-subscription-enterprise-agreement.md) onder het account. Een abonnement dat is gemaakt door een gemachtigde gebruiker heeft nog steeds de oorspronkelijke eigenaar van het account als servicebeheerder, maar heeft standaard ook de gemachtigde gebruiker als Azure RBAC-eigenaar.
 
     ---
 
@@ -193,7 +193,7 @@ Probeer [ARMClient](https://github.com/projectkudu/ARMClient) om deze API eenvou
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Nu de gebruiker of Service-Principal gemachtigd is om een abonnement te maken, kunt u die identiteit gebruiken om [programmatisch Azure Enterprise-abonnementen te maken](programmatically-create-subscription.md).
+* Nu de gebruiker of Service-Principal gemachtigd is om een abonnement te maken, kunt u die identiteit gebruiken om [programmatisch Azure Enterprise-abonnementen te maken](programmatically-create-subscription-enterprise-agreement.md).
 * Zie [voorbeeldcode op GitHub](https://github.com/Azure-Samples/create-azure-subscription-dotnet-core) voor een voorbeeld voor het maken van abonnementen met behulp van .NET.
 * Zie [Overzicht Azure Resource Manager](../../azure-resource-manager/management/overview.md) voor meer informatie over Azure Resource Manager en zijn API’s.
 * Zie [Resources organiseren met Azure-beheergroepen](../../governance/management-groups/overview.md) voor meer informatie over het beheren van grote aantallen abonnementen met behulp van beheergroepen

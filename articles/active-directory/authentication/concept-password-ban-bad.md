@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4da1066166a3384ffb5f0f94599452829faed1b
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 026f45e715f6d442b27cdd0274f029a68330f7ee
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356583"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839825"
 ---
 # <a name="eliminate-bad-passwords-using-azure-active-directory-password-protection"></a>Verwijder ongeldige wacht woorden met Azure Active Directory wachtwoord beveiliging
 
@@ -24,7 +24,7 @@ Een groot aantal beveiligings richtlijnen raadt u aan om niet hetzelfde wacht wo
 
 Met Azure AD-wachtwoord beveiliging worden standaard globale lijsten met verboden wacht woorden automatisch toegepast op alle gebruikers in een Azure AD-Tenant. Ter ondersteuning van uw eigen bedrijfs-en beveiligings behoeften kunt u vermeldingen definiëren in een aangepaste lijst met verboden wacht woorden. Wanneer gebruikers hun wacht woord wijzigen of opnieuw instellen, worden deze verboden wachtwoord lijsten gecontroleerd om het gebruik van sterke wacht woorden af te dwingen.
 
-U moet aanvullende functies zoals [azure multi-factor Authentication](concept-mfa-howitworks.md)gebruiken. u hoeft niet alleen te vertrouwen op sterke wacht woorden die worden afgedwongen door Azure AD-wachtwoord beveiliging. Meer informatie over het gebruik van meerdere beveiligings lagen voor uw aanmeldings gebeurtenissen vindt [u in uw PA $ $Word niet van belang](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Your-Pa-word-doesn-t-matter/ba-p/731984)is.
+U moet aanvullende functies zoals [Azure ad multi-factor Authentication](concept-mfa-howitworks.md)gebruiken, niet alleen de sterke wacht woorden die worden afgedwongen door Azure AD-wachtwoord beveiliging. Meer informatie over het gebruik van meerdere beveiligings lagen voor uw aanmeldings gebeurtenissen vindt [u in uw PA $ $Word niet van belang](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Your-Pa-word-doesn-t-matter/ba-p/731984)is.
 
 > [!IMPORTANT]
 > In dit conceptuele artikel wordt uitgelegd hoe een beheerder de wachtwoord beveiliging van Azure AD werkt. Als u een eind gebruiker bent al geregistreerd voor selfservice voor het opnieuw instellen van het wacht woord en als u weer toegang wilt krijgen tot uw account, gaat u naar [https://aka.ms/sspr](https://aka.ms/sspr) .

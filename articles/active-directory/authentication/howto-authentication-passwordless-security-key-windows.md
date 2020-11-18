@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/30/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66283e4965aea9e24da6041133e2d88e95df6755
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8fba2610b3343744c448e390bc2d713b38da481d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90526983"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839468"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Aanmeldings wachtwoord zonder wacht woord inschakelen voor Windows 10-apparaten met Azure Active Directory (preview-versie)
 
@@ -29,7 +29,7 @@ Dit document is gericht op het inschakelen van FIDO2-verificatie op basis van wa
 
 | Apparaattype | Azure AD-deelname | Hybride Azure AD-deelname |
 | --- | --- | --- |
-| [Azure Multi-Factor Authentication](howto-mfa-getstarted.md) | X | X |
+| [Azure AD-Multi-Factor Authentication](howto-mfa-getstarted.md) | X | X |
 | [Preview van registratie van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md) | X | X |
 | Compatibele [FIDO2-beveiligings sleutels](concept-authentication-passwordless.md#fido2-security-keys) | X | X |
 | Webauthn vereist Windows 10 versie 1903 of hoger | X | X |
@@ -78,7 +78,7 @@ Organisaties kunnen ervoor kiezen om een of meer van de volgende methoden te geb
 
 Voer de volgende stappen uit om het gebruik van beveiligings sleutels met intune in te scha kelen:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Blader naar **Microsoft intune**  >  **Device enrollment**  >  **registratie**  >  **van Windows hello voor bedrijven**-inschrijving voor het apparaat  >  **Properties**.
 1. Stel onder **instellingen** **beveiligings sleutels gebruiken voor aanmelden in** op **ingeschakeld**.
 
@@ -88,7 +88,7 @@ Configuratie van beveiligings sleutels voor aanmelden is niet afhankelijk van he
 
 Als u specifieke apparaatgroepen wilt instellen om de referentie provider in te scha kelen, gebruikt u de volgende aangepaste instellingen via intune:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Ga naar **Microsoft intune**  >  **apparaatconfiguratie**  >  **profielen**  >  **profiel maken**.
 1. Configureer het nieuwe profiel met de volgende instellingen:
    - Naam: beveiligings sleutels voor Windows Sign-In
@@ -112,12 +112,12 @@ Voor apparaten die niet worden beheerd door intune, kan een inrichtings pakket w
 1. Selecteer **bestand**  >  **Nieuw project**.
 1. Geef uw project een naam en noteer het pad waar het project is gemaakt en selecteer vervolgens **volgende**.
 1. Verlaat het *inrichtings pakket* dat is geselecteerd als de **geselecteerde project werk stroom** en selecteer **volgende**.
-1. Selecteer *alle Windows Desktop-edities* onder **Kies welke instellingen u wilt weer geven en configureren en**Selecteer vervolgens **volgende**.
+1. Selecteer *alle Windows Desktop-edities* onder **Kies welke instellingen u wilt weer geven en configureren en** Selecteer vervolgens **volgende**.
 1. Selecteer **Finish**.
 1. Blader in het zojuist gemaakte project naar **runtime-instellingen**  >  **WindowsHelloForBusiness**  >  **SecurityKeys**  >  **UseSecurityKeyForSignIn**.
 1. Stel **UseSecurityKeyForSignIn** in op *ingeschakeld*.
 1. **Export**  >  **Inrichtings pakket** exporteren selecteren
-1. Accepteer de standaard waarden in het venster **Build** onder **Beschrijving van het inrichtings pakket**en selecteer vervolgens **volgende**.
+1. Accepteer de standaard waarden in het venster **Build** onder **Beschrijving van het inrichtings pakket** en selecteer vervolgens **volgende**.
 1. Accepteer de standaard waarden in het venster **bouwen** onder **Selecteer beveiligings Details voor het inrichtings pakket** en selecteer **volgende**.
 1. Noteer of wijzig het pad in de **Build** -Vensters onder **selecteren waar het inrichtings pakket moet worden opgeslagen** en selecteer **volgende**.
 1. Selecteer **samen stellen** op de pagina **het inrichtings pakket bouwen** .
@@ -129,7 +129,7 @@ Voor apparaten die niet worden beheerd door intune, kan een inrichtings pakket w
 
 ### <a name="enable-with-group-policy"></a>Inschakelen met groepsbeleid
 
-Organisaties kunnen met **hybride Azure AD gekoppelde apparaten**de volgende Groepsbeleid configureren om aanmelden met Fido-beveiligings sleutel in te scha kelen. U kunt de instelling vinden onder **computer configuratie**  >  **Beheersjablonen**  >  **System**  >  **aanmeldings**gegevens  >  **van de beveiligings sleutel inschakelen**:
+Organisaties kunnen met **hybride Azure AD gekoppelde apparaten** de volgende Groepsbeleid configureren om aanmelden met Fido-beveiligings sleutel in te scha kelen. U kunt de instelling vinden onder **computer configuratie**  >  **Beheersjablonen**  >  **System**  >  **aanmeldings** gegevens  >  **van de beveiligings sleutel inschakelen**:
 
 - Als u dit beleid instelt op **ingeschakeld** , kunnen gebruikers zich aanmelden met beveiligings sleutels.
 - Als u dit beleid instelt op **uitgeschakeld** of **niet geconfigureerd** , kunnen gebruikers zich niet meer aanmelden met beveiligings sleutels.
@@ -164,4 +164,4 @@ Als u feedback wilt delen of problemen ondervindt tijdens het vooraf bekijken va
 
 [Meer informatie over apparaatregistratie](../devices/overview.md)
 
-[Meer informatie over Azure Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)
+[Meer informatie over Azure AD Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)

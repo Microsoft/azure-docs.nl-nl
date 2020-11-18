@@ -1,6 +1,6 @@
 ---
-title: Gecombineerde registratie voor SSPR en Azure Multi-Factor Authentication-Azure Active Directory
-description: Meer informatie over de gecombineerde registratie-ervaring voor Azure Active Directory waarmee gebruikers zich kunnen registreren voor zowel Azure Multi-Factor Authentication als self-service voor wachtwoord herstel
+title: Gecombineerde registratie voor SSPR en Azure AD-Multi-Factor Authentication-Azure Active Directory
+description: Meer informatie over de gecombineerde registratie-ervaring voor Azure Active Directory waarmee gebruikers zich kunnen registreren voor zowel Azure AD Multi-Factor Authentication als selfservice voor wachtwoord herstel
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e1036e63b4fdef241350786fa3a246946a9223c
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 22f43c5f9848670b9df4b061c5abb6cc30912172
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378003"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839791"
 ---
 # <a name="combined-security-information-registration-for-azure-active-directory-overview"></a>Registratie van gecombineerde beveiligings gegevens voor Azure Active Directory overzicht
 
-Vóór de gecombineerde registratie hebben gebruikers de verificatie methoden voor Azure Multi-Factor Authentication en self-service voor wachtwoord herstel (SSPR) afzonderlijk geregistreerd. Het is bekend dat er soort gelijke methoden werden gebruikt voor Multi-Factor Authentication en SSPR, maar dat ze voor beide functies moesten registreren. Met gecombineerde registratie kunnen gebruikers zich eenmaal registreren en profiteren van de voor delen van Multi-Factor Authentication en SSPR.
+Vóór de gecombineerde registratie hebben gebruikers de verificatie methoden voor Azure AD Multi-Factor Authentication en self-service voor wachtwoord herstel (SSPR) afzonderlijk geregistreerd. Het is bekend dat er soort gelijke methoden werden gebruikt voor Multi-Factor Authentication en SSPR, maar dat ze voor beide functies moesten registreren. Met gecombineerde registratie kunnen gebruikers zich eenmaal registreren en profiteren van de voor delen van Multi-Factor Authentication en SSPR.
 
 > [!NOTE]
 > Vanaf 15 augustus 2020 worden alle nieuwe Azure AD-tenants automatisch ingeschakeld voor gecombineerde registratie.
@@ -142,8 +142,8 @@ Een gebruiker die eerder ten minste één methode heeft ingesteld die kan worden
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de zelf studies om [selfservice voor wachtwoord herstel in te scha kelen](tutorial-enable-sspr.md) en [Azure multi-factor Authentication in te scha kelen](tutorial-enable-azure-mfa.md)om aan de slag te gaan.
+Raadpleeg de zelf studies om [selfservice voor wachtwoord herstel in te scha kelen](tutorial-enable-sspr.md) en [Azure AD-multi-factor Authentication in te scha kelen](tutorial-enable-azure-mfa.md)om aan de slag te gaan.
 
 Meer informatie over het [inschakelen van gecombineerde registratie in uw Tenant of het](howto-registration-mfa-sspr-combined.md) [afdwingen van verificatie methoden door gebruikers te forceren](howto-mfa-userdevicesettings.md#manage-user-authentication-options).
 
-U kunt ook de [beschik bare methoden voor Azure multi-factor Authentication en SSPR](concept-authentication-methods.md)bekijken.
+U kunt ook de [beschik bare methoden voor Azure AD multi-factor Authentication en SSPR](concept-authentication-methods.md)bekijken.

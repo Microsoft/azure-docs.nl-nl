@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05f3d422c9a504a0089290f3c2e1e68d809366ac
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 9da0c00bd8498e3f43d5f8258308fbc010a6a274
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592954"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839519"
 ---
 # <a name="enable-passwordless-sign-in-with-the-microsoft-authenticator-app-preview"></a>Aanmelding zonder wacht woord inschakelen met de Microsoft Authenticator-app (preview)
 
@@ -36,7 +36,7 @@ Personen die aanmelding via de telefoon in de Microsoft Authenticator-app hebben
 
 Als u aanmelden zonder wacht woord met de app Microsoft Authenticator wilt gebruiken, moet aan de volgende vereisten worden voldaan:
 
-- Azure Multi-Factor Authentication, waarbij push meldingen zijn toegestaan als verificatie methode.
+- Azure AD Multi-Factor Authentication, waarbij push meldingen zijn toegestaan als verificatie methode.
 - Nieuwste versie van Microsoft Authenticator geïnstalleerd op apparaten met iOS 8,0 of hoger, of Android 6,0 of hoger.
 
 > [!NOTE]
@@ -141,4 +141,4 @@ Raadpleeg de volgende artikelen voor meer informatie over Azure AD-verificatie e
 
 - [Meer informatie over de werking van verificatie met een wacht woord](concept-authentication-passwordless.md)
 - [Meer informatie over apparaatregistratie](../devices/overview.md#getting-devices-in-azure-ad)
-- [Meer informatie over Azure Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)
+- [Meer informatie over Azure AD Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f99d57e084a6a765b8598ba7f8eebbd7ddb34d74
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 7d9c4dff1e4a3ba7c7a2b11311e97eb5e66a1585
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964635"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839298"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Aanmelden zonder wacht woord voor beveiligings sleutel inschakelen (preview)
 
@@ -29,7 +29,7 @@ Dit document is gericht op het inschakelen van op wacht woord gebaseerde verific
 
 ## <a name="requirements"></a>Vereisten
 
-- [Azure Multi-Factor Authentication](howto-mfa-getstarted.md)
+- [Azure AD-Multi-Factor Authentication](howto-mfa-getstarted.md)
 - [Voor beeld van registratie van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md) inschakelen
 - Compatibele [FIDO2-beveiligings sleutels](concept-authentication-passwordless.md#fido2-security-keys)
 - Webauthn vereist Windows 10 versie 1903 of hoger * *
@@ -51,20 +51,20 @@ Registratie functies voor verificatie methoden met een wacht woord zijn afhankel
 ### <a name="enable-fido2-security-key-method"></a>FIDO2-beveiligings sleutel methode inschakelen
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Blader naar **Azure Active Directory**  >  **Security**  >  **Authentication methods**  >  **beleid voor verificatie methode**voor beveiligings verificatie methoden (preview).
-1. Kies onder de **beveiligings sleutel methode FIDO2**de volgende opties:
+1. Blader naar **Azure Active Directory**  >  **Security**  >  **Authentication methods**  >  **beleid voor verificatie methode** voor beveiligings verificatie methoden (preview).
+1. Kies onder de **beveiligings sleutel methode FIDO2** de volgende opties:
    1. **Inschakelen** -ja of Nee
    1. **Doel** -alle gebruikers of Selecteer gebruikers
 1. **Sla** de configuratie op.
 
 ## <a name="user-registration-and-management-of-fido2-security-keys"></a>Gebruikers registratie en het beheer van FIDO2-beveiligings sleutels
 
-1. Blader naar [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
+1. Ga naar [https://myprofile.microsoft.com](https://myprofile.microsoft.com) .
 1. Meld u aan als dat nog niet het geval is.
 1. Klik op **beveiligings gegevens**.
-   1. Als de gebruiker al ten minste één Azure Multi-Factor Authentication-methode heeft geregistreerd, kunnen ze onmiddellijk een FIDO2-beveiligings sleutel registreren.
-   1. Als er niet ten minste één Azure Multi-Factor Authentication-methode is geregistreerd, moeten deze er een worden toegevoegd.
-1. Voeg een FIDO2-beveiligings sleutel toe door te klikken op **methode toevoegen** en **beveiligings sleutel**te kiezen.
+   1. Als de gebruiker al ten minste één Azure AD Multi-Factor Authentication-methode heeft geregistreerd, kunnen ze onmiddellijk een FIDO2-beveiligings sleutel registreren.
+   1. Als er niet ten minste één Azure AD Multi-Factor Authentication-methode is geregistreerd, moeten deze er een worden toegevoegd.
+1. Voeg een FIDO2-beveiligings sleutel toe door te klikken op **methode toevoegen** en **beveiligings sleutel** te kiezen.
 1. Kies een **USB-apparaat** of **NFC-apparaat**.
 1. Laat uw sleutel gereed en kies **volgende**.
 1. Er wordt een vak weer gegeven waarin de gebruiker wordt gevraagd een pincode voor uw beveiligings sleutel te maken of in te voeren. vervolgens moet u de vereiste penbeweging voor de sleutel, biometrisch of touch, uitvoeren.
@@ -105,4 +105,4 @@ We werken aan het ondersteunen van een functie waarmee UPN kan worden gewijzigd 
 
 [Meer informatie over apparaatregistratie](../devices/overview.md)
 
-[Meer informatie over Azure Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)
+[Meer informatie over Azure AD Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)

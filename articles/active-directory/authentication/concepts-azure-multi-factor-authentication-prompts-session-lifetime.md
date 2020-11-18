@@ -1,6 +1,6 @@
 ---
-title: Azure Multi-Factor Authentication-prompts en de levens duur van sessies
-description: Meer informatie over de aanbevolen configuratie voor herverificaties prompts met Azure Multi-Factor Authentication en hoe de levens duur van de sessie wordt toegepast.
+title: Azure AD Multi-Factor Authentication-prompts en de levens duur van sessies
+description: Meer informatie over de aanbevolen configuratie voor herverificaties prompts met Azure AD Multi-Factor Authentication en hoe de levens duur van de sessie wordt toegepast.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a759d4e686f43133716cc1c40237db74a015210
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 87b30b12e75a583ccee9780f97a6492961365cca
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964941"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839672"
 ---
-# <a name="optimize-reauthentication-prompts-and-understand-session-lifetime-for-azure-multi-factor-authentication"></a>Herauthenticatie vragen en de levens duur van sessies voor Azure Multi-Factor Authentication optimaliseren
+# <a name="optimize-reauthentication-prompts-and-understand-session-lifetime-for-azure-ad-multi-factor-authentication"></a>Herauthenticatie vragen en de levens duur van sessies voor Azure AD-Multi-Factor Authentication optimaliseren
 
 Azure Active Directory (Azure AD) heeft meerdere instellingen die bepalen hoe vaak gebruikers opnieuw moeten worden geverifieerd. Deze herauthenticatie kan worden uitgevoerd met een eerste factor zoals wacht woord, FIDO of wacht woord Microsoft Authenticator, of om multi-factor Authentication (MFA) uit te voeren. U kunt deze instellingen voor opnieuw verifiëren zo nodig configureren voor uw eigen omgeving en de gewenste gebruikers ervaring.
 
@@ -104,26 +104,26 @@ Nu u begrijpt hoe verschillende instellingen werken en de aanbevolen configurati
 
 Voer de volgende stappen uit als u de optie *aangemeld blijven* wilt configureren of bekijken:
 
-1. Zoek en selecteer *Azure Active Directory*in de Azure AD-Portal.
-1. Selecteer de **huis stijl**van het bedrijf en kies voor elke land instelling de **optie weer geven om aangemeld te blijven**.
-1. Kies *Ja*en selecteer vervolgens **Opslaan**.
+1. Zoek en selecteer *Azure Active Directory* in de Azure AD-Portal.
+1. Selecteer de **huis stijl** van het bedrijf en kies voor elke land instelling de **optie weer geven om aangemeld te blijven**.
+1. Kies *Ja* en selecteer vervolgens **Opslaan**.
 
 Als u instellingen voor multi-factor Authentication wilt onthouden, voert u de volgende stappen uit:
 
-1. Zoek en selecteer *Azure Active Directory*in de Azure AD-Portal.
-1. Selecteer **beveiliging**en vervolgens **MFA**.
+1. Zoek en selecteer *Azure Active Directory* in de Azure AD-Portal.
+1. Selecteer **beveiliging** en vervolgens **MFA**.
 1. Selecteer onder **configureren** **Extra op de cloud gebaseerde MFA-instellingen**.
 1. Ga op de pagina *instellingen voor multi-factor Authentication-Service* naar **instellingen voor multi-factor Authentication onthouden**. Schakel de instelling uit door het selectie vakje uit te scha kelen.
 
 Als u beleid voor voorwaardelijke toegang wilt configureren voor aanmeldings frequentie en permanente browser sessie, voert u de volgende stappen uit:
 
-1. Zoek en selecteer *Azure Active Directory*in de Azure AD-Portal.
-1. Selecteer **beveiliging**en vervolgens **voorwaardelijke toegang**.
+1. Zoek en selecteer *Azure Active Directory* in de Azure AD-Portal.
+1. Selecteer **beveiliging** en vervolgens **voorwaardelijke toegang**.
 1. Configureer een beleid met de aanbevolen opties voor sessie beheer die in dit artikel worden beschreven.
 
 Als u de levens duur van tokens wilt bekijken, [gebruikt u Azure AD Power shell voor het uitvoeren van een query op Azure AD-beleid](../develop/configure-token-lifetimes.md#prerequisites) Schakel alle beleids regels uit die u hebt geïnstalleerd.
 
-Als er meer dan één instelling is ingeschakeld in uw Tenant, wordt u aangeraden uw instellingen bij te werken op basis van de licenties die voor u beschikbaar zijn. Als u bijvoorbeeld Azure AD Premium-licenties hebt, moet u alleen het beleid voor voorwaardelijke toegang van de *aanmeldings frequentie* en *permanente browser sessie*gebruiken. Als u Microsoft 365 apps of gratis Azure AD-licenties hebt, moet u de configuratie *ingelogd blijven gebruiken?*
+Als er meer dan één instelling is ingeschakeld in uw Tenant, wordt u aangeraden uw instellingen bij te werken op basis van de licenties die voor u beschikbaar zijn. Als u bijvoorbeeld Azure AD Premium-licenties hebt, moet u alleen het beleid voor voorwaardelijke toegang van de *aanmeldings frequentie* en *permanente browser sessie* gebruiken. Als u Microsoft 365 apps of gratis Azure AD-licenties hebt, moet u de configuratie *ingelogd blijven gebruiken?*
 
 Als u Configureer bare token levensduur hebt ingeschakeld, wordt deze functie binnenkort verwijderd. Plan een migratie naar een beleid voor voorwaardelijke toegang.
 
@@ -136,4 +136,4 @@ De volgende tabel bevat een overzicht van de aanbevelingen op basis van licentie
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u aan de slag wilt gaan, voltooit u de zelf studie om [aanmeldings gebeurtenissen van gebruikers met azure multi-factor Authentication te beveiligen](tutorial-enable-azure-mfa.md) of [gebruikt u risico detecties voor gebruikers aanmeldingen om Azure multi-factor Authentication te activeren](tutorial-risk-based-sspr-mfa.md).
+Als u aan de slag wilt gaan, voltooit u de zelf studie voor het [beveiligen van aanmeldings gebeurtenissen van gebruikers met Azure ad multi-factor Authentication](tutorial-enable-azure-mfa.md) of [gebruikt u risico detecties voor gebruikers aanmeldingen om Azure AD-multi-factor Authentication te activeren](tutorial-risk-based-sspr-mfa.md).

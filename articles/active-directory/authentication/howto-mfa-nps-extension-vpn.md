@@ -1,6 +1,6 @@
 ---
-title: VPN met Azure MFA met de NPS-extensie-Azure Active Directory
-description: Integreer uw VPN-infra structuur met Azure MFA met behulp van de extensie Network Policy Server voor Microsoft Azure.
+title: VPN met Azure AD MFA met de NPS-extensie-Azure Active Directory
+description: Integreer uw VPN-infra structuur met Azure AD MFA met behulp van de extensie Network Policy Server voor Microsoft Azure.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7243857db9a3726bb42815ac4c9eef661f52e47
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 73fa82c3f162b546517ce40ef1447c002351d5b4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964720"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839536"
 ---
-# <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Uw VPN-infra structuur integreren met Azure MFA met behulp van de Network Policy Server-extensie voor Azure
+# <a name="integrate-your-vpn-infrastructure-with-azure-ad-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Uw VPN-infra structuur integreren met Azure AD MFA met behulp van de Network Policy Server-extensie voor Azure
 
-Met de uitbrei ding van de Network Policy Server (NPS) voor Azure kunnen organisaties de verificatie van Remote Authentication Dial-In User Service (RADIUS)-client beveiligen met behulp van [Azure multi-factor Authentication (](howto-mfaserver-nps-rdg.md)op basis van de Cloud), dat verificatie in twee stappen biedt.
+Met de uitbrei ding van de Network Policy Server (NPS) voor Azure kunnen organisaties de verificatie van Remote Authentication Dial-In User Service (RADIUS)-client beveiligen met behulp van [Azure AD multi-factor Authentication (MFA)](howto-mfaserver-nps-rdg.md)in de Cloud, dat verificatie in twee stappen biedt.
 
 Dit artikel bevat instructies voor het integreren van een NPS-infra structuur met MFA door de NPS-extensie voor Azure te gebruiken. Dit proces maakt verificatie in twee stappen mogelijk voor gebruikers die verbinding met uw netwerk proberen te maken met behulp van een VPN.
 
@@ -43,7 +43,7 @@ Services voor netwerk beleid en-toegang biedt organisaties de volgende mogelijkh
 * Bieden een manier om verificatie en autorisatie af te dwingen voor toegang tot draadloze 802.1 x-compatibele en Ethernet-switches.
   Zie [Network Policy Server](/windows-server/networking/technologies/nps/nps-top)voor meer informatie.
 
-Om de beveiliging te verbeteren en een hoge mate van naleving te bieden, kunnen organisaties NPS integreren met Azure Multi-Factor Authentication om ervoor te zorgen dat gebruikers verificatie in twee stappen gebruiken om verbinding te maken met de virtuele poort op de VPN-server. Gebruikers kunnen alleen toegang krijgen als ze de combi natie van gebruikers naam en wacht woord opgeven en andere informatie die ze beheren. Deze informatie moet worden vertrouwd en kan niet eenvoudig worden gedupliceerd. Het kan een GSM-nummer, een vast nummer of een toepassing op een mobiel apparaat bevatten.
+Om de beveiliging te verbeteren en een hoge mate van naleving te bieden, kunnen organisaties NPS integreren met Azure AD Multi-Factor Authentication om ervoor te zorgen dat gebruikers verificatie in twee stappen gebruiken om verbinding te maken met de virtuele poort op de VPN-server. Gebruikers kunnen alleen toegang krijgen als ze de combi natie van gebruikers naam en wacht woord opgeven en andere informatie die ze beheren. Deze informatie moet worden vertrouwd en kan niet eenvoudig worden gedupliceerd. Het kan een GSM-nummer, een vast nummer of een toepassing op een mobiel apparaat bevatten.
 
 Vóór de beschik baarheid van de NPS-extensie voor Azure moesten klanten die verificatie in twee stappen voor geïntegreerde NPS-en MFA-omgevingen willen implementeren, een afzonderlijke MFA-server in een on-premises omgeving configureren en onderhouden. Dit type verificatie wordt aangeboden door Extern bureaublad-gateway en Azure Multi-Factor Authentication-server met behulp van RADIUS.
 
@@ -66,9 +66,9 @@ Wanneer de NPS-extensie voor Azure is geïntegreerd met de NPS, worden er als vo
 1. De VPN-server ontvangt een verificatie aanvraag van een VPN-gebruiker die de gebruikers naam en het wacht woord bevat om verbinding te maken met een bron, zoals een Extern bureaublad sessie.
 2. De VPN-server fungeert als een RADIUS-client en converteert de aanvraag naar een RADIUS- *Access-Request-* bericht en verzendt deze (met een versleuteld wacht woord) naar de RADIUS-server waarop de NPS-extensie is geïnstalleerd.
 3. De combi natie van gebruikers naam en wacht woord wordt in Active Directory gecontroleerd. Als de gebruikers naam of het wacht woord onjuist is, verzendt de RADIUS-server een bericht over een *toegangs weigering* .
-4. Als aan alle voor waarden, zoals opgegeven in de NPS-verbindings aanvraag en het netwerk beleid, wordt voldaan (bijvoorbeeld het tijdstip van de dag of de beperkingen van groepslid maatschappen), activeert de NPS-extensie een aanvraag voor secundaire verificatie met Azure Multi-Factor Authentication.
-5. Azure Multi-Factor Authentication communiceert met Azure Active Directory, haalt de details van de gebruiker op en voert de secundaire verificatie uit met behulp van de methode die door de gebruiker is geconfigureerd (mobiele telefoon oproep, tekst bericht of mobiele app).
-6. Wanneer de MFA-uitdaging is geslaagd, communiceert Azure Multi-Factor Authentication het resultaat naar de NPS-extensie.
+4. Als aan alle voor waarden, zoals opgegeven in de NPS-verbindings aanvraag en het netwerk beleid, wordt voldaan (bijvoorbeeld het tijdstip van de dag of de beperkingen van groepslid maatschappen), activeert de NPS-extensie een aanvraag voor secundaire verificatie met Azure AD Multi-Factor Authentication.
+5. Azure AD Multi-Factor Authentication communiceert met Azure Active Directory, haalt de details van de gebruiker op en voert de secundaire verificatie uit met behulp van de methode die door de gebruiker is geconfigureerd (mobiele telefoon oproep, tekst bericht of mobiele app).
+6. Wanneer de MFA-uitdaging is geslaagd, communiceert Azure AD Multi-Factor Authentication het resultaat naar de NPS-extensie.
 7. Nadat de verbindings poging is geverifieerd en geautoriseerd, verzendt de NPS waar de uitbrei ding is geïnstalleerd een RADIUS- *toegangs acceptatie* bericht naar de VPN-server (RADIUS-client).
 8. De gebruiker krijgt toegang tot de virtuele poort op de VPN-server en brengt een versleutelde VPN-tunnel tot stand.
 
@@ -78,7 +78,7 @@ In deze sectie worden de vereisten beschreven die moeten worden voltooid voordat
 
 * VPN-infra structuur
 * Functie Services voor netwerk beleid en-toegang
-* Licentie voor Azure Multi-Factor Authentication
+* Licentie voor Azure AD Multi-Factor Authentication
 * Windows Server-software
 * Bibliotheken
 * Azure Active Directory (Azure AD) gesynchroniseerd met on-premises Active Directory
@@ -96,9 +96,9 @@ Services voor netwerk beleid en-toegang biedt de RADIUS-server en-client functio
 
 Zie [een NAP-status beleids server installeren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd296890(v=ws.10))voor meer informatie over het installeren van de functie Service Services voor netwerk beleid en-toegang Windows Server 2012 of hoger. NAP is afgeschaft in Windows Server 2016. Zie [Aanbevolen procedures voor NPS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771746(v=ws.10))voor een beschrijving van best practices voor NPS, met inbegrip van de aanbeveling voor het installeren van NPS op een domein controller.
 
-### <a name="azure-mfa-license"></a>Azure MFA-licentie
+### <a name="azure-ad-mfa-license"></a>Azure AD MFA-licentie
 
-Er is een licentie vereist voor Azure Multi-Factor Authentication en deze is beschikbaar via een Azure AD Premium, Enterprise Mobility + Security of een zelfstandige licentie voor Multi-Factor Authentication. Op verbruik gebaseerde licenties voor Azure MFA, zoals per gebruiker of per verificatie-licentie, zijn niet compatibel met de NPS-extensie. Zie [Azure multi-factor Authentication ophalen](concept-mfa-licensing.md)voor meer informatie. Voor test doeleinden kunt u een proef abonnement gebruiken.
+Er is een licentie vereist voor Azure AD Multi-Factor Authentication, en deze is beschikbaar via een Azure AD Premium, Enterprise Mobility + Security of een zelfstandige licentie voor Multi-Factor Authentication. Op verbruik gebaseerde licenties voor Azure AD MFA, zoals per gebruiker of per verificatie-licentie, zijn niet compatibel met de NPS-extensie. Zie [Azure AD-multi-factor Authentication ophalen](concept-mfa-licensing.md)voor meer informatie. Voor test doeleinden kunt u een proef abonnement gebruiken.
 
 ### <a name="windows-server-software"></a>Windows Server-software
 
@@ -139,7 +139,7 @@ Als u in dit scenario goed wilt werken, moet de NPS-server zijn geregistreerd in
 
 1. Serverbeheer openen.
 
-2. Selecteer in Serverbeheer **extra**en selecteer vervolgens **Network Policy Server**.
+2. Selecteer in Serverbeheer **extra** en selecteer vervolgens **Network Policy Server**.
 
 3. Klik in de Network Policy Server-console met de rechter muisknop op **NPS (lokaal)** en selecteer **Server registreren in Active Directory**. Selecteer **OK** twee keer.
 
@@ -153,11 +153,11 @@ U kunt een standaard instelling (op basis van een wizard) of een geavanceerde co
 
 1. Selecteer in de console Network Policy Server **NPS (lokaal)**.
 
-2. Onder **standaard configuratie**selecteert u **RADIUS-server voor inbel-of VPN-verbindingen**en selecteert u vervolgens **VPN configureren of inbellen**.
+2. Onder **standaard configuratie** selecteert u **RADIUS-server voor inbel-of VPN-verbindingen** en selecteert u vervolgens **VPN configureren of inbellen**.
 
     ![Configureer de RADIUS-server voor inbel-of VPN-verbindingen](./media/howto-mfa-nps-extension-vpn/image3.png)
 
-3. In het venster **inbel-of VPN-verbindingen type selecteren** selecteert u **virtuele particuliere netwerk verbindingen**en selecteert u vervolgens **volgende**.
+3. In het venster **inbel-of VPN-verbindingen type selecteren** selecteert u **virtuele particuliere netwerk verbindingen** en selecteert u vervolgens **volgende**.
 
     ![VPN-verbindingen (virtueel particulier netwerk) configureren](./media/howto-mfa-nps-extension-vpn/image4.png)
 
@@ -174,13 +174,13 @@ U kunt een standaard instelling (op basis van een wizard) of een geavanceerde co
     > [!NOTE]
     > Als u EAP (Extensible Authentication Protocol) configureert, moet u micro soft Challenge-Handshake Authentication Protocol (CHAPv2) of Protected Extensible Authentication Protocol (PEAP) gebruiken. Er wordt geen andere EAP ondersteund.
 
-8. Selecteer in het venster **gebruikers groepen opgeven** de optie **toevoegen**en selecteer vervolgens een geschikte groep. Als er geen groep bestaat, laat u de selectie leeg om toegang te verlenen aan alle gebruikers.
+8. Selecteer in het venster **gebruikers groepen opgeven** de optie **toevoegen** en selecteer vervolgens een geschikte groep. Als er geen groep bestaat, laat u de selectie leeg om toegang te verlenen aan alle gebruikers.
 
     ![Geef het venster gebruikers groepen op om toegang toe te staan of te weigeren](./media/howto-mfa-nps-extension-vpn/image7.png)
 
-9. Selecteer **Next**.
+9. Selecteer **Volgende**.
 
-10. Selecteer **volgende**in het venster **IP-filters opgeven** .
+10. Selecteer **volgende** in het venster **IP-filters opgeven** .
 
 11. Accepteer de standaard instellingen in het venster **versleutelings instellingen opgeven** en selecteer **volgende**.
 
@@ -190,7 +190,7 @@ U kunt een standaard instelling (op basis van een wizard) of een geavanceerde co
 
     ![Het venster een realm-naam opgeven](./media/howto-mfa-nps-extension-vpn/image9.png)
 
-13. Selecteer **volt ooien**in het venster **nieuwe inbel-of VPN-clients maken en RADIUS-client** .
+13. Selecteer **volt ooien** in het venster **nieuwe inbel-of VPN-clients maken en RADIUS-client** .
 
     ![Venster configuratie voltooid](./media/howto-mfa-nps-extension-vpn/image10.png)
 
@@ -198,7 +198,7 @@ U kunt een standaard instelling (op basis van een wizard) of een geavanceerde co
 
 In deze sectie vindt u meer informatie over de configuratie die u hebt gemaakt met behulp van de wizard.
 
-1. Vouw op het Network Policy Server, in de NPS-console (lokaal), **RADIUS-clients**uit en selecteer **RADIUS-clients**.
+1. Vouw op het Network Policy Server, in de NPS-console (lokaal), **RADIUS-clients** uit en selecteer **RADIUS-clients**.
 
 2. Klik in het detail venster met de rechter muisknop op de RADIUS-client die u hebt gemaakt en selecteer vervolgens **Eigenschappen**. De eigenschappen van de RADIUS-client (de VPN-server) moeten er als volgt uitzien:
 
@@ -206,11 +206,11 @@ In deze sectie vindt u meer informatie over de configuratie die u hebt gemaakt m
 
 3. Selecteer **Annuleren**.
 
-4. Vouw op het Network Policy Server in de NPS-console (lokaal) **beleid**uit en selecteer beleid voor **verbindings aanvragen**. Het beleid voor VPN-verbindingen wordt weer gegeven, zoals wordt weer gegeven in de volgende afbeelding:
+4. Vouw op het Network Policy Server in de NPS-console (lokaal) **beleid** uit en selecteer beleid voor **verbindings aanvragen**. Het beleid voor VPN-verbindingen wordt weer gegeven, zoals wordt weer gegeven in de volgende afbeelding:
 
     ![Beleid voor verbindings aanvragen met het beleid voor VPN-verbindingen](./media/howto-mfa-nps-extension-vpn/image12.png)
 
-5. Selecteer onder **beleid**de optie **netwerk beleid**. Als het goed is, ziet u een beleid voor VPN-verbindingen (virtueel particulier netwerk) dat lijkt op het beleid dat wordt weer gegeven in de volgende afbeelding:
+5. Selecteer onder **beleid** de optie **netwerk beleid**. Als het goed is, ziet u een beleid voor VPN-verbindingen (virtueel particulier netwerk) dat lijkt op het beleid dat wordt weer gegeven in de volgende afbeelding:
 
     ![Netwerk beleid met beleid voor verbindingen met virtuele particuliere netwerken](./media/howto-mfa-nps-extension-vpn/image13.png)
 
@@ -226,13 +226,13 @@ In deze sectie configureert u de VPN-server voor het gebruik van RADIUS-verifica
 
 1. Open Serverbeheer op de VPN-server.
 
-2. Selecteer in Serverbeheer **extra**en selecteer vervolgens **route ring en externe toegang**.
+2. Selecteer in Serverbeheer **extra** en selecteer vervolgens **route ring en externe toegang**.
 
-3. Klik in het venster **route ring en RAS** met de rechter muisknop ** \<server name> (lokaal)** en selecteer vervolgens **Eigenschappen**.
+3. Klik in het venster **route ring en RAS** met de rechter muisknop **\<server name> (lokaal)** en selecteer vervolgens **Eigenschappen**.
 
-4. Selecteer in het venster ** \<server name> Eigenschappen (lokaal)** het tabblad **beveiliging** .
+4. Selecteer in het venster **\<server name> Eigenschappen (lokaal)** het tabblad **beveiliging** .
 
-5. Op het tabblad **beveiliging** , onder **verificatie provider**, selecteert u **RADIUS-verificatie**en selecteert **u configureren**.
+5. Op het tabblad **beveiliging** , onder **verificatie provider**, selecteert u **RADIUS-verificatie** en selecteert **u configureren**.
 
     ![RADIUS-verificatie provider configureren](./media/howto-mfa-nps-extension-vpn/image15.png)
 
@@ -242,9 +242,9 @@ In deze sectie configureert u de VPN-server voor het gebruik van RADIUS-verifica
 
     a. Geef in het vak **Server naam** de naam of het IP-adres van de RADIUS-server op die u in de vorige sectie hebt geconfigureerd.
 
-    b. Voor het **gedeelde geheim**selecteert u **wijzigen**en voert u het gedeelde geheime wacht woord in dat u eerder hebt gemaakt en geregistreerd.
+    b. Voor het **gedeelde geheim** selecteert u **wijzigen** en voert u het gedeelde geheime wacht woord in dat u eerder hebt gemaakt en geregistreerd.
 
-    c. Voer in het vak **time-out (seconden)** de waarde **30**in.  
+    c. Voer in het vak **time-out (seconden)** de waarde **30** in.  
     De time-outwaarde is nodig om voldoende tijd te bieden om de tweede verificatie factor te volt ooien. Sommige Vpn's of regio's vereisen een time-outinstellingen van meer dan 30 seconden om te voor komen dat gebruikers meerdere telefoon gesprekken ontvangen. Als gebruikers met dit probleem te maken krijgen, verhoogt u de time-outwaarde **(seconden)** in stappen van 30 seconden totdat het probleem niet opnieuw optreedt.
 
     ![Het venster RADIUS-server toevoegen de time-out configureren](./media/howto-mfa-nps-extension-vpn/image16.png) 
@@ -271,7 +271,7 @@ In deze sectie bevestigt u dat de VPN-client is geverifieerd en geautoriseerd do
 
     ![Het venster een VPN-verbinding toevoegen](./media/howto-mfa-nps-extension-vpn/image17.png)
 
-6. Ga naar **configuratie scherm**en selecteer vervolgens **netwerk centrum**.
+6. Ga naar **configuratie scherm** en selecteer vervolgens **netwerk centrum**.
 
 7. Selecteer **adapter instellingen wijzigen**.
 
@@ -302,7 +302,7 @@ Om deze problemen op te lossen, kunt u het beste de beveiligings logboeken op de
 
 ## <a name="configure-multi-factor-authentication"></a>Multi-Factor Authentication configureren
 
-Voor hulp bij het configureren van gebruikers voor Multi-Factor Authentication raadpleegt u de artikelen [een Azure-implementatie op basis van een cloud multi-factor Authentication plannen](howto-mfa-getstarted.md#create-conditional-access-policy) en [Mijn account instellen voor verificatie in twee stappen](../user-help/multi-factor-authentication-end-user-first-time.md)
+Voor hulp bij het configureren van gebruikers voor Multi-Factor Authentication raadpleegt u de artikelen [een Azure AD multi-factor Authentication-implementatie in de Cloud plannen](howto-mfa-getstarted.md#create-conditional-access-policy) en [Mijn account instellen voor verificatie in twee stappen](../user-help/multi-factor-authentication-end-user-first-time.md)
 
 ## <a name="install-and-configure-the-nps-extension"></a>De NPS-extensie installeren en configureren
 
@@ -312,17 +312,17 @@ In deze sectie vindt u instructies voor het configureren van VPN voor het gebrui
 > De register sleutel REQUIRE_USER_MATCH is hoofdletter gevoelig. Alle waarden moeten worden ingesteld in een hoofd letters.
 >
 
-Nadat u de NPS-uitbrei ding hebt geïnstalleerd en geconfigureerd, is alle op RADIUS gebaseerde client verificatie die door deze server wordt verwerkt, vereist voor het gebruik van MFA. Als al uw VPN-gebruikers niet zijn Inge schreven in azure Multi-Factor Authentication, kunt u een van de volgende handelingen uitvoeren:
+Nadat u de NPS-uitbrei ding hebt geïnstalleerd en geconfigureerd, is alle op RADIUS gebaseerde client verificatie die door deze server wordt verwerkt, vereist voor het gebruik van MFA. Als al uw VPN-gebruikers niet zijn Inge schreven in azure AD Multi-Factor Authentication, kunt u een van de volgende handelingen uitvoeren:
 
 * Stel een andere RADIUS-server in voor het verifiëren van gebruikers die niet zijn geconfigureerd voor het gebruik van MFA.
 
-* Maak een register vermelding waarmee gebruikers die zich hebben voorgedaan, een tweede authenticatie factor kunnen opgeven als ze zijn Inge schreven in azure Multi-Factor Authentication.
+* Maak een register vermelding waarmee gebruikers die zich hebben voorgedaan, een tweede verificatie factor kunnen opgeven als ze zijn Inge schreven bij Azure AD Multi-Factor Authentication.
 
-Maak een nieuwe teken reeks waarde met de naam _REQUIRE_USER_MATCH in HKLM\SOFTWARE\Microsoft\AzureMfa_en stel de waarde in op *waar* of *Onwaar*.
+Maak een nieuwe teken reeks waarde met de naam _REQUIRE_USER_MATCH in HKLM\SOFTWARE\Microsoft\AzureMfa_ en stel de waarde in op *waar* of *Onwaar*.
 
 ![De instelling gebruikers overeenkomst vereisen](./media/howto-mfa-nps-extension-vpn/image34.png)
 
-Als de waarde is ingesteld op *True* of leeg is, gelden voor alle verificatie aanvragen een MFA-Challenge. Als de waarde is ingesteld op *Onwaar*, worden MFA-uitdagingen alleen verleend aan gebruikers die zijn Inge schreven in azure multi-factor Authentication. Gebruik de instelling *Onwaar* alleen in tests of productie omgevingen tijdens een voorbereidings periode.
+Als de waarde is ingesteld op *True* of leeg is, gelden voor alle verificatie aanvragen een MFA-Challenge. Als de waarde is ingesteld op *Onwaar*, worden MFA-uitdagingen alleen verleend aan gebruikers die zijn Inge schreven bij Azure AD multi-factor Authentication. Gebruik de instelling *Onwaar* alleen in tests of productie omgevingen tijdens een voorbereidings periode.
 
 
 
@@ -331,7 +331,7 @@ Als de waarde is ingesteld op *True* of leeg is, gelden voor alle verificatie aa
 Als onderdeel van de configuratie van de NPS-extensie moet u beheerders referenties en de ID van uw Azure AD-Tenant opgeven. Voer de volgende stappen uit om de Tenant-ID op te halen:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als globale beheerder van de Azure-Tenant.
-1. Selecteer in het menu Azure Portal **Azure Active Directory**of zoek en selecteer **Azure Active Directory** op een wille keurige pagina.
+1. Selecteer in het menu Azure Portal **Azure Active Directory** of zoek en selecteer **Azure Active Directory** op een wille keurige pagina.
 1. Op de pagina **overzicht** wordt de *informatie* over de Tenant weer gegeven. Selecteer het pictogram **kopiëren** naast de *Tenant-id*, zoals wordt weer gegeven in de volgende voorbeeld scherm afbeelding:
 
    ![De Tenant-ID ophalen uit de Azure Portal](./media/howto-mfa-nps-extension-vpn/azure-active-directory-tenant-id-portal.png)
@@ -344,13 +344,13 @@ De NPS-extensie moet zijn geïnstalleerd op een server waarop de functie Service
 
 2. Kopieer het uitvoer bare installatie bestand (*NpsExtnForAzureMfaInstaller.exe*) naar de NPS-server.
 
-3. Dubbel klik op de NPS-server op **NpsExtnForAzureMfaInstaller.exe** en selecteer **uitvoeren**als u hierom wordt gevraagd.
+3. Dubbel klik op de NPS-server op **NpsExtnForAzureMfaInstaller.exe** en selecteer **uitvoeren** als u hierom wordt gevraagd.
 
-4. Bekijk in het venster **NPS-extensie voor Azure MFA Setup** de licentie voorwaarden voor software, schakel het selectie vakje **Ik ga akkoord met de licentie voorwaarden** in en selecteer **installeren**.
+4. Bekijk in het venster **NPS-uitbrei ding voor Azure AD MFA Setup** de licentie voorwaarden voor software, schakel het selectie vakje **Ik ga akkoord met de licentie voorwaarden** in en selecteer **installeren**.
 
-    ![Het venster ' NPS-extensie voor Azure MFA Setup '](./media/howto-mfa-nps-extension-vpn/image36.png)
+    ![Het venster ' NPS-extensie voor Azure AD MFA instellen '](./media/howto-mfa-nps-extension-vpn/image36.png)
 
-5. Selecteer **sluiten**in het venster **NPS-uitbrei ding voor Azure MFA Setup** .  
+5. Selecteer **sluiten** in het venster **NPS-uitbrei ding voor Azure AD MFA Setup** .  
 
     ![Het bevestigings venster "installatie is voltooid"](./media/howto-mfa-nps-extension-vpn/image37.png)
 
@@ -374,7 +374,7 @@ Als u het script wilt gebruiken, geeft u de extensie op met uw Azure Active Dire
 
 2. Ga naar de Power shell-opdracht prompt en voer **cd "C:\Program Files\Microsoft\AzureMfa\Config"** in en selecteer ENTER.
 
-3. Typ **.\AzureMfaNpsExtnConfigSetup.ps1**bij de volgende opdracht prompt en selecteer vervolgens ENTER. Het script controleert of de Azure AD Power shell-module is geïnstalleerd. Als deze niet is geïnstalleerd, wordt de module door het script geïnstalleerd.
+3. Typ **.\AzureMfaNpsExtnConfigSetup.ps1** bij de volgende opdracht prompt en selecteer vervolgens ENTER. Het script controleert of de Azure AD Power shell-module is geïnstalleerd. Als deze niet is geïnstalleerd, wordt de module door het script geïnstalleerd.
 
     ![Het AzureMfsNpsExtnConfigSetup.ps1-configuratie script uitvoeren](./media/howto-mfa-nps-extension-vpn/image38.png)
 
@@ -402,7 +402,7 @@ Als u de configuratie wilt controleren, moet u een nieuwe VPN-verbinding tot sta
 
 ![Het venster Windows-instellingen VPN](./media/howto-mfa-nps-extension-vpn/image42.png)
 
-Als u met de secundaire verificatie methode die u eerder hebt geconfigureerd in azure MFA hebt geverifieerd, bent u verbonden met de resource. Als de secundaire verificatie mislukt, hebt u echter geen toegang tot de bron.
+Als u met de secundaire verificatie methode die u eerder hebt geconfigureerd in azure AD MFA hebt geverifieerd, bent u verbonden met de resource. Als de secundaire verificatie mislukt, hebt u echter geen toegang tot de bron.
 
 In het volgende voor beeld biedt de Microsoft Authenticator-app op een Windows Phone de secundaire verificatie:
 
@@ -424,7 +424,7 @@ U kunt ook het beveiligings logboek of de aangepaste weer gave voor services voo
 
 ![Voor beeld Network Policy Server logboek](./media/howto-mfa-nps-extension-vpn/image45.png)
 
-Op de server waarop u de NPS-extensie voor Azure Multi-Factor Authentication hebt geïnstalleerd, kunt u Logboeken toepassings logboeken vinden die specifiek zijn voor de uitbrei ding op het *Logs\Microsoft\AzureMfa van toepassingen en services*.
+Op de server waarop u de NPS-extensie voor Azure AD Multi-Factor Authentication hebt geïnstalleerd, kunt u Logboeken toepassings logboeken vinden die specifiek zijn voor de uitbrei ding op het *Logs\Microsoft\AzureMfa van toepassingen en services*.
 
 ```powershell
 Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL
@@ -436,15 +436,15 @@ Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL
 
 Als de configuratie niet werkt zoals verwacht, start u de probleem oplossing door te controleren of de gebruiker is geconfigureerd voor het gebruik van MFA. Laat de gebruiker verbinding maken met de [Azure Portal](https://portal.azure.com). Als de gebruiker wordt gevraagd om secundaire authenticatie en verificatie kan worden uitgevoerd, kunt u een onjuiste configuratie van MFA elimineren als een probleem.
 
-Als MFA werkt voor de gebruiker, raadpleegt u de relevante Logboeken-Logboeken. De logboeken bevatten de beveiligings gebeurtenis, de gateway en de Azure Multi-Factor Authentication-logboeken die in de vorige sectie worden besproken.
+Als MFA werkt voor de gebruiker, raadpleegt u de relevante Logboeken-Logboeken. De logboeken bevatten de beveiligings gebeurtenis, het functioneren van de gateway en de Azure AD-Multi-Factor Authentication logboeken die in de vorige sectie worden beschreven.
 
 Hier ziet u een voor beeld van een beveiligings logboek waarin een mislukte aanmeld gebeurtenis wordt weer gegeven (gebeurtenis-ID 6273):
 
 ![Beveiligings logboek met een mislukte aanmeld gebeurtenis](./media/howto-mfa-nps-extension-vpn/image47.png)
 
-Een gerelateerde gebeurtenis in het Azure Multi-Factor Authentication-logboek wordt hier weer gegeven:
+Hier wordt een gerelateerde gebeurtenis uit het Azure AD Multi-Factor Authentication-logboek weer gegeven:
 
-![Azure Multi-Factor Authentication-logboeken](./media/howto-mfa-nps-extension-vpn/image48.png)
+![Azure AD Multi-Factor Authentication-logboeken](./media/howto-mfa-nps-extension-vpn/image48.png)
 
 Raadpleeg de logboek bestanden van de NPS-data base-indeling waarin de NPS-service is geïnstalleerd voor geavanceerde probleem oplossing. De logboek bestanden worden gemaakt in de map _%systemroot%\System32\Logs_ als tekst bestanden met door komma's gescheiden waarden. Zie [NPS data base Format-logboek bestanden interpreteren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10))voor een beschrijving van de logboek bestanden.
 
@@ -456,11 +456,11 @@ Als u extra problemen wilt oplossen, kunt u een protocol analyse gebruiken zoals
 
 ![Micro soft Message Analyzer met gefilterd verkeer](./media/howto-mfa-nps-extension-vpn/image50.png)
 
-Zie [uw bestaande NPS-infra structuur integreren met Azure multi-factor Authentication](howto-mfa-nps-extension.md)voor meer informatie.
+Zie [uw bestaande NPS-infra structuur integreren met Azure AD multi-factor Authentication](howto-mfa-nps-extension.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Azure Multi-Factor Authentication ophalen](concept-mfa-licensing.md)
+[Azure AD-Multi-Factor Authentication ophalen](concept-mfa-licensing.md)
 
 [Extern bureaublad-gateway en Azure Multi-Factor Authentication-server met behulp van RADIUS](howto-mfaserver-nps-rdg.md)
 

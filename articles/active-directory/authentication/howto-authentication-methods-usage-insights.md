@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03989e37ac05228dade2fdcda43856e8a5240865
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: fe8a916f4c3ce8869b6b487e33dcdecc061f8cbf
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964907"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839587"
 ---
 # <a name="authentication-methods-usage--insights-preview"></a>Gebruik van de verificatie methoden & Insights (preview-versie)
 
-Gebruik & Insights maakt het mogelijk om te begrijpen hoe verificatie methoden voor functies zoals Azure Multi-Factor Authentication en self-service voor het opnieuw instellen van wacht woorden in uw organisatie werken. Deze rapportage mogelijkheid biedt uw organisatie de mogelijkheid om te begrijpen welke methoden worden geregistreerd en hoe ze worden gebruikt.
+Gebruik & Insights maakt het mogelijk om te begrijpen hoe verificatie methoden voor functies zoals Azure AD Multi-Factor Authentication en self-service voor wachtwoord herstel in uw organisatie werken. Deze rapportage mogelijkheid biedt uw organisatie de mogelijkheid om te begrijpen welke methoden worden geregistreerd en hoe ze worden gebruikt.
 
 ## <a name="permissions-and-licenses"></a>Machtigingen en licenties
 
@@ -29,16 +29,16 @@ De volgende rollen hebben toegang tot het gebruik en inzichten:
 - Hoofdbeheerder
 - Beveiligingslezer
 - Beveiligingsbeheer
-- Rapport lezer
+- Rapportenlezer
 
-Er is geen aanvullende licentie vereist voor toegang tot gebruik en inzichten. De licentie gegevens voor Azure Multi-Factor Authentication en self-service voor het opnieuw instellen van wacht woorden (SSPR) zijn te vinden op de [Azure Active Directory-prijs site](https://azure.microsoft.com/pricing/details/active-directory/).
+Er is geen aanvullende licentie vereist voor toegang tot gebruik en inzichten. De licentie gegevens voor Azure AD Multi-Factor Authentication en self-service voor het opnieuw instellen van wacht woorden (SSPR) zijn te vinden op de [Azure Active Directory-prijs site](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ## <a name="how-it-works"></a>Uitleg
 
 Voor toegang tot het gebruik van de verificatie methode en inzichten:
 
 1. Blader naar [Azure Portal](https://portal.azure.com).
-1. Blader naar **Azure Active Directory**het gebruik van  >  **wacht woord opnieuw instellen**  >  **& inzichten**.
+1. Blader naar **Azure Active Directory** het gebruik van  >  **wacht woord opnieuw instellen**  >  **& inzichten**.
 1. Vanuit de overzichten van de **registratie** of het **gebruik** kunt u ervoor kiezen om de vooraf gefilterde rapporten te openen om te filteren op basis van uw behoeften.
 
 ![Overzicht van gebruiks & Insights](./media/howto-authentication-methods-usage-insights/usage-insights-overview.png)
@@ -61,7 +61,7 @@ Met behulp van het besturings element in de rechter bovenhoek kunt u het datum b
 
 ### <a name="registration-details"></a>Registratie Details
 
-Door te klikken op de gebruikers die zijn **geregistreerd**, **gebruikers ingeschakeld**of door **gebruikers geschikte** tegels of inzichten, wordt u naar de registratie gegevens geleid.
+Door te klikken op de gebruikers die zijn **geregistreerd**, **gebruikers ingeschakeld** of door **gebruikers geschikte** tegels of inzichten, wordt u naar de registratie gegevens geleid.
 
 In het rapport registratie Details wordt de volgende informatie weer gegeven voor elke gebruiker:
 
@@ -92,7 +92,7 @@ Met de besturings elementen aan de bovenkant van de lijst kunt u zoeken naar een
 
 De gegevens die in deze rapporten worden weer gegeven, worden tot 60 minuten vertraagd. Het veld ' laatst vernieuwd ' komt voor in de Azure Portal om te bepalen hoe recent uw gegevens zijn.
 
-Gebruik en Insights-gegevens zijn geen vervanging voor de rapporten van Azure Multi-Factor Authentication-activiteiten of de informatie in het rapport met aanmeld gegevens voor Azure AD.
+Gebruik en Insights-gegevens zijn geen vervanging voor de activiteiten rapporten van Azure AD Multi-Factor Authentication of informatie die is opgenomen in het Azure AD-aanmeld rapport.
 
 Het rapport kan momenteel niet worden gefilterd om externe gebruikers uit te sluiten.
 

@@ -10,18 +10,18 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65c8baa101df5e24780e5e68b5a21b86985608a6
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 39555c5b396e8a8fd3449331cd2fd68b96ad2087
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628115"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839995"
 ---
 # <a name="authentication-methods-in-azure-active-directory---phone-options"></a>Verificatie methoden in Azure Active Directory-telefoon opties
 
 Voor directe verificatie met een tekst bericht kunt u [gebruikers configureren en inschakelen voor verificatie op basis van SMS (preview-versie)](howto-authentication-sms-signin.md). Aanmelding op basis van SMS is uitstekend voor front-line werk nemers. Met aanmelden op basis van SMS hoeven gebruikers geen gebruikers naam en wacht woord te kennen om toegang te krijgen tot toepassingen en services. De gebruiker voert het geregistreerde mobiele telefoon nummer in, ontvangt een SMS-bericht met een verificatie code en voert die in de aanmeldings interface in.
 
-Gebruikers kunnen zich ook zelf verifiëren via een mobiele telefoon of een zakelijke telefoon als een secundaire vorm van verificatie die wordt gebruikt tijdens Azure Multi-Factor Authentication of selfservice voor wachtwoord herstel (SSPR).
+Gebruikers kunnen zichzelf ook verifiëren met behulp van een mobiele telefoon of een zakelijke telefoon als secundaire vorm van verificatie die wordt gebruikt tijdens Azure AD Multi-Factor Authentication of selfservice voor wachtwoord herstel (SSPR).
 
 Om goed te kunnen werken, moeten telefoon nummers de notatie *+ CountryCode phonenumber* hebben, bijvoorbeeld *+ 1 4251234567*.
 
@@ -32,25 +32,25 @@ Om goed te kunnen werken, moeten telefoon nummers de notatie *+ CountryCode phon
 
 ## <a name="mobile-phone-verification"></a>Verificatie van mobiele telefoon
 
-Voor Azure Multi-Factor Authentication of SSPR kunnen gebruikers ervoor kiezen om een SMS-bericht te ontvangen met een verificatie code om in te voeren in de aanmeldings interface, of om een telefoon gesprek te ontvangen.
+Voor Azure AD Multi-Factor Authentication of SSPR kunnen gebruikers ervoor kiezen om een SMS-bericht te ontvangen met een verificatie code om in te voeren in de aanmeldings interface, of om een telefoon gesprek te ontvangen.
 
 Als gebruikers niet willen dat hun mobiele telefoon nummer wordt weer gegeven in de map, maar u dit wilt gebruiken voor het opnieuw instellen van wacht woorden, moeten beheerders het telefoon nummer in de map niet vullen. In plaats daarvan moeten gebruikers hun kenmerk voor de verificatie van de **telefoon** invullen via de registratie van gecombineerde beveiligings gegevens op [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo) . Beheerders kunnen deze informatie zien in het profiel van de gebruiker, maar ze worden niet elders gepubliceerd.
 
 :::image type="content" source="media/concept-authentication-methods/user-authentication-methods.png" alt-text="Scherm afbeelding van de Azure Portal waarin de verificatie methoden met een ingevuld telefoon nummer worden weer gegeven":::
 
-Micro soft biedt geen garantie voor consistente op SMS of spraak gebaseerde Azure Multi-Factor Authentication prompts met hetzelfde nummer. In het belang van onze gebruikers kunnen we op elk gewenst moment korte codes toevoegen of verwijderen, omdat we route aanpassingen aanbrengen om de bezorgings mogelijkheden van SMS te verbeteren. Micro soft biedt geen ondersteuning voor korte codes voor landen/regio's, naast de Verenigde Staten en Canada.
+Micro soft biedt geen garantie voor consistente, op SMS of spraak gebaseerde Azure AD-Multi-Factor Authentication prompts met hetzelfde nummer. In het belang van onze gebruikers kunnen we op elk gewenst moment korte codes toevoegen of verwijderen, omdat we route aanpassingen aanbrengen om de bezorgings mogelijkheden van SMS te verbeteren. Micro soft biedt geen ondersteuning voor korte codes voor landen/regio's, naast de Verenigde Staten en Canada.
 
 ### <a name="text-message-verification"></a>Verificatie van SMS-berichten
 
-Met de verificatie van SMS-berichten tijdens SSPR of Azure Multi-Factor Authentication, wordt er een sm's verzonden naar het mobiele telefoon nummer met een verificatie code. Om het aanmeldings proces te volt ooien, wordt de opgegeven verificatie code ingevoerd in de aanmeldings interface.
+Met de verificatie van SMS-berichten tijdens SSPR of Azure AD Multi-Factor Authentication, wordt er een SM'S verzonden naar het mobiele telefoon nummer met een verificatie code. Om het aanmeldings proces te volt ooien, wordt de opgegeven verificatie code ingevoerd in de aanmeldings interface.
 
 ### <a name="phone-call-verification"></a>Verificatie via telefoon oproep
 
-Bij een verificatie via telefoon gesprekken tijdens SSPR of Azure Multi-Factor Authentication wordt een automatische telefoon oproep uitgevoerd naar het telefoon nummer dat door de gebruiker is geregistreerd. Om het aanmeldings proces te volt ooien, wordt de gebruiker gevraagd op # op hun toetsen blok te drukken.
+Bij een verificatie via telefoon gesprekken tijdens SSPR of Azure AD Multi-Factor Authentication wordt een automatische telefoon oproep gemaakt naar het telefoon nummer dat door de gebruiker is geregistreerd. Om het aanmeldings proces te volt ooien, wordt de gebruiker gevraagd op # op hun toetsen blok te drukken.
 
 ## <a name="office-phone-verification"></a>Verificatie op bedrijfs telefoon
 
-Bij een verificatie via telefoon gesprekken tijdens SSPR of Azure Multi-Factor Authentication wordt een automatische telefoon oproep uitgevoerd naar het telefoon nummer dat door de gebruiker is geregistreerd. Om het aanmeldings proces te volt ooien, wordt de gebruiker gevraagd op # op hun toetsen blok te drukken.
+Bij een verificatie via telefoon gesprekken tijdens SSPR of Azure AD Multi-Factor Authentication wordt een automatische telefoon oproep gemaakt naar het telefoon nummer dat door de gebruiker is geregistreerd. Om het aanmeldings proces te volt ooien, wordt de gebruiker gevraagd op # op hun toetsen blok te drukken.
 
 ## <a name="troubleshooting-phone-options"></a>Problemen met telefoonopties oplossen
 
@@ -75,11 +75,11 @@ Als u problemen ondervindt met telefoon verificatie voor Azure AD, raadpleegt u 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de [zelfstudie voor self-service voor wachtwoordherstel (SSPR)][tutorial-sspr] en [Azure Multi-Factor Authentication][tutorial-azure-mfa] om aan de slag te gaan.
+Raadpleeg de [zelf studie voor Self-service voor wachtwoord herstel (SSPR)][tutorial-sspr] en [Azure AD multi-factor Authentication][tutorial-azure-mfa]om aan de slag te gaan.
 
 Zie [hoe Azure AD self-service password reset werkt][concept-sspr]voor meer informatie over SSPR-concepten.
 
-Zie [hoe Azure multi-factor Authentication werkt][concept-mfa]voor meer informatie over MFA-concepten.
+Zie [hoe Azure AD multi-factor Authentication werkt][concept-mfa]voor meer informatie over MFA-concepten.
 
 Meer informatie over het configureren van verificatie methoden met behulp van de [Microsoft Graph rest API bèta](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta&preserve-view=true).
 

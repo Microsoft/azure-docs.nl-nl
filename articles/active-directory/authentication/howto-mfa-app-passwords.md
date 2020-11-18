@@ -1,6 +1,6 @@
 ---
-title: App-wacht woorden voor Azure Multi-Factor Authentication-Azure Active Directory configureren
-description: Meer informatie over het configureren en gebruiken van app-wacht woorden voor oudere toepassingen in azure Multi-Factor Authentication
+title: App-wacht woorden configureren voor Azure AD-Multi-Factor Authentication-Azure Active Directory
+description: Meer informatie over het configureren en gebruiken van app-wacht woorden voor oudere toepassingen in azure AD Multi-Factor Authentication
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 85031896a196dd742868466243dd401345b0bc97
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 282bf6a30d8ff70440999ff3763c0d5544ef428d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964499"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839264"
 ---
-# <a name="enable-and-use-azure-multi-factor-authentication-with-legacy-applications-using-app-passwords"></a>Azure Multi-Factor Authentication met verouderde toepassingen inschakelen en gebruiken met behulp van app-wacht woorden
+# <a name="enable-and-use-azure-ad-multi-factor-authentication-with-legacy-applications-using-app-passwords"></a>Azure AD-Multi-Factor Authentication met verouderde toepassingen inschakelen en gebruiken met behulp van app-wacht woorden
 
-Sommige oudere, niet-browser-apps, zoals Office 2010 of eerder en Apple mail vóór iOS 11, begrijpen onderbrekingen of onderbrekingen in het verificatie proces niet. Als een gebruiker is ingeschakeld voor Azure Multi-Factor Authentication en probeert een van deze oudere, niet-browser-apps te gebruiken, kunnen ze niet goed worden geverifieerd. Als u deze toepassingen op een veilige manier wilt gebruiken met Azure Multi-Factor Authentication ingeschakeld voor gebruikers accounts, kunt u app-wacht woorden gebruiken. Met deze app-wacht woorden is het traditionele wacht woord vervangen zodat een app multi-factor Authentication omzeilt en goed werkt.
+Sommige oudere, niet-browser-apps, zoals Office 2010 of eerder en Apple mail vóór iOS 11, begrijpen onderbrekingen of onderbrekingen in het verificatie proces niet. Als een gebruiker is ingeschakeld voor Azure AD Multi-Factor Authentication en probeert een van deze oudere, niet-browser-apps te gebruiken, kunnen ze niet goed worden geverifieerd. Als u deze toepassingen op een veilige manier wilt gebruiken met Azure AD Multi-Factor Authentication ingeschakeld voor gebruikers accounts, kunt u app-wacht woorden gebruiken. Met deze app-wacht woorden is het traditionele wacht woord vervangen zodat een app multi-factor Authentication omzeilt en goed werkt.
 
 Moderne verificatie wordt ondersteund voor de Microsoft Office 2013-clients en hoger. Office 2013-clients, waaronder Outlook, ondersteunen moderne verificatie protocollen en kunnen worden ingeschakeld om te werken met verificatie in twee stappen. Nadat de client is ingeschakeld, zijn app-wacht woorden niet vereist voor de client.
 
@@ -31,7 +31,7 @@ In dit artikel wordt beschreven hoe u app-wacht woorden inschakelt en gebruikt v
 
 ## <a name="overview-and-considerations"></a>Overzicht en overwegingen
 
-Wanneer een gebruikers account is ingeschakeld voor Azure Multi-Factor Authentication, wordt de reguliere aanmeldings prompt onderbroken door een aanvraag voor aanvullende verificatie. Sommige oudere toepassingen begrijpen dit onderbreken niet in het aanmeldings proces, zodat de verificatie mislukt. Als u de beveiliging van gebruikers accounts wilt behouden en Azure Multi-Factor Authentication wilt verlaten, kunnen app-wacht woorden worden gebruikt in plaats van de normale gebruikers naam en het wacht woord van de gebruiker. Wanneer een app-wacht woord tijdens het aanmelden wordt gebruikt, is er geen extra verificatie prompt, dus de verificatie is geslaagd.
+Wanneer een gebruikers account is ingeschakeld voor Azure AD-Multi-Factor Authentication, wordt de regel voor een aanmeldings prompt onderbroken door een aanvraag voor aanvullende verificatie. Sommige oudere toepassingen begrijpen dit onderbreken niet in het aanmeldings proces, zodat de verificatie mislukt. Als u de beveiliging van het gebruikers account wilt behouden en Azure AD Multi-Factor Authentication wilt verlaten, kunnen app-wacht woorden worden gebruikt in plaats van de normale gebruikers naam en het wacht woord van de gebruiker. Wanneer een app-wacht woord tijdens het aanmelden wordt gebruikt, is er geen extra verificatie prompt, dus de verificatie is geslaagd.
 
 App-wacht woorden worden automatisch gegenereerd, niet opgegeven door de gebruiker. Met deze automatisch gegenereerd wacht woord is het moeilijker voor een aanvaller om te raden. Dit is veiliger. Gebruikers hoeven de wacht woorden niet bij te houden of ze elke keer in te voeren wanneer app-wacht woorden slechts eenmaal per toepassing worden ingevoerd.
 
@@ -39,7 +39,7 @@ Wanneer u app-wacht woorden gebruikt, zijn de volgende overwegingen van toepassi
 
 * Er is een limiet van 40 app-wacht woorden per gebruiker.
 * Toepassingen die wacht woorden in de cache opslaan en gebruiken in on-premises scenario's, kunnen mislukken omdat het app-wacht woord niet bekend is buiten het werk-of school account. Een voor beeld van dit scenario is Exchange-e-mail berichten die on-premises zijn, maar de gearchiveerde e-mail bevindt zich in de Cloud. In dit scenario werkt hetzelfde wacht woord niet.
-* Nadat Azure Multi-Factor Authentication is ingeschakeld op het account van een gebruiker, kunnen app-wacht woorden worden gebruikt met de meeste niet-browser-clients, zoals Outlook en micro soft Skype voor bedrijven. Beheer acties kunnen echter niet worden uitgevoerd met behulp van app-wacht woorden via niet-browser toepassingen, zoals Windows Power shell. De acties kunnen niet worden uitgevoerd, zelfs niet wanneer de gebruiker een Administrator-account heeft.
+* Nadat Azure AD Multi-Factor Authentication is ingeschakeld op het account van een gebruiker, kunnen app-wacht woorden worden gebruikt met de meeste niet-browser-clients, zoals Outlook en micro soft Skype voor bedrijven. Beheer acties kunnen echter niet worden uitgevoerd met behulp van app-wacht woorden via niet-browser toepassingen, zoals Windows Power shell. De acties kunnen niet worden uitgevoerd, zelfs niet wanneer de gebruiker een Administrator-account heeft.
     * Als u Power shell-scripts wilt uitvoeren, maakt u een service account met een sterk wacht woord en schakelt u het account niet in voor verificatie in twee stappen.
 * Als u vermoedt dat er is geknoeid met een gebruikers account en het wacht woord voor het account opnieuw in te trekken/opnieuw instellen, moeten ook app-wacht woorden worden bijgewerkt. App-wacht woorden worden niet automatisch ingetrokken wanneer een wacht woord voor een gebruikers account wordt ingetrokken/opnieuw ingesteld. De gebruiker moet bestaande app-wacht woorden verwijderen en nieuwe maken.
    * Zie [app-wacht woorden maken en verwijderen op de pagina aanvullende beveiligings verificatie](../user-help/multi-factor-authentication-end-user-app-passwords.md#create-and-delete-app-passwords-from-the-additional-security-verification-page)voor meer informatie.
@@ -55,7 +55,7 @@ Het is raadzaam om één app-wacht woord per apparaat te maken, in plaats van ee
 
 ## <a name="federated-or-single-sign-on-app-passwords"></a>App-wacht woorden voor federatieve of eenmalige aanmelding
 
-Azure AD ondersteunt Federatie of eenmalige aanmelding (SSO) met on-premises Active Directory Domain Services (AD DS). Als uw organisatie Federated is met Azure AD en u Azure Multi-Factor Authentication gebruikt, zijn de volgende overwegingen voor het app-wacht woord van toepassing:
+Azure AD ondersteunt Federatie of eenmalige aanmelding (SSO) met on-premises Active Directory Domain Services (AD DS). Als uw organisatie is federatieve met Azure AD en u Azure AD Multi-Factor Authentication gebruikt, zijn de volgende overwegingen voor het app-wacht woord van toepassing:
 
 >[!NOTE]
 > De volgende punten zijn alleen van toepassing op federatieve klanten (SSO).
@@ -72,7 +72,7 @@ Stel bijvoorbeeld dat u de volgende architectuur hebt:
 * Uw on-premises exemplaar van Active Directory is federatief met Azure AD.
 * U gebruikt Exchange Online.
 * U gebruikt Skype voor bedrijven on-premises.
-* U gebruikt Azure Multi-Factor Authentication.
+* U gebruikt Azure AD Multi-Factor Authentication.
 
 In dit scenario gebruikt u de volgende referenties:
 
@@ -84,7 +84,7 @@ In dit scenario gebruikt u de volgende referenties:
 Standaard kunnen gebruikers geen app-wacht woorden maken. De functie voor het maken van app-wacht woorden moet zijn ingeschakeld voordat gebruikers deze kunnen gebruiken. Voer de volgende stappen uit om gebruikers de mogelijkheid te geven om app-wacht woorden te maken:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Zoek en selecteer **Azure Active Directory**en kies vervolgens **gebruikers**.
+2. Zoek en selecteer **Azure Active Directory** en kies vervolgens **gebruikers**.
 3. Selecteer **multi-factor Authentication** in de navigatie balk aan de bovenkant van het venster *gebruikers* .
 4. Onder Multi-Factor Authentication selecteert u **Service-instellingen**.
 5. Selecteer op de pagina **Service-instellingen** de optie **gebruikers toestaan app-wacht woorden te maken om zich aan te melden bij niet-browser-apps** .
@@ -99,10 +99,10 @@ Standaard kunnen gebruikers geen app-wacht woorden maken. De functie voor het ma
 
 ## <a name="create-an-app-password"></a>Een app-wacht woord maken
 
-Wanneer gebruikers hun initiële registratie voor Azure Multi-Factor Authentication volt ooien, is er een optie voor het maken van app-wacht woorden aan het einde van het registratie proces.
+Wanneer gebruikers hun initiële registratie voor Azure AD Multi-Factor Authentication volt ooien, is er een optie voor het maken van app-wacht woorden aan het einde van het registratie proces.
 
-Gebruikers kunnen ook app-wacht woorden maken na de registratie. Zie [Wat zijn app-wacht woorden in Azure multi-factor Authentication?](../user-help/multi-factor-authentication-end-user-app-passwords.md) voor meer informatie en gedetailleerde stappen voor uw gebruikers.
+Gebruikers kunnen ook app-wacht woorden maken na de registratie. Zie [Wat zijn app-wacht woorden in azure AD multi-factor Authentication?](../user-help/multi-factor-authentication-end-user-app-passwords.md) voor meer informatie en gedetailleerde stappen voor uw gebruikers.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over het toestaan van gebruikers om snel te registreren voor Azure Multi-Factor Authentication, [overzicht van registratie van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md).
+Zie voor meer informatie over het toestaan van gebruikers om snel te registreren voor Azure AD Multi-Factor Authentication, [overzicht van registratie van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md).

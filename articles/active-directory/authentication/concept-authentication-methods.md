@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: c5ae0e0d312aa9a959b114d576f887bfa5072f49
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: a166a451c405c2321453e02751baad91c2a14c60
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965502"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840014"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Welke authenticatie- en verificatiemethoden zijn er beschikbaar in Azure Active Directory?
 
@@ -26,13 +26,13 @@ Als onderdeel van de aanmeldings ervaring voor accounts in Azure Active Director
 
 Verificatie methoden zonder wacht woord zoals Windows Hello, FIDO2-beveiligings sleutels en de Microsoft Authenticator-app bieden de veiligste aanmeldings gebeurtenissen.
 
-Azure Multi-Factor Authentication voegt extra beveiliging toe via het gebruik van een wacht woord wanneer een gebruiker zich aanmeldt. De gebruiker kan worden gevraagd om aanvullende verificatie vormen, zoals om te reageren op een push melding, een code van een software-of hardware-token in te voeren, of om te reageren op een SMS-of telefoon gesprek.
+Azure AD Multi-Factor Authentication voegt extra beveiliging alleen toe met behulp van een wacht woord wanneer een gebruiker zich aanmeldt. De gebruiker kan worden gevraagd om aanvullende verificatie vormen, zoals om te reageren op een push melding, een code van een software-of hardware-token in te voeren, of om te reageren op een SMS-of telefoon gesprek.
 
 Voor het vereenvoudigen van de gebruikers ervaring en registratie voor MFA en SSPR, raden we u aan om de [registratie van gecombineerde beveiligings gegevens in te scha kelen](howto-registration-mfa-sspr-combined.md). Voor tolerantie raden wij aan dat gebruikers meerdere verificatie methoden moeten registreren. Wanneer een methode niet beschikbaar is voor een gebruiker tijdens het aanmelden of SSPR, kan deze een andere methode verifiëren. Zie [een flexibele toegangs beheer strategie maken in azure AD](concept-resilient-controls.md)voor meer informatie.
 
 ## <a name="authentication-method-strength-and-security"></a>De sterkte en beveiliging van de verificatie methode
 
-Wanneer u functies zoals Azure Multi-Factor Authentication in uw organisatie implementeert, controleert u de beschik bare verificatie methoden. Kies de methoden die voldoen aan of overschrijden uw vereisten op het gebied van beveiliging, bruikbaarheid en beschik baarheid. Gebruik waar mogelijk authenticatie methoden met het hoogste beveiligings niveau.
+Wanneer u functies zoals Azure AD Multi-Factor Authentication in uw organisatie implementeert, controleert u de beschik bare verificatie methoden. Kies de methoden die voldoen aan of overschrijden uw vereisten op het gebied van beveiliging, bruikbaarheid en beschik baarheid. Gebruik waar mogelijk authenticatie methoden met het hoogste beveiligings niveau.
 
 De volgende tabel bevat een overzicht van de beveiligings overwegingen voor de beschik bare verificatie methoden. Beschik baarheid is een indicatie dat de gebruiker de verificatie methode kan gebruiken, en niet van de beschik baarheid van de service in azure AD:
 
@@ -43,7 +43,7 @@ De volgende tabel bevat een overzicht van de beveiligings overwegingen voor de b
 | FIDO2-beveiligings sleutel (preview-versie)   | Hoog     | Hoog      | Hoog         |
 | OATH-hardware-tokens (preview-versie) | Gemiddeld   | Gemiddeld    | Hoog         |
 | OATH-software tokens           | Gemiddeld   | Gemiddeld    | Hoog         |
-| Sms                            | Middelgroot   | Hoog      | Gemiddeld       |
+| Sms                            | Normaal   | Hoog      | Gemiddeld       |
 | Spraak                          | Gemiddeld   | Gemiddeld    | Gemiddeld       |
 | Wachtwoord                       | Laag      | Hoog      | Hoog         |
 
@@ -54,20 +54,20 @@ Zie voor meer informatie over beveiliging [verificatie beveiligings problemen en
 
 ## <a name="how-each-authentication-method-works"></a>Hoe een verificatie methode werkt
 
-Sommige verificatie methoden kunnen worden gebruikt als de primaire factor wanneer u zich aanmeldt bij een toepassing of apparaat, zoals het gebruik van een FIDO2-beveiligings sleutel of een wacht woord. Andere verificatie methoden zijn alleen beschikbaar als secundaire factor wanneer u Azure Multi-Factor Authentication of SSPR gebruikt.
+Sommige verificatie methoden kunnen worden gebruikt als de primaire factor wanneer u zich aanmeldt bij een toepassing of apparaat, zoals het gebruik van een FIDO2-beveiligings sleutel of een wacht woord. Andere verificatie methoden zijn alleen beschikbaar als secundaire factor wanneer u Azure AD Multi-Factor Authentication of SSPR gebruikt.
 
 De volgende tabel geeft een overzicht van de wijze waarop een verificatie methode kan worden gebruikt tijdens een aanmeldings gebeurtenis:
 
 | Methode                         | Primaire authenticatie | Secundaire verificatie  |
 |--------------------------------|:----------------------:|:-------------------------:|
-| Windows Hello voor Bedrijven     | Ja                    | MFA                       |
+| Windows Hello voor Bedrijven     | Yes                    | MFA                       |
 | Microsoft Authenticator-app    | Ja (preview-versie)          | MFA en SSPR              |
-| FIDO2-beveiligings sleutel (preview-versie)   | Ja                    | MFA                       |
+| FIDO2-beveiligings sleutel (preview-versie)   | Yes                    | MFA                       |
 | OATH-hardware-tokens (preview-versie) | Nee                     | MFA                       |
 | OATH-software tokens           | Nee                     | MFA                       |
 | Sms                            | Ja (preview-versie)          | MFA en SSPR              |
 | Spraakoproep                     | Nee                     | MFA en SSPR              |
-| Wachtwoord                       | Ja                    |                           |
+| Wachtwoord                       | Yes                    |                           |
 
 Al deze verificatie methoden kunnen worden geconfigureerd in de Azure Portal en het gebruik van de [Microsoft Graph rest API bèta](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta)wordt steeds vaker gebruikt.
 
@@ -83,25 +83,25 @@ Raadpleeg de volgende afzonderlijke conceptuele artikelen voor meer informatie o
 * Wachtwoord
 
 > [!NOTE]
-> In azure AD is een wacht woord vaak een van de primaire verificatie methoden. U kunt de verificatie methode voor wacht woorden niet uitschakelen. Als u een wacht woord als primaire verificatie factor gebruikt, verhoogt u de beveiliging van aanmeldings gebeurtenissen met Azure Multi-Factor Authentication.
+> In azure AD is een wacht woord vaak een van de primaire verificatie methoden. U kunt de verificatie methode voor wacht woorden niet uitschakelen. Als u een wacht woord als primaire verificatie factor gebruikt, verhoogt u de beveiliging van aanmeldings gebeurtenissen met Azure AD Multi-Factor Authentication.
 
 De volgende aanvullende verificatie methoden kunnen worden gebruikt in bepaalde scenario's:
 
-* [App-wacht woorden](howto-mfa-app-passwords.md) : wordt gebruikt voor oude toepassingen die geen ondersteuning bieden voor moderne verificatie en kunnen worden geconfigureerd voor Azure multi-factor Authentication per gebruiker.
+* [App-wacht woorden](howto-mfa-app-passwords.md) : wordt gebruikt voor oude toepassingen die geen ondersteuning bieden voor moderne verificatie en kunnen worden geconfigureerd voor Azure AD-multi-factor Authentication per gebruiker.
 * [Beveiligings vragen](concept-authentication-security-questions.md) : alleen gebruikt voor SSPR
 * [E-mail adres](concept-sspr-howitworks.md#authentication-methods) : alleen gebruikt voor SSPR
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de [zelfstudie voor self-service voor wachtwoordherstel (SSPR)][tutorial-sspr] en [Azure Multi-Factor Authentication][tutorial-azure-mfa] om aan de slag te gaan.
+Raadpleeg de [zelf studie voor Self-service voor wachtwoord herstel (SSPR)][tutorial-sspr] en [Azure AD multi-factor Authentication][tutorial-azure-mfa]om aan de slag te gaan.
 
 Zie [hoe Azure AD self-service password reset werkt][concept-sspr]voor meer informatie over SSPR-concepten.
 
-Zie [hoe Azure multi-factor Authentication werkt][concept-mfa]voor meer informatie over MFA-concepten.
+Zie [hoe Azure AD multi-factor Authentication werkt][concept-mfa]voor meer informatie over MFA-concepten.
 
 Meer informatie over het configureren van verificatie methoden met behulp van de [Microsoft Graph rest API bèta](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta).
 
-Zie [Azure multi-factor authentication-verificatie methode analyse met Power shell](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/)om te controleren welke verificatie methoden in gebruik zijn.
+Zie [Azure AD multi-factor authentication-verificatie methode analyse met Power shell](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/)om te controleren welke verificatie methoden in gebruik zijn.
 
 <!-- INTERNAL LINKS -->
 [tutorial-sspr]: tutorial-enable-sspr.md

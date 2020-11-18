@@ -1,6 +1,6 @@
 ---
-title: Resources beveiligen met Azure MFA en ADFS-Azure Active Directory
-description: Dit is de pagina Azure Multi-Factor Authentication waarop wordt beschreven hoe u aan de slag kunt met Azure MFA en AD FS in de cloud.
+title: Resources beveiligen met Azure AD MFA en ADFS-Azure Active Directory
+description: Dit is de Azure AD Multi-Factor Authentication-pagina waarop wordt beschreven hoe u aan de slag gaat met Azure AD MFA en AD FS in de Cloud.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,28 +11,28 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5167d9041e8edfd6e829bdd1a78f826f73eea4d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 999fb350aaa5f11510db0d4ecc036e188d76e20f
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964584"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839332"
 ---
-# <a name="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs"></a>Cloudresources beveiligen met Azure Multi-Factor Authentication en AD FS
+# <a name="securing-cloud-resources-with-azure-ad-multi-factor-authentication-and-ad-fs"></a>Cloud resources beveiligen met Azure AD Multi-Factor Authentication en AD FS
 
-Als uw organisatie is gefedereerd met behulp van Azure Active Directory, kunt u Azure Multi-Factor Authentication of Active Directory Federation Services (AD FS) gebruiken om resources te beveiligen die door Azure AD worden gebruikt. Gebruik de volgende procedures voor het beveiligen van Azure Active Directory-resources met ofwel Azure Multi-Factor Authentication of Active Directory Federation Services.
+Als uw organisatie federatief is met Azure Active Directory, kunt u Azure AD Multi-Factor Authentication of Active Directory Federation Services (AD FS) gebruiken om resources te beveiligen die worden geopend door Azure AD. Gebruik de volgende procedures om Azure Active Directory-resources met Azure AD Multi-Factor Authentication of Active Directory Federation Services te beveiligen.
 
 ## <a name="secure-azure-ad-resources-using-ad-fs"></a>Azure AD-resources beveiligen met behulp van AD FS
 
 Voor de beveiliging van uw cloudresource stelt u een claimregel in die ervoor zorgt dat Active Directory Federation Services de multipleauthn-claim verstuurt wanneer een gebruiker de verificatie in twee stappen voltooit. Deze claim wordt doorgegeven aan Azure AD. Volg deze procedure om de stappen te doorlopen:
 
 1. Open AD FS-beheer.
-2. Selecteer aan de linkerkant de **vertrouwens relatie van de relying**Party.
+2. Selecteer aan de linkerkant de **vertrouwens relatie van de relying** Party.
 3. Klik met de rechtermuisknop op **Identiteitsplatform van Microsoft Office 365** en selecteer **Claimregels bewerken**.
 
    ![ADFS-console-vertrouwens relaties van Relying Party](./media/howto-mfa-adfs/trustedip1.png)
 
-4. Klik bij Uitgifte transformatieregels op**Regel toevoegen**.
+4. Klik bij Uitgifte transformatieregels op **Regel toevoegen**.
 
    ![Regels voor uitgifte transformatie bewerken](./media/howto-mfa-adfs/trustedip2.png)
 
@@ -48,7 +48,7 @@ Voor de beveiliging van uw cloudresource stelt u een claimregel in die ervoor zo
 
 ## <a name="trusted-ips-for-federated-users"></a>Goedgekeurde IP-adressen voor federatieve gebruikers
 
-Met goedgekeurde IP-adressen zijn beheerders in staat om verificatie in twee stappen te omzeilen voor bepaalde IP-adressen of voor federatieve gebruikers met verzoeken die afkomstig zijn uit hun eigen intranet. In de volgende secties wordt beschreven hoe goedgekeurde IP-adressen van Azure Multi-Factor Authentication bij federatieve gebruikers moeten worden geconfigureerd en hoe verificatie in twee stappen kan worden omzeild als een verzoek afkomstig is uit het intranet van een federatieve gebruiker. Dit wordt bereikt door AD FS zo te configureren dat deze gebruikmaakt van een passthrough of een binnenkomende claimsjabloon filtert met het claimtype Binnen bedrijfsnetwerk.
+Met goedgekeurde IP-adressen zijn beheerders in staat om verificatie in twee stappen te omzeilen voor bepaalde IP-adressen of voor federatieve gebruikers met verzoeken die afkomstig zijn uit hun eigen intranet. In de volgende secties wordt beschreven hoe u Azure AD Multi-Factor Authentication vertrouwde IP-adressen configureert met federatieve gebruikers en met behulp van verificatie in twee stappen wanneer een aanvraag afkomstig is van een federatief intranet van een federatieve gebruiker. Dit wordt bereikt door AD FS zo te configureren dat deze gebruikmaakt van een passthrough of een binnenkomende claimsjabloon filtert met het claimtype Binnen bedrijfsnetwerk.
 
 In dit voor beeld wordt Microsoft 365 gebruikt voor onze Relying Party-vertrouwens relaties.
 
@@ -57,7 +57,7 @@ In dit voor beeld wordt Microsoft 365 gebruikt voor onze Relying Party-vertrouwe
 Het eerste wat we moeten doen is de AD FS-claims configureren. U maakt twee claimregels: één voor het claimtype Binnen bedrijfsnetwerk en een extra regel om de gebruikers aangemeld te houden.
 
 1. Open AD FS-beheer.
-2. Selecteer aan de linkerkant de **vertrouwens relatie van de relying**Party.
+2. Selecteer aan de linkerkant de **vertrouwens relatie van de relying** Party.
 3. Klik met de rechter muisknop op **Microsoft Office 365-identiteits platform** en selecteer **claim regels bewerken...** 
     ![ ADFS-console-claim regels bewerken](./media/howto-mfa-adfs/trustedip1.png)
 4. Klik bij uitgifte transformatie regels op **regel toevoegen.** 
@@ -68,7 +68,7 @@ Het eerste wat we moeten doen is de AD FS-claims configureren. U maakt twee clai
 7. In de vervolgkeuzelijst naast Binnenkomend claimtype, selecteert u **Binnen bedrijfsnetwerk**.
    ![Toevoegen binnen bedrijfs netwerk claim](./media/howto-mfa-adfs/trustedip4.png)
 8. Klik op **Voltooien**.
-9. Klik bij Uitgifte transformatieregels op**Regel toevoegen**.
+9. Klik bij Uitgifte transformatieregels op **Regel toevoegen**.
 10. Selecteer in de wizard Transformatieclaimregels toevoegen **Claim verzenden met een aangepaste regel** in de vervolgkeuzelijst en klik op **Volgende**.
 11. In het vak onder Naam claimregel typt u *Gebruikers aangemeld houden*.
 12. In het vak Aangepaste regel typt u:
@@ -84,12 +84,12 @@ Het eerste wat we moeten doen is de AD FS-claims configureren. U maakt twee clai
 15. Klik op **OK**.
 16. Sluit AD FS-beheer.
 
-### <a name="configure-azure-multi-factor-authentication-trusted-ips-with-federated-users"></a>Goedgekeurde IP-adressen van Azure Multi-Factor Authentication configureren bij federatieve gebruikers
+### <a name="configure-azure-ad-multi-factor-authentication-trusted-ips-with-federated-users"></a>Vertrouwde IP-adressen van Azure AD Multi-Factor Authentication configureren met federatieve gebruikers
 
 Nu de claims zijn gemaakt, kunnen we goedgekeurde IP-adressen gaan configureren.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Selecteer **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**met de  >  **naam locaties**.
+2. Selecteer **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang** met de  >  **naam locaties**.
 3. Selecteer op de Blade **voorwaardelijke toegang-benoemde locaties** de optie **MFA-vertrouwde IP-adressen configureren**
 
    ![Voorwaardelijke toegang voor Azure AD benoemde locaties geconfigureerde MFA-IP-adressen configureren](./media/howto-mfa-adfs/trustedip6.png)

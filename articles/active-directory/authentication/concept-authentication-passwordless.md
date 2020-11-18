@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b308b47ff813237bdf90637334f20ac6b5490a19
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: dbe22a1af8fbf61629fa9df1267416ca3822884b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91992830"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840080"
 ---
 # <a name="passwordless-authentication-options-for-azure-active-directory"></a>Verificatie opties met een wacht woord voor Azure Active Directory
 
@@ -62,7 +62,7 @@ U kunt ook de telefoon van uw werk nemer een verificatie methode met een wacht w
 
 Met de verificator-app wordt een wille keurige iOS-of Android-telefoon omgezet in een sterke, wacht woordloze referentie. Gebruikers kunnen zich aanmelden bij elk platform of browser door een melding te ontvangen bij een wille keurige telefoon, een nummer dat op het scherm wordt weer gegeven op de telefoon en vervolgens met behulp van de biometrische (Touch of face) of de pincode te bevestigen. Raadpleeg [de Microsoft Authenticator-app downloaden en installeren](../user-help/user-help-auth-app-download-install.md) voor meer informatie over de installatie.
 
-Aanmelding zonder wacht woord met de Microsoft Authenticator-app naar Azure AD is momenteel beschikbaar als preview-versie. Gebruik van de Microsoft Authenticator-app voor secundaire authenticatie voor Azure Multi-Factor Authentication, selfservice voor wachtwoord herstel (SSPR) of OATH-software tokens is GA. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+Aanmelding zonder wacht woord met de Microsoft Authenticator-app naar Azure AD is momenteel beschikbaar als preview-versie. Gebruik van de Microsoft Authenticator-app voor secundaire verificatie voor Azure AD Multi-Factor Authentication, selfservice voor wachtwoord herstel (SSPR) of OATH-software tokens is GA. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Verificatie met een wacht woord met behulp van de verificator-app volgt hetzelfde basis patroon als Windows hello voor bedrijven. Het is iets gecompliceerder omdat de gebruiker moet worden geïdentificeerd zodat Azure AD de Microsoft Authenticator App-versie die wordt gebruikt kan vinden:
 

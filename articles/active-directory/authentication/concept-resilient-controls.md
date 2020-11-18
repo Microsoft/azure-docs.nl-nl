@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/08/2020
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6af2f65aa2e2052a79f4c5cffd7ff4a38a9fc838
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 6b5b83d75df734c667c365f20fad2e1f62f997d7
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366561"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839706"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Maak een flexibele toegangs beheer strategie met Azure Active Directory
 
@@ -65,11 +65,11 @@ Als u de beheerders toegang tot uw Tenant wilt ontgrendelen, moet u accounts voo
 
 De volgende toegangs controles opnemen in uw bestaande beleids regels voor voorwaardelijke toegang voor de organisatie:
 
-1. Richt meerdere verificatie methoden in voor elke gebruiker die afhankelijk is van verschillende communicatie kanalen, bijvoorbeeld de Microsoft Authenticator app (op Internet), OATH-token (gegenereerd op het apparaat) en SMS (telephon). Met het volgende Power shell-script kunt u vooraf bepalen welke aanvullende methoden uw gebruikers moeten registreren: [script voor de analyse van de Azure MFA-verificatie methode](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/).
+1. Richt meerdere verificatie methoden in voor elke gebruiker die afhankelijk is van verschillende communicatie kanalen, bijvoorbeeld de Microsoft Authenticator app (op Internet), OATH-token (gegenereerd op het apparaat) en SMS (telephon). Met het volgende Power shell-script kunt u vooraf bepalen welke aanvullende methoden uw gebruikers moeten registreren: [script voor de analyse van Azure AD MFA-verificatie methode](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/).
 2. Implementeer Windows hello voor bedrijven op Windows 10-apparaten om rechtstreeks aan de vereisten voor MFA te voldoen bij het aanmelden bij het apparaat.
 3. Gebruik vertrouwde apparaten via [Azure AD Hybrid join's](../devices/overview.md) of [Microsoft intune beheerde apparaten](/intune/planning-guide). Vertrouwde apparaten verbeteren de gebruikers ervaring omdat het vertrouwde apparaat zelf kan voldoen aan de sterke verificatie vereisten van het beleid zonder een MFA-uitdaging voor de gebruiker. MFA is vervolgens vereist bij het registreren van een nieuw apparaat en bij het openen van apps of bronnen van niet-vertrouwde apparaten.
 4. Op risico gebaseerd beleid van Azure AD Identity Protection gebruiken om toegang te voor komen wanneer de gebruiker of het aanmelden een risico vormt voor een vast MFA-beleid.
-5. Als u VPN-toegang met de Azure MFA NPS-extensie beveiligt, kunt u federeren uw VPN-oplossing als een [SAML-app](../manage-apps/view-applications-portal.md) gebruiken en de app-categorie bepalen, zoals hieronder wordt aanbevolen. 
+5. Als u VPN-toegang met Azure AD MFA NPS-extensie beveiligt, kunt u uw VPN-oplossing federeren als een [SAML-app](../manage-apps/view-applications-portal.md) en de app-categorie bepalen, zoals hieronder wordt aanbevolen. 
 
 >[!NOTE]
 > Voor beleids regels op basis van Risico's zijn [Azure AD Premium P2](https://azure.microsoft.com/pricing/details/active-directory/) -licenties vereist.
@@ -112,7 +112,7 @@ Het is ook mogelijk dat uw organisatie een nood beleid maakt. Als u nood beleid 
 
 #### <a name="microsoft-recommendations"></a>Aanbevelingen van micro soft
 
-Een beleid voor voorwaardelijke toegang voor nood gevallen is een **back-upbeleid** voor het weglaten van Azure MFA, MFA-, op Risico's of op apparaten gebaseerde besturings elementen van derden. Om onverwachte onderbrekingen te minimaliseren wanneer een nood beleid is ingeschakeld, blijft het beleid in de modus alleen-rapporteren wanneer het niet wordt gebruikt. Beheerders kunnen de mogelijke gevolgen van de nood polissen controleren met behulp van de Insights-werkmap voor voorwaardelijke toegang. Als uw organisatie besluit uw rampen plan te activeren, kunnen beheerders het beleid inschakelen en het normale beleid op basis van beheer uitschakelen.
+Een beleid voor voorwaardelijke toegang voor nood gevallen is een **back-upbeleid** voor het weglaten van Azure AD MFA, MFA-, op Risico's of op apparaten gebaseerde besturings elementen. Om onverwachte onderbrekingen te minimaliseren wanneer een nood beleid is ingeschakeld, blijft het beleid in de modus alleen-rapporteren wanneer het niet wordt gebruikt. Beheerders kunnen de mogelijke gevolgen van de nood polissen controleren met behulp van de Insights-werkmap voor voorwaardelijke toegang. Als uw organisatie besluit uw rampen plan te activeren, kunnen beheerders het beleid inschakelen en het normale beleid op basis van beheer uitschakelen.
 
 >[!IMPORTANT]
 > Door beleid uit te scha kelen waarmee de beveiliging van uw gebruikers wordt afgedwongen, wordt uw beveiligings postuur beperkt terwijl het nood plan aanwezig is.
@@ -138,7 +138,7 @@ Deze naamgevings standaard voor het beleid voor nood gevallen is als volgt:
 EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions]
 ```
 
-Het volgende voor beeld: **een voor beeld van een CA-beleid om de toegang tot essentiële samenwerkings-apps te herstellen**, is een typische zakelijke nood geval. In dit scenario vereist de organisatie MFA doorgaans voor alle Exchange Online-en share point online-toegang, en de onderbreking in dit geval is de MFA-provider voor de klant heeft een storing (of Azure MFA, een on-premises MFA-provider of MFA van derden). Dit beleid verkleint deze onderbreking doordat specifieke doel gebruikers alleen toegang hebben tot deze apps vanaf vertrouwde Windows-apparaten wanneer ze toegang hebben tot de app vanuit hun vertrouwde bedrijfs netwerk. Hierbij worden ook nood accounts en essentiële beheerders uitgesloten van deze beperkingen. De doel gebruikers krijgen vervolgens toegang tot Exchange Online en share point online, terwijl andere gebruikers nog steeds geen toegang tot de apps hebben vanwege de storing. Dit voor beeld vereist een benoemde netwerk locatie **CorpNetwork** en een **ContingencyAccess** met de doel gebruikers, een groep met de naam **CoreAdmins** met de kern beheerders en een groep met de naam **EmergencyAccess** met de accounts voor toegang voor nood gevallen. De nood gevallen vereist vier beleids regels om de gewenste toegang te bieden. 
+Het volgende voor beeld: **een voor beeld van een CA-beleid om de toegang tot essentiële samenwerkings-apps te herstellen**, is een typische zakelijke nood geval. In dit scenario vereist de organisatie MFA doorgaans voor alle Exchange Online-en share point online-toegang, en de onderbreking in dit geval is de MFA-provider voor de klant heeft een storing (of Azure AD MFA, on-premises MFA-provider of MFA van derden). Dit beleid verkleint deze onderbreking doordat specifieke doel gebruikers alleen toegang hebben tot deze apps vanaf vertrouwde Windows-apparaten wanneer ze toegang hebben tot de app vanuit hun vertrouwde bedrijfs netwerk. Hierbij worden ook nood accounts en essentiële beheerders uitgesloten van deze beperkingen. De doel gebruikers krijgen vervolgens toegang tot Exchange Online en share point online, terwijl andere gebruikers nog steeds geen toegang tot de apps hebben vanwege de storing. Dit voor beeld vereist een benoemde netwerk locatie **CorpNetwork** en een **ContingencyAccess** met de doel gebruikers, een groep met de naam **CoreAdmins** met de kern beheerders en een groep met de naam **EmergencyAccess** met de accounts voor toegang voor nood gevallen. De nood gevallen vereist vier beleids regels om de gewenste toegang te bieden. 
 
 **Voor beeld van een CA-beleid voor nood gevallen om de toegang tot essentiële samenwerkings-apps te herstellen:**
 
@@ -208,7 +208,7 @@ Volg orde van activering:
 
 ### <a name="contingencies-for-user-lockout-from-on-prem-resources-nps-extension"></a>Onvoorziene gebeurtenissen voor het vergren delen van gebruikers uit on-premises resources (NPS-extensie)
 
-Als u VPN-toegang met de Azure MFA NPS-extensie beveiligt, kunt u federeren uw VPN-oplossing als een [SAML-app](../manage-apps/view-applications-portal.md) gebruiken en de app-categorie bepalen, zoals hieronder wordt aanbevolen. 
+Als u VPN-toegang met Azure AD MFA NPS-extensie beveiligt, kunt u uw VPN-oplossing federeren als een [SAML-app](../manage-apps/view-applications-portal.md) en de app-categorie bepalen, zoals hieronder wordt aanbevolen. 
 
 Als u Azure AD MFA NPS-extensie hebt geïmplementeerd voor het beveiligen van on-premises resources, zoals VPN en Extern bureaublad-gateway, met MFA, moet u vooraf rekening houden als u in een nood geval MFA kunt uitschakelen.
 
@@ -280,7 +280,7 @@ Als uw organisatie verouderd beleid voor MFA per gebruiker gebruikt, kunt u het 
  > Als u de vertrouwde IP-adressen uitbreidt om de toegang te blok keren, worden risico detecties die zijn gekoppeld aan IP-adressen (bijvoorbeeld onmogelijk reizen of niet-vertrouwde locaties) niet gegenereerd.
 
 >[!NOTE]
- > Het configureren van [vertrouwde IP-adressen](./howto-mfa-mfasettings.md) voor Azure MFA is alleen beschikbaar met [Azure AD Premium-licenties](./concept-mfa-licensing.md).
+ > Het configureren van [vertrouwde IP-adressen](./howto-mfa-mfasettings.md) voor Azure AD MFA is alleen beschikbaar met [Azure AD Premium-licenties](./concept-mfa-licensing.md).
 
 ## <a name="learn-more"></a>Meer informatie
 

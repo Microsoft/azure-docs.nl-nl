@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: baselden, librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f0c19e33ab6f91e69f9c7dbc5bc29fef1fd53bb
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 0143da9c1961b4123467120210135f7db2c582c8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964873"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94839570"
 ---
 # <a name="plan-a-passwordless-authentication-deployment-in-azure-active-directory"></a>Een authenticatie-implementatie met een wacht woord plannen in Azure Active Directory
 
@@ -67,9 +67,9 @@ Organisaties moeten voldoen aan de volgende vereisten voordat een implementatie 
 
 | Vereiste | Authenticator-app | FIDO2-beveiligings sleutels |
 | --- | --- | --- |
-| [Gecombineerde registratie voor Azure multi-factor Authentication en self-service voor wachtwoord herstel (SSPR)](howto-registration-mfa-sspr-combined.md) is ingeschakeld | √ | √ |
-| [Gebruikers kunnen Azure multi-factor Authentication uitvoeren](howto-mfa-getstarted.md) | √ | √ |
-| [Gebruikers zijn geregistreerd voor Azure multi-factor Authentication en SSPR](howto-registration-mfa-sspr-combined.md) | √ | √ |
+| [Gecombineerde registratie voor Azure AD multi-factor Authentication en self-service voor wachtwoord herstel (SSPR)](howto-registration-mfa-sspr-combined.md) is ingeschakeld | √ | √ |
+| [Gebruikers kunnen Azure AD Multi-Factor Authentication uitvoeren](howto-mfa-getstarted.md) | √ | √ |
+| [Gebruikers zijn geregistreerd voor Azure AD Multi-Factor Authentication en SSPR](howto-registration-mfa-sspr-combined.md) | √ | √ |
 | [Gebruikers hebben hun mobiele apparaten bij Azure Active Directory geregistreerd](../devices/overview.md) | √ |   |
 | Windows 10 versie 1809 of hoger met een ondersteunde browser zoals micro soft Edge of Mozilla Firefox <br> (versie 67 of hoger). <br> *Micro soft raadt versie 1903 of hoger aan voor systeem eigen ondersteuning*. |   | √ |
 | Compatibele FIDO2-beveiligings sleutels. Zorg ervoor dat u een door [micro soft getest en gecontroleerd](./concept-authentication-passwordless.md) FIDO2 Security-apparaat of een ander compatibel FIDO2-beveiligings apparaat gebruikt. |   | √ |
@@ -78,9 +78,9 @@ Organisaties moeten voldoen aan de volgende vereisten voordat een implementatie 
 
 De vereisten voor Windows hello zijn zeer afhankelijk van of u implementeert in een on-premises, hybride of Cloud configuratie. Zie voor meer informatie de [volledige lijst met vereisten voor Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
-### <a name="azure-multi-factor-authentication"></a>Azure Multi-Factor Authentication
+### <a name="azure-ad-multi-factor-authentication"></a>Azure AD-Multi-Factor Authentication
 
-Gebruikers registreren hun eigen methode als onderdeel van de Azure multi-factor Authentication-registratie stroom. Multi-factor Authentication met een gebruikers naam en wacht woord samen met een andere geregistreerde methode kan worden gebruikt als terugval voor het geval ze hun telefoon of beveiligings sleutel in sommige scenario's niet kunnen gebruiken.
+Gebruikers registreren hun eigen methode als onderdeel van de registratie stroom van de Azure AD-Multi-Factor Authentication. Multi-factor Authentication met een gebruikers naam en wacht woord samen met een andere geregistreerde methode kan worden gebruikt als terugval voor het geval ze hun telefoon of beveiligings sleutel in sommige scenario's niet kunnen gebruiken.
 
 ### <a name="licensing"></a>Licentieverlening 
 Er zijn geen extra kosten verbonden aan authenticatie zonder wacht woord, hoewel voor sommige vereisten mogelijk een Premium-abonnement nodig is. Voor gedetailleerde informatie over functies en licenties vindt u op de [pagina Azure Active Directory licentie verlening](https://azure.microsoft.com/pricing/details/active-directory/). 
@@ -140,7 +140,7 @@ Hiermee wordt een wille keurige iOS-of Android-telefoon omgezet in een sterke, w
 
 **Integratie van AD FS** : wanneer een gebruiker de Microsoft Authenticator wacht woord-referentie voor de gebruiker inschakelt, wordt de verificatie van de gebruikers standaard ingesteld op het verzenden van een melding voor goed keuring. Gebruikers in een Hybrid-Tenant kunnen niet worden doorgestuurd naar ADFS voor aanmelding tenzij ze in plaats daarvan uw wacht woord gebruiken selecteren. Dit proces omzeilt ook alle on-premises beleids regels voor voorwaardelijke toegang en Pass Through-verificatie stromen. Als er echter een *login_hint* is opgegeven, wordt de gebruiker doorgestuurd naar ADFS en wordt de optie voor het gebruik van de referenties zonder wacht woord omzeild.
 
-**Azure multi-factor Authentication-Server** : eind gebruikers die zijn ingeschakeld voor multi-factor Authentication via de on-premises Azure MFA-server van een organisatie kunnen één wacht woord voor eenmalige aanmelding voor de telefoon maken en gebruiken. Als de gebruiker meerdere installaties (5 of meer) van de Microsoft Authenticator met de referentie probeert bij te werken, kan deze wijziging leiden tot een fout.
+**Azure AD multi-factor Authentication Server** : eind gebruikers die zijn ingeschakeld voor multi-factor Authentication via de on-premises Azure MFA-server van een organisatie, kunnen een eenmalige aanmeldings referentie voor het aanmelden met een wacht woord maken en gebruiken. Als de gebruiker meerdere installaties (5 of meer) van de Microsoft Authenticator met de referentie probeert bij te werken, kan deze wijziging leiden tot een fout.
 
 **Apparaatregistratie** : voor het gebruik van de verificator-app voor verificatie met een wacht woord moet het apparaat zijn geregistreerd in de Azure AD-Tenant en kan het geen gedeeld apparaat zijn. Een apparaat kan alleen in één Tenant worden geregistreerd. Deze limiet betekent dat er slechts één werk-of school account wordt ondersteund voor aanmelden via de verificator-app.
 
@@ -152,7 +152,7 @@ Er zijn drie soorten aanmeld implementaties met een wacht woord die beschikbaar 
 -    Hybride Azure Active Directory gekoppelde Windows 10-apparaten (preview-versie)
      -    Biedt toegang tot bronnen op basis van de Cloud en on-premises. Zie voor meer informatie over toegang tot on-premises resources [SSO to on-premises resources met behulp van FIDOP2-sleutels](./howto-authentication-passwordless-security-key-on-premises.md)
 
-U moet **compatibele FIDO2-beveiligings sleutels**inschakelen. Micro soft introduceert [belang rijke partnerschappen met FIDO2-sleutel leveranciers](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Microsoft-passwordless-partnership-leads-to-innovation-and-great/ba-p/566493).
+U moet **compatibele FIDO2-beveiligings sleutels** inschakelen. Micro soft introduceert [belang rijke partnerschappen met FIDO2-sleutel leveranciers](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Microsoft-passwordless-partnership-leads-to-innovation-and-great/ba-p/566493).
 
 **Voor Azure AD web apps en aan Azure AD Windows gekoppelde apparaten**:
 

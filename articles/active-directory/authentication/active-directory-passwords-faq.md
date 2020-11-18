@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 078b24e7fc3668e9b5832f0bfa46024db9b33848
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c154952d41db742c4d33899094a49a65fae72f26
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965553"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94840097"
 ---
 # <a name="self-service-password-reset-frequently-asked-questions"></a>Veelgestelde vragen over self-service voor wachtwoord herstel
 
@@ -36,9 +36,9 @@ Deze veelgestelde vragen zijn onderverdeeld in de volgende secties:
 
 * **V: kunnen mijn gebruikers hun eigen wachtwoord herstel gegevens registreren?**
 
-  > **A:** Klikt. Zolang het wacht woord opnieuw moet worden ingesteld en de licenties zijn ingeschakeld, kunnen gebruikers naar de registratie portal voor het opnieuw instellen van het wacht woord gaan ( https://aka.ms/ssprsetup) om hun verificatie gegevens te registreren. Gebruikers kunnen zich ook registreren via het toegangs venster ( https://myapps.microsoft.com) . Als u zich wilt registreren via het toegangs venster, moeten ze hun profiel afbeelding selecteren, **profiel**selecteren en vervolgens de optie **registreren voor wacht woord opnieuw instellen** selecteren.
+  > **A:** Klikt. Zolang het wacht woord opnieuw moet worden ingesteld en de licenties zijn ingeschakeld, kunnen gebruikers naar de registratie portal voor het opnieuw instellen van het wacht woord gaan ( https://aka.ms/ssprsetup) om hun verificatie gegevens te registreren. Gebruikers kunnen zich ook registreren via het toegangs venster ( https://myapps.microsoft.com) . Als u zich wilt registreren via het toegangs venster, moeten ze hun profiel afbeelding selecteren, **profiel** selecteren en vervolgens de optie **registreren voor wacht woord opnieuw instellen** selecteren.
   >
-  > Als u [gecombineerde registratie](concept-registration-mfa-sspr-combined.md)inschakelt, kunnen gebruikers zich op hetzelfde moment registreren voor zowel SSPR als Azure multi-factor Authentication.
+  > Als u [gecombineerde registratie](concept-registration-mfa-sspr-combined.md)inschakelt, kunnen gebruikers zich op hetzelfde moment registreren voor zowel SSPR als Azure AD multi-factor Authentication.
 * **V: als ik het opnieuw instellen van het wacht woord inschakel voor een groep en vervolgens besluit dit voor iedereen in te scha kelen, moeten mijn gebruikers zich opnieuw registreren?**
 
   > **A:** Geen. Gebruikers met ingevulde verificatie gegevens hoeven zich niet opnieuw te registreren.

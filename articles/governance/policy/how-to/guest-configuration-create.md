@@ -3,12 +3,12 @@ title: Beleidsregels voor gastconfiguratie voor Windows maken
 description: Meer informatie over het maken van een Azure Policy-gast configuratie beleid voor Windows.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 325b00ac1cc747555d38b4c250709638f5e74d95
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: ea9b40006deefbac2c253082eda4ef2da12149a4
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348879"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700674"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Beleidsregels voor gastconfiguratie voor Windows maken
 
@@ -202,9 +202,9 @@ Zodra de MOF is gecompileerd, moeten de ondersteunende bestanden samen worden ve
 
 Met de `New-GuestConfigurationPackage` cmdlet maakt u het pakket. Modules die nodig zijn voor de configuratie, moeten beschikbaar zijn in `$Env:PSModulePath` . Para meters van de `New-GuestConfigurationPackage` cmdlet bij het maken van Windows-inhoud:
 
-- **Naam** : naam van het gast configuratie pakket.
-- **Configuratie** : gecompileerd DSC-configuratie document volledig pad.
-- **Pad** : pad naar map voor uitvoer. Deze parameter is optioneel. Als u niets opgeeft, wordt het pakket gemaakt in de huidige map.
+- **Naam**: naam van het gast configuratie pakket.
+- **Configuratie**: gecompileerd DSC-configuratie document volledig pad.
+- **Pad**: pad naar map voor uitvoer. Deze parameter is optioneel. Als u niets opgeeft, wordt het pakket gemaakt in de huidige map.
 
 Voer de volgende opdracht uit om een pakket te maken met behulp van de configuratie die in de vorige stap is gegeven:
 
@@ -220,9 +220,9 @@ Omdat de agent de lokale omgeving werkelijk evalueert, moet u in de meeste geval
 
 Para meters van de `Test-GuestConfigurationPackage` cmdlet:
 
-- **Naam** : naam van het gast configuratie beleid.
-- **Para meter** : beleids parameters die zijn opgegeven in de hashtabel-indeling.
-- **Pad** : volledig pad van het gast configuratie pakket.
+- **Naam**: naam van het gast configuratie beleid.
+- **Para meter**: beleids parameters die zijn opgegeven in de hashtabel-indeling.
+- **Pad**: volledig pad van het gast configuratie pakket.
 
 Voer de volgende opdracht uit om het pakket te testen dat door de vorige stap is gemaakt:
 
@@ -247,13 +247,13 @@ Nadat een aangepast beleids pakket voor de gast configuratie is gemaakt en geüp
 
 Para meters van de `New-GuestConfigurationPolicy` cmdlet:
 
-- **ContentUri** : open bare http (s)-URI van het inhouds pakket voor de gast configuratie.
-- **DisplayName** : weergave naam beleid.
-- **Beschrijving** : beschrijving van het beleid.
-- **Para meter** : beleids parameters die zijn opgegeven in de hashtabel-indeling.
-- **Versie** : beleids versie.
-- **Pad** : doelpad voor het maken van beleids definities.
-- **Platform** : doel platform (Windows/Linux) voor gast configuratie beleid en inhouds pakket.
+- **ContentUri**: open bare http (s)-URI van het inhouds pakket voor de gast configuratie.
+- **DisplayName**: weergave naam beleid.
+- **Beschrijving**: beschrijving van het beleid.
+- **Para meter**: beleids parameters die zijn opgegeven in de hashtabel-indeling.
+- **Versie**: beleids versie.
+- **Pad**: doelpad voor het maken van beleids definities.
+- **Platform**: doel platform (Windows/Linux) voor gast configuratie beleid en inhouds pakket.
 - **Tag** voegt een of meer label filters toe aan de beleids definitie
 - **Categorie** stelt het veld meta gegevens van categorie in de beleids definitie in
 
@@ -474,10 +474,10 @@ De ondersteunende bestanden moeten samen worden verpakt. Het voltooide pakket wo
 
 Met de `New-GuestConfigurationPackage` cmdlet maakt u het pakket. Voor inhoud van derden gebruikt u de para meter **FilesToInclude** om de Inspec-inhoud toe te voegen aan het pakket. U hoeft de **ChefProfilePath** niet op te geven als voor Linux-pakketten.
 
-- **Naam** : naam van het gast configuratie pakket.
-- **Configuratie** : gecompileerd configuratie document volledig pad.
-- **Pad** : pad naar map voor uitvoer. Deze parameter is optioneel. Als u niets opgeeft, wordt het pakket gemaakt in de huidige map.
-- **FilesoInclude** : volledig pad naar het INSPEC-profiel.
+- **Naam**: naam van het gast configuratie pakket.
+- **Configuratie**: gecompileerd configuratie document volledig pad.
+- **Pad**: pad naar map voor uitvoer. Deze parameter is optioneel. Als u niets opgeeft, wordt het pakket gemaakt in de huidige map.
+- **FilesoInclude**: volledig pad naar het INSPEC-profiel.
 
 Voer de volgende opdracht uit om een pakket te maken met behulp van de configuratie die in de vorige stap is gegeven:
 
@@ -496,9 +496,9 @@ Als u een update wilt vrijgeven voor het beleid, zijn er drie velden waarvoor aa
 > [!NOTE]
 > De `version` eigenschap van de toewijzing van de gast configuratie heeft alleen invloed op pakketten die door micro soft worden gehost. De best practice voor het versie beheer van aangepaste inhoud is het insluiten van de versie in de bestands naam.
 
-- **Versie** : wanneer u de `New-GuestConfigurationPolicy` cmdlet uitvoert, moet u een versie nummer opgeven dat groter is dan het aantal dat momenteel is gepubliceerd.
-- **contentUri** : wanneer u de `New-GuestConfigurationPolicy` cmdlet uitvoert, moet u een URI naar de locatie van het pakket opgeven. Met inbegrip van een pakket versie in de bestands naam zorgt u ervoor dat de waarde van deze eigenschap in elke versie verandert.
-- **contentHash** : deze eigenschap wordt automatisch bijgewerkt door de `New-GuestConfigurationPolicy` cmdlet. Het is een hash-waarde van het pakket dat is gemaakt door `New-GuestConfigurationPackage` . De eigenschap moet correct zijn voor het `.zip` bestand dat u publiceert. Als alleen de eigenschap **contentUri** is bijgewerkt, wordt het inhouds pakket niet geaccepteerd door de extensie.
+- **Versie**: wanneer u de `New-GuestConfigurationPolicy` cmdlet uitvoert, moet u een versie nummer opgeven dat groter is dan het aantal dat momenteel is gepubliceerd.
+- **contentUri**: wanneer u de `New-GuestConfigurationPolicy` cmdlet uitvoert, moet u een URI naar de locatie van het pakket opgeven. Met inbegrip van een pakket versie in de bestands naam zorgt u ervoor dat de waarde van deze eigenschap in elke versie verandert.
+- **contentHash**: deze eigenschap wordt automatisch bijgewerkt door de `New-GuestConfigurationPolicy` cmdlet. Het is een hash-waarde van het pakket dat is gemaakt door `New-GuestConfigurationPackage` . De eigenschap moet correct zijn voor het `.zip` bestand dat u publiceert. Als alleen de eigenschap **contentUri** is bijgewerkt, wordt het inhouds pakket niet geaccepteerd door de extensie.
 
 De eenvoudigste manier om een bijgewerkt pakket vrij te geven, is het proces dat wordt beschreven in dit artikel herhalen en een bijgewerkt versie nummer opgeven. Dit proces garandeert dat alle eigenschappen correct zijn bijgewerkt.
 
@@ -518,8 +518,8 @@ Protect-GuestConfigurationPackage -Path .\package\AuditWindowsService\AuditWindo
 
 Para meters van de `Protect-GuestConfigurationPackage` cmdlet:
 
-- **Pad** : volledig pad van het gast configuratie pakket.
-- **Certificaat** : certificaat voor ondertekening van programma code voor het ondertekenen van het pakket. Deze para meter wordt alleen ondersteund bij het ondertekenen van inhoud voor Windows.
+- **Pad**: volledig pad van het gast configuratie pakket.
+- **Certificaat**: certificaat voor ondertekening van programma code voor het ondertekenen van het pakket. Deze para meter wordt alleen ondersteund bij het ondertekenen van inhoud voor Windows.
 
 GuestConfiguration-agent verwacht dat de open bare sleutel van het certificaat aanwezig is in ' vertrouwde basis certificerings instanties ' op Windows-computers en in het pad `/usr/local/share/ca-certificates/extra` op Linux-machines. Installeer de open bare sleutel van het certificaat op de computer voordat u het aangepaste beleid toepast, zodat het knoop punt ondertekende inhoud verifieert. Dit proces kan worden uitgevoerd met behulp van een wille keurige techniek in de virtuele machine of met behulp van Azure Policy. [Hier](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-push-certificate-windows)vindt u een voorbeeld sjabloon.
 Het Key Vault toegangs beleid moet de compute-resource provider toegang geven tot certificaten tijdens implementaties. Zie [Key Vault instellen voor virtuele machines in azure Resource Manager](../../../virtual-machines/windows/key-vault-setup.md#use-templates-to-set-up-key-vault)voor gedetailleerde stappen.
@@ -532,12 +532,6 @@ $Cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
 Nadat de inhoud is gepubliceerd, voegt u een tag met de naam `GuestConfigPolicyCertificateValidation` en waarde `enabled` toe aan alle virtuele machines waarvoor ondertekening van programma code vereist is. Zie de voor [beelden](../samples/built-in-policies.md#tags) van tags voor de manier waarop Tags op schaal kunnen worden geleverd met behulp van Azure Policy. Zodra deze tag is geïmplementeerd, maakt de beleids definitie die is gegenereerd met de `New-GuestConfigurationPolicy` cmdlet, de vereiste via de gast configuratie-extensie.
-
-## <a name="troubleshooting-guest-configuration-policy-assignments-preview"></a>Problemen met toewijzing van gast configuratie beleid oplossen (preview-versie)
-
-Er is een hulp programma beschikbaar in de preview-versie om te helpen bij het oplossen van problemen Azure Policy toewijzing van gast configuraties. Het hulp programma is in Preview en gepubliceerd op de PowerShell Gallery als module naam [gast configuratie probleem Oplosser](https://www.powershellgallery.com/packages/GuestConfigurationTroubleshooter/).
-
-Voor meer informatie over de cmdlets in dit hulp programma gebruikt u de opdracht Get-Help in Power shell om de ingebouwde richt lijnen weer te geven. Wanneer het hulp programma veelvuldige updates ontvangt, is dat de beste manier om de meest recente informatie te verkrijgen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

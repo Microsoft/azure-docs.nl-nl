@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/24/2018
 ms.author: allensu
-ms.openlocfilehash: 443e8c09ea46c0c20b557d77d6ed7bd63db00085
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4061a3dbf4dc92d6d412528115d46edc36d20d5e
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90058747"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700679"
 ---
 # <a name="overview-of-ipv6-for-azure-load-balancer"></a>Overzicht van IPv6 voor Azure Load Balancer
 
 
 >[!NOTE] 
->Deze inhoud is vervangen door [IPv6 voor Azure VNet-overzicht](https://docs.microsoft.com/azure/virtual-network/ipv6-overview). Azure raadt nieuwe IPv6-implementaties aan om de nieuwe functies van IPv6 voor virtuele netwerken van Azure te gebruiken.
+>Deze inhoud is vervangen door [IPv6 voor Azure VNet-overzicht](../virtual-network/ipv6-overview.md). Azure raadt nieuwe IPv6-implementaties aan om de nieuwe functies van IPv6 voor virtuele netwerken van Azure te gebruiken.
 
 >[!NOTE]
->Azure Load Balancer ondersteunt twee verschillende typen: Basic en Standard. In dit artikel wordt Basic Load Balancer beschreven. Zie [Standard Load Balancer Overview](load-balancer-standard-overview.md)voor meer informatie over Standard Load Balancer.
+>Azure Load Balancer ondersteunt twee verschillende typen: Basic en Standard. In dit artikel wordt Basic Load Balancer beschreven. Zie [Standard Load Balancer Overview](./load-balancer-overview.md)voor meer informatie over Standard Load Balancer.
 
 Basis-SKU Internet gerichte load balancers kan worden geïmplementeerd met een IPv6-adres. Naast de IPv4-connectiviteit, kunnen de volgende mogelijkheden worden toegepast:
 

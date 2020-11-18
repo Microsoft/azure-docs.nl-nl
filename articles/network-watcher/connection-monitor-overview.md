@@ -1,6 +1,6 @@
 ---
-title: Verbindings monitor (preview-versie) | Microsoft Docs
-description: Meer informatie over het gebruik van verbindings monitor (preview) voor het bewaken van netwerk communicatie in een gedistribueerde omgeving.
+title: Verbindings monitor | Microsoft Docs
+description: Meer informatie over het gebruik van verbindings monitor voor het bewaken van netwerk communicatie in een gedistribueerde omgeving.
 services: network-watcher
 documentationcenter: na
 author: vinynigam
@@ -15,18 +15,18 @@ ms.workload: infrastructure-services
 ms.date: 01/27/2020
 ms.author: vinigam
 ms.custom: mvc
-ms.openlocfilehash: 80934dca73d7f8a205c62a49c418828cab1820e7
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 5dbb8d508fe824d0264043625c988f43092f3f78
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94447687"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699233"
 ---
-# <a name="network-connectivity-monitoring-with-connection-monitor-preview"></a>Bewaking van netwerk connectiviteit met verbindings monitor (preview-versie)
+# <a name="network-connectivity-monitoring-with-connection-monitor"></a>Netwerk connectiviteit controleren met verbindings monitor
 
-Verbindings monitor (preview) biedt een geïntegreerde end-to-end-verbindings bewaking in azure Network Watcher. De functie verbindings monitor (preview) ondersteunt hybride en Azure-Cloud implementaties. Network Watcher biedt hulpprogram ma's voor het bewaken, diagnosticeren en weer geven van connectiviteits gegevens voor uw Azure-implementaties.
+De verbindings monitor biedt een geïntegreerde end-to-end-verbindings bewaking in azure Network Watcher. De functie verbindings monitor ondersteunt hybride en Azure-Cloud implementaties. Network Watcher biedt hulpprogram ma's voor het bewaken, diagnosticeren en weer geven van connectiviteits gegevens voor uw Azure-implementaties.
 
-Hier volgen enkele gebruiks voorbeelden voor verbindings monitor (preview-versie):
+Hier volgen enkele gebruiks voorbeelden voor verbindings monitor:
 
 - De front-end-webserver-VM communiceert met een database server-VM in een toepassing met meerdere lagen. U de netwerk verbinding tussen de twee virtuele machines wilt controleren.
 - U wilt virtuele machines in de regio VS-Oost om Vm's te pingen in de regio VS-Midden en u wilt verschillende netwerk latentiesen in meerdere regio's te vergelijken.
@@ -34,9 +34,9 @@ Hier volgen enkele gebruiks voorbeelden voor verbindings monitor (preview-versie
 - Uw hybride toepassing heeft verbinding nodig met een Azure Storage-eind punt. Uw on-premises site en uw Azure-toepassing maken verbinding met hetzelfde Azure Storage-eind punt. U wilt de latenties van de on-premises site vergelijken met de latenties van de Azure-toepassing.
 - U wilt de connectiviteit controleren tussen uw on-premises instellingen en de virtuele Azure-machines die uw Cloud toepassing hosten.
 
-In de preview-fase combineert de verbindings monitor het beste van twee functies: de Network Watcher [verbindingscontrole](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#monitor-communication-between-a-virtual-machine-and-an-endpoint) functie en de NETWERKPRESTATIEMETER (NPM) [service Connectivity monitor](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor-service-connectivity), de controle functie voor [ExpressRoute](https://docs.microsoft.com/azure/expressroute/how-to-npm)en de [prestatie bewaking](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor-performance-monitor) .
+De verbindings monitor combineert het beste van twee functies: de Network Watcher-functie [verbindings monitor (klassiek)](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#monitor-communication-between-a-virtual-machine-and-an-endpoint) en de NETWERKPRESTATIEMETER (NPM) [service connectiviteits monitor](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor-service-connectivity), controle functie voor [ExpressRoute](https://docs.microsoft.com/azure/expressroute/how-to-npm)en [prestatie bewaking](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor-performance-monitor) .
 
-Hier volgen enkele voor delen van de verbindings monitor (preview-versie):
+Hier volgen enkele voor delen van de verbindings monitor:
 
 * Geïntegreerde, intuïtieve ervaring voor Azure en hybride bewakings behoeften
 * Bewaking van meerdere regio's, connectiviteit tussen werk ruimten
@@ -47,7 +47,7 @@ Hier volgen enkele voor delen van de verbindings monitor (preview-versie):
 
 ![Diagram waarin wordt getoond hoe verbindings monitor communiceert met Azure-Vm's, niet-Azure-hosts,-eind punten en opslag locaties voor gegevens](./media/connection-monitor-2-preview/hero-graphic.png)
 
-Voer de volgende stappen uit om verbindings monitor (preview) te gebruiken voor bewaking: 
+Voer de volgende stappen uit om verbindings monitor te gebruiken voor bewaking: 
 
 1. Bewakings agents installeren.
 1. Schakel Network Watcher in voor uw abonnement.
@@ -59,7 +59,7 @@ In de volgende secties vindt u meer informatie over deze stappen.
 
 ## <a name="install-monitoring-agents"></a>Bewakings agents installeren
 
-Verbindings monitor is afhankelijk van licht gewicht uitvoer bare bestanden om connectiviteits controles uit te voeren.  Het ondersteunt connectiviteits controles vanuit Azure-omgevingen en on-premises omgevingen. Het uitvoer bare bestand dat u gebruikt, is afhankelijk van of uw virtuele machine wordt gehost op Azure of on-premises.
+Verbindings monitor is afhankelijk van licht gewicht uitvoer bare bestanden om connectiviteits controles uit te voeren. Het ondersteunt connectiviteits controles vanuit Azure-omgevingen en on-premises omgevingen. Het uitvoer bare bestand dat u gebruikt, is afhankelijk van of uw virtuele machine wordt gehost op Azure of on-premises.
 
 ### <a name="agents-for-azure-virtual-machines"></a>Agents voor Azure virtual machines
 
@@ -89,19 +89,19 @@ Met verbindings monitor wordt de communicatie met regel matige intervallen gecon
 
 Bronnen kunnen Azure-Vm's of on-premises machines zijn met een geïnstalleerde bewakings agent. Doel eindpunten kunnen worden Microsoft 365 Url's, Dynamics 365 Url's, aangepaste Url's, Azure VM-resource-Id's, IPv4, IPv6, FQDN of een domein naam.
 
-### <a name="access-connection-monitor-preview"></a>Toegang tot verbindings monitor (preview-versie)
+### <a name="access-connection-monitor"></a>Monitor voor toegang tot verbinding
 
 1. Ga op de start pagina van Azure Portal naar **Network Watcher**.
-1. Selecteer aan de linkerkant in het gedeelte **controle** de optie **verbindings monitor (preview-versie)**.
-1. U ziet alle verbindings monitors die zijn gemaakt in de verbindings monitor (preview-versie). Ga naar het tabblad **verbindings controle** om de verbindings monitors weer te geven die zijn gemaakt in de klassieke ervaring van de verbindings monitor.
+1. Selecteer aan de linkerkant in het gedeelte **controle** de optie **verbindings monitor**.
+1. U ziet alle verbindings monitors die zijn gemaakt in de verbindings monitor. Ga naar het tabblad **verbindings controle** om de verbindings monitors weer te geven die zijn gemaakt in de klassieke ervaring van de verbindings monitor.
     
-  :::image type="content" source="./media/connection-monitor-2-preview/cm-resource-view.png" alt-text="Scherm afbeelding met verbindings monitors die zijn gemaakt in de verbindings monitor (preview)" lightbox="./media/connection-monitor-2-preview/cm-resource-view.png":::
+  :::image type="content" source="./media/connection-monitor-2-preview/cm-resource-view.png" alt-text="Scherm afbeelding met verbindings monitors die zijn gemaakt in de verbindings monitor" lightbox="./media/connection-monitor-2-preview/cm-resource-view.png":::
 
 ### <a name="create-a-connection-monitor"></a>Een verbindingsmonitor maken
 
-Bij verbindings monitors die u in verbindings monitor (preview) maakt, kunt u zowel on-premises machines als Azure-Vm's toevoegen als bronnen. Deze verbindings monitors kunnen ook de connectiviteit met eind punten bewaken. De eind punten kunnen zich op Azure of een andere URL of een ander IP-adres bevindt.
+In verbindings monitors die u maakt in verbindings beheer, kunt u on-premises machines en Azure-Vm's als bronnen toevoegen. Deze verbindings monitors kunnen ook de connectiviteit met eind punten bewaken. De eind punten kunnen zich op Azure of een andere URL of een ander IP-adres bevindt.
 
-Verbindings monitor (preview) omvat de volgende entiteiten:
+De verbindings monitor bevat de volgende entiteiten:
 
 * **Bron van de verbindings monitor** : een regio-specifieke Azure-resource. Alle volgende entiteiten zijn eigenschappen van een verbindingscontrole resource.
 * **Eind punt** – een bron of doel die deel uitmaakt van connectiviteits controles. Voor beelden van eind punten zijn Azure-Vm's, on-premises agents, Url's en Ip's.
@@ -111,7 +111,7 @@ Verbindings monitor (preview) omvat de volgende entiteiten:
 
  ![Diagram van een verbindings monitor, waarbij de relatie tussen test groepen en tests wordt gedefinieerd](./media/connection-monitor-2-preview/cm-tg-2.png)
 
-U kunt een preview van de verbindings monitor maken met behulp van [Azure Portal](connection-monitor-preview-create-using-portal.md) of [ARMClient](connection-monitor-preview-create-using-arm-client.md)
+U kunt een verbindings monitor maken met behulp van [Azure Portal](connection-monitor-preview-create-using-portal.md) of [ARMClient](connection-monitor-preview-create-using-arm-client.md)
 
 Alle bronnen, doelen en test configuraties die u toevoegt aan een test groep, worden opgesplitst naar afzonderlijke tests. Hier volgt een voor beeld van hoe bronnen en bestemmingen worden uitgesplitst:
 
@@ -151,7 +151,7 @@ Nadat u een verbindings monitor hebt gemaakt, controleren bronnen de connectivit
 
 ### <a name="checks-in-a-test"></a>Controles in een test
 
-Op basis van het protocol dat u hebt gekozen in de test configuratie, voert verbindings controle (preview) een reeks controles uit voor het koppelen van de bron bestemming. De controles worden uitgevoerd op basis van de door u gekozen test frequentie.
+Op basis van het protocol dat u hebt gekozen in de test configuratie, voert de verbindings monitor een reeks controles uit voor het koppelen van de bron bestemming. De controles worden uitgevoerd op basis van de door u gekozen test frequentie.
 
 Als u HTTP gebruikt, berekent de service het aantal HTTP-antwoorden dat een geldige antwoord code heeft geretourneerd. Geldige antwoord codes kunnen worden ingesteld met behulp van Power shell en CLI. Het resultaat bepaalt het percentage mislukte controles. De service meet de tijd tussen een HTTP-aanroep en het antwoord om de RTT te berekenen.
 
@@ -164,14 +164,14 @@ Op basis van de gegevens die de controles retour neren, kunnen tests de volgende
 * **Geslaagd** : werkelijke waarden voor het percentage mislukte controles en de RTT bevinden zich binnen de opgegeven drempel waarden.
 * **Mislukt** : werkelijke waarden voor het percentage mislukte controles of de RTT heeft de opgegeven drempel waarden overschreden. Als er geen drempel waarde is opgegeven, wordt de fout status door een test bereikt wanneer het percentage mislukte controles 100 is.
 * **Waarschuwing** : 
-     * Als er een drempel waarde is opgegeven en de verbindings monitor (preview) controles mislukt percentage meer dan 80% van de drempel waarde, wordt de test als een waarschuwing gemarkeerd.
-     * Als er geen drempel waarden zijn opgegeven, wijst verbindings monitor (preview) automatisch een drempel waarde toe. Wanneer deze drempel waarde wordt overschreden, wordt de test status gewijzigd in waarschuwing.Voor de retour tijd in TCP-of ICMP-tests is de drempel waarde 750msec. Voor mislukte controles is de drempel waarde 10%. 
+     * Als de drempel waarde is opgegeven en de verbindings monitor het aantal 80 mislukte controles controleert, wordt de test als een waarschuwing gemarkeerd.
+     * Als er geen drempel waarden zijn opgegeven, wijst verbindings monitor automatisch een drempel waarde toe. Wanneer deze drempel waarde wordt overschreden, wordt de test status gewijzigd in waarschuwing.Voor de retour tijd in TCP-of ICMP-tests is de drempel waarde 750msec. Voor mislukte controles is de drempel waarde 10%. 
 * **Onbepaald**   -Geen gegevens in Log Analytics werk ruimte.Controleer de metrische gegevens. 
 * **Niet actief**   -Uitgeschakeld door test groep uit te scha kelen  
 
 ### <a name="data-collection-analysis-and-alerts"></a>Gegevens verzameling,-analyse en-waarschuwingen
 
-De gegevens die door verbindings monitor (preview) worden verzameld, worden opgeslagen in de werk ruimte Log Analytics. U kunt deze werk ruimte instellen tijdens het maken van de verbindings monitor. 
+De gegevens die door de verbindings monitor worden verzameld, worden opgeslagen in de werk ruimte Log Analytics. U kunt deze werk ruimte instellen tijdens het maken van de verbindings monitor. 
 
 Bewakings gegevens zijn ook beschikbaar in Azure Monitor meet waarden. U kunt Log Analytics gebruiken om uw bewakings gegevens even lang te houden als u wilt. Azure Monitor metrische gegevens standaard slechts 30 dagen worden opgeslagen. 
 
@@ -181,7 +181,7 @@ U kunt [op metrische op basis van de gegevens waarschuwingen instellen](https://
 
 Op de Dash boards controleren ziet u een lijst met de verbindings monitors die u kunt openen voor uw abonnementen, regio's, tijds tempels, bronnen en doel typen.
 
-Wanneer u naar de verbindings monitor (preview) gaat vanuit Network Watcher, kunt u gegevens weer geven op:
+Wanneer u naar de verbindings monitor gaat vanuit Network Watcher, kunt u gegevens weer geven op:
 
 * **Verbindings monitor** : een lijst met alle verbindings monitors die zijn gemaakt voor uw abonnementen, regio's, tijds tempels, bronnen en doel typen. Deze weer gave is de standaard instelling.
 * **Test groepen** : een lijst met alle test groepen die zijn gemaakt voor uw abonnementen, regio's, tijds tempels, bronnen en doel typen. Deze test groepen worden niet gefilterd op verbindings monitors.
@@ -197,20 +197,20 @@ U kunt een lijst filteren op basis van:
 * **Op status gebaseerde filters** : filteren op de status van de verbindings monitor, test groep of test. Zie vak 2 in de volgende afbeelding.
 * **Filter voor waarschuwing op basis van filteren** op waarschuwingen die zijn geactiveerd op de bron van de verbindings monitor. Zie vak 3 in de volgende afbeelding.
 
-  :::image type="content" source="./media/connection-monitor-2-preview/cm-view.png" alt-text="Scherm afbeelding die laat zien hoe u de weer gaven van verbindings monitors, test groepen en tests in verbindings monitor kunt filteren (preview-versie)" lightbox="./media/connection-monitor-2-preview/cm-view.png":::
+  :::image type="content" source="./media/connection-monitor-2-preview/cm-view.png" alt-text="Scherm afbeelding die laat zien hoe u de weer gaven van verbindings monitors, test groepen en tests in verbindings monitor kunt filteren " lightbox="./media/connection-monitor-2-preview/cm-view.png":::
     
-Bijvoorbeeld, om te kijken naar alle tests in verbindings monitor (preview) waarbij het bron-IP-adres 10.192.64.56 is:
+Bijvoorbeeld om te kijken naar alle tests in de verbindings monitor waarbij het bron-IP-adres 10.192.64.56 is:
 1. Wijzig de weer gave om deze te **testen**.
 1. Typ *10.192.64.56* in het zoek veld
 1. Selecteer **bronnen** in **bereik** in het bovenste niveau filter.
 
-Alleen mislukte testen weer geven in verbindings monitor (preview) waarbij het bron-IP-adres 10.192.64.56 is:
+Alleen mislukte testen weer geven in verbindings monitor waarbij het bron-IP-adres 10.192.64.56 is:
 1. Wijzig de weer gave om deze te **testen**.
 1. Selecteer voor het filter op basis van status de optie **mislukt**.
 1. Typ *10.192.64.56* in het zoek veld
 1. Selecteer **bronnen** in **bereik** in het bovenste niveau filter.
 
-Alleen mislukte testen weer geven in verbindings monitor (preview) waarbij de bestemming outlook.office365.com is:
+Alleen mislukte testen weer geven in verbindings monitor waarbij de bestemming outlook.office365.com is:
 1. Wijzig de weer gave om deze te **testen**.
 1. Selecteer voor het filter op basis van status de optie **mislukt**.
 1. Voer in het zoek veld *Outlook.office365.com* in
@@ -265,35 +265,35 @@ Gebruik Log Analytics om aangepaste weer gaven van uw bewakings gegevens te make
 
 #### <a name="metrics-in-azure-monitor"></a>Metrische gegevens in Azure Monitor
 
-In verbindings monitors die zijn gemaakt vóór de ervaring van de verbindings monitor (preview-versie) zijn alle vier de metrische gegevens beschikbaar:% probe failed, AverageRoundtripMs, ChecksFailedPercent (preview) en RoundTripTimeMs (preview). In verbindings monitors die zijn gemaakt in de ervaring van de verbindings monitor (preview-versie) zijn gegevens alleen beschikbaar voor de metrische waarden die zijn gelabeld met *(preview)*.
+In verbindings monitors die zijn gemaakt voor de ervaring van de verbindings monitor, zijn alle vier de metrische gegevens beschikbaar:% probe failed, AverageRoundtripMs, ChecksFailedPercent (preview) en RoundTripTimeMs (preview). Bij verbindings monitors die zijn gemaakt in de ervaring met de verbindings monitor, zijn gegevens alleen beschikbaar voor de metrieken die zijn gelabeld met *(preview)*.
 
-  :::image type="content" source="./media/connection-monitor-2-preview/monitor-metrics.png" alt-text="Scherm opname met metrische gegevens in de verbindings monitor (preview-versie)" lightbox="./media/connection-monitor-2-preview/monitor-metrics.png":::
+  :::image type="content" source="./media/connection-monitor-2-preview/monitor-metrics.png" alt-text="Scherm opname met metrische gegevens in verbindings monitor" lightbox="./media/connection-monitor-2-preview/monitor-metrics.png":::
 
 Wanneer u metrische gegevens gebruikt, stelt u het resource type in als micro soft. Network/networkWatchers/connectionMonitors
 
 | Gegevens | Weergavenaam | Eenheid | Aggregatietype | Beschrijving | Afmetingen |
 | --- | --- | --- | --- | --- | --- |
-| ProbesFailedPercent | % Tests mislukt | Percentage | Gemiddeld | Het percentage van de connectiviteits controle tests is mislukt. | Geen dimensies |
-| AverageRoundtripMs | Gem. retour tijd (MS) | Milliseconden | Gemiddeld | Gemiddelde netwerk-RTT voor connectiviteits controle tests die zijn verzonden tussen de bron en de bestemming. |             Geen dimensies |
-| ChecksFailedPercent (preview-versie) | % Controles mislukt (preview-versie) | Percentage | Gemiddeld | Percentage mislukte controles voor een test. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Regio |
-| RoundTripTimeMs (preview-versie) | Retour tijd (MS) (preview-versie) | Milliseconden | Gemiddeld | RTT voor controles die worden verzonden tussen de bron en de bestemming. Deze waarde is niet van het gemiddelde. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Regio |
+| ProbesFailedPercent | % Tests mislukt | Percentage | Average | Het percentage van de connectiviteits controle tests is mislukt. | Geen dimensies |
+| AverageRoundtripMs | Gem. retour tijd (MS) | Milliseconden | Average | Gemiddelde netwerk-RTT voor connectiviteits controle tests die zijn verzonden tussen de bron en de bestemming. |             Geen dimensies |
+| ChecksFailedPercent (preview-versie) | % Controles mislukt (preview-versie) | Percentage | Average | Percentage mislukte controles voor een test. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Regio |
+| RoundTripTimeMs (preview-versie) | Retour tijd (MS) (preview-versie) | Milliseconden | Average | RTT voor controles die worden verzonden tussen de bron en de bestemming. Deze waarde is niet van het gemiddelde. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Regio |
 
 #### <a name="metric-based-alerts-for-connection-monitor"></a>Waarschuwingen op basis van metrische gegevens voor verbindings monitor
 
 U kunt metrische waarschuwingen maken op verbindings monitors met behulp van de onderstaande methoden 
 
-1. Vanuit verbindings monitor (preview) tijdens het maken van een verbindings monitor [met Azure Portal](connection-monitor-preview-create-using-portal.md#) 
-1. Vanuit verbindings monitor (preview) met behulp van ' waarschuwingen configureren ' in het dash board 
+1. Via verbindings monitor tijdens het maken van een verbindings monitor [met Azure Portal](connection-monitor-preview-create-using-portal.md#) 
+1. Vanuit verbindings monitor, met behulp van waarschuwingen configureren in het dash board 
 1. Van Azure Monitor-om een waarschuwing te maken in Azure Monitor: 
-    1. Kies de bron van de verbindings monitor die u hebt gemaakt in de verbindings monitor (preview-versie).
+    1. Kies de bron van de verbindings monitor die u hebt gemaakt in de verbindings monitor.
     1. Zorg ervoor dat **metrische gegevens** worden weer gegeven als signaal type voor de verbindings monitor.
     1. In voor **waarde toevoegen** selecteert u voor de **signaal naam** **ChecksFailedPercent (preview)** of **RoundTripTimeMs (preview)**.
     1. Kies **metrische gegevens** bij **signaal type**. Selecteer bijvoorbeeld **ChecksFailedPercent (preview)**.
     1. Alle dimensies voor de metriek worden weer gegeven. Kies de dimensie naam en dimensie waarde. Selecteer bijvoorbeeld **bron adres** en voer vervolgens het IP-adres in van een bron in de verbindings monitor.
     1. Vul in **waarschuwings logica** de volgende gegevens in:
-        * **Voorwaarde type** : **static**.
+        * **Voorwaarde type**: **static**.
         * **Voor waarde** en **drempel** waarde.
-        * **Aggregatie granulatie en frequentie van de evaluatie: met** verbindings monitor (preview) worden gegevens elke minuut bijgewerkt.
+        * **Aggregatie granulatie en frequentie van evaluatie: met** verbindings monitor worden gegevens elke minuut bijgewerkt.
     1. Kies in **acties** uw actie groep.
     1. Geef waarschuwings Details op.
     1. De waarschuwings regel maken.
@@ -302,7 +302,7 @@ U kunt metrische waarschuwingen maken op verbindings monitors met behulp van de 
 
 ## <a name="diagnose-issues-in-your-network"></a>Problemen in uw netwerk vaststellen
 
-Met verbindings monitor (preview) kunt u problemen in uw verbindings monitor en uw netwerk diagnosticeren. Problemen in uw hybride netwerk worden gedetecteerd door de Log Analytics agents die u eerder hebt geïnstalleerd. Problemen in Azure worden gedetecteerd door de extensie Network Watcher. 
+Met verbindings monitor kunt u problemen in uw verbindings monitor en uw netwerk diagnosticeren. Problemen in uw hybride netwerk worden gedetecteerd door de Log Analytics agents die u eerder hebt geïnstalleerd. Problemen in Azure worden gedetecteerd door de extensie Network Watcher. 
 
 U kunt problemen weer geven in het Azure-netwerk in de netwerk topologie.
 
@@ -348,5 +348,5 @@ Voor netwerken waarvan de bronnen virtuele Azure-machines zijn, kunnen de volgen
 
 ## <a name="next-steps"></a>Volgende stappen
     
-   * Meer informatie [over het maken van een verbindings monitor (preview) met behulp van Azure Portal](connection-monitor-preview-create-using-portal.md)  
-   * Meer informatie [over het maken van een verbindings monitor (preview) met behulp van ARMClient](connection-monitor-preview-create-using-arm-client.md)  
+   * Meer informatie [over het maken van een verbindings monitor met Azure Portal](connection-monitor-preview-create-using-portal.md)  
+   * Meer informatie [over het maken van een verbindings monitor met ARMClient](connection-monitor-preview-create-using-arm-client.md)  

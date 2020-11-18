@@ -10,22 +10,22 @@ ms.custom: REST, seodec18
 ms.topic: how-to
 ms.date: 11/19/2019
 ms.author: allensu
-ms.openlocfilehash: 3b5aedb20bc7a8d2aa6f3aa3d8691a71af4cd3a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eeca560989c174bcb654116eb13da40d6ec79e60
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84808375"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700508"
 ---
 # <a name="get-load-balancer-usage-metrics-using-the-rest-api"></a>Load Balancer metrische gegevens over het gebruik van de REST API ophalen
 
-Het aantal bytes dat is verwerkt door een [Standard Load Balancer](/azure/load-balancer/load-balancer-standard-overview) , verzamelen gedurende een tijds interval met behulp van de [Azure rest API](/rest/api/azure/).
+Het aantal bytes dat is verwerkt door een [Standard Load Balancer](./load-balancer-overview.md) , verzamelen gedurende een tijds interval met behulp van de [Azure rest API](/rest/api/azure/).
 
 Volledige referentie documentatie en aanvullende voor beelden voor de REST API zijn beschikbaar in de [Azure monitor rest-referentie](/rest/api/monitor). 
 
 ## <a name="build-the-request"></a>De aanvraag maken
 
-Gebruik de volgende GET-aanvraag om de [ByteCount-metriek](/azure/load-balancer/load-balancer-standard-diagnostics#multi-dimensional-metrics) van een Standard Load Balancer te verzamelen. 
+Gebruik de volgende GET-aanvraag om de [ByteCount-metriek](./load-balancer-standard-diagnostics.md#multi-dimensional-metrics) van een Standard Load Balancer te verzamelen. 
 
 ```http
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{loadBalancerName}/providers/microsoft.insights/metrics?api-version=2018-01-01&metricnames=ByteCount&timespan=2018-06-05T03:00:00Z/2018-06-07T03:00:00Z
@@ -44,10 +44,10 @@ De volgende headers zijn vereist:
 
 | Naam | Beschrijving |
 | :--- | :---------- |
-| subscriptionId | De abonnements-ID waarmee een Azure-abonnement wordt geïdentificeerd. Als u meerdere abonnementen hebt, raadpleegt u [werken met meerdere abonnementen](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
+| subscriptionId | De abonnements-ID waarmee een Azure-abonnement wordt geïdentificeerd. Als u meerdere abonnementen hebt, raadpleegt u [werken met meerdere abonnementen](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
 | resourceGroupName | De naam van de resource groep die de resource bevat. U kunt deze waarde verkrijgen via de Azure Resource Manager-API, CLI of de portal. |
 | loadBalancerName | De naam van de Azure Load Balancer. |
-| metrische namen | Een door komma's gescheiden lijst met geldige  [Load Balancer metrische gegevens](/azure/load-balancer/load-balancer-standard-diagnostics). |
+| metrische namen | Een door komma's gescheiden lijst met geldige  [Load Balancer metrische gegevens](./load-balancer-standard-diagnostics.md). |
 | api-versie | De API-versie die voor de aanvraag moet worden gebruikt.<br /><br /> In dit document wordt de API-versie beschreven `2018-01-01` die is opgenomen in de bovenstaande URL.  |
 | tijdsbestek | De time span van de query. Het is een teken reeks met de volgende indeling `startDateTime_ISO/endDateTime_ISO` . Deze optionele para meter is zo ingesteld dat de gegevens van een dag in het voor beeld worden geretourneerd. |
 | &nbsp; | &nbsp; |

@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 02/13/2019
 ms.author: curtand
-ms.openlocfilehash: 133e6b533a3d87ef519d0f586ea59db1bbce28b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c96be79a349478db7d0452cae1ff07ee1c48aaa3
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83744487"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700083"
 ---
 # <a name="set-up-the-microsoft-authenticator-app-as-your-verification-method"></a>De app Microsoft Authenticator instellen als uw verificatiemethode
 
@@ -45,6 +45,11 @@ Methoden voor beveiligingsgegevens worden zowel gebruikt voor tweeledige beveili
 ## <a name="set-up-the-microsoft-authenticator-app-from-the-security-info-page"></a>De Microsoft Authenticator-app instellen op de pagina met beveiligings gegevens
 
 Afhankelijk van de instellingen van uw organisatie kunt u mogelijk een verificatie-app gebruiken als een van uw methoden voor beveiligings gegevens. U hoeft de Microsoft Authenticator-app niet te gebruiken en u kunt een andere app kiezen tijdens het instellen van het proces. In dit artikel wordt echter uitgegaan van de app Microsoft Authenticator.
+
+>[!Important]
+> Als u Microsoft Authenticator-app hebt ingesteld op vijf verschillende apparaten of 5 hardware-tokens, kunt u een zesde versie niet instellen en ziet u mogelijk het volgende fout bericht.
+> 
+> **U kunt Microsoft Authenticator niet instellen omdat u al vijf verificator-apps of-hardware-tokens hebt. Neem contact op met uw beheerder om een van uw verificator-apps of-hardware-tokens te verwijderen.**
 
 ### <a name="to-set-up-the-microsoft-authenticator-app"></a>De app Microsoft Authenticator instellen
 
@@ -117,7 +122,7 @@ Als u uw verificator-app niet meer wilt gebruiken als een beveiligings gegevens 
 
 2. Selecteer **Ja** in het bevestigings venster om de verificator-app te verwijderen. Nadat de verificator-app is verwijderd, wordt deze verwijderd uit de beveiligings gegevens en verdwijnt deze van de pagina met **beveiligings gegevens** . Als de verificator-app de standaard methode is, wordt de standaard waarde gewijzigd in een andere beschik bare methode.
 
-3. Open de verificator-app op uw mobiele apparaat, selecteer **accounts bewerken**en verwijder vervolgens uw werk-of school account uit de verificator-app.
+3. Open de verificator-app op uw mobiele apparaat, selecteer **accounts bewerken** en verwijder vervolgens uw werk-of school account uit de verificator-app.
 
     Uw account is volledig verwijderd uit de verificator-app voor twee ledige verificatie en aanvragen voor het opnieuw instellen van wacht woorden.
 

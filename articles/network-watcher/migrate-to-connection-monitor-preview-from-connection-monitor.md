@@ -1,7 +1,7 @@
 ---
-title: Migreren naar verbindings monitor (preview) vanuit verbindings monitor
+title: Migreren naar verbindings monitor vanuit verbindings monitor
 titleSuffix: Azure Network Watcher
-description: Meer informatie over hoe u kunt migreren naar verbindings monitor (preview) vanuit verbindings monitor.
+description: Meer informatie over hoe u kunt migreren naar verbindings monitor vanuit verbindings monitor.
 services: network-watcher
 documentationcenter: na
 author: vinynigam
@@ -12,23 +12,23 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/20/2020
 ms.author: vinigam
-ms.openlocfilehash: 05b42024529b8d9de3590488ecafbdf83283e007
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d77ec77bae0394b11cb47ae838740dc39855f7c
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441813"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699064"
 ---
-# <a name="migrate-to-connection-monitor-preview-from-connection-monitor"></a>Migreren naar verbindings monitor (preview) vanuit verbindings monitor
+# <a name="migrate-to-connection-monitor-from-connection-monitor"></a>Migreren naar verbindings monitor vanuit verbindings monitor
 
-U kunt bestaande verbindings monitors migreren naar nieuwe, verbeterde verbindings controle (preview) met slechts enkele klikken en met een downtime van nul. Zie [verbindings monitor (preview)](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview)voor meer informatie over de voor delen.
+U kunt bestaande verbindings monitors migreren naar nieuwe, verbeterde verbindings controle met slechts enkele klikken en met een downtime van nul. Zie [verbindings monitor](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview)voor meer informatie over de voor delen.
 
 ## <a name="key-points-to-note"></a>Belangrijkste punten om te noteren
 
 De migratie helpt de volgende resultaten te produceren:
 
 * De agents en Firewall instellingen werken zoals. Er zijn geen wijzigingen vereist. 
-* Bestaande verbindings monitors worden toegewezen aan de controle groep (preview) voor > test groepen > test-indeling. Als u **bewerken**selecteert, kunt u de eigenschappen van de nieuwe verbindings monitor weer geven en wijzigen, een sjabloon downloaden om wijzigingen aan te brengen in de verbindings monitor en deze verzenden via Azure Resource Manager. 
+* Bestaande verbindings monitors worden toegewezen aan de verbindings monitor > test groep > test-indeling. Als u **bewerken** selecteert, kunt u de eigenschappen van de nieuwe verbindings monitor weer geven en wijzigen, een sjabloon downloaden om wijzigingen aan te brengen in de verbindings monitor en deze verzenden via Azure Resource Manager. 
 * Virtuele Azure-machines met de extensie Network Watcher verzenden gegevens naar zowel de werk ruimte als de metrieken. Met verbindings monitor worden de gegevens beschikbaar via de nieuwe metrieken (ChecksFailedPercent [Preview] en RoundTripTimeMs [Preview]) in plaats van de oude metrieken (ProbesFailedPercent en AverageRoundtripMs). 
 * Gegevens bewaking:
    * **Waarschuwingen**: automatisch gemigreerd naar de nieuwe metrische gegevens.
@@ -40,15 +40,15 @@ Als u een aangepaste werk ruimte gebruikt, zorg er dan voor dat Network Watcher 
 
 ## <a name="migrate-the-connection-monitors"></a>De verbindings monitors migreren
 
-1. Als u de oudere verbindings monitors naar de nieuwere versie wilt migreren, selecteert u **verbindings monitor**en selecteert u vervolgens verbindings monitors **migreren**.
+1. Als u de oudere verbindings monitors naar de nieuwere versie wilt migreren, selecteert u **verbindings monitor** en selecteert u vervolgens verbindings monitors **migreren**.
 
-    ![Scherm opname van de migratie van verbindings monitors naar verbindings monitor (preview).](./media/connection-monitor-2-preview/migrate-cm-to-cm-preview.png)
+    ![Scherm opname van de migratie van verbindings monitors naar verbindings monitor.](./media/connection-monitor-2-preview/migrate-cm-to-cm-preview.png)
     
 1. Selecteer uw abonnement en de monitors voor de verbinding die u wilt migreren en selecteer vervolgens **migreren geselecteerd**. 
 
-Met slechts enkele klikken hebt u de bestaande verbindings monitors gemigreerd naar de verbindings monitor (preview-versie). 
+Met slechts een paar muis klikken hebt u de bestaande verbindings monitors gemigreerd naar de verbindings monitor. 
 
-U kunt nu de eigenschappen van de verbindings monitor (preview-versie) aanpassen, de standaardwerk ruimte wijzigen, sjablonen downloaden en de migratie status controleren. 
+U kunt nu eigenschappen van de verbindings monitor aanpassen, de standaardwerk ruimte wijzigen, sjablonen downloaden en de migratie status controleren. 
 
 Nadat de migratie is gestart, worden de volgende wijzigingen doorgevoerd: 
 * De Azure Resource Manager bron wordt gewijzigd in de nieuwere verbindings monitor.
@@ -57,12 +57,12 @@ Nadat de migratie is gestart, worden de volgende wijzigingen doorgevoerd:
     * Elke test wordt gemigreerd naar een test groep met de naam *defaultTestGroup*.
     * De bron-en doel-eind punten worden gemaakt en gebruikt in de nieuwe test groep. De standaard namen zijn *defaultSourceEndpoint* en *defaultDestinationEndpoint*.
     * De doel poort en het probing-interval worden verplaatst naar een test configuratie met de naam *defaultTestConfiguration*. Het protocol wordt ingesteld op basis van de poort waarden. De drempel waarden voor geslaagde pogingen en andere optionele eigenschappen blijven leeg.
-* Waarschuwingen voor metrische gegevens worden gemigreerd naar de metrische waarschuwingen voor verbindings controle (preview). De metrische gegevens zijn anders, dus de wijziging. Zie [netwerk connectiviteit controleren met verbindings monitor (preview)](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#metrics-in-azure-monitor)voor meer informatie.
-* De gemigreerde verbindings monitors worden niet meer weer gegeven als de oudere oplossing van de verbindings monitor. Ze zijn nu alleen beschikbaar voor gebruik in verbindings monitor (preview-versie).
+* Waarschuwingen voor metrische gegevens worden gemigreerd naar waarschuwingen over metrische gegevens van verbindings controle. De metrische gegevens zijn anders, dus de wijziging. Zie [netwerk connectiviteit controleren met verbindings monitor](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#metrics-in-azure-monitor)voor meer informatie.
+* De gemigreerde verbindings monitors worden niet meer weer gegeven als de oudere oplossing van de verbindings monitor. Ze zijn nu alleen beschikbaar voor gebruik in de verbindings monitor.
 * Externe integraties, zoals Dash boards in Power BI en Grafana en integraties met Security Information and Event Management-systemen (SIEM), moeten hand matig worden gemigreerd. Dit is de enige hand matige stap die u moet uitvoeren om uw installatie te migreren.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over verbindings monitor (preview):
-* [Migreren van Netwerkprestatiemeter naar verbindings monitor (preview-versie)](migrate-to-connection-monitor-preview-from-network-performance-monitor.md)
-* [Verbindings monitor (preview-versie) maken met behulp van de Azure Portal](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview-create-using-portal)
+Zie voor meer informatie over verbindings monitor:
+* [Migreren van Netwerkprestatiemeter naar verbindings monitor](migrate-to-connection-monitor-preview-from-network-performance-monitor.md)
+* [Verbindings monitor maken met behulp van de Azure Portal](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview-create-using-portal)

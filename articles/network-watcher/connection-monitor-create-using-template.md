@@ -1,7 +1,7 @@
 ---
-title: De preview-versie van de verbindings monitor maken-ARMClient
+title: Verbindings monitor maken-ARMClient
 titleSuffix: Azure Network Watcher
-description: Meer informatie over het maken van een verbindings monitor (preview) met behulp van de ARMClient.
+description: Meer informatie over het maken van een verbindings monitor met behulp van de ARMClient.
 services: network-watcher
 documentationcenter: na
 author: vinigam
@@ -12,22 +12,22 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: 5a351e550cac9edcc8ce1c54fbe5c57d012ee607
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 929a2feeb53e8903d675644dcb72b422eceb2858
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94447665"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699097"
 ---
-# <a name="create-a-connection-monitor-preview-using-the-armclient"></a>Een verbindings monitor (preview) maken met behulp van de ARMClient
+# <a name="create-a-connection-monitor-using-the-armclient"></a>Een verbindings monitor maken met behulp van de ARMClient
 
-Meer informatie over het maken van een verbindings monitor (preview) voor het bewaken van de communicatie tussen uw resources met behulp van de ARMClient. Het ondersteunt hybride en Azure-Cloud implementaties.
+Meer informatie over het maken van een verbindings monitor voor het bewaken van de communicatie tussen uw resources met behulp van de ARMClient. Het ondersteunt hybride en Azure-Cloud implementaties.
 
 ## <a name="before-you-begin"></a>Voordat u begint 
 
-Bij verbindings monitors die u in verbindings monitor (preview) maakt, kunt u zowel on-premises machines als Azure-Vm's toevoegen als bronnen. Deze verbindings monitors kunnen ook de connectiviteit met eind punten bewaken. De eind punten kunnen zich op Azure of een andere URL of een ander IP-adres bevindt.
+In verbindings monitors die u maakt in verbindings beheer, kunt u on-premises machines en Azure-Vm's als bronnen toevoegen. Deze verbindings monitors kunnen ook de connectiviteit met eind punten bewaken. De eind punten kunnen zich op Azure of een andere URL of een ander IP-adres bevindt.
 
-Verbindings monitor (preview) omvat de volgende entiteiten:
+De verbindings monitor bevat de volgende entiteiten:
 
 * **Bron van de verbindings monitor** : een regio-specifieke Azure-resource. Alle volgende entiteiten zijn eigenschappen van een verbindingscontrole resource.
 * **Eind punt** – een bron of doel die deel uitmaakt van connectiviteits controles. Voor beelden van eind punten zijn Azure-Vm's, on-premises agents, Url's en Ip's.
@@ -359,7 +359,7 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
 
 * Eindpunten
     * naam: unieke naam voor elk eind punt
-    * resourceId: voor Azure-eind punten verwijst de resource-ID naar de Azure Resource Manager-Resource-ID voor virtuele machines. Voor niet-Azure-eind punten verwijst Resource-ID naar de Azure Resource Manager-Resource-ID voor de Log Analytics werk ruimte die is gekoppeld aan niet-Azure-agents.
+    * resourceId: voor Azure-eind punten verwijst de resource-ID naar de Azure Resource Manager Resource-ID voor virtuele machines. Voor niet-Azure-eind punten verwijst Resource-ID naar de Azure Resource Manager Resource-ID voor de Log Analytics-werk ruimte die is gekoppeld aan niet-Azure-agents.
     * adres: alleen van toepassing als de resource-ID niet is opgegeven of als de resource-ID Log Analytics werk ruimte is. Als dit wordt gebruikt in combi natie met Log Analytics Resource-ID, verwijst dit naar de FQDN van de agent die kan worden gebruikt voor de bewaking. Als u zonder Resource-ID gebruikt, kan dit de URL of het IP-adres van een openbaar eind punt zijn.
     * filter: voor niet-Azure-eind punten gebruikt u filter om agents te selecteren uit Log Analytics werk ruimte die wordt gebruikt voor de bewaking van de bron van de verbindings monitor. Als er geen filters zijn ingesteld, kunnen alle agents die deel uitmaken van de Log Analytics-werk ruimte worden gebruikt voor de bewaking
         * type: Stel type in als agent adres

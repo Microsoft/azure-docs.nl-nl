@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: 5935bc3f59585b19fc3b45bdfd567bb1f9404234
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 0e209e8114d8f1791a00e87894fa12206edcf34e
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675577"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700219"
 ---
 # <a name="create-and-manage-api-keys-for-an-azure-cognitive-search-service"></a>API-sleutels voor een Azure Cognitive Search-service maken en beheren
 
 Alle aanvragen voor een zoek service moeten een alleen-lezen-aanvraag hebben `api-key` die specifiek voor uw service is gegenereerd. Het `api-key` is het enige mechanisme voor het verifiëren van toegang tot het eind punt van de zoek service en moet worden opgenomen in elke aanvraag. 
 
-+ In [rest oplossingen](search-get-started-postman.md)wordt de API-sleutel doorgaans opgegeven in een aanvraag header
++ In [rest oplossingen](search-get-started-rest.md)wordt de API-sleutel doorgaans opgegeven in een aanvraag header
 
 + In [.net-oplossingen](search-howto-dotnet-sdk.md)wordt een sleutel vaak opgegeven als een configuratie-instelling en vervolgens door gegeven als een [AzureKeyCredential](/dotnet/api/azure.azurekeycredential)
 
@@ -51,7 +51,7 @@ U kunt toegangs sleutels verkrijgen in de portal of via de [beheer rest API](/re
 2. Vermeld de [Zoek Services](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices)  voor uw abonnement.
 3. Selecteer de service en klik op de pagina overzicht op **instellingen**  > **sleutels** om de beheer-en query sleutels weer te geven.
 
-   :::image type="content" source="media/search-security-overview/settings-keys.png" alt-text="Portal-pagina, instellingen ophalen, sectie sleutels" border="false":::
+   :::image type="content" source="media/search-security-overview/settings-keys.png" alt-text="Portal-pagina, instellingen weer geven, sectie sleutels" border="false":::
 
 ## <a name="create-query-keys"></a>Query sleutels maken
 
@@ -61,11 +61,11 @@ Het beperken van toegang en bewerkingen in client-apps is essentieel voor het be
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 2. Vermeld de [Zoek Services](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices)  voor uw abonnement.
-3. Selecteer de service en klik op de pagina overzicht op **instellingen**  > **sleutels** .
-4. Klik op **query sleutels beheren** .
+3. Selecteer de service en klik op de pagina overzicht op **instellingen**  > **sleutels**.
+4. Klik op **query sleutels beheren**.
 5. Gebruik de query sleutel die al is gegenereerd voor uw service of maak 50 nieuwe query sleutels. De standaard query sleutel heeft geen naam, maar aanvullende query sleutels kunnen worden benoemd voor beheer baarheid.
 
-   :::image type="content" source="media/search-security-overview/create-query-key.png" alt-text="Portal-pagina, instellingen ophalen, sectie sleutels" border="false":::
+   :::image type="content" source="media/search-security-overview/create-query-key.png" alt-text="Een query sleutel maken of gebruiken" border="false":::
 
 > [!Note]
 > Een code voorbeeld waarin het gebruik van de query sleutel wordt weer gegeven, is te vinden in [de query een Azure Cognitive search-index in C#](./search-get-started-dotnet.md).

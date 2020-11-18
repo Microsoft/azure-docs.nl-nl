@@ -8,12 +8,12 @@ ms.author: mcarter
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/19/2020
-ms.openlocfilehash: bbbc79a129ec3140ea6d286cbdce0165e2f6ae7b
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 043020abd44bc1f8e671cf386149d6a818136de9
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92280400"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700151"
 ---
 # <a name="create-a-private-endpoint-for-a-secure-connection-to-azure-cognitive-search"></a>Een persoonlijk eind punt maken voor een beveiligde verbinding met Azure Cognitive Search
 
@@ -38,14 +38,14 @@ Met persoonlijke eind punten voor uw zoek service kunt u het volgende doen:
 
 In deze sectie maakt u een virtueel netwerk en een subnet voor het hosten van de virtuele machine die wordt gebruikt om toegang te krijgen tot het privé-eind punt van uw zoek service.
 
-1. Selecteer op Azure Portal het tabblad Start **een resource**  >  **netwerk**  >  **virtueel netwerk**maken.
+1. Selecteer op Azure Portal het tabblad Start **een resource**  >  **netwerk**  >  **virtueel netwerk** maken.
 
 1. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens:
 
     | Instelling | Waarde |
     | ------- | ----- |
     | Abonnement | Selecteer uw abonnement|
-    | Resourcegroep | Selecteer **nieuwe maken**, Voer *myResourceGroup*in en selecteer **OK** . |
+    | Resourcegroep | Selecteer **nieuwe maken**, Voer *myResourceGroup* in en selecteer **OK** . |
     | Naam | *MyVirtualNetwork* invoeren |
     | Regio | Selecteer de gewenste regio |
     |||
@@ -58,7 +58,7 @@ In deze sectie maakt u een nieuwe Azure Cognitive Search-service met een persoon
 
 1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal **een resource maken**  >  **Web**  >  **Azure Cognitive Search**.
 
-1. In **nieuwe Search service basis principes**voert u de volgende gegevens in of selecteert u deze:
+1. In **nieuwe Search service basis principes** voert u de volgende gegevens in of selecteert u deze:
 
     | Instelling | Waarde |
     | ------- | ----- |
@@ -77,9 +77,9 @@ In deze sectie maakt u een nieuwe Azure Cognitive Search-service met een persoon
 
 1. Selecteer in **nieuwe Search service netwerken** **persoonlijke** voor **endpoint Connectivity (gegevens)**.
 
-1. In **nieuwe Search service-netwerken**selecteert u **+ toevoegen** onder **persoonlijk eind punt**. 
+1. In **nieuwe Search service-netwerken** selecteert u **+ toevoegen** onder **persoonlijk eind punt**. 
 
-1. Voer in **persoonlijk eind punt maken**de volgende gegevens in of Selecteer deze:
+1. Voer in **persoonlijk eind punt maken** de volgende gegevens in of Selecteer deze:
 
     | Instelling | Waarde |
     | ------- | ----- |
@@ -87,12 +87,12 @@ In deze sectie maakt u een nieuwe Azure Cognitive Search-service met een persoon
     | Resourcegroep | Selecteer **myResourceGroup**. U hebt deze in de vorige sectie gemaakt.|
     | Locatie | Selecteer **VS - west**.|
     | Naam | Voer *myPrivateEndpoint* in.  |
-    | Stel subresource in | De standaard **searchService**behouden. |
+    | Stel subresource in | De standaard **searchService** behouden. |
     | **NETWERKEN** |  |
     | Virtueel netwerk  | Selecteer *MyVirtualNetwork* in de resource groep *myResourceGroup*. |
     | Subnet | Selecteer *mySubnet*. |
     | **INTEGRATIE VAN PRIVÉ-DNS** |  |
-    | Integreren met privé-DNS-zone  | Accepteer de standaard waarde **Ja**. |
+    | Integreren met privé-DNS-zone  | Laat de standaardwaarde **Ja** staan. |
     | Privé-DNS-zone  | Wijzig de standaard waarde * * (nieuw) privatelink.search.windows.net * *. |
     |||
 
@@ -110,7 +110,7 @@ In deze sectie maakt u een nieuwe Azure Cognitive Search-service met een persoon
 
 ## <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 
-1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal **een**  >  **Compute**  >  **virtuele machine**voor het berekenen van een resource maken.
+1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal **een**  >  **Compute**  >  **virtuele machine** voor het berekenen van een resource maken.
 
 1. Typ of selecteer in **Een virtuele machine maken - Basisprincipes** de volgende gegevens:
 
@@ -208,19 +208,19 @@ Wanneer het eind punt van de zoek service privé is, zijn sommige Portal functie
     Aliases:  [search service name].search.windows.net
     ```
 
-1. Maak vanuit de virtuele machine verbinding met de zoek service om een index te maken. U kunt deze [Snelstartgids](search-get-started-postman.md) volgen om een nieuwe zoek index in uw service te maken in postman met behulp van de rest API. Voor het instellen van aanvragen van Postman is het Search service-eind punt (https://[Zoek service naam]. Search. Windows. net) en de beheer-API-sleutel die u in een vorige stap hebt gekopieerd.
+1. Maak vanuit de virtuele machine verbinding met de zoek service om een index te maken. U kunt deze [Snelstartgids](search-get-started-rest.md) volgen om een nieuwe zoek index in uw service te maken met behulp van de rest API. Voor het instellen van aanvragen van een web API-test programma is het Search service-eind punt (https://[Zoek service naam]. Search. Windows. net) en de beheer-API-sleutel die u in een vorige stap hebt gekopieerd.
 
 1. Het volt ooien van de Quick Start van de VM is uw bevestiging dat de service volledig operationeel is.
 
-1. Sluit de verbinding met extern bureau blad met *myVM*. 
+1. Sluit de externe bureaubladverbinding met *myVM*. 
 
 1. Als u wilt controleren of uw service niet toegankelijk is op een openbaar eind punt, opent u postman op uw lokale werk station en voert u de eerste verschillende taken in de Quick Start uit. Als er een fout bericht wordt weer gegeven dat de externe server niet bestaat, hebt u een persoonlijk eind punt geconfigureerd voor uw zoek service.
 
 ## <a name="clean-up-resources"></a>Resources opschonen 
 Wanneer u klaar bent met het persoonlijke eind punt, de zoek service en de virtuele machine, verwijdert u de resource groep en alle resources die deze bevat:
-1. Voer *myResourceGroup*   in het **zoekvak** boven aan de portal in en selecteer *myResourceGroup*   in de zoek resultaten. 
+1. Voer  *myResourceGroup*   in het **zoekvak** boven aan de portal in en selecteer  *myResourceGroup*   in de zoek resultaten. 
 1. Selecteer **Resourcegroep verwijderen**. 
-1. Voer *myResourceGroup*   in bij **Typ de naam van de resource groep** en selecteer **verwijderen**.
+1. Voer  *myResourceGroup*   in bij **Typ de naam van de resource groep** en selecteer **verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel hebt u een VM gemaakt in een virtueel netwerk en een zoek service met een persoonlijk eind punt. U hebt verbinding gemaakt met de virtuele machine via internet en u kunt deze veilig door gegeven aan de zoek service met behulp van een persoonlijke koppeling. Zie [Wat is Azure private endpoint?](../private-link/private-endpoint-overview.md)voor meer informatie over privé-eind punten.

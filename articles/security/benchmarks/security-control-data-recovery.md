@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: ee28cbffd6f047b4991d29781e0b131a44c7dfae
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 835e4f681d514bb6b92caa5ee076e3794ed59236
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409175"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698815"
 ---
 # <a name="security-control-data-recovery"></a>Beveiligings beheer: gegevens herstellen
 
@@ -58,7 +58,7 @@ Zorg ervoor dat het gegevens herstel van inhoud in Azure Backup regel matig word
 |--|--|--|
 | 9.4 | 10.4 | Klant |
 
-Voor on-premises back-ups wordt versleuteling in rust geboden met de wachtwoordzin die u opgeeft wanneer u een back-up maakt in Azure. Voot Azure-VM’s worden gegevens in rust versleuteld met behulp van SSE (Storage Service Encryption). Gebruik op rollen gebaseerd toegangs beheer voor het beveiligen van back-ups en door de klant beheerde sleutels.  
+Voor on-premises back-ups wordt versleuteling in rust geboden met de wachtwoordzin die u opgeeft wanneer u een back-up maakt in Azure. Voot Azure-VM’s worden gegevens in rust versleuteld met behulp van SSE (Storage Service Encryption). Gebruik Azure op rollen gebaseerd toegangs beheer voor het beveiligen van back-ups en door de klant beheerde sleutels.  
 
 Schakel Soft-Delete in en verwijder de beveiliging in Key Vault om sleutels te beschermen tegen onbedoelde of schadelijke verwijdering.  Als Azure Storage wordt gebruikt voor het opslaan van back-ups, schakelt u de optie voor het tijdelijk verwijderen in om uw gegevens op te slaan en te herstellen wanneer blobs of BLOB-moment opnamen worden verwijderd. 
 

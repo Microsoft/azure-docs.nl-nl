@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
-ms.openlocfilehash: 46b1cbbd620cf2de8d875927f5745e91fcf608c5
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 553cfe0c1a5e7d569c127f23a11f25f4d150b0bc
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410042"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700756"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Beveiligings Services en-technologieën die beschikbaar zijn op Azure
 
@@ -67,7 +67,7 @@ In de loop van de tijd wordt deze lijst gewijzigd en groeit, net zoals in Azure.
 ## <a name="identity-and-access-management"></a>Identiteits- en toegangsbeheer
 |Service|Beschrijving|
 |------|--------|
-| [&nbsp; &nbsp; Access Control op basis van Azure Role &nbsp;](../../role-based-access-control/role-assignments-portal.md)|Een functie voor toegangs beheer waarmee gebruikers alleen toegang hebben tot de resources die ze nodig hebben om toegang te krijgen op basis van hun rollen binnen de organisatie.  |
+| [&nbsp;Toegangs beheer op basis van rollen in azure &nbsp;](../../role-based-access-control/role-assignments-portal.md)|Een functie voor toegangs beheer waarmee gebruikers alleen toegang hebben tot de resources die ze nodig hebben om toegang te krijgen op basis van hun rollen binnen de organisatie.  |
 | [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md)|Een op de cloud gebaseerde verificatie opslag die ondersteuning biedt voor een multi tenant, een Cloud Directory en meerdere identiteits beheer Services in Azure.  |
 | [Azure Active Directory B2C](../../active-directory-b2c/overview.md)|Een service voor identiteits beheer waarmee u kunt bepalen hoe klanten zich kunnen aanmelden, aanmelden en hun profielen beheren bij het gebruik van Azure-toepassingen.   |
 | [Azure Active Directory Domain Services](../../active-directory-domain-services/overview.md)| Een op de cloud gebaseerde en beheerde versie van Active Directory Domain Services. |

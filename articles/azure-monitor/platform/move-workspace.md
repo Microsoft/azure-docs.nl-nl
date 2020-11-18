@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/12/2020
-ms.openlocfilehash: 04da4d6466d450d04d7008332e32ea3d59cd0252
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 8d7fde6661a4a133f689016559f010767c662417
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555529"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699743"
 ---
 # <a name="move-a-log-analytics-workspace-to-different-subscription-or-resource-group"></a>Een Log Analytics-werk ruimte verplaatsen naar een ander abonnement of een andere resource groep
 
@@ -30,7 +30,7 @@ De bron-en doel abonnementen van de werk ruimte moeten zich in dezelfde Azure Ac
 
 ## <a name="workspace-move-considerations"></a>Overwegingen bij het verplaatsen van de werk ruimte
 - Beheerde oplossingen die in de werk ruimte zijn geïnstalleerd, worden verplaatst met de bewerking voor het verplaatsen van Log Analytics werk ruimte. 
-- Werkruimte sleutels worden opnieuw gegenereerd met werkruimte verplaatsing (primair en secundair). Als u uw werkruimte sleutel een kluis hebt, moet u deze bijwerken met de nieuwe gegenereerde sleutels. 
+- Werkruimte sleutels (primair en secundair) worden opnieuw gegenereerd met de bewerking voor het verplaatsen van de werk ruimte. Als u een kopie van uw werkruimte sleutels in de sleutel kluis bijwerkt, moet u deze bijwerken met de nieuwe sleutels die zijn gegenereerd nadat de werk ruimte is verplaatst. 
 - Verbonden agents blijven verbonden en blijven gegevens verzenden naar de werk ruimte na de verplaatsing. 
 - Omdat voor de verplaatsings bewerking vereist is dat er geen gekoppelde services zijn uit de werk ruimte, moeten oplossingen die afhankelijk zijn van die koppeling worden verwijderd zodat de werk ruimte kan worden verplaatst. Oplossingen die moeten worden verwijderd voordat u uw Automation-account kunt ontkoppelen:
   - Updatebeheer

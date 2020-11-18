@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/07/2020
 ms.author: allensu
-ms.openlocfilehash: 541aa7da3e804931c1793e455bcbfca83c809dae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fca6b40f4bd871041d14d119eb44e8366d8562ee
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89669182"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700457"
 ---
 # <a name="standard-load-balancer-and-availability-zones"></a>Load Balancer van het type Standard en beschikbaarheidszones
 
@@ -151,11 +151,11 @@ Uw resources in zones die niet worden beïnvloed door de fout, zijn beschikbaar.
   - Als er een storing optreedt in een zone, kent uw service deze fout en als de status verloren gaat, hoe kunt u deze herstellen?
   - Wanneer een zone wordt geretourneerd, weet uw toepassing hoe u veilig kunt convergeren?
 
-Bekijk de [ontwerp patronen voor Azure-Clouds](https://docs.microsoft.com/azure/architecture/patterns/) om de flexibiliteit van uw toepassing te verbeteren tot fouten.
+Bekijk de [ontwerp patronen voor Azure-Clouds](/azure/architecture/patterns/) om de flexibiliteit van uw toepassing te verbeteren tot fouten.
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [Beschikbaarheidszones](../availability-zones/az-overview.md)
-- Meer informatie over [Standard Load Balancer](load-balancer-standard-overview.md)
-- Meer informatie over het [laden van virtuele machines binnen een zone met behulp van een Standard Load Balancer met een zonegebonden](load-balancer-standard-public-zonal-cli.md) -front-end
-- Meer informatie over het verdelen [van virtuele machines over zones met behulp van een Standard Load Balancer met een zone-redundante front-end](load-balancer-standard-public-zone-redundant-cli.md)
-- Meer informatie over [ontwerp patronen voor Azure-Clouds](https://docs.microsoft.com/azure/architecture/patterns/) voor het verbeteren van de tolerantie van uw toepassing tot fout scenario's.
+- Meer informatie over [Standard Load Balancer](./load-balancer-overview.md)
+- Meer informatie over het [laden van virtuele machines binnen een zone met behulp van een Standard Load Balancer met een zonegebonden](./quickstart-load-balancer-standard-public-cli.md) -front-end
+- Meer informatie over het verdelen [van virtuele machines over zones met behulp van een Standard Load Balancer met een zone-redundante front-end](./quickstart-load-balancer-standard-public-cli.md)
+- Meer informatie over [ontwerp patronen voor Azure-Clouds](/azure/architecture/patterns/) voor het verbeteren van de tolerantie van uw toepassing tot fout scenario's.

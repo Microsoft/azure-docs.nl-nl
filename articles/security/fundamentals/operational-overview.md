@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/31/2019
 ms.author: tomsh
-ms.openlocfilehash: 7b0ea9cc1788065a92e168e41a0c293bb1f4ea9b
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 9dcb1113bb37cb0f5f65c54ae9d6ca76a88330c1
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409354"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698662"
 ---
 # <a name="azure-operational-security-overview"></a>Overzicht van Azure Operational Security
 
@@ -87,7 +87,7 @@ Met Azure Active Directory hebben alle toepassingen die u publiceert voor uw par
 - Validatie van schijf versleuteling.
 - Aanvallen op het netwerk.
 
-Security Center maakt gebruik [van Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md). RBAC biedt [ingebouwde rollen](../../role-based-access-control/built-in-roles.md) die kunnen worden toegewezen aan gebruikers, groepen en services in Azure.
+Security Center maakt gebruik [van Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md). Azure RBAC biedt [ingebouwde rollen](../../role-based-access-control/built-in-roles.md) die kunnen worden toegewezen aan gebruikers, groepen en services in Azure.
 
 In Azure Security Center wordt de configuratie van uw resources beoordeeld om beveiligingsproblemen en kwetsbaarheden te identificeren. In Security Center ziet u alleen informatie met betrekking tot een resource als u de rol van eigenaar, bijdrager of lezer hebt toegewezen aan het abonnement of de resource groep waarvan een resource deel uitmaakt.
 

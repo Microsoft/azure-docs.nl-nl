@@ -15,23 +15,23 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 0e74b540610d3b6520f4c8e25ca2df7bf628706f
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 3520cbafc0e9eebfd6057fe92579a45873b25734
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410331"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698750"
 ---
 # <a name="azure-security-management-and-monitoring-overview"></a>Overzicht van Azure-beveiligings beheer en-bewaking
 Dit artikel bevat een overzicht van de beveiligings functies en-services die Azure biedt om u te helpen bij het beheer en de bewaking van Azure-Cloud Services en virtuele machines.
 
-## <a name="role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer
+## <a name="azure-role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer voor Azure
 
-Role-Based Access Control (RBAC) biedt gedetailleerd toegangs beheer voor Azure-resources. Met RBAC kunt u personen alleen de hoeveelheid toegang verlenen die ze nodig hebben om hun taken uit te voeren. RBAC kan u er ook voor zorgen dat wanneer mensen de organisatie verlaten, de toegang tot resources in de Cloud verloren gaat.
+Op rollen gebaseerd toegangs beheer op basis van Azure (Azure RBAC) biedt gedetailleerde toegang voor Azure-resources. Met behulp van Azure RBAC kunt u alleen mensen de benodigde toegangs rechten geven om hun taken uit te voeren. Met Azure RBAC kunt u er ook voor zorgen dat wanneer mensen de organisatie verlaten, de toegang tot resources in de Cloud verloren gaat.
 
 Meer informatie:
 
-* [Team blog op RBAC Active Directory](https://cloudblogs.microsoft.com/enterprisemobility/?product=azure-active-directory)
+* [Active Directory team blog op Azure RBAC](https://cloudblogs.microsoft.com/enterprisemobility/?product=azure-active-directory)
 * [Azure RBAC (op rollen gebaseerd toegangsbeheer van Azure)](../../role-based-access-control/role-assignments-portal.md)
 
 ## <a name="antimalware"></a>Antimalware

@@ -1,6 +1,6 @@
 ---
-title: Interactie met een IoT Plug en Play-apparaat dat is verbonden met uw Azure IoT-oplossing (Python) | Microsoft Docs
-description: Gebruik Python om verbinding te maken met een IoT Plug en Play-apparaat dat is verbonden met uw Azure IoT-oplossing.
+title: Interactie met een IoT Plug and Play-apparaat dat is verbonden met uw Azure IoT-oplossing (Python) | Microsoft Docs
+description: 'Quickstart: Python gebruiken om verbinding te maken met een IoT Plug and Play-apparaat dat is verbonden met uw Azure IoT-oplossing.'
 author: elhorton
 ms.author: elhorton
 ms.date: 10/05/2020
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: ad5fa271e3abfaf0c7ee4884881262773a9ad485
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 681568c3aee88483c7f9c813529f0eb500a59e93
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741500"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421495"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-python"></a>Quickstart: Interactie met een IoT Plug en Play-apparaat dat is verbonden met uw oplossing (Python)
 
@@ -31,7 +31,7 @@ Als u deze quickstart wilt uitvoeren, moet Python 3.7 op uw ontwikkelcomputer zi
 python --version
 ```
 
-Het **azure-iot-device** -pakket wordt gepubliceerd als PIP.
+Het **azure-iot-device**-pakket wordt gepubliceerd als PIP.
 
 Installeer het pakket als volgt in uw lokale Python-omgeving:
 
@@ -39,7 +39,7 @@ Installeer het pakket als volgt in uw lokale Python-omgeving:
 pip install azure-iot-device
 ```
 
-Installeer het **azure-iot-device** -pakket door de volgende opdracht uit te voeren:
+Installeer het **azure-iot-device**-pakket door de volgende opdracht uit te voeren:
 
 ```cmd/sh
 pip install azure-iot-hub
@@ -59,7 +59,7 @@ In deze quickstart gebruikt u als voorbeeld een thermostaat die in Python is ges
     git clone https://github.com/Azure/azure-iot-sdk-python
     ```
 
-1. Dit terminalvenster wordt gebruikt als uw **apparaat** terminal. Ga naar de map van de gekloonde opslagplaats en ga naar de map */azure-iot-sdk-python/azure-iot-device/samples/pnp* .
+1. Dit terminalvenster wordt gebruikt als uw **apparaat** terminal. Ga naar de map van de gekloonde opslagplaats en ga naar de map */azure-iot-sdk-python/azure-iot-device/samples/pnp*.
 
 1. Voer het voorbeeldapparaat (thermostaat) uit met de volgende opdracht:
 
@@ -80,14 +80,14 @@ In deze quickstart gebruikt u een IoT-voorbeeldoplossing in Python om te communi
 1. Open bestand *registry_manager_pnp_sample.py* en controleer de code. In dit voorbeeld ziet u hoe u de klasse **IoTHubRegistryManager** gebruikt om te communiceren met uw IoT Plug en Play-apparaat.
 
 > [!NOTE]
-> Deze servicevoorbeelden gebruiken de klasse **IoTHubRegistryManager** vanuit de **IoT Hub-serviceclient** . Zie de [handleiding voor serviceontwikkelaars](concepts-developer-guide-service.md) voor meer informatie over de API's, waaronder de API's voor digitale dubbels.
+> Deze servicevoorbeelden gebruiken de klasse **IoTHubRegistryManager** vanuit de **IoT Hub-serviceclient**. Zie de [handleiding voor serviceontwikkelaars](concepts-developer-guide-service.md) voor meer informatie over de API's, waaronder de API's voor digitale dubbels.
 
 ### <a name="get-the-device-twin"></a>De apparaatdubbel ophalen
 
 In [Quickstarts en zelfstudies voor het instellen van uw omgeving voor IoT Plug en Play](set-up-environment.md) hebt u twee omgevingsvariabelen gemaakt om het voorbeeld zo te configureren dat verbinding wordt gemaakt met uw IoT-hub en apparaat:
 
-* **IOTHUB_CONNECTION_STRING** : de verbindingsreeks voor de IoT-hub die u eerder hebt genoteerd.
-* **IOTHUB_DEVICE_ID** : `"my-pnp-device"`.
+* **IOTHUB_CONNECTION_STRING**: de verbindingsreeks voor de IoT-hub die u eerder hebt genoteerd.
+* **IOTHUB_DEVICE_ID**: `"my-pnp-device"`.
 
 Gebruik de volgende opdracht in de **service** terminal om dit voorbeeld uit te voeren:
 
@@ -107,7 +107,7 @@ The Model ID for this device is:
 dtmi:com:example:Thermostat;1
 ```
 
-In het volgende codefragment ziet u de voorbeeldcode uit *registry_manager_pnp_sample.py* :
+In het volgende codefragment ziet u de voorbeeldcode uit *registry_manager_pnp_sample.py*:
 
 ```python
     # Create IoTHubRegistryManager

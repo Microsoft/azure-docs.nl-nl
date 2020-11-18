@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: SQL on-demand (preview) gebruiken voor het analyseren van Azure Open Datasets in Azure Synapse Studio (preview)'
-description: Deze zelfstudie laat zien hoe u eenvoudig een verkennende gegevensanalyse kunt uitvoeren door verschillende Azure Open Datasets te combineren met behulp van SQL on-demand (preview) en de resultaten in Azure Synapse Studio kunt analyseren.
+title: 'Zelfstudie: Een serverloze SQL-pool (preview) gebruiken voor het analyseren van Azure Open Datasets in Azure Synapse Studio (preview)'
+description: Deze zelfstudie laat zien hoe u eenvoudig een verkennende gegevensanalyse kunt uitvoeren door verschillende Azure Open Datasets te combineren met behulp van een serverloze SQL-pool (preview) en de resultaten in Azure Synapse Studio kunt analyseren.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 0471bd594dcf1b0654d6b4c496e5d39ade2739fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cec16041edd10a57088df4ae9cfe0587906919eb
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91539517"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93309286"
 ---
-# <a name="tutorial-use-sql-on-demand-to-analyze-azure-open-datasets-and-visualize-the-results-in-azure-synapse-studio"></a>Zelfstudie: Gebruik SQL on-demand voor het analyseren van Azure Open Datasets en visualiseer resultaten in Azure Synapse Studio
+# <a name="tutorial-use-serverless-sql-pool-to-analyze-azure-open-datasets-and-visualize-the-results-in-azure-synapse-studio"></a>Zelfstudie: Gebruik een serverloze SQL-pool voor het analyseren van Azure Open Datasets en visualiseer resultaten in Azure Synapse Studio
 
-In deze zelfstudie leert u hoe u verkennende gegevensanalyse kunt uitvoeren door verschillende Azure Open Datasets te combineren met behulp van SQL on-demand en de resultaten in Azure Synapse Studio kunt analyseren.
+In deze zelfstudie leert u hoe u verkennende gegevensanalyse kunt uitvoeren door verschillende Azure Open Datasets te combineren met behulp van een serverloze SQL-pool en hoe u de resultaten in Azure Synapse Studio kunt analyseren.
 
 In het bijzonder gaat u de gegevensset [New York City (NYC) Taxi](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/) analyseren. Deze omvat:
 
@@ -213,9 +213,9 @@ De resultaten van de query geven aan dat de daling van het aantal taxiritten pla
 - Het was koud (temperatuur onder nul graden Celsius).
 - Het waaide (~ 10 m/s).
 
-In deze zelfstudie hebt u geleerd hoe een gegevensanalist snel verkennende gegevensanalyse kan uitvoeren, eenvoudig verschillende gegevenssets kan combineren met behulp van SQL on-demand, en de resultaten kan visualiseren met behulp van Azure Synapse Studio.
+In deze zelfstudie hebt u geleerd hoe een gegevensanalist snel verkennende gegevensanalyse kan uitvoeren, eenvoudig verschillende gegevenssets kan combineren met behulp van een serverloze SQL-pool, en de resultaten kan visualiseren met behulp van Azure Synapse Studio.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg [Verbinding maken met SQL on-demand voor Power BI Desktop en rapporten maken](tutorial-connect-power-bi-desktop.md) voor meer informatie over het verbinden van SQL on-demand met Power BI Desktop en het maken van rapporten.
+Raadpleeg [Een serverloze SQL-pool verbinden met Power BI Desktop en rapporten maken](tutorial-connect-power-bi-desktop.md) voor meer informatie over het verbinden van een serverloze SQL-pool met Power BI Desktop en het maken van rapporten.
  

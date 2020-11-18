@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 09/08/2020
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 2f6051277f1ddb89e67ce8013c78571a2a7314b7
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 55e47b09ac4a6256a125a75c8a0f856e867e7c0e
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089125"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94337768"
 ---
 # <a name="quickstart-set-up-azure-spring-cloud-configuration-server"></a>Quickstart: Azure Spring Cloud-configuratieserver instellen
 
@@ -70,9 +70,33 @@ Stel uw configuratieserver in met de locatie van de Git-opslagplaats voor het pr
 ```azurecli
 az spring-cloud config-server git set -n <service instance name> --uri https://github.com/Azure-Samples/piggymetrics-config
 ```
-
 ---
 ::: zone-end
+
+## <a name="troubleshooting-of-azure-spring-cloud-config-server"></a>Problemen oplossen met de Azure Spring Cloud-configuratieserver
+
+In de volgende procedure wordt uitgelegd hoe u problemen met de instellingen van de configuratieserver oplost.
+
+1. Ga in Azure Portal naar de servicepagina **Overzicht** en selecteer **Logboeken**. 
+1. Selecteer **Query's** en **De toepassingslogboeken weergeven die de termen 'fout' of 'uitzondering' bevatten**. 
+1. Klik op **Run**. 
+1. Als u in logboeken de fout **java.lang.illegalStateException** vindt, geeft dit aan dat de Spring Cloud-service geen eigenschappen van de configuratieserver kan vinden.
+
+    [ ![Query voor ASC-Portal uitvoeren](media/spring-cloud-quickstart-setup-config-server/setup-config-server-query.png) ](media/spring-cloud-quickstart-setup-config-server/setup-config-server-query.png)
+
+1. Ga naar de servicepagina **Overzicht**.
+1. Selecteer **Problemen vaststellen en oplossen**. 
+1. Selecteer de **Config Server**-detector.
+
+    [ ![Problemen vaststellen met ASC-Portal](media/spring-cloud-quickstart-setup-config-server/setup-config-server-diagnose.png) ](media/spring-cloud-quickstart-setup-config-server/setup-config-server-diagnose.png)
+
+3. Klik op **Config Server-statuscontrole**.
+
+    [ ![Genie ASC-portal](media/spring-cloud-quickstart-setup-config-server/setup-config-server-genie.png) ](media/spring-cloud-quickstart-setup-config-server/setup-config-server-genie.png)
+
+4. Klik op **Config Server-status** om meer details van de detector te bekijken.
+
+    [ ![Integriteitsstatus van ASC-Portal](media/spring-cloud-quickstart-setup-config-server/setup-config-server-health-status.png) ](media/spring-cloud-quickstart-setup-config-server/setup-config-server-health-status.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

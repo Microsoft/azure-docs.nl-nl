@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 11/03/2020
 ms.custom: generated
-ms.openlocfilehash: 701c901cb9b85aeaf329846c13e6ed051ea52e63
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 2ffa5d65675b8fe6eeecbcc71c49d7aa8ebb7eaf
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288502"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657768"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -63,17 +63,17 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Lezer en gegevens toegang](#reader-and-data-access) | Hiermee kunt u alles weer geven, maar kunt u geen opslag account of opgenomen resource verwijderen of maken. Ook wordt lees-/schrijftoegang tot alle gegevens in een opslag account toegestaan via toegang tot de sleutel van het opslag account. | c12c1c16-33a1-487b-954d-41c89c60f349 |
 > | [Inzender voor opslagaccounts](#storage-account-contributor) | Hiermee staat u het beheer van opslag accounts toe. Biedt toegang tot de account sleutel, die kan worden gebruikt om toegang te krijgen tot gegevens via een gedeelde sleutel autorisatie. | 17d1049b-9a84-46fb-8f53-869881c3d3ab |
 > | [Functie Service-sleutel operator van opslag account](#storage-account-key-operator-service-role) | Kan de toegangs sleutels voor het opslag account weer geven en opnieuw genereren. | 81a9662b-bebf-436f-a333-f67b29880f12 |
-> | [Inzender voor Storage Blob-gegevens](#storage-blob-data-contributor) | Azure Storage containers en blobs lezen, schrijven en verwijderen. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | ba92f5b4-2d11-453d-a403-e96b0029c9fe |
-> | [Eigenaar van opslagblobgegevens](#storage-blob-data-owner) | Biedt volledige toegang tot Azure Storage BLOB-containers en-gegevens, met inbegrip van het toewijzen van POSIX-toegangs beheer. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
-> | [Lezer voor opslagblobgegevens](#storage-blob-data-reader) | Azure Storage containers en blobs lezen en weer geven. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
-> | [Delegering van opslag-BLOB](#storage-blob-delegator) | Een sleutel voor gebruikers overdracht ophalen, die vervolgens kan worden gebruikt om een gedeelde toegangs handtekening te maken voor een container of BLOB die is ondertekend met Azure AD-referenties. Zie [een gebruiker delegering Sa's maken](https://docs.microsoft.com/rest/api/storageservices/create-user-delegation-sas)voor meer informatie. | db58b8e5-c6ad-4a2a-8342-4190687cbf4a |
+> | [Inzender voor Storage Blob-gegevens](#storage-blob-data-contributor) | Azure Storage containers en blobs lezen, schrijven en verwijderen. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | ba92f5b4-2d11-453d-a403-e96b0029c9fe |
+> | [Eigenaar van opslagblobgegevens](#storage-blob-data-owner) | Biedt volledige toegang tot Azure Storage BLOB-containers en-gegevens, met inbegrip van het toewijzen van POSIX-toegangs beheer. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
+> | [Lezer voor opslagblobgegevens](#storage-blob-data-reader) | Azure Storage containers en blobs lezen en weer geven. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
+> | [Delegering van opslag-BLOB](#storage-blob-delegator) | Een sleutel voor gebruikers overdracht ophalen, die vervolgens kan worden gebruikt om een gedeelde toegangs handtekening te maken voor een container of BLOB die is ondertekend met Azure AD-referenties. Zie [een gebruiker delegering Sa's maken](/rest/api/storageservices/create-user-delegation-sas)voor meer informatie. | db58b8e5-c6ad-4a2a-8342-4190687cbf4a |
 > | [Inzender voor opslagbestandsgegevens via SMB-share](#storage-file-data-smb-share-contributor) | Hiermee wordt lees-, schrijf-en verwijder toegang voor bestanden/mappen in azure-bestands shares toegestaan. Deze rol heeft geen ingebouwd equivalent op Windows-bestands servers. | 0c867c2a-1d8c-454a-a3db-ab2ea1bdc8bb |
 > | [Inzender met verhoogde bevoegdheden voor opslagbestandsgegevens via SMB-share](#storage-file-data-smb-share-elevated-contributor) | Hiermee kunt u Acl's voor lezen, schrijven, verwijderen en wijzigen van bestanden/mappen in azure-bestands shares. Deze rol is gelijk aan een ACL van de bestands share die moet worden gewijzigd op Windows-bestands servers. | a7264617-510b-434b-a828-9731dc254ea7 |
 > | [Lezer voor opslagbestandgegevens via SMB-share](#storage-file-data-smb-share-reader) | Hiermee staat u lees toegang toe voor bestanden/mappen in azure-bestands shares. Deze rol is gelijk aan een ACL voor bestands shares van lezen op Windows-bestands servers. | aba4ae5f-2193-4029-9191-0cb91df5e314 |
-> | [Inzender voor opslag wachtrij gegevens](#storage-queue-data-contributor) | Lees-, schrijf-en verwijder Azure Storage-wacht rijen en-wachtrij berichten. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | 974c5e8b-45b9-4653-ba55-5f855dd0fb88 |
-> | [Processor voor gegevens berichten van de opslag wachtrij](#storage-queue-data-message-processor) | Een bericht uit een Azure Storage wachtrij bekijken, ophalen en verwijderen. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | 8a0f0c08-91a1-4084-bc3d-661d67233fed |
-> | [Afzender gegevens bericht van opslag wachtrij](#storage-queue-data-message-sender) | Berichten toevoegen aan een Azure Storage wachtrij. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
-> | [Gegevens lezer van de opslag wachtrij](#storage-queue-data-reader) | Azure Storage-wacht rijen en-wachtrij berichten lezen en weer geven. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | 19e7f393-937e-4f77-808e-94535e297925 |
+> | [Inzender voor opslag wachtrij gegevens](#storage-queue-data-contributor) | Lees-, schrijf-en verwijder Azure Storage-wacht rijen en-wachtrij berichten. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | 974c5e8b-45b9-4653-ba55-5f855dd0fb88 |
+> | [Processor voor gegevens berichten van de opslag wachtrij](#storage-queue-data-message-processor) | Een bericht uit een Azure Storage wachtrij bekijken, ophalen en verwijderen. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | 8a0f0c08-91a1-4084-bc3d-661d67233fed |
+> | [Afzender gegevens bericht van opslag wachtrij](#storage-queue-data-message-sender) | Berichten toevoegen aan een Azure Storage wachtrij. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
+> | [Gegevens lezer van de opslag wachtrij](#storage-queue-data-reader) | Azure Storage-wacht rijen en-wachtrij berichten lezen en weer geven. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | 19e7f393-937e-4f77-808e-94535e297925 |
 > | **Web** |  |  |
 > | [Gegevens lezer Azure Maps](#azure-maps-data-reader) | Hiermee wordt toegang verleend om gerelateerde gegevens te lezen vanuit een Azure Maps-account. | 423170ca-a8f6-4b0f-8487-9e4eb8f49bfa |
 > | [Inzender Search Service](#search-service-contributor) | Hiermee kunt u zoek services beheren, maar niet de toegang tot ze. | 7ca78c08-252a-4471-8644-bb5ff32d4ba0 |
@@ -180,9 +180,9 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | **Controle** |  |  |
 > | [Inzender voor Application Insights onderdelen](#application-insights-component-contributor) | Kan Application Insights onderdelen beheren | ae349356-3a1b-4a5e-921d-050484c6347e |
 > | [Application Insights Snapshot Debugger](#application-insights-snapshot-debugger) | Geeft gebruikers machtigingen voor het weer geven en downloaden van moment opnamen van fout opsporing die zijn verzameld met de Application Insights Snapshot Debugger. Houd er rekening mee dat deze machtigingen niet zijn opgenomen in de rollen [eigenaar](#owner) of [Inzender](#contributor) . Wanneer gebruikers de Application Insights Snapshot Debugger rol geven, moet u de rol rechtstreeks aan de gebruiker toekennen. De rol wordt niet herkend wanneer deze wordt toegevoegd aan een aangepaste rol. | 08954f03-6346-4c2e-81c0-ec3a5cfae23b |
-> | [Inzender bewaken](#monitoring-contributor) | Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](https://docs.microsoft.com/azure/azure-monitor/platform/roles-permissions-security#built-in-monitoring-roles). | 749f88d5-cbae-40b8-bcfc-e573ddc772fa |
+> | [Inzender bewaken](#monitoring-contributor) | Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). | 749f88d5-cbae-40b8-bcfc-e573ddc772fa |
 > | [De uitgever van metrische gegevens controleren](#monitoring-metrics-publisher) | Hiermee schakelt u de metrische gegevens voor publicatie in op Azure-resources | 3913510d-42f4-4e42-8a64-420c390055eb |
-> | [Bewakings lezer](#monitoring-reader) | Kan alle bewakings gegevens (metrieken, logboeken, enzovoort) lezen. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](https://docs.microsoft.com/azure/azure-monitor/platform/roles-permissions-security#built-in-monitoring-roles). | 43d0d8ad-25c7-4714-9337-8ba259a9fe05 |
+> | [Bewakings lezer](#monitoring-reader) | Kan alle bewakings gegevens (metrieken, logboeken, enzovoort) lezen. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). | 43d0d8ad-25c7-4714-9337-8ba259a9fe05 |
 > | [Inzender voor werkmappen](#workbook-contributor) | Kan gedeelde werkmappen opslaan. | e8ddcd69-c73f-4f9f-9844-4100522f16ad |
 > | [Werkmap lezer](#workbook-reader) | Kan werkmappen lezen. | b279062a-9be3-42a0-92ae-8b3cf002ec4d |
 > | **Beheer + governance** |  |  |
@@ -207,9 +207,9 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Nieuwe Inzender voor Relic APM-account](#new-relic-apm-account-contributor) | Hiermee kunt u New Relic Application Performance Management accounts en-toepassingen beheren, maar niet de toegang tot ze. | 5d28c62d-5b37-4476-8438-e587778df237 |
 > | [Policy Insights Data Writer (preview-versie)](#policy-insights-data-writer-preview) | Hiermee wordt lees toegang tot bron beleid en schrijf toegang tot bron onderdeel beleids gebeurtenissen toegestaan. | 66bb4e9e-b016-4a94-8249-4c0511c2be84 |
 > | [Inzender voor resourcebeleid](#resource-policy-contributor) | Gebruikers met rechten voor het maken/wijzigen van het resource beleid, het maken van een ondersteunings ticket en het lezen van resources/hiërarchie. | 36243c78-bf99-498c-9df9-86d9f8d28608 |
-> | [Inzender Site Recovery](#site-recovery-contributor) | Hiermee kunt u Site Recovery-service beheren, behalve het maken van een kluis en roltoewijzing | 6670b86e-a3f7-4917-ac9b-5d6ab1be4567 |
+> | [Site Recovery-inzender](#site-recovery-contributor) | Hiermee kunt u Site Recovery-service beheren, behalve het maken van een kluis en roltoewijzing | 6670b86e-a3f7-4917-ac9b-5d6ab1be4567 |
 > | [Site Recovery-operator](#site-recovery-operator) | Een failover en failback, maar geen andere Site Recovery beheer bewerkingen uitvoeren | 494ae006-db33-4328-bf46-533a6560a3ca |
-> | [Site Recovery lezer](#site-recovery-reader) | Hiermee kunt u de Site Recovery status weer geven, maar geen andere beheer bewerkingen uitvoeren | dbaa88c4-0c30-4179-9fb3-46319faa6149 |
+> | [Site Recovery-lezer](#site-recovery-reader) | Hiermee kunt u de Site Recovery status weer geven, maar geen andere beheer bewerkingen uitvoeren | dbaa88c4-0c30-4179-9fb3-46319faa6149 |
 > | [Inzender voor ondersteunings aanvragen](#support-request-contributor) | Hiermee kunt u ondersteunings aanvragen maken en beheren | cfd33db0-3dd1-45e3-aa9d-cdbdf3b6f24e |
 > | [Inzender labelen](#tag-contributor) | Hiermee kunt u tags op entiteiten beheren zonder dat u toegang hebt tot de entiteiten zelf. | 4a9ae827-6dc8-4573-8ac7-8239d42aa03f |
 > | **Overige** |  |  |
@@ -2114,7 +2114,7 @@ Kan de toegangs sleutels voor het opslag account weer geven en opnieuw genereren
 
 ### <a name="storage-blob-data-contributor"></a>Inzender voor Storage Blob-gegevens
 
-Azure Storage containers en blobs lezen, schrijven en verwijderen. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
+Azure Storage containers en blobs lezen, schrijven en verwijderen. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2167,7 +2167,7 @@ Azure Storage containers en blobs lezen, schrijven en verwijderen. Zie [machtigi
 
 ### <a name="storage-blob-data-owner"></a>Eigenaar van opslagblobgegevens
 
-Biedt volledige toegang tot Azure Storage BLOB-containers en-gegevens, met inbegrip van het toewijzen van POSIX-toegangs beheer. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
+Biedt volledige toegang tot Azure Storage BLOB-containers en-gegevens, met inbegrip van het toewijzen van POSIX-toegangs beheer. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2210,7 +2210,7 @@ Biedt volledige toegang tot Azure Storage BLOB-containers en-gegevens, met inbeg
 
 ### <a name="storage-blob-data-reader"></a>Lezer voor opslagblobgegevens
 
-Azure Storage containers en blobs lezen en weer geven. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
+Azure Storage containers en blobs lezen en weer geven. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2253,7 +2253,7 @@ Azure Storage containers en blobs lezen en weer geven. Zie [machtigingen voor he
 
 ### <a name="storage-blob-delegator"></a>Delegering van opslag-BLOB
 
-Een sleutel voor gebruikers overdracht ophalen, die vervolgens kan worden gebruikt om een gedeelde toegangs handtekening te maken voor een container of BLOB die is ondertekend met Azure AD-referenties. Zie [een gebruiker delegering Sa's maken](https://docs.microsoft.com/rest/api/storageservices/create-user-delegation-sas)voor meer informatie. [Meer informatie](https://docs.microsoft.com/rest/api/storageservices/get-user-delegation-key)
+Een sleutel voor gebruikers overdracht ophalen, die vervolgens kan worden gebruikt om een gedeelde toegangs handtekening te maken voor een container of BLOB die is ondertekend met Azure AD-referenties. Zie [een gebruiker delegering Sa's maken](/rest/api/storageservices/create-user-delegation-sas)voor meer informatie. [Meer informatie](/rest/api/storageservices/get-user-delegation-key)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2419,7 +2419,7 @@ Hiermee staat u lees toegang toe voor bestanden/mappen in azure-bestands shares.
 
 ### <a name="storage-queue-data-contributor"></a>Inzender voor opslag wachtrij gegevens
 
-Lees-, schrijf-en verwijder Azure Storage-wacht rijen en-wachtrij berichten. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
+Lees-, schrijf-en verwijder Azure Storage-wacht rijen en-wachtrij berichten. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2468,7 +2468,7 @@ Lees-, schrijf-en verwijder Azure Storage-wacht rijen en-wachtrij berichten. Zie
 
 ### <a name="storage-queue-data-message-processor"></a>Processor voor gegevens berichten van de opslag wachtrij
 
-Een bericht uit een Azure Storage wachtrij bekijken, ophalen en verwijderen. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
+Een bericht uit een Azure Storage wachtrij bekijken, ophalen en verwijderen. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2509,7 +2509,7 @@ Een bericht uit een Azure Storage wachtrij bekijken, ophalen en verwijderen. Zie
 
 ### <a name="storage-queue-data-message-sender"></a>Afzender gegevens bericht van opslag wachtrij
 
-Berichten toevoegen aan een Azure Storage wachtrij. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
+Berichten toevoegen aan een Azure Storage wachtrij. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2548,7 +2548,7 @@ Berichten toevoegen aan een Azure Storage wachtrij. Zie [machtigingen voor het a
 
 ### <a name="storage-queue-data-reader"></a>Gegevens lezer van de opslag wachtrij
 
-Azure Storage-wacht rijen en-wachtrij berichten lezen en weer geven. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
+Azure Storage-wacht rijen en-wachtrij berichten lezen en weer geven. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. [Meer informatie](../storage/common/storage-auth-aad-rbac-portal.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -4214,7 +4214,7 @@ Hiermee beheert u beheerde SQL-instanties en de vereiste netwerk configuratie, m
 
 ### <a name="sql-security-manager"></a>SQL-beveiligingsbeheerder
 
-Hiermee kunt u het beveiligings beleid van SQL-servers en-data bases beheren, maar niet de toegang tot de services. [Meer informatie](../sql-database/sql-database-advanced-data-security.md)
+Hiermee kunt u het beveiligings beleid van SQL-servers en-data bases beheren, maar niet de toegang tot de services. [Meer informatie](../azure-sql/database/azure-defender-for-sql.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -4339,7 +4339,7 @@ Hiermee kunt u het beveiligings beleid van SQL-servers en-data bases beheren, ma
 
 ### <a name="sql-server-contributor"></a>Inzender SQL Server
 
-Hiermee kunt u SQL-servers en-data bases beheren, maar niet de toegang tot ze en niet het beveiligings beleid. [Meer informatie](../sql-database/sql-database-aad-authentication-configure.md)
+Hiermee kunt u SQL-servers en-data bases beheren, maar niet de toegang tot ze en niet het beveiligings beleid. [Meer informatie](../azure-sql/database/authentication-aad-configure.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -7618,7 +7618,7 @@ Met kunt u nieuwe Labs maken onder uw Azure Lab-accounts. [Meer informatie](../l
 }
 ```
 
-## <a name="monitor"></a>Controleren
+## <a name="monitor"></a>Monitor
 
 
 ### <a name="application-insights-component-contributor"></a>Inzender voor Application Insights onderdelen
@@ -7727,7 +7727,7 @@ Geeft gebruikers machtigingen voor het weer geven en downloaden van moment opnam
 
 ### <a name="monitoring-contributor"></a>Inzender bewaken
 
-Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](https://docs.microsoft.com/azure/azure-monitor/platform/roles-permissions-security#built-in-monitoring-roles). [Meer informatie](../azure-monitor/platform/roles-permissions-security.md)
+Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). [Meer informatie](../azure-monitor/platform/roles-permissions-security.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -7875,7 +7875,7 @@ Hiermee schakelt u de metrische gegevens voor publicatie in op Azure-resources [
 
 ### <a name="monitoring-reader"></a>Bewakings lezer
 
-Kan alle bewakings gegevens (metrieken, logboeken, enzovoort) lezen. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](https://docs.microsoft.com/azure/azure-monitor/platform/roles-permissions-security#built-in-monitoring-roles). [Meer informatie](../azure-monitor/platform/roles-permissions-security.md)
+Kan alle bewakings gegevens (metrieken, logboeken, enzovoort) lezen. Zie ook aan de [slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). [Meer informatie](../azure-monitor/platform/roles-permissions-security.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -9052,7 +9052,7 @@ Gebruikers met rechten voor het maken/wijzigen van het resource beleid, het make
 }
 ```
 
-### <a name="site-recovery-contributor"></a>Inzender Site Recovery
+### <a name="site-recovery-contributor"></a>Site Recovery-inzender
 
 Hiermee kunt u Site Recovery-service beheren, behalve het maken van de kluis en roltoewijzing [meer informatie](../site-recovery/site-recovery-role-based-linked-access-control.md)
 
@@ -9298,7 +9298,7 @@ Met kunt u failover en failback uitvoeren, maar geen andere Site Recovery beheer
 }
 ```
 
-### <a name="site-recovery-reader"></a>Site Recovery lezer
+### <a name="site-recovery-reader"></a>Site Recovery-lezer
 
 Hiermee kunt u de Site Recovery status weer geven, maar geen andere [beheer bewerkingen uitvoeren](../site-recovery/site-recovery-role-based-linked-access-control.md)
 

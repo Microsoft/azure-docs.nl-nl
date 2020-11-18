@@ -10,14 +10,14 @@ ms.subservice: text-analytics
 ms.topic: include
 ms.date: 11/19/2019
 ms.author: assafi
-ms.openlocfilehash: b412308bf11a5e73287401e8b4b0cc522b26d623
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e27199726df2d98dd2144f3f5338c969d528e3b
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91779883"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94523866"
 ---
 > [!Tip]
 > Gebruik de volgende koppelingen naar gedetailleerde technische documentatie over de API en om deze in actie te zien. U kunt ook POST-aanvragen verzenden via de ingebouwde API-testconsole. Geen installatie vereist. Plak gewoon uw resourcesleutel en JSON-documenten in de aanvraag:
 > - Nieuwste stabiele API: [v3.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0)
-> - Nieuwste preview-API: [v3.1-Preview.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-1)
+> - Nieuwste preview-API: [v3.1-Preview.2](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2)

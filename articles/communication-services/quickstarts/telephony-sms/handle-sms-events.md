@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e66d5c4dd4fc1c6c641da975b0ac2254f459642a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e153c873305cc128ce97ae7c6a907a8f592f8b32
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976926"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93357467"
 ---
 # <a name="quickstart-handle-sms-events"></a>Quickstart: SMS-gebeurtenissen verwerken
 
@@ -63,13 +63,15 @@ Voer op de pagina **Gebeurtenisabonnement maken** een **naam** in voor het gebeu
 
 U kunt zich op specifieke gebeurtenissen abonneren om Event Grid te laten weten welke SMS-gebeurtenissen u wilt volgen en waar die gebeurtenissen naartoe moeten worden gestuurd. Selecteer de gebeurtenissen waarvoor u zich wilt abonneren in het vervolgkeuzemenu. Voor SMS hebt u de optie `SMS Received` en `SMS Delivery Report Received`. 
 
+Als u wordt gevraagd om **de naam van een systeemonderwerp op te geven**, kunt u een unieke id opgeven die u eventueel kunt gebruiken voor het filteren van gebeurtenissen nadat deze zijn verzonden.
+
 Bekijk de volledige lijst [door Azure Communication Services ondersteunde gebeurtenissen](../../concepts/event-handling.md).
 
-:::image type="content" source="./media/handle-sms-events/select-events-create-eventsub.png" alt-text="Schermopname met de selectie van het gebeurtenisabonnement binnen de gebeurtenispagina van een resource.":::
+:::image type="content" source="./media/handle-sms-events/select-events-create-eventsub.png" alt-text="Schermafbeelding met het ontvangen SMS-bericht en SMS-rapport met ontvangen gebeurtenistypen.":::
 
 Selecteer **Webhook** voor het **Eindpunttype**. 
 
-:::image type="content" source="./media/handle-sms-events/select-events-create-linkwebhook.png" alt-text="Schermopname met de selectie van het gebeurtenisabonnement binnen de gebeurtenispagina van een resource.":::
+:::image type="content" source="./media/handle-sms-events/select-events-create-linkwebhook.png" alt-text="Schermopname met het veld Eindpunttype dat wordt ingesteld op Webhook.":::
 
 Klik voor **Eindpunt** op **Een eindpunt selecteren** en voer de URL van uw web-app in.
 
@@ -77,7 +79,7 @@ In dit geval gebruiken we de URL van het [Azure Event Grid Viewer-voorbeeld](htt
 
 Selecteer vervolgens **Selectie bevestigen**.
 
-:::image type="content" source="./media/handle-sms-events/select-events-create-selectwebhook-epadd.png" alt-text="Schermopname met de selectie van het gebeurtenisabonnement binnen de gebeurtenispagina van een resource.":::
+:::image type="content" source="./media/handle-sms-events/select-events-create-selectwebhook-epadd.png" alt-text="Schermopname van de bevestiging van een Webhook-eindpunt.":::
 
 ## <a name="viewing-sms-events"></a>SMS-gebeurtenissen weergeven
 
@@ -94,9 +96,9 @@ Bekijk de volledige lijst [door Azure Communication Services ondersteunde gebeur
 
 Nadat u een van de bovenstaande acties hebt voltooid, ziet u dat de gebeurtenissen `SMS Received` en `SMS Delivery Report Received` naar uw eindpunt worden gestuurd. Deze gebeurtenissen worden weergegeven in het [Azure Event Grid Viewer-voorbeeld](https://docs.microsoft.com/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/) dat we in het begin hebben ingesteld. U kunt op het oogpictogram naast de gebeurtenis klikken om de hele payload te bekijken. Gebeurtenissen zien er als volgt uit:
 
-:::image type="content" source="./media/handle-sms-events/sms-received.png" alt-text="Schermopname met de selectie van het gebeurtenisabonnement binnen de gebeurtenispagina van een resource.":::
+:::image type="content" source="./media/handle-sms-events/sms-received.png" alt-text="Schermopname van het Event Grid Schema voor een ontvangen SMS-gebeurtenis.":::
 
-:::image type="content" source="./media/handle-sms-events/sms-delivery-report-received.png" alt-text="Schermopname met de selectie van het gebeurtenisabonnement binnen de gebeurtenispagina van een resource.":::
+:::image type="content" source="./media/handle-sms-events/sms-delivery-report-received.png" alt-text="Schermopname van het Event Grid Schema voor een gerapporteerde SMS-gebeurtenis.":::
 
 Meer informatie over de [gebeurtenisschema's en andere gebeurtenisconcepten](../../concepts/event-handling.md).
 

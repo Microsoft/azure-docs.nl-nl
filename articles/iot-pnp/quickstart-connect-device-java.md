@@ -1,18 +1,18 @@
 ---
-title: Java-voorbeeldcode voor een IoT Plug en Play-apparaat koppelen aan IoT Hub | Microsoft Docs
-description: Schrijf voorbeeldcode voor een IoT Plug and Play-apparaat dat verbinding maakt met een IoT-hub, en voer deze uit. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.
+title: 'Quickstart: Java-voorbeeldcode voor een IoT Plug and Play-apparaat koppelen aan Azure IoT Hub | Microsoft Docs'
+description: 'Quickstart: voorbeeldcode maken en uitvoeren voor een IoT Plug and Play-apparaat dat verbinding maakt met een IoT-hub. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.'
 author: ericmitt
 ms.author: ericmitt
 ms.date: 07/14/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 6dfd63f92b8c420a3c5281ee2962b211b8779dd1
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 32e610cbd65aafecec9bafb35a78fb8f68279da5
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045054"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421597"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-device-application-running-on-windows-to-iot-hub-java"></a>Quickstart: Een voorbeeld van een IoT Plug and Play-apparaattoepassing die in Windows wordt uitgevoerd, verbinden met IoT Hub (Java)
 

@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: afc851be08e6708efc0138dc45931cda147c67c1
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 20173c4ba02f53a526167a5a8e22bd0cedc85594
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895882"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93393215"
 ---
 # <a name="tutorial-run-a-hello-world-python-script-part-2-of-4"></a>Zelfstudie: Een Python-script voor 'Hallo wereld' uitvoeren (deel 2 van 4)
 
@@ -99,7 +99,7 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
       `ws = Workspace.from_config()`
    :::column-end:::
    :::column span="2":::
-      [Werkruimte](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true) maakt verbinding met uw Azure Machine Learning-werkruimte, zodat u kunt communiceren met uw Azure Machine Learning-resources.
+      [Werkruimte](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py) maakt verbinding met uw Azure Machine Learning-werkruimte, zodat u kunt communiceren met uw Azure Machine Learning-resources.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -107,7 +107,7 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
       `experiment =  Experiment( ... )`
    :::column-end:::
    :::column span="2":::
-      [Experiment](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py&preserve-view=true) biedt een eenvoudige manier om meerdere uitvoeringen onder één naam te organiseren. Later kunt u zien hoe experimenten het eenvoudig maken om metrische gegevens te vergelijken tussen tientallen uitvoeringen.
+      [Experiment](/python/api/azureml-core/azureml.core.experiment.experiment?preserve-view=true&view=azure-ml-py) biedt een eenvoudige manier om meerdere uitvoeringen onder één naam te organiseren. Later kunt u zien hoe experimenten het eenvoudig maken om metrische gegevens te vergelijken tussen tientallen uitvoeringen.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -115,7 +115,7 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
       `config = ScriptRunConfig( ... )` 
    :::column-end:::
    :::column span="2":::
-      Met [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true) wordt uw `hello.py`-code ingepakt en doorgegeven aan uw werkruimte. Zoals de naam suggereert, kunt u deze klasse gebruiken om te _configureren_ hoe u wilt dat uw _script_ wordt _uitgevoerd_ in Azure Machine Learning. Het specificeert ook op welk rekendoel het script wordt uitgevoerd. In deze code is het doel het rekencluster dat u hebt gemaakt in de [installatiezelfstudie](tutorial-1st-experiment-sdk-setup-local.md).
+      Met [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py) wordt uw `hello.py`-code ingepakt en doorgegeven aan uw werkruimte. Zoals de naam suggereert, kunt u deze klasse gebruiken om te _configureren_ hoe u wilt dat uw _script_ wordt _uitgevoerd_ in Azure Machine Learning. Het specificeert ook op welk rekendoel het script wordt uitgevoerd. In deze code is het doel het rekencluster dat u hebt gemaakt in de [installatiezelfstudie](tutorial-1st-experiment-sdk-setup-local.md).
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -123,7 +123,7 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
       `run = experiment.submit(config)`
    :::column-end:::
    :::column span="2":::
-       Hiermee wordt het script verzonden. Deze inzending wordt een [uitvoering](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true) genoemd. Een uitvoering bevat één uitvoering van uw code. Gebruik een uitvoering om de voortgang van het script te bewaken, de uitvoer vast te leggen, de resultaten te analyseren, metrische gegevens te visualiseren en meer.
+       Hiermee wordt het script verzonden. Deze inzending wordt een [uitvoering](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) genoemd. Een uitvoering bevat één uitvoering van uw code. Gebruik een uitvoering om de voortgang van het script te bewaken, de uitvoer vast te leggen, de resultaten te analyseren, metrische gegevens te visualiseren en meer.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -138,6 +138,14 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
 ## <a name="submit-and-run-your-code-in-the-cloud"></a>Uw code in de cloud verzenden en uitvoeren
 
 Voer uw besturingsscript uit, dat op zijn beurt `hello.py` uitvoert op het rekencluster dat u hebt gemaakt in de [installatiezelfstudie](tutorial-1st-experiment-sdk-setup-local.md).
+
+De allereerste uitvoering duurt 5-10 minuten. Dit komt doordat het volgende gebeurt:
+
+* Er wordt een Docker-installatiekopie gemaakt in de cloud
+* De grootte van het berekeningscluster wordt gewijzigd van 0 naar 1 knooppunt
+* De Docker-installatiekopie wordt gedownload naar de berekening. 
+
+De volgende uitvoeringen zijn veel sneller (ongeveer 15 seconden), omdat de Docker-installatiekopie wordt opgeslagen in de cache op de computer. U kunt dit testen door de code hieronder opnieuw te verzenden nadat de eerste uitvoering is voltooid.
 
 ```bash
 python 03-run-hello.py

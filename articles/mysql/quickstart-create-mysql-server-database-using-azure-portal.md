@@ -1,145 +1,159 @@
 ---
 title: 'Quickstart: Een server maken - Azure Portal - Azure Database for MySQL'
-description: Deze quickstart leidt u stapsgewijs door Azure Portal zodat u snel, in ongeveer vijf minuten, een Azure Database for MySQL-voorbeeldserver kunt maken.
+description: Dit artikel leidt u stapsgewijs door de Azure Portal zodat u in ongeveer vijf minuten een voorbeeld van een Azure-database voor MySQL-server kunt maken.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 7/15/2020
-ms.openlocfilehash: 2cae0187643eb596bd98bcd99a588a4d214e6f6e
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 11/04/2020
+ms.openlocfilehash: ea131c33b37c8989f3c5eb8f11b8e0d7a236190f
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341209"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94504489"
 ---
-# <a name="quickstart-create-an-azure-database-for-mysql-server-in-the-azure-portal"></a>Quickstart: Een Azure Database for MySQL-server maken met behulp van Azure Portal
+# <a name="quickstart-create-an-azure-database-for-mysql-server-by-using-the-azure-portal"></a>Quickstart: Een Azure-database voor MySQL-server maken met behulp van Azure Portal
 
-Azure Database voor MySQL is een beheerde service waarmee u MySQL-databases met hoge beschikbaarheid in de cloud kunt uitvoeren, beheren en schalen. In deze snelstart ontdekt u hoe u in ongeveer vijf minuten een Azure Database for MySQL-server maakt in Azure Portal.
+Azure Database for MySQL is een beheerde service waarmee u MySQL-databases met hoge beschikbaarheid in de cloud kunt uitvoeren, beheren en schalen. In deze quickstart ontdekt u hoe u Azure Portal gebruikt om één Azure Database for MySQL-server te maken. U ziet ook hoe u verbinding maakt met de server.
 
 ## <a name="prerequisites"></a>Vereisten
+Een Azure-abonnement is vereist. Als u nog geen abonnement op Azure hebt, maak dan een [gratis Azure-account](https://azure.microsoft.com/free/) aan voordat u begint.
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis Azure-account](https://azure.microsoft.com/free/) aan voordat u begint.
-
-## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
-Open uw webbrowser en ga naar [Azure Portal](https://portal.azure.com/). Voer uw referenties in om u aan te melden bij de portal. De standaardweergave is uw service-dashboard.
-
-## <a name="create-an-azure-database-for-mysql-server"></a>Een Azure-database voor MySQL-server maken
-U maakt een Azure Database voor MySQL-server met een gedefinieerde set [reken- en opslagresources](./concepts-pricing-tiers.md). De server wordt gemaakt binnen een [Azure-resourcegroep](../azure-resource-manager/management/overview.md).
-
-Volg deze stappen voor het maken van een Azure Database voor MySQL-server:
-
-1. Selecteer in de linkerbovenhoek van de portal **Een resource maken** (+).
-
-2. Selecteer **Databases** > **Azure Database voor MySQL**. U kunt ook **MySQL** in het zoekvak typen om de service te vinden.
-
-  
->[!div class="mx-imgBorder"]
-> :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/2_navigate-to-mysql.png" alt-text="De optie Azure Database for MySQL":::
-
-3. Vul het formulier voor de gegevens van de nieuwe server als volgt in:
-    
->[!div class="mx-imgBorder"]
-> :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/4-create-form.png" alt-text="Formulier voor het maken van een server":::
-
-**Instelling** | **Voorgestelde waarde** | **Beschrijving van veld** 
----|---|---
-Abonnement | Uw abonnement | Selecteer het Azure-abonnement dat u wilt gebruiken voor uw server. Als u meerdere abonnementen hebt, kiest u het abonnement waarin u wordt gefactureerd voor de resource.
-Resourcegroep | *myresourcegroup* | Geef een nieuwe of bestaande resourcegroepnaam op. De resourcegroep kan worden gebruikt om uw afhankelijkheden in te delen die deel uitmaken van één project.
-Servernaam | Unieke servernaam | Kies een unieke naam ter identificatie van de Azure Database for MySQL-server. Bijvoorbeeld 'mysqldbserver'. De servernaam mag alleen kleine letters, cijfers en het koppelteken (-) bevatten. en moet 3 tot 63 tekens lang zijn.
-Gegevensbron |*Geen* | Selecteer *Geen* om een nieuwe server te maken. (Selecteer *Back-up* als u een server maakt op basis van een geo-back-up van een bestaande Azure Database for MySQL-server).
-Aanmeldgegevens van serverbeheerder | myadmin | Voer een gebruikersnaam in voor de serverbeheerder. Het is niet toegestaan om **azure_superuser** , **admin** , **administrator** , **root** , **guest** of **public** voor de gebruikersnaam van de beheerder te gebruiken.
-Wachtwoord | *Uw keuze* | Geef een nieuw wachtwoord op voor het beheerdersaccount voor de server. Het wachtwoord moet 8 tot 128 tekens lang zijn en mag bestaan uit een combinatie van hoofdletters, kleine letters, cijfers en niet-alfanumerieke tekens (!, $, #, %, enzovoort).
-Wachtwoord bevestigen | *Uw keuze*| Bevestig het wachtwoord voor het beheerdersaccount.
-Locatie | *De regio het dichtst bij uw gebruikers*| Kies de locatie die zich het dichtst bij uw gebruikers of uw andere Azure-toepassingen bevindt.
-Versie | *De meest recente primaire versie*| De meest recente primaire versie (tenzij u specifieke vereisten hebt en een andere versie moet gebruiken).
-Compute en opslag | **Algemeen** , **Gen 5** , **2 vCores** , **5 GB** , **7 dagen** , **Geografisch redundant** |De reken-, opslag- en back-upconfiguraties voor de nieuwe server. Selecteer **Server configureren**. Selecteer vervolgens de juiste prijscategorie. Zie [de pagina met prijzen](https://azure.microsoft.com/pricing/details/mysql/) voor meer informatie. Als u serverback-ups in geografisch redundante opslag wilt inschakelen, selecteert u **Geografisch redundant** in het gedeelte **Redundantieopties voor back-up**. Selecteer **OK**.
-
-   > [!NOTE]
-   > Overweeg het gebruik van de prijscategorie Basic als lichte reken- en I/O-capaciteit voldoende is voor uw workload. Servers die zijn gemaakt in de prijscategorie Basic kunnen later niet meer worden geschaald voor Algemeen gebruik of Geoptimaliseerd voor geheugen. 
-
-4. Selecteer **Beoordelen en maken** om de server in te richten. Dit kan maximaal 20 minuten duren.
-   
-5. Selecteer **Meldingen** op de werkbalk (pictogram van een klok) om het implementatieproces te bewaken.
-   
-Standaard worden de volgende databases gemaakt voor de server: **information_schema** , **mysql** , **performance_schema** en **sys**.
-
-## <a name="configure-a-server-level-firewall-rule"></a>Een serverfirewallregel configureren
-De server die wordt gemaakt, is standaard beveiligd met een firewall en is niet openbaar toegankelijk. Om toegang tot uw IP-adres te geven, gaat u in Azure Portal naar uw serverresource en selecteert u **Verbindingsbeveiliging** in het linkermenu van uw serverresource. Als u niet weet hoe u uw resource moet vinden, gaat u naar [Een resource openen](../azure-resource-manager/management/manage-resources-portal.md#open-resources).
-
->[!div class="mx-imgBorder"]
-> :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/add-current-ip-firewall.png" alt-text="Verbindingsbeveiliging - Firewallregels":::
-   
-Selecteer **Huidig IP-adres van client toevoegen** en selecteer daarna **Opslaan**. U kunt extra IP-adressen toevoegen of een IP-bereik opgeven om verbinding met uw server te maken vanaf die IP-adressen. Zie [Firewallregels beheren op een Azure Database for MySQL-server](./concepts-firewall-rules.md) voor meer informatie
-
-> [!NOTE]
-> Controleer of uw netwerk uitgaand verkeer toestaat via poort 3306, die wordt gebruikt door Azure Database for MySQL om connectiviteitsproblemen te vermijden.  
-
-## <a name="connect-to-azure-database-for-mysql-server-using-mysql-command-line-client"></a>Verbinding maken met Azure Database for MySQL-server met behulp van de mysql-opdrachtregelclient
-U kunt [mysql.exe](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) of [MySQL Workbench](./connect-workbench.md) kiezen om vanuit uw lokale omgeving verbinding met de server te maken. In deze quickstart voeren we **mysql.exe** in [Azure Cloud Shell](../cloud-shell/overview.md) uit om verbinding te maken met de server.
-
-1. Start Azure Cloud Shell in de portal door op het gemarkeerde pictogram in de linkerbovenhoek te klikken. Noteer uw servernaam, aanmeldings-id voor de serverbeheerder, wachtwoord en abonnement voor de nieuwe server in de sectie **Overzicht** , zoals hieronder is weergegeven.
-
-    >[!NOTE]
-    >Als u Cloud Shell voor de eerste keer start, wordt er een prompt weergegeven om een resourcegroep en opslagaccount te maken. Dit is een eenmalige stap die voor alle volgende sessies automatisch wordt toegevoegd. 
+## <a name="create-an-azure-database-for-mysql-single-server"></a>Eén Azure Database for MySQL-server maken
+1. Ga naar [Azure Portal](https://portal.azure.com/) om één Azure Database for MySQL-server-database te maken. Zoek en selecteer **Azure Database for MySQL**:
 
    >[!div class="mx-imgBorder"]
-   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/use-in-cloud-shell.png" alt-text="Volledige portalweergave van Cloud Shell":::
-2. Voer deze opdracht uit in de Azure Cloud Shell-terminal. Vervang de waarden door uw servernaam en aanmeldings-id voor de gebruiker met beheerdersrechten. Voor de gebruikersnaam van de beheerder is @\<servername> vereist, zoals hieronder wordt weergegeven voor Azure Database for MySQL  
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/find-azure-mysql-in-portal.png" alt-text="Azure Database for MySQL opzoeken":::
 
-  ```azurecli-interactive
-  mysql --host=mydemoserver.mysql.database.azure.com --user=myadmin@mydemoserver -p 
-  ```
+1. Selecteer **Toevoegen**.
 
-  Zo zie het proces eruit in de Cloud Shell-terminal
-  ```
-  Requesting a Cloud Shell.Succeeded.
-  Connecting terminal...
+2. Selecteer op de pagina **Implementatieoptie Azure Database for MySQL** **Enkele server**:
+   >[!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/choose-singleserver.png" alt-text="Schermopname van de optie Enkele server.":::
 
-  Welcome to Azure Cloud Shell
+3. Voer de basisinstellingen in voor een nieuwe enkele server:
 
-  Type "az" to use Azure CLI
-  Type "help" to learn about Cloud Shell
+   >[!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/4-create-form.png" alt-text="Schermopname van de optie MySQL-server maken.":::
 
-  user@Azure:~$mysql -h mydemoserver.mysql.database.azure.com -u myadmin@mydemoserver -p
-  Enter password:
-  Welcome to the MySQL monitor.  Commands end with ; or \g.
-  Your MySQL connection id is 64796
-  Server version: 5.6.42.0 Source distribution
+   **Instelling** | **Voorgestelde waarde** | **Beschrijving**
+   ---|---|---
+   Abonnement | Uw abonnement | Selecteer het gewenste Azure-abonnement.
+   Resourcegroep | **myresourcegroup** | Voer een nieuwe resourcegroep in kies of een bestaande uit uw abonnement.
+   Servernaam | **mydemoserver** | Voer een unieke naam in. De servernaam mag alleen kleine letters, cijfers en het koppelteken (-) bevatten. De naam moet 3 tot 63 tekens bevatten.
+   Gegevensbron |**Geen** | Selecteer **Geen** om een nieuwe server te maken. Selecteer **Back-up** alleen als u herstelt vanuit een back-up voor geografische gebieden van een bestaande server.
+   Locatie |Uw gewenste locatie | Selecteer een locatie in de lijst.
+   Versie | De meest recente primaire versie| Gebruik de meest recente primaire versie. Zie [alle ondersteunde versies](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions).
+   Compute en opslag | De standaardwaarden gebruiken| De standaardprijscategorie is **Algemeen gebruik** met **4 vCores** en **100 GB** opslag. Back-upretentie is ingesteld op **7 dagen**, met de back-upoptie **Geografisch redundant**.<br/>Bekijk de pagina met [prijzen](https://azure.microsoft.com/pricing/details/mysql/) en werk indien nodig de standaardwaarden bij.
+   Gebruikersnaam van beheerder | **mydemoadmin** | Voer de gebruikersnaam van de serverbeheerder in. Het is niet toegestaan om **azure_superuser**, **admin**, **administrator**, **root**, **guest** of **public** voor de gebruikersnaam van de beheerder te gebruiken.
+   Wachtwoord | Een wachtwoord | Een nieuw wachtwoord voor de gebruikersnaam van de serverbeheerder. Het wachtwoord moet 8 tot 128 tekens lang zijn en moet bestaan uit een combinatie van hoofdletters, kleine letters, cijfers en niet-alfanumerieke tekens (!, $, #, %, enzovoort).
+  
 
-  Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+   > [!NOTE]
+   > Overweeg het gebruik van de prijscategorie Basic als lichte reken- en I/O-capaciteit voldoende is voor uw workload. Servers die zijn gemaakt in de prijscategorie Basic kunnen later niet meer worden geschaald voor Algemeen gebruik of Geoptimaliseerd voor geheugen.
 
-  Oracle is a registered trademark of Oracle Corporation and/or its
-  affiliates. Other names may be trademarks of their respective
-  owners.
+4. Selecteer **Beoordelen en maken** om de server in te richten.
 
-  Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-  mysql>
-  ```
-3. Maak in dezelfde Azure Cloud Shell-terminal een database **guest** 
-  ```
-  mysql> CREATE DATABASE guest;
-  Query OK, 1 row affected (0.27 sec)
-  ```
-4. Wijzigen in database **gast**
-  ```
-  mysql> USE guest;
-  Database changed 
-  ```
-5. Typ ```quit``` en druk vervolgens op Enter om mysql af te sluiten.   
+5. Wacht tot de portal-pagina **Uw implementatie is voltooid** weergeeft. Selecteer **Ga naar resource** om naar de zojuist gemaakte serverpagina te gaan:
+
+   > [!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/deployment-complete.png" alt-text="Schermopname met het bericht Uw implementatie is voltooid.":::
+
+[Hebt u problemen? Laat het ons weten.](https://aka.ms/mysql-doc-feedback)
+
+## <a name="configure-a-server-level-firewall-rule"></a>Een serverfirewallregel configureren
+
+De nieuwe server is standaard beveiligd met een firewall. Als u verbinding wilt maken, moet u toegang tot uw IP-adres verlenen door de volgende stappen uit te voeren:
+
+1. Ga vanuit het linkerdeelvenster voor uw serverresource naar **Verbindingsbeveiliging**. Als u niet weet hoe u uw resource moet vinden, raadpleegt u [Een resource openen](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resources-portal#open-resources).
+
+   >[!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/add-current-ip-firewall.png" alt-text="Schermopname van de pagina Verbindingsbeveiliging > Firewallregels.":::
+
+2. Selecteer **Huidig IP-adres van client toevoegen** en selecteer vervolgens **Opslaan**.
+
+   > [!NOTE]
+   > Controleer of uw netwerk uitgaand verkeer toestaat via poort 3306, die wordt gebruikt door Azure Database for MySQL, om connectiviteitsproblemen te vermijden. 
+
+U kunt meer IP-adressen toevoegen of een IP-bereik opgeven om vanaf die IP-adressen verbinding te maken met uw server. Zie [Firewallregels beheren op een Azure Database for MySQL-server](./concepts-firewall-rules.md) voor meer informatie.
+
+
+[Hebt u problemen? Laat het ons weten](https://aka.ms/mysql-doc-feedback)
+
+## <a name="connect-to-the-server-by-using-mysqlexe"></a>Verbinding maken met de server met behulp van mysql.exe
+U kunt [mysql.exe](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) of [MySQL Workbench](./connect-workbench.md) gebruiken om vanuit uw lokale omgeving verbinding met de server te maken. In deze quickstart voeren we mysql.exe in [Azure Cloud Shell](../cloud-shell/overview.md) uit om verbinding te maken met de server.
+
+
+1. Open Azure Cloud Shell in de portal door de eerste knop op de werkbalk te selecteren, zoals in de volgende schermopname wordt weergegeven. Noteer de servernaam, de naam van de serverbeheerder en het abonnement voor uw nieuwe server in de sectie **Overzicht**, zoals weergegeven in de schermopname.
+
+    > [!NOTE]
+    > Als u Cloud Shell voor de eerste keer opent, wordt u gevraagd om een resourcegroep en opslagaccount te maken. Dit is een eenmalige stap. Deze wordt voor alle volgende sessies automatisch toegevoegd.
+
+   >[!div class="mx-imgBorder"]
+   > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/use-in-cloud-shell.png" alt-text="Schermopname van Cloud Shell in Azure Portal.":::
+2. Voer de volgende opdracht uit in de Azure Cloud Shell-terminal. Vervang de waarden door uw daadwerkelijke servernaam en gebruikersnaam van de beheerder. Voor Azure Database for MySQL moet u `@\<servername>` toevoegen aan de gebruikersnaam van de beheerder, zoals hier wordt weergegeven: 
+
+      ```azurecli-interactive
+      mysql --host=mydemoserver.mysql.database.azure.com --user=myadmin@mydemoserver -p
+      ```
+
+      Zo ziet het eruit in de Cloud Shell-terminal:
+
+      ```
+      Requesting a Cloud Shell.Succeeded.
+      Connecting terminal...
+
+      Welcome to Azure Cloud Shell
+
+      Type "az" to use Azure CLI
+      Type "help" to learn about Cloud Shell
+
+      user@Azure:~$mysql -h mydemoserver.mysql.database.azure.com -u myadmin@mydemoserver -p
+      Enter password:
+      Welcome to the MySQL monitor.  Commands end with ; or \g.
+      Your MySQL connection id is 64796
+      Server version: 5.6.42.0 Source distribution
+
+      Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+      Oracle is a registered trademark of Oracle Corporation and/or its
+      affiliates. Other names may be trademarks of their respective
+      owners.
+
+      Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+      mysql>
+      ```
+3. Maak in dezelfde Azure Cloud Shell-terminal een database met de naam `guest`:
+      ```
+      mysql> CREATE DATABASE guest;
+      Query OK, 1 row affected (0.27 sec)
+      ```
+4. Ga naar de `guest`-database:
+      ```
+      mysql> USE guest;
+      Database changed
+      ```
+5. Voer `quit` in en selecteer vervolgens **Enter** om mysql af te sluiten.
+
+[Hebt u problemen? Laat het ons weten.](https://aka.ms/mysql-doc-feedback)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
-U hebt een Azure Database for MySQL-server in een resourcegroep gemaakt.  Als u deze resources in de toekomst waarschijnlijk niet nodig hebt, kunt u ze verwijderen door de resourcegroep of de MySQL-server te verwijderen. Voer de volgende stappen uit om de resourcegroep te verwijderen:
-1. Zoek en selecteer **Resourcegroepen** in de Azure-portal. 
-2. Kies in de lijst met resourcegroepen de naam van uw resourcegroep.
-3. Selecteer op de pagina Overzicht van uw resourcegroep de optie **Resourcegroep verwijderen**.
+U hebt nu een Azure Database for MySQL-server in een resourcegroep gemaakt.  Als u deze resources in de toekomst waarschijnlijk niet nodig hebt, kunt u ze verwijderen door de resourcegroep te verwijderen. U kunt ook de MySQL-server verwijderen. Voltooi de volgende stappen om de resourcegroep te verwijderen:
+1. Zoek en selecteer **Resourcegroepen** in de Azure-portal.
+2. Selecteer in de lijst met resourcegroepen de naam van de resourcegroep.
+3. Selecteer op de pagina **Overzicht** voor uw resourcegroep de optie **Resourcegroep verwijderen**.
 4. Typ de naam van de resourcegroep in het bevestigingsvenster. Selecteer vervolgens **Verwijderen**.
 
-Om uw server te verwijderen, klikt u op de knop **Verwijderen** op de pagina **Overzicht** van uw server, zoals hieronder weergegeven:
+Om uw server te verwijderen, selecteert u **Verwijderen** op de pagina **Overzicht** van uw server, zoals hier wordt weergegeven:
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/quickstart-create-mysql-server-database-using-azure-portal/delete-server.png" alt-text="Uw resources verwijderen":::
+> :::image type="content" source="media/quickstart-create-mysql-server-database-using-azure-portal/delete-server.png" alt-text="Schermopname met de knop Verwijderen op de pagina Overzicht van de server.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 > [!div class="nextstepaction"]
->[Een PHP-app bouwen in Windows met MySQL](../app-service/tutorial-php-mysql-app.md)
+>[Een PHP-app bouwen in Windows met MySQL](../app-service/app-service-web-tutorial-php-mysql.md) <br/>
+
+> [!div class="nextstepaction"]
+>[PHP-app bouwen op Linux met MySQL](../app-service/containers/tutorial-php-mysql-app.md)<br/><br/>
+
+[Kunt u niet vinden wat u zoekt? Laat het ons weten.](https://aka.ms/mysql-doc-feedback)

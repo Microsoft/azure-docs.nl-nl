@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 06/12/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 648de447a08e593af28d11a3be206a2cfee80902
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6cf379b051ba42be2d7df7d288f07cdc2a0002a1
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84790089"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657632"
 ---
 # <a name="list-azure-deny-assignments-using-azure-powershell"></a>Azure deny-toewijzingen weer geven met Azure PowerShell
 
@@ -32,7 +32,7 @@ Met [Azure deny-toewijzingen](deny-assignments.md) kunnen gebruikers specifieke 
 Als u informatie wilt ophalen over een weiger toewijzing, hebt u het volgende nodig:
 
 - `Microsoft.Authorization/denyAssignments/read` machtiging, die deel uitmaakt van de meeste [ingebouwde rollen van Azure](built-in-roles.md)
-- [Power shell in azure Cloud shell](/azure/cloud-shell/overview) of [Azure PowerShell](/powershell/azure/install-az-ps)
+- [Power shell in azure Cloud shell](../cloud-shell/overview.md) of [Azure PowerShell](/powershell/azure/install-az-ps)
 
 ## <a name="list-deny-assignments"></a>Lijst met geweigerde toewijzingen weergeven
 

@@ -1,6 +1,6 @@
 ---
-title: Werken met een IoT Plug en Play-apparaat dat is verbonden met uw Azure IoT-oplossing (C#) | Microsoft Docs
-description: Gebruik C# om verbinding te maken en te werken met een IoT Plug en Play-apparaat dat is verbonden met uw Azure IoT-oplossing.
+title: 'Quickstart: werken met een IoT Plug and Play-apparaat dat is verbonden met uw Azure IoT-oplossing (C#) | Microsoft Docs'
+description: 'Quickstart: met behulp van C# verbinding maken en werken met een IoT Plug and Play-apparaat dat is verbonden met uw Azure IoT-oplossing.'
 author: ericmitt
 ms.author: ericmitt
 ms.date: 09/21/2020
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: ec38e0849b7f4c1a0ca98d75d4c6c82908c1e16e
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 018edea9a013df55b32ee22020be7226eab27319
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945373"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421546"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-c"></a>Quickstart: werken met een IoT Plug en Play-apparaat dat is verbonden met uw oplossing (C#)
 

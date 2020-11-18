@@ -6,70 +6,88 @@ ms.author: andrela
 ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 5/26/2020
-ms.openlocfilehash: ec406208f862eac2450cc6352f13f3596a7c9775
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 10/28/2020
+ms.openlocfilehash: 17d8d2638751d504c2a9a7ba90452faeb8ed36f1
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337384"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94425963"
 ---
 # <a name="quickstart-use-php-to-connect-and-query-data-in-azure-database-for-mysql"></a>Quickstart: PHP gebruiken om verbinding te maken en gegevens op te vragen in Azure Database for MySQL
-In deze snelstartgids ziet u hoe u met behulp van een [PHP](https://secure.php.net/manual/intro-whatis.php)-toepassing verbinding maakt met een Azure Database voor MySQL. U ziet hier hoe u SQL-instructies gebruikt om gegevens in de database op te vragen, in te voegen, bij te werken en te verwijderen. In dit artikel wordt ervan uitgegaan dat u bekend bent met het ontwikkelen met behulp van PHP, maar geen ervaring hebt met het werken met Azure Database voor MySQL.
+In deze snelstartgids ziet u hoe u met behulp van een [PHP](https://secure.php.net/manual/intro-whatis.php)-toepassing verbinding maakt met een Azure Database voor MySQL. U ziet hier hoe u SQL-instructies gebruikt om gegevens in de database op te vragen, in te voegen, bij te werken en te verwijderen.
 
 ## <a name="prerequisites"></a>Vereisten
-In deze snelstartgids worden de resources die in een van deze handleidingen zijn gemaakt, als uitgangspunt gebruikt:
-- [Een Azure-database voor een MySQL-server maken met behulp van Azure Portal](./quickstart-create-mysql-server-database-using-azure-portal.md)
-- [Een Azure-database voor een MySQL-server maken met behulp van Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md)
+Voor deze quickstart hebt u het volgende nodig:
 
-> [!IMPORTANT] 
-> Controleer of het IP-adres waarmee u verbinding maakt aan de firewallregels van de server is toegevoegd met [Azure Portal](./howto-manage-firewall-using-portal.md) of [Azure CLI](./howto-manage-firewall-using-cli.md)
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free)
+- Eén Azure Database for MySQL-server maken met behulp van [Azure Portal](./quickstart-create-mysql-server-database-using-azure-portal.md) <br/> of [Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md), als u er nog geen hebt.
+- Voltooi **EEN** van de onderstaande acties om connectiviteit in te schakelen, afhankelijk van of u openbare toegang of privétoegang hebt.
 
-## <a name="install-php"></a>PHP installeren
-Installeer PHP op uw eigen server of maak een Azure-[web-app](../app-service/overview.md) die PHP omvat.
+    |Bewerking| Verbindingsmethode|Instructiegids|
+    |:--------- |:--------- |:--------- |
+    | **Firewallregels configureren** | Openbaar | [Portal](./howto-manage-firewall-using-portal.md) <br/> [CLI](./howto-manage-firewall-using-cli.md)|
+    | **Service-eindpunt configureren** | Openbaar | [Portal](./howto-manage-vnet-using-portal.md) <br/> [CLI](./howto-manage-vnet-using-cli.md)|
+    | **Privékoppeling configureren** | Privé | [Portal](./howto-configure-privatelink-portal.md) <br/> [CLI](./howto-configure-privatelink-cli.md) |
 
-### <a name="macos"></a>macOS
-- Download [PHP 7.1.4](https://secure.php.net/downloads.php).
-- Installeer PHP en raadpleeg de [PHP-handleiding](https://secure.php.net/manual/install.macosx.php) voor verdere configuratie.
+- [Een database en een gebruiker die geen beheerder is maken](/howto-create-users?tabs=single-server)
+- Nieuwste PHP-versie installeren voor uw besturingssysteem
+    - [PHP op macOS](https://secure.php.net/manual/install.macosx.php)
+    - [PHP op Linux](https://secure.php.net/manual/install.unix.php)
+    - [PHP op Windows](https://secure.php.net/manual/install.windows.php)
 
-### <a name="linux-ubuntu"></a>Linux (Ubuntu)
-- Download [PHP 7.1.4 niet-thread-veilig (x64)](https://secure.php.net/downloads.php).
-- Installeer PHP en raadpleeg de [PHP-handleiding](https://secure.php.net/manual/install.unix.php) voor verdere configuratie.
-
-### <a name="windows"></a>Windows
-- Download [PHP 7.1.4 niet-thread-veilig (x64)](https://windows.php.net/download#php-7.1).
-- Installeer PHP en raadpleeg de [PHP-handleiding](https://secure.php.net/manual/install.windows.php) voor verdere configuratie.
+> [!NOTE]
+> In deze quickstart gebruiken we de bibliotheek [MySQLi](https://www.php.net/manual/en/book.mysqli.php) om de verbinding te beheren en een query uit te voeren op de server.
 
 ## <a name="get-connection-information"></a>Verbindingsgegevens ophalen
-Haal de verbindingsgegevens op die nodig zijn om verbinding te maken met de Azure Database voor MySQL. U hebt de volledig gekwalificeerde servernaam en aanmeldingsreferenties nodig.
+U kunt de verbindingsgegevens van de databaseserver ophalen van Azure Portal door de volgende stappen uit te voeren:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-2. Klik in het menu aan de linkerkant in Azure Portal op **Alle resources** en zoek naar de server die u hebt gemaakt (bijvoorbeeld **mydemoserver** ).
-3. Klik op de servernaam.
-4. Ga naar het venster **Overzicht** van de server en noteer de **Servernaam** en de **Aanmeldingsnaam van de serverbeheerder**. Als u uw wachtwoord vergeet, kunt u het wachtwoord in dit venster opnieuw instellen.
- :::image type="content" source="./media/connect-php/1_server-overview-name-login.png" alt-text="Naam van Azure Database voor MySQL-server":::
+2. Ga naar de pagina Azure Databases for MySQL. Zoek en selecteer **Azure Database for MySQL.**
+:::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/find-azure-mysql-in-portal.png" alt-text="Azure Database for MySQL opzoeken":::
 
-## <a name="connect-and-create-a-table"></a>Verbinding maken en een tabel maken
-Gebruik de volgende code om verbinding te maken en een tabel te maken met behulp van de SQL-instructie **CREATE TABLE**. 
+2. Selecteer de MySQL-server (bijvoorbeeld **mydemoserver**).
+3. Kopieer op de pagina **Overzicht** de volledig gekwalificeerde servernaam naast **Servernaam** en de gebruikersnaam van de beheerder naast **Aanmeldingsnaam van serverbeheerder**. Als u de servernaam of hostnaam wilt kopiëren, plaatst u de muisaanwijzer erboven en selecteert u het pictogram **Kopiëren**.
 
-Voor de code wordt gebruikgemaakt van de klasse **MySQL Improved extension** (mysqli) die deel uitmaakt van PHP. Met de code worden de methoden [mysqli_init](https://secure.php.net/manual/mysqli.init.php) en [mysqli_real_connect](https://secure.php.net/manual/mysqli.real-connect.php) aangeroepen om verbinding te maken met MySQL. Daarna wordt de methode [mysqli_query](https://secure.php.net/manual/mysqli.query.php) aangeroepen op de query uit te voeren. Vervolgens wordt methode [mysqli_close](https://secure.php.net/manual/mysqli.close.php) aangeroepen om de verbinding te sluiten.
+> [!IMPORTANT]
+> - Als u uw wachtwoord bent vergeten, kunt u [het wachtwoord opnieuw instellen](./howto-create-manage-server-portal.md#update-admin-password).
+> - Vervang de parameters **host, gebruikersnaam, wachtwoord** en **db_naam** door uw eigen waarden**
 
-Vervang de parameters Host, Gebruikersnaam, Wachtwoord en db_name door uw eigen waarden. 
+## <a name="step-1-connect-to-the-server"></a>Stap 1: Verbinding maken met de server
+SSL is standaard ingeschakeld. Mogelijk moet u het [SSL-certificaat DigiCertGlobalRootG2](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem) downloaden om verbinding te maken vanuit uw lokale omgeving. Met deze code wordt het volgende aangeroepen:
+- [mysqli_init](https://secure.php.net/manual/mysqli.init.php) om MySQLi te initialiseren.
+- [mysqli_ssl_set](https://www.php.net/manual/en/mysqli.ssl-set.php) om naar het pad van het SSL-certificaat te verwijzen. Dit is vereist voor uw lokale omgeving, maar is niet vereist voor App Service-web-app of Azure Virtual Machines.
+- [mysqli_real_connect](https://secure.php.net/manual/mysqli.real-connect.php) om verbinding te maken met MySQL.
+- [mysqli_close](https://secure.php.net/manual/mysqli.close.php) om de verbinding te sluiten.
+
 
 ```php
-<?php
 $host = 'mydemoserver.mysql.database.azure.com';
 $username = 'myadmin@mydemoserver';
 $password = 'your_password';
 $db_name = 'your_database';
 
-//Establishes the connection
+//Initializes MySQLi
 $conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
 
+// If using  Azure Virtual machines or Azure Web App, 'mysqli-ssl_set()' is not required as the certificate is already installed on the machines.
+mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+
+// Establish the connection
+mysqli_real_connect($conn, 'mydemoserver.mysql.database.azure.com', 'myadmin@mydemoserver', 'yourpassword', 'quickstartdb', 3306, MYSQLI_CLIENT_SSL);
+
+//If connection failed, show the error
+if (mysqli_connect_errno($conn))
+{
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+```
+[Ondervindt u problemen? Laat het ons weten](https://aka.ms/mysql-doc-feedback)
+
+## <a name="step-2-create-a-table"></a>Stap 2: Een tabel maken
+Gebruik de volgende code om verbinding te maken. Met deze code wordt het volgende aangeroepen:
+- [mysqli_query](https://secure.php.net/manual/mysqli.query.php) om de query uit te voeren.
+```php
 // Run the create table query
 if (mysqli_query($conn, '
 CREATE TABLE Products (
@@ -82,139 +100,56 @@ PRIMARY KEY (`Id`)
 ')) {
 printf("Table created\n");
 }
-
-//Close the connection
-mysqli_close($conn);
-?>
 ```
 
-## <a name="insert-data"></a>Gegevens invoegen
-Gebruik de volgende code om verbinding te maken en de gegevens in te voegen met behulp van de SQL-instructie **INSERT**.
+## <a name="step-3-insert-data"></a>Stap 3: Gegevens invoegen
+Gebruik de volgende code om gegevens in te voegen met behulp van de SQL-instructie **INSERT**. Voor deze code worden de volgende methoden gebruikt:
+- [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) om een voorbereide INSERT-instructie te maken
+- [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php) om de parameters voor elke ingevoegde kolomwaarde te koppelen.
+- [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php)
+- [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php) om de instructie te sluiten met behulp van methode
 
-Voor de code wordt gebruikgemaakt van de klasse **MySQL Improved extension** (mysqli) die deel uitmaakt van PHP. Met de code wordt gebruikgemaakt van de methode [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) om een invoeginstructie te maken. Daarna worden de parameters van elke ingevoegde kolomwaarde verbonden met de methode [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php). Met de code wordt de instructie uitgevoerd via de methode [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php). Daarna wordt de instructie gesloten via de methode [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php).
-
-Vervang de parameters Host, Gebruikersnaam, Wachtwoord en db_name door uw eigen waarden. 
 
 ```php
-<?php
-$host = 'mydemoserver.mysql.database.azure.com';
-$username = 'myadmin@mydemoserver';
-$password = 'your_password';
-$db_name = 'your_database';
-
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-
 //Create an Insert prepared statement and run it
 $product_name = 'BrandNewProduct';
 $product_color = 'Blue';
 $product_price = 15.5;
-if ($stmt = mysqli_prepare($conn, "INSERT INTO Products (ProductName, Color, Price) VALUES (?, ?, ?)")) {
-mysqli_stmt_bind_param($stmt, 'ssd', $product_name, $product_color, $product_price);
-mysqli_stmt_execute($stmt);
-printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
-mysqli_stmt_close($stmt);
+if ($stmt = mysqli_prepare($conn, "INSERT INTO Products (ProductName, Color, Price) VALUES (?, ?, ?)"))
+{
+    mysqli_stmt_bind_param($stmt, 'ssd', $product_name, $product_color, $product_price);
+    mysqli_stmt_execute($stmt);
+    printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
+    mysqli_stmt_close($stmt);
 }
 
-// Close the connection
-mysqli_close($conn);
-?>
 ```
 
-## <a name="read-data"></a>Gegevens lezen
-Gebruik de volgende code om verbinding te maken en de gegevens te lezen met behulp van de SQL-instructie **SELECT**.  Voor de code wordt gebruikgemaakt van de klasse **MySQL Improved extension** (mysqli) die deel uitmaakt van PHP. De code gebruikt de methode [mysqli_query](https://secure.php.net/manual/mysqli.query.php) om de SQL-query uit te voeren en de methode [mysqli_fetch_assoc](https://secure.php.net/manual/mysqli-result.fetch-assoc.php) om de resulterende rijen op te halen.
-
-Vervang de parameters Host, Gebruikersnaam, Wachtwoord en db_name door uw eigen waarden. 
+## <a name="step-4-read-data"></a>Stap 4: Gegevens lezen
+Gebruik de volgende code om de gegevens te lezen door de SQL-instructie **SELECT** te gebruiken.  Voor de code wordt de volgende methode gebruikt:
+- [mysqli_query](https://secure.php.net/manual/mysqli.query.php) om de **SELECT**-query uit te voeren
+- [mysqli_fetch_assoc](https://secure.php.net/manual/mysqli-result.fetch-assoc.php) om de resulterende rijen op te halen.
 
 ```php
-<?php
-$host = 'mydemoserver.mysql.database.azure.com';
-$username = 'myadmin@mydemoserver';
-$password = 'your_password';
-$db_name = 'your_database';
-
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-
 //Run the Select query
 printf("Reading data from table: \n");
 $res = mysqli_query($conn, 'SELECT * FROM Products');
-while ($row = mysqli_fetch_assoc($res)) {
-var_dump($row);
-}
+while ($row = mysqli_fetch_assoc($res))
+ {
+    var_dump($row);
+ }
 
-//Close the connection
-mysqli_close($conn);
-?>
-```
-
-## <a name="update-data"></a>Gegevens bijwerken
-Gebruik de volgende code om verbinding te maken en de gegevens bij te werken met behulp van de SQL-instructie **UPDATE**.
-
-Voor de code wordt gebruikgemaakt van de klasse **MySQL Improved extension** (mysqli) die deel uitmaakt van PHP. Met de code wordt gebruikgemaakt van de methode [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) om een bijwerkinstructie te maken. Daarna worden de parameters van elke bijgewerkte kolomwaarde verbonden met de methode [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php). Met de code wordt de instructie uitgevoerd via de methode [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php). Daarna wordt de instructie gesloten via de methode [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php).
-
-Vervang de parameters Host, Gebruikersnaam, Wachtwoord en db_name door uw eigen waarden. 
-
-```php
-<?php
-$host = 'mydemoserver.mysql.database.azure.com';
-$username = 'myadmin@mydemoserver';
-$password = 'your_password';
-$db_name = 'your_database';
-
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-
-//Run the Update statement
-$product_name = 'BrandNewProduct';
-$new_product_price = 15.1;
-if ($stmt = mysqli_prepare($conn, "UPDATE Products SET Price = ? WHERE ProductName = ?")) {
-mysqli_stmt_bind_param($stmt, 'ds', $new_product_price, $product_name);
-mysqli_stmt_execute($stmt);
-printf("Update: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
-
-//Close the connection
-mysqli_stmt_close($stmt);
-}
-
-mysqli_close($conn);
-?>
 ```
 
 
-## <a name="delete-data"></a>Gegevens verwijderen
-Gebruik de volgende code om verbinding te maken en de gegevens te lezen met behulp van de SQL-instructie **DELETE**. 
-
-Voor de code wordt gebruikgemaakt van de klasse **MySQL Improved extension** (mysqli) die deel uitmaakt van PHP. Met de code wordt gebruikgemaakt van de methode [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) om een verwijderinstructie te maken. Daarna worden de parameters verbonden voor het Where-component in de instructie. Hiervoor wordt de methode [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php) gebruikt. Met de code wordt de instructie uitgevoerd via de methode [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php). Daarna wordt de instructie gesloten via de methode [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php).
-
-Vervang de parameters Host, Gebruikersnaam, Wachtwoord en db_name door uw eigen waarden. 
+## <a name="step-5-delete-data"></a>Stap 5: Gegevens verwijderen
+Gebruik de volgende code om rijen te verwijderen met de SQL-instructie **DELETE**. Voor de code worden de volgende methoden gebruikt:
+- [mysqli_prepare](https://secure.php.net/manual/mysqli.prepare.php) om een voorbereide DELETE-instructie te maken
+- [mysqli_stmt_bind_param](https://secure.php.net/manual/mysqli-stmt.bind-param.php) om de parameters te binden
+- [mysqli_stmt_execute](https://secure.php.net/manual/mysqli-stmt.execute.php) om de voorbereide DELETE-instructie uit te voeren
+- [mysqli_stmt_close](https://secure.php.net/manual/mysqli-stmt.close.php) om de instructie te sluiten
 
 ```php
-<?php
-$host = 'mydemoserver.mysql.database.azure.com';
-$username = 'myadmin@mydemoserver';
-$password = 'your_password';
-$db_name = 'your_database';
-
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-
 //Run the Delete statement
 $product_name = 'BrandNewProduct';
 if ($stmt = mysqli_prepare($conn, "DELETE FROM Products WHERE ProductName = ?")) {
@@ -223,10 +158,6 @@ mysqli_stmt_execute($stmt);
 printf("Delete: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
 mysqli_stmt_close($stmt);
 }
-
-//Close the connection
-mysqli_close($conn);
-?>
 ```
 
 ## <a name="clean-up-resources"></a>Resources opschonen
@@ -241,4 +172,9 @@ az group delete \
 
 ## <a name="next-steps"></a>Volgende stappen
 > [!div class="nextstepaction"]
-> [Verbinding maken met Azure Database for MySQL via SSL](howto-configure-ssl.md)
+> [Een Azure Database for MySQL-server beheren met de portal](./howto-create-manage-server-portal.md)<br/>
+
+> [!div class="nextstepaction"]
+> [Een Azure Database for MySQL-server beheren met CLI](./how-to-manage-single-server-cli.md)
+
+[Kunt u niet vinden wat u zoekt? Laat het ons weten.](https://aka.ms/mysql-doc-feedback)

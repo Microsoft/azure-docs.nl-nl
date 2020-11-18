@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/18/2019
+ms.date: 09/29/2020
 ms.author: jeedes
-ms.openlocfilehash: d872c50174ba2fe7dfa321ac568e51fdaa80affc
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 455c15ec97d5621b51a4d8af87cc3a2968dd65dd
+ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92514738"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93095969"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sonarqube"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Sonarqube
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u Sonarqube met Azure Active Directory (Azure AD)
 * In Azure AD beheren wie er toegang heeft tot Sonarqube.
 * Ervoor zorgen dat uw gebruikers automatisch met hun Azure AD-account worden aangemeld bij Sonarqube.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -48,18 +46,18 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Om de integratie van Sonarqube te configureren in Azure AD, moet u Sonarqube vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen uit de galerie** **Sonarqube** in het zoekvak.
 1. Selecteer **Sonarqube** in de resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-sonarqube"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Sonarqube
+## <a name="configure-and-test-azure-ad-sso-for-sonarqube"></a>Eenmalige aanmelding van Microsoft Azure Active Directory voor Sonarqube configureren en testen
 
 Configureer en test eenmalige aanmelding van Azure AD met Sonarqube met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Sonarqube.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Sonarqube te configureren en te testen:
+Voer de volgende stappen uit om eenmalige aanmelding van Microsoft Azure AD bij Sonarqube te configureren en te testen:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -72,7 +70,7 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Sonarqube t
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **Sonarqube** , ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in Azure Portal naar de integratiepagina van de app **Sonarqube**, ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -102,9 +100,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -117,26 +115,26 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Sonarqube** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-sonarqube-sso"></a>Eenmalige aanmelding configureren voor Sonarqube
 
 1. Open een nieuw browservenster en meld u als beheerder aan bij de bedrijfssite van Sonarqube.
 
-2. Installeer de SAML-invoegtoepassing vanaf de Sonarqube-marktplaats.
+1. Klik op **Beheer > Configuratie > Beveiliging** en ga naar de **SAML-invoegtoepassing** om de volgende stappen uit te voeren.
 
-3. Klik in de linkerbovenhoek van de pagina op **ADMIN** en navigeer vervolgens naar **SAML**.
+1. Kopieer de volgende gegevens uit de IdP-metagegevens en plak ze in de bijbehorende tekstvelden in de SonarQube-invoegtoepassing.
+    1. IdP-entiteits-id
+    2. Aanmeldings-URL
+    3. X.509-certificaat 
+1. Sla alle gegevens op.
+    ![IDP SAML-invoegtoepassing](./media/sonarqube-tutorial/sso-idp-metadata.png)
 
-4. Voer op de pagina **SAML** de volgende stappen uit:
+1. Voer op de pagina **SAML** de volgende stappen uit:
 
     ![Configuratie van Sonarqube](./media/sonarqube-tutorial/config01.png)
 
@@ -146,9 +144,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     c. Typ in het tekstvak **Provider Name** een naam, zoals **SAML**.
 
-    d. Plak in het tekstvak **Provider ID** de waarde van **Azure AD-id** , die u hebt gekopieerd uit de Azure-portal.
+    d. Plak in het tekstvak **Provider ID** de waarde van **Azure AD-id**, die u hebt gekopieerd uit de Azure-portal.
 
-    e. Plak in het tekstvak **SAML login url** de waarde van **Aanmeldings-URL** , die u hebt gekopieerd uit de Azure-portal.
+    e. Plak in het tekstvak **SAML login url** de waarde van **Aanmeldings-URL**, die u hebt gekopieerd uit de Azure-portal.
 
     f. Open het met Base64 gecodeerde certificaat in Kladblok, kopieer de inhoud en plak deze in het tekstvak **Provider certificate**.
 
@@ -166,16 +164,14 @@ In deze sectie maakt u een gebruiker met de naam B.Simon in Sonarqube. Neem cont
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel in het toegangsvenster klikt, zou u automatisch moeten worden aangemeld bij de instantie van in het toegangsvenster waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+1. Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Sonarqube, waar u de aanmeldingsstroom kunt starten. 
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+2. Ga rechtstreeks naar de aanmeldings-URL van Sonarqube en start daar de aanmeldingsstroom.
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de Sonarqube-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor Sonarqube. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-
-- [Sonarqube uitproberen met Azure AD](https://aad.portal.azure.com/)
+* Wanneer u Sonarqube hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor realtime beveiliging wordt geboden tegen exfiltratie en infiltratie van gevoelige gegevens van uw organisatie. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

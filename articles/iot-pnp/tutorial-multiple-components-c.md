@@ -1,18 +1,18 @@
 ---
-title: C-voorbeeldcode voor een IoT Plug en Play-apparaat koppelen aan IoT Hub | Microsoft Docs
-description: Schrijf C-voorbeeldcode voor een IoT Plug and Play-apparaattoepassing die meerdere onderdelen gebruikt en verbinding maakt met een IoT-hub, en voer deze uit. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.
+title: 'Zelfstudie: C-voorbeeldcode voor een IoT Plug and Play-apparaat koppelen aan Azure IoT Hub | Microsoft Docs'
+description: 'Zelfstudie: C-voorbeeldcode maken en uitvoeren voor een IoT Plug and Play-apparaat dat meerdere onderdelen gebruikt en verbinding maakt met een IoT-hub. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.'
 author: ericmitt
 ms.author: ericmitt
 ms.date: 07/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: e1a2a45d0f5743874ce0c0b20190d7d396094e43
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 0bf0e45f6e9b088567dd48d3eb12ae979ba679e4
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046380"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421478"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-multiple-component-device-applications-running-on-linux-or-windows-to-iot-hub-c"></a>Zelfstudie: Een IoT Plug en Play-apparaattoepassing met meerdere onderdelen die wordt uitgevoerd in Linux of Windows, verbinden met IoT Hub (C)
 
@@ -34,7 +34,7 @@ In deze zelfstudie wordt ervan uitgegaan dat u Ubuntu Linux gebruikt. De stappen
 
 Om deze zelfstudie in Linux te voltooien installeert u de volgende software in uw lokale Linux-omgeving:
 
-Installeer **GCC**, **Git**, **cmake**en alle vereiste afhankelijkheden met behulp van de opdracht `apt-get`:
+Installeer **GCC**, **Git**, **cmake** en alle vereiste afhankelijkheden met behulp van de opdracht `apt-get`:
 
 ```sh
 sudo apt-get update

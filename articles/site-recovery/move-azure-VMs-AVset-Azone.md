@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: sideeksh
 ms.custom: MVC
-ms.openlocfilehash: fd541e551102b205acff28b6bc06bc88abd14763
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8224ae4a48bb4915492240c414b90edb86a4c258
+ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90605104"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93393129"
 ---
 # <a name="move-azure-vms-into-availability-zones"></a>Virtuele Azure-machines verplaatsen naar beschikbaarheidszones
 
@@ -62,7 +62,7 @@ In een scenario waarin u uw virtuele machines als *één exemplaar* in een bepaa
 4. Voor Linux-VM’s volgt u de richtlijnen van de Linux-distributeur voor het verkrijgen van de meest recente basiscertificaten en de certificaatintrekkingslijst op de VM.
 5. Zorg ervoor dat u geen verificatieproxy gebruikt om de verbinding met het netwerk te beheren voor de VM’s die u wilt verplaatsen.
 
-6. Als de VM die u wilt verplaatsen geen toegang heeft tot internet en een firewallproxy gebruikt om uitgaande toegang te beheren, controleert u de vereisten bij [Uitgaande netwerkconnectiviteit configureren](azure-to-azure-tutorial-enable-replication.md#set-up-outbound-network-connectivity-for-vms).
+6. Controleer [uitgaande connectiviteitsvereisten voor VM's](azure-to-azure-tutorial-enable-replication.md#set-up-vm-connectivity).
 
 7. Identificeer de bronnetwerkindeling en de resources die u momenteel gebruikt voor verificatie, waaronder load balancers, NSG’s en openbare IP-adressen.
 
@@ -99,16 +99,12 @@ De onderstaande stappen tonen u hoe u met Azure Site Recovery de replicatie van 
 1. Selecteer in Azure Portal **Virtuele machines** en selecteer de VM die u naar de beschikbaarheidszones wilt verplaatsen.
 2. Selecteer in **Bewerkingen** de optie **Herstel na noodgeval**.
 3. Selecteer in **Noodherstel configureren** > **Doelregio** de doelregio waarnaar u wilt repliceren. Zorg ervoor dat deze regio beschikbaarheidszones [ondersteunt](../availability-zones/az-region.md).
-
-    ![Selectie van doelregio](media/azure-vms-to-zones/enable-rep-1.PNG)
-
 4. Selecteer **Volgende: Geavanceerde instellingen**.
 5. Kies de juiste waarden voor doelabonnement, doel-VM-resourcegroep en virtueel netwerk.
 6. In de sectie **Beschikbaarheid** kiest u de beschikbaarheidszone waarnaar u de virtuele machine wilt verplaatsen. 
    > [!NOTE]
    > Als u de optie voor de beschikbaarheidsset of beschikbaarheidszone niet ziet, controleert u of aan de [vereisten](#prepare-the-source-vms) is voldaan en de [voorbereiding](#prepare-the-source-vms) van bron-VM's is voltooid.
   
-    ![Selecties voor het kiezen van een beschikbaarheidszone](media/azure-vms-to-zones/enable-rep-2.PNG)
 
 7. Selecteer **Replicatie inschakelen**. Door deze actie wordt een taak gestart voor het inschakelen van replicatie voor de VM.
 
@@ -119,7 +115,6 @@ Nadat de replicatietaak is voltooid, kunt u de replicatiestatus controleren, de 
 1. Selecteer in het VM-menu de optie **Herstel na noodgeval**.
 2. U kunt de replicatiestatus, de gemaakte herstelpunten, en de bron- en doelregio's op de kaart controleren.
 
-   ![Replicatiestatus](media/azure-to-azure-quickstart/replication-status.png)
 
 ## <a name="test-the-configuration"></a>De configuratie testen
 

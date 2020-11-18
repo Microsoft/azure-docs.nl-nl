@@ -5,12 +5,12 @@ ms.date: 3/5/2020
 ms.topic: quickstart
 ms.service: azure-functions
 ms.custom: subject-armqs
-ms.openlocfilehash: 362ff5cd59982c1d848ed59af8381090344f5c5e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 1e623405faa89ff41eccdaa57578bc8ac94cd78c
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88642262"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422821"
 ---
 # <a name="quickstart-create-and-deploy-azure-functions-resources-from-an-arm-template"></a>Quickstart: Azure Functions-resources maken en implementeren vanuit een ARM-sjabloon
 
@@ -38,7 +38,14 @@ Kies een van de volgende tabbladen, klik op de koppeling en voltooi de sectie om
 
 # <a name="visual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-[Een lokaal Functions-project maken in Visual Studio Code](functions-create-first-function-vs-code.md#create-an-azure-functions-project)
+Maak uw lokale Functions-project in uw gekozen taal in Visual Studio Code:  
+
++ [C#](create-first-function-vs-code-csharp.md)
++ [Java](create-first-function-vs-code-java.md)
++ [JavaScript](create-first-function-vs-code-node.md)
++ [PowerShell](create-first-function-vs-code-powershell.md)
++ [Python](create-first-function-vs-code-python.md)
++ [TypeScript](create-first-function-vs-code-typescript.md)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
@@ -46,7 +53,14 @@ Kies een van de volgende tabbladen, klik op de koppeling en voltooi de sectie om
 
 # <a name="command-line"></a>[Opdrachtregel](#tab/command-line)
 
-[Een Functions-project maken via de opdrachtregel](functions-create-first-azure-function-azure-cli.md#create-a-local-function-project)
+Maak uw lokale Functions-project in uw gekozen taal via de opdrachtregel:
+
++ [C#](create-first-function-cli-csharp.md)
++ [Java](create-first-function-cli-java.md)
++ [JavaScript](create-first-function-cli-node.md)
++ [PowerShell](create-first-function-cli-powershell.md)
++ [Python](create-first-function-cli-python.md)
++ [TypeScript](create-first-function-cli-typescript.md)
 
 ---
 
@@ -117,7 +131,7 @@ Kopieer in de uitvoer de URL van de HTTP-trigger. U kunt dit gebruiken om de fun
 
 1. Nadat de publicatie is voltooid, kopieert u de **Site-URL**.
 
-    :::image type="content" source="media/functions-create-first-function-arm/publish-summary-site-url.png" alt-text="Een bestaand publicatiedoel kiezen":::
+    :::image type="content" source="media/functions-create-first-function-arm/publish-summary-site-url.png" alt-text="De site-URL kopiëren vanuit het publicatieoverzicht":::
 
 1. Voeg het pad `/api/<FUNCTION_NAME>?name=Functions` toe, waarbij `<FUNCTION_NAME>` de naam van uw functie is. De URL die uw HTTP-triggerfunctie aanroept, heeft de volgende indeling:
 

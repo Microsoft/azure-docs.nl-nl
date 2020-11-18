@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 10/01/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 856c5f106f164a98b60fdb3eeda31d6099d5b7bd
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 5025c4ad81433b6eb18f5beded860625791ffce5
+ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932002"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94445095"
 ---
 # <a name="about-azure-key-vault"></a>Over Azure Key Vault
 
@@ -39,7 +39,7 @@ Met behulp van URI's hebben uw toepassingen veilig toegang tot de benodigde gege
 
 Voor toegang tot een sleutelkluis is de juiste verificatie en autorisatie vereist voordat een aanroeper (gebruiker of toepassing) toegang kan krijgen. Met verificatie wordt de identiteit van de aanroeper vastgesteld, terwijl autorisatie bepaalt welke bewerkingen de aanroeper mag uitvoeren.
 
-Verificatie wordt uitgevoerd via Azure Active Directory. Autorisatie kan worden uitgevoerd via op rollen gebaseerd toegangsbeheer (RBAC) of Key Vault-toegangsbeleid. RBAC wordt gebruikt bij het beheren van de kluizen. Toegangsbeleid tot sleutelkluizen wordt gebruikt bij pogingen om toegang te krijgen tot gegevens in een kluis.
+Verificatie wordt uitgevoerd via Azure Active Directory. Autorisatie kan worden uitgevoerd via op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) of Key Vault-toegangsbeleid. Azure RBAC wordt gebruikt bij het beheren van de kluizen. Toegangsbeleid tot sleutelkluizen wordt gebruikt bij pogingen om toegang te krijgen tot gegevens in een kluis.
 
 Azure-sleutelkluizen kunnen worden beveiligd met software of, zoals bij de Premium-laag voor Azure Key Vault, met hardware door middel van HSM's (Hardware Security Modules). Met software beveiligde sleutels, geheimen en certificaten worden beveiligd door Azure. Hiervoor wordt gebruikgemaakt van algoritmen en sleutellengten die voldoen aan de industriestandaard.  Voor situaties waar extra zekerheid is vereist, kunt u sleutels in HSM's importeren of genereren die nooit verdergaan dan de HSM-grens. Azure Key Vault maakt gebruik van nCipher-HSM's. Deze zijn Federal Information Processing Standards (FIPS) 140-2 Level 2 gevalideerd. U kunt nCipher-hulpprogramma's gebruiken om een sleutel te verplaatsen van uw HSM naar Azure Key Vault.
 

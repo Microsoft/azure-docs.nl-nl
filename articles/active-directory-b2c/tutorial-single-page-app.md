@@ -11,16 +11,18 @@ ms.custom: mvc, seo-javascript-september2019, devx-track-js
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 3a3eb77315953c3791e09c4326af7cc3e3231a69
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 6daf2da5b5bac051ac110ff15ed2c44971300a30
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92670047"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421036"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-with-azure-ad-b2c"></a>Zelfstudie: Verificatie inschakelen in een toepassing met één pagina met Azure AD B2C
 
-Deze zelfstudie laat zien hoe u Azure Active Directory B2C (Azure AD B2C) kunt gebruiken voor het aanmelden en registreren van gebruikers in een toepassing met één pagina met behulp van de impliciete toekenningsstroom van OAuth 2.0.
+In deze zelfstudie wordt beschreven hoe u Azure Active Directory B2C (Azure AD B2C) gebruikt voor het registreren en aanmelden van gebruikers in een toepassing met één pagina door middel van onderstaande opties:
+* [OAuth 2.0-autorisatiecodestroom](https://docs.microsoft.com/azure/active-directory-b2c/authorization-code-flow) (met [MSAL.js 2.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser))
+* [OAuth 2.0-stroom voor impliciete toekenning](https://docs.microsoft.com/azure/active-directory-b2c/implicit-flow-single-page-application) (met [MSAL.js 1.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-core))
 
 Deze zelfstudie, de eerste in een tweedelige serie, bevat:
 
@@ -39,7 +41,7 @@ In de [volgende zelfstudie](tutorial-single-page-app-webapi.md) wordt uitgelegd 
 U hebt de volgende Azure AD B2C-resources nodig om door te gaan met de stappen in deze zelfstudie:
 
 * [Azure AD B2C-tenant](tutorial-create-tenant.md)
-* [Toepassing geregistreerd](tutorial-register-spa.md) in uw tenant (gebruik impliciete stroomopties)
+* [Toepassing](tutorial-register-spa.md) die is geregistreerd in uw tenant
 * [Gebruikersstromen die zijn gemaakt](tutorial-create-user-flows.md) in uw tenant
 
 Daarnaast hebt u het volgende nodig voor uw lokale ontwikkelomgeving:
@@ -49,17 +51,28 @@ Daarnaast hebt u het volgende nodig voor uw lokale ontwikkelomgeving:
 
 ## <a name="update-the-application"></a>De toepassing bijwerken
 
-In de tweede zelfstudie die u als onderdeel van de vereisten hebt voltooid, hebt u een webtoepassing geregistreerd in Azure AD B2C. Als u communicatie wilt inschakelen voor het codevoorbeeld in deze zelfstudie, voegt u een antwoord-URL (ook wel een omleidings-URL genoemd) toe aan de registratie van de toepassing.
+In de [tweede zelfstudie](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-register-spa) die u als onderdeel van de vereisten hebt voltooid, hebt u een toepassing met één pagina geregistreerd in Azure AD B2C. Als u communicatie wilt inschakelen voor het codevoorbeeld in deze zelfstudie, voegt u een antwoord-URL (ook wel een omleidings-URL genoemd) toe aan de registratie van de toepassing.
 
 Als u een toepassing wilt bijwerken in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](https://aka.ms/b2cappregtraining).
 
-#### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
+#### <a name="app-registrations-auth-code-flow"></a>[App-registraties (autorisatiecodestroom)](#tab/app-reg-auth/)
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Selecteer **Azure AD B2C** in het linkermenu. Of selecteer **Alle services** en zoek naar en selecteer **Azure AD B2C**.
-1. Selecteer **App-registraties** , selecteer het tabblad **Toepassingen in eigendom** en selecteer vervolgens de toepassing *webapp1*.
-1. Selecteer onder **Web** de koppeling **URL toevoegen** en voer `http://localhost:6420` in.
+1. Selecteer achtereenvolgens **App-registraties**, het tabblad **Apps in eigendom** en de app *spaapp1*.
+1. Selecteer onder **Toepassing met één pagina** de koppeling **URL toevoegen** en voer vervolgens `http://localhost:6420` in.
+1. Selecteer **Opslaan**.
+1. Selecteer **Overzicht**.
+1. Registreer de **toepassings-ID (client)** voor gebruik in een latere stap wanneer u de code in de webtoepassing met één pagina bijwerkt.
+
+#### <a name="app-registrations-implicit-flow"></a>[App-registraties (impliciete stroom)](#tab/app-reg-implicit/)
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
+1. Selecteer **Azure AD B2C** in het linkermenu. Of selecteer **Alle services** en zoek naar en selecteer **Azure AD B2C**.
+1. Selecteer achtereenvolgens **App-registraties**, het tabblad **Apps in eigendom** en de toepassing *spaapp1*.
+1. Selecteer onder **Toepassing met één pagina** de koppeling **URL toevoegen** en voer vervolgens `http://localhost:6420` in.
 1. Selecteer onder **Impliciete toekenning** de selectievakjes voor **Toegangstokens** en **Id-tokens** als deze nog niet zijn geselecteerd, en selecteer **Opslaan**.
 1. Selecteer **Overzicht**.
 1. Registreer de **toepassings-ID (client)** voor gebruik in een latere stap wanneer u de code in de webtoepassing met één pagina bijwerkt.
@@ -69,7 +82,7 @@ Als u een toepassing wilt bijwerken in de Azure AD B2C-tenant, kunt u de nieuwe 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-tenant bevat door in het bovenste menu te klikken op het filter **Map en abonnement** en de map te kiezen waarin de tenant zich bevindt.
 1. Kies **Alle services** linksboven in de Azure-portal en zoek vervolgens **Azure AD B2C** en selecteer deze.
-1. Selecteer **Toepassingen (verouderd)** en selecteer vervolgens de toepassing *webapp1*.
+1. Selecteer **Toepassingen (verouderd)** en vervolgens de toepassing *spaapp1*.
 1. Voeg onder **Antwoord-URL**`http://localhost:6420` toe.
 1. Selecteer **Opslaan**.
 1. Op de pagina eigenschappen stelt u de **Toepassings-ID** in. U gebruikt de toepassings-ID in een latere stap wanneer u de code in de webtoepassing met één pagina bijwerkt.
@@ -80,56 +93,114 @@ Als u een toepassing wilt bijwerken in de Azure AD B2C-tenant, kunt u de nieuwe 
 
 In deze zelfstudie configureert u een codevoorbeeld dat u van GitHub downloadt om met uw B2C-tenant te werken. Het voorbeeld laat zien hoe een toepassing met één pagina Azure AD B2C kan gebruiken voor het aanmelden en registreren van gebruikers en bij het aanroepen van een beveiligde web-API (de Web-API wordt ingeschakeld in de volgende zelfstudie van de serie).
 
-[Download een ZIP-bestand ](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp/archive/master.zip) of kloon de voorbeeld-web-app vanuit GitHub.
+* Voorbeeld van MSAL.js 2.x-autorisatiecodestroom:
 
-```
-git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp.git
-```
+    [Download een ZIP-bestand](https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa/archive/main.zip) of kloon het voorbeeld uit GitHub:
+
+    ```
+    git clone https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa.git
+    ```
+* Voorbeeld van impliciete stroom voor MSAL.js 1.x:
+
+    [Download een ZIP-bestand](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp/archive/master.zip) of kloon het voorbeeld uit GitHub:
+
+    ```
+    git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp.git
+    ```
 
 ## <a name="update-the-sample"></a>Het voorbeeld bijwerken
 
 Nu u het voorbeeld hebt verkregen, werkt u de code bij met de naam van uw Azure AD B2C=tenant en de toepassings-ID die u in een eerdere stap hebt ingesteld.
 
-1. Open het bestand *authConfig.js* in de map *JavaScriptSPA*.
-1. Werk het `msalConfig`-object bij
-    * `clientId` met de waarde van de **toepassings-ID (client)** die u in een eerdere stap hebt ingesteld
-    * `authority` URL met de naam van uw Azure AD B2C-tenant en de naam van de registratie-/aanmeldingsgebruikersstroom die u hebt gemaakt als onderdeel van de vereisten (bijvoorbeeld *B2C_1_signupsignin1* )
+#### <a name="auth-code-flow-sample"></a>[Voorbeeld van autorisatiecodestroom](#tab/config-auth/)
 
-    ```javascript
-    const msalConfig = {
-        auth: {
-          clientId: "00000000-0000-0000-0000-000000000000", // Replace this value with your Application (client) ID
-          authority: b2cPolicies.authorities.signUpSignIn.authority,
-          validateAuthority: false
+1. Open het bestand *authConfig.js* in de map *App*.
+1. Ga in het object `msalConfig` naar de toewijzing voor `clientId` en vervang deze door de **Toepassing-id (client)** die u in een eerdere stap hebt vastgelegd.
+1. Open het bestand `policies.js`.
+1. Zoek de vermeldingen onder `names` en vervang de bijbehorende toewijzing door de naam van de gebruikersstromen die u in een vorige stap hebt gemaakt, bijvoorbeeld `B2C_1_signupsignin1`.
+1. Zoek de vermeldingen onder `authorities` en vervang deze door de betreffende namen van de gebruikersstromen die u in een vorige stap hebt gemaakt, bijvoorbeeld `https://<your-tenant-name>.b2clogin.com/<your-tenant-name>.onmicrosoft.com/<your-sign-in-sign-up-policy>`.
+1. Ga naar de toewijzing voor `authorityDomain` en vervang deze door `<your-tenant-name>.b2clogin.com`.
+1. Open het bestand `apiConfig.js`.
+1. Ga naar de toewijzing voor `b2cScopes` en vervang de URL door de bereik-URL die u hebt gemaakt voor de web-API, bijvoorbeeld `b2cScopes: ["https://<your-tenant-name>.onmicrosoft.com/helloapi/demo.read"]`.
+1. Ga naar de toewijzing voor `webApi` en vervang de huidige URL door de URL waarop u in Stap 4 uw web-API hebt geïmplementeerd, bijvoorbeeld `webApi: http://localhost:5000/hello`.
+
+#### <a name="implicit-flow-sample"></a>[Voorbeeld van impliciete stroom](#tab/config-implicit/)
+
+1. Open het bestand *authConfig.js* in de map *JavaScriptSPA*.
+1. Ga in het object `msalConfig` naar de toewijzing voor `clientId` en vervang deze door de **Toepassing-id (client)** die u in een eerdere stap hebt vastgelegd.
+1. Open het bestand `policies.js`.
+1. Zoek de vermeldingen onder `names` en vervang de bijbehorende toewijzing door de naam van de gebruikersstromen die u in een vorige stap hebt gemaakt, bijvoorbeeld `B2C_1_signupsignin1`.
+1. Zoek de vermeldingen onder `authorities` en vervang deze door de betreffende namen van de gebruikersstromen die u in een vorige stap hebt gemaakt, bijvoorbeeld `https://<your-tenant-name>.b2clogin.com/<your-tenant-name>.onmicrosoft.com/<your-sign-in-sign-up-policy>`.
+1. Open het bestand `apiConfig.js`.
+1. Ga naar de toewijzing voor `b2cScopes` en vervang de URL door de bereik-URL die u hebt gemaakt voor de web-API, bijvoorbeeld `b2cScopes: ["https://<your-tenant-name>.onmicrosoft.com/helloapi/demo.read"]`.
+1. Ga naar de toewijzing voor `webApi` en vervang de huidige URL door de URL waarop u in Stap 4 uw web-API hebt geïmplementeerd, bijvoorbeeld `webApi: http://localhost:5000/hello`.
+
+* * *
+
+De resulterende code ziet er ongeveer als volgt uit:
+
+#### <a name="auth-code-flow-sample"></a>[Voorbeeld van autorisatiecodestroom](#tab/review-auth/)
+
+*authConfig.js*:
+
+```javascript
+const msalConfig = {
+  auth: {
+    clientId: "e760cab2-b9a1-4c0d-86fb-ff7084abd902",
+    authority: b2cPolicies.authorities.signUpSignIn.authority,
+    knownAuthorities: [b2cPolicies.authorityDomain],
+  },
+  cache: {
+    cacheLocation: "localStorage",
+    storeAuthStateInCookie: true
+  }
+};
+
+const loginRequest = {
+  scopes: ["openid", "profile"],
+};
+
+const tokenRequest = {
+  scopes: apiConfig.b2cScopes // i.e. ["https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read"]
+};
+```
+
+*policies.js*:
+
+```javascript
+const b2cPolicies = {
+    names: {
+        signUpSignIn: "b2c_1_susi",
+        forgotPassword: "b2c_1_reset",
+        editProfile: "b2c_1_edit_profile"
+    },
+    authorities: {
+        signUpSignIn: {
+            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_susi",
         },
-        cache: {
-          cacheLocation: "localStorage",
-          storeAuthStateInCookie: true
+        forgotPassword: {
+            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_reset",
+        },
+        editProfile: {
+            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_edit_profile"
         }
-    };
+    },
+    authorityDomain: "fabrikamb2c.b2clogin.com"
+}
+```
 
-    const loginRequest = {
-       scopes: ["openid", "profile"],
-    };
+*apiConfig.js*:
 
-    const tokenRequest = {
-      scopes: apiConfig.b2cScopes // i.e. ["https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read"]
-    };
-    ```
+```javascript
+const apiConfig = {
+  b2cScopes: ["https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read"],
+  webApi: "https://fabrikamb2chello.azurewebsites.net/hello"
+};
+```
 
-1. Open het bestand *authConfig.js* in de map *JavaScriptSPA*.
-1. Werk het `msalConfig`-object bij
-    * `clientId` met de waarde van de **toepassings-ID (client)** die u in een eerdere stap hebt ingesteld
-    * `authority` URL met de naam van uw Azure AD B2C-tenant en de naam van de registratie-/aanmeldingsgebruikersstroom die u hebt gemaakt als onderdeel van de vereisten (bijvoorbeeld *B2C_1_signupsignin1* )
-1. Open het bestand *policies.js*.
-1. Zoek de vermeldingen voor `names` en `authorities` en vervang deze door namen die passen bij de namen voor de beleidsregels die u in stap 2 hebt gemaakt. Vervang `fabrikamb2c.onmicrosoft.com` door de naam van uw Azure AD B2C-tenant, bijvoorbeeld `https://<your-tenant-name>.b2clogin.com/<your-tenant-name>.onmicrosoft.com/<your-sign-in-sign-up-policy>`.
-1. Open het bestand *apiConfig.js*.
-1. Zoek de toewijzing voor de bereiken `b2cScopes` en vervang de URL door de bereik-URL die u hebt gemaakt voor de web-API, bijvoorbeeld `b2cScopes: ["https://<your-tenant-name>.onmicrosoft.com/helloapi/demo.read"]`.
-1. Zoek de toewijzing voor de API-URL `webApi` en vervang de huidige URL door de URL waar u uw web-API in stap 4 hebt geïmplementeerd, bijvoorbeeld `webApi: http://localhost:5000/hello`.
+#### <a name="implicit-flow-sample"></a>[Voorbeeld van impliciete stroom](#tab/review-implicit/)
 
-De resulterende code moet er als volgt uitzien:
-
-### <a name="authconfigjs"></a>authConfig.js
+*authConfig.js*:
 
 ```javascript
 const msalConfig = {
@@ -152,7 +223,8 @@ const tokenRequest = {
   scopes: apiConfig.b2cScopes // i.e. ["https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read"]
 };
 ```
-### <a name="policiesjs"></a>policies.js
+
+*policies.js*:
 
 ```javascript
 const b2cPolicies = {
@@ -174,7 +246,8 @@ const b2cPolicies = {
     },
 }
 ```
-### <a name="apiconfigjs"></a>apiConfig.js
+
+*apiConfig.js*:
 
 ```javascript
 const apiConfig = {
@@ -183,13 +256,24 @@ const apiConfig = {
 };
 ```
 
+* * *
+
+
 ## <a name="run-the-sample"></a>De voorbeeldtoepassing uitvoeren
 
-1. Open een consolevenster en ga naar de map met het voorbeeld. Bijvoorbeeld:
+1. Open een consolevenster en ga naar de map met het voorbeeld. 
 
-    ```console
-    cd active-directory-b2c-javascript-msal-singlepageapp
-    ```
+    - Voorbeeld van MSAL.js 2.x-autorisatiecodestroom:
+
+        ```console
+        cd ms-identity-b2c-javascript-spa
+        ```
+    - Voorbeeld van impliciete stroom voor MSAL.js 1.x: 
+
+        ```console
+        cd active-directory-b2c-javascript-msal-singlepageapp
+        ```
+
 1. Voer de volgende opdrachten uit:
 
     ```console
@@ -210,7 +294,7 @@ const apiConfig = {
 
 Deze voorbeeldtoepassing ondersteunt registreren, aanmelden en wachtwoorden opnieuw instellen. In deze zelfstudie meldt u zich aan met een e-mailadres.
 
-1. Selecteer **Aanmelden** om de *B2C_1_signupsignin1* -gebruikersstroom te initiëren die u in een eerdere stap hebt opgegeven.
+1. Selecteer **Aanmelden** om de *B2C_1_signupsignin1*-gebruikersstroom te initiëren die u in een eerdere stap hebt opgegeven.
 1. Azure AD B2C toont een aanmeldingspagina met een registratielink. Aangezien u nog geen account hebt, klikt u op de link **Nu registreren**.
 1. Tijdens de aanmeldingswerkstroom wordt een pagina weergegeven waarmee de identiteit wordt opgehaald en gecontroleerd van de gebruiker die een e-mailadres heeft gebruikt. Tijdens de aanmeldingswerkstroom worden ook het wachtwoord van de gebruiker en de aangevraagde kenmerken opgehaald die in de gebruikersstroom zijn gedefinieerd.
 

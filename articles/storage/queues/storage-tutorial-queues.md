@@ -9,12 +9,12 @@ ms.subservice: queues
 ms.topic: tutorial
 ms.reviewer: dineshm
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 23684dbbc5cb8c2d5fc4880ae8fe1999450928e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9d661800c53cc0795efde1f411675d17661fb968
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400567"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93345530"
 ---
 # <a name="tutorial-work-with-azure-storage-queues-in-net"></a>Zelfstudie: Werken met Azure Storage-wachtrijen in .NET
 
@@ -39,7 +39,7 @@ In deze zelfstudie leert u het volgende:
 
 - Download een gratis kopie van de [Visual Studio Code](https://code.visualstudio.com/download)-editor voor meerdere platforms.
 - Download en installeer de [.NET Core SDK](https://dotnet.microsoft.com/download) versie 3.1 of hoger.
-- Als u geen actief abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+- Als u momenteel geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 ## <a name="create-an-azure-storage-account"></a>Een Azure-opslagaccount maken
 
@@ -94,6 +94,8 @@ Maak een .NET Core-toepassing met de naam **QueueApp**. Voor het gemak zal deze 
 
    C:\Tutorials\QueueApp>_
    ```
+
+<!-- markdownlint-disable MD023 -->
 
 ## <a name="add-the-azure-client-libraries"></a>De Azure-clientbibliotheken toevoegen
 
@@ -160,7 +162,7 @@ Voeg de verbindingsreeks toe aan de app, zodat deze toegang krijgt tot het opsla
 
 1. Ga terug naar Visual Studio Code.
 
-1. Vervang in de methode **Algemeen** de code `Console.WriteLine("Hello World!");` door de volgende regel die de verbindingsreeks uit de omgevingsvariabele ophaalt.
+1. Vervang in de methode **Main** de code `Console.WriteLine("Hello World!");` door de volgende regel waarmee de verbindingstekenreeks wordt opgehaald uit de omgevingsvariabele.
 
    # <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
 

@@ -1,18 +1,18 @@
 ---
-title: C-voorbeeldcode voor een IoT Plug en Play-apparaat koppelen aan IoT Hub | Microsoft Docs
-description: Schrijf voorbeeldcode voor een IoT Plug and Play-apparaat in Linux of Windows dat verbinding maakt met een IoT-hub, en voer deze uit. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.
+title: 'Quickstart: C-voorbeeldcode voor een IoT Plug and Play-apparaat koppelen aan Azure IoT Hub | Microsoft Docs'
+description: 'Quickstart: in Linux of Windows voorbeeldcode maken en uitvoeren voor een IoT Plug and Play-apparaat dat verbinding maakt met een IoT-hub. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.'
 author: ericmitt
 ms.author: ericmitt
 ms.date: 07/14/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: e490171fd533783aab9fd44798a9c81c55faf89f
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: d69eca10a3ee19919d7cd9e748486e30db95e749
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047927"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421665"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-device-application-running-on-linux-or-windows-to-iot-hub-c"></a>Quickstart: Een voorbeeld van een IoT Plug and Play-apparaattoepassing die in Linux of Windows wordt uitgevoerd, verbinden met IoT Hub (C)
 
@@ -34,7 +34,7 @@ In deze quickstart wordt ervan uitgegaan dat u Ubuntu Linux gebruikt. De stappen
 
 Om deze quickstart in Linux te voltooien, installeert u de volgende software in uw lokale Linux-omgeving:
 
-Installeer **GCC**, **Git**, **cmake**en alle vereiste afhankelijkheden met behulp van de opdracht `apt-get`:
+Installeer **GCC**, **Git**, **cmake** en alle vereiste afhankelijkheden met behulp van de opdracht `apt-get`:
 
 ```sh
 sudo apt-get update

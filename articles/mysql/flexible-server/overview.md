@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/21/2020
-ms.openlocfilehash: 4cb706bfa1c10e941e6d2d44358c784549973302
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: f6ec6bced9c84e4e5b0f04cc32eebb438052bd6c
+ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927971"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93348284"
 ---
 # <a name="azure-database-for-mysql---flexible-server-preview"></a>Azure Database for MySQL Flexible Server (preview-versie)
 
@@ -75,7 +75,7 @@ U beschikt over twee netwerkopties om verbinding te maken met uw Azure Database 
    * VPN of ExpressRoute gebruiken om verbinding te maken met een flexibele server vanuit andere resources dan Azure
    * Geen openbaar eindpunt
 
-* **Openbare toegang (toegestane IP-adressen)** : u kunt uw flexibele server met een openbaar eindpunt implementeren. Het openbare eindpunt is een openbaar omzetbaar DNS-adres. De zin 'toegestane IP-adressen' verwijst naar een bereik van IP's die u toestemming geeft om toegang te krijgen tot uw server. Deze machtigingen worden **firewallregels** genoemd.
+* **Openbare toegang (toegestane IP-adressen)** : u kunt uw flexibele server met een openbaar eindpunt implementeren. Het openbare eindpunt is een openbaar omzetbaar DNS-adres. De zin 'toegestane IP-adressen' verwijst naar een reeks IP's die u toestemming geeft om toegang te hebben tot uw server. Deze machtigingen worden **firewallregels** genoemd.
 
 Zie [Netwerkconcepten](concepts-networking.md) voor meer informatie.
 
@@ -89,7 +89,7 @@ Zie [Reken- en opslagconcepten](concepts-compute-storage.md) voor meer informati
 
 MySQL is een van de populaire database-engines voor het uitvoeren van webtoepassingen en mobiele toepassingen op het internet. Veel van onze klanten gebruiken MySQL voor hun online onderwijsservices, videostreamingservices, oplossingen voor digitale betalingen, e-commerceplatforms, gamingservices, nieuwsportalen en websites voor de overheid of gezondheidszorg. Deze services moeten kunnen presteren en schalen als het verkeer op de web- of mobiele toepassing toeneemt.
 
-De toepassing wordt normaal gesproken ontwikkeld in Java of PHP en gemigreerd om te worden uitgevoerd op  [virtuele machine schaalsets van Azure](/azure/virtual-machine-scale-sets/overview.md)  o f [Azure App Service](/azure/app-service/overview.md) , of worden in containers geplaatst om te worden uitgevoerd op  [Azure Kubernetes Service (AKS)](/azure/aks/intro-kubernetes.md). Met de virtuele machineschaalset, App Service of AKS als onderliggende infrastructuur, wordt het schalen van toepassingen vereenvoudigd doordat nieuwe VM's direct wordt ingericht en de staatloze onderdelen van toepassingen worden gerepliceerd om aan de aanvragen te kunnen voldoen. De database wordt echter vaak een knelpunten omdat het een gecentraliseerd staatloos onderdeel is.
+De toepassing wordt normaal gesproken ontwikkeld in Java of PHP en gemigreerd om te worden uitgevoerd op  [virtuele machine schaalsets van Azure](../../virtual-machine-scale-sets/overview.md)  o f [Azure App Service](../../app-service/overview.md) , of worden in containers geplaatst om te worden uitgevoerd op  [Azure Kubernetes Service (AKS)](../../aks/intro-kubernetes.md). Met de virtuele machineschaalset, App Service of AKS als onderliggende infrastructuur, wordt het schalen van toepassingen vereenvoudigd doordat nieuwe VM's direct wordt ingericht en de staatloze onderdelen van toepassingen worden gerepliceerd om aan de aanvragen te kunnen voldoen. De database wordt echter vaak een knelpunten omdat het een gecentraliseerd staatloos onderdeel is.
 
 Met de functie leesreplica kunt u gegevens van een flexibele Azure Database for MySQL-server repliceren naar een server voor alleen-lezen. U kunt **maximaal 10 replica's** van de bronserver repliceren. Replica's worden asynchroon bijgewerkt met behulp van de systeemeigen, op de positie van het [binlog-bestand (binair logboekbestand) gebaseerde replicatietechnologie](https://dev.mysql.com/doc/refman/5.7/en/replication-features.html) van het MySQL-systeem. U kunt een proxy-oplossing met een load balancer zoals [ProxySQL](https://techcommunity.microsoft.com/t5/azure-database-for-mysql/load-balance-read-replicas-using-proxysql-in-azure-database-for/ba-p/880042) gebruiken om de werkbelasting van uw toepassing naadloos uit te schalen naar leesreplica's zonder dat er kosten in rekening worden gebracht. 
 
@@ -125,8 +125,8 @@ Zie [Bewakingsconcepten](concepts-monitoring.md) voor meer informatie.
 
 De service voert de communityversie van MySQL uit. Dit biedt volledige toepassingscompatibiliteit en vereist minimale herstructureringskosten voor het migreren van bestaande toepassingen die zijn ontwikkeld op MySQL-engine naar een service met één server. De migratie naar de enkele server kan worden uitgevoerd met behulp van een van de volgende opties:
 
-- **Dumpen en herstellen** : voor offline migraties, waarbij gebruikers zich enige downtime kunnen veroorloven, kunnen dumpen en herstellen met behulp van communityhulpprogramma's, zoals mysqldump/mydumper, de snelste manier zijn voor migratie. Zie Migreren met behulp van dump en herstel voor meer informatie. 
-- **Azure Database Migration Service** : voor naadloze en vereenvoudigde migraties naar één server met minimale downtime kan [Azure Database Migration Service](../../dms/tutorial-mysql-azure-mysql-online.md) worden gebruikt. 
+- **Dumpen en herstellen**: voor offline migraties, waarbij gebruikers zich enige downtime kunnen veroorloven, kunnen dumpen en herstellen met behulp van communityhulpprogramma's, zoals mysqldump/mydumper, de snelste manier zijn voor migratie. Zie Migreren met behulp van dump en herstel voor meer informatie. 
+- **Azure Database Migration Service**: voor naadloze en vereenvoudigde migraties naar één server met minimale downtime kan [Azure Database Migration Service](../../dms/tutorial-mysql-azure-mysql-online.md) worden gebruikt. 
 
 ## <a name="azure-regions"></a>Azure-regio's
 

@@ -12,18 +12,24 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 09/30/2020
+ms.date: 11/05/2020
 ms.author: b-juche
-ms.openlocfilehash: 56ae3ac1331ed054a1fb808ae06e990b67c06bae
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 3f13d997f73e9737b8770eec7e0742d50bf1abb8
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932410"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421699"
 ---
 # <a name="whats-new-in-azure-netapp-files"></a>Wat is er nieuw in Azure NetApp Files
 
 Azure NetApp Files wordt regelmatig bijgewerkt. In dit artikel wordt een overzicht gegeven van de nieuwste functies en verbeteringen. 
+
+## <a name="november-2020"></a>November 2020
+
+* [Momentopname terugdraaien](azure-netapp-files-manage-snapshots.md#revert-a-volume-using-snapshot-revert)
+
+    Met de functie voor het terugdraaien van momentopnamen kunt u een volume snel herstellen naar de status waarin het zich bevond toen een bepaalde momentopname werd gemaakt. In de meeste gevallen is het herstellen van een volume veel sneller dan het herstellen van afzonderlijke bestanden van een momentopname naar het actieve bestandssysteem. Het is ook meer ruimte-efficiënt vergeleken met het herstellen van een momentopname naar een nieuw volume.
 
 ## <a name="september-2020"></a>September 2020
 

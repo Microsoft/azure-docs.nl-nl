@@ -5,20 +5,39 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 3e84db3aa13ae77f931a46683f0c5e4572f6ce44
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c7d41d889692856a9818aacd265e67b0c2d3d1ad
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87852630"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422860"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-command-line-tools"></a>Azure Functions verbinden met Azure Storage met behulp van opdrachtregelhulpprogramma's
 
-In dit artikel gaat u een Azure Storage-wachtrij integreren met de functie en het opslagaccount die u tijdens [de vorige quickstart](functions-create-first-azure-function-azure-cli.md) hebt gemaakt. De integratie wordt mogelijk gemaakt door *uitvoerbinding* die gegevens schrijft van een HTTP-aanvraag naar een bericht in de wachtrij. Het voltooien van dit artikel brengt geen extra kosten met zich mee, behalve de paar dollarcent die tijdens de vorige quickstart zijn uitgegeven. Zie [Concepten van Azure Functions-triggers en -bindingen](functions-triggers-bindings.md) voor meer informatie over bindingen.
+In dit artikel integreert u een Azure Storage-wachtrij met de functie die en het opslagaccount dat u in het vorige quickstart-artikel hebt gemaakt. De integratie wordt mogelijk gemaakt door *uitvoerbinding* die gegevens schrijft van een HTTP-aanvraag naar een bericht in de wachtrij. Het voltooien van dit artikel brengt geen extra kosten met zich mee, behalve de paar dollarcent die tijdens de vorige quickstart zijn uitgegeven. Zie [Concepten van Azure Functions-triggers en -bindingen](functions-triggers-bindings.md) voor meer informatie over bindingen.
 
 ## <a name="configure-your-local-environment"></a>Uw lokale omgeving configureren
 
-Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](functions-create-first-azure-function-azure-cli.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.
+Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel][previous-quickstart]. Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.
+
+::: zone pivot="programming-language-csharp"  
+Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](create-first-function-cli-csharp.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.  
+::: zone-end  
+::: zone pivot="programming-language-javascript"  
+Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](create-first-function-cli-node.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.  
+::: zone-end   
+::: zone pivot="programming-language-java"  
+Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](create-first-function-cli-java.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.  
+::: zone-end   
+::: zone pivot="programming-language-typescript"  
+Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](create-first-function-cli-typescript.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.  
+::: zone-end   
+::: zone pivot="programming-language-python"  
+Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](create-first-function-cli-python.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.  
+::: zone-end   
+::: zone pivot="programming-language-powershell"  
+Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](create-first-function-cli-powershell.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.  
+::: zone-end   
 
 [!INCLUDE [functions-cli-get-storage-connection](../../includes/functions-cli-get-storage-connection.md)]
 
@@ -129,33 +148,41 @@ U hebt uw HTTP-geactiveerde functie bijgewerkt om gegevens naar een opslagwachtr
 
 + [Werken met Azure Functions Core Tools](functions-run-local.md)  
 
++ [Azure Functions-triggers en -bindingen](functions-triggers-bindings.md)
+
 ::: zone pivot="programming-language-csharp"  
 + [Voorbeelden van complete Function-projecten in C#](/samples/browse/?products=azure-functions&languages=csharp).
 
 + [Naslaginformatie over Azure Functions C# voor ontwikkelaars](functions-dotnet-class-library.md)  
+
+[previous-quickstart]: create-first-function-cli-csharp.md
+
 ::: zone-end 
 ::: zone pivot="programming-language-javascript"  
 + [Voorbeelden van complete Function-projecten in Javascript](/samples/browse/?products=azure-functions&languages=javascript).
 
 + [Ontwikkelaarshandleiding voor Azure Functions Javascript](functions-reference-node.md)  
+
+[previous-quickstart]: create-first-function-cli-javascript.md
 ::: zone-end  
 ::: zone pivot="programming-language-typescript"  
 + [Voorbeelden van complete Function-projecten in TypeScript](/samples/browse/?products=azure-functions&languages=typescript).
 
 + [Ontwikkelaarshandleiding voor Azure Functions TypeScript](functions-reference-node.md#typescript)  
+
+[previous-quickstart]: create-first-function-cli-typescript.md
 ::: zone-end  
 ::: zone pivot="programming-language-python"  
 + [Voorbeelden van complete Function-projecten in Python](/samples/browse/?products=azure-functions&languages=python).
 
 + [Ontwikkelaarshandleiding voor Azure Functions Python](functions-reference-python.md)  
+
+[previous-quickstart]: create-first-function-cli-python.md
 ::: zone-end  
 ::: zone pivot="programming-language-powershell"  
 + [Voorbeelden van complete Function-projecten in PowerShell](/samples/browse/?products=azure-functions&languages=azurepowershell).
 
 + [Ontwikkelaarshandleiding voor Azure Functions PowerShell](functions-reference-powershell.md) 
+
+[previous-quickstart]: create-first-function-cli-powershell.md
 ::: zone-end
-+ [Azure Functions-triggers en -bindingen](functions-triggers-bindings.md)
-
-+ [Prijzen met prijzen van Functions](https://azure.microsoft.com/pricing/details/functions/)
-
-+ [Kosten schatten voor verbruiksplan](functions-consumption-costs.md) 

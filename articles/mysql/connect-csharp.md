@@ -7,30 +7,34 @@ ms.service: mysql
 ms.custom: mvc, devx-track-csharp
 ms.devlang: csharp
 ms.topic: quickstart
-ms.date: 10/16/2020
-ms.openlocfilehash: 86362dc6d3e66f8b3d6888318fef0eb1dd12c3c3
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 10/18/2020
+ms.openlocfilehash: 96a32b615da9b9e5549233489ba74bf859236d9a
+ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337486"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94427952"
 ---
 # <a name="quickstart-use-net-c-to-connect-and-query-data-in-azure-database-for-mysql"></a>Quickstart: .NET (C#) gebruiken om verbinding te maken en gegevens op te vragen in Azure Database for MySQL
 
-In deze quickstart ziet u hoe u met behulp van een C#-toepassing verbinding maakt met Azure Database voor MySQL. U ziet hier hoe u SQL-instructies gebruikt om gegevens in de database op te vragen, in te voegen, bij te werken en te verwijderen. In dit artikel wordt ervan uitgegaan dat u bekend bent met het ontwikkelen met C#, maar geen ervaring hebt met het werken met Azure Database voor MySQL.
+In deze quickstart ziet u hoe u met behulp van een C#-toepassing verbinding maakt met Azure Database voor MySQL. U ziet hier hoe u SQL-instructies gebruikt om gegevens in de database op te vragen, in te voegen, bij te werken en te verwijderen. 
 
 ## <a name="prerequisites"></a>Vereisten
+Voor deze quickstart hebt u het volgende nodig:
 
-In deze snelstartgids worden de resources die in een van deze handleidingen zijn gemaakt, als uitgangspunt gebruikt:
-- [Een Azure-database voor een MySQL-server maken met behulp van Azure Portal](./quickstart-create-mysql-server-database-using-azure-portal.md)
-- [Een Azure-database voor een MySQL-server maken met behulp van Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md)
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free)
+- Eén Azure Database for MySQL-server maken met behulp van [Azure Portal](./quickstart-create-mysql-server-database-using-azure-portal.md) <br/> of [Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md), als u er nog geen hebt.
+- Voltooi **EEN** van de onderstaande acties om connectiviteit in te schakelen, afhankelijk van of u openbare toegang of privétoegang hebt.
 
-U moet ook het volgende doen:
-- Installeer [.NET](https://www.microsoft.com/net/download). Volg de stappen in het gekoppelde artikel om .NET specifiek voor uw platform (Windows, Ubuntu Linux en Mac OS) te installeren. 
-- Installeer [Visual Studio](https://www.visualstudio.com/downloads/).
+|Bewerking| Verbindingsmethode|Instructiegids|
+|:--------- |:--------- |:--------- |
+| **Firewallregels configureren** | Openbaar | [Portal](./howto-manage-firewall-using-portal.md) <br/> [CLI](./howto-manage-firewall-using-cli.md)|
+| **Service-eindpunt configureren** | Openbaar | [Portal](./howto-manage-vnet-using-portal.md) <br/> [CLI](./howto-manage-vnet-using-cli.md)| 
+| **Privékoppeling configureren** | Privé | [Portal](./howto-configure-privatelink-portal.md) <br/> [CLI](./howto-configure-privatelink-cli.md) | 
 
-> [!IMPORTANT] 
-> Controleer of het IP-adres waarmee u verbinding maakt aan de firewallregels van de server is toegevoegd met [Azure Portal](./howto-manage-firewall-using-portal.md) of [Azure CLI](./howto-manage-firewall-using-cli.md)
+- [Een database en een gebruiker die geen beheerder is maken](./howto-create-users.md)
+
+[Ondervindt u problemen? Laat het ons weten](https://aka.ms/mysql-doc-feedback)
 
 ## <a name="create-a-c-project"></a>Een C#-project maken
 Voer in een opdrachtprompt het volgende uit:
@@ -46,13 +50,16 @@ dotnet add package MySqlConnector
 Haal de verbindingsgegevens op die nodig zijn om verbinding te maken met de Azure Database voor MySQL. U hebt de volledig gekwalificeerde servernaam en aanmeldingsreferenties nodig.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-2. Klik in het menu aan de linkerkant in Azure Portal op **Alle resources** en zoek naar de server die u hebt gemaakt (bijvoorbeeld **mydemoserver** ).
+2. Klik in het menu aan de linkerkant in Azure Portal op **Alle resources** en zoek naar de server die u hebt gemaakt (bijvoorbeeld **mydemoserver**).
 3. Klik op de servernaam.
 4. Ga naar het venster **Overzicht** van de server en noteer de **Servernaam** en de **Aanmeldingsnaam van de serverbeheerder**. Als u uw wachtwoord vergeet, kunt u het wachtwoord in dit venster opnieuw instellen.
  :::image type="content" source="./media/connect-csharp/1_server-overview-name-login.png" alt-text="Naam van Azure Database voor MySQL-server":::
 
-## <a name="connect-create-table-and-insert-data"></a>Verbinden, tabel maken en gegevens invoegen
-Gebruik de volgende code om verbinding te maken en de gegevens te laden met behulp van de SQL-instructies `CREATE TABLE` en `INSERT INTO`. In de code wordt de klasse `MySqlConnection` met de methode [OpenAsync()](/dotnet/api/system.data.common.dbconnection.openasync#System_Data_Common_DbConnection_OpenAsync) gebruikt om een verbinding te maken met MySQL. Vervolgens wordt de methode [CreateCommand()](/dotnet/api/system.data.common.dbconnection.createcommand) gebruikt, de eigenschap CommandText ingesteld en de methode [ExecuteNonQueryAsync()](/dotnet/api/system.data.common.dbcommand.executenonqueryasync) aangeroepen om de databaseopdrachten uit te voeren. 
+## <a name="step-1-connect-and-insert-data"></a>Stap 1: Gegevens verbinden en invoegen
+Gebruik de volgende code om verbinding te maken en de gegevens te laden met behulp van de SQL-instructies `CREATE TABLE` en `INSERT INTO`. De code gebruikt de methoden van de klasse `MySqlConnection`:
+- [OpenAsync()](/dotnet/api/system.data.common.dbconnection.openasync#System_Data_Common_DbConnection_OpenAsync) om een verbinding tot stand te brengen met MySQL.
+- Met [CreateCommand()](/dotnet/api/system.data.common.dbconnection.createcommand) wordt de eigenschap CommandText ingesteld
+- Met de methode [ExecuteNonQueryAsync()](/dotnet/api/system.data.common.dbcommand.executenonqueryasync) worden de databaseopdrachten uitgevoerd. 
 
 Vervang de parameters `Server`, `Database`, `UserID` en `Password` door de waarden die u hebt opgegeven tijdens het maken van de server en database. 
 
@@ -115,9 +122,17 @@ namespace AzureMySqlExample
 }
 ```
 
-## <a name="read-data"></a>Gegevens lezen
+[Ondervindt u problemen? Laat het ons weten](https://aka.ms/mysql-doc-feedback)
 
-Gebruik de volgende code om verbinding te maken en de gegevens te lezen met behulp van de SQL-instructie `SELECT`. In de code wordt de klasse `MySqlConnection` met de methode [OpenAsync()](/dotnet/api/system.data.common.dbconnection.openasync#System_Data_Common_DbConnection_OpenAsync) gebruikt om een verbinding te maken met MySQL. Vervolgens worden de methoden [CreateCommand()](/dotnet/api/system.data.common.dbconnection.createcommand) en [ExecuteReaderAsync()](/dotnet/api/system.data.common.dbcommand.executereaderasync) gebruikt om de databaseopdrachten uit te voeren. Daarna wordt [ReadAsync()](/dotnet/api/system.data.common.dbdatareader.readasync#System_Data_Common_DbDataReader_ReadAsync) gebruikt om naar de records in de resultaten te gaan. Vervolgens worden in de code GetInt32() en GetString() gebruikt om de waarden in de record te parseren.
+
+## <a name="step-2-read-data"></a>Stap 2: Gegevens lezen
+
+Gebruik de volgende code om verbinding te maken en de gegevens te lezen met behulp van de SQL-instructie `SELECT`. De code gebruikt de klasse `MySqlConnection` met methoden:
+- [OpenAsync()](/dotnet/api/system.data.common.dbconnection.openasync#System_Data_Common_DbConnection_OpenAsync) om een verbinding tot stand te brengen met MySQL.
+- [CreateCommand()](/dotnet/api/system.data.common.dbconnection.createcommand) om de eigenschap CommandText in te stellen.
+- [ExecuteNonQueryAsync()](/dotnet/api/system.data.common.dbcommand.executereaderasync) om de databaseopdrachten uit te voeren. 
+- [ReadAsync()](/dotnet/api/system.data.common.dbdatareader.readasync#System_Data_Common_DbDataReader_ReadAsync) om naar de records in de resultaten te gaan. Vervolgens worden in de code GetInt32() en GetString() gebruikt om de waarden in de record te parseren.
+
 
 Vervang de parameters `Server`, `Database`, `UserID` en `Password` door de waarden die u hebt opgegeven tijdens het maken van de server en database. 
 
@@ -173,8 +188,14 @@ namespace AzureMySqlExample
 }
 ```
 
-## <a name="update-data"></a>Gegevens bijwerken
-Gebruik de volgende code om verbinding te maken en de gegevens te lezen met behulp van de SQL-instructie `UPDATE`. In de code wordt de klasse `MySqlConnection` met de methode [OpenAsync()](/dotnet/api/system.data.common.dbconnection.openasync#System_Data_Common_DbConnection_OpenAsync) gebruikt om een verbinding te maken met MySQL. Vervolgens wordt de methode [CreateCommand()](/dotnet/api/system.data.common.dbconnection.createcommand) gebruikt, de eigenschap CommandText ingesteld en de methode [ExecuteNonQueryAsync()](/dotnet/api/system.data.common.dbcommand.executenonqueryasync) aangeroepen om de databaseopdrachten uit te voeren. 
+[Ondervindt u problemen? Laat het ons weten](https://aka.ms/mysql-doc-feedback)
+
+## <a name="step-3-update-data"></a>Stap 3: Gegevens bijwerken
+Gebruik de volgende code om verbinding te maken en de gegevens te lezen met behulp van de SQL-instructie `UPDATE`. De code gebruikt de klasse `MySqlConnection` met methode:
+- [OpenAsync()](/dotnet/api/system.data.common.dbconnection.openasync#System_Data_Common_DbConnection_OpenAsync) om een verbinding tot stand te brengen met MySQL. 
+- [CreateCommand()](/dotnet/api/system.data.common.dbconnection.createcommand) om de eigenschap CommandText in te stellen
+- Met de methode [ExecuteNonQueryAsync()](/dotnet/api/system.data.common.dbcommand.executenonqueryasync) worden de databaseopdrachten uitgevoerd. 
+
 
 Vervang de parameters `Server`, `Database`, `UserID` en `Password` door de waarden die u hebt opgegeven tijdens het maken van de server en database. 
 
@@ -222,11 +243,16 @@ namespace AzureMySqlExample
     }
 }
 ```
+[Ondervindt u problemen? Laat het ons weten](https://aka.ms/mysql-doc-feedback)
 
-## <a name="delete-data"></a>Gegevens verwijderen
+## <a name="step-4-delete-data"></a>Stap 4: Gegevens verwijderen
 Gebruik de volgende code om verbinding te maken en de gegevens te verwijderen met behulp van de SQL-instructie `DELETE`. 
 
-In de code wordt de klasse `MySqlConnection` met de methode [OpenAsync()](/dotnet/api/system.data.common.dbconnection.openasync#System_Data_Common_DbConnection_OpenAsync) gebruikt om een verbinding te maken met MySQL. Vervolgens wordt de methode [CreateCommand()](/dotnet/api/system.data.common.dbconnection.createcommand) gebruikt, de eigenschap CommandText ingesteld en de methode [ExecuteNonQueryAsync()](/dotnet/api/system.data.common.dbcommand.executenonqueryasync) aangeroepen om de databaseopdrachten uit te voeren. 
+De code gebruikt de klasse `MySqlConnection` met methode
+- [OpenAsync()](/dotnet/api/system.data.common.dbconnection.openasync#System_Data_Common_DbConnection_OpenAsync) om een verbinding tot stand te brengen met MySQL.
+- [CreateCommand()](/dotnet/api/system.data.common.dbconnection.createcommand) om de eigenschap CommandText in te stellen.
+- Met de methode [ExecuteNonQueryAsync()](/dotnet/api/system.data.common.dbcommand.executenonqueryasync) worden de databaseopdrachten uitgevoerd. 
+
 
 Vervang de parameters `Server`, `Database`, `UserID` en `Password` door de waarden die u hebt opgegeven tijdens het maken van de server en database. 
 
@@ -286,4 +312,9 @@ az group delete \
 
 ## <a name="next-steps"></a>Volgende stappen
 > [!div class="nextstepaction"]
-> [Uw MySQL-database migreren naar Azure Database voor MySQL met behulp van dumpen en terugzetten](concepts-migrate-dump-restore.md)
+> [Een Azure Database for MySQL-server beheren met de portal](./howto-create-manage-server-portal.md)<br/>
+
+> [!div class="nextstepaction"]
+> [Een Azure Database for MySQL-server beheren met CLI](./how-to-manage-single-server-cli.md)
+
+[Kunt u niet vinden wat u zoekt?Laat het ons weten.](https://aka.ms/mysql-doc-feedback)

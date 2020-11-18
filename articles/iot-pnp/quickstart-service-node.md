@@ -1,19 +1,19 @@
 ---
-title: Werken met een IoT Plug en Play Preview-apparaat dat is verbonden met uw Azure IoT-oplossing (Node.js) | Microsoft Docs
-description: Gebruik Node.js om verbinding te maken en te werken met een IoT Plug en Play-apparaat dat is verbonden met uw Azure IoT-oplossing.
+title: 'Quickstart: werken met een IoT Plug en Play Preview-apparaat dat is verbonden met uw Azure IoT-oplossing (Node.js) | Microsoft Docs'
+description: 'Quickstart: Node.js gebruiken om verbinding te maken en te werken met een IoT Plug en Play-apparaat dat is verbonden met uw Azure IoT-oplossing.'
 author: elhorton
 ms.author: elhorton
 ms.date: 10/05/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.custom: mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 9a71a45f69f7a2bd2fbc198292526a6928e421a2
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: mvc, devx-track-js
+ms.openlocfilehash: 814221997bc927cf411e531b523d693f3ef5854c
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92736008"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421512"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-nodejs"></a>Quickstart: Werken met een IoT Plug en Play-apparaat dat is verbonden met uw oplossing (Node.js)
 
@@ -69,8 +69,8 @@ In deze quickstart gebruikt u een voorbeeldthermostaat die in Node.js is geschre
 
 In [Quickstarts en zelfstudies voor het instellen van uw omgeving voor IoT Plug en Play](set-up-environment.md) hebt u twee omgevingsvariabelen gemaakt om het voorbeeld zo te configureren dat verbinding wordt gemaakt met uw IoT-hub en -apparaat:
 
-* **IOTHUB_CONNECTION_STRING** : de verbindingsreeks voor de IoT-hub die u eerder hebt genoteerd.
-* **IOTHUB_DEVICE_ID** : `"my-pnp-device"`.
+* **IOTHUB_CONNECTION_STRING**: de verbindingsreeks voor de IoT-hub die u eerder hebt genoteerd.
+* **IOTHUB_DEVICE_ID**: `"my-pnp-device"`.
 
 In deze quickstart gebruikt u een IoT-voorbeeldoplossing in C# om te communiceren met het voorbeeldapparaat dat u zojuist hebt ingesteld.
 
@@ -146,7 +146,7 @@ In deze quickstart gebruikt u een IoT-voorbeeldoplossing in C# om te communicere
     }
     ```
 
-1. Het volgende fragment toont de code in *twin.js* , waarmee de model-id van de apparaatdubbel wordt opgehaald:
+1. Het volgende fragment toont de code in *twin.js*, waarmee de model-id van de apparaatdubbel wordt opgehaald:
 
     ```javascript
     var registry = Registry.fromConnectionString(connectionString);
@@ -214,7 +214,7 @@ In dit scenario wordt `Model Id: dtmi:com:example:Thermostat;1` uitgevoerd.
     node twin.js
     ```
 
-1. In de uitvoer van de **serviceterminal** , in de eigenschappensectie `reported`, ziet u dat de bijgewerkte doeltemperatuur wordt vermeld. Het kan enige tijd duren voordat het apparaat de update heeft voltooid. Herhaal deze stap totdat het apparaat de update van de eigenschap heeft verwerkt:
+1. In de uitvoer van de **serviceterminal**, in de eigenschappensectie `reported`, ziet u dat de bijgewerkte doeltemperatuur wordt vermeld. Het kan enige tijd duren voordat het apparaat de update heeft voltooid. Herhaal deze stap totdat het apparaat de update van de eigenschap heeft verwerkt:
 
     ```json
     "reported": {

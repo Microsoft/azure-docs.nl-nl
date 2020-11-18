@@ -9,12 +9,12 @@ ms.date: 08/20/2019
 ms.author: normesta
 ms.reviewer: sumameh
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f8b4b86656e7b1b4dfd8b69cbc8386f5b6ff6a8c
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 791b50f1458ba7ee127d45ee374b5589ade588e0
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92674940"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93308194"
 ---
 # <a name="tutorial-implement-the-data-lake-capture-pattern-to-update-a-databricks-delta-table"></a>Zelfstudie: Het Data Lake Capture-patroon implementeren om een Databricks Delta-tabel bij te werken
 
@@ -37,7 +37,7 @@ U maakt deze oplossing in omgekeerde volgorde, te beginnen met de Azure Databric
 
 * Maak een opslagaccount met een hiërarchische naamruimte (Azure Data Lake Storage Gen2). In deze zelfstudie wordt een opslagaccount met de naam `contosoorders` gebruikt. Zorg ervoor dat aan uw gebruikersaccount de [rol van Gegevensbijdrager voor opslagblob](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac) is toegewezen.
 
-  Zie [Een Azure Data Lake Storage Gen2-account maken](data-lake-storage-quickstart-create-account.md).
+   Zie [Een opslagaccount maken dat met Azure Data Lake Storage Gen2 wordt gebruikt](create-data-lake-storage-account.md).
 
 * Een service-principal maken. Raadpleeg [Uitleg: Gebruik de portal voor het maken van een Azure AD-toepassing en service-principal die toegang hebben tot resources](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
@@ -120,7 +120,7 @@ Zie [Een Spark-cluster maken in Azure Databricks](https://docs.azuredatabricks.n
 
 ### <a name="create-a-notebook"></a>Een notebook maken
 
-1. Selecteer **Werkruimte** in het linkerdeelvenster. Selecteer in de **Werkruimte** -vervolgkeuzelijst, **Notitieblok** > **maken**.
+1. Selecteer **Werkruimte** in het linkerdeelvenster. Selecteer in de **Werkruimte**-vervolgkeuzelijst, **Notitieblok** > **maken**.
 
     ![Notebook maken in Databricks](./media/data-lake-storage-quickstart-create-databricks-account/databricks-create-notebook.png "Notitieblok maken in Databricks")
 
@@ -293,7 +293,7 @@ Maak een Azure-functie waarmee de taak wordt uitgevoerd.
 
 9. Geef in het deelvenster **Nieuwe functie** de functie de naam **UpsertOrder** en klik vervolgens op de knop **Maken**.
 
-10. Vervang de inhoud van het codebestand door deze code en klik vervolgens op de knop **Opslaan** :
+10. Vervang de inhoud van het codebestand door deze code en klik vervolgens op de knop **Opslaan**:
 
     ```cs
     using "Microsoft.Azure.EventGrid"

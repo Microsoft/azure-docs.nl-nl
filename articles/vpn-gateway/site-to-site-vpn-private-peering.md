@@ -5,16 +5,16 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 10/06/2020
+ms.date: 11/16/2020
 ms.author: cherylmc
-ms.openlocfilehash: 016741606bad5536985a38b0e0664b39006e1df5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62ceafad0210065700e5c9734cfe9a055208ef35
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776558"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657887"
 ---
-# <a name="configure-a-site-to-site-vpn-connection-over-expressroute-private-peering-preview"></a>Een site-naar-site-VPN-verbinding configureren via ExpressRoute private peering (preview-versie)
+# <a name="configure-a-site-to-site-vpn-connection-over-expressroute-private-peering"></a>Een site-naar-site-VPN-verbinding configureren via ExpressRoute-persoonlijke peering
 
 U kunt een site-naar-site-VPN configureren voor een virtuele netwerk gateway via een ExpressRoute-particuliere peering met behulp van een RFC 1918 IP-adres. Deze configuratie biedt de volgende voor delen:
 
@@ -32,7 +32,7 @@ Controleer of u aan de volgende vereisten voldoet om deze configuratie te volt o
 
 * U kunt via het ExpressRoute-circuit bronnen bereiken via RFC1918 (privé) in het VNet.
 
-## <a name="routing"></a><a name="routing"></a>Code
+## <a name="routing"></a><a name="routing"></a>Routering
 
 In **afbeelding 1** ziet u een voor beeld van VPN-verbinding via ExpressRoute private-peering. In dit voor beeld ziet u een netwerk in het on-premises netwerk dat is verbonden met de Azure hub VPN-gateway via ExpressRoute private peering. Een belang rijk aspect van deze configuratie is de route ring tussen de on-premises netwerken en Azure via de ExpressRoute-en VPN-paden.
 
@@ -76,14 +76,14 @@ In beide voor beelden verzendt Azure verkeer naar 10.0.1.0/24 via de VPN-verbind
 
    Voor een zone-redundante Sku's is AZ aan het einde van de SKU. Bijvoorbeeld **VpnGw1AZ**. Zone-redundante gateways zijn alleen beschikbaar in regio's waar de beschikbaarheids zone service beschikbaar is. Zie [regio's die beschikbaarheids zones ondersteunen](../availability-zones/az-region.md)voor meer informatie over de regio's waarin we beschikbaarheids zones ondersteunen.
 
-   :::image type="content" source="media/site-to-site-vpn-private-peering/gateway.png" alt-text="Afbeelding 1":::
-1. Privé-IP-adressen inschakelen op de gateway. Selecteer **configuratie**en stel de **persoonlijke Ip's** van de gateway in op **ingeschakeld**. Selecteer **Opslaan** om uw wijzigingen op te slaan.
+   :::image type="content" source="media/site-to-site-vpn-private-peering/gateway.png" alt-text="Privé-IP-adressen van Gateway":::
+1. Privé-IP-adressen inschakelen op de gateway. Selecteer **configuratie** en stel de **persoonlijke Ip's** van de gateway in op **ingeschakeld**. Selecteer **Opslaan** om uw wijzigingen op te slaan.
 1. Selecteer op de pagina **overzicht** de optie **meer weer** geven om het privé-IP-adres te bekijken. Noteer deze informatie om later in de configuratie stappen te gebruiken.
 
-   :::image type="content" source="media/site-to-site-vpn-private-peering/gateway-overview.png" alt-text="Afbeelding 1" lightbox="media/site-to-site-vpn-private-peering/gateway-overview.png":::
-1. Selecteer **configuratie**om het **privé-Azure-IP-adres gebruiken** in te scha kelen voor de verbinding. Stel het **privé-IP-adres van Azure gebruiken** in op **ingeschakeld**en selecteer vervolgens **Opslaan**.
+   :::image type="content" source="media/site-to-site-vpn-private-peering/gateway-overview.png" alt-text="Overzichtspagina" lightbox="media/site-to-site-vpn-private-peering/gateway-overview.png":::
+1. Selecteer **configuratie** om het **privé-Azure-IP-adres gebruiken** in te scha kelen voor de verbinding. Stel het **privé-IP-adres van Azure gebruiken** in op **ingeschakeld** en selecteer vervolgens **Opslaan**.
 
-   :::image type="content" source="media/site-to-site-vpn-private-peering/connection.png" alt-text="Afbeelding 1":::
+   :::image type="content" source="media/site-to-site-vpn-private-peering/connection.png" alt-text="Privé-IP-adressen van Gateway-ingeschakeld":::
 1. Vanuit uw firewall pingt u het privé-IP-adres dat u in stap 3 hebt genoteerd. Het privé-IP-adres moet bereikbaar zijn via de ExpressRoute-persoonlijke peering.
 1. Gebruik dit persoonlijke IP-adres als het externe IP-adres van uw on-premises firewall om de site-naar-site-tunnel te maken via de ExpressRoute-persoonlijke peering.
 

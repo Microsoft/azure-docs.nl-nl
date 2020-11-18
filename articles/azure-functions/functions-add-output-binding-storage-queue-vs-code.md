@@ -5,18 +5,18 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-js
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 4f4733a52d1d58cbec4413140a613a93c8074188
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b709981e199d63c32426381ba48665402de820ce
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91323410"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422702"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-visual-studio-code"></a>Azure Functions verbinden met Azure Storage met behulp van Visual Studio Code
 
 [!INCLUDE [functions-add-storage-binding-intro](../../includes/functions-add-storage-binding-intro.md)]
 
-In dit artikel leest u hoe u Visual Studio Code gebruikt om verbinding te maken met Azure Storage, met behulp van de functie die u hebt gemaakt in het [vorige snelstartgids-artikel](functions-create-first-function-vs-code.md). De uitvoerbinding die u aan deze functie toevoegt, schrijft gegevens van een HTTP-aanvraag naar een bericht in een Azure Queue Storage-wachtrij. 
+In dit artikel leest u hoe u Visual Studio Code gebruikt om Azure Storage te verbinden met de functie die u hebt gemaakt in het vorige quickstart-artikel. De uitvoerbinding die u aan deze functie toevoegt, schrijft gegevens van een HTTP-aanvraag naar een bericht in een Azure Queue Storage-wachtrij. 
 
 Voor de meeste bindingen is een opgeslagen verbindingsreeks vereist die Functions gebruikt om toegang te krijgen tot de gebonden service. Om het eenvoudiger te maken, gebruikt u het Storage-account dat u hebt gemaakt met uw functie-app. De verbinding met dit account is al opgeslagen in een app-instelling met de naam `AzureWebJobsStorage`.  
 
@@ -32,7 +32,24 @@ Voordat u aan dit artikel begint, moet aan de volgende vereisten worden voldaan:
 * [.NET Core CLI-hulpprogramma's](/dotnet/core/tools/?tabs=netcore2x) installeren.
 ::: zone-end
 
-* Voer de stappen in [deel 1 van de Visual Studio Code-snelstartgids](functions-create-first-function-vs-code.md). 
+::: zone pivot="programming-language-csharp"  
+* Voer de stappen in [deel 1 van de Visual Studio Code-snelstartgids](create-first-function-vs-code-csharp.md). 
+::: zone-end  
+::: zone pivot="programming-language-javascript"  
+* Voer de stappen in [deel 1 van de Visual Studio Code-snelstartgids](create-first-function-vs-code-node.md). 
+::: zone-end   
+::: zone pivot="programming-language-java"  
+* Voer de stappen in [deel 1 van de Visual Studio Code-snelstartgids](create-first-function-vs-code-java.md). 
+::: zone-end   
+::: zone pivot="programming-language-typescript"  
+* Voer de stappen in [deel 1 van de Visual Studio Code-snelstartgids](create-first-function-vs-code-typescript.md). 
+::: zone-end   
+::: zone pivot="programming-language-python"  
+* Voer de stappen in [deel 1 van de Visual Studio Code-snelstartgids](create-first-function-vs-code-python.md). 
+::: zone-end   
+::: zone pivot="programming-language-powershell"  
+* Voer de stappen in [deel 1 van de Visual Studio Code-snelstartgids](create-first-function-vs-code-powershell.md). 
+::: zone-end   
 
 In dit artikel wordt ervan uitgegaan dat u al bent aangemeld bij uw Azure-abonnement vanuit Visual Studio Code. U kunt zich aanmelden door `Azure: Sign In` vanuit het opdrachtpalet uit te voeren. 
 
@@ -165,7 +182,7 @@ Sla deze sectie over als u Azure Storage Explorer al hebt geïnstalleerd en met 
 
     ![Een Azure-account toevoegen aan Microsoft Azure Storage Explorer](./media/functions-add-output-binding-storage-queue-vs-code/storage-explorer-add-account.png)
 
-1. Kies in het dialoogvenster **Verbinding maken** **Een Azure-account toevoegen**, kies uw **Azure-omgeving**en selecteer **Aanmelden...** . 
+1. Kies in het dialoogvenster **Verbinding maken** **Een Azure-account toevoegen**, kies uw **Azure-omgeving** en selecteer **Aanmelden...** . 
 
     ![Aanmelden bij uw Azure-account](./media/functions-add-output-binding-storage-queue-vs-code/storage-explorer-connect-azure-account.png)
 
@@ -205,33 +222,42 @@ In Azure verwijzen *Resources* naar functie-apps, functies, opslagaccounts enzov
 
 U hebt resources gemaakt om deze snelstartgidsen te voltooien. Deze resources kunnen bij u in rekening worden gebracht, afhankelijk van de [accountstatus](https://azure.microsoft.com/account/) en [serviceprijzen](https://azure.microsoft.com/pricing/). Als u de resources niet meer nodig hebt, kunt u ze als volgt verwijderen:
 
-[!INCLUDE [functions-cleanup-resources-vs-code.md](../../includes/functions-cleanup-resources-vs-code.md)]
+[!INCLUDE [functions-cleanup-resources-vs-code-inner.md](../../includes/functions-cleanup-resources-vs-code-inner.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
 U hebt uw HTTP-geactiveerde functie bijgewerkt om gegevens naar een opslagwachtrij te schrijven. Nu kunt u meer informatie vinden over het ontwikkelen van functies met Visual Studio Code:
 
 + [Azure Functions ontwikkelen met Visual Studio Code](functions-develop-vs-code.md)
+
++ [Azure Functions-triggers en -bindingen](functions-triggers-bindings.md).
 ::: zone pivot="programming-language-csharp"  
 + [Voorbeelden van complete Function-projecten in C#](/samples/browse/?products=azure-functions&languages=csharp).
+
 + [Naslaginformatie over Azure Functions C# voor ontwikkelaars](functions-dotnet-class-library.md)  
 ::: zone-end 
 ::: zone pivot="programming-language-javascript"  
 + [Voorbeelden van complete Function-projecten in Javascript](/samples/browse/?products=azure-functions&languages=javascript).
+
 + [Ontwikkelaarshandleiding voor Azure Functions Javascript](functions-reference-node.md)  
+::: zone-end  
+::: zone pivot="programming-language-java"  
++ [Voorbeelden van complete Function-projecten in Java](/samples/browse/?products=azure-functions&languages=java).
+
++ [Java-ontwikkelaarshandleiding voor Azure Functions](functions-reference-java.md)  
 ::: zone-end  
 ::: zone pivot="programming-language-typescript"  
 + [Voorbeelden van complete Function-projecten in TypeScript](/samples/browse/?products=azure-functions&languages=typescript).
+
 + [Ontwikkelaarshandleiding voor Azure Functions TypeScript](functions-reference-node.md#typescript)  
 ::: zone-end  
 ::: zone pivot="programming-language-python"  
 + [Voorbeelden van complete Function-projecten in Python](/samples/browse/?products=azure-functions&languages=python).
+
 + [Ontwikkelaarshandleiding voor Azure Functions Python](functions-reference-python.md)  
 ::: zone-end  
 ::: zone pivot="programming-language-powershell"  
 + [Voorbeelden van complete Function-projecten in PowerShell](/samples/browse/?products=azure-functions&languages=azurepowershell).
+
 + [Ontwikkelaarshandleiding voor Azure Functions PowerShell](functions-reference-powershell.md) 
 ::: zone-end
-+ [Azure Functions-triggers en -bindingen](functions-triggers-bindings.md).
-+ [Prijzen met prijzen van Functions](https://azure.microsoft.com/pricing/details/functions/)
-+ Artikel over [Kosten schatten voor verbruiksabonnement](functions-consumption-costs.md).

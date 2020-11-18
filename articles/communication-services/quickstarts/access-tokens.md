@@ -3,27 +3,27 @@ title: Snelstart - Toegangstoken maken en beheren
 titleSuffix: An Azure Communication Services quickstart
 description: Meer informatie over het beheren van identiteits- en toegangstokens met behulp van de Azure Communication Services Administration-clientbibliotheek.
 author: tomaschladek
-manager: jken
+manager: nmurav
 services: azure-communication-services
 ms.author: tchladek
 ms.date: 08/20/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
 zone_pivot_groups: acs-js-csharp-java-python
-ms.openlocfilehash: e323f1f50fe6c67a841c300fcbec1eed3afc4497
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: b67d0808643797d88628b626403c1b9d97cf1cad
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92074121"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506219"
 ---
 # <a name="quickstart-create-and-manage-access-tokens"></a>Quickstart: Toegangstokens maken en beheren
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
-Ga aan de slag met Azure Communication Services door de clientbibliotheek voor Communication Services Administration te gebruiken om uw toegangstokens te provisioneren en te beheren. Met toegangstokens kunt u uw chat- en aanroep-clientbibliotheken rechtstreeks verifiëren tegen Azure Communication Services. Deze tokens worden gegenereerd aan de kant van de server door een tokenleveringsservice die u implementeert. Ze worden vervolgens gebruikt voor het initialiseren van de Communication Services-clientbibliotheken op clientapparaten.
+Ga aan de slag met Azure Communication Services door de clientbibliotheek van Communications Services-beheer te gebruiken. Hiermee kunt u identiteiten maken en uw toegangstokens beheren. De identiteit geeft de entiteit weer van uw toepassing in de Azure Communication Service (bijvoorbeeld gebruiker of apparaat). Met toegangstokens kunt u uw chat- en aanroep-clientbibliotheken rechtstreeks verifiëren tegen Azure Communication Services. Het wordt aanbevolen om toegangstokens te genereren voor een service aan de serverzijde. Toegangstokens worden vervolgens gebruikt voor het initialiseren van de Communication Services-clientbibliotheken op clientapparaten.
 
-Houd er rekening mee dat alle prijzen die in de afbeeldingen in deze handleiding worden getoond, alleen als bijvoorbeeld bedoeld zijn.
+Prijzen die in de afbeeldingen in deze zelfstudie worden getoond, zijn alleen bedoeld voor demonstratiedoeleinden.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [.NET](./includes/user-access-token-net.md)]
@@ -46,15 +46,14 @@ De uitvoer van de app beschrijft elke actie die is voltooid:
 ```console
 Azure Communication Services - Access Tokens Quickstart
 
-Issued a access token with 'voip' scope for identity with ID: 8:acs:fecfaddf-bf2c-4a0e-b52f-7d918c9536e6_65012b-1400da9050:
+Created an identity: 8:acs:4ccc92c8-9815-4422-bddc-ceea181dc774_00000006-19e0-2727-80f5-8b3a0d003502
+
+Issued a access token with 'voip' scope for identity with ID: 8:acs:4ccc92c8-9815-4422-bddc-ceea181dc774_00000006-19e0-2727-80f5-8b3a0d003502:
 <token signature here>
 
-Issued a access token with 'chat' scope for identity with ID: 8:acs:fecfaddf-bf2c-4a0e-b52f-7d918c9536e6_65012b-1400da9050:
-<token signature here>
+Successfully deleted the identity with ID: 8:acs:4ccc92c8-9815-4422-bddc-ceea181dc774_00000006-19e0-2727-80f5-8b3a0d003502
 
-Successfully deleted the identity with ID: 8:acs:fecfaddf-bf2c-4a0e-b52f-7d918c9536e6_65012b-1400da9050
-
-Deleted the identity with ID: 8:acs:fecfaddf-bf2c-4a0e-b52f-7d918c9536e6_65012b-1400da9050
+Deleted the identity with ID: 8:acs:4ccc92c8-9815-4422-bddc-ceea181dc774_00000006-19e0-2727-80f5-8b3a0d003502
 ```
 <!---cSpell:enable --->
 
@@ -81,3 +80,4 @@ U kunt ook het volgende doen:
  - [Meer informatie over verificatie](../concepts/authentication.md)
  - [Chat aan uw app toevoegen](./chat/get-started.md)
  - [Meer informatie over de client -en serverarchitectuur](../concepts/client-and-server-architecture.md)
+ 

@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 09/15/2020
-ms.openlocfilehash: dd055eecaef00a2f3b555034f44f3c04684a1722
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 461fabd0dd9948e8967ac61919f77e3e23a981b9
+ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171862"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94331954"
 ---
 # <a name="explore-the-synapse-knowledge-center"></a>Het Synapse Knowledge Center verkennen
 
@@ -37,9 +37,9 @@ In het **Knowledge Center** kunt u drie dingen doen:
 * **Beschikbare voorbeeld voor de browser**. Met deze optie kunt u voorbeeldgegevenssets koppelen en voorbeeldcode toevoegen in de vorm van SQL-scripts, -notebooks en -pijplijnen.
 * **Rondleiding door Synapse Studio**. Met deze optie krijgt u een korte rondleiding door de basisonderdelen van Synapse Studio. Dit is handig als u Synapse Studio nog nooit eerder hebt gebruikt.
 
-## <a name="exploring-blob-storage-with-sql-on-demand"></a>Blob-opslag verkennen met SQL on demand
+## <a name="exploring-blob-storage-with-serverless-sql-pool"></a>Blob-opslag verkennen met een serverloze SQL-pool
 
-1. Klik in het **Knowledge Center** op **Voorbeelden direct gebruiken**
+1. Ga naar het **Knowledge Center** en klik op **Voorbeelden direct gebruiken**
 1. Selecteer **Gegevens opvragen met SQL** 
 1. Klik op **Voorbeelden direct gebruiken**
 1. Er wordt een nieuw SQL-script gemaakt.
@@ -47,10 +47,10 @@ In het **Knowledge Center** kunt u drie dingen doen:
 1. Klik op Run. De tekst die u hebt geselecteerd, wordt uitgevoerd.
 
 ## <a name="loading-more-nyc-taxi-data"></a>Meer NYC Taxi-gegevens laden
-1. In het **Knowledge Center** klikt u op **Door beschikbare voorbeelden bladeren** 
+1. Ga naar het **Knowledge Center-** en klik op **Door de beschikbare voorbeelden bladeren** 
 1. Selecteer het tabblad **SQL-scripts** bovenaan
 1. Selecteer **De dataset van New York Taxicab laden**
-1. Kies onder **Invoer**de optie **Een bestaande pool selecteren** en selecteer **SQLDB1**
+1. Kies onder **Invoer** de optie **Een bestaande pool selecteren** en selecteer **SQLDB1**
 1. Klik op **Script openen**
 1. Er wordt een nieuw SQL-script weergegeven.
 1. Klik op **Uitvoeren**
@@ -60,4 +60,4 @@ In het **Knowledge Center** kunt u drie dingen doen:
 
 * [Aan de slag met Azure Synapse Analytics](get-started.md)
 * [Een werkruimte maken](quickstart-create-workspace.md)
-* [SQL on-demand gebruiken](quickstart-sql-on-demand.md)
+* [Serverloze SQL-pools gebruiken](quickstart-sql-on-demand.md)

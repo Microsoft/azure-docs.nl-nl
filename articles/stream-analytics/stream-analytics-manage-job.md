@@ -6,13 +6,13 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 06/03/2019
-ms.openlocfilehash: a265bc2ed131dc0bb69d89f767ab60225d30ee8e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/30/2020
+ms.openlocfilehash: fef949e9285264ef46fbaed05a4385a15b27e65e
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89612060"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94354427"
 ---
 # <a name="tutorial-analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>Zelfstudie: Gegevens van telefoongesprekken met Stream Analytics analyseren en de resultaten visualiseren in een Power BI-dashboard
 
@@ -39,7 +39,7 @@ Doe voordat u begint het volgende:
 
 ## <a name="create-an-azure-event-hub"></a>Een Azure Event Hub maken
 
-Voordat Stream Analytics de gegevensstroom van frauduleuze gesprekken kan analyseren, moeten de gegevens naar Azure worden verzonden. In deze zelfstudie verzendt u gegevens naar Azure met behulp van [Azure Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs).
+Voordat Stream Analytics de gegevensstroom van frauduleuze gesprekken kan analyseren, moeten de gegevens naar Azure worden verzonden. In deze zelfstudie verzendt u gegevens naar Azure met behulp van [Azure Event Hubs](../event-hubs/event-hubs-about.md).
 
 Gebruik de volgende stappen voor het maken van een Event Hub en verzenden van gespreksgegevens naar die Event Hub:
 
@@ -51,17 +51,18 @@ Gebruik de volgende stappen voor het maken van een Event Hub en verzenden van ge
 
    |**Instelling**  |**Voorgestelde waarde** |**Beschrijving**  |
    |---------|---------|---------|
-   |Naam     | myEventHubsNS        |  Een unieke naam voor het identificeren van de event hub-naamruimte.       |
+   |Naam     | asaTutorialEventHub        |  Een unieke naam voor het identificeren van de event hub-naamruimte.       |
    |Abonnement     |   \<Your subscription\>      |   Selecteer een Azure-abonnement waarvoor u de event hub wilt maken.      |
    |Resourcegroep     |   MyASADemoRG      |  Selecteer **Nieuwe maken** en voer een naam voor de nieuwe resourcegroep voor uw account in.       |
    |Locatie     |   VS - west 2      |    De locatie waar de event hub-naamruimte kan worden geïmplementeerd.     |
 
-4. Gebruik standaardopties voor de resterende instellingen en selecteer **Maken**.
+4. Gebruik standaardopties voor de resterende instellingen en selecteer **Beoordelen en maken**. Selecteer vervolgens **Maken** om het implementatieproces te starten.
 
    ![Event hub-naamruimte in de Azure-portal maken](media/stream-analytics-manage-job/create-event-hub-namespace.png)
 
-5. Nadat de naamruimte is geïmplementeerd, gaat u naar **Alle resources** en zoekt u *myEventHubNS* in de lijst met Azure-resources. Selecteer *myEventHubsNS* om het te openen.
-6. Selecteer vervolgens **+Event Hub** en voer voor **Naam** *MyEventHub* in of een naam naar keuze. Gebruik standaardopties voor de resterende instellingen en selecteer **Maken**. Wacht tot de implementatie is voltooid.
+5. Nadat de naamruimte is geïmplementeerd, gaat u naar **Alle resources** en zoekt u *asaTutorialEventHub* in de lijst met Azure-resources. Selecteer *asaTutorialEventHub* om deze te openen.
+
+6. Selecteer vervolgens **+ Event Hub** en voer een **Naam** in voor de Event hub. Stel **Aantal partities** in op *2*.  Gebruik standaardopties voor de resterende instellingen en selecteer **Maken**. Wacht tot de implementatie is voltooid.
 
    ![Event Hub-configuratie in de Azure-portal](media/stream-analytics-manage-job/create-event-hub-portal.png)
 
@@ -69,13 +70,13 @@ Gebruik de volgende stappen voor het maken van een Event Hub en verzenden van ge
 
 Voordat een toepassing gegevens naar Azure Event Hubs kan verzenden, moet de event hub een beleid hebben waarmee de juiste toegang wordt verleend. Het toegangsbeleid genereert een verbindingsreeks die autorisatiegegevens bevat.
 
-1. Ga naar de Event Hub die u in de vorige stap hebt gemaakt: MyEventHub*. Selecteer onder **Instellingen** **Beleid voor gedeelde toegang** en selecteer vervolgens **+ Toevoegen**.
+1. Ga naar de Event Hub die u in de vorige stap hebt gemaakt, *MyEventHub*. Selecteer onder **Instellingen** **Beleid voor gedeelde toegang** en selecteer vervolgens **+ Toevoegen**.
 
 2. Geef het beleid de naam **MyPolicy** en controleer of het selectievakje **Beheren** is ingeschakeld. Selecteer vervolgens **Maken**.
 
    ![Gedeeld toegangsbeleid voor event hub maken](media/stream-analytics-manage-job/create-event-hub-access-policy.png)
 
-3. Als het beleid is gemaakt, selecteert u het om het te openen en zoekt u **Verbindingsreeks - primaire sleutel**. Selecteer de blauw knop **kopiëren** naast de verbindingsreeks.
+3. Zodra het beleid is gemaakt, klikt u op de naam van het beleid om het beleid te openen. Zoek **Verbindingsreeks - primaire sleutel**. Selecteer de knop **Kopiëren** naast de verbindingsreeks.
 
    ![De verbindingsreeks voor het beleid voor gedeelde toegang opslaan](media/stream-analytics-manage-job/save-connection-string.png)
 
@@ -92,7 +93,7 @@ Voordat een toepassing gegevens naar Azure Event Hubs kan verzenden, moet de eve
 Voordat u de app TelcoGenerator start, moet u deze configureren voor het verzenden van gegevens naar de Azure Event Hubs die u eerder hebt gemaakt.
 
 1. Pak de inhoud van het bestand [TelcoGenerator.zip](https://download.microsoft.com/download/8/B/D/8BD50991-8D54-4F59-AB83-3354B69C8A7E/TelcoGenerator.zip) uit.
-2. Open het bestand `TelcoGenerator\TelcoGenerator\telcodatagen.exe.config` in een teksteditor van uw keuze (er is meer dan één .config-bestand, let er dus op dat u het juiste bestand opent).
+2. Open het bestand `TelcoGenerator\TelcoGenerator\telcodatagen.exe.config` in een teksteditor van uw keuze (Er is meer dan één .config-bestand, let er dus op dat u het juiste bestand opent.)
 
 3. Update het `<appSettings>`-element in het configuratiebestand met de volgende details:
 
@@ -128,9 +129,9 @@ Nu u een stream van gesprekgebeurtenissen hebt, kunt u een Stream Analytics-taak
 
 1. Als u een Stream Analytics-taak wilt maken, gaat u naar de [Azure-portal](https://portal.azure.com/).
 
-2. Selecteer **Een resource maken** > **Internet of Things** > **Stream Analytics-taak**.
+2. Selecteer **Een resource maken** en zoek naar **Stream Analytics-taak**. Selecteer de tegel **Stream Analytics-taak** en selecteer *Maken**.
 
-3. Voer in het deelvenster **Nieuwe Stream Analytics-taak** de volgende waarden in:
+3. Voer in het formulier **Nieuwe Stream Analytics-taak** de volgende waarden in:
 
    |**Instelling**  |**Voorgestelde waarde**  |**Beschrijving**  |
    |---------|---------|---------|
@@ -149,17 +150,17 @@ Nu u een stream van gesprekgebeurtenissen hebt, kunt u een Stream Analytics-taak
 
 In de volgende stap definieert u een invoerbron voor de taak om gegevens te kunnen lezen met de Event Hub die u in de vorige sectie hebt gemaakt.
 
-1. Open het deelvenster **Alle resources** vanuit de Azure-portal en zoek de Stream Analytics-taak *ASATutorial*.
+1. Open de pagina **Alle resources** vanuit Azure Portal en zoek de Stream Analytics-taak *ASATutorial*.
 
-2. Selecteer in de sectie **Taaktopologie** van het deelvenster van de Stream Analytics-taak de optie **Invoer**.
+2. Selecteer in de sectie **Taaktopologie** van de Stream Analytics-taak de optie **Invoer**.
 
-3. Selecteer **+ Stroominvoer toevoegen** en **Event Hub**. Voer in het deelvenster de volgende waarden in:
+3. Selecteer **+ Stroominvoer toevoegen** en **Event Hub**. Voer in het invoerformulier de volgende waarden in:
 
    |**Instelling**  |**Voorgestelde waarde**  |**Beschrijving**  |
    |---------|---------|---------|
    |Invoeralias     |  CallStream       |  Geef een beschrijvende naam op om uw invoer te identificeren. De invoeralias mag alleen alfanumerieke tekens, afbreekstreepjes en onderstrepingstekens bevatten en moet 3 tot 63 tekens lang zijn.       |
    |Abonnement    |   \<Your subscription\>      |   Selecteer het Azure-abonnement waarvoor u de event hub hebt gemaakt. De event hub kan zich in dezelfde of een ander abonnement als de Stream Analytics-taak bevinden.       |
-   |Event hub-naamruimte    |  myEventHubsNS       |  Selecteer de event hub-naamruimte die u in de vorige sectie hebt gemaakt. Alle in uw huidige abonnement beschikbare event hub-naamruimten worden weergegeven in de vervolgkeuzelijst.       |
+   |Event hub-naamruimte    |  asaTutorialEventHub       |  Selecteer de event hub-naamruimte die u in de vorige sectie hebt gemaakt. Alle in uw huidige abonnement beschikbare event hub-naamruimten worden weergegeven in de vervolgkeuzelijst.       |
    |Event Hub-naam    |   MyEventHub      |  Selecteer de event hub die u in de vorige sectie hebt gemaakt. Alle in uw huidige abonnement beschikbare event hubs worden weergegeven in de vervolgkeuzelijst.       |
    |Naam van het Event Hub-beleid   |  Mypolicy       |  Selecteer het door de event hub gedeelde toegangsbeleid dat u in de vorige sectie hebt gemaakt. Alle in uw huidige abonnement beschikbare beleidsregels voor event hubs worden weergegeven in de vervolgkeuzelijst.       |
 
@@ -169,33 +170,39 @@ In de volgende stap definieert u een invoerbron voor de taak om gegevens te kunn
 
 ## <a name="configure-job-output"></a>Taakuitvoer configureren
 
-De laatste stap is bedoeld voor het definiëren van een uitvoerlocatie voor de taak waar de getransformeerde gegevens naartoe kunnen worden geschreven. In deze zelfstudie voert u met behulp van Power BI gegevens uit en maakt u deze zichtbaar.
+De laatste stap is bedoeld om een uitvoerlocatie te definiëren waar de taak de getransformeerde gegevens naartoe kan schrijven. In deze zelfstudie voert u met behulp van Power BI gegevens uit en maakt u deze zichtbaar.
 
-1. Open het deelvenster **Alle resources** vanuit de Azure-portal en zoek de Stream Analytics-taak *ASATutorial*.
+1. Open **Alle resources** vanuit Azure Portal en selecteer de Stream Analytics-taak *ASATutorial*.
 
-2. Selecteer in de sectie **Taaktopologie** van het deelvenster van de Stream Analytics-taak de optie **Uitvoer**.
+2. Selecteer in de sectie **Taaktopologie** van de Stream Analytics-taak de optie **Uitvoer**.
 
-3. Selecteer **+ Toevoegen** > **Power BI**. Vul vervolgens het formulier in met de volgende gegevens en selecteer **Autoriseren**:
+3. Selecteer **+ Toevoegen** > **Power BI**. Selecteer vervolgens **Autoriseren** en volg de prompts om Power BI te verifiëren.
+
+:::image type="content" source="media/stream-analytics-manage-job/authorize-power-bi.png" alt-text="de knop autoriseren voor Power BI":::
+
+4. Vul de volgende gegevens in het uitvoerformulier in en selecteer **Opslaan**:
 
    |**Instelling**  |**Voorgestelde waarde**  |
    |---------|---------|
    |Uitvoeralias  |  MyPBIoutput  |
+   |Werkruimte Groep| Mijn werkruimte |
    |Naam van de gegevensset  |   ASAdataset  |
    |Tabelnaam |  ASATable  |
+   | Verificatiemodus | Gebruikerstoken |
 
    ![Azure Stream Analytics-uitvoer configureren](media/stream-analytics-manage-job/configure-stream-analytics-output.png)
 
-4. Als u **Autoriseren** hebt geselecteerd, wordt er een pop-upvenster geopend en wordt u gevraagd referenties te verstrekken als verificatie voor uw Power BI-account. Zodra de autorisatie geslaagd is, kunt u de instellingen **Opslaan**. Zie [Beheerde identiteit gebruiken om uw Azure Stream Analytics-taak te verifiëren voor Power BI](powerbi-output-managed-identity.md) als u Beheerde identiteit wilt gebruiken.
+   In deze zelfstudie wordt de verificatiemodus *Gebruikerstoken* gebruikt. Zie [Beheerde identiteit gebruiken om uw Azure Stream Analytics-taak te verifiëren voor Power BI](powerbi-output-managed-identity.md) als u Beheerde identiteit wilt gebruiken.
 
 ## <a name="define-a-query-to-analyze-input-data"></a>Een query voor het analyseren van invoergegevens definiëren
 
-In de volgende stap maakt u een transformatie waarmee gegevens in realtime worden geanalyseerd. U definieert de transformatie-query met [Stream Analytics Query Language](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference). De query die in deze zelfstudie wordt gebruikt, detecteert frauduleuze gesprekken in de telefoongegevens.
+In de volgende stap maakt u een transformatie waarmee gegevens in realtime worden geanalyseerd. U definieert de transformatie-query met [Stream Analytics Query Language](/stream-analytics-query/stream-analytics-query-language-reference). De query die in deze zelfstudie wordt gebruikt, detecteert frauduleuze gesprekken in de telefoongegevens.
 
 In dit voorbeeld worden binnen vijf seconden door dezelfde gebruiker frauduleuze gesprekken gevoerd, maar vanaf afzonderlijke locaties. Zo kan dezelfde gebruiker niet op rechtmatige wijze op hetzelfde moment een telefoongesprek vanuit de Verenigde Staten en Australië initiëren. Ga als volgt te werk als u de transformatie-query voor uw Stream Analytics-taak wilt definiëren:
 
 1. Open het deelvenster **Alle resources** vanuit de Azure-portal en open de Stream Analytics-taak **ASATutorial** die u eerder hebt gemaakt.
 
-2. Selecteer in de sectie **Taaktopologie** van het deelvenster van de Stream Analytics-taak de optie **Query**. Het queryvenster vermeldt de invoer en uitvoer die voor de taak zijn geconfigureerd en u kunt een query voor het transformeren van de invoerstroom maken.
+2. Selecteer in de sectie **Taaktopologie** van de Stream Analytics-taak de optie **Query**. Het queryvenster vermeldt de invoer en uitvoer die voor de taak zijn geconfigureerd en u kunt een query maken voor het transformeren van de invoerstroom.
 
 3. Vervang de bestaande query in de editor door de volgende query, die een self-join uitvoert met een interval van 5 seconden aan gespreksgegevens:
 
@@ -210,7 +217,7 @@ In dit voorbeeld worden binnen vijf seconden door dezelfde gebruiker frauduleuze
    GROUP BY TumblingWindow(Duration(second, 1))
    ```
 
-   Als u wilt controleren op frauduleuze gesprekken, voert u een self-join uit voor de streaminggegevens op basis van de waarde `CallRecTime`. U kunt vervolgens zoeken naar gespreksrecords waarvan de `CallingIMSI`-waarde (het nummer waarmee de oproep is uitgevoerd) hetzelfde is, maar waarvan de `SwitchNum`-waarde (land/regio van herkomst) verschilt. Wanneer u een JOIN-bewerking voor streaminggegevens gebruikt, moet de join enkele beperkingen bevatten met betrekking tot hoe ver de overeenkomende rijen in tijd kunnen worden gescheiden. Omdat er sprake is van een eindeloze gegevensstroom, worden de tijdsgrenzen voor de relatie opgegeven binnen de **ON**-component van de join met behulp van de functie [DATEDIFF](https://docs.microsoft.com/stream-analytics-query/datediff-azure-stream-analytics).
+   Als u wilt controleren op frauduleuze gesprekken, voert u een self-join uit voor de streaminggegevens op basis van de waarde `CallRecTime`. U kunt vervolgens zoeken naar gespreksrecords waarvan de `CallingIMSI`-waarde (het nummer waarmee de oproep is uitgevoerd) hetzelfde is, maar waarvan de `SwitchNum`-waarde (land/regio van herkomst) verschilt. Wanneer u een JOIN-bewerking voor streaminggegevens gebruikt, moet de join enkele beperkingen bevatten met betrekking tot hoe ver de overeenkomende rijen in tijd kunnen worden gescheiden. Omdat er sprake is van een eindeloze gegevensstroom, worden de tijdsgrenzen voor de relatie opgegeven binnen de **ON**-component van de join met behulp van de functie [DATEDIFF](/stream-analytics-query/datediff-azure-stream-analytics).
 
    Deze query is net als een normale SQL-join, met als enig verschil de functie **DATEDIFF**. De in deze query gebruikte functie **DATEDIFF** is specifiek voor Streaming Analytics en moet worden opgenomen in de `ON...BETWEEN`-component.
 
@@ -220,25 +227,17 @@ In dit voorbeeld worden binnen vijf seconden door dezelfde gebruiker frauduleuze
 
 ## <a name="test-your-query"></a>De query testen
 
-U kunt een query vanuit de query-editor testen met behulp van voorbeeldgegevens. Voer de volgende stappen uit om de query te testen:
+U kunt een query testen vanuit de query-editor. Voer de volgende stappen uit om de query te testen:
 
 1. Zorg ervoor dat de app TelcoGenerator wordt uitgevoerd en records van telefoongesprekken produceert.
 
-2. Selecteer in het deelvenster **Query** de puntjes naast de *CallStream*-invoer en selecteer vervolgens **Voorbeeldgegevens van uitvoer**.
-
-3. Stel **Minuten** in op 3 en selecteer **OK**. Uit de invoerstroom wordt vervolgens drie minuten aan gegevens opgehaald en u krijgt een melding wanneer de voorbeeldgegevens gereed zijn. U kunt de status van het samplen bijhouden op de meldingsbalk.
-
-   De voorbeeldgegevens worden tijdelijk opgeslagen en zijn beschikbaar zolang u het queryvenster geopend houdt. Als u het queryvenster sluit, worden de voorbeeldgegevens verwijderd en u dient een nieuwe set voorbeeldgegevens te maken als u een test wilt uitvoeren. Als alternatief kunt u een JSON-bestand met voorbeeldgegevens ophalen uit [GitHub](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json) en dit JSON-bestand uploaden om te gebruiken als set met voorbeeldgegevens voor de *CallStream*-invoer.
-
-   ![Visual van het verzamelen van invoergegevens voor Stream Analytics](media/stream-analytics-manage-job/sample-input-data-asa.png)
-
-4. Selecteer **Testen** om de query te testen. U ziet de volgende resultaten:
+2. Selecteer **Testen** om de query te testen. U ziet de volgende resultaten:
 
    ![Uitvoer van test van Stream Analytics-query](media/stream-analytics-manage-job/sample-test-output-restuls.png)
 
 ## <a name="start-the-job-and-visualize-output"></a>De taak starten en uitvoer visualiseren
 
-1. Als u de taak wilt starten, gaat u naar het deelvenster **Overzicht** van de taak en selecteert u **Starten**.
+1. Als u de taak wilt starten, gaat u naar **Overzicht** van de taak en selecteert u **Starten**.
 
 2. Selecteer **Nu** voor de starttijd van de taakuitvoer en selecteer **Starten**. U kunt de taakstatus bekijken in de meldingsbalk.
 
@@ -246,7 +245,7 @@ U kunt een query vanuit de query-editor testen met behulp van voorbeeldgegevens.
 
 4. Selecteer in de Power BI-werkruimte **+ Maken** om een nieuw dashboard te maken met de naam *Frauduleuze gesprekken*.
 
-5. Selecteer boven in het venster de optie **Tegel toevoegen**. Selecteer **Aangepaste streaminggegevens** en **Volgende**. Kies **ASAdataset** onder **Uw gegevenssets**. Selecteer **Kaart** in de vervolgkeuzelijst **Visualisatietype** en voeg **frauduleuze gesprekken** toe aan **Velden**. Selecteer **Volgende** om een naam voor de tegel in te voeren en selecteer vervolgens **Toepassen** om het bestand te maken.
+5. Selecteer boven in het venster de optie **Bewerken** en **Tegel toevoegen**. Selecteer **Aangepaste streaminggegevens** en **Volgende**. Kies **ASAdataset** onder **Uw gegevenssets**. Selecteer **Kaart** in de vervolgkeuzelijst **Visualisatietype** en voeg **frauduleuze gesprekken** toe aan **Velden**. Selecteer **Volgende** om een naam voor de tegel in te voeren en selecteer vervolgens **Toepassen** om het bestand te maken.
 
    ![Tegels in Power BI-dashboard maken](media/stream-analytics-manage-job/create-power-bi-dashboard-tiles.png)
 
@@ -262,9 +261,9 @@ U kunt een query vanuit de query-editor testen met behulp van voorbeeldgegevens.
 
 ## <a name="embedding-your-power-bi-dashboard-in-a-web-application"></a>Uw Power BI-dashboard insluiten in een webtoepassing
 
-Voor dit gedeelte van de zelfstudie maakt u gebruik van een voorbeeld van een [ASP.NET](https://asp.net/)-webtoepassing die gemaakt is door het Power BI-team en waarmee u uw dashboard kunt insluiten. Zie het artikel [Insluiten met Power BI](https://docs.microsoft.com/power-bi/developer/embedding) voor meer informatie over het insluiten van dashboards.
+Voor dit gedeelte van de zelfstudie maakt u gebruik van een voorbeeld van een [ASP.NET](https://asp.net/)-webtoepassing die gemaakt is door het Power BI-team en waarmee u uw dashboard kunt insluiten. Zie het artikel [Insluiten met Power BI](/power-bi/developer/embedding) voor meer informatie over het insluiten van dashboards.
 
-Stel de toepassing in door naar de GitHub-opslagplaats [Power BI-Developer-Samples](https://github.com/Microsoft/PowerBI-Developer-Samples) te gaan en volg de instructies in de sectie **Gebruiker is eigenaar van gegevens** (gebruik de omleidings- en startpagina-URL in de subsectie **integrate-web-app**). Omdat we werken met het Dashboard-voorbeeld, gebruiken we de voorbeeldcode **integrate-web-app** in de [GitHub-opslagplaats](https://github.com/microsoft/PowerBI-Developer-Samples/tree/master/.NET%20Framework/Embed%20for%20your%20organization/integrate-web-app).
+Stel de toepassing in door naar de GitHub-opslagplaats [Power BI-Developer-Samples](https://github.com/Microsoft/PowerBI-Developer-Samples) te gaan en volg de instructies in de sectie **Gebruiker is eigenaar van gegevens** (gebruik de omleidings- en startpagina-URL in de subsectie **integrate-web-app**). Omdat we werken met het Dashboard-voorbeeld, gebruiken we de voorbeeldcode **integrate-web-app** in de [GitHub-opslagplaats](https://github.com/microsoft/PowerBI-Developer-Samples/tree/master/.NET%20Framework/Embed%20for%20your%20organization/).
 Zodra de toepassing in uw browser wordt uitgevoerd, volgt u deze stappen voor het insluiten van het dashboard dat u eerder in de webpagina hebt gemaakt:
 
 1. Selecteer **Aanmelden bij Power BI**, waarmee de toepassing toegang wordt verleend tot de dashboards in uw Power BI-account.

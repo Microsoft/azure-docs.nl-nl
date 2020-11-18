@@ -4,14 +4,15 @@ description: In deze zelfstudie gaat u geheimen openen en ophalen uit Azure Key 
 author: ShaneBala-keyvault
 ms.author: sudbalas
 ms.service: key-vault
+ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: c101cb4eca246ee68a30ba3499981c589c564f92
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: b7d587f2be5141f7de82e9294b1fdb9fba4a6a41
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368652"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94488639"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Zelfstudie: De Azure Key Vault-provider voor het stuurprogramma voor het Secrets Store CSI-stuurprogramma configureren en uitvoeren op Kubernetes
 
@@ -35,7 +36,7 @@ In deze zelfstudie leert u het volgende:
 
 * Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-* Voordat u met deze zelfstudie begint, moet u [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest) installeren.
+* Voordat u met deze zelfstudie begint, moet u [Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest) installeren.
 
 ## <a name="create-a-service-principal-or-use-managed-identities"></a>Een service-principal maken of beheerde identiteiten gebruiken
 
@@ -52,11 +53,17 @@ Met deze bewerking wordt een reeks sleutel-waardeparen geretourneerd:
 
 Kopieer de **app-id** en het **wachtwoord** voor later gebruik.
 
+## <a name="flow-for-using-managed-identity"></a>Stroom voor het gebruik van Beheerde identiteit
+
+Dit diagram illustreert de AKS/Key Vault-integratiestroom voor Beheerde identiteit:
+
+![Diagram met weergave van de AKS/Key Vault-integratiestroom voor Beheerde identiteit](../media/aks-key-vault-integration-flow.png)
+
 ## <a name="deploy-an-azure-kubernetes-service-aks-cluster-by-using-the-azure-cli"></a>Een Azure Kubernetes Service-cluster (AKS) implementeren met behulp van de Azure CLI
 
 U hoeft Azure Cloud Shell niet te gebruiken. De opdrachtprompt (terminal) waarop de Azure CLI is geïnstalleerd, is voldoende. 
 
-Voltooi de secties 'Een resource groep maken', 'AKS-cluster maken' en 'Verbinding maken met het cluster' in [Deploy an Azure Kubernetes Service cluster by using the Azure CLI](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough) (Een Azure Kubernetes Service-cluster implementeren met de Azure CLI). 
+Voltooi de secties 'Een resource groep maken', 'AKS-cluster maken' en 'Verbinding maken met het cluster' in [Deploy an Azure Kubernetes Service cluster by using the Azure CLI](../../aks/kubernetes-walkthrough.md) (Een Azure Kubernetes Service-cluster implementeren met de Azure CLI). 
 
 > [!NOTE] 
 > Als u van plan bent een pod-identiteit te gebruiken in plaats van een service-principal, moet u deze inschakelen wanneer u het Kubernetes-cluster maakt, zoals wordt weergegeven in de volgende opdracht:
@@ -103,7 +110,7 @@ Met de interface van het [Secrets Store CSI](https://github.com/Azure/secrets-st
 
 ## <a name="create-an-azure-key-vault-and-set-your-secrets"></a>Een Azure-sleutelkluis maken en geheimen instellen
 
-Als u uw eigen sleutel kluis wilt maken en uw geheimen wilt instellen, volgt u de instructies in [Set and retrieve a secret from Azure Key Vault by using the Azure CLI](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-cli) (Een geheim instellen en ophalen van Azure Key Vault met behulp van de Azure CLI).
+Als u uw eigen sleutel kluis wilt maken en uw geheimen wilt instellen, volgt u de instructies in [Set and retrieve a secret from Azure Key Vault by using the Azure CLI](../secrets/quick-create-cli.md) (Een geheim instellen en ophalen van Azure Key Vault met behulp van de Azure CLI).
 
 > [!NOTE] 
 > U hoeft niet Azure Cloud Shell te gebruiken of een nieuwe resourcegroep te maken. U kunt de resourcegroep gebruiken die u eerder hebt gemaakt voor het Kubernetes-cluster.
@@ -128,7 +135,7 @@ Documentatie over alle vereiste velden is hier beschikbaar: [Koppeling](https://
 De bijgewerkte sjabloon wordt weergegeven in de volgende code. Download deze als een YAML-bestand en vul de vereiste velden in. In dit voorbeeld is de sleutelkluis **contosoKeyVault5**. De kluis heeft twee geheimen: **secret1** en **secret2**.
 
 > [!NOTE] 
-> Als u beheerde identiteiten gebruikt, stelt u de waarde voor**usePodIdentity** in op *Waar*en stelt u de waarde **userAssignedIdentityID** in als een paar aanhalingstekens ( **""** ). 
+> Als u beheerde identiteiten gebruikt, stelt u de waarde voor **usePodIdentity** in op *Waar* en stelt u de waarde **userAssignedIdentityID** in als een paar aanhalingstekens ( **""** ). 
 
 ```yaml
 apiVersion: secrets-store.csi.x-k8s.io/v1alpha1
@@ -210,7 +217,7 @@ az ad sp credential reset --name contosoServicePrincipal --credential-descriptio
 
 Als u beheerde identiteiten gebruikt, wijst u specifieke rollen toe aan het AKS-cluster dat u hebt gemaakt. 
 
-1. Als u een door de gebruiker toegewezen beheerde identiteit wilt maken, vermelden of lezen, moet aan uw AKS-cluster de rol [Operator beheerde identiteit](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-operator) worden toegewezen. Zorg ervoor dat de **$clientId** de client-id van het Kubernetes-cluster is. Het bereik valt onder uw Azure-abonnementsservice, met name de knooppuntresourcegroep die is gemaakt toen het AKS-cluster werd gemaakt. Met dit bereik worden alleen resources in deze groep beïnvloed door de rollen die hieronder worden toegewezen. 
+1. Als u een door de gebruiker toegewezen beheerde identiteit wilt maken, vermelden of lezen, moet aan uw AKS-cluster de rol [Operator beheerde identiteit](../../role-based-access-control/built-in-roles.md#managed-identity-operator) worden toegewezen. Zorg ervoor dat de **$clientId** de client-id van het Kubernetes-cluster is. Het bereik valt onder uw Azure-abonnementsservice, met name de knooppuntresourcegroep die is gemaakt toen het AKS-cluster werd gemaakt. Met dit bereik worden alleen resources in deze groep beïnvloed door de rollen die hieronder worden toegewezen. 
 
     ```azurecli
     RESOURCE_GROUP=contosoResourceGroup
@@ -355,4 +362,4 @@ Controleer of de inhoud van het geheim wordt weergegeven.
 
 Om ervoor te zorgen dat uw sleutelkluis kan worden hersteld, raadpleegt u:
 > [!div class="nextstepaction"]
-> [Voorlopig verwijderen inschakelen](https://docs.microsoft.com/azure/key-vault/general/soft-delete-cli)
+> [Voorlopig verwijderen inschakelen](./soft-delete-cli.md)

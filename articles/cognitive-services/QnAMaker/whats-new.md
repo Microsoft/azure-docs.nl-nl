@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
 ms.date: 07/16/2020
-ms.openlocfilehash: 73044f35b90fd3e5996899fd7c3b0a925056f8ed
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2016d6dfedef68c334758660e9affa0ad9b9d4a3
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87836868"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94505237"
 ---
 # <a name="whats-new-in-qna-maker"></a>Nieuwe functies in QnA Maker
 
@@ -23,6 +23,14 @@ Meer informatie over nieuwe functies in de service. Dit kunnen opmerkingen bij d
 
 Lees meer over de nieuwe functies van QnA Maker.
 
+### <a name="november-2020"></a>November 2020
+
+* Er is een nieuwe versie van QnA Maker gestart in de gratis openbare preview. Meer informatie is [hier](https://techcommunity.microsoft.com/t5/azure-ai/introducing-qna-maker-managed-now-in-public-preview/ba-p/1845575) beschikbaar.
+* Eenvoudig resources maken
+* End-to-end ondersteuning voor regio's
+* Classificatiemodel op basis van deep learning
+* Machine Reading Comprehension voor nauwkeurige antwoorden
+  
 ### <a name="july-2020"></a>Juli 2020
 
 * [Metagegevens: logische combinatie `OR` van meerdere metagegevensparen ](how-to/metadata-generateanswer-usage.md#logical-or-using-strictfilterscompoundoperationtype-property)

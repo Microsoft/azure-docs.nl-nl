@@ -3,12 +3,12 @@ title: Inleiding
 description: Meer informatie over de functies en voordelen van Azure VMware Solution voor het implementeren en beheren van VMware-workloads in Azure.
 ms.topic: overview
 ms.date: 05/04/2020
-ms.openlocfilehash: b71427402e08167e5868128ed1e553c69bef425d
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 1875f535a5ca3e346362409c143da82cb8c07a12
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91574451"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94488584"
 ---
 # <a name="what-is-azure-vmware-solution"></a>Wat is Azure VMware Solution?
 
@@ -44,7 +44,7 @@ Regelmatige upgrades van de Azure VMware Solution-privécloud en VMware-software
 
 ## <a name="monitoring-your-private-cloud"></a>De privécloud bewaken
 
-Zodra de Azure VMware Solution is geïmplementeerd in uw abonnement, worden [Azure Monitor-logboeken](../azure-monitor/overview.md) automatisch gegenereerd. Daarnaast kunt u logboeken verzamelen op elke virtuele machine in uw privécloud. U kunt [de MMA-agent downloaden en installeren](../azure-monitor/platform/log-analytics-agent.md#installation-options) op virtuele machines met Linux en Windows die worden uitgevoerd in uw Azure VMware Solution-privéclouds. U kunt ook de [Azure Diagnostics-extensie](../azure-monitor/platform/diagnostics-extension-overview.md) inschakelen. U kunt zelfs dezelfde query's uitvoeren die normaal gesproken op uw virtuele machines worden uitgevoerd. Zie [query's schrijven](../azure-monitor/log-query/log-query-overview.md#how-can-i-learn-how-to-write-queries)voor meer informatie over het maken van query's. Het bewaken van patronen in de Azure VMware Solution is vergelijkbaar met Azure Virtual Machines binnen het IaaS-platform. Zie [Virtuele machines van Azure bewaken met Azure Monitor](../azure-monitor/insights/monitor-vm-azure.md) voor meer informatie en uitleg.
+Zodra de Azure VMware Solution is geïmplementeerd in uw abonnement, worden [Azure Monitor-logboeken](../azure-monitor/overview.md) automatisch gegenereerd. Daarnaast kunt u logboeken verzamelen op elke virtuele machine in uw privécloud. U kunt [de MMA-agent downloaden en installeren](../azure-monitor/platform/log-analytics-agent.md#installation-options) op virtuele machines met Linux en Windows die worden uitgevoerd in uw Azure VMware Solution-privéclouds. U kunt ook de [Azure Diagnostics-extensie](../azure-monitor/platform/diagnostics-extension-overview.md) inschakelen. U kunt zelfs dezelfde query's uitvoeren die normaal gesproken op uw virtuele machines worden uitgevoerd. Zie [Overzicht Azure Monitor-logboeken](../azure-monitor/platform/data-platform-logs.md) voor meer informatie over het maken van query's. Het bewaken van patronen in de Azure VMware Solution is vergelijkbaar met Azure Virtual Machines binnen het IaaS-platform. Zie [Virtuele machines van Azure bewaken met Azure Monitor](../azure-monitor/insights/monitor-vm-azure.md) voor meer informatie en uitleg.
 
 ## <a name="next-steps"></a>Volgende stappen
 

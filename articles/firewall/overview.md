@@ -6,15 +6,15 @@ ms.service: firewall
 services: firewall
 ms.topic: overview
 ms.custom: mvc, contperfq1
-ms.date: 10/19/2020
+ms.date: 11/10/2020
 ms.author: victorh
 Customer intent: As an administrator, I want to evaluate Azure Firewall so I can determine if I want to use it.
-ms.openlocfilehash: 22b202d0ef54984ea2818112b49bbdf7f1098833
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 07c0169dcbadc6dc8ae293d69e197c2cd1ec2275
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341614"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94489791"
 ---
 # <a name="what-is-azure-firewall"></a>Wat is Azure Firewall?
 
@@ -29,6 +29,17 @@ U kunt beleid voor toepassings- en netwerkconnectiviteit centraal maken, afdwing
 ## <a name="features"></a>Functies
 
 Zie [Azure Firewall-functies](features.md) voor meer informatie over Azure Firewall-functies.
+
+## <a name="pricing-and-sla"></a>Prijzen en SLA
+
+Zie [Azure Firewall-prijzen](https://azure.microsoft.com/pricing/details/azure-firewall/) voor informatie over Azure Firewall-prijzen.
+
+Zie [SLA voor Azure Firewall](https://azure.microsoft.com/support/legal/sla/azure-firewall/) voor informatie over de SLA voor Azure Firewall.
+
+## <a name="whats-new"></a>Nieuwe functies
+
+Zie [Azure-updates](https://azure.microsoft.com/updates/?category=networking&query=Azure%20Firewall) om te ontdekken wat er nieuw is in Azure Firewall.
+
 
 ## <a name="known-issues"></a>Bekende problemen
 
@@ -45,10 +56,10 @@ Netwerkfilterregels voor niet-TCP/UDP-protocollen (bijvoorbeeld ICMP) werken nie
 |Kan de eerste openbare IP-configuratie niet verwijderen|Elk openbaar IP-adres van Azure Firewall wordt toegewezen aan een *IP-configuratie*.  De eerste IP-configuratie wordt toegewezen tijdens de implementatie van de firewall en bevat doorgaans een verwijzing naar het subnet van de firewall (tenzij expliciet anders is geconfigureerd via een sjabloonimplementatie). U kunt deze IP-configuratie niet verwijderen omdat hiermee de toewijzing van de firewall ongedaan wordt gemaakt. U kunt het openbare IP-adres dat is gekoppeld aan deze IP-configuratie nog steeds wijzigen of verwijderen als de firewall over ten minste één ander openbaar IP-adres beschikt.|Dit is standaard.|
 |Beschikbaarheidszones kunnen alleen worden geconfigureerd tijdens de implementatie.|Beschikbaarheidszones kunnen alleen worden geconfigureerd tijdens de implementatie. U kunt Beschikbaarheidszones niet configureren nadat er een firewall is geïmplementeerd.|Dit is standaard.|
 |SNAT op inkomende verbindingen|Naast DNAT worden verbindingen via het openbare IP-adres van de firewall (inkomend) met SNAT omgezet naar een van de privé-IP's van de firewall. Deze vereiste is (ook voor Actieve/Actieve NVA's) om symmetrische routering te garanderen.|Als u de oorspronkelijke bron voor HTTP/S wilt behouden, kunt u [XFF](https://en.wikipedia.org/wiki/X-Forwarded-For)-headers gebruiken. Gebruik bijvoorbeeld een service als [Azure Front Door](../frontdoor/front-door-http-headers-protocol.md#front-door-to-backend) of [Azure Application Gateway](../application-gateway/rewrite-http-headers.md) vóór de firewall. U kunt ook WAF toevoegen als onderdeel van Azure Front Door en ketenen aan de firewall.
-|Ondersteuning voor SQL FQDN-filtering alleen in proxymodus (poort 1433)|Voor Azure SQL Database, Azure Synapse Analytics en Azure SQL Managed Instance:<br><br>Tijdens de preview wordt SQL FQDN-filtering alleen ondersteund in de proxymodus (poort 1433).<br><br>Voor Azure SQL IaaS:<br><br>Als u werkt met niet-standaard poorten, kunt u die poorten opgeven in de toepassingsregels.|Voor SQL in de omleidingsmodus (de standaardinstelling als u verbinding maakt vanuit Azure), kunt u in plaats daarvan de toegang filteren met behulp van de SQL-servicetag als onderdeel van Azure Firewall-netwerkregels.
+|Ondersteuning voor SQL FQDN-filtering alleen in proxymodus (poort 1433)|Voor Azure SQL Database, Azure Synapse Analytics en Azure SQL Managed Instance:<br><br>Filteren met SQL FQDN wordt alleen ondersteund in de proxymodus (poort 1433).<br><br>Voor Azure SQL IaaS:<br><br>Als u werkt met niet-standaard poorten, kunt u die poorten opgeven in de toepassingsregels.|Voor SQL in de omleidingsmodus (de standaardinstelling als u verbinding maakt vanuit Azure), kunt u in plaats daarvan de toegang filteren met behulp van de SQL-servicetag als onderdeel van Azure Firewall-netwerkregels.
 |Uitgaand verkeer op TCP-poort 25 is niet toegestaan| Uitgaande SMTP-verbindingen die gebruikmaken van TCP-poort 25 worden geblokkeerd. Poort 25 wordt hoofdzakelijk gebruikt voor niet-geverifieerde e-mailbezorging. Dit is het standaardplatformgedrag voor virtuele machines. Raadpleeg [Problemen met uitgaande SMTP-connectiviteit oplossen in Azure](../virtual-network/troubleshoot-outbound-smtp-connectivity.md) voor meer informatie. Het is momenteel echter niet mogelijk om deze functionaliteit in te schakelen op Azure Firewall, in tegenstelling tot op virtuele machines. Opmerking: Als u geverifieerde SMTP (poort 587) of SMTP wilt toestaan via een andere poort dan 25, moet u een netwerkregel configureren en geen toepassingsregel, omdat SMTP-inspectie momenteel niet wordt ondersteund.|Volg de aanbevolen methode voor het verzenden van e-mailberichten, zoals beschreven in het artikel Problemen oplossen met SMTP. U kunt de virtuele machine waarvoor uitgaande SMTP-toegang nodig is van uw standaardroute naar de firewall ook uitsluiten. In plaats daarvan configureert u uitgaande toegang rechtstreeks naar internet.
 |Actieve FTP wordt niet ondersteund|Actieve FTP is uitgeschakeld op Azure Firewall om te beschermen tegen aanvallen met FTP-beveiliging met de opdracht FTP PORT.|U kunt in plaats daarvan passieve FTP gebruiken. U moet nog steeds expliciet TCP-poorten 20 en 21 openen op de firewall.
-|De metrische gegevens over het SNAT-poortgebruik tonen 0%|De metrische gegevens over het Azure Firewall SNAT-poortgebruik kunnen 0% gebruik aangeven, zelfs wanneer er een SNAT-poort wordt gebruikt. In dit geval biedt het gebruik van metrische gegevens als onderdeel van de metrische gegevens van de firewallstatus een onjuist resultaat.|Dit probleem is opgelost en de implementatie in productie is beoogd voor mei 2020. In sommige gevallen wordt het probleem opgelost door de firewall opnieuw te implementeren, maar dat is niet consistent. Als een tussenliggende tijdelijke oplossing kunt u alleen de status van de firewall gebruiken om te zoeken naar *status=verslechterd* , niet naar *status=slecht*. Poortuitputting wordt weergegeven als *verslechterd*. *Niet in orde* is gereserveerd voor toekomstig gebruik wanneer er meer metrische gegevens zijn om de firewallstatus te beïnvloeden.
+|De metrische gegevens over het SNAT-poortgebruik tonen 0%|De metrische gegevens over het Azure Firewall SNAT-poortgebruik kunnen 0% gebruik aangeven, zelfs wanneer er een SNAT-poort wordt gebruikt. In dit geval biedt het gebruik van metrische gegevens als onderdeel van de metrische gegevens van de firewallstatus een onjuist resultaat.|Dit probleem is opgelost en de implementatie in productie is beoogd voor mei 2020. In sommige gevallen wordt het probleem opgelost door de firewall opnieuw te implementeren, maar dat is niet consistent. Als een tussenliggende tijdelijke oplossing kunt u alleen de status van de firewall gebruiken om te zoeken naar *status=verslechterd*, niet naar *status=slecht*. Poortuitputting wordt weergegeven als *verslechterd*. *Niet in orde* is gereserveerd voor toekomstig gebruik wanneer er meer metrische gegevens zijn om de firewallstatus te beïnvloeden.
 |DNAT wordt niet ondersteund als geforceerde tunneling is ingeschakeld|Firewalls die zijn geïmplementeerd met geforceerde tunneling, bieden geen ondersteuning voor inkomende toegang via internet vanwege asymmetrische routering.|Dit is standaard vanwege asymmetrische routering. Het retourtraject voor binnenkomende verbindingen gaat via de on-premises firewall, waarvoor geen verbinding is gemaakt.
 |Uitgaande passieve FTP werkt mogelijk niet voor firewalls met meerdere openbare IP-adressen, afhankelijk van de configuratie van uw FTP-server.|Passieve FTP brengt verschillende verbindingen tot stand voor controle- en gegevenskanalen. Wanneer een firewall met meerdere openbare IP-adressen gegevens uitgaand verzendt, wordt willekeurig een van de openbare IP-adressen geselecteerd voor het bron-IP-adres. FTP kan mislukken wanneer gegevens- en besturingskanalen gebruikmaken van verschillende bron-IP-adressen, afhankelijk van de configuratie van uw FTP-server.|Er wordt een expliciete SNAT-configuratie gepland. In de tussentijd kunt u uw FTP-server zo configureren dat gegevens- en besturingskanalen van verschillende bron-IP-adressen worden geaccepteerd (bekijk [een voorbeeld voor IIS](https://docs.microsoft.com/iis/configuration/system.applicationhost/sites/sitedefaults/ftpserver/security/datachannelsecurity)). U kunt in deze situatie ook één IP-adres gebruiken.|
 |Inkomende passieve FTP werkt mogelijk niet, afhankelijk van de configuratie van uw FTP-server |Passieve FTP brengt verschillende verbindingen tot stand voor controle- en gegevenskanalen. Binnenkomende verbindingen op Azure Firewall worden met SNAT omgezet op een van de privé IP-adressen van de firewall om symmetrische routering te garanderen. FTP kan mislukken wanneer gegevens- en besturingskanalen gebruikmaken van verschillende bron-IP-adressen, afhankelijk van de configuratie van uw FTP-server.|Behoud van het oorspronkelijke bron-IP-adres wordt onderzocht. In de tussentijd kunt u uw FTP-server zo configureren dat gegevens- en besturingskanalen van verschillende bron-IP-adressen worden geaccepteerd.|
@@ -56,9 +67,10 @@ Netwerkfilterregels voor niet-TCP/UDP-protocollen (bijvoorbeeld ICMP) werken nie
 |NAT-regels met poorten tussen 64000 en 65535 worden niet ondersteund|Azure Firewall staat elke poort toe in het bereik 1-65535 toe in netwerk- en toepassingsregels, maar NAT-regels ondersteunen alleen poorten in het bereik van 1-63999.|Dit is een huidige beperking.
 |Configuratie-updates kunnen gemiddeld vijf minuten duren|Een Azure Firewall-configuratie-update kan gemiddeld drie tot vijf minuten duren en parallelle updates worden niet ondersteund.|Er wordt een oplossing onderzocht.|
 |Azure Firewall gebruikt SNI TLS-headers om HTTPS- en MSSQL-verkeer te filteren|Als de browser- of serversoftware de SNI-extensie (Server Name Indicator) niet ondersteunt, kunt u geen verbinding maken via Azure Firewall.|Als de browser- of serversoftware geen ondersteuning biedt voor SNI, kunt u de verbinding mogelijk beheren met een netwerkregel in plaats van een toepassingsregel. Raadpleeg [Servernaamindicatie](https://wikipedia.org/wiki/Server_Name_Indication) voor software die SNI ondersteunt.|
-|Aangepaste DNS (preview) werkt niet met geforceerde tunneling|Als geforceerde tunneling is ingeschakeld, werkt aangepaste DNS (preview) niet.|Er wordt een oplossing onderzocht.|
+|Aangepaste DNS werkt niet met geforceerde tunneling|Als geforceerde tunneling is ingeschakeld, werkt aangepaste DNS niet.|Er wordt een oplossing onderzocht.|
 |Ondersteuning voor nieuwe openbare IP-adressen voor meerdere beschikbaarheidszones|U kunt geen nieuw openbaar IP-adres toevoegen wanneer u een firewall met twee beschikbaarheidszones implementeert (1 en 2, 2 en 3, of 1 en 3)|Dit is een beperking voor het openbare IP-adres.|
 |Starten/stoppen werkt niet met een firewall die is geconfigureerd in de modus geforceerde tunnel|Starten/stoppen werkt niet met een Azure-firewall die is geconfigureerd in de modus geforceerde tunnel. Eem poging om Azure Firewall te starten met geconfigureerde geforceerde tunneling resulteert in de volgende fout:<br><br>*Set-AzFirewall: De IP-configuratie van AzureFirewall FW-xx-beheer kan niet worden toegevoegd aan een bestaande firewall. Implementeer opnieuw met een beheer-IP-configuratie als u ondersteuning voor geforceerde tunneling wilt gebruiken.<br>Statuscode: 400<br>ReasonPhrase: Onjuiste aanvraag*|Wordt onderzocht.<br><br>Als tijdelijke oplossing kunt u de bestaande firewall verwijderen en een nieuwe maken met dezelfde parameters.|
+|Kan geen firewallbeleidtags toevoegen via de portal|Azure Firewall-beleid heeft een beperking voor patchondersteuning, zodat u geen tags kunt toevoegen via Azure Portal. De volgende fout wordt gegenereerd: *Kan de tags voor de resource niet opslaan*.|Er wordt een oplossing onderzocht. U kunt ook de Azure PowerShell-cmdlet `Set-AzFirewallPolicy` gebruiken om tags bij te werken.
 
 
 ## <a name="next-steps"></a>Volgende stappen

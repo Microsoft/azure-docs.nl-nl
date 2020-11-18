@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 8a42711bba8f77070e2b30a9b07d29d5b5095945
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 9ff05f2cf9f29ef86a6db9955e7d28c9035e1bf4
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973883"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94376958"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Virtuele Windows-machines in Azure
 
@@ -104,6 +104,12 @@ De resources in deze tabel worden gebruikt door de VM en moeten bestaan of worde
 | [Openbaar IP-adres](../../virtual-network/public-ip-addresses.md) |Nee |Aan de VM kan een openbaar IP-adres worden toegewezen voor externe toegang. |
 | [Netwerkinterface](../../virtual-network/virtual-network-network-interface.md) |Ja |De netwerkinterface van de VM moet in het netwerk communiceren. |
 | [Gegevensschijven](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |Nee |De VM kan gegevensschijven bevatten om opslagmogelijkheden uit te breiden. |
+
+
+## <a name="data-residency"></a>Gegevenslocatie
+
+In Azure is de functie om het opslaan van klantgegevens in één regio in te schakelen, momenteel alleen beschikbaar in de regio Azië - zuidoost (Singapore) van het geografisch gebied Azië en Stille Oceaan en in Brazilië - zuid van het geografisch gebied Brazilië (staat Sao Paulo). Voor alle andere regio's worden klantgegevens opgeslagen in Geo. Zie [Trust Center](https://azuredatacentermap.azurewebsites.net/) voor meer informatie.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

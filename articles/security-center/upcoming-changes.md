@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/26/2020
+ms.date: 11/09/2020
 ms.author: memildin
-ms.openlocfilehash: 549a95b0b2ffc2b2d2bf5670a961e0454683e33a
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: df863372cbf7abfb6fee145b7d13bb00d8deb074
+ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93026714"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94380161"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -31,49 +31,48 @@ Als u op zoek bent naar de nieuwste opmerkingen bij de release, vindt u deze in 
 
 ## <a name="planned-changes"></a>Geplande wijzigingen
 
-### <a name="recommendations-related-to-azure-security-benchmark-to-be-added-preview"></a>Aanbevelingen met betrekking tot het toe te voegen Azure Security Benchmark (preview)
+### <a name="system-updates-should-be-installed-on-your-machines-recommendation-getting-sub-recommendations"></a>De aanbeveling 'Er moeten systeemupdates worden geïnstalleerd op uw computers' krijg subaanbevelingen
+
+#### <a name="summary"></a>Samenvatting
 
 | Aspect | Details |
 |---------|---------|
-|Aankondigingsdatum | 26 oktober 2020  |
-|Datum voor deze wijziging  |  November 2020 |
-|Impact     | Mogelijk, meer aanbevelingen om te controleren.<br>Geen directe invloed op beveiligde score - Aanbevelingen van de preview hebben geen invloed op uw beveiligde score.<br>Geen directe gevolgen voor de integriteitsstatus van uw resources - Aanbevelingen van de preview zorgen er niet voor dat een resource als ‘Beschadigd’ wordt weergegeven.|
+|Aankondigingsdatum | 9 november 2020  |
+|Datum voor deze wijziging  |  Tweede helft van november 2020 |
+|Impact     | Tijdens de overgang van de huidige versie van deze aanbeveling naar de vervanging kan uw beveiligingsscore veranderen. |
 |  |  |
 
-Azure Security Benchmark is de door Microsoft ontworpen, Azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingsframeworks. [Meer informatie over Azure Security-benchmark](../security/benchmarks/introduction.md).
+Er wordt een verbeterde versie uitgebracht van de aanbeveling **Er moeten systeemupdates worden geïnstalleerd op uw computers**. Met de nieuwe versie wordt de huidige versie in het beveiligingsbeheer voor het toepassen van systeemupdates *vervangen* en worden de volgende verbeteringen aangebracht:
 
-De volgende 18 nieuwe aanbevelingen worden toegevoegd aan Security Center om de dekking van de benchmark te vergroten.
+- Subaanbevelingen voor elke ontbrekende update
+- Een opnieuw ontworpen ervaring op de Azure Security Center-pagina's van Azure Portal
+- Uitgebreide gegevens voor de aanbeveling van Azure Resource Graph
 
-Preview-aanbevelingen zorgen er niet voor dat een resource als beschadigd wordt weergegeven en ze worden niet opgenomen in de berekeningen van uw beveiligde score. Herstel ze waar mogelijk, zodat zij wanneer de preview-periode afloopt zullen bijdragen aan uw score. Zie [Aanbevelingen oplossen in Azure Security Center](security-center-remediate-recommendations.md) voor meer informatie over hoe u kunt reageren op deze aanbevelingen.
+#### <a name="transition-period"></a>Overgangsperiode
 
-- Azure Backup moet zijn ingeschakeld voor virtuele machines
-- SSL-verbinding afdwingen moet worden ingeschakeld voor MySQL-databaseservers
-- SSL-verbinding afdwingen moet worden ingeschakeld voor PostgreSQL-databaseservers
-- Geografisch redundante back-up moet zijn ingeschakeld voor Azure Database for MariaDB
-- Geografisch redundante back-up moet zijn ingeschakeld voor Azure Database for MySQL
-- Geografisch redundante back-up moet zijn ingeschakeld voor Azure Database for PostgreSQL
-- Java moet worden bijgewerkt naar de nieuwste versie van uw API-app
-- Java moet worden bijgewerkt naar de nieuwste versie van uw functie-app
-- Java moet worden bijgewerkt naar de nieuwste versie van uw web-app
-- PHP moet worden bijgewerkt naar de nieuwste versie van uw API-app
-- PHP moet worden bijgewerkt naar de nieuwste versie van uw web-app
-- Het privé-eindpunt moet worden ingeschakeld voor MariaDB-servers
-- Het privé-eindpunt moet worden ingeschakeld voor MySQL-servers
-- Het privé-eindpunt moet worden ingeschakeld voor PostgreSQL-servers
-- Python moet worden bijgewerkt naar de nieuwste versie van uw API-app
-- Python moet worden bijgewerkt naar de nieuwste versie van uw functie-app
-- Python moet worden bijgewerkt naar de nieuwste versie van uw web-app
-- Web-apps moeten een SSL-certificaat aanvragen voor alle inkomende aanvragen
+Er is een overgangsperiode van 36 uur (bij benadering). Om mogelijke onderbrekingen te minimaliseren, is het de planning om de update plaats te laten vinden gedurende een weekend. De overgang kan van invloed zijn op uw beveiligingsscores.
 
-Gerelateerde links:
+#### <a name="redesigned-portal-experience"></a>Opnieuw ontworpen portalervaring
 
-- [Meer informatie over Azure Security Benchmark](../security/benchmarks/introduction.md)
-- [Meer informatie over Azure API-apps](../app-service/app-service-web-tutorial-rest-api.md)
-- [Meer informatie over Azure functie-apps](../azure-functions/functions-overview.md)
-- [Meer informatie over Azure web-apps](../app-service/overview.md)
-- [Meer informatie over Azure Database for MariaDB](../mariadb/overview.md)
-- [Meer informatie over Azure Database for MySQL](../mysql/overview.md)
-- [Meer informatie over Azure Database for PostgreSQL](../postgresql/overview.md)
+De pagina met aanbevelingsinformatie voor **Er moeten systeemupdates worden geïnstalleerd op uw computer** bevat de lijst met resultaten zoals hieronder wordt weergegeven. Wanneer u één resultaat selecteert, wordt het deelvenster Details geopend met een koppeling naar de herstelgegevens en een lijst met betrokken resources.
+
+:::image type="content" source="./media/upcoming-changes/system-updates-should-be-installed-subassessment.png" alt-text="Een van de subaanbevelingen in de portalervaring openen voor de bijgewerkte aanbeveling":::
+
+
+#### <a name="richer-data-from-azure-resource-graph"></a>Uitgebreidere gegevens van Azure Resource Graph
+
+Azure Resource Graph is een service in Azure die is ontworpen om efficiënt resources te verkennen. U kunt ARG gebruiken om op schaal een query uit te voeren in een bepaalde set abonnementen, zodat u uw omgeving effectief kunt beheren. 
+
+Voor Azure Security Center kunt u gebruikmaken van ARG en de [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) om query's uit te voeren op een breed scala aan postuurgegevens.
+
+Als u een query uitvoert op de huidige versie van **Er moeten systeemupdates worden geïnstalleerd op uw computer**, is de enige informatie die beschikbaar is van ARG dat de aanbeveling op een computer moet worden hersteld. Wanneer de bijgewerkte versie wordt uitgebracht, worden alle ontbrekende systeemupdates gegroepeerd op machine, geretourneerd met de volgende query.
+
+```kusto
+securityresources
+| where type =~ "microsoft.security/assessments/subassessments"
+| where extract(@"(?i)providers/Microsoft.Security/assessments/([^/]*)", 1, id) == "4ab6e3c5-74dd-8b35-9ab9-f61b30875b27"
+| where properties.status.code == "Unhealthy"
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 01/22/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: dc8a23d8cdb923f86d581d1af2967112d226c847
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d61d49fdd90f1f916141ca636e2c2a4dbe0b9bcd
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370624"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657735"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Klassieke abonnementsbeheerders van Azure
 
@@ -58,7 +58,7 @@ Als u een gast gebruiker wilt toevoegen als co-beheerder, voert u dezelfde stapp
 
 - De gast gebruiker moet een aanwezigheid hebben in uw Directory. Dit betekent dat de gebruiker is uitgenodigd voor de Directory en de uitnodiging heeft geaccepteerd.
 
-Zie [Azure Active Directory B2B-samenwerkings gebruikers toevoegen in de Azure Portal](../active-directory/b2b/add-users-administrator.md)voor meer informatie over het toevoegen van een gast gebruiker aan uw Directory.
+Zie [Azure Active Directory B2B-samenwerkings gebruikers toevoegen in de Azure Portal](../active-directory/external-identities/add-users-administrator.md)voor meer informatie over het toevoegen van een gast gebruiker aan uw Directory.
 
 ### <a name="differences-for-guest-users"></a>Verschillen voor gast gebruikers
 
@@ -91,7 +91,7 @@ Zie [Wat zijn de standaard machtigingen voor gebruikers in azure Active Director
 
 1. Klik op **Verwijderen**.
 
-1. Klik op **Ja**in het bericht venster dat wordt weer gegeven.
+1. Klik op **Ja** in het bericht venster dat wordt weer gegeven.
 
     ![Scherm afbeelding waarmee co-beheerder wordt verwijderd](./media/classic-administrators/remove-coadmin.png)
 
@@ -99,7 +99,7 @@ Zie [Wat zijn de standaard machtigingen voor gebruikers in azure Active Director
 
 Alleen de account beheerder kan de service beheerder voor een abonnement wijzigen. Wanneer u zich aanmeldt voor een Azure-abonnement, is de service beheerder standaard hetzelfde als de account beheerder. De gebruiker met de rol account beheerder heeft geen toegang tot de Azure Portal. De gebruiker met de rol van service beheerder heeft volledige toegang tot de Azure Portal. Als de account beheerder en service beheerder dezelfde gebruiker zijn en u de service beheerder wijzigt in een andere gebruiker, verliest de account beheerder de toegang tot Azure Portal. De account beheerder kan echter altijd het account centrum gebruiken om de service beheerder weer op zichzelf te zetten.
 
-Volg deze stappen om de service beheerder in het **account centrum**te wijzigen.
+Volg deze stappen om de service beheerder in het **account centrum** te wijzigen.
 
 ### <a name="account-center"></a>Accountcentrum
 
@@ -126,7 +126,7 @@ Er kan slechts één service beheerder per Azure-abonnement zijn. Het wijzigen v
 | Account beheerders account | Kan de service beheerder wijzigen in een andere Microsoft-account? | Kan de service beheerder wijzigen in een Azure AD-account in dezelfde map? | Kan de service beheerder wijzigen in een Azure AD-account in een andere adres lijst? |
 | --- | --- | --- | --- |
 | Microsoft-account | Ja | Nee | Nee |
-| Microsoft Azure Active Directory-account | Ja | Ja | Nee |
+| Azure AD-account | Ja | Ja | Nee |
 
 Als de account beheerder een Azure AD-account is, kunt u de service beheerder wijzigen in een Azure AD-account in dezelfde map, maar niet in een andere map. Bijvoorbeeld, abby@contoso.com kan de service beheerder wijzigen in bob@contoso.com , maar kan de service beheerder niet wijzigen in, john@notcontoso.com tenzij john@notcontoso.com er een aanwezigheid is in de contoso.com-map.
 
@@ -138,7 +138,7 @@ De account beheerder is de gebruiker die zich voor het eerst aanmeldt voor het A
 
 Volg deze stappen om de account beheerder weer te geven.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Open [Abonnementen](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) en selecteer een abonnement.
 

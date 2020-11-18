@@ -1,5 +1,5 @@
 ---
-title: 'Zelfstudie: aan de slag met het analyseren met behulp van Spark'
+title: 'Quickstart: Aan de slag met het analyseren met Spark'
 description: In deze zelfstudie leert u hoe u gegevens kunt analyseren met Apache Spark
 services: synapse-analytics
 author: saveenr
@@ -10,16 +10,16 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: ec6af7c23f781d25114794066a228adbfe7528d0
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 89bc2723a0d7c99160c651fb433db6f8892ee676
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093613"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93321091"
 ---
 # <a name="analyze-with-apache-spark"></a>Analyseren met behulp van Apache Spark
 
-## <a name="analyze-nyc-taxi-data-in-blob-storage--using-spark"></a>NYC Taxi-gegevens analyseren in blob-opslag met Spark
+## <a name="analyze-nyc-taxi-data-in-blob-storage-using-spark"></a>NYC Taxi-gegevens analyseren in blob-opslag met Spark
 
 In deze zelfstudie leert u de basisstappen voor het laden en analyseren van gegevens met Apache Spark voor Azure Synapse.
 
@@ -32,8 +32,8 @@ In deze zelfstudie leert u de basisstappen voor het laden en analyseren van gege
     data_df = data.to_spark_dataframe()
     display(data_df.limit(10))
     ```
-1. Kies in het notebook een Spark-groep in het menu **Koppelen aan**
-1. Klik op **Uitvoeren** op de cel
+1. Kies in het notebook een serverloze Spark-pool in het menu **Koppelen aan**
+1. Selecteer **Uitvoeren** op de cel
 
 ## <a name="load-the-nyc-taxi-data-into-the-spark-nyctaxi-database"></a>De gegevens van NYC-taxi laden in de Apache Spark-database nyctaxi
 
@@ -53,8 +53,8 @@ Er zijn gegevens beschikbaar in een tabel in **SQLDB1**. Laad deze in een Apache
 
 1. Ga naar de hub **Data**, klik met de rechtermuisknop op **Databases** en selecteer **Vernieuwen**. U zou deze databases moeten zien:
 
-    - **SQLDB1** (SQL-pool)
-    - **nyctaxi** (Apache Spark)
+    - **SQLDB1** (toegewezen SQL-pool)
+    - **nyctaxi** (een serverloze Apache Spark-pool)
 
 ## <a name="analyze-the-nyc-taxi-data-using-spark-and-notebooks"></a>De gegevens over de NYC-taxi met behulp van Apache Spark en notebooks analyseren
 
@@ -67,7 +67,7 @@ Er zijn gegevens beschikbaar in een tabel in **SQLDB1**. Laad deze in een Apache
    display(df)
    ```
 
-1. Voer de volgende code uit om dezelfde analyse uit te voeren die we eerder met de SQL-pool **SQLDB1** hebben uitgevoerd. Met deze code worden ook de resultaten van de analyse opgeslagen in een tabel met de naam **nyctaxi.passengercountstats** en worden de resultaten gevisualiseerd.
+1. Voer de volgende code uit om dezelfde analyse uit te voeren die we eerder met de toegewezen SQL-pool **SQLDB1** hebben uitgevoerd. Met deze code worden ook de resultaten van de analyse opgeslagen in een tabel met de naam **nyctaxi.passengercountstats** en worden de resultaten gevisualiseerd.
 
    ```py
    %%pyspark
@@ -105,11 +105,11 @@ matplotlib.pyplot.show()
 
 
 
-## <a name="load-data-from-a-spark-table-into-a-sql-pool-table"></a>Gegevens uit een Apache Spark-tabel laden in een SQL-pooltabel
+## <a name="load-data-from-a-spark-table-into-a-dedicated-sql-pool-table"></a>Gegevens uit een Apache Spark-tabel laden in een toegewezen SQL-pooltabel
 
-Eerder kopieerde u gegevens uit de tabel met SQL-pools **SQLDB1.dbo.Trip** naar de Apache Spark-tabel **nyctaxi.trip**. Vervolgens aggregeerde u de gegevens in de Apache Spark-tabel **nyctaxi.passengercountstats** met behulp van Apache Spark. Nu gaat u de gegevens uit **nyctaxi.passengercountstats** kopiëren naar een SQL-pooltabel met de naam **SQLDB1.dbo.PassengerCountStats**.
+Eerder kopieerde u gegevens uit de toegewezen SQL-pooltabel **SQLDB1.dbo.Trip** naar de Apache Spark-tabel **nyctaxi.trip**. Vervolgens aggregeerde u de gegevens in de Apache Spark-tabel **nyctaxi.passengercountstats** met behulp van Apache Spark. Nu gaat u de gegevens uit **nyctaxi.passengercountstats** kopiëren naar een toegewezen SQL-pooltabel met de naam **SQLDB1.dbo.PassengerCountStats**.
 
-Voer de volgende cel uit in uw notebook. Hiermee wordt de geaggregeerde Apache Spark-tabel weer gekopieerd naar de SQL-pooltabel.
+Voer de volgende cel uit in uw notebook. Hiermee wordt de geaggregeerde Apache Spark-tabel weer gekopieerd naar de toegewezen SQL-pooltabel.
 
 ```scala
 %%spark
@@ -120,6 +120,6 @@ df.write.sqlanalytics("SQLDB1.dbo.PassengerCountStats", Constants.INTERNAL )
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Analyseren met behulp van SQL on demand](get-started-analyze-sql-on-demand.md)
+> [Gegevens analyseren met een serverloze SQL-pool](get-started-analyze-sql-on-demand.md)
 
 

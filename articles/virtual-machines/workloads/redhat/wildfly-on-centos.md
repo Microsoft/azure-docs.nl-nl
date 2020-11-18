@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.subservice: workloads
 ms.assetid: 7aa21ef8-9cfb-43e0-bfda-3f10a2a2f3ef
 ms.date: 10/23/2020
-ms.openlocfilehash: 875d04751475d1d5236e9f15fbca585cdc9b1ab0
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 842913b8e9f83ff3b188976da55aef7c909518ca
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897623"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93359915"
 ---
 # <a name="quickstart-wildfly-on-centos-8"></a>Quickstart: WildFly in CentOS 8
 
@@ -49,7 +49,9 @@ Als u de zelfstandige WildFly-server met een andere configuratie wilt starten, g
 
 Als u bijvoorbeeld Jakarta EE platform 8 met clusterfuncties wilt gebruiken, gebruikt u de volgende opdracht:
 
-`./standalone.sh --server-config=standalone-full-ha.xml`
+```
+./standalone.sh --server-config=standalone-full-ha.xml
+```
 
 Voor meer informatie over de configuraties raadpleegt u de [Introductiehandleiding van WildFly](https://docs.wildfly.org/18/Getting_Started_Guide.html#wildfly-10-configurations).
 
@@ -63,15 +65,23 @@ U kunt de sjabloon op de volgende drie manieren implementeren:
 
 - Gebruik PowerShell - implementeer de sjabloon door de volgende opdrachten uit te voeren: (Bekijk [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) voor meer informatie over het installeren en configureren van Azure PowerShell).
 
-    `New-AzResourceGroup -Name <resource-group-name> -Location <resource-group-location> #use this command when you need to create a new Resource Group for your deployment`
+    ```
+    New-AzResourceGroup -Name <resource-group-name> -Location <resource-group-location> #use this command when you need to create a new Resource Group for your deployment
+    ```
 
-    `New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/wildfly-standalone-centos8/azuredeploy.json`
+    ```
+    New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/wildfly-standalone-centos8/azuredeploy.json
+    ```
     
 - Gebruik Azure CLI - voer de volgende opdrachten uit om de sjabloon te implementeren: (Bekijk [Azure platformoverschrijdende opdrachtregel](https://docs.microsoft.com/cli/azure/install-azure-cli) voor meer informatie over het installeren en configureren van de interface van de Azure platformoverschrijdende opdrachtregel).
 
-    `az group create --name <resource-group-name> --location <resource-group-location> #use this command when you need to create a new Resource Group for your deployment`
+    ```
+    az group create --name <resource-group-name> --location <resource-group-location> #use this command when you need to create a new Resource Group for your deployment
+    ```
 
-    `az group deployment create --resource-group <my-resource-group> --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/wildfly-standalone-centos8/azuredeploy.json`
+    ```
+    az group deployment create --resource-group <my-resource-group> --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/wildfly-standalone-centos8/azuredeploy.json
+    ```
 
 - Gebruik Azure Portal - implementeer de sjabloon door <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwildfly-standalone-centos8%2Fazuredeploy.json" target="_blank">hier</a> te klikken en u aan te melden bij uw Azure Portal.
 
@@ -81,7 +91,7 @@ U kunt de sjabloon op de volgende drie manieren implementeren:
 
 ## <a name="resource-links"></a>Resource-links
 
-* Meer informatie over [WildFly 18](https://wildfly.org/18)
+* Meer informatie over [WildFly 18](https://docs.wildfly.org/18/)
 * Meer informatie over [Linux-distributies in Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros)
 * [Documentatie voor Azure voor Java-ontwikkelaars](https://github.com/JasonFreeberg/jboss-on-app-service)
 

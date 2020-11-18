@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 10/16/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6ffa7bb07ddb42946acdcef6ee3b7f2aa804f774
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: f3ed5f3940a9b02701ad2f3c779b791e128e288c
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324349"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506342"
 ---
 # <a name="quickstart-create-a-dedicated-sql-pool-using-synapse-studio"></a>Quickstart: Een toegewezen SQL-pool maken met Synapse Studio
 
@@ -63,7 +63,7 @@ Meld u aan bij [Azure Portal](https://portal.azure.com/)
 
     ![Lijst in Synapse Studio-beheerhub met SQL-pools.](media/quickstart-create-sql-pool/create-sql-pool-studio-23.png)
 
-1. Voer de volgende gegevens in op het tabblad **Basisinformatie** :
+1. Voer de volgende gegevens in op het tabblad **Basisinformatie**:
 
     | Instelling | Voorgestelde waarde | Beschrijving |
     | :------ | :-------------- | :---------- |
@@ -75,6 +75,8 @@ Meld u aan bij [Azure Portal](https://portal.azure.com/)
     > Er gelden specifieke beperkingen voor de namen die toegewezen SQL-pools kunnen krijgen. Namen mogen geen speciale tekens bevatten, mogen niet langer zijn dan 15 tekens, mogen geen gereserveerde woorden bevatten en moeten uniek zijn in de werkruimte.
 
 4. Selecteer op het volgende tabblad **Extra instellingen** **Geen** om de SQL-pool zonder gegevens in te richten. Behoud de geselecteerde standaardsortering.
+
+    Als u uw toegewezen SQL-pool vanaf een herstelpunt wilt herstellen, selecteert u **Herstelpunt**. Zie voor meer informatie over het uitvoeren van een herstelbewerking [Uitleg: Een bestaande toegewezen SQL-pool herstellen](backuprestore/restore-sql-pool.md)
 
     ![Stroom voor het maken van SQL-pool - tabblad Aanvullende instellingen.](media/quickstart-create-sql-pool/create-sql-pool-studio-25.png)
 
@@ -101,7 +103,7 @@ Volg de onderstaande stappen om de toegewezen SQL-pool uit de werkruimte te verw
 Ga als volgt te werk om de toegewezen SQL-pool te verwijderen:
 
 1. Navigeer naar de SQL-pools in de Beheerhub in Synapse Studio.
-1. Selecteer de ellips in de toegewezen SQL-pool die u wilt verwijderen (in dit geval **contosoedw** ), om de opdrachten voor de toegewezen SQL-pool weer te geven:
+1. Selecteer de ellips in de toegewezen SQL-pool die u wilt verwijderen (in dit geval **contosoedw**), om de opdrachten voor de toegewezen SQL-pool weer te geven:
 
     ![Lijst met SQL-pools, waarbij de zojuist gemaakte groep is geselecteerd.](media/quickstart-create-sql-pool/create-sql-pool-studio-28.png)
 1. Druk op **Verwijderen**.

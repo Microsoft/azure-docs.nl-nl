@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: f381afa69d1a445d2bdb14dd663341e4a18f8cd9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: dff83159511c6e8a08e8f212c01244e923ad1f5b
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88648663"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94376941"
 ---
 # <a name="what-are-virtual-machine-scale-sets"></a>Wat zijn schaalsets voor virtuele machines?
 Met behulp van schaalsets voor virtuele Azure-machines kunt u een groep VM's met gelijke taakverdeling maken en beheren. Het aantal VM-exemplaren kan automatisch toenemen of afnemen in reactie op vraag of een ingesteld schema. Schaalsets bieden een hoge beschikbaarheid voor uw toepassingen. Een ander voordeel is dat u vanaf één plek een groot aantal virtuele machines kunt beheren, configureren en bijwerken. Met schaalsets voor virtuele machines kunt u grootschalige services bouwen voor zaken zoals rekenkracht, big data en containerworkloads.
@@ -61,9 +61,9 @@ Gebruik [Azure Monitor voor VM's](../azure-monitor/insights/vminsights-overview.
 
 Schakel bewaking in voor uw [toepassing voor de schaalset voor virtuele machines](../azure-monitor/app/azure-vm-vmss-apps.md) met Application Insights om gedetailleerde informatie te verzamelen over uw toepassing, waaronder paginaweergaven, toepassingsaanvragen en uitzonderingen. Controleer de beschikbaarheid van uw toepassing door een [beschikbaarheidstest ](../azure-monitor/app/monitor-web-app-availability.md) te configureren om gebruikersverkeer te simuleren.
 
-## <a name="singapore-data-residency"></a>Gegevenslocatie Singapore
+## <a name="data-residency"></a>Gegevenslocatie
 
-In Azure is de functie die het mogelijk maakt om klantgegevens in één regio op te slaan momenteel alleen beschikbaar in de regio Azië - zuidoost (Singapore) van het geografisch gebied Azië en Stille Oceaan. Voor alle andere regio's worden klantgegevens opgeslagen in Geo. Zie [Trust Center](https://azuredatacentermap.azurewebsites.net/) voor meer informatie.
+In Azure is de functie om het opslaan van klantgegevens in één regio in te schakelen, momenteel alleen beschikbaar in de regio Azië - zuidoost (Singapore) van het geografisch gebied Azië en Stille Oceaan en in Brazilië - zuid van het geografisch gebied Brazilië (staat Sao Paulo). Voor alle andere regio's worden klantgegevens opgeslagen in Geo. Zie [Trust Center](https://azuredatacentermap.azurewebsites.net/) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 U kunt nu aan de slag door uw eerste schaalset voor virtuele machines te maken in Azure Portal.

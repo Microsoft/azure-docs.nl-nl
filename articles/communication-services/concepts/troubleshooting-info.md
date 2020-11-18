@@ -8,16 +8,16 @@ ms.author: manoskow
 ms.date: 10/23/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 4921078e9e7b5d9de06fbbc9a97dc4a964569e04
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ff3e7fee87661fb89ba930b7368bd54e71ad57bf
+ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92754655"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93357620"
 ---
 # <a name="troubleshooting-in-azure-communication-services"></a>Problemen met Azure Communication Services oplossen
 
-Dit document helpt u bij het verzamelen van de informatie die u nodig hebt om problemen met uw Communication Services-oplossing op te lossen.
+Dit document helpt u bij het oplossen van problemen die zich kunnen voordoen in uw Communicatie Services-oplossing. Als u sms-problemen wilt oplossen, kunt u [bezorgingsrapportage met Event Grid inschakelen](../quickstarts/telephony-sms/handle-sms-events.md) om bezorgingsgegevens van sms-berichten vast te leggen.
 
 ## <a name="getting-help"></a>Ondersteuning vragen
 
@@ -30,9 +30,11 @@ Afhankelijk van het [ondersteuningsplan](https://azure.microsoft.com/support/pla
 
 Om u te helpen bij het oplossen van bepaalde typen problemen, wordt u mogelijk gevraagd naar een van de volgende soorten gegevens:
 
-* **MS-CV-id** : Deze id wordt gebruikt voor het oplossen van problemen met oproepen en berichten. 
-* **Oproep-id** : Deze id wordt gebruikt om Communication Services-oproepen te identificeren.
-* **Sms-bericht-id** : Deze id wordt gebruikt om sms-berichten te identificeren.
+* **MS-CV-id**: Deze id wordt gebruikt voor het oplossen van problemen met oproepen en berichten. 
+* **Oproep-id**: Deze id wordt gebruikt om Communication Services-oproepen te identificeren.
+* **Sms-bericht-id**: Deze id wordt gebruikt om sms-berichten te identificeren.
+* **Oproeplogboeken**: Deze logboeken bevatten gedetailleerde informatie die kan worden gebruikt voor het oplossen van problemen met oproepen en netwerken.
+
 
 ## <a name="access-your-ms-cv-id"></a>De MS-CV-id ophalen
 
@@ -126,6 +128,44 @@ console.log(result); // your message ID will be in the result
 }
 ```
 ---
+
+## <a name="enable-and-access-call-logs"></a>Oproeplogboeken inschakelen en openen
+
+
+
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+De volgende code kan worden gebruikt om `AzureLogger` te configureren voor de uitvoer van logboeken naar de-console met behulp van de JavaScript-clientbibliotheek:
+
+```javascript
+import { AzureLogger } from '@azure/logger'; 
+
+AzureLogger.verbose = (...args) => { console.info(...args); } 
+AzureLogger.info = (...args) => { console.info(...args); } 
+AzureLogger.warning = (...args) => { console.info(...args); } 
+AzureLogger.error = (...args) => { console.info(...args); } 
+
+callClient = new CallClient({logger: AzureLogger}); 
+```
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+Bij het ontwikkelen voor iOS worden uw logboeken opgeslagen in `.blog`-bestanden. Houd er rekening mee dat u de logboeken niet rechtstreeks kunt weergeven, omdat ze zijn versleuteld.
+
+Deze kunnen worden geopend door Xcode te openen. Ga naar Windows > Apparaten en simulators > Apparaten. Selecteer uw apparaat. Onder geïnstalleerde apps selecteert u uw toepassing en klikt u op 'Container downloaden'. 
+
+Hiermee krijgt u een `xcappdata`-bestand. Klik met de rechtermuisknop op dit bestand en selecteer 'Pakketinhoud weergeven'. Vervolgens ziet u de `.blog`-bestanden die u vervolgens kunt koppelen aan uw Azure-ondersteuningsaanvraag.
+
+# <a name="android"></a>[Android](#tab/android)
+
+Bij het ontwikkelen voor Android worden uw logboeken opgeslagen in `.blog`-bestanden. Houd er rekening mee dat u de logboeken niet rechtstreeks kunt weergeven, omdat ze zijn versleuteld.
+
+Ga in Android Studio naar Device File Explorer door Weergave > Hulpprogramma Windows > Device File Explorer te selecteren in zowel de simulator als het apparaat. Het `.blog`-bestand bevindt zich in de map van uw toepassing, die er ongeveer zo zou moeten uitzien: `/data/data/[app_name_space:com.contoso.com.acsquickstartapp]/files/acs_sdk.blog`. U kunt dit bestand koppelen aan uw ondersteuningsaanvraag. 
+   
+
+---
+
 
 ## <a name="related-information"></a>Gerelateerde informatie
 - [Logboeken en diagnostische gegevens](logging-and-diagnostics.md)

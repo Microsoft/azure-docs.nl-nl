@@ -4,12 +4,12 @@ description: Meer informatie over het detecteren van on-premises fysieke servers
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: e7cbd7939248686a251fdf56bf1a5f1acc952a3a
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 83ff63392c6cbcaa6a2ea011eb60199f61844bb1
+ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314088"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93148334"
 ---
 # <a name="tutorial-discover-physical-servers-with-server-assessment"></a>Zelfstudie: Fysieke servers detecteren met Serverevaluatie
 
@@ -75,11 +75,15 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 
 Stel een account in dat het apparaat kan gebruiken om toegang te krijgen tot de fysieke servers.
 
-- Stel voor Windows-servers een lokaal gebruikersaccount in op alle Windows-servers die u wilt toevoegen aan de detectie. Voeg het gebruikersaccount toe aan de volgende groepen: - Gebruikers voor extern beheer - Prestatiemetergebruikers - Prestatielogboekgebruikers.
-- Voor Linux-servers hebt u een hoofdaccount nodig op de Linux-servers die u wilt detecteren. U kunt ook als volgt toegang instellen:
-    - setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/fdisk
-    - setcap CAP_DAC_READ_SEARCH+eip /sbin/fdisk (als /usr/sbin/fdisk niet aanwezig is)<br/> - setcap "cap_dac_override, cap_dac_read_search, cap_fowner,cap_fsetid, cap_setuid, cap_setpcap, cap_net_bind_service, cap_net_admin, cap_sys_chroot, cap_sys_admin, cap_sys_resource, cap_audit_control, cap_setfcap=+eip" /sbin/lvm
-    - setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/dmidecode chmod a+r /sys/class/dmi/id/product_uuid
+- Gebruik voor Windows-servers een domeinaccount voor computer die lid zijn van een domein, en een lokaal account voor computers die geen lid zijn van een domein. Het gebruikersaccount moet worden toegevoegd aan deze groepen: Gebruikers van extern beheer, prestatiemetergebruikers en gebruikers van prestatielogboeken.
+- Voor Linux-servers hebt u een hoofdaccount nodig op de Linux-servers die u wilt detecteren. U kunt ook een zich niet in de hoofdmap bevindend account met de vereiste mogelijkheden instellen met behulp van de volgende opdrachten:
+
+**Opdracht** | **Doel**
+--- | --- |
+setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/fdisk <br></br> setcap CAP_DAC_READ_SEARCH+eip /sbin/fdisk _(als /usr/sbin/fdisk niet aanwezig is)_ | Gegevens over de schijfconfiguratie verzamelen
+setcap "cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_setuid,<br>cap_setpcap,cap_net_bind_service,cap_net_admin,cap_sys_chroot,cap_sys_admin,<br>cap_sys_resource,cap_audit_control,cap_setfcap=+eip" /sbin/lvm | Gegevens van de schijfprestaties verzamelen
+setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/dmidecode | Het BIOS-serienummer verzamelen
+chmod a+r /sys/class/dmi/id/product_uuid | BIOS-GUID verzamelen
 
 
 ## <a name="set-up-a-project"></a>Een project instellen
@@ -137,13 +141,13 @@ Controleer of het zip-bestand veilig is voordat u het implementeert.
 3.  Controleer de meest recente versie van het apparaat en de hashwaarden:
     - Voor de openbare cloud:
 
-        **Scenario** | **Downloaden*** | **Hash-waarde**
+        **Scenario** | **Downloaden** _ | _ *Hash-waarde**
         --- | --- | ---
         Fysiek (85,8 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140334) | ce5e6f0507936def8020eb7b3109173dad60fc51dd39c3bd23099bc9baaabe29
 
     - Voor Azure Government:
 
-        **Scenario** | **Downloaden*** | **Hash-waarde**
+        **Scenario** | **Downloaden** _ | _ *Hash-waarde**
         --- | --- | ---
         Fysiek (85,8 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140338) | ae132ebc574caf231bf41886891040ffa7abbe150c8b50436818b69e58622276
  

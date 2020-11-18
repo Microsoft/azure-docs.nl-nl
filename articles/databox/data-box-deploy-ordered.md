@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: alkohli
-ms.openlocfilehash: f36836681e338c597c068a91a6d4bc011cce3511
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: a73005580c9b7ddeae17e3e0490aa586bd9b0fbb
+ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92206742"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94335794"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Zelfstudie: Azure Data Box bestellen
 
@@ -123,7 +123,7 @@ Als de extensie is geïnstalleerd, ziet u de volgende uitvoer:
 
 U kunt [Azure Cloud Shell](https://shell.azure.com/), een door Azure gehoste interactieve shell-omgeving, gebruiken via uw browser om CLI-opdrachten uit te voeren. Azure Cloud Shell biedt ondersteuning voor Bash of Windows PowerShell met Azure-services. De Azure CLI is vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Selecteer de knop Cloud Shell in het menu in het gedeelte rechtsboven in Azure Portal:
 
-![Cloud Shell](../storage/common/media/storage-quickstart-create-account/cloud-shell-menu.png)
+![Menuselectie Cloud Shell](../storage/common/media/storage-quickstart-create-account/cloud-shell-menu.png)
 
 Met de knop start u een interactieve shell waarmee u alle stappen in dit instructieartikel kunt uitvoeren.
 
@@ -213,31 +213,31 @@ Zie [Aanmelden met Azure PowerShell](/powershell/azure/authenticate-azureps) voo
 Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
 
 1. Gebruik uw Microsoft Azure-referenties om u aan te melden op deze URL: [https://portal.azure.com](https://portal.azure.com).
-2. Selecteer **+ Een resource maken** en zoek naar *Azure Data Box* . Selecteer **Azure Data Box** .
+2. Selecteer **+ Een resource maken** en zoek naar *Azure Data Box*. Selecteer **Azure Data Box**.
 
-   ![Schermafbeelding van de nieuwe sectie met Azure Data Box in het zoekveld.](media/data-box-deploy-ordered/select-data-box-import-02.png)
+   ![Schermopname van de nieuwe sectie met Azure Data Box in het zoekveld](media/data-box-deploy-ordered/select-data-box-import-02.png)
 
-3. Selecteer **Maken** .
+3. Selecteer **Maken**.
 
-   ![Schermafbeelding van de sectie Azure Data Box met de optie 'Maken' uitgelicht.](media/data-box-deploy-ordered/select-data-box-import-03.png)
+   ![Schermopname van de sectie Azure Data Box met de optie 'Maken' uitgelicht](media/data-box-deploy-ordered/select-data-box-import-03.png)
 
-4. Controleer of de Data Box-service beschikbaar is in uw regio. Voer de volgende gegevens in of selecteer deze en selecteer **Toepassen** .
+4. Controleer of de Data Box-service beschikbaar is in uw regio. Voer de volgende gegevens in of selecteer deze en selecteer **Toepassen**.
 
     |Instelling  |Waarde  |
     |---------|---------|
-    |Type overdracht     | Selecteer **Importeren in Azure** .        |
+    |Type overdracht     | Selecteer **Importeren in Azure**.        |
     |Abonnement     | Selecteer een EA-, CSP- of Azure Sponsorship-abonnement voor de Data Box-service. <br> Het abonnement is gekoppeld aan uw factureringsrekening.       |
     |Resourcegroep | Selecteer een bestaande resourcegroep. Een resourcegroep is een logische container voor resources die samen kunnen worden beheerd of geïmplementeerd. |
     |Bronland/-regio    |    Selecteer het land/de regio waar uw gegevens zich momenteel bevinden.         |
     |Doel-Azure-regio     |     Selecteer de Azure-regio waarnaar u uw gegevens wilt overdragen. <br> Ga naar [Beschikbaarheid in de regio](data-box-overview.md#region-availability) voor meer informatie.            |
 
-    [![Azure Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-04b.png)](media/data-box-deploy-ordered/select-data-box-import-04b.png#lightbox)
+    [![Azure Data Box-importorder beginnen](media/data-box-deploy-ordered/select-data-box-import-04b.png)](media/data-box-deploy-ordered/select-data-box-import-04b.png#lightbox)
 
-5. Selecteer **Data Box** . De maximale bruikbare capaciteit voor één bestelling is 80 TB. U kunt meerdere bestellingen doen voor grotere gegevensgrootten.
+5. Selecteer **Data Box**. De maximale bruikbare capaciteit voor één bestelling is 80 TB. U kunt meerdere bestellingen doen voor grotere gegevensgrootten.
 
-    ![Schermafbeelding van de verschillende gegevensgrootten die kunnen worden geselecteerd: Data Box Disk 40 TB, Data Box 100 TB, Data Box Heavy, 1000 TB en Uw eigen schijven verzenden 1 TB.](media/data-box-deploy-ordered/select-data-box-import-05.png)
+    ![Beschikbare gegevensgrootten: Data Box Disk 40 TB, Data Box 100 TB, Data Box Heavy, 1000 TB. Uw eigen schijven verzenden 1 TB](media/data-box-deploy-ordered/select-data-box-import-05.png)
 
-6. Ga in **Bestelling** naar het tabblad **Basisinformatie** . Voer de volgende gegevens in of selecteer deze en selecteer **Volgende: Gegevensbestemming>** .
+6. Ga in **Bestelling** naar het tabblad **Basisinformatie**. Voer de volgende gegevens in of selecteer deze en selecteer **Volgende: Gegevensbestemming>** .
 
     |Instelling  |Waarde  |
     |---------|---------|
@@ -245,17 +245,17 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
     |Resourcegroep    | De resourcegroep die u eerder hebt geselecteerd. |
     |Naam van importorder | Geef een beschrijvende naam op om de bestelling te volgen. <br> De naam kan tussen 3 en 24 tekens bevatten (letters, cijfers en afbreekstreepjes). <br> De naam moet beginnen en eindigen met een letter of cijfer.    |
 
-    ![Schermopname van de wizard Bestellen, waarin voor de basisstappen van de wizard de juiste gegevens zijn ingevuld.](media/data-box-deploy-ordered/select-data-box-import-06.png)
+    ![Wizard voor Data Box-importorder, het scherm Basisgegevens, ingevuld met de juiste gegevens](media/data-box-deploy-ordered/select-data-box-import-06.png)
 
     Het wachtwoord voor het ontgrendelen van het apparaat wordt standaard versleuteld met een door Microsoft beheerde sleutel. Nadat u de bestelling hebt voltooid, kunt u een door de klant beheerde sleutel toevoegen. Met een door de klant beheerde sleutel kunt u de eigen sleutel van een Azure-sleutelkluissleutel gebruiken om uw wachtwoord voor het ontgrendelen van apparaten te beveiligen. Zie [Door de klant beheerde sleutels gebruiken in Azure Key Vault voor Azure Data Box](data-box-customer-managed-encryption-key-portal.md) voor meer informatie.
 
-7. Selecteer op het tabblad **Gegevensbestemming** de optie **Gegevensbestemming** .
+7. Selecteer op het tabblad **Gegevensbestemming** de optie **Gegevensbestemming**.
 
     Als u een **opslagaccount** selecteert als de opslaglocatie, ziet u het volgende scherm:
 
-    ![Azure Data Box-gegevensbestemming](media/data-box-deploy-ordered/select-data-box-import-07.png)
+    ![Wizard voor Data Box-importorder, het scherm Gegevensbestemming, met de opslagaccounts geselecteerd](media/data-box-deploy-ordered/select-data-box-import-07.png)
 
-    Selecteer een of meer opslagaccounts in de gefilterde lijst van een bestaand opslagaccount, gebaseerd op de opgegeven Azure-regio. Data Box kan worden gekoppeld aan maximaal 10 opslagaccounts. U kunt ook een nieuw account van het type **Algemeen gebruik v1** , **Algemeen gebruik v2** of **Blob-opslag** maken.
+    Selecteer een of meer opslagaccounts in de gefilterde lijst van een bestaand opslagaccount, gebaseerd op de opgegeven Azure-regio. Data Box kan worden gekoppeld aan maximaal 10 opslagaccounts. U kunt ook een nieuw account van het type **Algemeen gebruik v1**, **Algemeen gebruik v2** of **Blob-opslag** maken.
 
     Opslagaccounts met virtuele netwerken worden ondersteund. Als u wilt dat de Data Box-service kan werken met beveiligde opslagaccounts, schakelt u in de firewallinstellingen van het opslagaccount de vertrouwde services in. Zie [Azure Data Box toevoegen als een vertrouwde service](../storage/common/storage-network-security.md#exceptions) voor meer informatie.
 
@@ -265,7 +265,7 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
     |---------|---------|
     |Resourcegroepen     | Maak nieuwe resourcegroepen als u beheerde schijven wilt maken van on-premises virtuele harde schijven. U kunt alleen een bestaande resourcegroep gebruiken als de resourcegroep eerder is gemaakt en beschikbaar was op het moment van het plaatsen van een Data Box-bestelling voor een beheerde schijf door de Data Box-service. <br> U kunt meerdere resourcegroepen opgeven door de namen te scheiden met een puntkomma. Er worden maximaal tien resourcegroepen ondersteund.|
 
-    ![Schermafbeelding van de wizard Bestellen, waarin voor de stap Gegevensbestemming van de wizard de juiste gegevens zijn ingevuld.](media/data-box-deploy-ordered/select-data-box-import-07b.png)
+    ![Wizard voor Data Box-importorder, het scherm Gegevensbestemming, met Managed Disks geselecteerd](media/data-box-deploy-ordered/select-data-box-import-07b.png)
 
     Het opslagaccount dat is opgegeven voor beheerde schijven wordt gebruikt als een opslagaccount waarin de gegevens worden klaargezet. De Data Box-service uploadt de virtuele harde schijven als pagina-blobs naar dit opslagaccount waarna de schijven worden omgezet in beheerde schijven en naar de resourcegroepen worden verplaatst. Zie [Uploaden van gegevens naar Azure controleren](data-box-deploy-picked-up.md#verify-data-upload-to-azure) voor meer informatie.
    > [!NOTE]
@@ -277,23 +277,23 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
 
     Alle instellingen op het scherm **Beveiliging** zijn optioneel. Als u geen instellingen wijzigt, worden de standaardinstellingen toegepast.
 
-    ![Beveiligingsscherm voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-01.png)
+    ![Het scherm Beveiliging van de wizard Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-01.png)
 
-1. Als u geen gebruik wilt maken van de door het systeem gegenereerde wachtwoorden die Azure Data Box standaard gebruikt, vouwt u **Uw eigen wachtwoord gebruiken** uit.
+8. Als u geen gebruik wilt maken van de door het systeem gegenereerde wachtwoorden die Azure Data Box standaard gebruikt, vouwt u **Uw eigen wachtwoord gebruiken** uit.
 
    De door het systeem gegenereerde wachtwoorden zijn veilig en worden aanbevolen, tenzij uw organisatie anders vereist.
 
-   ![Uitgevouwen opties voor het gebruiken van een eigen wachtwoord voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-02.png) 
+   ![Uitgevouwen opties voor het gebruiken van een eigen wachtwoord in het scherm Beveiliging voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-02.png)
 
-   - Als u uw eigen wachtwoord wilt gebruiken voor uw nieuwe apparaat, selecteert u **Voorkeur voor het apparaatwachtwoord instellen** . Selecteer **Uw eigen wachtwoord gebruiken** en typ een wachtwoord dat aan de beveiligingsvereisten voldoet.
+   - Als u uw eigen wachtwoord wilt gebruiken voor uw nieuwe apparaat, selecteert u **Voorkeur voor het apparaatwachtwoord instellen**. Selecteer **Uw eigen wachtwoord gebruiken** en typ een wachtwoord dat aan de beveiligingsvereisten voldoet.
    
-     ![Beveiligingsscherm voor Data Box-import, opties voor het gebruiken van uw eigen apparaatwachtwoord](media/data-box-deploy-ordered/select-data-box-import-security-03.png)
+     ![Opties voor het gebruiken van uw eigen apparaatwachtwoord in het scherm Beveiliging voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-03.png)
 
    - Uw eigen wachtwoorden gebruiken voor shares:
 
-     1. Selecteer bij **Voorkeur voor share-wachtwoorden instellen** de optie **Uw eigen wachtwoorden gebruiken** en vervolgens **Wachtwoorden voor de shares selecteren** .
+     1. Selecteer bij **Voorkeur voor share-wachtwoorden instellen** de optie **Uw eigen wachtwoorden gebruiken** en vervolgens **Wachtwoorden voor de shares selecteren**.
      
-        ![Beveiligingsscherm voor Data Box-import, opties voor het gebruiken van uw eigen share-wachtwoorden](media/data-box-deploy-ordered/select-data-box-import-security-04.png)
+        ![Opties voor het gebruiken van uw eigen sharewachtwoord in het scherm Beveiliging voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-04.png)
 
      1. Typ een wachtwoord voor elk opslagaccount in de order. Het wachtwoord wordt gebruikt voor alle shares voor het opslagaccount.
      
@@ -301,11 +301,11 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
      
         ![Scherm voor het invoeren van share-wachtwoorden voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-05.png)
 
-       Op het scherm **Beveiliging** kunt u **Weergave van wachtwoorden wijzigen** gebruiken om de wachtwoorden te wijzigen.
+       In het scherm **Beveiliging** kunt u met **Wachtwoorden weergeven of wijzigen** de wachtwoorden wijzigen.
 
-1. Als u dubbele versleuteling op basis van software wilt inschakelen, selecteert u in **Beveiliging** de optie **Dubbele versleuteling (voor zeer veilige omgevingen)** en selecteer **Dubbele versleuteling inschakelen voor de order** .
+9. Als u dubbele versleuteling op basis van software wilt inschakelen, selecteert u in **Beveiliging** de optie **Dubbele versleuteling (voor zeer veilige omgevingen)** en selecteer **Dubbele versleuteling inschakelen voor de order**.
 
-   ![Beveiligingsscherm voor Data Box-import waarin softwareversleuteling wordt ingeschakeld voor een Data Box-order](media/data-box-deploy-ordered/select-data-box-import-security-07.png)
+   ![Opties voor het inschakelen van softwareversleuteling in het scherm Beveiliging voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-07.png)
 
    De op software gebaseerde versleuteling wordt uitgevoerd naast de AES-256-bits versleuteling van de gegevens op de Data Box.
 
@@ -314,29 +314,29 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
 
    Selecteer **Volgende: Contactgegevens** om verder te gaan.
 
-8. Selecteer in **Contactgegevens** de optie **+ Verzendadres toevoegen** .
+10. Selecteer in **Contactgegevens** de optie **+ Verzendadres toevoegen**.
 
-    ![Schermopname van de wizard Bestellen, waarin de stap Contactgegevens van de wizard met de optie Verzendadres toevoegen is uitgelicht.](media/data-box-deploy-ordered/select-data-box-import-08a.png)
+    ![Voeg vanuit het scherm Contactgegevens verzendadressen toe aan uw Azure Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-08a.png)
 
-9. Bij **Verzendadres** geeft u uw voor- en achternaam, de naam en het postadres van het bedrijf en een geldig telefoonnummer op. Selecteer **Adres valideren** . De service controleert of de service beschikbaar is voor de regio van het verzendadres. Als de service beschikbaar is voor het opgegeven verzendadres, ontvangt u daarover een melding.
+11. Bij **Verzendadres** geeft u uw voor- en achternaam, de naam en het postadres van het bedrijf en een geldig telefoonnummer op. Selecteer vervolgens **Adres valideren**. De service controleert op beschikbaarheid van de service voor het adres. Als de service beschikbaar is voor het verzendadres, ontvangt u daarover een melding.
 
-   ![Schermopname van het dialoogvenster Verzendadres toevoegen met de opties Verzenden met en Verzendadres toevoegen uitgelicht.](media/data-box-deploy-ordered/select-data-box-import-10.png)
+     ![Dialoogvenster Verzendadres toevoegen met de opties Verzenden met en Verzendadres toevoegen uitgelicht](media/data-box-deploy-ordered/select-data-box-import-10.png)
 
-   Als u zelfbeheerde verzending hebt geselecteerd, ontvangt u een e-mailmelding nadat de bestelling is geplaatst. Zie [Zelfbeheerde verzending gebruiken](data-box-portal-customer-managed-shipping.md) voor meer informatie over zelfbeheerde verzendingen.
+    Als u zelfbeheerde verzending hebt geselecteerd, ontvangt u een e-mailmelding nadat de bestelling is geplaatst. Zie [Zelfbeheerde verzending gebruiken](data-box-portal-customer-managed-shipping.md) voor meer informatie over zelfbeheerde verzendingen.
 
-10. Selecteer **Verzendadres toevoegen** zodra de verzendgegevens zijn gevalideerd. U gaat terug naar het tabblad **Contactgegevens** .
+12. Selecteer **Verzendadres toevoegen** zodra de verzendgegevens zijn gevalideerd. U gaat terug naar het tabblad **Contactgegevens**.
 
-11. Voeg wanneer u weer in **Contactgegevens** bent, een of meer e-mailadressen toe. De service stuurt e-mailmeldingen naar het opgegeven e-mailadres over updates van de bestelstatus.
+13. Voeg wanneer u weer in **Contactgegevens** bent, een of meer e-mailadressen toe. De service stuurt e-mailmeldingen naar het opgegeven e-mailadres over updates van de bestelstatus.
 
     We raden u aan een e-mailadres van een groep te gebruiken, zodat u meldingen blijft ontvangen als een beheerder de groep verlaat.
 
-    ![Schermopname van het gedeelte E-mail van de stap Contactgegevens van de wizard Bestellen met het tekstvak E-mail en de opties Volgende: Controleren en bestellen is uitgelicht.](media/data-box-deploy-ordered/select-data-box-import-08c.png)
+    ![De sectie E-mail van Contactgegevens in de wizard Bestelling](media/data-box-deploy-ordered/select-data-box-import-08c.png)
 
-12. Bekijk de gegevens met betrekking tot de bestelling, het contact, de meldingen en de privacyvoorwaarden in **Controleren en bestellen** . Vink het selectievakje aan waarmee u akkoord gaat met de privacyvoorwaarden.
+12. Bekijk de gegevens met betrekking tot de bestelling, het contact, de meldingen en de privacyvoorwaarden in **Controleren en bestellen**. Vink het selectievakje aan waarmee u akkoord gaat met de privacyvoorwaarden.
 
-13. Selecteer **Bestellen** . Het duurt een paar minuten voordat de bestelling is gemaakt.
+13. Selecteer **Bestellen**. Het duurt een paar minuten voordat de bestelling is gemaakt.
 
-    ![Schermopname van de wizard Bestellen, waarin de stap Controleren en bestellen en de optie Bestellen zijn uitgelicht.](media/data-box-deploy-ordered/select-data-box-import-11.png)
+    ![Het scherm Controleren en bestellen van de wizard Bestellen](media/data-box-deploy-ordered/select-data-box-import-11.png)
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
@@ -524,13 +524,13 @@ Als het apparaat niet beschikbaar is, ontvangt u een melding. Als het apparaat w
 * Er wordt ook een apparaatwachtwoord gegenereerd om het apparaat mee te ontgrendelen.
 * De Data Box wordt vergrendeld om onbevoegde toegang tot het apparaat te voorkomen.
 
-Wanneer de apparaatvoorbereiding is voltooid, wordt de bestelling in de portal weergegeven met de status **Verwerkt** .
+Wanneer de apparaatvoorbereiding is voltooid, wordt de bestelling in de portal weergegeven met de status **Verwerkt**.
 
-![Data Box-bestelling verwerkt](media/data-box-overview/data-box-order-status-processed.png)
+![Een Data Box-bestelling die is verwerkt](media/data-box-overview/data-box-order-status-processed.png)
 
-Microsoft bereidt de verzending vervolgens voor en verzendt het apparaat met een regionale vervoerder. U ontvangt uw volgnummer zodra het apparaat is verzonden. In de portal wordt bestelling weergegeven met de status **Verzonden** .
+Microsoft bereidt de verzending vervolgens voor en verzendt het apparaat met een regionale vervoerder. U ontvangt uw volgnummer zodra het apparaat is verzonden. In de portal wordt bestelling weergegeven met de status **Verzonden**.
 
-![Data Box-bestelling verzonden](media/data-box-overview/data-box-order-status-dispatched.png)
+![Een Data Box-bestelling die is verzonden](media/data-box-overview/data-box-order-status-dispatched.png)
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 

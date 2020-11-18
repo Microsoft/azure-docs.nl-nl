@@ -9,12 +9,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 76c45e586ea7101015cb878d198cab73ed32498e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d83745db6c720a2fdc2260a07a4e3e66b1a0771d
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89018243"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93422209"
 ---
 # <a name="install-software-and-set-up-resources-for-the-tutorial"></a>Software installeren en resources instellen voor de zelfstudie
 
@@ -23,14 +23,16 @@ In deze driedelige zelfstudie maakt u een machine learning-model voor het voorsp
 ## <a name="prerequisites"></a>Vereisten
 
 1. Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) aan.
-2. Installeer [Python 3.6.8](https://www.python.org/downloads/release/python-368/).
-      * Gebruik het uitvoerbare installatieprogramma voor Windows x86-x64
-      * Voeg `python.exe` toe aan de PATH-omgevingsvariabele downloads/). U kunt de download vinden onder 'Tools for Visual Studio 2019'.
-3. Installeer [Microsoft ODBC Driver 17 for SQL Server](https://www.microsoft.com/download/details.aspx?id=56567).
-4. Installeer [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio/)
-5. Open Azure Data Studio en configureer Python voor notebooks. Zie [Python voor notebooks configureren](/sql/azure-data-studio/sql-notebooks#configure-python-for-notebooks)voor meer informatie. Deze stap kan enkele minuten duren.
-6. Installeer de nieuwste versie van [Azure CLI](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020). De volgende scripts vereisen de meest recente versie van AZ PowerShell (3.5.0, feb. 2020).
-7. Download de [DACPAC](https://github.com/microsoft/sql-server-samples/tree/master/samples/demos/azure-sql-edge-demos/iron-ore-silica-impurities/DACPAC) en [AMD/ARM Docker Image-bestanden](https://www.docker.com/blog/multi-arch-images/) die in de zelfstudie worden gebruikt.
+2. Visual Studio 2019 installeren met 
+      * Azure IoT Edge-hulpprogramma's
+      * Platformoverschrijdende ontwikkelmogelijkheden van .NET Core
+      * Hulpprogramma's voor containerontwikkeling
+3. Installeer [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio/)
+4. Open Azure Data Studio en configureer Python voor notebooks. Zie [Python voor Notebooks configureren](/sql/azure-data-studio/sql-notebooks#configure-python-for-notebooks) voor meer informatie. Deze stap kan enkele minuten duren.
+5. Installeer de nieuwste versie van [Azure CLI](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020). De volgende scripts vereisen de meest recente versie van AZ PowerShell (3.5.0, feb. 2020).
+6. Stel de omgeving in op het opsporen van fouten in de IoT Edge-oplossing, en het uitvoeren en testen van de oplossing door [Azure IoT EdgeHub Dev Tool](https://pypi.org/project/iotedgehubdev/) te installeren.
+7. Installeer Docker.
+8. Download het [DACPAC](https://github.com/microsoft/sql-server-samples/tree/master/samples/demos/azure-sql-edge-demos/iron-ore-silica-impurities/DACPAC)-bestand dat in de zelfstudie wordt gebruikt. 
 
 ## <a name="deploy-azure-resources-using-powershell-script"></a>Azure-resources implementeren met behulp van een PowerShell-script
 
@@ -154,26 +156,7 @@ Implementeer de Azure-resources die vereist zijn voor deze Azure SQL Edge-zelfst
    }
    ```
 
-10. Push de ARM/AMD docker-installatiekopieën naar het containerregister.
-
-    ```powershell
-    $containerRegistryCredentials = Get-AzContainerRegistryCredential -ResourceGroupName $ResourceGroup -Name $containerRegistryName
-    
-    $amddockerimageFile = Read-Host "Please Enter the location to the amd docker tar file:"
-    $armdockerimageFile = Read-Host "Please Enter the location to the arm docker tar file:"
-    $amddockertag = $containerRegistry.LoginServer + "/silicaprediction" + ":amd64"
-    $armdockertag = $containerRegistry.LoginServer + "/silicaprediction" + ":arm64"
-    
-    docker login $containerRegistry.LoginServer --username $containerRegistryCredentials.Username --password $containerRegistryCredentials.Password
-    
-    docker import $amddockerimageFile $amddockertag
-    docker push $amddockertag
-    
-    docker import $armdockerimageFile $armdockertag
-    docker push $armdockertag
-    ```
-
-11. Maak de netwerkbeveiligingsgroep binnen de resourcegroep.
+10. Maak de netwerkbeveiligingsgroep binnen de resourcegroep.
 
     ```powershell
     $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName $ResourceGroup -Name $NetworkSecGroup 
@@ -193,7 +176,7 @@ Implementeer de Azure-resources die vereist zijn voor deze Azure SQL Edge-zelfst
     }
     ```
 
-12. Maak een virtuele Azure-machine met SQL Edge. Deze VM fungeert als een Edge-apparaat.
+11. Maak een virtuele Azure-machine met SQL Edge. Deze VM fungeert als een Edge-apparaat.
 
     ```powershell
     $AzVM = Get-AzVM -ResourceGroupName $ResourceGroup -Name $EdgeDeviceId
@@ -226,7 +209,7 @@ Implementeer de Azure-resources die vereist zijn voor deze Azure SQL Edge-zelfst
     }
     ```
 
-13. Maak een IoT-hub in de resourcegroep.
+12. Maak een IoT-hub in de resourcegroep.
 
     ```powershell
     $iotHub = Get-AzIotHub -ResourceGroupName $ResourceGroup -Name $IoTHubName
@@ -241,7 +224,7 @@ Implementeer de Azure-resources die vereist zijn voor deze Azure SQL Edge-zelfst
     }
     ```
 
-14. Voeg een Edge-apparaat toe aan de IoT-hub. Met deze stap wordt alleen de digitale identiteit van het apparaat gemaakt.
+13. Voeg een Edge-apparaat toe aan de IoT-hub. Met deze stap wordt alleen de digitale identiteit van het apparaat gemaakt.
 
     ```powershell
     $deviceIdentity = Get-AzIotHubDevice -ResourceGroupName $ResourceGroup -IotHubName $IoTHubName -DeviceId $EdgeDeviceId
@@ -257,7 +240,7 @@ Implementeer de Azure-resources die vereist zijn voor deze Azure SQL Edge-zelfst
     $deviceIdentity = Get-AzIotHubDevice -ResourceGroupName $ResourceGroup -IotHubName $IoTHubName -DeviceId $EdgeDeviceId
     ```
 
-15. Haal de primaire verbindingsreeks van het apparaat op. Deze is later nodig voor de VM. De volgende opdracht maakt gebruik van Azure CLI voor implementaties.
+14. Haal de primaire verbindingsreeks van het apparaat op. Deze is later nodig voor de VM. De volgende opdracht maakt gebruik van Azure CLI voor implementaties.
 
     ```powershell
     $deviceConnectionString = az iot hub device-identity show-connection-string --device-id $EdgeDeviceId --hub-name $IoTHubName --resource-group $ResourceGroup --subscription $SubscriptionName
@@ -265,18 +248,19 @@ Implementeer de Azure-resources die vereist zijn voor deze Azure SQL Edge-zelfst
     $connString
     ```
 
-16. Werk de verbindingsreeks in het IoT Edge-configuratiebestand op het Edge-apparaat bij. De volgende opdrachten maken gebruik van Azure CLI voor implementaties.
+15. Werk de verbindingsreeks in het IoT Edge-configuratiebestand op het Edge-apparaat bij. De volgende opdrachten maken gebruik van Azure CLI voor implementaties.
 
     ```powershell
     $script = "/etc/iotedge/configedge.sh '" + $connString + "'"
     az vm run-command invoke -g $ResourceGroup -n $EdgeDeviceId  --command-id RunShellScript --script $script
     ```
 
-17. Maak een Azure Machine Learning-werkruimte in de resourcegroep.
+16. Maak een Azure Machine Learning-werkruimte in de resourcegroep.
 
     ```powershell
     az ml workspace create -w $MyWorkSpace -g $ResourceGroup
     ```
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

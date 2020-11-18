@@ -1,18 +1,18 @@
 ---
-title: Python-voorbeeldcode voor een IoT Plug and Play-apparaat met meerdere onderdelen koppelen aan IoT Hub | Microsoft Docs
-description: Schrijf Python-voorbeeldcode voor een IoT Plug and Play-apparaat dat meerdere onderdelen gebruikt en verbinding maakt met een IoT-hub, en voer deze uit. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.
+title: 'Zelfstudie: Python-voorbeeldcode voor een IoT Plug and Play-apparaat met meerdere onderdelen koppelen aan Azure IoT Hub | Microsoft Docs'
+description: 'Zelfstudie: Python-voorbeeldcode maken en uitvoeren voor een IoT Plug and Play-apparaat dat meerdere onderdelen gebruikt en verbinding maakt met een IoT-hub. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.'
 author: ericmitt
 ms.author: ericmitt
 ms.date: 7/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 1b329206dcc41d8f7fcb3874da037f5b57142722
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 0a4130688d479902f7836ae09c4006bb36fc16d2
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91613659"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421393"
 ---
 # <a name="tutorial-connect-a-sample-iot-plug-and-play-multiple-component-device-application-to-iot-hub-python"></a>Zelfstudie: Een voorbeeld van een IoT Plug and Play-apparaattoepassing met verschillende onderdelen verbinden met IoT Hub (Python)
 

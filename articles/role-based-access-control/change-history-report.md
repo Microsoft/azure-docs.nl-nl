@@ -15,12 +15,12 @@ ms.date: 07/27/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017, devx-track-azurecli
-ms.openlocfilehash: 0ad60e72300e381b57deb00f3db010e69a006441
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 4ccd668fb6afa6787fadeda6ed92ebd954e2b892
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92742935"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657802"
 ---
 # <a name="view-activity-logs-for-azure-rbac-changes"></a>Activiteiten logboeken voor Azure RBAC-wijzigingen weer geven
 
@@ -43,12 +43,12 @@ De eenvoudigste manier om hieraan te beginnen is door de activiteitenlogboeken i
 
 Het activiteiten logboek in de portal heeft verschillende filters. Dit zijn de Azure RBAC-filters:
 
-| Filteren | Waarde |
+| Filter | Waarde |
 | --------- | --------- |
 | Gebeurteniscategorie | <ul><li>Administratief</li></ul> |
 | Bewerking | <ul><li>Roltoewijzing maken</li><li>Roltoewijzing verwijderen</li><li>Aangepaste roldefinitie maken of bijwerken</li><li>Aangepaste roldefinitie verwijderen</li></ul> |
 
-Zie [activiteiten logboeken weer geven om acties op resources te controleren](/azure/azure-resource-manager/resource-group-audit?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)voor meer informatie over activiteiten Logboeken.
+Zie [activiteiten logboeken weer geven om acties op resources te controleren](../azure-resource-manager/management/view-activity-logs.md?toc=%252fazure%252fmonitoring-and-diagnostics%252ftoc.json)voor meer informatie over activiteiten Logboeken.
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
@@ -122,7 +122,7 @@ az monitor activity-log list --namespace "Microsoft.Authorization" --start-time 
 
 ## <a name="azure-monitor-logs"></a>Azure Monitor-logboeken
 
-[Azure monitor-logboeken](../log-analytics/log-analytics-overview.md) is een ander hulp programma dat u kunt gebruiken voor het verzamelen en analyseren van Azure RBAC-wijzigingen voor al uw Azure-resources. Azure Monitor logboeken heeft de volgende voor delen:
+[Azure monitor-logboeken](../azure-monitor/log-query/log-query-overview.md) is een ander hulp programma dat u kunt gebruiken voor het verzamelen en analyseren van Azure RBAC-wijzigingen voor al uw Azure-resources. Azure Monitor logboeken heeft de volgende voor delen:
 
 - Complexe query's en logica schrijven
 - Integreren met waarschuwingen, Power BI en andere hulpprogram ma's
@@ -133,13 +133,13 @@ Hier volgen de basis stappen om aan de slag te gaan:
 
 1. [Maak een log Analytics-werk ruimte](../azure-monitor/learn/quick-create-workspace.md).
 
-1. [Configureer de analyse van activiteitenlogboek-oplossing](../azure-monitor/platform/activity-log-collect.md#activity-logs-analytics-monitoring-solution) voor uw werk ruimte.
+1. [Configureer de analyse van activiteitenlogboek-oplossing](../azure-monitor/platform/activity-log.md#activity-log-analytics-monitoring-solution) voor uw werk ruimte.
 
-1. [Bekijk de activiteiten logboeken](../azure-monitor/platform/activity-log-collect.md#activity-logs-analytics-monitoring-solution). Een snelle manier om naar de overzichts pagina van de Analyse van activiteitenlogboek oplossing te gaan, is door op de optie **Logboeken** te klikken.
+1. [Bekijk de activiteiten logboeken](../azure-monitor/platform/activity-log.md#activity-log-analytics-monitoring-solution). Een snelle manier om naar de overzichts pagina van de Analyse van activiteitenlogboek oplossing te gaan, is door op de optie **Logboeken** te klikken.
 
    ![Optie Azure Monitor Logboeken in Portal](./media/change-history-report/azure-log-analytics-option.png)
 
-1. Gebruik eventueel de [Azure Monitor Log Analytics](../azure-monitor/log-query/get-started-portal.md) om de logboeken te zoeken en weer te geven. Zie [aan de slag met Azure monitor-logboek query's](../azure-monitor/log-query/get-started-queries.md)voor meer informatie.
+1. Gebruik eventueel de [Azure Monitor Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md) om de logboeken te zoeken en weer te geven. Zie [aan de slag met Azure monitor-logboek query's](../azure-monitor/log-query/get-started-queries.md)voor meer informatie.
 
 Hier volgt een query waarmee nieuwe roltoewijzingen worden geretourneerd die zijn ingedeeld op de doel resource provider:
 
@@ -162,5 +162,5 @@ AzureActivity
 ![Activiteiten logboeken met behulp van de geavanceerde analyse portal-scherm opname](./media/change-history-report/azure-log-analytics.png)
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Gebeurtenissen in het activiteitenlogboek bekijken](/azure/azure-resource-manager/resource-group-audit?toc=%2fazure%2fmonitoring-and-diagnostics%2ftoc.json)
-* [Abonnementactiviteit controleren met Azure-activiteitenlogboek](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs)
+* [Gebeurtenissen in het activiteitenlogboek bekijken](../azure-resource-manager/management/view-activity-logs.md?toc=%252fazure%252fmonitoring-and-diagnostics%252ftoc.json)
+* [Abonnementactiviteit controleren met Azure-activiteitenlogboek](../azure-monitor/platform/platform-logs-overview.md)

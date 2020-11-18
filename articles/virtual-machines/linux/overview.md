@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b205665a0e5fc06fdc784efa91036f26da5d3cde
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 95e4ac884e0eda3b4f469484226962e3fd2e2eea
+ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88654341"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94375377"
 ---
 # <a name="linux-virtual-machines-in-azure"></a>Virtuele Linux-machines in Azure
 
@@ -30,7 +30,7 @@ Virtuele machines in Azure kunnen op verschillende manieren worden gebruikt. Een
 Het aantal virtuele machines dat uw toepassing gebruikt, kan omhoog worden geschaald naar wat is vereist om te voldoen aan uw behoeften.
 
 ## <a name="what-do-i-need-to-think-about-before-creating-a-vm"></a>Waar moet ik over nadenken voordat ik een VM maak?
-Er is altijd een groot aantal [overwegingen bij het ontwerpen](/azure/architecture/reference-architectures/n-tier/windows-vm) wanneer u de infrastructuur van een toepassing verder uitwerkt in Azure. Deze aspecten van een VM zijn belangrijk om over na te denken voordat u begint:
+Er is altijd een groot aantal [overwegingen bij het ontwerpen](/azure/architecture/reference-architectures/n-tier/linux-vm) wanneer u de infrastructuur van een toepassing verder uitwerkt in Azure. Deze aspecten van een VM zijn belangrijk om over na te denken voordat u begint:
 
 * De namen van uw toepassingsresources
 * De locatie waar de resources worden opgeslagen
@@ -74,24 +74,24 @@ Managed Disks beheert het maken/beheren van Azure Storage-accounts op de achterg
 U kunt ook uw aangepaste installatiekopieën in één opslagaccount per Azure-regio beheren en deze gebruiken om honderden virtuele machines onder hetzelfde abonnement te maken. Voor meer informatie over Managed Disks raadpleegt u [Managed Disks Overview](../managed-disks-overview.md) (Overzicht van Managed Disks).
 
 ## <a name="distributions"></a>Distributies 
-Microsoft Azure ondersteunt de uitvoering van een aantal populaire Linux-distributies die worden geleverd en onderhouden door een aantal partners.  In de Microsoft Azure Marketplace vindt u onder meer distributies als Red Hat Enterprise, CentOS, SUSE Linux Enterprise, Debian, Ubuntu, CoreOS, RancherOS en FreeBSD. Microsoft werkt actief samen met diverse Linux-community's om nog meer varianten toe te voegen aan [de lijst met Linux-distributies die zijn goedgekeurd voor Azure](endorsed-distros.md).
+Microsoft Azure ondersteunt de uitvoering van een aantal populaire Linux-distributies die worden geleverd en onderhouden door een aantal partners.  U kunt beschikbare distributies vinden in Azure Marketplace. Microsoft werkt actief samen met diverse Linux-community's om nog meer varianten toe te voegen aan [de lijst met Linux-distributies die zijn goedgekeurd voor Azure](endorsed-distros.md).
 
 Als de Linux-distributie van uw keuze niet op de lijst staat, kunt u zelf een Linux-VM maken ('Bring Your Own Linux') door [een Linux-VHD te maken en uploaden in Azure](create-upload-generic.md).
 
-Microsoft werkt nauw samen met partners om ervoor te zorgen dat de beschikbare installatiekopieën worden bijgewerkt en geoptimaliseerd voor een Azure-runtime.  Voor meer informatie over Azure-partners klikt u op de volgende koppelingen:
+Microsoft werkt nauw samen met partners om ervoor te zorgen dat de beschikbare installatiekopieën worden bijgewerkt en geoptimaliseerd voor een Azure-runtime.  Voor meer informatie over aanbiedingen van Azure-partners klikt u op de volgende koppelingen:
 
 * [Linux op door Azure goedgekeurde distributies](endorsed-distros.md)
-* SUSE - [Azure Marketplace - SUSE Linux Enterprise Server](https://azuremarketplace.microsoft.com/marketplace/apps?search=suse%20sles&page=1)
-* Red Hat - [Azure Marketplace - Red Hat Enterprise Linux 8.1](https://azuremarketplace.microsoft.com/marketplace/apps/RedHat.RedHatEnterpriseLinux81-ARM)
+* SUSE - [Azure Marketplace - SUSE Linux Enterprise Server](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=suse)
+* Red Hat - [Azure Marketplace - Red Hat Enterprise Linux](https://azuremarketplace.microsoft.com/marketplace/apps?search=Red%20Hat%20Enterprise%20Linux)
 * Canonical - [Azure Marketplace - Ubuntu Server](https://azuremarketplace.microsoft.com/marketplace/apps/Canonical.UbuntuServer)
-* Debian - [Azure Marketplace - Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.debian)
-* FreeBSD - [Azure Marketplace - FreeBSD 10.4](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD104)
-* CoreOS - [Azure Marketplace - Container Linux door CoreOS](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS)
+* Debian - [Azure Marketplace - Debian](https://azuremarketplace.microsoft.com/marketplace/apps?search=Debian&page=1)
+* FreeBSD - [Azure Marketplace - FreeBSD](https://azuremarketplace.microsoft.com/marketplace/apps?search=freebsd&page=1)
+* Flatcar - [Azure Marketplace - Flatcar Container Linux](https://azuremarketplace.microsoft.com/marketplace/apps?search=Flatcar&page=1)
 * RancherOS - [Azure Marketplace - RancherOS](https://azuremarketplace.microsoft.com/marketplace/apps/rancher.rancheros)
 * Bitnami - [Bitnami Library voor Azure](https://azure.bitnami.com/)
 * Mesosphere - [Azure Marketplace - Mesosphere DC/OS voor Azure](https://azure.microsoft.com/services/kubernetes-service/mesosphere/)
 * Docker - [Azure Marketplace - Docker-installatiekopieën](https://azuremarketplace.microsoft.com/marketplace/apps?search=docker&page=1&filters=virtual-machine-images)
-* Jenkins - [Azure Marketplace - CloudBees Jenkins Platform](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cloudbees.cloudbees-core-contact)
+* Jenkins - [Azure Marketplace - CloudBees Jenkins Platform](https://azuremarketplace.microsoft.com/marketplace/apps/cloudbees.cloudbees-core-contact)
 
 
 ## <a name="cloud-init"></a>Cloud-init 
@@ -99,7 +99,7 @@ Microsoft werkt nauw samen met partners om ervoor te zorgen dat de beschikbare i
 Voor een juiste DevOps-cultuur moet alle infrastructuur uit code bestaan.  Als alle infrastructuur bestaat uit code, kan deze namelijk eenvoudig opnieuw worden opgebouwd.  Azure werkt met de belangrijkste automatiseringstools zoals Ansible, Chef, SaltStack en Puppet.  Azure heeft ook eigen tools voor automatisering:
 
 * [Azure-sjablonen](create-ssh-secured-vm-from-template.md)
-* [Azure VMAccess](../extensions/vmaccess.md)
+* [Azure `VMaccess`](../extensions/vmaccess.md)
 
 Azure biedt ondersteuning voor [cloud init](https://cloud-init.io/) voor de meeste Linux-distributies die dit ondersteunen.  We werken samen met onze goedgekeurde Linux-distributiepartners om ervoor te zorgen dat installatiekopieën met cloud-init beschikbaar zijn op de Azure Marketplace. Met deze installatiekopieën kunnen uw cloud-init-implementaties en -configuraties naadloos werken met VM's en virtuele-machineschaalsets.
 
@@ -115,6 +115,11 @@ Azure biedt ondersteuning voor [cloud init](https://cloud-init.io/) voor de mees
 * [IP-adressen in Azure](../../virtual-network/public-ip-addresses.md)
 * [Poorten openen voor een Linux-VM in Azure](nsg-quickstart.md)
 * [Een Fully Qualified Domain Name maken in Azure Portal](portal-create-fqdn.md)
+
+
+## <a name="data-residency"></a>Gegevenslocatie
+
+In Azure is de functie om het opslaan van klantgegevens in één regio in te schakelen, momenteel alleen beschikbaar in de regio Azië - zuidoost (Singapore) van het geografisch gebied Azië en Stille Oceaan en in Brazilië - zuid van het geografisch gebied Brazilië (staat Sao Paulo). Voor alle andere regio's worden klantgegevens opgeslagen in Geo. Zie [Trust Center](https://azuredatacentermap.azurewebsites.net/) voor meer informatie.
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -1,18 +1,18 @@
 ---
-title: C#-voorbeeldcode voor een IoT Plug and Play-apparaattoepassing koppelen aan IoT Hub | Microsoft Docs
-description: Schrijf C#-voorbeeldcode voor een IoT Plug and Play-apparaattoepassing die meerdere onderdelen gebruikt en verbinding maakt met een IoT-hub, en voer deze uit. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.
+title: 'Zelfstudie: C#-voorbeeldcode voor een IoT Plug and Play-apparaat met meerdere onderdelen koppelen aan Azure IoT Hub | Microsoft Docs'
+description: 'Zelfstudie: C#-voorbeeldcode maken en uitvoeren voor een IoT Plug and Play-apparaat dat meerdere onderdelen gebruikt en verbinding maakt met een IoT-hub. Gebruik het hulpprogramma Azure IoT Explorer om de gegevens te bekijken die door het apparaat naar de hub worden verzonden.'
 author: ericmitt
 ms.author: ericmitt
 ms.date: 07/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 72b85388bf80a6ed2b9617b606940c243c5711f1
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: f7a1aa85c4456bdcf7ed50e42382fc440618ec7d
+ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945529"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93421444"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-multiple-component-device-application-running-on-windows-to-iot-hub-c"></a>Zelfstudie: Een IoT Plug and Play-apparaattoepassing met meerdere onderdelen die in Windows wordt uitgevoerd, verbinden met IoT Hub (C#)
 

@@ -8,16 +8,16 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 10/16/2020
-ms.openlocfilehash: f942525f1360a134f58f18e0ec76a84b0ceee50b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: b8c7792a09dd86e7d4ac043c572f69fc47ee6e63
+ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738187"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93307185"
 ---
 # <a name="tutorial-create-apache-spark-job-definition-in-synapse-studio"></a>Zelfstudie: Apache Spark-taakdefinitie maken in Synapse Studio
 
-In deze zelfstudie ziet u hoe u Azure Synapse Studio kunt gebruiken om Apache Spark-taakdefinities te maken en deze vervolgens naar een Apache Spark-pool te verzenden.
+In deze zelfstudie ziet u hoe u Azure Synapse Studio kunt gebruiken om Apache Spark-taakdefinities te maken en deze vervolgens naar een serverloze Apache Spark-pool te verzenden.
 
 Deze zelfstudie bestaat uit de volgende taken:
 > [!div class="checklist"]
@@ -33,7 +33,7 @@ Deze zelfstudie bestaat uit de volgende taken:
 Zorg ervoor dat u aan de volgende vereisten voldoet voordat u met deze zelfstudie begint:
 
 * Een Azure Synapse Analytics-werkruimte. Zie [Een Azure Synapse Analytics-werkruimte maken](../../machine-learning/how-to-manage-workspace.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#create-a-workspace) voor instructies.
-* Een Apache Spark-pool.
+* Een serverloze Apache Spark-pool.
 * Een ADLS Gen2-opslagaccount. U moet de **gegevenseigenaar van de opslag-blob** zijn van het ADLS Gen2-bestandssysteem waarmee u wilt werken. Als dat niet het geval is, moet u de machtiging handmatig toevoegen.
 * Als u de standaardopslag van de werkruimte niet wilt gebruiken, koppelt u het vereiste ADLS Gen2-opslagaccount in Synapse Studio. 
 
@@ -51,7 +51,7 @@ In deze sectie maakt u een Apache Spark-taakdefinitie voor PySpark (Python).
 
      ![python-bestand uploaden](./media/apache-spark-job-definitions/upload-python-file.png)
 
-4. Selecteer de hub **Ontwikkelen** , selecteer het pictogram ‘+’ en selecteer **Spark-taakdefinitie** om een nieuwe Spark-taakdefinitie te maken. 
+4. Selecteer de hub **Ontwikkelen**, selecteer het pictogram ‘+’ en selecteer **Spark-taakdefinitie** om een nieuwe Spark-taakdefinitie te maken. 
 
      ![nieuwe definitie maken voor python](./media/apache-spark-job-definitions/create-new-definition.png)
 
@@ -93,7 +93,7 @@ In deze sectie maakt u een Apache Spark-taakdefinitie voor Apache Spark (Scala).
  
      ![scala-structuur voorbereiden](./media/apache-spark-job-definitions/prepare-scala-structure.png)
 
- 4. Selecteer de hub **Ontwikkelen** , selecteer het pictogram ‘+’ en selecteer **Spark-taakdefinitie** om een nieuwe Spark-taakdefinitie te maken. (De voorbeeldafbeelding is hetzelfde als stap 4 van **Een Apache Spark-taakdefinitie (Python) maken voor PySpark**.)
+ 4. Selecteer de hub **Ontwikkelen**, selecteer het pictogram ‘+’ en selecteer **Spark-taakdefinitie** om een nieuwe Spark-taakdefinitie te maken. (De voorbeeldafbeelding is hetzelfde als stap 4 van **Een Apache Spark-taakdefinitie (Python) maken voor PySpark**.)
 
  5. Selecteer **Spark(Scala)** in de vervolgkeuzelijst Taal in het hoofdvenster van de Apache Spark-taakdefinitie.
 
@@ -133,7 +133,7 @@ In deze sectie maakt u een Apache Spark-taakdefinitie voor .NET Spark(C#/F#).
  
      ![dotnet-structuur voorbereiden](./media/apache-spark-job-definitions/prepare-dotnet-structure.png)
 
- 4. Selecteer de hub **Ontwikkelen** , selecteer het pictogram ‘+’ en selecteer **Spark-taakdefinitie** om een nieuwe Spark-taakdefinitie te maken. (De voorbeeldafbeelding is hetzelfde als stap 4 van **Een Apache Spark-taakdefinitie (Python) maken voor PySpark**.)
+ 4. Selecteer de hub **Ontwikkelen**, selecteer het pictogram ‘+’ en selecteer **Spark-taakdefinitie** om een nieuwe Spark-taakdefinitie te maken. (De voorbeeldafbeelding is hetzelfde als stap 4 van **Een Apache Spark-taakdefinitie (Python) maken voor PySpark**.)
 
  5. Selecteer **.NET Spark(C#/F#)** in de vervolgkeuzelijst Taal in het hoofdvenster van de Apache Spark-taakdefinitie.
 
@@ -181,7 +181,7 @@ Nadat u een Apache Spark-taakdefinitie hebt gemaakt, kunt u deze verzenden naar 
 
      ![Spark-toepassing weergeven](./media/apache-spark-job-definitions/view-spark-application.png)
 
- 2. Selecteer vervolgens een Apache Spark-toepassing; het venster **SparkJobDefinition** -taak wordt weergegeven. U kunt de voortgang van de taakuitvoering van daaruit bekijken.
+ 2. Selecteer vervolgens een Apache Spark-toepassing; het venster **SparkJobDefinition**-taak wordt weergegeven. U kunt de voortgang van de taakuitvoering van daaruit bekijken.
      
      ![Spark-toepassing LogQuery weergeven](./media/apache-spark-job-definitions/view-job-log-query.png)
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/10/2020
 ms.author: rkarlin
-ms.openlocfilehash: e90bdcfe22828d85ebeeb74314617fc6eac81385
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: dafa2f231581ee7e7fa7a59a9c9320f6f2a67038
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92094633"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357681"
 ---
 # <a name="quickstart-deploy-and-onboard-a-sensor"></a>Quickstart: Een sensor implementeren en onboarden
 
@@ -39,10 +39,10 @@ Bij het onboarden van sensors kunt u:
 |------ | ----------- |
 | **Een sensornaam definiëren** | Geef de sensor die u wilt onboarden een naam en koppel deze aan een IoT Hub of een abonnement.<br /><br />Raadpleeg **Sensors onboarden** voor meer informatie.|
 |**Kies een abonnement en het aantal doorgevoerde apparaten**|Selecteer een abonnement en het aantal apparaten waarop het abonnement betrekking heeft. Voer het aantal in stappen van 1000 in.|
-| **Een sensorbeheermodus definiëren** | Definieer waar asset, waarschuwingen en andere informatie die door de sensor wordt gedetecteerd, wordt weergegeven. Dit wordt bepaald op basis van de **Sensorbeheermodus** die u definieert.<br /><br />**Lokaal beheerde modus** : Gegevens die door de sensor zijn gedetecteerd, worden weergegeven in de sensorconsole. Detectiegegevens worden ook gedeeld met de on-premises beheerconsole als de sensor hieraan is gekoppeld.<br /><br />**In de cloud beheerde modus** : Gegevens die door de sensor zijn gedetecteerd, worden weergegeven in de sensorconsole. Daarnaast worden waarschuwingsgegevens geleverd via een IoT Hub en deze kunnen worden gedeeld met andere Azure-Services, bijvoorbeeld Azure Sentinel.<br />Raadpleeg **Sensor onboarden** voor meer informatie. |
-| **Een sensoractiveringsbestand ophalen** | Voor **Lokaal beheerde** sensoren wordt een activeringsbestand gebruikt voor het beheren van de geautoriseerde sensoractiveringsperioden.<br /><br />Voor **In de cloud beheerde** sensors wordt een activeringsbestand gebruikt als een verbinding tussen de sensor en een IoT Hub. Raadpleeg voor meer informatie **Sensors onboarden** . |
+| **Een sensorbeheermodus definiëren** | Definieer waar asset, waarschuwingen en andere informatie die door de sensor wordt gedetecteerd, wordt weergegeven. Dit wordt bepaald op basis van de **Sensorbeheermodus** die u definieert.<br /><br />**Lokaal beheerde modus**: Gegevens die door de sensor zijn gedetecteerd, worden weergegeven in de sensorconsole. Detectiegegevens worden ook gedeeld met de on-premises beheerconsole als de sensor hieraan is gekoppeld.<br /><br />**In de cloud beheerde modus**: Gegevens die door de sensor zijn gedetecteerd, worden weergegeven in de sensorconsole. Daarnaast worden waarschuwingsgegevens geleverd via een IoT Hub en deze kunnen worden gedeeld met andere Azure-Services, bijvoorbeeld Azure Sentinel.<br />Raadpleeg **Sensor onboarden** voor meer informatie. |
+| **Een sensoractiveringsbestand ophalen** | Voor **Lokaal beheerde** sensoren wordt een activeringsbestand gebruikt voor het beheren van de geautoriseerde sensoractiveringsperioden.<br /><br />Voor **In de cloud beheerde** sensors wordt een activeringsbestand gebruikt als een verbinding tussen de sensor en een IoT Hub. Raadpleeg voor meer informatie **Sensors onboarden**. |
 | **Een activeringsbestand uploaden naar uw sensor** | Activeringsbestanden moeten worden geüpload naar uw bedrijfssensors. Netwerkbewaking en toegang tot de functies van de sensorconsole zijn pas beschikbaar als het activeringsbestand is geüpload. Zie **Sensoractiveringsbestanden uploaden** voor meer informatie. |
-| **Sensornetwerkparameters bijwerken vóór activering** | Parameters bijwerken die zijn gedefinieerd tijdens de installatie van de sensor. Zie **Fout voor meer informatie! Verwijzingsbron niet gevonden** .|
+| **Sensornetwerkparameters bijwerken vóór activering** | Parameters bijwerken die zijn gedefinieerd tijdens de installatie van de sensor. Zie **Sensoractiveringsbestanden uploaden** voor meer informatie.|
 
 
 **Een sensor implementeren:**
@@ -51,19 +51,19 @@ Bij het onboarden van sensors kunt u:
 
 2. Selecteer **Aan de slag.**
 
-3. Selecteer in de sectie **Uw netwerk detecteren**  **Instellen** .
+3. Selecteer in de sectie **Uw netwerk detecteren**  **Instellen**.
 
    ![Azure Defender for IoT detecteert uw netwerkweergave](media/updates/image5.png)
 
 4. Selecteer een optie voor het verkrijgen van een sensor.
 
-   ![Weergave van de netwerksector van Azure Defender for IoT](media/updates/image6.png)
+   ![Weergave van de netwerksensor van Azure Defender for IoT](media/updates/image6.png)
 
-  - **Een vooraf geconfigureerde sensor kopen** : Microsoft en Arrow zijn partners geworden om vooraf geconfigureerde sensors te bieden. Als u een vooraf geconfigureerde sensor wilt kopen, moet u contact opnemen met Arrow op: <hardware.sales@arrow.com>. De sensor wordt geleverd bij uw faciliteit. De meest recente versie is geïnstalleerd.
+  - **Een vooraf geconfigureerde sensor kopen**: Microsoft en Arrow zijn partners geworden om vooraf geconfigureerde sensors te bieden. Als u een vooraf geconfigureerde sensor wilt kopen, moet u contact opnemen met Arrow op: <hardware.sales@arrow.com>. De sensor wordt geleverd bij uw faciliteit. De meest recente versie is geïnstalleerd.
 
-  - **Uw eigen apparaat (ISO-installatie) meenemen** : De oplossing wordt uitgevoerd op gecertificeerde apparaten. Gebruik de [Handleiding met hardwarespecificaties voor Azure Defender for IoT](https://aka.ms/AzureDefenderforIoTBareMetalAppliance) als referentie bij het aanschaffen van uw gecertificeerde apparaat.
+  - **Uw eigen apparaat (ISO-installatie) meenemen**: De oplossing wordt uitgevoerd op gecertificeerde apparaten. Gebruik de [Handleiding met hardwarespecificaties voor Azure Defender for IoT](https://aka.ms/AzureDefenderforIoTBareMetalAppliance) als referentie bij het aanschaffen van uw gecertificeerde apparaat.
 
-    - Selecteer een versie in het menu **Versie selecteren** .
+    - Selecteer een versie in het menu **Versie selecteren**.
 
     - Selecteer **Downloaden** en sla het bestand op. Raadpleeg de **Installatiehandleiding van Azure Defender for IoT** voor meer informatie over het downloaden van de ISO-installatiekopie en het installeren van de sensorsoftware.
 
@@ -95,7 +95,7 @@ Het onboarden van sensors moet worden uitgevoerd op het Azure Defender for IoT-p
 
 2. Selecteer een abonnement in de vervolgkeuzelijst voor abonnementen.
 3. Voer in het veld **Doorgevoerde apparaten** het aantal apparaten in waarop het abonnement betrekking heeft. U moet dit nummer opnieuw invoeren voor elke sensor waarvoor u onboarden uitvoert die aan hetzelfde abonnement is gekoppeld.  Als abonnement ‘A’ bijvoorbeeld is gekoppeld aan 6000 apparaten, voert u 6000 in voor elke sensor die is gekoppeld aan abonnement ‘A’.   
-4. Kies een sensorbeheermodus met behulp van de wisselknop **Cloud verbinden** . Als de wisselknop is ingeschakeld, wordt de sensor **In de cloud beheerd** . Als de wisselknop is uitgeschakeld, wordt de sensor **Lokaal beheerd** .
+4. Kies een sensorbeheermodus met behulp van de wisselknop **Cloud verbinden**. Als de wisselknop is ingeschakeld, wordt de sensor **In de cloud beheerd**. Als de wisselknop is uitgeschakeld, wordt de sensor **Lokaal beheerd**.
 
 
 | Sensorbeheermodus | Beschrijving                                                |
@@ -103,15 +103,15 @@ Het onboarden van sensors moet worden uitgevoerd op het Azure Defender for IoT-p
 | **In de cloud beheerd**          | Gegevens die door de sensor zijn gedetecteerd, worden weergegeven in de sensorconsole. Daarnaast worden waarschuwingsgegevens geleverd via een IoT Hub en deze kunnen worden gedeeld met andere Azure-Services, bijvoorbeeld Azure Sentinel.<br /><br />Kies een IoT Hub om aan deze sensor te koppelen.<br /><br />U moet een In de cloud beheerd activeringsbestand uploaden naar In de cloud beheerde sensors.<br /><br />Zie **Sensoractiveringsbestanden** voor meer informatie. |
 | **Lokaal beheerd**        | Gegevens die worden gedetecteerd door sensors die lokaal worden beheerd, worden weergegeven in de sensorconsole. Als u werkt met een air-gapped-netwerk en u een uniforme weergave wilt van alle informatie die wordt gedetecteerd door meerdere Lokaal beheerde sensors, dan werkt u met de on-premises beheerconsole.<br /><br />Sensors die *Lokaal beheerd* worden zijn gekoppeld aan een Azure-abonnement en bevatten instructies over de vervaltermijn van de activering van de sensor.<br /><br />Kies een abonnement dat u wilt koppelen aan deze sensor.<br /><br />U moet een Lokaal beheerd activeringsbestand uploaden naar elke sensor. Zie **Sensoractiveringsbestanden uploaden** voor meer informatie. |
 
-5. Selecteer **Registreren** .
+5. Selecteer **Registreren**.
 
-6. Selecteer op de pagina Activeringsbestand downloaden het bestand **Activering downloaden** .
+6. Selecteer op de pagina Activeringsbestand downloaden het bestand **Activering downloaden**.
 
    ![Schermopname van de weergave Sensor onboarden](media/updates/image9.png)
 
 7. Sla het bestand op. De bestandsnaam heeft de volgende indeling: `<hub_name>_<sensor_name>`. De sensornaam verwijst naar de naam die u hierboven hebt gedefinieerd.
 
-8. Selecteer **Finish** .
+8. Selecteer **Finish**.
 
 9. Als u het onboardingsproces van de sensor wilt voltooien, uploadt u het bestand naar uw sensor vanuit de Azure Defender for IoT-console.
  
@@ -151,7 +151,7 @@ Zie [Over IoT Hub](../iot-hub/about-iot-hub.md) voor meer informatie over IoT Hu
 
 5. De voorwaarden goedkeuren.
 
-6. Selecteer **Activate** . De parameters voor de netwerkconfiguratie van de sensor zijn gedefinieerd tijdens de installatie van de software of als een vooraf geconfigureerde sensor is aangeschaft. De volgende parameters zijn gedefinieerd:
+6. Selecteer **Activate**. De parameters voor de netwerkconfiguratie van de sensor zijn gedefinieerd tijdens de installatie van de software of als een vooraf geconfigureerde sensor is aangeschaft. De volgende parameters zijn gedefinieerd:
    - Het IP-adres
    - DNS  
    - Standaardgateway
@@ -166,7 +166,7 @@ Zie [Over IoT Hub](../iot-hub/about-iot-hub.md) voor meer informatie over IoT Hu
 
    ![Schermopname van de weergave Netwerkconfiguratie bewerken](media/updates/image13.png)
 
-8. De parameters die tijdens de installatie zijn gedefinieerd, worden weergegeven. Er is ook een optie beschikbaar voor het definiëren van een proxy. Werk indien nodig bij en selecteer **Opslaan** .
+8. De parameters die tijdens de installatie zijn gedefinieerd, worden weergegeven. Er is ook een optie beschikbaar voor het definiëren van een proxy. Werk indien nodig bij en selecteer **Opslaan**.
  
  
 ## <a name="next-steps"></a>Volgende stappen

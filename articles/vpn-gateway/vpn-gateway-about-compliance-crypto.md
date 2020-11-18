@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: yushwang
-ms.openlocfilehash: 499d184d373b896ba7bffcf990693ef5e6ac466b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a77ee3c4301d278f98b571402514663dcfc9ca52
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88032421"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657921"
 ---
 # <a name="about-cryptographic-requirements-and-azure-vpn-gateways"></a>Over cryptografische vereisten en Azure VPN-gateways
 
@@ -20,7 +20,7 @@ In dit artikel wordt beschreven hoe u Azure VPN-gateways kunt configureren om te
 
 ## <a name="about-ikev1-and-ikev2-for-azure-vpn-connections"></a>Over IKEv1 en IKEv2 voor Azure VPN-verbindingen
 
-Traditioneel hebben we IKEv1-verbindingen voor alleen elementaire Sku's en toegestane IKEv2-verbindingen voor alle andere VPN-gateway-Sku's dan Basic Sku's toegestaan. De Basic-Sku's staan slechts 1 verbinding toe en samen met andere beperkingen, zoals prestaties, kunnen klanten die gebruikmaken van verouderde apparaten die alleen IKEv1-protocollen ondersteunen, een beperkte ervaring hebben. Om de gebruikers ervaring met IKEv1-protocollen te verbeteren, zijn er nu IKEv1-verbindingen voor alle VPN-gateway-Sku's, met uitzonde ring van de basis-SKU. Zie [VPN gateway sku's](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings#gwsku)voor meer informatie.
+Traditioneel hebben we IKEv1-verbindingen voor alleen elementaire Sku's en toegestane IKEv2-verbindingen voor alle andere VPN-gateway-Sku's dan Basic Sku's toegestaan. De Basic-Sku's staan slechts 1 verbinding toe en samen met andere beperkingen, zoals prestaties, kunnen klanten die gebruikmaken van verouderde apparaten die alleen IKEv1-protocollen ondersteunen, een beperkte ervaring hebben. Om de gebruikers ervaring met IKEv1-protocollen te verbeteren, zijn er nu IKEv1-verbindingen voor alle VPN-gateway-Sku's, met uitzonde ring van de basis-SKU. Zie [VPN gateway sku's](./vpn-gateway-about-vpn-gateway-settings.md#gwsku)voor meer informatie.
 
 ![Azure VPN Gateway IKEv1-en IKEv2-verbindingen](./media/vpn-gateway-about-compliance-crypto/ikev1-ikev2-connections.png)
 

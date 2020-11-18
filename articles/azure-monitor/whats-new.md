@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 07/08/2020
-ms.openlocfilehash: c9679fec1d9c5d501ead03bcfbf28132d9e3b90a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 6ed00931e8cca1febac0b9b72b53eeb7e81042ea
+ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151811"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94487989"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Wat is er nieuw de documentatie van Azure Monitor?
 
@@ -157,7 +157,7 @@ In dit artikel vindt u een lijst met Azure Monitor-artikelen die nieuw of aanzie
 ### <a name="alerts"></a>Waarschuwingen
 - [Actieregels voor Azure Monitor-waarschuwingen](platform/alerts-action-rules.md) - CLI-processen toegevoegd.
 - [Actiegroepen maken en beheren in Azure Portal](platform/action-groups.md) - Bijgewerkt in overeenstemming met wijzigingen in UI.
-- [Opgeslagen query's in Azure Monitor Logboekanalyse](log-query/saved-queries.md) - Nieuw artikel.
+- [Voorbeeldquery's in Azure Monitor-logboekanalyse](log-query/example-queries.md): nieuw artikel.
 - [Problemen met logboekwaarschuwingen oplossen in Azure Monitor](platform/alerts-troubleshoot-log.md) - Sectie toegevoegd over het quotum voor waarschuwingsregels.
 - [Het oplossen van problemen met Azure waarschuwingen voor metrische gegevens](platform/alerts-troubleshoot-metric.md) - Sectie toegevoegd over een waarschuwingsregel voor een aangepaste metrische waarde die nog niet is verzonden.
 - [Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor](platform/alerts-metric-overview.md): Aanbeveling toegevoegd voor het selecteren van de granulariteit van aggregatie.

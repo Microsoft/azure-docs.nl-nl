@@ -5,16 +5,16 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/03/2020
+ms.date: 11/17/2020
 ms.author: normesta
 ms.reviewer: prishet
-ms.custom: devx-track-csharp
-ms.openlocfilehash: 2ab554f45de30bb676d2933a4a1268b6831ae4f5
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.custom: devx-track-csharp, devx-track-azurecli
+ms.openlocfilehash: ffd72ffb02e4875305177cf12fd19f538735b7d6
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659917"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844230"
 ---
 # <a name="set-access-control-lists-acls-recursively-for-azure-data-lake-storage-gen2"></a>Acl's (toegangs beheer lijsten) recursief instellen voor Azure Data Lake Storage Gen2
 
@@ -386,9 +386,11 @@ except Exception as e:
 
 ## <a name="set-an-acl-recursively"></a>Recursief instellen van een ACL
 
-Wanneer u een ACL *instelt* , **vervangt** u de volledige ACL, inclusief alle items. Als u het machtigings niveau van een beveiligingsprincipal wilt wijzigen of een nieuwe beveiligingsprincipal wilt toevoegen aan de ACL zonder dat dit van invloed is op andere bestaande vermeldingen, moet u de toegangs beheer lijst in plaats daarvan *bijwerken* . Als u een ACL wilt bijwerken in plaats van deze te vervangen, raadpleegt u de sectie [een recursief bijwerken van een ACL](#update-an-acl-recursively) in dit artikel.   
+Wanneer u een ACL *instelt* , **vervangt** u de volledige ACL, inclusief alle items. Als u het machtigings niveau van een beveiligingsprincipal wilt wijzigen of een nieuwe beveiligingsprincipal wilt toevoegen aan de ACL zonder dat dit van invloed is op andere bestaande vermeldingen, moet u de toegangs beheer lijst in plaats daarvan *bijwerken* . Als u een ACL wilt bijwerken in plaats van deze te vervangen, raadpleegt u de sectie [een recursief bijwerken van een ACL](#update-an-acl-recursively) in dit artikel.  
 
-Deze sectie bevat voor beelden voor het instellen van een ACL 
+Als u ervoor kiest om de ACL in te *stellen* , moet u een vermelding toevoegen voor de gebruiker die eigenaar is, een vermelding voor de groep die eigenaar is en een vermelding voor alle andere gebruikers. Zie [gebruikers en identiteiten](data-lake-storage-access-control.md#users-and-identities)voor meer informatie over de gebruiker die eigenaar is, de groep die eigenaar is en alle andere gebruikers. 
+
+Deze sectie bevat voor beelden voor het instellen van een ACL.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

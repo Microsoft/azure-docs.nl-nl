@@ -1,64 +1,83 @@
 ---
 title: Registraties van apparaten voor Azure IoT Hub Device Provisioning Service beheren in de Azure Portal
-description: Registraties van apparaten beheren voor uw Device Provisioning Service (DPS) in azure Portal
+description: Registraties van apparaten beheren voor uw Device Provisioning Service (DPS) in de Azure Portal
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/05/2018
+ms.date: 11/17/2020
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-manager: timlt
-ms.openlocfilehash: 2fbcacd7f2094f9b0b9dcea3fea4d804fd96923e
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+manager: eliotgra
+ms.openlocfilehash: 06c355b913d5b786455cae20d1a57eb8c63c3ee1
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92165312"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842933"
 ---
-# <a name="how-to-manage-device-enrollments-with-azure-portal"></a>Registratie van apparaten beheren met Azure Portal
+# <a name="how-to-manage-device-enrollments-with-azure-portal"></a>Inschrijvingen van apparaten beheren met Azure Portal
 
-Een *apparaatregistratie* maakt een record van één apparaat of een groep apparaten die op een bepaald moment bij de Azure-IOT hub Device Provisioning Service kunnen worden geregistreerd. De registratie record bevat de eerste gewenste configuratie voor de apparaten die deel uitmaken van deze inschrijving, inclusief de gewenste IoT-hub. In dit artikel leest u hoe u de registratie van apparaten voor uw inrichtings service kunt beheren.
+Een *apparaatregistratie* maakt een record van één apparaat of een groep apparaten die op een bepaald moment bij de Azure-IOT hub Device Provisioning Service kunnen worden geregistreerd. De registratie record bevat de initiële configuratie voor de apparaten die deel uitmaken van de registratie. Opgenomen in de configuratie is de IoT-hub waaraan een apparaat wordt toegewezen of een toewijzings beleid waarmee de hub van een set hubs wordt geconfigureerd. In dit artikel leest u hoe u de registratie van apparaten voor uw inrichtings service kunt beheren.
 
 
 ## <a name="create-a-device-enrollment"></a>Een apparaatinschrijving maken
 
 Er zijn twee manieren waarop u uw apparaten kunt inschrijven bij de inrichtings service:
 
-* Een **registratie groep** is een vermelding voor een groep apparaten die een gemeen schappelijk Attestation-mechanisme van X. 509-certificaten delen, ondertekend door hetzelfde handtekening certificaat, dat het [basis certificaat](https://docs.microsoft.com/azure/iot-dps/concepts-security#root-certificate) of het [tussenliggende certificaat](https://docs.microsoft.com/azure/iot-dps/concepts-security#intermediate-certificate)kan zijn, dat wordt gebruikt voor het produceren van een apparaat certificaat op een fysiek apparaat. U kunt het beste een registratie groep gebruiken voor een groot aantal apparaten die een gewenste initiële configuratie delen, of voor apparaten die allemaal naar dezelfde Tenant gaan. 
+* Een **registratie groep** is een vermelding voor een groep apparaten die een gemeen schappelijk Attestation-mechanisme delen. U kunt het beste een registratie groep gebruiken voor een groot aantal apparaten die een initiële configuratie delen, of voor apparaten die allemaal naar dezelfde Tenant gaan. Apparaten die gebruikmaken van [symmetrische sleutel](concepts-symmetric-key-attestation.md) of [X. 509-certificaten](concepts-x509-attestation.md) worden ondersteund. 
 
-    U kunt met behulp van de volgende stappen een inschrijvings groep maken in de portal voor een groep apparaten:
+    Zie de zelf studie [apparaten inrichten met symmetrische sleutels](how-to-legacy-device-symm-key.md) voor stapsgewijze instructies voor het maken en gebruiken van registratie groepen met symmetrische sleutels.
 
-  1. Meld u aan bij de Azure Portal en klik op **alle resources** in het menu aan de linkerkant.  
-  1. Klik in de lijst met resources op de Device Provisioning Service waarop u uw apparaat wilt registreren.  
-  1. In uw inrichtings service:  
-     a. Klik op **inschrijvingen beheren**en selecteer vervolgens het tabblad **registratie groepen** .  
-     b. Klik bovenaan op de knop **Toevoegen**.  
-     c. Wanneer het paneel registratie groep toevoegen wordt weer gegeven, voert u de gegevens voor de vermelding van de registratie lijst in.  **Groeps naam** is vereist. Selecteer ook "CA of tussenliggend" voor het **certificaat type**en upload het **primaire hoofd certificaat** voor de groep apparaten.  
-     d. Klik op **Opslaan**. Wanneer u de registratie groep hebt gemaakt, ziet u dat de groeps naam wordt weer gegeven op het tabblad **registratie groepen** .  
+    U maakt een registratie groep in de portal voor een groep apparaten door de volgende stappen uit te voeren:
 
-     [![Registratie groep in de portal](./media/how-to-manage-enrollments/group-enrollment.png)](./media/how-to-manage-enrollments/group-enrollment.png#lightbox)
+    1. Meld u aan bij de Azure Portal en klik op **alle resources** in het menu aan de linkerkant.  
+    1. Klik in de lijst met resources op de Device Provisioning Service waarop u uw apparaat wilt registreren.  
+    1. Klik in uw inrichtings service op **registraties beheren** en klik bovenaan op de knop **registratie groep toevoegen** .  
+     
+        ![Registratie groep in de portal](./media/how-to-manage-enrollments/add-group-enrollment.png)
+        
+    1. Wanneer het paneel registratie groep toevoegen wordt weer gegeven, voert u de gegevens voor uw inschrijving in en klikt u op **Opslaan**.  
+     
+        [![Een registratie groep toevoegen aan de portal](./media/how-to-manage-enrollments/group-enrollment.png)](./media/how-to-manage-enrollments/group-enrollment.png#lightbox)
+        
+        | Veld | Beschrijving |
+        | :--- | :--- |
+        | **Groepsnaam** | De vereiste naam voor uw groep apparaten. |
+        | **Type verklaring** | Klik op **certificaat** of **symmetrische sleutel** voor het Attestation-type, afhankelijk van de Attestation-methode die uw apparaten zullen gebruiken. |
+        | **Certificaat type** | Beschikbaar als u certificaat Attestation gebruikt. Selecteer **CA-certificaat** of **tussenliggende** waarde op basis van het certificaat dat uw apparaat certificaten heeft ondertekend. |
+        | **Primair certificaat** | Als u de certificaten van uw apparaat wilt ondertekenen met een basis-CA-certificaat, moet het certificaat [van](how-to-verify-certificates.md) de basis-CA zijn voltooid. Vervolgens kunt u deze selecteren als **primair certificaat** voor de groep apparaten.<br><br>Als u de certificaten van uw apparaat met een tussenliggend certificaat ondertekent, is een knop uploaden beschikbaar waarmee u uw tussenliggende certificaat kunt uploaden. Voor het certificaat dat de tussenliggende hand tekening heeft ondertekend, moet ook het [bewijs worden genoteerd](how-to-verify-certificates.md) . |
+
+        
     
 
-* Een **afzonderlijke inschrijving** is een vermelding voor één apparaat dat kan worden geregistreerd. Individuele inschrijvingen kunnen ofwel x509-certificaten of SAS-tokens (van een fysieke of virtuele TPM) als Attestation-mechanismen gebruiken. We raden u aan om afzonderlijke inschrijvingen te gebruiken voor apparaten die unieke initiële configuraties vereisen, of voor apparaten die alleen SAS-tokens via TPM of virtuele TPM kunnen gebruiken als Attestation-mechanisme. Afzonderlijke inschrijvingen hebben mogelijk de gewenste apparaat-id voor IoT Hub die is opgegeven.
+* Een **Individuele inschrijving** is een vermelding voor één apparaat dat kan worden toegewezen aan een IOT-hub. Apparaten die gebruikmaken van [symmetrische sleutels](concepts-symmetric-key-attestation.md), [X. 509-certificaten](concepts-x509-attestation.md)en [TPM-Attestation](concepts-tpm-attestation.md) worden ondersteund. 
 
     U kunt met behulp van de volgende stappen een afzonderlijke inschrijving maken in de portal:
 
     1. Meld u aan bij de Azure Portal en klik op **alle resources** in het menu aan de linkerkant.
     1. Klik in de lijst met resources op de Device Provisioning Service waarop u uw apparaat wilt registreren.
-    1. In uw inrichtings service:  
-       a. Klik op **inschrijvingen beheren**en selecteer vervolgens het tabblad **afzonderlijke registraties** .  
-       b. Klik bovenaan op de knop **Toevoegen**.   
-       c. Wanneer het deel venster inschrijving toevoegen wordt weer gegeven, voert u de gegevens voor de vermelding van de registratie lijst in. Selecteer eerst het Attestation- **mechanisme** voor het apparaat (X. 509 of TPM). X. 509-Attestation vereist dat u het primaire Leaf- **certificaat** voor het apparaat uploadt. Voor TPM moet u de **Attestation-sleutel** en **registratie-id** voor het apparaat invoeren.  
-       d. Klik op **Opslaan**. Wanneer u de registratie groep hebt gemaakt, ziet u dat uw apparaat wordt weer gegeven op het tabblad **afzonderlijke registraties** .  
+    1. Klik in uw inrichtings service op **registraties beheren** en klik vervolgens op de knop **afzonderlijke registratie toevoegen** bovenaan.   
 
-       [![Afzonderlijke inschrijving in de portal](./media/how-to-manage-enrollments/individual-enrollment.png)](./media/how-to-manage-enrollments/individual-enrollment.png#lightbox)
+       [![Een afzonderlijke inschrijving in de portal toevoegen](./media/how-to-manage-enrollments/add-individual-enrollment.png)](./media/how-to-manage-enrollments/add-individual-enrollment.png#lightbox)
+
+    1. Wanneer het deel venster inschrijving toevoegen wordt weer gegeven, voert u de gegevens voor de inschrijving van het individuele apparaat in en klikt u op **Opslaan**. 
+     
+        [![Afzonderlijke inschrijving in de portal](./media/how-to-manage-enrollments/individual-enrollment.png)](./media/how-to-manage-enrollments/individual-enrollment.png#lightbox)
+    
+        | Veld | Beschrijving |
+        | :--- | :--- |
+        | **Mechanisme** | Selecteer **X. 509**, **TPM** of **symmetrische sleutel** voor het Attestation-mechanisme dat moet worden gebruikt, afhankelijk van de Attestation-methode die uw apparaten gebruiken. |
+        | Attestation-instellingen | Voor stapsgewijze instructies over het maken en gebruiken van afzonderlijke inschrijvingen met symmetrische sleutels of X. 509-certificaten, zie een van de [richt lijnen voor een symmetrisch apparaat](quick-create-simulated-device-symmetric-key-java.md#create-a-device-enrollment) of het [inrichten van een X. 509-certificaat apparaat](quick-create-simulated-device-x509-java.md#create-a-self-signed-x509-device-certificate-and-individual-enrollment-entry) Quick starts.<br><br>Zie een van de voor beelden van [een gesimuleerd TPM-apparaat](quick-create-simulated-device-tpm-java.md#create-a-device-enrollment-entry) voor stapsgewijze instructies voor het maken en gebruiken van afzonderlijke inschrijvingen met behulp van TPM-Attestation.|
+        | **IoT Hub apparaat-ID** |  Deze ID geeft uw apparaat weer. Het moet de regels voor een apparaat-ID volgen. Zie Eigenschappen van identiteit van [apparaat](../iot-hub/iot-hub-devguide-identity-registry.md#device-identity-properties)voor meer informatie.<br><br>Wanneer u X. 509-certificaten gebruikt, moet deze tekst de onderwerpnaam zijn van het certificaat van het apparaat dat u voor de registratie uploadt. De onderwerpnaam moet voldoen aan de regels voor een apparaat-ID.|
+            
+
 
 ## <a name="update-an-enrollment-entry"></a>Een inschrijvings vermelding bijwerken
 U kunt een bestaande inschrijvings vermelding in de portal bijwerken met behulp van de volgende stappen:
 
 1. Open uw Device Provisioning Service in de Azure Portal en klik op **inschrijvingen beheren**. 
 1. Navigeer naar de inschrijvings vermelding die u wilt wijzigen. Klik op het item om een samen vatting te openen van de registratie van uw apparaat. 
-1. Op deze pagina kunt u andere items dan het beveiligings type en de referenties wijzigen, zoals de IoT-hub waaraan het apparaat moet worden gekoppeld, evenals de apparaat-ID. U kunt ook de eerste dubbele status van het apparaat wijzigen. 
+1. Op deze pagina kunt u andere items dan het beveiligings type en de referenties wijzigen, zoals de IoT-hub waaraan het apparaat moet worden gekoppeld en de apparaat-ID. U kunt ook de eerste dubbele status van het apparaat wijzigen. 
 1. Zodra u klaar bent, klikt u op **Opslaan** om de registratie van uw apparaat bij te werken. 
 
     ![Inschrijving in de portal bijwerken](./media/how-to-manage-enrollments/update-enrollment.png)

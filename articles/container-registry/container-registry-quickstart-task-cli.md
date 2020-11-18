@@ -3,13 +3,13 @@ title: 'Quickstart: een containerinstallatiekopie op aanvraag bouwen in Azure'
 description: Gebruik Azure Container Registry-opdrachten om snel een docker-container installatiekopie op aanvraag te bouwen, te pushen en uit te voeren in de Azure-Cloud.
 ms.topic: quickstart
 ms.date: 09/25/2020
-ms.custom: contperfq1
-ms.openlocfilehash: 1b4dcc05747ceae52c649c366c3faf437e77b560
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.custom: contperfq1, devx-track-azurecli
+ms.openlocfilehash: adb63b716172c979ca31f1ef70bf1523ff1ad5cc
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098906"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845047"
 ---
 # <a name="quickstart-build-and-run-a-container-image-using-azure-container-registry-tasks"></a>Quickstart: Een containerinstallatiekopie bouwen en uitvoeren met Azure Container Registry-taken
 
@@ -42,7 +42,7 @@ az acr create --resource-group myResourceGroup \
   --name myContainerRegistry008 --sku Basic
 ```
 
-In dit voorbeeld maakt u een *Basic* -register. Dit is een voor kosten geoptimaliseerde optie voor ontwikkelaars die meer willen leren over Azure Container Registry. Zie [Servicelagen voor Container Registry][container-registry-skus] voor meer informatie over de beschikbare servicelagen.
+In dit voorbeeld maakt u een *Basic*-register. Dit is een voor kosten geoptimaliseerde optie voor ontwikkelaars die meer willen leren over Azure Container Registry. Zie [Servicelagen voor Container Registry][container-registry-skus] voor meer informatie over de beschikbare servicelagen.
 
 ## <a name="build-and-push-image-from-a-dockerfile"></a>Een installatiekopie bouwen en pushen vanaf een Dockerfile
 

@@ -8,12 +8,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/10/2020
-ms.openlocfilehash: 9afab87e0d7f0e7a9e5c05b36ace1dfc09c9aa9f
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a9a90fbb2eedd6db2873d4ac2a5fea94c05c7eed
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92548027"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844741"
 ---
 # <a name="azure-hdinsight-double-encryption-for-data-at-rest"></a>Dubbele versleuteling van Azure HDInsight voor Data-at-rest
 
@@ -71,17 +71,17 @@ Zie [een door de gebruiker toegewezen beheerde identiteit maken](../active-direc
 
 ### <a name="create-azure-key-vault"></a>Azure Key Vault maken
 
-Een sleutelkluis maken. Zie [Azure Key Vault maken](../key-vault/secrets/quick-create-portal.md) voor specifieke stappen.
+Een sleutelkluis maken. Zie [Azure Key Vault maken](../key-vault/general/quick-create-portal.md) voor specifieke stappen.
 
 HDInsight ondersteunt alleen Azure Key Vault. Als u uw eigen sleutel kluis hebt, kunt u uw sleutels importeren in Azure Key Vault. Houd er rekening mee dat voor de sleutel kluis **voorlopig verwijderen** moet zijn ingeschakeld. Ga voor meer informatie over het importeren van bestaande sleutels naar [sleutels, geheimen en certificaten](../key-vault/general/about-keys-secrets-certificates.md).
 
 ### <a name="create-key"></a>Sleutel maken
 
-1. Navigeer vanuit uw nieuwe sleutel kluis naar **instellingen**  >  **sleutels**  >  **+ genereren/importeren** .
+1. Navigeer vanuit uw nieuwe sleutel kluis naar **instellingen**  >  **sleutels**  >  **+ genereren/importeren**.
 
     ![Een nieuwe sleutel in Azure Key Vault genereren](./media/disk-encryption/create-new-key.png "Een nieuwe sleutel in Azure Key Vault genereren")
 
-1. Geef een naam op en selecteer **maken** . Het standaard **sleutel type** van **RSA** onderhouden.
+1. Geef een naam op en selecteer **maken**. Het standaard **sleutel type** van **RSA** onderhouden.
 
     ![genereert sleutel naam](./media/disk-encryption/create-key.png "Sleutel naam genereren")
 
@@ -95,7 +95,7 @@ HDInsight ondersteunt alleen Azure Key Vault. Als u uw eigen sleutel kluis hebt,
 
 ### <a name="create-access-policy"></a>Toegangs beleid maken
 
-1. Ga vanuit de nieuwe sleutel kluis naar **instellingen**  >  **toegangs beleid**  >  **+ toegangs beleid toevoegen** .
+1. Ga vanuit de nieuwe sleutel kluis naar **instellingen**  >  **toegangs beleid**  >  **+ toegangs beleid toevoegen**.
 
     ![Nieuw toegangs beleid voor Azure Key Vault maken](./media/disk-encryption/key-vault-access-policy.png)
 
@@ -103,15 +103,15 @@ HDInsight ondersteunt alleen Azure Key Vault. Als u uw eigen sleutel kluis hebt,
 
     |Eigenschap |Beschrijving|
     |---|---|
-    |Sleutel machtigingen|Selecteer **ophalen** , **deterugloop sleutel** en **Terugloop sleutel** .|
-    |Geheime machtigingen|Selecteer **ophalen** , **instellen** en **verwijderen** .|
+    |Sleutel machtigingen|Selecteer **ophalen**, **deterugloop sleutel** en **Terugloop sleutel**.|
+    |Geheime machtigingen|Selecteer **ophalen**, **instellen** en **verwijderen**.|
     |Principal selecteren|Selecteer de door de gebruiker toegewezen beheerde identiteit die u eerder hebt gemaakt.|
 
     ![Selecteer de principal voor Azure Key Vault toegangs beleid instellen](./media/disk-encryption/azure-portal-add-access-policy.png)
 
-1. Selecteer **Toevoegen** .
+1. Selecteer **Toevoegen**.
 
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
     ![Azure Key Vault toegangs beleid opslaan](./media/disk-encryption/add-key-vault-access-policy-save.png)
 
@@ -359,7 +359,7 @@ Er zijn mogelijk scenario's waarin u mogelijk de versleutelings sleutels wilt wi
 
 #### <a name="using-the-azure-portal"></a>Azure Portal gebruiken
 
-Als u de sleutel wilt draaien, hebt u de URL van de basis sleutel kluis nodig. Als u dat hebt gedaan, gaat u naar de sectie eigenschappen van HDInsight-cluster in de portal en klikt u op de **sleutel wijzigen** onder URL voor de **schijf versleutelings sleutel** . Voer in de nieuwe sleutel-URL in en verzend de sleutel om deze te draaien.
+Als u de sleutel wilt draaien, hebt u de URL van de basis sleutel kluis nodig. Als u dat hebt gedaan, gaat u naar de sectie eigenschappen van HDInsight-cluster in de portal en klikt u op de **sleutel wijzigen** onder URL voor de **schijf versleutelings sleutel**. Voer in de nieuwe sleutel-URL in en verzend de sleutel om deze te draaien.
 
 ![schijf versleutelings sleutel draaien](./media/disk-encryption/change-key.png)
 

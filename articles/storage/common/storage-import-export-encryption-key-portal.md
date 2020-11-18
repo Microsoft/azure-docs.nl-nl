@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 4362b579b7f01570a2b5fd072bf53ad495797cd8
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: fb91a490083629101470565a630b659c090e071b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92783773"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843363"
 ---
 # <a name="use-customer-managed-keys-in-azure-key-vault-for-importexport-service"></a>Door de klant beheerde sleutels gebruiken in Azure Key Vault voor de import/export-service
 
@@ -33,7 +33,7 @@ Zorg voordat u begint voor het volgende:
     - [Een import taak maken voor bestanden](storage-import-export-data-to-files.md).
     - [Een export taak maken voor blobs](storage-import-export-data-from-blobs.md)
 
-2. U hebt een bestaande Azure Key Vault met een sleutel die u kunt gebruiken om uw BitLocker-sleutel te beveiligen. Voor informatie over het maken van een sleutel kluis met behulp van de Azure Portal, raadpleegt u [Quick Start: een geheim instellen en ophalen van Azure Key Vault met behulp van de Azure Portal](../../key-vault/secrets/quick-create-portal.md).
+2. U hebt een bestaande Azure Key Vault met een sleutel die u kunt gebruiken om uw BitLocker-sleutel te beveiligen. Ga voor meer informatie over het maken van een sleutel kluis met behulp van de Azure Portal naar [Quick Start: een Azure Key Vault maken met behulp van de Azure Portal](../../key-vault/general/quick-create-portal.md).
 
     - **Voorlopig verwijderen** en **niet wissen** worden ingesteld op uw bestaande Key Vault. Deze eigenschappen zijn niet standaard ingeschakeld. Als u deze eigenschappen wilt inschakelen, raadpleegt u de secties het **inschakelen van zacht verwijderen** en het inschakelen van de **beveiliging opschonen** in een van de volgende artikelen:
 
@@ -48,7 +48,7 @@ Zorg voordat u begint voor het volgende:
 Het configureren van door de klant beheerde sleutel voor uw import/export-service is optioneel. De import/export-service maakt standaard gebruik van een door micro soft beheerde sleutel voor het beveiligen van uw BitLocker-sleutel. Voer de volgende stappen uit om door de klant beheerde sleutels in te scha kelen in de Azure Portal:
 
 1. Ga naar de Blade **overzicht** voor uw import taak.
-2. Selecteer in het rechterdeel venster **kiezen hoe uw BitLocker-sleutels moeten worden versleuteld** .
+2. Selecteer in het rechterdeel venster **kiezen hoe uw BitLocker-sleutels moeten worden versleuteld**.
 
     ![Versleutelings optie kiezen](./media/storage-import-export-encryption-key-portal/encryption-key-1.png)
 
@@ -56,7 +56,7 @@ Het configureren van door de klant beheerde sleutel voor uw import/export-servic
 
     ![BitLocker-sleutel weer geven](./media/storage-import-export-encryption-key-portal/encryption-key-2.png)
 
-4. U hebt de optie om een door de klant beheerde sleutel op te geven. Nadat u de door de klant beheerde sleutel hebt geselecteerd, **selecteert u sleutel kluis en een sleutel** .
+4. U hebt de optie om een door de klant beheerde sleutel op te geven. Nadat u de door de klant beheerde sleutel hebt geselecteerd, **selecteert u sleutel kluis en een sleutel**.
 
     ![Door de klant beheerde sleutel selecteren](./media/storage-import-export-encryption-key-portal/encryption-key-3.png)
 
@@ -64,11 +64,11 @@ Het configureren van door de klant beheerde sleutel voor uw import/export-servic
 
     ![Azure Key Vault selecteren of maken](./media/storage-import-export-encryption-key-portal/encryption-key-4.png)
 
-6. U kunt ook **nieuwe maken** selecteren om een nieuwe sleutel kluis te maken. Voer op de **Blade sleutel kluis maken** de resource groep en de naam van de sleutel kluis in. Accepteer alle overige standaard waarden. Selecteer **Controleren + maken** .
+6. U kunt ook **nieuwe maken** selecteren om een nieuwe sleutel kluis te maken. Voer op de **Blade sleutel kluis maken** de resource groep en de naam van de sleutel kluis in. Accepteer alle overige standaard waarden. Selecteer **Controleren + maken**.
 
     ![Nieuwe Azure Key Vault maken](./media/storage-import-export-encryption-key-portal/encryption-key-5.png)
 
-7. Controleer de informatie die is gekoppeld aan uw sleutel kluis en selecteer **maken** . Wacht enkele minuten totdat de sleutel kluis is gemaakt.
+7. Controleer de informatie die is gekoppeld aan uw sleutel kluis en selecteer **maken**. Wacht enkele minuten totdat de sleutel kluis is gemaakt.
 
     ![Azure Key Vault maken](./media/storage-import-export-encryption-key-portal/encryption-key-6.png)
 
@@ -80,11 +80,11 @@ Het configureren van door de klant beheerde sleutel voor uw import/export-servic
 
     Als de beveiliging voor voorlopig verwijderen en leegmaken niet is ingeschakeld wanneer u de sleutel kluis maakt, wordt de sleutel kluis bijgewerkt zodat de beveiliging van de functie voor verwijderen en leegmaken is ingeschakeld.
 
-10. Geef de naam voor de sleutel op, accepteer de andere standaard waarden en selecteer **maken** .
+10. Geef de naam voor de sleutel op, accepteer de andere standaard waarden en selecteer **maken**.
 
     ![Nieuwe sleutel maken](./media/storage-import-export-encryption-key-portal/encryption-key-8.png)
 
-11. Selecteer de **versie** en kies vervolgens **selecteren** . U wordt gewaarschuwd dat er een sleutel in uw sleutel kluis is gemaakt.
+11. Selecteer de **versie** en kies vervolgens **selecteren**. U wordt gewaarschuwd dat er een sleutel in uw sleutel kluis is gemaakt.
 
     ![Nieuwe sleutel gemaakt in sleutel kluis](./media/storage-import-export-encryption-key-portal/encryption-key-9.png)
 

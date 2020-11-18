@@ -11,12 +11,12 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: 4c817194bbe0e4cf211992920bad9deb40bf05f4
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: b4902e1fb7a2a181d3d5b2ce2ac6d1d458500fce
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632206"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844179"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Problemen met de uitvoering van pakketten oplossen in SSIS Integration runtime
 
@@ -121,14 +121,14 @@ Deze fout treedt op wanneer de SSIS Integration runtime geen toegang kan krijgen
 
 ### <a name="error-message-microsoft-ole-db-provider-for-analysis-services-hresult-0x80004005-description-com-error-com-error-mscorlib-exception-has-been-thrown-by-the-target-of-an-invocation"></a>Fout bericht: micro soft OLE DB provider voor Analysis Services. HRESULT: 0x80004005 beschrijving: COM-fout: COM-fout: mscorlib; Er is een uitzonde ring opgetreden bij het doel van een aanroep.
 
-Een mogelijke oorzaak is dat de gebruikers naam of het wacht woord waarvoor Azure Multi-Factor Authentication is ingeschakeld, is geconfigureerd voor Azure Analysis Services-verificatie. Deze authenticatie wordt niet ondersteund in de SSIS Integration runtime. Probeer een service-principal te gebruiken voor Azure Analysis Services authenticatie:
+Een mogelijke oorzaak is dat de gebruikers naam of het wacht woord waarvoor Azure AD Multi-Factor Authentication is ingeschakeld, is geconfigureerd voor Azure Analysis Services-verificatie. Deze authenticatie wordt niet ondersteund in de SSIS Integration runtime. Probeer een service-principal te gebruiken voor Azure Analysis Services authenticatie:
 
 1. Bereid een service-principal voor zoals beschreven in [Automation met Service-principals](../analysis-services/analysis-services-service-principal.md).
-2. Configureer in verbindings beheer **een specifieke gebruikers naam en wacht woord gebruiken** : Stel **AppID** in als de gebruikers naam en **clientSecret** als wacht woord.
+2. Configureer in verbindings beheer **een specifieke gebruikers naam en wacht woord gebruiken**: Stel **AppID** in als de gebruikers naam en **clientSecret** als wacht woord.
 
 ### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-a-managed-identity"></a>Fout bericht: de ADONET-bron kan de verbinding {GUID} niet verkrijgen met het volgende fout bericht: de aanmelding is mislukt voor de gebruiker ' NT AUTHORITY\ANONYMOUS LOGON ' ' bij het gebruik van een beheerde identiteit
 
-Zorg ervoor dat u de verificatie methode van verbindings beheer niet configureert als **Active Directory wachtwoord verificatie** wanneer de para meter *ConnectUsingManagedIdentity* is ingesteld op **True** . U kunt het configureren als **SQL-verificatie** in plaats daarvan, wat wordt genegeerd als *ConnectUsingManagedIdentity* is ingesteld.
+Zorg ervoor dat u de verificatie methode van verbindings beheer niet configureert als **Active Directory wachtwoord verificatie** wanneer de para meter *ConnectUsingManagedIdentity* is ingesteld op **True**. U kunt het configureren als **SQL-verificatie** in plaats daarvan, wat wordt genegeerd als *ConnectUsingManagedIdentity* is ingesteld.
 
 ### <a name="error-message-0xc020801f-at--odata-source--cannot-acquire-a-managed-connection-from-the-run-time-connection-manager"></a>Fout bericht: "0xC020801F at..., OData-bron [...]: kan geen beheerde verbinding verkrijgen vanuit het run-time verbindings beheer"
 

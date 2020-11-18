@@ -3,12 +3,12 @@ title: Een Jupyter Notebook-project exporteren vanuit de Azure Notebooks Preview
 description: Exporteer snel een Jupyter Notebook-project.
 ms.topic: quickstart
 ms.date: 06/29/2020
-ms.openlocfilehash: 3153247b9d15167ab437d6c46142bbd41f8e4b23
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: ea16bd61b542217fb6f2d5ba1d926a0bc19d4cce
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90030443"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844417"
 ---
 # <a name="quickstart-export-a-jupyter-notebook-project-in-azure-notebooks-preview"></a>Een Jupyter Notebook-project exporteren in Azure Notebooks Preview
 
@@ -79,7 +79,7 @@ Azure Machine Learning biedt een end-to-end machine learning-platform waarmee ge
 1. Selecteer in de navigatiebalk aan de linkerkant **Notebooks**.
 1. Klik op de knop **Bestanden uploaden** en upload de projectbestanden die u hebt gedownload van Azure Notebooks.
 
-Voor aanvullende informatie over Azure ML en het uitvoeren van Jupyter Notebooks, kunt u de [documentatie](../machine-learning/how-to-run-jupyter-notebooks.md) raadplegen of de module [Inleiding tot machine learning](https://docs.microsoft.com/learn/modules/intro-to-azure-machine-learning-service/) op Microsoft Learn proberen.
+Voor aanvullende informatie over Azure ML en het uitvoeren van Jupyter Notebooks, kunt u de [documentatie](../machine-learning/how-to-run-jupyter-notebooks.md) raadplegen of de module [Inleiding tot machine learning](/learn/modules/intro-to-azure-machine-learning-service/) op Microsoft Learn proberen.
 
 
 ## <a name="use-azure-lab-services"></a>Azure Lab Services gebruiken

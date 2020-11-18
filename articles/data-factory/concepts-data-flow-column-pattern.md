@@ -6,13 +6,13 @@ ms.author: makromer
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 09/16/2020
-ms.openlocfilehash: dab065f4d2b025fa15966d81b66b41acb12c54b3
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.date: 11/17/2020
+ms.openlocfilehash: 68c211608cfceedaa9d13a595be6d1e5de17f1d5
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027122"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845000"
 ---
 # <a name="using-column-patterns-in-mapping-data-flow"></a>Kolom patronen gebruiken bij het toewijzen van gegevens stroom
 
@@ -23,11 +23,11 @@ Met verschillende toewijzings gegevensstroom transformaties kunt u verwijzen naa
 * Als binnenkomende bron velden vaak veranderen, zoals het wijzigen van kolommen in tekst bestanden of NoSQL-data bases. Dit scenario wordt schema- [drift](concepts-data-flow-schema-drift.md)genoemd.
 * Als u een gemeen schappelijke bewerking wilt uitvoeren op een grote groep kolommen. Bijvoorbeeld wilt dat elke kolom met ' Total ' in een dubbele waarde wordt omgezet in de kolom naam.
 
-Kolom patronen zijn momenteel beschikbaar in de afgeleide kolom, aggregatie, selecteren en Sink-trans formaties.
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4Iui1]
 
 ## <a name="column-patterns-in-derived-column-and-aggregate"></a>Kolom patronen in afgeleide kolom en aggregatie
 
-Als u een kolom patroon wilt toevoegen in een afgeleide kolom, aggregatie of venster transformatie, klikt u **op boven de** kolom lijst of het plus-pictogram naast een bestaande afgeleide kolom. Kies **kolom patroon toevoegen** .
+Als u een kolom patroon wilt toevoegen in een afgeleide kolom, aggregatie of venster transformatie, klikt u **op boven de** kolom lijst of het plus-pictogram naast een bestaande afgeleide kolom. Kies **kolom patroon toevoegen**.
 
 ![Scherm afbeelding toont het plus pictogram om het kolom patroon toe te voegen.](media/data-flow/add-column-pattern.png "Kolompatronen")
 
@@ -43,11 +43,17 @@ Als u wilt controleren of uw overeenkomende voor waarde juist is, kunt u het uit
 
 ![Scherm afbeelding toont het tabblad uitvoer schema.](media/data-flow/columnpattern3.png "Kolompatronen")
 
+### <a name="hierarchical-pattern-matching"></a>Hiërarchisch patroon vergelijking
+
+U kunt ook patroon vergelijking maken binnen complexe hiërarchische structuren. Vouw de sectie uit `Each MoviesStruct that matches` waarin u wordt gevraagd naar elke hiërarchie in uw gegevens stroom. U kunt vervolgens overeenkomende patronen maken voor eigenschappen binnen de gekozen hiërarchie.
+
+![Scherm opname toont het hiërarchische kolom patroon.](media/data-flow/patterns-hierarchy.png "Kolom patronen in hiërarchieën")
+
 ## <a name="rule-based-mapping-in-select-and-sink"></a>Toewijzing op basis van een regel in SELECT en Sink
 
 Bij het toewijzen van kolommen in de bron en het selecteren van trans formaties, kunt u een vaste toewijzing of op regels gebaseerde toewijzingen toevoegen. Overeenkomst op basis van `name` de `type` kolommen,, `stream` , `origin` en `position` . U kunt een combi natie van vaste en op regels gebaseerde toewijzingen hebben. Standaard worden alle projecties met meer dan 50 kolommen standaard ingesteld op een op een regel gebaseerde toewijzing die overeenkomt met elke kolom en de naam die is gegenereerd, wordt uitgevoerd. 
 
-Als u een op een regel gebaseerde toewijzing wilt toevoegen, klikt u op **toewijzing toevoegen** en selecteert u **toewijzing op basis van een regel** .
+Als u een op een regel gebaseerde toewijzing wilt toevoegen, klikt u op **toewijzing toevoegen** en selecteert u **toewijzing op basis van een regel**.
 
 ![Scherm afbeelding toont toewijzing op basis van een regel die is geselecteerd vanuit toewijzing toevoegen.](media/data-flow/rule2.png "Toewijzing op basis van een regel")
 
@@ -77,7 +83,7 @@ Het bovenstaande voor beeld komt overeen met alle subkolomsen van een complexe k
 
 ## <a name="pattern-matching-expression-values"></a>Patroon waarden die overeenkomen met de expressie.
 
-* `$$` wordt omgezet naar de naam of waarde van elk match tijdens runtime
+* `$$` wordt omgezet naar de naam of waarde van elk match tijdens runtime. Denk aan `$$` als gelijk aan `this` .
 * `name` vertegenwoordigt de naam van elke binnenkomende kolom
 * `type` vertegenwoordigt het gegevens type van elke binnenkomende kolom
 * `stream` vertegenwoordigt de naam die is gekoppeld aan elke stroom of trans formatie in uw stroom

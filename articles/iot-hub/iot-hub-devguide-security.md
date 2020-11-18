@@ -16,12 +16,13 @@ ms.custom:
 - 'Role: Operations'
 - devx-track-js
 - devx-track-csharp
-ms.openlocfilehash: 93b692574588396f776c4d62bd24072382ae8471
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+- devx-track-azurecli
+ms.openlocfilehash: 8627681d843d15658882529424375486a4cdb1b9
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912137"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845166"
 ---
 # <a name="control-access-to-iot-hub"></a>Toegang tot IoT Hub regelen
 
@@ -43,7 +44,7 @@ U moet de juiste machtigingen hebben voor toegang tot een van de IoT Hub-eind pu
 
 U kunt op de volgende manieren [machtigingen](#iot-hub-permissions) verlenen:
 
-* **Beleid voor gedeelde toegang tot IOT hub-niveau** . Beleid voor gedeelde toegang kan elke combi natie van [machtigingen](#iot-hub-permissions)verlenen. U kunt beleids regels definiëren in de [Azure Portal](https://portal.azure.com), programmatisch met behulp van de [IOT hub resource rest-api's](/rest/api/iothub/iothubresource)of met de [AZ IOT hub Policy](/cli/azure/iot/hub/policy) cli. Een nieuw gemaakte IoT-hub heeft het volgende standaard beleid:
+* **Beleid voor gedeelde toegang tot IOT hub-niveau**. Beleid voor gedeelde toegang kan elke combi natie van [machtigingen](#iot-hub-permissions)verlenen. U kunt beleids regels definiëren in de [Azure Portal](https://portal.azure.com), programmatisch met behulp van de [IOT hub resource rest-api's](/rest/api/iothub/iothubresource)of met de [AZ IOT hub Policy](/cli/azure/iot/hub/policy) cli. Een nieuw gemaakte IoT-hub heeft het volgende standaard beleid:
   
   | Beleid voor gedeelde toegang | Machtigingen |
   | -------------------- | ----------- |
@@ -53,7 +54,7 @@ U kunt op de volgende manieren [machtigingen](#iot-hub-permissions) verlenen:
   | registryRead | **RegistryRead** -machtigingen |
   | registryReadWrite | **RegistryRead** -en **RegistryWrite** -machtigingen |
 
-* **Beveiligings referenties per apparaat** . Elke IoT Hub bevat een [id-REGI ster](iot-hub-devguide-identity-registry.md) voor elk apparaat in dit id-REGI ster, kunt u beveiligings referenties configureren waarmee **DeviceConnect** -machtigingen worden toegewezen aan de bijbehorende eind punten van het apparaat.
+* **Beveiligings referenties per apparaat**. Elke IoT Hub bevat een [id-REGI ster](iot-hub-devguide-identity-registry.md) voor elk apparaat in dit id-REGI ster, kunt u beveiligings referenties configureren waarmee **DeviceConnect** -machtigingen worden toegewezen aan de bijbehorende eind punten van het apparaat.
 
 Bijvoorbeeld in een typische IoT-oplossing:
 
@@ -116,7 +117,7 @@ Bij het gebruik van SASL PLAIN met AMQP kan een client die verbinding maakt met 
 
 ## <a name="scope-iot-hub-level-credentials"></a>Scope IoT-referenties voor hub-niveau
 
-U kunt het beveiligings beleid voor IoT hub-niveau bereiken door tokens met een beperkte resource-URI te maken. Bijvoorbeeld, het eind punt voor het verzenden van apparaat-naar-Cloud-berichten van een apparaat is **/devices/{deviceId}/messages/events** . U kunt ook een beleid voor gedeelde toegang op IoT-niveau gebruiken met **DeviceConnect** -machtigingen voor het ondertekenen van een token waarvan de resourceURI **/devices/{deviceId}** is. Deze benadering maakt een token dat alleen kan worden gebruikt voor het verzenden van berichten namens de **deviceId** van het apparaat.
+U kunt het beveiligings beleid voor IoT hub-niveau bereiken door tokens met een beperkte resource-URI te maken. Bijvoorbeeld, het eind punt voor het verzenden van apparaat-naar-Cloud-berichten van een apparaat is **/devices/{deviceId}/messages/events**. U kunt ook een beleid voor gedeelde toegang op IoT-niveau gebruiken met **DeviceConnect** -machtigingen voor het ondertekenen van een token waarvan de resourceURI **/devices/{deviceId}** is. Deze benadering maakt een token dat alleen kan worden gebruikt voor het verzenden van berichten namens de **deviceId** van het apparaat.
 
 Dit mechanisme is vergelijkbaar met het [beleid](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab)van de Event hubs-Uitgever en biedt u de mogelijkheid om aangepaste verificatie methoden te implementeren.
 
@@ -144,13 +145,13 @@ Dit zijn de verwachte waarden:
 
 | Waarde | Beschrijving |
 | --- | --- |
-| ondertekening |Een HMAC-SHA256-handtekening teken reeks van het formulier: `{URL-encoded-resourceURI} + "\n" + expiry` . **Belang rijk** : de sleutel wordt gedecodeerd op basis van base64 en gebruikt als sleutel voor het uitvoeren van de HMAC-sha256-berekening. |
+| ondertekening |Een HMAC-SHA256-handtekening teken reeks van het formulier: `{URL-encoded-resourceURI} + "\n" + expiry` . **Belang rijk**: de sleutel wordt gedecodeerd op basis van base64 en gebruikt als sleutel voor het uitvoeren van de HMAC-sha256-berekening. |
 | ResourceURI |URI-voor voegsel (per segment) van de eind punten die toegankelijk zijn met dit token, beginnend met de hostnaam van de IoT hub (geen Protocol). Bijvoorbeeld: `myHub.azure-devices.net/devices/device1` |
 | verloop |UTF8-teken reeksen voor het aantal seconden sinds de epoche 00:00:00 UTC op 1 januari 1970. |
 | {URL-encoded-resourceURI} |Kleine letter-URL-code ring van de resource-URI voor kleine letters |
 | PolicyName |De naam van het gedeelde toegangs beleid waarnaar dit token verwijst. Niet aanwezig als het token naar de register referenties van het apparaat verwijst. |
 
-**Opmerking op voor voegsel** : het URI-voor voegsel wordt berekend door een segment en niet op basis van het teken. Bijvoorbeeld `/a/b` een voor voegsel voor, `/a/b/c` maar niet voor `/a/bc` .
+**Opmerking op voor voegsel**: het URI-voor voegsel wordt berekend door een segment en niet op basis van het teken. Bijvoorbeeld `/a/b` een voor voegsel voor, `/a/b/c` maar niet voor `/a/bc` .
 
 Het volgende Node.js fragment bevat een functie met de naam **generateSasToken** die het token van de invoer berekent `resourceUri, signingKey, policyName, expiresInMins` . In de volgende secties wordt beschreven hoe u de verschillende invoer gegevens voor de verschillende token-use cases initialiseert.
 
@@ -377,11 +378,11 @@ U kunt elk X. 509-certificaat gebruiken om een apparaat te verifiëren met IoT H
 
 Ondersteunde certificaten zijn onder andere:
 
-* **Een bestaand X. 509-certificaat** . Er is mogelijk al een X. 509-certificaat gekoppeld aan een apparaat. Het apparaat kan dit certificaat gebruiken om te verifiëren met IoT Hub. Werkt met een vinger afdruk of CA-verificatie. 
+* **Een bestaand X. 509-certificaat**. Er is mogelijk al een X. 509-certificaat gekoppeld aan een apparaat. Het apparaat kan dit certificaat gebruiken om te verifiëren met IoT Hub. Werkt met een vinger afdruk of CA-verificatie. 
 
-* **CA-ondertekend X. 509-certificaat** . Als u een apparaat wilt identificeren en dit wilt verifiëren met IoT Hub, kunt u een X. 509-certificaat gebruiken dat is gegenereerd en ondertekend door een certificerings instantie (CA). Werkt met een vinger afdruk of CA-verificatie.
+* **CA-ondertekend X. 509-certificaat**. Als u een apparaat wilt identificeren en dit wilt verifiëren met IoT Hub, kunt u een X. 509-certificaat gebruiken dat is gegenereerd en ondertekend door een certificerings instantie (CA). Werkt met een vinger afdruk of CA-verificatie.
 
-* **Een zelf gegenereerd en zelfondertekend X-509-certificaat** . Een fabrikant van het apparaat of de interne implementeerder kan deze certificaten genereren en de bijbehorende persoonlijke sleutel (en het certificaat) opslaan op het apparaat. Voor dit doel kunt u hulpprogram ma's zoals [openssl](https://www.openssl.org/) en [Windows SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) Utility gebruiken. Werkt alleen met vingerafdruk verificatie.
+* **Een zelf gegenereerd en zelfondertekend X-509-certificaat**. Een fabrikant van het apparaat of de interne implementeerder kan deze certificaten genereren en de bijbehorende persoonlijke sleutel (en het certificaat) opslaan op het apparaat. Voor dit doel kunt u hulpprogram ma's zoals [openssl](https://www.openssl.org/) en [Windows SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) Utility gebruiken. Werkt alleen met vingerafdruk verificatie.
 
 Een apparaat kan een X. 509-certificaat of een beveiligings token voor verificatie gebruiken, maar niet beide. Met X. 509-certificaat verificatie moet u een strategie hebben voor het afhandelen van de certificaat overschakeling wanneer een bestaand certificaat verloopt.
 
@@ -472,7 +473,7 @@ In de volgende onderwerpen vindt u meer informatie over het beheren van de toega
 
 De volgende tabel bevat de machtigingen die u kunt gebruiken om de toegang tot uw IoT-hub te beheren.
 
-| Machtiging | Notities |
+| Machtiging | Opmerkingen |
 | --- | --- |
 | **RegistryRead** |Hiermee wordt lees toegang verleend aan het identiteits register. Zie [identiteits register](iot-hub-devguide-identity-registry.md)voor meer informatie. <br/>Deze machtiging wordt gebruikt door de Cloud Services van de back-end. |
 | **RegistryReadWrite** |Hiermee wordt lees-en schrijf toegang verleend aan het identiteits register. Zie [identiteits register](iot-hub-devguide-identity-registry.md)voor meer informatie. <br/>Deze machtiging wordt gebruikt door de Cloud Services van de back-end. |

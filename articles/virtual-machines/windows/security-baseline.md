@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5e52c09e6fc3d5e3d4210e213e0eb6af4e473559
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 385f747999bbdb408dd1c5d2f5f12717834e94da
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205026"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844213"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-machines"></a>Azure-beveiligings basislijn voor Windows Virtual Machines
 
@@ -488,7 +488,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 **Verantwoordelijkheid**: klant
 
-## <a name="data-protection"></a>Gegevensbeveiliging
+## <a name="data-protection"></a>Gegevensbescherming
 
 *Zie [beveiligings beheer: gegevens beveiliging](../../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 
@@ -526,7 +526,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4,3: niet-geautoriseerde overdracht van gevoelige gegevens controleren en blok keren
 
-**Hulp**bij het implementeren van een oplossing van derden op netwerk verbindingen die controle bieden op niet-geautoriseerde overdracht van gevoelige informatie en die overdrachten blokkeert tijdens het melden van informatie over de beveiliging van uw mede werkers.
+**Hulp** bij het implementeren van een oplossing van derden op netwerk verbindingen die controle bieden op niet-geautoriseerde overdracht van gevoelige informatie en die overdrachten blokkeert tijdens het melden van informatie over de beveiliging van uw mede werkers.
 
 Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt micro soft alle inhoud van de klant als gevoelig voor de bescherming tegen verlies en bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
@@ -596,7 +596,7 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../azure-monitor/platform/alerts-activity-log.md)
 
-* [Logboekregistratie van Azure Opslaganalyse](../../storage/common/storage-analytics-logging.md)
+* [Azure Storage-analyselogboeken](../../storage/common/storage-analytics-logging.md)
 
 **Azure Security Center bewaking**: niet beschikbaar
 
@@ -714,7 +714,7 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
-**Hulp: Azure**Policy gebruiken om beperkingen te geven aan het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
+**Hulp: Azure** Policy gebruiken om beperkingen te geven aan het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
 - Niet toegestane resourcetypen
 - Toegestane brontypen
 
@@ -770,7 +770,7 @@ Naast het gebruik van Wijzigingen bijhouden voor het bewaken van software toepas
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
-**Hulp: Azure**Policy gebruiken om beperkingen te geven aan het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities: niet-toegestane resource typen
+**Hulp: Azure** Policy gebruiken om beperkingen te geven aan het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities: niet-toegestane resource typen
 - Toegestane brontypen
 
 * [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
@@ -971,7 +971,7 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Integratie met Azure-Managed-identiteiten](../../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-* [Een Key Vault maken](../../key-vault/secrets/quick-create-portal.md)
+* [Een Key Vault maken](../../key-vault/general/quick-create-portal.md)
 
 * [Verifiëren bij Key Vault](../../key-vault/general/authentication.md)
 
@@ -1007,7 +1007,7 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8,1: centraal beheerde anti-malware-software gebruiken
 
-**Hulp**bij het gebruik van micro soft antimalware voor virtuele Azure Windows-machines om uw resources voortdurend te controleren en te beschermen.
+**Hulp** bij het gebruik van micro soft antimalware voor virtuele Azure Windows-machines om uw resources voortdurend te controleren en te beschermen.
 
 * [Micro soft antimalware configureren voor Cloud Services en Virtual Machines](../../security/fundamentals/antimalware.md)
 
@@ -1041,7 +1041,7 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9,1: zorg voor regel matige automatische back-ups
 
-**Hulp**bij het inschakelen van Azure backup en het configureren van de virtuele machines van Azure (VM), evenals de gewenste frequentie en bewaar periode voor automatische back-ups.
+**Hulp** bij het inschakelen van Azure backup en het configureren van de virtuele machines van Azure (VM), evenals de gewenste frequentie en bewaar periode voor automatische back-ups.
 
 * [Een overzicht van Azure VM backup](../../backup/backup-azure-vms-introduction.md)
 

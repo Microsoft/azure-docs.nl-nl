@@ -3,12 +3,12 @@ title: Overzicht van Azure Notebooks Preview
 description: Jupyter Notebooks in de cloud uitvoeren met behulp van de gratis Azure Notebooks Preview-service, waarvoor geen installatie of configuratie is vereist.
 ms.topic: overview
 ms.date: 04/05/2019
-ms.openlocfilehash: d229e48e5c49a9a672c533fb24231e9329e524c0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d59faaf85a1fdbad776e954e974bafa300f93d85
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85831400"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845132"
 ---
 # <a name="overview-of-azure-notebooks-preview"></a>Overzicht van Azure Notebooks Preview
 
@@ -111,4 +111,4 @@ Voor vragen over Azure Notebooks kunt u een vraag stellen op de [GitHub-opslagpl
   - [Een diavoorstelling presenteren](present-jupyter-notebooks-slideshow.md)
   - [Werken met gegevensbestanden](work-with-project-data-files.md)
   - [Toegang tot gegevensbronnen](access-data-resources-jupyter-notebooks.md)
-  - [Azure Machine Learning gebruiken](use-machine-learning-services-jupyter-notebooks.md)
+  - [Azure Machine Learning gebruiken](../machine-learning/samples-notebooks.md)

@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to
+ms.custom: how-to, devx-track-azurecli
 ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: bdae8d77dc5e51cf4a181459ab2e159f31f06e31
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 40882f2a0c1a65650d633d0784214afbeef9ae63
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543099"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842886"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Een Azure Machine Learning Compute-exemplaar maken en beheren
 
@@ -42,7 +42,7 @@ Reken instanties kunnen taken veilig uitvoeren in een [virtuele netwerk omgeving
 
 ## <a name="create"></a>Maken
 
-**Geschatte tijd** : ongeveer 5 minuten.
+**Geschatte tijd**: ongeveer 5 minuten.
 
 Het maken van een reken instantie is een eenmalig proces voor uw werk ruimte. U kunt deze berekening opnieuw gebruiken als een ontwikkel werkstation of als reken doel voor training. Er kunnen meerdere reken instanties aan uw werk ruimte zijn gekoppeld.
 
@@ -258,7 +258,7 @@ U kunt pakketten rechtstreeks installeren in Jupyter Notebook of RStudio:
 U kunt ook installeren vanuit een Terminal venster. Installeer Python-pakketten in de **Python 3,6-AzureML-** omgeving.  R-pakketten installeren in de **R** -omgeving.
 
 > [!NOTE]
-> Voor pakket beheer binnen een notebook gebruikt u **% PIP** of **% Conda** Magic functions om pakketten automatisch te installeren in de **kernel die momenteel wordt uitgevoerd** , in plaats van **! PIP** of **! Conda** die verwijst naar alle pakketten (inclusief pakketten buiten de actieve kernel)
+> Voor pakket beheer binnen een notebook gebruikt u **% PIP** of **% Conda** Magic functions om pakketten automatisch te installeren in de **kernel die momenteel wordt uitgevoerd**, in plaats van **! PIP** of **! Conda** die verwijst naar alle pakketten (inclusief pakketten buiten de actieve kernel)
 
 ## <a name="add-new-kernels"></a>Nieuwe kernels toevoegen
 

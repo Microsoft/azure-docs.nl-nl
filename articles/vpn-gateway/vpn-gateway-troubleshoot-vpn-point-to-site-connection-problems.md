@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 03/26/2020
 ms.author: genli
-ms.openlocfilehash: 908602dff3be2f392bc595f0074db7f95b8936a9
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: c316aaf02979008b9d2ebc691d54c0fb95a5a52d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660981"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845030"
 ---
 # <a name="troubleshooting-azure-point-to-site-connection-problems"></a>Problemen oplossen: Azure Point-to-site-verbindings problemen
 
@@ -317,7 +317,7 @@ Deze fout treedt op als de RADIUS-server die u hebt gebruikt voor de verificatie
 
 ### <a name="solution"></a>Oplossing
 
-Zorg ervoor dat de RADIUS-server correct is geconfigureerd. Zie [RADIUS-verificatie integreren met Azure multi-factor Authentication-Server](../active-directory/authentication/howto-mfaserver-dir-radius.md)voor meer informatie.
+Zorg ervoor dat de RADIUS-server correct is geconfigureerd. Zie [RADIUS-verificatie integreren met Azure AD multi-factor Authentication-Server](../active-directory/authentication/howto-mfaserver-dir-radius.md)voor meer informatie.
 
 ## <a name="error-405-when-you-download-root-certificate-from-vpn-gateway"></a>Fout 405 wanneer u het basis certificaat downloadt van VPN Gateway
 

@@ -1,19 +1,19 @@
 ---
 title: 'Quickstart: Een server maken - Azure CLI - Azure Database for MySQL - Flexible Server'
 description: In deze snelstartgids wordt beschreven hoe u Azure CLI gebruikt om een Azure Database for MySQL Flexible Server in een Azure-resourcegroep te maken.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 9/21/2020
-ms.custom: mvc
-ms.openlocfilehash: 4be295ada476e4dc41a86d06908ef1d653a3bad8
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 65cc3d2fdcbdea934e80a5f0012ca4f3da157ca3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545018"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843431"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-flexible-server-using-azure-cli"></a>Quickstart: Een Azure Database for MySQL Flexible Server maken met behulp van Azure CLI
 
@@ -32,13 +32,13 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, hebt u voor 
 
 ## <a name="prerequisites"></a>Vereisten
 
-U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/reference-index#az-login). Let op de eigenschap **id** , die verwijst naar **abonnements-id** voor uw Azure-account.
+U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/reference-index#az-login). Let op de eigenschap **id**, die verwijst naar **abonnements-id** voor uw Azure-account.
 
 ```azurecli-interactive
 az login
 ```
 
-Selecteer het specifieke abonnement in uw account met de opdracht [az account set](/cli/azure/account#az-account-set). Noteer de **id** -waarde uit de uitvoer van **az login** en gebruik deze als de waarde voor het argument **abonnement** in de opdracht. Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az-account-list).
+Selecteer het specifieke abonnement in uw account met de opdracht [az account set](/cli/azure/account#az-account-set). Noteer de **id**-waarde uit de uitvoer van **az login** en gebruik deze als de waarde voor het argument **abonnement** in de opdracht. Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az-account-list).
 
 ```azurecli
 az account set --subscription <subscription id>
@@ -107,7 +107,7 @@ Als u verbinding met uw server wilt maken, moet u hostgegevens en toegangsrefere
 az mysql flexible-server show --resource-group myresourcegroup --name mydemoserver
 ```
 
-Het resultaat wordt in JSON-indeling weergegeven. Noteer de **fullyQualifiedDomainName** en de **administratorLogin** . Hieronder ziet u een voorbeeld van de JSON-uitvoer: 
+Het resultaat wordt in JSON-indeling weergegeven. Noteer de **fullyQualifiedDomainName** en de **administratorLogin**. Hieronder ziet u een voorbeeld van de JSON-uitvoer: 
 
 ```json
 {

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/16/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: beede74134affeb3ee0d4bdd20d5da3b4c5e6eda
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 1160bc43db0dc9ec1714b1766c8cadf09660e291
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566619"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844558"
 ---
 # <a name="red-hat-enterprise-linux-in-place-upgrades"></a>Red Hat Enterprise Linux in-place Upgrades
 
@@ -124,8 +124,8 @@ Consult the pre-upgrade report for details and possible remediation.
 ============================================================
 ```
 **Oplossing**\
-Toegang tot hoofdmap inschakelen in `/etc/sshd_conf` .
-Dit wordt veroorzaakt doordat geen basis-SSH-toegang is ingeschakeld in `/etc/sshd_conf` de sectie "[voor bereidingen voor de upgrade](#preparations-for-the-upgrade)". 
+Toegang tot hoofdmap inschakelen in `/etc/sshd_config` .
+Dit wordt veroorzaakt doordat geen basis-SSH-toegang is ingeschakeld in `/etc/sshd_config` de sectie "[voor bereidingen voor de upgrade](#preparations-for-the-upgrade)". 
 
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over de [Red Hat-afbeeldingen in azure](./redhat-images.md).

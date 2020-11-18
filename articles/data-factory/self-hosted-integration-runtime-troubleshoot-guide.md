@@ -5,14 +5,14 @@ services: data-factory
 author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 10/29/2020
+ms.date: 11/17/2020
 ms.author: lle
-ms.openlocfilehash: ca8d359638d97f77377f02d47d824fa216acdcc8
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: e3a517497a480995b8ce63d36d0427e3bfadfe43
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92928107"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844055"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Problemen met zelf-hostende Integration runtime oplossen
 
@@ -48,11 +48,26 @@ Azure Data Factory ondersteunt het weer geven en uploaden van fouten logboeken v
 
 ## <a name="self-hosted-ir-general-failure-or-error"></a>Algemeen probleem of algemene fout met zelf-hostende IR
 
+### <a name="out-of-memory-issue"></a>Probleem met onvoldoende geheugen
+
+#### <a name="symptoms"></a>Symptomen
+
+Het probleem ' OutOfMemoryException ' treedt op tijdens het uitvoeren van opzoek activiteit met gekoppelde IR of zelf-hostende IR.
+
+#### <a name="cause"></a>Oorzaak
+
+Nieuwe activiteiten kunnen voldoen aan het probleem met OOM (OutOfMemory) als de IR-computer op het moment een hoog geheugen gebruik heeft. Het probleem kan worden veroorzaakt door een grote schaal van de uitvoering van gelijktijdige activiteiten en de fout is standaard.
+
+#### <a name="resolution"></a>Oplossing
+
+Controleer het resource gebruik en de uitvoering van gelijktijdige activiteiten op het IR-knoop punt. Pas de interne en activerings tijd van de uitvoering van de activiteit aan om te veel uitvoering op hetzelfde IR-knoop punt te voor komen.
+
+
 ### <a name="tlsssl-certificate-issue"></a>Probleem met TLS/SSL-certificaat
 
 #### <a name="symptoms"></a>Symptomen
 
-Wanneer u TLS/SSL-certificaat probeert in te schakelen (geavanceerd) vanuit **de Configuration Manager van de zelf-hostende IR** -> **Externe toegang via een intranet** , wordt de volgende fout weergegeven nadat u TLS/SSL-certificaat hebt geselecteerd:
+Wanneer u TLS/SSL-certificaat probeert in te schakelen (geavanceerd) vanuit **de Configuration Manager van de zelf-hostende IR** -> **Externe toegang via een intranet**, wordt de volgende fout weergegeven nadat u TLS/SSL-certificaat hebt geselecteerd:
 
 `Remote access settings are invalid. Identity check failed for outgoing message. The expected DNS identity of the remote endpoint was ‘abc.microsoft.com’ but the remote endpoint provided DNS claim ‘microsoft.com’. If this is a legitimate remote endpoint, you can fix the problem by explicitly specifying DNS identity ‘microsoft.com’ as the Identity property of EndpointAddress when creating channel proxy.`
 
@@ -65,14 +80,14 @@ Dit is een bekend probleem in WCF: Met WCF TLS/SSL-validatie wordt alleen de laa
 #### <a name="resolution"></a>Oplossing
 
 Een certificaat met jokertekens wordt ondersteund in zelf-hostende IR van Azure Data Factory v2. Dit probleem treedt normaal op omdat het SSL-certificaat niet correct is. De laatste DNSName in SAN moet geldig zijn. Volg de onderstaande stappen om dit te controleren. 
-1.  Open de beheer console, dubbel Controleer of het *onderwerp* en de *alternatieve naam* van het onderwerp in de certificaat gegevens. In het bovenstaande geval is het laatste item in *alternatieve naam voor onderwerp* , dat ' DNS-naam = Microsoft.com.com ' is, niet legitiem.
+1.  Open de beheer console, dubbel Controleer of het *onderwerp* en de *alternatieve naam* van het onderwerp in de certificaat gegevens. In het bovenstaande geval is het laatste item in *alternatieve naam voor onderwerp*, dat ' DNS-naam = Microsoft.com.com ' is, niet legitiem.
 2.  Neem contact op met het certificaat van het probleem met het bedrijf om de onjuiste DNS-naam te verwijderen.
 
 ### <a name="concurrent-jobs-limit-issue"></a>Probleem met limiet voor gelijktijdige taken
 
 #### <a name="symptoms"></a>Symptomen
 
-Wanneer u probeert de limiet voor gelijktijdige taken probeert te verhogen vanuit de interface van Azure Data Factory, blijft deze hangen in de fase *bijwerken* .
+Wanneer u probeert de limiet voor gelijktijdige taken probeert te verhogen vanuit de interface van Azure Data Factory, blijft deze hangen in de fase *bijwerken*.
 Het maximum aantal gelijktijdige taken was ingesteld op 24 en u wilt het aantal verhogen zodat taken sneller kunnen worden uitgevoerd. De minimumwaarde die u kunt invoeren is 3 en de maximumwaarde is 32. U hebt de waarde van 24 tot en met 32 verhoogd en op de knop *bijwerken* geklikt, in de gebruikers interface die de update heeft *ontvangen zoals hieronder* wordt weer gegeven. Na het vernieuwen bleef de klant de waarde 24 zien; deze werd nooit bijgewerkt naar 32.
 
 ![Status bijwerken](media/self-hosted-integration-runtime-troubleshoot-guide/updating-status.png)
@@ -102,7 +117,7 @@ Bij de afhandeling van problemen met de SSL/TLS-handshake kunnen er problemen op
 
 - Hier volgt een snelle en intuïtieve manier om problemen met de X. 509-certificaat keten op te lossen.
  
-    1. Exporteer het certificaat dat moet worden geverifieerd. Ga naar Computercertificaat beheren en zoek het certificaat dat u wilt controleren. Klik met de rechtermuisknop op **Alle taken** -> **Exporteren** .
+    1. Exporteer het certificaat dat moet worden geverifieerd. Ga naar Computercertificaat beheren en zoek het certificaat dat u wilt controleren. Klik met de rechtermuisknop op **Alle taken** -> **Exporteren**.
     
         ![Taken exporteren](media/self-hosted-integration-runtime-troubleshoot-guide/export-tasks.png)
 
@@ -138,7 +153,7 @@ Bij de afhandeling van problemen met de SSL/TLS-handshake kunnen er problemen op
         ```
           Certutil   -URL    <certificate path> 
         ```
-    1. Vervolgens wordt het hulpprogramma **voor het ophalen van de URL** geopend. U kunt certificaten van AIA, CDP en OCSP controleren door te klikken op de knop **Ophalen** .
+    1. Vervolgens wordt het hulpprogramma **voor het ophalen van de URL** geopend. U kunt certificaten van AIA, CDP en OCSP controleren door te klikken op de knop **Ophalen**.
 
         ![Ophaal knop](media/self-hosted-integration-runtime-troubleshoot-guide/retrieval-button.png)
  
@@ -164,8 +179,8 @@ Als u proces monitor neemt, ziet u het volgende resultaat:
 
 > [!TIP] 
 > U kunt het filter instellen, zoals in de onderstaande scherm afbeelding wordt weer gegeven.
-> Hiermee wordt aangegeven dat het dll **System. ValueTuple** zich niet bevindt in de map die is gerelateerd aan de GAC of in *C:\Program Files\Microsoft Integration Runtime\4.0\Gateway* , of in de map *c:\Program Files\Microsoft Integration Runtime\4.0\Shared* .
-> In principe wordt eerst geprobeerd om het dll-bestand te laden uit de map *GAC* en vervolgens uit *Shared* en ten slotte uit de map *Gateway* . Daarom kunt u het dll-bestand in een willekeurig pad plaatsen, wat het handigst is.
+> Hiermee wordt aangegeven dat het dll **System. ValueTuple** zich niet bevindt in de map die is gerelateerd aan de GAC of in *C:\Program Files\Microsoft Integration Runtime\4.0\Gateway*, of in de map *c:\Program Files\Microsoft Integration Runtime\4.0\Shared* .
+> In principe wordt eerst geprobeerd om het dll-bestand te laden uit de map *GAC* en vervolgens uit *Shared* en ten slotte uit de map *Gateway*. Daarom kunt u het dll-bestand in een willekeurig pad plaatsen, wat het handigst is.
 
 ![Filters instellen](media/self-hosted-integration-runtime-troubleshoot-guide/set-filters.png)
 
@@ -210,7 +225,7 @@ Als geen van de bovenstaande oorzaken van toepassing is, kunt u naar de map gaan
 
 #### <a name="symptoms"></a>Symptomen
 
-Na het maken van zelf-hostende IR's voor zowel bron- als doelgegevensarchieven, wilt u de twee IR's verbinden om een kopie te verkrijgen. Als de gegevens archieven zijn geconfigureerd in verschillende VNETs of als ze het gateway mechanisme niet begrijpen, raakt u fouten als: *het stuur programma van de bron is niet gevonden in de doel-IR* . *de bron is niet toegankelijk voor de doel-IR* .
+Na het maken van zelf-hostende IR's voor zowel bron- als doelgegevensarchieven, wilt u de twee IR's verbinden om een kopie te verkrijgen. Als de gegevens archieven zijn geconfigureerd in verschillende VNETs of als ze het gateway mechanisme niet begrijpen, raakt u fouten als: *het stuur programma van de bron is niet gevonden in de doel-IR*. *de bron is niet toegankelijk voor de doel-IR*.
  
 #### <a name="cause"></a>Oorzaak
 
@@ -288,14 +303,14 @@ Ga naar het gebeurtenis logboek van Integration Runtime om de fout te controlere
 
 ![IR-gebeurtenis logboek](media/self-hosted-integration-runtime-troubleshoot-guide/ir-event-log.png)
 
-Als de fout wordt weer gegeven zoals boven *UnauthorizedAccessException* , volgt u de onderstaande instructies:
+Als de fout wordt weer gegeven zoals boven *UnauthorizedAccessException*, volgt u de onderstaande instructies:
 
 
 1. Controleer *DIAHostService* Logon service-account in het venster van de Windows-service.
 
     ![Aanmeldings service account](media/self-hosted-integration-runtime-troubleshoot-guide/logon-service-account.png)
 
-2. Controleer of het aanmeldings service account de machtiging R/W heeft via de map: *%ProgramData%\Microsoft\DataTransfer\DataManagementGateway* .
+2. Controleer of het aanmeldings service account de machtiging R/W heeft via de map: *%ProgramData%\Microsoft\DataTransfer\DataManagementGateway*.
 
     - Als het account voor de service aanmelding niet is gewijzigd, moet dit standaard de machtiging R/W hebben.
 
@@ -305,7 +320,7 @@ Als de fout wordt weer gegeven zoals boven *UnauthorizedAccessException* , volgt
         1. Verwijder de huidige zelf-hostende IR.
         1. Installeer de zelf-hostende IR-bits.
         1. Volg de onderstaande instructies om het service account te wijzigen: 
-            1. Ga naar de installatiemap van selfhosted IR, ga naar de map: *micro soft Integration Runtime\4.0\Shared* .
+            1. Ga naar de installatiemap van selfhosted IR, ga naar de map: *micro soft Integration Runtime\4.0\Shared*.
             1. Start een opdracht regel met verhoogde bevoegdheden. Vervang *\<user>* en *\<password>* door uw eigen gebruikers naam en wacht woord en voer de volgende opdracht uit:
                        
                 ```
@@ -325,7 +340,7 @@ Als de fout wordt weer gegeven zoals boven *UnauthorizedAccessException* , volgt
             1. U kunt de lokale/domein-gebruiker voor het aanmeldings account van de IR-service gebruiken.            
         1. Registreer de Integration Runtime.
 
-Als de fout er als volgt uitziet: de *service ' Integration runtime service ' (DIAHostService) is niet gestart. Controleer of u voldoende rechten hebt om systeem services te starten* . Volg de onderstaande instructies:
+Als de fout er als volgt uitziet: de *service ' Integration runtime service ' (DIAHostService) is niet gestart. Controleer of u voldoende rechten hebt om systeem services te starten*. Volg de onderstaande instructies:
 
 1. Controleer *DIAHostService* Logon service-account in het venster van de Windows-service.
    
@@ -404,6 +419,47 @@ De installatie is afhankelijk van de Windows Installer-service. Er zijn variante
 - Sommige systeem bestanden of registers zijn onbedoeld gerakend
 
 
+### <a name="ir-service-account-failed-to-fetch-certificate-access"></a>Het IR-service account kan geen certificaat toegang ophalen
+
+#### <a name="symptoms"></a>Symptomen
+
+Wanneer u zelf-hostende IR installeert via de Microsoft Integration Runtime Configuration Manager, wordt een certificaat met een vertrouwde certificerings instantie gegenereerd. Het certificaat kan niet worden toegepast om de communicatie tussen twee knoop punten te versleutelen. 
+
+De fout informatie ziet er als volgt uit: 
+
+`Failed to change Intranet communication encryption mode: Failed to grant Integration Runtime service account the access of to the certificate 'XXXXXXXXXX'. Error code 103`
+
+![Kan geen certificaat toegang verlenen voor het IR-service account](media/self-hosted-integration-runtime-troubleshoot-guide/integration-runtime-service-account-certificate-error.png)
+
+#### <a name="cause"></a>Oorzaak
+
+Het certificaat gebruikt de SLEUTELARCHIEFPROVIDER (Key Storage Provider), die nog niet wordt ondersteund. SHIR ondersteunt tot nu toe alleen CSP-certificaten (Cryptographic Service Provider).
+
+#### <a name="resolution"></a>Oplossing
+
+CSP-certificaat wordt aanbevolen voor deze aanvraag.
+
+**Oplossing 1:** Gebruik de onderstaande opdracht om het certificaat te importeren:
+
+```
+Certutil.exe -CSP "CSP or KSP" -ImportPFX FILENAME.pfx 
+```
+
+![Certutil gebruiken](media/self-hosted-integration-runtime-troubleshoot-guide/use-certutil.png)
+
+**Oplossing 2:** Conversie van certificaten:
+
+openssl pkcs12/pfx-profiel-in .\xxxx.pfx-out. \ xxxx_new. pem-wachtwoord doorgifte:*\<EnterPassword>*
+
+openssl pkcs12/pfx-Profiel-export-in. \ xxxx_new. pem-out xxxx_new. pfx
+
+Voor en na de conversie:
+
+![Vóór wijziging van certificaat](media/self-hosted-integration-runtime-troubleshoot-guide/before-certificate-change.png)
+
+![Nadat het certificaat is gewijzigd](media/self-hosted-integration-runtime-troubleshoot-guide/after-certificate-change.png)
+
+
 ## <a name="self-hosted-ir-connectivity-issues"></a>Zelf-hostende IR-verbindings problemen
 
 ### <a name="self-hosted-integration-runtime-cant-connect-to-cloud-service"></a>Zelf-hostende Integration runtime kan geen verbinding maken met de Cloud service
@@ -431,7 +487,7 @@ De zelf-hostende Integration runtime kan geen verbinding maken met de Data Facto
     ```
         
    > [!NOTE]     
-   > De service-URL kan variëren, afhankelijk van de locatie van uw Data Factory. U kunt de service-URL vinden onder **ADF UI**  >  **Connections**  >  **Integration Runtimes**  >  **bewerken zelf-hostende IR** -  >  **knoop punten**  >  **bekijken service-url's** .
+   > De service-URL kan variëren, afhankelijk van de locatie van uw Data Factory. U kunt de service-URL vinden onder **ADF UI**  >  **Connections**  >  **Integration Runtimes**  >  **bewerken zelf-hostende IR**-  >  **knoop punten**  >  **bekijken service-url's**.
             
     Hier volgt de verwachte reactie:
             
@@ -569,7 +625,7 @@ Neem de netmon-tracering en analyseer verder.
  
     *Netwerk pakket van Linux-systeem A met TTL 64-> B TTL 64 min 1 = 63-> C TTL 63 min 1 = 62-> TTL 62 min 1 = 61 zelf-hostende IR*
 
-- In ideale situatie is de TTL 128, wat betekent dat Windows System de Data Factory uitvoert. Zoals u in het onderstaande voor beeld ziet, *128 – 107 = 21 hops* , wat betekent dat er 21 hops voor het pakket zijn verzonden van Data Factory naar een zelf-hostende IR tijdens de TCP 3-handshake.
+- In ideale situatie is de TTL 128, wat betekent dat Windows System de Data Factory uitvoert. Zoals u in het onderstaande voor beeld ziet, *128 – 107 = 21 hops*, wat betekent dat er 21 hops voor het pakket zijn verzonden van Data Factory naar een zelf-hostende IR tijdens de TCP 3-handshake.
  
     ![TTL 107](media/self-hosted-integration-runtime-troubleshoot-guide/ttl-107.png)
 
@@ -587,11 +643,11 @@ Wanneer u probeert te Telnet **8.8.8.8 888** met netmon-tracering, moet u de ond
 ![netmon-tracering 2](media/self-hosted-integration-runtime-troubleshoot-guide/netmon-trace-2.png)
  
 
-Dit betekent dat u geen TCP-verbinding met de **8.8.8.8** -server kunt maken op basis van de poort **888** , zodat u daar twee extra pakketten van **SynReTransmit** ziet. Omdat de **Self-HOST2** van de bron geen verbinding kan maken met **8.8.8.8** bij het eerste pakket, blijft deze verbinding maken.
+Dit betekent dat u geen TCP-verbinding met de **8.8.8.8** -server kunt maken op basis van de poort **888**, zodat u daar twee extra pakketten van **SynReTransmit** ziet. Omdat de **Self-HOST2** van de bron geen verbinding kan maken met **8.8.8.8** bij het eerste pakket, blijft deze verbinding maken.
 
 > [!TIP]
-> - U kunt klikken op standaard filter voor **Load filter**  ->  **Standard Filter**  ->  **adressen**  ->  **IPv4-adressen** .
-> - Voer **IPv4. Address = = 8.8.8.8** in als filter en klik op **Toep assen** . Daarna ziet u alleen de communicatie van de lokale computer naar de doel- **8.8.8.8** .
+> - U kunt klikken op standaard filter voor **Load filter**  ->  **Standard Filter**  ->  **adressen**  ->  **IPv4-adressen**.
+> - Voer **IPv4. Address = = 8.8.8.8** in als filter en klik op **Toep assen**. Daarna ziet u alleen de communicatie van de lokale computer naar de doel- **8.8.8.8**.
 
 ![filter adressen 1](media/self-hosted-integration-runtime-troubleshoot-guide/filter-addresses-1.png)
         

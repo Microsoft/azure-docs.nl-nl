@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: TomSh
-ms.openlocfilehash: 3141d9937591467870ee4a88d16a96cbdb24a05b
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: c06fb0830ae709918b668ed60efbaaf47a63ce84
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696214"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842835"
 ---
 # <a name="isolation-in-the-azure-public-cloud"></a>Isolatie in de open bare Azure-Cloud
 
@@ -90,7 +90,7 @@ Azure Active Directory zijn onder andere de volgende mogelijkheden:
 
 - Azure AD biedt identiteit als een service via federatie door gebruik te maken van [Active Directory Federation Services](/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs), synchronisatie en replicatie met on-premises directory's.
 
-- [Azure multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md) is de multi-factor Authentication-service waarmee gebruikers zich kunnen verifiëren met behulp van een mobiele app, telefonische oproep of een SMS-bericht. Het kan worden gebruikt met Azure AD om on-premises resources te beveiligen met de Azure Multi-Factor Authentication-Server, en ook met aangepaste toepassingen en mappen met behulp van de SDK.
+- [Azure AD multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md) is de multi-factor Authentication-service die gebruikers nodig hebben om aanmeldingen te verifiëren met behulp van een mobiele app, telefoon gesprek of SMS-bericht. Het kan worden gebruikt met Azure AD om on-premises resources te beveiligen met de Azure Multi-Factor Authentication-Server, en ook met aangepaste toepassingen en mappen met behulp van de SDK.
 
 - Met [Azure AD Domain Services](https://azure.microsoft.com/services/active-directory-ds/) kunt u virtuele Azure-machines toevoegen aan een Active Directory domein zonder dat u domein controllers hoeft te implementeren. U kunt u aanmelden bij deze virtuele machines met uw zakelijke Active Directory referenties en virtuele machines die lid zijn van een domein beheren door gebruik te maken van groepsbeleid om beveiligings basislijnen af te dwingen op al uw virtuele machines van Azure.
 

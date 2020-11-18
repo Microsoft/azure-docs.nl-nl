@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: eed1b0e1b01d5d13330b927429eca9a28ff80658
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31219fda04095d48b55165f59c27f3dee85485a9
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88009253"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843635"
 ---
 # <a name="tenant-and-host-pool-creation-in-windows-virtual-desktop-classic"></a>Tenant en hostgroep maken in Windows virtueel bureau blad (klassiek)
 
@@ -26,7 +26,7 @@ Ga naar de [technische community van Windows virtueel bureau blad](https://techc
 
 ## <a name="acquiring-the-windows-10-enterprise-multi-session-image"></a>De afbeelding voor meerdere sessies van Windows 10 Enter prise ophalen
 
-Als u de Windows 10 Enter prise-installatie kopie voor meerdere sessies wilt gebruiken, gaat u naar Azure Marketplace en selecteert u aan de **slag**met  >  **micro soft Windows 10** > en [Windows 10 Enter prise voor virtuele Bureau bladen, versie 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
+Als u de Windows 10 Enter prise-installatie kopie voor meerdere sessies wilt gebruiken, gaat u naar Azure Marketplace en selecteert u aan de **slag** met  >  **micro soft Windows 10** > en [Windows 10 Enter prise voor virtuele Bureau bladen, versie 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
 
 > [!div class="mx-imgBorder"]
 > ![Een scherm opname van het selecteren van Windows 10 Enter prise voor virtuele Bureau bladen, versie 1809.](../media/AzureMarketPlace.png)
@@ -174,7 +174,7 @@ Ga als volgt te werk om dit probleem op te lossen:
 
 1. Open Azure Portal en ga naar het tabblad **virtuele netwerken** .
 2. Zoek uw VNET en selecteer vervolgens **DNS-servers**.
-3. Het menu DNS-servers moet aan de rechter kant van het scherm worden weer gegeven. Selecteer **aangepast**in dat menu.
+3. Het menu DNS-servers moet aan de rechter kant van het scherm worden weer gegeven. Selecteer **aangepast** in dat menu.
 4. Zorg ervoor dat de DNS-servers die worden vermeld onder aangepast overeenkomen met uw domein controller of Active Directory domein. Als uw DNS-server niet wordt weer geven, kunt u deze toevoegen door de waarde ervan in te voeren in het veld **DNS-server toevoegen** .
 
 ### <a name="error-your-deployment-failedunauthorized"></a>Fout: Uw implementatie is mislukt...\Unauthorized
@@ -375,7 +375,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDefinitionName "RDS Contributor" -SignInName <UPN>
 ```
 
-### <a name="error-user-requires-azure-multi-factor-authentication-mfa"></a>Fout: Gebruiker vereist Azure Multi-Factor Authentication (MFA)
+### <a name="error-user-requires-azure-ad-multi-factor-authentication-mfa"></a>Fout: de gebruiker vereist Azure AD Multi-Factor Authentication (MFA)
 
 > [!div class="mx-imgBorder"]
 > ![Scherm opname van de implementatie is mislukt vanwege een gebrek aan Multi-Factor Authentication (MFA)](../media/MFARequiredError.png)
@@ -386,7 +386,7 @@ Voor beeld van onbewerkte fout:
 "message": "{\r\n  \"status\": \"Failed\",\r\n  \"error\": {\r\n    \"code\": \"ResourceDeploymentFailure\",\r\n    \"message\": \"The resource operation completed with terminal provisioning state 'Failed'.\",\r\n    \"details\": [\r\n      {\r\n        \"code\": \"VMExtensionProvisioningError\",\r\n        \"message\": \"VM has reported a failure when processing extension 'dscextension'. Error message: \\\"DSC Configuration 'FirstSessionHost' completed with error(s). Following are the first few: PowerShell DSC resource MSFT_ScriptResource  failed to execute Set-TargetResource functionality with error message: One or more errors occurred.  The SendConfigurationApply function did not succeed.\\\".\"\r\n      }\r\n    ]\r\n  }\r\n}"
 ```
 
-**Oorzaak:** De opgegeven Tenant beheerder voor Windows Virtual Desktop vereist Azure Multi-Factor Authentication (MFA) om u aan te melden.
+**Oorzaak:** De opgegeven Tenant beheerder van Windows Virtual Desktop vereist Azure AD Multi-Factor Authentication (MFA) om u aan te melden.
 
 **Oplossen:** Maak een Service-Principal en wijs hieraan een rol toe voor uw Windows Virtual Desktop-Tenant door de stappen in de [zelf studie te volgen: Service-principals en roltoewijzingen maken met Power shell](create-service-principal-role-powershell.md). Nadat u hebt gecontroleerd of u zich kunt aanmelden bij het virtuele bureau blad van Windows met de Service-Principal, voert u de Azure Marketplace-aanbieding of de GitHub Azure Resource Manager-sjabloon uit, afhankelijk van de methode die u gebruikt. Volg de onderstaande instructies om de juiste para meters voor uw methode op te geven.
 

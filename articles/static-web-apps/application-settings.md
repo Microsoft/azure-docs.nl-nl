@@ -7,13 +7,13 @@ ms.service: static-web-apps
 ms.topic: how-to
 ms.date: 05/08/2020
 ms.author: buhollan
-ms.custom: devx-track-js
-ms.openlocfilehash: c89ccee430d374d9aee58326627ff800f737324b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 00502c97e3fc06972c27cedf565d77b52f558795
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250025"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844809"
 ---
 # <a name="configure-application-settings-for-azure-static-web-apps-preview"></a>Toepassings instellingen configureren voor de preview-versie van Azure static Web Apps
 
@@ -106,7 +106,7 @@ De Azure Portal biedt een interface voor het maken, bijwerken en verwijderen van
 
     :::image type="content" source="media/application-settings/configuration.png" alt-text="Configuratie weergave Azure static Web Apps":::
 
-1. Voer een **naam** en **waarde**in.
+1. Voer een **naam** en **waarde** in.
 
 1. Klik op **OK**.
 
@@ -116,7 +116,7 @@ De Azure Portal biedt een interface voor het maken, bijwerken en verwijderen van
 
 U kunt de `az rest` opdracht gebruiken om bulksgewijs uploads van uw instellingen naar Azure uit te voeren. De opdracht accepteert toepassings instellingen als JSON-objecten in een bovenliggende eigenschap met de naam `properties` .
 
-De eenvoudigste manier om een JSON-bestand met de juiste waarden te maken, is door een aangepaste versie van uwlocal.settings.jste maken _ in_ het bestand.
+De eenvoudigste manier om een JSON-bestand met de juiste waarden te maken, is door een aangepaste versie van uwlocal.settings.jste maken _in_ het bestand.
 
 1. Om ervoor te zorgen dat het nieuwe bestand met gevoelige gegevens niet openbaar wordt weer gegeven, voegt u de volgende vermelding toe aan uw _. gitignore_ -bestand.
 
@@ -144,7 +144,7 @@ Voor de Azure CLI-opdracht is een aantal waarden vereist die specifiek zijn voor
 2. Naam van de resourcegroep
 3. Abonnements-id
 
-:::image type="content" source="media/application-settings/overview.png" alt-text="Configuratie weergave Azure static Web Apps":::
+:::image type="content" source="media/application-settings/overview.png" alt-text="Overzicht van statische Azure-Web Apps":::
 
 4. Voer de volgende opdracht uit vanaf een Terminal of opdracht regel. Zorg ervoor dat u de tijdelijke aanduidingen van `<YOUR_STATIC_SITE_NAME>` , `<YOUR_RESOURCE_GROUP_NAME>` , en `<YOUR_SUBSCRIPTION_ID>` met uw waarden in het _overzichts_ venster vervangt.
 

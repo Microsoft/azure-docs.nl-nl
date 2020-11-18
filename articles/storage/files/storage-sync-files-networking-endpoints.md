@@ -7,13 +7,13 @@ ms.topic: how-to
 ms.date: 5/11/2020
 ms.author: rogarana
 ms.subservice: files
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 026f4f36986fa5fcfad4dac5186e9dc0b0997d72
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 02d9e65f5422b7b12900d051f01c1d6f55e8685b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629407"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844673"
 ---
 # <a name="configuring-azure-file-sync-network-endpoints"></a>Azure Files Sync-netwerkeindpunten configureren
 Azure Files en Azure File Sync bieden twee hoofdtypen eindpunten voor toegang tot Azure-bestandsshares: 
@@ -39,9 +39,9 @@ Aanvullend:
 ## <a name="create-the-private-endpoints"></a>De privé-eindpunten aanmaken
 Wanneer u een privé-eindpunt maakt voor een Azure-resource, worden de volgende resources geïmplementeerd:
 
-- **Een privé-eindpunt** : Een Azure-resource die het privé-eindpunt voor het opslagaccount of de opslagsynchronisatieservice voorstelt. U kunt dit zien als een resource die een verbinding opzet tussen uw Azure-resource en een netwerkinterface.
+- **Een privé-eindpunt**: Een Azure-resource die het privé-eindpunt voor het opslagaccount of de opslagsynchronisatieservice voorstelt. U kunt dit zien als een resource die een verbinding opzet tussen uw Azure-resource en een netwerkinterface.
 - **Een netwerkinterface (NIC)** : De netwerkinterface die een privé-IP-adres onderhoudt binnen het opgeven virtuele netwerk/subnet. Dit is exact dezelfde resource die wordt geïmplementeerd als u een virtuele machine implementeert, alleen wordt de resource nu niet toegewezen aan een VM, maar is deze het eigendom van het privé-eindpunt.
-- **Een privé-DNS-zone** : Als u niet eerder een privé-eindpunt hebt geïmplementeerd voor dit virtuele netwerk, wordt er een nieuwe privé-DNS-zone geïmplementeerd voor uw virtuele netwerk. Er wordt ook een DNS A-record gemaakt voor de Azure-resource in deze DNS-zone. Als u al een privé-eindpunt hebt geïmplementeerd in dit virtuele netwerk, wordt er een nieuwe A-record voor de Azure-resource toegevoegd aan de bestaande DNS-zone. Een DNS-zone implementeren is optioneel, maar sterk aanbevolen om het vereiste DNS-beheer te vereenvoudigen.
+- **Een privé-DNS-zone**: Als u niet eerder een privé-eindpunt hebt geïmplementeerd voor dit virtuele netwerk, wordt er een nieuwe privé-DNS-zone geïmplementeerd voor uw virtuele netwerk. Er wordt ook een DNS A-record gemaakt voor de Azure-resource in deze DNS-zone. Als u al een privé-eindpunt hebt geïmplementeerd in dit virtuele netwerk, wordt er een nieuwe A-record voor de Azure-resource toegevoegd aan de bestaande DNS-zone. Een DNS-zone implementeren is optioneel, maar sterk aanbevolen om het vereiste DNS-beheer te vereenvoudigen.
 
 > [!Note]  
 > In dit artikel worden de DNS-achtervoegsels voor de openbare Azure-regio's gebruikt, `core.windows.net` voor opslagaccounts en `afs.azure.net` voor opslagsynchronisatieservices. Deze opmerking geldt ook voor onafhankelijke Azure-clouds zoals de Azure-cloud voor de Amerikaanse overheid. Vervang het achtervoegsel gewoon door dat van de onafhankelijke cloud.

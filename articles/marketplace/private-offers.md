@@ -7,12 +7,12 @@ ms.topic: article
 author: vikrambmsft
 ms.author: vikramb
 ms.date: 07/01/2020
-ms.openlocfilehash: 0bb5dccfc99a693ec89ed08ac31b77eb16442f73
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 5396845e13e94b4d957f42618baaf19c408f559d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129963"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843771"
 ---
 # <a name="private-offers-in-the-microsoft-commercial-marketplace"></a>Persoonlijke aanbiedingen in micro soft Commercial Marketplace
 
@@ -41,7 +41,7 @@ Voor *nieuwe of bestaande aanbiedingen met abonnementen* kunnen uitgevers eenvou
 
 Privé plannen zijn onderdelen van een aanbieding en zijn alleen zichtbaar en tevens door de doel klanten. Privé plannen kunnen de basis installatie kopieën en/of de meta gegevens van de aanbieding die al zijn gepubliceerd voor een openbaar abonnement hergebruiken. Met deze optie kunnen uitgevers meerdere persoonlijke variaties van een open bare aanbieding maken zonder dat ze meerdere versies van dezelfde basis installatie kopie hoeven te publiceren en meta gegevens te bieden. Voor de aanbiedingen van de virtuele machine en Azure-toepassing geldt dat als een persoonlijk plan een basis installatie kopie deelt met een openbaar abonnement, alle wijzigingen in de basis installatie kopie van de aanbieding worden door gegeven aan alle open bare en persoonlijke plannen die gebruikmaken van die basis installatie kopie.
 
-Voor *nieuwe aanbiedingen die alleen persoonlijke abonnementen bevatten* , kunnen uitgevers hun aanbiedingen als elk ander aanbod maken en de abonnementen markeren als privé. De aanbiedingen die alleen privé abonnementen hebben, kunnen niet worden gedetecteerd of toegankelijk via micro soft Commercial Marketplace of de [Azure Portal](https://azure.microsoft.com/features/azure-portal/) door klanten die niet aan de aanbieding zijn gekoppeld.
+Voor *nieuwe aanbiedingen die alleen persoonlijke abonnementen bevatten*, kunnen uitgevers hun aanbiedingen als elk ander aanbod maken en de abonnementen markeren als privé. De aanbiedingen die alleen privé abonnementen hebben, kunnen niet worden gedetecteerd of toegankelijk via micro soft Commercial Marketplace of de [Azure Portal](https://azure.microsoft.com/features/azure-portal/) door klanten die niet aan de aanbieding zijn gekoppeld.
 
 >[!NOTE]
 >Een aanbieding die alleen persoonlijke plannen bevat, is niet zichtbaar in de open bare Azure Marketplace of AppSource.
@@ -51,6 +51,9 @@ Voor *nieuwe aanbiedingen die alleen persoonlijke abonnementen bevatten* , kunne
 Voor zowel nieuwe als bestaande persoonlijke aanbiedingen kunnen uitgevers klanten richten met behulp van abonnements-id's. Uitgevers die gebruikmaken van een virtuele machine of Azure-toepassing aanbieding, kunnen de beschik baarheid van een privé plan beperken tot een afzonderlijke Azure-abonnements-ID of een CSV van Maxi maal 20.000 Azure-abonnement-Id's uploaden. Bij het gebruik van een SaaS-app-aanbieding kunnen uitgevers een Tenant-ID koppelen om de beschik baarheid van een privé-abonnement te beperken met behulp van de hand matige of CSV-upload methode.
 
 Zodra een aanbieding is gecertificeerd en gepubliceerd, kunnen klanten binnen enkele minuten worden bijgewerkt of uit het plan worden verwijderd met behulp van de functie Persoonlijke abonnementen synchroniseren. Met deze mogelijkheid kunnen uitgevers snel en eenvoudig de lijst met klanten bijwerken waarvoor het privé plan wordt gepresenteerd zonder dat de aanbieding opnieuw wordt gecertificeerd of gepubliceerd.
+
+>[!NOTE]
+>Azure gov toepasselijkheid: persoonlijke aanbiedingen (of nauw keuriger: privé-abonnementen) zijn beschikbaar voor gov Cloud, zoals elke andere aanbieding. Een plan kan ook de status van privé naar openbaar verplaatsen en vice versa. Het besturings element waarop de aanbieding beschikbaar is, bevindt zich in de handen van de partner en kan worden geconfigureerd via partner centrum. 
 
 ## <a name="deploying-private-offers"></a>Persoonlijke aanbiedingen implementeren
 

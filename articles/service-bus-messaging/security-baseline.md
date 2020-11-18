@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3604a2efb4d6f8c08a19d832c8523e44df352444
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: a6d4e7f4ca7288b36f6801b9ddb362b7e936862d
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518769"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843618"
 ---
 # <a name="azure-security-baseline-for-service-bus"></a>Azure-beveiligings basislijn voor Service Bus
 
@@ -395,7 +395,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Verantwoordelijkheid**: klant
 
-## <a name="data-protection"></a>Gegevensbeveiliging
+## <a name="data-protection"></a>Gegevensbescherming
 
 *Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 
@@ -547,7 +547,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
 
 - Niet toegestane resourcetypen
 
@@ -565,7 +565,7 @@ Daarnaast kunt u met Azure resource Graph bronnen in de abonnementen opvragen en
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
 
 - Niet toegestane resourcetypen
 - Toegestane brontypen
@@ -582,7 +582,7 @@ U kunt ook aangepaste beleids definities maken als de ingebouwde definities niet
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
-**Hulp**bij het configureren van voorwaardelijke toegang van Azure om gebruikers de mogelijkheid te bieden om te communiceren met Azure Resource Manager door ' blok toegang ' te configureren voor de app Microsoft Azure management.
+**Hulp** bij het configureren van voorwaardelijke toegang van Azure om gebruikers de mogelijkheid te bieden om te communiceren met Azure Resource Manager door ' blok toegang ' te configureren voor de app Microsoft Azure management.
 
 - [Voorwaardelijke toegang configureren om de toegang tot Azure Resource Manager te blok keren](../role-based-access-control/conditional-access-azure-management.md)
 
@@ -653,7 +653,7 @@ Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. ServiceBus ' om aa
 
 - [Door de klant beheerde sleutels voor Service Bus configureren](configure-customer-managed-key.md)
 
-- [Een Key Vault maken](../key-vault/secrets/quick-create-portal.md)
+- [Een Key Vault maken](../key-vault/general/quick-create-portal.md)
 
 **Azure Security Center bewaking**: Ja
 
@@ -703,7 +703,7 @@ Micro soft anti-malware is ingeschakeld op de onderliggende host die ondersteuni
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9,1: zorg voor regel matige automatische back-ups
 
-**Hulp**bij het configureren van geo-nood herstel voor Azure service bus. Als er voor de hele Azure-regio's of-Data Centers (als er geen beschikbaarheids zones worden gebruikt) downtime actief is, is het van essentieel belang dat de gegevens worden verwerkt in een andere regio of Data Center. Daarom zijn geo-nood herstel en geo-replicatie belang rijke functies voor elke onderneming. Azure Service Bus ondersteunt zowel geo-nood herstel als geo-replicatie op het niveau van de naam ruimte.
+**Hulp** bij het configureren van geo-nood herstel voor Azure service bus. Als er voor de hele Azure-regio's of-Data Centers (als er geen beschikbaarheids zones worden gebruikt) downtime actief is, is het van essentieel belang dat de gegevens worden verwerkt in een andere regio of Data Center. Daarom zijn geo-nood herstel en geo-replicatie belang rijke functies voor elke onderneming. Azure Service Bus ondersteunt zowel geo-nood herstel als geo-replicatie op het niveau van de naam ruimte.
 
 - [Meer informatie over geografisch nood herstel voor Azure Service Bus](service-bus-geo-dr.md)
 

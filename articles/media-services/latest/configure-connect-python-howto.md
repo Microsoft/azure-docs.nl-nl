@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-python
-ms.openlocfilehash: ac3cc39d458a3a01617d052c280fd66e6aad0f8b
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 1a72b0d90a33b011468b5ac42d529befb7acae42
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92013250"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844894"
 ---
 # <a name="connect-to-media-services-v3-api---python"></a>Verbinding maken met Media Services v3 API-python
 
@@ -48,7 +48,7 @@ Open een opdracht regel programma en gebruik de volgende opdrachten om de module
 
 ```
 pip3 install azure-mgmt-resource
-pip3 install azure-mgmt-media==1.1.1
+pip3 install azure-mgmt-media==3.0.0
 ```
 
 ## <a name="connect-to-the-python-client"></a>Verbinding maken met de python-client

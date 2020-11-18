@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: how-to
 ms.date: 06/02/2020
 ms.author: sebansal
-ms.openlocfilehash: d36c6e8ebbb86f9027a4822daa4481b5481523c2
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 50f2515cee92ead8018ffaaf4b4574905f8007d5
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289541"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844502"
 ---
 # <a name="integrating-key-vault-with-digicert-certificate-authority"></a>Key Vault integreren met DigiCert-certificeringsinstantie
 
@@ -31,9 +31,9 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 U hebt de volgende resources nodig om deze handleiding te voltooien.
 * Een sleutelkluis. U kunt een bestaande sleutelkluis gebruiken of een nieuwe maken door de stappen in een van deze quickstarts te volgen:
-   - [Een sleutelkluis maken met de Azure CLI](../secrets/quick-create-cli.md)
-   - [Een sleutelkluis maken met Azure PowerShell](../secrets/quick-create-powershell.md)
-   - [Een sleutelkluis maken met de Azure-portal](../secrets/quick-create-portal.md).
+   - [Een sleutelkluis maken met de Azure CLI](../general/quick-create-cli.md)
+   - [Een sleutelkluis maken met Azure PowerShell](../general/quick-create-powershell.md)
+   - [Een sleutelkluis maken met de Azure-portal](../general/quick-create-portal.md).
 *   U moet het DigiCert CertCentral-account activeren. [Registreer u](https://www.digicert.com/account/signup/) voor uw CertCentral-account.
 *   Beheerdersmachtigingen in uw accounts.
 
@@ -56,11 +56,11 @@ Nadat u de bovenstaande gegevens van het DigiCert CertCentral-account hebt verza
 4.  Selecteer de optie **Toevoegen**.
  ![certificeringsinstanties toevoegen](../media/certificates/how-to-integrate-certificate-authority/add-certificate-authority.png)
 5.  Kies in het scherm **Een certificeringsinstantie maken** de volgende waarden:
-    -   **Naam** : Voeg een herkenbare naam van een certificaatverlener toe. Voorbeeld van DigicertCA
-    -   **Provider** : Selecteer DigiCert in het menu.
-    -   **Account-id** : Voer de id van uw DigiCert CertCentral-account in
-    -   **Accountwachtwoord** : Voer de API-sleutel in die u hebt gegenereerd in uw DigiCert CertCentral-account
-    -   **Organisatie-id** : Voer OrgID in, opgehaald uit het DigiCert CertCentral-account 
+    -   **Naam**: Voeg een herkenbare naam van een certificaatverlener toe. Voorbeeld van DigicertCA
+    -   **Provider**: Selecteer DigiCert in het menu.
+    -   **Account-id**: Voer de id van uw DigiCert CertCentral-account in
+    -   **Accountwachtwoord**: Voer de API-sleutel in die u hebt gegenereerd in uw DigiCert CertCentral-account
+    -   **Organisatie-id**: Voer OrgID in, opgehaald uit het DigiCert CertCentral-account 
     -   Klik op **Create**.
    
 6.  U ziet dat DigicertCA nu is toegevoegd in de lijst met certificeringsinstanties.

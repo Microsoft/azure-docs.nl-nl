@@ -10,13 +10,13 @@ ms.date: 09/21/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 9c742ca2fd9779589a3c8aea7f030460c5db8b5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 2f57e801720c6b546a58b216422629d192e8d2e6
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90994924"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843312"
 ---
 # <a name="configure-encryption-with-customer-managed-keys-stored-in-azure-key-vault-managed-hsm-preview"></a>Versleuteling configureren met door de klant beheerde sleutels die zijn opgeslagen in Azure Key Vault beheerde HSM (preview-versie)
 
@@ -62,7 +62,7 @@ az keyvault role assignment create \
 
 ## <a name="configure-encryption-with-a-key-in-the-managed-hsm"></a>Versleuteling configureren met een sleutel in de beheerde HSM
 
-Configureer ten slotte Azure Storage versleuteling met door de klant beheerde sleutels om een sleutel te gebruiken die is opgeslagen in de beheerde HSM. Ondersteunde sleutel typen zijn onder meer RSA-HSM-sleutels van grootte 2048, 3072 en 4096. Installeer Azure CLI 2.12.0 of hoger om versleuteling te configureren voor het gebruik van een door de klant beheerde sleutel in een beheerde HSM. Zie [de Azure cli installeren](/cli/azure/install-azure-cli)voor meer informatie.
+Configureer ten slotte Azure Storage versleuteling met door de klant beheerde sleutels om een sleutel te gebruiken die is opgeslagen in de beheerde HSM. Ondersteunde sleutel typen zijn onder meer RSA-HSM-sleutels van grootte 2048, 3072 en 4096. Installeer Azure CLI 2.12.0 of hoger om versleuteling te configureren voor het gebruik van een door de klant beheerde sleutel in een beheerde HSM. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie.
 
 Als u de sleutel versie automatisch wilt bijwerken voor een door de klant beheerde sleutel, laat u de sleutel versie weg wanneer u versleuteling configureert met door de klant beheerde sleutels voor het opslag account. Roep [AZ Storage account update](/cli/azure/storage/account#az_storage_account_update) aan om de versleutelings instellingen van het opslag account bij te werken, zoals wordt weer gegeven in het volgende voor beeld. Neem de `--encryption-key-source parameter` en stel deze in op `Microsoft.Keyvault` om door de klant beheerde sleutels voor het account in te scha kelen. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden.
 

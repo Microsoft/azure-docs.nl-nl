@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/07/2020
 ms.author: blehr
-ms.custom: references_regions
-ms.openlocfilehash: a1bd303390626eaea71e588e325fedbd2d8fa4b9
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.custom: references_regions , devx-track-azurecli
+ms.openlocfilehash: 0c248149694c2bf66b8c94e9c0a29a8f7da9f4e4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94353353"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843737"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Openbaar IP-adres upgraden
 
@@ -100,7 +100,7 @@ Als u wilt profiteren van de nieuwe mogelijkheden van Azure Resource Manager, ku
 
 In het volgende voor beeld wordt ervan uitgegaan dat er eerder een klassieke Azure Gereserveerd IP **myReservedIP** in **myResourceGroup** is gemaakt. Een andere vereiste voor migratie is om ervoor te zorgen dat het Azure Resource Manager-abonnement is geregistreerd voor migratie. Dit wordt uitvoerig besproken op stap 3 en 4 van [Deze pagina](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-ps).
 
-Als u de Gereserveerd IP wilt migreren, voert u de onderstaande opdrachten uit met behulp van Power shell.  Opmerking Als het IP-adres niet is gekoppeld aan een service (onder er bevindt zich een service met de naam **myService** ), kan deze stap worden overgeslagen.
+Als u de Gereserveerd IP wilt migreren, voert u de onderstaande opdrachten uit met behulp van Power shell.  Opmerking Als het IP-adres niet is gekoppeld aan een service (onder er bevindt zich een service met de naam **myService**), kan deze stap worden overgeslagen.
 
 ```azurepowershell-interactive
 ## Variables for the command ##
@@ -118,13 +118,13 @@ Met de vorige opdracht worden eventuele waarschuwingen en fouten die de migratie
 Move-AzureReservedIP -ReservedIPName $name -Prepare
 Move-AzureReservedIP -ReservedIPName $name -Commit
 ```
-Er wordt een nieuwe resource groep in Azure Resource Manager gemaakt met behulp van de naam van de gemigreerde Gereserveerd IP (in het bovenstaande voor beeld is de resource groep **myReservedIP-gemigreerd** ).
+Er wordt een nieuwe resource groep in Azure Resource Manager gemaakt met behulp van de naam van de gemigreerde Gereserveerd IP (in het bovenstaande voor beeld is de resource groep **myReservedIP-gemigreerd**).
 
 # <a name="reserved-to-basic---cli"></a>[**Gereserveerd voor Basic-CLI**](#tab/option-migrate-cli)
 
 In het volgende voor beeld wordt ervan uitgegaan dat er eerder een klassieke Azure Gereserveerd IP **myReservedIP** in **myResourceGroup** is gemaakt. Een andere vereiste voor migratie is om ervoor te zorgen dat het Azure Resource Manager-abonnement is geregistreerd voor migratie. Dit wordt uitvoerig besproken op stap 3 en 4 van [Deze pagina](https://docs.microsoft.com/azure/virtual-machines/linux/migration-classic-resource-manager-cli).
 
-Als u de Gereserveerd IP wilt migreren, voert u de onderstaande opdrachten uit met behulp van de Azure CLI.  Opmerking Als het IP-adres niet is gekoppeld aan een service (onder een service met de naam **myService** en Deployment **myDeployment** ), kan deze stap worden overgeslagen.
+Als u de Gereserveerd IP wilt migreren, voert u de onderstaande opdrachten uit met behulp van de Azure CLI.  Opmerking Als het IP-adres niet is gekoppeld aan een service (onder een service met de naam **myService** en Deployment **myDeployment**), kan deze stap worden overgeslagen.
 
 ```azurecli-interactive
 ## Variables for the command ##
@@ -142,30 +142,20 @@ Met de vorige opdracht worden eventuele waarschuwingen en fouten die de migratie
 azure network reserved-ip prepare-migration $name
 azure network reserved-ip commit-migration $name
 ```
-Er wordt een nieuwe resource groep in Azure Resource Manager gemaakt met behulp van de naam van de gemigreerde Gereserveerd IP (in het bovenstaande voor beeld is de resource groep **myReservedIP-gemigreerd** ).
+Er wordt een nieuwe resource groep in Azure Resource Manager gemaakt met behulp van de naam van de gemigreerde Gereserveerd IP (in het bovenstaande voor beeld is de resource groep **myReservedIP-gemigreerd**).
 
 ---
 
 ## <a name="limitations"></a>Beperkingen
 
-* Deze functie is momenteel alleen beschikbaar in de volgende regio's:<br>
-VS - west-centraal<br>
-VS - noord-centraal<br>
-VS - west<br>
-VS - west 2<br>
-Noorwegen - oost<br>
-Zuid-Afrika - noord<br>
-VS - oost<br>
-Europa - noord<br>
-Korea - centraal<br>
-Indiase centraal<br>
-US - oost 2<br>
-Zwitserland - noord<br>
-India - west<br>
-Duitsland - noord<br>
-Canada - midden<br>
-Frankrijk - zuid<br>
-India - west
+* Deze functie is momenteel niet beschikbaar in de volgende regio's:<br>
+VS (overheid) - Virginia<br>
+US DoD East<br>
+US DoD Central<br>
+China East<br>
+China - oost 2<br>
+China - noord<br>
+China - noord 2
 
 * Als u een standaard open bare IP-adres wilt bijwerken, kan deze niet worden gekoppeld aan een Azure-resource.  Raadpleeg [Deze pagina](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) voor meer informatie over het ontkoppelen van open bare ip's.  En als u een Gereserveerd IP wilt migreren, kan het niet worden gekoppeld aan een Cloud service.  Raadpleeg [Deze pagina](https://docs.microsoft.com/azure/virtual-network/remove-public-ip-address-vm) voor meer informatie over het ontkoppelen van gereserveerde ip's.  
 * Open bare Ip's die zijn bijgewerkt van Basic naar Standard SKU blijven geen [beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones) en kunnen daarom niet worden gekoppeld aan een Azure-resource die een zone-redundante of zonegebonden is.  Opmerking: dit is alleen van toepassing op regio's die beschikbaarheids zones bieden.

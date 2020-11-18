@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/15/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 3d199ae202cbe99176f3ca5d0ae82ecdeec84ca4
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: d6cf0ba06293a073fc8fbe26e2386f1852429002
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684505"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843992"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Veelgestelde vragen over Azure IaaS VM-schijven en beheerde en onbeheerde Premium-schijven
 
@@ -76,7 +76,7 @@ Afhankelijk van de regio waar de beschikbaarheidsset met Managed Disks zich bevi
 
 U stelt een privé opslag account in voor de diagnostische gegevens van de virtuele machine.
 
-**Welk soort Role-Based Access Control ondersteuning is beschikbaar voor Managed Disks?**
+**Welke soort Azure-ondersteuning voor op rollen gebaseerd toegangs beheer is beschikbaar voor Managed Disks?**
 
 Managed Disks ondersteunt drie belangrijkste standaard rollen:
 
@@ -304,7 +304,7 @@ Nee. Azure Site Recovery Azure naar Azure-beveiliging voor Vm's met Managed Disk
 
 **Kan ik Vm's migreren met onbeheerde schijven die zich bevinden op opslag accounts die al of niet eerder zijn versleuteld naar Managed disks?**
 
-Ja
+Yes
 
 ## <a name="managed-disks-and-storage-service-encryption"></a>Managed Disks en Storage Service Encryption
 
@@ -342,7 +342,7 @@ Ja. Alle beheerde moment opnamen en installatie kopieën worden automatisch vers
 
 **Kan ik Vm's converteren met onbeheerde schijven die zich bevinden op de opslag accounts die eerder zijn versleuteld op beheerde schijven?**
 
-Ja
+Yes
 
 **Wordt een geëxporteerde VHD van een beheerde schijf of een moment opname ook versleuteld?**
 

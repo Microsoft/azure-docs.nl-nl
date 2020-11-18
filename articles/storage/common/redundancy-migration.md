@@ -10,13 +10,13 @@ ms.date: 09/24/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 6f5eab8f53fb4c9e15606223707292261b4615e0
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 228595bf633ef0545a13abe19308e49da82cf75a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94330288"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844009"
 ---
 # <a name="change-how-a-storage-account-is-replicated"></a>Wijzigen hoe een opslagaccount wordt gerepliceerd
 
@@ -125,16 +125,16 @@ U kunt Live migratie aanvragen via de [ondersteunings portal van Azure](https://
 
 1. Selecteer een **nieuwe ondersteunings aanvraag**.
 2. Voltooi de **basis beginselen** op basis van uw account gegevens: 
-    - **Probleem type** : Selecteer **Technical**.
-    - **Service** : Selecteer **Mijn services** en **beheer van opslag accounts**.
-    - **Resource** : Selecteer de resource die u wilt converteren naar ZRS.
+    - **Probleem type**: Selecteer **Technical**.
+    - **Service**: Selecteer **Mijn services** en **beheer van opslag accounts**.
+    - **Resource**: Selecteer de resource die u wilt converteren naar ZRS.
 3. Selecteer **Volgende**.
 4. Geef de volgende waarden op voor het **probleem** gedeelte:
-    - **Ernst** : behoud de standaard waarde in.
-    - **Probleem type** : **gegevens migratie** selecteren.
-    - **Categorie** : Selecteer **migreren naar ZRS**.
-    - **Titel** : Typ een beschrijvende titel, bijvoorbeeld ZRS- **account migratie**.
-    - **Details** : Typ meer details in het vak **Details** , bijvoorbeeld ik wil migreren naar ZRS vanuit [LRS, GRS] in de \_ \_ regio.
+    - **Ernst**: behoud de standaard waarde in.
+    - **Probleem type**: **gegevens migratie** selecteren.
+    - **Categorie**: Selecteer **migreren naar ZRS**.
+    - **Titel**: Typ een beschrijvende titel, bijvoorbeeld ZRS- **account migratie**.
+    - **Details**: Typ meer details in het vak **Details** , bijvoorbeeld ik wil migreren naar ZRS vanuit [LRS, GRS] in de \_ \_ regio.
 5. Selecteer **Volgende**.
 6. Controleer of de contact gegevens juist zijn op de Blade **contact gegevens** .
 7. Selecteer **Maken**.
@@ -165,7 +165,7 @@ U kunt ook uw klassieke ZRS-opslag account upgraden naar ZRS met behulp van de A
 
 # <a name="portal"></a>[Portal](#tab/portal)
 
-Als u een upgrade wilt uitvoeren naar ZRS in de Azure Portal, gaat u naar de **configuratie** -instellingen van het account en kiest u **upgrade** :
+Als u een upgrade wilt uitvoeren naar ZRS in de Azure Portal, gaat u naar de **configuratie** -instellingen van het account en kiest u **upgrade**:
 
 ![ZRS Classic upgraden naar ZRS in de portal](media/redundancy-migration/portal-zrs-classic-upgrade.png)
 

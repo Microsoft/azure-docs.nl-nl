@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
-ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: cdd5a8b518a374340af35d5f866d51d016e5ac79
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
+ms.openlocfilehash: cb6680482466018f86779d9c0318bbfe4e749be1
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745197"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843142"
 ---
 # <a name="monitoring-azure-blob-storage"></a>Azure Blob-opslag bewaken
 
@@ -80,14 +80,14 @@ Zie voor algemene instructies de [Diagnostische instelling maken voor het verzam
 
 2. Ga naar uw opslagaccount.
 
-3. Klik in de sectie **bewaking** op **Diagnostische instellingen (preview-versie)** .
+3. Klik in de sectie **bewaking** op **Diagnostische instellingen (preview-versie)**.
 
    > [!div class="mx-imgBorder"]
    > ![Portal: Diagnostische logboeken](media/monitor-blob-storage/diagnostic-logs-settings-pane.png)   
 
 4. Kies **BLOB** als het type opslag waarvoor u logboeken wilt inschakelen.
 
-5. Klik op **Diagnostische instelling toevoegen** .
+5. Klik op **Diagnostische instelling toevoegen**.
 
    > [!div class="mx-imgBorder"]
    > ![Portal-resource logboeken-diagnostische instelling toevoegen](media/monitor-blob-storage/diagnostic-logs-settings-pane-2.png)
@@ -189,7 +189,7 @@ Hier volgt een voorbeeld:
 
 Zie [Azure-resource logboeken streamen naar log Analytics werk ruimte in azure monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-stream-log-store)voor meer informatie.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 1. Open eerst de [Azure Cloud shell](https://docs.microsoft.com/azure/cloud-shell/overview)of als u de Azure cli lokaal hebt [geïnstalleerd](https://docs.microsoft.com/cli/azure/install-azure-cli) , opent u een opdracht console toepassing zoals Windows Power shell.
 
@@ -269,7 +269,7 @@ Zie [metrische dimensies](monitor-blob-storage-reference.md#metrics-dimensions)v
 
 Metrische gegevens voor Azure Blob Storage bevinden zich in de volgende naam ruimten: 
 
-- Micro soft. Storage/Storage accounts
+- Microsoft.Storage/storageAccounts
 - Micro soft. Storage/Storage accounts/blobServices
 
 Zie [Azure monitor ondersteunde metrische gegevens](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported)voor een lijst met alle Azure monitor metrische gegevens over ondersteuning, waaronder Azure Blob-opslag.
@@ -442,7 +442,7 @@ U kunt metrische waarden op account niveau van uw opslag account of de Blob Stor
    Get-AzMetric -ResourceId $resourceId -MetricNames "UsedCapacity" -TimeGrain 01:00:00
 ```
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 #### <a name="list-the-account-level-metric-definition"></a>De metrische definitie op account niveau weer geven
 

@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/19/2018
 ms.author: terrylan
 Customer intent: As an IT Pro or decision maker I am trying to learn about identity management capabilities in Azure
-ms.openlocfilehash: 48d0483247f610a1e8c7491e13ea86883bf8f341
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 2c7d51da361816841ff556c1da696a48d2ce6a06
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410365"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843686"
 ---
 # <a name="azure-identity-management-security-overview"></a>Overzicht van Azure Identity Management-beveiliging
 
@@ -79,13 +79,13 @@ Meer informatie:
 
 ## <a name="multi-factor-authentication"></a>Multi-Factor Authentication
 
-Azure Multi-Factor Authentication is een authenticatie methode waarvoor het gebruik van meer dan één verificatie methode is vereist en waarmee een kritieke tweede beveiligingslaag wordt toegevoegd aan gebruikers aanmeldingen en trans acties. Multi-Factor Authentication helpt de toegang tot gegevens en toepassingen te beschermen terwijl de vraag naar gebruikers wordt gevergaderd voor een eenvoudig aanmeldings proces. Het biedt sterke verificatie via verschillende verificatie opties: telefoon gesprekken, tekst berichten, meldingen over mobiele apps of verificatie codes en OAuth-tokens van derden.
+Azure AD Multi-Factor Authentication is een verificatie methode die het gebruik van meer dan één verificatie methode vereist en een kritieke tweede beveiligingslaag toevoegt aan aanmeldingen en trans acties van gebruikers. Multi-Factor Authentication helpt de toegang tot gegevens en toepassingen te beschermen terwijl de vraag naar gebruikers wordt gevergaderd voor een eenvoudig aanmeldings proces. Het biedt sterke verificatie via verschillende verificatie opties: telefoon gesprekken, tekst berichten, meldingen over mobiele apps of verificatie codes en OAuth-tokens van derden.
 
 Meer informatie:
 
 * [Multi-Factor Authentication](https://azure.microsoft.com/documentation/services/multi-factor-authentication/)
-* [Wat is Azure Multi-Factor Authentication?](../../active-directory/authentication/concept-mfa-howitworks.md)
-* [Hoe Multi-Factor Authentication werkt](../../active-directory/authentication/concept-mfa-howitworks.md)
+* [Wat is Azure AD Multi-Factor Authentication?](../../active-directory/authentication/concept-mfa-howitworks.md)
+* [Hoe Azure AD Multi-Factor Authentication werkt](../../active-directory/authentication/concept-mfa-howitworks.md)
 
 ## <a name="azure-rbac"></a>Azure RBAC
 
@@ -107,11 +107,11 @@ Beveiligings bewaking, waarschuwingen en op machine learning gebaseerde rapporte
 
 In het Azure Portal vallen rapporten in de volgende categorieën:
 
-* **Afwijkingen rapporten** : bevatten aanmeldings gebeurtenissen die afwijkend zijn aangetroffen. Ons doel is om u op de hoogte te stellen van deze activiteit en u te laten bepalen of een gebeurtenis verdacht is.
-* **Geïntegreerde toepassings rapporten** : bieden inzicht in hoe Cloud toepassingen worden gebruikt in uw organisatie. Azure AD biedt integratie met duizenden Cloud toepassingen.
-* **Fout rapporten** : duiden op fouten die kunnen optreden wanneer u accounts inricht op externe toepassingen.
-* **Gebruikersspecifieke rapporten** : gegevens van de activiteit voor het aanmelden van een apparaat weer geven voor een specifieke gebruiker.
-* **Activiteiten logboeken** : bevatten een record van alle gecontroleerde gebeurtenissen in de afgelopen 24 uur, in de afgelopen 7 dagen, of in de afgelopen 30 dagen, en de groeps activiteiten wijzigen en het opnieuw instellen van het wacht woord en de registratie activiteit.
+* **Afwijkingen rapporten**: bevatten aanmeldings gebeurtenissen die afwijkend zijn aangetroffen. Ons doel is om u op de hoogte te stellen van deze activiteit en u te laten bepalen of een gebeurtenis verdacht is.
+* **Geïntegreerde toepassings rapporten**: bieden inzicht in hoe Cloud toepassingen worden gebruikt in uw organisatie. Azure AD biedt integratie met duizenden Cloud toepassingen.
+* **Fout rapporten**: duiden op fouten die kunnen optreden wanneer u accounts inricht op externe toepassingen.
+* **Gebruikersspecifieke rapporten**: gegevens van de activiteit voor het aanmelden van een apparaat weer geven voor een specifieke gebruiker.
+* **Activiteiten logboeken**: bevatten een record van alle gecontroleerde gebeurtenissen in de afgelopen 24 uur, in de afgelopen 7 dagen, of in de afgelopen 30 dagen, en de groeps activiteiten wijzigen en het opnieuw instellen van het wacht woord en de registratie activiteit.
 
 Meer informatie:
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a015c3881e2fa51ecfaaba57e6bb6262194012d6
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 3932a1dee0eee16e7d64ff4c6085919d85b431ab
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367870"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843261"
 ---
 # <a name="azure-security-baseline-for-virtual-machine-scale-sets"></a>Azure-beveiligings basislijn voor Virtual Machine Scale Sets
 
@@ -508,7 +508,7 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 **Verantwoordelijkheid**: klant
 
-## <a name="data-protection"></a>Gegevensbeveiliging
+## <a name="data-protection"></a>Gegevensbescherming
 
 *Zie [beveiligings beheer: gegevens beveiliging](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 
@@ -546,7 +546,7 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4,3: niet-geautoriseerde overdracht van gevoelige gegevens controleren en blok keren
 
-**Hulp**bij het implementeren van een oplossing van derden op netwerk verbindingen die controle bieden op niet-geautoriseerde overdracht van gevoelige informatie en die overdrachten blokkeert tijdens het melden van informatie over de beveiliging van uw mede werkers.
+**Hulp** bij het implementeren van een oplossing van derden op netwerk verbindingen die controle bieden op niet-geautoriseerde overdracht van gevoelige informatie en die overdrachten blokkeert tijdens het melden van informatie over de beveiliging van uw mede werkers.
 
 Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt micro soft alle inhoud van de klant als gevoelig voor de bescherming tegen verlies en bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
@@ -612,7 +612,7 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
 
-* [Logboekregistratie van Azure Opslaganalyse](../storage/common/storage-analytics-logging.md)
+* [Azure Storage-analyselogboeken](../storage/common/storage-analytics-logging.md)
 
 **Azure Security Center bewaking**: momenteel niet beschikbaar
 
@@ -722,7 +722,7 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
-**Hulp: Azure**Policy gebruiken om beperkingen te geven aan het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
+**Hulp: Azure** Policy gebruiken om beperkingen te geven aan het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
 - Niet toegestane resourcetypen
 - Toegestane brontypen
 
@@ -774,7 +774,7 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
-**Hulp: Azure**Policy gebruiken om beperkingen te geven aan het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
+**Hulp: Azure** Policy gebruiken om beperkingen te geven aan het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
 - Niet toegestane resourcetypen
 - Toegestane brontypen
 
@@ -974,7 +974,7 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Integratie met door Azure beheerde identiteiten](../azure-app-configuration/howto-integrate-azure-managed-service-identity.md)
 
-* [Een Key Vault maken](../key-vault/secrets/quick-create-portal.md)
+* [Een Key Vault maken](../key-vault/general/quick-create-portal.md)
 
 * [Verifiëren bij Key Vault](../key-vault/general/authentication.md)
 
@@ -1010,7 +1010,7 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8,1: centraal beheerde anti-malware-software gebruiken
 
-**Hulp**bij het gebruik van micro soft antimalware voor virtuele Azure Windows-machines om uw resources voortdurend te controleren en te beschermen. U hebt een hulp programma van derden nodig voor beveiliging tegen schadelijke software in azure Linux virtual machine.
+**Hulp** bij het gebruik van micro soft antimalware voor virtuele Azure Windows-machines om uw resources voortdurend te controleren en te beschermen. U hebt een hulp programma van derden nodig voor beveiliging tegen schadelijke software in azure Linux virtual machine.
 
 * [Micro soft antimalware configureren voor Cloud Services en Virtual Machines](../security/fundamentals/antimalware.md)
 
@@ -1048,7 +1048,7 @@ U hebt een hulp programma van derden nodig voor beveiliging tegen schadelijke so
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9,1: zorg voor regel matige automatische back-ups
 
-**Hulp**bij het maken van een moment opname van het exemplaar van de Azure virtual machine Scale set of de beheerde schijf die is gekoppeld aan het exemplaar met behulp van Power shell of rest-api's. U kunt Azure Automation ook gebruiken om de back-upscripts met regel matige tussen pozen uit te voeren.
+**Hulp** bij het maken van een moment opname van het exemplaar van de Azure virtual machine Scale set of de beheerde schijf die is gekoppeld aan het exemplaar met behulp van Power shell of rest-api's. U kunt Azure Automation ook gebruiken om de back-upscripts met regel matige tussen pozen uit te voeren.
 
 * [Een moment opname maken van een instantie van een schaalset voor virtuele machines en beheerde schijven](./virtual-machine-scale-sets-faq.md#how-do-i-take-a-snapshot-of-a-virtual-machine-scale-set-instance)
 

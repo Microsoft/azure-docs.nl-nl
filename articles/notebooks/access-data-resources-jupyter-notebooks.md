@@ -4,12 +4,12 @@ description: Meer informatie over toegang tot bestanden, REST-Api's, data bases 
 ms.topic: how-to
 ms.date: 12/04/2018
 ms.custom: devx-track-python
-ms.openlocfilehash: b2254e6d966ca3281cd9c8b0771cb77fb6dede33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a833ff914c1ee53f024147371977ac1caa3800dc
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87846612"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842869"
 ---
 # <a name="access-cloud-data-in-a-notebook"></a>Toegang tot cloudgegevens in een notebook
 
@@ -46,7 +46,7 @@ if response.status_code == 200:
 
 U kunt toegang krijgen tot data bases in SQL Database of SQL Managed instance met behulp van de pyodbc-of pymssql-bibliotheken.
 
-[Met python kunt u een query uitvoeren op een Azure-SQL database](https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python) geeft u instructies voor het maken van een data base in SQL database met AdventureWorks-gegevens en ziet u hoe u een query op die gegevens uitvoert. Dezelfde code wordt weer gegeven in de voorbeeld notitieblok voor dit artikel.
+[Met python kunt u een query uitvoeren op een Azure-SQL database](../azure-sql/database/connect-query-python.md) geeft u instructies voor het maken van een data base in SQL database met AdventureWorks-gegevens en ziet u hoe u een query op die gegevens uitvoert. Dezelfde code wordt weer gegeven in de voorbeeld notitieblok voor dit artikel.
 
 ## <a name="azure-storage"></a>Azure Storage
 
@@ -61,11 +61,11 @@ In het voor beeld-notebook wordt gedemonstreerd hoe u met zowel tabellen als blo
 
 Azure Cosmos DB biedt een volledig geïndexeerd NoSQL-Archief voor JSON-documenten). De volgende artikelen bieden een aantal verschillende manieren om te werken met Cosmos DB van python:
 
-- [Een SQL API-app bouwen met python](https://docs.microsoft.com/azure/cosmos-db/create-sql-api-python)
-- [Bouw een kolf-app met de API van het Azure Cosmos DB voor MongoDB](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-flask)
-- [Een grafiek database maken met behulp van python en de Gremlin-API](https://docs.microsoft.com/azure/cosmos-db/create-graph-python)
-- [Een Cassandra-app bouwen met python en Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-cassandra-python)
-- [Een Table-API-app bouwen met python en Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-table-python)
+- [Een SQL API-app bouwen met python](../cosmos-db/create-sql-api-python.md)
+- [Bouw een kolf-app met de API van het Azure Cosmos DB voor MongoDB](../cosmos-db/create-mongodb-flask.md)
+- [Een grafiek database maken met behulp van python en de Gremlin-API](../cosmos-db/create-graph-python.md)
+- [Een Cassandra-app bouwen met python en Azure Cosmos DB](../cosmos-db/create-cassandra-python.md)
+- [Een Table-API-app bouwen met python en Azure Cosmos DB](../cosmos-db/table-storage-how-to-use-python.md)
 
 Wanneer u met Cosmos DB werkt, kunt u de [Azure-cosmosdb-tabel](https://pypi.org/project/azure-cosmosdb-table/) bibliotheek gebruiken.
 
@@ -73,9 +73,9 @@ Wanneer u met Cosmos DB werkt, kunt u de [Azure-cosmosdb-tabel](https://pypi.org
 
 Azure biedt een aantal andere database typen die u kunt gebruiken. De onderstaande artikelen bevatten richt lijnen voor het openen van deze data bases van python:
 
-- [Azure Database voor PostgreSQL: Python gebruiken om verbinding te maken en gegevens op te vragen](https://docs.microsoft.com/azure/postgresql/connect-python)
-- [Snelstart: Azure Redis Cache gebruiken met Python](https://docs.microsoft.com/azure/redis-cache/cache-python-get-started)
-- [Azure Database voor MySQL: Python gebruiken om verbinding te maken en gegevens op te vragen](https://docs.microsoft.com/azure/mysql/connect-python)
+- [Azure Database voor PostgreSQL: Python gebruiken om verbinding te maken en gegevens op te vragen](../postgresql/connect-python.md)
+- [Snelstart: Azure Redis Cache gebruiken met Python](../azure-cache-for-redis/cache-python-get-started.md)
+- [Azure Database voor MySQL: Python gebruiken om verbinding te maken en gegevens op te vragen](../mysql/connect-python.md)
 - [Azure Data Factory](https://azure.microsoft.com/services/data-factory/)
   - [Wizard kopiëren voor Azure Data Factory](https://azure.microsoft.com/updates/code-free-copy-wizard-for-azure-data-factory/)
 

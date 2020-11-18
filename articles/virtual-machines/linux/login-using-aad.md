@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: sandeo
-ms.openlocfilehash: fef1870c396055cb9121aa5d8c7859440d107f98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 882df9d0dcb01d6321455b845fed087a5e14ccc6
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88002329"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843072"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Voor beeld: Meld u aan bij een virtuele Linux-machine in azure met Azure Active Directory-verificatie
 
@@ -134,11 +134,11 @@ az role assignment create \
 ```
 
 > [!NOTE]
-> Als uw AAD-domein en de gebruikers naam van het aanmeldings domein niet overeenkomen, moet u de object-ID van uw gebruikers account opgeven met de id van de *toegewezen*gebruiker, niet alleen de gebruikers naam voor *--Assign*. U kunt de object-ID voor uw gebruikers account verkrijgen met [AZ AD-gebruikers lijst](/cli/azure/ad/user#az-ad-user-list).
+> Als uw AAD-domein en de gebruikers naam van het aanmeldings domein niet overeenkomen, moet u de object-ID van uw gebruikers account opgeven met de id van de *toegewezen* gebruiker, niet alleen de gebruikers naam voor *--Assign*. U kunt de object-ID voor uw gebruikers account verkrijgen met [AZ AD-gebruikers lijst](/cli/azure/ad/user#az-ad-user-list).
 
 Zie Using the [Azure cli](../../role-based-access-control/role-assignments-cli.md), [Azure Portal](../../role-based-access-control/role-assignments-portal.md)of [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)voor meer informatie over het gebruik van Azure RBAC om de toegang tot uw Azure-abonnements resources te beheren.
 
-U kunt Azure AD ook zo configureren dat multi-factor Authentication is vereist voor een specifieke gebruiker om zich aan te melden bij de virtuele Linux-machine. Zie [aan de slag met Azure multi-factor Authentication in de Cloud](../../active-directory/authentication/howto-mfa-getstarted.md)voor meer informatie.
+U kunt Azure AD ook zo configureren dat multi-factor Authentication is vereist voor een specifieke gebruiker om zich aan te melden bij de virtuele Linux-machine. Zie [aan de slag met Azure AD-multi-factor Authentication in de Cloud](../../active-directory/authentication/howto-mfa-getstarted.md)voor meer informatie.
 
 ## <a name="log-in-to-the-linux-virtual-machine"></a>Meld u aan bij de virtuele Linux-machine
 
@@ -200,7 +200,7 @@ Access denied
 
 Als u de verificatie stap in een webbrowser hebt voltooid, wordt u mogelijk onmiddellijk gevraagd om u opnieuw aan te melden met een nieuwe code. Deze fout wordt meestal veroorzaakt door een conflict tussen de aanmeldings naam die u hebt opgegeven bij de SSH-prompt en het account waarmee u zich hebt aangemeld bij Azure AD. U kunt dit probleem als volgt oplossen:
 
-- Controleer of de aanmeldings naam die u hebt opgegeven bij de SSH-prompt juist is. Een type fout in de aanmeldings naam kan ertoe leiden dat de aanmeldings naam die u hebt opgegeven bij de SSH-prompt en het account waarmee u zich hebt aangemeld bij Azure AD overeenkomen. U hebt bijvoorbeeld *azuresuer \@ contoso.onmicrosoft.com* in plaats van *azureuser \@ contoso.onmicrosoft.com*getypt.
+- Controleer of de aanmeldings naam die u hebt opgegeven bij de SSH-prompt juist is. Een type fout in de aanmeldings naam kan ertoe leiden dat de aanmeldings naam die u hebt opgegeven bij de SSH-prompt en het account waarmee u zich hebt aangemeld bij Azure AD overeenkomen. U hebt bijvoorbeeld *azuresuer \@ contoso.onmicrosoft.com* in plaats van *azureuser \@ contoso.onmicrosoft.com* getypt.
 - Als u meerdere gebruikers accounts hebt, moet u ervoor zorgen dat u in het browser venster geen ander gebruikers account opgeeft wanneer u zich aanmeldt bij Azure AD.
 - Linux is een hoofdletter gevoelig besturings systeem. Er is een verschil tussen ' Azureuser@contoso.onmicrosoft.com ' en ' azureuser@contoso.onmicrosoft.com ', wat kan leiden tot een niet-overeenkomend. Zorg ervoor dat u de UPN opgeeft met de juiste hoofdletter gevoeligheid bij de SSH-prompt.
 

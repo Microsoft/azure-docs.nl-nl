@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seodec18,seoapr2020, contperfq2
 ms.date: 10/30/2020
-ms.openlocfilehash: ed2ce13ab10c09dc738e522566742078819e8341
-ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
+ms.openlocfilehash: 4c0d12e4c37476b9ae71962251105ef92aa39120
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93148385"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845200"
 ---
 # <a name="configure-hdinsight-clusters-for-active-directory-integration-with-enterprise-security-package"></a>HDInsight-clusters configureren voor integratie met Active Directory met Enterprise Security Package
 
@@ -62,7 +62,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 ```
 
 > [!NOTE]  
-> Alleen Tenant beheerders hebben de bevoegdheid om Azure AD DS in te scha kelen. Als de cluster opslag is Azure Data Lake Storage Gen1 of Gen2, moet u Azure Multi-Factor Authentication alleen uitschakelen voor gebruikers die toegang moeten hebben tot het cluster met behulp van basis-Kerberos-authenticatie.
+> Alleen Tenant beheerders hebben de bevoegdheid om Azure AD DS in te scha kelen. Als de cluster opslag is Azure Data Lake Storage Gen1 of Gen2, moet u Azure AD-Multi-Factor Authentication alleen uitschakelen voor gebruikers die toegang moeten hebben tot het cluster met behulp van basis-Kerberos-authenticatie.
 >
 > U kunt met behulp van [vertrouwde IP-adressen](../../active-directory/authentication/howto-mfa-mfasettings.md#trusted-ips) of [voorwaardelijke toegang](../../active-directory/conditional-access/overview.md) multi-factor Authentication uitschakelen voor *specifieke gebruikers wanneer* ze toegang hebben tot het IP-bereik voor het virtuele netwerk van het HDInsight-cluster. Als u voorwaardelijke toegang gebruikt, zorgt u ervoor dat het eind punt van de Active Directory service in ingeschakeld is op het virtuele HDInsight-netwerk.
 >
@@ -88,7 +88,7 @@ Wijs vervolgens de rol van **HDInsight Domain Services-Inzender** toe aan de beh
 
 Als u de functie voor het toewijzen van de **HDInsight Domain Services-Inzender** hebt, zorgt u ervoor dat deze identiteit `on behalf of` over de juiste () toegang beschikt voor de bewerkingen van domein Services op het Azure AD DS domein. Deze bewerkingen zijn onder andere het maken en verwijderen van organisatie-eenheden.
 
-Wanneer de beheerde identiteit de rol krijgt, beheert de Azure AD DS-beheerder wie deze gebruikt. Eerst selecteert de beheerder de beheerde identiteit in de portal. Selecteert vervolgens **Access Control (IAM)** onder **overzicht** . De beheerder wijst de rol **Managed Identity-operator** toe aan gebruikers of groepen die ESP-clusters willen maken.
+Wanneer de beheerde identiteit de rol krijgt, beheert de Azure AD DS-beheerder wie deze gebruikt. Eerst selecteert de beheerder de beheerde identiteit in de portal. Selecteert vervolgens **Access Control (IAM)** onder **overzicht**. De beheerder wijst de rol **Managed Identity-operator** toe aan gebruikers of groepen die ESP-clusters willen maken.
 
 De Azure AD DS-beheerder kan bijvoorbeeld deze rol toewijzen aan de groep **MarketingTeam** voor de beheerde **sjmsi** -identiteit. Er wordt een voor beeld weer gegeven in de volgende afbeelding. Deze toewijzing zorgt ervoor dat de juiste personen in de organisatie de beheerde identiteit kunnen gebruiken om ESP-clusters te maken.
 
@@ -99,11 +99,11 @@ De Azure AD DS-beheerder kan bijvoorbeeld deze rol toewijzen aan de groep **Mark
 > [!NOTE]  
 > Azure AD DS moet worden geïmplementeerd in een op Azure Resource Manager gebaseerd virtueel netwerk. Klassieke virtuele netwerken worden niet ondersteund voor Azure-AD DS. Zie [Azure Active Directory Domain Services inschakelen met behulp van de Azure Portal](../../active-directory-domain-services/tutorial-create-instance-advanced.md#create-and-configure-the-virtual-network)voor meer informatie.
 
-Schakel Azure AD DS in. Vervolgens wordt een lokale Domain Name System (DNS)-server uitgevoerd op de Active Directory virtuele machines (Vm's). Configureer uw Azure AD DS virtuele netwerk voor het gebruik van deze aangepaste DNS-servers. Als u de juiste IP-adressen wilt vinden, selecteert u **Eigenschappen** in de categorie **beheren** en kijkt u onder **IP-adres op virtueel netwerk** .
+Schakel Azure AD DS in. Vervolgens wordt een lokale Domain Name System (DNS)-server uitgevoerd op de Active Directory virtuele machines (Vm's). Configureer uw Azure AD DS virtuele netwerk voor het gebruik van deze aangepaste DNS-servers. Als u de juiste IP-adressen wilt vinden, selecteert u **Eigenschappen** in de categorie **beheren** en kijkt u onder **IP-adres op virtueel netwerk**.
 
 ![IP-adressen voor lokale DNS-servers zoeken](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-dns1.png)
 
-Wijzig de configuratie van de DNS-servers in het virtuele netwerk van Azure AD DS. Als u deze aangepaste Ip's wilt gebruiken, selecteert u **DNS-servers** in de categorie **instellingen** . Vervolgens selecteert u de optie **aangepast** , voert u het eerste IP-adres in het tekstvak in en selecteert u **Opslaan** . Voeg meer IP-adressen toe aan de hand van dezelfde stappen.
+Wijzig de configuratie van de DNS-servers in het virtuele netwerk van Azure AD DS. Als u deze aangepaste Ip's wilt gebruiken, selecteert u **DNS-servers** in de categorie **instellingen** . Vervolgens selecteert u de optie **aangepast** , voert u het eerste IP-adres in het tekstvak in en selecteert u **Opslaan**. Voeg meer IP-adressen toe aan de hand van dezelfde stappen.
 
 ![De DNS-configuratie van het virtuele netwerk bijwerken](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-vnet-configuration.png)
 
@@ -136,11 +136,11 @@ Nadat u ESP hebt ingeschakeld, worden veelvoorkomende onjuiste configuratie-item
 
 Wanneer u een HDInsight-cluster met ESP maakt, moet u de volgende para meters opgeven:
 
-* **Gebruiker van Cluster beheerder** : Kies een beheerder voor uw cluster uit uw gesynchroniseerde Azure AD DS-exemplaar. Dit domein account moet al worden gesynchroniseerd en beschikbaar zijn in azure AD DS.
+* **Gebruiker van Cluster beheerder**: Kies een beheerder voor uw cluster uit uw gesynchroniseerde Azure AD DS-exemplaar. Dit domein account moet al worden gesynchroniseerd en beschikbaar zijn in azure AD DS.
 
-* **Cluster toegangs groepen** : de beveiligings groepen waarvan u de gebruikers wilt synchroniseren en die toegang hebben tot het cluster, moeten beschikbaar zijn in azure AD DS. Een voor beeld is de groep HiveUsers. Zie [een groep maken en leden toevoegen in azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md)voor meer informatie.
+* **Cluster toegangs groepen**: de beveiligings groepen waarvan u de gebruikers wilt synchroniseren en die toegang hebben tot het cluster, moeten beschikbaar zijn in azure AD DS. Een voor beeld is de groep HiveUsers. Zie [een groep maken en leden toevoegen in azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md)voor meer informatie.
 
-* **URL van LDAPS** : een voor beeld is `ldaps://contoso.com:636` .
+* **URL van LDAPS**: een voor beeld is `ldaps://contoso.com:636` .
 
 De beheerde identiteit die u hebt gemaakt, kan worden gekozen in de vervolg keuzelijst door de **gebruiker toegewezen beheerde identiteit** wanneer u een nieuw cluster maakt.
 

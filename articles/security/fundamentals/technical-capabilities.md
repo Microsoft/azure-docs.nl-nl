@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2020
 ms.author: terrylan
-ms.openlocfilehash: 90aafad2a17b9535bde29f811e630112ccbd02e3
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 575486a89cd078325b76fa684ff9bd3d59a619c9
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696095"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844264"
 ---
 # <a name="azure-security-technical-capabilities"></a>Technische mogelijkheden van Azure-beveiliging
 Dit artikel bevat een inleiding tot beveiligings Services in azure waarmee u uw gegevens, resources en toepassingen in de cloud kunt beveiligen en voldoen aan de beveiligings behoeften van uw bedrijf.
@@ -92,7 +92,7 @@ Gebruikers hoeven niet alleen meerdere sets met gebruikers namen en wacht woorde
 
 #### <a name="multi-factor-authentication"></a>Multi-Factor Authentication
 
-[Azure multi-factor Authentication (MFA)](../../active-directory/authentication/concept-mfa-howitworks.md) is een verificatie methode waarvoor het gebruik van meer dan één verificatie methode is vereist en waarmee een kritieke tweede beveiligingslaag wordt toegevoegd aan gebruikers aanmeldingen en trans acties. [MFA helpt](../../active-directory/authentication/concept-mfa-howitworks.md) de toegang tot gegevens en toepassingen te beschermen terwijl de vraag naar gebruikers wordt gevergaderd voor een eenvoudig aanmeldings proces. Het biedt sterke authenticatie via verschillende verificatie opties: telefonische oproep, tekst bericht of mobiele app-melding of verificatie code en OAuth-tokens van derden.
+[Azure AD multi-factor Authentication (MFA)](../../active-directory/authentication/concept-mfa-howitworks.md) is een authenticatie methode waarvoor het gebruik van meer dan één verificatie methode is vereist en waarmee een kritieke tweede beveiligingslaag wordt toegevoegd aan gebruikers aanmeldingen en trans acties. [MFA helpt](../../active-directory/authentication/concept-mfa-howitworks.md) de toegang tot gegevens en toepassingen te beschermen terwijl de vraag naar gebruikers wordt gevergaderd voor een eenvoudig aanmeldings proces. Het biedt sterke authenticatie via verschillende verificatie opties: telefonische oproep, tekst bericht of mobiele app-melding of verificatie code en OAuth-tokens van derden.
 
 #### <a name="security-monitoring-alerts-and-machine-learning-based-reports"></a>Beveiligings bewaking, waarschuwingen en rapporten op basis van machine learning
 

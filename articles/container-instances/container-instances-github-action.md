@@ -3,13 +3,13 @@ title: Container exemplaar implementeren op GitHub-actie
 description: Configureer een GitHub-actie waarmee de stappen voor het maken, pushen en implementeren van een container installatie kopie naar Azure Container Instances worden geautomatiseerd.
 ms.topic: article
 ms.date: 08/20/2020
-ms.custom: github-actions-azure
-ms.openlocfilehash: c01075bcb64aa9b91869daba2e995957da74daf4
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.custom: github-actions-azure, devx-track-azurecli
+ms.openlocfilehash: 221ecbe5fbe2cdea4105362c43a5765bcc298d46
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92019185"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843652"
 ---
 # <a name="configure-a-github-action-to-create-a-container-instance"></a>Een GitHub-actie configureren voor het maken van een containerinstantie
 
@@ -128,7 +128,7 @@ az role assignment create \
 
 1. Selecteer in de gebruikers interface van github de optie **acties**  >  **nieuwe werk stroom**.
 1. Selecteer **zelf een werk stroom instellen**.
-1. Plak in **nieuw bestand bewerken**de volgende YAML-inhoud om de voorbeeld code te overschrijven. Accepteer de standaard bestandsnaam `main.yml` of geef een bestands naam op die u kiest.
+1. Plak in **nieuw bestand bewerken** de volgende YAML-inhoud om de voorbeeld code te overschrijven. Accepteer de standaard bestandsnaam `main.yml` of geef een bestands naam op die u kiest.
 1. Selecteer **door voeren starten**, geef eventueel korte en uitgebreide beschrijvingen van uw door Voer op en selecteer **nieuw bestand door voeren**.
 
 ```yml

@@ -10,13 +10,13 @@ ms.date: 09/16/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 219fe82f16dd9bbc887c9b17b067c706230c63dd
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 02661c9c2a581ab21a2ae9dc31e5da95426c0edd
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782379"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843380"
 ---
 # <a name="configure-encryption-with-customer-managed-keys-stored-in-azure-key-vault"></a>Versleuteling configureren met door de klant beheerde sleutels die zijn opgeslagen in Azure Key Vault
 
@@ -35,14 +35,14 @@ Voor het gebruik van door de klant beheerde sleutels met Azure Storage versleute
 
 # <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
-Zie [Quick Start: een sleutel kluis maken met behulp van de Azure Portal](../../key-vault/general/quick-create-portal.md)voor meer informatie over het maken van een sleutel kluis met de Azure Portal. Wanneer u de sleutel kluis maakt, selecteert u **beveiliging opschonen inschakelen** , zoals wordt weer gegeven in de volgende afbeelding.
+Zie [Quick Start: een sleutel kluis maken met behulp van de Azure Portal](../../key-vault/general/quick-create-portal.md)voor meer informatie over het maken van een sleutel kluis met de Azure Portal. Wanneer u de sleutel kluis maakt, selecteert u **beveiliging opschonen inschakelen**, zoals wordt weer gegeven in de volgende afbeelding.
 
 :::image type="content" source="media/customer-managed-keys-configure-key-vault/configure-key-vault-portal.png" alt-text="Scherm afbeelding die laat zien hoe u het leegmaken van beveiliging inschakelt bij het maken van een sleutel kluis":::
 
 Voer de volgende stappen uit om de beveiliging op een bestaande sleutel kluis leeg te maken:
 
 1. Navigeer naar uw sleutel kluis in de Azure Portal.
-1. Kies onder **instellingen** de optie **Eigenschappen** .
+1. Kies onder **instellingen** de optie **Eigenschappen**.
 1. Kies **beveiliging opschonen inschakelen** in de sectie **beveiliging opschonen** .
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
@@ -81,7 +81,7 @@ Set-AzKeyVaultAccessPolicy `
     -PermissionsToKeys wrapkey,unwrapkey,get
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u een nieuwe sleutel kluis wilt maken met behulp van Azure CLI, roept u de opdracht [AZ Key kluis Create](/cli/azure/keyvault#az-keyvault-create)aan. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden:
 
@@ -145,7 +145,7 @@ $key = Add-AzKeyVaultKey -VaultName $keyVault.VaultName `
     -Destination 'Software'
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u een sleutel wilt toevoegen met Azure CLI, roept u de [sleutel maken AZ Key kluis Create](/cli/azure/keyvault/key#az-keyvault-key-create). Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden.
 
@@ -175,12 +175,12 @@ Azure Storage kunt de door de klant beheerde sleutel die wordt gebruikt voor ver
 Als u door de klant beheerde sleutels wilt configureren met automatische updates van de sleutel versie in de Azure Portal, voert u de volgende stappen uit:
 
 1. Ga naar uw opslagaccount.
-1. Klik op de Blade **instellingen** voor het opslag account op **versleuteling** . Selecteer de optie door de **klant beheerde sleutels** , zoals wordt weer gegeven in de volgende afbeelding.
+1. Klik op de Blade **instellingen** voor het opslag account op **versleuteling**. Selecteer de optie door de **klant beheerde sleutels** , zoals wordt weer gegeven in de volgende afbeelding.
 
     ![Scherm opname van de portal met versleutelings optie](./media/customer-managed-keys-configure-key-vault/portal-configure-encryption-keys.png)
 
 1. Kies de optie **selecteren uit Key Vault** .
-1. Selecteer **een sleutel kluis en sleutel selecteren** .
+1. Selecteer **een sleutel kluis en sleutel selecteren**.
 1. Selecteer de sleutel kluis met de sleutel die u wilt gebruiken.
 1. Selecteer de sleutel in de sleutel kluis.
 
@@ -190,7 +190,7 @@ Als u door de klant beheerde sleutels wilt configureren met automatische updates
 
 Nadat u de sleutel hebt opgegeven, geeft het Azure Portal aan dat automatisch bijwerken van de sleutel versie is ingeschakeld en geeft de sleutel versie weer die momenteel wordt gebruikt voor versleuteling.
 
-:::image type="content" source="media/customer-managed-keys-configure-key-vault/portal-auto-rotation-enabled.png" alt-text="Scherm afbeelding die laat zien hoe u het leegmaken van beveiliging inschakelt bij het maken van een sleutel kluis":::
+:::image type="content" source="media/customer-managed-keys-configure-key-vault/portal-auto-rotation-enabled.png" alt-text="Scherm opname van het automatisch bijwerken van de sleutel versie ingeschakeld":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -208,7 +208,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
     -KeyVaultUri $keyVault.VaultUri
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u door de klant beheerde sleutels wilt configureren met automatische updates van de sleutel versie met Azure CLI, installeert u [Azure CLI versie 2.4.0](/cli/azure/release-notes-azure-cli#april-21-2020) of hoger. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie.
 
@@ -270,7 +270,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
 
 Wanneer u de sleutel versie hand matig bijwerkt, moet u de versleutelings instellingen van het opslag account bijwerken om de nieuwe versie te gebruiken. Roep eerst [Get-AzKeyVaultKey](/powershell/module/az.keyvault/get-azkeyvaultkey) aan om de meest recente versie van de sleutel op te halen. Roep vervolgens [set-AzStorageAccount](/powershell/module/az.storage/set-azstorageaccount) aan om de versleutelings instellingen van het opslag account bij te werken voor het gebruik van de nieuwe versie van de sleutel, zoals wordt weer gegeven in het vorige voor beeld.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u door de klant beheerde sleutels wilt configureren met hand matig bijwerken van de sleutel versie, geeft u de sleutel versie expliciet op wanneer u versleuteling configureert voor het opslag account. Roep [AZ Storage account update](/cli/azure/storage/account#az-storage-account-update) aan om de versleutelings instellingen van het opslag account bij te werken, zoals wordt weer gegeven in het volgende voor beeld. Neem de `--encryption-key-source` para meter op en stel deze in om door `Microsoft.Keyvault` de klant beheerde sleutels voor het account in te scha kelen.
 
@@ -316,7 +316,7 @@ Voer de volgende stappen uit om de sleutel te wijzigen met de Azure Portal:
 
 Als u de sleutel met Power shell wilt wijzigen, roept u [set-AzStorageAccount](/powershell/module/az.storage/set-azstorageaccount) aan, zoals wordt weer gegeven in [versleuteling configureren met door de klant beheerde sleutels](#configure-encryption-with-customer-managed-keys) en de nieuwe sleutel naam en versie opgeven. Als de nieuwe sleutel zich in een andere sleutel kluis bevindt, moet u ook de sleutel kluis-URI bijwerken.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de sleutel wilt wijzigen met Azure CLI, roept u de [Update AZ Storage account](/cli/azure/storage/account#az-storage-account-update) aan, zoals wordt weer gegeven in [versleuteling configureren met door de klant beheerde sleutels](#configure-encryption-with-customer-managed-keys) en de nieuwe sleutel naam en-versie opgeven. Als de nieuwe sleutel zich in een andere sleutel kluis bevindt, moet u ook de sleutel kluis-URI bijwerken.
 
@@ -339,7 +339,7 @@ Remove-AzKeyVaultAccessPolicy -VaultName $keyVault.VaultName `
     -ObjectId $storageAccount.Identity.PrincipalId `
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 U kunt door de klant beheerde sleutels intrekken door het toegangs beleid voor de sleutel kluis te verwijderen. Als u een door de klant beheerde sleutel wilt intrekken met Azure CLI, roept u de opdracht [AZ sleutel kluis delete-policy](/cli/azure/keyvault#az-keyvault-delete-policy) aan, zoals wordt weer gegeven in het volgende voor beeld. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden en de variabelen te gebruiken die in de voor gaande voor beelden zijn gedefinieerd.
 
@@ -372,7 +372,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
     -StorageEncryption  
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u door de klant beheerde sleutels wilt uitschakelen met Azure CLI, roept u de [Update AZ Storage account](/cli/azure/storage/account#az-storage-account-update) aan en stelt `--encryption-key-source parameter` u de in op `Microsoft.Storage` , zoals wordt weer gegeven in het volgende voor beeld. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden en de variabelen te gebruiken die in de voor gaande voor beelden zijn gedefinieerd.
 

@@ -3,12 +3,12 @@ title: Configureer uw eigen sleutel voor het versleutelen van Azure Event Hubs g
 description: Dit artikel bevat informatie over het configureren van uw eigen sleutel voor het versleutelen van Azure Event Hubs gegevens rest.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 18a59b74897b074fea9ee56947c78635f2a3509d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9f073c42373e75fc1cb34d1c752350f9d2c61872
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86537255"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843210"
 ---
 # <a name="configure-customer-managed-keys-for-encrypting-azure-event-hubs-data-at-rest-by-using-the-azure-portal"></a>Door de klant beheerde sleutels voor het versleutelen van Azure Event Hubs-gegevens op rest configureren met behulp van de Azure Portal
 Azure Event Hubs zorgt voor versleuteling van gegevens in rust met Azure Storage-service versleuteling (Azure SSE). Event Hubs is afhankelijk van Azure Storage om de gegevens op te slaan en standaard worden alle gegevens die zijn opgeslagen met Azure Storage versleuteld met door micro soft beheerde sleutels. 
@@ -23,7 +23,7 @@ Het inschakelen van de functie BYOK is een eenmalige installatie procedure voor 
 
 U kunt Azure Key Vault gebruiken voor het beheren van uw sleutels en het controleren van uw sleutel gebruik. U kunt uw eigen sleutels maken en deze opslaan in een sleutelkluis of u kunt de Azure Key Vault API's gebruiken om sleutels te genereren. Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie over Azure Key Vault.
 
-In dit artikel wordt beschreven hoe u een sleutel kluis kunt configureren met door de klant beheerde sleutels met behulp van de Azure Portal. Voor informatie over het maken van een sleutel kluis met behulp van de Azure Portal, raadpleegt u [Quick Start: een geheim instellen en ophalen van Azure Key Vault met behulp van de Azure Portal](../key-vault/secrets/quick-create-portal.md).
+In dit artikel wordt beschreven hoe u een sleutel kluis kunt configureren met door de klant beheerde sleutels met behulp van de Azure Portal. Ga voor meer informatie over het maken van een sleutel kluis met behulp van de Azure Portal naar [Quick Start: een Azure Key Vault maken met behulp van de Azure Portal](../key-vault/general/quick-create-portal.md).
 
 > [!IMPORTANT]
 > Voor het gebruik van door de klant beheerde sleutels met Azure Event Hubs moet de sleutel kluis twee vereiste eigenschappen hebben geconfigureerd. Dit zijn:  **voorlopig verwijderen** en **niet opschonen**. Deze eigenschappen zijn standaard ingeschakeld wanneer u een nieuwe sleutel kluis maakt in de Azure Portal. Als u deze eigenschappen echter wilt inschakelen voor een bestaande sleutel kluis, moet u Power shell of Azure CLI gebruiken.
@@ -263,7 +263,7 @@ In deze sectie wordt beschreven hoe u een Azure Event Hubs-naam ruimte met een b
     
     OF    
     
-    Voer de volgende opdracht uit om een **bestaande sleutel kluis**bij te werken. Geef waarden op voor de naam van de resource groep en de sleutel kluis voordat u de opdracht uitvoert. 
+    Voer de volgende opdracht uit om een **bestaande sleutel kluis** bij te werken. Geef waarden op voor de naam van de resource groep en de sleutel kluis voordat u de opdracht uitvoert. 
     
     ```powershell
     ($updatedKeyVault = Get-AzureRmResource -ResourceId (Get-AzureRmKeyVault -ResourceGroupName {RGName} -VaultName {keyVaultName}).ResourceId).Properties| Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"-Force | Add-Member -MemberType "NoteProperty" -Name "enablePurgeProtection" -Value "true" -Force

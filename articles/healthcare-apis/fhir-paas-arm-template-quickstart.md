@@ -5,15 +5,15 @@ author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: quickstart
-ms.custom: subject-armqs
+ms.custom: subject-armqs, devx-track-azurecli
 ms.author: cavoeg
 ms.date: 10/06/2020
-ms.openlocfilehash: c04bb82810bf55d6ac55b2697f5010896e0eb9b4
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 0cc31c26a71775dfdf3e9ee94852fda8af2c0cfc
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289284"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844536"
 ---
 # <a name="quickstart-use-an-arm-template-to-deploy-azure-api-for-fhir"></a>Snelstart: Een ARM-sjabloon gebruiken om Azure API for FHIR te implementeren
 
@@ -71,11 +71,11 @@ Selecteer de volgende koppeling om de Azure for FHIR te implementeren met behulp
 
 [:::image type="content" source="../media/template-deployments/deploy-to-azure.svg" alt-text="Implementeer in Azure een Azure API for FHIR-service met de ARM-sjabloon in de Azure Portal.":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-azure-api-for-fhir%2fazuredeploy.json)
 
-Op de pagina **Azure API for FHIR implementeren** :
+Op de pagina **Azure API for FHIR implementeren**:
 
 1. Indien gewenst, wijzigt u het **Abonnement** van de standaardinstelling naar een ander abonnement.
 
-2. Selecteer voor **Resourcegroep** de optie **Nieuwe maken** , voer een naam in voor de nieuwe resourcegroep en selecteer **OK**.
+2. Selecteer voor **Resourcegroep** de optie **Nieuwe maken**, voer een naam in voor de nieuwe resourcegroep en selecteer **OK**.
 
 3. Als u een nieuwe resourcegroep hebt gemaakt, selecteert u een **Regio** voor de resourcegroep.
 

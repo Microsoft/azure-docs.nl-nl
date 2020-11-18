@@ -14,12 +14,12 @@ ms.custom:
 - devx-track-azurecli
 ms.date: 04/10/2019
 ms.author: wesmc
-ms.openlocfilehash: ce53da1b51acb2ce17ef20a046424921f8987be9
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 7311c7e700edbf8565a449ecbd045a91846e72c3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748670"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844758"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-c"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub en lezen met een back-endtoepassing (C)
 
@@ -31,9 +31,7 @@ De snelstartgids maakt gebruik van een voorbeeldtoepassing C van de [Azure IoT d
 
 Dit artikel is geschreven voor Windows, maar u kunt deze snelstart ook voor Linux uitvoeren.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -43,12 +41,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 * Zorg ervoor dat de poort 8883 is geopend in uw firewall. In het apparaatvoorbeeld in deze quickstart wordt het MQTT-protocol gebruikt, dat communiceert via poort 8883. Deze poort is in sommige netwerkomgevingen van bedrijven en onderwijsinstellingen mogelijk geblokkeerd. Zie [Verbinding maken met IoT Hub (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub) voor meer informatie en manieren om dit probleem te omzeilen.
 
-
-* Voer de volgende opdracht uit om de Microsoft Azure IoT-extensie voor Azure CLI aan uw CLI Shell-instantie toe te voegen. Met de IoT-extensie worden IoT Hub-, IoT Edge- en IoT DPS-specifieke (Device Provisioning Service) opdrachten toegevoegd aan Azure CLI.
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
@@ -58,13 +51,13 @@ Voor deze snelstart gebruikt u de [Azure IoT device-SDK voor C](iot-hub-device-s
 
 Voor de volgende omgevingen kunt u de SDK gebruiken door deze pakketten en bibliotheken te installeren:
 
-* **Linux** : apt-get-pakketten zijn beschikbaar voor Ubuntu 16.04 en 18.04 met de volgende CPU-architectuur: amd64, arm64, armhf en i386. Zie [Gebruik van apt-get om een project C apparaat-client op Ubuntu te maken](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/ubuntu_apt-get_sample_setup.md) voor meer informatie.
+* **Linux**: apt-get-pakketten zijn beschikbaar voor Ubuntu 16.04 en 18.04 met de volgende CPU-architectuur: amd64, arm64, armhf en i386. Zie [Gebruik van apt-get om een project C apparaat-client op Ubuntu te maken](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/ubuntu_apt-get_sample_setup.md) voor meer informatie.
 
-* **mbed** : voor ontwikkelaars die toepassingen voor apparaten maken op het platform mbed, hebben we een bibliotheek en voorbeelden gepubliceerd waarmee u binnen enkele minuten met Azure IoT Hub bent gestart. Zie voor meer informatie, [Gebruik van de bibliotheek mbed](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/readme.md#mbed).
+* **mbed**: voor ontwikkelaars die toepassingen voor apparaten maken op het platform mbed, hebben we een bibliotheek en voorbeelden gepubliceerd waarmee u binnen enkele minuten met Azure IoT Hub bent gestart. Zie voor meer informatie, [Gebruik van de bibliotheek mbed](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/readme.md#mbed).
 
-* **Arduino** : als u op Arduino ontwikkelt, kunt u gebruikmaken van de Azure IoT-bibliotheek die beschikbaar is in de Arduino IDE-bibliotheekbeheerder. Zie voor meer informatie, [De Azure IoT Hub-bibliotheek voor Arduino](https://github.com/azure/azure-iot-arduino).
+* **Arduino**: als u op Arduino ontwikkelt, kunt u gebruikmaken van de Azure IoT-bibliotheek die beschikbaar is in de Arduino IDE-bibliotheekbeheerder. Zie voor meer informatie, [De Azure IoT Hub-bibliotheek voor Arduino](https://github.com/azure/azure-iot-arduino).
 
-* **iOS** : de IoT Hub apparaat-SDK is beschikbaar als CocoaPods voor de ontwikkeling van Mac- en iOS-apparaten. Zie [iOS-voorbeelden voor Microsoft Azure IoT](https://cocoapods.org/pods/AzureIoTHubClient) voor meer informatie.
+* **iOS**: de IoT Hub apparaat-SDK is beschikbaar als CocoaPods voor de ontwikkeling van Mac- en iOS-apparaten. Zie [iOS-voorbeelden voor Microsoft Azure IoT](https://cocoapods.org/pods/AzureIoTHubClient) voor meer informatie.
 
 In deze snelstart bereidt u een ontwikkelomgeving voor die wordt gebruikt om de [Azure IoT C-SDK](https://github.com/Azure/azure-iot-sdk-c) van GitHub te klonen en te bouwen. De SDK op GitHub bevat de voorbeeldcode gebruikt in deze snelstartgids.
 
@@ -125,9 +118,9 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
 
 1. Voer de volgende opdrachten uit in Azure Cloud Shell om de apparaat-id te maken.
 
-   **YourIoTHubName** : vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub.
+   **YourIoTHubName**: vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub.
 
-   **MyCDevice** : dit is de naam van het apparaat dat u gaat registreren. Het is raadzaam om **MyCDevice** te gebruiken zoals wordt weergegeven. Als u een andere naam voor het apparaat kiest, moet u deze naam ook in de rest van dit artikel gebruiken, en moet u de apparaatnaam bijwerken in de voorbeeldtoepassingen voordat u deze uitvoert.
+   **MyCDevice**: dit is de naam van het apparaat dat u gaat registreren. Het is raadzaam om **MyCDevice** te gebruiken zoals wordt weergegeven. Als u een andere naam voor het apparaat kiest, moet u deze naam ook in de rest van dit artikel gebruiken, en moet u de apparaatnaam bijwerken in de voorbeeldtoepassingen voordat u deze uitvoert.
 
     ```azurecli-interactive
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyCDevice
@@ -135,7 +128,7 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
 
 2. Voer de volgende opdracht uit in Azure Cloud Shell om de _apparaatverbindingsreeks_ op te halen voor het apparaat dat u zojuist hebt geregistreerd:
 
-   **YourIoTHubName** : vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub.
+   **YourIoTHubName**: vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyCDevice --output table
@@ -164,9 +157,9 @@ De toepassing voor het gesimuleerde apparaat maakt verbinding met een apparaatsp
     static const char* connectionString = "[device connection string]";
     ```
 
-    Vervang de waarde van de constante `connectionString` door de apparaatverbindingsreeks die u eerder hebt genoteerd. Sla uw wijzigingen vervolgens op naar **iothub_convenience_sample.c** .
+    Vervang de waarde van de constante `connectionString` door de apparaatverbindingsreeks die u eerder hebt genoteerd. Sla uw wijzigingen vervolgens op naar **iothub_convenience_sample.c**.
 
-3. Navigeer in een lokaal terminalvenster naar de *iothub_convenience_sample* -projectmap in de CMake-map die u hebt gemaakt in de Azure IoT C SDK. Voer de volgende opdracht in vanuit uw werkmap:
+3. Navigeer in een lokaal terminalvenster naar de *iothub_convenience_sample*-projectmap in de CMake-map die u hebt gemaakt in de Azure IoT C SDK. Voer de volgende opdracht in vanuit uw werkmap:
 
     ```cmd/sh
     cd azure-iot-sdk-c/cmake/iothub_client/samples/iothub_convenience_sample
@@ -194,7 +187,7 @@ In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext
 
 1. Voer met de Azure Cloud Shell de volgende opdracht uit om te verbinden en berichten te lezen uit uw IoT-hub:
 
-   **YourIoTHubName** : vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub.
+   **YourIoTHubName**: vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub.
 
     ```azurecli-interactive
     az iot hub monitor-events --hub-name {YourIoTHubName} --output table

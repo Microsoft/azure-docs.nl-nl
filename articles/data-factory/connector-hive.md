@@ -9,16 +9,16 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 11/17/2020
 ms.author: jingwang
-ms.openlocfilehash: 587cdd54f09be2761026c25ccd80fb67d3eb6bb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4207c4ddfcbab325b1ae119dcd200af30fc59f58
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84987043"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844933"
 ---
-# <a name="copy-data-from-hive-using-azure-data-factory"></a>Gegevens uit een Hive kopiëren met behulp van Azure Data Factory 
+# <a name="copy-and-transform-data-from-hive-using-azure-data-factory"></a>Gegevens uit een Hive kopiëren en transformeren met behulp van Azure Data Factory 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 In dit artikel wordt beschreven hoe u de Kopieer activiteit in Azure Data Factory kunt gebruiken om gegevens uit Hive te kopiëren. Het is gebaseerd op het artikel overzicht van de [Kopieer activiteit](copy-activity-overview.md) . Dit geeft een algemeen overzicht van de Kopieer activiteit.
@@ -50,12 +50,12 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde service van het 
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet zijn ingesteld op: **Hive** | Ja |
-| host | Het IP-adres of de hostnaam van de Hive-server, gescheiden door '; ' voor meerdere hosts (alleen wanneer serviceDiscoveryMode is ingeschakeld).  | Ja |
-| poort | De TCP-poort die de Hive-server gebruikt om te Luis teren naar client verbindingen. Als u verbinding maakt met Azure HDInsights, geeft u poort op als 443. | Ja |
+| type | De eigenschap type moet zijn ingesteld op: **Hive** | Yes |
+| host | Het IP-adres of de hostnaam van de Hive-server, gescheiden door '; ' voor meerdere hosts (alleen wanneer serviceDiscoveryMode is ingeschakeld).  | Yes |
+| poort | De TCP-poort die de Hive-server gebruikt om te Luis teren naar client verbindingen. Als u verbinding maakt met Azure HDInsights, geeft u poort op als 443. | Yes |
 | Server type | Het type van de Hive-server. <br/>Toegestane waarden zijn: **HiveServer1**, **HiveServer2**, **HiveThriftServer** | Nee |
 | thriftTransportProtocol | Het transport protocol dat in de Thrift-laag moet worden gebruikt. <br/>Toegestane waarden zijn: **binary**, **sasl**, **http** | Nee |
-| authenticationType | De verificatie methode die wordt gebruikt voor toegang tot de Hive-server. <br/>Toegestane waarden zijn: **Anonymous**, **username**, **UsernameAndPassword**, **WindowsAzureHDInsightService**. Kerberos-verificatie wordt nu niet ondersteund. | Ja |
+| authenticationType | De verificatie methode die wordt gebruikt voor toegang tot de Hive-server. <br/>Toegestane waarden zijn: **Anonymous**, **username**, **UsernameAndPassword**, **WindowsAzureHDInsightService**. Kerberos-verificatie wordt nu niet ondersteund. | Yes |
 | serviceDiscoveryMode | True om aan te geven dat de ZooKeeper-service wordt gebruikt, False not.  | Nee |
 | zooKeeperNameSpace | De naam ruimte op ZooKeeper waarmee de knoop punten van de Hive-Server 2 worden toegevoegd.  | Nee |
 | useNativeQuery | Hiermee geeft u op of het stuur programma systeem eigen HiveQL-query's gebruikt of converteert u deze naar een gelijkwaardig formulier in HiveQL.  | Nee |
@@ -68,6 +68,7 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde service van het 
 | allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is false.  | Nee |
 | allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is false.  | Nee |
 | connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
+| storageReference | Een verwijzing naar de gekoppelde service van het opslag account dat wordt gebruikt voor faserings gegevens in de toewijzing van gegevens stroom. Dit is alleen vereist wanneer u de Hive-gekoppelde service gebruikt in gegevens stroom toewijzen | Nee |
 
 **Voorbeeld:**
 
@@ -98,7 +99,7 @@ Als u gegevens wilt kopiëren uit Hive, stelt u de eigenschap type van de gegeve
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **HiveObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **HiveObject** | Yes |
 | schema | De naam van het schema. |Nee (als "query" in activiteit bron is opgegeven)  |
 | table | De naam van de tabel. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tableName | De naam van de tabel met inbegrip van het schema gedeelte. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik en voor nieuwe werk `schema` belasting `table` . | Nee (als "query" in activiteit bron is opgegeven) |
@@ -130,7 +131,7 @@ Als u gegevens wilt kopiëren uit Hive, stelt u het bron type in de Kopieer acti
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **HiveSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **HiveSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**
@@ -164,6 +165,53 @@ Als u gegevens wilt kopiëren uit Hive, stelt u het bron type in de Kopieer acti
     }
 ]
 ```
+
+## <a name="mapping-data-flow-properties"></a>Eigenschappen van gegevens stroom toewijzen
+
+De Hive-connector wordt ondersteund als een [inline dataset](data-flow-source.md#inline-datasets) -bron in het toewijzen van gegevens stromen. Lezen met behulp van een query of rechtstreeks vanuit een Hive-tabel in HDInsight. Hive-gegevens worden klaargezet in een opslag account als Parquet-bestanden voordat ze worden getransformeerd als onderdeel van een gegevens stroom. 
+
+### <a name="source-properties"></a>Bron eigenschappen
+
+De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteund door een Hive-bron. U kunt deze eigenschappen bewerken op het tabblad **bron opties** .
+
+| Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
+| ---- | ----------- | -------- | -------------- | ---------------- |
+| Opslaan | Store moet `hive` | ja |  `hive` | winkel | 
+| Indeling | Hiermee wordt aangegeven of u leest uit een tabel of query | ja | `table` of `query` | indeling |
+| Schemanaam | Als er wordt gelezen vanuit een tabel, wordt het schema van de bron tabel |  Ja, als de notatie is `table` | Tekenreeks | schemaName |
+| Tabelnaam | Als er wordt gelezen vanuit een tabel, de naam van de tabel |   Ja, als de notatie is `table` | Tekenreeks | tableName |
+| Query’s uitvoeren | Als indeling is `query` , de bron query op de gekoppelde component service | Ja, als de notatie is `query` | Tekenreeks | query |
+| Gefaseerd | De Hive-tabel wordt altijd klaargezet. | ja | `true` | gefaseerd |
+| Opslagcontainer | Opslag container die wordt gebruikt om gegevens te stage vóór het lezen van Hive of schrijven naar Hive. Het Hive-cluster moet toegang hebben tot deze container. | ja | Tekenreeks | storageContainer |
+| Faserings database | Het schema/de data base waar het gebruikers account dat is opgegeven in de gekoppelde service toegang heeft. Het wordt gebruikt om externe tabellen te maken tijdens de fase ring en later te worden verwijderd | nee | `true` of `false` | stagingDatabaseName |
+| SQL-scripts | SQL-code die moet worden uitgevoerd in de Hive-tabel voordat de gegevens worden gelezen | nee | Tekenreeks | preSQLs |
+
+#### <a name="source-example"></a>Bron voorbeeld
+
+Hieronder volgt een voor beeld van een configuratie van een Hive-Bron:
+
+![Voor beeld van Hive-bron](media/data-flow/hive-source.png "[Hive-bron voorbeeld")
+
+Deze instellingen worden omgezet in het volgende gegevens stroom script:
+
+```
+source(
+    allowSchemaDrift: true,
+    validateSchema: false,
+    ignoreNoFilesFound: false,
+    format: 'table',
+    store: 'hive',
+    schemaName: 'default',
+    tableName: 'hivesampletable',
+    staged: true,
+    storageContainer: 'khive',
+    storageFolderPath: '',
+    stagingDatabaseName: 'default') ~> hivesource
+```
+### <a name="known-limitations"></a>Bekende beperkingen
+
+* Complexe typen, zoals matrices, kaarten, structs en samen voegingen, worden niet ondersteund voor lezen. 
+* Hive-connector ondersteunt alleen Hive-tabellen in azure HDInsight van versie 4,0 of hoger (Apache Hive 3.1.0)
 
 ## <a name="lookup-activity-properties"></a>Eigenschappen van opzoek activiteit
 

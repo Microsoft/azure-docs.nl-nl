@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 05/12/2020
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: 32e79e12eae9997df8163401d2abc5f06bc02fc0
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 739245a8a17c97f3a8081cfee7e7bb31e4135952
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993486"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843975"
 ---
 # <a name="oracle-vm-images-and-their-deployment-on-microsoft-azure"></a>Oracle-VM-installatie kopieën en hun implementatie op Microsoft Azure
 
@@ -109,10 +109,6 @@ Microsoft Azure is een geautoriseerde cloud omgeving voor het uitvoeren van Orac
 Oracle-data bases vereisen over het algemeen meer geheugen en IO. Daarom worden [Vm's geoptimaliseerd voor geheugen](../../sizes-memory.md) aanbevolen voor deze werk belastingen. Om uw workloads verder te optimaliseren, worden [beperkte kern vcpu's](../../constrained-vcpu.md) aanbevolen voor Oracle database workloads die hoge geheugen, opslag ruimte en I/O-band breedte nodig hebben, maar geen hoog aantal kernen.
 
 Wanneer Oracle-software en-workloads van on-premises naar Microsoft Azure worden gemigreerd, biedt Oracle licentie mobiliteit zoals vermeld in de [Veelgestelde vragen over Oracle op Azure](https://www.oracle.com/cloud/technologies/oracle-azure-faq.html)
-
-## <a name="oracle-real-application-cluster-oracle-rac"></a>Oracle Real Application Cluster (Oracle RAC)
-
-Oracle Real Application Cluster (Oracle RAC) is ontworpen om het mislukken van één knoop punt in een on-premises cluster configuratie met meerdere knoop punten te verhelpen. Het is afhankelijk van twee on-premises technologieën die niet standaard zijn voor het maken van open bare Cloud omgevingen: netwerk multi cast en gedeelde schijven. Als uw database oplossing Oracle RAC vereist in azure, hebt u software van derden nodig om deze technologieën in te scha kelen. Zie de [pagina FlashGrid SkyCluster](https://www.flashgrid.io/oracle-rac-in-azure/)voor meer informatie over Oracle RAC.
 
 ## <a name="high-availability-and-disaster-recovery-considerations"></a>Overwegingen voor hoge Beschik baarheid en herstel na nood gevallen
 

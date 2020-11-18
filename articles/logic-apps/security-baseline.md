@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 9630919b71afd0219a2e82a86e0f89106e8a0ac2
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: ccfc290df64417bf0504849a83dbe68efcbddefe
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424066"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843703"
 ---
 # <a name="azure-security-baseline-for-logic-apps"></a>Azure-beveiligings basislijn voor Logic Apps
 
@@ -384,7 +384,7 @@ Als u gebruikmaakt van een infra structuur als code, kunt u wacht woorden beter 
 
 - [Gegevens beveiligen en openen in Logic Apps](logic-apps-securing-a-logic-app.md)
 
-- [Een geheim instellen en ophalen uit Azure Key Vault](../key-vault/secrets/quick-create-portal.md)
+- [Een geheim instellen en ophalen uit Azure Key Vault](../key-vault/general/quick-create-portal.md)
 
 **Azure Security Center bewaking**: niet van toepassing
 
@@ -556,7 +556,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Verantwoordelijkheid**: niet van toepassing
 
-## <a name="data-protection"></a>Gegevensbeveiliging
+## <a name="data-protection"></a>Gegevensbescherming
 
 *Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 
@@ -840,7 +840,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen h
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnement (en) met de volgende ingebouwde beleids definities:
 
 - Niet toegestane resourcetypen
 - Toegestane brontypen
@@ -863,7 +863,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen h
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
-**Hulp**bij het configureren van voorwaardelijke toegang van Azure om gebruikers de mogelijkheid te bieden om te communiceren met Azure Resource Manager door ' blok toegang ' te configureren voor de app Microsoft Azure management.
+**Hulp** bij het configureren van voorwaardelijke toegang van Azure om gebruikers de mogelijkheid te bieden om te communiceren met Azure Resource Manager door ' blok toegang ' te configureren voor de app Microsoft Azure management.
 
 - [Voorwaardelijke toegang configureren om de toegang tot Azure Resource Manager te blok keren](../role-based-access-control/conditional-access-azure-management.md)
 
@@ -1132,7 +1132,7 @@ Gebruik Azure Security Center bedreigings detectie voor gegevens Services om mal
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9,1: zorg voor regel matige automatische back-ups
 
-**Hulp**bij het implementeren van een oplossing voor herstel na nood geval, zodat u gegevens kunt beveiligen, snel de resources moet herstellen die essentiële bedrijfs functies ondersteunen en bewerkingen blijven uitvoeren om bedrijfs CONTINUÏTEIT (BC) te onderhouden.
+**Hulp** bij het implementeren van een oplossing voor herstel na nood geval, zodat u gegevens kunt beveiligen, snel de resources moet herstellen die essentiële bedrijfs functies ondersteunen en bewerkingen blijven uitvoeren om bedrijfs CONTINUÏTEIT (BC) te onderhouden.
 
 Deze strategie voor herstel na nood gevallen is gericht op het instellen van uw primaire logische app voor failover naar een stand-by-of back-uplogische app op een alternatieve locatie waar Azure Logic Apps ook beschikbaar is. Op die manier kunt u, als de primaire verliezen, onderbrekingen of storingen lijden, de secundaire op het werk uitvoeren. Deze strategie vereist dat uw secundaire logische app en afhankelijke bronnen al zijn geïmplementeerd en gereed zijn op de alternatieve locatie.
 
@@ -1148,7 +1148,7 @@ Bovendien moet u de onderliggende werk stroom definitie van uw logische app uitb
 
 ### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: volledige back-ups van het systeem uitvoeren en een back-up maken van door de klant beheerde sleutels
 
-**Hulp**bij het implementeren van een oplossing voor herstel na nood geval, zodat u gegevens kunt beveiligen, snel de resources moet herstellen die essentiële bedrijfs functies ondersteunen en bewerkingen blijven uitvoeren om bedrijfs CONTINUÏTEIT (BC) te onderhouden.
+**Hulp** bij het implementeren van een oplossing voor herstel na nood geval, zodat u gegevens kunt beveiligen, snel de resources moet herstellen die essentiële bedrijfs functies ondersteunen en bewerkingen blijven uitvoeren om bedrijfs CONTINUÏTEIT (BC) te onderhouden.
 
 Deze strategie voor herstel na nood gevallen is gericht op het instellen van uw primaire logische app voor failover naar een stand-by-of back-uplogische app op een alternatieve locatie waar Azure Logic Apps ook beschikbaar is. Op die manier kunt u, als de primaire verliezen, onderbrekingen of storingen lijden, de secundaire op het werk uitvoeren. Deze strategie vereist dat uw secundaire logische app en afhankelijke bronnen al zijn geïmplementeerd en gereed zijn op de alternatieve locatie.
 

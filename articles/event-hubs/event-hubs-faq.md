@@ -3,12 +3,12 @@ title: Veelgestelde vragen-Azure Event Hubs | Microsoft Docs
 description: In dit artikel vindt u een lijst met veelgestelde vragen over Azure Event Hubs en de antwoorden hiervan.
 ms.topic: article
 ms.date: 10/27/2020
-ms.openlocfilehash: 3b55521c9f90192891b450e3e161607a334c3a00
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 41b010315adaf5a0eca2939b1d42fe4d7c159628
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92909706"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843040"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Veelgestelde vragen over Event Hubs
 
@@ -59,10 +59,10 @@ Event Hubs levert uitgebreide metrische gegevens die de status van uw resources 
 Klant gegevens worden opgeslagen in azure Event Hubs. Deze gegevens worden automatisch opgeslagen door Event Hubs in één regio, zodat deze service automatisch voldoet aan de locatie vereisten voor de regio gegevens, inclusief de items die zijn opgegeven in het [vertrouwens centrum](https://azuredatacentermap.azurewebsites.net/).
 
 ### <a name="what-ports-do-i-need-to-open-on-the-firewall"></a>Welke poorten moet ik op de firewall openen? 
-U kunt de volgende protocollen gebruiken met Azure Service Bus voor het verzenden en ontvangen van berichten:
+U kunt de volgende protocollen met Azure Event Hubs gebruiken om gebeurtenissen te verzenden en te ontvangen:
 
-- AMQP
-- HTTP
+- Advanced Message Queueing Protocol 1,0 (AMQP)
+- Hypertext Transfer Protocol 1,1 met TLS (HTTPS)
 - Apache Kafka
 
 Zie de volgende tabel voor de uitgaande poorten die u moet openen om deze protocollen te gebruiken om te communiceren met Azure Event Hubs. 
@@ -70,8 +70,21 @@ Zie de volgende tabel voor de uitgaande poorten die u moet openen om deze protoc
 | Protocol | Poorten | Details | 
 | -------- | ----- | ------- | 
 | AMQP | 5671 en 5672 | Zie [AMQP protocol Guide (Engelstalig](../service-bus-messaging/service-bus-amqp-protocol-guide.md) ) | 
-| HTTP, HTTPS | 80, 443 |  |
+| HTTPS | 443 | Deze poort wordt gebruikt voor de HTTP/REST API en voor AMQP-over-websockets. |
 | Kafka | 9093 | Zie [Event hubs gebruiken in Kafka-toepassingen](event-hubs-for-kafka-ecosystem-overview.md)
+
+De HTTPS-poort is vereist voor uitgaande communicatie, ook wanneer AMQP wordt gebruikt via poort 5671, omdat verschillende beheer bewerkingen door de client-Sdk's en het verkrijgen van tokens van Azure Active Directory (indien gebruikt) via HTTPS worden uitgevoerd. 
+
+De officiële Azure-Sdk's gebruiken meestal het AMQP-protocol voor het verzenden en ontvangen van gebeurtenissen van Event Hubs. De optie AMQP-over-websockets wordt via poort TCP 443 uitgevoerd, net als de HTTP-API, maar is op een andere manier hetzelfde als gewone AMQP. Deze optie heeft een hogere aanvankelijke verbindings latentie vanwege extra Handshake-rond Reiss en iets meer naarmate er meer overhead is voor het delen van de HTTPS-poort. Als deze modus is ingeschakeld, is de TCP-poort 443 voldoende voor communicatie. Met de volgende opties kunt u de modus voor de AMQP of AMQP-websockets inschakelen:
+
+| Taal | Optie   |
+| -------- | ----- |
+| .NET     | Eigenschap [EventHubConnectionOptions. transport type](/dotnet/api/azure.messaging.eventhubs.eventhubconnectionoptions.transporttype?view=azure-dotnet&preserve-view=true) met [EventHubsTransportType. AmqpTcp](/dotnet/api/azure.messaging.eventhubs.eventhubstransporttype?view=azure-dotnet&preserve-view=true) of [EventHubsTransportType. AmqpWebSockets](/dotnet/api/azure.messaging.eventhubs.eventhubstransporttype?view=azure-dotnet&preserve-view=true) |
+| Java     | [com. micro soft. Azure. Event hubs. EventProcessorClientBuilder. transport type](/java/api/com.azure.messaging.eventhubs.eventprocessorclientbuilder.transporttype?view=azure-java-stable&preserve-view=true) met [AmqpTransportType. AMQP](/java/api/com.azure.core.amqp.amqptransporttype?view=azure-java-stable&preserve-view=true) of [AmqpTransportType.AMQP_WEB_SOCKETS](/java/api/com.azure.core.amqp.amqptransporttype?view=azure-java-stable&preserve-view=true) |
+| Knooppunt  | [EventHubConsumerClientOptions](/javascript/api/@azure/event-hubs/eventhubconsumerclientoptions?view=azure-node-latest&preserve-view=true) heeft een `webSocketOptions` eigenschap. |
+| Python | [EventHubConsumerClient.transport_type](/python/api/azure-eventhub/azure.eventhub.eventhubconsumerclient?view=azure-python&preserve-view=true) met [transport type. AMQP](/python/api/azure-eventhub/azure.eventhub.transporttype?view=azure-python) of [transport type. AmqpOverWebSocket](/python/api/azure-eventhub/azure.eventhub.transporttype?view=azure-python&preserve-view=true) |
+
+
 
 ### <a name="what-ip-addresses-do-i-need-to-allow"></a>Welke IP-adressen moet ik toestaan?
 Ga als volgt te werk om de juiste IP-adressen te zoeken die u wilt toevoegen aan de lijst toegestaan voor uw verbindingen:
@@ -148,7 +161,7 @@ security.protocol=SASL_SSL
 sasl.mechanism=PLAIN
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://dummynamespace.servicebus.windows.net/;SharedAccessKeyName=DummyAccessKeyName;SharedAccessKey=XXXXXXXXXXXXXXXXXXXXX";
 ```
-Opmerking: als sasl.jaas.config geen ondersteunde configuratie in uw Framework is, zoekt u de configuraties die worden gebruikt om de gebruikers naam en het wacht woord van SASL in te stellen en gebruikt u deze in plaats daarvan. Stel de gebruikers naam in op $ConnectionString en het wacht woord voor uw Event Hubs connection string.
+Opmerking: als sasl.jaas.config geen ondersteunde configuratie in uw Framework is, zoekt u de configuraties die worden gebruikt voor het instellen van de gebruikers naam en het wacht woord van SASL en gebruiken ze in plaats daarvan. Stel de gebruikers naam in op $ConnectionString en het wacht woord voor uw Event Hubs connection string.
 
 ### <a name="what-is-the-messageevent-size-for-event-hubs"></a>Wat is de bericht/gebeurtenis grootte voor Event Hubs?
 De maximale toegestane bericht grootte voor Event Hubs is 1 MB.
@@ -193,9 +206,9 @@ Bij het maken van een basis naam ruimte of een Standard-laag in de Azure Portal,
 
 1. Selecteer op de pagina **Event Bus-naam ruimte** de optie **nieuwe ondersteunings aanvraag** in het menu links. 
 1. Voer op de pagina **nieuwe ondersteunings aanvraag** de volgende stappen uit:
-    1. Beschrijf het probleem in enkele woorden voor een **samen vatting** . 
-    1. Bij **Probleemtype** selecteert u **Quota** . 
-    1. Selecteer bij **probleem subtype** **aanvraag voor toename of afname van doorvoer eenheid** . 
+    1. Beschrijf het probleem in enkele woorden voor een **samen vatting**. 
+    1. Bij **Probleemtype** selecteert u **Quota**. 
+    1. Selecteer bij **probleem subtype** **aanvraag voor toename of afname van doorvoer eenheid**. 
     
         :::image type="content" source="./media/event-hubs-faq/support-request-throughput-units.png" alt-text="Ondersteuningsaanvraag pagina":::
 
@@ -229,11 +242,11 @@ Als u een ondersteunings aanvraag wilt indienen, kunt u aanvragen voor het aanta
 
 1. Selecteer op de pagina **Event Bus-naam ruimte** de optie **nieuwe ondersteunings aanvraag** in het menu links. 
 1. Voer op de pagina **nieuwe ondersteunings aanvraag** de volgende stappen uit:
-    1. Beschrijf het probleem in enkele woorden voor een **samen vatting** . 
-    1. Bij **Probleemtype** selecteert u **Quota** . 
-    1. Selecteer voor het **subtype** van het probleem **aanvraag voor partitie wijziging** . 
+    1. Beschrijf het probleem in enkele woorden voor een **samen vatting**. 
+    1. Bij **Probleemtype** selecteert u **Quota**. 
+    1. Selecteer voor het **subtype** van het probleem **aanvraag voor partitie wijziging**. 
     
-        :::image type="content" source="./media/event-hubs-faq/support-request-increase-partitions.png" alt-text="Ondersteuningsaanvraag pagina":::
+        :::image type="content" source="./media/event-hubs-faq/support-request-increase-partitions.png" alt-text="Aantal partities verhogen":::
 
 Het aantal partities kan worden verhoogd tot precies 40. In dit geval moet het aantal TUs ook worden verhoogd tot 40. Als u later besluit om de di-limiet terug te brengen naar <= 20, wordt de limiet voor het maximum aantal partities ook verlaagd naar 32. 
 
@@ -257,7 +270,7 @@ De totale grootte van alle opgeslagen gebeurtenissen, inclusief interne overhead
 
 Elke gebeurtenis die naar een Event Hub wordt verzonden, telt als een Factureerbaar bericht. Een *ingangs gebeurtenis* wordt gedefinieerd als een gegevens eenheid die kleiner is dan of gelijk is aan 64 kB. Een gebeurtenis die kleiner dan of gelijk is aan 64 KB groot is, wordt beschouwd als één factureer bare gebeurtenis. Als de gebeurtenis groter is dan 64 KB, wordt het aantal factureer bare gebeurtenissen berekend op basis van de grootte van de gebeurtenis, in veelvouden van 64 KB. Zo wordt een gebeurtenis met 8 KB die wordt verzonden naar de Event Hub, gefactureerd als één gebeurtenis, maar een 96-KB-bericht dat naar de Event Hub wordt verzonden, wordt gefactureerd als twee gebeurtenissen.
 
-Gebeurtenissen die vanuit een Event Hub worden verbruikt, en beheer bewerkingen en besturings aanroepen zoals controle punten, worden niet meegeteld als factureer bare ingangs gebeurtenissen, maar toenemen tot de maximale doorvoer eenheid.
+Gebeurtenissen die worden verbruikt vanuit een Event Hub en beheer bewerkingen en besturings aanroepen zoals controle punten, worden niet gerekend als factureer bare ingangs gebeurtenissen, maar toenemen tot de maximale doorvoer eenheid.
 
 ### <a name="do-brokered-connection-charges-apply-to-event-hubs"></a>Zijn de kosten voor brokered Connections van toepassing op Event Hubs?
 
@@ -299,9 +312,9 @@ Voor meer informatie over onze SLA gaat u naar de pagina [Service Level Agreemen
 ## <a name="azure-stack-hub"></a>Azure Stack Hub
 
 ### <a name="how-can-i-target-a-specific-version-of-azure-storage-sdk-when-using-azure-blob-storage-as-a-checkpoint-store"></a>Hoe kan ik een specifieke versie van Azure Storage SDK richten bij het gebruik van Azure Blob Storage als controlepunt opslag?
-Als u deze code op Azure Stack Hub uitvoert, treden er runtimefouten op tenzij u zich richt op een specifieke versie van de Storage-API. Dat komt doordat de Event Hubs-SDK de meest recente Azure Storage-API gebruikt die beschikbaar is in Azure maar die niet beschikbaar is op uw Azure Stack Hub-platform. Azure Stack hub ondersteunt mogelijk een andere versie van de Storage BLOB SDK dan die meestal beschikbaar is in Azure. Als u Azure Blob-opslag gebruikt als controlepuntopslag, controleert u de [ondersteunde versie van de Azure Storage-API voor uw build van Azure Stack Hub](/azure-stack/user/azure-stack-acs-differences?#api-version) en stelt u die versie in uw code als doel in. 
+Als u deze code op Azure Stack hub uitvoert, treden er runtime-fouten op tenzij u een specifieke opslag-API-versie hebt gericht. Dat komt doordat de Event Hubs-SDK de meest recente Azure Storage-API gebruikt die beschikbaar is in Azure maar die niet beschikbaar is op uw Azure Stack Hub-platform. Azure Stack hub ondersteunt mogelijk een andere versie van de Storage BLOB SDK dan die meestal beschikbaar is in Azure. Als u Azure-blog opslag gebruikt als controlepunt opslag, controleert u de [versie van de ondersteunde Azure Storage-API voor uw Azure stack hub-build](/azure-stack/user/azure-stack-acs-differences?#api-version) en richt u deze versie in uw code. 
 
-Als u bijvoorbeeld werkt met Azure Stack hub versie 2005, is de hoogste beschik bare versie van de opslag service versie 2019-02-02. De Event Hubs-SDK-clientbibliotheek maakt standaard gebruik van de hoogste beschikbare versie op Azure (2019-07-07 op het moment van de release van de SDK). In dit geval moet u naast de volgende stappen in deze sectie ook code toevoegen om de API-versie van de Storage-service te richten op 2019-02-02. Zie de volgende voor beelden voor C#, Java, python en Java script/type script voor een voor beeld van het richten op een specifieke opslag-API-versie.  
+Als u bijvoorbeeld werkt met Azure Stack hub versie 2005, is de hoogste beschik bare versie van de opslag service versie 2019-02-02. De Event Hubs-SDK-clientbibliotheek maakt standaard gebruik van de hoogste beschikbare versie op Azure (2019-07-07 op het moment van de release van de SDK). In dit geval moet u, naast de volgende stappen in deze sectie, ook code toevoegen om de API-versie 2019-02-02 van de Storage-service te richten. Zie de volgende voor beelden voor C#, Java, python en Java script/type script voor een voor beeld van het richten op een specifieke opslag-API-versie.  
 
 Zie de volgende voor beelden op GitHub voor een voor beeld van het richten op een specifieke opslag-API-versie van uw code: 
 

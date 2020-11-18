@@ -6,12 +6,12 @@ manager: andneil
 ms.author: getroyer
 ms.topic: how-to
 ms.date: 06/13/2019
-ms.openlocfilehash: 291f1ac093568f50ad6146b70fa1ef69263b7b5b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d65a39c1a1d302e565b59db1644af2c08befb6b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85830300"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843159"
 ---
 # <a name="use-azure-data-science-virtual-machines"></a>Azure data Science Virtual Machines gebruiken
 
@@ -24,7 +24,7 @@ Standaard worden projecten uitgevoerd op de **gratis Compute** -laag. Dit is bep
 
 ## <a name="create-a-dsvm-instance"></a>Een DSVM-exemplaar maken
 
-Als u een nieuw DSVM-exemplaar wilt maken, volgt u de instructies in [een Ubuntu maken data Science VM](/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro). Zie [Data Science virtual machines](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/)voor meer informatie, inclusief prijs informatie.
+Als u een nieuw DSVM-exemplaar wilt maken, volgt u de instructies in [een Ubuntu maken data Science VM](../machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro.md). Zie [Data Science virtual machines](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/)voor meer informatie, inclusief prijs informatie.
 
 ## <a name="connect-to-the-dsvm"></a>Verbinding maken met de DSVM
 
@@ -63,9 +63,9 @@ Als meerdere gebruikers een DSVM delen, kunt u voor komen dat elkaar worden gebl
 
 1. Ga op het [Azure Portal](https://portal.azure.com)naar de virtuele machine.
 1. Onder **ondersteuning en probleem oplossing** in de linkermarge selecteert u **wacht woord opnieuw instellen**.
-1. Geef een nieuwe **gebruikers naam**op. De gebruikers naam moet een kleine letter zijn om deze te gebruiken met JupyterHub. Voer een wachtwoord in. Selecteer vervolgens **bijwerken**. (Bestaande gebruikers namen worden niet beïnvloed.)
+1. Geef een nieuwe **gebruikers naam** op. De gebruikers naam moet een kleine letter zijn om deze te gebruiken met JupyterHub. Voer een wachtwoord in. Selecteer vervolgens **bijwerken**. (Bestaande gebruikers namen worden niet beïnvloed.)
 1. Herhaal de vorige stap voor extra gebruikers.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over Dsvm vindt [u in de inleiding tot Azure data Science virtual machines](/azure/machine-learning/data-science-virtual-machine/overview).
+Meer informatie over Dsvm vindt [u in de inleiding tot Azure data Science virtual machines](../machine-learning/data-science-virtual-machine/overview.md).

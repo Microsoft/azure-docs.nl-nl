@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: cynthn
 ms.topic: conceptual
-ms.openlocfilehash: 06d71713075b401c876edd87f0ec884bcb252589
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 83d291ae72e79ec3600015fac07ee4ab80fe5df4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977745"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843550"
 ---
 # <a name="secure-and-use-policies-on-virtual-machines-in-azure"></a>Beveiligen en beleidsregels gebruiken op virtuele machines in Azure
 
@@ -67,7 +67,7 @@ Dit probleem wordt opgelost met de functie Beheerde identiteiten voor Azure-reso
 
 [Azure-beleid](../governance/policy/overview.md) kan worden gebruikt voor het definiëren van het gewenste gedrag voor de virtuele [Windows-machines](./windows/policy.md) en [Linux-vm's](./linux/policy.md)van uw organisatie. Door gebruik te maken van beleids regels kan een organisatie verschillende conventies en regels voor de hele onderneming afdwingen. Afdwinging van het gewenste gedrag kan het risico verkleinen en bijdragen aan het succes van de organisatie.
 
-## <a name="role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer
+## <a name="azure-role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer voor Azure
 
 Met [op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure](../role-based-access-control/overview.md)kunt u taken in uw team scheiden en alleen de hoeveelheid toegang verlenen aan gebruikers op uw virtuele machine die ze nodig hebben om hun taken uit te voeren. In plaats van iedereen onbeperkte machtigingen voor de virtuele machine te geven, kunt u alleen bepaalde acties toestaan. U kunt toegangs beheer voor de virtuele machine configureren in het [Azure Portal](../role-based-access-control/role-assignments-portal.md), met behulp van de [Azure cli](/cli/azure/role)of[Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 

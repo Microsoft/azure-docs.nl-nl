@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 233ba17e1ae1b554eff092151ad9f05fd660beb3
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e9476b7278cbe64bf90911c3b85a09922a1afbf1
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970007"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843941"
 ---
 # <a name="technical-deep-dive-on-platform-supported-migration-from-classic-to-azure-resource-manager"></a>Technische details over door platforms ondersteunde migratie van klassiek naar Azure Resource Manager
 
@@ -48,7 +48,7 @@ Voordat u de migratie start:
 * Plan de migratie buiten kantooruren zodat u de tijd hebt om onverwachte fouten die kunnen ontstaan tijdens de migratie op te lossen.
 * Download de huidige configuratie van uw virtuele machines met behulp van PowerShell, CLI-opdrachten (opdrachtregelinterface) of REST API's om de validatie eenvoudiger te maken nadat de voorbereidingsstap is voltooid.
 * Werk uw Automation-en uitoefening-scripts bij om het Resource Manager-implementatie model te verwerken voordat u de migratie start. Desgewenst kunt u GET-bewerkingen uitvoeren wanneer de resources de status Voorbereid hebben.
-* Evalueer het beleid voor de Role-Based-Access Control (RBAC) dat is geconfigureerd op de IaaS-resources in het klassieke implementatie model, en plan nadat de migratie is voltooid.
+* Evalueer de Azure RBAC-beleids regels (op rollen gebaseerd toegangs beheer) die zijn geconfigureerd op de IaaS-resources in het klassieke implementatie model, en plan na de migratie.
 
 De migratie werk stroom is als volgt:
 

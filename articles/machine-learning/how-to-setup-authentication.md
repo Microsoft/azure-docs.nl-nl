@@ -11,23 +11,23 @@ ms.subservice: core
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: how-to, has-adal-ref, devx-track-js, devx-track-azurecli, contperfq2
-ms.openlocfilehash: adc0547e36e9cf996a87c2683b4830541b8cd360
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 7fa6beacf4456145e312494a72dad321dfef3754
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442103"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843924"
 ---
-# <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Verificatie instellen voor Azure Machine Learning resources en werk stromen
+# <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Verificatie instellen voor Azure Machine Learning-resources en -werkstromen
 
 
 Meer informatie over het instellen van verificatie voor uw Azure Machine Learning-werk ruimte. Verificatie voor uw Azure Machine Learning-werk ruimte is gebaseerd op __Azure Active Directory__ (Azure AD) voor de meeste zaken. In het algemeen zijn er drie verificatie werk stromen die u kunt gebruiken om verbinding te maken met de werk ruimte:
 
-* __Interactief__ : u gebruikt uw account in azure Active Directory om ofwel rechtstreeks te verifiëren, of om een token op te halen dat wordt gebruikt voor verificatie. Interactieve verificatie wordt gebruikt tijdens het _experimenteren en iteratieve ontwikkeling_. Met interactieve verificatie kunt u de toegang tot resources (zoals een webservice) per gebruiker beheren.
+* __Interactief__: u gebruikt uw account in azure Active Directory om ofwel rechtstreeks te verifiëren, of om een token op te halen dat wordt gebruikt voor verificatie. Interactieve verificatie wordt gebruikt tijdens het _experimenteren en iteratieve ontwikkeling_. Met interactieve verificatie kunt u de toegang tot resources (zoals een webservice) per gebruiker beheren.
 
-* __Service-Principal__ : u maakt een Service-Principal-account in azure Active Directory en gebruikt dit om een token te verifiëren of op te halen. Een service-principal wordt gebruikt wanneer u een _geautomatiseerd proces_ nodig hebt om te verifiëren bij de service zonder tussen komst van de gebruiker. Een voor beeld: een script voor continue integratie en implementatie waarmee een model wordt getraind en getest wanneer de trainings code verandert.
+* __Service-Principal__: u maakt een Service-Principal-account in azure Active Directory en gebruikt dit om een token te verifiëren of op te halen. Een service-principal wordt gebruikt wanneer u een _geautomatiseerd proces_ nodig hebt om te verifiëren bij de service zonder tussen komst van de gebruiker. Een voor beeld: een script voor continue integratie en implementatie waarmee een model wordt getraind en getest wanneer de trainings code verandert.
 
-* __Beheerde identiteit__ : wanneer u de Azure machine learning SDK gebruikt _op een virtuele machine van Azure_ , kunt u een beheerde identiteit voor Azure gebruiken. Met deze werk stroom kan de virtuele machine verbinding maken met de werk ruimte met behulp van de beheerde identiteit, zonder dat er referenties worden opgeslagen in de python-code of dat de gebruiker wordt gevraagd om te verifiëren. Azure Machine Learning compute-clusters kunnen ook worden geconfigureerd voor het gebruik van een beheerde identiteit om toegang te krijgen tot de werk ruimte wanneer u een _trainings model_ gebruikt.
+* __Beheerde identiteit__: wanneer u de Azure machine learning SDK gebruikt _op een virtuele machine van Azure_, kunt u een beheerde identiteit voor Azure gebruiken. Met deze werk stroom kan de virtuele machine verbinding maken met de werk ruimte met behulp van de beheerde identiteit, zonder dat er referenties worden opgeslagen in de python-code of dat de gebruiker wordt gevraagd om te verifiëren. Azure Machine Learning compute-clusters kunnen ook worden geconfigureerd voor het gebruik van een beheerde identiteit om toegang te krijgen tot de werk ruimte wanneer u een _trainings model_ gebruikt.
 
 > [!IMPORTANT]
 > Ongeacht de gebruikte verificatie werk stroom, wordt Azure RBAC (op rollen gebaseerd toegangs beheer) gebruikt om het toegangs niveau (autorisatie) te bereiken dat is toegestaan voor de resources. Een beheer-of automatiserings proces kan bijvoorbeeld toegang hebben tot het maken van een reken instantie, maar deze niet gebruiken, terwijl een Data wetenschapper deze kan gebruiken, maar niet kan verwijderen of maken. Zie [toegang tot Azure machine learning werk ruimte beheren](how-to-assign-roles.md)voor meer informatie.
@@ -141,7 +141,7 @@ De eenvoudigste manier om een SP te maken en toegang te verlenen tot uw werk rui
 
 1. Een [door het systeem toegewezen beheerde identiteit inschakelen voor Azure-resources op de VM](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#system-assigned-managed-identity).
 
-1. Selecteer in de [Azure Portal](https://portal.azure.com)uw werk ruimte en selecteer vervolgens __Access Control (IAM)__ , __functie toewijzing toevoegen__ en selecteer __virtuele machine__ in de vervolg keuzelijst __toegang toewijzen aan__ . Selecteer ten slotte de identiteit van uw virtuele machine.
+1. Selecteer in de [Azure Portal](https://portal.azure.com)uw werk ruimte en selecteer vervolgens __Access Control (IAM)__, __functie toewijzing toevoegen__ en selecteer __virtuele machine__ in de vervolg keuzelijst __toegang toewijzen aan__ . Selecteer ten slotte de identiteit van uw virtuele machine.
 
 1. Selecteer de rol die aan deze identiteit moet worden toegewezen. Bijvoorbeeld Inzender of een aangepaste rol. Zie [toegang tot resources beheren](how-to-assign-roles.md)voor meer informatie.
 
@@ -154,7 +154,7 @@ Zie [Managed Identity voor Compute Cluster instellen](how-to-create-attach-compu
 ## <a name="use-interactive-authentication"></a>Interactieve verificatie gebruiken
 
 > [!IMPORTANT]
-> Interactieve verificatie maakt gebruik van uw browser en vereist cookies (inclusief cookies van derden). Als u cookies hebt uitgeschakeld, wordt er mogelijk een fout bericht weer gegeven zoals ' we kunnen u niet aanmelden '. Deze fout kan ook optreden als u [Azure multi-factor Authentication](../active-directory/authentication/concept-mfa-howitworks.md)hebt ingeschakeld.
+> Interactieve verificatie maakt gebruik van uw browser en vereist cookies (inclusief cookies van derden). Als u cookies hebt uitgeschakeld, wordt er mogelijk een fout bericht weer gegeven zoals ' we kunnen u niet aanmelden '. Deze fout kan ook optreden als u [Azure AD multi-factor Authentication](../active-directory/authentication/concept-mfa-howitworks.md)hebt ingeschakeld.
 
 De meeste voor beelden in de documentatie en voor beelden gebruiken interactieve verificatie. Wanneer u de SDK gebruikt, zijn er bijvoorbeeld twee functie aanroepen waarmee automatisch een verificatie stroom op basis van een gebruikers interface wordt gevraagd:
 
@@ -403,4 +403,4 @@ ws = Workspace(subscription_id="your-sub-id",
 
 * [Geheimen gebruiken in trainingen](how-to-use-secrets-in-runs.md).
 * [Verificatie configureren voor modellen die als een webservice worden geïmplementeerd](how-to-authenticate-web-service.md).
-* [Een Azure machine learning model gebruiken dat is geïmplementeerd als een webservice](how-to-consume-web-service.md).
+* [Een Azure Machine Learning-model gebruiken dat als een webservice is geïmplementeerd](how-to-consume-web-service.md).

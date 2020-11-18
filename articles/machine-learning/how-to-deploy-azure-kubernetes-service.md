@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to, contperfq1, deploy
+ms.custom: how-to, contperfq1, deploy, devx-track-azurecli
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/01/2020
-ms.openlocfilehash: b98d3ea69286fe7c23b6c2978b71699ba7eb0e00
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: f2ac565b8c6dfce52daeadd20cf3357bc22cd281
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325188"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843805"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Een model implementeren in een Azure Kubernetes service-cluster
 
@@ -87,7 +87,7 @@ In Azure Machine Learning wordt ' implementatie ' gebruikt voor een meer algemen
 Het front-end-onderdeel (azureml-Fe) dat binnenkomende aanvragen voor in-interferentie naar geïmplementeerde Services doorstuurt, wordt automatisch geschaald naar behoefte. Schalen van azureml-Fe is gebaseerd op het cluster doel en de grootte van het AKS (aantal knoop punten). Het cluster doeleinde en knoop punten worden geconfigureerd wanneer u [een AKS-cluster maakt of koppelt](how-to-create-attach-kubernetes.md). Er is één azureml-Fe-service per cluster, die op meerdere peulen kan worden uitgevoerd.
 
 > [!IMPORTANT]
-> Wanneer u een cluster gebruikt dat is geconfigureerd als __dev-test__ , wordt de zelf schaal **uitgeschakeld**.
+> Wanneer u een cluster gebruikt dat is geconfigureerd als __dev-test__, wordt de zelf schaal **uitgeschakeld**.
 
 Azureml-Fe schaalt beide omhoog (verticaal) om meer kernen te gebruiken en uit (horizon taal) om meer peulen te gebruiken. Wanneer u besluit om omhoog te schalen, wordt de tijd gebruikt die nodig is voor het routeren van binnenkomende aanvragen voor navragen. Als deze tijd de drempel waarde overschrijdt, wordt er een opschalen uitgevoerd. Als de tijd voor het routeren van binnenkomende aanvragen de drempel waarde blijft overschrijden, treedt er een uitschalen op.
 
@@ -154,7 +154,7 @@ Het onderdeel dat automatisch schalen afhandelt voor Azure ML-model implementati
 > [!IMPORTANT]
 > * **Schakel Kubernetes Horizontal pod autoscaler (HPA) niet in voor model implementaties**. Als dit het geval is, worden de twee onderdelen voor automatisch schalen met elkaar in concurrentie gebracht. Azureml-Fe is ontworpen voor het automatisch schalen van modellen die door Azure ML zijn geïmplementeerd, waarbij HPA het model gebruik van een algemene metriek zoals CPU-gebruik of een aangepaste metrische configuratie zou moeten raden of benaderen.
 > 
-> * Met **Azureml-Fe wordt het aantal knoop punten in een AKS-cluster niet geschaald** , omdat dit tot onverwachte kosten verhogingen kan leiden. In plaats daarvan **wordt het aantal replica's voor het model** binnen de grenzen van het fysieke cluster geschaald. Als u het aantal knoop punten in het cluster wilt schalen, kunt u het cluster hand matig schalen of [de AKS-cluster-automatische schaalr configureren](../aks/cluster-autoscaler.md).
+> * Met **Azureml-Fe wordt het aantal knoop punten in een AKS-cluster niet geschaald**, omdat dit tot onverwachte kosten verhogingen kan leiden. In plaats daarvan **wordt het aantal replica's voor het model** binnen de grenzen van het fysieke cluster geschaald. Als u het aantal knoop punten in het cluster wilt schalen, kunt u het cluster hand matig schalen of [de AKS-cluster-automatische schaalr configureren](../aks/cluster-autoscaler.md).
 
 Automatisch schalen kan worden bepaald door de instelling `autoscale_target_utilization` , `autoscale_min_replicas` en `autoscale_max_replicas` voor de AKS-webservice. In het volgende voor beeld ziet u hoe u automatisch schalen inschakelt:
 
@@ -280,7 +280,7 @@ endpoint.delete_version(version_name="versionb")
 
 ```
 
-## <a name="web-service-authentication"></a>Verificatie van webservice
+## <a name="web-service-authentication"></a>Web-serviceverificatie
 
 Bij het implementeren naar de Azure Kubernetes-service is verificatie op __basis van een sleutel__ standaard ingeschakeld. U kunt ook verificatie __op basis van tokens__ inschakelen. Voor verificatie op basis van tokens moeten clients een Azure Active Directory-account gebruiken om een verificatie token aan te vragen, dat wordt gebruikt om aanvragen te doen voor de geïmplementeerde service.
 

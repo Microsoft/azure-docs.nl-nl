@@ -3,13 +3,13 @@ title: Toegewezen pool gebruiken om taken uit te voeren
 description: Stel een toegewezen Compute pool (agent groep) in het REGI ster in om een Azure Container Registry taak uit te voeren.
 ms.topic: article
 ms.date: 10/12/2020
-ms.custom: references_regions
-ms.openlocfilehash: 86c539c3b34ca0e54d65f15c4d9d01a99f9b31c6
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.custom: references_regions, devx-track-azurecli
+ms.openlocfilehash: 94956af14aad2b62e6455f443329bcd3232095c0
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997278"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844911"
 ---
 # <a name="run-an-acr-task-on-a-dedicated-agent-pool"></a>Een ACR-taak uitvoeren op een toegewezen agent groep
 
@@ -93,20 +93,20 @@ az acr agentpool update \
 
 Taak agent-Pools hebben toegang tot de volgende Azure-Services nodig. De volgende firewall regels moeten worden toegevoegd aan bestaande netwerk beveiligings groepen of door de gebruiker gedefinieerde routes.
 
-| Richting | Protocol | Bron         | Bronpoort | Doel          | Doel poort | Gebruik    |
+| Richting | Protocol | Bron         | Bronpoort | Doel          | Doel poort | Gebruikt    |
 |-----------|----------|----------------|-------------|----------------------|-----------|---------|
-| Uitgaand  | TCP      | VirtualNetwork | Alle         | AzureKeyVault        | 443       | Standaard |
-| Uitgaand  | TCP      | VirtualNetwork | Alle         | Storage              | 443       | Standaard |
-| Uitgaand  | TCP      | VirtualNetwork | Alle         | EventHub             | 443       | Standaard |
-| Uitgaand  | TCP      | VirtualNetwork | Alle         | AzureActiveDirectory | 443       | Standaard |
-| Uitgaand  | TCP      | VirtualNetwork | Alle         | AzureMonitor         | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Elk         | AzureKeyVault        | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Elk         | Storage              | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Elk         | EventHub             | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Elk         | AzureActiveDirectory | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Elk         | AzureMonitor         | 443       | Standaard |
 
 > [!NOTE]
 > Als uw taken extra resources van het open bare Internet vereisen, voegt u de bijbehorende regels toe. Er zijn bijvoorbeeld aanvullende regels nodig voor het uitvoeren van een docker-taak waarmee de basis installatie kopieën worden opgehaald uit docker hub of een NuGet-pakket wordt hersteld.
 
 ### <a name="create-pool-in-vnet"></a>Groep maken in VNet
 
-In het volgende voor beeld wordt een agent groep gemaakt in het subnet *mysubnet* van de *myvnet*netwerk:
+In het volgende voor beeld wordt een agent groep gemaakt in het subnet *mysubnet* van de *myvnet* netwerk:
 
 ```azurecli
 # Get the subnet ID

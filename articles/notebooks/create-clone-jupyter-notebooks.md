@@ -3,18 +3,18 @@ title: Jupyter-notebooks maken en klonen-Azure Notebooks preview
 description: Azure Notebooks preview-projecten een verzameling van notitie blokken en gerelateerde bestanden beheren, die u kunt maken van een nieuwe of een kloon vanuit een andere bron.
 ms.topic: how-to
 ms.date: 02/25/2019
-ms.openlocfilehash: 4a51f9b12ca24d16858b41357627ff26d233357f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8e5930178b7951ff5f701228cee4ea7cb5f0e6da
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86181490"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844383"
 ---
 # <a name="create-and-clone-projects-in-azure-notebooks-preview"></a>Projecten maken en klonen in Azure Notebooks preview
 
 [!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
-Azure Notebooks worden uw Jupyter-notebooks en gerelateerde bestanden ingedeeld in logische groepen die *projecten*worden genoemd. U maakt eerst een project als container en vervolgens maakt of kloont u een of meer notitie blokken in een map naast andere project bestanden. (Dit proces wordt in de [zelf studie](tutorial-create-run-jupyter-notebook.md)gedemonstreerd.)
+Azure Notebooks worden uw Jupyter-notebooks en gerelateerde bestanden ingedeeld in logische groepen die *projecten* worden genoemd. U maakt eerst een project als container en vervolgens maakt of kloont u een of meer notitie blokken in een map naast andere project bestanden. (Dit proces wordt in de [zelf studie](tutorial-create-run-jupyter-notebook.md)gedemonstreerd.)
 
 Een project houdt ook meta gegevens en andere configuratie-instellingen bij die van invloed zijn op de server waarop notitie blokken worden uitgevoerd, met inbegrip van aangepaste installatie stappen en pakket installatie. Zie [projecten beheren en configureren](configure-manage-azure-notebooks-projects.md)voor meer informatie.
 
@@ -138,4 +138,4 @@ Een project klonen:
 - [Procedure: een diavoorstelling presen teren](present-jupyter-notebooks-slideshow.md)
 - [Procedure: Werken met gegevensbestanden](work-with-project-data-files.md)
 - [Procedure: Toegang tot gegevensbronnen](access-data-resources-jupyter-notebooks.md)
-- [Procedure: Azure Machine Learning gebruiken](use-machine-learning-services-jupyter-notebooks.md)
+- [Procedure: Azure Machine Learning gebruiken](../machine-learning/samples-notebooks.md)

@@ -3,12 +3,12 @@ title: Azure-beveiligings basislijn voor Azure DevTest Labs
 description: Azure-beveiligings basislijn voor Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 98f6ce7eee799b1baf29782d7eca11d62cf62353
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 64e5ac46fbeb71706f7b1ae2d3682260e3cbc651
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207288"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843193"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Azure-beveiligings basislijn voor Azure DevTest Labs
 
@@ -62,7 +62,7 @@ Raadpleeg voor meer informatie de volgende artikelen:
 **Verantwoordelijkheid:** Gebruikers
 
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
-***Hulp:** Stel in Azure Monitor de Bewaar periode voor logboek registratie in voor Log Analytics werk ruimten die zijn gekoppeld aan uw Azure DevTest Labs-instanties volgens de nalevings voorschriften van uw organisatie.
+**_Hulp:_* Stel in Azure Monitor de Bewaar periode voor logboek registratie in voor Log Analytics werk ruimten die zijn gekoppeld aan uw Azure DevTest Labs-instanties volgens de nalevings voorschriften van uw organisatie.
 
 Zie het volgende artikel: [para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) voor meer informatie.
 
@@ -175,9 +175,9 @@ Daarnaast kunt u aanbevelingen van Azure Security Center of ingebouwde Azure-bel
 - [MFA inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)  
 - [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Azure Security Center bewaking:*** Ja
+**Azure Security Center bewaking:** _ Ja
 
-**Verantwoordelijkheid:** Gebruikers
+_ *Verantwoordelijkheid:** klant
 
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
@@ -387,7 +387,7 @@ Micro soft voert beveiligings beheer uit op de onderliggende resources die Azure
 **Verantwoordelijkheid:** Gebruikers
 
 ### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5,3: Implementeer een geautomatiseerde oplossing voor software patch beheer van derden
-***Hulp:*** Als test beheerder kunt u [DevTest Labs-artefacten](add-artifact-vm.md) gebruiken om updates te automatiseren voor aangepaste Lab-installatie kopieën, waaronder beveiligings patches en andere updates. 
+**_Richt lijnen:_* _ als test beheerder kunt u [DevTest Labs-artefacten](add-artifact-vm.md) gebruiken om updates te automatiseren voor aangepaste Lab-installatie kopieën, waaronder beveiligings patches en andere updates. 
 
 Meer informatie over [Image Factory in DevTest Labs](image-factory-create.md), een oplossing voor configuratie-as-code waarmee automatisch installatie kopieën worden gebouwd en gedistribueerd op regel matige basis met alle gewenste configuraties. 
 
@@ -396,7 +396,7 @@ Als abonnements beheerder kunt u ook de Azure Updatebeheer-oplossing gebruiken o
 - [Updatebeheer oplossing in azure](../automation/update-management/update-mgmt-overview.md)
 - [Updates en patches voor uw virtuele machines beheren](../automation/update-management/update-mgmt-overview.md)
 
-**Azure Security Center bewaking:** Niet van toepassing
+_ *Azure Security Center bewaking:** niet van toepassing
 
 **Verantwoordelijkheid:** Gebruikers
 
@@ -692,7 +692,7 @@ Azure Marketplace-installatie kopieën voor virtuele machines die zijn gepublice
 
 - [Configureer beheerde identiteit voor de implementatie van Azure Resource Manager omgevingen in DevTest Labs](use-managed-identities-environments.md)
 - [Beheerde identiteit configureren voor het implementeren van virtuele machines in DevTest Labs](enable-managed-identities-lab-vms.md)
-- [Een sleutel kluis maken](../key-vault/secrets/quick-create-portal.md)
+- [Een sleutel kluis maken](../key-vault/general/quick-create-portal.md)
 - [Verifiëren bij Key Vault](../key-vault/general/authentication.md)
 - [Toegangs beleid voor Key Vault toewijzen](../key-vault/general/assign-access-policy-portal.md)
 

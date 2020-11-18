@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 11/06/2019
 ms.author: cynthn
-ms.openlocfilehash: e10b1955d50450e43d1dbb180f4d533b6b6ae8b9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 57cebed8ac229ed54945d75786b84b3cd2a36252
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978051"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844196"
 ---
 # <a name="create-an-azure-shared-image-gallery-using-the-portal"></a>Een galerie met gedeelde Azure-afbeeldingen maken met behulp van de portal
 
@@ -21,7 +21,7 @@ Met een [Shared Image Gallery](shared-image-galleries.md) kunt u het delen van a
 
 Met de galerie voor gedeelde afbeeldingen kunt u uw aangepaste VM-installatie kopieën delen met anderen in uw organisatie, binnen of tussen verschillende regio's binnen een AAD-Tenant. U kunt kiezen welke installatiekopieën u wilt delen, in welke regio’s u ze beschikbaar wilt maken en met wie u ze wilt delen. U kunt meerdere galerieën maken zodat u gedeelde installatie kopieën logisch kunt groeperen. 
 
-De galerie is een resource op het hoogste niveau die volledige op rollen gebaseerd toegangs beheer (RBAC) biedt. Installatie kopieën kunnen versie nummer hebben en u kunt ervoor kiezen om elke installatie kopie versie te repliceren naar een andere set Azure-regio's. De galerie werkt alleen met beheerde installatie kopieën.
+De galerie is een resource op het hoogste niveau die volledige toegangs beheer op basis van rollen (Azure RBAC) biedt. Installatie kopieën kunnen versie nummer hebben en u kunt ervoor kiezen om elke installatie kopie versie te repliceren naar een andere set Azure-regio's. De galerie werkt alleen met beheerde installatie kopieën.
 
 De functie gedeelde installatie kopie galerie heeft meerdere bron typen. We gebruiken of maken deze in dit artikel:
 
@@ -42,14 +42,14 @@ U kunt nu een of meer nieuwe virtuele machines maken. In dit voor beeld wordt ee
 
 1. Ga naar de definitie van uw installatie kopie. U kunt het resource filter gebruiken om alle beschik bare afbeeldings definities weer te geven.
 1. Selecteer op de pagina voor de definitie van de installatie kopie de optie **VM maken** in het menu boven aan de pagina.
-1. Selecteer voor **resource groep**de optie **nieuwe maken** en typ *myResourceGroup* voor de naam.
-1. Typ *myVM*in de naam van de **virtuele machine**.
+1. Selecteer voor **resource groep** de optie **nieuwe maken** en typ *myResourceGroup* voor de naam.
+1. Typ *myVM* in de naam van de **virtuele machine**.
 1. Selecteer bij **Regio** *VS - oost*.
-1. Voor **beschikbaarheids opties**moet u de standaard waarde voor de *redundantie van de infra structuur niet*behouden.
+1. Voor **beschikbaarheids opties** moet u de standaard waarde voor de *redundantie van de infra structuur niet* behouden.
 1. De waarde voor de **installatie kopie** wordt automatisch gevuld met de versie van de `latest` installatie kopie als u bent begonnen met de pagina voor de definitie van de installatie kopie.
-1. Kies bij **grootte**een VM-grootte in de lijst met beschik bare grootten en kies vervolgens **selecteren**.
+1. Kies bij **grootte** een VM-grootte in de lijst met beschik bare grootten en kies vervolgens **selecteren**.
 1. Als de installatie kopie is gegeneraliseerd onder **Administrator-account**, moet u een gebruikers naam opgeven, zoals *azureuser* en een wacht woord. Het wachtwoord moet minstens 12 tekens lang zijn en moet voldoen aan de [gedefinieerde complexiteitsvereisten](faq.md#what-are-the-password-requirements-when-creating-a-vm). Als uw installatie kopie gespecialiseerd was, worden de velden gebruikers naam en wacht woord grijs weer gegeven, omdat de gebruikers naam en het wacht woord voor de bron-VM worden gebruikt.
-1. Als u externe toegang tot de virtuele machine wilt toestaan, klikt u onder **open bare binnenkomende poorten**op **geselecteerde poorten toestaan** en selecteert u vervolgens **RDP (3389)** in de vervolg keuzelijst. Als u externe toegang tot de virtuele machine niet wilt toestaan, laat u **niets** geselecteerd voor **open bare binnenkomende poorten**.
+1. Als u externe toegang tot de virtuele machine wilt toestaan, klikt u onder **open bare binnenkomende poorten** op **geselecteerde poorten toestaan** en selecteert u vervolgens **RDP (3389)** in de vervolg keuzelijst. Als u externe toegang tot de virtuele machine niet wilt toestaan, laat u **niets** geselecteerd voor **open bare binnenkomende poorten**.
 1. Wanneer u klaar bent, selecteert u de knop **controleren + maken** onder aan de pagina.
 1. Nadat de validatie van de virtuele machine is geslaagd, selecteert u onder aan de pagina **maken** om de implementatie te starten.
 

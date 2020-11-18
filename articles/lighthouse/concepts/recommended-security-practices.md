@@ -3,12 +3,12 @@ title: Aanbevolen beveiligingsprocedures
 description: Wanneer u Azure Lighthouse gebruikt, is het belang rijk om te overwegen voor beveiliging en toegangs beheer.
 ms.date: 08/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 097611837e3bba2d1a44ec521862e03cc467d707
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef2c41cf052e5f79ecf4abf01c8f3fab3dd1de14
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399377"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843720"
 ---
 # <a name="recommended-security-practices"></a>Aanbevolen beveiligingsprocedures
 
@@ -17,11 +17,11 @@ Wanneer u [Azure Lighthouse](../overview.md)gebruikt, is het belang rijk om te o
 > [!TIP]
 > Deze aanbevelingen zijn ook van toepassing op [ondernemingen die meerdere tenants beheren](enterprise.md) met Azure Lighthouse.
 
-## <a name="require-azure-multi-factor-authentication"></a>Azure Multi-Factor Authentication vereisen
+## <a name="require-azure-ad-multi-factor-authentication"></a>Azure AD-Multi-Factor Authentication vereisen
 
-[Azure multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md) (ook wel verificatie in twee stappen genoemd) helpt voor komen dat aanvallers toegang krijgen tot een account door meerdere verificaties tappen te vereisen. U moet Multi-Factor Authentication vereisen voor alle gebruikers in uw Tenant beheren, met inbegrip van gebruikers die toegang hebben tot gedelegeerde klanten resources.
+Met [Azure AD multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md) (ook wel verificatie in twee stappen genoemd) kunt u voor komen dat aanvallers toegang krijgen tot een account door meerdere verificatie stappen te vereisen. U moet Multi-Factor Authentication vereisen voor alle gebruikers in uw Tenant beheren, met inbegrip van gebruikers die toegang hebben tot gedelegeerde klanten resources.
 
-U wordt aangeraden om uw klanten ook in te stellen om Azure Multi-Factor Authentication te implementeren in hun tenants.
+We raden u aan uw klanten te vragen om Azure AD-Multi-Factor Authentication ook in hun tenants te implementeren.
 
 ## <a name="assign-permissions-to-groups-using-the-principle-of-least-privilege"></a>Machtigingen toewijzen aan groepen met behulp van het principe van minimale bevoegdheden
 
@@ -47,5 +47,5 @@ Houd er rekening mee dat bij het opheffen van [klanten via een openbaar beheerd 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure multi-factor Authentication implementeren](../../active-directory/authentication/howto-mfa-getstarted.md).
+- [Azure AD-multi-factor Authentication implementeren](../../active-directory/authentication/howto-mfa-getstarted.md).
 - Meer informatie over [beheerervaring in meerdere tenants](cross-tenant-management-experience.md).

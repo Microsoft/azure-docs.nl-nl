@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/08/2020
 ms.author: terrylan
-ms.openlocfilehash: 779330d7881040026f45a031f95f44d770f39a56
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: e9eabc73c244526f0ea15b9c72b5377545f662b2
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412762"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844860"
 ---
 # <a name="security-management-in-azure"></a>Beveiligingsbeheer in Azure
 Azure-abonnees kunnen hun cloudomgevingen beheren vanaf meerdere apparaten, waaronder beheerwerkstations, de pc's van ontwikkelaars en zelfs apparaten van bevoegde eindgebruikers met taakspecifieke rechten. In sommige gevallen worden beheerfuncties uitgevoerd via op het web gebaseerde consoles, zoals de [Azure Portal](https://azure.microsoft.com/features/azure-portal/). In andere gevallen zijn er mogelijk rechtstreekse verbindingen naar Azure vanaf on-premises systemen via virtuele particuliere netwerken (VPN), Terminal Services, protocollen van clienttoepassingen of de Azure Service Management API (SMAPI) (via een programma). Clienteindpunten kunnen bovendien zowel in een domein zijn samengevoegd als op zichzelf staand en niet-beheerd zijn, zoals tablets en smartphones.
@@ -106,13 +106,13 @@ U kunt de toegang tot de infrastructuur en het beheer van platformservices in Az
 ### <a name="management-gateway"></a>Beheergateway
 Als u alle beheerderstoegang wilt centraliseren en controle en logboekregistratie wilt vereenvoudigen, kunt u in uw on-premises netwerk een speciale [Extern bureaublad-gateway](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560672(v=ws.10))-server implementeren, die is verbonden met uw Azure-omgeving.
 
-Een Extern bureaublad-gateway is een op beleid gebaseerde RDP-proxyservice die beveiligingsvereisten afdwingt. Door een Extern bureaublad-gateway samen met netwerktoegangsbeveiliging (NAP) voor Windows-servers te implementeren, zorgt u ervoor dat alleen clients die voldoen aan de specifieke criteria voor beveiligingsstatus, tot stand gebracht met groepsbeleidsobjecten (GPO's) van Active Directory Domain Services (AD DS), verbinding kunnen maken. Daarnaast:
+Een Extern bureaublad-gateway is een op beleid gebaseerde RDP-proxyservice die beveiligingsvereisten afdwingt. Door een Extern bureaublad-gateway samen met netwerktoegangsbeveiliging (NAP) voor Windows-servers te implementeren, zorgt u ervoor dat alleen clients die voldoen aan de specifieke criteria voor beveiligingsstatus, tot stand gebracht met groepsbeleidsobjecten (GPO's) van Active Directory Domain Services (AD DS), verbinding kunnen maken. Daarnaast doet u het volgende:
 
 * Richt een [Azure-beheercertificaat](/previous-versions/azure/gg551722(v=azure.100)) in op de Extern bureaublad-gateway, zodat deze de enige toegestane host is voor toegang tot Azure Portal.
 * Maak de Extern bureaublad-gateway lid van hetzelfde [beheerdomein](/previous-versions/windows/it-pro/windows-2000-server/bb727085(v=technet.10)) als de werkstations van de beheerders. Dit is nodig als u een IPsec-VPN tussen sites of een ExpressRoute gebruikt binnen een domein met een eenzijdige vertrouwensrelatie naar Azure AD, of als u referenties tussen uw on-premises exemplaar van AD DS en Azure AD federeert.
 * Configureer [verificatiebeleid voor clientverbindingen](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753324(v=ws.11)), zodat de Extern bureaublad-gateway controleert of de naam van het clientapparaat geldig is (lid is van een domein) en toegang heeft tot Azure Portal.
 * Gebruik IPsec voor [Azure-VPN](https://azure.microsoft.com/documentation/services/vpn-gateway/) om beheerverkeer extra te beschermen tegen afluisteren en diefstal van tokens, of breng een geïsoleerde internetkoppeling tot stand via [Azure ExpressRoute](https://azure.microsoft.com/documentation/services/expressroute/).
-* Schakel Multi-Factor Authentication (via [Azure Multi-Factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md)) of smartcardverificatie in voor beheerders die zich via de Extern bureaublad-gateway aanmelden.
+* Schakel multi-factor Authentication (via [Azure AD multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md)) of smart card-verificatie in voor beheerders die zich via RD-gateway aanmelden.
 * Configureer in Azure [IP-adresbeperkingen](https://azure.microsoft.com/blog/2013/08/27/confirming-dynamic-ip-address-restrictions-in-windows-azure-web-sites/) voor bronnen of [Netwerkbeveiligingsgroepen](../../virtual-network/network-security-groups-overview.md) om het aantal toegestane eindpunten voor beheer te minimaliseren.
 
 ## <a name="security-guidelines"></a>Richtlijnen voor beveiliging

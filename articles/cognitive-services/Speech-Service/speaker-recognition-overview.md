@@ -12,14 +12,14 @@ ms.date: 09/02/2020
 ms.author: trbye
 ms.custom: cog-serv-seo-aug-2020
 keywords: sprekerherkenning, biometrische spraak
-ms.openlocfilehash: 2c5b73b93c22ef27d7b68455f5e1e5108f25c984
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5001ac166b37f3a3852bc14261a5b5d199d778cd
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89397256"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844559"
 ---
-# <a name="what-is-speaker-recognition"></a>Wat is Sprekerherkenning?
+# <a name="what-is-speaker-recognition-preview"></a>Wat is Speaker Recognition (preview)?
 
 De Speaker Recognition-service biedt algoritmen waarmee luid sprekers worden geverifieerd en geïdentificeerd aan de hand van hun unieke spraak kenmerken met behulp van Voice biometrie. Speaker Recognition wordt gebruikt voor het beantwoorden van de vraag 'Wie spreekt er?'. U geeft audio training gegevens voor één spreker op, waarmee een inschrijvings profiel wordt gemaakt op basis van de unieke kenmerken van de stem van de spreker. U kunt vervolgens Audio-Voice-voor beelden op dit profiel controleren om te controleren of de spreker dezelfde persoon is (verificatie van de spreker), of audio spraak voorbeelden op een *groep* Inge schreven luidspreker profielen controleren om te zien of deze overeenkomen met een profiel in de groep (speaker-id). Met de Diarization van de [spreker](batch-transcription.md#speaker-separation-diarization) worden daarentegen segmenten van audio door de spreker gegroepeerd in een batch-bewerking.
 

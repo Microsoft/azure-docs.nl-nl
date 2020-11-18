@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: Zscaler private Access (ZPA) configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts voor Zscaler private Access (ZPA).
+title: 'Zelfstudie: Zscaler Private Access (ZPA) configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor Zscaler Private Access (ZPA).
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,92 +8,92 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: 5ecb4d249c8c2167ec61740eb9515fd1937230b0
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: a93e2a88201f32ed99698f2bfbab631c81ed8b35
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92519738"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357705"
 ---
-# <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Zelf studie: Zscaler private Access (ZPA) configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Zelfstudie: Zscaler Private Access (ZPA) configureren voor het automatisch inrichten van gebruikers
 
-Het doel van deze zelf studie is het demonstreren van de stappen die moeten worden uitgevoerd in Zscaler private Access (ZPA) en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers en/of groepen naar Zscaler private Access (ZPA).
+Het doel van deze zelfstudie is om de stappen te laten zien die moeten worden uitgevoerd in Zscaler Private Access (ZPA) en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en/of groepen voor Zscaler Private Access (ZPA).
 
 > [!NOTE]
 > In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
-> Deze connector bevindt zich momenteel in de open bare preview. Zie voor meer informatie over de algemene Microsoft Azure-gebruiksvoorwaarden voor preview-functies [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Deze connector is momenteel beschikbaar in openbare preview. Zie voor meer informatie over de algemene Microsoft Azure-gebruiksvoorwaarden voor preview-functies [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* Een Azure AD-Tenant
-* [Een ZPA-Tenant (Zscaler private Access)](https://www.zscaler.com/pricing-and-plans#contact-us)
-* Een gebruikers account in Zscaler private Access (ZPA) met beheerders machtigingen.
+* Een Azure AD-tenant
+* [Een Zscaler Private Access (ZPA)-tenant](https://www.zscaler.com/pricing-and-plans#contact-us)
+* Een gebruikersaccount in Zscaler Private Access (ZPA) met beheerdersmachtigingen.
 
-## <a name="assigning-users-to-zscaler-private-access-zpa"></a>Gebruikers toewijzen aan Zscaler persoonlijke toegang (ZPA)
+## <a name="assigning-users-to-zscaler-private-access-zpa"></a>Gebruikers toewijzen aan Zscaler Private Access (ZPA)
 
-Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in azure AD toegang nodig hebben tot Zscaler private Access (ZPA). Nadat u hebt besloten, kunt u deze gebruikers en/of groepen toewijzen aan Zscaler private Access (ZPA) door de volgende instructies te volgen:
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in Azure AD toegang nodig hebben tot Zscaler Private Access (ZPA). Als u dit eenmaal hebt besloten, kunt u deze gebruikers en/of groepen aan Zscaler Private Access (ZPA) toewijzen door de instructies hier te volgen:
 * [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
-## <a name="important-tips-for-assigning-users-to-zscaler-private-access-zpa"></a>Belang rijke tips voor het toewijzen van gebruikers aan Zscaler private Access (ZPA)
+## <a name="important-tips-for-assigning-users-to-zscaler-private-access-zpa"></a>Belangrijke tips voor het toewijzen van gebruikers aan Zscaler Private Access (ZPA)
 
-* Het is raadzaam dat één Azure AD-gebruiker wordt toegewezen aan Zscaler private Access (ZPA) om de configuratie van automatische gebruikers inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het wordt aanbevolen om een enkele Azure AD-gebruiker toe te wijzen aan Zscaler Private Access (ZPA) om de configuratie van de automatische gebruikersinrichting te testen. Extra gebruikers en/of groepen kunnen dan later nog worden toegewezen.
 
-* Wanneer u een gebruiker toewijst aan Zscaler private Access (ZPA), moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
+* Als u een gebruiker aan Zscaler Private Access (ZPA) toewijst, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het toewijzingsdialoogvenster. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
 
-## <a name="set-up-zscaler-private-access-zpa-for-provisioning"></a>Zscaler private Access (ZPA) voor inrichting instellen
+## <a name="set-up-zscaler-private-access-zpa-for-provisioning"></a>Zscaler Private Access (ZPA) instellen voor inrichting
 
-1. Meld u aan bij uw [ZPA-beheer console (Zscaler private Access)](https://admin.private.zscaler.com/). Ga naar **beheer > IDP-configuratie**.
+1. Meld u aan bij uw [Zscaler Private Access (ZPA)-beheerconsole](https://admin.private.zscaler.com/). Ga naar **Beheer > IdP-configuratie**.
 
-    ![Zscaler private Access (ZPA)-beheer console](media/zscaler-private-access-provisioning-tutorial/idpconfig.png)
+    ![Zscaler Private Access (ZPA)-beheerconsole](media/zscaler-private-access-provisioning-tutorial/idpconfig.png)
 
-2.  Controleer of er een IdP is geconfigureerd voor **eenmalige aanmelding** . Als er geen IdP is ingesteld, voegt u er een toe door te klikken op het plus pictogram in de rechter bovenhoek van het scherm.
+2.  Controleer of er een IdP is geconfigureerd voor **Eenmalige aanmelding**. Als er geen IdP is ingesteld, voegt u er een toe door op het pluspictogram in de rechterbovenhoek van het scherm te klikken.
 
-    ![Zscaler private Access (ZPA) SCIM toevoegen](media/zscaler-private-access-provisioning-tutorial/plusicon.png)
+    ![Zscaler Private Access (ZPA) SCIM toevoegen](media/zscaler-private-access-provisioning-tutorial/plusicon.png)
 
-3. Volg de wizard **IDP-configuratie toevoegen** om een IDP toe te voegen. Zorg ervoor dat het veld **eenmalige aanmelding** is ingesteld op **gebruiker**. Geef een **naam** op en selecteer de **domeinen** in de vervolg keuzelijst. Klik op **volgende** om naar het volgende venster te gaan.
+3. Volg de wizard **IdP-configuratie toevoegen** om een IdP toe te voegen. Laat het veld **Eenmalige aanmelding** ingesteld staan op **Gebruiker**. Geef een **Naam** op en selecteer de **Domeinen** in de vervolgkeuzelijst. Klik op **Volgende** om naar het volgende venster te gaan.
 
-    ![Zscaler private Access (ZPA) IdP toevoegen](media/zscaler-private-access-provisioning-tutorial/addidp.png)
+    ![Zscaler Private Access (ZPA) IdP toevoegen](media/zscaler-private-access-provisioning-tutorial/addidp.png)
 
-4. Down load het certificaat van de **service provider**. Klik op **volgende** om naar het volgende venster te gaan.
+4. Download het **Certificaat van de serviceprovider**. Klik op **Volgende** om naar het volgende venster te gaan.
 
-    ![Zscaler private Access (ZPA) SP-certificaat](media/zscaler-private-access-provisioning-tutorial/spcertificate.png)
+    ![Zscaler Private Access (ZPA) SP-certificaat](media/zscaler-private-access-provisioning-tutorial/spcertificate.png)
 
-5. Upload het certificaat van de **service provider** in het volgende venster dat u eerder hebt gedownload.
+5. Upload in het volgende venster het **Certificaat van de serviceprovider** dat u eerder hebt gedownload.
 
-    ![Zscaler private Access (ZPA) certificaat uploaden](media/zscaler-private-access-provisioning-tutorial/uploadfile.png)
+    ![Zscaler Private Access (ZPA) certificaat uploaden](media/zscaler-private-access-provisioning-tutorial/uploadfile.png)
 
-6.  Schuif omlaag om de **URL voor eenmalige aanmelding** en de **IDP-Entiteits-ID**op te geven.
+6.  Scrol omlaag om de **URL voor eenmalige aanmelding** en de **IdP-entiteits-id** op te geven.
 
-    ![Zscaler private Access (ZPA) IdP-ID](media/zscaler-private-access-provisioning-tutorial/idpid.png)
+    ![Zscaler Private Access (ZPA) IdP-id](media/zscaler-private-access-provisioning-tutorial/idpid.png)
 
-7.  Schuif omlaag om **scim-synchronisatie in te scha kelen**. Klik op de knop **nieuw token genereren** . Kopieer het **Bearer-token**. Deze waarde wordt ingevoerd in het veld geheime token op het tabblad inrichten van uw ZPA-toepassing (Zscaler private Access) in de Azure Portal.
+7.  Scrol omlaag naar **SCIM-synchronisatie inschakelen**. Klik op de knop **Nieuw token genereren**. Kopieer de **Bearer-token**. Deze waarde wordt ingevoerd in het veld Token voor geheim op het tabblad Inrichten van de Zscaler Private Access (ZPA)-toepassing in Azure Portal.
 
-    ![Zscaler private Access (ZPA) token maken](media/zscaler-private-access-provisioning-tutorial/token.png)
+    ![Zscaler Private Access (ZPA) token maken](media/zscaler-private-access-provisioning-tutorial/token.png)
 
-8.  Als u de **URL** van de Tenant wilt zoeken, gaat u naar **beheer > IDP-configuratie**. Klik op de naam van de zojuist toegevoegde IdP-configuratie die wordt weer gegeven op de pagina.
+8.  Als u de **Tenant-URL** wilt vinden, gaat u naar **Beheer > IdP-configuratie**. Klik op de naam van de zojuist toegevoegde IdP-configuratie die wordt weergegeven op de pagina.
 
-    ![Zscaler private Access (ZPA) IDP name](media/zscaler-private-access-provisioning-tutorial/idpname.png)
+    ![Zscaler Private Access (ZPA) IdP-naam](media/zscaler-private-access-provisioning-tutorial/idpname.png)
 
-9.  Schuif omlaag om het **eind punt van de scim-service provider** aan het einde van de pagina weer te geven. Kopieer het **eind punt van de scim-service provider**. Deze waarde wordt ingevoerd in het veld Tenant-URL op het tabblad inrichting van uw ZPA-toepassing (Zscaler private Access) in de Azure Portal.
+9.  Scrol omlaag om het **Eindpunt van de SCIM-serviceprovider** aan het einde van de pagina weer te geven. Kopieer het **Eindpunt van de SCIM-serviceprovider**. Deze waarde wordt ingevoerd in het veld Tenant-URL op het tabblad Inrichten van de Zscaler Private Access (ZPA)-toepassing in Azure Portal.
 
-    ![Zscaler private Access (ZPA) SCIM-URL](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
+    ![Zscaler Private Access (ZPA) SCIM-URL](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
 
 
-## <a name="add-zscaler-private-access-zpa-from-the-gallery"></a>Zscaler private Access (ZPA) toevoegen vanuit de galerie
+## <a name="add-zscaler-private-access-zpa-from-the-gallery"></a>Zscaler Private Access (ZPA) toevoegen vanuit de galerie
 
-Voordat u Zscaler private Access (ZPA) configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u Zscaler private Access (ZPA) toevoegen vanuit de Azure AD-toepassings galerie aan uw lijst met beheerde SaaS-toepassingen.
+Voordat u Zscaler Private Access (ZPA) configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u Zscaler Private Access (ZPA) vanuit de Azure AD-toepassingsgalerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
 
-**Als u Zscaler private Access (ZPA) wilt toevoegen vanuit de Azure AD-toepassings galerie, voert u de volgende stappen uit:**
+**Voer de volgende stappen uit om Zscaler Private Access (ZPA) toe te voegen vanuit de Azure AD-toepassingsgalerie:**
 
-1. Selecteer in de **[Azure Portal](https://portal.azure.com)** in het navigatie venster links **Azure Active Directory**.
+1. Ga naar **[Azure Portal](https://portal.azure.com)** en selecteer **Azure Active Directory** in het navigatievenster aan de linkerkant.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -101,25 +101,25 @@ Voordat u Zscaler private Access (ZPA) configureert voor het automatisch inricht
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **nieuwe toepassing** boven aan het deel venster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** boven in het deelvenster.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Voer in het zoekvak **Zscaler private Access (ZPA)** in, selecteer **Zscaler private Access (ZPA)** in het resultaten paneel en klik vervolgens op de knop **toevoegen** om de toepassing toe te voegen.
+4. Voer **Zscaler Private Access (ZPA)** in het zoekvak in, selecteer **Zscaler Private Access (ZPA)** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
-    ![Zscaler private Access (ZPA) in de lijst met resultaten](common/search-new-app.png)
+    ![Zscaler Private Access (ZPA) in de resultatenlijst](common/search-new-app.png)
 
-## <a name="configuring-automatic-user-provisioning-to-zscaler-private-access-zpa"></a>Automatische gebruikers inrichting configureren voor Zscaler private Access (ZPA) 
+## <a name="configuring-automatic-user-provisioning-to-zscaler-private-access-zpa"></a>Automatische gebruikersinrichting configureren voor Zscaler Private Access (ZPA) 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in Zscaler private Access (ZPA) te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in Zscaler Private Access (ZPA) te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te scha kelen voor Zscaler private Access (ZPA) door de instructies in de [zelf studie Zscaler private Access (ZPA)](./zscalerprivateaccess-tutorial.md)eenmalige aanmelding te volgen. Eenmalige aanmelding kan onafhankelijk van automatische gebruikers inrichting worden geconfigureerd, hoewel deze twee functies elkaar aanvullen.
+> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor Zscaler Private Access (ZPA), waarvoor u de instructies in de [zelfstudie over eenmalige aanmelding voor Zscaler Private Access (ZPA)](./zscalerprivateaccess-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, hoewel deze twee functies een aanvulling op elkaar vormen.
 
 > [!NOTE]
-> Raadpleeg voor meer informatie [over het scim](https://www.zscaler.com/partners/microsoft)-eind punt van Zscaler private Access.
+> Voor meer informatie over het SCIM-eindpunt van Zscaler Private Access raadpleegt u [dit](https://www.zscaler.com/partners/microsoft).
 
-### <a name="to-configure-automatic-user-provisioning-for-zscaler-private-access-zpa-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor Zscaler private Access (ZPA) in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-zscaler-private-access-zpa-in-azure-ad"></a>Automatische inrichting van gebruikers configureren voor Zscaler Private Access (ZPA) in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -127,17 +127,17 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 2. Selecteer in de lijst met toepassingen **Zscaler Private Access (ZPA)** .
 
-    ![De koppeling Zscaler persoonlijke toegang (ZPA) in de lijst met toepassingen](common/all-applications.png)
+    ![De Zscaler Private Access (ZPA)-link in de lijst Toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de beheeropties met de optie Inrichting gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Voer in het gedeelte **beheerders referenties** de waarde in van de scim van de **service provider** die eerder is opgehaald in de **Tenant-URL**. Invoer van de **Bearer-token** waarde die eerder is opgehaald in het **geheime token**. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met Zscaler private Access (ZPA). Als de verbinding mislukt, zorgt u ervoor dat uw ZPA-account (Zscaler private Access) beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer in de sectie **Beheerdersreferenties** de waarde in van het **Eindpunt van de SCIM-serviceprovider** die eerder is opgehaald in **Tenant-URL**. Voer de waarde van de **Bearer-token** in die eerder is opgehaald in **Geheime token**. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Zscaler Private Access (ZPA). Als de verbinding mislukt, moet u controleren of uw Zscaler Private Access (ZPA)-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -147,29 +147,29 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Klik op **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met Zscaler persoonlijke toegang (ZPA)**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Zscaler Private Access (ZPA)** .
 
-    ![Zscaler persoonlijke toegang (ZPA) gebruikers toewijzingen](media/zscaler-private-access-provisioning-tutorial/usermappings.png)
+    ![Zscaler Private Access (ZPA) gebruikerstoewijzingen](media/zscaler-private-access-provisioning-tutorial/usermappings.png)
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Zscaler private Access (ZPA) in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Zscaler private Access (ZPA) voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzing** de gebruikerskenmerken die vanuit Azure AD met Zscaler Private Access (ZPA) worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Zscaler Private Access (ZPA) te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![ZPA-gebruikers kenmerken (Zscaler private Access)](media/zscaler-private-access-provisioning-tutorial/userattributes.png)
+    ![Zscaler Private Access (ZPA) gebruikerskenmerken](media/zscaler-private-access-provisioning-tutorial/userattributes.png)
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met Zscaler private Access (ZPA)**.
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Zscaler Private Access (ZPA)** .
 
-    ![Zscaler persoonlijke toegang (ZPA) groeps toewijzingen](media/zscaler-private-access-provisioning-tutorial/groupmappings.png)
+    ![Zscaler Private Access (ZPA) groepstoewijzingen](media/zscaler-private-access-provisioning-tutorial/groupmappings.png)
 
-11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Zscaler private Access (ZPA) in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de groepen in Zscaler private Access (ZPA) voor update bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Controleer in de sectie **Kenmerktoewijzing** de groepskenmerken die vanuit Azure AD met Zscaler Private Access (ZPA) worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in Zscaler Private Access (ZPA) te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![ZPA-groeps kenmerken (Zscaler private Access)](media/zscaler-private-access-provisioning-tutorial/groupattributes.png)
+    ![Zscaler Private Access (ZPA) groepskenmerken](media/zscaler-private-access-provisioning-tutorial/groupattributes.png)
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Als u de Azure AD-inrichtings service voor Zscaler private Access (ZPA) wilt inschakelen, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig de **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Zscaler Private Access (ZPA).
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u wilt inrichten voor Zscaler private Access (ZPA) door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+14. Definieer de gebruikers en/of groepen die u aan Zscaler Private Access (ZPA) wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen** te kiezen.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
@@ -177,7 +177,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op Zscaler private Access (ZPA).
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te controleren en koppelingen te volgen naar het activiteitenrapport van de inrichting, waarin alle acties worden beschreven die door de Azure AD-inrichtingsservice op Zscaler Private Access (ZPA) worden uitgevoerd.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 

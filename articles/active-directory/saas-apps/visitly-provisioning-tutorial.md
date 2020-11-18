@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het configureren van Azure Active Directory voor het automatisch inrichten en inrichten van gebruikers accounts.
+title: 'Zelfstudie: Visitly configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten in Visitly, of de inrichting van gebruikersaccounts ongedaan te maken.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,70 +8,70 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 08/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: 15031a3e139265410179baa13db9ed3f1b41cf17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: ff3f3ab65df2d801b7c962de7cce645e9fc00b30
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88531800"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358606"
 ---
-# <a name="tutorial-configure-visitly-for-automatic-user-provisioning"></a>Zelf studie: voor het automatisch inrichten van gebruikers naar een andere configuratie
+# <a name="tutorial-configure-visitly-for-automatic-user-provisioning"></a>Zelfstudie: Visitly configureren voor automatische gebruikersinrichting
 
-Het doel van deze zelf studie is het demonstreren van de stappen die u in een stap en Azure Active Directory (Azure AD) uitvoert om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers of groepen.
+Het doel van deze zelfstudie is om de stappen te laten zien die u uitvoert in Visitly en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers of groepen voor Visitly.
 
 > [!NOTE]
-> In deze zelf studie wordt een connector beschreven die boven op de Azure AD User Provisioning-Service is gebouwd. Zie voor belang rijke informatie over de werking van deze service, hoe deze werkt en veelgestelde vragen [gebruikers automatisch inrichten en ongedaan maken van de inrichting van SaaS-toepassingen (Software-as-a-Service) met Azure Active Directory](../app-provisioning/user-provisioning.md).
+> In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar software-as-a-service (SaaS)-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
-> Deze connector bevindt zich momenteel in de open bare preview. Zie [aanvullende gebruiksrecht overeenkomst voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)voor meer informatie over de algemene Microsoft Azure gebruiksrecht overeenkomst voor preview-functies.
+> Deze connector is momenteel beschikbaar in Openbare preview. Zie voor meer informatie over de algemene Microsoft Azure-gebruiksvoorwaarden voor preview-functies [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* Een Azure AD-Tenant
-* [Een bezochte Tenant](https://www.visitly.io/pricing/)
-* Een gebruikers account met beheerders machtigingen
+* Een Azure AD-tenant
+* [Een Visitly-tenant](https://www.visitly.io/pricing/)
+* Een gebruikersaccount in Visitly met beheerdersmachtigingen
 
-## <a name="assign-users-to-visitly"></a>Gebruikers aan een bezoek toewijzen 
+## <a name="assign-users-to-visitly"></a>Gebruikers toewijzen aan Visitly 
 
-Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u het automatisch inrichten van gebruikers configureert en inschakelt, moet u bepalen welke gebruikers of groepen in azure AD u wilt bezoeken. Wijs deze gebruikers of groepen vervolgens door de volgende instructies te volgen:
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, beslist u welke gebruikers of groepen in Azure AD toegang nodig hebben tot Visitly. Vervolgens kunt u deze gebruikers of groepen aan Visitly toewijzen door de instructies hier te volgen:
 * [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
-## <a name="important-tips-for-assigning-users-to-visitly"></a>Belang rijke tips voor het naar een andere gebruiker toewijzen van gebruikers 
+## <a name="important-tips-for-assigning-users-to-visitly"></a>Belangrijke tips voor het toewijzen van gebruikers aan Visitly 
 
-* We raden u aan één Azure AD-gebruiker toe te wijzen om de automatische gebruikers inrichtings configuratie te testen. Extra gebruikers of groepen kunnen later worden toegewezen.
+* We raden u aan om één Azure AD-gebruiker toe te wijzen aan Visitly om de configuratie van automatische inrichting van gebruikers te testen. Extra gebruikers of groepen kunnen later worden toegewezen.
 
-* Wanneer u een gebruiker toewijst om deze te openen, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. Gebruikers met de rol Standaardtoegang worden uitgesloten van het inrichten.
+* Als u een gebruiker aan Visitly toewijst, moet u een geldige toepassingsspecifieke rol toewijzen (indien beschikbaar) in het toewijzingsdialoogvenster. Gebruikers met de rol Standaard toegang worden uitgesloten van het inrichten.
 
-## <a name="set-up-visitly-for-provisioning"></a>Ga naar de inrichting instellen
+## <a name="set-up-visitly-for-provisioning"></a>Visitly instellen voor inrichting
 
-Voordat u voor het eerst de configuratie van automatische gebruikers met Azure AD configureert, moet u het systeem voor het inrichten van SCIM (Cross-Domain Identity Management) op een bezoek brengen.
+Voordat u Visitly configureert voor automatische inrichting van gebruikers met Azure AD, moet u inrichten met System for Cross-domain Identity Management (SCIM) inschakelen op Visitly.
 
-1. Meld u aan om te [bezoeken](https://app.visitly.io/login). Selecteer **integraties**van  >  **host-synchronisatie**.
+1. Aanmelden bij [Visitly](https://app.visitly.io/login). Selecteer **Integraties** > **Synchronisatie van de host**.
 
-    ![Host-synchronisatie](media/Visitly-provisioning-tutorial/login.png)
+    ![Synchronisatie van de host](media/Visitly-provisioning-tutorial/login.png)
 
-2. Selecteer de sectie **Azure AD** .
+2. Selecteer de sectie **Azure AD**.
 
-    ![Sectie over Azure AD](media/Visitly-provisioning-tutorial/integration.png)
+    ![Sectie Azure AD](media/Visitly-provisioning-tutorial/integration.png)
 
-3. Kopieer de **API-sleutel**. Deze waarden worden ingevoerd in het vak **geheime token** op het tabblad **inrichten** van uw bezochte toepassing in de Azure Portal.
+3. Kopieer de **API-sleutel**. Deze waarden worden ingevoerd in het vak **Token voor geheim** op het tabblad **Inrichten** van uw Visitly-toepassing in de Azure Portal.
 
     ![API-sleutel](media/Visitly-provisioning-tutorial/token.png)
 
 
-## <a name="add-visitly-from-the-gallery"></a>Vanuit de galerie een bezoek toevoegen
+## <a name="add-visitly-from-the-gallery"></a>Visitly uit de galerie toevoegen
 
-Als u wilt configureren voor automatische gebruikers inrichting met Azure AD, kunt u een bezoek brengen vanuit de Azure AD-toepassings galerie naar uw lijst met beheerde SaaS-toepassingen.
+Als u Visitly wilt configureren voor het automatisch inrichten van gebruikers met Azure AD, voegt u Visitly vanuit de Azure AD-toepassingsgalerie toe aan uw lijst met beheerde SaaS-toepassingen.
 
-Als u een bezoek wilt toevoegen vanuit de Azure AD-toepassings galerie, voert u de volgende stappen uit.
+Voer de volgende stappen uit om Visitly toe te voegen vanuit de Azure AD-toepassingsgalerie.
 
-1. Selecteer **Azure Active Directory**in de [Azure Portal](https://portal.azure.com)in het navigatie deel venster links.
+1. Selecteer **Azure Active Directory** in [Azure Portal](https://portal.azure.com) in het navigatiedeelvenster aan de linkerkant.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -79,24 +79,24 @@ Als u een bezoek wilt toevoegen vanuit de Azure AD-toepassings galerie, voert u 
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **nieuwe toepassing** boven aan het deel venster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenaan het paneel.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Voer in het zoekvak **Ga naar**, ga **naar** de slag paneel en selecteer vervolgens **toevoegen** om de toepassing toe te voegen.
+4. Voer **Visitly** in het zoekvak in, selecteer **Visitly** in het venster met resultaten en selecteer vervolgens **Toevoegen** om de toepassing toe te voegen.
 
     ![Visitly in de lijst met resultaten](common/search-new-app.png)
 
-## <a name="configure-automatic-user-provisioning-to-visitly"></a>Automatisch door gebruikers inrichten configureren om te bezoeken 
+## <a name="configure-automatic-user-provisioning-to-visitly"></a>Automatische gebruikersinrichting configureren voor Visitly 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers of groepen in een bezoek te maken, bij te werken en uit te scha kelen op basis van gebruikers-of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers of groepen in Visitly te maken, bij te werken en uit te schakelen op basis van gebruikers- of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> Als u eenmalige aanmelding op basis van SAML voor bezoek wilt inschakelen, volgt u de instructies in de [zelf studie eenmalige aanmelding bekijken](Visitly-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische gebruikers inrichting worden geconfigureerd, hoewel deze twee functies elkaar aanvullen.
+> Als u eenmalige aanmelding op basis van SAML wilt inschakelen voor Visitly, volgt u de instructies in de [Zelfstudie voor eenmalige aanmelding bij Visitly](Visitly-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, hoewel deze twee functies een aanvulling op elkaar vormen.
 
-### <a name="configure-automatic-user-provisioning-for-visitly-in-azure-ad"></a>Automatisch gebruikers inrichten configureren voor bezoek aan Azure AD
+### <a name="configure-automatic-user-provisioning-for-visitly-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor Visitly in Azure AD
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). Selecteer **Enterprise Applications**  >  **alle toepassingen**in bedrijfs toepassingen.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** > **Alle toepassingen**.
 
     ![Alle toepassingen](common/enterprise-applications.png)
 
@@ -110,51 +110,51 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Inrichtings modus ingesteld op automatisch](common/provisioning-automatic.png)
+    ![Inrichtingsmodus ingesteld op Automatisch](common/provisioning-automatic.png)
 
-5. In het gedeelte beheerders referenties voert u de `https://api.visitly.io/v1/usersync/SCIM` -en **API-sleutel** waarden in die respectievelijk eerder zijn opgehaald in de Tenant- **URL** en het **geheime token**. Selecteer **verbinding testen** om ervoor te zorgen dat Azure AD kan worden verbonden met een bezoek. Als de verbinding mislukt, moet u ervoor zorgen dat uw account voor beheerders machtigingen heeft en probeer het opnieuw.
+5. In het gedeelte beheerdersreferenties voert u de waarden voor `https://api.visitly.io/v1/usersync/SCIM` en **API-sleutel** in die eerder zijn opgehaald uit respectievelijk **Tenant-URL** en **Token voor geheim**. Selecteer **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Visitly. Als de verbinding mislukt, moet u controleren of uw Visitly-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 
-6. Voer in het vak **e-mail bericht** het e-mail adres in van een persoon of groep die de inrichtings fout meldingen moet ontvangen. Schakel het selectie vakje **e-mail melding verzenden wanneer een fout optreedt** in.
+6. Voer in het vak **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de meldingen voor de inrichtingsfouten moeten ontvangen. Selecteer het selectievakje **Een e-mailmelding verzenden wanneer er een fout optreedt**.
 
-    ![E-mail melding](common/provisioning-notification-email.png)
+    ![E-mailadres voor meldingen](common/provisioning-notification-email.png)
 
 7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **synchronisatie van Azure Active Directory gebruikers om te bezoeken**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Visitly**.
 
-    ![Gebruikers toewijzingen voor het bezoek](media/visitly-provisioning-tutorial/usermapping.png)
+    ![Visitly-gebruikerstoewijzingen](media/visitly-provisioning-tutorial/usermapping.png)
 
-9. Bekijk de gebruikers kenmerken die door Azure AD worden gesynchroniseerd om te bezoeken in de sectie **kenmerk toewijzingen** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om de gebruikers accounts in een bezoek te brengen aan update bewerkingen. Selecteer **Opslaan** om eventuele wijzigingen toe te passen.
+9. Controleer de gebruikerskenmerken die vanuit Azure AD met Visitly worden gesynchroniseerd in de sectie **Kenmerktoewijzingen**. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Visitly te vinden voor updatebewerkingen. Selecteer **Opslaan** om eventuele wijzigingen toe te passen.
 
-    ![Gebruikers kenmerken voor het bezoek](media/visitly-provisioning-tutorial/userattribute.png)
+    ![Gebruikerskenmerken van Visitly](media/visitly-provisioning-tutorial/userattribute.png)
 
-10. Als u bereik filters wilt configureren, volgt u de instructies in de [zelf studie](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)voor het filteren op bereik.
+10. Volg de instructies in de [zelfstudie bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) als u bereikfilters wilt configureren.
 
-11. Als u de Azure AD-inrichtings service voor het bezoek wilt inschakelen, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+11. Wijzig **Inrichtingsstatus** naar **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Visitly.
 
-    ![Inrichtings status inschakelt op](common/provisioning-toggle-on.png)
+    ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-12. Definieer de gebruikers of groepen die u wilt inrichten door te klikken op de gewenste waarden in het **bereik** in het gedeelte **instellingen** .
+12. Definieer de gebruikers of groepen die u aan Visitly wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
-13. Wanneer u klaar bent om in te richten, selecteert u **Opslaan**.
+13. Selecteer **Opslaan** als u klaar bent voor het inrichten.
 
-    ![Inrichtings configuratie opslaan](common/provisioning-configuration-save.png)
+    ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers of groepen die in het **bereik** zijn gedefinieerd in de sectie **instellingen** . Het duurt langer voordat de initiële synchronisatie is uitgevoerd dan bij de volgende synchronisaties. Voor meer informatie over hoe lang het duurt voor het inrichten van gebruikers of groepen, raadpleeg dan [hoe lang het duurt om gebruikers in te richten?](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users)
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. Het uitvoeren van de initiële synchronisatie duurt langer dan bij volgende synchronisaties. Voor meer informatie over hoe lang het duurt om gebruikers of groepen in te richten, zie [Hoe lang duurt het inrichten van gebruikers?](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users).
 
-U kunt de **huidige status** sectie gebruiken om de voortgang te controleren en koppelingen naar uw inrichtings activiteiten rapport te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service. Zie [de status van gebruikers inrichten controleren](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)voor meer informatie. Zie [rapportage over het automatisch inrichten van gebruikers accounts](../app-provisioning/check-status-user-account-provisioning.md)voor informatie over het vastleggen van Azure AD-inrichtings Logboeken.
+U kunt het gedeelte **Huidige status** gebruiken om de voortgang te controleren en links te volgen naar het activiteitenrapport van de inrichting, waarin alle acties worden beschreven die door de Azure AD-inrichtingsservice op Visitly worden uitgevoerd. Zie [De status van gebruikersinrichting controleren](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) voor meer informatie. Zie [Rapportage over automatische toewijzing van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) als u de Azure AD-inrichtingslogboeken wilt lezen.
 
 ## <a name="connector-limitations"></a>Connectorbeperkingen
 
-Biedt geen ondersteuning voor harde verwijderingen. Alles is alleen zacht verwijderen.
+Visitly biedt geen ondersteuning voor harde verwijderingen. Er wordt alleen gebruikgemaakt van voorlopig verwijderen.
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
-* [Het inrichten van gebruikers accounts beheren voor zakelijke apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Het inrichten van gebruikersaccounts beheren voor bedrijfsapps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen

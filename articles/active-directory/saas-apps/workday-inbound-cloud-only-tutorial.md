@@ -1,218 +1,218 @@
 ---
-title: 'Zelf studie: inkomend inrichtings werk dagen configureren in Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het configureren van binnenkomende inrichting van workday naar Azure AD
+title: 'Zelfstudie: Binnenkomende inrichting voor Workday configureren in Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u binnenkomende inrichting van Workday naar Azure AD kunt configureren
 services: active-directory
 author: cmmdesai
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.topic: article
+ms.topic: tutorial
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 7d47c21da1279271b12933a2e4642abcce622600
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 197b7ff0a6c613a019007ba507d678b619c9afd4
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90015480"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358589"
 ---
-# <a name="tutorial-configure-workday-to-azure-ad-user-provisioning"></a>Zelf studie: workday configureren voor Azure AD-gebruikers inrichten
-Het doel van deze zelf studie is het weer geven van de stappen die u moet uitvoeren om werk nemers van workday in te richten in Azure Active Directory. 
+# <a name="tutorial-configure-workday-to-azure-ad-user-provisioning"></a>Zelfstudie: Gebruikersinrichting configureren van Workday naar Azure AD
+Het doel van deze zelfstudie is het weergeven van de stappen die u moet uitvoeren om werknemersgegevens van Workday in te richten in Azure Active Directory. 
 
 >[!NOTE]
->Gebruik deze zelf studie als de gebruikers die u wilt inrichten vanaf workday alleen Cloud gebruikers zijn die geen on-premises AD-account nodig hebben. Als de gebruikers alleen een on-premises AD-account of AD-en Azure AD-account nodig hebben, raadpleegt u de zelf studie over het [configureren van workday voor het Active Directory](workday-inbound-tutorial.md) van gebruikers inrichting. 
+>Gebruik deze zelfstudie als de gebruikers die u wilt inrichten van Workday alleen cloudgebruikers zijn die geen on-premises AD-account nodig hebben. Als de gebruikers alleen een on-premises AD-account of zowel een AD-account als een Azure AD-account nodig hebben, raadpleegt u de tutorial [Workday configureren voor Active Directory](workday-inbound-tutorial.md) met meer informatie over het inrichten van gebruikers. 
 
 ## <a name="overview"></a>Overzicht
 
-De [Azure Active Directory User Provisioning Service](../app-provisioning/user-provisioning.md) kan worden geïntegreerd met de [HR Human Resources API](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html) om gebruikers accounts in te richten. De werk stroom die door de gebruiker wordt ondersteund door de Azure AD User Provisioning-Service, biedt de mogelijkheid om de volgende scenario's voor human resources en Identity Lifecycle Management te automatiseren:
+De [Service voor het inrichten van gebruikers in Azure Active Directory](../app-provisioning/user-provisioning.md) integreert met de [Workday Human Resources-API](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html) om gebruikersaccounts in te richten. De werkstromen voor het inrichten van gebruikers in Workday die worden ondersteund door de Azure AD-service voor het inrichten van gebruikers, maken automatisering mogelijk van de volgende HR-scenario's en scenario's van beheer van identiteitslevenscycli:
 
-* **Nieuwe werk nemers inhuren** : wanneer een nieuwe werk nemer wordt toegevoegd aan workday, wordt automatisch een gebruikers account gemaakt in azure Active Directory en optioneel Microsoft 365 en [andere SaaS-toepassingen die worden ondersteund door Azure AD](../app-provisioning/user-provisioning.md), met een terugschrijf bewerking van het e-mail adres naar workday.
+* **Nieuwe medewerkers aannemen**: wanneer een nieuwe werknemer wordt toegevoegd aan Workday, wordt automatisch een gebruikersaccount gemaakt in Azure Active Directory en optioneel in Microsoft 365 en [andere SaaS-toepassingen die worden ondersteund in Azure AD](../app-provisioning/user-provisioning.md), met een write-back van het e-mailadres naar Workday.
 
-* **Updates van werknemers kenmerken en-profielen** : wanneer een werknemers record wordt bijgewerkt in workday (zoals hun naam, titel of Manager), wordt het gebruikers account automatisch bijgewerkt Azure Active Directory en optioneel Microsoft 365 en [andere SaaS-toepassingen die worden ondersteund door Azure AD](../app-provisioning/user-provisioning.md).
+* **Updates van kenmerken en profielen van werknemers**: wanneer de record van een werknemer wordt bijgewerkt in Workday (zoals naam, functie of manager), wordt het gebruikersaccount automatisch bijgewerkt in Azure Active Directory en optioneel in Microsoft 365 en [andere SaaS-toepassingen die worden ondersteund in Azure AD](../app-provisioning/user-provisioning.md).
 
-* **Beëindiging van werk nemers** : wanneer een werk nemer wordt beëindigd in workday, wordt het gebruikers account automatisch uitgeschakeld in azure Active Directory en optioneel Microsoft 365 en [andere SaaS-toepassingen die worden ondersteund door Azure AD](../app-provisioning/user-provisioning.md).
+* **Beëindiging van dienstverbanden**: wanneer een werknemer wordt verwijderd uit Workday, wordt het bijbehorende gebruikersaccount automatisch uitgeschakeld in Azure Active Directory en optioneel in Microsoft 365 en [andere SaaS-toepassingen die worden ondersteund in Azure AD](../app-provisioning/user-provisioning.md).
 
-* Opnieuw **inhuren van werk nemers** : wanneer een werk nemer in workday opnieuw wordt ingehuurd, kan het oude account automatisch opnieuw worden geactiveerd of worden ingericht (afhankelijk van uw voor keur) tot Azure Active Directory en optioneel Microsoft 365 en [andere SaaS-toepassingen die worden ondersteund door Azure AD](../app-provisioning/user-provisioning.md).
+* **Opnieuw aannemen van werknemers**: wanneer een werknemer opnieuw wordt toegevoegd in Workday, kan het oude gebruikersaccount automatisch opnieuw worden geactiveerd of ingericht (afhankelijk van wat uw voorkeur heeft) in Azure Active Directory en optioneel in Microsoft 365 en [andere SaaS-toepassingen die worden ondersteund in Azure AD](../app-provisioning/user-provisioning.md).
 
-### <a name="who-is-this-user-provisioning-solution-best-suited-for"></a>Wie is deze oplossing voor het inrichten van de gebruiker geschikt voor?
+### <a name="who-is-this-user-provisioning-solution-best-suited-for"></a>Voor wie is deze oplossing voor het inrichten van gebruikers het meest geschikt?
 
-Deze werkdag om de oplossing voor het inrichten van gebruikers te Azure Active Directory is in het ideale geval geschikt voor:
+Deze oplossing voor het inrichten van gebruikers van Workday naar Azure Active Directory is het meest geschikt voor:
 
-* Organisaties die behoefte hebben aan een vooraf ontwikkelde, op de cloud gebaseerde oplossing voor het inrichten van gebruikers met werk dagen
+* Organisaties die behoefte hebben aan een vooraf ontwikkelde, cloudoplossing voor het inrichten van gebruikers met Workday
 
-* Organisaties die directe gebruikers inrichting van workday naar Azure Active Directory vereisen
+* Organisaties die directe gebruikersinrichting van Workday naar Azure Active Directory vereisen
 
-* Organisaties waarvoor gebruikers moeten worden ingericht met gegevens die zijn verkregen van workday
+* Organisaties die vereisen dat gebruikers worden ingericht met behulp van gegevens die zijn verkregen door Workday
 
-* Organisaties die Microsoft 365 voor e-mail gebruiken
+* Organisaties die Microsoft 365 als e-mailprogramma gebruiken
 
 ## <a name="solution-architecture"></a>Architectuur voor de oplossing
 
-In deze sectie wordt de end-to-end-architectuur voor het inrichten van gebruikers voor Cloud gebruikers beschreven. Er zijn twee gerelateerde stromen:
+In deze sectie wordt de end-to-end-architectuur voor het inrichten van gebruikers voor cloudgebruikers beschreven. Er zijn twee gerelateerde stromen:
 
-* **Gezaghebbende HR-gegevens stroom: van werkdag tot Azure Active Directory:** In deze stroom worden werk gebeurtenissen (zoals nieuwe aanmeldingen, overdrachten, beëindigingen) voor het eerst uitgevoerd in workday, waarna de gebeurtenis gegevens stromen naar Azure Active Directory. Afhankelijk van de gebeurtenis kan dit leiden tot het maken/bijwerken/inschakelen/uitschakelen van bewerkingen in azure AD.
-* **Write-back-flow: van on-premises Active Directory naar werkdag:** Zodra het account is gemaakt in Active Directory, wordt het gesynchroniseerd met Azure AD via Azure AD Connect en kunnen gegevens zoals e-mail, gebruikers naam en telefoon nummer worden teruggeschreven naar workday.
+* **Gezaghebbende HR-gegevensstroom – van Workday naar Azure Active Directory:** In deze stroom worden werkgebeurtenissen (zoals nieuwe dienstverbanden, overplaatsingen en beëindiging van dienstverbanden) voor het eerst uitgevoerd in Workday, waarna de gebeurtenisgegevens naar Azure Active Directory stromen. Afhankelijk van de gebeurtenis kan dit in Azure AD leiden tot de bewerkingen maken, bijwerken, inschakelen en uitschakelen.
+* **Stroom van terugschrijfbewerking – van on-premises Active Directory naar Workday:** Zodra het account is gemaakt in Active Directory, wordt het gesynchroniseerd met Azure AD via Azure AD Connect en kunnen gegevens zoals e-mailadres, gebruikersnaam en telefoonnummer worden teruggeschreven naar Workday.
 
   ![Overzicht](./media/workday-inbound-tutorial/workday-cloud-only-provisioning.png)
 
-### <a name="end-to-end-user-data-flow"></a>Gegevens stroom van end-to-end-gebruikers
+### <a name="end-to-end-user-data-flow"></a>Gegevensstroom van end-to-end-gebruikers
 
-1. Het HR-team voert werknemers transacties (samenvoegers/verplaatsingen/Leavers of nieuwe huur/overschrijvingen/afsluitingen) uit in werk nemers midden van de werkdag
-2. Met de Azure AD-inrichtings service worden geplande synchronisaties van identiteiten van de werkdag EC uitgevoerd en worden wijzigingen geïdentificeerd die moeten worden verwerkt om te synchroniseren met on-premises Active Directory.
-3. De Azure AD-inrichtings service bepaalt de wijziging en roept de bewerking voor het maken/bijwerken/inschakelen/uitschakelen van de gebruiker aan in azure AD.
-4. Als de app [write-back](workday-writeback-tutorial.md) -uptoepassing is geconfigureerd, haalt deze kenmerken, zoals e-mail, gebruikers naam en telefoon nummer op uit Azure AD. 
-5. Azure AD Provisioning Service stelt e-mail adres, gebruikers naam en telefoon nummer in workday in.
+1. Het HR-team voert transacties voor werkrollen (nieuwe werknemers/overgeplaatste werknemers/werknemers die uit dienst treden, of nieuwe dienstverbanden/overplaatsingen/beëindiging van dienstverbanden) uit in Workday Employee Central
+2. Met de Azure AD-inrichtingsservice worden geplande synchronisaties van identiteiten van Workday EC uitgevoerd. Daarnaast worden wijzigingen geïdentificeerd die moeten worden verwerkt om te synchroniseren met on-premises Active Directory.
+3. De Azure AD-inrichtingsservice bepaalt de wijziging en roept de bewerking voor het maken/bijwerken/inschakelen/uitschakelen van de gebruiker aan in Azure AD.
+4. Als de [Workday Writeback](workday-writeback-tutorial.md)-app is geconfigureerd, worden in Azure AD kenmerken zoals e-mailadres, gebruikersnaam en telefoonnummer opgehaald. 
+5. De Azure AD-inrichtingsservice stelt e-mailadres, gebruikersnaam en telefoonnummer in Workday in.
 
 ## <a name="planning-your-deployment"></a>Uw implementatie plannen
 
-Het configureren van in de Cloud HR gestuurde gebruikers inrichten van workday naar Azure AD vereist een aanzienlijke planning voor verschillende aspecten, zoals:
+Het configureren van gebruikersinrichting op basis van HR in de cloud vanuit Workday naar Azure AD vereist een degelijke planning waarbij rekening moet worden gehouden met verschillende aspecten, zoals:
 
-* De overeenkomende ID bepalen 
+* De overeenkomende id bepalen 
 * Kenmerktoewijzing
-* Kenmerk transformatie 
+* Kenmerktransformatie 
 * Bereikfilters
 
-Raadpleeg het [implementatie plan voor Cloud HR](../app-provisioning/plan-cloud-hr-provision.md) voor uitgebreide richt lijnen rond deze onderwerpen. 
+Raadpleeg het [Implementatieplan voor Cloud HR](../app-provisioning/plan-cloud-hr-provision.md) voor uitgebreide richtlijnen rond deze onderwerpen. 
 
-## <a name="configure-integration-system-user-in-workday"></a>De gebruiker van het integratie systeem configureren in workday
+## <a name="configure-integration-system-user-in-workday"></a>De gebruiker van het integratiesysteem configureren in Workday
 
-Raadpleeg de sectie [integratie systeem gebruiker configureren](workday-inbound-tutorial.md#configure-integration-system-user-in-workday) voor het maken van een gebruikers account voor workday-integratie systeem met machtigingen voor het ophalen van gegevens van werk nemers. 
+Raadpleeg de sectie [Gebruikers van een integratiesysteem configureren](workday-inbound-tutorial.md#configure-integration-system-user-in-workday) voor het maken van een gebruikersaccount voor een Workday-integratiesysteem met machtigingen voor het ophalen van gegevens van werknemergegevens. 
 
-## <a name="configure-user-provisioning-from-workday-to-azure-ad"></a>Gebruikers inrichten van workday naar Azure AD configureren
+## <a name="configure-user-provisioning-from-workday-to-azure-ad"></a>Gebruikersinrichting configureren van Workday naar Azure AD
 
-In de volgende secties worden de stappen beschreven voor het configureren van gebruikers inrichting van workday naar Azure AD voor Cloud implementaties.
+In de volgende secties worden de stappen beschreven voor het configureren van gebruikersinrichting van Workday naar Azure AD voor cloudimplementaties.
 
-* [De Azure AD Provisioning connector-app toevoegen en de verbinding met workday maken](#part-1-adding-the-azure-ad-provisioning-connector-app-and-creating-the-connection-to-workday)
-* [Workday-en Azure AD-kenmerk toewijzingen configureren](#part-2-configure-workday-and-azure-ad-attribute-mappings)
-* [Gebruikers inrichting inschakelen en starten](#enable-and-launch-user-provisioning)
+* [De app voor de Azure AD-inrichtingsconnector toevoegen en de verbinding met Workday maken](#part-1-adding-the-azure-ad-provisioning-connector-app-and-creating-the-connection-to-workday)
+* [Workday- en Azure AD-kenmerktoewijzingen configureren](#part-2-configure-workday-and-azure-ad-attribute-mappings)
+* [Gebruikersinrichting inschakelen en starten](#enable-and-launch-user-provisioning)
 
-### <a name="part-1-adding-the-azure-ad-provisioning-connector-app-and-creating-the-connection-to-workday"></a>Deel 1: de Azure AD Provisioning connector-app toevoegen en de verbinding met workday maken
+### <a name="part-1-adding-the-azure-ad-provisioning-connector-app-and-creating-the-connection-to-workday"></a>Deel 1: De app voor de Azure AD-inrichtingsconnector toevoegen en de verbinding met Workday maken
 
-**Werk dagen configureren voor Azure Active Directory inrichting voor Cloud gebruikers:**
+**Ga als volgt te werk om de inrichting van Workday naar Azure Active Directory voor cloudgebruikers te configureren:**
 
 1. Ga naar <https://portal.azure.com>.
 
 2. Zoek en selecteer in de Azure-portal de optie **Azure Active Directory**.
 
-3. Selecteer **bedrijfs toepassingen**en vervolgens **alle toepassingen**.
+3. Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
-4. Selecteer **een toepassing toevoegen**en selecteer vervolgens de categorie **alle** .
+4. Selecteer **Een toepassing toevoegen** en selecteer vervolgens de categorie **Alle**.
 
-5. Zoek naar een **werkdag naar Azure AD-gebruikers inrichten**en voeg die app toe vanuit de galerie.
+5. Zoek naar **Gebruikers inrichten van Workday naar Azure AD** en voeg die app toe vanuit de galerie.
 
-6. Nadat de app is toegevoegd en het scherm met details van de app wordt weer gegeven, selecteert u **inrichting**.
+6. Nadat de app is toegevoegd en het scherm met details van de app wordt weergegeven, selecteert u **Inrichten**.
 
-7. Wijzig de **inrichtings** **modus** in **automatisch**.
+7. Stel de **Inrichtings** **modus** in op **Automatisch**.
 
-8. Voer de sectie **beheerders referenties** als volgt uit:
+8. Ga als volgt te werk om de sectie **Referenties voor beheerders** af te ronden:
 
-   * **Workday-gebruikers naam** : Voer de gebruikers naam in van het werk account van het workday-integratie systeem, waarbij de domein naam van de Tenant is toegevoegd. Moet er ongeveer als volgt uitzien: username@contoso4
+   * **Gebruikersnaam voor Workday**: Voer de gebruikersnaam van het account voor het Workday-integratiesysteem in, waarbij de domeinnaam van de tenant is toegevoegd. Het ziet er ongeveer als volgt uit: username@contoso4
 
-   * **Wacht woord voor werk dagen –** Voer het wacht woord in voor het workday-integratie systeem account
+   * **Wachtwoord voor Workday:** Voer het wachtwoord van het account voor het Workday-integratiesysteem in
 
-   * **Workday Web Services API-URL:** Voer de URL naar het workday Web Services-eind punt voor uw Tenant in. De URL bepaalt de versie van de workday Web Services API die door de connector wordt gebruikt. 
+   * **API-URL van Workday-webservices:** Geef de URL naar het eindpunt van Workday-webservices voor uw tenant op. De URL bepaalt de versie van de Workday-webservices-API die door de connector wordt gebruikt. 
    
-     | URL-indeling | WWS API-versie gebruikt | XPATH-wijzigingen vereist |
+     | URL-indeling | Gebruikte versie van de WWS-API | XPATH-wijzigingen vereist |
      |------------|----------------------|------------------------|
-     | https://####.workday.com/ccx/service/tenantName | v 21.1 | Nee |
-     | https://####.workday.com/ccx/service/tenantName/Human_Resources | v 21.1 | Nee |
-     | https://####.workday.com/ccx/service/tenantName/Human_Resources/v##.# | v # #. # | Ja |
+     | https://####.workday.com/ccx/service/tenantName | v21.1 | Nee |
+     | https://####.workday.com/ccx/service/tenantName/Human_Resources | v21.1 | Nee |
+     | https://####.workday.com/ccx/service/tenantName/Human_Resources/v##.# | v##.# | Ja |
 
       > [!NOTE]
-     > Als er geen versie gegevens zijn opgegeven in de URL, gebruikt de app workday Web Services (WWS) v 21.1 en zijn er geen wijzigingen vereist voor de standaard XPATH API-expressies die worden geleverd bij de app. Als u een specifieke API-versie van WWS wilt gebruiken, geeft u het versie nummer op in de URL <br>
+     > Als er geen versiegegevens zijn opgegeven in de URL, gebruikt de app Workday-webservices (WWS) v21.1. Er zijn dan geen wijzigingen vereist voor de standaard API-expressies van XPATH die worden geleverd bij de app. Als u een specifieke API-versie van WWS wilt gebruiken, geeft u het versienummer op in de URL <br>
      > Voorbeeld: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0` <br>
-     > <br> Als u een WWS API v 30.0 + gebruikt voordat u de inrichtings taak inschakelt, moet u **de API-expressies van XPath** bijwerken onder **kenmerk toewijzing-> geavanceerde opties-> kenmerk lijst bewerken voor workday** verwijzen naar de sectie [uw configuratie](workday-inbound-tutorial.md#managing-your-configuration) en [workday-kenmerk verwijzing](../app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30)beheren.  
+     > <br> Als u een WWS-API v30.0+ gebruikt voordat u de inrichtingstaak inschakelt, moet u de **API-expressies van XPATH** onder **Kenmerktoewijzing -> Geavanceerde opties-> Kenmerklijst bewerken voor Workday** verwijzen naar de sectie [Uw configuratie beheren](workday-inbound-tutorial.md#managing-your-configuration) en [Verwijzing naar Workday-kenmerk](../app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
 
-   * **E-mail melding-** Voer uw e-mail adres in en schakel het selectie vakje e-mail verzenden als er een fout is opgetreden in.
+   * **E-mailmelding**: Voer uw e-mailadres in en zet een vinkje in het selectievakje 'E-mail verzenden als er een fout is opgetreden'.
 
-   * Klik op de knop **verbinding testen** .
+   * Klik op de knop **Verbinding testen**.
 
-   * Als de verbindings test is geslaagd, klikt u bovenaan op de knop **Opslaan** . Als dit mislukt, controleert u of de workday-URL en referenties geldig zijn in werkdag.
+   * Als de verbindingstest is gelukt, klikt u bovenaan op de knop **Opslaan**. Als de verbindingstest mislukt, controleert u of de Workday-URL en -referenties geldig zijn in Workday.
 
-### <a name="part-2-configure-workday-and-azure-ad-attribute-mappings"></a>Deel 2: werk dagen en Azure AD-kenmerk toewijzingen configureren
+### <a name="part-2-configure-workday-and-azure-ad-attribute-mappings"></a>Deel 2: Workday- en Azure AD-kenmerktoewijzingen configureren
 
-In deze sectie configureert u hoe gebruikers gegevens stromen van workday naar Azure Active Directory voor Cloud gebruikers.
+In deze sectie configureert u hoe gebruikersgegevens stromen van Workday naar Azure Active Directory voor cloudgebruikers.
 
-1. Klik op het tabblad inrichting onder **toewijzingen**op werk rollen **synchroniseren met Azure AD**.
+1. Ga naar het tabblad 'Inrichten' onder **Toewijzingen**. Klik vervolgens op **Werkrollen synchroniseren met Azure AD**.
 
-2. In het veld **bereik van bron object** kunt u selecteren welke groepen gebruikers in workday het bereik moeten hebben voor het inrichten van Azure AD door een set op kenmerken gebaseerde filters te definiëren. Het standaard bereik is alle gebruikers in workday. Voorbeeld filters:
+2. In het veld **Bereik van bronobject** kunt u selecteren voor welke sets van gebruikers de inrichting naar Azure AD moet worden uitgevoerd. Dit doet u door een set van op kenmerken gebaseerde filters te definiëren. Het standaardbereik is 'alle gebruikers in Workday'. Voorbeelden van filters:
 
-   * Voor beeld: bereik voor gebruikers met werk nemer-Id's tussen 1000000 en 2000000
+   * Voorbeeld: Bereik voor gebruikers met werknemer-id's tussen 1000000 en 2000000
 
       * Kenmerk: WorkerID
 
-      * Operator: overeenkomende REGEX
+      * Operator: REGEX Match
 
-      * Waarde: (1 [0-9] [0-9] [0-9] [0-9] [0-9] [0-9])
+      * Waarde: (1[0-9][0-9][0-9][0-9][0-9][0-9])
 
-   * Voor beeld: alleen voorwaardelijke werk nemers en geen gewone werk nemers
+   * Voorbeeld: Alleen tijdelijke werknemers en geen reguliere werknemers
 
       * Kenmerk: ContingentID
 
-      * Operator: IS niet NULL
+      * Operator: IS NOT NULL
 
-3. In het veld **acties doel object** kunt u globaal filteren welke acties er worden uitgevoerd op Azure AD. **Create**  en **Update** worden het meest gebruikt.
+3. In het veld **Acties voor doelobject** kunt u globaal filteren op welke acties er worden uitgevoerd in Azure AD. **Maken** en **Bijwerken** worden het meest gebruikt.
 
-4. In de sectie **kenmerk toewijzingen** kunt u definiëren hoe afzonderlijke workday-kenmerken worden toegewezen aan Active Directory kenmerken.
+4. In de sectie **Kenmerktoewijzingen** kunt u definiëren hoe afzonderlijke kenmerken van Workday worden toegewezen aan kenmerken van Active Directory.
 
-5. Klik op een bestaande kenmerk toewijzing om het bij te werken of Klik onder aan het scherm op **nieuwe toewijzing toevoegen** om nieuwe toewijzingen toe te voegen. Een individuele kenmerk toewijzing ondersteunt de volgende eigenschappen:
+5. Klik op een bestaande kenmerktoewijzing om deze bij te werken, of klik onderin het scherm op **Nieuwe toewijzing toevoegen** om nieuwe toewijzingen toe te voegen. Een afzonderlijke kenmerktoewijzing ondersteunt de volgende eigenschappen:
 
-   * **Toewijzings type**
+   * **Toewijzingstype**
 
-      * **Direct** : schrijft de waarde van het kenmerk workday naar het kenmerk AD, zonder wijzigingen
+      * **Direct**: de waarde van het Workday-kenmerk wordt weggeschreven naar het kenmerk van AD, zonder wijzigingen.
 
-      * **Constante** : een statische, constante teken reeks waarde schrijven naar het AD-kenmerk
+      * **Constante**: er wordt een waarde die bestaat uit een statische, constante tekenreeks weggeschreven naar het AD-kenmerk.
 
-      * **Expressie** : Hiermee kunt u een aangepaste waarde naar het AD-kenmerk schrijven op basis van een of meer workday-kenmerken. [Zie dit artikel over expressies voor meer informatie](../app-provisioning/functions-for-customizing-application-data.md).
+      * **Expressie**: hiermee kunt u een aangepaste waarde wegschrijven naar het AD-kenmerk, op basis van een of meer Workday-kenmerken. [Zie voor meer informatie dit artikel over expressies](../app-provisioning/functions-for-customizing-application-data.md).
 
-   * **Bron kenmerk** : het gebruikers kenmerk van workday. Als het kenmerk dat u zoekt niet aanwezig is, raadpleegt u [de lijst met gebruikers kenmerken voor workday aanpassen](workday-inbound-tutorial.md#customizing-the-list-of-workday-user-attributes).
+   * **Bronkenmerk**: het gebruikerskenmerk uit Workday. Als het kenmerk dat u zoekt niet aanwezig is, raadpleegt u [De lijst met gebruikerskenmerken voor Workday aanpassen](workday-inbound-tutorial.md#customizing-the-list-of-workday-user-attributes).
 
-   * **Standaard waarde** : optioneel. Als het bron kenmerk een lege waarde heeft, wordt deze waarde in plaats daarvan door de toewijzing geschreven.
+   * **Standaardwaarde**: optioneel. Als het bronkenmerk een lege waarde heeft, wordt in plaats daarvan deze waarde weggeschreven door de toewijzing.
             De meest voorkomende configuratie is om dit leeg te laten.
 
-   * **Doel kenmerk** : het gebruikers kenmerk in azure AD.
+   * **Doelkenmerk**: het gebruikerskenmerk in Azure AD.
 
-   * **Objecten matchen met dit kenmerk** : ongeacht of dit kenmerk moet worden gebruikt om gebruikers te identificeren tussen workday en Azure AD. Deze waarde wordt doorgaans ingesteld op het veld werk nemer-ID voor workday, die meestal wordt toegewezen aan het kenmerk Employee ID (nieuw) of een extensie kenmerk in azure AD.
+   * **Objecten koppelen met dit kenmerk**: geeft aan of deze toewijzing moet worden gebruikt om gebruikers uniek te identificeren tussen Workday en Azure AD. Deze waarde wordt meestal ingesteld op het veld 'Werknemers-id voor Workday'. Dit veld wordt doorgaans toegewezen aan het (nieuwe) kenmerk 'Werknemers-id' of een extensiekenmerk in Azure AD.
 
-   * **Overeenkomende prioriteit** : meerdere overeenkomende kenmerken kunnen worden ingesteld. Wanneer er meerdere zijn, worden deze geëvalueerd in de volg orde die is gedefinieerd door dit veld. Zodra er een overeenkomst wordt gevonden, worden er geen verdere overeenkomende kenmerken geëvalueerd.
+   * **Prioriteit bij koppelen**: er kunnen meerdere overeenkomende kenmerken worden ingesteld. Wanneer er meerdere zijn, worden deze geëvalueerd in de volgorde die hier is gedefinieerd. Zodra er een overeenkomst wordt gevonden, worden er geen verdere overeenkomende kenmerken geëvalueerd.
 
-   * **Deze toewijzing Toep assen**
+   * **Deze toewijzing toepassen**
 
-     * **Altijd** : deze toewijzing Toep assen op zowel het maken van gebruikers als bij het bijwerken van acties
+     * **Altijd**: u kunt deze toewijzing toepassen bij het maken en bijwerken van gebruikers
 
-     * **Alleen tijdens het maken** : pas deze toewijzing alleen toe bij het maken van gebruikers acties
+     * **Alleen tijdens het maken van een object**: u kunt deze toewijzing alleen toepassen bij het maken van gebruikers
 
-6. Als u uw toewijzingen wilt opslaan, klikt u boven aan de sectie Attribute-Mapping op **Opslaan** .
+6. Als u uw toewijzingen wilt opslaan, klikt u op **Opslaan** bovenaan de sectie 'Kenmerktoewijzing'.
 
 
-## <a name="enable-and-launch-user-provisioning"></a>Gebruikers inrichting inschakelen en starten
+## <a name="enable-and-launch-user-provisioning"></a>Gebruikersinrichting inschakelen en starten
 
-Zodra de configuratie van de app voor workday-inrichting is voltooid, kunt u de inrichtings service inschakelen in de Azure Portal.
+Zodra de configuratie van de Workday-inrichtings-app is voltooid, kunt u de inrichtingsservice inschakelen in de Azure Portal.
 
 > [!TIP]
-> Wanneer u de inrichtings service inschakelt, worden er standaard inrichtings bewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten optreden in de toewijzings-of workday-gegevens problemen, kan de inrichtings taak mislukken en gaat u naar de quarantaine status. Om dit te voor komen best practice, raden we u aan om het bereik filter voor **bron objecten** te configureren en uw kenmerk toewijzingen te testen met enkele test gebruikers voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en u de gewenste resultaten krijgt, kunt u het filter verwijderen of het bestand geleidelijk uitbreiden om meer gebruikers op te geven.
+> Wanneer u de inrichtingsservice inschakelt, worden er standaard inrichtingsbewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten zijn opgetreden in de toewijzing of problemen zijn met Workday-gegevens, kan de inrichtingstaak mislukken en in de quarantaine-status gaan. Om dit te voorkomen, raden we u als best practice aan om het filter **Bereik van bronobject** te configureren en uw kenmerktoewijzingen te testen met enkele testgebruikers voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en de gewenste resultaten opleveren, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
 
-1. Stel op het tabblad **inrichten** de **inrichtings status** in **op aan**.
+1. Stel op het tabblad **Inrichten** de optie **Inrichtingsstatus** in op **Aan**.
 
 2. Klik op **Opslaan**.
 
-3. Met deze bewerking wordt de eerste synchronisatie gestart, wat een variabel aantal uur kan duren, afhankelijk van het aantal gebruikers in de workday-Tenant. U kunt de voortgangs balk controleren om de voortgang van de synchronisatie cyclus bij te houden. 
+3. De eerste synchronisatie wordt nu gestart. Deze kan een wisselend aantal uren duren, afhankelijk van het aantal gebruikers in de Workday-tenant. U kunt de voortgang van de synchronisatiecyclus bijhouden door middel van de voortgangsbalk. 
 
-4. Controleer op elk gewenst moment het tabblad **controle logboeken** in de Azure Portal om te zien welke acties de inrichtings service heeft uitgevoerd. In de controle logboeken worden alle afzonderlijke synchronisatie gebeurtenissen weer gegeven die door de inrichtings service worden uitgevoerd, bijvoorbeeld welke gebruikers worden gelezen uit de werk dagen en vervolgens worden toegevoegd of bijgewerkt aan Azure Active Directory. 
+4. Ga naar het tabblad **Auditlogboeken** in Azure Portal om te zien welke acties de inrichtingsservice heeft uitgevoerd. In de auditlogboeken worden alle afzonderlijke synchronisatiegebeurtenissen weergegeven die door de inrichtingsservice zijn uitgevoerd, bijvoorbeeld welke gebruikers zijn ingelezen vanuit Workday en vervolgens zijn toegevoegd aan of bijgewerkt in Azure Active Directory. 
 
-5. Zodra de initiële synchronisatie is voltooid, wordt een overzichts rapport van de controle op het tabblad **inrichten** geschreven, zoals hieronder wordt weer gegeven.
+5. Zodra de eerste synchronisatie is voltooid, wordt er een rapport met een overzicht van de controle weergegeven op het tabblad **Inrichten**, zoals u hieronder kunt zien.
 
    > [!div class="mx-imgBorder"]
-   > ![Voortgangs balk inrichten](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
+   > ![Voortgangsbalk van het inrichten](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over ondersteunde workday-kenmerken voor inkomende inrichtingen](../app-provisioning/workday-attribute-reference.md)
-* [Meer informatie over het configureren van workday-terugschrijven](workday-writeback-tutorial.md)
+* [Informatie over ondersteunde Workday-kenmerken voor inkomende inrichting](../app-provisioning/workday-attribute-reference.md)
+* [Informatie over het configureren van Workday-write-back](workday-writeback-tutorial.md)
 * [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md)
-* [Meer informatie over het configureren van eenmalige aanmelding tussen werk dagen en Azure Active Directory](workday-tutorial.md)
-* [Meer informatie over het integreren van andere SaaS-toepassingen met Azure Active Directory](tutorial-list.md)
-* [Meer informatie over het exporteren en importeren van uw inrichtings configuraties](../app-provisioning/export-import-provisioning-configuration.md)
+* [Informatie over het configureren van eenmalige aanmelding tussen Workday en Azure Active Directory](workday-tutorial.md)
+* [Informatie over het integreren van andere SaaS-toepassingen met Azure Active Directory](tutorial-list.md)
+* [Informatie over het exporteren en importeren van uw inrichtingsconfiguraties](../app-provisioning/export-import-provisioning-configuration.md)
 
 

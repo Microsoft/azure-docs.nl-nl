@@ -4,12 +4,12 @@ description: Dit artikel bevat een overzicht van het beheren van een Azure Servi
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: sfrev
-ms.openlocfilehash: 7ad0d4f6d92ba8d85383df281bd14681f43bb6d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3968fde0222dcee8047e7490dba78879ab6110e2
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86258729"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681683"
 ---
 # <a name="service-fabric-application-resource-model"></a>Resource model van Service Fabric toepassing
 
@@ -55,7 +55,7 @@ Nadat het opslag account is gemaakt, maakt u een BLOB-container waarin de toepas
 Resources in uw cluster kunnen worden beveiligd door het open bare toegangs niveau in te stellen op **privé**. U kunt op verschillende manieren toegang verlenen:
 
 * Machtig de toegang tot blobs en wacht rijen met behulp van [Azure Active Directory](../storage/common/storage-auth-aad-app.md).
-* Verleen toegang tot Azure Blob-en wachtrij gegevens met behulp van [RBAC in het Azure Portal](../storage/common/storage-auth-aad-rbac-portal.md).
+* Verleen toegang tot Azure Blob-en wachtrij gegevens met behulp [van Azure RBAC in de Azure Portal](../storage/common/storage-auth-aad-rbac-portal.md).
 * Toegang delegeren met behulp van een [hand tekening voor gedeelde toegang](/rest/api/storageservices/delegate-access-with-shared-access-signature).
 
 In het voor beeld in de volgende scherm afbeelding wordt anonieme lees toegang voor blobs gebruikt.
@@ -76,7 +76,7 @@ In deze zelf studie gebruiken we de [toepassing stem voorbeeld](https://github.c
    ![Zip-toepassing][ZipApplication]  
 1. Wijzig de naam van het bestand om de extensie van. zip te wijzigen in *. sfpkg*.
 
-1. Selecteer in de Azure Portal, in de **app** -container voor uw opslag account, de optie **uploaden**en upload **stem. sfpkg**. 
+1. Selecteer in de Azure Portal, in de **app** -container voor uw opslag account, de optie **uploaden** en upload **stem. sfpkg**. 
 
    ![App-pakket uploaden][UploadAppPkg]
 

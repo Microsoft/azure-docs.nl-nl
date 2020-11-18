@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/17/2018
 ms.author: cherylmc
-ms.openlocfilehash: 2c9b8a769dec1a2aa461a34203c98a228cf71d16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 63505f470410234f720dd28c29e87c4a2a6d123f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082049"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661134"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-powershell"></a>Virtuele netwerken van verschillende implementatiemodellen verbinden met PowerShell
 
@@ -35,7 +35,7 @@ De volgende stappen leiden u door de instellingen die nodig zijn voor het config
 
 ### <a name="prerequisites"></a><a name="pre"></a>Vereisten
 
-* Beide VNets zijn al gemaakt. Als u een virtueel netwerk van Resource Manager wilt maken, raadpleegt u [een resource groep en een virtueel netwerk maken](../virtual-network/quick-create-powershell.md#create-a-resource-group-and-a-virtual-network). Zie [een klassiek VNet maken](https://docs.microsoft.com/azure/virtual-network/create-virtual-network-classic)voor het maken van een klassiek virtueel netwerk.
+* Beide VNets zijn al gemaakt. Als u een virtueel netwerk van Resource Manager wilt maken, raadpleegt u [een resource groep en een virtueel netwerk maken](../virtual-network/quick-create-powershell.md#create-a-resource-group-and-a-virtual-network). Zie [een klassiek VNet maken](/previous-versions/azure/virtual-network/create-virtual-network-classic)voor het maken van een klassiek virtueel netwerk.
 * De adresbereiken voor de VNets overlappen elkaar niet of overlappen een van de bereiken voor andere verbindingen waarmee de gateways kunnen worden verbonden.
 * U hebt de meest recente Power shell-cmdlets geïnstalleerd. Zie [Azure PowerShell installeren en configureren](/powershell/azure/) voor meer informatie. Zorg ervoor dat u de Service Management (SM) en de RM-cmdlets (Resource Manager) installeert. 
 
@@ -90,7 +90,7 @@ IP-adres Sering configuratie van Gateway = gwipconfig
    ```azurepowershell
    Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
    ```
-3. Open het. XML-bestand dat u hebt gedownload om het te bewerken. Zie het [netwerk configuratie schema](https://msdn.microsoft.com/library/jj157100.aspx)voor een voor beeld van het netwerk configuratie bestand.
+3. Open het. XML-bestand dat u hebt gedownload om het te bewerken. Zie het [netwerk configuratie schema](/previous-versions/azure/reference/jj157100(v=azure.100))voor een voor beeld van het netwerk configuratie bestand.
 
 ### <a name="2-verify-the-gateway-subnet"></a>2. Controleer het gateway-subnet
 Voeg in het element **VirtualNetworkSites** een gateway-subnet toe aan uw VNet als er nog geen is gemaakt. Wanneer u werkt met het netwerk configuratie bestand, moet het gateway-subnet de naam ' GatewaySubnet ' hebben of kan Azure niet worden herkend en als gateway-subnet worden gebruikt.
@@ -217,7 +217,7 @@ Aan de vereisten wordt ervan uitgegaan dat u al een RM VNet hebt gemaakt. In dez
    -AllocationMethod Dynamic
    ```
 
-4. Controleer of het virtuele netwerk een gateway-subnet heeft. Als er geen gateway-subnet bestaat, voegt u er een toe. Controleer of het gateway-subnet de naam *GatewaySubnet*heeft.
+4. Controleer of het virtuele netwerk een gateway-subnet heeft. Als er geen gateway-subnet bestaat, voegt u er een toe. Controleer of het gateway-subnet de naam *GatewaySubnet* heeft.
 5. Haal het subnet op dat voor de gateway wordt gebruikt door de volgende opdracht uit te voeren. In deze stap stellen we ook een variabele in die in de volgende stap moet worden gebruikt.
    
    **-Naam** is de naam van uw Resource Manager-VNet.<br>
@@ -237,7 +237,7 @@ Aan de vereisten wordt ervan uitgegaan dat u al een RM VNet hebt gemaakt. In dez
    -Name gwipconfig -SubnetId $subnet.id `
    -PublicIpAddressId $ipaddress.id
    ```
-7. Maak de gateway van het virtuele netwerk van Resource Manager door de volgende opdracht uit te voeren. De `-VpnType` moet *RouteBased*zijn. Het kan 45 minuten of langer duren voordat de gateway is gemaakt.
+7. Maak de gateway van het virtuele netwerk van Resource Manager door de volgende opdracht uit te voeren. De `-VpnType` moet *RouteBased* zijn. Het kan 45 minuten of langer duren voordat de gateway is gemaakt.
 
    ```azurepowershell-interactive
    New-AzVirtualNetworkGateway -Name RMGateway -ResourceGroupName RG1 `

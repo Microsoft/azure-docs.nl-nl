@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: een Webroot Security bewustzijns training configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts van Azure AD naar een Webroot-training voor beveiligings detectie.
+title: 'Zelfstudie: Webroot Security Awareness Training configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikersaccounts van Azure AD voor Webroot Security Awareness Training.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -12,101 +12,101 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: e229fdd44bb6d634d83ddfaf1173c02b65336537
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: feb661a5f0a22350d9660669c18209e7b1fd878d
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92519245"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358521"
 ---
-# <a name="tutorial-configure-webroot-security-awareness-training-for-automatic-user-provisioning"></a>Zelf studie: een Webroot Security bewustzijns training configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-webroot-security-awareness-training-for-automatic-user-provisioning"></a>Zelfstudie: Webroot Security Awareness Training configureren voor automatische inrichting van gebruikers
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel de Webroot Security bewustzijn-training als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer de configuratie is geconfigureerd, worden gebruikers en [groepen door Azure](https://www.webroot.com/) AD automatisch ingericht en ongedaan gemaakt met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel Webroot Security Awareness Training als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op [Webroot Security Awareness Training](https://www.webroot.com/) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
-> * Gebruikers in Webroot Security bewustzijns training maken
-> * Gebruikers in Webroot Security bewustzijns training verwijderen wanneer ze geen toegang meer nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd houden tussen Azure AD en de Webroot-training voor beveiligings bewustmaking
-> * Inrichtings groepen en groepslid maatschappen in de cursus Webroot Security bewustzijn
+> * Gebruikers maken in Webroot Security Awareness Training
+> * Gebruikers uit Webroot Security Awareness Training verwijderen wanneer ze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en Webroot Security Awareness Training
+> * Groepen en groepslidmaatschappen inrichten in Webroot Security Awareness Training
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-Tenant](../develop/quickstart-create-new-tenant.md) 
-* Een gebruikers account in azure AD met [toestemming](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld toepassings beheerder, Cloud toepassings beheerder, eigenaar van de toepassing of globale beheerder).
-* Een beheerde service provider console met een Webroot Security bewustzijns training ingeschakeld voor ten minste één van uw sites.
+* [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
+* Een gebruikersaccount in Azure AD met [machtigingen](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder).
+* Een beheerde serviceproviderconsole waarop Webroot Security Awareness Training is ingeschakeld voor ten minste één van uw sites.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en Webroot Security bewustzijns training](../app-provisioning/customize-application-attributes.md). 
+3. Bepaal welke gegevens [moeten worden afgestemd tussen Azure AD en Webroot Security Awareness Training](../app-provisioning/customize-application-attributes.md). 
 
-## <a name="step-2-configure-webroot-security-awareness-training-to-support-provisioning-with-azure-ad"></a>Stap 2. Webroot Security bewustzijns training configureren ter ondersteuning van het inrichten met Azure AD
+## <a name="step-2-configure-webroot-security-awareness-training-to-support-provisioning-with-azure-ad"></a>Stap 2. Webroot Security Awareness Training configureren voor ondersteuning van inrichting met Azure AD
 
-### <a name="obtain-a-secret-token"></a>Een geheim token verkrijgen
+### <a name="obtain-a-secret-token"></a>Een token voor een geheim verkrijgen
 
-Als u uw site wilt verbinden met Azure AD, moet u een **geheim token** voor die site verkrijgen in de Webroot-beheer console.
+Als u uw site wilt verbinden met Azure AD, moet u een **token voor een geheim** voor die site ophalen in de Webroot-beheerconsole.
 
-1. Meld u aan bij uw [Webroot-beheer console](https://identity.webrootanywhere.com/v1/Account/login#tab_customers)
+1. Meld u aan bij uw [Webroot-beheerconsole](https://identity.webrootanywhere.com/v1/Account/login#tab_customers)
 
-2. Klik op het tabblad **sites** op het tandwiel pictogram in de kolom beveiligings gerichte training voor de site die u wilt verbinden met Azure AD.
+2. Klik op het tabblad **Sites** op het tandwielpictogram in de kolom Security Awareness Training voor de site die u wilt verbinden met Azure AD.
 
-    ![Tandwiel pictogram](./media/webroot-security-awareness-training-provisioning-tutorial/gear-icon.png)
+    ![Tandwielpictogram](./media/webroot-security-awareness-training-provisioning-tutorial/gear-icon.png)
 
-3. Klik op de knop voor het **configureren van Azure AD-integratie**.
+3. Klik op de knop **Azure AD-integratie configureren**.
 
     ![Azure AD-integratie configureren](./media/webroot-security-awareness-training-provisioning-tutorial/configure-azure-ad-integration.png)
 
-4. Kopieer het **geheim token**en sla het op. Deze waarde wordt ingevoerd in het veld geheime token op het tabblad inrichting van uw toepassing voor het inrichten van Webroot in de Azure Portal.
+4. Kopieer het **token voor het geheim** en sla het op. Deze waarde wordt ingevoerd in het veld Token voor geheim op het tabblad Inrichten van uw Webroot Security Awareness Training-toepassing in Azure Portal.
 
 5. Klik op **Gereed**.
 
-    ![Geheim token kopiëren](./media/webroot-security-awareness-training-provisioning-tutorial/copy-secret-token.png)
+    ![Token voor geheim kopiëren](./media/webroot-security-awareness-training-provisioning-tutorial/copy-secret-token.png)
 
-## <a name="step-3-add-webroot-security-awareness-training-from-the-azure-ad-application-gallery"></a>Stap 3. Een Webroot-training voor beveiligings bewustmaking toevoegen vanuit de Azure AD-toepassings galerie
+## <a name="step-3-add-webroot-security-awareness-training-from-the-azure-ad-application-gallery"></a>Stap 3. Webroot Security Awareness Training toevoegen vanuit de galerie met Azure AD-toepassingen
 
-Voeg een Webroot Security bewustzijns training toe vanuit de Azure AD-toepassings galerie om het beheer van de inrichting te starten voor een Webroot Security bewustzijns training. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
+Voeg Webroot Security Awareness Training toe vanuit de galerie met Azure AD-toepassingen om te beginnen met het beheer van de inrichting van Webroot Security Awareness Training. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
 
 Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) wordt beschreven. 
 
-* Wanneer u gebruikers en groepen toewijst aan een Webroot-training voor beveiligings bewustmaking, moet u een andere rol dan **standaard toegang**selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
+* Wanneer u gebruikers en groepen toewijst aan Webroot Security Awareness Training, moet u een andere rol dan **Standaardtoegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) opgeven. 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-webroot-security-awareness-training"></a>Stap 5. Automatische gebruikers inrichting configureren voor een Webroot Security bewustzijns training 
+## <a name="step-5-configure-automatic-user-provisioning-to-webroot-security-awareness-training"></a>Stap 5. Automatische inrichting van gebruikers voor Webroot Security Awareness Training configureren 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-webroot-security-awareness-training-in-azure-ad"></a>Voor het configureren van automatische gebruikers inrichting voor Webroot Security bewustzijns training in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-webroot-security-awareness-training-in-azure-ad"></a>Als u automatische inrichting van gebruikers voor Webroot Security Awareness Training wilt configureren, doet u het volgende:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst toepassingen de optie **Webroot Security bewustzijns training**.
+2. Selecteer **Webroot Security Awareness Training** in de lijst met toepassingen.
 
-    ![De koppeling Webroot Security bewustzijns training in de lijst met toepassingen](common/all-applications.png)
+    ![De koppeling naar Webroot Security Awareness Training in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de beheeropties met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Selecteer in de sectie **beheerders referenties** de invoer `https://awarenessapi.webrootanywhere.com/api/v2/scim` in de Tenant- **URL**. Voer de geheime token waarde in die eerder is opgehaald in het **geheime token**. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met de Webroot Security bewustzijns training. Als de verbinding mislukt, zorg er dan voor dat uw account voor de toegang tot de Webroot-beveiligings bewustmaking beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer onder de sectie **Referenties voor beheerder** `https://awarenessapi.webrootanywhere.com/api/v2/scim` in **Tenant-URL** in. Voer de waarde van de token voor het geheim in die eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Webroot Security Awareness Training. Als de verbinding mislukt, moet u controleren of uw Webroot Security Awareness Training-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
-    ![Scherm afbeelding toont het dialoog venster beheerders referenties, waarin u uw Tenant U R L en geheime token kunt invoeren.](./media/webroot-security-awareness-training-provisioning-tutorial/provisioning.png)
+    ![Schermopname met het dialoogvenster Referenties voor beheerder, waarin u uw tenant-URL en het token voor het geheim kunt invoeren.](./media/webroot-security-awareness-training-provisioning-tutorial/provisioning.png)
 
 6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
 
@@ -114,9 +114,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers inrichten**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers inrichten**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Webroot training voor beveiligings bewustmaking in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Webroot Security bewustzijn training voor update bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](../app-provisioning/customize-application-attributes.md)te wijzigen, moet u ervoor zorgen dat de Webroot Security bewustzijns-API filtering voor het filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met Webroot Security Awareness Training worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Webroot Security Awareness Training te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](../app-provisioning/customize-application-attributes.md) te wijzigen, moet u ervoor zorgen dat de API van Webroot Security Awareness Training het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
    |Kenmerk|Type|Ondersteund voor filteren|
    |---|---|---|
@@ -125,9 +125,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |name.familyName|Tekenreeks|
    |emails[type eq "work"].value|Tekenreeks|
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen inrichten**.
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen inrichten**.
 
-11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Webroot training voor beveiligings bewustmaking in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de groepen in de cursus Webroot Security bewustzijn voor update bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD met Webroot Security Awareness Training worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in Webroot Security Awareness Training te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
       |Kenmerk|Type|Ondersteund voor filteren|
       |---|---|---|
@@ -137,11 +137,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Als u de Azure AD-inrichtings service wilt inschakelen voor een Webroot Security bewustzijns training, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Webroot Security Awareness Training.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u wilt inrichten voor een Webroot Security bewustzijns training door de gewenste waarden in het **bereik** in het gedeelte **instellingen** te kiezen.
+14. Definieer de gebruikers en/of groepen die u aan Webroot Security Awareness Training wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 

@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: OfficeSpace-software configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Informatie over het configureren van Azure Active Directory om automatisch gebruikers accounts in te richten en in te richten op OfficeSpace-software.
+title: 'Zelfstudie: OfficeSpace Software configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor OfficeSpace Software.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,67 +8,67 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/02/2019
 ms.author: Zhchia
-ms.openlocfilehash: fe48cef0fb235d217f95012e81d7daf501928300
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: fc67d649e3a7cd094eb2c3d633244077abcab308
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518565"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359917"
 ---
-# <a name="tutorial-configure-officespace-software-for-automatic-user-provisioning"></a>Zelf studie: OfficeSpace-software configureren voor het automatisch inrichten van gebruikers
+# <a name="tutorial-configure-officespace-software-for-automatic-user-provisioning"></a>Zelfstudie: OfficeSpace Software configureren voor het automatisch inrichten van gebruikers
 
-Het doel van deze zelf studie is het demonstreren van de stappen die moeten worden uitgevoerd in OfficeSpace software en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers en/of groepen in OfficeSpace-software.
+Het doel van deze zelfstudie is om de stappen te laten zien die moeten worden uitgevoerd in OfficeSpace Software en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en/of groepen voor OfficeSpace Software.
 
 > [!NOTE]
 > In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
-> Deze connector bevindt zich momenteel in de open bare preview. Zie voor meer informatie over de algemene Microsoft Azure-gebruiksvoorwaarden voor preview-functies [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Deze connector is momenteel beschikbaar in Openbare preview. Zie voor meer informatie over de algemene Microsoft Azure-gebruiksvoorwaarden voor preview-functies [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* Een Azure AD-Tenant
-* Een [OfficeSpace-software-Tenant](https://www.officespacesoftware.com/)
-* Een gebruikers account in OfficeSpace-software met beheerders machtigingen.
+* Een Azure AD-tenant
+* Een [OfficeSpace Software-tenant](https://www.officespacesoftware.com/)
+* Een gebruikersaccount in OfficeSpace Software met beheerdersmachtigingen.
 
 ## <a name="assigning-users-to-officespace-software"></a>Gebruikers toewijzen aan OfficeSpace-software
 
-Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in azure AD toegang nodig hebben tot OfficeSpace-software. Nadat u hebt besloten, kunt u deze gebruikers en/of groepen toewijzen aan OfficeSpace-software door de volgende instructies te volgen:
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in Azure AD toegang nodig hebben tot OfficeSpace Software. Als u dit eenmaal hebt besloten, kunt u deze gebruikers en/of groepen aan OfficeSpace Software toewijzen door de instructies hier te volgen:
 * [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
-## <a name="important-tips-for-assigning-users-to-officespace-software"></a>Belang rijke tips voor het toewijzen van gebruikers aan OfficeSpace-software
+## <a name="important-tips-for-assigning-users-to-officespace-software"></a>Belangrijke tips voor het toewijzen van gebruikers aan OfficeSpace Software
 
-* U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan OfficeSpace-software om de configuratie van automatische gebruikers inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het wordt aanbevolen om een enkele Azure AD-gebruiker toe te wijzen aan OfficeSpace Software om de configuratie van de automatische gebruikersinrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
 
-* Wanneer u een gebruiker toewijst aan OfficeSpace-software, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
+* Als u een gebruiker aan OfficeSpace Software toewijst, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het toewijzingsdialoogvenster. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
 
-## <a name="set-up-officespace-software-for-provisioning"></a>OfficeSpace-software instellen voor inrichting
+## <a name="set-up-officespace-software-for-provisioning"></a>OfficeSpace Software instellen voor inrichting
 
-1. Meld u aan bij de [beheer console](https://support.officespacesoftware.com/hc)van uw OfficeSpace-software. Navigeer naar **instellingen > connectors**.
+1. Meld u aan bij uw [OfficeSpace Software-beheerconsole](https://support.officespacesoftware.com/hc). Navigeer naar **Instellingen > Connectors**.
 
-    ![OfficeSpace software-beheer console](media/officespace-software-provisioning-tutorial/settings.png)
+    ![OfficeSpace Software-beheerconsole](media/officespace-software-provisioning-tutorial/settings.png)
 
-2.  Navigeer naar **Directory synchronization > scim**.
+2.  Navigeer naar **Mappensynchronisatie > SCIM**.
 
-    ![SCIM OfficeSpace-software toevoegen](media/officespace-software-provisioning-tutorial/scim.png)
+    ![OfficeSpace Software - SCIM toevoegen](media/officespace-software-provisioning-tutorial/scim.png)
 
-3.  Kopieer het **scim-verificatie token**. Deze waarde wordt ingevoerd in het veld geheime token op het tabblad inrichten van uw OfficeSpace-software toepassing in de Azure Portal.
+3.  Kopieer het **SCIM-verificatietoken**. Deze waarde wordt ingevoerd in het veld Token voor geheim op het tabblad Inrichten van uw OfficeSpace Software-toepassing in Azure Portal.
 
-    ![Token voor het maken van OfficeSpace-software](media/officespace-software-provisioning-tutorial/token.png)
+    ![OfficeSpace Software - token maken](media/officespace-software-provisioning-tutorial/token.png)
 
-## <a name="add-officespace-software-from-the-gallery"></a>OfficeSpace-software toevoegen vanuit de galerie
+## <a name="add-officespace-software-from-the-gallery"></a>OfficeSpace Software vanuit de galerie toevoegen
 
-Voordat u OfficeSpace-software configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u OfficeSpace-software van de Azure AD-toepassings galerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
+Voordat u OfficeSpace Software configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u OfficeSpace Software vanuit de Azure AD-toepassingsgalerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
 
-**Als u OfficeSpace-software wilt toevoegen vanuit de Azure AD-toepassings galerie, voert u de volgende stappen uit:**
+**Voer de volgende stappen uit om OfficeSpace Software toe te voegen vanuit de Azure AD-toepassingsgalerie:**
 
-1. Selecteer in de **[Azure Portal](https://portal.azure.com)** in het navigatie venster links **Azure Active Directory**.
+1. Ga naar **[Azure Portal](https://portal.azure.com)** en selecteer **Azure Active Directory** in het navigatievenster aan de linkerkant.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -76,22 +76,22 @@ Voordat u OfficeSpace-software configureert voor het automatisch inrichten van g
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **nieuwe toepassing** boven aan het deel venster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** boven in het deelvenster.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Voer in het zoekvak OfficeSpace- **Software**in, selecteer **OfficeSpace software** in het deel venster resultaten en klik vervolgens op de knop **toevoegen** om de toepassing toe te voegen.
+4. Voer **OfficeSpace Software** in het zoekvak in, selecteer  **OfficeSpace Software** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
-    ![OfficeSpace-software in de lijst met resultaten](common/search-new-app.png)
+    ![OfficeSpace Software in de resultatenlijst](common/search-new-app.png)
 
-## <a name="configuring-automatic-user-provisioning-to-officespace-software"></a>Automatische gebruikers inrichting configureren voor OfficeSpace-software 
+## <a name="configuring-automatic-user-provisioning-to-officespace-software"></a>OfficeSpace Software configureren voor het automatisch inrichten van gebruikers 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in OfficeSpace-software te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in OfficeSpace Software te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te scha kelen voor OfficeSpace-software door de instructies in de [zelf studie OfficeSpace software SSO](./officespace-tutorial.md)te volgen. Eenmalige aanmelding kan onafhankelijk van automatische gebruikers inrichting worden geconfigureerd, hoewel deze twee functies elkaar aanvullen.
+> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor OfficeSpace Software, waarvoor u de instructies in de [zelfstudie Eenmalige aanmelding voor OfficeSpace Software](./officespace-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.
 
-### <a name="to-configure-automatic-user-provisioning-for-officespace-software-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor OfficeSpace-software in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-officespace-software-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor OfficeSpace Software in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -99,17 +99,17 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 2. Selecteer **OfficeSpace Software** in de lijst met toepassingen.
 
-    ![De koppeling naar de OfficeSpace-software in de lijst met toepassingen](common/all-applications.png)
+    ![De koppeling naar OfficeSpace Software in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de beheeropties met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Selecteer in de sectie **beheerders referenties** de `https://<subdomain>.officespacesoftware.com/api/scim/v2/` indeling van de invoer-URL in de **URL**van de Tenant. Bijvoorbeeld `https://contoso.officespacesoftware.com/api/scim/v2/`. Voer de waarde voor het **scim-verificatie token** in die eerder is opgehaald in het **geheime token**. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met OfficeSpace-software. Als de verbinding mislukt, zorg er dan voor dat uw OfficeSpace-software account beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer onder de sectie **Referenties voor beheerder** de URL volgens de indeling `https://<subdomain>.officespacesoftware.com/api/scim/v2/` in **Tenant-URL** in. Bijvoorbeeld `https://contoso.officespacesoftware.com/api/scim/v2/`. Voer de waarde van het **SCIM-verificatietoken** in die eerder in **Token voor geheim** is opgehaald. Klik in Azure Portal op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met OfficeSpace Software. Als de verbinding mislukt, moet u controleren of uw OfficeSpace Software-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -119,21 +119,21 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Klik op **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met OfficeSpace software**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met OfficeSpace Software**.
 
-    ![Gebruikers toewijzingen voor OfficeSpace-software](media/officespace-software-provisioning-tutorial/usermappings.png)
+    ![OfficeSpace Software-gebruikerstoewijzingen](media/officespace-software-provisioning-tutorial/usermappings.png)
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar OfficeSpace-software in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in OfficeSpace-software voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met OfficeSpace Software worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in OfficeSpace Software te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Gebruikers kenmerken van OfficeSpace-software](media/officespace-software-provisioning-tutorial/userattributes.png)
+    ![OfficeSpace Software-gebruikerskenmerken](media/officespace-software-provisioning-tutorial/userattributes.png)
 
 11. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-12. Als u de Azure AD-inrichtings service voor OfficeSpace-software wilt inschakelen, wijzigt **u de** **inrichtings status** in in het gedeelte **instellingen** .
+12. Wijzig de **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor OfficeSpace Software:
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-13. Definieer de gebruikers en/of groepen die u wilt inrichten voor OfficeSpace-software door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+13. Definieer de gebruikers en/of groepen die u aan OfficeSpace Software wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
@@ -141,7 +141,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op OfficeSpace-software.
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te controleren en koppelingen te volgen naar het activiteitenrapport van de inrichting, waarin alle acties worden beschreven die door de Azure AD-inrichtingsservice op OfficeSpace Software worden uitgevoerd.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 

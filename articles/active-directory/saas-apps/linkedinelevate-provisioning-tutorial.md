@@ -1,117 +1,117 @@
 ---
-title: 'Zelf studie: gebruikers inrichten voor LinkedIn-uitbrei ding-Azure AD'
-description: Informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts op LinkedIn-bevoegdheden.
+title: 'Zelfstudie: Gebruikers inrichten voor LinkedIn Elevate - Azure AD'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor LinkedIn Elevate.
 services: active-directory
 author: ArvindHarinder1
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: arvinh
-ms.openlocfilehash: 429ccacea8eb4fd66336543615b11179af3e9276
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 5e972475530ad36a188f73990bb9eca35748c36c
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361574"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358946"
 ---
-# <a name="tutorial-configure-linkedin-elevate-for-automatic-user-provisioning"></a>Zelf studie: LinkedIn-verhoging configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-linkedin-elevate-for-automatic-user-provisioning"></a>Zelfstudie: LinkedIn Elevate configureren voor het automatisch inrichten van gebruikers
 
-Het doel van deze zelf studie is om u te laten zien welke stappen u moet uitvoeren in LinkedIn-uitbrei ding en Azure AD om automatisch gebruikers accounts in te richten vanuit Azure AD naar LinkedIn.
+Het doel van deze zelfstudie is om u te laten zien welke stappen u moet uitvoeren in LinkedIn Elevate en Azure AD om automatisch gebruikersaccounts van Azure AD in te richten in LinkedIn Elevate, of de inrichting van gebruikersaccounts ongedaan te maken.
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende items:
 
 * Een Azure Active Directory-tenant
-* Een LinkedIn-Tenant met verhoogde bevoegdheid
-* Een Administrator-account in LinkedIn-uitbrei ding met toegang tot het LinkedIn-account centrum
+* Een LinkedIn Elevate-tenant
+* Een beheerdersaccount in LinkedIn Elevate met toegang tot het LinkedIn Account Center
 
 > [!NOTE]
-> Azure Active Directory integreert met LinkedIn-verhoging met behulp van het [scim](http://www.simplecloud.info/) -protocol.
+> Azure Active Directory integreert met LinkedIn Elevate met behulp van het [SCIM](http://www.simplecloud.info/)-protocol.
 
-## <a name="assigning-users-to-linkedin-elevate"></a>Gebruikers toewijzen aan LinkedIn-verhoging
+## <a name="assigning-users-to-linkedin-elevate"></a>Gebruikers toewijzen aan LinkedIn Elevate
 
-Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers accounts worden alleen de gebruikers en groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikersaccounts worden alleen de gebruikers en groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u de inrichtings service configureert en inschakelt, moet u bepalen welke gebruikers en/of groepen in azure AD de gebruikers vertegenwoordigen die toegang nodig hebben tot LinkedIn. Eenmaal besloten, kunt u deze gebruikers toewijzen aan LinkedIn-bevoegdheden door de volgende instructies te volgen:
+Voordat u de inrichtingsservice configureert en inschakelt, moet u bepalen welke gebruikers en/of groepen in Azure AD de gebruikers vertegenwoordigen die toegang nodig hebben tot LinkedIn Elevate. Eenmaal besloten, kunt u deze gebruikers aan LinkedIn Elevate toewijzen door de volgende instructies te volgen:
 
 [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
-### <a name="important-tips-for-assigning-users-to-linkedin-elevate"></a>Belang rijke tips voor het toewijzen van gebruikers aan LinkedIn-bevoegdheden
+### <a name="important-tips-for-assigning-users-to-linkedin-elevate"></a>Belangrijke tips voor het toewijzen van gebruikers aan LinkedIn Elevate
 
-* U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan LinkedIn-bevoegdheden om de inrichtings configuratie te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het wordt aanbevolen om een enkele Azure AD-gebruiker toe te wijzen aan LinkedIn Elevate om de inrichtingsconfiguratie te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
 
-* Wanneer u een gebruiker toewijst aan LinkedIn-verhoging, moet **u de gebruikersrol** selecteren in het dialoog venster toewijzing. De rol ' standaard toegang ' werkt niet voor het inrichten.
+* Wanneer u een gebruiker toewijst aan LinkedIn Elevate, moet u de rol **Gebruiker** selecteren in het dialoogvenster toewijzing. De rol 'Standaard toegang' werkt niet voor het inrichten.
 
-## <a name="configuring-user-provisioning-to-linkedin-elevate"></a>Gebruikers inrichting configureren voor LinkedIn-verhoging
+## <a name="configuring-user-provisioning-to-linkedin-elevate"></a>Gebruikersinrichting configureren voor LinkedIn Elevate
 
-In deze sectie wordt u begeleid bij het verbinden van de inrichtings-API van uw Azure AD to LinkedIn-SCIM en het configureren van de inrichtings service om toegewezen gebruikers accounts te maken, bij te werken en uit te scha kelen in LinkedIn-verhoging op basis van de gebruikers-en groeps toewijzing in azure AD.
+In deze sectie wordt u begeleid bij het verbinden van de API voor het inrichten van uw Azure AD-gebruikersaccounts voor LinkedIn Elevate en het configureren van de inrichtingsservice om toegewezen gebruikersaccounts in LinkedIn Elevate te maken, bij te werken en uit te schakelen op basis van de gebruikers- en groepstoewijzing in Azure AD.
 
-**Tip:** U kunt er ook voor kiezen om op SAML gebaseerde single Sign-On voor een verhoogde bevoegdheid in te scha kelen, gevolgd door de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, hoewel deze twee functies elkaar aanvullen.
+**Tip:** U kunt er ook voor kiezen om op SAML gebaseerde eenmalige aanmelding in te schakelen voor LinkedIn Elevate, volgens de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.
 
-### <a name="to-configure-automatic-user-account-provisioning-to-linkedin-elevate-in-azure-ad"></a>Automatische toewijzing van gebruikers accounts configureren voor LinkedIn-bevoegdheden in azure AD:
+### <a name="to-configure-automatic-user-account-provisioning-to-linkedin-elevate-in-azure-ad"></a>Automatische gebruikersaccountinrichting configureren voor LinkedIn Elevate in Azure AD:
 
-De eerste stap bestaat uit het ophalen van uw LinkedIn-toegangs token. Als u een Enter prise-beheerder bent, kunt u een toegangs token zelf inrichten. Ga in uw account centrum naar **instellingen &gt; globale instellingen** en open het **configuratie venster scim** .
+De eerste stap bestaat uit het ophalen van uw LinkedIn-toegangstoken. Als u een zakelijke beheerder bent, kunt u een toegangstoken zelf inrichten. Ga in uw accountcentrum naar **Instellingen &gt; Globale instellingen** en open het paneel **SCIM-installatie**.
 
 > [!NOTE]
-> Als u het account centrum direct opent in plaats van via een koppeling, kunt u het bereiken met behulp van de volgende stappen.
+> Als u het accountcentrum direct opent in plaats van via een link, kunt u het bereiken met behulp van de volgende stappen.
 
-1. Meld u aan bij het account centrum.
+1. Meld u aan bij het accountcentrum.
 
-2. Selecteer **beheerders &gt; instellingen** voor de beheerder.
+2. Selecteer **Beheerder &gt; Beheerdersinstellingen**.
 
-3. Klik op **Geavanceerde integraties** op de zijbalk links. U wordt omgeleid naar het account centrum.
+3. Klik op **Geavanceerde integraties** op de zijbalk links. U wordt omgeleid naar het accountcentrum.
 
-4. Klik op **+ nieuwe scim-configuratie toevoegen** en volg de procedure door elk veld in te vullen.
-
-    > [!NOTE]
-    > Wanneer het automatisch toewijzen van licenties niet is ingeschakeld, betekent dit dat alleen gebruikers gegevens worden gesynchroniseerd.
-
-    ![Scherm afbeelding toont de globale instellingen van het LinkedIn-account centrum.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate1.PNG)
+4. Klik op **+ Nieuwe SCIM-configuratie toevoegen** en volg de procedure door elk veld in te vullen.
 
     > [!NOTE]
-    > Wanneer de toewijzing van de licentie is ingeschakeld, moet u het toepassings exemplaar en het licentie type noteren. Licenties worden toegewezen op basis van de eerste die eerst worden uitgevoerd voordat alle licenties worden genomen.
+    > Wanneer het automatisch toewijzen van licenties niet is ingeschakeld, betekent dit dat alleen gebruikersgegevens worden gesynchroniseerd.
 
-    ![Scherm afbeelding toont de pagina S C I M Setup.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate2.PNG)
+    ![Schermopname toont de Globale instellingen van het LinkedIn-accountcentrum.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate1.PNG)
 
-5. Klik op **token genereren**. U ziet de weer gave van het toegangs token onder het veld **toegangs token** .
+    > [!NOTE]
+    > Wanneer het automatisch toewijzen van licenties is ingeschakeld, moet u het toepassingsexemplaar en het licentietype noteren. De licenties worden toegewezen op basis van ‘wie het eerst komt, het eerst maalt’, totdat alle licenties zijn afgenomen.
 
-6. Sla uw toegangs token op uw klem bord of computer op voordat u de pagina verlaat.
+    ![Schermopname toont de pagina S C I M-installatiepagina.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate2.PNG)
 
-7. Meld u vervolgens aan bij de [Azure Portal](https://portal.azure.com)en blader naar de sectie **Azure Active Directory > enter prise apps > alle toepassingen**  .
+5. Klik op **Token genereren**. U moet de weergave van uw toegangstoken zien onder het veld **Toegangstoken**.
 
-8. Als u LinkedIn-verhoging al hebt geconfigureerd voor eenmalige aanmelding, zoekt u met het zoek veld naar uw exemplaar van LinkedIn-verhoging. Als dat niet het geval is, selecteert u **toevoegen** en zoeken naar **LinkedIn-verhoging** in de toepassings galerie. Selecteer een uitbrei ding op LinkedIn in de zoek resultaten en voeg deze toe aan uw lijst met toepassingen.
+6. Sla uw toegangstoken op uw klembord of computer op voordat u de pagina verlaat.
 
-9. Selecteer uw exemplaar van LinkedIn-uitbrei ding en selecteer vervolgens het tabblad **inrichten** .
+7. Vervolgens meldt u zich aan bij de [Azure Portal](https://portal.azure.com) en gaat u naar de sectie **Azure Active Directory > Zakelijke apps > Alle toepassingen**.
+
+8. Als u LinkedIn Elevate al hebt geconfigureerd voor eenmalige aanmelding, zoekt u met het zoekveld naar uw exemplaar van LinkedIn Elevate. Selecteer anders **Toevoegen** en zoek naar **LinkedIn Elevate** in de toepassingsgalerie. Selecteer LinkedIn Elevate in de zoekresultaten en voeg het toe aan uw lijst met toepassingen.
+
+9. Selecteer uw exemplaar van LinkedIn Elevate en selecteer vervolgens het tabblad **Inrichten**.
 
 10. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding toont de inrichtings pagina voor de LinkedIn-verhoging.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate3.PNG)
+    ![Schermopname toont de inrichtingspagina van LinkedIn Elevate.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate3.PNG)
 
-11. Vul de volgende velden in onder **beheerders referenties** :
+11. Vul de volgende velden in onder **Beheerdersreferenties** :
 
-    * Voer in het veld **Tenant-URL** in `https://api.linkedin.com` .
+    * Voer in het veld **Tenant-URL** `https://api.linkedin.com` in.
 
-    * In het veld **geheim token** voert u het toegangs token in dat u in stap 1 hebt gegenereerd en klikt u op **verbinding testen** .
+    * Voer in het veld **Token voor geheim** het toegangstoken in dat u in stap 1 hebt gegenereerd en klik op **Verbinding testen**.
 
-    * U ziet een geslaagde melding aan de upperright-zijde van uw portal.
+    * U ziet een melding van slagen aan de rechterbovenzijde van uw portal.
 
-12. Voer het e-mail adres in van een persoon of groep die inrichtings fout meldingen moet ontvangen in het veld **e-mail melding** en schakel het selectie vakje hieronder in.
+12. Voer het e-mailadres in van een persoon of groep die meldingen van inrichtingsfouten moet ontvangen in het veld **E-mailadres voor meldingen** en schakel het selectievakje hieronder in.
 
 13. Klik op **Opslaan**.
 
-14. Controleer in de sectie **kenmerk toewijzingen** de gebruikers-en groeps kenmerken die worden gesynchroniseerd vanuit Azure AD naar LinkedIn. Houd er rekening mee dat de kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om te voldoen aan de gebruikers accounts en-groepen in LinkedIn-uitbrei ding voor update bewerkingen. Selecteer de knop Opslaan om eventuele wijzigingen door te voeren.
+14. Controleer in de sectie **Kenmerktoewijzingen** de gebruikers- en groepskenmerken die vanuit Azure AD met LinkedIn Elevate worden gesynchroniseerd. De kenmerken die als **Overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts en groepen in LinkedIn Elevate te vinden voor updatebewerkingen. Selecteer de knop Opslaan om eventuele wijzigingen door te voeren.
 
-    ![Scherm opname toont toewijzingen, inclusief kenmerk toewijzingen.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate4.PNG)
+    ![Schermopname toont Toewijzingen, inclusief Kenmerktoewijzingen.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate4.PNG)
 
-15. Als u de Azure AD-inrichtings service voor LinkedIn wilt inschakelen, wijzigt u de **inrichtings status** **in in het** gedeelte **instellingen**
+15. Wijzig de **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor LinkedIn Elevate
 
 16. Klik op **Opslaan**.
 
-Hiermee wordt de eerste synchronisatie gestart van gebruikers en/of groepen die zijn toegewezen aan LinkedIn-verhoging in de sectie gebruikers en groepen. Houd er rekening mee dat de initiële synchronisatie langer duurt dan volgende synchronisaties, die ongeveer elke 40 minuten plaatsvinden, zolang de service wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen te volgen voor het inrichtings logboek, waarin alle acties worden beschreven die worden uitgevoerd door de inrichtings service op uw LinkedIn-verhoogde app.
+Hiermee wordt de eerste synchronisatie gestart van gebruikers en/of groepen die zijn toegewezen aan LinkedIn Elevate in de sectie Gebruikers en Groepen. Houd er rekening mee dat de eerst synchronisatie langer duurt dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de service wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te controleren en links te volgen naar activiteitenlogboeken van de inrichting, waarin alle acties worden beschreven die door de inrichtingsservice op uw LinkedIn Elevate-app worden uitgevoerd.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 

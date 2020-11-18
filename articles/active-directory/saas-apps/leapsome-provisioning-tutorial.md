@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: Leapsome configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts op Leapsome.
+title: 'Zelfstudie: Leapsome configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor Leapsome.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,19 +8,19 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 06/28/2019
 ms.author: jeedes
-ms.openlocfilehash: e08c748dec6d21e1ff5d848257c65aa3f8f5aa63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: a0165e5191a8cd499b42c14704fdf4f0d79b3f6b
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91299986"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358538"
 ---
-# <a name="tutorial-configure-leapsome-for-automatic-user-provisioning"></a>Zelf studie: Leapsome configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-leapsome-for-automatic-user-provisioning"></a>Zelfstudie: Leapsome configureren voor automatische gebruikersinrichting
 
-Het doel van deze zelf studie is het demonstreren van de stappen die moeten worden uitgevoerd in Leapsome en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers en/of groepen in Leapsome.
+Het doel van deze zelfstudie is om de stappen te laten zien die moeten worden uitgevoerd in Leapsome en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en/of groepen voor Leapsome.
 
 > [!NOTE]
 >  In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
@@ -32,45 +32,45 @@ Het doel van deze zelf studie is het demonstreren van de stappen die moeten word
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
 * Een Azure AD-tenant.
-* Een [Leapsome](https://www.Leapsome.com/en/pricing) -Tenant.
-* Een gebruikers account in Leapsome met beheerders machtigingen.
+* Een [Leapsome](https://www.Leapsome.com/en/pricing)-tenant.
+* Een gebruikersaccount in Leapsome met beheerdersmachtigingen.
 
 ## <a name="assigning-users-to-leapsome"></a>Gebruikers toewijzen aan Leapsome
 
-Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept dat *toewijzingen* wordt genoemd om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in azure AD toegang nodig hebben tot Leapsome. Eenmaal besloten, kunt u deze gebruikers en/of groepen toewijzen aan Leapsome door de volgende instructies te volgen:
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in Azure AD toegang nodig hebben tot Leapsome. Als u dit eenmaal hebt besloten, kunt u deze gebruikers en/of groepen aan Leapsome toewijzen door de instructies hier te volgen:
 * [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
 
-## <a name="important-tips-for-assigning-users-to-leapsome"></a>Belang rijke tips voor het toewijzen van gebruikers aan Leapsome
+## <a name="important-tips-for-assigning-users-to-leapsome"></a>Belangrijke tips voor het toewijzen van gebruikers aan Leapsome
 
-* U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan Leapsome om de configuratie van automatische gebruikers inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het wordt aanbevolen om eerst één Azure AD-gebruiker toe te wijzen aan Leapsome om de configuratie van de automatische inrichting van gebruikers te testen. Extra gebruikers en/of groepen kunnen dan later nog worden toegewezen.
 
-* Wanneer u een gebruiker toewijst aan Leapsome, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. Gebruikers met de rol **Standaardtoegang** worden uitgesloten van het inrichten.
+* Als u een gebruiker aan Leapsome toewijst, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het toewijzingsdialoogvenster. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
 
 
 ## <a name="setup-leapsome-for-provisioning"></a>Leapsome instellen voor inrichting
 
-1. Meld u aan bij de [Leapsome-beheer console](https://www.Leapsome.com/app/#/login). Navigeer naar **instellingen > beheer instellingen**.
+1. Meld u aan bij de [beheerconsole van Leapsome](https://www.Leapsome.com/app/#/login). Ga naar **Settings > Admin Settings**.
 
-    ![Leapsome-beheer console](media/Leapsome-provisioning-tutorial/leapsome-admin-console.png)
+    ![Beheerconsole van Leapsome](media/Leapsome-provisioning-tutorial/leapsome-admin-console.png)
 
-2.  Navigeer naar **integraties > scim-gebruikers inrichting**.
+2.  Ga naar **Integrations > SCIM user provisioning**.
 
-    ![SCIM Leapsome toevoegen](media/Leapsome-provisioning-tutorial/leapsome-add-scim.png)
+    ![SCIM toevoegen in Leapsome](media/Leapsome-provisioning-tutorial/leapsome-add-scim.png)
 
-3.  Kopieer het **scim-verificatie token**. Deze waarde wordt ingevoerd in het veld geheime token op het tabblad inrichten van uw Leapsome-toepassing in de Azure Portal.
+3.  Kopieer het **SCIM Authentication Token**. Deze waarde moet u later invoeren in het veld Token voor geheim op het tabblad Inrichten van de Leapsome-toepassing in Azure Portal.
 
-    ![Leapsome-token maken](media/Leapsome-provisioning-tutorial/leapsome-create-token.png)
+    ![Leapsome-token genereren](media/Leapsome-provisioning-tutorial/leapsome-create-token.png)
 
 ## <a name="add-leapsome-from-the-gallery"></a>Leapsome toevoegen vanuit de galerie
 
-Voordat u Leapsome configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u Leapsome van de Azure AD-toepassings galerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
+Voordat u Leapsome configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u Leapsome vanuit de Azure AD-toepassingsgalerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
 
-**Voer de volgende stappen uit om Leapsome toe te voegen vanuit de Azure AD-toepassings galerie:**
+**Voer de volgende stappen uit om Leapsome toe te voegen vanuit de Azure AD-toepassingsgalerie:**
 
-1. Selecteer in de **[Azure Portal](https://portal.azure.com)** in het navigatie venster links **Azure Active Directory**.
+1. Ga naar **[Azure Portal](https://portal.azure.com)** en selecteer **Azure Active Directory** in het navigatievenster aan de linkerkant.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -78,22 +78,22 @@ Voordat u Leapsome configureert voor het automatisch inrichten van gebruikers me
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **nieuwe toepassing** boven aan het deel venster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenin het deelvenster.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ **Leapsome**in het zoekvak, selecteer **Leapsome** in het deel venster resultaten en klik vervolgens op de knop **toevoegen** om de toepassing toe te voegen.
+4. Typ **Leapsome** in het zoekvak, selecteer **Leapsome** in het venster met resultaten en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
     ![Leapsome in de lijst met resultaten](common/search-new-app.png)
 
-## <a name="configuring-automatic-user-provisioning-to-leapsome"></a>Automatische gebruikers inrichting configureren voor Leapsome 
+## <a name="configuring-automatic-user-provisioning-to-leapsome"></a>Automatische gebruikersinrichting voor Leapsome configureren 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in Leapsome te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in Leapsome te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te scha kelen voor Leapsome, gevolgd door de instructies in de [Leapsome-zelf studie voor eenmalige aanmelding](Leapsome-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische gebruikers inrichting worden geconfigureerd, hoewel deze twee functies elkaar in de compliment
+> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor Leapsome, waarvoor u de instructies in de [Zelfstudie eenmalige aanmelding voor Leapsome](Leapsome-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, ook al vullen deze twee functies elkaar aan
 
-### <a name="to-configure-automatic-user-provisioning-for-leapsome-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor Leapsome in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-leapsome-in-azure-ad"></a>Automatische inrichting van gebruikers configureren voor Leapsome in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -101,17 +101,17 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 2. Selecteer **Leapsome** in de lijst met toepassingen.
 
-    ![De koppeling Leapsome in de lijst met toepassingen](common/all-applications.png)
+    ![De link naar Leapsome in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Selecteer in de sectie **beheerders referenties** de invoer `https://www.leapsome.com/api/scim` in de Tenant- **URL**. Voer de waarde voor het **scim-verificatie token** in die eerder is opgehaald in het **geheime token**. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met Leapsome. Als de verbinding mislukt, zorg er dan voor dat uw Leapsome-account beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer onder de sectie **Referenties voor beheerder** `https://www.leapsome.com/api/scim` in bij **Tenant-URL**. Voer de waarde van het **SCIM Authentication Token** in dat eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Leapsome. Als de verbinding mislukt, moet u controleren of uw Leapsome-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -121,29 +121,29 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Klik op **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met Leapsome**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Leapsome**.
 
-    ![Leapsome-gebruikers toewijzingen](media/Leapsome-provisioning-tutorial/Leapsome-user-mappings.png)
+    ![Toewijzingen van Leapsome-gebruikers](media/Leapsome-provisioning-tutorial/Leapsome-user-mappings.png)
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Leapsome in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Leapsome voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzing** de gebruikerskenmerken die vanuit Azure AD worden gesynchroniseerd met Leapsome. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikersaccounts in Leapsome te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Leapsome-gebruikers kenmerken](media/Leapsome-provisioning-tutorial/Leapsome-user-attributes.png)
+    ![Gebruikerskenmerken van Leapsome](media/Leapsome-provisioning-tutorial/Leapsome-user-attributes.png)
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met Leapsome**.
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Leapsome**.
 
-    ![Leapsome-groeps toewijzingen](media/Leapsome-provisioning-tutorial/Leapsome-group-mappings.png)
+    ![Groepstoewijzingen van Leapsome](media/Leapsome-provisioning-tutorial/Leapsome-group-mappings.png)
 
-11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Leapsome in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in Leapsome te vergelijken voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Controleer in de sectie **Kenmerktoewijzing** de groepskenmerken die vanuit Azure AD worden gesynchroniseerd met Leapsome. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in Leapsome te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Kenmerken van Leapsome-groep](media/Leapsome-provisioning-tutorial/Leapsome-group-attributes.png)
+    ![Groepskenmerken van Leapsome](media/Leapsome-provisioning-tutorial/Leapsome-group-attributes.png)
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Als u de Azure AD-inrichtings service voor **Leapsome wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Leapsome.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u wilt inrichten voor Leapsome door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+14. Definieer de gebruikers en/of groepen die u aan Leapsome wilt toevoegen door de gewenste waarden te kiezen bij **Bereik** in de sectie **Instellingen**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
@@ -151,14 +151,14 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op Leapsome.
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te controleren en koppelingen te volgen naar het activiteitenrapport van de inrichting, waarin alle acties worden beschreven die door de Azure AD-inrichtingsservice op Leapsome worden uitgevoerd.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 
-## <a name="connector-limitations"></a>Connector beperkingen
+## <a name="connector-limitations"></a>Connectorbeperkingen
 
-* Leapsome vereist dat de **gebruikers naam** uniek is.
-* Leapsome staat alleen toe dat werk-e-mail adressen worden opgeslagen.
+* Leapsome vereist dat **userName** uniek is.
+* Leapsome staat alleen toe dat werk-e-mailadressen worden opgeslagen.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

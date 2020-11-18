@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: a89ff56eb9e0f0a29b5b1fed7543c5f718425e51
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: a56922c972efeb21c188413522bd05f83b74ca12
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92325998"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681819"
 ---
 # <a name="bring-your-own-key-customer-managed-keys-with-media-services"></a>Uw eigen sleutel (door de klant beheerde sleutels) meenemen met Media Services
 
@@ -37,9 +37,11 @@ U kunt een sleutel naam en sleutel versie opgeven, of alleen een sleutel naam. W
 > [!WARNING]
 > Media Services controleert de toegang tot de sleutel van de klant. Als de klant sleutel ontoegankelijk wordt (bijvoorbeeld omdat de sleutel is verwijderd of de Key Vault is verwijderd of de toegangs machtiging is verwijderd), wordt het account door Media Services overgezet naar de status van de klant sleutel die niet toegankelijk is (effectief uitschakelen van het account). Het account kan echter in deze status worden verwijderd. De enige ondersteunde bewerkingen zijn account GET, LIST en DELETE; alle andere aanvragen (code ring, streaming, enzovoort) zullen mislukken totdat de toegang tot de account sleutel is hersteld.
 
-## <a name="tutorial"></a>Zelfstudie
-Probeer de zelf studie [door de klant beheerde sleutels gebruiken of uw eigen sleutel (BYOK) meenemen met Media Services](tutorial-byok.md) voor meer informatie over het instellen en gebruiken van door de klant beheerde sleutels met postman en Azure rest API.
+## <a name="tutorials"></a>Zelfstudies
+
+- [Gebruik de Azure Portal om door de klant beheerde sleutels of BYOK te gebruiken met Media Services](tutorial-byok-portal.md)
+- [Gebruik door de klant beheerde sleutels of BYOK met Media Services rest API](tutorial-byok-postman.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Zelf studie: een door de klant beheerde sleutels gebruiken of uw eigen sleutel (BYOK) meenemen met Media Services](tutorial-byok.md)
+[Uw inhoud beveiligen met Media Services dynamische versleuteling](content-protection-overview.md)

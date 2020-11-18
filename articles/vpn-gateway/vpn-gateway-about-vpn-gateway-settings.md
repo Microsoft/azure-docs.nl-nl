@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.author: cherylmc
-ms.openlocfilehash: 94ad0a05dafe2c405b1b9cb62242675aa54c4432
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 1aba87b2139fb8a7d395fb3180d2074e47310fa9
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424334"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661151"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>Over VPN Gateway configuratie-instellingen
 
@@ -104,7 +104,7 @@ In het Resource Manager-implementatie model vereist elke configuratie een specif
 * ExpressRoute
 * VPNClient
 
-In het volgende Power shell-voor beeld maken we een S2S-verbinding waarvoor het verbindings type *IPSec*is vereist.
+In het volgende Power shell-voor beeld maken we een S2S-verbinding waarvoor het verbindings type *IPSec* is vereist.
 
 ```azurepowershell-interactive
 New-AzVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg `
@@ -122,7 +122,7 @@ Nadat een virtuele netwerk gateway is gemaakt, kunt u het VPN-type niet wijzigen
 
 [!INCLUDE [vpn-gateway-vpntype](../../includes/vpn-gateway-vpntype-include.md)]
 
-In het volgende Power shell-voor beeld wordt de `-VpnType` as- *RouteBased*opgegeven. Wanneer u een gateway maakt, moet u het juiste VPN-type voor uw configuratie kiezen.
+In het volgende Power shell-voor beeld wordt de `-VpnType` as- *RouteBased* opgegeven. Wanneer u een gateway maakt, moet u het juiste VPN-type voor uw configuratie kiezen.
 
 ```azurepowershell-interactive
 New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
@@ -176,7 +176,7 @@ Zie de volgende pagina's voor aanvullende technische bronnen en specifieke synta
 | **Klassiek** | **Resource Manager** |
 | --- | --- |
 | [PowerShell](/powershell/module/az.network/#networking) |[PowerShell](/powershell/module/az.network#vpn) |
-| [REST API](https://msdn.microsoft.com/library/jj154113) |[REST API](/rest/api/network/virtualnetworkgateways) |
+| [REST API](/previous-versions/azure/reference/jj154113(v=azure.100)) |[REST API](/rest/api/network/virtualnetworkgateways) |
 | Niet ondersteund | [Azure-CLI](/cli/azure/network/vnet-gateway)|
 
 ## <a name="next-steps"></a>Volgende stappen

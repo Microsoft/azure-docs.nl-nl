@@ -3,12 +3,12 @@ title: Implementeren en upgraden met Azure Resource Manager
 description: Meer informatie over het implementeren van toepassingen en services naar een Service Fabric cluster met behulp van een Azure Resource Manager sjabloon.
 ms.topic: conceptual
 ms.date: 12/06/2017
-ms.openlocfilehash: a849bdff0d2719f02b6b5f2d7159b87ce664c13f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb866eb24fb1b286f496bad9845d1ee557baa221
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86256506"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681666"
 ---
 # <a name="manage-applications-and-services-as-azure-resource-manager-resources"></a>Toepassingen en services beheren als Azure Resource Manager resources
 
@@ -18,7 +18,7 @@ Dit is de aanbevolen manier om de installatie-, governance-of cluster beheer toe
 
 Als dit van toepassing is, kunt u uw toepassingen beheren als Resource Manager-resources om te verbeteren:
 * Audittrail: in Resource Manager wordt elke bewerking gecontroleerd en wordt een gedetailleerd *activiteiten logboek* bijgehouden waarmee u wijzigingen kunt traceren die zijn aangebracht in deze toepassingen en uw cluster.
-* Op rollen gebaseerd toegangs beheer (RBAC): het beheren van toegang tot clusters en toepassingen die op het cluster zijn geïmplementeerd, kunnen worden uitgevoerd via dezelfde resource manager-sjabloon.
+* Op rollen gebaseerd toegangs beheer voor Azure (Azure RBAC): het beheren van toegang tot clusters en toepassingen die op het cluster zijn geïmplementeerd, kunnen worden uitgevoerd via dezelfde resource manager-sjabloon.
 * Azure Resource Manager (via Azure Portal) wordt een one-stop-shop voor het beheren van uw cluster en essentiële toepassings implementaties.
 
 Het volgende code fragment toont de verschillende soorten resources die kunnen worden beheerd via een sjabloon:

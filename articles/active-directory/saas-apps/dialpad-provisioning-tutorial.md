@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: dialpad configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts op dialpad.
+title: 'Zelfstudie: Dialpad configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor Dialpad.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,19 +8,19 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 06/28/2019
 ms.author: zhchia
-ms.openlocfilehash: 7475ebc6dd51bbc1c30ee22623c7cbda1a5237ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: b88e618da3f8a23c0517aaeb251e54bf559fc468
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91848956"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358470"
 ---
-# <a name="tutorial-configure-dialpad-for-automatic-user-provisioning"></a>Zelf studie: dialpad configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-dialpad-for-automatic-user-provisioning"></a>Zelfstudie: Dialpad configureren voor automatische gebruikersinrichting
 
-Het doel van deze zelf studie is het demonstreren van de stappen die moeten worden uitgevoerd in dialpad en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers en/of groepen in dialpad.
+Het doel van deze zelfstudie is om de stappen te laten zien die moeten worden uitgevoerd in Dialpad en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en/of groepen voor Dialpad.
 
 > [!NOTE]
 >  In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
@@ -32,47 +32,47 @@ Het doel van deze zelf studie is het demonstreren van de stappen die moeten word
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
 * Een Azure AD-tenant.
-* [Een dialpad-Tenant](https://www.dialpad.com/pricing/).
-* Een gebruikers account in dialpad met beheerders machtigingen.
+* [Een Dialpad-tenant](https://www.dialpad.com/pricing/).
+* Een gebruikersaccount in Dialpad met beheerdersmachtigingen.
 
-## <a name="assign-users-to-dialpad"></a>Gebruikers toewijzen aan dialpad
-Azure Active Directory gebruikt een concept met de naam toewijzingen om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+## <a name="assign-users-to-dialpad"></a>Gebruikers toewijzen aan Dialpad
+Azure Active Directory gebruikt een concept met de naam toewijzingen om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in azure AD toegang nodig hebben tot dialpad. Eenmaal besloten, kunt u deze gebruikers en/of groepen toewijzen aan dialpad door de volgende instructies te volgen:
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in Azure AD toegang nodig hebben tot Dialpad. Als u dit eenmaal hebt besloten, kunt u deze gebruikers en/of groepen aan Dialpad toewijzen door de instructies hier te volgen:
  
 * [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md) 
 
- ## <a name="important-tips-for-assigning-users-to-dialpad"></a>Belang rijke tips voor het toewijzen van gebruikers aan dialpad
+ ## <a name="important-tips-for-assigning-users-to-dialpad"></a>Belangrijke tips voor het toewijzen van gebruikers aan Dialpad
 
- * U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan dialpad om de configuratie van automatische gebruikers inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+ * Het wordt aanbevolen om een enkele Azure AD-gebruiker toe te wijzen aan Dialpad om de configuratie van de automatische gebruikersinrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
 
-* Wanneer u een gebruiker toewijst aan Dialpad, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. Gebruikers met de rol Standaardtoegang worden uitgesloten van het inrichten.
+* Als u een gebruiker aan Dialpad toewijst, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het toewijzingsdialoogvenster. Gebruikers met de rol Standaard toegang worden uitgesloten van het inrichten.
 
 ## <a name="setup-dialpad-for-provisioning"></a>Dialpad instellen voor inrichting
 
-Voordat u dialpad configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u bepaalde inrichtings gegevens ophalen van dialpad.
+Voordat u Dialpad configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u bepaalde inrichtingsgegevens ophalen van Dialpad.
 
-1. Meld u aan bij de [dialpad-beheer console](https://dialpadbeta.com/login) en selecteer **beheer instellingen**. Controleer of **mijn bedrijf** is geselecteerd in de vervolg keuzelijst. Navigeer naar **Authentication > API-sleutels**.
+1. Meld u aan bij uw [Dialpad-beheerconsole](https://dialpadbeta.com/login) en selecteer **Beheerdersinstellingen**. Zorg ervoor dat **Mijn bedrijf** is geselecteerd in de vervolgkeuzelijst. Navigeer naar **Verificatie > API-sleutels**.
 
-    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad01.png" alt-text="Scherm opname van de dialpad-beheer console, met het pictogram instellingen, mijn bedrijf, authenticatie en een P I-toets gemarkeerd en mijn bedrijf geselecteerd." border="false":::
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad01.png" alt-text="Schermopname van de Dialpad-beheerconsole, met het pictogram instellingen, Mijn bedrijf, verificatie en een A P I-sleutels gemarkeerd en Mijn bedrijf geselecteerd." border="false":::
 
-2. Genereer een nieuwe sleutel door te klikken op **een sleutel toevoegen** en de eigenschappen van uw geheime token te configureren.
+2. Genereer een nieuwe sleutel door op **Een sleutel toevoegen** te klikken en de eigenschappen van uw token voor geheim te configureren.
 
-    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad02.png" alt-text="Scherm opname van de dialpad-beheer console, met het pictogram instellingen, mijn bedrijf, authenticatie en een P I-toets gemarkeerd en mijn bedrijf geselecteerd." border="false":::
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad02.png" alt-text="Schermopname van de pagina met A P I-sleutels in de Dialpad-beheerconsole. Een sleutel toevoegen is gemarkeerd." border="false":::
 
-    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad03.png" alt-text="Scherm opname van de dialpad-beheer console, met het pictogram instellingen, mijn bedrijf, authenticatie en een P I-toets gemarkeerd en mijn bedrijf geselecteerd." border="false":::
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad03.png" alt-text="Schermopname van de pagina A P I-sleutel bewerken in de Dialpad-beheerconsole. De knop Opslaan is gemarkeerd." border="false":::
 
-3. Klik op de knop **Klik om de waarde weer te geven** voor de API-sleutel die u hebt gemaakt en kopieer de weer gegeven waarde. Deze waarde wordt ingevoerd in het veld **geheime token** op het tabblad inrichten van uw dialpad-toepassing in de Azure Portal. 
+3. Klik op de knop **Klikken om de waarde weer te geven** voor uw recent gemaakte API-sleutel en kopieer de weergegeven waarde. Deze waarde wordt ingevoerd in het veld **Token voor geheim** op het tabblad Inrichten van uw Dialpad-toepassing in Azure Portal. 
 
-    ![Dialpad-token maken](media/dialpad-provisioning-tutorial/dialpad04.png)
+    ![Token maken in Dialpad](media/dialpad-provisioning-tutorial/dialpad04.png)
 
 ## <a name="add-dialpad-from-the-gallery"></a>Dialpad toevoegen vanuit de galerie
 
-Als u dialpad wilt configureren voor het automatisch inrichten van gebruikers met Azure AD, moet u dialpad van de Azure AD-toepassings galerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
+Om Dialpad te configureren voor het automatisch inrichten van gebruikers met Azure AD, moet u Dialpad vanuit de Azure AD-toepassingsgalerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
 
-**Voer de volgende stappen uit om dialpad toe te voegen vanuit de Azure AD-toepassings galerie:**
+**Voer de volgende stappen uit om Dialpad toe te voegen vanuit de Azure AD-toepassingsgalerie:**
 
-1. Selecteer in de **[Azure Portal](https://portal.azure.com)** in het navigatie venster links **Azure Active Directory**.
+1. Ga naar **[Azure Portal](https://portal.azure.com)** en selecteer **Azure Active Directory** in het navigatievenster aan de linkerkant.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -80,52 +80,52 @@ Als u dialpad wilt configureren voor het automatisch inrichten van gebruikers me
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **nieuwe toepassing** boven aan het deel venster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenaan het paneel.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ **dialpad**in het zoekvak en selecteer **dialpad** in het deel venster resultaten.
+4. Voer in het zoekvak **Dialpad** in, selecteer **Dialpad** in het resultatenvenster.
     ![Dialpad in de lijst met resultaten](common/search-new-app.png)
 
-5. Navigeer naar de hieronder gemarkeerde **URL** in een afzonderlijke browser. 
+5. Navigeer naar de **URL** die hieronder wordt gemarkeerd in een afzonderlijke browser. 
 
-    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad05.png" alt-text="Scherm opname van de dialpad-beheer console, met het pictogram instellingen, mijn bedrijf, authenticatie en een P I-toets gemarkeerd en mijn bedrijf geselecteerd." border="false":::
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad05.png" alt-text="Schermopname van een pagina met informatie over de Dialpad-app. Onder U R L wordt een adres weergegeven en gemarkeerd." border="false":::
 
-6. Selecteer in de rechter bovenhoek **aanmelden > dialpad online gebruiken**.
+6. Selecteer in de rechterbovenhoek **Aanmelden > Dialpad online gebruiken**.
 
-    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad06.png" alt-text="Scherm opname van de dialpad-beheer console, met het pictogram instellingen, mijn bedrijf, authenticatie en een P I-toets gemarkeerd en mijn bedrijf geselecteerd." border="false":::
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad06.png" alt-text="Schermopname van de Dialpad-website. Aanmelden is gemarkeerd en het tabblad Aanmelden is geopend. Dialpad online gebruiken is ook gemarkeerd." border="false":::
 
-7. Als dialpad een OpenIDConnect-app is, kiest u aanmelden bij dialpad met uw micro soft-werk account.
+7. Aangezien Dialpad een OpenIDConnect-app is, kiest u aanmelden bij Dialpad met uw Microsoft-werkaccount.
 
-    :::image type="content" source="media/dialpad-provisioning-tutorial/loginpage.png" alt-text="Scherm opname van de dialpad-beheer console, met het pictogram instellingen, mijn bedrijf, authenticatie en een P I-toets gemarkeerd en mijn bedrijf geselecteerd." border="false":::
+    :::image type="content" source="media/dialpad-provisioning-tutorial/loginpage.png" alt-text="Schermopname van de pagina Starten met bellen op de Dialpad-website. De knop Aanmelden met Office 365 is gemarkeerd." border="false":::
 
-8. Accepteer na een geslaagde verificatie de toestemming prompt voor de pagina toestemming. De toepassing wordt vervolgens automatisch toegevoegd aan uw Tenant en u wordt doorgestuurd naar uw dialpad-account.
+8. Wanneer de verificatie is voltooid, accepteert u toestemming op de toestemmingspagina. De toepassing wordt vervolgens automatisch toegevoegd aan uw tenant en u wordt doorgestuurd naar uw Dialpad-account.
 
-    :::image type="content" source="media/dialpad-provisioning-tutorial/redirect.png" alt-text="Scherm opname van de dialpad-beheer console, met het pictogram instellingen, mijn bedrijf, authenticatie en een P I-toets gemarkeerd en mijn bedrijf geselecteerd." border="false":::
+    :::image type="content" source="media/dialpad-provisioning-tutorial/redirect.png" alt-text="Schermopname van een Microsoft-verificatiepagina met de mededeling dat de Dialpad-app toegang tot bepaalde gegevens heeft aangevraagd. De knop Accepteren is gemarkeerd." border="false":::
 
- ## <a name="configure-automatic-user-provisioning-to-dialpad"></a>Automatische gebruikers inrichting configureren voor dialpad
+ ## <a name="configure-automatic-user-provisioning-to-dialpad"></a>Automatische gebruikersinrichting configureren voor Dialpad
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in dialpad te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in Dialpad te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-dialpad-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor dialpad in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-dialpad-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor Dialpad in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst toepassingen de optie **dialpad**.
+2. Selecteer **Dialpad** in de lijst met toepassingen.
 
-    ![De koppeling dialpad in de lijst met toepassingen](common/all-applications.png)
+    ![De link naar Dialpad in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de beheeropties met de optie Inrichting gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Selecteer in de sectie **beheerders referenties** de invoer `https://dialpad.com/scim` in de Tenant- **URL**. Voer de waarde in die u hebt opgehaald en eerder hebt opgeslagen uit dialpad in een **geheim token**. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met dialpad. Als de verbinding mislukt, zorg er dan voor dat uw dialpad-account beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer onder de sectie **Beheerdersreferenties** `https://dialpad.com/scim` in **Tenant-URL** in. Voer de waarde in die u hebt opgehaald en eerder hebt opgeslagen in Dialpad in **Token voor geheim**. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Dialpad. Als de verbinding mislukt, moet u controleren of uw Dialpad-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -135,21 +135,21 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Klik op **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met dialpad**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Dialpad**.
 
-    ![Dialpad-gebruikers toewijzingen](media/dialpad-provisioning-tutorial/dialpad-user-mappings-new.png)
+    ![Dialpad-gebruikerstoewijzingen](media/dialpad-provisioning-tutorial/dialpad-user-mappings-new.png)
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar dialpad in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in dialpad voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met Dialpad worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Dialpad te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Dialpad-gebruikers kenmerken](media/dialpad-provisioning-tutorial/dialpad07.png)
+    ![Gebruikerskenmerken van Dialpad ophalen](media/dialpad-provisioning-tutorial/dialpad07.png)
 
 10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. Als u de Azure AD-inrichtings service voor **dialpad wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+11. Wijzig **Inrichtingsstatus** naar **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Dialpad.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-12. Definieer de gebruikers en/of groepen die u wilt inrichten voor dialpad door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+12. Definieer de gebruikers en/of groepen die u aan Dialpad wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen** te kiezen.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
@@ -157,11 +157,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op dialpad.
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te controleren en koppelingen te volgen naar het activiteitenrapport van de inrichting, waarin alle acties worden beschreven die door de Azure AD-inrichtingsservice op Dialpad worden uitgevoerd.
 
-Voor meer informatie over het lezen van de Azure AD-inrichtings logboeken raadpleegt u [rapportage over automatische gebruikers accounts inrichten](../app-provisioning/check-status-user-account-provisioning.md)
+Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken
 ##  <a name="connector-limitations"></a>Connectorbeperkingen
-* Dialpad biedt geen ondersteuning voor de naam van een groep. Dit betekent dat wijzigingen in de **DisplayName** van een groep in azure ad niet worden bijgewerkt en niet worden weer gegeven in dialpad.
+* Dialpad biedt op dit moment geen ondersteuning voor het wijzigen van de namen van groepen. Dit betekent dat wijzigingen in de **displayName** van een groep in Azure AD niet worden bijgewerkt en niet worden weergegeven in Dialpad.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

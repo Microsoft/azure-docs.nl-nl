@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: MerchLogix configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts op MerchLogix.
+title: 'Zelfstudie: MerchLogix configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor MerchLogix.
 services: active-directory
 author: zhchia
 writer: zhchia
@@ -8,19 +8,19 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: zhchia
-ms.openlocfilehash: 9be2205ad0664d58c7a2ef0c07481b1c7aa02402
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 4d0a52f06a751fba57a00615e2d57485ff740d04
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273344"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359694"
 ---
-# <a name="tutorial-configure-merchlogix-for-automatic-user-provisioning"></a>Zelf studie: MerchLogix configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-merchlogix-for-automatic-user-provisioning"></a>Zelfstudie: MerchLogix configureren voor automatische gebruikersinrichting
 
-Het doel van deze zelf studie is het demonstreren van de stappen die moeten worden uitgevoerd in MerchLogix en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers en/of groepen in MerchLogix.
+Het doel van deze zelfstudie is om de stappen te laten zien die moeten worden uitgevoerd in MerchLogix en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en/of groepen voor MerchLogix.
 
 > [!NOTE]
 > In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
@@ -29,58 +29,58 @@ Het doel van deze zelf studie is het demonstreren van de stappen die moeten word
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* Een Azure AD-Tenant
-* Een MerchLogix-Tenant
-* Een technische contact persoon bij MerchLogix die de SCIM-eind punt-URL en het geheime token dat vereist is voor het inrichten van gebruikers, kunnen opgeven
+* Een Azure AD-tenant
+* Een MerchLogix-tenant
+* Een technische contactpersoon bij MerchLogix die de SCIM-eindpunt-URL en het token voor het geheim kan verstrekken dat vereist is voor het inrichten van gebruikers
 
-## <a name="adding-merchlogix-from-the-gallery"></a>MerchLogix toevoegen uit de galerie
+## <a name="adding-merchlogix-from-the-gallery"></a>MerchLogix toevoegen vanuit de galerie
 
-Voordat u MerchLogix configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u MerchLogix van de Azure AD-toepassings galerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
+Voordat u MerchLogix configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u MerchLogix vanuit de Azure AD-toepassingsgalerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
 
-**Voer de volgende stappen uit om MerchLogix toe te voegen vanuit de Azure AD-toepassings galerie:**
+**Voer de volgende stappen uit om MerchLogix toe te voegen vanuit de Azure AD-toepassingsgalerie:**
 
-1. Klik in het **[Azure Portal](https://portal.azure.com)**, in het navigatie venster aan de linkerkant, op het pictogram **Azure Active Directory** . 
+1. In **[Azure Portal](https://portal.azure.com)** klikt u in het navigatievenster aan de linkerkant op het pictogram **Azure Active Directory**. 
 
     ![De knop Azure Active Directory][1]
 
-2. Ga naar **Enterprise applications**  >  **alle toepassingen**in bedrijfs toepassingen.
+2. Navigeer naar **Bedrijfstoepassingen** > **Alle toepassingen**.
 
-    ![De sectie bedrijfs toepassingen][2]
+    ![De sectie Bedrijfstoepassingen][2]
 
-3. Als u MerchLogix wilt toevoegen, klikt u op de knop **nieuwe toepassing** aan de bovenkant van het dialoog venster.
+3. Als u een nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
 
     ![De knop Nieuwe toepassing][3]
 
-4. Typ **MerchLogix**in het zoekvak.
+4. Typ **MerchLogix** in het zoekvak.
 
-5. Selecteer in het deel venster resultaten **MerchLogix**en klik vervolgens op de knop **toevoegen** om MerchLogix toe te voegen aan uw lijst met SaaS-toepassingen.
+5. Selecteer in het resultatenvenster **MerchLogix** en klik vervolgens op de knop **Toevoegen** om MerchLogix toe te voegen aan uw lijst met SaaS-toepassingen.
 
-    ![Scherm afbeelding van de sectie toevoegen uit de drukproef weergave met het tekstvak een naam invoeren genoemd.][4]
+    ![Schermopname van de sectie Toevoegen uit de galerie met het tekstvak Voer een naam in gemarkeerd.][4]
 
 ## <a name="assigning-users-to-merchlogix"></a>Gebruikers toewijzen aan MerchLogix
 
 Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD. 
 
-Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in azure AD toegang nodig hebben tot MerchLogix. Eenmaal besloten, kunt u deze gebruikers en/of groepen toewijzen aan MerchLogix door de volgende instructies te volgen:
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in Azure AD toegang nodig hebben tot MerchLogix. Als u dit eenmaal hebt besloten, kunt u deze gebruikers en/of groepen aan MerchLogix toewijzen door de instructies hier te volgen:
 
 * [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
-### <a name="important-tips-for-assigning-users-to-merchlogix"></a>Belang rijke tips voor het toewijzen van gebruikers aan MerchLogix
+### <a name="important-tips-for-assigning-users-to-merchlogix"></a>Belangrijke tips voor het toewijzen van gebruikers aan MerchLogix
 
-* U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan MerchLogix om de initiële configuratie van de automatische gebruikers inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen nadat de tests zijn voltooid.
+* Het wordt aanbevolen om een enkele Azure AD-gebruiker toe te wijzen aan MerchLogix om uw eerste configuratie van de automatische gebruikersinrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen als de tests goede resultaten laten zien.
 
-* Wanneer u een gebruiker toewijst aan MerchLogix, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. Gebruikers met de rol **Standaardtoegang** worden uitgesloten van het inrichten.
+* Als u een gebruiker aan MerchLogix toewijst, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het toewijzingsdialoogvenster. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
 
-## <a name="configuring-automatic-user-provisioning-to-merchlogix"></a>Automatische gebruikers inrichting configureren voor MerchLogix 
+## <a name="configuring-automatic-user-provisioning-to-merchlogix"></a>Automatische gebruikersinrichting voor MerchLogix configureren 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in MerchLogix te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in MerchLogix te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te scha kelen voor MerchLogix, gevolgd door de instructies in de [MerchLogix-zelf studie voor eenmalige aanmelding](merchlogix-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische gebruikers inrichting worden geconfigureerd, hoewel deze twee functies elkaar behoeven.
+> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor MerchLogix, waarvoor u de instructies in de [zelfstudie Eenmalige aanmelding voor MerchLogix](merchlogix-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.
 
-### <a name="to-configure-automatic-user-provisioning-for-merchlogix-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor MerchLogix in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-merchlogix-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor MerchLogix in Azure AD:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en blader naar **Azure Active Directory > bedrijfs toepassingen > alle toepassingen**.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) en blader naar **Azure Active Directory > Bedrijfsapps > Alle toepassingen**.
 
 2. Selecteer MerchLogix in de lijst met SaaS-toepassingen.
 
@@ -88,33 +88,33 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de sectie MerchLogix-Prisioning met de inrichtings optie, de inrichtings modus ingesteld op automatisch en de optie voor het testen van de verbinding.](./media/merchlogix-provisioning-tutorial/Merchlogix1.png)
+    ![Schermopname van de sectie MerchLogix - Inrichting met de optie Inrichten gemarkeerd, met de inrichtingsmodus ingesteld op Automatisch en met de optie Verbinding testen gemarkeerd.](./media/merchlogix-provisioning-tutorial/Merchlogix1.png)
 
-5. Klik onder de sectie **beheerders referenties** op:
+5. In de sectie **Referenties voor beheerder** doet u het volgende:
 
-    * In het veld **Tenant-URL** voert u de scim-eind punt-URL in die u hebt opgegeven door uw technische contact persoon van MerchLogix.
+    * Voer in het veld **Tenant-URL** de SCIM-eindpunt-URL in die u hebt gekregen van uw technische contactpersoon bij MerchLogix.
 
-    * Voer in het veld **geheim token** een geheim token in dat is opgegeven door uw technische contact persoon van MerchLogix.
+    * Voer in het veld **Token voor geheim** het token voor het geheim in dat u hebt gekregen van uw technische contactpersoon bij MerchLogix.
 
-6. Klik bij het invullen van de velden die worden weer gegeven in stap 5 op **verbinding testen** om te controleren of Azure AD verbinding kan maken met MerchLogix. Als de verbinding mislukt, zorg er dan voor dat uw MerchLogix-account beheerders machtigingen heeft en probeer het opnieuw.
+6. Klik bij het invullen van de velden die worden weergegeven in stap 5 op **Verbinding testen** om ervoor te zorgen dat Azure AD verbinding kan maken met MerchLogix. Als de verbinding mislukt, moet u controleren of uw MerchLogix-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
 7. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en vink het vakje **Een e-mailmelding verzenden als een fout optreedt** aan.
 
 8. Klik op **Opslaan**.
 
-9. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met MerchLogix**.
+9. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met MerchLogix**.
 
-10. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar MerchLogix in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in MerchLogix voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+10. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met MerchLogix worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in MerchLogix te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-11. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met MerchLogix**.
+11. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met MerchLogix**.
 
-12. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar MerchLogix in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in MerchLogix te vergelijken voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+12. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD met MerchLogix worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in MerchLogix te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-13. Als u de Azure AD-inrichtings service voor **MerchLogix wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor MerchLogix.
 
 14. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op MerchLogix.
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te controleren en koppelingen te volgen naar het activiteitenrapport van de inrichting, waarin alle acties worden beschreven die door de Azure AD-inrichtingsservice op MerchLogix worden uitgevoerd.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 

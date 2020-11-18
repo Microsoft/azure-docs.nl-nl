@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: globale relay-identiteits synchronisatie configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts vanuit Azure AD naar de globale relay-identiteits synchronisatie.
+title: 'Zelfstudie: Global Relay Identity Sync configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Meer informatie over de automatische inrichting van gebruikersaccounts van Azure AD in Global Relay Identity Sync, of de inrichting van gebruikersaccounts ongedaan te maken.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -12,51 +12,51 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/22/2020
 ms.author: Zhchia
-ms.openlocfilehash: 9445004170fb06a3d563982da51f89535464e328
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
-ms.translationtype: MT
+ms.openlocfilehash: bdbda77c45e3b1f1533326483ee19aa8ff4af515
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927988"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358334"
 ---
-# <a name="tutorial-configure-global-relay-identity-sync-for-automatic-user-provisioning"></a>Zelf studie: globale relay-identiteits synchronisatie configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-global-relay-identity-sync-for-automatic-user-provisioning"></a>Zelfstudie: Global Relay Identity Sync configureren voor automatische inrichting van gebruikers
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel de globale relay-identiteits synchronisatie als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer deze is geconfigureerd, worden gebruikers en groepen automatisch door Azure AD ingericht en ongedaan gemaakt voor globale relay-identiteits synchronisatie met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md). 
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel Global Relay Identity Sync als Azure AD (Azure Active Directory) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt in Azure AD de inrichting en ongedaan maken van de inrichting van gebruikers en groepen automatisch uitgevoerd in Global Relay Identity Sync met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
-> * Gebruikers maken in globale relay-identiteits synchronisatie
-> * Gebruikers in globale relay-identiteits synchronisatie verwijderen wanneer ze niet meer toegang nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en globale relay-identiteits synchronisatie
-> * Inrichtings groepen en groepslid maatschappen in globale relay-identiteits synchronisatie
+> * Gebruikers maken in Global Relay Identity Sync
+> * Gebruikers verwijderen uit Global Relay Identity Sync wanneer ze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en Global Relay Identity Sync
+> * Groepen en groepslidmaatschappen inrichten in Global Relay Identity Sync
 
 
 > [!NOTE]
-> De connector voor de inrichting van globale relay-identiteits synchronisatie maakt gebruik van een SCIM-autorisatie methode die niet meer wordt ondersteund vanwege beveiligings problemen. Er worden inspanningen uitgevoerd met globale relay om over te scha kelen naar een veiligere autorisatie methode.
+> Global Relay Identity Sync-inrichting maakt gebruik van een SCIM-autorisatiemodel dat vanwege beveiligingsproblemen niet meer wordt ondersteund. Er wordt momenteel aan gewerkt om Global Relay over te schakelen naar een veiligere autorisatiemethode.
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-Tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
-* Een gebruikers account in azure AD met [toestemming](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van inrichting (bijvoorbeeld toepassings beheerder, Cloud toepassings beheerder, eigenaar van de toepassing of globale beheerder).
+* [Een Azure AD-tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* Een gebruikersaccount in Azure AD met [machtigingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder).
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en globale relay-identiteits synchronisatie](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+3. Bepaal welke gegevens u wilt [toewijzen tussen Azure AD en Global Relay Identity Sync](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
 
-## <a name="step-2-configure-global-relay-identity-sync-to-support-provisioning-with-azure-ad"></a>Stap 2. Globale relay-identiteits synchronisatie configureren ter ondersteuning van inrichting met Azure AD
+## <a name="step-2-configure-global-relay-identity-sync-to-support-provisioning-with-azure-ad"></a>Stap 2. Global Relay Identity Sync configureren om ondersteuning te bieden voor inrichting met Azure AD
 
-Neem contact op met de vertegenwoordiger van de globale relay-identiteit om de Tenant-URL te ontvangen. Deze waarde wordt ingevoerd in het veld **Tenant-URL** op het tabblad inrichting van uw globale synchronisatie toepassing voor relay-identiteit in de Azure Portal.
+Neem contact op met de Global Relay Identity Sync-vertegenwoordiger om de tenant-URL te ontvangen. Deze waarde wordt ingevoerd in het veld **Token voor geheim** op het tabblad Inrichten van de Global Relay Identity Sync-toepassing in Azure Portal.
 
-## <a name="step-3-add-global-relay-identity-sync-from-the-azure-ad-application-gallery"></a>Stap 3. Globale relay-identiteits synchronisatie toevoegen vanuit de Azure AD-toepassings galerie
+## <a name="step-3-add-global-relay-identity-sync-from-the-azure-ad-application-gallery"></a>Stap 3. Global Relay Identity Sync toevoegen vanuit de Azure AD-toepassingsgalerie
 
-Voeg de globale relay-identiteits synchronisatie toe vanuit de Azure AD-toepassings galerie om het beheer van de inrichting van de globale relay-identiteits synchronisatie te starten. Meer informatie over het toevoegen van een toepassing uit [de galerie.](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) 
+Voeg Global Relay Identity Sync toe vanuit de Azure AD-toepassingsgalerie om de inrichting in Global Relay Identity Sync te beheren. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
 
@@ -65,41 +65,41 @@ Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) opgeven. 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-global-relay-identity-sync"></a>Stap 5. Automatische gebruikers inrichting configureren voor synchronisatie van globale relay-identiteit 
+## <a name="step-5-configure-automatic-user-provisioning-to-global-relay-identity-sync"></a>Stap 5. Automatische inrichting van gebruiker configureren in Global Relay Identity Sync 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen te maken, bij te werken en uit te scha kelen in globale relay-identiteits synchronisatie-app op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen te maken, bij te werken en uit te schakelen in de Global Relay Identity Sync-app, op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-global-relay-identity-sync-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor de synchronisatie van globale relay-identiteiten in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-global-relay-identity-sync-in-azure-ad"></a>Automatische inrichting van gebruikers configureren voor Global Relay Identity Sync in Azure AD:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen** .
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst toepassingen de optie **globale relay-identiteits synchronisatie** .
+2. Selecteer **Global Relay Identity Sync** in de lijst met toepassingen.
 
-    ![De koppeling globale relay-identiteits synchronisatie in de lijst met toepassingen](common/all-applications.png)
+    ![De Global Relay Identity Sync-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer het tabblad **Inrichten** .
+3. Selecteer het tabblad **Inrichten**.
 
     ![Tabblad Inrichting](common/provisioning.png)
 
-4. Stel de **Inrichtingsmodus** in op **Automatisch** .
+4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Tabblad inrichten automatisch](common/provisioning-automatic.png)
+    ![Tabblad Inrichting - Automatisch](common/provisioning-automatic.png)
 
-5. Geef in het gedeelte **beheerders referenties** de URL op van de globale relay-identiteits synchronisatie **Tenant** . Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met de globale relay-identiteits synchronisatie. Als de verbinding mislukt, zorgt u ervoor dat uw globale relay-identiteits synchronisatie account beheerders machtigingen heeft en neemt u contact op met uw globale relay-vertegenwoordiger om het probleem op te lossen.
+5. Voer in de sectie **Beheerdersreferenties** de **Tenant-URL** voor Global Relay Identity Sync uit. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Global Relay Identity Sync. Als de verbinding mislukt, controleert u of het Global Relay Identity Sync-account beheerdersmachtigingen heeft en neemt u contact op met Global Relay-vertegenwoordiger om het probleem op te lossen.
 
-    ![Autorisatie knop](media/global-relay-identity-sync-provisioning-tutorial/authorization.png)
+    ![Knop Autorisatie](media/global-relay-identity-sync-provisioning-tutorial/authorization.png)
 
 6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
 
     ![E-mailadres voor meldingen](common/provisioning-notification-email.png)
 
-7. Selecteer **Opslaan** .
+7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met globale relay-identiteits synchronisatie** .
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Global Relay Identity Sync**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar globale relay-identiteits synchronisatie in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in de globale relay-identiteits synchronisatie voor bijwerk bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes)te wijzigen, moet u ervoor zorgen dat de API voor synchronisatie van globale relay-identiteiten het filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzing** de gebruikerskenmerken die vanuit Azure AD zijn gesynchroniseerd met Global Relay Identity Sync. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikersaccounts in Global Relay Identity Sync te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) te wijzigen, moet u ervoor zorgen dat de API voor Global Relay Identity Sync ondersteuning biedt voor het filteren van gebruikers op basis van dit kenmerk. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
    |Kenmerk|Type|
    |---|---|
@@ -110,72 +110,72 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |preferredLanguage|Tekenreeks|
    |name.givenName|Tekenreeks|
    |name.familyName|Tekenreeks|
-   |naam. opgemaakt|Tekenreeks|
-   |adressen [type EQ "werk]. opgemaakt|Tekenreeks|
+   |name.formatted|Tekenreeks|
+   |addresses[type eq "work"].formatted|Tekenreeks|
    |addresses[type eq "work"].streetAddress|Tekenreeks|
    |emails[type eq "work"].value|Tekenreeks|
-   |adressen [type EQ "werk]. locatie|Tekenreeks|
-   |adressen [type EQ "werk]. regio|Tekenreeks|
+   |addresses[type eq "work"].locality|Tekenreeks|
+   |addresses[type eq "work"].region|Tekenreeks|
    |addresses[type eq "work"].postalCode|Tekenreeks|
-   |adressen [type EQ "werk]. land|Tekenreeks|
-   |adressen [type EQ "other"]. Format|Tekenreeks|
+   |addresses[type eq "work"].country|Tekenreeks|
+   |addresses[type eq "other"].formatted|Tekenreeks|
    |phoneNumbers[type eq "work"].value|Tekenreeks|
    |phoneNumbers[type eq "mobile"].value|Tekenreeks|
    |phoneNumbers[type eq "fax"].value|Tekenreeks|
    |externalId|Tekenreeks|
    |name.honorificPrefix|Tekenreeks|
-   |naam. honorificSuffix|Tekenreeks|
+   |name.honorificSuffix|Tekenreeks|
    |nickName|Tekenreeks|
    |userType|Tekenreeks|
    |landinstelling|Tekenreeks|
    |timezone|Tekenreeks|
-   |e-mail berichten [type EQ "Home"]. waarde|Tekenreeks|
-   |e-mail berichten [type EQ "Overig"]. waarde|Tekenreeks|
-   |phoneNumbers [type EQ "Home"]. waarde|Tekenreeks|
-   |phoneNumbers [type EQ "other"]. waarde|Tekenreeks|
-   |phoneNumbers [type EQ "semafoon"]. waarde|Tekenreeks|
-   |adressen [type EQ "Home"]. streetAddress|Tekenreeks|
-   |adressen [type EQ "Home"]. locatie|Tekenreeks|
-   |adressen [type EQ "Home"]. Region|Tekenreeks|
-   |adressen [type EQ "Home"]. post code|Tekenreeks|
-   |adressen [type EQ "Home"]. Country|Tekenreeks|
-   |adressen [type EQ "Home"]. geformatteerd|Tekenreeks|
-   |adressen [type EQ "other"]. streetAddress|Tekenreeks|
-   |adressen [type EQ "other"]. locatie|Tekenreeks|
-   |adressen [type EQ "other"]. regio|Tekenreeks|
-   |adressen [type EQ "other"]. post code|Tekenreeks|
-   |adressen [type EQ "other"]. Country|Tekenreeks|
-   |rollen [Primary EQ "True"]. display|Tekenreeks|
-   |rollen [Primary EQ "True"]. type|Tekenreeks|
+   |emails[type eq "home"].value|Tekenreeks|
+   |emails[type eq "other"].value|Tekenreeks|
+   |phoneNumbers[type eq "home"].value|Tekenreeks|
+   |phoneNumbers[type eq "other"].value|Tekenreeks|
+   |phoneNumbers[type eq "pager"].value|Tekenreeks|
+   |addresses[type eq "home"].streetAddress|Tekenreeks|
+   |addresses[type eq "home"].locality|Tekenreeks|
+   |addresses[type eq "home"].region|Tekenreeks|
+   |addresses[type eq "home"].postalCode|Tekenreeks|
+   |addresses[type eq "home"].country|Tekenreeks|
+   |addresses[type eq "home"].formatted|Tekenreeks|
+   |addresses[type eq "other"].streetAddress|Tekenreeks|
+   |addresses[type eq "other"].locality|Tekenreeks|
+   |addresses[type eq "other"].region|Tekenreeks|
+   |addresses[type eq "other"].postalCode|Tekenreeks|
+   |addresses[type eq "other"].country|Tekenreeks|
+   |roles[primary eq "True"].display|Tekenreeks|
+   |roles[primary eq "True"].type|Tekenreeks|
    |roles[primary eq "True"].value|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: costCenter|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: organisatie|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: deling|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Naslaginformatie|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: proxyAddresses|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute1|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute2|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute3|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute4|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute5|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute6|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute7|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute8|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute9|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute10|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute11|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute12|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute13|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute14|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: GlobalRelay: 2.0: gebruiker: extensionAttribute15|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:proxyAddresses|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute1|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute2|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute3|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute4|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute5|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute6|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute7|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute8|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute9|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute10|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute11|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute12|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute13|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute14|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:GlobalRelay:2.0:User:extensionAttribute15|Tekenreeks|
 
 
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met globale relay-identiteits synchronisatie** .
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Global Relay Identity Sync**.
 
-11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Global relay-identiteits synchronisatie in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt voor het vergelijken van de groepen in de globale relay-identiteits synchronisatie voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die zijn gesynchroniseerd vanuit Azure AD naar Global Relay Identity Sync. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in Global Relay Identity Sync te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
       |Kenmerk|Type|
       |---|---|
@@ -184,19 +184,19 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Als u de Azure AD-inrichtings service voor globale relay-identiteits synchronisatie wilt inschakelen, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig in de sectie **Instellingen** de **Inrichtingsstatus** in **Aan** om de Azure AD-inrichtingsservice in te schakelen voor Global Relay Identity Sync.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u wilt inrichten voor globale relay-identiteits synchronisatie door de gewenste waarden in het **bereik** in de sectie **instellingen** te kiezen.
+14. Definieer de gebruikers en/of groepen die u wilt toevoegen aan Global Relay Identity Sync, door in de sectie **Instellingen** de gewenste waarden te kiezen bij **Bereik**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
-15. Wanneer u klaar bent om in te richten, klikt u op **Opslaan** .
+15. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen** . De initiële cyclus duurt langer dan volgende cycli, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
+Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële cyclus duurt langer dan volgende cycli, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
 
 ## <a name="step-6-monitor-your-deployment"></a>Stap 6. Uw implementatie bewaken
 Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om uw implementatie te bewaken:

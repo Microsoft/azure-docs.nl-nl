@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: BitaBIZ configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts op BitaBIZ.
+title: 'Zelfstudie: BitaBIZ configureren voor automatische gebruikersinrichting met Azure Active Directory | Microsoft Docs'
+description: Informatie over het configureren van Azure Active Directory om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor BitaBIZ.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,70 +8,70 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: f87a2347890f8d17e3901c6d8fc168c1d96c7661
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 3d17d4dd88e29440304989b8c37eaa81125d1812
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91849313"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357552"
 ---
-# <a name="tutorial-configure-bitabiz-for-automatic-user-provisioning"></a>Zelf studie: BitaBIZ configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-bitabiz-for-automatic-user-provisioning"></a>Zelfstudie: BitaBIZ configureren voor automatische gebruikersinrichting
 
-Het doel van deze zelf studie is het demonstreren van de stappen die moeten worden uitgevoerd in BitaBIZ en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers en/of groepen in BitaBIZ.
+Het doel van deze zelfstudie is om de stappen te laten zien die moeten worden uitgevoerd in BitaBIZ en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en/of groepen voor BitaBIZ.
 
 > [!NOTE]
 > In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
-> Deze connector bevindt zich momenteel in de open bare preview. Zie voor meer informatie over de algemene Microsoft Azure-gebruiksvoorwaarden voor preview-functies [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Deze connector is momenteel beschikbaar in openbare preview. Zie voor meer informatie over de algemene Microsoft Azure-gebruiksvoorwaarden voor preview-functies [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
 * Een Azure AD-tenant.
-* [Een BitaBIZ-Tenant](https://bitabiz.dk/en/price/).
-* Een gebruikers account in BitaBIZ met beheerders machtigingen.
+* [Een BitaBIZ-tenant](https://bitabiz.dk/en/price/).
+* Een gebruikersaccount in BitaBIZ met beheerdersmachtigingen.
 
 ## <a name="assigning-users-to-bitabiz"></a>Gebruikers toewijzen aan BitaBIZ
 
-Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam *Toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in azure AD toegang nodig hebben tot BitaBIZ. Eenmaal besloten, kunt u deze gebruikers en/of groepen toewijzen aan BitaBIZ door de volgende instructies te volgen:
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in Azure AD toegang nodig hebben tot BitaBIZ. Als u dit eenmaal hebt besloten, kunt u deze gebruikers en/of groepen aan BitaBIZ toewijzen door de instructies hier te volgen:
 * [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
-## <a name="important-tips-for-assigning-users-to-bitabiz"></a>Belang rijke tips voor het toewijzen van gebruikers aan BitaBIZ
+## <a name="important-tips-for-assigning-users-to-bitabiz"></a>Belangrijke tips voor het toewijzen van gebruikers aan BitaBIZ
 
-* U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan BitaBIZ om de configuratie van automatische gebruikers inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het wordt aanbevolen om een enkele Azure AD-gebruiker toe te wijzen aan BitaBIZ om de configuratie van de automatische gebruikersinrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
 
-* Wanneer u een gebruiker toewijst aan BitaBIZ, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. Gebruikers met de rol **Standaardtoegang** worden uitgesloten van het inrichten.
+* Als u een gebruiker aan BitaBIZ toewijst, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het toewijzingsdialoogvenster. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
 
 ## <a name="setup-bitabiz-for-provisioning"></a>BitaBIZ instellen voor inrichting
 
-Voordat u BitaBIZ configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u SCIM inrichten inschakelen op BitaBIZ.
+Voordat u BitaBIZ configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u SCIM-inrichting inschakelen op BitaBIZ.
 
-1. Meld u aan bij de [BitaBIZ-beheer console](https://www.bitabiz.com/login?lang=en). Klik op **BEHEERDER INSTELLEN**.
+1. Meld u aan bij de [Beheerconsole van BitaBIZ](https://www.bitabiz.com/login?lang=en). Klik op **BEHEERDER INSTELLEN**.
 
-    :::image type="content" source="media/bitabiz-provisioning-tutorial/setup-admin.png" alt-text="Scherm opname van de BitaBIZ-beheer console, met installatie beheerder gemarkeerd." border="false":::
+    :::image type="content" source="media/bitabiz-provisioning-tutorial/setup-admin.png" alt-text="Schermopname van de BitaBIZ-beheerconsole, met 'Beheerder installeren' gemarkeerd." border="false":::
 
-2.  Navigeer naar **integratie**.
+2.  Ga naar **INTEGRATIE**.
 
-    :::image type="content" source="media/bitabiz-provisioning-tutorial/integration.png" alt-text="Scherm opname van de BitaBIZ-beheer console, met installatie beheerder gemarkeerd." border="false":::
+    :::image type="content" source="media/bitabiz-provisioning-tutorial/integration.png" alt-text="Schermopname van de BitaBIZ-beheerconsole, met 'Integratie' gemarkeerd." border="false":::
 
-2.  Navigeer naar **Microsoft Azure AD inrichting**.  Selecteer **ingeschakeld** bij automatische gebruikers inrichting. Kopieer de waarden voor **scim-inrichtings eind punt-URL** en  **Bearer-token**. Deze waarden worden ingevoerd in de velden Tenant-URL en geheim-token op het tabblad inrichten van uw BitaBIZ-toepassing in de Azure Portal.
+2.  Ga naar **Microsoft Azure AD inrichten**.  Selecteer **Inschakelen** in 'Gebruikers automatisch inrichten'. Kopieer de waarden voor **eindpunt-URL van de SCIM-inrichting** en **Bearer-token**. Deze worden ingevoerd in de velden Tenant-URL en Geheim token op het tabblad 'Inrichten' van uw BitaBIZ-toepassing in de Azure Portal.
 
-    ![SCIM BitaBIZ toevoegen](media/bitabiz-provisioning-tutorial/authentication.png)
+    ![BitaBIZ SCIM toevoegen](media/bitabiz-provisioning-tutorial/authentication.png)
 
 
 ## <a name="add-bitabiz-from-the-gallery"></a>BitaBIZ toevoegen vanuit de galerie
 
-Als u BitaBIZ wilt configureren voor het automatisch inrichten van gebruikers met Azure AD, moet u BitaBIZ van de Azure AD-toepassings galerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
+Als u BitaBIZ wilt configureren voor het automatisch inrichten van gebruikers met Azure AD, moet u BitaBIZ vanuit de Azure AD-toepassingsgalerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
 
-**Voer de volgende stappen uit om BitaBIZ toe te voegen vanuit de Azure AD-toepassings galerie:**
+**Voer de volgende stappen uit om BitaBIZ toe te voegen vanuit de Azure AD-toepassingsgalerie:**
 
-1. Selecteer in de **[Azure Portal](https://portal.azure.com)** in het navigatie venster links **Azure Active Directory**.
+1. Ga naar **[Azure Portal](https://portal.azure.com)** en selecteer **Azure Active Directory** in het navigatievenster aan de linkerkant.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -79,22 +79,22 @@ Als u BitaBIZ wilt configureren voor het automatisch inrichten van gebruikers me
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **nieuwe toepassing** boven aan het deel venster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenin het deelvenster.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ **BitaBIZ**in het zoekvak, selecteer **BitaBIZ** in het deel venster resultaten en klik vervolgens op de knop **toevoegen** om de toepassing toe te voegen.
+4. Voer **BitaBIZ** in het zoekvak in, selecteer **BitaBIZ** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
     ![BitaBIZ in de lijst met resultaten](common/search-new-app.png)
 
-## <a name="configuring-automatic-user-provisioning-to-bitabiz"></a>Automatische gebruikers inrichting configureren voor BitaBIZ 
+## <a name="configuring-automatic-user-provisioning-to-bitabiz"></a>Automatische gebruikersinrichting voor BitaBIZ configureren 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in BitaBIZ te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in BitaBIZ te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te scha kelen voor BitaBIZ, gevolgd door de instructies in de [BitaBIZ-zelf studie voor eenmalige aanmelding](BitaBIZ-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische gebruikers inrichting worden geconfigureerd, hoewel deze twee functies elkaar in de compliment
+> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor BitaBIZ, waarvoor u de instructies in de [Zelfstudie 'Eenmalige aanmelding voor BitaBIZ'](BitaBIZ-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, ook al vullen deze twee functies elkaar aan
 
-### <a name="to-configure-automatic-user-provisioning-for-bitabiz-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor BitaBIZ in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-bitabiz-in-azure-ad"></a>Om automatische gebruikersinrichting te configureren voor BitaBIZ in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -106,13 +106,13 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de beheeropties met de optie 'Inrichting' gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst 'Inrichtingsmodus' met de optie 'Automatisch' gemarkeerd.](common/provisioning-automatic.png)
 
-5. In het gedeelte beheerders referenties voert u de **scim-inrichtings eind punt-URL** en **Bearer-token** waarden in die respectievelijk eerder zijn opgehaald in de Tenant-URL en het geheime token. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met BitaBIZ. Als de verbinding mislukt, zorg er dan voor dat uw BitaBIZ-account beheerders machtigingen heeft en probeer het opnieuw.
+5. In het gedeelte 'Referenties voor beheerders' voert u de **SCIM-eindpunt-URL** en **Bearer-token** in die eerder zijn opgehaald uit respectievelijk Tenant-URL en Geheim Token. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met BitaBIZ. Als de verbinding mislukt, moet u controleren of uw BitaBIZ-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -122,22 +122,22 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Klik op **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met BitaBIZ**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met BitaBIZ**.
 
-    ![BitaBIZ-gebruikers toewijzingen](media/bitabiz-provisioning-tutorial/usermapping.png)
+    ![BitaBIZ-gebruikerstoewijzingen](media/bitabiz-provisioning-tutorial/usermapping.png)
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar BitaBIZ in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in BitaBIZ voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met BitaBIZ worden gesynchroniseerd. De kenmerken die als **Overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in BitaBIZ te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![BitaBIZ-gebruikers kenmerken](media/bitabiz-provisioning-tutorial/user-attribute.png)
+    ![BitaBIZ-gebruikerskenmerken](media/bitabiz-provisioning-tutorial/user-attribute.png)
 
 
 10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. Als u de Azure AD-inrichtings service voor **BitaBIZ wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+11. Om de Azure AD-inrichtingsservice in te schakelen voor BitaBIZ, wijzigt u de **Inrichtingsstatus** naar **Ingeschakeld** in de sectie **Instellingen**.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-12. Definieer de gebruikers en/of groepen die u wilt inrichten voor BitaBIZ door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+12. Definieer de gebruikers en/of groepen die u aan BitaBIZ wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
@@ -145,20 +145,20 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op BitaBIZ.
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te bewaken en links te volgen naar het activiteitenrapport van de inrichting. In het activiteitenrapport worden alle acties beschreven die door de Azure AD-inrichtingsservice op BitaBIZ worden uitgevoerd.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 
 ## <a name="connector-limitations"></a>Connectorbeperkingen
 
-* BitaBIZ vereist **username**, **email**, **FirstName** en **LastName** als verplichte kenmerken. 
-* BitaBIZ biedt momenteel geen ondersteuning voor harde verwijderingen.
+* BitaBIZ vereist **Gebruikersnaam**, **E-mailadres**, **Voornaam** en **Achternaam** als verplichte kenmerken. 
+* BitaBIZ biedt momenteel geen ondersteuning voor definitieve verwijderingen.
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
-* Het [inrichten van een gebruikers account voor zakelijke apps beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md).
+* [De inrichting van gebruikersaccounts voor bedrijfstoepassingen beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md).
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over het controleren van Logboeken en het ophalen van rapporten over inrichtings activiteiten](../app-provisioning/check-status-user-account-provisioning.md).
+* [Informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md).

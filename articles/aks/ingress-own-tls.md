@@ -5,12 +5,12 @@ description: Meer informatie over het installeren en configureren van een NGINX 
 services: container-service
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: f8ea245444fa5e8e042644bd3f7a34ed021ccd1d
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: a70a1549e5c585694217b32c69ddae915c25ff71
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131034"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681479"
 ---
 # <a name="create-an-https-ingress-controller-and-use-your-own-tls-certificates-on-azure-kubernetes-service-aks"></a>HTTPS-controller voor inkomend verkeer maken en uw eigen TLS-certificaten gebruiken in Azure Kubernetes Service (AKS)
 
@@ -33,15 +33,15 @@ Voor dit artikel moet u ook de Azure CLI-versie 2.0.64 of hoger uitvoeren. Voer 
 
 ## <a name="create-an-ingress-controller"></a>Een ingangs controller maken
 
-Als u de ingangs controller wilt maken, gebruikt `Helm` u voor het installeren van *nginx-ingang* . Voor toegevoegde redundantie worden er twee replica's van de NGINX-ingangscontrollers geïmplementeerd met de parameter `--set controller.replicaCount`. Om volledig te profiteren van het uitvoeren van replica's van de ingangs controller, moet u ervoor zorgen dat er meer dan één knoop punt in uw AKS-cluster is.
+Als u de ingangs controller wilt maken, gebruikt `Helm` u voor het installeren van *nginx-ingang*. Voor toegevoegde redundantie worden er twee replica's van de NGINX-ingangscontrollers geïmplementeerd met de parameter `--set controller.replicaCount`. Om volledig te profiteren van het uitvoeren van replica's van de ingangs controller, moet u ervoor zorgen dat er meer dan één knoop punt in uw AKS-cluster is.
 
 De ingangscontroller moet ook worden gepland op een Linux-knooppunt. Windows Server-knooppunten mogen de ingangscontroller niet uitvoeren. Er wordt een knooppuntselector opgegeven met behulp van de parameter `--set nodeSelector` om de Kubernetes-planner te laten weten dat de NGINX-ingangscontroller moet worden uitgevoerd op een Linux-knooppunt.
 
 > [!TIP]
-> In het volgende voor beeld wordt een Kubernetes-naam ruimte gemaakt voor de ingangs resources met de naam *ingress-Basic* . Geef waar nodig een naam ruimte op voor uw eigen omgeving. Als op uw AKS-cluster geen RBAC is ingeschakeld, voegt `--set rbac.create=false` u toe aan de helm-opdrachten.
+> In het volgende voor beeld wordt een Kubernetes-naam ruimte gemaakt voor de ingangs resources met de naam *ingress-Basic*. Geef waar nodig een naam ruimte op voor uw eigen omgeving. Als voor uw AKS-cluster niet Kubernetes RBAC is ingeschakeld, voegt `--set rbac.create=false` u toe aan de helm-opdrachten.
 
 > [!TIP]
-> Als u [IP-behoud van client bronnen][client-source-ip] wilt inschakelen voor aanvragen voor containers in uw cluster, voegt u toe `--set controller.service.externalTrafficPolicy=Local` aan de helm-installatie opdracht. Het bron-IP-adres van de client wordt opgeslagen in de aanvraag header onder *X-doorgestuurd-voor* . Bij gebruik van een ingangs controller waarvoor IP-behoud door client bron is ingeschakeld, werkt TLS Pass-Through niet.
+> Als u [IP-behoud van client bronnen][client-source-ip] wilt inschakelen voor aanvragen voor containers in uw cluster, voegt u toe `--set controller.service.externalTrafficPolicy=Local` aan de helm-installatie opdracht. Het bron-IP-adres van de client wordt opgeslagen in de aanvraag header onder *X-doorgestuurd-voor*. Bij gebruik van een ingangs controller waarvoor IP-behoud door client bron is ingeschakeld, werkt TLS Pass-Through niet.
 
 ```console
 # Create a namespace for your ingress resources
@@ -83,7 +83,7 @@ Er zijn nog geen inkomende regels gemaakt. Als u naar het open bare IP-adres bla
 
 Voor dit artikel genereren we een zelfondertekend certificaat met `openssl` . Voor productie gebruik moet u een vertrouwd, ondertekend certificaat aanvragen via een provider of uw eigen certificerings instantie (CA). In de volgende stap genereert u een Kubernetes- *geheim* met behulp van het TLS-certificaat en de persoonlijke sleutel die door openssl worden gegenereerd.
 
-In het volgende voor beeld wordt een 2048-bits RSA x509-certificaat gegenereerd dat geldig is voor 365 dagen met de naam *AKS-ingress-TLS. CRT* . Het persoonlijke sleutel bestand heeft de naam *AKS-ingress-TLS. key* . Voor een Kubernetes TLS-geheim zijn beide bestanden vereist.
+In het volgende voor beeld wordt een 2048-bits RSA x509-certificaat gegenereerd dat geldig is voor 365 dagen met de naam *AKS-ingress-TLS. CRT*. Het persoonlijke sleutel bestand heeft de naam *AKS-ingress-TLS. key*. Voor een Kubernetes TLS-geheim zijn beide bestanden vereist.
 
 Dit artikel werkt met de algemene naam van de *demo.Azure.com* -onderwerp en hoeft niet te worden gewijzigd. Geef voor productie gebruik uw eigen organisatie waarden op voor de `-subj` para meter:
 

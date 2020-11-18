@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: Miro configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts op Miro.
+title: 'Zelfstudie: Miro configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor Miro.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,57 +8,57 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/21/2019
 ms.author: Zhchia
-ms.openlocfilehash: 786e99cec4999eef0af92fe2be18bcf0e48ed379
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 31631209a16024e4414cc19bca37166332b427de
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518990"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359219"
 ---
-# <a name="tutorial-configure-miro-for-automatic-user-provisioning"></a>Zelf studie: Miro configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-miro-for-automatic-user-provisioning"></a>Zelfstudie: Miro configureren voor automatische gebruikersinrichting
 
-Het doel van deze zelf studie is het demonstreren van de stappen die moeten worden uitgevoerd in Miro en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers en/of groepen in Miro.
+Het doel van deze zelfstudie is om de stappen te laten zien die moeten worden uitgevoerd in Miro en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en/of groepen voor Miro.
 
 > [!NOTE]
 > In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
-> Deze connector bevindt zich momenteel in de open bare preview. Zie voor meer informatie over de algemene Microsoft Azure-gebruiksvoorwaarden voor preview-functies [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Deze connector is momenteel beschikbaar in openbare preview. Zie voor meer informatie over de algemene Microsoft Azure-gebruiksvoorwaarden voor preview-functies [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* Een Azure AD-Tenant
-* [Een Miro-Tenant](https://miro.com/pricing/)
-* Een gebruikers account in Miro met beheerders machtigingen.
+* Een Azure AD-tenant
+* [Een Miro-tenant](https://miro.com/pricing/)
+* Een gebruikersaccount in Miro met beheerdersmachtigingen.
 
 ## <a name="assigning-users-to-miro"></a>Gebruikers toewijzen aan Miro
 
-Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in azure AD toegang nodig hebben tot Miro. Eenmaal besloten, kunt u deze gebruikers en/of groepen toewijzen aan Miro door de volgende instructies te volgen:
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in Azure AD toegang nodig hebben tot Miro. Als u dit eenmaal hebt besloten, kunt u deze gebruikers en/of groepen aan Miro toewijzen door de instructies hier te volgen:
 * [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
-## <a name="important-tips-for-assigning-users-to-miro"></a>Belang rijke tips voor het toewijzen van gebruikers aan Miro
+## <a name="important-tips-for-assigning-users-to-miro"></a>Belangrijke tips voor het toewijzen van gebruikers aan Miro
 
-* U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan Miro om de configuratie van automatische gebruikers inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het wordt aanbevolen om een enkele Azure AD-gebruiker toe te wijzen aan Miro om de configuratie van de automatische gebruikersinrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
 
-* Wanneer u een gebruiker toewijst aan Miro, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
+* Als u een gebruiker aan Miro toewijst, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het toewijzingsdialoogvenster. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
 
 ## <a name="set-up-miro-for-provisioning"></a>Miro instellen voor inrichting
 
-1.  Het benodigde **geheim token** contact opnemen met het Miro-ondersteunings team op support@miro.com . Deze waarde wordt ingevoerd in het veld geheime token op het tabblad inrichten van uw Miro-toepassing in de Azure Portal.
+1.  Om het benodigde **Token voor geheim** op te halen, neemt u contact op met het ondersteuningsteam van Miro op support@miro.com. Deze waarde wordt ingevoerd in het veld Token voor geheim op het tabblad Inrichten van uw Miro-toepassing in Azure Portal.
 
 ## <a name="add-miro-from-the-gallery"></a>Miro toevoegen vanuit de galerie
 
-Voordat u Miro configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u Miro van de Azure AD-toepassings galerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
+Voordat u Miro configureert voor het automatisch inrichten van gebruikers met Azure AD, moet Miro vanuit de Azure AD-toepassingsgalerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
 
-**Voer de volgende stappen uit om Miro toe te voegen vanuit de Azure AD-toepassings galerie:**
+**Voer de volgende stappen uit om Miro toe te voegen vanuit de Azure AD-toepassingsgalerie:**
 
-1. Selecteer in de **[Azure Portal](https://portal.azure.com)** in het navigatie venster links **Azure Active Directory**.
+1. Ga naar **[Azure Portal](https://portal.azure.com)** en selecteer **Azure Active Directory** in het navigatievenster aan de linkerkant.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -66,25 +66,25 @@ Voordat u Miro configureert voor het automatisch inrichten van gebruikers met Az
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **nieuwe toepassing** boven aan het deel venster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** boven aan het paneel.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ **Miro**in het zoekvak, selecteer **Miro** in het deel venster resultaten en klik vervolgens op de knop **toevoegen** om de toepassing toe te voegen.
+4. Voer **Miro** in het zoekvak in, selecteer **Miro** in het venster met resultaten en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
     ![Miro in de lijst met resultaten](common/search-new-app.png)
 
-## <a name="configuring-automatic-user-provisioning-to-miro"></a>Automatische gebruikers inrichting configureren voor Miro 
+## <a name="configuring-automatic-user-provisioning-to-miro"></a>Automatische gebruikersinrichting voor Miro configureren 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in Miro te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in Miro te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te scha kelen voor Miro, gevolgd door de instructies in de [Miro-zelf studie voor eenmalige aanmelding](./miro-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische gebruikers inrichting worden geconfigureerd, hoewel deze twee functies elkaar behoeven.
+> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor Miro, waarvoor u de instructies in de [zelfstudie Eenmalige aanmelding voor Miro](./miro-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.
 
 > [!NOTE]
-> [Raadpleeg voor](https://help.miro.com/hc/en-us/articles/360036777814)meer informatie over het scim-eind punt van Miro.
+> Voor meer informatie over het SCIM-eindpunt van Miro kunt u [hier](https://help.miro.com/hc/en-us/articles/360036777814) terecht.
 
-### <a name="to-configure-automatic-user-provisioning-for-miro-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor miro in azure AD
+### <a name="to-configure-automatic-user-provisioning-for-miro-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor Miro in Azure AD
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -92,17 +92,17 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 2. Selecteer **Miro** in de lijst met toepassingen.
 
-    ![De koppeling miro in de lijst met toepassingen](common/all-applications.png)
+    ![De koppeling naar Miro in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de beheeropties met de optie Inrichting gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Selecteer in de sectie **beheerders referenties** de invoer `https://miro.com/api/v1/scim` in de Tenant- **URL**. Voer de waarde voor het **scim-verificatie token** in die eerder is opgehaald in het **geheime token**. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met Miro. Als de verbinding mislukt, zorg er dan voor dat uw Miro-account beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer onder de sectie **Referenties voor beheerder** `https://miro.com/api/v1/scim` in **Tenant-URL** in. Voer de waarde van het **SCIM-verificatietoken** in die eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Miro. Als de verbinding mislukt, moet u controleren of uw Miro-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -112,29 +112,29 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Klik op **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met Miro**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Miro**.
 
-    ![Miro-gebruikers toewijzingen](media/miro-provisioning-tutorial/usermappings.png)
+    ![Miro-gebruikerstoewijzingen](media/miro-provisioning-tutorial/usermappings.png)
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar miro in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Miro voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met Miro worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Miro te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Miro-gebruikers kenmerken](media/miro-provisioning-tutorial/userattributes.png)
+    ![Miro-gebruikerskenmerken](media/miro-provisioning-tutorial/userattributes.png)
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met Miro**.
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Miro**.
 
-    ![Miro-groeps toewijzingen](media/miro-provisioning-tutorial/groupmappings.png)
+    ![Miro-groepstoewijzingen](media/miro-provisioning-tutorial/groupmappings.png)
 
-11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar miro in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in Miro te vergelijken voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren. Schakel het selectie vakje **maken** en **verwijderen** onder acties van het **doel object** uit als Miro scim-API het maken en verwijderen van groepen niet ondersteunt.
+11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD met Miro worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in Miro te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren. Schakel **Maken** en **Verwijderen** uit onder **Acties voor het doelobject**, aangezien de SCIM-API van Miro geen ondersteuning biedt voor het maken en verwijderen van groepen.
 
-    ![Kenmerken van Miro-groep](media/miro-provisioning-tutorial/groupattributes.png)
+    ![Miro-groepskenmerken](media/miro-provisioning-tutorial/groupattributes.png)
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Als u de Azure AD-inrichtings service voor **Miro wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Miro.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u wilt inrichten voor Miro door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+14. Definieer de gebruikers en/of groepen die u aan Miro wilt toevoegen door de gewenste waarden in **Bereik** in de sectie **Instellingen** te kiezen.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
@@ -142,13 +142,13 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op Miro.
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te controleren en koppelingen te volgen naar het activiteitenrapport van de inrichting, waarin alle acties worden beschreven die door de Azure AD-inrichtingsservice in Miro worden uitgevoerd.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 
 ## <a name="connector-limitations"></a>Connectorbeperkingen
 
-* Het SCIM-eind punt van Miro staat geen bewerkingen voor het **maken** en **verwijderen** van groepen toe. De bewerking voor het **bijwerken** van een groep wordt alleen ondersteund.
+* Het SCIM-eindpunt van Miro staat het **maken** en **verwijderen** van groepen niet toe. Het biedt alleen ondersteuning voor **bijwerken**.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

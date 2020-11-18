@@ -1,107 +1,107 @@
 ---
-title: 'Zelf studie: Sales Force sandbox configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over de stappen die u moet uitvoeren in Sales Force en Azure AD om automatisch gebruikers accounts in te richten en de inrichting uit te voeren vanuit Azure AD naar Sales Force sandbox.
+title: 'Zelfstudie: Salesforce Sandbox configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek welke stappen u moet uitvoeren in Salesforce Sandbox en Azure AD om automatisch gebruikersaccounts van Azure AD in te richten in Salesforce Sandbox, of de inrichting van gebruikersaccounts ongedaan te maken.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: cc094376ed6d5a183b65a598ca9d0a55670be70e
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: MT
+ms.openlocfilehash: 7e3f8e5e975468b468712ae8907cdca0e80a5f9f
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676717"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94352605"
 ---
-# <a name="tutorial-configure-salesforce-sandbox-for-automatic-user-provisioning"></a>Zelf studie: Sales Force sandbox configureren voor het automatisch inrichten van gebruikers
+# <a name="tutorial-configure-salesforce-sandbox-for-automatic-user-provisioning"></a>Zelfstudie: Salesforce Sandbox configureren voor automatische gebruikersinrichting
 
-Het doel van deze zelf studie is om u te laten zien welke stappen u moet uitvoeren in Sales Force en Azure AD om automatisch gebruikers accounts in te richten en de inrichting uit te voeren vanuit Azure AD naar Sales Force sandbox.
+Het doel van deze zelfstudie is om u te laten zien welke stappen u moet uitvoeren in Salesforce Sandbox en Azure AD om automatisch gebruikersaccounts van Azure AD in te richten in Salesforce Sandbox, of de inrichting van gebruikersaccounts ongedaan te maken.
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende items:
 
-*   Een Azure Active Directory-Tenant.
-*   Een geldige Tenant voor de sandbox voor werk of Sales Force voor onderwijs. U kunt een gratis proef account voor beide services gebruiken.
-*   Een gebruikers account in de sandbox Sales Force met team beheerders machtigingen.
+*   Een Azure Active Directory-tenant.
+*   Een geldige tenant voor Salesforce Sandbox for Work of Salesforce Sandbox for Education. Voor beide services kunt u een gratis proefaccount gebruiken.
+*   Een gebruikersaccount in Salesforce Sandbox met teambeheerdersmachtigingen.
 
-## <a name="assigning-users-to-salesforce-sandbox"></a>Gebruikers toewijzen aan de Sales Force-sandbox
+## <a name="assigning-users-to-salesforce-sandbox"></a>Gebruikers toewijzen aan Salesforce Sandbox
 
-Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers accounts, worden alleen de gebruikers en groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikersaccounts worden alleen de gebruikers en groepen gesynchroniseerd die zijn "toegewezen" aan een toepassing in Azure AD.
 
-Voordat u de inrichtings service configureert en inschakelt, moet u bepalen welke gebruikers of groepen in azure AD toegang nodig hebben tot uw Sales Force-sandbox-app. Nadat u deze beslissing hebt genomen, kunt u deze gebruikers toewijzen aan uw Sales Force-sandbox-app door de instructies in [een gebruiker of groep toewijzen aan een bedrijfs-app te](../manage-apps/assign-user-or-group-access-portal.md) volgen
+Voordat u de inrichtingsservice configureert en inschakelt, moet u bepalen welke gebruikers of groepen in Azure AD toegang nodig hebben tot uw Salesforce Sandbox-app. Nadat u deze beslissing hebt genomen, kunt u deze gebruikers en groepen toewijzen aan Salesforce Sandbox-app door de instructies in [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md) te volgen
 
-### <a name="important-tips-for-assigning-users-to-salesforce-sandbox"></a>Belang rijke tips voor het toewijzen van gebruikers aan Sales Force sandbox
+### <a name="important-tips-for-assigning-users-to-salesforce-sandbox"></a>Belangrijke tips voor het toewijzen van gebruikers aan Salesforce Sandbox
 
-* U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan de Sales Force-sandbox om de inrichtings configuratie te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het wordt aanbevolen om een enkele Azure AD-gebruiker toe te wijzen aan Salesforce Sandbox om de configuratie van de inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
 
-* Wanneer u een gebruiker aan de Sales Force-sandbox toewijst, moet u een geldige gebruikersrol selecteren. De rol ' standaard toegang ' werkt niet voor het inrichten.
+* Wanneer u een gebruiker aan Salesforce Sandbox toewijst, moet u een geldige gebruikersrol selecteren. De rol 'Standaardtoegang' werkt niet voor inrichting.
 
 > [!NOTE]
-> Met deze app worden aangepaste rollen uit Sales Force sandbox geïmporteerd als onderdeel van het inrichtings proces, wat de klant mogelijk wil selecteren wanneer ze gebruikers toewijzen.
+> Met deze app worden aangepaste rollen uit Salesforce Sandbox geïmporteerd als onderdeel van het inrichtingsproces, die de klant mogelijk wil selecteren bij het toewijzen van gebruikers.
 
-## <a name="enable-automated-user-provisioning"></a>Automatische gebruikers inrichting inschakelen
+## <a name="enable-automated-user-provisioning"></a>Automatische inrichting van gebruikers inschakelen
 
-In deze sectie wordt u begeleid bij het koppelen van de API voor het inrichten van de gebruikers account van Azure AD naar Sales Force en het configureren van de inrichtings service om toegewezen gebruikers accounts te maken, bij te werken en uit te scha kelen in Sales Force-sandbox op basis van gebruikers-en groeps toewijzing in azure AD.
+In deze sectie wordt u begeleid bij het verbinden van de API voor het inrichten van uw Azure AD-gebruikersaccounts voor Salesforce Sandbox en het configureren van de inrichtingsservice om toegewezen gebruikersaccounts in Salesforce Sandbox te maken, bij te werken en uit te schakelen op basis van de gebruikers- en groepstoewijzing in Azure AD.
 
 >[!Tip]
->U kunt er ook voor kiezen om op SAML gebaseerde single Sign-On voor Sales Force in te scha kelen, gevolgd door de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, maar deze twee functies gelden voor elkaar.
+>U kunt er ook voor kiezen om op SAML gebaseerde eenmalige aanmelding in te schakelen voor Salesforce Sandbox, volgens de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.
 
-### <a name="configure-automatic-user-account-provisioning"></a>Automatisch inrichten van gebruikers accounts configureren
+### <a name="configure-automatic-user-account-provisioning"></a>Automatische inrichting van gebruikersaccounts configureren
 
-Het doel van deze sectie is het maken van een overzicht van het inschakelen van de gebruikers inrichting van Active Directory gebruikers accounts in Sales Force sandbox.
+Het doel van deze sectie is om een overzicht te geven van het inschakelen van gebruikersinrichting van Active Directory-gebruikersaccounts in Salesforce Sandbox.
 
-1. Blader in het [Azure Portal](https://portal.azure.com)naar het gedeelte **Azure Active Directory > Enter prise-apps > alle toepassingen** .
+1. Blader in [Azure Portal](https://portal.azure.com) naar de sectie **Azure Active Directory > Zakelijke apps > Alle toepassingen**.
 
-1. Als u al een Sales Force-sandbox hebt geconfigureerd voor eenmalige aanmelding, zoekt u naar uw exemplaar van Sales Force-sandbox met het zoek veld. Als dat niet het geval is, selecteert u de sandbox **toevoegen** en zoeken naar **Sales Force** in de toepassings galerie. Selecteer Sales Force sandbox uit de zoek resultaten en voeg deze toe aan uw lijst met toepassingen.
+1. Als u Salesforce Sandbox al hebt geconfigureerd voor eenmalige aanmelding, zoekt u met het zoekveld naar uw exemplaar van Salesforce Sandbox. Selecteer anders **Toevoegen** en zoek naar **Salesforce Sandbox** in de toepassingsgalerie. Selecteer Salesforce Sandbox in de zoekresultaten en voeg het toe aan uw lijst met toepassingen.
 
-1. Selecteer uw exemplaar van Sales Force sandbox en selecteer vervolgens het tabblad **inrichten** .
+1. Selecteer uw exemplaar van Salesforce Sandbox en selecteer vervolgens het tabblad **Inrichten**.
 
-1. Stel de **Inrichtingsmodus** in op **Automatisch** .
+1. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![In de scherm afbeelding wordt de Sales Force-inrichtings pagina weer gegeven, waarbij de inrichtings modus is ingesteld op automatisch en andere waarden die u kunt instellen.](./media/salesforce-sandbox-provisioning-tutorial/provisioning.png)
+    ![Schermopname met de pagina Inrichten voor Salesforce Sandbox, met de Inrichtingsmodus ingesteld op Automatisch en andere waarden die u kunt instellen.](./media/salesforce-sandbox-provisioning-tutorial/provisioning.png)
 
-1. Geef onder de sectie **beheerders referenties** de volgende configuratie-instellingen op:
+1. Geef de volgende configuratie-instellingen op in de sectie **Beheerdersreferenties**:
    
-    a. Typ in het tekstvak **Administrator-gebruikers** naam een account naam voor de Sales Force-sandbox waaraan het profiel van de **systeem beheerder** is toegewezen in Salesforce.com.
+    a. Typ in het tekstvak **Gebruikersnaam van beheerder** een naam voor het Sales Force-sandbox-account waaraan het profiel **Systeembeheerder** in Salesforce.com is toegewezen.
    
-    b. Typ in het tekstvak **beheerders wachtwoord** het wacht woord voor dit account.
+    b. Typ in het tekstvak **Wachtwoord voor beheerder** het wachtwoord voor dit account.
 
-1. Als u een beveiligings token voor de Sales Force-sandbox wilt ophalen, opent u een nieuw tabblad en meldt u zich aan met hetzelfde account voor de sandbox-beheerder. Klik in de rechter bovenhoek van de pagina op uw naam en klik vervolgens op **instellingen** .
+1. Als u een beveiligingstoken voor Salesforce Sandbox wilt ophalen, opent u een nieuw tabblad en meldt u zich aan met hetzelfde Salesforce Sandbox-beheerdersaccount. Klik in de rechterbovenhoek van de pagina op uw naam en klik vervolgens op **Settings**.
 
-     ![Scherm afbeelding toont de geselecteerde koppeling van de instellingen.](./media/salesforce-sandbox-provisioning-tutorial/sf-my-settings.png "Automatische gebruikers inrichting inschakelen")
+     ![Schermopname met de koppeling Settings geselecteerd.](./media/salesforce-sandbox-provisioning-tutorial/sf-my-settings.png "Automatische inrichting van gebruikers inschakelen")
 
-1. Klik in het navigatie deel venster aan de linkerkant op **persoonlijke gegevens** om de gerelateerde sectie uit te vouwen en klik vervolgens op **mijn beveiligings token opnieuw instellen** .
+1. Klik in het linkernavigatievenster op **My Personal Information** om de gerelateerde sectie uit te vouwen en klik vervolgens op **Reset My Security Token**.
   
-    ![Scherm afbeelding toont het opnieuw instellen van mijn beveiligings token dat is geselecteerd op basis van mijn persoonlijke gegevens.](./media/salesforce-sandbox-provisioning-tutorial/sf-personal-reset.png "Automatische gebruikers inrichting inschakelen")
+    ![Schermopname met Reset My Security Token geselecteerd in My Personal Information.](./media/salesforce-sandbox-provisioning-tutorial/sf-personal-reset.png "Automatische inrichting van gebruikers inschakelen")
 
-1. Klik op de pagina **beveiligings token opnieuw instellen** op de knop **beveiligings token opnieuw instellen** .
+1. Klik op de pagina **Reset Security Token** op de knop **Reset Security Token**.
 
-    ![Scherm afbeelding toont de pagina met de rest-beveiligings token, met verklarende tekst en de optie voor het opnieuw instellen van het beveiligings token](./media/salesforce-sandbox-provisioning-tutorial/sf-reset-token.png "Automatische gebruikers inrichting inschakelen")
+    ![Schermopname met de pagina Rest Security Token, met verklarende tekst en de optie Reset Security Token](./media/salesforce-sandbox-provisioning-tutorial/sf-reset-token.png "Automatische inrichting van gebruikers inschakelen")
 
-1. Controleer het postvak in van de e-mail die is gekoppeld aan dit beheerders account. Zoek naar een e-mail bericht van Sales Force Sandbox.com dat het nieuwe beveiligings token bevat.
+1. Controleer het postvak IN van het e-mailadres dat aan dit beheerdersaccount is gekoppeld. Zoek naar een e-mailbericht van Salesforce Sandbox.com dat het nieuwe beveiligingstoken bevat.
 
-1. Kopieer het token, ga naar uw Azure AD-venster en plak dit in het veld **geheime token** .
+1. Kopieer het token, ga naar uw Azure AD-venster en plak dit in het veld **Token voor geheim**.
 
-1. Klik in het Azure Portal op **verbinding testen** om ervoor te zorgen dat Azure AD verbinding kan maken met uw Sales Force-sandbox-app.
+1. Klik in de Azure-portal op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met uw Salesforce Sandbox-app.
 
-1. Voer in het veld **e-mail melding** het e-mail adres in van een persoon of groep die inrichtings fout meldingen moet ontvangen en schakel het selectie vakje in.
+1. Voer het e-mailadres in van een persoon of groep die meldingen van inrichtingsfouten moet ontvangen in het veld **E-mailadres voor meldingen** en schakel het selectievakje in.
 
-1. Klik op **opslaan.**  
+1. Klik op **Opslaan**.  
     
-1.  Selecteer in de sectie toewijzingen de optie **Azure Active Directory gebruikers synchroniseren met Sales Force.**
+1.  Selecteer in de sectie Toewijzingen de optie **Azure Active Directory-gebruikers synchroniseren met Salesforce Sandbox**.
 
-1. Controleer in de sectie **kenmerk toewijzingen** de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Sales Force sandbox. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Sales Force voor bijwerk bewerkingen. Selecteer de knop Opslaan om eventuele wijzigingen door te voeren.
+1. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met Salesforce Sandbox worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Salesforce Sandbox te vinden voor updatebewerkingen. Selecteer de knop Opslaan om eventuele wijzigingen door te voeren.
 
-1. Als u de Azure AD Provisioning Service voor Sales Force-sandbox wilt inschakelen, wijzigt **u de** **inrichtings status** in in het gedeelte instellingen
+1. Wijzig **Inrichtingsstatus** in **Aan** in de sectie Instellingen om de Azure AD-inrichtingsservice in te schakelen voor Salesforce Sandbox
 
-1. Klik op **opslaan.**
+1. Klik op **Opslaan**.
 
-De eerste synchronisatie van gebruikers en/of groepen die zijn toegewezen aan Sales Force sandbox wordt gestart in de sectie gebruikers en groepen. Het duurt langer voordat de initiële synchronisatie is uitgevoerd dan volgende synchronisaties, die ongeveer elke 40 minuten plaatsvinden, zolang de service wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen te volgen voor het inrichtings logboek, waarin alle acties worden beschreven die worden uitgevoerd door de inrichtings service op de sandbox-app van Sales Force.
+De eerste synchronisatie van gebruikers en/of groepen die zijn toegewezen aan Salesforce Sandbox in de sectie Gebruikers en Groepen wordt gestart. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de service wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te controleren en links te volgen naar activiteitenlogboeken van de inrichting, waarin alle acties worden beschreven die door de inrichtingsservice op uw Salesforce Sandbox-app worden uitgevoerd.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 

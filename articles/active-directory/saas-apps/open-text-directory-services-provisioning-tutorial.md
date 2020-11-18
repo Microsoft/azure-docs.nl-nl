@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: de functie voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts vanuit Azure AD naar de OpenText Directory Services.
+title: 'Zelfstudie: OpenText Directory Services configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikersaccounts van Azure AD naar OpenText Directory Services.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -12,98 +12,98 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: Zhchia
-ms.openlocfilehash: c0858c2e5b1ada866d252e45113f0f90b73caaf8
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
-ms.translationtype: MT
+ms.openlocfilehash: c023d9b79b81257419814c3087b78f65e1cb6dd5
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428882"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94355971"
 ---
-# <a name="tutorial-configure-opentext-directory-services-for-automatic-user-provisioning"></a>Zelf studie: de functie voor het automatisch inrichten van gebruikers met een adreslijst service configureren
+# <a name="tutorial-configure-opentext-directory-services-for-automatic-user-provisioning"></a>Zelfstudie: OpenText Directory Services configureren voor automatische gebruikersinrichting
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel OpenText Directory Services als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer deze is geconfigureerd, worden gebruikers en groepen in azure AD automatisch ingericht en ongedaan gemaakt in OpenText Directory-Services met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md). 
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel OpenText Directory Services als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op OpenText Directory Services met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
-> * Gebruikers in OpenText Directory Services maken
-> * Gebruikers in Open Text-adreslijst Services verwijderen wanneer ze geen toegang meer nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd blijven tussen Azure AD en OpenText Directory Services
-> * Inrichtings groepen en groepslid maatschappen in OpenText Directory Services
-> * [Eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/saas-apps/opentext-directory-services-tutorial) bij open text Directory Services (aanbevolen)
+> * Gebruikers configureren in OpenText Directory Services
+> * Gebruikers uit OpenText Directory Services verwijderen wanneer ze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en OpenText Directory Services
+> * Groepen en groepslidmaatschappen inrichten in OpenText Directory Services
+> * [Eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/saas-apps/opentext-directory-services-tutorial) voor OpenText Directory Services (aanbevolen)
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-Tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
-* Een gebruikers account in azure AD met [toestemming](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van inrichting (bijvoorbeeld toepassings beheerder, Cloud toepassings beheerder, eigenaar van de toepassing of globale beheerder). 
+* [Een Azure AD-tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* Een gebruikersaccount in Azure AD met [machtigingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van de inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
 * Een OTDS-installatie die toegankelijk is voor Azure AD.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en OpenText Directory Services](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+3. Bepaal welke gegevens u wilt [toewijzen tussen Azure AD en OpenText Directory Services](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
 
-## <a name="step-2-configure-opentext-directory-services-to-support-provisioning-with-azure-ad"></a>Stap 2. Opdracht voor het configureren van OpenText Directory-Services voor ondersteuning van het inrichten met Azure AD
+## <a name="step-2-configure-opentext-directory-services-to-support-provisioning-with-azure-ad"></a>Stap 2. OpenText Directory Services configureren ter ondersteuning van het inrichten met Azure AD
 
 > [!NOTE]
-> De onderstaande stappen zijn van toepassing op een service voor het gebruik van OpenText Directory Services. Ze zijn niet van toepassing op CoreShare-tenants met OpenText of openOT2.
+> De onderstaande stappen zijn van toepassing op een OpenText Directory Services-installatie. Ze zijn niet van toepassing OpenText CoreShare- of OpenText OT2-tenants.
 
-1. Maak een exclusieve vertrouwelijke **OAuth-client**.
-2. Stel een levens duur van een lang **toegangs token**in.
+1. Maak een toegewezen vertrouwelijke **OAuth-client**.
+2. Stel een lange **Levensduur van het toegangstoken** in.
 
-      ![Levens duur van toegangs token](media/open-text-directory-services-provisioning-tutorial/token-life.png)
+      ![Levensduur van toegangstoken](media/open-text-directory-services-provisioning-tutorial/token-life.png)
 
-3. Geef geen omleidings-Url's op. Ze zijn niet vereist. 
-4. Met OTDS wordt het **client geheim**gegenereerd en weer gegeven. Sla de **client-id** en het **client geheim** op een veilige locatie op.
+3. Geef geen omleidings-URL’s op. Deze zijn niet vereist. 
+4. OTDS genereert het **clientgeheim** en geeft dit weer. Sla de **client-id** en het **clientgeheim** op een veilige locatie op.
 
       ![Clientgeheim](media/open-text-directory-services-provisioning-tutorial/client-secret.png)
 
 5. Maak een partitie voor de gebruikers en groepen die moeten worden gesynchroniseerd vanuit Azure AD.
 
-      ![Partitie pagina](media/open-text-directory-services-provisioning-tutorial/partition.png)
+      ![Partitiepagina](media/open-text-directory-services-provisioning-tutorial/partition.png)
 
-6. Ken beheerders rechten toe aan de OAuth-client die u hebt gemaakt op de partitie die u wilt gebruiken voor de Azure AD-gebruikers en-groepen die worden gesynchroniseerd.    
-      * Partitie-> acties-> beheerders bewerken
+6. Ken beheerdersrechten toe aan de OAuth-client die u hebt gemaakt op de partitie die u wilt gebruiken voor de Azure AD-gebruikers en -groepen die worden gesynchroniseerd.    
+      * Partitie -> Acties -> Beheerders bewerken
 
-      ![Pagina beheerder](media/open-text-directory-services-provisioning-tutorial/administrator.png)
+      ![Beheerderspagina](media/open-text-directory-services-provisioning-tutorial/administrator.png)
 
-5. Een geheim token moet worden opgehaald en geconfigureerd in azure AD. Een HTTP-client toepassing kan hiervoor worden gebruikt. Hieronder vindt u stappen die u kunt ophalen met behulp van de Swagger API-toepassing die is opgenomen in OTDS.
+5. Een token voor geheim moet worden opgehaald en geconfigureerd in Azure AD. Elke HTTP-clienttoepassing kan hiervoor worden gebruikt. Hieronder vindt u stappen die u kunt ophalen met behulp van de Swagger API-toepassing die is opgenomen in OTDS.
       * Ga in een webbrowser naar {OTDS URL}/otdsws/oauth2
-      * Ga naar/token en Klik rechtsboven op het vergrendelings pictogram. Voer de OAuth-client-ID en het geheime geheim in die u eerder hebt opgehaald als de gebruikers naam en het wacht woord. Klik op autoriseren.
+      * Ga naar/token en klik rechtsboven op het vergrendelingspictogram. Voer de OAuth-client-id en het geheim in die u eerder hebt opgehaald als respectievelijk de gebruikersnaam en het wachtwoord. Klik op autoriseren.
 
-      ![Autorisatie knop](media/open-text-directory-services-provisioning-tutorial/authorization.png)
+      ![Knop autorisatie](media/open-text-directory-services-provisioning-tutorial/authorization.png)
 
-6. Selecteer **client_credentials** voor de grant_type en klik op **uitvoeren**.
+6. Selecteer **client_credentials** voor het grant_type en klik op **uitvoeren**.
 
-      ![Buton uitvoeren](media/open-text-directory-services-provisioning-tutorial/execute.png)
+      ![Knop uitvoeren](media/open-text-directory-services-provisioning-tutorial/execute.png)
 
-7. Het toegangs token in het antwoord moet worden gebruikt in het veld **geheime token** in azure AD.
+7. Het toegangstoken in het antwoord moet worden gebruikt in het veld **Token voor geheim** in Azure AD.
 
       ![Toegangstoken](media/open-text-directory-services-provisioning-tutorial/access-token.png)
 
-## <a name="step-3-add-opentext-directory-services-from-the-azure-ad-application-gallery"></a>Stap 3. In de Azure AD-toepassings galerie Services voor OpenText toevoegen
+## <a name="step-3-add-opentext-directory-services-from-the-azure-ad-application-gallery"></a>Stap 3. OpenText Directory Services toevoegen vanuit de galerie met Azure AD-toepassingen
 
-Voeg open-tekst adreslijst Services toe vanuit de Azure AD-toepassings galerie om het beheer van de inrichting te starten voor OpenText Directory-Services. Als u de map voor het gebruik van OpenText-adreslijst Services voor SSO al hebt ingesteld, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
+Voeg OpenText Directory Services toe vanuit de galerie met Azure AD-toepassingen om te beginnen met het inrichten voor OpenText Directory Services. Als u OpenText Directory Services eerder hebt ingesteld voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
 
 Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) wordt beschreven. 
 
-* Wanneer u gebruikers en groepen toewijst aan Open Text-adreslijst Services, moet u een andere rol dan **standaard toegang**selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) om extra rollen toe te voegen. 
+* Wanneer u gebruikers en groepen toewijst aan OpenText Directory Services, moet u een andere rol dan **Standaardtoegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) om extra rollen toe te voegen. 
 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) opgeven. 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-opentext-directory-services"></a>Stap 5. Automatische gebruikers inrichting configureren voor gelaagde adreslijst Services 
+## <a name="step-5-configure-automatic-user-provisioning-to-opentext-directory-services"></a>Stap 5. Automatische gebruikersinrichting configureren voor OpenText Directory Services 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-opentext-directory-services-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor OpenText Directory Services in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-opentext-directory-services-in-azure-ad"></a>Om automatische gebruikersinrichting te configureren voor OpenText Directory Services in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -111,7 +111,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 2. Selecteer **OpenText Directory Services** in de lijst met toepassingen.
 
-    ![De koppeling OpenText Directory Services in de lijst met toepassingen](common/all-applications.png)
+    ![De OpenText Directory Services-link in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
@@ -119,13 +119,13 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Tabblad inrichten automatisch](common/provisioning-automatic.png)
+    ![Tabblad Inrichten - Automatisch](common/provisioning-automatic.png)
 
-5. Geef in het gedeelte **beheerders referenties** de URL van uw OpenText Directory Services-Tenant op
-   * Niet-specifc Tenant-URL: {OTDS URL}/scim/{partitionName}
-   * Specifieke Tenant-URL: {OTDS URL}/otdstenant/{tenantID}/scim/{partitionName}
+5. Voer in de sectie **Beheerdersreferenties** de URL van uw OpenText Directory Services-tenant in
+   * Niet-specifieke tenant-URL: {OTDS URL}/scim/{partitionName}
+   * Specifieke tenant-URL: {OTDS URL}/otdstenant/{tenantID}/scim/{partitionName}
 
-6. Voer het geheime token in dat is opgehaald uit stap 2. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met open text Directory-Services. Als de verbinding mislukt, zorg er dan voor dat uw OpenText Directory Services-account beheerders machtigingen heeft en probeer het opnieuw.
+6. Voer het Geheim voor token in dat is opgehaald uit stap 2. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met OpenText Directory Services. Als de verbinding mislukt, moet u controleren of uw OpenText Directory Services-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
       ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -135,9 +135,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met OpenText Directory Services**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met OpenText Directory Services**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar de OpenText Directory Services in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikers accounts in OpenText Directory Services te vergelijken voor bijwerk bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes)te wijzigen, moet u ervoor zorgen dat de open text Directory Services-API filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met OpenText Directory Services worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in OpenText Directory Services te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) te wijzigen, moet u ervoor zorgen dat de API van OpenText Directory Services het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
    |Kenmerk|Type|
    |---|---|
@@ -149,24 +149,24 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |preferredLanguage|Tekenreeks|
    |name.givenName|Tekenreeks|
    |name.familyName|Tekenreeks|
-   |naam. opgemaakt|Tekenreeks|
-   |adressen [type EQ "werk]. opgemaakt|Tekenreeks|
+   |name.formatted|Tekenreeks|
+   |addresses[type eq "work"].formatted|Tekenreeks|
    |addresses[type eq "work"].streetAddress|Tekenreeks|
-   |adressen [type EQ "werk]. locatie|Tekenreeks|
-   |adressen [type EQ "werk]. regio|Tekenreeks|
+   |addresses[type eq "work"].locality|Tekenreeks|
+   |addresses[type eq "work"].region|Tekenreeks|
    |addresses[type eq "work"].postalCode|Tekenreeks|
-   |adressen [type EQ "werk]. land|Tekenreeks|
+   |addresses[type eq "work"].country|Tekenreeks|
    |phoneNumbers[type eq "work"].value|Tekenreeks|
    |phoneNumbers[type eq "mobile"].value|Tekenreeks|
    |phoneNumbers[type eq "fax"].value|Tekenreeks|
    |externalId|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Verwijzing| 
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Naslaginformatie| 
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren naar gelaagde Directory Services**.
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met OpenText Directory Services**.
 
-11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar de OpenText Directory Services in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt voor het vergelijken van de groepen in de OpenText Directory Services voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD met OpenText Directory Services worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in OpenText Directory Services te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
       |Kenmerk|Type|
       |---|---|
@@ -176,11 +176,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Als u de Azure AD-inrichtings service voor open text Directory Services wilt inschakelen, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor OpenText Directory Services.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u wilt inrichten voor OpenText Directory-Services door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+14. Definieer de gebruikers en/of groepen die u aan OpenText Directory Services wilt toevoegen door de gewenste waarden in **Bereik** in de sectie **Instellingen** te kiezen.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 

@@ -3,12 +3,12 @@ title: Meer informatie over Azure Service Fabric
 description: Meer informatie over de belangrijkste concepten en belang rijke gebieden van Azure Service Fabric. Biedt een uitgebreid overzicht van Service Fabric en hoe u micro Services maakt.
 ms.topic: conceptual
 ms.date: 12/08/2017
-ms.openlocfilehash: 6cbc99b56df18448add47a70b42742aa8dabbeb5
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 07b41f10430592e6035bfe0179cb717d0bc5c8b0
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461495"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681734"
 ---
 # <a name="so-you-want-to-learn-about-service-fabric"></a>Wilt u meer informatie over Service Fabric?
 Azure Service Fabric is een gedistribueerde systemen platform waarmee u gemakkelijk pakket, implementeren en beheren van schaalbare en betrouwbare microservices.  Service Fabric heeft echter een grote surface area, maar er is veel te leren.  In dit artikel vindt u een samen vatting van Service Fabric en worden de belangrijkste concepten, programmeer modellen, toepassings levenscyclus, testen, clusters en status controle beschreven. Lees het [overzicht](service-fabric-overview.md) en [Wat zijn micro Services?](service-fabric-overview-microservices.md) voor een inleiding en hoe service Fabric kan worden gebruikt om micro services te maken. Dit artikel bevat geen uitgebreide inhouds lijst, maar bevat een koppeling naar overzicht en aan de slag-artikelen voor elk gebied van Service Fabric. 
@@ -131,7 +131,7 @@ Clusters moeten worden beveiligd om te voor komen dat onbevoegde gebruikers verb
 De cluster beveiligings scenario's zijn:
 * Beveiliging van knoop punt naar knoop punt
 * Beveiliging van client naar knoop punt
-* Toegangsbeheer op basis van rollen (RBAC)
+* Service Fabric op rollen gebaseerd toegangs beheer
 
 Lees [een cluster beveiligen](service-fabric-cluster-security.md)voor meer informatie.
 

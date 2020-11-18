@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/06/2020
 ms.author: pafarley
-ms.openlocfilehash: 164b3f9e0426db1f36360fee8f836216d4cad86a
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: d425853b04a1d6f3b1f818e63154eadd1c7b3a2d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92918695"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94680867"
 ---
 > [!IMPORTANT]
 > De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud.
@@ -25,12 +25,14 @@ ms.locfileid: "92918695"
 
 * Azure-abonnement: [Krijg een gratis abonnement](https://azure.microsoft.com/free/cognitive-services/)
 * De [Visual Studio IDE](https://visualstudio.microsoft.com/vs/) of de huidige versie van [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
-* Een Azure Storage-blob die een set trainingsgegevens bevat. Zie [Een set met trainingsgegevens voor een aangepast model bouwen](../../build-training-data-set.md) voor tips en opties voor het samenstellen van uw set met trainingsgegevens. Voor deze quickstart kunt u de bestanden in de map **Trainen** van de [set met voorbeeldgegevens](https://go.microsoft.com/fwlink/?linkid=2090451) gebruiken (downloaden en extraheren van *sample_data.zip* ).
+* Een Azure Storage-blob die een set trainingsgegevens bevat. Zie [Een set met trainingsgegevens voor een aangepast model bouwen](../../build-training-data-set.md) voor tips en opties voor het samenstellen van uw set met trainingsgegevens. Voor deze quickstart kunt u de bestanden in de map **Trainen** van de [set met voorbeeldgegevens](https://go.microsoft.com/fwlink/?linkid=2090451) gebruiken (downloaden en extraheren van *sample_data.zip*).
 * Wanneer u een Azure-abonnement hebt, kunt u <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer"  title="Een Form Recognizer-resource maken"  target="_blank">een Form Recognizer-resource maken <span class="docon docon-navigate-external x-hidden-focus"></span></a> in Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
     * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met de Form Recognizer API. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
     * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
 
 ## <a name="setting-up"></a>Instellen
+
+### <a name="create-a-new-c-application"></a>Een nieuwe C#-toepassing maken
 
 #### <a name="visual-studio-ide"></a>[Visual Studio IDE](#tab/visual-studio)
 
@@ -38,7 +40,7 @@ Maak met behulp van Visual Studio een nieuwe .NET Core-toepassing.
 
 ### <a name="install-the-client-library"></a>De clientbibliotheek installeren 
 
-Nadat u een nieuw project hebt gemaakt, installeert u de clientbibliotheek door in **Solution Explorer** met de rechtermuisknop op de projectoplossing te klikken en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren** , schakel **Prerelease opnemen** in en zoek naar `Azure.AI.FormRecognizer`. Selecteer versie `3.0.0` en vervolgens **Installeren**. 
+Nadat u een nieuw project hebt gemaakt, installeert u de clientbibliotheek door in **Solution Explorer** met de rechtermuisknop op de projectoplossing te klikken en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren**, schakel **Prerelease opnemen** in en zoek naar `Azure.AI.FormRecognizer`. Selecteer versie `3.0.0` en vervolgens **Installeren**. 
 
 #### <a name="cli"></a>[CLI](#tab/cli)
 
@@ -63,15 +65,15 @@ Build succeeded.
  0 Error(s)
 ...
 ```
----
 
 ### <a name="install-the-client-library"></a>De clientbibliotheek installeren 
 
-Installeer in de toepassingsmap de [Productnaam]-clientbibliotheek voor .NET met de volgende opdracht:
+Installeer in de toepassingsmap de Form Recognizer-clientbibliotheek voor .NET met de volgende opdracht:
 
 ```console
 dotnet add package Azure.AI.FormRecognizer --version 3.0.0
 ```
+---
 
 > [!TIP]
 > Wilt u het codebestand voor de quickstart in één keer weergeven? Die is te vinden op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md), waar de codevoorbeelden uit deze quickstart zich bevinden.
@@ -146,7 +148,7 @@ Maak onder **Hoofd** een nieuwe methode met de naam `AuthenticateClient`. U zult
 
 ## <a name="get-assets-for-testing"></a>Assets voor testen ophalen 
 
-U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens. Voeg deze toe aan de hoofdmap van uw **Programma** -klasse.
+U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens. Voeg deze toe aan de hoofdmap van uw **Programma**-klasse.
 
 * Als u de SAS-URL voor de trainingsgegevens van uw aangepaste model wilt ophalen, opent u de Microsoft Azure Storage Explorer, klikt u met de rechtermuisknop op uw container en selecteert u **Handtekening voor gedeelde toegang ophalen**. Controleer of de machtigingen **Lezen** en **Lijst** zijn ingeschakeld en klik op **Maken**. Kopieer vervolgens de waarde in de sectie **URL**. Deze moet de notatie `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>` hebben.
 * Gebruik vervolgens de bovenstaande stappen om de SAS-URL van een afzonderlijk document in Blob Storage op te halen.
@@ -157,7 +159,7 @@ U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegeve
 
 ## <a name="recognize-form-content"></a>Formulierinhoud herkennen
 
-U kunt Form Recognizer gebruiken om tabellen, regels en woorden in documenten te herkennen, zonder dat u een model hoeft te trainen. De geretourneerde waarde is een verzameling **FormPage** -objecten: één voor elke pagina in het ingediende document. 
+U kunt Form Recognizer gebruiken om tabellen, regels en woorden in documenten te herkennen, zonder dat u een model hoeft te trainen. De geretourneerde waarde is een verzameling **FormPage**-objecten: één voor elke pagina in het ingediende document. 
 
 Als u de inhoud van een bestand op een bepaalde URL wilt herkennen, gebruikt u de methode `StartRecognizeContentFromUri`.
 

@@ -7,12 +7,12 @@ author: seanmck
 ms.topic: troubleshooting
 ms.date: 11/05/2018
 ms.author: seanmck
-ms.openlocfilehash: 2b0078f1aff3ef81ee270f67de0fffddec3abab9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7730146f30487eb5d20f0d3138e9e5ba799daa99
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86255248"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681513"
 ---
 # <a name="checking-for-kubernetes-best-practices-in-your-cluster"></a>Controleren op aanbevolen procedures voor Kubernetes in uw cluster
 
@@ -29,7 +29,7 @@ Het uitvoeren-hulp programma kan rapporteren over de resource aanvraag en limiet
 
 ## <a name="running-kube-advisor"></a>Uitvoeren van uitvoeren-Advisor
 
-Als u het hulp programma wilt uitvoeren op een cluster dat is geconfigureerd voor op [rollen gebaseerd toegangs beheer (RBAC)](./azure-ad-integration-cli.md), met behulp van de volgende opdrachten. Met de eerste opdracht maakt u een Kubernetes-service account. Met de tweede opdracht wordt het hulp programma uitgevoerd in een pod met dat Service account en wordt de Pod voor verwijdering geconfigureerd nadat deze is afgesloten. 
+Gebruik de volgende opdrachten om het hulp programma uit te voeren op een cluster dat is geconfigureerd voor [Kubernetes op basis van rollen (KUBERNETES RBAC)](./azure-ad-integration-cli.md). Met de eerste opdracht maakt u een Kubernetes-service account. Met de tweede opdracht wordt het hulp programma uitgevoerd in een pod met dat Service account en wordt de Pod voor verwijdering geconfigureerd nadat deze is afgesloten. 
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/Azure/kube-advisor/master/sa.yaml
@@ -37,7 +37,7 @@ kubectl apply -f https://raw.githubusercontent.com/Azure/kube-advisor/master/sa.
 kubectl run --rm -i -t kubeadvisor --image=mcr.microsoft.com/aks/kubeadvisor --restart=Never --overrides="{ \"apiVersion\": \"v1\", \"spec\": { \"serviceAccountName\": \"kube-advisor\" } }" --namespace default
 ```
 
-Als u geen RBAC gebruikt, kunt u de opdracht als volgt uitvoeren:
+Als u Kubernetes RBAC niet gebruikt, kunt u de opdracht als volgt uitvoeren:
 
 ```bash
 kubectl run --rm -i -t kubeadvisor --image=mcr.microsoft.com/aks/kubeadvisor --restart=Never
@@ -59,13 +59,13 @@ Standaard zijn er geen aanvragen of limieten ingesteld op pod-specificaties. Dit
 
 ## <a name="cleaning-up"></a>Opschonen
 
-Als RBAC is ingeschakeld op uw cluster, kunt u de `ClusterRoleBinding` na het uitvoeren van het hulp programma opschonen met de volgende opdracht:
+Als Kubernetes RBAC is ingeschakeld op uw cluster, kunt u de `ClusterRoleBinding` na het uitvoeren van het hulp programma opschonen met de volgende opdracht:
 
 ```bash
 kubectl delete -f https://raw.githubusercontent.com/Azure/kube-advisor/master/sa.yaml
 ```
 
-Als u het hulp programma uitvoert op een cluster dat niet is ingeschakeld voor RBAC, is geen opschoning vereist.
+Als u het hulp programma uitvoert op een cluster waarop niet Kubernetes RBAC is ingeschakeld, is geen opschoning vereist.
 
 ## <a name="next-steps"></a>Volgende stappen
 

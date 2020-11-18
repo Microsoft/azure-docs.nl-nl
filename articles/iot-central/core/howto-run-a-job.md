@@ -7,12 +7,12 @@ author: philmea
 ms.author: philmea
 ms.date: 09/30/2020
 ms.topic: how-to
-ms.openlocfilehash: 2b5fc349ae7d92bf36cfe9b1f3272cc1f4f7446b
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: b8106c154a91d1e823a124a90f7571b7f52ae8cb
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92017944"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682120"
 ---
 # <a name="create-and-run-a-job-in-your-azure-iot-central-application"></a>Een taak maken en uitvoeren in uw Azure IoT Central-toepassing
 
@@ -22,7 +22,7 @@ U kunt Azure IoT Central gebruiken om uw verbonden apparaten op schaal te behere
 
 In het volgende voor beeld ziet u hoe u een taak maakt en uitvoert om de lichte drempel waarde voor een groep logistiek-gateway apparaten in te stellen. U gebruikt de wizard taak om taken te maken en uit te voeren. U kunt een taak opslaan om deze later uit te voeren.
 
-1. Selecteer **taken**in het linkerdeel venster.
+1. Selecteer **taken** in het linkerdeel venster.
 
 1. Selecteer **+ nieuwe taak**.
 
@@ -30,7 +30,7 @@ In het volgende voor beeld ziet u hoe u een taak maakt en uitvoert om de lichte 
 
 1. Selecteer de doel apparaten groep waarop u de taak wilt Toep assen. U kunt zien hoeveel apparaten uw taak configuratie van toepassing is onder de selectie van uw **apparaatgroep** .
 
-1. Kies **Cloud eigenschap**, **eigenschap**of **opdracht** als het **taak type**:
+1. Kies **Cloud eigenschap**, **eigenschap** of **opdracht** als het **taak type**:
 
     Als u een **eigenschaps** taak wilt configureren, selecteert u een eigenschap en stelt u de nieuwe waarde in. Als u een **opdracht** taak wilt configureren, kiest u de opdracht die moet worden uitgevoerd. Een eigenschaps taak kan meerdere eigenschappen instellen.
 
@@ -38,23 +38,52 @@ In het volgende voor beeld ziet u hoe u een taak maakt en uitvoert om de lichte 
 
     Selecteer **opslaan en sluiten** om de taak toe te voegen aan de lijst met opgeslagen taken op de pagina **taken** . U kunt later terugkeren naar een taak in de lijst met opgeslagen taken.
 
-    Selecteer **volgende** om naar de pagina **bezorgings opties** te gaan. Op de pagina **bezorgings opties** kunt u de bezorgings opties voor deze taak instellen: **batches** en **annulerings drempelwaarde**.
+1. Selecteer **volgende** om naar de pagina **bezorgings opties** te gaan. Op de pagina **bezorgings opties** kunt u de bezorgings opties voor deze taak instellen: **batches** en **annulerings drempelwaarde**.
 
     Met batches kunt u taken spreiden voor een groot aantal apparaten. De taak is onderverdeeld in meerdere batches en elke batch bevat een subset van de apparaten. De batches worden in de wachtrij geplaatst en uitgevoerd in de reeks.
 
     Met de annulerings drempel kunt u automatisch een taak annuleren als het aantal fouten de ingestelde limiet overschrijdt. De drempel waarde kan van toepassing zijn op alle apparaten in de taak of op afzonderlijke batches.
 
-    :::image type="content" source="media/howto-run-a-job/job-wizard-delivery-options.png" alt-text="Scherm opname van selecties voor het maken van een eigenschaps taak met de naam lichte drempel waarde instellen":::
+    :::image type="content" source="media/howto-run-a-job/job-wizard-delivery-options.png" alt-text="Scherm afbeelding van de pagina bezorgings opties van wizard taak":::
 
-    Selecteer **volgende** om over te scha kelen naar de pagina **controleren** . Op de pagina **controleren** worden de taak configuratie details weer gegeven. Selecteer **uitvoeren** om de taak te verzenden.
+1. Selecteer **volgende** om naar de **plannings** pagina te gaan. Op de pagina **planning** kunt u een planning voor het uitvoeren van de taak in de toekomst inschakelen:
 
-    :::image type="content" source="media/howto-run-a-job/job-wizard-review.png" alt-text="Scherm opname van selecties voor het maken van een eigenschaps taak met de naam lichte drempel waarde instellen":::
+    Kies een optie voor terugkeer patroon voor de planning. U kunt instellen dat een taak wordt uitgevoerd:
 
-1. Een taak loopt over *in behandeling*, *uitgevoerd*en *voltooide* fasen. De details van de taak uitvoering bevatten resultaat waarden, Details over de duur en een raster van een lijst met apparaten.
+    * Eenmalig
+    * Dagelijks
+    * Wekelijks
+
+    Een begin datum en-tijd instellen voor een geplande taak. De datum en tijd zijn specifiek voor uw tijd zone en niet op de lokale tijd van het apparaat.
+
+    Als u een terugkerend schema wilt beëindigen, kiest u:
+
+    * **Op deze dag** om een eind datum voor de planning in te stellen.
+    * **Na** het instellen van het aantal keren dat de taak moet worden uitgevoerd.
+
+    Geplande taken worden altijd uitgevoerd op de apparaten in een apparaatgroep, zelfs als het lidmaatschap van de apparaatgroep na verloop van tijd verandert.
+
+    :::image type="content" source="media/howto-run-a-job/job-wizard-schedule.png" alt-text="Pagina scherm afdruk van wizard plannings opties":::
+
+1. Selecteer **volgende** om over te scha kelen naar de pagina **controleren** . Op de pagina **controleren** worden de taak configuratie details weer gegeven. Selecteer **planning** om de taak te plannen:
+
+    :::image type="content" source="media/howto-run-a-job/job-wizard-schedule-review.png" alt-text="Scherm afbeelding van wizard voor controle van geplande taken":::
+
+1. De pagina taak Details bevat informatie over geplande taken. Wanneer de geplande taak wordt uitgevoerd, ziet u een lijst met de taak exemplaren. De geplande taak wordt uitgevoerd, maakt ook deel uit van de laatste taak lijst van **30 dagen** .
+
+    Op deze pagina kunt u de **planning** van de taak **ongewijzigd** laten of de geplande taak bewerken. U kunt teruggaan naar een geplande taak in de lijst met geplande taken.
+
+    :::image type="content" source="media/howto-run-a-job/job-schedule-details.png" alt-text="Scherm afbeelding van de pagina met details van de geplande taak":::
+
+1. In de wizard taak kunt u ervoor kiezen om geen taak te plannen en deze direct uit te voeren. In de volgende scherm afbeelding ziet u een taak zonder een planning die direct kan worden uitgevoerd. Selecteer **uitvoeren** om de taak uit te voeren:
+
+    :::image type="content" source="media/howto-run-a-job/job-wizard-schedule-immediate.png" alt-text="Scherm opname van wizard voor taak pagina controleren":::
+
+1. Een taak loopt over *in behandeling*, *uitgevoerd* en *voltooide* fasen. De details van de taak uitvoering bevatten resultaat waarden, Details over de duur en een raster van een lijst met apparaten.
 
     Wanneer de taak is voltooid, kunt u het **resultaten logboek** selecteren om een CSV-bestand van uw taak details te downloaden, met inbegrip van de apparaten en hun status waarden. Deze informatie kan nuttig zijn bij het oplossen van problemen.
 
-    :::image type="content" source="media/howto-run-a-job/download-details.png" alt-text="Scherm opname van selecties voor het maken van een eigenschaps taak met de naam lichte drempel waarde instellen":::
+    :::image type="content" source="media/howto-run-a-job/download-details.png" alt-text="Scherm afbeelding met de apparaatstatus":::
 
 1. De taak wordt nu weer gegeven in de **afgelopen 30 dagen** lijst op de pagina **taken** . Op deze pagina worden de momenteel actieve taken en de geschiedenis van eerder uitgevoerde of opgeslagen taken weer gegeven.
 
@@ -65,17 +94,17 @@ In het volgende voor beeld ziet u hoe u een taak maakt en uitvoert om de lichte 
 
 Als u een actieve taak wilt stoppen, opent u deze en selecteert u **stoppen**. De taak status wordt gewijzigd om aan te geven dat de taak is gestopt. In de sectie **samen vatting** ziet u welke apparaten zijn voltooid, zijn mislukt of nog in behandeling zijn.
 
-:::image type="content" source="media/howto-run-a-job/manage-job.png" alt-text="Scherm opname van selecties voor het maken van een eigenschaps taak met de naam lichte drempel waarde instellen":::
+:::image type="content" source="media/howto-run-a-job/manage-job.png" alt-text="Scherm afbeelding waarin een actieve taak en de knop voor het stoppen van een taak worden weer gegeven":::
 
 Wanneer een taak is gestopt, kunt u **door gaan** met het uitvoeren van de taak hervatten selecteren. De taak status wordt gewijzigd om aan te geven dat de taak nu opnieuw wordt uitgevoerd. De sectie **samen vatting** blijft bijgewerkt met de laatste voortgang.
 
-:::image type="content" source="media/howto-run-a-job/stopped-job.png" alt-text="Scherm opname van selecties voor het maken van een eigenschaps taak met de naam lichte drempel waarde instellen":::
+:::image type="content" source="media/howto-run-a-job/stopped-job.png" alt-text="Scherm afbeelding met een gestopte taak en de knop voor het voortzetten van een taak":::
 
 ## <a name="copy-a-job"></a>Een taak kopiëren
 
 Als u een bestaande taak wilt kopiëren, selecteert u een uitgevoerde taak. Selecteer **kopiëren** op de pagina met taak resultaten of pagina Details van taken:
 
-:::image type="content" source="media/howto-run-a-job/job-details-copy.png" alt-text="Scherm opname van selecties voor het maken van een eigenschaps taak met de naam lichte drempel waarde instellen":::
+:::image type="content" source="media/howto-run-a-job/job-details-copy.png" alt-text="Scherm opname van de knop kopiëren":::
 
 Een kopie van de taak configuratie wordt geopend, zodat u deze kunt bewerken en **kopiëren** wordt toegevoegd aan de taak naam.
 
@@ -113,13 +142,13 @@ Als u een CSV-bestand wilt downloaden dat de taak Details bevat en de lijst met 
 
 U kunt de apparaten lijst op de pagina met **taak Details** filteren door het filter pictogram te selecteren. U kunt filteren op de **apparaat-id** of **status** veld:
 
-:::image type="content" source="media/howto-run-a-job/filter.png" alt-text="Scherm opname van selecties voor het maken van een eigenschaps taak met de naam lichte drempel waarde instellen":::
+:::image type="content" source="media/howto-run-a-job/filter.png" alt-text="Scherm afbeelding met selecties voor het filteren van een lijst met apparaten.":::
 
 ## <a name="customize-columns-in-the-device-list"></a>Kolommen aanpassen in de lijst met apparaten
 
 U kunt kolommen toevoegen aan de lijst met apparaten door het pictogram kolom opties te selecteren:
 
-:::image type="content" source="media/howto-run-a-job/column-options.png" alt-text="Scherm opname van selecties voor het maken van een eigenschaps taak met de naam lichte drempel waarde instellen":::
+:::image type="content" source="media/howto-run-a-job/column-options.png" alt-text="Scherm afbeelding met het pictogram voor kolom opties.":::
 
 In het dialoog venster **kolom opties** kunt u de kolommen van de lijst met apparaten kiezen. Selecteer de kolommen die u wilt weer geven, selecteer de pijl-rechts en selecteer vervolgens **OK**. Als u alle beschik bare kolommen wilt selecteren, kiest u **alle selecteren**. De geselecteerde kolommen worden weer gegeven in de lijst met apparaten.
 
@@ -129,7 +158,7 @@ De geselecteerde kolommen blijven behouden in een gebruikers sessie of tussen ge
 
 U kunt een taak met mislukte apparaten opnieuw uitvoeren. Selecteer **opnieuw uitvoeren bij mislukt**:
 
-:::image type="content" source="media/howto-run-a-job/rerun.png" alt-text="Scherm opname van selecties voor het maken van een eigenschaps taak met de naam lichte drempel waarde instellen":::
+:::image type="content" source="media/howto-run-a-job/rerun.png" alt-text="Scherm afbeelding met de knop voor het opnieuw uitvoeren van een taak op mislukte apparaten.":::
 
 Voer een taak naam en beschrijving in en selecteer vervolgens **taak opnieuw uitvoeren**. Er wordt een nieuwe taak verzonden om de actie opnieuw op mislukte apparaten uit te voeren.
 

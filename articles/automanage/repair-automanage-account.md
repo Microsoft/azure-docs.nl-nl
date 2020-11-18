@@ -1,6 +1,6 @@
 ---
 title: Een gebroken Azure automanage-account herstellen
-description: Meer informatie over het oplossen van een gebroken automanage-account
+description: Als u onlangs een abonnement hebt verplaatst dat een automanage-account bevat naar een nieuwe Tenant, moet u de app opnieuw configureren. In dit artikel leert u hoe.
 author: asinn826
 ms.service: virtual-machines
 ms.subservice: automanage
@@ -8,24 +8,24 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 11/05/2020
 ms.author: alsin
-ms.openlocfilehash: ad54b37da8a4945162b507232f33083890ec1fff
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 226a23bfdacb0f7423c7dafb8cae36af7333699d
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557673"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681836"
 ---
-# <a name="repair-a-broken-automanage-account"></a>Een gebroken account voor automanage herstellen
-Het [account](./automanage-virtual-machines.md#automanage-account) voor automatisch beheer is de beveiligings context of de identiteit waaronder de geautomatiseerde bewerkingen plaatsvinden. Als u onlangs een abonnement met een account voor automatisch beheer naar een nieuwe Tenant hebt verplaatst, moet u uw account voor automatisch beheer opnieuw configureren. Als u uw account voor automatisch beheren opnieuw wilt configureren, moet u het identiteits type opnieuw instellen en de juiste rollen voor het account toewijzen.
+# <a name="repair-an-automanage-account"></a>Een account voor automanage herstellen
+Uw [Azure automanage-account](./automanage-virtual-machines.md#automanage-account) is de beveiligings context of identiteit waaronder de geautomatiseerde bewerkingen plaatsvinden. Als u onlangs een abonnement hebt verplaatst dat een automanage-account bevat naar een nieuwe Tenant, moet u het account opnieuw configureren. Als u het opnieuw wilt configureren, moet u het identiteits type opnieuw instellen en de juiste rollen voor het account toewijzen.
 
-## <a name="step-1-reset-automanage-account-identity-type"></a>Stap 1: het identiteits type van het account voor automanage opnieuw instellen
-Stel het identiteits type van de automanage-account opnieuw in met de Azure Resource Manager ARM-sjabloon hieronder. Sla het bestand lokaal op `armdeploy.json` of op dezelfde manier op. Noteer de naam en locatie van uw account voor automanage. Dit zijn de vereiste para meters in de ARM-sjabloon.
+## <a name="step-1-reset-the-automanage-account-identity-type"></a>Stap 1: het identiteits type van het account voor automanage opnieuw instellen
+Stel het identiteits type van het automanage-account opnieuw in met behulp van de volgende Azure Resource Manager (ARM)-sjabloon. Sla het bestand lokaal op als armdeploy.jsop of een vergelijk bare naam. Noteer uw account naam en-locatie voor het automanage, omdat de vereiste para meters in de ARM-sjabloon vereist zijn.
 
-1. Maak een nieuwe ARM-implementatie met de onderstaande sjabloon en gebruik `identityType = None`
-    * U kunt dit doen met Azure CLI met `az deployment sub create` . Meer informatie over de `az deployment sub` opdracht [vindt u hier](https://docs.microsoft.com/cli/azure/deployment/sub).
-    * U kunt dit ook doen met Power shell met behulp van de `New-AzDeployment` module. Meer informatie over de `New AzDeployment` module [vindt u hier](https://docs.microsoft.com/powershell/module/az.resources/new-azdeployment).
+1. Maak een Resource Manager-implementatie met behulp van de volgende sjabloon. Gebruik `identityType = None`.
+    * U kunt de implementatie in de Azure CLI maken met behulp van `az deployment sub create` . Zie [AZ Deployment sub](https://docs.microsoft.com/cli/azure/deployment/sub)(Engelstalig) voor meer informatie.
+    * U kunt de implementatie in Power shell maken met behulp van de `New-AzDeployment` module. Zie [New-AzDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azdeployment)voor meer informatie.
 
-1. Voer dezelfde ARM-sjabloon opnieuw uit met `identityType = SystemAssigned`
+1. Voer dezelfde ARM-sjabloon opnieuw uit met `identityType = SystemAssigned` .
 
 ```json
 {
@@ -59,24 +59,24 @@ Stel het identiteits type van de automanage-account opnieuw in met de Azure Reso
 ```
 
 ## <a name="step-2-assign-appropriate-roles-for-the-automanage-account"></a>Stap 2: de juiste rollen toewijzen voor het account voor automatisch beheren
-Voor het account voor de functie voor automanaged moet de Inzender-en resource beleid contributor-rollen in het abonnement met de Vm's die door automanage worden beheerd, worden beheerd. U kunt deze rollen toewijzen met behulp van de Azure Portal, ARM-sjablonen of Azure CLI.
+Voor het account voor de functie voor automanaged moet de Inzender-en het resource beleid zijn ingesteld op het abonnement met de Vm's die door automanage worden beheerd. U kunt deze rollen toewijzen met behulp van de Azure Portal, ARM-sjablonen of de Azure CLI.
 
-Als u een ARM-sjabloon of Azure CLI gebruikt, hebt u de principal-ID (ook wel object-ID genoemd) van uw account voor automatisch beheer nodig (dit is niet nodig als u de Azure Portal gebruikt). U kunt de principal-ID (object-ID) van uw account voor het autobeheren van de volgende methoden vinden:
+Als u een ARM-sjabloon of Azure CLI gebruikt, hebt u de principal-ID (ook wel de object-ID genoemd) van uw automanage-account nodig. (U hebt de ID niet nodig als u de Azure Portal gebruikt.) U kunt deze ID vinden met behulp van de volgende methoden:
 
 - [Azure cli](https://docs.microsoft.com/cli/azure/ad/sp): gebruik de opdracht `az ad sp list --display-name <name of your Automanage Account>` .
 
-- Azure Portal: Navigeer naar **Azure Active Directory** en zoek uw account voor automanage op naam. Selecteer onder **bedrijfs toepassingen** de naam van het account voor automanage wanneer het wordt weer gegeven.
+- Azure Portal: Ga naar **Azure Active Directory** en zoek uw account voor automanage op naam. Selecteer onder **bedrijfs toepassingen** de naam van het automanage-account wanneer het wordt weer gegeven.
 
 ### <a name="azure-portal"></a>Azure Portal
-1. Ga onder **abonnementen** naar het abonnement met uw door u beheerde vm's.
-1. Navigeer naar **toegangs beheer (IAM)**.
-1. Klik op Roltoewijzingen **toevoegen**.
-1. Selecteer de rol **Inzender** en typ de naam van uw account voor automanage.
-1. Klik op **Opslaan**.
-1. Herhaal stap 3-5 en deze keer met de rol **Inzender voor resource beleid** .
+1. Onder **abonnementen** gaat u naar het abonnement met uw automanaged vm's.
+1. Ga naar **toegangs beheer (IAM)**.
+1. Selecteer **roltoewijzingen toevoegen**.
+1. Selecteer de rol **Inzender** en voer de naam van uw account voor automanage in.
+1. Selecteer **Opslaan**.
+1. Herhaal stap 3 t/m 5, deze keer met de rol **Inzender voor resource beleid** .
 
 ### <a name="arm-template"></a>ARM-sjabloon
-Voer de volgende ARM-sjabloon uit. U hebt de principal-ID van uw account voor automatisch beheren nodig om de principal-ID hierboven weer te geven. Voer de waarde in wanneer u hierom wordt gevraagd.
+Voer de volgende ARM-sjabloon uit. U hebt de principal-ID van uw account voor automanage nodig. De stappen om deze op te halen, zijn aan het begin van deze sectie. Voer de ID in wanneer u hierom wordt gevraagd.
 
 ```json
 {
@@ -118,13 +118,13 @@ Voer de volgende ARM-sjabloon uit. U hebt de principal-ID van uw account voor au
 ```
 
 ### <a name="azure-cli"></a>Azure CLI
-Voer de volgende opdrachten uit:
+Voer deze opdrachten uit:
 
 ```azurecli
-az role assignment create --assignee-object-id <your Automanage Account's object id> --role "Contributor" --scope /subscriptions/<your subscription id>
+az role assignment create --assignee-object-id <your Automanage Account Object ID> --role "Contributor" --scope /subscriptions/<your subscription ID>
 
-az role assignment create --assignee-object-id <your Automanage Account's object id> --role "Resource Policy Contributor" --scope /subscriptions/<your subscription id>
+az role assignment create --assignee-object-id <your Automanage Account Object ID> --role "Resource Policy Contributor" --scope /subscriptions/<your subscription ID>
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-Meer informatie over Azure automanage [vindt u hier](./automanage-virtual-machines.md).
+[Meer informatie over Azure automanage](./automanage-virtual-machines.md)

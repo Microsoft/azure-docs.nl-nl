@@ -5,15 +5,15 @@ services: data-factory
 author: chez-charlie
 ms.service: data-factory
 ms.topic: include
-ms.date: 10/28/2020
+ms.date: 11/16/2020
 ms.author: chez
 ms.custom: include file
-ms.openlocfilehash: 4cbe179d015c71094e6813666a6fd0cee3e5e3c2
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 1e8d13e7cf302c486bab291ef6482216122b62a3
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92909071"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681113"
 ---
 Azure Data Factory is een service met meerdere tenants met de volgende standaardlimieten om ervoor te zorgen dat klantabonnementen worden beschermd tegen elkaars werkbelastingen. Neem contact op met de ondersteuning als u de limieten wilt verhogen tot de maximumwaarde voor uw abonnement.
 
@@ -40,6 +40,7 @@ Azure Data Factory is een service met meerdere tenants met de volgende standaard
 | Maximale time-out voor uitvoeringen van pijplijnactiviteit | 7 dagen | 7 dagen |
 | Bytes per object voor pijplijnobjecten<sup>3</sup> | 200 kB | 200 kB |
 | Bytes per object voor gegevensset en gekoppelde serviceobjecten<sup>3</sup> | 100 kB | 2000 kB |
+| Bytes per payload voor elke uitvoering van activiteit<sup>4</sup> | 896 KB | 896 KB |
 | Gegevensintegratie-eenheden<sup>1</sup> per uitvoering van de kopieeractiviteit | 256 | 256 |
 | API-aanroepen schrijven | 1200/u | 1200/u<br/><br/> Deze limiet wordt opgelegd door Azure Resource Manager, niet door Azure Data Factory. |
 | API-aanroepen lezen | 12.500/u | 12.500/u<br/><br/> Deze limiet wordt opgelegd door Azure Resource Manager, niet door Azure Data Factory. |
@@ -60,6 +61,8 @@ Azure Data Factory is een service met meerdere tenants met de volgende standaard
 | Regiogroep 3 | Canada - centraal, Azië - oost, Frankrijk - centraal, Korea - centraal, UK - zuid |
 
 <sup>3</sup> Pijplijn-, gegevensset- en gekoppelde serviceobjecten vertegenwoordigen een logische groepering van uw werkbelasting. De limieten voor deze objecten hebben geen betrekking op de hoeveelheid gegevens die u kunt verplaatsen en verwerken met Azure Data Factory. Data Factory is ontworpen om petabytes aan gegevens te kunnen verwerken.
+
+<sup>4</sup> De payload voor elke uitvoering van activiteit omvat de activiteitsconfiguratie, de bijbehorende gegevensset(s) en configuratie van gekoppelde service(s) en een klein deel systeemeigenschappen die per activiteitstype zijn gegenereerd. De limieten voor de grootte van deze payload hebben geen betrekking op de hoeveelheid gegevens die u kunt verplaatsen en verwerken met Azure Data Factory. Meer informatie over de [symptomen en aanbevelingen](../articles/data-factory/data-factory-troubleshoot-guide.md#payload-is-too-large) als u dit limiet bereikt.
 
 ### <a name="version-1"></a>Versie 1
 

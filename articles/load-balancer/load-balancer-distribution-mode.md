@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/19/2019
 ms.author: allensu
-ms.openlocfilehash: d6995073ba7d283a30f7580456cd61573752f7cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa2d2cda59f23ef0b961ccac60b119996423688e
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89051386"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682313"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>De distributie modus voor Azure Load Balancer configureren
 
@@ -64,7 +64,7 @@ Een ander use-case-scenario is het uploaden van media. Het uploaden van gegevens
 U kunt de configuratie van de distributie modus wijzigen door de taakverdelings regel in de portal te wijzigen.
 
 1. Meld u aan bij de Azure Portal en zoek de resource groep met de load balancer die u wilt wijzigen door te klikken op **resource groepen**.
-2. Klik in het scherm overzicht van load balancer onder **instellingen**op **taakverdelings regels** .
+2. Klik in het scherm overzicht van load balancer onder **instellingen** op **taakverdelings regels** .
 3. Klik in het scherm taakverdelings regels op de taakverdelings regel waarvan u de distributie modus wilt wijzigen.
 4. Onder de regel wordt de distributie modus gewijzigd door de vervolg keuzelijst **sessie persistentie** te wijzigen.  De volgende opties zijn beschikbaar:
     
@@ -201,6 +201,6 @@ Date: Thu, 16 Oct 2014 22:49:21 GMT
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Overzicht van Azure interne Load Balancer](load-balancer-internal-overview.md)
+* [Overzicht van Azure Load Balancer](load-balancer-overview.md)
 * [Aan de slag met het configureren van een Internet gerichte load balancer](quickstart-load-balancer-standard-public-powershell.md)
 * [TCP-time-outinstellingen voor inactiviteit voor de load balancer configureren](load-balancer-tcp-idle-timeout.md)

@@ -7,12 +7,12 @@ ms.date: 05/27/2020
 ms.author: mahender
 ms.reviewer: yevbronsh
 ms.custom: devx-track-csharp, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 73b09c006b11e7f57dd3833191dd381b7f42a709
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: c734c0ceb9c4d5418edc51a2c3ad3c052637ad31
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145834"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696979"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Beheerde identiteiten gebruiken voor App Service en Azure Functions
 
@@ -33,17 +33,17 @@ Als u een beheerde identiteit in de portal instelt, moet u eerst een toepassing 
 
 1. Maak een app in de portal zoals u dat gewend bent. Navigeer ernaar in de portal.
 
-2. Als u een functie-app gebruikt, navigeert u naar **platform functies** . Voor andere typen apps schuift u omlaag naar de **instellingen** groep in het linkernavigatievenster.
+2. Als u een functie-app gebruikt, navigeert u naar **platform functies**. Voor andere typen apps schuift u omlaag naar de **instellingen** groep in het linkernavigatievenster.
 
-3. Selecteer **identiteit** .
+3. Selecteer **identiteit**.
 
-4. Schakel op het tabblad **systeem toegewezen** de optie **status** in **op aan** . Klik op **Opslaan** .
+4. Schakel op het tabblad **systeem toegewezen** de optie **status** in **op aan**. Klik op **Opslaan**.
 
     ![Scherm opname van de plaats waar u de status wilt wijzigen in en selecteer vervolgens opslaan.](media/app-service-managed-service-identity/system-assigned-managed-identity-in-azure-portal.png)
 
 
 > [!NOTE] 
-> Als u de beheerde identiteit voor de web-app of de app wilt vinden in de Azure Portal, gaat u naar de sectie **gebruikers instellingen** onder **bedrijfs toepassingen** . Normaal gesp roken is de naam van de sleuf gelijk aan `<app name>/slots/<slot name>` .
+> Als u de beheerde identiteit voor de web-app of de app wilt vinden in de Azure Portal, gaat u naar de sectie **gebruikers instellingen** onder **bedrijfs toepassingen**. Normaal gesp roken is de naam van de sleuf gelijk aan `<app name>/slots/<slot name>` .
 
 
 ### <a name="using-the-azure-cli"></a>Met behulp van de Azure CLI
@@ -198,13 +198,13 @@ Eerst moet u een door de gebruiker toegewezen id-resource maken.
 
 2. Maak een app in de portal zoals u dat gewend bent. Navigeer ernaar in de portal.
 
-3. Als u een functie-app gebruikt, navigeert u naar **platform functies** . Voor andere typen apps schuift u omlaag naar de **instellingen** groep in het linkernavigatievenster.
+3. Als u een functie-app gebruikt, navigeert u naar **platform functies**. Voor andere typen apps schuift u omlaag naar de **instellingen** groep in het linkernavigatievenster.
 
-4. Selecteer **identiteit** .
+4. Selecteer **identiteit**.
 
-5. Klik op het tabblad **toegewezen door gebruiker** op **toevoegen** .
+5. Klik op het tabblad **toegewezen door gebruiker** op **toevoegen**.
 
-6. Zoek de identiteit die u eerder hebt gemaakt en selecteer deze. Klik op **Add** .
+6. Zoek de identiteit die u eerder hebt gemaakt en selecteer deze. Klik op **Add**.
 
     ![Beheerde identiteit in App Service](media/app-service-managed-service-identity/user-assigned-managed-identity-in-azure-portal.png)
 
@@ -328,7 +328,7 @@ De **IDENTITY_ENDPOINT** is een lokale URL van waaruit uw app tokens kan aanvrag
 > |-------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | resource          | Query’s uitvoeren  | De Azure AD-resource-URI van de resource waarvoor een token moet worden verkregen. Dit kan een van de [Azure-Services zijn die ondersteuning bieden voor Azure AD-verificatie](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) of een andere resource-URI.    |
 > | api-versie       | Query’s uitvoeren  | De versie van de token-API die moet worden gebruikt. Gebruik ' 2019-08-01 ' of hoger (tenzij u Linux-verbruik gebruikt, dat momenteel alleen ' 2017-09-01 ' biedt).                                                                                                                                                                                                                                                                 |
-> | X-IDENTITEIT-HEADER | Koptekst | De waarde van de omgevings variabele IDENTITY_HEADER. Deze header wordt gebruikt om SSRF-aanvallen (server-side Request vervalsing) te voor komen.                                                                                                                                                                                                    |
+> | X-IDENTITEIT-HEADER | Header | De waarde van de omgevings variabele IDENTITY_HEADER. Deze header wordt gebruikt om SSRF-aanvallen (server-side Request vervalsing) te voor komen.                                                                                                                                                                                                    |
 > | client_id         | Query’s uitvoeren  | Beschrijving De client-ID van de door de gebruiker toegewezen identiteit die moet worden gebruikt. Kan niet worden gebruikt voor een aanvraag met `principal_id` , `mi_res_id` of `object_id` . Als alle id-para meters ( `client_id` ,, `principal_id` `object_id` en `mi_res_id` ) worden wegge laten, wordt de door het systeem toegewezen identiteit gebruikt.                                             |
 > | principal_id      | Query’s uitvoeren  | Beschrijving De principal-ID van de door de gebruiker toegewezen identiteit die moet worden gebruikt. `object_id` is een alias die in plaats daarvan kan worden gebruikt. Kan niet worden gebruikt voor een aanvraag die client_id, mi_res_id of object_id bevat. Als alle id-para meters ( `client_id` ,, `principal_id` `object_id` en `mi_res_id` ) worden wegge laten, wordt de door het systeem toegewezen identiteit gebruikt. |
 > | mi_res_id         | Query’s uitvoeren  | Beschrijving De Azure-Resource-ID van de door de gebruiker toegewezen identiteit die moet worden gebruikt. Kan niet worden gebruikt voor een aanvraag met `principal_id` , `client_id` of `object_id` . Als alle id-para meters ( `client_id` ,, `principal_id` `object_id` en `mi_res_id` ) worden wegge laten, wordt de door het systeem toegewezen identiteit gebruikt.                                      |
@@ -345,7 +345,7 @@ Een geslaagd 200 OK-antwoord bevat een JSON-hoofd tekst met de volgende eigensch
 > | expires_on    | De time span op het moment dat het toegangs token verloopt. De datum wordt weer gegeven als het aantal seconden van ' 1970-01-01T0:0: 0Z UTC ' (komt overeen met de claim van het token `exp` ).                                                                                |
 > | not_before    | De time span wanneer het toegangs token van kracht is en kan worden geaccepteerd. De datum wordt weer gegeven als het aantal seconden van ' 1970-01-01T0:0: 0Z UTC ' (komt overeen met de claim van het token `nbf` ).                                                      |
 > | resource      | De bron waarvoor het toegangs token is aangevraagd, dat overeenkomt met de `resource` query teken reeks parameter van de aanvraag.                                                                                                                               |
-> | token_type    | Geeft de waarde van het token type aan. Het enige type dat door Azure AD wordt ondersteund, is FBearer. Zie voor meer informatie over Bearer-tokens [het OAuth 2,0 Authorization Framework: Bearer-token gebruik (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
+> | token_type    | Geeft de waarde van het token type aan. Het enige type dat door Azure AD wordt ondersteund, is Bearer. Zie voor meer informatie over Bearer-tokens [het OAuth 2,0 Authorization Framework: Bearer-token gebruik (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
 
 Dit antwoord is hetzelfde als het [antwoord op de aanvraag van de Azure AD-service-naar-service-toegangs token](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md#service-to-service-access-token-response).
 

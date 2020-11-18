@@ -1,22 +1,22 @@
 ---
 title: Modellen implementeren met een aangepaste docker-installatie kopie
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het gebruik van een aangepaste docker-basis installatie kopie bij het implementeren van uw Azure Machine Learning modellen. Hoewel Azure Machine Learning een standaard basis installatie kopie voor u biedt, kunt u ook uw eigen basis installatie kopie gebruiken.
+description: Meer informatie over het gebruik van een aangepaste docker-basis installatie kopie voor het implementeren van uw Azure Machine Learning-modellen. Hoewel Azure Machine Learning een standaard basis installatie kopie voor u biedt, kunt u ook uw eigen basis installatie kopie gebruiken.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.author: sagopal
 author: saachigopal
 ms.reviewer: larryfr
-ms.date: 09/09/2020
+ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: 63089e853be825f9399081f2d39845e22b18ed2a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 1ff4d7693a7e493ccb736ab9363fd26c93017c79
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325175"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695347"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Een model implementeren met behulp van een aangepaste docker-basis installatie kopie
 
@@ -54,12 +54,12 @@ In de informatie in deze sectie wordt ervan uitgegaan dat u een Azure Container 
 
 * Gebruikt u de Azure Container Registry die is gemaakt voor de Azure Machine Learning-werk ruimte of een zelfstandige Azure Container Registry?
 
-    Wanneer u installatie kopieën gebruikt die zijn opgeslagen in het __container register voor de werk ruimte__ , hoeft u zich niet te verifiëren bij het REGI ster. Verificatie wordt verwerkt door de werk ruimte.
+    Wanneer u installatie kopieën gebruikt die zijn opgeslagen in het __container register voor de werk ruimte__, hoeft u zich niet te verifiëren bij het REGI ster. Verificatie wordt verwerkt door de werk ruimte.
 
     > [!WARNING]
     > De Azure Container Registry voor uw werk ruimte wordt __gemaakt wanneer u voor het eerst een model traint of implementeert__ met behulp van de werk ruimte. Als u een nieuwe werk ruimte hebt gemaakt, maar niet hebt getraind of een model hebt gemaakt, bestaat er geen Azure Container Registry voor de werk ruimte.
 
-    Wanneer u installatie kopieën gebruikt die zijn opgeslagen in een __zelfstandig container register__ , moet u een Service-Principal configureren die ten minste lees toegang heeft. Vervolgens geeft u de Service-Principal-ID (gebruikers naam) en het wacht woord op voor iedereen die gebruikmaakt van installatie kopieën uit het REGI ster. De uitzonde ring hierop is als u het container register openbaar toegankelijk maakt.
+    Wanneer u installatie kopieën gebruikt die zijn opgeslagen in een __zelfstandig container register__, moet u een Service-Principal configureren die ten minste lees toegang heeft. Vervolgens geeft u de Service-Principal-ID (gebruikers naam) en het wacht woord op voor iedereen die gebruikmaakt van installatie kopieën uit het REGI ster. De uitzonde ring hierop is als u het container register openbaar toegankelijk maakt.
 
     Zie [een persoonlijk container register maken](../container-registry/container-registry-get-started-azure-cli.md)voor meer informatie over het maken van een persoonlijke Azure container Registry.
 
@@ -234,7 +234,7 @@ Zie [Azure machine learning containers](https://github.com/Azure/AzureML-Contain
 
 ### <a name="use-an-image-with-the-azure-machine-learning-sdk"></a>Een installatie kopie gebruiken met de Azure Machine Learning SDK
 
-Als u een installatie kopie wilt gebruiken die is opgeslagen in de **Azure container Registry voor uw werk ruimte** of een **container register dat openbaar toegankelijk is** , stelt u de volgende [omgevings](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) kenmerken in:
+Als u een installatie kopie wilt gebruiken die is opgeslagen in de **Azure container Registry voor uw werk ruimte** of een **container register dat openbaar toegankelijk is**, stelt u de volgende [omgevings](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) kenmerken in:
 
 + `docker.enabled=True`
 + `docker.base_image`: Ingesteld op het REGI ster en pad naar de installatie kopie.

@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/07/2019
 ms.author: allensu
-ms.openlocfilehash: 2e27b168087966701fb53cc8df19d264861257d6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c2072d13cab9839a276c0437747d7075918e78a
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448109"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696877"
 ---
 # <a name="multiple-frontends-for-azure-load-balancer"></a>Meerdere frontends voor Azure Load Balancer
 
 Met Azure Load Balancer kunt u service verdeling op meerdere poorten, meerdere IP-adressen of beide. U kunt open bare en interne load balancer definities gebruiken om gelijkmatige verdeling van stromen over een set Vm's.
 
-In dit artikel worden de grond beginselen van deze mogelijkheid, belang rijke concepten en beperkingen beschreven. Als u alleen services wilt weer geven op één IP-adres, kunt u eenvoudige instructies vinden voor [open bare](load-balancer-get-started-internet-portal.md) of [interne](load-balancer-get-started-ilb-arm-portal.md) Load Balancer configuraties. Het toevoegen van meerdere frontends is incrementeel naar een configuratie met één frontend. Aan de hand van de concepten in dit artikel kunt u op elk gewenst moment een vereenvoudigde configuratie uitbreiden.
+In dit artikel worden de grond beginselen van deze mogelijkheid, belang rijke concepten en beperkingen beschreven. Als u alleen services wilt weer geven op één IP-adres, kunt u eenvoudige instructies vinden voor [open bare](./quickstart-load-balancer-standard-public-portal.md) of [interne](./quickstart-load-balancer-standard-internal-portal.md) Load Balancer configuraties. Het toevoegen van meerdere frontends is incrementeel naar een configuratie met één frontend. Aan de hand van de concepten in dit artikel kunt u op elk gewenst moment een vereenvoudigde configuratie uitbreiden.
 
 Wanneer u een Azure Load Balancer definieert, zijn een front-end-en een back-end-pool configuratie verbonden met regels. De status test waarnaar wordt verwezen door de regel wordt gebruikt om te bepalen hoe nieuwe stromen worden verzonden naar een knoop punt in de back-end-pool. Het front-end (ook wel VIP) wordt gedefinieerd door een 3-tuple die bestaat uit een IP-adres (openbaar of intern), een transport protocol (UDP of TCP) en een poort nummer van de taakverdelings regel. De back-end-pool is een verzameling virtuele-machine-IP-configuraties (onderdeel van de NIC-resource) die verwijzen naar de Load Balancer back-end-groep.
 

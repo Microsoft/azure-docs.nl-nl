@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/07/2020
 ms.author: allensu
-ms.openlocfilehash: b44f626546b313299701687157b37b7df021bd61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee264a22de5ce094e8a4c1335ace77cbbba49270
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88038207"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94694990"
 ---
 # <a name="outbound-only-load-balancer-configuration"></a>Load balancer-configuratie voor alleen uitgaand verkeer
 
@@ -71,7 +71,7 @@ Maak een virtuele machine in het nieuwe virtuele netwerk.
     |------------------|-----------------------------------------------------------------|
     | **Projectgegevens**  |                                                                 |
     | Abonnement     | Selecteer uw Azure-abonnement                                  |
-    | Resourcegroep   | Selecteer **Nieuw maken**. </br> Voer **myResourceGroupLB**in. </br> Selecteer **OK**. |
+    | Resourcegroep   | Selecteer **Nieuw maken**. </br> Voer **myResourceGroupLB** in. </br> Selecteer **OK**. |
     | **Exemplaardetails** |                                                                 |
     | Naam             | Voer **myVNet** in                                    |
     | Regio           | Selecteer **VS Oost 2** |
@@ -218,9 +218,9 @@ Voeg uw gemaakte virtuele machine toe aan de back-end-groep van elk.  Vervolgens
    
 ### <a name="create-internal-backend-address-pool"></a>Een interne back-end-adres groep maken
 
-De **myInternalBackendPool**voor de back-end-adres groep maken:
+De **myInternalBackendPool** voor de back-end-adres groep maken:
 
-1. Selecteer **alle services** in het linkermenu, selecteer **alle resources**en selecteer vervolgens **myInternalLoadBalancer** in de lijst met resources.
+1. Selecteer **alle services** in het linkermenu, selecteer **alle resources** en selecteer vervolgens **myInternalLoadBalancer** in de lijst met resources.
 
 2. Selecteer onder **Instellingen** de optie **Back-endpools** en selecteer vervolgens **Toevoegen**.
 
@@ -234,9 +234,9 @@ De **myInternalBackendPool**voor de back-end-adres groep maken:
 
 ### <a name="create-public-backend-address-pool"></a>Open bare back-end-adres groep maken
 
-De **myPublicBackendPool**voor de back-end-adres groep maken:
+De **myPublicBackendPool** voor de back-end-adres groep maken:
 
-1. Selecteer **alle services** in het linkermenu, selecteer **alle resources**en selecteer vervolgens **myPublicLoadBalancer** in de lijst met resources.
+1. Selecteer **alle services** in het linkermenu, selecteer **alle resources** en selecteer vervolgens **myPublicLoadBalancer** in de lijst met resources.
 
 2. Selecteer onder **Instellingen** de optie **Back-endpools** en selecteer vervolgens **Toevoegen**.
 
@@ -250,7 +250,7 @@ De **myPublicBackendPool**voor de back-end-adres groep maken:
 
 ### <a name="test-connectivity-before-outbound-rule"></a>Verbinding testen voor uitgaande regel
 
-1. Selecteer **alle services** in het linkermenu, selecteer **alle resources**en selecteer vervolgens in de lijst met resources **myVM** die zich in de resource groep **myResourceGroupLB** bevindt.
+1. Selecteer **alle services** in het linkermenu, selecteer **alle resources** en selecteer vervolgens in de lijst met resources **myVM** die zich in de resource groep **myResourceGroupLB** bevindt.
 
 2. Selecteer op de pagina **Overzicht** de optie **Verbinding maken** en daarna **Bastion**.
 
@@ -266,7 +266,7 @@ De **myPublicBackendPool**voor de back-end-adres groep maken:
  
 ### <a name="create-a-public-load-balancer-outbound-rule"></a>Een open bare regel voor load balancer uitgaande verbindingen maken
 
-1. Selecteer **alle services** in het linkermenu, selecteer **alle resources**en selecteer vervolgens **myPublicLoadBalancer** in de lijst met resources.
+1. Selecteer **alle services** in het linkermenu, selecteer **alle resources** en selecteer vervolgens **myPublicLoadBalancer** in de lijst met resources.
 
 2. Selecteer onder **Instellingen** **Uitgaande regels** en selecteer vervolgens **Toevoegen**.
 
@@ -285,7 +285,7 @@ De **myPublicBackendPool**voor de back-end-adres groep maken:
 
 ### <a name="test-connectivity-after-outbound-rule"></a>Connectiviteit testen na uitgaande regel
 
-1. Selecteer **alle services** in het linkermenu, selecteer **alle resources**en selecteer vervolgens in de lijst met resources **myVM** die zich in de resource groep **myResourceGroupLB** bevindt.
+1. Selecteer **alle services** in het linkermenu, selecteer **alle resources** en selecteer vervolgens in de lijst met resources **myVM** die zich in de resource groep **myResourceGroupLB** bevindt.
 
 2. Selecteer op de pagina **Overzicht** de optie **Verbinding maken** en daarna **Bastion**.
 
@@ -299,7 +299,7 @@ De **myPublicBackendPool**voor de back-end-adres groep maken:
 
 8. De verbinding moet slagen.
 
-9. Het weer gegeven IP-adres moet het frontend-IP-adres van **myPublicLoadBalancer**zijn.
+9. Het weer gegeven IP-adres moet het frontend-IP-adres van **myPublicLoadBalancer** zijn.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -316,4 +316,4 @@ Met deze configuratie kunt u het binnenkomende interne verkeer naar uw back-end-
 - Meer informatie over [Azure Load Balancer](load-balancer-overview.md).
 - Meer informatie over [uitgaande verbindingen in azure](load-balancer-outbound-connections.md).
 - [Veelgestelde vragen](load-balancer-faqs.md)over Load Balancer.
-- Meer informatie over [Azure Bastion](https://docs.microsoft.com/azure/bastion/bastion-overview)
+- Meer informatie over [Azure Bastion](../bastion/bastion-overview.md)

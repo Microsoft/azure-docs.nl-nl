@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.custom: contperfq1
 ms.date: 10/13/2020
 ms.author: allensu
-ms.openlocfilehash: 645be03df3c8ee2a1451b4bfea0327542c29aa38
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 98bc962c0c57716cee9339056b0793bfe4bcb0ea
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683111"
+ms.locfileid: "94694725"
 ---
 # <a name="outbound-rules-azure-load-balancer"></a><a name="outboundrules"></a>Azure Load Balancer voor uitgaande regels
 
@@ -60,7 +60,7 @@ Elk extra IP-adres dat wordt geleverd door een front-end biedt extra 64.000 tijd
 
 Gebruik meerdere IP-adressen voor het plannen van grootschalige scenario's. Gebruik regels voor uitgaande verbindingen om de [SNAT-uitputting](troubleshoot-outbound-connection.md#snatexhaust)te verhelpen. 
 
-U kunt ook een [openbaar IP-voor voegsel](https://aka.ms/lbpublicipprefix) rechtstreeks met een uitgaande regel gebruiken. 
+U kunt ook een [openbaar IP-voor voegsel](./load-balancer-outbound-connections.md#outboundrules) rechtstreeks met een uitgaande regel gebruiken. 
 
 Een openbaar IP-voor voegsel verg root de schaal van uw implementatie. Het voor voegsel kan worden toegevoegd aan de lijst met toegestane stromen die afkomstig zijn van uw Azure-resources. U kunt een front-end-IP-configuratie in de load balancer configureren om te verwijzen naar een openbaar IP-adres voorvoegsel.  
 
@@ -74,7 +74,7 @@ Uitgaande regels bieden een configuratie parameter voor het beheren van de uitga
 
 Het standaard gedrag van load balancer is om de stroom op de achtergrond neer te zetten wanneer de uitgaande time-out voor inactiviteit is bereikt. De `enableTCPReset` para meter maakt een voorspelbaar toepassings gedrag en-beheer mogelijk. De para meter bepaalt of bidirectionele TCP Reset (TCP RST) moet worden verzonden bij de time-out van de uitgaande time-out voor inactiviteit. 
 
-[TCP Reset controleren bij time-out voor inactiviteit](https://aka.ms/lbtcpreset) voor meer informatie over de beschik baarheid van regio's.
+[TCP Reset controleren bij time-out voor inactiviteit](./load-balancer-tcp-reset.md) voor meer informatie over de beschik baarheid van regio's.
 
 ## <a name="securing-and-controlling-outbound-connectivity-explicitly"></a><a name="preventoutbound"></a>De uitgaande connectiviteit expliciet beveiligen en beheren
 
@@ -91,9 +91,9 @@ De bewerking voor het configureren van een uitgaande regel mislukt als u probeer
 >[!IMPORTANT]
 > De virtuele machine heeft geen uitgaande verbinding als u deze para meter instelt op True en geen uitgaande regel hebt om uitgaande connectiviteit te definiëren.  Sommige bewerkingen van uw virtuele machine of uw toepassing kunnen afhankelijk zijn van een uitgaande verbinding. Zorg ervoor dat u bekend bent met de afhankelijkheden van uw scenario en dat dit gevolgen heeft voor het maken van deze wijziging.
 
-Soms is het niet wenselijk dat een virtuele machine een uitgaande stroom maakt. Er is mogelijk een vereiste voor het beheren van welke doelen uitgaande stromen worden ontvangen of die doelen beginnen met binnenkomende stromen. Gebruik [netwerk beveiligings groepen](../virtual-network/security-overview.md) om de doelen te beheren die de virtuele machine bereikt. Gebruik Nsg's om te beheren welke open bare bestemmingen binnenkomende stromen starten.
+Soms is het niet wenselijk dat een virtuele machine een uitgaande stroom maakt. Er is mogelijk een vereiste voor het beheren van welke doelen uitgaande stromen worden ontvangen of die doelen beginnen met binnenkomende stromen. Gebruik [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md) om de doelen te beheren die de virtuele machine bereikt. Gebruik Nsg's om te beheren welke open bare bestemmingen binnenkomende stromen starten.
 
-Wanneer u een NSG toepast op een virtuele machine met taak verdeling, moet u rekening houden met de [service Tags](../virtual-network/security-overview.md#service-tags) en de [standaard beveiligings regels](../virtual-network/security-overview.md#default-security-rules). 
+Wanneer u een NSG toepast op een virtuele machine met taak verdeling, moet u rekening houden met de [service Tags](../virtual-network/network-security-groups-overview.md#service-tags) en de [standaard beveiligings regels](../virtual-network/network-security-groups-overview.md#default-security-rules). 
 
 Zorg ervoor dat de VM Health probe-aanvragen van Azure Load Balancer kan ontvangen.
 
@@ -159,7 +159,7 @@ Load Balancer geeft [SNAT](load-balancer-outbound-connections.md)-poorten in vee
 Als u meer [SNAT](load-balancer-outbound-connections.md)-poorten probeert te geven dan beschikbaar zijn op basis van het aantal open bare IP-adressen, wordt de configuratie bewerking geweigerd. Als u bijvoorbeeld 10.000 poorten per VM geeft en zeven Vm's in een back-end-pool een enkel openbaar IP-adres delen, wordt de configuratie geweigerd. Zeven vermenigvuldigd met 10.000 overschrijdt de limiet voor 64.000 poorten. Voeg meer open bare IP-adressen toe aan de front-end van de regel voor uitgaande verbindingen om het scenario in te scha kelen. 
 
 
-Keer terug naar de [standaard poort toewijzing](load-balancer-outbound-connections.md#preallocatedports) door 0 op te geven voor het aantal poorten. De eerste 50 VM-exemplaren krijgen 1024 poorten, 51-100 VM-instanties krijgen 512 tot Maxi maal het maximum aantal exemplaren. Zie [toewijzings tabel voor SNAT-poorten](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#preallocatedports)voor meer informatie over de standaard toewijzing van de SNAT-poort.
+Keer terug naar de [standaard poort toewijzing](load-balancer-outbound-connections.md#preallocatedports) door 0 op te geven voor het aantal poorten. De eerste 50 VM-exemplaren krijgen 1024 poorten, 51-100 VM-instanties krijgen 512 tot Maxi maal het maximum aantal exemplaren. Zie [toewijzings tabel voor SNAT-poorten](./load-balancer-outbound-connections.md#preallocatedports)voor meer informatie over de standaard toewijzing van de SNAT-poort.
 
 
 ### <a name="scenario-3-enable-outbound-only"></a><a name="scenario3out"></a>Scenario 3: alleen uitgaand verkeer inschakelen
@@ -211,7 +211,7 @@ Gebruik een voor voegsel of openbaar IP-adres om [SNAT](load-balancer-outbound-c
 Er is geen uitgaande verbinding beschikbaar voor een interne standaard load balancer tot deze expliciet is gedeclareerd via open bare Ip's op exemplaar niveau of Virtual Network NAT of door de back-endadresgroep te koppelen aan een load balancer configuratie met uitgaand verkeer. 
 
 
-Zie voor meer informatie [Load Balancer configuratie voor alleen-uitgaand verkeer](https://docs.microsoft.com/azure/load-balancer/egress-only).
+Zie voor meer informatie [Load Balancer configuratie voor alleen-uitgaand verkeer](./egress-only.md).
 
 
 
@@ -253,4 +253,3 @@ Wanneer alleen binnenkomende NAT-regels worden gebruikt, wordt er geen uitgaand 
 
 - Meer informatie over [Azure Standard Load Balancer](load-balancer-overview.md)
 - Bekijk onze [Veelgestelde vragen over Azure Load Balancer](load-balancer-faqs.md)
-

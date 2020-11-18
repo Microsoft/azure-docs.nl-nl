@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: allensu
-ms.openlocfilehash: 97fdf55032e92585d723b54e21079098cdc19636
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 75226f92995794221635ced7ee0e285ac824b6e2
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92735916"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696860"
 ---
 # <a name="create-a-public-load-balancer-with-ipv6-using-azure-cli"></a>Een open bare load balancer met IPv6 maken met behulp van Azure CLI
 
@@ -48,17 +48,17 @@ De volgende stappen laten zien hoe u een open bare load balancer maakt met behul
 
 Als u een load balancer wilt implementeren, moet u de volgende objecten maken en configureren:
 
-* **Front-end-IP-configuratie** : bevat open bare IP-adressen voor binnenkomend netwerk verkeer.
-* **Back-end-adres groep** : bevat netwerk interfaces (nic's) voor de virtuele machines om netwerk verkeer van de Load Balancer te ontvangen.
-* Taakverdelings **regels** : bevat regels die een open bare poort op de Load Balancer toewijzen aan een poort in de back-end-adres groep.
-* **Binnenkomende NAT-regels** : bevat Network Address Translation (NAT) regels die een open bare poort op de Load Balancer toewijzen aan een poort voor een specifieke virtuele machine in de back-end-adres groep.
-* **Tests** : bevat status tests die worden gebruikt om de beschik baarheid van exemplaren van virtuele machines in de back-end-adres groep te controleren.
+* **Front-end-IP-configuratie**: bevat open bare IP-adressen voor binnenkomend netwerk verkeer.
+* **Back-end-adres groep**: bevat netwerk interfaces (nic's) voor de virtuele machines om netwerk verkeer van de Load Balancer te ontvangen.
+* Taakverdelings **regels**: bevat regels die een open bare poort op de Load Balancer toewijzen aan een poort in de back-end-adres groep.
+* **Binnenkomende NAT-regels**: bevat Network Address Translation (NAT) regels die een open bare poort op de Load Balancer toewijzen aan een poort voor een specifieke virtuele machine in de back-end-adres groep.
+* **Tests**: bevat status tests die worden gebruikt om de beschik baarheid van exemplaren van virtuele machines in de back-end-adres groep te controleren.
 
 ## <a name="set-up-azure-cli"></a>Azure CLI instellen
 
 In dit voor beeld voert u de Azure CLI-hulpprogram ma's uit in een Power shell-opdracht venster. Als u de Lees baarheid en hergebruik wilt verbeteren, gebruikt u de script mogelijkheden van Power shell en niet de Azure PowerShell-cmdlets.
 
-1. [Installeer en configureer de Azure cli](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) door de stappen in het gekoppelde artikel te volgen en u aan te melden bij uw Azure-account.
+1. [Installeer en configureer de Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest) door de stappen in het gekoppelde artikel te volgen en u aan te melden bij uw Azure-account.
 
 2. Power shell-variabelen instellen voor gebruik met de Azure CLI-opdrachten:
 
@@ -122,7 +122,7 @@ In dit voor beeld voert u de Azure CLI-hulpprogram ma's uit in een Power shell-o
     > [!IMPORTANT]
     > De load balancer gebruikt het domein label van het open bare IP-adres als Fully Qualified Domain Name (FQDN). Dit is een wijziging ten opzichte van de klassieke implementatie, waarbij de naam van de Cloud service wordt gebruikt als load balancer FQDN.
     >
-    > In dit voor beeld is de FQDN *contoso09152016.southcentralus.cloudapp.Azure.com* .
+    > In dit voor beeld is de FQDN *contoso09152016.southcentralus.cloudapp.Azure.com*.
 
 ## <a name="create-front-end-and-back-end-pools"></a>Front-end-en back-end-Pools maken
 
@@ -284,7 +284,7 @@ Als u Vm's wilt maken, moet u een opslag account hebben. Voor taak verdeling moe
     ```
 
     > [!WARNING]
-    > In dit voor beeld worden de gebruikers naam en het wacht woord voor de virtuele machines in een lees bare tekst gebruikt. Zorg ervoor dat u deze referenties in een lees bare tekst gebruikt. Zie de cmdlet voor een veiligere methode voor het afhandelen van referenties in Power shell [`Get-Credential`](https://technet.microsoft.com/library/hh849815.aspx) .
+    > In dit voor beeld worden de gebruikers naam en het wacht woord voor de virtuele machines in een lees bare tekst gebruikt. Zorg ervoor dat u deze referenties in een lees bare tekst gebruikt. Zie de cmdlet voor een veiligere methode voor het afhandelen van referenties in Power shell [`Get-Credential`](/powershell/module/microsoft.powershell.security/get-credential) .
 
 2. De beschikbaarheidsset maken:
 
@@ -299,5 +299,3 @@ Als u Vm's wilt maken, moet u een opslag account hebben. Voor taak verdeling moe
 
     az vm create --resource-group $rgname --name $vm2Name --image $imageurn --admin-username $vmUserName --admin-password $mySecurePassword --nics $nic2Id --location $location --availability-set $availabilitySetName --size "Standard_A1" 
     ```
-
-

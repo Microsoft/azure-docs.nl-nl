@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/27/2020
 ms.author: errobin
-ms.openlocfilehash: d57dfd0a496e71c1f0e6ddea839723da35bc5f76
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 63b91194c9ffb10fd8f4c5f1341eaf74bc81f5e1
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686239"
+ms.locfileid: "94694878"
 ---
 # <a name="using-insights-to-monitor-and-configure-your-azure-load-balancer"></a>Inzichten gebruiken om uw Azure Load Balancer te controleren en te configureren
 
@@ -26,7 +26,7 @@ Via Azure Monitor voor netwerken hebt u functionele afhankelijkheids visualisati
 >Let op: deze functie is beschikbaar als preview-versie en de weer gave van de functionele afhankelijkheid en het vooraf geconfigureerde dash board kunnen worden gewijzigd om deze ervaring te verbeteren
 
 >[!IMPORTANT]
->De Standard Load Balancer is vereist voor het weer geven van metrische gegevens uit de naam ruimte Load Balancer in het vooraf geconfigureerde gegevens dash board. U kunt de metrische gegevens van de virtuele machine, de VM-schaalset en de verbindings monitor echter wel bekijken, maar u wordt aangeraden [om een upgrade uit te voeren naar Standard](https://docs.microsoft.com/azure/load-balancer/upgrade-basic-standard) voor productie werkbelastingen om te profiteren van de robuuste set load balancer metrische gegevens.
+>De Standard Load Balancer is vereist voor het weer geven van metrische gegevens uit de naam ruimte Load Balancer in het vooraf geconfigureerde gegevens dash board. U kunt de metrische gegevens van de virtuele machine, de VM-schaalset en de verbindings monitor echter wel bekijken, maar u wordt aangeraden [om een upgrade uit te voeren naar Standard](./upgrade-basic-standard.md) voor productie werkbelastingen om te profiteren van de robuuste set load balancer metrische gegevens.
 
 ## <a name="functional-dependency-view"></a>Weer gave functionele afhankelijkheden
 
@@ -40,7 +40,7 @@ Voor standaard load balancers worden uw back-endservers met een kleur gecodeerd 
 
 ## <a name="metrics-dashboard"></a>Dashboard met metrische gegevens
 
-Op de Blade inzichten van uw Load Balancer kunt u gedetailleerdere metrische gegevens selecteren om een vooraf geconfigureerde [Azure monitor werkmap](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview) weer te geven met metrische gegevens die relevant zijn voor specifieke aspecten van uw Load Balancer. In dit dash board worden de Load Balancer status en koppelingen naar de relevante documentatie boven aan de pagina weer gegeven.
+Op de Blade inzichten van uw Load Balancer kunt u gedetailleerdere metrische gegevens selecteren om een vooraf geconfigureerde [Azure monitor werkmap](../azure-monitor/platform/workbooks-overview.md) weer te geven met metrische gegevens die relevant zijn voor specifieke aspecten van uw Load Balancer. In dit dash board worden de Load Balancer status en koppelingen naar de relevante documentatie boven aan de pagina weer gegeven.
 
 In eerste instantie wordt het tabblad Overzicht weer gegeven. U kunt door de beschik bare tabbladen navigeren die visuele elementen bevatten die relevant zijn voor een specifiek aspect van uw Load Balancer. Expliciete richt lijnen zijn beschikbaar in het dash board onder aan elk tabblad.
 
@@ -68,16 +68,16 @@ Op het tabblad gegevens doorvoer kunt u de inkomende en uitgaande door Voer cont
 ### <a name="flow-distribution"></a>Stroomdistributie
 Het tabblad stroom distributie helpt u bij het visualiseren en beheren van het aantal stromen dat uw back-end-exemplaren ontvangen en produceren. Hier ziet u de frequentie van het maken van de stroom en het aantal stromen voor binnenkomend en uitgaand verkeer, evenals het netwerk verkeer dat elke VM en het exemplaar van de virtuele-machine schaalset wordt ontvangen. 
 
-Met deze weer gaven kunt u feedback geven over of uw Load Balancer configuratie-of verkeers patronen leiden tot een onevenwichtigd verkeer. Als u bijvoorbeeld sessie affiniteit hebt geconfigureerd en één client maakt een onevenredig aantal aanvragen. U kunt er ook voor zorgen dat u de [limiet per VM-stroom](https://docs.microsoft.com/azure/virtual-network/virtual-machine-network-throughput#flow-limits-and-recommendations) voor uw computer grootte nadert.
+Met deze weer gaven kunt u feedback geven over of uw Load Balancer configuratie-of verkeers patronen leiden tot een onevenwichtigd verkeer. Als u bijvoorbeeld sessie affiniteit hebt geconfigureerd en één client maakt een onevenredig aantal aanvragen. U kunt er ook voor zorgen dat u de [limiet per VM-stroom](../virtual-network/virtual-machine-network-throughput.md#flow-limits-and-recommendations) voor uw computer grootte nadert.
 
 ### <a name="connection-monitors"></a>Verbindingscontroles
-Op het tabblad verbindings monitors wordt de vertraging van de retour meter weer gegeven op een globale kaart voor alle [verbindings monitors](https://docs.microsoft.com/azure/network-watcher/connection-monitor)  die u hebt geconfigureerd. Deze visuals bieden nuttige informatie voor services met strikte latentie vereisten. Om aan uw vereisten te voldoen, moet u mogelijk aanvullende regionale implementaties toevoegen of overschakelen naar een [ander regionaal taakverdelings](https://docs.microsoft.com/azure/load-balancer/cross-region-overview) model
+Op het tabblad verbindings monitors wordt de vertraging van de retour meter weer gegeven op een globale kaart voor alle [verbindings monitors](../network-watcher/connection-monitor.md)  die u hebt geconfigureerd. Deze visuals bieden nuttige informatie voor services met strikte latentie vereisten. Om aan uw vereisten te voldoen, moet u mogelijk aanvullende regionale implementaties toevoegen of overschakelen naar een [ander regionaal taakverdelings](./cross-region-overview.md) model
 
 ### <a name="metric-definitions"></a>Metrische definities
-Het tabblad metrische definities bevat alle informatie die wordt weer gegeven in het [artikel multi-dimensionale metrische](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-diagnostics#multi-dimensional-metrics)gegevens.
+Het tabblad metrische definities bevat alle informatie die wordt weer gegeven in het [artikel multi-dimensionale metrische](./load-balancer-standard-diagnostics.md#multi-dimensional-metrics)gegevens.
 
 ## <a name="next-steps"></a>Volgende stappen
 * Bekijk het dash board en geef feedback via de onderstaande koppeling als er iets kan worden verbeterd
-* [Raadpleeg de documentatie over metrische gegevens om te zien hoe elke metriek wordt berekend](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-diagnostics#multi-dimensional-metrics)
-* [Verbindings monitors voor uw Load Balancer maken](https://docs.microsoft.com/azure/network-watcher/connection-monitor)
-* [Maak uw eigen werkmappen](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview), u kunt inspireren door te klikken op de knop bewerken in het dash board gedetailleerde metrische gegevens
+* [Raadpleeg de documentatie over metrische gegevens om te zien hoe elke metriek wordt berekend](./load-balancer-standard-diagnostics.md#multi-dimensional-metrics)
+* [Verbindings monitors voor uw Load Balancer maken](../network-watcher/connection-monitor.md)
+* [Maak uw eigen werkmappen](../azure-monitor/platform/workbooks-overview.md), u kunt inspireren door te klikken op de knop bewerken in het dash board gedetailleerde metrische gegevens

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: 82763842e6145b3883c46bcb9ddb45b7836c3cf2
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 605692d15a08246dd574b0724a550b4543a237a3
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241817"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695517"
 ---
 # <a name="load-balancer-health-probes"></a>Status van Load Balancer testen
 
@@ -92,7 +92,7 @@ De beschik bare protocollen zijn afhankelijk van de gebruikte Load Balancer SKU:
 
 || TCP | HTTP | HTTPS |
 | --- | --- | --- | --- |
-| **Standaard-SKU** |    &#9989; |   &#9989; |   &#9989; |
+| **Standard-SKU** |    &#9989; |   &#9989; |   &#9989; |
 | **Basis-SKU** |   &#9989; |   &#9989; | &#10060; |
 
 ### <a name="tcp-probe"></a><a name="tcpprobe"></a> TCP-test
@@ -121,7 +121,7 @@ Hieronder ziet u hoe u dit type test configuratie kunt uitdrukken in een resourc
 ### <a name="http--https-probe"></a><a name="httpprobe"></a><a name="httpsprobe"></a>Http/https-test
 
 >[!NOTE]
->De HTTPS-test is alleen beschikbaar voor [Standard Load Balancer](load-balancer-standard-overview.md).
+>De HTTPS-test is alleen beschikbaar voor [Standard Load Balancer](./load-balancer-overview.md).
 
 HTTP-en HTTPS-tests bouwen op de TCP-test en geven een HTTP-GET met het opgegeven pad. Beide tests ondersteunen relatieve paden voor HTTP GET. HTTPS-tests zijn hetzelfde als HTTP-tests met toevoeging van een Transport Layer Security (TLS, voorheen bekend als SSL) wrapper. De status test is gemarkeerd wanneer het exemplaar reageert met een HTTP-status 200 binnen de time-outperiode.  Met de status test wordt standaard elke 15 seconden geprobeerd om de geconfigureerde poort voor Health probe te controleren. Het minimale test interval is 5 seconden. De totale duur van alle intervallen mag niet langer zijn dan 120 seconden.
 
@@ -169,7 +169,7 @@ Cloud service rollen (werk rollen en webrollen) gebruiken standaard een gast age
 
 Een gast agent test is een controle van de gast agent in de virtuele machine. Het luistert en reageert alleen met een HTTP 200 OK-antwoord wanneer het exemplaar de status gereed heeft. (Andere statussen zijn bezet, recycling of stoppen.)
 
-Zie voor meer informatie [het service definitie bestand (csdef) configureren voor status controles](https://msdn.microsoft.com/library/azure/ee758710.aspx) of [Ga aan de slag door een open bare Load Balancer voor Cloud Services te maken](https://docs.microsoft.com/azure/load-balancer/load-balancer-get-started-internet-classic-cloud#check-load-balancer-health-status-for-cloud-services).
+Zie voor meer informatie [het service definitie bestand (csdef) configureren voor status controles](/previous-versions/azure/reference/ee758710(v=azure.100)) of [Ga aan de slag door een open bare Load Balancer voor Cloud Services te maken](/previous-versions/azure/load-balancer/load-balancer-get-started-internet-classic-cloud#check-load-balancer-health-status-for-cloud-services).
 
 Als de gast agent niet reageert met HTTP 200 OK, markeert het load balancer het exemplaar als niet meer reageert. Vervolgens stopt het verzenden van stromen naar dat exemplaar. De load balancer blijft het exemplaar controleren. 
 
@@ -215,7 +215,7 @@ Als alle tests voor alle exemplaren in een back-end-groep mislukken, worden best
 
 Load Balancer gebruikt een gedistribueerde probing-service voor het interne status model. De probing-service bevindt zich op elke host waarop Vm's en op aanvraag kunnen worden geprogrammeerd om status controles te genereren volgens de configuratie van de klant. Het status test verkeer is direct tussen de probing-service die de status test en de virtuele machine van de klant genereert. Alle Load Balancer status tests zijn afkomstig van het IP-adres 168.63.129.16 als bron.  U kunt IP-adres ruimte gebruiken binnen een VNet dat geen RFC1918 ruimte heeft.  Met een wereld wijd gereserveerd IP-adres van micro soft verkleint u de kans op een IP-adres conflict met de IP-adres ruimte die u in het VNet gebruikt.  Dit IP-adres is hetzelfde in alle regio's en wordt niet gewijzigd en vormt geen beveiligings risico omdat alleen het interne onderdeel van het Azure-platform een pakket kan bron van dit IP-adres. 
 
-Het AzureLoadBalancer-service label identificeert dit bron-IP-adres in uw [netwerk beveiligings groepen](../virtual-network/security-overview.md) en staat standaard het verkeer van de status test toe.
+Het AzureLoadBalancer-service label identificeert dit bron-IP-adres in uw [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md) en staat standaard het verkeer van de status test toe.
 
 Naast Load Balancer status tests [gebruiken de volgende bewerkingen dit IP-adres](../virtual-network/what-is-ip-address-168-63-129-16.md):
 
@@ -233,15 +233,15 @@ Soms kan het nuttig zijn dat uw toepassing een reactie van een status test gener
 
 Voor UDP-taak verdeling moet u een aangepast Health probe-signaal genereren op basis van het back-end-eind punt en ofwel een TCP-, HTTP-of HTTPS-status test gebruiken als doel voor de bijbehorende listener om de status van uw UDP-toepassing weer te geven.
 
-Bij gebruik van de taakverdelings [regels voor ha-poorten](load-balancer-ha-ports-overview.md) met [Standard Load Balancer](load-balancer-standard-overview.md)worden alle poorten gelijkmatig verdeeld en de status van het hele exemplaar moet overeenkomen met een enkel antwoord voor de status test.
+Bij gebruik van de taakverdelings [regels voor ha-poorten](load-balancer-ha-ports-overview.md) met [Standard Load Balancer](./load-balancer-overview.md)worden alle poorten gelijkmatig verdeeld en de status van het hele exemplaar moet overeenkomen met een enkel antwoord voor de status test.
 
 Vertaal of proxy een status test niet via het exemplaar dat de status test naar een ander exemplaar in uw VNet ontvangt, aangezien deze configuratie kan leiden tot het trapsgewijs uitvallen van fouten in uw scenario.  Bekijk het volgende scenario: een set apparaten van derden wordt geïmplementeerd in de back-endadresgroep van een Load Balancer bron om te voorzien in schaal en redundantie voor de apparaten en de status test is geconfigureerd om een poort te testen die de apparaat-proxy's van derden of naar andere virtuele machines achter het apparaat verstuurt.  Als u de poort die u gebruikt om te vertalen of proxy aanvragen van de andere virtuele machines achter het apparaat, wilt testen, zal elke test reactie van één virtuele machine achter het apparaat het apparaat zelf markeren als inactief. Deze configuratie kan leiden tot een trapsgewijze uitval van het hele toepassings scenario als gevolg van één back-end-eind punt achter het apparaat.  De trigger kan een onregelmatige test fout veroorzaken, waardoor Load Balancer de oorspronkelijke bestemming (de instantie van het apparaat) aanduidt en op zijn beurt uw volledige toepassings scenario kunt uitschakelen. Test in plaats daarvan de status van het apparaat zelf. De selectie van de test om het status signaal te bepalen is een belang rijke overweging voor NVA-scenario's (Network Virtual Appliance) en u moet de leverancier van uw toepassing raadplegen voor wat het juiste gezondheids signaal is voor dergelijke scenario's.
 
 Als u het [bron-IP-adres](#probesource) van de test in uw firewall beleid niet toestaat, zal de status test mislukken omdat het niet mogelijk is om uw exemplaar te bereiken.  Load Balancer markeert op zijn beurt uw instantie als gevolg van een fout in de status test.  Deze onjuiste configuratie kan ertoe leiden dat het toepassings scenario met taak verdeling mislukt.
 
-Voor de status test van Load Balancer om uw exemplaar te markeren, **moet** u dit IP-adres toestaan in alle Azure- [netwerk beveiligings groepen](../virtual-network/security-overview.md) en lokaal firewall beleid.  Standaard bevat elke netwerk beveiligings groep de [service label](../virtual-network/security-overview.md#service-tags) AzureLoadBalancer om verkeer met de status test toe te staan.
+Voor de status test van Load Balancer om uw exemplaar te markeren, **moet** u dit IP-adres toestaan in alle Azure- [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md) en lokaal firewall beleid.  Standaard bevat elke netwerk beveiligings groep de [service label](../virtual-network/network-security-groups-overview.md#service-tags) AzureLoadBalancer om verkeer met de status test toe te staan.
 
-Als u een mislukte status test wilt testen of een afzonderlijk exemplaar wilt markeren, kunt u een [netwerk beveiligings groepen](../virtual-network/security-overview.md) gebruiken om de status test (doel poort of [bron-IP](#probesource)) expliciet te blok keren en de fout van een test te simuleren.
+Als u een mislukte status test wilt testen of een afzonderlijk exemplaar wilt markeren, kunt u een [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md) gebruiken om de status test (doel poort of [bron-IP](#probesource)) expliciet te blok keren en de fout van een test te simuleren.
 
 Configureer uw VNet niet met het IP-adres bereik van micro soft dat 168.63.129.16 bevat.  Dergelijke configuraties conflicteren met het IP-adres van de status test en kunnen ertoe leiden dat uw scenario mislukt.
 
@@ -251,7 +251,7 @@ Schakel TCP- [tijds tempels](https://tools.ietf.org/html/rfc1323)niet in.  Het i
 
 ## <a name="monitoring"></a>Bewaking
 
-Zowel open bare als interne [Standard Load Balancer](load-balancer-standard-overview.md) geven per eind punt en back-end-eindpunt status de waarde met meerdere dimensies via Azure monitor. Deze metrische gegevens kunnen worden gebruikt door andere Azure-Services of partner toepassingen. 
+Zowel open bare als interne [Standard Load Balancer](./load-balancer-overview.md) geven per eind punt en back-end-eindpunt status de waarde met meerdere dimensies via Azure monitor. Deze metrische gegevens kunnen worden gebruikt door andere Azure-Services of partner toepassingen. 
 
 Met Basic Public Load Balancer wordt de status van de status test per back-end-groep weer gegeven via Azure Monitor-Logboeken.  Azure Monitor-logboeken zijn niet beschikbaar voor interne load balancers van de Basic.  U kunt [Azure monitor logboeken](load-balancer-monitor-log.md) gebruiken om de status van de open bare Load Balancer test te controleren en het aantal tests te testen. Logboek registratie kan worden gebruikt met Power BI of Azure Operational Insights om statistische gegevens over load balancer status te bieden.
 
@@ -262,7 +262,7 @@ Met Basic Public Load Balancer wordt de status van de status test per back-end-g
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [Standard Load Balancer](load-balancer-standard-overview.md)
+- Meer informatie over [Standard Load Balancer](./load-balancer-overview.md)
 - [Aan de slag met het maken van een open bare load balancer in Resource Manager met behulp van Power shell](quickstart-load-balancer-standard-public-powershell.md)
-- [REST API voor status tests](https://docs.microsoft.com/rest/api/load-balancer/loadbalancerprobes/)
+- [REST API voor status tests](/rest/api/load-balancer/loadbalancerprobes/)
 - Nieuwe Health probe-vaardig heden aanvragen met [de UserVoice van Load Balancer](https://aka.ms/lbuservoice)

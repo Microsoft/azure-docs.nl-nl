@@ -3,12 +3,12 @@ title: Azure-toepassing Insights automatiseren met Power shell | Microsoft Docs
 description: Het maken en beheren van resources, waarschuwingen en beschikbaarheids tests in Power shell automatiseren met behulp van een Azure Resource Manager sjabloon.
 ms.topic: conceptual
 ms.date: 05/02/2020
-ms.openlocfilehash: b5f3ba12fe8a730ce45e64b896ccc9c32b17b30c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4dabb29abe4530307ef5204659297f4675376605
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91760900"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94694534"
 ---
 #  <a name="manage-application-insights-resources-using-powershell"></a>Application Insights-resources beheren met Power shell
 
@@ -431,7 +431,6 @@ Voor het automatiseren van het maken van een andere bron, maakt u hand matig een
    
     Elke webtest heeft een bijbehorende waarschuwings regel, zodat u beide kunt kopiëren.
    
-    U kunt ook waarschuwingen over metrische gegevens toevoegen. [Metrische namen](powershell-alerts.md#metric-names).
 5. Voeg deze regel in elke resource in:
    
     `"apiVersion": "2015-05-01",`
@@ -470,7 +469,6 @@ Azure moet de resources in strikte volg orde instellen. Als u er zeker van wilt 
 Andere automatiserings artikelen:
 
 * [Maak een Application Insights resource](./create-new-resource.md#creating-a-resource-automatically) snelle methode zonder een sjabloon te gebruiken.
-* [Waarschuwingen instellen](powershell-alerts.md)
 * [Webtests maken](https://azure.microsoft.com/blog/creating-a-web-test-alert-programmatically-with-application-insights/)
 * [Diagnostische Azure-gegevens verzenden naar Application Insights](powershell-azure-diagnostics.md)
 * [Release aantekeningen maken](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)

@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: rogarana
-ms.openlocfilehash: 93dd73b5a9149474be771537f47b448c5c4d7d8f
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 0493b66928d944e251e6fe4abda4f1d3d8fb7e23
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629322"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695891"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-options-for-smb-access"></a>Overzicht van Azure Files verificatie opties op basis van een identiteit voor SMB-toegang
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -34,7 +34,7 @@ Het is handig om enkele belang rijke termen te begrijpen met betrekking tot Azur
 
 -   **Azure Active Directory (Azure AD)**
 
-    Azure Active Directory (Azure AD) is de multi tenant-Cloud Directory en identiteits beheer service van micro soft. Azure AD is een combi natie van basis Directory Services, Toegangs beheer voor toepassingen en identiteits beveiliging in één oplossing. Virtuele Windows-machines (Vm's) die lid zijn van Azure AD hebben toegang tot Azure-bestands shares met uw Azure AD-referenties. Zie [Wat is Azure Active Directory?](../../active-directory/fundamentals/active-directory-whatis.md) voor meer informatie.
+    Azure Active Directory (Azure AD) is de multi tenant-Cloud Directory en identiteits beheer service van micro soft. Azure AD is een combi natie van basis Directory Services, Toegangs beheer voor toepassingen en identiteits beveiliging in één oplossing. Virtuele Windows-machines (Vm's) die zijn toegevoegd aan Azure AD, hebben geen toegang tot Azure-bestands shares met uw Azure AD-referenties. Zie [Wat is Azure Active Directory?](../../active-directory/fundamentals/active-directory-whatis.md) voor meer informatie.
 
 -   **Azure Active Directory Domain Services (Azure AD DS)**
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/14/2020
 ms.author: errobin
-ms.openlocfilehash: 1af3ce7125d30ed0cb9b8ca6b3cb9322dc14c520
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dcfce06bb158888b56483a73ededd354c229a99b
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88855254"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696316"
 ---
 # <a name="troubleshoot-resource-health-frontend-and-backend-availability-issues"></a>Problemen met Beschik baarheid van resource, front-end en back-end oplossen 
 
@@ -52,7 +52,7 @@ Stel dat we de status van de status testen controleren en erachter komen dat all
   * Als dit NSG probleem het geval is, verplaatst u de bestaande regel voor toestaan of maakt u een nieuwe regel met hoge prioriteit om AzureLoadBalancer-verkeer toe te staan
 * Controleer uw besturings systeem. Zorg ervoor dat uw virtuele machines Luis teren op de test poort en controleer de firewall regels van het besturings systeem om ervoor te zorgen dat het test verkeer dat afkomstig is van IP-adres 168.63.129.16 niet wordt geblokkeerd.
   * U kunt de luisterende poorten controleren door netstat-a de Windows-opdracht prompt of netstat-l in een Linux-Terminal uit te voeren
-* Plaats geen firewall NVA VM in de back-endadresgroep van de load balancer, gebruik door de [gebruiker gedefinieerde routes](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#user-defined) om verkeer door te sturen naar back-end-instanties via de firewall
+* Plaats geen firewall NVA VM in de back-endadresgroep van de load balancer, gebruik door de [gebruiker gedefinieerde routes](../virtual-network/virtual-networks-udr-overview.md#user-defined) om verkeer door te sturen naar back-end-instanties via de firewall
 * Zorg ervoor dat u het juiste protocol gebruikt, als u HTTP gebruikt voor het testen van een poort luistert voor een niet-HTTP-toepassing, mislukt de test
 
 Als u deze controle lijst hebt door lopen en nog steeds problemen met de status test hebt gevonden, kunnen er zeldzame platform problemen optreden die van invloed zijn op de test service voor uw instanties. In dit geval heeft Azure uw vorige en er wordt een automatische waarschuwing naar ons team verzonden om alle platform problemen snel op te lossen.
@@ -61,5 +61,3 @@ Als u deze controle lijst hebt door lopen en nog steeds problemen met de status 
 
 * [Meer informatie over de Azure Load Balancer Health probe](load-balancer-custom-probe-overview.md)
 * [Meer informatie over Azure Load Balancer metrische gegevens](load-balancer-standard-diagnostics.md)
-
-

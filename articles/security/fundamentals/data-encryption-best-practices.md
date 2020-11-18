@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/09/2020
 ms.author: terrylan
-ms.openlocfilehash: 03035f0ddb2499fb922581855878bc061bf57946
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: c88a2cf33cf1149a17af4a82dcf2858822f0c6d4
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412847"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696146"
 ---
 # <a name="azure-data-security-and-encryption-best-practices"></a>Best practices voor gegevensbeveiliging en -versleuteling in Azure
 In dit artikel worden aanbevolen procedures beschreven voor gegevens beveiliging en-versleuteling.
@@ -45,22 +45,22 @@ Azure Key Vault is ontworpen ter ondersteuning van toepassings sleutels en gehei
 
 Hieronder vindt u aanbevolen beveiligings procedures voor het gebruik van Key Vault.
 
-**Best Practice** : Verleen gebruikers, groepen en toepassingen toegang tot een specifiek bereik.   
-**Details** : gebruik de vooraf gedefinieerde rollen van RBAC. Als u bijvoorbeeld toegang wilt verlenen aan een gebruiker voor het beheren van sleutel kluizen, wijst u de vooraf gedefinieerde rol [Key Vault bijdrager](../../role-based-access-control/built-in-roles.md) aan deze gebruiker toe aan een bepaald bereik. Het bereik in dit geval is een abonnement, een resource groep of alleen een specifieke sleutel kluis. Als de vooraf gedefinieerde rollen niet aan uw behoeften voldoen, kunt u [uw eigen rollen definiëren](../../role-based-access-control/custom-roles.md).
+**Best Practice**: Verleen gebruikers, groepen en toepassingen toegang tot een specifiek bereik.   
+**Details**: gebruik Azure RBAC vooraf gedefinieerde rollen. Als u bijvoorbeeld toegang wilt verlenen aan een gebruiker voor het beheren van sleutel kluizen, wijst u de vooraf gedefinieerde rol [Key Vault bijdrager](../../role-based-access-control/built-in-roles.md) aan deze gebruiker toe aan een bepaald bereik. Het bereik in dit geval is een abonnement, een resource groep of alleen een specifieke sleutel kluis. Als de vooraf gedefinieerde rollen niet aan uw behoeften voldoen, kunt u [uw eigen rollen definiëren](../../role-based-access-control/custom-roles.md).
 
-**Best Practice** : bepalen wat gebruikers toegang hebben tot.   
-**Details** : toegang tot een sleutel kluis wordt geregeld via twee afzonderlijke interfaces: beheer vlak en gegevensvlak. Het toegangsbeheer van de beheerlaag en het toegangsbeheer van de gegevenslaag werken onafhankelijk van elkaar.
+**Best Practice**: bepalen wat gebruikers toegang hebben tot.   
+**Details**: toegang tot een sleutel kluis wordt geregeld via twee afzonderlijke interfaces: beheer vlak en gegevensvlak. Het toegangsbeheer van de beheerlaag en het toegangsbeheer van de gegevenslaag werken onafhankelijk van elkaar.
 
-Gebruik RBAC om te bepalen waartoe gebruikers toegang hebben. Als u bijvoorbeeld een toepassing toegang wilt verlenen voor het gebruik van sleutels in een sleutel kluis, hoeft u alleen toegangs machtigingen voor het data-vlak te verlenen met behulp van het sleutel kluis toegangs beleid en is er geen beheer vlak toegang nodig voor deze toepassing. Als u echter wilt dat een gebruiker eigenschappen en tags van de kluis kan lezen, maar geen toegang heeft tot de sleutels, geheimen of certificaten, kunt u deze gebruiker leestoegang geven met RBAC. Hiervoor is geen toegang tot de gegevenslaag vereist.
+Gebruik Azure RBAC om te bepalen wat gebruikers toegang hebben tot. Als u bijvoorbeeld een toepassing toegang wilt verlenen voor het gebruik van sleutels in een sleutel kluis, hoeft u alleen toegangs machtigingen voor het data-vlak te verlenen met behulp van het sleutel kluis toegangs beleid en is er geen beheer vlak toegang nodig voor deze toepassing. Als u daarentegen wilt dat een gebruiker de eigenschappen van de kluis en tags kan lezen, maar geen toegang heeft tot sleutels, geheimen of certificaten, kunt u deze gebruiker lees toegang verlenen met behulp van Azure RBAC en is er geen toegang nodig tot het gegevens vlak.
 
-**Best Practice** : Sla certificaten op in uw sleutel kluis. Uw certificaten zijn van hoge waarde. In de verkeerde handen kan de beveiliging van uw toepassing of de beveiliging van uw gegevens worden aangetast.   
-**Details** : Azure Resource Manager kunt certificaten die zijn opgeslagen in azure Key Vault, veilig implementeren op virtuele Azure-machines wanneer de virtuele machines worden geïmplementeerd. Door het juiste toegangsbeleid voor de sleutelkluis in te stellen, bepaalt u ook wie toegang tot uw certificaat krijgt. Een ander voordeel is dat u al uw certificaten op één plek beheert in Azure Key Vault. Zie [certificaten implementeren op vm's van door de klant beheerde Key Vault](/archive/blogs/kv/updated-deploy-certificates-to-vms-from-customer-managed-key-vault) voor meer informatie.
+**Best Practice**: Sla certificaten op in uw sleutel kluis. Uw certificaten zijn van hoge waarde. In de verkeerde handen kan de beveiliging van uw toepassing of de beveiliging van uw gegevens worden aangetast.   
+**Details**: Azure Resource Manager kunt certificaten die zijn opgeslagen in azure Key Vault, veilig implementeren op virtuele Azure-machines wanneer de virtuele machines worden geïmplementeerd. Door het juiste toegangsbeleid voor de sleutelkluis in te stellen, bepaalt u ook wie toegang tot uw certificaat krijgt. Een ander voordeel is dat u al uw certificaten op één plek beheert in Azure Key Vault. Zie [certificaten implementeren op vm's van door de klant beheerde Key Vault](/archive/blogs/kv/updated-deploy-certificates-to-vms-from-customer-managed-key-vault) voor meer informatie.
 
-**Aanbevolen procedure** : Zorg ervoor dat u een verwijdering van sleutel kluizen of sleutel kluis objecten kunt herstellen.   
-**Details** : het verwijderen van sleutel kluizen of sleutel kluis objecten kan onbedoeld of schadelijk zijn. Schakel de beveiliging voor voorlopig verwijderen en opschonen van Key Vault in, met name voor sleutels die worden gebruikt voor het versleutelen van data-at-rest. Het verwijderen van deze sleutels is gelijk aan gegevensverlies, dus u kunt zo nodig verwijderde kluizen en kluisobjecten herstellen. Oefen Key Vault herstel bewerkingen regel matig uit.
+**Aanbevolen procedure**: Zorg ervoor dat u een verwijdering van sleutel kluizen of sleutel kluis objecten kunt herstellen.   
+**Details**: het verwijderen van sleutel kluizen of sleutel kluis objecten kan onbedoeld of schadelijk zijn. Schakel de beveiliging voor voorlopig verwijderen en opschonen van Key Vault in, met name voor sleutels die worden gebruikt voor het versleutelen van data-at-rest. Het verwijderen van deze sleutels is gelijk aan gegevensverlies, dus u kunt zo nodig verwijderde kluizen en kluisobjecten herstellen. Oefen Key Vault herstel bewerkingen regel matig uit.
 
 > [!NOTE]
-> Als een gebruiker inzendersmachtigingen (RBAC) heeft voor de beheerlaag van een sleutelkluis, kan deze gebruiker zichzelf toegang geven tot de gegevenslaag door toegangsbeleid voor de sleutelkluis in te stellen. We raden u aan om nauw keurig te bepalen wie inzenders toegang heeft tot uw sleutel kluizen, om ervoor te zorgen dat alleen geautoriseerde personen uw sleutel kluizen, sleutels, geheimen en certificaten kunnen openen en beheren.
+> Als een gebruiker Inzender machtigingen (Azure RBAC) heeft voor een sleutel kluis beheer vlak, kunnen ze zichzelf toegang verlenen tot het gegevens vlak door een beleid voor sleutel kluis toegang in te stellen. We raden u aan om nauw keurig te bepalen wie inzenders toegang heeft tot uw sleutel kluizen, om ervoor te zorgen dat alleen geautoriseerde personen uw sleutel kluizen, sleutels, geheimen en certificaten kunnen openen en beheren.
 >
 >
 
@@ -73,23 +73,23 @@ Gebruik RBAC om te bepalen waartoe gebruikers toegang hebben. Als u bijvoorbeeld
 
 Omdat de meeste aanvallen de eind gebruiker bedoelt, wordt het eind punt een van de primaire aanvallen. Een aanvaller die het eind punt verkrijgt, kan de referenties van de gebruiker gebruiken om toegang te krijgen tot de gegevens van de organisatie. De meeste endpoint-aanvallen profiteren van het feit dat gebruikers beheerders zijn op hun lokale werk station.
 
-**Best Practice** : gebruik een veilig beheer werkstation om gevoelige accounts, taken en gegevens te beveiligen.   
-**Details** : gebruik een [privileged Access-werk station](/windows-server/identity/securing-privileged-access/privileged-access-workstations) om de kwets baarheid op werk stations te verminderen. Deze beveiligde beheer werkstations kunnen u helpen een aantal van deze aanvallen te beperken en ervoor te zorgen dat uw gegevens veiliger zijn.
+**Best Practice**: gebruik een veilig beheer werkstation om gevoelige accounts, taken en gegevens te beveiligen.   
+**Details**: gebruik een [privileged Access-werk station](/windows-server/identity/securing-privileged-access/privileged-access-workstations) om de kwets baarheid op werk stations te verminderen. Deze beveiligde beheer werkstations kunnen u helpen een aantal van deze aanvallen te beperken en ervoor te zorgen dat uw gegevens veiliger zijn.
 
-**Aanbevolen procedure** : zorg voor Endpoint Protection.   
-**Details** : beveiligings beleid afdwingen op alle apparaten die worden gebruikt voor het verbruiken van gegevens, ongeacht de gegevens locatie (Cloud of on-premises).
+**Aanbevolen procedure**: zorg voor Endpoint Protection.   
+**Details**: beveiligings beleid afdwingen op alle apparaten die worden gebruikt voor het verbruiken van gegevens, ongeacht de gegevens locatie (Cloud of on-premises).
 
 ## <a name="protect-data-at-rest"></a>Data-at-rest beschermen
 
 [Gegevens versleuteling in rust](https://cloudblogs.microsoft.com/microsoftsecure/2015/09/10/cloud-security-controls-series-encrypting-data-at-rest/) is een verplichte stap voor gegevens privacy, naleving en data soevereiniteit.
 
-**Best Practice** : schijf versleuteling Toep assen om uw gegevens te beveiligen.   
-**Details** : gebruik [Azure Disk Encryption](./azure-disk-encryption-vms-vmss.md). IT-beheerders kunnen de VM-schijven van Windows en Linux IaaS versleutelen. Schijf versleuteling combineert de standaard Windows BitLocker-functie en de Linux DM-cryptografie functie om volume versleuteling voor het besturings systeem en de gegevens schijven te bieden.
+**Best Practice**: schijf versleuteling Toep assen om uw gegevens te beveiligen.   
+**Details**: gebruik [Azure Disk Encryption](./azure-disk-encryption-vms-vmss.md). IT-beheerders kunnen de VM-schijven van Windows en Linux IaaS versleutelen. Schijf versleuteling combineert de standaard Windows BitLocker-functie en de Linux DM-cryptografie functie om volume versleuteling voor het besturings systeem en de gegevens schijven te bieden.
 
 Azure Storage en Azure SQL Database gegevens op rest standaard versleutelen, en veel services bieden versleuteling als optie. U kunt Azure Key Vault gebruiken om controle te houden over de codes die toegang tot uw gegevens hebben en deze versleutelen. Zie [Azure resource providers Encryption model support voor meer informatie](encryption-atrest.md#azure-resource-providers-encryption-model-support).
 
-**Best practices** : versleuteling gebruiken om Risico's te verhelpen die betrekking hebben op onbevoegde toegang tot gegevens.   
-**Details** : Versleutel uw stations voordat u er gevoelige gegevens naar schrijft.
+**Best practices**: versleuteling gebruiken om Risico's te verhelpen die betrekking hebben op onbevoegde toegang tot gegevens.   
+**Details**: Versleutel uw stations voordat u er gevoelige gegevens naar schrijft.
 
 Organisaties die geen gegevens versleuteling afdwingen, worden meer blootgesteld aan problemen met gegevens vertrouwelijkheid. Niet-geautoriseerde of Rogue gebruikers kunnen bijvoorbeeld gegevens stelen in gemanipuleerde accounts of ongeoorloofde toegang krijgen tot gegevens die zijn gecodeerd met een lees bare indeling. Bedrijven moeten er ook voor zorgen dat ze regel maat zijn en de juiste beveiligings maatregelen gebruiken om hun gegevens beveiliging te verbeteren teneinde te voldoen aan de industriële voor Schriften.
 
@@ -101,17 +101,17 @@ U kunt gepaste beschermingsmaatregelen gebruiken, zoals HTTPS of VPN, voor gegev
 
 Hieronder vindt u aanbevolen procedures voor het gebruik van Azure VPN Gateway, SSL/TLS en HTTPS.
 
-**Best Practice** : veilige toegang vanaf meerdere werk stations op locatie naar een virtueel Azure-netwerk.   
-**Details** : gebruik [site-naar-site-VPN](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
+**Best Practice**: veilige toegang vanaf meerdere werk stations op locatie naar een virtueel Azure-netwerk.   
+**Details**: gebruik [site-naar-site-VPN](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
 
-**Best Practice** : veilige toegang vanaf een individueel werk station op locatie in een virtueel Azure-netwerk.   
-**Details** : gebruik [punt-naar-site-VPN](../../vpn-gateway/vpn-gateway-howto-point-to-site-classic-azure-portal.md).
+**Best Practice**: veilige toegang vanaf een individueel werk station op locatie in een virtueel Azure-netwerk.   
+**Details**: gebruik [punt-naar-site-VPN](../../vpn-gateway/vpn-gateway-howto-point-to-site-classic-azure-portal.md).
 
-**Aanbevolen procedure** : Verplaats grotere gegevens sets over een speciale WAN-verbinding met hoge snelheid.   
-**Details** : gebruik [ExpressRoute](../../expressroute/expressroute-introduction.md). Als u ervoor kiest om ExpressRoute te gebruiken, kunt u de gegevens ook in de toepassing zelf versleutelen door SSL/TLS of andere protocollen te gebruiken voor extra bescherming.
+**Aanbevolen procedure**: Verplaats grotere gegevens sets over een speciale WAN-verbinding met hoge snelheid.   
+**Details**: gebruik [ExpressRoute](../../expressroute/expressroute-introduction.md). Als u ervoor kiest om ExpressRoute te gebruiken, kunt u de gegevens ook in de toepassing zelf versleutelen door SSL/TLS of andere protocollen te gebruiken voor extra bescherming.
 
-**Best Practice** : interactie met Azure Storage via de Azure Portal.   
-**Details** : alle trans acties worden uitgevoerd via https. U kunt ook [opslag rest API](/rest/api/storageservices/) over https gebruiken om te communiceren met [Azure Storage](https://azure.microsoft.com/services/storage/).
+**Best Practice**: interactie met Azure Storage via de Azure Portal.   
+**Details**: alle trans acties worden uitgevoerd via https. U kunt ook [opslag rest API](/rest/api/storageservices/) over https gebruiken om te communiceren met [Azure Storage](https://azure.microsoft.com/services/storage/).
 
 Organisaties die gegevens in de overdracht niet kunnen [beveiligen, zijn](/previous-versions/office/skype-server-2010/gg195641(v=ocs.14))gevoeliger voor [man-in-the-middle-aanvallen en het overnemen van](/previous-versions/office/skype-server-2010/gg195821(v=ocs.14))sessies. Deze aanvallen kunnen de eerste stap zijn om toegang te krijgen tot vertrouwelijke gegevens.
 

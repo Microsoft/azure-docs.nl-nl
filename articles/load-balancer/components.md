@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/04/2020
 ms.author: allensu
-ms.openlocfilehash: d2cd05251e7bf1a0b0ebcd24e6d3d0202f277969
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: bf7a35e8cedbe62aafb29aa6d9dc8fcb42e90b2e
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685508"
+ms.locfileid: "94693763"
 ---
 # <a name="azure-load-balancer-components"></a>Azure Load Balancer-componenten
 
@@ -128,7 +128,7 @@ De Basic Load Balancer biedt geen ondersteuning voor regels voor uitgaand verkee
 
 ## <a name="limitations"></a>Beperkingen
 
-- Meer informatie over [limieten](https://aka.ms/lblimits) met betrekking tot Load Balancer 
+- Meer informatie over [limieten](../azure-resource-manager/management/azure-subscription-service-limits.md) met betrekking tot Load Balancer 
 - Voor deze specifieke TCP- of UDP-protocollen biedt Load Balancer taakverdeling en port forwarding. Taakverdelingsregels en inkomende NAT-regels bieden ondersteuning voor TCP en UDP, maar niet voor andere IP-protocollen, waaronder ICMP.
 - Uitgaande stroom van een back-end-VM naar een front-end van een interne Load Balancer mislukt.
 - Een regel voor een load balancer kan niet twee virtuele netwerken omvatten.  Front-ends en de bijbehorende back-endinstanties moeten zich in hetzelfde virtuele netwerk bevinden.  
@@ -138,12 +138,12 @@ De Basic Load Balancer biedt geen ondersteuning voor regels voor uitgaand verkee
 
 - Zie [Een openbare Standard Load Balancer maken](quickstart-load-balancer-standard-public-portal.md) om aan de slag te gaan met een Load Balancer.
 - Meer informatie over [Azure Load Balancer](load-balancer-overview.md).
-- Meer informatie over [Openbaar IP-adres](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address)
+- Meer informatie over [Openbaar IP-adres](../virtual-network/virtual-network-public-ip-address.md)
 - Meer informatie over [Privé-IP-adres](../virtual-network/private-ip-addresses.md)
 - Meer informatie over [Load Balancer van het type Standard en beschikbaarheidszones](load-balancer-standard-availability-zones.md).
 - Meer informatie over [Diagnostische tests van Standard Load Balancer](load-balancer-standard-diagnostics.md).
 - Meer informatie over [TCP opnieuw instellen bij inactiviteit](load-balancer-tcp-reset.md).
 - Meer informatie over [Standard Load Balancer met taakverdelingsregels voor poorten met hoge beschikbaarheid](load-balancer-ha-ports-overview.md).
-- Meer informatie over [Netwerkbeveiligingsgroepen](../virtual-network/security-overview.md).
-- Meer informatie over [Beperkingen van Load Balancer](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#load-balancer).
-- Meer informatie over het gebruik van [Port forwarding](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-port-forwarding-portal).
+- Meer informatie over [Netwerkbeveiligingsgroepen](../virtual-network/network-security-groups-overview.md).
+- Meer informatie over [Beperkingen van Load Balancer](../azure-resource-manager/management/azure-subscription-service-limits.md#load-balancer).
+- Meer informatie over het gebruik van [Port forwarding](./tutorial-load-balancer-port-forwarding-portal.md).

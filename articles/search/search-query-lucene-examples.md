@@ -9,12 +9,12 @@ tags: Lucene query analyzer syntax
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: 3d2172f76faecfc8347d7e0ca13fb506817f25de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae4dd8b82e40b46da52a1b1f396569fda1dfea2b
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91740697"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94694623"
 ---
 # <a name="use-the-full-lucene-search-syntax-advanced-queries-in-azure-cognitive-search"></a>Gebruik de ' volledige ' lucene-Zoek syntaxis (geavanceerde query's in azure Cognitive Search)
 
@@ -30,13 +30,13 @@ De Lucene-parser ondersteunt complexe query constructies, zoals query's met een 
 
 De volgende voor beelden maken gebruik van een NYC-zoek index voor taken die bestaat uit taken die beschikbaar zijn op basis van een gegevensset die wordt verschaft door de [stad New York open data](https://opendata.cityofnewyork.us/) Initiative. Deze gegevens mogen niet als actueel of volledig worden beschouwd. De index bevindt zich op een sandbox-service van micro soft. Dit betekent dat u geen Azure-abonnement of Azure Cognitive Search nodig hebt om deze query's uit te proberen.
 
-Wat u nodig hebt, is postman of een gelijkwaardig hulp programma voor het uitgeven van een HTTP-aanvraag op GET. Zie [verkennen met rest-clients](search-get-started-postman.md)voor meer informatie.
+Wat u nodig hebt, is postman of een gelijkwaardig hulp programma voor het uitgeven van een HTTP-aanvraag op GET. Zie [verkennen met rest-clients](search-get-started-rest.md)voor meer informatie.
 
 ### <a name="set-the-request-header"></a>De aanvraag header instellen
 
 1. Stel in de aanvraag header het **inhouds type** in op `application/json` .
 
-2. Voeg een **API-sleutel**toe en stel deze in op deze teken reeks: `252044BE3886FE4A8E3BAA4F595114BB` . Dit is een query sleutel voor de sandbox-zoek service die als host fungeert voor de index van de NYC-taken.
+2. Voeg een **API-sleutel** toe en stel deze in op deze teken reeks: `252044BE3886FE4A8E3BAA4F595114BB` . Dit is een query sleutel voor de sandbox-zoek service die als host fungeert voor de index van de NYC-taken.
 
 Nadat u de aanvraag header hebt opgegeven, kunt u deze opnieuw gebruiken voor alle query's in dit artikel, zodat alleen de teken reeks **Search =** wordt uitgewisseld. 
 
@@ -46,7 +46,7 @@ Nadat u de aanvraag header hebt opgegeven, kunt u deze opnieuw gebruiken voor al
 
 Request is een GET-opdracht die wordt gekoppeld aan een URL met het Azure Cognitive Search-eind punt en de zoek teken reeks.
 
-  :::image type="content" source="media/search-query-lucene-examples/postman-basic-url-request-elements.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/postman-basic-url-request-elements.png" alt-text="OPHALEN van header van Postman-aanvraag" border="false":::
 
 URL-samen stelling heeft de volgende elementen:
 
@@ -137,7 +137,7 @@ $select=business_title, posting_type&search=business_title:(senior NOT junior) A
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&$select=business_title&search=business_title:(senior NOT junior)
 ```
 
-  :::image type="content" source="media/search-query-lucene-examples/intrafieldfilter.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/intrafieldfilter.png" alt-text="Zoek expressie voor voorbeeld reacties van postman" border="false":::
 
 U kunt een zoek bewerking in een veld definiëren met de syntaxis **FieldName: searchExpression** , waarbij de zoek expressie één woord of een woord groep of een complexere expressie tussen haakjes kan zijn, optioneel met Booleaanse Opera tors. Enkele voor beelden zijn:
 
@@ -199,7 +199,7 @@ In deze query, voor taken met de term ' senior analist ', waarbij deze wordt ges
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:%22senior%20analyst%22~1
 ```
-  :::image type="content" source="media/search-query-lucene-examples/proximity-before.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/proximity-before.png" alt-text="Proximity-query" border="false":::
 
 Probeer het opnieuw met het verwijderen van de woorden tussen de term ' Senior Analyst '. U ziet dat er 8 documenten voor deze query worden geretourneerd, in tegens telling tot 10 voor de vorige query.
 
@@ -212,12 +212,12 @@ De term Boosting verwijst naar een hoger niveau voor een document als dit de ges
 
 ### <a name="full-urls"></a>Volledige Url's
 
-In deze ' before '-query kunt u zoeken naar taken met de term *computer analist* en ziet u dat er geen resultaten zijn met zowel de *computer* als de *analist*van de computer, maar *computers* zijn aan de bovenkant van de resultaten.
+In deze ' before '-query kunt u zoeken naar taken met de term *computer analist* en ziet u dat er geen resultaten zijn met zowel de *computer* als de *analist* van de computer, maar *computers* zijn aan de bovenkant van de resultaten.
 
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:computer%20analyst
 ```
-  :::image type="content" source="media/search-query-lucene-examples/termboostingbefore.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/termboostingbefore.png" alt-text="Duur verhogen vóór" border="false":::
 
 In de query ' na ' herhaalt u de zoek opdracht. deze tijd verhoogt de resultaten met de term *analist* over de term *computer* als beide woorden niet bestaan. 
 
@@ -226,7 +226,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 ```
 Een meer menselijke Lees bare versie van de bovenstaande query is `search=business_title:computer analyst^2` . Voor een bewaarde query `^2` wordt gecodeerd als `%5E2` , wat moeilijker te zien is.
 
-  :::image type="content" source="media/search-query-lucene-examples/termboostingafter.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/termboostingafter.png" alt-text="Duur verhogen na" border="false":::
 
 De term Boosting verschilt van Score profielen in die score profielen om bepaalde velden te stimuleren, in plaats van specifieke voor waarden. In het volgende voor beeld worden de verschillen toegelicht.
 
@@ -253,7 +253,7 @@ In deze query zoekt u naar taken met de term senior of Junior: `search=business_
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:/(Sen|Jun)ior/
 ```
 
-  :::image type="content" source="media/search-query-lucene-examples/regex.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/regex.png" alt-text="Regex-query" border="false":::
 
 > [!Note]
 > Regex-query's worden niet [geanalyseerd](./search-lucene-query-architecture.md#stage-2-lexical-analysis). De enige trans formatie die wordt uitgevoerd bij onvolledige query termen is lowercasing.
@@ -275,14 +275,14 @@ In deze query zoekt u naar taken die het voor voegsel ' PROG ' bevatten. Dit zij
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:prog*
 ```
-  :::image type="content" source="media/search-query-lucene-examples/wildcard.png" alt-text="Para meters ingesteld op de aanvraag header van postman" border="false":::
+  :::image type="content" source="media/search-query-lucene-examples/wildcard.png" alt-text="Joker teken query" border="false":::
 
 > [!Note]
 > Query's met Joker tekens worden niet [geanalyseerd](./search-lucene-query-architecture.md#stage-2-lexical-analysis). De enige trans formatie die wordt uitgevoerd bij onvolledige query termen is lowercasing.
 >
 
 ## <a name="next-steps"></a>Volgende stappen
-Geef de Lucene-query-parser op in uw code. In de volgende koppelingen wordt uitgelegd hoe u zoek query's instelt voor zowel .NET als de REST API. De koppelingen gebruiken de standaard eenvoudige syntaxis, zodat u moet Toep assen wat u in dit artikel hebt geleerd om het **query type**op te geven.
+Geef de Lucene-query-parser op in uw code. In de volgende koppelingen wordt uitgelegd hoe u zoek query's instelt voor zowel .NET als de REST API. De koppelingen gebruiken de standaard eenvoudige syntaxis, zodat u moet Toep assen wat u in dit artikel hebt geleerd om het **query type** op te geven.
 
 * [Query's uitvoeren op uw index met behulp van de .NET SDK](./search-get-started-dotnet.md)
 * [Query's uitvoeren op uw index met behulp van de REST API](./search-get-started-powershell.md)
@@ -291,5 +291,5 @@ Aanvullende Naslag informatie over syntaxis, query architectuur en voor beelden 
 
 + [Eenvoudige syntaxis query-voor beelden](search-query-simple-examples.md)
 + [Hoe zoeken in de volledige tekst werkt in Azure Cognitive Search](search-lucene-query-architecture.md)
-+ [Vereenvoudigde querysyntaxis](/rest/api/searchservice/simple-query-syntax-in-azure-search)
-+ [Volledige Lucene-querysyntaxis](/rest/api/searchservice/lucene-query-syntax-in-azure-search)
++ [Eenvoudige query syntaxis](/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Volledige lucene-query syntaxis](/rest/api/searchservice/lucene-query-syntax-in-azure-search)

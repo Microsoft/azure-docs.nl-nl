@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 8bdc9d588e89f498b973db7d1de299b0b26a3d02
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 974418a1b3c1e7fe93b2f6839c16169e5bd5abc5
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655728"
+ms.locfileid: "94696996"
 ---
 # <a name="step-3-validate-connectivity"></a>STAP 3: connectiviteit valideren
 
@@ -44,7 +44,7 @@ Houd er rekening mee dat het ongeveer 20 minuten kan duren voordat uw logboeken 
 1. Voer het volgende script uit op de logboek-doorstuur server (waarbij de werk ruimte-ID in plaats van de tijdelijke aanduiding wordt toegepast) om te controleren of de verbinding tussen uw beveiligings oplossing, de logboek-forwarder en Azure-Sentinel wordt gecontroleerd. Met dit script wordt gecontroleerd of de daemon op de juiste poorten luistert, of het door sturen correct is geconfigureerd en dat er geen communicatie tussen de daemon en de Log Analytics agent wordt geblokkeerd. Er worden ook beeldberichten TestCommonEventFormat verzonden om end-to-end-connectiviteit te controleren. <br>
 
     ```bash
-    sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]` 
+    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]` 
     ```
 
    - Mogelijk wordt er een bericht weer gegeven waarin u wordt gevraagd een opdracht uit te voeren om een probleem met de **toewijzing van het *computer* veld** te corrigeren. Zie de [uitleg bij het validatie script](#mapping-command) voor meer informatie.
@@ -245,6 +245,7 @@ Het validatie script voert de volgende controles uit:
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
+
 In dit document hebt u geleerd hoe u CEF-apparaten verbindt met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
 - Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](./tutorial-detect-threats-built-in.md).

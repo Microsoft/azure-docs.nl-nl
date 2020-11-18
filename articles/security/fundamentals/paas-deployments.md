@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: f5ae1f7f84293fdf23b680a407a5a168316f3163
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 0429eec2a84c22f3d998baa4dde4f543d4927f16
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94407985"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695330"
 ---
 # <a name="securing-paas-deployments"></a>PaaS-implementaties beveiligen
 
@@ -73,19 +73,19 @@ De principes en patronen voor de netwerk verbinding zijn tien tallen beschikbaar
 
 Hieronder volgen de aanbevolen procedures voor het beheren van het identiteits perimeter netwerk.
 
-**Best Practice** : Beveilig uw sleutels en referenties voor het beveiligen van uw PaaS-implementatie.   
-**Details** : verlies van sleutels en referenties is een veelvoorkomend probleem. U kunt een gecentraliseerde oplossing gebruiken waarbij sleutels en geheimen kunnen worden opgeslagen in Hardware Security modules (Hsm's). [Azure Key Vault](../../key-vault/general/overview.md) beveiligt uw sleutels en geheimen door verificatie sleutels, opslag account sleutels, gegevens versleutelings sleutels, pfx-bestanden en wacht woorden te versleutelen met behulp van sleutels die worden beveiligd door hsm's.
+**Best Practice**: Beveilig uw sleutels en referenties voor het beveiligen van uw PaaS-implementatie.   
+**Details**: verlies van sleutels en referenties is een veelvoorkomend probleem. U kunt een gecentraliseerde oplossing gebruiken waarbij sleutels en geheimen kunnen worden opgeslagen in Hardware Security modules (Hsm's). [Azure Key Vault](../../key-vault/general/overview.md) beveiligt uw sleutels en geheimen door verificatie sleutels, opslag account sleutels, gegevens versleutelings sleutels, pfx-bestanden en wacht woorden te versleutelen met behulp van sleutels die worden beveiligd door hsm's.
 
-**Best Practice** : plaats geen referenties en andere geheimen in de bron code of het github.   
-**Details** : het enige wat u nog ergert dan het verlies van uw sleutels en referenties is dat een niet-gemachtigde partij er toegang toe heeft. Aanvallers kunnen gebruikmaken van bot-technologieën om sleutels en geheimen te vinden die zijn opgeslagen in code opslagplaatsen, zoals GitHub. Plaats geen sleutel en geheimen in deze open bare code opslagplaatsen.
+**Best Practice**: plaats geen referenties en andere geheimen in de bron code of het github.   
+**Details**: het enige wat u nog ergert dan het verlies van uw sleutels en referenties is dat een niet-gemachtigde partij er toegang toe heeft. Aanvallers kunnen gebruikmaken van bot-technologieën om sleutels en geheimen te vinden die zijn opgeslagen in code opslagplaatsen, zoals GitHub. Plaats geen sleutel en geheimen in deze open bare code opslagplaatsen.
 
-**Best Practice** : Beveilig uw VM-beheer interfaces op hybride Paas-en IaaS-Services met behulp van een beheer interface waarmee u de virtuele machines rechtstreeks op afstand kunt beheren.   
-**Details** : protocollen voor extern beheer, zoals [SSH](https://en.wikipedia.org/wiki/Secure_Shell), [RDP](https://support.microsoft.com/kb/186607)en [externe communicatie met Power shell](/powershell/module/microsoft.powershell.core/enable-psremoting) , kunnen worden gebruikt. Over het algemeen is het raadzaam dat u geen rechtstreekse externe toegang tot virtuele machines inschakelt via internet.
+**Best Practice**: Beveilig uw VM-beheer interfaces op hybride Paas-en IaaS-Services met behulp van een beheer interface waarmee u de virtuele machines rechtstreeks op afstand kunt beheren.   
+**Details**: protocollen voor extern beheer, zoals [SSH](https://en.wikipedia.org/wiki/Secure_Shell), [RDP](https://support.microsoft.com/kb/186607)en [externe communicatie met Power shell](/powershell/module/microsoft.powershell.core/enable-psremoting) , kunnen worden gebruikt. Over het algemeen is het raadzaam dat u geen rechtstreekse externe toegang tot virtuele machines inschakelt via internet.
 
 Gebruik, indien mogelijk, alternatieve benaderingen zoals het gebruik van virtuele particuliere netwerken in een virtueel Azure-netwerk. Als er geen alternatieve benaderingen beschikbaar zijn, moet u ervoor zorgen dat u complexe wachtwoordzins en twee ledige verificatie gebruikt (zoals [Azure multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md)).
 
-**Best Practice** : gebruik platforms met sterke verificatie en autorisatie.   
-**Details** : gebruik federatieve identiteiten in azure AD in plaats van aangepaste gebruikers archieven. Wanneer u federatieve identiteiten gebruikt, profiteert u van een op platform gebaseerde benadering en delegeert u het beheer van geautoriseerde identiteiten aan uw partners. Een federatieve identiteits benadering is vooral belang rijk wanneer werk nemers worden beëindigd en deze informatie moet worden weer spie geld via meerdere identiteits-en autorisatie systemen.
+**Best Practice**: gebruik platforms met sterke verificatie en autorisatie.   
+**Details**: gebruik federatieve identiteiten in azure AD in plaats van aangepaste gebruikers archieven. Wanneer u federatieve identiteiten gebruikt, profiteert u van een op platform gebaseerde benadering en delegeert u het beheer van geautoriseerde identiteiten aan uw partners. Een federatieve identiteits benadering is vooral belang rijk wanneer werk nemers worden beëindigd en deze informatie moet worden weer spie geld via meerdere identiteits-en autorisatie systemen.
 
 Gebruik platform verificatie-en autorisatie mechanismen in plaats van aangepaste code. De reden hiervoor is dat het ontwikkelen van aangepaste verificatie code fout gevoelig is. De meeste ontwikkel aars zijn geen beveiligings experts en zijn waarschijnlijk niet op de hoogte van de finesses en de nieuwste ontwikkelingen in verificatie en autorisatie. Commerciële code (bijvoorbeeld van micro soft) wordt vaak uitgebreid gecontroleerd.
 
@@ -112,20 +112,20 @@ De volgende tabel geeft een overzicht van de STRIDE-bedreigingen en biedt enkele
 
 Hieronder vindt u aanbevolen procedures voor het gebruik van App Service.
 
-**Best Practice** : [Verifieer door Azure Active Directory](../../app-service/overview-authentication-authorization.md).   
-**Details** : app service biedt een OAuth 2,0-Service voor uw ID-provider. OAuth 2,0 richt zich op de vereenvoudiging van client ontwikkelaars en biedt specifieke autorisatie stromen voor webtoepassingen, desktop toepassingen en mobiele telefoons. Azure AD maakt gebruik van OAuth 2,0 zodat u toegang tot mobiele en webtoepassingen kunt autoriseren.
+**Best Practice**: [Verifieer door Azure Active Directory](../../app-service/overview-authentication-authorization.md).   
+**Details**: app service biedt een OAuth 2,0-Service voor uw ID-provider. OAuth 2,0 richt zich op de vereenvoudiging van client ontwikkelaars en biedt specifieke autorisatie stromen voor webtoepassingen, desktop toepassingen en mobiele telefoons. Azure AD maakt gebruik van OAuth 2,0 zodat u toegang tot mobiele en webtoepassingen kunt autoriseren.
 
-**Best Practice** : toegang beperken op basis van de beveiligings principes van de nood zaak om te kennen en te voldoen aan de minimale bevoegdheden.   
-**Details** : het beperken van de toegang is van cruciaal belang voor organisaties die beveiligings beleid voor gegevens toegang willen afdwingen. U kunt RBAC gebruiken om machtigingen toe te wijzen aan gebruikers, groepen en toepassingen bij een bepaald bereik. Zie aan de [slag met toegangs beheer](../../role-based-access-control/overview.md)voor meer informatie over het verlenen van gebruikers toegang tot toepassingen.
+**Best Practice**: toegang beperken op basis van de beveiligings principes van de nood zaak om te kennen en te voldoen aan de minimale bevoegdheden.   
+**Details**: het beperken van de toegang is van cruciaal belang voor organisaties die beveiligings beleid voor gegevens toegang willen afdwingen. U kunt Azure RBAC gebruiken om machtigingen toe te wijzen aan gebruikers, groepen en toepassingen bij een bepaald bereik. Zie aan de [slag met toegangs beheer](../../role-based-access-control/overview.md)voor meer informatie over het verlenen van gebruikers toegang tot toepassingen.
 
-**Aanbevolen procedure** : Beveilig uw sleutels.   
-**Details** : Azure Key Vault helpt bij het beveiligen van cryptografische sleutels en geheimen die worden gebruikt door Cloud toepassingen en-services. Met Key Vault kunt u sleutels en geheimen versleutelen (zoals verificatie sleutels, sleutels voor opslag accounts, sleutels voor gegevens versleuteling,. PFX-bestanden en wacht woorden) met behulp van sleutels die worden beveiligd door Hardware Security modules (Hsm's). Voor extra zekerheid kunt u de sleutels importeren of genereren in HSM's. Zie [Azure Key Vault](../../key-vault/general/overview.md) voor meer informatie. U kunt Key Vault ook gebruiken om uw TLS-certificaten te beheren met automatische verlenging.
+**Aanbevolen procedure**: Beveilig uw sleutels.   
+**Details**: Azure Key Vault helpt bij het beveiligen van cryptografische sleutels en geheimen die worden gebruikt door Cloud toepassingen en-services. Met Key Vault kunt u sleutels en geheimen versleutelen (zoals verificatie sleutels, sleutels voor opslag accounts, sleutels voor gegevens versleuteling,. PFX-bestanden en wacht woorden) met behulp van sleutels die worden beveiligd door Hardware Security modules (Hsm's). Voor extra zekerheid kunt u de sleutels importeren of genereren in HSM's. Zie [Azure Key Vault](../../key-vault/general/overview.md) voor meer informatie. U kunt Key Vault ook gebruiken om uw TLS-certificaten te beheren met automatische verlenging.
 
-**Best Practice** : IP-adressen van binnenkomende bronnen beperken.   
-**Details** : [app service Environment](../../app-service/environment/intro.md) heeft een functie voor de integratie van virtuele netwerken waarmee u binnenkomende bron-IP-adressen kunt beperken via netwerk beveiligings groepen. Met virtuele netwerken kunt u Azure-resources in een niet-Internet Routeer bare netwerk plaatsen waartoe u de toegang beheert. Zie [uw app integreren met een virtueel Azure-netwerk](../../app-service/web-sites-integrate-with-vnet.md)voor meer informatie.
+**Best Practice**: IP-adressen van binnenkomende bronnen beperken.   
+**Details**: [app service Environment](../../app-service/environment/intro.md) heeft een functie voor de integratie van virtuele netwerken waarmee u binnenkomende bron-IP-adressen kunt beperken via netwerk beveiligings groepen. Met virtuele netwerken kunt u Azure-resources in een niet-Internet Routeer bare netwerk plaatsen waartoe u de toegang beheert. Zie [uw app integreren met een virtueel Azure-netwerk](../../app-service/web-sites-integrate-with-vnet.md)voor meer informatie.
 
-**Best Practice** : Controleer de beveiligings status van uw app service omgevingen.   
-**Details** : gebruik Azure Security Center om uw app service omgevingen te bewaken. Wanneer Security Center mogelijke beveiligings problemen identificeert, worden er [aanbevelingen](../../security-center/asset-inventory.md) gemaakt die u door het proces van het configureren van de benodigde besturings elementen leiden.
+**Best Practice**: Controleer de beveiligings status van uw app service omgevingen.   
+**Details**: gebruik Azure Security Center om uw app service omgevingen te bewaken. Wanneer Security Center mogelijke beveiligings problemen identificeert, worden er [aanbevelingen](../../security-center/asset-inventory.md) gemaakt die u door het proces van het configureren van de benodigde besturings elementen leiden.
 
 > [!NOTE]
 > Bewakings App Service is in de preview-fase en is alleen beschikbaar voor de [standaard-laag](../../security-center/security-center-pricing.md) van Security Center.

@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: allensu
 ms.custom: references_regions
-ms.openlocfilehash: 898b0d00fcad99a1059e01ad54ce13d192f1227f
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 8b2f8e82cac1d26689659286a5a0f81f06fb68ca
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93398008"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695058"
 ---
 # <a name="cross-region-load-balancer-preview"></a>Load balancer voor meerdere regio's (preview-versie)
 
@@ -74,7 +74,7 @@ Azure cross-Region load balancer maakt gebruik van geo-proximity-algoritme voor 
 
 De geconfigureerde taakverdelings modus van de regionale load balancers wordt gebruikt om de definitieve routerings beslissing te nemen wanneer meerdere regionale load balancers worden gebruikt voor geografische nabijheid.
 
-Zie [De distributiemodus configureren voor Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-distribution-mode) voor meer informatie.
+Zie [De distributiemodus configureren voor Azure Load Balancer](./load-balancer-distribution-mode.md) voor meer informatie.
 
 
 ### <a name="ability-to-scale-updown-behind-a-single-endpoint"></a>Mogelijkheid om omhoog/omlaag te schalen achter een enkel eind punt
@@ -84,7 +84,7 @@ Wanneer u het globale eind punt van een kruis regio load balancer voor klanten b
 <!---To learn about how to add or remove a regional deployment from the backend, read more [here](TODO: Insert CLI doc here).--->
 
 ### <a name="static-ip"></a>Statisch IP-adres
-De load balancer voor meerdere regio's wordt geleverd met een statisch openbaar IP-adres, wat ervoor zorgt dat de IP-adressen hetzelfde blijven. Meer informatie over statische IP vindt u [hier](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses#allocation-method)
+De load balancer voor meerdere regio's wordt geleverd met een statisch openbaar IP-adres, wat ervoor zorgt dat de IP-adressen hetzelfde blijven. Meer informatie over statische IP vindt u [hier](../virtual-network/public-ip-addresses.md#allocation-method)
 
 ### <a name="client-ip-preservation"></a>Client-IP-behoud
 De load balancer voor meerdere regio's is een netwerk load balancer met Layer-4-door gang. Met deze Pass-Through wordt het oorspronkelijke IP-adres van het pakket bewaard.  Het oorspronkelijke IP-adres is beschikbaar voor de code die op de virtuele machine wordt uitgevoerd. Hierdoor kunt u logica Toep assen die specifiek is voor een IP-adres.
@@ -101,7 +101,7 @@ In de **regio thuis** wordt de Load Balancer van de Kruis regio geïmplementeerd
 * VS - west
 * Europa -west
 * Azië - zuidoost
-* VS - centraal
+* Central US
 * Europa - noord
 * Azië - oost
 
@@ -126,7 +126,7 @@ De load balancer over meerdere regio's stuurt het verkeer naar de juiste regiona
 * Verenigd Koninkrijk Zuid 
 * Azië - zuidoost 
 * VS - noord-centraal 
-* Japan - oost 
+* Japan East 
 * Azië - oost 
 * VS - west-centraal 
 * Australia Southeast 

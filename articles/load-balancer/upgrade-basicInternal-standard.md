@@ -7,15 +7,15 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 08/07/2020
 ms.author: irenehua
-ms.openlocfilehash: a6d2b69b0b498601497c4b33fb6bdfede87002df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59bf5eb22289238633b1f07c29a878bd0a9ae620
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89500246"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696163"
 ---
 # <a name="upgrade-azure-internal-load-balancer--no-outbound-connection-required"></a>Upgrade uitvoeren voor interne Load Balancer van Azure: er is geen uitgaande verbinding vereist
-[Azure Standard Load Balancer](load-balancer-overview.md) biedt een uitgebreide set functionaliteit en hoge Beschik baarheid via zone redundantie. Zie [vergelijkings tabel](https://docs.microsoft.com/azure/load-balancer/skus#skus)voor meer informatie over Load Balancer SKU.
+[Azure Standard Load Balancer](load-balancer-overview.md) biedt een uitgebreide set functionaliteit en hoge Beschik baarheid via zone redundantie. Zie [vergelijkings tabel](./skus.md#skus)voor meer informatie over Load Balancer SKU.
 
 In dit artikel wordt een Power shell-script geïntroduceerd waarmee een Standard Load Balancer met dezelfde configuratie als de basis Load Balancer samen met het migreren van verkeer van basis Load Balancer naar Standard Load Balancer.
 
@@ -23,25 +23,25 @@ In dit artikel wordt een Power shell-script geïntroduceerd waarmee een Standard
 
 Er is een Azure PowerShell script beschikbaar dat het volgende doet:
 
-* Hiermee maakt u een standaard interne SKU Load Balancer op de locatie die u opgeeft. Houd er rekening mee dat er geen [uitgaande verbinding](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) wordt gegeven door de standaard interne Load Balancer.
+* Hiermee maakt u een standaard interne SKU Load Balancer op de locatie die u opgeeft. Houd er rekening mee dat er geen [uitgaande verbinding](./load-balancer-outbound-connections.md) wordt gegeven door de standaard interne Load Balancer.
 * De configuraties van de basis-SKU Load Balancer naadloos gekopieerd naar de zojuist gemaakte Standard Load Balancer.
 * Verplaats de privé-IP-adressen van de Basic-Load Balancer naadloos naar de zojuist gemaakte Standard Load Balancer.
 * Verplaats de Vm's naadloos van de back-endadresgroep van de basis Load Balancer naar de back-end-groep van de Standard Load Balancer
 
 ### <a name="caveatslimitations"></a>Caveats\Limitations
 
-* Script ondersteunt alleen interne Load Balancer upgrade, waarbij geen uitgaande verbinding vereist is. Raadpleeg deze [pagina](upgrade-InternalBasic-To-PublicStandard.md) voor instructies als u een [uitgaande verbinding](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) voor sommige vm's hebt vereist. 
+* Script ondersteunt alleen interne Load Balancer upgrade, waarbij geen uitgaande verbinding vereist is. Raadpleeg deze [pagina](upgrade-InternalBasic-To-PublicStandard.md) voor instructies als u een [uitgaande verbinding](./load-balancer-outbound-connections.md) voor sommige vm's hebt vereist. 
 * De basis Load Balancer moeten zich in dezelfde resource groep bestemmen als de back-end-Vm's en Nic's.
 * Als de standaard load balancer in een andere regio wordt gemaakt, kunt u de virtuele machines die in de oude regio bestaan, niet koppelen aan de zojuist gemaakte Standard Load Balancer. Om deze beperking te omzeilen, moet u ervoor zorgen dat u een nieuwe virtuele machine maakt in de nieuwe regio.
 * Als uw Load Balancer geen frontend-IP-configuratie of back-end-pool heeft, zult u waarschijnlijk een fout bij het uitvoeren van het script aangaan. Zorg ervoor dat deze niet leeg zijn.
 
 ## <a name="change-ip-allocation-method-to-static-for-frontend-ip-configuration-ignore-this-step-if-its-already-static"></a>IP-toewijzings methode wijzigen in statisch voor frontend-IP-configuratie (Negeer deze stap als deze al statisch is)
 
-1. Selecteer **alle services** in het linkermenu, selecteer **alle resources**en selecteer vervolgens uw basis Load Balancer in de lijst met resources.
+1. Selecteer **alle services** in het linkermenu, selecteer **alle resources** en selecteer vervolgens uw basis Load Balancer in de lijst met resources.
 
-2. Selecteer bij **instellingen**de optie **frontend IP-configuratie**en selecteer de eerste frontend-IP-configuratie. 
+2. Selecteer bij **instellingen** de optie **frontend IP-configuratie** en selecteer de eerste frontend-IP-configuratie. 
 
-3. Selecteer voor **toewijzing**de optie **statisch**
+3. Selecteer voor **toewijzing** de optie **statisch**
 
 4. Herhaal stap 3 voor alle frontend-IP-configuraties van de basis Load Balancer.
 

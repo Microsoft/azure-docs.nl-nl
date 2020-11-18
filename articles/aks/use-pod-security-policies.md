@@ -4,17 +4,17 @@ description: Meer informatie over het beheren van pod-toelatingen met behulp van
 services: container-service
 ms.topic: article
 ms.date: 07/21/2020
-ms.openlocfilehash: a9f6ead7edea7a3a6240e116d3073ea01fa9f6bb
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 77c618429503caf9aa7bb6abda109504bbf68d71
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900101"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695993"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Voor beeld: uw cluster beveiligen met behulp van pod-beveiligings beleid in azure Kubernetes service (AKS)
 
 > [!WARNING]
-> **De functie die in dit document wordt beschreven, Pod-beveiligings beleid (preview), wordt ingesteld voor afschaffing en is niet meer beschikbaar na 1 februari 2021, wat de** voor keur heeft van [Azure Policy voor AKS](use-pod-security-on-azure-policy.md). De datum van afschaffing is verlengd vanaf de vorige datum van 15 oktober 2020.
+> **De functie die in dit document wordt beschreven, Pod-beveiligings beleid (preview), wordt ingesteld voor afschaffing en is niet meer beschikbaar na 31 mei 2021, wat de** voor keur heeft [Azure Policy voor AKS](use-pod-security-on-azure-policy.md). De datum van afschaffing is verlengd vanaf de vorige datum van 15 oktober 2020.
 >
 > Nadat de functie voor beveiligingsbeleid voor pods (preview) is afgeschaft, moet u de functie op alle bestaande clusters uitschakelen met behulp van de afgeschafte functie om toekomstige clusterupgrades uit te voeren en de ondersteuning van Azure te kunnen blijven gebruiken.
 >
@@ -52,7 +52,7 @@ Als u een AKS-cluster wilt maken of bijwerken om pod-beveiligings beleid te gebr
 az feature register --name PodSecurityPolicyPreview --namespace Microsoft.ContainerService
 ```
 
-Het duurt enkele minuten voordat de status is *geregistreerd* . U kunt de registratiestatus controleren met behulp van de opdracht [az feature list][az-feature-list]:
+Het duurt enkele minuten voordat de status is *geregistreerd*. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list][az-feature-list]:
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/PodSecurityPolicyPreview')].{Name:name,State:properties.state}"
@@ -80,7 +80,7 @@ Als u wilt weer geven hoe de standaard beleids regels pod-implementaties beperke
 
 ## <a name="enable-pod-security-policy-on-an-aks-cluster"></a>Pod-beveiligings beleid inschakelen op een AKS-cluster
 
-U kunt pod-beveiligings beleid in-of uitschakelen met behulp van de opdracht [AZ AKS update][az-aks-update] . In het volgende voor beeld wordt pod-beveiligings beleid ingeschakeld op de cluster naam *myAKSCluster* in de resource groep met de naam *myResourceGroup* .
+U kunt pod-beveiligings beleid in-of uitschakelen met behulp van de opdracht [AZ AKS update][az-aks-update] . In het volgende voor beeld wordt pod-beveiligings beleid ingeschakeld op de cluster naam *myAKSCluster* in de resource groep met de naam *myResourceGroup*.
 
 > [!NOTE]
 > Schakel voor gebruik in de praktijk het beveiligings beleid pod pas in als u uw eigen aangepaste beleids regels hebt gedefinieerd. In dit artikel schakelt u pod-beveiligings beleid als eerste stap in om te zien hoe de standaard beleidsregels de pod-implementaties beperken.
@@ -94,7 +94,7 @@ az aks update \
 
 ## <a name="default-aks-policies"></a>Standaard AKS-beleid
 
-Wanneer u pod-beveiligings beleid inschakelt, maakt AKS één standaard beleid met de naam *privileged* . Bewerk of verwijder het standaard beleid niet. Maak in plaats daarvan uw eigen beleid voor het definiëren van de instellingen die u wilt beheren. Laten we eerst kijken naar wat deze standaard beleidsregels zijn, hoe ze pod-implementaties beïnvloeden.
+Wanneer u pod-beveiligings beleid inschakelt, maakt AKS één standaard beleid met de naam *privileged*. Bewerk of verwijder het standaard beleid niet. Maak in plaats daarvan uw eigen beleid voor het definiëren van de instellingen die u wilt beheren. Laten we eerst kijken naar wat deze standaard beleidsregels zijn, hoe ze pod-implementaties beïnvloeden.
 
 Als u de beschik bare beleids regels wilt weer geven, gebruikt u de opdracht [kubectl Get PSP][kubectl-get] , zoals wordt weer gegeven in het volgende voor beeld
 
@@ -274,7 +274,7 @@ Het Pod is niet bereikbaar voor de plannings fase, dus er zijn geen resources om
 
 Nu u het gedrag van het standaard beveiligings beleid voor pod hebt gezien, bieden we een manier om de niet *-beheerder* in staat te stellen om heel goed te plannen.
 
-We gaan een beleid maken voor het afwijzen van het Peul waarvoor privileged Access moet worden aangevraagd. Andere opties, zoals *runAsUser* of toegestane *volumes* , worden niet expliciet beperkt. Dit type beleid weigert een aanvraag voor bevoegde toegang, maar anders kan het cluster de aangevraagde peul uitvoeren.
+We gaan een beleid maken voor het afwijzen van het Peul waarvoor privileged Access moet worden aangevraagd. Andere opties, zoals *runAsUser* of toegestane *volumes*, worden niet expliciet beperkt. Dit type beleid weigert een aanvraag voor bevoegde toegang, maar anders kan het cluster de aangevraagde peul uitvoeren.
 
 Maak een bestand `psp-deny-privileged.yaml` met de naam en plak het volgende YAML-manifest:
 
@@ -315,7 +315,7 @@ psp-deny-privileged   false          RunAsAny   RunAsAny           RunAsAny    R
 
 ## <a name="allow-user-account-to-use-the-custom-pod-security-policy"></a>Gebruikers account toestaan het aangepaste pod-beveiligings beleid te gebruiken
 
-In de vorige stap hebt u een pod-beveiligings beleid gemaakt waarmee u de peuling kunt afwijzen waarvoor privileged Access moet worden aangevraagd. Als u wilt toestaan dat het beleid wordt gebruikt, maakt u een *rol* of een *ClusterRole* . Vervolgens koppelt u een van deze rollen met behulp van een *RoleBinding* of *ClusterRoleBinding* .
+In de vorige stap hebt u een pod-beveiligings beleid gemaakt waarmee u de peuling kunt afwijzen waarvoor privileged Access moet worden aangevraagd. Als u wilt toestaan dat het beleid wordt gebruikt, maakt u een *rol* of een *ClusterRole*. Vervolgens koppelt u een van deze rollen met behulp van een *RoleBinding* of *ClusterRoleBinding*.
 
 Voor dit voor beeld maakt u een ClusterRole waarmee u het beleid *PSP-deny-privileged* kunt *gebruiken* dat u in de vorige stap hebt gemaakt. Maak een bestand `psp-deny-privileged-clusterrole.yaml` met de naam en plak het volgende YAML-manifest:
 
@@ -375,7 +375,7 @@ Als uw aangepaste pod-beveiligings beleid is toegepast en een binding voor het g
 kubectl-nonadminuser apply -f nginx-unprivileged.yaml
 ```
 
-De Pod is gepland. Wanneer u de status van de pod controleert met behulp van de [kubectl Get peul][kubectl-get] opdracht, wordt de pod *uitgevoerd* :
+De Pod is gepland. Wanneer u de status van de pod controleert met behulp van de [kubectl Get peul][kubectl-get] opdracht, wordt de pod *uitgevoerd*:
 
 ```
 $ kubectl-nonadminuser get pods
@@ -394,7 +394,7 @@ kubectl-nonadminuser delete -f nginx-unprivileged.yaml
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u pod-beveiligings beleid wilt uitschakelen, gebruikt u de opdracht [AZ AKS update][az-aks-update] opnieuw. In het volgende voor beeld wordt het Pod-beveiligings beleid uitgeschakeld voor de cluster naam *myAKSCluster* in de resource groep met de naam *myResourceGroup* :
+Als u pod-beveiligings beleid wilt uitschakelen, gebruikt u de opdracht [AZ AKS update][az-aks-update] opnieuw. In het volgende voor beeld wordt het Pod-beveiligings beleid uitgeschakeld voor de cluster naam *myAKSCluster* in de resource groep met de naam *myResourceGroup*:
 
 ```azurecli-interactive
 az aks update \

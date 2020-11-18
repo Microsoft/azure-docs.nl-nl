@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: TomSh
-ms.openlocfilehash: fa2025fa31ac960eb6c61d03bafd582de4f0e55c
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 3141d9937591467870ee4a88d16a96cbdb24a05b
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410573"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696214"
 ---
 # <a name="isolation-in-the-azure-public-cloud"></a>Isolatie in de open bare Azure-Cloud
 
@@ -38,7 +38,7 @@ Elke Azure AD-directory is uniek en werkt afzonderlijk van andere Azure AD-direc
 
 ### <a name="azure-tenancy"></a>Azure pacht
 
-Azure pacht (Azure-abonnement) verwijst naar een ' klant/facturerings relatie ' en een unieke [Tenant](../../active-directory/develop/quickstart-create-new-tenant.md) in [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md). Isolatie op Tenant niveau in Microsoft Azure wordt bereikt met behulp van Azure Active Directory en op [rollen gebaseerde besturings elementen die hiermee](../../role-based-access-control/overview.md) worden aangeboden. Elk Azure-abonnement is gekoppeld aan één Azure Active Directory (AD) Directory.
+Azure pacht (Azure-abonnement) verwijst naar een ' klant/facturerings relatie ' en een unieke [Tenant](../../active-directory/develop/quickstart-create-new-tenant.md) in [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md). Isolatie op Tenant niveau in Microsoft Azure wordt bereikt door gebruik te maken van Azure Active Directory en [op rollen gebaseerd toegangs beheer van Azure](../../role-based-access-control/overview.md) . Elk Azure-abonnement is gekoppeld aan één Azure Active Directory (AD) Directory.
 
 Gebruikers, groepen en toepassingen van die Directory kunnen resources in het Azure-abonnement beheren. U kunt deze toegangs rechten toewijzen met behulp van de Azure Portal, Azure-opdracht regel Programma's en Azure Management-Api's. Een Azure AD-Tenant is logisch geïsoleerd met behulp van beveiligings grenzen, zodat geen enkele klant op een schadelijke of onopzettelijke manier mede tenants kan openen of misbruiken. Azure AD wordt uitgevoerd op ' bare metal ' servers die zijn geïsoleerd op een gescheiden netwerk segment, waarbij pakket filters op hostniveau worden gefilterd en Windows Firewall ongewenste verbindingen en verkeer blokkeert.
 
@@ -52,7 +52,7 @@ Gebruikers, groepen en toepassingen van die Directory kunnen resources in het Az
 
 - Fysieke toegang tot servers die bestaan uit de Azure AD-service en directe toegang tot de back-endsystemen van Azure AD, is beperkt.
 
-- Azure AD-gebruikers hebben geen toegang tot fysieke assets of locaties en daarom is het niet mogelijk om de logische RBAC-beleids controles die hieronder worden vermeld, te omzeilen.
+- Azure AD-gebruikers hebben geen toegang tot fysieke assets of locaties en daarom is het niet mogelijk om de logische Azure RBAC-beleids controles die hieronder worden vermeld, te omzeilen.
 
 Voor diagnostische en onderhouds behoeften is een operationeel model dat gebruikmaakt van een just-in-time-uitbrei ding van bevoegdheden vereist en wordt gebruikt. Azure AD Privileged Identity Management (PIM) introduceert het concept van een in aanmerking komende beheerder. [in aanmerking komende beheerders](../../active-directory/privileged-identity-management/pim-configure.md) moeten gebruikers zijn die nu uitgebreide toegang nodig hebben en vervolgens, maar niet elke dag. De rol is inactief totdat gebruikers toegang nodig hebben. Op dat moment voeren ze een activeringsproces uit en zijn ze gedurende een vooraf bepaalde hoeveelheid tijd een actieve beheerder.
 
@@ -80,7 +80,7 @@ Azure RBAC heeft drie basis rollen die van toepassing zijn op alle resource type
 
 Met de rest van de Azure-rollen in azure kunt u specifieke Azure-resources beheren. Met de rol Inzender voor virtuele machines kan een gebruiker bijvoorbeeld virtuele machines maken en beheren. Deze geeft geen toegang tot de Azure-Virtual Network of het subnet waarmee de virtuele machine verbinding maakt.
 
-[Ingebouwde RBAC-rollen](../../role-based-access-control/built-in-roles.md) hebben een lijst van de functies die beschikbaar zijn in Azure. Hiermee geeft u de bewerkingen en het bereik op die elke ingebouwde rol aan gebruikers verleent. Als u uw eigen rollen wilt definiëren voor nog meer controle, raadpleegt u [aangepaste rollen bouwen in azure RBAC](../../role-based-access-control/custom-roles.md).
+De [ingebouwde rollen van Azure](../../role-based-access-control/built-in-roles.md) geven een lijst van de functies die beschikbaar zijn in Azure. Hiermee geeft u de bewerkingen en het bereik op die elke ingebouwde rol aan gebruikers verleent. Als u uw eigen rollen wilt definiëren voor nog meer controle, raadpleegt u [aangepaste rollen bouwen in azure RBAC](../../role-based-access-control/custom-roles.md).
 
 Azure Active Directory zijn onder andere de volgende mogelijkheden:
 

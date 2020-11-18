@@ -7,27 +7,31 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 12/06/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74754c973dbe11d954a1714e9a98d99de639acd4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6dbdd5153186ee47e37856637eac16d6d450cc5a
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651138"
+ms.locfileid: "94695177"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Vereisten voor Azure AD Connect-cloudinrichting
 Dit artikel bevat richt lijnen voor het kiezen en gebruiken van Azure Active Directory (Azure AD) verbinden met Cloud inrichting als uw identiteits oplossing.
+
+
 
 ## <a name="cloud-provisioning-agent-requirements"></a>Vereisten voor de inrichtings agent voor Cloud
 U hebt het volgende nodig voor het gebruik van Azure AD Connect Cloud inrichting:
     
 - Een hybride identiteits beheerders account voor uw Azure AD-Tenant die geen gast gebruiker is.
 - Een on-premises server voor de inrichtings agent met Windows 2012 R2 of hoger.  Deze server moet een laag 0-server zijn op basis van het [Active Directory administratieve laag model](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material).
-- Domein beheerder of ondernemings Administrator referenties voor het maken van de Azure AD Connect Cloud Sync gMSA (door groep beheerd service account) voor het uitvoeren van de Agent service.
 - On-premises firewall configuraties.
+
+>[!NOTE]
+>De inrichtings agent kan momenteel alleen worden geïnstalleerd op de Engelse taal servers. Het installeren van een Engels taal pakket op een niet-Engelse server is geen geldige tijdelijke oplossing, waardoor de agent niet kan worden geïnstalleerd. 
 
 De rest van het document bevat stapsgewijze instructies voor deze vereisten.
 
@@ -53,9 +57,7 @@ Voer het [hulp programma IdFix](/office365/enterprise/prepare-directory-attribut
         | --- | --- |
         | **80** | Hiermee worden de certificaatintrekkingslijsten (Crl's) gedownload tijdens het valideren van het TLS/SSL-certificaat.  |
         | **443** | Hiermee wordt alle uitgaande communicatie met de service verwerkt. |
-        |**8082**|Vereist voor de installatie en als u de beheer-API wilt configureren.  Deze poort kan worden verwijderd zodra de agent is geïnstalleerd en als u geen gebruik maakt van de API.   |
         | **8080** (optioneel) | Agents rapporteren hun status elke 10 minuten via poort 8080, als poort 443 niet beschikbaar is. Deze status wordt weer gegeven in de Azure AD-Portal. |
-   
      
    - Als met uw firewall regels worden afgedwongen op basis van de herkomst van gebruikers, opent u deze poorten voor verkeer dat afkomstig is van Windows-services die als een netwerkservice worden uitgevoerd.
    - Als u met uw firewall of proxy veilige achtervoegsels kunt opgeven, voegt u verbindingen toe aan \* . msappproxy.net en \* . servicebus.Windows.net. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
@@ -64,17 +66,6 @@ Voer het [hulp programma IdFix](/office365/enterprise/prepare-directory-attribut
 
 >[!NOTE]
 > Het is niet mogelijk om de inrichtings agent voor Clouds te installeren op Windows Server Core.
-
-## <a name="group-managed-service-accounts"></a>Door groep beheerde serviceaccounts
-Een beheerd service account voor een groep is een beheerd domein account dat automatische wachtwoord beheer, vereenvoudigd Service Principal Name (SPN)-beheer biedt, de mogelijkheid om het beheer te delegeren aan andere beheerders en deze functionaliteit uit te breiden op meerdere servers.  Azure AD Connect Cloud Sync ondersteunt en maakt gebruik van een gMSA voor het uitvoeren van de agent.  Tijdens de installatie wordt u gevraagd om beheerders referenties, om dit account te maken.  Het account wordt weer gegeven als (domain\provAgentgMSA $).  Zie [beheerde service accounts voor groepen](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) voor meer informatie over een gMSA 
-
-### <a name="prerequisites-for-gmsa"></a>Vereisten voor gMSA:
-1.  Het Active Directory schema in het forest van het gMSA-domein moet worden bijgewerkt naar Windows Server 2012
-2.  [Power shell RSAT-modules](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools) op een domein controller
-3.  Op ten minste één domein controller in het domein moet Windows Server 2012 worden uitgevoerd.
-4.  Een server die lid is van een domein waarop de agent wordt geïnstalleerd, moet Windows Server 2012 of hoger zijn.
-
-Zie [beheerde service accounts voor groepen](how-to-install.md#group-managed-service-accounts)voor stappen voor het bijwerken van een bestaande agent voor het gebruik van een gMSA-account.
 
 
 ### <a name="additional-requirements"></a>Aanvullende vereisten
@@ -100,6 +91,24 @@ Voer de volgende stappen uit om TLS 1,2 in te scha kelen.
 
 1. Start de server opnieuw.
 
+## <a name="known-limitations"></a>Bekende beperkingen
+Hier volgen enkele bekende beperkingen:
+
+### <a name="delta-synchronization"></a>Deltasynchronisatie
+
+- Filteren van groeps bereik voor Delta synchronisatie biedt geen ondersteuning voor meer dan 1500 leden
+- Wanneer u een groep verwijdert die wordt gebruikt als onderdeel van het filter bereik van een groep, worden gebruikers die lid zijn van de groep, niet verwijderd. 
+- Wanneer u de naam van de organisatie-eenheid of groep in het bereik wijzigt, worden de gebruikers niet verwijderd door de Delta synchronisatie.
+
+### <a name="provisioning-logs"></a>Inrichtingslogboeken
+- Bij inrichtings Logboeken wordt niet duidelijk onderscheid gemaakt tussen Create-en update-bewerkingen.  Mogelijk wordt er een bewerking voor het maken van een update en een update bewerking voor een maken weer geven.
+
+### <a name="cross-domain-references"></a>Verwijzingen naar meerdere domeinen
+- Als u gebruikers met verwijzingen naar leden in een ander domein hebt, worden deze niet gesynchroniseerd als onderdeel van uw huidige domein synchronisatie voor die gebruiker. 
+- (Voor beeld: een manager van de gebruiker die u synchroniseert, bevindt zich in domein B en de gebruiker bevindt zich in domein A. Wanneer u domein A en B synchroniseert, worden ze gesynchroniseerd, maar de gebruiker Manager wordt niet overgedragen.
+
+### <a name="group-re-naming-or-ou-re-naming"></a>Hernoemen van groep of organisatie-eenheid opnieuw
+- Als u de naam van een groep of organisatie-eenheid in AD binnen het bereik van een bepaalde configuratie wijzigt, kan de inrichtings taak van de Cloud de naam wijziging in AD niet herkennen. De taak wordt niet in quarantaine gezet en blijft in orde
 
 
 

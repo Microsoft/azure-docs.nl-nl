@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: terrylan
 manager: rkarlin
 ms.date: 11/10/2020
-ms.openlocfilehash: 1f81285e869bd2c65cce29766de0b2bd39a627f6
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 766266edd663b75b893a5883e30bb48eed7bbfdf
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557726"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696112"
 ---
 # <a name="hypervisor-security-on-the-azure-fleet"></a>Hyper Visor beveiliging op de Azure-vloot
 
@@ -26,7 +26,7 @@ De Azure-Hyper Visor houdt in dat de volgende beveiligings doelstellingen in ach
 | Isolatie | Een beveiligings beleid verplicht geen informatie overdracht tussen Vm's. Deze beperking vereist mogelijkheden in de Virtual Machine Manager (VMM) en de hardware voor het isoleren van geheugen, apparaten, het netwerk en beheerde resources, zoals persistente gegevens. |
 | VMM-integriteit | Ter verkrijging van de algehele systeem integriteit wordt de integriteit van afzonderlijke Hyper Visor onderdelen tot stand gebracht en onderhouden. |
 | Platform integriteit | De integriteit van de Hyper Visor is afhankelijk van de integriteit van de hardware en software waarop deze van toepassing is. Hoewel de Hyper Visor geen directe controle heeft over de integriteit van het platform, is Azure afhankelijk van de hardware-en firmware mechanismen, zoals de [Cerberus](project-cerberus.md) -chip, om de onderliggende platform integriteit te beveiligen en te detecteren. De VMM en gasten kunnen niet worden uitgevoerd als de platform integriteit is aangetast. |
-| Beperkte toegang | Beheer functies worden alleen uitgeoefend door geautoriseerde beheerders die zijn verbonden via beveiligde verbindingen. Een beginsel van minimale bevoegdheden wordt afgedwongen door RBAC-mechanismen (op rollen gebaseerd toegangs beheer). |
+| Beperkte toegang | Beheer functies worden alleen uitgeoefend door geautoriseerde beheerders die zijn verbonden via beveiligde verbindingen. Een beginsel van minimale bevoegdheden wordt afgedwongen door Azure RBAC-mechanismen (op rollen gebaseerd toegangs beheer). |
 | Controleren | Azure maakt het mogelijk om gegevens vast te leggen en te beveiligen over wat er gebeurt op een systeem, zodat het later kan worden geïnspecteerd. |
 
 De benadering van micro soft om de Azure-Hyper Visor en het subsysteem voor virtualisatie te beveiligen, kan worden onderverdeeld in de volgende drie categorieën.
@@ -68,7 +68,7 @@ Alle Opper vlakken van VM-aanvallen zijn bedreigingen gemodelleerd, de code word
 ## <a name="next-steps"></a>Volgende stappen
 Zie voor meer informatie over de mogelijkheden van platform integriteit en-beveiliging:
 
-- [Firmware beveiliging](firmware.md)
+- [Firmware-beveiliging](firmware.md)
 - [Beveiligd opstarten](secure-boot.md)
 - [Gemeten opstarten en host-Attestation](measured-boot-host-attestation.md)
 - [Project Cerberus](project-cerberus.md)

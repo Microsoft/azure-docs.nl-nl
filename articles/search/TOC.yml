@@ -35,7 +35,7 @@
     - name: Javascript
       href: search-get-started-javascript.md
     - name: REST
-      href: search-get-started-postman.md
+      href: search-get-started-rest.md
     - name: PowerShell
       href: search-get-started-powershell.md
     - name: Python
@@ -81,13 +81,13 @@
 - name: Voorbeelden
   items:
     - name: C#-voorbeelden
-      href: /samples/browse/?languages=csharp&products=azure-cognitive-search
+      href: samples-dotnet.md
     - name: Java-voorbeelden
-      href: /samples/browse/?languages=java&products=azure-cognitive-search
+      href: samples-java.md
     - name: JavaScript-voorbeelden
-      href: /samples/browse/?languages=javascript&products=azure-cognitive-search
+      href: samples-javascript.md
     - name: Python-voorbeelden
-      href: /samples/browse/?languages=python&products=azure-cognitive-search
+      href: samples-python.md
     - name: REST-voorbeelden
       href: /samples/browse/?expanded=azure&languages=http&products=azure-cognitive-search
 - name: Concepten

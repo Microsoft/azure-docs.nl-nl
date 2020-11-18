@@ -6,12 +6,12 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 7f925854f4ef09ccc74c0ec1e8fdcca6b71d1437
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 8bdf637ab773e90a5eac42bcaa443cf6741db636
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92744062"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696010"
 ---
 # <a name="configure-a-nodejs-app-for-azure-app-service"></a>Een Node.js-app configureren voor Azure App Service
 
@@ -85,6 +85,36 @@ Met deze instelling geeft u op welke Node.js versie moet worden gebruikt, zowel 
 
 ::: zone-end
 
+## <a name="get-port-number"></a>Poort nummer ophalen
+
+U Node.js app moet Luis teren naar de juiste poort voor het ontvangen van inkomende aanvragen.
+
+::: zone pivot="platform-windows"  
+
+In App Service op Windows worden Node.js apps gehost met [IISNode](https://github.com/Azure/iisnode)en wordt de Node.js-app geluisterd naar de poort die is opgegeven in de `process.env.PORT` variabele. In het volgende voor beeld ziet u hoe u dit doet in een eenvoudige Express-app:
+
+::: zone-end
+
+::: zone pivot="platform-linux"  
+
+App Service stelt de omgevings variabele `PORT` in de Node.js-container en stuurt de inkomende aanvragen door naar uw container op dat poort nummer. Als u de aanvragen wilt ontvangen, moet uw app met worden geluisterd naar die poort `process.env.PORT` . In het volgende voor beeld ziet u hoe u dit doet in een eenvoudige Express-app:
+
+::: zone-end
+
+```javascript
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+```
+
 ::: zone pivot="platform-linux"
 
 ## <a name="customize-build-automation"></a>De automatisering van bouwbewerkingen aanpassen
@@ -93,8 +123,8 @@ Als u uw app wilt implementeren met behulp van Git of zip-pakketten waarbij bouw
 
 1. Voer aangepast script uit als dit door `PRE_BUILD_SCRIPT_PATH` is opgegeven.
 1. `npm install`Zonder vlaggen worden uitgevoerd, waaronder NPM `preinstall` en `postinstall` scripts en wordt ook geïnstalleerd `devDependencies` .
-1. Voer uit `npm run build` Als u een build-script hebt opgegeven in uw *package.jsop* .
-1. Uitvoeren `npm run build:azure` als een build: Azure script is opgegeven in uw *package.jsop* .
+1. Voer uit `npm run build` Als u een build-script hebt opgegeven in uw *package.jsop*.
+1. Uitvoeren `npm run build:azure` als een build: Azure script is opgegeven in uw *package.jsop*.
 1. Voer aangepast script uit als dit is opgegeven door `POST_BUILD_SCRIPT_PATH`.
 
 > [!NOTE]
@@ -123,7 +153,7 @@ De Node.js-containers worden geleverd met [PM2](https://pm2.keymetrics.io/), een
 
 ### <a name="run-custom-command"></a>Aangepaste opdracht uitvoeren
 
-App Service kunt uw app starten met een aangepaste opdracht, zoals een uitvoerbaar bestand zoals *Run.sh* . Als u bijvoorbeeld wilt uitvoeren `npm run start:prod` , voert u de volgende opdracht uit in het [Cloud shell](https://shell.azure.com):
+App Service kunt uw app starten met een aangepaste opdracht, zoals een uitvoerbaar bestand zoals *Run.sh*. Als u bijvoorbeeld wilt uitvoeren `npm run start:prod` , voert u de volgende opdracht uit in het [Cloud shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config set --resource-group <resource-group-name> --name <app-name> --startup-file "npm run start:prod"
@@ -164,7 +194,7 @@ De container start automatisch uw app met PM2 wanneer een van de gemeen schappel
 U kunt ook een aangepast start bestand met de volgende extensies configureren:
 
 - Een *js* -bestand
-- Een [PM2-bestand](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) met de *extensie. json* , *.config.js* , *. yaml* of *. yml*
+- Een [PM2-bestand](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) met de *extensie. json*, *.config.js*, *. yaml* of *. yml*
 
 Als u een aangepast start bestand wilt toevoegen, voert u de volgende opdracht uit in de [Cloud shell](https://shell.azure.com):
 
@@ -177,7 +207,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 > [!NOTE]
 > Externe fout opsporing is momenteel beschikbaar als preview-versie.
 
-U kunt fouten opsporen in uw Node.js-app op afstand in [Visual Studio code](https://code.visualstudio.com/) als u deze configureert voor [uitvoering met PM2](#run-with-pm2), behalve wanneer u deze uitvoert met een * .config.js, *. yml of *. yaml* .
+U kunt fouten opsporen in uw Node.js-app op afstand in [Visual Studio code](https://code.visualstudio.com/) als u deze configureert voor [uitvoering met PM2](#run-with-pm2), behalve wanneer u deze uitvoert met een * .config.js, *. yml of *. yaml*.
 
 In de meeste gevallen is er geen extra configuratie vereist voor uw app. Als uw app wordt uitgevoerd met een *process.jsin* het bestand (standaard of aangepast), moet deze een `script` eigenschap hebben in het JSON-basis programma. Bijvoorbeeld:
 
@@ -191,9 +221,9 @@ In de meeste gevallen is er geen extra configuratie vereist voor uw app. Als uw 
 
 Als u Visual Studio code voor externe fout opsporing wilt instellen, installeert u de [app service extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice). Volg de instructies op de pagina extensie en meld u aan bij Azure in Visual Studio code.
 
-Zoek in de Azure Verkenner de app waarvoor u fouten wilt opsporen, klik er met de rechter muisknop op en selecteer **externe fout opsporing starten** . Klik op **Ja** om het voor uw app in te scha kelen. App Service start een tunnel proxy voor u en koppelt de debugger. U kunt vervolgens aanvragen indienen bij de app en zien hoe het fout opsporingsprogramma op onderbrekings punten pauzeert.
+Zoek in de Azure Verkenner de app waarvoor u fouten wilt opsporen, klik er met de rechter muisknop op en selecteer **externe fout opsporing starten**. Klik op **Ja** om het voor uw app in te scha kelen. App Service start een tunnel proxy voor u en koppelt de debugger. U kunt vervolgens aanvragen indienen bij de app en zien hoe het fout opsporingsprogramma op onderbrekings punten pauzeert.
 
-Als u klaar bent met het oplossen van fouten, stopt u het fout opsporingsprogramma door de **verbinding te verbreken** Wanneer u hierom wordt gevraagd, klikt u op **Ja** om externe fout opsporing uit te scha kelen. Als u dit later wilt uitschakelen, klikt u opnieuw met de rechter muisknop op uw app in azure Verkenner en selecteert u **externe fout opsporing uitschakelen** .
+Als u klaar bent met het oplossen van fouten, stopt u het fout opsporingsprogramma door de **verbinding te verbreken** Wanneer u hierom wordt gevraagd, klikt u op **Ja** om externe fout opsporing uit te scha kelen. Als u dit later wilt uitschakelen, klikt u opnieuw met de rechter muisknop op uw app in azure Verkenner en selecteert u **externe fout opsporing uitschakelen**.
 
 ::: zone-end
 
@@ -227,7 +257,7 @@ npm install kuduscript -g
 kuduscript --node --scriptType bash --suppressPrompt
 ```
 
-De hoofdmap van uw opslag plaats heeft nu twee extra bestanden: *. Deployment* en *Deploy.sh* .
+De hoofdmap van uw opslag plaats heeft nu twee extra bestanden: *. Deployment* en *Deploy.sh*.
 
 Open *Deploy.sh* en zoek de `Deployment` sectie, die er als volgt uitziet:
 

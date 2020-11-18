@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2020
 ms.author: terrylan
-ms.openlocfilehash: 3113216b2d8a7572bcb864819a379de6823ee444
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 90aafad2a17b9535bde29f811e630112ccbd02e3
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409872"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696095"
 ---
 # <a name="azure-security-technical-capabilities"></a>Technische mogelijkheden van Azure-beveiliging
 Dit artikel bevat een inleiding tot beveiligings Services in azure waarmee u uw gegevens, resources en toepassingen in de cloud kunt beveiligen en voldoen aan de beveiligings behoeften van uw bedrijf.
@@ -156,9 +156,9 @@ Beveiligings gerichte bedrijven moeten zich richten op het geven van werk nemers
 
 ![Beveiligde toegang tot bron](./media/technical-capabilities/azure-security-technical-capabilities-fig4.png)
 
-Met op rollen gebaseerd toegangsbeheer kunt u taken scheiden binnen uw team en alleen de mate van toegang verlenen aan gebruikers die nodig is om de taken uit te voeren. In plaats van iedereen onbeperkte machtigingen in uw Azure-abonnement of-resources te geven, kunt u alleen bepaalde acties toestaan. Gebruik bijvoorbeeld RBAC om één werk nemer virtuele machines in een abonnement te laten beheren, terwijl een andere SQL-data bases binnen hetzelfde abonnement kan beheren.
+Met op rollen gebaseerd toegangsbeheer van Azure kunt u taken scheiden binnen uw team en alleen de mate van toegang verlenen aan gebruikers die nodig is om de taken uit te voeren. In plaats van iedereen onbeperkte machtigingen in uw Azure-abonnement of-resources te geven, kunt u alleen bepaalde acties toestaan. Gebruik bijvoorbeeld Azure RBAC om een werk nemer virtuele machines in een abonnement te laten beheren, terwijl een andere SQL-data bases binnen hetzelfde abonnement kan beheren.
 
-![Beveiligde toegang tot resources in azure (RBAC)](./media/technical-capabilities/azure-security-technical-capabilities-fig5.png)
+![Toegang tot beveiligde bronnen met behulp van Azure RBAC](./media/technical-capabilities/azure-security-technical-capabilities-fig5.png)
 
 ## <a name="data-security-and-encryption"></a>Gegevensbeveiliging en -versleuteling
 
@@ -422,7 +422,7 @@ Resource Manager biedt diverse voordelen:
 
 - U kunt de afhankelijkheden tussen resources definiëren, zodat deze in de juiste volg orde worden geïmplementeerd.
 
-- U kunt toegangsbeheer toepassen op alle services in de resourcegroep omdat op rollen gebaseerd toegangsbeheer (RBAC) is geïntegreerd in het beheerplatform.
+- U kunt toegangs beheer Toep assen op alle services in uw resource groep, omdat op rollen gebaseerd toegangs beheer op basis van Azure (Azure RBAC) systeem eigen is geïntegreerd in het beheer platform.
 
 - U kunt tags toepassen op de resources om alle resources in uw abonnement op een logische manier te organiseren.
 

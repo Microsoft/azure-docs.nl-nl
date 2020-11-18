@@ -1,23 +1,22 @@
 ---
 title: Over Azure Machine Learning omgevingen
 titleSuffix: Azure Machine Learning
-description: In dit artikel vindt u meer informatie over de voor delen van machine learning omgevingen, waarmee u reproduceer bare, audit bare en Portable machine learning afhankelijkheids definities kunt gebruiken in verschillende reken doelen.
+description: Meer informatie over machine learning-omgevingen, waarmee u reproduceer bare, bewerkbaar, & Portable machine learning-afhankelijkheids definities voor verschillende reken doelen kunt inschakelen.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.author: larryfr
 author: BlackMist
-ms.date: 07/08/2020
-ms.openlocfilehash: 9c554abc8aef89ca353e06c14b04fab2622d2827
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 11/16/2020
+ms.openlocfilehash: 78f8d6d216659eaad01d512dd45696dd31035885
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322195"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695381"
 ---
 # <a name="what-are-azure-machine-learning-environments"></a>Wat zijn Azure Machine Learning omgevingen?
-
 
 Azure Machine Learning omgevingen zijn een inkapseling van de omgeving waarin uw machine learning-training zich voordoet. Hiermee worden de Python-pakketten, omgevings variabelen en software-instellingen voor uw trainings-en Score scripts opgegeven. Ze specificeren ook uitvoerings tijden (python, Spark of docker). De omgevingen zijn beheerde en geversiede entiteiten in uw Machine Learning-werk ruimte waarmee u reproduceer bare, audit bare en Portable machine learning werk stromen kunt maken in verschillende reken doelen.
 
@@ -35,7 +34,7 @@ De omgeving, de reken doel-en trainings script vormen samen de configuratie van 
 
 ## <a name="types-of-environments"></a>Typen omgevingen
 
-Omgevingen kunnen breed worden onderverdeeld in drie categorieën: met *curator* , door de *gebruiker beheerd* en door *het systeem beheerd*.
+Omgevingen kunnen breed worden onderverdeeld in drie categorieën: met *curator*, door de *gebruiker beheerd* en door *het systeem beheerd*.
 
 Gehoste omgevingen worden verzorgd door Azure Machine Learning en zijn standaard beschikbaar in uw werk ruimte. Deze zijn bedoeld om te worden gebruikt als zodanig dat ze verzamelingen van Python-pakketten en-instellingen bevatten die u helpen aan de slag te gaan met diverse machine learning frameworks. Deze vooraf gemaakte omgevingen bieden ook een snellere implementatie tijd. Zie het artikel over de gedocumenteerde [omgevingen](resource-curated-environments.md)voor een volledige lijst.
 

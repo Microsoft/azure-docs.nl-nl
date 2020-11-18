@@ -7,19 +7,19 @@ ms.service: load-balancer
 ms.topic: troubleshooting
 ms.date: 05/7/2020
 ms.author: errobin
-ms.openlocfilehash: b75c85b85674def84d9fcee62549a6458abf9174
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 516576f4e005cc9fe2303945ecb1a13489908a5d
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684834"
+ms.locfileid: "94696350"
 ---
 # <a name="troubleshooting-outbound-connections-failures"></a><a name="obconnecttsg"></a> Problemen met mislukte uitgaande verbindingen oplossen
 
 Dit artikel is bedoeld voor het bieden van oplossingen voor veelvoorkomende problemen die kunnen optreden bij uitgaande verbindingen van een Azure Load Balancer. De meeste problemen met een uitgaande verbinding die klanten ervaren, worden veroorzaakt door de verval tijd van de SNAT-poort en verbindingstime-outs voor verwijderde pakketten. In dit artikel worden de stappen beschreven voor het beperken van elk van deze problemen.
 
 ## <a name="managing-snat-pat-port-exhaustion"></a><a name="snatexhaust"></a> Poort uitputting van SNAT (PAT) beheren
-[Tijdelijke poorten](load-balancer-outbound-connections.md) die worden gebruikt voor [Pat](load-balancer-outbound-connections.md) zijn een exhaustible-resource, zoals beschreven in [zelfstandige virtuele machine zonder openbaar IP-adres](load-balancer-outbound-connections.md) en [VM met gelijke taak verdeling zonder openbaar IP-adres](load-balancer-outbound-connections.md). Met [deze](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-diagnostics#how-do-i-check-my-snat-port-usage-and-allocation) hand leiding kunt u uw gebruik van tijdelijke poorten bewaken en vergelijken met uw huidige toewijzing om het risico van of te bevestigen dat de SNAT-uitputting wordt bevestigd.
+[Tijdelijke poorten](load-balancer-outbound-connections.md) die worden gebruikt voor [Pat](load-balancer-outbound-connections.md) zijn een exhaustible-resource, zoals beschreven in [zelfstandige virtuele machine zonder openbaar IP-adres](load-balancer-outbound-connections.md) en [VM met gelijke taak verdeling zonder openbaar IP-adres](load-balancer-outbound-connections.md). Met [deze](./load-balancer-standard-diagnostics.md#how-do-i-check-my-snat-port-usage-and-allocation) hand leiding kunt u uw gebruik van tijdelijke poorten bewaken en vergelijken met uw huidige toewijzing om het risico van of te bevestigen dat de SNAT-uitputting wordt bevestigd.
 
 Als u weet dat u een groot aantal uitgaande TCP-of UDP-verbindingen met hetzelfde doel-IP-adres en dezelfde poort wilt initiëren, kunt u zien dat uitgaande verbindingen mislukken of worden aanbevolen door ondersteuning te bieden voor de SNAT-poorten (vooraf toegewezen [tijdelijke poorten](load-balancer-outbound-connections.md#preallocatedports) die worden gebruikt door [Pat](load-balancer-outbound-connections.md)), hebt u verschillende algemene opties voor risico beperking. Bekijk deze opties en beslis wat er beschikbaar en beste is voor uw scenario. Het is mogelijk dat een of meer informatie kan helpen bij het beheren van dit scenario.
 

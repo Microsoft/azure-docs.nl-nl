@@ -16,12 +16,12 @@ ms.date: 06/21/2018
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 001adaff1fed901638276e548ac1d5fdb41bdc53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc12b4cb7e97a0808405baebc64ca83cdb742bf1
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87798304"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696945"
 ---
 # <a name="manage-user-access-with-azure-ad-access-reviews"></a>Gebruikerstoegang beheren met Azure AD-toegangsbeoordelingen
 
@@ -44,7 +44,7 @@ Een toegangsbeoordeling kan een of meer gebruikers als beoordelaar hebben.
 
 2. Bepaal of elke gebruikersbeoordeling een eigen toegang moet hebben, of dat een of meer gebruikers de toegang van iedereen kunnen beoordelen.
 
-3. Als globale beheerder of gebruikers beheerder gaat u naar de [pagina Identity governance](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
+3. In een van de volgende rollen: een globale beheerder, gebruikers beheerder of (preview) de eigenaar van een M365 of AAD-beveiligings groep van de groep die moet worden gecontroleerd, gaat u naar de [pagina voor identiteits](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/)beheer.
 
 4. Maak de toegangs beoordeling. Zie [een toegangs beoordeling van groepen of toepassingen maken](create-access-review.md)voor meer informatie.
 

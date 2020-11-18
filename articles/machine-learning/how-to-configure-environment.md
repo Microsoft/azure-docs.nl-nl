@@ -1,22 +1,22 @@
 ---
 title: Python-ontwikkel omgeving instellen
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het instellen van een python-ontwikkel omgeving voor Azure Machine Learning. Gebruik Conda-omgevingen, maak configuratie bestanden en configureer uw eigen cloud-gebaseerde Notebook server, Jupyter-notebooks, Azure Databricks, Ide's, code editors en de Data Science Virtual Machine.
+description: Stel Azure Machine Learning python-ontwikkel omgevingen in Jupyter notebooks, Visual Studio code, Azure Databricks en data Science Virtual Machines in.
 services: machine-learning
 author: rastala
 ms.author: roastala
 ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: larryfr
-ms.date: 09/30/2020
+ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1, devx-track-azurecli
-ms.openlocfilehash: 451ad33a9d041635c3f51e323539b423378d02d1
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 03d10f71b585090157eff164cc98246f50608fe1
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422891"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695364"
 ---
 # <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Stel een python-ontwikkel omgeving in voor Azure Machine Learning
 
@@ -59,11 +59,11 @@ Als u dit bestand uit uw code wilt gebruiken, gebruikt u de- [`Workspace.from_co
 
 Maak een werkruimte configuratie bestand op een van de volgende manieren:
 
-* Azure-portal
+* Azure Portal
 
-    **Down load het bestand** : In de [Azure Portal](https://ms.portal.azure.com)selecteert u  **config.jsdownloaden** in het gedeelte **overzicht** van uw werk ruimte.
+    **Down load het bestand**: In de [Azure Portal](https://ms.portal.azure.com)selecteert u  **config.jsdownloaden** in het gedeelte **overzicht** van uw werk ruimte.
 
-    ![Azure-portal](./media/how-to-configure-environment/configure.png)
+    ![Azure Portal](./media/how-to-configure-environment/configure.png)
 
 * Azure Machine Learning python-SDK
 
@@ -127,7 +127,7 @@ Raadpleeg de [opslag plaats Azure machine learning notitie blokken](https://gith
 > [!NOTE]
 > Een door de community gestuurde opslagplaats met voorbeelden vindt u op https://github.com/Azure/azureml-examples.
 
-### <a name="visual-studio-code"></a><a id="vscode"></a>Visual Studio Code
+### <a name="visual-studio-code"></a><a id="vscode"></a>Visual Studio code
 
 Visual Studio code gebruiken voor ontwikkeling:
 

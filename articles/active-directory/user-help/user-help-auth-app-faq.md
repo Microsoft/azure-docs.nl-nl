@@ -12,18 +12,18 @@ ms.topic: end-user-help
 ms.date: 10/20/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: 017898249f1ad32a37b7ccd6bce17fe3d32843f3
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 65bd5a89d132a575817480d0609109a3f379e969
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480306"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833959"
 ---
 # <a name="frequently-asked-questions-faq-about-the-microsoft-authenticator-app"></a>Veelgestelde vragen over de Microsoft Authenticator-app
 
 In dit artikel vindt u antwoorden op veelgestelde vragen over de app Microsoft Authenticator. Als u geen antwoord op uw vraag ziet, gaat u naar het [Microsoft Authenticator app-forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftAuthenticatorApp).
 
-De app Microsoft Authenticator heeft de Azure Authenticator-app vervangen en de aanbevolen app wanneer u Azure Multi-Factor Authentication gebruikt. De Microsoft Authenticator-app is beschikbaar voor [Android](https://app.adjust.com/e3rxkc_7lfdtm?fallback=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.azure.authenticator) en [iOS](https://app.adjust.com/e3rxkc_7lfdtm?fallback=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fmicrosoft-authenticator%2Fid983156458).
+De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de aanbevolen app wanneer u Azure AD Multi-Factor Authentication gebruikt. De Microsoft Authenticator-app is beschikbaar voor [Android](https://app.adjust.com/e3rxkc_7lfdtm?fallback=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.azure.authenticator) en [iOS](https://app.adjust.com/e3rxkc_7lfdtm?fallback=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fmicrosoft-authenticator%2Fid983156458).
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
@@ -84,7 +84,7 @@ De app Microsoft Authenticator heeft de Azure Authenticator-app vervangen en de 
 ### <a name="device-registration"></a>Apparaatregistratie
 
 **V**: wat is apparaatregistratie?
-**A**: uw organisatie vereist mogelijk dat u het apparaat registreert om de toegang tot beveiligde bronnen, zoals bestanden en apps, bij te houden. Ze kunnen ook voorwaardelijke toegang inschakelen om het risico van ongewenste toegang tot deze bronnen te verminderen. U kunt de registratie van uw apparaat bij **instellingen**opheffen, maar u kunt de toegang tot e-mail berichten in Outlook, bestanden in OneDrive verliezen en u verliest de mogelijkheid om de aanmelding via de telefoon te gebruiken.
+**A**: uw organisatie vereist mogelijk dat u het apparaat registreert om de toegang tot beveiligde bronnen, zoals bestanden en apps, bij te houden. Ze kunnen ook voorwaardelijke toegang inschakelen om het risico van ongewenste toegang tot deze bronnen te verminderen. U kunt de registratie van uw apparaat bij **instellingen** opheffen, maar u kunt de toegang tot e-mail berichten in Outlook, bestanden in OneDrive verliezen en u verliest de mogelijkheid om de aanmelding via de telefoon te gebruiken.
 
 ### <a name="verification-codes-when-connected"></a>Verificatie codes bij verbinding
 
@@ -96,13 +96,13 @@ De app Microsoft Authenticator heeft de Azure Authenticator-app vervangen en de 
 
 **V**: Waarom krijg ik alleen meldingen wanneer de app is geopend? Wanneer de app is gesloten, worden er geen meldingen weer geven.
 
-**A**: als u meldingen ontvangt, maar geen waarschuwing, zelfs met uw beltoon op, moet u de app-instellingen controleren. Zorg ervoor dat de app is ingeschakeld om geluid te gebruiken of te trillen voor meldingen. Als u helemaal geen meldingen ontvangt, controleert u de volgende voor waarden:<ul><li>Is uw telefoon in geen enkele Store of Stille modus? Deze modi kunnen verhinderen dat apps meldingen verzenden.</li><li>Kunt u meldingen ontvangen van andere apps? Als dat niet het geval is, is het mogelijk dat er een probleem is met de netwerk verbindingen op uw telefoon of het meldingen kanaal van Android of Apple. U kunt proberen om uw netwerk verbindingen op te lossen via uw telefoon instellingen. Mogelijk moet u contact opnemen met uw service provider om u te helpen bij het Android-of Apple-meldings kanaal.</li><li>Kunt u meldingen ontvangen voor sommige accounts in de app, maar niet voor anderen? Als dit het geval is, verwijdert u het problematische account uit uw app, voegt u het opnieuw toe, zodat er meldingen worden weer geven en kunt u zien of het probleem is opgelost.</li></ul>Als u al deze stappen hebt uitgevoerd en nog steeds problemen ondervindt, kunt u het beste uw logboek bestanden verzenden voor diagnostische gegevens. Open de app, ga naar **Help**en selecteer **Logboeken verzenden**. Daarna gaat u naar het [Microsoft Authenticator app-forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftAuthenticatorApp) en geeft u het probleem weer dat u ziet en de stappen die u hebt geprobeerd.
+**A**: als u meldingen ontvangt, maar geen waarschuwing, zelfs met uw beltoon op, moet u de app-instellingen controleren. Zorg ervoor dat de app is ingeschakeld om geluid te gebruiken of te trillen voor meldingen. Als u helemaal geen meldingen ontvangt, controleert u de volgende voor waarden:<ul><li>Is uw telefoon in geen enkele Store of Stille modus? Deze modi kunnen verhinderen dat apps meldingen verzenden.</li><li>Kunt u meldingen ontvangen van andere apps? Als dat niet het geval is, is het mogelijk dat er een probleem is met de netwerk verbindingen op uw telefoon of het meldingen kanaal van Android of Apple. U kunt proberen om uw netwerk verbindingen op te lossen via uw telefoon instellingen. Mogelijk moet u contact opnemen met uw service provider om u te helpen bij het Android-of Apple-meldings kanaal.</li><li>Kunt u meldingen ontvangen voor sommige accounts in de app, maar niet voor anderen? Als dit het geval is, verwijdert u het problematische account uit uw app, voegt u het opnieuw toe, zodat er meldingen worden weer geven en kunt u zien of het probleem is opgelost.</li></ul>Als u al deze stappen hebt uitgevoerd en nog steeds problemen ondervindt, kunt u het beste uw logboek bestanden verzenden voor diagnostische gegevens. Open de app, ga naar **Help** en selecteer **Logboeken verzenden**. Daarna gaat u naar het [Microsoft Authenticator app-forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftAuthenticatorApp) en geeft u het probleem weer dat u ziet en de stappen die u hebt geprobeerd.
 
 ### <a name="switch-to-push-notifications"></a>Overschakelen naar Push meldingen
 
 **V**: Ik gebruik de verificatie codes in de app, maar hoe schakel ik over naar de push meldingen?
 
-**A**: u kunt meldingen instellen voor uw werk-of school account (indien toegestaan door uw beheerder) of voor uw persoonlijke Microsoft-account. Meldingen werken niet voor accounts van derden, zoals Google of Facebook.<br>Als u uw persoonlijke account wilt overschakelen op meldingen, moet u uw apparaat opnieuw registreren bij het account. Ga naar **account toevoegen**, selecteer **persoonlijk micro soft-account**en meld u vervolgens aan met uw gebruikers naam en wacht woord.<br>Voor uw werk-of school account beslist uw organisatie of u meldingen met één klik wilt toestaan.
+**A**: u kunt meldingen instellen voor uw werk-of school account (indien toegestaan door uw beheerder) of voor uw persoonlijke Microsoft-account. Meldingen werken niet voor accounts van derden, zoals Google of Facebook.<br>Als u uw persoonlijke account wilt overschakelen op meldingen, moet u uw apparaat opnieuw registreren bij het account. Ga naar **account toevoegen**, selecteer **persoonlijk micro soft-account** en meld u vervolgens aan met uw gebruikers naam en wacht woord.<br>Voor uw werk-of school account beslist uw organisatie of u meldingen met één klik wilt toestaan.
 
 ### <a name="notifications-for-other-accounts"></a>Meldingen voor andere accounts
 
@@ -198,7 +198,7 @@ De app Microsoft Authenticator heeft de Azure Authenticator-app vervangen en de 
 
 **V**: mijn app voor Apple Watch is vastgelopen. Kan ik mijn crash logboeken verzenden zodat je het kunt onderzoeken?
 
-**A**: u moet er eerst voor zorgen dat u ervoor hebt gekozen om uw analyses met ons te delen. Als u een TestFlight-gebruiker bent, bent u al aangemeld. Als dat niet het geval is, gaat u naar **instellingen > Privacy > Analytics** en selecteert u de opties **share iPhone & watch bekijken** en **delen met app-ontwikkel aars** .<br>Nadat u zich hebt aangemeld, kunt u proberen om uw crash te reproduceren zodat uw crash logboeken automatisch naar ons worden verzonden om te worden onderzocht. Als u uw crash echter niet kunt reproduceren, kunt u de logboek bestanden hand matig kopiëren en naar ons verzenden.<ol><li>Open de controle-app op uw telefoon, ga naar **instellingen > algemeen**en klik vervolgens op **Watch-analyse kopiëren**.</li><li>Zoek de overeenkomstige crash onder **instellingen > privacybeleid > analytics > Analytics-gegevens**en kopieer de hele tekst vervolgens hand matig.</li><li>Open de verificator op uw telefoon en plak de gekopieerde tekst in het tekstvak **delen met app-ontwikkel aars** op de pagina **Logboeken verzenden** .</li></ol>
+**A**: u moet er eerst voor zorgen dat u ervoor hebt gekozen om uw analyses met ons te delen. Als u een TestFlight-gebruiker bent, bent u al aangemeld. Als dat niet het geval is, gaat u naar **instellingen > Privacy > Analytics** en selecteert u de opties **share iPhone & watch bekijken** en **delen met app-ontwikkel aars** .<br>Nadat u zich hebt aangemeld, kunt u proberen om uw crash te reproduceren zodat uw crash logboeken automatisch naar ons worden verzonden om te worden onderzocht. Als u uw crash echter niet kunt reproduceren, kunt u de logboek bestanden hand matig kopiëren en naar ons verzenden.<ol><li>Open de controle-app op uw telefoon, ga naar **instellingen > algemeen** en klik vervolgens op **Watch-analyse kopiëren**.</li><li>Zoek de overeenkomstige crash onder **instellingen > privacybeleid > analytics > Analytics-gegevens** en kopieer de hele tekst vervolgens hand matig.</li><li>Open de verificator op uw telefoon en plak de gekopieerde tekst in het tekstvak **delen met app-ontwikkel aars** op de pagina **Logboeken verzenden** .</li></ol>
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -16,12 +16,12 @@ ms.date: 08/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39e483c5cdb7e5acc0677b0d0cf2b41c390eef0b
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: fb23e60539c704dac457ab6e8706ec0cfe350ed9
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371559"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835319"
 ---
 # <a name="configure-azure-ad-custom-roles-in-privileged-identity-management"></a>Aangepaste Azure AD-rollen configureren in Privileged Identity Management
 
@@ -64,9 +64,9 @@ U kunt ook een van deze *actieve* toewijzings duur opties kiezen:
 - **Permanente actieve toewijzing toestaan**: beheerders kunnen permanent actief lidmaatschap toewijzen.
 - **Actieve toewijzing laten verlopen na**: beheerders kunnen vereisen dat alle actieve toewijzingen een opgegeven begin-en eind datum hebben.
 
-### <a name="require-azure-multi-factor-authentication"></a>Azure Multi-Factor Authentication vereisen
+### <a name="require-azure-ad-multi-factor-authentication"></a>Azure AD-Multi-Factor Authentication vereisen
 
-Privileged Identity Management biedt een optionele afdwinging van Azure Multi-Factor Authentication voor twee verschillende scenario's.
+Privileged Identity Management biedt een optionele afdwinging van Azure AD-Multi-Factor Authentication voor twee verschillende scenario's.
 
 - **Multi-Factor Authentication vereisen voor actieve toewijzing**
 
@@ -74,7 +74,7 @@ Privileged Identity Management biedt een optionele afdwinging van Azure Multi-Fa
 
 - **Multi-Factor Authentication vereisen bij activering**
 
-  U kunt in aanmerking komende gebruikers die zijn toegewezen aan een rol voor inschrijving in azure Multi-Factor Authentication vereisen voordat ze kunnen activeren. Dit proces zorgt ervoor dat de gebruiker die de activering aanvraagt, een redelijke zekerheid krijgt. Het afdwingen van deze optie beschermt kritieke rollen in situaties waarin het gebruikers account mogelijk is aangetast. Als u wilt dat een in aanmerking komend lid Azure Multi-Factor Authentication voor activering moet uitvoeren, schakelt u het selectie vakje **vereisen multi-factor Authentication bij activering** in.
+  U kunt in aanmerking komende gebruikers die zijn toegewezen aan een rol voor inschrijving in azure AD Multi-Factor Authentication vereisen voordat ze kunnen activeren. Dit proces zorgt ervoor dat de gebruiker die de activering aanvraagt, een redelijke zekerheid krijgt. Het afdwingen van deze optie beschermt kritieke rollen in situaties waarin het gebruikers account mogelijk is aangetast. Als u wilt dat een in aanmerking komend lid een Azure AD-Multi-Factor Authentication uitvoert vóór activering, schakelt u het selectie vakje **vereisen multi-factor Authentication bij activering** in.
 
 Zie [multi-factor Authentication en privileged Identity Management](pim-how-to-require-mfa.md)voor meer informatie.
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 3b4a9547a1bd62b7464b4a79fe68720572630f3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d826b80c11b700d753acc18f8d4c626a65510f93
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88961887"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833806"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Aanbevolen procedures en richt lijnen voor probleem oplossing voor knooppunt toepassingen op Azure App Service Windows
 
@@ -121,13 +121,13 @@ Lees [Debug node.js-toepassingen in Windows](https://tomasz.janczuk.org/2011/11/
 
 Veel toepassingen zouden uitgaande verbindingen willen maken als onderdeel van hun normale werking. Als er bijvoorbeeld een aanvraag binnenkomt in, zou uw node-app graag contact willen opnemen met een REST API elders en zo informatie ontvangen om de aanvraag te verwerken. U wilt een Keep Alive-agent gebruiken bij het maken van http-of https-aanroepen. U kunt de agentkeepalive-module gebruiken als Keep Alive-agent wanneer u deze uitgaande aanroepen maakt.
 
-De agentkeepalive-module zorgt ervoor dat sockets opnieuw worden gebruikt op uw Azure webapp VM. Bij het maken van een nieuwe socket voor elke uitgaande aanvraag, wordt de overhead toegevoegd aan uw toepassing. Als u uw toepassing sockets voor uitgaande aanvragen opnieuw wilt gebruiken, zorgt u ervoor dat uw toepassing niet groter is dan de maxSockets die worden toegewezen per VM. De aanbeveling op Azure App Service is om de agentKeepAlive maxSockets-waarde in te stellen op een totaal van (4 exemplaren van node.exe \* 40 maxSockets/instance) 160 sockets per VM.
+De agentkeepalive-module zorgt ervoor dat sockets opnieuw worden gebruikt op uw Azure webapp VM. Bij het maken van een nieuwe socket voor elke uitgaande aanvraag, wordt de overhead toegevoegd aan uw toepassing. Als u uw toepassing sockets voor uitgaande aanvragen opnieuw wilt gebruiken, zorgt u ervoor dat uw toepassing niet groter is dan de maxSockets die worden toegewezen per VM. De aanbeveling op Azure App Service is om de agentKeepAlive maxSockets-waarde in te stellen op een totaal van (4 exemplaren van node.exe \* 32 maxSockets/instance) 128 sockets per VM.
 
 Voor beeld van [agentKeepALive](https://www.npmjs.com/package/agentkeepalive) -configuratie:
 
 ```nodejs
 let keepaliveAgent = new Agent({
-    maxSockets: 40,
+    maxSockets: 32,
     maxFreeSockets: 10,
     timeout: 60000,
     keepAliveTimeout: 300000

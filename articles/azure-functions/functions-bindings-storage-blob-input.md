@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: f5a01724bfefd50297182f998b46f99eacca5843
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a46c272ee2f7aa2d6621e3dc2db81605ba0363f
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91325773"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833109"
 ---
 # <a name="azure-blob-storage-input-binding-for-azure-functions"></a>Invoer binding voor Azure Blob Storage voor Azure Functions
 
@@ -175,6 +175,15 @@ In de *function.jsop* bestand wordt de `queueTrigger` meta gegevens eigenschap g
 
 In de [configuratie](#configuration) sectie worden deze eigenschappen uitgelegd.
 
+De `dataType` eigenschap bepaalt welke binding wordt gebruikt. De volgende waarden zijn beschikbaar voor de ondersteuning van verschillende bindings strategieën:
+
+| Bindings waarde | Standaard | Beschrijving | Voorbeeld |
+| --- | --- | --- | --- |
+| `undefined` | J | Maakt gebruik van uitgebreide bindingen | `def main(input: func.InputStream)` |
+| `string` | N | Maakt gebruik van algemene binding en cast het invoer type als een `string` | `def main(input: str)` |
+| `binary` | N | Maakt gebruik van generieke binding en cast de invoer BLOB als `bytes` python-object | `def main(input: bytes)` |
+
+
 Dit is de Python-code:
 
 ```python
@@ -309,6 +318,7 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**name** | N.v.t. | De naam van de variabele die de BLOB in functie code vertegenwoordigt.|
 |**path** |**BlobPath** | Het pad naar de blob. |
 |**connection** |**Verbinding**| De naam van een app-instelling die de [opslag Connection String](../storage/common/storage-configure-connection-string.md) bevat die moet worden gebruikt voor deze binding. Als de naam van de app-instelling begint met ' AzureWebJobs ', kunt u hier alleen de rest van de naam opgeven. Als u bijvoorbeeld instelt `connection` op ' mijn opslag ', zoekt de functie runtime naar een app-instelling met de naam ' AzureWebJobsMyStorage '. Als u `connection` leeg laat, gebruikt de functions runtime de standaard opslag Connection String in de app-instelling met de naam `AzureWebJobsStorage` .<br><br>Het connection string moet voor een opslag account voor algemeen gebruik zijn, niet een [opslag account met alleen BLOB](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
+|**param1**| n.v.t. | Voor dynamisch getypeerde talen geeft u het onderliggende gegevens type op. Mogelijke waarden zijn `string` , `binary` , of `stream` . Raadpleeg de [concepten voor triggers en bindingen](functions-triggers-bindings.md?tabs=python#trigger-and-binding-definitions)voor meer details. |
 |n.v.t. | **Toegang** | Hiermee wordt aangegeven of u wilt lezen of schrijven. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]

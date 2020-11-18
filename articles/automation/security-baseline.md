@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2d3f04777983d24d5219c55c5309b7d12c214594
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 2d0157f3e7ab0ef373235fcc6e188f9caa36eff4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92070687"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833296"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Azure-beveiligings basislijn voor Automation
 
@@ -204,7 +204,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 ### <a name="22-configure-central-security-log-management"></a>2,2: Centraal beveiligings logboek beheer configureren
 
-**Hulp**bij het door sturen van logboek gegevens naar Azure monitor logboeken voor het verzamelen van beveiligings gegevens die door Azure Automation resources worden gegenereerd. Gebruik in Azure Monitor logboek query's om analyses te zoeken en uit te voeren, en gebruik Azure Storage accounts voor lange termijn/archiverings opslag. Azure Automation kunt de status van de runbook-taak, taak stromen, configuratie gegevens van de automatiserings status, update beheer en het bijhouden van wijzigingen of inventaris logboeken verzenden naar uw werk ruimte Log Analytics. Deze informatie is zichtbaar via de API Azure Portal, Azure PowerShell en Azure Monitor logs, waarmee u eenvoudig onderzoek kunt uitvoeren.
+**Hulp** bij het door sturen van logboek gegevens naar Azure monitor logboeken voor het verzamelen van beveiligings gegevens die door Azure Automation resources worden gegenereerd. Gebruik in Azure Monitor logboek query's om analyses te zoeken en uit te voeren, en gebruik Azure Storage accounts voor lange termijn/archiverings opslag. Azure Automation kunt de status van de runbook-taak, taak stromen, configuratie gegevens van de automatiserings status, update beheer en het bijhouden van wijzigingen of inventaris logboeken verzenden naar uw werk ruimte Log Analytics. Deze informatie is zichtbaar via de API Azure Portal, Azure PowerShell en Azure Monitor logs, waarmee u eenvoudig onderzoek kunt uitvoeren.
 
 U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derden.
 
@@ -500,7 +500,7 @@ Als er echter Hybrid Runbook Workers worden gebruikt die worden ondersteund door
 
 **Verantwoordelijkheid**: klant
 
-## <a name="data-protection"></a>Gegevensbeveiliging
+## <a name="data-protection"></a>Gegevensbescherming
 
 *Zie [beveiligings beheer: gegevens beveiliging](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 
@@ -742,7 +742,7 @@ Als u Hybrid Runbook Workers gebruikt die worden ondersteund door virtuele machi
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
 - Niet toegestane resourcetypen
 - Toegestane brontypen
 
@@ -798,7 +798,7 @@ Als u Hybrid Runbook Workers gebruikt die door Azure worden ondersteund Virtual 
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
 - Niet toegestane resourcetypen
 - Toegestane brontypen
 
@@ -1040,7 +1040,7 @@ Wanneer u de functie Hybrid Runbook Worker gebruikt, gebruikt u Azure Automation
 
 * [Runbook-verificatie gebruiken met beheerde identiteiten](./automation-hrw-run-runbooks.md#runbook-auth-managed-identities)
 
-* [Een Key Vault maken](../key-vault/secrets/quick-create-portal.md)
+* [Een Key Vault maken](../key-vault/general/quick-create-portal.md)
 
 * [Verifiëren bij Key Vault](../key-vault/general/authentication.md)
 
@@ -1226,7 +1226,7 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 * [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 
-* [Labels gebruiken om uw Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
+* [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
 **Azure Security Center bewaking**: Ja
 

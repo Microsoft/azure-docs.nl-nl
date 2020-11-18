@@ -13,12 +13,12 @@ ms.subservice: pim
 ms.date: 09/16/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69884b9e07172e9b25f4c14884be8713da23cbdb
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: e0e230a975748fe2f737c4b8fe8491887351d387
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369825"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835370"
 ---
 # <a name="assign-azure-ad-roles-in-privileged-identity-management"></a>Azure AD-rollen toewijzen in Privileged Identity Management
 
@@ -127,7 +127,7 @@ Volg deze stappen om een gebruiker in aanmerking te laten komen voor een Azure A
 
     ![Azure AD-rollen openen](./media/pim-how-to-add-role-to-user/pim-directory-roles.png)
 
-1. Selecteer **lid toevoegen** om **beheerde leden toevoegen**te openen.
+1. Selecteer **lid toevoegen** om **beheerde leden toevoegen** te openen.
 
 1. Selecteer **een rol selecteren**, selecteer een rol die u wilt beheren en selecteer vervolgens **selecteren**.
 
@@ -137,7 +137,7 @@ Volg deze stappen om een gebruiker in aanmerking te laten komen voor een Azure A
 
     ![Selecteer een gebruiker of groep die u wilt toewijzen](./media/pim-how-to-add-role-to-user/pim-select-members.png)
 
-1. Selecteer in **beheerde leden toevoegen**de optie **OK** om de gebruiker aan de rol toe te voegen.
+1. Selecteer in **beheerde leden toevoegen** de optie **OK** om de gebruiker aan de rol toe te voegen.
 
 1. Selecteer in de lijst met rollen de rol die u zojuist hebt toegewezen om de lijst met leden weer te geven.
 
@@ -147,7 +147,7 @@ Volg deze stappen om een gebruiker in aanmerking te laten komen voor een Azure A
 
 1. Nu de gebruiker in aanmerking komt voor de rol, laat hij ze weten dat ze deze kunnen activeren volgens de instructies in [mijn Azure AD-rollen activeren in privileged Identity Management](pim-how-to-activate-role.md).
 
-    In aanmerking komende beheerders worden tijdens de activering gevraagd om zich te registreren voor Azure Multi-Factor Authentication. Als een gebruiker zich niet kan registreren voor MFA of een Microsoft-account (zoals) gebruikt @outlook.com , moet u deze in al hun rollen blijvend maken.
+    In aanmerking komende beheerders worden tijdens de activering gevraagd om zich te registreren voor Azure AD Multi-Factor Authentication. Als een gebruiker zich niet kan registreren voor MFA of een Microsoft-account (zoals) gebruikt @outlook.com , moet u deze in al hun rollen blijvend maken.
 
 ## <a name="make-a-role-assignment-permanent"></a>Een roltoewijzing permanent maken
 
@@ -167,7 +167,7 @@ Standaard zijn nieuwe gebruikers alleen *in aanmerking* voor een Azure AD-beheer
 
     ![Roltoewijzing permanent maken](./media/pim-how-to-add-role-to-user/pim-make-perm.png)
 
-    De rol wordt nu als **permanent**weer gegeven.
+    De rol wordt nu als **permanent** weer gegeven.
 
     ![Lijst met leden met permanente wijziging](./media/pim-how-to-add-role-to-user/pim-directory-role-list-members-permanent.png)
 
@@ -191,7 +191,7 @@ Volg deze stappen om een specifieke gebruiker te verwijderen uit een Azure AD-be
 
     ![Een rol verwijderen](./media/pim-how-to-add-role-to-user/pim-remove-role.png)
 
-1. Selecteer **Ja**in het bericht waarin u wordt gevraagd om te bevestigen.
+1. Selecteer **Ja** in het bericht waarin u wordt gevraagd om te bevestigen.
 
     ![Het verwijderen bevestigen](./media/pim-how-to-add-role-to-user/pim-remove-role-confirm.png)
 

@@ -14,12 +14,12 @@ ms.subservice: roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69428898ca123bf5b5fa96cf041818cc15f5ac40
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: b0a62aafd8073b5f1a35ba340c48c80f498be2c2
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378632"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94834452"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Bevoegde toegang beveiligen voor hybride implementaties en cloudimplementaties in Azure AD
 
@@ -114,7 +114,7 @@ Evalueer de accounts die zijn toegewezen of die in aanmerking komen voor de rol 
 
 #### <a name="turn-on-multi-factor-authentication-and-register-all-other-highly-privileged-single-user-non-federated-admin-accounts"></a>Multi-factor Authentication inschakelen en alle andere niet-gefedereerde niet-federatieve beheerders accounts van één gebruiker registreren
 
-Azure Multi-Factor Authentication (MFA) vereisen bij het aanmelden voor alle afzonderlijke gebruikers die permanent zijn toegewezen aan een of meer van de Azure AD-beheerders rollen: globale beheerder, bevoegde rol beheerder, Exchange-beheerder en share point-beheerder. Gebruik de hand leiding om [multi-factor Authentication (MFA) in te scha kelen voor uw beheerders accounts](../authentication/howto-mfa-userstates.md) en ervoor te zorgen dat alle gebruikers zijn geregistreerd op [https://aka.ms/mfasetup](https://aka.ms/mfasetup) . Meer informatie vindt u onder stap 2 en stap 3 van de hand leiding [beveiliging beveiligen tot gegevens en services in Microsoft 365](https://support.office.com/article/Protect-access-to-data-and-services-in-Office-365-a6ef28a4-2447-4b43-aae2-f5af6d53c68e). 
+Azure AD Multi-Factor Authentication (MFA) vereisen bij het aanmelden voor alle afzonderlijke gebruikers die permanent zijn toegewezen aan een of meer van de Azure AD-beheerders rollen: globale beheerder, beheerder van beschermde rol, Exchange-beheerder en share point-beheerder. Gebruik de hand leiding om [multi-factor Authentication (MFA) in te scha kelen voor uw beheerders accounts](../authentication/howto-mfa-userstates.md) en ervoor te zorgen dat alle gebruikers zijn geregistreerd op [https://aka.ms/mfasetup](https://aka.ms/mfasetup) . Meer informatie vindt u onder stap 2 en stap 3 van de hand leiding [beveiliging beveiligen tot gegevens en services in Microsoft 365](https://support.office.com/article/Protect-access-to-data-and-services-in-Office-365-a6ef28a4-2447-4b43-aae2-f5af6d53c68e). 
 
 ## <a name="stage-2-mitigate-frequently-used-attacks"></a>Fase 2: veelgebruikte aanvallen beperken
 
@@ -135,7 +135,7 @@ De toename van ' uw eigen apparaat meenemen ' en het werken met een thuis beleid
 * Zorg ervoor dat uw accounts worden gebruikt voor beheer doeleinden:
 
   * Werk aan hen gekoppelde e-mail adressen
-  * Zijn geregistreerd voor Azure Multi-Factor Authentication of gebruikmaken van MFA on-premises
+  * Zijn geregistreerd voor Azure AD Multi-Factor Authentication of gebruikmaken van MFA on-premises
 * Vraag gebruikers om hun zakelijke rechtvaardiging voor beheerders toegang.
 * Verwijder beheerders toegang voor de personen en services die deze niet nodig hebben.
 
@@ -240,7 +240,7 @@ U wordt aangeraden dat u:
 
 #### <a name="continue-rollout-of-stronger-authentication-for-all-users"></a>Implementatie van sterkere verificatie voor alle gebruikers voortzetten
 
-Vereisen dat Maxi maal beschik bare gebruikers moderne, sterke authenticatie hebben zoals Azure MFA of Windows hello. Voor beelden van Maxi maal beschik bare gebruikers zijn:
+Vereisen dat Maxi maal beschik bare gebruikers moderne, sterke authenticatie hebben zoals Azure AD MFA of Windows hello. Voor beelden van Maxi maal beschik bare gebruikers zijn:
 
 * Managers van C-Suite
 * Managers op hoog niveau
@@ -359,7 +359,7 @@ Fase 4 van het schema moet worden geïmplementeerd op zes maanden en verder. Vol
 Het beveiligen van bevoegde toegang is belang rijk voor het instellen van beveiligings garanties voor uw bedrijfs middelen. Het moet echter deel uitmaken van een volledig beveiligings programma dat permanente beveiligings garanties biedt. Dit programma moet elementen bevatten zoals:
 
 * Beleid
-* Bewerkingen
+* Operations
 * Gegevens beveiliging
 * Servers
 * Toepassingen

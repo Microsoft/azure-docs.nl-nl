@@ -6,13 +6,13 @@ ms.assetid: a22450c4-9b8b-41d4-9568-c4646f4cf66b
 ms.topic: article
 ms.date: 5/10/2020
 ms.author: ccompy
-ms.custom: seodec18
-ms.openlocfilehash: 1e6bace9652ff68bb4cc28d482016b7e7510154b
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: 86d0569d95df18924ed47682b75d7491c71d4483
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150201"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833551"
 ---
 # <a name="use-an-app-service-environment"></a>Een App Service-omgeving gebruiken
 
@@ -23,7 +23,7 @@ Een App Service Environment (ASE) is een implementatie van Azure App Service in 
 - **Data Base**: bevat informatie die de omgeving definieert
 - **Opslag**: wordt gebruikt voor het hosten van de door de klant gepubliceerde apps
 
-U kunt een ASE implementeren met een extern of intern virtueel IP-adres (VIP) voor toegang tot apps. Een implementatie met een extern VIP wordt meestal een *externe ASE*genoemd. Een implementatie met een intern VIP wordt een *ILB-ASE* genoemd, omdat het een interne load BALANCER (ILB) gebruikt. Zie [een ILB ASE maken en gebruiken][MakeILBASE]voor meer informatie over de ILB-ASE.
+U kunt een ASE implementeren met een extern of intern virtueel IP-adres (VIP) voor toegang tot apps. Een implementatie met een extern VIP wordt meestal een *externe ASE* genoemd. Een implementatie met een intern VIP wordt een *ILB-ASE* genoemd, omdat het een interne load BALANCER (ILB) gebruikt. Zie [een ILB ASE maken en gebruiken][MakeILBASE]voor meer informatie over de ILB-ASE.
 
 ## <a name="create-an-app-in-an-ase"></a>Een app maken in een ASE
 
@@ -50,7 +50,7 @@ Een app maken in een ASE:
 
 1. Selecteer een bestaand App Service plan in uw ASE of maak een nieuw abonnement door de volgende stappen uit te voeren:
 
-    a. Selecteer **een resource maken > web-app**in het Azure Portal menu aan de linkerkant.
+    a. Selecteer **een resource maken > web-app** in het Azure Portal menu aan de linkerkant.
 
     b. Selecteer het abonnement.
 
@@ -134,12 +134,12 @@ DNS configureren in uw eigen DNS-server met uw ILB-ASE:
 
 DNS configureren in Azure DNS particuliere zones:
 
-1. Maak een Azure DNS particuliere zone met de naam &lt; ASE name &gt; . appserviceenvironment.net
+1. Maak een Azure DNS privézone met de naam &lt;ASE-naam&gt;.appserviceenvironment.net
 1. Maak in die zone een A-record die * verwijst naar het IP-adres van de ILB
 1. Maak in die zone een A-record die @ verwijst naar het IP-adres van de ILB
 1. Maak in die zone een A-record die *.scm verwijst naar het IP-adres van de ILB
 
-De DNS-instellingen voor uw ASE-standaard domeinachtervoegsel beperken u niet dat uw apps toegankelijk zijn voor die namen. U kunt een aangepaste domeinnaam instellen zonder validatie voor uw apps in een ILB-ASE. Als u vervolgens een zone met de naam *contoso.net*wilt maken, kunt u dit doen en deze naar het IP-adres van de ILB wijzen. De aangepaste domein naam werkt voor app-aanvragen, maar niet voor de SCM-site. De SCM-site is alleen beschikbaar op * &lt; AppName &gt; . scm. &lt; asename &gt; . appserviceenvironment.net*. 
+De DNS-instellingen voor uw ASE-standaard domeinachtervoegsel beperken u niet dat uw apps toegankelijk zijn voor die namen. U kunt een aangepaste domeinnaam instellen zonder validatie voor uw apps in een ILB-ASE. Als u vervolgens een zone met de naam *contoso.net* wilt maken, kunt u dit doen en deze naar het IP-adres van de ILB wijzen. De aangepaste domein naam werkt voor app-aanvragen, maar niet voor de SCM-site. De SCM-site is alleen beschikbaar op *&lt; AppName &gt; . scm. &lt; asename &gt; . appserviceenvironment.net*. 
 
 De zone met de naam *. &lt; asename &gt; . appserviceenvironment.net* is wereld wijd uniek. Voor 2019 konden klanten het achtervoegsel van het domein van de ILB ASE opgeven. Als u *. contoso.com* wilt gebruiken voor het domein achtervoegsel, kunt u dit doen en dat zou de SCM-site zouden kunnen bevatten. Er waren problemen met dat model, waaronder; het beheren van het standaard SSL-certificaat, het ontbreken van eenmalige aanmelding met de SCM-site en de vereiste om een wildcard certificaat te gebruiken. Het upgradeproces van het ILB ASE-standaard certificaat was tevens verstoord en veroorzaakte het opnieuw opstarten van de toepassing. Om deze problemen op te lossen, is het ILB ASE-gedrag gewijzigd om een domeinachtervoegsel te gebruiken op basis van de naam van de ASE en met een achtervoegsel dat eigendom is van Microsoft. De wijziging van het ILB ASE-gedrag heeft alleen invloed op ILB ASE's gemaakt na mei 2019. Bestaande ILB ASE's as moeten nog steeds het standaard certificaat van de ASE en de bijbehorende DNS-configuratie beheren.
 
@@ -149,7 +149,7 @@ In een ASE kunt u, net als bij de multi tenant-App Service, de volgende methoden
 
 - Webimplementatie
 - FTP
-- Doorlopende integratie (CI)
+- Continue integratie (CI)
 - Slepen en neerzetten in de kudu-console
 - Een IDE, zoals Visual Studio, eclips of IntelliJe idee
 

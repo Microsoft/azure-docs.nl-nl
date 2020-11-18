@@ -17,12 +17,12 @@ ms.date: 11/05/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98b9a2da11ad32e35704a49cfcf1788f95276dda
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: bc5f902d75084d649f211d589e53041f1eb37f0e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93393452"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94834707"
 ---
 # <a name="how-long-does-azure-ad-store-reporting-data"></a>Hoe lang worden de gegevens van Azure AD Store gerapporteerd?
 
@@ -65,7 +65,7 @@ Voor beveiligings signalen wordt het verzamelings proces gestart wanneer u zich 
 | :--                    | :--           | :--                 | :--                 |
 | Auditlogboeken             | 7 dagen        | 30 dagen             | 30 dagen             |
 | Aanmeldingen               | 7 dagen        | 30 dagen             | 30 dagen             |
-| Gebruik van Azure MFA        | 30 dagen       | 30 dagen             | 30 dagen             |
+| Azure AD MFA-gebruik        | 30 dagen       | 30 dagen             | 30 dagen             |
 
 U kunt de gegevens voor audits en aanmeldings activiteiten langer bewaren dan de standaard retentie periode die hierboven wordt beschreven door deze te routeren naar een Azure-opslag account met behulp van Azure Monitor. Zie [Azure AD-logboeken archiveren in een Azure Storage-account](quickstart-azure-monitor-route-logs-to-storage-account.md)voor meer informatie.
 
@@ -80,6 +80,6 @@ U kunt de gegevens voor audits en aanmeldings activiteiten langer bewaren dan de
 
 ### <a name="can-i-see-last-months-data-after-getting-an-azure-ad-premium-license"></a>Kan ik de gegevens van de afgelopen maand zien na het ophalen van een Azure AD Premium-licentie?
 
-**Nee** , dat kan niet. Azure slaat Maxi maal zeven dagen aan activiteit gegevens voor een gratis versie. Dit betekent dat wanneer u overschakelt van een gratis naar een Premium-versie, u Maxi maal zeven dagen aan gegevens kunt bekijken.
+**Nee**, dat kan niet. Azure slaat Maxi maal zeven dagen aan activiteit gegevens voor een gratis versie. Dit betekent dat wanneer u overschakelt van een gratis naar een Premium-versie, u Maxi maal zeven dagen aan gegevens kunt bekijken.
 
 ---

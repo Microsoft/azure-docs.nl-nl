@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 01/14/2019
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ee1734e61ffe59fccf3ad35c1f0c607882f7f40
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 1245010ae0b21c5bb8e3ebd93a9fe851d48c858b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659194"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835506"
 ---
 # <a name="use-the-ad-fs-application-activity-report-preview-to-migrate-applications-to-azure-ad"></a>Het rapport AD FS toepassings activiteit (preview) gebruiken voor het migreren van toepassingen naar Azure AD
 
@@ -76,7 +76,7 @@ De volgende tabel bevat alle configuratie tests die worden uitgevoerd op AD FS t
 
 |Resultaat  |Geslaagd/waarschuwing/mislukt  |Beschrijving  |
 |---------|---------|---------|
-|Test-ADFSRPAdditionalAuthenticationRules <br> Er is ten minste één niet-migreerbaar regel gedetecteerd voor AdditionalAuthentication.       | Pass/Warning          | De Relying Party heeft regels om te vragen naar multi-factor Authentication (MFA). Als u wilt overstappen op Azure AD, moet u deze regels vertalen in beleid voor voorwaardelijke toegang. Als u een on-premises MFA gebruikt, raden we u aan om over te stappen op Azure MFA. Meer [informatie over voorwaardelijke toegang](../authentication/concept-mfa-howitworks.md).        |
+|Test-ADFSRPAdditionalAuthenticationRules <br> Er is ten minste één niet-migreerbaar regel gedetecteerd voor AdditionalAuthentication.       | Pass/Warning          | De Relying Party heeft regels om te vragen naar multi-factor Authentication (MFA). Als u wilt overstappen op Azure AD, moet u deze regels vertalen in beleid voor voorwaardelijke toegang. Als u een on-premises MFA gebruikt, raden wij u aan om over te stappen op Azure AD MFA. Meer [informatie over voorwaardelijke toegang](../authentication/concept-mfa-howitworks.md).        |
 |Test-ADFSRPAdditionalWSFedEndpoint <br> Relying Party heeft AdditionalWSFedEndpoint ingesteld op waar.       | Geslaagd/mislukt          | Met de Relying Party in AD FS kunt u meerdere WS-Fed Assertion-eind punten toestaan.Op dit moment ondersteunt Azure AD slechts één.Als u een scenario hebt waarbij dit resultaat de migratie blokkeert, [laat het ons dan weten](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/38695621-allow-multiple-ws-fed-assertion-endpoints).     |
 |Test-ADFSRPAllowedAuthenticationClassReferences <br> Relying Party heeft AllowedAuthenticationClassReferences ingesteld.       | Geslaagd/mislukt          | Met deze instelling in AD FS kunt u opgeven of de toepassing zo is geconfigureerd dat alleen bepaalde verificatie typen worden toegestaan. Het is raadzaam om voorwaardelijke toegang te gebruiken om deze functie te verkrijgen. Als u een scenario hebt waarbij dit resultaat de migratie blokkeert, [laat het ons dan weten](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/38695672-allow-in-azure-ad-to-specify-certain-authentication).  Meer [informatie over voorwaardelijke toegang](../authentication/concept-mfa-howitworks.md).          |
 |Test-ADFSRPAlwaysRequireAuthentication <br> AlwaysRequireAuthenticationCheckResult      | Geslaagd/mislukt          | Met deze instelling in AD FS kunt u opgeven of de toepassing is geconfigureerd voor het negeren van SSO-cookies en er **altijd om verificatie wordt gevraagd**. In azure AD kunt u de verificatie sessie beheren met behulp van beleid voor voorwaardelijke toegang om hetzelfde gedrag te verkrijgen. Meer [informatie over het configureren van verificatie sessie beheer met voorwaardelijke toegang](../conditional-access/howto-conditional-access-session-lifetime.md).          |

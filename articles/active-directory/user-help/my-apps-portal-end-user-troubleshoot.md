@@ -12,12 +12,12 @@ ms.date: 03/21/2019
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 6c148e673b8ada549a6543f8f35634aaf29abff0
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 5ae946f82590f2270719570e4b589d49542ffec8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123945"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833976"
 ---
 # <a name="troubleshoot-problems-with-the-my-apps-portal"></a>Problemen met de portal mijn apps oplossen
 
@@ -51,7 +51,7 @@ Als u problemen ondervindt bij het aanmelden bij de portal **mijn apps** , kunt 
 
 - Zorg ervoor dat uw wacht woord juist is en niet is verlopen. Zie [uw werk-of school wachtwoord opnieuw instellen](active-directory-passwords-update-your-own-password.md)voor meer informatie.
 
-- Zorg ervoor dat uw verificatie gegevens actueel en nauw keurig zijn. Zie [wat betekent Azure multi-factor Authentication voor mij?](./multi-factor-authentication-end-user-first-time.md) u kunt ook [de methoden en informatie voor uw beveiligings gegevens wijzigen](./security-info-setup-auth-app.md).
+- Zorg ervoor dat uw verificatie gegevens actueel en nauw keurig zijn. Zie [wat betekent Azure AD multi-factor Authentication voor mij?](./multi-factor-authentication-end-user-first-time.md) u kunt ook [de methoden en informatie voor uw beveiligings gegevens wijzigen](./security-info-setup-auth-app.md).
 
 - Voeg de URL van **mijn app** -portal toe aan de **Internet eigenschappen > beveiliging > instellingen voor vertrouwde sites** .
 
@@ -75,7 +75,7 @@ Als u een bericht ontvangt dat de **toegang is geweigerd** nadat u een app hebt 
 
 - Zorg ervoor dat uw wacht woord juist is en niet is verlopen. Zie [uw werk-of school wachtwoord opnieuw instellen](active-directory-passwords-update-your-own-password.md)voor meer informatie.
 
-- Zorg ervoor dat uw verificatie gegevens actueel en nauw keurig zijn. Zie [wat betekent Azure multi-factor Authentication voor mij?](./multi-factor-authentication-end-user-first-time.md) u kunt ook [de methoden en informatie voor uw beveiligings gegevens wijzigen](./security-info-setup-auth-app.md).
+- Zorg ervoor dat uw verificatie gegevens actueel en nauw keurig zijn. Zie [wat betekent Azure AD multi-factor Authentication voor mij?](./multi-factor-authentication-end-user-first-time.md) u kunt ook [de methoden en informatie voor uw beveiligings gegevens wijzigen](./security-info-setup-auth-app.md).
 
 - Wis de cache van uw browser en probeer u opnieuw aan te melden.
 

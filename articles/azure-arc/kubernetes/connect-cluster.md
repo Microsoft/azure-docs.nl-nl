@@ -8,13 +8,13 @@ author: mlearned
 ms.author: mlearned
 description: Een Azure Arc-Kubernetes-cluster verbinden met Azure Arc
 keywords: Kubernetes, Arc, azure, K8s, containers
-ms.custom: references_regions
-ms.openlocfilehash: 74a0de494148f1f3315511c0bf6cb10f40cdc416
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: references_regions, devx-track-azurecli
+ms.openlocfilehash: 0166ac0b19208a60f360792fb67ccc050a014ce1
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855001"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833245"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Een Azure Arc-Kubernetes-cluster verbinden (preview-versie)
 
@@ -52,7 +52,7 @@ Controleer of u de volgende vereisten hebt voor bereid:
   az extension update --name k8sconfiguration
   ```
 
-## <a name="supported-regions"></a>Ondersteunde regio’s
+## <a name="supported-regions"></a>Ondersteunde regio's
 
 * VS - oost
 * Europa -west
@@ -100,7 +100,7 @@ Maak eerst een resource groep om de verbonden cluster bron te bewaren.
 az group create --name AzureArcTest -l EastUS -o table
 ```
 
-**Uitvoer**
+**Uitvoer:**
 
 ```console
 Location    Name
@@ -119,7 +119,7 @@ We gaan ons Kubernetes-cluster nu koppelen aan Azure. De werk stroom voor `az co
 az connectedk8s connect --name AzureArcTest1 --resource-group AzureArcTest
 ```
 
-**Uitvoer**
+**Uitvoer:**
 
 ```console
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
@@ -157,7 +157,7 @@ Uw verbonden clusters weer geven:
 az connectedk8s list -g AzureArcTest -o table
 ```
 
-**Uitvoer**
+**Uitvoer:**
 
 ```console
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
@@ -220,7 +220,7 @@ Azure Arc enabled Kubernetes implementeert enkele opera tors in de `azure-arc` n
 kubectl -n azure-arc get deployments,pods
 ```
 
-**Uitvoer**
+**Uitvoer:**
 
 ```console
 NAME                                        READY   UP-TO-DATE AVAILABLE AGE

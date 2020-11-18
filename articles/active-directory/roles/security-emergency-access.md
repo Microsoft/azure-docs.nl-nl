@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 966d264cc338487dd1a8c04f2efd0825dfccdef0
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 10d93b92f3bb0adfe734ad439079afdfcaa6270e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378751"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94834435"
 ---
 # <a name="manage-emergency-access-accounts-in-azure-ad"></a>Accounts voor nood toegang beheren in azure AD
 
@@ -33,7 +33,7 @@ Dit artikel bevat richt lijnen voor het beheren van accounts voor toegang tot no
 Een organisatie moet mogelijk een account voor nood toegang gebruiken in de volgende situaties:
 
 - De gebruikers accounts federatief zijn en Federatie is momenteel niet beschikbaar vanwege een onderbreking van het netwerk of een storing in de identiteits provider. Als de host van de identiteits provider in uw omgeving is uitgeschakeld, kunnen gebruikers zich mogelijk niet aanmelden wanneer Azure AD wordt omgeleid naar hun ID-provider.
-- De beheerders worden geregistreerd via Azure Multi-Factor Authentication en alle afzonderlijke apparaten zijn niet beschikbaar of de service is niet beschikbaar. Gebruikers kunnen de Multi-Factor Authentication mogelijk niet volt ooien om een rol te activeren. Een storing in een mobiel netwerk zorgt er bijvoorbeeld voor dat ze geen telefoon gesprekken kunnen beantwoorden of SMS-berichten kunnen ontvangen, de enige twee verificatie mechanismen die ze voor hun apparaat hebben geregistreerd.
+- De beheerders zijn geregistreerd via Azure AD Multi-Factor Authentication en alle afzonderlijke apparaten zijn niet beschikbaar of de service is niet beschikbaar. Gebruikers kunnen de Multi-Factor Authentication mogelijk niet volt ooien om een rol te activeren. Een storing in een mobiel netwerk zorgt er bijvoorbeeld voor dat ze geen telefoon gesprekken kunnen beantwoorden of SMS-berichten kunnen ontvangen, de enige twee verificatie mechanismen die ze voor hun apparaat hebben geregistreerd.
 - De persoon met de meest recente globale beheerders toegang heeft de organisatie verlaten. Azure AD voor komt dat het account van de laatste globale beheerder wordt verwijderd, maar dit voor komt niet dat het account on-premises wordt verwijderd of uitgeschakeld. Een van beide situaties kan ervoor zorgen dat de organisatie het account niet kan herstellen.
 - Onvoorziene omstandigheden, zoals een natuur ramp, waarbij een mobiele telefoon of andere netwerken mogelijk niet beschikbaar zijn. 
 
@@ -44,7 +44,7 @@ Maak twee of meer nood toegangs accounts. Deze accounts moeten alleen Cloud acco
 Bij het configureren van deze accounts moet aan de volgende vereisten worden voldaan:
 
 - De accounts voor toegang in nood gevallen mogen niet worden gekoppeld aan een afzonderlijke gebruiker in de organisatie. Zorg ervoor dat uw accounts niet zijn verbonden met mobiele telefoons die door werk nemers worden geleverd, hardware-tokens die met afzonderlijke werk nemers reizen of andere specifieke referenties voor werk nemers. Deze voorzorgsmaatregel geldt voor instanties waarbij een individuele werk nemer onbereikbaar is wanneer de referentie nodig is. Het is belang rijk om ervoor te zorgen dat geregistreerde apparaten worden bewaard op een bekende, veilige locatie met meerdere manieren om te communiceren met Azure AD.
-- Het authenticatie mechanisme dat wordt gebruikt voor een account voor toegang in nood gevallen moet verschillend zijn van de accounts die worden gebruikt door uw andere Administrator, waaronder andere accounts voor toegang tot een nood geval.  Als uw normale beheerder zich bijvoorbeeld via on-premises MFA bevindt, is Azure MFA een ander mechanisme.  Als Azure MFA echter het primaire deel van de verificatie is voor uw beheerders accounts, kunt u een andere benadering gebruiken, zoals het gebruik van voorwaardelijke toegang met een externe MFA-provider via aangepaste besturings elementen.
+- Het authenticatie mechanisme dat wordt gebruikt voor een account voor toegang in nood gevallen moet verschillend zijn van de accounts die worden gebruikt door uw andere Administrator, waaronder andere accounts voor toegang tot een nood geval.  Als uw normale beheerder zich bijvoorbeeld via on-premises MFA bevindt, is Azure AD MFA een ander mechanisme.  Als Azure AD MFA echter het primaire deel van de verificatie is voor uw beheerders accounts, kunt u hiervoor een andere benadering gebruiken, zoals het gebruik van voorwaardelijke toegang met een externe MFA-provider via aangepaste besturings elementen.
 - Het apparaat of de referentie mag niet verlopen of een automatische opschoning hebben vanwege een gebrek aan gebruik.  
 - U moet de globale beheerdersrol permanent maken voor uw accounts voor toegang voor nood gevallen. 
 
@@ -87,7 +87,7 @@ Organisaties moeten de activiteiten voor aanmelding en controle logboeken van de
 ### <a name="create-an-alert-rule"></a>Een waarschuwingsregel maken
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met een account dat is toegewezen aan de rol voor het controleren van inzender in azure monitor.
-1. Selecteer **alle services** ', voer ' Log Analytics ' in de zoek opdracht in en selecteer vervolgens **log Analytics-werk ruimten**.
+1. Selecteer **alle services**', voer ' Log Analytics ' in de zoek opdracht in en selecteer vervolgens **log Analytics-werk ruimten**.
 1. Selecteer een werkruimte.
 1. Selecteer in uw werk ruimte **waarschuwingen**  >  **nieuwe waarschuwings regel**.
     1. Controleer onder **resource** of het abonnement is waarmee u de waarschuwings regel wilt koppelen.
@@ -114,7 +114,7 @@ Organisaties moeten de activiteiten voor aanmelding en controle logboeken van de
 1. Als u de e-mail melding die wordt verzonden naar de leden van de actie groep wilt aanpassen, selecteert u acties onder **acties aanpassen**.
 1. Geef onder **waarschuwings Details** de naam van de waarschuwings regel op en voeg een optionele beschrijving toe.
 1. Stel het **Ernst niveau** van de gebeurtenis in. U kunt het beste instellen op **kritiek (Ernst 0)**.
-1. Onder **regel inschakelen bij het maken** , blijft de optie ingesteld op **Ja**.
+1. Onder **regel inschakelen bij het maken**, blijft de optie ingesteld op **Ja**.
 1. Als u waarschuwingen voor een tijdje wilt uitschakelen, schakelt u het selectie vakje **waarschuwingen onderdrukken** in en voert u de wacht tijd in voordat u opnieuw een waarschuwing krijgt en selecteert u vervolgens **Opslaan**.
 1. Klik op **Waarschuwingsregel maken**.
 

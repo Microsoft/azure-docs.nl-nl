@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 08/03/2020
 ms.author: curtand
-ms.openlocfilehash: d9023579b6627e9dab9feac8dfaccd94dc9f5c12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a002254995e42fc586b707e3cb373dac66e678ee
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88798122"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94834146"
 ---
 # <a name="view-and-search-your-recent-sign-in-activity-from-the-my-sign-ins-page"></a>Uw recente aanmeldings activiteit bekijken en doorzoeken vanaf de pagina Mijn aanmeldingen
 
@@ -46,7 +46,7 @@ Voordat u opgeeft dat er iets onjuist is, controleert u of er geen onechte posit
 
 ### <a name="if-you-see-an-unsuccessful-sign-in"></a>Als er een mislukte aanmelding wordt weer geven
 
-Als u een mislukte aanmelding ziet, kan dit betekenen dat u uw referenties hebt getypt. Het kan ook betekenen dat een aanvaller heeft geprobeerd uw wacht woord te raden. U hoeft uw wacht woord niet te wijzigen, maar we raden u aan om u te registreren voor Azure Multi-Factor Authentication (MFA). Met multi-factor Authentication, zelfs als de hacker uw wacht woord verdient, is het niet voldoende om toegang te krijgen tot het account.
+Als u een mislukte aanmelding ziet, kan dit betekenen dat u uw referenties hebt getypt. Het kan ook betekenen dat een aanvaller heeft geprobeerd uw wacht woord te raden. U hoeft uw wacht woord niet te wijzigen, maar we raden u aan om u te registreren voor Azure AD Multi-Factor Authentication (MFA). Met multi-factor Authentication, zelfs als de hacker uw wacht woord verdient, is het niet voldoende om toegang te krijgen tot het account.
 
 ![Mislukte aanmeldings tegel](media/my-account-portal-sign-ins-page/unsuccessful.png)
 

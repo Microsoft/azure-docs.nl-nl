@@ -5,13 +5,13 @@ keywords: Azure app service, Web-app, app-instellingen, omgevings variabelen
 ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
-ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 86f9f227c0ea92b7b52a3037759426cc87f6d937
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.custom: devx-track-csharp, seodec18, devx-track-azurecli
+ms.openlocfilehash: 1ab6f5e9c7b602ce124116c02584c5a48a3f597f
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152052"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94833653"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Een App Service-app configureren in het Azure Portal
 
@@ -21,7 +21,7 @@ In dit onderwerp wordt uitgelegd hoe u algemene instellingen configureert voor w
 
 In App Service zijn app-instellingen variabelen die als omgevings variabelen worden door gegeven aan de toepassings code. Voor Linux-apps en aangepaste containers App Service de app-instellingen door gegeven aan de container met behulp van de `--env` vlag voor het instellen van de omgevings variabele in de container.
 
-In de [Azure Portal]zoekt en selecteert u **app Services**en selecteert u vervolgens uw app. 
+In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app. 
 
 ![Zoeken naar App Services](./media/configure-common/search-for-app-services.png)
 
@@ -52,7 +52,7 @@ Standaard worden waarden voor app-instellingen in de portal verborgen voor bevei
 
 ### <a name="add-or-edit"></a>Toevoegen of bewerken
 
-Klik op **nieuwe toepassings instelling**om een nieuwe app-instelling toe te voegen. In het dialoog venster kunt u [de instelling op de huidige sleuf plakken](deploy-staging-slots.md#which-settings-are-swapped).
+Klik op **nieuwe toepassings instelling** om een nieuwe app-instelling toe te voegen. In het dialoog venster kunt u [de instelling op de huidige sleuf plakken](deploy-staging-slots.md#which-settings-are-swapped).
 
 Als u een instelling wilt bewerken, klikt u op de knop **bewerken** aan de rechter kant.
 
@@ -112,11 +112,11 @@ U kunt de Azure CLI gebruiken om instellingen te maken en te beheren vanaf de op
 
 ## <a name="configure-connection-strings"></a>Verbindingsreeksen configureren
 
-In de [Azure Portal]zoekt en selecteert u **app Services**en selecteert u vervolgens uw app. Selecteer in het menu links van de app **configuratie**  >  **Toepassings instellingen**.
+In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app. Selecteer in het menu links van de app **configuratie**  >  **Toepassings instellingen**.
 
 ![Toepassingsinstellingen](./media/configure-common/open-ui.png)
 
-Voor ASP.NET-en ASP.NET Core-ontwikkel aars is het instellen van verbindings reeksen in App Service vergelijkbaar met de instelling in `<connectionStrings>` in *Web.config*, maar de waarden die u in app service instelt, worden in *Web.config*genegeerd. U kunt de ontwikkelings instellingen (bijvoorbeeld een database bestand) in *Web.config* -en productie geheimen (bijvoorbeeld SQL database referenties) veilig in app service blijven. Dezelfde code maakt gebruik van uw ontwikkelings instellingen wanneer u lokaal fouten opspoort en uw productie geheimen gebruikt wanneer deze worden geïmplementeerd in Azure.
+Voor ASP.NET-en ASP.NET Core-ontwikkel aars is het instellen van verbindings reeksen in App Service vergelijkbaar met de instelling in `<connectionStrings>` in *Web.config*, maar de waarden die u in app service instelt, worden in *Web.config* genegeerd. U kunt de ontwikkelings instellingen (bijvoorbeeld een database bestand) in *Web.config* -en productie geheimen (bijvoorbeeld SQL database referenties) veilig in app service blijven. Dezelfde code maakt gebruik van uw ontwikkelings instellingen wanneer u lokaal fouten opspoort en uw productie geheimen gebruikt wanneer deze worden geïmplementeerd in Azure.
 
 Voor andere taal stacks is het beter om de [app-instellingen](#configure-app-settings) te gebruiken, omdat verbindings reeksen speciale opmaak in de variabele sleutels nodig hebben om toegang te krijgen tot de waarden. Hier volgt één uitzonde ring: voor bepaalde typen van Azure-data bases wordt samen met de app een back-up gemaakt als u de verbindings reeksen in uw app configureert. Zie [waarvan een back-up wordt gemaakt](manage-backup.md#what-gets-backed-up)voor meer informatie. Als u deze geautomatiseerde back-up niet nodig hebt, gebruikt u de app-instellingen.
 
@@ -184,7 +184,7 @@ Verbindings reeksen hebben de volgende JSON-indeling:
 
 ## <a name="configure-general-settings"></a>Algemene instellingen configureren
 
-In de [Azure Portal]zoekt en selecteert u **app Services**en selecteert u vervolgens uw app. Selecteer **Configuration**  >  **algemene instellingen**configuratie in het menu van de app.
+In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app. Selecteer **Configuration**  >  **algemene instellingen** configuratie in het menu van de app.
 
 ![Algemene instellingen](./media/configure-common/open-general.png)
 
@@ -214,17 +214,17 @@ Hier kunt u enkele algemene instellingen voor de app configureren. Voor sommige 
 
 Deze instelling geldt alleen voor Windows-apps.
 
-In de [Azure Portal]zoekt en selecteert u **app Services**en selecteert u vervolgens uw app. Selecteer in het menu links de optie **configuratie**  >  **standaard documenten**.
+In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app. Selecteer in het menu links de optie **configuratie**  >  **standaard documenten**.
 
 ![Standaard documenten](./media/configure-common/open-documents.png)
 
-Het standaard document is de webpagina die wordt weer gegeven op de basis-URL voor een website. Het eerste overeenkomende bestand in de lijst wordt gebruikt. Als u een nieuw standaard document wilt toevoegen, klikt u op **Nieuw document**. Vergeet niet op **Opslaan**te klikken.
+Het standaard document is de webpagina die wordt weer gegeven op de basis-URL voor een website. Het eerste overeenkomende bestand in de lijst wordt gebruikt. Als u een nieuw standaard document wilt toevoegen, klikt u op **Nieuw document**. Vergeet niet op **Opslaan** te klikken.
 
 Als de app gebruikmaakt van modules die worden gerouteerd op basis van URL in plaats van statische inhoud, is er geen behoefte aan standaard documenten.
 
 ## <a name="configure-path-mappings"></a>Paden configureren
 
-In de [Azure Portal]zoekt en selecteert u **app Services**en selecteert u vervolgens uw app. Selecteer in het menu links van de app **configuratie**  >  **paden toewijzen**.
+In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app. Selecteer in het menu links van de app **configuratie**  >  **paden toewijzen**.
 
 ![Paden toewijzen](./media/configure-common/open-path.png)
 
@@ -236,7 +236,7 @@ Voor Windows-apps kunt u de IIS-handlertoewijzing aanpassen en virtuele toepassi
 
 Met handlertoewijzing kunt u aangepaste script processors toevoegen voor het afhandelen van aanvragen voor specifieke bestands extensies. Als u een aangepaste handler wilt toevoegen, klikt u op **nieuwe handler**. Configureer de handler als volgt:
 
-- **Extensie**. De bestands extensie die u wilt verwerken, zoals * \* . php* of *handler. fcgi*.
+- **Extensie**. De bestands extensie die u wilt verwerken, zoals *\* . php* of *handler. fcgi*.
 - **Script processor**. Het absolute pad van de script processor naar u. Aanvragen voor bestanden die overeenkomen met de bestands extensie worden verwerkt door de script processor. Gebruik het pad `D:\home\site\wwwroot` om te verwijzen naar de hoofdmap van uw app.
 - **Argumenten**. Optionele opdracht regel argumenten voor de script processor.
 

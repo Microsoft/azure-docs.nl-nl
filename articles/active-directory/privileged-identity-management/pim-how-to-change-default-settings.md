@@ -14,12 +14,12 @@ ms.date: 02/28/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 391d4d6cb925eec0ea7be19eb6fa6849aa38985e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 0fadcf3f5aefa76ab03d6313643fc18df71f6c3b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369740"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835234"
 ---
 # <a name="configure-azure-ad-role-settings-in-privileged-identity-management"></a>Instellingen voor Azure AD-functies configureren in Privileged Identity Management
 
@@ -81,7 +81,7 @@ En u kunt een van deze **actieve** toewijzings duur opties kiezen:
 
 ## <a name="require-multi-factor-authentication"></a>Multi-Factor Authentication vereisen
 
-Privileged Identity Management biedt een optionele afdwinging van Azure Multi-Factor Authentication voor twee verschillende scenario's.
+Privileged Identity Management biedt een optionele afdwinging van Azure AD-Multi-Factor Authentication voor twee verschillende scenario's.
 
 ### <a name="require-multi-factor-authentication-on-active-assignment"></a>Multi-Factor Authentication vereisen voor actieve toewijzing
 
@@ -91,7 +91,7 @@ Als u er zeker van wilt zijn dat de beheerder die aan de toewijzing voldoet, de 
 
 ### <a name="require-multi-factor-authentication-on-activation"></a>Multi-Factor Authentication vereisen bij activering
 
-U kunt vereisen dat gebruikers die in aanmerking komen voor een rol bewijzen dat ze Azure Multi-Factor Authentication gebruiken voordat ze kunnen activeren. Multi-factor Authentication zorgt ervoor dat de gebruiker er zeker van is dat ze een redelijke zekerheid hebben. Het afdwingen van deze optie beschermt kritieke resources in situaties waarin het gebruikers account mogelijk is aangetast.
+U kunt vereisen dat gebruikers die in aanmerking komen voor een rol bewijzen dat ze Azure AD Multi-Factor Authentication gebruiken voordat ze kunnen activeren. Multi-factor Authentication zorgt ervoor dat de gebruiker er zeker van is dat ze een redelijke zekerheid hebben. Het afdwingen van deze optie beschermt kritieke resources in situaties waarin het gebruikers account mogelijk is aangetast.
 
 Als u multi-factor Authentication vóór activering wilt vereisen, schakelt u het selectie vakje **multi-factor Authentication vereisen bij activering** in op het tabblad toewijzing van de **instelling rol bewerken**.
 
@@ -167,8 +167,8 @@ Gebruik de switch **incident/aanvraag ticket** om in aanmerking komende beheerde
 
 Gebruik de schakel optie **multi-factor Authentication** om op te geven of gebruikers hun identiteit moeten verifiëren met MFA voordat ze hun rollen kunnen activeren. Ze hoeven hun identiteit slechts eenmaal per sessie te verifiëren, niet elke keer dat ze een rol activeren. Er zijn twee tips die u moet onthouden wanneer u MFA inschakelt:
 
-- Gebruikers met micro soft-accounts voor hun e-mail adressen (doorgaans @outlook.com , maar niet altijd) kunnen niet worden geregistreerd voor Azure multi-factor Authentication. Als u rollen wilt toewijzen aan gebruikers met micro soft-accounts, moet u deze permanent beheerder maken of multi-factor Authentication uitschakelen voor die rol.
-- U kunt Azure Multi-Factor Authentication niet uitschakelen voor rollen met een hoge bevoegdheden voor Azure AD en Microsoft 365. Deze veiligheids functie helpt bij het beveiligen van de volgende rollen:  
+- Gebruikers met micro soft-accounts voor hun e-mail adressen (doorgaans @outlook.com , maar niet altijd) kunnen niet worden geregistreerd voor Azure AD-multi-factor Authentication. Als u rollen wilt toewijzen aan gebruikers met micro soft-accounts, moet u deze permanent beheerder maken of multi-factor Authentication uitschakelen voor die rol.
+- U kunt Azure AD-Multi-Factor Authentication niet uitschakelen voor rollen met een hoge bevoegdheden voor Azure AD en Microsoft 365. Deze veiligheids functie helpt bij het beveiligen van de volgende rollen:  
   
   - Azure Information Protection beheerder
   - Factureringsbeheerder

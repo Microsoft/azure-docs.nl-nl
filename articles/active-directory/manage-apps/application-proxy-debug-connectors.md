@@ -11,12 +11,12 @@ ms.topic: troubleshooting
 ms.date: 05/21/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 7e7a1de24e5032b2dade2f325560fd6964c892d5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cbbb5328f2d7e814be9b5b94ec522bbb01df39e5
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86145690"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658244"
 ---
 # <a name="debug-application-proxy-connector-issues"></a>Fouten opsporen in connector van toepassingsproxy 
 
@@ -44,7 +44,7 @@ Dit stroom diagram leidt u door de stappen voor het opsporen van fouten in een a
 |---------|---------|---------|
 |1 | De connector groep zoeken die is toegewezen aan de app | U hebt waarschijnlijk een connector op meerdere servers geïnstalleerd. in dat geval moeten de connectors worden [toegewezen aan connector groepen](application-proxy-connector-groups.md#assign-applications-to-your-connector-groups). Zie [toepassingen op verschillende netwerken en locaties publiceren met connector groepen](application-proxy-connector-groups.md)voor meer informatie over connector groepen. |
 |2 | De connector installeren en een groep toewijzen | Als u geen connector hebt geïnstalleerd, raadpleegt u [een connector installeren en registreren](application-proxy-add-on-premises-application.md#install-and-register-a-connector).<br></br> Zie [probleem met het](application-proxy-connector-installation-problem.md)installeren van de connector als u problemen ondervindt bij het installeren van de connector.<br></br> Als de connector niet is toegewezen aan een groep, raadpleegt [u de connector toewijzen aan een groep](application-proxy-connector-groups.md#create-connector-groups).<br></br>Als de toepassing niet is toegewezen aan een connector groep, raadpleegt [u de toepassing toewijzen aan een connector groep](application-proxy-connector-groups.md#assign-applications-to-your-connector-groups).|
-|3 | Een poort test uitvoeren op de connector server | Voer op de connector server een poort test uit met behulp van [Telnet](https://docs.microsoft.com/windows-server/administration/windows-commands/telnet) of een ander hulp programma voor poort testen om te controleren of de poorten [443 en 80 zijn geopend](application-proxy-add-on-premises-application.md#open-ports).|
+|3 | Een poort test uitvoeren op de connector server | Voer op de connector server een poort test uit met behulp van [Telnet](/windows-server/administration/windows-commands/telnet) of een ander hulp programma voor poort testen om te controleren of de poorten [443 en 80 zijn geopend](application-proxy-add-on-premises-application.md#open-ports).|
 |4 | De domeinen en poorten configureren | [Zorg ervoor dat uw domeinen en poorten correct zijn geconfigureerd](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) De connector werkt alleen goed als er bepaalde poorten zijn geopend en Url's waartoe de server toegang moet hebben. |
 |5 | Controleren of een back-end-proxy wordt gebruikt | Controleer of de connectors gebruikmaken van back-endservers van proxy servers of overs Laan. Zie problemen [met Connector proxy en problemen met de service connectiviteit oplossen](application-proxy-configure-connectors-with-proxy-servers.md#troubleshoot-connector-proxy-problems-and-service-connectivity-issues)voor meer informatie. |
 |6 | De connector en de updater bijwerken om de back-end-proxy te gebruiken | Als een back-end-proxy wordt gebruikt, moet u controleren of de connector dezelfde proxy gebruikt. Zie [werken met bestaande on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md)voor meer informatie over het oplossen van problemen en het configureren van connectors voor gebruik met proxy servers. |

@@ -12,12 +12,12 @@ ms.date: 11/15/2018
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 923b83b388b58313e9613f0f8b71f266dcbeb028
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: be5ce5b3eebb2f784469680cf7614df6ca750b55
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282129"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658261"
 ---
 # <a name="understand-azure-ad-application-proxy-connectors"></a>Azure AD-toepassingsproxy-connectors begrijpen
 
@@ -104,7 +104,7 @@ Over het algemeen, hoe meer gebruikers u hebt, hoe groter de computer die u nodi
 > [!NOTE]
 > Er is niet veel verschil in de maximale TPS tussen computers met 4, 8 en 16 kernen. Het belangrijkste verschil tussen deze bevindt zich in de verwachte latentie.
 >
-> Deze tabel is ook gericht op de verwachte prestaties van een connector op basis van het type computer waarop het is geïnstalleerd. Dit is gescheiden van de beperkings limieten voor de toepassings proxy service, Zie [service limieten en beperkingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-service-limits-restrictions).
+> Deze tabel is ook gericht op de verwachte prestaties van een connector op basis van het type computer waarop het is geïnstalleerd. Dit is gescheiden van de beperkings limieten voor de toepassings proxy service, Zie [service limieten en beperkingen](../enterprise-users/directory-service-limits-restrictions.md).
 
 ## <a name="security-and-networking"></a>Beveiliging en netwerken
 
@@ -155,7 +155,7 @@ De gebruikte certificaten zijn specifiek voor de Application proxy-service. Ze w
 
 Na het eerste geslaagde certificaat is het vernieuwen van de Azure AD-toepassingsproxy connector-service (netwerk service) niet gemachtigd om het oude certificaat uit het archief van de lokale computer te verwijderen. Als het certificaat is verlopen of niet meer door de service wordt gebruikt, kunt u het veilig verwijderen.
 
-Als u problemen met het vernieuwen van het certificaat wilt voor komen, moet u ervoor zorgen dat de netwerk communicatie van de connector op de [gedocumenteerde locaties](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#prepare-your-on-premises-environment) is ingeschakeld.
+Als u problemen met het vernieuwen van het certificaat wilt voor komen, moet u ervoor zorgen dat de netwerk communicatie van de connector op de [gedocumenteerde locaties](./application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) is ingeschakeld.
 
 Als een connector gedurende enkele maanden niet is verbonden met de service, zijn de certificaten mogelijk verouderd. In dit geval moet u de connector verwijderen en opnieuw installeren om de registratie te activeren. U kunt de volgende Power shell-opdrachten uitvoeren:
 
@@ -180,7 +180,7 @@ en Windows-prestatie meter items.
 
 De connectors hebben zowel **beheer** -als **sessie** Logboeken. Het logboek **beheerder** bevat belang rijke gebeurtenissen en fouten. Het **sessie** logboek bevat alle trans acties en de bijbehorende verwerkings gegevens.
 
-Als u de logboeken wilt weer geven, opent u **Logboeken** en gaat u naar **toepassingen en services**  >  **wordt de micro soft**  >  **AadApplicationProxy**-  >  **connector**geregistreerd. Als u het **sessie** logboek zichtbaar wilt maken, selecteert u in het menu **beeld** de optie **analyse logboeken en fout opsporing weer geven**. Het **sessie** logboek wordt doorgaans gebruikt voor het oplossen van problemen en is standaard uitgeschakeld. Schakel deze optie in om het verzamelen van gebeurtenissen te starten en deze uit te scha kelen wanneer deze niet meer nodig is.
+Als u de logboeken wilt weer geven, opent u **Logboeken** en gaat u naar **toepassingen en services**  >  **wordt de micro soft**  >  **AadApplicationProxy**-  >  **connector** geregistreerd. Als u het **sessie** logboek zichtbaar wilt maken, selecteert u in het menu **beeld** de optie **analyse logboeken en fout opsporing weer geven**. Het **sessie** logboek wordt doorgaans gebruikt voor het oplossen van problemen en is standaard uitgeschakeld. Schakel deze optie in om het verzamelen van gebeurtenissen te starten en deze uit te scha kelen wanneer deze niet meer nodig is.
 
 U kunt de status van de service controleren in het venster Services. De connector bestaat uit twee Windows-Services: de daad werkelijke connector en de Updater. Beide moeten beide tijd worden uitgevoerd.
 

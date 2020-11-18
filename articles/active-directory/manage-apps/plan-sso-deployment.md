@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 87d455a77096a2ae9339c578f3405c629d79fa76
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14520c7c448231045b36e025c2c92332f9daac53
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90603336"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658720"
 ---
 # <a name="plan-a-single-sign-on-deployment"></a>Een implementatie van eenmalige aanmelding plannen
 
@@ -39,7 +39,7 @@ Azure Marketplace heeft meer dan 3000 toepassingen met vooraf geïntegreerde SSO
 
 ## <a name="plan-your-sso-team"></a>Uw SSO-team plannen
 
-- **De juiste belanghebbenden te benaderen** : wanneer technologie projecten mislukken, is dit doorgaans te wijten aan niet-overeenkomende verwachtingen wat betreft impact, resultaten en verantwoordelijkheden. Als u deze problemen wilt voor komen, moet [u ervoor zorgen dat u de juiste belanghebbenden gebruikt](https://aka.ms/deploymentplans) en dat belanghebbenden inzicht hebben in hun rollen.
+- **De juiste belanghebbenden te benaderen** : wanneer technologie projecten mislukken, is dit doorgaans te wijten aan niet-overeenkomende verwachtingen wat betreft impact, resultaten en verantwoordelijkheden. Als u deze problemen wilt voor komen, moet [u ervoor zorgen dat u de juiste belanghebbenden gebruikt](../fundamentals/active-directory-deployment-plans.md) en dat belanghebbenden inzicht hebben in hun rollen.
 - **Communicatie plannen** : communicatie is essentieel voor het slagen van een nieuwe service. Communiceer uw gebruikers proactief om te zien hoe hun ervaring verandert, wanneer deze wordt gewijzigd, en hoe u ondersteuning krijgt als er problemen optreden. Bekijk de opties voor de [manier waarop eind gebruikers toegang hebben tot hun SSO-toepassingen](end-user-experiences.md)en zorg ervoor dat uw communicaties overeenkomen met uw selectie. 
 
 ## <a name="plan-your-sso-protocol"></a>Uw SSO-protocol plannen
@@ -54,25 +54,25 @@ Er zijn twee primaire manieren waarop u uw gebruikers in staat kunt stellen om e
 
 ### <a name="considerations-for-federation-based-sso"></a>Overwegingen voor SSO op basis van Federatie
 
-- **OpenID Connect Connect en OAuth** gebruiken: als de toepassing waarmee u verbinding maakt, deze ondersteunt, gebruikt u de methode OIDC/OAuth 2,0 om uw SSO voor die toepassing in te scha kelen. Deze methode vereist minder configuratie en maakt gebruik van een uitgebreidere gebruikers ervaring. Zie [OAuth 2,0](../develop/v2-oauth2-auth-code-flow.md), [OpenID Connect Connect 1,0](../develop/v2-protocols-oidc.md)en [Azure Active Directory hand leiding voor ontwikkel aars](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide)voor meer informatie.
+- **OpenID Connect Connect en OAuth** gebruiken: als de toepassing waarmee u verbinding maakt, deze ondersteunt, gebruikt u de methode OIDC/OAuth 2,0 om uw SSO voor die toepassing in te scha kelen. Deze methode vereist minder configuratie en maakt gebruik van een uitgebreidere gebruikers ervaring. Zie [OAuth 2,0](../develop/v2-oauth2-auth-code-flow.md), [OpenID Connect Connect 1,0](../develop/v2-protocols-oidc.md)en [Azure Active Directory hand leiding voor ontwikkel aars](../develop/index.yml)voor meer informatie.
 - **Eindpunt configuraties voor op SAML gebaseerde SSO** : als u SAML gebruikt, hebben uw ontwikkel aars specifieke informatie nodig voordat de toepassing kan worden geconfigureerd. Zie [eenmalige aanmelding op basis van SAML configureren](configure-saml-single-sign-on.md)voor meer informatie.
-- **Certificaat beheer voor op SAML gebaseerde SSO** : wanneer u federatieve SSO inschakelt voor uw toepassing, maakt Azure AD een certificaat dat standaard drie jaar geldig is. U kunt zo nodig de verval datum voor het certificaat aanpassen. Zorg ervoor dat er processen aanwezig zijn om certificaten te vernieuwen voordat deze verlopen. Zie voor meer informatie [Azure AD certificaten beheren](https://docs.microsoft.com/azure/active-directory/active-directory-sso-certs).
+- **Certificaat beheer voor op SAML gebaseerde SSO** : wanneer u federatieve SSO inschakelt voor uw toepassing, maakt Azure AD een certificaat dat standaard drie jaar geldig is. U kunt zo nodig de verval datum voor het certificaat aanpassen. Zorg ervoor dat er processen aanwezig zijn om certificaten te vernieuwen voordat deze verlopen. Zie voor meer informatie [Azure AD certificaten beheren](./manage-certificates-for-federated-single-sign-on.md).
 
 ### <a name="considerations-for-password-based-sso"></a>Overwegingen voor SSO op basis van wacht woorden
 
-Voor het gebruik van Azure AD voor SSO op basis van een wacht woord moet een browser extensie worden geïmplementeerd waarmee de referenties veilig worden opgehaald en de aanmeldings formulieren worden ingevuld. Definieer een mechanisme voor het implementeren van de uitbrei ding op schaal met [ondersteunde browsers](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction). Opties zijn onder andere:
+Voor het gebruik van Azure AD voor SSO op basis van een wacht woord moet een browser extensie worden geïmplementeerd waarmee de referenties veilig worden opgehaald en de aanmeldings formulieren worden ingevuld. Definieer een mechanisme voor het implementeren van de uitbrei ding op schaal met [ondersteunde browsers](../user-help/my-apps-portal-end-user-access.md). Een aantal opties:
 
-- [groepsbeleid voor Internet Explorer](https://azure.microsoft.com/documentation/articles/active-directory-saas-ie-group-policy/)
-- [Configuration Manager voor Internet Explorer](https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers)
-- [Door de gebruiker gestuurde down load en configuratie voor Chrome, Firefox, micro soft Edge of IE](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+- [groepsbeleid voor Internet Explorer](./access-panel-deployment-plan.md)
+- [Configuration Manager voor Internet Explorer](/configmgr/core/clients/deploy/deploy-clients-to-windows-computers)
+- [Door de gebruiker gestuurde down load en configuratie voor Chrome, Firefox, micro soft Edge of IE](../user-help/my-apps-portal-end-user-access.md)
 
-Zie voor meer informatie [over het configureren van een eenmalige aanmelding met een wacht woord](https://docs.microsoft.com/azure/active-directory/application-config-sso-how-to-configure-password-sso-non-gallery).
+Zie voor meer informatie [over het configureren van een eenmalige aanmelding met een wacht woord](./configure-password-single-sign-on-non-gallery-applications.md).
 
 #### <a name="capturing-login-forms-metadata-for-applications-that-arent-in-the-gallery"></a>Het vastleggen van meta gegevens van aanmeldings formulieren voor toepassingen die zich niet in de galerie bevinden
 
 Micro soft ondersteunt het vastleggen van meta gegevens voor een webtoepassing voor wachtwoord kluizen (het vastleggen van de gebruikers naam en het wacht woord). Navigeer naar de aanmeldings-URL tijdens het configureren van de toepassing voor het vastleggen van de meta gegevens van formulieren. Vraag de eigenaar van de toepassing om de exacte aanmeldings-URL. Deze informatie wordt gebruikt tijdens het aanmeldings proces, waarbij de referenties van Azure AD worden toegewezen aan de toepassing tijdens het aanmelden.
 
-Zie [Wat is toepassings toegang en eenmalige aanmelding met Azure AD?-SSO op basis van wacht woorden](https://azure.microsoft.com/documentation/articles/active-directory-appssoaccess-whatis/)voor meer informatie.
+Zie [Wat is toepassings toegang en eenmalige aanmelding met Azure AD?-SSO op basis van wacht woorden](./what-is-single-sign-on.md)voor meer informatie.
 
 #### <a name="indications-that-metadata-in-forms-needs-to-be-recaptured"></a>Aanwijzingen dat meta gegevens in formulieren moeten worden opnieuw vastgelegd
 
@@ -96,7 +96,7 @@ Vanuit het oogpunt van aanmelding zijn toepassingen met gedeelde accounts niet a
 
 Het kiezen van de juiste verificatie methode is een cruciaal eerste beslissing bij het instellen van een Azure AD hybride identiteits oplossing. Implementeer de verificatie methode die is geconfigureerd met behulp van Azure AD Connect, waarmee ook gebruikers in de cloud worden ingericht.
 
-Als u een verificatie methode wilt kiezen, moet u rekening houden met de tijd, de bestaande infra structuur, de complexiteit en de kosten van de implementatie van uw keuze. Deze factoren zijn voor elke organisatie verschillend en kunnen in de loop van de tijd veranderen. U moet de naam kiezen die het meest overeenkomt met uw specifieke scenario. Zie [de juiste verificatie methode kiezen voor uw Azure Active Directory hybride identiteits oplossing](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn)voor meer informatie.
+Als u een verificatie methode wilt kiezen, moet u rekening houden met de tijd, de bestaande infra structuur, de complexiteit en de kosten van de implementatie van uw keuze. Deze factoren zijn voor elke organisatie verschillend en kunnen in de loop van de tijd veranderen. U moet de naam kiezen die het meest overeenkomt met uw specifieke scenario. Zie [de juiste verificatie methode kiezen voor uw Azure Active Directory hybride identiteits oplossing](../hybrid/choose-ad-authn.md)voor meer informatie.
 
 ## <a name="plan-your-security-and-governance"></a>De beveiliging en governance plannen 
 
@@ -104,7 +104,7 @@ De identiteit is de nieuwe primaire draai tabel voor de beveiliging en investeri
 
 ### <a name="plan-access-reviews"></a>Toegangs beoordelingen plannen
 
-Met [toegangs beoordelingen](https://docs.microsoft.com/azure/active-directory/governance/create-access-review) kunnen organisaties efficiënt groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen beheren. U moet de gebruikers toegang regel matig controleren om ervoor te zorgen dat alleen de juiste personen toegang hebben.
+Met [toegangs beoordelingen](../governance/create-access-review.md) kunnen organisaties efficiënt groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen beheren. U moet de gebruikers toegang regel matig controleren om ervoor te zorgen dat alleen de juiste personen toegang hebben.
 
 Enkele van de belangrijkste onderwerpen om te plannen voor het instellen van toegangs beoordelingen zijn onder andere:
 
@@ -116,7 +116,7 @@ Enkele van de belangrijkste onderwerpen om te plannen voor het instellen van toe
 
 ### <a name="plan-auditing"></a>Controle plannen
 
-Azure AD biedt [rapporten die technische en zakelijke inzichten bevatten](https://azure.microsoft.com/documentation/articles/active-directory-view-access-usage-reports/). 
+Azure AD biedt [rapporten die technische en zakelijke inzichten bevatten](../reports-monitoring/overview-reports.md). 
 
 Er zijn zowel beveiligings-als activiteiten rapporten beschikbaar. Beveiligings rapporten tonen gebruikers die zijn gemarkeerd voor risico, en Risk ante aanmeldingen. Met activiteiten rapporten kunt u inzicht krijgen in het gedrag van gebruikers in uw organisatie door de aanmeldings activiteit te beschrijven en een controle spoor van alle aanmeldingen te bieden. U kunt rapporten gebruiken om Risico's te beheren, de productiviteit te verhogen en de naleving te controleren.
 
@@ -139,15 +139,15 @@ Als u MCAS implementeert, kunt u:
 - Gebruik App-beheer voor voorwaardelijke toegang beveiliging om realtime zicht baarheid te krijgen en toegang en activiteiten in uw Cloud-apps te beheren
 - Helpt u bij het instellen van doorlopend beheer door in te stellen, en het beleid doorlopend te verfijnen.
 
-Sessie beheer van Microsoft Cloud-toepassing (MCAS) is beschikbaar voor elke browser op een belang rijk platform van elk besturings systeem. Mobiele apps en bureau blad-apps kunnen ook worden geblokkeerd of toegestaan. Als u systeem eigen integreert met Azure AD, kunnen apps die zijn geconfigureerd met SAML of Open-ID Connect-apps met eenmalige aanmelding in azure AD worden ondersteund, met inbegrip van [verschillende aanbevolen apps](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad).
+Sessie beheer van Microsoft Cloud-toepassing (MCAS) is beschikbaar voor elke browser op een belang rijk platform van elk besturings systeem. Mobiele apps en bureau blad-apps kunnen ook worden geblokkeerd of toegestaan. Als u systeem eigen integreert met Azure AD, kunnen apps die zijn geconfigureerd met SAML of Open-ID Connect-apps met eenmalige aanmelding in azure AD worden ondersteund, met inbegrip van [verschillende aanbevolen apps](/cloud-app-security/proxy-intro-aad).
 
-Zie [Microsoft Cloud app Security-overzicht](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security)voor meer informatie over MCAS. MCAS is een abonnements service op basis van gebruikers. U kunt de licentie gegevens bekijken in het [MCAS-licentie gegevens blad](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE2NXYO).
+Zie [Microsoft Cloud app Security-overzicht](/cloud-app-security/what-is-cloud-app-security)voor meer informatie over MCAS. MCAS is een abonnements service op basis van gebruikers. U kunt de licentie gegevens bekijken in het [MCAS-licentie gegevens blad](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE2NXYO).
 
 ### <a name="use-conditional-access"></a>Voorwaardelijke toegang gebruiken
 
 Met voorwaardelijke toegang kunt u op criteria gebaseerde beslissingen over toegangs beheer voor uw Cloud-apps automatiseren.
 
-Beleid voor voorwaardelijke toegang wordt afgedwongen nadat de verificatie van de eerste factor is voltooid. Daarom is voorwaardelijke toegang niet bedoeld als een eerste verdedigings linie voor scenario's als DoS-aanvallen (Denial-of-service), maar kunnen signalen van deze gebeurtenissen gebruiken om de toegang te bepalen. Bijvoorbeeld: het risico niveau van de aanmelding, de locatie van de aanvraag, enzovoort kan worden gebruikt. Zie [overzicht](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access) en het [implementatie plan](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access)voor meer informatie over voorwaardelijke toegang.
+Beleid voor voorwaardelijke toegang wordt afgedwongen nadat de verificatie van de eerste factor is voltooid. Daarom is voorwaardelijke toegang niet bedoeld als een eerste verdedigings linie voor scenario's als DoS-aanvallen (Denial-of-service), maar kunnen signalen van deze gebeurtenissen gebruiken om de toegang te bepalen. Bijvoorbeeld: het risico niveau van de aanmelding, de locatie van de aanvraag, enzovoort kan worden gebruikt. Zie [overzicht](../conditional-access/plan-conditional-access.md) en het [implementatie plan](../conditional-access/plan-conditional-access.md)voor meer informatie over voorwaardelijke toegang.
 
 ## <a name="azure-sso-technical-requirements"></a>Technische vereisten voor Azure SSO
 
@@ -163,7 +163,7 @@ Micro soft biedt een zelf studie voor alle vooraf geïntegreerde SaaS-apps en u 
 
 ### <a name="attribute-requirements"></a>Kenmerk vereisten
 
-Er is een vooraf geconfigureerde set met kenmerken en kenmerk toewijzingen tussen Azure AD-gebruikers objecten en de gebruikers objecten van de SaaS-app. Sommige apps beheren andere typen objecten, zoals groepen. Plan de toewijzing van gebruikers kenmerken van Azure AD aan uw toepassing en [Pas de standaard kenmerk toewijzingen](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) aan op basis van de behoeften van uw bedrijf.
+Er is een vooraf geconfigureerde set met kenmerken en kenmerk toewijzingen tussen Azure AD-gebruikers objecten en de gebruikers objecten van de SaaS-app. Sommige apps beheren andere typen objecten, zoals groepen. Plan de toewijzing van gebruikers kenmerken van Azure AD aan uw toepassing en [Pas de standaard kenmerk toewijzingen](../app-provisioning/customize-application-attributes.md) aan op basis van de behoeften van uw bedrijf.
 
 ### <a name="certificate-requirements"></a>Certificaatvereisten
 
@@ -171,9 +171,9 @@ Het certificaat voor de toepassing moet up-to-date zijn, of er is een risico dat
 
 Er zijn twee manieren om uw certificaten te beheren. 
 
-- **Automatische rollover van certificaten** : micro soft ondersteunt de [rollover van de handtekening sleutel in azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-signing-key-rollover). Hoewel dit de aanbevolen methode is voor het beheren van certificaten, wordt dit scenario niet door alle ISV'S ondersteund.
+- **Automatische rollover van certificaten** : micro soft ondersteunt de [rollover van de handtekening sleutel in azure AD](../develop/active-directory-signing-key-rollover.md). Hoewel dit de aanbevolen methode is voor het beheren van certificaten, wordt dit scenario niet door alle ISV'S ondersteund.
 
-- **Hand matig bijwerken** : elke toepassing heeft een eigen certificaat dat verloopt op basis van hoe het is gedefinieerd. Voordat het certificaat van de toepassing verloopt, maakt u een nieuw certificaat en stuurt u het naar de ISV. Deze informatie kan worden opgehaald uit de federatieve meta gegevens. [Lees hier meer informatie over de federatieve meta gegevens.](https://docs.microsoft.com/azure/active-directory/develop/active-directory-federation-metadata)
+- **Hand matig bijwerken** : elke toepassing heeft een eigen certificaat dat verloopt op basis van hoe het is gedefinieerd. Voordat het certificaat van de toepassing verloopt, maakt u een nieuw certificaat en stuurt u het naar de ISV. Deze informatie kan worden opgehaald uit de federatieve meta gegevens. [Lees hier meer informatie over de federatieve meta gegevens.](../azuread-dev/azure-ad-federation-metadata.md)
 
 ## <a name="implement-sso"></a>SSO implementeren
 
@@ -189,11 +189,11 @@ Gebruik de volgende fasen voor het plannen en implementeren van uw oplossing in 
 
 - **Eenmalige aanmelding configureren**
 
-   Zoek in de [lijst met toepassingen](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)de zelf studie voor eenmalige aanmelding voor uw toepassing en volg de stappen in de zelf studie om uw SaaS-toepassing te configureren.
+   Zoek in de [lijst met toepassingen](../saas-apps/tutorial-list.md)de zelf studie voor eenmalige aanmelding voor uw toepassing en volg de stappen in de zelf studie om uw SaaS-toepassing te configureren.
 
-   Als u uw toepassing niet kunt vinden, raadpleegt u de [documentatie voor aangepaste toepassingen](https://docs.microsoft.com/azure/active-directory/application-config-sso-how-to-configure-federated-sso-non-gallery). Hiermee wordt u begeleid bij het toevoegen van een toepassing die zich niet in de Azure AD-galerie bevindt.
+   Als u uw toepassing niet kunt vinden, raadpleegt u de [documentatie voor aangepaste toepassingen](./configure-saml-single-sign-on.md). Hiermee wordt u begeleid bij het toevoegen van een toepassing die zich niet in de Azure AD-galerie bevindt.
 
-   U kunt ook claims gebruiken die zijn uitgegeven in het SAML-token voor de bedrijfs toepassing met behulp [van de richt lijnen van micro soft](https://docs.microsoft.com/azure/active-directory/active-directory-claims-mapping). Zorg ervoor dat deze is gekoppeld aan wat u verwacht te ontvangen in het SAML-antwoord voor uw toepassing. Als u problemen ondervindt tijdens de configuratie, gebruikt u onze richt lijnen voor [het opsporen](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-debugging)van de SSO-integratie.
+   U kunt ook claims gebruiken die zijn uitgegeven in het SAML-token voor de bedrijfs toepassing met behulp [van de richt lijnen van micro soft](../develop/active-directory-claims-mapping.md). Zorg ervoor dat deze is gekoppeld aan wat u verwacht te ontvangen in het SAML-antwoord voor uw toepassing. Als u problemen ondervindt tijdens de configuratie, gebruikt u onze richt lijnen voor [het opsporen](./debug-saml-sso-issues.md)van de SSO-integratie.
 
 ### <a name="provide-sso-change-communications-to-end-users"></a>SSO-wijzigings communicatie voor eind gebruikers opgeven
 
@@ -231,7 +231,7 @@ In deze sectie vindt u een overzicht van de vereisten en aanbevelingen voor het 
 
 ### <a name="required-administrative-roles"></a>Vereiste beheerders rollen
 
-Gebruik altijd de rol met de minste machtigingen die beschikbaar zijn om de vereiste taak in Azure Active Directory uit te voeren. Micro soft raadt aan om [de verschillende beschik bare rollen te bekijken](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal) en de juiste te kiezen om uw behoeften voor elke persoon voor deze toepassing op te lossen. Sommige rollen moeten mogelijk tijdelijk worden toegepast en worden verwijderd nadat de implementatie is voltooid.
+Gebruik altijd de rol met de minste machtigingen die beschikbaar zijn om de vereiste taak in Azure Active Directory uit te voeren. Micro soft raadt aan om [de verschillende beschik bare rollen te bekijken](../roles/permissions-reference.md) en de juiste te kiezen om uw behoeften voor elke persoon voor deze toepassing op te lossen. Sommige rollen moeten mogelijk tijdelijk worden toegepast en worden verwijderd nadat de implementatie is voltooid.
 
 | Persona| Rollen | Azure AD-rol (indien nodig) |
 |--------|-------|-----------------------------|
@@ -241,7 +241,7 @@ Gebruik altijd de rol met de minste machtigingen die beschikbaar zijn om de vere
 | Infrastructuur beheerders | Eigenaar certificaat rollover | Globale beheerder |
 | Bedrijfs eigenaar/belanghebbende | Gebruikers verklaring in toepassing, configuratie voor gebruikers met machtigingen | Geen |
 
-Het is raadzaam om [privileged Identity Management](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-configure) (PIM) te gebruiken voor het beheren van uw rollen om extra controle, controle en toegangs beoordeling te bieden voor gebruikers met mapmachtigingen.
+Het is raadzaam om [privileged Identity Management](../privileged-identity-management/pim-configure.md) (PIM) te gebruiken voor het beheren van uw rollen om extra controle, controle en toegangs beoordeling te bieden voor gebruikers met mapmachtigingen.
 
 ### <a name="sso-certificate-lifecycle-management"></a>Beheer van de levens cyclus van SSO-certificaten
 
@@ -265,7 +265,7 @@ De beschik baarheid van verificatie methoden binnen de toepassing bepaalt uw bes
 
 ### <a name="access-management"></a>Toegangsbeheer
 
-We raden u aan een schaal bare benadering te kiezen bij het beheren van de toegang tot resources. Veelvoorkomende benaderingen zijn het gebruik van on-premises groepen door te synchroniseren via Azure AD Connect, [het maken van dynamische groepen in azure AD op basis van gebruikers kenmerken](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal)of het maken van [self-service groepen](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-self-service-group-management) in azure AD die worden beheerd door een resource-eigenaar.
+We raden u aan een schaal bare benadering te kiezen bij het beheren van de toegang tot resources. Veelvoorkomende benaderingen zijn het gebruik van on-premises groepen door te synchroniseren via Azure AD Connect, [het maken van dynamische groepen in azure AD op basis van gebruikers kenmerken](../enterprise-users/groups-dynamic-membership.md)of het maken van [self-service groepen](../enterprise-users/groups-self-service-management.md) in azure AD die worden beheerd door een resource-eigenaar.
 
 ### <a name="monitor-security"></a>Beveiliging bewaken
 
@@ -277,52 +277,52 @@ De volgende koppelingen geven scenario's voor het oplossen van problemen. U kunt
 
 #### <a name="consent-issues"></a>Problemen met toestemming
 
-- [Fout bij onverwachte toestemming](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-unexpected-user-consent-prompt)
+- [Fout bij onverwachte toestemming](./application-sign-in-unexpected-user-consent-prompt.md)
 
-- [Fout bij toestemming gebruiker](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-unexpected-user-consent-error)
+- [Fout bij toestemming gebruiker](./application-sign-in-unexpected-user-consent-error.md)
 
 #### <a name="sign-in-issues"></a>Aanmeldingsproblemen
 
-- [Problemen bij het aanmelden vanuit een aangepaste portal](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-other-problem-deeplink)
+- [Problemen bij het aanmelden vanuit een aangepaste portal](./application-sign-in-other-problem-access-panel.md)
 
-- [Problemen met aanmelden vanaf Mijn apps](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-other-problem-access-panel)
+- [Problemen met aanmelden vanaf Mijn apps](./application-sign-in-other-problem-access-panel.md)
 
-- [Fout bij de aanmeldingspagina van toepassing](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-application-error)
+- [Fout bij de aanmeldingspagina van toepassing](./application-sign-in-problem-application-error.md)
 
-- [Probleem bij het aanmelden bij een micro soft-toepassing](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-first-party-microsoft)
+- [Probleem bij het aanmelden bij een micro soft-toepassing](./application-sign-in-problem-first-party-microsoft.md)
 
 #### <a name="sso-issues-for-applications-listed-in-the-azure-application-gallery"></a>Problemen met eenmalige aanmelding voor toepassingen die worden vermeld in de Azure-toepassing galerie
 
-- [Probleem met wacht woord-SSO voor toepassingen die worden vermeld in de Azure-toepassing galerie](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-password-sso-gallery) 
+- [Probleem met wacht woord-SSO voor toepassingen die worden vermeld in de Azure-toepassing galerie](./troubleshoot-password-based-sso.md) 
 
-- [Probleem met federatieve SSO voor toepassingen die worden vermeld in de Azure-toepassing galerie](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-federated-sso-gallery)   
+- [Probleem met federatieve SSO voor toepassingen die worden vermeld in de Azure-toepassing galerie](./application-sign-in-problem-federated-sso-gallery.md)   
 
 #### <a name="sso-issues-for-applications-not-listed-in-the-azure-application-gallery"></a>Problemen met eenmalige aanmelding voor toepassingen die niet worden vermeld in de Azure-toepassing galerie
 
-- [Probleem met wacht woord-SSO voor toepassingen die niet worden vermeld in de Azure-toepassing galerie](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-password-sso-non-gallery) 
+- [Probleem met wacht woord-SSO voor toepassingen die niet worden vermeld in de Azure-toepassing galerie](./troubleshoot-password-based-sso.md) 
 
-- [Probleem met federatieve SSO voor toepassingen die niet worden vermeld in de Azure-toepassing galerie](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-federated-sso-non-gallery)
+- [Probleem met federatieve SSO voor toepassingen die niet worden vermeld in de Azure-toepassing galerie](./application-sign-in-problem-federated-sso-gallery.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Fouten opsporen van op SAML gebaseerde SSO](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-debugging)
+[Fouten opsporen van op SAML gebaseerde SSO](./debug-saml-sso-issues.md)
 
-[Claim toewijzing voor apps via Power shell](https://docs.microsoft.com/azure/active-directory/active-directory-claims-mapping)
+[Claim toewijzing voor apps via Power shell](../develop/active-directory-claims-mapping.md)
 
-[Claims aanpassen die zijn uitgegeven in het SAML-token](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-claims-customization)
+[Claims aanpassen die zijn uitgegeven in het SAML-token](../develop/active-directory-saml-claims-customization.md)
 
-[SAML-protocol voor eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference)
+[SAML-protocol voor eenmalige aanmelding](../develop/single-sign-on-saml-protocol.md)
 
-[Enkelvoudig Sign-Out SAML-Protocol](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-out-protocol-reference)
+[Enkelvoudig Sign-Out SAML-Protocol](../develop/single-sign-out-saml-protocol.md)
 
-[Azure AD B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b) (voor externe gebruikers, zoals partners en leveranciers)
+[Azure AD B2B](../external-identities/what-is-b2b.md) (voor externe gebruikers, zoals partners en leveranciers)
 
-[Voorwaardelijke toegang van Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)
+[Voorwaardelijke toegang van Azure AD](../conditional-access/overview.md)
 
-[Azure Identity Protection](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection)
+[Azure Identity Protection](../identity-protection/overview-identity-protection.md)
 
-[Toegang via eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+[Toegang via eenmalige aanmelding](./what-is-single-sign-on.md)
 
-[Zelf studie voor Application SSO](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)
+[Zelf studie voor Application SSO](../saas-apps/tutorial-list.md)
 
 [Technisch document downloaden-implementatie plan voor eenmalige aanmelding](https://aka.ms/SSODeploymentPlan)

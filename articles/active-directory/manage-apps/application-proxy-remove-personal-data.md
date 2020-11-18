@@ -15,12 +15,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e78efd71943332e8a40e5b44b6b78f88e516649a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 99fb466debd5a2ee4bb659aea3494469a8bbe8e1
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84759960"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658414"
 ---
 # <a name="remove-personal-data-for-azure-active-directory-application-proxy"></a>Persoonlijke gegevens voor Azure Active Directory-toepassingsproxy verwijderen
 
@@ -35,7 +35,7 @@ Het is mogelijk om met een toepassings proxy persoonlijke gegevens te schrijven 
 
 ## <a name="remove-personal-data-from-windows-event-logs"></a>Persoonlijke gegevens uit de Windows-gebeurtenis logboeken verwijderen
 
-Zie [instellingen voor gebeurtenis logboeken](https://technet.microsoft.com/library/cc952132.aspx)voor meer informatie over het configureren van gegevens retentie voor de Windows-gebeurtenis Logboeken. Zie [Windows-gebeurtenis logboek gebruiken](https://msdn.microsoft.com/library/windows/desktop/aa385772.aspx)voor meer informatie over Windows-gebeurtenis Logboeken.
+Zie [instellingen voor gebeurtenis logboeken](https://technet.microsoft.com/library/cc952132.aspx)voor meer informatie over het configureren van gegevens retentie voor de Windows-gebeurtenis Logboeken. Zie [Windows-gebeurtenis logboek gebruiken](/windows/win32/wes/using-windows-event-log)voor meer informatie over Windows-gebeurtenis Logboeken.
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-hybrid-note.md)]
 
@@ -54,7 +54,7 @@ Gebruik de volgende secties om persoonlijke gegevens uit de gebeurtenis logboeke
 
 Als u specifieke gegevens wilt bekijken of exporteren, zoekt u naar verwante items in elk van de gebeurtenis logboeken van de connector. De logboeken bevinden zich op `C:\ProgramData\Microsoft\Microsoft AAD Application Proxy Connector\Trace` .
 
-Aangezien de logboeken tekst bestanden zijn, kunt u [findstr](https://docs.microsoft.com/windows-server/administration/windows-commands/findstr) gebruiken om te zoeken naar tekst items die betrekking hebben op een gebruiker.  
+Aangezien de logboeken tekst bestanden zijn, kunt u [findstr](/windows-server/administration/windows-commands/findstr) gebruiken om te zoeken naar tekst items die betrekking hebben op een gebruiker.  
 
 Zoek logboek bestanden op gebruikers-id om persoons gegevens te vinden.
 

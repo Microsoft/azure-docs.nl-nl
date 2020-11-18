@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 09/16/2019
 ms.author: genli
-ms.openlocfilehash: 09056846ee3e531724f597ee35f92d812ce2c335
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 674b8ab8266921a4eef8bbf212f3c556b1e587d7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86037831"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658346"
 ---
 # <a name="troubleshooting-an-azure-site-to-site-vpn-connection-cannot-connect-and-stops-working"></a>Problemen oplossen: een Azure site-naar-site-VPN-verbinding kan geen verbinding maken en werkt niet meer
 
@@ -22,7 +22,7 @@ Nadat u een site-naar-site-VPN-verbinding tussen een on-premises netwerk en een 
 
 ## <a name="troubleshooting-steps"></a>Stappen voor probleemoplossing
 
-Om het probleem op te lossen, probeert u eerst [de Azure VPN-gateway opnieuw](vpn-gateway-resetgw-classic.md) in te stellen en de tunnel opnieuw in te stellen vanaf het on-PREMISES VPN-apparaat. Als het probleem zich blijft voordoen, voert u de volgende stappen uit om de oorzaak van het probleem te achterhalen.
+Om het probleem op te lossen, probeert u eerst [de Azure VPN-gateway opnieuw](./reset-gateway.md) in te stellen en de tunnel opnieuw in te stellen vanaf het on-PREMISES VPN-apparaat. Als het probleem zich blijft voordoen, voert u de volgende stappen uit om de oorzaak van het probleem te achterhalen.
 
 ### <a name="prerequisite-step"></a>Vereiste stap
 
@@ -46,7 +46,7 @@ Vergelijk de gedeelde sleutel voor het on-premises VPN-apparaat met de Azure Vir
 
 Gebruik een van de volgende methoden om de gedeelde sleutel voor de Azure VPN-verbinding weer te geven:
 
-**Azure-portal**
+**Azure Portal**
 
 1. Ga naar de site-naar-site-verbinding van de VPN-gateway die u hebt gemaakt.
 

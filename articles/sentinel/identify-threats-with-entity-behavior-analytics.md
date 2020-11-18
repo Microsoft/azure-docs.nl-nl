@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/19/2020
 ms.author: yelevin
-ms.openlocfilehash: 9c5e57f2eb3c38a7df23052a4b3d33bc5a9675fc
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 657221a2acbf592a56cb4659ced2199023bc5e5b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425929"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658788"
 ---
 # <a name="identify-advanced-threats-with-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Geavanceerde bedreigingen met UEBA (User and entity Behavior Analytics) identificeren in azure Sentinel
 
@@ -30,7 +30,7 @@ ms.locfileid: "94425929"
 >    - Regio Oost-West
 >    - Geografie van Australië
 >
-> - In alle andere geografische gebieden en regio's blijven deze functies gedurende de **Preview** -periode. Zie de [**aanvullende gebruiks voorwaarden voor Microsoft Azure previews**](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+> - In alle andere geografische gebieden en regio's blijven deze functies gedurende de **Preview**-periode. Zie de [**aanvullende gebruiks voorwaarden voor Microsoft Azure previews**](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
 
 ## <a name="what-is-user-and-entity-behavior-analytics-ueba"></a>Wat is UEBA (User and entity Behavior Analytics)?
 
@@ -124,7 +124,7 @@ Entiteit pagina's bestaan uit drie delen:
 
 De tijd lijn is een belang rijk onderdeel van de bijdrage van de entiteits pagina voor gedrags analyses in azure Sentinel. Er wordt een verhaal gepresenteerd over entiteits gebeurtenissen, zodat u inzicht krijgt in de activiteit van de entiteit binnen een specifiek tijds bestek.
 
-U kunt het **tijds bereik** kiezen tussen verschillende vooraf ingestelde opties (zoals de *afgelopen 24 uur* ) of instellen op een wille keurig aangepast tijds bestek. Daarnaast kunt u filters instellen die de informatie in de tijd lijn beperken tot specifieke typen gebeurtenissen of waarschuwingen.
+U kunt het **tijds bereik** kiezen tussen verschillende vooraf ingestelde opties (zoals de *afgelopen 24 uur*) of instellen op een wille keurig aangepast tijds bestek. Daarnaast kunt u filters instellen die de informatie in de tijd lijn beperken tot specifieke typen gebeurtenissen of waarschuwingen.
 
 De volgende typen items zijn opgenomen in de tijd lijn:
 
@@ -180,7 +180,7 @@ Entiteits pagina's zijn ontworpen om deel uit te maken van meerdere gebruiks sce
 
 ### <a name="querying-behavior-analytics-data"></a>Query's uitvoeren op de analyse gegevens van gedrag
 
-Met behulp van [KQL](https://docs.microsoft.com/azure/data-explorer/kusto/query/)kunnen we de gedrags analyse tabel opvragen.
+Met behulp van [KQL](/azure/data-explorer/kusto/query/)kunnen we de gedrags analyse tabel opvragen.
 
 Als we bijvoorbeeld alle gevallen willen vinden van een gebruiker die zich niet heeft kunnen aanmelden bij een Azure-resource, waarbij de gebruiker de eerste keer probeert verbinding te maken vanuit een bepaald land en verbindingen van dat land ongebruikelijk zijn, zelfs voor de peers van de gebruiker, kunnen we de volgende query gebruiken:
 

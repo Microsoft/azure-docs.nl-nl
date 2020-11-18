@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ab3b340654fd6d824edef0a33d1ea363a913654
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 403fa4cab94ad6149e388b10acccd9d5e7a2b7a8
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84764584"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658159"
 ---
 # <a name="high-availability-and-load-balancing-of-your-application-proxy-connectors-and-applications"></a>Hoge Beschik baarheid en taak verdeling van de connectors en toepassingen van uw toepassings proxy
 
@@ -39,7 +39,7 @@ Connectors maken hun verbindingen op basis van principes voor hoge Beschik baarh
 
 1. Een gebruiker op een client apparaat probeert toegang te krijgen tot een on-premises toepassing die is gepubliceerd via een toepassings proxy.
 2. De aanvraag doorloopt een Azure Load Balancer om te bepalen welk toepassings proxy service-exemplaar de aanvraag moet uitvoeren. Per regio zijn er tien exemplaren beschikbaar om de aanvraag te accepteren. Deze methode helpt het verkeer gelijkmatig te verdelen over de service-exemplaren.
-3. De aanvraag wordt verzonden naar [Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/).
+3. De aanvraag wordt verzonden naar [Service Bus](../../service-bus-messaging/index.yml).
 4. Service Bus signalen naar een beschik bare connector. De connector kiest vervolgens de aanvraag van Service Bus.
    - In stap 2 worden aanvragen naar verschillende service-exemplaren van de toepassings proxy verzonden, waardoor verbindingen waarschijnlijk meer worden gemaakt met verschillende connectors. Als gevolg hiervan worden connectors bijna gelijkmatig in de groep gebruikt.
 5. De connector stuurt de aanvraag door naar de back-endserver van de toepassing. Vervolgens stuurt de toepassing het antwoord terug naar de connector.
@@ -98,4 +98,4 @@ Raadpleeg de documentatie van uw software leverancier om inzicht te krijgen in d
 - [Eenmalige aanmelding inschakelen](application-proxy-configure-single-sign-on-with-kcd.md)
 - [Voorwaardelijke toegang inschakelen](application-proxy-integrate-with-sharepoint-server.md)
 - [Problemen met toepassingsproxy oplossen (Engelstalig artikel)](application-proxy-troubleshoot.md)
-- [Meer informatie over hoe Azure AD-architectuur hoge Beschik baarheid ondersteunt](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-architecture)
+- [Meer informatie over hoe Azure AD-architectuur hoge Beschik baarheid ondersteunt](../fundamentals/active-directory-architecture.md)

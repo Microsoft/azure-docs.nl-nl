@@ -12,12 +12,12 @@ ms.date: 06/01/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperfq2
-ms.openlocfilehash: 07637a8be49fb2449c5c92c1a1ea4b2c7ace9a8d
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 4368f20171da0c1896e642361578580b1d958296
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442256"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659043"
 ---
 # <a name="manage-app-consent-policies"></a>Beleid voor app-toestemming beheren
 
@@ -31,7 +31,7 @@ Beleid voor toestemming van de app waarbij de ID begint met ' micro soft-' zijn 
 
 ## <a name="pre-requisites"></a>Vereisten
 
-1. Zorg ervoor dat u de [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true) -module gebruikt. Deze stap is belang rijk als u de [AzureAD](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0&preserve-view=true) -module en de [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true) -module hebt geïnstalleerd.
+1. Zorg ervoor dat u de [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) -module gebruikt. Deze stap is belang rijk als u de [AzureAD](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) -module en de [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) -module hebt geïnstalleerd.
 
     ```powershell
     Remove-Module AzureAD -ErrorAction SilentlyContinue
@@ -133,7 +133,7 @@ De volgende tabel bevat de lijst met ondersteunde voor waarden voor het beleid v
 | Conditie | Beschrijving|
 |:---------------|:----------|
 | PermissionClassification | De [machtigings classificatie](configure-permission-classifications.md) voor de machtiging die wordt verleend, of ' all ', zodat deze overeenkomt met een machtigings classificatie (inclusief machtigingen die niet zijn geclassificeerd). De standaard waarde is "all". |
-| PermissionType | Het machtigings type van de machtiging die wordt verleend. Gebruik ' Application ' voor toepassings machtigingen (bijvoorbeeld app-rollen) of ' gedelegeerde ' voor gedelegeerde machtigingen. <br><br>**Opmerking** : de waarde ' delegatedUserConsentable ' geeft gedelegeerde machtigingen aan die niet door de API-uitgever zijn geconfigureerd om toestemming te geven aan de beheerder: deze waarde kan worden gebruikt in het ingebouwde beleid voor machtigings toekenning, maar kan niet worden gebruikt in een aangepast beleid voor machtigings verlening. Vereist. |
+| PermissionType | Het machtigings type van de machtiging die wordt verleend. Gebruik ' Application ' voor toepassings machtigingen (bijvoorbeeld app-rollen) of ' gedelegeerde ' voor gedelegeerde machtigingen. <br><br>**Opmerking**: de waarde ' delegatedUserConsentable ' geeft gedelegeerde machtigingen aan die niet door de API-uitgever zijn geconfigureerd om toestemming te geven aan de beheerder: deze waarde kan worden gebruikt in het ingebouwde beleid voor machtigings toekenning, maar kan niet worden gebruikt in een aangepast beleid voor machtigings verlening. Vereist. |
 | ResourceApplication | De **AppId** van de bron toepassing (bijvoorbeeld de API) waarvoor een machtiging wordt verleend, of een wille keurige, die overeenkomt met een resource toepassing of API. De standaard waarde is any. |
 | Machtigingen | De lijst met machtigings-Id's voor de specifieke machtigingen die moeten overeenkomen met, of een lijst met de enkele waarde ' all ' zodat deze overeenkomt met elke machtiging. De standaard instelling is de enige waarde all. <ul><li>Gemachtigde machtiging-Id's vindt u in de eigenschap **OAuth2Permissions** van het ServicePrincipal-object van de API.</li><li>Id's van toepassings machtigingen vindt u in de eigenschap **AppRoles** van het ServicePrincipal-object van de API.</li></ol> |
 | ClientApplicationIds | Een lijst met **AppId** -waarden voor de client toepassingen die moeten worden vergeleken met, of een lijst met de enkele waarde ' all ' die overeenkomt met elke client toepassing. De standaard instelling is de enige waarde all. |
@@ -149,7 +149,7 @@ Zie voor meer informatie:
 * [De beheerder toestemming werk stroom configureren](configure-admin-consent-workflow.md)
 * [Meer informatie over het beheren van toestemming voor toepassingen en het evalueren van toestemming aanvragen](manage-consent-requests.md)
 * [Een toepassing beheerderstoestemming verlenen voor de hele tenant](grant-admin-consent.md)
-* [Machtigingen en toestemming in het micro soft Identity-platform](../develop/active-directory-v2-scopes.md)
+* [Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
 
 Om hulp te krijgen of antwoorden op uw vragen te vinden:
 * [Azure AD op stack overflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

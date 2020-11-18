@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/12/2020
+ms.date: 11/16/2020
 ms.author: b-juche
-ms.openlocfilehash: d4e66511ce3017749076615f081a8fb56d8b8452
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 5409f9177116add1fd794ec1e72f276daf34e029
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94591543"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659145"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Veelgestelde vragen over Azure NetApp Files
 
@@ -150,7 +150,7 @@ Ja, u moet een Active Directory verbinding maken voordat u een SMB-volume implem
 
 ### <a name="how-many-active-directory-connections-are-supported"></a>Hoeveel Active Directory verbindingen worden ondersteund?
 
-Azure NetApp Files biedt geen ondersteuning voor meerdere Active Directory (AD)-verbindingen in één *regio* , zelfs als de AD-verbindingen zich in verschillende NetApp-accounts bevinden. U kunt echter meerdere AD-verbindingen hebben in één *abonnement* , zolang de AD-verbindingen zich in verschillende regio's bevinden. Als u meerdere AD-verbindingen in één regio nodig hebt, kunt u hiervoor afzonderlijke abonnementen gebruiken. 
+Azure NetApp Files biedt geen ondersteuning voor meerdere Active Directory (AD)-verbindingen in één *regio*, zelfs als de AD-verbindingen zich in verschillende NetApp-accounts bevinden. U kunt echter meerdere AD-verbindingen hebben in één *abonnement*, zolang de AD-verbindingen zich in verschillende regio's bevinden. Als u meerdere AD-verbindingen in één regio nodig hebt, kunt u hiervoor afzonderlijke abonnementen gebruiken. 
 
 Een AD-verbinding wordt geconfigureerd per NetApp-account; de AD-verbinding wordt alleen weer gegeven via het NetApp-account dat wordt gemaakt in.
 
@@ -167,6 +167,10 @@ Azure NetApp Files ondersteunt Windows Server 2008r2SP1-2019-versies van Active 
 ### <a name="why-does-the-available-space-on-my-smb-client-not-show-the-provisioned-size"></a>Waarom wordt de ingerichte grootte niet weer gegeven in de beschik bare ruimte op mijn SMB-client?
 
 De grootte van het volume dat door de SMB-client wordt gerapporteerd, is de maximale grootte waarmee het Azure NetApp Files volume kan worden uitgebreid. De grootte van het Azure NetApp Files volume, zoals weer gegeven op de SMB-client, komt niet overeen met het quotum of de grootte van het volume. U kunt de Azure NetApp Files volume grootte of-quota verkrijgen via de Azure Portal of de API.
+
+### <a name="im-having-issues-connecting-to-my-smb-share-what-should-i-do"></a>Ik ondervind problemen met het maken van verbinding met mijn SMB-share. Wat moet ik doen?
+
+Stel als best practice de maximale tolerantie voor de synchronisatie van computer klokken in op vijf minuten. Zie [Maximum tolerantie voor synchronisatie van computer klokken](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj852172(v=ws.11))voor meer informatie. 
 
 <!--
 ### Does Azure NetApp Files support LDAP signing? 

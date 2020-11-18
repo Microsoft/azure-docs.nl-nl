@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/28/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: c72a2b134fc2c24789ebb75f61d9b64d63d3d48e
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: ec020ecd4c2bcf6e9186afb3d2c4a79ef235c371
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339475"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658907"
 ---
 # <a name="understand-saml-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van SAML
 
@@ -32,7 +32,7 @@ In de [Quick Start serie](add-application-portal-setup-sso.md)is er een artikel 
 > [!IMPORTANT] 
 > Er zijn enkele scenario's waarbij de optie voor **eenmalige aanmelding** niet aanwezig is in de navigatie voor een toepassing in **bedrijfs toepassingen**. 
 >
-> Als de toepassing is geregistreerd met behulp van **app-registraties** , is de mogelijkheid voor eenmalige aanmelding standaard geconfigureerd voor het gebruik van OIDC OAuth. In dit geval wordt de optie **voor eenmalige aanmelding** niet weer gegeven in de navigatie onder **bedrijfs toepassingen**. Wanneer u **app-registraties** gebruikt om uw aangepaste app toe te voegen, configureert u de opties in het manifest bestand. Zie [Azure Active Directory app-manifest](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest)voor meer informatie over het manifest bestand. Zie [verificatie en autorisatie met behulp van micro soft Identity platform](https://docs.microsoft.com/azure/active-directory/develop/authentication-vs-authorization#authentication-and-authorization-using-microsoft-identity-platform)voor meer informatie over SSO-standaarden. 
+> Als de toepassing is geregistreerd met behulp van **app-registraties** , is de mogelijkheid voor eenmalige aanmelding standaard geconfigureerd voor het gebruik van OIDC OAuth. In dit geval wordt de optie **voor eenmalige aanmelding** niet weer gegeven in de navigatie onder **bedrijfs toepassingen**. Wanneer u **app-registraties** gebruikt om uw aangepaste app toe te voegen, configureert u de opties in het manifest bestand. Zie [Azure Active Directory app-manifest](../develop/reference-app-manifest.md)voor meer informatie over het manifest bestand. Zie [verificatie en autorisatie met behulp van micro soft Identity platform](../develop/authentication-vs-authorization.md#authentication-and-authorization-using-microsoft-identity-platform)voor meer informatie over SSO-standaarden. 
 >
 > Andere scenario's waarin **eenmalige aanmelding** ontbreekt in de navigatie, zijn, wanneer een toepassing wordt gehost in een andere Tenant of als uw account niet over de vereiste machtigingen (globale beheerder, Cloud toepassings beheerder, toepassings beheerder of eigenaar van de service-principal) beschikt. Machtigingen kunnen ook leiden tot een scenario waarin u **eenmalige aanmelding** kunt openen, maar niet kunt opslaan. Zie (voor meer informatie over Azure AD-beheerders rollen https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) .
 
@@ -72,7 +72,7 @@ U kunt nieuwe claims toevoegen, voor meer informatie Raadpleeg [het toevoegen va
 >- Zie [Configure Role claims](../develop/active-directory-enterprise-app-role-management.md)voor het maken van aangepaste rollen via de Azure Portal.
 >- Zie [claims aanpassen-Power shell](../develop/active-directory-claims-mapping.md)voor informatie over het aanpassen van claims via Power shell.
 >- Zie [optionele claims configureren](../develop/active-directory-optional-claims.md)om het toepassings manifest te wijzigen voor het configureren van optionele claims voor uw toepassing.
->- Zie [token levensduur configureren](../develop/active-directory-configurable-token-lifetimes.md)voor meer informatie over het instellen van de token levensduur beleid voor vernieuwings tokens, toegangs tokens, sessie tokens en id-tokens. Als u verificatie sessies via voorwaardelijke toegang van Azure AD wilt beperken, raadpleegt u de [beheer mogelijkheden voor verificatie sessies](https://go.microsoft.com/fwlink/?linkid=2083106).
+>- Zie [token levensduur configureren](../develop/active-directory-configurable-token-lifetimes.md)voor meer informatie over het instellen van de token levensduur beleid voor vernieuwings tokens, toegangs tokens, sessie tokens en id-tokens. Als u verificatie sessies via voorwaardelijke toegang van Azure AD wilt beperken, raadpleegt u de [beheer mogelijkheden voor verificatie sessies](../conditional-access/howto-conditional-access-session-lifetime.md).
 
 ## <a name="saml-signing-certificate"></a>SAML-handtekening certificaat
 
@@ -95,7 +95,7 @@ Soms moet u het certificaat misschien downloaden. Wees voorzichtig wanneer u dez
 > De toepassing moet kunnen omgaan met het verwerken van byte volgorde markeringen die aanwezig zijn in de XML die wordt weer gegeven wanneer u gebruikt https://login.microsoftonline.com/{tenant-id}/federationmetadata/2007-06/federationmetadata.xml?appid={app-id} . Byte Order Mark wordt weer gegeven als een niet-afdrukbaar ASCII-teken (¿) en in hexadecimale notatie wordt weer gegeven als EF BB BF bij het controleren van de XML-gegevens.
 
 Selecteer de knop bewerken om certificaat wijzigingen door te voeren. Er zijn verschillende dingen die u kunt doen op de pagina **SAML-handtekening certificaat** :
-   - Een nieuw certificaat maken: Selecteer **Nieuw certificaat** , selecteer de **verval datum** en selecteer vervolgens **Opslaan**. Als u het certificaat wilt activeren, selecteert u het context menu ( **...** ) en selecteert **u certificaat actief maken**.
+   - Een nieuw certificaat maken: Selecteer **Nieuw certificaat**, selecteer de **verval datum** en selecteer vervolgens **Opslaan**. Als u het certificaat wilt activeren, selecteert u het context menu (**...**) en selecteert **u certificaat actief maken**.
    - Een certificaat uploaden met persoonlijke sleutel en pfx-referenties: Selecteer **certificaat importeren** en blader naar het certificaat. Voer het **PFX-wacht woord** in en selecteer vervolgens **toevoegen**.  
    - Geavanceerde certificaat ondertekening configureren. Zie [Geavanceerde opties voor certificaat ondertekening](certificate-signing-options.md)voor meer informatie over deze opties.
    - Informeer extra personen wanneer het actieve certificaat bijna de verloop datum heeft: Voer de e-mail adressen in de velden **e-mail** adres voor meldingen in.
@@ -128,12 +128,12 @@ Als er een fout bericht wordt weer gegeven, voert u de volgende stappen uit:
 
 4. Voer de test opnieuw uit totdat de bewerking is voltooid.
 
-Zie voor meer informatie [debug op SAML gebaseerde eenmalige aanmelding bij toepassingen in azure Active Directory](../azuread-dev/howto-v1-debug-saml-sso-issues.md).
+Zie voor meer informatie [debug op SAML gebaseerde eenmalige aanmelding bij toepassingen in azure Active Directory](./debug-saml-sso-issues.md).
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Quickstartreeks over toepassingsbeheer](view-applications-portal.md)
-- [Gebruikers of groepen toewijzen aan de toepassing](methods-for-assigning-users-and-groups.md)
+- [Gebruikers of groepen toewijzen aan de toepassing](./assign-user-or-group-access-portal.md)
 - [Automatisch inrichten van gebruikers accounts configureren](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 - [Enkelvoudig Sign-On SAML-Protocol](../develop/single-sign-on-saml-protocol.md)

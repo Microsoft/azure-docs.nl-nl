@@ -12,12 +12,12 @@ ms.date: 7/10/2020
 ms.author: mimart
 ms.reviewer: luleonpla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95e13cedc0cdbaedc8c00b9d855057da7e631c19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ff97d0a69efbe624e959f92f5320f921476a306
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88510875"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658975"
 ---
 # <a name="take-action-on-overprivileged-or-suspicious-applications-in-azure-active-directory"></a>Actie onderneemt over overbevoegd of verdachte toepassingen in Azure Active Directory
 
@@ -29,7 +29,7 @@ Zie [Azure Active Directory instemming-Framework](../develop/consent-framework.m
 
 Als u de volgende acties wilt uitvoeren, moet u zich aanmelden als een globale beheerder, een toepassings beheerder of een Cloud toepassings beheerder.
 
-Als u de toegang tot toepassingen wilt beperken, moet u de gebruikers toewijzing vereisen en vervolgens gebruikers of groepen toewijzen aan de toepassing.  Zie [methoden voor het toewijzen van gebruikers en groepen](methods-for-assigning-users-and-groups.md)voor meer informatie.
+Als u de toegang tot toepassingen wilt beperken, moet u de gebruikers toewijzing vereisen en vervolgens gebruikers of groepen toewijzen aan de toepassing.  Zie [methoden voor het toewijzen van gebruikers en groepen](./assign-user-or-group-access-portal.md)voor meer informatie.
 
 U kunt toegang krijgen tot de Azure AD-Portal om context afhankelijke Power shell-scripts te krijgen om de acties uit te voeren.
  
@@ -48,8 +48,8 @@ U kunt het beste de toegang tot de toepassing beperken door de instelling **gebr
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als een globale beheerder, een toepassings beheerder of een Cloud toepassings beheerder.
 2. Selecteer **Azure Active Directory**  >  **bedrijfs toepassingen**.
 3. Selecteer de toepassing waarvoor u de toegang wilt beperken.
-4. Selecteer **Eigenschappen**en stel vervolgens de **vereiste gebruiker** in op **Ja**.
-5. Selecteer **gebruikers en groepen**en verwijder de ongewenste gebruikers die zijn toegewezen aan de toepassing.
+4. Selecteer **Eigenschappen** en stel vervolgens de **vereiste gebruiker** in op **Ja**.
+5. Selecteer **gebruikers en groepen** en verwijder de ongewenste gebruikers die zijn toegewezen aan de toepassing.
 6. Gebruikers of groepen toewijzen aan de toepassing.
 
 U kunt eventueel alle gebruikers verwijderen die aan de toepassing zijn toegewezen met behulp van Power shell.
@@ -66,7 +66,7 @@ U kunt de toepassing eventueel uitschakelen om te voor komen dat gebruikers toeg
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als een globale beheerder, een toepassings beheerder of een Cloud toepassings beheerder.
 2. Selecteer **Azure Active Directory**  >  **bedrijfs toepassingen**.
 3. Selecteer de toepassing waarvoor u de toegang wilt beperken.
-4. **Eigenschappen**selecteren en vervolgens ingeschakeld instellen **dat gebruikers zich kunnen aanmelden?** **No**
+4. **Eigenschappen** selecteren en vervolgens ingeschakeld instellen **dat gebruikers zich kunnen aanmelden?** **No**
 
 ## <a name="investigate-a-suspicious-application"></a>Een verdachte toepassing onderzoeken
 
@@ -75,8 +75,8 @@ U kunt het beste de toegang tot de toepassing beperken door de instelling **gebr
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als een globale beheerder, een toepassings beheerder of een Cloud toepassings beheerder.
 3. Selecteer **Azure Active Directory**  >  **bedrijfs toepassingen**.
 5. Selecteer de toepassing waarvoor u de toegang wilt beperken.
-6. Selecteer **Eigenschappen**en stel vervolgens de **vereiste gebruiker** in op **Ja**.
-7. Selecteer **machtigingen**en controleer de machtigingen beheerder en gebruiker gemachtigd.
+6. Selecteer **Eigenschappen** en stel vervolgens de **vereiste gebruiker** in op **Ja**.
+7. Selecteer **machtigingen** en controleer de machtigingen beheerder en gebruiker gemachtigd.
 
 U kunt ook met behulp van Power shell het volgende doen:
 
@@ -94,7 +94,7 @@ We raden u aan de toepassing uit te scha kelen om de toegang van gebruikers te b
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als een globale beheerder, een toepassings beheerder of een Cloud toepassings beheerder.
 2. Selecteer **Azure Active Directory**  >  **bedrijfs toepassingen**.
 3. Selecteer de toepassing waarvoor u de toegang wilt beperken.
-4. Selecteer **Eigenschappen**en kopieer vervolgens de object-id.
+4. Selecteer **Eigenschappen** en kopieer vervolgens de object-id.
 
 ### <a name="powershell-commands"></a>PowerShell-opdrachten
 
@@ -104,7 +104,7 @@ De object-ID van de Service-Principal ophalen.
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als een globale beheerder, een toepassings beheerder of een Cloud toepassings beheerder.
 2. Selecteer **Azure Active Directory**  >  **bedrijfs toepassingen**.
 3. Selecteer de toepassing waarvoor u de toegang wilt beperken.
-4. Selecteer **Eigenschappen**en kopieer vervolgens de object-id.
+4. Selecteer **Eigenschappen** en kopieer vervolgens de object-id.
 
 ```powershell
     $sp = Get-AzureADServicePrincipal -Filter "displayName eq '$app_name'"

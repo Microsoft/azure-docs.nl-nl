@@ -12,12 +12,12 @@ ms.date: 11/04/2019
 ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9680c9bee6d0cf5c9605ce7b6009a500abd81ffb
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 7e56968250c10bb46553e618fd278df7d642683f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369094"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659077"
 ---
 # <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Een toepassing beheerderstoestemming verlenen voor de hele tenant
 
@@ -30,7 +30,7 @@ Zie [Azure Active Directory instemming-Framework](../develop/consent-framework.m
 Voor het verlenen van toestemming voor de beheerder van de Tenant moet u zich aanmelden als [globale beheerder](../roles/permissions-reference.md#global-administrator--company-administrator), een [toepassings beheerder](../roles/permissions-reference.md#application-administrator)of een [Cloud toepassings beheerder](../roles/permissions-reference.md#cloud-application-administrator).
 
 > [!IMPORTANT]
-> Wanneer een toepassing toestemming heeft gekregen voor Tenant beheer, kunnen alle gebruikers zich aanmelden bij de app, tenzij deze is geconfigureerd voor het vereisen van een gebruikers toewijzing. Als u wilt beperken welke gebruikers zich kunnen aanmelden bij een toepassing, moet u de gebruikers toewijzing vereisen en vervolgens gebruikers of groepen toewijzen aan de toepassing. Zie [methoden voor het toewijzen van gebruikers en groepen](methods-for-assigning-users-and-groups.md)voor meer informatie.
+> Wanneer een toepassing toestemming heeft gekregen voor Tenant beheer, kunnen alle gebruikers zich aanmelden bij de app, tenzij deze is geconfigureerd voor het vereisen van een gebruikers toewijzing. Als u wilt beperken welke gebruikers zich kunnen aanmelden bij een toepassing, moet u de gebruikers toewijzing vereisen en vervolgens gebruikers of groepen toewijzen aan de toepassing. Zie [methoden voor het toewijzen van gebruikers en groepen](./assign-user-or-group-access-portal.md)voor meer informatie.
 >
 > De rol van globale beheerder is vereist om toestemming van de beheerder te bieden voor toepassings machtigingen voor de Microsoft Graph-API.
 
@@ -99,6 +99,6 @@ Zo altijd moet u de machtigingen voor een toepassings aanvraag zorgvuldig contro
 
 [De beheerder toestemming werk stroom configureren](configure-admin-consent-workflow.md)
 
-[Machtigingen en toestemming in het micro soft Identity-platform](../develop/active-directory-v2-scopes.md)
+[Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
 
 [Azure AD op stack overflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 83d7ed6c937d515520058819636bc23c8de173fd
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 03e89b0da25a915a00c70a9a87bd0f675b8e12d6
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015273"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658074"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Remote Desktop publiceren met Azure AD-toepassingsproxy
 
@@ -28,7 +28,7 @@ De doel groep voor dit artikel is:
 
 ## <a name="how-application-proxy-fits-in-the-standard-rds-deployment"></a>Hoe toepassings proxy in de standaard-RDS-implementatie past
 
-Een standaard-RDS-implementatie omvat diverse Extern bureaublad functie Services die worden uitgevoerd op Windows Server. Er zijn meerdere implementatie opties voor het bekijken van de [extern bureaublad-services architectuur](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/desktop-hosting-logical-architecture). In tegens telling tot andere opties voor RDS-implementatie, heeft de [RDS-implementatie met Azure AD-toepassingsproxy](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/desktop-hosting-logical-architecture) (weer gegeven in het volgende diagram) een permanente uitgaande verbinding van de server waarop de connector service wordt uitgevoerd. Andere implementaties verlaten open binnenkomende verbindingen via een load balancer.
+Een standaard-RDS-implementatie omvat diverse Extern bureaublad functie Services die worden uitgevoerd op Windows Server. Er zijn meerdere implementatie opties voor het bekijken van de [extern bureaublad-services architectuur](/windows-server/remote/remote-desktop-services/Desktop-hosting-logical-architecture). In tegens telling tot andere opties voor RDS-implementatie, heeft de [RDS-implementatie met Azure AD-toepassingsproxy](/windows-server/remote/remote-desktop-services/Desktop-hosting-logical-architecture) (weer gegeven in het volgende diagram) een permanente uitgaande verbinding van de server waarop de connector service wordt uitgevoerd. Andere implementaties verlaten open binnenkomende verbindingen via een load balancer.
 
 ![Toepassings proxy bevindt zich tussen de RDS-VM en het open bare Internet](./media/application-proxy-integrate-with-remote-desktop-services/rds-with-app-proxy.png)
 
@@ -37,13 +37,13 @@ In een RDS-implementatie worden de extern bureau blad-webfunctie en de RD-gatewa
 - RD-gateway komt in de foto wanneer een gebruiker de RDP-verbinding heeft gestart. Het RD-gateway verwerkt het versleutelde RDP-verkeer via internet en zet het om naar de on-premises server waarmee de gebruiker verbinding maakt. In dit scenario is het verkeer dat de RD-gateway ontvangt, afkomstig van de Azure-AD-toepassingsproxy.
 
 >[!TIP]
->Als u RDS nog niet eerder hebt geïmplementeerd of meer informatie wilt hebben voordat u begint, leert u hoe u [RDS naadloos kunt implementeren met Azure Resource Manager en Azure Marketplace](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/rds-in-azure).
+>Als u RDS nog niet eerder hebt geïmplementeerd of meer informatie wilt hebben voordat u begint, leert u hoe u [RDS naadloos kunt implementeren met Azure Resource Manager en Azure Marketplace](/windows-server/remote/remote-desktop-services/rds-in-azure).
 
 ## <a name="requirements"></a>Vereisten
 
 - Zowel het extern bureau blad-web als de RD-gateway-eind punten moeten zich op dezelfde computer bevinden en met een gemeen schappelijke basis. Extern bureau blad-web en-RD-gateway worden gepubliceerd als één toepassing met toepassings proxy, zodat u een eenmalige aanmelding kunt hebben tussen de twee toepassingen.
 
-- U moet al een [RDS](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/rds-in-azure)-toepassing hebben geïmplementeerd en een [toepassings proxy hebben ingeschakeld](application-proxy-add-on-premises-application.md).
+- U moet al een [RDS](/windows-server/remote/remote-desktop-services/rds-in-azure)-toepassing hebben geïmplementeerd en een [toepassings proxy hebben ingeschakeld](application-proxy-add-on-premises-application.md).
 
 - Uw eind gebruikers moeten een compatibele browser gebruiken om verbinding te maken met RD Web of de extern bureau blad-webclient. Zie [ondersteuning voor client configuraties](#support-for-other-client-configurations)voor meer informatie.
 
@@ -51,7 +51,7 @@ In een RDS-implementatie worden de extern bureau blad-webfunctie en de RD-gatewa
 
 - Als u RD Web op Internet Explorer gebruikt, moet u de ActiveX-invoeg toepassing voor RDS inschakelen.
 
-- Als u de extern bureau blad-webclient gebruikt, moet u de connector versie van de toepassings proxy [1.5.1975 of hoger](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-release-version-history)gebruiken.
+- Als u de extern bureau blad-webclient gebruikt, moet u de connector versie van de toepassings proxy [1.5.1975 of hoger](./application-proxy-release-version-history.md)gebruiken.
 
 - Gebruikers kunnen alleen verbinding maken met resources die in het deel venster **RemoteApp en Bureau bladen** zijn gepubliceerd voor de pre-verificatie stroom van Azure AD. Gebruikers kunnen geen verbinding maken met een bureau blad met behulp van het deel venster **verbinding maken met een externe computer** .
 
@@ -72,8 +72,8 @@ Nadat u RDS-en Azure-AD-toepassingsproxy voor uw omgeving hebt ingesteld, volgt 
    >[!Note]
    >Uw gebruikers wordt gevraagd eenmaal te authenticeren bij Azure AD en eenmaal naar de extern bureau blad, maar ze hebben eenmalige aanmelding voor RD-gateway.
 
-4. Selecteer **Azure Active Directory**en klik vervolgens op **app-registraties**. Kies uw app in de lijst.
-5. Selecteer onder **beheren**de optie **huis stijl**.
+4. Selecteer **Azure Active Directory** en klik vervolgens op **app-registraties**. Kies uw app in de lijst.
+5. Selecteer onder **beheren** de optie **huis stijl**.
 6. Werk het URL-veld van de **Start pagina** zo aan dat deze naar uw extern bureau blad-webeindpunt verwijst (bijvoorbeeld `https://\<rdhost\>.com/RDWeb` ).
 
 ### <a name="direct-rds-traffic-to-application-proxy"></a>Direct RDS-verkeer naar toepassings proxy
@@ -111,7 +111,7 @@ Maak verbinding met de RDS-implementatie als beheerder en wijzig de RD-gateway s
 Nu u Extern bureaublad hebt geconfigureerd, heeft Azure AD-toepassingsproxy het Internet gerichte onderdeel van RDS. U kunt de andere open bare Internet gerichte eind punten op uw extern bureau blad-en RD-gateway computers verwijderen.
 
 ### <a name="enable-the-rd-web-client"></a>De extern bureau blad-webclient inschakelen
-Als u ook wilt dat gebruikers de extern bureau blad-webclient kunnen gebruiken, volgt u de stappen in [de Extern bureaublad-webclient instellen voor uw gebruikers](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-web-client-admin) om dit in te scha kelen.
+Als u ook wilt dat gebruikers de extern bureau blad-webclient kunnen gebruiken, volgt u de stappen in [de Extern bureaublad-webclient instellen voor uw gebruikers](/windows-server/remote/remote-desktop-services/clients/remote-desktop-web-client-admin) om dit in te scha kelen.
 
 Met de Extern bureaublad-webclient kunnen gebruikers toegang krijgen tot de Extern bureaublad-infra structuur van uw organisatie via een HTML5-compatibele webbrowser, zoals micro soft Edge, Internet Explorer 11, Google Chrome, Safari of Mozilla Firefox (v 55.0 en hoger).
 
@@ -130,7 +130,7 @@ De configuratie die in dit artikel wordt beschreven, is voor toegang tot RDS via
 
 | Verificatiemethode | Ondersteunde client configuratie |
 | --------------------- | ------------------------------ |
-| Verificatie vooraf    | Extern bureau blad-web-Windows 7/10 met Internet Explorer of [Edge-IE-modus van chroom](https://docs.microsoft.com/deployedge/edge-ie-mode) en RDS ActiveX-invoeg toepassing |
+| Verificatie vooraf    | Extern bureau blad-web-Windows 7/10 met Internet Explorer of [Edge-IE-modus van chroom](/deployedge/edge-ie-mode) en RDS ActiveX-invoeg toepassing |
 | Verificatie vooraf    | Extern bureau blad-webclient-HTML5-compatibele webbrowser, zoals micro soft Edge, Internet Explorer 11, Google Chrome, Safari of Mozilla Firefox (v 55.0 en hoger) |
 | Voer | Elk ander besturings systeem dat ondersteuning biedt voor de Microsoft Extern bureaublad-toepassing |
 

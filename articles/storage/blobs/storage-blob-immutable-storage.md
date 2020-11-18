@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/18/2019
+ms.date: 11/13/2020
 ms.author: tamram
 ms.reviewer: hux
 ms.subservice: blobs
-ms.openlocfilehash: 54014a0d76130b82788a1ae432e42baec28df2c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 39fdde572e269bb4f5648e91bf85539d02236ff6
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87448341"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658550"
 ---
 # <a name="store-business-critical-blob-data-with-immutable-storage"></a>Bedrijfs kritieke blobgegevens opslaan met onveranderlijke opslag
 
@@ -102,17 +102,21 @@ De volgende limieten gelden voor juridische bewaringen:
 - Voor een container worden voor de duur van het beleid Maxi maal 10 controle logboeken voor juridische bewaring bewaard.
 
 ## <a name="scenarios"></a>Scenario's
+
 De volgende tabel bevat de typen Blob Storage-bewerkingen die zijn uitgeschakeld voor de verschillende onveranderbare scenario's. Zie de [Azure Blob Service rest API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api) -documentatie voor meer informatie.
 
-|Scenario  |BLOB-status  |BLOB-bewerkingen geweigerd  |Container-en account beveiliging
-|---------|---------|---------|---------|
-|Effectieve retentieperiode voor de blob is nog niet verlopen en/of wettelijke bewaring is ingesteld     |Onveranderbaar: beveiligd tegen verwijderen en schrijven         | Put-BLOB<sup>1</sup>, put blok<sup>1</sup>, blok lijst<sup>1</sup>, verwijderen container, Blob verwijderen, Blob-meta gegevens instellen, pagina plaatsen, Blob-eigenschappen instellen, moment opname-blob, incrementele Kopieer-blob, toevoeg blok<sup>2</sup>         |Verwijderen van container is geweigerd; Het verwijderen van het opslag account is geweigerd         |
-|Effectief Bewaar interval voor de blob is verlopen en er is geen geldige blok kering ingesteld    |Alleen beveiligd tegen schrijven (verwijderen is toegestaan)         |Put-BLOB<sup>1</sup>, blok<sup>1</sup>plaatsen, blok lijst<sup>1</sup>plaatsen, Blob-meta gegevens instellen, pagina plaatsen, Blob-eigenschappen instellen, moment opname-blob, incrementele Kopieer-blob, toevoeg blok<sup>2</sup>         |Verwijderen van container is geweigerd als er ten minste één Blob in een beveiligde container bestaat; Het verwijderen van een opslag account is alleen geweigerd voor *vergrendeld* op tijd gebaseerd beleid         |
-|Er is geen WORM beleid toegepast (geen Bewaar periode op basis van tijd en geen geldige bewarings code)     |Veranderlijk         |Geen         |Geen         |
+| Scenario | BLOB-status | BLOB-bewerkingen geweigerd | Container-en account beveiliging |
+|--|--|--|--|
+| Effectieve retentieperiode voor de blob is nog niet verlopen en/of wettelijke bewaring is ingesteld | Onveranderbaar: beveiligd tegen verwijderen en schrijven | Put-BLOB<sup>1</sup>, put blok<sup>1</sup>, blok lijst<sup>1</sup>, verwijderen container, Blob verwijderen, Blob-meta gegevens instellen, pagina plaatsen, Blob-eigenschappen instellen, moment opname-blob, incrementele Kopieer-blob, toevoeg blok<sup>2</sup> | Verwijderen van container is geweigerd; Het verwijderen van het opslag account is geweigerd |
+| Effectief Bewaar interval voor de blob is verlopen en er is geen geldige blok kering ingesteld | Alleen beveiligd tegen schrijven (verwijderen is toegestaan) | Put-BLOB<sup>1</sup>, blok<sup>1</sup>plaatsen, blok lijst<sup>1</sup>plaatsen, Blob-meta gegevens instellen, pagina plaatsen, Blob-eigenschappen instellen, moment opname-blob, incrementele Kopieer-blob, toevoeg blok<sup>2</sup> | Verwijderen van container is geweigerd als er ten minste één Blob in een beveiligde container bestaat; Het verwijderen van een opslag account is alleen geweigerd voor *vergrendeld* op tijd gebaseerd beleid |
+| Er is geen WORM beleid toegepast (geen Bewaar periode op basis van tijd en geen geldige bewarings code) | Veranderlijk | Geen | Geen |
 
 <sup>1</sup> met de BLOB-service kunnen deze bewerkingen een nieuwe Blob maken. Alle volgende overschrijvings bewerkingen op een bestaand BLOB-pad in een onveranderbare container zijn niet toegestaan.
 
 <sup>2</sup> toevoeg blok is alleen toegestaan voor op tijd gebaseerd Bewaar beleid waarvoor de eigenschap is `allowProtectedAppendWrites` ingeschakeld. Zie de sectie [schrijf bewerkingen voor beveiligde toevoeg-blobs toestaan](#allow-protected-append-blobs-writes) voor meer informatie.
+
+> [!IMPORTANT]
+> Sommige werk belastingen, zoals [SQL back-up naar URL](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-to-url), maken een BLOB en voegen deze vervolgens toe. Als de container een actief Bewaar beleid op basis van tijd of rechts geblokkeerd heeft, zal dit patroon niet slagen.
 
 ## <a name="pricing"></a>Prijzen
 

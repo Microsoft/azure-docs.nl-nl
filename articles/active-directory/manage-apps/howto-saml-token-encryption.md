@@ -15,12 +15,12 @@ ms.date: 03/13/2020
 ms.author: kenwith
 ms.reviewer: paulgarn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 779d1b73f45f9be5b4bd00d546987b7c1e0b6a43
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 820e2cb0d422597f0e649e6934fd8bb11c1521db
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84763343"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659026"
 ---
 # <a name="how-to-configure-azure-ad-saml-token-encryption"></a>Procedure: Azure AD SAML-token versleuteling configureren
 
@@ -78,7 +78,7 @@ U kunt het open bare certificaat toevoegen aan de configuratie van uw toepassing
 
 ### <a name="to-deactivate-token-encryption-in-the-azure-portal"></a>Token versleuteling in de Azure Portal deactiveren
 
-1. Ga in het Azure Portal naar **Azure Active Directory > zakelijke toepassingen**en selecteer vervolgens de toepassing waarvoor SAML-token versleuteling is ingeschakeld.
+1. Ga in het Azure Portal naar **Azure Active Directory > zakelijke toepassingen** en selecteer vervolgens de toepassing waarvoor SAML-token versleuteling is ingeschakeld.
 
 1. Selecteer op de pagina van de toepassing **token versleuteling**, zoek het certificaat en selecteer vervolgens de optie **...** om het vervolg keuzemenu weer te geven.
 
@@ -124,7 +124,7 @@ Wanneer u een sleutel referentie configureert met Graph, Power shell of in het m
 
 1. Gebruik de nieuwste Azure AD Power shell-module om verbinding te maken met uw Tenant.
 
-1. Stel de coderings instellingen voor tokens in met de opdracht **[set-azurekunt](https://docs.microsoft.com/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview)** .
+1. Stel de coderings instellingen voor tokens in met de opdracht **[set-azurekunt](/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview)** .
 
     ```
     Set-AzureADApplication -ObjectId <ApplicationObjectId> -KeyCredentials "<KeyCredentialsObject>"  -TokenEncryptionKeyId <keyID>

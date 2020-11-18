@@ -15,12 +15,12 @@ ms.date: 04/04/2019
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1731d5ea5d8db9ea1c5855a32d2daca0387c0bf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87190e9a7aa3c3a26b77220dd0332d65c640bc2e
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84763207"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658992"
 ---
 # <a name="manage-certificates-for-federated-single-sign-on-in-azure-active-directory"></a>Certificaten beheren voor federatieve eenmalige aanmelding in Azure Active Directory
 
@@ -30,7 +30,7 @@ Dit artikel is alleen relevant voor apps die zijn geconfigureerd voor het gebrui
 
 ## <a name="auto-generated-certificate-for-gallery-and-non-gallery-applications"></a>Automatisch gegenereerd certificaat voor galerie-en niet-galerie toepassingen
 
-Wanneer u een nieuwe toepassing uit de galerie toevoegt en een op SAML gebaseerde aanmelding configureert (door de SAML van **eenmalige aanmelding**te selecteren op  >  **SAML** de overzichts pagina van de toepassing), genereert Azure AD een certificaat voor de toepassing dat drie jaar geldig is. Als u het actieve certificaat wilt downloaden als een beveiligings certificaat bestand (**. CER**), gaat u terug naar die pagina (op**SAML gebaseerde aanmelding**) en selecteert u een download koppeling in de kop **SAML-handtekening certificaat** . U kunt kiezen tussen het onbewerkte (binaire) certificaat of het Base64-certificaat (basis 64-gecodeerd tekst). Voor galerie toepassingen kan deze sectie ook een koppeling weer geven om het certificaat te downloaden als XML voor federatieve meta gegevens (een **. XML** -bestand), afhankelijk van de vereiste van de toepassing.
+Wanneer u een nieuwe toepassing uit de galerie toevoegt en een op SAML gebaseerde aanmelding configureert (door de SAML van **eenmalige aanmelding** te selecteren op  >  **SAML** de overzichts pagina van de toepassing), genereert Azure AD een certificaat voor de toepassing dat drie jaar geldig is. Als u het actieve certificaat wilt downloaden als een beveiligings certificaat bestand (**. CER**), gaat u terug naar die pagina (op **SAML gebaseerde aanmelding**) en selecteert u een download koppeling in de kop **SAML-handtekening certificaat** . U kunt kiezen tussen het onbewerkte (binaire) certificaat of het Base64-certificaat (basis 64-gecodeerd tekst). Voor galerie toepassingen kan deze sectie ook een koppeling weer geven om het certificaat te downloaden als XML voor federatieve meta gegevens (een **. XML** -bestand), afhankelijk van de vereiste van de toepassing.
 
 ![Download opties voor het SAML-actieve handtekening certificaat](./media/manage-certificates-for-federated-single-sign-on/active-certificate-download-options.png)
 
@@ -57,7 +57,7 @@ Maak eerst een nieuw certificaat met een andere verval datum en sla dit op:
 1. Meld u aan bij de [Azure Active Directory Portal](https://aad.portal.azure.com/). De pagina **Azure Active Directory beheer centrum** wordt weer gegeven.
 1. Selecteer in het linkerdeelvenster **Enterprise-toepassingen**. Er wordt een lijst weer gegeven met de bedrijfs toepassingen in uw account.
 1. Selecteer de betreffende toepassing. Er wordt een overzichts pagina voor de toepassing weer gegeven.
-1. Selecteer **eenmalige aanmelding**in het linkerdeel venster van de overzichts pagina van de toepassing.
+1. Selecteer **eenmalige aanmelding** in het linkerdeel venster van de overzichts pagina van de toepassing.
 1. Als de pagina **Eén aanmeldings methode selecteren** wordt weer gegeven, selecteert u **SAML**.
 1. Zoek in de pagina **eén Sign-On met SAML-preview instellen** op de kop **SAML-handtekening certificaat** en selecteer het **bewerkings** pictogram (een potlood). De pagina **SAML-handtekening certificaat** wordt weer gegeven, waarin de status (**actief** of **inactief**), de verval datum en de vinger afdruk (een hash-teken reeks) van elk certificaat worden weer gegeven.
 1. Selecteer **Nieuw certificaat**. Er wordt een nieuwe rij onder de lijst met certificaten weer gegeven, waarbij de verval datum standaard precies drie jaar na de huidige datum is. (Uw wijzigingen zijn nog niet opgeslagen, zodat u de verval datum nog steeds kunt wijzigen.)
@@ -77,7 +77,7 @@ Down load vervolgens het nieuwe certificaat in de juiste indeling, upload het na
 
 1. In de instructies ziet u de coderings indeling die is vereist voor het uploaden van het certificaat.
 1. Volg de instructies in de sectie [automatisch gegenereerd certificaat voor galerie en niet-galerie toepassingen](#auto-generated-certificate-for-gallery-and-non-gallery-applications) eerder. Met deze stap wordt het certificaat gedownload in de coderings indeling die vereist is voor het uploaden door de toepassing.
-1. Als u wilt overschakelen naar het nieuwe certificaat, gaat u terug naar de pagina **SAML-handtekening certificaat** en selecteert u in de rij nieuw opgeslagen certificaat het weglatings teken (**...**) en selecteert **u certificaat actief maken**. De status van het nieuwe certificaat verandert in **actief**en het vorige actieve certificaat verandert in de status **inactief**.
+1. Als u wilt overschakelen naar het nieuwe certificaat, gaat u terug naar de pagina **SAML-handtekening certificaat** en selecteert u in de rij nieuw opgeslagen certificaat het weglatings teken (**...**) en selecteert **u certificaat actief maken**. De status van het nieuwe certificaat verandert in **actief** en het vorige actieve certificaat verandert in de status **inactief**.
 1. Ga door met het volgen van de configuratie-instructies voor SAML-aanmeldingen van de toepassing die u eerder hebt weer gegeven, zodat u het SAML-handtekening certificaat kunt uploaden naar de juiste indeling voor versleuteling.
 
 ## <a name="add-email-notification-addresses-for-certificate-expiration"></a>E-mail meldings adressen toevoegen voor het verlopen van certificaten
@@ -111,4 +111,4 @@ Als een certificaat bijna verloopt, kunt u het vernieuwen met behulp van een pro
 - [Tutorials for integrating SaaS applications with Azure Active Directory](../saas-apps/tutorial-list.md) (Zelfstudies voor het integreren van SaaS-toepassingen met Azure Active Directory)
 - [Toepassingsbeheer met Azure Active Directory](what-is-application-management.md)
 - [Eenmalige aanmelding bij toepassingen in Azure Active Directory](what-is-single-sign-on.md)
-- [Foutopsporing uitvoeren in op SAML gebaseerde eenmalige aanmelding bij toepassingen in Azure Active Directory](../azuread-dev/howto-v1-debug-saml-sso-issues.md)
+- [Foutopsporing uitvoeren in op SAML gebaseerde eenmalige aanmelding bij toepassingen in Azure Active Directory](./debug-saml-sso-issues.md)

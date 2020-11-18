@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: b87340fbb3f94eee106fc5d0d72117d30e331035
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7e9544fb73c8599b219ef7a566032adfe5e33d08
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75862710"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658499"
 ---
 # <a name="community-suggested-third-party-vpn-or-firewall-device-settings-for-azure-vpn-gateway"></a>Door de Community voorgestelde VPN-of firewall-Apparaatinstellingen van derden voor Azure VPN-gateway
 
@@ -41,7 +41,6 @@ De volgende tabel bevat een lijst met verschillende algemene apparaten en gerela
 
 ## <a name="next-step"></a>Volgende stap
 
-[Instellingen voor Azure-gateways](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-devices)
+[Instellingen voor Azure-gateways](./vpn-gateway-about-vpn-devices.md)
 
-[Bekende compatibele apparaten](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-devices)
-
+[Bekende compatibele apparaten](./vpn-gateway-about-vpn-devices.md)

@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 09/01/2019
-ms.openlocfilehash: d512a691b76cb7cbc72b4cbcb1fc821e928ea1b0
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.date: 11/16/2020
+ms.openlocfilehash: 366b30df677a5b74bc7d70e1aea60e05b4df0152
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421223"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659280"
 ---
 # <a name="preprocess-text"></a>Tekst voorverwerken
 
@@ -39,24 +39,24 @@ De **tekst module preprocess** ondersteunt momenteel alleen Engels.
 
 1. Selecteer de taal in de vervolg keuzelijst **taal** .
 
-1. **Tekst kolom die moet worden opgeschoond** : Selecteer de kolom die u wilt voorverwerken.
+1. **Tekst kolom die moet worden opgeschoond**: Selecteer de kolom die u wilt voorverwerken.
 
-1. **Stop woorden verwijderen** : Selecteer deze optie als u een vooraf gedefinieerde lijst met stop woord wilt Toep assen op de tekst kolom. 
+1. **Stop woorden verwijderen**: Selecteer deze optie als u een vooraf gedefinieerde lijst met stop woord wilt Toep assen op de tekst kolom. 
 
     Stop woord-lijsten zijn taal afhankelijk en aanpasbaar.
 
-1. **Lemmatisering** : Selecteer deze optie als u wilt dat woorden worden weer gegeven in de canonieke vorm. Deze optie is handig voor het verminderen van het aantal unieke instanties van andere vergelijk bare tekst tokens.
+1. **Lemmatisering**: Selecteer deze optie als u wilt dat woorden worden weer gegeven in de canonieke vorm. Deze optie is handig voor het verminderen van het aantal unieke instanties van andere vergelijk bare tekst tokens.
 
     Het lemmatisering-proces is zeer taal afhankelijk.
 
-1. **Zinnen detecteren** : Selecteer deze optie als u wilt dat de module een teken grens markering voor een zin invoegt bij het uitvoeren van analyses.
+1. **Zinnen detecteren**: Selecteer deze optie als u wilt dat de module een teken grens markering voor een zin invoegt bij het uitvoeren van analyses.
 
     In deze module wordt een reeks van drie sluis tekens gebruikt `|||` om de zin af te duiden.
 
-1. Voer optionele Zoek-en vervang bewerkingen uit met reguliere expressies.
+1. Voer optionele Zoek-en vervang bewerkingen uit met reguliere expressies. De reguliere expressie wordt eerst verwerkt, vóór alle andere ingebouwde opties.
 
-    * **Aangepaste reguliere expressie** : Definieer de tekst die u zoekt.
-    * **Aangepaste vervangende teken reeks** : Definieer één vervangende waarde.
+    * **Aangepaste reguliere expressie**: Definieer de tekst die u zoekt.
+    * **Aangepaste vervangende teken reeks**: Definieer één vervangende waarde.
 
 1. **Hoofdletter gevoelig voor kleine** letters: Selecteer deze optie als u ASCII-hoofd tekens wilt omzetten in een kleine letter vorm.
 
@@ -64,26 +64,45 @@ De **tekst module preprocess** ondersteunt momenteel alleen Engels.
 
 1. U kunt ook de volgende typen tekens of teken reeksen uit de verwerkte uitvoer tekst verwijderen:
 
-    * **Nummers verwijderen** : Selecteer deze optie als u wilt dat alle numerieke tekens voor de opgegeven taal worden verwijderd. Identificatie nummers zijn afhankelijk van het domein en de taal. Als de numerieke tekens integraal deel uitmaken van een bekend woord, kan het getal niet worden verwijderd.
+    * **Nummers verwijderen**: Selecteer deze optie als u wilt dat alle numerieke tekens voor de opgegeven taal worden verwijderd. Identificatie nummers zijn afhankelijk van het domein en de taal. Als de numerieke tekens integraal deel uitmaken van een bekend woord, kan het getal niet worden verwijderd. Meer informatie vindt u in [technische opmerkingen](#technical-notes).
     
-    * **Speciale tekens verwijderen** : gebruik deze optie om niet-alfanumerieke speciale tekens te verwijderen.
+    * **Speciale tekens verwijderen**: gebruik deze optie om niet-alfanumerieke speciale tekens te verwijderen.
     
-    * **Dubbele tekens verwijderen** : Selecteer deze optie als u wilt dat de extra tekens in een reeks die meer dan twee keer worden herhaald, worden verwijderd. Een reeks zoals ' aaaaa ' wordt bijvoorbeeld gereduceerd tot ' AA '.
+    * **Dubbele tekens verwijderen**: Selecteer deze optie als u wilt dat de extra tekens in een reeks die meer dan twee keer worden herhaald, worden verwijderd. Een reeks zoals ' aaaaa ' wordt bijvoorbeeld gereduceerd tot ' AA '.
     
-    * **E-mail adressen verwijderen** : Selecteer deze optie om een wille keurige volg orde van de indeling te verwijderen `<string>@<string>` .  
-    * **Url's verwijderen** : Selecteer deze optie om een reeks te verwijderen die de volgende URL-voor voegsels bevat: `http` , `https` , `ftp` , `www`
+    * **E-mail adressen verwijderen**: Selecteer deze optie om een wille keurige volg orde van de indeling te verwijderen `<string>@<string>` .  
+    * **Url's verwijderen**: Selecteer deze optie om een reeks te verwijderen die de volgende URL-voor voegsels bevat: `http` , `https` , `ftp` , `www`
     
-1. **Uitbestedingen van woorden uitvouwen** : deze optie is alleen van toepassing op talen die verb-contract ANTEN gebruiken; Dit is momenteel alleen beschikbaar in het Engels. 
+1. **Uitbestedingen van woorden uitvouwen**: deze optie is alleen van toepassing op talen die verb-contract ANTEN gebruiken; Dit is momenteel alleen beschikbaar in het Engels. 
 
     Als u deze optie selecteert, kunt u bijvoorbeeld de zin *' zou niet blijven behouden '* vervangen. *"would not stay there"*
 
-1. **Backslashes normaliseren naar slashes** : Selecteer deze optie om alle exemplaren van `\\` aan toe te wijzen `/` .
+1. **Backslashes normaliseren naar slashes**: Selecteer deze optie om alle exemplaren van `\\` aan toe te wijzen `/` .
 
-1. **Tokens splitsen op speciale tekens** : Selecteer deze optie als u woorden wilt splitsen op tekens zoals, enzovoort `&` `-` . Deze optie kan ook de speciale tekens verminderen wanneer deze meer dan twee keer wordt herhaald. 
+1. **Tokens splitsen op speciale tekens**: Selecteer deze optie als u woorden wilt splitsen op tekens zoals, enzovoort `&` `-` . Deze optie kan ook de speciale tekens verminderen wanneer deze meer dan twee keer wordt herhaald. 
 
     De teken reeks wordt bijvoorbeeld `MS---WORD` onderverdeeld in drie tokens,, `MS` `-` en `WORD` .
 
 1. Verzend de pijp lijn.
+
+## <a name="technical-notes"></a>Technische opmerkingen
+
+De voor **verwerking-tekst** module in Studio (klassiek) en Designer gebruiken verschillende taal modellen. De ontwerp functie maakt gebruik van een met CNN opgeleid model met meerdere taken van [spaCy](https://spacy.io/models/en). Verschillende modellen bieden verschillende tokenizer-en Tagger, die leiden tot verschillende resultaten.
+
+Hier volgen enkele voor beelden:
+
+| Configuratie | Resultaat van uitvoer |
+| --- | --- |
+|Met alle geselecteerde opties </br> Korte </br> Voor de cases als ' 3test ' in de 4test ' WC-3 3test ', verwijdert de ontwerper het hele woord ' 3test ', omdat in deze context het onderdeel-van-speech Tagger het token ' 3test ' opgeeft als cijfer en volgens het deel van de spraak, wordt dit door de module verwijderd.| :::image type="content" source="./media/module/preprocess-text-all-options-selected.png" alt-text="Met alle geselecteerde opties" border="True"::: |
+|Met alleen `Removing number` geselecteerde </br> Korte </br> In het geval van de cases als ' 3test ', ' 4-EC ', is de Tokenizer-dosis van de Designer niet gesplitst in deze gevallen en worden ze behandeld als de hele tokens. Daarom worden de getallen in deze woorden niet verwijderd.| :::image type="content" source="./media/module/preprocess-text-removing-numbers-selected.png" alt-text="Alleen als het selectie nummer verwijderen is geselecteerd" border="True"::: |
+
+U kunt ook een reguliere expressie gebruiken om aangepaste resultaten uit te voeren:
+
+| Configuratie | Resultaat van uitvoer |
+| --- | --- |
+|Met alle geselecteerde opties </br> Aangepaste reguliere expressie: `(\s+)*(-|\d+)(\s+)*` </br> Aangepaste vervangende teken reeks: `\1 \2 \3`| :::image type="content" source="./media/module/preprocess-text-regular-expression-all-options-selected.png" alt-text="Alle geselecteerde opties en reguliere expressie" border="True"::: |
+|Met alleen `Removing number` geselecteerde </br> Aangepaste reguliere expressie: `(\s+)*(-|\d+)(\s+)*` </br> Aangepaste vervangende teken reeks: `\1 \2 \3`| :::image type="content" source="./media/module/preprocess-text-regular-expression-removing-numbers-selected.png" alt-text="Met geselecteerde getallen en reguliere expressie verwijderen" border="True"::: |
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

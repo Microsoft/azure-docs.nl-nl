@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: a91d0e11c44657a2d4cdd267ffa6490ca89532a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e60c829831bde3b454ab180d1a39ec46cb346963
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89069405"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658635"
 ---
 # <a name="deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Azure Firewall implementeren en configureren in een hybride netwerk met Azure PowerShell
 
@@ -48,7 +48,7 @@ Zie [zelf studie: Azure firewall implementeren en configureren in een hybride ne
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voor dit artikel moet u Power shell lokaal uitvoeren. U moet de module Azure PowerShell hebben geïnstalleerd. Voer `Get-Module -ListAvailable Az` uit om de versie te bekijken. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](https://docs.microsoft.com/powershell/azure/install-Az-ps). Nadat u de versie van PowerShell hebt gecontroleerd, voert u `Login-AzAccount` uit om een verbinding op te zetten met Azure.
+Voor dit artikel moet u Power shell lokaal uitvoeren. U moet de module Azure PowerShell hebben geïnstalleerd. Voer `Get-Module -ListAvailable Az` uit om de versie te bekijken. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-Az-ps). Nadat u de versie van PowerShell hebt gecontroleerd, voert u `Login-AzAccount` uit om een verbinding op te zetten met Azure.
 
 Er zijn drie belangrijke vereisten voor de correcte werking van dit scenario:
 
@@ -68,7 +68,7 @@ Zie de sectie [routes maken](#create-the-routes) in dit artikel om te zien hoe d
 >[!NOTE]
 >Verkeer tussen rechtstreeks gepeerde VNets wordt rechtstreeks gerouteerd, zelfs als de UDR naar Azure Firewall als standaardgateway wijst. Als u in dit scenario subnet-naar-subnet-verkeer wilt verzenden, moet een UDR het voorvoegsel van het doelsubnetwerk expliciet op beide subnetten bevatten.
 
-Zie [Naslagdocumentatie voor Azure PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azfirewall) om de gerelateerde naslaginformatie voor Azure PowerShell te bekijken.
+Zie [Naslagdocumentatie voor Azure PowerShell](/powershell/module/az.network/new-azfirewall) om de gerelateerde naslaginformatie voor Azure PowerShell te bekijken.
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
@@ -496,4 +496,4 @@ U kunt de firewall-resources voor de volgende zelfstudie bewaren. Als u ze niet 
 
 Als volgende kunt u de Azure Firewall-logboeken bewaken.
 
-[Zelfstudie: Azure Firewall-logboeken bewaken](./tutorial-diagnostics.md)
+[Zelfstudie: Azure Firewall-logboeken bewaken](./firewall-diagnostics.md)

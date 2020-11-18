@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2625698ae1d76dbae3ed8a8855b88dd6ac7bb17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 79bc43bb2fa99f95a462dcc4c68d27840199b45c
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84763683"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658533"
 ---
 # <a name="advanced-certificate-signing-options-in-the-saml-token-for-gallery-apps-in-azure-active-directory"></a>Geavanceerde opties voor certificaat ondertekening in het SAML-token voor galerij-apps in Azure Active Directory
 
@@ -61,7 +61,7 @@ Als u de opties voor het ondertekenen van SAML-certificaten en het algoritme voo
 
 Wijzig vervolgens de opties voor certificaat ondertekening in het SAML-token voor die toepassing:
 
-1. Selecteer **eenmalige aanmelding**in het linkerdeel venster van de overzichts pagina van de toepassing.
+1. Selecteer **eenmalige aanmelding** in het linkerdeel venster van de overzichts pagina van de toepassing.
 1. Als de pagina **eén Sign-On met SAML-preview instellen** wordt weer gegeven, gaat u naar stap 5.
 1. Als de pagina **Eén aanmeldings methode selecteren** niet wordt weer gegeven, selecteert u **modus voor eenmalige aanmelding wijzigen** om die pagina weer te geven.
 1. Selecteer op de pagina **Eén aanmeldings methode selecteren** de optie **SAML** indien beschikbaar. (Als **SAML** niet beschikbaar is, ondersteunt de toepassing geen SAML en kunt u de rest van deze procedure en dit artikel negeren.)
@@ -69,11 +69,11 @@ Wijzig vervolgens de opties voor certificaat ondertekening in het SAML-token voo
 
    ![Voor beeld: pagina SAML-handtekening certificaat](./media/certificate-signing-options/saml-signing-page.png)
 
-1. Kies in de vervolg keuzelijst **handtekening opties** de optie **SAML-respons ondertekenen**, **SAML-bevestiging ondertekenen**of **SAML-respons en-bevestiging ondertekenen**. Beschrijvingen van deze opties worden eerder in dit artikel weer gegeven in de [Opties voor certificaat ondertekening](#certificate-signing-options).
+1. Kies in de vervolg keuzelijst **handtekening opties** de optie **SAML-respons ondertekenen**, **SAML-bevestiging ondertekenen** of **SAML-respons en-bevestiging ondertekenen**. Beschrijvingen van deze opties worden eerder in dit artikel weer gegeven in de [Opties voor certificaat ondertekening](#certificate-signing-options).
 1. Kies in de vervolg keuzelijst **handtekening algoritme** **SHA-1** of **SHA-256**. Beschrijvingen van deze opties worden eerder in dit artikel weer gegeven in de sectie [algoritmen voor certificaat ondertekening](#certificate-signing-algorithms) .
 1. Als u tevreden bent met uw keuzes, selecteert u **Opslaan** om de nieuwe instellingen voor het SAML-handtekening certificaat toe te passen. Anders selecteert u de **X** om de wijzigingen te negeren.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Eenmalige aanmelding configureren voor toepassingen die zich niet in de Azure Active Directory app-galerie bevinden](configure-federated-single-sign-on-non-gallery-applications.md)
-* [Problemen met eenmalige aanmelding op basis van SAML oplossen](../azuread-dev/howto-v1-debug-saml-sso-issues.md)
+* [Eenmalige aanmelding configureren voor toepassingen die zich niet in de Azure Active Directory app-galerie bevinden](./configure-saml-single-sign-on.md)
+* [Problemen met eenmalige aanmelding op basis van SAML oplossen](./debug-saml-sso-issues.md)

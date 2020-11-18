@@ -16,12 +16,12 @@ ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c7e72718e13106b9d895921a2335f1525a7b88c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe4e981782878ce4f86dd7dcb8ae635a60b2405a
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84763122"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658703"
 ---
 # <a name="one-click-app-configuration-of-single-sign-on"></a>Eén Klik op app-configuratie van eenmalige aanmelding
 
@@ -40,7 +40,7 @@ De functie SSO met één klik is ontworpen voor het configureren van eenmalige a
 ## <a name="prerequisites"></a>Vereisten
 
 - Een actief abonnement van de toepassing om te configureren met SSO. U hebt ook beheerders referenties nodig.
-- De **beveiligde aanmeld extensie voor mijn apps** van micro soft die in de browser is geïnstalleerd. Zie [Toepassingen openen en gebruiken in de portal Mijn apps](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access) voor meer informatie.
+- De **beveiligde aanmeld extensie voor mijn apps** van micro soft die in de browser is geïnstalleerd. Zie [Toepassingen openen en gebruiken in de portal Mijn apps](../user-help/my-apps-portal-end-user-access.md) voor meer informatie.
 
 ## <a name="one-click-sso-configuration-steps"></a>Configuratie stappen voor eenmalige aanmelding met één klik
 
@@ -55,15 +55,15 @@ De functie SSO met één klik is ontworpen voor het configureren van eenmalige a
     > [!NOTE]
     > Als de toepassing aangepaste claims heeft die u moet configureren, kunt u deze afhandelen voordat u eenmalige aanmelding uitvoert.
 
-5. Als de functie voor eenmalige aanmelding met één klik beschikbaar is voor uw Azure Marketplace-toepassing, ziet u het volgende scherm. Mogelijk moet u de **uitbrei ding voor beveiligde aanmeldings van mijn apps** installeren door **de extensie installeren**te selecteren.
+5. Als de functie voor eenmalige aanmelding met één klik beschikbaar is voor uw Azure Marketplace-toepassing, ziet u het volgende scherm. Mogelijk moet u de **uitbrei ding voor beveiligde aanmeldings van mijn apps** installeren door **de extensie installeren** te selecteren.
 
    ![De browser uitbreiding mijn apps veilig aanmelden installeren](./media/one-click-sso-tutorial/install-myappssecure-extension.png)
 
-6. Nadat u de uitbrei ding aan de browser hebt toegevoegd, selecteert u **Setup \<Application Name\> **. Nadat u bent omgeleid naar de beheer portal van de toepassing, meldt u zich aan als beheerder.
+6. Nadat u de uitbrei ding aan de browser hebt toegevoegd, selecteert u **Setup \<Application Name\>**. Nadat u bent omgeleid naar de beheer portal van de toepassing, meldt u zich aan als beheerder.
 
    ![Toepassings naam van installatie](./media/one-click-sso-tutorial/setup-sso.png)
 
-7. Met de browser extensie wordt SSO automatisch geconfigureerd op de toepassing. Bevestig door **Ja**te selecteren.
+7. Met de browser extensie wordt SSO automatisch geconfigureerd op de toepassing. Bevestig door **Ja** te selecteren.
 
    ![De automatisch ingevulde gegevens worden opgeslagen](./media/one-click-sso-tutorial/save-autopopulate.png)
 
@@ -84,6 +84,5 @@ De functie SSO met één klik is ontworpen voor het configureren van eenmalige a
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-* [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)
-* [Wat is de browser uitbreiding mijn apps veilig aanmelden?](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access)
- 
+* [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](../saas-apps/tutorial-list.md)
+* [Wat is de browser uitbreiding mijn apps veilig aanmelden?](../user-help/my-apps-portal-end-user-access.md)

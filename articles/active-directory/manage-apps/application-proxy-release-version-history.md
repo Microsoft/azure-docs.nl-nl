@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/22/2020
 ms.subservice: app-mgmt
 ms.author: kenwith
-ms.openlocfilehash: 3f6b1bb189390f6ddd02e9ea2d636dcaa66a4f19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8000d07824c27f60dd5d8d6a457521691fe2b7d7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88210868"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658397"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Azure AD-toepassingsproxy: release geschiedenis van versie
 In dit artikel vindt u een overzicht van de versies en functies van de toepassings proxy van Azure Active Directory (Azure AD) die is uitgebracht. Het Azure AD-team werkt de toepassings proxy regel matig bij met nieuwe functies en functionaliteit. Application proxy-connectors worden automatisch bijgewerkt wanneer een nieuwe versie wordt uitgebracht. 
@@ -38,7 +38,7 @@ Downloaden van Azure AD-toepassingsproxy-connector |  [Down load de nieuwste con
 22 juli 2020: deze versie is beschikbaar voor downloaden via de download pagina. Een release van de automatische upgrade van deze versie wordt op een later tijdstip vrijgegeven.
 
 ### <a name="new-features-and-improvements"></a>Nieuwe functies en verbeteringen
--   Verbeterde ondersteuning voor Azure Government-Cloud omgevingen. Voor stappen voor het correct installeren van de connector voor Azure Government Cloud, raadpleegt u de [vereisten](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-government-cloud#allow-access-to-urls) en [installatie stappen](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-government-cloud#install-the-agent-for-the-azure-government-cloud).
+-   Verbeterde ondersteuning voor Azure Government-Cloud omgevingen. Voor stappen voor het correct installeren van de connector voor Azure Government Cloud, raadpleegt u de [vereisten](../hybrid/reference-connect-government-cloud.md#allow-access-to-urls) en [installatie stappen](../hybrid/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 - Ondersteuning voor het gebruik van de Extern bureaublad-services-webclient met toepassings proxy. Zie [extern bureaublad publiceren met Azure AD-toepassingsproxy](application-proxy-integrate-with-remote-desktop-services.md) voor meer informatie.
 - Verbeterde WebSocket-extensie onderhandelingen. 
 

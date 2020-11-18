@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: 38bff38ebe44d9018299444b89d7743c4cc92b72
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: ef38c5364a0df1df63be825e2c46009174840b72
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424205"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658125"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)
 
@@ -58,7 +58,7 @@ Zie [hoge Beschik baarheid en taak verdeling voor de connectors en toepassingen 
 De Application proxy-connector voert verificatie op basis van certificaten uit voor Azure. TLS-beëindiging (TLS/HTTPS-inspectie of-versnelling) verbreekt deze verificatie methode en wordt niet ondersteund. Verkeer van de connector naar Azure moet alle apparaten die TLS-beëindiging uitvoeren, overs Laan.  
 
 ### <a name="is-tls-12-required-for-all-connections"></a>Is TLS 1,2 vereist voor alle verbindingen?
-Ja. Om onze klanten de allerbeste versleuteling te bieden, beperkt de Application Proxy-service de toegang tot alleen TLS 1.2-protocollen. Deze wijzigingen zijn geleidelijk aan geïmplementeerd en van kracht sinds 31 augustus 2019. Zorg ervoor dat al uw client-server- en browser-server-combinaties zijn bijgewerkt en TLS 1.2 gebruiken om verbonden te blijven met de Application Proxy-service. Dit omvat clients die uw gebruikers gebruiken voor toegang tot toepassingen die worden gepubliceerd via Application Proxy. Zie [Voorbereiden voor TLS 1.2 in Office 365](https://docs.microsoft.com/microsoft-365/compliance/prepare-tls-1.2-in-office-365) voor handige naslaginformatie en bronnen.
+Ja. Om onze klanten de allerbeste versleuteling te bieden, beperkt de Application Proxy-service de toegang tot alleen TLS 1.2-protocollen. Deze wijzigingen zijn geleidelijk aan geïmplementeerd en van kracht sinds 31 augustus 2019. Zorg ervoor dat al uw client-server- en browser-server-combinaties zijn bijgewerkt en TLS 1.2 gebruiken om verbonden te blijven met de Application Proxy-service. Dit omvat clients die uw gebruikers gebruiken voor toegang tot toepassingen die worden gepubliceerd via Application Proxy. Zie [Voorbereiden voor TLS 1.2 in Office 365](/microsoft-365/compliance/prepare-tls-1.2-in-office-365) voor handige naslaginformatie en bronnen.
 
 ### <a name="can-i-place-a-forward-proxy-device-between-the-connector-servers-and-the-back-end-application-server"></a>Kan ik een doorstuur proxy apparaat tussen de connector server (s) en de back-end-toepassings server plaatsen?
 Ja, dit scenario wordt ondersteund vanaf de connector versie 1.5.1526.0. Zie [werken met bestaande on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
@@ -102,7 +102,7 @@ De standaard lengte is 85 seconden. De instelling ' lang ' is 180 seconden. De t
 
 ### <a name="how-do-i-change-the-landing-page-my-application-loads"></a>Hoe kan ik de landings pagina wijzigen die door mijn toepassing worden geladen?
 
-Op de pagina Toepassings registraties kunt u de URL van de start pagina wijzigen in de gewenste externe URL van de landings blad. De opgegeven pagina wordt geladen wanneer de toepassing wordt gestart vanuit mijn apps of de Office 365-Portal. Zie voor configuratie stappen [een aangepaste start pagina instellen voor gepubliceerde apps met behulp van Azure AD-toepassingsproxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-home-page)
+Op de pagina Toepassings registraties kunt u de URL van de start pagina wijzigen in de gewenste externe URL van de landings blad. De opgegeven pagina wordt geladen wanneer de toepassing wordt gestart vanuit mijn apps of de Office 365-Portal. Zie voor configuratie stappen [een aangepaste start pagina instellen voor gepubliceerde apps met behulp van Azure AD-toepassingsproxy](./application-proxy-configure-custom-home-page.md)
 
 ### <a name="can-only-iis-based-applications-be-published-what-about-web-applications-running-on-non-windows-web-servers-does-the-connector-have-to-be-installed-on-a-server-with-iis-installed"></a>Kunnen alleen IIS-toepassingen worden gepubliceerd? Hoe zit het met webtoepassingen die worden uitgevoerd op niet-Windows webservers? Moet de connector worden geïnstalleerd op een server waarop IIS is geïnstalleerd?
 
@@ -171,7 +171,7 @@ Raadpleeg [externe toegang tot share point inschakelen met Azure AD-toepassingsp
 
 ### <a name="can-i-use-the-sharepoint-mobile-app-ios-android-to-access-a-published-sharepoint-server"></a>Kan ik de mobiele share point-app (iOS/Android) gebruiken om toegang te krijgen tot een gepubliceerde share Point-server?
 
-De [mobiele share point-app](https://docs.microsoft.com/sharepoint/administration/supporting-the-sharepoint-mobile-apps-online-and-on-premises) ondersteunt momenteel geen Azure Active Directory vooraf-verificatie.
+De [mobiele share point-app](/sharepoint/administration/supporting-the-sharepoint-mobile-apps-online-and-on-premises) ondersteunt momenteel geen Azure Active Directory vooraf-verificatie.
 
 ## <a name="active-directory-federation-services-ad-fs-publishing"></a>Publicatie van Active Directory Federation Services (AD FS) 
 
@@ -193,7 +193,7 @@ Functies (gebeurtenis logboeken, Power shell en Extern bureaublad-services) in W
 
 Ja. De koppelings omzetting is van invloed op de prestaties. De Application proxy-service scant de toepassing op vastgelegde koppelingen en vervangt deze door hun respectieve, gepubliceerde externe Url's voordat ze aan de gebruiker worden gepresenteerd. 
 
-Voor de beste prestaties raden we u aan om identieke interne en externe Url's te gebruiken door [aangepaste domeinen](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-domain)te configureren. Als het gebruik van aangepaste domeinen niet mogelijk is, kunt u de prestaties van de koppelings omzetting verbeteren met behulp van de module mijn apps beveiligde aanmelding of micro soft Edge-browser op mobiele apparaten. Zie [hardcoded koppelingen omleiden voor apps die zijn gepubliceerd met Azure AD-toepassingsproxy](application-proxy-configure-hard-coded-link-translation.md).
+Voor de beste prestaties raden we u aan om identieke interne en externe Url's te gebruiken door [aangepaste domeinen](./application-proxy-configure-custom-domain.md)te configureren. Als het gebruik van aangepaste domeinen niet mogelijk is, kunt u de prestaties van de koppelings omzetting verbeteren met behulp van de module mijn apps beveiligde aanmelding of micro soft Edge-browser op mobiele apparaten. Zie [hardcoded koppelingen omleiden voor apps die zijn gepubliceerd met Azure AD-toepassingsproxy](application-proxy-configure-hard-coded-link-translation.md).
 
 ## <a name="wildcards"></a>Jokertekens
 
@@ -204,5 +204,5 @@ Dit scenario wordt niet rechtstreeks ondersteund. De opties voor dit scenario zi
 1. Publiceer zowel de HTTP-en HTTPS-Url's als afzonderlijke toepassingen met een Joker teken, maar geef elk een ander aangepast domein. Deze configuratie werkt, omdat deze verschillende externe URL'S hebben.
 
 2. Publiceer de HTTPS-URL via een Joker toepassing. Publiceer de HTTP-toepassingen afzonderlijk met de volgende Power shell-cmdlets voor toepassings proxy:
-   - [Toepassings proxy toepassings beheer](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management&preserve-view=true)
-   - [Application proxy-connector beheer](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management&preserve-view=true)
+   - [Toepassings proxy toepassings beheer](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management&preserve-view=true)
+   - [Application proxy-connector beheer](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management&preserve-view=true)

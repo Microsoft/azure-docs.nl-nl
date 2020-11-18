@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: 4f65cc79c972a48f97e794b4c2870c3fb6e68d31
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 6dbe97d615753f0a90c8ba80aa7afa6dafa15eb2
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557670"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658465"
 ---
 # <a name="what-is-custom-speech"></a>Wat is Custom Speech?
 
@@ -35,7 +35,7 @@ Dit diagram markeert de onderdelen waaruit de [Custom speech Portal](https://aka
 
 1. [Herkennings kwaliteit inspecteren](how-to-custom-speech-inspect-data.md) : gebruik de [Custom speech Portal](https://speech.microsoft.com/customspeech) voor het afspelen van geüploade audio en controleer de kwaliteit van de spraak herkenning van uw test gegevens. Zie [gegevens controleren](how-to-custom-speech-inspect-data.md)voor kwantitatieve metingen.
 
-1. [Evalueer de nauw](how-to-custom-speech-evaluate-data.md) keurigheid en verbeter de nauw keurigheid van het spraak-naar-tekst model. De [Custom speech-Portal](https://speech.microsoft.com/customspeech) biedt een *woord fout* , dat kan worden gebruikt om te bepalen of extra training vereist is. Als u tevreden bent met de nauw keurigheid, kunt u de speech service-Api's rechtstreeks gebruiken. Als u de nauw keurigheid wilt verbeteren met een relatief gemiddelde van 5%-20%, gebruikt u het tabblad **training** in de portal voor het uploaden van aanvullende trainings gegevens, zoals transcripten met menselijke labels en gerelateerde tekst.
+1. [Evalueer de nauw](how-to-custom-speech-evaluate-data.md) keurigheid en verbeter de nauw keurigheid van het spraak-naar-tekst model. De [Custom speech-Portal](https://speech.microsoft.com/customspeech) biedt een *woord fout*, dat kan worden gebruikt om te bepalen of extra training vereist is. Als u tevreden bent met de nauw keurigheid, kunt u de speech service-Api's rechtstreeks gebruiken. Als u de nauw keurigheid wilt verbeteren met een relatief gemiddelde van 5%-20%, gebruikt u het tabblad **training** in de portal voor het uploaden van aanvullende trainings gegevens, zoals transcripten met menselijke labels en gerelateerde tekst.
 
 1. [Een model trainen en implementeren](how-to-custom-speech-train-model.md) : Verbeter de nauw keurigheid van uw spraak-naar-tekst model door geschreven transcripten (10-1000 uur) en gerelateerde tekst (<200 MB) samen met uw audio test gegevens te voorzien. Deze gegevens helpen u bij het trainen van het spraak-naar-tekst-model. Wanneer u klaar bent met training, testen en als u tevreden bent met het resultaat, kunt u uw model implementeren in een aangepast eind punt.
 
@@ -56,26 +56,26 @@ Zodra u een Azure-account en een spraak service-abonnement hebt gemaakt, moet u 
 
 Inhoud, zoals gegevens, modellen, testen en eind punten, zijn ingedeeld in **projecten** in de [Custom speech Portal](https://speech.microsoft.com/customspeech). Elk project is specifiek voor een domein en land/taal. U kunt bijvoorbeeld een project maken voor call centers die Engels gebruiken in de Verenigde Staten.
 
-Als u uw eerste project wilt maken, selecteert u spraak **naar tekst/aangepaste spraak** en klikt u vervolgens op **Nieuw project**. Volg de instructies in de wizard om het project te maken. Nadat u een project hebt gemaakt, ziet u vier tabbladen: **gegevens** , **testen** , **training** en **implementatie**. Gebruik de koppelingen in de [volgende stappen](#next-steps) voor meer informatie over het gebruik van elk tabblad.
+Als u uw eerste project wilt maken, selecteert u spraak **naar tekst/aangepaste spraak** en klikt u vervolgens op **Nieuw project**. Volg de instructies in de wizard om het project te maken. Nadat u een project hebt gemaakt, ziet u vier tabbladen: **gegevens**, **testen**, **training** en **implementatie**. Gebruik de koppelingen in de [volgende stappen](#next-steps) voor meer informatie over het gebruik van elk tabblad.
 
 > [!IMPORTANT]
 > De [Custom speech Portal](https://aka.ms/custom-speech) is onlangs bijgewerkt. Als u eerdere gegevens, modellen, tests en gepubliceerde eind punten in de CRIS.ai-portal of met Api's hebt gemaakt, moet u een nieuw project maken in de nieuwe portal om verbinding met deze oude entiteiten te maken.
 
 ## <a name="model-lifecycle"></a>Levens cyclus van model
 
-Aangepaste spraak maakt gebruik van **basis modellen** en **aangepaste modellen**. Elke taal heeft een of meer **basis modellen**. Wanneer een nieuw spraak model wordt vrijgegeven aan de normale spraak service, wordt het ook als een nieuw **basis model** geïmporteerd in de Custom Speech-Service. Ze worden elke 3-6 maanden bijgewerkt en oudere modellen worden doorgaans minder nuttig in de loop van de tijd, omdat het meest recente model doorgaans een aanzienlijk hogere nauw keurigheid heeft.
+Aangepaste spraak maakt gebruik van **basis modellen** en **aangepaste modellen**. Elke taal heeft een of meer **basis modellen**. Wanneer een nieuw spraak model wordt vrijgegeven aan de normale spraak service, wordt het ook als een nieuw **basis model** geïmporteerd in de Custom Speech-Service. Deze worden doorgaans elke 3-6 maanden bijgewerkt en oudere modellen zijn minder nuttig in de loop van de tijd, omdat het meest recente model meestal een hogere nauw keurigheid heeft.
 
-**Aangepaste modellen** worden daarentegen gemaakt door het aanpassen van een gekozen basis model aan een bepaald klant scenario. U kunt een bepaald aangepast model gedurende lange tijd blijven gebruiken wanneer u een abonnement hebt dat aan uw behoeften voldoet, of u moet dit na verloop van tijd met aanvullende gegevens volgen. 
+**Aangepaste modellen** worden daarentegen gemaakt door het aanpassen van een gekozen basis model aan een bepaald klant scenario. U kunt een bepaald aangepast model gedurende lange tijd blijven gebruiken nadat u het hebt bereikt dat aan uw behoeften voldoet, maar u wordt aangeraden regel matig bij te werken naar het nieuwste basis model en opnieuw te trainen met aanvullende gegevens.
 
 Andere belang rijke termen met betrekking tot de levens cyclus van het model zijn:
 
-* **Aanpassing** : het maken van een basis model en het aanpassen van uw domein/scenario met behulp van tekst gegevens en/of audio gegevens
-* **Decoderen** : een model gebruiken en spraak herkenning uitvoeren (audio coderen in tekst)
-* **Eind punt** : een gebruikersspecifieke implementatie van een basis model of een aangepast model dat *alleen* toegankelijk is voor een bepaalde gebruiker.
+* **Aanpassing**: het maken van een basis model en het aanpassen van uw domein/scenario met behulp van tekst gegevens en/of audio gegevens
+* **Decoderen**: een model gebruiken en spraak herkenning uitvoeren (audio coderen in tekst)
+* **Eind punt**: een gebruikersspecifieke implementatie van een basis model of een aangepast model dat *alleen* toegankelijk is voor een bepaalde gebruiker.
 
 ### <a name="expiration-timeline"></a>Verloop tijd lijn
 
-Wijzigingen in basis modellen om nieuwe functionaliteit toe te voegen en de prestaties te verbeteren, kunnen problemen veroorzaken met achterwaartse compatibiliteit voor oudere modellen en er worden ook wijzigingen aangebracht in de nauw keurigheid die is waargenomen met een bepaald model voor een bepaalde test gegevensset. Voor het beheren van de inspanningen bij het onderhouden van modellen en eind punten raadpleegt u de volgende tijd regels voor het model en verloop tijd lijn voor eind punten.
+Als nieuwe modellen en nieuwe functionaliteit beschikbaar en ouder worden, worden minder nauw keurige modellen buiten gebruik gesteld. Zie de volgende tijd lijnen voor het model en de verval datum van het eind punt:
 
 **Basis modellen** 
 
@@ -85,7 +85,7 @@ Wijzigingen in basis modellen om nieuwe functionaliteit toe te voegen en de pres
 
 **Aangepaste modellen**
 
-* Decoderen: beschikbaar gedurende 2 jaar nadat het model is gemaakt. Dit betekent dat u het aangepaste model gedurende 2 jaar (batch/realtime/testen) kunt gebruiken nadat het is gemaakt. Na 2 jaar **moet u uw model opnieuw trainen** , omdat het meest vaak het basis model is afgeschaft voor aanpassing.  
+* Decoderen: beschikbaar gedurende 2 jaar nadat het model is gemaakt. Dit betekent dat u het aangepaste model gedurende 2 jaar (batch/realtime/testen) kunt gebruiken nadat het is gemaakt. Na 2 jaar **moet u uw model opnieuw trainen**, omdat het meest vaak het basis model is afgeschaft voor aanpassing.  
 * Eind punten: beschikbaar op dezelfde tijd lijn als decoderen
 
 Wanneer een basis model of aangepast model verloopt, wordt het altijd terugvallen op de **nieuwste versie van het basis model**. Uw implementatie wordt dus nooit onderbroken, maar het kan minder nauw keurig zijn voor *uw specifieke gegevens* als aangepaste modellen de verval datum bereiken. U kunt de verval datum van een model weer geven op de volgende plaatsen in de Custom Speech portal:
@@ -94,7 +94,11 @@ Wanneer een basis model of aangepast model verloopt, wordt het altijd terugvalle
 * Details van model training
 * Implementatieoverzicht
 * Implementatie Details
- 
+
+U kunt de verval datums ook controleren via de [`GetModel`](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetModel) en [`GetBaseModel`](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetBaseModel) aangepaste spraak-api's onder de `deprecationDates` eigenschap in het JSON-antwoord.
+
+Houd er rekening mee dat u het model op een aangepast spraak eindpunt zonder downtime kunt bijwerken door het model te wijzigen dat door het eind punt wordt gebruikt in de implementatie sectie van de aangepaste spraak portal of via de aangepaste spraak-API.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Uw gegevens voorbereiden en testen](how-to-custom-speech-test-data.md)

@@ -11,12 +11,12 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 629c27602df14c0b35e2063d8db2d0b13bbff99a
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: b31931af7b8d1442a66333622a23d017ab7fb5a9
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635895"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658686"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -72,11 +72,11 @@ Hieronder vindt u een hand leiding voor het instellen van een Azure pijp lijnen 
 
 1.  Open in [Azure DevOps](https://dev.azure.com/)het project dat is geconfigureerd met uw Data Factory.
 
-1.  Selecteer aan de linkerkant van de pagina **pijp lijnen** en selecteer vervolgens **releases** .
+1.  Selecteer aan de linkerkant van de pagina **pijp lijnen** en selecteer vervolgens **releases**.
 
     ![Selecteer pijp lijnen, releases](media/continuous-integration-deployment/continuous-integration-image6.png)
 
-1.  Selecteer **nieuwe pijp lijn** of, als u bestaande pijp lijnen hebt, selecteert u **Nieuw** en vervolgens **nieuwe release pijplijn** .
+1.  Selecteer **nieuwe pijp lijn** of, als u bestaande pijp lijnen hebt, selecteert u **Nieuw** en vervolgens **nieuwe release pijplijn**.
 
 1.  Selecteer de **lege taak** sjabloon.
 
@@ -84,32 +84,32 @@ Hieronder vindt u een hand leiding voor het instellen van een Azure pijp lijnen 
 
 1.  Voer in het vak **naam fase** de naam van uw omgeving in.
 
-1.  Selecteer **artefact toevoegen** en selecteer vervolgens de Git-opslag plaats die is geconfigureerd met uw ontwikkelings Data Factory. Selecteer de [vertakking publiceren](source-control.md#configure-publishing-settings) van de opslag plaats voor de **standaard vertakking** . Deze publicatie vertakking is standaard `adf_publish` . Selecteer **laatste uit standaard vertakking** voor de **standaard versie** .
+1.  Selecteer **artefact toevoegen** en selecteer vervolgens de Git-opslag plaats die is geconfigureerd met uw ontwikkelings Data Factory. Selecteer de [vertakking publiceren](source-control.md#configure-publishing-settings) van de opslag plaats voor de **standaard vertakking**. Deze publicatie vertakking is standaard `adf_publish` . Selecteer **laatste uit standaard vertakking** voor de **standaard versie**.
 
     ![Een artefact toevoegen](media/continuous-integration-deployment/continuous-integration-image7.png)
 
 1.  Een Azure Resource Manager implementatie taak toevoegen:
 
-    a.  Selecteer in de weer gave fase de optie **fase taken weer geven** .
+    a.  Selecteer in de weer gave fase de optie **fase taken weer geven**.
 
     ![Fase weergave](media/continuous-integration-deployment/continuous-integration-image14.png)
 
-    b.  Een nieuwe taak maken. Zoek naar **arm-sjabloon implementatie** en selecteer **toevoegen** .
+    b.  Een nieuwe taak maken. Zoek naar **arm-sjabloon implementatie** en selecteer **toevoegen**.
 
     c.  Selecteer in de implementatie taak het abonnement, de resource groep en de locatie voor het doel data factory. Geef indien nodig referenties op.
 
-    d.  Selecteer in de lijst **actie** de optie **resource groep maken of bijwerken** .
+    d.  Selecteer in de lijst **actie** de optie **resource groep maken of bijwerken**.
 
-    e.  Selecteer de knop met het weglatings teken ( **...** ) naast het vak **sjabloon** . Blader naar de Azure Resource Manager sjabloon die is gegenereerd in de vertakking Publish van de geconfigureerde Git-opslag plaats. Zoek naar het bestand `ARMTemplateForFactory.json` in de <FactoryName> map van de vertakking adf_publish.
+    e.  Selecteer de knop met het weglatings teken (**...**) naast het vak **sjabloon** . Blader naar de Azure Resource Manager sjabloon die is gegenereerd in de vertakking Publish van de geconfigureerde Git-opslag plaats. Zoek naar het bestand `ARMTemplateForFactory.json` in de <FactoryName> map van de vertakking adf_publish.
 
     f.  Selecteren **...** Naast het vak **sjabloon parameters** om het parameter bestand te kiezen. Zoek naar het bestand `ARMTemplateParametersForFactory.json` in de <FactoryName> map van de vertakking adf_publish.
 
     g.  Selecteren **...** Naast het vak **sjabloon parameters negeren** en voer de gewenste parameter waarden in voor de doel Data Factory. Voer de naam van het geheim tussen dubbele aanhalings tekens in voor de referenties die afkomstig zijn van Azure Key Vault. Als de naam van het geheim bijvoorbeeld cred1 is, voert u **$ (cred1)** in voor deze waarde.
 
-    h. Selecteer **Incrementeel** voor de **implementatie modus** .
+    h. Selecteer **Incrementeel** voor de **implementatie modus**.
 
     > [!WARNING]
-    > In de volledige implementatie modus worden resources die in de resource groep aanwezig zijn, maar niet opgegeven in de nieuwe resource manager-sjabloon, **verwijderd** . Raadpleeg [Azure Resource Manager-implementatie modi](../azure-resource-manager/templates/deployment-modes.md) voor meer informatie
+    > In de volledige implementatie modus worden resources die in de resource groep aanwezig zijn, maar niet opgegeven in de nieuwe resource manager-sjabloon, **verwijderd**. Raadpleeg [Azure Resource Manager-implementatie modi](../azure-resource-manager/templates/deployment-modes.md) voor meer informatie
 
     ![Data Factory Prod-implementatie](media/continuous-integration-deployment/continuous-integration-image9.png)
 
@@ -189,7 +189,7 @@ Het data factory-team heeft een voor beeld van een [script voor voorafgaande en 
 
    ![Een resource manager-sjabloon exporteren](media/continuous-integration-deployment/continuous-integration-image1.png)
 
-1. Selecteer in uw test-en productie gegevens fabrieken de optie **arm-sjabloon importeren** . Met deze actie gaat u naar de Azure Portal, waar u de geëxporteerde sjabloon kunt importeren. Selecteer **uw eigen sjabloon bouwen in de editor** om de Resource Manager-sjabloon editor te openen.
+1. Selecteer in uw test-en productie gegevens fabrieken de optie **arm-sjabloon importeren**. Met deze actie gaat u naar de Azure Portal, waar u de geëxporteerde sjabloon kunt importeren. Selecteer **uw eigen sjabloon bouwen in de editor** om de Resource Manager-sjabloon editor te openen.
 
    ![Uw eigen sjabloon bouwen](media/continuous-integration-deployment/custom-deployment-build-your-own-template.png) 
 
@@ -225,7 +225,7 @@ Wanneer u een resource manager-sjabloon exporteert, wordt dit bestand door Data 
 
 ### <a name="custom-parameter-syntax"></a>Syntaxis van aangepaste para meter
 
-Hieronder vindt u enkele richt lijnen die u moet volgen wanneer u het bestand met aangepaste para meters maakt **arm-template-parameters-definition.jsop** . Het bestand bestaat uit een sectie voor elk entiteits type: trigger, pijp lijn, gekoppelde service, gegevensset, Integration runtime en gegevens stroom.
+Hieronder vindt u enkele richt lijnen die u moet volgen wanneer u het bestand met aangepaste para meters maakt **arm-template-parameters-definition.jsop**. Het bestand bestaat uit een sectie voor elk entiteits type: trigger, pijp lijn, gekoppelde service, gegevensset, Integration runtime en gegevens stroom.
 
 * Voer het pad naar de eigenschap in onder het relevante entiteits type.
 * Als u een eigenschaps naam instelt `*` , geeft u aan dat u alle eigenschappen daaronder wilt para meters (alleen naar het eerste niveau, niet recursief). U kunt ook uitzonde ringen voor deze configuratie opgeven.
@@ -633,19 +633,23 @@ Als u een Factory implementeert voor productie en beseft dat er een fout is die 
 
 10.   Voeg de wijzigingen van de hotfix toe aan de ontwikkelings vertakking, zodat latere versies niet dezelfde fout bevatten.
 
+Zie de video onder een gedetailleerde video zelf studie over het dynamisch oplossen van uw omgevingen. 
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4I7fi]
+
 ## <a name="best-practices-for-cicd"></a>Aanbevolen procedures voor CI/CD
 
 Als u gebruik wilt maken van Git-integratie met uw data factory en een CI/CD-pijp lijn hebt die uw wijzigingen van de ontwikkeling naar de test verplaatst en vervolgens naar productie, raden we u aan deze aanbevolen procedures te volgen:
 
--   **Git-integratie** . Configureer alleen uw ontwikkel data factory met git-integratie. Wijzigingen in testen en productie worden geïmplementeerd via CI/CD en beschikken niet over git-integratie.
+-   **Git-integratie**. Configureer alleen uw ontwikkel data factory met git-integratie. Wijzigingen in testen en productie worden geïmplementeerd via CI/CD en beschikken niet over git-integratie.
 
--   **Script vóór en na de implementatie** . Vóór de implementatie stap van resource manager in CI/CD moet u bepaalde taken uitvoeren, zoals Triggers stoppen en opnieuw starten en het opschonen uitvoeren. Het is raadzaam om Power shell-scripts voor en na de implementatie taak te gebruiken. Zie [actieve triggers bijwerken](#updating-active-triggers)voor meer informatie. Het data factory-team heeft [een script ontvangen](#script) dat zich onder aan deze pagina bevindt.
+-   **Script vóór en na de implementatie**. Vóór de implementatie stap van resource manager in CI/CD moet u bepaalde taken uitvoeren, zoals Triggers stoppen en opnieuw starten en het opschonen uitvoeren. Het is raadzaam om Power shell-scripts voor en na de implementatie taak te gebruiken. Zie [actieve triggers bijwerken](#updating-active-triggers)voor meer informatie. Het data factory-team heeft [een script ontvangen](#script) dat zich onder aan deze pagina bevindt.
 
--   **Integration Runtimes en delen** . Integration Runtimes veranderen niet vaak en zijn vergelijkbaar in alle fasen van uw CI/CD. Data Factory verwacht dat u dezelfde naam en hetzelfde type Integration runtime in alle fasen van CI/CD hebt. Als u integratie-Runtimes in alle fasen wilt delen, kunt u overwegen een ternaire fabriek alleen te gebruiken om de gedeelde integratie-runtime te bevatten. U kunt deze gedeelde Factory in al uw omgevingen gebruiken als het type gekoppelde integratie runtime.
+-   **Integration Runtimes en delen**. Integration Runtimes veranderen niet vaak en zijn vergelijkbaar in alle fasen van uw CI/CD. Data Factory verwacht dat u dezelfde naam en hetzelfde type Integration runtime in alle fasen van CI/CD hebt. Als u integratie-Runtimes in alle fasen wilt delen, kunt u overwegen een ternaire fabriek alleen te gebruiken om de gedeelde integratie-runtime te bevatten. U kunt deze gedeelde Factory in al uw omgevingen gebruiken als het type gekoppelde integratie runtime.
 
--   **Beheerde implementatie van een privé-eind punt** . Als er al een persoonlijk eind punt in een Factory bestaat en u probeert een ARM-sjabloon te implementeren dat een persoonlijk eind punt met dezelfde naam, maar met gewijzigde eigenschappen bevat, mislukt de implementatie. Met andere woorden, u kunt een persoonlijk eind punt implementeren op dezelfde wijze als de eigenschappen die al in de fabriek aanwezig zijn. Als een van de eigenschappen verschilt tussen omgevingen, kunt u deze overschrijven door parameterizing die eigenschap en de desbetreffende waarde op te geven tijdens de implementatie.
+-   **Beheerde implementatie van een privé-eind punt**. Als er al een persoonlijk eind punt in een Factory bestaat en u probeert een ARM-sjabloon te implementeren dat een persoonlijk eind punt met dezelfde naam, maar met gewijzigde eigenschappen bevat, mislukt de implementatie. Met andere woorden, u kunt een persoonlijk eind punt implementeren op dezelfde wijze als de eigenschappen die al in de fabriek aanwezig zijn. Als een van de eigenschappen verschilt tussen omgevingen, kunt u deze overschrijven door parameterizing die eigenschap en de desbetreffende waarde op te geven tijdens de implementatie.
 
--   **Key Vault** . Wanneer u gekoppelde services gebruikt waarvan de verbindings gegevens zijn opgeslagen in Azure Key Vault, wordt aanbevolen om afzonderlijke sleutel kluizen voor verschillende omgevingen te houden. U kunt ook afzonderlijke machtigings niveaus configureren voor elke sleutel kluis. Het is bijvoorbeeld mogelijk dat uw team leden geen machtigingen voor productie geheimen mogen hebben. Als u deze aanpak volgt, wordt u aangeraden dezelfde geheime namen in alle fasen te houden. Als u dezelfde geheime namen behoudt, hoeft u niet elk connection string te para metersen in de CI/CD-omgevingen, omdat de naam van de sleutel kluis een afzonderlijke para meter is.
+-   **Key Vault**. Wanneer u gekoppelde services gebruikt waarvan de verbindings gegevens zijn opgeslagen in Azure Key Vault, wordt aanbevolen om afzonderlijke sleutel kluizen voor verschillende omgevingen te houden. U kunt ook afzonderlijke machtigings niveaus configureren voor elke sleutel kluis. Het is bijvoorbeeld mogelijk dat uw team leden geen machtigingen voor productie geheimen mogen hebben. Als u deze aanpak volgt, wordt u aangeraden dezelfde geheime namen in alle fasen te houden. Als u dezelfde geheime namen behoudt, hoeft u niet elk connection string te para metersen in de CI/CD-omgevingen, omdat de naam van de sleutel kluis een afzonderlijke para meter is.
 
 -  **Resource naamgeving** Vanwege de ARM-sjabloon beperkingen kunnen problemen in de implementatie optreden als uw resources spaties in de naam bevatten. Het Azure Data Factory Team raadt aan om ' _ ' of '-' tekens te gebruiken in plaats van ruimten voor resources. Zo zou ' Pipeline_1 ' een voor keurige naam zijn via ' pijp lijn 1 '.
 

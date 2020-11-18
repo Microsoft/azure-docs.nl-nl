@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 06/18/2020
 ms.author: victorh
-ms.openlocfilehash: 744fe22b6b2c9fbeb9b149760145267ccb6fa6f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7256f94b8e8376cf98a279d085a131a4ce84826f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89435209"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658619"
 ---
 # <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Azure Firewall-toepassingsregels met SQL-FQDN's configureren
 
@@ -20,17 +20,17 @@ U kunt nu Azure Firewall toepassings regels configureren met SQL-FQDN-waarden. H
 
 Met SQL-FQDN's kunt u verkeer filteren:
 
-- Van uw VNets naar een Azure SQL Database of Azure Synapse Analytics. Bijvoorbeeld: alleen toegang tot *SQL-server1.database.Windows.net*toestaan.
+- Van uw VNets naar een Azure SQL Database of Azure Synapse Analytics. Bijvoorbeeld: alleen toegang tot *SQL-server1.database.Windows.net* toestaan.
 - Van on-premises naar Azure SQL Managed instances of SQL IaaS die worden uitgevoerd in uw VNets.
 - Van spoke-naar-spoke tot Azure SQL Managed instances of SQL IaaS die worden uitgevoerd in uw VNets.
 
-SQL FQDN-filtering wordt alleen ondersteund in de [proxy modus](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#connection-policy) (poort 1433). Als u SQL in de standaard omleidings modus gebruikt, kunt u de toegang filteren met behulp van de SQL-service-tag als onderdeel van de [netwerk regels](features.md#network-traffic-filtering-rules).
+SQL FQDN-filtering wordt alleen ondersteund in de [proxy modus](../azure-sql/database/connectivity-architecture.md#connection-policy) (poort 1433). Als u SQL in de standaard omleidings modus gebruikt, kunt u de toegang filteren met behulp van de SQL-service-tag als onderdeel van de [netwerk regels](features.md#network-traffic-filtering-rules).
 Als u niet-standaardpoorten gebruikt voor SQL IaaS-verkeer, kunt u die poorten configureren in de toepassingsregels van de firewall.
 
 ## <a name="configure-using-azure-cli"></a>Configureren met behulp van Azure CLI
 
 1. Implementeer een [Azure Firewall met behulp van Azure cli](deploy-cli.md).
-2. Als u verkeer filtert op Azure SQL Database, Azure Synapse Analytics of SQL Managed instance, zorg ervoor dat de SQL-connectiviteits modus is ingesteld op **proxy**. Zie [Azure SQL-connectiviteits instellingen](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settings#change-connection-policy-via-azure-cli)voor meer informatie over het overschakelen naar een andere SQL-connectiviteits modus.
+2. Als u verkeer filtert op Azure SQL Database, Azure Synapse Analytics of SQL Managed instance, zorg ervoor dat de SQL-connectiviteits modus is ingesteld op **proxy**. Zie [Azure SQL-connectiviteits instellingen](../azure-sql/database/connectivity-settings.md#change-the-connection-policy-via-the-azure-cli)voor meer informatie over het overschakelen naar een andere SQL-connectiviteits modus.
 
    > [!NOTE]
    > De SQL- *proxy* modus kan leiden tot meer latentie vergeleken met *omleiden*. Als u de omleidings modus wilt blijven gebruiken. Dit is de standaard instelling voor clients die verbinding maken met Azure. u kunt de toegang filteren met behulp van de SQL- [service-tag](service-tags.md) in Firewall- [netwerk regels](tutorial-firewall-deploy-portal.md#configure-a-network-rule).
@@ -52,7 +52,7 @@ Als u niet-standaardpoorten gebruikt voor SQL IaaS-verkeer, kunt u die poorten c
 
 ## <a name="configure-using-the-azure-portal"></a>Configureren met behulp van Azure Portal
 1. Implementeer een [Azure Firewall met behulp van Azure cli](deploy-cli.md).
-2. Als u verkeer filtert op Azure SQL Database, Azure Synapse Analytics of SQL Managed instance, zorg ervoor dat de SQL-connectiviteits modus is ingesteld op **proxy**. Zie [Azure SQL-connectiviteits instellingen](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settings#change-connection-policy-via-azure-cli)voor meer informatie over het overschakelen naar een andere SQL-connectiviteits modus.  
+2. Als u verkeer filtert op Azure SQL Database, Azure Synapse Analytics of SQL Managed instance, zorg ervoor dat de SQL-connectiviteits modus is ingesteld op **proxy**. Zie [Azure SQL-connectiviteits instellingen](../azure-sql/database/connectivity-settings.md#change-the-connection-policy-via-the-azure-cli)voor meer informatie over het overschakelen naar een andere SQL-connectiviteits modus.  
 
    > [!NOTE]
    > De SQL- *proxy* modus kan leiden tot meer latentie vergeleken met *omleiden*. Als u de omleidings modus wilt blijven gebruiken. Dit is de standaard instelling voor clients die verbinding maken met Azure. u kunt de toegang filteren met behulp van de SQL- [service-tag](service-tags.md) in Firewall- [netwerk regels](tutorial-firewall-deploy-portal.md#configure-a-network-rule).

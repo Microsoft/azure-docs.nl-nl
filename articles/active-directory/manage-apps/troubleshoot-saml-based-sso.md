@@ -10,15 +10,15 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/11/2017
 ms.author: kenwith
-ms.openlocfilehash: 7f7f999c145903be5db3b20ab60bd0f5a18778ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e8508d4fceb1e7fb580350c726dd70eeaea31c6
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89463514"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658873"
 ---
 # <a name="troubleshoot-saml-based-single-sign-on-in-azure-active-directory"></a>Problemen oplossen met eenmalige aanmelding op basis van SAML in Azure Active Directory
-Als er een probleem optreedt bij het configureren van een toepassing. Controleer of u alle stappen in de zelf studie voor de toepassing hebt gevolgd. In de configuratie van de toepassing hebt u inline-documentatie over het configureren van de toepassing. U kunt ook toegang krijgen tot de [lijst met zelf studies over het integreren van SaaS-apps met Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-saas-tutorial-list/) voor een gedetailleerde stapsgewijze uitleg.
+Als er een probleem optreedt bij het configureren van een toepassing. Controleer of u alle stappen in de zelf studie voor de toepassing hebt gevolgd. In de configuratie van de toepassing hebt u inline-documentatie over het configureren van de toepassing. U kunt ook toegang krijgen tot de [lijst met zelf studies over het integreren van SaaS-apps met Azure Active Directory](../saas-apps/tutorial-list.md) voor een gedetailleerde stapsgewijze uitleg.
 
 ## <a name="cant-add-another-instance-of-the-application"></a>Kan geen ander exemplaar van de toepassing toevoegen
 Als u een tweede exemplaar van een toepassing wilt toevoegen, moet u het volgende kunnen doen:
@@ -53,7 +53,7 @@ Als de waarden niet overeenkomen met de patronen die vooraf zijn geconfigureerd 
 ## <a name="where-do-i-set-the-entityid-user-identifier-format"></a>Waar kan ik de EntityID-indeling (gebruikers-id) instellen
 U kunt de EntityID-indeling (gebruikers-id) niet selecteren die door Azure AD wordt verzonden naar de toepassing in het antwoord na de verificatie van de gebruiker.
 
-Azure AD Selecteer de indeling voor het NameID-kenmerk (gebruikers-id) op basis van de geselecteerde waarde of de indeling die door de toepassing is aangevraagd in het SAML-AuthRequest. Ga voor meer informatie naar het artikel [Single Sign-On SAML-protocol](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#authnrequest) in de sectie NameIDPolicy,
+Azure AD Selecteer de indeling voor het NameID-kenmerk (gebruikers-id) op basis van de geselecteerde waarde of de indeling die door de toepassing is aangevraagd in het SAML-AuthRequest. Ga voor meer informatie naar het artikel [Single Sign-On SAML-protocol](../develop/single-sign-on-saml-protocol.md#authnrequest) in de sectie NameIDPolicy,
 
 ## <a name="cant-find-the-azure-ad-metadata-to-complete-the-configuration-with-the-application"></a>De Azure AD-meta gegevens zijn niet gevonden voor het volt ooien van de configuratie met de toepassing
 Voer de volgende stappen uit om de meta gegevens of het certificaat van de toepassing te downloaden uit Azure AD:
@@ -70,7 +70,7 @@ Voer de volgende stappen uit om de meta gegevens of het certificaat van de toepa
 Azure AD biedt geen URL om de meta gegevens op te halen. De meta gegevens kunnen alleen worden opgehaald als een XML-bestand.
 
 ## <a name="customize-saml-claims-sent-to-an-application"></a>SAML-claims aanpassen die worden verzonden naar een toepassing
-Zie [claim toewijzing in azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-claims-mapping) voor meer informatie over het aanpassen van de SAML-kenmerk claims die naar uw toepassing worden verzonden.
+Zie [claim toewijzing in azure Active Directory](../develop/active-directory-claims-mapping.md) voor meer informatie over het aanpassen van de SAML-kenmerk claims die naar uw toepassing worden verzonden.
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Quickstartreeks over toepassingsbeheer](view-applications-portal.md)

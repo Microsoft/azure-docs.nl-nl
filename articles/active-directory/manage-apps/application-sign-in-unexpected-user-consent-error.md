@@ -16,16 +16,16 @@ ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f7a1b63864f0fbd945b97d6c2e285bfccbf934f
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 558c6dc24f6d0d17c9a82bbc79f39649f63dc7f4
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91874540"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658482"
 ---
 # <a name="unexpected-error-when-performing-consent-to-an-application"></a>Er is een onverwachte fout opgetreden bij het uitvoeren van de toestemming voor een toepassing
 
-In dit artikel worden fouten beschreven die zich kunnen voordoen tijdens het proces van het inzenden van een toepassing. Zie [verificatie scenario's voor Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-scenarios)als u problemen met een onverwachte toestemming ondervindt die geen fout berichten bevatten.
+In dit artikel worden fouten beschreven die zich kunnen voordoen tijdens het proces van het inzenden van een toepassing. Zie [verificatie scenario's voor Azure AD](../develop/authentication-vs-authorization.md)als u problemen met een onverwachte toestemming ondervindt die geen fout berichten bevatten.
 
 Veel toepassingen die met Azure Active Directory worden geïntegreerd, hebben machtigingen nodig om toegang te krijgen tot andere bronnen om te kunnen functioneren. Wanneer deze bronnen ook zijn geïntegreerd met Azure Active Directory, worden machtigingen voor toegang tot deze resources vaak aangevraagd met behulp van het common toestemming raamwerk. Er wordt een toestemming prompt weer gegeven, die doorgaans plaatsvindt wanneer een toepassing voor het eerst wordt gebruikt, maar kan ook worden uitgevoerd op een volgend gebruik van de toepassing.
 
@@ -90,8 +90,6 @@ Eind gebruikers kunnen geen toestemming verlenen voor apps die zijn gedetecteerd
 
 ## <a name="next-steps"></a>Volgende stappen 
 
-[Apps, machtigingen en toestemming in Azure Active Directory (v1-eind punt)](https://docs.microsoft.com/azure/active-directory/active-directory-apps-permissions-consent)<br>
+[Apps, machtigingen en toestemming in Azure Active Directory (v1-eind punt)](../develop/quickstart-register-app.md)<br>
 
-[Bereiken, machtigingen en toestemming in de Azure Active Directory (v 2.0-eind punt)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)
-
-
+[Bereiken, machtigingen en toestemming in de Azure Active Directory (v 2.0-eind punt)](../develop/v2-permissions-and-consent.md)

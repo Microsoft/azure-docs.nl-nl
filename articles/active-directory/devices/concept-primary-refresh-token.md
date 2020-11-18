@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 457910f30830db06f148282a32551a400255f7e1
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 3f2b059bb6ae63d7f427ce970b2538da922e2dec
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965910"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837260"
 ---
 # <a name="what-is-a-primary-refresh-token"></a>Wat is een primair vernieuwingstoken?
 
@@ -85,7 +85,7 @@ Een PRT wordt op twee verschillende manieren vernieuwd:
 * **Azure AD CloudAP-invoeg toepassing elke 4 uur**: met de CloudAP-invoeg toepassing wordt de PRT elke vier uur vernieuwd tijdens het aanmelden bij Windows. Als de gebruiker tijdens die tijd geen Internet verbinding heeft, wordt de PRT door CloudAP-invoeg toepassing vernieuwd nadat het apparaat is verbonden met internet.
 * **Azure AD WAM-invoeg toepassing tijdens app-token aanvragen**: de WAM-invoeg toepassing maakt SSO op Windows 10-apparaten mogelijk door Silent token aanvragen voor toepassingen in te scha kelen. De WAM-invoeg toepassing kan de PRT tijdens deze token aanvragen op twee verschillende manieren vernieuwen:
    * Een app vraagt WAM voor een toegangs token op de achtergrond, maar er is geen vernieuwings token beschikbaar voor die app. In dit geval gebruikt WAM de PRT om een token voor de app aan te vragen en wordt er een nieuwe PRT in het antwoord teruggestuurd.
-   * Een app vraagt WAM aan voor een toegangs token, maar de PRT is ongeldig of er is extra autorisatie vereist voor Azure AD (bijvoorbeeld Azure Multi-Factor Authentication). In dit scenario initieert WAM een interactieve aanmelding waarbij de gebruiker opnieuw moet worden geverifieerd of dat er aanvullende verificatie wordt gegeven en er een nieuwe PRT wordt uitgegeven voor een geslaagde authenticatie.
+   * Een app vraagt WAM aan voor een toegangs token, maar de PRT is ongeldig of er is extra autorisatie vereist voor Azure AD (bijvoorbeeld Azure AD Multi-Factor Authentication). In dit scenario initieert WAM een interactieve aanmelding waarbij de gebruiker opnieuw moet worden geverifieerd of dat er aanvullende verificatie wordt gegeven en er een nieuwe PRT wordt uitgegeven voor een geslaagde authenticatie.
 
 In een AD FS-omgeving is het niet nodig om de PRT te vernieuwen. PRT-verlenging vereist alleen/ADFS/Services/Trust/2005/usernamemixed-en/ADFS/Services/Trust/13/usernamemixed-eind punten die zijn ingeschakeld op de proxy met behulp van WS-Trust-protocol.
 

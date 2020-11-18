@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: tanning
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e427a68751cc348a7b0024fb01402bd15ca87d2a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: df70891ef090d44769aadbc235273e3193bc780e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90705721"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837206"
 ---
 # <a name="troubleshooting-enterprise-state-roaming-settings-in-azure-active-directory"></a>Problemen met Enterprise State Roaming instellingen in Azure Active Directory oplossen
 
@@ -72,11 +72,11 @@ Enterprise State Roaming vereist dat het apparaat wordt geregistreerd bij Azure 
 
 **Mogelijk probleem**: **WamDefaultSet** en **AzureAdJoined** hebben beide ' no ' in de veld waarde, het apparaat is toegevoegd aan een domein en is geregistreerd bij Azure AD, en het apparaat wordt niet gesynchroniseerd. Als dit wordt weer gegeven, moet het apparaat mogelijk wachten totdat het beleid is toegepast of de verificatie van het apparaat is mislukt bij het maken van verbinding met Azure AD. Het kan zijn dat de gebruiker enkele uren moet wachten voordat het beleid wordt toegepast. Andere stappen voor het oplossen van problemen zijn onder andere het opnieuw proberen van de herregistratie door u af te melden en weer in te schrijven, of door de taak te starten in taak planner. In sommige gevallen kunt u '*dsregcmd.exe/Leave*' uitvoeren in een opdracht prompt venster met verhoogde bevoegdheid, het systeem opnieuw opstarten en opnieuw proberen de registratie mogelijk te maken.
 
-**Mogelijk probleem**: het veld voor **SettingsUrl** is leeg en het apparaat wordt niet gesynchroniseerd. De gebruiker is mogelijk voor het laatst aangemeld bij het apparaat voordat Enterprise State Roaming was ingeschakeld in de Azure Active Directory Portal. Start het apparaat opnieuw op en laat de gebruiker zich aanmelden. Probeer eventueel in de Portal de IT-beheerder naar **Azure Active Directory**  >  **apparaten**te navigeren  >  **Enterprise State roaming** **gebruikers kunnen instellingen en app-gegevens op meerdere apparaten synchroniseren**en weer inschakelen. Zodra het opnieuw is ingeschakeld, start u het apparaat opnieuw op en laat u de gebruiker zich aanmelden. Als het probleem hiermee niet is opgelost, kan **SettingsUrl** leeg zijn als er een beschadigd apparaat is. In dit geval kunt u '*dsregcmd.exe/Leave*' uitvoeren in een opdracht prompt venster met verhoogde bevoegdheid, de computer opnieuw opstarten en opnieuw proberen de registratie te helpen.
+**Mogelijk probleem**: het veld voor **SettingsUrl** is leeg en het apparaat wordt niet gesynchroniseerd. De gebruiker is mogelijk voor het laatst aangemeld bij het apparaat voordat Enterprise State Roaming was ingeschakeld in de Azure Active Directory Portal. Start het apparaat opnieuw op en laat de gebruiker zich aanmelden. Probeer eventueel in de Portal de IT-beheerder naar **Azure Active Directory**  >  **apparaten** te navigeren  >  **Enterprise State roaming** **gebruikers kunnen instellingen en app-gegevens op meerdere apparaten synchroniseren** en weer inschakelen. Zodra het opnieuw is ingeschakeld, start u het apparaat opnieuw op en laat u de gebruiker zich aanmelden. Als het probleem hiermee niet is opgelost, kan **SettingsUrl** leeg zijn als er een beschadigd apparaat is. In dit geval kunt u '*dsregcmd.exe/Leave*' uitvoeren in een opdracht prompt venster met verhoogde bevoegdheid, de computer opnieuw opstarten en opnieuw proberen de registratie te helpen.
 
 ## <a name="enterprise-state-roaming-and-multi-factor-authentication"></a>Enterprise State Roaming en Multi-Factor Authentication 
 
-Onder bepaalde omstandigheden kan Enterprise State Roaming gegevens niet synchroniseren als Azure Multi-Factor Authentication is geconfigureerd. Zie het document [KB3193683](https://support.microsoft.com/kb/3193683)voor ondersteuning voor meer informatie over deze symptomen. 
+Onder bepaalde omstandigheden kan Enterprise State Roaming gegevens niet synchroniseren als Azure AD Multi-Factor Authentication is geconfigureerd. Zie het document [KB3193683](https://support.microsoft.com/kb/3193683)voor ondersteuning voor meer informatie over deze symptomen. 
 
 **Mogelijk probleem**: als uw apparaat zo is geconfigureerd dat multi-factor Authentication op de Azure Active Directory Portal vereist is, kunt u de instellingen niet synchroniseren tijdens het aanmelden bij een Windows 10-apparaat met een wacht woord. Dit type Multi-Factor Authentication configuratie is bedoeld om een Azure Administrator-account te beveiligen. Gebruikers met beheerders rechten kunnen nog steeds synchroniseren door zich aan te melden bij hun Windows 10-apparaten met hun Microsoft Passport for Work pincode of door Multi-Factor Authentication in te vullen bij het openen van andere Azure-Services, zoals Microsoft 365.
 

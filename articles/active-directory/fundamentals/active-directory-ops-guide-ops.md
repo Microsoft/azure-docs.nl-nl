@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
-ms.openlocfilehash: 2de3f78b58e10a4fbf65bb00d516448a089f85b6
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d5a8fe4192c3778e259ed18239a4198398d8807b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370947"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836832"
 ---
 # <a name="azure-active-directory-general-operations-guide-reference"></a>Naslag informatie over Azure Active Directory algemene bedienings handleiding
 
@@ -43,7 +43,7 @@ Voor het beheren van Azure Active Directory is de continue uitvoering van belang
 | Hybride logboeken controleren: Passthrough-verificatie agenten | IAM Operations-team |
 | Hybride logboeken controleren: wacht woord terugschrijven service | IAM Operations-team |
 | Hybride logboeken controleren: on-premises wachtwoord beveiligings gateway | IAM Operations-team |
-| Hybride logboeken controleren: Azure MFA NPS-extensie (indien van toepassing) | IAM Operations-team |
+| Hybride logboeken controleren: Azure AD MFA NPS-extensie (indien van toepassing) | IAM Operations-team |
 
 Wanneer u uw lijst bekijkt, moet u mogelijk een eigenaar toewijzen voor taken waarvoor een eigenaar ontbreekt of het eigendom van taken met eigen aars aanpassen die niet zijn afgestemd op de bovenstaande aanbevelingen.
 
@@ -86,7 +86,7 @@ Wanneer u de status van uw omgeving bewaken, moet u onmiddellijk waarschuwingen 
 
 ### <a name="on-premises-agents-logs"></a>Logboeken voor on-premises agents
 
-Voor sommige services voor identiteits-en toegangs beheer zijn on-premises agents vereist om hybride scenario's in te scha kelen. Voor beelden zijn het opnieuw instellen van wacht woorden, Pass Through-verificatie (PTA), Azure AD-toepassingsproxy en Azure MFA NPS-extensie. Het is belang rijk dat de basis lijn van het operations-team en de status van deze onderdelen bewaken door de logboeken van de onderdeel agent te archiveren en te analyseren met behulp van oplossingen als System Center Operations Manager of SIEM. Het is even belang rijk dat uw INFOSEC-bedrijfs team of de Help Desk inzicht krijgt in het oplossen van patronen met fouten.
+Voor sommige services voor identiteits-en toegangs beheer zijn on-premises agents vereist om hybride scenario's in te scha kelen. Voor beelden zijn het opnieuw instellen van wacht woorden, Pass Through-verificatie (PTA), Azure AD-toepassingsproxy en Azure AD MFA-extensie NPS. Het is belang rijk dat de basis lijn van het operations-team en de status van deze onderdelen bewaken door de logboeken van de onderdeel agent te archiveren en te analyseren met behulp van oplossingen als System Center Operations Manager of SIEM. Het is even belang rijk dat uw INFOSEC-bedrijfs team of de Help Desk inzicht krijgt in het oplossen van patronen met fouten.
 
 #### <a name="on-premises-agents-logs-recommended-reading"></a>On-premises agents logboeken aanbevolen lezen
 
@@ -94,7 +94,7 @@ Voor sommige services voor identiteits-en toegangs beheer zijn on-premises agent
 - [Oplossen van problemen met de selfservice voor wachtwoord herstel-Azure Active Directory](../authentication/troubleshoot-sspr.md)
 - [Azure AD-toepassingsproxy-connectors begrijpen](../manage-apps/application-proxy-connectors.md)
 - [Azure AD Connect: problemen met Pass Through-verificatie oplossen](../hybrid/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
-- [Fout codes voor de Azure MFA NPS-extensie oplossen](../authentication/howto-mfa-nps-extension-errors.md)
+- [Problemen met fout codes voor de NPS-extensie van Azure AD MFA oplossen](../authentication/howto-mfa-nps-extension-errors.md)
 
 ### <a name="on-premises-agents-management"></a>Beheer van on-premises agents
 

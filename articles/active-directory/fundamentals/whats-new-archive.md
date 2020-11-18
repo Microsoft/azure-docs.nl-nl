@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a703f6d32cb665bfada73ca833f51c94d83f8b97
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 0ffa0059e78ee193cb12a4838282f7f9fb282edd
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146157"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836594"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Wilt u archiveren wat er nieuw is in Azure Active Directory?
 
@@ -189,7 +189,7 @@ De Delta query voor toepassingen is over het algemeen beschikbaar. U kunt nu wij
 
 **Product mogelijkheden:** Ontwikkelaars ervaring
 
-Deze Api's zijn een belang rijk hulp programma voor het beheren van de verificatie methoden van uw gebruikers. Nu kunt u de verificators die worden gebruikt voor MFA en self-service voor wachtwoord herstel (SSPR), vooraf registreren en beheren. Dit is een van de meest aangevraagde functies in de Azure MFA-, SSPR-en Microsoft Graph-ruimten. De nieuwe Api's die we in deze Wave hebben uitgebracht, bieden u de volgende mogelijkheden:
+Deze Api's zijn een belang rijk hulp programma voor het beheren van de verificatie methoden van uw gebruikers. Nu kunt u de verificators die worden gebruikt voor MFA en self-service voor wachtwoord herstel (SSPR), vooraf registreren en beheren. Dit is een van de meest aangevraagde functies in azure AD MFA, SSPR en Microsoft Graph Spaces. De nieuwe Api's die we in deze Wave hebben uitgebracht, bieden u de volgende mogelijkheden:
 
 - De verificatie-telefoons van een gebruiker lezen, toevoegen, bijwerken en verwijderen
 - Het wacht woord van een gebruiker opnieuw instellen
@@ -227,9 +227,9 @@ Zie beheer [eenheden beheren in azure Active Directory (preview)](../users-group
 
 **Product mogelijkheden:** Access Control
 
-**Printer beheerder** : gebruikers met deze rol kunnen printers registreren en alle aspecten van alle printer configuraties in de micro soft-oplossing voor universele afdrukken beheren, met inbegrip van de instellingen voor de universele afdruk connector. Ze kunnen toestemming geven voor alle gedelegeerde afdruk machtigings aanvragen. Printer beheerders hebben ook toegang tot het afdrukken van rapporten. 
+**Printer beheerder**: gebruikers met deze rol kunnen printers registreren en alle aspecten van alle printer configuraties in de micro soft-oplossing voor universele afdrukken beheren, met inbegrip van de instellingen voor de universele afdruk connector. Ze kunnen toestemming geven voor alle gedelegeerde afdruk machtigings aanvragen. Printer beheerders hebben ook toegang tot het afdrukken van rapporten. 
 
-**Printer technicus** : gebruikers met deze rol kunnen printers registreren en printer status beheren in de micro soft Universal Print-oplossing. Ze kunnen ook alle connector gegevens lezen. Belangrijkste taken een printer technicus kan geen gebruikers machtigingen voor printers instellen en printers delen. [Meer informatie.](../roles/permissions-reference.md#printer-administrator)
+**Printer technicus**: gebruikers met deze rol kunnen printers registreren en printer status beheren in de micro soft Universal Print-oplossing. Ze kunnen ook alle connector gegevens lezen. Belangrijkste taken een printer technicus kan geen gebruikers machtigingen voor printers instellen en printers delen. [Meer informatie.](../roles/permissions-reference.md#printer-administrator)
 
 ---
 
@@ -656,7 +656,7 @@ De nieuwe ervaring voor eind gebruikers van mijn account wordt `https://myaccoun
 
 ---
 
-## <a name="january-2020"></a>januari 2020
+## <a name="january-2020"></a>Januari 2020
  
 ### <a name="the-new-my-apps-portal-is-now-generally-available"></a>De nieuwe portal voor mijn apps is nu algemeen verkrijgbaar
 
@@ -737,7 +737,7 @@ Vanaf 8 februari 2020 wordt een leeg fragment aan de aanvraag toegevoegd wanneer
 
 ---
 
-## <a name="december-2019"></a>december 2019
+## <a name="december-2019"></a>December 2019
 
 ### <a name="integrate-sap-successfactors-provisioning-into-azure-ad-and-on-premises-ad-public-preview"></a>SAP SuccessFactors-inrichting integreren in azure AD en on-premises AD (open bare preview)
 
@@ -775,7 +775,7 @@ Zie wat zijn de standaard beveiligings [instellingen?](./concept-fundamentals-se
 
 ---
 
-## <a name="november-2019"></a>november 2019
+## <a name="november-2019"></a>November 2019
 
 ### <a name="support-for-the-samesite-attribute-and-chrome-80"></a>Ondersteuning voor het kenmerk SameSite en Chrome 80
 
@@ -787,9 +787,9 @@ Als onderdeel van een beveiligd standaard model voor cookies wordt de Chrome 80-
 
 We raden aan dat alle ontwikkel aars hun apps testen met behulp van deze richt lijnen:
 
-- Stel de standaard waarde voor de instelling **beveiligde cookie gebruiken** in op **Ja** .
+- Stel de standaard waarde voor de instelling **beveiligde cookie gebruiken** in op **Ja**.
 
-- Stel de standaard waarde voor het kenmerk **SameSite** in op **geen** .
+- Stel de standaard waarde voor het kenmerk **SameSite** in op **geen**.
 
 - Voeg een extra `SameSite` kenmerk van **Secure** toe.
 
@@ -969,7 +969,7 @@ Zie [app-functies toevoegen in uw toepassing en ontvangen in het token](../devel
 
 **Type:** Planning voor wijziging **service categorie:** identiteits bescherming **product mogelijkheid:** identiteits beveiliging & beveiliging
 
-Als reactie op de feedback van ontwikkel aars kunnen Azure AD Premium P2-abonnees nu complexe query's uitvoeren op Azure AD Identity Protection risico detectie gegevens door gebruik te maken van de nieuwe riskDetection-API voor Microsoft Graph. De bestaande [identityRiskEvent](/graph/api/resources/identityriskevent?view=graph-rest-beta) API bèta versie retourneert geen gegevens over **10 januari 2020** . Als uw organisatie gebruikmaakt van de identityRiskEvent-API, moet u overstappen naar de nieuwe riskDetection-API.
+Als reactie op de feedback van ontwikkel aars kunnen Azure AD Premium P2-abonnees nu complexe query's uitvoeren op Azure AD Identity Protection risico detectie gegevens door gebruik te maken van de nieuwe riskDetection-API voor Microsoft Graph. De bestaande [identityRiskEvent](/graph/api/resources/identityriskevent?view=graph-rest-beta) API bèta versie retourneert geen gegevens over **10 januari 2020**. Als uw organisatie gebruikmaakt van de identityRiskEvent-API, moet u overstappen naar de nieuwe riskDetection-API.
 
 Zie de [referentie documentatie voor API voor risico detectie](/graph/api/resources/riskdetection)voor meer informatie over de nieuwe RISKDETECTION-API.
 
@@ -983,9 +983,9 @@ Een paar weken voorafgaand aan de Chrome 80-browser release, willen we bijwerken
 
 Om te voor komen dat mogelijk negatieve gevolgen zijn door deze wijziging, worden de toegangs-en sessie cookies van de toepassings proxy bijgewerkt door:
 
-- Stel de standaard waarde voor de instelling **beveiligde cookie gebruiken** in op **Ja** .
+- Stel de standaard waarde voor de instelling **beveiligde cookie gebruiken** in op **Ja**.
 
-- De standaard waarde voor het kenmerk **SameSite** in te stellen op **geen** .
+- De standaard waarde voor het kenmerk **SameSite** in te stellen op **geen**.
 
     >[!NOTE]
     > Application proxy-toegangs cookies zijn altijd uitsluitend via beveiligde kanalen verzonden. Deze wijzigingen zijn alleen van toepassing op sessie cookies.
@@ -1104,7 +1104,7 @@ Zie voor meer informatie over de apps [SaaS-toepassings integratie met Azure Act
 
 **Type:** Gewijzigde functie **service categorie:** identiteits bescherming **product mogelijkheid:** identiteits beveiliging & beveiliging
 
-U hebt nu toegang tot alle beschik bare Azure AD-beveiligings functies vanuit het menu met nieuwe **beveiliging** en op de **Zoek** balk in de Azure Portal. Daarnaast biedt de nieuwe **beveiligings** landings pagina, met de naam **beveiliging-aan de slag** , koppelingen naar onze open bare documentatie, beveiligings richtlijnen en implementatie handleidingen.
+U hebt nu toegang tot alle beschik bare Azure AD-beveiligings functies vanuit het menu met nieuwe **beveiliging** en op de **Zoek** balk in de Azure Portal. Daarnaast biedt de nieuwe **beveiligings** landings pagina, met de naam **beveiliging-aan de slag**, koppelingen naar onze open bare documentatie, beveiligings richtlijnen en implementatie handleidingen.
 
 Het menu nieuwe **beveiliging** bevat:
 
@@ -1159,7 +1159,7 @@ Zie [Azure monitor werkmappen gebruiken voor Azure Active Directory-rapporten](.
 
 **Type:** Planning voor wijziging **service categorie:** mijn profiel/account **product mogelijkheid:** samen werking
 
-Vanaf oktober wordt de ervaring mijn profiel van mijn account. Als onderdeel van deze wijziging, wordt **Mijn profiel** gewijzigd in **Mijn account** . Naast de naam wijziging en enkele ontwerp verbeteringen, biedt de bijgewerkte ervaring aanvullende integratie met de pagina Microsoft Office-account. U hebt met name toegang tot Office-installaties en-abonnementen via de pagina **overzichts account** , samen met Office-gerelateerde contact voorkeuren van de pagina **Privacy** .
+Vanaf oktober wordt de ervaring mijn profiel van mijn account. Als onderdeel van deze wijziging, wordt **Mijn profiel** gewijzigd in **Mijn account**. Naast de naam wijziging en enkele ontwerp verbeteringen, biedt de bijgewerkte ervaring aanvullende integratie met de pagina Microsoft Office-account. U hebt met name toegang tot Office-installaties en-abonnementen via de pagina **overzichts account** , samen met Office-gerelateerde contact voorkeuren van de pagina **Privacy** .
 
 Zie voor meer informatie over de ervaring mijn profiel (preview) [Mijn profiel (preview-versie) van portal](../user-help/my-account-portal-overview.md).
 
@@ -1271,7 +1271,7 @@ Als u een bestaande klant bent die een MFA-server heeft geactiveerd voor 1 juli 
 
 - Andere kleine bugs zijn opgelost.
 
-Vanaf 1 juli 2019 heeft micro soft de MFA-server voor nieuwe implementaties gestopt. Nieuwe klanten die multi-factor Authentication vereisen, moeten gebruikmaken van Azure Multi-Factor Authentication op basis van de Cloud. Zie [een Cloud implementatie van Azure multi-factor Authentication plannen](../authentication/howto-mfa-getstarted.md)voor meer informatie.
+Vanaf 1 juli 2019 heeft micro soft de MFA-server voor nieuwe implementaties gestopt. Nieuwe klanten die multi-factor Authentication vereisen, moeten gebruikmaken van Azure AD-Multi-Factor Authentication in de Cloud. Zie [een Cloud implementatie van Azure AD multi-factor Authentication plannen](../authentication/howto-mfa-getstarted.md)voor meer informatie.
 
 ---
 
@@ -1435,13 +1435,13 @@ Zie onze [beheerders documentatie](../authentication/concept-registration-mfa-ss
 
 1. Meld u aan bij de Azure Portal als globale beheerder of gebruikers beheerder.
 
-2. Ga naar **Azure Active Directory > gebruikers instellingen > instellingen voor de preview-functies van het toegangs venster beheren** .
+2. Ga naar **Azure Active Directory > gebruikers instellingen > instellingen voor de preview-functies van het toegangs venster beheren**.
 
-3. Selecteer in de sectie **gebruikers kunnen preview-functies gebruiken voor het registreren en beheren van beveiligings gegevens-uitgebreid** gebied **geselecteerd** , en kies vervolgens een groep gebruikers of kies **alle** om deze functie in te scha kelen voor alle gebruikers in de Tenant.
+3. Selecteer in de sectie **gebruikers kunnen preview-functies gebruiken voor het registreren en beheren van beveiligings gegevens-uitgebreid** gebied **geselecteerd**, en kies vervolgens een groep gebruikers of kies **alle** om deze functie in te scha kelen voor alle gebruikers in de Tenant.
 
-4. In de * * gebruikers kunnen preview-functies gebruiken voor het registreren en beheren van beveiliging * * info * * * * *. Selecteer **geen** .
+4. In de * * gebruikers kunnen preview-functies gebruiken voor het registreren en beheren van beveiliging * * info * * * * *. Selecteer **geen**.
 
-5. Sla uw instellingen op.
+5. Sla uw wijzigingen op.
 
     Nadat u de instellingen hebt opgeslagen, hebt u geen toegang meer tot de oude beveiligings informatie.
 
@@ -1573,7 +1573,7 @@ Zie [beveiligings controles voor Azure AD Domain Services inschakelen (preview)]
 
 **Type:** Nieuwe functie **service categorie:** self-service voor het opnieuw instellen van wacht woorden **:** bewaking & rapportage
 
-Met de nieuwe verificatie methoden & Insights-rapporten kunt u begrijpen hoe functies zoals Azure Multi-Factor Authentication en self-service voor het opnieuw instellen van wacht woorden worden geregistreerd en gebruikt in uw organisatie, met inbegrip van het aantal geregistreerde gebruikers voor elke functie, hoe vaak de selfservice voor wachtwoord herstel wordt gebruikt om wacht woorden opnieuw in te stellen en op basis van welke methode het opnieuw moet worden ingesteld.
+Met de nieuwe verificatie methoden & Insights-rapporten kunt u zien hoe functies zoals Azure AD Multi-Factor Authentication en self-service voor het opnieuw instellen van wacht woorden worden geregistreerd en gebruikt in uw organisatie, inclusief het aantal geregistreerde gebruikers voor elke functie, hoe vaak de selfservice voor wachtwoord herstel wordt gebruikt om wacht woorden opnieuw in te stellen, en op basis van welke methode het opnieuw moet worden ingesteld.
 
 Zie het gebruik van de [verificatie methoden & Insights (preview)](../authentication/howto-authentication-methods-usage-insights.md)voor meer informatie.
 
@@ -1747,9 +1747,9 @@ Zie [huisstijl toevoegen aan de Azure Active Directory pagina's van uw organisat
 
 **Type:** Afgeschafte **service categorie:** MFA- **product mogelijkheid:** identiteits beveiliging & beveiliging
 
-Met ingang van 1 juli 2019 biedt micro soft geen MFA-server meer voor nieuwe implementaties. Nieuwe klanten die multi-factor Authentication in hun organisatie willen vereisen, moeten nu Azure Multi-Factor Authentication op basis van de Cloud gebruiken. Klanten die de MFA-server vóór 1 juli hebben geactiveerd, zien geen wijziging. U kunt nog steeds de nieuwste versie downloaden, toekomstige updates ophalen en activerings referenties genereren.
+Met ingang van 1 juli 2019 biedt micro soft geen MFA-server meer voor nieuwe implementaties. Nieuwe klanten die multi-factor Authentication in hun organisatie willen vereisen, moeten nu gebruikmaken van Azure AD-Multi-Factor Authentication in de Cloud. Klanten die de MFA-server vóór 1 juli hebben geactiveerd, zien geen wijziging. U kunt nog steeds de nieuwste versie downloaden, toekomstige updates ophalen en activerings referenties genereren.
 
-Zie [aan de slag met de Azure-multi-factor Authentication-Server](../authentication/howto-mfaserver-deploy.md)voor meer informatie. Zie [een Cloud implementatie op basis van multi-factor Authentication Azure plannen](../authentication/howto-mfa-getstarted.md)voor meer informatie over Azure multi-factor Authentication op basis van de Cloud.
+Zie [aan de slag met de Azure-multi-factor Authentication-Server](../authentication/howto-mfaserver-deploy.md)voor meer informatie. Voor meer informatie over Azure AD-Multi-Factor Authentication in de Cloud, raadpleegt u [een implementatie van Azure ad multi-factor Authentication op basis van de Cloud plannen](../authentication/howto-mfa-getstarted.md).
 
 ---
 
@@ -1989,7 +1989,7 @@ Zie voor meer informatie over de apps [SaaS-toepassings integratie met Azure Act
 
 Met nieuwe updates in azure AD-toegangs beoordelingen kunt u het volgende doen:
 
-- Wijzig de frequentie van uw toegangs beoordelingen in een **halfjaarlijkse** , naast de eerder bestaande opties wekelijks, maandelijks, elk kwar taal en jaarlijks.
+- Wijzig de frequentie van uw toegangs beoordelingen in een **halfjaarlijkse**, naast de eerder bestaande opties wekelijks, maandelijks, elk kwar taal en jaarlijks.
 
 - Selecteer meerdere Azure AD-en Azure-resource rollen bij het maken van één toegangs beoordeling. In dit geval worden alle rollen met dezelfde instellingen ingesteld en worden alle revisoren tegelijk op de hoogte gesteld.
 
@@ -2221,17 +2221,17 @@ Als reactie op feedback van klanten hebben we de preview-ervaring voor de gecomb
 
 **Voer de volgende stappen uit om de verbeterde ervaring voor uw gebruikers vandaag in te scha kelen:**
 
-1. Meld u aan bij de Azure Portal als globale beheerder of gebruikers beheerder en ga naar **Azure Active Directory > gebruikers instellingen > instellingen voor de preview-functies van het toegangs venster te beheren** .
+1. Meld u aan bij de Azure Portal als globale beheerder of gebruikers beheerder en ga naar **Azure Active Directory > gebruikers instellingen > instellingen voor de preview-functies van het toegangs venster te beheren**.
 
-2. In de **gebruikers die de preview-functies voor het registreren en beheren van beveiligings gegevens – optie voor het vernieuwen kunnen gebruiken** , kiest u de functies voor een **geselecteerde groep gebruikers** of voor **alle gebruikers** .
+2. In de **gebruikers die de preview-functies voor het registreren en beheren van beveiligings gegevens – optie voor het vernieuwen kunnen gebruiken** , kiest u de functies voor een **geselecteerde groep gebruikers** of voor **alle gebruikers**.
 
 In de komende weken verwijderen we de mogelijkheid om de oude gecombineerde registratie Preview voor MFA/SSPR voor tenants die nog niet zijn ingeschakeld, in te scha kelen.
 
 **Voer de volgende stappen uit om te controleren of het besturings element wordt verwijderd voor uw Tenant:**
 
-1. Meld u aan bij de Azure Portal als globale beheerder of gebruikers beheerder en ga naar **Azure Active Directory > gebruikers instellingen > instellingen voor de preview-functies van het toegangs venster te beheren** .
+1. Meld u aan bij de Azure Portal als globale beheerder of gebruikers beheerder en ga naar **Azure Active Directory > gebruikers instellingen > instellingen voor de preview-functies van het toegangs venster te beheren**.
 
-2. Als de **gebruikers die de optie preview-functies voor het registreren en beheren van beveiligings gegevens hebben** , zijn ingesteld op **geen** , wordt de optie verwijderd uit uw Tenant.
+2. Als de **gebruikers die de optie preview-functies voor het registreren en beheren van beveiligings gegevens hebben** , zijn ingesteld op **geen**, wordt de optie verwijderd uit uw Tenant.
 
 Ongeacht of u eerder de oude gecombineerde MFA/SSPR registratie preview-ervaring voor gebruikers hebt ingeschakeld, wordt de oude ervaring op een later tijdstip uitgeschakeld. Daarom wordt u zo snel mogelijk geadviseerd om over te stappen op de nieuwe, verbeterde ervaring.
 
@@ -2297,9 +2297,9 @@ Zie voor meer informatie [e-mail One-time wachtwoord code verificatie (preview)]
 
 We hebben drie nieuwe cookie-instellingen geïntroduceerd, die beschikbaar zijn voor uw apps die zijn gepubliceerd via toepassings proxy:
 
-- **Gebruik HTTP-Only cookie.** Hiermee stelt u de **HTTPOnly** -vlag in voor de toegangs-en sessie cookies van de toepassings proxy. Het inschakelen van deze instelling biedt extra veiligheids voordelen, zoals het voor komen van het kopiëren of wijzigen van cookies via scripting aan de client zijde. U wordt aangeraden deze vlag in te scha kelen ( **Ja** ) om de extra voor delen te bepalen.
+- **Gebruik HTTP-Only cookie.** Hiermee stelt u de **HTTPOnly** -vlag in voor de toegangs-en sessie cookies van de toepassings proxy. Het inschakelen van deze instelling biedt extra veiligheids voordelen, zoals het voor komen van het kopiëren of wijzigen van cookies via scripting aan de client zijde. U wordt aangeraden deze vlag in te scha kelen ( **Ja**) om de extra voor delen te bepalen.
 
-- **Gebruik beveiligde cookie.** Hiermee stelt u de **beveiligde** vlag in voor de toegangs-en sessie cookies van de toepassings proxy. Het inschakelen van deze instelling biedt extra veiligheids voordelen door ervoor te zorgen dat cookies alleen worden verzonden via TLS-beveiligde kanalen, zoals HTTPS. U wordt aangeraden deze vlag in te scha kelen ( **Ja** ) om de extra voor delen te bepalen.
+- **Gebruik beveiligde cookie.** Hiermee stelt u de **beveiligde** vlag in voor de toegangs-en sessie cookies van de toepassings proxy. Het inschakelen van deze instelling biedt extra veiligheids voordelen door ervoor te zorgen dat cookies alleen worden verzonden via TLS-beveiligde kanalen, zoals HTTPS. U wordt aangeraden deze vlag in te scha kelen ( **Ja**) om de extra voor delen te bepalen.
 
 - **Permanente cookie gebruiken.** Hiermee voor komt u dat de toegang tot cookies verloopt wanneer de webbrowser is gesloten. Deze cookies duren voor de levens duur van het toegangs token. De cookies worden echter opnieuw ingesteld als de verloop tijd wordt bereikt of als de gebruiker de cookie hand matig verwijdert. We raden u aan om de standaard instelling **Nee** te laten, alleen de instelling in te scha kelen voor oudere apps die geen cookies delen tussen processen.
 
@@ -2391,7 +2391,7 @@ Deze oplossing verhindert daarom directe updates van het kenmerk ImmutableID van
 Momenteel publiceren we de audit-en aanmeldings logboek stromen via Azure Monitor, zodat u de logboek bestanden naadloos kunt integreren met uw SIEM-hulpprogram ma's of met Log Analytics. Op basis van uw feedback en in de voor bereiding van de algemene Beschik baarheid van deze functie, worden de volgende wijzigingen aangebracht in het schema. Deze schema wijzigingen en de bijbehorende documentatie-updates worden uitgevoerd door de eerste week van januari.
 
 #### <a name="new-fields-in-the-audit-schema"></a>Nieuwe velden in het audit schema
-Er wordt een nieuw **bewerkings type** veld toegevoegd om het type bewerking te bieden dat wordt uitgevoerd op de resource. Bijvoorbeeld: **toevoegen** , **bijwerken** of **verwijderen** .
+Er wordt een nieuw **bewerkings type** veld toegevoegd om het type bewerking te bieden dat wordt uitgevoerd op de resource. Bijvoorbeeld: **toevoegen**, **bijwerken** of **verwijderen**.
 
 #### <a name="changed-fields-in-the-audit-schema"></a>Gewijzigde velden in het audit schema
 De volgende velden worden gewijzigd in het controle schema:
@@ -2858,7 +2858,7 @@ E-mail berichten van Azure Active Directory (Azure AD) beschikken nu over een bi
 
 - Azure AD-toegangs beoordelingen
 - Azure AD Connect Health (Engelstalig)
-- Azure AD Identity Protection
+- Azure AD-identiteitsbeveiliging
 - Azure AD Privileged Identity Management
 - Certificaat meldingen voor de Enter prise-app verlopen
 - Service meldingen voor de Enter prise-app inrichten
@@ -3028,16 +3028,16 @@ De melding voor mobiele apps kan alleen worden ingeschakeld als onderdeel van ee
 
 **Type:** Planning voor **service categorie wijzigen:** rapportage van **product mogelijkheden:** bewaking & rapportage
 
-Vanwege onze sterkere beveiligings handhaving hebben we een wijziging aangebracht in de machtigingen voor apps die gebruikmaken van een gedelegeerde autorisatie stroom om toegang te krijgen tot de [api's van Azure AD-activiteiten logboeken](../reports-monitoring/concept-reporting-api.md). Deze wijziging gaat in op **26 juni 2018** .
+Vanwege onze sterkere beveiligings handhaving hebben we een wijziging aangebracht in de machtigingen voor apps die gebruikmaken van een gedelegeerde autorisatie stroom om toegang te krijgen tot de [api's van Azure AD-activiteiten logboeken](../reports-monitoring/concept-reporting-api.md). Deze wijziging gaat in op **26 juni 2018**.
 
 Als uw apps Azure AD-activiteiten logboek-Api's gebruiken, voert u de volgende stappen uit om ervoor te zorgen dat de app niet wordt onderbroken nadat de wijziging is opgegaan.
 
 **Uw app-machtigingen bijwerken**
 
-1. Meld u aan bij de Azure Portal, selecteer **Azure Active Directory** en selecteer vervolgens **app-registraties** .
-2. Selecteer uw app die gebruikmaakt van de API voor Azure AD-activiteiten logboeken, selecteer **instellingen** , selecteer **vereiste machtigingen** en selecteer vervolgens de **Windows Azure Active Directory** -API.
-3. Schakel in het gebied **gedelegeerde machtigingen** van de Blade **toegang inschakelen** het selectie vakje in naast **Directory gegevens lezen** en selecteer vervolgens **Opslaan** .
-4. Selecteer **machtigingen verlenen** en selecteer vervolgens **Ja** .
+1. Meld u aan bij de Azure Portal, selecteer **Azure Active Directory** en selecteer vervolgens **app-registraties**.
+2. Selecteer uw app die gebruikmaakt van de API voor Azure AD-activiteiten logboeken, selecteer **instellingen**, selecteer **vereiste machtigingen** en selecteer vervolgens de **Windows Azure Active Directory** -API.
+3. Schakel in het gebied **gedelegeerde machtigingen** van de Blade **toegang inschakelen** het selectie vakje in naast **Directory gegevens lezen** en selecteer vervolgens **Opslaan**.
+4. Selecteer **machtigingen verlenen** en selecteer vervolgens **Ja**.
 
     >[!Note]
     >U moet een globale beheerder zijn om machtigingen voor de app te kunnen verlenen.
@@ -3052,33 +3052,33 @@ Zie het gedeelte [machtigingen verlenen](../reports-monitoring/howto-configure-p
 
 Transport Layer Security (TLS) is een protocol dat privacy-en gegevens integriteit mogelijk maakt tussen twee communicatie toepassingen en het meest gebruikte beveiligings protocol dat momenteel wordt gebruikt.
 
-De [PCI Security Standards Council](https://www.pcisecuritystandards.org/) heeft vastgesteld dat vroege versies van TLS en Secure Sockets Layer (SSL) moeten worden uitgeschakeld in het voor deel van het inschakelen van nieuwe en veiligere app-protocollen, met naleving vanaf **30 juni 2018** . Deze wijziging betekent dat als u verbinding maakt met Azure AD-Services en PCI DSS-naleving vereist, u TLS 1,0 moet uitschakelen. Er zijn meerdere versies van TLS beschikbaar, maar TLS 1,2 is de meest recente versie die beschikbaar is voor Azure Active Directory Services. We raden u ten zeerste aan om rechtstreeks naar TLS 1,2 te gaan voor client-en server-en browser-en server combinaties.
+De [PCI Security Standards Council](https://www.pcisecuritystandards.org/) heeft vastgesteld dat vroege versies van TLS en Secure Sockets Layer (SSL) moeten worden uitgeschakeld in het voor deel van het inschakelen van nieuwe en veiligere app-protocollen, met naleving vanaf **30 juni 2018**. Deze wijziging betekent dat als u verbinding maakt met Azure AD-Services en PCI DSS-naleving vereist, u TLS 1,0 moet uitschakelen. Er zijn meerdere versies van TLS beschikbaar, maar TLS 1,2 is de meest recente versie die beschikbaar is voor Azure Active Directory Services. We raden u ten zeerste aan om rechtstreeks naar TLS 1,2 te gaan voor client-en server-en browser-en server combinaties.
 
-Verouderde browsers ondersteunen mogelijk geen nieuwere TLS-versies, zoals TLS 1,2. Als u wilt zien welke versies van TLS door uw browser worden ondersteund, gaat u naar de [QUALYS SSL Labs](https://www.ssllabs.com/) -site en klikt u op **uw browser testen** . U wordt aangeraden om een upgrade uit te voeren naar de nieuwste versie van uw webbrowser en bij voor keur alleen TLS 1,2 in te scha kelen.
+Verouderde browsers ondersteunen mogelijk geen nieuwere TLS-versies, zoals TLS 1,2. Als u wilt zien welke versies van TLS door uw browser worden ondersteund, gaat u naar de [QUALYS SSL Labs](https://www.ssllabs.com/) -site en klikt u op **uw browser testen**. U wordt aangeraden om een upgrade uit te voeren naar de nieuwste versie van uw webbrowser en bij voor keur alleen TLS 1,2 in te scha kelen.
 
 **TLS 1,2 inschakelen, per browser**
 
 - **Micro soft Edge en Internet Explorer (beide worden ingesteld met Internet Explorer)**
 
-    1. Open Internet Explorer, selecteer **extra**  >  **geavanceerde Internet opties**  >  **Advanced** .
-    2. Selecteer in het gebied **beveiliging** de optie **TLS 1,2 gebruiken** en selecteer vervolgens **OK** .
+    1. Open Internet Explorer, selecteer **extra**  >  **geavanceerde Internet opties**  >  **Advanced**.
+    2. Selecteer in het gebied **beveiliging** de optie **TLS 1,2 gebruiken** en selecteer vervolgens **OK**.
     3. Sluit alle browser vensters en start Internet Explorer opnieuw.
 
 - **Google Chrome**
 
-    1. Open Google Chrome, typ *Chrome://Settings/* in de adres balk en druk op **Enter** .
-    2. Vouw de **Geavanceerde** opties uit, ga naar het gebied **systeem** en selecteer **proxy-instellingen openen** .
-    3. Selecteer in het vak **Internet eigenschappen** het tabblad **Geavanceerd** , ga naar het gebied **beveiliging** , selecteer **TLS 1,2 gebruiken** en selecteer vervolgens **OK** .
+    1. Open Google Chrome, typ *Chrome://Settings/* in de adres balk en druk op **Enter**.
+    2. Vouw de **Geavanceerde** opties uit, ga naar het gebied **systeem** en selecteer **proxy-instellingen openen**.
+    3. Selecteer in het vak **Internet eigenschappen** het tabblad **Geavanceerd** , ga naar het gebied **beveiliging** , selecteer **TLS 1,2 gebruiken** en selecteer vervolgens **OK**.
     4. Sluit alle browser vensters en start Google Chrome opnieuw op.
 
 - **Mozilla Firefox**
 
-    1. Open Firefox, typ *about: config* in de adres balk en druk op **Enter** .
+    1. Open Firefox, typ *about: config* in de adres balk en druk op **Enter**.
     2. Zoek naar de term *TLS* en selecteer vervolgens de vermelding **Security. TLS. version. Max** .
-    3. Stel de waarde in op **3** om te zorgen dat de browser Maxi maal versie TLS 1,2 gebruikt en selecteer **OK** .
+    3. Stel de waarde in op **3** om te zorgen dat de browser Maxi maal versie TLS 1,2 gebruikt en selecteer **OK**.
 
         >[!NOTE]
-        >Versie 60,0 van Firefox ondersteunt TLS 1,3, dus u kunt ook de waarde Security. TLS. version. Max instellen op **4** .
+        >Versie 60,0 van Firefox ondersteunt TLS 1,3, dus u kunt ook de waarde Security. TLS. version. Max instellen op **4**.
 
     4. Sluit alle browser vensters en Start Mozilla Firefox opnieuw.
 
@@ -3132,11 +3132,11 @@ Zie [Azure Active Directory gebruiksvoorwaarden functie](../conditional-access/t
 
 ---
 
-### <a name="new-and-comprehensive-guidance-about-deploying-azure-multi-factor-authentication"></a>Nieuwe en uitgebreide richt lijnen voor het implementeren van Azure Multi-Factor Authentication
+### <a name="new-and-comprehensive-guidance-about-deploying-azure-ad-multi-factor-authentication"></a>Nieuwe en uitgebreide richt lijnen voor het implementeren van Azure AD Multi-Factor Authentication
 
 **Type:** Nieuwe functie **service categorie:** andere **product mogelijkheden:** identiteits beveiliging & beveiliging
 
-We hebben nieuwe stapsgewijze richt lijnen uitgebracht voor het implementeren van Azure Multi-Factor Authentication (MFA) in uw organisatie.
+We hebben nieuwe stapsgewijze richt lijnen uitgebracht voor het implementeren van Azure AD Multi-Factor Authentication (MFA) in uw organisatie.
 
 Als u de MFA-implementatie handleiding wilt weer geven, gaat u naar de hand leiding voor [identiteits implementatie](./active-directory-deployment-plans.md) opslag plaats op github. Als u feedback wilt geven over de implementatie handleidingen, gebruikt u het [feedback formulier voor het implementatie plan](https://aka.ms/deploymentplanfeedback). Als u vragen hebt over de implementatie handleidingen, kunt u contact met ons opnemen via [IDGitDeploy](mailto:idgitdeploy@microsoft.com).
 
@@ -3312,7 +3312,7 @@ Toegangs beoordelingen van groepen en apps zijn nu algemeen beschikbaar als onde
 
 **Type:** Gewijzigde functie **service categorie:** verificaties (aanmeldingen) **product mogelijkheid:** gebruikers verificatie
 
-Apps die zijn gemaakt op of na 25 april 2018 kunnen geen **id_token** meer aanvragen met behulp van de **query** response_mode.  Dit brengt Azure AD inline met de OIDC-specificaties en vermindert de kwets baarheid voor uw apps.  Apps die zijn gemaakt vóór 25 april 2018, worden niet geblokkeerd voor het gebruik van de **query** response_mode met een response_type van **id_token** .  De geretourneerde fout bij het aanvragen van een id_token van Azure AD is **AADSTS70007: ' query ' is geen ondersteunde waarde van ' response_mode ' bij het aanvragen van een token** .
+Apps die zijn gemaakt op of na 25 april 2018 kunnen geen **id_token** meer aanvragen met behulp van de **query** response_mode.  Dit brengt Azure AD inline met de OIDC-specificaties en vermindert de kwets baarheid voor uw apps.  Apps die zijn gemaakt vóór 25 april 2018, worden niet geblokkeerd voor het gebruik van de **query** response_mode met een response_type van **id_token**.  De geretourneerde fout bij het aanvragen van een id_token van Azure AD is **AADSTS70007: ' query ' is geen ondersteunde waarde van ' response_mode ' bij het aanvragen van een token**.
 
 Het **fragment** en **form_post** response_modes blijven werken: bij het maken van nieuwe toepassings objecten (bijvoorbeeld voor het gebruik van de app-proxy), moet u ervoor zorgen dat een van deze response_modes wordt gebruikt voordat een nieuwe toepassing wordt gemaakt.
 
@@ -3461,7 +3461,7 @@ Zie [Azure AD-wacht woord opnieuw instellen in het aanmeldings scherm](../authen
 
 ---
 
-## <a name="march-2018"></a>maart 2018
+## <a name="march-2018"></a>Maart 2018
 
 ### <a name="certificate-expire-notification"></a>Melding dat het certificaat verloopt
 
@@ -3638,7 +3638,7 @@ Zie [Wat is Azure AD-toepassingsproxy-connectors](../manage-apps/application-pro
 
 ---
 
-## <a name="february-2018"></a>februari 2018
+## <a name="february-2018"></a>Februari 2018
 
 ### <a name="improved-navigation-for-managing-users-and-groups"></a>Verbeterde navigatie voor het beheren van gebruikers en groepen
 
@@ -3828,11 +3828,11 @@ Zie voor meer informatie:
 
 **Type:** Gewijzigde functie **service categorie:** gebruiksvoorwaarden **product capaciteit:** naleving
 
-Wanneer de gebruiks voorwaarden worden weer gegeven, kunt u nu klikken op **problemen met weer gave? Klik hier** . Als u op deze koppeling klikt, wordt de gebruiksrecht overeenkomst voor uw apparaat geopend. Ongeacht de teken grootte in het document of de scherm grootte van het apparaat, kunt u inzoomen en het document naar behoefte lezen.
+Wanneer de gebruiks voorwaarden worden weer gegeven, kunt u nu klikken op **problemen met weer gave? Klik hier**. Als u op deze koppeling klikt, wordt de gebruiksrecht overeenkomst voor uw apparaat geopend. Ongeacht de teken grootte in het document of de scherm grootte van het apparaat, kunt u inzoomen en het document naar behoefte lezen.
 
 ---
 
-## <a name="january-2018"></a>januari 2018
+## <a name="january-2018"></a>Januari 2018
 
 ### <a name="new-federated-apps-available-in-azure-ad-app-gallery"></a>Nieuwe federatieve apps die beschikbaar zijn in de Azure AD-App-galerie
 
@@ -3864,7 +3864,7 @@ Zie [Azure Active Directory-risico detectie](../identity-protection/overview-ide
 
 **Type:** Nieuwe functie **service categorie:** mijn apps **product mogelijkheid:** SSO
 
-U kunt nu beter beheren hoe Office 365-toepassingen worden weer gegeven op de toegangs Vensters van uw gebruikers via een nieuwe gebruikers instelling. Deze optie is handig voor het verminderen van het aantal apps op de toegangs Vensters van een gebruiker als u alleen Office-apps in de Office-Portal wilt weer geven. De instelling bevindt zich in de **gebruikers instellingen** en is voorzien van een label, **gebruikers kunnen alleen Office 365-apps zien in de Office 365-Portal** .
+U kunt nu beter beheren hoe Office 365-toepassingen worden weer gegeven op de toegangs Vensters van uw gebruikers via een nieuwe gebruikers instelling. Deze optie is handig voor het verminderen van het aantal apps op de toegangs Vensters van een gebruiker als u alleen Office-apps in de Office-Portal wilt weer geven. De instelling bevindt zich in de **gebruikers instellingen** en is voorzien van een label, **gebruikers kunnen alleen Office 365-apps zien in de Office 365-Portal**.
 
 Zie [een toepassing verbergen van gebruikers ervaring in azure Active Directory](../manage-apps/hide-application-from-user-portal.md)voor meer informatie.
 
@@ -3922,7 +3922,7 @@ Zie voor meer informatie:
 
 ---
 
-## <a name="december-2017"></a>december 2017
+## <a name="december-2017"></a>December 2017
 
 ### <a name="terms-of-use-in-the-access-panel"></a>Gebruiksvoorwaarden in het toegangs venster
 
@@ -3936,7 +3936,7 @@ Volg deze stappen:
 
 2. Selecteer uw naam in de rechter bovenhoek en selecteer vervolgens **profiel** in de lijst.
 
-3. Selecteer in uw **profiel** **gebruiks voorwaarden bekijken** .
+3. Selecteer in uw **profiel** **gebruiks voorwaarden bekijken**.
 
 4. Nu kunt u de gebruiks voorwaarden bekijken die u hebt geaccepteerd.
 
@@ -4164,15 +4164,15 @@ Zie voor meer informatie:
 
 ---
 
-### <a name="network-policy-server-extension-for-azure-multi-factor-authentication"></a>Network Policy Server extensie voor Azure Multi-Factor Authentication
+### <a name="network-policy-server-extension-for-azure-ad-multi-factor-authentication"></a>Network Policy Server-extensie voor Azure AD-Multi-Factor Authentication
 
 **Type:** Nieuwe functie **service categorie:**  multi-factor Authentication- **product mogelijkheid:** gebruikers verificatie
 
-Met de Network Policy Server extensie voor Azure Multi-Factor Authentication worden Cloud Multi-Factor Authentication mogelijkheden toegevoegd aan uw verificatie-infra structuur met behulp van uw bestaande servers. Met de uitbrei ding Network Policy Server kunt u een telefoon gesprek, tekst bericht of verificatie via de telefoon toevoegen aan uw bestaande verificatie stroom. U hoeft geen nieuwe servers te installeren, te configureren en te onderhouden.
+Met de Network Policy Server extensie voor Azure AD Multi-Factor Authentication worden cloud-gebaseerde Multi-Factor Authentication mogelijkheden toegevoegd aan uw verificatie-infra structuur met behulp van uw bestaande servers. Met de uitbrei ding Network Policy Server kunt u een telefoon gesprek, tekst bericht of verificatie via de telefoon toevoegen aan uw bestaande verificatie stroom. U hoeft geen nieuwe servers te installeren, te configureren en te onderhouden.
 
-Deze extensie is gemaakt voor organisaties die virtuele particuliere netwerk verbindingen willen beveiligen zonder de Azure-Multi-Factor Authentication-server te implementeren. De uitbrei ding Network Policy Server fungeert als een adapter tussen RADIUS-en cloud-gebaseerde Azure-Multi-Factor Authentication om een tweede factor van verificatie te bieden voor federatieve of gesynchroniseerde gebruikers.
+Deze extensie is gemaakt voor organisaties die virtuele particuliere netwerk verbindingen willen beveiligen zonder de Azure-Multi-Factor Authentication-server te implementeren. De uitbrei ding Network Policy Server fungeert als een adapter tussen RADIUS-en Cloud-Azure AD-Multi-Factor Authentication om een tweede factor van verificatie te bieden voor federatieve of gesynchroniseerde gebruikers.
 
-Zie [uw bestaande Network Policy Server-infra structuur integreren met Azure multi-factor Authentication](../authentication/howto-mfa-nps-extension.md)voor meer informatie.
+Zie [uw bestaande Network Policy Server-infra structuur integreren met Azure AD multi-factor Authentication](../authentication/howto-mfa-nps-extension.md)voor meer informatie.
 
 ---
 
@@ -4250,7 +4250,7 @@ Als gevolg van deze nieuwe mogelijkheden werden de rapport-Api's onder het punt/
 
 **Type:** Vaste **service categorie:** mijn apps **product mogelijkheid:** eenmalige aanmelding
 
-Azure AD biedt ondersteuning voor het automatisch detecteren van aanmeldings velden voor toepassingen die een HTML-gebruikers naam en-wachtwoord veld weer geven. Deze stappen worden beschreven in [het automatisch vastleggen van aanmeldings velden voor een toepassing](../manage-apps/troubleshoot-password-based-sso.md#manually-capture-sign-in-fields-for-an-app). U kunt deze mogelijkheid vinden door een *niet-galerie* toepassing toe te voegen op de pagina **bedrijfs toepassingen** in de [Azure Portal](https://aad.portal.azure.com). Daarnaast kunt u de modus voor **eenmalige aanmelding** op deze nieuwe toepassing configureren voor **eenmalige aanmelding op basis van wacht woorden** , een web-URL opgeven en de pagina vervolgens opslaan.
+Azure AD biedt ondersteuning voor het automatisch detecteren van aanmeldings velden voor toepassingen die een HTML-gebruikers naam en-wachtwoord veld weer geven. Deze stappen worden beschreven in [het automatisch vastleggen van aanmeldings velden voor een toepassing](../manage-apps/troubleshoot-password-based-sso.md#manually-capture-sign-in-fields-for-an-app). U kunt deze mogelijkheid vinden door een *niet-galerie* toepassing toe te voegen op de pagina **bedrijfs toepassingen** in de [Azure Portal](https://aad.portal.azure.com). Daarnaast kunt u de modus voor **eenmalige aanmelding** op deze nieuwe toepassing configureren voor **eenmalige aanmelding op basis van wacht woorden**, een web-URL opgeven en de pagina vervolgens opslaan.
 
 Deze functionaliteit is tijdelijk uitgeschakeld vanwege een service probleem. Het probleem is opgelost en de detectie van het automatische aanmeldings veld is weer beschikbaar.
 

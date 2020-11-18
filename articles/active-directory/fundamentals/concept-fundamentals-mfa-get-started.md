@@ -1,6 +1,6 @@
 ---
-title: Azure-Multi-Factor Authentication voor uw organisatie-Azure Active Directory
-description: Meer informatie over de beschik bare functies van Azure Multi-Factor Authentication voor uw organisatie op basis van uw licentie model
+title: Azure AD-Multi-Factor Authentication voor uw organisatie-Azure Active Directory
+description: Meer informatie over de beschik bare functies van Azure AD Multi-Factor Authentication voor uw organisatie op basis van uw licentie model
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,16 +11,16 @@ author: daveba
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 093d9fdd75b8a4a581faa0708cf97ea67774d734
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 85e7f02f8cbda6218396bf4a9a4654a113b7817c
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241715"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836739"
 ---
-# <a name="overview-of-azure-multi-factor-authentication-for-your-organization"></a>Overzicht van Azure Multi-Factor Authentication voor uw organisatie
+# <a name="overview-of-azure-ad-multi-factor-authentication-for-your-organization"></a>Overzicht van Azure AD-Multi-Factor Authentication voor uw organisatie
 
-Er zijn meerdere manieren om Azure-Multi-Factor Authentication in te scha kelen voor uw Azure Active Directory (AD)-gebruikers op basis van de licenties die uw organisatie bezit. 
+Er zijn meerdere manieren om Azure AD Multi-Factor Authentication in te scha kelen voor uw Azure Active Directory (AD)-gebruikers op basis van de licenties die uw organisatie bezit. 
 
 ![Signalen onderzoeken en MFA afdwingen, indien nodig](./media/concept-fundamentals-mfa-get-started/verify-signals-and-perform-mfa-if-required.png)
 
@@ -36,7 +36,7 @@ Klanten die gebruikmaken van de gratis voor delen van Azure AD, kunnen gebruikma
 
 Voor klanten met Microsoft 365 zijn er twee opties:
 
-* Azure Multi-Factor Authentication is ingeschakeld of uitgeschakeld voor alle gebruikers, voor alle aanmeld gebeurtenissen. Het is niet mogelijk om multi-factor Authentication in te scha kelen voor een subset van gebruikers of alleen onder bepaalde scenario's. Beheer gaat via de Office 365-Portal. 
+* Azure AD Multi-Factor Authentication is ingeschakeld of uitgeschakeld voor alle gebruikers, voor alle aanmeldings gebeurtenissen. Het is niet mogelijk om multi-factor Authentication in te scha kelen voor een subset van gebruikers of alleen onder bepaalde scenario's. Beheer gaat via de Office 365-Portal. 
 * Voor een betere gebruikers ervaring kunt u een upgrade uitvoeren naar Azure AD Premium P1 of P2 en voorwaardelijke toegang gebruiken. Zie voor meer informatie Secure Microsoft 365 resources with multi-factor Authentication (Engelstalig).
 
 ## <a name="azure-ad-premium-p1"></a>Azure AD Premium P1
@@ -62,6 +62,6 @@ Biedt de sterkste beveiligings positie en verbeterde gebruikers ervaring. Voegt 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u aan de slag wilt gaan, raadpleegt u de zelf studie voor het [beveiligen van aanmeldings gebeurtenissen van gebruikers met Azure multi-factor Authentication](../authentication/tutorial-enable-azure-mfa.md).
+Als u aan de slag wilt gaan, raadpleegt u de zelf studie voor het [beveiligen van aanmeldings gebeurtenissen van gebruikers met Azure AD multi-factor Authentication](../authentication/tutorial-enable-azure-mfa.md).
 
-Zie voor meer informatie over licenties de [functies en licenties voor Azure multi-factor Authentication](../authentication/concept-mfa-licensing.md).
+Zie voor meer informatie over licenties de [functies en licenties voor Azure AD multi-factor Authentication](../authentication/concept-mfa-licensing.md).

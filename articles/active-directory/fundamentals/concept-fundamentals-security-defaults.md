@@ -12,18 +12,18 @@ manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 2c056bd4d5fa9037ce00588269c0da2937ff57ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c26cbf55c1e3883605d4c65659511af20cf02c7f
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90705330"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836764"
 ---
 # <a name="what-are-security-defaults"></a>Wat zijn de standaard beveiligings instellingen?
 
 Het beheren van beveiliging kan lastig zijn met veelvoorkomende identiteits-gerelateerde aanvallen zoals wachtwoord spray, herhaling en phishing meer en populairder. De standaard instellingen voor beveiliging maken het gemakkelijker om uw organisatie te beschermen tegen deze aanvallen met vooraf geconfigureerde beveiliging:
 
-- Vereisen dat alle gebruikers zich registreren voor Azure Multi-Factor Authentication.
+- Vereisen dat alle gebruikers zich registreren voor Azure AD Multi-Factor Authentication.
 - Beheerders verplichten om multi-factor Authentication uit te voeren.
 - Verouderde verificatie protocollen blok keren.
 - Gebruikers verplichten om multi-factor Authentication zo nodig uit te voeren.
@@ -52,13 +52,13 @@ Micro soft maakt standaard beveiligings instellingen voor iedereen beschikbaar. 
 
 ### <a name="unified-multi-factor-authentication-registration"></a>Registratie Unified Multi-Factor Authentication
 
-Alle gebruikers in uw Tenant moeten zich registreren voor multi-factor Authentication (MFA) in de vorm van de Azure Multi-Factor Authentication. Gebruikers beschikken over 14 dagen voor de registratie van Azure Multi-Factor Authentication met behulp van de Microsoft Authenticator-app. Nadat de 14 dagen zijn verstreken, kan de gebruiker zich pas aanmelden nadat de registratie is voltooid. De 14-daagse periode van een gebruiker begint na de eerste geslaagde interactieve aanmelding nadat de standaard instellingen voor de beveiliging zijn ingeschakeld.
+Alle gebruikers in uw Tenant moeten zich registreren voor multi-factor Authentication (MFA) in de vorm van de Azure AD-Multi-Factor Authentication. Gebruikers hebben 14 dagen de tijd om zich te registreren voor Azure AD Multi-Factor Authentication met behulp van de Microsoft Authenticator-app. Nadat de 14 dagen zijn verstreken, kan de gebruiker zich pas aanmelden nadat de registratie is voltooid. De 14-daagse periode van een gebruiker begint na de eerste geslaagde interactieve aanmelding nadat de standaard instellingen voor de beveiliging zijn ingeschakeld.
 
 ### <a name="protecting-administrators"></a>Beheerders beveiligen
 
 Gebruikers met bevoorrechte toegang hebben meer toegang tot uw omgeving. Als gevolg van de kracht van deze accounts, moet u deze met speciale zorg behandelen. Een gemeen schappelijke methode voor het verbeteren van de beveiliging van geprivilegieerde accounts is het vereisen van een sterkere vorm van account verificatie voor het aanmelden. In azure AD kunt u een sterkere account verificatie krijgen door multi-factor Authentication te vereisen.
 
-Nadat de registratie bij Azure Multi-Factor Authentication is voltooid, moeten de volgende negen Azure AD-beheerders rollen extra authenticatie uitvoeren elke keer dat ze zich aanmelden:
+Nadat de registratie met Azure AD Multi-Factor Authentication is voltooid, moeten de volgende negen Azure AD-beheerders rollen extra authenticatie uitvoeren elke keer dat ze zich aanmelden:
 
 - Globale beheerder
 - SharePoint-beheerder
@@ -120,7 +120,7 @@ De volgende aanvullende overwegingen zijn gerelateerd aan de implementatie van s
 
 ### <a name="authentication-methods"></a>Verificatiemethoden
 
-Met deze gratis standaard beveiligings instellingen wordt de registratie en het gebruik van Azure Multi-Factor Authentication voor het gebruik van **de Microsoft Authenticator app**met behulp van meldingen toegestaan. Voorwaardelijke toegang staat het gebruik toe van elke verificatie methode die de beheerder inschakelt.
+Met deze gratis standaard beveiligings instellingen is registratie en gebruik van Azure AD-Multi-Factor Authentication toegestaan **door alleen de Microsoft Authenticator app te gebruiken met behulp van meldingen**. Voorwaardelijke toegang staat het gebruik toe van elke verificatie methode die de beheerder inschakelt.
 
 | Methode | Standaardinstellingen voor de beveiliging | Voorwaardelijke toegang |
 | --- | --- | --- |
@@ -128,14 +128,14 @@ Met deze gratis standaard beveiligings instellingen wordt de registratie en het 
 | Verificatie code van de mobiele app of het hardware-token | X * * | X |
 | SMS-bericht naar telefoon |   | X |
 | Bellen naar telefoon |   | X |
-| App-wachtwoorden |   | X * * * |
+| App-wachtwoorden |   | X * * _ |
 
-- * * Gebruikers kunnen verificatie codes van de app Microsoft Authenticator gebruiken, maar kunnen ze alleen registreren met de meldings optie.
-- App-wacht woorden zijn alleen beschikbaar in MFA per gebruiker met verouderde verificatie scenario's als deze zijn ingeschakeld door beheerders.
+- _ * Gebruikers kunnen verificatie codes van de app Microsoft Authenticator gebruiken, maar kunnen ze alleen registreren met de meldings optie.
+- * * _ App-wacht woorden zijn alleen beschikbaar in MFA per gebruiker met verouderde verificatie scenario's indien ingeschakeld door beheerders.
 
 ### <a name="disabled-mfa-status"></a>Status van uitgeschakeld MFA
 
-Als uw organisatie een vorige gebruiker is van per gebruiker op basis van Azure Multi-Factor Authentication, wordt niet gealarmd om gebruikers met een **ingeschakelde** of **afgedwongen** status te zien als u de multi-factor Authentication-status pagina bekijkt. **Uitgeschakeld** is de juiste status voor gebruikers die gebruikmaken van de standaard instellingen voor beveiliging of Azure multi-factor Authentication op basis van voorwaardelijke toegang.
+Als uw organisatie een vorige gebruiker van Azure AD Multi-Factor Authentication op basis van een gebruiker is, wordt niet gealarmd om gebruikers in een _ *ingeschakelde** of **afgedwongen** status te zien als u de multi-factor Authentication-status pagina bekijkt. **Uitgeschakeld** is de juiste status voor gebruikers die gebruikmaken van de standaard instellingen of Azure AD-multi-factor Authentication op basis van voorwaardelijke toegang.
 
 ### <a name="conditional-access"></a>Voorwaardelijke toegang
 
@@ -149,7 +149,7 @@ Hier vindt u stapsgewijze hand leidingen over hoe u voorwaardelijke toegang kunt
 - [MFA vereisen voor Azure-beheer](../conditional-access/howto-conditional-access-policy-azure-management.md)
 - [Verouderde verificatie blokkeren](../conditional-access/howto-conditional-access-policy-block-legacy.md)
 - [MFA vereisen voor alle gebruikers](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
-- [Azure MFA-registratie vereisen](../identity-protection/howto-identity-protection-configure-mfa-policy.md) : vereist Azure AD Identity Protection onderdeel van Azure AD Premium P2.
+- [Azure AD MFA-registratie vereisen](../identity-protection/howto-identity-protection-configure-mfa-policy.md) : vereist Azure AD Identity Protection onderdeel van Azure AD Premium P2.
 
 ## <a name="enabling-security-defaults"></a>Standaard instellingen voor beveiliging inschakelen
 

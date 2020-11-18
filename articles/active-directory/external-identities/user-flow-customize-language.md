@@ -11,12 +11,12 @@ ms.date: 05/06/2020
 ms.author: mimart
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98ead87ce2bd3b4e3ffc45763aa5151168c72078
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 7cddb40a6a43c38079906699d9fa4865c4daf558
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576509"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837087"
 ---
 # <a name="language-customization-in-azure-active-directory-preview"></a>Taal aanpassing in Azure Active Directory (preview-versie)
 
@@ -146,7 +146,7 @@ Chrome en Firefox hebben beide aanvragen voor de ingestelde taal. Als het een on
 
 ## <a name="supported-languages"></a>Ondersteunde talen
 
-Azure AD biedt ondersteuning voor de volgende talen. De talen van de gebruikers stroom worden geleverd door Azure AD. De multi-factor Authentication (MFA)-meldingen talen worden door [Azure MFA](../authentication/concept-mfa-howitworks.md)verschaft.
+Azure AD biedt ondersteuning voor de volgende talen. De talen van de gebruikers stroom worden geleverd door Azure AD. De meldingen voor multi-factor Authentication (MFA) worden geleverd door [Azure AD MFA](../authentication/concept-mfa-howitworks.md).
 
 | Taal              | Taalcode | Gebruikersstromen         | MFA-meldingen  |
 |-----------------------| :-----------: | :----------------: | :----------------: |

@@ -10,16 +10,16 @@ ms.date: 06/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24eb7ac7c4490c8d27d141f6417ae157a7a9c65b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 2a79ec9a54ae597bc7e9795029dc4292c2c82345
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94646573"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836390"
 ---
 # <a name="migrate-to-cloud-authentication-using-staged-rollout-preview"></a>Migreren naar Cloud authenticatie met behulp van gefaseerde implementatie (preview-versie)
 
-Met gefaseerde implementatie kunt u groepen gebruikers selectief testen met Cloud verificatie mogelijkheden zoals Azure Multi-Factor Authentication (MFA), voorwaardelijke toegang, identiteits beveiliging voor gelekte referenties, identiteits beheer en anderen, voordat u uw domeinen knipt.  In dit artikel wordt beschreven hoe u de switch kunt maken. Voordat u begint met de gefaseerde implementatie, moet u rekening houden met de gevolgen als aan een of meer van de volgende voor waarden wordt voldaan:
+Met gefaseerde implementatie kunt u groepen gebruikers selectief testen met Cloud verificatie mogelijkheden zoals Azure AD Multi-Factor Authentication (MFA), voorwaardelijke toegang, identiteits beveiliging voor gelekte referenties, identiteits beheer en anderen, voordat u uw domeinen knipt.  In dit artikel wordt beschreven hoe u de switch kunt maken. Voordat u begint met de gefaseerde implementatie, moet u rekening houden met de gevolgen als aan een of meer van de volgende voor waarden wordt voldaan:
     
 -  U maakt momenteel gebruik van een on-premises Multi-Factor Authentication-Server. 
 -  U gebruikt Smart Cards voor verificatie. 
@@ -45,7 +45,7 @@ Bekijk voor een overzicht van de functie ' Azure Active Directory: wat is gefase
 
 -   U hebt alle toepasselijke beleids regels voor Tenant huismerk en voorwaardelijke toegang geconfigureerd die u nodig hebt voor gebruikers die worden gemigreerd naar Cloud authenticatie.
 
--   Als u van plan bent Azure Multi-Factor Authentication te gebruiken, raden we u aan om [gecombineerde registratie te gebruiken voor selfservice voor wachtwoord herstel (SSPR) en multi-factor Authentication](../authentication/concept-registration-mfa-sspr-combined.md) om ervoor te zorgen dat uw gebruikers hun verificatie methoden eenmaal registreren. Opmerking: wanneer u SSPR gebruikt om het wacht woord opnieuw in te stellen of het wacht woord te wijzigen met behulp van de MyProfile-pagina tijdens de gefaseerde implementatie, moet Azure AD Connect de nieuwe wacht woord-hash synchroniseren. Dit kan Maxi maal twee minuten duren na de reset.
+-   Als u van plan bent Azure AD Multi-Factor Authentication te gebruiken, raden we u aan om [gecombineerde registratie te gebruiken voor selfservice voor wachtwoord herstel (SSPR) en multi-factor Authentication](../authentication/concept-registration-mfa-sspr-combined.md) zodat uw gebruikers hun verificatie methoden eenmaal moeten registreren. Opmerking: wanneer u SSPR gebruikt om het wacht woord opnieuw in te stellen of het wacht woord te wijzigen met behulp van de MyProfile-pagina tijdens de gefaseerde implementatie, moet Azure AD Connect de nieuwe wacht woord-hash synchroniseren. Dit kan Maxi maal twee minuten duren na de reset.
 
 -   Als u de functie voor gefaseerde implementatie wilt gebruiken, moet u een globale beheerder zijn op uw Tenant.
 

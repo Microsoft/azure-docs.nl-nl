@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
-ms.openlocfilehash: f91928812dd2f9f850b5e4c3af16ce5c82608e05
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: baa0aa01c94c4deb35db8a59f7b4f81224ae1fd3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371049"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836985"
 ---
 # <a name="azure-active-directory-authentication-management-operations-reference-guide"></a>Naslag Gids voor verificatie beheer van Azure Active Directory
 
@@ -95,7 +95,7 @@ Wacht woorden zijn niet veilig genoeg om te voor komen dat ongeldige actors toeg
 
 ### <a name="on-premises-outage-authentication-resiliency"></a>Tolerantie van on-premises storings authenticatie
 
-Naast de voor delen van eenvoud en het inschakelen van lekkende referentie detectie, hebben Azure AD Password Hash Sync (PHS) en Azure MFA gebruikers toegang tot SaaS-toepassingen en Microsoft 365 ondanks de on-premises storingen als gevolg van Cyber aanvallen zoals [NotPetya](https://www.microsoft.com/security/blog/2018/02/05/overview-of-petya-a-rapid-cyberattack/). Het is ook mogelijk om PHS in te scha kelen in combi natie met Federatie. Als u PHS inschakelt, kan de verificatie worden teruggevallen wanneer er geen Federatie services beschikbaar zijn.
+Naast de voor delen van eenvoud en het inschakelen van lekkende referentie detectie, hebben Azure AD Password Hash Sync (PHS) en Azure AD MFA gebruikers toegang tot SaaS-toepassingen en Microsoft 365 ondanks lokale storingen als gevolg van Cyber aanvallen zoals [NotPetya](https://www.microsoft.com/security/blog/2018/02/05/overview-of-petya-a-rapid-cyberattack/). Het is ook mogelijk om PHS in te scha kelen in combi natie met Federatie. Als u PHS inschakelt, kan de verificatie worden teruggevallen wanneer er geen Federatie services beschikbaar zijn.
 
 Als uw on-premises organisatie geen strategie voor een storings tolerantie ondervindt of is die niet is geïntegreerd met Azure AD, moet u Azure AD PHS implementeren en een nood herstel plan definiëren dat PHS bevat. Als Azure AD PHS wordt ingeschakeld, kunnen gebruikers zich bij Azure AD verifiëren als uw on-premises Active Directory niet beschikbaar is.
 

@@ -16,12 +16,12 @@ ms.date: 06/09/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6db477a288ef41c2946cd550af6ff87999eff2f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2bb9d9e7c60344a2a4c538c6d3bf59e337e4569c
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91461271"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836322"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Pass-Through-verificatie Azure Active Directory: veelgestelde vragen
 
@@ -37,7 +37,7 @@ Pass-Through-verificatie is een gratis functie. U hebt geen betaalde versies van
 
 ## <a name="does-conditional-access-work-with-pass-through-authentication"></a>Werkt [voorwaardelijke toegang](../conditional-access/overview.md) met Pass-Through-verificatie?
 
-Ja. Alle mogelijkheden voor voorwaardelijke toegang, inclusief Azure Multi-Factor Authentication, werken met Pass Through-verificatie.
+Ja. Alle mogelijkheden voor voorwaardelijke toegang, inclusief Azure AD Multi-Factor Authentication, werken met Pass-Through-verificatie.
 
 ## <a name="does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname"></a>Ondersteunt Pass-Through-verificatie "alternatieve ID" als de gebruikers naam, in plaats van "userPrincipalName"?
 Ja, aanmelden met een niet-UPN-waarde, zoals een alternatieve e-mail, wordt ondersteund voor Pass-Through-verificatie (PTA) en wacht woord-hash-synchronisatie (PHS). Voor meer informatie over [alternatieve aanmeldings-id](../authentication/howto-authentication-use-email-signin.md).

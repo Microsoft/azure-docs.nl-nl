@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 155b359c109de948ab9b9d6862ef7507ee76f619
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 7ec8062eb864c877b0f3659ca2dd8f103e935071
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576809"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836781"
 ---
 # <a name="radius-authentication-with-azure-active-directory"></a>RADIUS-verificatie met Azure Active Directory
 
@@ -26,7 +26,7 @@ Remote Authentication Dial-In User Service (RADIUS) is een netwerk protocol dat 
 
 Micro soft Windows Server heeft een rol met de naam Network Policy Server (NPS), die als RADIUS-server kan fungeren en RADIUS-verificatie kan ondersteunen.
 
-Azure Active Directory (Azure AD) maakt multi-factor Authentication mogelijk met RADIUS-systemen. Als een klant Azure Multi-Factor Authentication wil Toep assen op een van de eerder genoemde RADIUS-workloads, kunnen ze de Azure Multi-Factor Authentication NPS-extensie installeren op hun Windows NPS-server. 
+Azure Active Directory (Azure AD) maakt multi-factor Authentication mogelijk met RADIUS-systemen. Als een klant Azure AD Multi-Factor Authentication wil Toep assen op een van de eerder genoemde RADIUS-workloads, kunnen ze de Azure AD Multi-Factor Authentication NPS-extensie installeren op hun Windows NPS-server. 
 
 De Windows NPS-server verifieert de referenties van een gebruiker aan de hand van Active Directory en stuurt de Multi-Factor Authentication-aanvraag vervolgens naar Azure. De gebruiker ontvangt vervolgens een uitdaging voor hun mobiele verificator. Als de client toepassing is geslaagd, mag deze verbinding maken met de service. 
 
@@ -40,30 +40,30 @@ U moet Multi-Factor Authentication toevoegen aan toepassingen zoals
 * Andere personen die afhankelijk zijn van het RADIUS-protocol om gebruikers in de service te verifiëren. 
 
 > [!NOTE]
-> In plaats van de RADIUS-en Azure Multi-Factor Authentication NPS-extensie te gebruiken voor het Toep assen van Azure Multi-Factor Authentication op VPN-workloads, raden we u aan om uw VPN om te zetten naar SAML en uw VPN rechtstreeks te verrijken met Azure AD. Dit geeft uw VPN het volledige scala van Azure AD-beveiliging, zoals voorwaardelijke toegang, Multi-Factor Authentication, apparaatcompatibiliteit en identiteits beveiliging.
+> In plaats van de RADIUS-en Azure AD Multi-Factor Authentication NPS-extensie te gebruiken voor het Toep assen van Azure AD-Multi-Factor Authentication op VPN-workloads, raden wij u aan om uw VPN om te zetten naar SAML en uw VPN rechtstreeks te verrijken met Azure AD. Dit geeft uw VPN het volledige scala van Azure AD-beveiliging, zoals voorwaardelijke toegang, Multi-Factor Authentication, apparaatcompatibiliteit en identiteits beveiliging.
 
 ![architectuur diagram](./media/authentication-patterns/radius-auth.png)
 
 
 ## <a name="components-of-the-system"></a>Onderdelen van het systeem 
 
-* **Client toepassing (VPN-client)** : stuurt verificatie aanvragen naar de RADIUS-client.
+* **Client toepassing (VPN-client)**: stuurt verificatie aanvragen naar de RADIUS-client.
 
-* **RADIUS-client** : converteert aanvragen van een client toepassing en verzendt deze naar de RADIUS-server waarop de NPS-extensie is geïnstalleerd.
+* **RADIUS-client**: converteert aanvragen van een client toepassing en verzendt deze naar de RADIUS-server waarop de NPS-extensie is geïnstalleerd.
 
-* **RADIUS-server** : maakt verbinding met Active Directory om de primaire verificatie voor de RADIUS-aanvraag uit te voeren. Wanneer dit is gelukt, wordt de aanvraag door gegeven aan de NPS-extensie voor Azure Multi-Factor Authentication.
+* **RADIUS-server**: maakt verbinding met Active Directory om de primaire verificatie voor de RADIUS-aanvraag uit te voeren. Wanneer dit is gelukt, wordt de aanvraag door gegeven aan de NPS-extensie van Azure AD Multi-Factor Authentication.
 
-* **NPS-extensie** : activeert een aanvraag voor Azure multi-factor Authentication voor een secundaire authenticatie. Als deze is geslaagd, wordt de verificatie aanvraag door de NPS-extensie voltooid door de RADIUS-server te voorzien van beveiligings tokens die Multi-Factor Authentication claim bevatten, uitgegeven door de beveiligings token service van Azure.
+* **NPS-extensie**: activeert een aanvraag voor Azure AD multi-factor Authentication voor een secundaire authenticatie. Als deze is geslaagd, wordt de verificatie aanvraag door de NPS-extensie voltooid door de RADIUS-server te voorzien van beveiligings tokens die Multi-Factor Authentication claim bevatten, uitgegeven door de beveiligings token service van Azure.
 
-* **Azure multi-factor Authentication** : communiceert met Azure AD om de details van de gebruiker op te halen en voert een secundaire verificatie uit met behulp van een verificatie methode die door de gebruiker is geconfigureerd.
+* **Azure ad multi-factor Authentication**: communiceert met Azure AD om de details van de gebruiker op te halen en voert een secundaire verificatie uit met behulp van een verificatie methode die door de gebruiker is geconfigureerd.
 
 ## <a name="implement-radius-with-azure-ad"></a>RADIUS implementeren met Azure AD 
 
-* [Azure Multi-Factor Authentication-mogelijkheden bieden met NPS](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-nps-extension) 
+* [Azure AD Multi-Factor Authentication-mogelijkheden bieden met NPS](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-nps-extension) 
 
-* [De Azure Multi-Factor Authentication NPS-extensie configureren](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-nps-extension-advanced) 
+* [De Azure AD Multi-Factor Authentication NPS-extensie configureren](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-nps-extension-advanced) 
 
-* [VPN met Azure Multi-Factor Authentication met de NPS-extensie](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-nps-extension-vpn) 
+* [VPN met Azure AD Multi-Factor Authentication de NPS-extensie gebruiken](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-nps-extension-vpn) 
 
   
 ‎ 

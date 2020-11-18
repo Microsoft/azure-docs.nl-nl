@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 12/13/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f7ed1d4c49c46673f1a1c2b5cb08b2467490acae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 498b75a6541da97e57e23465ae6eb23a6c854727
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89565116"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836951"
 ---
 # <a name="identity-data-storage-for-australian-and-new-zealand-customers-in-azure-active-directory"></a>Identiteits gegevens opslag voor Australische en Nieuw-Zeelandse klanten in Azure Active Directory
 
@@ -32,9 +32,9 @@ Voor klanten die een adres hebben ingevoerd in Australië of Nieuw-Zeeland, houd
 
 Alle andere Azure AD-Services slaan klant gegevens op in wereld wijde data centers. Als u het Data Center voor een service wilt zoeken, raadpleegt u [Azure Active Directory – waar bevinden zich uw gegevens?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located)
 
-## <a name="microsoft-azure-multi-factor-authentication-mfa"></a>Multi-factor Authentication (MFA) Microsoft Azure
+## <a name="microsoft-azure-ad-multi-factor-authentication-mfa"></a>Microsoft Azure AD Multi-Factor Authentication (MFA)
 
-Met MFA worden identiteits gegevens van klanten opgeslagen in wereld wijde data centers. Zie [azure multi-factor Authentication verzameling van gebruikers gegevens](../authentication/concept-mfa-data-residency.md)voor meer informatie over de gebruikers gegevens die worden verzameld en opgeslagen door Azure MFA en Azure MFA-server op basis van de Cloud.
+Met MFA worden identiteits gegevens van klanten opgeslagen in wereld wijde data centers. Zie [azure multi-factor Authentication verzameling van gebruikers gegevens](../authentication/concept-mfa-data-residency.md)voor meer informatie over de gebruikers gegevens die worden verzameld en opgeslagen door Azure AD MFA en Azure MFA-server op basis van de Cloud.
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie de volgende artikelen voor meer informatie over de functies en functionaliteit die hierboven worden beschreven:

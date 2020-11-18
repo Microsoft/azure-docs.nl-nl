@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: davidspo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43b883cac7b970488a30116bc06efc8663766629
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 5c4301a61a79ab2351c18af0c76cccc3d07dd202
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370199"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836679"
 ---
 # <a name="rapidly-respond-to-secure-identities-with-azure-ad"></a>Snel op beveiligde identiteiten reageren met Azure AD
 
@@ -75,7 +75,7 @@ De volgende tabel is bedoeld om de belangrijkste acties voor de volgende licenti
 
 | Aanbevolen actie | Detail |
 | --- | --- |
-| [Gecombineerde registratie-ervaring inschakelen voor Azure MFA en SSPR om de gebruikers registratie te vereenvoudigen](../authentication/howto-registration-mfa-sspr-combined.md) | Sta uw gebruikers toe om zich te registreren bij een algemene ervaring voor zowel Azure Multi-Factor Authentication als selfservice voor wachtwoord herstel. |
+| [Gecombineerde registratie-ervaring inschakelen voor Azure AD MFA en SSPR om gebruikers registratie te vereenvoudigen](../authentication/howto-registration-mfa-sspr-combined.md) | Sta uw gebruikers toe om zich te registreren bij een algemene ervaring voor zowel Azure AD Multi-Factor Authentication als selfservice voor wachtwoord herstel. |
 | [MFA-instellingen voor uw organisatie configureren](../authentication/howto-mfa-getstarted.md) | Controleren of accounts beveiligd zijn met multi-factor Authentication |
 | [Selfservice voor wachtwoordherstel inschakelen](../authentication/tutorial-enable-sspr.md) | Deze mogelijkheid vermindert helpdesk oproepen en productiviteits verlies wanneer een gebruiker zich niet kan aanmelden bij het apparaat of een toepassing |
 | Het [terugschrijven van wacht woorden implementeren](../authentication/tutorial-enable-sspr-writeback.md) (als hybride identiteiten worden gebruikt) | Toestaan dat wacht woorden worden gewijzigd in de cloud om terug te schrijven naar een on-premises Windows Server-Active Directory omgeving. |
@@ -105,11 +105,11 @@ De volgende tabel is bedoeld om de belangrijkste acties voor de volgende licenti
 
 | Aanbevolen actie | Detail |
 | --- | --- |
-| [Gecombineerde registratie-ervaring inschakelen voor Azure MFA en SSPR om de gebruikers registratie te vereenvoudigen](../authentication/howto-registration-mfa-sspr-combined.md) | Sta uw gebruikers toe om zich te registreren bij een algemene ervaring voor zowel Azure Multi-Factor Authentication als selfservice voor wachtwoord herstel. |
+| [Gecombineerde registratie-ervaring inschakelen voor Azure AD MFA en SSPR om gebruikers registratie te vereenvoudigen](../authentication/howto-registration-mfa-sspr-combined.md) | Sta uw gebruikers toe om zich te registreren bij een algemene ervaring voor zowel Azure AD Multi-Factor Authentication als selfservice voor wachtwoord herstel. |
 | [MFA-instellingen voor uw organisatie configureren](../authentication/howto-mfa-getstarted.md) | Controleren of accounts beveiligd zijn met multi-factor Authentication |
 | [Selfservice voor wachtwoordherstel inschakelen](../authentication/tutorial-enable-sspr.md) | Deze mogelijkheid vermindert helpdesk oproepen en productiviteits verlies wanneer een gebruiker zich niet kan aanmelden bij het apparaat of een toepassing |
 | Het [terugschrijven van wacht woorden implementeren](../authentication/tutorial-enable-sspr-writeback.md) (als hybride identiteiten worden gebruikt) | Toestaan dat wacht woorden worden gewijzigd in de cloud om terug te schrijven naar een on-premises Windows Server-Active Directory omgeving. |
-| [Beleid voor identiteits beveiliging inschakelen voor het afdwingen van MFA-registratie](../identity-protection/howto-identity-protection-configure-mfa-policy.md) | De implementatie van Azure Multi-Factor Authentication (MFA) beheren. |
+| [Beleid voor identiteits beveiliging inschakelen voor het afdwingen van MFA-registratie](../identity-protection/howto-identity-protection-configure-mfa-policy.md) | De implementatie van Azure AD Multi-Factor Authentication (MFA) beheren. |
 | [Gebruikers-en aanmeldings risico beleid voor identiteits beveiliging inschakelen](../identity-protection/howto-identity-protection-configure-risk-policies.md) | Gebruikers-en aanmeldings beleid voor identiteits beveiliging inschakelen. Het aanbevolen aanmeldings beleid is de aanmeldingen voor middel grote Risico's te richten en MFA verplicht te stellen. Voor gebruikers beleid moet het worden gericht op gebruikers met een hoog risico dat de actie voor het wijzigen van het wacht woord vereist. |
 | Beleid voor voorwaardelijke toegang maken en inschakelen | [MFA voor beheerders om accounts te beveiligen waaraan beheerders rechten zijn toegewezen.](../conditional-access/howto-conditional-access-policy-admin-mfa.md) <br><br> [Verouderde verificatie protocollen als gevolg van het verhoogde risico dat is gekoppeld aan verouderde verificatie protocollen.](../conditional-access/howto-conditional-access-policy-block-legacy.md) <br><br> [Vereis MFA vereist voor Azure-beheer om uw geprivilegieerde resources te beschermen door multi-factor Authentication te vereisen voor elke gebruiker die toegang probeert te krijgen tot Azure-resources.](../conditional-access/howto-conditional-access-policy-azure-management.md) |
 | [Wachtwoord-hash-synchronisatie inschakelen](../hybrid/how-to-connect-password-hash-synchronization.md) (als hybride identiteiten worden gebruikt) | Geef redundantie voor verificatie en verbeter de beveiliging (inclusief slimme vergren deling, IP-vergren deling en de mogelijkheid om gelekte referenties te detecteren). |

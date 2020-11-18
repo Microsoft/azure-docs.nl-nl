@@ -12,21 +12,21 @@ ms.topic: conceptual
 ms.date: 09/15/2020
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06900483598e1c03bd56cd8ac8c905f885012f08
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7a8b013723707c4a3a087a90674227c3d41c5108
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91395886"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836934"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Identiteits gegevens opslag voor Europese klanten in Azure Active Directory
 Identiteits gegevens worden opgeslagen door Azure AD op een geografische locatie op basis van het adres van uw organisatie bij het abonneren op een micro soft online service, zoals Microsoft 365 en Azure. Voor informatie over waar uw identiteits gegevens worden opgeslagen, kunt u de sectie [waar bevinden zich uw gegevens?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) in het micro soft vertrouwens centrum gebruiken.
 
 Voor klanten die een adres in Europa hebben geleverd, houdt Azure AD de meeste identiteits gegevens binnen de Europese data centers. Dit document bevat informatie over alle gegevens die buiten Europa door Azure AD Services zijn opgeslagen.
 
-## <a name="microsoft-azure-multi-factor-authentication"></a>Microsoft Azure Multi-Factor Authentication
+## <a name="microsoft-azure-ad-multi-factor-authentication"></a>Microsoft Azure AD Multi-Factor Authentication
 
-Voor Azure Multi-Factor Authentication in de Cloud, is verificatie voltooid in het dichtstbijzijnde Data Center voor de gebruiker. Data centers voor Azure Multi-Factor Authentication bestaan in Noord-Amerika, Europa en Azië en Stille Oceaan.
+Voor Azure AD-Multi-Factor Authentication in de Cloud, is verificatie voltooid in het dichtstbijzijnde Data Center voor de gebruiker. Data centers voor Azure AD Multi-Factor Authentication bestaan in Noord-Amerika, Europa en Azië en Stille Oceaan.
 
 * Multi-factor Authentication met telefoon gesprekken afkomstig van Amerikaanse data centers en wordt gerouteerd door wereld wijde providers.
 * Multi-factor Authentication met behulp van SMS wordt gerouteerd door globale providers.
@@ -34,7 +34,7 @@ Voor Azure Multi-Factor Authentication in de Cloud, is verificatie voltooid in h
     * Leverancierspecifieke services van apparaten, zoals Apple Push meldingen, kunnen buiten Europa zijn.
 * Multi-factor Authentication-aanvragen met OATH-codes die afkomstig zijn van EU-data centers, worden gevalideerd in de EU.
 
-Voor meer informatie over welke gebruikers gegevens worden verzameld door Azure Multi-Factor Authentication-server (MFA-server) en Azure MFA in de Cloud, Zie [azure multi-factor Authentication gebruikers gegevens verzamelen](../authentication/howto-mfa-reporting-datacollection.md).
+Zie [azure multi-factor Authentication User Data Collection](../authentication/howto-mfa-reporting-datacollection.md)(Engelstalig) voor meer informatie over welke gebruikers gegevens worden verzameld door Azure multi-factor Authentication-Server (MFA-server) en Azure AD MFA in de Cloud.
 
 ## <a name="password-based-single-sign-on-for-enterprise-applications"></a>Enkele Sign-On op basis van wacht woorden voor bedrijfs toepassingen
  

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 85bbdff2f7e67434a3e21aaf51af96c1e851eb0d
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 134148fa3ea73212d85393cc433d60f7ddeecd17
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92740191"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837121"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Aanmelden bij een virtuele Windows-machine in azure met Azure Active Directory authenticatie (preview-versie)
 
@@ -81,12 +81,12 @@ U kunt Azure AD-aanmelding inschakelen voor installatie kopieën van Windows Ser
 
 Een Windows Server 2019 Data Center-VM maken in azure met Azure AD-aanmelding: 
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com), met een account dat toegang heeft tot het maken van vm's en selecteer **+ een resource maken** .
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com), met een account dat toegang heeft tot het maken van vm's en selecteer **+ een resource maken**.
 1. Typ **Windows Server** in zoeken in de zoek balk van Marketplace.
    1. Klik op **Windows Server** en kies **Windows Server 2019 Data Center** in een vervolg keuzelijst software plan selecteren.
-   1. Klik op **maken** .
+   1. Klik op **maken**.
 1. Schakel op het tabblad beheer de optie in om u aan te **melden met Aad-referenties (preview)** onder de sectie Azure Active Directory van van **uit op aan.**
-1. Zorg ervoor dat door het **systeem toegewezen beheerde identiteit** onder het gedeelte identiteit is ingesteld op **aan** . Deze actie moet automatisch worden uitgevoerd wanneer u aanmelden met Azure AD-referenties inschakelt.
+1. Zorg ervoor dat door het **systeem toegewezen beheerde identiteit** onder het gedeelte identiteit is ingesteld op **aan**. Deze actie moet automatisch worden uitgevoerd wanneer u aanmelden met Azure AD-referenties inschakelt.
 1. Bespreek de rest van de ervaring van het maken van een virtuele machine. Tijdens dit voor beeld moet u een gebruikers naam en wacht woord voor de beheerder voor de virtuele machine maken.
 
 ![Aanmelden met Azure AD-referenties een VM maken](./media/howto-vm-sign-in-azure-ad-windows/azure-portal-login-with-azure-ad.png)
@@ -146,8 +146,8 @@ De `provisioningState` van `Succeeded` wordt weer gegeven nadat de uitbrei ding 
 
 Nu u de virtuele machine hebt gemaakt, moet u het Azure RBAC-beleid configureren om te bepalen wie zich kan aanmelden bij de virtuele machine. Er worden twee Azure-rollen gebruikt voor het autoriseren van de VM-aanmelding:
 
-- Aanmelding van de beheerder van de **virtuele machine** : gebruikers met deze rol die is toegewezen, kunnen zich aanmelden bij een virtuele Azure-machine met Administrator bevoegdheden.
-- **Gebruikers aanmelding van de virtuele machine** : gebruikers met deze rol die is toegewezen, kunnen zich aanmelden bij een virtuele Azure-machine met gewone gebruikers bevoegdheden.
+- Aanmelding van de beheerder van de **virtuele machine**: gebruikers met deze rol die is toegewezen, kunnen zich aanmelden bij een virtuele Azure-machine met Administrator bevoegdheden.
+- **Gebruikers aanmelding van de virtuele machine**: gebruikers met deze rol die is toegewezen, kunnen zich aanmelden bij een virtuele Azure-machine met gewone gebruikers bevoegdheden.
 
 > [!NOTE]
 > Als u een gebruiker wilt toestaan zich via RDP aan te melden bij de VM, moet u zich aanmelden voor de virtuele machine beheerder of de gebruiker aanmeldt bij de virtuele machine. Een Azure-gebruiker met de rol eigenaar of Inzender die is toegewezen aan een virtuele machine, is niet automatisch gemachtigd om zich aan te melden bij de virtuele machine via RDP. Zo kunt u een gecontroleerde schei ding opgeven tussen de groep personen die virtuele machines beheren en de set personen die toegang hebben tot virtuele machines.
@@ -163,8 +163,8 @@ Roltoewijzingen configureren voor uw Azure AD Windows Server 2019 Data Center-Vm
 
 1. Ga naar de pagina overzicht van specifieke virtuele machines
 1. **Toegangs beheer (IAM)** selecteren in de menu opties
-1. Selecteer **toevoegen** , **roltoewijzing toevoegen** om het deel venster roltoewijzing toevoegen te openen.
-1. Selecteer in de vervolg keuzelijst **rol** een rol, zoals aanmelding van de **virtuele machine beheerder** of **gebruikers aanmelding voor de virtuele machine** .
+1. Selecteer **toevoegen**, **roltoewijzing toevoegen** om het deel venster roltoewijzing toevoegen te openen.
+1. Selecteer in de vervolg keuzelijst **rol** een rol, zoals aanmelding van de **virtuele machine beheerder** of **gebruikers aanmelding voor de virtuele machine**.
 1. Selecteer in het veld **selecteren** een gebruiker, groep, Service-Principal of beheerde identiteit. Als u de beveiligings-principal niet in de lijst ziet staan, kunt u tekst typen in het vak **Selecteren** om te zoeken naar weergavenamen, e-mailadressen en object-id's.
 1. Selecteer **Opslaan** om de rol toe te wijzen.
 
@@ -203,7 +203,7 @@ U kunt beleid voor voorwaardelijke toegang afdwingen, zoals multi-factor Authent
 > Als u ' multi-factor Authentication vereisen ' gebruikt als Grant Access Control voor het aanvragen van toegang tot de app Azure Windows VM-aanmelding, moet u multi-factor Authentication claim opgeven als onderdeel van de client die de RDP-sessie initieert naar de doel-Windows-VM in Azure. De enige manier om dit te doen op een Windows 10-client is het gebruik van Windows hello voor bedrijven pincode of biometrische verificatie met de RDP-client. Ondersteuning voor biometrische verificatie is toegevoegd aan de RDP-client in Windows 10 versie 1809. Extern bureau blad met Windows hello voor bedrijven-verificatie is alleen beschikbaar voor implementaties die gebruikmaken van het vertrouwens model certificaat en die momenteel niet beschikbaar zijn voor het sleutel vertrouwens model.
 
 > [!WARNING]
-> Per gebruiker ingeschakeld/afgedwongen Azure Multi-Factor Authentication wordt niet ondersteund voor de aanmelding van de virtuele machine.
+> Door gebruiker ingeschakeld/afgedwongen Azure AD-Multi-Factor Authentication wordt niet ondersteund voor het aanmelden bij een virtuele machine.
 
 ## <a name="log-in-using-azure-ad-credentials-to-a-windows-vm"></a>Meld u aan met Azure AD-referenties voor een Windows-VM
 
@@ -214,7 +214,7 @@ Meld u als volgt aan bij uw virtuele Windows Server 2019-machine met Azure AD:
 
 1. Ga naar de overzichts pagina van de virtuele machine die is ingeschakeld met Azure AD-aanmelding.
 1. Selecteer **verbinding maken** om de Blade verbinding met virtuele machine maken te openen.
-1. Selecteer **RDP-bestand downloaden** .
+1. Selecteer **RDP-bestand downloaden**.
 1. Selecteer **openen** om de verbinding met extern bureaublad-client te starten.
 1. Selecteer **verbinding maken** om het dialoog venster Windows-aanmelding te starten.
 1. Meld u aan met uw Azure AD-referenties.

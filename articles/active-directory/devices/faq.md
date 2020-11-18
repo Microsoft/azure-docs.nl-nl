@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8d03b8f13a016dc21e37b82f66abc8050ef17d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77ecc23e2969ce4ce26eef7b9a3a485389d08ce0
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266779"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837104"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Veelgestelde vragen over het beheer van apparaten Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "89266779"
 **A:** Windows 10-apparaten die zijn toegevoegd aan hybride Azure AD worden niet weer gegeven onder **gebruikers apparaten**.
 Gebruik de weer gave **alle apparaten** in de Azure Portal. U kunt ook een Power shell [Get-MsolDevice-](/powershell/module/msonline/get-msoldevice?view=azureadps-1.0) cmdlet gebruiken.
 
-Onder **gebruikers apparaten**worden alleen de volgende apparaten weer gegeven:
+Onder **gebruikers apparaten** worden alleen de volgende apparaten weer gegeven:
 
 - Alle persoonlijke apparaten die geen lid zijn van hybride Azure AD. 
 - Alle niet-Windows 10-of Windows Server 2016-apparaten.
@@ -198,7 +198,7 @@ UPN-wijzigingen worden ondersteund met update voor Windows 10 2004. Gebruikers o
 
 ---
 
-### <a name="q-why-dont-some-of-my-users-get-azure-multi-factor-authentication-prompts-on-azure-ad-joined-devices"></a>V: Waarom worden sommige van mijn gebruikers geen Azure-Multi-Factor Authentication vragen over apparaten die zijn toegevoegd aan Azure AD?
+### <a name="q-why-dont-some-of-my-users-get-azure-ad-multi-factor-authentication-prompts-on-azure-ad-joined-devices"></a>V: waarom krijgen sommige van mijn gebruikers geen vragen over Azure AD-Multi-Factor Authentication op gekoppelde apparaten van Azure AD?
 
 **A:** Een gebruiker kan een apparaat toevoegen aan of registreren bij Azure AD met behulp van Multi-Factor Authentication. Het apparaat wordt dan zelf een betrouw bare tweede factor voor die gebruiker. Wanneer dezelfde gebruiker zich aanmeldt bij het apparaat en een toepassing opent, beschouwt Azure AD het apparaat als een tweede factor. Hiermee kan die gebruiker naadloos toegang krijgen tot toepassingen zonder extra Multi-Factor Authentication prompts. 
 
@@ -291,7 +291,7 @@ UPN-wijzigingen worden ondersteund met update voor Windows 10 2004. Gebruikers o
 
 **Één** 
 - Voor Windows 10 geregistreerde Azure ad-apparaten gaat u naar **instellingen**  >  **accounts**  >  **toegang tot werk of school**. Selecteer uw account en selecteer **verbinding verbreken**. Apparaatregistratie is per gebruikers profiel in Windows 10.
-- Voor IOS en Android kunt u het apparaat voor de Microsoft Authenticator toepassings **instellingen**gebruiken en de registratie  >  **Device Registration** **van apparaat**opheffen selecteren.
+- Voor IOS en Android kunt u het apparaat voor de Microsoft Authenticator toepassings **instellingen** gebruiken en de registratie  >  **Device Registration** **van apparaat** opheffen selecteren.
 - Voor macOS kunt u de Microsoft Intune Bedrijfsportal toepassing gebruiken om de inschrijving van het apparaat bij beheer ongedaan te maken en alle registraties te verwijderen. 
 
 ---

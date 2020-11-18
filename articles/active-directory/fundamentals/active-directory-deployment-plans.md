@@ -12,12 +12,12 @@ ms.date: 08/20/2019
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acd2f49f009a8bd71d8cfc9f442e579bb1ad396b
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: c2a7c2813919321227bfcdc4ee43ca15186b89df
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371882"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836815"
 ---
 # <a name="azure-active-directory-deployment-plans"></a>Azure Active Directory-implementatieplannen
 Zoekt u end-to-end-richt lijnen voor het implementeren van Azure Active Directory (Azure AD)-mogelijkheden? Met Azure AD-implementatie plannen kunt u de bedrijfs waarde, plannings overwegingen en operationele procedures door lopen die nodig zijn om algemene Azure AD-mogelijkheden te implementeren.
@@ -40,13 +40,13 @@ Rollen kunnen de volgende zijn:
 
 **De mate van betrokkenheid kan het volgende omvatten:**
 
-- **R**esponsible voor het implementeren van het project plan en de resultaten 
+- **R** esponsible voor het implementeren van het project plan en de resultaten 
 
-- **Een**Pproval van het project plan en het resultaat 
+- **Een** Pproval van het project plan en het resultaat 
 
-- **C**ontributor naar plan en resultaat van project 
+- **C** ontributor naar plan en resultaat van project 
 
-- **Ik**nformed van het project plan en de resultaten
+- **Ik** nformed van het project plan en de resultaten
 
 
 ## <a name="best-practices-for-a-pilot"></a>Aanbevolen procedures voor een pilot
@@ -61,7 +61,7 @@ Het uitbreiden van de implementatie naar grotere groepen gebruikers moet worden 
 
 | Mogelijkheid | Beschrijving|
 | -| -|
-| [Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)| Azure Multi-Factor Authentication (MFA) is een Microsoft-oplossing voor verificatie in twee stappen. Met behulp van door een beheerder goedgekeurde verificatiemethoden, helpt Azure MFA met het beveiligen van de toegang tot uw gegevens en toepassingen, terwijl tegelijkertijd aan de behoefte aan een eenvoudige aanmeldingsprocedure wordt voldaan. |
+| [Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)| Azure AD Multi-Factor Authentication (MFA) is de verificatie oplossing in twee stappen van micro soft. Met door de beheerder goedgekeurde verificatie methoden helpt Azure AD MFA de toegang tot uw gegevens en toepassingen te beschermen terwijl de vraag naar een eenvoudig aanmeldings proces beantwoordt. |
 | [Voorwaardelijke toegang](../conditional-access/plan-conditional-access.md)| Met voorwaardelijke toegang kunt u geautomatiseerde beslissingen voor toegangsbeheer implementeren voor wie toegang heeft tot uw cloud-apps op basis van voorwaarden. |
 | [Self-service voor wachtwoord opnieuw instellen](../authentication/howto-sspr-deployment.md)| Met selfservice voor wachtwoord herstel kunnen uw gebruikers hun wacht woord opnieuw instellen zonder tussen komst van de beheerder, wanneer en wanneer dat nodig is. |
 | [Zonder wachtwoord](../authentication/howto-authentication-passwordless-deployment.md) | Implementeer verificatie op basis van een wacht woord met behulp van de Microsoft Authenticator app-of FIDO2-beveiligings sleutels in uw organisatie |
@@ -71,7 +71,7 @@ Het uitbreiden van de implementatie naar grotere groepen gebruikers moet worden 
 | Mogelijkheid | Beschrijving|
 | -| - |
 | [Eenmalige aanmelding](../manage-apps/plan-sso-deployment.md)| Met eenmalige aanmelding kunnen uw gebruikers toegang krijgen tot de apps en bronnen die ze nodig hebben om zaken te doen terwijl ze zich slechts één keer aanmelden. Nadat ze zich hebben aangemeld, kunnen ze van Microsoft Office naar Sales Force naar interne toepassingen gaan zonder dat ze een tweede keer referenties hoeven in te voeren. |
-| [Toegangs venster](../manage-apps/access-panel-deployment-plan.md)| Bied uw gebruikers een eenvoudige hub voor de detectie van en toegang tot al hun toepassingen. Stel hen in staat om productiever te zijn met selfservice mogelijkheden, zoals het aanvragen van toegang tot apps en groepen, of het beheren van toegang tot resources namens anderen. |
+| [Toegangsvenster](../manage-apps/access-panel-deployment-plan.md)| Bied uw gebruikers een eenvoudige hub voor de detectie van en toegang tot al hun toepassingen. Stel hen in staat om productiever te zijn met selfservice mogelijkheden, zoals het aanvragen van toegang tot apps en groepen, of het beheren van toegang tot resources namens anderen. |
 | [Apparaten](../devices/plan-device-deployment.md) | Dit artikel helpt u bij het evalueren van de methoden om uw apparaat te integreren met Azure AD, het implementatie plan te kiezen en de belangrijkste koppelingen naar ondersteunde hulpprogram ma's voor Apparaatbeheer. |
 
 
@@ -88,7 +88,7 @@ Het uitbreiden van de implementatie naar grotere groepen gebruikers moet worden 
 
 | Mogelijkheid | Beschrijving|
 | -| -|
-| [Gebruikers inrichten](../app-provisioning/plan-auto-user-provisioning.md)| Met Azure AD kunt u het maken, onderhouden en verwijderen van gebruikers-id's in cloud(SaaS)-toepassingen als Dropbox, Salesforce, ServiceNow en andere, automatiseren. |
+| [Inrichten van gebruikers](../app-provisioning/plan-auto-user-provisioning.md)| Met Azure AD kunt u het maken, onderhouden en verwijderen van gebruikers-id's in cloud(SaaS)-toepassingen als Dropbox, Salesforce, ServiceNow en andere, automatiseren. |
 | [Gebruikers inrichten in de Cloud](../app-provisioning/plan-cloud-hr-provision.md)| Cloud HR-gebruikers die zich richten op Active Directory, maken een basis voor het aanhouden van identiteits beheer en verbeteren de kwaliteit van bedrijfs processen die afhankelijk zijn van gezaghebbende identiteits gegevens. Met behulp van deze functie in uw Cloud-HR-product, zoals workday of Successfactors, kunt u de identiteits levenscyclus van werk nemers en voorwaardelijke werk nemers naadloos beheren door regels te configureren die zijn toegewezen aan processen voor het inrichtings proces (zoals maken, inschakelen, uitschakelen). |
 
 ## <a name="deploy-governance-and-reporting"></a>Governance en rapportage implementeren

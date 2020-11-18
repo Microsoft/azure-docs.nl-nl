@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7aebe6fafea7cbbb0b37469a13262529b568e342
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 92d1e5b8ac6492b0b1d819431e4616d32a092cc8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077962"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836917"
 ---
 # <a name="azure-active-directory-feature-deployment-guide"></a>Implementatiehandleiding voor Azure Active Directory-functies
 
@@ -57,7 +57,7 @@ In deze fase scha kelen beheerders basis beveiligings functies in om een beter b
 | [Azure AD-Multi-Factor Authentication implementeren met behulp van beleid voor voorwaardelijke toegang](../authentication/howto-mfa-getstarted.md) | Gebruikers verplichten verificatie in twee stappen uit te voeren bij het openen van gevoelige toepassingen die gebruikmaken van het beleid voor voorwaardelijke toegang. | Azure AD Premium P1 |
 | [Azure Active Directory Identity Protection inschakelen](../identity-protection/overview-identity-protection.md) | Tracering inschakelen van Risk ante aanmeldingen en aangetaste referenties voor gebruikers in uw organisatie. | Azure AD Premium P2 |
 | [Risico detecties gebruiken om multi-factor Authentication-en wachtwoord wijzigingen te activeren](../authentication/tutorial-risk-based-sspr-mfa.md) | Schakel automatisering in die gebeurtenissen zoals multi-factor Authentication, het opnieuw instellen van wacht woorden en het blok keren van aanmeldingen kan activeren op basis van risico. | Azure AD Premium P2 |
-| [Gecombineerde registratie inschakelen voor Self-service voor wachtwoord herstel en Azure AD Multi-Factor Authentication](../authentication/concept-registration-mfa-sspr-combined.md) | Sta uw gebruikers toe om zich te registreren bij een algemene ervaring voor zowel Azure Multi-Factor Authentication als selfservice voor wachtwoord herstel. | Azure AD Premium P1 |
+| [Gecombineerde registratie inschakelen voor Self-service voor wachtwoord herstel en Azure AD Multi-Factor Authentication](../authentication/concept-registration-mfa-sspr-combined.md) | Sta uw gebruikers toe om zich te registreren bij een algemene ervaring voor zowel Azure AD Multi-Factor Authentication als selfservice voor wachtwoord herstel. | Azure AD Premium P1 |
 
 ## <a name="phase-2-import-users-enable-synchronization-and-manage-devices"></a>Fase 2: gebruikers importeren, synchronisatie inschakelen en apparaten beheren
 

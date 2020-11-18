@@ -16,12 +16,12 @@ ms.date: 07/19/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e794b66341d4e7c478fd526107cc35c7c745fa7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe92f761ac0b16da7c3cc3c69c1fa4b00f4e7579
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85358324"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836356"
 ---
 # <a name="azure-active-directory-pass-through-authentication-technical-deep-dive"></a>Pass-Through-verificatie Azure Active Directory: technische grondige kennis
 Dit artikel bevat een overzicht van de werking van de Pass-Through-verificatie van Azure Active Directory (Azure AD). Zie het artikel over de [grondige beveiliging](how-to-connect-pta-security-deep-dive.md) voor meer informatie.
@@ -43,7 +43,7 @@ Wanneer een gebruiker zich probeert aan te melden bij een toepassing die is beve
 8. De agent valideert de gebruikers naam en het wacht woord voor Active Directory door gebruik te maken van standaard Windows-Api's. Dit is een vergelijkbaar mechanisme voor wat Active Directory Federation Services (AD FS) gebruikt. De gebruikers naam kan de on-premises standaard gebruikersnaam zijn, meestal `userPrincipalName` of een ander kenmerk dat is geconfigureerd in azure AD Connect (ook wel bekend als `Alternate ID` ).
 9. De on-premises Active Directory domein controller (DC) evalueert de aanvraag en retourneert de juiste reactie (geslaagd, mislukt, wacht woord verlopen of gebruiker vergrendeld) bij de agent.
 10. De verificatie agent retourneert op zijn beurt deze reactie terug naar Azure AD.
-11. Azure AD evalueert het antwoord en reageert indien nodig op de gebruiker. Azure AD ondertekent bijvoorbeeld de gebruiker onmiddellijk of aanvragen voor Azure Multi-Factor Authentication.
+11. Azure AD evalueert het antwoord en reageert indien nodig op de gebruiker. Azure AD ondertekent bijvoorbeeld de gebruiker onmiddellijk of aanvragen voor Azure AD-Multi-Factor Authentication.
 12. Als de gebruiker zich aanmeldt, heeft de gebruiker toegang tot de toepassing.
 
 In het volgende diagram ziet u alle onderdelen en de daarbij behorende stappen:

@@ -13,12 +13,12 @@ ms.date: 05/29/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f717e14e5abe62aafffdeef841889ea2458fa8b
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 5374dc2ef4c736535b218d8cd67521e83a24a40b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413442"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836458"
 ---
 # <a name="how-azure-ad-delivers-cloud-governed-management-for-on-premises-workloads"></a>Hoe Azure AD onderhevige beheer van de Cloud biedt voor on-premises workloads
 
@@ -39,7 +39,7 @@ Dit artikel bevat een overzicht van de strategie van micro soft voor hybride IDa
 
 ## <a name="the-azure-ad-approach-to-cloud-governed-identity-management"></a>De Azure AD-benadering van de Cloud Identity Management
 
-Als organisaties overstappen op de Cloud, hebben ze een garantie dat ze over de volledige omgeving beschikken over een betere beveiliging en meer inzicht in activiteiten, ondersteund door Automation en proactieve inzichten. "Door de **Cloud bestuurd beheer** " beschrijft hoe organisaties hun gebruikers, toepassingen, groepen en apparaten vanuit de Cloud beheren en regelen.
+Als organisaties overstappen op de Cloud, hebben ze een garantie dat ze over de volledige omgeving beschikken over een betere beveiliging en meer inzicht in activiteiten, ondersteund door Automation en proactieve inzichten. "Door de **Cloud bestuurd beheer**" beschrijft hoe organisaties hun gebruikers, toepassingen, groepen en apparaten vanuit de Cloud beheren en regelen.
 
 In deze moderne wereld moeten organisaties op schaal effectief kunnen beheren vanwege de verspreiding van SaaS-toepassingen en de toenemende rol van samen werking en externe identiteiten. Het nieuwe risico landschap van de Cloud betekent dat een organisatie meer responsief moet zijn: een schadelijke actor die een Cloud gebruiker in gevaar brengt, kan invloed hebben op de Cloud-en on-premises toepassingen.
 
@@ -89,7 +89,7 @@ Wanneer een organisatie klaar is om een AD-geïntegreerde toepassing naar de clo
 
 ## <a name="cloud-governed-management-for-on-premises-federation-based-applications"></a>Beheer van de Cloud voor on-premises Federatie toepassingen
 
-Voor een organisatie die al gebruikmaakt van een on-premises ID-provider, kunt u met het verplaatsen van toepassingen naar Azure AD meer beveiligde toegang en een eenvoudiger beheer ervaring voor Federatie beheer. Met Azure AD kunt u nauw keurige toegangs controles per toepassing, waaronder Azure Multi-Factor Authentication, configureren met behulp van voorwaardelijke toegang van Azure AD. Azure AD biedt ondersteuning voor meer mogelijkheden, waaronder toepassingsspecifieke token handtekening certificaten en verval datums van Configureer bare certificaten. Met deze mogelijkheden, hulpprogram ma's en richt lijnen kunnen organisaties hun on-premises id-providers buiten gebruik stellen. Voor één voor beeld heeft micro soft de 17.987-toepassingen verplaatst van de interne Active Directory Federation Services (AD FS) van micro soft naar Azure AD.
+Voor een organisatie die al gebruikmaakt van een on-premises ID-provider, kunt u met het verplaatsen van toepassingen naar Azure AD meer beveiligde toegang en een eenvoudiger beheer ervaring voor Federatie beheer. Met Azure AD kunt u gedetailleerdere toegangs controles per toepassing, waaronder Azure AD Multi-Factor Authentication, configureren met behulp van voorwaardelijke toegang van Azure AD. Azure AD biedt ondersteuning voor meer mogelijkheden, waaronder toepassingsspecifieke token handtekening certificaten en verval datums van Configureer bare certificaten. Met deze mogelijkheden, hulpprogram ma's en richt lijnen kunnen organisaties hun on-premises id-providers buiten gebruik stellen. Voor één voor beeld heeft micro soft de 17.987-toepassingen verplaatst van de interne Active Directory Federation Services (AD FS) van micro soft naar Azure AD.
 
 ![Ontwikkeling van Azure AD](media/cloud-governed-management-for-on-premises/image5.png)
 
@@ -111,7 +111,7 @@ Organisaties kunnen het toegangs levenscyclus proces automatiseren via technolog
 
 ## <a name="future-directions"></a>Volgende richting
 
-In hybride omgevingen is de strategie van micro soft om implementaties in te scha kelen waarbij de **Cloud het besturings vlak voor identiteits** -en on-premises directory's en andere identiteits systemen, zoals Active Directory en andere on-premises toepassingen, het doel is voor het inrichten van gebruikers met toegang. Deze strategie blijft de rechten, identiteiten en toegang tot de toepassingen en werk belastingen die hiervan afhankelijk zijn, blijven waarborgen. In deze eind toestand kunnen organisaties de productiviteit van eind gebruikers volledig vanuit de Cloud doen.
+In hybride omgevingen is de strategie van micro soft om implementaties in te scha kelen waarbij de **Cloud het besturings vlak voor identiteits**-en on-premises directory's en andere identiteits systemen, zoals Active Directory en andere on-premises toepassingen, het doel is voor het inrichten van gebruikers met toegang. Deze strategie blijft de rechten, identiteiten en toegang tot de toepassingen en werk belastingen die hiervan afhankelijk zijn, blijven waarborgen. In deze eind toestand kunnen organisaties de productiviteit van eind gebruikers volledig vanuit de Cloud doen.
 
 ![Azure AD-architectuur](media/cloud-governed-management-for-on-premises/image6.png)
 

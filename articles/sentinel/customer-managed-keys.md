@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/12/2020
 ms.author: yelevin
-ms.openlocfilehash: ecb4203c822f5b72068e11d0ad4b988d294aab0d
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: bd85936c86656a8ae59a04ccdf53a62bd852368f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427051"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655269"
 ---
 # <a name="set-up-azure-sentinel-customer-managed-key"></a>Door de klant beheerde sleutel met Azure-Sentinel instellen
 
@@ -59,7 +59,7 @@ Voer de volgende stappen uit om CMK in te richten:
 
 ### <a name="step-1-create-an-azure-key-vault-and-storing-key"></a>STAP 1: een Azure Key Vault maken en een sleutel opslaan
 
-1.  [Maak Azure Key Vault resource](https://docs.microsoft.com/azure-stack/user/azure-stack-key-vault-manage-portal)en Genereer of importeer een sleutel die moet worden gebruikt voor gegevens versleuteling.
+1.  [Maak Azure Key Vault resource](/azure-stack/user/azure-stack-key-vault-manage-portal)en Genereer of importeer een sleutel die moet worden gebruikt voor gegevens versleuteling.
     > [!NOTE]
     >  Azure Key Vault moet worden geconfigureerd als herstel bare voor het beveiligen van uw sleutel en de toegang.
 
@@ -132,6 +132,5 @@ Als u dezelfde sleutel gebruikt in azure Sentinel en in Log Analytics, is het no
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u een door de klant beheerde sleutel instelt in azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
-- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats.md).
+- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](./tutorial-detect-threats-built-in.md).
 - [Gebruik werkmappen](tutorial-monitor-your-data.md) om uw gegevens te bewaken.
-

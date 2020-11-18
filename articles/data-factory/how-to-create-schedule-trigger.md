@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/30/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 0f147a317b16a4a581fad18bd48dbd38059e9a8c
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: a6f53d6ce41085b2348857ccb5b45c06132d6a99
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146039"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655456"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Een trigger maken waarmee een pijp lijn volgens een planning wordt uitgevoerd
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -38,35 +38,35 @@ U kunt een **schema trigger** maken om een pijp lijn te plannen die regel matig 
 
     ![Naar het tabblad Bewerken gaan](./media/how-to-create-schedule-trigger/switch-edit-tab.png)
 
-1. Selecteer **activeren** in het menu en selecteer vervolgens **Nieuw/bewerken** . 
+1. Selecteer **activeren** in het menu en selecteer vervolgens **Nieuw/bewerken**. 
 
     ![Menu Nieuwe trigger](./media/how-to-create-schedule-trigger/new-trigger-menu.png)
 
-1. Selecteer op de pagina **triggers toevoegen** de optie **trigger kiezen...** en selecteer **+ Nieuw** . 
+1. Selecteer op de pagina **triggers toevoegen** de optie **trigger kiezen...** en selecteer **+ Nieuw**. 
 
     ![Triggers toevoegen - nieuwe trigger](./media/how-to-create-schedule-trigger/add-trigger-new-button.png)
 
 1. Voer op de pagina **nieuwe trigger** de volgende stappen uit: 
 
-    1. Controleer of het **schema** is geselecteerd voor het **type** .
+    1. Controleer of het **schema** is geselecteerd voor het **type**.
     1. Geef de begin datum/tijd van de trigger op voor de **Start** tijd. Deze wordt standaard ingesteld op de huidige datum/tijd in Coordinated Universal Time (UTC).
-    1. Geef de tijd zone op waarin de trigger wordt gemaakt. De tijd zone-instelling is van toepassing op de **begin datum** , **eind datum** en het **plannen van uitvoerings tijden** in geavanceerde terugkeer opties. Als u de instelling voor de tijd zone wijzigt, wordt de begin datum niet automatisch gewijzigd. Controleer of de begin datum juist is in de opgegeven tijd zone
+    1. Geef de tijd zone op waarin de trigger wordt gemaakt. De tijd zone-instelling is van toepassing op de **begin datum**, **eind datum** en het **plannen van uitvoerings tijden** in geavanceerde terugkeer opties. Als u de instelling voor de tijd zone wijzigt, wordt de begin datum niet automatisch gewijzigd. Zorg ervoor dat de begin datum in de opgegeven tijd zone juist is. Houd er rekening mee dat de geplande uitvoerings tijd van de trigger wordt beschouwd als de begin datum (Controleer of de begin datum ten minste 1minute lager is dan de uitvoerings tijd, anders wordt de pijp lijn geactiveerd tijdens het volgende terugkeer patroon). 
 
         > [!NOTE]
         > Voor tijd zones die in de zomer-en winter tijd worden geobserveerd, wordt het tijdstip waarop de activering wordt uitgevoerd, automatisch aangepast. Als u zich wilt afmelden bij de zomer-en winter wijzigingen, selecteert u een tijd zone die niet wordt ondersteund voor zomer-en winter-opslag, bijvoorbeeld UTC
 
     1. Geef het **terugkeer patroon** voor de trigger op. Selecteer een van de waarden in de vervolg keuzelijst (elke minuut, elk uur, dagelijks, wekelijks en maandelijks). Voer de vermenigvuldiger in het tekstvak in. Bijvoorbeeld, als u wilt dat de trigger elke 15 minuten eenmaal wordt uitgevoerd, selecteert u **elke minuut** en voert u **15** in het tekstvak in. 
-    1. Als u een eind datum wilt opgeven, selecteert u **een eind datum opgeven** en geeft u _eindigt op op_ . Selecteer vervolgens **OK** . Er zijn kosten gekoppeld aan elke uitvoering van de pijplijn. Als u wilt testen, kunt u ervoor zorgen dat de pijp lijn slechts een paar keer wordt geactiveerd. Zorg er echter wel voor dat er voldoende tijd is om de pijplijn uit te voeren tussen de publicatietijd en de eindtijd. De trigger gaat pas van kracht nadat u de oplossing hebt gepubliceerd in Data Factory, niet wanneer u de trigger opslaat in de UI.
+    1. Als u een eind datum wilt opgeven, selecteert u **een eind datum opgeven** en geeft u _eindigt op op_. Selecteer vervolgens **OK**. Er zijn kosten gekoppeld aan elke uitvoering van de pijplijn. Als u wilt testen, kunt u ervoor zorgen dat de pijp lijn slechts een paar keer wordt geactiveerd. Zorg er echter wel voor dat er voldoende tijd is om de pijplijn uit te voeren tussen de publicatietijd en de eindtijd. De trigger gaat pas van kracht nadat u de oplossing hebt gepubliceerd in Data Factory, niet wanneer u de trigger opslaat in de UI.
 
         ![Triggerinstellingen](./media/how-to-create-schedule-trigger/trigger-settings-01.png)
 
         ![Trigger instellingen voor eind datum](./media/how-to-create-schedule-trigger/trigger-settings-02.png)
 
-1. Selecteer in het venster **nieuwe trigger** **Ja** in de optie **geactiveerd** en selecteer vervolgens **OK** . U kunt dit selectie vakje gebruiken om de trigger later te deactiveren. 
+1. Selecteer in het venster **nieuwe trigger** **Ja** in de optie **geactiveerd** en selecteer vervolgens **OK**. U kunt dit selectie vakje gebruiken om de trigger later te deactiveren. 
 
     ![Triggerinstellingen - knop Volgende](./media/how-to-create-schedule-trigger/trigger-settings-next.png)
 
-1. Bekijk in het venster **nieuwe trigger** het waarschuwings bericht en selecteer vervolgens **OK** .
+1. Bekijk in het venster **nieuwe trigger** het waarschuwings bericht en selecteer vervolgens **OK**.
 
     ![Triggerinstellingen - knop Voltooien](./media/how-to-create-schedule-trigger/new-trigger-finish.png)
 
@@ -125,16 +125,16 @@ In deze sectie wordt beschreven hoe u Azure PowerShell kunt gebruiken om een pla
     In het JSON-code fragment:
     - Het element **type** van de trigger is ingesteld op ' ScheduleTrigger '.
     - Het element **Frequency** wordt ingesteld op ' minuut ' en het **interval** element is ingesteld op 15. Als zodanig voert de trigger de pijp lijn elke 15 minuten tussen de begin-en eind tijd.
-    - Het element **time** zone specificeert de tijd zones waarin de trigger is gemaakt. Deze instelling is van invloed op **StartTime** en **EndTime** .
+    - Het element **time** zone specificeert de tijd zones waarin de trigger is gemaakt. Deze instelling is van invloed op **StartTime** en **EndTime**.
     - Het element **EndTime** is één uur na de waarde van het element **StartTime** . Als zodanig voert de trigger de pijp lijn 15 minuten, 30 minuten en 45 minuten na de begin tijd. Vergeet niet om de begin tijd bij te werken naar de huidige UTC-tijd en de eind tijd op één uur na de begin tijd. 
 
         > [!IMPORTANT]
-        > Voor UTC-tijd zone moet de startTime en endTime de notatie ' JJJJ-MM-DDTuu: mm: SS **Z** ' hebben, terwijl voor andere tijd zones, StartTime en EndTime ' jjjj-mm-ddTuu: mm: SS ' volgen. 
+        > Voor UTC-tijd zone moet de startTime en endTime de notatie ' JJJJ-MM-DDTuu: mm: SS **Z**' hebben, terwijl voor andere tijd zones, StartTime en EndTime ' jjjj-mm-ddTuu: mm: SS ' volgen. 
         > 
         > Per ISO 8601-standaard, het _Z_ -achtervoegsel van de tijds tempel Markeer de datum/tijd in UTC-tijd zone en het veld tijd zone weer geven onbruikbaar. Hoewel er geen _Z_ -ACHTERVOEGSEL voor UTC-tijd zone ontbreekt, resulteert dit in een fout tijdens de _Activering_ van de trigger.
 
     - De trigger is gekoppeld aan de **Adfv2QuickStartPipeline** -pijp lijn. Voeg meer **pipelineReference** -secties toe om meerdere pijp lijnen aan een trigger te koppelen.
-    - De pijp lijn in de Quick Start heeft twee **parameter** waarden: **inputPath** en **outputPath** . En u geeft waarden voor deze para meters door vanuit de trigger.
+    - De pijp lijn in de Quick Start heeft twee **parameter** waarden: **inputPath** en **outputPath**. En u geeft waarden voor deze para meters door vanuit de trigger.
 
 1. Een trigger maken met behulp van de cmdlet **set-AzDataFactoryV2Trigger** :
 
@@ -287,7 +287,7 @@ Zie [pijplijn uitvoeringen controleren](quickstart-create-data-factory-resource-
 U kunt een Azure Resource Manager-sjabloon gebruiken om een trigger te maken. Zie [een Azure-Data Factory maken met behulp van een resource manager-sjabloon](quickstart-create-data-factory-resource-manager-template.md)voor stapsgewijze instructies.  
 
 ## <a name="pass-the-trigger-start-time-to-a-pipeline"></a>Start tijd van trigger door geven aan een pijp lijn
-Azure Data Factory versie 1 ondersteunt het lezen of schrijven van gepartitioneerde gegevens met behulp van de systeem variabelen: **slice start** , **SliceEnd** , **WindowStart** en **WindowEnd** . In de huidige versie van Azure Data Factory kunt u dit gedrag doen met behulp van een pijplijn parameter. De begin tijd en de geplande tijd voor de trigger worden ingesteld als de waarde voor de pijplijn parameter. In het volgende voor beeld wordt de geplande tijd voor de trigger door gegeven als een waarde voor de pijplijn **scheduledRunTime** para meter:
+Azure Data Factory versie 1 ondersteunt het lezen of schrijven van gepartitioneerde gegevens met behulp van de systeem variabelen: **slice start**, **SliceEnd**, **WindowStart** en **WindowEnd**. In de huidige versie van Azure Data Factory kunt u dit gedrag doen met behulp van een pijplijn parameter. De begin tijd en de geplande tijd voor de trigger worden ingesteld als de waarde voor de pijplijn parameter. In het volgende voor beeld wordt de geplande tijd voor de trigger door gegeven als een waarde voor de pijplijn **scheduledRunTime** para meter:
 
 ```json
 "parameters": {
@@ -343,7 +343,7 @@ De volgende JSON-definitie laat zien hoe u een plannings trigger maakt met plann
 ```
 
 > [!IMPORTANT]
->  De eigenschap **parameters** is een verplichte eigenschap van het element **pijplijnen** . Als de pijplijn geen parameters aanneemt, dient u een lege JSON-definitie op te nemen voor de eigenschap **parameters** .
+>  De eigenschap **parameters** is een verplichte eigenschap van het element **pijplijnen**. Als de pijplijn geen parameters aanneemt, dient u een lege JSON-definitie op te nemen voor de eigenschap **parameters**.
 
 
 ### <a name="schema-overview"></a>Schema-overzicht
@@ -351,16 +351,16 @@ De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die 
 
 | JSON-eigenschap | Beschrijving |
 |:--- |:--- |
-| **startTime** | Een datum/tijdwaarde. Voor eenvoudige schema's is de waarde **startTime** van toepassing op de eerste gebeurtenis. In complexe schema's begint de trigger niet eerder dan de opgegeven waarde voor **startTime** . <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
+| **startTime** | Een datum/tijdwaarde. Voor eenvoudige schema's is de waarde **startTime** van toepassing op de eerste gebeurtenis. In complexe schema's begint de trigger niet eerder dan de opgegeven waarde voor **startTime**. <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
 | **endTime** | De einddatum en -tijd voor de trigger. De trigger wordt na de opgegeven einddatum en -tijd niet uitgevoerd. De waarde voor de eigenschap kan niet in het verleden liggen. Deze eigenschap is optioneel.  <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
-| **Tijd zone** | De tijd zone waarin de trigger wordt gemaakt. Deze instelling heeft invloed op **StartTime** , **EndTime** en **Schedule** . [Lijst met ondersteunde tijd zones](#time-zone-option) weer geven |
-| **optreden** | Een recurrence-object bepaalt de regels voor het terugkeerpatroon van de trigger. Het recurrence-object ondersteunt de elementen **frequency** , **interval** , **endTime** , **count** en **schedule** . Als een recurrence-object wordt gedefinieerd, is het element **frequency** vereist. De overige elementen van het recurrence-object zijn optioneel. |
+| **Tijd zone** | De tijd zone waarin de trigger wordt gemaakt. Deze instelling heeft invloed op **StartTime**, **EndTime** en **Schedule**. [Lijst met ondersteunde tijd zones](#time-zone-option) weer geven |
+| **optreden** | Een recurrence-object bepaalt de regels voor het terugkeerpatroon van de trigger. Het recurrence-object ondersteunt de elementen **frequency**, **interval**, **endTime**, **count** en **schedule**. Als een recurrence-object wordt gedefinieerd, is het element **frequency** vereist. De overige elementen van het recurrence-object zijn optioneel. |
 | **ingang** | Hiermee geeft u de frequentie aan waarmee de trigger wordt uitgevoerd. De ondersteunde waarden omvatten 'minuut', 'uur', 'dag', 'week' en 'maand'. |
 | **bereik** | Een positief geheel getal dat het interval voor de waarde **frequency** aangeeft. Het bepaalt hoe vaak de trigger wordt uitgevoerd. Als **interval** bijvoorbeeld 3 is en **frequency** 'week', dan wordt de trigger elke 3 weken uitgevoerd. |
 | **planning** | Het terugkeerschema voor de trigger. Een trigger met een opgegeven waarde voor **frequency** wijzigt het terugkeerpatroon op basis van een terugkeerschema. De eigenschap **property** bevat wijzigingen voor het terugkeerpatroon en zijn gebaseerd op minuten, uren, weekdagen, maanddagen en weeknummer.
 
 > [!IMPORTANT]
-> Voor UTC-tijd zone moet de startTime en endTime de notatie ' JJJJ-MM-DDTuu: mm: SS **Z** ' hebben, terwijl voor andere tijd zones, StartTime en EndTime ' jjjj-mm-ddTuu: mm: SS ' volgen. 
+> Voor UTC-tijd zone moet de startTime en endTime de notatie ' JJJJ-MM-DDTuu: mm: SS **Z**' hebben, terwijl voor andere tijd zones, StartTime en EndTime ' jjjj-mm-ddTuu: mm: SS ' volgen. 
 > 
 > Per ISO 8601-standaard, het _Z_ -achtervoegsel van de tijds tempel Markeer de datum/tijd in UTC-tijd zone en het veld tijd zone weer geven onbruikbaar. Hoewel er geen _Z_ -ACHTERVOEGSEL voor UTC-tijd zone ontbreekt, resulteert dit in een fout tijdens de _Activering_ van de trigger.
 
@@ -413,9 +413,9 @@ Enerzijds kan met een schema (schedule) het aantal uitvoeringen door een trigger
 
 Anderzijds kan een schedule het aantal uitvoeringen door een trigger ook uitbreiden. Bijvoorbeeld: een trigger met een geplande maandfrequentie voor uitvoering op de maanddagen 1 en 2, wordt uitgevoerd op de eerste en tweede dag van de maand, in plaats van eenmaal per maand.
 
-Als meerdere **schedule** -elementen worden opgegeven, is de volgorde voor de evaluatie van de hoogste naar de laagste instelling voor de waarde schedule. De evaluatie begint met weeknummer, waarna maanddag, weekdag, uur en minuut volgen.
+Als meerdere **schedule**-elementen worden opgegeven, is de volgorde voor de evaluatie van de hoogste naar de laagste instelling voor de waarde schedule. De evaluatie begint met weeknummer, waarna maanddag, weekdag, uur en minuut volgen.
 
-In de volgende tabel worden de **schedule** -elementen in detail beschreven:
+In de volgende tabel worden de **schedule**-elementen in detail beschreven:
 
 
 | JSON-element | Beschrijving | Geldige waarden |
@@ -423,7 +423,7 @@ In de volgende tabel worden de **schedule** -elementen in detail beschreven:
 | **wachten** | Minuten van het uur waarop de trigger wordt uitgevoerd. | <ul><li>Geheel getal</li><li>Matrix van gehele getallen</li></ul>
 | **loopt** | Uren van de dag waarop de trigger wordt uitgevoerd. | <ul><li>Geheel getal</li><li>Matrix van gehele getallen</li></ul> |
 | **weekDays** | Dagen van de week waarop de trigger wordt uitgevoerd. De waarde kan alleen worden opgegeven met een weekfrequentie. | <ul><li>Maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag</li><li>Array met dagwaarden (maximale grootte van de array is 7)</li><li>Dagwaarden zijn niet hoofdlettergevoelig</li></ul> |
-| **monthlyOccurrences** | Dagen van de maand waarop de trigger wordt uitgevoerd. De waarde kan alleen worden opgegeven met een maandfrequentie. | <ul><li>Matrix van **monthlyOccurrence** -objecten: `{ "day": day,  "occurrence": occurrence }` .</li><li>Het attribuut **day** is de dag van de week waarop de trigger wordt uitgevoerd. Zo betekent de eigenschap **monthlyOccurrences** met een waarde **day** van `{Sunday}` dat er elke zondag van de maand een uitvoering is. Het attribuut **day** is verplicht.</li><li>Het attribuut **occurrence** slaat op het uitvoeren van de trigger op de opgegeven dag, **day** , tijdens de maand. Zo betekent de eigenschap **monthlyOccurrences** met de waarden **day** en **occurrence** van `{Sunday, -1}` dat er elke laatste zondag van de maand een uitvoering is. Het attribuut **occurrence** is optioneel.</li></ul> |
+| **monthlyOccurrences** | Dagen van de maand waarop de trigger wordt uitgevoerd. De waarde kan alleen worden opgegeven met een maandfrequentie. | <ul><li>Matrix van **monthlyOccurrence** -objecten: `{ "day": day,  "occurrence": occurrence }` .</li><li>Het attribuut **day** is de dag van de week waarop de trigger wordt uitgevoerd. Zo betekent de eigenschap **monthlyOccurrences** met een waarde **day** van `{Sunday}` dat er elke zondag van de maand een uitvoering is. Het attribuut **day** is verplicht.</li><li>Het attribuut **occurrence** slaat op het uitvoeren van de trigger op de opgegeven dag, **day**, tijdens de maand. Zo betekent de eigenschap **monthlyOccurrences** met de waarden **day** en **occurrence** van `{Sunday, -1}` dat er elke laatste zondag van de maand een uitvoering is. Het attribuut **occurrence** is optioneel.</li></ul> |
 | **monthDays** | Dagen van de maand waarop de trigger wordt uitgevoerd. De waarde kan alleen worden opgegeven met een maandfrequentie. | <ul><li>Alle waarden < = -1 en > =-31</li><li>Alle waarden > = -1 en < =-31</li><li>Array met waarden</li></ul> |
 
 
@@ -439,7 +439,7 @@ In het voorbeeld wordt ervan uitgegaan dat de waarde **interval** 1 is en de waa
 | `{"minutes":[15], "hours":[5,17]}` | Wordt elke dag om 05:15 en 17:15 uur uitgevoerd. |
 | `{"minutes":[15,45], "hours":[5,17]}` | Wordt elke dag om 05:15, 5:45, 17:15 en 17:45 uur uitgevoerd. |
 | `{"minutes":[0,15,30,45]}` | Wordt elke 15 minuten uitgevoerd. |
-| `{hours":[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]}` | Wordt elk uur uitgevoerd. Deze trigger wordt elk uur uitgevoerd. De minuten worden door de waarde **startTime** bepaald (indien opgegeven). Als er geen waarde is opgegeven, worden de minuten bepaald door de aanmaaktijd. Als de starttijd of aanmaaktijd (afhankelijk van wat van toepassing is) bijvoorbeeld 12:25 uur is, wordt de trigger uitgevoerd om 00:25, 01:25, 02:25, ..., en 23:25 uur.<br/><br/>Dit schema komt overeen met een trigger met de **frequentie** waarde ' hour ', een **interval** waarde van 1 en geen **schema** .  Dit schema kan worden gebruikt met verschillende waarden voor **frequency** en **interval** om andere triggers te maken. Als de **frequentie** waarde bijvoorbeeld ' maand ' is, wordt de planning slechts eenmaal per maand uitgevoerd, in plaats van elke dag, wanneer de waarde van de **frequentie** ' dag ' is. |
+| `{hours":[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]}` | Wordt elk uur uitgevoerd. Deze trigger wordt elk uur uitgevoerd. De minuten worden door de waarde **startTime** bepaald (indien opgegeven). Als er geen waarde is opgegeven, worden de minuten bepaald door de aanmaaktijd. Als de starttijd of aanmaaktijd (afhankelijk van wat van toepassing is) bijvoorbeeld 12:25 uur is, wordt de trigger uitgevoerd om 00:25, 01:25, 02:25, ..., en 23:25 uur.<br/><br/>Dit schema komt overeen met een trigger met de **frequentie** waarde ' hour ', een **interval** waarde van 1 en geen **schema**.  Dit schema kan worden gebruikt met verschillende waarden voor **frequency** en **interval** om andere triggers te maken. Als de **frequentie** waarde bijvoorbeeld ' maand ' is, wordt de planning slechts eenmaal per maand uitgevoerd, in plaats van elke dag, wanneer de waarde van de **frequentie** ' dag ' is. |
 | `{"minutes":[0]}` | Wordt elk uur op het hele uur uitgevoerd. Deze trigger wordt elk uur op het hele uur uitgevoerd, te beginnen om 00:00 uur en vervolgens om 1:00 uur, 2:00 uur enzovoort.<br/><br/>Dit schema is gelijkwaardig met een trigger met **frequency** 'uur' en **startTime** nul minuten, of met **schedule** zonder waarde en **frequency** 'dag'. Als de waarde voor **Frequency** ' week ' of ' maand ' is, wordt het schema respectievelijk één dag per week of één dag per maand uitgevoerd. |
 | `{"minutes":[15]}` | Wordt 15 minuten na elk uur uitgevoerd. Deze trigger wordt elke 15 minuten na het hele uur uitgevoerd, te beginnen om 00:15 uur, en vervolgens om 1:15 uur, 2:15 uur, met de laatste uitvoering om 23:15 uur. |
 | `{"hours":[17], "weekDays":["saturday"]}` | Wordt elke week op zaterdag om 17:00 uur uitgevoerd. |

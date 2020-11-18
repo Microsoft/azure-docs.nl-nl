@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/11/2018
 ms.author: kenwith
-ms.openlocfilehash: e9e97aec66d99d149320938540c48b9ad68eaf0e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 714cbb06506cc3e0dffe74007712d9cbad072284
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90068027"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655065"
 ---
 # <a name="troubleshoot-common-problem-adding-or-removing-an-application-to-azure-active-directory"></a>Veelvoorkomende problemen oplossen bij het toevoegen of verwijderen van een toepassing aan Azure Active Directory
 Dit artikel helpt u bij het begrijpen van de veelvoorkomende problemen bij het toevoegen of verwijderen van een app aan Azure Active Directory.
@@ -31,9 +31,9 @@ Soms mislukt het toevoegen van een toepassing als gevolg van tijdelijke probleme
 Als er een fout optreedt wanneer u op de knop **toevoegen** klikt, wordt er een **melding** weer geven met een **fout** status. Als u meer informatie wilt over de fout voor meer informatie over of als u wilt delen met een ondersteunings technicus, kunt u de volgende stappen volgen in de sectie [Details van een portal melding weer geven](#how-to-see-the-details-of-a-portal-notification) .
 
 ## <a name="i-dont-know-how-to-set-up-my-application-once-ive-added-it"></a>Ik weet niet hoe ik mijn toepassing moet instellen nadat ik deze heb toegevoegd
-Als u hulp nodig hebt bij het leren van toepassingen, is de [lijst met zelf studies voor het integreren van SaaS-apps met Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list) -artikel een goede plaats om te starten.
+Als u hulp nodig hebt bij het leren van toepassingen, is de [lijst met zelf studies voor het integreren van SaaS-apps met Azure Active Directory](../saas-apps/tutorial-list.md) -artikel een goede plaats om te starten.
 
-Daarnaast kunt u met de [document bibliotheek van Azure AD-toepassingen](https://docs.microsoft.com/azure/active-directory/active-directory-apps-index) meer te weten komen over eenmalige aanmelding met Azure AD en hoe deze werkt.
+Daarnaast kunt u met de [document bibliotheek van Azure AD-toepassingen](./what-is-application-management.md) meer te weten komen over eenmalige aanmelding met Azure AD en hoe deze werkt.
 
 ## <a name="i-want-to-delete-an-application-but-the-delete-button-is-disabled"></a>Ik wil een toepassing verwijderen, maar de knop verwijderen is uitgeschakeld
 
@@ -43,7 +43,7 @@ De knop verwijderen wordt uitgeschakeld in de volgende scenario's:
 
 - Voor micro soft-toepassingen kunt u ze niet verwijderen uit de gebruikers interface, ongeacht uw rol.
 
-- Voor servicePrincipals die overeenkomen met een beheerde identiteit. Service-principals voor beheerde identiteiten kunnen niet worden verwijderd op de Blade Enter prise-apps. U moet naar de Azure-resource gaan om deze te beheren. Meer informatie over [beheerde identiteit](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)
+- Voor servicePrincipals die overeenkomen met een beheerde identiteit. Service-principals voor beheerde identiteiten kunnen niet worden verwijderd op de Blade Enter prise-apps. U moet naar de Azure-resource gaan om deze te beheren. Meer informatie over [beheerde identiteit](../managed-identities-azure-resources/overview.md)
 
 ## <a name="how-to-see-the-details-of-a-portal-notification"></a>De details van een portal melding weer geven
 U kunt de details van een portal melding bekijken door de volgende stappen uit te voeren:

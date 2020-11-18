@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/13/2019
 ms.author: yelevin
-ms.openlocfilehash: e9e892ae08c65ee5c5008bbdc1b419d8dec30183
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 756c245fe06ae81545a125dd98f30fb27fdff2dd
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90935665"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655576"
 ---
 # <a name="connect-data-from-microsoft-365-defender-to-azure-sentinel"></a>Gegevens verbinden van Microsoft 365 Defender naar Azure Sentinel
 
@@ -33,9 +33,9 @@ ms.locfileid: "90935665"
 
 ## <a name="background"></a>Achtergrond
 
-Met de nieuwe [Microsoft 365 Defender](https://docs.microsoft.com/microsoft-365/security/mtp/microsoft-threat-protection) -connector kunt u **geavanceerde jacht** -logboeken streamen-een type onbewerkte gebeurtenis gegevens-van Microsoft 365 Defender naar Azure Sentinel. 
+Met de nieuwe [Microsoft 365 Defender](/microsoft-365/security/mtp/microsoft-threat-protection) -connector kunt u **geavanceerde jacht** -logboeken streamen-een type onbewerkte gebeurtenis gegevens-van Microsoft 365 Defender naar Azure Sentinel. 
 
-Met de integratie van [micro soft Defender voor eind punt (MDATP)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) in het beveiligings paraplu van Microsoft 365 Defender kunt u nu uw micro soft Defender voor [geavanceerde jacht](https://aka.ms/mdatpAH) -gebeurtenissen verzamelen met behulp van de Microsoft 365 Defender connector, en deze direct in een nieuwe, door het doel gemaakte tabellen in uw Azure Sentinel-werk ruimte. Deze tabellen zijn gebaseerd op hetzelfde schema dat wordt gebruikt in de Microsoft 365 Defender-Portal, zodat u volledige toegang hebt tot de volledige set geavanceerde jacht-logboeken, zodat u het volgende kunt doen:
+Met de integratie van [micro soft Defender voor eind punt (MDATP)](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) in het beveiligings paraplu van Microsoft 365 Defender kunt u nu uw micro soft Defender voor [geavanceerde jacht](/windows/security/threat-protection/microsoft-defender-atp/advanced-hunting-overview) -gebeurtenissen verzamelen met behulp van de Microsoft 365 Defender connector, en deze direct in een nieuwe, door het doel gemaakte tabellen in uw Azure Sentinel-werk ruimte. Deze tabellen zijn gebaseerd op hetzelfde schema dat wordt gebruikt in de Microsoft 365 Defender-Portal, zodat u volledige toegang hebt tot de volledige set geavanceerde jacht-logboeken, zodat u het volgende kunt doen:
 
 - U kunt eenvoudig uw bestaande micro soft Defender ATP-query's voor geavanceerde jacht kopiëren naar Azure-Sentinel.
 
@@ -49,7 +49,7 @@ Met de integratie van [micro soft Defender voor eind punt (MDATP)](https://docs.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- U moet een geldige licentie voor micro soft Defender voor eind punt hebben, zoals beschreven in [micro soft Defender voor endpoint-implementatie instellen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/licensing). 
+- U moet een geldige licentie voor micro soft Defender voor eind punt hebben, zoals beschreven in [micro soft Defender voor endpoint-implementatie instellen](/windows/security/threat-protection/microsoft-defender-atp/licensing). 
 
 - Aan uw gebruiker moet de rol van globale beheerder zijn toegewezen voor de Tenant (in Azure Active Directory).
 
@@ -101,4 +101,4 @@ Op het tabblad **volgende stappen** ziet u een aantal voor beelden van query's d
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u onbewerkte gebeurtenis gegevens van micro soft Defender voor eind punt in azure Sentinel kunt ophalen met behulp van de Microsoft 365 Defender connector. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
-- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats.md).
+- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](./tutorial-detect-threats-built-in.md).

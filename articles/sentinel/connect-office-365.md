@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/30/2020
 ms.author: yelevin
-ms.openlocfilehash: d6b59de048cdf00d352c4f488ecb51bfdf83640f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d3e3615ede7406a3b581171ae759ec0ec53f13e
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89178923"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655367"
 ---
 # <a name="connect-office-365-logs-to-azure-sentinel"></a>Office 365-logboeken verbinden met Azure Sentinel
 
-De [Office 365](https://docs.microsoft.com/office/) -logboek connector brengt Azure-Sentinel-informatie over op lopende gebruikers-en beheer activiteiten in **Exchange** en **share point** (inclusief **OneDrive**), en nu ook in **teams** . Deze informatie omvat Details over acties zoals het downloaden van bestanden, het verzenden van toegangs aanvragen, wijzigingen in groeps gebeurtenissen, Postvak bewerkingen, teams gebeurtenissen (zoals chat-, team-, lid-en kanaal gebeurtenissen), evenals de details van de gebruiker die de acties heeft uitgevoerd. Door Office 365-logboeken te koppelen aan Azure Sentinel kunt u deze gegevens in uw werkmappen weer geven en analyseren, query's uitvoeren om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek proces te verbeteren, zodat u meer inzicht hebt in uw Office 365-beveiliging.
+De [Office 365](/office/) -logboek connector brengt Azure-Sentinel-informatie over op lopende gebruikers-en beheer activiteiten in **Exchange** en **share point** (inclusief **OneDrive**), en nu ook in **teams** . Deze informatie omvat Details over acties zoals het downloaden van bestanden, het verzenden van toegangs aanvragen, wijzigingen in groeps gebeurtenissen, Postvak bewerkingen, teams gebeurtenissen (zoals chat-, team-, lid-en kanaal gebeurtenissen), evenals de details van de gebruiker die de acties heeft uitgevoerd. Door Office 365-logboeken te koppelen aan Azure Sentinel kunt u deze gegevens in uw werkmappen weer geven en analyseren, query's uitvoeren om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek proces te verbeteren, zodat u meer inzicht hebt in uw Office 365-beveiliging.
 
 > [!IMPORTANT]
 > De uitbrei ding van de Office 365-logboek connector **voor micro soft teams-logboeken** is momenteel beschikbaar in de open bare preview.
@@ -38,9 +38,9 @@ De [Office 365](https://docs.microsoft.com/office/) -logboek connector brengt Az
 - Uw Office 365-implementatie moet zich op dezelfde Tenant bevinden als uw Azure Sentinel-werk ruimte.
 
 > [!IMPORTANT]
-> - Om ervoor te zorgen dat de connector toegang kan krijgen tot gegevens via de API voor Office 365-beheer activiteit, moet **Unified audit logging** zijn ingeschakeld voor uw Office 365-implementatie. Afhankelijk van het type Office 365/Microsoft 365 licentie dat u hebt, kan het niet standaard worden ingeschakeld. Raadpleeg het [Office 365 Security and Compliance Center](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-securitycompliance-center) voor het controleren van de status van Unified audit logging volgens uw licentie type.
-> - U kunt de huidige status van de gecombineerde audit logboeken van Office 365 ook hand matig inschakelen, uitschakelen en controleren. Zie voor instructies het [Office 365-controle logboek zoeken in-of uitschakelen](https://docs.microsoft.com/office365/securitycompliance/turn-audit-log-search-on-or-off).
-> - Zie voor meer informatie de [Office 365 Management Activity API-referentie](https://docs.microsoft.com/office/office-365-management-api/office-365-management-activity-api-reference).
+> - Om ervoor te zorgen dat de connector toegang kan krijgen tot gegevens via de API voor Office 365-beheer activiteit, moet **Unified audit logging** zijn ingeschakeld voor uw Office 365-implementatie. Afhankelijk van het type Office 365/Microsoft 365 licentie dat u hebt, kan het niet standaard worden ingeschakeld. Raadpleeg het [Office 365 Security and Compliance Center](/office365/servicedescriptions/office-365-platform-service-description/office-365-securitycompliance-center) voor het controleren van de status van Unified audit logging volgens uw licentie type.
+> - U kunt de huidige status van de gecombineerde audit logboeken van Office 365 ook hand matig inschakelen, uitschakelen en controleren. Zie voor instructies het [Office 365-controle logboek zoeken in-of uitschakelen](/office365/securitycompliance/turn-audit-log-search-on-or-off).
+> - Zie voor meer informatie de [Office 365 Management Activity API-referentie](/office/office-365-management-api/office-365-management-activity-api-reference).
 
 
    > [!NOTE]
@@ -52,9 +52,9 @@ De [Office 365](https://docs.microsoft.com/office/) -logboek connector brengt Az
 
 1. Selecteer in het navigatie menu van de Azure-Sentinel **Data connectors**.
 
-1. Selecteer in de galerie **Data connectors** de optie **Office 365**en selecteer vervolgens **connector pagina openen** in het voorbeeld venster.
+1. Selecteer in de galerie **Data connectors** de optie **Office 365** en selecteer vervolgens **connector pagina openen** in het voorbeeld venster.
 
-1. Schakel onder de sectie met de naam **configuratie**de selectie vakjes in van de Office 365-activiteiten logboeken die u wilt verbinden met Azure Sentinel en klik op **wijzigingen Toep assen**. 
+1. Schakel onder de sectie met de naam **configuratie** de selectie vakjes in van de Office 365-activiteiten logboeken die u wilt verbinden met Azure Sentinel en klik op **wijzigingen Toep assen**. 
 
    > [!NOTE]
    > Als u eerder meerdere tenants met Azure Sentinel hebt verbonden met een oudere versie van de Office 365-connector die dit ondersteunt, kunt u de logboeken bekijken en wijzigen die u van elke Tenant verzamelt. U kunt geen extra tenants toevoegen, maar u moet eerder toegevoegde tenants verwijderen.
@@ -70,4 +70,3 @@ De [Office 365](https://docs.microsoft.com/office/) -logboek connector brengt Az
 In dit document hebt u geleerd hoe u Office 365 kunt verbinden met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over hoe u [inzicht krijgt in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
 - Ga aan de slag met het detecteren van bedreigingen met Azure Sentinel, met behulp [van ingebouwde](tutorial-detect-threats-built-in.md) of [aangepaste](tutorial-detect-threats-custom.md) regels.
-

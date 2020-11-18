@@ -7,12 +7,12 @@ ms.author: brendm
 author: bmitchell287
 ms.date: 10/18/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 06d5196e612bcf20e11f17634b32db028cd5bc88
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 3033be3a793c318135f8150b86114b6fee55fac7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378088"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655195"
 ---
 # <a name="set-up-a-spring-cloud-config-server-instance-for-your-service"></a>Een instantie van een Spring Cloud Config Server instellen voor uw service
 
@@ -60,7 +60,7 @@ In de volgende tabel vindt u alle configureerbare eigenschappen die worden gebru
 | Eigenschap        | Vereist | Functie                                                      |
 | :-------------- | -------- | ------------------------------------------------------------ |
 | `uri`           | Ja    | De URI van de Git-opslagplaats die als back-end van de Config Server wordt gebruikt, begint met *http://* , *https://* , *git@* of *ssh://* . |
-| `default-label` | Nee     | Het standaardlabel van de Git-opslagplaats moet de *vertakkingsnaam* , *tagnaam* of *commit-id* van de opslagplaat zijn. |
+| `default-label` | Nee     | Het standaardlabel van de Git-opslagplaats moet de *vertakkingsnaam*, *tagnaam* of *commit-id* van de opslagplaat zijn. |
 | `search-paths`  | Nee     | Een matrix van tekenreeksen die worden gebruikt om te zoeken in submappen van de Git-opslagplaats. |
 
 ------
@@ -75,11 +75,11 @@ In de volgende tabel vindt u alle configureerbare eigenschappen die worden gebru
 | Eigenschap                   | Vereist | Functie                                                      |
 | :------------------------- | -------- | ------------------------------------------------------------ |
 | `uri`                      | Ja    | De URI van de Git-opslagplaats die als back-end van de Config Server wordt gebruikt, moet beginnen met *http://* , *https://* , *git@* of *ssh://* . |
-| `default-label`            | Nee     | Het standaardlabel van de Git-opslagplaats moet de *vertakkingsnaam* , *tagnaam* of *commit-id* van de opslagplaat zijn. |
+| `default-label`            | Nee     | Het standaardlabel van de Git-opslagplaats moet de *vertakkingsnaam*, *tagnaam* of *commit-id* van de opslagplaat zijn. |
 | `search-paths`             | Nee     | Een matrix van tekenreeksen gebruikt om te zoeken in submappen van de Git-opslagplaats. |
 | `private-key`              | Nee     | De persoonlijke SSH-sleutel om de Git-opslagplaats te openen, _vereist_ wanneer de URI begint met *git@* of *ssh://* . |
 | `host-key`                 | Nee     | De hostsleutel van de server voor de Git-opslagplaats mag het algoritmevoorvoegsel niet bevatten, zoals beschreven in `host-key-algorithm`. |
-| `host-key-algorithm`       | Nee     | Het algoritme van de hostsleutel moet *ssh-dss-* zijn, *ssh-rsa* , *ecdsa-sha2-nistp256* , *ecdsa-sha2-nistp384* of *ecdsa-sha2-nistp521* zijn. Enkel *vereist* als `host-key` bestaat. |
+| `host-key-algorithm`       | Nee     | Het algoritme van de hostsleutel moet *ssh-dss-* zijn, *ssh-rsa*, *ecdsa-sha2-nistp256*, *ecdsa-sha2-nistp384* of *ecdsa-sha2-nistp521* zijn. Enkel *vereist* als `host-key` bestaat. |
 | `strict-host-key-checking` | Nee     | Geeft aan of het opstarten van de instantie van de Config Server zal mislukken wanneer de persoonlijke `host-key` gebruikt wordt. Moet *true* (standaardwaarde) of *false* zijn. |
 
 > [!NOTE]
@@ -92,12 +92,12 @@ In de volgende tabel vindt u alle configureerbare eigenschappen die worden gebru
 Hieronder vindt u alle configureerbare eigenschappen die worden gebruikt om de persoonlijke Git-opslagplaats met basisverificatie in te stellen.
 
 > [!NOTE]
-> Het gebruik van een afbreekstreepje (-) als scheidingsteken tussen woorden is momenteel de enige ondersteunde naamconventie. Gebruik bijvoorbeeld *standaard-label* , niet *standaardLabel*.
+> Het gebruik van een afbreekstreepje (-) als scheidingsteken tussen woorden is momenteel de enige ondersteunde naamconventie. Gebruik bijvoorbeeld *standaard-label*, niet *standaardLabel*.
 
 | Eigenschap        | Vereist | Functie                                                      |
 | :-------------- | -------- | ------------------------------------------------------------ |
 | `uri`           | Ja    | De URI van de Git-opslagplaats die als back-end van de Config Server wordt gebruikt, moet beginnen met *http://* , *https://* , *git@* of *ssh://* . |
-| `default-label` | Nee     | Het standaardlabel van de Git-opslagplaats moet de *vertakkingsnaam* , *tagnaam* of *commit-id* van de opslagplaat zijn. |
+| `default-label` | Nee     | Het standaardlabel van de Git-opslagplaats moet de *vertakkingsnaam*, *tagnaam* of *commit-id* van de opslagplaat zijn. |
 | `search-paths`  | Nee     | Een matrix van tekenreeksen gebruikt om te zoeken in submappen van de Git-opslagplaats. |
 | `username`      | Nee     | De gebruikersnaam die wordt gebruikt om toegang te krijgen tot de server van de Git-opslagplaats, _vereist_ wanneer de server van de Git-opslagplaats `Http Basic Authentication`ondersteunt. |
 | `password`      | Nee     | Het wachtwoord dat wordt gebruikt om toegang te krijgen tot de server van de Git-opslagplaats, _vereist_ wanneer de server van de Git-opslagplaats `Http Basic Authentication`ondersteunt. |
@@ -110,21 +110,21 @@ Hieronder vindt u alle configureerbare eigenschappen die worden gebruikt om de p
 Hieronder vindt u alle configureerbare eigenschappen die worden gebruikt om Git-opslagplaatsen in te stellen met een patroon.
 
 > [!NOTE]
-> Het gebruik van een afbreekstreepje (-) als scheidingsteken tussen woorden is momenteel de enige ondersteunde naamconventie. Gebruik bijvoorbeeld *standaard-label* , niet *standaardLabel*.
+> Het gebruik van een afbreekstreepje (-) als scheidingsteken tussen woorden is momenteel de enige ondersteunde naamconventie. Gebruik bijvoorbeeld *standaard-label*, niet *standaardLabel*.
 
 | Eigenschap                           | Vereist         | Functie                                                      |
 | :--------------------------------- | ---------------- | ------------------------------------------------------------ |
 | `repos`                            | Nee             | Een toewijzing bestaande uit de instellingen voor een Git-opslagplaats met een bepaalde naam. |
 | `repos."uri"`                      | Ja voor `repos` | De URI van de Git-opslagplaats die als back-end van de Config Server wordt gebruikt, moet beginnen met *http://* , *https://* , *git@* of *ssh://* . |
-| `repos."name"`                     | Ja voor `repos` | Een naam om te identificeren in de Git-opslagplaats, alleen _vereist_ als `repos` bestaat. Bijvoorbeeld *team-A* , *team-B*. |
+| `repos."name"`                     | Ja voor `repos` | Een naam om te identificeren in de Git-opslagplaats, alleen _vereist_ als `repos` bestaat. Bijvoorbeeld *team-A*, *team-B*. |
 | `repos."pattern"`                  | Nee             | Een matrix van tekenreeksen gebruikt om een toepassingsnaam te vinden. Gebruik het `{application}/{profile}`-formaat met jokertekens voor elk patroon. |
-| `repos."default-label"`            | Nee             | Het standaardlabel van de Git-opslagplaats moet de *vertakkingsnaam* , *tagnaam* of *commit-id* van de opslagplaat zijn. |
+| `repos."default-label"`            | Nee             | Het standaardlabel van de Git-opslagplaats moet de *vertakkingsnaam*, *tagnaam* of *commit-id* van de opslagplaat zijn. |
 | `repos."search-paths`"             | Nee             | Een matrix van tekenreeksen gebruikt om te zoeken in submappen van de Git-opslagplaats. |
 | `repos."username"`                 | Nee             | De gebruikersnaam die wordt gebruikt om toegang te krijgen tot de server van de Git-opslagplaats, _vereist_ wanneer de server van de Git-opslagplaats `Http Basic Authentication`ondersteunt. |
 | `repos."password"`                 | Nee             | Het wachtwoord dat wordt gebruikt om toegang te krijgen tot de server van de Git-opslagplaats, _vereist_ wanneer de server van de Git-opslagplaats `Http Basic Authentication`ondersteunt. |
 | `repos."private-key"`              | Nee             | De persoonlijke SSH-sleutel om de Git-opslagplaats te openen, _vereist_ wanneer de URI begint met *git@* of *ssh://* . |
 | `repos."host-key"`                 | Nee             | De hostsleutel van de server voor de Git-opslagplaats mag het algoritmevoorvoegsel niet bevatten, zoals beschreven in `host-key-algorithm`. |
-| `repos."host-key-algorithm"`       | Nee             | Het algoritme van de hostsleutel moet *ssh-dss-* zijn, *ssh-rsa* , *ecdsa-sha2-nistp256* , *ecdsa-sha2-nistp384* of *ecdsa-sha2-nistp521* zijn. Enkel *vereist* als `host-key` bestaat. |
+| `repos."host-key-algorithm"`       | Nee             | Het algoritme van de hostsleutel moet *ssh-dss-* zijn, *ssh-rsa*, *ecdsa-sha2-nistp256*, *ecdsa-sha2-nistp384* of *ecdsa-sha2-nistp521* zijn. Enkel *vereist* als `host-key` bestaat. |
 | `repos."strict-host-key-checking"` | Nee             | Geeft aan of het opstarten van de instantie van de Config Server zal mislukken wanneer de persoonlijke `host-key` gebruikt wordt. Moet *true* (standaardwaarde) of *false* zijn. |
 
 ## <a name="attach-your-config-server-repository-to-azure-spring-cloud"></a>Uw Config Server-opslagplaats toevoegen aan Azure Spring Cloud
@@ -133,30 +133,42 @@ Nu dat uw configuratiebestanden zijn opgeslagen in een opslagplaats, moet u Azur
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-1. Ga naar de pagina **Overzicht** van Azure Spring Cloud.
+2. Ga naar de **Overzichtspagina** van Azure Spring Cloud.
 
-1. Selecteer de service die u wilt configureren.
+3. Selecteer **Configuratie server** in het navigatie deel venster aan de linkerkant.
 
-1. Selecteer onder **Instellingen** het tabblad **Config Server** in het linkervenster van de servicepagina.
+4. Stel in de sectie **Standaardopslagplaats** **URI** in op https://github.com/Azure-Samples/piggymetrics-config.
 
-![Het venster Config Server](media/spring-cloud-tutorial-config-server/portal-config-server.png)
+5. Klik op **Valideren**.
+
+    ![Navigeren naar configuratie server](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
+
+6. Wanneer de validatie is voltooid, klikt u op **Toep assen** om uw wijzigingen op te slaan.
+
+    ![De configuratie server wordt gevalideerd](media/spring-cloud-quickstart-launch-app-portal/validate-complete.png)
+
+7. Het bijwerken van de configuratie kan enkele minuten duren.
+ 
+    ![De configuratie server wordt bijgewerkt](media/spring-cloud-quickstart-launch-app-portal/updating-config.png) 
+
+8. U ontvangt een melding wanneer de configuratie is voltooid.
 
 ### <a name="enter-repository-information-directly-to-the-azure-portal"></a>De gegevens van de opslagplaats rechtstreeks invoeren bij de Azure-portal
 
 #### <a name="default-repository"></a>Standaardopslagplaats
 
-* **Openbare opslagplaats** : Plak de URI van de opslagplaats in het vak **URI** in de sectie **Standaardopslagplaats**.  Stel het **Label** in op **config**. Zorg ervoor dat de instelling **Verificatie** op **Openbaar** staat en selecteer vervolgen **Toepassen** om te voltooien. 
+* **Openbare opslagplaats**: Plak de URI van de opslagplaats in het vak **URI** in de sectie **Standaardopslagplaats**.  Stel het **Label** in op **config**. Zorg ervoor dat de instelling **Verificatie** op **Openbaar** staat en selecteer vervolgen **Toepassen** om te voltooien. 
 
-* **Persoonlijke opslagplaats** : Azure Spring Cloud biedt ondersteuning voor basisverificatie op basis van wachtwoorden/tokens en SSH.
+* **Persoonlijke opslagplaats**: Azure Spring Cloud biedt ondersteuning voor basisverificatie op basis van wachtwoorden/tokens en SSH.
 
-    * **Basisverificatie** : Plak de URI van de opslagplaats in de sectie **Standaardopslagplaats** in het vak **URI** en selecteer vervolgens de knop **Verificatie** (pictogram van potlood). Selecteer **HTTP-basis** in het venster **Verificatie bewerken** in de vervolgkeuzelijst **Verificatietype** en voer vervolgens uw gebruikersnaam en wachtwoord/token in om toegang te verlenen tot Azure Spring Cloud. Selecteer **OK** en vervolgens **Toepassen** om de instelling van uw instantie van een Config Server te voltooien.
+    * **Basisverificatie**: Plak de URI van de opslagplaats in de sectie **Standaardopslagplaats** in het vak **URI** en selecteer vervolgens de knop **Verificatie** (pictogram van potlood). Selecteer **HTTP-basis** in het venster **Verificatie bewerken** in de vervolgkeuzelijst **Verificatietype** en voer vervolgens uw gebruikersnaam en wachtwoord/token in om toegang te verlenen tot Azure Spring Cloud. Selecteer **OK** en vervolgens **Toepassen** om de instelling van uw instantie van een Config Server te voltooien.
 
     ![Het deel venster verificatie bewerken basis verificatie](media/spring-cloud-tutorial-config-server/basic-auth.png)
     
     > [!CAUTION]
-    > Sommige servers voor Git-opslagplaatsen, zoals GitHub, gebruiken een *persoonlijk-token* of een *toegangs-token* , zoals een wachtwoord, voor **Basisverificatie**. U kunt dit soort token gebruiken als wachtwoord in Azure Spring Cloud aangezien het nooit verloopt. Maar voor andere servers voor Git-opslagplaatsen, zoals Bitbucket en Azure DevOps, verloopt het *toegangs-token* binnen één of twee uur. Dit betekent dat de optie niet werkbaar is wanneer u die servers voor opslagplaatsen gebruikt met Azure Spring Cloud.
+    > Sommige servers voor Git-opslagplaatsen, zoals GitHub, gebruiken een *persoonlijk-token* of een *toegangs-token*, zoals een wachtwoord, voor **Basisverificatie**. U kunt dit soort token gebruiken als wachtwoord in Azure Spring Cloud aangezien het nooit verloopt. Maar voor andere servers voor Git-opslagplaatsen, zoals Bitbucket en Azure DevOps, verloopt het *toegangs-token* binnen één of twee uur. Dit betekent dat de optie niet werkbaar is wanneer u die servers voor opslagplaatsen gebruikt met Azure Spring Cloud.
 
-    * **SSH** : Plak de URI van de opslagplaats in het vak **URI** in de sectie **Standaardopslagplaats** en selecteer vervolgens de knop **Verificatie** (pictogram van potlood). Selecteer **SSH** in de vervolgkeuzelijst **Verificatietype** in het deelvenster **Verificatie bewerken** en voer vervolgens uw **Persoonlijke sleutel** in. U kunt eventueel uw **Hostsleutel** en **Algoritme van de hostsleutel** opgeven. Zorg ervoor dat u uw openbare sleutel in uw opslagplaats voor de Config Server opneemt. Selecteer **OK** en vervolgens **Toepassen** om de instelling van uw instantie van een Config Server te voltooien.
+    * **SSH**: Plak de URI van de opslagplaats in het vak **URI** in de sectie **Standaardopslagplaats** en selecteer vervolgens de knop **Verificatie** (pictogram van potlood). Selecteer **SSH** in de vervolgkeuzelijst **Verificatietype** in het deelvenster **Verificatie bewerken** en voer vervolgens uw **Persoonlijke sleutel** in. U kunt eventueel uw **Hostsleutel** en **Algoritme van de hostsleutel** opgeven. Zorg ervoor dat u uw openbare sleutel in uw opslagplaats voor de Config Server opneemt. Selecteer **OK** en vervolgens **Toepassen** om de instelling van uw instantie van een Config Server te voltooien.
 
     ![Het deel venster verificatie bewerken SSH auth](media/spring-cloud-tutorial-config-server/ssh-auth.png)
 
@@ -180,7 +192,7 @@ spring:
 
 ```
 
-Klik op de knop **Instellingen importeren** en selecteer vervolgens het YAML-bestand in uw projectmap. Selecteer **Importeren** , vervolgens verschijnt er een `async`-bewerking van uw **Meldingen**. Na 1-2 minuten zou de bewerking voltooid moeten zijn.
+Klik op de knop **Instellingen importeren** en selecteer vervolgens het YAML-bestand in uw projectmap. Selecteer **Importeren**, vervolgens verschijnt er een `async`-bewerking van uw **Meldingen**. Na 1-2 minuten zou de bewerking voltooid moeten zijn.
 
 ![Het deelvenster Meldingen van de Config Server](media/spring-cloud-tutorial-config-server/local-yml-success.png)
 

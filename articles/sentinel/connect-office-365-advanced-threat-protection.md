@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/06/2020
 ms.author: yelevin
-ms.openlocfilehash: 5ac72c9861e06773ffab87dcbf4e730562b798fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5140bcd85606213f00185d4ba1f50dbe70dba63
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91344115"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655491"
 ---
 # <a name="connect-alerts-from-microsoft-defender-for-office-365"></a>Verbinding maken met waarschuwingen van micro soft Defender voor Office 365 
 
@@ -31,7 +31,7 @@ ms.locfileid: "91344115"
 >
 > - De opname van micro soft Defender voor Office 365-waarschuwingen is momenteel beschikbaar als open bare preview. Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
  
-[Micro soft Defender voor Office 365](https://docs.microsoft.com/office365/servicedescriptions/office-365-advanced-threat-protection-service-description) beveiligt uw organisatie tegen nul dagen en andere geavanceerde bedreigingen die worden veroorzaakt door onbekende malware in e-mail berichten, koppelingen naar schadelijke URL en samenwerkings hulpprogramma's. Door micro soft Defender voor Office 365-waarschuwingen op te nemen in azure Sentinel, kunt u gebruikmaken van informatie over e-mail, het delen van bestanden en bedreigingen op basis van URL'S in uw beveiligings activiteiten. U kunt vervolgens de beveiligings gebeurtenissen in uw organisatie uitgebreid analyseren en playbooks bouwen voor een effectief en direct antwoord.
+[Micro soft Defender voor Office 365](/office365/servicedescriptions/office-365-advanced-threat-protection-service-description) beveiligt uw organisatie tegen nul dagen en andere geavanceerde bedreigingen die worden veroorzaakt door onbekende malware in e-mail berichten, koppelingen naar schadelijke URL en samenwerkings hulpprogramma's. Door micro soft Defender voor Office 365-waarschuwingen op te nemen in azure Sentinel, kunt u gebruikmaken van informatie over e-mail, het delen van bestanden en bedreigingen op basis van URL'S in uw beveiligings activiteiten. U kunt vervolgens de beveiligings gebeurtenissen in uw organisatie uitgebreid analyseren en playbooks bouwen voor een effectief en direct antwoord.
 
 De connector importeert de volgende waarschuwingen:
 
@@ -55,7 +55,7 @@ Deze waarschuwingen kunnen worden gezien door Office-klanten in het **beveiligin
 
 - U moet een globale beheerder of een beveiligings beheerder zijn op de Azure-Tenant van de Sentinel-werk ruimte.
 
-- U moet beschikken over een geldige licentie voor [office 365 ATP-abonnement 2](https://docs.microsoft.com/microsoft-365/security/office-365-security/office-365-atp#office-365-atp-plan-1-and-plan-2) (opgenomen in Office 365 E5, Office 365 A5 en Microsoft 365 E5-licenties en kunnen afzonderlijk worden aangeschaft). 
+- U moet beschikken over een geldige licentie voor [office 365 ATP-abonnement 2](/microsoft-365/security/office-365-security/office-365-atp#office-365-atp-plan-1-and-plan-2) (opgenomen in Office 365 E5, Office 365 A5 en Microsoft 365 E5-licenties en kunnen afzonderlijk worden aangeschaft). 
 
 ## <a name="connect-to-microsoft-defender-for-office-365"></a>Verbinding maken met micro soft Defender voor Office 365
 
@@ -63,7 +63,7 @@ Als micro soft Defender voor Office 365 wordt geïmplementeerd en als er beleids
 
 1. Selecteer in azure Sentinel **Data connectors** in het navigatie menu.
 
-1. Selecteer **micro soft Defender voor Office 365** (kan nog steeds *Office 365 Advanced Threat Protection*worden genoemd) in de connectors galerie en selecteer **pagina connector openen**.
+1. Selecteer **micro soft Defender voor Office 365** (kan nog steeds *Office 365 Advanced Threat Protection* worden genoemd) in de connectors galerie en selecteer **pagina connector openen**.
 
 1. Klik in de sectie **configuratie** op **verbinding maken**. 
 
@@ -77,4 +77,4 @@ Als micro soft Defender voor Office 365 wordt geïmplementeerd en als er beleids
 
 In dit document hebt u geleerd hoe u met micro soft Defender voor Office 365 verbinding maakt met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
-- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats.md).
+- Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](./tutorial-detect-threats-built-in.md).

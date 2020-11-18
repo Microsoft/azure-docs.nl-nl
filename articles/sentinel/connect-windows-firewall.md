@@ -15,16 +15,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/05/2020
 ms.author: yelevin
-ms.openlocfilehash: 5518da7d22d14de105c07e88b14e94d4b184269b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cf7e389fc4a8a8dfa88691dc034611cae3471731
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90883814"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655337"
 ---
 # <a name="connect-windows-defender-firewall-with-advanced-security-to-azure-sentinel"></a>Windows Defender Firewall met geavanceerde beveiliging verbinden met Azure Sentinel
 
-De [Windows Defender Firewall met Advanced Security](https://docs.microsoft.com/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security) connector staat Azure Sentinel toe om Windows Defender firewall eenvoudig op te nemen in geavanceerde beveiligings logboeken van alle Windows-computers in uw werk ruimte. Met deze verbinding kunt u Windows Firewall gebeurtenissen in uw werkmappen weer geven en analyseren, om ze te gebruiken bij het maken van aangepaste waarschuwingen en om deze op te nemen in uw beveiligings onderzoeken, waardoor u meer inzicht hebt in het netwerk van uw organisatie en de mogelijkheden voor beveiligings bewerkingen kunt verbeteren. 
+De [Windows Defender Firewall met Advanced Security](/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security) connector staat Azure Sentinel toe om Windows Defender firewall eenvoudig op te nemen in geavanceerde beveiligings logboeken van alle Windows-computers in uw werk ruimte. Met deze verbinding kunt u Windows Firewall gebeurtenissen in uw werkmappen weer geven en analyseren, om ze te gebruiken bij het maken van aangepaste waarschuwingen en om deze op te nemen in uw beveiligings onderzoeken, waardoor u meer inzicht hebt in het netwerk van uw organisatie en de mogelijkheden voor beveiligings bewerkingen kunt verbeteren. 
 
 De oplossing verzamelt Windows Firewall-gebeurtenissen van de Windows-computers waarop een Log Analytics-agent is geïnstalleerd. 
 
@@ -67,7 +67,7 @@ De oplossing verzamelt Windows Firewall-gebeurtenissen van de Windows-computers 
 
     1. Selecteer in het deel venster **agents beheren** de optie **Windows-agent (64 bits) downloaden** of **Windows-agent (32 bits) downloaden**, indien nodig.
 
-    1. Kopieer de **werk ruimte-id**, **primaire sleutel**en **secundaire sleutel** teken reeksen naar een tekst bestand. Kopieer het bestand en het gedownloade installatie bestand naar uw Windows-computer. Voer het installatie bestand uit en voer, wanneer u hierom wordt gevraagd, de ID en de sleutel teken reeksen in het tekst bestand tijdens de installatie in.
+    1. Kopieer de **werk ruimte-id**, **primaire sleutel** en **secundaire sleutel** teken reeksen naar een tekst bestand. Kopieer het bestand en het gedownloade installatie bestand naar uw Windows-computer. Voer het installatie bestand uit en voer, wanneer u hierom wordt gevraagd, de ID en de sleutel teken reeksen in het tekst bestand tijdens de installatie in.
 
     1. Ga terug naar het deel venster **Windows Firewall** .
 
@@ -77,14 +77,13 @@ De oplossing verzamelt Windows Firewall-gebeurtenissen van de Windows-computers 
 
 - Bekijk de beschik bare aanbevolen werkmappen en query voorbeelden die zijn gebundeld met de **Windows Firewall** Data Connector om inzicht te krijgen in uw Windows Firewall-logboek gegevens.
 
-- Als u gegevens van Windows Firewall in **Logboeken**wilt opvragen, typt u **WindowsFirewall** in het query venster.
+- Als u gegevens van Windows Firewall in **Logboeken** wilt opvragen, typt u **WindowsFirewall** in het query venster.
 
 ## <a name="validate-connectivity"></a>Connectiviteit valideren
  
-Omdat Windows Firewall-Logboeken alleen worden verzonden naar Azure Sentinel wanneer het lokale logboek bestand de capaciteit bereikt, zal het logboek in de standaard grootte van 4096 KB waarschijnlijk resulteren in een hoge latentie van de verzameling. U kunt de latentie verlagen door de grootte van het logboek bestand te verlagen. Zie de instructies voor [het configureren van het Windows Firewall logboek](https://docs.microsoft.com/windows/security/threat-protection/windows-firewall/configure-the-windows-firewall-log). Houd er rekening mee dat bij het definiëren van de minimale mogelijke logboek grootte (1 KB) de latentie van de verzameling vrijwel wordt geëlimineerd. Dit kan ook een negatieve invloed hebben op de prestaties van de lokale computer. 
+Omdat Windows Firewall-Logboeken alleen worden verzonden naar Azure Sentinel wanneer het lokale logboek bestand de capaciteit bereikt, zal het logboek in de standaard grootte van 4096 KB waarschijnlijk resulteren in een hoge latentie van de verzameling. U kunt de latentie verlagen door de grootte van het logboek bestand te verlagen. Zie de instructies voor [het configureren van het Windows Firewall logboek](/windows/security/threat-protection/windows-firewall/configure-the-windows-firewall-log). Houd er rekening mee dat bij het definiëren van de minimale mogelijke logboek grootte (1 KB) de latentie van de verzameling vrijwel wordt geëlimineerd. Dit kan ook een negatieve invloed hebben op de prestaties van de lokale computer. 
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u Windows Firewall verbindt met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
 - Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats-built-in.md).
-

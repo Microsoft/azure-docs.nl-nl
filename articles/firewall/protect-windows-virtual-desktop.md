@@ -7,12 +7,12 @@ services: firewall
 ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: victorh
-ms.openlocfilehash: ae33d763bda49756e9f90a05feda5089b63ef28b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad4f42d0e33f6d70c75abfcd1daab4f5aa9a515f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400156"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654980"
 ---
 # <a name="use-azure-firewall-to-protect-window-virtual-desktop-deployments"></a>Windows Virtual Desktop-implementaties beveiligen met Azure Firewall deployments
 
@@ -36,7 +36,7 @@ Zie [Windows Virtual Desktop Environment](../virtual-desktop/environment-setup.m
 De virtuele Azure-machines die u voor virtuele Windows-Bureau bladen maakt, moeten toegang hebben tot verschillende FQDN-namen (FULLy Qualified Domain names) om goed te kunnen functioneren. Azure Firewall biedt een FQDN-tag voor het virtuele Windows-bureau blad om deze configuratie te vereenvoudigen. Gebruik de volgende stappen om uitgaand verkeer van het virtueel bureau blad-platform van Windows toe te staan:
 
 - Implementeer Azure Firewall en configureer de door de gebruiker gedefinieerde route (UDR) van uw Windows-host voor virtuele bureau blad om al het verkeer via de Azure Firewall te routeren. Uw standaard route wijst nu naar de firewall.
-- Maak een toepassings regel verzameling en voeg een regel toe om de *WindowsVirtualDesktop* FQDN-tag in te scha kelen. Het bron-IP-adres bereik is het virtuele netwerk van de hostgroep, het protocol is **https**en de doel locatie is **WindowsVirtualDesktop**.
+- Maak een toepassings regel verzameling en voeg een regel toe om de *WindowsVirtualDesktop* FQDN-tag in te scha kelen. Het bron-IP-adres bereik is het virtuele netwerk van de hostgroep, het protocol is **https** en de doel locatie is **WindowsVirtualDesktop**.
 
 - De set vereiste opslag-en service bus-accounts voor uw Windows Virtual Desktop-hostgroep is specifiek voor implementatie, zodat deze nog niet is vastgelegd in de WindowsVirtualDesktop FQDN-tag. U kunt dit op een van de volgende manieren aanpakken:
 
@@ -63,7 +63,7 @@ De virtuele Azure-machines die u voor virtuele Windows-Bureau bladen maakt, moet
 
 Afhankelijk van de behoeften van uw organisatie wilt u mogelijk beveiligde uitgaande internet toegang inschakelen voor uw eind gebruikers. In gevallen waarin de lijst met toegestane bestemmingen goed is gedefinieerd (bijvoorbeeld [Microsoft 365 toegang](/microsoft-365/enterprise/microsoft-365-ip-web-service)) kunt u Azure firewall toepassing en netwerk regels gebruiken om de vereiste toegang te configureren. Hierdoor stuurt het verkeer van eind gebruikers rechtstreeks naar het Internet voor de beste prestaties.
 
-Als u het Internet verkeer van de uitgaande gebruiker wilt filteren met behulp van een bestaande on-premises beveiligde webgateway, kunt u webbrowsers of andere toepassingen die worden uitgevoerd op de Windows Virtual Desktop hostgroep configureren met een expliciete proxy configuratie. Zie bijvoorbeeld [micro soft Edge-opdracht regel opties gebruiken voor het configureren van proxy-instellingen](https://docs.microsoft.com/deployedge/edge-learnmore-cmdline-options-proxy-settings). Deze proxy instellingen zijn alleen van invloed op de Internet toegang van uw eind gebruiker, waardoor het verkeer van het virtueel-bureaublad platform van Windows rechtstreeks via Azure Firewall wordt toegestaan.
+Als u het Internet verkeer van de uitgaande gebruiker wilt filteren met behulp van een bestaande on-premises beveiligde webgateway, kunt u webbrowsers of andere toepassingen die worden uitgevoerd op de Windows Virtual Desktop hostgroep configureren met een expliciete proxy configuratie. Zie bijvoorbeeld [micro soft Edge-opdracht regel opties gebruiken voor het configureren van proxy-instellingen](/deployedge/edge-learnmore-cmdline-options-proxy-settings). Deze proxy instellingen zijn alleen van invloed op de Internet toegang van uw eind gebruiker, waardoor het verkeer van het virtueel-bureaublad platform van Windows rechtstreeks via Azure Firewall wordt toegestaan.
 
 ## <a name="additional-considerations"></a>Aanvullende overwegingen
 

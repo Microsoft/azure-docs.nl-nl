@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: f034cd07b481f9d72cb3f753b30e1779bf672ac2
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: a8180088e5a0db613d5f04106fe102f58594bf72
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491933"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655048"
 ---
 # <a name="azure-spring-cloud-faq"></a>Veelgestelde vragen over Azure veer Cloud
 
@@ -93,6 +93,21 @@ Er worden momenteel drie services ondersteund:
 ### <a name="can-i-view-add-or-move-persistent-volumes-from-inside-my-applications"></a>Kan ik permanente volumes weer geven, toevoegen of verplaatsen vanuit mijn toepassingen?
 
 Ja.
+
+### <a name="how-many-outbound-public-ip-addresses-does-an-azure-spring-cloud-instance-have"></a>Hoeveel uitgaande open bare IP-adressen heeft een Azure lente-Cloud instantie?
+
+Het aantal uitgaande open bare IP-adressen kan variëren afhankelijk van de lagen en andere factoren. 
+
+| Azure veer Cloud-exemplaar type | Standaard aantal uitgaande open bare IP-adressen |
+| -------------------------------- | ---------------------------------------------- |
+| Exemplaren van de Basic-laag             | 1                                              |
+| Exemplaren van de Standard-laag          | 2                                              |
+| VNet-injectie-instanties         | 1                                              |
+
+
+### <a name="can-i-increase-the-number-of-outbound-public-ip-addresses"></a>Kan ik het aantal uitgaande open bare IP-adressen verhogen?
+
+Ja, u kunt een [ondersteunings ticket](https://azure.microsoft.com/support/faq/)  openen om meer uitgaande open bare IP-adressen aan te vragen.
 
 ### <a name="when-i-deletemove-an-azure-spring-cloud-service-instance-will-its-extension-resources-be-deletedmoved-as-well"></a>Wanneer ik een Azure lente-Cloud service-exemplaar Verwijder/Verplaats, worden ook de bijbehorende uitbreidings resources verwijderd/verplaatst?
 

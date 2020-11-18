@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
-ms.openlocfilehash: 553cfe0c1a5e7d569c127f23a11f25f4d150b0bc
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: a4cc6e31e49243af8fa52ac568bcbba660bcde7e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700756"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842733"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Beveiligings Services en-technologieën die beschikbaar zijn op Azure
 
@@ -71,7 +71,7 @@ In de loop van de tijd wordt deze lijst gewijzigd en groeit, net zoals in Azure.
 | [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md)|Een op de cloud gebaseerde verificatie opslag die ondersteuning biedt voor een multi tenant, een Cloud Directory en meerdere identiteits beheer Services in Azure.  |
 | [Azure Active Directory B2C](../../active-directory-b2c/overview.md)|Een service voor identiteits beheer waarmee u kunt bepalen hoe klanten zich kunnen aanmelden, aanmelden en hun profielen beheren bij het gebruik van Azure-toepassingen.   |
 | [Azure Active Directory Domain Services](../../active-directory-domain-services/overview.md)| Een op de cloud gebaseerde en beheerde versie van Active Directory Domain Services. |
-| [Azure Multi-Factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md)| Een beveiligings voorziening die gebruikmaakt van verschillende verificatie-en verificatie methoden voordat toegang tot beveiligde gegevens wordt toegestaan. |
+| [Azure AD-Multi-Factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md)| Een beveiligings voorziening die gebruikmaakt van verschillende verificatie-en verificatie methoden voordat toegang tot beveiligde gegevens wordt toegestaan. |
 
 ## <a name="backup-and-disaster-recovery"></a>Back-up en herstel na noodgevallen
 |Service|Beschrijving|

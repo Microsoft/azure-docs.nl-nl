@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: d90384644c58938bfc8a37ec1231b0d12fd60057
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 788c52490a97bb5d5aee0656bbdd09731d767d85
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90058697"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842597"
 ---
 # <a name="azure-security-baseline-for-azure-public-ip"></a>Azure-beveiligings basislijn voor open bare Azure-IP
 
@@ -148,11 +148,11 @@ Just-in-time-toegang ingeschakeld met behulp van Azure Active Directory (Azure A
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
 
-**Richt lijnen**: gebruik een privileged Access Workstation (Paw) met Azure multi-factor Authentication (MFA) ingeschakeld om u aan te melden en uw Azure Sentinel-gerelateerde resources te configureren.
+**Hulp**: gebruik een privileged Access-werk station (Paw) met azure AD multi-factor Authentication (MFA) ingeschakeld om u aan te melden en uw Azure-Sentinel-gerelateerde resources te configureren.
 
 - [Privileged Access Workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-- [Planning van een cloudgebaseerde Azure Multi-Factor Authentication-implementatie](../active-directory/authentication/howto-mfa-getstarted.md)
+- [Een implementatie van Azure AD Multi-Factor Authentication in de Cloud plannen](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Azure Security Center bewaking**: niet van toepassing
 
@@ -295,7 +295,7 @@ Gebruik Azure resource Graph om bronnen in hun abonnementen op te vragen en te d
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
 
 - Niet toegestane resourcetypen
 - Toegestane brontypen
@@ -310,7 +310,7 @@ Gebruik Azure resource Graph om bronnen in hun abonnementen op te vragen en te d
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
-**Hulp**bij het configureren van voorwaardelijke toegang van Azure om gebruikers de mogelijkheid te bieden om te communiceren met Azure Resource Manager door ' blok toegang ' te configureren voor de app Microsoft Azure management.
+**Hulp** bij het configureren van voorwaardelijke toegang van Azure om gebruikers de mogelijkheid te bieden om te communiceren met Azure Resource Manager door ' blok toegang ' te configureren voor de app Microsoft Azure management.
 
 - [Voorwaardelijke toegang configureren om de toegang tot Azure Resource Manager te blok keren](../role-based-access-control/conditional-access-azure-management.md)
 
@@ -408,7 +408,7 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md) 
 
-- [Labels gebruiken om uw Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags gebruiken om Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Azure Security Center bewaking**: Ja
 

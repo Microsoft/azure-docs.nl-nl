@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 82220a63cfe470344951e4276bc9eaccd9600428
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 8bfe6f07fead700ae71bba1c28ccb13aa700513c
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677341"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842767"
 ---
 # <a name="optimize-azure-data-lake-storage-gen2-for-performance"></a>Azure Data Lake Storage Gen2 optimaliseren voor prestaties
 
@@ -57,7 +57,7 @@ Wanneer gegevens worden opgeslagen in Data Lake Storage Gen2, hebben de bestands
 
 Normaal gesp roken hebben analyse-engines als HDInsight en Azure Data Lake Analytics een overhead per bestand. Als u uw gegevens als veel kleine bestanden opslaat, kan dit een negatieve invloed hebben op de prestaties. In het algemeen kunt u uw gegevens indelen in bestanden met een grotere grootte voor betere prestaties (256 MB tot 100 GB). Sommige engines en toepassingen hebben mogelijk problemen met het efficiënt verwerken van bestanden die groter zijn dan 100 GB.
 
-Soms hebben gegevens pijplijnen een beperkte controle over de onbewerkte gegevens die veel kleine bestanden hebben. Het is raadzaam om een ' koken ' proces te hebben dat grotere bestanden genereert die worden gebruikt voor downstream-toepassingen.
+Soms hebben gegevens pijplijnen een beperkte controle over de onbewerkte gegevens die veel kleine bestanden hebben. Over het algemeen raden wij aan dat uw systeem een bepaalde Sorteer procedure heeft voor het samen voegen van kleine bestanden tot grotere records voor gebruik door downstream-toepassingen.
 
 ### <a name="organizing-time-series-data-in-folders"></a>Time Series-gegevens in mappen ordenen
 

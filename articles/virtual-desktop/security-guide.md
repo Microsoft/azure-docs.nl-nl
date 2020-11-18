@@ -6,14 +6,14 @@ ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a194074b75a404e5a28e86015b0d0bcea2619fc2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dc39c1e43580c5cf302e85664783dba4509889af
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88002283"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842631"
 ---
-# <a name="security-best-practices"></a>Aanbevolen beveiligingsprocedures
+# <a name="security-best-practices"></a>Aanbevolen procedures voor beveiliging
 
 Virtueel bureau blad van Windows is een beheerde virtueel bureau blad-service met veel beveiligings mogelijkheden om uw organisatie veilig te houden. In een Windows-implementatie op virtueel bureau blad beheert micro soft delen van de services namens de klant. De service heeft veel ingebouwde geavanceerde beveiligings functies, zoals reverse Connect, waarmee het risico wordt gereduceerd waarbij externe Bureau bladen toegankelijk zijn vanaf elke locatie.
 
@@ -29,12 +29,12 @@ Hier vindt u de beveiligings behoeften die u nodig hebt voor de implementatie va
 
 | Beveiligings behoeften | Is de klant hiervoor verantwoordelijk? |
 |---------------|:-------------------------:|
-|Identiteit|Ja|
-|Gebruikers apparaten (Mobile en PC)|Ja|
-|App-beveiliging|Ja|
-|Session Host-besturings systeem|Ja|
-|Implementatie configuratie|Ja|
-|Netwerk besturings elementen|Ja|
+|Identiteit|Yes|
+|Gebruikers apparaten (Mobile en PC)|Yes|
+|App-beveiliging|Yes|
+|Session Host-besturings systeem|Yes|
+|Implementatie configuratie|Yes|
+|Netwerk besturings elementen|Yes|
 |Besturings vlak voor virtualisatie|Nee|
 |Fysieke hosts|Nee|
 |Fysiek netwerk|Nee|
@@ -70,7 +70,7 @@ Virtueel bureau blad van Windows heeft veel ingebouwde beveiligings controles. I
 
 ### <a name="require-multi-factor-authentication"></a>Multi-Factor Authentication vereisen
 
-Als u multi-factor Authentication vereist voor alle gebruikers en beheerders in het virtuele Windows-bureau blad, wordt de beveiliging van uw volledige implementatie verbeterd. Zie voor meer informatie [Azure multi-factor Authentication inschakelen voor Windows virtueel bureau blad](set-up-mfa.md).
+Als u multi-factor Authentication vereist voor alle gebruikers en beheerders in het virtuele Windows-bureau blad, wordt de beveiliging van uw volledige implementatie verbeterd. Zie voor meer informatie [Azure AD multi-factor Authentication inschakelen voor virtueel bureau blad van Windows](set-up-mfa.md).
 
 ### <a name="enable-conditional-access"></a>Voorwaardelijke toegang inschakelen
 
@@ -80,7 +80,7 @@ Als u [voorwaardelijke toegang](../active-directory/conditional-access/best-prac
 
 Als u controle logboek verzameling inschakelt, kunt u de activiteiten van gebruikers en beheerders met betrekking tot het virtuele bureau blad van Windows bekijken. Enkele voor beelden van belang rijke audit logboeken:
 
--   [Azure-activiteiten logboek](../azure-monitor/platform/activity-log-collect.md)
+-   [Azure-activiteitenlogboek](../azure-monitor/platform/activity-log-collect.md)
 -   [Azure Active Directory activiteiten logboek](../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md)
 -   [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md)
 -   [Sessie-hosts](../azure-monitor/platform/agent-windows.md)

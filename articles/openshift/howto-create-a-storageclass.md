@@ -7,13 +7,13 @@ ms.date: 10/16/2020
 author: grantomation
 ms.author: b-grodel
 keywords: Aro, open Shift, AZ Aro, Red Hat, CLI, Azure file
-ms.custom: mvc
-ms.openlocfilehash: a7415a481b133c2f528ba4636c0297ce5cfa23a7
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: a3e2a994311334d410aeffd55e7f6febaa85d6e4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747885"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842665"
 ---
 # <a name="create-an-azure-files-storageclass-on-azure-red-hat-openshift-4"></a>Een Azure Files StorageClass maken in Azure Red Hat OpenShift 4
 

@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.custom: devx-track-js
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 5ca225f136b0c3a6fc8b47d00ff64064fe17d4ee
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 2d9344d8b97d9a6ba361a337e0c6165438c04897
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92281764"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94745085"
 ---
 # <a name="use-a-markdown-tile-on-azure-dashboards-to-show-custom-content"></a>Een tegel met korting op Azure-Dash boards gebruiken om aangepaste inhoud weer te geven
 
@@ -27,17 +27,17 @@ U kunt een tegel met korting toevoegen aan uw Azure-Dash boards om aangepaste st
 
    ![Scherm opname van portal zijbalk](./media/azure-portal-markdown-tile/azure-portal-nav.png)
 
-1. Als u aangepaste Dash boards hebt gemaakt, gebruikt u in de dashboard weergave de vervolg keuzelijst om het dash board te selecteren waar de tegel aangepaste prijs opgave moet worden weer gegeven. Selecteer het bewerkings pictogram om de **tegel galerie**te openen.
+1. Als u aangepaste Dash boards hebt gemaakt, gebruikt u in de dashboard weergave de vervolg keuzelijst om het dash board te selecteren waar de tegel aangepaste prijs opgave moet worden weer gegeven. Selecteer het bewerkings pictogram om de **tegel galerie** te openen.
 
    ![Scherm opname van weer gave dash board bewerken](./media/azure-portal-markdown-tile/azure-portal-dashboard-edit.png)
 
-1. Zoek in de **tegel galerie**de tegel met de naam **prijs** opgave en selecteer **toevoegen**. De tegel wordt toegevoegd aan het dash board en het deel venster **verlaging bewerken** wordt geopend.
+1. Zoek in de **tegel galerie** de tegel met de naam **prijs** opgave en selecteer **toevoegen**. De tegel wordt toegevoegd aan het dash board en het deel venster **verlaging bewerken** wordt geopend.
 
 1. Voer waarden in voor **titel** en **ondertitel**, die op de tegel worden weer gegeven nadat u naar een ander veld hebt verplaatst.
 
    ![Scherm opname van de resultaten van het invoeren van de titel en subtitel](./media/azure-portal-markdown-tile/azure-portal-dashboard-enter-title.png)
 
-1. Selecteer een van de opties voor het opnemen van de inhoud van de prijs opgave: **inline bewerken** of **Voeg inhoud in met behulp**van een URL.
+1. Selecteer een van de opties voor het opnemen van de inhoud van de prijs opgave: **inline bewerken** of **Voeg inhoud in met behulp** van een URL.
 
    - Selecteer **inline bewerken** als u de korting rechtstreeks wilt invoeren.
 
@@ -48,7 +48,7 @@ U kunt een tegel met korting toevoegen aan uw Azure-Dash boards om aangepaste st
       ![Scherm opname van invoeren van URL](./media/azure-portal-markdown-tile/azure-portal-dashboard-markdown-url.png)
 
       > [!NOTE]
-      > Voor extra beveiliging kunt u een afkortings bestand maken en dit opslaan in een [Azure Storage-account-BLOB waarvoor versleuteling is ingeschakeld](../storage/common/storage-service-encryption.md). vervolgens wijst u het bestand met de URL-optie aan. De inhoud van de prijs verlaging wordt versleuteld via de versleutelings opties van het opslag account. Alleen gebruikers met machtigingen voor het bestand kunnen de inhoud van de korting op het dash board zien. Stel een CORS-regel (cross-Origin Resource Sharing) in voor het opslag account, zodat de Azure Portal ( _https://portal.azure.com/_ ) toegang kan krijgen tot het bestand met de korting in de blob.
+      > Voor extra beveiliging kunt u een afkortings bestand maken en dit opslaan in een [Azure Storage-account-BLOB waarvoor versleuteling is ingeschakeld](../storage/common/storage-service-encryption.md). vervolgens wijst u het bestand met de URL-optie aan. De inhoud van de prijs verlaging wordt versleuteld via de versleutelings opties van het opslag account. Alleen gebruikers met machtigingen voor het bestand kunnen de inhoud van de korting op het dash board zien. Mogelijk moet u een CORS-regel [(cross-Origin Resource Sharing)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) voor het opslag account instellen, zodat de Azure Portal ( _https://portal.azure.com/_ ) toegang kan krijgen tot het bestand met de korting in de blob.
 
 1. Selecteer **gereed** om het deel venster **prijs verlaging bewerken** te sluiten. Uw inhoud wordt weer gegeven op de tegel prijs verlaging, die u kunt verg Roten of verkleinen door de greep in de rechter benedenhoek te slepen.
 

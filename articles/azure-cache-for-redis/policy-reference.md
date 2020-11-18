@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Cache voor Redis
 description: Een overzicht van ingebouwde Azure Policy-beleidsdefinities voor Azure Cache voor Redis. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.topic: reference
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.custom: subject-policy-reference
-ms.openlocfilehash: aa7ce1e7077b61459ca6c6472e2fb28efd6e5d96
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 849e6667eff1daab7cbebec1fb09928c887d3a38
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319682"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94741007"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-cache-for-redis"></a>Ingebouwde Azure Policy-definities voor Azure Cache voor Redis
 

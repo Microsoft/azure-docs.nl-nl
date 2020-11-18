@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/17/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 47ac8d0e3172645ec168d5cfe7a002d84765b864
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f4238035a6fccb0addb9a481287b31732bd2662
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91333117"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94744532"
 ---
 # <a name="frequently-asked-questions-about-arm-templates"></a>Veelgestelde vragen over ARM-sjablonen
 
@@ -68,7 +68,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over de sjablonen van A
 
 * **Kan ik een abonnement in een ARM-sjabloon maken?**
 
-  Nog niet, maar we werken eraan.
+  Ja, Zie [programmatisch Azure-abonnementen maken met de nieuwste api's](../../cost-management-billing/manage/programmatically-create-subscription.md)voor meer informatie.
 
 * **Hoe kan ik mijn sjabloon testen voordat ik deze implementatie?**
 
@@ -104,9 +104,9 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over de sjablonen van A
 
 ## <a name="template-specs"></a>Sjabloonspecificaties
 
-* **Hoe kan ik deel nemen aan de preview-versie van sjabloon specificaties?**
+* **Hoe kan ik aan de slag met de preview-versie van sjabloon specificaties?**
 
-  [Word lid van de wacht lijst](https://aka.ms/templateSpecsWaitlist) voor sjabloon specificaties.
+  Installeer de meest recente versie van Power shell of Azure CLI. Gebruik voor Azure PowerShell [versie 5.0.0 of hoger](/powershell/azure/install-az-ps). Gebruik voor Azure CLI [versie 2.14.2 of hoger](/cli/azure/install-azure-cli).
 
 * **Hoe zijn sjabloon specificaties en Azure-blauw drukken?**
 

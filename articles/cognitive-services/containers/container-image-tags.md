@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: reference
-ms.date: 11/06/2020
+ms.date: 11/17/2020
 ms.author: aahi
-ms.openlocfilehash: 0efb278c217ede94f67b47250633622501a24414
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: ba51776942ad28fc8d4b0db7dd2d0e162e5322b5
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412541"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94743334"
 ---
 # <a name="azure-cognitive-services-container-image-tags-and-release-notes"></a>Azure Cognitive Services container-afbeeldings Tags en opmerkingen bij de release
 
@@ -31,14 +31,14 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 
 # <a name="latest-version"></a>[Nieuwste versie](#tab/current)
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `latest`                      |       |
 | `1.1.013560003-amd64-preview` |      |
 
 # <a name="previous-versions"></a>[Vorige versies](#tab/previous)
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `1.1.012300001-amd64-preview` |       |
 
@@ -60,7 +60,7 @@ Release opmerkingen voor `v2.0.013250001-amd64-preview` :
 * De limiet voor de grootte van de aanvraag hoofdtekst van 26MB verwijderen. De container kan nu >26MB-bestanden accepteren.
 * Tijds tempel en build-versie toevoegen aan console logboek registratie.
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `latest`                      |       |
 | `2.0.013250001-amd64-preview` |  |
@@ -86,7 +86,7 @@ Release opmerkingen voor `1.1.013050001-amd64-preview`
     }
     ```
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `1.1.013050001-amd64-preview` |       |
 | `1.1.011580001-amd64-preview` |       |
@@ -104,7 +104,7 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 
 # <a name="latest-version"></a>[Nieuwste versie](#tab/current)
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `latest`                      |       |
 | `1.1.009301-amd64-preview`    |       |
@@ -112,7 +112,7 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 
 # <a name="previous-versions"></a>[Vorige versies](#tab/previous)
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `1.1.008640001-amd64-preview` |       |
 | `1.1.008510001-amd64-preview` |       |
@@ -127,7 +127,7 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 
 # <a name="latest-version"></a>[Nieuwste versie](#tab/current)
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `latest`                      |       |
 | `1.1.012280003-amd64-preview` |       |
@@ -135,7 +135,7 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 
 # <a name="previous-version"></a>[Vorige versie](#tab/previous)
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `1.1.012130003-amd64-preview` |       |
 
@@ -170,7 +170,7 @@ Release Opmerking voor `2.6.0-amd64` :
 
 Houd er rekening mee dat de grootte van deze container installatie kopie groter is geworden vanwege de opgenomen woordgroepen lijsten.
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `latest`                      |       |
 | `2.6.0-amd64`                 |       |
@@ -187,7 +187,7 @@ Release Opmerking voor `2.5.0-amd64` :
 **Dit**
 * Het uitvoeren als niet-hoofd gebruikers probleem in de Diarization-modus oplossen
 
-| Afbeeldings Tags                    | Notities               |
+| Afbeeldings Tags                    | Opmerkingen               |
 |-------------------------------|:--------------------|
 | `2.5.0-amd64`                 |   1e GA-versie    |
 
@@ -205,7 +205,7 @@ Release Opmerking voor `1.8.0-amd64` :
 **Functies**
 * Volledig gemigreerd naar .NET 3,1
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `latest`                      |       |
 | `1.8.0-amd64`                 |       |
@@ -218,7 +218,7 @@ Release Opmerking voor `1.7.0-amd64` :
 **Functie**
 * Gedeeltelijk gemigreerd naar .NET 3,1
 
-| Afbeeldings Tags                    | Notities               |
+| Afbeeldings Tags                    | Opmerkingen               |
 |-------------------------------|:--------------------|
 | `1.7.0-amd64`                 |   1e GA-versie    |
 
@@ -254,14 +254,14 @@ Release Opmerking voor `2.6.0-amd64-<locale>` :
 
 Houd er rekening mee dat de grootte van deze container installatie kopie groter is geworden vanwege de opgenomen woordgroepen lijsten. 
 
-| Afbeeldings Tags                    | Notities                                                                                                | 
+| Afbeeldings Tags                    | Opmerkingen                                                                                                | 
 |-------------------------------|:-----------------------------------------------------------------------------------------------------|
 | `latest`                      | Container installatie kopie met de `en-US` land instelling.                                                             |
 | `2.6.0-amd64-<locale>`        | Vervang door `<locale>` een van de beschik bare land instellingen, zoals hieronder wordt weer gegeven. Bijvoorbeeld `2.6.0-amd64-en-us`. |
 
 Voor deze container zijn de volgende land instellingen beschikbaar.
 
-| Land instelling voor v 2.6.0           | Notities                                    |
+| Land instelling voor v 2.6.0           | Opmerkingen                                    |
 |-----------------------------|:-----------------------------------------|
 | `ar-ae`                     | Container installatie kopie met de `ar-AE` land instelling. |
 | `ar-eg`                     | Container installatie kopie met de `ar-EG` land instelling. |
@@ -315,13 +315,13 @@ Release Opmerking voor `2.5.0-amd64-<locale>` :
 **Dit**
 * Hiermee wordt een probleem opgelost waarbij een niet-hoofd gebruiker wordt uitgevoerd in de Diarization-modus
 
-| Afbeeldings Tags                  | Notities                                    |
+| Afbeeldings Tags                  | Opmerkingen                                    |
 |-----------------------------|:-----------------------------------------|
 | `2.5.0-amd64-<locale>`      | Vervang door `<locale>` een van de beschik bare land instellingen, zoals hieronder wordt weer gegeven. Bijvoorbeeld `2.5.0-amd64-en-us`.  |
 
 Voor deze container zijn de volgende land instellingen beschikbaar.
 
-| Land instelling voor v 2.5.0           | Notities                                    |
+| Land instelling voor v 2.5.0           | Opmerkingen                                    |
 |-----------------------------|:-----------------------------------------|
 | `ar-ae`                     | Container installatie kopie met de `ar-AE` land instelling. |
 | `ar-eg`                     | Container installatie kopie met de `ar-EG` land instelling. |
@@ -379,13 +379,13 @@ Release Opmerking voor `1.8.0-amd64-<locale-and-voice>` :
 **Functie**
 * Volledig gemigreerd naar .NET 3,1
 
-| Afbeeldings Tags                                  | Notities                                                                                                         |
+| Afbeeldings Tags                                  | Opmerkingen                                                                                                         |
 |---------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
 | `latest`                                    | Container installatie kopie met de `en-US` land instellingen en de `en-US-AriaRUS` stem.                                            | 
 | `1.8.0-amd64-<locale-and-voice>`            | Vervang door `<locale>` een van de beschik bare land instellingen, zoals hieronder wordt weer gegeven. Bijvoorbeeld `1.8.0-amd64-en-us-ariarus`.  |
 
 
-| Land instellingen voor v 1.8.0                          | Notities                                                                      |
+| Land instellingen voor v 1.8.0                          | Opmerkingen                                                                      |
 |---------------------------------------------|:---------------------------------------------------------------------------|
 | `ar-eg-hoda`                                | Container installatie kopie met de `ar-EG` land instellingen en de `ar-EG-Hoda` stem.            |
 | `ar-sa-naayf`                               | Container installatie kopie met de `ar-SA` land instellingen en de `ar-SA-Naayf` stem.           |
@@ -477,12 +477,12 @@ Release Opmerking voor `1.7.0-amd64-<locale-and-voice>` :
 **Functie**
 * Bijgewerkte onderdelen naar .NET 3,1
 
-| Afbeeldings Tags                                  | Notities                                                                                                         |
+| Afbeeldings Tags                                  | Opmerkingen                                                                                                         |
 |---------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
 | `1.7.0-amd64-<locale-and-voice>`            | 1e GA-versie. Vervang door `<locale>` een van de beschik bare land instellingen, zoals hieronder wordt weer gegeven. Bijvoorbeeld `1.7.0-amd64-en-us-ariarus`.  |
 
 
-| Land instellingen voor v 1.7.0                          | Notities                                                                      |
+| Land instellingen voor v 1.7.0                          | Opmerkingen                                                                      |
 |---------------------------------------------|:---------------------------------------------------------------------------|
 | `ar-eg-hoda`                                | Container installatie kopie met de `ar-EG` land instellingen en de `ar-EG-Hoda` stem.            |
 | `ar-sa-naayf`                               | Container installatie kopie met de `ar-SA` land instellingen en de `ar-SA-Naayf` stem.           |
@@ -574,13 +574,46 @@ De [Neural tekst naar spraak][sp-ntts] container installatie kopie vindt u in he
 
 Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt ook een volledige lijst met [Tags vinden op het MCR](https://mcr.microsoft.com/v2/azure-cognitive-services/speechservices/neural-text-to-speech/tags/list).
 
-| Afbeeldings Tags                                  | Notities                                                                      |
+
+# <a name="latest-version"></a>[Nieuwste versie](#tab/current)
+
+Release opmerkingen voor `v1.3.0` :
+* De Neural tekst-naar-spraak-container is nu algemeen beschikbaar. 
+
+| Afbeeldings Tags                                  | Opmerkingen                                                                      |
+|---------------------------------------------|:---------------------------------------------------------------------------|
+| `latest`                                    | Container installatie kopie met de `en-US` land instellingen en de `en-US-AriaNeural` stem.      |
+| `1.3.0-amd64-<locale-and-voice>`    | Vervang door `<locale>` een van de beschik bare land instellingen, zoals hieronder wordt weer gegeven. Bijvoorbeeld `1.3.0-amd64-en-us-arianeural`. |
+
+
+| v 1.3.0 land instellingen en stemmen           | Opmerkingen                                                                      |
+|---------------------------------------------|:---------------------------------------------------------------------------|
+| `de-de-katjaneural`                 | Container installatie kopie met de `de-DE` land instellingen en de `de-DE-KatjaNeural` stem.     |
+| `en-au-natashaneural`               | Container installatie kopie met de `en-AU` land instellingen en de `en-AU-NatashaNeural` stem.   |
+| `en-ca-claraneural`                 | Container installatie kopie met de `en-CA` land instellingen en de `en-CA-ClaraNeural` stem.     |
+| `en-gb-libbyneural`                 | Container installatie kopie met de `en-GB` land instellingen en de `en-GB-LibbyNeural` stem.     |
+| `en-gb-mianeural`                   | Container installatie kopie met de `en-GB` land instellingen en de `en-GB-MiaNeural` stem.       |
+| `en-us-arianeural`                  | Container installatie kopie met de `en-US` land instellingen en de `en-US-AriaNeural` stem.      |
+| `en-us-guyneural`                   | Container installatie kopie met de `en-US` land instellingen en de `en-US-GuyNeural` stem.       |
+| `es-es-elviraneural`                | Container installatie kopie met de `es-ES` land instellingen en de `es-ES-ElviraNeural` stem.    |
+| `es-mx-dalianeural`                 | Container installatie kopie met de `es-MX` land instellingen en de `es-MX-DaliaNeural` stem.     |
+| `fr-ca-sylvieneural`                | Container installatie kopie met de `fr-CA` land instellingen en de `fr-CA-SylvieNeural` stem.    |
+| `fr-fr-deniseneural`                | Container installatie kopie met de `fr-FR` land instellingen en de `fr-FR-DeniseNeural` stem.    |
+| `it-it-elsaneural`                  | Container installatie kopie met de `it-IT` land instellingen en de `it-IT-ElsaNeural` stem.      |
+| `ja-jp-nanamineural`                | Container installatie kopie met de `ja-JP` land instellingen en de `ja-JP-NanamiNeural` stem.    |
+| `ko-kr-sunhineural`                 | Container installatie kopie met de `ko-KR` land instellingen en de `ko-KR-SunHiNeural` stem.     |
+| `pt-br-franciscaneural`             | Container installatie kopie met de `pt-BR` land instellingen en de `pt-BR-FranciscaNeural` stem. |
+| `zh-cn-xiaoxiaoneural`              | Container installatie kopie met de `zh-CN` land instellingen en de `zh-CN-XiaoxiaoNeural` stem.  |
+
+# <a name="previous-version"></a>[Vorige versie](#tab/previous)
+
+| Afbeeldings Tags                                  | Opmerkingen                                                                      |
 |---------------------------------------------|:---------------------------------------------------------------------------|
 | `latest`                                    | Container installatie kopie met de `en-US` land instellingen en de `en-US-AriaNeural` stem.      |
 | `1.2.0-amd64-<locale-and-voice>-preview`    | Vervang door `<locale>` een van de beschik bare land instellingen, zoals hieronder wordt weer gegeven. Bijvoorbeeld `1.2.0-amd64-en-us-arianeural-preview`. |
 
 
-| v 1.2.0-voor beeld-land instellingen en stemmen           | Notities                                                                      |
+| v 1.2.0-voor beeld-land instellingen en stemmen           | Opmerkingen                                                                      |
 |---------------------------------------------|:---------------------------------------------------------------------------|
 | `latest`                                    | Container installatie kopie met de `en-US` land instellingen en de `en-US-AriaNeural` stem.      |
 | `de-de-katjaneural-preview`                 | Container installatie kopie met de `de-DE` land instellingen en de `de-DE-KatjaNeural` stem.     |
@@ -600,13 +633,15 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 | `pt-br-franciscaneural-preview`             | Container installatie kopie met de `pt-BR` land instellingen en de `pt-BR-FranciscaNeural` stem. |
 | `zh-cn-xiaoxiaoneural-preview`              | Container installatie kopie met de `zh-CN` land instellingen en de `zh-CN-XiaoxiaoNeural` stem.  |
 
+---
+
 ## <a name="speech-language-detection"></a>Taaldetectie van spraak
 
 De container installatie kopie voor de [spraak taal detectie][sp-lid] kan worden gevonden in het `mcr.microsoft.com` container register Syndicate. Deze bevindt zich in de `azure-cognitive-services/speechservices/` opslag plaats en heet `language-detection` . De volledig gekwalificeerde naam van de container installatie kopie is, `mcr.microsoft.com/azure-cognitive-services/speechservices/language-detection` .
 
 Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt ook een volledige lijst met [Tags vinden op het MCR](https://mcr.microsoft.com/v2/azure-cognitive-services/speechservices/language-detection/tags/list).
 
-| Afbeeldings Tags                                  | Notities                                                                      |
+| Afbeeldings Tags                                  | Opmerkingen                                                                      |
 |---------------------------------------------|:---------------------------------------------------------------------------|
 | `latest`                       |      |
 | `1.1.0-amd64-preview`                       |      |
@@ -620,14 +655,14 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 # <a name="latest-version"></a>[Nieuwste versie](#tab/current)
 
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `latest`                      |       |
 | `1.1.013570001-amd64` |       |
 
 # <a name="previous-versions"></a>[Vorige versies](#tab/previous)
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `1.1.012840001-amd64` |       |
 | `1.1.012830001-amd64`    |       |
@@ -643,7 +678,7 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 
 # <a name="latest-versions"></a>[Nieuwste versies](#tab/current)
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `latest`                      |       |
 | `1.1.013570001-amd64` | |
@@ -652,7 +687,7 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 # <a name="previous-versions"></a>[Vorige versies](#tab/previous)
 
 
-| Afbeeldings Tags                    | Notities |
+| Afbeeldings Tags                    | Opmerkingen |
 |-------------------------------|:------|
 | `latest`                      |       |
 | `1.1.012840001-amd64` |   |
@@ -666,7 +701,7 @@ De [sentimentanalyse][ta-se] container installatie kopie vindt u in het `mcr.mic
 
 Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt ook een volledige lijst met [Tags vinden op het MCR](https://mcr.microsoft.com/v2/azure-cognitive-services/textanalytics/sentiment/tags/list).
 
-| Afbeeldings Tags | Notities                                         |
+| Afbeeldings Tags | Opmerkingen                                         |
 |------------|:----------------------------------------------|
 | `latest`   |                                               |
 | `3.0-en`   | Sentimentanalyse v3 (Engels)               |

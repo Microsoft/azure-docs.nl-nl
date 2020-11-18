@@ -8,15 +8,15 @@ editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 11/17/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 3845c5e5d7cf6bb372744fb3c740c44aa2b94236
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 4719bd21bc6299373f9dabfe4733541c6fa27b94
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305615"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94740178"
 ---
 # <a name="modeling-stage-of-the-team-data-science-process-lifecycle"></a>Model fase van de levens cyclus van het team data Science-proces
 
@@ -41,8 +41,8 @@ Hier volgt een visuele representatie van de levens cyclus van TDSP:
 ## <a name="how-to-do-it"></a>Hoe u dit doet
 Er zijn drie hoofd taken die in deze fase worden behandeld:
 
-  * **Functie techniek** : Maak gegevens functies van de onbewerkte gegevens om model trainingen te vergemakkelijken.
-  * **Model training** : Zoek het model dat de vraag het meest nauw keurig beantwoordt door de metrische gegevens over het slagen te vergelijken.
+  * **Functie techniek**: Maak gegevens functies van de onbewerkte gegevens om model trainingen te vergemakkelijken.
+  * **Model training**: Zoek het model dat de vraag het meest nauw keurig beantwoordt door de metrische gegevens over het slagen te vergelijken.
   * Bepaal of uw model **geschikt is voor productie.**
 
 ### <a name="feature-engineering"></a>Functie-engineering
@@ -63,18 +63,16 @@ De training voor het model proces bestaat uit de volgende stappen:
    * **Bepaal de ' beste ' oplossing** om de vraag te beantwoorden door de metrische gegevens over het succes te vergelijken tussen alternatieve methoden.
 
 > [!NOTE]
-> **Lekkage voor komen** : u kunt lekkage van gegevens veroorzaken als u gegevens opneemt van buiten de set met trainingen die een model of machine learning-algoritme mogelijk maakt om onrealistisch goede voor spellingen te maken. Lekkage is een gemeen schappelijke reden voor het verkrijgen van zenuwen bij gegevens wetenschappers wanneer ze voorspellende resultaten ontvangen die te mooi lijken om waar te zijn. Deze afhankelijkheden kunnen moeilijk te detecteren zijn. Om te voor komen dat lekkage vaak een iteratie vereist tussen het bouwen van een analyse gegevensset, het maken van een model en het evalueren van de nauw keurigheid van de resultaten. 
+> **Lekkage voor komen**: u kunt lekkage van gegevens veroorzaken als u gegevens opneemt van buiten de set met trainingen die een model of machine learning-algoritme mogelijk maakt om onrealistisch goede voor spellingen te maken. Lekkage is een gemeen schappelijke reden voor het verkrijgen van zenuwen bij gegevens wetenschappers wanneer ze voorspellende resultaten ontvangen die te mooi lijken om waar te zijn. Deze afhankelijkheden kunnen moeilijk te detecteren zijn. Om te voor komen dat lekkage vaak een iteratie vereist tussen het bouwen van een analyse gegevensset, het maken van een model en het evalueren van de nauw keurigheid van de resultaten. 
 > 
 > 
-
-We bieden een [geautomatiseerd hulp programma voor model lering en rapportage](https://github.com/Azure/Azure-TDSP-Utilities/blob/master/DataScienceUtilities/Modeling) met TDSP dat kan worden uitgevoerd via meerdere algoritmen en parameter sweeps om een basis lijn model te maken. Er wordt ook een basislijn model rapport gemaakt met een overzicht van de prestaties van elk model en de combi natie van para meters, inclusief de prioriteit van de variabele. Dit proces wordt ook herhaald, aangezien het verdere functie techniek kan hebben. 
 
 ## <a name="artifacts"></a>Artifacts
 De artefacten die in deze fase worden geproduceerd, zijn onder andere:
 
    * [Functie sets](https://github.com/Azure/Azure-TDSP-ProjectTemplate/blob/master/Docs/Data_Report/Data%20Defintion.md): de functies die voor het model leren zijn ontwikkeld, worden beschreven in de sectie **functie sets** van het rapport **gegevens definitie** . Het bevat aanwijzers naar de code voor het genereren van de functies en een beschrijving van de manier waarop de functie is gegenereerd.
    * [Model rapport](https://github.com/Azure/Azure-TDSP-ProjectTemplate/blob/master/Docs/Model/Model%201/Model%20Report.md): voor elk model dat wordt geprobeerd, een standaard rapport op basis van een sjabloon dat details bevat over elk experiment, wordt er geproduceerd.
-   * **Beslissing van het controle punt** : evalueren of het model voldoende voor productie wordt uitgevoerd. Hier volgen enkele belang rijke vragen die u kunt stellen:
+   * **Beslissing van het controle punt**: evalueren of het model voldoende voor productie wordt uitgevoerd. Hier volgen enkele belang rijke vragen die u kunt stellen:
      * Beantwoordt het model de vraag met voldoende betrouw baarheid op basis van de test gegevens? 
      * Moet u andere benaderingen proberen? Kunt u extra gegevens verzamelen, meer functies uitvoeren of experimenteren met andere algoritmen?
 
@@ -82,7 +80,7 @@ De artefacten die in deze fase worden geproduceerd, zijn onder andere:
 
 Hier vindt u koppelingen naar elke stap in de levens cyclus van de TDSP:
 
-   1. [Inzicht in het bedrijf](lifecycle-business-understanding.md)
+   1. [Zakelijke inzichten](lifecycle-business-understanding.md)
    2. [Gegevens verkrijgen en meer informatie](lifecycle-data.md)
    3. [Modelleren](lifecycle-modeling.md)
    4. [Implementatie](lifecycle-deployment.md)

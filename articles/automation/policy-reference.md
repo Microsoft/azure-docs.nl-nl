@@ -1,15 +1,15 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Automation
 description: Een overzicht van de ingebouwde Azure Policy-beleidsdefinities voor Azure Automation. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 08ede1182e1c5f8ae796ab7c950055ea44137f55
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: acdcb747887dc41b11b2eb0a5a14553c799d22b4
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319691"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94741350"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-automation"></a>Ingebouwde Azure Policy-definities voor Azure Automation
 

@@ -1,30 +1,42 @@
 ---
 title: ServicePrincipalSelector UI-element
-description: Hierin wordt het micro soft. common. ServicePrincipalSelector UI-element voor Azure Portal beschreven. Biedt een vervolg keuzelijst voor het kiezen van een toepassings-id en een tekstvak voor het invoeren van een wacht woord of vinger afdruk van het certificaat.
+description: Hierin wordt het micro soft. common. ServicePrincipalSelector UI-element voor Azure Portal beschreven. Biedt een besturings element voor het kiezen van een toepassing en een tekstvak voor het invoeren van een wacht woord of vinger afdruk van een certificaat.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 09/29/2020
+ms.date: 11/17/2020
 ms.author: tomfitz
-ms.openlocfilehash: 73b242754bfae53b6df5abd9c2c8dee33b973dad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9d41e41f110e927f436b38d6291719c138defa53
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91575993"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94745759"
 ---
 # <a name="microsoftcommonserviceprincipalselector-ui-element"></a>Micro soft. common. ServicePrincipalSelector UI-element
 
-Een besturings element waarmee gebruikers een bestaande service-principal kunnen selecteren of een nieuwe kunnen registreren. Wanneer u **Nieuw maken**selecteert, gaat u door de stappen om een nieuwe toepassing te registreren. Wanneer u een bestaande toepassing selecteert, biedt het besturings element een tekstvak voor het invoeren van een wacht woord of vinger afdruk van het certificaat.
+Een besturings element waarmee gebruikers een bestaande [Service-Principal](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) kunnen selecteren of een nieuwe toepassing registreren. Wanneer u **Nieuw maken** selecteert, volgt u de stappen om een nieuwe toepassing te registreren. Wanneer u een bestaande toepassing selecteert, biedt het besturings element een tekstvak voor het invoeren van een wacht woord of vinger afdruk van het certificaat.
 
-## <a name="ui-sample"></a>UI-voor beeld
+## <a name="ui-samples"></a>Voor beelden van gebruikers interface
 
-De standaard weergave wordt bepaald door de waarden in de `defaultValue` eigenschap. Als de `principalId` eigenschap een geldig Globally Unique Identifier (GUID) bevat, zoekt het besturings element naar de object-id van de toepassing. De standaard waarde is van toepassing als de gebruiker geen selectie maakt in de vervolg keuzelijst.
+U kunt een standaard toepassing gebruiken, een nieuwe toepassing maken of een bestaande toepassing gebruiken.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-initial.png" alt-text="Eerste weer gave van micro soft. common. ServicePrincipalSelector":::
+### <a name="use-default-application-or-create-new"></a>Standaard toepassing gebruiken of nieuwe maken
 
-Wanneer u **nieuwe** of een bestaande toepassings-id in de vervolg keuzelijst selecteert, wordt het **verificatie type** weer gegeven om een wacht woord of vinger afdruk van het certificaat in het tekstvak in te voeren.
+De standaard weergave wordt bepaald door de waarden in de `defaultValue` eigenschap en het **type service-principal** is ingesteld op **nieuwe maken**. Als de `principalId` eigenschap een geldig Globally Unique Identifier (GUID) bevat, zoekt het besturings element naar de toepassing `objectId` . De standaard waarde is van toepassing als de gebruiker geen selectie van het besturings element maakt.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-selection.png" alt-text="Eerste weer gave van micro soft. common. ServicePrincipalSelector":::
+Als u een nieuwe toepassing wilt registreren, selecteert u **Selectie wijzigen** en het dialoog venster **een toepassing registreren** wordt weer gegeven. Voer **naam** in, **ondersteund account type** en selecteer de knop **registreren** .
+
+:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-default.png" alt-text="Initiële weer gave van micro soft. common. ServicePrincipalSelector.":::
+
+Nadat u een nieuwe toepassing hebt geregistreerd, gebruikt u het **verificatie type** om een wacht woord of vinger afdruk van het certificaat in te voeren.
+
+:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-authenticate.png" alt-text="Micro soft. common. ServicePrincipalSelector-verificatie.":::
+
+### <a name="use-existing-application"></a>Bestaande toepassing gebruiken
+
+Als u een bestaande toepassing wilt gebruiken, kiest u **bestaande selecteren** en selecteert **u vervolgens selectie maken**. In het dialoog venster **een toepassing selecteren** kunt u zoeken naar de naam van de toepassing. Selecteer in de resultaten de toepassing en vervolgens de knop **selecteren** . Nadat u een toepassing hebt geselecteerd, wordt het **verificatie type** voor het besturings element weer gegeven om een wacht woord of vinger afdruk van het certificaat in te voeren.
+
+:::image type="content" source="./media/managed-application-elements/microsoft-common-serviceprincipal-existing.png" alt-text="Micro soft. common. ServicePrincipalSelector Selecteer bestaande toepassing.":::
 
 ## <a name="schema"></a>Schema
 
@@ -33,14 +45,12 @@ Wanneer u **nieuwe** of een bestaande toepassings-id in de vervolg keuzelijst se
   "name": "ServicePrincipal",
   "type": "Microsoft.Common.ServicePrincipalSelector",
   "label": {
-    "principalId": "App Id",
     "password": "Password",
     "certificateThumbprint": "Certificate thumbprint",
     "authenticationType": "Authentication Type",
     "sectionHeader": "Service Principal"
   },
   "toolTip": {
-    "principalId": "App Id",
     "password": "Password",
     "certificateThumbprint": "Certificate thumbprint",
     "authenticationType": "Authentication Type"
@@ -63,13 +73,13 @@ Wanneer u **nieuwe** of een bestaande toepassings-id in de vervolg keuzelijst se
 
 ## <a name="remarks"></a>Opmerkingen
 
-- De vereiste eigenschappen zijn:
+- De vereiste eigenschappen zijn als volgt:
   - `name`
   - `type`
   - `label`
   - `defaultValue`: Hiermee geeft u de standaard waarde `principalId` en op `name` .
 
-- De optionele eigenschappen zijn:
+- De optionele eigenschappen zijn als volgt:
   - `toolTip`: Hiermee wordt een knop Info `infoBalloon` aan elk label gekoppeld.
   - `visible`: Het besturings element verbergen of weer geven.
   - `options`: Hiermee geeft u op of de optie voor de vinger afdruk van het certificaat beschikbaar moet worden gemaakt.
@@ -95,14 +105,12 @@ Hier volgt een voor beeld van het `Microsoft.Common.ServicePrincipalSelector` be
             "name": "ServicePrincipal",
             "type": "Microsoft.Common.ServicePrincipalSelector",
             "label": {
-              "principalId": "App Id",
               "password": "Password",
               "certificateThumbprint": "Certificate thumbprint",
               "authenticationType": "Authentication Type",
               "sectionHeader": "Service Principal"
             },
             "toolTip": {
-              "principalId": "App Id",
               "password": "Password",
               "certificateThumbprint": "Certificate thumbprint",
               "authenticationType": "Authentication Type"
@@ -138,9 +146,9 @@ Hier volgt een voor beeld van het `Microsoft.Common.ServicePrincipalSelector` be
 
 ## <a name="example-output"></a>Voorbeeld uitvoer
 
-De `appId` is de id van de registratie van de toepassing die u hebt geselecteerd of gemaakt. De `objectId` is een matrix met objectid's voor de service-principals die zijn geconfigureerd voor de registratie van de geselecteerde toepassing.
+De `appId` is de id van de registratie van de toepassing die u hebt geselecteerd of gemaakt. De `objectId` is een matrix met object-id's voor de service-principals die zijn geconfigureerd voor de registratie van de geselecteerde toepassing.
 
-Als er geen selectie wordt gemaakt vanuit de vervolg keuzelijst, is de waarde van de `newOrExisting` eigenschap **Nieuw**:
+Als er geen selectie wordt gemaakt vanuit het besturings element, is de waarde van de `newOrExisting` eigenschap **Nieuw**:
 
 ```json
 {
@@ -165,7 +173,7 @@ Als er geen selectie wordt gemaakt vanuit de vervolg keuzelijst, is de waarde va
 }
 ```
 
-Wanneer een **nieuwe toepassing maken** of een bestaande toepassings-id is geselecteerd in de vervolg keuzelijst, wordt de waarde van de `newOrExisting` eigenschap **bestaande**:
+Bij het maken van een **nieuwe** of een bestaande toepassing is geselecteerd in het besturings element, de waarde van de `newOrExisting` eigenschap is **bestaande**:
 
 ```json
 {

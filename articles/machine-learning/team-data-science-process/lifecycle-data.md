@@ -8,15 +8,15 @@ editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 11/17/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: f7770e929e51ee51b09060e4247c5f92b27d1035
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: fffb52e333bea1b2be11b127a9eab6656dc1d1f5
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311875"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94740325"
 ---
 # <a name="data-acquisition-and-understanding-stage-of-the-team-data-science-process"></a>Gegevens verwerving en uitleg van het team data Science process
 
@@ -48,9 +48,7 @@ Er zijn drie hoofd taken die in deze fase worden behandeld:
 Stel het proces in om de gegevens van de bron locaties te verplaatsen naar de doel locaties waar u Analytics-bewerkingen uitvoert, zoals training en voor spellingen. Zie [gegevens laden in opslag omgevingen voor analyse](ingest-data.md)voor technische details en opties voor het verplaatsen van gegevens met verschillende Azure-gegevens Services. 
 
 ### <a name="explore-the-data"></a>De gegevens verkennen
-Voordat u uw modellen traint, moet u een goed idee van de gegevens ontwikkelen. Real-World-gegevens sets zijn vaak ruis, ontbreken waarden of hebben een host van andere verschillen. U kunt gegevens samenvatting en visualisatie gebruiken om de kwaliteit van uw gegevens te controleren en de informatie die u nodig hebt voor het verwerken van de gegevens te verstrekken voordat deze klaar is voor model lering. Dit proces wordt vaak herhaald.
-
-TDSP biedt een geautomatiseerd hulp programma met de naam [idee](https://github.com/Azure/Azure-TDSP-Utilities/blob/master/DataScienceUtilities/DataReport-Utils)om de gegevens te visualiseren en rapporten van gegevens overzichten voor te bereiden. We raden u aan eerst te beginnen met de idee om de gegevens te verkennen, zodat u de eerste gegevens interactief kunt ontwikkelen zonder code ring. Vervolgens kunt u aangepaste code schrijven voor het verkennen van gegevens en visualisaties. Zie [taken om gegevens voor te bereiden voor verbeterde machine learning](prepare-data.md)voor meer informatie over het opschonen van de gegevens.  
+Voordat u uw modellen traint, moet u een goed idee van de gegevens ontwikkelen. Real-World-gegevens sets zijn vaak ruis, ontbreken waarden of hebben een host van andere verschillen. U kunt gegevens samenvatting en visualisatie gebruiken om de kwaliteit van uw gegevens te controleren en de informatie die u nodig hebt voor het verwerken van de gegevens te verstrekken voordat deze klaar is voor model lering. Dit proces wordt vaak herhaald. Zie [taken om gegevens voor te bereiden voor verbeterde machine learning](prepare-data.md)voor meer informatie over het opschonen van de gegevens.  
 
 Nadat u tevreden bent met de kwaliteit van de gereinigde gegevens, is de volgende stap het beter inzicht te krijgen in de patronen die inherent zijn aan de gegevens. Deze gegevens analyse helpt u bij het kiezen en ontwikkelen van een geschikt voorspellend model voor uw doel. Zoek naar bewijs voor het goed verbonden met de gegevens met het doel. Bepaal vervolgens of er voldoende gegevens zijn om door te gaan met de volgende model stappen. Dit proces wordt vaak herhaald. Mogelijk moet u nieuwe gegevens bronnen met nauw keurigere of meer relevante gegevens vinden om de gegevensset die in de vorige fase is geïdentificeerd, te verbeteren. 
 
@@ -66,15 +64,15 @@ In deze fase ontwikkelt u een oplossings architectuur van de gegevens pijplijn. 
 ## <a name="artifacts"></a>Artifacts
 Hieronder vindt u de producten in deze fase:
 
-   * [Rapport gegevens kwaliteit](https://github.com/Azure/Azure-TDSP-ProjectTemplate/blob/master/Docs/Data_Report/DataSummaryReport.md): dit rapport bevat gegevens overzichten, de relaties tussen de verschillende kenmerken en doelen, de classificatie van variabelen en meer. Het hulp programma voor het [idee](https://github.com/Azure/Azure-TDSP-Utilities/blob/master/DataScienceUtilities/DataReport-Utils) dat is opgegeven als onderdeel van TDSP kan dit rapport snel genereren voor elke tabellaire gegevensset, zoals een CSV-bestand of een relationele tabel. 
-   * **Oplossings architectuur** : de oplossings architectuur kan een diagram of beschrijving van uw gegevens pijplijn zijn die u gebruikt om scores of voor spellingen uit te voeren op nieuwe gegevens nadat u een model hebt gemaakt. Het bevat ook de pijp lijn voor het opnieuw trainen van uw model op basis van nieuwe gegevens. Sla het document op in de [projectmap](https://github.com/Azure/Azure-TDSP-ProjectTemplate/tree/master/Docs/Project) wanneer u de TDSP-sjabloon voor de directory structuur gebruikt.
-   * **Beslissing van het controle punt** : voordat u begint met het bouwen van het ontwerp van de functie en het model, kunt u het project opnieuw evalueren om te bepalen of de verwachte waarde voldoende is om door te gaan. U kunt bijvoorbeeld klaar zijn om door te gaan, meer gegevens te verzamelen of het project te verlaten omdat de gegevens niet bestaan om de vraag te beantwoorden.
+   * [Rapport gegevens kwaliteit](https://github.com/Azure/Azure-TDSP-ProjectTemplate/blob/master/Docs/Data_Report/DataSummaryReport.md): dit rapport bevat gegevens overzichten, de relaties tussen de verschillende kenmerken en doelen, de classificatie van variabelen en meer. 
+   * **Oplossings architectuur**: de oplossings architectuur kan een diagram of beschrijving van uw gegevens pijplijn zijn die u gebruikt om scores of voor spellingen uit te voeren op nieuwe gegevens nadat u een model hebt gemaakt. Het bevat ook de pijp lijn voor het opnieuw trainen van uw model op basis van nieuwe gegevens. Sla het document op in de [projectmap](https://github.com/Azure/Azure-TDSP-ProjectTemplate/tree/master/Docs/Project) wanneer u de TDSP-sjabloon voor de directory structuur gebruikt.
+   * **Beslissing van het controle punt**: voordat u begint met het bouwen van het ontwerp van de functie en het model, kunt u het project opnieuw evalueren om te bepalen of de verwachte waarde voldoende is om door te gaan. U kunt bijvoorbeeld klaar zijn om door te gaan, meer gegevens te verzamelen of het project te verlaten omdat de gegevens niet bestaan om de vraag te beantwoorden.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Hier vindt u koppelingen naar elke stap in de levens cyclus van de TDSP:
 
-   1. [Inzicht in het bedrijf](lifecycle-business-understanding.md)
+   1. [Zakelijke inzichten](lifecycle-business-understanding.md)
    2. [Gegevens verkrijgen en meer informatie](lifecycle-data.md)
    3. [Modelleren](lifecycle-modeling.md)
    4. [Implementatie](lifecycle-deployment.md)

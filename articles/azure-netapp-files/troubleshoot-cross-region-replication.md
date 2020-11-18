@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 09/16/2020
+ms.date: 11/17/2020
 ms.author: b-juche
-ms.openlocfilehash: 3aaa5d2bc6fdbda0d1db212539c719aa65cae61b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6fbb9b054433905d41d0171ab08b4647618be466
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90708764"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94745680"
 ---
 # <a name="troubleshoot-cross-region-replication"></a>Problemen met replicatie tussen regio's oplossen
 
@@ -50,6 +50,7 @@ In dit artikel worden fout berichten en oplossingen beschreven die u kunnen help
 |-|-|
 |     `Replication   cannot be deleted, mirror state needs to be in status: Broken before deleting`    |     Controleer of replicatie is verbroken of niet is geïnitialiseerd en niet-actief is (de initialisatie is mislukt).    |
 |     `Cannot delete   source replication`    |     Het verwijderen van de replicatie vanaf de bron kant is niet toegestaan. Zorg ervoor dat u de replicatie van de doel zijde verwijdert.    |
+| `Volume with replication cannot be deleted`  |  Verwijder replicatie voordat u het volume verwijdert. Zie [replicaties verwijderen](cross-region-replication-delete.md). Voor deze bewerking moet u de peering verbreekt voordat de replicatie voor het volume wordt verwijderd. 
 
 ## <a name="errors-resyncing-volume"></a>Fouten bij het opnieuw synchroniseren van volume
 

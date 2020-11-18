@@ -1,6 +1,6 @@
 ---
-title: Een Snelstartgids voor het transformeren van gegevens met behulp van een toewijzings gegevens stroom
-description: Deze zelf studie bevat stapsgewijze instructies voor het gebruik van Azure Synapse Analytics om gegevens te transformeren met toewijzings gegevens stroom
+title: 'Snelstartgids: gegevens transformeren met behulp van een toewijzings gegevens stroom'
+description: Deze zelf studie bevat stapsgewijze instructies voor het gebruik van Azure Synapse Analytics om gegevens te transformeren met toewijzings gegevens stroom.
 author: djpmsft
 ms.author: daperlov
 ms.reviewer: makromer
@@ -8,16 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/03/2020
-ms.openlocfilehash: 0bf1611dee2b3f7f9a3059e3118ddbf08c00f886
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 207679ad5b508b687c9cad372d144839fcaa501d
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342939"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94743844"
 ---
 # <a name="quickstart-transform-data-using-mapping-data-flows"></a>Snelstartgids: gegevens transformeren met behulp van gegevens stromen toewijzen
 
-In deze Snelstartgids gebruikt u de Azure Synapse Analytics om een pijp lijn te maken waarmee gegevens worden getransformeerd van een Azure Data Lake Storage bron (ADLS) naar een ADLS Gen2-Sink met behulp van de toewijzing van de gegevens stroom. Het configuratie patroon in deze Quick start kan worden uitgebreid bij het transformeren van gegevens met behulp van de toewijzings gegevens stroom
+In deze Quick Start gebruikt u Azure Synapse Analytics om een pijp lijn te maken waarmee gegevens worden getransformeerd van een Azure Data Lake Storage Gen2 bron (ADLS Gen2) naar een ADLS Gen2 Sink met behulp van de toewijzing van de gegevens stroom. Het configuratie patroon in deze Quick start kan worden uitgebreid bij het transformeren van gegevens met behulp van de toewijzings gegevens stroom
 
 In deze Quick Start voert u de volgende stappen uit:
 
@@ -29,28 +29,28 @@ In deze Quick Start voert u de volgende stappen uit:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Azure-abonnement** : Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
-* **Azure Synapse-werk ruimte** : Maak een Synapse-werk ruimte met behulp van de Azure Portal Volg de instructies in [Quick Start: een Synapse-werk ruimte maken](quickstart-create-workspace.md).
-* **Azure-opslag account** : u kunt ADLS Storage gebruiken als *bron* -en *sink* -gegevens opslag. Als u geen opslagaccount hebt, raadpleegt u het artikel [Een opslagaccount maken](../storage/common/storage-account-create.md) om een account te maken.
+* **Azure-abonnement**: Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+* **Azure Synapse-werk ruimte**: Maak een Synapse-werk ruimte met behulp van de Azure Portal Volg de instructies in [Quick Start: een Synapse-werk ruimte maken](quickstart-create-workspace.md).
+* **Azure-opslag account**: u kunt ADLS Storage gebruiken als *bron* -en *sink* -gegevens opslag. Als u geen opslagaccount hebt, raadpleegt u het artikel [Een opslagaccount maken](../storage/common/storage-account-create.md) om een account te maken.
 
     Het bestand dat u in deze zelf studie transformeert, is MoviesDB.csv, dat u [hier](https://raw.githubusercontent.com/djpmsft/adf-ready-demo/master/moviesDB.csv)kunt vinden. Als u het bestand wilt ophalen uit GitHub, kopieert u de inhoud naar een tekst editor van uw keuze om lokaal op te slaan als een CSV-bestand. Als u het bestand naar uw opslag account wilt uploaden, raadpleegt u [blobs uploaden met de Azure Portal](../storage/blobs/storage-quickstart-blobs-portal.md). De voor beelden verwijzen naar een container met de naam ' Sample-Data '.
 
-### <a name="navigate-to-the-synapse-studio"></a>Ga naar de Synapse Studio
+### <a name="navigate-to-the-synapse-studio"></a>Ga naar Synapse Studio
 
 Wanneer uw Azure Synapse-werkruimte is gemaakt, kunt u Synapse Studio op twee manieren openen:
 
-* Open de Synapse-werkruimte in de [Azure-portal](https://ms.portal.azure.com/#home). Selecteer bovenaan de sectie Overzicht de optie **Synapse Studio starten**.
-* Open [Azure Synapse Analytics](https://web.azuresynapse.net/) en meld u aan bij uw werk ruimte.
+* Open de Synapse-werkruimte in de [Azure-portal](https://ms.portal.azure.com/#home). Selecteer **openen** op de kaart open Synapse studio onder aan de slag.
+* Open [Azure Synapse Analytics](https://web.azuresynapse.net/) en meld u aan bij uw werkruimte.
 
-In deze Quick Start wordt de werk ruimte met de naam ' adftest2020 ' als voor beeld gebruikt. Er wordt automatisch naar de start pagina van Synapse Studio genavigeerd.
+In deze quickstart wordt de werkruimte met de naam 'adftest2020' als voorbeeld gebruikt. Er wordt automatisch naar de startpagina van Synapse Studio genavigeerd.
 
-![Start pagina van Synapse Studio](media/doc-common-process/synapse-studio-home.png)
+![Startpagina van Synapse Studio](media/doc-common-process/synapse-studio-home.png)
 
 ## <a name="create-a-pipeline-with-a-data-flow-activity"></a>Een pijp lijn maken met een activiteit voor gegevens stromen
 
-Een pijp lijn bevat de logische stroom voor het uitvoeren van een reeks activiteiten. In deze sectie maakt u een pijp lijn die een gegevens stroom activiteit bevat.
+Een pijplijn bevat de logische stroom voor het uitvoeren van een reeks activiteiten. In deze sectie maakt u een pijp lijn die een gegevens stroom activiteit bevat.
 
-1. Ga naar het tabblad **integreren** . Selecteer op het plus-pictogram naast de kop pijp lijnen en selecteer pijp lijn.
+1. Ga naar het tabblad **Integreren**. Klik op het pluspictogram naast de kop Pijplijnen en selecteer Pijplijn.
 
    ![Een nieuwe pijplijn maken](media/doc-common-process/new-pipeline.png)
 
@@ -90,7 +90,7 @@ Wanneer u de gegevens stroom hebt gemaakt, wordt u automatisch naar het canvas v
 
     ![Een gekoppelde bron service maken](media/quickstart-data-flow/adls-gen2-linked-service.png)
 
-1. Wanneer u weer op het scherm gegevensset maken hebt geklikt, voert u in **het veld bestandspad** de locatie in waar uw bestand zich bevindt. In deze Quick start is het bestand ' MoviesDB.csv ' opgeslagen in de container ' voor beeld-gegevens '. Controleer de **eerste rij als koptekst** , terwijl het bestand kopteksten bevat. Selecteer **in verbinding/archief** om het header-schema rechtstreeks te importeren uit het bestand in de opslag. Klik op **OK** wanneer u klaar bent.
+1. Wanneer u weer op het scherm gegevensset maken hebt geklikt, voert u in **het veld bestandspad** de locatie in waar uw bestand zich bevindt. In deze Quick start is het bestand ' MoviesDB.csv ' opgeslagen in de container ' voor beeld-gegevens '. Controleer de **eerste rij als koptekst**, terwijl het bestand kopteksten bevat. Selecteer **in verbinding/archief** om het header-schema rechtstreeks te importeren uit het bestand in de opslag. Klik op **OK** wanneer u klaar bent.
 
     ![Instellingen voor de brongegevensset](media/quickstart-data-flow/source-dataset-properties.png)
 

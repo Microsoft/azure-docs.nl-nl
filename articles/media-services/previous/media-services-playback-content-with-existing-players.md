@@ -3,7 +3,7 @@ title: Bestaande spelers gebruiken om uw inhoud af te spelen-Azure | Microsoft D
 description: In dit artikel vindt u een lijst met bestaande spelers die u kunt gebruiken om uw inhoud af te spelen.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: 7e9fcf89-0fb6-4fa4-96cb-666320684d69
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/19/2019
-ms.author: juliako
-ms.openlocfilehash: d2036fa056932f9bbd2f14b4005fa54321b1a382
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.date: 11/17/2020
+ms.author: inhenkel
+ms.openlocfilehash: 6085f34c46ab39012500cd42cd8392e65776f773
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095710"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94739805"
 ---
 # <a name="playing-your-content-with-existing-players"></a>Uw inhoud afspelen op bestaande spelers
 
@@ -27,7 +27,8 @@ ms.locfileid: "93095710"
 
 Azure Media Services ondersteunt veel populaire streaming-indelingen, zoals Smooth Streaming, HTTP Live Streaming en MPEG-Dash. In dit onderwerp vindt u een overzicht van de bestaande spelers die u kunt gebruiken om uw stromen te testen.
 
-### <a name="the-azure-portal-media-services-content-player"></a>De Azure Portal Media Services inhouds speler
+## <a name="the-azure-portal-media-services-content-player"></a>De Azure Portal Media Services inhouds speler
+
 De **Azure** -Portal biedt een inhouds speler die u kunt gebruiken om uw video te testen.
 
 Klik op de gewenste video (Controleer of deze is [gepubliceerd](media-services-portal-publish.md)) en klik op de knop **afspelen** onder aan de portal.
@@ -35,8 +36,6 @@ Klik op de gewenste video (Controleer of deze is [gepubliceerd](media-services-p
 Hierbij geldt het volgende:
 
 * **MEDIA SERVICES CONTENT PLAYER** speelt af vanaf het standaard streaming-eindpunt. Als u wilt afspelen vanaf een ander streaming-eindpunt, gebruikt u een andere speler. Bijvoorbeeld [Azure Media Player](https://aka.ms/azuremediaplayer).
-
-![AMSPlayer][AMSPlayer]
 
 ### <a name="azure-media-player"></a>Azure Media Player
 
@@ -55,20 +54,21 @@ Gebruik [Azure Media Player](https://aka.ms/azuremediaplayer) om uw inhoud (held
 
 ### <a name="dash-players"></a>STREEPJE-spelers
 
-"https://dashplayer.azurewebsites.net"
+[streepje-speler](https://dashplayer.azurewebsites.net)
 
 [https://dashif.org](https://dashif.org)
 
-### <a name="other"></a>Anders
+### <a name="other"></a>Overige
+
 Als u HLS-Url's wilt testen, kunt u ook het volgende gebruiken:
 
 * **Safari** op een IOS-apparaat of
 * **3IVX HLS Player** in Windows.
 
 ## <a name="media-services-learning-paths"></a>Media Services-leertrajecten
+
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Feedback geven
-[!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-[AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
+[!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

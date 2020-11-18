@@ -3,14 +3,14 @@ title: Naslag informatie over Java script-ontwikkel aars voor Azure Functions
 description: Meer informatie over het ontwikkelen van functies met behulp van Java script.
 ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
-ms.date: 11/11/2020
+ms.date: 11/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 9b920dc8a31967c9d8e1f05a6101fdfcc7a1304e
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: d32c63332c530ec05eb9f93661a8f2a0c5d8264c
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628829"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94743317"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions Javascript
 
@@ -201,7 +201,7 @@ module.exports = (context) => {
 
 De context die wordt door gegeven aan de functie `executionContext` , bevat een eigenschap, een object met de volgende eigenschappen:
 
-| Naam van eigenschap  | Type  | Description |
+| Naam van eigenschap  | Type  | Beschrijving |
 |---------|---------|---------|
 | `invocationId` | Tekenreeks | Biedt een unieke id voor de specifieke functie aanroep. |
 | `functionName` | Tekenreeks | Geeft de naam van de functie die wordt uitgevoerd |
@@ -325,10 +325,10 @@ Naast het standaard niveau zijn de volgende logboek registratie methoden beschik
 
 | Methode                 | Beschrijving                                |
 | ---------------------- | ------------------------------------------ |
-| **fout ( _bericht_ )**   | Hiermee wordt een gebeurtenis op fout niveau naar de logboeken geschreven.   |
-| **Warning ( _bericht_ )**    | Hiermee wordt een gebeurtenis op waarschuwings niveau naar de logboeken geschreven. |
-| **info ( _bericht_ )**    | Schrijft naar logboek registratie op info niveau of lager.    |
-| **uitgebreid ( _bericht_ )** | Schrijft naar uitgebreide logboek registratie.           |
+| **fout (_bericht_)**   | Hiermee wordt een gebeurtenis op fout niveau naar de logboeken geschreven.   |
+| **Warning (_bericht_)**    | Hiermee wordt een gebeurtenis op waarschuwings niveau naar de logboeken geschreven. |
+| **info (_bericht_)**    | Schrijft naar logboek registratie op info niveau of lager.    |
+| **uitgebreid (_bericht_)** | Schrijft naar uitgebreide logboek registratie.           |
 
 In het volgende voor beeld wordt hetzelfde logboek op het tracerings niveau waarschuwing geschreven, in plaats van het info niveau:
 
@@ -430,7 +430,7 @@ Het `context.req` object (Request) heeft de volgende eigenschappen:
 | ------------- | -------------------------------------------------------------- |
 | _organen_        | Een object dat de hoofd tekst van de aanvraag bevat.               |
 | _koppen_     | Een object dat de aanvraag headers bevat.                   |
-| _methode_      | De HTTP-methode van de aanvraag.                                |
+| _method_      | De HTTP-methode van de aanvraag.                                |
 | _originalUrl_ | De URL van de aanvraag.                                        |
 | _params_      | Een object dat de routerings parameters van de aanvraag bevat. |
 | _ophalen_       | Een object dat de query parameters bevat.                  |
@@ -553,7 +553,7 @@ Er zijn twee manieren om pakketten te installeren op uw functie-app:
 ### <a name="using-kudu"></a>Kudu gebruiken
 1. Ga naar `https://<function_app_name>.scm.azurewebsites.net`.
 
-2. Klik op **debug console** -  >  **cmd**.
+2. Klik op **debug console**-  >  **cmd**.
 
 3. Ga naar `D:\home\site\wwwroot` en sleep uw package.jsnaar bestand naar de map **wwwroot** in het bovenste gedeelte van de pagina.  
     U kunt ook op andere manieren bestanden uploaden naar uw functie-app. Zie de [functie-app-bestanden bijwerken](functions-reference.md#fileupdate)voor meer informatie. 
@@ -563,21 +563,42 @@ Er zijn twee manieren om pakketten te installeren op uw functie-app:
 
 ## <a name="environment-variables"></a>Omgevingsvariabelen
 
-In functions worden [app-instellingen](functions-app-settings.md), zoals teken reeksen voor service verbindingen, weer gegeven als omgevings variabelen tijdens de uitvoering. U kunt deze instellingen openen met `process.env` , zoals hier wordt weer gegeven in de tweede en derde aanroepen naar `context.log()` waar we de `AzureWebJobsStorage` en `WEBSITE_SITE_NAME` omgevings variabelen registreren:
+Voeg uw eigen omgevings variabelen toe aan een functie-app, zowel in uw lokale als in de Cloud omgevingen, zoals operationele geheimen (verbindings reeksen, sleutels en eind punten) of omgevings instellingen (zoals variabelen voor het instellen van de profilering). Toegang tot deze instellingen met `process.env` in uw functie code.
+
+### <a name="in-local-development-environment"></a>In lokale ontwikkel omgeving
+
+Wanneer u lokaal uitvoert, bevat uw functions-project een [ `local.settings.json` bestand](/functions-run-local.md?tabs=node#local-settings-file)waarin u de omgevings variabelen in het `Values` object opslaat. 
+
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "translatorTextEndPoint": "https://api.cognitive.microsofttranslator.com/",
+    "translatorTextKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "languageWorkers__node__arguments": "--prof"
+  }
+}
+```
+
+### <a name="in-azure-cloud-environment"></a>In een Azure-cloud omgeving
+
+Wanneer u in azure werkt, kunt u met de functie-app [instellingen](functions-app-settings.md)gebruiken, zoals service verbindings reeksen, en deze instellingen weer gegeven als omgevings variabelen tijdens de uitvoering. 
+
+[!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
+
+### <a name="access-environment-variables-in-code"></a>Toegang tot omgevings variabelen in code
+
+Toegang tot toepassings instellingen als omgevings variabelen met `process.env` , zoals hier wordt weer gegeven in het tweede en derde aanroepen naar `context.log()` waar we de `AzureWebJobsStorage` en `WEBSITE_SITE_NAME` omgevings variabelen registreren:
 
 ```javascript
 module.exports = async function (context, myTimer) {
-    var timeStamp = new Date().toISOString();
 
-    context.log('Node.js timer trigger function ran!', timeStamp);
     context.log("AzureWebJobsStorage: " + process.env["AzureWebJobsStorage"]);
     context.log("WEBSITE_SITE_NAME: " + process.env["WEBSITE_SITE_NAME"]);
 };
 ```
-
-[!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
-
-Wanneer u lokaal uitvoert, worden de app-instellingen uit het [local.settings.jsvan](functions-run-local.md#local-settings-file) het project bestand gelezen.
 
 ## <a name="configure-function-entry-point"></a>Functie-ingangs punt configureren
 

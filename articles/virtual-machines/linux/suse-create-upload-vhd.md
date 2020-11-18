@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 03/12/2018
 ms.author: guybo
-ms.openlocfilehash: 73e07c612486d5f48b1ad3eca8044a561549092b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f35adcc797e903bb44852e9ba52e1a023f51a0d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87292118"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659519"
 ---
 # <a name="prepare-a-sles-or-opensuse-virtual-machine-for-azure"></a>Een op SLES of openSUSE gebaseerde virtuele machine voor Azure voorbereiden
 
@@ -32,7 +32,7 @@ In dit artikel wordt ervan uitgegaan dat u al een SUSE-of openSUSE Linux-besturi
 
 Als alternatief voor het maken van uw eigen VHD publiceert SUSE ook BYOS (uw eigen abonnementen meenemen) voor SLES op [VMDepot](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/04/using-and-contributing-vms-to-vm-depot.pdf).
 
-## <a name="prepare-suse-linux-enterprise-server-11-sp4"></a>SUSE Linux Enterprise Server 11 SP4 voorbereiden
+## <a name="prepare-suse-linux-enterprise-server-for-azure"></a>SUSE Linux Enterprise Server voorbereiden voor Azure
 1. Selecteer de virtuele machine in het middelste deel venster van Hyper-V-beheer.
 2. Klik op **verbinding maken** om het venster voor de virtuele machine te openen.
 3. Registreer uw SUSE Linux Enter prise-systeem zodat het updates kan downloaden en pakketten kan installeren.
@@ -41,57 +41,53 @@ Als alternatief voor het maken van uw eigen VHD publiceert SUSE ook BYOS (uw eig
     ```console
     # sudo zypper update
     ```
-
-1. Installeer de Azure Linux-agent vanuit de SLES-opslag plaats (SLE11-Public-Cloud-module):
+    
+5. Azure Linux agent en Cloud-init installeren
 
     ```console
+    # SUSEConnect -p sle-module-public-cloud/15.2/x86_64  (SLES 15 SP2)
     # sudo zypper install python-azure-agent
+    # sudo zypper install cloud-init
     ```
 
-1. Controleer of waagent is ingesteld op on in chkconfig en als dit niet het geval is, schakelt u deze optie in voor automatisch starten:
+6. Waagent & Cloud-init inschakelen om te starten bij het opstarten
 
     ```console
     # sudo chkconfig waagent on
+    # systemctl enable cloud-init-local.service
+    # systemctl enable cloud-init.service
+    # systemctl enable cloud-config.service
+    # systemctl enable cloud-final.service
+    # systemctl daemon-reload
+    # cloud-init clean
     ```
 
-7. Controleer of de waagent-service wordt uitgevoerd. als dat niet het geval is, start u deze: 
+7. Waagent en Cloud-init-configuratie bijwerken
 
     ```console
-    # sudo service waagent start
+    # sudo sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    # sudo sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+
+    # sudo sh -c 'printf "datasource:\n  Azure:" > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg'
+    # sudo sh -c 'printf "reporting:\n  logging:\n    type: log\n  telemetry:\n    type: hyperv" > /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg'
     ```
 
-8. Wijzig de kernel-opstart regel in de grub-configuratie zodat er aanvullende kernel-para meters voor Azure zijn. Als u dit wilt doen, opent u '/boot/grub/menu.lst ' in een tekst editor en zorgt u ervoor dat de standaard kernel de volgende para meters bevat:
+8. Bewerk het/etc/default/grub-bestand om ervoor te zorgen dat console logboeken worden verzonden naar een seriële poort en werk vervolgens het hoofd configuratie bestand bij met grub2-mkconfig-o/boot/grub2/grub.cfg
 
     ```config-grub
     console=ttyS0 earlyprintk=ttyS0 rootdelay=300
     ```
-
     Dit zorgt ervoor dat alle console berichten worden verzonden naar de eerste seriële poort, die ondersteuning voor Azure kan helpen bij het oplossen van problemen.
-9. Controleer of/boot/grub/menu.lst en bestand/etc/fstab beide verwijzen naar de schijf met behulp van de UUID (per UUID) in plaats van de schijf-ID (by-id). 
-   
-    UUID van schijf ophalen
-
-    ```console
-    # ls /dev/disk/by-uuid/
-    ```
-
-    Als/dev/disk/by-id/wordt gebruikt, werkt u zowel/boot/grub/menu.lst als bestand/etc/fstab bij met de waarde van de juiste door-uuid
-   
-    Vóór wijziging
-   
-    `root=/dev/disk/by-id/SCSI-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx-part1`
-   
-    Na wijziging
-   
-    `root=/dev/disk/by-uuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
-
+    
+9. Zorg ervoor dat het bestand/etc/fstab-bestand verwijst naar de schijf met behulp van de UUID (per UUID)
+         
 10. Wijzig de udev-regels om te voor komen dat er statische regels voor de Ethernet-interface (s) worden gegenereerd. Deze regels kunnen problemen veroorzaken bij het klonen van een virtuele machine in Microsoft Azure of Hyper-V:
 
     ```console
     # sudo ln -s /dev/null /etc/udev/rules.d/75-persistent-net-generator.rules
     # sudo rm -f /etc/udev/rules.d/70-persistent-net.rules
     ```
-
+   
 11. Het is raadzaam om het bestand '/etc/sysconfig/network/DHCP ' te bewerken en de `DHCLIENT_SET_HOSTNAME` para meter te wijzigen in het volgende:
 
     ```config
@@ -105,7 +101,8 @@ Als alternatief voor het maken van uw eigen VHD publiceert SUSE ook BYOS (uw eig
     ALL    ALL=(ALL) ALL   # WARNING! Only use this together with 'Defaults targetpw'!
     ```
 
-13. Zorg ervoor dat de SSH-server is geïnstalleerd en geconfigureerd om te starten bij het opstarten.  Dit is doorgaans de standaard instelling.
+13. Zorg ervoor dat de SSH-server is geïnstalleerd en geconfigureerd om te starten bij het opstarten. Dit is doorgaans de standaard instelling.
+
 14. Maak geen wissel ruimte op de besturingssysteem schijf.
     
     De Azure Linux-agent kan tijdens het inrichten van Azure automatisch wissel ruimte configureren met de lokale bron schijf die aan de VM is gekoppeld. Houd er rekening mee dat de lokale bron schijf een *tijdelijke* schijf is en kan worden leeg gemaakt wanneer de inrichting van de virtuele machine wordt opheffen. Nadat u de Azure Linux-agent hebt geïnstalleerd (Zie de vorige stap), wijzigt u de volgende para meters in/etc/waagent.conf op de juiste manier:
@@ -133,7 +130,7 @@ Als alternatief voor het maken van uw eigen VHD publiceert SUSE ook BYOS (uw eig
 2. Klik op **verbinding maken** om het venster voor de virtuele machine te openen.
 3. Voer op de shell de opdracht uit `zypper lr` . Als met deze opdracht uitvoer wordt geretourneerd die vergelijkbaar is met de volgende, worden de opslag plaatsen op de verwachte manier geconfigureerd--er zijn geen aanpassingen nodig (Houd er rekening mee dat versie nummers kunnen variëren):
 
-   | # | Alias                 | Name                  | Ingeschakeld | Vernieuwen
+   | # | Alias                 | Naam                  | Ingeschakeld | Vernieuwen
    | - | :-------------------- | :-------------------- | :------ | :------
    | 1 | Cloud: Tools_13.1      | Cloud: Tools_13.1      | Ja     | Ja
    | 2 | openSUSE_13 openSUSE_13.1_OSS     | openSUSE_13 openSUSE_13.1_OSS     | Ja     | Ja

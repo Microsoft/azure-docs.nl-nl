@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: fc2f9e5408dd760b48fc63c4021230446fe40de9
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 3a96a7116c83bf9ea2c3798c335c6cefcbdbc36d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92542315"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659485"
 ---
 # <a name="hdinsight-cluster-management-best-practices"></a>Best practices voor het beheer van HDInsight-cluster
 
@@ -49,7 +49,7 @@ Leer de aanbevolen procedures voor het beheren van HDInsight-clusters.
 
 | Fout | Meer informatie |
 |---|---|
-| Geen quota | Er zijn quota's voor het aantal quota's dat u in elke regio kunt maken voor uw abonnement. Zie [capaciteits planning: quota's](./hdinsight-capacity-planning.md)voor meer informatie. |
+| Geen quota | Er zijn quota's voor het aantal kernen dat u in elke regio kunt maken voor uw abonnement. Zie [capaciteits planning: quota's](./hdinsight-capacity-planning.md)voor meer informatie. |
 | Er zijn geen IP-adressen meer beschikbaar | Elk VNet heeft een beperkt aantal IP-adressen. Wanneer u een HDInsight-cluster maakt, gebruikt elk knoop punt (met inbegrip van Zookeeper-en gateway knooppunten) enkele van deze toegewezen IP-adressen. Wanneer alle IP-adressen in gebruik zijn, ontvangt u deze fout melding.  |
 | De regels voor de netwerk beveiligings groep (NSG) staan communicatie met HDInsight-resource providers niet toe | Als u Nsg's of door de gebruiker gedefinieerde routes (Udr's) gebruikt om inkomend verkeer naar uw HDInsight-cluster te beheren, moet u ervoor zorgen dat uw cluster kan communiceren met de essentiële Azure-status-en beheer Services. Zie voor meer informatie [service tags voor netwerk beveiligings groepen (NSG) voor Azure HDInsight](./hdinsight-service-tags.md) |
 | Cluster naam opnieuw gebruiken | Wanneer u een cluster naam gebruikt die u eerder hebt gebruikt, moet u X aantal minuten wachten voordat u het cluster opnieuw maakt. Anders wordt er een bericht weer gegeven dat de resource al bestaat. |

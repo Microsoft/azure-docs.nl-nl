@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: article
 ms.date: 09/10/2020
 ms.author: victorh
-ms.openlocfilehash: a0333f9afa69b533ac28dc302987e6d057bfeeb1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 69890e2d846a63a70c1b7459b1df13ce5e891289
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90090156"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659468"
 ---
 # <a name="azure-firewall-logs-and-metrics"></a>Azure Firewall-logboeken en metrische gegevens
 
@@ -158,7 +158,7 @@ De volgende metrische gegevens zijn beschikbaar voor Azure Firewall:
   - Status: mogelijke waarden zijn *in orde*, *gedegradeerd*, *beschadigd.*
   - Reden: geeft de reden aan van de bijbehorende status van de firewall. 
 
-     Als er een SNAT-poort wordt gebruikt > 95%, worden deze als uitgeput beschouwd en is de status 50% met het**cijfer = verslechterd** en reden =**SNAT-poort**. De firewall blijft verkeer verwerken en bestaande verbindingen worden niet beïnvloed. Het is echter mogelijk dat het niet altijd lukt om nieuwe verbindingen tot stand te brengen.
+     Als er een SNAT-poort wordt gebruikt > 95%, worden deze als uitgeput beschouwd en is de status 50% met het **cijfer = verslechterd** en reden =**SNAT-poort**. De firewall blijft verkeer verwerken en bestaande verbindingen worden niet beïnvloed. Het is echter mogelijk dat het niet altijd lukt om nieuwe verbindingen tot stand te brengen.
 
      Als er SNAT-poorten worden gebruikt < 95%, wordt de firewall als gezond beschouwd en wordt de status weer gegeven als 100%.
 
@@ -173,6 +173,6 @@ De volgende metrische gegevens zijn beschikbaar voor Azure Firewall:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [zelf studie: Azure firewall logboeken controleren](tutorial-diagnostics.md)voor meer informatie over het bewaken van Azure firewall logboeken en metrische gegevens.
+- Zie [zelf studie: Azure firewall logboeken controleren](./firewall-diagnostics.md)voor meer informatie over het bewaken van Azure firewall logboeken en metrische gegevens.
 
 - Zie [metrische gegevens in azure monitor](../azure-monitor/platform/data-platform-metrics.md)voor meer informatie over metrische gegevens in azure monitor.

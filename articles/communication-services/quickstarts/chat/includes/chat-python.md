@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 3c05596e16edc5243b8a97002a5cc5990c69ec43
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2b7d00335253772683b867acf0765b77fc493e79
+ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90943840"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94523890"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -85,7 +85,7 @@ chat_client = ChatClient(endpoint, CommunicationUserCredential(<Access Token>))
 Gebruik de methode `create_chat_thread` om een chat-thread te maken.
 
 - Gebruik `topic` om een onderwerp te geven aan de thread. Het onderwerp kan worden bijgewerkt nadat de chat-thread is gemaakt met behulp van de functie `update_thread`.
-- Gebruik `members` om een lijst weer te geven met de `ChatThreadMember` die moeten worden toegevoegd aan de chat-thread, de `ChatThreadMember` neemt `CommunicationUser` type als `user`, wat u hebt verkregen nadat u deze heeft aangemaakt via [Een gebruiker maken](../../access-tokens.md#create-a-user)
+- Gebruik `members` om een lijst weer te geven met de `ChatThreadMember` die moeten worden toegevoegd aan de chat-thread, de `ChatThreadMember` neemt `CommunicationUser` type als `user`, wat u hebt verkregen nadat u deze heeft aangemaakt via [Een gebruiker maken](../../access-tokens.md#create-an-identity)
 
 Het antwoord `chat_thread_client` wordt gebruikt om bewerkingen uit te voeren op de zojuist gemaakte chat-thread, zoals het toevoegen van leden aan de chat-thread, het verzenden of verwijderen van een bericht enzovoort. Het bevat een `thread_id`-eigenschap die de unieke ID van de chatthread is.
 
@@ -158,7 +158,7 @@ Zodra u een chat-thread hebt gemaakt, kunt u gebruikers toevoegen en verwijderen
 Gebruik methode `add_members` om thread-leden toe te voegen aan de thread die wordt geïdentificeerd door threadId.
 
 - Gebruik `members` om de leden weer te geven die moeten worden toegevoegd aan de chat-thread;
-- `user`, vereist, is de `CommunicationUser` die u hebt gemaakt door `CommunicationIdentityClient` op [een gebruiker maken](../../access-tokens.md#create-a-user)
+- `user`, vereist, is de `CommunicationUser` die u hebt gemaakt door `CommunicationIdentityClient` op [een gebruiker maken](../../access-tokens.md#create-an-identity)
 - `display_name`, optioneel, is de weergavenaam voor het thread-lid.
 - `share_history_time`, optioneel, is de tijd van waaruit de chat-geschiedenis wordt gedeeld met het lid. Als u de geschiedenis wilt delen sinds het begin van de chat-thread, stelt u deze eigenschap in op een willekeurige datum die gelijk is aan of kleiner is dan de aanmaaktijd van de thread. Als u geen geschiedenis wilt delen voordat het lid is toegevoegd, stel het dan op de huidige datum in. Om een gedeeltelijke geschiedenis te delen, stelt u deze in op een tussenliggende datum.
 

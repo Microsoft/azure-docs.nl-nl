@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: overview
-ms.date: 08/13/2020
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1dc0429ae4507172e95618bc95e6a2c51034d352
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 8a448b510662eb2c3c4c8ae5a68c2ebc2ed448dc
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378710"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94647355"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Dynamische lidmaatschapsregels voor groepen in Azure Active Directory
 
@@ -100,7 +100,7 @@ Hier volgen de gebruikerseigenschappen die u kunt gebruiken om één expressie t
 | companyName | Elke tekenreekswaarde of *null* | (user.companyName -eq "value") |
 | department |Elke tekenreekswaarde of *null* |(user.department -eq "value") |
 | displayName |Elke tekenreekswaarde |(user.displayName -eq "value") |
-| employeeId |Elke tekenreekswaarde |(user.employeeId -eq "value")<br>(user.employeeId -ne *null* ) |
+| employeeId |Elke tekenreekswaarde |(user.employeeId -eq "value")<br>(user.employeeId -ne *null*) |
 | facsimileTelephoneNumber |Elke tekenreekswaarde of *null* |(user.facsimileTelephoneNumber -eq "value") |
 | givenName |Elke tekenreekswaarde of *null* |(user.givenName -eq "value") |
 | jobTitle |Elke tekenreekswaarde of *null* |(user.jobTitle -eq "value") |
@@ -190,9 +190,9 @@ Wanneer u een waarde in een expressie opgeeft, is het belangrijk dat u de juiste
 
 ### <a name="use-of-null-values"></a>Null-waarden gebruiken
 
-Als u een null-waarde in een regel wilt opgeven, gebruikt u de *null* -waarde. 
+Als u een null-waarde in een regel wilt opgeven, gebruikt u de *null*-waarde. 
 
-* Gebruik -eq of -ne bij het vergelijken van de *null* -waarde in een expressie.
+* Gebruik -eq of -ne bij het vergelijken van de *null*-waarde in een expressie.
 * Gebruik alleen aanhalingstekens rond het woord *null* als u wilt dat het wordt geïnterpreteerd als een letterlijke tekenreekswaarde.
 * De operator -not kan niet worden gebruikt als een vergelijkingsoperator voor null. Als u deze gebruikt, wordt een foutbericht weergegeven over of u null of $null gebruikt.
 

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: a5a958228d79c86550604109d7aaf19e68593a57
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a9f58a9cdf8dea9631443d499548f2aee61eda69
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314954"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94553672"
 ---
 # <a name="use-external-tables-with-synapse-sql"></a>Externe tabellen gebruiken met Synapse SQL
 
@@ -238,7 +238,7 @@ FORMAT_TYPE = [ PARQUET | DELIMITEDTEXT]: hiermee geeft u de indeling van de ext
 - PARQUET: Hiermee geeft u een Parquet-indeling op.
 - DELIMITEDTEXT: hiermee geeft u een tekstindeling op met kolomscheidingstekens, ook wel veldeindtekens genoemd.
 
-FIELD_TERMINATOR = *field_terminator* : alleen van toepassing op tekstbestanden met scheidingstekens. Het veldeindteken duidt een of meer tekens aan die het einde van elk veld (kolom) in het tekstbestand met scheidingstekens aangeven. De standaardwaarde is het sluisteken (ꞌ|ꞌ).
+FIELD_TERMINATOR = *field_terminator*: alleen van toepassing op tekstbestanden met scheidingstekens. Het veldeindteken duidt een of meer tekens aan die het einde van elk veld (kolom) in het tekstbestand met scheidingstekens aangeven. De standaardwaarde is het sluisteken (ꞌ|ꞌ).
 
 Voorbeelden:
 
@@ -246,7 +246,7 @@ Voorbeelden:
 - FIELD_TERMINATOR = ' '
 - FIELD_TERMINATOR = ꞌ\tꞌ
 
-STRING_DELIMITER = *string_delimiter* : hiermee geeft u het veldeindteken op voor gegevens van het type Tekenreeks (String) in het tekstbestand met scheidingstekens. De tekenreeksafsluiting bevat een of meer tekens en staat tussen enkele aanhalingstekens. De standaardwaarde is een lege tekenreeks ("").
+STRING_DELIMITER = *string_delimiter*: hiermee geeft u het veldeindteken op voor gegevens van het type Tekenreeks (String) in het tekstbestand met scheidingstekens. De tekenreeksafsluiting bevat een of meer tekens en staat tussen enkele aanhalingstekens. De standaardwaarde is een lege tekenreeks ("").
 
 Voorbeelden:
 
@@ -254,7 +254,7 @@ Voorbeelden:
 - STRING_DELIMITER = '*'
 - STRING_DELIMITER = ꞌ,ꞌ
 
-FIRST_ROW = *First_row_int* : hiermee geeft u het rijnummer op dat het eerst wordt gelezen en van toepassing is op alle bestanden. Als u de waarde instelt op twee, wordt de eerste rij in elk bestand (de koprij) overgeslagen wanneer de gegevens worden geladen. Rijen worden overgeslagen op basis van de rij-eindtekens (/r/n, /r, /n) die worden vermeld.
+FIRST_ROW = *First_row_int*: hiermee geeft u het rijnummer op dat het eerst wordt gelezen en van toepassing is op alle bestanden. Als u de waarde instelt op twee, wordt de eerste rij in elk bestand (de koprij) overgeslagen wanneer de gegevens worden geladen. Rijen worden overgeslagen op basis van de rij-eindtekens (/r/n, /r, /n) die worden vermeld.
 
 USE_TYPE_DEFAULT = { TRUE | **FALSE** }: hiermee geeft u op hoe ontbrekende waarden in tekstbestanden met scheidingstekens moeten worden verwerkt bij het ophalen van gegevens uit het tekstbestand.
 
@@ -268,7 +268,7 @@ FALSE: sla alle ontbrekende waarden op als NULL. NULL-waarden die zijn opgeslage
 
 Codering = {'UTF8' | 'UTF16'} -Serverloze SQL-pool kan met UTF8 en UTF16 gecodeerde tekstbestanden met scheidingstekens lezen.
 
-DATA_COMPRESSION = *data_compression_method* : met dit argument geeft u de gegevenscompressiemethode voor de externe gegevens op. 
+DATA_COMPRESSION = *data_compression_method*: met dit argument geeft u de gegevenscompressiemethode voor de externe gegevens op. 
 
 Het bestandsindelingstype PARQUET ondersteunt de volgende compressiemethoden:
 
@@ -323,7 +323,7 @@ column_name <data_type>
 
 De uit een tot drie delen bestaande naam van de tabel die u wilt maken. Voor een externe tabel slaat een serverloze SQL-pool alleen de metagegevens van de tabel op. Er worden geen werkelijke gegevens verplaatst of opgeslagen in de serverloze SQL-pool.
 
-<column_definition>, ... *n* ]
+<column_definition>, ...*n* ]
 
 CREATE EXTERNAL TABLE ondersteunt de mogelijkheid om de kolomnaam, het gegevenstype, het toestaan van null-waarden en de sortering te configureren. U kunt de STANDAARDBEPERKING niet gebruiken voor externe tabellen.
 
@@ -345,9 +345,9 @@ In dit voorbeeld worden door if LOCATION='/webdata/', een serverloze SQL-pool-qu
 
 ![Recursieve gegevens voor externe tabellen](./media/develop-tables-external-tables/folder-traversal.png)
 
-DATA_SOURCE = *external_data_source_name* : hiermee geeft u de naam op van de externe gegevensbron die de locatie van de externe gegevens bevat. Als u een externe gegevensbron wilt maken, gebruikt u [CREATE EXTERNAL DATA SOURCE](#create-external-data-source).
+DATA_SOURCE = *external_data_source_name*: hiermee geeft u de naam op van de externe gegevensbron die de locatie van de externe gegevens bevat. Als u een externe gegevensbron wilt maken, gebruikt u [CREATE EXTERNAL DATA SOURCE](#create-external-data-source).
 
-FILE_FORMAT = *external_file_format_name* : hiermee geeft u de naam op van het object voor de externe bestandsindeling, waarin het bestandstype en de compressiemethode voor de externe gegevens worden opgeslagen. Als u een externe bestandsindeling wilt maken, gebruikt u [CREATE EXTERNAL FILE FORMAT](#create-external-file-format).
+FILE_FORMAT = *external_file_format_name*: hiermee geeft u de naam op van het object voor de externe bestandsindeling, waarin het bestandstype en de compressiemethode voor de externe gegevens worden opgeslagen. Als u een externe bestandsindeling wilt maken, gebruikt u [CREATE EXTERNAL FILE FORMAT](#create-external-file-format).
 
 ### <a name="permissions-create-external-table"></a>Machtigingen voor CREATE EXTERNAL TABLE
 
@@ -388,8 +388,6 @@ Met de verkenningsmogelijkheden van Data Lake kunt u nu een externe tabel maken 
 - U moet toegang hebben tot de werkruimte met ten minste de ARM-toegangsrol Storage Blob Data Contributor voor het ADLS Gen2-account
 
 - U moet ten minste over [machtigingen beschikken voor het maken](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#permissions-2&preserve-view=true) van externe tabellen en het uitvoeren van query's hierop in de SQL-pool of SQL on-demand
-
-- De gekoppelde service die aan het ADLS Gen2-account is gekoppeld, **moet toegang hebben tot het bestand**. Als de verificatiemethode van de gekoppelde service bijvoorbeeld beheerde identiteit is, moet de beheerde identiteit voor de werkruimte ten minste over de machtiging Lezer van Storage Blob beschikken voor het opslagaccount
 
 Selecteer in het deelvenster Gegevens het bestand waaruit u de externe tabel wilt maken:
 > [!div class="mx-imgBorder"]

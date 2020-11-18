@@ -6,12 +6,12 @@ ms.service: container-service
 ms.topic: overview
 ms.date: 9/22/2020
 ms.author: amgowda
-ms.openlocfilehash: e459f654aa6824bc13b880f042d168b5b7cbafc0
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: cdd886bfcfb02aa46e440d2574b241f9b1cf3134
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368414"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564137"
 ---
 # <a name="enclave-aware-containers"></a>Enclave-compatibele containers
 
@@ -65,5 +65,5 @@ Edgeless RT is een opensource-project dat is gebaseerd op de Open Enclave-SDK. H
 
 
 <!-- LINKS - internal -->
-[Virtuele DC-machine ](/azure/confidential-computing/virtual-machine-solutions)
-[Vertrouwelijke containers](/azure/confidential-computing/confidential-containers)
+[Virtuele DC-machine ](./virtual-machine-solutions.md)
+[Vertrouwelijke containers](./confidential-containers.md)

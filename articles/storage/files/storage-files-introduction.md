@@ -7,15 +7,15 @@ ms.topic: overview
 ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 2b5fa5211ad8d4de01f2b63e8267e297e13c4485
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9ce2044f3ee0bff3335f46d8cf712e64394af2d3
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91570026"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94628863"
 ---
 # <a name="what-is-azure-files"></a>Wat is Azure Files?
-Met Azure Files beschikt u over volledig beheerde bestandsshares in de cloud die toegankelijk zijn via het toonaangevende protocol [Server Message Block (SMB)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) of [Network File System (NFS)](https://en.wikipedia.org/wiki/Network_File_System). Azure-bestandsshares kunnen gelijktijdig worden gekoppeld door on-premises of cloudimplementaties. SMB-bestandsshares van Azure Files zijn toegankelijk via Windows-, Linux- en macOS-clients. NFS-bestandsshares van Azure Files zijn toegankelijk via Linux- of macOS-clients. Bovendien kunnen Azure-bestandsshares in de cache worden opgeslagen op Windows-servers met Azure File Sync voor snelle toegang tot locaties waar de gegevens worden gebruikt.
+Met Azure Files beschikt u over volledig beheerde bestandsshares in de cloud die toegankelijk zijn via het toonaangevende protocol [Server Message Block (SMB)](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview) of [Network File System (NFS)](https://en.wikipedia.org/wiki/Network_File_System). Azure-bestandsshares kunnen gelijktijdig worden gekoppeld door on-premises of cloudimplementaties. SMB-bestandsshares van Azure Files zijn toegankelijk via Windows-, Linux- en macOS-clients. NFS-bestandsshares van Azure Files zijn toegankelijk via Linux- of macOS-clients. Bovendien kunnen Azure-bestandsshares in de cache worden opgeslagen op Windows-servers met Azure File Sync voor snelle toegang tot locaties waar de gegevens worden gebruikt.
 
 ## <a name="videos"></a>Video's
 | Inleiding tot Azure File Sync | Azure Files met Sync (Ignite 2019)  |
@@ -53,7 +53,7 @@ Azure-bestandsshares kunnen worden gebruikt voor het volgende:
 * **Volledig beheerd**. Azure-bestandsshares kunnen worden gemaakt zonder de noodzaak om hardware of een besturingssysteem te beheren. Dit betekent dat u geen essentiële beveiligingsupgrades hoeft te installeren op het serverbesturingssysteem of defecte harde schijven moet vervangen.
 * **Scripts en hulpprogramma’s**. PowerShell-cmdlets en Azure CLI kunnen worden gebruikt voor het maken, koppelen en beheren van Azure-bestandsshares als onderdeel van het beheer van Azure-toepassingen. U kunt Azure-bestandsshares maken en beheren met Azure Portal en Azure Storage Explorer. 
 * **Flexibiliteit**. Azure Files is vanaf de grond opgebouwd om altijd beschikbaar te zijn. Het vervangen van on-premises bestandsshares door Azure Files betekent dat u niet langer problemen ondervindt door lokale stroomstoringen of netwerkstoringen. 
-* **Vertrouwde programmeerbaarheid**. Toepassingen die worden uitgevoerd in Azure hebben toegang tot de gegevens in de share via [System I/O-API's](https://msdn.microsoft.com/library/system.io.file.aspx). Dat betekent dat ontwikkelaars bestaande code en vaardigheden kunnen inzetten voor het migreren van bestaande toepassingen. Naast System IO-API's kunt u [Azure Storage-clientbibliotheken](https://msdn.microsoft.com/library/azure/dn261237.aspx) of de [REST-API van Azure Storage](/rest/api/storageservices/file-service-rest-api) gebruiken.
+* **Vertrouwde programmeerbaarheid**. Toepassingen die worden uitgevoerd in Azure hebben toegang tot de gegevens in de share via [System I/O-API's](/dotnet/api/system.io.file). Dat betekent dat ontwikkelaars bestaande code en vaardigheden kunnen inzetten voor het migreren van bestaande toepassingen. Naast System IO-API's kunt u [Azure Storage-clientbibliotheken](/previous-versions/azure/dn261237(v=azure.100)) of de [REST-API van Azure Storage](/rest/api/storageservices/file-service-rest-api) gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Meer informatie over de beschikbare protocollen voor bestandsshares](storage-files-compare-protocols.md)

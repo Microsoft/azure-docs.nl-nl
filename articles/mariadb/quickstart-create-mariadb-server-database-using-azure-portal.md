@@ -1,18 +1,18 @@
 ---
 title: 'Quickstart: Een server maken - Azure Portal - Azure Database for MariaDB'
 description: In dit artikel wordt beschreven hoe u met de Azure-portal snel, in ongeveer vijf minuten, een voorbeeld van een Azure Database for MariaDB-server kunt maken.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 3/19/2020
-ms.openlocfilehash: e5801f46745b3fda28af19c11e323b9497ebe98a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7b27bff50b4e2cfa57e41919552086ba1d31f217
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88185244"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94537047"
 ---
 # <a name="quickstart-create-an-azure-database-for-mariadb-server-by-using-the-azure-portal"></a>Quickstart: Een Azure Database for MariaDB-server maken met behulp van Azure Portal
 
@@ -85,7 +85,7 @@ Een serverfirewallregel maken:
 
 ## <a name="get-connection-information"></a>Verbindingsgegevens ophalen
 
-Voor verbinding met uw databaseserver moet u beschikken over de volledige servernaam en aanmeldingsreferenties van de beheerder. U hebt deze waarden mogelijk al eerder in dit artikel genoteerd. Als u dat niet hebt gedaan, kunt u de servernaam en aanmeldingsgegevens eenvoudig terugvinden op de pagina **Overzicht** of op de pagina ** Eigenschappen** van de server in de Azure-portal:
+Voor verbinding met uw databaseserver moet u beschikken over de volledige servernaam en aanmeldingsreferenties van de beheerder. U hebt deze waarden mogelijk al eerder in dit artikel genoteerd. Als u dat niet hebt gedaan, kunt u de servernaam en aanmeldingsgegevens eenvoudig terugvinden op de pagina **Overzicht** of op de pagina **Eigenschappen** van de server in de Azure-portal:
 
 1. Ga naar de pagina **Overzicht** van de server. Noteer de waarden van **Servernaam** en de **Gebruikersnaam van de serverbeheerder**.
 

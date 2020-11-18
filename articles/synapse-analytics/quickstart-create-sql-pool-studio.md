@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 10/16/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: f3ed5f3940a9b02701ad2f3c779b791e128e288c
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 3644891f12a6475ec9cfec51f572df4742481e8f
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506342"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541841"
 ---
 # <a name="quickstart-create-a-dedicated-sql-pool-using-synapse-studio"></a>Quickstart: Een toegewezen SQL-pool maken met Synapse Studio
 
@@ -110,6 +110,7 @@ Ga als volgt te werk om de toegewezen SQL-pool te verwijderen:
 1. Bevestig dat u de werkruimte wilt verwijderen en selecteer de knop **Verwijderen**.
 1. Wanneer het proces is voltooid, wordt de toegewezen SQL-pool niet meer weergegeven in de werkruimteresources.
 
-## <a name="next-steps"></a>Volgende stappen 
+## <a name="next-steps"></a>Volgende stappen
+ 
 - Zie [Quickstart: Een Apache Spark-notebook maken](quickstart-apache-spark-notebook.md).
 - Zie [Quickstart: Een toegewezen SQL-pool maken met behulp van Azure Portal](quickstart-create-sql-pool-portal.md).

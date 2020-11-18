@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/01/2020
-ms.openlocfilehash: 8c2e7b6a02c0a0fea32fb1effb30b682971c3f6f
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: fa7919f54663387ddef811d02137da6d3ffb9d9b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348772"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94646624"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-using-the-azure-cli"></a>Quickstart: een Azure Stream Analytics-taak maken via de Azure CLI
 
@@ -23,41 +23,11 @@ In deze quickstart gebruikt u de Azure CLI om een Stream Analytics-taak te defin
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-* Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) aan.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-## <a name="prepare-your-environment"></a>Uw omgeving voorbereiden
-
-1. Meld u aan.
-
-   Meld u aan met behulp van de opdracht [az login](/cli/azure/reference-index#az-login) als u een lokale installatie van de CLI gebruikt.
-
-    ```azurecli
-    az login
-    ```
-
-    Volg de weergegeven stappen in uw terminal om het verificatieproces te voltooien.
-
-2. Installeer de Azure CLI-extensie.
-
-   Wanneer u met extensieverwijzingen voor de Azure-CLI werkt, moet u eerst de extensie installeren.  Azure CLI-extensies geven u toegang tot experimentele opdrachten en opdrachten in een evaluatieversie die nog niet zijn verzonden als onderdeel van de kern-CLI.  Zie [Extensies gebruiken met Azure CLI](/cli/azure/azure-cli-extensions-overview) voor meer informatie over extensies, waaronder het bijwerken en verwijderen ervan.
-
-   Installeer de [extensie voor Stream Analytics](/cli/azure/ext/stream-analytics/stream-analytics) door de volgende opdracht uit te voeren:
-
-    ```azurecli
-    az extension add --name stream-analytics
-    ```
-
-   Installeer de [extensie voor Azure IoT](/cli/azure/ext/azure-iot) door de volgende opdracht uit te voeren:
-
-    ```azurecli
-    az extension add --name azure-iot
-    ```
-
-3. Maak een resourcegroep.
-
-   Alle Azure-resources moeten worden geïmplementeerd in een resourcegroep. Met resourcegroepen kunt u gerelateerde Azure-resources organiseren en beheren.
+- Maak een resourcegroep. Alle Azure-resources moeten worden geïmplementeerd in een resourcegroep. Met resourcegroepen kunt u gerelateerde Azure-resources organiseren en beheren.
 
    Maak voor deze quickstart een resourcegroep met de naam *streamanalyticsrg* op de locatie *eastus* met behulp van de volgende [az group create](/cli/azure/group#az-group-create)-opdracht:
 
@@ -270,7 +240,7 @@ az stream-analytics job start
 
 Wanneer u een resourcegroep niet meer nodig hebt, verwijdert u de resourcegroep, de streamingtaak en alle gerelateerde resources. Door de taak te verwijderen, voorkomt u dat de streaming-eenheden die door de taak worden verbruikt, in rekening worden gebracht. Als u denkt dat u de taak in de toekomst nog gaat gebruiken, kunt u de verwijdering ervan overslaan en de taak nu stoppen. Als u deze taak niet meer gaat gebruiken, verwijdert u alle resources die in deze quickstart zijn gemaakt door de volgende cmdlet uit te voeren:
 
-```powershell
+```azurecli
 az group delete \
     --name streamanalyticsrg \
     --no-wait

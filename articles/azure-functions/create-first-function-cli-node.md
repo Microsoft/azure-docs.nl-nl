@@ -4,12 +4,12 @@ description: Ontdek hoe u een JavaScript-functie maakt vanaf de opdrachtregel en
 ms.date: 11/03/2020
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5a77ae054191c4a96026ac74bd9da226542de838
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 4a178cb0e69a6e2b666247bcb8e76ab2c7e272e1
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424761"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635667"
 ---
 # <a name="quickstart-create-a-javascript-function-in-azure-from-the-command-line"></a>Quickstart: Een JavaScript-functie maken in Azure vanaf de opdrachtregel
 
@@ -123,7 +123,7 @@ Elke binding vereist een richting, een type en een unieke naam. De HTTP-trigger 
     # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
     
     ```azurepowershell
-    New-AzFunctionApp -Name <APP_NAME> -ResourceGroupName AzureFunctionsQuickstart-rg -StorageAccount <STORAGE_NAME> -Runtime node -FunctionsVersion 3 -Location 'West Europe'
+    New-AzFunctionApp -Name <APP_NAME> -ResourceGroupName AzureFunctionsQuickstart-rg -StorageAccount <STORAGE_NAME> -Runtime node -RuntimeVersion 12 -FunctionsVersion 3 -Location 'West Europe'
     ```
     
     Maak de functie-app in Azure met behulp van de opdracht [New-AzFunctionApp](/powershell/module/az.functions/new-azfunctionapp). Als u Node.js 10 gebruikt, wijzigt u `-RuntimeVersion` in `10`.

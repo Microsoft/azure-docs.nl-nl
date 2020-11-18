@@ -8,12 +8,12 @@ ms.subservice: workloads
 ms.topic: overview
 ms.date: 09/22/2020
 ms.author: JenCook
-ms.openlocfilehash: 16f45c39a329998f4b4da4ea89315683a0fab790
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 44479db6b29075e87b0d2dcef6f0d9bc1881738c
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90967588"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560822"
 ---
 # <a name="confidential-computing-on-azure"></a>Confidential Computing op Azure
 
@@ -37,7 +37,7 @@ We weten dat het beveiligen van uw cloudgegevens belangrijk is. We kennen uw zor
 - Hoe kan ik beveiligingsrisico's voorkomen, afkomstig van bevoegde beheerders in mijn bedrijf?
 - Zijn er nog meer manieren waarop ik kan voorkomen dat derden toegang krijgen tot gevoelige klantgegevens?
 
-Microsoft Azure helpt u om de kwetsbaarheid voor aanvallen te beperken voor betere gegevensbescherming. Azure biedt al veel hulpprogramma's om [**data-at-rest-** ](../security/fundamentals/encryption-atrest.md) te beschermen via modellen zoals versleuteling aan clientzijde en versleuteling aan serverzijde. Daarnaast biedt Azure mechanismen voor het versleutelen van [**gegevens in overdracht**](../security/fundamentals/data-encryption-best-practices.md#protect-data-in-transit) via beveiligde protocollen zoals TLS en HTTPS. Op deze pagina maakt u kennis met een derde element van gegevensversleuteling: de versleuteling van **gegevens in gebruik**.
+Microsoft Azure helpt u om de kwetsbaarheid voor aanvallen te beperken voor betere gegevensbescherming. Azure biedt al veel hulpprogramma's om [**data-at-rest-**](../security/fundamentals/encryption-atrest.md) te beschermen via modellen zoals versleuteling aan clientzijde en versleuteling aan serverzijde. Daarnaast biedt Azure mechanismen voor het versleutelen van [**gegevens in overdracht**](../security/fundamentals/data-encryption-best-practices.md#protect-data-in-transit) via beveiligde protocollen zoals TLS en HTTPS. Op deze pagina maakt u kennis met een derde element van gegevensversleuteling: de versleuteling van **gegevens in gebruik**.
 
 ## <a name="introduction-to-confidential-computing"></a>Inleiding tot confidential computing 
 
@@ -84,7 +84,7 @@ Bouw toepassingen boven op de IaaS-aanbiedingen voor confidential computing in A
 
 ### <a name="azure-security"></a>Azure-beveiliging 
 Zorg ervoor dat uw werkbelastingen zijn beveiligd via verificatiemethoden en door aan hardware gebonden sleutelbeheer. 
-- Attestation: [Microsoft Azure Attestation (preview)](https://docs.microsoft.com/azure/attestation/overview)
+- Attestation: [Microsoft Azure Attestation (preview)](../attestation/overview.md)
 - Sleutelbeheer: Beheerde HSM (preview)
 
 ### <a name="develop"></a>Ontwikkelen

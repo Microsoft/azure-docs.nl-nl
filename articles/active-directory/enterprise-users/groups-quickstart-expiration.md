@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fa15a9134fdc49d87baea48490854c1289a662a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 842cd92e451b8d959dcf04135da504d7cf85a16e
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378694"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94647202"
 ---
 # <a name="quickstart-set-microsoft-365-groups-to-expire-in-azure-active-directory"></a>Microsoft 365-groepen voor verloop instellen in Azure Active Directory
 
@@ -45,11 +45,11 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) met een gebruikersbeheerdersaccount.
 
-2. Selecteer **Groepen** en vervolgens **Algemeen** .
+2. Selecteer **Groepen** en vervolgens **Algemeen**.
   
    ![De pagina Groepsinstellingen voor selfservice](./media/groups-quickstart-expiration/self-service-settings.png)
 
-3. Stel **Gebruikers kunnen Microsoft 365-groepen maken** in op **Ja** .
+3. Stel **Gebruikers kunnen Microsoft 365-groepen maken** in op **Ja**.
 
 4. Selecteer **Opslaan** om de groepsinstellingen op te slaan als u klaar bent.
 
@@ -63,7 +63,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 3. Geef een e-mailadres op waar meldingen over verlooptijden naartoe moeten worden gestuurd als een groep geen eigenaar heeft.
 
-4. Stel voor deze quickstart **Verloop inschakelen voor deze Microsoft 365-groepen** in op **Alle** .
+4. Stel voor deze quickstart **Verloop inschakelen voor deze Microsoft 365-groepen** in op **Alle**.
 
 5. Selecteer **Opslaan** om de instellingen voor het verloop op te slaan als u klaar bent.
 
@@ -74,13 +74,13 @@ Dat is alles. In deze quickstart hebt u het verloopbeleid ingesteld voor de gese
 ### <a name="to-remove-the-expiration-policy"></a>Verloopbeleid verwijderen
 
 1. Zorg dat u bent aangemeld bij [Azure Portal](https://portal.azure.com) met een account van een globale beheerder voor uw Azure AD-organisatie.
-2. Selecteer **Azure Active Directory** > **Groepen** > **Verlooptijd** .
-3. Stel **Verloopdatum voor deze Microsoft 365-groepen inschakelen** in op **Geen** .
+2. Selecteer **Azure Active Directory** > **Groepen** > **Verlooptijd**.
+3. Stel **Verloopdatum voor deze Microsoft 365-groepen inschakelen** in op **Geen**.
 
 ### <a name="to-turn-off-user-creation-for-groups"></a>Maken van gebruikers voor groepen uitschakelen
 
-1. Selecteer **Azure Active Directory** > **Groepen** > **Algemeen** . 
-2. Stel **Gebruikers kunnen Microsoft 365-groepen maken in Azure Portals** in op **Nee** .
+1. Selecteer **Azure Active Directory** > **Groepen** > **Algemeen**. 
+2. Stel **Gebruikers kunnen Microsoft 365-groepen maken in Azure Portals** in op **Nee**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0dcf05f829cfcdc79fcd7be903b96fb601c095a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 7a594d42485510a525ce4e3c7f03b432554100f8
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378689"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650594"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Snelstart: naambeleid voor groepen in Azure Active Directory
 
@@ -40,14 +40,14 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 ### <a name="view-or-edit-the-prefix-suffix-naming-policy"></a>Bekijk of bewerk het naamgevingsbeleid voor voorvoegsels en achtervoegsels
 
-1. Selecteer op de pagina **Naamgevingsbeleid** de optie **Naamgevingsbeleid voor groepen** .
+1. Selecteer op de pagina **Naamgevingsbeleid** de optie **Naamgevingsbeleid voor groepen**.
 1. U kunt het huidige naamgevingsbeleid voor voorvoegsels of achtervoegsels afzonderlijk weergeven of bewerken door de kenmerken of tekenreeksen te selecteren die u wilt afdwingen als onderdeel van het naamgevingsbeleid.
-1. Als u een voorvoegsel of achtervoegsel uit de lijst wilt verwijderen, selecteert u het voorvoegsel of achtervoegsel en selecteert u **Verwijderen** . U kunt meerdere items tegelijkertijd verwijderen.
+1. Als u een voorvoegsel of achtervoegsel uit de lijst wilt verwijderen, selecteert u het voorvoegsel of achtervoegsel en selecteert u **Verwijderen**. U kunt meerdere items tegelijkertijd verwijderen.
 1. Selecteer **Opslaan** om de wijzigingen in het beleid van kracht te laten worden.
 
 ### <a name="view-or-edit-the-custom-blocked-words"></a>Bekijk of bewerk de aangepaste geblokkeerde woorden
 
-1. Selecteer op de pagina **Naamgevingsbeleid** de optie **Geblokkeerde woorden** .
+1. Selecteer op de pagina **Naamgevingsbeleid** de optie **Geblokkeerde woorden**.
 
     ![lijst met geblokkeerde woorden bewerken en uploaden voor naamgevingsbeleid](./media/groups-quickstart-naming-policy/blockedwords.png)
 
@@ -61,7 +61,7 @@ Dat is alles. U hebt het naambeleid ingesteld en uw aangepaste, geblokkeerde woo
 
 ### <a name="remove-the-naming-policy-using-azure-portal"></a>Verwijder het naamgevingsbeleid met behulp van Azure Portal
 
-1. Selecteer op de pagina **Naamgevingsbeleid** de optie **Beleid verwijderen** .
+1. Selecteer op de pagina **Naamgevingsbeleid** de optie **Beleid verwijderen**.
 1. Nadat u de verwijdering hebt bevestigd, wordt het naamgevingsbeleid verwijderd, met inbegrip van het naamgevingsbeleid voor voorvoegsels en achtervoegsel en eventuele aangepaste geblokkeerde woorden.
 
 ## <a name="next-steps"></a>Volgende stappen

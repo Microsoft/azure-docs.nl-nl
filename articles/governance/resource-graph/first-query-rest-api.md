@@ -3,12 +3,12 @@ title: 'Quickstart: Uw eerste REST API-query'
 description: In deze quickstart voert u de stappen uit om het Resource Graph-eindpunt voor REST API aan te roepen en uw eerste query uit te voeren.
 ms.date: 10/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: 8be0556b6aa2fd234c0f3e25d83c0239c8f674bb
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: eafbd0b408ab50f901d52e59efcfbd5f89b46fe5
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057209"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566075"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-rest-api"></a>Quickstart: Uw eerste Resource Graph-query uitvoeren met REST API
 
@@ -76,7 +76,6 @@ In de aanvraagbody van elke REST API-aanroep wordt een variabele gebruikt die u 
              "{subscriptionID}"
          ],
          "query": "Resources | project name, type | limit 5"
-         }
      }
      ```
 
@@ -99,7 +98,6 @@ In de aanvraagbody van elke REST API-aanroep wordt een variabele gebruikt die u 
              "{subscriptionID}"
          ],
          "query": "Resources | project name, type | limit 5 | order by name asc"
-         }
      }
      ```
 
@@ -122,7 +120,6 @@ In de aanvraagbody van elke REST API-aanroep wordt een variabele gebruikt die u 
              "{subscriptionID}"
          ],
          "query": "Resources | project name, type | order by name asc | limit 5"
-         }
      }
      ```
 

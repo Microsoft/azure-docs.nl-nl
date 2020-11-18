@@ -1,18 +1,18 @@
 ---
 title: 'Quickstart: Een Azure DB for MySQL maken - ARM-sjabloon'
 description: In deze quickstart vindt u informatie over het maken van een Azure Database for MySQL-server met virtuele netwerkintegratie met behulp van een Azure Resource Manager sjabloon.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 05/19/2020
-ms.openlocfilehash: 952bfa7182997511ce072c051d872140c3b907cb
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 0e7fcf51d9c663ca4a289f54972f00ef037cb323
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93041204"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542266"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mysql-server"></a>Quickstart: Een ARM-sjabloon gebruiken om een Azure Database for MySQL te maken
 
@@ -68,32 +68,32 @@ Selecteer de volgende koppeling om de Azure Database for MySQL-serversjabloon te
 
 [:::image type="content" source="../media/template-deployments/deploy-to-azure.svg" alt-text="Implementeren in Azure":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-managed-mysql-with-vnet%2fazuredeploy.json)
 
-Doe het volgende op de pagina **Azure Database for MySQL implementeren met VNet** :
+Doe het volgende op de pagina **Azure Database for MySQL implementeren met VNet**:
 
-1. Selecteer voor **Resourcegroep** de optie **Nieuwe maken** , voer een naam in voor de nieuwe resourcegroep en selecteer **OK**.
+1. Selecteer voor **Resourcegroep** de optie **Nieuwe maken**, voer een naam in voor de nieuwe resourcegroep en selecteer **OK**.
 
 2. Als u een nieuwe resourcegroep hebt gemaakt, selecteert u een **Locatie** voor de resourcegroep en de nieuwe server.
 
-3. Voer gegevens bij **Servernaam** , **Aanmelden beheerder** en  **Wachtwoord aanmelden beheerder** in.
+3. Voer gegevens bij **Servernaam**, **Aanmelden beheerder** en  **Wachtwoord aanmelden beheerder** in.
 
     :::image type="content" source="./media/quickstart-create-mysql-server-database-using-arm-template/deploy-azure-database-for-mysql-with-vnet.png" alt-text="Azure Database for MySQL implementeren met VNet-venster, Azure-quickstart-sjabloon, Azure-portal":::
 
 4. Wijzig desgewenst de andere standaardinstellingen:
 
-    * **Abonnement** : het Azure abonnement dat u wilt gebruiken voor de server.
-    * **SKU-capaciteit** : de capaciteit van de vCore, die *2* (de standaardinstelling), *4* , *8* , *16* , *32* of *64* kan zijn.
-    * **SKU-naam** : het voorvoegsel van de SKU-laag, de SKU-familie en de SKU-capaciteit, verbonden door middel van onderstrepingstekens, zoals *B_Gen5_1* , *GP_Gen5_2* (de standaardinstelling) of *MO_Gen5_32*.
-    * **SKU-grootte MB** : de opslaggrootte, in megabytes, van de Azure Database for MySQL-server (standaard *5120* ).
-    * **SKU-laag** : de implementatielaag, zoals *Basic* , *GeneralPurpose* (de standaardinstelling) of *MemoryOptimized*.
-    * **SKU-familie** : *Gen4* of *Gen5* (de standaardinstelling), wat de hardwaregeneratie voor de serverimplementatie aangeeft.
-    * **Mysql-versie** : de versie van de MySQL-server die u wilt implementeren, zoals *5,6* of *5,7* (de standaardinstelling).
-    * **Retentiedagen van back-ups** : de gewenste periode voor het bewaren van geo-redundante back-ups, in dagen (standaard *7* ).
-    * **Geografisch redundante back-up** : *Ingeschakeld* of *Uitgeschakeld* (de standaardinstelling), afhankelijk van de vereisten voor geo-herstel na noodgevallen (geo-DR).
-    * **Naam van virtueel netwerk** : de naam van het virtuele netwerk (standaard *azure_mysql_vnet* ).
-    * **Subnetnaam** : de naam van het subnet (standaard *azure_mysql_subnet* ).
-    * **Naam van regel van het virtuele netwerk** : de naam van de regel van het virtuele netwerk waarmee het subnet wordt toegestaan (standaard *AllowSubnet* ).
-    * **Adresvoorvoegsel VNet** : het adresvoorvoegsel voor het virtuele netwerk (standaard *10.0.0.0/16* ).
-    * **Subnetvoorvoegsel** : het adresvoorvoegsel voor het subnet (standaard *10.0.0.0/16* ).
+    * **Abonnement**: het Azure abonnement dat u wilt gebruiken voor de server.
+    * **SKU-capaciteit**: de capaciteit van de vCore, die *2* (de standaardinstelling), *4*, *8*, *16*, *32* of *64* kan zijn.
+    * **SKU-naam**: het voorvoegsel van de SKU-laag, de SKU-familie en de SKU-capaciteit, verbonden door middel van onderstrepingstekens, zoals *B_Gen5_1*, *GP_Gen5_2* (de standaardinstelling) of *MO_Gen5_32*.
+    * **SKU-grootte MB**: de opslaggrootte, in megabytes, van de Azure Database for MySQL-server (standaard *5120*).
+    * **SKU-laag**: de implementatielaag, zoals *Basic*, *GeneralPurpose* (de standaardinstelling) of *MemoryOptimized*.
+    * **SKU-familie**: *Gen4* of *Gen5* (de standaardinstelling), wat de hardwaregeneratie voor de serverimplementatie aangeeft.
+    * **Mysql-versie**: de versie van de MySQL-server die u wilt implementeren, zoals *5,6* of *5,7* (de standaardinstelling).
+    * **Retentiedagen van back-ups**: de gewenste periode voor het bewaren van geo-redundante back-ups, in dagen (standaard *7*).
+    * **Geografisch redundante back-up**: *Ingeschakeld* of *Uitgeschakeld* (de standaardinstelling), afhankelijk van de vereisten voor geo-herstel na noodgevallen (geo-DR).
+    * **Naam van virtueel netwerk**: de naam van het virtuele netwerk (standaard *azure_mysql_vnet*).
+    * **Subnetnaam**: de naam van het subnet (standaard *azure_mysql_subnet*).
+    * **Naam van regel van het virtuele netwerk**: de naam van de regel van het virtuele netwerk waarmee het subnet wordt toegestaan (standaard *AllowSubnet*).
+    * **Adresvoorvoegsel VNet**: het adresvoorvoegsel voor het virtuele netwerk (standaard *10.0.0.0/16*).
+    * **Subnetvoorvoegsel**: het adresvoorvoegsel voor het subnet (standaard *10.0.0.0/16*).
 
 5. Lees de voorwaarden en schakel vervolgens het selectievakje **Ik ga akkoord met de bovenstaande voorwaarden** in.
 

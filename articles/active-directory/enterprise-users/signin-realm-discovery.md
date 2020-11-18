@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: overview
-ms.date: 11/08/2019
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: kexia
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c8222cdcd21e10864c256007aff45fb83ed6afd
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: f820d04e9cee1d39037a730fb62119364d9ebf85
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378653"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94650288"
 ---
 # <a name="home-realm-discovery-for-azure-active-directory-sign-in-pages"></a>Thuisrealmdetectie voor aanmeldingspagina's in Azure Active Directory
 
@@ -53,7 +53,7 @@ Een extra voordeel van dit werk is verbeterde foutberichten. Hier volgen enkele 
 >
 > Als u of uw organisatie procedures heeft die afhankelijk zijn van het oude gedrag, is het belangrijk dat beheerders de documentatie over het aanmelden en de verificatie van gebruikers bijwerken, en hun werknemers trainen om zich aan te melden met hun Azure Active Directory-gebruikersnaam.
   
-Als u vragen hebt over het nieuwe gedrag, kunt u uw opmerkingen doorgeven in de **Feedback** -sectie van dit artikel.  
+Als u vragen hebt over het nieuwe gedrag, kunt u uw opmerkingen doorgeven in de **Feedback**-sectie van dit artikel.  
 
 ## <a name="next-steps"></a>Volgende stappen
 

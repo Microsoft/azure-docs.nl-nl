@@ -45,7 +45,7 @@ Ga naar [Azure Portal](https://portal.azure.com/) om een enkele Azure Database f
    |Resourcegroep|*myresourcegroup*| Een nieuwe of bestaande resourcegroep uit uw abonnement.|
    |Servernaam |*mydemoserver*|Een unieke naam ter identificatie van uw Azure Database for PostgreSQL-server. De domeinnaam *postgres.database.azure.com* wordt toegevoegd aan de servernaam die u opgeeft. De server mag alleen kleine letters, cijfers en het koppelteken (-) bevatten. De naam moet 3 tot 63 tekens bevatten.|
    |Gegevensbron | Geen | Selecteer **Geen** om een nieuwe server te maken. Selecteer **Back-up** alleen als u herstelt vanuit een back-up voor geografische gebieden van een bestaande server.|
-   |Gebruikersnaam van beheerder |*myadmin*| Voer de gebruikersnaam van de serverbeheerder in. Deze naam mag niet beginnen met **pg_** , en de volgende waarden zijn niet toegestaan: **azure_superuser** , **azure_pg_admin** , **admin** , **administrator** , **root** , **guest** of **public**.|
+   |Gebruikersnaam van beheerder |*myadmin*| Voer de gebruikersnaam van de serverbeheerder in. Deze naam mag niet beginnen met **pg_** , en de volgende waarden zijn niet toegestaan: **azure_superuser**, **azure_pg_admin**, **admin**, **administrator**, **root**, **guest** of **public**.|
    |Wachtwoord |Uw wachtwoord| Een nieuw wachtwoord voor de gebruikersnaam van de serverbeheerder. Het moet 8 tot 128 tekens bevatten uit drie van de volgende categorieën: Nederlandse hoofdletters, Nederlandse kleine letters, cijfers (0 t/m 9) en niet-alfanumerieke tekens (bijvoorbeeld !, $, #, %).|
    |Locatie|de gewenste locatie| Selecteer een locatie in de vervolgkeuzelijst.|
    |Versie|De meest recente primaire versie| De nieuwste primaire versie van PostgreSQL, tenzij u specifieke andere vereisten hebt.|
@@ -57,7 +57,7 @@ Ga naar [Azure Portal](https://portal.azure.com/) om een enkele Azure Database f
 
 5. Selecteer **Beoordelen en maken** om uw selecties te controleren. Selecteer **Maken** om de server in te richten. Deze bewerking kan enkele minuten duren.
     > [!NOTE]
-    > Er wordt een lege database, **postgres** , gemaakt. Er is ook een database **azure_maintenance** die wordt gebruikt om de processen van de beheerde service van gebruikersacties te onderscheiden. U kunt de database **azure_maintenance** niet openen.
+    > Er wordt een lege database, **postgres**, gemaakt. Er is ook een database **azure_maintenance** die wordt gebruikt om de processen van de beheerde service van gebruikersacties te onderscheiden. U kunt de database **azure_maintenance** niet openen.
 
 > [!div class="mx-imgBorder"]
 > :::image type="content" source="./media/quickstart-create-database-portal/deployment-success.png" alt-text="geslaagde implementatie.":::
@@ -125,7 +125,7 @@ U kunt [psql](http://postgresguide.com/utilities/psql.html) of [pgAdmin](https:/
    postgres=> CREATE DATABASE guest;
    ```
 
-5. Schakel de verbindingen over naar de nieuwe **guest** -database.
+5. Schakel de verbindingen over naar de nieuwe **guest**-database.
 
    ```bash
    \c guest

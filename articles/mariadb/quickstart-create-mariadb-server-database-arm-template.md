@@ -1,18 +1,18 @@
 ---
 title: 'Quickstart: Een Azure DB for MariaDB maken - ARM-sjabloon'
 description: In dit quickstartartikel vindt u informatie over het maken van een Azure Database for MariaDB-server met behulp van een Azure Resource Manager sjabloon.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mariadb
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 05/14/2020
-ms.openlocfilehash: dc3999193356dd9cddc52b9873d22b4172c0030c
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: de6df8349025c3e87e5b005196008053039fa49f
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042497"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94537121"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mariadb-server"></a>Quickstart: Een ARM-sjabloon gebruiken om een Azure Database for MariaDB-server te maken
 
@@ -68,32 +68,32 @@ Selecteer de volgende koppeling om de Azure Database for MariaDB-serversjabloon 
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-managed-mariadb-with-vnet%2fazuredeploy.json)
 
-Doe het volgende op de pagina **Azure Database for MariaDB implementeren met VNet** :
+Doe het volgende op de pagina **Azure Database for MariaDB implementeren met VNet**:
 
-1. Selecteer voor **Resourcegroep** de optie **Nieuwe maken** , voer een naam in voor de nieuwe resourcegroep en selecteer **OK**.
+1. Selecteer voor **Resourcegroep** de optie **Nieuwe maken**, voer een naam in voor de nieuwe resourcegroep en selecteer **OK**.
 
 2. Als u een nieuwe resourcegroep hebt gemaakt, selecteert u een **Locatie** voor de resourcegroep en de nieuwe server.
 
-3. Voer gegevens bij **Servernaam** , **Aanmelden beheerder** en  **Wachtwoord aanmelden beheerder** in.
+3. Voer gegevens bij **Servernaam**, **Aanmelden beheerder** en  **Wachtwoord aanmelden beheerder** in.
 
     ![Azure Database for MariaDB implementeren met VNet-venster, Azure-quickstart-sjabloon, Azure Portal](./media/quickstart-create-mariadb-server-database-arm-template/deploy-azure-database-mariadb-vnet.png)
 
 4. Wijzig desgewenst de andere standaardinstellingen:
 
-    * **Abonnement** : het Azure abonnement dat u wilt gebruiken voor de server.
-    * **SKU-capaciteit** : de capaciteit van de vCore, die *2* (de standaardinstelling), *4* , *8* , *16* , *32* of *64* kan zijn.
-    * **SKU-naam** : het voorvoegsel van de SKU-laag, de SKU-familie en de SKU-capaciteit, verbonden door middel van onderstrepingstekens, zoals *B_Gen5_1* , *GP_Gen5_2* (de standaardinstelling) of *MO_Gen5_32*.
-    * **SKU-grootte MB** : de opslaggrootte, in megabytes, van de Azure Database for MariaDB-server (standaard *51200* ).
-    * **SKU-laag** : de implementatielaag, zoals *Basic* , *GeneralPurpose* (de standaardinstelling) of *MemoryOptimized*.
-    * **SKU-familie** : *Gen4* of *Gen5* (de standaardinstelling), wat de hardwaregeneratie voor de serverimplementatie aangeeft.
-    * **MariaDB-versie** : de versie van de MariaDB-server die u wilt implementeren, zoals *10.2* of *10.3* (de standaardinstelling).
-    * **Retentiedagen van back-ups** : de gewenste periode voor het bewaren van geo-redundante back-ups, in dagen (standaard *7* ).
-    * **Geografisch redundante back-up** : *Ingeschakeld* of *Uitgeschakeld* (de standaardinstelling), afhankelijk van de vereisten voor geo-herstel na noodgevallen (geo-DR).
-    * **Naam van virtueel netwerk** : de naam van het virtuele netwerk (standaard *azure_mariadb_vnet* ).
-    * **Subnetnaam** : de naam van het subnet (standaard *azure_mariadb_subnet* ).
-    * **Naam van regel van het virtuele netwerk** : de naam van de regel van het virtuele netwerk waarmee het subnet wordt toegestaan (standaard *AllowSubnet* ).
-    * **Adresvoorvoegsel VNet** : het adresvoorvoegsel voor het virtuele netwerk (standaard *10.0.0.0/16* ).
-    * **Subnetvoorvoegsel** : het adresvoorvoegsel voor het subnet (standaard *10.0.0.0/16* ).
+    * **Abonnement**: het Azure abonnement dat u wilt gebruiken voor de server.
+    * **SKU-capaciteit**: de capaciteit van de vCore, die *2* (de standaardinstelling), *4*, *8*, *16*, *32* of *64* kan zijn.
+    * **SKU-naam**: het voorvoegsel van de SKU-laag, de SKU-familie en de SKU-capaciteit, verbonden door middel van onderstrepingstekens, zoals *B_Gen5_1*, *GP_Gen5_2* (de standaardinstelling) of *MO_Gen5_32*.
+    * **SKU-grootte MB**: de opslaggrootte, in megabytes, van de Azure Database for MariaDB-server (standaard *51200*).
+    * **SKU-laag**: de implementatielaag, zoals *Basic*, *GeneralPurpose* (de standaardinstelling) of *MemoryOptimized*.
+    * **SKU-familie**: *Gen4* of *Gen5* (de standaardinstelling), wat de hardwaregeneratie voor de serverimplementatie aangeeft.
+    * **MariaDB-versie**: de versie van de MariaDB-server die u wilt implementeren, zoals *10.2* of *10.3* (de standaardinstelling).
+    * **Retentiedagen van back-ups**: de gewenste periode voor het bewaren van geo-redundante back-ups, in dagen (standaard *7*).
+    * **Geografisch redundante back-up**: *Ingeschakeld* of *Uitgeschakeld* (de standaardinstelling), afhankelijk van de vereisten voor geo-herstel na noodgevallen (geo-DR).
+    * **Naam van virtueel netwerk**: de naam van het virtuele netwerk (standaard *azure_mariadb_vnet*).
+    * **Subnetnaam**: de naam van het subnet (standaard *azure_mariadb_subnet*).
+    * **Naam van regel van het virtuele netwerk**: de naam van de regel van het virtuele netwerk waarmee het subnet wordt toegestaan (standaard *AllowSubnet*).
+    * **Adresvoorvoegsel VNet**: het adresvoorvoegsel voor het virtuele netwerk (standaard *10.0.0.0/16*).
+    * **Subnetvoorvoegsel**: het adresvoorvoegsel voor het subnet (standaard *10.0.0.0/16*).
 
 5. Lees de voorwaarden en schakel vervolgens het selectievakje **Ik ga akkoord met de bovenstaande voorwaarden** in.
 

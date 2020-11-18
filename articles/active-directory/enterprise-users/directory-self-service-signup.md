@@ -7,20 +7,20 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: overview
 ms.workload: identity
-ms.date: 08/13/2020
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ec578370d32664e36ffcc4bd075c3f6a3ed68ab
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: c0edd85ea4478ac95ea854b73717056d52a9098b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378713"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94647559"
 ---
 # <a name="what-is-self-service-sign-up-for-azure-active-directory"></a>Wat is de selfservice voor aanmelden voor Azure Active Directory?
 
@@ -35,9 +35,9 @@ In dit artikel wordt uitgelegd hoe u de selfservice voor aanmelden gebruikt voor
 
 ## <a name="terms-and-definitions"></a>Termen en definities
 
-* **Selfservice voor registreren** : Dit is de methode waarmee gebruikers zich voor een cloudservice aanmelden en waardoor automatisch een identiteit voor hen wordt gemaakt in Azure AD op basis van hun e-maildomein.
-* **Niet-beheerde Azure AD-map** : Dit is de map waarin die identiteit is gemaakt. Een niet-beheerde map is een map zonder globale beheerder.
-* **Via e-mail geverifieerde gebruiker** : Dit is een type gebruikersaccount in Azure AD. Een gebruiker voor wie automatisch een identiteit wordt gemaakt na aanmelding voor een selfservice-aanbieding wordt ook wel een via e-mail geverifieerde gebruiker genoemd. Een via e-mail geverifieerde gebruiker is een gewoon lid van een map waaraan de tag creationmethod=EmailVerified is toegevoegd.
+* **Selfservice voor registreren**: Dit is de methode waarmee gebruikers zich voor een cloudservice aanmelden en waardoor automatisch een identiteit voor hen wordt gemaakt in Azure AD op basis van hun e-maildomein.
+* **Niet-beheerde Azure AD-map**: Dit is de map waarin die identiteit is gemaakt. Een niet-beheerde map is een map zonder globale beheerder.
+* **Via e-mail geverifieerde gebruiker**: Dit is een type gebruikersaccount in Azure AD. Een gebruiker voor wie automatisch een identiteit wordt gemaakt na aanmelding voor een selfservice-aanbieding wordt ook wel een via e-mail geverifieerde gebruiker genoemd. Een via e-mail geverifieerde gebruiker is een gewoon lid van een map waaraan de tag creationmethod=EmailVerified is toegevoegd.
 
 ## <a name="how-do-i-control-self-service-settings"></a>Hoe beheer ik de instellingen voor de selfservice?
 

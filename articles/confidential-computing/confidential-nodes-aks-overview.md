@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: overview
 ms.date: 9/22/2020
 ms.author: amgowda
-ms.openlocfilehash: a009cd7763b4a4dc0c502d4c47a20d6fdffe61d7
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 1b945ac9f656a227bcc3335cb0ec995626f98f77
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92125438"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564171"
 ---
 # <a name="confidential-computing-nodes-on-azure-kubernetes-service-public-preview"></a>Confidential Computing-knooppunten in Azure Kubernetes Service (openbare preview)
 
@@ -61,10 +61,10 @@ AKS ondersteunt toepassingen die zijn geprogrammeerd om te worden uitgevoerd op 
 
 [Quickstart met samples van vertrouwelijke containers](https://github.com/Azure-Samples/confidential-container-samples)
 
-[DCsv2 SKU-lijst](https://docs.microsoft.com/azure/virtual-machines/dcv2-series)
+[DCsv2 SKU-lijst](../virtual-machines/dcv2-series.md)
 
 <!-- LINKS - external -->
-[Azure Attestation]: https://docs.microsoft.com/en-us/azure/attestation/
+[Azure Attestation]: ../attestation/index.yml
 
 
 <!-- LINKS - internal -->

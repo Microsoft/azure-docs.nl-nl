@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2786a45ef779b9c66edda4c765a1cf2140f1bf9f
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 37db72b2b5dadfba930ca003121140fd99c4736d
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425279"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686069"
 ---
 # <a name="azure-security-baseline-for-azure-load-balancer"></a>Azure-beveiligings basislijn voor Azure Load Balancer
 
@@ -30,7 +30,7 @@ Azure biedt twee soorten Load Balancer-aanbiedingen, Standard en Basic. Gebruik 
 
 Het gebruik van een Standard Load Balancer wordt aanbevolen voor uw productie werkbelastingen en normaal gesp roken wordt de basis Load Balancer alleen gebruikt voor het testen omdat het basis type standaard open is voor verbindingen van het internet en geen netwerk beveiligings groepen voor bewerking vereist. 
 
-- [Uitgaande verbindingen in Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#outboundrule)
+- [Uitgaande verbindingen in Azure](load-balancer-outbound-connections.md)
 
 - [Open bare Azure-Load Balancer bijwerken](https://docs.microsoft.com/azure/load-balancer/upgrade-basic-standard)
 
@@ -442,7 +442,7 @@ Om ervoor te zorgen dat klant gegevens in azure veilig blijven, heeft micro soft
 
 Zorg ervoor dat u de juiste (Lees) machtigingen in uw Tenant hebt en alle Azure-abonnementen en-resources in uw abonnementen hebt geïnventariseerd.
 
-- [Query's maken met Azure resource Graph Explorer](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Query's maken met Azure Resource Graph Explorer](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
 
 - [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
@@ -496,7 +496,7 @@ Zorg ervoor dat alle Azure-resources die in de omgeving aanwezig zijn, zijn goed
 
 - [Azure Policy configureren en beheren](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-- [Query's maken met Azure resource Graph Explorer](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Query's maken met Azure Resource Graph Explorer](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
 
 **Azure Security Center bewaking**: niet van toepassing
 

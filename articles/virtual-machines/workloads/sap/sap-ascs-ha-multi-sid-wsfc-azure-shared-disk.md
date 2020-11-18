@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c8116f3e00d13c0bd1e5f075a7fbe3264f337079
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: df611e01fefacd22f4dc026a819d4c71ede6e7e3
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970398"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686086"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-azure-shared-disk"></a>SAP ASCS/SCS instance multi-SID hoge Beschik baarheid met Windows Server Failover Clustering en Azure Shared Disk
 
@@ -35,12 +35,12 @@ In dit artikel wordt uitgelegd hoe u vanuit één ASCS/SCS-installatie overstapt
 Momenteel kunt u Azure Premium-SSD-schijven gebruiken als een gedeelde Azure-schijf voor het SAP ASCS/SCS-exemplaar. De volgende beperkingen zijn van kracht:
 
 -  [Azure Ultra Disk](../../disks-types.md#ultra-disk) wordt niet ondersteund als een gedeelde Azure-schijf voor SAP-workloads. Het is momenteel niet mogelijk om virtuele Azure-machines te plaatsen met behulp van Azure Ultra disk in de Beschikbaarheidsset
--  Een [gedeelde Azure-schijf](../../windows/disks-shared.md) met Premium-SSD schijven wordt alleen ondersteund met vm's in de beschikbaarheidsset. Het wordt niet ondersteund in Beschikbaarheidszones-implementatie. 
+-  Een [gedeelde Azure-schijf](../../disks-shared.md) met Premium-SSD schijven wordt alleen ondersteund met vm's in de beschikbaarheidsset. Het wordt niet ondersteund in Beschikbaarheidszones-implementatie. 
 -  De waarde [maxShares](../../disks-shared-enable.md?tabs=azure-cli#disk-sizes) voor de gedeelde Azure-schijf bepaalt hoeveel cluster knooppunten de gedeelde schijf kunnen gebruiken. Normaal gesp roken kunt u met het SAP ASCS/SCS-exemplaar twee knoop punten in een Windows-failovercluster configureren. Daarom moet de waarde voor `maxShares` zijn ingesteld op twee.
 -  Alle SAP-ASCS/SCS-cluster-Vm's moeten worden geïmplementeerd in dezelfde [plaatsings groep voor Azure nabijheid](../../windows/proximity-placement-groups.md).   
    Hoewel u Windows-cluster-Vm's kunt implementeren in de Beschikbaarheidsset met een gedeelde Azure-schijf zonder PPG, zorgt PPG ervoor dat de fysieke nabijheid van Azure gedeelde schijven en de cluster-Vm's worden gesloten, waardoor er minder latentie tussen de virtuele machines en de opslaglaag kan worden bereikt.    
 
-Raadpleeg het gedeelte over [beperkingen](../../linux/disks-shared.md#limitations) van de documentatie van de gedeelde schijf van Azure voor meer informatie over de beperkingen voor een gedeelde Azure-schijf.  
+Raadpleeg het gedeelte over [beperkingen](../../disks-shared.md#limitations) van de documentatie van de gedeelde schijf van Azure voor meer informatie over de beperkingen voor een gedeelde Azure-schijf.  
 
 > [!IMPORTANT]
 > Wanneer u een Windows-failovercluster met SAP ASCS/SCS implementeert met een gedeelde Azure-schijf, moet u er rekening mee houden dat uw implementatie met één gedeelde schijf in één opslag cluster wordt uitgevoerd. Uw SAP ASCS/SCS-exemplaar wordt beïnvloed, in het geval van problemen met het opslag cluster, waar de gedeelde Azure-schijf wordt geïmplementeerd.  
@@ -56,7 +56,7 @@ Raadpleeg het gedeelte over [beperkingen](../../linux/disks-shared.md#limitation
 
 Zowel Windows Server 2016 als Windows Server 2019 worden ondersteund (gebruik de meest recente Data Center-installatie kopieën).
 
-We raden u ten zeerste aan **Windows Server 2019 Data Center**te gebruiken als:
+We raden u ten zeerste aan **Windows Server 2019 Data Center** te gebruiken als:
 - Windows 2019 failover cluster-service is Azure-compatibel
 - Er is een integratie en bewustzijn van Azure host-onderhoud toegevoegd en de ervaring is verbeterd door bewaking voor Azure Schedule-gebeurtenissen.
 - U kunt de naam van een gedistribueerde netwerk gebruiken (dit is de standaard optie). Daarom is er geen specifiek IP-adres nodig voor de naam van het cluster netwerk. Bovendien hoeft u dit IP-adres niet te configureren op de interne Azure-Load Balancer. 
@@ -95,7 +95,7 @@ Zowel de in wachtrij plaatsen van replicatie server 1 (ERS1) als de in plaats va
 
 ## <a name="infrastructure-preparation"></a>Infrastructuur voorbereiding
 
-Er worden naast het **bestaande geclusterde** SAP **PR1** ASCS/SCS-exemplaar een nieuwe SAP-sid- **PR2**geïnstalleerd.  
+Er worden naast het **bestaande geclusterde** SAP **PR1** ASCS/SCS-exemplaar een nieuwe SAP-sid- **PR2** geïnstalleerd.  
 
 ### <a name="host-names-and-ip-addresses"></a>Hostnamen en IP-adressen
 
@@ -121,17 +121,17 @@ U moet een configuratie toevoegen aan de bestaande load balancer voor de tweede 
 - Back-end-configuratie  
     Is al aanwezig-de Vm's zijn al toegevoegd aan de back-end-groep, terwijl de configuratie voor SAP-SID **PR1**
 - Test poort
-    - Poort 620**Nr** . [**62002**] de standaard optie voor protocol (TCP), interval (5), beschadigde drempel waarde (2) behouden
+    - Poort 620 **Nr** . [**62002**] de standaard optie voor protocol (TCP), interval (5), beschadigde drempel waarde (2) behouden
 - Taakverdelings regels
     - Als u Standard Load Balancer gebruikt, selecteert u HA-poorten
     - Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
-        - 32**Nr** TCP [**3202**]
-        - 36**Nr** TCP [**3602**]
-        - 39**Nr** TCP [**3902**]
-        - 81**Nr** TCP [**8102**]
-        - 5**Nr**. 13 TCP [**50213**]
-        - 5**Nr**. 14 TCP [**50214**]
-        - 5**Nr**. 16 TCP [**50216**]
+        - 32 **Nr** TCP [**3202**]
+        - 36 **Nr** TCP [**3602**]
+        - 39 **Nr** TCP [**3902**]
+        - 81 **Nr** TCP [**8102**]
+        - 5 **Nr**. 13 TCP [**50213**]
+        - 5 **Nr**. 14 TCP [**50214**]
+        - 5 **Nr**. 16 TCP [**50216**]
         - Koppel het **PR2** ASCS-frontend-IP, de status test en de bestaande back-end-pool.  
 
     - Zorg ervoor dat time-out voor inactiviteit (minuten) is ingesteld op de maximum waarde 30 en dat zwevend IP-adres (Direct Server Return) is ingeschakeld.
@@ -146,16 +146,16 @@ Als de wachtrij voor het plaatsen van replicatie Server 2 (ERS2) ook is gecluste
   De virtuele machines zijn al toegevoegd aan de back-ILB.  
 
 - Nieuwe test poort
-    - Poort 621**Nr**  . [**62112**] de standaard optie voor protocol (TCP), interval (5), beschadigde drempel waarde (2) behouden
+    - Poort 621 **Nr**  . [**62112**] de standaard optie voor protocol (TCP), interval (5), beschadigde drempel waarde (2) behouden
 
 - Nieuwe regels voor taak verdeling
     - Als u Standard Load Balancer gebruikt, selecteert u HA-poorten
     - Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
-        - 32**Nr** TCP [**3212**]
-        - 33**Nr** TCP [**3312**]
-        - 5**Nr**. 13 TCP [**51212**]
-        - 5**Nr**. 14 TCP [**51212**]
-        - 5**Nr**. 16 TCP [**51212**]
+        - 32 **Nr** TCP [**3212**]
+        - 33 **Nr** TCP [**3312**]
+        - 5 **Nr**. 13 TCP [**51212**]
+        - 5 **Nr**. 14 TCP [**51212**]
+        - 5 **Nr**. 16 TCP [**51212**]
         - Koppel het **PR2** ERS2-frontend-IP, de status test en de bestaande back-end-pool.  
 
     - Zorg ervoor dat time-out voor inactiviteit (minuten) is ingesteld op een maximum waarde, bijvoorbeeld 30, en dat zwevend IP-adres (Direct Server Return) is ingeschakeld.
@@ -293,7 +293,7 @@ Gebruik de test functionaliteit van de interne load balancer om ervoor te zorgen
 Dit werkt echter niet in sommige cluster configuraties, omdat er slechts één exemplaar actief is. De andere instantie is passief en kan geen enkele werk belasting accepteren. Een test functionaliteit helpt wanneer de interne load balancer van Azure detecteert welk exemplaar actief is en alleen gericht is op het actieve exemplaar.  
 
 > [!IMPORTANT]
-> In dit voor beeld is de **ProbePort** ingesteld op 620**Nr**. Voor het SAP ASCS-exemplaar met het nummer **02** is 620**02**.
+> In dit voor beeld is de **ProbePort** ingesteld op 620 **Nr**. Voor het SAP ASCS-exemplaar met het nummer **02** is 620 **02**.
 > U moet de configuratie aanpassen zodat deze overeenkomt met uw SAP-instantie nummers en uw SAP-SID.
 
 Als u een test poort wilt toevoegen, voert u deze Power shell-module uit op een van de cluster-Vm's:

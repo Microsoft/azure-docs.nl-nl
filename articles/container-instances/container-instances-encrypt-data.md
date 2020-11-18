@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 01/17/2020
 author: macolso
 ms.author: macolso
-ms.openlocfilehash: d2cad98267ef1654c4f2d9ad2db75f769dbc0780
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 1b73ce5c994231a1c7b2f26ad702f2ad5880ba44
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93091352"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686273"
 ---
 # <a name="encrypt-deployment-data"></a>Implementatiegegevens versleutelen
 
@@ -59,7 +59,7 @@ Als u de Service-Principal niet kunt maken, doet u het volgende:
 
 ### <a name="create-a-key-vault-resource"></a>Een Key Vault-resource maken
 
-Maak een Azure Key Vault met behulp van [Azure Portal](../key-vault/secrets/quick-create-portal.md#create-a-vault), [cli](../key-vault/secrets/quick-create-cli.md)of [Power shell](../key-vault/secrets/quick-create-powershell.md). 
+Maak een Azure Key Vault met behulp van [Azure Portal](../key-vault/general/quick-create-portal.md), [Azure cli](../key-vault/general/quick-create-cli.md)of [Azure PowerShell](../key-vault/general/quick-create-powershell.md).
 
 Gebruik de volgende richt lijnen voor de eigenschappen van uw sleutel kluis: 
 * Naam: geef een unieke naam op. 
@@ -73,7 +73,7 @@ Gebruik de volgende richt lijnen voor de eigenschappen van uw sleutel kluis:
 
 ### <a name="generate-a-new-key"></a>Een nieuwe sleutel genereren 
 
-Als uw sleutel kluis is gemaakt, gaat u naar de resource in Azure Portal. Klik in het navigatie menu aan de linkerkant van de Blade resource onder instellingen op **sleutels** . Klik in de weer gave voor ' sleutels ' op genereren/importeren ' om een nieuwe sleutel te genereren. Gebruik een unieke naam voor deze sleutel en andere voor keuren op basis van uw vereisten. 
+Als uw sleutel kluis is gemaakt, gaat u naar de resource in Azure Portal. Klik in het navigatie menu aan de linkerkant van de Blade resource onder instellingen op **sleutels**. Klik in de weer gave voor ' sleutels ' op genereren/importeren ' om een nieuwe sleutel te genereren. Gebruik een unieke naam voor deze sleutel en andere voor keuren op basis van uw vereisten. 
 
 ![Een nieuwe sleutel genereren](./media/container-instances-encrypt-data/generate-key.png)
 
@@ -81,7 +81,7 @@ Als uw sleutel kluis is gemaakt, gaat u naar de resource in Azure Portal. Klik i
 
 Maak een nieuw toegangs beleid om de ACI-service toegang tot uw sleutel te geven.
 
-* Als uw sleutel is gegenereerd, klikt u op de Blade sleutel kluis resource onder instellingen op **toegangs beleid** .
+* Als uw sleutel is gegenereerd, klikt u op de Blade sleutel kluis resource onder instellingen op **toegangs beleid**.
 * Klik op **toegangs beleid toevoegen** op de pagina toegangs beleid voor uw sleutel kluis.
 * Stel de *sleutel machtigingen* in om sleutel machtigingen voor **Get** en **Unwrap** op te geven ![](./media/container-instances-encrypt-data/set-key-permissions.png)
 * Selecteer voor *Select Principal* de **service Azure container instance**

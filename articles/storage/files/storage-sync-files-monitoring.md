@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 785a63d695f7c615ce21fa5714b76988b5e281c4
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 59c489fac8bf02263cc51833675af414d5de6a52
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629373"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686001"
 ---
 # <a name="monitor-azure-file-sync"></a>Azure File Sync bewaken
 
@@ -42,10 +42,10 @@ De metrische gegevens voor Azure File Sync zijn standaard ingeschakeld en worden
 
 De volgende metrische gegevens voor Azure File Sync zijn beschikbaar in Azure Monitor:
 
-| Naam van meetwaarde | Description |
+| Naam van meetwaarde | Beschrijving |
 |-|-|
 | Gesynchroniseerde bytes | Grootte van de overgedragen gegevens (uploaden en downloaden).<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensies: naam server eindpunt, synchronisatie richting, naam synchronisatie groep |
-| Cloud lagen intrekken | De grootte van de gegevens die worden ingetrokken.<br><br>**Opmerking** : deze metrische gegevens worden in de toekomst verwijderd. Gebruik de grootte van de Cloud-laag voor het intrekken van de grootte van gegevens die zijn ingetrokken.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: Server naam |
+| Cloud lagen intrekken | De grootte van de gegevens die worden ingetrokken.<br><br>**Opmerking**: deze metrische gegevens worden in de toekomst verwijderd. Gebruik de grootte van de Cloud-laag voor het intrekken van de grootte van gegevens die zijn ingetrokken.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: Server naam |
 | Grootte van intrekken Cloud lagen | De grootte van de gegevens die worden ingetrokken.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: Server naam, naam van synchronisatie groep |
 | Grootte van intrekken van Cloud lagen op toepassing | De grootte van de gegevens die worden ingetrokken door de toepassing.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: toepassings naam, Server naam, naam synchronisatie groep |
 | Door Voer van Cloud lagen intrekken | Grootte van gegevens intrekken doorvoer snelheid.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: Server naam, naam van synchronisatie groep |
@@ -101,7 +101,7 @@ Als u de **status van de geregistreerde server** in de portal wilt bekijken, gaa
 ![Scherm opname van de status van geregistreerde servers](media/storage-sync-files-troubleshoot/file-sync-registered-servers.png)
 
 - Als de status van de **geregistreerde server** **online** is, communiceert de server met succes met de service.
-- Als de status van de **geregistreerde server** **offline wordt weer gegeven** , is het proces voor het controleren van de opslag synchronisatie (AzureStorageSyncMonitor.exe) niet actief of heeft de server geen toegang tot de Azure File Sync-Service. Raadpleeg de [documentatie voor probleem oplossing](./storage-sync-files-troubleshoot.md?tabs=portal1%252cazure-portal#server-endpoint-noactivity) voor hulp.
+- Als de status van de **geregistreerde server** **offline wordt weer gegeven**, is het proces voor het controleren van de opslag synchronisatie (AzureStorageSyncMonitor.exe) niet actief of heeft de server geen toegang tot de Azure File Sync-Service. Raadpleeg de [documentatie voor probleem oplossing](./storage-sync-files-troubleshoot.md?tabs=portal1%252cazure-portal#server-endpoint-noactivity) voor hulp.
 
 ### <a name="server-endpoint-health"></a>Status van server eindpunt
 
@@ -118,7 +118,7 @@ Als u de status van een **Server eindpunt** wilt weer geven in de portal, gaat u
 
 - De volgende metrische grafieken kunnen worden weer gegeven in de portal van de opslag synchronisatie service:
 
-  | Naam van meetwaarde | Description | Naam Blade |
+  | Naam van meetwaarde | Beschrijving | Naam Blade |
   |-|-|-|
   | Gesynchroniseerde bytes | Grootte van overgedragen gegevens (uploaden en downloaden) | Synchronisatie groep, Server eindpunt |
   | Cloud lagen intrekken | Grootte van gegevens die zijn ingetrokken | Geregistreerde servers |
@@ -141,18 +141,18 @@ Gebruik het telemetrie-gebeurtenis logboek op de server om de geregistreerde ser
 
 Synchronisatie status
 
-- Gebeurtenis-ID 9102 wordt vastgelegd zodra een synchronisatie sessie is voltooid. Gebruik deze gebeurtenis om te bepalen of synchronisatie sessies zijn geslaagd ( **HResult = 0** ) en of er synchronisatie fouten per item zijn ( **PerItemErrorCount** ). Zie de documentatie [synchronisatie status](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#broken-sync) en  [fouten per artikel](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#how-do-i-see-if-there-are-specific-files-or-folders-that-are-not-syncing) voor meer informatie.
+- Gebeurtenis-ID 9102 wordt vastgelegd zodra een synchronisatie sessie is voltooid. Gebruik deze gebeurtenis om te bepalen of synchronisatie sessies zijn geslaagd (**HResult = 0**) en of er synchronisatie fouten per item zijn (**PerItemErrorCount**). Zie de documentatie [synchronisatie status](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#broken-sync) en  [fouten per artikel](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#how-do-i-see-if-there-are-specific-files-or-folders-that-are-not-syncing) voor meer informatie.
 
   > [!Note]  
   > Soms mislukken synchronisatie sessies volledig of hebben ze een niet-nul-PerItemErrorCount. Ze maken echter nog steeds een voortgang en sommige bestanden zijn gesynchroniseerd. U kunt dit zien in de velden toegepast zoals AppliedFileCount, AppliedDirCount, AppliedTombstoneCount en AppliedSizeBytes. In deze velden kunt u zien hoeveel van de sessie is geslaagd. Als er meerdere synchronisatie sessies mislukken in een rij en deze een toenemend aantal toegewezen aantallen hebben, geeft u de synchronisatie tijd om het opnieuw te proberen voordat u een ondersteunings ticket opent.
 
-- Gebeurtenis-ID 9121 wordt vastgelegd voor elk per-item-fout zodra de synchronisatie sessie is voltooid. Gebruik deze gebeurtenis om te bepalen hoeveel bestanden niet kunnen worden gesynchroniseerd met deze fout ( **PersistentCount** en **TransientCount** ). Permanente fouten per item moeten worden onderzocht, Zie [Hoe kan ik controleren of er specifieke bestanden of mappen zijn die niet worden gesynchroniseerd?](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#how-do-i-see-if-there-are-specific-files-or-folders-that-are-not-syncing).
+- Gebeurtenis-ID 9121 wordt vastgelegd voor elk per-item-fout zodra de synchronisatie sessie is voltooid. Gebruik deze gebeurtenis om te bepalen hoeveel bestanden niet kunnen worden gesynchroniseerd met deze fout (**PersistentCount** en **TransientCount**). Permanente fouten per item moeten worden onderzocht, Zie [Hoe kan ik controleren of er specifieke bestanden of mappen zijn die niet worden gesynchroniseerd?](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#how-do-i-see-if-there-are-specific-files-or-folders-that-are-not-syncing).
 
-- Gebeurtenis-ID 9302 wordt elke 5 tot 10 minuten geregistreerd als er een actieve synchronisatie sessie is. Gebruik deze gebeurtenis om te bepalen hoeveel items moeten worden gesynchroniseerd ( **TotalItemCount** ), het aantal items dat tot nu toe is gesynchroniseerd ( **AppliedItemCount** ) en het aantal items dat niet kan worden gesynchroniseerd vanwege een fout per item ( **PerItemErrorCount** ). Als de synchronisatie niet wordt uitgevoerd ( **AppliedItemCount = 0** ), zal de synchronisatie sessie uiteindelijk mislukken en wordt er een gebeurtenis-id 9102 in het logboek geregistreerd met de fout. Zie de [voortgangs documentatie over synchronisatie](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#how-do-i-monitor-the-progress-of-a-current-sync-session)voor meer informatie.
+- Gebeurtenis-ID 9302 wordt elke 5 tot 10 minuten geregistreerd als er een actieve synchronisatie sessie is. Gebruik deze gebeurtenis om te bepalen hoeveel items moeten worden gesynchroniseerd (**TotalItemCount**), het aantal items dat tot nu toe is gesynchroniseerd (**AppliedItemCount**) en het aantal items dat niet kan worden gesynchroniseerd vanwege een fout per item (**PerItemErrorCount**). Als de synchronisatie niet wordt uitgevoerd (**AppliedItemCount = 0**), zal de synchronisatie sessie uiteindelijk mislukken en wordt er een gebeurtenis-id 9102 in het logboek geregistreerd met de fout. Zie de [voortgangs documentatie over synchronisatie](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#how-do-i-monitor-the-progress-of-a-current-sync-session)voor meer informatie.
 
 Status van geregistreerde server
 
-- Gebeurtenis-ID 9301 wordt elke 30 seconden geregistreerd wanneer een server de service voor taken opvraagt. Als GetNextJob eindigt met **status = 0** , kan de server met de service communiceren. Als GetNextJob met een fout is voltooid, raadpleegt u de [documentatie voor probleem oplossing](./storage-sync-files-troubleshoot.md?tabs=portal1%252cazure-portal#server-endpoint-noactivity) voor hulp.
+- Gebeurtenis-ID 9301 wordt elke 30 seconden geregistreerd wanneer een server de service voor taken opvraagt. Als GetNextJob eindigt met **status = 0**, kan de server met de service communiceren. Als GetNextJob met een fout is voltooid, raadpleegt u de [documentatie voor probleem oplossing](./storage-sync-files-troubleshoot.md?tabs=portal1%252cazure-portal#server-endpoint-noactivity) voor hulp.
 
 Status van Cloud lagen
 
@@ -178,7 +178,7 @@ Als u de prestatie meter items van Azure File Sync op de server wilt weer geven,
 
 De volgende prestatie meter items voor Azure File Sync zijn beschikbaar in prestatie meter:
 
-| Object\Counter naam van prestaties | Description |
+| Object\Counter naam van prestaties | Beschrijving |
 |-|-|
 | AFS bytes Transferred\Downloaded bytes per seconde | Aantal gedownloade bytes per seconde. |
 | AFS bytes Transferred\Uploaded bytes per seconde | Aantal geüploade bytes per seconde. |
@@ -229,7 +229,7 @@ Deze sectie bevat enkele voor beelden van waarschuwingen voor Azure File Sync.
 7. Navigeer naar **waarschuwings logica** en voer de volgende handelingen uit: 
      - Drempel ingesteld op **statisch** 
      - Operator: **groter dan** 
-     - Aggregatie type: **totaal**  
+     - Aggregatie type: **gemiddeld**  
      - Drempel waarde: **100** 
      - Geëvalueerd op basis van: aggregatie granulatie = **5 minuten** | Evaluatie frequentie = **elke 5 minuten** 
      - Klik op **gereed.** 

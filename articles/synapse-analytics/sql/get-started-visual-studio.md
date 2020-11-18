@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 098256c3174f5a737bec4f6a62cb1d2af99e6f4f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a284e453a621860c0aebf68bef13d30e77971f88
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311074"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686154"
 ---
 # <a name="connect-to-synapse-sql-with-visual-studio-and-ssdt"></a>Verbinding maken met Synapse SQL met Visual Studio en SSDT
 
@@ -52,9 +52,9 @@ Als u deze zelf studie wilt gebruiken, moet u beschikken over de volgende onderd
    
     ![Verbinding maken met server](./media/get-started-visual-studio/connection-dialog.png)
    
-   * **Servernaam** : Voer de eerder vastgestelde **servernaam** in.
-   * **Verificatie** : Selecteer **SQL Server verificatie** of **Active Directory geïntegreerde verificatie** :
-   * **Gebruikersnaam** en **Wachtwoord** : Voer uw gebruikersnaam en wachtwoord in als u hierboven SQL Server-verificatie hebt geselecteerd.
+   * **Servernaam**: Voer de eerder vastgestelde **servernaam** in.
+   * **Verificatie**: Selecteer **SQL Server verificatie** of **Active Directory geïntegreerde verificatie**:
+   * **Gebruikersnaam** en **Wachtwoord**: Voer uw gebruikersnaam en wachtwoord in als u hierboven SQL Server-verificatie hebt geselecteerd.
    * Klik op **Verbinden**.
 5. U kunt de Azure SQL-server uitvouwen als u deze wilt verkennen. U kunt de databases weergeven die aan de server zijn gekoppeld. Vouw AdventureWorksDW uit als u de tabellen in de voorbeelddatabase wilt zien.
    

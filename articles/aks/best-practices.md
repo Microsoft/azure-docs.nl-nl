@@ -4,12 +4,12 @@ description: Verzameling van de best practices voor cluster operators en ontwikk
 services: container-service
 ms.topic: article
 ms.date: 12/07/2018
-ms.openlocfilehash: 1278a03d3ffc7ccb11b0e3c4c84f6c213648440b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e8f9c1946567ac3c3ea1045a216d6b0486fd959a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88008777"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686256"
 ---
 # <a name="cluster-operator-and-developer-best-practices-to-build-and-manage-applications-on-azure-kubernetes-service-aks"></a>Aanbevolen procedures voor cluster operators en ontwikkel aars voor het maken en beheren van toepassingen in azure Kubernetes service (AKS)
 
@@ -30,7 +30,7 @@ Als cluster operator kunt u samen werken met eigen aren van toepassingen en ontw
 * [Aanbevolen procedures voor geavanceerde Scheduler-functies](operator-best-practices-advanced-scheduler.md)
     * Omvat het gebruik van taints en verdragen, knooppunt selecties en affiniteit en de Inter-pod-affiniteit en anti-affiniteit.
 * [Aanbevolen procedures voor verificatie en autorisatie](operator-best-practices-identity.md)
-    * Omvat integratie met Azure Active Directory, met behulp van RBAC (op rollen gebaseerd toegangs beheer) en pod-identiteiten.
+    * Omvat de integratie met Azure Active Directory, met behulp van Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC), met behulp van Azure RBAC en pod-identiteiten.
 
 **Beveiliging**
 

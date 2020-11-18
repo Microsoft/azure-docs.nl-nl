@@ -5,16 +5,19 @@ ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 03/23/2020
-ms.openlocfilehash: be469ab3b05c54ebc5afa6bd6d129efd8d4ba692
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/10/2020
+ms.openlocfilehash: f582f0dc7547a607351fcfc4ff9d39e8c5a077df
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91254802"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686174"
 ---
 # <a name="how-to-create-alerts-from-azure-monitor-for-vms"></a>Waarschuwingen maken op basis van Azure Monitor voor VM's
 [Waarschuwingen in azure monitor](../platform/alerts-overview.md) proactief u op de hoogte stellen van interessante gegevens en patronen in uw bewakings gegevens. Azure Monitor voor VM's bevat geen vooraf geconfigureerde waarschuwings regels, maar u kunt uw eigen waarschuwing maken op basis van de gegevens die worden verzameld. Dit artikel bevat richt lijnen voor het maken van waarschuwings regels, met inbegrip van een aantal voorbeeld query's.
+
+> [!IMPORTANT]
+> De waarschuwingen die in dit artikel worden beschreven, zijn gebaseerd op logboek query's van verzamelde gegevens Azure Monitor voor VM's. Dit wijkt af van de waarschuwingen die zijn gemaakt door [Azure monitor voor VM-gast status](vminsights-health-overview.md) , een functie die momenteel beschikbaar is als open bare preview. Als deze functie in de buurt van algemene Beschik baarheid wordt uitgelegd, worden richt lijnen voor waarschuwingen geconsolideerd.
 
 
 ## <a name="alert-rule-types"></a>Typen waarschuwings regels
@@ -29,11 +32,11 @@ Er zijn twee typen logboek waarschuwingen in Azure Monitor:
 ## <a name="alert-rule-walkthrough"></a>Scenario voor waarschuwings regels
 In deze sectie wordt uitgelegd hoe u een waarschuwings regel voor metrische metingen maakt met behulp van prestatie gegevens van Azure Monitor voor VM's. U kunt dit basis proces met verschillende logboek query's gebruiken om te waarschuwen voor verschillende prestatie meter items.
 
-Begin met het maken van een nieuwe waarschuwings regel volgens de procedure in [logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../platform/alerts-log.md). Selecteer voor de **resource**de log Analytics-werk ruimte die Azure monitor vm's gebruikt in uw abonnement. Omdat de doel resource voor regels voor logboek waarschuwingen altijd een Log Analytics werk ruimte is, moet de logboek query een filter voor bepaalde virtuele machines of virtuele-machine schaal sets bevatten. 
+Begin met het maken van een nieuwe waarschuwings regel volgens de procedure in [logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../platform/alerts-log.md). Selecteer voor de **resource** de log Analytics-werk ruimte die Azure monitor vm's gebruikt in uw abonnement. Omdat de doel resource voor regels voor logboek waarschuwingen altijd een Log Analytics werk ruimte is, moet de logboek query een filter voor bepaalde virtuele machines of virtuele-machine schaal sets bevatten. 
 
-Voor de **voor waarde** van de waarschuwings regel gebruikt u een van de query's in de [volgende sectie](#sample-alert-queries) als de **Zoek query**. De query moet een numerieke eigenschap met de naam *AggregatedValue*retour neren. De gegevens moeten worden samenvatten op computer zodat u een afzonderlijke waarschuwing kunt maken voor elke virtuele machine die de drempel waarde overschrijdt.
+Voor de **voor waarde** van de waarschuwings regel gebruikt u een van de query's in de [volgende sectie](#sample-alert-queries) als de **Zoek query**. De query moet een numerieke eigenschap met de naam *AggregatedValue* retour neren. De gegevens moeten worden samenvatten op computer zodat u een afzonderlijke waarschuwing kunt maken voor elke virtuele machine die de drempel waarde overschrijdt.
 
-Selecteer **metrische meting** in de **waarschuwings logica**en geef vervolgens een **drempel waarde**op. Geef bij **trigger waarschuwing op basis van op**hoe vaak de drempel waarde moet worden overschreden voordat een waarschuwing wordt gemaakt. U kunt er waarschijnlijk niet voor zorgen dat de processor eenmaal een drempel waarde overschrijdt en vervolgens terugkeert naar normaal, maar u kunt er wel voor zorgen dat de drempel waarde ten opzichte van meerdere opeenvolgende metingen wordt overschreden.
+Selecteer **metrische meting** in de **waarschuwings logica** en geef vervolgens een **drempel waarde** op. Geef bij **trigger waarschuwing op basis van op** hoe vaak de drempel waarde moet worden overschreden voordat een waarschuwing wordt gemaakt. U kunt er waarschijnlijk niet voor zorgen dat de processor eenmaal een drempel waarde overschrijdt en vervolgens terugkeert naar normaal, maar u kunt er wel voor zorgen dat de drempel waarde ten opzichte van meerdere opeenvolgende metingen wordt overschreden.
 
 Het **geëvalueerd op basis van** sectie bepaalt hoe vaak de query wordt uitgevoerd en het tijd venster voor de query. In het onderstaande voor beeld wordt de query elke 15 minuten uitgevoerd en worden de prestatie waarden geëvalueerd die in de afgelopen 15 minuten zijn verzameld.
 

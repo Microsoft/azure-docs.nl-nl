@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/28/2018
 ms.author: tomsh
-ms.openlocfilehash: 402fc1b0b436e7e2061cb2e1a922a75c82ac5235
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 082408f357e97a2ed2153d43dbea459ff09ba704
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408053"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94693177"
 ---
 # <a name="best-practices-for-securing-paas-web-and-mobile-applications-using-azure-storage"></a>Aanbevolen procedures voor het beveiligen van PaaS web-en mobiele toepassingen met Azure Storage
 In dit artikel bespreken we een verzameling Azure Storage best practices voor het beveiligen van uw PaaS-web en mobiele toepassingen (platform-as-a-Service). Deze aanbevolen procedures zijn afgeleid van onze ervaring met Azure en de ervaringen van klanten, zoals uzelf.
@@ -34,7 +34,7 @@ De [Azure Storage-beveiligings handleiding](../../storage/blobs/security-recomme
 Dit artikel heeft betrekking op de volgende aanbevolen procedures:
 
 - Shared Access Signatures (SAS)
-- Toegangsbeheer op basis van rollen (RBAC)
+- Azure RBAC (op rollen gebaseerd toegangsbeheer van Azure)
 - Versleuteling aan client zijde voor gegevens met hoge waarde
 - Storage Service Encryption
 
@@ -55,16 +55,16 @@ Met SAS kunt u inhoud delen op de manier die u wilt delen zonder dat u de sleute
 
 Zie [using Shared Access signatures](../../storage/common/storage-sas-overview.md)(Engelstalig) voor meer informatie over de hand tekening voor gedeelde toegang. 
 
-## <a name="use-role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer gebruiken
-Een andere manier om toegang te beheren is door [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/overview.md)te gebruiken. Met RBAC kunt u zich richten op het geven van de exacte machtigingen die ze nodig hebben, op basis van de beveiligings principes van de nood zaak om te kennen en te voldoen aan de minimale bevoegdheden. Te veel machtigingen kunnen een account bloot stellen aan kwaadwillende personen. Te weinig machtigingen betekenen dat werk nemers hun werk niet efficiënt kunnen uitvoeren. RBAC helpt dit probleem op te lossen door nauw keurig toegangs beheer voor Azure aan te bieden. Dit is van cruciaal belang voor organisaties die beveiligings beleid voor gegevens toegang willen afdwingen.
+## <a name="use-azure-role-based-access-control"></a>Toegangs beheer op basis van rollen gebruiken
+Een andere manier om toegang te beheren is door [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/overview.md)te gebruiken. Met Azure RBAC kunt u zich richten op het geven van de exacte machtigingen die ze nodig hebben, op basis van de beveiligings principes van de nood zaak om te kennen en te voldoen aan de minimale bevoegdheden. Te veel machtigingen kunnen een account bloot stellen aan kwaadwillende personen. Te weinig machtigingen betekenen dat werk nemers hun werk niet efficiënt kunnen uitvoeren. Azure RBAC helpt dit probleem op te lossen door nauw keurig toegangs beheer voor Azure aan te bieden. Dit is van cruciaal belang voor organisaties die beveiligings beleid voor gegevens toegang willen afdwingen.
 
 U kunt ingebouwde Azure-rollen in azure gebruiken om machtigingen toe te wijzen aan gebruikers. Gebruik bijvoorbeeld Inzender voor opslag accounts voor Cloud operators die opslag accounts en de rol Inzender voor klassieke opslag accounts moeten beheren voor het beheren van klassieke opslag account. Voor Cloud operators die virtuele machines moeten beheren, maar niet het virtuele netwerk of het opslag account waarmee ze zijn verbonden, kunt u deze toevoegen aan de rol Inzender voor virtuele machines.
 
-Organisaties die geen gegevens toegangs beheer afdwingen door gebruik te maken van mogelijkheden als RBAC, kunnen meer bevoegdheden geven dan nodig zijn voor hun gebruikers. Dit kan leiden tot inbreuk op gegevens door bepaalde gebruikers toegang te geven tot gegevens die ze niet in de eerste plaats hoeven te hebben.
+Organisaties die geen gegevens toegangs beheer afdwingen door gebruik te maken van mogelijkheden als Azure RBAC, kunnen meer bevoegdheden geven dan nodig zijn voor hun gebruikers. Dit kan leiden tot inbreuk op gegevens door bepaalde gebruikers toegang te geven tot gegevens die ze niet in de eerste plaats hoeven te hebben.
 
-Zie voor meer informatie over RBAC:
+Zie voor meer informatie over Azure RBAC:
 
-- [Toegang beheren met op rollen gebaseerd toegangsbeheer en Azure Portal](../../role-based-access-control/role-assignments-portal.md)
+- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../../role-based-access-control/role-assignments-portal.md)
 - [Ingebouwde Azure-rollen](../../role-based-access-control/built-in-roles.md)
 - [Azure Storage-beveiligingshandleiding](../../storage/blobs/security-recommendations.md) 
 

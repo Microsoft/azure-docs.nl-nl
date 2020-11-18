@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/18/2019
 ms.author: TomSh
-ms.openlocfilehash: db7d9e99de8a4ee67e49f8b7568700fc07b1e2fd
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 749c32091ed10d5bb39d7b67c8b737e002fc9909
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94536505"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94693729"
 ---
 # <a name="introduction-to-azure-security"></a>Inleiding tot Azure-beveiliging
 ## <a name="overview"></a>Overzicht
@@ -141,8 +141,8 @@ In Application Diagnostics kunt u gebeurtenissen weergeven die op de volgende ma
 ## <a name="storage"></a>Storage
 De sectie bevat aanvullende informatie over de belangrijkste functies in azure Storage-beveiliging en samenvattings informatie over deze mogelijkheden.
 
-### <a name="role-based-access-control-rbac"></a>RBAC (op rollen gebaseerd toegangsbeheer)
-U kunt uw opslag account beveiligen met Role-Based Access Control (RBAC). Het beperken van de toegang op basis van de beveiligings principes van de [nood zaak om te kennen](https://en.wikipedia.org/wiki/Need_to_know) , is van cruciaal belang voor organisaties [die beveiligings beleid](https://en.wikipedia.org/wiki/Principle_of_least_privilege) voor gegevens toegang willen afdwingen. Deze toegangs rechten worden verleend door de juiste Azure-rol toe te wijzen aan groepen en toepassingen bij een bepaald bereik. U kunt [ingebouwde rollen van Azure](../../role-based-access-control/built-in-roles.md), zoals Inzender voor opslag accounts, gebruiken om machtigingen toe te wijzen aan gebruikers. Toegang tot de opslag sleutels voor een opslag account met behulp van het [Azure Resource Manager](../../storage/blobs/security-recommendations.md) model kan worden beheerd via Role-Based Access Control (RBAC).
+### <a name="azure-role-based-access-control-azure-rbac"></a>Azure RBAC (op rollen gebaseerd toegangsbeheer van Azure)
+U kunt uw opslag account beveiligen met Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Het beperken van de toegang op basis van de beveiligings principes van de [nood zaak om te kennen](https://en.wikipedia.org/wiki/Need_to_know) , is van cruciaal belang voor organisaties [die beveiligings beleid](https://en.wikipedia.org/wiki/Principle_of_least_privilege) voor gegevens toegang willen afdwingen. Deze toegangs rechten worden verleend door de juiste Azure-rol toe te wijzen aan groepen en toepassingen bij een bepaald bereik. U kunt [ingebouwde rollen van Azure](../../role-based-access-control/built-in-roles.md), zoals Inzender voor opslag accounts, gebruiken om machtigingen toe te wijzen aan gebruikers. Toegang tot de opslag sleutels voor een opslag account met behulp van het [Azure Resource Manager](../../storage/blobs/security-recommendations.md) model kan worden beheerd via Azure RBAC.
 
 ### <a name="shared-access-signature"></a>Shared Access Signature
 Een [Shared Access Signature (SAS)](../../storage/common/storage-sas-overview.md) biedt gedelegeerde toegang tot resources in uw opslag account. De SAS betekent dat u een client beperkte machtigingen kunt verlenen voor objecten in uw opslag account voor een opgegeven periode en met een opgegeven set machtigingen. U kunt deze beperkte machtigingen verlenen zonder dat u de toegangs sleutels van uw account hoeft te delen.
@@ -200,7 +200,7 @@ Geforceerde tunneling wordt doorgaans gebruikt om uitgaand verkeer naar Internet
 #### <a name="virtual-network-security-appliances"></a>Beveiligings apparaten Virtual Network
 Hoewel netwerk beveiligings groepen, User-Defined routes en geforceerde tunneling u een beveiligings niveau bieden op het netwerk en de transport lagen van het [OSI-model](https://en.wikipedia.org/wiki/OSI_model), is het mogelijk dat u de beveiliging op een hoger niveau van de stack wilt inschakelen. U kunt deze verbeterde beveiligings functies van het netwerk openen met behulp van een Azure-partner netwerk beveiligings apparaat. U kunt de meest recente oplossingen voor Azure-partner netwerk beveiliging vinden door de [Azure Marketplace](https://azure.microsoft.com/marketplace/) te bezoeken en te zoeken naar ' Beveiliging ' en ' netwerk beveiliging '.
 
-### <a name="azure-virtual-network"></a>Azure Virtual Network
+### <a name="azure-virtual-network"></a>Virtueel Azure-netwerk
 Een virtueel Azure-netwerk (VNET) is een weergave van uw eigen netwerk in de cloud. Het is een logische isolatie van de Azure Network-infra structuur die is toegewezen aan uw abonnement. U kunt de IP-adresblokken, DNS-instellingen, beveiligingsbeleidsregels en routetabellen binnen dit netwerk volledig beheren. U kunt uw VNet in subnetten segmenteren en Azure IaaS virtuele machines (Vm's) en/of [Cloud Services (PaaS-rolinstanties)](../../cloud-services/cloud-services-choose-me.md) plaatsen in azure Virtual Networks.
 
 Hiermee kunt u het virtuele netwerk via een van de beschikbare [verbindingsopties](../../vpn-gateway/index.yml) in Azure verbinden met uw on-premises netwerk. In wezen kunt u uw netwerk uitbreiden naar Azure met behoud van de volledige controle over IP-adresblokken en de schaalvoordelen van Azure voor ondernemingen.
@@ -336,7 +336,7 @@ Micro soft maakt gebruik van meerdere beveiligings procedures en-technologieën 
 
 -   [Met verificatie op basis van tokens](../../active-directory/develop/authentication-vs-authorization.md) kunt u verificatie via Azure Active Directory.
 
--   Met [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/built-in-roles.md) kunt u toegang verlenen op basis van de toegewezen rol van de gebruiker, zodat u gebruikers eenvoudig de benodigde toegangs rechten voor hun taak kunt geven. U kunt RBAC aanpassen volgens het bedrijfs model en de risico tolerantie van uw organisatie.
+-   Met [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/built-in-roles.md) kunt u toegang verlenen op basis van de toegewezen rol van de gebruiker, zodat u gebruikers eenvoudig de benodigde toegangs rechten voor hun taak kunt geven. U kunt Azure RBAC aanpassen volgens het bedrijfs model en de risico tolerantie van uw organisatie.
 
 -   Met [geïntegreerde identiteits beheer (hybride identiteit)](../../active-directory/hybrid/plan-hybrid-identity-design-considerations-overview.md) kunt u de toegang van gebruikers tot de interne data centers en Cloud platforms beheren en één gebruikers identiteit voor verificatie en autorisatie voor alle resources maken.
 

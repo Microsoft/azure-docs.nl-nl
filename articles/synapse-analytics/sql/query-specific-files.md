@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: sql
 ms.date: 05/20/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3b4755d1d2e14b8ce3b05cfef6d30d7f6102905d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e3f0a9f0b7fdef26cf1ef2b145ede1826fda6ebd
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318827"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685593"
 ---
 # <a name="use-file-metadata-in-serverless-sql-pool-queries"></a>Meta gegevens van een bestand in serverloze SQL-pool query's gebruiken
 

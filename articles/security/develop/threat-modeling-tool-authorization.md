@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4d99295fbb355b3efa22a64c9adc04311508e474
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: b2ad38e518fa4b924992355990ea3eb06a338ebe
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517560"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94693155"
 ---
 # <a name="security-frame-authorization--mitigations"></a>Beveiligings frame: autorisatie | Oplossingen 
 | Product/service | Artikel |
@@ -32,11 +32,11 @@ ms.locfileid: "94517560"
 | **IoT-Cloud gateway** | <ul><li>[Verbinding maken met de Cloud gateway met behulp van de tokens met minimale privileges](#cloud-least-privileged)</li></ul> |
 | **Azure Event Hub** | <ul><li>[Een SAS-sleutel voor alleen-lezen toegang gebruiken voor het genereren van de tokens van het apparaat](#sendonly-sas)</li><li>[Gebruik geen toegangs tokens die directe toegang bieden tot de Event hub](#access-tokens-hub)</li><li>[Verbinding maken met Event hub met SAS-sleutels waarvoor de minimale machtigingen zijn vereist](#sas-minimum-permissions)</li></ul> |
 | **Azure document DB** | <ul><li>[Resource tokens gebruiken om waar mogelijk verbinding te maken met Azure Cosmos DB](#resource-docdb)</li></ul> |
-| **Azure-vertrouwens grens** | <ul><li>[Verfijnd toegangs beheer voor een Azure-abonnement met RBAC inschakelen](#grained-rbac)</li></ul> |
-| **Grens van Service Fabric vertrouwen** | <ul><li>[De toegang van clients tot cluster bewerkingen beperken met RBAC](#cluster-rbac)</li></ul> |
+| **Azure-vertrouwens grens** | <ul><li>[Verfijnd toegangs beheer voor Azure-abonnement met behulp van Azure RBAC inschakelen](#grained-rbac)</li></ul> |
+| **Grens van Service Fabric vertrouwen** | <ul><li>[De toegang van clients tot cluster bewerkingen beperken met behulp van Azure RBAC](#cluster-rbac)</li></ul> |
 | **Dynamics CRM** | <ul><li>[Beveiligings modellering uitvoeren en beveiliging op veld niveau gebruiken indien vereist](#modeling-field)</li></ul> |
 | **Dynamics CRM-Portal** | <ul><li>[Beveiligings modellen van portal-accounts uitvoeren, zodat het beveiligings model voor de portal verschilt van de rest van CRM](#portal-security)</li></ul> |
-| **Azure Storage** | <ul><li>[Verleen verfijnde machtigingen voor een bereik van entiteiten in azure Table Storage](#permission-entities)</li><li>[Role-Based Access Control (RBAC) naar Azure Storage-account inschakelen met behulp van Azure Resource Manager](#rbac-azure-manager)</li></ul> |
+| **Azure Storage** | <ul><li>[Verleen verfijnde machtigingen voor een bereik van entiteiten in azure Table Storage](#permission-entities)</li><li>[Op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure naar Azure Storage-account inschakelen met behulp van Azure Resource Manager](#rbac-azure-manager)</li></ul> |
 | **Mobiele client** | <ul><li>[Impliciete detectie van jailbreak of DFS implementeren](#rooting-detection)</li></ul> |
 | **WCF** | <ul><li>[Zwakke klasse-verwijzing in WCF](#weak-class-wcf)</li><li>[WCF-autorisatie beheer implementeren](#wcf-authz)</li></ul> |
 | **Web-API** | <ul><li>[Het juiste autorisatie mechanisme implementeren in ASP.NET Web-API](#authz-aspnet)</li></ul> |
@@ -229,7 +229,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | **Referenties**              | N.v.t.  |
 | **Stappen** | Een bron token is gekoppeld aan een Azure Cosmos DB machtigings resource en legt de relatie vast tussen de gebruiker van een Data Base en de machtiging die gebruiker heeft voor een specifieke Azure Cosmos DB toepassings resource (bijvoorbeeld verzameling, document). Gebruik altijd een bron token om toegang te krijgen tot de Azure Cosmos DB als de client niet kan worden vertrouwd met de verwerkings Master of alleen-lezen sleutels, zoals een toepassing voor eind gebruikers, zoals een mobiele of desktop-client. Gebruik hoofd sleutel of alleen-lezen sleutels van back-end-toepassingen die deze sleutels veilig kunnen opslaan.|
 
-## <a name="enable-fine-grained-access-management-to-azure-subscription-using-rbac"></a><a id="grained-rbac"></a>Verfijnd toegangs beheer voor een Azure-abonnement met RBAC inschakelen
+## <a name="enable-fine-grained-access-management-to-azure-subscription-using-azure-rbac"></a><a id="grained-rbac"></a>Verfijnd toegangs beheer voor Azure-abonnement met behulp van Azure RBAC inschakelen
 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
@@ -237,10 +237,10 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | **SDL-fase**               | Ontwikkelen |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
-| **Referenties**              | [Roltoewijzingen gebruiken voor het beheer van de toegang tot de resources van uw Azure-abonnement](../../role-based-access-control/role-assignments-portal.md)  |
-| **Stappen** | Met op rollen gebaseerd toegangs beheer op basis van Azure (Azure RBAC) hebt u verfijnd toegang tot Azure. Met RBAC kunt u alleen de toegangsrechten aan gebruikers verlenen die ze nodig hebben om hun taken uit te voeren.|
+| **Referenties**              | [Azure-roltoewijzingen toevoegen of verwijderen om de toegang tot uw Azure-abonnements resources te beheren](../../role-based-access-control/role-assignments-portal.md)  |
+| **Stappen** | Met op rollen gebaseerd toegangs beheer op basis van Azure (Azure RBAC) hebt u verfijnd toegang tot Azure. Met behulp van Azure RBAC kunt u alleen de hoeveelheid toegang verlenen die gebruikers nodig hebben om hun taken uit te voeren.|
 
-## <a name="restrict-clients-access-to-cluster-operations-using-rbac"></a><a id="cluster-rbac"></a>De toegang van clients tot cluster bewerkingen beperken met RBAC
+## <a name="restrict-clients-access-to-cluster-operations-using-service-fabric-rbac"></a><a id="cluster-rbac"></a>De toegang van clients tot cluster bewerkingen beperken met behulp van Service Fabric RBAC
 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
@@ -248,7 +248,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | **SDL-fase**               | Implementatie |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | Omgeving-Azure |
-| **Referenties**              | [Op rollen gebaseerd toegangs beheer voor Service Fabric-clients](../../service-fabric/service-fabric-cluster-security-roles.md) |
+| **Referenties**              | [Service Fabric op rollen gebaseerd toegangs beheer voor Service Fabric-clients](../../service-fabric/service-fabric-cluster-security-roles.md) |
 | **Stappen** | <p>Azure Service Fabric ondersteunt twee verschillende typen toegangs beheer voor clients die zijn verbonden met een Service Fabric cluster: beheerder en gebruiker. Met toegangs beheer kan de Cluster beheerder de toegang tot bepaalde cluster bewerkingen voor verschillende groepen gebruikers beperken, waardoor het cluster beter is beveiligd.</p><p>Beheerders hebben volledige toegang tot beheer mogelijkheden (inclusief Lees-en schrijf mogelijkheden). Gebruikers hebben standaard alleen lees toegang tot beheer mogelijkheden (bijvoorbeeld query mogelijkheden) en de mogelijkheid om toepassingen en services op te lossen.</p><p>U geeft de twee client rollen (beheerder en client) op het moment van maken van een cluster op door afzonderlijke certificaten te bieden.</p>|
 
 ## <a name="perform-security-modeling-and-use-field-level-security-where-required"></a><a id="modeling-field"></a>Beveiligings modellering uitvoeren en beveiliging op veld niveau gebruiken indien vereist
@@ -284,7 +284,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | **Referenties**              | [Toegang tot objecten in uw Azure Storage-account delegeren met SAS](../../storage/blobs/security-recommendations.md#identity-and-access-management) |
 | **Stappen** | In bepaalde bedrijfs scenario's kan Azure Table Storage vereist zijn om gevoelige gegevens op te slaan die aan verschillende partijen zijn opgelegd. Bijvoorbeeld gevoelige gegevens die betrekking hebben op verschillende landen/regio's. In dergelijke gevallen kunnen SAS-hand tekeningen worden samengesteld door de partitie-en rijlabels op te geven, zodat een gebruiker toegang heeft tot gegevens die specifiek zijn voor een bepaald land of bepaalde regio.| 
 
-## <a name="enable-role-based-access-control-rbac-to-azure-storage-account-using-azure-resource-manager"></a><a id="rbac-azure-manager"></a>Role-Based Access Control (RBAC) naar Azure Storage-account inschakelen met behulp van Azure Resource Manager
+## <a name="enable-azure-role-based-access-control-azure-rbac-to-azure-storage-account-using-azure-resource-manager"></a><a id="rbac-azure-manager"></a>Op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure naar Azure Storage-account inschakelen met behulp van Azure Resource Manager
 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
@@ -292,7 +292,7 @@ Houd er rekening mee dat beveiliging op rijniveau als een out-of-the-box-databas
 | **SDL-fase**               | Ontwikkelen |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
-| **Referenties**              | [Uw opslag account beveiligen met Role-Based Access Control (RBAC)](../../storage/blobs/security-recommendations.md) |
+| **Referenties**              | [Uw opslag account beveiligen met Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../storage/blobs/security-recommendations.md) |
 | **Stappen** | <p>Wanneer u een nieuw opslag account maakt, selecteert u een implementatie model van klassiek of Azure Resource Manager. Het klassieke model voor het maken van resources in azure staat alleen de toegang tot het abonnement toe, en is op zijn beurt het opslag account.</p><p>Met het Azure Resource Manager model plaatst u het opslag account in een resource groep en beheert u de toegang tot het beheer vlak van het betreffende opslag account met behulp van Azure Active Directory. U kunt bijvoorbeeld specifieke gebruikers de mogelijkheid geven om toegang te krijgen tot de sleutels van het opslag account, terwijl andere gebruikers informatie over het opslag account kunnen bekijken, maar geen toegang hebben tot de sleutel van het opslag account.</p>|
 
 ## <a name="implement-implicit-jailbreak-or-rooting-detection"></a><a id="rooting-detection"></a>Impliciete detectie van jailbreak of DFS implementeren

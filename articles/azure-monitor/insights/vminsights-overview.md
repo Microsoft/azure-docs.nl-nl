@@ -6,14 +6,14 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/22/2020
-ms.openlocfilehash: 5c3cb13d0b2da9370f402083d82397679f2c9343
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5eaf2d7075ca09aeb3cfaa2dfea81fd0f8d65ad
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89022493"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685304"
 ---
-# <a name="what-is-azure-monitor-for-vms"></a> Wat is Azure Monitor voor VM's?
+# <a name="overview-of-azure-monitor-for-vms"></a>Overzicht van Azure Monitor voor VM's
 
 Azure Monitor voor VM's bewaakt de prestaties en de status van uw virtuele machines en virtuele-machine schaal sets, met inbegrip van de processen en afhankelijkheden van andere resources. Het kan helpen om voorspel bare prestaties en beschik baarheid van essentiële toepassingen te leveren door prestatie knelpunten en netwerk problemen te identificeren en u te helpen begrijpen of een probleem is gerelateerd aan andere afhankelijkheden.
 
@@ -26,8 +26,6 @@ Azure Monitor voor VM's ondersteunt Windows-en Linux-besturings systemen op het 
 - Virtuele machines die worden gehost in een andere cloud omgeving
   
 
-
-
 Azure Monitor voor VM's slaat de gegevens op in Azure Monitor logboeken, zodat IT krachtige aggregatie en filters kan leveren en gegevens trends in de loop van de tijd kan analyseren. U kunt deze gegevens rechtstreeks vanuit de virtuele machine weer geven in één VM of u kunt Azure Monitor gebruiken om een geaggregeerde weer gave van meerdere Vm's te leveren.
 
 ![Het oogpunt van Virtual Machine Insights in het Azure Portal](media/vminsights-overview/vminsights-azmon-directvm.png)
@@ -37,6 +35,7 @@ Azure Monitor voor VM's slaat de gegevens op in Azure Monitor logboeken, zodat I
 Er zijn geen directe kosten voor Azure Monitor voor VM's, maar er worden kosten in rekening gebracht voor de activiteiten in de Log Analytics-werk ruimte. Op basis van de prijzen die worden gepubliceerd op de [pagina met Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/), wordt Azure monitor voor VM's gefactureerd voor:
 
 - Gegevens die zijn opgenomen van agents en die zijn opgeslagen in de werk ruimte.
+- Status gegevens verzameld van gast status (preview-versie)
 - Waarschuwings regels gebaseerd op logboek-en status gegevens.
 - Meldingen die worden verzonden vanuit waarschuwings regels.
 

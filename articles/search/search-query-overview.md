@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: 0c05db39e02a6bc2a7fa5d62b8b891626eb0d241
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 362f46290bbe2008f9fb862a8711577050050192
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675798"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94693246"
 ---
 # <a name="query-types-and-composition-in-azure-cognitive-search"></a>Query typen en samen stelling in azure Cognitive Search
 
@@ -59,9 +59,9 @@ Als u deze Quick Start hebt uitgevoerd [om de hotels-demo-index te maken](search
 
 ## <a name="how-query-operations-are-enabled-by-the-index"></a>Hoe query bewerkingen worden ingeschakeld door de index
 
-Het ontwerp van de index en het query ontwerp zijn nauw verbonden met Azure Cognitive Search. Een essentieel feit dat u vooraf moet weten, is dat het *index schema* , met kenmerken voor elk veld, bepaalt welk soort query u kunt maken. 
+Het ontwerp van de index en het query ontwerp zijn nauw verbonden met Azure Cognitive Search. Een essentieel feit dat u vooraf moet weten, is dat het *index schema*, met kenmerken voor elk veld, bepaalt welk soort query u kunt maken. 
 
-Index kenmerken voor een veld stel de toegestane bewerkingen in: Hiermee stelt u in dat een veld in de index kan worden *doorzocht* en kan worden *opgehaald* , *gesorteerd* , *gefilterd* , enzovoort. In de voorbeeld query teken reeks `"$orderby": "Rating"` werkt alleen omdat het classificatie veld is gemarkeerd als *sorteerbaar* in het index schema. 
+Index kenmerken voor een veld stel de toegestane bewerkingen in: Hiermee stelt u in dat een veld in de index kan worden *doorzocht* en kan worden *opgehaald* , *gesorteerd*, *gefilterd*, enzovoort. In de voorbeeld query teken reeks `"$orderby": "Rating"` werkt alleen omdat het classificatie veld is gemarkeerd als *sorteerbaar* in het index schema. 
 
 ![Index definitie voor het voor beeld van een hotel](./media/search-query-overview/hotel-sample-index-definition.png "Index definitie voor het voor beeld van een hotel")
 
@@ -78,8 +78,8 @@ Vereiste elementen voor een query aanvraag zijn onder andere de volgende onderde
 
 + Verzameling service-eind punten en index documenten, uitgedrukt als een URL met vaste en door de gebruiker gedefinieerde onderdelen: **`https://<your-service-name>.search.windows.net/indexes/<your-index-name>/docs`**
 + **`api-version`** (Alleen REST) is vereist omdat meer dan één versie van de API te allen tijde beschikbaar is. 
-+ **`api-key`** , ofwel een query of beheerder-API-sleutel, verifieert de aanvraag bij uw service.
-+ **`queryType`** , eenvoudig of volledig, wat kan worden wegge laten als u de ingebouwde standaard eenvoudige syntaxis gebruikt.
++ **`api-key`**, ofwel een query of beheerder-API-sleutel, verifieert de aanvraag bij uw service.
++ **`queryType`**, eenvoudig of volledig, wat kan worden wegge laten als u de ingebouwde standaard eenvoudige syntaxis gebruikt.
 + **`search`** of **`filter`** biedt de overeenkomende criteria, die niet kunnen worden opgegeven als u een lege zoek opdracht wilt uitvoeren. Beide query typen worden besproken in termen van de eenvoudige parser, maar zelfs geavanceerde query's vereisen de zoek parameter voor het door geven van complexe query expressies.
 
 Alle andere zoek parameters zijn optioneel. Zie [Create Index (rest) (Engelstalig)](/rest/api/searchservice/create-index)voor een volledige lijst met kenmerken. Zie [Hoe zoeken in volledige tekst werkt in Azure Cognitive Search](search-lucene-query-architecture.md)voor meer informatie over hoe para meters worden gebruikt tijdens de verwerking.
@@ -91,7 +91,7 @@ De volgende tabel geeft een lijst van de Api's en hulp op basis van gereedschapp
 | Methodologie | Beschrijving |
 |-------------|-------------|
 | [Search Explorer (portal)](search-explorer.md) | Voorziet in een zoek balk en opties voor selecties van index en API-versie. Resultaten worden geretourneerd als JSON-documenten. Aanbevolen voor verkennen, testen en valideren. <br/>[Meer informatie.](search-get-started-portal.md#query-index) | 
-| [Postman of andere REST-hulp middelen](search-get-started-postman.md) | Webtest-hulpprogram ma's zijn een uitstekende keuze voor het formuleren van REST-aanroepen. De REST API ondersteunt elke mogelijke bewerking in azure Cognitive Search. In dit artikel vindt u informatie over het instellen van een HTTP-aanvraag header en hoofd tekst voor het verzenden van aanvragen naar Azure Cognitive Search.  |
+| [Postman of andere REST-hulp middelen](search-get-started-rest.md) | Webtest-hulpprogram ma's zijn een uitstekende keuze voor het formuleren van REST-aanroepen. De REST API ondersteunt elke mogelijke bewerking in azure Cognitive Search. In dit artikel vindt u informatie over het instellen van een HTTP-aanvraag header en hoofd tekst voor het verzenden van aanvragen naar Azure Cognitive Search.  |
 | [SearchClient (.NET)](/dotnet/api/azure.search.documents.searchclient) | Client die kan worden gebruikt om een query uit te zoeken op een Azure Cognitive Search-index.  <br/>[Meer informatie.](search-howto-dotnet-sdk.md)  |
 | [Documenten zoeken (REST API)](/rest/api/searchservice/search-documents) | GET-of POST-methoden voor een index met behulp van query parameters voor aanvullende invoer.  |
 

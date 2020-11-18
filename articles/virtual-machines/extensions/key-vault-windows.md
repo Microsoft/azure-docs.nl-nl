@@ -8,12 +8,12 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: f06c5f2b2938505380ea668a7c4113015c852b1d
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 7c5c536b95360c536998a5de87e9307918b15630
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913956"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685984"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Extensie van de virtuele machine Key Vault voor Windows
 
@@ -27,7 +27,7 @@ De Key Vault VM-extensie ondersteunt de volgende versies van Windows:
 - Windows Server 2016
 - Windows Server 2012
 
-De Key Vault VM-extensio wordt ook ondersteund op een aangepaste lokale virtuele machine die wordt geüpload en geconverteerd naar een gespecialiseerde installatie kopie voor gebruik in azure met behulp van Windows Server 2019 Core-installatie.
+De extensie van de Key Vault-VM wordt ook ondersteund op een aangepaste lokale virtuele machine die wordt geüpload en geconverteerd naar een gespecialiseerde installatie kopie voor gebruik in azure met behulp van Windows Server 2019 Core-installatie.
 
 ### <a name="supported-certificate-content-types"></a>Ondersteunde inhouds typen voor certificaten
 
@@ -81,15 +81,15 @@ De volgende JSON toont het schema voor de extensie van de Key Vault-VM. Voor de 
 > Dit komt doordat het `/secrets` pad het volledige certificaat retourneert, inclusief de persoonlijke sleutel, terwijl het `/certificates` pad niet. Meer informatie over certificaten vindt u hier: [Key Vault certificaten](../../key-vault/general/about-keys-secrets-certificates.md)
 
 > [!IMPORTANT]
-> De eigenschap authenticationSettings is alleen **vereist** voor vm's met door de **gebruiker toegewezen identiteiten** .
+> De eigenschap authenticationSettings is alleen **vereist** voor vm's met door de **gebruiker toegewezen identiteiten**.
 > Hiermee wordt de identiteit opgegeven die moet worden gebruikt voor de verificatie van Key Vault.
 
 
 ### <a name="property-values"></a>Eigenschaps waarden
 
-| Name | Waarde/voor beeld | Gegevenstype |
+| Naam | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2019-07-01 | date |
+| apiVersion | 2019-07-01 | datum |
 | publisher | Microsoft.Azure.KeyVault | tekenreeks |
 | type | KeyVaultForWindows | tekenreeks |
 | typeHandlerVersion | 1.0 | int |

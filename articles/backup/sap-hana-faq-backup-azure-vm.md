@@ -3,12 +3,12 @@ title: Veelgestelde vragen over back-ups maken van SAP HANA-databases in virtuel
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over het maken van back-ups van SAP HANA-data bases met behulp van de Azure Backup-service.
 ms.topic: conceptual
 ms.date: 11/7/2019
-ms.openlocfilehash: a1d6012ec064b5ec582896ac3484161a6e25f2bf
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 24eb4abaaabe166ceb3e6bdb99f9446d398d03a1
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659961"
+ms.locfileid: "94686103"
 ---
 # <a name="frequently-asked-questions--back-up-sap-hana-databases-on-azure-vms"></a>Veelgestelde vragen: back-ups maken van SAP HANA-data bases op virtuele Azure-machines
 
@@ -26,7 +26,7 @@ Nee. Succesvolle back-uptaken maken geen waarschuwingen. Er worden alleen waarsc
 
 ### <a name="can-i-see-scheduled-backup-jobs-in-the-backup-jobs-menu"></a>Kan ik geplande back-uptaken weer geven in het menu back-uptaken?
 
-In het menu back-uptaak worden alleen ad-hoc back-uptaken weer gegeven. Gebruik [Azure monitor](./backup-azure-monitoring-use-azuremonitor.md)voor geplande taken.
+In het menu back-uptaak worden alleen back-uptaken op aanvraag weer gegeven. Gebruik [Azure monitor](./backup-azure-monitoring-use-azuremonitor.md)voor geplande taken.
 
 ### <a name="are-future-databases-automatically-added-for-backup"></a>Worden toekomstige databases automatisch voor back-ups toegevoegd?
 
@@ -39,7 +39,7 @@ De juiste manier om de beveiliging van deze data base te stoppen, is het stoppen
 
 ### <a name="if-i-change-the-name-of-the-database-after-it-has-been-protected-what-will-the-behavior-be"></a>Als ik de naam van de data base Wijzig nadat deze is beveiligd, wat is het gedrag?
 
-Een hernoemde data base wordt behandeld als een nieuwe data base. Daarom wordt deze situatie door de service behandeld alsof de data base niet is gevonden en de back-ups niet kunnen worden uitgevoerd. De hernoemde data base wordt weer gegeven als een nieuwe data base en moet worden geconfigureerd voor beveiliging.
+Een hernoemde data base wordt behandeld als een nieuwe data base. Daarom zal de service deze situatie behandelen alsof de data base niet is gevonden en de back-ups mislukken. De hernoemde data base wordt weer gegeven als een nieuwe data base en moet worden geconfigureerd voor beveiliging.
 
 ### <a name="what-are-the-prerequisites-to-back-up-sap-hana-databases-on-an-azure-vm"></a>Wat zijn de vereisten voor het maken van een back-up van SAP HANA-data bases op een virtuele machine van Azure?
 
@@ -62,13 +62,13 @@ Momenteel beschikken we niet over de mogelijkheid om de oplossing alleen voor ee
 1. Wacht totdat de back-up op dat moment wordt uitgevoerd, om de gewenste data base te volt ooien (Controleer vanaf Studio voor voltooiing).
 1. Schakel logboek back-ups uit en stel de catalogus back-up in op het **Bestands systeem** voor de gewenste data base met behulp van de volgende stappen:
 1. Dubbel klik op **SYSTEMDB**  ->  -**configuratie**  ->  **database**  ->  **filter selecteren (logboek)**
-    1. Enable_auto_log_backup instellen op **Nee**
-    1. Catalog_backup_using_backint instellen op **Onwaar**
+    1. Stel enable_auto_log_backup in op **Nee**.
+    1. Stel catalog_backup_using_backint in op **False**.
 1. Maak een back-up op aanvraag (volledig/differentieel/incrementeel) op de gewenste data base en wacht totdat de back-up en catalogus back-up zijn voltooid.
-1. Als u de logboek back-ups ook wilt verplaatsen naar het bestands systeem, stelt u enable_auto_log_backup in op **Ja**
+1. Als u de logboek back-ups ook wilt verplaatsen naar het bestands systeem, stelt u enable_auto_log_backup in op **Ja**.
 1. Terugkeren naar de vorige instellingen zodat back-ups naar de Azure-kluis kunnen stromen:
-    1. Enable_auto_log_backup instellen op **Ja**
-    1. Catalog_backup_using_backint instellen op **waar**
+    1. Stel enable_auto_log_backup in op **Ja**.
+    1. Stel catalog_backup_using_backint in op **waar**.
 
 >[!NOTE]
 >Door back-ups naar het lokale bestands systeem te verplaatsen en terug te scha kelen naar de Azure-kluis, kan dit leiden tot een logboek keten van de logboek back-ups in de kluis. Hiermee wordt een volledige back-up geactiveerd, die na voltooiing een back-up van de logboeken start.
@@ -77,7 +77,7 @@ Momenteel beschikken we niet over de mogelijkheid om de oplossing alleen voor ee
 
 Momenteel heeft Azure Backup niet de mogelijkheid om een HSR-configuratie te begrijpen. Dit betekent dat de primaire en secundaire knoop punten van de HSR worden behandeld als twee afzonderlijke, niet-gerelateerde Vm's. U moet eerst een back-up configureren op het primaire knoop punt. Wanneer een failover optreedt, moet de back-up worden geconfigureerd op het secundaire knoop punt (dit wordt nu het primaire knoop punt). Er is geen automatische failover van een back-up naar het andere knoop punt.
 
-Als u op een bepaald moment een back-up wilt maken van gegevens van het actieve knoop punt (primair), kunt u de **beveiliging overschakelen**  naar het secundaire knoop punt, dat nu wordt ingesteld als primair na een failover.
+Als u op een bepaald moment een back-up wilt maken van gegevens van het actieve knoop punt (primair), kunt u de **beveiliging overschakelen** naar het secundaire knoop punt, dat nu wordt ingesteld als primair na een failover.
 
 Voer de volgende stappen uit om deze **Switch beveiliging** uit te voeren:
 
@@ -129,36 +129,36 @@ Ja, u kunt streaming-back-ups die zijn geactiveerd in een HANA-data base die wor
 
 ### <a name="different-options-available-during-creation-of-a-new-policy-for-sap-hana-backup"></a>Verschillende opties beschikbaar tijdens het maken van een nieuw beleid voor SAP HANA back-up
 
-Voordat u een beleid maakt, moet dit duidelijk zijn op de vereisten van RPO en RTO en de relevante kosten gevolgen.
+Voordat u een beleid maakt, moet u duidelijk nadoen wat de vereisten zijn van RPO en RTO en de bijbehorende kosten gevolgen.
 
-RPO (herstel punt-doel stelling) geeft aan hoeveel gegevens verlies er is voor de gebruiker/klant. Dit wordt bepaald door de back-upfrequentie van het logboek. Meer frequente logboek back-ups duiden op een lagere RPO en de minimale waarde die wordt ondersteund door de Azure Backup-service is 15 minuten, dat wil zeggen, de back-upfrequentie voor logboeken kan 15 minuten of hoger zijn.
+RPO (herstel punt-doel stelling) geeft aan hoeveel gegevens verlies acceptabel is voor de gebruiker/klant. Dit wordt bepaald door de back-upfrequentie van het logboek. Meer frequente logboek back-ups geven een lagere RPO aan en de minimale waarde die wordt ondersteund door de Azure Backup-service is 15 minuten. De frequentie van het logboek back-up kan vijf tien minuten of hoger zijn.
 
-RTO (Recovery-Time-doelstelling) geeft aan hoe snel de gegevens moeten worden hersteld naar het laatst beschik bare tijdstip na een scenario voor gegevens verlies. Dit is afhankelijk van de herstel strategie die wordt gebruikt door HANA, die doorgaans afhankelijk is van het aantal bestanden dat nodig is voor herstel. Dit heeft ook gevolgen voor de kosten en de volgende tabel moet helpen bij het beter over alle scenario's en hun implicaties.
+RTO (Recovery-Time-doelstelling) geeft aan hoe snel de gegevens moeten worden hersteld naar het laatst beschik bare tijdstip na een scenario voor gegevens verlies. Dit is afhankelijk van de herstel strategie die wordt gebruikt door HANA, wat doorgaans afhankelijk is van het aantal bestanden dat nodig is voor herstel. Dit heeft ook gevolgen voor de kosten en de volgende tabel moet helpen bij het beter over alle scenario's en hun implicaties.
 
 |Back-upbeleid  |RTO  |Kosten  |
 |---------|---------|---------|
-|Dagelijkse volledige en Logboeken     |   Omdat er slechts één volledige kopie + vereiste logboeken voor herstel naar een bepaald tijdstip nodig zijn      |    Costliest optie omdat een volledige kopie dagelijks wordt gemaakt en er meer en meer gegevens worden verzameld in de back-end tot de Bewaar tijd   |
-|Wekelijks volledig en dagelijks differentieel + logboeken     |   Trager dan de bovenstaande optie, maar sneller dan hieronder, omdat er één volledige kopie + een differentiële kopie en logboeken voor herstel naar een bepaald tijdstip vereist zijn.      |    Goedkopere optie omdat de dagelijkse differentiële doorgaans kleiner is dan vol en een volledige kopie slechts één keer per week wordt uitgevoerd      |
+|Dagelijkse volledige en Logboeken     |   Het snelst, omdat er slechts één volledige kopie van de logboeken vereist is voor herstel naar een bepaald tijdstip      |    Costliest optie omdat een volledige kopie dagelijks wordt gemaakt en er meer en meer gegevens worden verzameld in de back-end tot de Bewaar tijd   |
+|Wekelijks volledig en dagelijks differentieel + logboeken     |   Langzamer dan de bovenstaande optie, maar sneller dan de volgende optie, omdat er één volledige kopie + een differentiële kopie en logboeken voor herstel naar een bepaald tijdstip vereist zijn.      |    Goedkopere optie omdat de dagelijkse differentiële doorgaans kleiner is dan vol en een volledige kopie slechts één keer per week wordt uitgevoerd      |
 |Wekelijks volledig en dagelijks incrementeel + logboeken     |  Langzaam omdat er één volledige kopie + ' n ' stappen en logboeken voor herstel naar een bepaald tijdstip zijn vereist       |     Goedkoopste optie omdat de dagelijkse incrementeel kleiner is dan differentieel en een volledige kopie alleen wekelijks wordt gemaakt    |
 
 > [!NOTE]
-> De bovenstaande opties zijn de meest voorkomende, maar niet de enige opties. Een voor beeld: een wekelijks volledige back-up + differentiaties twee keer per week en Logboeken.
+> De bovenstaande opties zijn het meest voorkomende, maar niet de enige opties. U kunt bijvoorbeeld een wekelijks volledige back-up maken + verschillen tussen twee weken en Logboeken.
 
-Daarom kan de ene beleids variant selecteren op basis van RPO-en RTO-doel stellingen en kosten overwegingen.
+Daarom kunt u de beleids variant selecteren op basis van RPO-en RTO-doel stellingen en kosten overwegingen.
 
 ### <a name="impact-of-modifying-a-policy"></a>Gevolgen van het wijzigen van een beleid
 
 Er moeten enkele principes in acht worden genomen bij het bepalen van de impact van het overschakelen van het beleid van een back-upitem van beleid 1 (P1) naar Policy 2 (P2) of van het bewerkings beleid 1 (P1).
 
-- Alle wijzigingen worden ook met terugwerkende kracht toegepast. Het meest recente back-upbeleid wordt toegepast op de eerder gemaakte herstel punten. Stel bijvoorbeeld dat de dagelijkse volledige Bewaar periode 30 dagen is en 10 herstel punten zijn genomen op basis van het huidige actieve beleid. Als de duur van de dagelijkse volledige Bewaar periode wordt gewijzigd in 10 dagen, wordt de verloop tijd van het vorige punt ook opnieuw berekend als begin tijd + 10 dagen en verwijderd als ze zijn verlopen.
-- Het bereik van de wijziging omvat ook de dag van de back-up, het type back-up en de retentie. Bijvoorbeeld: als een beleid wordt gewijzigd van dagelijks volledig in wekelijks, worden alle eerdere versies die niet op zondag zijn, gemarkeerd voor verwijdering.
-- Een bovenliggend item wordt pas verwijderd als het onderliggende element actief/niet is verlopen. Elk back-uptype heeft een verloop tijd volgens het beleid dat momenteel actief is. Een volledig back-uptype wordt echter beschouwd als bovenliggend item voor de volgende ' verschillen ', ' Increments ' en ' logs '. Een differentieel-en een-logboek is geen bovenliggend item voor iemand anders. Een ' incrementeel ' kan een bovenliggend item van het niveau ' incremental ' zijn. Zelfs als een bovenliggend item is gemarkeerd voor verwijdering, worden ze niet werkelijk verwijderd als de onderliggende differentiaties of logboeken niet zijn verlopen. Als een beleid bijvoorbeeld wordt gewijzigd van dagelijks volledig in wekelijks, worden alle eerdere volledige versies die niet op zondag zijn, gemarkeerd voor verwijdering. Maar ze worden pas werkelijk verwijderd als de logboeken die dagelijks zijn gemaakt, zijn verlopen. Met andere woorden, ze worden bewaard op basis van de meest recente duur van het logboek. Zodra de logboeken zijn verlopen, worden zowel de logboeken als deze volledige items verwijderd.
+- Alle wijzigingen worden ook met terugwerkende kracht toegepast. Het meest recente back-upbeleid wordt toegepast op de eerder gemaakte herstel punten. Stel bijvoorbeeld dat de dagelijkse volledige Bewaar periode 30 dagen is en 10 herstel punten zijn genomen op basis van het huidige actieve beleid. Als de duur van de dagelijkse volledige Bewaar periode wordt gewijzigd in 10 dagen, wordt de verloop tijd van het vorige punt ook opnieuw berekend als begin tijd + 10 dagen en verwijderd als deze zijn verlopen.
+- Het bereik van de wijziging omvat ook de dag van de back-up, het type back-up en de retentie. Bijvoorbeeld: als een beleid wordt gewijzigd van dagelijks volledig naar wekelijks, worden alle eerdere volledige versies die niet op zondagen zijn, gemarkeerd voor verwijdering.
+- Een bovenliggend item wordt niet verwijderd totdat het onderliggende element actief/niet is verlopen. Elk back-uptype heeft een verloop tijd volgens het beleid dat momenteel actief is. Een volledig back-uptype wordt echter beschouwd als bovenliggend item voor de volgende ' verschillen ', ' Increments ' en ' logs '. Een differentieel en een ' logboek ' zijn geen bovenliggende items voor iemand anders. Een ' incrementeel ' kan een bovenliggend item van het niveau ' incremental ' zijn. Zelfs als een bovenliggend item is gemarkeerd voor verwijdering, wordt het niet werkelijk verwijderd als de onderliggende verschillen of logboeken niet zijn verlopen. Als een beleid bijvoorbeeld wordt gewijzigd van dagelijks volledig in wekelijks, worden alle eerdere volledige versies die niet op zondagen zijn, gemarkeerd voor verwijdering. Maar ze worden niet daad werkelijk verwijderd totdat de logboeken die u dagelijks hebt gemaakt, zijn verlopen. Met andere woorden, ze worden bewaard op basis van de meest recente duur van het logboek. Zodra de logboeken zijn verlopen, worden zowel de logboeken als deze volledige items verwijderd.
 
-Met deze principes kan één de volgende tabel lezen om inzicht te krijgen in de implicaties van een beleids wijziging.
+Met deze principes kunt u de volgende tabel lezen om inzicht te krijgen in de gevolgen van een beleids wijziging.
 
 |Oud beleid/nieuw beleid  |Dagelijkse volledige en Logboeken  | Wekelijkse volledige en dagelijkse verschillen en Logboeken  |Wekelijkse volledige en dagelijkse stappen en Logboeken  |
 |---------|---------|---------|---------|
-|Dagelijkse volledige en Logboeken     |   -      |    De vorige volledige, die zich niet op dezelfde dag van de week bevinden, is gemarkeerd voor verwijdering, maar wordt bewaard tot de Bewaar periode voor het logboek     |    De vorige volledige, die zich niet op dezelfde dag van de week bevinden, is gemarkeerd voor verwijdering, maar wordt bewaard tot de Bewaar periode voor het logboek     |
+|Dagelijkse volledige en Logboeken     |   -      |    De vorige volledigten die zich niet op dezelfde dag van de week bevinden, worden gemarkeerd voor verwijdering, maar bewaard tot de Bewaar periode voor het logboek     |    De vorige volledigten die zich niet op dezelfde dag van de week bevinden, worden gemarkeerd voor verwijdering, maar bewaard tot de Bewaar periode voor het logboek     |
 |Wekelijkse volledige en dagelijkse verschillen en Logboeken     |   De vorige wekelijkse Bewaar periode wordt opnieuw berekend conform het meest recente beleid. De vorige verschillen worden onmiddellijk verwijderd      |    -     |    De vorige verschillen worden onmiddellijk verwijderd     |
 |Wekelijkse volledige en dagelijkse stappen en Logboeken     |     De vorige wekelijkse Bewaar periode wordt opnieuw berekend conform het meest recente beleid. De vorige stappen worden direct verwijderd    |     De vorige stappen worden direct verwijderd    |    -     |
 

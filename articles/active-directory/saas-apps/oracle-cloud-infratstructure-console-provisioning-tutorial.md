@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: de Oracle Cloud Infrastructure console configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts van Azure AD naar de Oracle Cloud Infrastructure-console.
+title: 'Zelfstudie: Oracle Cloud Infrastructure-console configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikersaccounts van Azure AD naar de Oracle Cloud Infrastructure-console.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,87 +8,87 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 7f34eca7ce92a2f465cc34bdde48ada15b21860d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: 92aeedd25a4a60b49de54aaaa90ee4a31490c444
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92515692"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359830"
 ---
-# <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Zelf studie: Oracle Cloud Infrastructure console configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Zelfstudie: Oracle Cloud Infrastructure-console configureren voor automatische inrichting van gebruikers
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel de Oracle Cloud Infrastructure console als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer de configuratie is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en ongedaan gemaakt in [Oracle Cloud Infrastructure console](https://www.oracle.com/cloud/free/?source=:ow:o:p:nav:0916BCButton&intcmp=:ow:o:p:nav:0916BCButton) met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel de Oracle Cloud Infrastructure-console als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op de [Oracle Cloud Infrastructure-console](https://www.oracle.com/cloud/free/?source=:ow:o:p:nav:0916BCButton&intcmp=:ow:o:p:nav:0916BCButton) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
-> * Gebruikers maken in de Oracle Cloud Infrastructure-console
-> * Gebruikers verwijderen in de Oracle Cloud Infrastructure-console wanneer ze geen toegang meer nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en Oracle Cloud Infrastructure console
-> * Inrichtings groepen en groepslid maatschappen in de Oracle Cloud Infrastructure console
-> * [Eenmalige aanmelding](./oracle-cloud-tutorial.md) bij de Oracle-Cloud infrastructuur console (aanbevolen)
+> * Gebruikers maken voor de Oracle Cloud Infrastructure-console
+> * Gebruikers verwijderen in de Oracle Cloud Infrastructure-console wanneer deze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en Oracle Cloud Infrastructure-console
+> * Groepen en groepslidmaatschappen inrichten in de Oracle Cloud Infrastructure-console
+> * [Eenmalige aanmelding](./oracle-cloud-tutorial.md) bij de Oracle Cloud Infrastructure-console (aanbevolen)
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-Tenant](../develop/quickstart-create-new-tenant.md) 
+* [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
 * Een gebruikersaccount in Azure AD met [machtigingen](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
-* Een Oracle Cloud Infrastructure control- [Tenant](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton).
-* Een gebruikers account in Oracle Cloud Infrastructure Control met beheerders machtigingen.
+* Een Oracle Cloud Infrastructure Control-[ tenant](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton).
+* Een gebruikersaccount in Oracle Cloud Infrastructure Control met beheerdersmachtigingen.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en Oracle Cloud Infrastructure console](../app-provisioning/customize-application-attributes.md). 
+3. Bepaal welke gegevens u wilt [toewijzen tussen Azure AD en Oracle Cloud Infrastructure-console](../app-provisioning/customize-application-attributes.md). 
 
-## <a name="step-2-configure-oracle-cloud-infrastructure-console-to-support-provisioning-with-azure-ad"></a>Stap 2. De Oracle Cloud Infrastructure console configureren ter ondersteuning van het inrichten met Azure AD
+## <a name="step-2-configure-oracle-cloud-infrastructure-console-to-support-provisioning-with-azure-ad"></a>Stap 2. De Oracle Cloud Infrastructure-console configureren ter ondersteuning van het inrichten met Azure AD
 
-1. Meld u aan bij de beheer portal van de Oracle Cloud Infrastructure-console. Navigeer in de linkerbovenhoek van het scherm naar **identiteit > Federatie**.
+1. Meld u aan bij de beheerportal van de Oracle Cloud Infrastructure-console. Navigeer in de linkerbovenhoek van het scherm naar **Identiteit > Federatie**.
 
     ![Oracle-beheerder](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/identity.png)
 
-2. Klik op de URL die wordt weer gegeven op de pagina naast Oracle Identity Cloud service console.
+2. Klik op de URL die wordt weergegeven op de pagina naast Oracle Identity Cloud Service-console.
 
     ![Oracle-URL](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/url.png)
 
-3. Klik op **ID-provider toevoegen** om een nieuwe ID-provider te maken. Sla de IdP-id op die moet worden gebruikt als onderdeel van de Tenant-URL. Klik op het plus pictogram naast het tabblad **toepassingen** om een OAuth-client te maken en IDCS-identiteit domein beheerder AppRole te verlenen.
+3. Klik op **Id-provider toevoegen** om een nieuwe id-provider te maken. Sla de IdP-id op die moet worden gebruikt als onderdeel van de tenant-URL. Klik op het pluspictogram naast het tabblad **Toepassingen** om een OAuth-client te maken en de AppRole domeinbeheerder IDCS-identiteit te verlenen.
 
-    ![Pictogram Oracle-Cloud](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/add.png)
+    ![Pictogram van Oracle Cloud](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/add.png)
 
-4. Volg de onderstaande scherm afbeeldingen om uw toepassing te configureren. Zodra de configuratie is voltooid, klikt u op **Opslaan**.
+4. Volg de onderstaande schermopnames om uw toepassing te configureren. Zodra de configuratie is voltooid, klikt u op **Opslaan**.
 
     ![Oracle-configuratie](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/configuration.png)
 
-    ![Uitgifte beleid voor Oracle-tokens](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/token-issuance.png)
+    ![Uitgiftebeleid voor Oracle-tokens](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/token-issuance.png)
 
-5. Vouw op het tabblad configuraties van de toepassing de optie **algemene gegevens** uit om de client-id en het client geheim op te halen.
+5. Vouw op het tabblad configuraties van uw toepassing de optie **Algemene informatie** uit om de client-id en het clientgeheim op te halen.
 
-    ![Oracle-tokens genereren](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/general-information.png)
+    ![Oracle-token genereren](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/general-information.png)
 
-6. Als u een geheim token base64 wilt genereren, moet u de client-ID en het client geheim in de notatie **client-id: client geheim**coderen. Sla het geheim token op. Deze waarde wordt ingevoerd in het veld **geheime token** op het tabblad inrichten van de Oracle Cloud Infrastructure console-toepassing in de Azure Portal.
+6. Als u een geheim token Base64 wilt genereren, moet u de client-id en het clientgeheim coderen in de indeling **client-id:clientgeheim**. Sla het geheime token op. Deze waarde wordt ingevoerd in het veld **Token voor geheim** op het tabblad Inrichten van uw Oracle Cloud Infrastructure-console-toepassing in de Azure Portal.
 
-## <a name="step-3-add-oracle-cloud-infrastructure-console-from-the-azure-ad-application-gallery"></a>Stap 3. Een Oracle Cloud Infrastructure console toevoegen vanuit de Azure AD-toepassings galerie
+## <a name="step-3-add-oracle-cloud-infrastructure-console-from-the-azure-ad-application-gallery"></a>Stap 3. Een Oracle Cloud Infrastructure-console toevoegen vanuit de toepassingsgalerie van Azure AD
 
-Voeg de Oracle Cloud Infrastructure-console toe vanuit de Azure AD-toepassings galerie om het beheer van de inrichting van de Oracle Cloud Infrastructure console te starten. Als u eerder Oracle Cloud Infrastructure console voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
+De Oracle Cloud Infrastructure-console toevoegen vanuit de toepassingsgalerie van Azure AD om het beheer van de inrichting van de Oracle Cloud Infrastructure-console te starten. Als u de Oracle Cloud Infrastructure-console eerder hebt ingesteld voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
 
 Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) wordt beschreven. 
 
-* Wanneer u gebruikers en groepen toewijst aan de Oracle Cloud Infrastructure-console, moet u een andere rol dan **standaard toegang**selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
+* Wanneer u gebruikers en groepen toewijst aan Oracle Cloud Infrastructure-console, moet u een andere rol dan **Standaardtoegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) opgeven. 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-oracle-cloud-infrastructure-console"></a>Stap 5. Automatische gebruikers inrichting configureren voor de Oracle Cloud Infrastructure-console 
+## <a name="step-5-configure-automatic-user-provisioning-to-oracle-cloud-infrastructure-console"></a>Stap 5. Automatische gebruikersinrichting configureren voor de Oracle Cloud Infrastructure-console 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-oracle-cloud-infrastructure-console-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor de Oracle Cloud Infrastructure-console in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-oracle-cloud-infrastructure-console-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor de Oracle Cloud Infrastructure-console in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -96,19 +96,19 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 2. Selecteer in de lijst toepassingen de optie **Oracle Cloud Infrastructure-console**.
 
-    ![De koppeling Oracle Cloud Infrastructure console in de lijst met toepassingen](common/all-applications.png)
+    ![De link voor de Oracle Cloud Infrastructure-console in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de beheeropties met de optie Inrichting gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Geef in de sectie **beheerders referenties** de **Tenant-URL** op in de indeling `https://<IdP ID>.identity.oraclecloud.com/admin/v1` . Bijvoorbeeld `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Voer de geheime token waarde in die eerder is opgehaald in het **geheime token**. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met de Oracle Cloud Infrastructure-console. Als de verbinding mislukt, zorg er dan voor dat het account van de Oracle Cloud Infrastructure-console beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer onder de sectie **Beheerdersreferenties** de **Tenant-URL** in de indeling `https://<IdP ID>.identity.oraclecloud.com/admin/v1` in. Bijvoorbeeld `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Voer de waarde van de token voor het geheim in die eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met de Oracle Cloud Infrastructure-console. Als de verbinding mislukt, moet u controleren of uw Oracle Cloud Infrastructure-console-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
-    ![Scherm afbeelding toont het dialoog venster beheerders referenties, waarin u uw Tenant U R L en geheime token kunt invoeren.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/provisioning.png)
+    ![Schermopname met het dialoogvenster Beheerdersreferenties, waarin u uw Tenant U R L en Token voor geheim kunt invoeren.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/provisioning.png)
 
 6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
 
@@ -116,9 +116,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met de Oracle Cloud Infrastructure-console**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Oracle Cloud Infrastructure-console**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar de Oracle Cloud Infrastructure-console in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikers accounts in Oracle Cloud Infrastructure console te vergelijken voor bijwerk bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](../app-provisioning/customize-application-attributes.md)te wijzigen, moet u ervoor zorgen dat de API van de Oracle Cloud Infrastructure console het filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met de Oracle Cloud Infrastructure-console worden gesynchroniseerd. De kenmerken die als **Overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in de Oracle Cloud Infrastructure-console te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](../app-provisioning/customize-application-attributes.md) te wijzigen, moet u ervoor zorgen dat de API van de Oracle Cloud Infrastructure-console het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
       |Kenmerk|Type|
       |---|---|
@@ -130,24 +130,24 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
       |preferredLanguage|Tekenreeks|
       |name.givenName|Tekenreeks|
       |name.familyName|Tekenreeks|
-      |adressen [type EQ "werk]. opgemaakt|Tekenreeks|
-      |adressen [type EQ "werk]. locatie|Tekenreeks|
-      |adressen [type EQ "werk]. regio|Tekenreeks|
+      |addresses[type eq "work"].formatted|Tekenreeks|
+      |addresses[type eq "work"].locality|Tekenreeks|
+      |addresses[type eq "work"].region|Tekenreeks|
       |addresses[type eq "work"].postalCode|Tekenreeks|
-      |adressen [type EQ "werk]. land|Tekenreeks|
+      |addresses[type eq "work"].country|Tekenreeks|
       |addresses[type eq "work"].streetAddress|Tekenreeks|
       |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Tekenreeks|
       |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
-      |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: costCenter|Tekenreeks|
-      |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: deling|Tekenreeks|
+      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Tekenreeks|
+      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Tekenreeks|
       |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Naslaginformatie|
-      |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: organisatie|Tekenreeks|
-      |urn: IETF: params: scim: schemas: Oracle: IDCS: extension: gebruiker: gebruiker: bypassNotification|Boolean-waarde|
-      |urn: IETF: params: scim: schemas: Oracle: IDCS: extension: gebruiker: gebruiker: isFederatedUser|Boolean-waarde|
+      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Tekenreeks|
+      |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification|Booleaans|
+      |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser|Booleaans|
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met Oracle Cloud Infrastructure console**.
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met de Oracle Cloud Infrastructure-console**.
 
-11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar de Oracle Cloud Infrastructure console in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt voor het vergelijken van de groepen in de Oracle Cloud Infrastructure console voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD met de Oracle Cloud Infrastructure-console worden gesynchroniseerd. De kenmerken die als **Overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in de Oracle Cloud Infrastructure-console te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
       |Kenmerk|Type|
       |---|---|
@@ -157,11 +157,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Als u de Azure AD Provisioning Service voor Oracle Cloud Infrastructure console wilt inschakelen, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig de **Inrichtingsstatus** naar **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor de Oracle Cloud Infrastructure-console.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u wilt inrichten voor de Oracle-Cloud infrastructuur console door de gewenste waarden in het **bereik** in het gedeelte **instellingen** te kiezen.
+14. Definieer de gebruikers en/of groepen die u aan de Oracle Cloud Infrastructure-console wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 

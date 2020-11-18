@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/04/2020
 ms.author: allensu
-ms.openlocfilehash: 97b872c5fe0a155bb6e474f327f8d0c65e22b21f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: d2cd05251e7bf1a0b0ebcd24e6d3d0202f277969
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92317454"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685508"
 ---
 # <a name="azure-load-balancer-components"></a>Azure Load Balancer-componenten
 
@@ -139,7 +139,7 @@ De Basic Load Balancer biedt geen ondersteuning voor regels voor uitgaand verkee
 - Zie [Een openbare Standard Load Balancer maken](quickstart-load-balancer-standard-public-portal.md) om aan de slag te gaan met een Load Balancer.
 - Meer informatie over [Azure Load Balancer](load-balancer-overview.md).
 - Meer informatie over [Openbaar IP-adres](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address)
-- Meer informatie over [Privé-IP-adres](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm#private-ip-addresses)
+- Meer informatie over [Privé-IP-adres](../virtual-network/private-ip-addresses.md)
 - Meer informatie over [Load Balancer van het type Standard en beschikbaarheidszones](load-balancer-standard-availability-zones.md).
 - Meer informatie over [Diagnostische tests van Standard Load Balancer](load-balancer-standard-diagnostics.md).
 - Meer informatie over [TCP opnieuw instellen bij inactiviteit](load-balancer-tcp-reset.md).

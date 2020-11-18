@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 5845a3bdc4b86fbbe44c92779e5aae95044eb6b2
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: d5bd2fc150ee1d35127eeb9dbf3dc1eeffdc9659
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556366"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685933"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Exemplaren van failoverclusters met SQL Server op virtuele Azure-machines (VM's).
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -46,7 +46,7 @@ In traditionele on-premises geclusterde omgevingen gebruikt een Windows-failover
 
 SQL Server op Azure-VM's biedt verschillende opties als een oplossing voor gedeelde opslag voor een implementatie van exemplaren van failoverclusters met SQL Server: 
 
-||[Gedeelde Azure-schijven](../../../virtual-machines/windows/disks-shared.md)|[Premiumbestandsshares](../../../storage/files/storage-how-to-create-premium-fileshare.md) |[S2D (Storage Spaces Direct)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)|
+||[Gedeelde Azure-schijven](../../../virtual-machines/disks-shared.md)|[Premiumbestandsshares](../../../storage/files/storage-how-to-create-premium-fileshare.md) |[S2D (Storage Spaces Direct)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)|
 |---------|---------|---------|---------|
 |**Minimale versie van het besturingssysteem**| Alles |Windows Server 2012|Windows Server 2016|
 |**Minimale versie van SQL Server**|Alles|SQL Server 2012|SQL Server 2016|
@@ -58,7 +58,7 @@ In de rest van deze sectie vindt u een overzicht van de voordelen en beperkingen
 
 ### <a name="azure-shared-disks"></a>Gedeelde Azure-schijven
 
-[Gedeelde Azure-schijven](../../../virtual-machines/windows/disks-shared.md) is een functie van [Azure Managed Disks](../../../virtual-machines/managed-disks-overview.md). Windows Server Failover Clustering ondersteunt het gebruik van gedeelde Azure-schijven met een exemplaar van een failovercluster. 
+[Gedeelde Azure-schijven](../../../virtual-machines/disks-shared.md) is een functie van [Azure Managed Disks](../../../virtual-machines/managed-disks-overview.md). Windows Server Failover Clustering ondersteunt het gebruik van gedeelde Azure-schijven met een exemplaar van een failovercluster. 
 
 **Ondersteund besturingssysteem**: Alle   
 **Ondersteunde SQL-versie**: Alle     

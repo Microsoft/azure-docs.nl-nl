@@ -9,14 +9,14 @@ editor: ''
 ms.service: api-management
 ms.workload: integration
 ms.topic: article
-ms.date: 06/12/2020
+ms.date: 11/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 8a7fa295bdc8881c0c1ba58c95872a9380231b81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db1a8238cf9ddae57d73438d43daa54294ce6860
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85558031"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686222"
 ---
 # <a name="use-managed-identities-in-azure-api-management"></a>Beheerde identiteiten gebruiken in azure API Management
 
@@ -123,12 +123,12 @@ De `tenantId` eigenschap geeft aan met welke Azure AD-Tenant de identiteit behoo
 > [!NOTE]
 > Een API Management-exemplaar kan tegelijkertijd zowel aan het systeem toegewezen als door de gebruiker toegewezen identiteiten hebben. In dit geval is de `type` eigenschap `SystemAssigned,UserAssigned` .
 
-### <a name="supported-scenarios"></a>Ondersteunde scenario's
+## <a name="supported-scenarios-using-system-assigned-identity"></a>Ondersteunde scenario's waarbij systeem identiteiten worden gebruikt
 
-#### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault"></a>Een aangepast TLS/SSL-certificaat voor het API Management-exemplaar verkrijgen van Azure Key Vault
+### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault"></a>Een aangepast TLS/SSL-certificaat voor het API Management-exemplaar verkrijgen van Azure Key Vault
 U kunt de door het systeem toegewezen identiteit van een API Management exemplaar gebruiken om aangepaste TLS/SSL-certificaten op te halen die zijn opgeslagen in Azure Key Vault. U kunt deze certificaten vervolgens toewijzen aan aangepaste domeinen in het API Management-exemplaar. Houd rekening met het volgende:
 
-- Het inhouds type van het geheim moet *Application/x-pkcs12/pfx-profiel*zijn.
+- Het inhouds type van het geheim moet *Application/x-pkcs12/pfx-profiel* zijn.
 - Gebruik het geheime eind punt van het Key Vault certificaat dat het geheim bevat.
 
 > [!Important]
@@ -262,7 +262,7 @@ In het volgende voor beeld ziet u een Azure Resource Manager sjabloon die de vol
 }
 ```
 
-#### <a name="authenticate-to-the-back-end-by-using-an-api-management-identity"></a>Verifiëren voor de back-end met behulp van een API Management identiteit
+### <a name="authenticate-to-the-back-end-by-using-an-api-management-identity"></a>Verifiëren voor de back-end met behulp van een API Management identiteit
 
 U kunt de door het systeem toegewezen identiteit gebruiken om u te verifiëren bij de back-end via het beleid voor [beheerde identiteiten](api-management-authentication-policies.md#ManagedIdentity) van de verificatie.
 
@@ -278,10 +278,10 @@ Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een API
 
 1. Maak een API Management-exemplaar in de portal zoals u dat gewend bent. Blader ernaar in de portal.
 2. Selecteer **beheerde identiteiten**.
-3. Selecteer **toevoegen**op het tabblad door de **gebruiker toegewezen** .
+3. Selecteer **toevoegen** op het tabblad door de **gebruiker toegewezen** .
 4. Zoek naar de identiteit die u eerder hebt gemaakt en selecteer deze. Selecteer **Toevoegen**.
 
-   :::image type="content" source="./media/api-management-msi/enable-user-assigned-msi.png" alt-text="Selecties voor het inschakelen van een door het systeem toegewezen beheerde identiteit" border="true":::
+   :::image type="content" source="./media/api-management-msi/enable-user-assigned-msi.png" alt-text="Selecties voor het inschakelen van een door de gebruiker toegewezen beheerde identiteit" border="true":::
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -387,9 +387,32 @@ De `principalId` eigenschap is een unieke id voor de identiteit die wordt gebrui
 > [!NOTE]
 > Een API Management-exemplaar kan tegelijkertijd zowel aan het systeem toegewezen als door de gebruiker toegewezen identiteiten hebben. In dit geval is de `type` eigenschap `SystemAssigned,UserAssigned` .
 
-### <a name="supported-scenarios"></a>Ondersteunde scenario's
+## <a name="supported-scenarios-using-user-assigned-managed-identity"></a>Ondersteunde scenario's met door de gebruiker toegewezen beheerde identiteit
 
-#### <a name="authenticate-to-the-back-end-by-using-a-user-assigned-identity"></a>Verifiëren voor de back-end met behulp van een door de gebruiker toegewezen identiteit
+### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault-ua"></a>Een aangepast TLS/SSL-certificaat voor het API Management-exemplaar verkrijgen van Azure Key Vault
+U kunt elke door de gebruiker toegewezen identiteit gebruiken om een vertrouwens relatie tussen een API Management exemplaar en de sleutel kluis tot stand te brengen. Deze vertrouwens relatie kan vervolgens worden gebruikt om aangepaste TLS/SSL-certificaten op te halen die zijn opgeslagen in Azure Key Vault. U kunt deze certificaten vervolgens toewijzen aan aangepaste domeinen in het API Management-exemplaar. 
+
+Houd rekening met het volgende:
+
+- Het inhouds type van het geheim moet *Application/x-pkcs12/pfx-profiel* zijn.
+- Gebruik het geheime eind punt van het Key Vault certificaat dat het geheim bevat.
+
+> [!Important]
+> Als u de object versie van het certificaat niet opgeeft, ontvangt API Management automatisch de nieuwere versie van het certificaat binnen vier uur nadat het is bijgewerkt in Key Vault.
+
+Zie [API Management met op sleutel kluis gebaseerd SSL met door de gebruiker toegewezen identiteit](https://github.com/Azure/azure-quickstart-templates/blob/master/101-api-management-key-vault-create/azuredeploy.json)voor de volledige sjabloon.
+
+In deze sjabloon voert u de volgende implementatie uit:
+
+* Azure API Management
+* Door Azure beheerde gebruiker toegewezen identiteit
+* Azure-sleutel kluis voor het opslaan van het SSL/TLS-certificaat
+
+Klik op de volgende knop om de implementatie automatisch uit te voeren:
+
+[![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-api-management-key-vault-create%2Fazuredeploy.json)
+
+### <a name="authenticate-to-the-back-end-by-using-a-user-assigned-identity"></a>Verifiëren voor de back-end met behulp van een door de gebruiker toegewezen identiteit
 
 U kunt de door de gebruiker toegewezen identiteit gebruiken om u te verifiëren bij de back-end via het beleid voor [beheerde identiteiten](api-management-authentication-policies.md#ManagedIdentity) van de verificatie.
 

@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/02/2020
 ms.custom: references_regions
-ms.openlocfilehash: 95ac4ed83a4486665ce378972ea7d6423c2482d5
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: b0871b6365d78129cd6fdaec82fee14e2b0a7a4b
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682907"
+ms.locfileid: "94693440"
 ---
 # <a name="configure-customer-managed-keys-for-data-encryption-in-azure-cognitive-search"></a>Door de klant beheerde sleutels voor gegevens versleuteling configureren in azure Cognitive Search
 
@@ -52,7 +52,7 @@ De volgende hulpprogram ma's en services worden in dit scenario gebruikt.
 U moet een zoek toepassing hebben die het versleutelde object kan maken. In deze code verwijzen we naar een sleutel kluis sleutel en Active Directory registratie gegevens. Deze code kan een werk-app zijn, of prototype code, zoals de [C#-code voorbeeld DotNetHowToEncryptionUsingCMK](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToEncryptionUsingCMK).
 
 > [!TIP]
-> U kunt [postman](search-get-started-postman.md) of [Azure POWERSHELL](./search-get-started-powershell.md) gebruiken om rest-api's aan te roepen waarmee indexen en synoniemen worden gemaakt die een versleutelings sleutel parameter bevatten. Er is op dit moment geen portal ondersteuning voor het toevoegen van een sleutel aan indexen of synoniemen.
+> U kunt [postman of Visual Studio code](search-get-started-rest.md)of [Azure POWERSHELL](./search-get-started-powershell.md)gebruiken om rest-api's aan te roepen waarmee indexen en synoniemen worden gemaakt die een versleutelings sleutel parameter bevatten. Er is op dit moment geen portal ondersteuning voor het toevoegen van een sleutel aan indexen of synoniemen.
 
 ## <a name="1---enable-key-recovery"></a>1-sleutel herstel inschakelen
 

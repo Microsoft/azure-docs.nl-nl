@@ -6,12 +6,12 @@ author: mlearned
 ms.topic: conceptual
 ms.date: 07/01/2020
 ms.author: mlearned
-ms.openlocfilehash: b81b592cf35d0ca13d1c7bd2281ce35cce827a3c
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 1adf8370f55a0f6131eb4140c58fa4618e08127b
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057855"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686018"
 ---
 # <a name="security-concepts-for-applications-and-clusters-in-azure-kubernetes-service-aks"></a>Beveiligingsconcepten voor toepassingen en clusters in Azure Kubernetes Service (AKS)
 
@@ -36,7 +36,7 @@ In AKS maken de Kubernetes-hoofd onderdelen deel uit van de beheerde service van
 
 De Kubernetes API-server gebruikt standaard een openbaar IP-adres en een Fully Qualified Domain Name (FQDN). U kunt de toegang tot het API-server eindpunt beperken met behulp van [geautoriseerde IP-bereiken][authorized-ip-ranges]. U kunt ook een volledig [particulier cluster][private-clusters] maken om de API-server toegang tot uw virtuele netwerk te beperken.
 
-U kunt de toegang tot de API-server beheren met behulp van Kubernetes (op rollen gebaseerd toegangs beheer) en Azure Active Directory. Zie [Azure AD-integratie met AKS][aks-aad]voor meer informatie.
+U kunt de toegang tot de API-server beheren met behulp van Kubernetes op basis van rollen (Kubernetes RBAC) en Azure RBAC. Zie [Azure AD-integratie met AKS][aks-aad]voor meer informatie.
 
 ## <a name="node-security"></a>Knooppunt beveiliging
 
@@ -50,7 +50,7 @@ Knoop punten worden geïmplementeerd in een particulier subnet van een virtueel 
 
 Om opslag te bieden, gebruiken de knoop punten Azure Managed Disks. Voor de meeste VM-knooppunt grootten zijn dit Premium-schijven die worden ondersteund door Ssd's met hoge prestaties. De gegevens die op Managed disks zijn opgeslagen, worden automatisch versleuteld in het Azure-platform. Om redundantie te verbeteren, worden deze schijven ook veilig gerepliceerd in het Azure-Data Center.
 
-Kubernetes-omgevingen, in AKS of elders, zijn momenteel niet volledig veilig voor het gebruik van meerdere tenants. Aanvullende beveiligings functies, zoals *pod-beveiligings beleid*of meer verfijnde op rollen gebaseerd toegangs beheer (RBAC) voor knoop punten, maken misbruiken moeilijker. Voor echte beveiliging bij het uitvoeren van vijandelijke multi tenant-workloads is een Hyper Visor echter het enige beveiligings niveau dat u moet vertrouwen. Het beveiligings domein voor Kubernetes wordt het hele cluster, niet een afzonderlijk knoop punt. Voor dit soort vijandelijke multi tenant-workloads moet u fysiek geïsoleerde clusters gebruiken. Zie [Aanbevolen procedures voor cluster isolatie in AKS][cluster-isolation]voor meer informatie over manieren om workloads te isoleren.
+Kubernetes-omgevingen, in AKS of elders, zijn momenteel niet volledig veilig voor het gebruik van meerdere tenants. Aanvullende beveiligings functies, zoals *pod-beveiligings beleid* of meer fijnere Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) voor knoop punten, maken aanvallen moeilijker. Voor echte beveiliging bij het uitvoeren van vijandelijke multi tenant-workloads is een Hyper Visor echter het enige beveiligings niveau dat u moet vertrouwen. Het beveiligings domein voor Kubernetes wordt het hele cluster, niet een afzonderlijk knoop punt. Voor dit soort vijandelijke multi tenant-workloads moet u fysiek geïsoleerde clusters gebruiken. Zie [Aanbevolen procedures voor cluster isolatie in AKS][cluster-isolation]voor meer informatie over manieren om workloads te isoleren.
 
 ### <a name="compute-isolation"></a>Reken isolatie
 

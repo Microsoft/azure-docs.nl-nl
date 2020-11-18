@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: tableau online configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts op tableau online.
+title: 'Zelfstudie: Tableau Online configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor Tableau Online.
 services: active-directory
 author: zchia
 writer: zchia
@@ -8,42 +8,42 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.topic: article
+ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: fa28b299a33f5386edc6ce14c523d2c332b0767b
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: MT
+ms.openlocfilehash: a42790e079985b003776b381c74f837b0ba619b1
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92520501"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94359201"
 ---
-# <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Zelf studie: tableau online configureren voor het automatisch inrichten van gebruikers
+# <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Zelfstudie: Tableau Online configureren voor het automatisch inrichten van gebruikers
 
-In deze zelf studie ziet u de stappen voor het uitvoeren van tableau online en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers en groepen in tableau.
+In deze zelfstudie worden de stappen gedemonstreerd die moeten worden uitgevoerd in Tableau Online en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en groepen voor Tableau Online.
 
 > [!NOTE]
-> In deze zelf studie wordt een connector beschreven die boven op de Azure AD User Provisioning-Service is gebouwd. Zie voor meer informatie over de werking van deze service, hoe deze werkt en veelgestelde vragen [gebruikers automatisch inrichten en ongedaan maken van de inrichting van SaaS-toepassingen (Software-as-a-Service) met Azure Active Directory](../app-provisioning/user-provisioning.md).
+> In deze zelfstudie wordt een connector beschreven die is gebouwd bovenop de Azure AD-service voor het inrichten van gebruikers. Zie voor informatie over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar software-as-a-service (SaaS)-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
-In het scenario dat in deze zelf studie wordt beschreven, wordt ervan uitgegaan dat u het volgende hebt:
+In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u het volgende heeft:
 
 *   Een Azure AD-tenant.
-*   Een [tableau online-Tenant](https://www.tableau.com/).
-*   Een gebruikers account in tableau online met beheerders machtigingen.
+*   Een [Tableau Online-tenant](https://www.tableau.com/).
+*   Een gebruikersaccount in Tableau Online met beheerdersmachtigingen.
 
 > [!NOTE]
-> De integratie van Azure AD-inrichting is afhankelijk van de [tableau online rest API](https://onlinehelp.tableau.com/current/api/rest_api/en-us/help.htm). Deze API is beschikbaar voor tableau online-ontwikkel aars.
+> De integratie van de Azure AD-inrichting is afhankelijk van de [Tableau Online-Rest-API](https://onlinehelp.tableau.com/current/api/rest_api/en-us/help.htm). Deze API is beschikbaar voor Tableau Online-ontwikkelaars.
 
-## <a name="add-tableau-online-from-the-azure-marketplace"></a>Tableau online toevoegen vanuit Azure Marketplace
-Voordat u tableau online configureert voor het automatisch inrichten van gebruikers met Azure AD, voegt u tableau online toe vanuit Azure Marketplace aan uw lijst met beheerde SaaS-toepassingen.
+## <a name="add-tableau-online-from-the-azure-marketplace"></a>Tableau Online toevoegen vanuit Azure Marketplace
+Voordat u Tableau Online configureert voor het automatisch inrichten van gebruikers met Azure AD, voegt u Tableau Online vanuit de Azure Marketplace toe aan uw lijst met beheerde SaaS-toepassingen.
 
-Voer de volgende stappen uit om tableau online toe te voegen vanuit de Marketplace.
+Voer de volgende stappen uit om Tableau Online toe te voegen vanuit de Marketplace.
 
-1. In de [Azure Portal](https://portal.azure.com), in het navigatie deel venster aan de linkerkant, selecteert u **Azure Active Directory**.
+1. Selecteer **Azure Active Directory** in [Azure Portal](https://portal.azure.com) in het navigatiemenu aan de linkerkant.
 
-    ![Het Azure Active Directory pictogram](common/select-azuread.png)
+    ![Het pictogram van Azure Active Directory](common/select-azuread.png)
 
 2. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 
@@ -53,122 +53,122 @@ Voer de volgende stappen uit om tableau online toe te voegen vanuit de Marketpla
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Voer **tableau online** in in het zoekvak en selecteer **tableau online** in het deel venster voor resultaten. Selecteer **toevoegen**om de toepassing toe te voegen.
+4. Voer in het zoekvak **Tableau Online** in en selecteer **Tableau Online** in het deelvenster voor resultaten. Als u de toepassing wilt toevoegen, selecteert u **Toevoegen**.
 
-    ![Tableau online in de lijst met resultaten](common/search-new-app.png)
+    ![Tableau Online in de lijst met resultaten](common/search-new-app.png)
 
-## <a name="assign-users-to-tableau-online"></a>Gebruikers toewijzen aan tableau online
+## <a name="assign-users-to-tableau-online"></a>Gebruikers toewijzen aan Tableau Online
 
-Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers of groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd.
+Azure Active Directory gebruikt een concept met de naam *toewijzingen* om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u bepalen welke gebruikers of groepen in azure AD toegang moeten hebben tot tableau online. Volg de instructies in [een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)om deze gebruikers of groepen online toe te wijzen aan tableau.
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, beslist u welke gebruikers of groepen in Azure AD toegang nodig hebben tot Tableau Online. Volg de instructies in [Een gebruiker of groep toewijzen aan een bedrijfsapp](../manage-apps/assign-user-or-group-access-portal.md) als u deze gebruikers of groepen wilt toewijzen aan Tableau Online.
 
-### <a name="important-tips-for-assigning-users-to-tableau-online"></a>Belang rijke tips voor het toewijzen van gebruikers aan tableau online
+### <a name="important-tips-for-assigning-users-to-tableau-online"></a>Belangrijke tips voor het toewijzen van gebruikers aan Tableau Online
 
-*   We raden u aan één Azure AD-gebruiker toe te wijzen aan tableau online om de configuratie voor automatische gebruikers inrichting te testen. U kunt later aanvullende gebruikers of groepen toewijzen.
+*   We raden u aan om één Azure AD-gebruiker toe te wijzen aan Tableau Online om de configuratie van automatische inrichting van gebruikers te testen. U kunt later aanvullende gebruikers of groepen toewijzen.
 
-*   Wanneer u een gebruiker toewijst aan tableau online, selecteert u een geldige toepassingsspecifieke rol, indien beschikbaar, in het dialoog venster toewijzing. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
+*   Als u een gebruiker aan Tableau Online toewijst, selecteert u een geldige toepassingsspecifieke rol (indien beschikbaar) in het toewijzingsdialoogvenster. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
 
-## <a name="configure-automatic-user-provisioning-to-tableau-online"></a>Automatische gebruikers inrichting configureren voor tableau online
+## <a name="configure-automatic-user-provisioning-to-tableau-online"></a>Automatische gebruikersinrichting configureren voor Tableau Online
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service. Gebruik dit om gebruikers of groepen in tableau online te maken, bij te werken en uit te scha kelen op basis van gebruikers-of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice. Gebruik dit om gebruikers of groepen in Tableau Online te maken, bij te werken en uit te schakelen op basis van gebruikers- of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> U kunt ook op SAML gebaseerde eenmalige aanmelding inschakelen voor tableau online. Volg de instructies in de [tableau online zelf studie voor eenmalige aanmelding](tableauonline-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische gebruikers inrichting worden geconfigureerd, hoewel deze twee functies elkaar aanvullen.
+> U kunt ook op SAML gebaseerde eenmalige aanmelding inschakelen voor Tableau Online. Volg de instructies in de [Zelfstudie voor eenmalige aanmelding voor Tableau Online](tableauonline-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, hoewel deze twee functies een aanvulling op elkaar vormen.
 
-### <a name="configure-automatic-user-provisioning-for-tableau-online-in-azure-ad"></a>Automatische gebruikers inrichting voor tableau online configureren in azure AD
+### <a name="configure-automatic-user-provisioning-for-tableau-online-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor Tableau Online in Azure AD
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). Selecteer alle toepassingen in **bedrijfs toepassingen**  >  **All applications**  >  **tableau online**.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** > **Alle toepassingen** > **Tableau Online**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
 2. Selecteer **Tableau Online** in de lijst met toepassingen.
 
-    ![De online koppeling tableau in de lijst met toepassingen](common/all-applications.png)
+    ![De link naar Tableau Online in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Tableau online inrichten](./media/tableau-online-provisioning-tutorial/ProvisioningTab.png)
+    ![Tableau Online inrichten](./media/tableau-online-provisioning-tutorial/ProvisioningTab.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Tableau online inrichtings modus](./media/tableau-online-provisioning-tutorial/ProvisioningCredentials.png)
+    ![Inrichtingsmodus van Tableau Online](./media/tableau-online-provisioning-tutorial/ProvisioningCredentials.png)
 
-5. Geef in de sectie **beheerders referenties** het domein, de gebruikers naam van de beheerder, het beheerders wachtwoord en de INHOUDS-URL van uw tableau online-account op:
+5. Voer in de sectie **Beheerdersreferenties** het domein, de gebruikersnaam van de beheerder, het beheerderswachtwoord en de inhouds-URL van uw Tableau Online-account in:
 
-   * Vul in het vak **domein** het subdomein in op basis van stap 6.
+   * Vul in het vak **Domein** het subdomein in op basis van stap 6.
 
-   * Vul in het vak **Administrator-gebruikers naam** de gebruikers naam in van het beheerders account op uw tableau online-Tenant. Een voorbeeld is admin@contoso.com.
+   * Vul in het vak **Gebruikersnaam van de beheerder** de gebruikersnaam van het beheerdersaccount in op uw Tableau Online-tenant. Een voorbeeld is admin@contoso.com.
 
-   * In het vak **beheerders wachtwoord** vult u het wacht woord in van het beheerders account dat overeenkomt met de gebruikers naam van de beheerder.
+   * Vul in het vak **Beheerderswachtwoord** het wachtwoord in van het beheerdersaccount dat overeenkomt met de gebruikersnaam van de beheerder.
 
-   * Vul in het vak **URL van inhoud** het subdomein in op basis van stap 6.
+   * Vul in het vak **Inhouds-URL** het subdomein in op basis van stap 6.
 
-6. Nadat u zich hebt aangemeld bij uw beheerders account voor tableau online, kunt u de waarden voor de **domein** -en **inhouds-URL** ophalen uit de URL van de beheer pagina.
+6. Nadat u zich hebt aangemeld bij uw beheerdersaccount voor Tableau Online, kunt u de waarden voor **Domein** en **Inhouds-URL** ophalen van de URL van de beheerpagina.
 
-    * Het **domein** voor uw tableau online-account kan vanuit dit deel van de URL worden gekopieerd:
+    * Het **Domein** voor uw Tableau Online-account kan vanuit dit deel van de URL worden gekopieerd:
 
-        ![Tableau online domein](./media/tableau-online-provisioning-tutorial/DomainUrlPart.png)
+        ![Domein van Tableau Online](./media/tableau-online-provisioning-tutorial/DomainUrlPart.png)
 
-    * De **inhouds-URL** voor uw online tableau-account kan vanuit deze sectie worden gekopieerd. Het is een waarde die tijdens het instellen van het account is gedefinieerd. In dit voor beeld is de waarde ' Contoso ':
+    * De **Inhouds-URL** voor uw Tableau Online-account kan vanuit dit deel worden gekopieerd. Het is een waarde die tijdens het instellen van het account is gedefinieerd. In dit voorbeeld is de waarde 'contoso':
 
-        ![URL van tableau online inhoud](./media/tableau-online-provisioning-tutorial/ContentUrlPart.png)
+        ![Inhouds-URL van Tableau Online](./media/tableau-online-provisioning-tutorial/ContentUrlPart.png)
 
         > [!NOTE]
-        > Uw **domein** kan afwijken van de naam die hier wordt weer gegeven.
+        > Uw **Domein** kan afwijken van wat hier wordt weergegeven.
 
-7. Nadat u de vakken in stap 5 hebt ingevuld, selecteert u **verbinding testen** om te controleren of Azure AD verbinding kan maken met tableau online. Als de verbinding mislukt, controleert u of uw tableau online-account beheerders machtigingen heeft en probeer het opnieuw.
+7. Nadat u de vakken die in stap 5 zijn weergegeven, hebt ingevuld, selecteert u **Verbinding testen** om ervoor te zorgen dat Azure AD verbinding kan maken met Tableau Online. Als de verbinding mislukt, moet u controleren of uw Tableau Online-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
-    ![Tableau online-test verbinding](./media/tableau-online-provisioning-tutorial/TestConnection.png)
+    ![Verbinding van Tableau Online testen](./media/tableau-online-provisioning-tutorial/TestConnection.png)
 
-8. Voer in het vak **e-mail bericht** het e-mail adres van de persoon of groep in om de inrichtings fout meldingen te ontvangen. Schakel het selectie vakje **e-mail melding verzenden wanneer een fout optreedt** in.
+8. Voer in het vak **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de meldingen over inrichtingsfouten moeten ontvangen. Selecteer het selectievakje **Een e-mailmelding verzenden wanneer er een fout optreedt**.
 
-    ![E-mail bericht tableau online](./media/tableau-online-provisioning-tutorial/EmailNotification.png)
+    ![E-mailadres voor meldingen van Tableau Online](./media/tableau-online-provisioning-tutorial/EmailNotification.png)
 
 9. Selecteer **Opslaan**.
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met tableau**.
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Tableau**.
 
-    ![Tableau online-gebruikers synchronisatie](./media/tableau-online-provisioning-tutorial/UserMappings.png)
+    ![Gebruikerssynchronisatie van Tableau Online](./media/tableau-online-provisioning-tutorial/UserMappings.png)
 
-11. Controleer de gebruikers kenmerken die vanuit Azure AD zijn gesynchroniseerd met tableau online in het gedeelte **kenmerk toewijzingen** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om de gebruikers accounts in tableau online te vergelijken voor bijwerk bewerkingen. Selecteer **Opslaan**om de wijzigingen op te slaan.
+11. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met Tableau Online worden gesynchroniseerd. De kenmerken die als **Overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Tableau Online te vinden voor updatebewerkingen. Selecteer **Opslaan** om wijzigingen op te slaan.
 
-    ![Tableau online overeenkomende gebruikers kenmerken](./media/tableau-online-provisioning-tutorial/attribute.png)
+    ![Overeenkomende gebruikerskenmerken van Tableau Online](./media/tableau-online-provisioning-tutorial/attribute.png)
 
-12. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met tableau**.
+12. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Tableau Online**.
 
-    ![Synchronisatie van online groep tableau](./media/tableau-online-provisioning-tutorial/GroupMappings.png)
+    ![Groepssynchronisatie van Tableau Online](./media/tableau-online-provisioning-tutorial/GroupMappings.png)
 
-13. Controleer de groeps kenmerken die vanuit Azure AD worden gesynchroniseerd met tableau online in het gedeelte **kenmerk toewijzingen** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om de gebruikers accounts in tableau online te vergelijken voor bijwerk bewerkingen. Selecteer **Opslaan**om de wijzigingen op te slaan.
+13. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD met Tableau Online worden gesynchroniseerd. De kenmerken die als **Overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Tableau Online te vinden voor updatebewerkingen. Selecteer **Opslaan** om wijzigingen op te slaan.
 
-    ![Tableau online overeenkomende groeps kenmerken](./media/tableau-online-provisioning-tutorial/GroupAttributeMapping.png)
+    ![Overeenkomende groepskenmerken van Tableau online](./media/tableau-online-provisioning-tutorial/GroupAttributeMapping.png)
 
-14. Als u bereik filters wilt configureren, volgt u de instructies in de [zelf studie](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)voor het filteren op bereik.
+14. Volg de instructies in [de zelfstudie bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) als u bereikfilters wilt configureren.
 
-15. Als u de Azure AD-inrichtings service voor tableau online wilt inschakelen, wijzigt u in de sectie **instellingen** de **inrichtings status** in **op aan**.
+15. Wijzig **Inrichtingsstatus** naar **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Tableau Online.
 
-    ![Tableau online-inrichtings status](./media/tableau-online-provisioning-tutorial/ProvisioningStatus.png)
+    ![Inrichtingsstatus van Tableau Online](./media/tableau-online-provisioning-tutorial/ProvisioningStatus.png)
 
-16. Definieer de gebruikers of groepen die u online wilt inrichten tableau. Selecteer in de sectie **instellingen** de waarden die u in het **bereik**wilt.
+16. De gebruikers of groepen die u wilt inrichten voor Tableau Online definiëren. Selecteer in de sectie **Instellingen** de waarden die u wilt in **Bereik**.
 
-    ![Tableau online-bereik](./media/tableau-online-provisioning-tutorial/ScopeSync.png)
+    ![Bereik voor Tableau Online](./media/tableau-online-provisioning-tutorial/ScopeSync.png)
 
-17. Wanneer u klaar bent om in te richten, selecteert u **Opslaan**.
+17. Selecteer **Opslaan** als u klaar bent voor het inrichten.
 
-    ![Tableau online opslaan](./media/tableau-online-provisioning-tutorial/SaveProvisioning.png)
+    ![Opslaan voor Tableau Online](./media/tableau-online-provisioning-tutorial/SaveProvisioning.png)
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers of groepen die in het **bereik** zijn gedefinieerd in de sectie **instellingen** . Het duurt langer voordat de initiële synchronisatie is uitgevoerd dan bij latere synchronisaties. Ze treden ongeveer elke 40 minuten in beslag, zolang de Azure AD-inrichtings service wordt uitgevoerd. 
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. Het uitvoeren van de initiële synchronisatie duurt langer dan bij latere synchronisaties. Ze vinden ongeveer elke 40 minuten plaats, zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
 
-U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen. In het rapport worden alle acties beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op tableau online.
+U kunt de sectie **Synchronisatiedetails** gebruiken om de voortgang te controleren en links naar het rapport over de inrichtingsactiviteit te volgen. In het rapport worden alle acties beschreven die worden uitgevoerd door de Azure AD-inrichtingsservice op Tableau Online.
 
 Zie [Rapportage over automatische toewijzing van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 
 ## <a name="change-log"></a>Wijzigingenlogboek
-* 09/30/2020-ondersteuning toegevoegd voor kenmerk ' authSetting ' voor gebruikers.
+* 09/30/2020 - Ondersteuning toegevoegd voor kenmerk 'authSetting' voor gebruikers.
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
-* [Het inrichten van gebruikers accounts beheren voor zakelijke apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Het inrichten van gebruikersaccounts beheren voor bedrijfsapps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen

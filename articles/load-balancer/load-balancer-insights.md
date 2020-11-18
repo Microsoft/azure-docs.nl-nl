@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/27/2020
 ms.author: errobin
-ms.openlocfilehash: 2168ee05ab93655cc0ad87221bff29c1b6b1035d
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d57dfd0a496e71c1f0e6ddea839723da35bc5f76
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897586"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686239"
 ---
 # <a name="using-insights-to-monitor-and-configure-your-azure-load-balancer"></a>Inzichten gebruiken om uw Azure Load Balancer te controleren en te configureren
 
-Via [Azure monitor voor netwerken](https://docs.microsoft.com/azure/azure-monitor/insights/insights-overview#azure-monitor-for-networks-preview)hebt u functionele afhankelijkheids visualisaties en vooraf geconfigureerde metrische Dash boards voor uw load balancers. Met deze visualisaties kunt u weloverwogen ontwerp beslissingen nemen en snel problemen lokaliseren, vaststellen en oplossen.
+Via Azure Monitor voor netwerken hebt u functionele afhankelijkheids visualisaties en vooraf geconfigureerde metrische Dash boards voor uw load balancers. Met deze visualisaties kunt u weloverwogen ontwerp beslissingen nemen en snel problemen lokaliseren, vaststellen en oplossen.
 
 >[!NOTE] 
 >Let op: deze functie is beschikbaar als preview-versie en de weer gave van de functionele afhankelijkheid en het vooraf geconfigureerde dash board kunnen worden gewijzigd om deze ervaring te verbeteren

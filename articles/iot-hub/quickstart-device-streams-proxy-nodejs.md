@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-js, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 86b5c1dc396a755d898f0c3c332ab59933236afe
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 0d98f3c61191d5d5b333072682abe740761901f0
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747446"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831885"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-nodejs-proxy-application-preview"></a>Quickstart: SSH en RDP inschakelen via een IoT Hub-apparaatstream met behulp van een Node.js-proxy-app (preview)
 
@@ -30,13 +30,15 @@ In deze quickstart schakelt u het SSH- (Secure Shell) en RDP-verkeer (Remote Des
 
 * [Node.js 10+](https://nodejs.org).
 
+    Gebruik de volgende opdracht om de huidige versie van Node.js op uw ontwikkelcomputer te controleren:
+
+    ```cmd/sh
+    node --version
+    ```
+
 * [Een voorbeeld van een Node.js-project](https://github.com/Azure-Samples/azure-iot-samples-node/archive/streams-preview.zip).
 
-Gebruik de volgende opdracht om de huidige versie van Node.js op uw ontwikkelcomputer te controleren:
-
-```cmd/sh
-node --version
-```
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 Microsoft Azure IoT Hub ondersteunt momenteel apparaatstreams als een [preview-functie](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -47,8 +49,6 @@ Microsoft Azure IoT Hub ondersteunt momenteel apparaatstreams als een [preview-f
 > * VS - centraal EUAP
 > * Europa - noord
 > * Azië - zuidoost
-  
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ### <a name="add-azure-iot-extension"></a>Azure IoT-extensie toevoegen
 

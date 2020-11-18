@@ -11,25 +11,25 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d3315a8d6bca9406461d0082ed85bbefc9459f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d4897b9187caab50be4db75bbc0af03e3d35aa4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88950201"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835982"
 ---
 # <a name="user-experiences-with-azure-ad-identity-protection"></a>Gebruikers ervaring met Azure AD Identity Protection
 
 Met Azure Active Directory Identity Protection kunt u het volgende doen:
 
-* Vereisen dat gebruikers zich registreren voor Azure Multi-Factor Authentication (MFA)
+* Vereisen dat gebruikers zich registreren voor Azure AD Multi-Factor Authentication (MFA)
 * Automatisch herstel van Risk ante aanmeldingen en verkraakte gebruikers automatiseren
 
-Alle beleids regels voor identiteits beveiliging hebben gevolgen voor de aanmeldings ervaring voor gebruikers. Gebruikers toestaan zich te registreren voor en gebruik hulpprogram ma's zoals Azure MFA en self-service voor het opnieuw instellen van wacht woorden kan de impact beperken. Deze hulpprogram ma's en de juiste beleids opties bieden gebruikers een optie voor automatisch herstel wanneer ze deze nodig hebben.
+Alle beleids regels voor identiteits beveiliging hebben gevolgen voor de aanmeldings ervaring voor gebruikers. Gebruikers toestaan zich te registreren voor en gebruik hulpprogram ma's zoals Azure AD MFA en self-service voor het opnieuw instellen van wacht woorden kan de impact beperken. Deze hulpprogram ma's en de juiste beleids opties bieden gebruikers een optie voor automatisch herstel wanneer ze deze nodig hebben.
 
 ## <a name="multi-factor-authentication-registration"></a>Multi-factor Authentication-registratie
 
-Het inschakelen van het beleid voor identiteits beveiliging waarbij multi-factor Authentication-registratie vereist is en die gericht is op al uw gebruikers, zorgt ervoor dat ze Azure MFA in de toekomst kunnen gebruiken om zichzelf te herstellen. Door dit beleid te configureren, hebben uw gebruikers een periode van 14 dagen waarin ze zich kunnen registreren en aan het eind moeten registreren. De ervaring voor gebruikers wordt hieronder beschreven. Meer informatie vindt u in de documentatie voor eind gebruikers in het artikel [overzicht van twee ledige verificatie en uw werk-of school account](../user-help/multi-factor-authentication-end-user-first-time.md).
+Het inschakelen van het beleid voor identiteits beveiliging waarbij multi-factor Authentication-registratie vereist is en die gericht is op al uw gebruikers, zorgt ervoor dat ze de mogelijkheid hebben om Azure AD MFA te gebruiken om zichzelf te herstellen in de toekomst. Door dit beleid te configureren, hebben uw gebruikers een periode van 14 dagen waarin ze zich kunnen registreren en aan het eind moeten registreren. De ervaring voor gebruikers wordt hieronder beschreven. Meer informatie vindt u in de documentatie voor eind gebruikers in het artikel [overzicht van twee ledige verificatie en uw werk-of school account](../user-help/multi-factor-authentication-end-user-first-time.md).
 
 ### <a name="registration-interrupt"></a>Registratie onderbreking
 
@@ -37,7 +37,7 @@ Het inschakelen van het beleid voor identiteits beveiliging waarbij multi-factor
    
     ![Meer informatie vereist](./media/concept-identity-protection-user-experience/identity-protection-experience-more-info-mfa.png)
 
-1. Voltooi de begeleide stappen om u aan te melden voor Azure Multi-Factor Authentication en uw aanmelding te volt ooien.
+1. Voltooi de begeleide stappen om u aan te melden voor Azure AD Multi-Factor Authentication en uw aanmelding te volt ooien.
 
 ## <a name="risky-sign-in-remediation"></a>Risk ante aanmeldingen bij herstel
 
@@ -49,7 +49,7 @@ Wanneer een beheerder een beleid heeft geconfigureerd voor aanmeldings Risico's,
    
     ![Een ongewone prompt](./media/concept-identity-protection-user-experience/120.png)
 
-1. De gebruiker is verplicht hun identiteit te bewijzen door Azure MFA met een van de eerder geregistreerde methoden te volt ooien. 
+1. De gebruiker is verplicht hun identiteit te bewijzen door Azure AD MFA met een van de eerder geregistreerde methoden te volt ooien. 
 
 ### <a name="risky-sign-in-administrator-unblock"></a>Risk ante beheerder voor aanmeldings blokkering
 
@@ -69,7 +69,7 @@ Wanneer een gebruikers risico beleid is geconfigureerd, moeten gebruikers die vo
    
     ![Herstel](./media/concept-identity-protection-user-experience/101.png)
 
-1. De gebruiker is verplicht hun identiteit te bewijzen door Azure MFA met een van de eerder geregistreerde methoden te volt ooien. 
+1. De gebruiker is verplicht hun identiteit te bewijzen door Azure AD MFA met een van de eerder geregistreerde methoden te volt ooien. 
 1. Ten slotte wordt de gebruiker gedwongen hun wacht woord te wijzigen met selfservice voor wachtwoord herstel, omdat iemand anders mogelijk toegang heeft gehad tot hun account.
 
 ## <a name="risky-sign-in-administrator-unblock"></a>Risk ante beheerder voor aanmeldings blokkering

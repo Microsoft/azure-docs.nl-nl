@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
-ms.openlocfilehash: 2e5c588db6f372a50b2a80afd8a2a023ece34502
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 235c5c19c9a6e587106b3fd41691a3f775caa84f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92203617"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656612"
 ---
 # <a name="quickstart-set-up-saml-based-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Snelstart: Eenmalige aanmelding (SSO) op basis van SAML instellen voor een toepassing in uw Azure Active Directory-tenant (Azure AD)
 
@@ -43,7 +43,7 @@ Nadat u klaar bent met het toevoegen van een toepassing aan uw Azure AD-tenant, 
 
 Eenmalige aanmelding voor een toepassing instellen:
 
-1. Selecteer in het Azure AD-portal **Bedrijfstoepassingen** . Zoek en selecteer de toepassing die u wilt instellen voor eenmalige aanmelding.
+1. Selecteer in het Azure AD-portal **Bedrijfstoepassingen**. Zoek en selecteer de toepassing die u wilt instellen voor eenmalige aanmelding.
 1. Selecteer **Eenmalige aanmelding** in de sectie **Beheren** om het deelvenster **Eenmalige aanmelding** te openen voor bewerken.
 
     > [!IMPORTANT]
@@ -53,17 +53,17 @@ Eenmalige aanmelding voor een toepassing instellen:
 
 1. Selecteer **SAML** om de SSO-configuratiepagina te openen. In dit voorbeeld is GitHub de toepassing die wordt geconfigureerd voor eenmalige aanmelding. Nadat GitHub is ingesteld, kunnen uw gebruikers zich aanmelden bij GitHub met behulp van hun referenties van onze Azure AD-tenant.
 
-    :::image type="content" source="media/add-application-portal-setup-sso/github-sso.png" alt-text="Schermopname toont de configuratiepagina voor eenmalige aanmelding in het Azure AD-portal.":::
+    :::image type="content" source="media/add-application-portal-setup-sso/github-sso.png" alt-text="Schermopname toont de configuratiepagina voor eenmalige aanmelding op GitHub.":::
 
-1. Het proces voor het configureren van een toepassing om Azure AD te gebruiken voor SSO op basis van SAML is afhankelijk van de toepassing. Er staat koppeling naar de richtlijnen voor GitHub. Zie [Zelfstudies voor het integreren van SaaS-toepassingen met Azure Active Directory](https://docs.microsoft.com/azure/active-directory/saas-apps/) voor handleidingen voor andere apps.
+1. Het proces voor het configureren van een toepassing om Azure AD te gebruiken voor SSO op basis van SAML is afhankelijk van de toepassing. Er staat koppeling naar de richtlijnen voor GitHub. Zie [Zelfstudies voor het integreren van SaaS-toepassingen met Azure Active Directory](/azure/active-directory/saas-apps/) voor handleidingen voor andere apps.
 1. Volg de handleiding om SSO in te stellen voor de toepassing. Veel toepassingen hebben specifieke abonnementsvereisten voor SSO-functionaliteit. GitHub vereist bijvoorbeeld een Enterprise-abonnement.
     > [!TIP]
     > Raadpleeg [eenmalige aanmelding op basis van SAML configureren](configure-saml-single-sign-on.md) voor meer informatie over de configuratieopties voor SAML.
 
-    :::image type="content" source="media/add-application-portal-setup-sso/github-pricing.png" alt-text="Schermopname toont de configuratiepagina voor eenmalige aanmelding in het Azure AD-portal.":::
+    :::image type="content" source="media/add-application-portal-setup-sso/github-pricing.png" alt-text="Schermopname toont de optie voor eenmalige aanmelding in het Enterprise-abonnement op de pagina met GitHub-prijzen.":::
 
 > [!TIP]
-> U kunt het beheer van apps automatiseren met behulp van de Graph API. Zie [App-beheer automatiseren met de Microsoft Graph API](https://docs.microsoft.com/graph/application-saml-sso-configure-api).
+> U kunt het beheer van apps automatiseren met behulp van de Graph API. Zie [App-beheer automatiseren met de Microsoft Graph API](/graph/application-saml-sso-configure-api).
 
 
 ## <a name="clean-up-resources"></a>Resources opschonen

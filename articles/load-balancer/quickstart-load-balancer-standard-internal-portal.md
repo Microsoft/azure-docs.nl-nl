@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 44f6ba313ab57933a1078e96533c88cc4b4b59b3
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 6ac76b3d3cc8fb27734730275836fba0dbfb08fe
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490846"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700304"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Quickstart: Een interne load balancer maken met Azure Portal om taken te verdelen over VM's
 
@@ -55,7 +55,7 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
 
 1. Selecteer in de linkerbovenhoek van het scherm **Een resource maken > Netwerken > Virtueel netwerk** of zoek naar **Virtueel netwerk** in het zoekvak.
 
-2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen** :
+2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen**:
 
     | **Instelling**          | **Waarde**                                                           |
     |------------------|-----------------------------------------------------------------|
@@ -104,7 +104,7 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
 
 1. Selecteer linksboven in het scherm de optie **Een resource maken** > **Netwerken** > **Load balancer**.
 
-2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken** : 
+2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken**: 
 
     | Instelling                 | Waarde                                              |
     | ---                     | ---                                                |
@@ -202,7 +202,7 @@ In deze sectie maakt u een load balancer-regel:
 4. Laat de overige standaardwaarden staan en selecteer **OK**.
 
 >[!NOTE]
->De virtuele machines in de back-end-pool hebben geen uitgaande internetverbinding met deze configuratie. </br> Voor meer informatie over het bieden van uitgaande connectiviteit raadpleegt u: </br> **[Uitgaande verbindingen in Azure](load-balancer-outbound-connections.md)**</br> Opties voor het bieden van connectiviteit: </br> **[Load balancer-configuratie voor alleen uitgaand verkeer](egress-only.md)** </br> **[Wat is Azure Virtual Network NAT?](https://docs.microsoft.com/azure/virtual-network/nat-overview)**
+>De virtuele machines in de back-end-pool hebben geen uitgaande internetverbinding met deze configuratie. </br> Voor meer informatie over het bieden van uitgaande connectiviteit raadpleegt u: </br> **[Uitgaande verbindingen in Azure](load-balancer-outbound-connections.md)**</br> Opties voor het bieden van connectiviteit: </br> **[Load balancer-configuratie voor alleen uitgaand verkeer](egress-only.md)** </br> **[Wat is Azure Virtual Network NAT?](../virtual-network/nat-overview.md)**
 
 ## <a name="create-backend-servers"></a>Back-endservers maken
 
@@ -213,13 +213,13 @@ In deze sectie doet u het volgende:
 
 ### <a name="create-virtual-machines"></a>Virtuele machines maken
 
-In deze sectie maakt u twee VM's ( **myVM1** en **myVM2** ).
+In deze sectie maakt u twee VM's (**myVM1** en **myVM2**).
 
 Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder is gemaakt.
 
 1. Selecteer in de linkerbovenhoek van de portal de optie **Een resource maken** > **Compute** > **Virtuele machine**. 
    
-2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie** :
+2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie**:
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
@@ -262,7 +262,7 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
   
 6. Controleer de instellingen en selecteer vervolgens **Maken**.
 
-7. Volg stappen 1 tot en met 8 om een extra VM te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1** :
+7. Volg stappen 1 tot en met 8 om een extra VM te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1**:
 
     | Instelling | VM 2|
     | ------- | ----- |
@@ -290,7 +290,7 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
 
 1. Selecteer in de linkerbovenhoek van het scherm **Een resource maken > Netwerken > Virtueel netwerk** of zoek naar **Virtueel netwerk** in het zoekvak.
 
-2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen** :
+2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen**:
 
     | **Instelling**          | **Waarde**                                                           |
     |------------------|-----------------------------------------------------------------|
@@ -339,7 +339,7 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
 
 1. Selecteer linksboven in het scherm de optie **Een resource maken** > **Netwerken** > **Load balancer**.
 
-2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken** : 
+2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken**: 
 
     | Instelling                 | Waarde                                              |
     | ---                     | ---                                                |
@@ -451,7 +451,7 @@ In deze sectie doet u het volgende:
 
 ### <a name="create-virtual-machines"></a>Virtuele machines maken
 
-In deze sectie maakt u twee VM's ( **myVM1** en **myVM2** ).
+In deze sectie maakt u twee VM's (**myVM1** en **myVM2**).
 
 De twee VM's worden toegevoegd aan een beschikbaarheidsset met de naam **myAvailabilitySet**.
 
@@ -459,7 +459,7 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
 
 1. Selecteer in de linkerbovenhoek van de portal de optie **Een resource maken** > **Compute** > **Virtuele machine**. 
    
-2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie** :
+2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie**:
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
@@ -498,7 +498,7 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
   
 6. Controleer de instellingen en selecteer vervolgens **Maken**.
 
-7. Volg stappen 1 tot en met 8 om een extra VM te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1** :
+7. Volg stappen 1 tot en met 8 om een extra VM te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1**:
 
     | Instelling | VM 2 |
     | ------- | ----- |
@@ -531,7 +531,7 @@ In deze sectie maakt u een VM met de naam **myTestVM**.  Deze VM wordt gebruikt 
 
 1. Selecteer in de linkerbovenhoek van de portal de optie **Een resource maken** > **Compute** > **Virtuele machine**. 
    
-2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie** :
+2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie**:
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
@@ -569,7 +569,7 @@ In deze sectie maakt u een VM met de naam **myTestVM**.  Deze VM wordt gebruikt 
 
 ## <a name="install-iis"></a>IIS installeren
 
-1. Selecteer in het linkermenu **Alle services** , selecteer vervolgens **Alle resources** en selecteer daarna in de lijst met resources **myVM1** , die zich in de resourcegroep **CreateIntLBQS-rg** bevindt.
+1. Selecteer in het linkermenu **Alle services**, selecteer vervolgens **Alle resources** en selecteer daarna in de lijst met resources **myVM1**, die zich in de resourcegroep **CreateIntLBQS-rg** bevindt.
 
 2. Selecteer op de pagina **Overzicht** de optie **Verbinding maken** en daarna **Bastion**.
 
@@ -607,7 +607,7 @@ In deze sectie maakt u een VM met de naam **myTestVM**.  Deze VM wordt gebruikt 
 
 2. Noteer of kopieer het adres naast **Privé IP-adres** in het **Overzicht** van **myLoadBalancer**.
 
-3. Selecteer in het linkermenu **Alle services** , selecteer vervolgens **Alle resources** en selecteer daarna in de lijst met resources **myTestVM** , die zich in de resourcegroep **CreateIntLBQS-rg** bevindt.
+3. Selecteer in het linkermenu **Alle services**, selecteer vervolgens **Alle resources** en selecteer daarna in de lijst met resources **myTestVM**, die zich in de resourcegroep **CreateIntLBQS-rg** bevindt.
 
 4. Selecteer op de pagina **Overzicht** de optie **Verbinding maken** en daarna **Bastion**.
 
@@ -635,4 +635,4 @@ In deze snelstart, gaat u het volgende doen:
 
 Als u meer informatie wilt over Azure Load Balancer, gaat u naar
 > [!div class="nextstepaction"]
-> [Wat is Azure Load Balancer?](load-balancer-overview.md) 
+> [Wat is Azure Load Balancer?](load-balancer-overview.md)

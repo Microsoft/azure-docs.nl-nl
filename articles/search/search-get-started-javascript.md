@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 10/26/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5ccbe1035c5cc73993e069c7683d6b15ae18e21c
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 0e1b7aa0eb56d5668b6561b36a0f63e719974573
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92795522"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698893"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-using-the-javascript-sdk"></a>Quickstart: Een Azure Cognitive Search-index maken met JavaScript SDK
 > [!div class="op_single_selector"]
@@ -24,10 +24,10 @@ ms.locfileid: "92795522"
 > * [Portal](search-get-started-portal.md)
 > * [PowerShell](./search-get-started-powershell.md)
 > * [Python](search-get-started-python.md)
-> * [Postman](search-get-started-postman.md)
+> * [REST](search-get-started-rest.md)
 
 
-Gebruik de [JavaScript/Typscript SDK voor Azure Cognitive Search](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme?view=azure-node-latest) om een Node.js-toepassing te maken in JavaScript waarmee een zoekindex wordt gemaakt, geladen en opgevraagd.
+Gebruik de [JavaScript/Typscript SDK voor Azure Cognitive Search](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme) om een Node.js-toepassing te maken in JavaScript waarmee een zoekindex wordt gemaakt, geladen en opgevraagd.
 
 In dit artikel komt erachter hoe u stapsgewijs hoe u de toepassing maakt. U kunt ook [de broncode en gegevens downloaden](https://github.com/Azure-Samples/azure-search-javascript-samples/tree/master/quickstart/v11) en de toepassing uitvoeren vanaf de opdrachtregel.
 
@@ -56,9 +56,9 @@ Voor aanroepen naar de service zijn voor elke aanvraag een URL-eindpunt en een t
 
 1. [Meld u aan bij Azure Portal](https://portal.azure.com/) en haal op de pagina **Overzicht** van uw zoekservice de URL op. Een eindpunt ziet er bijvoorbeeld uit als `https://mydemo.search.windows.net`.
 
-2. In **Instellingen** > **Sleutels** , kunt u een beheerderssleutel ophalen voor volledige rechten op de service. Deze heeft u nodig voor het maken en verwijderen van objecten. Er zijn twee uitwisselbare primaire en secundaire sleutels. U kunt beide gebruiken.
+2. In **Instellingen** > **Sleutels**, kunt u een beheerderssleutel ophalen voor volledige rechten op de service. Deze heeft u nodig voor het maken en verwijderen van objecten. Er zijn twee uitwisselbare primaire en secundaire sleutels. U kunt beide gebruiken.
 
-   ![Een HTTP-eindpunt en toegangssleutel ophalen](media/search-get-started-postman/get-url-key.png "Een HTTP-eindpunt en toegangssleutel ophalen")
+   ![Een HTTP-eindpunt en toegangssleutel ophalen](media/search-get-started-rest/get-url-key.png "Een HTTP-eindpunt en toegangssleutel ophalen")
 
 Voor alle aanvragen is een API-sleutel vereist op elke aanvraag die naar uw service wordt verzonden. Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
@@ -80,7 +80,7 @@ Begin met het openen van VS-code en de [geïntegreerde terminal](https://code.vi
     ```
      Accepteer de standaardwaarden, met uitzondering van de licentie. Deze moet u instellen op MIT. 
 
-3. Installeer `@azure/search-documents`, de [JavaScript/Typscript SDK voor Azure Cognitive Search](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme?view=azure-node-latest).
+3. Installeer `@azure/search-documents`, de [JavaScript/Typscript SDK voor Azure Cognitive Search](https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme).
 
     ```cmd
     npm install @azure/search-documents
@@ -134,7 +134,7 @@ Importeer boven aan dit bestand de `@azure/search-documents`-bibliotheek:
 const { SearchIndexClient, SearchClient, AzureKeyCredential, odata } = require("@azure/search-documents");
 ```
 
-Vervolgens moet het `dotenv`-pakket als volgt worden gelezen in de parameters van het bestand **.env** :
+Vervolgens moet het `dotenv`-pakket als volgt worden gelezen in de parameters van het bestand **.env**:
 
 ```javascript
 // Load the .env file if it exists
@@ -373,7 +373,7 @@ In de volgende stap gaat u gegevens aan de index toevoegen.
 
 In Azure Cognitive Search zijn documenten gegevensstructuren die zowel de invoer van indexeringen als de uitvoer van query's zijn. U kunt dergelijke gegevens naar de index pushen of een [Indexeerfunctie](search-indexer-overview.md) gebruiken. In dat geval kunnen we de documenten via een programma naar de index pushen.
 
-De documentinvoer bestaat mogelijk uit rijen in een database, blobs in Blob Storage of, zoals in dit voorbeeld, JSON-documenten op een schijf. U kunt [hotels.json](https://github.com/Azure-Samples/azure-search-javascript-samples/blob/master/quickstart/v11/hotels.json) downloaden of uw eigen **hotels.json** -bestand maken met de volgende inhoud:
+De documentinvoer bestaat mogelijk uit rijen in een database, blobs in Blob Storage of, zoals in dit voorbeeld, JSON-documenten op een schijf. U kunt [hotels.json](https://github.com/Azure-Samples/azure-search-javascript-samples/blob/master/quickstart/v11/hotels.json) downloaden of uw eigen **hotels.json**-bestand maken met de volgende inhoud:
 
 ```json
 {

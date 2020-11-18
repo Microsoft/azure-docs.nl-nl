@@ -8,38 +8,33 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 06/25/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 1ddc8c2b9531dd78c1c6746e28b8ff5864af563e
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: d174e410aaef876dfe97af62750322641de95fd3
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93331944"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659451"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-server-by-using-the-azure-cli"></a>Quickstart: Een Azure Database for PostgreSQL-server maken met behulp van Azure CLI
 
 In deze quickstart wordt beschreven hoe u [Azure CLI](/cli/azure/get-started-with-azure-cli)-opdrachten in [Azure Cloud Shell](https://shell.azure.com) gebruikt om binnen ongeveer vijf minuten één Azure Database for PostgreSQL-server te maken. Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
-[!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-> [!TIP]
-> Overweeg het gebruik van de eenvoudigere Azure CLI-opdracht [az postgres up](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up), die momenteel als preview-versie beschikbaar is. Probeer de [quickstart](./quickstart-create-server-up-azure-cli.md).
+- Voor dit artikel is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-## <a name="prerequisites"></a>Vereisten
-Voor dit artikel moet u Azure CLI versie 2.0 of hoger lokaal uitvoeren. Voer de opdracht `az --version` uit om de geïnstalleerde versie te zien. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli).
+    > [!TIP]
+    >  Overweeg het gebruik van de eenvoudigere Azure CLI-opdracht [az postgres up](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up), die momenteel als preview-versie beschikbaar is. Probeer de [quickstart](./quickstart-create-server-up-azure-cli.md).
 
-U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/reference-index#az-login). Zoals u kunt zien, verwijst de eigenschap **id** naar de **Abonnements-id** voor uw Azure-account. 
+- Selecteer de specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account).
 
-```azurecli-interactive
-az login
-```
+    - Noteer de **id**-waarde uit de uitvoer van **az login** en gebruik deze als de waarde voor het argument **abonnement** in de opdracht. 
 
-Selecteer de specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account). Noteer de **id** -waarde uit de uitvoer van **az login** en gebruik deze als de waarde voor het argument **abonnement** in de opdracht. 
+        ```azurecli
+        az account set --subscription <subscription id>
+        ```
 
-```azurecli
-az account set --subscription <subscription id>
-```
-
-Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az-account-list).
+    - Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az-account-list).
 
 ## <a name="create-an-azure-database-for-postgresql-server"></a>Een Azure-database voor PostgreSQL-server maken
 
@@ -61,7 +56,7 @@ Dit zijn de gegevens van de voorgaande argumenten:
 naam | mydemoserver | Een unieke naam ter identificatie van uw Azure Database for PostgreSQL-server. De servernaam mag alleen kleine letters, cijfers en het koppelteken (-) bevatten. De naam moet 3 tot 63 tekens bevatten. Zie [Naamgevingsregels voor Azure Database for PostgreSQL](../azure-resource-manager/management/resource-name-rules.md#microsoftdbforpostgresql) voor meer informatie.
 resource-group | myResourceGroup | De naam van de Azure-resourcegroep.
 location | westus | De Azure-locatie voor de server.
-admin-user | myadmin | De gebruikersnaam voor aanmelding als beheerder. Deze gebruikersnaam mag niet **azure_superuser** , **admin** , **administrator** , **root** , **guest** of **public** zijn.
+admin-user | myadmin | De gebruikersnaam voor aanmelding als beheerder. Deze gebruikersnaam mag niet **azure_superuser**, **admin**, **administrator**, **root**, **guest** of **public** zijn.
 admin-password | *veilig wachtwoord* | Het wachtwoord van de beheerder. Het moet 8 tot 128 tekens bevatten uit drie van de volgende categorieën: Nederlandse hoofdletters, Nederlandse kleine letters, cijfers en niet-alfanumerieke tekens.
 sku-name|GP_Gen5_2| De naam van de prijscategorie en de berekeningsconfiguratie. Volg de verkorte notatie voor de conventie {prijscategorie} _{compute-generatie}_ {vCores}. Zie [Prijzen voor Azure Database for PostgreSQL](https://azure.microsoft.com/pricing/details/postgresql/server/) voor meer informatie.
 
@@ -123,7 +118,7 @@ Het resultaat wordt in JSON-indeling weergegeven. Noteer de waarden voor **admin
 ```
 
 ## <a name="connect-to-the-azure-database-for-postgresql-server-by-using-psql"></a>Verbinding maken met de Azure Database for PostgreSQL-server met behulp van psql
-De [psql](https://www.postgresql.org/docs/current/static/app-psql.html)-client is een populaire keuze voor het verbinding maken met PostgreSQL-servers. U kunt verbinding met uw server maken door [psql](../cloud-shell/overview.md) met Azure Cloud Shell te gebruiken. U kunt psql ook in uw lokale omgeving gebruiken, indien beschikbaar. Er wordt automatisch een lege database, **postgres** , gemaakt met een nieuwe PostgreSQL-server. U kunt deze database gebruiken om verbinding te maken met psql, zoals wordt weergegeven in de volgende code. 
+De [psql](https://www.postgresql.org/docs/current/static/app-psql.html)-client is een populaire keuze voor het verbinding maken met PostgreSQL-servers. U kunt verbinding met uw server maken door [psql](../cloud-shell/overview.md) met Azure Cloud Shell te gebruiken. U kunt psql ook in uw lokale omgeving gebruiken, indien beschikbaar. Er wordt automatisch een lege database, **postgres**, gemaakt met een nieuwe PostgreSQL-server. U kunt deze database gebruiken om verbinding te maken met psql, zoals wordt weergegeven in de volgende code. 
 
    ```bash
  psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=myadmin@mydemoserver --dbname=postgres

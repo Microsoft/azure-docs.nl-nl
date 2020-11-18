@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 08/28/2020
 ms.author: victorh
-ms.openlocfilehash: c8b4102968e4b6b633216e29d5e993a1c98fa1c6
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 478f3454a728871040cdbbf9f817394cffe6b82f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89071717"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660250"
 ---
 # <a name="quickstart-deploy-azure-firewall-with-availability-zones---arm-template"></a>Quickstart: Azure Firewall met beschikbaarheidszones implementeren - ARM-sjabloon
 
@@ -93,4 +93,4 @@ Verwijder de resourcegroep en de firewall niet als u van plan bent om door te ga
 Als volgende kunt u de Azure Firewall-logboeken bewaken.
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: Azure Firewall-logboeken bewaken](tutorial-diagnostics.md)
+> [Zelfstudie: Azure Firewall-logboeken bewaken](./firewall-diagnostics.md)

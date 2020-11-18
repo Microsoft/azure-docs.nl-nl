@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: kenwith
-ms.openlocfilehash: 8e345b27fdb2604c0c3264d6935cb9cff8aeec9c
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 7edb7b498450625faf90f0601e19745ad632635a
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656731"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835659"
 ---
 # <a name="plan-an-azure-active-directory-my-apps-deployment"></a>Een Azure Active Directory implementatie van mijn apps plannen
 
@@ -26,7 +26,7 @@ Met behulp van Azure AD my apps kunt u het volgende doen:
 * Ontdek en toegang tot alle Azure AD-verbonden resources van hun bedrijf, zoals toepassingen
 * Toegang aanvragen tot nieuwe apps en groepen
 * Toegang tot deze resources voor anderen beheren
-* Het opnieuw instellen van wacht woorden en Azure Multi-Factor Authentication-instellingen beheren
+* Selfservice voor het opnieuw instellen van wacht woorden en Azure AD Multi-Factor Authentication-instellingen beheren
 * Hun apparaten beheren
 
 Daarnaast kunnen beheerders het volgende beheren:
@@ -54,7 +54,7 @@ Azure AD mijn apps voor delen bedrijven op de volgende manieren:
 
 Mijn apps is gratis en er zijn geen licenties nodig om op basis niveau te gebruiken. Voor het aantal objecten in uw directory en de aanvullende functies die u wilt implementeren, kunnen echter extra licenties nodig zijn. Enkele algemene scenario's voor Azure AD met licentie vereisten zijn onder andere de volgende beveiligings functies:
 
-* [Azure Multi-Factor Authentication](../authentication/concept-mfa-howitworks.md)
+* [Azure AD-Multi-Factor Authentication](../authentication/concept-mfa-howitworks.md)
 * [Groepslid maatschap](../fundamentals/active-directory-manage-groups.md)
 * [Self-service voor wachtwoord opnieuw instellen](../authentication/tutorial-enable-sspr.md)
 * [Azure Active Directory Identity Protection](../identity-protection/overview-identity-protection.md)
@@ -122,11 +122,11 @@ De volgende tabel bevat een lijst met verschillende belang rijke configuraties v
 | De test groepen bepalen| Identificeer de Azure AD-beveiligings groep die moet worden gebruikt en zorg ervoor dat alle leden van de test groep deel uitmaken. |
 | Bepaal welke groep of groepen moeten worden ingeschakeld voor productie.| Identificeer de Azure AD-beveiligings groepen of de Active Directory groepen die zijn gesynchroniseerd met Azure AD om te worden gebruikt. Zorg ervoor dat alle leden van de pilot deel uitmaken van de groep. |
 | Gebruikers toestaan om SSO te gebruiken voor bepaalde typen toepassingen| Federatieve SSO, OAuth, wacht woord-SSO, app proxy |
-| Gebruikers toestaan self-service voor wachtwoord herstel te gebruiken | Ja |
-| Gebruikers toestaan om Multi-Factor Authentication te gebruiken| Ja |
+| Gebruikers toestaan self-service voor wachtwoord herstel te gebruiken | Yes |
+| Gebruikers toestaan om Multi-Factor Authentication te gebruiken| Yes |
 | Gebruikers toestaan om beheer van selfservice groepen te gebruiken voor bepaalde typen groepen| Beveiligings groepen, Microsoft 365 groepen |
-| Gebruikers toestaan self-service app-beheer te gebruiken| Ja |
-| Gebruikers toestaan om toegangs beoordelingen te gebruiken| Ja |
+| Gebruikers toestaan self-service app-beheer te gebruiken| Yes |
+| Gebruikers toestaan om toegangs beoordelingen te gebruiken| Yes |
 
 ### <a name="plan-consent-strategy"></a>Strategie voor het plannen van toestemming
 
@@ -312,4 +312,4 @@ Gebruik de rol met de minst privileged om een vereiste taak in Azure Active Dire
 U kunt [privileged Identity Management](../privileged-identity-management/pim-configure.md) gebruiken om uw rollen te beheren om extra controle, controle en toegangs beoordeling te bieden voor gebruikers met mapmachtigingen.
 
 ## <a name="next-steps"></a>Volgende stappen
-[Een implementatie van Azure Multi-Factor Authentication plannen](../authentication/howto-mfa-getstarted.md)
+[Een implementatie van Azure AD Multi-Factor Authentication plannen](../authentication/howto-mfa-getstarted.md)

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 35c120b6d7715ac6fefe0e8712040108568ee8de
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 037ff64f4811515e7ce64d66a36e08e71de54058
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747423"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831987"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Quickstart: Schakel SSH en RDP in via een IoT Hub-apparaatstroom in met behulp van een C-proxy-toepassing (preview)
 
@@ -46,9 +46,7 @@ In de volgende afbeelding ziet u hoe het apparaat en de proxyprogramma's in de s
 > [!NOTE]
 > SSH-verkeer dat via een apparaatstream wordt verstuurd, gaat via een tunnel van het streaming-eindpunt van de IoT-hub in plaats van dat het rechtstreeks tussen de service en het apparaat wordt verzonden. Zie de [voordelen van het gebruik van IOT Hub-apparaten](iot-hub-device-streams-overview.md#benefits) voor meer informatie. In de afbeelding ziet u bovendien hoe de SSH-daemon die wordt uitgevoerd op hetzelfde apparaat (of machine) als de proxy in het apparaat. In deze quickstart zorgt de verstrekking van het IP-adres van de SSH-daemon ervoor dat de proxy in het apparaat en de daemon ook op verschillende computers worden uitgevoerd.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -62,11 +60,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 * [Visual Studio 2019](https://www.visualstudio.com/vs/) installeren met de workload [Desktopontwikkeling met C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/) ingeschakeld.
 * Installeer de meest recente versie van [Git](https://git-scm.com/download/).
 
-* Voer de volgende opdracht uit om de Azure IoT-extensie voor Azure CLI aan uw CLI Shell-instantie toe te voegen. Met de IOT-extensie worden IoT Hub-, IoT Edge- en DPS-specifieke (Microsoft System Center Data Protection Manager) opdrachten toegevoegd aan de Azure CLI.
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
@@ -88,7 +82,7 @@ Voor deze quickstart gebruikt u de [Azure IoT device-SDK voor C](iot-hub-device-
 
     Deze bewerking duurt enkele minuten.
 
-1. Maak de submap *cmake* in de hoofdmap van de Git-opslagplaats en navigeer naar die map. Voer de volgende opdrachten uit vanuit de map *azure-iot-sdk-c* :
+1. Maak de submap *cmake* in de hoofdmap van de Git-opslagplaats en navigeer naar die map. Voer de volgende opdrachten uit vanuit de map *azure-iot-sdk-c*:
 
     ```cmd/sh
     mkdir cmake
@@ -104,7 +98,7 @@ Voor deze quickstart gebruikt u de [Azure IoT device-SDK voor C](iot-hub-device-
       make -j
       ```
 
-   * Voer in Windows de volgende opdrachten uit in Developer Command Prompt voor Visual Studio 2015- of 2017. Er wordt een Visual Studio-oplossing voor het gesimuleerde apparaat gegenereerd in de map *cmake* .
+   * Voer in Windows de volgende opdrachten uit in Developer Command Prompt voor Visual Studio 2015- of 2017. Er wordt een Visual Studio-oplossing voor het gesimuleerde apparaat gegenereerd in de map *cmake*.
 
       ```cmd
       rem For VS2015

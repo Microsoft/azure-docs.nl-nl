@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbcc2351b7ead3714cfd21aa30b031cec75074a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7eafeaf59757fcda978fa89b4bc2f9882b769e48
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84463753"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835897"
 ---
 # <a name="simulating-risk-detections-in-identity-protection"></a>Risico detecties in identiteits beveiliging simuleren
 
@@ -40,9 +40,9 @@ Meer informatie over elk risico detectie vindt u in het artikel, [wat risico](co
 Als u de volgende procedure wilt uitvoeren, moet u gebruikmaken van:
 
 - De [Tor-Browser](https://www.torproject.org/projects/torbrowser.html.en) voor het simuleren van anonieme IP-adressen. Mogelijk moet u een virtuele machine gebruiken als uw organisatie beperkt met behulp van de Tor-browser.
-- Een test account dat nog niet is geregistreerd voor Azure Multi-Factor Authentication.
+- Een test account dat nog niet is geregistreerd voor Azure AD-Multi-Factor Authentication.
 
-**Als u een aanmelding vanaf een anoniem IP-adres wilt simuleren, voert u de volgende stappen**uit:
+**Als u een aanmelding vanaf een anoniem IP-adres wilt simuleren, voert u de volgende stappen** uit:
 
 1. Navigeer met behulp van de [Tor-Browser](https://www.torproject.org/projects/torbrowser.html.en)naar [https://myapps.microsoft.com](https://myapps.microsoft.com) .   
 2. Voer de referenties in van het account dat u wilt weer geven in het rapport **aanmeldingen van anonieme IP-adressen** .
@@ -61,9 +61,9 @@ In de volgende procedure wordt een nieuw gemaakt:
 Als u de volgende procedure wilt uitvoeren, moet u een gebruikers account gebruiken dat:
 
 - Minstens een aanmeldings geschiedenis van 30 dagen.
-- Azure Multi-Factor Authentication ingeschakeld.
+- Azure AD Multi-Factor Authentication ingeschakeld.
 
-**Als u een aanmelding vanaf een onbekende locatie wilt simuleren, voert u de volgende stappen**uit:
+**Als u een aanmelding vanaf een onbekende locatie wilt simuleren, voert u de volgende stappen** uit:
 
 1. Wanneer u zich aanmeldt met uw test account, mislukt de MFA-uitdaging (multi-factor Authentication) door niet de MFA-Challenge door te geven.
 2. Ga met uw nieuwe VPN naar [https://myapps.microsoft.com](https://myapps.microsoft.com) en voer de referenties van uw test account in.

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 3e53937122b8721aff5db435ac447b686ea16643
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: adf0f42b34a4bd7e5df2d2994408dbc175c5e01b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748679"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831919"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Snelstart: Schakel SSH en RDP in via een IoT Hub-apparaatstream, met behulp van een C#-proxy-toepassing (preview)
 
@@ -43,9 +43,7 @@ In de volgende afbeelding ziet u hoe in dit voorbeeld de proxytoepassingen op he
 > [!NOTE]
 > SSH-verkeer dat via een apparaatstream wordt verstuurd, gaat via een tunnel van het streaming-eindpunt van de IoT-hub in plaats van dat het rechtstreeks tussen de service en het apparaat wordt verzonden. Zie de [voordelen van het gebruik van IOT Hub-apparaten](iot-hub-device-streams-overview.md#benefits) voor meer informatie.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -58,28 +56,21 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 * De twee voorbeeldtoepassingen die u uitvoert in deze quickstart, zijn geschreven in C#. Op de ontwikkelcomputer moet .NET Core SDK 2.1.0 of hoger zijn geïnstalleerd.
 
-  U kunt de [.NET Core SDK voor meerdere platforms downloaden van .NET](https://www.microsoft.com/net/download/all).
+    U kunt de [.NET Core SDK voor meerdere platforms downloaden van .NET](https://www.microsoft.com/net/download/all).
 
-* Controleer de huidige versie van C# op de ontwikkelcomputer met behulp van de volgende opdracht:
+    Controleer de huidige versie van C# op de ontwikkelcomputer met behulp van de volgende opdracht:
 
     ```
     dotnet --version
     ```
 
-* Voer de volgende opdracht uit om de Azure IoT-extensie voor Azure CLI aan uw CLI Shell-instantie toe te voegen. Met de IOT-extensie worden IoT Hub-, IoT Edge- en DPS-specifieke (Microsoft System Center Data Protection Manager) opdrachten toegevoegd aan de Azure CLI.
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
-
 * [Download de Azure IoT-voorbeelden in C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip) en pak het ZIP-archief uit.
 
 * Een geldig gebruikersaccount en geldige referenties op het apparaat (Windows of Linux) dat is gebruikt om de gebruiker te verifiëren.
+
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="create-an-iot-hub"></a>Een IoT Hub maken
 
@@ -195,7 +186,7 @@ Console-uitvoer aan de servicezijde (de proxytoepassing in de service luistert b
 
 ![Uitvoer van de proxytoepassing in de service](./media/quickstart-device-streams-proxy-csharp/service-console-output.png)
 
-Console-uitvoer in de proxytoepassing op het apparaat, die verbinding maakt met de SSH-daemon via *IP_address:22* :
+Console-uitvoer in de proxytoepassing op het apparaat, die verbinding maakt met de SSH-daemon via *IP_address:22*:
 
 ![Uitvoer van de proxytoepassing op het apparaat](./media/quickstart-device-streams-proxy-csharp/device-console-output.png)
 

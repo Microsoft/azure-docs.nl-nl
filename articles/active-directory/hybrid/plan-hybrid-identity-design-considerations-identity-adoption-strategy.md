@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 318da4e92e6d07df1fcb89a4df0cb29d82caa630
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f52e46ff9cab7d3d150af9fd7b4f1c432bec74b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91294860"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836186"
 ---
 # <a name="define-a-hybrid-identity-adoption-strategy"></a>Een strategie voor het implementeren van een hybride identiteit definiëren
 In deze taak definieert u de strategie voor het implementeren van de hybride identiteit voor uw hybride identiteits oplossing om te voldoen aan de bedrijfs vereisten die worden beschreven in:
@@ -176,7 +176,7 @@ Het volgende wordt niet ondersteund en moet niet worden gekozen als implementati
 > 
 
 ## <a name="define-multi-factor-authentication-strategy"></a>Strategie voor multi-factor Authentication definiëren
-In deze taak definieert u de multi-factor Authentication-strategie die moet worden gebruikt.  Azure Multi-Factor Authentication is verkrijgbaar in twee verschillende versies.  Een op de cloud gebaseerde en de andere is on-premises gebaseerd op de Azure MFA-server.  Op basis van de evaluatie die u hierboven hebt gedaan, kunt u bepalen welke oplossing het juiste is voor uw strategie.  Gebruik de onderstaande tabel om te bepalen welke ontwerp optie het beste voldoet aan de beveiligings vereisten van uw bedrijf:
+In deze taak definieert u de multi-factor Authentication-strategie die moet worden gebruikt.  Azure AD Multi-Factor Authentication is verkrijgbaar in twee verschillende versies.  Een op de cloud gebaseerde en de andere is on-premises gebaseerd op de Azure MFA-server.  Op basis van de evaluatie die u hierboven hebt gedaan, kunt u bepalen welke oplossing het juiste is voor uw strategie.  Gebruik de onderstaande tabel om te bepalen welke ontwerp optie het beste voldoet aan de beveiligings vereisten van uw bedrijf:
 
 Multi-factor design-opties:
 

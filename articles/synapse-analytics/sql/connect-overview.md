@@ -7,15 +7,15 @@ ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: ''
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 532ada430e7ff2ae76eb0cfbc389792bb0d98209
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 0897ca35dd5ae1b7209a36aee4bd5335d4ea4d25
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322665"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681528"
 ---
 # <a name="connect-to-synapse-sql"></a>Verbinding maken met Synapse SQL
 Maak verbinding met de Synapse-SQL-optie in Azure Synapse Analytics.

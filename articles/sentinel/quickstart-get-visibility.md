@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, fasttrack-edit
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: affefb302d602e9069a903fa5f6a0fbae78992b9
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 26a29524e0bf329a368b3cd2281dd9b070b42a14
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92516950"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660811"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel"></a>Quickstart: Aan de slag met Azure Sentinel
 
@@ -38,15 +38,15 @@ Om te visualiseren en analyseren wat er gebeurt in uw omgeving, is het goed om e
 
 De hoofdtekst van de overzichtspagina geeft in een oogopslag inzicht in de beveiligingsstatus van uw werkruimte:
 
-- **Gebeurtenissen en waarschuwingen in de loop van de tijd** : Hier wordt het aantal gebeurtenissen weergegeven en hoeveel waarschuwingen er zijn gemaakt op basis van deze gebeurtenissen. Als er sprake is van een ongebruikelijke piek, ziet u daar waarschuwingen voor. Als er iets ongebruikelijk is met als gevolg een piek en u geen waarschuwingen ziet, kan dit reden voor ongerustheid zijn.
+- **Gebeurtenissen en waarschuwingen in de loop van de tijd**: Hier wordt het aantal gebeurtenissen weergegeven en hoeveel waarschuwingen er zijn gemaakt op basis van deze gebeurtenissen. Als er sprake is van een ongebruikelijke piek, ziet u daar waarschuwingen voor. Als er iets ongebruikelijk is met als gevolg een piek en u geen waarschuwingen ziet, kan dit reden voor ongerustheid zijn.
 
-- **Gebeurtenissen die schadelijk kunnen zijn** : Wanneer er verkeer wordt gedetecteerd van bronnen waarvan bekend is dat ze schadelijk zijn, waarschuwt Azure Sentinel u hiervoor op de kaart. Als u oranje cirkels ziet, gaat het om inkomend verkeer: iemand probeert toegang te krijgen tot uw organisatie vanaf een bekend schadelijk IP-adres. Als de activiteit uitgaand is (rood), betekent dit dat er gegevens van uw netwerk worden gestreamd vanuit uw organisatie naar een bekend schadelijk IP-adres.
+- **Gebeurtenissen die schadelijk kunnen zijn**: Wanneer er verkeer wordt gedetecteerd van bronnen waarvan bekend is dat ze schadelijk zijn, waarschuwt Azure Sentinel u hiervoor op de kaart. Als u oranje cirkels ziet, gaat het om inkomend verkeer: iemand probeert toegang te krijgen tot uw organisatie vanaf een bekend schadelijk IP-adres. Als de activiteit uitgaand is (rood), betekent dit dat er gegevens van uw netwerk worden gestreamd vanuit uw organisatie naar een bekend schadelijk IP-adres.
 
    ![Kaart van schadelijk verkeer](./media/qs-get-visibility/map.png)
 
-- **Recente incidenten** : Om uw recente incidenten te bekijken, evenals hun ernst en het aantal waarschuwingen dat is gekoppeld aan het incident. Als u een onverwachte piek ziet voor een bepaald type waarschuwing, kan dit betekenen dat er een aanval wordt uitgevoerd. Als u bijvoorbeeld een plotselinge piek ziet van 20 Pass-the-hash-gebeurtenissen vanuit Microsoft Defender for Identity (voorheen Azure ATP), is het mogelijk dat iemand op dit moment een aanval uitvoert.
+- **Recente incidenten**: Om uw recente incidenten te bekijken, evenals hun ernst en het aantal waarschuwingen dat is gekoppeld aan het incident. Als u een onverwachte piek ziet voor een bepaald type waarschuwing, kan dit betekenen dat er een aanval wordt uitgevoerd. Als u bijvoorbeeld een plotselinge piek ziet van 20 Pass-the-hash-gebeurtenissen vanuit Microsoft Defender for Identity (voorheen Azure ATP), is het mogelijk dat iemand op dit moment een aanval uitvoert.
 
-- **Gegevensbronanomalieën** : De gegevensanalisten van Microsoft hebben modellen gemaakt die de gegevens uit uw gegevensbronnen voortdurend doorzoeken op afwijkingen. Als er geen afwijkingen zijn, wordt er niets weergegeven. Als er afwijkingen worden gedetecteerd, moet u deze in detail bekijken om te zien wat er is gebeurd. Klik bijvoorbeeld op de piek in Azure-activiteiten. Klik op **Grafiek** om te zien wanneer de piek zich heeft voorgedaan en filter vervolgens op activiteiten die zijn opgetreden in die periode om te zien wat de oorzaak van de piek is.
+- **Gegevensbronanomalieën**: De gegevensanalisten van Microsoft hebben modellen gemaakt die de gegevens uit uw gegevensbronnen voortdurend doorzoeken op afwijkingen. Als er geen afwijkingen zijn, wordt er niets weergegeven. Als er afwijkingen worden gedetecteerd, moet u deze in detail bekijken om te zien wat er is gebeurd. Klik bijvoorbeeld op de piek in Azure-activiteiten. Klik op **Grafiek** om te zien wanneer de piek zich heeft voorgedaan en filter vervolgens op activiteiten die zijn opgetreden in die periode om te zien wat de oorzaak van de piek is.
 
    ![Afwijkende gegevensbronnen](./media/qs-get-visibility/anomolies.png)
 
@@ -57,16 +57,16 @@ Ingebouwde werkmappen bieden geïntegreerde gegevens uit uw verbonden gegevensbr
 1. Selecteer onder **Instellingen** de optie **Werkmappen**. Onder **Geïnstalleerd** worden alle geïnstalleerde werkmappen weergegeven. Onder **Alle** ziet u de complete galerie met ingebouwde werkmappen die beschikbaar zijn voor installatie. 
 2. Zoek naar een specifieke werkmap om de hele lijst te zien met beschrijvingen van de mappen. 
 3. Als we ervan uitgaan dat u Azure AD gebruikt, raden we u aan om ten minste de volgende werkmappen te installeren om aan de slag te gaan met Azure Sentinel:
-   - **Azure AD** : Gebruik een van de volgende werkmappen, of beide:
-       - **Azure AD-aanmeldingen** : hierin worden aanmeldingen in de loop van de tijd geanalyseerd om te zien of er afwijkingen zijn. Deze werkmap vermeldt mislukte aanmeldingen op toepassing, apparaat en locatie, zodat u in een oogopslag kunt zien of er iets vreemds aan de hand is. Let met name op meerdere mislukte aanmeldingen. 
-       - **Azure AD-auditlogboeken** : hierin worden beheeractiviteiten geanalyseerd, zoals wijzigingen van gebruikers (toevoegen, verwijderen, enz.), het maken van groepen en aanpassingen.  
+   - **Azure AD**: Gebruik een van de volgende werkmappen, of beide:
+       - **Azure AD-aanmeldingen**: hierin worden aanmeldingen in de loop van de tijd geanalyseerd om te zien of er afwijkingen zijn. Deze werkmap vermeldt mislukte aanmeldingen op toepassing, apparaat en locatie, zodat u in een oogopslag kunt zien of er iets vreemds aan de hand is. Let met name op meerdere mislukte aanmeldingen. 
+       - **Azure AD-auditlogboeken**: hierin worden beheeractiviteiten geanalyseerd, zoals wijzigingen van gebruikers (toevoegen, verwijderen, enz.), het maken van groepen en aanpassingen.  
 
    - Voeg een werkmap toe voor uw firewall, zoals de werkmap Palo Alto. De werkmap analyseert het verkeer op uw firewall en biedt correlaties tussen uw firewallgegevens en bedreigingsgebeurtenissen, en accentueert verdachte gebeurtenissen binnen entiteiten. Werkmappen bieden informatie over trends in uw verkeer en u kunt inzoomen op resultaten en deze filteren. 
 
       ![Palo Alto-dashboard](./media/qs-get-visibility/palo-alto-week-query.png)
 
 
-U kunt de werkmappen aanpassen door de hoofdquery te bewerken ![knop query bewerken](./media/qs-get-visibility/edit-query-button.png). Klik op de knop ![Log Analytics](./media/qs-get-visibility/go-to-la-button.png) om naar [Log Analytics te gaan om de query daar te bewerken](../azure-monitor/log-query/get-started-portal.md). Selecteer het beletselteken (...) en vervolgens **Tegelgegevens aanpassen** om het hoofdtijdfilter te bewerken of de specifieke tegels uit de werkmap te verwijderen.
+U kunt de werkmappen aanpassen door de hoofdquery te bewerken ![knop query bewerken](./media/qs-get-visibility/edit-query-button.png). Klik op de knop ![Log Analytics](./media/qs-get-visibility/go-to-la-button.png) om naar [Log Analytics te gaan om de query daar te bewerken](../azure-monitor/log-query/log-analytics-tutorial.md). Selecteer het beletselteken (...) en vervolgens **Tegelgegevens aanpassen** om het hoofdtijdfilter te bewerken of de specifieke tegels uit de werkmap te verwijderen.
 
 Ga voor meer informatie over het werken met query's naar [Tutorial: Visual data in Log Analytics](../azure-monitor/learn/tutorial-logs-dashboards.md) (Zelfstudie: Gegevens visualiseren in Log Analytics).
 
@@ -129,4 +129,3 @@ Meer informatie over vooraf gedefinieerde detecties vindt u in [Tutorial: Detect
 In deze quickstart hebt u geleerd hoe u aan de slag gaat met Azure Sentinel. Ga verder met de zelfstudie voor het [detecteren van bedreigingen](tutorial-detect-threats-built-in.md).
 > [!div class="nextstepaction"]
 > [Definieer aangepaste regels voor de detectie van bedreigingen](tutorial-detect-threats-custom.md) om uw reacties op bedreigingen te automatiseren.
-

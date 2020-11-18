@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: sql
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: a0fbcab194b90bbe89948fee1efb604266dbbb0f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 7c6de17e4ed4f5666554908e9b13fb9e299b027a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311752"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682057"
 ---
 # <a name="manage-access-to-workspaces-data-and-pipelines"></a>Toegang tot werkruimten, gegevens en pijplijnen beheren
 
@@ -166,8 +166,8 @@ Volg deze stappen als u een gebruiker toegang wilt verlenen tot een **individuel
     ```
 
 > [!IMPORTANT]
-> *db_datareader* en *db_datawriter* kunnen worden gebruikt voor lees- en schrijfmachtigingen als het verlenen van *db_owner* -toestemming niet wenselijk is.
-> Een Spark-gebruiker heeft de *db_owner* -machtiging nodig om rechtstreeks vanuit Spark naar/vanuit een toegewezen SQL-pool te lezen en te schrijven.
+> *db_datareader* en *db_datawriter* kunnen worden gebruikt voor lees- en schrijfmachtigingen als het verlenen van *db_owner*-toestemming niet wenselijk is.
+> Een Spark-gebruiker heeft de *db_owner*-machtiging nodig om rechtstreeks vanuit Spark naar/vanuit een toegewezen SQL-pool te lezen en te schrijven.
 
 Wanneer de gebruikers zijn gemaakt, controleert u of u met de serverloze SQL-pool een query kan uitvoeren voor het opslagaccount.
 

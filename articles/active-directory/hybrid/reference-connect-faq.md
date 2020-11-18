@@ -15,12 +15,12 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f6c75337c27e14fb77161cf641cde0a582901e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff2651d2fed9c307bbb90623572b4a74d750d3a4
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90014630"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836067"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Veelgestelde vragen over Azure Active Directory Connect
 
@@ -65,7 +65,7 @@ Nee, meerdere connectors voor hetzelfde AD-domein worden niet ondersteund.
 **V: kan ik de Azure AD Connect Data Base van de lokale data base verplaatsen naar een extern SQL Server exemplaar?**   
 Ja, de volgende stappen bevatten algemene richt lijnen voor het uitvoeren van deze procedure. Er wordt momenteel gewerkt aan een gedetailleerder document.
 1. Maak een back-up van de LocalDB ADSync-data base.
-De eenvoudigste manier om dit te doen is door SQL Server Management Studio geïnstalleerd op dezelfde computer te gebruiken als Azure AD Connect. Maak verbinding met *(LocalDb) .\ADSync*en maak vervolgens een back-up van de ADSync-data base.
+De eenvoudigste manier om dit te doen is door SQL Server Management Studio geïnstalleerd op dezelfde computer te gebruiken als Azure AD Connect. Maak verbinding met *(LocalDb) .\ADSync* en maak vervolgens een back-up van de ADSync-data base.
 
 2. Herstel de ADSync-Data Base naar uw externe SQL Server-exemplaar.
 
@@ -218,7 +218,7 @@ Ja, u moet nog steeds een upgrade uitvoeren naar versie 1.1.750.0 of hoger. Het 
 U hoeft niet de gebruikers naam en het wacht woord te weten die voor het eerst zijn gebruikt voor het bijwerken van Azure AD Connect. Gebruik een Azure AD-account met de rol globale beheerder.
 
 **V: hoe kan ik zien welke versie van Azure AD Connect Ik gebruik?**  
-Als u wilt controleren welke versie van Azure AD Connect op uw server is geïnstalleerd, gaat u naar configuratie scherm en zoekt u de geïnstalleerde versie van Microsoft Azure AD verbinding maken door **Program**ma's en onderdelen van het selectie vakje te selecteren  >  **Programs and Features**, zoals hier wordt weer gegeven:
+Als u wilt controleren welke versie van Azure AD Connect op uw server is geïnstalleerd, gaat u naar configuratie scherm en zoekt u de geïnstalleerde versie van Microsoft Azure AD verbinding maken door **Program** ma's en onderdelen van het selectie vakje te selecteren  >  **Programs and Features**, zoals hier wordt weer gegeven:
 
 ![Azure AD Connect-versie in het configuratie scherm](./media/reference-connect-faq/faq1.png)
 
@@ -261,7 +261,7 @@ Als u hulp nodig hebt bij het upgraden naar een nieuwere versie van Azure AD Con
 ## <a name="operational-best-practice"></a>Operationele best practice    
 Hieronder vindt u enkele aanbevolen procedures voor het synchroniseren van de Windows Server-Active Directory en Azure Active Directory.
 
-**Multi-factor Authentication Toep assen voor alle gesynchroniseerde accounts** Azure Multi-Factor Authentication helpt bij het beschermen van de toegang tot gegevens en toepassingen, terwijl u eenvoudiger bent voor gebruikers. Het biedt extra beveiliging door een tweede vorm van verificatie te vereisen en sterke verificatie te bieden met behulp van een bereik aan gebruiks vriendelijke verificatie methoden. Gebruikers kunnen of kunnen niet worden aangevraagd voor MFA op basis van configuratie beslissingen die een beheerder doet. U kunt hier meer lezen over MFA: https://www.microsoft.com/security/business/identity/mfa?rtc=1
+**Multi-factor Authentication Toep assen voor alle gesynchroniseerde accounts** Met Azure AD Multi-Factor Authentication kunt u de toegang tot gegevens en toepassingen beschermen terwijl u eenvoudiger bent voor gebruikers. Het biedt extra beveiliging door een tweede vorm van verificatie te vereisen en sterke verificatie te bieden met behulp van een bereik aan gebruiks vriendelijke verificatie methoden. Gebruikers kunnen of kunnen niet worden aangevraagd voor MFA op basis van configuratie beslissingen die een beheerder doet. U kunt hier meer lezen over MFA: https://www.microsoft.com/security/business/identity/mfa?rtc=1
 
 **Volg de Azure AD Connect server-beveiligings richtlijnen** De Azure AD Connect-server bevat essentiële identiteits gegevens en moet worden behandeld als een onderdeel van laag 0 zoals beschreven in het model van de [Active Directory-administratieve laag](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material). Raadpleeg ook onze [richt lijnen voor het beveiligen van uw AADConnect-server](./how-to-connect-install-prerequisites.md#azure-ad-connect-server).
 

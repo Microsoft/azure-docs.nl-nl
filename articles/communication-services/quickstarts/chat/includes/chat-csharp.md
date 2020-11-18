@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 994f2829d260223567dcb5aed859812aa1fef3d1
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: a76c6467dac69fd3d21aa659c52227046c166938
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91828803"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94816658"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -46,7 +46,7 @@ dotnet build
 De Azure Communication chat-clientbibliotheek installeren voor .NET
 
 ```PowerShell
-dotnet add package Azure.Communication.Chat --version 1.0.0-beta.2
+dotnet add package Azure.Communication.Chat --version 1.0.0-beta.3
 ``` 
 
 ## <a name="object-model"></a>Objectmodel
@@ -77,7 +77,7 @@ ChatClient chatClient = new ChatClient(endpoint, communicationUserCredential);
 
 Gebruik de methode `createChatThread` om een chat-thread te maken.
 - Gebruik `topic` om een onderwerp te geven aan deze chat. Het onderwerp kan worden bijgewerkt nadat de chat-thread is gemaakt met behulp van de functie `UpdateThread`.
-- Gebruik de eigenschap `members` om een lijst met `ChatThreadMember`-objecten door te geven om aan de chat-thread toe te voegen. Het `ChatThreadMember`-object wordt geïnitialiseerd met een `CommunicationUser`-object. Om een `CommunicationUser`-object op te halen, moet u een toegangs-id doorgeven die u hebt gemaakt door de instructies in [Een gebruiker maken](../../access-tokens.md#create-a-user) te volgen.
+- Gebruik de eigenschap `members` om een lijst met `ChatThreadMember`-objecten door te geven om aan de chat-thread toe te voegen. Het `ChatThreadMember`-object wordt geïnitialiseerd met een `CommunicationUser`-object. Om een `CommunicationUser`-object op te halen, moet u een toegangs-id doorgeven die u hebt gemaakt door de instructies in [Een gebruiker maken](../../access-tokens.md#create-an-identity) te volgen.
 
 Het antwoord `chatThreadClient` wordt gebruikt om bewerkingen uit te voeren op de gemaakte chat-thread: leden toevoegen aan de chat-thread, een bericht verzenden, een bericht verwijderen, enz. Het bevat het kenmerk `Id` dat de unieke id van de chat-thread is. 
 

@@ -9,12 +9,12 @@ ms.subservice: workspace
 ms.date: 08/25/2020
 ms.author: alehall
 ms.reviewer: jrasnick
-ms.openlocfilehash: a5c9b47bf5d638f3c15416416a435653eeb68505
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 46ab1df1b776bf8dc9d6d917e5394c3efeec0de4
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172055"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659383"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-with-azure-cli"></a>Quickstart: Een Azure Synapse-werkruimte maken met Azure CLI
 
@@ -22,7 +22,7 @@ Azure CLI is de nieuwe opdrachtregel van Azure voor het beheren van Azure-resour
 
 In deze quickstart leert u hoe u een Synapse-werkruimte maakt met behulp van Azure CLI.
 
-Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](https://azure.microsoft.com/free/).
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -32,28 +32,7 @@ Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](
     > [!IMPORTANT]
     > De Azure Synapse-werkruimte moet kunnen lezen uit en schrijven naar het geselecteerde ADLS Gen2-account. Daarnaast moet u voor elk opslagaccount dat u als primair opslagaccount koppelt **hiërarchische naamruimte** hebben ingeschakeld bij het maken van het opslagaccount, zoals beschreven op de pagina [Een opslagaccount maken](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account). 
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-## <a name="install-the-azure-cli-locally"></a>De Azure CLI lokaal installeren
-
-Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u Azure CLI liever lokaal installeert en gebruikt.
-
-Als u de Azure CLI lokaal uitvoert, moet u zich aanmelden en verifiëren. Deze stap is niet nodig als u Azure Cloud Shell gebruikt. Als u zich bij Azure CLI wilt aanmelden, voert u `az login` uit en verifieert u zich in het browservenster:
-
-```azurecli
-az login
-```
-
-Zie [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli) voor meer informatie over verificatie met Azure CLI.
-
-## <a name="install-azure-synapse-extension-for-azure-cli"></a>De Azure Synapse-extensie voor Azure CLI installeren
-
-```azurecli
-az extension add --name synapse
-```
-
-> [!WARNING]
-> De Azure Synapse-extensie voor Azure CLI is beschikbaar als preview-versie.
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="create-an-azure-synapse-workspace-using-the-azure-cli"></a>Een Azure Synapse-werkruimte maken met behulp van Azure CLI
 

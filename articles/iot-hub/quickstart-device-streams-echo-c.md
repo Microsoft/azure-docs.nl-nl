@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: ad31eb04f53197c4c3ccdd173cd57564c65d5a35
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: de310846ad0449a0dac7eccd60d82d4c68ef519b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747456"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832201"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Quickstart: communiceren met een apparaattoepassing in C via IoT Hub-apparaatstreams (preview)
 
@@ -36,9 +36,7 @@ De C-toepassing aan de apparaatzijde in deze quickstart heeft de volgende functi
 
 De code demonstreert het initiatieproces van een apparaatstream en laat ook zien hoe gegevens worden verzonden en ontvangen.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -48,13 +46,9 @@ De volgende vereisten zijn nodig:
 
 * Installeer de meest recente versie van [Git](https://git-scm.com/download/).
 
-* Voer de volgende opdracht uit om de Azure IoT-extensie voor Azure CLI aan uw CLI Shell-instantie toe te voegen. Met de IOT-extensie worden IoT Hub-, IoT Edge- en DPS-specifieke (Microsoft System Center Data Protection Manager) opdrachten toegevoegd aan de Azure CLI.
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-
-   [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 De preview van apparaatstreams wordt momenteel alleen ondersteund voor IoT-hubs die in de volgende regio's zijn gemaakt:
 
@@ -82,7 +76,7 @@ Voor deze quickstart gebruikt u de [Azure IoT device-SDK voor C](iot-hub-device-
 
     Deze bewerking duurt enkele minuten.
 
-1. Maak de submap *cmake* in de hoofdmap van de Git-opslagplaats en navigeer naar die map. Voer de volgende opdrachten uit vanuit de map *azure-iot-sdk-c* :
+1. Maak de submap *cmake* in de hoofdmap van de Git-opslagplaats en navigeer naar die map. Voer de volgende opdrachten uit vanuit de map *azure-iot-sdk-c*:
 
     ```cmd/sh
     mkdir cmake
@@ -98,7 +92,7 @@ Voor deze quickstart gebruikt u de [Azure IoT device-SDK voor C](iot-hub-device-
       make -j
       ```
 
-   * Open een [Opdrachtprompt voor ontwikkelaars voor Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs) in Windows. Voer de opdracht uit voor uw versie van Visual Studio. Deze quickstart gebruikt Visual Studio 2019. Deze opdrachten maken een Visual Studio-oplossing voor het gesimuleerde apparaat in de map *cmake* .
+   * Open een [Opdrachtprompt voor ontwikkelaars voor Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs) in Windows. Voer de opdracht uit voor uw versie van Visual Studio. Deze quickstart gebruikt Visual Studio 2019. Deze opdrachten maken een Visual Studio-oplossing voor het gesimuleerde apparaat in de map *cmake*.
 
       ```cmd
       rem For VS2015

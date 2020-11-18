@@ -10,12 +10,12 @@ ms.date: 07/28/2020
 ms.topic: include
 ms.custom: include file
 ms.author: dademath
-ms.openlocfilehash: c8bce6afd914a22be80a57ae234e39161d182b7f
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: a084295aec2cafadd07d47e85a0116a89d37c985
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92499164"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94816729"
 ---
 Ga aan de slag met Azure Communication Services door de clientbibliotheek voor C#-sms van Communications Services te gebruiken om sms-berichten te verzenden.
 
@@ -41,7 +41,7 @@ Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of 
 
 ### <a name="create-a-new-c-application"></a>Een nieuwe C#-toepassing maken
 
-Gebruik in een consolevenster (zoals cmd, PowerShell of Bash) de opdracht `dotnet new` om een nieuwe console-app te maken met de naam `SmsQuickstart`. Met deze opdracht maakt u een eenvoudig Hallo wereld-C#-project met één bronbestand: **Program.cs** .
+Gebruik in een consolevenster (zoals cmd, PowerShell of Bash) de opdracht `dotnet new` om een nieuwe console-app te maken met de naam `SmsQuickstart`. Met deze opdracht maakt u een eenvoudig Hallo wereld-C#-project met één bronbestand: **Program.cs**.
 
 ```console
 dotnet new console -o SmsQuickstart
@@ -59,7 +59,7 @@ dotnet build
 Blijf in de toepassingsmap en installeer met de opdracht `dotnet add package` de Azure Communications Services sms-clientbibliotheek voor het .NET-pakket.
 
 ```console
-dotnet add package Azure.Communication.Sms --version 1.0.0-beta.2
+dotnet add package Azure.Communication.Sms --version 1.0.0-beta.3
 ```
 
 Voeg een `using`-instructie toe aan het begin van **Program.cs** om de naamruimte `Azure.Communication` op te nemen.
@@ -95,7 +95,7 @@ SmsClient smsClient = new SmsClient(connectionString);
 
 ## <a name="send-an-sms-message"></a>Een sms-bericht verzenden
 
-Een sms-bericht verzenden door de verzendmethode aan te roepen. Voeg deze code toe aan het einde van de `Main`-methode in **Program.cs** :
+Een sms-bericht verzenden door de verzendmethode aan te roepen. Voeg deze code toe aan het einde van de `Main`-methode in **Program.cs**:
 
 ```csharp
 smsClient.Send(

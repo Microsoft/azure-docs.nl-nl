@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/14/2020
 ms.author: allensu
-ms.openlocfilehash: 4a397a67c0e40de8be1d42ee56618357cf36c55f
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 96c0242414c67d97fc324977b1259f63c27c3a26
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92017723"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696809"
 ---
 # <a name="what-is-azure-load-balancer"></a>Wat is Azure Load Balancer?
 
@@ -44,29 +44,29 @@ Met Standard Load Balancer kunt u uw toepassingen schalen en services met hoge b
 
 De belangrijkste scenario's die u kunt uitvoeren met Standard Load Balancer zijn onder meer:
 
-- Taakverdeling van **[intern](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-internal-portal)** en **[extern](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-manage-portal)** verkeer naar virtuele machines van Azure.
+- Taakverdeling van **[intern](./quickstart-load-balancer-standard-internal-portal.md)** en **[extern](./tutorial-load-balancer-standard-manage-portal.md)** verkeer naar virtuele machines van Azure.
 
-- De beschikbaarheid vergroten door resources **[binnen](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-public-zonal-portal)** en **[tussen](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-public-zone-redundant-portal)** zones te distribueren.
+- De beschikbaarheid vergroten door resources **[binnen](./tutorial-load-balancer-standard-public-zonal-portal.md)** en **[tussen](./tutorial-load-balancer-standard-public-zone-redundant-portal.md)** zones te distribueren.
 
-- **[Uitgaande connectiviteit ](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections)** configureren voor virtuele machines van Azure.
+- **[Uitgaande connectiviteit](./load-balancer-outbound-connections.md)** configureren voor virtuele machines van Azure.
 
-- **[Statuscontroles](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview)** gebruiken voor het bewaken van resources met taakverdeling.
+- **[Statuscontroles](./load-balancer-custom-probe-overview.md)** gebruiken voor het bewaken van resources met taakverdeling.
 
-- **[Port forwarding](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-port-forwarding-portal)** gebruiken om toegang te krijgen tot virtuele machines in een virtueel netwerk via een openbaar IP-adres en poort.
+- **[Port forwarding](./tutorial-load-balancer-port-forwarding-portal.md)** gebruiken om toegang te krijgen tot virtuele machines in een virtueel netwerk via een openbaar IP-adres en poort.
 
-- Ondersteuning voor **[taakverdeling](https://docs.microsoft.com/azure/virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell)** van **[IPv6](https://docs.microsoft.com/azure/virtual-network/ipv6-overview)** inschakelen.
+- Ondersteuning voor **[taakverdeling](../virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md)** van **[IPv6](../virtual-network/ipv6-overview.md)** inschakelen.
 
-- Standard Load Balancer biedt multidimensionale metrische gegevens via [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview).  Deze metrische gegevens kunnen worden gefilterd, gegroepeerd en uitgesplitst voor een bepaalde dimensie.  Ze bieden actuele en historische inzichten in de prestaties en status van uw service.  Resource Health wordt ook ondersteund. Raadpleeg **[Diagnostische tests van Standard Load Balancer](load-balancer-standard-diagnostics.md)** voor meer informatie.
+- Standard Load Balancer biedt multidimensionale metrische gegevens via [Azure Monitor](../azure-monitor/overview.md).  Deze metrische gegevens kunnen worden gefilterd, gegroepeerd en uitgesplitst voor een bepaalde dimensie.  Ze bieden actuele en historische inzichten in de prestaties en status van uw service.  Resource Health wordt ook ondersteund. Raadpleeg **[Diagnostische tests van Standard Load Balancer](load-balancer-standard-diagnostics.md)** voor meer informatie.
 
-- Taakverdeling van services toepassen op **[meerdere poorten, meerdere IP-adressen of allebei](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview)** .
+- Taakverdeling van services toepassen op **[meerdere poorten, meerdere IP-adressen of allebei](./load-balancer-multivip-overview.md)** .
 
-- **[Interne](https://docs.microsoft.com/azure/load-balancer/move-across-regions-internal-load-balancer-portal)** en **[externe](https://docs.microsoft.com/azure/load-balancer/move-across-regions-external-load-balancer-portal)** resources tussen Azure-regio's verplaatsen.
+- **[Interne](./move-across-regions-internal-load-balancer-portal.md)** en **[externe](./move-across-regions-external-load-balancer-portal.md)** resources tussen Azure-regio's verplaatsen.
 
-- Taakverdeling toepassen van de TCP- en UDP-stroom op alle poorten tegelijk met **[HA-poorten](https://docs.microsoft.com/azure/load-balancer/load-balancer-ha-ports-overview)** .
+- Taakverdeling toepassen van de TCP- en UDP-stroom op alle poorten tegelijk met **[HA-poorten](./load-balancer-ha-ports-overview.md)** .
 
 ### <a name="secure-by-default"></a><a name="securebydefault"></a>Standaardbeveiliging
 
-Standard Load Balancer is gebouwd op basis van het beveiligingsmodel voor vertrouwensrelaties van het netwerk. Standard Load Balancer zorgt standaard voor beveiliging en maakt deel uit van uw virtuele netwerk. Het virtuele netwerk is een privé- en geïsoleerd netwerk.  Dit betekent dat Standard Load Balancers en standaard openbare IP-adressen zijn gesloten voor inkomende stromen, tenzij ze worden geopend door netwerkbeveiligingsgroepen. Netwerkbeveiligingsgroepen worden gebruikt om toegestaan verkeer expliciet toe te staan.  Als u geen netwerkbeveiligingsgroep op een subnet of NIC van uw virtuele-machineresource hebt, mag het verkeer deze bron niet bereiken. Zie [Netwerkbeveiligingsgroepen](../virtual-network/security-overview.md) voor meer informatie over netwerkbeveiligingsgroepen en hoe u deze toepast voor uw scenario.
+Standard Load Balancer is gebouwd op basis van het beveiligingsmodel voor vertrouwensrelaties van het netwerk. Standard Load Balancer zorgt standaard voor beveiliging en maakt deel uit van uw virtuele netwerk. Het virtuele netwerk is een privé- en geïsoleerd netwerk.  Dit betekent dat Standard Load Balancers en standaard openbare IP-adressen zijn gesloten voor inkomende stromen, tenzij ze worden geopend door netwerkbeveiligingsgroepen. Netwerkbeveiligingsgroepen worden gebruikt om toegestaan verkeer expliciet toe te staan.  Als u geen netwerkbeveiligingsgroep op een subnet of NIC van uw virtuele-machineresource hebt, mag het verkeer deze bron niet bereiken. Zie [Netwerkbeveiligingsgroepen](../virtual-network/network-security-groups-overview.md) voor meer informatie over netwerkbeveiligingsgroepen en hoe u deze toepast voor uw scenario.
 Basis Load Balancer is standaard open voor internet. Daarnaast slaat Load Balancer geen klantgegevens op.
 
 ## <a name="pricing-and-sla"></a>Prijzen en SLA
@@ -84,4 +84,3 @@ Abonneer u op de RSS-feed en bekijk de nieuwste updates voor Azure Load Balancer
 Zie [Een openbare standaard load balancer maken](quickstart-load-balancer-standard-public-portal.md) om aan de slag te gaan met een load balancer.
 
 Zie [Azure Load Balancer-componenten](./components.md) en [Azure Load Balancer-concepten](./concepts.md) voor meer informatie over beperkingen en componenten van Azure Load Balancer
-

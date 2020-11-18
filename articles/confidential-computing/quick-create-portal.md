@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: quickstart
 ms.date: 04/23/2020
 ms.author: JenCook
-ms.openlocfilehash: 4723bce8f3721833ae80b233f7b346fe69363b0b
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.openlocfilehash: 1e417563b463d7033072b27bec505d10ef1adb47
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409541"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695738"
 ---
 # <a name="quickstart-deploy-an-azure-confidential-computing-vm-in-the-azure-portal"></a>Quickstart: Een VM met Azure Confidential Computing implementeren in Azure Portal
 
@@ -62,7 +62,7 @@ Als u geen Azure-abonnement hebt, [maakt u een account](https://azure.microsoft.
 
     * **Installatiekopie kiezen**: Voor deze zelfstudie selecteert u Ubuntu 18.04 LTS. U kunt ook Windows Server 2019, Windows Server 2016 of een Ubuntu 16.04 LTS selecteren. Als u ervoor kiest om dit te doen, wordt u in deze zelfstudie omgeleid.
     
-    * **De installatiekopie voor Gen 2 in-/uitschakelen**: Virtuele machines met Confidential Computing kunnen alleen worden uitgevoerd op installatiekopieën van de [2e generatie](../virtual-machines/linux/generation-2.md). Zorg ervoor dat de installatiekopie die u selecteert een installatiekopie van Gen 2 is. Klik op het tabblad **Geavanceerd** hierboven waar u de virtuele machine configureert. Schuif omlaag totdat u de sectie met de naam VM-generatie hebt gevonden. Selecteer Gen 2 en ga vervolgens terug naar het tabblad **Basisinformatie**.
+    * **De installatiekopie voor Gen 2 in-/uitschakelen**: Virtuele machines met Confidential Computing kunnen alleen worden uitgevoerd op installatiekopieën van de [2e generatie](../virtual-machines/generation-2.md). Zorg ervoor dat de installatiekopie die u selecteert een installatiekopie van Gen 2 is. Klik op het tabblad **Geavanceerd** hierboven waar u de virtuele machine configureert. Schuif omlaag totdat u de sectie met de naam VM-generatie hebt gevonden. Selecteer Gen 2 en ga vervolgens terug naar het tabblad **Basisinformatie**.
     
 
         ![Tabblad Geavanceerd](media/quick-create-portal/advanced-tab-virtual-machine.png)
@@ -168,7 +168,7 @@ wget -qO - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add 
 ```bash
 sudo apt update
 sudo apt -y install dkms
-wget https://download.01.org/intel-sgx/sgx-dcap/1.4/linux/distro/ubuntuServer18.04/sgx_linux_x64_driver_1.21.bin -O sgx_linux_x64_driver.bin
+wget https://download.01.org/intel-sgx/sgx-dcap/1.9/linux/distro/ubuntu18.04-server/sgx_linux_x64_driver_1.36.2.bin -O sgx_linux_x64_driver.bin
 chmod +x sgx_linux_x64_driver.bin
 sudo ./sgx_linux_x64_driver.bin
 ```

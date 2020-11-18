@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 10/22/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: f7d9389eb0a0118f2c1be8375531f58b6bed94b6
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 5f19b55a955b8e3e1500cf14fa221b46808ac857
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488092"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698288"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Quickstart: Een openbare load balancer maken om taken van VM's te verdelen via Azure Portal
 
@@ -47,7 +47,7 @@ Wanneer u een openbare load balancer maakt, maakt u een nieuw openbaar IP-adres 
 
 1. Selecteer linksboven in het scherm de optie **Een resource maken** > **Netwerken** > **Load balancer**.
 
-2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken** : 
+2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken**: 
 
     | Instelling                 | Waarde                                              |
     | ---                     | ---                                                |
@@ -60,7 +60,7 @@ Wanneer u een openbare load balancer maakt, maakt u een nieuw openbaar IP-adres 
     | Openbaar IP-adres | Selecteer **Nieuw maken**. Als u een bestaand openbaar IP-adres hebt dat u wilt gebruiken, selecteert u **Bestaande gebruiken**. |
     | Naam openbaar IP-adres | Typ **myPublicIP** in het tekstvak.|
     | Beschikbaarheidszone | Selecteer **Zone-redundant** om een tolerante load balancer te maken. Als u een zonegebonden load balancer wilt maken, selecteert u een specifieke zone uit 1, 2 of 3 |
-    | Een openbaar IPv6-adres toevoegen | Selecteer **Nee**. </br> Zie [Wat is IPv6 voor Azure Virtual Network?](https://docs.microsoft.com/azure/virtual-network/ipv6-overview) voor meer informatie over IPv6-adressen en load balancer.  |
+    | Een openbaar IPv6-adres toevoegen | Selecteer **Nee**. </br> Zie [Wat is IPv6 voor Azure Virtual Network?](../virtual-network/ipv6-overview.md) voor meer informatie over IPv6-adressen en load balancer.  |
 
 3. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Beoordelen en maken**.
 
@@ -158,7 +158,7 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
 
 1. Selecteer in de linkerbovenhoek van het scherm **Een resource maken > Netwerken > Virtueel netwerk** of zoek naar **Virtueel netwerk** in het zoekvak.
 
-2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen** :
+2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen**:
 
     | **Instelling**          | **Waarde**                                                           |
     |------------------|-----------------------------------------------------------------|
@@ -205,13 +205,13 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
 
 ### <a name="create-virtual-machines"></a>Virtuele machines maken
 
-In deze sectie maakt u drie VM's ( **myVM1** , **myVM2** en **myVM3** ) in drie verschillende zones ( **Zone 1** , **Zone 2** en **Zone 3** ). 
+In deze sectie maakt u drie VM's (**myVM1**, **myVM2** en **myVM3**) in drie verschillende zones (**Zone 1**, **Zone 2** en **Zone 3**). 
 
 Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder is gemaakt.
 
 1. Selecteer in de linkerbovenhoek van de portal de optie **Een resource maken** > **Compute** > **Virtuele machine**. 
    
-2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie** :
+2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie**:
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
@@ -265,7 +265,7 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
   
 8. Controleer de instellingen en selecteer vervolgens **Maken**.
 
-9. Volg de stappen 1 tot en met 8 om twee extra VM's te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1** :
+9. Volg de stappen 1 tot en met 8 om twee extra VM's te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1**:
 
     | Instelling | VM 2| VM 3|
     | ------- | ----- |---|
@@ -311,7 +311,7 @@ Zie [Uitgaande verbindingen in Azure](load-balancer-outbound-connections.md) voo
 
 5. Selecteer bij **Virtuele machines** de optie **+ Toevoegen**.
 
-6. Schakel de selectievakjes naast **myVM1** , **myVM2** en **myVM3** in. 
+6. Schakel de selectievakjes naast **myVM1**, **myVM2** en **myVM3** in. 
 
 7. Selecteer **Toevoegen**.
 
@@ -328,7 +328,7 @@ Wanneer u een openbare load balancer maakt, maakt u een nieuw openbaar IP-adres 
 
 1. Selecteer linksboven in het scherm de optie **Een resource maken** > **Netwerken** > **Load balancer**.
 
-2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken** : 
+2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Load balancer maken**: 
 
     | Instelling                 | Waarde                                              |
     | ---                     | ---                                                |
@@ -341,7 +341,7 @@ Wanneer u een openbare load balancer maakt, maakt u een nieuw openbaar IP-adres 
     | Openbaar IP-adres | Selecteer **Nieuw maken**. Als u een bestaand openbaar IP-adres hebt dat u wilt gebruiken, selecteert u **Bestaande gebruiken**. |
     | Naam openbaar IP-adres | Typ **myPublicIP** in het tekstvak.|
     | Toewijzing | **Dynamisch** selecteren |
-    | Een openbaar IPv6-adres toevoegen | Selecteer **Nee**. </br> Zie [Wat is IPv6 voor Azure Virtual Network?](https://docs.microsoft.com/azure/virtual-network/ipv6-overview) voor meer informatie over IPv6-adressen en load balancer.  |
+    | Een openbaar IPv6-adres toevoegen | Selecteer **Nee**. </br> Zie [Wat is IPv6 voor Azure Virtual Network?](../virtual-network/ipv6-overview.md) voor meer informatie over IPv6-adressen en load balancer.  |
 
 3. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Beoordelen en maken**.
 
@@ -364,7 +364,7 @@ In deze sectie gaat u een virtueel netwerk en een subnet maken.
 
 1. Selecteer in de linkerbovenhoek van het scherm **Een resource maken > Netwerken > Virtueel netwerk** of zoek naar **Virtueel netwerk** in het zoekvak.
 
-2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen** :
+2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen**:
 
     | **Instelling**          | **Waarde**                                                           |
     |------------------|-----------------------------------------------------------------|
@@ -490,7 +490,7 @@ In deze sectie doet u het volgende:
 
 ### <a name="create-virtual-machines"></a>Virtuele machines maken
 
-In deze sectie maakt u drie VM's( **myVM1** , **myVM2** en **myVM3** ) met een basic openbaar IP-adres.  
+In deze sectie maakt u drie VM's(**myVM1**, **myVM2** en **myVM3**) met een basic openbaar IP-adres.  
 
 De drie VM's worden toegevoegd aan een beschikbaarheidsset met de naam **myAvailabilitySet**.
 
@@ -498,7 +498,7 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
 
 1. Selecteer in de linkerbovenhoek van de portal de optie **Een resource maken** > **Compute** > **Virtuele machine**. 
    
-2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie** :
+2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie**:
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
@@ -546,7 +546,7 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
   
 8. Controleer de instellingen en selecteer vervolgens **Maken**.
 
-9. Volg de stappen 1 tot en met 8 om twee extra VM's te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1** :
+9. Volg de stappen 1 tot en met 8 om twee extra VM's te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1**:
 
     | Instelling | VM 2| VM 3|
     | ------- | ----- |---|
@@ -566,7 +566,7 @@ De virtuele machines die in de vorige stappen zijn gemaakt, moeten worden toegev
 
 4. Selecteer in het gedeelte **Virtuele machines** de optie **+ Toevoegen**.
 
-5. Schakel de selectievakjes naast **myVM1** , **myVM2** en **myVM3** in.
+5. Schakel de selectievakjes naast **myVM1**, **myVM2** en **myVM3** in.
 
 6. Selecteer **Toevoegen**.
 
@@ -576,7 +576,7 @@ De virtuele machines die in de vorige stappen zijn gemaakt, moeten worden toegev
 
 ## <a name="install-iis"></a>IIS installeren
 
-1. Selecteer in het linkermenu **Alle services** , selecteer vervolgens **Alle resources** en selecteer daarna in de lijst met resources **myVM1** , die zich in de resourcegroep **CreateStdLBQS-rg** bevindt.
+1. Selecteer in het linkermenu **Alle services**, selecteer vervolgens **Alle resources** en selecteer daarna in de lijst met resources **myVM1**, die zich in de resourcegroep **CreateStdLBQS-rg** bevindt.
 
 2. Selecteer op de pagina **Overzicht** de optie **Verbinding maken** en daarna **Bastion**.
 

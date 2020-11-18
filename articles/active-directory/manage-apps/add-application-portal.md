@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 10/29/2019
 ms.author: kenwith
-ms.openlocfilehash: 2946590cbb4c5e8f495a1f6ee4aac65929cd4d0e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: fd81e5f87aaf4a28676b79863df60b71707849e9
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91305727"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656510"
 ---
 # <a name="quickstart-add-an-application-to-your-azure-active-directory-azure-ad-tenant"></a>Quickstart: Een toepassing toevoegen aan uw Azure Active Directory-tenant (Azure AD)
 
@@ -55,10 +55,10 @@ Om een toepassing toevoegen aan uw Azure Active Directory-tenant:
     :::image type="content" source="media/add-application-portal/sso-types.png" alt-text="Schermafbeelding met de selector voor SSO-types." lightbox="media/add-application-portal/sso-types.png":::
 
     - Als de ontwikkelaar van de app de **OIDC-norm** voor SSO heeft gebruikt, selecteert u **Registreren**. Er wordt een installatiepagina weer gegeven. Ga vervolgens naar de snelstartgids voor het instellen van eenmalige aanmelding volgens OIDC.
-    :::image type="content" source="media/add-application-portal/sign-up-oidc-sso.png" alt-text="Schermafbeelding met de selector voor SSO-types.":::
+    :::image type="content" source="media/add-application-portal/sign-up-oidc-sso.png" alt-text="Schermafbeelding waarop een op OIDC gebaseerde SSO-app wordt toegevoegd.":::
 
     - Als de ontwikkelaar van de app de **SAML-norm** voor SSO heeft gebruikt, selecteert u **Aanmaken**. Er wordt nu een pagina Aan de slag weergegeven met de opties voor het configureren van de toepassing voor uw organisatie. U kunt in het formulier de naam van de toepassing bewerken zodat deze overeenkomt met de behoeften in uw organisatie. Ga vervolgens naar de snelstartgids voor het instellen van eenmalige aanmelding volgens SAML.
-    :::image type="content" source="media/add-application-portal/create-application.png" alt-text="Schermafbeelding met de selector voor SSO-types.":::
+    :::image type="content" source="media/add-application-portal/create-application.png" alt-text="Schermafbeelding waarop een op SAML gebaseerde SSO-app wordt toegevoegd.":::
 
 
 > [!IMPORTANT]
@@ -69,7 +69,7 @@ Als de toepassing die u zoekt niet in de galerie staat, selecteert u de koppelin
 U hebt een toepassing toegevoegd. In de volgende quickstart ziet u hoe u het logo kunt wijzigen en andere eigenschappen van de toepassing kunt bewerken.
 
 > [!TIP]
-> U kunt het beheer van apps automatiseren met behulp van de Graph API. Zie [App-beheer automatiseren met de Microsoft Graph API](https://docs.microsoft.com/graph/application-saml-sso-configure-api).
+> U kunt het beheer van apps automatiseren met behulp van de Graph API. Zie [App-beheer automatiseren met de Microsoft Graph API](/graph/application-saml-sso-configure-api).
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

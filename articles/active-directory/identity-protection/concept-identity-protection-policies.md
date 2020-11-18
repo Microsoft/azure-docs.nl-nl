@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8776ad915ff215eef143f62aaa9e242ff0354f3e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 28a9080ce878e262573adf0b3c79394079c09ca2
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368788"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835965"
 ---
 # <a name="identity-protection-policies"></a>Identiteitsbeveiligingbeleid
 
@@ -24,11 +24,11 @@ Azure Active Directory Identity Protection bevat drie standaard beleidsregels di
 
 ![Identiteitsbeveiligingbeleid](./media/concept-identity-protection-policies/identity-protection-policies.png)
 
-## <a name="azure-mfa-registration-policy"></a>Azure MFA-registratie beleid
+## <a name="azure-ad-mfa-registration-policy"></a>Azure AD MFA-registratie beleid
 
-Identiteits beveiliging kan organisaties helpen bij het implementeren van Azure Multi-Factor Authentication (MFA) met behulp van een beleid voor voorwaardelijke toegang dat registratie bij het aanmelden vereist. Het inschakelen van dit beleid is een uitstekende manier om ervoor te zorgen dat nieuwe gebruikers in uw organisatie op de eerste dag zijn geregistreerd voor MFA. Multi-factor Authentication is een van de methoden voor het automatisch door voeren van risico gebeurtenissen binnen de identiteits beveiliging. Met zelf herstel kunnen uw gebruikers zelf actie ondernemen om het volume van de helpdesk oproep te verminderen.
+Identiteits beveiliging kan organisaties helpen bij het implementeren van Azure AD Multi-Factor Authentication (MFA) met behulp van een beleid voor voorwaardelijke toegang dat registratie bij het aanmelden vereist. Het inschakelen van dit beleid is een uitstekende manier om ervoor te zorgen dat nieuwe gebruikers in uw organisatie op de eerste dag zijn geregistreerd voor MFA. Multi-factor Authentication is een van de methoden voor het automatisch door voeren van risico gebeurtenissen binnen de identiteits beveiliging. Met zelf herstel kunnen uw gebruikers zelf actie ondernemen om het volume van de helpdesk oproep te verminderen.
 
-Meer informatie over Azure Multi-Factor Authentication vindt u in het artikel, [hoe het werkt: Azure multi-factor Authentication](../authentication/concept-mfa-howitworks.md).
+Meer informatie over Azure AD Multi-Factor Authentication vindt u in het artikel, [hoe het werkt: Azure AD-multi-factor Authentication](../authentication/concept-mfa-howitworks.md).
 
 ## <a name="sign-in-risk-policy"></a>Beleid voor aanmeldingsrisico's
 
@@ -37,7 +37,7 @@ Identiteits beveiliging analyseert signalen van elke aanmelding, zowel in realti
 Als risico wordt gedetecteerd, kunnen gebruikers multi-factor Authentication uitvoeren om zichzelf op te lossen en de Risk ante aanmeldings gebeurtenis te sluiten om onnodige ruis voor beheerders te voor komen.
 
 > [!NOTE] 
-> Gebruikers moeten eerder zijn geregistreerd voor Azure Multi-Factor Authentication voordat ze het aanmeldings risico beleid kunnen activeren.
+> Gebruikers moeten eerder zijn geregistreerd voor Azure AD Multi-Factor Authentication voordat ze het aanmeldings risico beleid kunnen activeren.
 
 ### <a name="custom-conditional-access-policy"></a>Aangepast beleid voor voorwaardelijke toegang
 
@@ -58,8 +58,8 @@ Als er een risico wordt gedetecteerd, kunnen gebruikers de selfservice voor wach
 
 - [Selfservice voor wachtwoord herstel van Azure AD inschakelen](../authentication/howto-sspr-deployment.md)
 
-- [Azure Multi-Factor Authentication inschakelen](../authentication/howto-mfa-getstarted.md)
+- [Azure AD-Multi-Factor Authentication inschakelen](../authentication/howto-mfa-getstarted.md)
 
-- [Registratie beleid voor Azure Multi-Factor Authentication inschakelen](howto-identity-protection-configure-mfa-policy.md)
+- [Azure AD Multi-Factor Authentication-registratie beleid inschakelen](howto-identity-protection-configure-mfa-policy.md)
 
 - [Aanmeldings-en gebruikers risico beleid inschakelen](howto-identity-protection-configure-risk-policies.md)

@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: ''
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4337d6bb108042a909250b3d87d13ab60357cfec
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 4239b5400e919621dfff001ca7e6cb9de1626658
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311129"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94686205"
 ---
 # <a name="connect-to-synapse-sql-with-sql-server-management-studio-ssms"></a>Verbinding maken met Synapse SQL met behulp van SQL Server Management Studio (SSMS)
 > [!div class="op_single_selector"]
@@ -50,13 +50,13 @@ Zorg ervoor dat u voordat u begint over het volgende beschikt:
 Voer de volgende stappen uit om verbinding te maken met Synapse SQL met behulp van een toegewezen SQL-pool: 
 
 1. Open SQL Server Management Studio (SSMS). 
-1. Vul in het dialoogvenster **Verbinding maken met server** de velden in en selecteer vervolgens **Verbinding maken** : 
+1. Vul in het dialoogvenster **Verbinding maken met server** de velden in en selecteer vervolgens **Verbinding maken**: 
   
     ![Verbinding maken met server 1](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/connect-object-explorer1.png)
    
-   * **Servernaam** : Voer de eerder vastgestelde **servernaam** in.
-   * **Verificatie** :  Kies een verificatietype, zoals **SQL Server-verificatie** of **Geïntegreerde Active Directory-verificatie**.
-   * **Gebruikersnaam** en **Wachtwoord** : Voer uw gebruikersnaam en wachtwoord in als u hierboven SQL Server-verificatie hebt geselecteerd.
+   * **Servernaam**: Voer de eerder vastgestelde **servernaam** in.
+   * **Verificatie**:  Kies een verificatietype, zoals **SQL Server-verificatie** of **Geïntegreerde Active Directory-verificatie**.
+   * **Gebruikersnaam** en **Wachtwoord**: Voer uw gebruikersnaam en wachtwoord in als u hierboven SQL Server-verificatie hebt geselecteerd.
 
 1. Vouw uw Azure SQL Server uit in **Objectverkenner**. U kunt de databases weergeven die zijn gekoppeld aan de server, zoals de voorbeelddatabase AdventureWorksDW. U kunt de database uitvouwen om de tabellen te bekijken:
    
@@ -68,13 +68,13 @@ Voer de volgende stappen uit om verbinding te maken met Synapse SQL met behulp v
 Voer de volgende stappen uit om verbinding te maken met Synapse SQL met behulp van een serverloze SQL-pool: 
 
 1. Open SQL Server Management Studio (SSMS).
-1. Vul in het dialoogvenster **Verbinding maken met server** de velden in en selecteer vervolgens **Verbinding maken** : 
+1. Vul in het dialoogvenster **Verbinding maken met server** de velden in en selecteer vervolgens **Verbinding maken**: 
    
     ![Verbinding maken met server 2](./media/get-started-ssms/connect-object-explorer1.png)
    
-   * **Servernaam** : Voer de eerder vastgestelde **servernaam** in.
-   * **Verificatie** : Kies een verificatietype, zoals **SQL Server-verificatie** of **Geïntegreerde Active Directory-verificatie** :
-   * **Gebruikersnaam** en **Wachtwoord** : Voer uw gebruikersnaam en wachtwoord in als u hierboven SQL Server-verificatie hebt geselecteerd.
+   * **Servernaam**: Voer de eerder vastgestelde **servernaam** in.
+   * **Verificatie**: Kies een verificatietype, zoals **SQL Server-verificatie** of **Geïntegreerde Active Directory-verificatie**:
+   * **Gebruikersnaam** en **Wachtwoord**: Voer uw gebruikersnaam en wachtwoord in als u hierboven SQL Server-verificatie hebt geselecteerd.
    * Selecteer **Verbinding maken**.
 
 4. U kunt de Azure SQL-server uitvouwen als u deze wilt verkennen. U kunt de databases weergeven die aan de server zijn gekoppeld. Vouw *demo* uit om de inhoud in de voorbeelddatabase te bekijken.

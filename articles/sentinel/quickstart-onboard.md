@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: quickstart
 ms.date: 10/14/2020
 ms.custom: references_regions
-ms.openlocfilehash: b33f3e58f82d52e77437c29f7e5219926b2578c3
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 21e0cfd56a37304d1ec333f8713894504282541f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92106974"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660658"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Quickstart: Azure Sentinel onboarden
 
@@ -32,7 +32,7 @@ Nadat u verbinding hebt gemaakt met uw gegevensbronnen, kiest u uit een galerie 
 
 - Een actief Azure-abonnement. Als u dit niet hebt, kunt u een [gratis Azure-account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) maken voordat u begint.
 
-- Log Analytics-werkruimte. Leer [een Log Analytics-werkruimte maken](../log-analytics/log-analytics-quick-create-workspace.md). Zie [De implementatie van uw Azure Monitor-logboeken ontwerpen](../azure-monitor/platform/design-logs-deployment.md)voor meer informatie over Log Analytics-werkruimten.
+- Log Analytics-werkruimte. Leer [een Log Analytics-werkruimte maken](../azure-monitor/learn/quick-create-workspace.md). Zie [De implementatie van uw Azure Monitor-logboeken ontwerpen](../azure-monitor/platform/design-logs-deployment.md)voor meer informatie over Log Analytics-werkruimten.
 
 - Om Azure Sentinel in te schakelen, hebt u inzendersmachtigingen nodig voor het abonnement waarin de Azure Sentinel-werkruimte zich bevindt. 
 - Om Azure Sentinel te gebruiken, hebt u inzenders- of lezersmachtigingen nodig voor de resourcegroep waartoe de werkruimte behoort.

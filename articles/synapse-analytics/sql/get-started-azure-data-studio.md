@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: ''
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: fb4c7f8ba49cf701ef13cb57ab2b323a94c928cc
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3af28ef575f770a5b8c3fb73ade1f9c53be66843
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323819"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685746"
 ---
 # <a name="connect-to-synapse-sql-with-azure-data-studio-preview"></a>Verbinding maken met Synapse SQL met Azure Data Studio (preview-versie)
 
@@ -50,7 +50,7 @@ Voor de verbinding zijn de volgende parameters vereist:
 >
 > - `<Azure Synapse workspace name>`.sql.azuresynapse.net
 
-Kies **Windows-verificatie** , **Azure Active Directory** of **SQL-aanmelding** als **verificatietype**.
+Kies **Windows-verificatie**, **Azure Active Directory** of **SQL-aanmelding** als **verificatietype**.
 
 Als u gebruik wilt maken van **SQL-aanmelding** als verificatietype, moet u de gebruikersnaam- en wachtwoordparameters toevoegen:
 
@@ -61,11 +61,11 @@ Als u Azure Active Directory wilt gebruiken, moet u het gewenste verificatietype
 
 ![Microsoft Azure Active Directory-verificatie](./media/get-started-azure-data-studio/3-aad-auth.png)
 
-De volgende schermopname toont de **verbindingsgegevens** voor **Windows-verificatie** :
+De volgende schermopname toont de **verbindingsgegevens** voor **Windows-verificatie**:
 
 ![Windows-verificatie](./media/get-started-azure-data-studio/3-windows-auth.png)
 
-De volgende schermopname toont de **verbindingsgegevens** via **SQL-aanmelding** :
+De volgende schermopname toont de **verbindingsgegevens** via **SQL-aanmelding**:
 
 ![SQL-aanmelding](./media/get-started-azure-data-studio/2-database-details.png)
 

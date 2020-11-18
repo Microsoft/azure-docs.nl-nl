@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49f3e082969b7483601088cd976d8cc30d500017
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 366d68be1a7f115980973015e363da6095876754
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367462"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835914"
 ---
 # <a name="how-to-configure-and-enable-risk-policies"></a>Procedure: risico beleid configureren en inschakelen
 
@@ -33,7 +33,7 @@ Beide beleids regels werken samen om de reactie op risico detecties in uw omgevi
 
 ## <a name="prerequisites"></a>Vereisten 
 
-Als uw organisatie toestaat dat gebruikers zichzelf zelf kunnen oplossen wanneer er Risico's worden gedetecteerd, moeten gebruikers worden geregistreerd voor selfservice voor wachtwoord herstel en Azure Multi-Factor Authentication. U wordt aangeraden [de gecombineerde beveiligings informatie registratie in te scha kelen](../authentication/howto-registration-mfa-sspr-combined.md) voor de beste ervaring. Door gebruikers toe te staan zichzelf op te lossen, worden ze sneller teruggebracht naar een productieve status zonder tussen komst van de beheerder. Beheerders kunnen deze gebeurtenissen nog steeds zien en ze na het feit onderzoeken. 
+Als uw organisatie gebruikers wilt toestaan zichzelf op te lossen wanneer er Risico's worden gedetecteerd, moeten gebruikers worden geregistreerd voor selfservice voor het opnieuw instellen van wacht woorden en Azure AD-Multi-Factor Authentication. U wordt aangeraden [de gecombineerde beveiligings informatie registratie in te scha kelen](../authentication/howto-registration-mfa-sspr-combined.md) voor de beste ervaring. Door gebruikers toe te staan zichzelf op te lossen, worden ze sneller teruggebracht naar een productieve status zonder tussen komst van de beheerder. Beheerders kunnen deze gebeurtenissen nog steeds zien en ze na het feit onderzoeken. 
 
 ## <a name="choosing-acceptable-risk-levels"></a>Acceptabele risico niveaus kiezen
 
@@ -76,7 +76,7 @@ Voer de volgende stappen uit om het risico beleid voor gebruikers Risico's en-aa
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Registratie beleid voor Azure Multi-Factor Authentication inschakelen](howto-identity-protection-configure-mfa-policy.md)
+- [Azure AD Multi-Factor Authentication-registratie beleid inschakelen](howto-identity-protection-configure-mfa-policy.md)
 
 - [What is risk](concept-identity-protection-risks.md) (Wat is een risico?)
 

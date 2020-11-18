@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 09/25/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 336f58635465f77c60d04c53bb1893cb60f5f35f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 2ab87dfdeb18f97265c3bb2f34616c942a345c1e
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791219"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94698944"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Quickstart: Een Azure Cognitive Search-index maken in Java met behulp van REST API's
 > [!div class="op_single_selector"]
@@ -25,7 +25,7 @@ ms.locfileid: "92791219"
 > * [Portal](search-get-started-portal.md)
 > * [PowerShell](./search-get-started-powershell.md)
 > * [Python](search-get-started-python.md)
-> * [Postman](search-get-started-postman.md)
+> * [REST](search-get-started-rest.md)
 
 Maak een Java-consoletoepassing waarmee een zoekindex wordt gemaakt en geladen en daarop een query wordt uitgevoerd met behulp van [IntelliJ](https://www.jetbrains.com/idea/), [Java 11 SDK](/java/azure/jdk/) en de [REST API van Azure Cognitive Search](/rest/api/searchservice/). In dit artikel vindt u stapsgewijze instructies voor het maken van de toepassing. U kunt ook [de complete toepassing downloaden en uitvoeren](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
 
@@ -63,22 +63,22 @@ Open eerst IntelliJ IDEA en stel een nieuw project in.
 
 ### <a name="create-the-project"></a>Het project maken
 
-1. Open IntelliJ IDEA en selecteer **Nieuw project maken** .
-1. Selecteer **Maven** .
-1. Selecteer de Java 11 SDK in de **Project SDK** -lijst.
+1. Open IntelliJ IDEA en selecteer **Nieuw project maken**.
+1. Selecteer **Maven**.
+1. Selecteer de Java 11 SDK in de **Project SDK**-lijst.
 
-    :::image type="content" source="media/search-get-started-java/java-quickstart-create-new-maven-project.png" alt-text="De naam van de service en de querysleutels voor beheer ophalen" border="false":::
+    :::image type="content" source="media/search-get-started-java/java-quickstart-create-new-maven-project.png" alt-text="Een Maven-project maken" border="false":::
 
 1. Voer voor **GroupId** en **ArtifactId** `AzureSearchQuickstart` in.
 1. Accepteer de resterende standaarden om het project te openen.
 
 ### <a name="specify-maven-dependencies"></a>Maven-afhankelijkheden opgeven
 
-1. Selecteer **Bestand** > **Instellingen** .
-1. Selecteer in het venster **Instellingen** **Bouwen, uitvoeren, implementeren** > **Hulpprogramma's voor bouwen** > **Maven** > **Importeren** .
+1. Selecteer **Bestand** > **Instellingen**.
+1. Selecteer in het venster **Instellingen** **Bouwen, uitvoeren, implementeren** > **Hulpprogramma's voor bouwen** > **Maven** > **Importeren**.
 1. Schakel het selectievakje **Maven-projecten automatisch importeren** in en klik op **OK** om het venster te sluiten. Maven-invoegtoepassingen en andere afhankelijkheden worden nu automatisch gesynchroniseerd wanneer u het bestand pom.xml bijwerkt in de volgende stap.
 
-    :::image type="content" source="media/search-get-started-java/java-quickstart-settings-import-maven-auto.png" alt-text="De naam van de service en de querysleutels voor beheer ophalen" border="false":::
+    :::image type="content" source="media/search-get-started-java/java-quickstart-settings-import-maven-auto.png" alt-text="Maven-importeeropties in IntelliJ-instellingen" border="false":::
 
 1. Open het bestand pom.xml en vervang de inhoud door de volgende Maven-configuratiedetails. Dit is inclusief verwijzingen naar de [Exec Maven-invoegtoepassing](https://www.mojohaus.org/exec-maven-plugin/) en een [JSON interface-API](https://javadoc.io/doc/org.glassfish/javax.json/1.0.2)
 
@@ -133,14 +133,14 @@ Open eerst IntelliJ IDEA en stel een nieuw project in.
 
 ### <a name="set-up-the-project-structure"></a>De projectstructuur instellen
 
-1. Selecteer **Bestand** > **Projectstructuur** .
+1. Selecteer **Bestand** > **Projectstructuur**.
 1. Selecteer **Modules** en vouw de bronstructuur uit voor toegang tot de inhoud van de map `src` >  `main`.
 1. Voeg in de map `src` >  `main` > `java` de mappen `app` en `service` toe. Selecteer hiervoor de map `java`, druk op Alt + Insert en voer vervolgens de mapnaam in.
 1. Voeg in de map `src` >  `main` >`resources` de mappen `app` en `service` toe.
 
     Als u klaar bent, moet de projectstructuur er als in de volgende afbeelding uitzien.
 
-    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree.png" alt-text="De naam van de service en de querysleutels voor beheer ophalen" border="false":::
+    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree.png" alt-text="De structuur van de projectmap" border="false":::
 
 1. Klik op **OK** om het venster te sluiten.
 
@@ -373,10 +373,10 @@ Open eerst IntelliJ IDEA en stel een nieuw project in.
 
 1. Controleer of uw project de volgende structuur heeft.
 
-    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree-plus-classes.png" alt-text="De naam van de service en de querysleutels voor beheer ophalen" border="false":::
+    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree-plus-classes.png" alt-text="De projectmapstructuur en klassen" border="false":::
 
-1. Open het venster van het **Maven** -hulpprogramma en voer deze Maven-doelstelling uit: `verify exec:java`
-:::image type="content" source="media/search-get-started-java/java-quickstart-execute-maven-goal.png" alt-text="De naam van de service en de querysleutels voor beheer ophalen" border="false":::
+1. Open het venster van het **Maven**-hulpprogramma en voer deze Maven-doelstelling uit: `verify exec:java`
+:::image type="content" source="media/search-get-started-java/java-quickstart-execute-maven-goal.png" alt-text="Execute maven goal: verify exec:java" border="false":::
 
 Wanneer de verwerking is voltooid, zoekt u het bericht BUILD SUCCESS, gevolgd door de afsluitcode nul (0).
 
@@ -565,7 +565,7 @@ De definitie van de hotelsindex bevat eenvoudige velden en één complex veld. V
           Thread.sleep(1000L); // wait a second to create the index
     ```
 
-1. Open het venster van het **Maven** -hulpprogramma en voer deze Maven-doelstelling uit: `verify exec:java`
+1. Open het venster van het **Maven**-hulpprogramma en voer deze Maven-doelstelling uit: `verify exec:java`
 
     Wanneer de code wordt uitgevoerd, zoekt u het bericht Index wordt gemaakt, gevolgd door een 201-antwoordcode. Deze antwoordcode bevestigt dat de index is gemaakt. De uitvoering moet eindigen met het bericht BUILD SUCCESS en de afsluitcode nul (0).
     
@@ -685,7 +685,7 @@ De definitie van de hotelsindex bevat eenvoudige velden en één complex veld. V
 
     Na de uploadaanvraag wordt een pauze van twee seconden ingevoegd om ervoor te zorgen dat het proces voor het laden van documenten wordt voltooid voordat u een query op de index uitvoert.
 
-1. Open het venster van het **Maven** -hulpprogramma en voer deze Maven-doelstelling uit: `verify exec:java`
+1. Open het venster van het **Maven**-hulpprogramma en voer deze Maven-doelstelling uit: `verify exec:java`
 
     Omdat u in de vorige stap een hotels-quickstart-index hebt gemaakt, wordt deze nu door de code verwijderd en wordt deze index opnieuw gemaakt voordat de hoteldocumenten worden geladen.
 
@@ -814,7 +814,7 @@ Nu u de hoteldocumenten hebt geladen, kunt u zoekquery's maken om toegang te kri
 
     Er zijn twee [manieren om termen in een query te vergelijken](search-query-overview.md#types-of-queries): zoeken op volledige tekst en filters. Een query naar volledige tekst zoekt naar een of meer termen in `IsSearchable`-velden in de index. Een filter is een Booleaanse uitdrukking die wordt geëvalueerd over `IsFilterable`-velden in een index. U kunt zoeken op volledige tekst en filters samen of afzonderlijk gebruiken.
 
-1. Open het venster van het **Maven** -hulpprogramma en voer deze Maven-doelstelling uit: `verify exec:java`
+1. Open het venster van het **Maven**-hulpprogramma en voer deze Maven-doelstelling uit: `verify exec:java`
 
     Zoek een samenvatting van elke query en de bijbehorende resultaten. De uitvoering moet worden voltooid met het bericht BUILD SUCCESS en de afsluitcode nul (0).
 

@@ -7,15 +7,15 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: managed-hsm
 ms.topic: quickstart
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.date: 09/15/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 4d1488d6dd2e5d08ae774ca88b7ab41b2020efe5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d47935f76347b2d5272b386942a85643a732e643
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90998319"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831749"
 ---
 # <a name="quickstart-create-an-key-vault-managed-hsm-using-an-azure-resource-manager-template"></a>Quickstart: Een beheerde Key Vault HSM maken met behulp van een Azure Resource Manager-sjabloon
 
@@ -79,7 +79,6 @@ Mogelijk hebt u ook uw tenant-id nodig. U vindt deze met de opdracht [az ad user
     - **Resourcegroep**: Selecteer **Nieuwe maken**, geef een unieke naam op voor de resourcegroep en klik vervolgens op **OK**.
     - **Locatie**: Selecteer een locatie. Bijvoorbeeld **VS - zuid-centraal**.
     - **managedHSMName**: Voer een naam in voor de beheerde HSM.
-    - **SKU**: Voer de naam en familie in van de beheerde HSM die u wilt maken.  Voor deze quickstart voert u Standard_B1 in voor de naam en B voor de familie.
     - **Tenant-id**: Met de sjabloonfunctie wordt uw tenant-id automatisch opgehaald; wijzig de standaardwaarde niet.  Als er geen waarde is, voert u de tenant-id in die u uit [Vereisten](#prerequisites) hebt opgehaald.
     * **initialAdminObjectIds**: Voer de object-id in die u in [Vereisten](#prerequisites) hebt opgehaald.
 
@@ -92,5 +91,5 @@ Voor het implementeren van de sjabloon wordt de Azure-portal gebruikt. Naast Azu
 In deze quickstart hebt u een beheerde HSM gemaakt. Deze beheerde HSM is pas volledig functioneel als deze is geactiveerd. Zie [De beheerde HSM activeren](quick-create-cli.md#activate-your-managed-hsm) voor meer informatie over het activeren van uw HSM.
 
 - Bekijk een [overzicht over beheerde HSM](overview.md)
-- Meer informatie over het [beheren van sleutels in een beheerde HSM](key-management.md)
-- Bekijk [Best practices voor beheerde HSM](best-practices.md)
+- Meer informatie over het [Beheren van sleutels in een beheerde HSM](key-management.md)
+- Beoordeel [Best practices voor beheerde HSM's](best-practices.md)

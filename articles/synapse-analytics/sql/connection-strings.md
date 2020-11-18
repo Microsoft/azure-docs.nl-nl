@@ -7,15 +7,15 @@ ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: ''
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a90b63f39a4c1cff53686e7ea67c3481f1274f85
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e34563a312c5a248e97c4aac72d06030a836727b
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322631"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684831"
 ---
 # <a name="connection-strings-for-synapse-sql-preview"></a>Verbindingsreeksen voor Synapse SQL (preview)
 

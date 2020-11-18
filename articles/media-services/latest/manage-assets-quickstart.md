@@ -6,12 +6,12 @@ ms.date: 08/31/2020
 author: IngridAtMicrosoft
 ms.author: inhenkel
 manager: femila
-ms.openlocfilehash: 6b4373efc4979900e676257cc0b2748145165499
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0793c8abee27ca415feba313efb029daf092bec9
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91261410"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683009"
 ---
 # <a name="quickstart-upload-encode-and-stream-content-with-portal"></a>Quickstart: Inhoud uploaden, coderen en streamen met de portal
 
@@ -54,7 +54,7 @@ In deze quickstart ziet u hoe u Azure Portal kunt gebruiken om inhoud te uploade
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[Een Azure Media Services-account maken](create-account-howto.md#use-the-azure-portal)
+[Een Azure Media Services-account maken](create-account-howto.md)
 
 ## <a name="upload"></a>Uploaden
 

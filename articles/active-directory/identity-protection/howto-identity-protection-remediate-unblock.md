@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c297e1a4f6443e584f04914712314d33df23b119
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dd918aef85deefc23771413c3eb7b92f1189d39
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776099"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835795"
 ---
 # <a name="remediate-risks-and-unblock-users"></a>Risico's herstellen en gebruikers deblokkeren
 
@@ -37,7 +37,7 @@ Beheerders hebben de volgende opties om het probleem te verhelpen:
 
 ### <a name="self-remediation-with-risk-policy"></a>Automatisch herstel met risico beleid
 
-Als u gebruikers toestaat zichzelf te herstellen met Azure Multi-Factor Authentication (MFA) en self-service voor het opnieuw instellen van wacht woorden (SSPR) in uw risico beleid, kunnen ze zichzelf deblokkeren wanneer risico wordt gedetecteerd. Deze detecties worden vervolgens als gesloten beschouwd. Gebruikers moeten eerder zijn geregistreerd voor Azure MFA en SSPR om te kunnen gebruiken wanneer risico wordt gedetecteerd.
+Als u gebruikers toestaat zichzelf zelf te herstellen, met Azure AD Multi-Factor Authentication (MFA) en selfservice voor wachtwoord herstel (SSPR) in uw risico beleid, kunnen ze zichzelf deblokkeren wanneer risico wordt gedetecteerd. Deze detecties worden vervolgens als gesloten beschouwd. Gebruikers moeten eerder zijn geregistreerd voor Azure AD MFA en SSPR om te kunnen gebruiken wanneer risico wordt gedetecteerd.
 
 Sommige detecties veroorzaken mogelijk geen risico op het niveau van een door de gebruiker herstelde herbemiddeling, maar beheerders moeten deze detecties wel evalueren. Beheerders kunnen bepalen dat aanvullende maat regelen nodig zijn, zoals het [blok keren van toegang vanaf locaties](../conditional-access/howto-conditional-access-policy-location.md) of het verlagen van het acceptabele risico in hun beleid.
 
@@ -49,13 +49,13 @@ Beheerders krijgen twee opties bij het opnieuw instellen van een wacht woord voo
 
 - **Een tijdelijk wacht woord genereren** : door een tijdelijk wacht woord te genereren, kunt u direct een identiteit weer in een veilige staat zetten. Voor deze methode moet contact worden gemaakt met de betrokken gebruikers omdat ze moeten weten wat het tijdelijke wacht woord is. Omdat het wacht woord tijdelijk is, wordt de gebruiker gevraagd het wacht woord te wijzigen in iets nieuw tijdens de volgende aanmelding.
 
-- **De gebruiker verplichten om wacht woord opnieuw in te stellen** : als u wilt dat gebruikers hun wacht woorden opnieuw moeten instellen, kunnen ze zelf herstel zonder contact opnemen met de Help Desk of een beheerder. Deze methode is alleen van toepassing op gebruikers die zijn geregistreerd voor Azure MFA en SSPR. Voor gebruikers die niet zijn geregistreerd, is deze optie niet beschikbaar.
+- **De gebruiker verplichten om wacht woord opnieuw in te stellen** : als u wilt dat gebruikers hun wacht woorden opnieuw moeten instellen, kunnen ze zelf herstel zonder contact opnemen met de Help Desk of een beheerder. Deze methode is alleen van toepassing op gebruikers die zijn geregistreerd voor Azure AD MFA en SSPR. Voor gebruikers die niet zijn geregistreerd, is deze optie niet beschikbaar.
 
 ### <a name="dismiss-user-risk"></a>Gebruikers risico negeren
 
 Als het opnieuw instellen van een wacht woord geen optie is, omdat de gebruiker bijvoorbeeld is verwijderd, kunt u de detectie van gebruikers Risico's negeren.
 
-Wanneer u op **gebruikers risico negeren**klikt, worden alle gebeurtenissen gesloten en loopt de betrokken gebruiker geen risico meer. Omdat deze methode echter geen invloed heeft op het bestaande wacht woord, wordt de bijbehorende identiteit niet opnieuw in een veilige staat gebracht. 
+Wanneer u op **gebruikers risico negeren** klikt, worden alle gebeurtenissen gesloten en loopt de betrokken gebruiker geen risico meer. Omdat deze methode echter geen invloed heeft op het bestaande wacht woord, wordt de bijbehorende identiteit niet opnieuw in een veilige staat gebracht. 
 
 ### <a name="close-individual-risk-detections-manually"></a>Afzonderlijke risico detecties hand matig sluiten
 

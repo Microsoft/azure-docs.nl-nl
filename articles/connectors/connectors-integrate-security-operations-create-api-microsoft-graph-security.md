@@ -9,12 +9,12 @@ ms.reviewer: v-ching, estfan, logicappspm
 ms.topic: article
 ms.date: 02/21/2020
 tags: connectors
-ms.openlocfilehash: 0f121caddc6b629920479a34bef7b284dea117a4
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: ea861dce23e50bc5fcae50116a3e71793d402f8f
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677509"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873315"
 ---
 # <a name="improve-threat-protection-by-integrating-security-operations-with-microsoft-graph-security--azure-logic-apps"></a>Verbeter de beveiliging tegen bedreigingen door beveiligings bewerkingen te integreren met Microsoft Graph Security-& Azure Logic Apps
 
@@ -30,13 +30,13 @@ Met [Azure Logic apps](../logic-apps/logic-apps-overview.md) en de [Microsoft Gr
 
 De werk stroom van uw logische app kan acties gebruiken die reacties ontvangen van de Microsoft Graph beveiligings connector en die uitvoer beschikbaar maken voor andere acties in uw werk stroom. U kunt ook andere acties in uw werk stroom gebruiken om de uitvoer van de Microsoft Graph Security connector-acties uit te voeren. Als u bijvoorbeeld waarschuwingen met hoge urgentie wilt ontvangen via de beveiligings connector van Microsoft Graph, kunt u deze waarschuwingen in een e-mail bericht verzenden met behulp van de Outlook-Connector. 
 
-Zie [Microsoft Graph Security API overview](/graph/security-concept-overview)(Engelstalig) voor meer informatie over Microsoft Graph beveiliging. Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?](../logic-apps/logic-apps-overview.md). Als u op zoek bent naar Microsoft Flow of PowerApps, raadpleegt u [Wat is flow?](https://flow.microsoft.com/) of [Wat is PowerApps?](https://powerapps.microsoft.com/)
+Zie [Microsoft Graph Security API overview](/graph/security-concept-overview)(Engelstalig) voor meer informatie over Microsoft Graph beveiliging. Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?](../logic-apps/logic-apps-overview.md). Als u op zoek bent naar energie automatisering of PowerApps, raadpleegt u [Wat is energie automatisering?](https://flow.microsoft.com/) of [Wat is PowerApps?](https://powerapps.microsoft.com/)
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/). 
 
-* Als u de Microsoft Graph Security-connector wilt gebruiken, moet u de Azure Active Directory (AD) *expliciet tenantbeheerderstoestemming hebben gegeven* , als onderdeel van de [Microsoft Graph Security-verificatievereisten](/graph/security-authorization). Deze toestemming vereist de toepassings-ID en naam van de Microsoft Graph Security connector, die u ook in de [Azure Portal](https://portal.azure.com)kunt vinden:
+* Als u de Microsoft Graph Security-connector wilt gebruiken, moet u de Azure Active Directory (AD) *expliciet tenantbeheerderstoestemming hebben gegeven*, als onderdeel van de [Microsoft Graph Security-verificatievereisten](/graph/security-authorization). Deze toestemming vereist de toepassings-ID en naam van de Microsoft Graph Security connector, die u ook in de [Azure Portal](https://portal.azure.com)kunt vinden:
 
   | Eigenschap | Waarde |
   |----------|-------|
@@ -64,11 +64,11 @@ Zie [Microsoft Graph Security API overview](/graph/security-concept-overview)(En
 
    -of-
 
-   Voor bestaande Logic apps, onder de laatste stap waar u een Microsoft Graph beveiligings actie wilt toevoegen, selecteert u **nieuwe stap** .
+   Voor bestaande Logic apps, onder de laatste stap waar u een Microsoft Graph beveiligings actie wilt toevoegen, selecteert u **nieuwe stap**.
 
    -of-
 
-   Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. Selecteer het plus teken (+) dat wordt weer gegeven en selecteer **een actie toevoegen** .
+   Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. Selecteer het plus teken (+) dat wordt weer gegeven en selecteer **een actie toevoegen**.
 
 1. Voer in het zoekvak ' micro soft Graph Security ' in als uw filter. Selecteer in de lijst acties de gewenste actie.
 
@@ -94,7 +94,7 @@ In dit voor beeld ziet u hoe u een werk stroom van een logische app kunt starten
    | Eigenschap | Eigenschap (JSON) | Vereist | Type | Beschrijving |
    |----------|-----------------|----------|------|-------------|
    | **Interval** | `interval` | Ja | Geheel getal | Een positief geheel getal dat aangeeft hoe vaak de werk stroom wordt uitgevoerd op basis van de frequentie. Dit zijn de minimale en maximale intervallen: <p><p>-Maand: 1-16 maanden <br>-Dag: 1-500 dagen <br>-Uur: 1-12000 uur <br>-Minuut: 1-72000 minuten <br>-Seconde: 1-9999999 seconden <p>Als het interval bijvoorbeeld 6 is en de frequentie ' month ' is, is het terugkeer patroon elke 6 maanden. |
-   | **Frequentie** | `frequency` | Ja | Tekenreeks | De tijds eenheid voor het terugkeer patroon: **tweede** , **minuut** , **uur** , **dag** , **week** of **maand** |
+   | **Frequentie** | `frequency` | Ja | Tekenreeks | De tijds eenheid voor het terugkeer patroon: **tweede**, **minuut**, **uur**, **dag**, **week** of **maand** |
    | **Tijdzone** | `timeZone` | Nee | Tekenreeks | Is alleen van toepassing wanneer u een start tijd opgeeft, omdat deze trigger geen [UTC-offset](https://en.wikipedia.org/wiki/UTC_offset)accepteert. Selecteer de tijd zone die u wilt Toep assen. |
    | **Begin tijd** | `startTime` | Nee | Tekenreeks | Geef een begin datum en-tijd op in de volgende indeling: <p><p>JJJJ-MM-DDTuu: mm: SS als u een tijd zone selecteert <p>-of- <p>JJJJ-MM-DDTuu: mm: ssZ als u geen tijd zone selecteert <p>Als u bijvoorbeeld 18 september 2017 om 2:00 uur wilt, geeft u "2017-09-18T14:00:00" op en selecteert u een tijd zone zoals Pacific (standaard tijd). U kunt ook "2017-09-18T14:00:00Z" opgeven zonder tijd zone. <p>**Opmerking:** Deze begin tijd heeft een maximum van 49 jaar in de toekomst en moet voldoen aan de [ISO 8601 date time-specificatie](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) in [UTC datum tijd notatie](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), maar zonder een [UTC-afwijking](https://en.wikipedia.org/wiki/UTC_offset). Als u geen tijd zone selecteert, moet u de letter ' Z ' aan het einde toevoegen zonder spaties. Deze "Z" verwijst naar de equivalente [zeemijl tijd](https://en.wikipedia.org/wiki/Nautical_time). <p>Voor eenvoudige schema's is de start tijd het eerste voorval, terwijl voor complexe schema's de trigger niet eerder dan de begin tijd wordt geactiveerd. [*Wat zijn de manieren waarop ik de begin datum en-tijd kan gebruiken?*](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md#start-time) |
    ||||||
@@ -115,7 +115,7 @@ Als u de meest recente resultaten wilt filteren, sorteren of ophalen, geeft u *a
 
 Voor meer informatie over de query's die u met deze connector kunt gebruiken, raadpleegt u de [documentatie over Microsoft Graph Security Alerts](/graph/api/alert-list). Meer informatie over de [schema-eigenschappen](/graph/api/resources/alert) die door de connector worden ondersteund om uitgebreide ervaringen met deze connector te maken.
 
-| Actie | Beschrijving |
+| Bewerking | Beschrijving |
 |--------|-------------|
 | **Waarschuwingen ophalen** | Ontvang waarschuwingen die worden gefilterd op basis van een of meer [Eigenschappen van waarschuwingen](/graph/api/resources/alert), bijvoorbeeld `Provider eq 'Azure Security Center' or 'Palo Alto Networks'` . | 
 | **Waarschuwing op ID ontvangen** | Een specifieke waarschuwing ophalen op basis van de waarschuwings-ID. | 
@@ -128,7 +128,7 @@ Microsoft Graph ondersteunt [*abonnementen*](/graph/api/resources/subscription)o
 
 `security/alerts?$filter=status eq 'NewAlert'`
 
-| Actie | Beschrijving |
+| Bewerking | Beschrijving |
 |--------|-------------|
 | **Abonnementen maken** | [Maak een abonnement](/graph/api/subscription-post-subscriptions) dat u op de hoogte brengt van eventuele wijzigingen. U kunt dit abonnement filteren op de specifieke waarschuwings typen die u wilt. U kunt bijvoorbeeld een abonnement maken dat u op de hoogte stelt van waarschuwingen met hoge urgentie. |
 | **Actieve abonnementen ophalen** | Niet- [verlopen abonnementen ophalen](/graph/api/subscription-list). | 
@@ -144,7 +144,7 @@ Als u de meest recente resultaten wilt filteren, sorteren of ophalen, geeft u *a
 
 Voor meer informatie over de query's die u met deze connector kunt gebruiken, raadpleegt u [' optionele query parameters ' in de referentie documentatie Microsoft Graph Security Threat Intelligence-indicator](/graph/api/tiindicators-list). Als u uitgebreide ervaringen met deze connector wilt maken, leest u meer over de [schema-eigenschappen Threat Intelligence-indicator](/graph/api/resources/tiindicator) die door de connector wordt ondersteund.
 
-| Actie | Beschrijving |
+| Bewerking | Beschrijving |
 |--------|-------------|
 | **Threat Intelligence-Indica tors ophalen** | Get tiIndicators gefilterd op basis van een of meer [tiIndicator-eigenschappen](/graph/api/resources/tiindicator), bijvoorbeeld `threatType eq 'MaliciousUrl' or 'DDoS'` |
 | **Bedreigings informatie-indicator op ID ophalen** | Een specifieke tiIndicator ophalen op basis van de tiIndicator-ID. | 

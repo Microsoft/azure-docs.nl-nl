@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 11/09/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7819c934ab97d597d52d4809c11e5c59fb87c89a
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4fa0f4d87567bd77faacfd2373dba0d2b8996446
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840662"
+ms.locfileid: "94873366"
 ---
 # <a name="localization-string-ids"></a>Id's van lokalisatiereeksen
 
@@ -64,7 +64,7 @@ De volgende Id's worden gebruikt voor een inhouds definitie met een ID van `api.
 
 In het volgende voor beeld ziet u het gebruik van een aantal van de elementen van de gebruikers interface op de registratie-of aanmeldings pagina:
 
-![UX-elementen voor registratie of aanmeldings pagina](./media/localization-string-ids/localization-susi-2.png)
+:::image type="content" source="./media/localization-string-ids/localization-susi-2.png" alt-text="Scherm opname van de U X-elementen voor registratie of aanmeldings pagina.":::
 
 ### <a name="sign-up-or-sign-in-identity-providers"></a>Registratie-en registratie-id-providers
 
@@ -152,7 +152,7 @@ Hieronder ziet u de Id's voor een inhouds definitie met een ID van `api.localacc
 | **cancel_message** | De gebruiker heeft het invoeren van zelfbevestigende informatie geannuleerd |
 | **preloader_alt** | Een ogenblik geduld |
 | **ver_but_send** | Verificatie code verzenden |
-| **alert_yes** | Yes |
+| **alert_yes** | Ja |
 | **error_fieldIncorrect** | Een of meer velden zijn onjuist ingevuld. Controleer uw vermeldingen en probeer het opnieuw. |
 | **jaareinde** | Year |
 | **verifying_blurb** | De gegevens worden verwerkt. een ogen blik geduld... |

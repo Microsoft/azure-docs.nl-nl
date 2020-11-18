@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: ccd070d2d7a6fcccab6d243567dfbe02960cc870
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 5185e7d0bd60eec239f1233db7f9789cbefc2c10
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376388"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873536"
 ---
 # <a name="manage-qna-maker-resources"></a>QnA Maker-resources beheren
 
@@ -23,7 +23,7 @@ Een uitgevulde uitleg van de volgende concepten is handig voordat u de resource 
 
 ## <a name="create-a-new-qna-maker-service"></a>Een nieuwe QnA Maker-service maken
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 Met deze procedure maakt u de Azure-resources die nodig zijn voor het beheren van de inhoud van de Knowledge Base. Nadat u deze stappen hebt voltooid, vindt u de _abonnements_ sleutels op de pagina **sleutels** voor de resource in de Azure Portal.
 
@@ -117,7 +117,7 @@ Als u de app voor Voorspellings eindpunt wilt laden, zelfs wanneer er geen verke
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Zoek en selecteer de app service van uw QnA Maker-resource. Deze heeft dezelfde naam als de QnA Maker resource, maar heeft een ander **type** app service.
 1. Zoek **instellingen** en selecteer **configuratie**.
-1. In het deel venster configuratie selecteert u **algemene instellingen** , vervolgens **altijd zoeken in** **en selecteert u** als waarde.
+1. In het deel venster configuratie selecteert u **algemene instellingen**, vervolgens **altijd zoeken in** **en selecteert u** als waarde.
 
     > [!div class="mx-imgBorder"]
     > ![Selecteer in het deel venster configuratie de optie * * algemene instellingen * *, zoek * * always on * * en selecteer * * op * * als waarde.](../media/qnamaker-how-to-upgrade-qnamaker/configure-app-service-idle-timeout.png)
@@ -133,6 +133,7 @@ De App Service Environment kan worden gebruikt om QnA Maker app service te hoste
 2. Maak de app-service beschikbaar en sta QnA Maker Beschik baarheid toe als:
     * Openbaar beschikbaar-standaard
     * Label voor de DNS-service: `CognitiveServicesManagement`
+3. Maak een QnA Maker cognitieve service-exemplaar (micro soft. CognitiveServices/accounts) met behulp van Azure Resource Manager, waarbij QnA Maker eind punt moet worden ingesteld op App Service Environment.
 
 ### <a name="network-isolation-for-app-service"></a>Netwerk isolatie voor App Service
 
@@ -143,8 +144,6 @@ QnA Maker cognitieve service maakt gebruik van de servicetag: `CognitiveServices
 * Navigeer naar het gedeelte netwerken van uw App Service-bron en klik op de optie toegangs beperking configureren om de IP-adressen toe te voegen aan een allowlist.
 
 We hebben ook een geautomatiseerd script om hetzelfde te doen voor uw App Service. U kunt het [Power shell-script vinden voor het configureren van een allowlist](https://github.com/pchoudhari/QnAMakerBackupRestore/blob/master/AddRestrictedIPAzureAppService.ps1) op github. U moet abonnements-id, resource groep en werkelijke App Service naam invoeren als script parameters. Wanneer het script wordt uitgevoerd, worden de IP-adressen automatisch toegevoegd aan App Service allowlist.
-    
-1. Maak een QnA Maker cognitieve service-exemplaar (micro soft. CognitiveServices/accounts) met behulp van Azure Resource Manager, waarbij QnA Maker eind punt moet worden ingesteld op App Service Environment.
 
 ### <a name="business-continuity-with-traffic-manager"></a>Bedrijfs continuïteit met Traffic Manager
 
@@ -169,7 +168,7 @@ Het idee op hoog niveau zoals hierboven wordt weer gegeven, is als volgt:
 
 1. Ten slotte gebruikt u het Traffic Manager-eind punt in uw bot of app.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 Met deze procedure maakt u de Azure-resources die nodig zijn voor het beheren van de inhoud van de Knowledge Base. Nadat u deze stappen hebt voltooid, vindt u de *abonnements* sleutels op de pagina **sleutels** voor de resource in de Azure Portal.
 
@@ -203,7 +202,7 @@ Met deze procedure maakt u de Azure-resources die nodig zijn voor het beheren va
 
 ## <a name="find-authoring-keys-in-the-azure-portal"></a>Zoek sleutels zoeken in de Azure Portal
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waar u de QnA Maker resource hebt gemaakt. Deze sleutels kunnen worden aangeduid als abonnements sleutels.
 
@@ -211,7 +210,7 @@ U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waa
 
     ![QnA Maker Resource lijst](../media/qnamaker-how-to-key-management/qnamaker-resource-list.png)
 
-2. Ga naar **sleutels** :
+2. Ga naar **sleutels**:
 
     ![Abonnementssleutel](../media/qnamaker-how-to-key-management/subscription-key.PNG)
 
@@ -221,7 +220,7 @@ Het eind punt bevindt zich in dezelfde regio als de resource omdat de eindpunt s
 
 Eindpunt sleutels kunnen worden beheerd vanuit de [QnA Maker Portal](https://qnamaker.ai).
 
-1. Meld u aan bij de [QnA Maker-Portal](https://qnamaker.ai), ga naar uw profiel en selecteer vervolgens service- **instellingen** :
+1. Meld u aan bij de [QnA Maker-Portal](https://qnamaker.ai), ga naar uw profiel en selecteer vervolgens service- **instellingen**:
 
     ![Eindpunt sleutel](../media/qnamaker-how-to-key-management/Endpoint-keys.png)
 
@@ -233,7 +232,7 @@ Eindpunt sleutels kunnen worden beheerd vanuit de [QnA Maker Portal](https://qna
     >[!NOTE]
     >Vernieuw uw sleutels als u denkt dat ze zijn aangetast. Hiervoor kunnen eventueel bijbehorende wijzigingen in de client toepassing of bot code worden vereist.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waar u de resource voor QnA Maker Managed (preview) hebt gemaakt. Deze sleutels kunnen worden aangeduid als abonnements sleutels.
 
@@ -241,7 +240,7 @@ U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waa
 
     ![Resource lijst voor door QnA Maker beheerde (preview-versie)](../media/qnamaker-how-to-key-management/qnamaker-v2-resource-list.png)
 
-2. Ga naar **sleutels en eind punt** :
+2. Ga naar **sleutels en eind punt**:
 
     ![QnA Maker Managed (preview)-abonnements sleutel](../media/qnamaker-how-to-key-management/subscription-key-v2.png)
 
@@ -253,7 +252,7 @@ Meer informatie over het bijwerken van de resources die worden gebruikt door uw 
 
 ## <a name="upgrade-the-azure-cognitive-search-service"></a>De Azure Cognitive Search-service upgraden
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 Als u van plan bent een groot aantal Knowledge bases te hebben, moet u de prijs categorie van uw Azure Cognitive Search-service bijwerken.
 
@@ -265,7 +264,7 @@ Op dit moment kunt u geen in-place upgrade van de SKU voor Azure Search uitvoere
 
 1. Herstel de indexen van de oorspronkelijke Azure Search-resource naar de nieuwe. Zie de [voorbeeld code voor het terugzetten van back-ups](https://github.com/pchoudhari/QnAMakerBackupRestore).
 
-1. Nadat de gegevens zijn hersteld, gaat u naar uw nieuwe Azure Search-resource, selecteert u **sleutels** en noteert u de **naam** en de **beheerders sleutel** :
+1. Nadat de gegevens zijn hersteld, gaat u naar uw nieuwe Azure Search-resource, selecteert u **sleutels** en noteert u de **naam** en de **beheerders sleutel**:
 
     ![QnA Maker Azure-Zoek sleutels](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-azuresearch-keys.png)
 
@@ -342,7 +341,7 @@ Als u geen QnA Maker-resource gebruikt, moet u alle resources verwijderen. Als u
 
 Gratis Zoek bronnen worden na 90 dagen verwijderd zonder dat er een API-aanroep wordt ontvangen.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 Als u van plan bent een groot aantal Knowledge bases te hebben, moet u de prijs categorie van uw Azure Cognitive Search-service bijwerken.
 

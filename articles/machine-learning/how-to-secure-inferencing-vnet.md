@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/23/2020
 ms.custom: contperfq4, tracking-python, contperfq1, devx-track-azurecli
-ms.openlocfilehash: 6508db654cd27ca4b3844f6037f13fb504173e11
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 3bd4d328c6b0b73a51f325adde988c8f0988ea8a
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93361162"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873808"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Een Azure Machine Learning-deductieomgeving beveiligen met virtuele netwerken
 
@@ -115,6 +115,8 @@ aks_target = ComputeTarget.create(workspace=ws,
 
 Wanneer het maken van het proces is voltooid, kunt u het decoderen of model leren uitvoeren op een AKS-cluster achter een virtueel netwerk. Zie [implementeren op AKS](how-to-deploy-and-where.md)voor meer informatie.
 
+Zie [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)voor meer informatie over het gebruik van Role-Based Access Control met Kubernetes.
+
 ## <a name="network-contributor-role"></a>Rol netwerk bijdrager
 
 > [!IMPORTANT]
@@ -122,7 +124,7 @@ Wanneer het maken van het proces is voltooid, kunt u het decoderen of model lere
 >
 > Gebruik de volgende stappen om de identiteit als netwerkinzender toe te voegen:
 
-1. Gebruik de volgende Azure CLI-opdrachten om de service-principal of de beheerde identiteits-ID voor AKS te vinden. Vervang `<aks-cluster-name>` door de naam van het cluster. Vervang door `<resource-group-name>` de naam van de resource groep die _het AKS-cluster bevat_ :
+1. Gebruik de volgende Azure CLI-opdrachten om de service-principal of de beheerde identiteits-ID voor AKS te vinden. Vervang `<aks-cluster-name>` door de naam van het cluster. Vervang door `<resource-group-name>` de naam van de resource groep die _het AKS-cluster bevat_:
 
     ```azurecli-interactive
     az aks show -n <aks-cluster-name> --resource-group <resource-group-name> --query servicePrincipalProfile.clientId
@@ -134,7 +136,7 @@ Wanneer het maken van het proces is voltooid, kunt u het decoderen of model lere
     az aks show -n <aks-cluster-name> --resource-group <resource-group-name> --query identity.principalId
     ```
 
-1. Gebruik de volgende opdracht om de ID te vinden van de resource groep die het virtuele netwerk bevat. Vervang door `<resource-group-name>` de naam van de resource groep die _het virtuele netwerk bevat_ :
+1. Gebruik de volgende opdracht om de ID te vinden van de resource groep die het virtuele netwerk bevat. Vervang door `<resource-group-name>` de naam van de resource groep die _het virtuele netwerk bevat_:
 
     ```azurecli-interactive
     az group show -n <resource-group-name> --query id
@@ -151,8 +153,8 @@ Zie voor meer informatie over het gebruik van de interne load balancer met AKS [
 
 Er zijn twee benaderingen voor het isoleren van verkeer van en naar het AKS-cluster naar het virtuele netwerk:
 
-* __Persoonlijk AKS-cluster__ : deze benadering maakt gebruik van een persoonlijke Azure-koppeling om de communicatie met het cluster te beveiligen voor implementatie-en beheer bewerkingen.
-* __Interne AKS Load Balancer__ : met deze aanpak configureert u het eind punt voor uw implementaties naar AKS voor het gebruik van een privé-IP-adres in het virtuele netwerk.
+* __Persoonlijk AKS-cluster__: deze benadering maakt gebruik van een persoonlijke Azure-koppeling om de communicatie met het cluster te beveiligen voor implementatie-en beheer bewerkingen.
+* __Interne AKS Load Balancer__: met deze aanpak configureert u het eind punt voor uw implementaties naar AKS voor het gebruik van een privé-IP-adres in het virtuele netwerk.
 
 > [!WARNING]
 > Interne load balancer werkt niet met een AKS-cluster dat gebruikmaakt van kubenet. Als u een interne load balancer en een persoonlijk AKS-cluster tegelijk wilt gebruiken, configureert u uw particuliere AKS-cluster met Azure container Networking interface (CNI). Zie [Azure cni Networking configureren in de Azure Kubernetes-service](../aks/configure-azure-cni.md)voor meer informatie.

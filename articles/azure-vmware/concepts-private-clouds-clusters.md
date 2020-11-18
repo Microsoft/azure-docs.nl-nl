@@ -3,12 +3,12 @@ title: Concepten-persoonlijke Clouds en clusters
 description: Meer informatie over de belangrijkste mogelijkheden van de Azure VMware-oplossing software-gedefinieerde data centers en vSphere-clusters.
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: daa712a722ca3252a49e4f54e0cc9e42de4ffc73
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 0454ade503ce40de46363f65d36a64340219c0b1
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337318"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874012"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Azure VMware-oplossing persoonlijke Cloud-en cluster concepten
 
@@ -59,7 +59,7 @@ De huidige software versies van de VMware-software die worden gebruikt in azure 
 
 Voor elk nieuw cluster in een privécloud komt de software versie overeen met wat momenteel wordt uitgevoerd. Voor elke nieuwe privécloud in een abonnement wordt de meest recente versie van de software stack geïnstalleerd.
 
-U vindt het algemene upgrade beleid en de processen voor de Azure VMware Solution platform-software, zoals beschreven in het artikel [concepten van upgrades](concepts-upgrades.md) .
+U vindt het algemene upgrade beleid en de processen voor de Azure VMware Solution platform-software die wordt beschreven in [updates voor privécloud en upgrades](concepts-upgrades.md).
 
 ## <a name="host-maintenance-and-lifecycle-management"></a>Host onderhoud en levenscyclus beheer
 

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 04d8a77cd051823559aba42d5dfc1418e6343ecc
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 5e3473a9afefe73fe7b07d3efda1f53675264fc8
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397379"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874624"
 ---
 # <a name="how-to-install-an-application-gateway-ingress-controller-agic-using-a-new-application-gateway"></a>Een Application Gateway ingangs controller (AGIC) installeren met behulp van een nieuwe Application Gateway
 
@@ -40,7 +40,7 @@ Uw [Azure Cloud shell](https://shell.azure.com/) beschikt al over alle benodigde
 
 Volg de onderstaande stappen om een [Service-Principal-object](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object)voor Azure Active Directory (Aad) te maken. Noteer de `appId` waarden, `password` en, en `objectId` deze worden in de volgende stappen gebruikt.
 
-1. AD-service-principal maken ([meer informatie over RBAC](../role-based-access-control/overview.md)):
+1. AD-service-principal maken ([meer informatie over Azure RBAC](../role-based-access-control/overview.md)):
     ```azurecli
     az ad sp create-for-rbac --skip-assignment -o json > auth.json
     appId=$(jq -r ".appId" auth.json)
@@ -66,7 +66,7 @@ Volg de onderstaande stappen om een [Service-Principal-object](../active-directo
     }
     EOF
     ```
-    Als u een met **RBAC** ingeschakeld cluster wilt implementeren, stelt `aksEnableRBAC` u het veld in op `true`
+    Als u een **KUBERNETES RBAC** -cluster wilt implementeren, stelt `aksEnableRBAC` u het veld in op `true`
 
 ## <a name="deploy-components"></a>Onderdelen implementeren
 Met deze stap worden de volgende onderdelen aan uw abonnement toegevoegd:
@@ -131,13 +131,13 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
 
 De AAD pod-identiteit voor uw cluster installeren:
 
-   - *RBAC ingeschakeld* AKS-cluster
+   - *RBAC Kubernetes ingeschakeld* AKS-cluster
 
      ```bash
      kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
      ```
 
-   - *RBAC is uitgeschakeld* AKS-cluster
+   - *KUBERNETES RBAC uitgeschakeld* AKS-cluster
 
      ```bash
      kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
@@ -148,7 +148,7 @@ De AAD pod-identiteit voor uw cluster installeren:
 
 1. Installeer [helm](../aks/kubernetes-helm.md) en voer het volgende uit om het helm-pakket toe te voegen `application-gateway-kubernetes-ingress` :
 
-    - *RBAC ingeschakeld* AKS-cluster
+    - *RBAC Kubernetes ingeschakeld* AKS-cluster
 
         ```bash
         kubectl create serviceaccount --namespace kube-system tiller-sa
@@ -156,7 +156,7 @@ De AAD pod-identiteit voor uw cluster installeren:
         helm init --tiller-namespace kube-system --service-account tiller-sa
         ```
 
-    - *RBAC is uitgeschakeld* AKS-cluster
+    - *KUBERNETES RBAC uitgeschakeld* AKS-cluster
 
         ```bash
         helm init
@@ -228,7 +228,7 @@ De AAD pod-identiteit voor uw cluster installeren:
     #    secretJSON: <<Generate this value with: "az ad sp create-for-rbac --subscription <subscription-uuid> --sdk-auth | base64 -w0" >>
     
     ################################################################################
-    # Specify if the cluster is RBAC enabled or not
+    # Specify if the cluster is Kubernetes RBAC enabled or not
     rbac:
         enabled: false # true/false
     

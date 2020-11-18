@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/01/2020
-ms.openlocfilehash: f2ac565b8c6dfce52daeadd20cf3357bc22cd281
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: e041b69d8fc256ff5fe759be9716db032540f2cb
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843805"
+ms.locfileid: "94873791"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Een model implementeren in een Azure Kubernetes service-cluster
 
@@ -333,6 +333,7 @@ Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bed
 
 ## <a name="next-steps"></a>Volgende stappen
 
+* [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
 * [Veilige omgeving voor het afwijzen van interferentie met Azure Virtual Network](how-to-secure-inferencing-vnet.md)
 * [Een model implementeren met behulp van een aangepaste docker-installatie kopie](how-to-deploy-custom-docker-image.md)
 * [Problemen met implementatie oplossen](how-to-troubleshoot-deployment.md)

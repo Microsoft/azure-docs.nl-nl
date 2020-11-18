@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/12/2020
+ms.date: 11/17/2020
 ms.author: alkohli
-ms.openlocfilehash: e67b507baf1c3271a7fe32318597722e52fd3890
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de41bd030ea73ac68bfac5fbfbd03ae14cf7980f
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90891383"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874233"
 ---
 # <a name="certificate-requirements"></a>Certificaatvereisten
 
@@ -30,12 +30,13 @@ De volgende vereisten gelden voor het verlenen van certificaten:
 * Het certificaat *dat is verleend aan:* , mag niet hetzelfde zijn als het veld *uitgereikt door:* , behalve basis-CA-certificaten.
 
 
-
 ## <a name="certificate-algorithms"></a>Certificaat algoritmen
 
 Certificaat algoritmen moeten aan de volgende vereisten voldoen:
 
 * Certificaten moeten gebruikmaken van de RSA-sleutel algoritme.
+
+* Alleen RSA-certificaten met micro soft RSA/SChannel Cryptographic Provider worden ondersteund.
 
 * Het algoritme voor certificaat handtekeningen kan geen SHA1 zijn.
 
@@ -81,6 +82,8 @@ De PFX-certificaten die op uw Azure Stack Edge Pro-apparaat zijn geïnstalleerd,
 * De wacht woorden voor alle PFX-bestanden van het certificaat moeten gelijk zijn op het moment van de implementatie als u het hulp programma Azure Stack Readiness Checker gebruikt. Zie [certificaten voor uw Azure stack Edge Pro maken met behulp van Azure stack hub-gereedheids controleprogramma](azure-stack-edge-j-series-create-certificates-tool.md)voor meer informatie.
 
 * Het wacht woord voor het PFX van het certificaat moet een complex wacht woord zijn. Noteer dit wacht woord, omdat dit wordt gebruikt als een implementatie parameter.
+
+* Gebruik alleen RSA-certificaten met de cryptografische micro soft RSA/SChannel-provider.
 
 Zie [PFX-certificaten exporteren met de persoonlijke sleutel](azure-stack-edge-j-series-manage-certificates.md#export-certificates-as-pfx-format-with-private-key)voor meer informatie.
 

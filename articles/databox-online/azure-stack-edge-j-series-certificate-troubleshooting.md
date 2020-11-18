@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: troubleshooting
-ms.date: 09/29/2020
+ms.date: 11/17/2020
 ms.author: alkohli
-ms.openlocfilehash: f0f9dfa6e3d6ae02f66ac71f62586953cb21517e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 18e90bcfe7238ae998ac677a9d7eebef0ffa8939
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568349"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874250"
 ---
 # <a name="troubleshooting-certificate-errors"></a>Certificaat fouten oplossen
 
@@ -46,6 +46,7 @@ De volgende tabel bevat algemene certificaat fouten en gedetailleerde informatie
 | CertificateManagement_MissingServerOid | Het certificaat met de onderwerpnaam {0} heeft geen OID voor Server verificatie. Controleer de certificaat eigenschappen en breng indien nodig een nieuw certificaat in.|
 | CertificateManagement_NameMismatch | Het certificaat type komt niet overeen. Verwacht bereik: {0} , gevonden {1} . Upload het juiste certificaat.|
 | CertificateManagement_NoPrivateKeyPresent | {0}Er is geen persoonlijke sleutel aanwezig in het certificaat met de onderwerpnaam. Upload een pfx-certificaat met een persoonlijke sleutel.|
+| CertificateManagement_NoRSACryptoPrivateKey | De persoonlijke sleutel voor het certificaat met de onderwerpnaam {0} is niet toegankelijk. Zorg ervoor dat u een ondersteund certificaat gebruikt. Alleen de micro soft RSA/SChannel Cryptographic Provider wordt ondersteund. |
 | CertificateManagement_NotSelfSignedCertificate | Het certificaat met de onderwerpnaam {0} is niet zelf ondertekend. Basis certificaten moeten zelf worden ondertekend |
 | CertificateManagement_NotSupportedOnVirtualAppliance | Deze bewerking wordt niet ondersteund op het virtuele apparaat. Deze fout geeft aan dat ondertekening alleen plaatsvindt bij Data Box Gateway die worden uitgevoerd in een Tactical Cloud-apparaat. Deze fout treedt op tijdens het beheren van het apparaat via Windows Power shell.|
 | CertificateManagement_SelfSignedCertificate | Het certificaat met de onderwerpnaam {0} is zelf ondertekend. Upload een certificaat dat juist is ondertekend.|
@@ -57,6 +58,8 @@ De volgende tabel bevat algemene certificaat fouten en gedetailleerde informatie
 | CertificateImportFailure | Het certificaat met de vinger afdruk {0} is niet geïmporteerd op het knoop punt {1} . Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
 | CertificateApplyFailure | Het certificaat met de vinger afdruk {0} is niet toegepast op het knoop punt {1} . Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning.|
 | NodeNotReachable | Kan certificaat niet valideren op {0} . Controleer de hardware-en software status van het systeem.|
+| FOUT CODE OPHALEN | De persoonlijke sleutel voor dit certificaat is niet toegankelijk. Zorg ervoor dat u een ondersteund certificaat gebruikt. Alleen de micro soft RSA/SChannel Cryptographic Provider wordt ondersteund. |
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

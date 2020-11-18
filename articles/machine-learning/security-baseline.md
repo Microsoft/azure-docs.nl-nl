@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2468bde9dd969ad604f96835a3dc0bfad06c1cd2
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 8f2498dbb3a555db262c591c9badacbe0e4e2548
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844656"
+ms.locfileid: "94874658"
 ---
 # <a name="azure-security-baseline-for-azure-machine-learning"></a>Azure-beveiligings basislijn voor Azure Machine Learning
 
@@ -529,6 +529,7 @@ Voor het onderliggende platform, dat wordt beheerd door micro soft, behandelt mi
 **Hulp**: Azure machine learning ondersteunt het gebruik van Azure Active Directory (Azure AD) om aanvragen voor machine learning bronnen goed te keuren. Met Azure AD kunt u op rollen gebaseerd toegangs beheer (RBAC) van Azure gebruiken om machtigingen te verlenen aan een beveiligingsprincipal, die een gebruiker of een service-principal van de toepassing is.
 
 - [De toegang tot een Azure Machine Learning-werkruimte beheren](how-to-assign-roles.md)
+- [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
 
 **Azure Security Center bewaking**: niet van toepassing
 
@@ -911,6 +912,8 @@ Azure Machine Learning biedt volledige ondersteuning voor git-opslag plaatsen vo
 - [Azure RBAC configureren](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
 - [Overzicht van Galerie gedeelde afbeeldingen](../virtual-machines/windows/shared-image-galleries.md)
+
+- [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
 
 **Azure Security Center bewaking**: niet van toepassing
 

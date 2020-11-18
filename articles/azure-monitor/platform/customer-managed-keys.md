@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
-ms.date: 11/09/2020
-ms.openlocfilehash: 62621a36955808ec3f2c796681fe660e6e8524bc
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.date: 11/18/2020
+ms.openlocfilehash: 7bfd951d7cec27e0b8264aaabf9bc3a17875256a
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443378"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873519"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -21,11 +21,13 @@ U wordt aangeraden [beperkingen en beperkingen](#limitationsandconstraints) hier
 
 ## <a name="customer-managed-key-overview"></a>Overzicht van door de klant beheerde sleutels
 
-[Versleuteling op rest](../../security/fundamentals/encryption-atrest.md) is een veelvoorkomende privacy-en beveiligings vereiste in organisaties. U kunt de versleuteling op de rest van Azure volledig beheren, terwijl u verschillende opties hebt om versleutelings-of versleutelings sleutels nauw keurig te beheren.
+[Versleuteling op rest](../../security/fundamentals/encryption-atrest.md) is een veelvoorkomende privacy-en beveiligings vereiste in organisaties. U kunt de versleuteling op de rest van Azure volledig beheren, terwijl u verschillende opties hebt om versleutelings-en versleutelings sleutels nauw keurig te beheren.
 
-Azure Monitor zorgt ervoor dat alle gegevens en opgeslagen query's op rest worden versleuteld met behulp van door micro soft beheerde sleutels (MMK). Azure Monitor biedt ook een optie voor versleuteling met behulp van uw eigen sleutel die is opgeslagen in uw [Azure Key Vault](../../key-vault/general/overview.md) en die wordt gebruikt door opslag voor gegevens versleuteling. De sleutel kan [software of hardware-HSM](../../key-vault/general/overview.md)zijn die is beveiligd. Azure Monitor versleuteling is hetzelfde als de manier waarop [Azure Storage versleuteling](../../storage/common/storage-service-encryption.md#about-azure-storage-encryption) werkt.
+Azure Monitor zorgt ervoor dat alle gegevens en opgeslagen query's op rest worden versleuteld met behulp van door micro soft beheerde sleutels (MMK). Azure Monitor biedt ook een optie voor versleuteling met uw eigen sleutel die is opgeslagen in uw [Azure Key Vault](../../key-vault/general/overview.md) en geeft u het beheer om de toegang tot uw gegevens op elk gewenst moment in te trekken. Azure Monitor versleuteling is hetzelfde als de manier waarop [Azure Storage versleuteling](../../storage/common/storage-service-encryption.md#about-azure-storage-encryption) werkt.
 
-De door de klant beheerde sleutel mogelijkheid wordt geleverd op toegewezen Log Analytics clusters. Zo kunt u uw gegevens beveiligen met behulp van een [lockbox](#customer-lockbox-preview) -besturings element en hebt u de mogelijkheid om de toegang tot uw gegevens op elk gewenst moment in te trekken. De gegevens die in de afgelopen 14 dagen zijn opgenomen, worden ook opgeslagen in de Hot-cache (met SSD-back-ups) voor een efficiënte query-engine bewerking. Deze gegevens blijven versleuteld met micro soft-sleutels, ongeacht de configuratie van de door de klant beheerde sleutel, maar uw controle over SSD-gegevens voldoet aan de [sleutel intrekking](#key-revocation). Er wordt gewerkt aan SSD-gegevens die zijn versleuteld met Customer-Managed sleutel in de eerste helft van 2021.
+Customer-Managed sleutel wordt geleverd op toegewezen Log Analytics clusters met een hoger beveiligings niveau en controle. Gegevens die zijn opgenomen in toegewezen clusters, worden twee maal versleuteld: eenmaal op service niveau met door micro soft beheerde sleutels of door de klant beheerde sleutels, en eenmaal op het niveau van de infra structuur met twee verschillende versleutelings algoritmen en twee verschillende sleutels. [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) beschermt tegen een scenario waarbij een van de versleutelings algoritmen of-sleutels mogelijk is aangetast. In dit geval blijft de extra laag versleuteling uw gegevens beveiligen. Met toegewezen cluster kunt u uw gegevens ook beveiligen met behulp van een [lockbox](#customer-lockbox-preview) -besturings element.
+
+De gegevens die in de afgelopen 14 dagen zijn opgenomen, worden ook opgeslagen in de Hot-cache (met SSD-back-ups) voor een efficiënte query-engine bewerking. Deze gegevens blijven versleuteld met micro soft-sleutels, ongeacht de configuratie van de door de klant beheerde sleutel, maar uw controle over SSD-gegevens voldoet aan de [sleutel intrekking](#key-revocation). Er wordt gewerkt aan SSD-gegevens die zijn versleuteld met Customer-Managed sleutel in de eerste helft van 2021.
 
 Het [prijs model van log Analytics clusters](./manage-cost-storage.md#log-analytics-dedicated-clusters) maakt gebruik van capaciteits reserveringen vanaf een niveau van 1000 GB per dag.
 
@@ -74,77 +76,18 @@ Customer-Managed-sleutel configuratie wordt niet ondersteund in Azure Portal en 
 
 ### <a name="asynchronous-operations-and-status-check"></a>Asynchrone bewerkingen en status controle
 
-Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. Wanneer REST-aanvragen in de configuratie worden gebruikt, retourneert de reactie in eerste instantie een HTTP-status code 200 (OK) en koptekst met de eigenschap *Azure-AsyncOperation* wanneer deze wordt geaccepteerd:
+Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. Bij gebruik van REST retourneert de reactie in eerste instantie een HTTP-status code 200 (OK) en koptekst met de eigenschap *Azure-AsyncOperation* wanneer deze wordt geaccepteerd:
 ```json
 "Azure-AsyncOperation": "https://management.azure.com/subscriptions/subscription-id/providers/Microsoft.OperationalInsights/locations/region-name/operationStatuses/operation-id?api-version=2020-08-01"
 ```
 
-Vervolgens kunt u de status van de asynchrone bewerking controleren door een GET-aanvraag te verzenden naar de waarde van de *Azure-AsyncOperation-* header:
+U kunt de status van de asynchrone bewerking controleren door een GET-aanvraag te verzenden naar de waarde van de *Azure-AsyncOperation-* header:
 ```rst
 GET https://management.azure.com/subscriptions/subscription-id/providers/microsoft.operationalInsights/locations/region-name/operationstatuses/operation-id?api-version=2020-08-01
 Authorization: Bearer <token>
 ```
 
-Het antwoord bevat informatie over de bewerking en de *status* ervan. Dit kan een van de volgende zijn:
-
-Bewerking wordt uitgevoerd
-```json
-{
-    "id": "Azure-AsyncOperation URL value from the GET operation",
-    "name": "operation-id", 
-    "status" : "InProgress", 
-    "startTime": "2017-01-06T20:56:36.002812+00:00",
-}
-```
-
-De update bewerking voor de sleutel-id wordt uitgevoerd
-```json
-{
-    "id": "Azure-AsyncOperation URL value from the GET operation",
-    "name": "operation-id", 
-    "status" : "Updating", 
-    "startTime": "2017-01-06T20:56:36.002812+00:00",
-    "endTime": "2017-01-06T20:56:56.002812+00:00",
-}
-```
-
-Het cluster wordt verwijderd. Wanneer u een cluster met gekoppelde werk ruimten verwijdert, wordt de bewerking van de koppeling voor elk van de werk ruimten asynchroon uitgevoerd en kan de bewerking enige tijd duren.
-Dit is niet relevant wanneer u een cluster verwijdert zonder gekoppelde werk ruimte. in dit geval wordt het cluster onmiddellijk verwijderd.
-```json
-{
-    "id": "Azure-AsyncOperation URL value from the GET operation",
-    "name": "operation-id", 
-    "status" : "Deleting", 
-    "startTime": "2017-01-06T20:56:36.002812+00:00",
-    "endTime": "2017-01-06T20:56:56.002812+00:00",
-}
-```
-
-Bewerking is voltooid
-```json
-{
-    "id": "Azure-AsyncOperation URL value from the GET operation",
-    "name": "operation-id", 
-    "status" : "Succeeded", 
-    "startTime": "2017-01-06T20:56:36.002812+00:00",
-    "endTime": "2017-01-06T20:56:56.002812+00:00",
-}
-```
-
-Bewerking is mislukt
-```json
-{
-    "id": "Azure-AsyncOperation URL value from the GET operation",
-    "name": "operation-id", 
-    "status" : "Failed", 
-    "startTime": "2017-01-06T20:56:36.002812+00:00",
-    "endTime": "2017-01-06T20:56:56.002812+00:00",
-    "error" : { 
-        "code": "error-code",  
-        "message": "error-message" 
-    }
-}
-```
+De `status` in-antwoord bevat kan een van de volgende zijn: InProgress, bijwerken, verwijderen, geslaagd of mislukt, inclusief de fout code.
 
 ### <a name="allowing-subscription"></a>Abonnement toestaan
 
@@ -595,7 +538,7 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
   1. Wanneer u REST gebruikt, kopieert u de waarde van de Azure-AsyncOperation-URL uit het antwoord en volgt u de controle van de [asynchrone bewerkings status](#asynchronous-operations-and-status-check).
   2. Verzend aanvraag verzenden naar cluster of werk ruimte en Bekijk het antwoord. Niet-gekoppelde werk ruimte heeft bijvoorbeeld niet de *clusterResourceId* onder *functies*.
 
-- Gebruik uw contact personen in micro soft voor ondersteuning en Help met betrekking tot de door de klant beheerde sleutel.
+- [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) wordt automatisch geconfigureerd voor clusters die zijn gemaakt van oktober 2020 als dubbele versleuteling in de regio is opgenomen. Als u een cluster maakt en er een fout melding krijgt met de naam ' <regio-name> ondersteunt geen dubbele versleuteling voor clusters. ' kunt u het cluster nog steeds maken, maar met dubbele versleuteling uitgeschakeld. Het kan niet worden in-of uitgeschakeld nadat het cluster is gemaakt. Als u een cluster wilt maken wanneer dubbele versleuteling niet wordt ondersteund in de regio, voegt u `"properties": {"isDoubleEncryptionEnabled": false}` in de rest-aanvraag tekst toe.
 
 - Foutberichten
   

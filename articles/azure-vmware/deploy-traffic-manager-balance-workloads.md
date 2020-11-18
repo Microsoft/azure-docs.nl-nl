@@ -3,12 +3,12 @@ title: Traffic Manager implementeren om de werk belastingen van de Azure VMware-
 description: Informatie over het integreren van Traffic Manager met de Azure VMware-oplossing (AVS) om de werk belastingen van toepassingen te verdelen over meerdere eind punten in verschillende regio's.
 ms.topic: how-to
 ms.date: 08/14/2020
-ms.openlocfilehash: 076d9c77d68df3d8acb7b531b3dfbea40fb3cedd
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: ed74bb0dfc533abadd50af32afc06c9cb4106193
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593115"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874279"
 ---
 # <a name="deploy-traffic-manager-to-balance-azure-vmware-solution-avs-workloads"></a>Traffic Manager implementeren om de werk belastingen van de Azure VMware-oplossing (AVS) te verdelen
 
@@ -30,7 +30,7 @@ Zoals in de volgende afbeelding wordt weer gegeven, biedt Azure Traffic Manager 
 
 Verbinding via het virtuele netwerk tussen de twee de privécloud-regio's van de Cloud, VS-West en Europa-west, en een on-premises server in VS-Oost, maakt gebruik van een ExpressRoute-gateway.   
 
-![Diagram van de architectuur van Traffic Manager integratie met de Azure VMware-oplossing](media/traffic-manager/traffic-manager-topology.png)
+:::image type="content" source="media/traffic-manager/traffic-manager-topology.png" alt-text="Diagram van de architectuur van Traffic Manager integratie met de Azure VMware-oplossing" lightbox="media/traffic-manager/traffic-manager-topology.png" border="false":::
  
 ## <a name="prerequisites"></a>Vereisten
 
@@ -75,7 +75,7 @@ In ons scenario wordt een NSX-T-segment geconfigureerd in de AVS-omgeving waar d
 
 1. Selecteer **segmenten** om uw geconfigureerde segmenten weer te geven. In dit geval ziet u dat contoso-segment1 is verbonden met Contoso-T01-gateway, een flexibele router van laag 1.
 
-    :::image type="content" source="media/traffic-manager/nsx-t-segment-avs.png" alt-text="Scherm opname van segment profielen in NSX-T-beheer.":::    
+    :::image type="content" source="media/traffic-manager/nsx-t-segment-avs.png" alt-text="Scherm opname van segment profielen in NSX-T-beheer." lightbox="media/traffic-manager/nsx-t-segment-avs.png":::    
 
 2. Selecteer **laag-1 gateways** om een lijst met uw laag-1-gateways met het aantal gekoppelde segmenten weer te geven. Selecteer het segment dat is gekoppeld aan contoso-T01. Er wordt een venster geopend met de logische interface die is geconfigureerd op de laag-01-router. Dit fungeert als gateway naar de virtuele machine van de back-endadresgroep-groep die is verbonden met het segment.
 
@@ -83,7 +83,7 @@ In ons scenario wordt een NSX-T-segment geconfigureerd in de AVS-omgeving waar d
 
 3. Selecteer de virtuele machine in de VM vSphere-client om de details ervan weer te geven. Houd er rekening mee dat het IP-adres overeenkomt met wat we in stap 3 van de vorige sectie hebben gezien: 172.29.1.10.
 
-    :::image type="content" source="media/traffic-manager/nsx-t-vm-details.png" alt-text="Scherm opname van de VM-Details in de VSphere-client.":::    
+    :::image type="content" source="media/traffic-manager/nsx-t-vm-details.png" alt-text="Scherm opname van de VM-Details in de VSphere-client." lightbox="media/traffic-manager/nsx-t-vm-details.png":::    
 
 4. Selecteer de virtuele machine en klik vervolgens op **acties > instellingen bewerken** om de verbinding met het NSX-T-segment te controleren.
 
@@ -103,7 +103,7 @@ In ons scenario wordt een NSX-T-segment geconfigureerd in de AVS-omgeving waar d
 
 3. Selecteer **Overzicht**. Kopieer de URL onder **DNS-naam**.
 
-   :::image type="content" source="media/traffic-manager/traffic-manager-endpoints.png" alt-text="Scherm afbeelding met een Traffic Manager overzicht van eind punten waarbij de DNS-naam is gemarkeerd."::: 
+   :::image type="content" source="media/traffic-manager/traffic-manager-endpoints.png" alt-text="Scherm afbeelding met een Traffic Manager overzicht van eind punten waarbij de DNS-naam is gemarkeerd." lightbox="media/traffic-manager/traffic-manager-endpoints.png"::: 
 
 4. Plak de URL van de DNS-naam in een browser. De volgende scherm afbeelding toont het verkeer dat wordt omgeleid naar de Europa-west regio.
 

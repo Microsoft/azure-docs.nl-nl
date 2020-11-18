@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/09/2020
-ms.openlocfilehash: fb1f1d098970927ba04c840e77ec0a0b8d76ca02
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: a9ad018980784a1f809ad28a77dacf9f0328fffa
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94561315"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873893"
 ---
 # <a name="enterprise-security-and-governance-for-azure-machine-learning"></a>Enter prise Security en governance voor Azure Machine Learning
 
@@ -30,7 +30,7 @@ Wanneer u een Cloud service gebruikt, is een best practice het beperken van de t
 
 De meeste authenticatie voor Azure Machine Learning bronnen gebruiken Azure Active Directory (Azure AD) voor verificatie en op rollen gebaseerd toegangs beheer (Azure RBAC) voor autorisatie. De uitzonde ringen hierop zijn:
 
-* __SSH__ : u kunt SSH-toegang inschakelen voor bepaalde reken resources, zoals Azure machine learning reken instantie. SSH-toegang gebruikt verificatie op basis van een sleutel. Zie [SSH-sleutels maken en beheren](../virtual-machines/linux/create-ssh-keys-detailed.md)voor meer informatie over het maken van SSH-sleutels. Zie [Azure machine learning Compute-instantie maken en beheren](how-to-create-manage-compute-instance.md)voor meer informatie over het inschakelen van SSH-toegang.
+* __SSH__: u kunt SSH-toegang inschakelen voor bepaalde reken resources, zoals Azure machine learning reken instantie. SSH-toegang gebruikt verificatie op basis van een sleutel. Zie [SSH-sleutels maken en beheren](../virtual-machines/linux/create-ssh-keys-detailed.md)voor meer informatie over het maken van SSH-sleutels. Zie [Azure machine learning Compute-instantie maken en beheren](how-to-create-manage-compute-instance.md)voor meer informatie over het inschakelen van SSH-toegang.
 * __Modellen die zijn geïmplementeerd als__ webservices: implementaties op basis van __sleutels__ of op __tokens__ gebaseerd toegangs beheer kunnen worden gebruikt. Sleutels zijn statische teken reeksen. Tokens worden opgehaald met behulp van een Azure AD-account. Zie [verificatie configureren voor modellen die zijn geïmplementeerd als een webservice](how-to-authenticate-web-service.md)voor meer informatie.
 
 Specifieke services waarvan Azure Machine Learning afhankelijk is, zoals Azure Data Storage-services, hebben hun eigen verificatie-en autorisatie methoden. Zie [verbinding maken met opslag Services](how-to-access-data.md)voor meer informatie over de verificatie van Storage-services.
@@ -76,6 +76,8 @@ De volgende tabel bevat enkele van de belangrijkste Azure Machine Learning bewer
 
 Als de ingebouwde rollen niet aan uw behoeften voldoen, kunt u aangepaste rollen maken. Aangepaste rollen bepalen alle bewerkingen binnen een werk ruimte, zoals het maken van een berekening, het indienen van een uitvoering, het registreren van een gegevens opslag of het implementeren van een model. Aangepaste rollen kunnen Lees-, schrijf-of verwijder machtigingen hebben voor de verschillende resources van een werk ruimte, zoals clusters, gegevens opslag, modellen en eind punten. U kunt de rol beschikbaar maken op een specifiek werk ruimte niveau, op een specifiek niveau van de resource groep of op een specifiek abonnements niveau. Zie [gebruikers en rollen beheren in een Azure machine learning-werk ruimte](how-to-assign-roles.md)voor meer informatie.
 
+Zie [Azure Role-Based Access Control voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)voor meer informatie over het gebruik van RBAC met Kubernetes.
+
 > [!IMPORTANT]
 > Azure Machine Learning is afhankelijk van andere Azure-Services, zoals Azure Blob Storage en Azure Kubernetes Services. Elke Azure-service heeft zijn eigen Azure RBAC-configuraties. Om het gewenste niveau van toegangs beheer te verkrijgen, moet u mogelijk zowel Azure RBAC-configuraties voor Azure Machine Learning als voor de services die worden gebruikt met Azure Machine Learning Toep assen.
 
@@ -89,7 +91,7 @@ Aan elke werk ruimte is ook een aan het systeem toegewezen [beheerde identiteit]
 | Resource | Machtigingen |
 | ----- | ----- |
 | Werkruimte | Inzender |
-| Storage-account | Inzender voor Storage Blob-gegevens |
+| Opslagaccount | Inzender voor Storage Blob-gegevens |
 | Key Vault | Toegang tot alle sleutels, geheimen, certificaten |
 | Azure Container Registry | Inzender |
 | Resource groep die de werk ruimte bevat | Inzender |
@@ -146,7 +148,7 @@ U kunt experimentele uitvoeringen bewaken in Azure Machine Learning, inclusief i
 
 ### <a name="azure-monitor"></a>Azure Monitor
 
-U kunt Azure Monitor metrische gegevens gebruiken om metrische gegevens voor uw Azure Machine Learning-werk ruimte weer te geven en te controleren. Selecteer in de [Azure Portal](https://portal.azure.com)uw werk ruimte en selecteer vervolgens **metrische gegevens** :
+U kunt Azure Monitor metrische gegevens gebruiken om metrische gegevens voor uw Azure Machine Learning-werk ruimte weer te geven en te controleren. Selecteer in de [Azure Portal](https://portal.azure.com)uw werk ruimte en selecteer vervolgens **metrische gegevens**:
 
 [![Scherm opname van voor beelden van metrische gegevens voor een werk ruimte](media/concept-enterprise-security/workspace-metrics.png)](media/concept-enterprise-security/workspace-metrics-expanded.png#lightbox)
 
@@ -185,8 +187,8 @@ Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bed
 
 [Azure Policy](../governance/policy/index.yml) is een beheer programma waarmee u ervoor kunt zorgen dat Azure-resources voldoen aan uw beleid. Met Azure Machine Learning kunt u de volgende beleids regels toewijzen:
 
-* Door de **klant beheerde sleutel** : controleren of afdwingen of werk ruimten een door de klant beheerde sleutel moeten gebruiken.
-* **Privé-koppeling** : controleren of werk ruimten een persoonlijk eind punt gebruiken om te communiceren met een virtueel netwerk.
+* Door de **klant beheerde sleutel**: controleren of afdwingen of werk ruimten een door de klant beheerde sleutel moeten gebruiken.
+* **Privé-koppeling**: controleren of werk ruimten een persoonlijk eind punt gebruiken om te communiceren met een virtueel netwerk.
 
 Raadpleeg de [Azure Policy documentatie](../governance/policy/overview.md)voor meer informatie over Azure Policy.
 

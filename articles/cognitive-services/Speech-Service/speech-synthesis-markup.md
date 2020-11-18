@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: e0625fd257ed9995fb567785ce07dcb0b0422c61
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 9ed4e47cf946827e2e4b9aaeb14d9668e96aeaa5
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311637"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873774"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
 
@@ -200,25 +200,46 @@ Op dit moment worden de volgende Neural stemmen ondersteund:
 * `en-US-GuyNeural`
 * `zh-CN-XiaoxiaoNeural`
 * `zh-CN-YunyangNeural`
+* `zh-CN-YunxiNeural` Evaluatie
+* `zh-CN-XiaohanNeural` Evaluatie
+* `zh-CN-XiaomoNeural` Evaluatie
+* `zh-CN-XiaoxuanNeural` Evaluatie
+* `zh-CN-XiaoruiNeural` Evaluatie
 
-Wijzigingen worden toegepast op het niveau van de zin en stijlen variëren per stem. Als een stijl niet wordt ondersteund, retourneert de service spraak in de standaard stijl voor neutrale gesp roken tekst. U kunt een query uitvoeren voor de stijlen die worden ondersteund voor elke stem via de [Voice List-API](rest-text-to-speech.md#get-a-list-of-voices).
+De intensiteit van de stijl van de spraak kan verder worden gewijzigd om beter te voldoen aan uw use-case. U kunt een sterker of zachtere stijl opgeven `styledegree` om de spraak herkenning duidelijker of gematigd te maken. 
 
-Voor Chinees spraak XiaoxiaoNeural kan de intensiteit van de stijl van de spraak verder worden gewijzigd om beter te voldoen aan uw use-case. U kunt een sterker of zachtere stijl opgeven `styledegree` om de spraak herkenning duidelijker of gematigd te maken.
+Op dit moment worden de volgende Neural stemmen ondersteund:
+* `zh-CN-XiaoxiaoNeural`
+
+Naast het aanpassen van de spraak stijlen en de stijl graad kunt u ook de `role` para meter aanpassen zodat de stem een andere leeftijd en geslacht krijgt. Een mannelijk stem kan bijvoorbeeld de Toon hoogte verhogen en de intonation wijzigen om een vrouwelijke stem te imiteren.
+
+Momenteel worden aanpassingen voor rollen afspelen ondersteund voor deze Neural stemmen:
+* `zh-CN-XiaomoNeural`
+* `zh-CN-XiaoxuanNeural`
+
+De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijlen en rollen worden afgespeeld per stem. Als een stijl of rol-afspelen niet wordt ondersteund, retourneert de service spraak op de standaard neutrale manier. U kunt zien welke stijlen en rollen tijdens het afspelen worden ondersteund voor elke stem via de [Voice List API](rest-text-to-speech.md#get-a-list-of-voices) of via het platform voor het maken van de [audio-inhoud](https://aka.ms/audiocontentcreation) zonder code.
 
 **Syntaxis**
 
 ```xml
+<mstts:express-as style="string"></mstts:express-as>
+```
+```xml
 <mstts:express-as style="string" styledegree="value"></mstts:express-as>
 ```
+```xml
+<mstts:express-as role="string" style="string"></mstts:express-as>
+```
 > [!NOTE]
-> Op het moment `styledegree` ondersteunt alleen XiaoxiaoNeural. 
+> Op het moment `styledegree` ondersteunt alleen zh-cn-XiaoxiaoNeural. `role` ondersteunt alleen zh-CN-XiaomoNeural en zh-CN-XiaoxuanNeural.
 
 **Kenmerken**
 
 | Kenmerk | Beschrijving | Vereist/optioneel |
 |-----------|-------------|---------------------|
 | `style` | Geeft de spreek stijl aan. Op dit moment zijn gesp roken stijlen specifiek voor spraak. | Vereist bij het aanpassen van de spreek stijl voor een Neural-stem. Als u gebruikt `mstts:express-as` , moet de stijl worden gegeven. Als er een ongeldige waarde wordt gegeven, wordt dit element genegeerd. |
-| `styledegree` | Geeft de intensiteit van de stijl van de spraak aan. **Geaccepteerde waarden** : 0,01 tot en met 2. De standaard waarde is 1, wat de vooraf gedefinieerde stijl intensiteit aangeeft. De minimale eenheid is 0,01, wat leidt tot een enigszins tendens van de doel stijl. Een waarde van 2 resulteert in een verdubbeling van de standaard stijl intensiteit.  | Optioneel (op het moment wordt `styledegree` alleen XiaoxiaoNeural ondersteund.)|
+| `styledegree` | Geeft de intensiteit van de stijl van de spraak aan. **Geaccepteerde waarden**: 0,01 tot en met 2. De standaard waarde is 1, wat de vooraf gedefinieerde stijl intensiteit aangeeft. De minimale eenheid is 0,01, wat leidt tot een enigszins tendens van de doel stijl. Een waarde van 2 resulteert in een verdubbeling van de standaard stijl intensiteit.  | Optioneel (op het moment `styledegree` ondersteunt alleen zh-cn-XiaoxiaoNeural.)|
+| `role` | Hiermee geeft u de functie voor spreken-afspelen op. De stem zal fungeren als een andere leeftijd en geslacht.  | Optioneel (op het moment `role` ondersteunt alleen zh-cn-XiaomoNeural en zh-cn-XiaoxuanNeural.)|
 
 Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor elke Neural-stem.
 
@@ -250,6 +271,52 @@ Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor el
 |                         | `style="gentle"`          | Hiermee wordt een milde, versterkte en prettige Toon, met lagere Toon hoogte en vocaal-energie         |   
 |                         | `style="lyrical"`         | Drukt op emoties op een melodic-en Sentimental manier         |   
 | `zh-CN-YunyangNeural`   | `style="customerservice"` | Een beschrijvende en handige Toon voor klant ondersteuning  | 
+| `zh-CN-YunxiNeural`    | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
+|                         | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
+|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
+|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
+|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
+|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.    |
+|                         | `style="depressed"`       | Een melancholic-en respondent-Toon met een lagere Toon hoogte en energie    |
+|                         | `style="embarrassed"`     | Een onzekere en cloudhoster Toon wanneer de spreker niet vertrouwd is   |
+| `zh-CN-XiaohanNeural`   | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
+|                         | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
+|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
+|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
+|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
+|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.    |
+|                         | `style="embarrassed"`     | Een onzekere en cloudhoster Toon wanneer de spreker niet vertrouwd is   |
+|                         | `style="affectionate"`    | Een warme en affectionate Toon, met hogere Toon-en gesprek energie. De spreker heeft de status van het aantrekken van de aandacht van de listener. De ' persoonlijkheid ' van de spreker is vaak endearing.          |     
+|                         | `style="gentle"`          | Hiermee wordt een milde, versterkte en prettige Toon, met lagere Toon hoogte en vocaal-energie         |   
+| `zh-CN-XiaomoNeural`    | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
+|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
+|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
+|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
+|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.    |
+|                         | `style="depressed"`       | Een melancholic-en respondent-Toon met een lagere Toon hoogte en energie    |
+|                         | `style="gentle"`          | Hiermee wordt een milde, versterkte en prettige Toon, met lagere Toon hoogte en vocaal-energie         |  
+| `zh-CN-XiaoxuanNeural`  | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
+|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
+|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
+|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
+|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.    |
+|                         | `style="depressed"`       | Een melancholic-en respondent-Toon met een lagere Toon hoogte en energie    |
+|                         | `style="gentle"`          | Hiermee wordt een milde, versterkte en prettige Toon, met lagere Toon hoogte en vocaal-energie         |   
+| `zh-CN-XiaoruiNeural`    | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
+|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
+|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
+
+Gebruik deze tabel om te bepalen welke rollen worden ondersteund voor elke Neural-stem.
+
+| Spraak                   | Rol                       | Beschrijving                                                 |
+|-------------------------|----------------------------|-------------------------------------------------------------|
+| `zh-CN-XiaomoNeural`    | `role="YoungAdultFemale"`  | De stem heeft een jonge volwassene vrouw.                 |
+|                         | `role="OlderAdultMale"`    | De stem heeft een ouder volwassen mannelijk.                   |
+|                         | `role="Girl"`              | De stem heeft een meisje.                               |
+|                         | `role="Boy"`               | De stem die wordt nagebootst naar een jongen.                                |
+| `zh-CN-XiaoxuanNeural`  | `role="YoungAdultFemale"`  | De stem heeft een jonge volwassene vrouw.                 |
+|                         | `role="OlderAdultFemale"`  | De stem heeft een oudere volwassene vrouw.                 |
+|                         | `role="OlderAdultMale"`    | De stem heeft een ouder volwassen mannelijk.                   |
 
 **Voorbeeld**
 
@@ -278,6 +345,23 @@ Dit SSML-fragment laat zien hoe het `styledegree` kenmerk wordt gebruikt om de i
 </speak>
 ```
 
+Dit SSML-fragment laat zien hoe het `role` kenmerk wordt gebruikt voor het wijzigen van de rol-Play voor XiaomoNeural.
+```xml
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis"
+       xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="zh-CN">
+    <voice name="zh-CN-XiaomoNeural">
+        女儿看见父亲走了进来，问道：
+        <mstts:express-as role="YoungAdultFemale" style="calm">
+            “您来的挺快的，怎么过来的？”
+        </mstts:express-as>
+        父亲放下手提包，说：
+        <mstts:express-as role="OlderAdultMale" style="calm">
+            “刚打车过来的，路上还挺顺畅。”
+        </mstts:express-as>
+    </voice>
+</speak>
+```
+
 ## <a name="add-or-remove-a-breakpause"></a>Een onderbreking/pauze toevoegen of verwijderen
 
 Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te voegen of onderbrekingen die automatisch worden toegevoegd door de tekst-naar-spraak-service te voor komen.
@@ -297,7 +381,7 @@ Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te v
 | Kenmerk | Beschrijving | Vereist/optioneel |
 |-----------|-------------|---------------------|
 | `strength` | Hiermee geeft u de relatieve duur van een onderbreking op met een van de volgende waarden:<ul><li>geen</li><li>x-zwak</li><li>Schakel</li><li>gemiddeld (standaard)</li><li>strakk</li><li>x-Strong</li></ul> | Optioneel |
-| `time` | Hiermee geeft u de absolute duur van een onderbreking in seconden of milliseconden. Voor beelden van geldige waarden zijn `2s` en `500` | Optioneel |
+| `time` | Hiermee geeft u de absolute duur van een onderbreking in seconden of milliseconden, deze waarde moet worden ingesteld op minder dan 5000ms. Voor beelden van geldige waarden zijn `2s` en `500ms` | Optioneel |
 
 | Hoger                      | Beschrijving |
 |-------------------------------|-------------|
@@ -316,6 +400,37 @@ Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te v
         Welcome to Microsoft Cognitive Services <break time="100ms" /> Text-to-Speech API.
     </voice>
 </speak>
+```
+## <a name="add-silence"></a>Stilte toevoegen
+
+Gebruik het `mstts:silence` element om pauzes in te voegen voor of na tekst of tussen de twee aangrenzende zinnen. 
+
+> [!NOTE]
+>Het verschil tussen `mstts:silence` en `break` is dat `break` kan worden toegevoegd aan elke plaats in de tekst, maar stilte werkt alleen aan het begin of einde van invoer tekst, of op de grens van 2 aangrenzende zinnen.  
+
+
+**Syntaxis**
+
+```xml
+<mstts:silence  type="string"  value="string"/>
+```
+
+**Kenmerken**
+
+| Kenmerk | Beschrijving | Vereist/optioneel |
+|-----------|-------------|---------------------|
+| `type` | Hiermee geeft u de locatie van stilte toevoegen: <ul><li>Regel afstand: aan het begin van de tekst </li><li>Staart: aan het einde van de tekst </li><li>Sentenceboundary: tussen aangrenzende zinnen </li></ul> | Vereist |
+| `Value` | Hiermee geeft u de absolute duur van een onderbreking in seconden of milliseconden, deze waarde moet worden ingesteld op minder dan 5000ms. Voor beelden van geldige waarden zijn `2s` en `500ms` | Vereist |
+
+**Voor beeld** In dit voor beeld `mtts:silence` wordt gebruikt om 200 MS-stilte tussen twee zinnen toe te voegen.
+```xml
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">  
+<voice name="en-US-AriaNeural"> 
+<mstts:silence  type="Sentenceboundary" value="200ms"/> 
+If we’re home schooling, the best we can do is roll with what each day brings and try to have fun along the way. 
+A good place to start is by trying out the slew of educational apps that are helping children stay happy and smash their schooling at the same time. 
+</voice> 
+</speak> 
 ```
 
 ## <a name="specify-paragraphs-and-sentences"></a>Alinea's en zinnen opgeven
@@ -355,6 +470,9 @@ Het `s` element kan tekst en de volgende elementen bevatten: `audio` , `break` ,
 Het `ph` element wordt gebruikt voor fonetische uitspraak in SSML-documenten. Het `ph` element kan alleen tekst bevatten, geen andere elementen. Bied altijd lees bare spraak als terugval.
 
 Fonetische alfabetten bestaan uit telefoons, die bestaan uit letters, cijfers of tekens, soms in combi natie. Elke telefoon beschrijft een uniek geluid van spraak. Dit is in tegens telling tot het Latijnse alfabet, waarbij een wille keurige letter meerdere gesp roken geluiden kan vertegenwoordigen. Houd rekening met de verschillende uitspraak van de letter "c" in de woorden "snoep" en "Stop" of de verschillende uitspraak van de letter combinaties "th" in de woorden "ding" en "die".
+
+> [!NOTE]
+> Het fonemen-label wordt op het moment niet ondersteund voor deze vijf stemmen (et-EE-AnuNeural, NH-IE-OrlaNeural, lt-LT-OnaNeural, LV-LV-EveritaNeural en MT-MT-GarceNeural).
 
 **Syntaxis**
 
@@ -401,6 +519,10 @@ Soms kan de tekst naar spraak-service een woord niet nauw keurig uitspreken. Bij
 
 > [!NOTE]
 > Aangepaste Lexicon ondersteunt momenteel UTF-8-code ring. 
+
+> [!NOTE]
+> Er wordt op dit moment geen aangepaste Lexicon ondersteund voor deze vijf stemmen (et-EE-AnuNeural, NH-IE-OrlaNeural, lt-LT-OnaNeural, LV-LV-EveritaNeural en MT-MT-GarceNeural).
+
 
 **Syntaxis**
 
@@ -631,7 +753,7 @@ Hieronder vindt u de ondersteunde inhouds typen voor de `interpret-as` `format` 
 | `address` | | De tekst wordt gesp roken als een adres. De engine voor spraak synthese uitspreekt:<br /><br />`I'm at <say-as interpret-as="address">150th CT NE, Redmond, WA</say-as>`<br /><br />Als "Ik ben bij 150the rechtbank voor het noordoosten van Redmond Washington" |
 | `cardinal`, `number` | | De tekst wordt gesp roken als een hoofd getal. De engine voor spraak synthese uitspreekt:<br /><br />`There are <say-as interpret-as="cardinal">3</say-as> alternatives`<br /><br />Als "er zijn drie alternatieven." |
 | `characters`, `spell-out` | | De tekst wordt gesp roken als afzonderlijke letters (gespeld). De engine voor spraak synthese uitspreekt:<br /><br />`<say-as interpret-as="characters">test</say-as>`<br /><br />Als T E S T. |
-| `date` | DMY, MDJ, YMD, JDM, YM, my, MD, DM, d, m, y | De tekst wordt als een datum gesp roken. Het `format` kenmerk geeft de notatie van de datum aan ( *d = dag, m = maand en y = jaar* ). De engine voor spraak synthese uitspreekt:<br /><br />`Today is <say-as interpret-as="date" format="mdy">10-19-2016</say-as>`<br /><br />"Vandaag is oktober nineteenth 2016." |
+| `date` | DMY, MDJ, YMD, JDM, YM, my, MD, DM, d, m, y | De tekst wordt als een datum gesp roken. Het `format` kenmerk geeft de notatie van de datum aan (*d = dag, m = maand en y = jaar*). De engine voor spraak synthese uitspreekt:<br /><br />`Today is <say-as interpret-as="date" format="mdy">10-19-2016</say-as>`<br /><br />"Vandaag is oktober nineteenth 2016." |
 | `digits`, `number_digit` | | De tekst wordt gesp roken als een reeks afzonderlijke cijfers. De engine voor spraak synthese uitspreekt:<br /><br />`<say-as interpret-as="number_digit">123456789</say-as>`<br /><br />Als ' 1 2 3 4 5 6 7 8 9 '. |
 | `fraction` | | De tekst wordt gesp roken als een breuk getal. De engine voor spraak synthese uitspreekt:<br /><br /> `<say-as interpret-as="fraction">3/8</say-as> of an inch`<br /><br />Als "drie achtstes van een inch" |
 | `ordinal` | | De tekst wordt gesp roken als een rang nummer. De engine voor spraak synthese uitspreekt:<br /><br />`Select the <say-as interpret-as="ordinal">3rd</say-as> option`<br /><br />Als ' Selecteer de derde optie '. |
@@ -717,9 +839,9 @@ Er is slechts één achtergrond geluids bestand toegestaan per SSML-document. U 
 | Kenmerk | Beschrijving | Vereist/optioneel |
 |-----------|-------------|---------------------|
 | `src` | Hiermee geeft u de locatie/URL van het audio bestand op de achtergrond. | Vereist als u achtergrond geluid in uw SSML-document gebruikt. |
-| `volume` | Hiermee geeft u het volume van het audio bestand op de achtergrond. **Geaccepteerde waarden** : `0` tot `100` inclusief. De standaardwaarde is `1`. | Optioneel |
-| `fadein` | Hiermee geeft u de duur van de achtergrond audio "infaden" als milliseconden. De standaard waarde is `0` , die gelijk is aan niet vervagen in. **Geaccepteerde waarden** : `0` tot `10000` inclusief.  | Optioneel |
-| `fadeout` | Hiermee geeft u de duur van de achtergrond audio vervagen in milliseconden. De standaard waarde is `0` , die gelijk is aan geen uitfaden. **Geaccepteerde waarden** : `0` tot `10000` inclusief.  | Optioneel |
+| `volume` | Hiermee geeft u het volume van het audio bestand op de achtergrond. **Geaccepteerde waarden**: `0` tot `100` inclusief. De standaardwaarde is `1`. | Optioneel |
+| `fadein` | Hiermee geeft u de duur van de achtergrond audio "infaden" als milliseconden. De standaard waarde is `0` , die gelijk is aan niet vervagen in. **Geaccepteerde waarden**: `0` tot `10000` inclusief.  | Optioneel |
+| `fadeout` | Hiermee geeft u de duur van de achtergrond audio vervagen in milliseconden. De standaard waarde is `0` , die gelijk is aan geen uitfaden. **Geaccepteerde waarden**: `0` tot `10000` inclusief.  | Optioneel |
 
 **Voorbeeld**
 

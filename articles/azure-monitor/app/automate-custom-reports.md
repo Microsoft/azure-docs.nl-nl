@@ -4,12 +4,12 @@ description: Aangepaste dagelijkse/wekelijkse/maandelijkse rapporten automatiser
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sdash
-ms.openlocfilehash: f35b7cbde7b719a91b23b19481ab704c445485cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d465666ce5d631a234644d1adc85afcf6e3c1e27
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91827728"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873707"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Aangepaste rapporten automatiseren met Azure-toepassing Insights-gegevens
 
@@ -31,7 +31,7 @@ Elke onderneming heeft zijn unieke rapportage behoeften, zoals:
 
 U kunt [programmatisch query's uitvoeren op Application Insights](https://dev.applicationinsights.io/) gegevens om aangepaste rapporten te genereren op schema. U kunt de volgende opties gebruiken om snel aan de slag te gaan:
 
-* [Rapporten automatiseren met Microsoft Flow](../platform/logicapp-flow-connector.md)
+* [Rapporten automatiseren met automatische stroom](../platform/logicapp-flow-connector.md)
 * [Rapporten automatiseren met Logic Apps](automate-with-logic-apps.md)
 * Gebruik de [Azure function](../../azure-functions/functions-create-first-azure-function.md) -sjabloon ' Application Insights gepland overzicht ' in het bewakings scenario. Deze functie maakt gebruik van SendGrid om het e-mail bericht te leveren. 
 
@@ -112,7 +112,7 @@ availabilityResults
 
      ![Scherm opname van uitvoer](./media/automate-custom-reports/integrate.png)
 
-9. Selecteer de zojuist gemaakte app-instelling voor **SendGridAPI**onder de **instelling app SendGridAPI-sleutel**.
+9. Selecteer de zojuist gemaakte app-instelling voor **SendGridAPI** onder de **instelling app SendGridAPI-sleutel**.
 
      ![Scherm afbeelding van functie-app uitvoeren](./media/automate-custom-reports/sendgrid-output.png)
 

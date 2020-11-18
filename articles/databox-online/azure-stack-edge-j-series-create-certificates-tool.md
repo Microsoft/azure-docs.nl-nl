@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 11/17/2020
 ms.author: alkohli
-ms.openlocfilehash: 544625fe9fd2dbd87ad7330d7277494cbfbe6eb9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e5cb077868a224620d1a23e1ff1aac9c8d9f095
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90891094"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874471"
 ---
 # <a name="create-certificates-for-your-azure-stack-edge-pro-using-azure-stack-hub-readiness-checker-tool"></a>Certificaten maken voor uw Azure Stack Edge Pro met behulp van Azure Stack hub-gereedheids controleprogramma 
 
@@ -42,7 +42,7 @@ U kunt het hulp programma Azure Stack hub Readiness Checker (AzsReadinessChecker
 Als u Csr's wilt maken voor de implementatie van Azure Stack Edge Pro-apparaat, moet u het volgende doen: 
 
 - U hebt een-client met Windows 10 of Windows Server 2016 of hoger. 
-- U hebt de Microsoft Azure Stack hub-gereedheids controleprogramma 1.2002.1133.85 gedownload [van de PowerShell Gallery](https://aka.ms/AzsReadinessChecker) op dit systeem. Mogelijk moet u zoeken naar dit pakket. Alleen deze versie van het hulp programma kan certificaten voor Azure Stack Edge Pro-apparaten maken.
+- U hebt het hulp programma Microsoft Azure Stack hub-gereedheids controlepunt gedownload [van de PowerShell Gallery](https://aka.ms/AzsReadinessChecker) op dit systeem.
 - U hebt de volgende informatie voor de certificaten:
   - Apparaatnaam
   - Serie nummer van knoop punt
@@ -56,7 +56,7 @@ Volg deze stappen om de Azure Stack Edge Pro-apparaten voor te bereiden:
 2. Installeer het hulp programma voor de Azure Stack hub-gereedheids controle. Typ het volgende bij de Power shell-prompt: 
 
     ```azurepowershell
-    Install-Module -Name Microsoft.AzureStack.ReadinessChecker -RequiredVersion 1.2002.1133.85 -Force
+    Install-Module -Name Microsoft.AzureStack.ReadinessChecker
     ```
 
     Als u de geïnstalleerde versie wilt controleren, typt u:  

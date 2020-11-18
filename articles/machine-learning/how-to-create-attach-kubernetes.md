@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
-ms.openlocfilehash: 9b14ba12c9f9b679d1d63008d31825647f42619d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c8b3ab965c5a85bd6f25e5325fdca24026aec787
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318057"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873825"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Een Azure Kubernetes service-cluster maken en koppelen
 
@@ -54,12 +54,12 @@ Azure Machine Learning kunt getrainde machine learning modellen implementeren in
    
  - Als u modellen wilt implementeren op **GPU** -knoop punten of **FPGA** -knoop punten (of een specifieke SKU), moet u een cluster maken met de specifieke SKU. Er is geen ondersteuning voor het maken van een secundaire knooppunt groep in een bestaand cluster en het implementeren van modellen in de secundaire knooppunt groep.
  
-- Wanneer u een cluster maakt of koppelt, kunt u selecteren of u het cluster wilt maken voor __dev-test__ of __productie__. Als u een AKS-cluster wilt maken voor __ontwikkeling__ , __validatie__ en __testen__ in plaats van productie, stelt u het __cluster doel__ in op __dev-test__. Als u het cluster doel niet opgeeft, wordt er een __productie__ cluster gemaakt. 
+- Wanneer u een cluster maakt of koppelt, kunt u selecteren of u het cluster wilt maken voor __dev-test__ of __productie__. Als u een AKS-cluster wilt maken voor __ontwikkeling__, __validatie__ en __testen__ in plaats van productie, stelt u het __cluster doel__ in op __dev-test__. Als u het cluster doel niet opgeeft, wordt er een __productie__ cluster gemaakt. 
 
     > [!IMPORTANT]
     > Een __dev-test-__ cluster is niet geschikt voor verkeer op productie niveau en kan leiden tot meer tijd. Dev/test-clusters garanderen ook geen fout tolerantie.
 
-- Wanneer u een cluster maakt of koppelt en het cluster wordt gebruikt voor __productie__ , moet dit ten minste 12 __virtuele cpu's__ bevatten. Het aantal virtuele Cpu's kan worden berekend door het __aantal knoop punten__ in het cluster te vermenigvuldigen met het __aantal kernen dat__ is opgegeven door de geselecteerde VM-grootte. Als u bijvoorbeeld een VM-grootte van ' Standard_D3_v2 ' gebruikt, die vier virtuele kernen heeft, moet u 3 of groter selecteren als het aantal knoop punten.
+- Wanneer u een cluster maakt of koppelt en het cluster wordt gebruikt voor __productie__, moet dit ten minste 12 __virtuele cpu's__ bevatten. Het aantal virtuele Cpu's kan worden berekend door het __aantal knoop punten__ in het cluster te vermenigvuldigen met het __aantal kernen dat__ is opgegeven door de geselecteerde VM-grootte. Als u bijvoorbeeld een VM-grootte van ' Standard_D3_v2 ' gebruikt, die vier virtuele kernen heeft, moet u 3 of groter selecteren als het aantal knoop punten.
 
     Voor een __dev-test__ cluster worden de opdracht mini maal twee virtuele cpu's.
 
@@ -124,7 +124,7 @@ Result
 1.16.13
 ```
 
-Als u **de beschik bare versies programmatisch wilt controleren** , gebruikt u de rest API van de [Container Service-client lijst](/rest/api/container-service/container%20service%20client/listorchestrators) . Als u de beschik bare versies wilt vinden, bekijkt u de vermeldingen in `orchestratorType` `Kubernetes` . De bijbehorende `orchestrationVersion` vermeldingen bevatten de beschik bare versies die aan uw werk ruimte kunnen worden **gekoppeld** .
+Als u **de beschik bare versies programmatisch wilt controleren**, gebruikt u de rest API van de [Container Service-client lijst](/rest/api/container-service/container%20service%20client/listorchestrators) . Als u de beschik bare versies wilt vinden, bekijkt u de vermeldingen in `orchestratorType` `Kubernetes` . De bijbehorende `orchestrationVersion` vermeldingen bevatten de beschik bare versies die aan uw werk ruimte kunnen worden **gekoppeld** .
 
 Als u de standaard versie wilt vinden die wordt gebruikt bij **het maken** van een cluster via Azure machine learning, zoekt u de vermelding waar `orchestratorType` `Kubernetes` en `default` is `true` . De gekoppelde `orchestratorVersion` waarde is de standaard versie. In het volgende JSON-fragment ziet u een voorbeeld vermelding:
 
@@ -147,7 +147,7 @@ Als u de standaard versie wilt vinden die wordt gebruikt bij **het maken** van e
 
 ## <a name="create-a-new-aks-cluster"></a>Een nieuw AKS-cluster maken
 
-**Geschatte tijd** : ongeveer 10 minuten.
+**Geschatte tijd**: ongeveer 10 minuten.
 
 Het maken of koppelen van een AKS-cluster is een eenmalig proces voor uw werk ruimte. U kunt dit cluster hergebruiken voor meerdere implementaties. Als u het cluster of de resource groep verwijdert die het bevat, moet u de volgende keer dat u moet implementeren een nieuw cluster maken. Er kunnen meerdere AKS-clusters aan uw werk ruimte zijn gekoppeld.
 
@@ -302,9 +302,10 @@ az ml computetarget detach -n myaks -g myresourcegroup -w myworkspace
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Selecteer in Azure Machine Learning Studio __Compute__ , __clusters__ afstellen en het cluster dat u wilt verwijderen. Gebruik de koppeling __loskoppelen__ om het cluster los te koppelen.
+Selecteer in Azure Machine Learning Studio __Compute__, __clusters__ afstellen en het cluster dat u wilt verwijderen. Gebruik de koppeling __loskoppelen__ om het cluster los te koppelen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
+* [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
 * [Hoe en waar een model moet worden geïmplementeerd](how-to-deploy-and-where.md)
 * [Een model implementeren in een Azure Kubernetes service-cluster](how-to-deploy-azure-kubernetes-service.md)

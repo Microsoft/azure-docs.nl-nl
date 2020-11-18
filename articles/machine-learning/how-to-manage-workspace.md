@@ -10,12 +10,12 @@ author: sdgilley
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
-ms.openlocfilehash: 29c378d40e3a4f92852f433677125a9e8a6d1133
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 1a7204fea1a77dbca57ffc7d512f81e46c4d3b5f
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540124"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873387"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Azure Machine Learning-werk ruimten maken en beheren 
 
@@ -131,8 +131,12 @@ Als u problemen ondervindt bij het openen van uw abonnement, raadpleegt u [verif
    Abonnement |Selecteer het Azure-abonnement dat u wilt gebruiken.
    Resourcegroep | Gebruik een bestaande resourcegroep in uw abonnement of voer een naam in om een nieuwe resourcegroep te maken. Een resourcegroep bevat gerelateerde resources voor een Azure-oplossing. In dit voorbeeld gebruiken we **docs-aml**. U hebt de rol *Inzender* of *eigenaar* nodig voor het gebruik van een bestaande resource groep.  Zie [toegang tot een Azure machine learning-werk ruimte beheren](how-to-assign-roles.md)voor meer informatie over toegang.
    Regio | Selecteer de Azure-regio die het dichtst bij uw gebruikers ligt en de gegevens bronnen om uw werk ruimte te maken.
+   | Opslagaccount | Het standaard opslag account voor de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
+   | Key Vault | De Azure Key Vault die wordt gebruikt door de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
+   | Application Insights | Het Application Insights-exemplaar voor de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
+   | Container Registry | De Azure Container Registry voor de werk ruimte. Standaard wordt een nieuw item _niet_ gemaakt voor de werk ruimte. In plaats daarvan wordt deze gemaakt wanneer u deze nodig hebt tijdens het maken van een docker-installatie kopie tijdens de training of implementatie. |
 
-    ![Uw werk ruimte configureren](./media/how-to-manage-workspace/create-workspace-form.png)
+   :::image type="content" source="media/how-to-manage-workspace/create-workspace-form.png" alt-text="Configureer uw werk ruimte.":::
 
 1. Wanneer u klaar bent met het configureren van de werk ruimte, selecteert u **controleren + maken**. Gebruik eventueel de secties [netwerken](#networking) en [Geavanceerd](#advanced) om meer instellingen te configureren voor de werk ruimte.
 

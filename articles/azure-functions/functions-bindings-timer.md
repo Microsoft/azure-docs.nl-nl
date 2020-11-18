@@ -4,15 +4,15 @@ description: Meer informatie over het gebruik van timer triggers in Azure Functi
 author: craigshoemaker
 ms.assetid: d2f013d1-f458-42ae-baf8-1810138118ac
 ms.topic: reference
-ms.date: 09/08/2018
+ms.date: 11/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 6baebdab06a72d3a4af05b4d2e04bc9eee6acb60
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 0d9852659801040d64fe4143f024fd52ffec16ee
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833007"
+ms.locfileid: "94874080"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Timer trigger voor Azure Functions
 
@@ -299,11 +299,11 @@ Elk veld kan een van de volgende typen waarden hebben:
 
 |Type  |Voorbeeld  |Wanneer geactiveerd  |
 |---------|---------|---------|
-|Een specifieke waarde |<nobr>"0 5 * * * *"</nobr>|op hh: 05:00 waarbij UU elk uur (één keer per uur)|
-|Alle waarden ( `*` )|<nobr>"0 * 5 * * *"</nobr>|bij 5: mm: 00 elke dag, waarbij mm elke minuut van het uur is (60 keer binnen het opgegeven uur)|
-|Een bereik ( `-` operator)|<nobr>"5-7 * * * * *"</nobr>|op uu: mm: 05, uu: mm: 06 en uu: mm: 07 waarbij UU: mm elke minuut van elk uur (3 keer per minuut)|
-|Een reeks waarden ( `,` operator)|<nobr>"5, 8, 10 * * * * *"</nobr>|op uu: mm: 05, uu: mm: 08 en uu: mm: 10 waarbij UU: mm elke minuut van elk uur (3 keer per minuut)|
-|Een interval waarde ( `/` operator)|<nobr>"0 */5 * * * *"</nobr>|op uu: 00:00, uu: 05:00, uu: 10:00, enzovoort: 55:00 waarbij UU elk uur (12 keer per uur)|
+|Een specifieke waarde |<nobr>`0 5 * * * *`</nobr>| Eenmaal per uur van de dag om 5 van elk uur |
+|Alle waarden ( `*` )|<nobr>`0 * 5 * * *`</nobr>| Op elke minuut in het uur, te beginnen bij uur 5 |
+|Een bereik ( `-` operator)|<nobr>`5-7 * * * * *`</nobr>| Drie keer per minuut 5 tot en met 7 gedurende elke minuut van elk uur van elke dag |
+|Een reeks waarden ( `,` operator)|<nobr>`5,8,10 * * * * *`</nobr>| Drie keer per minuut in seconden 5, 8 en 10 gedurende elke minuut van elk uur van elke dag |
+|Een interval waarde ( `/` operator)|<nobr>`0 */5 * * * *`</nobr>| 12 keer per uur per seconde van elke vijfde minuut van elk uur van elke dag |
 
 [!INCLUDE [functions-cron-expressions-months-days](../../includes/functions-cron-expressions-months-days.md)]
 
@@ -311,18 +311,18 @@ Elk veld kan een van de volgende typen waarden hebben:
 
 Hier volgen enkele voor beelden van NCRONTAB-expressies die u kunt gebruiken voor de timer trigger in Azure Functions.
 
-|Voorbeeld|Wanneer geactiveerd  |
-|---------|---------|
-|`"0 */5 * * * *"`|eenmaal per vijf minuten|
-|`"0 0 * * * *"`|eenmaal aan de bovenkant van elk uur|
-|`"0 0 */2 * * *"`|eenmaal per twee uur|
-|`"0 0 9-17 * * *"`|eenmaal per uur van 9 tot 5 uur|
-|`"0 30 9 * * *"`|elke dag om 9:30 uur|
-|`"0 30 9 * * 1-5"`|om 9:30 uur om de dag|
-|`"0 30 9 * Jan Mon"`|om 9:30 uur elke maandag in januari|
+| Voorbeeld            | Wanneer geactiveerd                     |
+|--------------------|------------------------------------|
+| `0 */5 * * * *`    | eenmaal per vijf minuten            |
+| `0 0 * * * *`      | eenmaal aan de bovenkant van elk uur      |
+| `0 0 */2 * * *`    | eenmaal per twee uur               |
+| `0 0 9-17 * * *`   | eenmaal per uur van 9 tot 5 uur  |
+| `0 30 9 * * *`     | elke dag om 9:30 uur               |
+| `0 30 9 * * 1-5`   | om 9:30 uur om de dag           |
+| `0 30 9 * Jan Mon` | om 9:30 uur elke maandag in januari |
 
 > [!NOTE]
-> De NCRONTAB-expressie vereist **zes veld** notatie. Vijf veld cron expressies worden niet ondersteund in Azure.
+> De NCRONTAB-expressie vereist een indeling van **zes velden** . De zesde veld positie is een waarde voor seconden die aan het begin van de expressie wordt geplaatst. Vijf veld cron expressies worden niet ondersteund in Azure.
 
 ### <a name="ncrontab-time-zones"></a>NCRONTAB tijd zones
 

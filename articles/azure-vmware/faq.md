@@ -4,12 +4,12 @@ description: Hier vindt u antwoorden op enkele veelgestelde vragen over de Azure
 ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: dikamath
-ms.openlocfilehash: 2d71c30d2fb08629674c352ae812d8890463abfe
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: f2b46b37fc8c773062402c52f2903a7a10acc2c4
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695098"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874709"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Veelgestelde vragen over de Azure VMware-oplossing
 
@@ -237,7 +237,7 @@ Ja, klanten kunnen Azure VMware-oplossing implementeren binnen een Azure-abonnem
 
 Micro soft biedt ondersteuning voor de Azure VMware-oplossing. U kunt een [ondersteunings aanvraag](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)indienen. 
 
-Voor CSP Managed-abonnementen wordt het eerste ondersteunings niveau geboden door de oplossings provider op dezelfde manier als CSP voor andere Azure-Services.
+Voor door CSP beheerde abonnementen wordt het eerste ondersteunings niveau geboden door de oplossings provider op dezelfde manier als CSP voor andere Azure-Services.
 
 #### <a name="what-accounts-do-i-need-to-create-an-azure-vmware-solution-private-cloud"></a>Welke accounts heb ik nodig om een privécloud van Azure VMware-oplossing te maken?
 
@@ -253,12 +253,12 @@ VMware HCX Enterprise Edition (EE) is beschikbaar met Azure VMware Solution als 
 
 #### <a name="how-do-i-request-a-host-quota-increase-for-azure-vmware-solution"></a>Hoe kan ik een toename voor een quotum van een host voor een Azure VMware-oplossing aanvragen?
 
-Voor CSP Managed-abonnementen moet de klant de aanvraag indienen bij de partner en zal het partner team samen werken met micro soft om het quotum voor het abonnement te verg root. Zie het [artikel Azure VMware Solution resource inschakelen](enable-azure-vmware-solution.md) voor meer informatie. 
+Voor door CSP beheerde abonnementen moet de klant de aanvraag indienen bij de partner. Het partner team gaat vervolgens samen met micro soft om het quotum voor het abonnement te verg root. Zie het [artikel Azure VMware Solution resource inschakelen](enable-azure-vmware-solution.md) voor meer informatie. 
 
-Voor EA-abonnementen moet de klant deze procedure volgen.
+Gebruik de volgende procedure voor EA-abonnementen. Eerst hebt u het volgende nodig:
 
-* U hebt een [Azure Enterprise Agreement (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft nodig.
-* U hebt een Azure-account in een Azure-abonnement nodig.
+* Een [Azure Enterprise Agreement (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft.
+* Een Azure-account in een Azure-abonnement.
 
 Voordat u uw Azure VMware-oplossings resource maakt, moet u een ondersteunings ticket indienen om uw knoop punten toe te wijzen. Het duurt Maxi maal vijf werk dagen om uw aanvraag te bevestigen en uw knoop punten toe te wijzen. Als u een bestaande privécloud van Azure VMware Solution hebt en u meer knooppunten wilt toewijzen, dan volgt u hetzelfde proces.
 
@@ -298,11 +298,15 @@ Voordat u uw Azure VMware-oplossings resource maakt, moet u een ondersteunings t
 
 #### Are Reserved Instances available for purchasing through the Cloud Solution Provider (CSP) program?
 
-Yes. CSP can purchase reserved instances on behalf of their customers, see [Save costs with a reserved instance](reserved-instance.md) article. 
+Yes. CSP can purchase reserved instances for their customers. For more information, see the [Save costs with a reserved instance](reserved-instance.md) article. 
 
 #### Does Azure VMware Solution offer multi-tenancy for hosting CSP partners?
 
-No. Currently Azure VMware Solution does not offer multi-tenancy.
+No. Currently Azure VMware Solution doesn't offer multi-tenancy.
+
+#### Will traffic between on-premises and Azure VMware Solution over ExpressRoute incur any outbound data transfer charge in the metered data plan?
+
+Traffic in the Azure VMware Solution ExpressRoute circuit isn't metered in any way. Traffic from your ExpressRoute circuit connecting to your on-premises to Azure is charged according to ExpressRoute pricing plans.
 
 
 ## Customer communication

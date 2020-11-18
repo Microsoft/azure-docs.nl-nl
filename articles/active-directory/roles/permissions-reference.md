@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6dd88f6e8eb2ce95c1aa68c63f3d14a14e079d19
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 9055bb9689895a9b74f3d6b5affa325a3b594d65
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93396512"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874675"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerrol in Azure Active Directory
 
@@ -233,7 +233,7 @@ Gebruikers met deze rol kunnen instellingen en beheer informatie lezen over Micr
 >- [Onedrive-beheer centrum](https://admin.onedrive.com/) : het onedrive-beheer centrum biedt geen ondersteuning voor de globale lees functie
 >- [M365-beheer centrum](https://admin.microsoft.com/Adminportal/Home#/homepage) : globale lezer kan geen lockbox-aanvragen van klanten lezen. U vindt het tabblad **klant lockbox-aanvragen** niet onder **ondersteuning** in het linkerdeel venster van het M365-beheer centrum.
 >- [Office Security & compliance Center](https://sip.protection.office.com/homepage) : globale lezer kan geen SCC-controle logboeken lezen, inhoud zoeken of een beveiligde Score bekijken.
->- [Teams beheer centrum](https://admin.teams.microsoft.com) : wereld wijde lezer kan de **levens cyclus van teams** , **analyses & rapporten** , het **beheer van IP-telefoon apparaten** en de **app-catalogus** niet lezen.
+>- [Teams beheer centrum](https://admin.teams.microsoft.com) : wereld wijde lezer kan de **levens cyclus van teams**, **analyses & rapporten**, het **beheer van IP-telefoon apparaten** en de **app-catalogus** niet lezen.
 >- [Privileged Access Management (PAM)](/office365/securitycompliance/privileged-access-management-overview) biedt geen ondersteuning voor de globale lezer-rol.
 >- [Azure Information Protection](/azure/information-protection/what-is-information-protection) -wereld wijde lezer wordt alleen ondersteund [voor centrale rapportage](/azure/information-protection/reports-aip) en wanneer uw Azure AD-organisatie zich niet op het [uniforme label platform](/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform)bevindt.
 >
@@ -311,7 +311,7 @@ Gebruikers met deze rol kunnen meldingen en advies status updates in [berichten 
 
 Niet gebruiken. Deze rol wordt automatisch toegewezen vanuit commerce en is niet bedoeld of wordt niet ondersteund voor andere gebruik. Zie hieronder voor meer informatie.
 
-De moderne commerce-gebruikersrol geeft bepaalde gebruikers toestemming om toegang te krijgen tot Microsoft 365-beheer centrum en de linkernavigatiebalk te bekijken voor **thuis** , **facturering** en **ondersteuning**. De inhoud die beschikbaar is op deze gebieden wordt beheerd door de [Commerce-specifieke rollen](../../cost-management-billing/manage/understand-mca-roles.md) die aan gebruikers zijn toegewezen voor het beheren van producten die ze voor zichzelf of uw organisatie hebben gekocht. Dit kunnen taken zijn zoals het betalen van facturen of voor toegang tot facturerings accounts en facturerings profielen. 
+De moderne commerce-gebruikersrol geeft bepaalde gebruikers toestemming om toegang te krijgen tot Microsoft 365-beheer centrum en de linkernavigatiebalk te bekijken voor **thuis**, **facturering** en **ondersteuning**. De inhoud die beschikbaar is op deze gebieden wordt beheerd door de [Commerce-specifieke rollen](../../cost-management-billing/manage/understand-mca-roles.md) die aan gebruikers zijn toegewezen voor het beheren van producten die ze voor zichzelf of uw organisatie hebben gekocht. Dit kunnen taken zijn zoals het betalen van facturen of voor toegang tot facturerings accounts en facturerings profielen. 
 
 Gebruikers met de moderne commerce-gebruikersrol hebben doorgaans beheerders machtigingen in andere micro soft-aankoop systemen, maar hebben geen globale beheerder of facturerings beheerders rollen die worden gebruikt voor toegang tot het beheer centrum. 
 
@@ -1513,7 +1513,7 @@ Kan alle aspecten van het Power BI product beheren.
 
 ### <a name="power-platform-administrator-permissions"></a>Beheerders machtigingen voor Power platform
 
-Kan alle aspecten van micro soft Dynamics 365, PowerApps en Microsoft Flow maken en beheren. 
+Kan alle aspecten van micro soft Dynamics 365, PowerApps en energie automatisering maken en beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
@@ -1524,7 +1524,7 @@ Kan alle aspecten van micro soft Dynamics 365, PowerApps en Microsoft Flow maken
 | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
 | micro soft. dynamics365/-beleeningen/allTasks | Beheer alle aspecten van Dynamics 365. |
-| micro soft. flow/allTasks | Beheer alle aspecten van Microsoft Flow. |
+| micro soft. flow/allTasks | Beheer alle aspecten van het automatiseren van de stroom. |
 | micro soft. powerApps/allTasks | Beheer alle aspecten van PowerApps. |
 | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
@@ -1982,7 +1982,7 @@ De volgende rollen mogen niet worden gebruikt. Ze zijn afgeschaft en worden in d
 
 Niet elke rol die wordt geretourneerd door Power shell of MS Graph API is zichtbaar in Azure Portal. In de volgende tabel worden deze verschillen ingedeeld.
 
-API-naam | Azure-portaalnaam | Notities
+API-naam | Azure-portaalnaam | Opmerkingen
 -------- | ------------------- | -------------
 Company Administratoristrain opr | Hoofdbeheerder | [De naam is gewijzigd voor betere duidelijkheid](permissions-reference.md#role-template-ids)
 CRM Service-beheerder | Dynamics 365-beheerder | [Weerspiegelt huidige product huisstijl](permissions-reference.md#role-template-ids)

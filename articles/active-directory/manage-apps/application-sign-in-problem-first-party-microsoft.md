@@ -16,12 +16,12 @@ ms.date: 09/10/2018
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8942a55d880132313e1cdac6bfc025e0b153b410
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57deed9d7fb178ba1cdc8d6e954d751752532de4
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90707948"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654402"
 ---
 # <a name="problems-signing-in-to-a-microsoft-application"></a>Problemen bij het aanmelden bij een micro soft-toepassing
 
@@ -33,7 +33,7 @@ Er zijn drie belang rijke manieren waarop een gebruiker toegang kan krijgen tot 
 
 -   Voor toepassingen die door micro soft of een derde partij gratis worden gepubliceerd voor iedereen die ze wil gebruiken, kunnen gebruikers toegang krijgen via toestemming van de **gebruiker**. Dit betekent dat ze zich bij de toepassing aanmelden met hun Azure AD-werk-of school account en toegang hebben tot een beperkt aantal gegevens op hun account.
 
--   Voor toepassingen die door micro soft of een derde partij vrij worden gepubliceerd voor iedereen, kunnen gebruikers ook toegang krijgen via **toestemming**van de beheerder. Dit betekent dat een beheerder heeft vastgesteld dat de toepassing door iedereen in de organisatie kan worden gebruikt, zodat deze zich bij de toepassing aanmeldt met een account van de globale beheerder en toegang verleent aan iedereen in de organisatie.
+-   Voor toepassingen die door micro soft of een derde partij vrij worden gepubliceerd voor iedereen, kunnen gebruikers ook toegang krijgen via **toestemming** van de beheerder. Dit betekent dat een beheerder heeft vastgesteld dat de toepassing door iedereen in de organisatie kan worden gebruikt, zodat deze zich bij de toepassing aanmeldt met een account van de globale beheerder en toegang verleent aan iedereen in de organisatie.
 
 Om het probleem op te lossen, begint u met de [algemene probleem gebieden met toegang tot de toepassing om rekening te houden](#general-problem-areas-with-application-access-to-consider) met de procedure: stappen voor het oplossen van problemen met micro soft-toepassingen om de details op te halen.
 
@@ -63,7 +63,7 @@ Hieronder volgen enkele veelvoorkomende problemen die mensen uitvoeren wanneer h
 
   * Zorg ervoor dat het gebruikers account is **ingeschakeld** voor aanmeldingen. [De account status van een gebruiker controleren](#problems-with-the-users-account)
 
-  * Zorg ervoor dat het wacht woord van de gebruiker **niet is verlopen of is verg eten.** [Het wacht woord van een gebruiker opnieuw instellen](#reset-a-users-password) of [selfservice voor wachtwoord herstel inschakelen](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started)
+  * Zorg ervoor dat het wacht woord van de gebruiker **niet is verlopen of is verg eten.** [Het wacht woord van een gebruiker opnieuw instellen](#reset-a-users-password) of [selfservice voor wachtwoord herstel inschakelen](../authentication/tutorial-enable-sspr.md)
 
   * Zorg ervoor dat **multi-factor Authentication** de gebruikers toegang niet blokkeert. [Controleer de multi-factor Authentication-status van een gebruiker](#check-a-users-multi-factor-authentication-status) of [Controleer de contact gegevens voor de verificatie van een gebruiker](#check-a-users-authentication-contact-info)
 
@@ -179,9 +179,9 @@ Voer de volgende stappen uit om het wacht woord van een gebruiker opnieuw in te 
 
 Als u de selfservice voor wachtwoord herstel wilt inschakelen, volgt u de onderstaande stappen voor de implementatie:
 
--   [Gebruikers in staat stellen hun Azure Active Directory wacht woorden opnieuw in te stellen](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started)
+-   [Gebruikers in staat stellen hun Azure Active Directory wacht woorden opnieuw in te stellen](../authentication/tutorial-enable-sspr.md)
 
--   [Gebruikers in staat stellen om hun Active Directory on-premises wacht woorden opnieuw in te stellen of te wijzigen](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started)
+-   [Gebruikers in staat stellen om hun Active Directory on-premises wacht woorden opnieuw in te stellen of te wijzigen](../authentication/tutorial-enable-sspr.md)
 
 ### <a name="check-a-users-multi-factor-authentication-status"></a>De multi-factor Authentication-status van een gebruiker controleren
 
@@ -203,7 +203,7 @@ Voer de volgende stappen uit om de multi-factor Authentication-status van een ge
 
 8. Zoek de gebruiker in de lijst met gebruikers door te zoeken, te filteren of te sorteren.
 
-9. Selecteer de gebruiker in de lijst met gebruikers en **Schakel**indien **gewenst multi-** Factor Authentication in, **uit**of af.
+9. Selecteer de gebruiker in de lijst met gebruikers en **Schakel** indien **gewenst multi-** Factor Authentication in, **uit** of af.
 
    * **Opmerking**: als een gebruiker zich in een **afgedwongen** status bevindt, kunt u deze zo instellen dat ze tijdelijk worden **uitgeschakeld** zodat ze weer in hun account kunnen worden gezet. Zodra ze weer in zijn, kunt u de status wijzigen in **ingeschakeld** zodat ze hun contact gegevens opnieuw moeten registreren tijdens de volgende aanmelding. U kunt ook de stappen volgen in de [contact gegevens van een gebruiker controleren](#check-a-users-authentication-contact-info) om te controleren of deze gegevens voor hen in te stellen.
 
@@ -225,7 +225,7 @@ Voer de volgende stappen uit om de contact gegevens van een gebruiker te control
 
 7.  Klik op **profiel**.
 
-8.  Schuif omlaag naar de **contact gegevens**van de verificatie.
+8.  Schuif omlaag naar de **contact gegevens** van de verificatie.
 
 9.  **Controleer** de gegevens die voor de gebruiker zijn geregistreerd en werk deze indien nodig bij.
 
@@ -508,26 +508,25 @@ Toegang tot toepassingen kan worden geblokkeerd omdat de machtiging voor de juis
 
 -   Voor elke open-ID-toepassing met Connect die machtigingen aanvraagt, wordt door het aanmelden op het aanmeldings scherm van de toepassing een gebruikers niveau met toestemming voor de aangemelde gebruiker uitgevoerd.
 
--   Als u dit wilt doen via een programma, raadpleegt u de [vraag om toestemming van individuele gebruiker](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#requesting-individual-user-consent).
+-   Als u dit wilt doen via een programma, raadpleegt u de [vraag om toestemming van individuele gebruiker](../develop/v2-permissions-and-consent.md#requesting-individual-user-consent).
 
 ### <a name="perform-administrator-level-consent-operation-for-any-application"></a>Bewerking op beheerders niveau uitvoeren voor elke toepassing
 
--   Alleen voor toepassingen die zijn **ontwikkeld met behulp van het v1-toepassings model**kunt u toestemming geven voor dit beheer niveau door '**? prompt = Administrator \_ toestemming**' toe te voegen aan het einde van de aanmeldings-URL van de toepassing.
+-   Alleen voor toepassingen die zijn **ontwikkeld met behulp van het v1-toepassings model** kunt u toestemming geven voor dit beheer niveau door '**? prompt = Administrator \_ toestemming**' toe te voegen aan het einde van de aanmeldings-URL van de toepassing.
 
--   Voor **elke toepassing die is ontwikkeld met behulp van het v2-toepassings model**, kunt u deze toestemming op beheerders niveau afdwingen met behulp van de instructies in de sectie **machtigingen aanvragen van een Directory-beheerder** van [het bestemmings eindpunt van de](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#using-the-admin-consent-endpoint)beheerder.
+-   Voor **elke toepassing die is ontwikkeld met behulp van het v2-toepassings model**, kunt u deze toestemming op beheerders niveau afdwingen met behulp van de instructies in de sectie **machtigingen aanvragen van een Directory-beheerder** van [het bestemmings eindpunt van de](../develop/v2-permissions-and-consent.md#using-the-admin-consent-endpoint)beheerder.
 
 ### <a name="perform-administrator-level-consent-for-a-single-tenant-application"></a>Toestemming op beheerders niveau uitvoeren voor een toepassing met één Tenant
 
 -   Voor **toepassingen met één Tenant** die machtigingen aanvragen (zoals de ontwikkelings-of eigenaar van uw organisatie), kunt u een **toestemmings bewerking op beheer niveau** uitvoeren namens alle gebruikers door u aan te melden als globale beheerder en te klikken op de knop **machtigingen verlenen** boven aan het **toepassings register- &gt; alle toepassingen-Selecteer een deel venster voor &gt; app- &gt; vereiste machtigingen** .
 
--   Voor **elke toepassing die is ontwikkeld met behulp van het v1-of v2-toepassings model**, kunt u deze toestemming op beheerders niveau afdwingen met behulp van de instructies in de sectie **machtigingen aanvragen van een Directory-beheerder** van [het beheerders toestemming-eind punt](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#using-the-admin-consent-endpoint)te volgen.
+-   Voor **elke toepassing die is ontwikkeld met behulp van het v1-of v2-toepassings model**, kunt u deze toestemming op beheerders niveau afdwingen met behulp van de instructies in de sectie **machtigingen aanvragen van een Directory-beheerder** van [het beheerders toestemming-eind punt](../develop/v2-permissions-and-consent.md#using-the-admin-consent-endpoint)te volgen.
 
 ### <a name="perform-administrator-level-consent-for-a-multi-tenant-application"></a>Toestemming op beheerders niveau uitvoeren voor een toepassing met meerdere tenants
 
 -   Voor **toepassingen met meerdere tenants** die machtigingen aanvragen (zoals een toepassing die door derden wordt uitgevoerd of micro soft zich ontwikkelt), kunt u een **toestemmings bewerking op beheer niveau** uitvoeren. Meld u aan als globale beheerder en klik op de knop **machtigingen verlenen** onder **bedrijfs toepassingen- &gt; alle toepassingen- &gt; Selecteer een app- &gt; machtigingen** venster (binnenkort beschikbaar).
 
--   U kunt deze toestemming op beheerders niveau ook afdwingen met behulp van de instructies in de sectie **machtigingen aanvragen van een Directory-beheerder** van [het gebruik van het afstemmings eindpunt van de](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#using-the-admin-consent-endpoint)beheerder.
+-   U kunt deze toestemming op beheerders niveau ook afdwingen met behulp van de instructies in de sectie **machtigingen aanvragen van een Directory-beheerder** van [het gebruik van het afstemmings eindpunt van de](../develop/v2-permissions-and-consent.md#using-the-admin-consent-endpoint)beheerder.
 
 ## <a name="next-steps"></a>Volgende stappen
-[Het afstemmings eindpunt van de beheerder gebruiken](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#using-the-admin-consent-endpoint)
-
+[Het afstemmings eindpunt van de beheerder gebruiken](../develop/v2-permissions-and-consent.md#using-the-admin-consent-endpoint)

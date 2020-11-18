@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/29/2020
 ms.author: kenwith
-ms.openlocfilehash: 9b48bc62fc0548c0c4f431e71598fdfa6850de13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b647e15d3fc99a7f15fbc24e2b6050fdfdc6e93
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91598338"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654708"
 ---
 # <a name="understand-password-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van wacht woorden
 
@@ -29,11 +29,11 @@ SSO op basis van wacht woorden is een uitstekende manier om snel toepassingen te
 
 - Ondersteunings toepassingen waarvoor meerdere aanmeldings velden zijn vereist voor toepassingen waarvoor meer dan alleen gebruikers naam en wacht woord zijn vereist om zich aan te melden
 
-- De labels van de gebruikers naam en het wacht woord aanpassen die uw gebruikers zien op [mijn apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) wanneer ze hun referenties invoeren
+- De labels van de gebruikers naam en het wacht woord aanpassen die uw gebruikers zien op [mijn apps](../user-help/my-apps-portal-end-user-access.md) wanneer ze hun referenties invoeren
 
 - Stel uw gebruikers in staat om hun eigen gebruikers namen en wacht woorden op te geven voor bestaande toepassings accounts die ze hand matig invoeren.
 
-- Een lid van de bedrijfs groep toestaan om de gebruikers namen en wacht woorden op te geven die aan een gebruiker zijn toegewezen met behulp van de [self-service toepassings toegangs](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) functie
+- Een lid van de bedrijfs groep toestaan om de gebruikers namen en wacht woorden op te geven die aan een gebruiker zijn toegewezen met behulp van de [self-service toepassings toegangs](./manage-self-service-access.md) functie
 
 -   Een beheerder toestaan om een gebruikers naam en wacht woord op te geven die moeten worden gebruikt door gebruikers of groepen wanneer ze zich aanmelden bij de toepassing met de functie voor het bijwerken van referenties 
 
@@ -44,7 +44,7 @@ Het gebruik van Azure AD als uw ID-provider (IdP) en het configureren van eenmal
 > [!IMPORTANT] 
 > Er zijn enkele scenario's waarbij de optie voor **eenmalige aanmelding** niet voor komt in de navigatie voor een toepassing in **bedrijfs toepassingen**. 
 >
-> Als de toepassing is geregistreerd met behulp van **app-registraties** , is de mogelijkheid voor eenmalige aanmelding standaard geconfigureerd voor het gebruik van OIDC OAuth. In dit geval wordt de optie **voor eenmalige aanmelding** niet weer gegeven in de navigatie onder **bedrijfs toepassingen**. Wanneer u **app-registraties** gebruikt om uw aangepaste app toe te voegen, configureert u de opties in het manifest bestand. Zie [Azure Active Directory app-manifest](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest)voor meer informatie over het manifest bestand. Zie [verificatie en autorisatie met behulp van micro soft Identity platform](https://docs.microsoft.com/azure/active-directory/develop/authentication-vs-authorization#authentication-and-authorization-using-microsoft-identity-platform)voor meer informatie over SSO-standaarden. 
+> Als de toepassing is geregistreerd met behulp van **app-registraties** , is de mogelijkheid voor eenmalige aanmelding standaard geconfigureerd voor het gebruik van OIDC OAuth. In dit geval wordt de optie **voor eenmalige aanmelding** niet weer gegeven in de navigatie onder **bedrijfs toepassingen**. Wanneer u **app-registraties** gebruikt om uw aangepaste app toe te voegen, configureert u de opties in het manifest bestand. Zie [Azure Active Directory app-manifest](../develop/reference-app-manifest.md)voor meer informatie over het manifest bestand. Zie [verificatie en autorisatie met behulp van micro soft Identity platform](../develop/authentication-vs-authorization.md#authentication-and-authorization-using-microsoft-identity-platform)voor meer informatie over SSO-standaarden. 
 >
 > Andere scenario's waarin **eenmalige aanmelding** ontbreekt in de navigatie, zijn, wanneer een toepassing wordt gehost in een andere Tenant of als uw account niet over de vereiste machtigingen (globale beheerder, Cloud toepassings beheerder, toepassings beheerder of eigenaar van de service-principal) beschikt. Machtigingen kunnen ook leiden tot een scenario waarin u **eenmalige aanmelding** kunt openen, maar niet kunt opslaan. Zie (voor meer informatie over Azure AD-beheerders rollen https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) .
 
@@ -60,14 +60,14 @@ De configuratie pagina voor SSO op basis van een wacht woord is eenvoudig. Het b
 
 Nadat u de URL hebt ingevoerd, selecteert u **Opslaan**. Azure AD parseert de HTML-code van de aanmeldings pagina voor de invoer velden gebruikers naam en wacht woord. Als de poging slaagt, bent u klaar.
  
-De volgende stap is het [toewijzen van gebruikers of groepen aan de toepassing](methods-for-assigning-users-and-groups.md). Nadat u gebruikers en groepen hebt toegewezen, kunt u referenties opgeven die moeten worden gebruikt voor een gebruiker wanneer deze zich aanmeldt bij de toepassing. Selecteer **gebruikers en groepen**, schakel het selectie vakje in voor de rij van de gebruiker of groep en selecteer vervolgens **referenties bijwerken**. Voer ten slotte de gebruikers naam en het wacht woord in die moeten worden gebruikt voor de gebruiker of groep. Als u dit niet doet, wordt gebruikers gevraagd de referenties zelf in te voeren bij het starten.
+De volgende stap is het [toewijzen van gebruikers of groepen aan de toepassing](./assign-user-or-group-access-portal.md). Nadat u gebruikers en groepen hebt toegewezen, kunt u referenties opgeven die moeten worden gebruikt voor een gebruiker wanneer deze zich aanmeldt bij de toepassing. Selecteer **gebruikers en groepen**, schakel het selectie vakje in voor de rij van de gebruiker of groep en selecteer vervolgens **referenties bijwerken**. Voer ten slotte de gebruikers naam en het wacht woord in die moeten worden gebruikt voor de gebruiker of groep. Als u dit niet doet, wordt gebruikers gevraagd de referenties zelf in te voeren bij het starten.
  
 
 ## <a name="manual-configuration"></a>Handmatige configuratie
 
 Als het parseren van de Azure AD-poging mislukt, kunt u hand matig aanmelden configureren.
 
-1. Onder ** \<application name> configuratie**selecteert u ** \<application name> instellingen voor eenmalige aanmelding met een wacht woord configureren** om de aanmeldings pagina **configureren** weer te geven. 
+1. Onder **\<application name> configuratie** selecteert u **\<application name> instellingen voor eenmalige aanmelding met een wacht woord configureren** om de aanmeldings pagina **configureren** weer te geven. 
 
 2. Selecteer **aanmeldings velden hand matig detecteren**. Aanvullende instructies voor het beschrijven van de hand matige detectie van aanmeldings velden worden weer gegeven.
 
@@ -88,5 +88,5 @@ Als het parseren van de Azure AD-poging mislukt, kunt u hand matig aanmelden con
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Gebruikers of groepen toewijzen aan de toepassing](methods-for-assigning-users-and-groups.md)
+- [Gebruikers of groepen toewijzen aan de toepassing](./assign-user-or-group-access-portal.md)
 - [Automatisch inrichten van gebruikers accounts configureren](../app-provisioning/configure-automatic-user-provisioning-portal.md)

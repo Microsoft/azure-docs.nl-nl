@@ -11,12 +11,12 @@ ms.date: 09/23/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: afa1d958e054a769ea0f19b82afdf55a94c3d0cf
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3a7d750caed297dfa364e2f1ef176ee19ad35480
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309716"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654203"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Hoge prestaties met een Triton-inrichtings server (preview-versie) 
 
@@ -66,7 +66,11 @@ De werk stroom voor het gebruik van Triton voor uw model implementatie is:
 1. Controleer of u aanvragen kunt verzenden naar uw Triton-geïmplementeerde model.
 1. Neem uw Triton code op in uw AML-implementatie.
 
-## <a name="optional-define-a-model-config-file"></a>Beschrijving Een model configuratie bestand definiëren
+## <a name="verify-that-triton-can-serve-your-model"></a>Controleren of Triton uw model kan leveren
+
+Voer eerst de volgende stappen uit om te controleren of de Triton in-Server voor uw model kan dienen.
+
+### <a name="optional-define-a-model-config-file"></a>Beschrijving Een model configuratie bestand definiëren
 
 Het configuratie bestand van het model vertelt Triton hoeveel invoer moet worden verwacht en van welke dimensies deze invoer zal zijn. Zie [model configuratie](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_configuration.html) in de NVIDIA-documentatie voor meer informatie over het maken van het configuratie bestand.
 
@@ -75,7 +79,7 @@ Het configuratie bestand van het model vertelt Triton hoeveel invoer moet worden
 > 
 > Zie voor meer informatie over deze optie [gegenereerde model configuratie](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_configuration.html#generated-model-configuration) in de NVIDIA-documentatie.
 
-## <a name="directory-structure"></a>Mapstructuur
+### <a name="use-the-correct-directory-structure"></a>De juiste mapstructuur gebruiken
 
 Bij het registreren van een model met Azure Machine Learning kunt u afzonderlijke bestanden of een mapstructuur registreren. Als u Triton wilt gebruiken, moet de model registratie voor een directory structuur zijn die een map bevat met de naam `triton` . De algemene structuur van deze map is:
 
@@ -93,7 +97,7 @@ models
 > [!IMPORTANT]
 > Deze mapstructuur is een Triton-model opslagplaats en is vereist voor uw model (s) voor gebruik met Triton. Zie [Triton model-opslag](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_repository.html) plaatsen in de NVIDIA-documentatie voor meer informatie.
 
-## <a name="test-with-triton-and-docker"></a>Testen met Triton en docker
+### <a name="test-with-triton-and-docker"></a>Testen met Triton en docker
 
 Als u uw model wilt testen om er zeker van te zijn dat het wordt uitgevoerd met Triton, kunt u docker gebruiken. Met de volgende opdrachten wordt de Triton-container aan uw lokale computer door getrokken en wordt de Triton-server gestart:
 
@@ -146,7 +150,7 @@ Na een eenvoudige status controle kunt u een client maken voor het verzenden van
 
 Zie voor meer informatie over het uitvoeren van Triton met behulp van docker [Triton uitvoeren op een systeem met een GPU](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/run.html#running-triton-on-a-system-with-a-gpu) en [Triton uitvoeren op een systeem zonder GPU](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/run.html#running-triton-on-a-system-without-a-gpu).
 
-## <a name="register-your-model"></a>Uw model registreren
+### <a name="register-your-model"></a>Uw model registreren
 
 Nu u hebt gecontroleerd of uw model werkt met Triton, registreert u dit bij Azure Machine Learning. Model registratie slaat uw model bestanden op in de werk ruimte Azure Machine Learning en wordt gebruikt bij de implementatie met de python-SDK en Azure CLI.
 
@@ -176,9 +180,9 @@ az ml model register --model-path='triton' \
 
 <a id="processing"></a>
 
-## <a name="add-pre-and-post-processing"></a>Voorafgaand aan en na de verwerking toevoegen
+## <a name="verify-you-can-call-into-your-model"></a>Controleer of u het model kunt aanroepen
 
-Nadat u hebt gecontroleerd of de webservice werkt, kunt u vooraf en post code toevoegen door een _invoer script_ te definiëren. Dit bestand heeft de naam `score.py` . Zie [een vermeldings script definiëren](how-to-deploy-and-where.md#define-an-entry-script)voor meer informatie over invoer scripts.
+Nadat u hebt gecontroleerd of de Triton uw model kan leveren, kunt u vooraf en post code toevoegen door een _invoer script_ te definiëren. Dit bestand heeft de naam `score.py` . Zie [een vermeldings script definiëren](how-to-deploy-and-where.md#define-an-entry-script)voor meer informatie over invoer scripts.
 
 De twee belangrijkste stappen zijn het initialiseren van een Triton HTTP-client in uw `init()` methode en voor het aanroepen van die client in uw `run()` functie.
 

@@ -3,12 +3,12 @@ title: 'Azure Lab Services: een aangepaste installatie kopie uploaden naar de ga
 description: Hierin wordt beschreven hoe u een aangepaste installatie kopie uploadt naar de galerie met gedeelde afbeeldingen. De IT-afdelingen van de Universiteit zullen de installatie kopieën bijzonder nuttig kunnen importeren.
 ms.date: 09/30/2020
 ms.topic: how-to
-ms.openlocfilehash: cd701215eb375b7f9b867ba05082afc7ed348ff7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93b4141636b629168e9bb7a73e71a9fe4bfc39f5
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91712397"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654640"
 ---
 # <a name="upload-a-custom-image-to-shared-image-gallery"></a>Een aangepaste afbeelding uploaden naar Shared Image Gallery
 
@@ -35,36 +35,36 @@ Er zijn veel opties voor het maken van een VHD vanuit een fysieke test omgeving.
        
         :::image type="content" source="./media/upload-custom-image-shared-image-gallery/connect-virtual-hard-disk.png" alt-text="Virtuele harde schijf verbinden":::   
     1. Installatie kopie de virtuele machine zoals u dat gewend bent.
-1. [Maak verbinding met de virtuele machine en bereid deze voor op Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
-    1. [Windows-configuraties instellen voor Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#set-windows-configurations-for-azure)
-    1. [Controleer de Windows-services die het mini maal nodig hebben om verbinding met de virtuele machine te garanderen](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#check-the-windows-services)
-    1. [Register instellingen voor extern bureau blad bijwerken](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#update-remote-desktop-registry-settings)
-    1. [Windows Firewall-regels configureren](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#configure-windows-firewall-rules)
+1. [Maak verbinding met de virtuele machine en bereid deze voor op Azure](../virtual-machines/windows/prepare-for-upload-vhd-image.md).
+    1. [Windows-configuraties instellen voor Azure](../virtual-machines/windows/prepare-for-upload-vhd-image.md#set-windows-configurations-for-azure)
+    1. [Controleer de Windows-services die het mini maal nodig hebben om verbinding met de virtuele machine te garanderen](../virtual-machines/windows/prepare-for-upload-vhd-image.md#check-the-windows-services)
+    1. [Register instellingen voor extern bureau blad bijwerken](../virtual-machines/windows/prepare-for-upload-vhd-image.md#update-remote-desktop-registry-settings)
+    1. [Windows Firewall-regels configureren](../virtual-machines/windows/prepare-for-upload-vhd-image.md#configure-windows-firewall-rules)
     1. Windows-updates installeren
-    1. [Installeer de Azure VM-agent en de aanvullende configuratie, zoals hier wordt weer gegeven](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#complete-the-recommended-configurations) 
+    1. [Installeer de Azure VM-agent en de aanvullende configuratie, zoals hier wordt weer gegeven](../virtual-machines/windows/prepare-for-upload-vhd-image.md#complete-the-recommended-configurations) 
     
-    In de bovenstaande stappen wordt een gespecialiseerde afbeelding gemaakt. Als u een gegeneraliseerde installatie kopie maakt, moet u ook [Sysprep](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#determine-when-to-use-sysprep)uitvoeren. <br/>
+    In de bovenstaande stappen wordt een gespecialiseerde afbeelding gemaakt. Als u een gegeneraliseerde installatie kopie maakt, moet u ook [Sysprep](../virtual-machines/windows/prepare-for-upload-vhd-image.md#determine-when-to-use-sysprep)uitvoeren. <br/>
         U moet een gespecialiseerde installatie kopie maken als u wilt dat de gebruikers lijst (die bestanden, gebruikers accountgegevens, enzovoort) bevat die nodig is voor software die is opgenomen in de installatie kopie.
 1. Omdat **Hyper-V** standaard een **VHDX** -bestand maakt, moet u dit converteren naar een VHD-bestand.
     1. Navigeer naar **Hyper-V-beheer**  ->  **actie**  ->  **schijf bewerken**.
     1. Hier hebt u de mogelijkheid om de schijf van een VHDX te **converteren** naar een VHD
     1. Wanneer u de schijf grootte wilt uitbreiden, moet u ervoor zorgen dat deze niet groter is dan 128 GB.        
-        :::image type="content" source="./media/upload-custom-image-shared-image-gallery/choose-action.png" alt-text="Virtuele harde schijf verbinden":::   
+        :::image type="content" source="./media/upload-custom-image-shared-image-gallery/choose-action.png" alt-text="Actie kiezen":::   
 1. Upload de VHD naar Azure om een beheerde schijf te maken.
-    1. U kunt Storage Explorer of AzCopy gebruiken vanaf de opdracht regel, zoals beschreven in [een VHD uploaden naar Azure of een beheerde schijf kopiëren naar een andere regio](https://docs.microsoft.com/azure/virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell).        
+    1. U kunt Storage Explorer of AzCopy gebruiken vanaf de opdracht regel, zoals beschreven in [een VHD uploaden naar Azure of een beheerde schijf kopiëren naar een andere regio](../virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell.md).        
     Als uw computer overschakelt naar de slaap stand of vergrendeld, kan het upload proces worden onderbroken en mislukt.
     1. Het resultaat van deze stap is dat u nu een beheerde schijf hebt die u in de Azure Portal kunt zien. 
         U kunt het tabblad ' Size\Performance ' van het Azure Portal gebruiken om de grootte van de schijf te kiezen. Zoals eerder vermeld, moet de grootte niet > 128 GB zijn.
 1. Maak een moment opname van de beheerde schijf.
-    Dit kan worden gedaan vanuit Power shell, met behulp van de Azure Portal, of vanuit Storage Explorer, zoals beschreven in [een moment opname maken met behulp van de portal of Power shell](https://docs.microsoft.com/azure/virtual-machines/windows/snapshot-copy-managed-disk).
+    Dit kan worden gedaan vanuit Power shell, met behulp van de Azure Portal, of vanuit Storage Explorer, zoals beschreven in [een moment opname maken met behulp van de portal of Power shell](../virtual-machines/windows/snapshot-copy-managed-disk.md).
 1. Maak in de galerie gedeelde afbeeldingen een definitie en versie van de installatie kopie:
-    1. [Een definitie van een installatie kopie maken](https://docs.microsoft.com/azure/virtual-machines/windows/shared-images-portal#create-an-image-definition).
+    1. [Een definitie van een installatie kopie maken](../virtual-machines/windows/shared-images-portal.md#create-an-image-definition).
     1. U moet hier ook opgeven of u een gespecialiseerde/gegeneraliseerde installatie kopie maakt.
 1. Maak het lab in Azure Lab Services en selecteer de aangepaste installatie kopie in de galerie met gedeelde afbeeldingen.
 
-    Als u schijf hebt uitgebreid nadat het besturings systeem is geïnstalleerd op de oorspronkelijke Hyper-V-VM, moet u ook het station C in Windows uitbreiden om de niet-toegewezen schijf ruimte te gebruiken. Als u dit wilt doen, meldt u zich aan bij de sjabloon-VM nadat het lab is gemaakt en voert u de stappen uit die vergelijkbaar zijn met wat wordt weer gegeven in [een basis volume uitbreiden](https://docs.microsoft.com/windows-server/storage/disk-management/extend-a-basic-volume). Er zijn opties om dit te doen via de gebruikers interface en met behulp van Power shell.
+    Als u schijf hebt uitgebreid nadat het besturings systeem is geïnstalleerd op de oorspronkelijke Hyper-V-VM, moet u ook het station C in Windows uitbreiden om de niet-toegewezen schijf ruimte te gebruiken. Als u dit wilt doen, meldt u zich aan bij de sjabloon-VM nadat het lab is gemaakt en voert u de stappen uit die vergelijkbaar zijn met wat wordt weer gegeven in [een basis volume uitbreiden](/windows-server/storage/disk-management/extend-a-basic-volume). Er zijn opties om dit te doen via de gebruikers interface en met behulp van Power shell.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Overzicht van Galerie gedeelde afbeeldingen](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries)
+* [Overzicht van Galerie gedeelde afbeeldingen](../virtual-machines/windows/shared-image-galleries.md)
 * [De galerie met gedeelde afbeeldingen gebruiken](how-to-use-shared-image-gallery.md)

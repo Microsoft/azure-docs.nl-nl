@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: 70f350204796099e02f7afe829a6e2e1fdf653c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b7bc87f83925baed15bc6a411f5b4e4f78df6cc
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613093"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654504"
 ---
 # <a name="edit-storage-targets"></a>Opslagdoelen bewerken
 
@@ -40,7 +40,7 @@ Als u een opslag doel wilt verwijderen, opent u de pagina **opslag doelen** . Se
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 Gebruik [AZ HPC-cache Storage-doel Remove](/cli/azure/ext/hpc-cache/hpc-cache/storage-target#ext-hpc-cache-az-hpc-cache-storage-target-remove) om een opslag doel uit de cache te verwijderen.
 
@@ -79,7 +79,7 @@ Nadat u wijzigingen hebt aangebracht, klikt u op **OK** om het opslag doel bij t
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 Als u de naam ruimte van een Blob Storage-doel wilt wijzigen in de Azure CLI, gebruikt u de opdracht [AZ HPC-cache Blob-Storage-target update](/cli/azure/ext/hpc-cache/hpc-cache/blob-storage-target#ext-hpc-cache-az-hpc-cache-blob-storage-target-update). Alleen de `--virtual-namespace-path` waarde kan worden gewijzigd.
 
@@ -117,7 +117,7 @@ Gebruik de **naam ruimte** pagina voor uw Azure HPC-cache om naam ruimte waarden
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 Gebruik de ``--junction`` optie in de opdracht [AZ HPC-cache NFS-Storage-doel update](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target) om het pad naar de naam ruimte, de NFS-export of de export submap te wijzigen.
 
@@ -133,7 +133,7 @@ U moet alle drie de waarden voor elk pad opgeven in de ``--junction`` instructie
 
 De cache naam, de naam van het opslag doel en de resource groep zijn ook vereist in alle update-opdrachten.
 
-Voorbeeldopdracht:
+Voor beeld opdracht:
 
 ```azurecli
 az hpc-cache nfs-storage-target update --cache-name mycache \
@@ -159,7 +159,7 @@ Gebruik de vervolg keuzelijst om een nieuw gebruiks model te kiezen. Klik op **O
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 Gebruik de opdracht [AZ HPC-cache NFS-Storage-doel update](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target?view=azure-cli-latest#ext-hpc-cache-az-hpc-cache-nfs-storage-target-update) .
 

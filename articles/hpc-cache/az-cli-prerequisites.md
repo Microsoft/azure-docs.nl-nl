@@ -6,55 +6,20 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 07/08/2020
 ms.author: v-erkel
-ms.openlocfilehash: 7d0844e699c012d987c23a75e2b0874005cf535a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13f45c96a830110bd0f4a2d4a2b422921d7a2e31
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87097387"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654453"
 ---
 # <a name="set-up-azure-cli-for-azure-hpc-cache"></a>Azure CLI for Azure DNS HPC Cache instellen
 
 Volg deze stappen om uw omgeving voor te bereiden voordat u Azure CLI gebruikt voor het maken of beheren van een HPC-cache van Azure.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-## <a name="install-azure-cli"></a>Azure CLI installeren
-
-Voor de Azure HPC-cache is versie 2,7 of hoger van de Azure-CLI vereist. Voer `az --version` uit om de versie en afhankelijke bibliotheken te vinden die zijn geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u CLI wilt installeren of upgraden.
-
-```azurecli-interactive
-az --version
-```
-
-### <a name="install-the-azure-hpc-cache-extension"></a>De Azure HPC-cache-extensie installeren
-
-De functies van de Azure HPC-cache zijn geen onderdeel van de hoofd code basis. Daarom moet u ook de extensie verwijzing installeren. Volg de onderstaande instructies.
-
-1. Aanmelden
-
-   Meld u aan met de opdracht [AZ login](/cli/azure/reference-index#az-login) als u een lokaal geïnstalleerde versie van de CLI gebruikt.
-
-    ```azurecli
-    az login
-    ```
-
-    Volg de weergegeven stappen in uw terminal om het verificatieproces te voltooien.
-
-   > [!TIP]
-   > Als u meerdere abonnementen hebt, moet u er een kiezen. Selecteer deze optie wanneer u een Cloud Shell-sessie in azure Portal start of volg de instructies in aan de [slag met Azure cli](/cli/azure/get-started-with-azure-cli#sign-in) om uw abonnement in te stellen via de opdracht regel.
-
-2. De Azure CLI-extensie installeren
-
-   De functies van de Azure HPC-cache zijn opgenomen als een Azure CLI-extensie, maar maakt geen deel uit van het kern CLI-pakket. U moet de uitbreidings verwijzing installeren voordat u deze kunt gebruiken.
-
-   Met Azure CLI-extensies krijgt u toegang tot de opdrachten voor experimentele en voorlopige versies. Zie [extensies gebruiken met Azure cli](/cli/azure/azure-cli-extensions-overview)voor meer informatie over uitbrei dingen, zoals bijwerken en verwijderen.
-
-   Installeer de extensie voor Azure HPC-cache door de volgende opdracht uit te voeren:
-
-    ```azurecli-interactive
-    az extension add --name hpc-cache
-   ```
+ - Voor de Azure HPC-cache is versie 2,7 of hoger van de Azure-CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="set-default-resource-group-optional"></a>Standaard resource groep instellen (optioneel)
 

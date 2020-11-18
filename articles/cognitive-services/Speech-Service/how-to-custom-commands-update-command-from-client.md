@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/20/2020
 ms.author: encorona
-ms.openlocfilehash: 290f9ee9c23071ac56b1ff0c65ddc03decbc7344
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 1bffb09d0f49bbd0059e8a528d67bfe215f0650d
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94571184"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654342"
 ---
 # <a name="update-a-command-from-the-client"></a>Een opdracht van de client bijwerken
 
@@ -121,17 +121,30 @@ Denk bijvoorbeeld na over het scenario waarin u de ID en naam wilt verzenden van
 Als u dit scenario wilt testen, gaan we een nieuwe opdracht in onze huidige toepassing maken.
 1. Maak een nieuwe opdracht met de naam GetDeviceInfo.
 1. Voeg een voorbeeld zin toe met ' apparaatgegevens ophalen '.
-1. Voeg in de voltooiings regel ' gereed ' een actie voor het verzenden van een spraak bewerking toe.
+1. Voeg in de voltooiings regel ' gereed ' een actie voor het verzenden van een spraak bewerking toe die de kenmerken van de clientContext bevat.
     > ![Spraak antwoord met context verzenden](media/custom-commands/send-speech-response-context.png)
-1. Sla uw toepassing op en Train deze.
-1. Test uw toepassing.
+1. Uw toepassing opslaan, trainen en testen.
+1. In het test venster kunt u een activiteit verzenden om de client context bij te werken.
+    > ```json
+    >{
+    >   "type": "event",
+    >   "name": "RemoteUpdate",
+    >   "value": {
+    >     "clientContext": {
+    >       "deviceId": "12345",
+    >       "deviceName": "My device"
+    >     },
+    >     "processTurn": false
+    >   }
+    >}
+    > ```
+1. De tekst ' Get Device Info ' verzenden.
     > ![Client context activiteit verzenden](media/custom-commands/send-client-context-activity.png)
 
 Let op enkele dingen.
 1. U hoeft deze activiteit slechts eenmaal te verzenden (in het ideale geval nadat u een verbinding hebt gestart).
-1. U kunt complexe objecten gebruiken voor ClientContext.
-1. U kunt ClientContext gebruiken in spraak reacties, voor het verzenden van activiteiten en bij het aanroepen van web-eind punten.
-
+1. U kunt complexe objecten gebruiken voor clientContext.
+1. U kunt clientContext gebruiken in spraak reacties, voor het verzenden van activiteiten en bij het aanroepen van web-eind punten.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: InVision configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts van Azure AD naar InVision.
+title: 'Zelfstudie: InVision configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Lees hier meer over het automatisch inrichten en ongedaan maken van de inrichting van gebruikersaccounts van Azure AD voor InVision.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -12,79 +12,79 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 06/25/2020
 ms.author: Zhchia
-ms.openlocfilehash: c58a3d9f07b62e92d1e71096ae9dd3fc85515843
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: MT
+ms.openlocfilehash: f6a03a65b18d09000e93a1e0fa4a194321912211
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92459880"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94354246"
 ---
-# <a name="tutorial-configure-invision-for-automatic-user-provisioning"></a>Zelf studie: InVision configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-invision-for-automatic-user-provisioning"></a>Zelfstudie: InVision configureren voor automatische gebruikersinrichting
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel InVision als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer de configuratie is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en [GeInVisiond](https://www.invisionapp.com/) met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel InVision als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op [InVision](https://www.invisionapp.com/) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
 > * Gebruikers maken in InVision
-> * Gebruikers in InVision verwijderen wanneer ze niet meer toegang nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en InVision
+> * Gebruikers verwijderen uit InVision wanneer ze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en InVision
 > * [Eenmalige aanmelding](./invision-tutorial.md) bij InVision (vereist)
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-Tenant](../develop/quickstart-create-new-tenant.md) 
+* [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
 * Een gebruikersaccount in Azure AD met [machtigingen](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
-* Een [Invision Enter prise-account](https://www.invisionapp.com/enterprise) waarvoor SSO is ingeschakeld.
-* Een gebruikers account in InVision met beheerders machtigingen.
+* Een [InVision Enterprise-account](https://www.invisionapp.com/enterprise) met eenmalige aanmelding ingeschakeld.
+* Een gebruikersaccount in InVision met beheerdersmachtigingen.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en Invision](../app-provisioning/customize-application-attributes.md). 
+3. Bepaal welke gegevens u wilt [toewijzen tussen Azure AD en InVision](../app-provisioning/customize-application-attributes.md). 
 
-## <a name="step-2-configure-invision-to-support-provisioning-with-azure-ad"></a>Stap 2. InVision configureren voor ondersteuning bij het inrichten met Azure AD
+## <a name="step-2-configure-invision-to-support-provisioning-with-azure-ad"></a>Stap 2. InVision configureren om ondersteuning te bieden voor inrichting met Azure AD
 
-1. Meld u aan bij uw [Invision Enter prise-account](https://www.invisionapp.com/enterprise) als beheerder of eigenaar. Open de **team instellingen** lade aan de linkerkant en selecteer **instellingen**.
+1. Meld u als beheerder of eigenaar aan bij uw [InVision Enterprise-account](https://www.invisionapp.com/enterprise). Open de lade **Team Settings** linksonder en selecteer **Settings**.
 
-   ![Configuratie van SCIM-installatie](./media/invision-provisioning-tutorial/invision-scim-settings.png)
+   ![Configuratie van SCIM](./media/invision-provisioning-tutorial/invision-scim-settings.png)
 
-2. Selecteer **wijzigen** in het **inrichten van de gebruiker met** de instelling scim.
+2. Selecteer **Change** voor de instelling **User provisioning with SCIM**.
 
-   ![Instellingen voor SCIM-inrichting](./media/invision-provisioning-tutorial/invision-provisioning-settings.png)
+   ![Inrichtingsinstellingen voor SCIM](./media/invision-provisioning-tutorial/invision-provisioning-settings.png)
 
-3. Selecteer de wissel knop om SCIM-inrichting in te scha kelen. U moet SSO eerst configureren om SCIM in te kunnen scha kelen:
+3. Selecteer de wisselknop om SCIM-inrichting in te schakelen. Eenmalige aanmelding moet zijn geconfigureerd om SCIM te kunnen inschakelen:
 
-   ![Inrichtings SCIM inschakelen](./media/invision-provisioning-tutorial/enable-scim-provisioning.png)
+   ![SCIM inschakelen voor inrichting](./media/invision-provisioning-tutorial/enable-scim-provisioning.png)
 
-4. Kopieer de **URL** van de scim-API en voeg `/scim/v2` deze toe aan de URL. Kopieer het **verificatie token**. Sla deze waarden later op voor gebruik in de velden **Tenant-URL** en **geheime token** op het tabblad inrichten van uw Invision-toepassing in de Azure Portal.
+4. Kopieer de waarde van **SCIM API URL** en voeg `/scim/v2` toe aan de URL. Kopieer bij **Authentication token** het verificatietoken. Sla deze waarden op want u moet deze later invoeren in de velden **Tenant-URL** en **Token voor geheim** op het tabblad Inrichten van uw InVision-toepassing in de Azure-portal.
 
-   ![SCIM-toegangs token](./media/invision-provisioning-tutorial/invision-access-token.png)
+   ![Toegangstoken voor SCIM](./media/invision-provisioning-tutorial/invision-access-token.png)
 
 
-## <a name="step-3-add-invision-from-the-azure-ad-application-gallery"></a>Stap 3. InVision toevoegen vanuit de Azure AD-toepassings galerie
+## <a name="step-3-add-invision-from-the-azure-ad-application-gallery"></a>Stap 3. InVision toevoegen vanuit de galerie met Azure AD-toepassingen
 
-Voeg InVision toe vanuit de Azure AD-toepassings galerie om het beheren van de inrichting van InVision te starten. Als u eerder InVision voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
+Voeg InVision toe vanuit de galerie met Azure AD-toepassingen om te beginnen met het inrichten voor InVision. Als u InVision eerder hebt ingesteld voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
 
 Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) wordt beschreven. 
 
-* Wanneer u gebruikers en groepen toewijst aan InVision, moet u een andere rol dan **standaard toegang**selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
+* Wanneer u gebruikers en groepen toewijst aan InVision, moet u een andere rol dan **Standaardtoegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) opgeven. 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-invision"></a>Stap 5. Automatische gebruikers inrichting configureren voor InVision 
+## <a name="step-5-configure-automatic-user-provisioning-to-invision"></a>Stap 5. Automatische gebruikersinrichting configureren voor InVision 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen te maken, bij te werken en uit te schakelen in InVision, op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-invision-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor InVision in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-invision-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor InVision in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -92,7 +92,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 2. Selecteer **InVision** in de lijst met toepassingen.
 
-    ![De koppeling InVision in de lijst met toepassingen](common/all-applications.png)
+    ![De link naar InVision in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
@@ -102,9 +102,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Inrichtingsmodus](common/provisioning-automatic.png)
 
-5. In het gedeelte **beheerders referenties** voert u de URL-waarde van de scim-API in die eerder is opgehaald in de **Tenant-URL**. Voer de waarde voor het verificatie token in die eerder is opgehaald in het **geheime token**. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met InVision. Als de verbinding mislukt, zorg er dan voor dat uw InVision-account beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer in de sectie **Referenties voor beheerder** in het veld **Tenant-URL** de waarde in van de SCIM API-URL die eerder is opgehaald. Voer in het veld **Token voor geheim** de waarde van het Authentication token in dat eerder is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met InVision. Als de verbinding mislukt, controleert u of uw InVision-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
-    ![Beheerders referenties](./media/inVision-provisioning-tutorial/provisioning.png)
+    ![Referenties voor beheerder](./media/inVision-provisioning-tutorial/provisioning.png)
 
 6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
 
@@ -112,9 +112,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers inrichten**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers inrichten**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar InVision in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Invision voor bijwerk bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](../app-provisioning/customize-application-attributes.md)te wijzigen, moet u ervoor zorgen dat de INVISION-API het filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzing** de gebruikerskenmerken die vanuit Azure AD worden gesynchroniseerd met InVision. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikersaccounts in InVision te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](../app-provisioning/customize-application-attributes.md) te wijzigen, moet u ervoor zorgen dat de API van InVision het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
    |Kenmerk|Type|Ondersteund voor filteren|
    |---|---|---|
@@ -126,11 +126,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. Als u de Azure AD-inrichtings service voor **Invision wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+11. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor InVision.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-12. Definieer de gebruikers en/of groepen die u wilt inrichten voor InVision door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+12. Definieer de gebruikers en/of groepen die u aan InVision wilt toevoegen door de gewenste waarden te kiezen bij **Bereik** in de sectie **Instellingen**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 

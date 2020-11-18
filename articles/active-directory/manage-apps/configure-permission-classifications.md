@@ -12,12 +12,12 @@ ms.date: 06/01/2020
 ms.author: phsignor
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperfq2
-ms.openlocfilehash: d23ef7b78f5e97ee8a82f46794f37f3baf05ca49
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: b72530868b2b12e5f95e79be6ad5a2d7ce170b62
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427674"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654674"
 ---
 # <a name="configure-permission-classifications"></a>Machtigingsclassificaties configureren
 
@@ -35,7 +35,7 @@ Op dit moment wordt alleen de machtiging classificatie ' lage impact ' ondersteu
 Volg deze stappen om machtigingen te classificeren met behulp van de Azure Portal:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als [globale beheerder](../roles/permissions-reference.md#global-administrator--company-administrator), [toepassings beheerder](../roles/permissions-reference.md#application-administrator)of beheerder van de [Cloud toepassing](../roles/permissions-reference.md#cloud-application-administrator)
-1. Selecteer **Azure Active Directory**  >  toestemming voor**bedrijfs toepassingen**  >  **en**  >  **classificaties**voor machtigingen.
+1. Selecteer **Azure Active Directory**  >  toestemming voor **bedrijfs toepassingen**  >  **en**  >  **classificaties** voor machtigingen.
 1. Kies **machtigingen toevoegen** om een andere machtiging als ' lage impact ' te classificeren.
 1. Selecteer de API en selecteer vervolgens de gedelegeerde machtiging (en).
 
@@ -45,7 +45,7 @@ In dit voor beeld hebben we de minimale set vereiste machtiging voor eenmalige a
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-U kunt de nieuwste Azure AD Power shell preview-module, [AzureADPreview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true), gebruiken om machtigingen te classificeren. Machtigings classificaties worden geconfigureerd op het **ServicePrincipal** -object van de API die de machtigingen publiceert.
+U kunt de nieuwste Azure AD Power shell preview-module, [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview), gebruiken om machtigingen te classificeren. Machtigings classificaties worden geconfigureerd op het **ServicePrincipal** -object van de API die de machtigingen publiceert.
 
 #### <a name="list-the-current-permission-classifications-for-an-api"></a>De huidige machtigings classificaties voor een API weer geven
 
@@ -123,7 +123,7 @@ Zie voor meer informatie:
 * [De beheerder toestemming werk stroom configureren](configure-admin-consent-workflow.md)
 * [Meer informatie over het beheren van toestemming voor toepassingen en het evalueren van toestemming aanvragen](manage-consent-requests.md)
 * [Een toepassing beheerderstoestemming verlenen voor de hele tenant](grant-admin-consent.md)
-* [Machtigingen en toestemming in het micro soft Identity-platform](../develop/active-directory-v2-scopes.md)
+* [Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
 
 Om hulp te krijgen of antwoorden op uw vragen te vinden:
 * [Azure AD op stack overflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

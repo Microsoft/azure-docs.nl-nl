@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: milismsft
 ms.author: adrianmi
 ms.date: 09/21/2020
-ms.openlocfilehash: e87985154226369cd47cc6437fc82c59602a78d9
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6ffd5670a8b84f0f4a5b7d3dee8a7a5080be26f5
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085578"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94357314"
 ---
 # <a name="azure-cosmos-emulator---release-notes-and-download-information"></a>Azure Cosmos-emulator - opmerkingen bij de release en downloadgegevens
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -26,6 +26,10 @@ Dit artikel bevat de opmerkingen bij de release voor Azure Cosmos-emulator met e
 |**Aan de slag**|[Lokaal ontwikkelen met Azure Cosmos DB-emulator](local-emulator.md)|
 
 ## <a name="release-notes"></a>Releaseopmerkingen
+
+### <a name="2118-6-november-2020"></a>2.11.8 (6 november 2020)
+
+ - Deze release bevat een update voor de functie Data Explorer van de Cosmos-emulator waarmee een probleem wordt opgelost dat optreedt wanneer TLS 1.3-clients proberen Data Explorer te openen.
 
 ### <a name="2116-6-october-2020"></a>2.11.6 (6 oktober 2020)
 

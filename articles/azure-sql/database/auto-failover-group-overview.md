@@ -1,5 +1,5 @@
 ---
-title: Automatische failover-groepen
+title: Groep voor automatische failover
 titleSuffix: Azure SQL Database & SQL Managed Instance
 description: Met groepen voor automatische failover kunt u replicatie en automatische/gecoördineerde failover van een groep data bases op een server of alle data bases in een beheerd exemplaar beheren.
 services: sql-database
@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
-ms.date: 08/28/2020
-ms.openlocfilehash: c64112e30bdaf0da2218177bd2737c3ebe688b0c
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 11/16/2020
+ms.openlocfilehash: 35856a0d414e288fcd184164733e9430a6bee296
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675299"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94653739"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Gebruik groepen voor automatische failover om transparante en gecoördineerde failover van meerdere data bases mogelijk te maken
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -97,14 +97,17 @@ Voor een echte bedrijfs continuïteit is het toevoegen van database redundantie 
 
 - **Beleid voor automatische failover**
 
-  Een failover-groep is standaard geconfigureerd met een automatisch failoverbeleid. De failover van Azure wordt geactiveerd nadat de fout is gedetecteerd en de respijt periode is verlopen. Het systeem moet controleren of de onderbreking niet kan worden verholpen door de ingebouwde [infra structuur met hoge Beschik baarheid](high-availability-sla.md) vanwege de schaal van de impact. Als u de werk stroom van de failover wilt beheren vanuit de toepassing, kunt u automatische failover uitschakelen.
+  Een failover-groep is standaard geconfigureerd met een automatisch failoverbeleid. De failover van Azure wordt geactiveerd nadat de fout is gedetecteerd en de respijt periode is verlopen. Het systeem moet controleren of de onderbreking niet kan worden verholpen door de ingebouwde [infra structuur met hoge Beschik baarheid](high-availability-sla.md) vanwege de schaal van de impact. Als u de werk stroom van de failover vanuit de toepassing of hand matig wilt beheren, kunt u automatische failover uitschakelen.
   
   > [!NOTE]
   > Omdat verificatie van de omvang van de storing en hoe snel deze kan worden verholpen, acties van het operationele team worden uitgevoerd, kan de respijt periode niet meer dan één uur worden ingesteld. Deze beperking is van toepassing op alle data bases in de failovergroep, ongeacht hun gegevens synchronisatie status.
 
 - **Alleen-lezen failoverbeleid**
 
-  De failover van de alleen-lezen listener is standaard uitgeschakeld. Het zorgt ervoor dat de prestaties van de primaire server niet worden beïnvloed wanneer de secundaire offline is. Het betekent echter ook dat de alleen-lezen sessies geen verbinding kunnen maken tot het secundaire bestand is hersteld. Als u uitval tijd niet kunt gebruiken voor de alleen-lezen sessies en u de primaire alleen-lezen-en lees-schrijf bewerkingen op de onkosten van de potentiële prestaties van de primaire snelheid wilt voor komen, kunt u failover voor de alleen-lezen listener inschakelen door de eigenschap te configureren `AllowReadOnlyFailoverToPrimary` . In dat geval wordt het alleen-lezen verkeer automatisch omgeleid naar de primaire als de secundaire niet beschikbaar is.
+  De failover van de alleen-lezen listener is standaard uitgeschakeld. Het zorgt ervoor dat de prestaties van de primaire server niet worden beïnvloed wanneer de secundaire offline is. Het betekent echter ook dat de alleen-lezen sessies geen verbinding kunnen maken tot het secundaire bestand is hersteld. Als u uitval tijd niet kunt gebruiken voor de alleen-lezen sessies en de primaire alleen-lezen-en lezen-schrijven-verkeer met de potentiële prestaties van de primaire prestatie vermindering wilt, kunt u failover voor de alleen-lezen listener inschakelen door de eigenschap te configureren `AllowReadOnlyFailoverToPrimary` . In dat geval wordt het alleen-lezen verkeer automatisch omgeleid naar de primaire als de secundaire niet beschikbaar is.
+
+  > [!NOTE]
+  > De `AllowReadOnlyFailoverToPrimary` eigenschap is alleen van invloed als automatische failoverbeleid is ingeschakeld en er een automatische failover is geactiveerd door Azure. Als de eigenschap is ingesteld op True, is de nieuwe primaire waarde alleen-lezen-schrijven en alleen-lezen-sessies.
 
 - **Geplande failover**
 
@@ -120,7 +123,7 @@ Voor een echte bedrijfs continuïteit is het toevoegen van database redundantie 
 
 - **Hand matige failover**
 
-  U kunt failover op elk gewenst moment hand matig initiëren, ongeacht de automatische failover-configuratie. Als er geen automatische failoverbeleid is geconfigureerd, moet er hand matige failover worden uitgevoerd om data bases in de failovergroep naar de secundaire te herstellen. U kunt geforceerde of een gebruiks vriendelijke failover initiëren (met volledige gegevens synchronisatie). Deze laatste kan worden gebruikt om de primaire naar de secundaire regio te verplaatsen. Wanneer de failover is voltooid, worden de DNS-records automatisch bijgewerkt om ervoor te zorgen dat de verbinding met de nieuwe primaire
+  U kunt failover op elk gewenst moment hand matig initiëren, ongeacht de automatische failover-configuratie. Als er geen automatische failoverbeleid is geconfigureerd, moet er hand matige failover worden uitgevoerd om data bases in de failovergroep naar de secundaire te herstellen. U kunt geforceerde of een gebruiks vriendelijke failover initiëren (met volledige gegevens synchronisatie). Deze laatste kan worden gebruikt om de primaire naar de secundaire regio te verplaatsen. Wanneer de failover is voltooid, worden de DNS-records automatisch bijgewerkt om ervoor te zorgen dat er verbinding wordt gemaakt met de nieuwe primaire.
 
 - **Respijt periode met gegevens verlies**
 
@@ -128,7 +131,7 @@ Voor een echte bedrijfs continuïteit is het toevoegen van database redundantie 
 
 - **Meerdere failover-groepen**
 
-  U kunt meerdere failover-groepen voor hetzelfde paar servers configureren om de schaal van failovers te bepalen. Elke groep failover onafhankelijk. Als uw multi tenant-toepassing gebruikmaakt van elastische Pools, kunt u deze mogelijkheid gebruiken om de primaire en secundaire data bases in elke groep te combi neren. Op deze manier kunt u de impact van een storing beperken tot slechts de helft van de tenants.
+  U kunt meerdere failover-groepen voor hetzelfde paar servers configureren om het bereik van failovers te beheren. Elke groep failover onafhankelijk. Als uw multi tenant-toepassing gebruikmaakt van elastische Pools, kunt u deze mogelijkheid gebruiken om de primaire en secundaire data bases in elke groep te combi neren. Op deze manier kunt u de impact van een storing beperken tot slechts de helft van de tenants.
 
   > [!NOTE]
   > SQL Managed instance biedt geen ondersteuning voor meerdere failover-groepen.
@@ -173,7 +176,7 @@ Bij het uitvoeren van OLTP-bewerkingen gebruikt u `<fog-name>.database.windows.n
 
 ### <a name="using-read-only-listener-for-read-only-workload"></a>Alleen-lezen-listener gebruiken voor alleen-lezen werk belasting
 
-Als u een logisch geïsoleerde alleen-lezen werk belasting hebt die tolerant is voor bepaalde verouderde gegevens, kunt u de secundaire data base in de toepassing gebruiken. Gebruik voor alleen-lezen-sessies `<fog-name>.secondary.database.windows.net` als de server-URL en de verbinding wordt automatisch naar de secundaire omgeleid. U wordt ook aangeraden om in connection string Lees intentie op te geven met behulp van `ApplicationIntent=ReadOnly` . Als u er zeker van wilt zijn dat de workload alleen-lezen opnieuw verbinding kan maken na een failover of wanneer de secundaire server offline gaat, moet u de `AllowReadOnlyFailoverToPrimary` eigenschap van het failoverbeleid configureren.
+Als u een logisch geïsoleerde alleen-lezen werk belasting hebt die tolerant is voor bepaalde verouderde gegevens, kunt u de secundaire data base in de toepassing gebruiken. Gebruik voor alleen-lezen-sessies `<fog-name>.secondary.database.windows.net` als de server-URL en de verbinding wordt automatisch naar de secundaire omgeleid. U wordt ook aangeraden om in connection string Lees intentie op te geven met behulp van `ApplicationIntent=ReadOnly` .
 
 ### <a name="preparing-for-performance-degradation"></a>Prestatie vermindering voorbereiden
 
@@ -264,20 +267,20 @@ Bij het uitvoeren van OLTP-bewerkingen gebruikt u `<fog-name>.zone_id.database.w
 Als u een logisch geïsoleerde alleen-lezen werk belasting hebt die tolerant is voor bepaalde verouderde gegevens, kunt u de secundaire data base in de toepassing gebruiken. Als u rechtstreeks verbinding wilt maken met het geo-gerepliceerde secundair, gebruikt u `<fog-name>.secondary.<zone_id>.database.windows.net` als de server-URL en wordt de verbinding direct tot stand gebracht met het geo-gerepliceerde secundaire.
 
 > [!NOTE]
-> In bepaalde service lagen ondersteunt SQL Database het gebruik van [alleen-lezen replica's](read-scale-out.md) om werk belastingen voor alleen-lezen query's te verdelen met behulp van de capaciteit van één alleen-lezen replica en met behulp van de `ApplicationIntent=ReadOnly` para meter in de Connection String. Wanneer u een secundaire geo-replicatie hebt geconfigureerd, kunt u deze mogelijkheid gebruiken om verbinding te maken met een alleen-lezen-replica op de primaire locatie of op de geo-gerepliceerde locatie.
+> In de service lagen Premium, Bedrijfskritiek en grootschalige ondersteunt SQL Database het gebruik van alleen- [lezen replica's](read-scale-out.md) voor het uitvoeren van alleen-lezen query's met behulp van de capaciteit van een of meer alleen-lezen replica's, met behulp van de `ApplicationIntent=ReadOnly` para meter in de Connection String. Wanneer u een secundaire geo-replicatie hebt geconfigureerd, kunt u deze mogelijkheid gebruiken om verbinding te maken met een alleen-lezen-replica op de primaire locatie of op de geo-gerepliceerde locatie.
 >
-> - Gebruik om verbinding te maken met een alleen-lezen replica op de primaire locatie `<fog-name>.<zone_id>.database.windows.net` .
-> - Gebruik om verbinding te maken met een alleen-lezen replica op de secundaire locatie `<fog-name>.secondary.<zone_id>.database.windows.net` .
+> - Gebruik en om verbinding te maken met een alleen-lezen replica op de primaire locatie `ApplicationIntent=ReadOnly` `<fog-name>.<zone_id>.database.windows.net` .
+> - Gebruik en om verbinding te maken met een alleen-lezen replica op de secundaire locatie `ApplicationIntent=ReadOnly` `<fog-name>.secondary.<zone_id>.database.windows.net` .
 
 ### <a name="preparing-for-performance-degradation"></a>Prestatie vermindering voorbereiden
 
-Een typische Azure-toepassing maakt gebruik van meerdere Azure-Services en bestaat uit meerdere onderdelen. De automatische failover van de failovergroep wordt geactiveerd op basis van de status van de Azure SQL-onderdelen. Andere Azure-Services in de primaire regio worden mogelijk niet beïnvloed door de storing en hun onderdelen zijn mogelijk nog steeds beschikbaar in die regio. Zodra de primaire data bases overschakelen naar de DR-regio, kan de latentie tussen de afhankelijke onderdelen toenemen. Om te voor komen dat de gevolgen van een hogere latentie van de prestaties van de toepassing worden beïnvloed, moet u ervoor zorgen dat alle onderdelen van de toepassing in de DR-regio worden redundantie en deze [richt lijnen voor netwerk beveiliging](#failover-groups-and-network-security)volgen.
+Een typische Azure-toepassing maakt gebruik van meerdere Azure-Services en bestaat uit meerdere onderdelen. De automatische failover van de failovergroep wordt geactiveerd op basis van de status van de Azure SQL-onderdelen. Andere Azure-Services in de primaire regio worden mogelijk niet beïnvloed door de storing en hun onderdelen zijn mogelijk nog steeds beschikbaar in die regio. Zodra de primaire data bases overschakelen naar de secundaire regio, kan de latentie tussen de afhankelijke onderdelen toenemen. Om de impact van hogere latentie van de prestaties van de toepassing te vermijden, moet u de redundantie van alle onderdelen van de toepassing in de secundaire regio en failover van toepassings onderdelen uitvoeren met de data base. Op de configuratie tijd volgt u de [richt lijnen voor netwerk beveiliging](#failover-groups-and-network-security) om ervoor te zorgen dat er verbinding wordt met de data base in de secundaire regio.
 
 ### <a name="preparing-for-data-loss"></a>Gegevens verlies voorbereiden
 
-Als er een storing wordt gedetecteerd, wordt een failover voor lezen/schrijven geactiveerd als er geen gegevens verloren zijn, tot het beste van onze kennis. Anders is er een wacht tijd voor de periode die u hebt opgegeven door. Anders wordt er gewacht op de periode die u hebt opgegeven `GracePeriodWithDataLossHours` . Als u hebt opgegeven `GracePeriodWithDataLossHours` , moet u worden voor bereid voor gegevens verlies. Over het algemeen is het voor de beschik baarheid van Azure van belang. Als u geen gegevens verlies kunt veroorloven, moet u toegevoegd instellen op een voldoende groot getal, zoals 24 uur.
+Als er een storing wordt gedetecteerd, wordt een failover voor lezen/schrijven geactiveerd als er geen gegevens verloren zijn, tot het beste van onze kennis. Anders wordt de failover uitgesteld voor de periode die u opgeeft met `GracePeriodWithDataLossHours` . Als u hebt opgegeven `GracePeriodWithDataLossHours` , moet u worden voor bereid voor gegevens verlies. Over het algemeen is het voor de beschik baarheid van Azure van belang. Als u geen gegevens verlies kunt veroorloven, moet u ervoor zorgen dat toegevoegd wordt ingesteld op een voldoende groot getal, zoals 24 uur, of om automatische failover uit te scha kelen.
 
-De DNS-update van de listener voor lezen-schrijven gebeurt onmiddellijk nadat de failover is gestart. Deze bewerking resulteert niet in gegevens verlies. Het proces van het wisselen van database rollen kan echter tot vijf minuten duren onder normale omstandigheden. Totdat de data bases in het nieuwe primaire exemplaar zijn voltooid, hebben ze nog steeds het kenmerk alleen-lezen. Als failover wordt gestart met behulp van Power shell, is de gehele bewerking synchroon. Als het wordt gestart met behulp van de Azure Portal, wordt in de gebruikers interface de voltooiings status weer geven. Als deze is gestart met behulp van de REST API, gebruikt u het polling mechanisme van de standaard Azure Resource Manager om te controleren of het is voltooid.
+De DNS-update van de listener voor lezen-schrijven gebeurt onmiddellijk nadat de failover is gestart. Deze bewerking resulteert niet in gegevens verlies. Het proces van het wisselen van database rollen kan echter tot vijf minuten duren onder normale omstandigheden. Totdat de data bases in het nieuwe primaire exemplaar zijn voltooid, hebben ze nog steeds het kenmerk alleen-lezen. Als een failover wordt gestart met behulp van Power shell, is de bewerking om de rol van primaire replica te wijzigen synchroon. Als het wordt gestart met behulp van de Azure Portal, wordt in de gebruikers interface de voltooiings status weer geven. Als deze is gestart met behulp van de REST API, gebruikt u het polling mechanisme van de standaard Azure Resource Manager om te controleren of het is voltooid.
 
 > [!IMPORTANT]
 > Gebruik hand matige failover van groep om Primaries terug te zetten naar de oorspronkelijke locatie. Wanneer de storing die de failover veroorzaakte, wordt verholpen, kunt u de primaire data bases naar de oorspronkelijke locatie verplaatsen. Als u dit wilt doen, moet u de hand matige failover van de groep initiëren.
@@ -421,7 +424,7 @@ Zoals eerder besproken, kunnen automatische failover-groepen en actieve geo-repl
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | Hiermee wordt een failover van een failovergroep naar de secundaire server geactiveerd |
 | [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Voegt een of meer data bases toe aan een failovergroep|
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 | Opdracht | Beschrijving |
 | --- | --- |
@@ -459,7 +462,7 @@ Zoals eerder besproken, kunnen automatische failover-groepen en actieve geo-repl
 | [Remove-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/remove-azsqldatabaseinstancefailovergroup) | Hiermee verwijdert u een failovergroep|
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 | Opdracht | Beschrijving |
 | --- | --- |

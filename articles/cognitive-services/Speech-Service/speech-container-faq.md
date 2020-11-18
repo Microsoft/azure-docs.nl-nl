@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/24/2020
+ms.date: 11/12/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b13a6944290f58f5ede239dee60610d67fff8b1c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0e4a6d9180d2a9949cebc40cf30edffac73ef9d0
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88918465"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94653535"
 ---
 # <a name="speech-service-containers-frequently-asked-questions-faq"></a>Veelgestelde vragen over Speech-Service containers
 
@@ -43,7 +43,7 @@ Bovendien verpakken we uitvoer bare bestanden voor machines met de [AVX2-instruc
 Cannot find Scan4_llvm__mcpu_skylake_avx512 in cache, using JIT...
 ```
 
-Ten slotte kunt u het aantal decoders instellen dat u binnen *één* container wilt gebruiken met behulp van een `DECODER MAX_COUNT` variabele. In principe moeten we beginnen met uw SKU (CPU/geheugen), en we kunnen Voorst Ellen hoe u deze optimaal kunt benutten. Een geweldig start punt verwijst naar de aanbevolen resource specificaties van de host.
+U kunt het aantal decoders instellen dat u wilt binnen *één* container met behulp van een `DECODER MAX_COUNT` variabele. In principe moeten we beginnen met uw SKU (CPU/geheugen), en we kunnen Voorst Ellen hoe u deze optimaal kunt benutten. Een geweldig start punt verwijst naar de aanbevolen resource specificaties van de host.
 
 <br>
 </details>
@@ -419,7 +419,7 @@ Hoeveel gelijktijdige aanvragen wordt een 4-core, 4 GB RAM-ingang? Als we een vo
 |-----------------------|---------------------|---------------------|
 | Aangepaste tekst-naar-spraak | 1 Core, 2 GB geheugen | 2 Core, 3 GB geheugen |
 
-***
+**_
 
 - Elke kern moet ten minste 2,6 GHz of sneller zijn.
 - Voor bestanden is de beperking in de Speech SDK, op 2x (eerste 5 seconden aan audio worden niet beperkt).
@@ -438,7 +438,7 @@ Voor een voor beeld: 1000 uur/24 uur, hebben we geprobeerd 3-4 Vm's in te stelle
 <b>Ondersteunt de spraak container interpunctie?</b>
 </summary>
 
-**Antwoord:** We hebben kapitalisatie (ITN) beschikbaar in de on-premises container. Interpunctie is taal afhankelijk en wordt niet ondersteund voor sommige talen, waaronder Chinees en Japans.
+_ *Antwoord:** er is een hoofdletter gebruik (ITN) beschikbaar in de on-premises container. Interpunctie is taal afhankelijk en wordt niet ondersteund voor sommige talen, waaronder Chinees en Japans.
 
 We *hebben* impliciete en eenvoudige interpunctie ondersteuning voor de bestaande containers, maar dit is `off` standaard. Dat betekent dat u het `.` teken in uw voor beeld kunt ophalen, maar niet het `。` teken. Als u deze impliciete logica wilt inschakelen, volgt u hier een voor beeld van hoe u dit in python kunt doen met behulp van onze spraak-SDK (dit is vergelijkbaar in andere talen):
 
@@ -480,6 +480,16 @@ Content-Length: 0
 
 **Antwoord:** REST API in een van de spraak-naar-tekst-container wordt niet ondersteund. we ondersteunen alleen websockets via de Speech SDK. Raadpleeg altijd de officiële documentatie voor meer informatie over de voor [Spelling-eind punten van query's](speech-container-howto.md#query-the-containers-prediction-endpoint).
 
+<br>
+</details>
+
+
+<details>
+<summary>
+<b> Waarom wordt de container uitgevoerd als een niet-hoofd gebruiker? Welke problemen kunnen optreden vanwege dit?</b>
+</summary>
+
+**Antwoord:** Houd er rekening mee dat de standaard gebruiker binnen de container een niet-hoofd gebruiker is. Dit biedt beveiliging tegen procedures voor het afleiden van de container en het verkrijgen van geëscaleerd machtigingen op het host-knoop punt. Standaard voeren sommige platforms zoals het open Shift container platform dit al uit door containers uit te voeren met een wille keurig toegewezen gebruikers-ID. Voor deze platforms moet de niet-hoofd gebruiker gemachtigd zijn om te schrijven naar een extern toegewezen volume waarvoor schrijf bewerkingen vereist zijn. Een voor beeld van een map voor logboek registratie of een aangepaste downloadmap voor het model.
 <br>
 </details>
 

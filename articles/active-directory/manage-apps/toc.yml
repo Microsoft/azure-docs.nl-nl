@@ -63,14 +63,24 @@
           href: plan-sso-deployment.md
         - name: Opties voor eenmalige aanmelding
           href: sso-options.md
+        - name: Eenmalige aanmelding met on-premises apps
+          href: application-proxy-config-sso-how-to.md
         - name: Op OIDC gebaseerde SSO
           href: configure-oidc-single-sign-on.md
         - name: Op SAML gebaseerde SSO
           href: configure-saml-single-sign-on.md
+        - name: Op SAML gebaseerde SSO (on-premises apps)
+          href: application-proxy-configure-single-sign-on-on-premises-apps.md
         - name: Eenmalige aanmelding op basis van een wachtwoord
           href: configure-password-single-sign-on-non-gallery-applications.md
+        - name: Op wachtwoord gebaseerde SSO (on-premises apps)
+          href: application-proxy-configure-single-sign-on-password-vaulting.md
         - name: SSO op basis van links
           href: configure-linked-sign-on.md
+        - name: Op header gebaseerde SSO (on-premises apps)
+          href: application-proxy-configure-single-sign-on-with-headers.md
+        - name: Op Kerberos gebaseerde SSO (on-premises apps)
+          href: application-proxy-configure-single-sign-on-with-kcd.md
         - name: Eenmalige aanmelding met één klik
           href: one-click-sso-tutorial.md
     - name: Toepassingsbeveiliging
@@ -182,24 +192,16 @@
           href: application-proxy-remove-personal-data.md
         - name: Aangepast domein configureren
           href: application-proxy-configure-custom-domain.md
-        - name: Eenmalige aanmelding met toepassingsproxy
-          items:
-            - name: Kerberos-beperkte overdracht (KCD)
-              href: application-proxy-configure-single-sign-on-with-kcd.md
-            - name: Wachtwoordkluis
-              href: application-proxy-configure-single-sign-on-password-vaulting.md
-            - name: Headers
-              href: application-proxy-configure-single-sign-on-with-ping-access.md
-            - name: Eenmalige aanmelding op basis van SAML
-              href: application-proxy-configure-single-sign-on-on-premises-apps.md
         - name: Verouderde apps beveiligen met app-leveringscontrollers of -netwerken
           href: secure-hybrid-access.md
         - name: Publicatie-overzicht
           items:
             - name: Integreren met toepassingsproxy in een NDES-server
               href: active-directory-app-proxy-protect-ndes.md
+            - name: Integreren met toepassingsproxy met PingAccess
+              href: application-proxy-ping-access-publishing-guide.md
             - name: Integreren met Azure AD Domain Services
-              href: /azure/active-directory-domain-services/deploy-azure-app-proxy?context=azure/active-directory/manage-apps/context/manage-apps-context
+              href: ../../active-directory-domain-services/deploy-azure-app-proxy.md?context=azure%252factive-directory%252fmanage-apps%252fcontext%252fmanage-apps-context
             - name: Integreren met Power BI
               href: application-proxy-integrate-with-power-bi.md
             - name: Integreren met Cloud App Security
@@ -256,14 +258,12 @@
               href: application-proxy-connectivity-no-working-connector.md
             - name: Configureren in beheerportal
               href: application-proxy-config-how-to.md
-            - name: Eenmalige aanmelding voor mijn app configureren
-              href: application-proxy-config-sso-how-to.md
             - name: Probleem bij het maken van een app in de beheerportal
               href: application-proxy-config-problem.md
             - name: Kerberos-beperkte overdracht configureren
               href: application-proxy-back-end-kerberos-constrained-delegation-how-to.md
             - name: Configureren met PingAccess
-              href: application-proxy-back-end-ping-access-how-to.md
+              href: /azure/active-directory/manage-apps/application-proxy-ping-access-publishing-guide
             - name: De fout 'Kan deze zakelijke toepassing niet openen'
               href: application-proxy-sign-in-bad-gateway-timeout-error.md
             - name: Probleem bij het installeren van de connector voor de toepassingsproxyagent
@@ -281,11 +281,11 @@
 - name: Resources
   items:
     - name: Ondersteunings- en Help-opties voor ontwikkelaars
-      href: /azure/active-directory/develop/developer-support-help-options?context=azure/active-directory/manage-apps/context/manage-apps-context
+      href: ../develop/developer-support-help-options.md?context=azure%252factive-directory%252fmanage-apps%252fcontext%252fmanage-apps-context
     - name: Azure-feedbackforum
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
     - name: Microsoft Q&A-vragenpagina
-      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
+      href: /answers/topics/azure-active-directory.html
     - name: Prijzen
       href: 'https://azure.microsoft.com/pricing/details/active-directory'
     - name: Service-updates

@@ -3,6 +3,8 @@
   items:
     - name: Over App Service-omgevingen
       href: intro.md
+    - name: App Service Environment v3 (preview)
+      href: overview.md
 - name: Snelstartgidsen
   expanded: true
   items:
@@ -10,11 +12,13 @@
       href: create-external-ase.md
     - name: Een interne App Service-omgeving maken
       href: create-ilb-ase.md
+    - name: ASEv3 maken (preview)
+      href: creation.md
 - name: Zelfstudies
   items:
     - name: Integratie met een WAF
       href: app-service-app-service-environment-web-application-firewall.md
-    - name: TLS configureren
+    - name: Aangepaste instellingen van ASE
       href: app-service-app-service-environment-custom-settings.md
 - name: Voorbeelden
   items:
@@ -28,12 +32,12 @@
       href: network-info.md
     - name: Geografisch verdeelde schaal
       href: app-service-app-service-environment-geo-distributed-scale.md
-    - name: ASEv1
-      href: app-service-app-service-environment-intro.md
     - name: Diagnostiek
       href: ../overview-diagnostics.md
     - name: Certificaten
       href: certificates.md
+    - name: ASEv3-netwerken (preview)
+      href: networking.md
 - name: Handleidingen
   items:
     - name: Een ASE gebruiken
@@ -48,12 +52,16 @@
       href: firewall-integration.md
     - name: Zoneredundantie
       href: zone-redundancy.md
+    - name: ASEv3 (preview) gebruiken
+      href: using.md
 - name: Naslaginformatie
   items:
     - name: Beheeradressen
       href: management-addresses.md
     - name: Documentatie voor ASEv1
       items:
+        - name: ASEv1
+          href: app-service-app-service-environment-intro.md
         - name: ASEv1 maken
           href: app-service-web-how-to-create-an-app-service-environment.md
         - name: ASEv1 configureren

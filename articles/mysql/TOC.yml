@@ -287,6 +287,10 @@
           items:
             - name: MySQL-server stoppen/starten
               href: how-to-stop-start-server.md
+        - name: Belangrijke versie-upgrades
+          items:
+            - name: Belangrijke versie-upgrades
+              href: how-to-major-version-upgrade.md
         - name: Opslag automatisch vergroten
           items:
             - name: Azure Portal

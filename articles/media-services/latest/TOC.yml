@@ -68,8 +68,8 @@
       items:
         - name: Een extern bestand REST coderen en streamen
           href: stream-files-tutorial-with-rest.md
-        - name: Door de klant beheerde sleutels met Media Services
-          href: tutorial-byok.md
+        - name: Door de klant beheerde sleutels met REST API
+          href: tutorial-byok-postman.md
     - name: CLI
       items:
         - name: Een extern bestand CLI coderen en streamen
@@ -80,6 +80,8 @@
           href: stream-files-nodejs-quickstart.md
     - name: Azure Portal
       items:
+        - name: Zelfstudie voor door de klant beheerde sleutels of BYOK
+          href: tutorial-byok-portal.md
         - name: AMS-gebeurtenissen opslaan in Azure Log Analytics
           href: tutorial-events-log-analytics.md
 - name: Voorbeelden
@@ -102,6 +104,11 @@
         - name: Storage-account
           href: storage-account-concept.md
           displayName: Storage side encryption
+        - name: Beheerde identiteiten en mediaservices
+          displayName: content protection
+          href: concept-managed-identities.md
+        - name: Door klant beheerde sleutels
+          href: concept-use-customer-managed-keys-byok.md
     - name: Assets
       items:
         - name: Assets
@@ -178,8 +185,6 @@
         - name: Dynamische versleuteling en sleutellevering
           displayName: 'content protection, streaming protocols, encryption types, PlayReady, Widevine, FairPlay, custom'
           href: content-protection-overview.md
-        - name: Door klant beheerde sleutels
-          href: concept-use-customer-managed-keys-byok.md
         - name: Een multi-DRM-systeem ontwerpen
           displayName: 'drm, access control'
           href: design-multi-drm-system-with-access-control.md
@@ -392,7 +397,7 @@
           href: /python/api/overview/azure/mediaservices/management
         - name: Node.js
           href: /javascript/api/overview/azure/mediaservices/management
-        - name: Aan de slag
+        - name: Go
           href: 'https://aka.ms/ams-v3-go-ref'
     - name: Resource Manager-sjabloon
       href: /azure/templates/microsoft.media/allversions

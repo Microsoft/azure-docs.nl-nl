@@ -28,7 +28,7 @@
       href: network-watcher-nsg-flow-logging-portal.md
 - name: Concepten
   items:
-    - name: Verbindingsmonitor (preview)
+    - name: Verbindingsmonitor
       href: connection-monitor-overview.md
     - name: Een probleem met een VM-filter voor netwerkverkeer vaststellen
       href: network-watcher-ip-flow-verify-overview.md
@@ -58,7 +58,7 @@
   items:
     - name: Network Watcher configureren
       href: network-watcher-create.md
-    - name: Verbindingsmonitor maken (preview)
+    - name: Verbindingsmonitor maken
       items:
         - name: Azure Portal gebruiken
           href: connection-monitor-create-using-portal.md
@@ -66,11 +66,11 @@
           href: connection-monitor-create-using-template.md
         - name: PowerShell gebruiken
           href: connection-monitor-create-using-powershell.md
-    - name: Migreren naar verbindingsmonitor (preview)
+    - name: Migreren naar Verbindingsmonitor
       items:
         - name: Van Netwerkprestatiemeter
           href: migrate-to-connection-monitor-preview-from-network-performance-monitor.md
-        - name: Van Verbindingsmonitor
+        - name: Van Verbindingsmonitor (klassiek)
           href: migrate-to-connection-monitor-preview-from-connection-monitor.md
     - name: VM-netwerkproblemen vaststellen
       items:

@@ -98,6 +98,12 @@
           href: signalr-howto-diagnostic-logs.md
         - name: Controleren op naleving met Azure Policy
           href: signalr-howto-azure-policy.md
+    - name: Problemen oplossen
+      items:
+        - name: Handleidingen voor probleemoplossing
+          href: signalr-howto-troubleshoot-guide.md
+        - name: Probleemoplossingsmethoden
+          href: signalr-howto-troubleshoot-method.md
 - name: Verwijzingen
   items:
     - name: Azure CLI

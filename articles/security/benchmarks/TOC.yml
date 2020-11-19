@@ -139,6 +139,8 @@
       href: ../../container-instances/security-baseline.md
     - name: Container Registry-beveiligingsbasislijn
       href: ../../container-registry/security-baseline.md
+    - name: Content Delivery Network-beveiligingsbasislijn
+      href: ../../cdn/security-baseline.md
     - name: Cosmos DB-beveiligingsbasislijn
       href: ../../cosmos-db/security-baseline.md
     - name: Cost Management-beveiligingsbasislijn

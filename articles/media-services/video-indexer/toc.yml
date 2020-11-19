@@ -65,6 +65,8 @@
       href: use-editor-create-project.md
     - name: Widgets insluiten in uw toepassing
       href: video-indexer-embed-widgets.md
+    - name: Overwegingen voor wanneer u Video Indexer op schaal gebruikt
+      href: considerations-when-use-at-scale.md
     - name: Herstel na noodgeval
       href: video-indexer-disaster-recovery.md
     - name: Inhoudsmodellen aanpassen

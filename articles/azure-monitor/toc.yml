@@ -944,14 +944,28 @@
           href: insights/vminsights-maps.md
         - name: Prestaties bewaken
           href: insights/vminsights-performance.md
-        - name: Wijzigingen bewaken
-          href: insights/vminsights-change-analysis.md
+        - name: Gaststatus bewaken (preview)
+          items:
+            - name: Overzicht
+              href: insights/vminsights-health-overview.md
+            - name: Inschakelen
+              href: insights/vminsights-health-enable.md
+            - name: Waarschuwingen
+              href: insights/vminsights-health-alerts.md
+            - name: Monitors in portal configureren
+              href: insights/vminsights-health-configure.md
+            - name: Monitors op schaal configureren
+              href: insights/vminsights-health-configure-dcr.md
+            - name: Problemen oplossen
+              href: insights/vminsights-health-troubleshoot.md
         - name: Gegevens analyseren met logboekquery's
           href: insights/vminsights-log-search.md
+        - name: Prestaties bewaken
+          href: insights/vminsights-alerts.md
+        - name: Wijzigingen bewaken
+          href: insights/vminsights-change-analysis.md
         - name: Gegevens visualiseren met werkmappen
           href: insights/vminsights-workbooks.md
-        - name: Waarschuwingsregels maken
-          href: insights/vminsights-alerts.md
         - name: Bewaking uitschakelen
           href: insights/vminsights-optout.md
     - name: Azure Monitor voor containers

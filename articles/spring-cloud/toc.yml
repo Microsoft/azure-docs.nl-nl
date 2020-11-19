@@ -81,6 +81,8 @@
           href: spring-cloud-howto-start-stop-delete.md
         - name: Permanente opslag gebruiken
           href: spring-cloud-howto-persistent-storage.md
+        - name: Uitgaande openbare IP-adressen identificeren
+          href: spring-cloud-howto-outbound-public-ip.md
     - name: Controleren
       items:
         - name: Gedistribueerde tracering en App Insights

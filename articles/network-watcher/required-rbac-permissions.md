@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/10/2018
 ms.author: damendo
-ms.openlocfilehash: 5e048729aa1d37a63678451525f8f37612c8c464
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 9a5bd6dff05fe39d62e5bf5f897bc61936686bb7
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426755"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94887226"
 ---
 # <a name="azure-role-based-access-control-permissions-required-to-use-network-watcher-capabilities"></a>Op rollen gebaseerde toegangs beheer machtigingen voor Azure die zijn vereist voor het gebruik van Network Watcher mogelijkheden
 
@@ -90,6 +90,7 @@ Met op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u alleen de 
 | Bewerking                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/Topology/actie                   | Topologie ophalen                                                   |
+| Micro soft. Network/networkWatchers/Topology/lezen                     | Hetzelfde als hierboven                                                  |
 
 ## <a name="reachability-report"></a>Bereik baarheids rapport
 

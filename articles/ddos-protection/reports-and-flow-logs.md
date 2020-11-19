@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 5a6fc8e9b316f7c4740ee27fe72c5f056f071d73
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 28e977ed68a3f288f9f86a0c2be02af4cbb26ba4
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912691"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886558"
 ---
-# <a name="configure-ddos-attack-mitigation-reports-and-flow-logs"></a>Rapporten en stroom logboeken voor risico beperking van DDoS configureren 
+# <a name="configure-ddos-attack-mitigation-reports-and-flow-logs"></a>Rapporten en stroomlogboeken voor DDoS-aanvalsbeperking configureren 
 
 Azure DDoS Protection Standard biedt uitgebreide aanval en visualisatie met DDoS-aanvals analyses. Klanten die hun virtuele netwerken beschermen tegen DDoS-aanvallen, hebben een gedetailleerde zicht baarheid van het aanvals verkeer en acties die zijn ondernomen om de aanval via rapporten voor aanvallen te beperken & beperkende stroom Logboeken. Uitgebreide telemetrie wordt weer gegeven via Azure Monitor, met inbegrip van gedetailleerde metrische gegevens tijdens de duur van een DDoS-aanval. U kunt waarschuwingen configureren voor een van de Azure Monitor metrische gegevens die door DDoS Protection worden weer gegeven. Logboek registratie kan verder worden geïntegreerd met [Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-ddos-protection), Splunk (Azure Event hubs), OMS Log Analytics en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure monitor.
 
@@ -39,14 +39,14 @@ Bij het beperken van aanvallen wordt gebruikgemaakt van de netstroom protocol ge
 
 1. Selecteer **alle services** bovenaan, links van de portal.
 2. Voer *monitor* in het vak **filter** in. Wanneer de **monitor** wordt weer gegeven in de resultaten, selecteert u deze.
-3. Selecteer bij **instellingen** de optie **Diagnostische instellingen** .
+3. Selecteer bij **instellingen** de optie **Diagnostische instellingen**.
 4. Selecteer het **abonnement** en de **resource groep** die het open bare IP-adres bevatten dat u wilt registreren.
 5. Selecteer **openbaar IP-adres** voor het **bron type** en selecteer vervolgens het specifieke open bare IP-adres waarvoor u metrische gegevens wilt vastleggen.
 6. Selecteer **Diagnostische gegevens inschakelen om het DDoSMitigationReports-logboek te verzamelen** en selecteer vervolgens zoveel van de volgende opties als u nodig hebt:
 
-    - **Archiveren naar een opslag account** : gegevens worden naar een Azure Storage-account geschreven. Zie [Archief bron logboeken](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over deze optie.
-    - **Streamen naar een event hub** : Hiermee kan een logboek ontvanger logboeken ophalen met behulp van een Azure Event hub. Event hubs maken integratie mogelijk met Splunk of andere SIEM-systemen. Zie [bron logboeken streamen naar een event hub](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over deze optie.
-    - **Verzenden naar log Analytics** : schrijft logboeken naar de Azure Monitor-service. Zie [Logboeken verzamelen voor gebruik in azure monitor-logboeken voor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)meer informatie over deze optie.
+    - **Archiveren naar een opslag account**: gegevens worden naar een Azure Storage-account geschreven. Zie [Archief bron logboeken](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over deze optie.
+    - **Streamen naar een event hub**: Hiermee kan een logboek ontvanger logboeken ophalen met behulp van een Azure Event hub. Event hubs maken integratie mogelijk met Splunk of andere SIEM-systemen. Zie [bron logboeken streamen naar een event hub](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over deze optie.
+    - **Verzenden naar log Analytics**: schrijft logboeken naar de Azure Monitor-service. Zie [Logboeken verzamelen voor gebruik in azure monitor-logboeken voor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)meer informatie over deze optie.
 
 De volgende velden zijn zowel het incrementele & na het oplossen van problemen met beperkende rapporten
 - Aanvals vectoren
@@ -61,14 +61,16 @@ Met de stroom logboeken voor risico beperking kunt u het verloren verkeer, het d
 
 1. Selecteer **alle services** bovenaan, links van de portal.
 2. Voer *monitor* in het vak **filter** in. Wanneer de **monitor** wordt weer gegeven in de resultaten, selecteert u deze.
-3. Selecteer bij **instellingen** de optie **Diagnostische instellingen** .
+3. Selecteer bij **instellingen** de optie **Diagnostische instellingen**.
 4. Selecteer het **abonnement** en de **resource groep** die het open bare IP-adres bevatten dat u wilt registreren.
 5. Selecteer **openbaar IP-adres** voor het **bron type** en selecteer vervolgens het specifieke open bare IP-adres waarvoor u metrische gegevens wilt vastleggen.
 6. Selecteer **Diagnostische gegevens inschakelen om het DDoSMitigationFlowLogs-logboek te verzamelen** en selecteer vervolgens zoveel van de volgende opties als u nodig hebt:
 
-    - **Archiveren naar een opslag account** : gegevens worden naar een Azure Storage-account geschreven. Zie [Archief bron logboeken](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over deze optie.
-    - **Streamen naar een event hub** : Hiermee kan een logboek ontvanger logboeken ophalen met behulp van een Azure Event hub. Event hubs maken integratie mogelijk met Splunk of andere SIEM-systemen. Zie [bron logboeken streamen naar een event hub](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over deze optie.
-    - **Verzenden naar log Analytics** : schrijft logboeken naar de Azure Monitor-service. Zie [Logboeken verzamelen voor gebruik in azure monitor-logboeken voor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)meer informatie over deze optie.
+    - **Archiveren naar een opslag account**: gegevens worden naar een Azure Storage-account geschreven. Zie [Archief bron logboeken](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over deze optie.
+    - **Streamen naar een event hub**: Hiermee kan een logboek ontvanger logboeken ophalen met behulp van een Azure Event hub. Event hubs maken integratie mogelijk met Splunk of andere SIEM-systemen. Zie [bron logboeken streamen naar een event hub](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over deze optie.
+    - **Verzenden naar log Analytics**: schrijft logboeken naar de Azure Monitor-service. Zie [Logboeken verzamelen voor gebruik in azure monitor-logboeken voor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)meer informatie over deze optie.
+
+Met deze [sjabloon](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Enable%20Diagnostic%20Logging/Azure%20Policy) maakt u een Azure Policy definitie om diagnostische logboek registratie in te scha kelen.
 
 ### <a name="azure-sentinel-data-connector"></a>Azure Sentinel Data Connector
 
@@ -118,5 +120,5 @@ In deze zelfstudie heeft u het volgende geleerd:
 Voor informatie over het testen en simuleren van een DDoS-aanval raadpleegt u de hand leiding voor simulatie tests:
 
 > [!div class="nextstepaction"]
-> [Testen door simulaties](test-through-simulations.md)
+> [Testen via simulaties](test-through-simulations.md)
 

@@ -3,18 +3,18 @@ title: Beveiligings bewerkingen integreren en beheren & Microsoft Graph beveilig
 description: Verbeter de bedreigings beveiliging, detectie en reactie van uw app met Microsoft Graph Security-& Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-author: preetikr
+author: ecfan
 ms.author: preetikr
 ms.reviewer: v-ching, estfan, logicappspm
 ms.topic: article
 ms.date: 02/21/2020
 tags: connectors
-ms.openlocfilehash: ea861dce23e50bc5fcae50116a3e71793d402f8f
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: a83cd68df2f1d722517d6239bf6959075860d0b8
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873315"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888535"
 ---
 # <a name="improve-threat-protection-by-integrating-security-operations-with-microsoft-graph-security--azure-logic-apps"></a>Verbeter de beveiliging tegen bedreigingen door beveiligings bewerkingen te integreren met Microsoft Graph Security-& Azure Logic Apps
 
@@ -30,7 +30,7 @@ Met [Azure Logic apps](../logic-apps/logic-apps-overview.md) en de [Microsoft Gr
 
 De werk stroom van uw logische app kan acties gebruiken die reacties ontvangen van de Microsoft Graph beveiligings connector en die uitvoer beschikbaar maken voor andere acties in uw werk stroom. U kunt ook andere acties in uw werk stroom gebruiken om de uitvoer van de Microsoft Graph Security connector-acties uit te voeren. Als u bijvoorbeeld waarschuwingen met hoge urgentie wilt ontvangen via de beveiligings connector van Microsoft Graph, kunt u deze waarschuwingen in een e-mail bericht verzenden met behulp van de Outlook-Connector. 
 
-Zie [Microsoft Graph Security API overview](/graph/security-concept-overview)(Engelstalig) voor meer informatie over Microsoft Graph beveiliging. Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?](../logic-apps/logic-apps-overview.md). Als u op zoek bent naar energie automatisering of PowerApps, raadpleegt u [Wat is energie automatisering?](https://flow.microsoft.com/) of [Wat is PowerApps?](https://powerapps.microsoft.com/)
+Zie [Microsoft Graph Security API overview](/graph/security-concept-overview)(Engelstalig) voor meer informatie over Microsoft Graph beveiliging. Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?](../logic-apps/logic-apps-overview.md). Als u op zoek bent naar energie automatisering of PowerApps, raadpleegt u [Wat is energie automatisering?](https://flow.microsoft.com/) of [Wat is Power apps?](https://powerapps.microsoft.com/)
 
 ## <a name="prerequisites"></a>Vereisten
 

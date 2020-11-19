@@ -4,12 +4,12 @@ description: Dit artikel bevat een overzicht van het beheren van een Azure Servi
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: sfrev
-ms.openlocfilehash: 3968fde0222dcee8047e7490dba78879ab6110e2
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 886b7d6b40bebf6234064b0627017db1d8cfe31f
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681683"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888824"
 ---
 # <a name="service-fabric-application-resource-model"></a>Resource model van Service Fabric toepassing
 
@@ -91,6 +91,7 @@ De voorbeeld toepassing bevat [Azure Resource Manager sjablonen](https://github.
 >
 >
 
+
 | Parameter              | Beschrijving                                 | Voorbeeld                                                      | Opmerkingen                                                     |
 | ---------------------- | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | clusterName            | De naam van het cluster waarnaar u wilt implementeren | SF-cluster123                                                |                                                              |
@@ -137,6 +138,11 @@ New-AzResourceGroupDeployment -ResourceGroupName "sf-cluster-rg" -TemplateParame
 ```
 
 ## <a name="upgrade-the-service-fabric-application-by-using-resource-manager"></a>Een upgrade uitvoeren van de Service Fabric-toepassing met behulp van Resource Manager
+
+
+> [!IMPORTANT]
+> Alle services die worden geïmplementeerd via ARM JSON-definitie, moeten worden verwijderd uit de sectie DefaultServices van het bijbehorende ApplicationManifest.xml-bestand.
+
 
 U kunt een van de volgende redenen voor een upgrade uitvoeren van een toepassing die al is geïmplementeerd naar een Service Fabric cluster:
 

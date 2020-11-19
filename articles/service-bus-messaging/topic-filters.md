@@ -3,12 +3,12 @@ title: Filters voor Azure Service Bus-onderwerp | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe abonnees kunnen bepalen welke berichten ze willen ontvangen van een onderwerp door filters op te geven.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 5df343ff63c01a7cf10315b758e3d6fba8ac5674
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04ae585c42f8acfbf338bf23befb32a5521fcf57
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88066743"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889028"
 ---
 # <a name="topic-filters-and-actions"></a>Onderwerpfilters en acties
 
@@ -18,14 +18,14 @@ Elk nieuw gemaakt onderwerp-abonnement heeft een eerste standaard abonnements re
 
 Service Bus ondersteunt drie filter voorwaarden:
 
--   *Booleaanse filters* : de **TrueFilter** en **FalseFilter** leiden ertoe dat alle berichten (**waar**) of geen van de binnenkomende berichten (**False**) worden geselecteerd voor het abonnement.
+-   *Booleaanse filters* : de **TrueFilter** en **FalseFilter** leiden ertoe dat alle berichten (**waar**) of geen van de binnenkomende berichten (**False**) worden geselecteerd voor het abonnement. Deze twee filters worden afgeleid van het SQL-filter. 
 
 -   *SQL-filters* -een **SQLFILTER** bevat een SQL-achtige voorwaardelijke expressie die in de Broker wordt geëvalueerd op basis van de door de gebruiker gedefinieerde eigenschappen en systeem eigenschappen van de binnenkomende berichten. Alle systeem eigenschappen moeten worden voorafgegaan door `sys.` in de voorwaardelijke expressie. De [SQL-taal deel verzameling voor filter voorwaarden](service-bus-messaging-sql-filter.md) test op het bestaan van eigenschappen ( `EXISTS` ), null-waarden ( `IS NULL` ), logische not/en/of relationele Opera Tors, eenvoudig numeriek reken kundig en eenvoudig tekst patroon dat overeenkomt met `LIKE` .
 
 -   *Correlatie filters* : een **CorrelationFilter** bevat een set voor waarden die overeenkomen met een of meer van de gebruikers-en systeem eigenschappen van een inkomend bericht. Een veelgebruikte toepassing is om te vergelijken met de eigenschap **CorrelationId** , maar deze kan er ook voor kiezen om te zoeken op basis van de volgende eigenschappen:
 
     - **Invoer**
-     - **Label**
+     - **Adres**
      - **MessageId**
      - **ReplyTo**
      - **ReplyToSessionId**
@@ -52,6 +52,75 @@ Met filters en acties worden twee verdere groepen patronen ingeschakeld: partiti
 Partitioneren gebruikt filters voor het distribueren van berichten over verschillende bestaande onderwerps abonnementen op een voorspel bare en wederzijds exclusieve manier. Het patroon voor partitionering wordt gebruikt wanneer een systeem wordt uitgeschaald voor het afhandelen van veel verschillende contexten in functiond identieke compartimenten die elk een subset van de algemene gegevens bevatten; bijvoorbeeld klant profiel gegevens. Bij partitioneren verzendt een uitgever het bericht naar een onderwerp zonder kennis van het partitie model. Het bericht wordt vervolgens verplaatst naar het juiste abonnement, dat vervolgens kan worden opgehaald door de Message Handler van de partitie.
 
 Route ring gebruikt filters voor het distribueren van berichten over topic-abonnementen op een voorspel bare manier, maar niet noodzakelijkerwijs exclusief. In combi natie met de functie voor [automatisch door sturen](service-bus-auto-forwarding.md) kunnen onderwerps filters worden gebruikt voor het maken van complexe routerings grafieken binnen een service bus naam ruimte voor bericht distributie binnen een Azure-regio. Met Azure Functions of Azure Logic Apps fungeren als een brug tussen Azure Service Bus naam ruimten, kunt u complexe globale topologieën maken met directe integratie in line-of-business-toepassingen.
+
+## <a name="examples"></a>Voorbeelden
+
+### <a name="set-rule-action-for-a-sql-filter"></a>Regel actie instellen voor een SQL-filter
+
+```csharp
+// instantiate the ManagementClient
+this.mgmtClient = new ManagementClient(connectionString);
+
+// create the SQL filter
+var sqlFilter = new SqlFilter("source = @stringParam");
+
+// assign value for the parameter
+sqlFilter.Parameters.Add("@stringParam", "orders");
+
+// instantiate the Rule = Filter + Action
+var filterActionRule = new RuleDescription
+{
+    Name = "filterActionRule",
+    Filter = sqlFilter,
+    Action = new SqlRuleAction("SET source='routedOrders'")
+};
+
+// create the rule on Service Bus
+await this.mgmtClient.CreateRuleAsync(topicName, subscriptionName, filterActionRule);
+```
+
+### <a name="sql-filter-on-a-system-property"></a>SQL-filter op een systeem eigenschap
+
+```csharp
+sys.Label LIKE '%bus%'`
+```
+
+### <a name="using-or"></a>Gebruiken of 
+
+```csharp
+sys.Label LIKE '%bus%' OR user.tag IN ('queue', 'topic', 'subscription')
+```
+
+### <a name="using-in-and-not-in"></a>Gebruiken IN en niet IN
+
+```csharp
+StoreId IN('Store1', 'Store2', 'Store3')"
+
+sys.To IN ('Store5','Store6','Store7') OR StoreId = 'Store8'
+
+sys.To NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8') OR StoreId NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8')
+```
+
+Zie voor een C#-voor beeld met behulp van deze filters [onderwerp filters voor beeld op github](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Azure.Messaging.ServiceBus/BasicSendReceiveTutorialwithFilters).
+
+### <a name="correlation-filter-using-correlationid"></a>Correlatie filter met behulp van CorrelationID
+
+```csharp
+new CorrelationFilter("Contoso");
+```
+
+Er worden berichten gefilterd met `CorrelationID` ingesteld op `Contoso` . 
+
+### <a name="correlation-filter-using-system-and-user-properties"></a>Correlatie filter met behulp van systeem-en gebruikers eigenschappen
+
+```csharp
+var filter = new CorrelationFilter();
+filter.Label = "Important";
+filter.ReplyTo = "johndoe@contoso.com";
+filter.Properties["color"] = "Red";
+```
+
+Het is gelijk aan: `sys.ReplyTo = 'johndoe@contoso.com' AND sys.Label = 'Important' AND color = 'Red'`
 
 
 > [!NOTE]

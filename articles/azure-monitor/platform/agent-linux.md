@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/21/2020
-ms.openlocfilehash: 8b9fac51b5bdab20d7b082945ee594ac76c3e52a
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: e1dbf5e20aa206189397cab26e9b867f4942e1d5
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332498"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886835"
 ---
 # <a name="install-log-analytics-agent-on-linux-computers"></a>Log Analytics-agent installeren op Linux-computers
 In dit artikel vindt u informatie over het installeren van de Log Analytics-agent op Linux-computers met behulp van de volgende methoden:
@@ -30,13 +30,17 @@ Zie [overzicht van Azure monitor agents](agents-overview.md#supported-operating-
 
 >[!NOTE]
 >OpenSSL 1.1.0 wordt alleen ondersteund op x86_x64 platforms (64-bits) en OpenSSL die ouder zijn dan 1. x niet op elk platform wordt ondersteund.
->
+
+>[!NOTE]
+>Het uitvoeren van de Log Analytics Linux-agent in containers wordt niet ondersteund. Als u containers wilt bewaken, moet u gebruikmaken van de [container bewakings oplossing](../insights/containers.md) voor docker-hosts of [Azure monitor voor containers](../insights/container-insights-overview.md) voor Kubernetes.
+
 Vanaf versies die na augustus 2018 zijn uitgebracht, maken we de volgende wijzigingen in ons ondersteunings model:  
 
 * Alleen de server versies worden ondersteund, niet van de client.  
 * Richt u op de ondersteuning van een van de door [Azure Linux geviseerde distributies](../../virtual-machines/linux/endorsed-distros.md). Houd er rekening mee dat er enige vertraging is tussen een nieuwe distributie/versie die door Azure Linux wordt goedgekeurd en wordt ondersteund voor de Log Analytics Linux-agent.
 * Alle kleine releases worden ondersteund voor elke primaire versie die wordt vermeld.
-* Versies die de ondersteunings datum van de fabrikant hebben door gegeven, worden niet ondersteund.  
+* Versies die de ondersteunings datum van de fabrikant hebben door gegeven, worden niet ondersteund.
+* Alleen VM-installatie kopieën ondersteunen; containers, zelfs degene die zijn afgeleid van officiële distributie-publicatie kopieën, worden niet ondersteund.
 * Nieuwe versies van AMI worden niet ondersteund.  
 * Alleen versies waarop SSL 1. x wordt uitgevoerd, worden standaard ondersteund.
 

@@ -2,14 +2,14 @@
 title: De galerie met gedeelde afbeeldingen gebruiken om een aangepaste installatie kopie groep te maken
 description: Aangepaste installatie kopie groepen zijn een efficiënte manier om reken knooppunten te configureren om uw batch-workloads uit te voeren.
 ms.topic: conceptual
-ms.date: 09/15/2020
+ms.date: 11/18/2020
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 4a41e8345bdb4c4e8761debe8e6b39f8588f5a8c
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: f0ba6270e6b6b4fcd258d8f5b3668931706f95b5
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745514"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888348"
 ---
 # <a name="use-the-shared-image-gallery-to-create-a-custom-image-pool"></a>De galerie met gedeelde afbeeldingen gebruiken om een aangepaste installatie kopie groep te maken
 
@@ -40,7 +40,7 @@ Het gebruik van een gedeelde installatie kopie die voor uw scenario is geconfigu
 
 - **Een Azure Batch-account.** Als u een batch-account wilt maken, raadpleegt u de batch-Quick starts met behulp van de [Azure Portal](quick-create-portal.md) of [Azure cli](quick-create-cli.md).
 
-- **Een afbeelding van de galerie met gedeelde afbeeldingen** . Als u een gedeelde installatie kopie wilt maken, moet u een beheerde installatie kopie bron hebben of maken. De installatie kopie moet worden gemaakt op basis van moment opnamen van de besturingssysteem schijf van de VM en optioneel op de gekoppelde gegevens schijven.
+- **Een afbeelding van de galerie met gedeelde afbeeldingen**. Als u een gedeelde installatie kopie wilt maken, moet u een beheerde installatie kopie bron hebben of maken. De installatie kopie moet worden gemaakt op basis van moment opnamen van de besturingssysteem schijf van de VM en optioneel op de gekoppelde gegevens schijven.
 
 > [!NOTE]
 > Als de gedeelde installatie kopie zich niet in hetzelfde abonnement als het batch-account bevindt, moet u [de resource provider Microsoft.BatCH registreren](../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider) voor dat abonnement. De twee abonnementen moeten zich in dezelfde Azure AD-Tenant bezitten.
@@ -205,12 +205,12 @@ client.pool.add(new_pool)
 
 Gebruik de volgende stappen om een groep te maken op basis van een gedeelde installatie kopie in de Azure Portal.
 
-1. Open [Azure Portal](https://portal.azure.com).
+1. Open de [Azure Portal](https://portal.azure.com).
 1. Ga naar **batch-accounts** en selecteer uw account.
 1. Selecteer **Pools** en voeg vervolgens **toe** om een nieuwe groep te maken.
-1. Selecteer in de sectie **type installatie** kopie de **Galerie gedeelde installatie kopieën** .
+1. Selecteer in de sectie **type installatie** kopie de **Galerie gedeelde installatie kopieën**.
 1. Voltooi de resterende gedeelten met informatie over uw beheerde installatie kopie.
-1. Selecteer **OK** .
+1. Selecteer **OK**.
 
 ![Maak een pool met behulp van een gedeelde installatie kopie met de portal.](media/batch-sig-images/create-custom-pool.png)
 
@@ -218,7 +218,7 @@ Gebruik de volgende stappen om een groep te maken op basis van een gedeelde inst
 
 Als u van plan bent om een pool met honderden of duizenden Vm's of meer te maken met behulp van een gedeelde installatie kopie, gebruikt u de volgende richt lijnen.
 
-- **Replica nummers van de galerie met gedeelde afbeeldingen.**  Voor elke groep met Maxi maal 600 exemplaren, raden we u aan ten minste één replica te gebruiken. Als u bijvoorbeeld een groep met 3000 Vm's maakt, moet u ten minste vijf replica's van uw installatie kopie gebruiken. We suggereren altijd dat er meer replica's dan minimale vereisten zijn voor betere prestaties.
+- **Replica nummers van de galerie met gedeelde afbeeldingen.**  Voor elke groep met Maxi maal 300 exemplaren, raden we u aan ten minste één replica te gebruiken. Als u bijvoorbeeld een groep met 3000 Vm's maakt, moet u ten minste tien replica's van uw installatie kopie gebruiken. We suggereren altijd dat er meer replica's dan minimale vereisten zijn voor betere prestaties.
 
 - **Grootte van time-out wijzigen.** Als uw pool een vast aantal knoop punten bevat (als deze niet automatisch wordt geschaald), verhoogt u de `resizeTimeout` eigenschap van de pool, afhankelijk van de grootte van de groep. Voor elke virtuele machine van 1000 is de aanbevolen grootte-time-out ten minste 15 minuten. Zo is de aanbevolen grootte voor een groep met 2000 Vm's ten minste 30 minuten.
 

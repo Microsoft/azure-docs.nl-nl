@@ -12,15 +12,15 @@ ms.workload: multiple
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/20/2019
+ms.date: 11/18/2020
 ms.author: mblythe
 ms.custom: accessibility
-ms.openlocfilehash: 63bfb7c92e77c4059a46a83b76b3818fcb6d63be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d48add78eb73ba1aea248e95ddc5ebc0900ee000
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90090207"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888331"
 ---
 # <a name="supported-devices"></a>Ondersteunde apparaten
 
@@ -33,7 +33,7 @@ Als u Azure-resources wilt beheren vanaf een mobiel apparaat, probeert u het  [A
 U wordt aangeraden om de meest recente browser te gebruiken die compatibel is met het besturingssysteem. De volgende browsers worden ondersteund:
 
 * Microsoft Edge (meest recente versie)
-* Internet Explorer 11
+* Internet Explorer 11 (ondersteund tot 31 maart 2021)
 * Safari (meest recente versie, alleen Mac)
 * Chrome (meest recente versie)
 * Firefox (meest recente versie)

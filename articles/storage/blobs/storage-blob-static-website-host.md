@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 1/22/2020
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 03850315a05f569d2c6ba9405b6ec38bb6b1305d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36cdaa813e0eccb23563301052aee268ab61533a
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78330392"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888501"
 ---
 <!---Customer intent: I want to host files for a static website in Blob storage and access the website from an Azure endpoint.--->
 
@@ -77,17 +77,27 @@ Maak vervolgens een 'Hallo wereld'-webpagina met Visual Studio Code en implement
 1. Open *index.html* in de editor, plak de volgende tekst in het bestand en sla het bestand op:
 
     ```
-    <h1>Hello World!</h1>
+    <!DOCTYPE html>
+    <html>
+      <body>
+        <h1>Hello World!</h1>
+      </body>
+    </html>
     ```
 
 1. Maak het standaardfoutbestand en noem dat *404. html*.
 1. Open *404.html* in de editor, plak de volgende tekst in het bestand en sla het bestand op:
 
     ```
-    <h1>404</h1>
+    <!DOCTYPE html>
+    <html>
+      <body>
+        <h1>404</h1>
+      </body>
+    </html>
     ```
 
-1. Klik met de rechtermuisknop onder de map *MijnWebsite* in het deelvenster **Explorer** en selecteer **Implementeren in statische website... ** om uw website te implementeren. U wordt gevraagd u aan te melden bij Azure om een lijst met abonnementen op te halen.
+1. Klik met de rechtermuisknop onder de map *MijnWebsite* in het deelvenster **Explorer** en selecteer **Implementeren in statische website...** om uw website te implementeren. U wordt gevraagd u aan te melden bij Azure om een lijst met abonnementen op te halen.
 
 1. Selecteer het abonnement met het opslagaccount waarvoor u het hosten van een statische website hebt ingeschakeld. Selecteer vervolgens het opslagaccount wanneer u hierom wordt gevraagd.
 

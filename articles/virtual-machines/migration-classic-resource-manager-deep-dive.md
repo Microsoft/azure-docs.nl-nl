@@ -8,22 +8,20 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: e9476b7278cbe64bf90911c3b85a09922a1afbf1
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: d73ad3235e5ff2c9dbf0cca546308469ef6b5ac0
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843941"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94887015"
 ---
 # <a name="technical-deep-dive-on-platform-supported-migration-from-classic-to-azure-resource-manager"></a>Technische details over door platforms ondersteunde migratie van klassiek naar Azure Resource Manager
 
 > [!IMPORTANT]
 > Nu gebruiken we op ongeveer 90% IaaS Vm's [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). Vanaf 28 februari 2020 zijn klassieke Vm's afgeschaft en worden ze volledig buiten gebruik gesteld op 1 maart 2023. Meer [informatie]( https://aka.ms/classicvmretirement) over deze afschaffing en [hoe dit van invloed is op u](./classic-vm-deprecation.md#how-does-this-affect-me).
 
-Laten we een grondige kennis nemen over het migreren van het klassieke Azure-implementatie model naar het Azure Resource Manager-implementatie model. We kijken naar resources op een resource-en functie niveau om inzicht te krijgen in de manier waarop het Azure-platform bronnen migreert tussen de twee implementatie modellen. Raadpleeg het artikel over service aankondiging voor meer informatie:
+Laten we een grondige kennis nemen over het migreren van het klassieke Azure-implementatie model naar het Azure Resource Manager-implementatie model. We kijken naar resources op een resource-en functie niveau om inzicht te krijgen in de manier waarop het Azure-platform bronnen migreert tussen de twee implementatie modellen. Lees voor meer informatie het artikel over service aankondiging: [door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager](migration-classic-resource-manager-overview.md).
 
-* Voor Linux: [door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager](./linux/migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-* Voor Windows:  [door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager](./windows/migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ## <a name="migrate-iaas-resources-from-the-classic-deployment-model-to-azure-resource-manager"></a>IaaS-resources van het klassieke implementatie model migreren naar Azure Resource Manager
 Ten eerste is het belang rijk dat u begrijpt wat het verschil is tussen bewerkingen op het vlak van gegevens vlak en beheer op de IaaS-resources (Infrastructure as a Service).
@@ -33,7 +31,7 @@ Ten eerste is het belang rijk dat u begrijpt wat het verschil is tussen bewerkin
 
 Het gegevens vlak is hetzelfde als het klassieke implementatie model en Resource Manager-stacks. Het verschil is dat tijdens het migratie proces micro soft de weer gave van de resources uit het klassieke implementatie model vertaalt naar die in de Resource Manager-stack. Als gevolg hiervan moet u nieuwe hulpprogram ma's, Api's en Sdk's gebruiken om uw resources te beheren in de Resource Manager-stack.
 
-![Diagram waarin het verschil tussen het beheer-en besturings vlak en het gegevens vlak wordt weer gegeven](media/virtual-machines-windows-migration-classic-resource-manager/data-control-plane.png)
+![Diagram waarin het verschil tussen het beheer-en besturings vlak en het gegevens vlak wordt weer gegeven](./media/virtual-machines-windows-migration-classic-resource-manager/data-control-plane.png)
 
 
 > [!NOTE]
@@ -52,7 +50,7 @@ Voordat u de migratie start:
 
 De migratie werk stroom is als volgt:
 
-![Diagram waarin de migratie werk stroom wordt weer gegeven](windows/media/migration-classic-resource-manager/migration-workflow.png)
+![Diagram waarin de migratie werk stroom wordt weer gegeven](./media/migration-classic-resource-manager/migration-workflow.png)
 
 > [!NOTE]
 > De bewerkingen die in de volgende secties worden beschreven, zijn alle idempotent. Als er een ander probleem is dan een niet-ondersteunde functie of een configuratie fout, voert u de bewerking voorbereiden, afbreken of door voeren opnieuw uit. Azure probeert de actie opnieuw uit te stellen.
@@ -98,13 +96,13 @@ Nadat de voor bereiding is voltooid, hebt u de mogelijkheid om de resources te v
 
 Met de volgende twee scherm afbeeldingen wordt het resultaat weer gegeven na een geslaagde voor bereiding. De eerste bevat een resource groep die de oorspronkelijke Cloud service bevat. De tweede bevat de nieuwe '-gemigreerde ' resource groep die de equivalente Azure Resource Manager resources bevat.
 
-![Scherm afbeelding waarin de oorspronkelijke Cloud service wordt weer gegeven](windows/media/migration-classic-resource-manager/portal-classic.png)
+![Scherm afbeelding waarin de oorspronkelijke Cloud service wordt weer gegeven](./media/migration-classic-resource-manager/portal-classic.png)
 
-![Scherm opname van Azure Resource Manager resources in de voorbereidings bewerking](windows/media/migration-classic-resource-manager/portal-arm.png)
+![Scherm opname van Azure Resource Manager resources in de voorbereidings bewerking](./media/migration-classic-resource-manager/portal-arm.png)
 
 Hier ziet u een voor achtergrond van uw resources na het volt ooien van de voorbereidings fase. Houd er rekening mee dat de resource in het gegevens vlak hetzelfde is. Deze wordt weer gegeven in het beheer vlak (klassiek implementatie model) en het besturings vlak (Resource Manager).
 
-![Diagram van de voorbereidings fase](windows/media/migration-classic-resource-manager/behind-the-scenes-prepare.png)
+![Diagram van de voorbereidings fase](./media/migration-classic-resource-manager/behind-the-scenes-prepare.png)
 
 > [!NOTE]
 > Vm's die zich niet in een virtueel netwerk in het klassieke implementatie model bevinden, worden in deze fase van de migratie gestopt en opgeheven.
@@ -124,7 +122,7 @@ Als er problemen zijn, kunt u altijd de migratie altijd afbreken en terugkeren n
 ### <a name="abort"></a>Afbreken
 Dit is een optionele stap als u de wijzigingen in het klassieke implementatie model wilt terugdraaien en de migratie wilt stoppen. Met deze bewerking worden de meta gegevens van Resource Manager (gemaakt in de stap voorbereiden) voor uw resources verwijderd. 
 
-![Diagram van de stap afbreken](windows/media/migration-classic-resource-manager/behind-the-scenes-abort.png)
+![Diagram van de stap afbreken](media/migration-classic-resource-manager/behind-the-scenes-abort.png)
 
 
 > [!NOTE]
@@ -139,13 +137,13 @@ Nadat de validatie is voltooid, kunt u de migratie doorvoeren. Resources worden 
 >
 >
 
-![Diagram van commit-stap](windows/media/migration-classic-resource-manager/behind-the-scenes-commit.png)
+![Diagram van commit-stap](media/migration-classic-resource-manager/behind-the-scenes-commit.png)
 
 ## <a name="migration-flowchart"></a>Migratie stroomdiagram
 
 Hier volgt een stroom diagram dat laat zien hoe u kunt door gaan met de migratie:
 
-![Schermafbeelding van de migratiestappen](windows/media/migration-classic-resource-manager/migration-flow.png)
+![Schermafbeelding van de migratiestappen](media/migration-classic-resource-manager/migration-flow.png)
 
 ## <a name="translation-of-the-classic-deployment-model-to-resource-manager-resources"></a>Vertaling van het klassieke implementatie model naar Resource Manager-resources
 U vindt het klassieke implementatie model en de Resource Manager-weer gave van de resources in de volgende tabel. Andere functies en resources worden momenteel niet ondersteund.
@@ -183,24 +181,12 @@ Als onderdeel van het migreren van uw resources vanuit het klassieke implementat
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voor Linux:
-
-* [Overzicht van door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager](./linux/migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Planning voor de migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager](./linux/migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Power shell gebruiken voor het migreren van IaaS-resources van klassiek naar Azure Resource Manager](./windows/migration-classic-resource-manager-ps.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [CLI gebruiken voor het migreren van IaaS-resources van klassiek naar Azure Resource Manager](./linux/migration-classic-resource-manager-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Community tools voor hulp bij de migratie van IaaS-resources van klassiek naar Azure Resource Manager](./windows/migration-classic-resource-manager-community-tools.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [Bekijk de meest voorkomende migratiefouten](./linux/migration-classic-resource-manager-errors.md?toc=/azure/virtual-machines/linux/toc.json)
-* [Bekijk de veelgestelde vragen over het migreren van IaaS-resources van klassiek naar Azure Resource Manager](migration-classic-resource-manager-faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-
-Voor Windows:
-
-* [Overzicht van door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager](./windows/migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [Planning voor de migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager](./windows/migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [Power shell gebruiken voor het migreren van IaaS-resources van klassiek naar Azure Resource Manager](./windows/migration-classic-resource-manager-ps.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [CLI gebruiken voor het migreren van IaaS-resources van klassiek naar Azure Resource Manager](./linux/migration-classic-resource-manager-cli.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [Overzicht van door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager](migration-classic-resource-manager-overview.md)
+* [Planning voor de migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager](migration-classic-resource-manager-plan.md)
+* [Power shell gebruiken voor het migreren van IaaS-resources van klassiek naar Azure Resource Manager](migration-classic-resource-manager-ps.md)
+* [CLI gebruiken voor het migreren van IaaS-resources van klassiek naar Azure Resource Manager](migration-classic-resource-manager-cli.md)
 * [Migratie van klassieke en Resource Manager VPN Gateway](../vpn-gateway/vpn-gateway-classic-resource-manager-migration.md)
 * [ExpressRoute-circuits en gekoppelde virtuele netwerken van het klassieke naar het Resource Manager-implementatie model migreren](../expressroute/expressroute-migration-classic-resource-manager.md)
-* [Community tools voor hulp bij de migratie van IaaS-resources van klassiek naar Azure Resource Manager](./windows/migration-classic-resource-manager-community-tools.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [Bekijk de meest voorkomende migratiefouten](./windows/migration-classic-resource-manager-errors.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [Bekijk de veelgestelde vragen over het migreren van IaaS-resources van klassiek naar Azure Resource Manager](migration-classic-resource-manager-faq.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [Community tools voor hulp bij de migratie van IaaS-resources van klassiek naar Azure Resource Manager](migration-classic-resource-manager-community-tools.md)
+* [Bekijk de meest voorkomende migratiefouten](migration-classic-resource-manager-errors.md)
+* [Bekijk de veelgestelde vragen over het migreren van IaaS-resources van klassiek naar Azure Resource Manager](migration-classic-resource-manager-faq.md)

@@ -9,12 +9,12 @@ ms.subservice: availability
 ms.date: 02/28/2020
 ms.reviewer: jushiman
 ms.custom: avverma, devx-track-azurecli
-ms.openlocfilehash: 383895f2cb5983abd68bfca67d2c8361ee094ea1
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ae508754775d4eb622d8e91ef58eb0d6e1c45692
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92744845"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889011"
 ---
 # <a name="automatic-instance-repairs-for-azure-virtual-machine-scale-sets"></a>Automatische exemplaarreparaties voor virtuele-machineschaalsets van Azure
 
@@ -36,9 +36,9 @@ Voordat u automatisch beleid voor instanties herstellen inschakelt, moet u ervoo
 
 Voor instanties die zijn gemarkeerd als ' beschadigd ', worden automatisch reparaties geactiveerd door de schaalset. Zorg ervoor dat het eind punt van de toepassing correct is geconfigureerd voordat u het automatische reparatie beleid inschakelt om onbedoelde exemplaar reparaties te voor komen, terwijl het eind punt wordt geconfigureerd.
 
-**Eén plaatsings groep inschakelen**
+**Maximum aantal exemplaren in de schaalset**
 
-Deze functie is momenteel alleen beschikbaar voor schaal sets die zijn geïmplementeerd als één plaatsings groep. De eigenschap *singlePlacementGroup* moet worden ingesteld op *True* voor de schaalset om de functie Automatische exemplaar reparatie te gebruiken. Meer informatie over [plaatsings groepen](./virtual-machine-scale-sets-placement-groups.md#placement-groups).
+Deze functie is momenteel alleen beschikbaar voor schaal sets met Maxi maal 200 exemplaren. De schaalset kan worden geïmplementeerd als één plaatsings groep of een groep met meerdere locaties. het aantal exemplaren kan echter niet meer dan 200 zijn als automatische instantie reparaties is ingeschakeld voor de schaalset.
 
 **API-versie**
 
@@ -62,13 +62,13 @@ De automatische herstel bewerkingen voor instanties worden uitgevoerd in batches
 
 ### <a name="grace-period"></a>Respijtperiode
 
-Wanneer een exemplaar een status wijzigings bewerking doorloopt vanwege een PUT-, PATCH-of POST-actie die is uitgevoerd op de schaalset (bijvoorbeeld het opnieuw instellen van de installatie kopie, opnieuw implementeren, bijwerken, enz.), wordt een herstel actie voor dat exemplaar pas uitgevoerd nadat de respijt periode is verstreken. Respijt periode is de hoeveelheid tijd die het exemplaar kan retour neren naar de status in orde. De respijt periode begint nadat de status wijziging is voltooid. Dit helpt voor komen dat voor tijdig of onbedoeld herstel bewerkingen worden uitgevoerd. De respijt periode wordt gerespecteerd voor een nieuw gemaakt exemplaar in de schaalset (inclusief de waarde die is gemaakt als gevolg van een herstel bewerking). De respijt periode is opgegeven in minuten in de ISO 8601-indeling en kan worden ingesteld met behulp van de eigenschap *automaticRepairsPolicy. gracePeriod* . De respijt periode kan tussen 30 minuten en 90 minuten liggen en heeft een standaard waarde van 30 minuten.
+Wanneer een exemplaar een status wijzigings bewerking doorloopt vanwege een PUT-, PATCH-of POST-actie die is uitgevoerd op de schaalset (bijvoorbeeld het opnieuw instellen van de installatie kopie, opnieuw implementeren, bijwerken, enz.), wordt een herstel actie voor dat exemplaar pas uitgevoerd nadat de respijt periode is verstreken. Respijt periode is de hoeveelheid tijd die het exemplaar kan retour neren naar de status in orde. De respijt periode begint nadat de status wijziging is voltooid. Dit helpt voor komen dat voor tijdig of onbedoeld herstel bewerkingen worden uitgevoerd. De respijt periode wordt gerespecteerd voor een nieuw gemaakt exemplaar in de schaalset (inclusief de waarde die is gemaakt als gevolg van een herstel bewerking). De respijt periode is opgegeven in minuten in de ISO 8601-indeling en kan worden ingesteld met behulp van de eigenschap *automaticRepairsPolicy. gracePeriod*. De respijt periode kan tussen 30 minuten en 90 minuten liggen en heeft een standaard waarde van 30 minuten.
 
 ### <a name="suspension-of-repairs"></a>Schorsing van reparaties 
 
-Virtuele-machine schaal sets bieden de mogelijkheid om de automatische herstel bewerkingen voor instanties tijdelijk te onderbreken, indien nodig. De *service State* voor automatische reparaties onder de eigenschap *orchestrationServices* in de instantie weergave van de virtuele-machine schaalset toont de huidige status van de automatische reparaties. Wanneer een schaalset wordt ingeschakeld voor automatische reparaties, wordt de waarde van para meter *service State* ingesteld op *actief* . Wanneer de automatische reparaties voor een schaalset worden onderbroken, wordt de para meter *service State* ingesteld op *opgeschort* . Als *automaticRepairsPolicy* is gedefinieerd voor een schaalset, maar de functie automatisch herstellen niet is ingeschakeld, wordt de para meter *service State* ingesteld op *niet actief* .
+Virtuele-machine schaal sets bieden de mogelijkheid om de automatische herstel bewerkingen voor instanties tijdelijk te onderbreken, indien nodig. De *service State* voor automatische reparaties onder de eigenschap *orchestrationServices* in de instantie weergave van de virtuele-machine schaalset toont de huidige status van de automatische reparaties. Wanneer een schaalset wordt ingeschakeld voor automatische reparaties, wordt de waarde van para meter *service State* ingesteld op *actief*. Wanneer de automatische reparaties voor een schaalset worden onderbroken, wordt de para meter *service State* ingesteld op *opgeschort*. Als *automaticRepairsPolicy* is gedefinieerd voor een schaalset, maar de functie automatisch herstellen niet is ingeschakeld, wordt de para meter *service State* ingesteld op *niet actief*.
 
-Als nieuw gemaakte instanties voor het vervangen van de beschadigde fouten in een schaalset blijven intact blijven, zelfs nadat u herhaaldelijk herstel bewerkingen hebt uitgevoerd, wordt de *service State* door het platform bijgewerkt voor automatische herstel naar *onderbroken* . U kunt de automatische herstel bewerking opnieuw *uitvoeren* door de waarde van *service State* in te stellen op automatisch herstellen. Gedetailleerde instructies vindt u in de sectie over [het weer geven en bijwerken van de service status van het beleid voor automatisch herstellen](#viewing-and-updating-the-service-state-of-automatic-instance-repairs-policy) voor uw schaalset. 
+Als nieuw gemaakte instanties voor het vervangen van de beschadigde fouten in een schaalset blijven intact blijven, zelfs nadat u herhaaldelijk herstel bewerkingen hebt uitgevoerd, wordt de *service State* door het platform bijgewerkt voor automatische herstel naar *onderbroken*. U kunt de automatische herstel bewerking opnieuw *uitvoeren* door de waarde van *service State* in te stellen op automatisch herstellen. Gedetailleerde instructies vindt u in de sectie over [het weer geven en bijwerken van de service status van het beleid voor automatisch herstellen](#viewing-and-updating-the-service-state-of-automatic-instance-repairs-policy) voor uw schaalset. 
 
 Het proces voor automatische exemplaar reparaties werkt als volgt:
 
@@ -96,14 +96,14 @@ U kunt deze Quick Start- [sjabloon](https://github.com/Azure/azure-quickstart-te
  
 De volgende stappen voor het inschakelen van automatisch herstel beleid bij het maken van een nieuwe schaalset.
  
-1. Ga naar **schaal sets voor virtuele machines** .
+1. Ga naar **schaal sets voor virtuele machines**.
 1. Selecteer **+ toevoegen** om een nieuwe schaalset te maken.
 1. Ga naar het tabblad **status** . 
 1. Zoek de sectie **status** .
 1. Schakel de optie **toepassings status bewaken** in.
 1. Zoek de sectie **beleid voor automatisch herstellen** .
 1. Schakel de optie **automatisch herstellen** **in** .
-1. In **respijt periode (min)** , geeft u de respijt periode op in minuten, toegestane waarden tussen 30 en 90 minuten. 
+1. In **respijt periode (min)**, geeft u de respijt periode op in minuten, toegestane waarden tussen 30 en 90 minuten. 
 1. Wanneer u klaar bent met het maken van de nieuwe schaalset, selecteert u de knop **controleren + maken** .
 
 ### <a name="rest-api"></a>REST-API
@@ -141,7 +141,7 @@ New-AzVmssConfig `
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
 
-In het volgende voor beeld wordt het beleid voor automatisch herstellen ingeschakeld tijdens het maken van een nieuwe schaalset met *[AZ vmss Create](/cli/azure/vmss?view=azure-cli-latest#az-vmss-create)* . Maak eerst een resource groep en maak vervolgens een nieuwe schaalset met de respijt periode voor automatisch herstel beleid ingesteld op 30 minuten.
+In het volgende voor beeld wordt het beleid voor automatisch herstellen ingeschakeld tijdens het maken van een nieuwe schaalset met *[AZ vmss Create](/cli/azure/vmss?view=azure-cli-latest#az-vmss-create)*. Maak eerst een resource groep en maak vervolgens een nieuwe schaalset met de respijt periode voor automatisch herstel beleid ingesteld op 30 minuten.
 
 ```azurecli-interactive
 az group create --name <myResourceGroup> --location <VMSSLocation>
@@ -156,7 +156,7 @@ az vmss create \
   --automatic-repairs-grace-period 30
 ```
 
-In het bovenstaande voor beeld wordt een bestaande load balancer en status test gebruikt voor het bewaken van de toepassings status van instanties. Als u liever een toepassings status extensie wilt gebruiken voor bewaking, kunt u een schaalset maken, de uitbrei ding van de toepassings status configureren en vervolgens het beleid voor automatische exemplaar reparatie inschakelen met de *Update AZ vmss* , zoals wordt uitgelegd in de volgende sectie.
+In het bovenstaande voor beeld wordt een bestaande load balancer en status test gebruikt voor het bewaken van de toepassings status van instanties. Als u liever een toepassings status extensie wilt gebruiken voor bewaking, kunt u een schaalset maken, de uitbrei ding van de toepassings status configureren en vervolgens het beleid voor automatische exemplaar reparatie inschakelen met de *Update AZ vmss*, zoals wordt uitgelegd in de volgende sectie.
 
 ## <a name="enabling-automatic-repairs-policy-when-updating-an-existing-scale-set"></a>Automatisch herstel beleid inschakelen bij het bijwerken van een bestaande schaalset
 
@@ -169,11 +169,11 @@ Nadat u het model van een bestaande schaalset hebt bijgewerkt, moet u ervoor zor
 U kunt het automatische reparatie beleid van een bestaande schaalset wijzigen via de Azure Portal. 
  
 1. Ga naar een bestaande schaalset voor virtuele machines.
-1. Onder **instellingen** in het menu aan de linkerkant selecteert u **status en herstellen** .
+1. Onder **instellingen** in het menu aan de linkerkant selecteert u **status en herstellen**.
 1. Schakel de optie **toepassings status bewaken** in.
 1. Zoek de sectie **beleid voor automatisch herstellen** .
 1. Schakel de optie **automatisch herstellen** **in** .
-1. In **respijt periode (min)** , geeft u de respijt periode op in minuten, toegestane waarden tussen 30 en 90 minuten. 
+1. In **respijt periode (min)**, geeft u de respijt periode op in minuten, toegestane waarden tussen 30 en 90 minuten. 
 1. Selecteer **Opslaan** wanneer u klaar bent. 
 
 ### <a name="rest-api"></a>REST-API
@@ -209,7 +209,7 @@ Update-AzVmss `
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
 
-Hier volgt een voor beeld van het bijwerken van het beleid voor automatische exemplaar reparaties van een bestaande schaalset met *[AZ vmss update](/cli/azure/vmss?view=azure-cli-latest#az-vmss-update)* .
+Hier volgt een voor beeld van het bijwerken van het beleid voor automatische exemplaar reparaties van een bestaande schaalset met *[AZ vmss update](/cli/azure/vmss?view=azure-cli-latest#az-vmss-update)*.
 
 ```azurecli-interactive
 az vmss update \  
@@ -223,7 +223,7 @@ az vmss update \
 
 ### <a name="rest-api"></a>REST-API 
 
-Gebruik de [weer gave exemplaar ophalen](/rest/api/compute/virtualmachinescalesets/getinstanceview) met API-versie 2019-12-01 of hoger voor de schaalset van de virtuele machine om de *service State* voor automatische reparaties te bekijken onder de eigenschap *orchestrationServices* . 
+Gebruik de [weer gave exemplaar ophalen](/rest/api/compute/virtualmachinescalesets/getinstanceview) met API-versie 2019-12-01 of hoger voor de schaalset van de virtuele machine om de *service State* voor automatische reparaties te bekijken onder de eigenschap *orchestrationServices*. 
 
 ```http
 GET '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/instanceView?api-version=2019-12-01'
@@ -309,7 +309,7 @@ Het exemplaar kan zich in de respijt periode bevindt. Dit is de tijd die moet wo
 
 **De status van de toepassing weer geven voor instanties van schaal sets**
 
-U kunt de [weer gave-API voor instantie ophalen](/rest/api/compute/virtualmachinescalesetvms/getinstanceview) voor instanties in een schaalset voor virtuele machines gebruiken om de status van de toepassings status weer te geven. Met Azure PowerShell kunt u de cmdlet [Get-AzVmssVM](/powershell/module/az.compute/get-azvmssvm) gebruiken met de vlag *-InstanceView* . De status van de toepassing wordt gegeven in de eigenschap *vmHealth* .
+U kunt de [weer gave-API voor instantie ophalen](/rest/api/compute/virtualmachinescalesetvms/getinstanceview) voor instanties in een schaalset voor virtuele machines gebruiken om de status van de toepassings status weer te geven. Met Azure PowerShell kunt u de cmdlet [Get-AzVmssVM](/powershell/module/az.compute/get-azvmssvm) gebruiken met de vlag *-InstanceView* . De status van de toepassing wordt gegeven in de eigenschap *vmHealth*.
 
 In de Azure Portal ziet u ook de integriteits status. Ga naar een bestaande schaalset, selecteer **instanties** in het menu aan de linkerkant en Bekijk de kolom **status** voor de status van elk exemplaar van de schaalset. 
 

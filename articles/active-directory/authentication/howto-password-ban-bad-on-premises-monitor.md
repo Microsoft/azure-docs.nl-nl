@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 315dfcb10b11278401d6cc0abd42b40b5f55f72a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 6efcadf85816bb6aa014893bb9b20476a0701990
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968358"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886750"
 ---
 # <a name="monitor-and-review-logs-for-on-premises-azure-ad-password-protection-environments"></a>Logboeken controleren en bekijken voor on-premises Azure AD-wachtwoord beveiligings omgevingen
 
@@ -66,15 +66,19 @@ U hebt de volgende belang rijke gebeurtenissen met betrekking tot validatie op b
 
 | Gebeurtenis |Wachtwoord wijzigen |Wachtwoordset|
 | --- | :---: | :---: |
-|Door |10014 |10015|
+|Geslaagd |10014 |10015|
 |Mislukt (vanwege wachtwoord beleid van klant)| 10016, 30002| 10017, 30003|
 |Mislukt (vanwege het wachtwoord beleid van micro soft)| 10016, 30004| 10017, 30005|
 |Mislukt (door gecombineerde beleids regels van micro soft en het wacht woord van de klant)| 10016, 30026| 10017, 30027|
+|Mislukt (vanwege gebruikers naam)| 10016, 30021| 10017, 30022|
 |Alleen controle door gegeven (zou het beleid voor klant wachtwoord niet hebben kunnen uitvoeren)| 10024, 30008| 10025, 30007|
 |Alleen controle door gegeven (zou het micro soft-wachtwoord beleid zouden hebben mislukt)| 10024, 30010| 10025, 30009|
 |Alleen-controle door gegeven (zou zijn mislukt gecombineerd micro soft en het wachtwoord beleid van de klant)| 10024, 30028| 10025, 30029|
+|Alleen controle door gegeven (zou zijn mislukt als gevolg van gebruikers naam)| 10016, 30024| 10017, 30023|
 
 De gevallen in de tabel hierboven die verwijzen naar ' gecombineerd beleid ', verwijzen naar situaties waarbij het wacht woord van een gebruiker ten minste één token heeft gevonden uit de lijst met geblokkeerde wacht woorden van micro soft en de lijst met geblokkeerde wacht woorden van de klant.
+
+De cases in de tabel hierboven die verwijzen naar ' gebruikers naam ', verwijzen naar situaties waarin het wacht woord van een gebruiker is gevonden en de account naam van de gebruiker en/of een van de beschrijvende namen van de gebruiker bevat. In beide gevallen wordt het wacht woord van de gebruiker geweigerd wanneer het beleid is ingesteld op afdwingen of door gegeven als het beleid zich in de controle modus bevindt.
 
 Wanneer een paar gebeurtenissen samen worden geregistreerd, worden beide gebeurtenissen expliciet gekoppeld door dezelfde correlatie te hebben.
 

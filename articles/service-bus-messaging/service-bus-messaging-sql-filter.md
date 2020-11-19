@@ -2,17 +2,17 @@
 title: Naslag informatie over Azure Service Bus SQLFilter | Microsoft Docs
 description: Dit artikel bevat informatie over SQLFilter-grammatica. Een SqlFilter ondersteunt een subset van de SQL-92-standaard.
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 8412dea583ae119b30976e53d4751411b45339a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/17/2020
+ms.openlocfilehash: 7f3c744b691e678ef18c8fa721ccfaecaee9c1e2
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85341592"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888467"
 ---
 # <a name="sqlfilter-syntax"></a>SQLFilter-syntaxis
 
-Een *SqlFilter* -object is een instantie van de [klasse SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)en vertegenwoordigt een op SQL-taal gebaseerde filter expressie die wordt geëvalueerd op basis van een [BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). Een SqlFilter ondersteunt een subset van de SQL-92-standaard.  
+Een *SqlFilter* -object is een instantie van de [klasse SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)en vertegenwoordigt een op SQL-taal gebaseerde filter expressie, die wordt geëvalueerd op basis van een [`BrokeredMessage`](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) . Een SqlFilter ondersteunt een subset van de SQL-92-standaard.  
   
  In dit onderwerp vindt u meer informatie over SqlFilter-grammatica.  
   
@@ -106,7 +106,7 @@ Een `<regular_identifier>` kan geen gereserveerd tref woord zijn.
   
 ### <a name="remarks"></a>Opmerkingen
   
-`<pattern>` moet een expressie zijn die als een teken reeks wordt geëvalueerd. Deze wordt gebruikt als een patroon voor de LIKE-operator.      De naam kan de volgende joker tekens bevatten:  
+`<pattern>` moet een expressie zijn die als een teken reeks wordt geëvalueerd. Deze wordt gebruikt als een patroon voor de operator LIKE.      De naam kan de volgende joker tekens bevatten:  
   
 -   `%`: Een wille keurige teken reeks van nul of meer tekens.  
   
@@ -136,16 +136,16 @@ Een `<regular_identifier>` kan geen gereserveerd tref woord zijn.
   
 -   `<integer_constant>` is een teken reeks die niet tussen aanhalings tekens staat en geen decimale punten bevat. De waarden worden intern opgeslagen `System.Int64` en volgen hetzelfde bereik.  
   
-     Dit zijn voor beelden van lange constanten:  
+     Hier volgen enkele voor beelden van lange constanten:  
   
     ```  
     1894  
     2  
     ```  
   
--   `<decimal_constant>` is een teken reeks die niet tussen aanhalings tekens staat en een decimaal teken bevat. De waarden worden intern opgeslagen `System.Double` en volgen hetzelfde bereik/dezelfde precisie.  
+-   `<decimal_constant>` is een teken reeks met getallen die niet tussen aanhalings tekens staan en die een decimaal teken bevatten. De waarden worden intern opgeslagen `System.Double` en volgen hetzelfde bereik/dezelfde precisie.  
   
-     In een toekomstige versie kan dit nummer worden opgeslagen in een ander gegevens type ter ondersteuning van nauw keurige semantiek, dus moet u niet vertrouwen op het feit dat het onderliggende gegevens type `System.Double` voor is `<decimal_constant>` .  
+     In een toekomstige versie kan dit nummer worden opgeslagen in een ander gegevens type ter ondersteuning van nauw keurige semantiek, zodat u niet hoeft te vertrouwen op het feit dat het onderliggende gegevens type `System.Double` voor is `<decimal_constant>` .  
   
      Hier volgen enkele voor beelden van decimale constanten:  
   
@@ -192,7 +192,7 @@ Teken reeks constanten worden tussen enkele aanhalings tekens geplaatst en bevat
   
 ### <a name="remarks"></a>Opmerkingen
   
-De `newid()` functie retourneert een **System. GUID** die is gegenereerd door de- `System.Guid.NewGuid()` methode.  
+De `newid()` functie retourneert een `System.Guid` gegenereerd door de- `System.Guid.NewGuid()` methode.  
   
 De `property(name)` functie retourneert de waarde van de eigenschap waarnaar wordt verwezen door `name` . De `name` waarde kan een geldige expressie zijn die een teken reeks waarde retourneert.  
   
@@ -218,17 +218,17 @@ Houd rekening met de volgende [SqlFilter](/dotnet/api/microsoft.servicebus.messa
   
   Onbekende evaluatie van reken kundige Opera tors:  
   
-- Voor binaire Opera tors geldt dat als de linker-en/of rechter zijde van operands wordt geëvalueerd als **onbekend**, het resultaat **onbekend**is.  
+- Als de linker-of rechter zijde van operanden wordt geëvalueerd als **onbekend**, is het resultaat **onbekend**.  
   
-- Voor unaire Opera tors geldt dat als een operand als **onbekend**wordt geëvalueerd, het resultaat **onbekend**is.  
+- Voor unaire Opera tors geldt dat als een operand als **onbekend** wordt geëvalueerd, het resultaat **onbekend** is.  
   
   Onbekende evaluatie van Opera tors voor binaire vergelijkings operatoren:  
   
-- Als de linker-en/of rechter zijde van operands wordt geëvalueerd als **onbekend**, is het resultaat **onbekend**.  
+- Als de linker-of rechter zijde van operanden wordt geëvalueerd als **onbekend**, is het resultaat **onbekend**.  
   
   Onbekende evaluatie in `[NOT] LIKE` :  
   
-- Als een operand als **onbekend**wordt geëvalueerd, is het resultaat **onbekend**.  
+- Als een operand als **onbekend** wordt geëvalueerd, is het resultaat **onbekend**.  
   
   Onbekende evaluatie in `[NOT] IN` :  
   
@@ -267,6 +267,58 @@ Houd rekening met de volgende [SqlFilter](/dotnet/api/microsoft.servicebus.messa
 -   Vergelijkings operatoren zoals,,,, `>` `>=` `<` `<=` `!=` en `=` volgen dezelfde semantiek als de C#-operator die is gebonden aan het type van de aantekening van gegevens typen en impliciete conversies.  
   
 -   Reken kundige Opera tors zoals,,, `+` `-` `*` `/` en `%` volgen dezelfde semantiek als de C#-operator die is gebonden aan het gegevens type promoties en impliciete conversies.
+
+
+## <a name="examples"></a>Voorbeelden
+
+### <a name="set-rule-action-for-a-sql-filter"></a>Regel actie instellen voor een SQL-filter
+
+```csharp
+// instantiate the ManagementClient
+this.mgmtClient = new ManagementClient(connectionString);
+
+// create the SQL filter
+var sqlFilter = new SqlFilter("source = @stringParam");
+
+// assign value for the parameter
+sqlFilter.Parameters.Add("@stringParam", "orders");
+
+// instantiate the Rule = Filter + Action
+var filterActionRule = new RuleDescription
+{
+    Name = "filterActionRule",
+    Filter = sqlFilter,
+    Action = new SqlRuleAction("SET source='routedOrders'")
+};
+
+// create the rule on Service Bus
+await this.mgmtClient.CreateRuleAsync(topicName, subscriptionName, filterActionRule);
+```
+
+### <a name="sql-filter-on-a-system-property"></a>SQL-filter op een systeem eigenschap
+
+```csharp
+sys.Label LIKE '%bus%'`
+```
+
+### <a name="using-or"></a>Gebruiken of 
+
+```csharp
+ sys.Label LIKE '%bus%'` OR `user.tag IN ('queue', 'topic', 'subscription')
+```
+
+### <a name="using-in-and-not-in"></a>Gebruiken IN en niet IN
+
+```csharp
+StoreId IN('Store1', 'Store2', 'Store3')"
+
+sys.To IN ('Store5','Store6','Store7') OR StoreId = 'Store8'
+
+sys.To NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8') OR StoreId NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8')
+```
+
+Zie voor een C#-voor beeld [onderwerp filters voor beeld op github](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Azure.Messaging.ServiceBus/BasicSendReceiveTutorialwithFilters).
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/03/2020
+ms.date: 11/18/2020
 ms.author: alzam
-ms.openlocfilehash: e2451796cb99f57501ed74aba1dc7a3077b51881
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f10799ab32b6cb26a8b3b5b343f65b960d71357
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441609"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889096"
 ---
 # <a name="set-up-alerts-on-resource-log-events-from-vpn-gateway"></a>Waarschuwingen instellen voor resource logboek gebeurtenissen van VPN Gateway
 
@@ -20,20 +20,20 @@ Dit artikel helpt u bij het instellen van waarschuwingen op basis van bron logbo
 
 De volgende bron logboeken zijn beschikbaar in Azure:
 
-|***Naam*** | ***Beschrijving*** |
+|***Naam** _ | _*_Beschrijvingen_*_ |
 |---        | ---               |
 |GatewayDiagnosticLog | Bevat bron logboeken voor gateway configuratie gebeurtenissen, primaire wijzigingen en onderhouds gebeurtenissen |
 |TunnelDiagnosticLog | Bevat status wijzigings gebeurtenissen voor de tunnel. Tunnel Connect/Disconnect-gebeurtenissen hebben een samenvattings reden voor de status wijziging, indien van toepassing |
 |RouteDiagnosticLog | Registreert wijzigingen aan statische routes en BGP-gebeurtenissen die optreden op de gateway |
 |IKEDiagnosticLog | Registreert IKE-besturings berichten en gebeurtenissen op de gateway |
-|P2SDiagnosticLog | Registreert Point-to-site Control-berichten en gebeurtenissen op de gateway. De gegevens van de verbindings bron worden alleen voor IKEv2-verbindingen gegeven |
+|P2SDiagnosticLog | Registreert Point-to-site Control-berichten en gebeurtenissen op de gateway. De gegevens van de verbindings bron zijn alleen voor IKEv2-en OpenVPN-verbindingen. |
 
 ## <a name="set-up-alerts-in-the-azure-portal"></a><a name="setup"></a>Waarschuwingen instellen in de Azure Portal
 
 In de volgende voorbeeld stappen wordt een waarschuwing gemaakt voor een verbindings gebeurtenis waarbij een site-naar-site-VPN-tunnel is betrokken:
 
 
-1. Zoek in het Azure Portal naar **log Analytics** onder **alle services** en selecteer **log Analytics werk ruimten**.
+1. Zoek in de Azure Portal op _ *log Analytics** onder **alle services** en selecteer **log Analytics werk ruimten**.
 
    ![Selecties voor het naar Log Analytics werk ruimten gaan](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert0.png "Maken")
 
@@ -45,7 +45,7 @@ In de volgende voorbeeld stappen wordt een waarschuwing gemaakt voor een verbind
 
    ![Details voor het maken van een Log Analytics-werk ruimte](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert2.png  "Selecteer")
 
-4. Zoek uw VPN-gateway op **Monitor**de  >  Blade**Diagnostische instellingen** controleren.
+4. Zoek uw VPN-gateway op **Monitor** de  >  Blade **Diagnostische instellingen** controleren.
 
    ![Selecties voor het zoeken naar de VPN-gateway in Diagnostische instellingen](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert3.png  "Selecteer")
 

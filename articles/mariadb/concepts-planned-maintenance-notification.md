@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 2ce6959cf025d2e29f0ee3dfb3b29b3eaf5d4221
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 61313a1790fe51cb26168622cc871076c40bb511
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490829"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94887430"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mariadb"></a>Melding over gepland onderhoud in Azure Database for MariaDB
 
@@ -21,7 +21,7 @@ Meer informatie over het voorbereiden van geplande onderhouds gebeurtenissen op 
 
 Azure Database for MariaDB-service voert automatische patching uit van de onderliggende hardware, het besturings systeem en de data base-engine. De patch omvat nieuwe service functies, beveiliging en software-updates. Voor de MariaDB-engine worden upgrades van secundaire versies automatisch uitgevoerd en opgenomen als onderdeel van de patching-cyclus. Gebruikers hoeven zelf geen actie te ondernemen en er zijn geen configuratie-instellingen vereist voor patches. De patch wordt uitgebreid getest en geïmplementeerd met behulp van veilige implementatie procedures.
 
-Een gepland onderhoud is een onderhouds venster wanneer deze service-updates worden geïmplementeerd op servers in een bepaalde Azure-regio. Tijdens gepland onderhoud wordt een meldings gebeurtenis gemaakt om klanten te informeren wanneer de service-update is geïmplementeerd in de Azure-regio die als host fungeert voor hun servers. De minimale duur tussen twee gepland onderhoud is 30 dagen. U ontvangt een melding van het volgende onderhouds venster van 72 uur vooraf.
+Een gepland onderhoud is een onderhouds venster wanneer deze service-updates worden geïmplementeerd op servers in een bepaalde Azure-regio. Tijdens dit gepland onderhoud wordt een melding gecreëerd, om klanten te informeren wanneer de service-update is geïmplementeerd in de Azure-regio waarin hun servers worden gehost. De minimale duur tussen twee gepland onderhoud is 30 dagen. U ontvangt 72 uur van te voren een melding van het volgende onderhoudsvenster.
 
 ## <a name="planned-maintenance---duration-and-customer-impact"></a>Gepland onderhoud-duur en klant impact
 
@@ -46,7 +46,7 @@ U kunt de geplande onderhouds melding controleren op Azure Portal of waarschuwin
 
 ### <a name="check-planned-maintenance-notification-from-azure-portal"></a>Controleer de geplande onderhouds melding van Azure Portal
 
-1. Selecteer **service Health**In het [Azure Portal](https://portal.azure.com).
+1. Selecteer **service Health** In het [Azure Portal](https://portal.azure.com).
 2. Tabblad **gepland onderhoud** selecteren
 3. Selecteer **abonnement**, * * regio en **service** waarvoor u het geplande onderhouds bericht wilt controleren. 
    
@@ -78,7 +78,7 @@ Een tijdelijke fout, ook wel bekend als tijdelijke fout, is een fout die zichzel
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for MariaDB, stuurt u een e-mail naar het Azure Database for MariaDB team op *AskAzureDBforMySQL@service.microsoft.com* .
+- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for MariaDB, stuurt u een e-mail naar het Azure Database for MariaDB team op **AskAzureDBforMariaDB@service.microsoft.com**
 - Zie [waarschuwingen instellen](howto-alert-metric.md) voor hulp bij het maken van een waarschuwing op metrische gegevens.
 - [Verbindingsproblemen met Azure Database for MariaDB oplossen](howto-troubleshoot-common-connection-issues.md)
 - [Tijdelijke fouten afhandelen en efficiënt verbinding maken met Azure Database for MariaDB](concepts-connectivity.md)

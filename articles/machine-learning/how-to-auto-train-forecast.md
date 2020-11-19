@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 3be1d404d0cac7f9e5c9b1c2f7350cf05c5fe794
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 0bbb18a82de508f79cd2fd5dde58c1cf33520950
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93358113"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94887396"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Automatisch een time-series-prognose model trainen
 
@@ -31,7 +31,7 @@ Dit doet u als volgt:
 
 Voor een lage code kunt u de [zelf studie: prognose vraag met geautomatiseerde machine learning](tutorial-automated-ml-forecast.md) voor een time-series-prognose voor beeld met behulp van geautomatiseerde machine learning in [Azure machine learning Studio](https://ml.azure.com/).
 
-In tegens telling tot de methoden van de klassieke tijd reeks, in automatische MILLILITERs, worden waarden in het verleden ' gedraaid ' om extra dimensies voor de regressor hierop samen met andere voor spellingen. Deze aanpak omvat meerdere contextuele variabelen en hun relatie met elkaar tijdens de training. Omdat meerdere factoren van invloed kunnen zijn op een prognose, wordt deze methode goed afgestemd op de scenario's met de praktijk. Wanneer u bijvoorbeeld de verkoop, de interacties van historische trends, de wissel koers en de prijs van de omzet verlangt, wordt het resultaat van de omzet gezamenlijk gebrand. 
+In tegens telling tot de methoden van de klassieke tijd reeks, in automatische MILLILITERs, worden waarden in het verleden ' gedraaid ' om extra dimensies voor de regressor hierop samen met andere voor spellingen. Deze aanpak omvat meerdere contextuele variabelen en hun relatie met elkaar tijdens de training. Omdat meerdere factoren van invloed kunnen zijn op een prognose, wordt deze methode goed afgestemd op de scenario's met de praktijk. Wanneer u bijvoorbeeld de verkoop, interacties van historische trends, wissel koersen en prijs verlangt, wordt het resultaat van de verkoop gezamenlijk gestimuleerd. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -138,7 +138,7 @@ ForecastTCN (preview-versie)| ForecastTCN is een Neural-netwerk model dat is ont
 
 Net als bij een regressie probleem definieert u de standaard opleidings parameters, zoals het taak type, het aantal iteraties, de trainings gegevens en het aantal Kruis validaties. Voor prognose taken zijn er aanvullende para meters die moeten worden ingesteld die van invloed zijn op het experiment. 
 
-De volgende tabel bevat een overzicht van deze aanvullende para meters. Zie de [referentie documentatie](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?preserve-view=true&view=azure-ml-py) voor patronen voor syntaxis ontwerpen.
+De volgende tabel bevat een overzicht van deze aanvullende para meters. Zie de [documentatie](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py) van de ForecastingParameter-klasse voor syntaxis ontwerp patronen.
 
 | Parameter &nbsp; naam | Beschrijving | Vereist |
 |-------|-------|-------|
@@ -149,11 +149,11 @@ De volgende tabel bevat een overzicht van deze aanvullende para meters. Zie de [
 |`target_lags`|Het aantal rijen dat de doel waarden moeten worden vertraagd op basis van de frequentie van de gegevens. De vertraging wordt weer gegeven als een lijst of één geheel getal. Er moet een vertraging worden gebruikt wanneer de relatie tussen de onafhankelijke variabelen en de afhankelijke variabele standaard niet overeenkomt met of correleert. ||
 |`feature_lags`| De functies voor vertraging worden automatisch bepaald door automatische MILLILITERs wanneer `target_lags` ze zijn ingesteld en `feature_lags` ingesteld op `auto` . Het inschakelen van functie lags kan helpen de nauw keurigheid te verbeteren. Functie lags zijn standaard uitgeschakeld. ||
 |`target_rolling_window_size`|*n* historische Peri Oden die moeten worden gebruikt voor het genereren van prognose waarden, <= grootte van de Trainingsset. Als u dit weglaat, is *n* de volledige grootte van de Trainingsset. Geef deze para meter op als u alleen een bepaalde hoeveelheid geschiedenis wilt beschouwen bij het trainen van het model. Meer informatie over het [samen voegen van target-rollen](#target-rolling-window-aggregation).||
-|`short_series_handling`| Hiermee wordt het verwerken van korte tijd reeksen voor komen dat fouten tijdens de training mislukken vanwege onvoldoende gegevens. Het afhandelen van de korte serie is standaard ingesteld op waar.|
+|`short_series_handling_config`| Hiermee wordt het verwerken van korte tijd reeksen voor komen dat fouten tijdens de training mislukken vanwege onvoldoende gegevens. De verwerking van de korte serie is standaard ingesteld op `auto` . Meer informatie over [verwerking van de korte serie](#short-series-handling).|
 
 
 De volgende code, 
-* Maakt gebruik van de- `ForecastingParameters` klasse om de para meters voor de voor spellingen van uw experiment training te definiëren
+* Maakt gebruik van de- [`ForecastingParameters`](https://docs.microsoft.com/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py) klasse om de para meters voor de voor spellingen van uw experiment training te definiëren
 * Hiermee stelt `time_column_name` u de `day_datetime` waarde in op het veld in de gegevensset. 
 * Hiermee definieert `time_series_id_column_names` u de para meter voor `"store"` . Dit zorgt ervoor dat er **twee afzonderlijke time-series groepen** worden gemaakt voor de gegevens. een voor Store A en B.
 * Hiermee stelt `forecast_horizon` u de 50 in op om te voors pellen voor de hele testset. 
@@ -164,13 +164,12 @@ De volgende code,
 ```python
 from azureml.automl.core.forecasting_parameters import ForecastingParameters
 
-forecasting_parameters = ForecastingParameters(
-    time_column_name='day_datetime', 
-    forecast_horizon=50,
-    time_series_id_column_names=["store"],
-    target_lags='auto',
-    target_rolling_window_size=10
-)
+forecasting_parameters = ForecastingParameters(time_column_name='day_datetime', 
+                                               forecast_horizon=50,
+                                               time_series_id_column_names=["store"],
+                                               target_lags='auto',
+                                               target_rolling_window_size=10)
+                                              
 ```
 
 Deze `forecasting_parameters` worden vervolgens door gegeven aan uw standaard `AutoMLConfig` object, samen met het `forecasting` taak type, de primaire metrische gegevens, afsluit criteria en trainings gegevens. 
@@ -190,7 +189,7 @@ automl_config = AutoMLConfig(task='forecasting',
                              n_cross_validations=5,
                              enable_ensembling=False,
                              verbosity=logging.INFO,
-                             **time_series_settings)
+                             **forecasting_parameters)
 ```
 
 ### <a name="featurization-steps"></a>Parametrisatie-stappen
@@ -226,12 +225,16 @@ Geef in uw object op om featurizations aan te passen met de SDK `"featurization"
 
 ```python
 featurization_config = FeaturizationConfig()
+
 # `logQuantity` is a leaky feature, so we remove it.
 featurization_config.drop_columns = ['logQuantitity']
+
 # Force the CPWVOL5 feature to be of numeric type.
 featurization_config.add_column_purpose('CPWVOL5', 'Numeric')
+
 # Fill missing values in the target column, Quantity, with zeroes.
 featurization_config.add_transformer_params('Imputer', ['Quantity'], {"strategy": "constant", "fill_value": 0})
+
 # Fill mising values in the `INCOME` column with median value.
 featurization_config.add_transformer_params('Imputer', ['INCOME'], {"strategy": "median"})
 ```
@@ -260,7 +263,7 @@ Als u uitgebreide training wilt inschakelen, stelt u de `enable_dnn=True` in het
 automl_config = AutoMLConfig(task='forecasting',
                              enable_dnn=True,
                              ...
-                             **time_series_settings)
+                             **forecasting_parameters)
 ```
 > [!Warning]
 > Wanneer u DNN inschakelt voor experimenten die zijn gemaakt met de SDK, worden de [Aanbevolen model verklaringen](how-to-machine-learning-interpretability-automl.md) uitgeschakeld.
@@ -279,6 +282,35 @@ In de tabel ziet u de resulterende functie techniek die zich voordoet wanneer de
 ![doorlopend venster voor doel](./media/how-to-auto-train-forecast/target-roll.svg)
 
 Bekijk een voor beeld van een python-code met behulp van de [samenvoeg functie van het doel venster](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb).
+
+### <a name="short-series-handling"></a>Verwerking van de korte serie
+
+Voor automatische ML wordt een tijd reeks in rekening gehouden met een **korte serie** als er onvoldoende gegevens punten zijn voor het uitvoeren van de trein-en validerings fasen van model ontwikkeling. Het aantal gegevens punten varieert voor elk experiment en is afhankelijk van de max_horizon, het aantal Kruistabel validaties en de lengte van het model lookback. Dit is het maximale aantal geschiedenis dat nodig is voor het bouwen van de functies van de tijd reeks. Raadpleeg de [documentatie over short_series_handling_config](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py#short-series-handling-configuration)voor de exacte berekening.
+
+Automatische ML biedt de verwerking van korte reeksen standaard met de `short_series_handling_config` para meter in het `ForecastingParameters` object. 
+
+Als u de verwerking van de korte serie wilt inschakelen, `freq` moet u ook de para meter definiëren. Als u het standaard gedrag wilt wijzigen, `short_series_handling_config = auto` werkt u de `short_series_handling_config` para meter in uw `ForecastingParameter` object bij.  
+
+```python
+from azureml.automl.core.forecasting_parameters import ForecastingParameters
+
+forecast_parameters = ForecastingParameters(time_column_name='day_datetime', 
+                                            forecast_horizon=50,
+                                            short_series_handling_config='auto',
+                                            freq = 50
+                                            target_lags='auto')
+```
+De volgende tabel bevat een overzicht van de beschik bare instellingen voor `short_series_handling_config` .
+ 
+|Instelling|Beschrijving
+|---|---
+|`auto`| Het volgende is het standaard gedrag voor verwerking van de korte serie <li> *Als alle reeksen kort zijn*, moet u de gegevens aanvullen. <br> <li> *Als niet alle reeksen kort zijn*, verwijdert u de korte reeks. 
+|`pad`| Als `short_series_handling_config = pad` , worden met automatische ml dummy waarden toegevoegd aan elke korte reeks die wordt gevonden. Hieronder vindt u een lijst met de kolom typen en hoe deze worden aangevuld met: <li>Object kolommen met NaNs <li> Numerieke kolommen met 0 <li> Boole/Logic-kolommen met de waarde ONWAAR <li> De doel kolom wordt aangevuld met wille keurige waarden met een gemiddelde van nul en een standaard deviatie van 1. 
+|`drop`| Als `short_series_handling_config = drop` , wordt de korte serie door automatische ml gezakt en wordt deze niet gebruikt voor training of voor spellingen. Voor spellingen voor deze reeksen worden NaN geretourneerd.
+|`None`| Er wordt geen reeks opgevuld of verwijderd
+
+>[!WARNING]
+>Opvulling kan van invloed zijn op de nauw keurigheid van het resulterende model, omdat we kunst matige gegevens hebben geïntroduceerd om zonder storingen te kunnen profiteren van een eerdere training. <br> <br> Als veel van de reeksen kort zijn, ziet u mogelijk ook wat invloed heeft op de resultaten van de uitleg
 
 ## <a name="run-the-experiment"></a>Het experiment uitvoeren 
 

@@ -5,12 +5,12 @@ ms.date: 10/21/2020
 ms.topic: conceptual
 description: Beschrijft het migratie proces van Azure dev Spaces om te Bridgepen naar Kubernetes
 keywords: Azure dev Spaces, dev Spaces, docker, Kubernetes, azure, AKS, Azure Kubernetes service, containers, Bridge to Kubernetes
-ms.openlocfilehash: 7a7642d986d8490c5d0dc3c413e658b21b010798
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d48814df30c17f9b51d8642efa0960a26bbd24f4
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895253"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888518"
 ---
 # <a name="migrating-to-bridge-to-kubernetes"></a>Bridge migreren naar Kubernetes
 
@@ -85,7 +85,7 @@ Bridge to Kubernetes heeft de flexibiliteit om te werken met toepassingen die wo
 1. Als u Visual Studio gebruikt, werkt u uw Visual Studio IDE bij naar versie 16,7 of hoger en installeert u de Bridge in de Kubernetes-extensie van de [Visual Studio Marketplace][vs-marketplace]. Als u Visual Studio code gebruikt, installeert u de [Bridge in de Kubernetes-extensie][vsc-marketplace].
 1. Schakel de Azure dev Spaces-controller uit met behulp van de Azure Portal of de [Azure dev Spaces-cli][azds-delete].
 1. Gebruik [Azure Cloud shell](https://shell.azure.com). Of op Mac, Linux of Windows waarop bash is geïnstalleerd, opent u een bash shell-prompt. Zorg ervoor dat de volgende hulpprogram ma's beschikbaar zijn in uw opdracht regel omgeving: Azure CLI, docker, kubectl, krul, tar en gunzip.
-1. Een container register maken of een bestaand REGI ster gebruiken. U kunt een container register maken in azure met behulp van [Azure container Registry](../container-registry/index.yml) of met behulp van [docker hub](https://hub.docker.com/). Wanneer u Azure Cloud Shell gebruikt, is alleen Azure Container Registry beschikbaar voor het hosten van docker-installatie kopieën.
+1. Een container register maken of een bestaand REGI ster gebruiken. U kunt een container register maken in azure met behulp van [Azure container Registry](https://azure.microsoft.com/services/container-registry/) of met behulp van [docker hub](https://hub.docker.com/). Wanneer u Azure Cloud Shell gebruikt, is alleen Azure Container Registry beschikbaar voor het hosten van docker-installatie kopieën.
 1. Voer het migratie script uit om activa van Azure-ontwikkel ruimten te converteren naar Kubernetes-assets. Het script bouwt een nieuwe installatie kopie die compatibel is met Bridge naar Kubernetes, uploadt deze naar het aangewezen REGI ster en gebruikt vervolgens [helm](https://helm.sh) om het cluster bij te werken met de installatie kopie. U moet de resource groep, de naam van het AKS-cluster en een container register opgeven. Er zijn andere opdracht regel opties, zoals hier wordt weer gegeven:
 
    ```azure-cli
@@ -117,7 +117,7 @@ Bridge to Kubernetes heeft de flexibiliteit om te werken met toepassingen die wo
 
 U kunt ook een specifiek routerings-specifieke route ring gebruiken met Bridge naar Kubernetes. Het scenario voor het ontwikkelen van Azure dev Spaces maakt gebruik van meerdere Kubernetes-naam ruimten om een service van de rest van de toepassing te isoleren met behulp van het concept van de bovenliggende en onderliggende naam ruimten. Bridge to Kubernetes biedt dezelfde functionaliteit, maar met verbeterde prestatie kenmerken en binnen dezelfde toepassings naam ruimte.
 
-Voor zowel de brug naar Kubernetes-als Azure-ontwikkel ruimten moeten HTTP-headers aanwezig zijn en door gegeven worden in de gehele toepassing. Als u uw toepassing al hebt geconfigureerd voor het afhandelen van header doorgifte voor Azure dev Spaces, moet de header worden bijgewerkt. Als u wilt overstappen naar een brug naar Kubernetes vanuit Azure dev Spaces, werkt u de geconfigureerde header bij van *azds-route-as* to *Kubernetes-route-as* .
+Voor zowel de brug naar Kubernetes-als Azure-ontwikkel ruimten moeten HTTP-headers aanwezig zijn en door gegeven worden in de gehele toepassing. Als u uw toepassing al hebt geconfigureerd voor het afhandelen van header doorgifte voor Azure dev Spaces, moet de header worden bijgewerkt. Als u wilt overstappen naar een brug naar Kubernetes vanuit Azure dev Spaces, werkt u de geconfigureerde header bij van *azds-route-as* to *Kubernetes-route-as*.
 
 ## <a name="evaluate-bridge-to-kubernetes"></a>Brug evalueren naar Kubernetes
 

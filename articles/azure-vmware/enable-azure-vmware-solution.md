@@ -3,12 +3,12 @@ title: Uw Azure VMware-oplossings resource inschakelen
 description: Meer informatie over het indienen van een ondersteunings aanvraag om uw Azure VMware-oplossings resource in te scha kelen. U kunt ook meer knoop punten aanvragen in uw bestaande privécloud van Azure VMware-oplossingen.
 ms.topic: how-to
 ms.date: 11/12/2020
-ms.openlocfilehash: c9c31d8ffbf62a511f4f2ab19f995b6bc0ee0ca4
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 8e1b891559cb2d01adc9fdf834ef3c9714fe1233
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695143"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888433"
 ---
 # <a name="how-to-enable-azure-vmware-solution-resource"></a>Azure VMware Solution resource inschakelen
 Meer informatie over het indienen van een ondersteunings aanvraag om uw [Azure VMware-oplossings](introduction.md) resource in te scha kelen. U kunt ook meer knoop punten aanvragen in uw bestaande privécloud van Azure VMware-oplossingen.
@@ -78,7 +78,7 @@ Csp's moeten [micro soft Partner Center](https://partner.microsoft.com) gebruike
 
 1. Bekijk en voltooi de algemene instellingen van het abonnement voor Azure plan voor uw klant. Zie de [documentatie van micro soft Partner Center](https://docs.microsoft.com/partner-center/azure-plan-manage)voor meer informatie.
 
-Na het configureren van het Azure-abonnement en de benodigde RBAC-machtigingen zijn aanwezig als CSP, stelt u micro soft in staat om het quotum voor een Azure-abonnement in te scha kelen. Toegang tot Azure Portal van het partner centrum door gebruik te maken van **beheerder namens** (administrate) procedure.
+Na het configureren van het Azure-abonnement en de benodigde vSphere RBAC-machtigingen zijn aanwezig als CSP, stelt u micro soft in staat om het quotum voor een Azure-abonnement in te scha kelen. Toegang tot Azure Portal van het partner centrum door gebruik te maken van **beheerder namens** (administrate) procedure.
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com).
 

@@ -4,12 +4,12 @@ description: Hier vindt u antwoorden op enkele veelgestelde vragen over de Azure
 ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: dikamath
-ms.openlocfilehash: f2b46b37fc8c773062402c52f2903a7a10acc2c4
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: f83413bc54164107b8e8a4e6010f8a826a5fe327
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874709"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888416"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Veelgestelde vragen over de Azure VMware-oplossing
 
@@ -218,7 +218,7 @@ U hebt CloudAdmin-groeps privileges. Zie [toegangs-en identiteits concepten](con
 
 #### <a name="what-privileges-and-permissions-will-i-have-on-the-nsx-t-manager"></a>Welke bevoegdheden en machtigingen heeft ik op de NSX-T-Manager?
 
-U hebt volledige beheerders bevoegdheden voor NSX-T en kan toegangs beheer op basis van rollen beheren zoals u dat ook zou doen met NSX-T Data Center on-premises. Zie [toegangs-en identiteits concepten](concepts-identity.md)voor meer informatie.
+U hebt volledige beheerders bevoegdheden voor NSX-T en kan op rollen gebaseerd toegangs beheer op basis van vSphere beheren, zoals u dat ook zou doen met NSX-T Data Center. Zie [toegangs-en identiteits concepten](concepts-identity.md)voor meer informatie.
 
 > [!NOTE]
 > Er wordt een T0-router gemaakt en geconfigureerd als onderdeel van de implementatie van een privécloud. Elke wijziging van die logische router of de NSX van de virtuele machine van het rand knooppunt kan invloed hebben op de connectiviteit met uw privécloud.

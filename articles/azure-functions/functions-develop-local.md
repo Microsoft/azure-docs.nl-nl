@@ -1,14 +1,14 @@
 ---
-title: Azure functions lokaal ontwikkelen en uitvoeren
-description: Meer informatie over het coderen en testen van Azure functions op uw lokale computer voordat u deze uitvoert op Azure Functions.
+title: Azure Functions lokaal ontwikkelen en uitvoeren
+description: Meer informatie over het coderen en testen van Azure Functions op uw lokale computer voordat u deze uitvoert op Azure Functions.
 ms.topic: conceptual
 ms.date: 09/04/2018
-ms.openlocfilehash: e8af075f39cf25e39e5098d3c6aa27cac9018d2f
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: c011dff9f43de59d3f08445a7bbd5387b27563ad
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422940"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920029"
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Code-en test Azure Functions lokaal
 

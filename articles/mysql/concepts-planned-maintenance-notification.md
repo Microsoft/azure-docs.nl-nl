@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 63cc4448034b6a2ae2d74f4a2d9a0a62296678cf
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: ff197f8add65782a594d64661ffecdaced4598c2
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886478"
+ms.locfileid: "94919621"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mysql---single-server"></a>Melding over gepland onderhoud in Azure Database for MySQL-één server
 
@@ -78,7 +78,7 @@ Een tijdelijke fout, ook wel bekend als tijdelijke fout, is een fout die zichzel
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for MySQL, stuurt u een e-mail naar het Azure Database for MySQL team op **AskAzureDBforMySQL@service.microsoft.com** .
+- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for MySQL, stuurt u een e-mail naar het Azure Database for MySQL team op AskAzureDBforMySQL@service.microsoft.com
 - Zie [waarschuwingen instellen](howto-alert-on-metric.md) voor hulp bij het maken van een waarschuwing op metrische gegevens.
 - [Verbindings problemen met Azure Database for MySQL-één server oplossen](howto-troubleshoot-common-connection-issues.md)
 - [Tijdelijke fouten afhandelen en efficiënt verbinding maken met Azure Database for MySQL-één server](concepts-connectivity.md)

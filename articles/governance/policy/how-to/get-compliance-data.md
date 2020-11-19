@@ -3,12 +3,12 @@ title: Nalevings gegevens voor beleid ophalen
 description: Azure Policy evaluaties en effecten bepalen de naleving. Meer informatie over hoe u de compatibiliteits Details van uw Azure-resources kunt ophalen.
 ms.date: 10/05/2020
 ms.topic: how-to
-ms.openlocfilehash: 36645d5eb50aaf571c608fc51127b47ac885777d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 112badce00ec56df0f80c7b51bb4789a414cdcbd
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320426"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920233"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Compatibiliteits gegevens van Azure-resources ophalen
 
@@ -53,7 +53,7 @@ Deze scan is een asynchroon proces.
 
 Gebruik de [Azure Policy compatibiliteits scan actie](https://github.com/marketplace/actions/azure-policy-compliance-scan) om een evaluatie scan op aanvraag te activeren vanuit uw [github-werk stroom](https://docs.github.com/actions/configuring-and-managing-workflows/configuring-a-workflow#about-workflows) op een of meer resources, resource groepen of abonnementen, en Gate the workflow op basis van de compatibiliteits status van bronnen. U kunt de werk stroom ook zo configureren dat deze op een gepland tijdstip wordt uitgevoerd, zodat u de meest recente nalevings status op een geschikt tijdstip krijgt. Deze GitHub actie kan optioneel een rapport genereren over de nalevings status van gescande resources voor verdere analyse of voor archivering.
 
-In het volgende voor beeld wordt een compatibiliteits scan voor een abonnement uitgevoerd. 
+In het volgende voorbeeld wordt een nalevingsscan voor een abonnement uitgevoerd. 
 
 ```yaml
 on:
@@ -80,7 +80,7 @@ Voor meer informatie en voor beelden van werk stromen raadpleegt u de [github-ac
 
 #### <a name="on-demand-evaluation-scan---azure-cli"></a>Evaluatie scan op aanvraag-Azure CLI
 
-De compatibiliteits scan wordt gestart met de opdracht [AZ policy state trigger-scan](/cli/azure/policy/state#az-policy-state-trigger-scan) .
+De compatibiliteits scan wordt gestart met de opdracht [AZ policy state trigger-scan](/cli/azure/policy/state#az_policy_state_trigger_scan) .
 
 `az policy state trigger-scan`Hiermee wordt standaard een evaluatie gestart voor alle resources in het huidige abonnement. Als u een evaluatie voor een specifieke resource groep wilt starten, gebruikt u de para meter voor de **resource groep** . In het volgende voor beeld wordt een nalevings scan gestart in het huidige abonnement voor de resource groep _MyRG_ :
 
@@ -184,23 +184,23 @@ Stel dat u een resource groep hebt – ContsoRG, waarbij sommige opslag accounts
 
 In dit voor beeld moet u zich op het hoede zijn voor beveiligings Risico's. Nu u een beleids toewijzing hebt gemaakt, wordt deze geëvalueerd voor alle opgenomen en niet-uitgesloten opslag accounts in de resource groep ContosoRG. De drie niet-compatibele opslag accounts worden gecontroleerd, waardoor de status ervan wordt gewijzigd in **niet-compatibel.**
 
-:::image type="complex" source="../media/getting-compliance-data/resource-group03.png" alt-text="Diagram van opslag accounts die worden blootgesteld aan open bare netwerken in de resource groep contoso R G." border="false":::
+:::image type="complex" source="../media/getting-compliance-data/resource-group03.png" alt-text="Diagram van naleving van het opslag account in de resource groep contoso R G." border="false":::
    Diagram met afbeeldingen voor vijf opslag accounts in de resource groep contoso R G. Opslag accounts die zich in één en drie bevinden, hebben nu een groen vinkje, terwijl voor opslag accounts twee, vier en vijf nu rode waarschuwings tekens onder zijn.
 :::image-end:::
 
-Naast het **conform** -en **niet-nalevings**beleid en de bronnen gelden vier andere statussen:
+Naast het **conform** -en **niet-nalevings** beleid en de bronnen gelden vier andere statussen:
 
 - **Uitgezonderd**: de resource bevindt zich binnen het bereik van een toewijzing, maar heeft een [gedefinieerde uitzonde ring](../concepts/exemption-structure.md).
 - **Conflicterende**: er zijn twee of meer beleids definities met conflicterende regels. Bijvoorbeeld, twee definities voegen dezelfde tag toe met verschillende waarden.
 - **Niet gestart**: de evaluatie cyclus is niet gestart voor het beleid of de resource.
 - **Niet geregistreerd**: de Azure Policy resource provider is niet geregistreerd of het account dat is aangemeld, heeft geen machtiging voor het lezen van de compatibiliteits gegevens.
 
-Azure Policy maakt gebruik van de velden **type**, **naam**of **kind** in de definitie om te bepalen of een resource een overeenkomst is. Wanneer de bron overeenkomt, wordt deze beschouwd als toepasselijk en heeft deze de status **compatibel**, **niet-compatibel**of **uitgezonderd**. Als een van beide **typen**, namen **of typen** de enige eigenschap in de definitie is, worden alle opgenomen en niet-vrijgestelde resources beschouwd als toepasselijk en geëvalueerd. **name**
+Azure Policy maakt gebruik van de velden **type**, **naam** of **kind** in de definitie om te bepalen of een resource een overeenkomst is. Wanneer de bron overeenkomt, wordt deze beschouwd als toepasselijk en heeft deze de status **compatibel**, **niet-compatibel** of **uitgezonderd**. Als een van beide **typen**, namen **of typen** de enige eigenschap in de definitie is, worden alle opgenomen en niet-vrijgestelde resources beschouwd als toepasselijk en geëvalueerd. **name**
 
-Het nalevings percentage wordt bepaald door het verdelen van de **compatibele** en **vrijgestelde** resources op basis van het _totale aantal resources_. _Het totale aantal resources_ wordt gedefinieerd als de som van de **compatibele**, **niet-compatibele**, **uitgesloten**en **conflicterende** resources. De algemene compatibiliteits aantallen zijn de som van afzonderlijke resources die in **overeenstemming** zijn met of worden **uitgesloten** van de som van alle afzonderlijke resources. In de onderstaande afbeelding zijn er 20 afzonderlijke resources die van toepassing zijn en slechts één **niet-compatibel**is.
+Het nalevings percentage wordt bepaald door het verdelen van de **compatibele** en **vrijgestelde** resources op basis van het _totale aantal resources_. _Het totale aantal resources_ wordt gedefinieerd als de som van de **compatibele**, **niet-compatibele**, **uitgesloten** en **conflicterende** resources. De algemene compatibiliteits aantallen zijn de som van afzonderlijke resources die in **overeenstemming** zijn met of worden **uitgesloten** van de som van alle afzonderlijke resources. In de onderstaande afbeelding zijn er 20 afzonderlijke resources die van toepassing zijn en slechts één **niet-compatibel** is.
 De algemene bron compatibiliteit is 95% (19 van 20).
 
-:::image type="content" source="../media/getting-compliance-data/simple-compliance.png" alt-text="Diagram van opslag accounts die worden blootgesteld aan open bare netwerken in de resource groep contoso R G." border="false":::
+:::image type="content" source="../media/getting-compliance-data/simple-compliance.png" alt-text="Scherm opname van Details van beleids naleving van de pagina naleving." border="false":::
 
 > [!NOTE]
 > Naleving van regelgeving in Azure Policy is een preview-functie. Nalevings eigenschappen van de SDK en pagina's in de portal zijn anders voor ingeschakelde initiatieven. Zie [naleving van regelgeving](../concepts/regulatory-compliance.md) voor meer informatie
@@ -209,11 +209,11 @@ De algemene bron compatibiliteit is 95% (19 van 20).
 
 De Azure Portal demonstreert een grafische ervaring voor het visualiseren en het leren van de status van naleving in uw omgeving. Op de pagina **beleid** bevat de optie **overzicht** Details over de beschik bare bereiken over de naleving van beide beleids regels en initiatieven. Samen met de compatibiliteits status en het aantal per toewijzing bevat het een diagram met de compatibiliteit van de afgelopen zeven dagen. De pagina **naleving** bevat veel dezelfde informatie (met uitzonde ring van de grafiek), maar biedt extra filters en sorteer opties.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-page.png" alt-text="Diagram van opslag accounts die worden blootgesteld aan open bare netwerken in de resource groep contoso R G." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-page.png" alt-text="Scherm afbeelding van de nalevings pagina, filter opties en Details." border="false":::
 
 Omdat een beleid of initiatief kan worden toegewezen aan verschillende bereiken, bevat de tabel het bereik voor elke toewijzing en het type definitie dat is toegewezen. Er worden ook het aantal niet-compatibele resources en niet-compatibele beleids regels voor elke toewijzing gegeven. Het selecteren van een beleid of initiatief in de tabel biedt een diep gaande blik op de naleving van de desbetreffende toewijzing.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-details.png" alt-text="Diagram van opslag accounts die worden blootgesteld aan open bare netwerken in de resource groep contoso R G." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-details.png" alt-text="Scherm opname van de pagina nalevings Details, inclusief aantallen en Details van resource-compatibel." border="false":::
 
 De lijst met resources op het tabblad **resource compatibiliteit** bevat de evaluatie status van bestaande resources voor de huidige toewijzing. Het tabblad wordt standaard ingesteld op **niet-compatibel**, maar kan worden gefilterd.
 Gebeurtenissen (toevoegen, controleren, weigeren, implementeren, wijzigen) die zijn geactiveerd door de aanvraag om een resource te maken, worden weer gegeven op het tabblad **gebeurtenissen** .
@@ -221,19 +221,19 @@ Gebeurtenissen (toevoegen, controleren, weigeren, implementeren, wijzigen) die z
 > [!NOTE]
 > Voor een AKS-engine beleid is de weer gegeven resource de resource groep.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-events.png" alt-text="Diagram van opslag accounts die worden blootgesteld aan open bare netwerken in de resource groep contoso R G." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-events.png" alt-text="Scherm afbeelding van het tabblad gebeurtenissen op de pagina nalevings Details." border="false":::
 
 <a name="component-compliance"></a> Voor resources van de [resource provider modus](../concepts/definition-structure.md#resource-provider-modes) selecteert u op het tabblad **resource naleving** de resource, klikt u met de rechter muisknop op de rij en selecteert u **compatibiliteits details weer geven** de details van de onderdeel naleving. Deze pagina bevat ook tabbladen voor een overzicht van de beleids regels die zijn toegewezen aan deze resource, gebeurtenissen, onderdeel gebeurtenissen en wijzigings geschiedenis.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-components.png" alt-text="Diagram van opslag accounts die worden blootgesteld aan open bare netwerken in de resource groep contoso R G." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-components.png" alt-text="Scherm afbeelding van het tabblad Compatibiliteit van onderdelen en Details van naleving voor een toewijzing van de resource provider modus." border="false":::
 
 Klik op de pagina Resource naleving met de rechter muisknop op de rij van de gebeurtenis waarvoor u meer informatie wilt verzamelen en selecteer **activiteiten logboeken weer geven**. De pagina activiteiten logboek wordt geopend en wordt vooraf gefilterd op de zoek opdracht met Details voor de toewijzing en de gebeurtenissen. Het activiteiten logboek bevat aanvullende context en informatie over deze gebeurtenissen.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-activitylog.png" alt-text="Diagram van opslag accounts die worden blootgesteld aan open bare netwerken in de resource groep contoso R G." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-activitylog.png" alt-text="Scherm opname van het activiteiten logboek voor de Azure Policy activiteiten en evaluaties." border="false":::
 
 ### <a name="understand-non-compliance"></a>Meer informatie over niet-naleving
 
-Wanneer een resource als **niet-compatibel**wordt beschouwd, zijn er veel mogelijke redenen. Zie [niet-naleving bepalen](./determine-non-compliance.md)om de reden vast te stellen waarom een resource **niet-compatibel** is of om de wijziging te vinden.
+Wanneer een resource als **niet-compatibel** wordt beschouwd, zijn er veel mogelijke redenen. Zie [niet-naleving bepalen](./determine-non-compliance.md)om de reden vast te stellen waarom een resource **niet-compatibel** is of om de wijziging te vinden.
 
 ## <a name="command-line"></a>Opdrachtregel
 
@@ -287,7 +287,7 @@ De uitvoer geeft een samen vatting van het abonnement. In de voorbeeld uitvoer h
 
 ### <a name="query-for-resources"></a>Query voor resources
 
-In het bovenstaande voor beeld bevat **Value. policyAssignments. policyDefinitions. results. queryResultsUri** een voor beeld-URI voor alle niet-compatibele resources voor een specifieke beleids definitie. Op de **$filter** waarde is ComplianceState gelijk aan ' niet-compatibel ', PolicyAssignmentId is opgegeven voor de beleids definitie en vervolgens de PolicyDefinitionId zelf. De reden voor het opnemen van de PolicyAssignmentId in het filter is omdat de PolicyDefinitionId kan bestaan in verschillende beleids-of initiatief toewijzingen met verschillende bereiken. Door zowel de PolicyAssignmentId als de PolicyDefinitionId op te geven, kunnen we expliciet worden gebruikt in de resultaten die we zoeken. Voorheen werd voor PolicyStates de laatste **versie**gebruikt, waarbij automatisch een **van** - **en-** tijd venster van de laatste 24 uur wordt ingesteld.
+In het bovenstaande voor beeld bevat **Value. policyAssignments. policyDefinitions. results. queryResultsUri** een voor beeld-URI voor alle niet-compatibele resources voor een specifieke beleids definitie. Op de **$filter** waarde is ComplianceState gelijk aan ' niet-compatibel ', PolicyAssignmentId is opgegeven voor de beleids definitie en vervolgens de PolicyDefinitionId zelf. De reden voor het opnemen van de PolicyAssignmentId in het filter is omdat de PolicyDefinitionId kan bestaan in verschillende beleids-of initiatief toewijzingen met verschillende bereiken. Door zowel de PolicyAssignmentId als de PolicyDefinitionId op te geven, kunnen we expliciet worden gebruikt in de resultaten die we zoeken. Voorheen werd voor PolicyStates de laatste **versie** gebruikt, waarbij automatisch een **van** - **en-** tijd venster van de laatste 24 uur wordt ingesteld.
 
 ```http
 https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=ComplianceState eq 'NonCompliant' and PolicyAssignmentId eq '/subscriptions/{subscriptionId}/resourcegroups/rg-tags/providers/microsoft.authorization/policyassignments/37ce239ae4304622914f0c77' and PolicyDefinitionId eq '/providers/microsoft.authorization/policydefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62'
@@ -333,7 +333,7 @@ Het onderstaande voor beeld antwoord is afgekapt tot één niet-conforme resourc
 
 ### <a name="view-events"></a>Gebeurtenissen weergeven
 
-Wanneer een resource wordt gemaakt of bijgewerkt, wordt een resultaat van een beleids evaluatie gegenereerd. Resultaten worden _beleids gebeurtenissen_genoemd. Gebruik de volgende URI om recente beleids gebeurtenissen weer te geven die zijn gekoppeld aan het abonnement.
+Wanneer een resource wordt gemaakt of bijgewerkt, wordt een resultaat van een beleids evaluatie gegenereerd. Resultaten worden _beleids gebeurtenissen_ genoemd. Gebruik de volgende URI om recente beleids gebeurtenissen weer te geven die zijn gekoppeld aan het abonnement.
 
 ```http
 https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyEvents/default/queryResults?api-version=2019-10-01
@@ -685,7 +685,7 @@ Trent Baker
 
 Als u een [log Analytics-werk ruimte](../../../azure-monitor/log-query/log-query-overview.md) hebt met `AzureActivity` van de [analyse van activiteitenlogboek oplossing](../../../azure-monitor/platform/activity-log.md) die aan uw abonnement is gekoppeld, kunt u de resultaten van de niet-naleving van de evaluatie van nieuwe en bijgewerkte resources ook weer geven met behulp van eenvoudige Kusto-query's en de `AzureActivity` tabel. Met details in Azure Monitor-logboeken kunnen waarschuwingen worden geconfigureerd om niet-naleving te controleren.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-loganalytics.png" alt-text="Diagram van opslag accounts die worden blootgesteld aan open bare netwerken in de resource groep contoso R G." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-loganalytics.png" alt-text="Scherm opname van Azure Monitor logboeken met Azure Policy acties in de tabel AzureActivity." border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

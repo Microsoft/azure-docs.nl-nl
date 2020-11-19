@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 61313a1790fe51cb26168622cc871076c40bb511
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 1c9ae694fefcede599331d5d57a298bda4739f53
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887430"
+ms.locfileid: "94920522"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mariadb"></a>Melding over gepland onderhoud in Azure Database for MariaDB
 
@@ -78,7 +78,7 @@ Een tijdelijke fout, ook wel bekend als tijdelijke fout, is een fout die zichzel
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for MariaDB, stuurt u een e-mail naar het Azure Database for MariaDB team op **AskAzureDBforMariaDB@service.microsoft.com**
+- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for MariaDB, stuurt u een e-mail naar het Azure Database for MariaDB team op AskAzureDBforMariaDB@service.microsoft.com
 - Zie [waarschuwingen instellen](howto-alert-metric.md) voor hulp bij het maken van een waarschuwing op metrische gegevens.
 - [Verbindingsproblemen met Azure Database for MariaDB oplossen](howto-troubleshoot-common-connection-issues.md)
 - [Tijdelijke fouten afhandelen en efficiënt verbinding maken met Azure Database for MariaDB](concepts-connectivity.md)

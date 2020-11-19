@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: how-to, automl
 ms.date: 03/09/2020
-ms.openlocfilehash: a79fc0311e940b9b4eb3e14838ef22e09342a066
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 65ce11581972c83b0294c0afcbe95e5a35ef2471
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357994"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920573"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Modellen trainen met geautomatiseerde machine learning in de cloud
 
@@ -45,7 +45,7 @@ ws = Workspace.from_config()
 
 Maak het [`AmlCompute`](/python/api/azureml-core/azureml.core.compute.amlcompute%28class%29?preserve-view=true&view=azure-ml-py) doel in uw werk ruimte ( `ws` ) als deze nog niet bestaat.
 
-**Geschatte tijd** : het maken van het AmlCompute-doel duurt ongeveer 5 minuten.
+**Geschatte tijd**: het maken van het AmlCompute-doel duurt ongeveer 5 minuten.
 
 ```python
 from azureml.core.compute import AmlCompute
@@ -220,7 +220,7 @@ Als u zich niet in een Jupyter-notebook bevindt, kunt u de URL van de uitvoering
 remote_run.get_portal_url()
 ```
 
-Dezelfde informatie is beschikbaar in uw werk ruimte.  Zie [inzicht in geautomatiseerde machine learning resultaten](how-to-understand-automated-ml.md)voor meer informatie over deze resultaten.
+Dezelfde informatie is beschikbaar in uw werk ruimte.  Zie voor meer informatie over deze resultaten [geautomatiseerd machine learning resultaten evalueren](how-to-understand-automated-ml.md).
 
 ## <a name="example"></a>Voorbeeld
 

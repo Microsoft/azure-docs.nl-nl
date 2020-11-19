@@ -3,12 +3,12 @@ title: Beleid voor het schrijven van matrix eigenschappen voor bronnen
 description: Meer informatie over het werken met matrix parameters en matrix-taal expressies, de alias [*] evalueren en elementen toevoegen met Azure Policy definitie regels.
 ms.date: 10/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 92339a6da4fd2061d66935cc8d04428c69822862
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 60044d4a599c14088ea923a6a14cb46543646995
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323231"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920454"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Beleid voor het schrijven van matrix eigenschappen op Azure-resources
 
@@ -17,7 +17,7 @@ Azure Resource Manager eigenschappen worden meestal gedefinieerd als teken reeks
 - Het type [definitie parameter](../concepts/definition-structure.md#parameters), om meerdere opties te bieden
 - Onderdeel van een [beleids regel](../concepts/definition-structure.md#policy-rule) met de voor waarden **in** of **notIn**
 - Onderdeel van een beleids regel waarmee de [ \[ \* \] alias](../concepts/definition-structure.md#understanding-the--alias) wordt geëvalueerd om te evalueren:
-  - Scenario's zoals **geen** , **alle** of **alle**
+  - Scenario's zoals **geen**, **alle** of **alle**
   - Complexe scenario's met **aantal**
 - In het [effect toevoegen](../concepts/effects.md#append) om te vervangen of toe te voegen aan een bestaande matrix
 
@@ -28,7 +28,7 @@ In dit artikel wordt elk gebruik door Azure Policy beschreven en worden verschil
 ### <a name="define-a-parameter-array"></a>Een parameter matrix definiëren
 
 Als u een para meter als een matrix definieert, kan het beleid flexibel zijn wanneer er meer dan één waarde nodig is.
-Met deze beleids definitie kunt u één locatie voor de para meter **allowedLocations** en de standaard waarden voor _eastus2_ :
+Met deze beleids definitie kunt u één locatie voor de para meter **allowedLocations** en de standaard waarden voor _eastus2_:
 
 ```json
 "parameters": {
@@ -44,7 +44,7 @@ Met deze beleids definitie kunt u één locatie voor de para meter **allowedLoca
 }
 ```
 
-Als **type** is _teken reeks_ , kan slechts één waarde worden ingesteld wanneer het beleid wordt toegewezen. Als dit beleid is toegewezen, zijn resources in het bereik alleen toegestaan binnen één Azure-regio. De meeste beleids definities moeten een lijst met goedgekeurde opties toestaan, zoals het toestaan van _eastus2_ , _oostus_ en _westus2_.
+Als **type** is _teken reeks_, kan slechts één waarde worden ingesteld wanneer het beleid wordt toegewezen. Als dit beleid is toegewezen, zijn resources in het bereik alleen toegestaan binnen één Azure-regio. De meeste beleids definities moeten een lijst met goedgekeurde opties toestaan, zoals het toestaan van _eastus2_, _oostus_ en _westus2_.
 
 Als u de beleids definitie wilt maken om meerdere opties toe te staan, gebruikt u het _matrix_ **type**. Hetzelfde beleid kan als volgt worden herschreven:
 
@@ -75,7 +75,7 @@ Deze nieuwe parameter definitie heeft meer dan één waarde tijdens de beleids t
 
 ### <a name="pass-values-to-a-parameter-array-during-assignment"></a>Waarden door geven aan een parameter matrix tijdens toewijzing
 
-Wanneer u het beleid toewijst via de Azure Portal, wordt een para meter van het **type** _matrix_ weer gegeven als één tekstvak. De hint zegt ' use; om waarden te scheiden. (bijvoorbeeld Londen; New York) ". Gebruik de volgende teken reeks om de toegestane locatie waarden van _eastus2_ , _oostus_ en _westus2_ aan de para meter door te geven:
+Wanneer u het beleid toewijst via de Azure Portal, wordt een para meter van het **type** _matrix_ weer gegeven als één tekstvak. De hint zegt ' use; om waarden te scheiden. (bijvoorbeeld Londen; New York) ". Gebruik de volgende teken reeks om de toegestane locatie waarden van _eastus2_, _oostus_ en _westus2_ aan de para meter door te geven:
 
 `eastus2;eastus;westus2`
 
@@ -95,7 +95,7 @@ De notatie voor de parameter waarde is anders wanneer u Azure CLI, Azure PowerSh
 
 Gebruik de volgende opdrachten om deze teken reeks te gebruiken voor elke SDK:
 
-- Azure CLI: opdracht [AZ Policy Assignment Create](/cli/azure/policy/assignment#az-policy-assignment-create) with para meter **params**
+- Azure CLI: opdracht [AZ Policy Assignment Create](/cli/azure/policy/assignment#az_policy_assignment_create) with para meter **params**
 - Azure PowerShell: cmdlet [New-AzPolicyAssignment](/powershell/module/az.resources/New-Azpolicyassignment) met para meter **PolicyParameter**
 - REST API: in de _put_ -bewerking [maken](/rest/api/resources/policyassignments/create) als onderdeel van de aanvraag tekst als de waarde van de **Eigenschappen. para meters** -eigenschap
 
@@ -134,7 +134,7 @@ Het maken van deze beleids definitie via de Azure Portal leidt tot een fout, zoa
 
 - "Het beleid {GUID} kan niet worden geparametriseerde vanwege validatie fouten. Controleer of de beleids parameters juist zijn gedefinieerd. Het evaluatie resultaat van de interne uitzonde ring van de taal expressie [para meters (' allowedLocations ')] ' is van het type ' matrix ', het verwachte type is ' String '. '
 
-Het verwachte **type** voor waarde `equals` is _teken reeks_. Omdat **allowedLocations** is gedefinieerd als **type** _matrix_ , evalueert de beleids engine de expressie van de taal en genereert de fout. Met de `in` `notIn` voor-voor waarde verwacht de beleids engine de **type** _matrix_ in de taal expressie. Als u dit fout bericht wilt oplossen, wijzigt `equals` u in `in` of `notIn` .
+Het verwachte **type** voor waarde `equals` is _teken reeks_. Omdat **allowedLocations** is gedefinieerd als **type** _matrix_, evalueert de beleids engine de expressie van de taal en genereert de fout. Met de `in` `notIn` voor-voor waarde verwacht de beleids engine de **type** _matrix_ in de taal expressie. Als u dit fout bericht wilt oplossen, wijzigt `equals` u in `in` of `notIn` .
 
 ## <a name="referencing-array-resource-properties"></a>Verwijzen naar eigenschappen van matrix resources
 
@@ -201,7 +201,7 @@ Met de `field()` functie is de geretourneerde waarde de matrix van de aanvraag i
 
 #### <a name="referencing-the-array-members-collection"></a>Verwijzen naar de verzameling matrix leden
 
-Aliassen die gebruikmaken `[*]` van de syntaxis, vertegenwoordigen een **verzameling eigenschaps waarden die zijn geselecteerd uit een matrix eigenschap** , die anders is dan de matrix eigenschap zelf selecteren. In het geval van wordt `Microsoft.Test/resourceType/stringArray[*]` een verzameling met alle leden van weer gegeven `stringArray` . Zoals eerder vermeld, `field` controleert een voor waarde of alle geselecteerde bron eigenschappen voldoen aan de voor waarde, daarom is de volgende voor waarde alleen waar als **alle** leden van `stringArray` gelijk zijn aan ' "waarde" '.
+Aliassen die gebruikmaken `[*]` van de syntaxis, vertegenwoordigen een **verzameling eigenschaps waarden die zijn geselecteerd uit een matrix eigenschap**, die anders is dan de matrix eigenschap zelf selecteren. In het geval van wordt `Microsoft.Test/resourceType/stringArray[*]` een verzameling met alle leden van weer gegeven `stringArray` . Zoals eerder vermeld, `field` controleert een voor waarde of alle geselecteerde bron eigenschappen voldoen aan de voor waarde, daarom is de volgende voor waarde alleen waar als **alle** leden van `stringArray` gelijk zijn aan ' "waarde" '.
 
 ```json
 {
@@ -311,7 +311,7 @@ Dit gedrag werkt ook met geneste matrices. Bijvoorbeeld, de volgende `count` exp
 }
 ```
 
-De kracht van `count` is in de `where` voor waarde. Wanneer deze is opgegeven, Azure Policy de matrix leden inventariseren en elke voor waarde evalueren, waarbij wordt geteld hoeveel matrix leden er zijn geëvalueerd `true` . In elk herhaling van de evaluatie van de `where` voor waarde, Azure Policy een lid van één matrix selecteren * **i** _ en de resource-inhoud evalueren `where` aan de voor waarde _*, alsof * *_i_*_ het enige lid van de array_ * is. Als er slechts één matrixlid in elke iteratie beschikbaar is, kunt u complexe voor waarden Toep assen op elk afzonderlijk lid van de matrix.
+De kracht van `count` is in de `where` voor waarde. Wanneer deze is opgegeven, Azure Policy de matrix leden inventariseren en elke voor waarde evalueren, waarbij wordt geteld hoeveel matrix leden er zijn geëvalueerd `true` . In elk herhaling van de evaluatie van de `where` voor waarde, Azure Policy een lid van één matrix selecteren ***i** _ en de resource-inhoud evalueren `where` aan de voor waarde _*, alsof **_i_*_ het enige lid van de array_ * is. Als er slechts één matrixlid in elke iteratie beschikbaar is, kunt u complexe voor waarden Toep assen op elk afzonderlijk lid van de matrix.
 
 Voorbeeld:
 ```json

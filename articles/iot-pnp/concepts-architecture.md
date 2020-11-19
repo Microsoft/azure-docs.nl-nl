@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 32e67bd7f30fecee3449935a35235844a047957b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a87617e1cc6910b4c807aa90f413efe94b6e6953
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91574315"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920301"
 ---
 # <a name="iot-plug-and-play-architecture"></a>IoT Plug and Play-architectuur
 
@@ -36,7 +36,7 @@ De [model opslagplaats](./concepts-model-repository.md) is een archief voor mode
 
 Met de Web-UI kunt u de modellen en interfaces beheren.
 
-De model opslagplaats maakt gebruik van RBAC zodat u de toegang tot Interface definities kunt beperken.
+De model opslagplaats heeft ingebouwde op rollen gebaseerde toegangs beheer functies waarmee u de toegang tot Interface definities kunt beperken.
 
 ## <a name="devices"></a>Apparaten
 

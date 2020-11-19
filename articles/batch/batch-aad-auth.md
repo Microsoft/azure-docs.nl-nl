@@ -4,12 +4,12 @@ description: Batch ondersteunt Azure AD voor verificatie vanuit de batch-service
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: has-adal-ref
-ms.openlocfilehash: cb8306da4022ea1819e2da32a2f513c83bed309f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 685b84f1e628ea67689d3de8bf64c9641edba6fc
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92309377"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920505"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Batch-service oplossingen verifiëren met Active Directory
 
@@ -53,9 +53,9 @@ Gebruik het **Azure batch resource-eind punt** om een token te verkrijgen voor h
 
 De eerste stap bij het gebruik van Azure AD voor verificatie is het registreren van uw toepassing in een Azure AD-Tenant. Als u uw toepassing registreert, kunt u de Azure [Active Directory Authentication Library](../active-directory/azuread-dev/active-directory-authentication-libraries.md) (ADAL) aanroepen vanuit uw code. De ADAL biedt een API voor verificatie met Azure AD vanuit uw toepassing. Het registreren van uw toepassing is vereist, ongeacht of u een geïntegreerde verificatie of een Service-Principal wilt gebruiken.
 
-Wanneer u uw toepassing registreert, geeft u informatie over uw toepassing op in azure AD. Azure AD biedt vervolgens een toepassings-ID (ook wel een *client-id*genoemd) die u gebruikt om uw toepassing te koppelen aan Azure ad tijdens runtime. Zie voor meer informatie over de toepassings-ID [toepassings-en Service-Principal-objecten in azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md).
+Wanneer u uw toepassing registreert, geeft u informatie over uw toepassing op in azure AD. Azure AD biedt vervolgens een toepassings-ID (ook wel een *client-id* genoemd) die u gebruikt om uw toepassing te koppelen aan Azure ad tijdens runtime. Zie voor meer informatie over de toepassings-ID [toepassings-en Service-Principal-objecten in azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md).
 
-Als u uw batch-toepassing wilt registreren, volgt u de stappen in de sectie **een toepassing registreren** in [Quick Start: een toepassing registreren bij het micro soft Identity-platform](../active-directory/develop/quickstart-register-app.md). Als u uw toepassing registreert als een systeem eigen toepassing, kunt u een geldige URI voor de **omleidings-URI**opgeven. Het hoeft geen echt eind punt te zijn.
+Als u uw batch-toepassing wilt registreren, volgt u de stappen in de sectie **een toepassing registreren** in [Quick Start: een toepassing registreren bij het micro soft Identity-platform](../active-directory/develop/quickstart-register-app.md). Als u uw toepassing registreert als een systeem eigen toepassing, kunt u een geldige URI voor de **omleidings-URI** opgeven. Het hoeft geen echt eind punt te zijn.
 
 Nadat u uw toepassing hebt geregistreerd, ziet u de toepassings-ID:
 
@@ -77,15 +77,15 @@ Als u verificatie met geïntegreerde verificatie wilt uitvoeren, moet u de toepa
 
 Nadat u uw toepassing hebt geregistreerd, voert u de volgende stappen uit in de Azure Portal om deze toegang tot de batch-service te verlenen:
 
-1. Kies in het Azure Portal **alle services**en selecteer vervolgens **app-registraties**.
+1. Kies in het Azure Portal **alle services** en selecteer vervolgens **app-registraties**.
 1. Zoek de naam van uw toepassing in de lijst met app-registraties.
 1. Selecteer de toepassing en selecteer **API-machtigingen**.
 1. Selecteer in de sectie **API-machtigingen** de optie **een machtiging toevoegen**.
-1. In **een API selecteren zoekt u**naar de batch-API. Zoek deze tekenreeksen totdat u de API hebt gevonden:
+1. In **een API selecteren zoekt u** naar de batch-API. Zoek deze tekenreeksen totdat u de API hebt gevonden:
     1. **Microsoft Azure Batch**
     1. **ddbf3205-c6bd-46ae-8127-60eb93363864** is de id voor de Batch-API.
 1. Wanneer u de batch-API hebt gevonden, selecteert u deze en kiest u **selecteren**.
-1. In **machtigingen selecteren**selecteert u het selectie vakje naast **toegang tot Azure batch service** en selecteert u vervolgens **machtigingen toevoegen**.
+1. In **machtigingen selecteren** selecteert u het selectie vakje naast **toegang tot Azure batch service** en selecteert u vervolgens **machtigingen toevoegen**.
 
 De sectie **API-machtigingen** geeft nu aan dat uw Azure AD-toepassing toegang heeft tot zowel Microsoft Graph als de API van de batch-service. Er worden automatisch machtigingen verleend aan Microsoft Graph wanneer u uw app voor het eerst registreert bij Azure AD.
 
@@ -268,13 +268,13 @@ public static async Task<string> GetAuthenticationTokenAsync()
 Maak een **BatchTokenCredentials** -object dat de gemachtigde als para meter gebruikt. Gebruik deze referenties om een **BatchClient** -object te openen. U kunt dat **BatchClient** -object gebruiken voor volgende bewerkingen voor de batch-service:
 
 ```csharp
-public static async Task PerformBatchOperations()
+public static void PerformBatchOperations()
 {
     Func<Task<string>> tokenProvider = () => GetAuthenticationTokenAsync();
 
-    using (var client = await BatchClient.OpenAsync(new BatchTokenCredentials(BatchAccountUrl, tokenProvider)))
+    using (var client = BatchClient.Open(new BatchTokenCredentials(BatchAccountUrl, tokenProvider)))
     {
-        await client.JobOperations.ListJobs().ToListAsync();
+        client.JobOperations.ListJobs();
     }
 }
 ```
@@ -336,13 +336,13 @@ public static async Task<string> GetAuthenticationTokenAsync()
 Maak een **BatchTokenCredentials** -object dat de gemachtigde als para meter gebruikt. Gebruik deze referenties om een **BatchClient** -object te openen. Gebruik vervolgens dat **BatchClient** -object voor volgende bewerkingen voor de batch-service:
 
 ```csharp
-public static async Task PerformBatchOperations()
+public static void PerformBatchOperations()
 {
     Func<Task<string>> tokenProvider = () => GetAuthenticationTokenAsync();
 
-    using (var client = await BatchClient.OpenAsync(new BatchTokenCredentials(BatchAccountUrl, tokenProvider)))
+    using (var client = BatchClient.Open(new BatchTokenCredentials(BatchAccountUrl, tokenProvider)))
     {
-        await client.JobOperations.ListJobs().ToListAsync();
+        client.JobOperations.ListJobs();
     }
 }
 ```

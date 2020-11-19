@@ -9,12 +9,12 @@ ms.subservice: certificates
 ms.topic: conceptual
 ms.date: 06/13/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 9c1a08161dafa500e9cab2038621c2329cfe6d27
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 85f17897c0e3089a2d2bc5b172e98fa24e8085ff
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286886"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920437"
 ---
 # <a name="get-started-with-key-vault-certificates"></a>Aan de slag gaan met Key Vault-certificaten
 De volgende scenario's schetsen verschillende van de primaire gebruiks mogelijkheden van de certificaat beheer service van Key Vault, met inbegrip van de extra stappen voor het maken van uw eerste certificaat in uw sleutel kluis.
@@ -113,7 +113,6 @@ Azure ondersteunt twee op PEM gebaseerde notaties. U kunt één PKCS # 8-gecodee
 
 -----BEGIN CERTIFICAAT----------EIND CERTIFICAAT-----
 
-We ondersteunen momenteel geen EC-sleutels in de PEM-indeling.
 
 ## <a name="creating-a-certificate-with-a-ca-not-partnered-with-key-vault"></a>Maken van een certificaat met een certificerings instantie die niet is gekoppeld aan Key Vault  
  Met deze methode kunt u werken met andere certificerings instanties dan partners van de partner van Key Vault, wat betekent dat uw organisatie kan werken met een CA van de keuze.  

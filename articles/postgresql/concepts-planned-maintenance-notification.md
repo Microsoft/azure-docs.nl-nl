@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 1803a0070321ff4d895203f027f839601bb726ee
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 0691411f57944f8203120ec2a6ed19013135458c
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887141"
+ms.locfileid: "94920250"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-postgresql---single-server"></a>Melding over gepland onderhoud in Azure Database for PostgreSQL - Eén server
 
@@ -78,7 +78,7 @@ Een tijdelijke fout, ook wel bekend als tijdelijke fout, is een fout die zichzel
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for PostgreSQL, stuurt u een e-mail naar het Azure Database for PostgreSQL team op *AskAzureDBforPostgreSQL@service.microsoft.com* .
+- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for PostgreSQL, stuurt u een e-mail naar het Azure Database for PostgreSQL team op AskAzureDBforPostgreSQL@service.microsoft.com
 - Zie [waarschuwingen instellen](howto-alert-on-metric.md) voor hulp bij het maken van een waarschuwing op metrische gegevens.
 - [Verbindings problemen met Azure Database for PostgreSQL-één server oplossen](howto-troubleshoot-common-connection-issues.md)
 - [Tijdelijke fouten afhandelen en efficiënt verbinding maken met Azure Database for PostgreSQL-één server](concepts-connectivity.md)

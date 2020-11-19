@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperfq1, automl
-ms.openlocfilehash: b49b9f710a98495342687c4ce1dc702078b27246
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: f4546433f5bd20e2f001d6d868d8adfb4b9bf8c0
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535330"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920369"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Geautomatiseerde ML-experimenten configureren in Python
 
@@ -103,7 +103,7 @@ Als u geen expliciet een or- `validation_data` `n_cross_validation` para meter o
 |Grootte van de trainings &nbsp; gegevens &nbsp;| Validatie techniek |
 |---|-----|
 |**Meer &nbsp; dan &nbsp; 20.000 &nbsp; rijen**| De splitsing van Train/validatie gegevens wordt toegepast. De standaard instelling is om 10% van de eerste set met trainings gegevens te nemen als de validatieset. Deze validatieset wordt vervolgens gebruikt voor de berekening van metrische gegevens.
-|**Kleiner &nbsp; dan &nbsp; 20.000 &nbsp; rijen**| De methode voor kruis validatie wordt toegepast. Het standaard aantal vouwen is afhankelijk van het aantal rijen. <br> **Als de gegevensset kleiner is dan 1.000 rijen** , worden er 10 vouwen gebruikt. <br> **Als de rijen tussen 1.000 en 20.000** liggen, worden er drie vouwen gebruikt.
+|**Kleiner &nbsp; dan &nbsp; 20.000 &nbsp; rijen**| De methode voor kruis validatie wordt toegepast. Het standaard aantal vouwen is afhankelijk van het aantal rijen. <br> **Als de gegevensset kleiner is dan 1.000 rijen**, worden er 10 vouwen gebruikt. <br> **Als de rijen tussen 1.000 en 20.000** liggen, worden er drie vouwen gebruikt.
 
 Op dit moment moet u uw eigen **test gegevens** voor de model evaluatie opgeven. Zie de sectie **testen** van [Dit Jupyter-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb)voor een code voorbeeld van het inbrengen van uw eigen test gegevens voor model evaluatie.
 
@@ -130,26 +130,24 @@ Voorbeelden zijn:
 1. Beoordelings experiment waarbij AUC wordt gewogen als primaire metriek met de time-out van het experiment, ingesteld op 30 minuten en 2 Kruis validatie vouwen.
 
    ```python
-       automl_classifier=AutoMLConfig(
-       task='classification',
-       primary_metric='AUC_weighted',
-       experiment_timeout_minutes=30,
-       blocked_models=['XGBoostClassifier'],
-       training_data=train_data,
-       label_column_name=label,
-       n_cross_validations=2)
+       automl_classifier=AutoMLConfig(task='classification',
+                                      primary_metric='AUC_weighted',
+                                      experiment_timeout_minutes=30,
+                                      blocked_models=['XGBoostClassifier'],
+                                      training_data=train_data,
+                                      label_column_name=label,
+                                      n_cross_validations=2)
    ```
 1. Het volgende voor beeld is een regressie-experiment dat is ingesteld op eindigen na 60 minuten met vijf validatie-Kruis vouwen.
 
    ```python
-      automl_regressor = AutoMLConfig(
-      task='regression',
-      experiment_timeout_minutes=60,
-      allowed_models=['KNN'],
-      primary_metric='r2_score',
-      training_data=train_data,
-      label_column_name=label,
-      n_cross_validations=5)
+      automl_regressor = AutoMLConfig(task='regression',
+                                      experiment_timeout_minutes=60,
+                                      allowed_models=['KNN'],
+                                      primary_metric='r2_score',
+                                      training_data=train_data,
+                                      label_column_name=label,
+                                      n_cross_validations=5)
    ```
 
 
@@ -301,6 +299,18 @@ automl_classifier = AutoMLConfig(
         )
 ```
 
+<a name="exit"></a> 
+
+### <a name="exit-criteria"></a>Afsluit criteria
+
+Er zijn enkele opties die u in uw AutoMLConfig kunt definiëren om uw experiment te beëindigen.
+
+|Criteria| beschrijving
+|----|----
+Geen &nbsp; criteria | Als u geen afsluit parameters definieert, wordt het experiment voortgezet tot er geen verdere voortgang wordt gemaakt op basis van uw primaire metriek.
+Na &nbsp; een &nbsp; &nbsp; tijds duur &nbsp;| Gebruik `experiment_timeout_minutes` in uw instellingen om te bepalen hoe lang, in minuten, uw experiment moet blijven werken. <br><br> Om te voor komen dat er storingen optreden, is er mini maal 15 minuten of 60 minuten als uw rij op kolom grootte groter is dan 10.000.000.
+Er &nbsp; is een score &nbsp; &nbsp; &nbsp; bereikt| Gebruik `experiment_exit_score` voltooit het experiment nadat een opgegeven primaire meet Score is bereikt.
+
 ## <a name="run-experiment"></a>Experiment uitvoeren
 
 Voor automatische MILLILITERs maakt u een `Experiment` -object dat een benoemd object is in een `Workspace` gebruikt om experimenten uit te voeren.
@@ -327,17 +337,15 @@ run = experiment.submit(automl_config, show_output=True)
 >Afhankelijkheden worden eerst op een nieuwe computer geïnstalleerd.  Het kan tot tien minuten duren voordat uitvoer wordt weer gegeven.
 >Instelling `show_output` `True` van resultaten die in uitvoer wordt weer gegeven op de-console.
 
- <a name="exit"></a> 
+### <a name="multiple-child-runs-on-clusters"></a>Meerdere onderliggende uitvoeringen op clusters
 
-### <a name="exit-criteria"></a>Afsluit criteria
+Automatische ML experimenten-onderliggende uitvoeringen kunnen worden uitgevoerd op een cluster waarop al een ander experiment wordt uitgevoerd. De timing is echter afhankelijk van het aantal knoop punten dat het cluster heeft, en als deze knoop punten beschikbaar zijn voor het uitvoeren van een ander experiment.
 
-Er zijn enkele opties die u kunt definiëren om uw experiment te beëindigen.
+Elk knoop punt in het cluster fungeert als een afzonderlijke virtuele machine (VM) die een enkele training kan uitvoeren. voor automatische MILLILITERs betekent dit dat een onderliggende run. Als alle knoop punten bezet zijn, wordt het nieuwe experiment in de wachtrij geplaatst. Als er echter gratis knoop punten zijn, voert het nieuwe experiment automatische ML onderliggende uitvoeringen parallel uit in de beschik bare knoop punten/Vm's.
 
-|Criteria| beschrijving
-|----|----
-Geen &nbsp; criteria | Als u geen afsluit parameters definieert, wordt het experiment voortgezet tot er geen verdere voortgang wordt gemaakt op basis van uw primaire metriek.
-Na &nbsp; een &nbsp; &nbsp; tijds duur &nbsp;| Gebruik `experiment_timeout_minutes` in uw instellingen om te bepalen hoe lang, in minuten, uw experiment moet blijven werken. <br><br> Om te voor komen dat er storingen optreden, is er mini maal 15 minuten of 60 minuten als uw rij op kolom grootte groter is dan 10.000.000.
-Er &nbsp; is een score &nbsp; &nbsp; &nbsp; bereikt| Gebruik `experiment_exit_score` voltooit het experiment nadat een opgegeven primaire meet Score is bereikt.
+Voor het beheren van onderliggende uitvoeringen en wanneer ze kunnen worden uitgevoerd, raden we u aan een toegewezen cluster per experiment te maken en het aantal `max_concurrent_iterations` van uw experiment te vergelijken met het aantal knoop punten in het cluster. Op deze manier gebruikt u alle knoop punten van het cluster tegelijk met het aantal gelijktijdige onderliggende uitvoeringen/iteraties dat u wilt.
+
+`max_concurrent_iterations`In uw `AutoMLConfig` object configureren. Als deze niet is geconfigureerd, wordt standaard slechts één gelijktijdig onderliggend item/herhaling per experiment toegestaan.  
 
 ## <a name="explore-models-and-metrics"></a>Modellen en metrische gegevens verkennen
 
@@ -348,7 +356,7 @@ Bekijk de [resultaten van automatische machine learning experimenten evalueren](
 Zie [parametrisatie transparantie](how-to-configure-auto-features.md#featurization-transparency)voor een parametrisatie samen vatting en inzicht in de functies die zijn toegevoegd aan een bepaald model. 
 
 > [!NOTE]
-> De algoritmen die automatisch worden geautomatiseerd, hebben een inherente wille keurigheid waardoor kleine variaties in een aanbevolen model met de uiteindelijke metrische gegevens Score, zoals nauw keurigheid, kunnen ontstaan. Automatische ML voert ook bewerkingen uit op gegevens zoals de splitsing van Train-test, gesplitste validatie of Kruis validatie wanneer dat nodig is. Als u dus een experiment met dezelfde configuratie-instellingen en primaire gegevens meerdere keren uitvoert, zult u waarschijnlijk de variatie van elke eindmetrieke meet waarde van elke experimenten zien als gevolg van deze factoren. 
+> De algoritmen die automatisch worden geautomatiseerd, hebben een inherente wille keurigheid waardoor kleine afwijkingen in de Score van de uiteindelijke metrische gegevens van een aanbevolen model, zoals nauw keurigheid, kunnen ontstaan. Automatische ML voert ook bewerkingen uit op gegevens zoals de splitsing van Train-test, gesplitste validatie of Kruis validatie wanneer dat nodig is. Als u dus een experiment met dezelfde configuratie-instellingen en primaire gegevens meerdere keren uitvoert, zult u waarschijnlijk de variatie van elke eindmetrieke meet waarde van elke experimenten zien als gevolg van deze factoren. 
 
 ## <a name="register-and-deploy-models"></a>Modellen registreren en implementeren
 

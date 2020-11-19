@@ -3,12 +3,12 @@ title: Programmatisch beleid maken
 description: Dit artikel helpt u bij het programmatisch maken en beheren van beleids regels voor Azure Policy met Azure CLI, Azure PowerShell en REST API.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 2bf2b1864331fd785ecdd70be4af79be01f1e5e0
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 86c1b60608780cba4d8ae27e3c82ace458f09a26
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491797"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920012"
 ---
 # <a name="programmatically-create-policies"></a>Programmatisch beleid maken
 
@@ -203,7 +203,7 @@ Als u een beleids definitie wilt maken, gebruikt u de volgende procedure:
    ```
 
    Met de opdracht wordt een beleids definitie gemaakt met de naam _audit Storage accounts open open bare netwerken_.
-   Zie [AZ Policy Definition Create](/cli/azure/policy/definition#az-policy-definition-create)(Engelstalig) voor meer informatie over andere para meters die u kunt gebruiken.
+   Zie [AZ Policy Definition Create](/cli/azure/policy/definition#az_policy_definition_create)(Engelstalig) voor meer informatie over andere para meters die u kunt gebruiken.
 
    Als de para meters worden aangeroepen zonder locatie, wordt `az policy definition creation` standaard de beleids definitie opgeslagen in het geselecteerde abonnement van de sessie context. Gebruik de volgende para meters om de definitie op een andere locatie op te slaan:
 

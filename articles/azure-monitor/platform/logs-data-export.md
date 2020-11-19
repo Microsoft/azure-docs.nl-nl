@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: adac986cfa1a975ced7ef579c088ed2739778bf5
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1813da8a8a812eeded235d71c351ec352c42707c
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841804"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920080"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -63,7 +63,7 @@ Er zijn momenteel geen extra kosten verbonden aan de functie voor het exporteren
 
 ## <a name="export-destinations"></a>Export doelen
 
-### <a name="storage-account"></a>Opslagaccount
+### <a name="storage-account"></a>Storage-account
 Gegevens worden elk uur naar opslag accounts verzonden. De gegevens export configuratie maakt een container voor elke tabel in het opslag account met de naam *am,* gevolgd door de naam van de tabel. De tabel *SecurityEvent* wordt bijvoorbeeld verzonden naar een container met de naam *am-SecurityEvent*.
 
 Het BLOB-pad van het opslag account is *WorkspaceResourceId =/Subscriptions/Subscription-id/ResourceGroups/ \<resource-group\> /providers/Microsoft.operationalinsights/Workspaces/ \<workspace\> /y = \<four-digit numeric year\> /m = \<two-digit numeric month\> /d = \<two-digit numeric day\> /h = \<two-digit 24-hour clock hour\> /m = 00/PT1H.jsop*. Omdat toevoeg-blobs zijn beperkt tot 50.000-schrijf bewerkingen in opslag, kan het aantal geëxporteerde blobs worden uitgebreid als het aantal toegevoegde waarden hoog is. Het naamgevings patroon voor blobs in zo'n geval zou worden PT1H_ #. json, waarbij # het aantal incrementele blobs is.
@@ -117,7 +117,11 @@ Als u uw opslag account hebt geconfigureerd om toegang vanaf geselecteerde netwe
 ### <a name="create-or-update-data-export-rule"></a>Regel voor het exporteren van gegevens maken of bijwerken
 Een regel voor gegevens export definieert gegevens die moeten worden geëxporteerd voor een set tabellen naar één bestemming. U kunt voor elke bestemming een regel maken.
 
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
 Gebruik de volgende CLI-opdracht om tabellen in uw werk ruimte weer te geven. Het kan helpen de gewenste tabellen te kopiëren en op te geven in de regel voor het exporteren van gegevens.
+
 ```azurecli
 az monitor log-analytics workspace table list -resource-group resourceGroupName --workspace-name workspaceName --query [].name --output table
 ```
@@ -133,6 +137,8 @@ Gebruik de volgende opdracht om een regel voor het exporteren van gegevens te ma
 ```azurecli
 az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $eventHubsNamespacesId
 ```
+
+# <a name="rest"></a>[REST](#tab/rest)
 
 Gebruik de volgende aanvraag om een regel voor het exporteren van gegevens te maken met behulp van de REST API. De aanvraag moet Bearer-token autorisatie en het inhouds type application/json gebruiken.
 
@@ -193,26 +199,38 @@ Hier volgt een voor beeld van een hoofd tekst voor de REST-aanvraag voor een Eve
   }
 }
 ```
+---
 
 ## <a name="view-data-export-configuration"></a>Configuratie van gegevens export weer geven
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
 Gebruik de volgende opdracht om de configuratie van een regel voor het exporteren van gegevens weer te geven met behulp van CLI.
 
 ```azurecli
 az monitor log-analytics workspace data-export show --resource-group resourceGroupName --workspace-name workspaceName --name ruleName
 ```
 
+# <a name="rest"></a>[REST](#tab/rest)
+
 Gebruik de volgende aanvraag om de configuratie van een regel voor het exporteren van gegevens weer te geven met behulp van de REST API. De aanvraag moet Bearer-token autorisatie gebruiken.
 
 ```rest
 GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports/<data-export-name>?api-version=2020-08-01
 ```
+---
 
 ## <a name="disable-an-export-rule"></a>Een export regel uitschakelen
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
 U kunt regels voor exporteren uitschakelen om het exporteren te stoppen wanneer u geen gegevens voor een bepaalde periode hoeft te bewaren, bijvoorbeeld wanneer het testen wordt uitgevoerd. Gebruik de volgende opdracht om een regel voor het exporteren van gegevens uit te scha kelen met behulp van CLI.
 
 ```azurecli
 az monitor log-analytics workspace data-export update --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --enable false
 ```
+
+# <a name="rest"></a>[REST](#tab/rest)
 
 Gebruik de volgende aanvraag om een regel voor het exporteren van gegevens uit te scha kelen met behulp van de REST API. De aanvraag moet Bearer-token autorisatie gebruiken.
 
@@ -234,32 +252,45 @@ Content-type: application/json
     }
 }
 ```
+---
 
 ## <a name="delete-an-export-rule"></a>Een export regel verwijderen
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
 Gebruik de volgende opdracht om een regel voor het exporteren van gegevens te verwijderen met behulp van CLI.
 
 ```azurecli
 az monitor log-analytics workspace data-export delete --resource-group resourceGroupName --workspace-name workspaceName --name ruleName
 ```
 
+# <a name="rest"></a>[REST](#tab/rest)
+
 Gebruik de volgende aanvraag voor het verwijderen van een regel voor het exporteren van gegevens met behulp van de REST API. De aanvraag moet Bearer-token autorisatie gebruiken.
 
 ```rest
 DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports/<data-export-name>?api-version=2020-08-01
 ```
+---
 
 ## <a name="view-all-data-export-rules-in-a-workspace"></a>Alle regels voor het exporteren van gegevens in een werk ruimte weer geven
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
 Gebruik de volgende opdracht om alle regels voor gegevens export in een werk ruimte weer te geven met behulp van CLI.
 
 ```azurecli
 az monitor log-analytics workspace data-export list --resource-group resourceGroupName --workspace-name workspaceName
 ```
 
+# <a name="rest"></a>[REST](#tab/rest)
+
 Gebruik de volgende aanvraag om alle regels voor het exporteren van gegevens in een werk ruimte weer te geven met behulp van de REST API. De aanvraag moet Bearer-token autorisatie gebruiken.
 
 ```rest
 GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports?api-version=2020-08-01
 ```
+---
 
 ## <a name="unsupported-tables"></a>Niet-ondersteunde tabellen
 Als de regel voor het exporteren van gegevens een niet-ondersteunde tabel bevat, wordt de configuratie voltooid, maar worden er geen gegevens geëxporteerd voor die tabel. Als de tabel later wordt ondersteund, worden de bijbehorende gegevens op dat moment geëxporteerd.

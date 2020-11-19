@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
-ms.date: 03/05/2020
+ms.date: 11/18/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: a9b68b2d4298c5e692782e529bae9a9df6359953
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 97017e104ecff38ebf4e475fb5f6ae42707ef10e
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331155"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94919587"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>TLS gebruiken om een webservice te beveiligen via Azure Machine Learning
 
@@ -30,7 +30,7 @@ U gebruikt [https](https://en.wikipedia.org/wiki/HTTPS) om de toegang tot webser
 >
 > Met name webservices die via Azure Machine Learning worden geïmplementeerd, ondersteunen TLS-versie 1,2 voor AKS en ACI-nieuwe implementaties. Als u een oudere TLS-versie hebt, wordt u aangeraden om in ACI-implementaties opnieuw te implementeren om de meest recente versie van TLS op te halen.
 
-TLS en SSL zijn beide afhankelijk van *digitale certificaten* , die u helpen bij het versleutelen en verifiëren van de identiteit. Zie de [open bare-sleutel infrastructuur](https://en.wikipedia.org/wiki/Public_key_infrastructure)van het Wikipedia-onderwerp voor meer informatie over de werking van digitale certificaten.
+TLS en SSL zijn beide afhankelijk van *digitale certificaten*, die u helpen bij het versleutelen en verifiëren van de identiteit. Zie de [open bare-sleutel infrastructuur](https://en.wikipedia.org/wiki/Public_key_infrastructure)van het Wikipedia-onderwerp voor meer informatie over de werking van digitale certificaten.
 
 > [!WARNING]
 > Als u geen HTTPS gebruikt voor uw webservice, zijn gegevens die naar en van de service worden verzonden mogelijk zichtbaar voor anderen op internet.
@@ -87,6 +87,9 @@ Wanneer u implementeert in AKS, kunt u een nieuw AKS-cluster maken of een bestaa
 
 De **enable_ssl** -methode kan gebruikmaken van een certificaat dat door micro soft wordt verschaft of een certificaat dat u aanschaft.
 
+> [!WARNING]
+> Als uw AKS-cluster is geconfigureerd met een interne load balancer, wordt het gebruik van een door micro soft opgegeven certificaat __niet ondersteund__. Voor het gebruik van een door micro soft opgegeven certificaat is een open bare IP-bron vereist in azure, die niet beschikbaar is voor AKS wanneer deze is geconfigureerd voor interne load balancer.
+
   * Wanneer u een certificaat van micro soft gebruikt, moet u de para meter *leaf_domain_label* gebruiken. Met deze para meter wordt de DNS-naam voor de service gegenereerd. Bijvoorbeeld: de waarde ' Contoso ' maakt de domein naam ' contoso \<six-random-characters> . \<azureregion> . cloudapp.azure.com ', waarbij \<azureregion> is de regio waarin de service is opgenomen. U kunt desgewenst de para meter *overwrite_existing_domain* gebruiken om de bestaande *leaf_domain_label* te overschrijven.
 
     Als u de service wilt implementeren (of opnieuw wilt implementeren) met TLS ingeschakeld, stelt u de para meter *ssl_enabled* in op ' True ', waar dit van toepassing is. Stel de para meter *ssl_certificate* in op de waarde van het *certificaat* bestand. Stel de *ssl_key* in op de waarde van het *sleutel* bestand.
@@ -115,7 +118,7 @@ De **enable_ssl** -methode kan gebruikmaken van een certificaat dat door micro s
     attach_config.enable_ssl(leaf_domain_label = "contoso")
     ```
 
-  * Wanneer u *een certificaat gebruikt dat u hebt aangeschaft* , gebruikt u de para meters *ssl_cert_pem_file* , *ssl_key_pem_file* en *ssl_cname* . In het volgende voor beeld ziet u hoe u *. pem* -bestanden kunt gebruiken om een configuratie te maken die gebruikmaakt van een TLS/SSL-certificaat dat u hebt aangeschaft:
+  * Wanneer u *een certificaat gebruikt dat u hebt aangeschaft*, gebruikt u de para meters *ssl_cert_pem_file*, *ssl_key_pem_file* en *ssl_cname* . In het volgende voor beeld ziet u hoe u *. pem* -bestanden kunt gebruiken om een configuratie te maken die gebruikmaakt van een TLS/SSL-certificaat dat u hebt aangeschaft:
 
     ```python
     from azureml.core.compute import AksCompute
@@ -132,7 +135,7 @@ De **enable_ssl** -methode kan gebruikmaken van een certificaat dat door micro s
 
 Zie [AksProvisioningConfiguration.enable_ssl ()](/python/api/azureml-core/azureml.core.compute.aks.aksprovisioningconfiguration?preserve-view=true&view=azure-ml-py#&preserve-view=trueenable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-) en [AksAttachConfiguration.enable_ssl ()](/python/api/azureml-core/azureml.core.compute.aks.aksattachconfiguration?preserve-view=true&view=azure-ml-py#&preserve-view=trueenable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-)voor meer informatie over *enable_ssl*.
 
-### <a name="deploy-on-azure-container-instances"></a>Implementeren op Azure Container Instances
+### <a name="deploy-on-azure-container-instances"></a>Implementeren in Azure Container Instances
 
 Wanneer u implementeert op Azure Container Instances, geeft u waarden op voor TLS-gerelateerde para meters, zoals in het volgende code fragment wordt weer gegeven:
 
@@ -159,7 +162,8 @@ Vervolgens moet u uw DNS bijwerken zodat deze naar de webservice verwijst.
 
   > [!WARNING]
   > Als u *leaf_domain_label* hebt gebruikt om de service te maken met behulp van een certificaat van micro soft, moet u de DNS-waarde voor het cluster niet hand matig bijwerken. De waarde moet automatisch worden ingesteld.
-
+  >
+  > Als uw AKS-cluster is geconfigureerd met een interne load balancer, wordt het gebruik van een door micro soft opgegeven certificaat (door *leaf_domain_label*) __niet ondersteund__. Voor het gebruik van een door micro soft opgegeven certificaat is een open bare IP-bron vereist in azure, die niet beschikbaar is voor AKS wanneer deze is geconfigureerd voor interne load balancer.
   Werk de DNS van het open bare IP-adres van de AKS-cluster op het tabblad **configuratie** onder **instellingen** in het linkerdeel venster. (Zie de volgende afbeelding.) Het open bare IP-adres is een resource type dat wordt gemaakt onder de resource groep die de AKS-agent knooppunten en andere netwerk bronnen bevat.
 
   [![Azure Machine Learning: webservices beveiligen met TLS](./media/how-to-secure-web-service/aks-public-ip-address.png)](./media/how-to-secure-web-service/aks-public-ip-address-expanded.png)

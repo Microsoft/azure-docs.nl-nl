@@ -3,16 +3,16 @@ title: Begrippen begrijpen van de opslag plaats voor Apparaatbeheer | Microsoft 
 description: Als oplossings ontwikkelaar of IT-Professional leert u meer over de basis concepten van de opslag plaats van het model van het apparaat.
 author: rido-min
 ms.author: rmpablos
-ms.date: 09/30/2020
+ms.date: 11/17/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 4e15ef5256c1552fc8ab7fb9bd84f15bb3433834
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: b567efe2541bb33c905def73bb78398799b4ed69
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131357"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920539"
 ---
 # <a name="device-model-repository"></a>Opslag plaats voor device model
 
@@ -30,7 +30,7 @@ Micro soft host een open bare DMR met de volgende kenmerken:
 
 ## <a name="custom-device-model-repository"></a>Aangepaste opslag plaats voor model apparaten
 
-U kunt hetzelfde DMR-patroon gebruiken in elk opslag medium, zoals het lokale bestands systeem of aangepaste HTTP-webservers, om een aangepaste DMR te maken. U kunt de modellen van de aangepaste DMR op dezelfde manier ophalen als uit de open bare DMR door de basis-URL voor toegang tot de DMR te wijzigen.
+Gebruik hetzelfde DMR-patroon voor het maken van een aangepaste DMR in een opslag medium, zoals het lokale bestands systeem of aangepaste HTTP-webservers. U kunt de modellen van de aangepaste DMR op dezelfde manier ophalen als uit de open bare DMR door de basis-URL te wijzigen die wordt gebruikt voor toegang tot de DMR.
 
 > [!NOTE]
 > Micro soft biedt hulpprogram ma's voor het valideren van apparaten modellen in de open bare DMR. U kunt deze hulpprogram ma's opnieuw gebruiken in aangepaste opslag plaatsen.
@@ -47,9 +47,9 @@ Alle interfaces in de `dtmi` mappen zijn ook beschikbaar vanuit het open bare ei
 
 ### <a name="resolve-models"></a>Modellen oplossen
 
-Als u via een programma toegang wilt krijgen tot deze interfaces, moet u een DTMI converteren naar een relatief pad dat u kunt gebruiken voor het uitvoeren van een query op het open bare eind punt. In het volgende code voorbeeld ziet u hoe u dit kunt doen:
+Als u via een programma toegang wilt krijgen tot deze interfaces, moet u een DTMI converteren naar een relatief pad dat u kunt gebruiken voor het uitvoeren van een query op het open bare eind punt.
 
-Als u een DTMI wilt omzetten in een absoluut pad, gebruiken we de `DtmiToPath` functie, met `IsValidDtmi` :
+Als u een DTMI naar een absoluut pad wilt converteren, gebruikt u de `DtmiToPath` functie met `IsValidDtmi` :
 
 ```cs
 static string DtmiToPath(string dtmi)
@@ -85,47 +85,82 @@ string modelContent = await _httpClient.GetStringAsync(fullyQualifiedPath);
 > [!Important]
 > U moet een GitHub-account hebben om modellen te kunnen verzenden naar de open bare DMR.
 
-1. Fork the Public GitHub opslag plaats: [https://github.com/Azure/iot-plugandplay-models](https://github.com/Azure/iot-plugandplay-models) .
-1. Kloon de gevorkte opslag plaats. Maak eventueel een nieuwe vertakking om uw wijzigingen geïsoleerd van de vertakking te laten blijven `main` .
-1. Voeg de nieuwe interfaces toe aan de `dtmi` map met de Conventie map/bestands naam. Zie het hulp programma [add-model](#add-model) .
-1. Valideer de modellen van het apparaat lokaal met behulp van de [scripts om de sectie wijzigingen te valideren](#validate-files) .
+1. De open bare GitHub-opslag plaats splitsen: [https://github.com/Azure/iot-plugandplay-models](https://github.com/Azure/iot-plugandplay-models) .
+1. Kloon de gesplitste opslag plaats. Maak eventueel een nieuwe vertakking om uw wijzigingen geïsoleerd van de vertakking te laten blijven `main` .
+1. Voeg de nieuwe interfaces toe aan de `dtmi` map met de Conventie map/bestands naam. Zie [een model importeren in de `dtmi/` map](#import-a-model-to-the-dtmi-folder)voor meer informatie.
+1. Valideer de modellen lokaal met het `dmr-client` hulp programma. Zie [modellen valideren](#validate-models)voor meer informatie.
 1. De wijzigingen lokaal door voeren en naar uw Fork pushen.
 1. Maak vanuit uw Fork een pull-aanvraag die gericht is op de `main` vertakking. Zie [een uitgifte-of pull-aanvraag documenten maken](https://docs.github.com/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/creating-an-issue-or-pull-request) .
 1. Controleer de [vereisten voor de pull-aanvraag](https://github.com/Azure/iot-plugandplay-models/blob/main/pr-reqs.md).
 
-Met de pull-aanvraag wordt een reeks GitHub-acties geactiveerd waarmee de nieuwe interfaces worden gevalideerd. Zorg ervoor dat uw pull-aanvraag voldoet aan alle controles.
+Met de pull-aanvraag wordt een set GitHub-acties geactiveerd die de ingediende interfaces valideren en zorgt u ervoor dat uw pull-aanvraag voldoet aan alle vereisten.
 
 Micro soft reageert op een pull-aanvraag met alle controles in drie werk dagen.
 
-### <a name="add-model"></a>add-model
+### <a name="dmr-client-tools"></a>`dmr-client` software
 
-De volgende stappen laten zien hoe het add-model.js script u helpt een nieuwe interface toe te voegen. Voor dit script moet Node.js worden uitgevoerd:
+De hulpprogram ma's die worden gebruikt voor het valideren van de modellen tijdens de PR-controles, kunnen ook worden gebruikt om de DTDL-interfaces lokaal toe te voegen en te valideren.
 
-1. Ga vanaf een opdracht prompt naar het lokale Git-opslag plaats
-1. `npm install` uitvoeren
-1. `npm run add-model <path-to-file-to-add>` uitvoeren
+> [!NOTE]
+> Voor dit hulp programma is de [.NET SDK](https://dotnet.microsoft.com/download) -versie 3,1 of hoger vereist.
 
-Bekijk de console-uitvoer voor eventuele fout berichten.
+### <a name="install-dmr-client"></a>Vooraf `dmr-client`
 
-### <a name="local-validation"></a>Lokale validatie
+```bash
+curl -L https://aka.ms/install-dmr-client-linux | bash
+```
 
-U kunt dezelfde validatie controles lokaal uitvoeren voordat u de pull-aanvraag indient om te helpen bij het oplossen van problemen.
+```powershell
+iwr https://aka.ms/install-dmr-client-windows -UseBasicParsing | iex
+```
 
-#### <a name="validate-files"></a>validate-files
+### <a name="import-a-model-to-the-dtmi-folder"></a>Een model importeren in de `dtmi/` map
 
-`npm run validate-files <file1.json> <file2.json>` Hiermee wordt gecontroleerd of het bestandspad overeenkomt met de verwachte map-en bestands namen.
+Als uw model al is opgeslagen in json-bestanden, kunt u de `dmr-client import` opdracht gebruiken om ze toe te voegen aan de `dtmi/` map met de juiste bestands namen:
 
-#### <a name="validate-ids"></a>validate-id's
+```bash
+# from the local repo root folder
+dmr-client import --model-file "MyThermostat.json"
+```
 
-`npm run validate-ids <file1.json> <file2.json>` Hiermee wordt gecontroleerd of alle Id's die in het document zijn gedefinieerd, dezelfde root gebruiken als de hoofd-ID.
+> [!TIP]
+> U kunt het `--local-repo` argument gebruiken om de hoofdmap van de lokale opslag plaats op te geven.
 
-#### <a name="validate-deps"></a>validate-deps
+### <a name="validate-models"></a>Modellen valideren
 
-`npm run validate-deps <file1.json> <file2.json>` Hiermee controleert u of alle afhankelijkheden beschikbaar zijn in de `dtmi` map.
+U kunt uw modellen valideren met de `dmr-client validate` opdracht:
 
-#### <a name="validate-models"></a>valideren-modellen
+```bash
+dmr-client validate --model-file ./my/model/file.json
+```
 
-U kunt het [DTDL-validatie voorbeeld](https://github.com/Azure-Samples/DTDL-Validator) uitvoeren om uw apparaten lokaal te valideren.
+> [!NOTE]
+> De validatie maakt gebruik van de nieuwste versie van de DTDL-parser om ervoor te zorgen dat alle interfaces compatibel zijn met de taal specificatie DTDL.
+
+Als u externe afhankelijkheden wilt valideren, moeten deze aanwezig zijn in de lokale opslag plaats. Als u modellen wilt valideren, gebruikt u de `--repo` optie om een `local` of-map op te geven voor het oplossen van `remote` afhankelijkheden:
+
+```bash
+# from the repo root folder
+dmr-client validate --model-file ./my/model/file.json --repo .
+```
+
+### <a name="strict-validation"></a>Strikte validatie
+
+De DMR bevat aanvullende [vereisten](https://github.com/Azure/iot-plugandplay-models/blob/main/pr-reqs.md) `stict` voor het valideren van uw model met de markering:
+
+```bash
+dmr-client validate --model-file ./my/model/file.json --repo . --strict true
+```
+
+Controleer de console-uitvoer voor eventuele fout berichten.
+
+### <a name="export-models"></a>Exportmodellen
+
+Modellen kunnen vanuit een bepaalde opslag plaats (lokaal of extern) naar één bestand worden geëxporteerd met behulp van een JSON-matrix:
+
+```bash
+dmr-client export --dtmi "dtmi:com:example:TemperatureController;1" -o TemperatureController.expanded.json
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

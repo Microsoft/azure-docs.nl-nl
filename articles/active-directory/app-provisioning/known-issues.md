@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 09/11/2020
+ms.date: 11/19/2020
 ms.reviewer: arvinh
-ms.openlocfilehash: 4b4c02efffb39e88a01c35d3c818930a0f6fd9cf
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 8a1c789759f1119a6170fffc2c70874cd9a32fde
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92069752"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94919677"
 ---
 # <a name="known-issues-application-provisioning"></a>Bekende problemen: toepassings inrichting
 Bekende problemen waarvan u rekening moet houden wanneer u werkt met het inrichten van apps. U kunt feedback geven over de Application Provisioning-Service op UserVoice, de [Azure AD-toepassing inrichten UserVoice](https://aka.ms/appprovisioningfeaturerequest). We kijken naar UserVoice zodat we de service kunnen verbeteren. 
@@ -86,6 +86,9 @@ Bij het instellen van inrichting `enabled = off` of voor het aanwijzen van stopp
 
 Wanneer een groep zich in een bereik bevindt en een lid buiten het bereik valt, wordt de groep ingericht. De buitenste bereik gebruiker wordt niet ingericht. Als het lid weer binnen het bereik komt, detecteert de service de wijziging niet onmiddellijk. Bij het opnieuw starten van de inrichting wordt het probleem opgelost. We raden u aan om de service periodiek opnieuw te starten om ervoor te zorgen dat alle gebruikers op de juiste wijze worden ingericht.  
 
+**Manager is niet ingericht**
+
+Als een gebruiker en hun manager zich in het bereik van het inrichten bevinden, wordt de gebruiker door de service ingericht en wordt de Manager bijgewerkt. Als de gebruiker echter op één dag binnen het bereik van de scope ligt en de Manager buiten het bereik valt, zullen we de gebruiker inrichten zonder de Manager-referentie. Wanneer de Manager binnen het bereik komt, wordt de verwijzing naar de manager pas bijgewerkt als u de inrichting opnieuw start en de service opnieuw alle gebruikers opnieuw moet evalueren. 
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Hoe inrichting werkt](how-provisioning-works.md)

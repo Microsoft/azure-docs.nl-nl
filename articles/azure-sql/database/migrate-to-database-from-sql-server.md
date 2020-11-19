@@ -12,17 +12,18 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/11/2019
-ms.openlocfilehash: 41f3505388e72fba15277067a94cf4e473008f20
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: fab52fcea03a2f65c868cfac27f8a8cef115b2be
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790420"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917644"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>SQL Server-databasemigratie naar Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-In dit artikel vindt u informatie over de primaire methoden voor het migreren van een SQL Server 2005 of hoger-Data Base naar Azure SQL Database. Zie [een SQL Server-exemplaar migreren naar Azure SQL Managed](../managed-instance/migrate-to-instance-from-sql-server.md)instance (Engelstalig) voor meer informatie over het migreren naar een beheerd exemplaar van Azure SQL. Raadpleeg de [migratie handleiding voor Azure data base](https://datamigration.microsoft.com/)voor migratie-informatie over het migreren van andere platforms.
+In dit artikel vindt u informatie over de primaire methoden voor het migreren van een SQL Server 2005 of hoger-Data Base naar Azure SQL Database. Zie [een SQL Server-exemplaar migreren naar Azure SQL Managed](../migration-guides/managed-instance/sql-server-to-managed-instance-overview.md)instance (Engelstalig) voor meer informatie over het migreren naar een beheerd exemplaar van Azure SQL. Zie [migreren naar Azure SQL](../migration-guides/index.yml) voor meer informatie over het kiezen van migratie opties en hulpprogram ma's voor het migreren naar Azure SQL
+
 
 ## <a name="migrate-to-a-single-database-or-a-pooled-database"></a>Migreren naar een enkele data base of een gegroepeerde Data Base
 

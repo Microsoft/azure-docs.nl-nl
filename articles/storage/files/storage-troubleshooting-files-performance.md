@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 6e4eb37477a335ae93b9982692c238d05c81000b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a49dbdace01396656c3114df0bc0d4589aff57c1
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660284"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916488"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Prestatie problemen met Azure file shares oplossen
 
@@ -196,7 +196,7 @@ Recente wijzigingen in de configuratie-instellingen van SMB meerdere kanalen zon
 
 ### <a name="cause"></a>Oorzaak  
 
-Een hoog aantal bericht wijzigingen in bestands shares kan leiden tot aanzienlijke hoge latentie. Dit gebeurt meestal met websites die worden gehost op bestands shares met een diepe geneste mapstructuur. Een typisch scenario is een door IIS gehoste webtoepassing waarbij bestands wijzigings meldingen worden ingesteld voor elke directory in de standaard configuratie. Elke wijziging (ReadDirectoryChangesW) op de share die door de SMB-client wordt geregistreerd, wordt een wijzigings melding van de bestands service naar de client verzonden, waardoor systeem bronnen worden gebruikt. het probleem verloopt met het aantal wijzigingen. Dit kan ertoe leiden dat delen worden beperkt en dus resulteren in een hogere latentie van de client zijde. 
+Een hoog aantal bericht wijzigingen in bestands shares kan leiden tot aanzienlijke hoge latentie. Dit gebeurt meestal met websites die worden gehost op bestands shares met een diepe geneste mapstructuur. Een typisch scenario is een door IIS gehoste webtoepassing waarbij bestands wijzigings meldingen worden ingesteld voor elke directory in de standaard configuratie. Elke wijziging ([ReadDirectoryChangesW](https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-readdirectorychangesw)) op de share die door de SMB-client wordt geregistreerd, wordt een wijzigings melding van de bestands service naar de client verzonden, waardoor systeem bronnen worden gebruikt. het probleem verloopt met het aantal wijzigingen. Dit kan ertoe leiden dat delen worden beperkt en dus resulteren in een hogere latentie van de client zijde. 
 
 U kunt de metrische gegevens van Azure in de portal gebruiken om te bevestigen. 
 
@@ -213,10 +213,8 @@ U kunt de metrische gegevens van Azure in de portal gebruiken om te bevestigen.
     - Werk het polling interval van het IIS-werk proces (W3WP) bij naar 0 door `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\W3SVC\Parameters\ConfigPollMilliSeconds ` in uw REGI ster in te stellen en het W3wp-proces opnieuw te starten. Zie [algemene register sleutels die worden gebruikt door een groot aantal IIS-onderdelen](/troubleshoot/iis/use-registry-keys#registry-keys-that-apply-to-iis-worker-process-w3wp)voor meer informatie over deze instelling.
 - De frequentie verhogen van het polling-interval voor bestands wijzigings meldingen om het volume te verminderen.
     - Werk het polling interval van het W3WP werk proces bij naar een hogere waarde (bijvoorbeeld 10mins of 30mins) op basis van uw vereiste. Stel `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\W3SVC\Parameters\ConfigPollMilliSeconds ` [in het REGI ster in](/troubleshoot/iis/use-registry-keys#registry-keys-that-apply-to-iis-worker-process-w3wp) en start het W3wp-proces opnieuw.
-- Als de toegewezen fysieke map van uw website geneste mapstructuur heeft, kunt u proberen het bereik van de bestands wijzigings melding te beperken om het meldings volume te verminderen.
-    - IIS gebruikt standaard configuratie van Web.config-bestanden in de fysieke map waaraan de virtuele map is toegewezen, evenals in onderliggende mappen in die fysieke map. Als u geen Web.config-bestanden in onderliggende directory's wilt gebruiken, geeft u False op voor het kenmerk allowSubDirConfig in de virtuele map. Meer informatie vindt u [hier](/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#virtual-directories). 
-
-Stel de instelling ' allowSubDirConfig ' van de virtuele IIS-map in Web.Config in op false om toegewezen fysieke onderliggende mappen van het bereik uit te sluiten.  
+- Als de toegewezen fysieke map van uw website geneste mapstructuur heeft, kunt u proberen het bereik van de bestands wijzigings melding te beperken om het meldings volume te verminderen. IIS gebruikt standaard configuratie van Web.config-bestanden in de fysieke map waaraan de virtuele map is toegewezen, evenals in onderliggende mappen in die fysieke map. Als u geen Web.config-bestanden in onderliggende directory's wilt gebruiken, geeft u False op voor het kenmerk allowSubDirConfig in de virtuele map. Meer informatie vindt u [hier](/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#virtual-directories). 
+    - Stel de instelling ' allowSubDirConfig ' van de virtuele IIS-map in Web.Config in op *False* om toegewezen fysieke onderliggende mappen van het bereik uit te sluiten.  
 
 ## <a name="how-to-create-an-alert-if-a-file-share-is-throttled"></a>Een waarschuwing maken als een bestands share wordt beperkt
 

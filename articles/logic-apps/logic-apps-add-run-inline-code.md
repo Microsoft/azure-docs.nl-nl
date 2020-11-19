@@ -5,24 +5,28 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: deli, logicappspm
 ms.topic: article
-ms.date: 05/14/2019
+ms.date: 11/19/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: f339ae4ff1ea90929ce7811efe002f5860f7b47d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 589420d96a3a6dfcc1c17a1b204765022b1ce412
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91269332"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916641"
 ---
 # <a name="add-and-run-code-snippets-by-using-inline-code-in-azure-logic-apps"></a>Code fragmenten toevoegen en uitvoeren met inline code in Azure Logic Apps
 
 Als u een stukje code in uw logische app wilt uitvoeren, kunt u de ingebouwde **inline code** actie toevoegen als een stap in de werk stroom van uw logische app. Deze actie werkt het beste als u code wilt uitvoeren die in dit scenario past:
 
 * Wordt uitgevoerd in Java script. Meer talen binnenkort beschikbaar.
+
 * De uitvoering binnen vijf seconden of minder is voltooid.
+
 * Verwerkt gegevens tot 50 MB groot.
+
 * Is niet vereist voor het werken met [ **variabelen** acties](../logic-apps/logic-apps-create-variables-store-values.md), die nog niet worden ondersteund.
-* Maakt gebruik van Node.js versie 8.11.1. Zie [standaard ingebouwde objecten](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects)voor meer informatie. 
+
+* Maakt gebruik van Node.js versie 8.11.1. Zie [standaard ingebouwde objecten](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects)voor meer informatie.
 
   > [!NOTE]
   > De `require()` functie wordt niet ondersteund door de **inline code** actie voor het uitvoeren van Java script.
@@ -41,7 +45,7 @@ In dit artikel wordt de logische app geactiveerd wanneer een nieuwe e-mail binne
 
    In het voor beeld van een logische app in dit onderwerp wordt deze Office 365 Outlook-trigger gebruikt: **wanneer er een nieuwe e-mail binnenkomt**
 
-* Een [integratie account](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) dat is gekoppeld aan uw logische app
+* Een [integratie account](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) dat is gekoppeld aan uw logische app. Als u geen integratie account wilt maken of gebruiken, maakt u een logische app in het Azure Portal met behulp van het nieuwe **logische app-resource type (preview)** of in Visual Studio code met behulp van de nieuwe [uitbrei ding voor Azure Logic Apps Preview](../logic-apps/create-stateful-stateless-workflows-visual-studio-code.md).
 
   > [!NOTE]
   > Zorg ervoor dat u een integratie account gebruikt dat geschikt is voor uw use-case of-scenario. Zo zijn accounts met een [gratis laag](../logic-apps/logic-apps-pricing.md#integration-accounts) integratie alleen bedoeld voor verkennende scenario's en workloads, niet voor productie scenario's, zijn beperkt in het gebruik en de door Voer en worden niet ondersteund door een Sla (Service Level Agreement). Andere lagen nemen kosten in beslag, maar bevatten SLA-ondersteuning, bieden meer door Voer en hebben hogere limieten. Meer informatie over de integratie-en [prijs](https://azure.microsoft.com/pricing/details/logic-apps/) [Categorieën](../logic-apps/logic-apps-pricing.md#integration-accounts)en- [limieten](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
@@ -60,7 +64,7 @@ In dit artikel wordt de logische app geactiveerd wanneer een nieuwe e-mail binne
 
    ![Nieuwe stap toevoegen](./media/logic-apps-add-run-inline-code/add-new-step.png)
 
-1. Voer onder **Kies een actie**in het zoekvak ' inline code ' in als uw filter. Selecteer in de lijst acties deze actie: **Java script-code uitvoeren**
+1. Voer onder **Kies een actie** in het zoekvak ' inline code ' in als uw filter. Selecteer in de lijst acties deze actie: **Java script-code uitvoeren**
 
    ![Selecteer Java script-code uitvoeren](./media/logic-apps-add-run-inline-code/select-inline-code-action.png)
 
@@ -68,13 +72,13 @@ In dit artikel wordt de logische app geactiveerd wanneer een nieuwe e-mail binne
 
    ![Inline code actie met standaard voorbeeld code](./media/logic-apps-add-run-inline-code/inline-code-action-default.png)
 
-1. Verwijder in het vak **code** de voorbeeld code en voer de code in die u wilt uitvoeren. Schrijf code die u in een methode zou plaatsen, maar zonder de methode handtekening te definiëren. 
+1. Verwijder in het vak **code** de voorbeeld code en voer de code in die u wilt uitvoeren. Schrijf code die u in een methode zou plaatsen, maar zonder de methode handtekening te definiëren.
 
    Wanneer u een herkend tref woord typt, wordt de lijst automatisch aanvullen weer gegeven, zodat u kunt kiezen uit beschik bare tref woorden, bijvoorbeeld:
 
    ![Lijst met tref woorden voor automatisch aanvullen](./media/logic-apps-add-run-inline-code/auto-complete.png)
 
-   In dit voorbeeld code fragment wordt eerst een variabele gemaakt waarin een *reguliere expressie*wordt opgeslagen. Dit is een patroon dat overeenkomt met de invoer tekst. De code maakt vervolgens een variabele waarin de gegevens van de e-mail tekst van de trigger worden opgeslagen.
+   In dit voorbeeld code fragment wordt eerst een variabele gemaakt waarin een *reguliere expressie* wordt opgeslagen. Dit is een patroon dat overeenkomt met de invoer tekst. De code maakt vervolgens een variabele waarin de gegevens van de e-mail tekst van de trigger worden opgeslagen.
 
    ![Variabelen maken](./media/logic-apps-add-run-inline-code/save-email-body-variable.png)
 
@@ -84,12 +88,11 @@ In dit artikel wordt de logische app geactiveerd wanneer een nieuwe e-mail binne
 
    ![Resultaat selecteren](./media/logic-apps-add-run-inline-code/inline-code-example-select-outputs.png)
 
-   In het vak **code** kan het fragment het object alleen-lezen gebruiken `workflowContext` als invoer. Dit object heeft subeigenschappen die uw code toegang geven tot de resultaten van de trigger en eerdere acties in uw werk stroom.
-   Zie deze sectie verderop in dit onderwerp voor meer informatie: [verwijzings trigger en actie resulteert in uw code](#workflowcontext).
+   In het vak **code** kan het fragment het object alleen-lezen gebruiken `workflowContext` als invoer. Dit object heeft subeigenschappen die uw code toegang geven tot de resultaten van de trigger en eerdere acties in uw werk stroom. Zie deze sectie verderop in dit onderwerp voor meer informatie: [verwijzings trigger en actie resulteert in uw code](#workflowcontext).
 
    > [!NOTE]
    >
-   > Als uw code fragment verwijst naar actie namen die gebruikmaken van de punt operator (.), moet u deze actie namen toevoegen aan de [para meter **Actions** ](#add-parameters). Deze verwijzingen moeten ook de actie namen tussen vier Kante haken ([]) en aanhalings tekens bevatten, bijvoorbeeld:
+   > Als uw code fragment verwijst naar actie namen die gebruikmaken van de punt operator (.), moet u deze actie namen toevoegen aan de [para meter **Actions**](#add-parameters). Deze verwijzingen moeten ook de actie namen tussen vier Kante haken ([]) en aanhalings tekens bevatten, bijvoorbeeld:
    >
    > `// Correct`</br> 
    > `workflowContext.actions["my.action.name"].body`</br>
@@ -97,8 +100,7 @@ In dit artikel wordt de logische app geactiveerd wanneer een nieuwe e-mail binne
    > `// Incorrect`</br>
    > `workflowContext.actions.my.action.name.body`
 
-   Voor de inline code actie is geen `return` instructie vereist, maar de resultaten van een `return` instructie zijn beschikbaar voor referentie in latere acties via het **resultaat** token. 
-   Het code fragment retourneert bijvoorbeeld het resultaat door de `match()` functie aan te roepen, waarmee overeenkomende waarden worden gevonden in de hoofd tekst van de e-mail en de reguliere expressie. De actie **opstellen** maakt gebruik van het **resultaat** token om te verwijzen naar de resultaten van de inline code actie en maakt één resultaat.
+   Voor de inline code actie is geen `return` instructie vereist, maar de resultaten van een `return` instructie zijn beschikbaar voor referentie in latere acties via het **resultaat** token. Het code fragment retourneert bijvoorbeeld het resultaat door de `match()` functie aan te roepen, waarmee overeenkomende waarden worden gevonden in de hoofd tekst van de e-mail en de reguliere expressie. De actie **opstellen** maakt gebruik van het **resultaat** token om te verwijzen naar de resultaten van de inline code actie en maakt één resultaat.
 
    ![Voltooide logische app](./media/logic-apps-add-run-inline-code/inline-code-complete-example.png)
 
@@ -229,7 +231,7 @@ Als u deze para meters wilt toevoegen, opent u de lijst **nieuwe para meter toev
 
 ### <a name="include-trigger-results"></a>Trigger resultaten toevoegen
 
-Als u **Triggers**selecteert, wordt u gevraagd of u trigger resultaten wilt toevoegen.
+Als u **Triggers** selecteert, wordt u gevraagd of u trigger resultaten wilt toevoegen.
 
 * Selecteer in de lijst **trigger** de optie **Ja**.
 
@@ -237,7 +239,7 @@ Als u **Triggers**selecteert, wordt u gevraagd of u trigger resultaten wilt toev
 
 ### <a name="include-action-results"></a>Actie resultaten toevoegen
 
-Als u **acties**selecteert, wordt u gevraagd naar de acties die u wilt toevoegen. Voordat u begint met het toevoegen van acties, hebt u echter de versie van de actie naam nodig die wordt weer gegeven in de onderliggende werk stroom definitie van de logische app.
+Als u **acties** selecteert, wordt u gevraagd naar de acties die u wilt toevoegen. Voordat u begint met het toevoegen van acties, hebt u echter de versie van de actie naam nodig die wordt weer gegeven in de onderliggende werk stroom definitie van de logische app.
 
 * Deze functie biedt geen ondersteuning voor variabelen, lussen en iteratie indexen.
 
@@ -247,7 +249,7 @@ Als u **acties**selecteert, wordt u gevraagd naar de acties die u wilt toevoegen
 
   `My.Action.Name`
 
-1. Kies op de werk balk ontwerpen de optie **code weergave**en zoek in het- `actions` kenmerk naar de naam van de actie.
+1. Kies op de werk balk ontwerpen de optie **code weergave** en zoek in het- `actions` kenmerk naar de naam van de actie.
 
    `Send_approval_email_`Is bijvoorbeeld de JSON-naam voor de actie **e-mail goed keuren verzenden** .
 
@@ -259,9 +261,9 @@ Als u **acties**selecteert, wordt u gevraagd naar de acties die u wilt toevoegen
 
    ![Eerste actie invoeren](./media/logic-apps-add-run-inline-code/add-action-parameter.png)
 
-1. Kies **Nieuw item toevoegen**om een andere actie toe te voegen.
+1. Kies **Nieuw item toevoegen** om een andere actie toe te voegen.
 
-## <a name="reference"></a>Naslaginformatie
+## <a name="reference"></a>Verwijzing
 
 Voor meer informatie over de structuur en syntaxis van de actie **Java script-code uitvoeren** in de onderliggende werk stroom definitie van uw logische app met de werk stroom definitie taal, zie de [sectie referentie](../logic-apps/logic-apps-workflow-actions-triggers.md#run-javascript-code)van deze actie.
 

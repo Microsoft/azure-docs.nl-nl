@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: df4faf367951402914abb03285498e0da6f3105f
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 9a2bda0a526c307ae17d8415f6f24423ddf51b63
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337673"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917763"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Azure HDInsight ID Broker (HIB)
 
@@ -137,6 +137,25 @@ curl -k -v -H "Authorization: Bearer Access_TOKEN" -H "Content-Type: application
 ``` 
 
 Voor het gebruik van Beeline en livy kunt u ook de voor beelden-codes volgen die [hier](https://github.com/Azure-Samples/hdinsight-enterprise-security/tree/main/HIB/HIBSamples) worden weer gegeven om de client te configureren voor het gebruik van OAuth en verbinding maken met het cluster.
+
+## <a name="faq"></a>Veelgestelde vragen
+### <a name="what-app-is-created-by-hdinsight-in-aad"></a>Welke app is gemaakt door HDInsight in AAD?
+Voor elk cluster wordt een toepassing van derden geregistreerd in AAD met de URI van het cluster als identifierUri (zoals https://clustername.azurehdinsight.net ).
+
+### <a name="why-are-users-prompted-for-consent-before-using-hib-enabled-clusters"></a>Waarom wordt gebruikers gevraagd om toestemming voordat ze HIB ingeschakelde clusters gebruiken?
+In AAD is toestemming vereist voor alle toepassingen van derden voordat deze gebruikers kan verifiëren of toegang kan krijgen tot gegevens.
+
+### <a name="can-the-consent-be-approved-programatically"></a>Kan de toestemming worden goedgekeurd via een programma?
+Met Microsoft Graph-API kunt u de toestemming automatiseren, raadpleegt u de [API-documentatie](https://docs.microsoft.com/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0) voor het automatiseren van de toestemming:
+
+* Registreer een app en Ken Application. ReadWrite. alle machtigingen voor de app toe om toegang te krijgen tot Microsoft Graph
+* Nadat een cluster is gemaakt, kunt u een query uitvoeren voor de cluster-app op basis van de id-URI
+* Toestemming voor de app registreren
+
+Wanneer het cluster wordt verwijderd, verwijdert HDInsight de app en hoeft er geen toestemming te worden opschonen.
+
+ 
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

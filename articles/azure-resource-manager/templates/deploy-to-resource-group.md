@@ -2,13 +2,13 @@
 title: Resources implementeren in resource groepen
 description: Hierin wordt beschreven hoe u resources in een Azure Resource Manager sjabloon implementeert. U ziet hoe u meer dan één resource groep kunt bereiken.
 ms.topic: conceptual
-ms.date: 10/26/2020
-ms.openlocfilehash: fd211641d7fcc02a1db154053597497583b21ae5
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 11/18/2020
+ms.openlocfilehash: 5e33f0d505759944ccaf2233aa122b6ab701c91f
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92681542"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917423"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Implementaties van resource groepen met ARM-sjablonen
 
@@ -42,7 +42,7 @@ Gebruik voor parameter bestanden:
 
 Als u wilt implementeren in een resource groep, gebruikt u de implementatie opdrachten voor de resource groep.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create)voor Azure cli. In het volgende voor beeld wordt een sjabloon geïmplementeerd voor het maken van een resource groep:
 
@@ -83,6 +83,8 @@ Wanneer u naar een resource groep implementeert, kunt u resources implementeren 
 
 * de doel resource groep van de bewerking
 * andere resource groepen in hetzelfde abonnement of andere abonnementen
+* elk abonnement in de Tenant
+* de Tenant voor de resource groep
 * [uitbreidings bronnen](scope-extension-resources.md) kunnen worden toegepast op resources
 
 De gebruiker die de sjabloon implementeert, moet toegang hebben tot het opgegeven bereik.
@@ -95,6 +97,8 @@ Als u resources wilt implementeren voor de doel resource, voegt u deze resources
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-rg.json" highlight="5":::
 
+Zie voor een voorbeeld sjabloon [implementeren naar doel resource groep](#deploy-to-target-resource-group).
+
 ### <a name="scope-to-resource-group-in-same-subscription"></a>Bereik tot resource groep in hetzelfde abonnement
 
 Als u resources wilt implementeren in een andere resource groep in hetzelfde abonnement, voegt u een geneste implementatie toe en neemt u de `resourceGroup` eigenschap op. Als u de abonnements-ID of de resource groep niet opgeeft, worden het abonnement en de resource groep van de bovenliggende sjabloon gebruikt. Alle resource groepen moeten bestaan voordat u de implementatie uitvoert.
@@ -103,13 +107,43 @@ In het volgende voor beeld streeft de geneste implementatie naar een resource gr
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/same-sub-to-resource-group.json" highlight="9,13":::
 
+Zie voor een voorbeeld sjabloon [implementeren naar meerdere resource groepen](#deploy-to-multiple-resource-groups).
+
 ### <a name="scope-to-resource-group-in-different-subscription"></a>Het bereik van de resource groep in een ander abonnement
 
 Als u resources wilt implementeren voor een resource groep in een ander abonnement, voegt u een geneste implementatie toe en neemt u de `subscriptionId` Eigenschappen en op `resourceGroup` . In het volgende voor beeld streeft de geneste implementatie naar een resource groep met de naam `demoResourceGroup` .
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/different-sub-to-resource-group.json" highlight="9,10,14":::
 
-## <a name="cross-resource-groups"></a>Meerdere resource groepen
+Zie voor een voorbeeld sjabloon [implementeren naar meerdere resource groepen](#deploy-to-multiple-resource-groups).
+
+### <a name="scope-to-subscription"></a>Bereik voor abonnement
+
+Als u resources wilt implementeren in een abonnement, voegt u een geneste implementatie toe en neemt u de `subscriptionId` eigenschap op. Het abonnement kan het abonnement zijn voor de doel resource groep of een ander abonnement in de Tenant. Stel ook de `location` eigenschap voor de geneste implementatie in.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/resource-group-to-subscription.json" highlight="9,10,14":::
+
+Zie [resource groep maken](#create-resource-group)voor een voorbeeld sjabloon.
+
+### <a name="scope-to-tenant"></a>Bereik naar Tenant
+
+U kunt resources maken op de Tenant door de `scope` set in te stellen op `/` . De gebruiker die de sjabloon implementeert, moet de [vereiste toegang hebben om te implementeren op de Tenant](deploy-to-tenant.md#required-access).
+
+U kunt een geneste implementatie gebruiken met `scope` en `location` instellen.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/resource-group-to-tenant.json" highlight="9,10,14":::
+
+Of u kunt het bereik instellen op `/` voor sommige resource typen, zoals beheer groepen.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/resource-group-create-mg.json" highlight="12,15":::
+
+## <a name="deploy-to-target-resource-group"></a>Implementeren naar doel resource groep
+
+Als u resources wilt implementeren in de doel resource groep, definieert u deze resources in het gedeelte **resources** van de sjabloon. Met de volgende sjabloon maakt u een opslag account in de resource groep die is opgegeven in de implementatie bewerking.
+
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-outputs/azuredeploy.json":::
+
+## <a name="deploy-to-multiple-resource-groups"></a>Implementeren in meerdere resource groepen
 
 U kunt in één ARM-sjabloon implementeren voor meer dan één resource groep. Gebruik een [geneste of gekoppelde sjabloon](linked-templates.md)om een resource groep te richten die afwijkt van die van de bovenliggende sjabloon. Geef binnen het type implementatie resource waarden op voor de abonnements-ID en de resource groep waarop u wilt dat de geneste sjabloon wordt geïmplementeerd. De resource groepen kunnen bestaan in verschillende abonnementen.
 
@@ -126,7 +160,7 @@ Als u de voor gaande sjabloon wilt testen en de resultaten wilt weer geven, gebr
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Als u twee opslag accounts wilt implementeren voor twee resource groepen in **hetzelfde abonnement** , gebruikt u:
+Als u twee opslag accounts wilt implementeren voor twee resource groepen in **hetzelfde abonnement**, gebruikt u:
 
 ```azurepowershell-interactive
 $firstRG = "primarygroup"
@@ -143,7 +177,7 @@ New-AzResourceGroupDeployment `
   -secondStorageLocation eastus
 ```
 
-Als u twee opslag accounts wilt implementeren op **twee abonnementen** , gebruikt u:
+Als u twee opslag accounts wilt implementeren op **twee abonnementen**, gebruikt u:
 
 ```azurepowershell-interactive
 $firstRG = "primarygroup"
@@ -152,10 +186,10 @@ $secondRG = "secondarygroup"
 $firstSub = "<first-subscription-id>"
 $secondSub = "<second-subscription-id>"
 
-Select-AzSubscription -Subscription $secondSub
+Set-AzContext -Subscription $secondSub
 New-AzResourceGroup -Name $secondRG -Location eastus
 
-Select-AzSubscription -Subscription $firstSub
+Set-AzContext -Subscription $firstSub
 New-AzResourceGroup -Name $firstRG -Location southcentralus
 
 New-AzResourceGroupDeployment `
@@ -167,9 +201,9 @@ New-AzResourceGroupDeployment `
   -secondSubscriptionID $secondSub
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u twee opslag accounts wilt implementeren voor twee resource groepen in **hetzelfde abonnement** , gebruikt u:
+Als u twee opslag accounts wilt implementeren voor twee resource groepen in **hetzelfde abonnement**, gebruikt u:
 
 ```azurecli-interactive
 firstRG="primarygroup"
@@ -184,7 +218,7 @@ az deployment group create \
   --parameters storagePrefix=tfstorage secondResourceGroup=$secondRG secondStorageLocation=eastus
 ```
 
-Als u twee opslag accounts wilt implementeren op **twee abonnementen** , gebruikt u:
+Als u twee opslag accounts wilt implementeren op **twee abonnementen**, gebruikt u:
 
 ```azurecli-interactive
 firstRG="primarygroup"
@@ -207,6 +241,76 @@ az deployment group create \
 ```
 
 ---
+
+## <a name="create-resource-group"></a>Een resourcegroep maken
+
+Vanuit een implementatie van een resource groep kunt u overschakelen naar het niveau van een abonnement en een resource groep maken. Met de volgende sjabloon wordt een opslag account geïmplementeerd naar de doel resource groep en wordt een nieuwe resource groep gemaakt in het opgegeven abonnement.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storagePrefix": {
+            "type": "string",
+            "maxLength": 11
+        },
+        "newResourceGroupName": {
+            "type": "string"
+        },
+        "nestedSubscriptionID": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]"
+        }
+    },
+    "variables": {
+        "storageName": "[concat(parameters('storagePrefix'), uniqueString(resourceGroup().id))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "name": "[variables('storageName')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "Storage",
+            "properties": {
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "demoSubDeployment",
+            "location": "westus",
+            "subscriptionId": "[parameters('nestedSubscriptionID')]",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "type": "Microsoft.Resources/resourceGroups",
+                            "apiVersion": "2020-06-01",
+                            "name": "[parameters('newResourceGroupName')]",
+                            "location": "[parameters('location')]",
+                            "properties": {}
+                        }
+                    ],
+                    "outputs": {}
+                }
+            }
+        }
+    ]
+}
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

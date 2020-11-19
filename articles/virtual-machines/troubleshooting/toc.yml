@@ -115,6 +115,8 @@
           href: windows-boot-error-invalid-image-hash.md
         - name: Windows-stopfout - Verkeerde systeemconfiguratiegegevens
           href: windows-stop-error-bad-system-config-info.md
+        - name: Windows-stopfout - Hardwarestoring
+          href: windows-stop-error-hardware-malfunction.md
         - name: Windows-stopfout - Status geen geheugen
           href: troubleshoot-windows-stop-error.md
         - name: Windows-stopfout - Systeemverwerking beëindigd

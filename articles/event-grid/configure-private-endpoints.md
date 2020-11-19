@@ -2,14 +2,14 @@
 title: Privé-eind punten voor Azure Event Grid onderwerpen of domeinen configureren
 description: In dit artikel wordt beschreven hoe u privé-eind punten voor Azure Event Grid-onderwerpen of-domein kunt configureren.
 ms.topic: how-to
-ms.date: 07/07/2020
+ms.date: 11/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e2e164d55f61f7a08e689aea106eac678b553c82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8e0cfc0a850ae15ea6d03ff6ca8b90003adbfc9
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324141"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916935"
 ---
 # <a name="configure-private-endpoints-for-azure-event-grid-topics-or-domains"></a>Privé-eind punten voor Azure Event Grid onderwerpen of domeinen configureren
 U kunt [privé-eind punten](../private-link/private-endpoint-overview.md) gebruiken om direct vanuit uw virtuele netwerk toegang te geven tot uw onderwerpen en domeinen, zonder dat u het open bare Internet [hoeft te passeren](../private-link/private-link-overview.md) . Het persoonlijke eind punt gebruikt een IP-adres uit de VNet-adres ruimte voor uw onderwerp of domein. Zie [netwerk beveiliging](network-security.md)voor meer conceptuele informatie.
@@ -20,7 +20,7 @@ In dit artikel wordt beschreven hoe u privé-eind punten voor onderwerpen of dom
 In deze sectie wordt beschreven hoe u de Azure Portal gebruikt om een persoonlijk eind punt te maken voor een onderwerp of een domein.
 
 > [!NOTE]
-> De stappen die in deze sectie worden beschreven, zijn voornamelijk voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen**te maken. 
+> De stappen die in deze sectie worden beschreven, zijn voornamelijk voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen** te maken. 
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en navigeer naar uw onderwerp of domein.
 2. Ga naar het tabblad **netwerken** op de pagina onderwerp. Selecteer **+ persoonlijk eind punt** op de werk balk.
@@ -35,17 +35,17 @@ In deze sectie wordt beschreven hoe u de Azure Portal gebruikt om een persoonlij
 
       ![Persoonlijk eind punt-pagina basis beginselen](./media/configure-private-endpoints/basics-page.png)
 3. Voer de volgende stappen uit op de pagina **resource** : 
-    1. Als u **verbinding maken met een Azure-resource in mijn Directory**selecteert, voert u de volgende stappen uit voor de verbindings methode. In dit voor beeld ziet u hoe u verbinding maakt met een Azure-resource in uw Directory. 
+    1. Als u **verbinding maken met een Azure-resource in mijn Directory** selecteert, voert u de volgende stappen uit voor de verbindings methode. In dit voor beeld ziet u hoe u verbinding maakt met een Azure-resource in uw Directory. 
         1. Selecteer het **Azure-abonnement** waarin uw **onderwerp/domein** bestaat. 
         1. Selecteer voor **resource type** **micro soft. EventGrid/topics** of **micro soft. EventGrid/domains** voor het **resource type**.
-        2. Selecteer voor **resource**een onderwerp/domein in de vervolg keuzelijst. 
+        2. Selecteer voor **resource** een onderwerp/domein in de vervolg keuzelijst. 
         3. Controleer of de **doel-subresource** is ingesteld op **onderwerp** of **domein** (op basis van het bron type dat u hebt geselecteerd).    
         4. Selecteer **volgende: configuratie >** knop onder aan de pagina. 
 
             ![Scherm afbeelding met de pagina ' een privé-eind punt maken-resource ' weer gegeven.](./media/configure-private-endpoints/resource-page.png)
     2. Als u **verbinding maken met een resource selecteert met een resource-id of alias**, voert u de volgende stappen uit:
         1. Voer de ID van de resource in. Bijvoorbeeld: `/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>`.  
-        2. Voor **resource**voert u **onderwerp** of **domein**in. 
+        2. Voor **resource** voert u **onderwerp** of **domein** in. 
         3. Beschrijving Een aanvraag bericht toevoegen. 
         4. Selecteer **volgende: configuratie >** knop onder aan de pagina. 
 
@@ -57,7 +57,7 @@ In deze sectie wordt beschreven hoe u de Azure Portal gebruikt om een persoonlij
 
     ![Persoonlijk eind punt-configuratie pagina](./media/configure-private-endpoints/configuration-page.png)
 5. Maak op de pagina **Tags** een wille keurige labels (namen en waarden) die u wilt koppelen aan de persoonlijke eindpunt resource. Selecteer vervolgens de knop **controleren + maken** onder aan de pagina. 
-6. Controleer alle instellingen in het **overzicht en maken**en selecteer **maken** om het persoonlijke eind punt te maken. 
+6. Controleer alle instellingen in het **overzicht en maken** en selecteer **maken** om het persoonlijke eind punt te maken. 
 
     ![Persoonlijk eind punt-& pagina maken bekijken](./media/configure-private-endpoints/review-create-page.png)
     
@@ -68,7 +68,7 @@ Wanneer u een privé-eindpunt maakt, moet de verbinding worden goedgekeurd. Als 
 
 Er zijn vier inrichtingsstatussen:
 
-| Service actie | Status privé-eindpunt serviceconsument | Beschrijving |
+| Serviceactie | Status privé-eindpunt serviceconsument | Beschrijving |
 |--|--|--|
 | Geen | In behandeling | De verbinding wordt hand matig gemaakt en in afwachting van goed keuring van de resource-eigenaar van de persoonlijke koppeling. |
 | Goedkeuren | Goedgekeurd | De verbinding werd automatisch of handmatig goedgekeurd en is klaar om te worden gebruikt. |
@@ -78,17 +78,17 @@ Er zijn vier inrichtingsstatussen:
 ###  <a name="how-to-manage-a-private-endpoint-connection"></a>Een verbinding met een privé-eind punt beheren
 In de volgende secties ziet u hoe u een verbinding met een privé-eind punt kunt goed keuren of afwijzen. 
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Typ in de zoek balk **Event grid onderwerpen** of **Event grid domeinen**.
 1. Selecteer het **onderwerp** dat of het **domein** dat u wilt beheren.
-1. Selecteer het tabblad **netwerken** .
+1. Selecteer het tabblad **Netwerken**.
 1. Als er verbindingen zijn die in behandeling zijn, ziet u een verbinding die wordt weer gegeven met in **behandeling** in de inrichtings status. 
 
 ### <a name="to-approve-a-private-endpoint"></a>Een persoonlijk eind punt goed keuren
 U kunt een persoonlijk eind punt goed keuren met de status in behandeling. Voer de volgende stappen uit om goed te keuren: 
 
 > [!NOTE]
-> De stappen die in deze sectie worden beschreven, zijn voornamelijk voor onderwerpen. U kunt soort gelijke stappen gebruiken om privé-eind punten voor **domeinen**goed te keuren. 
+> De stappen die in deze sectie worden beschreven, zijn voornamelijk voor onderwerpen. U kunt soort gelijke stappen gebruiken om privé-eind punten voor **domeinen** goed te keuren. 
 
 1. Selecteer het **privé-eind punt** dat u wilt goed keuren en selecteer **goed keuren** op de werk balk.
 
@@ -96,7 +96,7 @@ U kunt een persoonlijk eind punt goed keuren met de status in behandeling. Voer 
 1. In het dialoog venster **verbinding goed keuren** , voert u een opmerking in (optioneel) en selecteert u **Ja**. 
 
     ![Persoonlijk eind punt-goed keuren](./media/configure-private-endpoints/approve.png)
-1. Bevestig dat u de status van het eind punt als **goedgekeurd**ziet. 
+1. Bevestig dat u de status van het eind punt als **goedgekeurd** ziet. 
 
     ![Privé-eind punt-goedkeurings status](./media/configure-private-endpoints/approved-status.png)
 
@@ -104,11 +104,11 @@ U kunt een persoonlijk eind punt goed keuren met de status in behandeling. Voer 
 U kunt een privé-eind punt dat de status in behandeling of goedgekeurd heeft, afwijzen. Voer de volgende stappen uit om af te wijzen: 
 
 > [!NOTE]
-> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen**af te wijzen. 
+> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen** af te wijzen. 
 
 1. Selecteer het **persoonlijke eind punt** dat u wilt afwijzen en selecteer op de werk balk de optie **weigeren** .
 
-    ![Scherm opname waarin de ' netwerk-privé-eindpunt verbindingen (preview) ' worden weer gegeven en ' afwijzen ' is geselecteerd.](./media/configure-private-endpoints/reject-button.png)
+    ![Scherm opname waarin de ' netwerk-privé-eindpunt verbindingen ' met ' afwijzen ' wordt weer gegeven.](./media/configure-private-endpoints/reject-button.png)
 1. Voer in het dialoog venster **verbinding afwijzen** een opmerking in (optioneel) en selecteer **Ja**. 
 
     ![Persoonlijk eind punt-afwijzen](./media/configure-private-endpoints/reject.png)
@@ -121,7 +121,7 @@ U kunt een privé-eind punt dat de status in behandeling of goedgekeurd heeft, a
 
 
 ## <a name="use-azure-cli"></a>Azure CLI gebruiken
-Als u een persoonlijk eind punt wilt maken, gebruikt u de methode [AZ Network private-endpoint Create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create) , zoals wordt weer gegeven in het volgende voor beeld:
+Als u een persoonlijk eind punt wilt maken, gebruikt u de methode [AZ Network private-endpoint Create](/cli/azure/network/private-endpoint?#az-network-private-endpoint-create) , zoals wordt weer gegeven in het volgende voor beeld:
 
 ```azurecli-interactive
 az network private-endpoint create \
@@ -135,19 +135,19 @@ az network private-endpoint create \
     --group-ids topic
 ```
 
-Voor beschrijvingen van de para meters die in het voor beeld worden gebruikt, raadpleegt u de documentatie voor [AZ Network private-endpoint Create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create). In dit voor beeld ziet u een paar punten: 
+Voor beschrijvingen van de para meters die in het voor beeld worden gebruikt, raadpleegt u de documentatie voor [AZ Network private-endpoint Create](/cli/azure/network/private-endpoint?#az-network-private-endpoint-create). In dit voor beeld ziet u een paar punten: 
 
-- `private-connection-resource-id`Geef voor de resource-id van het **onderwerp** of het **domein**op. In het vorige voor beeld wordt het onderwerp type: gebruikt.
+- `private-connection-resource-id`Geef voor de resource-id van het **onderwerp** of het **domein** op. In het vorige voor beeld wordt het onderwerp type: gebruikt.
 - voor `group-ids` , opgeven `topic` of `domain` . In het voor gaande voor beeld `topic` wordt gebruikt. 
 
-Als u een persoonlijk eind punt wilt verwijderen, gebruikt u de methode [AZ Network private-endpoint delete](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-delete) , zoals wordt weer gegeven in het volgende voor beeld:
+Als u een persoonlijk eind punt wilt verwijderen, gebruikt u de methode [AZ Network private-endpoint delete](/cli/azure/network/private-endpoint?#az-network-private-endpoint-delete) , zoals wordt weer gegeven in het volgende voor beeld:
 
 ```azurecli-interactive
 az network private-endpoint delete --resource-group <RESOURECE GROUP NAME> --name <PRIVATE ENDPOINT NAME>
 ```
 
 > [!NOTE]
-> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen**te maken. 
+> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen** te maken. 
 
 
 
@@ -165,7 +165,7 @@ az extension add -n eventgrid
 ```
 
 ### <a name="create-a-private-endpoint"></a>Een privé-eindpunt maken
-Als u een persoonlijk eind punt wilt maken, gebruikt u de methode [AZ Network private-endpoint Create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create) , zoals wordt weer gegeven in het volgende voor beeld:
+Als u een persoonlijk eind punt wilt maken, gebruikt u de methode [AZ Network private-endpoint Create](/cli/azure/network/private-endpoint?#az-network-private-endpoint-create) , zoals wordt weer gegeven in het volgende voor beeld:
 
 ```azurecli-interactive
 az network private-endpoint create \
@@ -179,19 +179,19 @@ az network private-endpoint create \
     --group-ids topic
 ```
 
-Voor beschrijvingen van de para meters die in het voor beeld worden gebruikt, raadpleegt u de documentatie voor [AZ Network private-endpoint Create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create). In dit voor beeld ziet u een paar punten: 
+Voor beschrijvingen van de para meters die in het voor beeld worden gebruikt, raadpleegt u de documentatie voor [AZ Network private-endpoint Create](/cli/azure/network/private-endpoint?#az-network-private-endpoint-create). In dit voor beeld ziet u een paar punten: 
 
-- `private-connection-resource-id`Geef voor de resource-id van het **onderwerp** of het **domein**op. In het vorige voor beeld wordt het onderwerp type: gebruikt.
+- `private-connection-resource-id`Geef voor de resource-id van het **onderwerp** of het **domein** op. In het vorige voor beeld wordt het onderwerp type: gebruikt.
 - voor `group-ids` , opgeven `topic` of `domain` . In het voor gaande voor beeld `topic` wordt gebruikt. 
 
-Als u een persoonlijk eind punt wilt verwijderen, gebruikt u de methode [AZ Network private-endpoint delete](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-delete) , zoals wordt weer gegeven in het volgende voor beeld:
+Als u een persoonlijk eind punt wilt verwijderen, gebruikt u de methode [AZ Network private-endpoint delete](/cli/azure/network/private-endpoint?#az-network-private-endpoint-delete) , zoals wordt weer gegeven in het volgende voor beeld:
 
 ```azurecli-interactive
 az network private-endpoint delete --resource-group <RESOURECE GROUP NAME> --name <PRIVATE ENDPOINT NAME>
 ```
 
 > [!NOTE]
-> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen**te maken. 
+> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen** te maken. 
 
 #### <a name="sample-script"></a>Voorbeeldscript
 Hier volgt een voorbeeld script voor het maken van de volgende Azure-resources:
@@ -311,7 +311,7 @@ az eventgrid topic update \
 In deze sectie wordt beschreven hoe u een persoonlijk eind punt maakt voor een onderwerp of domein met behulp van Power shell. 
 
 ### <a name="prerequisite"></a>Vereiste
-Volg de instructies in [de volgende stappen: gebruik de portal om een Azure AD-toepassing en Service-Principal te maken die toegang heeft tot resources](../active-directory/develop/howto-create-service-principal-portal.md) om een Azure Active Directory-toepassing te maken en noteer de waarden van de **Directory (Tenant) ID**, **toepassings-id**en **toepassing (client) geheim**. 
+Volg de instructies in [de volgende stappen: gebruik de portal om een Azure AD-toepassing en Service-Principal te maken die toegang heeft tot resources](../active-directory/develop/howto-create-service-principal-portal.md) om een Azure Active Directory-toepassing te maken en noteer de waarden van de **Directory (Tenant) ID**, **toepassings-id** en **toepassing (client) geheim**. 
 
 ### <a name="prepare-token-and-headers-for-rest-api-calls"></a>Token en headers voorbereiden voor REST API-aanroepen 
 Voer de volgende vereiste opdrachten uit om een verificatie token op te halen dat moet worden gebruikt met REST API-aanroepen en autorisatie en andere header-informatie. 
@@ -358,7 +358,7 @@ $virtualNetwork | Set-AzVirtualNetwork
 ### <a name="create-an-event-grid-topic-with-a-private-endpoint"></a>Een event grid-onderwerp maken met een persoonlijk eind punt
 
 > [!NOTE]
-> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen**te maken. 
+> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen** te maken. 
 
 
 ```azurepowershell-interactive
@@ -438,7 +438,7 @@ Wanneer u controleert of het eind punt is gemaakt, ziet u het resultaat dat lijk
 Het volgende Power shell-voorbeeld fragment laat zien hoe u een persoonlijk eind punt kunt goed keuren. 
 
 > [!NOTE]
-> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om privé-eind punten voor **domeinen**goed te keuren. 
+> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om privé-eind punten voor **domeinen** goed te keuren. 
 
 ```azurepowershell-interactive
 $approvedBody = @{"properties"=@{"privateLinkServiceConnectionState"=@{"status"="approved";"description"="connection approved";"actionsRequired"="none"}}} | ConvertTo-Json
@@ -460,7 +460,7 @@ Invoke-RestMethod -Method 'Get'  `
 In het volgende voor beeld ziet u hoe u een persoonlijk eind punt afwijst met behulp van Power shell. U kunt de GUID voor het persoonlijke eind punt ophalen uit het resultaat van de vorige GET-opdracht. 
 
 > [!NOTE]
-> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen**af te wijzen. 
+> De stappen die in deze sectie worden weer gegeven, zijn voor onderwerpen. U kunt soort gelijke stappen gebruiken om persoonlijke eind punten voor **domeinen** af te wijzen. 
 
 
 ```azurepowershell-interactive

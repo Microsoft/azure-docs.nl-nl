@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: 0dc55f4d77fde48590b1fbf206ed988e8fb9ec0e
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: a02fa7d9f656ed3b6e61aab1f42e2a3ffca131a7
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490267"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917253"
 ---
 # <a name="introduction-to-provisioned-throughput-in-azure-cosmos-db"></a>Inleiding tot ingerichte door Voer in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -65,7 +65,7 @@ Alle containers die in een Data Base zijn gemaakt met een ingerichte door Voer, 
 
 Als de werk belasting op een logische partitie meer gebruikt dan de door Voer die is toegewezen aan een specifieke logische partitie, zijn uw bewerkingen een beperkt aantal. Wanneer de snelheids beperking optreedt, kunt u de door Voer voor de gehele data base verg Roten of de bewerkingen opnieuw proberen. Zie [logische partities](partitioning-overview.md)voor meer informatie over partitioneren.
 
-Containers in een gedeelde doorvoerdatabase delen de doorvoer (RU/s) die zijn toegewezen aan deze database. U kunt maximaal vier containers hebben met minimaal 400 RU/s in de database. Bij standaard (hand matig) ingerichte door Voer is voor elke nieuwe container na de eerste vier een extra mini maal 100 RU/s vereist. Als u bijvoorbeeld een gedeelde doorvoerdatabase hebt met acht containers, is het minimale aantal RU/s voor de database 800 RU/s. Met de ingerichte door Voer voor automatisch schalen kunt u Maxi maal 25 containers in een Data Base hebben met automatisch schalen Max. 4000 RU/s (schalen tussen 400-4000 RU/s).
+Containers in een gedeelde doorvoerdatabase delen de doorvoer (RU/s) die zijn toegewezen aan deze database. Met Standard (hand matig) ingerichte door Voer, kunt u Maxi maal 25 containers hebben met mini maal 400 RU/s op de data base. Met de ingerichte door Voer voor automatisch schalen kunt u Maxi maal 25 containers in een Data Base hebben met automatisch schalen Max. 4000 RU/s (schalen tussen 400-4000 RU/s).
 
 > [!NOTE]
 > In februari 2020 hebben we een wijziging geïntroduceerd waarmee u Maxi maal 25 containers in een gedeelde doorvoer database kunt hebben, waardoor het delen van de door Voer via de containers beter wordt. Na de eerste 25 containers kunt u meer containers toevoegen aan de Data Base als ze zijn [ingericht met een specifieke door Voer](#set-throughput-on-a-database-and-a-container), die los is van de gedeelde door Voer van de data base.<br>
@@ -80,11 +80,11 @@ Als uw workloads het verwijderen en opnieuw maken van alle verzamelingen in een 
 U kunt de twee modellen combi neren. De door Voer voor de data base en de container inrichten is toegestaan. In het volgende voor beeld ziet u hoe u standaard (hand matige) ingerichte door Voer kunt inrichten voor een Azure Cosmos-data base en een container:
 
 * U kunt een Azure Cosmos-data base met de naam *Z* maken met de standaard (hand matig) ingerichte door Voer van *"K"* RUs. 
-* Maak vervolgens vijf containers met de naam *A* , *B* , *C* , *D* en *E* in de-data base. Zorg ervoor dat u bij het maken van container B een **specifieke door Voer inrichten voor deze container** optie inschakelt en expliciet *' P '* RUs van ingerichte door Voer voor deze container configureert. U kunt gedeelde en toegewezen door Voer alleen configureren bij het maken van de data base en container. 
+* Maak vervolgens vijf containers met de naam *A*, *B*, *C*, *D* en *E* in de-data base. Zorg ervoor dat u bij het maken van container B een **specifieke door Voer inrichten voor deze container** optie inschakelt en expliciet *' P '* RUs van ingerichte door Voer voor deze container configureert. U kunt gedeelde en toegewezen door Voer alleen configureren bij het maken van de data base en container. 
 
    :::image type="content" source="./media/set-throughput/coll-level-throughput.png" alt-text="De door Voer op container niveau instellen":::
 
-* De *"K"* RUs-door Voer wordt gedeeld in de vier containers *A* , *C* , *D* en *E*. De exacte hoeveelheid door Voer die beschikbaar is voor *A* , *C* , *D* of *E* , varieert. Er zijn geen service overeenkomsten voor de door Voer van elke afzonderlijke container.
+* De *"K"* RUs-door Voer wordt gedeeld in de vier containers *A*, *C*, *D* en *E*. De exacte hoeveelheid door Voer die beschikbaar is voor *A*, *C*, *D* of *E* , varieert. Er zijn geen service overeenkomsten voor de door Voer van elke afzonderlijke container.
 * De container met de naam *B* is gegarandeerd dat de *"P"* RUs-door Voer altijd wordt opgehaald. Er wordt een back-up gemaakt van service overeenkomsten.
 
 > [!NOTE]
@@ -111,7 +111,6 @@ De werkelijke minimale RU/s kan variëren, afhankelijk van de configuratie van u
 * 400 RU/s 
 * Huidige opslag in GB * 10 RU/s (tenzij uw container of data base meer dan 1 TB aan gegevens bevat, raadpleegt u ons [programma voor hoge opslag/laag door Voer](#high-storage-low-throughput-program))
 * De hoogste RU/s die zijn ingericht voor de data base of container/100
-* Aantal containers * 100 RU/s (alleen gedeelde doorvoer database)
 
 ### <a name="changing-the-provisioned-throughput"></a>De ingerichte door Voer wijzigen
 
@@ -120,9 +119,9 @@ U kunt de ingerichte door Voer van een container of een Data Base schalen via de
 * [Container. ReplaceThroughputAsync](/dotnet/api/microsoft.azure.cosmos.container.replacethroughputasync?view=azure-dotnet&preserve-view=true) in de .NET SDK.
 * [CosmosContainer. replaceThroughput](/java/api/com.azure.cosmos.cosmosasynccontainer.replacethroughput?view=azure-java-stable&preserve-view=true) op de Java-SDK.
 
-Als u **de ingerichte door Voer verkort** , kunt u dit doen tot het [minimum](#current-provisioned-throughput).
+Als u **de ingerichte door Voer verkort**, kunt u dit doen tot het [minimum](#current-provisioned-throughput).
 
-Als u **de ingerichte door Voer toeneemt** , wordt de bewerking meestal onmiddellijk uitgevoerd. Er zijn echter gevallen waarin de bewerking langer kan duren vanwege de systeem taken om de vereiste bronnen in te richten. In dit geval wordt een poging om de ingerichte door voer te wijzigen terwijl deze bewerking wordt uitgevoerd, een HTTP 423-antwoord met een fout bericht weer gegeven waarin wordt uitgelegd dat er nog een andere schaal bewerking wordt uitgevoerd.
+Als u **de ingerichte door Voer toeneemt**, wordt de bewerking meestal onmiddellijk uitgevoerd. Er zijn echter gevallen waarin de bewerking langer kan duren vanwege de systeem taken om de vereiste bronnen in te richten. In dit geval wordt een poging om de ingerichte door voer te wijzigen terwijl deze bewerking wordt uitgevoerd, een HTTP 423-antwoord met een fout bericht weer gegeven waarin wordt uitgelegd dat er nog een andere schaal bewerking wordt uitgevoerd.
 
 > [!NOTE]
 > Als u van plan bent een zeer grote opname werk belasting te maken die een grote toename van de ingerichte door Voer vereist, moet u er rekening mee houden dat de schaal bewerking geen SLA heeft en, zoals vermeld in de vorige alinea, het lang kan duren wanneer de toename groot is. U kunt het beste plannen voordat de werk belasting begint en de volgende methoden gebruiken om de voortgang te controleren.
@@ -147,8 +146,8 @@ In deze tabel ziet u een vergelijking tussen het inrichten van de standaard door
 
 |**Parameter**  |**Standaard doorvoer (hand matig) voor een Data Base**  |**Standaard (hand matig) door Voer voor een container**|**Door Voer automatisch schalen voor een Data Base** | **Door Voer automatisch schalen op een container**|
 |---------|---------|---------|---------|---------|
-|Ingangs punt (mini maal RU/s) |400 RU/s. Na de eerste vier containers vereist elke extra container mini maal 100 RU/s</li> |400| Automatisch schalen tussen 400-4000 RU/s. Kan Maxi maal 25 containers bevatten zonder het minimum aantal RU/s per container</li> | Automatisch schalen tussen 400-4000 RU/s.|
-|Mini maal RU/s per container|100|400|--|Automatisch schalen tussen 400-4000 RU/s|
+|Ingangs punt (mini maal RU/s) |400 RU/s. Kan Maxi maal 25 containers bevatten zonder het minimum aantal RU/s per container.</li> |400| Automatisch schalen tussen 400-4000 RU/s. Kan Maxi maal 25 containers bevatten zonder het minimum aantal RU/s per container.</li> | Automatisch schalen tussen 400-4000 RU/s.|
+|Mini maal RU/s per container|--|400|--|Automatisch schalen tussen 400-4000 RU/s|
 |Maximum RUs|Onbeperkt, op de data base.|Onbeperkt, op de container.|Onbeperkt, op de data base.|Onbeperkt, op de container.
 |RUs toegewezen of beschikbaar voor een specifieke container|Geen garanties. RUs toegewezen aan een bepaalde container is afhankelijk van de eigenschappen. Eigenschappen kunnen de keuze zijn van partitie sleutels van containers die de door Voer, de distributie van de werk belasting en het aantal containers delen. |Alle RUs-instellingen die in de container zijn geconfigureerd, worden uitsluitend gereserveerd voor de container.|Geen garanties. RUs toegewezen aan een bepaalde container is afhankelijk van de eigenschappen. Eigenschappen kunnen de keuze zijn van partitie sleutels van containers die de door Voer, de distributie van de werk belasting en het aantal containers delen. |Alle RUs-instellingen die in de container zijn geconfigureerd, worden uitsluitend gereserveerd voor de container.|
 |Maximale opslag voor een container|Onbeperkt.|Onbeperkt|Onbeperkt|Onbeperkt|

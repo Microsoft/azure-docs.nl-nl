@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: shkale-msft
 ms.author: shkale
 ms.reviewer: mathoma, stevestein, danil
-ms.date: 10/30/2020
-ms.openlocfilehash: a97e39314b4dc15a360a01408f183a3f9a19c76f
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.date: 11/18/2020
+ms.openlocfilehash: c6754e6f0e3f0d6208bd34c96c8bc473429c943c
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131357"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917899"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Automatische back-ups-Azure SQL Database & SQL Managed instance
 
@@ -36,9 +36,9 @@ Wanneer u een Data Base herstelt, bepaalt de service welke volledige, differenti
 
 ### <a name="backup-storage-redundancy"></a>Opslag redundantie van back-ups
 
-SQL Database en SQL Managed instance slaan gegevens standaard op in geo-redundante (RA-GRS) [opslag-blobs](../../storage/common/storage-redundancy.md) die worden gerepliceerd naar een [gekoppelde regio](../../best-practices-availability-paired-regions.md). Zo kunt u zich beschermen tegen storingen die van invloed zijn op de back-upopslag in de primaire regio en kunt u uw server herstellen naar een andere regio in het geval van een ramp. 
+SQL Database en SQL Managed instance slaan gegevens standaard op in geografisch redundante [opslag-blobs](../../storage/common/storage-redundancy.md) die worden gerepliceerd naar een [gekoppelde regio](../../best-practices-availability-paired-regions.md). Zo kunt u zich beschermen tegen storingen die van invloed zijn op de back-upopslag in de primaire regio en kunt u uw server herstellen naar een andere regio in het geval van een ramp. 
 
-De optie voor het configureren van redundantie opslag voor back-ups biedt de flexibiliteit om te kiezen tussen lokaal redundante, zone redundante of geografisch redundante opslag-blobs voor een door SQL beheerd exemplaar of een SQL Database. Om ervoor te zorgen dat uw gegevens binnen dezelfde regio blijven waar uw beheerde instantie of SQL database wordt geïmplementeerd, kunt u de standaard geo-redundante opslag redundantie voor back-ups wijzigen en lokale redundante (LRS) of zone redundante opslag-blobs (ZRS) voor back-ups configureren. Opslag redundantie mechanismen slaan meerdere kopieën van uw gegevens op, zodat deze beschermd zijn tegen geplande en niet-geplande gebeurtenissen, waaronder tijdelijke hardwarestoringen, netwerk-of energie storingen of enorme natuur rampen. De geconfigureerde redundantie voor back-upopslag wordt toegepast op de instellingen voor retentie van back-ups op korte termijn die worden gebruikt voor herstel naar een bepaald tijdstip (PITR) en back-ups voor lange termijn retentie die worden gebruikt voor langdurige back-ups (LTR). 
+De optie voor het configureren van redundantie opslag voor back-ups biedt de flexibiliteit om te kiezen tussen lokaal redundante, zone redundante of geografisch redundante opslag-blobs voor een door SQL beheerd exemplaar of een SQL Database. Om ervoor te zorgen dat uw gegevens binnen dezelfde regio blijven waar uw beheerde instantie of SQL database wordt geïmplementeerd, kunt u de standaard geo-redundante opslag redundantie voor back-ups wijzigen en lokaal redundante of zone-redundante opslag-blobs voor back-ups configureren. Opslag redundantie mechanismen slaan meerdere kopieën van uw gegevens op, zodat deze beschermd zijn tegen geplande en niet-geplande gebeurtenissen, waaronder tijdelijke hardwarestoringen, netwerk-of energie storingen of enorme natuur rampen. De geconfigureerde redundantie voor back-upopslag wordt toegepast op de instellingen voor retentie van back-ups op korte termijn die worden gebruikt voor herstel naar een bepaald tijdstip (PITR) en back-ups voor lange termijn retentie die worden gebruikt voor langdurige back-ups (LTR). 
 
 Voor een SQL Database kan de redundantie van de back-upopslag worden geconfigureerd op het moment dat de data base wordt gemaakt of kan worden bijgewerkt voor een bestaande data base. de wijzigingen die zijn aangebracht in een bestaande data base, zijn alleen van toepassing op toekomstige back-ups. Nadat de redundantie van de back-upopslag van een bestaande data base is bijgewerkt, kan het tot 48 uur duren voordat de wijzigingen zijn toegepast. Houd er rekening mee dat geo Restore is uitgeschakeld zodra een Data Base is bijgewerkt voor het gebruik van lokale of zone redundante opslag. 
 
@@ -179,9 +179,9 @@ U kunt het totale opslag verbruik van back-ups voor elk back-uptype (volledig, D
 ### <a name="backup-storage-redundancy"></a>Opslag redundantie van back-ups
 
 Opslag redundantie van back-ups heeft gevolgen voor back-upkosten op de volgende manier:
-- LRS prijs = x
-- ZRS prijs = 1,25 x
-- RA-GRS prijs = 2x
+- lokaal redundante prijs = x
+- zone-redundante prijs = 1,25 x
+- geografisch redundante prijs = 2x
 
 Ga voor meer informatie over prijzen voor back-upopslag naar [Azure SQL database prijs pagina](https://azure.microsoft.com/pricing/details/sql-database/single/) en de [pagina met prijzen voor Azure SQL Managed instance](https://azure.microsoft.com/pricing/details/azure-sql/sql-managed-instance/single/).
 
@@ -190,9 +190,9 @@ Ga voor meer informatie over prijzen voor back-upopslag naar [Azure SQL database
 
 ### <a name="monitor-costs"></a>Kosten bewaken
 
-Als u meer wilt weten over de kosten voor back-upopslag, gaat u naar **Cost Management + facturering** in de Azure Portal, selecteert u **Cost Management** en selecteert u vervolgens **kosten analyse** . Selecteer het gewenste abonnement als **bereik** en filter vervolgens op de periode en service waarop u bent geïnteresseerd.
+Als u meer wilt weten over de kosten voor back-upopslag, gaat u naar **Cost Management + facturering** in de Azure Portal, selecteert u **Cost Management** en selecteert u vervolgens **kosten analyse**. Selecteer het gewenste abonnement als **bereik** en filter vervolgens op de periode en service waarop u bent geïnteresseerd.
 
-Voeg een filter toe voor **service naam** en selecteer vervolgens **SQL data base** in de vervolg keuzelijst. Gebruik het filter **meter subcategorie** om de facturerings teller voor uw service te kiezen. Selecteer voor één data base of een pool voor elastische Data Base **één/elastische pool PITR back-upopslag** . Voor een beheerd exemplaar selecteert u **mi PITR Backup Storage** . De subcategorieën voor **opslag** en **berekening** kunnen u ook interesseren, maar ze zijn niet gekoppeld aan back-upopslagkosten.
+Voeg een filter toe voor **service naam** en selecteer vervolgens **SQL data base** in de vervolg keuzelijst. Gebruik het filter **meter subcategorie** om de facturerings teller voor uw service te kiezen. Selecteer voor één data base of een pool voor elastische Data Base **één/elastische pool PITR back-upopslag**. Voor een beheerd exemplaar selecteert u **mi PITR Backup Storage**. De subcategorieën voor **opslag** en **berekening** kunnen u ook interesseren, maar ze zijn niet gekoppeld aan back-upopslagkosten.
 
 ![Kosten analyse back-upopslag](./media/automated-backups-overview/check-backup-storage-cost-sql-mi.png)
 
@@ -373,7 +373,7 @@ Zie [retentie van back-ups rest API](/rest/api/sql/backupshorttermretentionpolic
 > [!NOTE]
 > Configureer bare opslag redundantie voor back-ups voor SQL Managed instance kan alleen worden opgegeven tijdens het proces voor het maken van een beheerd exemplaar. Zodra de resource is ingericht, kunt u de optie voor opslag redundantie van back-ups niet meer wijzigen. Voor SQL Database is de open bare preview van deze functie momenteel beschikbaar in Brazilië-zuid en is deze algemeen beschikbaar in de Azure-regio Zuidoost-Azië. 
 
-Een opslag redundantie van een back-up van een beheerd exemplaar kan worden ingesteld tijdens het maken van een exemplaar. Voor een SQL Database kan deze worden ingesteld bij het maken van de data base of kan worden bijgewerkt voor een bestaande data base. De standaard waarde is geografisch redundante opslag (RA-GRS). Zie de [pagina met prijzen voor Managed instance](https://azure.microsoft.com/pricing/details/azure-sql/sql-managed-instance/single/)(Engelstalig) voor verschillen in de prijs van een LRS (Local-redundante), zone-redundante (ZRS) en geo-redundante (RA-GRS)-back-upopslag.
+Een opslag redundantie van een back-up van een beheerd exemplaar kan worden ingesteld tijdens het maken van een exemplaar. Voor een SQL Database kan deze worden ingesteld bij het maken van de data base of kan worden bijgewerkt voor een bestaande data base. De standaard waarde is geografisch redundante opslag. Bezoek de [pagina met prijzen voor Managed instances](https://azure.microsoft.com/pricing/details/azure-sql/sql-managed-instance/single/)voor verschillen in de prijs tussen lokaal redundante, zone-redundante en geografisch redundante back-upopslag.
 
 ### <a name="configure-backup-storage-redundancy-by-using-the-azure-portal"></a>Opslag redundantie voor back-ups configureren met behulp van de Azure Portal
 

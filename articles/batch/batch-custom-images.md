@@ -2,17 +2,17 @@
 title: Een beheerde installatie kopie gebruiken om een aangepaste installatie kopie groep te maken
 description: Maak een aangepaste batch-installatie kopie groep van een beheerde installatie kopie om reken knooppunten in te richten met de software en gegevens voor uw toepassing.
 ms.topic: conceptual
-ms.date: 07/01/2020
-ms.openlocfilehash: 45bf0f8b3cb335b7025ff06189bf6bc4e0a896ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/18/2020
+ms.openlocfilehash: 0a357a1d8a22341297f3bee73fb0867fb03f374f
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85851296"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916573"
 ---
 # <a name="use-a-managed-image-to-create-a-custom-image-pool"></a>Een beheerde installatie kopie gebruiken om een aangepaste installatie kopie groep te maken
 
-Als u een aangepaste installatie kopie groep wilt maken voor de virtuele machines (Vm's) van uw batch-pool, kunt u een beheerde installatie kopie gebruiken om een afbeelding van de [Galerie met gedeelde afbeeldingen](batch-sig-images.md)te maken. Het gebruik van alleen een beheerde installatie kopie wordt ook ondersteund, maar alleen voor API-versies tot en met 2019-08-01. 
+Als u een aangepaste installatie kopie groep wilt maken voor de virtuele machines (Vm's) van uw batch-pool, kunt u een beheerde installatie kopie gebruiken om een afbeelding van de [Galerie met gedeelde afbeeldingen](batch-sig-images.md)te maken. Het gebruik van alleen een beheerde installatie kopie wordt ook ondersteund, maar alleen voor API-versies tot en met 2019-08-01.
 
 > [!IMPORTANT]
 > In de meeste gevallen moet u aangepaste installatie kopieën maken met behulp van de galerie met gedeelde afbeeldingen. Met de galerie gedeelde afbeeldingen kunt u Pools sneller inrichten, grotere aantallen Vm's schalen en de betrouw baarheid verbeteren bij het inrichten van Vm's. Zie [de galerie met gedeelde afbeeldingen gebruiken om een aangepaste groep te maken](batch-sig-images.md)voor meer informatie.
@@ -49,6 +49,7 @@ Als u een nieuwe VM voor de installatie kopie maakt, gebruikt u een Azure Market
 - Installeer geen Azure-extensies, zoals de aangepaste script extensie, op de VM. Als de installatie kopie een vooraf geïnstalleerde extensie bevat, kan Azure problemen ondervinden bij het implementeren van de batch-pool.
 - Wanneer u gekoppelde gegevens schijven gebruikt, moet u de schijven koppelen en Format teren vanuit een VM om ze te gebruiken.
 - Zorg ervoor dat de basis installatie kopie van het besturings systeem dat u opgeeft, gebruikmaakt van het standaard tijdelijke station. De batch-knooppunt agent verwacht momenteel het standaard tijdelijke station.
+- Zorg ervoor dat de besturingssysteem schijf niet is versleuteld.
 - Zodra de virtuele machine wordt uitgevoerd, maakt u verbinding met de VM via RDP (voor Windows) of SSH (voor Linux). Installeer de benodigde software of kopieer de gewenste gegevens.  
 
 ### <a name="create-a-vm-snapshot"></a>Een VM-moment opname maken

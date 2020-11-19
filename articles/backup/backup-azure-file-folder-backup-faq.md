@@ -3,12 +3,12 @@ title: Microsoft Azure Recovery Services-agent (MARS) – Veelgestelde vragen
 description: Behandelt Veelgestelde vragen over het maken van back-ups van bestanden en mappen met Azure Backup.
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.openlocfilehash: 9fb9e3993d6f56833e43a4d451c0865b7fd732d3
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 1edfaed99e60409774496c5ae75df8be99a8fe1f
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172517"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917355"
 ---
 # <a name="frequently-asked-questions---microsoft-azure-recovery-services-mars-agent"></a>Veelgestelde vragen-agent voor Microsoft Azure Recovery Services (MARS)
 
@@ -22,7 +22,7 @@ De meest recente MARS-agent die wordt gebruikt bij het maken van een back-up van
 
 ### <a name="where-can-i-download-the-vault-credentials-file"></a>Waar kan ik het bestand met kluis referenties downloaden?
 
-Ga in het Azure Portal naar **Eigenschappen** voor uw kluis. Schakel onder **back-upgegevens**het selectie vakje in voor **al gebruik van de nieuwste Recovery Services-agent**. Selecteer **Downloaden**.
+Ga in het Azure Portal naar **Eigenschappen** voor uw kluis. Schakel onder **back-upgegevens** het selectie vakje in voor **al gebruik van de nieuwste Recovery Services-agent**. Selecteer **Downloaden**.
 
 ![Referenties downloaden](./media/backup-azure-file-folder-backup-faq/download-credentials.png)
 
@@ -71,6 +71,10 @@ Ja. De MARS-agent converteert de ontdubbelde gegevens naar normale gegevens wann
 ### <a name="do-i-need-administrator-permissions-to-install-and-configure-the-mars-agent"></a>Heb ik beheerders machtigingen nodig voor het installeren en configureren van de MARS-agent?
 
 Ja, de installatie van de MARS-agent en configuratie van back-ups met behulp van de MARS-console moet de gebruiker een lokale beheerder zijn op de beveiligde server.
+
+### <a name="what-is-the-impact-on-mars-agent-backups-of-transferring-the-vault-subscription-to-a-different-azure-ad-directory"></a>Wat is de impact van MARS-agent back-ups van het overzetten van het kluis abonnement naar een andere Azure AD-adres lijst?
+
+De wijziging van de Azure AD-Directory heeft geen invloed op de back-ups van de MARS-agent. 
 
 ## <a name="manage-backups"></a>Back-ups beheren
 
@@ -185,7 +189,7 @@ Houd rekening met de volgende voorwaarden:
   * *Andere wachtwoordzin*, dan kunt u de back-upgegevens niet herstellen.
 * Als u de agent op een *andere computer* installeert met de
   * *Dezelfde wachtwoordzin* (gebruikt in de oorspronkelijke machine), dan kunt u de back-upgegevens herstellen.
-  * *Andere wachtwoordzin*kunt u de back-upgegevens niet herstellen.
+  * *Andere wachtwoordzin* kunt u de back-upgegevens niet herstellen.
 * Als de oorspronkelijke machine is beschadigd (voor komt dat u de wachtwoordzin opnieuw genereert via de MARS-console), maar u kunt de oorspronkelijke Scratch-map die wordt gebruikt door de MARS-agent, herstellen of openen, dan kan het zijn dat u kunt herstellen (als u het wacht woord bent verg eten). Neem contact op met de klant ondersteuning voor meer informatie.
 
 #### <a name="how-do-i-recover-if-i-lost-my-original-machine-where-backups-were-taken"></a>Hoe kan ik herstellen als ik mijn oorspronkelijke machine kwijt ben (waar de back-ups zijn gemaakt)?

@@ -2,13 +2,13 @@
 title: Azure Service Bus metrische gegevens in Azure Monitor | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe u Azure Monitor kunt gebruiken om Service Bus entiteiten (wacht rijen, onderwerpen en abonnementen) te bewaken.
 ms.topic: article
-ms.date: 09/30/2020
-ms.openlocfilehash: 169edb651a59302d0ea1245fd48787404dd3e555
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/18/2020
+ms.openlocfilehash: 1f8bd9484bf2a2106818da1d6e4ef21e937d2ac3
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91598124"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916879"
 ---
 # <a name="azure-service-bus-metrics-in-azure-monitor"></a>Azure Service Bus metrische gegevens in Azure Monitor
 
@@ -23,7 +23,7 @@ Azure Monitor biedt uniforme gebruikers interfaces voor bewaking in verschillend
 
 Azure Monitor biedt meerdere manieren om toegang te krijgen tot metrische gegevens. U hebt toegang tot metrische gegevens via de [Azure Portal](https://portal.azure.com), of u kunt gebruikmaken van de Azure monitor API'S (rest en .net) en analyse oplossingen, zoals Azure monitor logboeken en Event hubs. Zie [metrische gegevens in azure monitor](../azure-monitor/platform/data-platform-metrics.md)voor meer informatie.
 
-Metrische gegevens zijn standaard ingeschakeld, en u kunt toegang krijgen tot de meest recente 30 dagen. Als u gegevens gedurende een langere periode wilt behouden, kunt u metrische gegevens archiveren naar een Azure Storage-account. Deze waarde wordt geconfigureerd in [Diagnostische instellingen](../azure-monitor/platform/diagnostic-settings.md) in azure monitor.
+Metrische gegevens zijn standaard ingeschakeld, en u kunt toegang krijgen tot de meest recente 30 dagen. Als u gegevens gedurende een langere periode wilt bewaren, kunt u metrische gegevens archiveren naar een Azure Storage-account. Deze waarde wordt geconfigureerd in [Diagnostische instellingen](../azure-monitor/platform/diagnostic-settings.md) in azure monitor.
 
 ## <a name="access-metrics-in-the-portal"></a>Toegang tot metrische gegevens in de portal
 
@@ -31,7 +31,7 @@ U kunt metrische gegevens gedurende een bepaalde periode bewaken in de [Azure Po
 
 ![Scherm afbeelding van de pagina met de monitor metrieken (preview) in de Azure Portal.][1]
 
-U kunt ook rechtstreeks toegang krijgen tot metrische gegevens via de naam ruimte. Hiertoe selecteert u uw naam ruimte en klikt u op **metrische gegevens**. Als u metrische gegevens wilt weer geven die zijn gefilterd op het bereik van de entiteit, selecteert u de entiteit en klikt u op **metrische gegevens**.
+U kunt ook rechtstreeks toegang krijgen tot metrische gegevens via de naam ruimte. Hiertoe selecteert u uw naam ruimte en selecteert u vervolgens **metrische gegevens**. Als u metrische gegevens wilt weer geven die zijn gefilterd op het bereik van de entiteit, selecteert u de entiteit en selecteert u vervolgens **metrische gegevens**.
 
 ![Scherm afbeelding van de pagina met monitor-metrische gegevens (preview), gefilterd op het bereik van de entiteit.][2]
 
@@ -41,7 +41,7 @@ Voor metrische gegevens ondersteunen dimensies, moet u filteren met de gewenste 
 
 Metrische gegevens en waarschuwingen op Azure Monitor worden per waarschuwing in rekening gebracht. Deze kosten moeten beschikbaar zijn op de Portal wanneer de waarschuwing is ingesteld en voordat deze wordt opgeslagen. 
 
-Aanvullende oplossingen waarmee metrische gegevens worden opgenomen, worden rechtstreeks door deze oplossingen in rekening gebracht. U wordt bijvoorbeeld gefactureerd door Azure Storage als u metrische gegevens archiveert naar een Azure Storage-account. U wordt ook gefactureerd door Log Analytics als u metrische gegevens streamt naar Log Analytics voor geavanceerde analyse.
+Aanvullende oplossingen waarmee metrische gegevens worden opgenomen, worden rechtstreeks door deze oplossingen in rekening gebracht. U wordt bijvoorbeeld gefactureerd door Azure Storage als u metrische gegevens archiveert naar een Azure Storage-account. u wordt ook gefactureerd door Log Analytics als u metrische gegevens streamt naar Log Analytics voor geavanceerde analyse.
 
 Met de volgende metrische gegevens krijgt u een overzicht van de status van uw service. 
 
@@ -58,7 +58,7 @@ Telt het aantal gegevens-en beheer bewerkings aanvragen.
 | ------------------- | ----------------- |
 | Binnenkomende aanvragen| Het aantal aanvragen voor de Service Bus-service gedurende een opgegeven periode. <br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
 |Geslaagde aanvragen|Het aantal geslaagde aanvragen voor de Service Bus-service gedurende een opgegeven periode.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
-|Server fouten|Het aantal niet-verwerkte aanvragen vanwege een fout in de Service Bus-service gedurende een opgegeven periode.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
+|Server fouten|Het aantal aanvragen dat niet is verwerkt wegens een fout in de Service Bus-service gedurende een opgegeven periode.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
 |Gebruikers fouten (Zie de volgende Subsectie)|Het aantal aanvragen dat niet is verwerkt wegens gebruikers fouten gedurende een opgegeven periode.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
 |Vertraagde aanvragen|Het aantal aanvragen dat is beperkt omdat het gebruik is overschreden.<br/><br/> Eenheid: aantal <br/> Aggregatie type: totaal <br/> Dimensie: naam van entiteit|
 
@@ -80,14 +80,12 @@ De volgende twee typen fouten worden geclassificeerd als gebruikers fouten:
 | Actieve berichten| Aantal actieve berichten in een wachtrij/onderwerp. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/> Dimensie: naam van entiteit |
 | Onbestelbare berichten| Aantal onbestelbare berichten in een wachtrij/onderwerp. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/>Dimensie: naam van entiteit |
 | Geplande berichten| Aantal geplande berichten in een wachtrij/onderwerp. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld  <br/> Dimensie: naam van entiteit |
+| Voltooide berichten| Aantal voltooide berichten in een wachtrij/onderwerp. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/> Dimensie: naam van entiteit |
+| Afgebroken berichten| Aantal afgebroken berichten in een wachtrij/onderwerp. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/> Dimensie: naam van entiteit |
 | Grootte | Grootte van een entiteit (wachtrij of onderwerp) in bytes. <br/><br/>Eenheid: aantal <br/>Aggregatie type: gemiddeld <br/>Dimensie: naam van entiteit | 
 
 > [!NOTE]
-> Waarden voor de volgende metrische gegevens zijn waarden voor een bepaald tijdstip. Inkomende berichten die onmiddellijk na dat tijdstip zijn verbruikt, mogen niet worden weer gegeven in deze metrische gegevens. 
-> - Berichten
-> - Actieve berichten 
-> - Onbestelbare berichten 
-> - Geplande berichten 
+> Waarden voor berichten, actieve, onbestelbare, geplande, voltooide en afgebroken berichten zijn tijdgebonden waarden. Inkomende berichten die onmiddellijk na dat tijdstip zijn verbruikt, mogen niet worden weer gegeven in deze metrische gegevens. 
 
 ## <a name="connection-metrics"></a>Verbindings gegevens
 
@@ -131,7 +129,7 @@ Azure Service Bus ondersteunt de volgende dimensies voor metrische gegevens in A
     4. Selecteer **Gereed**. 
     
         ![Naamruimte selecteren](./media/service-bus-metrics-azure-monitor/select-namespace.png)
-1. Selecteer **criteria toevoegen**en voer de volgende acties uit op de pagina **signaal logica configureren** :
+1. Selecteer **criteria toevoegen** en voer de volgende acties uit op de pagina **signaal logica configureren** :
     1. Selecteer **metrische gegevens** voor het **signaal type**. 
     2. Selecteer een signaal. Bijvoorbeeld: **service fouten**. 
 
@@ -142,13 +140,13 @@ Azure Service Bus ondersteunt de volgende dimensies voor metrische gegevens in A
     4. Selecteer **Gereed**.    
 
         ![Voor waarde opgeven](./media/service-bus-metrics-azure-monitor/specify-condition.png)    
-1. Vouw op de pagina **regel maken** de optie **waarschuwings Details definiëren**uit en voer de volgende acties uit:
+1. Vouw op de pagina **regel maken** de optie **waarschuwings Details definiëren** uit en voer de volgende acties uit:
     1. Voer een **naam** in voor de waarschuwing. 
     2. Voer een **Beschrijving** in voor de waarschuwing.
     3. Selecteer **Ernst** voor de waarschuwing. 
 
         ![Scherm afbeelding van de pagina regel maken. Het definiëren van waarschuwings Details is uitgevouwen en de velden voor de naam, beschrijving en ernst van de waarschuwings regel zijn gemarkeerd.](./media/service-bus-metrics-azure-monitor/alert-details.png)
-1. Vouw op de pagina **regel maken** de optie **actie groep definiëren**uit, selecteer **nieuwe actie groep**en voer de volgende acties uit op de **pagina actie groep toevoegen**. 
+1. Vouw op de pagina **regel maken** de optie **actie groep definiëren** uit, selecteer **nieuwe actie groep** en voer de volgende acties uit op de **pagina actie groep toevoegen**. 
     1. Voer een naam in voor de actie groep.
     2. Voer een korte naam in voor de actie groep. 
     3. Selecteer uw abonnement. 
@@ -162,7 +160,7 @@ Azure Service Bus ondersteunt de volgende dimensies voor metrische gegevens in A
         3. Selecteer **OK**.
 
             ![Scherm afbeelding van de pagina actie groep toevoegen. Een actie met de naam ' e-mail verzenden ' met het actie type E-mail/SMS/push/Voice wordt toegevoegd aan de groep.](./media/service-bus-metrics-azure-monitor/add-action-group.png)
-        4. Selecteer **OK**op de pagina **actie groep toevoegen** . 
+        4. Selecteer **OK** op de pagina **actie groep toevoegen** . 
 1. Selecteer op de pagina **regel maken** de optie **waarschuwings regel maken**. 
 
     ![Knop waarschuwings regel maken](./media/service-bus-metrics-azure-monitor/create-alert-rule.png)

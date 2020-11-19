@@ -5,25 +5,25 @@ author: VidyaKukke
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: vkukke
-ms.openlocfilehash: 84336051fc3d653fbe73f650f2fc2badb2ec58da
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 10c9b165041f0a4a1f09511f17bef3629353c3b2
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148944"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917525"
 ---
 # <a name="network-security-for-azure-event-grid-resources"></a>Netwerk beveiliging voor Azure Event Grid bronnen
 In dit artikel wordt beschreven hoe u de volgende beveiligings functies gebruikt met Azure Event Grid: 
 
 - Service tags voor uitgaand verkeer
-- IP-firewall regels voor binnenkomend verkeer (preview-versie)
+- IP-firewall regels voor binnenkomend verkeer
 - Privé-eind punten voor ingangs
 
 
 ## <a name="service-tags"></a>Servicetags
 Een servicetag vertegenwoordigt een groep IP-adres voorvoegsels van een bepaalde Azure-service. Micro soft beheert de adres voorvoegsels die zijn opgenomen in het servicetag en werkt de servicetag automatisch bij met gewijzigde adressen, zodat de complexiteit van regel matige updates voor netwerk beveiligings regels wordt geminimaliseerd. Zie [service Tags Overview](../virtual-network/service-tags-overview.md)(Engelstalig) voor meer informatie over service tags.
 
-U kunt service tags gebruiken voor het definiëren van netwerk toegangs beheer voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules)   of [Azure firewall](../firewall/service-tags.md). Gebruik service tags in plaats van specifieke IP-adressen wanneer u beveiligings regels maakt. Door de naam van de service label (bijvoorbeeld **AzureEventGrid**) op te geven in het juiste *bron*-   of *doel*   veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren.
+U kunt service tags gebruiken voor het definiëren van netwerk toegangs beheer voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules) of [Azure firewall](../firewall/service-tags.md). Gebruik service tags in plaats van specifieke IP-adressen wanneer u beveiligings regels maakt. Door de naam van de service label (bijvoorbeeld **AzureEventGrid**) op te geven in het juiste *bron* -of *doel* veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren.
 
 | Servicetag | Doel | Kunt u inkomend of uitgaand gebruiken? | Kan regionaal worden? | Kunt gebruiken met Azure Firewall? |
 | --- | -------- |:---:|:---:|:---:|
@@ -45,7 +45,7 @@ U kunt [privé-eind punten](../private-link/private-endpoint-overview.md) gebrui
 Met persoonlijke eind punten voor uw Event Grid-resource kunt u het volgende doen:
 
 - Veilige toegang tot uw onderwerp of domein vanuit een VNet over een micro soft-backbone-netwerk in plaats van het open bare Internet.
-- Maak veilig verbinding vanaf on-premises netwerken die verbinding maken met het VNet met behulp van VPN-of Expressroutes waaraan met privé-peering.
+- Maak veilig verbinding vanaf on-premises netwerken die verbinding maken met het VNet met behulp van VPN-of Express-routes met privé-peering.
 
 Wanneer u een persoonlijk eind punt maakt voor een onderwerp of domein in uw VNet, wordt een aanvraag voor goed keuring verzonden naar de eigenaar van de resource. Als de gebruiker die het persoonlijke eind punt wil maken ook eigenaar van de resource is, wordt deze aanvraag voor toestemming automatisch goedgekeurd. Anders heeft de verbinding de status in **behandeling** tot goedgekeurd. Toepassingen in het VNet kunnen naadloos verbinding maken met de Event Grid-Service via het persoonlijke eind punt, met behulp van dezelfde verbindings reeksen en autorisatie mechanismen die ze anders zouden gebruiken. Resource-eigen aren kunnen toestemmings aanvragen en de persoonlijke eind punten beheren via het tabblad **privé-eind punten** voor de resource in de Azure Portal.
 

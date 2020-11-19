@@ -11,13 +11,13 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
-ms.date: 11/15/2020
-ms.openlocfilehash: 48bd32569b7eb7fa09f83f81190bf96baa42fae0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.date: 11/19/2020
+ms.openlocfilehash: a79055a77ec73ce2b267bb4f16fa91f37e22ea75
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659978"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916777"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Een zelf-hostende IR configureren als proxy voor een Azure-SSIS IR in Azure Data Factory
 
@@ -175,8 +175,10 @@ Volg de volgende instructies om uw aangepaste/derde onderdelen in staat te stell
 
 1. Installeer uw aangepaste/derde onderdelen die zijn gericht op SQL Server 2017 op Azure-SSIS IR via [standaard/snelle aangepaste Setup](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup).
 
-1. Maak de volgende DTSPath-register sleutels op zelf-hostende IR als ze nog niet bestaan: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` en `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` .
- 
+1. Maak de volgende DTSPath-register sleutels op zelf-hostende IR als ze nog niet bestaan:
+   1. `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` ingesteld op `C:\Program Files\Microsoft SQL Server\140\DTS\`
+   1. `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` ingesteld op `C:\Program Files (x86)\Microsoft SQL Server\140\DTS\`
+   
 1. Installeer uw aangepaste/derde onderdelen die gericht zijn op SQL Server 2017 op zelf-hostende IR onder de DTSPath hierboven en zorg ervoor dat uw installatie proces:
 
    1. Maakt `<DTSPath>` , `<DTSPath>/Connections` , en `<DTSPath>/PipelineComponents` `<DTSPath>/UpgradeMappings` mappen als deze nog niet bestaan.
@@ -185,7 +187,7 @@ Volg de volgende instructies om uw aangepaste/derde onderdelen in staat te stell
    
    1. Hiermee worden alle assembly's geïnstalleerd waarnaar wordt verwezen door de onderdelen van uw aangepaste/derde partij in de Global Assembly Cache (GAC).
 
-Hier volgt een [voor beeld van een onderdeel van](https://www.aecorsoft.com/blog/2020/11/8/using-azure-data-factory-to-bring-sap-data-to-azure-via-self-hosted-ir-and-ssis-ir) een derde partij dat gebruikmaakt van een snelle aangepaste installatie en een zelf-hostende IR als proxy voor Azure-SSIS IR.
+Hier volgen enkele voor beelden van onze partners, [Theobald-software](https://kb.theobald-software.com/xtract-is/XIS-for-Azure-SHIR) en [Aecorsoft](https://www.aecorsoft.com/blog/2020/11/8/using-azure-data-factory-to-bring-sap-data-to-azure-via-self-hosted-ir-and-ssis-ir), die hun onderdelen hebben aangepast om gebruik te maken van onze snelle aangepaste installatie en zelf-hostende IR als proxy voor Azure-SSIS IR.
 
 ## <a name="enforce-tls-12"></a>Enforce TLS 1.2
 

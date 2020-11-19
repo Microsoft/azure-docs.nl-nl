@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: cac14687c6193d58069240529955e69fc680b2e8
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 503d3d5ed9b099e01a88ee40ef80e88105beb340
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491814"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917729"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -41,26 +41,48 @@ U kunt de door Voer inrichten op container niveau of op database niveau in terme
 > [!NOTE]
 > Zie [een synthetische partitie sleutel maken](synthetic-partition-keys.md)voor meer informatie over aanbevolen procedures voor het beheren van werk belastingen met partitie sleutels waarvoor hogere limieten vereist zijn voor opslag of door voer.
 
-Een Cosmos-container (of een gedeelde doorvoer database) moet een minimale door Voer van 400 RU/s hebben. Naarmate de container groeit, is de mini maal ondersteunde door Voer ook afhankelijk van de volgende factoren:
+### <a name="minimum-throughput-limits"></a>Minimale doorvoer limieten
 
-* De maximale door Voer is ooit ingericht op de container. Als uw door Voer bijvoorbeeld is verhoogd naar 50.000 RU/s, zou de laagst mogelijke ingerichte door Voer 500 RU/s zijn.
-* De huidige opslag in GB in de container. Als uw container bijvoorbeeld 100 GB opslag ruimte heeft, zou de laagst mogelijke ingerichte door Voer 1000 RU/s zijn. **Opmerking:** als uw container of data base meer dan 1 TB aan gegevens bevat, komt uw account mogelijk in aanmerking voor het [programma hoge opslag/lage door Voer](set-throughput.md#high-storage-low-throughput-program).
-* De minimale door Voer voor een Data Base met gedeelde door Voer is ook afhankelijk van het totale aantal containers dat u ooit hebt gemaakt in een gedeelde doorvoer database, gemeten op basis van 100 RU/s per container. Als u bijvoorbeeld vijf containers hebt gemaakt in een gedeelde doorvoer database, moet de door Voer ten minste 500 RU/s zijn.
+Een Cosmos-container (of een gedeelde doorvoer database) moet een minimale door Voer van 400 RU/s hebben. Als de container groeit, heeft Cosmos DB een minimale door voer nodig om ervoor te zorgen dat de data base of container voldoende resource heeft voor de bewerkingen.
 
 De huidige en minimale door Voer van een container of een Data Base kunnen worden opgehaald uit de Azure Portal of de Sdk's. Zie [door Voer inrichten voor containers en data bases](set-throughput.md)voor meer informatie. 
 
-> [!NOTE]
-> In sommige gevallen kunt u de door Voer verlagen tot minder dan 10%. Gebruik de API om het exacte minimale RUs per container op te halen.
+De werkelijke minimale RU/s kan variëren, afhankelijk van de configuratie van uw account. U kunt [Azure monitor metrische gegevens](monitor-cosmos-db.md#view-operation-level-metrics-for-azure-cosmos-db) gebruiken om de geschiedenis van ingerichte door Voer (ru/s) en opslag voor een bron weer te geven. 
+
+#### <a name="minimum-throughput-on-container"></a>Minimale door Voer voor container 
+
+Als u een schatting wilt maken van de minimale door Voer die vereist is voor een container met hand matige door Voer, zoekt u het maximum van:
+
+* 400 RU/s 
+* Huidige opslag in GB * 10 RU/s
+* De hoogste RU/s die zijn ingericht in de container/100
+
+Voor beeld: Stel dat u een container hebt ingericht met 400 RU/s en 0 GB-opslag. U kunt de door Voer verhogen naar 50.000 RU/s en 20 GB aan gegevens importeren. De mini maal RU/s is nu `MAX(400, 20 * 10 RU/s per GB, 50,000 RU/s / 100)` = 500 ru/s. Na verloop van tijd neemt de opslag toe tot 200 GB. De mini maal RU/s is nu `MAX(400, 200 * 10 RU/s per GB, 50,000 / 100)` = 2000 ru/s. 
+
+**Opmerking:** als uw container of data base meer dan 1 TB aan gegevens bevat, komt uw account mogelijk in aanmerking voor het [programma hoge opslag/lage door Voer](set-throughput.md#high-storage-low-throughput-program).
+
+#### <a name="minimum-throughput-on-shared-throughput-database"></a>Minimale door Voer voor de gedeelde doorvoer database 
+Als u een schatting wilt maken van de minimale door Voer die vereist is voor een gedeelde doorvoer database met hand matige door Voer, zoekt u het maximum van:
+
+* 400 RU/s 
+* Huidige opslag in GB * 10 RU/s
+* De hoogste RU/s die zijn ingericht voor de data base/100
+* 400 + MAX (aantal containers-25, 0) * 100 RU/s
+
+Voor beeld: Stel dat u een Data Base hebt ingericht met 400 RU/s, 15 GB aan opslag ruimte en 10 containers. De minimale RU/s is `MAX(400, 15 * 10 RU/s per GB, 400 / 100, 400 + 0 )` = 400 ru/s. Als er 30 containers in de data base staan, zouden de mini maal RU/s `400 + MAX(30 - 5, 0) * 100 RU/s` = 900 ru/s zijn. 
+
+**Opmerking:** als uw container of data base meer dan 1 TB aan gegevens bevat, komt uw account mogelijk in aanmerking voor het [programma hoge opslag/lage door Voer](set-throughput.md#high-storage-low-throughput-program).
 
 In samen vatting vindt u de minimale ingerichte RU-limieten. 
 
 | Resource | Standaardlimiet |
 | --- | --- |
-| Mini maal RUs per container ([ingerichte modus toegewezen door Voer](account-databases-containers-items.md#azure-cosmos-containers)) | 400 |
-| Mini maal RUs per data base ([ingerichte modus voor gedeelde door Voer](account-databases-containers-items.md#azure-cosmos-containers)) | 400 |
-| Mini maal RUs per container in een gedeelde doorvoer database | 100 |
+| Mini maal RUs per container ([ingerichte modus toegewezen door Voer](databases-containers-items.md#azure-cosmos-containers)) | 400 |
+| Mini maal RUs per data base ([ingerichte modus voor gedeelde door Voer](databases-containers-items.md#azure-cosmos-containers)) | 400 RU/s voor de eerste 25 containers. Meer dan 100 RU/s voor elke container nader hand. |
 
-Cosmos DB ondersteunt elastisch schalen van door Voer (RUs) per container of Data Base via de Sdk's of portal. Elke container kan synchroon en direct binnen een schaal bereik van 10 tot 100 keer worden geschaald, tussen de minimum-en maximum waarden. Als de aangevraagde doorvoer waarde zich buiten het bereik bevindt, wordt de schaal asynchroon uitgevoerd. Het volt ooien van asynchrone schaling kan minuten tot uren duren, afhankelijk van de gevraagde grootte van door Voer en gegevens opslag in de container.  
+Cosmos DB ondersteunt programmatisch schalen van door Voer (RU/s) per container of Data Base via de Sdk's of portal.    
+
+Afhankelijk van de huidige ingerichte en bron instellingen van RU, kan elke bron synchroon en direct tussen de minimale RU/s worden geschaald tot 100x de minimale RU/s. Als de aangevraagde doorvoer waarde zich buiten het bereik bevindt, wordt de schaal asynchroon uitgevoerd. Het volt ooien van asynchrone schaling kan minuten tot uren duren, afhankelijk van de gevraagde grootte van door Voer en gegevens opslag in de container.  
 
 ### <a name="serverless"></a>Serverloos
 
@@ -68,8 +90,8 @@ Zonder [Server](serverless.md) kunt u uw Azure Cosmos DB-resources op basis van 
 
 | Resource | Limiet |
 | --- | --- |
-| Maximum aantal RU/s per container | 5.000 |
-| Maxi maal aantal RU/s per (logische) partitie | 5.000 |
+| Maximum aantal RU/s per container | 5\.000 |
+| Maxi maal aantal RU/s per (logische) partitie | 5\.000 |
 | Maximale opslag ruimte in alle items per (logische) partitie | 20 GB |
 | Maximum aantal afzonderlijke (logische) partitie sleutels | Onbeperkt |
 | Maximale opslag per container | 50 GB |
@@ -172,9 +194,9 @@ Azure Cosmos DB onderhoudt de meta gegevens van het systeem voor elk account. Me
 
 | Resource | Standaardlimiet |
 | --- | --- |
-|Maximum aantal gemaakte verzamelingen per minuut| 5|
-|Maximum aantal gemaakte data bases per minuut|   5|
-|Maximale update snelheid van ingerichte door Voer per minuut| 5|
+|Maximum aantal gemaakte verzamelingen per minuut|    5|
+|Maximum aantal gemaakte data bases per minuut|    5|
+|Maximale update snelheid van ingerichte door Voer per minuut|    5|
 
 ## <a name="limits-for-autoscale-provisioned-throughput"></a>Limieten voor automatisch schalen ingericht door Voer
 

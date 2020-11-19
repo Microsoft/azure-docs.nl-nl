@@ -4,44 +4,44 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: d889b7dabc5d97a36f8b12bcff90cf3ad2069fb7
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: a9af249aac18c847bf353f22b23ee67ab6e264c4
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92082184"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915294"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
-- Een geïmplementeerde Communication Services-resource. [Een Communication Services maken](../../create-communication-resource.md).
-- A `User Access Token` om de aanroep-client in te scha kelen. Voor meer informatie over [het verkrijgen van een `User Access Token` ](../../access-tokens.md)
+- Een geïmplementeerde Communication Services-resource. [Een Communication Services-resource maken](../../create-communication-resource.md).
+- Een `User Access Token` om de aanroepende client in te schakelen. Voor meer informatie over het [verkrijgen van een `User Access Token`](../../access-tokens.md)
 - Optioneel: Voltooi de Snelstartgids om aan de [slag te gaan met het toevoegen van een oproep aan uw toepassing](../getting-started-with-calling.md)
 
 ## <a name="setting-up"></a>Instellen
 
 ### <a name="creating-the-xcode-project"></a>Het Xcode-project maken
 
-Maak in Xcode een nieuw iOS-project en selecteer de sjabloon **Single View-app** (Toepassing met één weergave). Deze Snelstartgids maakt gebruik van het [SwiftUI-Framework](https://developer.apple.com/xcode/swiftui/), dus u moet de **taal** instellen op **Swift** en de **gebruikers interface** op **SwiftUI**. U gaat tijdens deze Quick Start geen eenheids tests of UI-tests maken. Schakel het selectie vakje **include-tests toevoegen** uit en schakel ook **ui-tests**uit.
+Maak in Xcode een nieuw iOS-project en selecteer de sjabloon **Single View-app** (Toepassing met één weergave). Deze Snelstartgids maakt gebruik van het [SwiftUI-Framework](https://developer.apple.com/xcode/swiftui/), dus u moet de **taal** instellen op **Swift** en de **gebruikers interface** op **SwiftUI**. U gaat tijdens deze Quick Start geen eenheids tests of UI-tests maken. Schakel het selectie vakje **include-tests toevoegen** uit en schakel ook **ui-tests** uit.
 
 :::image type="content" source="../media/ios/xcode-new-ios-project.png" alt-text="Schermafbeelding dat het nieuw aangemaakte venster Nieuw Project in Xcode aantoont.":::
 
-### <a name="install-the-package"></a>Het pakket installeren
+### <a name="install-the-package-and-dependencies-with-cocoapods"></a>Het pakket en de afhankelijkheden met CocoaPods installeren
 
-Voeg de Azure Communication Services-clientbibliotheek en de bijbehorende afhankelijkheden (AzureCore.framework en AzureCommunication.framework) toe aan uw project.
+1. Maak een Podfile voor uw toepassing, zoals:
 
-> [!NOTE]
-> Met de release van AzureCommunicationCalling SDK vindt u een bash-script `BuildAzurePackages.sh`. Het script wanneer u `sh ./BuildAzurePackages.sh` uitvoert, geeft u het pad naar de gegenereerde Framework-pakketten die in de volgende stap moeten worden geïmporteerd in de voorbeeld-app. Houd er rekening mee dat u, voordat u het script uitvoert, Xcode-opdrachtregel Hulpprogramma's moet instellen als u dit nog niet hebt gedaan: Start Xcode, Selecteer Voorkeuren-> Locaties. Kies uw Xcode-versie voor de opdrachtregel Hulpprogramma's. **Houd er rekening mee dat het BuildAzurePackages.sh-script alleen werkt met Xcode 11,5 en hoger.**
+   ```
+   platform :ios, '13.0'
+   use_frameworks!
+   target 'AzureCommunicationCallingSample' do
+     pod 'AzureCommunicationCalling', '~> 1.0.0-beta.5'
+     pod 'AzureCommunication', '~> 1.0.0-beta.5'
+     pod 'AzureCore', '~> 1.0.0-beta.5'
+   end
+   ```
 
-1. Download de Azure Communication Services-clientbibliotheek voor iOS.
-2. Klik in Xcode op het projectbestand en selecteer het build-doel om de projectinstellingen-editor te openen.
-3. Scrol op het tabblad **Algemeen** naar de secties **Frameworks, Bibliotheken en Ingesloten inhoud** en klik op het pictogram **"+"** .
-4. Kies linksonder in het dialoogvenster **Bestanden toevoegen**, navigeer naar de map **AzureCommunicationCalling.framework** van het pakket met de niet-gecomprimeerde clientbibliotheek.
-    1. Herhaal de laatste stap voor het toevoegen van **AzureCore.framework** en **AzureCommunication.framework**.
-5. Open het tabblad **Build-instellingen** van de projectinstellingeneditor en blader naar de secties **Zoekpaden**. Voeg een nieuwe vermelding **Zoekpaden framework** toe voor de map die het **AzureCommunicationCalling.framework** bevat.
-    1. Voeg nog een vermelding Zoekpaden framework toe aan de map die de afhankelijkheden bevat.
-
-:::image type="content" source="../media/ios/xcode-framework-search-paths.png" alt-text="Schermafbeelding dat het nieuw aangemaakte venster Nieuw Project in Xcode aantoont.":::
+2. Voer `pod install` uit.
+3. Open de `.xcworkspace` with-Xcode.
 
 ### <a name="request-access-to-the-microphone"></a>Toegang tot de microfoon aanvragen
 
@@ -110,9 +110,9 @@ Geef het CommunicationUserCredential-object dat hierboven is gemaakt door voor A
 
 ```swift
 
-callClient = ACSCallClient()
-callClient?.createCallAgent(userCredential!,
-    withCompletionHandler: { (callAgent, error) in
+callClient = CallClient()
+callClient?.createCallAgent(with: userCredential!,
+    completionHandler: { (callAgent, error) in
         if error == nil {
             print("Create agent succeeded")
             self.callAgent = callAgent
@@ -134,7 +134,7 @@ Aanroepen maken en starten is synchroon. U ontvangt een gespreks exemplaar waarm
 ```swift
 
 let callees = [CommunicationUser(identifier: 'acsUserId')]
-let oneToOneCall = self.CallingApp.callAgent.call(participants: callees, options: ACSStartCallOptions())
+let oneToOneCall = self.callAgent.call(participants: callees, options: StartCallOptions())
 
 ```
 
@@ -144,7 +144,7 @@ Als u de oproep naar het PSTN wilt plaatsen, moet u het telefoon nummer opgeven 
 
 let pstnCallee = PhoneNumber('+1999999999')
 let callee = CommunicationUser(identifier: 'acsUserId')
-let groupCall = self.CallingApp.callAgent.call(participants: [pstnCallee, callee], options: ACSStartCallOptions())
+let groupCall = self.callAgent.call(participants: [pstnCallee, callee], options: StartCallOptions())
 
 ```
 
@@ -154,25 +154,25 @@ Meer informatie over een instantie van Apparaatbeheer vindt u [hier](#device-man
 ```swift
 
 let camera = self.deviceManager!.getCameraList()![0]
-let localVideoStream = ACSLocalVideoStream(camera)
-let videoOptions = ACSVideoOptions(localVideoStream)
+let localVideoStream = LocalVideoStream(camera: camera)
+let videoOptions = VideoOptions(localVideoStream: localVideoStream)
 
-let startCallOptions = ACSStartCallOptions()
+let startCallOptions = StartCallOptions()
 startCallOptions?.videoOptions = videoOptions
 
 let callee = CommunicationUser(identifier: 'acsUserId')
-let call = self.callAgent?.call([callee], options: startCallOptions)
+let call = self.callAgent?.call(participants: [callee], options: startCallOptions)
 
 ```
 
-### <a name="join-a-group-call"></a>Aan een groeps aanroep toevoegen
+### <a name="join-a-group-call"></a>Deelnemen aan een groepsgesprek
 Als u wilt samen voegen met een gesprek, moet u een van de Api's aanroepen op *CallAgent*
 
 ```swift
 
-let groupCallContext = ACSGroupCallContext()
+let groupCallContext = GroupCallContext()
 groupCallContext?.groupId = UUID(uuidString: "uuid_string")!
-let call = self.callAgent?.join(with: groupCallContext, joinCallOptions: ACSJoinCallOptions())
+let call = self.callAgent?.join(with: groupCallContext, joinCallOptions: JoinCallOptions())
 
 ```
 
@@ -186,7 +186,7 @@ Mobiele push meldingen is de pop-upmelding die u op het mobiele apparaat ontvang
 - Stap 2: Xcode & mogelijkheden voor het ondertekenen van >-> mogelijkheden toevoegen-> "achtergrond modi"
 - Stap 3: "achtergrond modi"-> Selecteer "Voice over IP" en "externe meldingen"
 
-:::image type="content" source="../media/ios/xcode-push-notification.png" alt-text="Schermafbeelding dat het nieuw aangemaakte venster Nieuw Project in Xcode aantoont." lightbox="../media/ios/xcode-push-notification.png":::
+:::image type="content" source="../media/ios/xcode-push-notification.png" alt-text="Scherm afbeelding die laat zien hoe u mogelijkheden toevoegt in Xcode." lightbox="../media/ios/xcode-push-notification.png":::
 
 #### <a name="register-for-push-notifications"></a>Registreren voor push meldingen
 
@@ -198,8 +198,8 @@ Registreren voor push melding moet worden aangeroepen na een geslaagde initialis
 ```swift
 
 let deviceToken: Data = pushRegistry?.pushToken(for: PKPushType.voIP)
-callAgent.registerPushNotifications(deviceToken,
-                withCompletionHandler: { (error) in
+callAgent.registerPushNotifications(deviceToken: deviceToken,
+                completionHandler: { (error) in
     if(error == nil) {
         print("Successfully registered to push notification.")
     } else {
@@ -215,7 +215,7 @@ Als u push meldingen voor binnenkomende oproepen wilt ontvangen, roept u *handle
 ```swift
 
 let dictionaryPayload = pushPayload?.dictionaryPayload
-callAgent.handlePushNotification(dictionaryPayload, withCompletionHandler: { (error) in
+callAgent.handlePushNotification(payload: dictionaryPayload, completionHandler: { (error) in
     if (error != nil) {
         print("Handling of push notification failed")
     } else {
@@ -251,7 +251,7 @@ U kunt verschillende bewerkingen uitvoeren tijdens een aanroep om instellingen t
 U kunt de `mute` en asynchrone api's gebruiken om het lokale eind punt te dempen of te dempen `unmute` :
 
 ```swift
-call.mute(completionHandler: { (error) in
+call!.mute(completionHandler: { (error) in
     if error == nil {
         print("Successfully muted")
     } else {
@@ -264,7 +264,7 @@ call.mute(completionHandler: { (error) in
 Asynchrone Lokaal uitschakelen
 
 ```swift
-call.unmute(completionHandler:{ (error) in
+call!.unmute(completionHandler:{ (error) in
     if error == nil {
         print("Successfully un-muted")
     } else {
@@ -279,10 +279,10 @@ Als u wilt beginnen met het verzenden van lokale video naar andere deel nemers i
 
 ```swift
 
-let firstCamera: ACSVideoDeviceInfo? = self.deviceManager?.getCameraList()![0]
-let localVideoStream = ACSLocalVideoStream(firstCamera)
+let firstCamera: VideoDeviceInfo? = self.deviceManager?.getCameraList()![0]
+let localVideoStream = LocalVideoStream(camera: firstCamera)
 
-call.startVideo(localVideoStream) { (error) in
+call!.startVideo(stream: localVideoStream) { (error) in
     if (error == nil) {
         print("Local video started successfully")
     }
@@ -305,11 +305,10 @@ Asynchrone Als u lokale video wilt stoppen, geeft u het `localVideoStream` resul
 
 ```swift
 
-call.stopVideo(localVideoStream,{ (error) in
+call!.stopVideo(stream: localVideoStream) { (error) in
     if (error == nil) {
         print("Local video stopped successfully")
-    }
-    else {
+    } else {
         print("Local video failed to stop")
     }
 }
@@ -361,7 +360,7 @@ Als u een deel nemer wilt toevoegen aan een aanroep (een gebruiker of een telefo
 
 ```swift
 
-let remoteParticipantAdded: ACSRemoteParticipant = call.addParticipant(CommunicationUser(identifier: "userId"))
+let remoteParticipantAdded: RemoteParticipant = call.add(participant: CommunicationUser(identifier: "userId"))
 
 ```
 
@@ -370,7 +369,7 @@ Als u een deel nemer wilt verwijderen uit een gesprek (een gebruiker of een tele
 
 ```swift
 
-call!.remove(remoteParticipantAdded) { (error) in
+call!.remove(participant: remoteParticipantAdded) { (error) in
     if (error == nil) {
         print("Successfully removed participant")
     } else {
@@ -398,7 +397,7 @@ var remoteParticipantVideoStream = call.remoteParticipants[0].videoStreams[0]
 
 ```swift
 
-var type: ACSMediaStreamType = remoteParticipantVideoStream.type // 'ACSMediaStreamTypeVideo'
+var type: MediaStreamType = remoteParticipantVideoStream.type // 'ACSMediaStreamTypeVideo'
 
 var isAvailable: Bool = remoteParticipantVideoStream.isAvailable // indicates if remote stream is available
 
@@ -412,10 +411,10 @@ Rendering van externe deel nemers streams starten:
 
 ```swift
 
-let renderer: ACSRenderer? = ACSRenderer(remoteVideoStream: remoteParticipantVideoStream)
-let targetRemoteParticipantView: ACSRendererView? = renderer?.createView(ACSRenderingOptions(ACSScalingMode.crop))
+let renderer: Renderer? = Renderer(remoteVideoStream: remoteParticipantVideoStream)
+let targetRemoteParticipantView: RendererView? = renderer?.createView(with: RenderingOptions(scalingMode: ScalingMode.crop))
 // To update the scaling mode later
-targetRemoteParticipantView.update(ACSScalingMode.fit)
+targetRemoteParticipantView.update(scalingMode: ScalingMode.fit)
 
 ```
 
@@ -466,11 +465,11 @@ Met Apparaatbeheer kunt u een standaard apparaat instellen dat wordt gebruikt bi
 // get first microphone
 var firstMicrophone = self.deviceManager!.getMicrophoneList()![0]
 // [Synchronous] set microphone
-deviceManager.setMicrophone(ACSAudioDeviceInfo())
+deviceManager.setMicrophone(microphoneDevice: firstMicrophone)
 // get first speaker
 var firstSpeaker = self.deviceManager!.getSpeakerList()![0]
 // [Synchronous] set speaker
-deviceManager.setSpeakers(ACSAudioDeviceInfo())
+deviceManager.setSpeaker(speakerDevice: firstSpeaker)
 ```
 
 ### <a name="local-camera-preview"></a>Voor beeld van lokale camera
@@ -479,10 +478,10 @@ U kunt gebruiken `ACSRenderer` om te beginnen met het renderen van een stream va
 
 ```swift
 
-let camera: ACSVideoDeviceInfo = self.deviceManager!.getCameraList()![0]
-let localVideoStream: ACSLocalVideoStream = ACSLocalVideoStream(camera)
-let renderer: ACSRenderer = ACSRenderer(localVideoStream: localVideoStream)
-self.view = renderer!.createView(ACSRenderingOptions())
+let camera: VideoDeviceInfo = self.deviceManager!.getCameraList()![0]
+let localVideoStream: LocalVideoStream = LocalVideoStream(camera: camera)
+let renderer: Renderer = Renderer(localVideoStream: localVideoStream)
+self.view = renderer!.createView()
 
 ```
 
@@ -493,8 +492,8 @@ De renderer heeft eigenschappen en methoden die u in staat stellen om de renderi
 ```swift
 
 // Constructor can take in ACSLocalVideoStream or ACSRemoteVideoStream
-let localRenderer = ACSRenderer(localVideoStream:localVideoStream)
-let remoteRenderer = ACSRenderer(remoteVideoStream:remoteVideoStream)
+let localRenderer = Renderer(localVideoStream:localVideoStream)
+let remoteRenderer = Renderer(remoteVideoStream:remoteVideoStream)
 
 // [ACSStreamSize] size of the rendering view
 localRenderer.size
@@ -502,8 +501,12 @@ localRenderer.size
 // [ACSRendererDelegate] an object you provide to receive events from this ACSRenderer instance
 localRenderer.delegate
 
+// [Synchronous] create view
+try! localRenderer.createView()
+
 // [Synchronous] create view with rendering options
-localRenderer.createView(options:ACSRenderingOptions())
+try! localRenderer.createView(with: RenderingOptions(scalingMode: ScalingMode.fit))
+
 // [Synchronous] dispose rendering view
 localRenderer.dispose()
 
@@ -519,8 +522,8 @@ Abonneren op `property changed` gebeurtenissen:
 ```swift
 call.delegate = self
 // Get the property of the call state by doing get on the call's state member
-public func onCallStateChanged(_ call: ACSCall!,
-                               _ args: ACSPropertyChangedEventArgs!)
+public func onCallStateChanged(_ call: Call!,
+                               args: PropertyChangedEventArgs!)
 {
     print("Callback from SDK when the call state changes, current state: " + call.state.rawValue)
 }
@@ -536,8 +539,8 @@ Abonneren op `collection updated` gebeurtenissen:
 ```swift
 call.delegate = self
 // Collection contains the streams that were added or removed only
-public func onLocalVideoStreamsChanged(_ call: ACSCall!,
-                                       _ args: ACSLocalVideoStreamsUpdatedEventArgs!)
+public func onLocalVideoStreamsChanged(_ call: Call!,
+                                       args: LocalVideoStreamsUpdatedEventArgs!)
 {
     print(args.addedStreams.count)
     print(args.removedStreams.count)

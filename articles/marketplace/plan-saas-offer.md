@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/30/2020
-ms.openlocfilehash: 5a646f7f42a2af8dcf15f7b7b2cd700e159fe88d
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 9034757539a3dfd8b5e43e97ec518479da396456
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94734392"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917542"
 ---
 # <a name="how-to-plan-a-saas-offer-for-the-commercial-marketplace"></a>Een SaaS-aanbieding plannen voor de commerciële Marketplace
 
@@ -104,7 +104,26 @@ U kunt op elk gewenst moment een CRM-verbinding toevoegen of wijzigen tijdens of
 
 ## <a name="selecting-an-online-store"></a>Een online winkel selecteren
 
-Wanneer u een SaaS-aanbieding publiceert, wordt deze weer gegeven in Microsoft AppSource, Azure Marketplace of beide. Elke online winkel dient unieke klant vereisten. AppSource is voor bedrijfs oplossingen en Azure Marketplace is voor IT-oplossingen. Met het type aanbieding, de Transact-functionaliteit en de categorieën kunt u bepalen waar uw aanbieding wordt gepubliceerd. Categorieën en subcategorieën worden toegewezen aan elke online winkel op basis van het oplossings type. Zie voor gedetailleerde informatie over de aanbiedings opties die worden ondersteund door online winkels de [Opties aanbieding en prijs per online winkel](determine-your-listing-type.md#listing-and-pricing-options-by-online-store). Zie voor meer informatie over categorieën en subcategorieën [Categorieën en subcategorieën in de commerciële Marketplace](categories.md).
+Wanneer u een SaaS-aanbieding publiceert, wordt deze weer gegeven in Microsoft AppSource, Azure Marketplace of beide. Elke online winkel dient unieke klant vereisten. AppSource is voor bedrijfs oplossingen en Azure Marketplace is voor IT-oplossingen. Met het type aanbieding, de Transact-functionaliteit en de categorieën kunt u bepalen waar uw aanbieding wordt gepubliceerd. Categorieën en subcategorieën worden toegewezen aan elke online winkel op basis van het oplossings type. 
+
+Als uw SaaS-aanbieding *zowel* een IT-oplossing (Azure Marketplace) als een bedrijfs oplossing (AppSource) is, selecteert u een categorie en een subcategorie die van toepassing is op elke online winkel. Aanbiedingen die naar beide online winkels worden gepubliceerd, moeten een waarde hebben die is opgenomen als een IT-oplossing *en* een bedrijfs oplossing.
+
+> [!IMPORTANT]
+> SaaS-aanbiedingen met [facturering via data limiet](partner-center-portal/saas-metered-billing.md) zijn beschikbaar via Azure Marketplace en de Azure Portal. SaaS-aanbiedingen met alleen persoonlijke abonnementen zijn beschikbaar via de Azure Portal.
+
+| Factuur met data limiet | Openbaar abonnement | Persoonlijk abonnement | Beschikbaar in: |
+|---|---|---|---|
+| Ja             | Ja         | Nee           | Azure Marketplace en Azure Portal |
+| Ja             | Ja         | Ja          | Azure Marketplace en Azure Portal * |
+| Ja             | Nee          | Ja          | Alleen Azure Portal |
+| Nee              | Nee          | Ja          | Alleen Azure Portal |
+|||||
+
+&#42; het privé-abonnement van de aanbieding is alleen beschikbaar via de Azure Portal
+
+Zo wordt een aanbieding met een facturerings regeling en een privé-abonnement alleen (geen openbaar abonnement) gekocht door klanten in de Azure Portal. Meer informatie over [privé aanbiedingen in micro soft Commercial Marketplace](private-offers.md).
+
+Zie voor gedetailleerde informatie over de aanbiedings opties die worden ondersteund door online winkels de [Opties aanbieding en prijs per online winkel](determine-your-listing-type.md#listing-and-pricing-options-by-online-store). Zie voor meer informatie over categorieën en subcategorieën [Categorieën en subcategorieën in de commerciële Marketplace](categories.md).
 
 ## <a name="legal-contracts"></a>Juridische contracten
 
@@ -183,7 +202,7 @@ Om uw aanbieding gemakkelijker te maken, moet u enkele van deze items vooraf voo
   - PNG-bestand
   - Moet een bijschrift bevatten
 - **Media-Video's** (optioneel): u kunt Maxi maal vier Video's toevoegen aan de volgende vereisten, die uw aanbod demonstreren:
-  - Naam
+  - Name
   - URL: moet alleen worden gehost op YouTube of Vimeo.
   - Miniatuur: 1280 x 720. png-bestand
 

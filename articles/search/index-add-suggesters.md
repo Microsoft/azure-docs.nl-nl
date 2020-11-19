@@ -7,18 +7,18 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/10/2020
+ms.date: 11/19/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 498934c01970b296c1491e7ccd36ad947324306a
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: e90c1d1cfa02f63a2b5115124dee2a9da68e2f3f
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445333"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917270"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Een suggestie maken om automatisch aanvullen en voorgestelde resultaten in een query in te scha kelen
 
-In azure Cognitive Search wordt ' Search-as-u-type ' ingeschakeld via een **suggestie voor suggesties** die is toegevoegd aan een [zoek index](search-what-is-an-index.md). Een suggestie biedt ondersteuning voor twee ervaring: *automatisch aanvullen* , waarmee een gedeeltelijke invoer voor een volledige termijn query wordt voltooid en *suggesties* die door worden uitgenodigd, worden door middel van een bepaalde overeenkomst. Automatisch aanvullen produceert een query. Suggesties maken een overeenkomend document.
+In azure Cognitive Search wordt ' Search-as-u-type ' ingeschakeld via een **suggestie voor suggesties** die is toegevoegd aan een [zoek index](search-what-is-an-index.md). Een suggestie biedt ondersteuning voor twee ervaring: *automatisch aanvullen*, waarmee een gedeeltelijke invoer voor een volledige termijn query wordt voltooid en *suggesties* die door worden uitgenodigd, worden door middel van een bepaalde overeenkomst. Automatisch aanvullen produceert een query. Suggesties maken een overeenkomend document.
 
 De volgende scherm afbeelding van [het maken van uw eerste app in C#](tutorial-csharp-type-ahead-and-suggestions.md) illustreert beide. Bij automatisch aanvullen wordt een mogelijke term verwacht, waarbij ' TW ' wordt voltooid met ' in '. Suggesties zijn de resultaten van een mini maal zoek opdracht, waarbij een veld zoals de naam van het hotel een overeenkomend Hotel Zoek document uit de index vertegenwoordigt. Voor suggesties kunt u elk veld dat beschrijvende informatie bevat, op elk gewenst Opper vlak weer gegeven.
 
@@ -54,7 +54,7 @@ Automatisch aanvullen heeft voor delen van een grotere groep velden waaruit kan 
 
 Suggesties, daarentegen, produceren betere resultaten wanneer uw veld keuze selectief is. Houd er rekening mee dat de suggestie een proxy voor een zoek document is, zodat u wilt dat velden die het beste een enkel resultaat vertegenwoordigen. Namen, titels of andere unieke velden die onderscheid maken tussen meerdere overeenkomsten, werken het beste. Als velden bestaan uit herhaalde waarden, bestaan de suggesties uit identieke resultaten en is een gebruiker niet op welke manier u hoeft te klikken.
 
-Als u wilt voldoen aan beide zoek functies, voegt u alle velden toe die u nodig hebt voor automatisch aanvullen, maar gebruikt u vervolgens **$Select** , **$Top** , **$filter** en **searchFields** om de resultaten voor suggesties te beheren.
+Als u wilt voldoen aan beide zoek functies, voegt u alle velden toe die u nodig hebt voor automatisch aanvullen, maar gebruikt u vervolgens **$Select**, **$Top**, **$filter** en **searchFields** om de resultaten voor suggesties te beheren.
 
 ### <a name="choose-analyzers"></a>Analyse functies kiezen
 
@@ -120,20 +120,20 @@ Voeg in de REST API suggesties toe via [Create Index](/rest/api/searchservice/cr
 In C# definieert u een [SearchSuggester-object](/dotnet/api/azure.search.documents.indexes.models.searchsuggester). `Suggesters` is een verzameling voor een SearchIndex-object, maar kan slechts één item hebben. 
 
 ```csharp
-private static void CreateIndex(string indexName, SearchIndexClient indexClient)
+private static async Task CreateIndexAsync(string indexName, SearchIndexClient indexClient)
 {
-    FieldBuilder fieldBuilder = new FieldBuilder();
-    var searchFields = fieldBuilder.Build(typeof(Hotel));
+    var definition = new SearchIndex()
+    {
+        FieldBuilder builder = new FieldBuilder();
+        Fields = builder.Build(typeof(Hotel);
+        Suggesters = new List<Suggester>() {new Suggester()
+            {
+                Name = "sg",
+                SourceFields = new string[] { "HotelName", "Category" }
+            }}
+    }
 
-    //var suggester = new SearchSuggester("sg", sourceFields = "HotelName", "Category");
-
-    var definition = new SearchIndex(indexName, searchFields);
-
-    var suggester = new SearchSuggester("sg", new[] { "HotelName", "Category"});
-
-    definition.Suggesters.Add(suggester);
-
-    indexClient.CreateOrUpdateIndex(definition);
+    await indexClient.CreateIndexAsync(definition);
 }
 ```
 

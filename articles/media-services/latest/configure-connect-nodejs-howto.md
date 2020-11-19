@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-js
-ms.openlocfilehash: 1fc9d38827b8c00a6c90280a89e520e28f1763b2
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: c6ea238edd68413646dda59b22d1c0dc2557d57e
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844298"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916828"
 ---
 # <a name="connect-to-media-services-v3-api---nodejs"></a>Verbinding maken met Media Services v3 API-Node.js
 
@@ -39,6 +39,8 @@ In dit artikel wordt beschreven hoe u verbinding maakt met de Azure Media Servic
 
 1. Maak een package.jsin het bestand met behulp van uw favoriete editor.
 1. Open het bestand en plak de volgende code:
+
+   Zorg ervoor dat u de nieuwste versie van de [AZUREMEDIASERVICES SDK voor Java script](https://www.npmjs.com/package/@azure/arm-mediaservices)hebt.
 
 ```json
 {

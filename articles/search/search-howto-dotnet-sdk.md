@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4b3256591c0aa2536fd42bcdbb2ef339fc1d5c48
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 3ceead297ea726e256d806c08c22810b39296793
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356804"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917168"
 ---
 # <a name="how-to-use-azuresearchdocuments-in-a-c-net-application"></a>Azure.Search.Documents gebruiken in een C# .NET-toepassing
 
@@ -231,6 +231,22 @@ private static void WriteDocuments(SearchResults<Hotel> searchResults)
 }
 ```
 
+Een alternatieve methode is het rechtstreeks toevoegen van velden aan een index. In het volgende voor beeld worden slechts enkele velden weer gegeven.
+
+   ```csharp
+    SearchIndex index = new SearchIndex(indexName)
+    {
+        Fields =
+            {
+                new SimpleField("hotelId", SearchFieldDataType.String) { IsKey = true, IsFilterable = true, IsSortable = true },
+                new SearchableField("hotelName") { IsFilterable = true, IsSortable = true },
+                new SearchableField("hotelCategory") { IsFilterable = true, IsSortable = true },
+                new SimpleField("baseRate", SearchFieldDataType.Int32) { IsFilterable = true, IsSortable = true },
+                new SimpleField("lastRenovationDate", SearchFieldDataType.DateTimeOffset) { IsFilterable = true, IsSortable = true }
+            }
+    };
+   ```
+
 ### <a name="field-definitions"></a>Veld definities
 
 Uw gegevens model in .NET en het bijbehorende index schema moeten ondersteuning bieden voor de zoek ervaring die u aan uw eind gebruiker wilt geven. Elk object op het hoogste niveau in .NET, zoals een zoek document in een zoek index, komt overeen met een Zoek resultaat dat u in uw gebruikers interface zou weer geven. U kunt bijvoorbeeld in een toepassing voor het zoeken in een hotel zoeken op de naam van het Hotel, de functies van het hotel of de kenmerken van een bepaalde kamer. 
@@ -436,7 +452,7 @@ UploadDocuments(searchClient);
 
 ## <a name="run-queries"></a>Query's uitvoeren
 
-Stel eerst een waarde in `SearchClient` die het zoek eindpunt en de query-API-sleutel leest uit **appsettings.jsop** :
+Stel eerst een waarde in `SearchClient` die het zoek eindpunt en de query-API-sleutel leest uit **appsettings.jsop**:
 
 ```csharp
 private static SearchClient CreateSearchClientForQueries(string indexName, IConfigurationRoot configuration)

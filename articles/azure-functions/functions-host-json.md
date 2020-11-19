@@ -3,12 +3,12 @@ title: host.jsbij verwijzing voor Azure Functions 2. x
 description: Referentie documentatie voor de Azure Functions host.jsin het bestand met v2 runtime.
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: aaea37b100d6fadd271f48490628b38cba6cf822
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: c12a9244cdc1a76f678578e281532c73bc9385ba
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93377119"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917236"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Referentie naar host.json voor Azure Functions 2.x en hoger 
 
@@ -153,14 +153,16 @@ Zie voor de volledige JSON-structuur het vorige [voor beeld host.jsop bestand](#
 | Eigenschap | Standaard | Beschrijving |
 | --------- | --------- | --------- | 
 | samplingSettings | n.v.t. | Zie [applicationInsights. samplingSettings](#applicationinsightssamplingsettings). |
-| enableLiveMetrics | true | Hiermee wordt de verzameling Live Metrics ingeschakeld. |
-| enableDependencyTracking | true | Hiermee schakelt u het bijhouden van afhankelijkheden in. |
-| enablePerformanceCountersCollection | true | Hiermee schakelt u de verzameling kudu-prestatie meter items. |
+| enableLiveMetrics | waar | Hiermee wordt de verzameling Live Metrics ingeschakeld. |
+| enableDependencyTracking | waar | Hiermee schakelt u het bijhouden van afhankelijkheden in. |
+| enablePerformanceCountersCollection | waar | Hiermee schakelt u de verzameling kudu-prestatie meter items. |
 | liveMetricsInitializationDelay | 00:00:15 | Alleen voor intern gebruik. |
 | httpAutoCollectionOptions | n.v.t. | Zie [applicationInsights. httpAutoCollectionOptions](#applicationinsightshttpautocollectionoptions). |
 | snapshotConfiguration | n.v.t. | Zie [applicationInsights. snapshotConfiguration](#applicationinsightssnapshotconfiguration). |
 
 ### <a name="applicationinsightssamplingsettings"></a>applicationInsights. samplingSettings
+
+Zie [sampling in Application Insights](../azure-monitor/app/sampling.md)voor meer informatie over deze instellingen. 
 
 |Eigenschap | Standaard | Beschrijving |
 | --------- | --------- | --------- | 
@@ -180,9 +182,9 @@ Zie voor de volledige JSON-structuur het vorige [voor beeld host.jsop bestand](#
 
 |Eigenschap | Standaard | Beschrijving |
 | --------- | --------- | --------- | 
-| enableHttpTriggerExtendedInfoCollection | true | Hiermee schakelt u uitgebreide informatie over HTTP-aanvragen in of uit voor HTTP-triggers: inkomende aanvraag correlatie headers, ondersteuning voor meerdere instrumentatie sleutels, HTTP-methode, pad en antwoord. |
-| enableW3CDistributedTracing | true | Hiermee wordt ondersteuning van het W3C-protocol voor gedistribueerde tracering (en het verouderde correlatie schema ingeschakeld) in-of uitgeschakeld. Standaard ingeschakeld als is ingesteld op `enableHttpTriggerExtendedInfoCollection` True. Als `enableHttpTriggerExtendedInfoCollection` is ingesteld op False, is deze vlag alleen van toepassing op uitgaande aanvragen, niet op inkomende aanvragen. |
-| enableResponseHeaderInjection | true | Hiermee wordt de injectie van correlatie headers met meerdere onderdelen in-of uitgeschakeld. Door injectie in te scha kelen, kunt Application Insights een toepassings toewijzing maken wanneer er meerdere instrumentatie sleutels worden gebruikt. Standaard ingeschakeld als is ingesteld op `enableHttpTriggerExtendedInfoCollection` True. Deze instelling is niet van toepassing als is ingesteld op `enableHttpTriggerExtendedInfoCollection` False. |
+| enableHttpTriggerExtendedInfoCollection | waar | Hiermee schakelt u uitgebreide informatie over HTTP-aanvragen in of uit voor HTTP-triggers: inkomende aanvraag correlatie headers, ondersteuning voor meerdere instrumentatie sleutels, HTTP-methode, pad en antwoord. |
+| enableW3CDistributedTracing | waar | Hiermee wordt ondersteuning van het W3C-protocol voor gedistribueerde tracering (en het verouderde correlatie schema ingeschakeld) in-of uitgeschakeld. Standaard ingeschakeld als is ingesteld op `enableHttpTriggerExtendedInfoCollection` True. Als `enableHttpTriggerExtendedInfoCollection` is ingesteld op False, is deze vlag alleen van toepassing op uitgaande aanvragen, niet op inkomende aanvragen. |
+| enableResponseHeaderInjection | waar | Hiermee wordt de injectie van correlatie headers met meerdere onderdelen in-of uitgeschakeld. Door injectie in te scha kelen, kunt Application Insights een toepassings toewijzing maken wanneer er meerdere instrumentatie sleutels worden gebruikt. Standaard ingeschakeld als is ingesteld op `enableHttpTriggerExtendedInfoCollection` True. Deze instelling is niet van toepassing als is ingesteld op `enableHttpTriggerExtendedInfoCollection` False. |
 
 ### <a name="applicationinsightssnapshotconfiguration"></a>applicationInsights. snapshotConfiguration
 
@@ -191,22 +193,22 @@ Voor meer informatie over moment opnamen raadpleegt u [debug-moment opnamen op u
 |Eigenschap | Standaard | Beschrijving |
 | --------- | --------- | --------- | 
 | agentEndpoint | null | Het eind punt dat wordt gebruikt om verbinding te maken met de Application Insights Snapshot Debugger-service. Als de waarde Null is, wordt een standaard eindpunt gebruikt. |
-| captureSnapshotMemoryWeight | 0.5 | Het gewicht dat aan de huidige geheugen grootte van het proces is gegeven om te controleren of er voldoende geheugen beschikbaar is om een moment opname te maken. De verwachte waarde is een groter dan 0 juiste fractie (0 < CaptureSnapshotMemoryWeight < 1). |
+| captureSnapshotMemoryWeight | 0,5 | Het gewicht dat aan de huidige geheugen grootte van het proces is gegeven om te controleren of er voldoende geheugen beschikbaar is om een moment opname te maken. De verwachte waarde is een groter dan 0 juiste fractie (0 < CaptureSnapshotMemoryWeight < 1). |
 | failedRequestLimit | 3 | De limiet voor het aantal mislukte aanvragen voor het aanvragen van moment opnamen voordat de telemetrie-processor wordt uitgeschakeld.|
-| handleUntrackedExceptions | true | Hiermee wordt het bijhouden van uitzonde ringen die niet worden bijgehouden door Application Insights telemetrie, in-of uitgeschakeld. |
+| handleUntrackedExceptions | waar | Hiermee wordt het bijhouden van uitzonde ringen die niet worden bijgehouden door Application Insights telemetrie, in-of uitgeschakeld. |
 | isEnabled | true | Hiermee wordt de momentopname verzameling in-of uitgeschakeld | 
-| isEnabledInDeveloperMode | false | Hiermee wordt de momentopname verzameling ingeschakeld of uitgeschakeld in de ontwikkelaars modus. |
-| isEnabledWhenProfiling | true | Hiermee wordt het maken van een moment opname in-of uitgeschakeld, zelfs als er een gedetailleerde profilerings sessie wordt verzameld door de Application Insights Profiler. |
-| isExceptionSnappointsEnabled | false | Hiermee wordt het filteren van uitzonde ringen in-of uitgeschakeld. |
-| isLowPrioritySnapshotUploader | true | Hiermee wordt bepaald of het SnapshotUploader-proces op de normale prioriteit moet worden uitgevoerd. |
+| isEnabledInDeveloperMode | onjuist | Hiermee wordt de momentopname verzameling ingeschakeld of uitgeschakeld in de ontwikkelaars modus. |
+| isEnabledWhenProfiling | waar | Hiermee wordt het maken van een moment opname in-of uitgeschakeld, zelfs als er een gedetailleerde profilerings sessie wordt verzameld door de Application Insights Profiler. |
+| isExceptionSnappointsEnabled | onjuist | Hiermee wordt het filteren van uitzonde ringen in-of uitgeschakeld. |
+| isLowPrioritySnapshotUploader | waar | Hiermee wordt bepaald of het SnapshotUploader-proces op de normale prioriteit moet worden uitgevoerd. |
 | maximumCollectionPlanSize | 50 | Het maximum aantal problemen dat kan worden gevolgd op elk gewenst moment in een bereik van 1 tot en met 9999. |
 | maximumSnapshotsRequired | 3 | Het maximum aantal moment opnamen dat voor één probleem wordt verzameld, in een bereik van 1 tot 999. Een probleem kan worden beschouwd als een afzonderlijke instructie throw in uw toepassing. Zodra het aantal moment opnamen dat voor een probleem is verzameld deze waarde bereikt, worden er geen moment opnamen meer verzameld voor dat probleem totdat de probleem tellers opnieuw zijn ingesteld (Zie `problemCounterResetInterval` ) en de `thresholdForSnapshotting` limiet opnieuw wordt bereikt. |
 | problemCounterResetInterval | 24:00:00 | Hoe vaak de probleem tellers in een bereik van één minuut tot zeven dagen opnieuw moeten worden ingesteld. Als dit interval wordt bereikt, worden alle probleem aantallen opnieuw ingesteld op nul. Bestaande problemen die de drempel voor het uitvoeren van moment opnamen al hebben bereikt, maar nog niet het aantal moment opnamen in hebben gegenereerd `maximumSnapshotsRequired` , blijven actief. |
-| provideAnonymousTelemetry | true | Hiermee wordt bepaald of anoniem gebruik en fout-telemetrie naar micro soft moet worden verzonden. Deze telemetrie kan worden gebruikt als u contact opneemt met micro soft om problemen met de Snapshot Debugger op te lossen. Het wordt ook gebruikt om gebruiks patronen te bewaken. |
+| provideAnonymousTelemetry | waar | Hiermee wordt bepaald of anoniem gebruik en fout-telemetrie naar micro soft moet worden verzonden. Deze telemetrie kan worden gebruikt als u contact opneemt met micro soft om problemen met de Snapshot Debugger op te lossen. Het wordt ook gebruikt om gebruiks patronen te bewaken. |
 | reconnectInterval | 00:15:00 | Hoe vaak opnieuw verbinding wordt gemaakt met het Snapshot Debugger-eind punt. Het toegestane bereik is één minuut op een dag. |
 | shadowCopyFolder | null | Hiermee geeft u de map op die moet worden gebruikt voor binaire bestanden voor kopiëren van schaduw kopieën. Als dit niet het geval is, worden de mappen die zijn opgegeven door de volgende omgevings variabelen, in volg orde geprobeerd: Fabric_Folder_App_Temp, LOCALAPPDATA, APPDATA, TEMP. |
-| shareUploaderProcess | true | Als deze eigenschap waar is, worden met slechts één instantie van SnapshotUploader moment opnamen verzameld en geüpload voor meerdere apps die de InstrumentationKey delen. Als deze eigenschap is ingesteld op False, wordt de SnapshotUploader uniek voor elke tuple (verwerkings naam, InstrumentationKey). |
-| snapshotInLowPriorityThread | true | Hiermee wordt bepaald of moment opnamen moeten worden verwerkt in een thread met een lage IO-prioriteit. Het maken van een moment opname is een snelle bewerking, maar om een moment opname te uploaden naar de Snapshot Debugger-service, moet deze eerst naar de schijf worden geschreven als een mini dump. Dat gebeurt in het SnapshotUploader-proces. Als u deze waarde instelt op True, wordt IO met lage prioriteit gebruikt voor het schrijven van het mini dump, dat niet kan concurreren met uw toepassing voor resources. Als u deze waarde instelt op ONWAAR, versnelt u het maken van een mini maal in de kosten van het vertragen van uw toepassing. |
+| shareUploaderProcess | waar | Als deze eigenschap waar is, worden met slechts één instantie van SnapshotUploader moment opnamen verzameld en geüpload voor meerdere apps die de InstrumentationKey delen. Als deze eigenschap is ingesteld op False, wordt de SnapshotUploader uniek voor elke tuple (verwerkings naam, InstrumentationKey). |
+| snapshotInLowPriorityThread | waar | Hiermee wordt bepaald of moment opnamen moeten worden verwerkt in een thread met een lage IO-prioriteit. Het maken van een moment opname is een snelle bewerking, maar om een moment opname te uploaden naar de Snapshot Debugger-service, moet deze eerst naar de schijf worden geschreven als een mini dump. Dat gebeurt in het SnapshotUploader-proces. Als u deze waarde instelt op True, wordt IO met lage prioriteit gebruikt voor het schrijven van het mini dump, dat niet kan concurreren met uw toepassing voor resources. Als u deze waarde instelt op ONWAAR, versnelt u het maken van een mini maal in de kosten van het vertragen van uw toepassing. |
 | snapshotsPerDayLimit | 30 | Het maximum aantal moment opnamen dat is toegestaan in één dag (24 uur). Deze limiet wordt ook afgedwongen aan de kant van de Application Insights service. Uploads zijn beperkt tot 50 per dag per toepassing (dat wil zeggen, per instrumentatie sleutel). Deze waarde helpt te voor komen dat er extra moment opnamen worden gemaakt die uiteindelijk tijdens het uploaden worden afgewezen. Met de waarde 0 wordt de limiet volledig verwijderd, wat niet wordt aanbevolen. |
 | snapshotsPerTenMinutesLimit | 1 | Het maximum aantal moment opnamen dat is toegestaan in 10 minuten. Hoewel er geen bovengrens is voor deze waarde, is het belang rijk om deze te verhogen op productie werkbelastingen, omdat dit de prestaties van uw toepassing kan beïnvloeden. Het maken van een moment opname is snel, maar het maken van een mini dump van de moment opname en het uploaden naar de Snapshot Debugger-service is een veel langzamere bewerking die zal concurreren met uw toepassing voor resources (zowel CPU als I/O). |
 | tempFolder | null | Hiermee geeft u de map voor het schrijven van minidumps-en Uploader-logboek bestanden. Als deze niet is ingesteld, wordt *%temp%\Dumps* gebruikt. |
@@ -282,7 +284,7 @@ Configuratie-instellingen voor de [host Health Monitor](https://github.com/Azure
 
 |Eigenschap  |Standaard | Beschrijving |
 |---------|---------|---------| 
-|enabled|true|Hiermee wordt aangegeven of de functie is ingeschakeld. | 
+|enabled|waar|Hiermee wordt aangegeven of de functie is ingeschakeld. | 
 |healthCheckInterval|10 seconden|Het tijds interval tussen de periodieke status controles voor de achtergrond. | 
 |healthCheckWindow|2 minuten|Een schuif tijd venster dat wordt gebruikt in combi natie met de `healthCheckThreshold` instelling.| 
 |healthCheckThreshold|6|Maximum aantal keer dat de status controle kan mislukken voordat een host recyclen wordt gestart.| 
@@ -337,7 +339,7 @@ Deze instelling is een onderliggend item van [logboek registratie](#logging). He
 
 |Eigenschap  |Standaard | Beschrijving |
 |---------|---------|---------| 
-|isEnabled|false|Hiermee wordt de logboek registratie van de console in-of uitgeschakeld.| 
+|isEnabled|onjuist|Hiermee wordt de logboek registratie van de console in-of uitgeschakeld.| 
 
 ## <a name="manageddependency"></a>managedDependency
 

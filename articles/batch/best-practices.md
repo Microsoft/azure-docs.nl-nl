@@ -1,18 +1,18 @@
 ---
 title: Aanbevolen procedures
-description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch-oplossing.
-ms.date: 08/12/2020
+description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
+ms.date: 11/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: dff6668050e45d9179cd985aa10670b56afe5377
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: a799aa7de19b9d5b0b8e085252cb172efebd05dc
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913225"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916862"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
-In dit artikel wordt een verzameling aanbevolen procedures beschreven voor het effectief en efficiënt gebruik van de Azure Batch-service, op basis van de praktijk ervaring met batch. Lees dit artikel om te voor komen dat Valk uilen, potentiële prestatie problemen en anti patronen tijdens het ontwikkelen voor en met behulp van batch.
+In dit artikel wordt een verzameling aanbevolen procedures en handige tips beschreven voor het effectief gebruik van de Azure Batch-service, op basis van de praktijk ervaring met batch. Deze tips kunnen u helpen bij het verbeteren van de prestaties en Vermijd het ontwerpen van Valk uilen in uw Azure Batch oplossingen.
 
 ## <a name="pools"></a>Pools
 
@@ -20,7 +20,7 @@ In dit artikel wordt een verzameling aanbevolen procedures beschreven voor het e
 
 ### <a name="pool-configuration-and-naming"></a>Groeps configuratie en-naamgeving
 
-- **Pool toewijzings modus** Bij het maken van een batch-account kunt u kiezen uit twee pool toewijzings modi: **batch-service** of **gebruikers abonnement** . In de meeste gevallen moet u de standaard batch-service modus gebruiken, waarin Pools achter de schermen worden toegewezen in door batch beheerde abonnementen. In de alternatieve modus Gebruikersabonnement worden Batch-VM's en andere resources rechtstreeks in uw abonnement gemaakt wanneer er een groep wordt gemaakt. Abonnements accounts voor gebruikers worden voornamelijk gebruikt om een belang rijke, maar kleine subset van scenario's mogelijk te maken. Meer informatie over de modus gebruikers abonnement vindt u op [aanvullende configuratie voor de modus gebruikers abonnement](batch-account-create-portal.md#additional-configuration-for-user-subscription-mode).
+- **Pool toewijzings modus** Bij het maken van een batch-account kunt u kiezen uit twee pool toewijzings modi: **batch-service** of **gebruikers abonnement**. In de meeste gevallen moet u de standaard batch-service modus gebruiken, waarin Pools achter de schermen worden toegewezen in door batch beheerde abonnementen. In de alternatieve modus Gebruikersabonnement worden Batch-VM's en andere resources rechtstreeks in uw abonnement gemaakt wanneer er een groep wordt gemaakt. Abonnements accounts voor gebruikers worden voornamelijk gebruikt om een belang rijke, maar kleine subset van scenario's mogelijk te maken. Meer informatie over de modus gebruikers abonnement vindt u op [aanvullende configuratie voor de modus gebruikers abonnement](batch-account-create-portal.md#additional-configuration-for-user-subscription-mode).
 
 - **Denk na over taak-en taak uitvoerings tijd bij het bepalen van de taak voor pool toewijzing.**
     Als u taken hebt die voornamelijk uit korte uitvoeringen bestaan, en het verwachte totale aantal taken klein is, zodat de totale verwachte uitvoerings tijd van de taak niet lang is, kunt u geen nieuwe groep voor elke taak toewijzen. De toewijzings tijd van de knoop punten vermindert de uitvoerings tijd van de taak.
@@ -67,7 +67,7 @@ Pools kunnen worden gemaakt met installatie kopieën van derden die naar Azure M
 
 ### <a name="azure-region-dependency"></a>Azure-regio afhankelijkheid
 
-Als u een tijd gevoelige of productie werk belasting hebt, is het raadzaam om niet afhankelijk te zijn van één Azure-regio. Soms zijn er problemen die invloed kunnen hebben op een hele regio. Als uw verwerking bijvoorbeeld op een specifiek tijdstip moet worden gestart, kunt u overwegen om de groep in uw primaire regio goed te schalen voor *de start tijd* . Als deze pool schaal mislukt, kunt u terugvallen om een pool omhoog te schalen in een back-upgebied (of regio's). Pools over meerdere accounts in verschillende regio's bieden een kant-en-klare back-up als er iets mis is met een andere groep. Zie [uw toepassing ontwerpen voor hoge Beschik baarheid](high-availability-disaster-recovery.md)voor meer informatie.
+Als u een tijd gevoelige of productie werk belasting hebt, is het raadzaam om niet afhankelijk te zijn van één Azure-regio. Soms zijn er problemen die invloed kunnen hebben op een hele regio. Als uw verwerking bijvoorbeeld op een specifiek tijdstip moet worden gestart, kunt u overwegen om de groep in uw primaire regio goed te schalen voor *de start tijd*. Als deze pool schaal mislukt, kunt u terugvallen om een pool omhoog te schalen in een back-upgebied (of regio's). Pools over meerdere accounts in verschillende regio's bieden een kant-en-klare back-up als er iets mis is met een andere groep. Zie [uw toepassing ontwerpen voor hoge Beschik baarheid](high-availability-disaster-recovery.md)voor meer informatie.
 
 ## <a name="jobs"></a>Taken
 
@@ -175,7 +175,7 @@ Voor meer informatie over Resource Manager en sjablonen raadpleegt [u Quick Star
 
 ## <a name="connectivity"></a>Connectiviteit
 
-Raadpleeg de volgende richt lijnen bij het overwegen van connectiviteit in uw batch-oplossingen.
+Raadpleeg de volgende richt lijnen met betrekking tot de connectiviteit in uw batch-oplossingen.
 
 ### <a name="network-security-groups-nsgs-and-user-defined-routes-udrs"></a>Netwerk beveiligings groepen (Nsg's) en door de gebruiker gedefinieerde routes (Udr's)
 
@@ -198,6 +198,10 @@ Zorg ervoor dat uw batch-service-clients over het juiste beleid voor nieuwe pogi
 
 Doorgaans worden virtuele machines in een batch-pool geopend via open bare IP-adressen die kunnen worden gewijzigd gedurende de levens duur van de groep. Hierdoor kan het lastig zijn om te communiceren met een Data Base of een andere externe service die de toegang tot bepaalde IP-adressen beperkt. Om ervoor te zorgen dat de open bare IP-adressen in uw pool onverwacht niet worden gewijzigd, kunt u een groep maken met behulp van een set statische open bare IP-adressen die u beheert. Zie [een Azure batch groep met opgegeven open bare IP-adressen maken](create-pool-public-ip.md)voor meer informatie.
 
+### <a name="testing-connectivity-with-cloud-services-configuration"></a>De connectiviteit met Cloud Services configuratie testen
+
+U kunt het normale ' ping '/ICMP-protocol niet gebruiken met Cloud Services, omdat het ICMP-protocol niet is toegestaan via de Azure-load balancer. Zie [connectiviteit en netwerken voor Azure Cloud Services](../cloud-services/cloud-services-connectivity-and-networking-faq.md#can-i-ping-a-cloud-service)voor meer informatie.
+
 ## <a name="batch-node-underlying-dependencies"></a>Onderliggende afhankelijkheden van het batch knooppunt
 
 Houd rekening met de volgende afhankelijkheden en beperkingen bij het ontwerpen van uw batch-oplossingen.
@@ -206,12 +210,12 @@ Houd rekening met de volgende afhankelijkheden en beperkingen bij het ontwerpen 
 
 Azure Batch maakt en beheert een set gebruikers en groepen op de VM, wat niet mag worden gewijzigd. De verschillen zijn als volgt:
 
-#### <a name="windows"></a>Windows
+Windows:
 
 - Een gebruiker met de naam **PoolNonAdmin**
 - Een gebruikers groep met de naam **WATaskCommon**
 
-#### <a name="linux"></a>Linux
+Linux:
 
 - Een gebruiker met de naam **_azbatch**
 
@@ -220,3 +224,9 @@ Azure Batch maakt en beheert een set gebruikers en groepen op de VM, wat niet ma
 Batch probeert actief de werkmap op te schonen waarin de taken worden uitgevoerd, zodra de retentie tijd verloopt. Bestanden die buiten deze map zijn geschreven, zijn [uw verantwoordelijkheid om op te schonen](#manage-task-lifetime) om te voor komen dat u schijf ruimte kunt invullen.
 
 De automatische opschoning voor de werkmap wordt geblokkeerd als u een service uitvoert in Windows vanuit de werkmap startTask, omdat de map nog in gebruik is. Dit leidt tot slechte prestaties. Om dit probleem op te lossen, wijzigt u de map voor die service in een afzonderlijke map die niet wordt beheerd door batch.
+
+## <a name="next-steps"></a>Volgende stappen
+
+- [Maak een Azure batch-account met behulp van de Azure Portal](batch-account-create-portal.md).
+- Meer informatie over de [Werkstroom van de batch-service en primaire resources](batch-service-workflow-features.md) als pools, knooppunten, jobs en taken.
+- Meer informatie over de [standaard Azure batch quota's, limieten en beperkingen en het aanvragen van quotum verhogingen](batch-quota-limit.md).

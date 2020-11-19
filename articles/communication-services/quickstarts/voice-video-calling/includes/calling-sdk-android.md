@@ -4,17 +4,17 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 1f71c01d53a89ce1b459826689eb5b2e4899b3a2
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c015561e66d77e6df352e601bf1a67da5996d4d5
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886544"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915549"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
-- Een geïmplementeerde Communication Services-resource. [Een Communication Services maken](../../create-communication-resource.md).
+- Een geïmplementeerde Communication Services-resource. [Een Communication Services-resource maken](../../create-communication-resource.md).
 - Een `User Access Token` om de aanroepende client in te schakelen. Voor meer informatie over het [verkrijgen van een `User Access Token`](../../access-tokens.md)
 - Optioneel: Voltooi de Snelstartgids om aan de [slag te gaan met het toevoegen van een oproep aan uw toepassing](../getting-started-with-calling.md)
 
@@ -136,7 +136,7 @@ startCallOptions.setVideoOptions(videoOptions);
 Call call = callAgent.call(context, participants, startCallOptions);
 ```
 
-### <a name="join-a-group-call"></a>Aan een groeps aanroep toevoegen
+### <a name="join-a-group-call"></a>Deelnemen aan een groepsgesprek
 Als u een nieuwe groeps oproep wilt starten of lid wilt worden van een doorlopende groeps oproep, moet u de methode ' samen voegen ' aanroepen en een object door geven aan een `groupId` eigenschap. De waarde moet een GUID zijn.
 ```java
 Context appContext = this.getApplicationContext();
@@ -153,7 +153,7 @@ Mobiele push meldingen zijn de pop-upmeldingen die u op mobiele apparaten ziet. 
 
 ### <a name="prerequisites"></a>Vereisten
 
-Een Firebase-account dat is ingesteld met Cloud Messa ging (FCM) ingeschakeld en met uw Firebase Cloud Messa ging-service verbonden met een Azure notification hub-exemplaar. Zie [communicatie Services-meldingen](https://docs.microsoft.com/azure/communication-services/concepts/notifications) voor meer informatie.
+Een Firebase-account dat is ingesteld met Cloud Messa ging (FCM) ingeschakeld en met uw Firebase Cloud Messa ging-service verbonden met een Azure notification hub-exemplaar. Zie [communicatie Services-meldingen](../../../concepts/notifications.md) voor meer informatie.
 Daarnaast wordt door de zelf studie aangenomen dat u Android Studio versie 3,6 of hoger gebruikt om uw toepassing te bouwen.
 
 Er is een set machtigingen vereist voor de Android-toepassing om meldings berichten te kunnen ontvangen van Firebase Cloud Messa ging. Voeg in uw `AndroidManifest.xml` bestand de volgende machtigingen toe na het *manifest<... >* of onder het *</application>* label

@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 64334b17060879a2e587b13b062c81e86df33831
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: d47abaade13958b4e28d3ad5f62b88e8a53e89a9
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94743419"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917835"
 ---
 # <a name="migration-overview-sql-server-to-sql-server-on-azure-vms"></a>Migratie overzicht: SQL Server SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -56,6 +56,8 @@ De juiste benadering voor uw bedrijf is doorgaans afhankelijk van de volgende fa
 - SQL Server versie, besturings systeem of beide moeten worden gewijzigd.
 - Levens cyclus van de ondersteunings periode van uw bestaande producten
 - Venster voor toepassings uitval tijdens de migratie
+
+:::image type="content" source="media/sql-server-to-sql-on-azure-vm-individual-databases-guide/virtual-machine-migration-downtime.png" alt-text="uitval tijd voor migratie van virtuele machines":::
 
 In de volgende tabel worden de verschillen in de twee migratie strategieën beschreven:
 <br />

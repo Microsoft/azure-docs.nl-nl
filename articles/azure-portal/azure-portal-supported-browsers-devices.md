@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mblythe
 ms.custom: accessibility
-ms.openlocfilehash: d48add78eb73ba1aea248e95ddc5ebc0900ee000
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: b900373c7e6a3b3701ae30274ff27629b7f47ef9
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888331"
+ms.locfileid: "94916845"
 ---
 # <a name="supported-devices"></a>Ondersteunde apparaten
 
@@ -33,7 +33,7 @@ Als u Azure-resources wilt beheren vanaf een mobiel apparaat, probeert u het  [A
 U wordt aangeraden om de meest recente browser te gebruiken die compatibel is met het besturingssysteem. De volgende browsers worden ondersteund:
 
 * Microsoft Edge (meest recente versie)
-* Internet Explorer 11 (ondersteund tot 31 maart 2021)
+* Internet Explorer 11
 * Safari (meest recente versie, alleen Mac)
 * Chrome (meest recente versie)
 * Firefox (meest recente versie)

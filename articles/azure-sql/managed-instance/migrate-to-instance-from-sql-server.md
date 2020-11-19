@@ -11,17 +11,17 @@ author: bonova
 ms.author: bonova
 ms.reviewer: ''
 ms.date: 07/11/2019
-ms.openlocfilehash: 7e7775f289e0221862d11c585ae85a5b0bc6cc27
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 2761b97e595f5e11b00e75cd778ee269b12bfcae
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92788547"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917797"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-managed-instance"></a>Migratie van SQL Server-exemplaren naar Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-In dit artikel vindt u informatie over de methoden voor het migreren van een exemplaar van SQL Server 2005 of hoger naar [Azure SQL Managed instance](sql-managed-instance-paas-overview.md). Zie [migreren naar SQL database](../database/migrate-to-database-from-sql-server.md)voor meer informatie over het migreren naar een enkele data base of elastische pool. Raadpleeg de [migratie handleiding voor Azure data base](https://datamigration.microsoft.com/)voor migratie-informatie over het migreren van andere platforms.
+In dit artikel vindt u informatie over de methoden voor het migreren van een exemplaar van SQL Server 2005 of hoger naar [Azure SQL Managed instance](sql-managed-instance-paas-overview.md). Voor informatie over het migreren naar een enkele data base of elastische pool raadpleegt [u migratie overzicht: SQL Server naar SQL database](../migration-guides/database/sql-server-to-sql-database-overview.md). Zie [migreren naar Azure SQL](../migration-guides/index.yml)voor migratie-informatie over het migreren van andere platforms en richt lijnen over hulpprogram ma's en opties.
 
 > [!NOTE]
 > Als u snel een Azure SQL Managed instance wilt starten en proberen, kunt u in plaats van deze pagina naar de [Snelstartgids-gids](quickstart-content-reference-guide.md) gaan.
@@ -45,7 +45,7 @@ Op hoog niveau ziet het database migratie proces er als volgt uit:
 
 Bepaal eerst of SQL Managed instance compatibel is met de database vereisten van uw toepassing. SQL Managed instance is ontworpen om eenvoudig lift-en Shift-migratie te bieden voor de meeste bestaande toepassingen die gebruikmaken van SQL Server. Het kan echter ook voor komen dat u functies of mogelijkheden nodig hebt die nog niet worden ondersteund en dat de kosten voor het implementeren van een tijdelijke oplossing te hoog zijn.
 
-Gebruik [Data Migration Assistant](/sql/dma/dma-overview) om mogelijke compatibiliteits problemen te detecteren die invloed hebben op de database functionaliteit op Azure SQL database. Als er een aantal problemen met de blok kering zijn gerapporteerd, moet u mogelijk een alternatieve optie overwegen, zoals [SQL Server op de Azure-VM](https://azure.microsoft.com/services/virtual-machines/sql-server/). Enkele voorbeelden:
+Gebruik [Data Migration Assistant](/sql/dma/dma-overview) om mogelijke compatibiliteits problemen te detecteren die invloed hebben op de database functionaliteit op Azure SQL database. Als er een aantal problemen met de blok kering zijn gerapporteerd, moet u mogelijk een alternatieve optie overwegen, zoals [SQL Server op de Azure-VM](https://azure.microsoft.com/services/virtual-machines/sql-server/). Hier volgen enkele voorbeelden:
 
 - Als u rechtstreeks toegang tot het besturings systeem of het bestands systeem nodig hebt, bijvoorbeeld voor het installeren van derden of aangepaste agents op dezelfde virtuele machine met SQL Server.
 - Als u strikte afhankelijkheid hebt voor functies die nog niet worden ondersteund, zoals FileStream/bestands tabel, poly base en trans acties met meerdere exemplaren.

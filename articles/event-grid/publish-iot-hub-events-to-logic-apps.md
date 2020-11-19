@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/14/2020
 ms.author: philmea
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5092aa0b5b23f04af1f49933bca234815f03f454
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 857ae8d824443e9a8abdac7c4a66e2b014be2be0
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604545"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566347"
 ---
 # <a name="tutorial-send-email-notifications-about-azure-iot-hub-events-using-event-grid-and-logic-apps"></a>Zelfstudie: E-mailmeldingen over gebeurtenissen van Azure IoT Hub verzenden met Event Grid en Logic Apps
 
@@ -21,13 +21,13 @@ Azure Event Grid maakt het mogelijk om te reageren op gebeurtenissen in IoT Hub 
 
 In dit artikel wordt u stapsgewijs begeleid bij het maken van een voorbeeldconfiguratie waarin IoT Hub en Event Grid worden gebruikt. Aan het einde van het artikel beschikt u over een logische Azure-app die een e-mailmelding verstuurt zodra er een apparaat verbinding maakt met uw IoT-hub of deze verbinding wordt verbroken. Event Grid kan worden gebruikt om tijdig meldingen te ontvangen over kritieke apparaten die de verbinding verbreken. Het kan enkele minuten (dat wil zeggen 20 of meer, maar we willen niet er geen waarde aan hangen) duren voordat metrische gegevens en diagnostische worden weergegeven in logboeken/waarschuwingen. Dat is mogelijk onaanvaardbaar voor kritieke infrastructuur.
 
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
 ## <a name="prerequisites"></a>Vereisten
 
-* Een actief Azure-abonnement. Als u geen abonnement hebt, kunt u [een gratis Azure-account maken](https://azure.microsoft.com/pricing/free-trial/).
+* Een e-mailaccount van een e-mailprovider die door Azure Logic Apps wordt ondersteund, bijvoorbeeld Office 365 Outlook of Outlook.com. Dit e-mailaccount wordt gebruikt voor het verzenden van de gebeurtenismeldingen.
 
-* Een e-mailaccount van een e-mailprovider die door Azure Logic Apps wordt ondersteund, bijvoorbeeld Office 365 Outlook of Outlook.com. Dit e-mailaccount wordt gebruikt voor het verzenden van de gebeurtenismeldingen. 
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="create-an-iot-hub"></a>Een IoT-hub maken
 

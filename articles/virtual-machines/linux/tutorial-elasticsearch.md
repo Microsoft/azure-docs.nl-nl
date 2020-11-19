@@ -13,12 +13,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 10/11/2017
 ms.author: routlaw
-ms.openlocfilehash: c3d35940a445b73ecb9285355f36b141c3a151b8
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 48fc9f7e021ba5158182344ddfdba3c8eafaf781
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92475053"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659213"
 ---
 # <a name="install-the-elastic-stack-on-an-azure-vm"></a>De Elastic Stack installeren op een virtuele machine in Azure
 
@@ -211,7 +211,7 @@ De syslog-vermeldingen worden in uw terminal herhaald wanneer ze zijn verzonden 
 Bewerk `/etc/kibana/kibana.yml` en wijzig het IP-adres dat Kibana controleert, zodat u het vanuit de webbrowser kunt openen.
 
 ```bash
-server.host:"0.0.0.0"
+server.host: "0.0.0.0"
 ```
 
 Start Kibana met de volgende opdracht:

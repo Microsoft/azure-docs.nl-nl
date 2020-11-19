@@ -7,12 +7,12 @@ ms.topic: sample
 author: cjgronlund
 ms.author: cgronlun
 ms.date: 05/06/2020
-ms.openlocfilehash: c24363caac1db8dd8ce21b690ef989b2beb97f2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 470ed0ea4b129c12041007487b61929843b1de34
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88506053"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654793"
 ---
 # <a name="example-jupyter-notebooks-show-how-to-enrich-data-with-open-datasets"></a>Voorbeelden van Jupyter-notebooks laten zien hoe gegevens kunnen worden verrijkt met Open Datasets 
 De voorbeelden van Jupyter-notebooks voor Azure Open Datasets tonen hoe u open gegevenssets kunt laden en ze gebruiken om voorbeeldgegevens te verrijken. Voorbeelden van technieken zijn Apache Spark en Pandas voor het verwerken van gegevens.
@@ -40,7 +40,7 @@ De voorbeelden van Jupyter-notebooks voor Azure Open Datasets tonen hoe u open g
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Zelfstudie: regressiemodellen met automatische machine learning en een open gegevensset](/azure/machine-learning/tutorial-auto-train-models?context=azure/open-datasets/context/open-datasets-context)
-* [Python-SDK voor open gegevenssets](/python/api/azureml-opendatasets/azureml.opendatasets?view=azure-ml-py)
+* [Zelfstudie: regressiemodellen met automatische machine learning en een open gegevensset](../machine-learning/tutorial-auto-train-models.md?context=azure%252fopen-datasets%252fcontext%252fopen-datasets-context)
+* [Python-SDK voor open gegevenssets](/python/api/azureml-opendatasets/azureml.opendatasets)
 * [Catalogus Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/)
 * [Azure Machine Learning-gegevensset maken op basis van open gegevensset](how-to-create-azure-machine-learning-dataset-from-open-dataset.md)

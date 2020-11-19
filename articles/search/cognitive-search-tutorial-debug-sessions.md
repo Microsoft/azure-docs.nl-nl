@@ -8,12 +8,12 @@ manager: nitinme
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: 33c26af86bfcf2f748a0fa68ee4f3d0da1f132e1
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 8ec39c4616f5a34f8326b56d4f0ba6e15cdad91c
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057549"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699114"
 ---
 # <a name="tutorial-diagnose-repair-and-commit-changes-to-your-skillset"></a>Zelfstudie: Veranderingen in uw vaardighedenset diagnosticeren, herstellen en doorvoeren
 
@@ -59,7 +59,7 @@ REST-aanroepen hebben voor elke aanvraag de service-URL en een toegangssleutel n
 
 1. Haal onder **Instellingen** > **Sleutels** een beheersleutel op voor volledige rechten op de service. Er zijn twee uitwisselbare beheersleutels die voor bedrijfscontinuïteit worden verstrekt voor het geval u een moet overschakelen. U kunt de primaire of secundaire sleutel gebruiken op aanvragen voor het toevoegen, wijzigen en verwijderen van objecten.
 
-:::image type="content" source="media/search-get-started-postman/get-url-key.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen" border="false":::
+:::image type="content" source="media/search-get-started-rest/get-url-key.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen" border="false":::
 
 Voor alle aanvragen is een API-sleutel vereist op elke aanvraag die naar uw service wordt verzonden. Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
@@ -78,13 +78,13 @@ In deze sectie worden Postman en een opgegeven verzameling gebruikt om de gegeve
 1. Voer de storageConnectionString in op de pagina Sleutels van uw Azure Storage-account.
 1. Voer de containerName in voor de container die u in het opslagaccount hebt gemaakt.
 
-> :::image type="content" source="media/cognitive-search-debug/postman-enter-variables.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/postman-enter-variables.png" alt-text="variabelen bewerken in Postman":::
 
 De verzameling bevat vier verschillende REST-aanroepen die worden gebruikt om deze sectie te voltooien.
 
 Met de eerste aanroep maakt u de gegevensbron. `clinical-trials-ds`. Met de tweede aanroep maakt u de vaardighedenhedenset, `clinical-trials-ss`. Met de derde aanroep maakt u de index, `clinical-trials`. Met de vierde en laatste aanroep maakt u de indexeerfunctie `clinical-trials-idxr`. Nadat alle aanroepen in de verzameling zijn voltooid, sluit u Postman en keert u terug naar Azure Portal.
 
-> :::image type="content" source="media/cognitive-search-debug/postman-create-data-source.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/postman-create-data-source.png" alt-text="Postman gebruiken om gegevensbron te maken":::
 
 ## <a name="check-the-results"></a>De resultaten controleren
 
@@ -107,7 +107,7 @@ Ga terug naar het scherm Overzicht van de zoekservice.
 
 ## <a name="start-your-debug-session"></a>Uw foutopsporingssessie starten
 
-> :::image type="content" source="media/cognitive-search-debug/new-debug-session-screen-required.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/new-debug-session-screen-required.png" alt-text="een nieuwe foutopsporingssessie starten":::
 
 1. Klik op het tabblad Foutopsporingssessies (preview-versie).
 1. Selecteer +NewDebugSession
@@ -120,7 +120,7 @@ Ga terug naar het scherm Overzicht van de zoekservice.
 > [!Important]
 > Een foutopsporingssessie werkt alleen met één document. U kunt een specifiek document in de gegevensset > selecteren of de sessie wordt standaard ingesteld op het eerste document.
 
-> :::image type="content" source="media/cognitive-search-debug/debug-execution-complete1.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/debug-execution-complete1.png" alt-text="Nieuwe foutopsporingssessie gestart":::
 
 Wanneer de foutopsporingssessie is voltooid, wordt de sessie standaard ingesteld op het tabblad AI-verrijkingen, waarbij de vaardigheidsgrafiek wordt gemarkeerd.
 
@@ -140,7 +140,7 @@ Op het tabblad Fouten/waarschuwingen vindt u een foutmelding voor een bewerking 
 1. Selecteer het symbool **</>** aan het begin van de regel en open de expressie-evaluator.
 1. Klik op de knop **Evalueren** om te bevestigen dat deze expressie een fout heeft opgeleverd. Er wordt bevestigd dat de eigenschap 'languageCode' een ongeldige invoer is.
 
-> :::image type="content" source="media/cognitive-search-debug/expression-evaluator-language.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/expression-evaluator-language.png" alt-text="Expressie-evaluator":::
 
 Er zijn twee manieren om deze fout in de sessie te onderzoeken. U kunt eerst kijken waar de invoer vandaan komt. Welke vaardigheid in de hiërarchie hoort dit resultaat te produceren? Op het tabblad Uitvoerbewerkingen in het detailvenster Vaardigheden vindt u de bron van de invoer. Als er geen bron is, duidt dit op een fout in de veldtoewijzing.
 
@@ -148,7 +148,7 @@ Er zijn twee manieren om deze fout in de sessie te onderzoeken. U kunt eerst kij
 1. Bekijk de INPUTS en zoek 'languageCode'. Er is geen bron voor deze invoer vermeld. 
 1. Schakel het linkerdeelvenster in om de verrijkte gegevensstructuur weer te geven. Er is geen toegewezen pad dat overeenkomt met 'languageCode'.
 
-> :::image type="content" source="media/cognitive-search-debug/enriched-data-structure-language.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/enriched-data-structure-language.png" alt-text="Verrijkte gegevensstructuur":::
 
 Er is een toegewezen pad voor 'language'. Er is dus een typfout in de vaardigheidsinstellingen. U kunt dit oplossen door de expressie in de vaardigheid #1 met de expressie /document/language bij te werken.
 
@@ -164,11 +164,11 @@ Nadat de uitvoering van de foutopsporingssessie is voltooid, klikt u op het tabb
 
 ## <a name="fix-missing-skill-output-values"></a>Ontbrekende uitvoerwaarden voor vaardigheid herstellen
 
-> :::image type="content" source="media/cognitive-search-debug/warnings-missing-value-locations-organizations.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/warnings-missing-value-locations-organizations.png" alt-text="Fouten en waarschuwingen":::
 
 Er ontbreken uitvoerwaarden van een vaardigheid. Als u de vaardigheid met de fout wilt identificeren, gaat u naar de verrijkte gegevensstructuur, zoekt u de waardenaam en bekijkt u de oorspronkelijke bron. De ontbrekende waarden voor organisaties en locaties zijn uitvoerwaarden van vaardigheid #1. Als u de expressie-evaluator </> voor elk pad opent, worden respectievelijk de expressies /document/content/organizations en /document/content/locations weergegeven.
 
-> :::image type="content" source="media/cognitive-search-debug/expression-eval-missing-value-locations-organizations.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/expression-eval-missing-value-locations-organizations.png" alt-text="Expressie-evaluator voor de entiteit organizations":::
 
 De uitvoer voor deze entiteiten is leeg en mag niet leeg zijn. Wat zijn de invoerwaarden die dit resultaat opleveren?
 
@@ -176,14 +176,14 @@ De uitvoer voor deze entiteiten is leeg en mag niet leeg zijn. Wat zijn de invoe
 1. Selecteer het tabblad **Uitvoerbewerkingen** in het rechterdetailvenster van de vaardigheid.
 1. Open de expressie-evaluator **</>** voor de INPUT 'text'.
 
-> :::image type="content" source="media/cognitive-search-debug/input-skill-missing-value-locations-organizations.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/input-skill-missing-value-locations-organizations.png" alt-text="Invoer voor vaardigheid text":::
 
 Het weergegeven resultaat voor deze invoer ziet er niet uit als een tekstinvoer. Het lijkt op een afbeelding die wordt omgeven door nieuwe lijnen. Het ontbreken van tekst betekent dat er geen entiteiten kunnen worden geïdentificeerd. In de hiërarchie van de vaardighedenset ziet u dat de inhoud eerst wordt verwerkt door vaardigheid #6 (OCR) en vervolgens wordt doorgegeven aan vaardigheid #5 (samenvoegen). 
 
 1. Selecteer vaardigheid #5 (samenvoegen) in de **Vaardigheidsgrafiek**.
 1. Selecteer het tabblad **Uitvoerbewerkingen** in het detailvenster van de vaardigheid en open de expressie-evaluator **</>** voor de OUTPUTS 'mergedText'.
 
-> :::image type="content" source="media/cognitive-search-debug/merge-output-detail-missing-value-locations-organizations.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/merge-output-detail-missing-value-locations-organizations.png" alt-text="Uitvoer voor de vaardigheid Samenvoegen":::
 
 Hier wordt de tekst gekoppeld aan de afbeelding. In de expressie /document/merged_content is de fout in de paden 'organizations' en 'locations' voor vaardigheid #1 zichtbaar. In plaats van /document/content moet /document/merged_content worden gebruikt voor de invoerwaarde 'text'.
 
@@ -203,7 +203,7 @@ Nadat de indexeerfunctie is uitgevoerd, zijn de fouten nog steeds aanwezig. Ga t
 1. Zoek in de **vaardigheidsinstellingen** naar de 'uitvoerwaarden'.
 1. Open de expressie-evaluator **</>** voor de entiteit 'organizations'.
 
-> :::image type="content" source="media/cognitive-search-debug/skill-output-detail-missing-value-locations-organizations.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/skill-output-detail-missing-value-locations-organizations.png" alt-text="Uitvoer voor de entiteit organizations":::
 
 Als u het resultaat van de expressie evalueert, wordt het juiste resultaat geretourneerd. De vaardigheid is bezig met het identificeren van de juiste waarde voor de entiteit 'organizations'. De uitvoertoewijzing in het pad van de entiteit levert echter nog steeds een fout op. Bij het vergelijken van het uitvoerpad in de vaardigheid met het uitvoerpad dat een fout oplevert, de vaardigheid die boven de uitvoerwaarden ligt, organizations en locations onder het knooppunt /document/content. Terwijl bij de toewijzing van het uitvoerveld wordt verwacht dat de resultaten onder het knooppunt/document/merged_content vallen. In de vorige stap is de invoer gewijzigd van /document/content in /document/merged_content. De context van de vaardigheidsinstellingen moet worden gewijzigd om ervoor te zorgen dat de uitvoer wordt gegenereerd met de juiste context.
 
@@ -214,7 +214,7 @@ Als u het resultaat van de expressie evalueert, wordt het juiste resultaat geret
 1. Klik op **Opslaan** in het detailvenster Vaardigheid.
 1. Klik op **Uitvoeren** in het venstermenu van de sessie. Hiermee wordt een andere uitvoering van de vaardighedenset met behulp van het document gestart.
 
-> :::image type="content" source="media/cognitive-search-debug/skill-setting-context-correction-missing-value-locations-organizations.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen":::
+> :::image type="content" source="media/cognitive-search-debug/skill-setting-context-correction-missing-value-locations-organizations.png" alt-text="Correctie van context in vaardigheidsinstelling":::
 
 Alle fouten zijn opgelost.
 

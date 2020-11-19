@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 08/28/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 8f528c6be68258400cb3e29582943f1d657c557d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 71eda40abd38b4885b8e88085e338667b608902f
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89069269"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94655133"
 ---
 # <a name="tutorial-filter-inbound-internet-traffic-with-azure-firewall-dnat-using-the-azure-portal"></a>Zelfstudie: Binnenkomend verkeer filteren met Azure Firewall DNAT via Azure Portal
 
@@ -226,4 +226,4 @@ In deze zelfstudie heeft u het volgende geleerd:
 Als volgende kunt u de Azure Firewall-logboeken bewaken.
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: Azure Firewall-logboeken bewaken](./tutorial-diagnostics.md)
+> [Zelfstudie: Azure Firewall-logboeken bewaken](./firewall-diagnostics.md)

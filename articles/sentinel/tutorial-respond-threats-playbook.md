@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/18/2019
 ms.author: yelevin
-ms.openlocfilehash: 0e7d790fa9c5d4052ddb1e20defed1d1cc457a2e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6fd26b4965b92f5f06a008d67e2d585fd1b41b7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840197"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94652073"
 ---
 # <a name="tutorial-set-up-automated-threat-responses-in-azure-sentinel"></a>Zelfstudie: Geautomatiseerde bedreigingsreacties instellen in Azure Sentinel
 
@@ -39,7 +39,7 @@ Gebruik deze zelfstudie om beveiligingsplaybooks te gebruiken in Azure Sentinel 
 
 ## <a name="what-is-a-security-playbook-in-azure-sentinel"></a>Wat is een beveiligingsplaybook in Azure Sentinel?
 
-Een beveiligingsplaybook is een groep procedures die uitgevoerd kunnen worden vanaf Azure Sentinel als reactie op een waarschuwing. Een beveiligingsplaybook kan u helpen uw reactie te automatiseren en te organiseren, en kan handmatig worden uitgevoerd of worden ingesteld voor automatische uitvoering wanneer bepaalde waarschuwingen geactiveerd worden. Beveiliging playbooks in Azure Sentinel zijn gebaseerd op [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps), wat betekent dat u alle kracht, mogelijkheden voor aanpassing en ingebouwde sjablonen van Logic Apps krijgt. Elke playbook wordt ontworpen voor het specifieke abonnement dat u kiest, maar wanneer u naar de pagina Playbooks kijkt, dan ziet u alle playbooks voor de geselecteerde abonnementen.
+Een beveiligingsplaybook is een groep procedures die uitgevoerd kunnen worden vanaf Azure Sentinel als reactie op een waarschuwing. Een beveiligingsplaybook kan u helpen uw reactie te automatiseren en te organiseren, en kan handmatig worden uitgevoerd of worden ingesteld voor automatische uitvoering wanneer bepaalde waarschuwingen geactiveerd worden. Beveiliging playbooks in Azure Sentinel zijn gebaseerd op [Azure Logic Apps](../logic-apps/logic-apps-overview.md), wat betekent dat u alle kracht, mogelijkheden voor aanpassing en ingebouwde sjablonen van Logic Apps krijgt. Elke playbook wordt ontworpen voor het specifieke abonnement dat u kiest, maar wanneer u naar de pagina Playbooks kijkt, dan ziet u alle playbooks voor de geselecteerde abonnementen.
 
 > [!NOTE]
 > Playbooks maken gebruik van Azure Logic Apps, en hiervoor worden kosten in rekening gebracht. Ga naar de pagina met prijzen voor [Azure Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/) voor meer informatie.
@@ -118,5 +118,3 @@ Om reacties te automatiseren:
 ## <a name="next-steps"></a>Volgende stappen
 
 In deze zelfstudie hebt u geleerd hoe u een playbook uitvoert in Azure Sentinel. Ga door naar [Proactief bedreigingen opsporen](hunting.md) met behulp van Azure Sentinel.
-
-

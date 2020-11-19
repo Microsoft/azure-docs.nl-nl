@@ -6,16 +6,16 @@ ms.author: cshoe
 ms.service: azure-functions
 ms.topic: tutorial
 ms.date: 06/17/2020
-ms.openlocfilehash: 6c87fcf4f56b7092436fa16658a72ead24d9fec2
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: e367e4f2a704d8c718551fb031164520b3ff5bb3
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93423025"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579127"
 ---
 # <a name="tutorial-establish-azure-functions-private-site-access"></a>Zelfstudie: Toegang tot privésite van Azure Functions tot stand brengen
 
-In deze zelfstudie wordt uitgelegd hoe u [toegang tot privésite](./functions-networking-options.md#private-site-access) kunt inschakelen met Azure Functions. Als u toegang tot privésite gebruikt, kunt u vereisen dat uw functiecode alleen wordt geactiveerd vanuit een specifiek virtueel netwerk.
+In deze zelfstudie wordt uitgelegd hoe u [toegang tot privésite](./functions-networking-options.md#private-endpoint-connections) kunt inschakelen met Azure Functions. Als u toegang tot privésite gebruikt, kunt u vereisen dat uw functiecode alleen wordt geactiveerd vanuit een specifiek virtueel netwerk.
 
 Toegang tot de privésite is handig in scenario's waarbij de toegang tot de functie-app moet worden beperkt tot een specifiek virtueel netwerk. De functie-app kan bijvoorbeeld alleen van toepassing zijn op werknemers van een specifieke organisatie of op services die zich binnen het opgegeven virtuele netwerk bevinden (zoals een andere Azure-functie, een virtuele Azure-machine of een AKS-cluster).
 
@@ -90,7 +90,7 @@ De eerste stap in deze zelfstudie is het maken van een nieuwe virtuele machine i
 1. Selecteer **OK** om het virtuele netwerk te maken.
 1. Schakel op het tabblad _Netwerken_ de optie **Geen** in voor _Openbare IP_.
 1. Kies het tabblad _Beheer_ en kies in _Diagnostische opslagaccount_ de optie **Nieuwe maken** om een nieuw opslagaccount te maken.
-1. Behoud de standaardwaarden voor de gedeelten _Identiteit_ , _Automatisch afsluiten_ en _Back-up_.
+1. Behoud de standaardwaarden voor de gedeelten _Identiteit_, _Automatisch afsluiten_ en _Back-up_.
 1. Selecteer _Controleren + maken_. Nadat de validatie is voltooid, selecteert u **Maken**. Het proces voor het maken van de virtuele machine duurt een paar minuten.
 
 ## <a name="configure-azure-bastion"></a>Azure Bastion configureren
@@ -145,7 +145,7 @@ De volgende stap is het maken van een functie-app in Azure met behulp van het [V
     | _Regio_ | VS - noord-centraal | Kies een [regio](https://azure.microsoft.com/regions/) in de buurt of in de buurt van andere services die door uw functie worden gebruikt. |
 
     Selecteer de knop **Volgende: Hosting >** .
-1. Selecteer voor het gedeelte _Hosting_ het juiste _Opslagaccount_ , _Besturingssysteem_ en _Abonnement_ , zoals wordt beschreven in de volgende tabel.
+1. Selecteer voor het gedeelte _Hosting_ het juiste _Opslagaccount_, _Besturingssysteem_ en _Abonnement_, zoals wordt beschreven in de volgende tabel.
 
     | Instelling      | Voorgestelde waarde  | Beschrijving      |
     | ------------ | ---------------- | ---------------- |
@@ -159,20 +159,20 @@ De volgende stap is het maken van een functie-app in Azure met behulp van het [V
 
 De volgende stap is het configureren van [toegangsbeperkingen](../app-service/app-service-ip-restrictions.md) om ervoor te zorgen dat alleen resources in het virtuele netwerk de functie kunnen aanroepen.
 
-Toegang tot de [privésite](functions-networking-options.md#private-site-access) wordt ingeschakeld door een Azure Virtual Network-[service-eindpunt](../virtual-network/virtual-network-service-endpoints-overview.md) te maken tussen de functie-app en het opgegeven virtuele netwerk. Toegangsbeperkingen worden geïmplementeerd via service-eindpunten. Service-eindpunten zorgen ervoor dat alleen verkeer dat afkomstig is van binnen het opgegeven virtuele netwerk toegang heeft tot de aangewezen resource. In dit geval is de aangewezen resource de Azure-functie.
+Toegang tot de [privésite](functions-networking-options.md#private-endpoint-connections) wordt ingeschakeld door een Azure Virtual Network-[service-eindpunt](../virtual-network/virtual-network-service-endpoints-overview.md) te maken tussen de functie-app en het opgegeven virtuele netwerk. Toegangsbeperkingen worden geïmplementeerd via service-eindpunten. Service-eindpunten zorgen ervoor dat alleen verkeer dat afkomstig is van binnen het opgegeven virtuele netwerk toegang heeft tot de aangewezen resource. In dit geval is de aangewezen resource de Azure-functie.
 
 1. Selecteer in de functie-app de koppeling **Netwerk** onder de gedeelteheader _Instellingen_.
 1. De pagina _Netwerken_ is het beginpunt voor het configureren van de Azure Front Door, de Azure CDN en ook toegangsbeperkingen.
 1. Selecteer **Toegangsbeperkingen configureren** om toegang tot privésite te configureren.
 1. Op de pagina _Toegangsbeperkingen_ ziet u alleen de standaardbeperking. De standaardbeperking bevat geen beperkingen voor toegang tot de functie-app.  Selecteer **Regel toevoegen** om een beperkingsconfiguratie voor toegang tot de privésite te maken.
-1. Geef in het deelvenster _Toegangsbeperking toevoegen_ een _Naam_ , _Prioriteit_ en _Beschrijving_ op voor de nieuwe regel.
-1. Selecteer **Virtueel netwerk** in de vervolgkeuzelijst _Type_ , selecteer het eerder gemaakte virtuele netwerk en selecteer vervolgens het subnet **Zelfstudie**. 
+1. Geef in het deelvenster _Toegangsbeperking toevoegen_ een _Naam_, _Prioriteit_ en _Beschrijving_ op voor de nieuwe regel.
+1. Selecteer **Virtueel netwerk** in de vervolgkeuzelijst _Type_, selecteer het eerder gemaakte virtuele netwerk en selecteer vervolgens het subnet **Zelfstudie**. 
     > [!NOTE]
     > Het kan enkele minuten duren om het service-eindpunt in te schakelen.
 1. Op de pagina _Toegangsbeperkingen_ wordt nu een nieuwe beperking weergegeven. Het kan enkele seconden duren voordat de status van het _Eindpunt_ wordt gewijzigd van Uitgeschakeld naar Inrichten tot Ingeschakeld.
 
     >[!IMPORTANT]
-    > Elke functie-app heeft een [site voor Geavanceerd hulpprogramma (Kudu)](../app-service/app-service-ip-restrictions.md#scm-site) die wordt gebruikt om de implementaties van functie-apps te beheren. Deze site wordt geopend via een URL zoals: `<FUNCTION_APP_NAME>.scm.azurewebsites.net`. Als toegangsbeperkingen op de Kudu-site worden ingeschakeld, wordt de implementatie van de projectcode van een lokaal ontwikkelaarswerkstation voorkomen. Er is een agent binnen het virtuele netwerk vereist om de implementatie uit te voeren.
+    > Elke functie-app heeft een [site voor Geavanceerd hulpprogramma (Kudu)](../app-service/app-service-ip-restrictions.md#restrict-access-to-an-scm-site) die wordt gebruikt om de implementaties van functie-apps te beheren. Deze site wordt geopend via een URL zoals: `<FUNCTION_APP_NAME>.scm.azurewebsites.net`. Als toegangsbeperkingen op de Kudu-site worden ingeschakeld, wordt de implementatie van de projectcode van een lokaal ontwikkelaarswerkstation voorkomen. Er is een agent binnen het virtuele netwerk vereist om de implementatie uit te voeren.
 
 ## <a name="access-the-functions-app"></a>De functie-app openen
 

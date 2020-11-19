@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: 87ca8591be42e34a52f15913e0ec4058505cc0b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4158bc07373a2d0aa6fb6ceaf2dce62b50bb6bd7
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87079061"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658363"
 ---
 # <a name="create-an-azure-firewall-test-environment"></a>Een Azure Firewall-testomgeving maken
 
@@ -72,12 +72,11 @@ In dit script worden de volgende opdrachten gebruikt voor het maken van een reso
 | [New-AzVMConfig](/powershell/module/az.compute/new-azvmconfig) | Hiermee maakt u een VM-configuratie. Deze configuratie bevat informatie zoals de naam, het besturingssysteem en de beheerdersreferenties van de virtuele machine. De configuratie wordt gebruikt tijdens het maken van de virtuele machine. |
 | [New-AzVM](/powershell/module/az.compute/new-azvm) | Hiermee maakt u een virtuele machine. |
 |[Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Hiermee verwijdert u een resourcegroep en alle daarin opgenomen resources. |
-|[New-AzFirewall](https://docs.microsoft.com/powershell/module/az.network/new-azfirewall)| Hiermee wordt een nieuwe Azure Firewall gemaakt.|
-|[Get-AzFirewall](https://docs.microsoft.com/powershell/module/az.network/get-azfirewall)|Hiermee wordt een Azure Firewall-object opgehaald.|
-|[New-AzFirewallApplicationRule](https://docs.microsoft.com/powershell/module/az.network/new-azfirewallapplicationrule)|Hiermee wordt een regel voor een Azure Firewall-toepassing gemaakt.|
-|[Set-AzFirewall](https://docs.microsoft.com/powershell/module/az.network/set-azfirewall)|Hiermee worden wijzigingen aan het Azure Firewall-object doorgevoerd.|
+|[New-AzFirewall](/powershell/module/az.network/new-azfirewall)| Hiermee wordt een nieuwe Azure Firewall gemaakt.|
+|[Get-AzFirewall](/powershell/module/az.network/get-azfirewall)|Hiermee wordt een Azure Firewall-object opgehaald.|
+|[New-AzFirewallApplicationRule](/powershell/module/az.network/new-azfirewallapplicationrule)|Hiermee wordt een regel voor een Azure Firewall-toepassing gemaakt.|
+|[Set-AzFirewall](/powershell/module/az.network/set-azfirewall)|Hiermee worden wijzigingen aan het Azure Firewall-object doorgevoerd.|
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie [Documentatie over Azure PowerShell](/powershell/azure/) voor meer informatie over Azure PowerShell.
-

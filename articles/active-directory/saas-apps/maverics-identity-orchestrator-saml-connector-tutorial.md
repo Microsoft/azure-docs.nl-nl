@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/12/2020
 ms.author: jeedes
-ms.openlocfilehash: a9d5988f25b833480c4809ba116c48022566b7a0
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: f4fe368e9a56e5ac4c9dfa2648ce4af15a1b5ac0
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92458180"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684420"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-with-maverics-identity-orchestrator-saml-connector"></a>Zelfstudie: Eenmalige aanmelding van Microsoft Azure AD integreren met Maverics Identity Orchestrator SAML Connector
 
@@ -67,7 +67,7 @@ Als u aan de slag wilt gaan met het installeren van Maverics Identity Orchestrat
 
     `sudo systemctl status maverics`
 
-Maverics wordt standaard geïnstalleerd in de map */usr/local/bin* .
+Maverics wordt standaard geïnstalleerd in de map */usr/local/bin*.
 
 Nadat u Maverics hebt geïnstalleerd, wordt het standaardbestand *maverics.yaml* in de map */etc/maverics* gemaakt. Voordat u uw configuratie bewerkt om `workflows` en `connectors` te bevatten, ziet uw configuratiebestand er als volgt uit:
 
@@ -115,15 +115,15 @@ includeFiles:
   - connector/siteminder.yaml
   ```
 
-In deze zelfstudie wordt één *maverics.yaml* -configuratiebestand gebruikt.
+In deze zelfstudie wordt één *maverics.yaml*-configuratiebestand gebruikt.
 
 ## <a name="use-azure-key-vault-as-your-secrets-provider"></a>Azure Key Vault gebruiken als uw provider van geheimenbeheer
 
 ### <a name="manage-secrets"></a>Geheimen beheren
 
-Maverics kan worden geïntegreerd met verschillende oplossingen voor geheimenbeheer om geheimen te laden. De huidige integraties omvatten een bestand, Hashicorp Vault en Azure Key Vault. Als er geen geheimenbeheeroplossing is opgegeven, laadt Maverics geheimen standaard als tekst zonder opmaak vanuit het bestand *maverics.yaml* .
+Maverics kan worden geïntegreerd met verschillende oplossingen voor geheimenbeheer om geheimen te laden. De huidige integraties omvatten een bestand, Hashicorp Vault en Azure Key Vault. Als er geen geheimenbeheeroplossing is opgegeven, laadt Maverics geheimen standaard als tekst zonder opmaak vanuit het bestand *maverics.yaml*.
 
-Als u een waarde als een geheim wilt declareren in een *maverics.yaml* -configuratiebestand, zet u chevrons om het geheim:
+Als u een waarde als een geheim wilt declareren in een *maverics.yaml*-configuratiebestand, zet u chevrons om het geheim:
 
   ```yaml
   connectors:
@@ -158,7 +158,7 @@ U kunt een Azure-sleutelkluis instellen met behulp van de Azure-portal of de Azu
 
 **Azure Portal gebruiken**
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. [Een nieuwe sleutelkluis maken](../../key-vault/secrets/quick-create-portal.md#create-a-vault).
+1. [Een nieuwe sleutelkluis maken](../../key-vault/general/quick-create-portal.md).
 1. [Geheimen toevoegen aan de sleutelkluis](../../key-vault/secrets/quick-create-portal.md#add-a-secret-to-key-vault).
 1. [Een toepassing bij Azure AD registreren](../develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal).
 1. [Een toepassing toestemming verlenen om een geheim te gebruiken](../../key-vault/secrets/quick-create-portal.md#add-a-secret-to-key-vault).
@@ -193,7 +193,7 @@ U kunt een Azure-sleutelkluis instellen met behulp van de Azure-portal of de Azu
     generated in the previous step
     ```
 
-1. Als u geheimen wilt laden vanuit de Azure-sleutelkluis, stelt u omgevingsvariabele `MAVERICS_SECRET_PROVIDER` in bestand */etc/maverics/maverics.env* in met behulp van de referenties in het bestand *azure-credentials.json* , en in de volgende indeling:
+1. Als u geheimen wilt laden vanuit de Azure-sleutelkluis, stelt u omgevingsvariabele `MAVERICS_SECRET_PROVIDER` in bestand */etc/maverics/maverics.env* in met behulp van de referenties in het bestand *azure-credentials.json*, en in de volgende indeling:
  
    `MAVERICS_SECRET_PROVIDER='azurekeyvault://<KEYVAULT NAME>.vault.azure.net?clientID=<APPID>&clientSecret=<PASSWORD>&tenantID=<TENANT>'`
 
@@ -201,11 +201,11 @@ U kunt een Azure-sleutelkluis instellen met behulp van de Azure-portal of de Azu
 
 ## <a name="configure-your-application-in-azure-ad-for-saml-based-sso"></a>Uw toepassing configureren in Azure AD voor eenmalige aanmelding met SAML
 
-1. Ga in uw Azure AD-tenant naar **Ondernemingstoepassingen** , zoek **Maverics Identity Orchestrator SAML Connector** en selecteer het.
+1. Ga in uw Azure AD-tenant naar **Ondernemingstoepassingen**, zoek **Maverics Identity Orchestrator SAML Connector** en selecteer het.
 
 1. In het deelvenster **Eigenschappen** van Maverics Identity Orchestrator SAML Connector stelt u **Gebruikerstoewijzing vereist?** in op **Nee** om de toepassing te laten werken voor pas gemigreerde gebruikers.
 
-1. In het deelvenster **Overzicht** van Maverics Identity Orchestrator SAML Connector selecteert u **Eenmalige aanmelding instellen** en selecteert u **SAML** .
+1. In het deelvenster **Overzicht** van Maverics Identity Orchestrator SAML Connector selecteert u **Eenmalige aanmelding instellen** en selecteert u **SAML**.
 
 1. In het deelvenster **Eenmalige aanmelding met SAML** van Maverics Identity Orchestrator SAML Connector bewerkt u de **standaard SAML-configuratie** door de knop **Bewerken** (potloodpictogram) te selecteren.
 
@@ -217,7 +217,7 @@ U kunt een Azure-sleutelkluis instellen met behulp van de Azure-portal of de Azu
 
 1. Voer de **aanmeldings-URL** in in de volgende indeling: `https://<AZURE-COMPANY.COM>/<MY_APP>/<LOGIN PAGE>`. 
 
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 1. Selecteer in het gedeelte **SAML-handtekeningcertificaat** de knop **Kopiëren** om de **URL voor federatieve metagegevens van de app** te kopiëren, en sla de URL op de computer op.
 
@@ -277,15 +277,15 @@ Volg deze configuratie om gebruikers incrementeel te migreren vanuit een product
 
 ### <a name="configure-your-application-permissions-in-azure-ad-to-create-users"></a>Uw toepassingsmachtigingen configureren in Azure AD om gebruikers te maken
 
-1. Ga in uw Azure AD-tenant naar `App registrations` en selecteer de toepassing **Maverics Identity Orchestrator SAML Connector** .
+1. Ga in uw Azure AD-tenant naar `App registrations` en selecteer de toepassing **Maverics Identity Orchestrator SAML Connector**.
 
 1. In het deelvenster **Maverics Identity Orchestrator SAML Connector |Certificaten en geheimen** selecteert u `New client secret` en vervolgens een vervaloptie. Selecteer de knop **Kopiëren** om het geheim te kopiëren. Sla het op uw computer op.
 
-1. In het deelvenster **Maverics Identity Orchestrator SAML Connector | API-machtigingen** , selecteert u **Machtiging toevoegen** . Selecteer vervolgens in het deelvenster **API-machtigingen aanvragen** de optie **Microsoft Graph** en **Toepassingstoestemmingen** . 
+1. In het deelvenster **Maverics Identity Orchestrator SAML Connector | API-machtigingen**, selecteert u **Machtiging toevoegen**. Selecteer vervolgens in het deelvenster **API-machtigingen aanvragen** de optie **Microsoft Graph** en **Toepassingstoestemmingen**. 
 
-1. Selecteer in het volgende scherm **User. ReadWrite.All** en vervolgens **Machtigingen toevoegen** . 
+1. Selecteer in het volgende scherm **User. ReadWrite.All** en vervolgens **Machtigingen toevoegen**. 
 
-1. Terug in het deel venster **API-machtigingen** selecteert u **Beheerderstoestemming verlenen** .
+1. Terug in het deel venster **API-machtigingen** selecteert u **Beheerderstoestemming verlenen**.
 
 ### <a name="configure-the-maverics-identity-orchestrator-saml-connector-yaml-file-for-user-migration"></a>Het YAML-bestand van Maverics Identity Orchestrator SAML Connector configureren voor gebruikersmigratie
 
@@ -388,7 +388,7 @@ Deze werkstroom:
 
 Als u de migratiewerkstroom wilt configureren, gaat u als volgt te werk:
 
-1. Geef de werkstroom een naam, bijvoorbeeld **Migratie van SiteMinder naar Azure AD** .
+1. Geef de werkstroom een naam, bijvoorbeeld **Migratie van SiteMinder naar Azure AD**.
 1. Geef het `endpoint` op. Dit is een HTTP-pad waarop de werkstroom beschikbaar wordt gemaakt, waardoor de `actions` van die werkstroom worden geactiveerd in reactie op aanvragen. Het `endpoint` komt meestal overeen met de app die via een proxy wordt verzonden (bijvoorbeeld `/my_app`). De waarde moet zowel de voorloop- als volgslash bevatten.
 1. Voeg de toepasselijke `actions` aan de werkstroom toe.
 
@@ -428,7 +428,7 @@ De Azure-connector maakt gebruik van de `login`-methode om de gebruiker naar de 
 
 Als de verificatie is voltooid, wordt het sessietoken, dat als resultaat is gemaakt, doorgegeven aan Maverics. De `emulate`-methode van de SiteMinder-connector wordt gebruikt om de op cookies of headers gebaseerde sessie te emuleren en vervolgens de aanvraag te voorzien van aanvullende kenmerken die door de toepassing worden vereist.
 
-1. Geef de werkstroom een naam, bijvoorbeeld **Sessieabstractie SiteMinder** .
+1. Geef de werkstroom een naam, bijvoorbeeld **Sessieabstractie SiteMinder**.
 1. Geeft het `endpoint` op, dat overeenkomt met de app die via een proxy wordt verzonden. De waarde moet zowel de voorloop- als volgslash bevatten, bijvoorbeeld `/my_app/`.
 1. Voeg de toepasselijke `actions` aan de werkstroom toe.
 

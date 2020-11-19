@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 09/29/2020
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 2ea68b8a6cf26db2e4ba440140cfa900cebbb4aa
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 396d0f6a2ef9a8c24fc92b641c889ef9e1a7df49
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335652"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578294"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Zelfstudie: een parallelle workload uitvoeren met Azure Batch met behulp van de .NET API
 
@@ -35,7 +35,7 @@ In deze zelfstudie zet u MP4-mediabestanden parallel om in de MP3-indeling met b
 
 * Een Batch-account en een gekoppeld Azure Storage-account. Raadpleeg de Batch-quickstarts met behulp van [Azure Portal](quick-create-portal.md) of [Azure CLI](quick-create-cli.md) voor instructies voor het maken van deze accounts.
 
-* [64-bits Windows-versie van ffmpeg 4.3.1](https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-4.3.1-2020-10-01-essentials_build.7z) (.zip). Download het zipbestand naar uw lokale computer. Voor deze zelfstudie hebt u alleen het zip-bestand nodig. U hoeft het bestand niet uit te pakken of lokaal te installeren.
+* [64-bits Windows-versie van ffmpeg 4.3.1](https://github.com/GyanD/codexffmpeg/releases/tag/4.3.1-2020-11-08) (.zip). Download het zipbestand naar uw lokale computer. Voor deze zelfstudie hebt u alleen het zip-bestand nodig. U hoeft het bestand niet uit te pakken of lokaal te installeren.
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 

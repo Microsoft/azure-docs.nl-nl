@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6a1a7e19e598980b21ee6c41f6984de38d6a6f2b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c9d9c43ae1be755ccb30fc377692257a81332ea8
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791610"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94593719"
 ---
 # <a name="tutorial-index-from-multiple-data-sources-using-the-net-sdk"></a>Zelfstudie: Indexeren vanuit meerdere gegevensbronnen met behulp van de .NET-SDK
 
@@ -66,21 +66,21 @@ In dit voorbeeld worden twee kleine gegevenssets gebruikt, waarin zeven fictieve
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) en ga naar uw Azure Cosmos DB-account. Open vervolgens de pagina Overzicht.
 
-1. Selecteer **Data Explorer** en selecteer **Nieuwe database** .
+1. Selecteer **Data Explorer** en selecteer **Nieuwe database**.
 
    :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-newdb.png" alt-text="Een nieuwe database maken" border="false":::
 
 1. Voer de naam **hotel-rooms-db** in. Accepteer de standaardwaarden voor de overige instellingen.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-dbname.png" alt-text="Een nieuwe database maken" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-dbname.png" alt-text="Database configureren" border="false":::
 
 1. Een nieuwe container maken. Gebruik de bestaande database die u zojuist hebt gemaakt. Voer **hotels** in als containernaam en gebruik **/HotelId** als partitiesleutel.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-add-container.png" alt-text="Een nieuwe database maken" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-add-container.png" alt-text="Container toevoegen" border="false":::
 
 1. Selecteer **Items** onder **Hotels** en klik vervolgens op **Item uploaden** op de opdrachtbalk. Ga naar en selecteer het bestand **cosmosdb/HotelsDataSubset_CosmosDb.json** in de projectmap.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-upload.png" alt-text="Een nieuwe database maken" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-upload.png" alt-text="Uploaden naar een Azure Cosmos DB-verzameling" border="false":::
 
 1. Gebruik de knop Vernieuwen om de weergave van de items in de verzameling hotels te vernieuwen. Er worden zeven nieuwe databasedocumenten weergegeven.
 
@@ -88,17 +88,17 @@ In dit voorbeeld worden twee kleine gegevenssets gebruikt, waarin zeven fictieve
 
 ### <a name="azure-blob-storage"></a>Azure Blob Storage
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com), ga naar uw Azure-opslagaccount, klik op **Blobs** en op **+ Container** .
+1. Meld u aan bij [Azure Portal](https://portal.azure.com), ga naar uw Azure-opslagaccount, klik op **Blobs** en op **+ Container**.
 
 1. [Maak een blobcontainer](../storage/blobs/storage-quickstart-blobs-portal.md) met de naam **hotel-rooms** om de JSON-voorbeeldbestanden voor hotelkamers op te slaan. U kunt het niveau voor openbare toegang instellen op een van de geldige waarden.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/blob-add-container.png" alt-text="Een nieuwe database maken" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/blob-add-container.png" alt-text="Een blobcontainer maken" border="false":::
 
-1. Nadat de container is gemaakt, opent u deze en selecteert u **Uploaden** op de opdrachtbalk. Navigeer naar de map met de voorbeeldbestanden. Selecteer deze allemaal en klik vervolgens op **Uploaden** .
+1. Nadat de container is gemaakt, opent u deze en selecteert u **Uploaden** op de opdrachtbalk. Navigeer naar de map met de voorbeeldbestanden. Selecteer deze allemaal en klik vervolgens op **Uploaden**.
 
-   :::image type="content" source="media/tutorial-multiple-data-sources/blob-upload.png" alt-text="Een nieuwe database maken" border="false":::
+   :::image type="content" source="media/tutorial-multiple-data-sources/blob-upload.png" alt-text="Bestanden uploaden" border="false":::
 
-1. Kopieer de opslagaccountnaam en een verbindingsreeks op de pagina **Toegangssleutels** in Kladblok. U hebt in een latere stap beide waarden nodig voor **appsettings.json** .
+1. Kopieer de opslagaccountnaam en een verbindingsreeks op de pagina **Toegangssleutels** in Kladblok. U hebt in een latere stap beide waarden nodig voor **appsettings.json**.
 
 ### <a name="azure-cognitive-search"></a>Azure Cognitive Search
 
@@ -112,7 +112,7 @@ Als u uw zoekservice wilt verifiëren, hebt u de service-URL en een toegangssleu
 
 1. Haal onder **Instellingen** > **Sleutels** een beheersleutel op voor volledige rechten op de service. Er zijn twee uitwisselbare beheersleutels die voor bedrijfscontinuïteit worden verstrekt voor het geval u een moet overschakelen. U kunt de primaire of secundaire sleutel gebruiken op aanvragen voor het toevoegen, wijzigen en verwijderen van objecten.
 
-   :::image type="content" source="media/search-get-started-javascript/service-name-and-keys.png" alt-text="Een nieuwe database maken" border="false":::
+   :::image type="content" source="media/search-get-started-javascript/service-name-and-keys.png" alt-text="De naam van de service en de querysleutels voor beheer ophalen" border="false":::
 
 Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
@@ -120,13 +120,13 @@ Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de
 
 1. Start Visual Studio, en selecteer in het menu **Extra** de optie **NuGet Package Manager** en **NuGet-pakketten voor oplossing beheren...** . 
 
-1. Ga naar het tabblad **Bladeren** . Zoek en installeer vervolgens **Azure.Search.Documents** (versie 11.0 of hoger). U moet door een paar extra dialoogvensters klikken om de installatie te voltooien.
+1. Ga naar het tabblad **Bladeren**. Zoek en installeer vervolgens **Azure.Search.Documents** (versie 11.0 of hoger). U moet door een paar extra dialoogvensters klikken om de installatie te voltooien.
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png" alt-text="Een nieuwe database maken" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png" alt-text="NuGet gebruiken om Azure-bibliotheken toe te voegen" border="false":::
 
 1. Ga naar de NuGet-pakketten **Microsoft.Extensions.Configuration** en **Microsoft.Extensions.Configuration.Json** en installeer ze.
 
-1. Open het oplossingsbestand **/v11/AzureSearchMultipleDataSources.sln** .
+1. Open het oplossingsbestand **/v11/AzureSearchMultipleDataSources.sln**.
 
 1. Bewerk het bestand **appsettings.json** in Solution Explorer om verbindingsgegevens op te geven.  
 
@@ -240,7 +240,7 @@ private static async Task CreateAndRunCosmosDbIndexerAsync(string indexName, Sea
     await indexerClient.CreateOrUpdateDataSourceConnectionAsync(cosmosDbDataSource);
 ```
 
-Wanneer de gegevensbron is gemaakt, stelt het programma een Azure Cosmos DB-indexeerfunctie in met de naam **hotel-rooms-cosmos-indexer** .
+Wanneer de gegevensbron is gemaakt, stelt het programma een Azure Cosmos DB-indexeerfunctie in met de naam **hotel-rooms-cosmos-indexer**.
 
 Met het programma worden eventuele bestaande indexeerfuncties met dezelfde naam bijgewerkt, waarbij de bestaande indexeerfunctie wordt overschreven door de inhoud van de bovenstaande code. Het omvat ook het opnieuw instellen en uitvoeren van acties, voor het geval u dit voorbeeld meer dan één keer wilt uitvoeren.
 
@@ -306,7 +306,7 @@ private static async Task CreateAndRunBlobIndexerAsync(string indexName, SearchI
     await indexerClient.CreateOrUpdateDataSourceConnectionAsync(blobDataSource);
 ```
 
-Wanneer de gegevensbron is gemaakt, stelt het programma een blob-indexeerfunctie in met de naam **hotel-rooms-blob-indexer** , zoals hieronder weergegeven.
+Wanneer de gegevensbron is gemaakt, stelt het programma een blob-indexeerfunctie in met de naam **hotel-rooms-blob-indexer**, zoals hieronder weergegeven.
 
 De JSON-blobs bevatten een sleutelveld met de naam **`Id`** in plaats van **`HotelId`** . In de code wordt de klasse `FieldMapping` gebruikt om de indexeerfunctie te laten weten dat de veldwaarde **`Id`** moet verwijzen naar de documentsleutel **`HotelId`** in de index.
 
@@ -350,7 +350,7 @@ await indexerClient.CreateOrUpdateIndexerAsync(blobIndexer);
 try
 {
     // Run the indexer.
-    await searchService.Indexers.RunAsync(cosmosDbIndexer.Name);
+    await searchService.Indexers.RunAsync(blobIndexer.Name);
 }
 catch (CloudException e) when (e.Response.StatusCode == (HttpStatusCode)429)
 {
@@ -361,15 +361,15 @@ catch (CloudException e) when (e.Response.StatusCode == (HttpStatusCode)429)
 Omdat de index al is gevuld met hotelgegevens uit de Azure Cosmos DB-database, werkt de blobindexeerfunctie de bestaande documenten in de index bij en worden de kamergegevens toegevoegd.
 
 > [!NOTE]
-> Als u dezelfde niet-sleutelvelden in beide gegevensbronnen hebt en de gegevens in deze velden niet overeenkomen, bevat de index de waarden van de indexeerfunctie die het meest recent is uitgevoerd. In ons voorbeeld bevatten beide gegevensbronnen het veld **HotelName** . Als de gegevens in dit veld om de een of andere reden verschillen, worden voor documenten met dezelfde sleutelwaarde de **HotelName** -gegevens uit de gegevensbron die het laatst is geïndexeerd opgeslagen in de index.
+> Als u dezelfde niet-sleutelvelden in beide gegevensbronnen hebt en de gegevens in deze velden niet overeenkomen, bevat de index de waarden van de indexeerfunctie die het meest recent is uitgevoerd. In ons voorbeeld bevatten beide gegevensbronnen het veld **HotelName**. Als de gegevens in dit veld om de een of andere reden verschillen, worden voor documenten met dezelfde sleutelwaarde de **HotelName**-gegevens uit de gegevensbron die het laatst is geïndexeerd opgeslagen in de index.
 
 ## <a name="5---search"></a>5 - Zoeken
 
 U kunt de gevulde zoekindex onderzoeken nadat het programma is uitgevoerd. Gebruik hiervoor [**Search Explorer**](search-explorer.md) in de portal.
 
-Open in Azure Portal de pagina **Overzicht** van de zoekservice en zoek in de lijst **Indexen** de index **hotel-rooms-sample** .
+Open in Azure Portal de pagina **Overzicht** van de zoekservice en zoek in de lijst **Indexen** de index **hotel-rooms-sample**.
 
-  :::image type="content" source="media/tutorial-multiple-data-sources/index-list.png" alt-text="Een nieuwe database maken" border="false":::
+  :::image type="content" source="media/tutorial-multiple-data-sources/index-list.png" alt-text="Lijst met Azure Cognitive Search-indexen" border="false":::
 
 Klik op de index hotel-rooms-sample in de lijst. U ziet een Search Explorer-interface voor de index. Voer een query in voor een term, bijvoorbeeld luxe. Er wordt ten minste één document in de resultaten weergegeven. In dit document staat een lijst met kamerobjecten in de kamermatrix.
 

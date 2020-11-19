@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.service: firewall-manager
 ms.date: 10/22/2020
 ms.author: victorh
-ms.openlocfilehash: d9d9da9cd01b4bb9b3cabcf069990cd3cbd38d38
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: e2bcdf947db60fb50b44abba9d6a224768840b28
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428535"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656136"
 ---
 # <a name="tutorial-secure-your-virtual-hub-using-azure-powershell"></a>Zelfstudie: Uw virtuele hub beveiligen met Azure PowerShell
 
@@ -31,7 +31,7 @@ In deze zelfstudie leert u het volgende:
 
 - PowerShell 7
 
-   Voor deze zelfstudie moet u Azure PowerShell lokaal uitvoeren op PowerShell 7. Zie [Migreren van Windows PowerShell 5.1 naar PowerShell 7](https://docs.microsoft.com/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7) om PowerShell 7 te installeren.
+   Voor deze zelfstudie moet u Azure PowerShell lokaal uitvoeren op PowerShell 7. Zie [Migreren van Windows PowerShell 5.1 naar PowerShell 7](/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7) om PowerShell 7 te installeren.
 - Az.Network versie 3.2.0
 
     Als u Az.Network versie 3.4.0 of hoger hebt, moet u een downgrade uitvoeren om enkele van de opdrachten in deze zelfstudie te kunnen gebruiken. U kunt de versie van de module Az.Network controleren met behulp van de opdracht `Get-InstalledModule -Name Az.Network`. Als u de module Az.Network wilt verwijderen, voert u `Uninstall-Module -name az.network` uit. Als u de module Az.Network 3.2.0 wilt installeren, voert u `Install-Module az.network -RequiredVersion 3.2.0 -force` uit.

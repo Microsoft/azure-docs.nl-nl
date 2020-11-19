@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.author: cherylmc
-ms.openlocfilehash: 91004b9cb545275746f75dbd6ad46981fe4b04d5
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: b70a3fe4884ef209e57fbb954c27aa83486b5c98
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461155"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660998"
 ---
 # <a name="tutorial-create-and-manage-a-vpn-gateway-using-powershell"></a>Zelfstudie: Een VPN-gateway maken en beheren met behulp van PowerShell
 
@@ -74,7 +74,7 @@ $GwIPConf1   = "gwipconf1"
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een resourcegroep met de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Eerst moet u een resourcegroep maken. In het volgende voorbeeld wordt een resourcegroep met de naam *TestRG1* gemaakt in de regio *VS - oost* :
+Maak een resourcegroep met de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Eerst moet u een resourcegroep maken. In het volgende voorbeeld wordt een resourcegroep met de naam *TestRG1* gemaakt in de regio *VS - oost*:
 
 ```azurepowershell-interactive
 New-AzResourceGroup -ResourceGroupName $RG1 -Location $Location1
@@ -133,7 +133,7 @@ Nadat het maken van de gateway is voltooid, kunt u een verbinding maken tussen u
 
 ## <a name="view-the-gateway-public-ip-address"></a>Het openbare IP-adres van de gateway weergeven
 
-Als u de naam van het openbare IP-adres weet, gebruikt u [Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress) om het openbare IP-adres weer te geven dat is toegewezen aan de gateway.
+Als u de naam van het openbare IP-adres weet, gebruikt u [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress) om het openbare IP-adres weer te geven dat is toegewezen aan de gateway.
 
 Als er een time-out optreedt voor uw sessie, kopieert u de netwerkparameters uit het begin van deze zelfstudie naar de nieuwe sessie en gaat u verder.
 
@@ -162,11 +162,11 @@ $gateway = Get-AzVirtualNetworkGateway -Name $Gw1 -ResourceGroup $RG1
 Reset-AzVirtualNetworkGateway -VirtualNetworkGateway $gateway
 ```
 
-Zie [Reset a VPN gateway](vpn-gateway-resetgw-classic.md) (Een VPN-gateway opnieuw instellen) voor meer informatie.
+Zie [Reset a VPN gateway](./reset-gateway.md) (Een VPN-gateway opnieuw instellen) voor meer informatie.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u verder gaat naar de [volgende zelfstudie](vpn-gateway-tutorial-vpnconnection-powershell.md), moet u deze resources behouden, want ze zijn daarvoor vereist.
+Als u verder gaat naar de [volgende zelfstudie](./vpn-gateway-create-site-to-site-rm-powershell.md), moet u deze resources behouden, want ze zijn daarvoor vereist.
 
 Als de gateway echter deel uitmaakt van een prototype, test of 'proof of concept'-implementatie, kunt u de opdracht [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) gebruiken om de resourcegroep, de VPN-gateway en alle bijbehorende resources te verwijderen.
 

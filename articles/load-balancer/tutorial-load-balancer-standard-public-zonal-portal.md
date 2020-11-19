@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2019
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: a714368fc0508149714eaa42f4741e1042376c52
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: f91c9c0f401a455543b12af81eed48bd1a3349bd
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044952"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696435"
 ---
 # <a name="tutorial-load-balance-vms-within-an-availability-zone-with-standard-load-balancer-by-using-the-azure-portal"></a>Zelfstudie: Met behulp van Azure Portal taakverdeling van virtuele machines uitvoeren binnen een beschikbaarheidszone met Standard Load Balancer
 
@@ -37,7 +37,7 @@ Deze zelfstudie toont de stappen voor het maken van een openbare [Azure Standard
 
 Zie [Standard Load Balancer en beschikbaarheidszones](load-balancer-standard-availability-zones.md) voor meer informatie over het gebruik van beschikbaarheidszones met Standard Load Balancer.
 
-Als u dat liever wilt, kunt u [Azure CLI](load-balancer-standard-public-zonal-cli.md) gebruiken om deze zelfstudie te voltooien.
+Als u dat liever wilt, kunt u [Azure CLI](./quickstart-load-balancer-standard-public-cli.md) gebruiken om deze zelfstudie te voltooien.
 
 ## <a name="prerequisites"></a>Vereisten
 

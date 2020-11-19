@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 10/24/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 8b66a8ea3fcc6af62c872a6df6196b97ece2f55a
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 41955475f32fe674bcb3ef2d1b6e59c71a008b6b
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93240916"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94656442"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory
 
@@ -92,7 +92,7 @@ TLS 1.2 inschakelen:
 Begin door communicatie met Azure-datacenters in te schakelen om uw omgeving voor te bereiden voor Azure AD Application Proxy. Als het pad een firewall bevat, zorg dan dat deze openstaat. Dankzij een open firewall kan de connector HTTPS-aanvragen (TCP) versturen naar Application Proxy.
 
 > [!IMPORTANT]
-> Als de connector voor de Azure Government-cloud installeert, volgt u de [vereisten](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-government-cloud#allow-access-to-urls) en [installatiestappen](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-government-cloud#install-the-agent-for-the-azure-government-cloud). Hiervoor moet u de toegang tot een andere set URL's en een extra parameter inschakelen om de installatie uit te voeren.
+> Als de connector voor de Azure Government-cloud installeert, volgt u de [vereisten](../hybrid/reference-connect-government-cloud.md#allow-access-to-urls) en [installatiestappen](../hybrid/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud). Hiervoor moet u de toegang tot een andere set URL's en een extra parameter inschakelen om de installatie uit te voeren.
 
 ### <a name="open-ports"></a>Poorten openen
 
@@ -202,7 +202,7 @@ Nu u uw omgeving hebt voorbereid en een connector hebt geïnstalleerd, kunt u on
     | **Toepassingstime-out voor de back-end** | Stel deze waarde alleen in op **Lang** als uw toepassing traag is met verifiëren en verbinding maken. De toepassingstime-out voor de back-end is standaard 85 seconden. Wanneer u de waarde instelt op ‘Lang’, wordt de time-out voor de back-end verlengd tot 180 seconden. |
     | **Alleen-HTTP-cookies gebruiken** | Stel deze waarde in op **Ja** om ervoor te zorgen dat Application Proxy-cookies de HTTPOnly-vlag in de HTTP-antwoordheader bevatten. Als u Extern bureaublad-services gebruikt, stelt u deze waarde in op **Nee**.|
     | **Beveiligde cookies gebruiken**| Stel deze waarde in op **Ja** om cookies te verzenden via een beveiligd kanaal, zoals een versleutelde HTTPS-aanvraag.
-    | **Permanente cookies gebruiken**| Houd deze waarde ingesteld op **Nee**. Gebruik deze instelling alleen voor toepassingen die cookies niet kunnen delen tussen processen. Zie [Cookie-instellingen voor toegang tot on-premises toepassingen in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-cookie-settings) voor meer informatie over cookie-instellingen.
+    | **Permanente cookies gebruiken**| Houd deze waarde ingesteld op **Nee**. Gebruik deze instelling alleen voor toepassingen die cookies niet kunnen delen tussen processen. Zie [Cookie-instellingen voor toegang tot on-premises toepassingen in Azure Active Directory](./application-proxy-configure-cookie-settings.md) voor meer informatie over cookie-instellingen.
     | **URL's in headers vertalen** | Laat deze waarde op **Ja** staan, tenzij voor uw toepassing de oorspronkelijke host-header in de verificatieaanvraag moet zijn opgenomen. |
     | **URL's vertalen in de hoofdtekst van de toepassing** | Laat deze waarde op **Nee** staan, tenzij u hardcoded HTML-koppelingen naar andere on-premises toepassingen hebt en geen aangepaste domeinen gebruikt. Zie [Vertaling koppelen aan Application Proxy](application-proxy-configure-hard-coded-link-translation.md) voor meer informatie.<br><br>Stel deze waarde in op **Ja** als u van plan bent om deze toepassing te bewaken met Microsoft Cloud App Security (MCAS). Zie [Configuratie van realtime bewaking van toegang tot toepassingen met Microsoft Cloud App Security en Azure Active Directory](application-proxy-integrate-with-microsoft-cloud-application-security.md) voor meer informatie. |
 

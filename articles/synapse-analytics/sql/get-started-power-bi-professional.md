@@ -7,14 +7,14 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: sql
 ms.date: 04/15/2020
-ms.author: v-stazar
+ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 97b611c449302c95d4b24c305ce50ee7683e85ea
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c26e2bd27c0c3187768252fd922c31a2cc23d735
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316460"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94682085"
 ---
 # <a name="connect-to-serverless-sql-pool-with-power-bi-professional"></a>Verbinding maken met een serverloze SQL-pool met behulp van Power BI Professional
 

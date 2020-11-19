@@ -6,13 +6,13 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 03/19/2020
 ms.author: brendm
-ms.custom: devx-track-java
-ms.openlocfilehash: ea0887dd1d28bb958b27813df7f4c7a221470bac
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: d06a6eb8b504f2c5dd09de70d79f50a3ed5d89a3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088751"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844724"
 ---
 # <a name="map-an-existing-custom-domain-to-azure-spring-cloud"></a>Een bestaand aangepast domein toewijzen aan Azure Spring Cloud
 
@@ -119,7 +119,7 @@ az keyvault set-policy -g <key vault resource group> -n <key vault name>  --obje
 ### <a name="import-certificate-to-azure-spring-cloud"></a>Certificaat importeren in Azure Spring Cloud
 #### <a name="portal"></a>[Portal](#tab/Azure-portal)
 1. Ga naar uw service-exemplaar. 
-1. Selecteer **TLS/SSL-instellingen**vanuit het navigatiedeelvenster aan de linkerkant van uw app.
+1. Selecteer **TLS/SSL-instellingen** vanuit het navigatiedeelvenster aan de linkerkant van uw app.
 1. Klik vervolgens op **Key Vault-certificaat importeren**.
 
     ![Certificaat importeren](./media/custom-dns-tutorial/import-certificate.png)

@@ -64,10 +64,6 @@
       href: walkthroughs-sql-server.md
     - name: T-SQL en Python met Azure Synapse Analytics
       href: walkthroughs-sql-data-warehouse.md
-- name: Hulpmiddelen en hulpprogramma's
-  items:
-    - name: Gegevensverkenning en modelleringshulpprogramma's (GitHub)
-      href: 'https://github.com/Azure/Azure-TDSP-Utilities'
 - name: Training
   items:
     - name: Voor gegevensanalisten

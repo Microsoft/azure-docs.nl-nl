@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 03/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 496a38e43c7bd624c42f5c7a43ad9cf16f85d166
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 8c9beaca0fb3ee7881559ffcc955f171bc2ddd7b
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579569"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886444"
 ---
 # <a name="version-and-track-datasets-in-experiments"></a>Versie gegevens sets in experimenten bijhouden
 
@@ -153,7 +153,7 @@ prep_step = PythonScriptStep(script_name="prepare.py",
 
 <a name="track"></a>
 
-## <a name="track-datas-in-your-experiments"></a>Gegevens in uw experimenten bijhouden
+## <a name="track-data-in-your-experiments"></a>Gegevens in uw experimenten bijhouden
 
 Azure Machine Learning houdt uw gegevens tijdens het experiment bij als invoer-en uitvoer gegevens sets.  
 

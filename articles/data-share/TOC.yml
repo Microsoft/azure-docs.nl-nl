@@ -25,6 +25,10 @@
       displayName: 'Azure CLI, az datashare consumer invitation, az datashare consumer share-subscription'
 - name: Concepten
   items:
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
     - name: Azure Data Share-terminologie
       href: terminology.md
     - name: Functies en vereisten

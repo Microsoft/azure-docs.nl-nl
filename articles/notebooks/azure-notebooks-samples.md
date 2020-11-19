@@ -3,12 +3,12 @@ title: Voorbeelden van Jupyter Notebooks voor preview van Azure Notebooks
 description: Voorbeelden zijn een uitstekende manier om Jupyter Notebooks te ervaren die worden uitgevoerd in de kosteloze Azure Notebooks-cloudservices.
 ms.topic: sample
 ms.date: 01/11/2019
-ms.openlocfilehash: 397e40f628e6e935fef74d2225d2e477aac7b276
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8282a4047ede7d1344551a052ccf1b0143dae66
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85833992"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845054"
 ---
 # <a name="discover-and-use-sample-notebooks-in-azure-notebooks-preview"></a>Voorbeelden van notebooks ontdekken en gebruiken in de preview van Azure Notebooks.
 
@@ -36,4 +36,4 @@ Wanneer u een notebook hebt gezien dat u graag wilt verkennen, zijn dit een aant
 - [Procedure: Projecten configureren en beheren](configure-manage-azure-notebooks-projects.md)
 - [Procedure: Werken met gegevensbestanden](work-with-project-data-files.md)
 - [Procedure: Toegang tot gegevensbronnen](access-data-resources-jupyter-notebooks.md)
-- [Procedure: Azure Machine Learning gebruiken](use-machine-learning-services-jupyter-notebooks.md)
+- [Procedure: Azure Machine Learning gebruiken](../machine-learning/samples-notebooks.md)

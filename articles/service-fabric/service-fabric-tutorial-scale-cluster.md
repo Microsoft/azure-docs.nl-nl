@@ -3,13 +3,13 @@ title: Een Service Fabric-cluster schalen in Azure
 description: In deze zelfstudie leert u hoe u een Service Fabric-cluster in Azure in- en uitschaalt en hoe u resterende resources opschoont.
 ms.topic: tutorial
 ms.date: 07/22/2019
-ms.custom: mvc
-ms.openlocfilehash: d9699103f5e13301cce408d2e54f0e15780e0a35
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 7f92ca28afd9d1894867aaa2c18df3a02ee0bd79
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88716874"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842682"
 ---
 # <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Zelfstudie: Een Service Fabric-cluster schalen in Azure
 

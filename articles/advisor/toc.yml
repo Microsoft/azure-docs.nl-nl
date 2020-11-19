@@ -13,6 +13,10 @@
         - name: ARM-sjabloon
           displayName: Resource Manager
           href: advisor-alerts-arm.md
+- name: Concepten
+  items:
+    - name: Beveiligingsbasislijn
+      href: security-baseline.md
 - name: Zelfstudies
   items:
     - name: Aan de slag met Advisor

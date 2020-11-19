@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: BlogIn configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts van Azure AD naar BlogIn.
+title: 'Zelfstudie: BlogIn configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Lees hier meer over het automatisch inrichten en ongedaan maken van de inrichting van gebruikersaccounts van Azure AD voor BlogIn.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -12,89 +12,89 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 10/08/2020
 ms.author: Zhchia
-ms.openlocfilehash: 4b77208ca7869288ac13e28c6535b1b3972aa22c
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
-ms.translationtype: MT
+ms.openlocfilehash: f50c8d612ca088c97754b1eb90ed049113e33c6e
+ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92928743"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94358202"
 ---
-# <a name="tutorial-configure-blogin-for-automatic-user-provisioning"></a>Zelf studie: BlogIn configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-blogin-for-automatic-user-provisioning"></a>Zelfstudie: BlogIn configureren voor automatische gebruikersinrichting
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel BlogIn als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer de configuratie is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en [GeBlogInd](https://blogin.co/) met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md). 
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel BlogIn als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op [BlogIn](https://blogin.co/) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
 > * Gebruikers maken in BlogIn
-> * Gebruikers in BlogIn verwijderen wanneer ze niet meer toegang nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en BlogIn
-> * Inrichtings groepen en groepslid maatschappen in BlogIn
+> * Gebruikers verwijderen uit BlogIn wanneer ze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en BlogIn
+> * Groepen en groepslidmaatschappen inrichten in BlogIn
 > * [Eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/saas-apps/blogin-tutorial) bij BlogIn (aanbevolen)
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-Tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
-* Een gebruikers account in azure AD met [toestemming](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van inrichting (bijvoorbeeld toepassings beheerder, Cloud toepassings beheerder, eigenaar van de toepassing of globale beheerder). 
-* Een gebruikers account in BlogIn met de rol Administrator.
+* [Een Azure AD-tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant). 
+* Een gebruikersaccount in Azure AD met [machtigingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van de inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
+* Een gebruikersaccount in BlogIn met de rol van beheerder.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en BlogIn](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+3. Bepaal welke gegevens u wilt [toewijzen tussen Azure AD en BlogIn](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
 
-## <a name="step-2-configure-blogin-to-support-provisioning-with-azure-ad"></a>Stap 2. BlogIn configureren voor ondersteuning bij het inrichten met Azure AD
+## <a name="step-2-configure-blogin-to-support-provisioning-with-azure-ad"></a>Stap 2. BlogIn configureren om ondersteuning te bieden voor inrichting met Azure AD
 
-Als u gebruikers inrichten wilt configureren voor **BlogIn** , meldt u zich aan bij uw BlogIn-account en voert u de volgende stappen uit:
+Als u het inrichten van gebruikers wilt configureren in **BlogIn**, meldt u zich aan bij uw BlogIn-account en voert u de volgende stappen uit:
 
-1. Navigeer naar **instellingen**  >  **gebruikers verificatie**  >  **SSO configureren & gebruikers inrichting** .
-2. Ga naar het tabblad **Gebruikers inrichten** en wijzig de inrichtings status van de gebruiker **in op aan** .
-3. Klik op de knop **wijzigingen opslaan** . Wanneer u de eerste keer opslaat, wordt het **geheim (Bearer)-token** gegenereerd.
-4. Kopieer **basis-URL (Tenant)** en **geheime token waarden (Bearer)** . Deze waarden worden ingevoerd in de velden Tenant-URL en geheim-token op het tabblad inrichten van uw BlogIn-toepassing in de Azure Portal.
+1. Ga naar **Settings** > **User Authentication** > **Configure SSO & User provisioning**.
+2. Ga naar het tabblad **User provisioning** en wijzig de status van User provisioning in **On**.
+3. Klik op de knop **Save changes**. Als u de eerste keer opslaat, wordt er een **geheim token (Bearer-token)** gegenereerd.
+4. Kopieer de waarden van **Base (Tenant) URL** en **Secret (Bearer) token**. Deze worden moet u later invoeren in de velden Tenant-URL en Token voor geheim op het tabblad Inrichten van uw BlogIn-toepassing in Azure Portal.
 
-Zie [Gebruikers inrichten instellen via scim](https://blogin.co/blog/set-up-user-provisioning-via-scim-254/)voor een meer gedetailleerde uitleg over het instellen van gebruikers inrichten op BlogIn. Neem contact op met het [ondersteunings team van BlogIn](mailto:support@blogin.co) als u vragen hebt of hulp nodig hebt.
+Zie [Set up User Provisioning via SCIM](https://blogin.co/blog/set-up-user-provisioning-via-scim-254/) voor uitgebreide informatie over het instellen van gebruikersinrichting in BlogIn. U kunt op elk moment contact opnemen met het [ondersteuningsteam van BlogIn](mailto:support@blogin.co) als u vragen hebt of hulp nodig hebt.
 
-## <a name="step-3-add-blogin-from-the-azure-ad-application-gallery"></a>Stap 3. BlogIn toevoegen vanuit de Azure AD-toepassings galerie
+## <a name="step-3-add-blogin-from-the-azure-ad-application-gallery"></a>Stap 3. BlogIn toevoegen vanuit de galerie met Azure AD-toepassingen
 
-Voeg BlogIn toe vanuit de Azure AD-toepassings galerie om het beheren van de inrichting van BlogIn te starten. Als u eerder BlogIn voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
+Voeg BlogIn toe vanuit de galerie met Azure AD-toepassingen om te beginnen met het inrichten voor BlogIn. Als u BlogIn eerder hebt ingesteld voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
 
 Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) wordt beschreven. 
 
-* Wanneer u gebruikers en groepen toewijst aan BlogIn, moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) om extra rollen toe te voegen. 
+* Wanneer u gebruikers en groepen toewijst aan BlogIn, moet u een andere rol dan **Standaardtoegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) om extra rollen toe te voegen. 
 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) opgeven. 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-blogin"></a>Stap 5. Automatische gebruikers inrichting configureren voor BlogIn 
+## <a name="step-5-configure-automatic-user-provisioning-to-blogin"></a>Stap 5. Automatische gebruikersinrichting configureren voor BlogIn 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in BlogIn te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-blogin-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor BlogIn in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-blogin-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor BlogIn in Azure AD:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen** .
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
 2. Selecteer **BlogIn** in de lijst met toepassingen.
 
-    ![De koppeling BlogIn in de lijst met toepassingen](common/all-applications.png)
+    ![De link naar BlogIn in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer het tabblad **Inrichten** .
+3. Selecteer het tabblad **Inrichten**.
 
     ![Tabblad Inrichting](common/provisioning.png)
 
-4. Stel de **Inrichtingsmodus** in op **Automatisch** .
+4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Tabblad inrichten automatisch](common/provisioning-automatic.png)
+    ![De inrichtingsmodus ingesteld op Automatisch](common/provisioning-automatic.png)
 
-5. Geef in het gedeelte **beheerders referenties** de BlogIn-TENANT-URL en het geheime token op. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met Clarizen. Als de verbinding mislukt, zorg er dan voor dat uw Clarizen-account beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer in de sectie **Referenties voor beheerder** de tenant-URL en het geheime token van BlogIn in. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met BlogIn. Als de verbinding mislukt, moet u controleren of uw BlogIn-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -102,11 +102,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![E-mailadres voor meldingen](common/provisioning-notification-email.png)
 
-7. Selecteer **Opslaan** .
+7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met BlogIn** .
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met BlogIn**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar BlogIn in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in BlogIn voor bijwerk bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes)te wijzigen, moet u ervoor zorgen dat de BLOGIN-API het filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzing** de gebruikerskenmerken die vanuit Azure AD worden gesynchroniseerd met BlogIn. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikersaccounts in BlogIn te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) te wijzigen, moet u ervoor zorgen dat de API van BlogIn het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
    |Kenmerk|Type|
    |---|---|
@@ -116,12 +116,12 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |emails[type eq "work"].value|Tekenreeks|
    |name.givenName|Tekenreeks|
    |name.familyName|Tekenreeks|
-   |naam. opgemaakt|Tekenreeks|
+   |name.formatted|Tekenreeks|
    |phoneNumbers[type eq "work"].value|Tekenreeks|
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met BlogIn** .
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met BlogIn**.
 
-11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar BlogIn in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in BlogIn te vergelijken voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Controleer in de sectie **Kenmerktoewijzing** de groepskenmerken die vanuit Azure AD worden gesynchroniseerd met BlogIn. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in BlogIn te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
       |Kenmerk|Type|
       |---|---|
@@ -130,19 +130,19 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Als u de Azure AD-inrichtings service voor **BlogIn wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor BlogIn.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u wilt inrichten voor BlogIn door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+14. Definieer de gebruikers en/of groepen die u aan BlogIn wilt toevoegen door de gewenste waarden te kiezen bij **Bereik** in de sectie **Instellingen**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
-15. Wanneer u klaar bent om in te richten, klikt u op **Opslaan** .
+15. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen** . De initiële cyclus duurt langer dan volgende cycli, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
+Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële cyclus duurt langer dan volgende cycli, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
 
 ## <a name="step-6-monitor-your-deployment"></a>Stap 6. Uw implementatie bewaken
 Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om uw implementatie te bewaken:

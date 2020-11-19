@@ -114,8 +114,8 @@
           href: overview-authentication-authorization.md
         - name: Patches toepassen voor het besturingssysteem en de runtime
           href: overview-patch-os-runtime.md
-        - name: Ingebouwde beveiligingsmaatregelen
-          href: app-service-security-controls.md
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
         - name: Besturingselementen voor beveiliging van Azure Policy
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md

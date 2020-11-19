@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: c85624d9eced3130a1c7b99943095688beee62bd
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 63cc4448034b6a2ae2d74f4a2d9a0a62296678cf
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93417585"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886478"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mysql---single-server"></a>Melding over gepland onderhoud in Azure Database for MySQL-één server
 
@@ -21,7 +21,7 @@ Meer informatie over het voorbereiden van geplande onderhouds gebeurtenissen op 
 
 Azure Database for MySQL-service voert automatische patching uit van de onderliggende hardware, het besturings systeem en de data base-engine. De patch omvat nieuwe service functies, beveiliging en software-updates. Voor de MySQL-engine worden kleine versie-upgrades automatisch uitgevoerd. Deze zijn onderdeel van de patchrelease. Gebruikers hoeven zelf geen actie te ondernemen en er zijn geen configuratie-instellingen vereist voor patches. De patch wordt uitgebreid getest en geïmplementeerd met behulp van veilige implementatie procedures.
 
-Een gepland onderhoud is een onderhouds venster wanneer deze service-updates worden geïmplementeerd op servers in een bepaalde Azure-regio. Tijdens gepland onderhoud wordt een meldings gebeurtenis gemaakt om klanten te informeren wanneer de service-update is geïmplementeerd in de Azure-regio die als host fungeert voor hun servers. De minimale duur tussen twee gepland onderhoud is 30 dagen. U ontvangt een melding van het volgende onderhouds venster van 72 uur vooraf.
+Een gepland onderhoud is een onderhouds venster wanneer deze service-updates worden geïmplementeerd op servers in een bepaalde Azure-regio. Tijdens dit gepland onderhoud wordt een melding gecreëerd, om klanten te informeren wanneer de service-update is geïmplementeerd in de Azure-regio waarin hun servers worden gehost. De minimale duur tussen twee gepland onderhoud is 30 dagen. U ontvangt 72 uur van te voren een melding van het volgende onderhoudsvenster.
 
 ## <a name="planned-maintenance---duration-and-customer-impact"></a>Gepland onderhoud-duur en klant impact
 
@@ -48,7 +48,7 @@ U kunt de geplande onderhouds melding controleren op Azure Portal of waarschuwin
 
 1. Selecteer **service Health** In het [Azure Portal](https://portal.azure.com).
 2. Tabblad **gepland onderhoud** selecteren
-3. Selecteer **abonnement** , **regio** en **service** waarvoor u het geplande onderhouds bericht wilt controleren. 
+3. Selecteer **abonnement**, **regio** en **service** waarvoor u het geplande onderhouds bericht wilt controleren. 
    
 ### <a name="to-receive-planned-maintenance-notification"></a>Een melding over gepland onderhoud ontvangen
 
@@ -56,7 +56,7 @@ U kunt de geplande onderhouds melding controleren op Azure Portal of waarschuwin
 2. Selecteer in de sectie **waarschuwingen** **Health Alerts**.
 3. Selecteer **+ service Health alert toevoegen** en vul de velden in.
 4. Vul de vereiste velden in. 
-5. Kies het **gebeurtenis type** , selecteer **gepland onderhoud** of **Alles selecteren**
+5. Kies het **gebeurtenis type**, selecteer **gepland onderhoud** of **Alles selecteren**
 6. Geef in **actie groepen** op hoe u de waarschuwing wilt ontvangen (ontvang een e-mail, Activeer een logische app, enz.)  
 7. Zorg ervoor dat regel inschakelen bij maken is ingesteld op Ja.
 8. Selecteer **waarschuwings regel maken** om uw waarschuwing te volt ooien
@@ -78,7 +78,7 @@ Een tijdelijke fout, ook wel bekend als tijdelijke fout, is een fout die zichzel
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for MySQL, stuurt u een e-mail naar het Azure Database for MySQL team op *AskAzureDBforMySQL@service.microsoft.com* .
+- Voor vragen of suggesties die u mogelijk hebt over het werken met Azure Database for MySQL, stuurt u een e-mail naar het Azure Database for MySQL team op **AskAzureDBforMySQL@service.microsoft.com** .
 - Zie [waarschuwingen instellen](howto-alert-on-metric.md) voor hulp bij het maken van een waarschuwing op metrische gegevens.
 - [Verbindings problemen met Azure Database for MySQL-één server oplossen](howto-troubleshoot-common-connection-issues.md)
 - [Tijdelijke fouten afhandelen en efficiënt verbinding maken met Azure Database for MySQL-één server](concepts-connectivity.md)

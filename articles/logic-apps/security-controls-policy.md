@@ -1,18 +1,18 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Logic Apps
 description: Toont beschikbare besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Logic Apps. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.topic: sample
 author: ecfan
 ms.author: estfan
 ms.service: logic-apps
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: a143d10a93f534397cecc29edd17a918a4f14d48
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 35f976be600ff4c6b965a5ceb4100c62e91e5c0f
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92315870"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701910"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-logic-apps"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Logic Apps
 

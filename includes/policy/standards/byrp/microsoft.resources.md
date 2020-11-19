@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: a713f560c5633fb382a1820f774c0a23b4debe94
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 9fda8458b555e6b61762b0ebc7079f3c42f97084
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319570"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699646"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
@@ -66,7 +66,7 @@ Zie [CIS Microsoft Azure Foundations Benchmark](https://www.cisecurity.org/bench
 |Logboekregistratie en bewaking |5.1.2 |Controleren of de bewaarperiode van het activiteitenlogboek op 365 dagen of groter is ingesteld |[Het activiteitenlogboek moet ten minste één jaar worden bewaard](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb02aacc0-b073-424e-8298-42b22829ee0a) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLogRetention_365orGreater.json) |
 |Logboekregistratie en bewaking |5.1.3 |Controleren of het controleprofiel alle activiteiten vastlegt |[Met het Azure Monitor-logboekprofiel moeten logboeken worden verzameld voor de categorieën 'schrijven', 'verwijderen' en 'actie'](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1a4e592a-6a6e-44a5-9814-e36264ca96e7) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_CaptureAllCategories.json) |
 |Logboekregistratie en bewaking |5.1.4 |Zorg ervoor dat het logboekprofiel activiteitenlogboeken vastlegt voor alle regio's, waaronder globaal |[Azure Monitor moet activiteitenlogboeken uit alle regio's verzamelen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F41388f1c-2db0-4c25-95b2-35d7f5ccbfa9) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_CaptureAllRegions.json) |
-|Logboekregistratie en bewaking |5.2.1 |Controleren of er een waarschuwing voor een activiteitenlogboek bestaat voor het maken van beleidstoewijzing |[Er moet een waarschuwing voor activiteitenlogboeken bestaan voor specifieke beleidsbewerkingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc5447c04-a4d7-4ba8-a263-c9ee321a6858) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_PolicyOperations_Audit.json) |
+|Logboekregistratie en bewaking |5.2.1 |Controleren of er een waarschuwing voor een activiteitenlogboek bestaat voor het maken van beleidstoewijzing |[Er moet een waarschuwing voor activiteitenlogboeken bestaan voor specifieke beleidsbewerkingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc5447c04-a4d7-4ba8-a263-c9ee321a6858) |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_PolicyOperations_Audit.json) |
 |Logboekregistratie en bewaking |5.2.2 |Controleren of er een waarschuwing voor activiteitenlogboek bestaat voor het maken of bijwerken van een netwerkbeveiligingsgroep |[Er moet een waarschuwing voor activiteitenlogboeken bestaan voor specifieke beheerbewerkingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb954148f-4c11-4c38-8221-be76711e194a) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_AdministrativeOperations_Audit.json) |
 |Logboekregistratie en bewaking |5.2.3 |Controleren of er een waarschuwing voor activiteitenlogboek bestaat voor het verwijderen van een netwerkbeveiligingsgroep |[Er moet een waarschuwing voor activiteitenlogboeken bestaan voor specifieke beheerbewerkingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb954148f-4c11-4c38-8221-be76711e194a) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_AdministrativeOperations_Audit.json) |
 |Logboekregistratie en bewaking |5.2.4 |Controleren of er een waarschuwing voor activiteitenlogboek bestaat voor het maken of bijwerken van een regel voor netwerkbeveiligingsgroep |[Er moet een waarschuwing voor activiteitenlogboeken bestaan voor specifieke beheerbewerkingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb954148f-4c11-4c38-8221-be76711e194a) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_AdministrativeOperations_Audit.json) |

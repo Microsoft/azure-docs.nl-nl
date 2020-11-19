@@ -7,13 +7,13 @@ ms.service: mysql
 ms.topic: tutorial
 ms.devlang: php
 ms.date: 9/21/2020
-ms.custom: mvc
-ms.openlocfilehash: 38665cdf42450b09d14211f7ed44d62e4adb75b1
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 426cf59c9fb9d88039231ed441b2ffc7246716c7
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92537929"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844434"
 ---
 # <a name="tutorial-build-a-php-laravel-and-mysql-flexible-server-preview-app-in-azure-app-service"></a>Zelfstudie: Een PHP-app (Laravel) en een MySQL Flexible Server-app (preview) bouwen in Azure App Service
 
@@ -96,7 +96,7 @@ composer install
 
 ### <a name="configure-mysql-connection"></a>MySQL-verbinding configureren
 
-Maak een bestand met de naam *.env* in de hoofdmap van de opslagplaats. Kopieer de volgende variabelen in het bestand *.env* . Vervang de tijdelijke aanduiding _&lt;root_password>_ met het wachtwoord van de MySQL-hoofdgebruiker.
+Maak een bestand met de naam *.env* in de hoofdmap van de opslagplaats. Kopieer de volgende variabelen in het bestand *.env*. Vervang de tijdelijke aanduiding _&lt;root_password>_ met het wachtwoord van de MySQL-hoofdgebruiker.
 
 ```txt
 APP_ENV=local
@@ -110,7 +110,7 @@ DB_USERNAME=root
 DB_PASSWORD=<root_password>
 ```
 
-Zie [Laravel-omgeving configureren](https://laravel.com/docs/5.4/configuration#environment-configuration) voor informatie over hoe Laravel het _.env_ -bestand gebruikt.
+Zie [Laravel-omgeving configureren](https://laravel.com/docs/5.4/configuration#environment-configuration) voor informatie over hoe Laravel het _.env_-bestand gebruikt.
 
 ### <a name="run-the-sample-locally"></a>Het voorbeeld lokaal uitvoeren
 
@@ -134,7 +134,7 @@ php artisan serve
 
 Ga naar `http://localhost:8000` in een browser. Voeg een paar taken op de pagina toe.
 
-:::image type="content" source="media/tutorial-php-database-app/mysql-connect-success.png" alt-text="PHP-web-app in Azure met Flexible Server":::
+:::image type="content" source="media/tutorial-php-database-app/mysql-connect-success.png" alt-text="PHP maakt verbinding met MySQL":::
 
 Typ `Ctrl + C` in de terminal om PHP te stoppen.
 
@@ -147,7 +147,7 @@ az mysql flexible-server create  --resource-group myResourceGroup --public-acces
 
 > [!IMPORTANT]
 > - Noteer de **servernaam** en **verbindingsreeks** om deze te gebruiken in de volgende stap om verbinding te maken en Laravel-gegevensmigratie uit te voeren.
-> - Geef het IP-adres van uw clientcomputer op voor het argument **IP-Address** . De server is vergrendeld wanneer deze is gemaakt en u moet toegang tot uw clientcomputer toestaan om de server lokaal te beheren.
+> - Geef het IP-adres van uw clientcomputer op voor het argument **IP-Address**. De server is vergrendeld wanneer deze is gemaakt en u moet toegang tot uw clientcomputer toestaan om de server lokaal te beheren.
 
 ### <a name="configure-server-firewall-to-allow-web-app-to-connect-to-the-server"></a>Serverfirewall configureren zodat web-apps verbinding kunnen maken met de server
 
@@ -196,7 +196,7 @@ In deze stap verbindt u de PHP-toepassing met de MySQL-database die u in Azure D
 
 ### <a name="configure-the-database-connection"></a>Verbinding met de database configureren
 
-Maak in de hoofdmap van de opslagplaats een _.env.production_ -bestand en kopieer de volgende variabelen ernaartoe. Vervang de tijdelijke aanduiding _&lt;mysql-server-name>_ in zowel *DB_HOST* als *DB_USERNAME* .
+Maak in de hoofdmap van de opslagplaats een _.env.production_-bestand en kopieer de volgende variabelen ernaartoe. Vervang de tijdelijke aanduiding _&lt;mysql-server-name>_ in zowel *DB_HOST* als *DB_USERNAME*.
 
 ```
 APP_ENV=production
@@ -214,12 +214,12 @@ MYSQL_SSL=true
 Sla de wijzigingen op.
 
 > [!TIP]
-> Dit bestand is voor het beveiligen van uw MySQL-verbindingsgegevens al uitgesloten van de Git-opslagplaats (zie _.gitignore_ in de hoofdmap van de opslagplaats). Later leert u hoe u omgevingsvariabelen in App Service configureert om verbinding te maken met uw database in Azure Database for MySQL. Met omgevingsvariabelen heeft u het *.env* -bestand in App Service niet nodig.
+> Dit bestand is voor het beveiligen van uw MySQL-verbindingsgegevens al uitgesloten van de Git-opslagplaats (zie _.gitignore_ in de hoofdmap van de opslagplaats). Later leert u hoe u omgevingsvariabelen in App Service configureert om verbinding te maken met uw database in Azure Database for MySQL. Met omgevingsvariabelen heeft u het *.env*-bestand in App Service niet nodig.
 >
 
 ### <a name="configure-tlsssl-certificate"></a>TLS-/SSL-certificaat configureren
 
-MySQL Flexible Server dwingt standaard TLS-verbindingen van clients af. Voor verbinding met uw MySQL-database in Azure moet u het [ _.pem_ -certificaat gebruiken dat is opgegeven door Azure Database for MySQL Flexible Server](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem). Download [dit certificaat](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) en plaats het in de map **SSL** in het lokale exemplaar van de opslagplaats van de voorbeeld-app.
+MySQL Flexible Server dwingt standaard TLS-verbindingen van clients af. Voor verbinding met uw MySQL-database in Azure moet u het [ _.pem_-certificaat gebruiken dat is opgegeven door Azure Database for MySQL Flexible Server](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem). Download [dit certificaat](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) en plaats het in de map **SSL** in het lokale exemplaar van de opslagplaats van de voorbeeld-app.
 
 Open _config/database.php_ en voeg de parameters `sslmode` en `options` toe aan `connections.mysql`, zoals wordt weergegeven in de volgende code.
 
@@ -257,7 +257,7 @@ Navigeer naar `http://localhost:8000`. Als de pagina zonder fouten wordt geladen
 
 Voeg een paar taken op de pagina toe.
 
-:::image type="content" source="media/tutorial-php-database-app/mysql-connect-success.png" alt-text="PHP-web-app in Azure met Flexible Server":::
+:::image type="content" source="media/tutorial-php-database-app/mysql-connect-success.png" alt-text="PHP maakt verbinding met Azure Database for MySQL":::
 
 Typ `Ctrl + C` in de terminal om PHP te stoppen.
 
@@ -359,7 +359,7 @@ U kunt de PHP-methode [getenv](https://www.php.net/manual/en/function.getenv.php
 
 Laravel heeft een toepassingssleutel nodig in App Service. U kunt deze configureren met app-instellingen.
 
-In het lokale terminalvenster gebruikt u `php artisan` voor het genereren van een nieuwe toepassingssleutel zonder deze op te slaan in _.env_ .
+In het lokale terminalvenster gebruikt u `php artisan` voor het genereren van een nieuwe toepassingssleutel zonder deze op te slaan in _.env_.
 
 ```bash
 php artisan key:generate --show
@@ -387,7 +387,7 @@ Voeg, eenmaal terug in het lokale terminalvenster, een externe Azure-instantie t
 git remote add azure <deploymentLocalGitUrl-from-create-step>
 ```
 
-Push naar de externe Azure-instantie om uw app te implementeren met de volgende opdracht. Wanneer Git Credential Manager u om referenties vraagt, geeft u de referenties op die u hebt gemaakt in **Een implementatiegebruiker configureren** , en niet de referenties die u gebruikt om u aan te melden bij de Azure-portal.
+Push naar de externe Azure-instantie om uw app te implementeren met de volgende opdracht. Wanneer Git Credential Manager u om referenties vraagt, geeft u de referenties op die u hebt gemaakt in **Een implementatiegebruiker configureren**, en niet de referenties die u gebruikt om u aan te melden bij de Azure-portal.
 
 ```bash
 git push azure master
@@ -414,7 +414,7 @@ remote: Running deployment command...
 
 Blader naar `http://<app-name>.azurewebsites.net` en voeg een paar taken toe aan de lijst.
 
-:::image type="content" source="media/tutorial-php-database-app/php-mysql-in-azure.png" alt-text="PHP-web-app in Azure met Flexible Server":::
+:::image type="content" source="media/tutorial-php-database-app/php-mysql-in-azure.png" alt-text="PHP-web-app in Azure":::
 
 U voert nu een gegevensgestuurde PHP-app uit in Azure App Service.
 
@@ -466,11 +466,11 @@ Voer in het lokale terminalvenster Laravel-database-migraties uit om de wijzigin
 php artisan migrate
 ```
 
-Op basis van de [Laravel-naamgevingsconventie](https://laravel.com/docs/5.4/eloquent#defining-models) wordt het model `Task` (zie _app/Task.php_ ) standaard toegewezen aan de `tasks`-tabel.
+Op basis van de [Laravel-naamgevingsconventie](https://laravel.com/docs/5.4/eloquent#defining-models) wordt het model `Task` (zie _app/Task.php_) standaard toegewezen aan de `tasks`-tabel.
 
 ### <a name="update-application-logic"></a>Toepassingslogica bijwerken
 
-Open het bestand *routes/web.php* . De toepassing definieert hier de routes en bedrijfslogica.
+Open het bestand *routes/web.php*. De toepassing definieert hier de routes en bedrijfslogica.
 
 Voeg aan het einde van het bestand een route toe met de volgende code:
 
@@ -493,7 +493,7 @@ De bovenstaande code voert een eenvoudige update uit op het gegevensmodel door h
 
 ### <a name="update-the-view"></a>De weergave bijwerken
 
-Open het bestand *resources/views/tasks.blade.php* . Zoek de `<tr>`-openingstag en vervang deze door:
+Open het bestand *resources/views/tasks.blade.php*. Zoek de `<tr>`-openingstag en vervang deze door:
 
 ```html
 <tr class="{{ $task->complete ? 'success' : 'active' }}" >
@@ -534,7 +534,7 @@ php artisan serve
 
 Om de status van de taak te zien wijzigen, gaat u naar `http://localhost:8000` en selecteert u het selectievakje.
 
-:::image type="content" source="media/tutorial-php-database-app/complete-checkbox.png" alt-text="PHP-web-app in Azure met Flexible Server":::
+:::image type="content" source="media/tutorial-php-database-app/complete-checkbox.png" alt-text="Selectievakje toegevoegd aan de taak":::
 
 Typ `Ctrl + C` in de terminal om PHP te stoppen.
 
@@ -556,7 +556,7 @@ git push azure master
 
 Zodra `git push` is voltooid, gaat u naar de Azure-app en probeert u de nieuwe functionaliteit uit.
 
-:::image type="content" source="media/tutorial-php-database-app/complete-checkbox-published.png" alt-text="PHP-web-app in Azure met Flexible Server":::
+:::image type="content" source="media/tutorial-php-database-app/complete-checkbox-published.png" alt-text="In Azure gepubliceerde model- en databasewijzigingen":::
 
 Als u taken hebt toegevoegd, worden deze in de database bewaard. Updates van het gegevensschema laten bestaande gegevens intact.
 

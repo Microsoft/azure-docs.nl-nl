@@ -10,12 +10,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurecli
 ms.reviewer: akjosh
-ms.openlocfilehash: 7fff8539f330c7cbc886577eaf6dbe4417411999
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22609465abfa0cbf30165bc9327d786b3244357e
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498137"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844775"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-the-azure-cli"></a>Zelfstudie: Een aangepaste installatiekopie van een Azure-VM maken met Azure CLI
 
@@ -61,7 +61,7 @@ Een galerie met installatiekopieën is de primaire resource die wordt gebruikt v
 
 De naam van de galerie kan bestaan uit hoofdletters en kleine letters, cijfers en punten. De naam van de galerie kan geen liggende streepjes bevatten.   De naam van de galerie moet uniek zijn binnen uw abonnement. 
 
-Een galerie met installatiekopieën maken met [az sig create](/cli/azure/sig#az-sig-create). In het volgende voorbeeld wordt een resourcegroep gemaakt genaamd galerie met de naam *myGalleryRG* in *US -oost*en een galerie met de naam *myGallery*.
+Een galerie met installatiekopieën maken met [az sig create](/cli/azure/sig#az-sig-create). In het volgende voorbeeld wordt een resourcegroep gemaakt genaamd galerie met de naam *myGalleryRG* in *US -oost* en een galerie met de naam *myGallery*.
 
 ```azurecli-interactive
 az group create --name myGalleryRG --location eastus
@@ -156,7 +156,7 @@ az vm create --resource-group myResourceGroup \
 
 ## <a name="share-the-gallery"></a>De galerie delen
 
-U kunt installatiekopieën delen met meerdere abonnementen met behulp van toegangsbeheer op basis van rollen (RBAC). U kunt installatiekopieën delen op het niveau van de galerie, de installatiekopiedefinitie of de installatiekopieversie. Elke gebruiker die leesmachtigingen heeft voor een installatiekopieversie, ook in meerdere abonnementen, kan een virtuele machine implementeren op basis van de installatiekopieversie.
+U kunt installatiekopieën delen met meerdere abonnementen met behulp van toegangsbeheer op basis van rollen (Azure RBAC). U kunt installatiekopieën delen op het niveau van de galerie, de installatiekopiedefinitie of de installatiekopieversie. Elke gebruiker die leesmachtigingen heeft voor een installatiekopieversie, ook in meerdere abonnementen, kan een virtuele machine implementeren op basis van de installatiekopieversie.
 
 We raden aan om te delen met andere gebruikers op galerieniveau. Gebruik [az sig show](/cli/azure/sig#az-sig-show) om de object-id van uw galerie op te halen.
 
@@ -176,7 +176,7 @@ az role assignment create \
    --scope <gallery ID>
 ```
 
-Zie [Toegang beheren met toegangsbeheer op basis van rollen en Azure CLI](../../role-based-access-control/role-assignments-cli.md) voor meer informatie over het delen van resources via RBAC.
+Zie [Azure-roltoewijzingen toevoegen of verwijderen met de Azure CLI](../../role-based-access-control/role-assignments-cli.md) voor meer informatie over het delen van resources met behulp van Azure RBAC.
 
 ## <a name="azure-image-builder"></a>Azure Image Builder
 

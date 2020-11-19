@@ -13,12 +13,12 @@ ms.date: 09/01/2020
 ms.author: curtand
 ms.reviewer: kexia
 metadata ms.custom: contperfq1
-ms.openlocfilehash: 3d95ad4aa100b0a185bde015dfe34d747fc77ec9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 095ea62ee992fa12fc80f715f9e63725e9930595
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89322599"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886206"
 ---
 # <a name="common-problems-with-two-factor-verification-and-your-work-or-school-account"></a>Veelvoorkomende problemen met verificatie in twee stappen en uw werk- of schoolaccount
 
@@ -74,6 +74,7 @@ Het ontvangen van uw verificatie code is een veelvoorkomend probleem. Het proble
 
 Probeer dit eens | Informatie over begeleiding
 --------- | ------------
+De micro soft Authenticator-app of verificatie codes gebruiken | U krijgt onze limiet voor de verificatie aanroepen, of u hebt de limiet bereikt voor de tekst verificatie codes, fout berichten tijdens het aanmelden. <br/><br/>Micro soft kan in korte tijd herhaalde verificatie pogingen beperken die door dezelfde gebruiker worden uitgevoerd. Deze beperking is niet van toepassing op de Microsoft Authenticator of de verificatie code. Als u deze limieten hebt bereikt, kunt u de verificator-app gebruiken, verificatie code of het aanmelden over een paar minuten opnieuw proberen.
 Uw mobiele apparaat opnieuw opstarten | Soms moet uw apparaat gewoon worden vernieuwd. Wanneer u uw apparaat opnieuw opstart, worden alle achtergrond processen en-services beëindigd. Bij het opnieuw opstarten worden ook de kern onderdelen van het apparaat afgesloten. Elke service of elk onderdeel wordt vernieuwd wanneer u het apparaat opnieuw opstart.
 Controleer of uw beveiligings gegevens juist zijn | Zorg ervoor dat de gegevens van de beveiligings verificatie methode nauw keurig zijn, met name uw telefoon nummers. Als u het verkeerde telefoon nummer plaatst, wordt al uw waarschuwingen naar een onjuist nummer gegaan. Gelukkig kan deze gebruiker niets doen met de waarschuwingen, maar ook niet om u aan te melden bij uw account. Zie de instructies in het artikel [uw twee ledige verificatie methode-instellingen beheren](multi-factor-authentication-end-user-manage-settings.md) om ervoor te zorgen dat uw gegevens correct zijn.
 Controleren of uw meldingen zijn ingeschakeld | Controleer of er meldingen zijn ingeschakeld op het mobiele apparaat. Zorg ervoor dat de volgende meldings modi zijn toegestaan: <br/><br/> &bull; Telefoon gesprekken <br/> &bull; Uw verificatie-app <br/> &bull; Uw app voor tekst berichten <br/><br/> Zorg ervoor dat deze modi een waarschuwing maken die _zichtbaar_ is op het apparaat.

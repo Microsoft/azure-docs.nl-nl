@@ -68,7 +68,7 @@ In dit gedeelte wordt uitgelegd hoe u een project voorbereidt voor gebruik met d
 
 Voordat uw webtoepassing vanuit de client toegang kan krijgen tot een blob-opslag, moet het account worden geconfigureerd om [cross-origin-resource sharing](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) oftewel CORS in te schakelen.
 
-Selecteer in de Azure-portal uw opslagaccount. Als u een nieuwe CORS-regel wilt definiëren, gaat u terug naar de sectie **Instellingen** en klikt u op **CORS** . Voor deze snelstart maakt u een open CORS-regel:
+Selecteer in de Azure-portal uw opslagaccount. Als u een nieuwe CORS-regel wilt definiëren, gaat u terug naar de sectie **Instellingen** en klikt u op **CORS**. Voor deze snelstart maakt u een open CORS-regel:
 
 ![CORS-instellingen in Azure Blob Storage-account](media/quickstart-blobs-javascript-browser/azure-blob-storage-cors-settings.png)
 
@@ -77,12 +77,12 @@ In de volgende tabel worden alle CORS-instellingen beschreven en de waarden voor
 |Instelling  |Waarde  | Beschrijving |
 |---------|---------|---------|
 | **TOEGESTANE OORSPRONGEN** | **\*** | Accepteert een door komma's gescheiden lijst met domeinen die als acceptabele oorsprongen zijn ingesteld. Als de waarde wordt ingesteld op `*`, hebben alle domeinen toegang tot het opslagaccount. |
-| **TOEGESTANE METHODEN** | **DELETE** , **GET** , **HEAD** , **MERGE** , **POST** , **OPTIONS** en **PUT** | Vermeldt de HTTP-bewerkingen die zijn toegestaan om voor het opslagaccount te worden uitgevoerd. Voor deze snelstart selecteert u alle beschikbare opties. |
+| **TOEGESTANE METHODEN** | **DELETE**, **GET**, **HEAD**, **MERGE**, **POST**, **OPTIONS** en **PUT** | Vermeldt de HTTP-bewerkingen die zijn toegestaan om voor het opslagaccount te worden uitgevoerd. Voor deze snelstart selecteert u alle beschikbare opties. |
 | **TOEGESTANE HEADERS** | **\*** | Definieert een lijst met aanvraagheaders (inclusief headers met een voorvoegsel) die door het opslagaccount zijn toegestaan. Als de waarde wordt ingesteld op `*`, hebben alle headers toegang. |
 | **WEERGEGEVEN KOPTEKSTEN** | **\*** | Vermeldt de door het account toegestane antwoordheaders. Als de waarde wordt ingesteld op `*`, kan het account elke header verzenden. |
 | **MAXIMUMLEEFTIJD** | **86400** | De maximale periode dat de browser de voorbereidende aanvraag OPTIES in de cache opslaat. De waarde *86400* betekent dat de cache een hele dag in stand blijft. |
 
-Nadat u de velden met de waarden uit deze tabel hebt ingevuld, klikt u op de knop **Opslaan** .
+Nadat u de velden met de waarden uit deze tabel hebt ingevuld, klikt u op de knop **Opslaan**.
 
 > [!IMPORTANT]
 > Zorg ervoor dat instellingen die u in productie gebruikt, de minimale mate van toegang tot het opslagaccount weergeven zodat beveiligde toegang gehandhaafd blijft. De hier beschreven CORS-instellingen zijn geschikt voor een snelstart, omdat ze een minder streng beveiligingsbeleid definiëren. Deze instellingen worden echter niet aangeraden in reële situaties.
@@ -94,10 +94,10 @@ Shared Access Signature (handtekening voor gedeelde toegang, SAS) wordt gebruikt
 Volg deze stappen om de Blob-service SAS-URL op te halen:
 
 1. Selecteer in de Azure-portal uw opslagaccount.
-2. Ga naar het gedeelte met de **Instellingen** en selecteer **Handtekening voor gedeelde toegang** .
+2. Ga naar het gedeelte met de **Instellingen** en selecteer **Handtekening voor gedeelde toegang**.
 3. Schuif omlaag en klik op de knop **SAS en verbindingsreeks** genereren.
 4. Schuif verder naar beneden en zoek het veld **SAS-URL van Blob-service** veld
-5. Klik op de knop **Kopiëren naar klembord** aan de rechterkant van het veld **SAS-URL van Blob-service** .
+5. Klik op de knop **Kopiëren naar klembord** aan de rechterkant van het veld **SAS-URL van Blob-service**.
 6. Sla de gekopieerde URL ergens op voor gebruik in een volgende stap.
 
 ### <a name="add-the-azure-blob-storage-client-library"></a>De clientbibliotheek voor Azure Blob-opslag toevoegen
@@ -130,7 +130,7 @@ Open in Visual Studio Code het bestand *package.json* en voeg een `browserlist` 
 
 :::code language="json" source="~/azure-storage-snippets/blobs/quickstarts/JavaScript/V12/azure-blobs-js-browser/package.json" highlight="12-16":::
 
-Sla het *package.json* -bestand op.
+Sla het *package.json*-bestand op.
 
 ### <a name="import-the-azure-blob-storage-client-library"></a>De clientbibliotheek voor Azure Blob-opslag importeren
 
@@ -138,7 +138,7 @@ Als u Azure SDK-bibliotheken wilt gebruiken in JavaScript, importeert u het `@az
 
 :::code language="javascript" source="~/azure-storage-snippets/blobs/quickstarts/JavaScript/V12/azure-blobs-js-browser/index.js" id="snippet_ImportLibrary":::
 
-Sla het bestand op als *index.js* in de map *azure-blobs-js-browser* .
+Sla het bestand op als *index.js* in de map *azure-blobs-js-browser*.
 
 ### <a name="implement-the-html-page"></a>HTML-pagina implementeren
 
@@ -146,7 +146,7 @@ Maak een nieuw bestand in Visual Studio Code met de volgende HTML-code.
 
 :::code language="html" source="~/azure-storage-snippets/blobs/quickstarts/JavaScript/V12/azure-blobs-js-browser/index.html":::
 
-Sla het bestand op als *index.html* in de map *azure-blobs-js-browser* .
+Sla het bestand op als *index.html* in de map *azure-blobs-js-browser*.
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
@@ -160,7 +160,7 @@ De voorbeeldcode laat zien hoe u de volgende taken kunt uitvoeren met de Azure B
 * [Blobs uploaden](#upload-blobs)
 * [Blobs verwijderen](#delete-blobs)
 
-U voert de code uit nadat u alle fragmenten hebt toegevoegd aan het bestand *index.js* .
+U voert de code uit nadat u alle fragmenten hebt toegevoegd aan het bestand *index.js*.
 
 ### <a name="declare-fields-for-ui-elements"></a>Velden declareren voor UI-elementen
 
@@ -206,11 +206,11 @@ Geef de inhoud van de opslagcontainer weer wanneer u op de knop **Bestanden weer
 
 Sla het bestand *index. js* op.
 
-Met deze code wordt de [ContainerClient.listBlobsFlat](/javascript/api/@azure/storage-blob/containerclient#listblobsflat-containerlistblobsoptions-)-functie aangeroepen en wordt vervolgens een iterator gebruikt om de naam op te halen van elk geretourneerd [BlobItem](/javascript/api/@azure/storage-blob/blobitem). Voor elke `BlobItem` wordt de **Bestanden** -lijst met de eigenschapswaarde [naam](/javascript/api/@azure/storage-blob/blobitem#name) bijgewerkt.
+Met deze code wordt de [ContainerClient.listBlobsFlat](/javascript/api/@azure/storage-blob/containerclient#listblobsflat-containerlistblobsoptions-)-functie aangeroepen en wordt vervolgens een iterator gebruikt om de naam op te halen van elk geretourneerd [BlobItem](/javascript/api/@azure/storage-blob/blobitem). Voor elke `BlobItem` wordt de **Bestanden**-lijst met de eigenschapswaarde [naam](/javascript/api/@azure/storage-blob/blobitem#name) bijgewerkt.
 
 ### <a name="upload-blobs"></a>Blobs uploaden
 
-Upload bestanden naar de opslagcontainer wanneer u klikt op de knop **Bestanden selecteren en uploaden** . Voeg de volgende code toe aan het einde van het bestand *index.js* toe.
+Upload bestanden naar de opslagcontainer wanneer u klikt op de knop **Bestanden selecteren en uploaden**. Voeg de volgende code toe aan het einde van het bestand *index.js* toe.
 
 :::code language="javascript" source="~/azure-storage-snippets/blobs/quickstarts/JavaScript/V12/azure-blobs-js-browser/index.js" id="snippet_UploadBlobs":::
 
@@ -220,13 +220,13 @@ Deze code verbindt de knop **Bestanden selecteren en uploaden** naar het verborg
 
 ### <a name="delete-blobs"></a>Blobs verwijderen
 
-Verwijder bestanden uit de opslagcontainer wanneer u klikt op de knop **Geselecteerde bestanden verwijderen** . Voeg de volgende code toe aan het einde van het bestand *index.js* toe.
+Verwijder bestanden uit de opslagcontainer wanneer u klikt op de knop **Geselecteerde bestanden verwijderen**. Voeg de volgende code toe aan het einde van het bestand *index.js* toe.
 
 :::code language="javascript" source="~/azure-storage-snippets/blobs/quickstarts/JavaScript/V12/azure-blobs-js-browser/index.js" id="snippet_DeleteBlobs":::
 
 Sla het bestand *index. js* op.
 
-Met deze code wordt de functie [ContainerClient.deleteBlob](/javascript/api/@azure/storage-blob/containerclient#deleteblob-string--blobdeleteoptions-) aangeroepen om elk bestand te verwijderen dat in de lijst is geselecteerd. Vervolgens wordt de eerder getoonde functie `listFiles` aangeroepen om de inhoud van de **Bestanden** -lijst te vernieuwen.
+Met deze code wordt de functie [ContainerClient.deleteBlob](/javascript/api/@azure/storage-blob/containerclient#deleteblob-string--blobdeleteoptions-) aangeroepen om elk bestand te verwijderen dat in de lijst is geselecteerd. Vervolgens wordt de eerder getoonde functie `listFiles` aangeroepen om de inhoud van de **Bestanden**-lijst te vernieuwen.
 
 ## <a name="run-the-code"></a>De code uitvoeren
 
@@ -237,9 +237,9 @@ Als u de code wilt uitvoeren in de Visual Studio Code-foutopsporing, configureer
 De uitbreiding voor foutopsporing in Visual Studio Code instellen:
 
 1. Selecteer **Uitvoeren > Configuratie toevoegen**
-2. Selecteer **Microsoft Edge** , **Chrome** of **Firefox** , afhankelijk van de extensie die eerder u hebt geïnstalleerd in het gedeelte [Vereisten](#prerequisites).
+2. Selecteer **Microsoft Edge**, **Chrome** of **Firefox**, afhankelijk van de extensie die eerder u hebt geïnstalleerd in het gedeelte [Vereisten](#prerequisites).
 
-Als u een nieuwe configuratie toevoegt, wordt er een *launch.json* -bestand gemaakt en geopend in de editor. Wijzig het bestand *launch.json* zodat de `url`-waarde `http://localhost:1234/index.html` is, zoals hier wordt weergegeven:
+Als u een nieuwe configuratie toevoegt, wordt er een *launch.json*-bestand gemaakt en geopend in de editor. Wijzig het bestand *launch.json* zodat de `url`-waarde `http://localhost:1234/index.html` is, zoals hier wordt weergegeven:
 
 :::code language="json" source="~/azure-storage-snippets/blobs/quickstarts/JavaScript/V12/azure-blobs-js-browser/.vscode/launch.json" highlight="11":::
 
@@ -255,7 +255,7 @@ parcel index.html
 
 Parcel bundelt uw code en start een lokale ontwikkelserver voor uw pagina op `http://localhost:1234/index.html`. Wijzigingen die u aanbrengt in *index.js* worden automatisch op de ontwikkelingsserver gebouwd en weergegeven wanneer u het bestand opslaat.
 
-Als u een bericht ontvangt met de melding **geconfigureerde poort 1234 kan niet worden gebruikt** , kunt u de poort wijzigen door de opdracht `parcel -p <port#> index.html` uit te voeren. In het bestand *launch.json* werkt u de poort in het URL-pad zodat deze overeenkomt.
+Als u een bericht ontvangt met de melding **geconfigureerde poort 1234 kan niet worden gebruikt**, kunt u de poort wijzigen door de opdracht `parcel -p <port#> index.html` uit te voeren. In het bestand *launch.json* werkt u de poort in het URL-pad zodat deze overeenkomt.
 
 ### <a name="start-debugging"></a>Foutopsporing starten
 
@@ -269,27 +269,27 @@ In de [Azure-portal](https://portal.azure.com) kunt u de resultaten van de API-a
 
 #### <a name="step-1---create-a-container"></a>Stap 1 - Een container maken
 
-1. Selecteer in de web-app **Container maken** . De status geeft aan dat een container is gemaakt.
-2. Selecteer uw opslagaccount om in de Azure-portal te verifiëren. Klik onder **Blob service** op **Containers** . Controleer of de nieuwe container wordt weergegeven. (Mogelijk moet u **Vernieuwen** selecteren.)
+1. Selecteer in de web-app **Container maken**. De status geeft aan dat een container is gemaakt.
+2. Selecteer uw opslagaccount om in de Azure-portal te verifiëren. Klik onder **Blob service** op **Containers**. Controleer of de nieuwe container wordt weergegeven. (Mogelijk moet u **Vernieuwen** selecteren.)
 
 #### <a name="step-2---upload-a-blob-to-the-container"></a>Stap 2 - Een blob uploaden naar de container
 
-1. Maak een testbestand op uw lokale computer en sla dit op, bijvoorbeeld *test.txt* .
-2. Klik in de web-app op **Bestanden selecteren en uploaden** .
-3. Blader naar het testbestand en selecteer **Openen** . De status geeft aan dat het bestand is geüpload en dat de lijst met bestanden is opgehaald.
+1. Maak een testbestand op uw lokale computer en sla dit op, bijvoorbeeld *test.txt*.
+2. Klik in de web-app op **Bestanden selecteren en uploaden**.
+3. Blader naar het testbestand en selecteer **Openen**. De status geeft aan dat het bestand is geüpload en dat de lijst met bestanden is opgehaald.
 4. Selecteer in de Azure-portal de naam van de nieuwe container die u eerder hebt gemaakt. Controleer of het testbestand wordt weergegeven.
 
 #### <a name="step-3---delete-the-blob"></a>Stap 3 - De blob verwijderen
 
 1. Selecteer in de web-app onder **Bestanden** het testbestand.
-2. Selecteer **Geselecteerde bestanden verwijderen** . De status geeft aan dat het bestand is verwijderd en dat de container geen bestanden bevat.
+2. Selecteer **Geselecteerde bestanden verwijderen**. De status geeft aan dat het bestand is verwijderd en dat de container geen bestanden bevat.
 3. Selecteer **Vernieuwen** in de Azure-portal. Controleer of **Geen blobs gevonden** kunt zien.
 
 #### <a name="step-4---delete-the-container"></a>Stap 4 - De container verwijderen
 
-1. Selecteer in de web-app **Container verwijderen** . De status geeft aan dat een container is verwijderd.
+1. Selecteer in de web-app **Container verwijderen**. De status geeft aan dat een container is verwijderd.
 2. Selecteer in Azure Portal de koppeling **\<account-name\> | Containers** linksboven in het portaldeelvenster.
-3. Selecteer **Vernieuwen** . De nieuwe container verdwijnt.
+3. Selecteer **Vernieuwen**. De nieuwe container verdwijnt.
 4. Sluit de web-app.
 
 ### <a name="clean-up-resources"></a>Resources opschonen

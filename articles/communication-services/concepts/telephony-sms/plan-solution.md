@@ -29,7 +29,7 @@ Met Azure Communication Services kunt u telefoonnummers gebruiken om gesprekken 
 
 ## <a name="phone-number-types-in-azure-communication-services"></a>Typen telefoonnummers in Azure Communication Services
  
-Communication Services biedt twee soorten telefoonnummers: **lokaal** en **gratis** . 
+Communication Services biedt twee soorten telefoonnummers: **lokaal** en **gratis**. 
 
 ### <a name="local-numbers"></a>Lokale nummers
 Lokale (geografische) nummers zijn 10-cijferige telefoonnummers die bestaan uit de lokale netnummers in de Verenigde Staten. `+1 (206) XXX-XXXX` is bijvoorbeeld een lokaal nummer met het netnummer `206`. Dit netnummer is toegewezen aan de stad Seattle. Deze telefoonnummers worden doorgaans gebruikt door individuen en lokale bedrijven. Azure Communication Services biedt lokale nummers in de Verenigde Staten. Deze nummers kunnen worden gebruikt om te bellen, maar niet om sms-berichten te verzenden. 
@@ -48,7 +48,7 @@ In de volgende tabel vindt u een overzicht van deze typen telefoonnummers:
 | Type telefoonnummer | Voorbeeld                              | Beschikbaarheid land    | Mogelijkheid van telefoonnummer |Algemeen scenario                                                                                                     |
 | ----------------- | ------------------------------------ | ----------------------- | ------------------------|------------------------------------------------------------------------------------------------------------------- |
 | Lokaal (geografisch)        | +1 (lokaal netnummer) XXX XX XX  | VS                      | Oproepen (uitgaand) | Telefoonnummers toewijzen aan gebruikers in uw toepassingen  |
-| Gratis         | \+ 1 (gratis *netnummer* ) XXX XX XX | VS                      | Oproepen (uitgaand), sms (inkomend/uitgaand)| Het toewijzen van telefoonnummers aan IVR-systemen (Interactive Voice Response)/bots, sms-toepassingen                                        |
+| Gratis         | \+ 1 (gratis *netnummer*) XXX XX XX | VS                      | Oproepen (uitgaand), sms (inkomend/uitgaand)| Het toewijzen van telefoonnummers aan IVR-systemen (Interactive Voice Response)/bots, sms-toepassingen                                        |
 
 
 ## <a name="phone-number-features-in-azure-communication-services"></a>Functies voor telefoonnummers in Azure Communication Services 

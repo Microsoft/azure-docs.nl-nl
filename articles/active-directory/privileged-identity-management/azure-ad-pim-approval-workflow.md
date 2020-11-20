@@ -16,12 +16,12 @@ ms.date: 02/07/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4778ce5efcd6145447c194eaab34bc230bcbe34c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d74a243ab10d0fffca960dc5149999560a7b54cd
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371542"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980583"
 ---
 # <a name="approve-or-deny-requests-for-azure-ad-roles-in-privileged-identity-management"></a>Aanvragen voor Azure AD-rollen in Privileged Identity Management goed keuren of weigeren
 
@@ -38,9 +38,9 @@ Vanaf november 2019 wordt het gedeelte van de Azure AD-functies van Privileged I
 
 Volg de stappen in dit artikel voor het goed keuren of weigeren van aanvragen voor Azure AD-rollen.
 
-# <a name="new-version"></a>[Nieuwe versie](#tab/new)
+## <a name="new-version"></a>[Nieuwe versie](#tab/new)
 
-## <a name="view-pending-requests"></a>Aanvragen in behandeling weergeven
+### <a name="view-pending-requests"></a>Aanvragen in behandeling weergeven
 
 Als gedelegeerde fiatteur ontvangt u een e-mail melding wanneer een Azure AD-toepassingsrol in afwachting is van uw goed keuring. U kunt deze aanvragen in behandeling bekijken in Privileged Identity Management.
 
@@ -54,7 +54,7 @@ Als gedelegeerde fiatteur ontvangt u een e-mail melding wanneer een Azure AD-toe
 
     In de sectie **aanvragen voor functie activeringen** ziet u een lijst met aanvragen die wachten op uw goed keuring.
 
-## <a name="approve-requests"></a>Aanvragen goedkeuren
+### <a name="approve-requests"></a>Aanvragen goedkeuren
 
 1. Zoek en selecteer de aanvraag die u wilt goed keuren. Er wordt een pagina goed keuren of weigeren weer gegeven.
 
@@ -66,7 +66,7 @@ Als gedelegeerde fiatteur ontvangt u een e-mail melding wanneer een Azure AD-toe
 
     ![Melding goed keuren met een aanvraag is goedgekeurd](./media/pim-resource-roles-approval-workflow/resources-approve-pane.png))
 
-## <a name="deny-requests"></a>Aanvragen weigeren
+### <a name="deny-requests"></a>Aanvragen weigeren
 
 1. Zoek en selecteer de aanvraag die u wilt weigeren. Er wordt een pagina goed keuren of weigeren weer gegeven.
 
@@ -76,7 +76,7 @@ Als gedelegeerde fiatteur ontvangt u een e-mail melding wanneer een Azure AD-toe
 
 1. Selecteer **weigeren**. Er wordt een melding weer gegeven met uw weigering.
 
-## <a name="workflow-notifications"></a>Workflowmeldingen
+### <a name="workflow-notifications"></a>Workflowmeldingen
 
 Hier vindt u informatie over werk stroom meldingen:
 
@@ -88,9 +88,9 @@ Hier vindt u informatie over werk stroom meldingen:
 >[!NOTE]
 >Een globale beheerder of een bevoegde beheerdersrol die meent dat een goedgekeurde gebruiker niet actief mag zijn, kan de toewijzing van de actieve rol in Privileged Identity Management verwijderen. Hoewel beheerders niet op de hoogte worden gesteld van aanvragen die in behandeling zijn, tenzij ze een goed keurder zijn, kunnen ze alle openstaande aanvragen voor alle gebruikers weer geven en annuleren door in behandeling zijnde aanvragen in Privileged Identity Management weer te geven.
 
-# <a name="previous-version"></a>[Vorige versie](#tab/previous)
+## <a name="previous-version"></a>[Vorige versie](#tab/previous)
 
-## <a name="view-pending-requests"></a>Aanvragen in behandeling weergeven
+### <a name="view-pending-requests"></a>Aanvragen in behandeling weergeven
 
 Als gedelegeerde fiatteur ontvangt u een e-mail melding wanneer een Azure AD-toepassingsrol in afwachting is van uw goed keuring. U kunt deze aanvragen in behandeling bekijken in Privileged Identity Management.
 
@@ -106,7 +106,7 @@ Als gedelegeerde fiatteur ontvangt u een e-mail melding wanneer een Azure AD-toe
 
     U ziet een lijst met aanvragen die in afwachting zijn van uw goed keuring.
 
-## <a name="approve-requests"></a>Aanvragen goedkeuren
+### <a name="approve-requests"></a>Aanvragen goedkeuren
 
 1. Selecteer de aanvragen die u wilt goed keuren en klik vervolgens op **goed keuren** om het deel venster geselecteerde aanvragen goed keuren te openen.
 
@@ -122,7 +122,7 @@ Als gedelegeerde fiatteur ontvangt u een e-mail melding wanneer een Azure AD-toe
 
     ![Deel venster geselecteerde aanvragen goed keuren na goed keuren op knop](./media/azure-ad-pim-approval-workflow/pim-approve-status.png)
 
-## <a name="deny-requests"></a>Aanvragen weigeren
+### <a name="deny-requests"></a>Aanvragen weigeren
 
 1. Selecteer de aanvragen die u wilt weigeren en klik vervolgens op **weigeren** om het deel venster geselecteerde aanvragen weigeren te openen.
 

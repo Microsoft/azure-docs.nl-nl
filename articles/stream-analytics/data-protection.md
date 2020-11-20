@@ -6,12 +6,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/23/2020
-ms.openlocfilehash: e823322803958f092cee3b6d77e6a0ca7bc6e3f2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 72566987068729efef4310ce145c30584c4895b0
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93074247"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980504"
 ---
 # <a name="data-protection-in-azure-stream-analytics"></a>Gegevens beveiliging in Azure Stream Analytics 
 
@@ -61,19 +61,19 @@ Gebruik de volgende stappen om uw opslag account te configureren voor privé geg
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
-1. Selecteer in de linkerbovenhoek van Azure Portal **Een resource maken** . 
+1. Selecteer in de linkerbovenhoek van Azure Portal **Een resource maken**. 
 
 1. Selecteer **analyse**   >  **Stream Analytics taak**   in de lijst met resultaten. 
 
 1. Vul de pagina Stream Analytics-taak in met de benodigde gegevens, zoals naam, regio en schaal. 
 
-1. Schakel het selectie vakje in dat alle privé gegevensassets die *nodig zijn voor deze taak in mijn opslag account beveiligd* .
+1. Schakel het selectie vakje in dat alle privé gegevensassets die *nodig zijn voor deze taak in mijn opslag account beveiligd*.
 
 1. Selecteer een opslag account in uw abonnement. Houd er rekening mee dat deze instelling tijdens de levens cyclus van de taak niet kan worden gewijzigd. 
 
    ![Instellingen voor het opslag account voor privé gegevens](./media/data-protection/storage-account-create.png)
 
-## <a name="private-data-assets-that-are-stored"></a>Privé gegevens assets die zijn opgeslagen
+## <a name="private-data-assets-that-are-stored-by-stream-analytics"></a>Privé gegevensassets die zijn opgeslagen door Stream Analytics
 
 Persoonlijke gegevens die door Stream Analytics moeten worden bewaard, worden opgeslagen in uw opslag account. Voor beelden van persoonlijke gegevens assets zijn: 
 

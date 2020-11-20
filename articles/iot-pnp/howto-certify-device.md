@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.custom: mvc, devx-track-azurecli
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: b20dab7719e4c55c5868032db3178bb7baaddda0
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 7aa84336a3d71349c127ad15a90af98ffe2133fe
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748474"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980232"
 ---
 # <a name="how-to-certify-iot-plug-and-play-devices"></a>IoT Plug en Play-apparaten certificeren
 
@@ -44,6 +44,10 @@ Om aan de certificerings vereisten te voldoen, moet uw apparaat:
 - Publiceer het model en alle vereiste interfaces in de [opslag plaats van het open bare Azure IOT-model](https://devicemodels.azureiotsolutions.com/)
 - De model-ID verzenden tijdens de [registratie van DPS](concepts-developer-guide-device-csharp.md#dps-payload) in de nettolading van de DPS-inrichting.
 - De model-ID tijdens de [MQTT-verbinding](concepts-developer-guide-device-csharp.md#model-id-announcement)aankondigen.
+- Alle modellen van apparaten moeten compatibel zijn met [Azure IOT Central](https://aka.ms/pnp-iotc-getstarted).
+
+> [!NOTE]
+> Op dit moment ondersteunt Azure IoT Central de gegevens typen **matrix** en **georuimtelijke** DTDL niet volledig.
 
 ## <a name="test-with-the-azure-iot-extension-cli"></a>Testen met de Azure IoT-extensie-CLI
 
@@ -182,7 +186,7 @@ De gegevens van het bedrijfs profiel worden gebruikt in de beschrijving van het 
 
 Als u een apparaat wilt certificeren, moet u eerst een nieuw project maken.
 
-Navigeer naar de [certificerings Portal](https://aka.ms/acdp). Selecteer op de pagina **projecten** *+ Nieuw project maken* . Voer vervolgens een naam in voor het project, de naam van het apparaat en selecteer een apparaatklasse.
+Navigeer naar de [certificerings Portal](https://aka.ms/acdp). Selecteer op de pagina **projecten** *+ Nieuw project maken*. Voer vervolgens een naam in voor het project, de naam van het apparaat en selecteer een apparaatklasse.
 
 De product gegevens die u tijdens het certificerings proces opgeeft, worden in vier categorieën onderverdeeld:
 

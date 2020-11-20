@@ -97,7 +97,7 @@ Zodra het gegevensschema is geladen en wordt weergegeven zoals hieronder, select
 |**Negeren**     | De geselecteerde kolom negeren.        |         |
 
 
-:::image type="content" source="../media/schema-configuration.png" alt-text="Verbindingsinstellingen" lightbox="../media/schema-configuration.png":::
+:::image type="content" source="../media/schema-configuration.png" alt-text="Schemaconfiguratie" lightbox="../media/schema-configuration.png":::
 
 ### <a name="automatic-roll-up-settings"></a>Instellingen voor automatisch verzamelen
 
@@ -117,7 +117,7 @@ Na de detectie kunt u klikken op de metrische gegevens in de feed om de **detail
 - Detectieconfiguratie bijwerken om de verwachte resultaten te verkrijgen
 - Melding voor gedetecteerde anomalieën instellen
 
-:::image type="content" source="../media/metric-details.png" alt-text="Verbindingsinstellingen" lightbox="../media/metric-details.png":::
+:::image type="content" source="../media/metric-details.png" alt-text="Details van metrische gegevens" lightbox="../media/metric-details.png":::
 
 ## <a name="view-the-diagnostic-insights"></a>De diagnostische inzichten weergeven
 
@@ -125,13 +125,13 @@ Na het afstemmen van de detectieconfiguratie moeten gevonden anomalieën overeen
 
 Als u de diagnostische inzichten wilt weergeven, klikt u op de rode puntjes in de visualisaties van de tijdreeks. Deze rode puntjes vertegenwoordigen de gedetecteerde anomalieën. Er wordt een venster weergegeven met een koppeling naar de incidentanalysepagina. 
 
-:::image type="content" source="../media/incident-link.png" alt-text="Verbindingsinstellingen" lightbox="../media/incident-link.png":::
+:::image type="content" source="../media/incident-link.png" alt-text="Koppeling naar incident" lightbox="../media/incident-link.png":::
 
 Als u op de koppeling klikt, wordt u gedraaid naar de incidentanalysepagina voor analyse van de betreffende anomalie, met een aantal diagnose-inzichten. Bovenaan ziet u statistische informatie over het incident, zoals de **ernst**, **betrokken anomalieën** en de betreffende **begin-** en **eindtijd**. 
 
 Vervolgens ziet u de bovenliggende anomalie van het incident en het automatische advies voor de hoofdoorzaak. Dit automatische advies voor de hoofdoorzaak wordt gegenereerd op basis van een analyse van de incidentstructuur van alle gerelateerde anomalieën, waaronder de afwijking, de distributie en de bijdrage aan de bovenliggende anomalieën. 
 
-:::image type="content" source="../media/incident-diagnostic.png" alt-text="Verbindingsinstellingen" lightbox="../media/incident-diagnostic.png":::
+:::image type="content" source="../media/incident-diagnostic.png" alt-text="Diagnostische gegevens voor incident" lightbox="../media/incident-diagnostic.png":::
 
 Op basis hiervan kunt u al een duidelijk beeld krijgen van wat er gebeurt, de impact van het incident, en de meest waarschijnlijke hoofdoorzaak. Zo kan er direct actie worden ondernomen om het incident zo spoedig mogelijk op te lossen. 
 

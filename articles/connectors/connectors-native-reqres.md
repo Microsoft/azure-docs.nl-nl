@@ -5,14 +5,14 @@ services: logic-apps
 ms.suite: integration
 ms.reviewers: jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 08/27/2020
+ms.date: 11/19/2020
 tags: connectors
-ms.openlocfilehash: c0e8743d78c8eeafb5bdeb6ade783d5e75991f91
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: b8f95e7e173dd6d1ad43301aab8ff3ec7cf78018
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94330985"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980997"
 ---
 # <a name="receive-and-respond-to-inbound-https-requests-in-azure-logic-apps"></a>Inkomende HTTPS-aanvragen ontvangen en erop reageren in Azure Logic Apps
 
@@ -56,8 +56,8 @@ Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte 
 
    | Naam van eigenschap | JSON-eigenschaps naam | Vereist | Beschrijving |
    |---------------|--------------------|----------|-------------|
-   | **HTTP POST-URL** | geen | Yes | De eind punt-URL die wordt gegenereerd na het opslaan van de logische app en wordt gebruikt voor het aanroepen van uw logische app |
-   | **JSON-schema van aanvraag tekst** | `schema` | No | Het JSON-schema dat de eigenschappen en waarden in de hoofd tekst van de binnenkomende aanvraag beschrijft |
+   | **HTTP POST-URL** | geen | Ja | De eind punt-URL die wordt gegenereerd na het opslaan van de logische app en wordt gebruikt voor het aanroepen van uw logische app |
+   | **JSON-schema van aanvraag tekst** | `schema` | Nee | Het JSON-schema dat de eigenschappen en waarden in de hoofd tekst van de binnenkomende aanvraag beschrijft |
    |||||
 
 1. Voer desgewenst in het vak **JSON-schema van aanvraag tekst** een JSON-schema in dat de hoofd tekst in de binnenkomende aanvraag beschrijft, bijvoorbeeld:
@@ -153,7 +153,7 @@ Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte 
 
 1. Voer de volgende stappen uit om te controleren of de inkomende oproep een aanvraag tekst heeft die overeenkomt met het opgegeven schema:
 
-   1. Selecteer de knop met weglatings tekens ( **...** ) in de titel balk van de trigger voor de aanvraag.
+   1. Selecteer de knop met weglatings tekens (**...**) in de titel balk van de trigger voor de aanvraag.
 
    1. Schakel in de instellingen van de trigger **schema validatie** in en selecteer **gereed**.
 
@@ -163,8 +163,8 @@ Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte 
 
    | Naam van eigenschap | JSON-eigenschaps naam | Vereist | Beschrijving |
    |---------------|--------------------|----------|-------------|
-   | **Methode** | `method` | No | De methode die de inkomende aanvraag moet gebruiken om de logische app aan te roepen |
-   | **Relatief pad** | `relativePath` | No | Het relatieve pad voor de para meter die door de eind punt-URL van de logische app kan worden geaccepteerd |
+   | **Methode** | `method` | Nee | De methode die de inkomende aanvraag moet gebruiken om de logische app aan te roepen |
+   | **Relatief pad** | `relativePath` | Nee | Het relatieve pad voor de para meter die door de eind punt-URL van de logische app kan worden geaccepteerd |
    |||||
 
    In dit voor beeld wordt de eigenschap **Method** toegevoegd:
@@ -190,9 +190,9 @@ Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte 
    > [!NOTE]
    > Als u het hash-of hekje-symbool ( **#** ) in de URI wilt opnemen bij het aanroepen van de aanvraag trigger, gebruikt u in plaats daarvan deze gecodeerde versie: `%25%23`
 
-1. Als u uw logische app wilt activeren, verzendt u een HTTP POST naar de gegenereerde URL.
+1. Als u uw logische app wilt testen, verzendt u een HTTP-aanvraag naar de gegenereerde URL.
 
-   U kunt bijvoorbeeld een hulp programma zoals [postman](https://www.getpostman.com/) gebruiken om het HTTP-bericht te verzenden. Voor meer informatie over de onderliggende JSON-definitie van de trigger en hoe u deze trigger aanroept, raadpleegt u deze onderwerpen, [type aanvraag trigger](../logic-apps/logic-apps-workflow-actions-triggers.md#request-trigger) en [aanroepen, activeren of nesten van werk stromen met http-eind punten in azure Logic apps](../logic-apps/logic-apps-http-endpoint.md).
+   U kunt bijvoorbeeld een hulp programma zoals [postman](https://www.getpostman.com/) gebruiken om de HTTP-aanvraag te verzenden. Voor meer informatie over de onderliggende JSON-definitie van de trigger en hoe u deze trigger aanroept, raadpleegt u deze onderwerpen, [type aanvraag trigger](../logic-apps/logic-apps-workflow-actions-triggers.md#request-trigger) en [aanroepen, activeren of nesten van werk stromen met http-eind punten in azure Logic apps](../logic-apps/logic-apps-http-endpoint.md).
 
 Voor meer informatie over beveiliging, autorisatie en versleuteling voor inkomende oproepen naar uw logische app, zoals [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security), voorheen bekend als Secure Sockets Layer (SSL), [Azure Active Directory open verificatie (Azure AD OAuth)](../active-directory/develop/index.yml), uw logische app weer geven met Azure API Management of het beperken van de IP-adressen die afkomstig zijn van binnenkomende oproepen, Zie [beveiligde toegang en gegevens toegang voor inkomende oproepen op op aanvragen gebaseerde triggers](../logic-apps/logic-apps-securing-a-logic-app.md#secure-inbound-requests).
 
@@ -233,7 +233,7 @@ Wanneer u de aanvraag trigger gebruikt voor het verwerken van inkomende aanvrage
 
    Als u een actie tussen de stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen deze stappen. Selecteer het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen**.
 
-1. Onder **Kies een actie** , typt `response` u als filter in het zoekvak en selecteert u de **reactie** actie.
+1. Onder **Kies een actie**, typt `response` u als filter in het zoekvak en selecteert u de **reactie** actie.
 
    ![De reactie actie selecteren](./media/connectors-native-reqres/select-response-action.png)
 
@@ -255,9 +255,9 @@ Wanneer u de aanvraag trigger gebruikt voor het verwerken van inkomende aanvrage
 
    | Naam van eigenschap | JSON-eigenschaps naam | Vereist | Beschrijving |
    |---------------|--------------------|----------|-------------|
-   | **Status code** | `statusCode` | Yes | De status code die in het antwoord moet worden geretourneerd |
-   | **Kopteksten** | `headers` | No | Een JSON-object dat een of meer headers beschrijft die in het antwoord moeten worden meegenomen |
-   | **Hoofdtekst** | `body` | No | De antwoord tekst |
+   | **Status code** | `statusCode` | Ja | De status code die in het antwoord moet worden geretourneerd |
+   | **Kopteksten** | `headers` | Nee | Een JSON-object dat een of meer headers beschrijft die in het antwoord moeten worden meegenomen |
+   | **Hoofdtekst** | `body` | Nee | De antwoord tekst |
    |||||
 
 1. Als u aanvullende eigenschappen, zoals een JSON-schema voor de antwoord tekst, wilt opgeven, opent u de lijst **nieuwe para meter toevoegen** en selecteert u de para meters die u wilt toevoegen.

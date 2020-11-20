@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 11/03/2020
+ms.date: 11/18/2020
 ms.custom: generated
-ms.openlocfilehash: cf8c8e7d56f4eff351361edd148f91e81a07bfbb
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: ceb1aea1edcc4916fdd802673c3145b12de01801
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649140"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980912"
 ---
 # <a name="azure-resource-provider-operations"></a>Azure-resource provider bewerkingen
 
@@ -843,6 +843,7 @@ Azure-service: [Application Gateway](../application-gateway/index.yml), [azure B
 > | Micro soft. Network/azureFirewalls/networkRuleCollections/lezen | Hiermee wordt Azure Firewall NetworkRuleCollection |
 > | Micro soft. Network/azureFirewalls/networkRuleCollections/schrijven | CreatesOrUpdates Azure Firewall NetworkRuleCollection |
 > | Micro soft. Network/azureFirewalls/networkRuleCollections/verwijderen | Hiermee verwijdert u Azure Firewall NetworkRuleCollection |
+> | Micro soft. Network/azureWebCategories/lezen | Hiermee worden Azure-webcategorieën opgehaald |
 > | Micro soft. Network/bastionHosts/lezen | Hiermee wordt een bastion-host opgehaald |
 > | Micro soft. Network/bastionHosts/schrijven | Een bastion-host maken of bijwerken |
 > | Micro soft. Network/bastionHosts/verwijderen | Hiermee wordt een bastion-host verwijderd |
@@ -1242,6 +1243,8 @@ Azure-service: [Application Gateway](../application-gateway/index.yml), [azure B
 > | Micro soft. Network/virtualHubs/bgpConnections/lezen | Hiermee wordt een hub BGP-verbinding met een onderliggende bron van de virtuele hub opgehaald |
 > | Micro soft. Network/virtualHubs/bgpConnections/schrijven | Hiermee wordt een hub BGP-verbinding met een virtuele hub gemaakt of bijgewerkt |
 > | Micro soft. Network/virtualHubs/bgpConnections/verwijderen | Hiermee wordt een hub BGP-verbinding met een onderliggende bron van de virtuele hub verwijderd |
+> | Micro soft. Network/virtualHubs/bgpConnections/advertisedRoutes/Action | Hiermee worden virtualrouter geadverteerde routes opgehaald |
+> | Micro soft. Network/virtualHubs/bgpConnections/learnedRoutes/Action | Hiermee worden virtualrouter geleerde routes opgehaald |
 > | Micro soft. Network/virtualHubs/hubRouteTables/lezen | Hiermee wordt een onderliggende bron van een route tabel van de virtuele hub opgehaald |
 > | Micro soft. Network/virtualHubs/hubRouteTables/schrijven | Hiermee wordt een onderliggende bron van een route tabel gemaakt of bijgewerkt |
 > | Micro soft. Network/virtualHubs/hubRouteTables/verwijderen | Hiermee wordt een onderliggende bron van een route tabel van de virtuele hub verwijderd |
@@ -1329,6 +1332,9 @@ Azure-service: [Application Gateway](../application-gateway/index.yml), [azure B
 > | micro soft. Network/vpngateways/startpacketcapture/Action | De opname van het VPN-gateway pakket starten met de resource |
 > | micro soft. Network/vpngateways/stoppacketcapture/Action | Vastleggen van VPN-gateway pakket stoppen met sasURL |
 > | micro soft. Network/vpngateways/listvpnconnectionshealth/Action | Hiermee wordt de status van de verbinding voor alle of een subset van verbindingen op een VpnGateway |
+> | micro soft. Network/vpnGateways/natRules/lezen | Hiermee wordt een NAT-regel Resource opgehaald |
+> | micro soft. Network/vpnGateways/natRules/schrijven | Hiermee wordt een NAT-regel Resource geplaatst |
+> | micro soft. Network/vpnGateways/natRules/verwijderen | Hiermee wordt een NAT-regel resource verwijderd |
 > | micro soft. Network/vpnGateways/vpnConnections/lezen | Hiermee wordt een VpnConnection opgehaald. |
 > | micro soft. Network/vpnGateways/vpnConnections/schrijven | Hiermee wordt een VpnConnection geplaatst. |
 > | micro soft. Network/vpnGateways/vpnConnections/verwijderen | Hiermee verwijdert u een VpnConnection. |
@@ -1934,6 +1940,9 @@ Azure-service: [Azure Maps](../azure-maps/index.yml)
 > | Micro soft. Maps/accounts/verwijderen | Een Maps-account verwijderen. |
 > | Micro soft. Maps/accounts/Listkeys ophalen/actie | Lijst met account sleutels voor kaarten. |
 > | Micro soft. Maps/accounts/regenerateKey/actie | Genereer een nieuw Maps-account primair of secundair. |
+> | Micro soft. Maps/accounts/makers/schrijven | Een Creator maken of bijwerken. |
+> | Micro soft. Maps/accounts/makers/lezen | Maak een maker. |
+> | Micro soft. Maps/accounts/makers/verwijderen | Een Creator verwijderen. |
 > | Micro soft. Maps/accounts/eventGridFilters/verwijderen | Een Event Grid filter verwijderen. |
 > | Micro soft. Maps/accounts/eventGridFilters/lezen | Een Event Grid filter ophalen |
 > | Micro soft. Maps/accounts/eventGridFilters/schrijven | Een Event Grid filter maken of bijwerken. |
@@ -2103,6 +2112,7 @@ Azure-service: [Azure signalerings service](../azure-signalr/index.yml)
 > | Micro soft. SignalRService/locaties/checknameavailability/actie | Hiermee wordt gecontroleerd of een naam beschikbaar is voor gebruik met een nieuwe signalerings service |
 > | Micro soft. SignalRService/locations/operationresults/Signaler/Read | Query uitvoeren op het resultaat van een op locatie gebaseerde asynchrone bewerking |
 > | Micro soft. SignalRService/locaties/operationStatuses/operationId/lezen | De status van een op locatie gebaseerde asynchrone bewerking opvragen |
+> | Micro soft. SignalRService/locations/operationStatuses/Signaler/Read | De status van een op locatie gebaseerde asynchrone bewerking opvragen |
 > | Micro soft. SignalRService/locaties/gebruik/lezen | Het quotum gebruik voor de Azure signalerings service ophalen |
 > | Micro soft. SignalRService/operationresults/lezen | Query uitvoeren op het resultaat van een asynchrone bewerking op Provider niveau |
 > | Micro soft. SignalRService/Operations/lezen | De bewerkingen voor de Azure signalerings service weer geven. |
@@ -2610,6 +2620,7 @@ Azure-service: [app service](../app-service/index.yml), [Azure functions](../azu
 > | Micro soft. Web/staticSites/getuser/actie | De gegevens van een gebruiker voor een statische site ophalen |
 > | Micro soft. Web/staticSites/listsecrets/actie | De geheimen voor een statische site weer geven |
 > | Micro soft. Web/staticSites/resetapikey/actie | De API-sleutel voor een statische site opnieuw instellen |
+> | Micro soft. Web/staticSites/zipdeploy/actie | Een statische site implementeren vanuit gezipte inhoud |
 > | Micro soft. Web/staticSites/authproviders/listusers/actie | De gebruikers voor een statische site weer geven |
 > | Micro soft. Web/staticSites/authproviders/gebruikers/verwijderen | Een gebruiker voor een statische site verwijderen |
 > | Micro soft. Web/staticSites/authproviders/gebruikers/schrijven | Een gebruiker voor een statische site bijwerken |
@@ -2617,6 +2628,7 @@ Azure-service: [app service](../app-service/index.yml), [Azure functions](../azu
 > | Micro soft. Web/staticSites/bouwen/verwijderen | Een build voor een statische site verwijderen |
 > | Micro soft. Web/staticSites/builds/listfunctionappsettings/actie | Functie-app-instellingen voor een statische site-build weer geven |
 > | Micro soft. Web/staticSites/builds/listappsettings/actie | App-instellingen voor een statische site-build weer geven |
+> | Micro soft. Web/staticSites/builds/zipdeploy/actie | Een statische site-build implementeren vanuit gezipte inhoud |
 > | Micro soft. Web/staticSites/builds/config/schrijven | App-instellingen voor een statische site-build maken of bijwerken |
 > | Micro soft. Web/staticSites/config/schrijven | App-instellingen voor een statische site maken of bijwerken |
 > | Micro soft. Web/staticSites/customdomains/schrijven | Een aangepast domein maken voor een statische site |
@@ -3931,6 +3943,8 @@ Azure-service: [Azure SQL database](../azure-sql/database/index.yml), Azure [SQL
 > | Micro soft. SQL/locaties/serverAdministratorOperationResults/lezen | Resultaten van de beheer bewerking van de server Azure Active Directory |
 > | Micro soft. SQL/locaties/serverKeyAzureAsyncOperation/lezen | Hiermee worden bewerkingen uitgevoerd op de transparante server sleutels voor gegevens versleuteling |
 > | Micro soft. SQL/locaties/serverKeyOperationResults/lezen | Hiermee worden bewerkingen uitgevoerd op de transparante server sleutels voor gegevens versleuteling |
+> | Micro soft. SQL/locaties/serverTrustGroupAzureAsyncOperation/lezen | De status van de asynchrone bewerking voor de server vertrouwens groep ophalen |
+> | Micro soft. SQL/locaties/serverTrustGroupOperationResults/lezen | Het resultaat van de bewerking voor de vertrouwens groep van de server ophalen |
 > | Micro soft. SQL/locaties/serverTrustGroups/schrijven | Hiermee maakt u een vertrouwens groep voor servers met de opgegeven para meters |
 > | Micro soft. SQL/locaties/serverTrustGroups/verwijderen | Hiermee wordt de bestaande vertrouwens groep van SQL Server verwijderd |
 > | Micro soft. SQL/locaties/serverTrustGroups/lezen | Retourneert de bestaande SQL Server-vertrouwens groepen |
@@ -3946,12 +3960,12 @@ Azure-service: [Azure SQL database](../azure-sql/database/index.yml), Azure [SQL
 > | Micro soft. SQL/locaties/virtualNetworkRulesAzureAsyncOperation/lezen | Retourneert de details van de opgegeven virtuele netwerk regels Azure async-bewerking  |
 > | Micro soft. SQL/locaties/virtualNetworkRulesOperationResults/lezen | Hiermee worden de details van de opgegeven bewerking voor virtuele netwerk regels geretourneerd  |
 > | Micro soft. SQL/managedInstances/tdeCertificates/actie | TDE-certificaat maken/bijwerken |
-> | Micro soft. SQL/managedInstances/joinServerTrustGroup/actie | Bepalen of de gebruiker lid mag worden van de server vertrouwens groep |
+> | Micro soft. SQL/managedInstances/failover/actie | Door de klant geïnitieerde failover van het beheerde exemplaar. |
+> | Micro soft. SQL/managedInstances/joinServerTrustGroup/actie | Bepalen of een gebruiker een beheerde server mag toevoegen aan een server vertrouwens groep |
 > | Micro soft. SQL/managedInstances/export/Action | Systeem database en SMK-sleutel exporteren |
 > | Micro soft. SQL/managedInstances/lezen | De lijst met beheerde exemplaren retour neren of de eigenschappen van het opgegeven beheerde exemplaar ophalen. |
 > | Micro soft. SQL/managedInstances/schrijven | Hiermee maakt u een beheerd exemplaar met de opgegeven para meters of werkt u de eigenschappen of labels voor het opgegeven beheerde exemplaar bij. |
 > | Micro soft. SQL/managedInstances/verwijderen | Hiermee verwijdert u een bestaand beheerd exemplaar. |
-> | Micro soft. SQL/managedInstances/failover/actie | Door de klant geïnitieerde failover van het beheerde exemplaar. |
 > | Micro soft. SQL/managedInstances/beheerders/lezen | Hiermee wordt een lijst met beheerders van beheerde instanties opgehaald. |
 > | Micro soft. SQL/managedInstances/beheerders/schrijven | Hiermee wordt een beheerde exemplaar beheerder met de opgegeven para meters gemaakt of bijgewerkt. |
 > | Micro soft. SQL/managedInstances/beheerders/verwijderen | Hiermee verwijdert u een bestaande beheerder van het beheerde exemplaar. |
@@ -4100,11 +4114,11 @@ Azure-service: [Azure SQL database](../azure-sql/database/index.yml), Azure [SQL
 > | Micro soft. SQL/servers/data bases/dataMaskingPolicies/Rules/Delete | Beleids regel voor gegevens maskering voor een bepaalde data base verwijderen |
 > | Micro soft. SQL/servers/data bases/dataWarehouseQueries/lezen | Retourneert de gegevens van de distributie query van het Data Warehouse voor de geselecteerde query-ID |
 > | Micro soft. SQL/servers/data bases/dataWarehouseQueries/dataWarehouseQuerySteps/lezen | Retourneert de stap gegevens van de gedistribueerde query van de Data Warehouse-query voor de geselecteerde stap-ID |
-> | Micro soft. SQL/servers/data bases/dataWarehouseUserActivities/lezen | Hiermee worden de gebruikers activiteiten opgehaald van een toegewezen SQL-groep in azure Synapse Analytics, waaronder actieve en onderbroken query's |
+> | Micro soft. SQL/servers/data bases/dataWarehouseUserActivities/lezen | Hiermee worden de gebruikers activiteiten opgehaald van een SQL Data Warehouse-exemplaar dat actieve en onderbroken query's bevat |
 > | Micro soft. SQL/servers/data bases/extendedAuditingSettings/lezen | Details ophalen van het uitgebreide BLOB-controle beleid dat is geconfigureerd voor een bepaalde data base |
 > | Micro soft. SQL/servers/data bases/extendedAuditingSettings/schrijven | Het uitgebreide BLOB-controle beleid voor een bepaalde data base wijzigen |
-> | Micro soft. SQL/servers/data bases/uitbrei dingen/lezen | Hiermee wordt een verzameling extensies opgehaald voor de data base. |
-> | Micro soft. SQL/servers/data bases/extensies/schrijven | De extensie voor een bepaalde data base wijzigen |
+> | Micro soft. SQL/servers/data bases/extensies/schrijven | Hiermee wordt een bewerking voor database extensie uitgevoerd. |
+> | Micro soft. SQL/servers/data bases/uitbrei dingen/lezen | Bewerking data base-extensies ophalen. |
 > | Micro soft. SQL/servers/data bases/Extensions/importExtensionOperationResults/lezen | Hiermee worden import bewerkingen in uitvoering uitgevoerd |
 > | Micro soft. SQL/servers/data bases/geoBackupPolicies/lezen | Geografisch back-upbeleid voor een bepaalde data base ophalen |
 > | Micro soft. SQL/servers/data bases/geoBackupPolicies/schrijven | Een beleid voor geoback-ups van de data base maken of bijwerken |
@@ -5140,6 +5154,7 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/TextAnalytics/entities/actie | De API retourneert een lijst met bekende entiteiten en algemene benoemde entiteiten ( \" persoon \" , \" locatie \" , \" organisatie \" enz.) in een bepaald document. |
 > | Micro soft. CognitiveServices/accounts/TextAnalytics/woordgroepen/actie | De API retourneert een lijst met teken reeksen die de sleutel pratende punten in de invoer tekst identificeren. |
 > | Micro soft. CognitiveServices/accounts/TextAnalytics/sentiment/actie | De API retourneert een numerieke score tussen 0 en 1.<br>Scores dicht bij 1 wijzen op een positief gevoel, terwijl scores dicht bij 0 een negatief gevoel aangeven.<br>Een Score van 0,5 geeft het gebrek aan sentiment aan (bijvoorbeeld<br>een factoid-instructie). |
+> | Micro soft. CognitiveServices/accounts/TextAnalytics/analyseren/actie | Een verzameling tekst documenten verzenden voor analyse. Geef een of meer unieke taken op die moeten worden uitgevoerd. |
 > | Micro soft. CognitiveServices/accounts/TextTranslation/detecteren/actie | Hiermee wordt de taal van een stuk tekst bepaald. |
 > | Micro soft. CognitiveServices/accounts/TextTranslation/breaksentence/actie | Hiermee wordt de positie van zinnen in een stuk tekst bepaald. |
 > | Micro soft. CognitiveServices/accounts/TextTranslation/vertalen/actie | Vertaalt tekst. |
@@ -5501,24 +5516,24 @@ Azure-service: [Notification hubs](../notification-hubs/index.yml)
 > | Micro soft. notification hubs/naam ruimten/CheckNotificationHubAvailability/actie | Hiermee wordt gecontroleerd of een opgegeven NotificationHub-naam beschikbaar is in een naam ruimte. |
 > | Micro soft. notification hubs/naam ruimten/authorizationRules/schrijven | Maak autorisatie regels voor het naam ruimte niveau en werk de eigenschappen bij. De toegangs rechten voor de autorisatie regels, de primaire en secundaire sleutels kunnen worden bijgewerkt. |
 > | Micro soft. notification hubs/naam ruimten/authorizationRules/lezen | De lijst met beschrijvingen van autorisatie regels voor naam ruimten ophalen. |
-> | Micro soft. notification hubs/naam ruimten/authorizationRules/verwijderen | Naam ruimte autorisatie regel verwijderen. De standaard regel voor autorisatie van de naam ruimte kan niet worden verwijderd.  |
+> | Micro soft. notification hubs/naam ruimten/authorizationRules/verwijderen | Naam ruimte autorisatie regel verwijderen. De standaard regel voor autorisatie van de naam ruimte kan niet worden verwijderd. |
 > | Micro soft. notification hubs/naam ruimten/authorizationRules/listkeys ophalen/actie | De verbindings reeks ophalen voor de naam ruimte |
 > | Micro soft. notification hubs/naam ruimten/authorizationRules/regenerateKeys/actie | Regel voor naam ruimte autorisatie primaire/secundaire sleutel opnieuw genereren, de sleutel opgeven die opnieuw moet worden gegenereerd |
-> | Micro soft. notification hubs/naam ruimten/diagnosticSettings/lezen | Lijst met resource beschrijvingen voor Diagnostische instellingen van naam ruimte ophalen |
-> | Micro soft. notification hubs/naam ruimten/diagnosticSettings/schrijven | Lijst met resource beschrijvingen voor Diagnostische instellingen van naam ruimte ophalen |
-> | Micro soft. notification hubs/naam ruimten/logDefinitions/lezen | Lijst met naam ruimte logboek bron beschrijvingen ophalen |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/schrijven | Een notification hub maken en de eigenschappen ervan bijwerken. De eigenschappen omvatten voornamelijk PNS-referenties. Autorisatie regels en TTL |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/lezen | Lijst met resource beschrijvingen voor notification hub ophalen |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/verwijderen | Resource voor notification hub verwijderen |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/authorizationRules/actie | De lijst met autorisatie regels voor notification hub ophalen |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/pnsCredentials/actie | Alle PNS-referenties voor notification hub ophalen. Dit omvat, WNS, MPNS, APNS-, GCM-en Baidu-referenties |
-> | Micro soft. notification hubs/naam ruimten/notification hubs/debugSend/actie | Een test push melding verzenden. |
+> | Micro soft. notification hubs/naam ruimten/notification hubs/debugSend/actie | Een test push melding verzenden naar 10 overeenkomende apparaten. |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/authorizationRules/schrijven | Maak autorisatie regels voor de notification hub en werk de eigenschappen bij. De toegangs rechten voor de autorisatie regels, de primaire en secundaire sleutels kunnen worden bijgewerkt. |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/authorizationRules/lezen | De lijst met autorisatie regels voor notification hub ophalen |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/authorizationRules/verwijderen | Autorisatie regels voor notification hub verwijderen |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/authorizationRules/listkeys ophalen/actie | De verbindings reeks ophalen voor de notification hub |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/authorizationRules/regenerateKeys/actie | Verificatie regel voor notification hub opnieuw genereren primair/secundaire sleutel, de sleutel opgeven die opnieuw moet worden gegenereerd |
 > | Micro soft. notification hubs/naam ruimten/notification hubs/metricDefinitions/lezen | Lijst met resource beschrijvingen voor metrische gegevens van de naam ruimte ophalen |
+> | Micro soft. notification hubs/naam ruimten/providers/micro soft. Insights/diagnosticSettings/lezen | Diagnostische instellingen voor naam ruimte ophalen |
+> | Micro soft. notification hubs/naam ruimten/providers/micro soft. Insights/diagnosticSettings/schrijven | Diagnostische instellingen voor de naam ruimte maken of bijwerken |
+> | Micro soft. notification hubs/naam ruimten/providers/micro soft. Insights/logDefinitions/lezen | Hiermee worden de beschik bare logboeken opgehaald voor de naam ruimte |
 > | Micro soft. notification hubs/operationResults/lezen | Hiermee worden de bewerkings resultaten voor Notification Hubs provider geretourneerd |
 > | Micro soft. notification hubs/Operations/lezen | Hiermee wordt een lijst met ondersteunde bewerkingen voor Notification Hubs provider geretourneerd |
 
@@ -5566,7 +5581,25 @@ Azure-service: [ruimtelijke Azure-ankers](../spatial-anchors/index.yml)
 > | Bewerking | Beschrijving |
 > | --- | --- |
 > | Micro soft. MixedReality/REGI ster/actie | Registreert een abonnement voor de resource provider Mixed Reality. |
+> | Micro soft. MixedReality/registratie/actie | Hiermee wordt de registratie van een abonnement voor de resource provider Mixed Reality ongedaan gemaakt. |
+> | Micro soft. MixedReality/locaties/checknameavailability/lezen | Controleert op Beschik baarheid van naam |
+> | Micro soft. MixedReality/ObjectUnderstandingAccounts/verwijderen | Een object verwijderen wat het account is |
+> | Micro soft. MixedReality/ObjectUnderstandingAccounts/listkeys ophalen/Action | Een lijst met de sleutels voor een object dat het account begrijpt |
+> | Micro soft. MixedReality/ObjectUnderstandingAccounts/lezen | De eigenschappen lezen van een object dat het account begrijpt |
+> | Micro soft. MixedReality/ObjectUnderstandingAccounts/regeneratekeys/Action | De sleutels van een object dat het account begrijpt opnieuw genereren |
+> | Micro soft. MixedReality/ObjectUnderstandingAccounts/schrijven | De eigenschappen van een object bijwerken met het account |
+> | Micro soft. MixedReality/Operations/lezen | Beschik bare bewerkingen voor micro soft Mixed Reality weer geven |
+> | Micro soft. MixedReality/RemoteRenderingAccounts/verwijderen | Een externe rendering-account verwijderen |
+> | Micro soft. MixedReality/RemoteRenderingAccounts/listkeys ophalen/Action | Sleutels van een externe rendering-account weer geven |
+> | Micro soft. MixedReality/RemoteRenderingAccounts/lezen | De eigenschappen van een externe rendering-account lezen |
+> | Micro soft. MixedReality/RemoteRenderingAccounts/regeneratekeys/Action | De sleutels van een externe rendering-account opnieuw genereren |
+> | Micro soft. MixedReality/RemoteRenderingAccounts/schrijven | De eigenschappen van een externe rendering-account bijwerken |
+> | Micro soft. MixedReality/RemoteRenderingAccounts/sleutels/lezen | Sleutels van een externe rendering-account lezen |
 > | Micro soft. MixedReality/remoteRenderingAccounts/providers/micro soft. Insights/metricDefinitions/lezen | Hiermee worden de beschik bare metrische gegevens opgehaald voor micro soft. MixedReality/remoteRenderingAccounts |
+> | Micro soft. MixedReality/SpatialAnchorsAccounts/listkeys ophalen/Action | Lijst met sleutels van een ruimtelijk anker |
+> | Micro soft. MixedReality/SpatialAnchorsAccounts/lezen | De eigenschappen van een spatiale ankers-account lezen |
+> | Micro soft. MixedReality/SpatialAnchorsAccounts/regeneratekeys/Action | De sleutels van een ruimtelijk-anker account opnieuw genereren |
+> | Micro soft. MixedReality/SpatialAnchorsAccounts/sleutels/lezen | Sleutels van een ruimtelijk anker account lezen |
 > | Micro soft. MixedReality/spatialAnchorsAccounts/providers/micro soft. Insights/diagnosticSettings/lezen | Hiermee wordt de diagnostische instelling voor micro soft. MixedReality/spatialAnchorsAccounts opgehaald |
 > | Micro soft. MixedReality/spatialAnchorsAccounts/providers/micro soft. Insights/diagnosticSettings/schrijven | Hiermee wordt de diagnostische instelling voor micro soft. MixedReality/spatialAnchorsAccounts gemaakt of bijgewerkt |
 > | Micro soft. MixedReality/spatialAnchorsAccounts/providers/micro soft. Insights/metricDefinitions/lezen | Hiermee worden de beschik bare metrische gegevens opgehaald voor micro soft. MixedReality/spatialAnchorsAccounts |
@@ -5931,6 +5964,11 @@ Azure-service: [Azure stack Edge](../databox-online/azure-stack-edge-overview.md
 > | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/lezen | Hiermee worden de rollen weer gegeven of opgehaald |
 > | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/schrijven | Hiermee worden de rollen gemaakt of bijgewerkt |
 > | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/verwijderen | Hiermee worden de rollen verwijderd |
+> | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/addons/lezen | De ArmApiRes_addons weer geven of ophalen |
+> | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/addons/lezen | De ArmApiRes_addons weer geven of ophalen |
+> | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/addons/write | Hiermee worden de ArmApiRes_addons gemaakt of bijgewerkt |
+> | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/addons/verwijderen | Hiermee verwijdert u de ArmApiRes_addons |
+> | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/addons/operationResults/lezen | Het resultaat van de bewerking weer geven of ophalen |
 > | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/monitoringConfig/write | Hiermee wordt de bewakings configuratie gemaakt of bijgewerkt |
 > | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/monitoringConfig/verwijderen | Hiermee wordt de bewakings configuratie verwijderd |
 > | Micro soft. DataBoxEdge/dataBoxEdgeDevices/roles/monitoringConfig/lezen | Hiermee wordt de bewakings configuratie weer gegeven of opgehaald |
@@ -6543,65 +6581,65 @@ Azure-service: [Key Vault](../key-vault/index.yml)
 > | Micro soft. managedHSMs/verwijderen | Een beheerde HSM verwijderen |
 > | Micro soft. sleutel kluis/bewerkingen/lezen | Hiermee worden bewerkingen weer gegeven die beschikbaar zijn op micro soft. |
 > | Micro soft.-sleutel kluis/-kluizen/lezen | De eigenschappen van een sleutel kluis weer geven |
-> | Microsoft.KeyVault/vaults/write | Een nieuwe sleutel kluis maken of de eigenschappen van een bestaande sleutel kluis bijwerken |
-> | Micro soft.-sleutel kluis/-kluizen/verwijderen | Een sleutelkluis verwijderen |
+> | Microsoft.KeyVault/vaults/write | Hiermee maakt u een nieuwe sleutel kluis of werkt u de eigenschappen van een bestaande sleutel kluis bij. Voor bepaalde eigenschappen zijn mogelijk meer machtigingen nodig. |
+> | Micro soft.-sleutel kluis/-kluizen/verwijderen | Hiermee verwijdert u een sleutel kluis |
 > | Micro soft.-sleutel kluis/-kluizen/implementeren/actie | Hiermee wordt toegang tot geheimen in een sleutel kluis ingeschakeld bij het implementeren van Azure-resources |
-> | Micro soft. de sleutel kluis/kluizen/accessPolicies/schrijven | Een bestaand toegangs beleid bijwerken door samen te voegen of te vervangen of een nieuw toegangs beleid toe te voegen aan een kluis. |
+> | Micro soft. de sleutel kluis/kluizen/accessPolicies/schrijven | Hiermee wordt een bestaand toegangs beleid bijgewerkt door het samen voegen of vervangen van een nieuw toegangs beleid aan de sleutel kluis. |
 > | Micro soft. de sleutel kluis/kluizen/eventGridFilters/lezen | Hiermee wordt micro soft.-sleutel kluis geïnformeerd dat een EventGrid-abonnement voor Key Vault wordt weer gegeven |
 > | Micro soft. de sleutel kluis/kluizen/eventGridFilters/schrijven | Hiermee wordt micro soft.-sleutel kluis geïnformeerd dat er een nieuw EventGrid-abonnement voor Key Vault wordt gemaakt |
 > | Micro soft. sleutel kluis/kluizen/eventGridFilters/verwijderen | Hiermee wordt micro soft. EventGrid een melding verzonden dat een abonnement op Key Vault wordt verwijderd |
 > | Micro soft.-sleutel kluis/kluizen/sleutels/lezen | De sleutels in een opgegeven kluis weer geven of de huidige versie van een opgegeven sleutel lezen. |
-> | Micro soft.-sleutel kluis/kluizen/sleutels/schrijven | Maak een nieuwe sleutel of werk een bestaande sleutel bij. |
+> | Micro soft.-sleutel kluis/kluizen/sleutels/schrijven | Maakt de eerste versie van een nieuwe sleutel als deze niet bestaat. Als deze al bestaat, wordt de bestaande sleutel zonder enige wijziging geretourneerd. Met deze API worden geen latere versies gemaakt en worden bestaande sleutels niet bijgewerkt. |
 > | Micro soft. de sleutel kluis/kluizen/sleutels/versies/lezen | De versies van een opgegeven sleutel weer geven of de opgegeven versie van een sleutel lezen. |
 > | Micro soft.-sleutel kluis/kluizen/geheimen/lezen | De eigenschappen van een geheim weer geven, maar niet de waarde ervan. |
-> | Micro soft.-sleutel kluis/kluizen/geheimen/schrijven | Maak een nieuw geheim of werk de waarde van een bestaand geheim bij. |
+> | Micro soft.-sleutel kluis/kluizen/geheimen/schrijven | Hiermee maakt u een nieuw geheim of werkt u de waarde van een bestaand geheim bij. |
 > | **DataAction** | **Beschrijving** |
 > | Micro soft. sleutel kluis/kluizen/certificatecas/verwijderen | Certificaat uitgever verwijderen |
 > | Micro soft. de sleutel kluis/kluizen/certificatecas/lezen | Certificaat Uitgever lezen |
 > | Micro soft. de sleutel kluis/kluizen/certificatecas/schrijven | Certificaat Uitgever schrijven |
 > | Micro soft. de sleutel kluis/kluizen/certificatecontacts/schrijven | Certificaat contactpersoon beheren |
-> | Micro soft. de sleutel kluis/kluizen/certificaten/verwijderen | Een certificaat verwijderen. |
+> | Micro soft. de sleutel kluis/kluizen/certificaten/verwijderen | Hiermee verwijdert u een certificaat. Alle versies worden verwijderd. |
 > | Micro soft. de sleutel kluis/kluizen/certificaten/lezen | Certificaten in een opgegeven sleutel kluis weer geven of informatie over een certificaat ophalen. |
-> | Micro soft. sleutel kluis/kluizen/certificaten/back-up/actie | Maak het back-upbestand van een certificaat. Het bestand kan worden gebruikt om het certificaat te herstellen in een Key Vault van hetzelfde abonnement. Er kunnen beperkingen van toepassing zijn. |
+> | Micro soft. sleutel kluis/kluizen/certificaten/back-up/actie | Hiermee maakt u het back-upbestand van een certificaat. Het bestand kan worden gebruikt om het certificaat te herstellen in een Key Vault van hetzelfde abonnement. Er kunnen beperkingen van toepassing zijn. |
 > | Micro soft. sleutel kluis/kluizen/certificaten/opschonen/actie | Hiermee wordt een certificaat verwijderd, waardoor het niet meer kan worden hersteld. |
 > | Micro soft. sleutel kluis/kluizen/certificaten/bijwerken/actie | Hiermee worden de opgegeven kenmerken bijgewerkt die zijn gekoppeld aan het opgegeven certificaat. |
-> | Micro soft. sleutel kluis/kluizen/certificaten/maken/actie | Hiermee maakt u een nieuw certificaat. |
-> | Micro soft. sleutel kluis/kluizen/certificaten/importeren/actie | Hiermee wordt een bestaand geldig certificaat met een persoonlijke sleutel geïmporteerd in Azure Key Vault. Het certificaat dat moet worden geïmporteerd, kan de indeling PFX of PEM hebben. |
+> | Micro soft. sleutel kluis/kluizen/certificaten/maken/actie | Hiermee maakt u een nieuw certificaat. Als het certificaat niet bestaat, wordt de eerste versie gemaakt. Anders wordt een nieuwe versie gemaakt. |
+> | Micro soft. sleutel kluis/kluizen/certificaten/importeren/actie | Hiermee wordt een bestaand geldig certificaat met een persoonlijke sleutel geïmporteerd.<br>Het certificaat dat moet worden geïmporteerd, kan de indeling PFX of PEM hebben.<br>Als het certificaat niet aanwezig is in Key Vault, wordt de eerste versie gemaakt met opgegeven inhoud.<br>Anders wordt een nieuwe versie gemaakt met opgegeven inhoud. |
 > | Micro soft. sleutel kluis/kluizen/certificaten/herstellen/actie | Herstelt het verwijderde certificaat. Met deze bewerking wordt de omkering van de Verwijder bewerking uitgevoerd. De bewerking is van toepassing in kluizen die zijn ingeschakeld voor zacht verwijderen en moet worden verleend tijdens de Bewaar periode. |
-> | Micro soft. sleutel kluis/kluizen/certificaten/herstellen/actie | Hiermee herstelt u een back-up van het certificaat en alle versies ervan naar een kluis. |
+> | Micro soft. sleutel kluis/kluizen/certificaten/herstellen/actie | Hiermee herstelt u een certificaat en alle versies van een back-upbestand dat is gegenereerd door Key Vault. |
 > | Micro soft.-sleutel kluis/kluizen/sleutels/lezen | Lijst met sleutels in de opgegeven kluis of lees de eigenschappen en het open bare materiaal van een sleutel.<br>Voor asymmetrische sleutels wordt met deze bewerking de open bare sleutel beschikbaar gemaakt en is de mogelijkheid om open bare sleutel algoritmen uit te voeren, zoals versleutelen en hand tekeningen controleren.<br>Persoonlijke sleutels en symmetrische sleutels worden nooit weer gegeven. |
 > | Micro soft.-sleutel kluis/kluizen/sleutels/bijwerken/actie | Hiermee worden de opgegeven kenmerken bijgewerkt die zijn gekoppeld aan de opgegeven sleutel. |
-> | Micro soft. sleutel kluis/kluizen/sleutels/maken/actie | Hiermee maakt u een nieuwe sleutel. |
-> | Micro soft. sleutel kluis/kluizen/sleutels/importeren/actie | Hiermee wordt een extern gemaakte sleutel geïmporteerd, opgeslagen en worden de belangrijkste para meters en kenmerken naar de client geretourneerd. |
+> | Micro soft. sleutel kluis/kluizen/sleutels/maken/actie | Hiermee maakt u een nieuwe sleutel. Als de sleutel niet bestaat, wordt de eerste versie gemaakt. Anders wordt een nieuwe versie gemaakt met de opgegeven waarde. |
+> | Micro soft. sleutel kluis/kluizen/sleutels/importeren/actie | Hiermee wordt een extern gemaakte sleutel geïmporteerd. Als de sleutel niet bestaat, wordt de eerste versie gemaakt met het geïmporteerde materiaal. Anders wordt een nieuwe versie gemaakt met het geïmporteerde materiaal. |
 > | Micro soft. sleutel kluis/kluizen/sleutels/herstellen/actie | Herstelt de verwijderde sleutel. Met deze bewerking wordt de omkering van de Verwijder bewerking uitgevoerd. De bewerking is van toepassing in kluizen die zijn ingeschakeld voor zacht verwijderen en moet worden verleend tijdens de Bewaar periode. |
-> | Micro soft. sleutel kluis/kluizen/sleutels/herstellen/actie | Hiermee herstelt u een back-upsleutel en alle versies ervan naar een kluis. |
-> | Micro soft. sleutel kluis/kluizen/sleutels/verwijderen | Een sleutel verwijderen. |
-> | Micro soft.-sleutel kluis/kluizen/sleutels/back-up/actie | Maak het back-upbestand van een sleutel. Het bestand kan worden gebruikt om de sleutel te herstellen in een Key Vault van hetzelfde abonnement. Er kunnen beperkingen van toepassing zijn. |
+> | Micro soft. sleutel kluis/kluizen/sleutels/herstellen/actie | Hiermee herstelt u een sleutel en alle versies van een back-upbestand dat is gegenereerd door Key Vault. |
+> | Micro soft. sleutel kluis/kluizen/sleutels/verwijderen | Hiermee verwijdert u een sleutel. Alle versies worden verwijderd. |
+> | Micro soft.-sleutel kluis/kluizen/sleutels/back-up/actie | Hiermee maakt u het back-upbestand van een sleutel. Het bestand kan worden gebruikt om de sleutel te herstellen in een Key Vault van hetzelfde abonnement. Er kunnen beperkingen van toepassing zijn. |
 > | Micro soft. sleutel kluis/kluizen/sleutels/leegmaken/actie | Hiermee verwijdert u een sleutel, waardoor deze niet meer kan worden hersteld. |
-> | Micro soft.-sleutel kluis/kluizen/sleutels/versleutelen/actie | Versleutelen van Lees bare tekst met een sleutel. Houd er rekening mee dat als de sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
+> | Micro soft.-sleutel kluis/kluizen/sleutels/versleutelen/actie | Versleutelt de Lees bare tekst met een sleutel. Houd er rekening mee dat als de sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
 > | Micro soft. de sleutel kluis/kluizen/sleutels/ontsleutelen/actie | Ontsleutelen van gecodeerde tekst met een sleutel. |
-> | Micro soft.-sleutel kluis/kluizen/sleutels/terugloop/actie | Een symmetrische sleutel inpakken met een Key Vault sleutel. Houd er rekening mee dat als de Key Vault sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd met lees toegang. |
-> | Micro soft.-sleutel kluis/kluizen/sleutels/uitpakken/actie | Pak een symmetrische sleutel uit met een Key Vault sleutel. |
-> | Micro soft.-sleutel kluis/kluizen/sleutels/ondertekenen/actie | Een hash ondertekenen met een sleutel. |
-> | Micro soft. sleutel kluis/kluizen/sleutels/controleren/actie | Verifieer een hash. Houd er rekening mee dat als de sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
-> | Micro soft.-sleutel kluis/kluizen/geheimen/verwijderen | Verwijder een geheim. |
-> | Micro soft. de sleutel kluis/kluizen/geheimen/back-up/actie | Maak het back-upbestand van een geheim. Het bestand kan worden gebruikt om het geheim te herstellen in een Key Vault van hetzelfde abonnement. Er kunnen beperkingen van toepassing zijn. |
+> | Micro soft.-sleutel kluis/kluizen/sleutels/terugloop/actie | Pakt een symmetrische sleutel met een Key Vault sleutel. Houd er rekening mee dat als de Key Vault sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
+> | Micro soft.-sleutel kluis/kluizen/sleutels/uitpakken/actie | Pakt een symmetrische sleutel met een Key Vault sleutel. |
+> | Micro soft.-sleutel kluis/kluizen/sleutels/ondertekenen/actie | Een Message Digest (hash) ondertekent met een sleutel. |
+> | Micro soft. sleutel kluis/kluizen/sleutels/controleren/actie | Verifieert de hand tekening van een Message Digest (hash) met een sleutel. Houd er rekening mee dat als de sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
+> | Micro soft.-sleutel kluis/kluizen/geheimen/verwijderen | Hiermee verwijdert u een geheim. Alle versies worden verwijderd. |
+> | Micro soft. de sleutel kluis/kluizen/geheimen/back-up/actie | Hiermee maakt u het back-upbestand van een geheim. Het bestand kan worden gebruikt om het geheim te herstellen in een Key Vault van hetzelfde abonnement. Er kunnen beperkingen van toepassing zijn. |
 > | Micro soft.-sleutel kluis/-kluizen/geheimen/opschonen/actie | Hiermee wordt een geheim gewist waardoor het niet kan worden hersteld. |
 > | Micro soft.-sleutel kluis/kluizen/geheimen/updates/actie | Hiermee worden de opgegeven kenmerken bijgewerkt die zijn gekoppeld aan het opgegeven geheim. |
 > | Micro soft. sleutel kluis/kluizen/geheimen/herstellen/actie | Hiermee herstelt u het verwijderde geheim. Met deze bewerking wordt de omkering van de Verwijder bewerking uitgevoerd. De bewerking is van toepassing in kluizen die zijn ingeschakeld voor zacht verwijderen en moet worden verleend tijdens de Bewaar periode. |
-> | Micro soft. sleutel kluis/kluizen/geheimen/herstellen/actie | Hiermee herstelt u een back-up van het geheim en alle versies ervan naar een kluis. |
+> | Micro soft. sleutel kluis/kluizen/geheimen/herstellen/actie | Hiermee herstelt u een geheim en alle versies van een back-upbestand dat is gegenereerd door Key Vault. |
 > | Micro soft.-sleutel kluis/kluizen/geheimen/readMetadata/actie | De eigenschappen van een geheim weer geven of bekijken, maar niet de bijbehorende waarde. |
-> | Micro soft.-sleutel kluis/kluizen/geheimen/getSecret/actie | Haal de waarde van een geheim op. |
-> | Micro soft.-sleutel kluis/kluizen/geheimen/setSecret/actie | Nieuw geheim maken. |
+> | Micro soft.-sleutel kluis/kluizen/geheimen/getSecret/actie | Hiermee wordt de waarde van een geheim opgehaald. |
+> | Micro soft.-sleutel kluis/kluizen/geheimen/setSecret/actie | Hiermee stelt u de waarde van een geheim in. Als het geheim niet bestaat, wordt de eerste versie gemaakt. Anders wordt een nieuwe versie gemaakt met de opgegeven waarde. |
 > | Micro soft. de sleutel kluis/kluizen/Storage accounts/lezen | Lees de definitie van beheerde opslag accounts en SA'S. |
-> | Micro soft. de sleutel kluis/kluizen/Storage accounts/set/Action | De definitie van een beheerd opslag account maken of bijwerken. |
+> | Micro soft. de sleutel kluis/kluizen/Storage accounts/set/Action | Hiermee wordt de definitie van een beheerd opslag account gemaakt of bijgewerkt. |
 > | Micro soft. sleutel kluis/kluizen/Storage accounts/verwijderen | De definitie van een beheerd opslag account verwijderen. |
-> | Micro soft.-sleutel kluis/-kluizen/Storage accounts/back-up/actie | Maak een back-up van de definitie van een beheerd opslag account en de bijbehorende SA'S (Shared Access Signature). |
+> | Micro soft.-sleutel kluis/-kluizen/Storage accounts/back-up/actie | Hiermee maakt u een back-upbestand van de definitie van een beheerd opslag account en de bijbehorende SA'S (Shared Access Signature). |
 > | Micro soft. sleutel kluis/kluizen/Storage accounts/opschonen/actie | De voorlopig verwijderde definitie van een beheerd opslag account of SAS (Shared Access Signature) opschonen. |
 > | Micro soft. sleutel kluis/kluizen/Storage accounts/regeneratekey/actie | Genereer de toegangs sleutel van een beheerd opslag account opnieuw. |
 > | Micro soft.-sleutel kluis/-kluizen/Storage accounts/herstellen/actie | De voorlopig verwijderde definitie van een beheerd opslag account of SAS (Shared Access Signature) herstellen. |
-> | Micro soft.-sleutel kluis/-kluizen/Storage accounts/herstellen/actie | Hiermee herstelt u de definitie van een beheerd opslag account en de bijbehorende SA'S (Shared Access Signature). |
-> | Micro soft. de sleutel kluis/kluizen/Storage accounts/SAS/set/Action | De SAS (Shared Access Signature)-definitie voor een beheerd opslag account maken of bijwerken. |
+> | Micro soft.-sleutel kluis/-kluizen/Storage accounts/herstellen/actie | Hiermee wordt de definitie van een beheerd opslag account en de bijbehorende SAS (Shared Access Signature) hersteld uit een back-upbestand dat door Key Vault wordt gegenereerd. |
+> | Micro soft. de sleutel kluis/kluizen/Storage accounts/SAS/set/Action | Hiermee wordt de SAS (Shared Access Signature)-definitie voor een beheerd opslag account gemaakt of bijgewerkt. |
 > | Micro soft.-sleutel kluis/-kluizen/Storage accounts/SAS/verwijderen | De SAS (Shared Access Signature)-definitie voor een beheerd opslag account verwijderen. |
 
 ### <a name="microsoftsecurity"></a>Microsoft.Security
@@ -6618,6 +6656,9 @@ Azure-service: [Security Center](../security-center/index.yml)
 > | Micro soft. Security/advancedThreatProtectionSettings/lezen | Hiermee worden de geavanceerde instellingen voor bedreigings beveiliging voor de resource opgehaald |
 > | Micro soft. Security/advancedThreatProtectionSettings/schrijven | Hiermee worden de geavanceerde instellingen voor bedreigings beveiliging voor de resource bijgewerkt |
 > | Micro soft. Security/Alerts/lezen | Hiermee worden alle beschik bare beveiligings waarschuwingen opgehaald |
+> | Micro soft. Security/alertsSuppressionRules/lezen | Hiermee wordt alle beschik bare onderdrukkings regel voor beveiligings waarschuwing opgehaald |
+> | Micro soft. Security/alertsSuppressionRules/schrijven | Hiermee maakt u een nieuwe onderdrukkings regel voor beveiligings waarschuwingen of werkt u een bestaande regel bij |
+> | Micro soft. Security/alertsSuppressionRules/verwijderen | Een regel voor het onderdrukken van beveiligings waarschuwingen verwijderen |
 > | Micro soft. Security/applicationWhitelistings/lezen | Hiermee wordt de toepassing allowlistings |
 > | Micro soft. Security/applicationWhitelistings/schrijven | Hiermee maakt u een nieuwe allowlisting of werkt u een bestaande toepassing bij. |
 > | Micro soft. Security/assessmentMetadata/lezen | Beschik bare meta gegevens van beveiligings beoordeling voor uw abonnement ophalen |
@@ -6651,6 +6692,8 @@ Azure-service: [Security Center](../security-center/index.yml)
 > | Micro soft. Security/locaties/waarschuwingen/lezen | Hiermee worden alle beschik bare beveiligings waarschuwingen opgehaald |
 > | Micro soft. beveiliging/locaties/waarschuwingen/sluiten/actie | Een beveiligings waarschuwing negeren |
 > | Micro soft. beveiliging/locaties/waarschuwingen/activeren/actie | Een beveiligings waarschuwing activeren |
+> | Micro soft. beveiliging/locaties/waarschuwingen/oplossen/actie | Een beveiligings waarschuwing oplossen |
+> | Micro soft. beveiliging/locaties/waarschuwingen/simuleren/actie | Een beveiligings waarschuwing simuleren |
 > | Micro soft. Security/locaties/jitNetworkAccessPolicies/lezen | Hiermee wordt het just-in-time-netwerk toegangs beleid opgehaald |
 > | Micro soft. Security/locations/jitNetworkAccessPolicies/write | Hiermee maakt u een nieuw just-in-time-netwerk toegangsbeleid of wordt een bestaand beleid bijgewerkt |
 > | Micro soft. Security/locaties/jitNetworkAccessPolicies/verwijderen | Hiermee wordt het just-in-time-netwerk toegangs beleid verwijderd |
@@ -6665,6 +6708,10 @@ Azure-service: [Security Center](../security-center/index.yml)
 > | Micro soft. Security/prijzen/lezen | Hiermee worden de prijs instellingen voor de scope opgehaald |
 > | Micro soft. Security/prijzen/schrijven | Hiermee worden de prijs instellingen voor de scope bijgewerkt |
 > | Micro soft. Security/prijzen/verwijderen | Hiermee worden de prijs instellingen voor de scope verwijderd |
+> | Micro soft. Security/secureScoreControlDefinitions/lezen | Definitie van beveiligde Score besturing ophalen |
+> | Micro soft. Security/secureScoreControls/lezen | Berekende controle van beveiligde scores voor uw abonnement ophalen |
+> | Micro soft. Security/secureScores/lezen | Berekende beveiligde score voor uw abonnement ophalen |
+> | Micro soft. Security/secureScores/secureScoreControls/lezen | Berekende beveiligde Score-controle voor de berekening van de veilige Score ophalen |
 > | Micro soft. Security/securityContacts/lezen | Hiermee wordt de Security-contact persoon opgehaald |
 > | Micro soft. Security/securityContacts/schrijven | Hiermee wordt de beveiligings contactpersoon bijgewerkt |
 > | Micro soft. Security/securityContacts/verwijderen | Hiermee wordt de contact persoon beveiliging verwijderd |
@@ -6676,6 +6723,12 @@ Azure-service: [Security Center](../security-center/index.yml)
 > | Micro soft. Security/securityStatusesSummaries/lezen | Hiermee worden de samen vattingen van de beveiligings status van het bereik opgehaald |
 > | Micro soft. Security/Settings/lezen | Hiermee worden de instellingen voor het bereik opgehaald |
 > | Micro soft. Security/Settings/write | Hiermee worden de instellingen voor de scope bijgewerkt |
+> | Micro soft. Security/sqlVulnerabilityAssessments/baselineRules/Action | Voeg een lijst met regels resultaat toe aan de basis lijn. |
+> | Micro soft. Security/sqlVulnerabilityAssessments/baselineRules/lezen | De basis lijn van de data base retour neren (alle regels die zijn toegevoegd aan de basis lijn) of een regel basislijn resultaten ophalen voor de opgegeven regel-ID. |
+> | Micro soft. Security/sqlVulnerabilityAssessments/baselineRules/schrijven | Het resultaat van de regel basislijn wijzigen. |
+> | Micro soft. Security/sqlVulnerabilityAssessments/baselineRules/verwijderen | Het regel resultaat verwijderen uit de basis lijn. |
+> | Micro soft. Security/sqlVulnerabilityAssessments/scans/lezen | De lijst met controle records voor evaluatie van beveiligings problemen retour neren of de scan record ophalen voor de opgegeven scan-ID. |
+> | Micro soft. Security/sqlVulnerabilityAssessments/scans/scanResults/lezen | De lijst met resultaten van evaluatie van beveiligings problemen retour neren of het regel resultaat ophalen voor de opgegeven regel-ID. |
 > | Micro soft. Security/tasks/lezen | Hiermee worden alle beschik bare beveiligings aanbevelingen opgehaald |
 > | Micro soft. Security/webApplicationFirewalls/lezen | Hiermee worden de firewalls voor webtoepassingen opgehaald |
 > | Micro soft. Security/webApplicationFirewalls/schrijven | Hiermee wordt een nieuwe Web Application Firewall gemaakt of een bestaande bijgewerkt |
@@ -6732,7 +6785,8 @@ Azure-service: [Azure Sentinel](../sentinel/index.yml)
 > | Micro soft. SecurityInsights/dataConnectors/schrijven | Hiermee wordt een gegevens connector bijgewerkt |
 > | Micro soft. SecurityInsights/dataConnectors/verwijderen | Hiermee verwijdert u een gegevens connector |
 > | Micro soft. SecurityInsights/entities/lezen | Hiermee wordt de grafiek van de verklikker entiteiten opgehaald |
-> | Micro soft. SecurityInsights/entities/tijd lijn/actie | Hiermee wordt de entiteits tijdlijn voor een specifiek bereik opgehaald |
+> | Micro soft. SecurityInsights/entities/getTimeline/actie | Hiermee wordt de entiteits tijdlijn voor een specifiek bereik opgehaald |
+> | Micro soft. SecurityInsights/entities/getInsights/actie | Hiermee wordt de entiteits inzichten voor een specifiek bereik opgehaald |
 > | Micro soft. SecurityInsights/entities/relaties/lezen | Hiermee wordt een relatie tussen de entiteit en gerelateerde resources opgehaald |
 > | Micro soft. SecurityInsights/entities/relaties/schrijven | Hiermee wordt een relatie tussen de entiteit en gerelateerde resources bijgewerkt |
 > | Micro soft. SecurityInsights/entities/relaties/verwijderen | Hiermee verwijdert u een relatie tussen de entiteit en gerelateerde resources |
@@ -6976,7 +7030,7 @@ Azure-service: [Azure DevOps](/azure/devops/)
 > | Micro soft. Visual Studio/project/verwijderen | Project verwijderen |
 > | Micro soft. Visual Studio/project/lezen | Project lezen |
 
-## <a name="migrate"></a>Migrate
+## <a name="migrate"></a>Migreren
 
 ### <a name="microsoftmigrate"></a>Micro soft. migrate
 
@@ -7436,7 +7490,7 @@ Azure-service: [Azure migrate](../migrate/migrate-services-overview.md)
 > | Micro soft. OffAzure/VMwareSites/vCenter/lezen | Hiermee worden de eigenschappen van een VMware vCenter opgehaald |
 > | Micro soft. OffAzure/VMwareSites/vCenter/write | Hiermee wordt de VMware vCenter gemaakt of bijgewerkt |
 
-## <a name="monitor"></a>Monitor
+## <a name="monitor"></a>Controleren
 
 ### <a name="microsoftalertsmanagement"></a>Micro soft. AlertsManagement
 
@@ -8699,6 +8753,7 @@ Azure-service: [Cost Management en facturering](../cost-management-billing/index
 > | Micro soft. facturering/billingAccounts/billingSubscriptions/lezen |  |
 > | Micro soft. facturering/billingAccounts/billingSubscriptions/verplaatsen/actie |  |
 > | Micro soft. facturering/billingAccounts/billingSubscriptions/validateMoveEligibility/actie |  |
+> | Micro soft. facturering/billingAccounts/billingSubscriptions/downloadDocuments/actie | Factuur downloaden met Download koppeling uit lijst |
 > | Micro soft. facturering/billingAccounts/klanten/lezen |  |
 > | Micro soft. billing/billingAccounts/klanten/billingPermissions/lezen |  |
 > | Micro soft. facturering/billingAccounts/afdelingen/lezen |  |
@@ -8712,7 +8767,6 @@ Azure-service: [Cost Management en facturering](../cost-management-billing/index
 > | Micro soft. facturering/billingAccounts/producten/verplaatsen/actie |  |
 > | Micro soft. billing/billingAccounts/Products/validateMoveEligibility/Action |  |
 > | Micro soft. facturering/afdelingen/lezen |  |
-> | Micro soft. facturering/facturen/downloaden/actie | Factuur downloaden met Download koppeling uit lijst |
 > | Micro soft. facturering/facturen/downloaden/actie | Factuur downloaden met Download koppeling uit lijst |
 > | Micro soft. facturering/bewerkingen/lezen |  |
 
@@ -9338,69 +9392,76 @@ Azure-service: [site Recovery](../site-recovery/index.yml)
 > | Bewerking | Beschrijving |
 > | --- | --- |
 > | Micro soft. Recovery Services/REGI ster/actie | Hiermee wordt een abonnement geregistreerd voor een bepaalde resource provider |
-> | Micro soft. Recovery Services/locaties/backupPreValidateProtection/actie |  |
-> | Micro soft. Recovery Services/locaties/backupStatus/actie | De back-upstatus voor Recovery Services kluizen controleren |
-> | Micro soft. Recovery Services/locaties/backupValidateFeatures/actie | Functies valideren |
+> | micro soft. Recovery Services/locaties/backupPreValidateProtection/actie |  |
+> | micro soft. Recovery Services/locaties/backupStatus/actie | De back-upstatus voor Recovery Services kluizen controleren |
+> | micro soft. Recovery Services/locaties/backupValidateFeatures/actie | Functies valideren |
 > | Micro soft. Recovery Services/locaties/Allo Cate Stamp/actie | Allo Cate Stamp is een interne bewerking die wordt gebruikt door de service |
 > | Micro soft. Recovery Services/locaties/checkNameAvailability/actie | De beschik baarheid van resource namen controleren is een API om te controleren of de resource naam beschikbaar is |
 > | Micro soft. Recovery Services/locaties/allocatedStamp/lezen | GetAllocatedStamp is een interne bewerking die wordt gebruikt door de service |
-> | Micro soft. Recovery Services/locaties/backupProtectedItem/schrijven | Een beveiligd back-upitem maken |
-> | Micro soft. Recovery Services/locaties/backupProtectedItems/lezen | Hiermee wordt de lijst met alle beveiligde items geretourneerd. |
+> | micro soft. Recovery Services/locaties/backupProtectedItem/schrijven | Een beveiligd back-upitem maken |
+> | micro soft. Recovery Services/locaties/backupProtectedItems/lezen | Hiermee wordt de lijst met alle beveiligde items geretourneerd. |
 > | Micro soft. Recovery Services/locaties/operationStatus/lezen | Hiermee wordt de bewerkings status voor een bepaalde bewerking opgehaald |
 > | Micro soft. Recovery Services/Operations/lezen | Met deze bewerking wordt de lijst met bewerkingen voor een resource provider geretourneerd |
-> | Micro soft. Recovery Services/kluizen/backupJobsExport/actie | Taken exporteren |
-> | Micro soft. Recovery Services/kluizen/backupSecurityPIN/actie | Retourneert informatie over de beveiligings pincode voor Recovery Services kluis. |
-> | Micro soft. Recovery Services/kluizen/backupValidateOperation/actie | Bewerking voor beveiligd item valideren |
+> | micro soft. Recovery Services/kluizen/backupCrossRegionRestore/actie | Herstel punten voor beveiligde items voor meerdere regio's herstellen. |
+> | micro soft. Recovery Services/kluizen/backupCrrJob/actie | Taak Details voor het herstellen van meerdere regio's in de secundaire regio voor Recovery Services kluis ophalen. |
+> | micro soft. Recovery Services/kluizen/backupCrrJobs/actie | Lijst met herstel taken voor meerdere regio's in de secundaire regio voor Recovery Services kluis. |
+> | micro soft. Recovery Services/kluizen/backupJobsExport/actie | Taken exporteren |
+> | micro soft. Recovery Services/kluizen/backupSecurityPIN/actie | Retourneert informatie over de beveiligings pincode voor Recovery Services kluis. |
+> | micro soft. Recovery Services/kluizen/backupValidateOperation/actie | Bewerking voor beveiligd item valideren |
 > | Micro soft. Recovery Services/kluizen/schrijven | Met een kluis bewerking maken wordt een Azure-resource van het type ' kluis ' gemaakt. |
 > | Micro soft. Recovery Services/kluizen/lezen | Met de bewerking kluis ophalen wordt een object opgehaald dat de Azure-resource van het type ' kluis ' vertegenwoordigt. |
 > | Micro soft. Recovery Services/kluizen/verwijderen | Met de bewerking kluis verwijderen wordt de opgegeven Azure-resource van het type kluis verwijderd |
-> | Micro soft. Recovery Services/kluizen/backupconfig/lezen | Hiermee wordt de configuratie voor Recovery Services kluis geretourneerd. |
-> | Micro soft. Recovery Services/kluizen/backupconfig/schrijven | Hiermee wordt de configuratie van Recovery Services-kluis bijgewerkt. |
-> | Micro soft. Recovery Services/kluizen/backupEncryptionConfigs/lezen | Hiermee wordt de versleutelings configuratie voor back-ups opgehaald. |
-> | Micro soft. Recovery Services/kluizen/backupEncryptionConfigs/schrijven | Configuratie van back-upbron versleuteling |
-> | Micro soft. Recovery Services/kluizen/backupEngines/lezen | Retourneert alle back-upbeheerser vers die zijn geregistreerd bij de kluis. |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/refreshContainers/actie | Hiermee vernieuwt u de container lijst |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/backupProtectionIntent/verwijderen | Een opzet voor een back-upbeveiliging verwijderen |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/backupProtectionIntent/lezen | Een doel voor back-upbeveiliging verkrijgen |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/backupProtectionIntent/schrijven | Een doel voor back-upbeveiliging maken |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/operationResults/lezen | Hiermee wordt de status van de bewerking geretourneerd |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/operationsStatus/lezen | Hiermee wordt de status van de bewerking geretourneerd |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectableContainers/lezen | Alle Beveilig bare containers ophalen |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/verwijderen | Hiermee wordt de geregistreerde container verwijderd |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/query/Action | Een query uitvoeren voor werk belastingen binnen een container |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/lezen | Hiermee worden alle geregistreerde containers geretourneerd |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/schrijven | Hiermee maakt u een geregistreerde container |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/items/lezen | Alle items in een container ophalen |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/operationResults/lezen | Hiermee wordt het resultaat van de bewerking die is uitgevoerd op de beveiligings container opgehaald. |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/operationsStatus/lezen | Hiermee wordt de status opgehaald van de bewerking die is uitgevoerd op de beveiligings container. |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/backup/Action | Maakt een back-up voor het beveiligde item. |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/verwijderen | Hiermee wordt het beveiligde item verwijderd |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/lezen | Hiermee worden object gegevens van het beveiligde item geretourneerd |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/write | Een beveiligd back-upitem maken |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/operationResults/lezen | Hiermee wordt het resultaat van de bewerking die is uitgevoerd op beveiligde items opgehaald. |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/operationsStatus/lezen | Hiermee wordt de status geretourneerd van de bewerking die is uitgevoerd op beveiligde items. |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/recoveryPoints/provisionInstantItemRecovery/Action | Direct-item herstel inrichten voor beveiligd item |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/recoveryPoints/lezen | Herstel punten voor beveiligde items ophalen. |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/recoveryPoints/Restore/Action | Herstel punten voor beveiligde items herstellen. |
-> | Micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/recoveryPoints/revokeInstantItemRecovery/Action | Herstel van onmiddellijke items intrekken voor beveiligd item |
-> | Micro soft. Recovery Services/kluizen/backupJobs/annuleren/actie | De taak annuleren |
-> | Micro soft. Recovery Services/kluizen/backupJobs/lezen | Hiermee worden alle taak objecten geretourneerd |
-> | Micro soft. Recovery Services/kluizen/backupJobs/operationResults/lezen | Hiermee wordt het resultaat van de taak bewerking geretourneerd. |
-> | Micro soft. Recovery Services/kluizen/backupJobs/operationsStatus/lezen | Hiermee wordt de status van de taak bewerking geretourneerd. |
-> | Micro soft. Recovery Services/kluizen/backupOperationResults/lezen | Retourneert een back-upbewerkings resultaat voor Recovery Services kluis. |
-> | Micro soft. Recovery Services/kluizen/backupOperations/lezen | Hiermee wordt de status van de back-upbewerking voor Recovery Services kluis geretourneerd. |
-> | Micro soft. Recovery Services/kluizen/backupPolicies/verwijderen | Een beveiligings beleid verwijderen |
-> | Micro soft. Recovery Services/kluizen/backupPolicies/lezen | Hiermee worden alle beveiligings beleidsregels geretourneerd |
-> | Micro soft. Recovery Services/kluizen/backupPolicies/schrijven | Hiermee wordt een beveiligings beleid gemaakt |
-> | Micro soft. Recovery Services/kluizen/backupPolicies/operationResults/lezen | Resultaten van beleids bewerking ophalen. |
-> | Micro soft. Recovery Services/kluizen/backupPolicies/Operations/lezen | Status van beleids bewerking ophalen. |
-> | Micro soft. Recovery Services/kluizen/backupProtectableItems/lezen | Hiermee wordt een lijst met alle Beveilig bare items geretourneerd. |
-> | Micro soft. Recovery Services/kluizen/backupProtectedItems/lezen | Hiermee wordt de lijst met alle beveiligde items geretourneerd. |
-> | Micro soft. Recovery Services/kluizen/backupProtectionContainers/lezen | Hiermee worden alle containers van het abonnement geretourneerd |
-> | Micro soft. Recovery Services/kluizen/backupProtectionIntents/lezen | Alle intenties van de back-upbeveiliging weer geven |
-> | Micro soft. Recovery Services/kluizen/backupstorageconfig/lezen | Hiermee wordt de opslag configuratie voor Recovery Services kluis geretourneerd. |
-> | Micro soft. Recovery Services/kluizen/backupstorageconfig/schrijven | Hiermee wordt de opslag configuratie voor Recovery Services kluis bijgewerkt. |
-> | Micro soft. Recovery Services/kluizen/backupUsageSummaries/lezen | Retourneert samen vattingen voor beveiligde items en beveiligde servers voor een Recovery Services. |
+> | micro soft. Recovery Services/kluizen/backupAadProperties/lezen | Eigenschappen van AAD ophalen voor verificatie in de derde regio voor het terugzetten van meerdere regio's. |
+> | micro soft. Recovery Services/kluizen/backupconfig/lezen | Hiermee wordt de configuratie voor Recovery Services kluis geretourneerd. |
+> | micro soft. Recovery Services/kluizen/backupconfig/schrijven | Hiermee wordt de configuratie van Recovery Services-kluis bijgewerkt. |
+> | micro soft. Recovery Services/kluizen/backupCrrOperationResults/lezen | Retourneert CRR-bewerkings resultaat voor Recovery Services kluis. |
+> | micro soft. Recovery Services/kluizen/backupCrrOperationsStatus/lezen | Retourneert CRR-bewerkings status voor Recovery Services kluis. |
+> | micro soft. Recovery Services/kluizen/backupEncryptionConfigs/lezen | Hiermee wordt de versleutelings configuratie voor back-ups opgehaald. |
+> | micro soft. Recovery Services/kluizen/backupEncryptionConfigs/schrijven | Configuratie van back-upbron versleuteling |
+> | micro soft. Recovery Services/kluizen/backupEngines/lezen | Retourneert alle back-upbeheerser vers die zijn geregistreerd bij de kluis. |
+> | micro soft. Recovery Services/kluizen/backupFabrics/refreshContainers/actie | Hiermee vernieuwt u de container lijst |
+> | micro soft. Recovery Services/kluizen/backupFabrics/backupProtectionIntent/verwijderen | Een opzet voor een back-upbeveiliging verwijderen |
+> | micro soft. Recovery Services/kluizen/backupFabrics/backupProtectionIntent/lezen | Een doel voor back-upbeveiliging verkrijgen |
+> | micro soft. Recovery Services/kluizen/backupFabrics/backupProtectionIntent/schrijven | Een doel voor back-upbeveiliging maken |
+> | micro soft. Recovery Services/kluizen/backupFabrics/operationResults/lezen | Hiermee wordt de status van de bewerking geretourneerd |
+> | micro soft. Recovery Services/kluizen/backupFabrics/operationsStatus/lezen | Hiermee wordt de status van de bewerking geretourneerd |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectableContainers/lezen | Alle Beveilig bare containers ophalen |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/verwijderen | Hiermee wordt de geregistreerde container verwijderd |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/query/Action | Een query uitvoeren voor werk belastingen binnen een container |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/lezen | Hiermee worden alle geregistreerde containers geretourneerd |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/schrijven | Hiermee maakt u een geregistreerde container |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/items/lezen | Alle items in een container ophalen |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/operationResults/lezen | Hiermee wordt het resultaat van de bewerking die is uitgevoerd op de beveiligings container opgehaald. |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/operationsStatus/lezen | Hiermee wordt de status opgehaald van de bewerking die is uitgevoerd op de beveiligings container. |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/backup/Action | Maakt een back-up voor het beveiligde item. |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/verwijderen | Hiermee wordt het beveiligde item verwijderd |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/lezen | Hiermee worden object gegevens van het beveiligde item geretourneerd |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/write | Een beveiligd back-upitem maken |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/operationResults/lezen | Hiermee wordt het resultaat van de bewerking die is uitgevoerd op beveiligde items opgehaald. |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/operationsStatus/lezen | Hiermee wordt de status geretourneerd van de bewerking die is uitgevoerd op beveiligde items. |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/recoveryPoints/accessToken/Action | AccessToken ophalen voor het terugzetten van meerdere regio's. |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/recoveryPoints/provisionInstantItemRecovery/Action | Direct-item herstel inrichten voor beveiligd item |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/recoveryPoints/lezen | Herstel punten voor beveiligde items ophalen. |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/recoveryPoints/Restore/Action | Herstel punten voor beveiligde items herstellen. |
+> | micro soft. Recovery Services/kluizen/backupFabrics/protectionContainers/protectedItems/recoveryPoints/revokeInstantItemRecovery/Action | Herstel van onmiddellijke items intrekken voor beveiligd item |
+> | micro soft. Recovery Services/kluizen/backupJobs/annuleren/actie | De taak annuleren |
+> | micro soft. Recovery Services/kluizen/backupJobs/lezen | Hiermee worden alle taak objecten geretourneerd |
+> | micro soft. Recovery Services/kluizen/backupJobs/operationResults/lezen | Hiermee wordt het resultaat van de taak bewerking geretourneerd. |
+> | micro soft. Recovery Services/kluizen/backupJobs/operationsStatus/lezen | Hiermee wordt de status van de taak bewerking geretourneerd. |
+> | micro soft. Recovery Services/kluizen/backupOperationResults/lezen | Retourneert een back-upbewerkings resultaat voor Recovery Services kluis. |
+> | micro soft. Recovery Services/kluizen/backupOperations/lezen | Hiermee wordt de status van de back-upbewerking voor Recovery Services kluis geretourneerd. |
+> | micro soft. Recovery Services/kluizen/backupPolicies/verwijderen | Een beveiligings beleid verwijderen |
+> | micro soft. Recovery Services/kluizen/backupPolicies/lezen | Hiermee worden alle beveiligings beleidsregels geretourneerd |
+> | micro soft. Recovery Services/kluizen/backupPolicies/schrijven | Hiermee wordt een beveiligings beleid gemaakt |
+> | micro soft. Recovery Services/kluizen/backupPolicies/operationResults/lezen | Resultaten van beleids bewerking ophalen. |
+> | micro soft. Recovery Services/kluizen/backupPolicies/Operations/lezen | Status van beleids bewerking ophalen. |
+> | micro soft. Recovery Services/kluizen/backupProtectableItems/lezen | Hiermee wordt een lijst met alle Beveilig bare items geretourneerd. |
+> | micro soft. Recovery Services/kluizen/backupProtectedItems/lezen | Hiermee wordt de lijst met alle beveiligde items geretourneerd. |
+> | micro soft. Recovery Services/kluizen/backupProtectionContainers/lezen | Hiermee worden alle containers van het abonnement geretourneerd |
+> | micro soft. Recovery Services/kluizen/backupProtectionIntents/lezen | Alle intenties van de back-upbeveiliging weer geven |
+> | micro soft. Recovery Services/kluizen/backupstorageconfig/lezen | Hiermee wordt de opslag configuratie voor Recovery Services kluis geretourneerd. |
+> | micro soft. Recovery Services/kluizen/backupstorageconfig/schrijven | Hiermee wordt de opslag configuratie voor Recovery Services kluis bijgewerkt. |
+> | micro soft. Recovery Services/kluizen/backupUsageSummaries/lezen | Retourneert samen vattingen voor beveiligde items en beveiligde servers voor een Recovery Services. |
 > | Micro soft. Recovery Services/kluizen/certificaten/schrijven | Met de bewerking resource certificaat bijwerken wordt het resource/kluis-referentie certificaat bijgewerkt. |
 > | Micro soft. Recovery Services/kluizen/extendedInformation/lezen | Met de bewerking uitgebreide informatie ophalen wordt de uitgebreide informatie opgehaald van een object dat de Azure-resource van het type? kluis vertegenwoordigt? |
 > | Micro soft. Recovery Services/kluizen/extendedInformation/schrijven | Met de bewerking uitgebreide informatie ophalen wordt de uitgebreide informatie opgehaald van een object dat de Azure-resource van het type? kluis vertegenwoordigt? |
@@ -9409,14 +9470,14 @@ Azure-service: [site Recovery](../site-recovery/index.yml)
 > | Micro soft. Recovery Services/kluizen/monitoringAlerts/schrijven | Hiermee wordt de waarschuwing opgelost. |
 > | Micro soft. Recovery Services/kluizen/monitoringConfigurations/lezen | Hiermee wordt de configuratie van de Recovery Services-kluis melding opgehaald. |
 > | Micro soft. Recovery Services/kluizen/monitoringConfigurations/schrijven | Hiermee configureert u e-mail meldingen voor de Recovery Services-kluis. |
-> | Micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/verwijderen | Wacht een paar minuten en probeer het opnieuw. Neem contact op met Microsoft Ondersteuning als het probleem zich blijft voordoen. |
-> | Micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/lezen | Alle Beveilig bare containers ophalen |
-> | Micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/validate/Action | Alle Beveilig bare containers ophalen |
-> | Micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/schrijven | Alle Beveilig bare containers ophalen |
-> | Micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/operationsStatus/lezen | Alle Beveilig bare containers ophalen |
-> | Micro soft. Recovery Services/kluizen/privateEndpointConnections/verwijderen | Aanvragen voor privé-eind punten verwijderen. Deze aanroep wordt uitgevoerd door de back-upbeheerder. |
-> | Micro soft. Recovery Services/kluizen/privateEndpointConnections/schrijven | Privé-eindpunt aanvragen goed keuren of afwijzen. Deze aanroep wordt uitgevoerd door de back-upbeheerder. |
-> | Micro soft. Recovery Services/kluizen/privateEndpointConnections/operationsStatus/lezen | Hiermee wordt de bewerkings status voor een verbinding met een privé-eind punt geretourneerd. |
+> | micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/verwijderen | Wacht een paar minuten en probeer het opnieuw. Neem contact op met Microsoft Ondersteuning als het probleem zich blijft voordoen. |
+> | micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/lezen | Alle Beveilig bare containers ophalen |
+> | micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/validate/Action | Alle Beveilig bare containers ophalen |
+> | micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/schrijven | Alle Beveilig bare containers ophalen |
+> | micro soft. Recovery Services/kluizen/privateEndpointConnectionProxies/operationsStatus/lezen | Alle Beveilig bare containers ophalen |
+> | micro soft. Recovery Services/kluizen/privateEndpointConnections/verwijderen | Aanvragen voor privé-eind punten verwijderen. Deze aanroep wordt uitgevoerd door de back-upbeheerder. |
+> | micro soft. Recovery Services/kluizen/privateEndpointConnections/schrijven | Privé-eindpunt aanvragen goed keuren of afwijzen. Deze aanroep wordt uitgevoerd door de back-upbeheerder. |
+> | micro soft. Recovery Services/kluizen/privateEndpointConnections/operationsStatus/lezen | Hiermee wordt de bewerkings status voor een verbinding met een privé-eind punt geretourneerd. |
 > | Micro soft. Recovery Services/kluizen/registeredIdentities/schrijven | De bewerking service container registreren kan worden gebruikt om een container te registreren bij de Recovery-service. |
 > | Micro soft. Recovery Services/kluizen/registeredIdentities/lezen | De bewerking containers ophalen kan worden gebruikt om de containers op te halen die voor een resource zijn geregistreerd. |
 > | Micro soft. Recovery Services/kluizen/registeredIdentities/verwijderen | De registratie van de container unregister kan worden gebruikt om de registratie van een container op te heffen. |
@@ -9532,7 +9593,7 @@ Azure-service: [site Recovery](../site-recovery/index.yml)
 > | Micro soft. Recovery Services/kluizen/replicationVaultSettings/lezen | Alle items lezen  |
 > | Micro soft. Recovery Services/kluizen/replicationVaultSettings/schrijven | Maken of bijwerken  |
 > | Micro soft. Recovery Services/kluizen/replicationvCenters/lezen | Alle vCenter lezen |
-> | Micro soft. Recovery Services/kluizen/gebruik/lezen | Hiermee worden gebruiks gegevens voor een Recovery Services kluis geretourneerd. |
+> | micro soft. Recovery Services/kluizen/gebruik/lezen | Hiermee worden gebruiks gegevens voor een Recovery Services kluis geretourneerd. |
 > | Micro soft. Recovery Services/kluizen/gebruik/lezen | Een kluis gebruik lezen |
 > | Micro soft. Recovery Services/kluizen/vaultTokens/lezen | De bewerking kluis token kan worden gebruikt om het kluis token voor back-upbewerkingen op kluis niveau op te halen. |
 

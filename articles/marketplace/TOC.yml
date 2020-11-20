@@ -15,7 +15,7 @@
       href: partner-center-portal/account-migration-from-cpp-to-pc.md
 - name: Concepten
   items:
-    - name: Publicatie-opties en -overwegingen
+    - name: Aanbiedingsopties
       href: determine-your-listing-type.md
     - name: Transacties in de commerciële marketplace
       href: marketplace-commercial-transaction-capabilities-and-considerations.md
@@ -349,15 +349,14 @@
       items:
         - name: Overzicht van SaaS-uitvoerings-API
           href: partner-center-portal/pc-saas-fulfillment-apis.md
-          items:
-            - name: Een SaaS-toepassing registreren
-              href: partner-center-portal/pc-saas-registration.md
-            - name: SaaS-uitvoerings-API's v2
-              href: partner-center-portal/pc-saas-fulfillment-api-v2.md
-            - name: SaaS-uitvoerings-API's v1 (afgeschaft)
-              href: partner-center-portal/pc-saas-fulfillment-api-v1.md
-            - name: SaaS-uitvoerings-API's - Veelgestelde vragen
-              href: partner-center-portal/saas-fulfillment-apis-faq.md
+        - name: Een SaaS-toepassing registreren
+          href: partner-center-portal/pc-saas-registration.md
+        - name: SaaS-uitvoerings-API's v2
+          href: partner-center-portal/pc-saas-fulfillment-api-v2.md
+        - name: SaaS-uitvoerings-API's v1 (afgeschaft)
+          href: partner-center-portal/pc-saas-fulfillment-api-v1.md
+        - name: SaaS-uitvoerings-API's - Veelgestelde vragen
+          href: partner-center-portal/saas-fulfillment-apis-faq.md
 - name: Resources
   items:
     - name: Veelgestelde vragen over de commerciële marketplace

@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: deli, rohitha, vikanand, hongzili, sopai, absaafan, logicappspm
 ms.topic: conceptual
-ms.date: 11/09/2020
-ms.openlocfilehash: 749807349fd83f9639461fd4ddd9ab771d108119
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.date: 11/17/2020
+ms.openlocfilehash: 14809cb28870e88cfa584c4f02360d50beabf901
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410552"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94981036"
 ---
 # <a name="create-stateful-or-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Stateful of stateless werkstromen maken in Visual Studio code met de Azure Logic Apps-extensie (preview)
 
@@ -206,7 +206,7 @@ Deze mogelijkheden zijn niet beschikbaar of worden niet ondersteund voor deze op
 
    1. Ga op het tabblad **gebruiker** naar **>** **extensies** **>** **Azure Logic apps (preview)**.
 
-   1. Controleer onder **Azure Logic apps v2: deel venster modus** , of **modus inschakelen** is geselecteerd. Stel onder **Azure Logic apps v2: Project runtime** de versie in op **~ 3** of **~ 2** , op basis van de [Azure functions core tools versie](#prerequisites) die u eerder hebt geïnstalleerd.
+   1. Controleer onder **Azure Logic apps v2: deel venster modus**, of **modus inschakelen** is geselecteerd. Stel onder **Azure Logic apps v2: Project runtime** de versie in op **~ 3** of **~ 2**, op basis van de [Azure functions core tools versie](#prerequisites) die u eerder hebt geïnstalleerd.
 
       > [!IMPORTANT]
       > Als u de [ **inline code** actie](../logic-apps/logic-apps-add-run-inline-code.md) voor het uitvoeren van Java script-code wilt gebruiken, moet u ervoor zorgen dat u Project runtime versie 3 gebruikt, omdat de actie geen ondersteuning biedt voor versie 2. Deze actie wordt momenteel niet ondersteund in Linux-besturings systemen.
@@ -221,7 +221,7 @@ Deze mogelijkheden zijn niet beschikbaar of worden niet ondersteund voor deze op
 
    ![Scherm afbeelding van de werk balk Visual Studio code en het geselecteerde Azure-pictogram.](./media/create-stateful-stateless-workflows-visual-studio-code/visual-studio-code-azure-icon.png)
 
-1. In het deel venster Azure, onder **Azure: Logic apps (preview)** , selecteert **u aanmelden bij Azure**. Wanneer de pagina Visual Studio-code verificatie wordt weer gegeven, meldt u zich aan met uw Azure-account.
+1. In het deel venster Azure, onder **Azure: Logic apps (preview)**, selecteert **u aanmelden bij Azure**. Wanneer de pagina Visual Studio-code verificatie wordt weer gegeven, meldt u zich aan met uw Azure-account.
 
    ![Scherm opname van het Azure-venster en de geselecteerde koppeling voor Azure-aanmelding.](./media/create-stateful-stateless-workflows-visual-studio-code/sign-in-azure-subscription.png)
 
@@ -367,7 +367,7 @@ Nadat u de ontwerp functie voor logische apps hebt geopend vanuit uw **workflow.
 
 De werk stroom van de logische app in dit voor beeld maakt gebruik van deze trigger en deze acties:
 
-* De ingebouwde [aanvraag trigger](../connectors/connectors-native-reqres.md), **wanneer er een HTTP-aanvraag wordt ontvangen** , die inkomende aanroepen of aanvragen ontvangt en een eind punt maakt dat andere services of logische apps kan aanroepen.
+* De ingebouwde [aanvraag trigger](../connectors/connectors-native-reqres.md), **wanneer er een HTTP-aanvraag wordt ontvangen**, die inkomende aanroepen of aanvragen ontvangt en een eind punt maakt dat andere services of logische apps kan aanroepen.
 
 * De [Office 365 Outlook-actie](../connectors/connectors-create-api-office365-outlook.md), **een e-mail verzenden**.
 
@@ -392,9 +392,9 @@ De werk stroom van de logische app in dit voor beeld maakt gebruik van deze trig
 
    1. Selecteer op de Designer het item, waarmee het detail venster van het item aan de rechter kant wordt geopend.
 
-   1. Vouw het Visual Studio-code venster breed genoeg uit zodat naast de trigger of actie naam de knop met de weglatings tekens ( **...** ) in de rechter bovenhoek wordt weer gegeven. 
+   1. Vouw het Visual Studio-code venster breed genoeg uit zodat naast de trigger of actie naam de knop met de weglatings tekens (**...**) in de rechter bovenhoek wordt weer gegeven. 
 
-   1. Open het menu met weglatings tekens ( **...** ) en selecteer **verwijderen**. Selecteer **OK** om de verwijdering te bevestigen.
+   1. Open het menu met weglatings tekens (**...**) en selecteer **verwijderen**. Selecteer **OK** om de verwijdering te bevestigen.
 
       ![Scherm opname van het geselecteerde item in de ontwerp functie met het deel venster Details openen en met de optie voor het selecteren van de knop verwijderen.](./media/create-stateful-stateless-workflows-visual-studio-code/delete-item-from-designer.png)
 
@@ -452,7 +452,7 @@ De werk stroom van de logische app in dit voor beeld maakt gebruik van deze trig
    ||||
 
    > [!NOTE]
-   > Als u wijzigingen wilt aanbrengen in het detail venster op het tabblad **instellingen** , **uitvoeren na** of **statisch resultaat** , moet u ervoor zorgen dat u **klaar bent** om deze wijzigingen door te voeren voordat u de tabbladen verwisselt of de focus naar de ontwerper wijzigt. Als dat niet het geval is, blijven de wijzigingen niet behouden in Visual Studio code. Raadpleeg de [pagina met bekende problemen](https://github.com/Azure/logicapps/blob/master/articles/logic-apps-public-preview-known-issues.md)met de extensie github voor meer informatie.
+   > Als u wijzigingen wilt aanbrengen in het detail venster op het tabblad **instellingen**, **uitvoeren na** of **statisch resultaat** , moet u ervoor zorgen dat u **klaar bent** om deze wijzigingen door te voeren voordat u de tabbladen verwisselt of de focus naar de ontwerper wijzigt. Als dat niet het geval is, blijven de wijzigingen niet behouden in Visual Studio code. Raadpleeg de [pagina met bekende problemen](https://github.com/Azure/logicapps/blob/master/articles/logic-apps-public-preview-known-issues.md)met de extensie github voor meer informatie.
 
 1. Selecteer in de ontwerp functie **Opslaan**.
 
@@ -492,13 +492,13 @@ Als u uw logische app wilt testen, volgt u deze stappen om een foutopsporingsses
 
       ![Scherm afbeelding met de knop Nieuw is geselecteerd](./media/create-stateful-stateless-workflows-visual-studio-code/postman-create-request.png)
 
-   1. Selecteer in het deel venster **Nieuw** , onder **bouw stenen** , **aanvraag**.
+   1. Selecteer in het deel venster **Nieuw** , onder **bouw stenen**, **aanvraag**.
 
    1. Geef in het venster **aanvraag opslaan** onder **naam van aanvraag** een naam op voor de aanvraag, bijvoorbeeld `Test workflow trigger` .
 
-   1. Onder **Selecteer een verzameling of map om op te slaan** , selecteert u **verzameling maken**.
+   1. Onder **Selecteer een verzameling of map om op te slaan**, selecteert u **verzameling maken**.
 
-   1. Geef onder **alle verzamelingen** een naam op voor de verzameling die u wilt maken voor het organiseren van uw aanvragen, druk op ENTER en selecteer **opslaan in < *verzameling-naam* >**. In dit voor beeld wordt `Logic Apps requests` de naam van de verzameling gebruikt.
+   1. Geef onder **alle verzamelingen** een naam op voor de verzameling die u wilt maken voor het organiseren van uw aanvragen, druk op ENTER en selecteer **opslaan in <*verzameling-naam* >**. In dit voor beeld wordt `Logic Apps requests` de naam van de verzameling gebruikt.
 
       Het aanvraag venster van Postman wordt geopend, zodat u een aanvraag kunt verzenden naar de call back-URL voor de aanvraag trigger.
 
@@ -528,19 +528,22 @@ Als u uw logische app wilt testen, volgt u deze stappen om een foutopsporingsses
    | **Aborted** | De uitvoering is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | De uitvoering is geactiveerd en gestart, maar er is een annulerings aanvraag ontvangen. |
    | **Mislukt** | Ten minste één bewerking in de uitvoering is mislukt. Er zijn geen verdere acties in de werk stroom ingesteld voor het afhandelen van de fout. |
-   | **Wordt uitgevoerd** | De uitvoering is geactiveerd en wordt uitgevoerd, maar deze status kan ook worden weer gegeven voor een uitvoering die wordt beperkt als gevolg van [actie limieten](logic-apps-limits-and-config.md) of het [huidige prijs plan](https://azure.microsoft.com/pricing/details/logic-apps/). <p><p>**Tip** : als u [logboek registratie van diagnostische gegevens](monitor-logic-apps-log-analytics.md)instelt, kunt u informatie ophalen over eventuele vertragings gebeurtenissen die plaatsvinden. |
+   | **Wordt uitgevoerd** | De uitvoering is geactiveerd en wordt uitgevoerd, maar deze status kan ook worden weer gegeven voor een uitvoering die wordt beperkt als gevolg van [actie limieten](logic-apps-limits-and-config.md) of het [huidige prijs plan](https://azure.microsoft.com/pricing/details/logic-apps/). <p><p>**Tip**: als u [logboek registratie van diagnostische gegevens](monitor-logic-apps-log-analytics.md)instelt, kunt u informatie ophalen over eventuele vertragings gebeurtenissen die plaatsvinden. |
    | **Geslaagd** | De uitvoering is voltooid. Als een actie is mislukt, wordt die fout door een volgende actie in de werk stroom verwerkt. |
-   | **Time-out opgetreden** | Er is een time-out opgetreden tijdens het uitvoeren omdat de huidige duur de limiet voor de uitvoerings duur heeft overschreden, die wordt bepaald door de [ **Bewaar periode voor het bewaren van uitvoerings geschiedenis in dagen**](logic-apps-limits-and-config.md#run-duration-retention-limits). De duur van een uitvoering wordt berekend met behulp van de begin tijd van de uitvoering en de duur limiet voor uitvoering op die begin tijd. <p><p>**Opmerking** : als de duur van de uitvoering ook de huidige *Bewaar limiet voor de uitvoerings geschiedenis* overschrijdt, die ook wordt bepaald door de Bewaar periode voor het bewaren van de [ **uitvoerings geschiedenis in dagen**](logic-apps-limits-and-config.md#run-duration-retention-limits), wordt de uitvoering uit de geschiedenis van uitvoeringen door een dagelijkse opschoon taak gewist. Of de uitvoerings tijd wordt uitgecheckt of voltooid, de Bewaar periode wordt altijd berekend met behulp van de begin tijd en de *huidige* Bewaar limiet van de uitvoering. Als u de limiet voor de duur van een in-Flight-uitvoering verkort, wordt er dus een time-out uitgevoerd. De uitvoering blijft echter behouden of wordt gewist uit de geschiedenis van de uitvoering, op basis van het feit of de duur van de uitvoering de Bewaar limiet heeft overschreden. |
+   | **Time-out opgetreden** | Er is een time-out opgetreden tijdens het uitvoeren omdat de huidige duur de limiet voor de uitvoerings duur heeft overschreden, die wordt bepaald door de [ **Bewaar periode voor het bewaren van uitvoerings geschiedenis in dagen**](logic-apps-limits-and-config.md#run-duration-retention-limits). De duur van een uitvoering wordt berekend met behulp van de begin tijd van de uitvoering en de duur limiet voor uitvoering op die begin tijd. <p><p>**Opmerking**: als de duur van de uitvoering ook de huidige *Bewaar limiet voor de uitvoerings geschiedenis* overschrijdt, die ook wordt bepaald door de Bewaar periode voor het bewaren van de [ **uitvoerings geschiedenis in dagen**](logic-apps-limits-and-config.md#run-duration-retention-limits), wordt de uitvoering uit de geschiedenis van uitvoeringen door een dagelijkse opschoon taak gewist. Of de uitvoerings tijd wordt uitgecheckt of voltooid, de Bewaar periode wordt altijd berekend met behulp van de begin tijd en de *huidige* Bewaar limiet van de uitvoering. Als u de limiet voor de duur van een in-Flight-uitvoering verkort, wordt er dus een time-out uitgevoerd. De uitvoering blijft echter behouden of wordt gewist uit de geschiedenis van de uitvoering, op basis van het feit of de duur van de uitvoering de Bewaar limiet heeft overschreden. |
    | **Wachten** | De uitvoering is niet gestart of wordt onderbroken, bijvoorbeeld door een eerder werk stroom exemplaar dat nog steeds actief is. |
    |||
 
-1. Als u de statussen voor elke stap in een specifieke uitvoering en de invoer en uitvoer van de stap wilt bekijken, selecteert u de knop met weglatings tekens ( **...** ) voor die uitvoering en selecteert u vervolgens **uitvoeren weer geven**.
+1. Als u de statussen voor elke stap in een specifieke uitvoering en de invoer en uitvoer van de stap wilt bekijken, selecteert u de knop met weglatings tekens (**...**) voor die uitvoering en selecteert u vervolgens **uitvoeren weer geven**.
 
    ![Scherm afbeelding van de rij met de uitvoerings geschiedenis van de werk stroom met de knop met weglatings tekens en ' show run ' geselecteerd](./media/create-stateful-stateless-workflows-visual-studio-code/show-run-history.png)
 
    Visual Studio code opent de weer gave bewaking en toont de status van elke stap in de uitvoering.
 
    ![Scherm opname van elke stap in de uitvoering van de werk stroom en hun status](./media/create-stateful-stateless-workflows-visual-studio-code/run-history-action-status.png)
+
+   > [!NOTE]
+   > Als een uitvoering is mislukt en een stap in de bewakings weergave de `400 Bad Request` fout toont, kan dit probleem worden veroorzaakt door een langere trigger naam of actie naam die ervoor zorgt dat de onderliggende URI (Uniform Resource Identifier) de standaard teken limiet overschrijdt. Zie ["400-ongeldige aanvraag"](#400-bad-request)voor meer informatie.
 
    Hier volgen de mogelijke statussen die elke stap in de werk stroom kan hebben:
 
@@ -621,7 +624,7 @@ Nadat u updates hebt gemaakt voor uw logische app, kunt u een andere test uitvoe
 
 1. Stuur in postman of uw hulp programma voor het maken en verzenden van aanvragen een andere aanvraag om uw werk stroom te activeren.
 
-1. Als u een stateful werk stroom hebt gemaakt, controleert u de status van de meest recente uitvoering op de pagina overzicht van de werk stroom. Als u de status, invoer en uitvoer voor elke stap in die uitvoering wilt weer geven, selecteert u de knop met weglatings tekens ( **...** ) voor die uitvoering en selecteert u vervolgens **uitvoeren weer geven**.
+1. Als u een stateful werk stroom hebt gemaakt, controleert u de status van de meest recente uitvoering op de pagina overzicht van de werk stroom. Als u de status, invoer en uitvoer voor elke stap in die uitvoering wilt weer geven, selecteert u de knop met weglatings tekens (**...**) voor die uitvoering en selecteert u vervolgens **uitvoeren weer geven**.
 
    Hier volgt een voor beeld van de stap-voor-stap-status voor een uitvoering nadat de voorbeeld werk stroom is bijgewerkt met de reactie actie.
 
@@ -750,7 +753,7 @@ In Visual Studio code kunt u alle geïmplementeerde Logic apps in uw Azure-abonn
 
 1. Als u alle werk stromen in de logische app wilt weer geven, vouwt u uw logische app uit en vouwt u vervolgens het knoop punt **werk stromen** uit.
 
-1. Als u een specifieke werk stroom wilt weer geven, opent u het snelmenu van de werk stroom en selecteert u **openen in Designer** , waarmee de werk stroom wordt geopend in de modus alleen-lezen.
+1. Als u een specifieke werk stroom wilt weer geven, opent u het snelmenu van de werk stroom en selecteert u **openen in Designer**, waarmee de werk stroom wordt geopend in de modus alleen-lezen.
 
    Als u de werk stroom wilt bewerken, hebt u de volgende opties:
 
@@ -957,7 +960,7 @@ Met behulp van de [opdracht regel interface (CLI) van .net core](/dotnet/core/to
 
    `POST /runtime/webhooks/workflow/api/management/workflows/{workflow-name}/triggers/{trigger-name}/listCallbackUrl?api-version=2019-10-01-edge-preview&code={master-key}`
 
-   De < *hoofd sleutel* > waarde wordt gedefinieerd in het Azure Storage-account dat u hebt ingesteld voor `AzureWebJobsStorage` in het bestand **Azure-webjobs-geheimen/{Deployment-name}/host.jsop** , waar u de waarde in deze sectie kunt vinden:
+   De <*hoofd sleutel*> waarde wordt gedefinieerd in het Azure Storage-account dat u hebt ingesteld voor `AzureWebJobsStorage` in het bestand **Azure-webjobs-geheimen/{Deployment-name}/host.jsop**, waar u de waarde in deze sectie kunt vinden:
 
    ```json
    {
@@ -1014,6 +1017,47 @@ Hoewel veel [bestaande limieten voor Azure Logic apps](../logic-apps/logic-apps-
   * De limiet voor code tekens neemt toe van 1.024 tekens tot 100.000 tekens.
 
   * De tijds limiet voor het uitvoeren van de code neemt toe van vijf seconden tot 15 seconden.
+
+<a name="troubleshooting"></a>
+
+## <a name="troubleshoot-errors-and-problems"></a>Fouten en problemen oplossen
+
+<a name="400-bad-request"></a>
+
+### <a name="400-bad-request"></a>"400 onjuiste aanvraag"
+
+Wanneer een uitvoering mislukt en u de weer gave controle in bewaking inspecteert, kan deze fout worden weer gegeven bij een trigger of actie met een langere naam, waardoor de onderliggende URI (Uniform Resource Identifier) de standaard teken limiet overschrijdt.
+
+U kunt dit probleem oplossen door de- `UrlSegmentMaxCount` en `UrlSegmentMaxLength` register sleutels op uw computer te bewerken door de volgende stappen uit te voeren. De standaard waarden van deze sleutel worden in dit onderwerp [Http.sys register instellingen voor Windows](/troubleshoot/iis/httpsys-registry-windows)beschreven.
+
+> [!IMPORTANT]
+> Voordat u begint, moet u ervoor zorgen dat u uw werk opslaat. Voor deze oplossing moet u de computer opnieuw opstarten nadat u klaar bent om de wijzigingen van kracht te laten worden.
+
+1. Open het venster **uitvoeren** op uw computer en voer de opdracht uit om `regedit` de REGI ster-editor te openen.
+
+1. Selecteer in het vak **gebruikers account** de optie **Ja** om uw wijzigingen aan uw computer toe te staan.
+
+1. Vouw in het linkerdeel venster, onder **computer**, de knoop punten langs het pad uit, **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP\Parameters** en selecteer vervolgens **para meters**.
+
+1. Zoek in het rechterdeel venster de- `UrlSegmentMaxCount` en- `UrlSegmentMaxLength` register sleutels.
+
+1. Verhoog deze sleutel waarden genoeg zodat de Uri's de namen kunnen bevatten die u wilt gebruiken. Als deze sleutels niet bestaan, voegt u deze toe aan de map **para meters** door de volgende stappen uit te voeren:
+
+   1. Selecteer in het snelmenu **para meters** de optie **nieuwe**  >  **DWORD-waarde (32-bits)**.
+
+   1. Typ in het invoervak dat wordt weer gegeven, `UrlSegmentMaxCount` de naam van de nieuwe sleutel.
+
+   1. Open het snelmenu van de nieuwe sleutel en selecteer **wijzigen**.
+
+   1. Geef in het vak **teken reeks bewerken** een waarde op voor de sleutel waarde voor **waarden** die u wilt weer geven in hexadecimale of decimale notatie. `400`In hexadecimale notatie is bijvoorbeeld gelijk aan `1024` in decimale notatie.
+
+   1. Herhaal deze stappen om de sleutel waarde toe te voegen `UrlSegmentMaxLength` .
+
+   Nadat u deze sleutel waarden hebt verhoogd of toegevoegd, ziet de REGI ster-editor eruit als in dit voor beeld:
+
+   ![Scherm opname van de REGI ster-editor.](media/create-stateful-stateless-workflows-visual-studio-code/edit-registry-settings-uri-length.png)
+
+1. Wanneer u klaar bent, start u de computer opnieuw op om de wijzigingen van kracht te laten worden.
 
 ## <a name="next-steps"></a>Volgende stappen
 

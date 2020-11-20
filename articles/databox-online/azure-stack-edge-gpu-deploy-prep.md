@@ -149,7 +149,7 @@ Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource
 
 9. Selecteer **Volgende: Tags**. Geef eventueel tags op voor het categoriseren van resources en het samenvoegen van facturering. Selecteer **Volgende: Beoordelen en maken**.
 
-10. Bekijk op het tabblad **Controleren en maken** de **Prijsdetails** , **Gebruiksvoorwaarden** en de details van uw resource. Selecteer de keuzelijst met invoervak voor **Ik heb de privacyvoorwaarden gecontroleerd**.
+10. Bekijk op het tabblad **Controleren en maken** de **Prijsdetails**, **Gebruiksvoorwaarden** en de details van uw resource. Selecteer de keuzelijst met invoervak voor **Ik heb de privacyvoorwaarden gecontroleerd**.
 
     ![Een resource maken 8](media/azure-stack-edge-gpu-deploy-prep/create-resource-8.png) 
 

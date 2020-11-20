@@ -37,7 +37,7 @@ In deze quickstart leert u hoe u blobs beheert met behulp van JavaScript-code di
 
 Voordat uw webtoepassing vanuit de client toegang kan krijgen tot een blob-opslag, moet het account worden geconfigureerd om [cross-origin-resource sharing](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) oftewel CORS in te schakelen.
 
-Ga terug naar Azure Portal en selecteer uw opslagaccount. Als u een nieuwe CORS-regel wilt definiëren, navigeert u terug naar de sectie **Instellingen** en klikt u op de koppeling **CORS** . Klik vervolgens op de knop **Toevoegen** om het venster **CORS-regel toevoegen** te openen. Voor deze snelstart maakt u een open CORS-regel:
+Ga terug naar Azure Portal en selecteer uw opslagaccount. Als u een nieuwe CORS-regel wilt definiëren, navigeert u terug naar de sectie **Instellingen** en klikt u op de koppeling **CORS**. Klik vervolgens op de knop **Toevoegen** om het venster **CORS-regel toevoegen** te openen. Voor deze snelstart maakt u een open CORS-regel:
 
 ![CORS-instellingen in Azure Blob Storage-account](media/storage-quickstart-blobs-javascript-client-libraries-v10/azure-blob-storage-cors-settings.png)
 
@@ -86,9 +86,9 @@ Mogelijk vindt u de reeks waarden na elke parameter wat cryptisch. Deze paramete
 
 | Parameter        | Waarde   | Beschrijving  |
 |------------------|---------|---------|
-| *permissions*    | racwdl  | Deze SAS staat de mogelijkheden *read* , *append* , *create* , *write* , *delete* en *list* toe. |
-| *resource-types* | sco     | De resources die waar de SAS invloed op heeft, zijn *service* , *container* en *object* . |
-| *services*       | b       | De service waar de SAS invloed op heeft is de *blob* -service. |
+| *permissions*    | racwdl  | Deze SAS staat de mogelijkheden *read*, *append*, *create*, *write*, *delete* en *list* toe. |
+| *resource-types* | sco     | De resources die waar de SAS invloed op heeft, zijn *service*, *container* en *object*. |
+| *services*       | b       | De service waar de SAS invloed op heeft is de *blob*-service. |
 
 Wanneer de SAS is gegenereerd, kopieert u de geretourneerde waarde en slaat u deze ergens op voor gebruik bij een volgende stap. Als u uw SAS hebt gegenereerd met een andere methode dan de Azure CLI, dan moet u de initiële `?` verwijderen als deze aanwezig is. Dit teken is een scheidingsteken voor de URL dat al is opgenomen in de URL-sjabloon, verderop in dit onderwerp waar de SAS gebruikt wordt.
 
@@ -101,7 +101,7 @@ In dit onderdeel maakt u een eenvoudige webpagina en configureert u VS Code om d
 
 ### <a name="set-up-the-web-application"></a>Webtoepassing instellen
 
-Maak eerst een nieuwe map met de naam *azure-blobs-javascript* en open deze in VS Code. Maak vervolgens een nieuw bestand in VS Code, voeg de volgende HTML toe en sla deze op als *index.html* in de map *azure-blobs-javascript* .
+Maak eerst een nieuwe map met de naam *azure-blobs-javascript* en open deze in VS Code. Maak vervolgens een nieuw bestand in VS Code, voeg de volgende HTML toe en sla deze op als *index.html* in de map *azure-blobs-javascript*.
 
 ```html
 <!DOCTYPE html>
@@ -127,7 +127,7 @@ Maak eerst een nieuwe map met de naam *azure-blobs-javascript* en open deze in V
 
 ### <a name="configure-the-debugger"></a>Het foutopsporingsprogramma configureren
 
-Om de foutopsporingsextensie in te stellen in VS Code, selecteert u **Foutopsporing > Configuratie toevoegen...** en vervolgens **Chrome** of **Microsoft Edge** afhankelijk van de extensie die u eerder heeft geïnstalleerd in het onderdeel Vereisten. Deze actie maakt een *launch.json* -bestand en opent het in de editor.
+Om de foutopsporingsextensie in te stellen in VS Code, selecteert u **Foutopsporing &gt; Configuratie toevoegen...** en vervolgens **Chrome** of **Microsoft Edge** afhankelijk van de extensie die u eerder heeft geïnstalleerd in het onderdeel Vereisten. Deze actie maakt een *launch.json*-bestand en opent het in de editor.
 
 Wijzig vervolgens het bestand *launch.json* zodat de `url`-waarde `/index.html` bevat, zoals hier wordt weergegeven:
 
@@ -167,7 +167,7 @@ Als u *index.html* in de browser wilt openen terwijl het VS Code-foutopsporingsp
 
 De weergegeven gebruikersinterface doet nog niets, maar in het volgende onderdeel voegt u JavaScript-code toe om elke weergegeven functie te implementeren. U kunt vervolgens onderbrekingspunten instellen en met het foutopsporingsprogramma communiceren wanneer het onderbroken is op uw code.
 
-Wanneer u wijzigingen aanbrengt in *index.html* , moet u de pagina opnieuw laden om de wijzigingen in de browser weer te geven. In VS Code kunt u ook **Foutopsporing > Opnieuw beginnen met foutopsporing** selecteren of drukken op CTRL + SHIFT + F5.
+Wanneer u wijzigingen aanbrengt in *index.html*, moet u de pagina opnieuw laden om de wijzigingen in de browser weer te geven. In VS Code kunt u ook **Foutopsporing > Opnieuw beginnen met foutopsporing** selecteren of drukken op CTRL + SHIFT + F5.
 
 ### <a name="add-the-blob-storage-client-library"></a>Clientbibliotheek voor blob-opslag toevoegen
 
@@ -183,7 +183,7 @@ Plak vervolgens de volgende HTML-code in *index. html* na de afsluitende tag `</
 </script>
 ```
 
-Deze code voegt een verwijzing toe naar het scriptbestand en biedt een plaats voor uw eigen JavaScript-code. Voor deze quickstart gebruiken we het scriptbestand *azure-storage-blob.js* , zodat u het kunt openen in VS Code, de inhoud ervan kunt lezen en onderbrekingspunten instellen. In productie moet u het compactere bestand *azure-storage.blob.min.js* gebruiken dat ook is opgegeven in het .zip-bestand.
+Deze code voegt een verwijzing toe naar het scriptbestand en biedt een plaats voor uw eigen JavaScript-code. Voor deze quickstart gebruiken we het scriptbestand *azure-storage-blob.js*, zodat u het kunt openen in VS Code, de inhoud ervan kunt lezen en onderbrekingspunten instellen. In productie moet u het compactere bestand *azure-storage.blob.min.js* gebruiken dat ook is opgegeven in het .zip-bestand.
 
 U vindt meer informatie over elke Blob Storage-functie in de [referentiedocumentatie](https://docs.microsoft.com/javascript/api/%40azure/storage-blob/index). Sommige van de functies in de SDK zijn alleen beschikbaar in node.js, of alleen beschikbaar in de browser.
 
@@ -297,7 +297,7 @@ Met deze code wordt de functie [ContainerURL.listBlobFlatSegment](https://docs.m
 
 ### <a name="upload-blobs"></a>Blobs uploaden
 
-Voeg vervolgens code toe om bestanden naar de opslagcontainer te uploaden wanneer u klikt op de knop **Bestanden selecteren en uploaden** .
+Voeg vervolgens code toe om bestanden naar de opslagcontainer te uploaden wanneer u klikt op de knop **Bestanden selecteren en uploaden**.
 
 ```javascript
 const uploadFiles = async () => {
@@ -325,7 +325,7 @@ Deze code verbindt de knop **Bestanden selecteren en uploaden** naar het verborg
 
 ### <a name="delete-blobs"></a>Blobs verwijderen
 
-Voeg vervolgens code toe om bestanden te verwijderen uit de opslagcontainer wanneer u klikt op de knop **Geselecteerde bestanden verwijderen** .
+Voeg vervolgens code toe om bestanden te verwijderen uit de opslagcontainer wanneer u klikt op de knop **Geselecteerde bestanden verwijderen**.
 
 ```javascript
 const deleteFiles = async () => {
@@ -349,7 +349,7 @@ const deleteFiles = async () => {
 deleteButton.addEventListener("click", deleteFiles);
 ```
 
-Met deze code wordt de functie [BlobURL.delete](https://docs.microsoft.com/javascript/api/@azure/storage-blob/BlobURL#delete-aborter--iblobdeleteoptions-) aangeroepen om elk bestand te verwijderen dat in de lijst is geselecteerd. Vervolgens wordt de eerder getoonde functie `listFiles` aangeroepen om de inhoud van de **Bestanden** -lijst te vernieuwen.
+Met deze code wordt de functie [BlobURL.delete](https://docs.microsoft.com/javascript/api/@azure/storage-blob/BlobURL#delete-aborter--iblobdeleteoptions-) aangeroepen om elk bestand te verwijderen dat in de lijst is geselecteerd. Vervolgens wordt de eerder getoonde functie `listFiles` aangeroepen om de inhoud van de **Bestanden**-lijst te vernieuwen.
 
 ### <a name="run-and-test-the-web-application"></a>De webtoepassing uitvoeren en testen
 

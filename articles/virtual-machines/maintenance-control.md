@@ -5,14 +5,14 @@ author: cynthn
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 04/22/2020
+ms.date: 11/19/2020
 ms.author: cynthn
-ms.openlocfilehash: 4d126d1e6bb92d2079ac3c0d95f754cb9aab3c21
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 4b9dec0fe684e002fadbac2db375c354db2b6d01
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978608"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94981167"
 ---
 # <a name="managing-platform-updates-with-maintenance-control"></a>Platform updates beheren met onderhouds controle 
 
@@ -23,12 +23,13 @@ Met de onderhouds controle kunt u bepalen wanneer u updates wilt Toep assen op u
 Met onderhouds controle kunt u het volgende doen:
 - Batch updates in één update pakket.
 - Wacht tot 35 dagen om updates toe te passen. 
-- Platform updates voor uw onderhouds venster automatiseren met [Azure functions](https://github.com/Azure/azure-docs-powershell-samples/tree/master/maintenance-auto-scheduler).
+- Automatiseer platform updates door een onderhouds planning te configureren of door [Azure functions](https://github.com/Azure/azure-docs-powershell-samples/tree/master/maintenance-auto-scheduler)te gebruiken.
 - Onderhouds configuraties werken in abonnementen en resource groepen. 
 
 ## <a name="limitations"></a>Beperkingen
 
 - Vm's moeten op een [specifieke host](./dedicated-hosts.md)staan of worden gemaakt met behulp van een [geïsoleerde VM-grootte](isolation.md).
+- Als een onderhouds schema is gedeclareerd, moet dit mini maal 2 uur zijn.
 - Na 35 dagen wordt een update automatisch toegepast.
 - De gebruiker moet toegang hebben tot de **resource bijdrager** .
 

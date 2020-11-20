@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cawams
 ms.author: cawa
 ms.date: 05/04/2020
-ms.openlocfilehash: ed29bfc099ce401288c07db863207a1d989a5e0d
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 36e73ceddaa5e3f9cbbf4a41f76a4ba6d70eed0f
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168270"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94979960"
 ---
 # <a name="use-application-change-analysis-preview-in-azure-monitor"></a>Toepassings wijzigings analyse (preview) gebruiken in Azure Monitor
 
@@ -43,7 +43,7 @@ Instellingen zoals de IP-configuratie regel, TLS-instellingen en extensie versie
 
 ### <a name="changes-in-web-app-deployment-and-configuration-in-guest-changes"></a>Wijzigingen in de implementatie en configuratie van de web-app (in-gast wijzigingen)
 
-Met de wijzigings analyse worden de implementatie-en configuratie status van een toepassing elke 4 uur vastgelegd. Het kan bijvoorbeeld wijzigingen in de omgevings variabelen van de toepassing detecteren. Het hulp programma berekent de verschillen en geeft aan wat er is gewijzigd. In tegens telling tot Resource Manager-wijzigingen is de wijzigings informatie voor code-implementatie mogelijk niet onmiddellijk beschikbaar in het hulp programma. Selecteer **vernieuwen**om de meest recente wijzigingen in de analyse van wijzigingen weer te geven.
+Met de wijzigings analyse worden de implementatie-en configuratie status van een toepassing elke 4 uur vastgelegd. Het kan bijvoorbeeld wijzigingen in de omgevings variabelen van de toepassing detecteren. Het hulp programma berekent de verschillen en geeft aan wat er is gewijzigd. In tegens telling tot Resource Manager-wijzigingen is de wijzigings informatie voor code-implementatie mogelijk niet onmiddellijk beschikbaar in het hulp programma. Selecteer **vernieuwen** om de meest recente wijzigingen in de analyse van wijzigingen weer te geven.
 
 ![Scherm opname van de knop "wijzigingen nu scannen"](./media/change-analysis/scan-changes.png)
 
@@ -172,7 +172,7 @@ foreach ($webapp in $webapp_list)
 ## <a name="troubleshoot"></a>Problemen oplossen
 
 ### <a name="having-trouble-registering-microsoftchange-analysis-resource-provider-from-change-history-tab"></a>Problemen bij het registreren van micro soft. resource provider voor analyse wijzigen van het tabblad wijzigings overzicht
-Als dit de eerste keer is dat u het wijzigings overzicht bekijkt na de integratie met de analyse van de toepassings wijzigingen, ziet u dat er automatisch een resource provider **micro soft. ChangeAnalysis**wordt geregistreerd. In zeldzame gevallen kan het om de volgende redenen mislukken:
+Als dit de eerste keer is dat u het wijzigings overzicht bekijkt na de integratie met de analyse van de toepassings wijzigingen, ziet u dat er automatisch een resource provider **micro soft. ChangeAnalysis** wordt geregistreerd. In zeldzame gevallen kan het om de volgende redenen mislukken:
 
 - **U hebt onvoldoende machtigingen om de resource provider micro soft. ChangeAnalysis te registreren**. Dit fout bericht betekent dat aan uw rol in het huidige abonnement geen **micro soft. support/registreer/Action-** bereik is gekoppeld. Dit kan gebeuren als u niet de eigenaar van een abonnement bent en gedeelde toegangs machtigingen hebt via een collega. bijvoorbeeld toegang tot een resource groep weer geven. U kunt dit probleem oplossen door contact op te nemen met de eigenaar van uw abonnement om de resource provider **micro soft. ChangeAnalysis** te registreren. Dit kan worden gedaan in Azure Portal via **abonnementen | Resource providers** en zoeken ```Microsoft.ChangeAnalysis``` en registreren in de gebruikers interface of via Azure PowerShell of Azure cli.
 
@@ -183,6 +183,7 @@ Als dit de eerste keer is dat u het wijzigings overzicht bekijkt na de integrati
     ```
 
 - **Kan de micro soft. ChangeAnalysis-resource provider niet registreren**. Dit bericht geeft aan dat er direct een fout is opgetreden bij de gebruikers interface heeft een aanvraag verzonden om de resource provider te registreren en is niet gerelateerd aan het probleem met de machtiging. Waarschijnlijk is het een probleem met een tijdelijke Internet verbinding. Vernieuw de pagina en controleer de Internet verbinding. Als de fout zich blijft voordoen, neemt u contact op met changeanalysishelp@microsoft.com
+- **Kan geen query uitvoeren op de micro soft. ChangeAnalysis-resource provider** met *het bericht Azure Lighthouse-abonnement wordt niet ondersteund. de wijzigingen zijn alleen beschikbaar in de thuis Tenant van het abonnement*. Er is nu een beperking voor de resource provider voor wijzigings analyse die wordt geregistreerd via een Azure Lighthouse-abonnement voor gebruikers die zich niet in de thuis Tenant bevinden. We verwachten dat deze beperking in de nabije toekomst wordt opgelost. Als dit probleem zich voordoet, is er een tijdelijke oplossing waarbij u een Service-Principal moet maken en de rol expliciet kunt toewijzen om de toegang toe te staan.  Neem contact changeanalysishelp@microsoft.com op met meer informatie.
 
 - **Dit duurt langer dan verwacht**. Dit bericht geeft aan dat de registratie langer dan twee minuten duurt. Dit is ongebruikelijk, maar dit betekent niet noodzakelijkerwijs dat er iets verkeerd is gegaan. U kunt naar **Abonnementen gaan | Resource provider** die moet worden gecontroleerd op de registratie status van de **micro soft. ChangeAnalysis** -resource provider. U kunt proberen de gebruikers interface te gebruiken voor het opheffen van de registratie, opnieuw registreren of vernieuwen om te zien of het helpt. Neem contact op met de ondersteuning als het probleem zich blijft voordoen changeanalysishelp@microsoft.com .
     ![Problemen met de RP-registratie oplossen](./media/change-analysis/troubleshoot-registration-taking-too-long.png)

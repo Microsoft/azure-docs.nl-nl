@@ -8,12 +8,12 @@ ms.date: 11/19/2020
 ms.topic: conceptual
 ms.service: digital-twins
 ms.custom: contperfq2
-ms.openlocfilehash: 6533cbde10dfc924bd982357def859229eb1714a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 9aa1156da48ba39672d59858d0640619581329ee
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94963161"
+ms.locfileid: "94981116"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Query's uitvoeren op de Azure Digital Apparaatdubbels dubbele grafiek
 
@@ -277,7 +277,7 @@ U kunt het aantal query's dat u nodig hebt aanzienlijk beperken door een matrix 
 
 Denk bijvoorbeeld aan een scenario waarin *gebouwen* *vloeren* en *vloeren* *bevatten.* Als u wilt zoeken naar kamers binnen een gebouw dat warm is, kunt u de volgende stappen uitvoeren.
 
-1. Vloeren op basis van relatie zoeken in het gebouw `contains`
+1. Zoek in het gebouw vloeren op basis van de `contains` relatie.
 
     ```sql
     SELECT Floor

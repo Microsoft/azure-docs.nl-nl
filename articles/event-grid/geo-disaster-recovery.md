@@ -2,21 +2,21 @@
 title: Geografisch nood herstel in Azure Event Grid | Microsoft Docs
 description: Hierin wordt beschreven hoe Azure Event Grid geo-nood herstel (GeoDR) automatisch ondersteunt.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: ccb16971020a65932daa8f9adf4b7cd9008a9253
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/19/2020
+ms.openlocfilehash: 10beaf0ae25f3ed9b7bcda5961a89494b18b84d9
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86105843"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980845"
 ---
 # <a name="server-side-geo-disaster-recovery-in-azure-event-grid"></a>Geografisch nood herstel aan de server zijde in Azure Event Grid
 Event Grid hebt nu een automatische geo-nood herstel (GeoDR) van meta gegevens, niet alleen voor nieuwe, maar alle bestaande domeinen, onderwerpen en gebeurtenis abonnementen. Als een hele Azure-regio uitvalt, worden er al met de meta gegevens van de infra structuur van uw gebeurtenis een gepaarde regio gesynchroniseerd met Event Grid. Uw nieuwe evenementen worden opnieuw stromen zonder tussen komst van u. 
 
 Herstel na nood gevallen wordt gemeten met twee metrische gegevens:
 
-- [Beoogd herstel punt (RPO)](https://en.wikipedia.org/wiki/Disaster_recovery#Recovery_Point_Objective): de minuten of uren aan gegevens die mogelijk verloren zijn gegaan.
-- [Beoogde herstel tijd (RTO)](https://en.wikipedia.org/wiki/Disaster_recovery#Recovery_time_objective): het aantal minuten dat de service mogelijk niet actief is.
+- Beoogd herstel punt (RPO): de minuten of uren aan gegevens die mogelijk verloren zijn gegaan.
+- Beoogde herstel tijd (RTO): het aantal minuten of uren dat de service niet beschikbaar is.
 
 De automatische failover van Event Grid heeft verschillende Rpo's en Rto's voor uw meta gegevens (gebeurtenis abonnementen, enzovoort) en gegevens (gebeurtenissen). Als u een andere specificatie van de volgende items nodig hebt, kunt u uw eigen [failover van de client implementeren met behulp van de onderwerp Health-api's](custom-disaster-recovery.md).
 

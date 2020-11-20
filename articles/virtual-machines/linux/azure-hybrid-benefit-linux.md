@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: mathapli
-ms.openlocfilehash: a26a618d4f1bd9900136561d95c21c1ecbaadfaa
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 1459c80c857a436c8369d3ebe89794e0b69c33b1
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916471"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980878"
 ---
 # <a name="azure-hybrid-benefit--how-it-applies-for-linux-virtual-machines"></a>Azure Hybrid Benefit: hoe dit van toepassing is voor Linux Virtual Machines
 
@@ -146,6 +146,35 @@ A: Nee, dat kan niet. Als u een licentie type opgeeft dat onjuist overeenkomt me
 *V: Ik heb een Red Hat Cloud-toegang geregistreerd, maar ik kan het voor deel van mijn RHEL-Vm's nog steeds niet inschakelen. Wat moet ik doen?*
 
 A: het kan enige tijd duren voordat de inschrijving van uw Red Hat Cloud Access-abonnement van Red Hat naar Azure wordt door gegeven. Neem contact op met micro soft ondersteuning als u na één werkdag nog steeds de fout ziet.
+
+*V: Ik heb een virtuele machine geïmplementeerd met behulp van een RHEL BYOS ' gouden installatie kopie '. Kan ik de facturering voor deze afbeeldingen converteren van BYOS naar PAYG?*
+
+A: Nee, dat kan niet. Azure Hybrid Benefit ondersteunt alleen conversie op installatie kopieën met betalen per gebruik.
+
+*V: Ik heb een virtuele machine geïmplementeerd met behulp van een RHEL BYOS ' gouden installatie kopie '. Kan ik de facturering voor deze afbeeldingen converteren van BYOS naar PAYG?*
+
+A: Nee, dat kan niet. Azure Hybrid Benefit ondersteunt alleen conversie op installatie kopieën met betalen per gebruik.
+
+*V: Ik heb mijn eigen RHEL-installatie kopie geüpload van on-premises (via ASR of anderszins) naar Azure. Kan ik de facturering voor deze afbeeldingen converteren van BYOS naar PAYG?*
+
+A: Nee, dat kan niet. De Azure Hybrid Benefit mogelijkheid is vandaag alleen beschikbaar voor RHEL-en SLES-installatie kopieën in de Marketplace. 
+
+*V: kan ik Azure Hybrid Benefit gebruiken op Vm's die zijn geïmplementeerd vanuit Marketplace RHEL en SLES SAP-installatie kopieën?*
+
+A: Ja, dat is mogelijk. U kunt het licentie type ' RHEL_BYOS ' gebruiken voor RHEL-Vm's en ' SLES_BYOS ' voor conversies van Vm's die zijn geïmplementeerd op Marketplace RHEL en SLES SAP-installatie kopieën.
+
+*V: kan ik Azure Hybrid Benefit gebruiken op de virtuele-machine Scale set (VMSS) voor RHEL en SLES?*
+
+A: Nee, dat kan niet. VMSS zijn momenteel niet binnen het bereik van Azure Hybrid Benefit vandaag voor RHEL en SLES.
+
+*V: kan ik Azure Hybrid Benefit gebruiken op gereserveerde instanties (RIs) voor RHEL en SLES?*
+
+A: Nee, dat kan niet. RIs bevindt zich momenteel niet binnen het bereik van Azure Hybrid Benefit voor RHEL en SLES.
+
+*V: kan ik Azure Hybrid Benefit gebruiken op een virtuele machine die is geïmplementeerd voor SQL Server op RHEL-installatie kopieën?*
+
+A: Nee, dat kan niet. Er is geen plan voor de ondersteuning van deze.
+ 
 
 ## <a name="common-issues"></a>Algemene problemen
 Deze sectie bevat een lijst met veelvoorkomende problemen die kunnen optreden en stappen voor de oplossing.

@@ -154,12 +154,12 @@ De volgende tabel bevat kruisverwijzingen naar de waarden van entiteitstypen in 
 |-----------------------|-------------------------------------------------|--------------------------------------------|
 | `Address`             |                                                 | *Adres*                                  |
 | `Neighborhood`        | `Neighbourhood`                                 | *Buurt*                             |
-| `PopulatedPlace`      | `Municipality` of `MunicipalitySubdivision`     | *Stad* , *Plaats of voorstad* of *Grootstedelijk gebied*     |
+| `PopulatedPlace`      | `Municipality` of `MunicipalitySubdivision`     | *Stad*, *Plaats of voorstad* of *Grootstedelijk gebied*     |
 | `Postcode1`           | `PostalCodeArea`                                | *Postcode* of *Zipcode*                |
 | `AdminDivision1`      | `CountrySubdivision`                            | *Staat* of *Provincie*                      |
 | `AdminDivision2`      | `CountrySecondarySubdivison`                    | *Regio* of *districten*                    |
 | `CountryRegion`       | `Country`                                       | *Naam van land*                             |
-|                       | `CountryTertiarySubdivision`                    | *Buurten* , *Kantons* , *Gemeenschappen*          |
+|                       | `CountryTertiarySubdivision`                    | *Buurten*, *Kantons*, *Gemeenschappen*          |
 
 ## <a name="get-location-suggestions-autosuggest"></a>Locatiesuggesties ophalen (automatische suggestie)
 
@@ -442,7 +442,7 @@ In Bing Maps kan bijvoorbeeld een blauwe lijn met een dekking van 50% en een dik
 
 **Na: Azure Maps**
 
-In Azure Maps kunnen ook lijnen en veelhoeken aan een statische kaartafbeelding worden toegevoegd door de *path* -parameter in de URL op te geven. Net als Bing Maps kunnen een stijl en een lijst met locaties worden opgegeven in deze parameter en kan de *path* -parameter meerdere keren worden opgegeven om meerdere cirkels, lijnen en veelhoeken met verschillende stijlen weer te geven.
+In Azure Maps kunnen ook lijnen en veelhoeken aan een statische kaartafbeelding worden toegevoegd door de *path*-parameter in de URL op te geven. Net als Bing Maps kunnen een stijl en een lijst met locaties worden opgegeven in deze parameter en kan de *path*-parameter meerdere keren worden opgegeven om meerdere cirkels, lijnen en veelhoeken met verschillende stijlen weer te geven.
 
 > `&path=pathStyles||pathLocation1|pathLocation2|...`
 
@@ -528,7 +528,7 @@ De volgende tabel bevat de API-parameters in Bing Maps en de vergelijkbare API-p
 In Bing Maps kan naar nuttige plaatsen worden gezocht met behulp van de volgende API’s:
 
 -   **Lokale zoekopdracht:** Zoekt naar nuttige plaatsen in de buurt (radiale zoekopdracht) op naam of op entiteitstype (categorie). De API’s voor [zoeken naar nuttige plaats](/rest/api/maps/search/getsearchpoi) en [zoeken naar nuttige plaats op categorie](/rest/api/maps/search/getsearchpoicategory) in Azure Maps zijn vergelijkbaar met deze API.
--   **Locatieherkenning** : Hiermee wordt naar nuttige plaatsen gezocht die zich binnen een bepaalde afstand van een locatie bevinden. De API voor [zoeken in de buurt](/rest/api/maps/search/getsearchnearby) in Azure Maps lijkt het meest op deze API.
+-   **Locatieherkenning**: Hiermee wordt naar nuttige plaatsen gezocht die zich binnen een bepaalde afstand van een locatie bevinden. De API voor [zoeken in de buurt](/rest/api/maps/search/getsearchnearby) in Azure Maps lijkt het meest op deze API.
 -   **Lokale inzichten:** Zoekt naar nuttige plaatsen binnen een opgegeven maximale reistijd of afstand ten opzichte van een specifieke coördinaat. Dit wordt uitgevoerd door Azure Maps door eerst een isochrone te berekenen en deze vervolgens door te geven aan de API voor [zoeken binnen geometrie](/rest/api/maps/search/postsearchinsidegeometry).
 
 Azure Maps biedt verschillende zoek-API's voor nuttige plaatsen:

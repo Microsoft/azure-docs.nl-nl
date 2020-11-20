@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 11/03/2020
+ms.date: 11/18/2020
 ms.custom: generated
-ms.openlocfilehash: a48a13fa18025254ee31344868d10181ae87c65e
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: e18dc7e16eb0b114bd279d53b7dcc895bd62f338
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685474"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980855"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -237,6 +237,7 @@ Hiermee wordt volledige toegang verleend voor het beheren van alle resources, ma
 > | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/elevateAccess/Action | Hiermee krijgt de Gebruikerstoegangbeheerder toegang op tenantniveau |
 > | [Micro soft. blauw druk](resource-provider-operations.md#microsoftblueprint)/blueprintAssignments/write | Een blauw druk-toewijzing maken of bijwerken |
 > | [Micro soft. blauw druk](resource-provider-operations.md#microsoftblueprint)/blueprintAssignments/Delete | Eventuele blauw drukken-toewijzingen verwijderen |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/Galleries/share/Action | Een galerie deelt met verschillende bereiken |
 > | **DataActions** |  |
 > | *geen* |  |
 > | **NotDataActions** |  |
@@ -260,7 +261,8 @@ Hiermee wordt volledige toegang verleend voor het beheren van alle resources, ma
         "Microsoft.Authorization/*/Write",
         "Microsoft.Authorization/elevateAccess/Action",
         "Microsoft.Blueprint/blueprintAssignments/write",
-        "Microsoft.Blueprint/blueprintAssignments/delete"
+        "Microsoft.Blueprint/blueprintAssignments/delete",
+        "Microsoft.Compute/galleries/share/action"
       ],
       "dataActions": [],
       "notDataActions": []
@@ -6551,6 +6553,7 @@ Azure Sentinel contributor [meer informatie](../sentinel/roles.md)
 > | [Micro soft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/Workspaces/query/*/Read |  |
 > | [Micro soft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/Workspaces/dataSources/Read | Gegevens bronnen onder een werk ruimte ophalen. |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/Workbooks/* |  |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/myworkbooks/Read | Een persoonlijke werkmap lezen |
 > | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
 > | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
@@ -6583,6 +6586,7 @@ Azure Sentinel contributor [meer informatie](../sentinel/roles.md)
         "Microsoft.OperationalInsights/workspaces/query/*/read",
         "Microsoft.OperationalInsights/workspaces/dataSources/read",
         "Microsoft.Insights/workbooks/*",
+        "Microsoft.Insights/myworkbooks/read",
         "Microsoft.Authorization/*/read",
         "Microsoft.Insights/alertRules/*",
         "Microsoft.Resources/deployments/*",
@@ -6620,6 +6624,7 @@ Azure Sentinel Reader [meer informatie](../sentinel/roles.md)
 > | [Micro soft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/Workspaces/query/*/Read |  |
 > | [Micro soft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/Workspaces/dataSources/Read | Gegevens bronnen onder een werk ruimte ophalen. |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/Workbooks/Read | Een werkmap lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/myworkbooks/Read | Een persoonlijke werkmap lezen |
 > | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
 > | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
@@ -6656,6 +6661,7 @@ Azure Sentinel Reader [meer informatie](../sentinel/roles.md)
         "Microsoft.OperationalInsights/workspaces/query/*/read",
         "Microsoft.OperationalInsights/workspaces/dataSources/read",
         "Microsoft.Insights/workbooks/read",
+        "Microsoft.Insights/myworkbooks/read",
         "Microsoft.Authorization/*/read",
         "Microsoft.Insights/alertRules/*",
         "Microsoft.Resources/deployments/*",
@@ -6699,13 +6705,15 @@ Azure Sentinel responder [meer informatie](../sentinel/roles.md)
 > | [Micro soft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/Workspaces/query/*/Read |  |
 > | [Micro soft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/Workspaces/dataSources/Read | Gegevens bronnen onder een werk ruimte ophalen. |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/Workbooks/Read | Een werkmap lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/myworkbooks/Read | Een persoonlijke werkmap lezen |
 > | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
 > | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
 > | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
 > | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
 > | **NotActions** |  |
-> | *geen* |  |
+> | [Micro soft. SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/cases/*/Delete |  |
+> | [Micro soft. SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/incidents/*/Delete |  |
 > | **DataActions** |  |
 > | *geen* |  |
 > | **NotDataActions** |  |
@@ -6741,13 +6749,17 @@ Azure Sentinel responder [meer informatie](../sentinel/roles.md)
         "Microsoft.OperationalInsights/workspaces/query/*/read",
         "Microsoft.OperationalInsights/workspaces/dataSources/read",
         "Microsoft.Insights/workbooks/read",
+        "Microsoft.Insights/myworkbooks/read",
         "Microsoft.Authorization/*/read",
         "Microsoft.Insights/alertRules/*",
         "Microsoft.Resources/deployments/*",
         "Microsoft.Resources/subscriptions/resourceGroups/read",
         "Microsoft.Support/*"
       ],
-      "notActions": [],
+      "notActions": [
+        "Microsoft.SecurityInsights/cases/*/Delete",
+        "Microsoft.SecurityInsights/incidents/*/Delete"
+      ],
       "dataActions": [],
       "notDataActions": []
     }
@@ -7004,8 +7016,8 @@ Lees de meta gegevens van sleutels en voer terugloop/uitlopende bewerkingen uit.
 > | *geen* |  |
 > | **DataActions** |  |
 > | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Read-kluis | Lijst met sleutels in de opgegeven kluis of lees de eigenschappen en het open bare materiaal van een sleutel. Voor asymmetrische sleutels wordt met deze bewerking de open bare sleutel beschikbaar gemaakt en is de mogelijkheid om open bare sleutel algoritmen uit te voeren, zoals versleutelen en hand tekeningen controleren. Persoonlijke sleutels en symmetrische sleutels worden nooit weer gegeven. |
-> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/wrap/Action-kluis | Een symmetrische sleutel inpakken met een Key Vault sleutel. Houd er rekening mee dat als de Key Vault sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd met lees toegang. |
-> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Unwrap/Action-kluis | Pak een symmetrische sleutel uit met een Key Vault sleutel. |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/wrap/Action-kluis | Pakt een symmetrische sleutel met een Key Vault sleutel. Houd er rekening mee dat als de Key Vault sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Unwrap/Action-kluis | Pakt een symmetrische sleutel met een Key Vault sleutel. |
 > | **NotDataActions** |  |
 > | *geen* |  |
 
@@ -7048,13 +7060,13 @@ Voer cryptografische bewerkingen uit met behulp van sleutels. Werkt alleen voor 
 > | **DataActions** |  |
 > | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Read-kluis | Lijst met sleutels in de opgegeven kluis of lees de eigenschappen en het open bare materiaal van een sleutel. Voor asymmetrische sleutels wordt met deze bewerking de open bare sleutel beschikbaar gemaakt en is de mogelijkheid om open bare sleutel algoritmen uit te voeren, zoals versleutelen en hand tekeningen controleren. Persoonlijke sleutels en symmetrische sleutels worden nooit weer gegeven. |
 > | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/update/Action-kluis | Hiermee worden de opgegeven kenmerken bijgewerkt die zijn gekoppeld aan de opgegeven sleutel. |
-> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/backup/Action-kluis | Maak het back-upbestand van een sleutel. Het bestand kan worden gebruikt om de sleutel te herstellen in een Key Vault van hetzelfde abonnement. Er kunnen beperkingen van toepassing zijn. |
-> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Encrypt/Action-kluis | Versleutelen van Lees bare tekst met een sleutel. Houd er rekening mee dat als de sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/backup/Action-kluis | Hiermee maakt u het back-upbestand van een sleutel. Het bestand kan worden gebruikt om de sleutel te herstellen in een Key Vault van hetzelfde abonnement. Er kunnen beperkingen van toepassing zijn. |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Encrypt/Action-kluis | Versleutelt de Lees bare tekst met een sleutel. Houd er rekening mee dat als de sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
 > | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Decrypt/Action-kluis | Ontsleutelen van gecodeerde tekst met een sleutel. |
-> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/wrap/Action-kluis | Een symmetrische sleutel inpakken met een Key Vault sleutel. Houd er rekening mee dat als de Key Vault sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd met lees toegang. |
-> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Unwrap/Action-kluis | Pak een symmetrische sleutel uit met een Key Vault sleutel. |
-> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Sign/Action-kluis | Een hash ondertekenen met een sleutel. |
-> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/verify/Action-kluis | Verifieer een hash. Houd er rekening mee dat als de sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/wrap/Action-kluis | Pakt een symmetrische sleutel met een Key Vault sleutel. Houd er rekening mee dat als de Key Vault sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Unwrap/Action-kluis | Pakt een symmetrische sleutel met een Key Vault sleutel. |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/Sign/Action-kluis | Een Message Digest (hash) ondertekent met een sleutel. |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Keys/verify/Action-kluis | Verifieert de hand tekening van een Message Digest (hash) met een sleutel. Houd er rekening mee dat als de sleutel asymmetrisch is, deze bewerking kan worden uitgevoerd door principals met lees toegang. |
 > | **NotDataActions** |  |
 > | *geen* |  |
 
@@ -7221,7 +7233,7 @@ Geheime inhoud lezen. Werkt alleen voor sleutel kluizen die gebruikmaken van het
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
-> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Secrets/getSecret/Action-kluis | Haal de waarde van een geheim op. |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Secrets/getSecret/Action-kluis | Hiermee wordt de waarde van een geheim opgehaald. |
 > | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/vaults/Secrets/readMetadata/Action-kluis | De eigenschappen van een geheim weer geven of bekijken, maar niet de bijbehorende waarde. |
 > | **NotDataActions** |  |
 > | *geen* |  |
@@ -7618,7 +7630,7 @@ Met kunt u nieuwe Labs maken onder uw Azure Lab-accounts. [Meer informatie](../l
 }
 ```
 
-## <a name="monitor"></a>Monitor
+## <a name="monitor"></a>Controleren
 
 
 ### <a name="application-insights-component-contributor"></a>Inzender voor Application Insights onderdelen
@@ -7760,7 +7772,7 @@ Kan alle bewakings gegevens lezen en controle-instellingen bewerken. Zie ook aan
 > | [Micro soft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/Workspaces/sharedKeys/Action | Hiermee worden de gedeelde sleutels voor de werk ruimte opgehaald. Deze sleutels worden gebruikt om micro soft Operational Insights-agents te verbinden met de werk ruimte. |
 > | [Micro soft. OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/Workspaces/storageinsightconfigs/* | Opslag inzicht configuraties voor log Analytics lezen/schrijven/verwijderen. |
 > | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
-> | [Micro soft. WorkloadMonitor](resource-provider-operations.md#microsoftworkloadmonitor)/monitors/* | Informatie over status monitors van de gast-VM ophalen.  |
+> | [Micro soft. WorkloadMonitor](resource-provider-operations.md#microsoftworkloadmonitor)/monitors/* | Informatie over status monitors van de gast-VM ophalen. |
 > | [Micro soft. AlertsManagement](resource-provider-operations.md#microsoftalertsmanagement)/smartDetectorAlertRules/* |  |
 > | [Micro soft. AlertsManagement](resource-provider-operations.md#microsoftalertsmanagement)/actionRules/* |  |
 > | [Micro soft. AlertsManagement](resource-provider-operations.md#microsoftalertsmanagement)/smartGroups/* |  |

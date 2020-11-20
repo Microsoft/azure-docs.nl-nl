@@ -13,12 +13,12 @@ ms.custom:
 - seo-lt-2019
 - references_regions
 ms.date: 07/15/2020
-ms.openlocfilehash: a34f2e50a5eb4ab87a02a5128cb912fa220849f1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 81d82bccd6b6bd97b84df5269dd59ffac4903370
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93317079"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980355"
 ---
 # <a name="azure-data-factory-managed-virtual-network-preview"></a>Beheerde Virtual Network Azure Data Factory (preview-versie)
 
@@ -73,6 +73,11 @@ Als de eigenaar de verbinding goedkeurt, wordt de privé-koppeling tot stand geb
 
 Alleen een beheerd privé-eindpunt met een goedgekeurde status kan verkeer verzenden naar een gegeven privé-koppelingsresource.
 
+## <a name="interactive-authoring"></a>Interactief ontwerpen
+Interactieve ontwerp mogelijkheden worden gebruikt voor functies als test verbinding, bladeren in mappen lijst en tabel lijst, schema ophalen en voor beeld van gegevens. U kunt interactief ontwerpen inschakelen bij het maken of bewerken van een Azure Integration Runtime dat zich in het virtuele netwerk met ADF-beheer bevindt. De back-end-service wijst de reken kracht vooraf toe voor interactieve ontwerp functies. Anders wordt de berekening toegewezen telkens wanneer een interactieve bewerking wordt uitgevoerd, waardoor er meer tijd in beslag wordt genomen. De TTL (time to Live) voor interactieve ontwerpen is 60 minuten, wat betekent dat deze automatisch wordt uitgeschakeld na 60 minuten van de laatste interactieve ontwerp bewerking.
+
+![Interactieve creatie](./media/managed-vnet/interactive-authoring.png)
+
 ## <a name="limitations-and-known-issues"></a>Beperkingen en bekende problemen
 ### <a name="supported-data-sources"></a>Ondersteunde gegevensbronnen
 De onderstaande gegevens bronnen worden ondersteund om verbinding te maken via een persoonlijke koppeling vanuit de Virtual Network van ADF die wordt beheerd.
@@ -95,7 +100,7 @@ De onderstaande gegevens bronnen worden ondersteund om verbinding te maken via e
 - VS - oost 2
 - VS - west-centraal
 - VS - west
-- West US 2
+- VS - west 2
 - South Central US
 - Central US
 - Europa - noord

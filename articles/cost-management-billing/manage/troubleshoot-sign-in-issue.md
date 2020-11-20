@@ -33,13 +33,13 @@ Als uw internetbrowserpagina vastloopt, voert u elk van de volgende stappen uit 
 - Gebruik de modus voor privé browsen van uw browser:
 
    - **Microsoft Edge:** Open **Instellingen** (de drie puntjes bij uw profielafbeelding), selecteer **Nieuw InPrivate-venster** en ga vervolgens naar de [Azure-portal](https://portal.azure.com/) of het [Azure-accountcentrum](https://account.azure.com/Subscriptions). 
-   - **Chrome:** Kies de **Incognito** -modus.
-   - **Safari:** Kies **Bestand** en vervolgens **Nieuw privévenster** .
+   - **Chrome:** Kies de **Incognito**-modus.
+   - **Safari:** Kies **Bestand** en vervolgens **Nieuw privévenster**.
 
 - Wis de cache en verwijder internetcookies:
 
-   - **Microsoft Edge:** Open **Instellingen** en selecteer **Privacy en services** . Volg de stappen onder **Browsegegevens wissen** . Controleer of de selectievakjes voor **Browsegeschiedenis** , **Downloadgeschiedenis** , en **In cache opgeslagen afbeeldingen en bestanden** zijn geselecteerd, en selecteer vervolgens **Verwijderen** .
-   - **Chrome:** Kies **Instellingen** en selecteer **Browsegegevens wissen** onder **Privacy en beveiliging** .
+   - **Microsoft Edge:** Open **Instellingen** en selecteer **Privacy en services**. Volg de stappen onder **Browsegegevens wissen**. Controleer of de selectievakjes voor **Browsegeschiedenis**, **Downloadgeschiedenis**, en **In cache opgeslagen afbeeldingen en bestanden** zijn geselecteerd, en selecteer vervolgens **Verwijderen**.
+   - **Chrome:** Kies **Instellingen** en selecteer **Browsegegevens wissen** onder **Privacy en beveiliging**.
 
 ## <a name="you-are-automatically-signed-in-as-a-different-user"></a>U wordt automatisch aangemeld als een andere gebruiker
 
@@ -49,13 +49,13 @@ Probeer een van de volgende methoden om dit probleem op te lossen:
 
 - Wis de cache en verwijder internetcookies.
 
-   - **Microsoft Edge:** Open **Instellingen** en selecteer **Privacy en services** . Volg de stappen onder **Browsegegevens wissen** . Controleer of de selectievakjes voor **Browsegeschiedenis** , **Downloadgeschiedenis** , **Cookies** en **In cache opgeslagen afbeeldingen en bestanden** zijn geselecteerd, en selecteer vervolgens **Verwijderen** .
-   - **Chrome:** Kies **Instellingen** en selecteer **Browsegegevens wissen** onder **Privacy en beveiliging** .
+   - **Microsoft Edge:** Open **Instellingen** en selecteer **Privacy en services**. Volg de stappen onder **Browsegegevens wissen**. Controleer of de selectievakjes voor **Browsegeschiedenis**, **Downloadgeschiedenis**, **Cookies** en **In cache opgeslagen afbeeldingen en bestanden** zijn geselecteerd, en selecteer vervolgens **Verwijderen**.
+   - **Chrome:** Kies **Instellingen** en selecteer **Browsegegevens wissen** onder **Privacy en beveiliging**.
 - Stel uw browserinstellingen opnieuw in op de standaardwaarden.
 - Gebruik de modus voor privé browsen van uw browser. 
    - **Microsoft Edge:** Open **Instellingen** (de drie puntjes bij uw profielafbeelding), selecteer **Nieuw InPrivate-venster** en ga vervolgens naar de [Azure-portal](https://portal.azure.com/) of het [Azure-accountcentrum](https://account.azure.com/Subscriptions). 
-   - **Chrome:** Kies de **Incognito** -modus.
-   - **Safari:** Kies **Bestand** en vervolgens **Nieuw privévenster** .
+   - **Chrome:** Kies de **Incognito**-modus.
+   - **Safari:** Kies **Bestand** en vervolgens **Nieuw privévenster**.
 
 ## <a name="i-can-sign-in-but-i-see-the-error-no-subscriptions-found"></a>Ik kan me aanmelden, maar ik zie de fout dat er geen abonnementen zijn gevonden
 
@@ -73,8 +73,8 @@ Dit probleem oplossen:
 Controleer of het account dat u gebruikt de accountbeheerder is. Voer de volgende stappen uit om te controleren wie de accountbeheerder is:
 
 1.  Meld u aan bij de [Abonnementenweergave in de Azure-portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
-1.  Selecteer het abonnement dat u wilt controleren en selecteer vervolgens **Instellingen** .
-1.  Selecteer **Eigenschappen** . De accountbeheerder van het abonnement wordt weergegeven in het vak **Accountbeheerder** .
+1.  Selecteer het abonnement dat u wilt controleren en selecteer vervolgens **Instellingen**.
+1.  Selecteer **Eigenschappen**. De accountbeheerder van het abonnement wordt weergegeven in het vak **Accountbeheerder**.
 
 ## <a name="additional-help-resources"></a>Aanvullende ondersteuningsresources
 

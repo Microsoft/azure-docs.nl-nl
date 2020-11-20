@@ -5,13 +5,13 @@ services: logic-apps
 ms.workload: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.date: 08/27/2020
-ms.openlocfilehash: 8a59b47dadd845f1a522854c503af11c8fff72fd
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.date: 11/19/2020
+ms.openlocfilehash: b345168dad63b1846d46c12721587eaffb5f887e
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331971"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94981201"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-https-endpoints-in-azure-logic-apps"></a>Logische apps aanroepen, activeren of nesten met behulp van HTTPS-eind punten in Azure Logic Apps
 
@@ -104,7 +104,7 @@ Voor meer informatie over beveiliging, autorisatie en versleuteling voor inkomen
 
    * Klik rechts van het vak **http post-URL** op **kopiëren URL** (pictogram kopie bestanden).
 
-   * Dit POST-gesprek doen:
+   * Deze aanroep maken met behulp van de methode die de aanvraag trigger verwacht. In dit voor beeld wordt de `POST` methode gebruikt:
 
      `POST https://management.azure.com/{logic-app-resource-ID}/triggers/{endpoint-trigger-name}/listCallbackURL?api-version=2016-06-01`
 
@@ -124,9 +124,9 @@ Voor meer informatie over beveiliging, autorisatie en versleuteling voor inkomen
 
 ## <a name="select-expected-request-method"></a>Selecteer de verwachte aanvraag methode
 
-De aanvraag trigger verwacht standaard een POST-aanvraag. U kunt een andere methode opgeven die u verwacht, maar slechts één methode.
+Voor de aanvraag trigger wordt standaard een `POST` aanvraag verwacht. U kunt echter een andere methode opgeven die de aanroeper moet gebruiken, maar slechts één methode.
 
-1. Open in de trigger voor aanvragen de lijst **nieuwe para meter toevoegen** en selecteer **methode** , waarmee deze eigenschap wordt toegevoegd aan de trigger.
+1. Open in de trigger voor aanvragen de lijst **nieuwe para meter toevoegen** en selecteer **methode**, waarmee deze eigenschap wordt toegevoegd aan de trigger.
 
    ![Eigenschap ' methode ' toevoegen aan trigger](./media/logic-apps-http-endpoint/select-add-new-parameter-for-method.png)
 
@@ -154,7 +154,7 @@ Als u parameter waarden wilt accepteren via de URL van het eind punt, hebt u de 
 
 ### <a name="accept-values-through-get-parameters"></a>Waarden accepteren via GET-para meters
 
-1. In de trigger voor aanvragen opent u de **lijst nieuwe para meter toevoegen** , voegt u de eigenschap **Method** toe aan de trigger en selecteert u de **Get** -methode.
+1. In de trigger voor aanvragen opent u de **lijst nieuwe para meter toevoegen**, voegt u de eigenschap **Method** toe aan de trigger en selecteert u de **Get** -methode.
 
    Zie voor meer informatie [verwachte aanvraag methode selecteren](#select-method).
 
@@ -217,7 +217,7 @@ Als u parameter waarden wilt accepteren via de URL van het eind punt, hebt u de 
 
 ### <a name="accept-values-through-a-relative-path"></a>Waarden accepteren via een relatief pad
 
-1. Open in de trigger voor aanvragen de lijst **nieuwe para meter toevoegen** en selecteer **relatief pad** , waarmee deze eigenschap wordt toegevoegd aan de trigger.
+1. Open in de trigger voor aanvragen de lijst **nieuwe para meter toevoegen** en selecteer **relatief pad**, waarmee deze eigenschap wordt toegevoegd aan de trigger.
 
    ![Eigenschap relatief pad toevoegen aan trigger](./media/logic-apps-http-endpoint/select-add-new-parameter-for-relative-path.png)
 
@@ -262,7 +262,7 @@ Als u parameter waarden wilt accepteren via de URL van het eind punt, hebt u de 
 
 ## <a name="call-logic-app-through-endpoint-url"></a>Logische app aanroepen via eind punt-URL
 
-Nadat u het eind punt hebt gemaakt, kunt u de logische app activeren door een HTTPS- `POST` aanvraag naar de volledige URL van het eind punt te verzenden. Logic apps hebben ingebouwde ondersteuning voor directe toegangs punten.
+Nadat u het eind punt hebt gemaakt, kunt u de logische app activeren door een HTTPS-aanvraag naar de volledige URL van het eind punt te verzenden. Logic apps hebben ingebouwde ondersteuning voor directe toegangs punten.
 
 <a name="generated-tokens"></a>
 
@@ -353,7 +353,7 @@ In de antwoord tekst kunt u meerdere kopteksten en elk type inhoud toevoegen. De
 
 Antwoorden hebben de volgende eigenschappen:
 
-| Eigenschap (weer geven) | Eigenschap (JSON) | Description |
+| Eigenschap (weer geven) | Eigenschap (JSON) | Beschrijving |
 |--------------------|-----------------|-------------|
 | **Status code** | `statusCode` | De HTTPS-status code die moet worden gebruikt in het antwoord op de binnenkomende aanvraag. Deze code kan een geldige status code zijn die begint met 2xx, 4xx of 5xx. 3xx-status codes zijn echter niet toegestaan. |
 | **Kopteksten** | `headers` | Een of meer headers die moeten worden meegenomen in het antwoord |
@@ -384,7 +384,7 @@ Als u de JSON-definitie voor de reactie actie en de volledige JSON-definitie van
 
 #### <a name="q-what-about-url-security"></a>V: wat gebeurt er met URL-beveiliging?
 
-**A** : Azure maakt veilig-call back-url's voor logische apps met behulp van [Shared Access Signature (SAS)](/rest/api/storageservices/delegate-access-with-shared-access-signature). Deze hand tekening wordt door gegeven als een query parameter en moet worden gevalideerd voordat de logische app kan worden uitgevoerd. Azure genereert de hand tekening met een unieke combi natie van een geheime sleutel per logische app, de naam van de trigger en de bewerking die wordt uitgevoerd. Tenzij iemand toegang heeft tot de sleutel van de geheime logische app, kan er dus geen geldige hand tekening worden gegenereerd.
+**A**: Azure maakt veilig-call back-url's voor logische apps met behulp van [Shared Access Signature (SAS)](/rest/api/storageservices/delegate-access-with-shared-access-signature). Deze hand tekening wordt door gegeven als een query parameter en moet worden gevalideerd voordat de logische app kan worden uitgevoerd. Azure genereert de hand tekening met een unieke combi natie van een geheime sleutel per logische app, de naam van de trigger en de bewerking die wordt uitgevoerd. Tenzij iemand toegang heeft tot de sleutel van de geheime logische app, kan er dus geen geldige hand tekening worden gegenereerd.
 
 > [!IMPORTANT]
 > Voor productie-en hogere beveiligings systemen raden wij u ten zeerste aan om uw logische app rechtstreeks vanuit de browser aan te roepen om de volgende redenen:
@@ -396,7 +396,7 @@ Voor meer informatie over beveiliging, autorisatie en versleuteling voor inkomen
 
 #### <a name="q-can-i-configure-callable-endpoints-further"></a>V: kan ik aanroep bare eind punten verder configureren?
 
-**A** : Ja, https-eind punten ondersteunen meer geavanceerde configuratie via [Azure API Management](../api-management/api-management-key-concepts.md). Deze service biedt ook de mogelijkheid om alle Api's consistent te beheren, met inbegrip van Logic apps, het instellen van aangepaste domein namen, het gebruiken van meer verificatie methoden en meer, bijvoorbeeld:
+**A**: Ja, https-eind punten ondersteunen meer geavanceerde configuratie via [Azure API Management](../api-management/api-management-key-concepts.md). Deze service biedt ook de mogelijkheid om alle Api's consistent te beheren, met inbegrip van Logic apps, het instellen van aangepaste domein namen, het gebruiken van meer verificatie methoden en meer, bijvoorbeeld:
 
 * [De aanvraag methode wijzigen](../api-management/api-management-advanced-policies.md#SetRequestMethod)
 * [De URL-segmenten van de aanvraag wijzigen](../api-management/api-management-transformation-policies.md#RewriteURL)

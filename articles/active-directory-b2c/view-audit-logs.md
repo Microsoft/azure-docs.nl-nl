@@ -12,18 +12,18 @@ ms.date: 02/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4fc25edb873a2dfe84f6ca716a71cf028c74cb2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9485fb09d3ac7684ba91bcd37720a0e55603404b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85383934"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952723"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Toegang tot Azure AD B2C controle logboeken
 
 Azure Active Directory B2C (Azure AD B2C) verzendt audit logboeken met activiteit gegevens over B2C-resources, tokens die zijn uitgegeven en beheerders toegang. Dit artikel bevat een kort overzicht van de informatie die beschikbaar is in audit logs en instructies over het openen van deze gegevens voor uw Azure AD B2C-Tenant.
 
-Audit logboek gebeurtenissen worden alleen **zeven dagen**bewaard. Plan uw logboeken te downloaden en op te slaan met een van de hieronder vermelde methoden als u een langere Bewaar periode nodig hebt.
+Audit logboek gebeurtenissen worden alleen **zeven dagen** bewaard. Plan uw logboeken te downloaden en op te slaan met een van de hieronder vermelde methoden als u een langere Bewaar periode nodig hebt.
 
 > [!NOTE]
 > U kunt geen gebruikers aanmeldingen zien voor afzonderlijke Azure AD B2C-toepassingen in het gedeelte **gebruikers** van de **Azure Active Directory** -of **Azure AD B2C** pagina's in de Azure Portal. De aanmeldings gebeurtenissen bevatten de gebruikers activiteit, maar kunnen niet worden gekoppeld aan de B2C-toepassing waarbij de gebruiker zich heeft aangemeld. U moet de audit logboeken voor gebruiken, zoals verderop in dit artikel wordt uitgelegd.
@@ -53,7 +53,7 @@ Het deel venster activity Details bevat de volgende relevante informatie:
 
 |Sectie|Veld|Beschrijving|
 |-------|-----|-----------|
-| Activiteit | Naam | Welke activiteit heeft plaatsgevonden. *Geef bijvoorbeeld een id_token voor de toepassing op*, waarmee de werkelijke gebruikers aanmelding wordt beëindigd. |
+| Activiteit | Name | Welke activiteit heeft plaatsgevonden. *Geef bijvoorbeeld een id_token voor de toepassing op*, waarmee de werkelijke gebruikers aanmelding wordt beëindigd. |
 | Gestart door (actor) | ObjectId | De **object-id** van de B2C-toepassing waarbij de gebruiker zich aanmeldt. Deze id is niet zichtbaar in de Azure Portal, maar is toegankelijk via de Microsoft Graph-API. |
 | Gestart door (actor) | SPN | De **toepassings-id** van de B2C-toepassing waarbij de gebruiker zich aanmeldt. |
 | Doel(en) | ObjectId | De **object-id** van de gebruiker die zich aanmeldt. |
@@ -84,7 +84,7 @@ Als u de lijst met activiteiten gebeurtenissen in een CSV-bestand (Comma-Separat
 
 ## <a name="get-audit-logs-with-the-azure-ad-reporting-api"></a>Audit logboeken ophalen met de rapportage-API van Azure AD
 
-Audit logboeken worden gepubliceerd op dezelfde pijp lijn als andere activiteiten voor Azure Active Directory, zodat ze toegankelijk zijn via de [Azure Active Directory rapportage-API](https://docs.microsoft.com/graph/api/directoryaudit-list). Zie [aan de slag met de Azure Active Directory-rapportage-API](../active-directory/reports-monitoring/concept-reporting-api.md)voor meer informatie.
+Audit logboeken worden gepubliceerd op dezelfde pijp lijn als andere activiteiten voor Azure Active Directory, zodat ze toegankelijk zijn via de [Azure Active Directory rapportage-API](/graph/api/directoryaudit-list). Zie [aan de slag met de Azure Active Directory-rapportage-API](../active-directory/reports-monitoring/concept-reporting-api.md)voor meer informatie.
 
 ### <a name="enable-reporting-api-access"></a>Rapportage-API-toegang inschakelen
 

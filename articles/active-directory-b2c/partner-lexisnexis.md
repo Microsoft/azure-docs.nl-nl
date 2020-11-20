@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: c753e9a18f9869e1bf11aa437fb60484f2553e17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9bec7ffe28fbcdafd365f9867ebecaee5d2647e5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259251"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953679"
 ---
 # <a name="tutorial-for-configuring-lexisnexis-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van LexisNexis met Azure Active Directory B2C
 
@@ -33,7 +33,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- [Een Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) die is gekoppeld aan uw Azure-abonnement.
+- [Een Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -73,16 +73,16 @@ Zodra een account is gemaakt, ontvangt u de informatie die u nodig hebt voor de 
 
 ### <a name="part-1---deploy-the-api"></a>Deel 1: de API implementeren
 
-Implementeer de meegeleverde [API-code](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/Api) voor een Azure-service. De code kan worden gepubliceerd vanuit Visual Studio, gevolgd door deze [instructies](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Implementeer de meegeleverde [API-code](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/Api) voor een Azure-service. De code kan worden gepubliceerd vanuit Visual Studio, gevolgd door deze [instructies](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 >[!NOTE]
 >U hebt de URL van de geïmplementeerde service nodig om Azure AD te configureren met de vereiste instellingen.
 
 ### <a name="part-2---configure-the-api"></a>Deel 2: de API configureren
 
-Toepassings instellingen kunnen worden [geconfigureerd in de app service in azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings).  Met deze methode kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
+Toepassings instellingen kunnen worden [geconfigureerd in de app service in azure](../app-service/configure-common.md#configure-app-settings).  Met deze methode kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
 
-| Toepassingsinstellingen | Bron | Notities |
+| Toepassingsinstellingen | Bron | Opmerkingen |
 | :-------- | :------------| :-----------|
 |ThreatMetrix: URL | ThreatMetrix-account configuratie |     |
 |ThreatMetrix: OrgId | ThreatMetrix-account configuratie |     |
@@ -95,13 +95,13 @@ Toepassings instellingen kunnen worden [geconfigureerd in de app service in azur
 
 Deze oplossing maakt gebruik van aangepaste UI-sjablonen die door Azure AD B2C worden geladen. Deze UI-sjablonen doen het profileren dat rechtstreeks naar de ThreatMetrix-service wordt verzonden.
 
-Raadpleeg deze [instructies](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#custom-page-content-walkthrough) voor het implementeren van de toegevoegde [gebruikers interface bestanden](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template) naar een Blob Storage-account. De instructies omvatten het instellen van een Blob Storage-account, het configureren van CORS en het inschakelen van open bare toegang.
+Raadpleeg deze [instructies](./custom-policy-ui-customization.md#custom-page-content-walkthrough) voor het implementeren van de toegevoegde [gebruikers interface bestanden](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template) naar een Blob Storage-account. De instructies omvatten het instellen van een Blob Storage-account, het configureren van CORS en het inschakelen van open bare toegang.
 
 De gebruikers interface is gebaseerd op de sjabloon van de [oceaan blauw](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template/ocean_blue). Alle koppelingen in de gebruikers interface moeten worden bijgewerkt om te verwijzen naar de geïmplementeerde locatie. Zoek en vervang in de map gebruikers interface https://yourblobstorage/blobcontainer de geïmplementeerde locatie.
 
 ### <a name="part-4---create-api-policy-keys"></a>Deel 4: API-beleids sleutels maken
 
-Raadpleeg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/secure-rest-api#add-rest-api-username-and-password-policy-keys) en maak twee beleids sleutels: een voor de API-gebruikers naam en een voor het API-wacht woord dat u hierboven hebt gedefinieerd.
+Raadpleeg dit [document](./secure-rest-api.md#add-rest-api-username-and-password-policy-keys) en maak twee beleids sleutels: een voor de API-gebruikers naam en een voor het API-wacht woord dat u hierboven hebt gedefinieerd.
 
 In het voorbeeld beleid worden de volgende sleutel namen gebruikt:
 
@@ -122,7 +122,7 @@ Ga in het meegeleverde [TrustFrameworkExtensions-beleid](https://github.com/azur
 
 ### <a name="part-7---configure-the-azure-ad-b2c-policy"></a>Deel 7: het Azure AD B2C-beleid configureren
 
-Raadpleeg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) om [Local accounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden en configureer het [beleid](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/policy) voor de Azure AD B2C Tenant.
+Raadpleeg dit [document](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) om [Local accounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden en configureer het [beleid](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/policy) voor de Azure AD B2C Tenant.
 
 >[!NOTE]
 >Werk het opgegeven beleid bij om te koppelen aan uw specifieke Tenant.
@@ -147,12 +147,12 @@ Raadpleeg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/c
 
 6. De aanmeldings stroom door lopen  
 
-7. De ThreatMetrix-puzzel wordt weer gegeven nadat u **door gaan**hebt ingevoerd.
+7. De ThreatMetrix-puzzel wordt weer gegeven nadat u **door gaan** hebt ingevoerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

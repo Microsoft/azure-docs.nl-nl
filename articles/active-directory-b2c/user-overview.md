@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: bb13b350dfecf70e5f3a45755f6f77069a855c6c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: f7a4d0852edded516b7fbe42f15abfe160e44cd3
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363841"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952791"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Overzicht van gebruikers accounts in Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ Een werk account is op dezelfde manier gemaakt voor alle tenants op basis van Az
 
 Wanneer u een nieuw werk account toevoegt, moet u rekening houden met de volgende configuratie-instellingen:
 
-- **Naam** en **gebruikers naam** : de eigenschap **name** bevat de opgegeven en de achternaam van de gebruiker. De **gebruikers naam** is de id waarmee de gebruiker zich aanmeldt. De gebruikers naam bevat het volledige domein. Het domein naam gedeelte van de gebruikers naam moet de oorspronkelijke standaard domein naam *your-domain.onmicrosoft.com*of een geverifieerde, niet-federatieve [aangepaste domein](../active-directory/fundamentals/add-custom-domain.md) naam zijn, zoals *contoso.com*.
+- **Naam** en **gebruikers naam** : de eigenschap **name** bevat de opgegeven en de achternaam van de gebruiker. De **gebruikers naam** is de id waarmee de gebruiker zich aanmeldt. De gebruikers naam bevat het volledige domein. Het domein naam gedeelte van de gebruikers naam moet de oorspronkelijke standaard domein naam *your-domain.onmicrosoft.com* of een geverifieerde, niet-federatieve [aangepaste domein](../active-directory/fundamentals/add-custom-domain.md) naam zijn, zoals *contoso.com*.
 - **Profiel** : het account is ingesteld met een profiel van gebruikers gegevens. U hebt de mogelijkheid om een voor naam, achternaam, functie en afdelings naam in te voeren. U kunt het profiel bewerken nadat het account is gemaakt.
 - **Groepen** : gebruik een groep om beheer taken uit te voeren, zoals het toewijzen van licenties of machtigingen aan een aantal gebruikers of apparaten tegelijk. U kunt het nieuwe account in een bestaande [groep](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) in uw Tenant plaatsen.
 - **Directory-functie** : u moet het toegangs niveau opgeven dat de gebruikers account heeft voor de resources in uw Tenant. De volgende machtigings niveaus zijn beschikbaar:
@@ -50,29 +50,29 @@ Wanneer u een nieuw werk account toevoegt, moet u rekening houden met de volgend
 U kunt de volgende informatie gebruiken om een nieuw werk account te maken:
 
 - [Azure-portal](../active-directory/fundamentals/add-users-azure-active-directory.md)
-- [Microsoft Graph](https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0)
+- [Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0)
 
 ### <a name="update-a-user-profile"></a>Een gebruikers profiel bijwerken
 
 U kunt de volgende informatie gebruiken om het profiel van een gebruiker bij te werken:
 
 - [Azure-portal](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
-- [Microsoft Graph](https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0)
+- [Microsoft Graph](/graph/api/user-update?view=graph-rest-1.0)
 
 ### <a name="reset-a-password-for-a-user"></a>Een wacht woord voor een gebruiker opnieuw instellen
 
 U kunt de volgende informatie gebruiken om het wacht woord van een gebruiker opnieuw in te stellen:
 
 - [Azure-portal](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
-- [Microsoft Graph](https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0)
+- [Microsoft Graph](/graph/api/user-update?view=graph-rest-1.0)
 
 ## <a name="guest-user"></a>Gast gebruiker
 
-U kunt externe gebruikers als gast gebruiker uitnodigen voor uw Tenant. Een typisch scenario voor het uitnodigen van een gastgebruiker voor uw Azure AD B2C-tenant is voor het delen van beheerderstaken. Zie [Eigenschappen van een Azure Active Directory B2B-samenwerkings gebruiker](../active-directory/b2b/user-properties.md)voor een voor beeld van het gebruik van een gast account.
+U kunt externe gebruikers als gast gebruiker uitnodigen voor uw Tenant. Een typisch scenario voor het uitnodigen van een gastgebruiker voor uw Azure AD B2C-tenant is voor het delen van beheerderstaken. Zie [Eigenschappen van een Azure Active Directory B2B-samenwerkings gebruiker](../active-directory/external-identities/user-properties.md)voor een voor beeld van het gebruik van een gast account.
 
 Wanneer u een gast gebruiker uitnodigt voor uw Tenant, geeft u het e-mail adres van de ontvanger en een bericht waarin de uitnodiging wordt beschreven. De uitnodigings koppeling neemt de gebruiker op de pagina toestemming waar de knop **aan de slag** is geselecteerd en de controle van machtigingen wordt geaccepteerd. Als een postvak in niet aan het e-mail adres is gekoppeld, kan de gebruiker naar een micro soft-pagina gaan met behulp van de genodigde referenties om naar de pagina met de toestemming te gaan. De gebruiker kan de uitnodiging vervolgens op dezelfde manier inwisselen als klikken op de koppeling in het e-mail bericht. Bijvoorbeeld: `https://myapps.microsoft.com/B2CTENANTNAME`.
 
-U kunt ook de [Microsoft Graph-API](https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-beta) gebruiken om een gast gebruiker uit te nodigen.
+U kunt ook de [Microsoft Graph-API](/graph/api/invitation-post?view=graph-rest-beta) gebruiken om een gast gebruiker uit te nodigen.
 
 ## <a name="consumer-user"></a>Consumenten gebruiker
 

@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 10/05/2019
 ms.author: rohink
-ms.openlocfilehash: 9d183f2da7b916b1547fa1f81aa877b1b5488b41
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 24f2ca238288854b99160a25c3d4dcedf8ce3368
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91308432"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952383"
 ---
 # <a name="azure-private-dns-faq"></a>Veelgestelde vragen over privé-DNS in Azure
 
@@ -34,7 +34,7 @@ Nee. Persoonlijke zones werken samen met virtuele netwerken. U kunt ze gebruiken
 
 ## <a name="can-the-same-private-zone-be-used-for-several-virtual-networks-for-resolution"></a>Kan dezelfde privé zone worden gebruikt voor verschillende virtuele netwerken voor oplossing?
 
-Ja. U kunt een privé-DNS-zone koppelen aan duizenden virtuele netwerken. Zie [Azure DNS limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-dns-limits) voor meer informatie
+Ja. U kunt een privé-DNS-zone koppelen aan duizenden virtuele netwerken. Zie [Azure DNS limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-dns-limits) voor meer informatie
 
 ## <a name="can-a-virtual-network-that-belongs-to-a-different-subscription-be-linked-to-a-private-zone"></a>Kan een virtueel netwerk dat tot een ander abonnement behoort, worden gekoppeld aan een privé zone?
 
@@ -75,11 +75,11 @@ Ja. Persoonlijke zones vervangen de standaard internal.cloudapp.net-zone van Azu
 ## <a name="will-the-dns-suffix-on-virtual-machines-within-a-linked-virtual-network-be-changed-to-that-of-the-private-zone"></a>Wordt het DNS-achtervoegsel op virtuele machines in een gekoppeld virtueel netwerk gewijzigd in dat van de privé zone?
 
 Nee. Het DNS-achtervoegsel op de virtuele machines in het gekoppelde virtuele netwerk blijft als standaard achtervoegsel van Azure (' *. internal.cloudapp.net '). U kunt dit DNS-achtervoegsel hand matig wijzigen op uw virtuele machines naar dat van de privé zone.
-Zie voor meer informatie over het wijzigen van dit achtervoegsel [dynamische DNS gebruiken om hostnamen te registreren in uw eigen DNS-server](https://docs.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-ddns#windows-clients)
+Zie voor meer informatie over het wijzigen van dit achtervoegsel [dynamische DNS gebruiken om hostnamen te registreren in uw eigen DNS-server](../virtual-network/virtual-networks-name-resolution-ddns.md#windows-clients)
 
 ## <a name="what-are-the-usage-limits-for-azure-dns-private-zones"></a>Wat zijn de gebruiks limieten voor Azure DNS privé zones?
 
-Raadpleeg [Azure DNS limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-dns-limits) voor meer informatie over de gebruiks limieten voor Azure DNS persoonlijke zones.
+Raadpleeg [Azure DNS limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-dns-limits) voor meer informatie over de gebruiks limieten voor Azure DNS persoonlijke zones.
 
 ## <a name="why-dont-my-existing-private-dns-zones-show-up-in-new-portal-experience"></a>Waarom worden mijn bestaande privé-DNS-zones niet weer gegeven in de nieuwe portal?
 

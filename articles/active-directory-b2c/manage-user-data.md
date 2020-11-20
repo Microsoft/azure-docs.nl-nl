@@ -11,22 +11,22 @@ ms.date: 05/06/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 48c79306d376c2faa1089886881a7b5e9a792c86
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: d9bdf7258296b82e65e03f6b8af8021b9a7be0f0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840539"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952468"
 ---
 # <a name="manage-user-data-in-azure-active-directory-b2c"></a>Gebruikers gegevens beheren in Azure Active Directory B2C
 
- In dit artikel wordt beschreven hoe u de gebruikers gegevens in Azure Active Directory B2C (Azure AD B2C) kunt beheren door gebruik te maken van de bewerkingen die worden gegeven door de [Microsoft Graph API](https://docs.microsoft.com/graph/use-the-api). Het beheren van gebruikers gegevens omvat het verwijderen of exporteren van gegevens uit audit Logboeken.
+ In dit artikel wordt beschreven hoe u de gebruikers gegevens in Azure Active Directory B2C (Azure AD B2C) kunt beheren door gebruik te maken van de bewerkingen die worden gegeven door de [Microsoft Graph API](/graph/use-the-api). Het beheren van gebruikers gegevens omvat het verwijderen of exporteren van gegevens uit audit Logboeken.
 
 [!INCLUDE [gdpr-intro-sentence.md](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="delete-user-data"></a>Gebruikers gegevens verwijderen
 
-Gebruikers gegevens worden opgeslagen in de map Azure AD B2C en in de audit Logboeken. Alle gebruikers controle gegevens worden 7 dagen in Azure AD B2C bewaard. Als u gebruikers gegevens binnen die periode van 7 dagen wilt verwijderen, kunt u de bewerking [een gebruiker verwijderen](https://docs.microsoft.com/graph/api/user-delete) gebruiken. Er is een Verwijder bewerking vereist voor elk van de Azure AD B2C tenants waarin gegevens zich kunnen bevinden.
+Gebruikers gegevens worden opgeslagen in de map Azure AD B2C en in de audit Logboeken. Alle gebruikers controle gegevens worden 7 dagen in Azure AD B2C bewaard. Als u gebruikers gegevens binnen die periode van 7 dagen wilt verwijderen, kunt u de bewerking [een gebruiker verwijderen](/graph/api/user-delete) gebruiken. Er is een Verwijder bewerking vereist voor elk van de Azure AD B2C tenants waarin gegevens zich kunnen bevinden.
 
 Aan elke gebruiker in Azure AD B2C is een object-ID toegewezen. De object-ID biedt een ondubbelzinnige id die u kunt gebruiken om gebruikers gegevens in Azure AD B2C te verwijderen. Afhankelijk van uw architectuur kan de object-ID een handige correlatie-id zijn tussen andere services, zoals financiële, marketing-en data bases voor relatie beheer van klanten.
 

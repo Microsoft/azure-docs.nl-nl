@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 03/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cb833ff35dae4fe1c0c27204ec66fa6b4cdb82c7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 340c9629af89bfacb85b37503743fc5770070ae3
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85388881"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951839"
 ---
 # <a name="customize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Pas de gebruikers interface van uw toepassing aan met behulp van een aangepast beleid in Azure Active Directory B2C
 
@@ -34,7 +34,7 @@ Voer de stappen in aan de [slag met aangepast beleid](custom-policy-get-started.
 
 Als u de UI-aanpassing wilt configureren, kopieert u de **ContentDefinition** en de onderliggende elementen van het basis bestand naar het extensie bestand.
 
-1. Open het basis bestand van uw beleid. Bijvoorbeeld <em>`SocialAndLocalAccounts/`**`TrustFrameworkBase.xml`**</em> . Dit basis bestand is een van de beleids bestanden in het aangepaste beleids Starter Pack, die u in de vereiste moet hebben verkregen, aan de [slag met aangepast beleid](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-get-started-custom).
+1. Open het basis bestand van uw beleid. Bijvoorbeeld <em>`SocialAndLocalAccounts/`**`TrustFrameworkBase.xml`**</em> . Dit basis bestand is een van de beleids bestanden in het aangepaste beleids Starter Pack, die u in de vereiste moet hebben verkregen, aan de [slag met aangepast beleid](./custom-policy-get-started.md).
 1. Zoek en kopieer de volledige inhoud van het **ContentDefinitions** -element.
 1. Open het extensie bestand. Bijvoorbeeld *TrustFrameworkExtensions.xml*. Zoek het element **BuildingBlocks** . Als het element niet bestaat, voegt u het toe.
 1. Plak de volledige inhoud van het **ContentDefinitions** -element dat u hebt gekopieerd als onderliggend element van het **Building Blocks** -object.
@@ -66,7 +66,7 @@ Als u de UI-aanpassing wilt configureren, kopieert u de **ContentDefinition** en
 
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-tenant bevat door in het bovenste menu te klikken op het filter **Map en abonnement** en de map te kiezen waarin de tenant zich bevindt.
 1. Zoek en selecteer **Azure AD B2C**.
-1. Onder **beleids regels**selecteert u **identiteits ervaring-Framework**.
+1. Onder **beleids regels** selecteert u **identiteits ervaring-Framework**.
 1. Selecteer **aangepast beleid uploaden**.
 1. Upload het extensie bestand dat u eerder hebt gewijzigd.
 

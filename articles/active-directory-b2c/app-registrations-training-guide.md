@@ -11,12 +11,12 @@ ms.date: 05/25/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3e1d76c5ef1f003fe9e01b866343ef7de7ab4166
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 16b5814835ec5cad6b66087fee37676155196339
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92214920"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952077"
 ---
 # <a name="the-new-app-registrations-experience-for-azure-active-directory-b2c"></a>De nieuwe App-registraties ervaring voor Azure Active Directory B2C
 
@@ -98,7 +98,7 @@ In de nieuwe ervaring, in plaats van **sleutels**, gebruikt u de Blade **certifi
 De volgende Azure AD-App-registratie mogelijkheden zijn niet van toepassing op of beschikbaar in Azure AD B2C tenants:
 - **Rollen en beheerders** : momenteel niet beschikbaar voor Azure AD B2C.
 - **Branding** -gebruikers interface/UX-aanpassing is geconfigureerd in de **huis stijl** van het bedrijf of als onderdeel van een gebruikers stroom. Meer informatie over [het aanpassen van de gebruikers interface in azure Active Directory B2C](customize-ui-overview.md).
-- **Verificatie** van de uitgever van het domein-uw app is geregistreerd op *. onmicrosoft.com*, dat geen geverifieerd domein is. Daarnaast wordt het domein van de uitgever voornamelijk gebruikt voor het verlenen van toestemming van de gebruiker, wat niet van toepassing is op Azure AD B2C-apps voor gebruikers verificatie. [Meer informatie over het Publisher-domein](https://docs.microsoft.com/azure/active-directory/develop/howto-configure-publisher-domain).
+- **Verificatie** van de uitgever van het domein-uw app is geregistreerd op *. onmicrosoft.com*, dat geen geverifieerd domein is. Daarnaast wordt het domein van de uitgever voornamelijk gebruikt voor het verlenen van toestemming van de gebruiker, wat niet van toepassing is op Azure AD B2C-apps voor gebruikers verificatie. [Meer informatie over het Publisher-domein](../active-directory/develop/howto-configure-publisher-domain.md).
 - **Token configuratie** -het token is geconfigureerd als onderdeel van een gebruikers stroom in plaats van een app.
 - De **Quick** starts zijn momenteel niet beschikbaar voor Azure AD B2C-tenants.
 <!-- - The **Integration assistant** blade is currently not available for Azure AD B2C tenants. -->

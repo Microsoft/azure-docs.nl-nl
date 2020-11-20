@@ -11,12 +11,12 @@ ms.date: 11/30/2018
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1d631c47225fac7d8a95541313593333a1399e07
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2233dbd7b0e669c23397b4bc6a84f2bfdc208391
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87115967"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952808"
 ---
 # <a name="define-custom-attributes-in-azure-active-directory-b2c"></a>Aangepaste kenmerken definiëren in Azure Active Directory B2C
 
@@ -36,11 +36,11 @@ ms.locfileid: "87115967"
     ![B2C-Tenant gemarkeerd in Directory-en abonnements filter](./media/user-flow-custom-attributes/select-directory.PNG)
 
 3. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
-4. Selecteer **gebruikers kenmerken**en selecteer vervolgens **toevoegen**.
+4. Selecteer **gebruikers kenmerken** en selecteer vervolgens **toevoegen**.
 5. Geef een **naam** op voor het aangepaste kenmerk (bijvoorbeeld ' ShoeSize ')
-6. Kies een **gegevens type**. Alleen **String**, **Boolean**en **int** zijn beschikbaar.
+6. Kies een **gegevens type**. Alleen **String**, **Boolean** en **int** zijn beschikbaar.
 7. Voer desgewenst een **Beschrijving** in voor informatieve doel einden.
-8. Klik op **Maken**.
+8. Klik op **Create**.
 
 Het aangepaste kenmerk is nu beschikbaar in de lijst met **gebruikers kenmerken** en voor gebruik in uw gebruikers stromen. Een aangepast kenmerk wordt alleen gemaakt wanneer het voor de eerste keer wordt gebruikt in een gebruikers stroom en niet wanneer u het toevoegt aan de lijst met **gebruikers kenmerken**.
 
@@ -52,4 +52,4 @@ Het aangepaste kenmerk is nu beschikbaar in de lijst met **gebruikers kenmerken*
 1. Selecteer **toepassings claims** en selecteer vervolgens het aangepaste kenmerk.
 1. Klik op **Opslaan**.
 
-Zodra u een nieuwe gebruiker hebt gemaakt met behulp van een gebruikers stroom die gebruikmaakt van het zojuist gemaakte aangepaste kenmerk, kan het object in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)worden opgevraagd. U kunt ook de functie [gebruikers stroom uitvoeren](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows) op de gebruikers stroom gebruiken om de klant ervaring te controleren. Nu ziet u **ShoeSize** in de lijst met kenmerken die tijdens de registratie worden verzameld en wordt deze weer gegeven in het token dat wordt teruggestuurd naar uw toepassing.
+Zodra u een nieuwe gebruiker hebt gemaakt met behulp van een gebruikers stroom die gebruikmaakt van het zojuist gemaakte aangepaste kenmerk, kan het object in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)worden opgevraagd. U kunt ook de functie [gebruikers stroom uitvoeren](./tutorial-create-user-flows.md) op de gebruikers stroom gebruiken om de klant ervaring te controleren. Nu ziet u **ShoeSize** in de lijst met kenmerken die tijdens de registratie worden verzameld en wordt deze weer gegeven in het token dat wordt teruggestuurd naar uw toepassing.

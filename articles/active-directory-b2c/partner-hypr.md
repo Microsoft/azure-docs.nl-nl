@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 4f6b09061a4aa98824e176af55efcedfab3df48c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b80b1a4b3f9bcde6cf01b0e0e59425c6783bd5d9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89051903"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953760"
 ---
 # <a name="tutorial-for-configuring-hypr-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van HYPR met Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- Een [Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant). De Tenant is gekoppeld aan uw Azure-abonnement.
+- Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md). De Tenant is gekoppeld aan uw Azure-abonnement.
 
 - Een HYPR-Cloud Tenant, een gratis [proef account](https://get.hypr.com/free-trial)ophalen.
 
@@ -62,7 +62,7 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
 1. Ga naar het [Azure AD B2C HYPR-beleid](https://github.com/HYPR-Corp-Public/Azure-AD-B2C-HYPR-Sample/tree/master/policy) in de map beleid.
 
-2. Volg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) om [LocalAccounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden
+2. Volg dit [document](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) om [LocalAccounts Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts) te downloaden
 
 3. Configureer het beleid voor de Azure AD B2C Tenant.
 
@@ -71,7 +71,7 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
 ## <a name="test-the-user-flow"></a>De gebruikersstroom testen
 
-1. Open de Azure AD B2C Tenant en selecteer onder beleids regels het **Framework identiteits ervaring**selecteren.
+1. Open de Azure AD B2C Tenant en selecteer onder beleids regels het **Framework identiteits ervaring** selecteren.
 
 2. Selecteer uw eerder gemaakte **SignUpSignIn**.
 
@@ -91,6 +91,6 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

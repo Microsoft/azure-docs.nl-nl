@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0e8802d612f2497cc58c90856e9a5a5572a142f1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60b7bb33dfbf29b7e448887ce992d03009133b2e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87482835"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953485"
 ---
 # <a name="secure-an-azure-api-management-api-with-azure-ad-b2c"></a>Een Azure API Management-API beveiligen met Azure AD B2C
 
@@ -35,14 +35,14 @@ U hebt de volgende resources nodig om door te gaan met de stappen in dit artikel
 
 Wanneer u een API in azure API Management met Azure AD B2C beveiligt, hebt u verschillende waarden nodig voor het [inkomende beleid](../api-management/api-management-howto-policies.md) dat u in APIM maakt. Noteer eerst de toepassings-ID van een toepassing die u eerder hebt gemaakt in uw Azure AD B2C-Tenant. Als u de toepassing gebruikt die u in de vereisten hebt gemaakt, gebruikt u de toepassings-ID voor *webbapp1*.
 
-Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](https://aka.ms/b2cappregtraining).
+Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Selecteer **Azure AD B2C** in het linkermenu. Of selecteer **Alle services** en zoek naar en selecteer **Azure AD B2C**.
-1. Selecteer **app-registraties**en selecteer vervolgens het tabblad **toepassingen in eigendom** .
+1. Selecteer **app-registraties** en selecteer vervolgens het tabblad **toepassingen in eigendom** .
 1. Noteer de waarde in de kolom **Application (client) ID** voor *webapp1* of een andere toepassing die u eerder hebt gemaakt.
 
 #### <a name="applications-legacy"></a>[Toepassingen (verouderd)](#tab/applications-legacy/)
@@ -50,7 +50,7 @@ Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuw
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Selecteer **Azure AD B2C** in het linkermenu. Of selecteer **Alle services** en zoek naar en selecteer **Azure AD B2C**.
-1. Selecteer onder **beheren**de optie **toepassingen (verouderd)**.
+1. Selecteer onder **beheren** de optie **toepassingen (verouderd)**.
 1. Noteer de waarde in de kolom **toepassings-id** voor *webapp1* of een andere toepassing die u eerder hebt gemaakt.
 
 * * *
@@ -88,7 +88,7 @@ U bent nu klaar om het inkomende beleid toe te voegen aan Azure API Management d
 1. Selecteer **API's**.
 1. Selecteer de API die u met Azure AD B2C wilt beveiligen.
 1. Selecteer het tabblad **Ontwerpen**.
-1. Onder **inkomende verwerking**selecteert **\</\>** u om de beleids code-editor te openen.
+1. Onder **inkomende verwerking** selecteert **\</\>** u om de beleids code-editor te openen.
 1. Plaats de volgende `<validate-jwt>` tag in het `<inbound>` beleid.
 
     1. Werk de `url` waarde in het `<openid-config>` element bij met de bekende configuratie-URL van uw beleid.
@@ -145,7 +145,7 @@ Een client toepassing (in dit geval Postman) die een gepubliceerde API aanroept,
 
 1. Blader naar uw Azure API Management service-exemplaar in de [Azure Portal](https://portal.azure.com).
 1. Selecteer **Abonnementen**.
-1. Selecteer het beletsel teken voor **product: onbeperkt**en selecteer vervolgens **sleutels weer geven/verbergen**.
+1. Selecteer het beletsel teken voor **product: onbeperkt** en selecteer vervolgens **sleutels weer geven/verbergen**.
 1. Registreer de **primaire sleutel** voor het product. U gebruikt deze sleutel voor de `Ocp-Apim-Subscription-Key` header in uw HTTP-aanvraag in postman.
 
 ![Pagina abonnements sleutel met de toetsen weer geven/verbergen die zijn geselecteerd in Azure Portal](media/secure-apim-with-b2c-token/portal-04-api-subscription-key.png)

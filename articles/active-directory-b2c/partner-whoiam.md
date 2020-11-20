@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 718ccbaa57ffe9f4ebaf4e8df448b602ba8cc3fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1b2c7513562e951e1098cf327780387ddf6a495
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89293146"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953539"
 ---
 # <a name="tutorial-for-configuring-whoiam-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van WhoIAM met Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- [Een Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) die is gekoppeld aan uw Azure-abonnement.
+- [Een Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 
 - Een WhoIAM- [proef account](https://www.whoiam.ai/contact-us/).
 
@@ -72,7 +72,7 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
     - [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/): wordt gebruikt om instellingen op te slaan en op te halen.
 
-    - [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview#:~:text=Application%20Insights%2C%20a%20feature%20of%20Azure%20Monitor%2C%20is,professionals.%20Use%20it%20to%20monitor%20your%20live%20applications) (optioneel): wordt gebruikt om u aan te melden bij zowel de API als de beheer Portal.
+    - [Application Insights](../azure-monitor/app/app-insights-overview.md) (optioneel): wordt gebruikt om u aan te melden bij zowel de API als de beheer Portal.
 
 3. Implementeer de BRIMS-API en de BRIMS-beheer Portal in uw Azure-omgeving.
 
@@ -82,15 +82,15 @@ Raadpleeg de [product documentatie](https://www.whoiam.ai/brims/)voor meer infor
 
 ## <a name="test-the-user-flow"></a>De gebruikersstroom testen
 
-1. Open de Azure AD B2C-Tenant. Onder **beleids regels**selecteert u **identiteits ervaring-Framework**.
+1. Open de Azure AD B2C-Tenant. Onder **beleids regels** selecteert u **identiteits ervaring-Framework**.
 
 2. Selecteer uw eerder gemaakte **SignUpSignIn**.
 
 3. Selecteer **gebruikers stroom uitvoeren** en vervolgens:
 
-   a. Selecteer voor **toepassing**de geregistreerde app (het voor beeld is JWT).
+   a. Selecteer voor **toepassing** de geregistreerde app (het voor beeld is JWT).
 
-   b. Selecteer de **omleidings-URL**voor de **antwoord-URL**.
+   b. Selecteer de **omleidings-URL** voor de **antwoord-URL**.
 
    c. Selecteer **gebruikers stroom uitvoeren**.
 
@@ -102,6 +102,6 @@ Raadpleeg de [product documentatie](https://www.whoiam.ai/brims/)voor meer infor
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

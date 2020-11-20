@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4db3c58da791a5cad5fc3b9c98f245202d8119e2
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 384f178481f7a6ff202d5363ba09c242b1fc366d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92054760"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951788"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: veelgestelde vragen (FAQ)
 
@@ -37,7 +37,7 @@ Azure AD B2C kan niet worden gebruikt om gebruikers te verifiëren voor Microsof
 
 In een Azure AD-Tenant hebben gebruikers die deel uitmaken van de Tenant aanmelden met een e-mail adres van het formulier `<xyz>@<tenant domain>` . De `<tenant domain>` is een van de geverifieerde domeinen in de Tenant of het eerste `<...>.onmicrosoft.com` domein. Dit type account is een werk-of school account.
 
-In een Azure AD B2C-Tenant willen de meeste apps zich aanmelden met een wille keurig e-mail adres (bijvoorbeeld, joe@comcast.net , bob@gmail.com sarah@contoso.com of jim@live.com ). Dit type account is een lokaal account. We ondersteunen ook wille keurige gebruikers namen als lokale accounts (bijvoorbeeld Joe, Bob, Sarah of Jim). U kunt een van deze twee lokale account typen kiezen bij het configureren van id-providers voor Azure AD B2C in de Azure Portal. Selecteer in uw Azure AD B2C-Tenant de optie **id-providers**, selecteer **lokaal account**en selecteer vervolgens **gebruikers naam**.
+In een Azure AD B2C-Tenant willen de meeste apps zich aanmelden met een wille keurig e-mail adres (bijvoorbeeld, joe@comcast.net , bob@gmail.com sarah@contoso.com of jim@live.com ). Dit type account is een lokaal account. We ondersteunen ook wille keurige gebruikers namen als lokale accounts (bijvoorbeeld Joe, Bob, Sarah of Jim). U kunt een van deze twee lokale account typen kiezen bij het configureren van id-providers voor Azure AD B2C in de Azure Portal. Selecteer in uw Azure AD B2C-Tenant de optie **id-providers**, selecteer **lokaal account** en selecteer vervolgens **gebruikers naam**.
 
 Gebruikers accounts voor toepassingen kunnen worden gemaakt via een gebruikers stroom voor registratie, registratie of aanmeldings gebruikers stroom, de Microsoft Graph-API of de Azure Portal.
 
@@ -90,7 +90,7 @@ U kunt de Microsoft Graph-API gebruiken om uw migratie programma te schrijven. R
 
 ### <a name="what-password-user-flow-is-used-for-local-accounts-in-azure-ad-b2c"></a>Welke wachtwoord gebruikers stroom wordt gebruikt voor lokale accounts in Azure AD B2C?
 
-De Azure AD B2C wacht woord van de gebruiker voor lokale accounts is gebaseerd op het beleid voor Azure AD. Azure AD B2C's registratie, aanmelden of aanmelden en gebruikers stromen voor het opnieuw instellen van het wacht woord gebruiken de sterke wachtwoord sterkte en verlopen geen wacht woorden. Zie [wachtwoord beleid en-beperkingen in azure Active Directory](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-policy)voor meer informatie.
+De Azure AD B2C wacht woord van de gebruiker voor lokale accounts is gebaseerd op het beleid voor Azure AD. Azure AD B2C's registratie, aanmelden of aanmelden en gebruikers stromen voor het opnieuw instellen van het wacht woord gebruiken de sterke wachtwoord sterkte en verlopen geen wacht woorden. Zie [wachtwoord beleid en-beperkingen in azure Active Directory](../active-directory/authentication/concept-sspr-policy.md)voor meer informatie.
 
 Zie [bedreigingen voor resources en gegevens in azure Active Directory B2C beheren](threat-management.md)voor meer informatie over account vergrendelingen en wacht woorden.
 
@@ -104,7 +104,7 @@ Nee, om beveiligings redenen kunnen Azure AD B2C pagina's niet worden geopend in
 
 ### <a name="does-azure-ad-b2c-work-with-crm-systems-such-as-microsoft-dynamics"></a>Werkt Azure AD B2C met CRM-systemen zoals micro soft Dynamics?
 
-De integratie met micro soft Dynamics 365 Portal is beschikbaar. Zie [Dynamics 365 Portal configureren voor het gebruik van Azure AD B2C voor authenticatie](https://docs.microsoft.com/dynamics365/customer-engagement/portals/azure-ad-b2c).
+De integratie met micro soft Dynamics 365 Portal is beschikbaar. Zie [Dynamics 365 Portal configureren voor het gebruik van Azure AD B2C voor authenticatie](/dynamics365/customer-engagement/portals/azure-ad-b2c).
 
 ### <a name="does-azure-ad-b2c-work-with-sharepoint-on-premises-2016-or-earlier"></a>Werkt Azure AD B2C met share point on-premises 2016 of eerder?
 
@@ -112,7 +112,7 @@ Azure AD B2C is niet bedoeld voor het scenario voor het delen van externe share 
 
 ### <a name="should-i-use-azure-ad-b2c-or-b2b-to-manage-external-identities"></a>Moet ik Azure AD B2C of B2B gebruiken om externe identiteiten te beheren?
 
-Lees [samenwerkings samen werking en B2C in azure AD vergelijken](../active-directory/b2b/compare-with-b2c.md) voor meer informatie over het Toep assen van de juiste functies op uw externe identiteits scenario's.
+Lees [samenwerkings samen werking en B2C in azure AD vergelijken](../active-directory/external-identities/compare-with-b2c.md) voor meer informatie over het Toep assen van de juiste functies op uw externe identiteits scenario's.
 
 ### <a name="what-reporting-and-auditing-features-does-azure-ad-b2c-provide-are-they-the-same-as-in-azure-ad-premium"></a>Welke rapportage-en controle functies biedt Azure AD B2C? Zijn ze hetzelfde als in Azure AD Premium?
 
@@ -134,7 +134,7 @@ Momenteel niet. Deze functie is op ons plan. Als u uw domein verifieert op het t
 
 Volg deze stappen om uw Azure AD B2C-Tenant te verwijderen.
 
-U kunt onze nieuwe geïntegreerde **app-registraties** ervaring of onze oudere  **toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](https://aka.ms/b2cappregtraining).
+U kunt onze nieuwe geïntegreerde **app-registraties** ervaring of onze oudere  **toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 
@@ -142,14 +142,14 @@ U kunt onze nieuwe geïntegreerde **app-registraties** ervaring of onze oudere  
 1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Selecteer **Azure AD B2C** in het linkermenu. Of selecteer **Alle services** en zoek naar en selecteer **Azure AD B2C**.
 1. Verwijder alle **gebruikers stromen (beleids regels)** in uw Azure AD B2C-Tenant.
-1. Selecteer **app-registraties**en selecteer vervolgens het tabblad **alle toepassingen** .
+1. Selecteer **app-registraties** en selecteer vervolgens het tabblad **alle toepassingen** .
 1. Alle toepassingen verwijderen die u hebt geregistreerd.
 1. Verwijder de **B2C-Extensions-app**.
 1. Onder **Beheren**, selecteer **Gebruikers**.
 1. Selecteer elke gebruiker op zijn beurt (sluit de gebruikers van de *abonnements beheerder* die u momenteel bent aangemeld als). Selecteer **verwijderen** onder aan de pagina en selecteer **Ja** wanneer u hierom wordt gevraagd.
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
-1. Selecteer onder **beheren**de optie **gebruikers instellingen**.
-1. Selecteer onder **beheren**de optie **Eigenschappen**
+1. Selecteer onder **beheren** de optie **gebruikers instellingen**.
+1. Selecteer onder **beheren** de optie **Eigenschappen**
 1. Selecteer onder **Toegangsbeheer voor Azure-resources** **Ja** en selecteer vervolgens **Opslaan**.
 1. Meld u af bij de Azure Portal en meld u weer aan om uw toegang te vernieuwen.
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
@@ -167,10 +167,10 @@ U kunt onze nieuwe geïntegreerde **app-registraties** ervaring of onze oudere  
 1. Selecteer elke gebruiker op zijn beurt (sluit de gebruikers van de *abonnements beheerder* die u momenteel bent aangemeld als). Selecteer **verwijderen** onder aan de pagina en selecteer **Ja** wanneer u hierom wordt gevraagd.
 1. Selecteer **App-registraties** onder **Beheren**.
 1. Selecteer **alle toepassingen weer geven**
-1. Selecteer de toepassing met de naam **B2C-Extensions-app**, selecteer **verwijderen**en selecteer vervolgens **Ja** wanneer u hierom wordt gevraagd.
-1. Selecteer onder **beheren**de optie **gebruikers instellingen**.
-1. Indien aanwezig selecteert u onder **LinkedIn-account verbindingen**de optie **Nee**en selecteert u vervolgens **Opslaan**.
-1. Selecteer onder **beheren**de optie **Eigenschappen**
+1. Selecteer de toepassing met de naam **B2C-Extensions-app**, selecteer **verwijderen** en selecteer vervolgens **Ja** wanneer u hierom wordt gevraagd.
+1. Selecteer onder **beheren** de optie **gebruikers instellingen**.
+1. Indien aanwezig selecteert u onder **LinkedIn-account verbindingen** de optie **Nee** en selecteert u vervolgens **Opslaan**.
+1. Selecteer onder **beheren** de optie **Eigenschappen**
 1. Selecteer onder **Toegangsbeheer voor Azure-resources** **Ja** en selecteer vervolgens **Opslaan**.
 1. Meld u af bij de Azure Portal en meld u weer aan om uw toegang te vernieuwen.
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.

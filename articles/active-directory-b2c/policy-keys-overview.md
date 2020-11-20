@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 02294d4832224f1c94a4c586f3dcc455255bfbbf
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 30348d7ca12ded2d1f4b0522a7cabeadf0553a07
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92670108"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953352"
 ---
 # <a name="overview-of-policy-keys-in-azure-active-directory-b2c"></a>Overzicht van beleids sleutels in Azure Active Directory B2C
 
@@ -28,13 +28,13 @@ Azure Active Directory B2C (Azure AD B2C) slaat geheimen en certificaten op in d
  In dit artikel wordt beschreven wat u moet weten over de beleids sleutels die worden gebruikt door Azure AD B2C.
 
 > [!NOTE]
-> De configuratie van beleids sleutels is momenteel beperkt tot [aangepast beleid](active-directory-b2c-get-started-custom.md) .
+> De configuratie van beleids sleutels is momenteel beperkt tot [aangepast beleid](./custom-policy-get-started.md) .
 
 U kunt geheimen en certificaten configureren voor het tot stand brengen van een vertrouwens relatie tussen services in de Azure Portal onder het menu **beleids sleutels** . Sleutels kunnen symmetrisch of asymmetrisch zijn. *Symmetrische* crypto grafie of persoonlijke sleutel cryptografie is de plaats waar een gedeeld geheim wordt gebruikt om de gegevens te versleutelen en ontsleutelen. *Asymmetrische* crypto grafie of open bare-sleutel cryptografie is een cryptografisch systeem dat paren sleutels gebruikt, bestaande uit open bare sleutels die worden gedeeld met de Relying Party toepassing en persoonlijke sleutels die alleen bekend zijn bij Azure AD B2C.
 
 ## <a name="policy-keyset-and-keys"></a>Sleutel sets en sleutels voor beleid
 
-De resource op het hoogste niveau voor beleids sleutels in Azure AD B2C is de container voor **sleutel sets** . Elke sleutelset bevat ten minste één **sleutel** . Een sleutel heeft de volgende kenmerken:
+De resource op het hoogste niveau voor beleids sleutels in Azure AD B2C is de container voor **sleutel sets** . Elke sleutelset bevat ten minste één **sleutel**. Een sleutel heeft de volgende kenmerken:
 
 | Kenmerk |  Vereist | Opmerkingen |
 | --- | --- |--- |
@@ -58,26 +58,26 @@ Uit veiligheids overwegingen kan Azure AD B2C regel matig of onmiddellijk in het
 
 Als een Azure AD B2C sleutelset meerdere sleutels heeft, is slechts één van de sleutels tegelijk actief, op basis van de volgende criteria:
 
-- De sleutel activering is gebaseerd op de **activerings datum** .
+- De sleutel activering is gebaseerd op de **activerings datum**.
   - De sleutels worden gesorteerd op de activerings datum in oplopende volg orde. Sleutels met een meer activerings datum in de toekomst worden lager in de lijst weer gegeven. Sleutels zonder een activerings datum bevinden zich onder aan de lijst.
   - Wanneer de huidige datum en tijd groter is dan de activerings datum van een sleutel, wordt de sleutel door Azure AD B2C geactiveerd en wordt de vorige actieve sleutel niet meer gebruikt.
 - Wanneer de verval tijd van de huidige sleutel is verstreken en de sleutel container een nieuwe sleutel bevat met de tijden geldig en *niet vóór* en *verloop* tijd, wordt de nieuwe sleutel automatisch actief.
 - Als de verval tijd van de huidige sleutel is verstreken en de sleutel container bevat *geen* nieuwe sleutel met de tijden geldig en *niet vóór* en *verloop* tijd, kan Azure AD B2C de verlopen sleutel niet gebruiken. Azure AD B2C wordt een fout bericht weer gegeven binnen een afhankelijk onderdeel van uw aangepaste beleid. Om dit probleem te voor komen, kunt u een standaard sleutel maken zonder de activerings-en verloop datums als een veiligheids-net.
-- Het eind punt van de sleutel (JWKS-URI) van het OpenID Connect Connect-bekende configuratie-eind punt toont de sleutels die in de sleutel container zijn geconfigureerd, wanneer in het [technische profiel van JwtIssuer](https://docs.microsoft.com/azure/active-directory-b2c/jwt-issuer-technical-profile)naar de sleutel wordt verwezen. Een toepassing die gebruikmaakt van een OIDC-bibliotheek, haalt deze meta gegevens automatisch op om ervoor te zorgen dat de juiste sleutels worden gebruikt voor het valideren van tokens. Meer informatie over het gebruik van [micro soft-verificatie bibliotheek](https://docs.microsoft.com/azure/active-directory/develop/msal-b2c-overview), waarmee altijd automatisch de meest recente token handtekening sleutels worden opgehaald.
+- Het eind punt van de sleutel (JWKS-URI) van het OpenID Connect Connect-bekende configuratie-eind punt toont de sleutels die in de sleutel container zijn geconfigureerd, wanneer in het [technische profiel van JwtIssuer](./jwt-issuer-technical-profile.md)naar de sleutel wordt verwezen. Een toepassing die gebruikmaakt van een OIDC-bibliotheek, haalt deze meta gegevens automatisch op om ervoor te zorgen dat de juiste sleutels worden gebruikt voor het valideren van tokens. Meer informatie over het gebruik van [micro soft-verificatie bibliotheek](../active-directory/develop/msal-b2c-overview.md), waarmee altijd automatisch de meest recente token handtekening sleutels worden opgehaald.
 
 ## <a name="policy-key-management"></a>Beheer van beleids sleutels
 
-Als u de huidige actieve sleutel binnen een sleutel container wilt ophalen, gebruikt u het [getActiveKey](https://docs.microsoft.com/graph/api/trustframeworkkeyset-getactivekey) -eind punt van de Microsoft Graph-API.
+Als u de huidige actieve sleutel binnen een sleutel container wilt ophalen, gebruikt u het [getActiveKey](/graph/api/trustframeworkkeyset-getactivekey) -eind punt van de Microsoft Graph-API.
 
 Voor het toevoegen of verwijderen van ondertekenings-en versleutelings sleutels:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
-1. Selecteer op de pagina overzicht onder **beleids regels** het **Framework identiteits ervaring** .
+1. Selecteer op de pagina overzicht onder **beleids regels** het **Framework identiteits ervaring**.
 1. **Beleids sleutels** selecteren 
     1. Selecteer **toevoegen** om een nieuwe sleutel toe te voegen.
-    1. Als u een nieuwe sleutel wilt verwijderen, selecteert u de sleutel en selecteert u vervolgens **verwijderen** . Als u de sleutel wilt verwijderen, typt u de naam van de sleutel container die u wilt verwijderen. De sleutel wordt door Azure AD B2C verwijderd en er wordt een kopie van de sleutel gemaakt met het achtervoegsel. bak.
+    1. Als u een nieuwe sleutel wilt verwijderen, selecteert u de sleutel en selecteert u vervolgens **verwijderen**. Als u de sleutel wilt verwijderen, typt u de naam van de sleutel container die u wilt verwijderen. De sleutel wordt door Azure AD B2C verwijderd en er wordt een kopie van de sleutel gemaakt met het achtervoegsel. bak.
 
 ### <a name="replace-a-key"></a>Een sleutel vervangen
 
@@ -89,10 +89,3 @@ De sleutels in een sleutelset zijn niet vervangbaar of verwisselbaar. Als u een 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over het gebruik van Microsoft Graph voor het automatiseren van de implementatie van [sleutel sets](microsoft-graph-operations.md#trust-framework-policy-keyset) en [beleids sleutels](microsoft-graph-operations.md#trust-framework-policy-key) .
-
-
-
-
-
-
-

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 7b76c81a78bfd3eb57a54f1d23ba1b154b09b3e6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: bcf5f75cf5cabe42f530a6a179c2cafd43b5520d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660148"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952536"
 ---
 # <a name="use-azure-ad-identity-with-your-machine-learning-web-service-in-azure-kubernetes-service"></a>Azure AD-identiteit gebruiken met uw Machine Learning-webservice in Azure Kubernetes Service
 
@@ -32,13 +32,13 @@ In deze procedure leert u hoe u een Azure Active Directory-identiteit (Azure AD)
 
 ## <a name="create-and-install-an-azure-identity"></a>Een Azure-identiteit maken en installeren
 
-1. Gebruik de volgende opdracht om te bepalen of het AKS-cluster RBAC is ingeschakeld:
+1. Gebruik de volgende opdracht om te bepalen of het AKS-cluster Kubernetes RBAC is ingeschakeld:
 
     ```azurecli-interactive
     az aks show --name <AKS cluster name> --resource-group <resource group name> --subscription <subscription id> --query enableRbac
     ```
 
-    Met deze opdracht wordt een waarde geretourneerd `true` als RBAC is ingeschakeld. Deze waarde bepaalt de opdracht die in de volgende stap moet worden gebruikt.
+    Met deze opdracht wordt de waarde retourneert `true` als KUBERNETES RBAC is ingeschakeld. Deze waarde bepaalt de opdracht die in de volgende stap moet worden gebruikt.
 
 1. Installeer de [Azure AD pod-identiteit](https://azure.github.io/aad-pod-identity/docs/getting-started/installation/) in uw AKS-cluster.
 

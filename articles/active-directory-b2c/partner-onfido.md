@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/03/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 5d0835114844069d4ebdc992b872f9be1f0b3ca6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48fc8533ee1fd206e69e16d4c03e4b4acf047135
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259217"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953680"
 ---
 # <a name="tutorial-for-configuring-onfido-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van Onfido met Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- [Een Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) die is gekoppeld aan uw Azure-abonnement.
+- [Een Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 
 - Een Onfido- [proef account](https://onfido.com/signup/).
 
@@ -74,7 +74,7 @@ Zie [ONFIDO API documentation](https://documentation.onfido.com) and [Onfido Dev
 
 ### <a name="part-1---deploy-the-api"></a>Deel 1: de API implementeren
 
-- Implementeer de meegeleverde [API-code](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/OnFido-Combined/API/Onfido.Api) voor een Azure-service. De code kan worden gepubliceerd vanuit Visual Studio, gevolgd door deze [instructies](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+- Implementeer de meegeleverde [API-code](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/OnFido-Combined/API/Onfido.Api) voor een Azure-service. De code kan worden gepubliceerd vanuit Visual Studio, gevolgd door deze [instructies](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 - CORS instellen, **toegestane oorsprong** toevoegen als https://{your_tenant_name}. b2clogin. com
 
 >[!NOTE]
@@ -82,9 +82,9 @@ Zie [ONFIDO API documentation](https://documentation.onfido.com) and [Onfido Dev
 
 #### <a name="adding-sensitive-configuration-settings"></a>Gevoelige configuratie-instellingen toevoegen
 
-Toepassings instellingen kunnen worden geconfigureerd in de [app service in azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). Met de app service kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. De rest-API moet de volgende instellingen hebben:
+Toepassings instellingen kunnen worden geconfigureerd in de [app service in azure](../app-service/configure-common.md#configure-app-settings). Met de app service kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. De rest-API moet de volgende instellingen hebben:
 
-| Naam van toepassings instelling | Bron | Notities |
+| Naam van toepassings instelling | Bron | Opmerkingen |
 |:-------------------------|:-------|:-------|
 |OnfidoSettings: AuthToken| Onfido-account |
 
@@ -92,7 +92,7 @@ Toepassings instellingen kunnen worden geconfigureerd in de [app service in azur
 
 #### <a name="configure-your-storage-location"></a>Uw opslag locatie configureren
 
-1. Een [Blob Storage-container in uw opslag account](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) instellen
+1. Een [Blob Storage-container in uw opslag account](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) instellen
 
 2. Sla de bestanden van de gebruikers interface op in de map met de [gebruikers interface](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/OnFido-Combined/UI) van de BLOB-container.
 
@@ -110,7 +110,7 @@ Toepassings instellingen kunnen worden geconfigureerd in de [app service in azur
 
 2. Open elk HTML-bestand.
 
-3. {Uw-UI-BLOB-container-URL} zoeken en vervangen door de URL van waar de mappen **ocean_blue**, **distributie**en **assets** van uw gebruikers interface zich bevinden
+3. {Uw-UI-BLOB-container-URL} zoeken en vervangen door de URL van waar de mappen **ocean_blue**, **distributie** en **assets** van uw gebruikers interface zich bevinden
 
 4. Zoek en vervang {uw-Intermediate-API-URL} door de URL van de tussenliggende API app-service.
 
@@ -118,7 +118,7 @@ Toepassings instellingen kunnen worden geconfigureerd in de [app service in azur
 
 1. Sla de bestanden van de gebruikers interface op in de map met de gebruikers interface van de BLOB-container.
 
-2. Gebruik [Azure Storage Explorer](https://docs.microsoft.com/azure/virtual-machines/windows/disks-use-storage-explorer-managed-disks) om uw bestanden en toegangs machtigingen te beheren.
+2. Gebruik [Azure Storage Explorer](../virtual-machines/disks-use-storage-explorer-managed-disks.md) om uw bestanden en toegangs machtigingen te beheren.
 
 ### <a name="part-3---configure-azure-ad-b2c"></a>Deel 3: Azure AD B2C configureren
 
@@ -135,21 +135,21 @@ Zoek in het meegeleverde [aangepaste beleid](https://github.com/azure-ad-b2c/par
 | {your_tenant_extensions_appid}                         | App-ID van de opslag toepassing van uw Tenant                                      | 01234567-89ab-cdef-0123-456789abcdef         |
 | {your_tenant_extensions_app_objectid}                  | Object-ID van de opslag toepassing van uw Tenant                                   | 01234567-89ab-cdef-0123-456789abcdef         |
 | {your_app_insights_instrumentation_key} | Instrumentatie sleutel van uw app Insights-exemplaar *| 01234567-89ab-cdef-0123-456789abcdef|
-|{your_ui_file_base_url}| De URL van de locatie waar de mappen **ocean_blue**, **distributie**en **assets** van de gebruikers interface zich bevinden | https://yourstorage.blob.core.windows.net/UI/|
+|{your_ui_file_base_url}| De URL van de locatie waar de mappen **ocean_blue**, **distributie** en **assets** van de gebruikers interface zich bevinden | https://yourstorage.blob.core.windows.net/UI/|
 | {your_app_service_URL}                                 | URL van de app service die u hebt ingesteld                                             | `https://yourapp.azurewebsites.net`          |
 
 * App Insights kan zich in een andere Tenant bevindt. Deze stap is optioneel. Verwijder, indien nodig, de bijbehorende TechnicalProfiles en OrchestrationSteps.
 
 ### <a name="part-4---configure-the-azure-ad-b2c-policy"></a>Deel 4: het Azure AD B2C-beleid configureren
 
-Raadpleeg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) voor instructies over het instellen van uw Azure AD B2C-Tenant en het configureren van beleid.
+Raadpleeg dit [document](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) voor instructies over het instellen van uw Azure AD B2C-Tenant en het configureren van beleid.
 
 >[!NOTE]
 > Als best practice, raden we aan dat klanten toestemming berichten toevoegen op de pagina met kenmerk verzameling. Informeer gebruikers dat er informatie wordt verzonden naar services van derden voor identiteits verificatie.
 
 ## <a name="test-the-user-flow"></a>De gebruikersstroom testen
 
-1. Open de Azure AD B2C Tenant en selecteer onder beleids regels het **Framework identiteits ervaring**selecteren.
+1. Open de Azure AD B2C Tenant en selecteer onder beleids regels het **Framework identiteits ervaring** selecteren.
 
 2. Selecteer uw eerder gemaakte **SignUpSignIn**.
 
@@ -169,6 +169,6 @@ Raadpleeg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/c
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

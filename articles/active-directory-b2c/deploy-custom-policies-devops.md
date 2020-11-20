@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0dba5f96d90304418d7ebd297419c1f36244f868
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 4dd9f98f174144cef455157162694a470aa1065f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363926"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951759"
 ---
 # <a name="deploy-custom-policies-with-azure-pipelines"></a>Aangepaste beleids regels implementeren met Azure-pijp lijnen
 
@@ -29,7 +29,7 @@ Er zijn drie primaire stappen vereist om Azure-pijp lijnen in te scha kelen voor
 1. Een Azure-pijp lijn configureren
 
 > [!IMPORTANT]
-> Het beheren van Azure AD B2C aangepaste beleids regels met een Azure-pijp lijn maakt momenteel gebruik van **Preview** -bewerkingen die beschikbaar zijn op het Microsoft Graph API- `/beta` eind punt. Het gebruik van deze API's in productie-apps wordt niet ondersteund. Zie voor meer informatie de [referentie over het Microsoft Graph rest API bèta-eind punt](https://docs.microsoft.com/graph/api/overview?toc=./ref/toc.json&view=graph-rest-beta).
+> Het beheren van Azure AD B2C aangepaste beleids regels met een Azure-pijp lijn maakt momenteel gebruik van **Preview** -bewerkingen die beschikbaar zijn op het Microsoft Graph API- `/beta` eind punt. Het gebruik van deze API's in productie-apps wordt niet ondersteund. Zie voor meer informatie de [referentie over het Microsoft Graph rest API bèta-eind punt](/graph/api/overview?toc=.%252fref%252ftoc.json&view=graph-rest-beta).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -40,13 +40,13 @@ Er zijn drie primaire stappen vereist om Azure-pijp lijnen in te scha kelen voor
 
 ## <a name="client-credentials-grant-flow"></a>Stroom van toekenning van client referenties
 
-Het scenario dat hier wordt beschreven, maakt gebruik van service-to-service-aanroepen tussen Azure-pijp lijnen en Azure AD B2C met behulp van de OAuth 2,0- [client referenties toekenning stroom](../active-directory/develop/v1-oauth2-client-creds-grant-flow.md). Deze toekennings stroom staat een webservice zoals Azure-pijp lijnen (de vertrouwelijke client) toe om eigen referenties te gebruiken in plaats van een gebruiker te imiteren voor verificatie bij het aanroepen van een andere webservice (de Microsoft Graph-API, in dit geval). Azure-pijp lijnen verkrijgen een token niet-interactief en vervolgens worden er aanvragen naar de Microsoft Graph-API.
+Het scenario dat hier wordt beschreven, maakt gebruik van service-to-service-aanroepen tussen Azure-pijp lijnen en Azure AD B2C met behulp van de OAuth 2,0- [client referenties toekenning stroom](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md). Deze toekennings stroom staat een webservice zoals Azure-pijp lijnen (de vertrouwelijke client) toe om eigen referenties te gebruiken in plaats van een gebruiker te imiteren voor verificatie bij het aanroepen van een andere webservice (de Microsoft Graph-API, in dit geval). Azure-pijp lijnen verkrijgen een token niet-interactief en vervolgens worden er aanvragen naar de Microsoft Graph-API.
 
 ## <a name="register-an-application-for-management-tasks"></a>Een toepassing registreren voor beheer taken
 
 Zoals vermeld in [vereisten](#prerequisites), hebt u een toepassings registratie nodig die uw Power shell-scripts heeft uitgevoerd door Azure-pijp lijnen. Dit kan worden gebruikt voor toegang tot de resources in uw Tenant.
 
-Als u al een toepassings registratie hebt die u voor Automation-taken gebruikt, zorg er dan voor dat de **Microsoft Graph**  >  **beleid**beleid  >  **. readwrite. TrustFramework** is toegestaan binnen de **API-machtigingen** van de app-registratie.
+Als u al een toepassings registratie hebt die u voor Automation-taken gebruikt, zorg er dan voor dat de **Microsoft Graph**  >  **beleid** beleid  >  **. readwrite. TrustFramework** is toegestaan binnen de **API-machtigingen** van de app-registratie.
 
 Zie [Azure AD B2C beheren met Microsoft Graph](microsoft-graph-get-started.md)voor instructies voor het registreren van een beheer toepassing.
 
@@ -58,9 +58,9 @@ Als een beheer toepassing is geregistreerd, kunt u een opslag plaats voor uw bel
 1. [Maak een nieuw project][devops-create-project] of selecteer een bestaand project.
 1. Ga in uw project naar **opslag plaatsen** en selecteer de pagina **bestanden** . Selecteer een bestaande opslag plaats of maak er een voor deze oefening.
 1. Maak een map met de naam *B2CAssets*. Geef het vereiste *README.MD* een naam en **Voer** het bestand uit. U kunt dit bestand later verwijderen, indien gewenst.
-1. Voeg uw Azure AD B2C-beleids bestanden toe aan de map *B2CAssets* . Dit omvat de *TrustFrameworkBase.xml*, *TrustFrameWorkExtensions.xml*, *SignUpOrSignin.xml*, *ProfileEdit.xml*, *PasswordReset.xml*en andere beleids regels die u hebt gemaakt. Noteer de bestands naam van elk Azure AD B2C-beleids bestand dat u in een latere stap kunt gebruiken (ze worden gebruikt als Power shell-script argumenten).
+1. Voeg uw Azure AD B2C-beleids bestanden toe aan de map *B2CAssets* . Dit omvat de *TrustFrameworkBase.xml*, *TrustFrameWorkExtensions.xml*, *SignUpOrSignin.xml*, *ProfileEdit.xml*, *PasswordReset.xml* en andere beleids regels die u hebt gemaakt. Noteer de bestands naam van elk Azure AD B2C-beleids bestand dat u in een latere stap kunt gebruiken (ze worden gebruikt als Power shell-script argumenten).
 1. Maak een map met de naam *scripts* in de hoofdmap van de opslag plaats, geef een naam op voor het tijdelijke bestand *DeployToB2c.ps1*. Sla het bestand op dit moment niet door. dit doet u in een latere stap.
-1. Plak het volgende Power shell-script in *DeployToB2c.ps1*en **Voer het bestand** uit. Het script verkrijgt een token van Azure AD en roept de Microsoft Graph-API om het beleid in de map *B2CAssets* naar uw Azure AD B2C Tenant te uploaden.
+1. Plak het volgende Power shell-script in *DeployToB2c.ps1* en **Voer het bestand** uit. Het script verkrijgt een token van Azure AD en roept de Microsoft Graph-API om het beleid in de map *B2CAssets* naar uw Azure AD B2C Tenant te uploaden.
 
     ```PowerShell
     [Cmdletbinding()]
@@ -115,9 +115,9 @@ Als uw opslag plaats is geïnitialiseerd en gevuld met uw aangepaste beleids bes
 
 1. Meld u aan bij uw Azure DevOps Services-organisatie en navigeer naar uw project.
 1. Selecteer in uw project **pijp lijnen**  >  **Releases**  >  **nieuwe pijp lijn**.
-1. Selecteer onder **Selecteer een sjabloon de**optie **lege taak**.
-1. Voer een **naam**in voor het stadium, bijvoorbeeld *DeployCustomPolicies*, en sluit vervolgens het deel venster.
-1. Selecteer **een artefact toevoegen**en selecteer onder **bron type**Azure- **opslag plaats**.
+1. Selecteer onder **Selecteer een sjabloon de** optie **lege taak**.
+1. Voer een **naam** in voor het stadium, bijvoorbeeld *DeployCustomPolicies*, en sluit vervolgens het deel venster.
+1. Selecteer **een artefact toevoegen** en selecteer onder **bron type** Azure- **opslag plaats**.
     1. Kies de bron opslagplaats met de map *scripts* die u hebt ingevuld met het Power shell-script.
     1. Kies een **standaard vertakking**. Als u in de vorige sectie een nieuwe opslag plaats hebt gemaakt, is de standaard vertakking *Master*.
     1. Behoud de **standaard versie** -instelling van *de standaard vertakking*.
@@ -131,7 +131,7 @@ Als uw opslag plaats is geïnitialiseerd en gevuld met uw aangepaste beleids bes
 1. Selecteer het tabblad **variabelen** .
 1. Voeg de volgende variabelen onder **pijplijn variabelen** toe en stel de waarden in zoals opgegeven:
 
-    | Naam | Waarde |
+    | Name | Waarde |
     | ---- | ----- |
     | `clientId` | **Toepassings-id (client)** van de toepassing die u eerder hebt geregistreerd. |
     | `clientSecret` | De waarde van het **client geheim** dat u eerder hebt gemaakt. <br /> Wijzig het variabele type in **geheim** (Selecteer het vergrendelings pictogram). |
@@ -144,7 +144,7 @@ Als uw opslag plaats is geïnitialiseerd en gevuld met uw aangepaste beleids bes
 Voeg vervolgens een taak toe om een beleids bestand te implementeren.
 
 1. Selecteer het tabblad **taken** .
-1. Selecteer **Agent taak**en selecteer vervolgens het plus teken ( **+** ) om een taak aan de agent taak toe te voegen.
+1. Selecteer **Agent taak** en selecteer vervolgens het plus teken ( **+** ) om een taak aan de agent taak toe te voegen.
 1. Zoek en selecteer **Power shell**. Selecteer niet Azure PowerShell, Power shell op de doel computers of een andere Power shell-vermelding.
 1. Selecteer de zojuist toegevoegde **Power shell-script** taak.
 1. Voer de volgende waarden in voor de Power shell-script taak:
@@ -161,7 +161,7 @@ Voeg vervolgens een taak toe om een beleids bestand te implementeren.
         -ClientID $(clientId) -ClientSecret $(clientSecret) -TenantId $(tenantId) -PolicyId B2C_1A_TrustFrameworkBase -PathToFile $(System.DefaultWorkingDirectory)/{alias-name}/B2CAssets/TrustFrameworkBase.xml
         ```
 
-        Als de alias die u hebt opgegeven bijvoorbeeld *policyRepo*is, moet de argument regel:
+        Als de alias die u hebt opgegeven bijvoorbeeld *policyRepo* is, moet de argument regel:
 
         ```PowerShell
         # After
@@ -203,7 +203,7 @@ Uw release pijplijn testen:
 
 1. Selecteer **pijp lijnen** en vervolgens **releases**.
 1. Selecteer de pijp lijn die u eerder hebt gemaakt, bijvoorbeeld *DeployCustomPolicies*.
-1. Selecteer **release maken**en selecteer vervolgens **maken** om de release in de wachtrij te plaatsen.
+1. Selecteer **release maken** en selecteer vervolgens **maken** om de release in de wachtrij te plaatsen.
 
 U ziet een melding banner dat aangeeft dat er een release in de wachtrij is geplaatst. Als u de status wilt weer geven, selecteert u de koppeling in het meldings banner of selecteert u deze in de lijst op het tabblad **releases** .
 
@@ -211,10 +211,10 @@ U ziet een melding banner dat aangeeft dat er een release in de wachtrij is gepl
 
 Meer informatie over:
 
-* [Service-naar-service aanroepen met behulp van client referenties](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)
-* [Azure DevOps Services](https://docs.microsoft.com/azure/devops/user-guide/?view=azure-devops)
+* [Service-naar-service aanroepen met behulp van client referenties](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md)
+* [Azure DevOps Services](/azure/devops/user-guide/?view=azure-devops)
 
 <!-- LINKS - External -->
-[devops]: https://docs.microsoft.com/azure/devops/?view=azure-devops
-[devops-create-project]:  https://docs.microsoft.com/azure/devops/organizations/projects/create-project?view=azure-devops
-[devops-pipelines]: https://docs.microsoft.com/azure/devops/pipelines
+[devops]: /azure/devops/?view=azure-devops
+[devops-create-project]:  /azure/devops/organizations/projects/create-project?view=azure-devops
+[devops-pipelines]: /azure/devops/pipelines

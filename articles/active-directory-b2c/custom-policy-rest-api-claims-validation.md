@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 30273c0103d8a0fde12b1b7c6f66d16dd4ea84cb
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 761bc4db7760ef5e84e3fc3c8a5deea5d4508f51
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089516"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951924"
 ---
 # <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-to-validate-user-input"></a>Walkthrough: Integreer REST API claims in uw Azure AD B2C gebruikers traject om gebruikers invoer te valideren
 
@@ -65,7 +65,7 @@ Als de validatie is mislukt, moet de REST API een HTTP 409 (conflict) retour ner
 }
 ```
 
-De installatie van het REST API-eind punt valt buiten het bereik van dit artikel. Er is een [Azure functions](https://docs.microsoft.com/azure/azure-functions/functions-reference) -voor beeld gemaakt. U hebt toegang tot de volledige Azure-functie code op [github](https://github.com/azure-ad-b2c/rest-api/tree/master/source-code/azure-function).
+De installatie van het REST API-eind punt valt buiten het bereik van dit artikel. Er is een [Azure functions](../azure-functions/functions-reference.md) -voor beeld gemaakt. U hebt toegang tot de volledige Azure-functie code op [github](https://github.com/azure-ad-b2c/rest-api/tree/master/source-code/azure-function).
 
 ## <a name="define-claims"></a>Claims definiëren
 
@@ -233,11 +233,11 @@ Voeg een uitvoer claim toe aan het bestand om de claim code terug te sturen naar
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD-tenant bevat door in het bovenste menu op het filter **Map en abonnement** te klikken en de map te kiezen waarin de Azure AD-tenant zich bevindt.
 1. Kies linksboven in de Azure Portal **Alle services**, zoek **App-registraties** en selecteer deze.
 1. Selecteer een **Framework voor identiteits ervaring**.
-1. Selecteer **aangepast beleid uploaden**en upload de beleids bestanden die u hebt gewijzigd: *TrustFrameworkExtensions.xml*en *SignUpOrSignin.xml*. 
+1. Selecteer **aangepast beleid uploaden** en upload de beleids bestanden die u hebt gewijzigd: *TrustFrameworkExtensions.xml* en *SignUpOrSignin.xml*. 
 1. Selecteer het registratie-of aanmeldings beleid dat u hebt geüpload en klik op de knop **nu uitvoeren** .
 1. U moet zich kunnen aanmelden met een e-mail adres.
 1. Klik op de koppeling **nu registreren** .
-1. Typ 1234 in de **loyaliteits-id**en klik op **door gaan**. Op dit moment moet u een validatie fout bericht ontvangen.
+1. Typ 1234 in de **loyaliteits-id** en klik op **door gaan**. Op dit moment moet u een validatie fout bericht ontvangen.
 1. Wijzig naar een andere waarde en klik op **door gaan**.
 1. Het token dat teruggestuurd naar uw toepassing bevat de `promoCode` claim.
 

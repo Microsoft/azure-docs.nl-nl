@@ -5,14 +5,14 @@ services: web-application-firewall
 ms.topic: article
 author: winthrop28
 ms.service: web-application-firewall
-ms.date: 10/14/2020
+ms.date: 11/19/2020
 ms.author: victorh
-ms.openlocfilehash: 0f7fec997ec6d0c73fe6d1039ab1033752e0cedf
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 9fb8bf689e2767f681994258c4d2c51be41d6c68
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566568"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952128"
 ---
 # <a name="azure-web-application-firewall-waf-policy-overview"></a>Overzicht van het beleid voor Azure Web Application firewall (WAF)
 
@@ -53,7 +53,7 @@ Dit globale beleid is geschikt voor contoso.com en fabrikam.com, maar u moet voo
 
 De adatum.com/payments-URI is waar u voorzichtig moet zijn. Pas een ander beleid op die URI toe en zorg ervoor dat alle regels ingeschakeld blijven, en verwijder ook alle uitsluitingen.
 
-In dit voor beeld hebt u een globaal beleid dat van toepassing is op twee sites. U hebt een beleid per site dat van toepassing is op één site en vervolgens per URI-beleid dat van toepassing is op één specifieke regel op basis van een pad. Zie (koppeling hier invoegen als deze bestaat) instructies: per site en per URI-beleid maken voor de bijbehorende Power shell voor dit voor beeld.
+In dit voor beeld hebt u een globaal beleid dat van toepassing is op twee sites. U hebt een beleid per site dat van toepassing is op één site en vervolgens per URI-beleid dat van toepassing is op één specifieke regel op basis van een pad. Zie [WAF-beleid per site configureren met behulp van Azure PowerShell](per-site-policies.md) voor de bijbehorende Power shell voor dit voor beeld.
 
 ## <a name="existing-waf-configurations"></a>Bestaande WAF-configuraties
 

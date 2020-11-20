@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cfce5b42d37908d0ba89cff9c4831cb25b968524
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07a8f785cf2b9a64f3acb9f44c4fca5023c4fcf3
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259319"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953743"
 ---
 # <a name="tutorial-for-configuring-idology-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van IDology met Azure Active Directory B2C 
 
@@ -67,15 +67,15 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
 ### <a name="part-1---deploy-the-api"></a>Deel 1: de API implementeren
 
-Implementeer de meegeleverde [API-code](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/IDology/Api) voor een Azure-service. De code kan worden gepubliceerd vanuit Visual Studio, gevolgd door deze [instructies](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Implementeer de meegeleverde [API-code](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/IDology/Api) voor een Azure-service. De code kan worden gepubliceerd vanuit Visual Studio, gevolgd door deze [instructies](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 U hebt de URL van de geïmplementeerde service nodig om Azure AD te configureren met de vereiste instellingen.
 
 ### <a name="part-2---configure-the-api"></a>Deel 2: de API configureren 
 
-Toepassings instellingen kunnen worden [geconfigureerd in app service in azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). Met deze methode kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
+Toepassings instellingen kunnen worden [geconfigureerd in app service in azure](../app-service/configure-common.md#configure-app-settings). Met deze methode kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
 
-| Toepassingsinstellingen | Bron | Notities |
+| Toepassingsinstellingen | Bron | Opmerkingen |
 | :-------- | :------------| :-----------|
 |IdologySettings:ApiUsername | IDology-account configuratie |     |
 |IdologySettings:ApiPassword | IDology-account configuratie |     |
@@ -137,7 +137,7 @@ In het voorbeeld beleid worden de volgende sleutel namen gebruikt:
 
 6. Ga door naar de aanmeldings stroom.
 
-7. De IDology-puzzel wordt weer gegeven nadat u **door gaan**hebt opgegeven.
+7. De IDology-puzzel wordt weer gegeven nadat u **door gaan** hebt opgegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -145,5 +145,4 @@ Raadpleeg de volgende artikelen voor meer informatie:
 
 - [Aangepast beleid in Azure AD B2C](custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](custom-policy-get-started.md?tabs=applications) 
-
+- [Aan de slag met aangepast beleid in Azure AD B2C](custom-policy-get-started.md?tabs=applications)

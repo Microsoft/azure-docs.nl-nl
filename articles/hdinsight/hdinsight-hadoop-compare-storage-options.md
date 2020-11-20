@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: a866a225da87c22a3a276a5d59b8e86f1f955cae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34eeeed2b3c44336cd4aa1219d54b1811c6988f5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91856191"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952315"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Opslag opties vergelijken voor gebruik met Azure HDInsight-clusters
 
@@ -29,13 +29,15 @@ Dit artikel bevat een overzicht van deze opslag typen en de bijbehorende unieke 
 
 De volgende tabel bevat een overzicht van de Azure Storage services die worden ondersteund door verschillende versies van HDInsight:
 
-| Opslag service | Accounttype | Type naam ruimte | Ondersteunde services | Ondersteunde prestatie lagen | Ondersteunde toegangs lagen | HDInsight-versie | Clustertype |
+| Opslag service | Accounttype | Type naam ruimte | Ondersteunde services | Ondersteunde prestatielagen | Ondersteunde toegangslagen | HDInsight-versie | Clustertype |
 |---|---|---|---|---|---|---|---|
-|Azure Data Lake Storage Gen2| Voor algemeen gebruik v2 | Hiërarchisch (bestands systeem) | Blob | Standard | Hot, cool, Archive | 3.6 + | Alle behalve Spark 2,1 en 2,2|
-|Azure Storage| Voor algemeen gebruik v2 | Object | Blob | Standard | Hot, cool, Archive | 3.6 + | Alles |
+|Azure Data Lake Storage Gen2| Algemeen v2 | Hiërarchisch (bestands systeem) | Blob | Standard | Dynamisch, statisch en archiefopslag | 3.6 + | Alle behalve Spark 2,1 en 2,2|
+|Azure Storage| Algemeen v2 | Object | Blob | Standard | Dynamisch, statisch en archiefopslag | 3.6 + | Alles |
 |Azure Storage| Algemeen v1 | Object | Blob | Standard | N.v.t. | Alles | Alles |
-|Azure Storage| Blob Storage * * | Object | Blok-BLOB | Standard | Hot, cool, Archive | Alles | Alles |
+|Azure Storage| Blob Storage * * | Object | Blok-BLOB | Standard | Dynamisch, statisch en archiefopslag | Alles | Alles |
 |Azure Data Lake Storage Gen1| N.v.t. | Hiërarchisch (bestands systeem) | N.v.t. | N.v.t. | N.v.t. | alleen 3,6 | Alle behalve HBase |
+|Azure Storage| Blok-BLOB| Object | Blok-BLOB | Premium | N.v.t.| 3.6 + | Alleen HBase met versnelde schrijf bewerkingen|
+|Azure Data Lake Storage Gen2| Blok-BLOB| Hiërarchisch (bestands systeem) | Blok-BLOB | Premium | N.v.t.| 3.6 + | Alleen HBase met versnelde schrijf bewerkingen|
 
 * * Voor HDInsight-clusters kunnen alleen secundaire opslag accounts van het type BlobStorage en page BLOB worden ondersteund.
 
@@ -55,7 +57,7 @@ U kunt clusters maken met behulp van combi Naties van services voor primaire en 
 | 3,6 | Data Lake Storage Gen1 | Data Lake Storage Gen1 | Ja |
 | 3,6 | Data Lake Storage Gen1 | Algemeen v1, Algemeen v2, BlobStorage (blok-blobs) | Ja |
 | 3,6 | Data Lake Storage Gen1 | Data Lake Storage Gen2 | Nee |
-| 4,0 | Data Lake Storage Gen1 | Alle | Nee |
+| 4,0 | Data Lake Storage Gen1 | Elk | Nee |
 | 4,0 | Algemeen v1, Algemeen v2 | Data Lake Storage Gen1 | Nee |
 
 * = Dit kan een of meer Data Lake Storage Gen2 zijn, zolang alle instellingen dezelfde beheerde identiteit voor toegang tot het cluster gebruiken.

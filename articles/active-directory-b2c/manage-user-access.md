@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 51a66d74750afa6c46dba7fa442477e85effb2d6
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: fadc739f16ce9690a735be22758f58857ff8b9ff
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92102048"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951618"
 ---
 # <a name="manage-user-access-in-azure-active-directory-b2c"></a>Gebruikers toegang beheren in Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ Als een gebruiker is geïdentificeerd als een kleine, kunt u de gebruikers stroo
 
 - **Een ondertekende JWT-id_token terugsturen naar de toepassing**: de gebruiker is geregistreerd in de Directory en er wordt een token naar de toepassing geretourneerd. De toepassing gaat vervolgens verder met het Toep assen van bedrijfs regels. De toepassing kan bijvoorbeeld door gaan met een proces voor het uitvoeren van een ouder toestemming. Als u deze methode wilt gebruiken, moet u ervoor kiezen om de **ageGroup** -en **consentProvidedForMinor** -claims van de toepassing te ontvangen.
 
-- **Een niet-ondertekend JSON-token naar de toepassing verzenden**: met Azure AD B2C wordt de toepassing gewaarschuwd dat de gebruiker een kleine is en de status van de ouderlijke toestemming van de gebruiker wordt verstrekt. De toepassing gaat vervolgens verder met het Toep assen van bedrijfs regels. Een JSON-token heeft geen geslaagde verificatie met de toepassing voltooid. De toepassing moet de niet-geverifieerde gebruiker verwerken volgens de claims die zijn opgenomen in het JSON-token, zoals **naam**, **e-mail adres**, **ageGroup**en **consentProvidedForMinor**.
+- **Een niet-ondertekend JSON-token naar de toepassing verzenden**: met Azure AD B2C wordt de toepassing gewaarschuwd dat de gebruiker een kleine is en de status van de ouderlijke toestemming van de gebruiker wordt verstrekt. De toepassing gaat vervolgens verder met het Toep assen van bedrijfs regels. Een JSON-token heeft geen geslaagde verificatie met de toepassing voltooid. De toepassing moet de niet-geverifieerde gebruiker verwerken volgens de claims die zijn opgenomen in het JSON-token, zoals **naam**, **e-mail adres**, **ageGroup** en **consentProvidedForMinor**.
 
 - **De gebruiker blok keren**: als een gebruiker een kleine en een ouderlijke toestemming heeft gekregen, kan Azure AD B2C de gebruiker op de hoogte stellen dat ze zijn geblokkeerd. Er is geen token uitgegeven, de toegang wordt geblokkeerd en het gebruikers account is niet gemaakt tijdens een registratie traject. Als u deze melding wilt implementeren, geeft u een geschikte HTML/CSS-inhouds pagina op waarmee de gebruiker op de hoogte wordt gebracht en de relevante opties worden weer gegeven. Er is geen verdere actie vereist voor de toepassing voor nieuwe registraties.
 
@@ -46,7 +46,7 @@ Afhankelijk van de toepassings verordening moet de ouderlijke toestemming mogeli
 
 Hier volgt een voor beeld van een gebruikers stroom voor het verzamelen van de ouderlijke toestemming:
 
-1. Een [Microsoft Graph API](https://docs.microsoft.com/graph/use-the-api) -bewerking identificeert de gebruiker als een kleine en retourneert de gebruikers gegevens naar de toepassing in de vorm van een niet-ondertekend JSON-token.
+1. Een [Microsoft Graph API](/graph/use-the-api) -bewerking identificeert de gebruiker als een kleine en retourneert de gebruikers gegevens naar de toepassing in de vorm van een niet-ondertekend JSON-token.
 
 2. De toepassing verwerkt het JSON-token en toont een scherm voor het secundaire bericht, waarin wordt gemeld dat de ouderlijke toestemming is vereist en vraagt de toestemming van een bovenliggend item online.
 
@@ -56,7 +56,7 @@ Hier volgt een voor beeld van een gebruikers stroom voor het verzamelen van de o
 
 5. Wanneer de secundaire of volwassene toestemming intrekt, kan de Microsoft Graph-API worden gebruikt om **consentProvidedForMinor** te wijzigen in **geweigerd**. De toepassing kan er ook voor kiezen om een secundaire te verwijderen waarvan de toestemming is ingetrokken. Het is optioneel om de gebruikers stroom aan te passen, zodat de geverifieerde secundaire (of bovenliggende site die gebruikmaakt van het account van de secundaire) toestemming kan intrekken. Azure AD B2C records **consentProvidedForMinor** als **geweigerd**.
 
-Zie het [resource type](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/user)van de gebruiker voor meer informatie over **legalAgeGroupClassification**, **consentProvidedForMinor**en **ageGroup**. Zie [aangepaste kenmerken gebruiken om informatie over uw consumenten te verzamelen](user-flow-custom-attributes.md)voor meer informatie over aangepaste kenmerken. Wanneer u uitgebreide kenmerken met behulp van de Microsoft Graph-API adresseert, moet u de lange versie van het kenmerk gebruiken, zoals *extension_18b70cf9bb834edd8f38521c2583cd86_dateOfBirth*: *2011-01-01T00:00:00Z*.
+Zie het [resource type](/graph/api/resources/user)van de gebruiker voor meer informatie over **legalAgeGroupClassification**, **consentProvidedForMinor** en **ageGroup**. Zie [aangepaste kenmerken gebruiken om informatie over uw consumenten te verzamelen](user-flow-custom-attributes.md)voor meer informatie over aangepaste kenmerken. Wanneer u uitgebreide kenmerken met behulp van de Microsoft Graph-API adresseert, moet u de lange versie van het kenmerk gebruiken, zoals *extension_18b70cf9bb834edd8f38521c2583cd86_dateOfBirth*: *2011-01-01T00:00:00Z*.
 
 ## <a name="gather-date-of-birth-and-countryregion-data"></a>Gegevens over geboorte datum en land/regio verzamelen
 
@@ -76,7 +76,7 @@ In de volgende stappen ziet u de logica die wordt gebruikt om **ageGroup** te be
 
 3. Als het knoop punt **MinorNoConsentRequired** aanwezig is in het land/regio-element, herhaalt u stap 2a en 2b met de waarde van **MinorNoConsentRequired**. De uitvoer van 2b retourneert **MinorNoConsentRequired** als de minimale geboorte datum vóór de geboorte datum van de gebruiker ligt.
 
-4. Als geen van beide berekeningen waar retourneert, wordt **volwassene**geretourneerd.
+4. Als geen van beide berekeningen waar retourneert, wordt **volwassene** geretourneerd.
 
 Als een toepassing op een betrouw bare manier DOB of land/regio-gegevens heeft verzameld, kan de toepassing de Graph API gebruiken om de gebruikers record bij te werken met deze gegevens. Bijvoorbeeld:
 
@@ -99,9 +99,9 @@ In de volgende stappen wordt beschreven hoe u gebruiks voorwaarden kunt beheren:
 
 3. Azure AD B2C slaat de gebruiksrecht overeenkomst en de acceptatie van de gebruiker op. U kunt de Graph API gebruiken om de status van een wille keurige gebruiker op te vragen, door te lezen van het uitbreidings kenmerk dat wordt gebruikt voor het registreren van het antwoord (bijvoorbeeld **termsOfUseTestUpdateDateTime**). U kunt dit doen door zowel ingebouwde als aangepaste gebruikers stromen te gebruiken.
 
-4. Acceptatie van bijgewerkte gebruiks voorwaarden vereisen door de datum van aanvaar ding te vergelijken met de datum van de meest recente versie van de gebruiks voorwaarden. U kunt de datums alleen vergelijken met behulp van een aangepaste gebruikers stroom. Gebruik het uitgebreide kenmerk **extension_termsOfUseConsentDateTime**en vergelijk de waarde met de claim van **termsOfUseTextUpdateDateTime**. Als de acceptatie oud is, dwingt u een nieuwe acceptatie af door een zelfbevestigend scherm weer te geven. Anders blokkeert u de toegang door beleids logica te gebruiken.
+4. Acceptatie van bijgewerkte gebruiks voorwaarden vereisen door de datum van aanvaar ding te vergelijken met de datum van de meest recente versie van de gebruiks voorwaarden. U kunt de datums alleen vergelijken met behulp van een aangepaste gebruikers stroom. Gebruik het uitgebreide kenmerk **extension_termsOfUseConsentDateTime** en vergelijk de waarde met de claim van **termsOfUseTextUpdateDateTime**. Als de acceptatie oud is, dwingt u een nieuwe acceptatie af door een zelfbevestigend scherm weer te geven. Anders blokkeert u de toegang door beleids logica te gebruiken.
 
-5. Acceptatie van bijgewerkte gebruiks voorwaarden vereisen door het versie nummer van de acceptatie te vergelijken met het meest recente geaccepteerde versie nummer. U kunt alleen versie nummers vergelijken met behulp van een aangepaste gebruikers stroom. Gebruik het uitgebreide kenmerk **extension_termsOfUseConsentDateTime**en vergelijk de waarde met de claim van **extension_termsOfUseConsentVersion**. Als de acceptatie oud is, dwingt u een nieuwe acceptatie af door een zelfbevestigend scherm weer te geven. Anders blokkeert u de toegang door beleids logica te gebruiken.
+5. Acceptatie van bijgewerkte gebruiks voorwaarden vereisen door het versie nummer van de acceptatie te vergelijken met het meest recente geaccepteerde versie nummer. U kunt alleen versie nummers vergelijken met behulp van een aangepaste gebruikers stroom. Gebruik het uitgebreide kenmerk **extension_termsOfUseConsentDateTime** en vergelijk de waarde met de claim van **extension_termsOfUseConsentVersion**. Als de acceptatie oud is, dwingt u een nieuwe acceptatie af door een zelfbevestigend scherm weer te geven. Anders blokkeert u de toegang door beleids logica te gebruiken.
 
 U kunt acceptatie van gebruiks voorwaarden vastleggen in de volgende scenario's:
 

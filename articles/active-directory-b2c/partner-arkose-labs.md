@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a4d8174cd0bfdb2297099b403fb836210c5529ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 333bb42643539cedec04d37680749c749a003536
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86170221"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953879"
 ---
 # <a name="tutorial-for-configuring-arkose-labs-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van arkose Labs met Azure Active Directory B2C
 
@@ -66,13 +66,13 @@ Als u een opslag account wilt maken, voert u de volgende stappen uit:
 
 4. Selecteer **Toevoegen**.
 
-5. Selecteer onder **resource groep**de optie **nieuwe maken**, voer een naam in voor de nieuwe resource groep en selecteer **OK**.
+5. Selecteer onder  **resource groep** de optie  **nieuwe maken**, voer een naam in voor de nieuwe resource groep en selecteer **OK**.
 
 6. Voer een naam in voor het opslagaccount. De naam die u kiest, moet uniek zijn in Azure, moet tussen de 3 en 24 tekens lang zijn en mag alleen cijfers en kleine letters bevatten.
 
 7. Selecteer de locatie van het opslagaccount of accepteer de standaardlocatie.
 
-8. Accepteer alle andere standaard waarden, selecteer  **beoordeling &** Create  >  **Create**.
+8. Accepteer alle andere standaard waarden, selecteer   **beoordeling &** Create  >  **Create**.
 
 9. Nadat het opslagaccount is gemaakt, selecteert u  **Naar de resource gaan**.
 
@@ -80,17 +80,17 @@ Als u een opslag account wilt maken, voert u de volgende stappen uit:
 
 1. Selecteer op de pagina overzicht van het opslag account  **blobs**.
 
-2. Selecteer  **container**, voer een naam in voor de container, kies  **BLOB** (anonieme lees toegang alleen voor blobs) en selecteer vervolgens **OK**.
+2. Selecteer   **container**, voer een naam in voor de container, kies   **BLOB** (anonieme lees toegang alleen voor blobs) en selecteer vervolgens **OK**.
 
 #### <a name="enable-cross-origin-resource-sharing-cors"></a>Cross-Origin-resource delen (CORS) inschakelen
 
 In browsers maakt Azure AD B2C-code gebruik van een moderne en gestandaardiseerde benadering om aangepaste inhoud te laden vanaf een URL die u in een gebruikersstroom opgeeft. Met CORS kunnen beperkte bronnen op een webpagina worden aangevraagd vanuit andere domeinen.
 
-1. Selecteer  **CORS**in het menu.
+1. Selecteer  **CORS** in het menu.
 
 2. Voer in voor  **toegestane oorsprongen**  `https://your-tenant-name.b2clogin.com` . Vervang uw-Tenant naam door de naam van uw Azure AD B2C-Tenant. Bijvoorbeeld  `https://fabrikam.b2clogin.com`. Gebruik alleen kleine letters bij het invoeren van de naam van uw Tenant.
 
-3. Voor **toegestane methoden**selecteert u **ophalen**, **plaatsen**en **Opties**.
+3. Voor  **toegestane methoden** selecteert u  **ophalen**, **plaatsen** en  **Opties**.
 
 4. Voer bij **Toegestane headers** een asterisk (*) in.
 
@@ -106,7 +106,7 @@ In browsers maakt Azure AD B2C-code gebruik van een moderne en gestandaardiseerd
 
 Down load Git Bash en voer de volgende stappen uit:
 
-1. Volg de instructies voor het [maken van een web-app](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-php), totdat het bericht ' Gefeliciteerd!U hebt uw eerste PHP-app geïmplementeerd op App Service.
+1. Volg de instructies voor het [maken van een web-app](../app-service/quickstart-php.md), totdat het bericht ' Gefeliciteerd!U hebt uw eerste PHP-app geïmplementeerd op App Service.
 
 2. Open uw lokale map en wijzig de naam van het bestand **index. php** in **verify-token. php**.
 
@@ -174,7 +174,7 @@ Deze URL voor de aangepaste pagina wordt opgehaald uit de locatie van het index.
 
 6. Ga door naar de aanmeldings stroom.
 
-7. Wanneer u **door gaan**selecteert, wordt er een arkose Labs-puzzel weer gegeven.
+7. Wanneer u **door gaan** selecteert, wordt er een arkose Labs-puzzel weer gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d95b45b9be0893282a532bae9ec0278c3a141686
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61e32f50e02e45487830c5ea7ff476a0571960f6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85385923"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953998"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Azure AD B2C beheren met Microsoft Graph
 
@@ -52,7 +52,7 @@ Voordat uw scripts en toepassingen kunnen communiceren met de [Microsoft Graph-A
 1. Selecteer **App-registraties** en selecteer vervolgens **Nieuwe registratie**.
 1. Voer een **naam** in voor de toepassing. Bijvoorbeeld *managementapp1*.
 1. Selecteer **alleen accounts in deze organisatie Directory**.
-1. Schakel onder **machtigingen**het selectie vakje *verlenen beheerder toestemming voor openid connect-en offline_access machtigingen* uit.
+1. Schakel onder **machtigingen** het selectie vakje *verlenen beheerder toestemming voor openid connect-en offline_access machtigingen* uit.
 1. Selecteer **Registreren**.
 1. Noteer de **toepassings-id** van de toepassing die wordt weer gegeven op de overzichts pagina van de toepassing. U gebruikt deze waarde in een latere stap.
 
@@ -66,7 +66,7 @@ Verleen vervolgens de geregistreerde toepassings machtigingen voor het bewerken 
 
 [!INCLUDE [active-directory-b2c-client-secret](../../includes/active-directory-b2c-client-secret.md)]
 
-U hebt nu een toepassing die gemachtigd is om gebruikers te *maken*, te *lezen*, bij te *werken*en te *verwijderen* in uw Azure AD B2C-Tenant. Ga door naar de volgende sectie om machtigingen voor *wachtwoord updates* toe te voegen.
+U hebt nu een toepassing die gemachtigd is om gebruikers te *maken*, te *lezen*, bij te *werken* en te *verwijderen* in uw Azure AD B2C-Tenant. Ga door naar de volgende sectie om machtigingen voor *wachtwoord updates* toe te voegen.
 
 ## <a name="enable-user-delete-and-password-update"></a>Gebruikers verwijderen en wacht woord bijwerken inschakelen
 
@@ -76,7 +76,7 @@ Als voor uw toepassing of script gebruikers moeten worden verwijderd of hun wach
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en gebruik het **Directory +-abonnements** filter om over te scha kelen naar uw Azure AD B2C-Tenant.
 1. Zoek en selecteer **Azure AD B2C**.
-1. Selecteer onder **beheren**de optie **rollen en beheerders**.
+1. Selecteer onder **beheren** de optie **rollen en beheerders**.
 1. Selecteer de rol **gebruikers beheerder** .
 1. Selecteer **toewijzingen toevoegen**.
 1. Voer in het tekstvak **selecteren** de naam in van de toepassing die u eerder hebt geregistreerd, bijvoorbeeld *managementapp1*. Selecteer uw toepassing als deze wordt weer gegeven in de zoek resultaten.
@@ -85,12 +85,12 @@ Als voor uw toepassing of script gebruikers moeten worden verwijderd of hun wach
 ## <a name="next-steps"></a>Volgende stappen
 Nu u uw beheer toepassing hebt geregistreerd en de vereiste machtigingen hebt verleend, kunnen uw toepassingen en services (bijvoorbeeld Azure-pijp lijnen) de referenties en machtigingen gebruiken om te communiceren met de Microsoft Graph-API. 
 
-* [Een toegangstoken ophalen uit Azure AD](https://docs.microsoft.com/graph/auth-v2-service#4-get-an-access-token)
-* [Het toegangs token gebruiken om Microsoft Graph aan te roepen](https://docs.microsoft.com/graph/auth-v2-service#4-get-an-access-token)
+* [Een toegangstoken ophalen uit Azure AD](/graph/auth-v2-service#4-get-an-access-token)
+* [Het toegangs token gebruiken om Microsoft Graph aan te roepen](/graph/auth-v2-service#4-get-an-access-token)
 * [B2C-bewerkingen die door Microsoft Graph worden ondersteund](microsoft-graph-operations.md)
 * [Azure AD B2C gebruikers accounts beheren met Microsoft Graph](manage-user-accounts-graph-api.md)
 * [Audit logboeken ophalen met de rapportage-API van Azure AD](view-audit-logs.md#get-audit-logs-with-the-azure-ad-reporting-api)
 
 <!-- LINKS -->
-[ms-graph]: https://docs.microsoft.com/graph/
+[ms-graph]: /graph/
 [ms-graph-api]: https://docs.microsoft.com/graph/api/overview

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/24/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2f99c5b9362380690badce832c3dd540137d35ac
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 07897823a3ba3b83e240e8e8dc005ea13b036fce
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92215400"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952043"
 ---
 # <a name="application-types-that-can-be-used-in-active-directory-b2c"></a>Toepassings typen die kunnen worden gebruikt in Active Directory B2C
  
@@ -76,24 +76,24 @@ Als u dit scenario in actie wilt zien, kunt u een van de voor beelden van een we
 Naast het vergemakkelijken van eenvoudige aanmelding moet een webserver toepassing mogelijk ook toegang hebben tot een back-end-webservice. In dit geval kan de webtoepassing een iets andere OpenID Connect- [verbindings stroom](openid-connect.md) uitvoeren en tokens verkrijgen met behulp van autorisatie codes en tokens vernieuwen. Dit scenario wordt beschreven in de volgende sectie over [Web-API's](#web-apis).
 
 ## <a name="single-page-applications"></a>Toepassingen met één pagina
-Veel moderne webtoepassingen zijn gebouwd als client-side Single-Page-toepassingen ("SPAs"). Ontwikkel aars schrijven ze met Java script of een beveiligd-wachtwoord verificatie-Framework zoals hoek, vue en reageren. Deze toepassingen worden uitgevoerd in een webbrowser en hebben verschillende verificatie kenmerken dan traditionele webtoepassingen aan de server zijde.
+Veel moderne webtoepassingen zijn gebouwd als toepassingen met één pagina (SPA’s) aan de clientzijde. Ontwikkelaars schrijven deze met JavaScript of een SPA-framework, zoals Angular, Vue en React. Deze toepassingen worden uitgevoerd in een webbrowser en hebben andere verificatiekenmerken dan traditionele webtoepassingen aan de serverzijde.
 
-Azure AD B2C biedt **twee** opties om toepassingen met één pagina in te scha kelen voor het aanmelden van gebruikers en het ophalen van tokens voor toegang tot back-end-services of Web-api's:
+Azure AD B2C biedt **twee** opties om toepassingen met één pagina te gebruiken om gebruikers aan te melden en tokens op te halen voor toegang tot back-endservices of web-API’s:
 
-### <a name="authorization-code-flow-with-pkce"></a>Autorisatie code stroom (met PKCE)
-- [OAuth 2,0-autorisatie code stroom (met PKCE)](./authorization-code-flow.md). Met de autorisatie code stroom kan de toepassing een autorisatie code voor **id-** tokens uitwisselen die de geverifieerde gebruikers-en **toegangs** tokens vertegenwoordigen die nodig zijn om beveiligde api's aan te roepen. Daarnaast worden **vernieuwings** tokens geretourneerd die lange termijn toegang bieden tot bronnen namens gebruikers zonder dat hiervoor interactie met die gebruikers nodig is. 
+### <a name="authorization-code-flow-with-pkce"></a>Autorisatiecodestroom (met PKCE)
+- [OAuth 2.0-autorisatiecodestroom (met PKCE)](./authorization-code-flow.md). De autorisatiecodestroom stelt de toepassing in staat een autorisatiecode uit te wisselen voor **id-tokens**, om de geverifieerde gebruiker te vertegenwoordigen, en de benodigde **toegangstokens** om beveiligde API’s aan te roepen. Daarnaast worden met deze stroom **vernieuwingstokens** geretourneerd, die namens gebruikers langetermijntoegang bieden tot resources, zonder dat interactie met deze gebruikers is vereist. 
 
-Dit is de **Aanbevolen** methode. Met beperkte levens duur vernieuwings tokens kan uw toepassing worden aangepast aan de privacy-beperkingen van de [moderne browser cookie](../active-directory/develop/reference-third-party-cookies-spas.md), zoals Safari ITP.
+Dit is de **aanbevolen** methode. Vernieuwingstokens met een beperkte levensduur helpen om uw toepassing aan te passen aan de [privacybeperkingen van cookies van de moderne browser](../active-directory/develop/reference-third-party-cookies-spas.md), zoals Safari ITP.
 
-Om gebruik te kunnen maken van deze stroom, kan uw toepassing gebruikmaken van een verificatie bibliotheek die deze ondersteunt, zoals [MSAL.js 2. x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser).
+De toepassing kan een verificatiebibliotheek gebruiken, zoals [MSAL.js 2.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser) om te profiteren van deze stroom.
 
 <!-- ![Single-page applications-auth](./media/tutorial-single-page-app/spa-app-auth.svg) -->
-![Toepassingen met één pagina-auth](./media/tutorial-single-page-app/active-directory-oauth-code-spa.png)
+![Toepassingen met één pagina - verificatie](./media/tutorial-single-page-app/active-directory-oauth-code-spa.png)
 
-### <a name="implicit-grant-flow"></a>Impliciete toekennings stroom
-- [OAuth 2,0-impliciete stroom](implicit-flow-single-page-application.md). Sommige frameworks, zoals [MSAL.js 1. x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-core), bieden alleen ondersteuning voor de impliciete toekennings stroom. Met de impliciete toekennings stroom kan de toepassing **id-** en **toegangs** tokens ophalen. In tegens telling tot de autorisatie code stroom retourneert impliciete toekennings stroom geen **vernieuwings token**. 
+### <a name="implicit-grant-flow"></a>Impliciete toekenningsstroom
+- [Impliciete OAuth 2.0-stroom](implicit-flow-single-page-application.md). Sommige frameworks, zoals [MSAL.js 1.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-core), bieden alleen ondersteuning voor de impliciete toekenningsstroom. De impliciete toekenningsstroom stelt de toepassing in staat om **id-tokens** en **toegangstokens** op te halen. In tegenstelling tot de autorisatiecodestroom retourneert de impliciete toekenningsstroom geen **vernieuwingstoken**. 
 
-In deze verificatie stroom zijn geen toepassings scenario's opgenomen die gebruikmaken van platformoverschrijdende java script frameworks zoals elektroden en reageren op systeem eigen. Deze scenario's vereisen verdere mogelijkheden voor interactie met de systeem eigen platformen.
+In deze verificatiestroom zijn geen toepassingsscenario's opgenomen waarin wordt gebruikgemaakt van platformoverschrijdende JavaScript-frameworks, zoals Electron en React-Native. Deze scenario's vereisen extra mogelijkheden voor interactie met de systeemeigen platformen.
 
 ## <a name="web-apis"></a>Web-API's
 
@@ -141,7 +141,7 @@ Toepassingen die langlopende processen bevatten of die werken zonder de aanwezig
 
 Hoewel de OAuth 2,0-toewijzings stroom voor client referenties momenteel niet rechtstreeks wordt ondersteund door de Azure AD B2C Authentication-Service, kunt u de client referentie stroom instellen met behulp van Azure AD en het micro soft Identity platform/token-eind punt voor een toepassing in uw Azure AD B2C-Tenant. Een Azure AD B2C-Tenant deelt een aantal functies met Azure AD-tenants voor bedrijven.
 
-Zie [Azure Active Directory v 2.0 en de OAuth 2,0-client referenties stroom voor het](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-client-creds)instellen van de client referentie stroom. Een geslaagde verificatie resulteert in de ontvangst van een token dat is geformatteerd zodat deze kan worden gebruikt door Azure AD, zoals beschreven in [Azure AD-token verwijzing](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims).
+Zie [Azure Active Directory v 2.0 en de OAuth 2,0-client referenties stroom voor het](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md)instellen van de client referentie stroom. Een geslaagde verificatie resulteert in de ontvangst van een token dat is geformatteerd zodat deze kan worden gebruikt door Azure AD, zoals beschreven in [Azure AD-token verwijzing](../active-directory/develop/id-tokens.md).
 
 Zie [Azure AD B2C beheren met Microsoft Graph](microsoft-graph-get-started.md)voor instructies voor het registreren van een beheer toepassing.
 
@@ -155,7 +155,7 @@ Dit scenario met web-API-keten kan worden ondersteund met behulp van de OAuth 2.
 
 Bewerk Azure AD B2C toepassingen niet op de volgende manieren:
 
-- Op andere portals voor toepassings beheer, zoals de [Portal voor toepassings registratie](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade).
+- Op andere appbeheerportals zoals de [portal voor appregistratie](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade).
 - Graph API of Power shell gebruiken.
 
 Als u de Azure AD B2C toepassing buiten de Azure Portal bewerkt, wordt het een mislukte toepassing en kan deze niet meer worden gebruikt met Azure AD B2C. Verwijder de toepassing en maak deze opnieuw.

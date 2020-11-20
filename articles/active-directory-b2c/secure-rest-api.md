@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: adb9bf48800062d2cc6976a88ec48c1993858dec
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 18979ba8cbc4e68bf79275059c6c1c976578c407
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089533"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953369"
 ---
 # <a name="secure-your-restful-services"></a>Uw REST-services beveiligen 
 
@@ -47,20 +47,20 @@ Als u een REST API technisch profiel met HTTP-basis verificatie wilt configurere
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
-1. Selecteer **beleids sleutels**en selecteer vervolgens **toevoegen**.
-1. Voor **Opties**selecteert u **hand matig**.
-1. Typ **RestApiUsername**voor **naam**.
+1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
+1. Voor **Opties** selecteert u **hand matig**.
+1. Typ **RestApiUsername** voor **naam**.
     De prefix *B2C_1A_* kan automatisch worden toegevoegd.
 1. Voer in het vak **geheim** het rest API gebruikers naam in.
-1. Voor **sleutel gebruik**selecteert u **versleuteling**.
+1. Voor **sleutel gebruik** selecteert u **versleuteling**.
 1. Selecteer **Maken**.
 1. Selecteer de **beleids sleutels** opnieuw.
 1. Selecteer **Toevoegen**.
-1. Voor **Opties**selecteert u **hand matig**.
-1. Typ **RestApiPassword**voor **naam**.
+1. Voor **Opties** selecteert u **hand matig**.
+1. Typ **RestApiPassword** voor **naam**.
     De prefix *B2C_1A_* kan automatisch worden toegevoegd.
 1. Voer in het vak **geheim** het rest API wacht woord in.
-1. Voor **sleutel gebruik**selecteert u **versleuteling**.
+1. Voor **sleutel gebruik** selecteert u **versleuteling**.
 1. Selecteer **Maken**.
 
 ### <a name="configure-your-rest-api-technical-profile-to-use-http-basic-authentication"></a>Uw REST API technische profiel configureren voor het gebruik van HTTP-basis verificatie
@@ -111,7 +111,7 @@ Verificatie van client certificaten is een wederzijdse verificatie op basis van 
 
 ### <a name="prepare-a-self-signed-certificate-optional"></a>Een zelfondertekend certificaat voorbereiden (optioneel)
 
-Als u nog geen certificaat hebt, kunt u voor niet-productie omgevingen een zelfondertekend certificaat gebruiken. In Windows kunt u de cmdlet [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate) van Power shell gebruiken voor het genereren van een certificaat.
+Als u nog geen certificaat hebt, kunt u voor niet-productie omgevingen een zelfondertekend certificaat gebruiken. In Windows kunt u de cmdlet [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) van Power shell gebruiken voor het genereren van een certificaat.
 
 1. Voer deze Power shell-opdracht uit om een zelfondertekend certificaat te genereren. Wijzig het `-Subject` argument naar wens voor uw toepassing en Azure AD B2C Tenant naam. U kunt ook de `-NotAfter` datum aanpassen om een andere verloop tijd voor het certificaat op te geven.
     ```powershell
@@ -125,7 +125,7 @@ Als u nog geen certificaat hebt, kunt u voor niet-productie omgevingen een zelfo
         -CertStoreLocation "Cert:\CurrentUser\My"
     ```    
 1. Open **gebruikers certificaten beheren**  >  **huidige gebruiker**  >  **persoonlijke**  >  **certificaten**  >  *yourappname.yourtenant.onmicrosoft.com*.
-1. Selecteer de **actie**certificaat >  >  **alle taken**  >  **exporteren**.
+1. Selecteer de **actie** certificaat >  >  **alle taken**  >  **exporteren**.
 1. Selecteer **Ja**  >  **volgende**  >  **Ja, de persoonlijke sleutel exporteren**  >  **volgende**.
 1. Accepteer de standaard instellingen voor de **export bestands indeling**.
 1. Geef een wacht woord op voor het certificaat.
@@ -136,9 +136,9 @@ Als u nog geen certificaat hebt, kunt u voor niet-productie omgevingen een zelfo
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
-1. Selecteer **beleids sleutels**en selecteer vervolgens **toevoegen**.
-1. Selecteer **uploaden**in het vak **Opties** .
-1. Typ **RestApiClientCertificate**in het vak **naam** .
+1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
+1. Selecteer **uploaden** in het vak **Opties** .
+1. Typ **RestApiClientCertificate** in het vak **naam** .
     Het voor voegsel *B2C_1A_* automatisch toegevoegd.
 1. Selecteer in het vak **bestand uploaden** het pfx-bestand van uw certificaat met een persoonlijke sleutel.
 1. Typ in het vak **wacht** woord het wacht woord van het certificaat.
@@ -230,9 +230,9 @@ Een claim biedt tijdelijke opslag van gegevens tijdens het uitvoeren van een Azu
 
 ### <a name="acquiring-an-access-token"></a>Een toegangs token verkrijgen 
 
-U kunt op een van de volgende manieren een toegangs token verkrijgen: door het te verkrijgen [bij een federatieve id-provider](idp-pass-through-custom.md), door een rest API aan te roepen dat een toegangs token retourneert, door gebruik te maken van een [ROPC-stroom](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth-ropc)of door gebruik te maken van de [client referentie stroom](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow).  
+U kunt op een van de volgende manieren een toegangs token verkrijgen: door het te verkrijgen [bij een federatieve id-provider](idp-pass-through-custom.md), door een rest API aan te roepen dat een toegangs token retourneert, door gebruik te maken van een [ROPC-stroom](../active-directory/develop/v2-oauth-ropc.md)of door gebruik te maken van de [client referentie stroom](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md).  
 
-In het volgende voor beeld wordt een REST API technisch profiel gebruikt om een aanvraag naar het Azure AD-token eindpunt te maken met behulp van de client referenties die zijn door gegeven als HTTP-basis verificatie. Als u dit wilt configureren in azure AD, raadpleegt u [micro soft Identity platform en de OAuth 2,0 client credentials flow](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow). Mogelijk moet u dit wijzigen in de interface met uw ID-provider. 
+In het volgende voor beeld wordt een REST API technisch profiel gebruikt om een aanvraag naar het Azure AD-token eindpunt te maken met behulp van de client referenties die zijn door gegeven als HTTP-basis verificatie. Als u dit wilt configureren in azure AD, raadpleegt u [micro soft Identity platform en de OAuth 2,0 client credentials flow](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md). Mogelijk moet u dit wijzigen in de interface met uw ID-provider. 
 
 Vervang uw-Tenant naam voor de ServiceUrl door de naam van uw Azure AD-Tenant. Zie de naslag informatie over de [rest technische profielen](restful-technical-profile.md) voor alle beschik bare opties.
 
@@ -318,10 +318,10 @@ Als u een REST API technisch profiel wilt configureren met een OAuth2 Bearer-tok
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
-1. Selecteer **beleids sleutels**en selecteer vervolgens **toevoegen**.
+1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
 1. Kies voor **Opties** `Manual` .
 1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `RestApiBearerToken`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
-1. Voer in het **geheim**uw client geheim in dat u eerder hebt vastgelegd.
+1. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 1. Selecteer voor **sleutel gebruik** `Encryption` .
 1. Selecteer **Maken**.
 
@@ -367,4 +367,4 @@ Hier volgt een voor beeld van een onderliggend technisch profiel dat is geconfig
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het element van het [rest technische profiel](restful-technical-profile.md) vindt u in de IEF-verwijzing. 
+- Meer informatie over het element van het [rest technische profiel](restful-technical-profile.md) vindt u in de IEF-verwijzing.

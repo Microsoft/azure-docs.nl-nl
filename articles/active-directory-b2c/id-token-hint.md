@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 708ec35524f25314ca568944b738ba2cdf60d55c
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 79a99d9f0ca117d8f47d56d76399210a72b91bb7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132071"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951652"
 ---
 # <a name="define-an-id-token-hint-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een technisch profiel voor ID-token hints definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -34,7 +34,7 @@ Met id_token_hint stelt de uitgever van het token (een Relying Party-app of een 
 
 De id_token_hint moet een geldig JWT-token zijn. De volgende tabel geeft een lijst van de claims die verplicht zijn. Aanvullende claims zijn optioneel.
 
-| Naam | Claim | Voorbeeldwaarde | Beschrijving |
+| Name | Claim | Voorbeeldwaarde | Beschrijving |
 | ---- | ----- | ------------- | ----------- |
 | Doelgroep | `aud` | `a489fc44-3cc0-4a78-92f6-e413cd853eae` | Identificeert de beoogde ontvanger van het token. Dit is een wille keurige teken reeks die is gedefinieerd door de uitgever van het token. Azure AD B2C valideert deze waarde en wordt het token geweigerd als het niet overeenkomt.  |
 | Verlener | `iss` |`https://localhost` | Identificeert de beveiligings token service (token uitgever). Dit is een wille keurige URI die is gedefinieerd door de uitgever van het token. Azure AD B2C valideert deze waarde en wordt het token geweigerd als het niet overeenkomt.  |
@@ -130,13 +130,13 @@ Dezelfde sleutel die wordt gebruikt door de token uitgever moet worden gemaakt i
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
-1. Selecteer op de pagina overzicht onder **beleids regels**het **Framework identiteits ervaring**.
+1. Selecteer op de pagina overzicht onder **beleids regels** het **Framework identiteits ervaring**.
 1. **Beleids sleutels** selecteren 
 1. Selecteer **hand matig**.
 1. Gebruik voor **naam** `IdTokenHintKey` .  
    Het voor voegsel `B2C_1A_` kan automatisch worden toegevoegd.
 1. Voer in het vak **geheim** de aanmeldings sleutel in die u eerder hebt gegenereerd.
-1. Gebruik **versleuteling**voor **sleutel gebruik**.
+1. Gebruik **versleuteling** voor **sleutel gebruik**.
 1. Selecteer **Maken**.
 1. Bevestig dat u de sleutel hebt gemaakt `B2C_1A_IdTokenHintKey` .
 
@@ -189,7 +189,7 @@ Bekijk het voor beeld van de [TokenMetadataController.cs](https://github.com/azu
 
 #### <a name="step-1-prepare-a-self-signed-certificate"></a>Stap 1. Een zelfondertekend certificaat voorbereiden
 
-Als u nog geen certificaat hebt, kunt u een zelfondertekend certificaat gebruiken voor deze hand leiding. In Windows kunt u de cmdlet [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate) van Power shell gebruiken voor het genereren van een certificaat.
+Als u nog geen certificaat hebt, kunt u een zelfondertekend certificaat gebruiken voor deze hand leiding. In Windows kunt u de cmdlet [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) van Power shell gebruiken voor het genereren van een certificaat.
 
 Voer deze Power shell-opdracht uit om een zelfondertekend certificaat te genereren. Wijzig het `-Subject` argument naar wens voor uw toepassing en Azure AD B2C Tenant naam. U kunt ook de `-NotAfter` datum aanpassen om een andere verloop tijd voor het certificaat op te geven.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/23/2018
 ms.author: alkohli
-ms.openlocfilehash: ef95ca7b9f94690b607e37fbf5d9378c2f2bcfda
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 060a52b61dcd43fe0d05b2a8ef594c0ab9f2cc9e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85847276"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954049"
 ---
 # <a name="storsimple-8000-series-update-4-release-notes"></a>Release opmerkingen bij StorSimple 8000 Series update 4
 
@@ -47,7 +47,7 @@ In update 4 zijn de volgende belang rijke verbeteringen en oplossingen voor oplo
 
     Er wordt een nieuwe functie geïmplementeerd in update 4 die regel matig gebruikte gegevens bijhoudt om een heatmap te maken wanneer het apparaat wordt gebruikt vóór DR. (de meeste gebruikte gegevens segmenten hebben een hoge hitte terwijl minder hitte segmenten weinig worden gebruikt). Na DR gebruikt StorSimple de heatmap om de gegevens van de Cloud automatisch te herstellen en opnieuw te gebruiken. 
 
-    Alle herstel bewerkingen zijn nu gebaseerd op heatmap. Ga naar [Windows PowerShell voor StorSimple-cmdlet-verwijzing](https://technet.microsoft.com/library/dn688168.aspx)voor meer informatie over het opvragen en annuleren van Heatmap herstel-en rehydratatie-taken.
+    Alle herstel bewerkingen zijn nu gebaseerd op heatmap. Ga naar [Windows PowerShell voor StorSimple-cmdlet-verwijzing](/powershell/module/hcs/?viewFallbackFrom=winserverr2-ps)voor meer informatie over het opvragen en annuleren van Heatmap herstel-en rehydratatie-taken.
 
 * **Hulp programma StorSimple Diagnostics** : in update 4 wordt een StorSimple Diagnostics-hulp programma vrijgegeven waarmee u eenvoudig diagnoses en problemen kunt oplossen met betrekking tot de status van het systeem, het netwerk, de prestaties en de hardware van het onderdeel. Dit hulp programma wordt uitgevoerd via de Windows PowerShell voor StorSimple. Ga voor meer informatie naar [problemen oplossen met het hulp programma StorSimple Diagnostics](storsimple-8000-diagnostics.md).
 
@@ -59,7 +59,7 @@ In update 4 zijn de volgende belang rijke verbeteringen en oplossingen voor oplo
 
 * **Waarschuwing voor schijf fouten** : er wordt een nieuwe waarschuwing gegeven die de gebruiker waarschuwt dat er problemen met de harde schijf zijn toegevoegd in deze versie. Als u deze waarschuwing ontvangt, neemt u contact op met Microsoft Ondersteuning om een vervangende schijf te verzenden. Ga voor meer informatie naar [hardwareproblemen op uw StorSimple-apparaat](storsimple-8000-manage-alerts.md#hardware-alerts).
 
-* **Vervanging** van de controller: een cmdlet waarmee de gebruiker de status van het vervangings proces van de controller kan opvragen, wordt toegevoegd in deze release. Voor meer informatie gaat u naar de [cmdlet voor het opvragen van de vervangings status](https://technet.microsoft.com/library/dn688168.aspx)van de controller.
+* **Vervanging** van de controller: een cmdlet waarmee de gebruiker de status van het vervangings proces van de controller kan opvragen, wordt toegevoegd in deze release. Voor meer informatie gaat u naar de [cmdlet voor het opvragen van de vervangings status](/powershell/module/hcs/?viewFallbackFrom=winserverr2-ps)van de controller.
 
 
 ## <a name="issues-fixed-in-update-4"></a>Problemen die zijn opgelost in update 4
@@ -82,7 +82,7 @@ Er zijn geen nieuwe bekende problemen in update 4. Voor een lijst met problemen 
 
 ## <a name="serial-attached-scsi-sas-controller-and-firmware-updates-in-update-4"></a>SAS-controller (Serial-Attached SCSI) en firmware-updates in update 4
 
-Deze release heeft SAS controller-en LSI-Stuur Programma's en firmware-updates. Zie [Update 4 installeren](storsimple-install-update-4.md) op uw StorSimple-apparaat voor meer informatie over het installeren van deze updates.
+Deze release heeft SAS controller-en LSI-Stuur Programma's en firmware-updates. Zie [Update 4 installeren](./storsimple-8000-install-update-4.md) op uw StorSimple-apparaat voor meer informatie over het installeren van deze updates.
 
 ## <a name="virtual-device-updates-in-update-4"></a>Updates van het virtuele apparaat in update 4
 
@@ -90,5 +90,4 @@ Deze update kan niet worden toegepast op de StorSimple Cloud Appliance (ook wel 
 
 ## <a name="next-step"></a>Volgende stap
 
-Meer informatie over het [installeren van update 4](storsimple-install-update-4.md) op uw StorSimple-apparaat.
-
+Meer informatie over het [installeren van update 4](./storsimple-8000-install-update-4.md) op uw StorSimple-apparaat.

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 8406074933489e53e9235a8a6a05b68f1dd42a85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 184616058cb2a86025eb75b4923e374ab42ebf05
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259133"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953556"
 ---
 # <a name="tutorial-for-configuring-saviynt-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van Saviynt met Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- Een [Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant). De Tenant is gekoppeld aan uw Azure-abonnement.
+- Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md). De Tenant is gekoppeld aan uw Azure-abonnement.
 
 - Een Saviynt- [abonnement](https://saviynt.com/contact-us/)
 
@@ -48,7 +48,7 @@ De Saviynt-integratie bevat de volgende onderdelen:
 
 - [Saviynt](https://saviynt.com/integrations/azure-ad/for-b2c/) : het platform voor identiteits beheer dat verzorgt voor het beheer van de levens cyclus van gebruikers en toegangs governance van Azure AD B2C gebruikers.  
 
-- [Microsoft Graph-API](https://docs.microsoft.com/graph/use-the-api) : deze API biedt de interfaces voor Saviynt om de Azure AD B2C gebruikers en hun toegang in azure AD B2C te beheren.
+- [Microsoft Graph-API](/graph/use-the-api) : deze API biedt de interfaces voor Saviynt om de Azure AD B2C gebruikers en hun toegang in azure AD B2C te beheren.
 
 In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
@@ -69,7 +69,7 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
 1. Als u een Saviynt-account wilt maken, neemt u contact op met [Saviynt](https://saviynt.com/contact-us/)
 
-2. Maak gedelegeerd beheer beleid en wijs gebruikers toe als [gedelegeerd beheerder](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-concept-delegation) met verschillende rollen.
+2. Maak gedelegeerd beheer beleid en wijs gebruikers toe als [gedelegeerd beheerder](../active-directory/users-groups-roles/roles-concept-delegation.md) met verschillende rollen.
 
 ## <a name="configure-azure-ad-b2c-with-saviynt"></a>Azure AD B2C configureren met Saviynt
 
@@ -91,7 +91,7 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
 8. Ga naar de volgende pagina en selecteer **toepassings machtigingen**.
 
-9. Selecteer **Directory**en selecteer **Directory. Read. all** en **map. readwrite. all** in het selectie vakje.
+9. Selecteer **Directory** en selecteer **Directory. Read. all** en **map. readwrite. all** in het selectie vakje.
 
 10. Selecteer **machtigingen toevoegen**. Controleer de toegevoegde machtigingen.
 
@@ -104,7 +104,7 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
     >[!NOTE]
     > U hebt het client geheim later nodig.
 
-14. Ga naar **overzicht** en haal de **client-ID** en **Tenant-id**op.
+14. Ga naar **overzicht** en haal de **client-ID** en **Tenant-id** op.
 
 15. De Tenant-ID, client-ID en client geheim zijn vereist voor het volt ooien van de installatie in Saviynt.
 
@@ -113,7 +113,7 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 In de onderstaande stappen wordt uitgelegd hoe u Saviynt kunt gebruiken om bewerkingen voor het verwijderen van gebruikers uit te voeren in Azure AD B2C.
 
 >[!NOTE]
->[Evalueer het risico voordat beheerders rollen toegang verlenen tot een service-principal.](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)
+>[Evalueer het risico voordat beheerders rollen toegang verlenen tot een service-principal.](../active-directory/develop/app-objects-and-service-principals.md)
 
 1. Installeer de meest recente versie van de MSOnline Power shell-module op een Windows-werk station/-server.
 
@@ -133,8 +133,8 @@ Blader naar de Tenant van uw Saviynt-toepassing en test het beheer van de levens
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
 
-- [Een web-API-toepassing maken](https://docs.microsoft.com/azure/active-directory-b2c/add-web-api-application)
+- [Een web-API-toepassing maken](./add-web-api-application.md)

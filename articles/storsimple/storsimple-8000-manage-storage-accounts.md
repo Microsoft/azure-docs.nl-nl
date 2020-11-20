@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
-ms.openlocfilehash: 5a0ea8a2f07ef596cd80e9165eedb2b98dab0bfa
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 0df0c12d5942179e2492bfdc932fa25d126a2426
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978710"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951731"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-your-storage-account-credentials"></a>De StorSimple Apparaatbeheer-service gebruiken voor het beheren van uw referenties voor het opslag account
 
@@ -55,7 +55,7 @@ De meest voorkomende taken met betrekking tot opslag accounts die kunnen worden 
 Er zijn drie typen opslag accounts die kunnen worden gebruikt met uw StorSimple-apparaat.
 
 * **Automatisch gegenereerde opslag accounts** : als de naam wordt voorgesteld, wordt dit type opslag account automatisch gegenereerd wanneer de service voor het eerst wordt gemaakt. Zie [stap 1: een nieuwe service maken](storsimple-8000-deployment-walkthrough-u2.md#step-1-create-a-new-service) in [uw on-premises StorSimple-apparaat implementeren](storsimple-8000-deployment-walkthrough-u2.md)voor meer informatie over hoe dit opslag account wordt gemaakt. 
-* **Opslag accounts in het service abonnement** : Dit zijn de Azure Storage-accounts die zijn gekoppeld aan hetzelfde abonnement als die van de service. Zie [over Azure Storage-accounts](../storage/common/storage-create-storage-account.md)voor meer informatie over de manier waarop deze opslag accounts worden gemaakt. 
+* **Opslag accounts in het service abonnement** : Dit zijn de Azure Storage-accounts die zijn gekoppeld aan hetzelfde abonnement als die van de service. Zie [over Azure Storage-accounts](../storage/common/storage-account-create.md)voor meer informatie over de manier waarop deze opslag accounts worden gemaakt. 
 * **Opslag accounts buiten het service abonnement** : Dit zijn de Azure Storage-accounts die niet zijn gekoppeld aan uw service en die waarschijnlijk bestonden voordat de service werd gemaakt.
 
 ## <a name="add-a-storage-account"></a>Een opslagaccount toevoegen
@@ -179,4 +179,3 @@ U wordt gewaarschuwd nadat de sleutel is gesynchroniseerd.
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over [StorSimple-beveiliging](storsimple-8000-security.md).
 * Meer informatie over [het gebruik van de StorSimple Apparaatbeheer-service voor het beheren van uw StorSimple-apparaat](storsimple-8000-manager-service-administration.md).
-

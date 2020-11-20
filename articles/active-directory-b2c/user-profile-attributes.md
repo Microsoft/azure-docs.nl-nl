@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 3/20/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1e6965e15b7482935148ae7fcd2edf0f3cc722b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 98c33d4b9e749e804f70d9dccb7198884c80dfe7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83738554"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952698"
 ---
 # <a name="user-profile-attributes"></a>Kenmerken van gebruikersprofiel
 
@@ -26,7 +26,7 @@ Uw Azure Active Directory (Azure AD) B2C Directory-gebruikers profiel wordt gele
 
 U kunt ook integreren met externe systemen. U kunt bijvoorbeeld Azure AD B2C gebruiken voor verificatie, maar deze delegeren aan een externe klant Relationship Management (CRM) of klant loyale Data Base als de gezaghebbende bron van klant gegevens. Zie de oplossing voor [externe profielen](https://github.com/azure-ad-b2c/samples/tree/master/policies/remote-profile) voor meer informatie.
 
-In de volgende tabel worden de kenmerken van het [bron type](https://docs.microsoft.com/graph/api/resources/user) van de gebruiker weer gegeven die worden ondersteund door de Azure AD B2C Directory-gebruikers profiel. Het geeft de volgende informatie over elk kenmerk:
+In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resources/user) van de gebruiker weer gegeven die worden ondersteund door de Azure AD B2C Directory-gebruikers profiel. Het geeft de volgende informatie over elk kenmerk:
 
 - De kenmerk naam die wordt gebruikt door Azure AD B2C (gevolgd door de naam van de Microsoft Graph tussen haakjes, indien anders)
 - Gegevens type van kenmerk
@@ -46,7 +46,7 @@ In de volgende tabel worden de kenmerken van het [bron type](https://docs.micros
 |country         |Tekenreeks|Het land/de regio waarin de gebruiker zich bevindt. Voor beeld: "US" of "UK". Maximale lengte van 128.|Ja|Ja|Persistent gemaakt, uitvoer|
 |createdDateTime|DateTime|De datum waarop het gebruikers object is gemaakt. Alleen-lezen.|Nee|Nee|Persistent gemaakt, uitvoer|
 |creationType    |Tekenreeks|Als het gebruikers account is gemaakt als een lokaal account voor een Azure Active Directory B2C Tenant, is de waarde LocalAccount of nameCoexistence. Alleen-lezen.|Nee|Nee|Persistent gemaakt, uitvoer|
-|dateOfBirth     |Datum|Geboortedatum.|Nee|Nee|Persistent gemaakt, uitvoer|
+|dateOfBirth     |Date|Geboortedatum.|Nee|Nee|Persistent gemaakt, uitvoer|
 |department      |Tekenreeks|De naam van de afdeling waarin de gebruiker werkt. Maximale lengte van 64.|Ja|Nee|Persistent gemaakt, uitvoer|
 |displayName     |Tekenreeks|De weergave naam voor de gebruiker. Maximale lengte van 256.|Ja|Ja|Persistent gemaakt, uitvoer|
 |facsimileTelephoneNumber<sup>1</sup>|Tekenreeks|Het telefoon nummer van de zakelijke faxmachine van de gebruiker.|Ja|Nee|Persistent gemaakt, uitvoer|
@@ -94,7 +94,7 @@ U moet vaak uw eigen kenmerken maken, zoals in de volgende gevallen:
 - Een id-provider heeft een unieke gebruikers-id, zoals **uniqueUserGUID** , die moeten worden opgeslagen.
 - Een aangepaste gebruikers traject moet persistent worden gemaakt voor een status van een gebruiker, zoals **migrationStatus**.
 
-Azure AD B2C breidt de set kenmerken uit die zijn opgeslagen op elk gebruikers account. Extensie kenmerken [breiden het schema](https://docs.microsoft.com/graph/extensibility-overview#schema-extensions) van de gebruikers objecten in de map uit. De extensie kenmerken kunnen alleen worden geregistreerd voor een toepassings object, hoewel ze mogelijk gegevens voor een gebruiker bevatten. Het kenmerk extension is gekoppeld aan de toepassing met de naam B2C-Extensions-app. Wijzig deze toepassing niet, omdat deze wordt gebruikt door Azure AD B2C om gebruikers gegevens op te slaan. U kunt deze toepassing vinden onder Azure Active Directory App-registraties.
+Azure AD B2C breidt de set kenmerken uit die zijn opgeslagen op elk gebruikers account. Extensie kenmerken [breiden het schema](/graph/extensibility-overview#schema-extensions) van de gebruikers objecten in de map uit. De extensie kenmerken kunnen alleen worden geregistreerd voor een toepassings object, hoewel ze mogelijk gegevens voor een gebruiker bevatten. Het kenmerk extension is gekoppeld aan de toepassing met de naam B2C-Extensions-app. Wijzig deze toepassing niet, omdat deze wordt gebruikt door Azure AD B2C om gebruikers gegevens op te slaan. U kunt deze toepassing vinden onder Azure Active Directory App-registraties.
 
 > [!NOTE]
 > - Er kunnen Maxi maal 100 extensie kenmerken naar elk gebruikers account worden geschreven.
@@ -113,6 +113,6 @@ De volgende gegevens typen worden ondersteund bij het definiëren van een eigens
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over extensie kenmerken:
-- [Schema-uitbreidingen](https://docs.microsoft.com/graph/extensibility-overview#schema-extensions)
+- [Schema-uitbreidingen](/graph/extensibility-overview#schema-extensions)
 - [Aangepaste kenmerken definiëren met gebruikers stroom](user-flow-custom-attributes.md)
 - [Aangepaste kenmerken definiëren met aangepast beleid](custom-policy-custom-attributes.md)

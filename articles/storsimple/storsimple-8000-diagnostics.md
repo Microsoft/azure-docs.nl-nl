@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: ca674f38b5c327123bc1d13dd284f84f614881b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf0570cd62a2c329407cfb6dd087020f53cdc991
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91300442"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954066"
 ---
 # <a name="use-the-storsimple-diagnostics-tool-to-troubleshoot-8000-series-device-issues"></a>Het hulp programma StorSimple Diagnostics gebruiken om problemen met de 8000 Series-apparaten op te lossen
 
@@ -332,7 +332,7 @@ Hier volgt een voor beeld van de uitvoer van het 8100-apparaat. U kunt in de uit
 * DATA 2-5 zijn niet ingeschakeld in de portal.
 * De configuratie van de DNS-server is geldig en het apparaat kan verbinding maken via de DNS-server.
 * De NTP-server verbinding is ook prima.
-* De poorten 80 en 443 zijn geopend. Poort 9354 is echter geblokkeerd. Op basis van de [systeem netwerk vereisten](storsimple-system-requirements.md)moet u deze poort openen voor de service bus-communicatie.
+* De poorten 80 en 443 zijn geopend. Poort 9354 is echter geblokkeerd. Op basis van de [systeem netwerk vereisten](./storsimple-8000-system-requirements.md)moet u deze poort openen voor de service bus-communicatie.
 * Het TLS/SSL-certificaat is geldig.
 * Het apparaat kan verbinding maken met het opslag account: _myss8000storageacct_.
 * De verbinding met update servers is geldig.
@@ -388,7 +388,7 @@ Als u dit hulp programma wilt gebruiken, voert u de volgende stappen uit:
 
     Als de latentie voor lees bewerkingen die is gerapporteerd door het diagnostische hulp programma hoog is:
 
-    1. Configureer Opslaganalyse voor BLOB-Services en analyseer de uitvoer om inzicht te krijgen in de latenties voor het Azure-opslag account. Ga naar [Opslaganalyse inschakelen en configureren](../storage/common/storage-enable-and-view-metrics.md)voor gedetailleerde instructies. Als deze latenties ook hoog zijn en vergelijkbaar zijn met de getallen die u hebt ontvangen van het hulp programma StorSimple Diagnostics, moet u een service aanvraag registreren bij Azure Storage.
+    1. Configureer Opslaganalyse voor BLOB-Services en analyseer de uitvoer om inzicht te krijgen in de latenties voor het Azure-opslag account. Ga naar [Opslaganalyse inschakelen en configureren](../storage/blobs/monitor-blob-storage.md)voor gedetailleerde instructies. Als deze latenties ook hoog zijn en vergelijkbaar zijn met de getallen die u hebt ontvangen van het hulp programma StorSimple Diagnostics, moet u een service aanvraag registreren bij Azure Storage.
 
     2. Als de wacht tijden van het opslag account laag zijn, neemt u contact op met uw netwerk beheerder om latentie problemen in uw netwerk te onderzoeken.
 
@@ -417,7 +417,7 @@ Hier volgt een tabel met een beschrijving van de verschillende Windows Power she
 | PowerShell-parameter    | Beschrijving  |
 |-------------------------|------------------|
 | Instance ID             | Elke controller heeft een unieke id of een GUID die eraan is gekoppeld.|
-| Naam                    | De beschrijvende naam van het apparaat, zoals geconfigureerd via de Azure Portal tijdens de implementatie van het apparaat. De standaard beschrijvende naam is het serie nummer van het apparaat. |
+| Name                    | De beschrijvende naam van het apparaat, zoals geconfigureerd via de Azure Portal tijdens de implementatie van het apparaat. De standaard beschrijvende naam is het serie nummer van het apparaat. |
 | Modelleren                   | Het model van uw StorSimple 8000-serie apparaat. Het model kan 8100 of 8600 zijn.|
 | SerialNumber            | Het serie nummer van het apparaat wordt toegewezen aan de fabriek en is 15 tekens lang. 8600-SHX0991003G44HT geeft bijvoorbeeld het volgende aan:<br> 8600: is het model van het apparaat.<br>SHX: is de productie site.<br> 0991003-is een specifiek product. <br> G44HT: de laatste vijf cijfers worden verhoogd om unieke serie nummers te maken. Dit kan geen opeenvolgende set zijn.|
 | Tijdzone                | De tijd zone van het apparaat zoals geconfigureerd in de Azure Portal tijdens de implementatie van het apparaat.|
@@ -440,6 +440,6 @@ Hier volgt een tabel met een beschrijving van de verschillende Windows Power she
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over de [syntaxis van de cmdlet Invoke-HcsDiagnostics](https://technet.microsoft.com/library/mt795371.aspx).
+* Meer informatie over de [syntaxis van de cmdlet Invoke-HcsDiagnostics](/previous-versions/windows/powershell-scripting/mt795371(v=wps.630)).
 
-* Meer informatie over het [oplossen van implementatie problemen](storsimple-troubleshoot-deployment.md) op uw StorSimple-apparaat.
+* Meer informatie over het [oplossen van implementatie problemen](./storsimple-8000-troubleshoot-deployment.md) op uw StorSimple-apparaat.

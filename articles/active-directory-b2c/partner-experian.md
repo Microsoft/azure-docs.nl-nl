@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: a88894bb7462e9ac3afd16d69ae820dd98543a5f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 29116d880a51444eb45a351e2118a07d13873043
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259370"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953845"
 ---
 # <a name="tutorial-for-configuring-experian-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van Experian met Azure Active Directory B2C
 
@@ -42,7 +42,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- [Een Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) die is gekoppeld aan uw Azure-abonnement.
+- [Een Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -77,14 +77,14 @@ In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
 ### <a name="part-1---deploy-the-api"></a>Deel 1: de API implementeren
 
-Implementeer de meegeleverde [API-code](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Experian/CrossCoreIntegrationApi/CrossCoreIntegrationApi.sln) voor een Azure-service. De code kan worden gepubliceerd vanuit Visual Studio, gevolgd door deze [instructies](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Implementeer de meegeleverde [API-code](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Experian/CrossCoreIntegrationApi/CrossCoreIntegrationApi.sln) voor een Azure-service. De code kan worden gepubliceerd vanuit Visual Studio, gevolgd door deze [instructies](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
 
 >[!NOTE]
 >U hebt de URL van de geïmplementeerde service nodig om Azure AD te configureren met de vereiste instellingen.
 
 ### <a name="part-2---deploy-the-client-certificate"></a>Deel 2: het client certificaat implementeren
 
-De aanroep van de Experian-API wordt beveiligd door een client certificaat. Dit client certificaat wordt verzorgd door Experian. Volg de instructies in dit [document](https://docs.microsoft.com/azure/app-service/environment/certificates#private-client-certificate)om het certificaat te uploaden naar de Azure-app-service. In het voor beeld wordt gebruikgemaakt van de volgende sleutels stappen in het proces:
+De aanroep van de Experian-API wordt beveiligd door een client certificaat. Dit client certificaat wordt verzorgd door Experian. Volg de instructies in dit [document](../app-service/environment/certificates.md#private-client-certificate)om het certificaat te uploaden naar de Azure-app-service. In het voor beeld wordt gebruikgemaakt van de volgende sleutels stappen in het proces:
 
 - Het certificaat uploaden
 
@@ -92,9 +92,9 @@ De aanroep van de Experian-API wordt beveiligd door een client certificaat. Dit 
 
 ### <a name="part-3---configure-the-api"></a>Deel 3: de API configureren
 
-Toepassings instellingen kunnen worden [geconfigureerd in de app service in azure](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings). Met deze methode kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
+Toepassings instellingen kunnen worden [geconfigureerd in de app service in azure](../app-service/configure-common.md#configure-app-settings). Met deze methode kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
 
-| Toepassingsinstellingen | Bron | Notities |
+| Toepassingsinstellingen | Bron | Opmerkingen |
 | :-------- | :------------| :-----------|
 |CrossCoreConfig: TenantId | Experian-account configuratie |     |
 |CrossCoreConfig:OrgCode | Experian-account configuratie |     |
@@ -110,7 +110,7 @@ Toepassings instellingen kunnen worden [geconfigureerd in de app service in azur
 
 ### <a name="part-4---create-api-policy-keys"></a>Deel 4: API-beleids sleutels maken
 
-Raadpleeg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/secure-rest-api#add-rest-api-username-and-password-policy-keys) en maak twee beleids sleutels: een voor de API-gebruikers naam en een voor het API-wacht woord dat u hierboven hebt gedefinieerd voor http-basis verificatie.
+Raadpleeg dit [document](./secure-rest-api.md#add-rest-api-username-and-password-policy-keys) en maak twee beleids sleutels: een voor de API-gebruikers naam en een voor het API-wacht woord dat u hierboven hebt gedefinieerd voor http-basis verificatie.
 
 >[!NOTE]
 >U hebt de sleutels nodig voor het later configureren van het beleid.
@@ -133,7 +133,7 @@ Zoek in het meegeleverde [aangepaste beleid](https://github.com/azure-ad-b2c/par
 
 ### <a name="part-6---configure-the-azure-ad-b2c-policy"></a>Deel 6: het Azure AD B2C-beleid configureren
 
-Raadpleeg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications#custom-policy-starter-pack) voor instructies over het instellen van uw Azure AD B2C-Tenant en het configureren van beleid.
+Raadpleeg dit [document](./custom-policy-get-started.md?tabs=applications#custom-policy-starter-pack) voor instructies over het instellen van uw Azure AD B2C-Tenant en het configureren van beleid.
 
 >[!NOTE]
 >Dit voorbeeld beleid is gebaseerd op het [lokale account Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/LocalAccounts).
@@ -161,12 +161,12 @@ Raadpleeg dit [document](https://docs.microsoft.com/azure/active-directory-b2c/c
 
 6. De aanmeldings stroom door lopen  
 
-7. De CrossCore-puzzel wordt weer gegeven nadat u **door gaan**hebt ingevoerd.
+7. De CrossCore-puzzel wordt weer gegeven nadat u **door gaan** hebt ingevoerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

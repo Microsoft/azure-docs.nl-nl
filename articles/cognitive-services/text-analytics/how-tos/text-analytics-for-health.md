@@ -8,38 +8,39 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 08/06/2020
+ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: e3e0ae444e2b3b6ac195a83653baf4b71bac6644
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.custom: references_regions
+ms.openlocfilehash: e7f017c1f3dc189af2b0fc053912decca3459478
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363864"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952757"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Procedure: Text Analytics gebruiken voor de status (preview)
-
-> [!NOTE]
-> De Text Analytics voor de status container is onlangs bijgewerkt. Bekijk [wat er nieuw is](../whats-new.md) voor meer informatie over recente wijzigingen. Vergeet niet om de meest recente container te halen voor het gebruik van de updates die worden vermeld.
 
 > [!IMPORTANT] 
 > Text Analytics status is een preview-functie die IS ingesteld op ' AS IS ' en ' WITH ALL FAULTs '. Daarom **moet Text Analytics voor status (preview) niet worden geïmplementeerd of geïmplementeerd in productie gebruik.** Text Analytics de status niet is bedoeld of beschikbaar gesteld voor gebruik als medisch apparaat, klinisch ondersteunings programma of andere technologie, bedoeld om te worden gebruikt in de diagnose, het verkrijgen, beperken, behandelen of voor komen van ziekten of andere voor waarden en er wordt geen licentie of recht verleend door micro soft om deze mogelijkheid voor dergelijke doel einden te gebruiken. Deze mogelijkheid is niet ontworpen of bedoeld om te worden geïmplementeerd of gedistribueerd als een plaatsvervanger voor professioneel medisch advies of advies, diagnose, behandeling of het klinisch arrest van een ziekte medewerker, en mag niet als zodanig worden gebruikt. De klant is alleen verantwoordelijk voor het gebruik van Text Analytics voor de status. Micro soft garandeert niet dat Text Analytics voor de gezondheid of materialen die in verband met de mogelijkheid worden geleverd, voldoende zijn voor medische doel einden of dat anderszins voldoen aan de gezondheids-en medische vereisten van een persoon. 
 
 
-Text Analytics status is een container service die relevante medische gegevens ophaalt en uitpakt uit ongestructureerde teksten, zoals dokters notities, samen vattingen van de afvoer, klinische documenten en elektronische status records.  
+Text Analytics status is een functie van de Text Analytics-API-service die relevante medische gegevens ophaalt en uitpakt vanuit ongestructureerde teksten, zoals dokters notities, samen vattingen, klinische documenten en elektronische status records.  Er zijn twee manieren om deze service te gebruiken: 
+
+* De API (asynchroon) van het web 
+* Een docker-container (synchroon)   
 
 ## <a name="features"></a>Functies
 
-De Text Analytics voor de status container voert momenteel de naam entity Recognition (NER), de extractie van relaties, het afwijzen van entiteiten en het koppelen van koppelingen voor Engelse tekst in uw eigen ontwikkel omgeving uit die voldoet aan uw specifieke vereisten voor beveiliging en gegevens beheer.
+Text Analytics voor de status name entity Recognition (NER) wordt uitgevoerd, wordt het ophalen van relaties, het afleiden van entiteits koppelingen en entiteits koppeling in de Engelse taal van tekst om inzichten in ongestructureerde klinisch en biomedische tekst te ontdekken.
 
-#### <a name="named-entity-recognition"></a>[Herkenning van benoemde entiteiten](#tab/ner)
+### <a name="named-entity-recognition"></a>[Herkenning van benoemde entiteiten](#tab/ner)
 
 Herkenning met de naam entiteit detecteert woorden en zinsdelen die in ongestructureerde tekst worden genoemd en die kunnen worden gekoppeld aan een of meer semantische typen, zoals diagnose, medicijnen naam, symptoom/ondertekening of leeftijd.
 
 > [!div class="mx-imgBorder"]
 > ![Status NER](../media/ta-for-health/health-named-entity-recognition.png)
 
-#### <a name="relation-extraction"></a>[Relatie-extractie](#tab/relation-extraction)
+### <a name="relation-extraction"></a>[Relatie-extractie](#tab/relation-extraction)
 
 Met relatie-extractie worden betekenis volle verbindingen van concepten aangegeven die worden vermeld in de tekst. Zo wordt een relatie ' tijd van voor waarde ' gevonden door een voorwaarde naam te koppelen aan een tijd. 
 
@@ -47,7 +48,7 @@ Met relatie-extractie worden betekenis volle verbindingen van concepten aangegev
 > ![Status RE](../media/ta-for-health/health-relation-extraction.png)
 
 
-#### <a name="entity-linking"></a>[Entiteiten koppelen](#tab/entity-linking)
+### <a name="entity-linking"></a>[Entiteiten koppelen](#tab/entity-linking)
 
 Entiteit koppelt disambiguates afzonderlijke entiteiten door benoemde entiteiten die worden vermeld in tekst te koppelen aan concepten die zijn gevonden in een vooraf gedefinieerde data base met concepten. Bijvoorbeeld het Unified medisch taal systeem (UMLS).
 
@@ -56,7 +57,7 @@ Entiteit koppelt disambiguates afzonderlijke entiteiten door benoemde entiteiten
 
 Text Analytics status ondersteunt de koppeling naar de Health-en biomedische woorden lijst in de[UMLS](https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html)-kennis bron (Unified medisch language System).
 
-#### <a name="negation-detection"></a>[Detectie van negatie](#tab/negation-detection) 
+### <a name="negation-detection"></a>[Detectie van negatie](#tab/negation-detection) 
 
 De betekenis van medische inhoud wordt sterk beïnvloed door para meters zoals negatie, wat kritieke implicatie kan hebben als er een probleem is vastgesteld. Text Analytics voor de status ondersteunt de detectie van negatie voor de verschillende entiteiten die in de tekst worden genoemd. 
 
@@ -67,173 +68,189 @@ De betekenis van medische inhoud wordt sterk beïnvloed door para meters zoals n
 
 Bekijk de [entiteits categorieën](../named-entity-types.md?tabs=health) die door Text Analytics worden geretourneerd voor een volledige lijst met ondersteunde entiteiten.
 
-## <a name="supported-languages"></a>Ondersteunde talen
+### <a name="supported-languages-and-regions"></a>Ondersteunde talen en regio's
 
-Text Analytics alleen voor de status ondersteunt documenten in de Engelse taal.
+Text Analytics alleen voor de status ondersteunt documenten in de Engelse taal. 
 
-## <a name="request-access-to-the-container-registry"></a>Toegang aanvragen tot het container register
+De Text Analytics voor de status-gehoste Web-API is momenteel alleen beschikbaar in deze regio's: VS-West 2, VS-Oost 2, centraal VS, Europa-noord en Europa-west.
 
-Vul het [aanvraag formulier voor de Cognitive Services containers](https://aka.ms/csgate) in en verzend het om toegang tot de container aan te vragen. U wordt momenteel niet gefactureerd voor Text Analytics voor het status gebruik. 
+## <a name="request-access-to-the-public-preview"></a>Toegang aanvragen tot de open bare preview
 
-[!INCLUDE [Request access to the container registry](../../../../includes/cognitive-services-containers-request-access-only.md)]
+Vul het [Cognitive Services aanvraag formulier](https://aka.ms/csgate) in om toegang tot de Text Analytics voor de open bare preview van de status aan te vragen. U wordt niet gefactureerd voor Text Analytics voor het status gebruik. 
 
-[!INCLUDE [Authenticate to the container registry](../../../../includes/cognitive-services-containers-access-registry.md)]
+Het formulier vraagt informatie over u, uw bedrijf en het gebruikers scenario waarvoor u de container gaat gebruiken. Nadat u het formulier hebt verzonden, wordt het door het Azure Cognitive Services-team gecontroleerd en een e-mail bericht met een beslissing verzonden.
 
-## <a name="install-the-container"></a>De container installeren
+> [!IMPORTANT]
+> * Op het formulier moet u een e-mail adres gebruiken dat is gekoppeld aan een Azure-abonnements-ID.
+> * De Azure-resource die u gebruikt, moet zijn gemaakt met de goedgekeurde Azure-abonnements-ID. 
+> * Controleer uw e-mail adres (zowel postvak in-map als ongewenste e-mail) voor updates over de status van uw toepassing van micro soft.
 
-Er zijn meerdere manieren waarop u de container kunt installeren en uitvoeren. 
+## <a name="using-the-docker-container"></a>De docker-container gebruiken 
 
-- Gebruik de [Azure Portal](text-analytics-how-to-install-containers.md?tabs=healthcare) om een Text Analytics resource te maken en gebruik docker om uw container op te halen.
-- Gebruik de volgende Power shell-en [Azure cli](/cli/azure/?view=azure-cli-latest) -scripts voor het automatiseren van de configuratie van de resource-implementatie container.
+Als u de Text Analytics voor de status container in uw eigen omgeving wilt uitvoeren, volgt u deze [instructies om de container te downloaden en te installeren](../how-tos/text-analytics-how-to-install-containers.md?tabs=healthcare).
 
-### <a name="install-the-container-using-azure-web-app-for-containers"></a>De container installeren met behulp van Azure Web App for Containers
+## <a name="using-the-client-library"></a>De clientbibliotheek gebruiken
 
-Azure [Web App for containers](https://azure.microsoft.com/services/app-service/containers/) is een Azure-resource die is toegewezen aan het uitvoeren van containers in de Cloud. Het biedt out-of-the-box-mogelijkheden, zoals automatisch schalen, ondersteuning van docker-containers en docker-samen stellen, HTTPS-ondersteuning en nog veel meer.
-
-> [!NOTE]
-> Met Azure Web App krijgt u automatisch een domein in de vorm van `<appservice_name>.azurewebsites.net`
-
-Voer dit Power shell-script uit met behulp van de Azure CLI om een Web App for Containers te maken, met behulp van uw abonnement en de container installatie kopie via HTTPS. Wacht totdat het script is voltooid (ongeveer 25-30 minuten) voordat u de eerste aanvraag indient.
-
-```bash
-$subscription_name = ""                    # THe name of the subscription you want you resource to be created on.
-$resource_group_name = ""                  # The name of the resource group you want the AppServicePlan
-                                           #    and AppSerivce to be attached to.
-$resources_location = ""                   # This is the location you wish the AppServicePlan to be deployed to.
-                                           #    You can use the "az account list-locations -o table" command to
-                                           #    get the list of available locations and location code names.
-$appservice_plan_name = ""                 # This is the AppServicePlan name you wish to have.
-$appservice_name = ""                      # This is the AppService resource name you wish to have.
-$TEXT_ANALYTICS_RESOURCE_API_KEY = ""      # This should be taken from the Text Analytics resource.
-$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT = "" # This should be taken from the Text Analytics resource.
-$DOCKER_REGISTRY_SERVER_PASSWORD = ""      # This will be provided separately.
-$DOCKER_REGISTRY_SERVER_USERNAME = ""      # This will be provided separately.
-$DOCKER_IMAGE_NAME = "containerpreview.azurecr.io/microsoft/cognitive-services-healthcare:latest"
-
-az login
-az account set -s $subscription_name
-az appservice plan create -n $appservice_plan_name -g $resource_group_name --is-linux -l $resources_location --sku P3V2
-az webapp create -g $resource_group_name -p $appservice_plan_name -n $appservice_name -i $DOCKER_IMAGE_NAME -s $DOCKER_REGISTRY_SERVER_USERNAME -w $DOCKER_REGISTRY_SERVER_PASSWORD
-az webapp config appsettings set -g $resource_group_name -n $appservice_name --settings Eula=accept Billing=$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT ApiKey=$TEXT_ANALYTICS_RESOURCE_API_KEY
-
-# Once deployment complete, the resource should be available at: https://<appservice_name>.azurewebsites.net
-```
-
-### <a name="install-the-container-using-azure-container-instance"></a>De container installeren met behulp van Azure container instance
-
-U kunt ook een Azure container instance (ACI) gebruiken om de implementatie eenvoudiger te maken. ACI is een bron waarmee u docker-containers op aanvraag kunt uitvoeren in een beheerde, serverloze Azure-omgeving. 
-
-Zie [Azure container instances gebruiken](text-analytics-how-to-use-container-instances.md) voor stappen voor het implementeren van een ACI-bron met behulp van de Azure Portal. U kunt ook het onderstaande Power shell-script gebruiken met behulp van Azure CLI, waarmee u een ACI maakt in uw abonnement met behulp van de container installatie kopie.  Wacht totdat het script is voltooid (ongeveer 25-30 minuten) voordat u de eerste aanvraag indient.  Als gevolg van de limiet van het maximum aantal Cpu's per ACI-resource, selecteert u deze optie niet als u verwacht dat u meer dan 5 grote documenten (ongeveer 5000 tekens per aanvraag verzendt).
-Raadpleeg het artikel over [regionale ondersteuning voor ACI](../../../container-instances/container-instances-region-availability.md) voor informatie over de beschik baarheid. 
-
-> [!NOTE] 
-> Azure Container Instances geen HTTPS-ondersteuning voor de ingebouwde domeinen op. Als u HTTPS nodig hebt, moet u deze hand matig configureren, met inbegrip van het maken van een certificaat en het registreren van een domein. U vindt hier instructies om dit te doen met NGINX hieronder.
-
-```bash
-$subscription_name = ""                    # The name of the subscription you want you resource to be created on.
-$resource_group_name = ""                  # The name of the resource group you want the AppServicePlan
-                                           # and AppService to be attached to.
-$resources_location = ""                   # This is the location you wish the web app to be deployed to.
-                                           # You can use the "az account list-locations -o table" command to
-                                           # Get the list of available locations and location code names.
-$azure_container_instance_name = ""        # This is the AzureContainerInstance name you wish to have.
-$TEXT_ANALYTICS_RESOURCE_API_KEY = ""      # This should be taken from the Text Analytics resource.
-$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT = "" # This should be taken from the Text Analytics resource.
-$DOCKER_REGISTRY_SERVER_PASSWORD = ""      # This will be provided separately.
-$DOCKER_REGISTRY_SERVER_USERNAME = ""      # This will be provided separately.
-$DNS_LABEL = ""                            # This is the DNS label name you wish your ACI will have
-$DOCKER_REGISTRY_LOGIN_SERVER = "containerpreview.azurecr.io"
-$DOCKER_IMAGE_NAME = "containerpreview.azurecr.io/microsoft/cognitive-services-healthcare:latest"
-
-az login
-az account set -s $subscription_name
-az container create --resource-group $resource_group_name --name $azure_container_instance_name --image $DOCKER_IMAGE_NAME --cpu 4 --memory 12 --registry-login-server $DOCKER_REGISTRY_LOGIN_SERVER --registry-username $DOCKER_REGISTRY_SERVER_USERNAME --registry-password $DOCKER_REGISTRY_SERVER_PASSWORD --port 5000 --dns-name-label $DNS_LABEL --environment-variables Eula=accept Billing=$TEXT_ANALYTICS_RESOURCE_API_ENDPOINT ApiKey=$TEXT_ANALYTICS_RESOURCE_API_KEY
-
-# Once deployment complete, the resource should be available at: http://<unique_dns_label>.<resource_group_region>.azurecontainer.io:5000
-```
-
-### <a name="secure-aci-connectivity"></a>Beveiligde ACI-connectiviteit
-
-Standaard wordt er geen beveiliging gegeven bij gebruik van ACI met container-API. De reden hiervoor is dat de containers worden uitgevoerd als onderdeel van een pod dat door een netwerk brug wordt beschermd vanaf de buiten wereld. U kunt een container echter wijzigen met een front-facing onderdeel, zodat het container eindpunt privé blijft. De volgende voor beelden gebruiken [NGINX](https://www.nginx.com) als ingangs gateway voor de ondersteuning van HTTPS/SSL en verificatie van client certificaten.
-
-> [!NOTE]
-> NGINX is een open-source, snelle HTTP-server en-proxy. Een NGINX-container kan worden gebruikt om een TLS-verbinding voor één container te beëindigen. Meer complexe NGINX ingangs-gebaseerde TLS-afsluit oplossingen zijn ook mogelijk.
-
-#### <a name="set-up-nginx-as-an-ingress-gateway"></a>NGINX instellen als een ingangs gateway
-
-NGINX maakt gebruik van [configuratie bestanden](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/) om functies tijdens runtime in te scha kelen. Als u TLS-beëindiging voor een andere service wilt inschakelen, moet u een SSL-certificaat opgeven om de TLS-verbinding te beëindigen en  `proxy_pass` een adres voor de service op te geven. Hieronder vindt u een voor beeld.
+Met de nieuwste Prerelease van de Text Analytics-client bibliotheek kunt u Text Analytics aanroepen voor status met behulp van een client object. Raadpleeg de referentie documentatie en zie de voor beelden op GitHub:
+* [C#](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics)
+* [Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/)
+* [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics)
 
 
-> [!NOTE]
-> `ssl_certificate` verwacht een pad dat moet worden opgegeven in het lokale bestands systeem van de NGINX-container. Het opgegeven adres `proxy_pass` moet beschikbaar zijn in het NGINX-netwerk van de container.
 
-Alle bestanden in de container NGINX `_.conf_` worden geladen die zijn gekoppeld onder `/etc/nginx/conf.d/` in het http-configuratiepad.
+## <a name="sending-a-rest-api-request"></a>Een REST API-aanvraag verzenden 
 
-```nginx
-server {
-  listen              80;
-  return 301 https://$host$request_uri;
-}
-server {
-  listen              443 ssl;
-  # replace with .crt and .key paths
-  ssl_certificate     /cert/Local.crt;
-  ssl_certificate_key /cert/Local.key;
+### <a name="preparation"></a>Voorbereiding
 
-  location / {
-    proxy_pass http://cognitive-service:5000;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Real-IP  $remote_addr;
-  }
+Text Analytics voor de status resulteert in een hogere kwaliteit wanneer u het kleinere aantal tekst aan de hand geeft. Dit geldt voor een aantal andere Text Analytics functies, zoals het uitpakken van sleutel zinnen, waarmee u beter op grotere blokken tekst kunt. Als u de beste resultaten van deze bewerkingen wilt krijgen, kunt u overwegen de invoer dienovereenkomstig te herstructureren.
+
+U moet JSON-documenten in deze indeling hebben: id, tekst en taal. 
+
+De documenten mogen niet meer dan 5.120 tekens per document bevatten. Zie het artikel over de [gegevens limieten](../concepts/data-limits.md?tabs=version-3) onder concepten voor het maximum aantal documenten dat is toegestaan in een verzameling. De verzameling is in de hoofdtekst van de aanvraag ingediend.
+
+### <a name="structure-the-api-request-for-the-hosted-asynchronous-web-api"></a>De API-aanvraag voor de gehoste asynchrone Web-API structureren
+
+Voor zowel de container als de gehoste Web-API moet u een POST-aanvraag maken. U kunt [met behulp van Postman](text-analytics-how-to-call-api.md), een krul opdracht of de **API-test console** in de [Text Analytics voor status gehoste API-referentie](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Health) snel een post-aanvraag samen stellen en verzenden naar de gehoste Web-API in uw gewenste regio. 
+
+Hieronder ziet u een voor beeld van een JSON-bestand dat is gekoppeld aan de Text Analytics voor de hoofd tekst van de status-API-aanvraag:
+
+```json
+example.json
+
+{
+  "documents": [
+    {
+      "language": "en",
+      "id": "1",
+      "text": "Subject was administered 100mg remdesivir intravenously over a period of 120 min"
+    }
+  ]
 }
 ```
 
-#### <a name="example-docker-compose-file"></a>Voor beeld van docker-opstellen van bestand
+### <a name="hosted-asynchronous-web-api-response"></a>Asynchroon Web API-antwoord gehost 
 
-In het onderstaande voor beeld ziet u hoe een [docker opstellen](https://docs.docker.com/compose/reference/overview) bestand kan worden gemaakt om de NGINX en Text Analytics voor status containers te implementeren:
+Omdat deze POST-aanvraag wordt gebruikt voor het verzenden van een taak voor de asynchrone bewerking, is er geen tekst in het antwoord object.  U hebt echter de waarde van de bewerkings locatie sleutel in de antwoord headers nodig om een GET-aanvraag te maken om de status van de taak en de uitvoer te controleren.  Hieronder ziet u een voor beeld van de waarde van de bewerkings locatie in de antwoord header van de POST-aanvraag:
 
-```yaml
-version: "3.7"
-services:
-  cognitive-service:
-    image: {IMAGE_ID}
-    ports:
-      - 5000:5000
-    environment:
-      - eula=accept
-      - billing={ENDPOINT_URI}
-      - apikey={API_KEY}
-      - Logging:Disk:Format=json
-    volumes:
-        # replace with path to logs folder
-      - <path-to-logs-folder>:/output
-  nginx:
-    image: nginx
-    ports:
-      - 443:443
-    volumes:
-        # replace with paths for certs and conf folders
-      - <path-to-certs-folder>:/cert
-      - <path-to-conf-folder>:/etc/nginx/conf.d/
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/health/jobs/<jobID>`
+
+Als u de taak status wilt controleren, maakt u een GET-aanvraag naar de URL in de waarde van de sleutel header van de bewerkings locatie van het POST-antwoord.  De volgende statussen worden gebruikt om de status van een taak weer te geven: `NotStarted` , `running` , `succeeded` ,,, en `failed` `rejected` `cancelling` `cancelled` .  
+
+U kunt een taak met een `NotStarted` of `running` -status annuleren met een delete http-aanroep naar dezelfde URL als de GET-aanvraag.  Meer informatie over het verwijderen van de aanroep vindt u in de [Text Analytics voor status gehoste API-referentie](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/CancelHealthJob).
+
+Hier volgt een voor beeld van het antwoord van een GET-aanvraag.  Houd er rekening mee dat de uitvoer beschikbaar is voor ophalen totdat de `expirationDateTime` (24 uur vanaf het tijdstip waarop de taak is gemaakt) is verstreken waarna de uitvoer wordt verwijderd.
+
+```json
+{
+    "jobId": "b672c6f5-7c0d-4783-ba8c-4d0c47213454",
+    "lastUpdateDateTime": "2020-11-18T01:45:00Z",
+    "createdDateTime": "2020-11-18T01:44:55Z",
+    "expirationDateTime": "2020-11-19T01:44:55Z",
+    "status": "succeeded",
+    "errors": [],
+    "results": {
+        "documents": [
+            {
+                "id": "1",
+                "entities": [
+                    {
+                        "offset": 25,
+                        "length": 5,
+                        "text": "100mg",
+                        "category": "Dosage",
+                        "confidenceScore": 1.0,
+                        "isNegated": false
+                    },
+                    {
+                        "offset": 31,
+                        "length": 10,
+                        "text": "remdesivir",
+                        "category": "MedicationName",
+                        "confidenceScore": 1.0,
+                        "isNegated": false,
+                        "links": [
+                            {
+                                "dataSource": "UMLS",
+                                "id": "C4726677"
+                            },
+                            {
+                                "dataSource": "MSH",
+                                "id": "C000606551"
+                            },
+                            {
+                                "dataSource": "NCI",
+                                "id": "C152185"
+                            },
+                            {
+                                "dataSource": "NCI_FDA",
+                                "id": "3QKI37EEHE"
+                            }
+                        ]
+                    },
+                    {
+                        "offset": 42,
+                        "length": 13,
+                        "text": "intravenously",
+                        "category": "MedicationRoute",
+                        "confidenceScore": 1.0,
+                        "isNegated": false
+                    },
+                    {
+                        "offset": 56,
+                        "length": 4,
+                        "text": "over",
+                        "category": "Time",
+                        "confidenceScore": 0.87,
+                        "isNegated": false
+                    },
+                    {
+                        "offset": 73,
+                        "length": 7,
+                        "text": "120 min",
+                        "category": "Time",
+                        "confidenceScore": 0.99,
+                        "isNegated": false
+                    }
+                ],
+                "relations": [
+                    {
+                        "relationType": "DosageOfMedication",
+                        "bidirectional": false,
+                        "source": "#/results/documents/0/entities/0",
+                        "target": "#/results/documents/0/entities/1"
+                    },
+                    {
+                        "relationType": "RouteOfMedication",
+                        "bidirectional": false,
+                        "source": "#/results/documents/0/entities/2",
+                        "target": "#/results/documents/0/entities/1"
+                    },
+                    {
+                        "relationType": "TimeOfMedication",
+                        "bidirectional": false,
+                        "source": "#/results/documents/0/entities/3",
+                        "target": "#/results/documents/0/entities/1"
+                    },
+                    {
+                        "relationType": "TimeOfMedication",
+                        "bidirectional": false,
+                        "source": "#/results/documents/0/entities/4",
+                        "target": "#/results/documents/0/entities/1"
+                    }
+                ],
+                "warnings": []
+            }
+        ],
+        "errors": [],
+        "modelVersion": "2020-09-03"
+    }
+}
 ```
 
-Voer de volgende opdracht uit vanaf een console op het hoofd niveau van het bestand om het docker opstellen van het bestand te initiëren:
 
-```bash
-docker-compose up
-```
+### <a name="structure-the-api-request-for-the-container"></a>De API-aanvraag voor de container structureren
 
-Zie de documentatie van NGINX over [NGINX SSL-beëindiging](https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/)voor meer informatie.
-
-
-## <a name="example-api-request"></a>Voorbeeld van API-aanvraag
-De container bevat op REST gebaseerde eindpunt-API's voor queryvoorspelling.  We hebben ook een visualisatie hulpprogramma in de container beschikbaar gesteld dat toegankelijk is door de **demo** toe te voegen aan het eind punt van de container, bijvoorbeeld:
-
-```bash
-http://<serverURL>:5000/demo
-```
-
-Gebruik de onderstaande voor beeld-krul aanvraag voor het verzenden van een query naar de container die u hebt geïmplementeerd om de variabele te vervangen `serverURL` door de juiste waarde.
+U kunt de volgende opdracht gebruiken om een query in te dienen bij de container die u hebt geïmplementeerd met [behulp van Postman](text-analytics-how-to-call-api.md) of onderstaande krul aanvraag, waarbij u de variabele vervangt door `serverURL` de juiste waarde.  Opmerking de versie van de API in de URL voor de container wijkt af van de gehoste API.
 
 ```bash
 curl -X POST 'http://<serverURL>:5000/text/analytics/v3.2-preview.1/entities/health' --header 'Content-Type: application/json' --header 'accept: application/json' --data-binary @example.json
@@ -261,9 +278,9 @@ example.json
 }
 ```
 
-## <a name="api-response-body"></a>Tekst van API-antwoord
+### <a name="container-response-body"></a>Hoofd tekst van container
 
-De volgende JSON is een voor beeld van de Text Analytics voor Health API-antwoord tekst:
+De volgende JSON is een voor beeld van de Text Analytics voor de status-API-antwoord tekst van de synchrone aanroep in de container:
 
 ```json
 {
@@ -273,81 +290,65 @@ De volgende JSON is een voor beeld van de Text Analytics voor Health API-antwoor
             "entities": [
                 {
                     "id": "0",
-                    "offset": 17,
-                    "length": 11,
-                    "text": "itchy sores",
-                    "category": "SymptomOrSign",
-                    "confidenceScore": 1.0,
-                    "isNegated": false
-                }
-            ]
-        },
-        {
-            "id": "2",
-            "entities": [
-                {
-                    "id": "0",
-                    "offset": 11,
-                    "length": 4,
-                    "text": "50mg",
+                    "offset": 25,
+                    "length": 5,
+                    "text": "100mg",
                     "category": "Dosage",
                     "confidenceScore": 1.0,
                     "isNegated": false
                 },
                 {
                     "id": "1",
-                    "offset": 16,
-                    "length": 8,
-                    "text": "benadryl",
+                    "offset": 31,
+                    "length": 10,
+                    "text": "remdesivir",
                     "category": "MedicationName",
                     "confidenceScore": 1.0,
                     "isNegated": false,
                     "links": [
                         {
                             "dataSource": "UMLS",
-                            "id": "C0700899"
-                        },
-                        {
-                            "dataSource": "CHV",
-                            "id": "0000044903"
-                        },
-                        {
-                            "dataSource": "MMSL",
-                            "id": "899"
+                            "id": "C4726677"
                         },
                         {
                             "dataSource": "MSH",
-                            "id": "D004155"
+                            "id": "C000606551"
                         },
                         {
                             "dataSource": "NCI",
-                            "id": "C300"
+                            "id": "C152185"
                         },
                         {
-                            "dataSource": "NCI_DTP",
-                            "id": "NSC0033299"
-                        },
-                        {
-                            "dataSource": "PDQ",
-                            "id": "CDR0000039163"
-                        },
-                        {
-                            "dataSource": "PSY",
-                            "id": "05760"
-                        },
-                        {
-                            "dataSource": "RXNORM",
-                            "id": "203457"
+                            "dataSource": "NCI_FDA",
+                            "id": "3QKI37EEHE"
                         }
                     ]
                 },
                 {
                     "id": "2",
-                    "offset": 32,
-                    "length": 11,
-                    "text": "twice daily",
-                    "category": "Frequency",
+                    "offset": 42,
+                    "length": 13,
+                    "text": "intravenously",
+                    "category": "MedicationRoute",
                     "confidenceScore": 1.0,
+                    "isNegated": false
+                },
+                {
+                    "id": "3",
+                    "offset": 56,
+                    "length": 4,
+                    "text": "over",
+                    "category": "Time",
+                    "confidenceScore": 0.87,
+                    "isNegated": false
+                },
+                {
+                    "id": "4",
+                    "offset": 73,
+                    "length": 7,
+                    "text": "120 min",
+                    "category": "Time",
+                    "confidenceScore": 0.99,
                     "isNegated": false
                 }
             ],
@@ -355,26 +356,38 @@ De volgende JSON is een voor beeld van de Text Analytics voor Health API-antwoor
                 {
                     "relationType": "DosageOfMedication",
                     "bidirectional": false,
-                    "source": "#/documents/1/entities/0",
-                    "target": "#/documents/1/entities/1"
+                    "source": "#/documents/0/entities/0",
+                    "target": "#/documents/0/entities/1"
                 },
                 {
-                    "relationType": "FrequencyOfMedication",
+                    "relationType": "RouteOfMedication",
                     "bidirectional": false,
-                    "source": "#/documents/1/entities/2",
-                    "target": "#/documents/1/entities/1"
+                    "source": "#/documents/0/entities/2",
+                    "target": "#/documents/0/entities/1"
+                },
+                {
+                    "relationType": "TimeOfMedication",
+                    "bidirectional": false,
+                    "source": "#/documents/0/entities/3",
+                    "target": "#/documents/0/entities/1"
+                },
+                {
+                    "relationType": "TimeOfMedication",
+                    "bidirectional": false,
+                    "source": "#/documents/0/entities/4",
+                    "target": "#/documents/0/entities/1"
                 }
             ]
         }
     ],
     "errors": [],
-    "modelVersion": "2020-07-24"
+    "modelVersion": "2020-09-03"
 }
 ```
 
 ### <a name="negation-detection-output"></a>Uitvoer van negatie detectie
 
-Wanneer u de detectie van negatie gebruikt, kan één negatie term in sommige gevallen meerdere voor waarden tegelijk aanpakken. De ontkenning van een herkende entiteit wordt weer gegeven in de JSON-uitvoer met de Booleaanse waarde van de `isNegated` vlag:
+Wanneer u de detectie van negatie gebruikt, kan één negatie term in sommige gevallen meerdere voor waarden tegelijk aanpakken. De ontkenning van een herkende entiteit wordt weer gegeven in de JSON-uitvoer door de Booleaanse waarde van de `isNegated` vlag, bijvoorbeeld:
 
 ```json
 {

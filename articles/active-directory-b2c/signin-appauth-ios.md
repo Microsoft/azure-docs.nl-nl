@@ -11,19 +11,19 @@ ms.topic: how-to
 ms.date: 11/30/2018
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 558e6cea4d5e0c9bd0f6222f9070d2b867a5bf44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6064bd2c62922abea44508b8bf6cdfa3e7ecbc92
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85384937"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953301"
 ---
 # <a name="azure-ad-b2c-sign-in-using-an-ios-application"></a>Azure AD B2C: aanmelden met een iOS-toepassing
 
 Op het Microsoft Identity-platform wordt gebruikgemaakt van open standaarden, zoals OAuth2 en OpenID Connect. Het gebruik van een open standaard-protocol biedt meer keuze voor ontwikkel aars bij het selecteren van een bibliotheek om te integreren met onze services. We hebben deze walkthrough en andere gebruikers hiervan op de hulp om ontwikkel aars te helpen bij het schrijven van toepassingen die verbinding maken met het micro soft-identiteits platform. De meeste bibliotheken die [de RFC6749 OAuth2-spec](https://tools.ietf.org/html/rfc6749) implementeren, kunnen verbinding maken met het micro soft-identiteits platform.
 
 > [!WARNING]
-> Micro soft biedt geen oplossingen voor bibliotheken van derden en heeft geen beoordeling uitgevoerd van die bibliotheken. In dit voor beeld wordt een bibliotheek van derden gebruikt met de naam AppAuth die is getest op compatibiliteit in basis scenario's met de Azure AD B2C. Problemen en functie aanvragen moeten worden omgeleid naar het open-source project van de bibliotheek. Zie [dit artikel](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-libraries)voor meer informatie.
+> Micro soft biedt geen oplossingen voor bibliotheken van derden en heeft geen beoordeling uitgevoerd van die bibliotheken. In dit voor beeld wordt een bibliotheek van derden gebruikt met de naam AppAuth die is getest op compatibiliteit in basis scenario's met de Azure AD B2C. Problemen en functie aanvragen moeten worden omgeleid naar het open-source project van de bibliotheek. Zie [dit artikel](../active-directory/develop/reference-v2-libraries.md)voor meer informatie.
 >
 >
 
@@ -45,8 +45,8 @@ Neem ook uw aangepaste omleidings-URI op voor gebruik in een latere stap. Bijvoo
 ## <a name="create-your-user-flows"></a>Uw gebruikers stromen maken
 In Azure AD B2C wordt elke gebruikers ervaring gedefinieerd door een [gebruikers stroom](user-flow-overview.md). Deze toepassing bevat één identiteits ervaring: een gecombineerde aanmelding en registratie. Wanneer u de gebruikers stroom maakt, moet u het volgende doen:
 
-* Selecteer de **weergave naam**van het kenmerk onder **aanmeldings kenmerken**.  U kunt ook andere kenmerken selecteren.
-* Selecteer onder **toepassings claims**de **weergave naam** van de claims en de **object-id van de gebruiker**. U kunt ook andere claims selecteren.
+* Selecteer de **weergave naam** van het kenmerk onder **aanmeldings kenmerken**.  U kunt ook andere kenmerken selecteren.
+* Selecteer onder **toepassings claims** de **weergave naam** van de claims en de **object-id van de gebruiker**. U kunt ook andere claims selecteren.
 * Kopieer de **naam** van elke gebruikers stroom nadat u deze hebt gemaakt. De naam van de gebruikers stroom wordt voorafgegaan door `b2c_1_` Wanneer u de gebruikers stroom opslaat.  U hebt de naam van de gebruikers stroom later nodig.
 
 Nadat u de gebruikers stromen hebt gemaakt, bent u klaar om uw app te bouwen.

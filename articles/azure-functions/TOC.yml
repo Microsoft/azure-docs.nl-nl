@@ -4,6 +4,8 @@
   items:
     - name: Over Azure Functions
       href: functions-overview.md
+    - name: Aan de slag
+      href: functions-get-started.md
     - name: Durable Functions
       href: durable/durable-functions-overview.md
     - name: Serverloze vergelijking
@@ -588,8 +590,6 @@
       href: /azure/architecture/serverless-quest/serverless-overview
     - name: Azure-roadmap
       href: 'https://azure.microsoft.com/roadmap/?category=compute'
-    - name: Prijzen
-      href: 'https://azure.microsoft.com/pricing/details/functions/'
     - name: Prijscalculator
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Quotumgegevens

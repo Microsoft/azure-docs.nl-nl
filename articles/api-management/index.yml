@@ -10,12 +10,12 @@ metadata:
   author: georgewallace
   ms.author: gwallace
   ms.date: 03/08/2020
-  ms.openlocfilehash: 6813a3cb284f83c599344c7673f1a5d148adef0b
-  ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+  ms.openlocfilehash: ba4e1c4d1083894b5de2df635414cc30ca3745c0
+  ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/15/2020
-  ms.locfileid: "92071163"
+  ms.lasthandoff: 11/19/2020
+  ms.locfileid: "94917746"
 landingContent:
 - title: Meer informatie over API Management
   linkLists:
@@ -60,7 +60,7 @@ landingContent:
     - text: 8. Meerdere versies van uw API publiceren
       url: api-management-get-started-publish-versions.md
     - text: 9. De stijl van de pagina's van de ontwikkelaarsportal aanpassen
-      url: api-management-customize-styles.md
+      url: api-management-howto-developer-portal-customize.md
 - title: Voorbeelden
   linkLists:
   - linkListType: sample

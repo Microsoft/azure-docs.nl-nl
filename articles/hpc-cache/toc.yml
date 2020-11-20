@@ -8,6 +8,10 @@
   items:
     - name: De geaggregeerde naamruimte plannen
       href: hpc-cache-namespace.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
 - name: Instructiegidsen
   items:
     - name: Vereisten

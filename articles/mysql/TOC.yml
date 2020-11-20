@@ -116,8 +116,6 @@
           href: sample-scripts-azure-cli.md
         - name: Groepsgewijze Java-verbinding
           href: sample-scripts-java-connection-pooling.md
-        - name: Ingebouwde modules voor Azure Policy
-          href: ./policy-reference.md
     - name: Concepten
       items:
         - name: Servers
@@ -156,6 +154,9 @@
               href: concepts-azure-ad-authentication.md
             - name: Dubbele infrastructuurversleuteling
               href: concepts-infrastructure-double-encryption.md
+            - name: Besturingselementen voor beveiliging van Azure Policy
+              displayName: 'regulatory, compliance, standards, domains'
+              href: ./security-controls-policy.md
             - name: Beveiligingsbasislijn
               href: security-baseline.md
         - name: Gepland onderhoud
@@ -573,6 +574,9 @@
       href: /azure/templates/microsoft.dbformysql/allversions
     - name: Opgeslagen procedures beheren
       href: reference-stored-procedures.md
+    - name: Ingebouwde modules voor Azure Policy
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Resources
   items:
     - name: Implementatiesjablonen

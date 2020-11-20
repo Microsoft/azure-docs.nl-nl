@@ -36,6 +36,10 @@
     - name: Azure Lighthouse en door Azure beheerde toepassingen
       displayName: 'managed apps, ama'
       href: ./concepts/managed-applications.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
 - name: Instructiegidsen
   items:
     - name: Een klant onboarden in Azure Lighthouse

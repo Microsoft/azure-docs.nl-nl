@@ -90,6 +90,10 @@
           href: migrate-appliance.md
         - name: Replicatie-apparaatvereisten
           href: migrate-replication-appliance.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
     - name: Azure Migrate-apparaatarchitectuur
       href: migrate-appliance-architecture.md
     - name: Hyper-V-migratiearchitectuur

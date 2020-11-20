@@ -254,6 +254,20 @@ groups:
     title: Taaldetectie
   - id: text-analytics-sentiment-analysis
     title: Sentimentanalyse
+- id: programming-languages-set-functions-lang-workers
+  title: Programmeertalen
+  prompt: Een programmeertaal kiezen
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-javascript
+    title: Javascript
+  - id: programming-language-powershell
+    title: PowerShell
+  - id: programming-language-python
+    title: Python
 - id: programming-languages-set-functions
   title: Programmeertalen
   prompt: Een programmeertaal kiezen
@@ -270,20 +284,6 @@ groups:
     title: Python
   - id: programming-language-typescript
     title: TypeScript
-- id: programming-languages-text-analytics
-  title: Programmeertalen
-  prompt: Een programmeertaal kiezen.
-  pivots:
-  - id: programming-language-csharp
-    title: C#
-  - id: programming-language-python
-    title: Python
-  - id: programming-language-java
-    title: Java
-  - id: programming-language-javascript
-    title: Javascript
-  - id: programming-language-other
-    title: Andere talen...
 - id: programming-languages-metrics-monitor
   title: Programmeertalen
   prompt: Een programmeertaal kiezen.
@@ -364,34 +364,6 @@ groups:
     title: C#
   - id: programming-language-java
     title: Java
-  - id: programming-language-more
-    title: Meer talen...
-- id: programming-languages-set-fifteen
-  title: Programmeertalen
-  prompt: Een programmeertaal kiezen
-  pivots:
-  - id: programming-language-csharp
-    title: C#
-  - id: programming-language-go
-    title: Aan de slag
-  - id: programming-language-java
-    title: Java
-  - id: programming-language-more
-    title: Meer talen...
-- id: programming-languages-set-sixteen
-  title: Programmeertalen
-  prompt: Een programmeertaal kiezen
-  pivots:
-  - id: programming-language-csharp
-    title: C#
-  - id: programming-language-cpp
-    title: C++
-  - id: programming-language-go
-    title: Aan de slag
-  - id: programming-language-java
-    title: Java
-  - id: programming-language-python
-    title: Python
   - id: programming-language-more
     title: Meer talen...
 - id: programming-languages-set-seventeen
@@ -767,7 +739,7 @@ groups:
   - id: programming-language-csharp
     title: C#
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-language-java-android
     title: Java (Android)
   - id: programming-language-ios
@@ -873,9 +845,9 @@ groups:
   - id: programming-languages-objectivec-swift
     title: Objective-C/Swift
 metadata:
-  ms.openlocfilehash: c3dea69800b4ad3614adf953053cc43d32de94b9
-  ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+  ms.openlocfilehash: c8dfd8524eefd88758a04254a1e81a54fef7b26d
+  ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/17/2020
-  ms.locfileid: "94701735"
+  ms.lasthandoff: 11/20/2020
+  ms.locfileid: "94966901"

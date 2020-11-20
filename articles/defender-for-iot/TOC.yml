@@ -57,8 +57,12 @@
       href: concept-security-alerts.md
     - name: Aanpasbare beveiligingswaarschuwingen
       href: concept-customizable-security-alerts.md
-    - name: Aanbevelingen voor beveiliging
-      href: concept-recommendations.md
+    - name: Beveiliging
+      items:
+        - name: Aanbevelingen voor beveiliging
+          href: concept-recommendations.md
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
     - name: Basislijn
       href: concept-baseline.md
     - name: Aggregatie van gebeurtenissen

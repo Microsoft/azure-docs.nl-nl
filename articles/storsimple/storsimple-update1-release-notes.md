@@ -15,19 +15,19 @@ ms.workload: TBD
 ms.date: 11/03/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 17e20048c4cb4de2be6fe36be100b472f0b8ee73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a5ba4b27ae19999237edb75c50db36ef57a10f1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89459960"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956684"
 ---
 # <a name="update-12-release-notes-for-your-storsimple-8000-series-device"></a>Update 1,2 release opmerkingen voor uw StorSimple 8000 Series-apparaat
 
 ## <a name="overview"></a>Overzicht
 In de volgende release opmerkingen worden de nieuwe functies beschreven en worden de essentiële open problemen voor de StorSimple 8000 Series update 1,2 geïdentificeerd. Ze bevatten ook een lijst met de StorSimple-software, stuur programma-en schijf firmware-updates die zijn opgenomen in deze release. 
 
-Update 1,2 kan worden toegepast op alle StorSimple-apparaten met release (GA), update 0,1, update 0,2 of update 0,3 software. Update 1,2 is niet beschikbaar als op uw apparaat update 1 of update 1,1 wordt uitgevoerd. Als op uw apparaat release (GA) wordt uitgevoerd, [neemt u contact op met Microsoft ondersteuning](storsimple-contact-microsoft-support.md) om u te helpen bij het installeren van deze update.
+Update 1,2 kan worden toegepast op alle StorSimple-apparaten met release (GA), update 0,1, update 0,2 of update 0,3 software. Update 1,2 is niet beschikbaar als op uw apparaat update 1 of update 1,1 wordt uitgevoerd. Als op uw apparaat release (GA) wordt uitgevoerd, [neemt u contact op met Microsoft ondersteuning](./storsimple-8000-contact-microsoft-support.md) om u te helpen bij het installeren van deze update.
 
 De volgende tabel bevat de software versies van het apparaat die overeenkomen met de updates 1, 1,1 en 1,2.
 
@@ -37,11 +37,11 @@ De volgende tabel bevat de software versies van het apparaat die overeenkomen me
 | Update 1.1 |6.3.9600.17521 |
 | Update 1,0 |6.3.9600.17491 |
 
-Raadpleeg de informatie in de release opmerkingen voordat u de update in uw StorSimple-oplossing implementeert. Zie [Update 1,2 op uw StorSimple-apparaat installeren](storsimple-install-update-1.md)voor meer informatie. 
+Raadpleeg de informatie in de release opmerkingen voordat u de update in uw StorSimple-oplossing implementeert. Zie [Update 1,2 op uw StorSimple-apparaat installeren](./storsimple-8000-install-update-5.md)voor meer informatie. 
 
 > [!IMPORTANT]
 > * Het duurt ongeveer 5-10 uur om deze update te installeren (inclusief de Windows-updates). 
-> * Update 1,2 heeft updates voor software, LSI Stuur Programma's en de firmware van de schijf. Volg de instructies in [Update 1,2 op uw StorSimple-apparaat installeren](storsimple-install-update-1.md)om de installatie uit te voeren.
+> * Update 1,2 heeft updates voor software, LSI Stuur Programma's en de firmware van de schijf. Volg de instructies in [Update 1,2 op uw StorSimple-apparaat installeren](./storsimple-8000-install-update-5.md)om de installatie uit te voeren.
 > * Voor nieuwe releases worden updates mogelijk niet onmiddellijk weer geven omdat er een gefaseerde implementatie van de updates wordt uitgevoerd. Scan de updates over een paar dagen opnieuw, aangezien deze binnenkort beschikbaar worden.
 > 
 > 
@@ -55,11 +55,11 @@ Deze functies werden voor het eerst uitgebracht met Update 1 die beschikbaar is 
   * **Verbeterd onderdeel aanbod van de 8000-serie toestellen**, zoals een efficiënt gecentraliseerd beheer van meerdere apparaten via StorSimple Manager service, een betere klasse van hardware en bijgewerkte firmware, virtuele apparaten, gegevens mobiliteit en functies in het toekomstige plan.
     
     Raadpleeg de [migratie handleiding](https://gallery.technet.microsoft.com/Azure-StorSimple-50007000-c1a0460b) voor meer informatie over het migreren van een StorSimple 5000-7000-serie naar een 8000 Series-apparaat. 
-* **Beschik baarheid in de Azure Government Portal** – StorSimple is nu beschikbaar in de Azure Government Portal. Bekijk hoe u [een StorSimple-apparaat implementeert in de Azure Government Portal](storsimple-deployment-walkthrough-gov.md).
+* **Beschik baarheid in de Azure Government Portal** – StorSimple is nu beschikbaar in de Azure Government Portal. Bekijk hoe u [een StorSimple-apparaat implementeert in de Azure Government Portal](./index.yml).
 * **Ondersteuning voor andere Cloud** serviceproviders: de andere Cloud serviceproviders die worden ondersteund, zijn Amazon S3, Amazon S3 met RR'S, HP en open stack (bèta).
-* **Bijwerken naar de nieuwste opslag-api's** : met deze versie is StorSimple bijgewerkt naar de nieuwste Azure Storage service-api's. StorSimple 8000-serie apparaten met vooraf-update 1-software versies (release, 0,1, 0,2 en 0,3) maken gebruik van versies van de Azure Storage service-Api's ouder dan 17 juli 2009. Zoals vermeld in de bijgewerkte [aankondiging over het verwijderen van de versies van de opslag service](https://docs.microsoft.com/archive/blogs/windowsazurestorage/microsoft-azure-storage-service-version-removal-update-extension-to-2016), wordt de api's door 1 augustus 2016 afgeschaft. Het is van belang dat u de StorSimple 8000 Series update 1 toepast vóór 1 augustus 2016. Als u dit niet doet, werken StorSimple-apparaten niet meer correct.
+* **Bijwerken naar de nieuwste opslag-api's** : met deze versie is StorSimple bijgewerkt naar de nieuwste Azure Storage service-api's. StorSimple 8000-serie apparaten met vooraf-update 1-software versies (release, 0,1, 0,2 en 0,3) maken gebruik van versies van de Azure Storage service-Api's ouder dan 17 juli 2009. Zoals vermeld in de bijgewerkte [aankondiging over het verwijderen van de versies van de opslag service](/archive/blogs/windowsazurestorage/microsoft-azure-storage-service-version-removal-update-extension-to-2016), wordt de api's door 1 augustus 2016 afgeschaft. Het is van belang dat u de StorSimple 8000 Series update 1 toepast vóór 1 augustus 2016. Als u dit niet doet, werken StorSimple-apparaten niet meer correct.
 * **Ondersteuning voor zone redundant Storage (ZRS)** : met de upgrade naar de nieuwste versie van de opslag-api's, biedt de StorSimple 8000-serie ondersteuning voor zone redundante opslag (ZRS) naast lokaal redundante opslag (LRS) en geografisch redundante opslag (GRS). Raadpleeg dit [artikel over Azure Storage redundantie opties](../storage/common/storage-redundancy.md) voor ZRS-gegevens.
-* **Verbeterde eerste implementatie-en update-ervaring** – in deze release zijn de installatie-en update processen verbeterd. De installatie via de wizard Setup is verbeterd om feedback te geven aan de gebruiker als de netwerk configuratie en Firewall instellingen onjuist zijn. Er zijn aanvullende diagnostische cmdlets gegeven om u te helpen bij het oplossen van problemen met netwerken van het apparaat. Zie het [artikel Troubleshooting Deployment](storsimple-troubleshoot-deployment.md) (Engelstalig) voor meer informatie over de nieuwe diagnostische cmdlets die worden gebruikt voor het oplossen van problemen.
+* **Verbeterde eerste implementatie-en update-ervaring** – in deze release zijn de installatie-en update processen verbeterd. De installatie via de wizard Setup is verbeterd om feedback te geven aan de gebruiker als de netwerk configuratie en Firewall instellingen onjuist zijn. Er zijn aanvullende diagnostische cmdlets gegeven om u te helpen bij het oplossen van problemen met netwerken van het apparaat. Zie het [artikel Troubleshooting Deployment](./storsimple-8000-troubleshoot-deployment.md) (Engelstalig) voor meer informatie over de nieuwe diagnostische cmdlets die worden gebruikt voor het oplossen van problemen.
 
 ## <a name="issues-fixed-in-update-12"></a>Problemen die zijn opgelost in update 1,2
 De volgende tabel bevat een overzicht van problemen die zijn opgelost in updates 1,2, 1,1 en 1.    
@@ -89,7 +89,7 @@ De volgende tabel bevat een samen vatting van bekende problemen in deze release.
 | 3 |Opslagaccounts |Het gebruik van de opslag service om het opslag account te verwijderen, is een niet-ondersteund scenario. Dit leidt tot een situatie waarin gebruikers gegevens niet kunnen worden opgehaald. |Ja |Ja | |
 | 4 |Failover van apparaat |Meerdere failovers van een volume container van hetzelfde bron apparaat naar verschillende doel apparaten worden niet ondersteund. Failover van het apparaat vanaf één dood apparaat op meerdere apparaten zorgt ervoor dat de volume containers op het eerste mislukte apparaat gegevens eigendom verloren gaan. Na een dergelijke failover worden deze volume containers weer gegeven of werken ze anders wanneer u ze in de klassieke Azure-Portal bekijkt. | |Ja |Nee |
 | 5 |Installatie |Tijdens de installatie van de StorSimple-adapter voor share point moet u een IP-adres van het apparaat opgeven, zodat de installatie kan worden voltooid. | |Ja |Nee |
-| 6 |Webproxy |Als uw webproxy-configuratie HTTPS heeft als het opgegeven protocol, wordt de communicatie van uw apparaat naar service beïnvloed en wordt het apparaat offline gezet. Er worden ook ondersteunings pakketten gegenereerd in het proces, waarbij aanzienlijke bronnen op uw apparaat worden gebruikt. |Zorg ervoor dat de web proxy-URL HTTP heeft als het opgegeven protocol. Zie [Configure web proxy for your device](storsimple-configure-web-proxy.md) (Webproxy voor uw apparaat configureren) voor meer informatie. |Ja |Nee |
+| 6 |Webproxy |Als uw webproxy-configuratie HTTPS heeft als het opgegeven protocol, wordt de communicatie van uw apparaat naar service beïnvloed en wordt het apparaat offline gezet. Er worden ook ondersteunings pakketten gegenereerd in het proces, waarbij aanzienlijke bronnen op uw apparaat worden gebruikt. |Zorg ervoor dat de web proxy-URL HTTP heeft als het opgegeven protocol. Zie [Configure web proxy for your device](./storsimple-8000-configure-web-proxy.md) (Webproxy voor uw apparaat configureren) voor meer informatie. |Ja |Nee |
 | 7 |Webproxy |Als u webproxy configureert en inschakelt op een geregistreerd apparaat, moet u de actieve controller opnieuw opstarten op het apparaat. | |Ja |Nee |
 | 8 |Hoge Cloud latentie en hoge I/O-werk belasting |Wanneer uw StorSimple-apparaat een combi natie van zeer hoge Cloud latenties (volg orde van seconden) en een hoge I/O-werk belasting tegen komt, worden de volumes van het apparaat gedegradeerd en kan het I/O's mislukken met de fout ' apparaat is niet gereed '. |U moet de controllers van het apparaat hand matig opnieuw opstarten of een failover voor het apparaat uitvoeren om deze situatie te herstellen. |Ja |Nee |
 | 9 |Azure PowerShell |Wanneer u de StorSimple-cmdlet **Get-AzureStorSimpleStorageAccountCredential &#124; Select-Object-eerste 1-wacht** met het selecteren van het eerste object, zodat u een nieuw **upopslagaccount** -object kunt maken, retourneert de cmdlet alle objecten. |Wikkel de cmdlet tussen haakjes als volgt: **(Get-Azure-StorSimpleStorageAccountCredential) &#124; Select-Object-eerste 1-wacht** |Ja |Ja |
@@ -112,5 +112,4 @@ Met deze versie wordt het stuur programma en de schijf firmware op het apparaat 
 Deze update kan niet worden toegepast op het virtuele apparaat. Er moeten nieuwe virtuele apparaten worden gemaakt. 
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Installeer Update 1,2 op het apparaat](storsimple-install-update-1.md).
-
+* [Installeer Update 1,2 op het apparaat](./storsimple-8000-install-update-5.md).

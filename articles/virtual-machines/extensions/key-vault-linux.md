@@ -5,15 +5,16 @@ services: virtual-machines-linux
 author: msmbaldwin
 tags: keyvault
 ms.service: virtual-machines-linux
+ms.subservice: extensions
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 2d5a6949c5dbe1e4c3c668dcb9eae6e51e5806f7
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: e6e3e1769b6043599d606b84b531ec908519d4c7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92926033"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955562"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Extensie van de virtuele machine Key Vault voor Linux
 
@@ -79,23 +80,23 @@ De volgende JSON toont het schema voor de extensie van de Key Vault-VM. Voor de 
 > Dit komt doordat het `/secrets` pad het volledige certificaat retourneert, inclusief de persoonlijke sleutel, terwijl het `/certificates` pad niet. Meer informatie over certificaten vindt u hier: [Key Vault certificaten](../../key-vault/general/about-keys-secrets-certificates.md)
 
 > [!IMPORTANT]
-> De eigenschap authenticationSettings is alleen **vereist** voor vm's met door de **gebruiker toegewezen identiteiten** .
+> De eigenschap authenticationSettings is alleen **vereist** voor vm's met door de **gebruiker toegewezen identiteiten**.
 > Hiermee wordt de identiteit opgegeven die moet worden gebruikt voor de verificatie van Key Vault.
 
 
 ### <a name="property-values"></a>Eigenschaps waarden
 
-| Naam | Waarde/voor beeld | Gegevenstype |
+| Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2019-07-01 | date |
+| apiVersion | 2019-07-01 | datum |
 | publisher | Microsoft.Azure.KeyVault | tekenreeks |
 | type | KeyVaultForLinux | tekenreeks |
 | typeHandlerVersion | 1.0 | int |
 | pollingIntervalInS | 3600 | tekenreeks |
 | Naam certificaat archief | Het wordt genegeerd op Linux | tekenreeks |
-| linkOnRenewal | false | booleaans |
+| linkOnRenewal | onjuist | booleaans |
 | certificateStoreLocation  | /var/lib/waagent/Microsoft.Azure.KeyVault | tekenreeks |
-| requiredInitialSync | true | booleaans |
+| requiredInitialSync | waar | booleaans |
 | observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate", "https://myvault.vault.azure.net/secrets/mycertificate2"] | teken reeks matrix
 | msiEndpoint | http://169.254.169.254/metadata/identity | tekenreeks |
 | msiClientId | c7373ae5-91c2-4165-8ab6-7381d6e75619 | tekenreeks |

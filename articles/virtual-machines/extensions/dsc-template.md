@@ -8,17 +8,18 @@ tags: azure-resource-manager
 keywords: dsc
 ms.assetid: b5402e5a-1768-4075-8c19-b7f7402687af
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 10/05/2018
 ms.author: robreed
-ms.openlocfilehash: dc73b5b9f05d24de206b25095ea7eaf93f035298
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e38fcd069fa6a3e8582dcd96b2bd0b4074986de7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86511157"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955800"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Extensie voor desired state Configuration met Azure Resource Manager sjablonen
 
@@ -81,7 +82,7 @@ Zie [VirtualMachineExtension class](/dotnet/api/microsoft.azure.management.compu
 ## <a name="template-example-for-windows-virtual-machine-scale-sets"></a>Voor beeld van een sjabloon voor virtuele-machine schaal sets voor Windows
 
 Een knoop punt van een virtuele-machine schaalset heeft een **Eigenschappen** sectie met een kenmerk **VirtualMachineProfile, extensionProfile** .
-Voeg onder **uitbrei dingen**de gegevens voor de DSC-extensie toe.
+Voeg onder **uitbrei dingen** de gegevens voor de DSC-extensie toe.
 
 De DSC-extensie neemt de eigenschappen van de standaard extensie over.
 Zie [VirtualMachineScaleSetExtension class](/dotnet/api/microsoft.azure.management.compute.models.virtualmachinescalesetextension?view=azure-dotnet)voor meer informatie.
@@ -179,7 +180,7 @@ Zie het [standaard configuratie script](#default-configuration-script)voor een l
 
 | Naam van eigenschap | Type | Beschrijving |
 | --- | --- | --- |
-| Settings. wmfVersion |tekenreeks |Hiermee geeft u de versie van Windows Management Framework (WMF) op die op uw virtuele machine moet worden geïnstalleerd. Als u deze eigenschap instelt op **laatst** , wordt de meest recente versie van WMF geïnstalleerd. Momenteel zijn de enige mogelijke waarden voor deze eigenschap **4,0**, **5,0**, **5,1**en **meest recent**. Deze mogelijke waarden zijn onderhevig aan updates. De standaard waarde is **meest recent**. |
+| Settings. wmfVersion |tekenreeks |Hiermee geeft u de versie van Windows Management Framework (WMF) op die op uw virtuele machine moet worden geïnstalleerd. Als u deze eigenschap instelt op **laatst** , wordt de meest recente versie van WMF geïnstalleerd. Momenteel zijn de enige mogelijke waarden voor deze eigenschap **4,0**, **5,0**, **5,1** en **meest recent**. Deze mogelijke waarden zijn onderhevig aan updates. De standaard waarde is **meest recent**. |
 | settings.configuratie. URL |tekenreeks |Hiermee geeft u de URL-locatie van waaruit u uw DSC-configuratie. zip-bestand wilt downloaden. Als voor de opgegeven URL een SAS-token voor toegang vereist is, stelt u de **protectedSettings.configeigenschap urationUrlSasToken** in op de waarde van uw SAS-token. Deze eigenschap is vereist als **settings.configuratie. script** of **settings.configuratie. functie** zijn gedefinieerd. Als er geen waarde wordt opgegeven voor deze eigenschappen, roept de extensie het standaard configuratie script aan om de meta gegevens van de locatie Configuration Manager (LCM) in te stellen, en moeten er argumenten worden opgegeven. |
 | settings.configuratie. script |tekenreeks |Hiermee geeft u de bestands naam op van het script dat de definitie van uw DSC-configuratie bevat. Dit script moet zich in de hoofdmap van het zip-bestand bevindt dat is gedownload van de URL die is opgegeven door de eigenschap **settings.configuratie. URL** . Deze eigenschap is vereist als **settings.configuratie. URL** of **settings.configuratie. script** zijn gedefinieerd. Als er geen waarde wordt opgegeven voor deze eigenschappen, wordt het standaard configuratie script aangeroepen om de ICM-meta gegevens in te stellen, en moeten er argumenten worden opgegeven. |
 | settings.configuratie. function |tekenreeks |Hiermee geeft u de naam van uw DSC-configuratie op. De configuratie met de naam moet worden opgenomen in het script dat **settings.configuratie. script** definieert. Deze eigenschap is vereist als **settings.configuratie. URL** of **settings.configuratie. function** zijn gedefinieerd. Als er geen waarde wordt opgegeven voor deze eigenschappen, wordt het standaard configuratie script aangeroepen om de ICM-meta gegevens in te stellen, en moeten er argumenten worden opgegeven. |
@@ -201,7 +202,7 @@ U kunt het standaard configuratie script van de DSC-extensie gebruiken om alleen
 | protectedSettings.configurationArguments. RegistrationKey |PSCredential |Eigenschap Required. Hiermee geeft u de sleutel op die wordt gebruikt voor een knoop punt om te registreren bij de Azure Automation-Service als het wacht woord van een Power shell-referentie object. Deze waarde kan automatisch worden gedetecteerd met behulp van de **listkeys ophalen** -methode voor het Automation-account.  Zie het [voor beeld](#example-using-referenced-azure-automation-registration-values). |
 | settings.configurationArguments. RegistrationUrl |tekenreeks |Eigenschap Required. Hiermee geeft u de URL op van het Automation-eind punt waar het knoop punt zich probeert te registreren. Deze waarde kan automatisch worden gedetecteerd met behulp van de **referentie** methode voor het Automation-account. |
 | settings.configurationArguments. NodeConfigurationName |tekenreeks |Eigenschap Required. Hiermee geeft u de knooppunt configuratie in het Automation-account moet worden toegewezen aan het knoop punt. |
-| settings.configurationArguments.ConfigurationMode |tekenreeks |Hiermee geeft u de modus voor LCM op. Geldige opties zijn **ApplyOnly**, **ApplyandMonitor**en **ApplyandAutoCorrect**.  De standaard waarde is **ApplyandMonitor**. |
+| settings.configurationArguments.ConfigurationMode |tekenreeks |Hiermee geeft u de modus voor LCM op. Geldige opties zijn **ApplyOnly**, **ApplyandMonitor** en **ApplyandAutoCorrect**.  De standaard waarde is **ApplyandMonitor**. |
 | settings.configurationArguments. RefreshFrequencyMins | uint32 | Hiermee geeft u op hoe vaak LCM met het Automation-account probeert te controleren op updates.  De standaard waarde is **30**.  De minimum waarde is **15**. |
 | settings.configurationArguments.ConfigurationModeFrequencyMins | uint32 | Hiermee geeft u op hoe vaak LCM de huidige configuratie valideert. De standaard waarde is **15**. De minimum waarde is **15**. |
 | settings.configurationArguments. RebootNodeIfNeeded | booleaans | Hiermee geeft u op of een knoop punt automatisch opnieuw kan worden opgestart als een DSC-bewerking dit aanvraagt. De standaard waarde is **False**. |
@@ -215,7 +216,7 @@ Eigenschappen die worden weer gegeven onder **instellingen** zijn open bare eige
 Open bare eigenschappen worden niet versleuteld in het tekst bestand met instellingen.
 Eigenschappen die worden weer gegeven onder **protectedSettings** zijn versleuteld met een certificaat en worden niet weer gegeven als tekst zonder opmaak in het instellingen bestand op de virtuele machine.
 
-Als de configuratie referenties vereist, kunt u de referenties in **protectedSettings**insluiten:
+Als de configuratie referenties vereist, kunt u de referenties in **protectedSettings** insluiten:
 
 ```json
 "protectedSettings": {
@@ -294,7 +295,7 @@ In het volgende voor beeld worden de **RegistrationUrl** en **RegistrationKey** 
 
 ## <a name="update-from-a-previous-format"></a>Bijwerken vanuit een vorige indeling
 
-Instellingen in een vorige indeling van de uitbrei ding (en die de open bare eigenschappen **ModulesUrl**, **ModuleSource**, **ModuleVersion**, **ConfigurationFunction**, **SasToken**of **Properties**hebben), worden automatisch aangepast aan de huidige indeling van de uitbrei ding.
+Instellingen in een vorige indeling van de uitbrei ding (en die de open bare eigenschappen **ModulesUrl**, **ModuleSource**, **ModuleVersion**, **ConfigurationFunction**, **SasToken** of **Properties** hebben), worden automatisch aangepast aan de huidige indeling van de uitbrei ding.
 Ze worden net zo uitgevoerd als voorheen.
 
 In het volgende schema ziet u hoe het vorige schema voor instellingen eruitziet:

@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: d7c59cc1-b2d0-4d90-9126-628f9c7a5538
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/23/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4ed99145a2d3860849c4a8117a93a9a0f24d227c
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 1cd6f5f7865d18461ac7a635530e9aabfde380a6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540923"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955409"
 ---
 # <a name="azure-storage-types-for-sap-workload"></a>Azure Storage-typen voor SAP-workload
 Azure heeft talloze opslag typen die in de mogelijkheden, door Voer, latentie en prijzen aanzienlijk verschillen. Sommige opslag typen zijn niet of zijn beperkt bruikbaar voor SAP-scenario's. Dat zijn verschillende Azure Storage-typen goed geschikt of geoptimaliseerd voor specifieke SAP-werkbelasting scenario's. Met name voor SAP HANA hebben sommige Azure Storage-typen gecertificeerd voor het gebruik met SAP HANA. In dit document gaan we de verschillende soorten opslag door lopen en de mogelijkheden en bruikbaarheid van SAP-workloads en SAP-onderdelen beschrijven.
@@ -273,7 +274,7 @@ Aanvullende ingebouwde functionaliteit van ANF-opslag:
 - Klonen van ANF-volumes van moment opnamen
 - Volumes herstellen vanaf moment opnamen (module-herstellen)
 
-**Samen vatting** : Azure NetApp files is een Hana-gecertificeerde opslag met lage LATENTIE waarmee NFS-en SMB-volumes of-shares kunnen worden geïmplementeerd. De opslag wordt geleverd met drie verschillende service niveaus die een verschillende door Voer en IOPS bieden op lineaire wijze per GiB capaciteit van het volume. De ANF-opslag wordt ingeschakeld voor het implementeren van SAP HANA scale-out scenario's met een stand-by-knoop punt. De opslag is geschikt voor het leveren van bestands shares die nodig zijn voor de/sapmnt of de globale transport Directory van SAP. ANF Storage wordt geleverd met functionaliteits beschikbaarheid die beschikbaar is als systeem eigen NetApp-functionaliteit.  
+**Samen vatting**: Azure NetApp files is een Hana-gecertificeerde opslag met lage LATENTIE waarmee NFS-en SMB-volumes of-shares kunnen worden geïmplementeerd. De opslag wordt geleverd met drie verschillende service niveaus die een verschillende door Voer en IOPS bieden op lineaire wijze per GiB capaciteit van het volume. De ANF-opslag wordt ingeschakeld voor het implementeren van SAP HANA scale-out scenario's met een stand-by-knoop punt. De opslag is geschikt voor het leveren van bestands shares die nodig zijn voor de/sapmnt of de globale transport Directory van SAP. ANF Storage wordt geleverd met functionaliteits beschikbaarheid die beschikbaar is als systeem eigen NetApp-functionaliteit.  
 
 
 

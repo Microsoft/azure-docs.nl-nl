@@ -7,18 +7,18 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 12eed6aeccffe854810e9c2ddc8a5c4e59b8c312
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 0a38f9b8135fed08a95df68f108e44c34fec6325
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337930"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955324"
 ---
 # <a name="understand-twin-models-in-azure-digital-twins"></a>Meer informatie over dubbele modellen in azure Digital Apparaatdubbels
 
 Een belang rijk kenmerk van Azure Digital Apparaatdubbels is de mogelijkheid om uw eigen woorden lijst te definiëren en uw dubbele grafiek te bouwen in de zelfgedefinieerde voor waarden van uw bedrijf. Deze mogelijkheid wordt gegeven via door de gebruiker gedefinieerde **modellen**. U kunt modellen beschouwen als de zelfstandige naam woorden in een beschrijving van uw wereld. 
 
-Een model is vergelijkbaar met een **klasse** in een object georiënteerde programmeer taal en definieert een gegevensshape voor een bepaald concept in uw echte werk omgeving. Modellen hebben namen (zoals *room* of *temperatuur sensor* ) en bevatten elementen zoals eigenschappen, telemetrie/gebeurtenissen en opdrachten die beschrijven wat dit type entiteit in uw omgeving kan doen. Later gaat u deze modellen gebruiken om [**digitale apparaatdubbels**](concepts-twins-graph.md) te maken die specifieke entiteiten vertegenwoordigen die aan deze type beschrijving voldoen.
+Een model is vergelijkbaar met een **klasse** in een object georiënteerde programmeer taal en definieert een gegevensshape voor een bepaald concept in uw echte werk omgeving. Modellen hebben namen (zoals *room* of *temperatuur sensor*) en bevatten elementen zoals eigenschappen, telemetrie/gebeurtenissen en opdrachten die beschrijven wat dit type entiteit in uw omgeving kan doen. Later gaat u deze modellen gebruiken om [**digitale apparaatdubbels**](concepts-twins-graph.md) te maken die specifieke entiteiten vertegenwoordigen die aan deze type beschrijving voldoen.
 
 Azure Digital Apparaatdubbels-modellen worden weer gegeven in de JSON-LD-based **Digital-definitie taal (DTDL)**.  
 
@@ -40,7 +40,7 @@ Binnen een model definitie is het code-item op het hoogste niveau een **Interfac
 Een DTDL-model interface kan nul, één of veel van de volgende velden bevatten:
 * **Eigenschap** -eigenschappen zijn gegevens velden die de status van een entiteit vertegenwoordigen (zoals de eigenschappen in veel object-georiënteerde programmeer talen). Eigenschappen hebben een back-up van de opslag en kunnen op elk gewenst moment worden gelezen.
 * **Telemetrie** -telemetrie-velden vertegenwoordigen metingen of gebeurtenissen en worden vaak gebruikt om de leesingen van de sensor te beschrijven. In tegens telling tot eigenschappen wordt telemetrie niet opgeslagen op een digitale dubbele; het is een reeks tijdgebonden gegevens gebeurtenissen die moeten worden verwerkt wanneer deze zich voordoen. Zie de sectie [*Eigenschappen versus telemetrie*](#properties-vs-telemetry) hieronder voor meer informatie over de verschillen tussen eigenschappen en telemetrie.
-* **Onderdeel** -onderdelen bieden u de mogelijkheid om uw model interface als een assembly van andere interfaces te maken, als u dat wilt. Een voor beeld van een component is een *frontCamera* -interface (en een andere onderdeel interface *backCamera* ) die worden gebruikt voor het definiëren van een model voor een *telefoon*. U moet eerst een interface voor *frontCamera* definiëren alsof het een eigen model is, en vervolgens kunt u hiernaar verwijzen bij het definiëren van de *telefoon*.
+* **Onderdeel** -onderdelen bieden u de mogelijkheid om uw model interface als een assembly van andere interfaces te maken, als u dat wilt. Een voor beeld van een component is een *frontCamera* -interface (en een andere onderdeel interface *backCamera*) die worden gebruikt voor het definiëren van een model voor een *telefoon*. U moet eerst een interface voor *frontCamera* definiëren alsof het een eigen model is, en vervolgens kunt u hiernaar verwijzen bij het definiëren van de *telefoon*.
 
     Gebruik een onderdeel om iets te beschrijven dat een integraal onderdeel is van uw oplossing, maar waarvoor geen afzonderlijke identiteit nodig is, en dat u niet afzonderlijk hoeft te maken, verwijderen of opnieuw wilt rangschikken in het dubbele diagram. Als u wilt dat entiteiten onafhankelijk van elkaar aanwezig zijn in de dubbele grafiek, vertegenwoordigen ze als afzonderlijke digitale apparaatdubbels van verschillende modellen, verbonden door *relaties* (zie volgende opsommings teken).
     
@@ -84,7 +84,7 @@ Azure Digital Apparaatdubbels houdt ook geen rekening `writable` met het kenmerk
 
 Dubbele type modellen kunnen worden geschreven in elke tekst editor. De DTDL-taal volgt de JSON-syntaxis, dus u moet modellen met de extensie *. json* opslaan. Door gebruik te maken van de JSON-extensie biedt veel Program meren-tekst editors de mogelijkheid om basis syntaxis controles uit te voeren en te markeren voor uw DTDL-documenten. Er is ook een [DTDL-extensie](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-dtdl) beschikbaar voor [Visual Studio code](https://code.visualstudio.com/).
 
-Deze sectie bevat een voor beeld van een typisch model, geschreven als een DTDL-interface. Het model beschrijft **plan eten** , elk met een naam, massa en een Tempe ratuur.
+Deze sectie bevat een voor beeld van een typisch model, geschreven als een DTDL-interface. Het model beschrijft **plan eten**, elk met een naam, massa en een Tempe ratuur.
  
 Houd er rekening mee dat plan eten ook kunnen communiceren met **manen** die hun satellieten zijn, en kan **Craters** bevatten. In het onderstaande voor beeld `Planet` drukt het model verbindingen met deze andere entiteiten af door te verwijzen naar twee externe modellen, `Moon` en `Crater` . Deze modellen worden ook gedefinieerd in de voorbeeld code hieronder, maar worden heel eenvoudig bewaard, zodat ze niet vanuit het primaire voor beeld kunnen worden getraceerd `Planet` .
 
@@ -144,10 +144,10 @@ De velden van het model zijn:
 | `@type` | Hiermee wordt het type informatie aangegeven dat wordt beschreven. Voor een interface is het type *Interface*. |
 | `@context` | Hiermee stelt u de [context](https://niem.github.io/json/reference/json-ld/context/) voor het JSON-document. Modellen moeten worden gebruikt `dtmi:dtdl:context;2` . |
 | `displayName` | Beschrijving Hiermee kunt u het model een beschrijvende naam geven, indien gewenst. |
-| `contents` | Alle overige Interface gegevens worden hier geplaatst, als een matrix met kenmerk definities. Elk kenmerk moet een `@type` ( *eigenschap* , *telemetrie* , *opdracht* , *relatie* of *onderdeel* ) bevatten om de sortering van interface gegevens te identificeren die hierin wordt beschreven, en vervolgens een set eigenschappen die het werkelijke kenmerk definiëren (bijvoorbeeld `name` en `schema` om een *eigenschap* te definiëren). |
+| `contents` | Alle overige Interface gegevens worden hier geplaatst, als een matrix met kenmerk definities. Elk kenmerk moet een `@type` (*eigenschap*, *telemetrie*, *opdracht*, *relatie* of *onderdeel*) bevatten om de sortering van interface gegevens te identificeren die hierin wordt beschreven, en vervolgens een set eigenschappen die het werkelijke kenmerk definiëren (bijvoorbeeld `name` en `schema` om een *eigenschap* te definiëren). |
 
 > [!NOTE]
-> Houd er rekening mee dat de component interface ( *Crater* in dit voor beeld) is gedefinieerd in dezelfde matrix als de interface die gebruikmaakt van IT ( *planeet* ). Onderdelen moeten op deze manier worden gedefinieerd in API-aanroepen om de interface te vinden.
+> Houd er rekening mee dat de component interface (*Crater* in dit voor beeld) is gedefinieerd in dezelfde matrix als de interface die gebruikmaakt van IT (*planeet*). Onderdelen moeten op deze manier worden gedefinieerd in API-aanroepen om de interface te vinden.
 
 ### <a name="possible-schemas"></a>Mogelijke schema's
 
@@ -224,7 +224,11 @@ Zodra overname is toegepast, worden alle eigenschappen van de volledige overname
 
 De uitbreidende interface kan geen van de definities van de bovenliggende interfaces wijzigen; Er kan alleen worden toegevoegd. Het is ook niet mogelijk een functie opnieuw te definiëren die al is gedefinieerd in een van de bovenliggende interfaces (zelfs als de mogelijkheden zijn gedefinieerd om hetzelfde te zijn). Als een bovenliggende interface bijvoorbeeld een `double` eigenschaps *massa* definieert, kan de uitbrei ding van de interface geen declaratie van *massa* bevatten, zelfs als deze ook a `double` .
 
-## <a name="validating-models"></a>Modellen valideren
+## <a name="best-practices-for-designing-models"></a>Aanbevolen procedures voor het ontwerpen van modellen
+
+Bij het ontwerpen van modellen om de entiteiten in uw omgeving weer te geven, kan het nuttig zijn om vooruit te kijken en de [query](concepts-query-language.md) implicaties van uw ontwerp te bekijken. Mogelijk wilt u eigenschappen ontwerpen op een manier waarmee grote resultaten sets worden voor komen op basis van grafiek navigatie. Het is ook mogelijk dat u relaties wilt model leren die in één query worden beantwoord als relaties met één niveau.
+
+### <a name="validating-models"></a>Modellen valideren
 
 [!INCLUDE [Azure Digital Twins: validate models info](../../includes/digital-twins-validate.md)]
 

@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: dsc
 ms.assetid: bbacbc93-1e7b-4611-a3ec-e3320641f9ba
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 07/13/2020
 ms.author: magoedte
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 900273ec48c71e6f88d28bccff6f1e2abd412c1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17ada83f6fa1b57f8dd72d591b6625f25e9a2388
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89079571"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955851"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Inleiding tot de uitbreiding van de Desired State Configuration-handler
 
@@ -108,7 +109,7 @@ De cmdlet **Remove-AzVMDscExtension** verwijdert de extensie-handler van een spe
 Belang rijke informatie over cmdlets voor Resource Manager DSC-extensies:
 
 - Azure Resource Manager-cmdlets zijn synchroon.
-- De para meters *ResourceGroupName*, *VMName*, *ArchiveStorageAccountName*, *Version*en *Location* zijn allemaal vereist.
+- De para meters *ResourceGroupName*, *VMName*, *ArchiveStorageAccountName*, *Version* en *Location* zijn allemaal vereist.
 - *ArchiveResourceGroupName* is een optionele para meter. U kunt deze para meter opgeven wanneer uw opslag account hoort bij een andere resource groep dan het item waar de virtuele machine is gemaakt.
 - Gebruik de schakel optie auto **Update** om de extensie-handler automatisch bij te werken naar de meest recente versie wanneer deze beschikbaar is. Deze para meter kan ertoe leiden dat de virtuele machine opnieuw wordt opgestart wanneer een nieuwe versie van WMF wordt uitgebracht.
 
@@ -178,14 +179,14 @@ DSC instellen in de portal:
 
 1. Ga naar een virtuele machine.
 2. Selecteer onder **Instellingen** de optie **Extensies**.
-3. Selecteer op de nieuwe pagina die wordt gemaakt, de optie **+ toevoegen**en selecteer vervolgens **Power shell desired state Configuration**.
+3. Selecteer op de nieuwe pagina die wordt gemaakt, de optie **+ toevoegen** en selecteer vervolgens **Power shell desired state Configuration**.
 4. Klik op **maken** onder aan de pagina met informatie over de extensie.
 
 De portal verzamelt de volgende invoer:
 
 - **Configuratie modules of script**: dit veld is verplicht (het formulier is niet bijgewerkt voor het [standaard configuratie script](#default-configuration-script)). Configuratie modules en-scripts vereisen een. ps1-bestand met een configuratie script of een zip-bestand met een. ps1-configuratie script in de hoofdmap. Als u een zip-bestand gebruikt, moeten alle afhankelijke resources zijn opgenomen in module mappen in de. zip. U kunt het zip-bestand maken met behulp van de cmdlet **Publish-AzureVMDscConfiguration-OutputArchivePath** die is opgenomen in de Azure PowerShell SDK. Het zip-bestand wordt geüpload naar de Blob-opslag van uw gebruiker en beveiligd met een SAS-token.
 
-- **Module-gekwalificeerde naam van de configuratie**: u kunt meerdere configuratie functies in een. ps1-bestand toevoegen. Voer de naam in van de configuratie. ps1-script gevolgd door \\ en de naam van de configuratie functie. Als uw PS1-script bijvoorbeeld de naam configuration.ps1 heeft en de configuratie **IisInstall**is, voert u **configuration.ps1 \iisinstall**in.
+- **Module-gekwalificeerde naam van de configuratie**: u kunt meerdere configuratie functies in een. ps1-bestand toevoegen. Voer de naam in van de configuratie. ps1-script gevolgd door \\ en de naam van de configuratie functie. Als uw PS1-script bijvoorbeeld de naam configuration.ps1 heeft en de configuratie **IisInstall** is, voert u **configuration.ps1 \iisinstall** in.
 
 - **Configuratie argumenten**: als de configuratie functie argumenten accepteert, voert u deze hier in de notatie **argumentName1 = waarde1, argumentName2 = waarde2**. Deze indeling is een andere indeling waarin configuratie argumenten worden geaccepteerd in Power shell-cmdlets of Resource Manager-sjablonen.
 

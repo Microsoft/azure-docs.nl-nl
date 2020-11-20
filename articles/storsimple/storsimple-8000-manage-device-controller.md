@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/19/2017
 ms.author: alkohli
-ms.openlocfilehash: baa035269f4a5b2f39263264f23183b308264ead
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 090797549cc61aa27945114e5ef8b666226b66e2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85513939"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956990"
 ---
 # <a name="manage-your-storsimple-device-controllers"></a>Uw StorSimple-Apparaatbeheer beheren
 
@@ -61,7 +61,7 @@ Voer de volgende stappen uit om uw Apparaatbeheer te beheren vanuit de Azure Por
 2. Ga naar **instellingen > controllers**.
    
     ![Controleren of StorSimple-apparaten in orde zijn](./media/storsimple-8000-manage-device-controller/manage-controller2.png)
-3. Controleer op de Blade **controllers** of de status van beide controllers op het apparaat in **orde**is. Selecteer een controller, klik met de rechter muisknop en selecteer **opnieuw opstarten** of **Afsluiten**.
+3. Controleer op de Blade **controllers** of de status van beide controllers op het apparaat in **orde** is. Selecteer een controller, klik met de rechter muisknop en selecteer **opnieuw opstarten** of **Afsluiten**.
 
     ![Selecteer opnieuw opstarten of StorSimple-hostcontrollers afsluiten](./media/storsimple-8000-manage-device-controller/manage-controller3.png)
 
@@ -117,7 +117,7 @@ Voer de volgende stappen uit om de fabrieks instellingen van uw Microsoft Azure 
    
     `Reset-HcsFactoryDefault`
    
-    Als u in plaats daarvan één controller opnieuw wilt instellen, gebruikt u de cmdlet  [Reset-HcsFactoryDefault](https://technet.microsoft.com/library/dn688132.aspx) met de `-scope` para meter.)
+    Als u in plaats daarvan één controller opnieuw wilt instellen, gebruikt u de cmdlet  [Reset-HcsFactoryDefault](/previous-versions/windows/powershell-scripting/dn688132(v=wps.630)) met de `-scope` para meter.)
    
     Het systeem wordt meerdere keren opnieuw opgestart. U ontvangt een melding wanneer de herstel bewerking is voltooid. Afhankelijk van het systeem model kan het 45-60 minuten duren voor een 8100-apparaat en 60-90 minuten voor een 8600 om dit proces te volt ooien.
    
@@ -161,4 +161,3 @@ In deze sectie hebben we enkele van de veelgestelde vragen over het beheer van S
 ## <a name="next-steps"></a>Volgende stappen
 * Als u problemen ondervindt met de StorSimple-apparaten die u niet kunt oplossen met behulp van de procedures in deze zelf studie, [neemt u contact op met Microsoft ondersteuning](storsimple-8000-contact-microsoft-support.md).
 * Ga voor meer informatie over het gebruik van de StorSimple Apparaatbeheer-service naar [de StorSimple Apparaatbeheer-service gebruiken om uw StorSimple-apparaat te beheren](storsimple-8000-manager-service-administration.md).
-

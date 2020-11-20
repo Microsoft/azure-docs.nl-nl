@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 9/24/2019
 ms.author: rohink
-ms.openlocfilehash: 9181ef93dfedbc28b297bef48a0bc37ba6d69798
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e43ad35cdaad89d5b9f43007bad8782f358c1a6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75646758"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954338"
 ---
 # <a name="what-is-a-virtual-network-link"></a>Wat is een virtuele netwerk koppeling?
 
@@ -23,7 +23,7 @@ U kunt een virtueel netwerk koppelen aan een privé-DNS-zone als een registratie
 
 ## <a name="registration-virtual-network"></a>Virtuele registratie-netwerk
 
-Wanneer u [een koppeling maakt](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network) tussen een privé-DNS-zone en een virtueel netwerk, hebt u de mogelijkheid om de [registratie](./private-dns-autoregistration.md) van DNS-records voor virtuele machines in te scha kelen. Als u deze optie kiest, wordt het virtuele netwerk een virtueel netwerk voor registratie voor de privé-DNS-zone. Er wordt automatisch een DNS-record gemaakt voor de virtuele machines die u in het netwerk implementeert. DNS-records worden gemaakt voor de virtuele machines die u al in het virtuele netwerk hebt geïmplementeerd. Vanuit het perspectief van het virtuele netwerk wordt de particuliere DNS-zone de registratie zone voor dat virtuele netwerk.
+Wanneer u [een koppeling maakt](./private-dns-getstarted-portal.md#link-the-virtual-network) tussen een privé-DNS-zone en een virtueel netwerk, hebt u de mogelijkheid om de [registratie](./private-dns-autoregistration.md) van DNS-records voor virtuele machines in te scha kelen. Als u deze optie kiest, wordt het virtuele netwerk een virtueel netwerk voor registratie voor de privé-DNS-zone. Er wordt automatisch een DNS-record gemaakt voor de virtuele machines die u in het netwerk implementeert. DNS-records worden gemaakt voor de virtuele machines die u al in het virtuele netwerk hebt geïmplementeerd. Vanuit het perspectief van het virtuele netwerk wordt de particuliere DNS-zone de registratie zone voor dat virtuele netwerk.
 Eén privé-DNS-zone kan meerdere virtuele registratie-netwerken hebben, maar aan elk virtueel netwerk kan slechts één registratie zone zijn gekoppeld.
 
 ## <a name="resolution-virtual-network"></a>Omzetting van virtueel netwerk
@@ -33,7 +33,7 @@ Eén privé-DNS-zone kan meerdere virtuele omzettings netwerken hebben en er kun
 
 ## <a name="limits"></a>Limieten
 
-Als u wilt weten hoeveel registratie-en oplossings netwerken u kunt koppelen aan privé-DNS-zones, raadpleegt u [Azure DNS limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-dns-limits)
+Als u wilt weten hoeveel registratie-en oplossings netwerken u kunt koppelen aan privé-DNS-zones, raadpleegt u [Azure DNS limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-dns-limits)
 
 ## <a name="other-considerations"></a>Andere overwegingen
 
@@ -49,7 +49,7 @@ Als u wilt weten hoeveel registratie-en oplossings netwerken u kunt koppelen aan
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het koppelen van een virtueel netwerk aan een privé-DNS-zone met behulp van [Azure Portal](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network)
+* Meer informatie over het koppelen van een virtueel netwerk aan een privé-DNS-zone met behulp van [Azure Portal](./private-dns-getstarted-portal.md#link-the-virtual-network)
 
 * Meer informatie over het maken van een privézone in Azure DNS met behulp van [Azure PowerShell](./private-dns-getstarted-powershell.md) of [Azure CLI](./private-dns-getstarted-cli.md).
 

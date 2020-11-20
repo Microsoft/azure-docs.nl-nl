@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 5806266955eafab8c3c8c99695ff82736de92e9b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 600934e2d46c1a84a83fa1290db13b3d0d1508f4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187061"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956888"
 ---
 # <a name="troubleshoot-storsimple-device-deployment-issues"></a>Problemen met de implementatie van StorSimple-apparaten oplossen
 ## <a name="overview"></a>Overzicht
@@ -46,12 +46,12 @@ De volgende secties kunnen u helpen bij het oplossen van problemen die zich voor
 ## <a name="first-time-setup-wizard-process"></a>Wizard voor de eerste keer dat de installatie wordt uitgevoerd
 In de volgende stappen wordt het installatie wizard-proces samenvatten. Zie [uw on-premises StorSimple-apparaat implementeren](storsimple-8000-deployment-walkthrough-u2.md)voor gedetailleerde informatie over de installatie.
 
-1. Voer de cmdlet [invoke-hcssetupwizard uit](https://technet.microsoft.com/library/dn688135.aspx) uit om de installatie wizard te starten, waarmee u de resterende stappen doorloopt. 
+1. Voer de cmdlet [invoke-hcssetupwizard uit](/previous-versions/windows/powershell-scripting/dn688135(v=wps.630)) uit om de installatie wizard te starten, waarmee u de resterende stappen doorloopt. 
 2. Het netwerk configureren: met de wizard Setup kunt u netwerk instellingen configureren voor de DATA 0-netwerk interface op uw StorSimple-apparaat. Deze instellingen omvatten het volgende:
-   * Virtueel IP-adres (VIP), subnetmasker en gateway: de cmdlet [set-HcsNetInterface](https://technet.microsoft.com/library/dn688161.aspx) wordt op de achtergrond uitgevoerd. Hiermee configureert u het IP-adres, subnetmasker en de gateway voor de DATA 0-netwerk interface op uw StorSimple-apparaat.
-   * Primaire DNS-server: de cmdlet [set-HcsDnsClientServerAddress](https://technet.microsoft.com/library/dn688172.aspx) wordt uitgevoerd op de achtergrond. De DNS-instellingen voor uw StorSimple-oplossing worden geconfigureerd.
-   * NTP-server: de cmdlet [set-HcsNtpClientServerAddress](https://technet.microsoft.com/library/dn688138.aspx) wordt uitgevoerd op de achtergrond. Hiermee configureert u de instellingen van de NTP-server voor uw StorSimple-oplossing.
-   * Optionele webproxy: de cmdlet [set-HcsWebProxy](https://technet.microsoft.com/library/dn688154.aspx) wordt uitgevoerd op de achtergrond. Hiermee wordt de configuratie van de webproxy voor uw StorSimple-oplossing ingesteld en ingeschakeld.
+   * Virtueel IP-adres (VIP), subnetmasker en gateway: de cmdlet [set-HcsNetInterface](/previous-versions/windows/powershell-scripting/dn688161(v=wps.630)) wordt op de achtergrond uitgevoerd. Hiermee configureert u het IP-adres, subnetmasker en de gateway voor de DATA 0-netwerk interface op uw StorSimple-apparaat.
+   * Primaire DNS-server: de cmdlet [set-HcsDnsClientServerAddress](/previous-versions/windows/powershell-scripting/dn688172(v=wps.630)) wordt uitgevoerd op de achtergrond. De DNS-instellingen voor uw StorSimple-oplossing worden geconfigureerd.
+   * NTP-server: de cmdlet [set-HcsNtpClientServerAddress](/previous-versions/windows/powershell-scripting/dn688138(v=wps.630)) wordt uitgevoerd op de achtergrond. Hiermee configureert u de instellingen van de NTP-server voor uw StorSimple-oplossing.
+   * Optionele webproxy: de cmdlet [set-HcsWebProxy](/previous-versions/windows/powershell-scripting/dn688154(v=wps.630)) wordt uitgevoerd op de achtergrond. Hiermee wordt de configuratie van de webproxy voor uw StorSimple-oplossing ingesteld en ingeschakeld.
 3. Stel het wacht woord in: de volgende stap is het instellen van het beheerders wachtwoord voor het apparaat.
    Het beheerders wachtwoord voor het apparaat wordt gebruikt om u aan te melden bij uw apparaat. Het standaardapparaatwachtwoord is **Password1**.
         
@@ -157,7 +157,7 @@ Een ondersteunings pakket bevat alle relevante logboeken die het Microsoft Onder
    2. Klik in het deel venster **acties** op **opgeslagen logboek openen** en wijs de logboek bestanden in etvx/etw-indeling (het ondersteunings pakket) aan. U kunt het bestand nu weer geven. Nadat u het bestand hebt geopend, kunt u met de rechter muisknop klikken en het bestand opslaan als tekst.
       
       > [!IMPORTANT]
-      > U kunt ook de cmdlet **Get-Wine vent** gebruiken om deze bestanden te openen in Windows Power shell. Zie [Get-Wine vent](https://technet.microsoft.com/library/hh849682.aspx) in de naslag documentatie voor Windows Power shell-cmdlets voor meer informatie.
+      > U kunt ook de cmdlet **Get-Wine vent** gebruiken om deze bestanden te openen in Windows Power shell. Zie [Get-Wine vent](/powershell/module/microsoft.powershell.diagnostics/get-winevent) in de naslag documentatie voor Windows Power shell-cmdlets voor meer informatie.
      
 5. Wanneer de logboeken in Logboeken zijn geopend, zoekt u de volgende logboeken die problemen bevatten met betrekking tot de apparaatconfiguratie:
    
@@ -184,12 +184,12 @@ Wanneer u netwerk interfaces configureert voor een implementatie voor de eerste 
 1. Start Windows PowerShell voor StorSimple en typ `Get-NetAdapter` . 
 2. Gebruik de uitvoer van de `Get-NetAdapter` cmdlet en de volgende richt lijnen om inzicht te krijgen in de status van uw netwerk interface.
    
-   * Als de interface in orde is en is ingeschakeld, wordt de status **van**de **ifIndex** weer gegeven.
-   * Als de interface is in orde, maar niet fysiek is verbonden (door een netwerk kabel), wordt de **ifIndex** als **uitgeschakeld**weer gegeven.
+   * Als de interface in orde is en is ingeschakeld, wordt de status **van** de **ifIndex** weer gegeven.
+   * Als de interface is in orde, maar niet fysiek is verbonden (door een netwerk kabel), wordt de **ifIndex** als **uitgeschakeld** weer gegeven.
    * Als de interface in orde is, maar niet is ingeschakeld, wordt de status van **ifIndex** weer gegeven als **NotPresent**.
    * Als de interface niet bestaat, wordt deze niet weer gegeven in deze lijst. In de gebruikers interface van de StorSimple-Apparaatbeheer-service wordt deze interface nog steeds weer gegeven met de status mislukt.
 
-Ga voor meer informatie over het gebruik van deze cmdlet naar [Get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/get-netadapter?view=win10-ps) in de naslag gids voor Windows Power shell-cmdlets.
+Ga voor meer informatie over het gebruik van deze cmdlet naar [Get-netadapter](/powershell/module/netadapter/get-netadapter?view=win10-ps) in de naslag gids voor Windows Power shell-cmdlets.
 
 In de volgende secties worden voor beelden van uitvoer van de cmdlet weer gegeven `Get-NetAdapter` .
 
@@ -284,7 +284,7 @@ Gebruik de `Test-HcsmConnection` cmdlet voor een apparaat dat al is verbonden me
    * Error code. CiSDeviceDecommissioned: Dit geeft aan dat het apparaat wordt gedeactiveerd.
    * Error code. DeviceNotReady: Dit geeft aan dat het apparaat zich in de onderhouds modus bevindt.
    * Error code. DeviceNotReady: Dit geeft aan dat het apparaat niet online is.
-3. Controleer of de StorSimple-Apparaatbeheer service wordt uitgevoerd (gebruik de cmdlet [Get-ClusterResource](https://technet.microsoft.com/library/ee461004.aspx) ). Als de service niet wordt uitgevoerd, ziet u mogelijk de volgende fouten:
+3. Controleer of de StorSimple-Apparaatbeheer service wordt uitgevoerd (gebruik de cmdlet [Get-ClusterResource](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461004(v=technet.10)) ). Als de service niet wordt uitgevoerd, ziet u mogelijk de volgende fouten:
    
    * Error code. CiSApplianceAgentNotOnline
    * Error code. CisPowershellScriptHcsError: Dit geeft aan dat er een uitzonde ring is opgetreden bij het uitvoeren van Get-ClusterResource.
@@ -308,7 +308,7 @@ Gebruik de `Test-HcsmConnection` cmdlet voor een apparaat dat al is verbonden me
 
 De logboek bestanden CiSCommandletLog0Curr. errlog en CiSAgentsvc0Curr. errlog hebben meer informatie, zoals Details van uitzonde ringen.
 
-Ga naar [test-HcsmConnection](https://technet.microsoft.com/library/dn715782.aspx) in de Windows Power shell-referentie documentatie voor meer informatie over het gebruik van de cmdlet.
+Ga naar [test-HcsmConnection](/previous-versions/windows/powershell-scripting/dn715782(v=wps.630)) in de Windows Power shell-referentie documentatie voor meer informatie over het gebruik van de cmdlet.
 
 > [!IMPORTANT]
 > U kunt deze cmdlet uitvoeren voor zowel de actieve als de passieve controller.
@@ -536,7 +536,7 @@ De fout kan een van de volgende oorzaken hebben:
    * Zorg ervoor dat de switches die u voor de verbinding gebruikt, gegevens 0 hebben voor beide controllers in hetzelfde vLAN.
 5. Gebruikers fouten elimineren:
    
-   * Voer de installatie wizard opnieuw uit (Voer **invoke-hcssetupwizard uit**uit) en geef de waarden opnieuw op om ervoor te zorgen dat er geen fouten zijn. 
+   * Voer de installatie wizard opnieuw uit (Voer **invoke-hcssetupwizard uit** uit) en geef de waarden opnieuw op om ervoor te zorgen dat er geen fouten zijn. 
    * Controleer de gebruikte registratie sleutel. Dezelfde registratie sleutel kan worden gebruikt om meerdere apparaten te verbinden met een StorSimple-Apparaatbeheer service. Gebruik de procedure in [down load de service registratie sleutel](storsimple-8000-manage-service.md#get-the-service-registration-key) om ervoor te zorgen dat u de juiste registratie sleutel gebruikt.
      
      > [!IMPORTANT]
@@ -553,5 +553,5 @@ De fout kan een van de volgende oorzaken hebben:
 
 <!--Link references-->
 
-[1]: https://technet.microsoft.com/library/dd379547(v=ws.10).aspx
-[2]: https://technet.microsoft.com/library/dd392266(v=ws.10).aspx 
+[1]: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379547(v=ws.10)
+[2]: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd392266(v=ws.10)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 81799e6ec366c7429fdb29b85b4ff65d353a8fba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6289f335234c9b7efec02a18e12b40a1140c1b3f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91742414"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956548"
 ---
 # <a name="deploy-storsimple-virtual-array--set-up-as-an-iscsi-server-via-azure-portal"></a>StorSimple Virtual array implementeren: ingesteld als een iSCSI-server via Azure Portal
 
@@ -37,7 +37,7 @@ De procedures die hier worden beschreven, nemen ongeveer 30 minuten tot 1 uur in
 
 Voordat u de virtuele StorSimple-matrix configureert en instelt, moet u ervoor zorgen dat:
 
-* U hebt een virtuele matrix ingericht en er verbinding mee gemaakt zoals beschreven in [de implementatie StorSimple Virtual array: een virtuele matrix inrichten in Hyper-V](storsimple-ova-deploy2-provision-hyperv.md) of [StorSimple Virtual array implementeren: een virtuele matrix inrichten in VMware](storsimple-virtual-array-deploy2-provision-vmware.md).
+* U hebt een virtuele matrix ingericht en er verbinding mee gemaakt zoals beschreven in [de implementatie StorSimple Virtual array: een virtuele matrix inrichten in Hyper-V](./storsimple-virtual-array-deploy2-provision-hyperv.md) of [StorSimple Virtual array implementeren: een virtuele matrix inrichten in VMware](storsimple-virtual-array-deploy2-provision-vmware.md).
 * U hebt de service registratie sleutel van de StorSimple Apparaatbeheer-service die u hebt gemaakt voor het beheren van uw StorSimple virtuele arrays. Zie voor meer informatie **stap 2: de service registratie sleutel ophalen** in [StorSimple Virtual array implementeren: bereid de portal](storsimple-virtual-array-deploy1-portal-prep.md#step-2-get-the-service-registration-key)voor.
 * Als dit de tweede of volgende virtuele matrix is die u registreert met een bestaande StorSimple-Apparaatbeheer service, moet u de versleutelings sleutel voor service gegevens hebben. Deze sleutel is gegenereerd toen het eerste apparaat is geregistreerd bij deze service. Als u deze sleutel hebt verloren, raadpleegt u de versleutelings **sleutel voor service gegevens ophalen** in [de Web-UI gebruiken om uw virtuele StorSimple-matrix te beheren](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key).
 
@@ -61,13 +61,13 @@ Gebruik de volgende stapsgewijze instructies voor het instellen en configureren 
     Gebruik de verbindings-URL die u in de vorige stap hebt genoteerd. Er wordt een fout bericht weer geven met de melding dat er een probleem is met het beveiligings certificaat van de website. Klik op **door gaan naar deze webpagina**.
    
     ![fout in beveiligings certificaat](./media/storsimple-virtual-array-deploy3-iscsi-setup/image3.png)
-2. Meld u als **StorSimpleAdmin**aan bij de Web-UI van uw virtuele apparaat. Voer het wacht woord voor het beheerders wachtwoord in dat u hebt gewijzigd in stap 3: het virtuele apparaat in [Deploy StorSimple Virtual array starten: een virtueel apparaat inrichten in Hyper-V](storsimple-virtual-array-deploy2-provision-hyperv.md) of [StorSimple Virtual array implementeren: een virtueel apparaat inrichten in VMware](storsimple-virtual-array-deploy2-provision-vmware.md).
+2. Meld u als **StorSimpleAdmin** aan bij de Web-UI van uw virtuele apparaat. Voer het wacht woord voor het beheerders wachtwoord in dat u hebt gewijzigd in stap 3: het virtuele apparaat in [Deploy StorSimple Virtual array starten: een virtueel apparaat inrichten in Hyper-V](storsimple-virtual-array-deploy2-provision-hyperv.md) of [StorSimple Virtual array implementeren: een virtueel apparaat inrichten in VMware](storsimple-virtual-array-deploy2-provision-vmware.md).
    
     ![Aanmeldings pagina](./media/storsimple-virtual-array-deploy3-iscsi-setup/image4.png)
-3. U gaat naar de **Start** pagina. Op deze pagina worden de verschillende instellingen beschreven die nodig zijn om het virtuele apparaat te configureren en te registreren bij de StorSimple-Apparaatbeheer service. Houd er rekening mee dat de **netwerk instellingen**, **web proxy-instellingen**en **tijd instellingen** optioneel zijn. De enige vereiste instellingen zijn **Apparaatinstellingen** en **Cloud instellingen**.
+3. U gaat naar de **Start** pagina. Op deze pagina worden de verschillende instellingen beschreven die nodig zijn om het virtuele apparaat te configureren en te registreren bij de StorSimple-Apparaatbeheer service. Houd er rekening mee dat de **netwerk instellingen**, **web proxy-instellingen** en **tijd instellingen** optioneel zijn. De enige vereiste instellingen zijn **Apparaatinstellingen** en **Cloud instellingen**.
    
     ![Startpagina](./media/storsimple-virtual-array-deploy3-iscsi-setup/image5.png)
-4. Op de pagina **netwerk instellingen** onder **netwerk interfaces**wordt gegevens 0 automatisch voor u geconfigureerd. Elke netwerk interface is standaard ingesteld op het automatisch ophalen van een IP-adres (DHCP). Daarom wordt automatisch een IP-adres, subnet en gateway toegewezen (voor zowel IPv4 als IPv6).
+4. Op de pagina **netwerk instellingen** onder **netwerk interfaces** wordt gegevens 0 automatisch voor u geconfigureerd. Elke netwerk interface is standaard ingesteld op het automatisch ophalen van een IP-adres (DHCP). Daarom wordt automatisch een IP-adres, subnet en gateway toegewezen (voor zowel IPv4 als IPv6).
    
     Als u van plan bent om uw apparaat te implementeren als een iSCSI-server (voor het inrichten van blok opslag), raden we u aan de optie **IP-adres automatisch ophalen** uit te scha kelen en statische IP-adressen te configureren.
    
@@ -84,7 +84,7 @@ Gebruik de volgende stapsgewijze instructies voor het instellen en configureren 
    2. Klik op het iSCSI- **Server** pictogram ![ iSCSI-server pictogram ](./media/storsimple-virtual-array-deploy3-iscsi-setup/image7.png) voor het **type** apparaat dat u maakt. Een iSCSI-server biedt u de mogelijkheid om blok opslag in te richten.
    3. Geef op of u wilt dat dit apparaat lid is van een domein. Als uw apparaat een iSCSI-server is, is het toevoegen van het domein optioneel. Als u besluit uw iSCSI-server niet aan een domein toe te voegen, klikt u op **Toep assen**, wacht u totdat de instellingen worden toegepast en gaat u verder met de volgende stap.
       
-       Als u het apparaat wilt toevoegen aan een domein. Voer een **domein naam**in en klik vervolgens op **Toep assen**.
+       Als u het apparaat wilt toevoegen aan een domein. Voer een **domein naam** in en klik vervolgens op **Toep assen**.
       
       > [!NOTE]
       > Als u uw iSCSI-server lid maakt van een domein, moet u ervoor zorgen dat uw virtuele array zich in een eigen organisatie-eenheid (OE) bevindt voor Microsoft Azure Active Directory en er geen groeps beleidsobjecten (GPO) op worden toegepast.
@@ -102,7 +102,7 @@ Gebruik de volgende stapsgewijze instructies voor het instellen en configureren 
    
    1. Geef de **URL van de webproxy** op in deze indeling: *http: \/ /host-IP-adres* of *FQDN: poort nummer*. Let op: HTTPS-Url's worden niet ondersteund.
    2. Geef **verificatie** op als **basis** of **geen**.
-   3. Als u verificatie gebruikt, moet u ook een **gebruikers naam** en **wacht woord**opgeven.
+   3. Als u verificatie gebruikt, moet u ook een **gebruikers naam** en **wacht woord** opgeven.
    4. Klik op **Toepassen**. Hiermee worden de geconfigureerde web proxy-instellingen gevalideerd en toegepast.
 8. (Optioneel) de tijd instellingen voor uw apparaat configureren, zoals de tijd zone en de primaire en secundaire NTP-servers. NTP-servers zijn vereist, omdat uw apparaat de tijd moet synchroniseren voor verificatie met uw cloudserviceproviders.
    
@@ -117,7 +117,7 @@ Gebruik de volgende stapsgewijze instructies voor het instellen en configureren 
 9. Configureer de Cloud instellingen voor uw apparaat. In deze stap voltooit u de configuratie van het lokale apparaat en registreert u het apparaat met uw StorSimple-Apparaatbeheer service.
    
    1. Voer de **service registratie sleutel** in die u hebt ontvangen in **stap 2: de service registratie sleutel ophalen** in [de StorSimple virtuele matrix implementeren: bereid de portal](storsimple-virtual-array-deploy1-portal-prep.md#step-2-get-the-service-registration-key)voor.
-   2. Als dit niet het eerste apparaat is dat u bij deze service registreert, moet u de **versleutelings sleutel voor de service gegevens**opgeven. Deze sleutel is vereist bij de service registratie sleutel om extra apparaten te registreren bij de StorSimple-Apparaatbeheer service. Raadpleeg voor meer informatie [de versleutelings sleutel voor service gegevens ophalen](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) op uw lokale webinterface.
+   2. Als dit niet het eerste apparaat is dat u bij deze service registreert, moet u de **versleutelings sleutel voor de service gegevens** opgeven. Deze sleutel is vereist bij de service registratie sleutel om extra apparaten te registreren bij de StorSimple-Apparaatbeheer service. Raadpleeg voor meer informatie [de versleutelings sleutel voor service gegevens ophalen](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key) op uw lokale webinterface.
    3. Klik op **Registreren**. Hiermee wordt het apparaat opnieuw opgestart. Mogelijk moet u 2-3 minuten wachten voordat het apparaat is geregistreerd. Nadat het apparaat opnieuw is opgestart, wordt u naar de aanmeldings pagina geleid.
       
       ![Apparaat registreren](./media/storsimple-virtual-array-deploy3-iscsi-setup/image11.png)
@@ -156,7 +156,7 @@ Voer de volgende stappen uit in de Azure Portal om de vereiste apparaatinstellin
 
 ## <a name="step-3-add-a-volume"></a>Stap 3: een volume toevoegen
 
-1. Selecteer op de Blade **apparaten** het apparaat dat u zojuist hebt geconfigureerd als een iSCSI-server. Klik op **...** (in deze rij kunt u ook met de rechter muisknop klikken) en selecteer **volume toevoegen**in het context menu. U kunt ook op **+ volume toevoegen** klikken vanaf de opdracht balk. Hiermee opent u de Blade **volume toevoegen** .
+1. Selecteer op de Blade **apparaten** het apparaat dat u zojuist hebt geconfigureerd als een iSCSI-server. Klik op **...** (in deze rij kunt u ook met de rechter muisknop klikken) en selecteer **volume toevoegen** in het context menu. U kunt ook op **+ volume toevoegen** klikken vanaf de opdracht balk. Hiermee opent u de Blade **volume toevoegen** .
    
     ![Een volume toevoegen](./media/storsimple-virtual-array-deploy3-iscsi-setup/deployis10m.png)
 2. Ga als volgt te werk op de Blade **volume toevoegen** :
@@ -174,7 +174,7 @@ Voer de volgende stappen uit in de Azure Portal om de vereiste apparaatinstellin
 3. Als u een nieuwe verbonden host wilt toevoegen, klikt u op **Nieuw toevoegen**, voert u een naam in voor de host en de iSCSI QUALIFIED name (IQN), en klikt u vervolgens op **toevoegen**. Als u de IQN niet hebt, gaat u naar [bijlage A: de IQN van een Windows Server-host ophalen](#appendix-a-get-the-iqn-of-a-windows-server-host).
    
       ![Een volume toevoegen 3](./media/storsimple-virtual-array-deploy3-iscsi-setup/deployis15m.png)
-4. Klik op **OK**wanneer u klaar bent met het configureren van het volume. Er wordt een volume gemaakt met de opgegeven instellingen en er wordt een melding weer gegeven. Bewaking en back-up worden standaard ingeschakeld voor het volume.
+4. Klik op **OK** wanneer u klaar bent met het configureren van het volume. Er wordt een volume gemaakt met de opgegeven instellingen en er wordt een melding weer gegeven. Bewaking en back-up worden standaard ingeschakeld voor het volume.
    
      ![Een volume toevoegen 4](./media/storsimple-virtual-array-deploy3-iscsi-setup/deployis18m.png)
 5. Ga naar de Blade **volumes** om te controleren of het volume is gemaakt. Het volume wordt weer gegeven.
@@ -245,7 +245,4 @@ Voer de volgende stappen uit om de IQN (iSCSI Qualified Name) van een Windows-ho
 3. Bewaar deze tekenreeks.
 
 <!--Reference link-->
-[1]: https://technet.microsoft.com/library/ee338480(WS.10).aspx
-
-
-
+[1]: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee338480(v=ws.10)

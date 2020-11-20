@@ -14,16 +14,16 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 11/03/2017
 ms.author: alkohli
-ms.openlocfilehash: eaf6b1825a258b11a2e345c771909822de73dfcf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6cd1d981737db1e7c852931ecc2449e0afc03530
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90056486"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956786"
 ---
 # <a name="troubleshoot-an-operational-storsimple-device"></a>Problemen met een operationeel StorSimple-apparaat oplossen
 > [!NOTE]
-> De klassieke portal voor StorSimple is afgeschaft. De StorSimple-apparaatbeheerfuncties worden automatisch volgens schema verplaatst naar de nieuwe Azure Portal. U ontvangt hierover een e-mailbericht en een portalmelding. Dit document wordt binnenkort ook ingetrokken. Zie [FAQ: Move to Azure portal](storsimple-8000-move-azure-portal-faq.md) (Veelgestelde vragen: verplaatsing naar Azure Portal) voor vragen met betrekking tot de verplaatsing.
+> De klassieke portal voor StorSimple is afgeschaft. De StorSimple-apparaatbeheerfuncties worden automatisch volgens schema verplaatst naar de nieuwe Azure Portal. U ontvangt hierover een e-mailbericht en een portalmelding. Dit document wordt binnenkort ook ingetrokken. Zie [FAQ: Move to Azure portal](./index.yml) (Veelgestelde vragen: verplaatsing naar Azure Portal) voor vragen met betrekking tot de verplaatsing.
 
 ## <a name="overview"></a>Overzicht
 In dit artikel vindt u nuttige richt lijnen voor probleem oplossing voor het oplossen van configuratie problemen die zich kunnen voordoen nadat het StorSimple-apparaat is geïmplementeerd en operationeel is. Hierin worden veelvoorkomende problemen, mogelijke oorzaken en aanbevolen stappen beschreven om u te helpen bij het oplossen van problemen die kunnen optreden wanneer u Microsoft Azure StorSimple uitvoert. Deze informatie is van toepassing op zowel het StorSimple on-premises fysieke apparaat als het virtuele StorSimple-apparaat.
@@ -47,9 +47,9 @@ In de volgende tabel worden de fouten beschreven die u kunt tegen komen wanneer 
 
 | Nee. | Fout bericht of voor waarde | Mogelijke oorzaken | Aanbevolen actie |
 |:--- |:--- |:--- |:--- |
-| 1 |Fout 350032: dit apparaat is al gedeactiveerd. |Deze fout wordt weer geven als u de installatie wizard uitvoert op een apparaat dat wordt gedeactiveerd. |[Neem contact op met Microsoft ondersteuning](storsimple-contact-microsoft-support.md) voor de volgende stappen. Een gedeactiveerd apparaat kan niet in de service worden geplaatst. Het is mogelijk dat de fabrieks instellingen opnieuw worden ingesteld voordat het apparaat weer kan worden geactiveerd. |
+| 1 |Fout 350032: dit apparaat is al gedeactiveerd. |Deze fout wordt weer geven als u de installatie wizard uitvoert op een apparaat dat wordt gedeactiveerd. |[Neem contact op met Microsoft ondersteuning](./storsimple-8000-contact-microsoft-support.md) voor de volgende stappen. Een gedeactiveerd apparaat kan niet in de service worden geplaatst. Het is mogelijk dat de fabrieks instellingen opnieuw worden ingesteld voordat het apparaat weer kan worden geactiveerd. |
 | 2 |Invoke-HcsSetupWizard: ERROR_INVALID_FUNCTION (uitzonde ring van HRESULT: 0x80070001) |De update van de DNS-server is mislukt. DNS-instellingen zijn algemene instellingen en worden toegepast op alle ingeschakelde netwerk interfaces. |Schakel de interface in en pas de DNS-instellingen opnieuw toe. Hierdoor kan het netwerk voor andere ingeschakelde interfaces worden verstoord, omdat deze instellingen globaal zijn. |
-| 3 |Het apparaat lijkt online te zijn in de StorSimple Manager-service portal, maar wanneer u de minimale installatie wilt volt ooien en de configuratie opslaat, mislukt de bewerking. |Tijdens de eerste installatie is de webproxy niet geconfigureerd, ook al is er een daad werkelijke proxy server aanwezig. |Gebruik de [cmdlet test-HcsmConnection][2] om de fout te vinden. [Neem contact op met Microsoft ondersteuning](storsimple-contact-microsoft-support.md) als u het probleem niet kunt oplossen. |
+| 3 |Het apparaat lijkt online te zijn in de StorSimple Manager-service portal, maar wanneer u de minimale installatie wilt volt ooien en de configuratie opslaat, mislukt de bewerking. |Tijdens de eerste installatie is de webproxy niet geconfigureerd, ook al is er een daad werkelijke proxy server aanwezig. |Gebruik de [cmdlet test-HcsmConnection][2] om de fout te vinden. [Neem contact op met Microsoft ondersteuning](./storsimple-8000-contact-microsoft-support.md) als u het probleem niet kunt oplossen. |
 | 4 |Invoke-Hcssetupwizard uit: de waarde valt niet binnen het verwachte bereik. |Deze fout treedt op bij een onjuist subnetmasker. Mogelijke oorzaken zijn: <ul><li> Het subnetmasker ontbreekt of is leeg.</li><li>De IPv6-voorvoegsel indeling is onjuist.</li><li>De interface is in de Cloud ingeschakeld, maar de gateway ontbreekt of is onjuist.</li></ul>Houd er rekening mee dat DATA 0 automatisch in de Cloud wordt ingeschakeld als dit is geconfigureerd via de wizard Setup. |Om het probleem te achterhalen, gebruikt u subnet 0.0.0.0 of 256.256.256.256 en kijkt u vervolgens naar de uitvoer. Voer indien nodig de juiste waarden voor het subnetmasker, de gateway en het IPv6-voor voegsel in. |
 
 ## <a name="error-codes"></a>Foutcodes
@@ -64,7 +64,7 @@ Fouten worden weer gegeven in numerieke volg orde.
 | 390143 |Er is een fout opgetreden met fout code 390143. (Onbekende fout.) |Als de fout zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning om de volgende stappen uit te voeren. |
 
 ## <a name="next-steps"></a>Volgende stappen
-Als u het probleem niet kunt oplossen, [neemt u contact op met Microsoft ondersteuning](storsimple-contact-microsoft-support.md) voor hulp. 
+Als u het probleem niet kunt oplossen, [neemt u contact op met Microsoft ondersteuning](./storsimple-8000-contact-microsoft-support.md) voor hulp. 
 
-[1]: https://technet.microsoft.com/%5Clibrary/Dn688135(v=WPS.630).aspx
-[2]: https://technet.microsoft.com/%5Clibrary/Dn715782(v=WPS.630).aspx
+[1]: /previous-versions/windows/powershell-scripting/dn688135(v=wps.630)
+[2]: /previous-versions/windows/powershell-scripting/dn715782(v=wps.630)

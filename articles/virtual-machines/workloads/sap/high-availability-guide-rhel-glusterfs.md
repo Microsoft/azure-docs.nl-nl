@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: radeltch
-ms.openlocfilehash: e6b8708edeeb4b3b69dab82265d13db2a4c22e08
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41699625b7062daa005e6908ce9e4249dd86f1fa
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87051647"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956395"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS in Azure VM's in Red Hat Enterprise Linux voor SAP NetWeaver
 
@@ -98,7 +99,7 @@ U kunt een van de Quick Start-sjablonen op github gebruiken voor het implementer
    4. Beheerders naam, beheerders wachtwoord of SSH-sleutel  
       Er wordt een nieuwe gebruiker gemaakt die kan worden gebruikt om u aan te melden bij de computer.
    5. Subnet-ID  
-      Als u de virtuele machine wilt implementeren in een bestaand VNet waarvoor u een subnet hebt gedefinieerd, moet de virtuele machine worden toegewezen aan, de ID van het specifieke subnet benoemen. De ID ziet er meestal uit als/Subscriptions/** &lt; -abonnements &gt; -id**/resourceGroups/naam** &lt; &gt; van de resource groep**/providers/Microsoft.Network/virtualNetworks/naam** &lt; &gt; van het virtuele netwerk**/subnets/** &lt; subnet naam &gt; **
+      Als u de virtuele machine wilt implementeren in een bestaand VNet waarvoor u een subnet hebt gedefinieerd, moet de virtuele machine worden toegewezen aan, de ID van het specifieke subnet benoemen. De ID ziet er meestal uit als/Subscriptions/**&lt; -abonnements &gt; -id**/resourceGroups/naam **&lt; &gt; van de resource groep**/providers/Microsoft.Network/virtualNetworks/naam **&lt; &gt; van het virtuele netwerk**/subnets/**&lt; subnet naam &gt;**
 
 ### <a name="deploy-linux-manually-via-azure-portal"></a>Linux hand matig implementeren via Azure Portal
 

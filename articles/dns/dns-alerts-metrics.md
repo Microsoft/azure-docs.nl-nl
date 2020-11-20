@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/17/2018
 ms.author: rohink
-ms.openlocfilehash: a27c4519024d6d3d2f3852534619b5f8c2bb5e43
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 85b681cbeb1b06784529e321c9e907ab2bdecb73
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489605"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954644"
 ---
 # <a name="azure-dns-metrics-and-alerts"></a>Metrische gegevens en waarschuwingen Azure DNS
 Azure DNS is een hosting service voor DNS-domeinen die naam omzetting biedt met behulp van de Microsoft Azure-infra structuur. In dit artikel worden metrische gegevens en waarschuwingen voor de Azure DNS-service beschreven.
@@ -62,7 +62,7 @@ De metrische gegevens voor het *capaciteits gebruik van de record sets* in azure
 *Afbeelding: de metrische gegevens over het capaciteits gebruik Azure DNS record sets instellen*
 
 ## <a name="alerts-in-azure-dns"></a>Waarschuwingen in Azure DNS
-Azure Monitor biedt de mogelijkheid om een waarschuwing te ontvangen voor de beschik bare meet waarden. De DNS-metrische gegevens zijn beschikbaar in de nieuwe waarschuwing configuratie-ervaring. Zoals beschreven in details in de [documentatie over Azure monitor waarschuwingen](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md), kunt u DNS-zone als resource selecteren, het metrische signaal type kiezen en de waarschuwings logica en andere para meters, zoals **periode** en **frequentie**, configureren. U kunt een [actie groep](../azure-monitor/platform/action-groups.md) verder definiëren wanneer aan de voor waarde van de waarschuwing wordt voldaan, waardoor de waarschuwing wordt geleverd via de gekozen acties. Zie [waarschuwingen maken, weer geven en beheren met Azure monitor](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md)voor meer informatie over het configureren van waarschuwingen voor Azure monitor metrische gegevens. 
+Azure Monitor biedt de mogelijkheid om een waarschuwing te ontvangen voor de beschik bare meet waarden. De DNS-metrische gegevens zijn beschikbaar in de nieuwe waarschuwing configuratie-ervaring. Zoals beschreven in details in de [documentatie over Azure monitor waarschuwingen](../azure-monitor/platform/alerts-metric.md), kunt u DNS-zone als resource selecteren, het metrische signaal type kiezen en de waarschuwings logica en andere para meters, zoals **periode** en **frequentie**, configureren. U kunt een [actie groep](../azure-monitor/platform/action-groups.md) verder definiëren wanneer aan de voor waarde van de waarschuwing wordt voldaan, waardoor de waarschuwing wordt geleverd via de gekozen acties. Zie [waarschuwingen maken, weer geven en beheren met Azure monitor](../azure-monitor/platform/alerts-metric.md)voor meer informatie over het configureren van waarschuwingen voor Azure monitor metrische gegevens. 
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [Azure DNS](dns-overview.md).

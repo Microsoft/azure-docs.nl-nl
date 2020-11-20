@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 11/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 12d11cddf077d4d07732490255d44e89ddaf3217
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 73b9ecd03875b60ed2d9b9d4c8e8a3a0c8de3cfa
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "60531051"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956599"
 ---
 # <a name="storsimple-8000-series-update-22-release-notes"></a>Release opmerkingen bij StorSimple 8000 Series update 2,2
 
@@ -70,7 +70,7 @@ De volgende tabel bevat een samen vatting van bekende problemen in deze release.
 | 3 |Opslagaccounts |Het gebruik van de opslag service om het opslag account te verwijderen, is een niet-ondersteund scenario. Dit leidt tot een situatie waarin gebruikers gegevens niet kunnen worden opgehaald. | |Ja |Ja |
 | 4 |Failover van apparaat |Meerdere failovers van een volume container van hetzelfde bron apparaat naar verschillende doel apparaten worden niet ondersteund. Failover van één Dead-apparaat naar meerdere apparaten zorgt ervoor dat de volume containers op het eerste mislukte apparaat gegevens eigendom verloren gaan. Na een dergelijke failover worden deze volume containers weer gegeven of werken ze anders wanneer u ze in de klassieke Azure-Portal bekijkt. | |Ja |Nee |
 | 5 |Installatie |Tijdens de installatie van de StorSimple-adapter voor share point moet u een IP-adres van het apparaat opgeven, zodat de installatie kan worden voltooid. | |Ja |Nee |
-| 6 |Webproxy |Als uw webproxy-configuratie HTTPS heeft als het opgegeven protocol, wordt de communicatie van uw apparaat naar service beïnvloed en wordt het apparaat offline gezet. Er worden ook ondersteunings pakketten gegenereerd in het proces, waarbij aanzienlijke bronnen op uw apparaat worden gebruikt. |Zorg ervoor dat de web proxy-URL HTTP heeft als het opgegeven protocol. Zie [Configure web proxy for your device](storsimple-configure-web-proxy.md) (Webproxy voor uw apparaat configureren) voor meer informatie. |Ja |Nee |
+| 6 |Webproxy |Als uw webproxy-configuratie HTTPS heeft als het opgegeven protocol, wordt de communicatie van uw apparaat naar service beïnvloed en wordt het apparaat offline gezet. Er worden ook ondersteunings pakketten gegenereerd in het proces, waarbij aanzienlijke bronnen op uw apparaat worden gebruikt. |Zorg ervoor dat de web proxy-URL HTTP heeft als het opgegeven protocol. Zie [Configure web proxy for your device](./storsimple-8000-configure-web-proxy.md) (Webproxy voor uw apparaat configureren) voor meer informatie. |Ja |Nee |
 | 7 |Webproxy |Als u webproxy configureert en inschakelt op een geregistreerd apparaat, moet u de actieve controller opnieuw opstarten op het apparaat. | |Ja |Nee |
 | 8 |Hoge Cloud latentie en hoge I/O-werk belasting |Wanneer uw StorSimple-apparaat een combi natie van zeer hoge Cloud latenties (volg orde van seconden) en een hoge I/O-werk belasting tegen komt, worden de volumes van het apparaat gedegradeerd en kan het I/O's mislukken met de fout ' apparaat is niet gereed '. |U moet de controllers van het apparaat hand matig opnieuw opstarten of een failover voor het apparaat uitvoeren om deze situatie te herstellen. |Ja |Nee |
 | 9 |Azure PowerShell |Wanneer u de StorSimple-cmdlet **Get-AzureStorSimpleStorageAccountCredential &#124; Select-Object-eerste 1-wacht** met het selecteren van het eerste object, zodat u een nieuw **upopslagaccount** -object kunt maken, retourneert de cmdlet alle objecten. |Wikkel de cmdlet tussen haakjes als volgt: **(Get-Azure-StorSimpleStorageAccountCredential) &#124; Select-Object-eerste 1-wacht** |Ja |Ja |
@@ -90,11 +90,10 @@ De volgende tabel bevat een samen vatting van bekende problemen in deze release.
 ## <a name="controller-and-firmware-updates-in-update-22"></a>Controller-en firmware-updates in update 2,2
 Deze release heeft alleen software-updates. Als u echter een versie van vóór update 2 bijwerkt, moet u de firmware-updates voor het stuur programma, Storport, Spaceport en (in sommige gevallen) installeren op het apparaat.
 
-Zie [Update 2,2](storsimple-install-update-21.md) op uw StorSimple-apparaat installeren voor meer informatie over het installeren van de updates voor het stuur programma, Storport, Spaceport en de schijf firmware.
+Zie [Update 2,2](./storsimple-8000-install-update-5.md) op uw StorSimple-apparaat installeren voor meer informatie over het installeren van de updates voor het stuur programma, Storport, Spaceport en de schijf firmware.
 
 ## <a name="virtual-device-updates-in-update-22"></a>Updates van het virtuele apparaat in update 2,2
 Deze update kan niet worden toegepast op het virtuele apparaat. Er moeten nieuwe virtuele apparaten worden gemaakt. 
 
 ## <a name="next-step"></a>Volgende stap
-Meer informatie over het [installeren van Update 2,2](storsimple-install-update-21.md) op uw StorSimple-apparaat.
-
+Meer informatie over het [installeren van Update 2,2](./storsimple-8000-install-update-5.md) op uw StorSimple-apparaat.

@@ -8,17 +8,18 @@ manager: gwallace
 editor: ''
 ms.assetid: 2e6d88f2-1980-4a24-827e-a81616a0d247
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 12/15/2015
 ms.author: mimckitt
-ms.openlocfilehash: 3b46ae07d4bbbcd02b9880a394b72c790553f95c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9561f96dafd936244831cff2ed05cda4d915d27d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87837020"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955970"
 ---
 # <a name="use-powershell-to-enable-azure-diagnostics-in-a-virtual-machine-running-windows"></a>Power shell gebruiken om Azure Diagnostics in te scha kelen op een virtuele machine met Windows
 
@@ -98,7 +99,7 @@ De configuratie moet worden bijgewerkt om het volgende te kunnen bevatten:
 * Het kenmerk *resourceID* van het element **Metrics** moet worden bijgewerkt met de resource-id voor de virtuele machine.
   
   * De resource-ID kan worden samengesteld met behulp van het volgende patroon: "/Subscriptions/{*-abonnements-id voor het abonnement met de VM*}/resourceGroups/{*de ResourceGroup-naam voor de VM*}/providers/Microsoft.Compute/virtualMachines/{*de VM-naam*}".
-  * Als de abonnements-ID voor het abonnement waarin de virtuele machine wordt uitgevoerd, **11111111-1111-1111-1111-111111111111**is, is de naam van de resource groep voor de resource groep **MyResourceGroup**en de naam van de virtuele machine **MyWindowsVM**. vervolgens wordt de waarde voor *resourceID* :
+  * Als de abonnements-ID voor het abonnement waarin de virtuele machine wordt uitgevoerd, **11111111-1111-1111-1111-111111111111** is, is de naam van de resource groep voor de resource groep **MyResourceGroup** en de naam van de virtuele machine **MyWindowsVM**. vervolgens wordt de waarde voor *resourceID* :
     
       ```xml
       <Metrics resourceId="/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyWindowsVM" >

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4b61caecd67881eb08c82ea0c26522c63c3e8396
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e081acc357c1b8872dd3a25c552d4cbe9785e212
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84712051"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956582"
 ---
 # <a name="update-3-release-notes-for-your-storsimple-8000-series-device"></a>Update 3 release opmerkingen voor uw StorSimple 8000 Series-apparaat
 
@@ -79,11 +79,10 @@ De volgende tabel bevat een samen vatting van bekende problemen in deze release.
 | 22 |Updates |Wanneer u update 3 toepast, wordt op de pagina **onderhoud** in de klassieke Azure-Portal het volgende bericht weer gegeven met betrekking tot update 2-"StorSimple 8000 Series update 2 bevat de mogelijkheid van micro soft om proactief logboek gegevens van uw apparaat te verzamelen wanneer er mogelijke problemen worden gedetecteerd. Dit is misleidend, omdat het aangeeft dat het apparaat wordt bijgewerkt naar Update 2. Zodra het apparaat is bijgewerkt naar Update 3, verdwijnt dit bericht. |Dit gedrag wordt in een toekomstige release opgelost. |Ja |Nee |
 
 ## <a name="controller-and-firmware-updates-in-update-3"></a>Controller-en firmware-updates in update 3
-Deze release heeft stuur programma-en firmware-updates voor LSI. Zie [Update 3 installeren](storsimple-install-update-3.md) op uw StorSimple-apparaat voor meer informatie over het installeren van het LSI-stuur programma en de firmware-updates.
+Deze release heeft stuur programma-en firmware-updates voor LSI. Zie [Update 3 installeren](./index.yml) op uw StorSimple-apparaat voor meer informatie over het installeren van het LSI-stuur programma en de firmware-updates.
 
 ## <a name="virtual-device-updates-in-update-3"></a>Updates van het virtuele apparaat in update 3
 Deze update kan niet worden toegepast op de StorSimple Cloud Appliance (ook wel bekend als het virtuele apparaat). Er moeten nieuwe virtuele apparaten worden gemaakt. 
 
 ## <a name="next-step"></a>Volgende stap
-Meer informatie over het [installeren van update 3](storsimple-install-update-3.md) op uw StorSimple-apparaat.
-
+Meer informatie over het [installeren van update 3](./index.yml) op uw StorSimple-apparaat.

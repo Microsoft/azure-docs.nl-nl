@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: SAP
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: juergent
-ms.openlocfilehash: d613da4d9abdfe22fc20f1b74da41e4a65cbff33
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: be455de2a1f8aebc7327af4741e0652a4be76665
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151568"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956429"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-red-hat-enterprise-linux-server"></a>Hoge beschikbaarheid van IBM Db2 LUW in Azure-VM's in Red Hat Enterprise Linux Server
 
@@ -144,7 +145,7 @@ Zorg ervoor dat het geselecteerde besturings systeem wordt ondersteund door IBM/
 
 ## <a name="create-the-pacemaker-cluster"></a>Het Pacemaker-cluster maken
     
-Als u een basis-pacemaker-cluster wilt maken voor deze IBM Db2-server, raadpleegt u [pacemaker instellen op Red Hat Enterprise Linux in azure][rhel-pcs-azr]. 
+Als u een basis-pacemaker-cluster wilt maken voor deze IBM Db2-server, raadpleegt u [pacemaker instellen op Red Hat Enterprise Linux in azure][rhel-pcs-azr]. 
 
 ## <a name="install-the-ibm-db2-luw-and-sap-environment"></a>De IBM Db2 LUW-en SAP-omgeving installeren
 
@@ -205,7 +206,7 @@ We raden de voor gaande para meters aan op basis van initiële failover/overname
 
 Voer de volgende stappen uit om de stand-by-database server in te stellen met behulp van de SAP-procedure voor het kopiëren van een systeem:
 
-1. Selecteer de optie **kopiëren** van het systeem > **Target systems**  >  **gedistribueerd**  >  **Data Base-exemplaar**van het doel systeem.
+1. Selecteer de optie **kopiëren** van het systeem > **Target systems**  >  **gedistribueerd**  >  **Data Base-exemplaar** van het doel systeem.
 1. Als Kopieer methode selecteert u **homo geen systeem** zodat u back-up kunt gebruiken om een back-up te herstellen op het stand-by-Server exemplaar.
 1. Wanneer u de stap afsluiten hebt bereikt om de data base te herstellen voor een homogene systeem kopie, sluit u het installatie programma af. Zet de data base terug vanuit een back-up van de primaire host. Alle volgende installatie fasen zijn al uitgevoerd op de primaire database server.
 
@@ -409,11 +410,11 @@ Als u Azure Load Balancer wilt configureren, is het raadzaam om de [Azure Standa
 
 1. Een front-end-IP-adres groep maken:
 
-   a. Open in de Azure Portal de Azure Load Balancer, selecteer **frontend-IP-adres groep**en selecteer vervolgens **toevoegen**.
+   a. Open in de Azure Portal de Azure Load Balancer, selecteer **frontend-IP-adres groep** en selecteer vervolgens **toevoegen**.
 
    b. Voer de naam in van de nieuwe front-end-IP-adres groep (bijvoorbeeld **Db2-verbinding**).
 
-   c. Stel de **toewijzing** in op **statisch**en voer **het IP-adres in** dat aan het begin is gedefinieerd.
+   c. Stel de **toewijzing** in op **statisch** en voer **het IP-adres in** dat aan het begin is gedefinieerd.
 
    d. Selecteer **OK**.
 
@@ -421,7 +422,7 @@ Als u Azure Load Balancer wilt configureren, is het raadzaam om de [Azure Standa
 
 1. Maak een back-end-pool:
 
-   a. Open in de Azure Portal de Azure Load Balancer, selecteer **back-endservers**en selecteer vervolgens **toevoegen**.
+   a. Open in de Azure Portal de Azure Load Balancer, selecteer **back-endservers** en selecteer vervolgens **toevoegen**.
 
    b. Voer de naam van de nieuwe back-end-pool in (bijvoorbeeld **Db2-back-end**).
 
@@ -435,23 +436,23 @@ Als u Azure Load Balancer wilt configureren, is het raadzaam om de [Azure Standa
 
 1. Een status test maken:
 
-   a. Open in de Azure Portal de Azure Load Balancer, selecteer **status controles**en selecteer **toevoegen**.
+   a. Open in de Azure Portal de Azure Load Balancer, selecteer **status controles** en selecteer **toevoegen**.
 
    b. Voer de naam in van de nieuwe status test (bijvoorbeeld **Db2-HP**).
 
-   c. Selecteer **TCP** als protocol en poort **62500**. Behoud de waarde voor **interval** ingesteld op **5**en behoud de drempel waarde voor **onjuiste status** ingesteld op **2**.
+   c. Selecteer **TCP** als protocol en poort **62500**. Behoud de waarde voor **interval** ingesteld op **5** en behoud de drempel waarde voor **onjuiste status** ingesteld op **2**.
 
    d. Selecteer **OK**.
 
 1. De regels voor taak verdeling maken:
 
-   a. Open in de Azure Portal de Azure Load Balancer, selecteer **taakverdelings regels**en selecteer vervolgens **toevoegen**.
+   a. Open in de Azure Portal de Azure Load Balancer, selecteer **taakverdelings regels** en selecteer vervolgens **toevoegen**.
 
    b. Voer de naam in van de nieuwe Load Balancer regel (bijvoorbeeld **Db2-sid**).
 
    c. Selecteer het front-end-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **Db2-** front-end).
 
-   d. Zorg ervoor dat het **protocol** is ingesteld op **TCP**en geef poort *database communicatie poort*op.
+   d. Zorg ervoor dat het **protocol** is ingesteld op **TCP** en geef poort *database communicatie poort* op.
 
    e. Verhoog de **time-out voor inactiviteit** tot 30 minuten.
 
@@ -616,8 +617,8 @@ sudo pcs resource clear Db2_HADR_<b>ID2</b>-master
 </code></pre>
 
 - **pc's resource verplaatsen \<res_name> <host> :** maakt locatie beperkingen en kan problemen veroorzaken met overname
-- **pc's bron wissen \<res_name> **: Hiermee worden de beperkingen voor locaties gewist
-- **pc's bron opschonen \<res_name> **: Hiermee worden alle fouten van de resource gewist
+- **pc's bron wissen \<res_name>**: Hiermee worden de beperkingen voor locaties gewist
+- **pc's bron opschonen \<res_name>**: Hiermee worden alle fouten van de resource gewist
 
 ### <a name="test-a-manual-takeover"></a>Een hand matige overname testen
 

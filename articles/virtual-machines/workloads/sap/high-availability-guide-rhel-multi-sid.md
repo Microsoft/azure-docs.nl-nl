@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 1319b1b7a53303bad78c0b8e6701676755aa1484
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: b6365e9488dc00ae1bec3217b52fefa534bb0671
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167845"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956310"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-red-hat-enterprise-linux-for-sap-applications-multi-sid-guide"></a>Hoge Beschik baarheid voor SAP NetWeaver op Azure Vm's op Red Hat Enterprise Linux voor de multi-SID-hand leiding voor SAP-toepassingen
 
@@ -128,7 +129,7 @@ De volgende lijst bevat de configuratie van de (A) SCS-en ERS-load balancer voor
   * IP-adres voor NW3:10.3.1.54
 
 * Poorten testen
-  * Poort 620<strong> &lt; Nr &gt; </strong>, daarom voor NW1-, NW2-en NW3-test poorten 620**00**, 620**10** en 620**20**
+  * Poort 620 <strong> &lt; Nr &gt;</strong>, daarom voor NW1-, NW2-en NW3-test poorten 620 **00**, 620 **10** en 620 **20**
 * Regels voor taak verdeling: Maak een regel voor elk exemplaar, dat wil zeggen, NW1/ASCS, NW2/ASCS en NW3/ASCS.
   * Als u Standard Load Balancer gebruikt, selecteert u **ha-poorten**
   * Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
@@ -148,7 +149,7 @@ De volgende lijst bevat de configuratie van de (A) SCS-en ERS-load balancer voor
   * IP-adres voor NW3 10.3.1.55
 
 * Test poort
-  * Poort 621<strong> &lt; Nr &gt; </strong>, daarom voor NW1-, NW2-en N3-test poorten 621**02**, 621**12** en 621**22**
+  * Poort 621 <strong> &lt; Nr &gt;</strong>, daarom voor NW1-, NW2-en N3-test poorten 621 **02**, 621 **12** en 621 **22**
 * Regels voor taak verdeling: Maak een regel voor elk exemplaar, dat wil zeggen, NW1/ERS, NW2/ERS en NW3/ERS.
   * Als u Standard Load Balancer gebruikt, selecteert u **ha-poorten**
   * Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
@@ -287,7 +288,7 @@ In deze documentatie wordt ervan uitgegaan dat:
 
 2. **[1]** SAP NetWeaver ASCS installeren  
 
-   Installeer SAP NetWeaver ASCS als root, met behulp van een virtuele hostnaam die wordt toegewezen aan het IP-adres van de load balancer front-end-configuratie voor de ASCS. Bijvoorbeeld: voor System **NW2**is de virtuele hostnaam <b>msnw2ascs</b>, <b>10.3.1.52</b> en het exemplaar nummer dat u hebt gebruikt voor de test van de Load Balancer, bijvoorbeeld <b>10</b>. Voor System **NW3**is de virtuele hostnaam <b>msnw3ascs</b>, <b>10.3.1.54</b> en het exemplaar nummer dat u hebt gebruikt voor de test van de Load Balancer, bijvoorbeeld <b>20</b>. Noteer op het cluster knooppunt dat u ASCS hebt geïnstalleerd voor elke SAP-SID.  
+   Installeer SAP NetWeaver ASCS als root, met behulp van een virtuele hostnaam die wordt toegewezen aan het IP-adres van de load balancer front-end-configuratie voor de ASCS. Bijvoorbeeld: voor System **NW2** is de virtuele hostnaam <b>msnw2ascs</b>, <b>10.3.1.52</b> en het exemplaar nummer dat u hebt gebruikt voor de test van de Load Balancer, bijvoorbeeld <b>10</b>. Voor System **NW3** is de virtuele hostnaam <b>msnw3ascs</b>, <b>10.3.1.54</b> en het exemplaar nummer dat u hebt gebruikt voor de test van de Load Balancer, bijvoorbeeld <b>20</b>. Noteer op het cluster knooppunt dat u ASCS hebt geïnstalleerd voor elke SAP-SID.  
 
    U kunt de para meter sapinst SAPINST_REMOTE_ACCESS_USER gebruiken om een niet-hoofd gebruiker verbinding te laten maken met sapinst. U kunt de para meter SAPINST_USE_HOSTNAME gebruiken om SAP te installeren met behulp van de naam van de virtuele host.  
 
@@ -297,7 +298,7 @@ In deze documentatie wordt ervan uitgegaan dat:
     sudo swpm/sapinst SAPINST_REMOTE_ACCESS_USER=sapadmin SAPINST_USE_HOSTNAME=virtual_hostname
     ```
 
-   Als de installatie geen submap kan maken in/usr/sap/**sid**/ASCS**instance #**, probeert u de eigenaar in te stellen op **sid**adm en groep naar sapsys van het ASCS-**exemplaar #** en probeert u het opnieuw.
+   Als de installatie geen submap kan maken in/usr/sap/**sid**/ASCS **instance #**, probeert u de eigenaar in te stellen op **sid** adm en groep naar sapsys van het ASCS-**exemplaar #** en probeert u het opnieuw.
 
 3. **[1]** Maak een virtuele IP-en status test cluster bronnen voor het ers-exemplaar van het extra SAP-systeem dat u naar het cluster implementeert. Het voor beeld dat hier wordt weer gegeven, is voor **NW2** en **NW3** ers, met behulp van NFS op Azure NetApp files volumes met NFSv3-protocol.  
 
@@ -337,7 +338,7 @@ In deze documentatie wordt ervan uitgegaan dat:
 
 4. **[2]** SAP NetWeaver ers installeren
 
-   Installeer SAP NetWeaver ERS als root op het andere knoop punt, met behulp van een virtuele hostnaam die wordt toegewezen aan het IP-adres van de load balancer front-end-configuratie voor de ERS. Bijvoorbeeld, de naam van de virtuele **NW2**is <b>msnw2ers</b>, <b>10.3.1.53</b> en het exemplaar nummer dat u hebt gebruikt voor de test van de Load Balancer, bijvoorbeeld <b>12</b>. Voor System **NW3**, de naam van de virtuele host <b>msnw3ers</b>, <b>10.3.1.55</b> en het exemplaar nummer dat u hebt gebruikt voor de test van de Load Balancer, bijvoorbeeld <b>22</b>. 
+   Installeer SAP NetWeaver ERS als root op het andere knoop punt, met behulp van een virtuele hostnaam die wordt toegewezen aan het IP-adres van de load balancer front-end-configuratie voor de ERS. Bijvoorbeeld, de naam van de virtuele **NW2** is <b>msnw2ers</b>, <b>10.3.1.53</b> en het exemplaar nummer dat u hebt gebruikt voor de test van de Load Balancer, bijvoorbeeld <b>12</b>. Voor System **NW3**, de naam van de virtuele host <b>msnw3ers</b>, <b>10.3.1.55</b> en het exemplaar nummer dat u hebt gebruikt voor de test van de Load Balancer, bijvoorbeeld <b>22</b>. 
 
    U kunt de para meter sapinst SAPINST_REMOTE_ACCESS_USER gebruiken om een niet-hoofd gebruiker verbinding te laten maken met sapinst. U kunt de para meter SAPINST_USE_HOSTNAME gebruiken om SAP te installeren met behulp van de naam van de virtuele host.  
 
@@ -350,7 +351,7 @@ In deze documentatie wordt ervan uitgegaan dat:
    > [!NOTE]
    > Gebruik SWPM SP 20 PL of hoger. Bij lagere versies worden de machtigingen niet correct ingesteld en de installatie mislukt.
 
-   Als de installatie geen submap kan maken in/usr/sap/**NW2**/ers**instance #**, probeert u de eigenaar in te stellen op **sid**adm en de groep naar sapsys van de ers**instance #** map en probeert u het opnieuw.
+   Als de installatie geen submap kan maken in/usr/sap/**NW2**/ers **instance #**, probeert u de eigenaar in te stellen op **sid** adm en de groep naar sapsys van de ers **instance #** map en probeert u het opnieuw.
 
    Als het nodig is om de ERS-groep van het zojuist geïmplementeerde SAP-systeem naar een ander cluster knooppunt te migreren, vergeet dan niet om de locatie beperking voor de groep ERS te verwijderen. U kunt de beperking verwijderen door de volgende opdracht uit te voeren (het voor beeld wordt gegeven voor SAP Systems **NW2** en **NW3**). Zorg ervoor dat u de tijdelijke beperkingen verwijdert voor dezelfde resource die u in de opdracht hebt gebruikt om de ERS-cluster groep te verplaatsen.
 

@@ -15,12 +15,12 @@ ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5c49a46dfcd97f5feb43b0b910476ef3ad6f402a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 99c7f4ab92e4cce3937a933fec97008c281a0eae
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91742244"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954117"
 ---
 # <a name="back-up-shares-or-volumes-on-your-storsimple-virtual-array"></a>Maak een back-up van shares of volumes op uw virtuele StorSimple-matrix
 
@@ -28,7 +28,7 @@ ms.locfileid: "91742244"
 
 De virtuele StorSimple-matrix is een Hybrid Cloud Storage on-premises virtueel apparaat dat kan worden geconfigureerd als een bestands server of een iSCSI-server. Met de virtuele matrix kan de gebruiker geplande en hand matige back-ups maken van alle shares of volumes op het apparaat. Wanneer het is geconfigureerd als een bestands server, kan er ook herstel op item niveau worden ingesteld. In deze zelf studie wordt beschreven hoe u geplande en hand matige back-ups maakt en herstel op item niveau uitvoert om een verwijderd bestand in uw virtuele matrix te herstellen.
 
-Deze zelf studie is alleen van toepassing op de virtuele StorSimple-matrices. Ga voor meer informatie over de 8000-serie naar [een back-up maken voor een 8000-serie apparaat](storsimple-manage-backup-policies-u2.md)
+Deze zelf studie is alleen van toepassing op de virtuele StorSimple-matrices. Ga voor meer informatie over de 8000-serie naar [een back-up maken voor een 8000-serie apparaat](./storsimple-8000-manage-backup-policies-u2.md)
 
 ## <a name="back-up-shares-and-volumes"></a>Back-ups maken van shares en volumes
 
@@ -66,11 +66,11 @@ Naast geplande back-ups kunt u op elk gewenst moment een hand matige back-up (op
 
 #### <a name="to-create-a-manual-backup"></a>Een handmatige back-up maken
 
-1. Ga naar **apparaten**. Selecteer uw apparaat en klik met de rechter **muisknop helemaal rechts** in de geselecteerde rij. Selecteer **back-up maken**in het context menu.
+1. Ga naar **apparaten**. Selecteer uw apparaat en klik met de rechter **muisknop helemaal rechts** in de geselecteerde rij. Selecteer **back-up maken** in het context menu.
    
     ![navigeren om back-up te maken](./media/storsimple-virtual-array-backup/takebackup1m.png)
 
-2. Klik in de Blade **back-up** maken op **back-up**maken. Hiermee maakt u een back-up van alle shares op de bestands server of alle volumes op uw iSCSI-server. 
+2. Klik in de Blade **back-up** maken op **back-up** maken. Hiermee maakt u een back-up van alle shares op de bestands server of alle volumes op uw iSCSI-server. 
    
     ![back-up starten](./media/storsimple-virtual-array-backup/takebackup2m.png)
    
@@ -100,7 +100,7 @@ Als u de bestaande back-ups wilt weer geven, voert u de volgende stappen uit in 
     ![Navigeren naar back-upcatalogus](./media/storsimple-virtual-array-backup/viewbackups1.png)
 2. Geef de volgende criteria op die moeten worden gebruikt voor het filteren:
    
-   - **Tijds bereik** : kan **na 1 uur**, **afgelopen 24 uur**, **afgelopen 7 dagen**, **afgelopen 30 dagen**, **afgelopen jaar**en **aangepaste datum**zijn.
+   - **Tijds bereik** : kan **na 1 uur**, **afgelopen 24 uur**, **afgelopen 7 dagen**, **afgelopen 30 dagen**, **afgelopen jaar** en **aangepaste datum** zijn.
     
    - **Apparaten** : Selecteer in de lijst met bestands servers of iSCSI-servers die zijn geregistreerd bij uw StorSimple-Apparaatbeheer service.
    
@@ -115,4 +115,3 @@ Als u de bestaande back-ups wilt weer geven, voert u de volgende stappen uit in 
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over [het beheren van uw StorSimple Virtual array](storsimple-ova-web-ui-admin.md).
-

@@ -7,13 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: c5346858aa119f11ef34916b24c70c966286ab86
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 91ef218abc51cbdf079fd9e1baa8eb2b907087df
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089040"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954202"
 ---
 # <a name="troubleshoot-common-azure-spring-cloud-issues"></a>Veelvoorkomende problemen met Azure lente-Cloud oplossen
 
@@ -21,7 +20,6 @@ In dit artikel vindt u instructies voor het oplossen van problemen met Azure len
 
 ## <a name="availability-performance-and-application-issues"></a>Problemen met Beschik baarheid, prestaties en toepassingen
 
-::: zone pivot="programming-language-java"
 ### <a name="my-application-cant-start-for-example-the-endpoint-cant-be-connected-or-it-returns-a-502-after-a-few-retries"></a>Mijn toepassing kan niet worden gestart (bijvoorbeeld omdat het eind punt niet kan worden verbonden, of het retourneert een 502 na een paar nieuwe pogingen)
 
 De logboeken exporteren naar Azure Log Analytics. De tabel voor veer toepassings logboeken heeft de naam *AppPlatformLogsforSpring*. Zie [Logboeken en metrische gegevens analyseren met Diagnostische instellingen](diagnostic-services.md)voor meer informatie.
@@ -47,7 +45,7 @@ Wanneer u fouten opspoort in de toepassing, moet u eerst de status en detectie s
 
 * Als de status _actief_ is, maar de detectie status niet _actief is_, gaat u naar de sectie [mijn toepassing kan niet worden geregistreerd](#my-application-cant-be-registered) .
 
-* Als de detectie status _actief_is, gaat u naar metrische gegevens om de status van de toepassing te controleren. Inspecteer de volgende metrische gegevens:
+* Als de detectie status _actief_ is, gaat u naar metrische gegevens om de status van de toepassing te controleren. Inspecteer de volgende metrische gegevens:
 
 
   - `TomcatErrorCount` (_Tomcat. Global. error_): alle uitzonde ringen voor de lente toepassing worden hier geteld. Als dit aantal groot is, gaat u naar Azure Log Analytics om uw toepassings logboeken te controleren.
@@ -69,7 +67,6 @@ Wanneer u fouten opspoort in de toepassing, moet u eerst de status en detectie s
 
 
 Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/log-query/get-started-portal.md)voor meer informatie over Azure log Analytics.
-::: zone-end
 
 ### <a name="my-application-experiences-high-cpu-usage-or-high-memory-usage"></a>Mijn toepassing heeft een hoog CPU-gebruik of een hoog geheugengebruik
 
@@ -79,7 +76,7 @@ Als uw toepassing een hoog CPU-of geheugen gebruik ondervindt, is een van de twe
 
 Ga als volgt te werk om te controleren welke situatie van toepassing is:
 
-1. Ga naar **metrische gegevens**en selecteer vervolgens het **CPU-gebruiks percentage** van de service of het **gebruikte service geheugen**.
+1. Ga naar **metrische gegevens** en selecteer vervolgens het **CPU-gebruiks percentage** van de service of het **gebruikte service geheugen**.
 2. Voeg een **app =** filter toe om op te geven welke toepassing u wilt bewaken.
 3. Splits de metrische gegevens op **exemplaar**.
 
@@ -93,7 +90,6 @@ Als alle exemplaren actief zijn, gaat u naar Azure Log Analytics om een query ui
 
 Zie aan de [slag met log Analytics in azure monitor](../azure-monitor/log-query/get-started-portal.md)voor meer informatie over Azure log Analytics. Query's uitvoeren op de logboeken met behulp van de [Kusto-query taal](/azure/kusto/query/).
 
-::: zone pivot="programming-language-java"
 ### <a name="checklist-for-deploying-your-spring-application-to-azure-spring-cloud"></a>Controle lijst voor het implementeren van uw lente toepassing in azure veer Cloud
 
 Voordat u de toepassing uitschakelt, moet u controleren of deze voldoet aan de volgende criteria:
@@ -105,7 +101,6 @@ Voordat u de toepassing uitschakelt, moet u controleren of deze voldoet aan de v
 * De JVM-para meters hebben hun verwachte waarden.
 * U wordt aangeraden de Inge sloten _Configuratie server_ -en _veer service register_ services uit het toepassings pakket uit te scha kelen of te verwijderen.
 * Als Azure-resources moeten worden gebonden via _servicebinding_, moet u ervoor zorgen dat de doelresources actief zijn.
-::: zone-end
 
 ## <a name="configuration-and-management"></a>Configuratie en beheer
 
@@ -124,7 +119,6 @@ Als u het Azure lente-Cloud service-exemplaar wilt instellen met behulp van de R
 
 De naam van het Azure lente-Cloud service-exemplaar wordt gebruikt voor het aanvragen van een subdomeinnaam onder `azureapps.io` , zodat de installatie mislukt als de naam in conflict is met een bestaande. Mogelijk vindt u meer informatie in de activiteiten Logboeken.
 
-::: zone pivot="programming-language-java"
 ### <a name="i-cant-deploy-a-net-core-app"></a>Ik kan geen .NET core-app implementeren
 
 U kunt een *zip* -bestand voor een .net core Steeltoe-app niet uploaden met behulp van de Azure portal of de Resource Manager-sjabloon.
@@ -132,9 +126,7 @@ U kunt een *zip* -bestand voor een .net core Steeltoe-app niet uploaden met behu
 Wanneer u uw toepassings pakket implementeert met behulp van de [Azure cli](/cli/azure/get-started-with-azure-cli), pollt de Azure cli regel matig de voortgang van de implementatie en wordt het resultaat weer gegeven in het einde.
 
 Zorg ervoor dat uw toepassing is ingepakt in de juiste *. zip* -bestands indeling. Als de app niet goed is verpakt, reageert het proces niet meer of ontvangt u een fout melding.
-::: zone-end
 
-::: zone pivot="programming-language-java"
 ### <a name="i-cant-deploy-a-jar-package"></a>Ik kan geen JAR-pakket implementeren
 
 U kunt het/source-pakket van Java Archive File (JAR) niet uploaden met behulp van de Azure Portal of de Resource Manager-sjabloon.
@@ -218,7 +210,7 @@ Zoek naar het onderliggende knoop punt met de naam `systemEnvironment` .  Dit kn
 
 ### <a name="i-cant-find-metrics-or-logs-for-my-application"></a>Ik kan geen metrische gegevens of Logboeken vinden voor mijn toepassing
 
-Ga naar **app-beheer** om te controleren of de statussen _van_de toepassing _actief_ zijn.
+Ga naar **app-beheer** om te controleren of de statussen _van_ de toepassing _actief_ zijn.
 
 Controleer of weer _JMX_ is ingeschakeld in uw toepassings pakket. Deze functie kan worden ingeschakeld met de configuratie-eigenschap `spring.jmx.enabled=true` .  
 
@@ -232,7 +224,6 @@ Controleer of de `spring-boot-actuator` afhankelijkheid is ingeschakeld in uw to
 ```
 
 Als uw toepassings logboeken kunnen worden gearchiveerd in een opslag account, maar niet naar Azure Log Analytics worden verzonden, controleert u of u [uw werk ruimte op de juiste wijze hebt ingesteld](../azure-monitor/learn/quick-create-workspace.md). Als u een gratis laag van Azure Log Analytics gebruikt, moet u er rekening mee houden dat [de gratis laag geen Sla (Service Level Agreement) biedt](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_3/).
-::: zone-end
 
 ## <a name="next-steps"></a>Volgende stappen
 

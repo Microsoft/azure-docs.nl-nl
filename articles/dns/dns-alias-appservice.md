@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: how-to
 ms.date: 08/10/2019
 ms.author: rohink
-ms.openlocfilehash: e7c4db7a2fc3ba931415e3b167f7fe72ee2b3980
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 72adb2732eb0832589cbc25fb7e4288eb1899214
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84710538"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954508"
 ---
 # <a name="host-load-balanced-azure-web-apps-at-the-zone-apex"></a>Host load balanced Azure web apps op de zone Apex
 
@@ -58,7 +58,7 @@ Maak twee web-apps, één in elk App Service-abonnement.
 4. Selecteer **Maken**.
 5. Accepteer de standaard waarden en gebruik de volgende tabel om de twee web-apps te configureren:
 
-   |Name<br>(moet uniek zijn binnen. azurewebsites.net)|Resource Group |Runtime stack|Regio|Abonnement/locatie App Service
+   |Name<br>(moet uniek zijn binnen. azurewebsites.net)|Resourcegroep |Runtimestack|Regio|Abonnement/locatie App Service
    |---------|---------|-|-|-------|
    |App-01|Bestaande gebruiken<br>Uw resourcegroep selecteren|.NET Core 2.2|VS - oost|ASP-01 (D1)|
    |App-02|Bestaande gebruiken<br>Uw resourcegroep selecteren|.NET Core 2.2|Central US|ASP-02 (D1)|
@@ -69,7 +69,7 @@ Nu moet u het IP-adres en de hostnaam voor de web-apps noteren.
 
 1. Open de resource groep en selecteer uw eerste web-app (**app-01** in dit voor beeld).
 2. Selecteer in de linkerkolom **Eigenschappen**.
-3. Noteer het adres onder **URL**en noteer het eerste IP-adres in de lijst onder **uitgaande IP-adressen** . U gebruikt deze informatie later wanneer u uw Traffic Manager-eind punten configureert.
+3. Noteer het adres onder **URL** en noteer het eerste IP-adres in de lijst onder **uitgaande IP-adressen** . U gebruikt deze informatie later wanneer u uw Traffic Manager-eind punten configureert.
 4. Herhaal dit voor **app-02**.
 
 ## <a name="create-a-traffic-manager-profile"></a>Een Traffic Manager-profiel maken
@@ -83,11 +83,11 @@ Voor informatie over het maken van een Traffic Manager profiel raadpleegt u [Qui
 U kunt nu de eind punten voor de twee web-apps maken.
 
 1. Open de resource groep en selecteer uw Traffic Manager profiel.
-2. Selecteer **eind punten**in de linkerkolom.
+2. Selecteer **eind punten** in de linkerkolom.
 3. Selecteer **Toevoegen**.
 4. Gebruik de volgende tabel om de eind punten te configureren:
 
-   |Type  |Naam  |Doel  |Locatie  |Instellingen voor aangepaste header|
+   |Type  |Naam  |Doel  |Locatie  |Aangepaste headerinstellingen|
    |---------|---------|---------|---------|---------|
    |Extern eind punt     |End-01|IP-adres dat u hebt genoteerd voor app-01|VS - oost|hostsite\<the URL you recorded for App-01\><br>Voor beeld: **host: app-01.azurewebsites.net**|
    |Extern eind punt     |End-02|IP-adres dat u hebt vastgelegd voor app-02|Central US|hostsite\<the URL you recorded for App-02\><br>Voor beeld: **host: app-02.azurewebsites.net**
@@ -115,8 +115,8 @@ Voeg een aangepast domein toe voor beide web-apps.
 
 1. Open de resource groep en selecteer uw eerste web-app.
 2. Selecteer in de linkerkolom **aangepaste domeinen**.
-3. Onder **aangepaste domeinen**selecteert u **aangepast domein toevoegen**.
-4. Onder **aangepast domein**typt u uw aangepaste domein naam. Bijvoorbeeld contoso.com.
+3. Onder **aangepaste domeinen** selecteert u **aangepast domein toevoegen**.
+4. Onder **aangepast domein** typt u uw aangepaste domein naam. Bijvoorbeeld contoso.com.
 5. Selecteer **Valideren**.
 
    Uw domein moet validatie door geven en groene vinkjes weer geven naast **hostnamen Beschik baarheid** en **domein eigendom**.
@@ -158,6 +158,6 @@ Raadpleeg de volgende artikelen voor meer informatie over alias records:
 
 - [Zelfstudie: Een aliasrecord zo configureren dat deze naar een openbaar Azure-IP-adres verwijst](tutorial-alias-pip.md)
 - [Zelfstudie: een Azure DNS-aliasrecord configureren om het gebruik van hoofddomeinnaam met Traffic Manager te ondersteunen](tutorial-alias-tm.md)
-- [Veelgestelde vragen over DNS](https://docs.microsoft.com/azure/dns/dns-faq#alias-records)
+- [Veelgestelde vragen over DNS](./dns-faq.md#alias-records)
 
 Zie [een actieve DNS-naam migreren naar Azure app service](../app-service/manage-custom-dns-migrate-domain.md)voor meer informatie over het migreren van een actieve DNS-naam.

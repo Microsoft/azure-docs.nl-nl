@@ -15,23 +15,23 @@ ms.workload: NA
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 24eb03069689d6dc89d8e237e0e65c71af6c6173
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 509a3ac383cebd91821e9c4b872c253ab3b0a947
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88184717"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956191"
 ---
 # <a name="disaster-recovery-and-device-failover-for-your-storsimple-virtual-array-via-azure-portal"></a>Herstel na noodgevallen en failover van apparaat voor virtuele StorSimple-array via Azure-portal
 
 ## <a name="overview"></a>Overzicht
 In dit artikel wordt het herstel na nood gevallen voor uw Microsoft Azure StorSimple virtuele matrix beschreven, inclusief de gedetailleerde stappen voor het uitvoeren van een failover naar een andere virtuele matrix. Met een failover kunt u uw gegevens van een *bron* apparaat in het Data Center naar een *doel* apparaat verplaatsen. Het doel apparaat bevindt zich mogelijk op dezelfde of een andere geografische locatie. De failover van het apparaat is voor het hele apparaat. Tijdens de failover wijzigt de Cloud gegevens voor het bron apparaat het eigendom van het doel apparaat.
 
-Dit artikel is alleen van toepassing op virtuele StorSimple-matrices. Als u een failover wilt uitvoeren voor een apparaat met een 8000-serie, gaat u naar [failover van apparaat en nood herstel van uw StorSimple-apparaat](storsimple-device-failover-disaster-recovery.md).
+Dit artikel is alleen van toepassing op virtuele StorSimple-matrices. Als u een failover wilt uitvoeren voor een apparaat met een 8000-serie, gaat u naar [failover van apparaat en nood herstel van uw StorSimple-apparaat](./storsimple-8000-device-failover-disaster-recovery.md).
 
 ## <a name="what-is-disaster-recovery-and-device-failover"></a>Wat is nood herstel en failover van het apparaat?
 
-In een scenario voor nood herstel (DR) functioneert het primaire apparaat niet meer. In dit scenario kunt u de Cloud gegevens die zijn gekoppeld aan het apparaat, verplaatsen naar een ander apparaat. U kunt het primaire apparaat als *bron* gebruiken en een ander apparaat als *doel*opgeven. Dit proces wordt de *failover*genoemd. Tijdens de failover worden alle volumes of de shares van het bron apparaat gewijzigd in eigendom en worden ze overgedragen naar het doel apparaat. Het is niet toegestaan om de gegevens te filteren.
+In een scenario voor nood herstel (DR) functioneert het primaire apparaat niet meer. In dit scenario kunt u de Cloud gegevens die zijn gekoppeld aan het apparaat, verplaatsen naar een ander apparaat. U kunt het primaire apparaat als *bron* gebruiken en een ander apparaat als *doel* opgeven. Dit proces wordt de *failover* genoemd. Tijdens de failover worden alle volumes of de shares van het bron apparaat gewijzigd in eigendom en worden ze overgedragen naar het doel apparaat. Het is niet toegestaan om de gegevens te filteren.
 
 DR wordt gemodelleerd als een volledig herstel van het apparaat met behulp van de op warmte toewijzing gebaseerde lagen en tracering. Een heatmap wordt gedefinieerd door een hitte waarde toe te wijzen aan de gegevens op basis van de lees-en schrijf patronen. Met deze heatmap worden vervolgens de laagste gegevens segmenten in de Cloud gelaagd en worden de hoge hitte (meest gebruikte) gegevens segmenten in de lokale laag bewaard. Tijdens een DR gebruikt StorSimple de heatmap om de gegevens uit de Cloud terug te zetten en te herstellen. Het apparaat haalt alle volumes/shares op in de laatste recente back-up (zoals intern bepaald) en voert een herstel uit van de back-up. De virtuele matrix is het hele DR-proces.
 
@@ -134,7 +134,7 @@ Voer de volgende stappen uit om het apparaat te herstellen naar een virtueel Sto
     
     1. Het veld Bron apparaat wordt automatisch ingevuld. Noteer de totale gegevens grootte voor het bron apparaat. De gegevens grootte moet kleiner zijn dan de beschik bare capaciteit op het doel apparaat. Bekijk de details die zijn gekoppeld aan het bron apparaat, zoals de apparaatnaam, de totale capaciteit en de namen van de shares waarvoor een failover is uitgevoerd.
 
-    2. Kies een **doel apparaat**in de vervolg keuzelijst met beschik bare apparaten. Alleen apparaten met voldoende capaciteit worden weer gegeven in de vervolg keuzelijst.
+    2. Kies een **doel apparaat** in de vervolg keuzelijst met beschik bare apparaten. Alleen apparaten met voldoende capaciteit worden weer gegeven in de vervolg keuzelijst.
 
     3. Controleer of **er een failover van de gegevens naar het doel apparaat in deze bewerking wordt uitgevoerd**. 
 
@@ -181,4 +181,3 @@ Als er StorSimple-apparaten zijn die zijn geregistreerd net voordat een nood gev
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over hoe u [uw virtuele StorSimple-matrix beheert met behulp van de lokale webgebruikersinterface](storsimple-ova-web-ui-admin.md).
-

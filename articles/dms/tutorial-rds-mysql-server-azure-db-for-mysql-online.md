@@ -12,16 +12,16 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 06/09/2020
-ms.openlocfilehash: f8948bdeb2f8b82fbabacdbbb73c7b43741c75df
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: b8d5c763b68a9f69add14ab8430c117e5705a515
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91938437"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955086"
 ---
 # <a name="tutorial-migrate-rds-mysql-to-azure-database-for-mysql-online-using-dms"></a>Zelfstudie: RDS MySQL online migreren naar Azure Database for MySQL met behulp van DMS
 
-U kunt Azure Database Migration Service gebruiken om databases met minimale downtime te migreren van een RDS MySQL-exemplaar naar [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/) terwijl de brondatabase online blijft tijdens de migratie. Met andere woorden, de migratie is mogelijk met minimale downtime van de toepassing. In deze zelfstudie migreert u de voorbeelddatabase **Werknemers** van een on-premises exemplaar van RDS MySQL naar Azure Database for MySQL met behulp van de online migratieactiviteit in Azure Database Migration Service.
+U kunt Azure Database Migration Service gebruiken om databases met minimale downtime te migreren van een RDS MySQL-exemplaar naar [Azure Database for MySQL](../mysql/index.yml) terwijl de brondatabase online blijft tijdens de migratie. Met andere woorden, de migratie is mogelijk met minimale downtime van de toepassing. In deze zelfstudie migreert u de voorbeelddatabase **Werknemers** van een on-premises exemplaar van RDS MySQL naar Azure Database for MySQL met behulp van de online migratieactiviteit in Azure Database Migration Service.
 
 In deze zelfstudie leert u het volgende:
 > [!div class="checklist"]
@@ -52,13 +52,13 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
     SELECT @@version;
     ```
 
-    Zie het artikel [Ondersteunde versies van Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/concepts-supported-versions) voor meer informatie.
+    Zie het artikel [Ondersteunde versies van Azure Database for MySQL](../mysql/concepts-supported-versions.md) voor meer informatie.
 
 * Download en installeer de [MySQL **-** voorbeelddatabase](https://dev.mysql.com/doc/employee/en/employees-installation.html) Werknemers.
-* Maak een exemplaar van [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal).
-* Maak een Microsoft Azure Virtual Network voor Azure Database Migration Service met behulp van het Azure Resource Manager-implementatiemodel. Dit geeft site-naar-site-verbinding met uw on-premises bronservers met behulp van [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) of [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Voor meer informatie over het maken van een virtueel netwerk raadpleegt u de [documentatie over virtuele netwerken](https://docs.microsoft.com/azure/virtual-network/) en dan met name de quickstart-artikelen met stapsgewijze informatie.
-* Zorg ervoor dat de regels voor netwerkbeveiligingsgroep van uw virtueel netwerk niet de volgende poorten voor inkomende communicatie naar Azure Database Migration Service blokkeren: 443, 53, 9354, 445 en 12000. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
-* Configureer uw [Windows Firewall](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access) (of uw Linux-firewall) voor toegang tot de database-engine. Sta poort 3306 toe voor connectiviteit voor de MySQL-server.
+* Maak een exemplaar van [Azure Database for MySQL](../mysql/quickstart-create-mysql-server-database-using-azure-portal.md).
+* Maak een Microsoft Azure Virtual Network voor Azure Database Migration Service met behulp van het Azure Resource Manager-implementatiemodel. Dit geeft site-naar-site-verbinding met uw on-premises bronservers met behulp van [ExpressRoute](../expressroute/expressroute-introduction.md) of [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md). Voor meer informatie over het maken van een virtueel netwerk raadpleegt u de [documentatie over virtuele netwerken](../virtual-network/index.yml) en dan met name de quickstart-artikelen met stapsgewijze informatie.
+* Zorg ervoor dat de regels voor netwerkbeveiligingsgroep van uw virtueel netwerk niet de volgende poorten voor inkomende communicatie naar Azure Database Migration Service blokkeren: 443, 53, 9354, 445 en 12000. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
+* Configureer uw [Windows Firewall](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access) (of uw Linux-firewall) voor toegang tot de database-engine. Sta poort 3306 toe voor connectiviteit voor de MySQL-server.
 
 > [!NOTE]
 > Azure Database for MySQL ondersteunt alleen InnoDB-tabellen. Raadpleeg het artikel [Tabellen van MyISAM naar InnoDB converteren](https://dev.mysql.com/doc/refman/5.7/en/converting-tables-to-innodb.html) om MyISAM-tabellen te converteren naar InnoDB.
@@ -129,7 +129,7 @@ call mysql.rds_set_configuration('binlog retention hours', 120);
 
 > [!NOTE]
 > Azure DMS biedt geen ondersteuning voor de referentiële actie CASCADE, waarmee u een overeenkomende rij in de onderliggende tabel automatisch kunt verwijderen of bijwerken wanneer een rij wordt verwijderd of bijgewerkt in de bovenliggende tabel. Zie de sectie Referential Actions (Referentiële acties) in het artikel [FOREIGN KEY Constraints](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html) (beperkingen voor refererende sleutels) voor meer informatie.
-> Voor Azure DMS moet u beperkingen voor refererende sleutels in de doeldatabaseserver weghalen tijdens het initieel laden van gegevens en kunt u geen referentiële acties gebruiken. Als uw werkbelasting afhankelijk is van het bijwerken van een gerelateerde onderliggende tabel via deze referentiële actie, raden we u aan om in plaats daarvan een [dump en herstel](https://docs.microsoft.com/azure/mysql/concepts-migrate-dump-restore)-bewerking uit te voeren. 
+> Voor Azure DMS moet u beperkingen voor refererende sleutels in de doeldatabaseserver weghalen tijdens het initieel laden van gegevens en kunt u geen referentiële acties gebruiken. Als uw werkbelasting afhankelijk is van het bijwerken van een gerelateerde onderliggende tabel via deze referentiële actie, raden we u aan om in plaats daarvan een [dump en herstel](../mysql/concepts-migrate-dump-restore.md)-bewerking uit te voeren. 
 
 5. Als u een triggers (invoegen of bijwerken) in de gegevens hebt, dwingt deze gegevensintegriteit in de doeldatabase af vóór de gerepliceerde gegevens uit de brondatabase. Het is raadzaam triggers in alle tabellen *in de doeldatabase* uit te schakelen tijdens de migratie, en de triggers dan weer in te schakelen zodra de migratie is voltooid.
 
@@ -174,7 +174,7 @@ call mysql.rds_set_configuration('binlog retention hours', 120);
 
     Het virtuele netwerk biedt Azure Database Migration Service toegang tot het bronexemplaar van MySQL en het doelexemplaar van Azure Database for MySQL.
 
-    Zie het artikel [Een virtueel netwerk maken met de Azure-portal](https://aka.ms/DMSVnet) voor meer informatie over het maken van een virtueel netwerk in de Azure-portal.
+    Zie het artikel [Een virtueel netwerk maken met de Azure-portal](../virtual-network/quick-create-portal.md) voor meer informatie over het maken van een virtueel netwerk in de Azure-portal.
 
 6. Selecteer een prijscategorie. Zorg dat u Premium selecteert voor deze onlinemigratie: Prijscategorie 4vCores.
 
@@ -271,6 +271,6 @@ Uw onlinemigratie van een on-premises exemplaar van MySQL naar Azure Database fo
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Raadpleeg het artikel [Wat is de Azure Database Migration Service?](https://docs.microsoft.com/azure/dms/dms-overview) voor informatie over de Azure Database Migration Service.
-* Raadpleeg het artikel [Wat is Azure Database for MySQL?](https://docs.microsoft.com/azure/mysql/overview) voor informatie over Azure Database for MySQL.
+* Raadpleeg het artikel [Wat is de Azure Database Migration Service?](./dms-overview.md) voor informatie over de Azure Database Migration Service.
+* Raadpleeg het artikel [Wat is Azure Database for MySQL?](../mysql/overview.md) voor informatie over Azure Database for MySQL.
 * Voor andere vragen stuurt u een e-mail naar de alias voor [vragen over Azure-databasemigraties](mailto:AskAzureDatabaseMigrations@service.microsoft.com).

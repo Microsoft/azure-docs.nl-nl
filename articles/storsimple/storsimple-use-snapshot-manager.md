@@ -15,12 +15,12 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.custom: ''
-ms.openlocfilehash: ead24b89dba889a4bb8f11d57eb687e7790aebfb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 35fa0fc134045585eebd21324352f9b4ff272e87
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90055908"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954236"
 ---
 # <a name="use-storsimple-snapshot-manager-user-interface-to-manage-backup-jobs-and-backup-catalog"></a>StorSimple Snapshot Manager gebruikers interface gebruiken voor het beheren van back-uptaken en een back-upcatalogus
 
@@ -34,7 +34,7 @@ Als u de gebruikers interface wilt weer geven, klikt u op het pictogram StorSimp
 
 Het console venster bevat vijf hoofd elementen. Klik op de juiste koppeling voor een volledige beschrijving van elk element.
 
-* [Menu balk](#menu-bar) 
+* [Menubalk](#menu-bar) 
 * [Werk balk](#tool-bar) 
 * [Deel venster bereik](#scope-pane) 
 * [Resultaten deel venster](#results-pane) 
@@ -46,10 +46,10 @@ Daarnaast ondersteunt de StorSimple-Snapshot Manager [toetsenbord navigatie en e
 De StorSimple-Snapshot Manager gebruikers interface ondersteunt de toegankelijkheids functies die worden geboden door het Windows-besturings systeem en de micro soft Management Console (MMC), evenals een aantal StorSimple Snapshot Manager – specifieke sneltoetsen. 
 
 * Ga naar sneltoetsen [voor Windows](https://support.microsoft.com/kb/126449)voor een beschrijving van de toegankelijkheids functies van Windows. 
-* Ga voor een beschrijving van de toegankelijkheids functies van MMC naar [Toegankelijkheid voor mmc 3,0](https://technet.microsoft.com/library/cc766075.aspx)
+* Ga voor een beschrijving van de toegankelijkheids functies van MMC naar [Toegankelijkheid voor mmc 3,0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766075(v=ws.11))
 * Ga naar [toetsenbord navigatie en snelkoppelingen](#keyboard-navigation-and-shortcuts)voor een beschrijving van de StorSimple Snapshot Manager toegankelijkheids functies.
 
-## <a name="menu-bar"></a>Menu balk
+## <a name="menu-bar"></a>Menubalk
 De menu balk boven aan het console venster bevat [bestanden](#file-menu), [acties](#action-menu), [weer gaven](#view-menu), [Favorieten](#favorites-menu), [Vensters](#window-menu)en [Help](#help-menu) -menu's.
 
 Klik op een item in de menu balk om een lijst met beschik bare opdrachten in het menu weer te geven. In het volgende voor beeld ziet u het menu **weer gave** dat is geselecteerd in de menu balk.
@@ -73,7 +73,7 @@ In de volgende tabel worden de items beschreven die worden weer gegeven in het m
 | Openen |Klik op **openen** om een bestaande console te openen. |
 | Opslaan |Klik op **Opslaan** om de huidige console op te slaan. |
 | Opslaan als |Klik op **Opslaan als** om een nieuw, gewijzigd exemplaar van de huidige console te maken. Gebruik de optie **Opslaan als** om een weer gave aan te passen en deze op te slaan zodat u deze later kunt ophalen. U kunt bijvoorbeeld StorSimple Snapshot Manager-modules maken die naar specifieke servers verwijzen. |
-| Module toevoegen/verwijderen |Klik op **module toevoegen/verwijderen** om modules toe te voegen of te verwijderen en knoop punten in het deel venster **bereik** te organiseren. Ga voor meer informatie naar modules [en uitbrei dingen toevoegen, verwijderen en indelen in MMC 3,0](https://technet.microsoft.com/library/cc722035.aspx). |
+| Module toevoegen/verwijderen |Klik op **module toevoegen/verwijderen** om modules toe te voegen of te verwijderen en knoop punten in het deel venster **bereik** te organiseren. Ga voor meer informatie naar modules [en uitbrei dingen toevoegen, verwijderen en indelen in MMC 3,0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722035(v=ws.11)). |
 | Opties |Klik op **Opties** om het console pictogram te wijzigen, geef de gebruikers toegangs modi en machtigingen op of verwijder console bestanden om de beschik bare schijf ruimte te verg Roten. |
 | Lijst met bestands paden |Klik op een pad in de genummerde lijst om een bestand opnieuw te openen dat u onlangs hebt geopend. |
 | Afsluiten |Klik op **Afsluiten** om het menu **bestand** te sluiten. |
@@ -103,20 +103,20 @@ De volgende tabel bevat een alfabetische lijst met StorSimple-Snapshot Manager a
 * De kolom **Beschrijving** bevat informatie over het gebruik van elke actie in het menu **actie** of in het deel venster acties en legt uit wat het doet.
 
 > [!NOTE]
-> Het deel venster **acties** en de **actie** menu's bevatten extra opties, zoals **weer gave**, **nieuw venster van hier**, **vernieuwen**, **lijst exporteren**en **Help**. Deze opties zijn beschikbaar als onderdeel van de MMC en zijn niet specifiek voor StorSimple Snapshot Manager. De tabel bevat beschrijvingen van deze opties.
+> Het deel venster **acties** en de **actie** menu's bevatten extra opties, zoals **weer gave**, **nieuw venster van hier**, **vernieuwen**, **lijst exporteren** en **Help**. Deze opties zijn beschikbaar als onderdeel van de MMC en zijn niet specifiek voor StorSimple Snapshot Manager. De tabel bevat beschrijvingen van deze opties.
 > 
 > 
 
 | Bewerking | Navigatie | Beschrijving |
 |:--- |:--- |:--- |
 | Verifiëren |Klik op het knoop punt **apparaten** en klik met de rechter muisknop op een apparaat in het **resultaten** venster. |Klik op **verifiëren** om het wacht woord in te voeren dat u voor het apparaat hebt geconfigureerd. |
-| Klonen |Vouw **back-upcatalogus**uit, vouw **Cloud momentopnamen**uit, klik op een gedateerde back-up en selecteer vervolgens een volume in het **resultaten** venster. |Klik op **klonen** om een kopie van een Cloud momentopname te maken en op te slaan op een locatie die u opgeeft. |
+| Klonen |Vouw **back-upcatalogus** uit, vouw **Cloud momentopnamen** uit, klik op een gedateerde back-up en selecteer vervolgens een volume in het **resultaten** venster. |Klik op **klonen** om een kopie van een Cloud momentopname te maken en op te slaan op een locatie die u opgeeft. |
 | Een apparaat configureren |Klik met de rechter muisknop op het knoop punt **apparaten** . |Klik op **een apparaat configureren** om één apparaat of meerdere apparaten te configureren om verbinding te maken met de Windows-host. |
-| Back-upbeleid maken |Voer een van de volgende handelingen uit:<ul><li>Klik met de rechter muisknop op **back-upbeleid**.</li><li>Klik of vouw **volume groepen**uit en klik met de rechter muisknop op een volume groep.</li><li>Klik of vouw **back-upcatalogus**uit en klik met de rechter muisknop op een volume groep.</li></ul> |Klik op **back-upbeleid maken** om een geplande back-up voor een volume groep te configureren. |
+| Back-upbeleid maken |Voer een van de volgende handelingen uit:<ul><li>Klik met de rechter muisknop op **back-upbeleid**.</li><li>Klik of vouw **volume groepen** uit en klik met de rechter muisknop op een volume groep.</li><li>Klik of vouw **back-upcatalogus** uit en klik met de rechter muisknop op een volume groep.</li></ul> |Klik op **back-upbeleid maken** om een geplande back-up voor een volume groep te configureren. |
 | Een volume groep maken |Voer een van de volgende handelingen uit:<ul><li>Klik op het knoop punt **volumes** en klik vervolgens met de rechter muisknop op een volume in het **resultaten** venster.</li><li>Klik met de rechter muisknop op het knoop punt **volume groepen** .</li></ul> |Klik op **volume groep maken** om volumes aan een volume groep toe te wijzen. |
 | Verwijderen |Klik op een knoop punt of resultaat (dit item wordt weer gegeven in veel **actie** menu's en in deel Vensters met  **acties** ). |Klik op **verwijderen** om het knoop punt of resultaat dat u hebt geselecteerd, te verwijderen. Wanneer het bevestigings venster wordt weer gegeven, bevestigt of annuleert u het verwijderen. |
 | Details |Klik op het knoop punt **apparaten** en klik vervolgens met de rechter muisknop op een apparaat in het **resultaten** venster. |Klik op **Details** om de configuratie gegevens voor een apparaat weer te geven. |
-| Bewerken |Klik op **back-upbeleid**en klik vervolgens met de rechter muisknop op een beleid in het **resultaten** venster. |Klik op **bewerken** om het back-upschema voor een volume groep te wijzigen. |
+| Bewerken |Klik op **back-upbeleid** en klik vervolgens met de rechter muisknop op een beleid in het **resultaten** venster. |Klik op **bewerken** om het back-upschema voor een volume groep te wijzigen. |
 | Lijst exporteren |Klik op een knoop punt of resultaat (dit item wordt weer gegeven in alle **actie** menu's en **acties** deel Vensters). |Klik op **lijst exporteren** om een lijst op te slaan in een bestand met door komma's gescheiden waarden (CSV). U kunt dit bestand vervolgens importeren in een spreadsheet toepassing voor analyse. |
 | Help |Klik op een knoop punt of resultaat. (Dit item wordt weer gegeven in de deel Vensters alle **actie** menu's en **acties** .) |Klik op **Help** om online-Help te openen in een afzonderlijk browser venster. |
 | Nieuw venster vanaf hier |Klik op een knoop punt of resultaat (dit item wordt weer gegeven in alle **actie** menu's en **acties** deel Vensters). |Klik **hier op nieuw venster** om een nieuw StorSimple-Snapshot Manager venster te openen. |
@@ -124,8 +124,8 @@ De volgende tabel bevat een alfabetische lijst met StorSimple-Snapshot Manager a
 | Apparaat vernieuwen |Klik op het knoop punt **apparaten** en klik met de rechter muisknop op een apparaat in het **resultaten** venster. |Klik op **apparaat vernieuwen** om een specifiek verbonden apparaat te synchroniseren met StorSimple Snapshot Manager. |
 | Apparaten vernieuwen |Klik met de rechter muisknop op het knoop punt **apparaten** . |Klik op **apparaten vernieuwen** om de lijst met verbonden apparaten te synchroniseren met StorSimple Snapshot Manager. |
 | Volumes opnieuw scannen |Klik met de rechter muisknop op het knoop punt **volumes** . |Klik op **volumes opnieuw scannen** om de lijst met volumes die wordt weer gegeven in het **resultaat** venster bij te werken. |
-| Herstellen |Vouw **back-upcatalogus**uit, vouw een volume groep uit, vouw **lokale moment opnamen** of **Cloud momentopnamen**uit en klik met de rechter muisknop op een back-up. |Klik op **herstellen** om de huidige volume groeps gegevens te vervangen door de gegevens van de geselecteerde back-up. |
-| Back-up maken |Voer een van de volgende handelingen uit:<ul><li>Vouw **volume groepen**uit en klik met de rechter muisknop op een volume groep.</li><li>Vouw **back-upcatalogus**uit en klik met de rechter muisknop op een volume groep.</li></ul> |Klik op **back-up maken** om onmiddellijk een back-uptaak te starten. |
+| Herstellen |Vouw **back-upcatalogus** uit, vouw een volume groep uit, vouw **lokale moment opnamen** of **Cloud momentopnamen** uit en klik met de rechter muisknop op een back-up. |Klik op **herstellen** om de huidige volume groeps gegevens te vervangen door de gegevens van de geselecteerde back-up. |
+| Back-up maken |Voer een van de volgende handelingen uit:<ul><li>Vouw **volume groepen** uit en klik met de rechter muisknop op een volume groep.</li><li>Vouw **back-upcatalogus** uit en klik met de rechter muisknop op een volume groep.</li></ul> |Klik op **back-up maken** om onmiddellijk een back-uptaak te starten. |
 | Invoer weer geven in-/uitschakelen |Klik met de rechter muisknop op het bovenste knoop punt in het deel venster **bereik** (het knoop punt **StorSimple Snapshot Manager** in de voor beelden). |Klik op **in-/uitschakelen wordt weer gegeven** om de volume groepen en de bijbehorende back-ups weer te geven of te verbergen die zijn geïmporteerd uit het StorSimple Apparaatbeheer service-dash board. |
 
 ### <a name="view-menu"></a>Menu Beeld
@@ -267,7 +267,7 @@ Volume groepen worden ook wel consistentie groepen genoemd. Elke volume groep is
 ### <a name="backup-policies-node"></a>Knoop punt voor back-upbeleid
 Een back-upbeleid is taak planningen voor lokale en Cloud momentopnamen. Gebruik het knoop punt **back-upbeleid** om op te geven hoe vaak een back-up wordt gemaakt en hoe lang een back-up moet worden bewaard. 
 
-* Klik op het pijl pictogram naast **back-upbeleid**om het knoop punt uit te vouwen.
+* Klik op het pijl pictogram naast **back-upbeleid** om het knoop punt uit te vouwen.
 * Als u een menu met beschik bare acties wilt zien, klikt u met de rechter muisknop op het knoop punt **back-upbeleid** of klikt u met de rechter muisknop op een van de knoop punten in de uitgebreide weer gave.
 * Klik op **back-upbeleid** in het deel venster **bereik** om een lijst met back-upbeleid weer te geven. De lijst met back-upbeleiden, samen met informatie over elk beleid, wordt weer gegeven in het deel venster met **resultaten** .
 
@@ -276,7 +276,7 @@ Een back-upbeleid is taak planningen voor lokale en Cloud momentopnamen. Gebruik
 
 
 ### <a name="backup-catalog-node"></a>Knoop punt voor back-up van catalogus
-Het **back-upcatalogus** knooppunt bevat lijsten met back-ups op site en off-site van Azure StorSimple-volumes. Dit knoop punt is ingedeeld op volume groep en elke volume groeps container bevat afzonderlijke structuren voor lokale moment opnamen (het knoop punt **lokale moment opnamen**s) en Cloud momentopnamen (het knoop punt voor **Cloud momentopnamen** ). Wanneer dit is uitgevouwen, worden in elke volume groeps container alle geslaagde back-ups weer gegeven die interactief of door een geconfigureerd beleid zijn gemaakt.
+Het **back-upcatalogus** knooppunt bevat lijsten met back-ups op site en off-site van Azure StorSimple-volumes. Dit knoop punt is ingedeeld op volume groep en elke volume groeps container bevat afzonderlijke structuren voor lokale moment opnamen (het knoop punt **lokale moment opnamen** s) en Cloud momentopnamen (het knoop punt voor **Cloud momentopnamen** ). Wanneer dit is uitgevouwen, worden in elke volume groeps container alle geslaagde back-ups weer gegeven die interactief of door een geconfigureerd beleid zijn gemaakt.
 
 * Als u het knoop punt wilt uitbreiden, klikt u op het pijl pictogram naast **back-upcatalogus**.
 * Als u een menu met beschik bare acties wilt weer geven, klikt u met de rechter muisknop op het knoop punt **back-upcatalogus** of klikt u met de rechter muisknop op een van de knoop punten in de uitgebreide weer gave
@@ -313,7 +313,7 @@ Als u het volgende voor beeld wilt weer geven, klikt u op het knoop punt **volum
 
 ![Resultaten deel venster](./media/storsimple-use-snapshot-manager/HCS_SSM_Results_pane.png) 
 
-U kunt de details configureren die worden weer gegeven in het **resultaten** venster: Klik met de rechter muisknop op een knoop punt in het deel venster **bereik** , klik op **weer geven**en klik vervolgens op **kolommen toevoegen/verwijderen**.
+U kunt de details configureren die worden weer gegeven in het **resultaten** venster: Klik met de rechter muisknop op een knoop punt in het deel venster **bereik** , klik op **weer geven** en klik vervolgens op **kolommen toevoegen/verwijderen**.
 
 ## <a name="actions-pane"></a>Acties deel venster
 Het deel venster **acties** is het rechterdeel venster in de Snapshot Manager StorSimple-gebruikers interface. Het bevat een menu met bewerkingen dat u kunt uitvoeren op het knoop punt, de weer gave of de gegevens die u selecteert in het deel venster **bereik** of in het deel venster met **resultaten** . Het deel venster **acties** bevat dezelfde opdrachten als de **actie** menu's die beschikbaar zijn voor items in het deel venster **bereik** en het **resultaten** deel venster. Zie de tabel in de sectie **actie** menu voor een beschrijving van elke actie.
@@ -323,7 +323,7 @@ Als u het volgende voor beeld wilt weer geven, vouwt u in het deel venster **ber
 
 ![Voor beeld van geplande taken in het deel venster acties](./media/storsimple-use-snapshot-manager/HCS_SSM_ActionsPane.png) 
 
-Als u meer opties wilt zien, vouwt u in het deel venster **bereik** het knoop punt **taken** uit, klikt u op **gepland**en klikt u vervolgens op een geplande taak in het **resultaten** venster. In het deel venster **acties** worden de beschik bare acties voor de geplande taak weer gegeven, zoals in het volgende voor beeld wordt weer gegeven.
+Als u meer opties wilt zien, vouwt u in het deel venster **bereik** het knoop punt **taken** uit, klikt u op **gepland** en klikt u vervolgens op een geplande taak in het **resultaten** venster. In het deel venster **acties** worden de beschik bare acties voor de geplande taak weer gegeven, zoals in het volgende voor beeld wordt weer gegeven.
 
 ![Voor beeld van taak acties in het deel venster acties](./media/storsimple-use-snapshot-manager/HCS_SSM_ActionsPane_Results.png)
 
@@ -340,7 +340,7 @@ In de volgende tabel worden de sleutels beschreven die u kunt gebruiken om te na
 | Navigatie sleutel | Bewerking |
 |:--- |:--- |
 | Pijl-omlaag |Gebruik de pijl-omlaag om verticaal naar het volgende item in een menu of deel venster te gaan. |
-| Enter |Druk op ENTER om een actie te volt ooien en ga vervolgens verder met de volgende stap. U kunt bijvoorbeeld op ENTER drukken om **volgende**te selecteren, op **OK**te klikken of te **maken**, en vervolgens naar de volgende stap in een wizard te gaan. |
+| Enter |Druk op ENTER om een actie te volt ooien en ga vervolgens verder met de volgende stap. U kunt bijvoorbeeld op ENTER drukken om **volgende** te selecteren, op **OK** te klikken of te **maken**, en vervolgens naar de volgende stap in een wizard te gaan. |
 | Esc |Druk op de ESC-toets om een menu te sluiten of om een pagina te annuleren en te sluiten. |
 | F1 |Druk op de F1-toets om een Help-onderwerp voor het huidige actieve venster weer te geven. |
 | F5 |Druk op de toets F5 om een knoop punt te vernieuwen. |
@@ -450,4 +450,3 @@ In de volgende tabellen worden de sneltoetsen voor elk knoop punt in het deel ve
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over het [gebruik van StorSimple Snapshot Manager voor het beheren van uw StorSimple-oplossing](storsimple-snapshot-manager-admin.md).
 * Meer informatie over het [gebruik van StorSimple Snapshot Manager om apparaten te verbinden en te beheren](storsimple-snapshot-manager-manage-devices.md).
-

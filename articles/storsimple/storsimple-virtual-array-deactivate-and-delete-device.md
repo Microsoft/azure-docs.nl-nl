@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2016
 ms.author: alkohli
-ms.openlocfilehash: c787df901fc33c2dcd2c8a901202c72ea6de45d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84fd1a2d3d0dc4ce6960469ea3212b8ca1d4d07c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85513602"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956769"
 ---
 # <a name="deactivate-and-delete-a-storsimple-virtual-array"></a>Een virtuele StorSimple-matrix deactiveren en verwijderen
 
@@ -30,7 +30,7 @@ Wanneer u een virtuele StorSimple-matrix deactiveert, verbreekt u de verbinding 
 * Een apparaat deactiveren 
 * Een gedeactiveerd apparaat verwijderen
 
-De informatie in dit artikel is alleen van toepassing op virtuele StorSimple-matrices. Ga voor meer informatie over de 8000-serie naar hoe u [een apparaat deactiveert of verwijdert](storsimple-deactivate-and-delete-device.md).
+De informatie in dit artikel is alleen van toepassing op virtuele StorSimple-matrices. Ga voor meer informatie over de 8000-serie naar hoe u [een apparaat deactiveert of verwijdert](./storsimple-8000-deactivate-and-delete-device.md).
 
 ## <a name="when-to-deactivate"></a>Wanneer deactiveren?
 
@@ -90,5 +90,4 @@ Voer de volgende stappen uit om het apparaat te verwijderen.
 
 * Ga voor meer informatie over het uitvoeren van een failover naar [failover en herstel na nood gevallen van uw virtuele StorSimple-matrix](storsimple-virtual-array-failover-dr.md).
 
-* Als u meer wilt weten over het gebruik van de StorSimple Apparaatbeheer-service, gaat u naar [de StorSimple Apparaatbeheer-service gebruiken om uw StorSimple virtuele matrix te beheren](storsimple-virtual-array-manager-service-administration.md). 
-
+* Als u meer wilt weten over het gebruik van de StorSimple Apparaatbeheer-service, gaat u naar [de StorSimple Apparaatbeheer-service gebruiken om uw StorSimple virtuele matrix te beheren](storsimple-virtual-array-manager-service-administration.md).

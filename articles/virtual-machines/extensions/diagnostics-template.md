@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: 8cde8fe7-977b-43d2-be74-ad46dc946058
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 05/31/2017
 ms.author: mimckitt
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 31f690277675650323763a7bc6872ad736f5776c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 181f226a4d7aa37ffd8c667db4736a96450e2be5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87837003"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94955953"
 ---
 # <a name="use-monitoring-and-diagnostics-with-a-windows-vm-and-azure-resource-manager-templates"></a>Bewaking en diagnose gebruiken met een Windows-VM en Azure Resource Manager sjablonen
 De uitbrei ding van de Azure Diagnostics biedt de bewakings-en diagnostische mogelijkheden van een Azure virtual machine op basis van Windows. U kunt deze mogelijkheden inschakelen op de virtuele machine door de uitbrei ding op te nemen als onderdeel van de Azure Resource Manager sjabloon. Zie [Azure Resource Manager sjablonen ontwerpen met VM-extensies](../windows/template-description.md#extensions) voor meer informatie over het opnemen van uitbrei dingen als onderdeel van een sjabloon voor een virtuele machine. In dit artikel wordt beschreven hoe u de Azure Diagnostics extensie kunt toevoegen aan een virtuele-machine sjabloon van Windows.  
@@ -79,7 +80,7 @@ De waarde van de eigenschap *name* kan worden gebruikt om te verwijzen naar de u
 
 De *typeHandlerVersion* geeft de versie van de extensie aan die u wilt gebruiken. Als u *autoUpgradeMinorVersion* secundaire versie instelt op **True** , zorgt u ervoor dat u de meest recente secundaire versie van de uitbrei ding krijgt die beschikbaar is. Het wordt nadrukkelijk aanbevolen om *autoUpgradeMinorVersion* altijd in te stellen op **True** , zodat u altijd de meest recente beschik bare diagnostische uitbrei ding kunt gebruiken met alle nieuwe functies en oplossingen voor fouten. 
 
-Het element *Settings* bevat configuratie-eigenschappen voor de uitbrei ding die kan worden ingesteld en gelezen via de extensie (ook wel open bare configuratie genoemd). De eigenschap *xmlcfg* bevat op XML gebaseerde configuratie voor de diagnostische logboeken, prestatie meter items etc. deze worden verzameld door de Diagnostics-agent. Zie [Diagnostische configuratie schema](../../azure-monitor/platform/diagnostics-extension-schema-windows.md) voor meer informatie over het XML-schema zelf. Een veelvoorkomende procedure is om de feitelijke XML-configuratie op te slaan als een variabele in de Azure Resource Manager sjabloon en deze vervolgens samen te voegen en met base64 te coderen om de waarde voor *xmlcfg*in te stellen. Zie de sectie over [Diagnostische configuratie variabelen](#diagnostics-configuration-variables) voor meer informatie over het opslaan van XML in variabelen. De eigenschap *Storage account* geeft de naam van het opslag account aan waarnaar diagnostische gegevens worden overgebracht. 
+Het element *Settings* bevat configuratie-eigenschappen voor de uitbrei ding die kan worden ingesteld en gelezen via de extensie (ook wel open bare configuratie genoemd). De eigenschap *xmlcfg* bevat op XML gebaseerde configuratie voor de diagnostische logboeken, prestatie meter items etc. deze worden verzameld door de Diagnostics-agent. Zie [Diagnostische configuratie schema](../../azure-monitor/platform/diagnostics-extension-schema-windows.md) voor meer informatie over het XML-schema zelf. Een veelvoorkomende procedure is om de feitelijke XML-configuratie op te slaan als een variabele in de Azure Resource Manager sjabloon en deze vervolgens samen te voegen en met base64 te coderen om de waarde voor *xmlcfg* in te stellen. Zie de sectie over [Diagnostische configuratie variabelen](#diagnostics-configuration-variables) voor meer informatie over het opslaan van XML in variabelen. De eigenschap *Storage account* geeft de naam van het opslag account aan waarnaar diagnostische gegevens worden overgebracht. 
 
 De eigenschappen in *protectedSettings* (ook wel particuliere configuratie genoemd) kunnen worden ingesteld, maar kunnen niet worden gelezen nadat ze zijn ingesteld. Het alleen-schrijven van *protectedSettings* maakt het handig voor het opslaan van geheimen zoals de sleutel van het opslag account waar de diagnostische gegevens worden geschreven.    
 

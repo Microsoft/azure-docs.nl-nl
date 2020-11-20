@@ -5,16 +5,17 @@ services: virtual-machines-linux
 author: axayjo
 manager: gwallace
 ms.service: virtual-machines-linux
+ms.subservice: extensions
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: akjosh
-ms.openlocfilehash: 0ae6366acf270d762b1c15563bfec1b2eb2a1b8d
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: ffbafb76fd2c6dd06a88bfd79746557889039cd6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421070"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956021"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>De diagnostische Linux-extensie gebruiken voor het bewaken van metrische gegevens en logboeken
 
@@ -205,7 +206,7 @@ De meest recente versie van de uitbrei ding is **3,0**. **Oude versies (2. x) zi
 >
 > Als u wilt migreren van 2. x naar deze nieuwe versie van de uitbrei ding, moet u de oude extensie verwijderen (onder de naam van de oude uitgever) en vervolgens versie 3 van de uitbrei ding installeren.
 
-Vereisten
+Aanbevelingen:
 
 * Installeer de uitbrei ding met automatische secundaire versie-upgrade ingeschakeld.
   * Geef op de virtuele machines van het klassieke implementatie model ' 3. * ' op als de versie als u de extensie installeert via Azure XPLAT CLI of Power shell.
@@ -402,7 +403,7 @@ Voor beelden van de metrische gegevens die zijn opgegeven in de sectie Performan
 
 Deze optionele sectie bepaalt het verzamelen van metrische gegevens. Onbewerkte voor beelden worden geaggregeerd voor elke [scheduledTransferPeriod](#metrics) om deze waarden te produceren:
 
-* gemiddeld
+* mean
 * minimum
 * maximum
 * laatst verzamelde waarde
@@ -604,7 +605,7 @@ TransfersPerSecond | Lees-of schrijf bewerkingen per seconde
 
 Geaggregeerde waarden voor alle bestands systemen kunnen worden verkregen door in te stellen `"condition": "IsAggregate=True"` . Waarden voor een specifiek gekoppeld bestands systeem, zoals '/mnt ', kunnen worden verkregen door in te stellen `"condition": 'Name="/mnt"'` . 
 
-**Opmerking** : als u de Azure-Portal gebruikt in plaats van JSON, is het veld voor de juiste voorwaarde waarde name = '/mnt '
+**Opmerking**: als u de Azure-Portal gebruikt in plaats van JSON, is het veld voor de juiste voorwaarde waarde name = '/mnt '
 
 ### <a name="builtin-metrics-for-the-disk-class"></a>ingebouwde metrische gegevens voor de klasse schijf
 
@@ -812,7 +813,7 @@ Gegevens die worden verzonden naar JsonBlob-sinks, worden opgeslagen in blobs in
 Daarnaast kunt u deze hulpprogram ma's voor de gebruikers interface gebruiken om toegang te krijgen tot de gegevens in Azure Storage:
 
 * Visual Studio Server Explorer.
-* [Scherm opname toont containers en tabellen in azure Storage Explorer.](https://azurestorageexplorer.codeplex.com/ "Azure Opslagverkenner").
+* [Scherm opname toont containers en tabellen in azure Storage Explorer.](https://azurestorageexplorer.codeplex.com/ "Azure Storage Explorer").
 
 Deze moment opname van een Microsoft Azure Storage Explorer-sessie toont de gegenereerde Azure Storage tabellen en containers van een correct geconfigureerde LAD 3,0-extensie op een test-VM. De installatie kopie komt niet exact overeen met de voor [beeld-LAD 3,0-configuratie](#an-example-lad-30-configuration).
 

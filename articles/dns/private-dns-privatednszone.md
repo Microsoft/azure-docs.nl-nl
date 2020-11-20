@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 9/24/2019
 ms.author: rohink
-ms.openlocfilehash: a951bc07c4a8ed42b1c116332d13674656bbaafd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9eaa320e79f1d595303c6d9fe1399df12cb6c52b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75646792"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94954406"
 ---
 # <a name="what-is-a-private-azure-dns-zone"></a>Wat is een privé Azure DNS zone
 
@@ -25,7 +25,7 @@ U kunt ook de functie voor [automatische registratie](./private-dns-autoregistra
 
 ## <a name="limits"></a>Limieten
 
-Zie [Azure DNS limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-dns-limits) voor meer informatie over het aantal privé-DNS-zones dat u kunt maken in een abonnement en hoeveel record sets worden ondersteund in een privé-DNS-zone
+Zie [Azure DNS limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-dns-limits) voor meer informatie over het aantal privé-DNS-zones dat u kunt maken in een abonnement en hoeveel record sets worden ondersteund in een privé-DNS-zone
 
 ## <a name="restrictions"></a>Beperkingen
 

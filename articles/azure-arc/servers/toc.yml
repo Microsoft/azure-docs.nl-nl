@@ -57,6 +57,12 @@
               href: manage-vm-extensions-template.md
         - name: Agent beheren
           href: manage-agent.md
+    - name: Scenario's
+      items:
+        - name: Onboarding naar Azure Sentinel
+          href: scenario-onboard-azure-sentinel.md
+        - name: Onboarding naar Azure Security Center
+          href: /security-center/quickstart-onboard-machines.md
     - name: Problemen oplossen
       items:
         - name: Verbindingsproblemen met de agent

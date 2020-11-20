@@ -733,8 +733,10 @@
           items:
             - name: Migreren van Data Lake Storage Gen1
               href: data-lake-storage-migrate-gen1-to-gen2.md
-            - name: Een on-premises HDFS-opslag migreren
+            - name: Een HDFS-store offline migreren
               href: data-lake-storage-migrate-on-premises-HDFS-cluster.md
+            - name: Een HDFS-store online migreren
+              href: migrate-gen2-wandisco-live-data-platform.md
         - name: Beheren
           items:
             - name: .NET

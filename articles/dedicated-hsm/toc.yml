@@ -10,6 +10,10 @@
       href: tutorial-deploy-hsm-cli.md
     - name: HSM's implementeren in een bestaand virtueel netwerk met behulp van PowerShell
       href: tutorial-deploy-hsm-powershell.md
+- name: Snelstartgidsen
+  items:
+    - name: Een Azure Dedicated HSM maken met Azure PowerShell
+      href: quickstart-create-hsm-powershell.md
 - name: Concepten
   items:
     - name: Hoge beschikbaarheid

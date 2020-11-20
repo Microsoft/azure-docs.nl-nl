@@ -184,9 +184,15 @@
               href: manage/pay-by-invoice.md
             - name: Extra abonnementen maken
               href: manage/create-subscription.md
-            - name: Abonnement programmatisch maken met de nieuwste API
-              href: manage/programmatically-create-subscription.md
-            - name: Abonnement programmatisch maken met de preview-API
+            - name: Programmatisch EA-abonnementen maken met de nieuwste API
+              href: manage/programmatically-create-subscription-enterprise-agreement.md
+            - name: Programmatisch MCA-abonnementen maken met de nieuwste API
+              href: manage/programmatically-create-subscription-microsoft-customer-agreement.md
+            - name: Programmatisch MPA-abonnementen maken met de nieuwste API
+              href: manage/programmatically-create-subscription-microsoft-partner-agreement.md
+            - name: Programmatisch abonnementen maken met een ARM-sjabloon
+              href: manage/create-subscription-template.md
+            - name: Abonnement programmatisch maken met de oude preview-API
               href: manage/programmatically-create-subscription-preview.md
             - name: Toegang verlenen om EA-abonnementen te maken
               href: manage/grant-access-to-create-subscription.md

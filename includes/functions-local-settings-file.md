@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 04/14/2019
 ms.author: glenga
-ms.openlocfilehash: aae89e1c6f8db2fb657ac2a43c4bce0396ab3ddd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca8d8edd334d89e03624793a35c49971ba8161ec
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91376570"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94884621"
 ---
 ## <a name="local-settings-file"></a>Lokale instellingsbestand
 
@@ -52,7 +52,7 @@ De volgende toepassingsinstellingen kunnen worden opgenomen in de matrix **`Valu
 
 | Instelling | Waarden | Beschrijving |
 |-----|-----|-----|
-|**`AzureWebJobsStorage`**| Verbindingsreeks van opslagaccount of<br/>`UseDevelopmentStorage=true`| Bevat de verbindingsreeks voor een Azure-opslagaccount. Vereist wanneer andere triggers dan HTTP worden gebruikt. Raadpleeg de referentie [`AzureWebJobsStorage`] voor meer informatie.<br/>Wanneer u de [Azure-opslagemulator](../articles/storage/common/storage-use-emulator.md) lokaal hebt geïnstalleerd en u [`AzureWebJobsStorage`] hebt ingesteld op `UseDevelopmentStorage=true`, gebruikt Core Tools de emulator. De emulator is nuttig tijdens ontwikkeling, maar u moet testen met een echte opslagverbinding voor de implementatie.| 
+|**`AzureWebJobsStorage`**| Verbindingsreeks van opslagaccount of<br/>`UseDevelopmentStorage=true`| Bevat de verbindingsreeks voor een Azure-opslagaccount. Vereist wanneer andere triggers dan HTTP worden gebruikt. Raadpleeg de referentie [`AzureWebJobsStorage`] voor meer informatie.<br/>Wanneer u de [Azure Storage-emulator](../articles/storage/common/storage-use-emulator.md) lokaal hebt geïnstalleerd en u [`AzureWebJobsStorage`] hebt ingesteld op `UseDevelopmentStorage=true`, gebruikt Core Tools de emulator. De emulator is nuttig tijdens ontwikkeling, maar u moet testen met een echte opslagverbinding voor de implementatie.| 
 |**`AzureWebJobs.<FUNCTION_NAME>.Disabled`**| `true`\|`false` | Als u een functie wilt uitschakelen wanneer u lokaal iets uitvoert, voegt u `"AzureWebJobs.<FUNCTION_NAME>.Disabled": "true"` toe aan de verzameling, waar `<FUNCTION_NAME>` de naam van de functie is. Raadpleeg voor meer informatie [Functies uitschakelen in Azure Functions](../articles/azure-functions/disable-function.md#localsettingsjson) |
 |**`FUNCTIONS_WORKER_RUNTIME`** | `dotnet`<br/>`node`<br/>`java`<br/>`powershell`<br/>`python`| Geeft de doeltaal van de Functions-runtime aan. Vereist voor versie 2.x en hoger van de Functions-runtime. Deze instelling wordt gegenereerd voor uw project door Core Tools. Raadpleeg de referentie [`FUNCTIONS_WORKER_RUNTIME`](../articles/azure-functions/functions-app-settings.md#functions_worker_runtime) voor meer informatie.|
 | **`FUNCTIONS_WORKER_RUNTIME_VERSION`** | `~7` |Geeft aan dat PowerShell 7 moet worden gebruikt bij lokaal uitvoeren. Zo niet, dan wordt PowerShell Core 6 gebruikt. Deze instelling wordt alleen gebruikt bij lokaal uitvoeren. Wanneer u in Azure uitvoert, wordt de PowerShell-runtimeversie bepaald door de siteconfiguratie-instelling `powerShellVersion`, die [in de portal kan worden ingesteld](../articles/azure-functions/functions-reference-powershell.md#changing-the-powershell-version). | 

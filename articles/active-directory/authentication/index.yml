@@ -12,12 +12,12 @@ metadata:
   ms.author: joflore
   ms.date: 02/11/2020
   ms.collection: M365-identity-device-management
-  ms.openlocfilehash: 17775be39e534d0825596973452dabc13054ee8d
-  ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+  ms.openlocfilehash: d484600da9be9d84b6af7ad31754ea86bf6b6873
+  ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/13/2020
-  ms.locfileid: "91968222"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94838048"
 landingContent:
 - title: Info over verificatie
   linkLists:
@@ -51,21 +51,21 @@ landingContent:
       url: howto-sspr-deployment.md
     - text: Wachtwoordherstel inschakelen vanuit het Windows-aanmeldingsscherm
       url: howto-sspr-windows.md
-- title: Azure Multi-Factor Authentication inschakelen
+- title: Azure AD Multi-Factor Authentication inschakelen
   linkLists:
   - linkListType: concept
     links:
-    - text: Hoe Multi-Factor Authentication werkt
+    - text: Hoe Azure AD Multi-Factor Authentication werkt
       url: concept-mfa-howitworks.md
   - linkListType: tutorial
     links:
-    - text: Azure Multi-Factor Authentication inschakelen
+    - text: Azure AD Multi-Factor Authentication inschakelen
       url: tutorial-enable-azure-mfa.md
-    - text: Op risicogebeurtenissen gebaseerde Azure Multi-Factor Authentication inschakelen
+    - text: Op risicogebeurtenissen gebaseerde Azure AD Multi-Factor Authentication inschakelen
       url: tutorial-risk-based-sspr-mfa.md
   - linkListType: deploy
     links:
-    - text: Implementatiehandleiding voor Azure Multi-Factor Authentication
+    - text: Implementatiehandleiding voor Azure AD Multi-Factor Authentication
       url: howto-mfa-getstarted.md
     - text: NPS-extensie gebruiken voor de integratie van on-premises toepassingen
       url: howto-mfa-nps-extension.md

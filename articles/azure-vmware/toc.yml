@@ -42,7 +42,7 @@
       href: concepts-storage.md
     - name: Toegang en identiteit voor privéclouds
       href: concepts-identity.md
-    - name: Op rollen gebaseerd toegangsbeheer
+    - name: Op rollen gebaseerd toegangsbeheer van vSphere
       href: concepts-role-based-access-control.md
     - name: Privéclouds bewaken en herstellen
       href: concepts-monitor-repair-private-cloud.md

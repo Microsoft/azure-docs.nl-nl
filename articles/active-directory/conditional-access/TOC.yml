@@ -10,7 +10,7 @@
       href: require-tou.md
 - name: Zelfstudies
   items:
-    - name: Azure Multi-Factor Authentication vereisen
+    - name: Azure AD Multi-Factor Authentication vereisen
       href: ../authentication/tutorial-enable-azure-mfa.md?toc=/azure/active-directory/conditional-access/toc.json&bc=/azure/active-directory/conditional-access/breadcrumb/toc.json
 - name: Concepten
   expanded: false

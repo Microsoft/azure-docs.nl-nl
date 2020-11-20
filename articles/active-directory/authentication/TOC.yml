@@ -9,7 +9,7 @@
   items:
     - name: Selfservice voor wachtwoordherstel inschakelen
       href: tutorial-enable-sspr.md
-    - name: Azure Multi-Factor Authentication inschakelen
+    - name: Azure AD Multi-Factor Authentication inschakelen
       href: tutorial-enable-azure-mfa.md
     - name: Write-back van wachtwoord naar on-premises inschakelen
       href: tutorial-enable-sspr-writeback.md
@@ -80,7 +80,7 @@
           href: howto-sspr-authenticationdata.md
         - name: Self-service voor wachtwoordherstel voor Windows-clients
           href: howto-sspr-windows.md
-    - name: Azure Multi-Factor Authentication
+    - name: Azure AD Multi-Factor Authentication
       items:
         - name: Implementatiehandleiding
           href: howto-mfa-getstarted.md
@@ -108,7 +108,7 @@
               href: howto-mfa-nps-extension.md
             - name: Geavanceerde configuratie voor NPS-extensie
               href: howto-mfa-nps-extension-advanced.md
-            - name: Azure VPN en Azure MFA
+            - name: Azure VPN en Azure AD MFA
               href: ../../vpn-gateway/vpn-gateway-radius-mfa-nsp.md
             - name: Extern bureaublad-gateway
               href: howto-mfa-nps-extension-rdg.md

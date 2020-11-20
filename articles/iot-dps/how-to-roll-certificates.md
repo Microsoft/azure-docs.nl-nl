@@ -7,12 +7,12 @@ ms.date: 08/06/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: fbcb3656bc824e2fd352f92314652bd04167b4d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf8b1e04e11dee4e636826430838a467fe034e3f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531403"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951125"
 ---
 # <a name="how-to-roll-x509-device-certificates"></a>Hoe kan ik X. 509-apparaat certificaten
 
@@ -51,7 +51,7 @@ Wanneer een apparaat voor het eerst wordt ingericht door automatische inrichting
 
 Zodra een nieuw blad certificaat naar het apparaat is gedistribueerd, kan het geen verbinding meer maken met de IoT-hub, omdat het een nieuw certificaat gebruikt om verbinding te maken. De IoT-hub herkent het apparaat alleen met het oude certificaat. Het resultaat van de verbindings poging van het apparaat is een ' niet-geautoriseerde ' verbindings fout. Om deze fout op te lossen, moet u de inschrijvings vermelding voor het apparaat bijwerken naar account voor het nieuwe blad certificaat van het apparaat. Vervolgens kan de inrichtings service de gegevens van het IoT Hub Device-REGI ster zo nodig bijwerken wanneer het apparaat opnieuw wordt ingericht. 
 
-Een mogelijke uitzonde ring op deze verbindings fout is een scenario waarin u een [registratie groep](concepts-service.md#enrollment-group) voor uw apparaat hebt gemaakt in de inrichtings service. Als u in dit geval de basis-of tussenliggende certificaten in de certificaat keten van het apparaat niet rolt, wordt het apparaat herkend als het nieuwe certificaat deel uitmaakt van de vertrouwens keten die in de registratie groep is gedefinieerd. Als dit scenario zich voordoet als een reactie op een inbreuk op de beveiliging, moet u ten minste de specifieke certificaat certificaten in de groep die worden beschouwd als geschonden, niet toestaan. Zie [specifieke apparaten in een registratie groep weigeren](https://docs.microsoft.com/azure/iot-dps/how-to-revoke-device-access-portal#disallow-specific-devices-in-an-enrollment-group)voor meer informatie.
+Een mogelijke uitzonde ring op deze verbindings fout is een scenario waarin u een [registratie groep](concepts-service.md#enrollment-group) voor uw apparaat hebt gemaakt in de inrichtings service. Als u in dit geval de basis-of tussenliggende certificaten in de certificaat keten van het apparaat niet rolt, wordt het apparaat herkend als het nieuwe certificaat deel uitmaakt van de vertrouwens keten die in de registratie groep is gedefinieerd. Als dit scenario zich voordoet als een reactie op een inbreuk op de beveiliging, moet u ten minste de specifieke certificaat certificaten in de groep die worden beschouwd als geschonden, niet toestaan. Zie [specifieke apparaten in een registratie groep weigeren](./how-to-revoke-device-access-portal.md#disallow-specific-devices-in-an-enrollment-group)voor meer informatie.
 
 Het bijwerken van inschrijvings vermeldingen voor gerollte certificaten wordt uitgevoerd op de pagina **inschrijvingen beheren** . Voer de volgende stappen uit om deze pagina te openen:
 
@@ -69,7 +69,7 @@ Hoe u de registratie vermelding bijwerkt, is afhankelijk van het feit of u afzon
 
 Als u certificaten doorgeeft als reactie op een schending van de beveiliging, moet u de volgende aanpak gebruiken waarmee het huidige certificaat onmiddellijk wordt verwijderd:
 
-1. Klik op **afzonderlijke inschrijvingen**en klik op de vermelding registratie-id in de lijst. 
+1. Klik op **afzonderlijke inschrijvingen** en klik op de vermelding registratie-id in de lijst. 
 
 2. Klik op de knop **Huidig certificaat verwijderen** en klik vervolgens op het mappictogram om het nieuwe certificaat te selecteren dat u voor de inschrijvings vermelding wilt uploaden. Klik op **Opslaan** wanneer u klaar bent.
 
@@ -92,7 +92,7 @@ Als u certificaten laat verlopen voor het afhandelen van certificaat verloopt, m
 Later wanneer het secundaire certificaat bijna is verlopen en moet worden gedistribueerd, kunt u met de primaire configuratie draaien. Als u de primaire en secundaire certificaten op deze manier draait, vermindert u de downtime voor apparaten die worden ingericht.
 
 
-1. Klik op **afzonderlijke inschrijvingen**en klik op de vermelding registratie-id in de lijst. 
+1. Klik op **afzonderlijke inschrijvingen** en klik op de vermelding registratie-id in de lijst. 
 
 2. Klik op **secundair certificaat** en klik vervolgens op het mappictogram om het nieuwe certificaat te selecteren dat u voor de inschrijvings vermelding wilt uploaden. Klik op **Opslaan**.
 
@@ -108,7 +108,7 @@ Als u een groeps registratie wilt bijwerken als reactie op een schending van de 
 
 1. Klik op het tabblad **certificaten** voor uw Device Provisioning service-exemplaar.
 
-2. Klik op het aangetaste certificaat in de lijst en klik vervolgens op de knop **verwijderen** . Bevestig het verwijderen door de naam van het certificaat in te voeren en op **OK**te klikken. Herhaal dit proces voor alle aangetaste certificaten.
+2. Klik op het aangetaste certificaat in de lijst en klik vervolgens op de knop **verwijderen** . Bevestig het verwijderen door de naam van het certificaat in te voeren en op **OK** te klikken. Herhaal dit proces voor alle aangetaste certificaten.
 
     ![Basis-CA-certificaat verwijderen](./media/how-to-roll-certificates/delete-root-cert.png)
 
@@ -116,7 +116,7 @@ Als u een groeps registratie wilt bijwerken als reactie op een schending van de 
 
 4. Klik op het tabblad **inschrijvingen beheren** voor uw Device Provisioning service-exemplaar en klik op de lijst **registratie groepen** . Klik op de naam van de registratie groep in de lijst.
 
-5. Klik op **CA-certificaat**en selecteer uw nieuwe basis-CA-certificaat. Klik vervolgens op **Opslaan**. 
+5. Klik op **CA-certificaat** en selecteer uw nieuwe basis-CA-certificaat. Klik vervolgens op **Opslaan**. 
 
     ![Het nieuwe basis-CA-certificaat voor een aangetast certificaat selecteren](./media/how-to-roll-certificates/select-new-root-cert.png)
 
@@ -132,9 +132,9 @@ Als u een groeps registratie wilt bijwerken als reactie op een schending van de 
 
 #### <a name="update-compromised-intermediate-certificates"></a>Veraangetaste tussenliggende certificaten bijwerken
 
-1. Klik op **registratie groepen**en klik vervolgens op de groeps naam in de lijst. 
+1. Klik op **registratie groepen** en klik vervolgens op de groeps naam in de lijst. 
 
-2. Klik op **tussenliggend certificaat**en **Verwijder het huidige certificaat**. Klik op het mappictogram om naar het nieuwe tussenliggende certificaat te navigeren dat voor de registratie groep moet worden geüpload. Klik op **Opslaan** wanneer u klaar bent. Deze stappen moeten worden uitgevoerd voor het primaire en het secundaire certificaat als beide worden aangetast.
+2. Klik op **tussenliggend certificaat** en **Verwijder het huidige certificaat**. Klik op het mappictogram om naar het nieuwe tussenliggende certificaat te navigeren dat voor de registratie groep moet worden geüpload. Klik op **Opslaan** wanneer u klaar bent. Deze stappen moeten worden uitgevoerd voor het primaire en het secundaire certificaat als beide worden aangetast.
 
     Dit nieuwe tussenliggende certificaat moet worden ondertekend door een geverifieerd basis-CA-certificaat dat al is toegevoegd aan de inrichtings service. Zie [X. 509-certificaten](concepts-x509-attestation.md#x509-certificates)voor meer informatie.
 
@@ -162,11 +162,11 @@ Later wanneer het secundaire certificaat bijna is verlopen en moet worden gedist
 
 2. Klik op het tabblad **inschrijvingen beheren** voor uw Device Provisioning service-exemplaar en klik op de lijst **registratie groepen** . Klik op de naam van de registratie groep in de lijst.
 
-3. Klik op **CA-certificaat**en selecteer uw nieuwe basis-CA-certificaat onder de configuratie van het **secundaire certificaat** . Klik vervolgens op **Opslaan**. 
+3. Klik op **CA-certificaat** en selecteer uw nieuwe basis-CA-certificaat onder de configuratie van het **secundaire certificaat** . Klik vervolgens op **Opslaan**. 
 
     ![Het nieuwe basis-CA-certificaat voor verloop selecteren](./media/how-to-roll-certificates/select-new-root-secondary-cert.png)
 
-4. Later wanneer het primaire certificaat is verlopen, klikt u op het tabblad **certificaten** voor uw Device Provisioning service-exemplaar. Klik op het verlopen certificaat in de lijst en klik vervolgens op de knop **verwijderen** . Bevestig het verwijderen door de naam van het certificaat in te voeren en op **OK**te klikken.
+4. Later wanneer het primaire certificaat is verlopen, klikt u op het tabblad **certificaten** voor uw Device Provisioning service-exemplaar. Klik op het verlopen certificaat in de lijst en klik vervolgens op de knop **verwijderen** . Bevestig het verwijderen door de naam van het certificaat in te voeren en op **OK** te klikken.
 
     ![Basis-CA-certificaat verwijderen](./media/how-to-roll-certificates/delete-root-cert.png)
 
@@ -175,7 +175,7 @@ Later wanneer het secundaire certificaat bijna is verlopen en moet worden gedist
 #### <a name="update-expiring-intermediate-certificates"></a>Verlopen tussenliggende certificaten bijwerken
 
 
-1. Klik op **registratie groepen**en klik op de groeps naam in de lijst. 
+1. Klik op **registratie groepen** en klik op de groeps naam in de lijst. 
 
 2. Klik op **secundair certificaat** en klik vervolgens op het mappictogram om het nieuwe certificaat te selecteren dat u voor de inschrijvings vermelding wilt uploaden. Klik op **Opslaan**.
 

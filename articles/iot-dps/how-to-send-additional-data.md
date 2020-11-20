@@ -7,21 +7,21 @@ ms.date: 02/11/2020
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: de6bb3fe0879a69467283e93a04a355876a02cba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d94bc2fde63090d66da7e98cc239386d958e6bb2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80246684"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950961"
 ---
 # <a name="how-to-transfer-a-payload-between-device-and-dps"></a>Een Payload tussen apparaat en DPS overdragen
 Soms heeft DPS meer gegevens nodig van apparaten om ze goed in te richten op de juiste IoT Hub en dat de gegevens moeten worden verstrekt door het apparaat. Omgekeerd kan DPS gegevens naar het apparaat retour neren om logica aan de client zijde te vergemakkelijken. 
 
 ## <a name="when-to-use-it"></a>Wanneer te gebruiken
-Deze functie kan worden gebruikt als een uitbrei ding voor [aangepaste toewijzing](https://docs.microsoft.com/azure/iot-dps/how-to-use-custom-allocation-policies). U wilt bijvoorbeeld uw apparaten toewijzen op basis van het model apparaat zonder menselijke tussen komst. In dit geval gebruikt u [aangepaste toewijzing](https://docs.microsoft.com/azure/iot-dps/how-to-use-custom-allocation-policies). U kunt het apparaat zo configureren dat de model gegevens worden gerapporteerd als onderdeel van de registratie van het [apparaat](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice). De nettolading van het apparaat wordt door DPS doorgestuurd naar de aangepaste toewijzings-webhook. En uw functie kan bepalen welke IoT Hub dit apparaat gaat gebruiken wanneer het apparaat-model informatie ontvangt. En als de webhook sommige gegevens naar het apparaat wil retour neren, worden de gegevens weer gegeven als een teken reeks in het webhook-antwoord.  
+Deze functie kan worden gebruikt als een uitbrei ding voor [aangepaste toewijzing](./how-to-use-custom-allocation-policies.md). U wilt bijvoorbeeld uw apparaten toewijzen op basis van het model apparaat zonder menselijke tussen komst. In dit geval gebruikt u [aangepaste toewijzing](./how-to-use-custom-allocation-policies.md). U kunt het apparaat zo configureren dat de model gegevens worden gerapporteerd als onderdeel van de registratie van het [apparaat](/rest/api/iot-dps/runtimeregistration/registerdevice). De nettolading van het apparaat wordt door DPS doorgestuurd naar de aangepaste toewijzings-webhook. En uw functie kan bepalen welke IoT Hub dit apparaat gaat gebruiken wanneer het apparaat-model informatie ontvangt. En als de webhook sommige gegevens naar het apparaat wil retour neren, worden de gegevens weer gegeven als een teken reeks in het webhook-antwoord.  
 
 ## <a name="device-sends-data-payload-to-dps"></a>Apparaat verzendt gegevens lading naar DPS
-Wanneer uw apparaat een [aanroep van een registratie-apparaat](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice) naar DPS verzendt, kan de registratie oproep worden uitgebreid om andere velden in de hoofd tekst te maken. De hoofd tekst ziet er als volgt uit: 
+Wanneer uw apparaat een [aanroep van een registratie-apparaat](/rest/api/iot-dps/runtimeregistration/registerdevice) naar DPS verzendt, kan de registratie oproep worden uitgebreid om andere velden in de hoofd tekst te maken. De hoofd tekst ziet er als volgt uit: 
    ```
    { 
        “registrationId”: “mydevice”, 
@@ -54,7 +54,7 @@ Als de webhook voor het aangepaste toewijzings beleid sommige gegevens naar het 
    ```
 
 ## <a name="sdk-support"></a>SDK-ondersteuning
-Deze functie is beschikbaar in C, C#, JAVA en Node.js [client-sdk's](https://docs.microsoft.com/azure/iot-dps/).  
+Deze functie is beschikbaar in C, C#, JAVA en Node.js [client-sdk's](./index.yml).  
 
 ## <a name="next-steps"></a>Volgende stappen
 * Ontwikkelen met behulp van de [Azure IOT SDK]( https://github.com/Azure/azure-iot-sdks) voor Azure IOT hub en Azure IOT hub Device Provisioning Service

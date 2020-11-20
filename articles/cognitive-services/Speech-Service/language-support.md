@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/26/2020
 ms.author: trbye
-ms.custom: seodec18
-ms.openlocfilehash: cfd28171524ada5f5feea9e18e4b88a291254e88
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.custom: references_regions
+ms.openlocfilehash: a430333f57b3734e5977db5c104c8f6d37bfd3c4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616787"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949085"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -86,7 +86,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 |Litouws (Litouwen)             |`lt-LT` | Taalmodel                                   |
 |Maltees (Malta)                     |`mt-MT` | Taalmodel                                   |
 |Marathi (India)                    |`mr-IN` | Taalmodel                                   |
-|Noors (BokmÃ ¥ l) (Noor wegen)       |`nb-NO` | Taalmodel                                   |
+|Noors (Bokmål, Noorwegen)         |`nb-NO` | Taalmodel                                   |
 |Pools (Polen)                    |`pl-PL` | Taalmodel                                   |
 |Portugees (Brazilië)                |`pt-BR` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
 |Portugees (Portugal)              |`pt-PT` | Taalmodel                                   |
@@ -134,83 +134,103 @@ Neural text-to-speech is een nieuw type spraak synthese dat wordt aangedreven do
 
 Neural stemmen kunnen worden gebruikt om interacties te maken met chat bots uitbreiden en spraak assistenten die natuurlijk en aantrekkelijker zijn, en om digitale teksten, zoals e-books, te converteren naar Audiobooks en in-car navigatie systemen te verbeteren. Dankzij de menselijke, natuurlijke prosodie en duidelijke articulatie verminderen neurale stemmen de bij het luisteren optredende vermoeidheid wanneer gebruikers met AI-systemen communiceren.
 
-Zie [regio's](regions.md#standard-and-neural-voices)voor meer informatie over regionale Beschik baarheid.
-
-|Taal  | Land instelling (BCP-47)          | Geslacht | Spraak naam | Stijl ondersteuning |
-|--|--|--|--|--|
+| Taal | Landinstelling | Geslacht | Spraak naam | Stijl ondersteuning |
+|---|---|---|---|---|
 | Arabisch (Egypte) | `ar-EG` | Vrouw | `ar-EG-SalmaNeural` | Algemeen |
 | Arabisch (Saoedi-Arabië) | `ar-SA` | Vrouw | `ar-SA-ZariyahNeural` | Algemeen |
-| Bulgaars (Bulgary) | `bg-BG` <sup>Nieuw</sup> | Vrouw | `bg-BG-KalinaNeural` | Algemeen |
-| Kantonees (traditioneel Chinees, Hongkong) | `zh-HK` | Vrouw | `zh-HK-HiuGaaiNeural` | Algemeen |
+| Bulgaars (Bulgary) | `bg-BG` | Vrouw | `bg-BG-KalinaNeural` <sup>Nieuw</sup> | Algemeen |
 | Catalaans (Spanje) | `ca-ES` | Vrouw | `ca-ES-AlbaNeural` | Algemeen |
-| Kroatisch (Kroatië) | `hr-HR` <sup>Nieuw</sup> | Vrouw | `hr-HR-GabrijelaNeural` | Algemeen |
-| Tsjechisch (Tsjechisch) | `cs-CZ` <sup>Nieuw</sup> | Vrouw | `cs-CZ-VlastaNeural` | Algemeen |
+| Chinees (Kantonees, traditioneel) | `zh-HK` | Vrouw | `zh-HK-HiuGaaiNeural` | Algemeen |
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Vrouw | `zh-CN-XiaoxiaoNeural` | Algemeen, meerdere spraak stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Vrouw | `zh-CN-XiaoyouNeural` | Kid Voice, geoptimaliseerd voor het opnemen van tekst in een verhaal |
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Man   | `zh-CN-YunyangNeural` | Geoptimaliseerd voor lezen van nieuws,<br /> meerdere spraak stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Man   | `zh-CN-YunyeNeural` | Geoptimaliseerd voor het opnemen van tekst in een verhaal |
+| Chinees (Taiwan Mandarijn) | `zh-TW` | Vrouw | `zh-TW-HsiaoYuNeural` | Algemeen |
+| Kroatisch (Kroatië) | `hr-HR` | Vrouw | `hr-HR-GabrijelaNeural` <sup>Nieuw</sup> | Algemeen |
+| Tsjechisch (Tsjechisch) | `cs-CZ` | Vrouw | `cs-CZ-VlastaNeural` <sup>Nieuw</sup>    | Algemeen |
 | Deens (Denemarken) | `da-DK` | Vrouw | `da-DK-ChristelNeural` | Algemeen |
 | Nederlands (Nederland) | `nl-NL` | Vrouw | `nl-NL-ColetteNeural` | Algemeen |
 | Engels (Australië) | `en-AU` | Vrouw | `en-AU-NatashaNeural` | Algemeen |
-| Engels (Australië) | `en-AU` <sup>Nieuw</sup> | Man | `en-AU-WilliamNeural` | Algemeen |
+| Engels (Australië) | `en-AU` | Man   | `en-AU-WilliamNeural` <sup>Nieuw</sup>  | Algemeen |
 | Engels (Canada) | `en-CA` | Vrouw | `en-CA-ClaraNeural` | Algemeen |
 | Engels (India) | `en-IN` | Vrouw | `en-IN-NeerjaNeural` | Algemeen |
-| Engels (Ierland) | `en-IE` <sup>Nieuw</sup> | Vrouw | `en-IE-EmilyNeural` | Algemeen |
+| Engels (Ierland) | `en-IE` | Vrouw | `en-IE-EmilyNeural` <sup>Nieuw</sup> | Algemeen |
 | Engels (Verenigd Koninkrijk) | `en-GB` | Vrouw | `en-GB-LibbyNeural` | Algemeen |
 | Engels (Verenigd Koninkrijk) | `en-GB` | Vrouw | `en-GB-MiaNeural` | Algemeen |
-| Engels (Verenigd Koninkrijk) | `en-GB` <sup>Nieuw</sup> | Man | `en-GB-RyanNeural` | Algemeen |
-| Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-AriaNeural` | Algemeen, meerdere spraak stijlen beschikbaar |
+| Engels (Verenigd Koninkrijk) | `en-GB` | Man | `en-GB-RyanNeural` <sup>Nieuw</sup> | Algemeen |
+| Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-AriaNeural` | Algemeen, meerdere spraak stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
 | Engels (Verenigde Staten) | `en-US` | Man | `en-US-GuyNeural` | Algemeen |
-| Engels (Verenigde Staten) | `en-US` <sup>Nieuw</sup> | Vrouw | `en-US-JennyNeural` | Algemeen, meerdere spraak stijlen beschikbaar |
+| Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-JennyNeural` <sup>Nieuw</sup> | Algemeen, meerdere spraak stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
 | Fins (Finland) | `fi-FI` | Vrouw | `fi-FI-NooraNeural` | Algemeen |
 | Frans (Canada) | `fr-CA` | Vrouw | `fr-CA-SylvieNeural` | Algemeen |
-| Frans (Canada) | `fr-CA` <sup>Nieuw</sup> | Man | `fr-CA-JeanNeural` | Algemeen |
+| Frans (Canada) | `fr-CA` | Man | `fr-CA-JeanNeural` <sup>Nieuw</sup> | Algemeen |
 | Frans (Frankrijk) | `fr-FR` | Vrouw | `fr-FR-DeniseNeural` | Algemeen |
-| Frans (Frankrijk) | `fr-FR` <sup>Nieuw</sup> | Man | `fr-FR-HenriNeural` | Algemeen |
-| Frans (Zwitserland) | `fr-CH` <sup>Nieuw</sup> | Vrouw | `fr-CH-ArianeNeural` | Algemeen |
-| Duits (Oostenrijk) | `de-AT` <sup>Nieuw</sup> | Vrouw | `de-AT-IngridNeural` | Algemeen |
+| Frans (Frankrijk) | `fr-FR` | Man | `fr-FR-HenriNeural` <sup>Nieuw</sup> | Algemeen |
+| Frans (Zwitserland) | `fr-CH` | Vrouw | `fr-CH-ArianeNeural` <sup>Nieuw</sup> | Algemeen |
+| Duits (Oostenrijk) | `de-AT` | Vrouw | `de-AT-IngridNeural` <sup>Nieuw</sup> | Algemeen |
 | Duits (Duitsland) | `de-DE` | Vrouw | `de-DE-KatjaNeural` | Algemeen |
-| Duits (Duitsland) | `de-DE` <sup>Nieuw</sup> | Man | `de-DE-ConradNeural` | Algemeen |
-| Duits (Zwitserland) | `de-CH` <sup>Nieuw</sup> | Vrouw | `de-CH-LeniNeural` | Algemeen |
-| Grieks (Griekenland) | `el-GR` <sup>Nieuw</sup> | Vrouw | `el-GR-AthinaNeural` | Algemeen |
-| Hebreeuws (Israël) | `he-IL` <sup>Nieuw</sup> | Vrouw | `he-IL-HilaNeural` | Algemeen |
+| Duits (Duitsland) | `de-DE` | Man | `de-DE-ConradNeural` <sup>Nieuw</sup> | Algemeen |
+| Duits (Zwitserland) | `de-CH` | Vrouw | `de-CH-LeniNeural` <sup>Nieuw</sup> | Algemeen |
+| Grieks (Griekenland) | `el-GR` | Vrouw | `el-GR-AthinaNeural` <sup>Nieuw</sup> | Algemeen |
+| Hebreeuws (Israël) | `he-IL` | Vrouw | `he-IL-HilaNeural` <sup>Nieuw</sup> | Algemeen |
 | Hindi (India) | `hi-IN` | Vrouw | `hi-IN-SwaraNeural` | Algemeen |
-| Hongaars (Hongarije) | `hu-HU` <sup>Nieuw</sup> | Vrouw | `hu-HU-NoemiNeural` | Algemeen |
-| Indonesisch (Indonesië) | `id-ID` <sup>Nieuw</sup> | Man | `id-ID-ArdiNeural` | Algemeen |
+| Hongaars (Hongarije) | `hu-HU` | Vrouw | `hu-HU-NoemiNeural` <sup>Nieuw</sup> | Algemeen |
+| Indonesisch (Indonesië) | `id-ID` | Man | `id-ID-ArdiNeural` <sup>Nieuw</sup> | Algemeen |
 | Italiaans (Italië) | `it-IT` | Vrouw | `it-IT-ElsaNeural` | Algemeen |
-| Italiaans (Italië) | `it-IT` <sup>Nieuw</sup> | Vrouw | `it-IT-IsabellaNeural` | Algemeen |
-| Italiaans (Italië) | `it-IT` <sup>Nieuw</sup> | Man | `it-IT-DiegoNeural` | Algemeen |
+| Italiaans (Italië) | `it-IT` | Vrouw | `it-IT-IsabellaNeural` <sup>Nieuw</sup> | Algemeen |
+| Italiaans (Italië) | `it-IT` | Man | `it-IT-DiegoNeural` <sup>Nieuw</sup> | Algemeen |
 | Japans (Japan) | `ja-JP` | Vrouw | `ja-JP-NanamiNeural` | Algemeen |
-| Japans (Japan) | `ja-JP` <sup>Nieuw</sup> | Man | `ja-JP-KeitaNeural` | Algemeen |
+| Japans (Japan) | `ja-JP` | Man | `ja-JP-KeitaNeural` <sup>Nieuw</sup> | Algemeen |
 | Koreaans (Korea) | `ko-KR` | Vrouw | `ko-KR-SunHiNeural` | Algemeen |
-| Koreaans (Korea) | `ko-KR` <sup>Nieuw</sup> | Man | `ko-KR-InJoonNeural` | Algemeen |
-| Maleis (Maleisië) | `ms-MY` <sup>Nieuw</sup> | Vrouw | `ms-MY-YasminNeural` | Algemeen |
-| Mandarijn (vereenvoudigd Chinees, China) | `zh-CN` | Vrouw | `zh-CN-XiaoxiaoNeural` | Algemeen, meerdere spraak stijlen beschikbaar |
-| Mandarijn (vereenvoudigd Chinees, China) | `zh-CN` | Vrouw | `zh-CN-XiaoyouNeural` | Kid Voice, geoptimaliseerd voor het opnemen van tekst in een verhaal |
-| Mandarijn (vereenvoudigd Chinees, China) | `zh-CN` | Man | `zh-CN-YunyangNeural` | Geoptimaliseerd voor nieuws lezen, meerdere spraak stijlen beschikbaar |
-| Mandarijn (vereenvoudigd Chinees, China) | `zh-CN` | Man | `zh-CN-YunyeNeural` | Geoptimaliseerd voor het opnemen van tekst in een verhaal |
-| Mandarijn (traditioneel Chinees, Taiwan) | `zh-TW` | Vrouw | `zh-TW-HsiaoYuNeural` | Algemeen |
-| Noors, BokmÃ ¥ l (Noor wegen) | `nb-NO` | Vrouw | `nb-NO-IselinNeural` | Algemeen |
+| Koreaans (Korea) | `ko-KR` | Man | `ko-KR-InJoonNeural` <sup>Nieuw</sup> | Algemeen |
+| Maleis (Maleisië) | `ms-MY` | Vrouw | `ms-MY-YasminNeural` <sup>Nieuw</sup> | Algemeen |
+| Noors (Bokmål, Noorwegen) | `nb-NO` | Vrouw | `nb-NO-IselinNeural` | Algemeen |
 | Pools (Polen) | `pl-PL` | Vrouw | `pl-PL-ZofiaNeural` | Algemeen |
-| Portugees (Brazilië) | `pt-BR` | Vrouw | `pt-BR-FranciscaNeural` | Algemeen, meerdere spraak stijlen beschikbaar |
-| Portugees (Brazilië) | `pt-BR` <sup>Nieuw</sup> | Man | `pt-BR-AntonioNeural` | Algemeen |
+| Portugees (Brazilië) | `pt-BR` | Vrouw | `pt-BR-FranciscaNeural` | Algemeen, meerdere spraak stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
+| Portugees (Brazilië) | `pt-BR` | Man | `pt-BR-AntonioNeural` <sup>Nieuw</sup> | Algemeen |
 | Portugees (Portugal) | `pt-PT` | Vrouw | `pt-PT-FernandaNeural` | Algemeen |
-| Roemeens (Roemenië) | `ro-RO` <sup>Nieuw</sup> | Vrouw | `ro-RO-AlinaNeural` | Algemeen |
+| Roemeens (Roemenië) | `ro-RO` | Vrouw | `ro-RO-AlinaNeural` <sup>Nieuw</sup> | Algemeen |
 | Russisch (Rusland) | `ru-RU` | Vrouw | `ru-RU-DariyaNeural` | Algemeen |
-| Slowaaks (Slowakije) | `sk-SK` <sup>Nieuw</sup> | Vrouw | `sk-SK-ViktoriaNeural` | Algemeen |
-| Sloveens (Slovenië) | `sl-SI` <sup>Nieuw</sup> | Vrouw | `sl-SI-PetraNeural` | Algemeen |
+| Slowaaks (Slowakije) | `sk-SK` | Vrouw | `sk-SK-ViktoriaNeural` <sup>Nieuw</sup> | Algemeen |
+| Sloveens (Slovenië) | `sl-SI` | Vrouw | `sl-SI-PetraNeural` <sup>Nieuw</sup> | Algemeen |
 | Spaans (Mexico) | `es-MX` | Vrouw | `es-MX-DaliaNeural` | Algemeen |
-| Spaans (Mexico) | `es-MX` <sup>Nieuw</sup> | Man | `es-MX-JorgeNeural` | Algemeen |
+| Spaans (Mexico) | `es-MX` | Man | `es-MX-JorgeNeural` <sup>Nieuw</sup> | Algemeen |
 | Spaans (Spanje) | `es-ES` | Vrouw | `es-ES-ElviraNeural` | Algemeen |
-| Spaans (Spanje) | `es-ES` <sup>Nieuw</sup> | Man | `es-ES-AlvaroNeural` | Algemeen |
+| Spaans (Spanje) | `es-ES` | Man | `es-ES-AlvaroNeural` <sup>Nieuw</sup> | Algemeen |
 | Zweeds (Zweden) | `sv-SE` | Vrouw | `sv-SE-HilleviNeural` | Algemeen |
-| Tamil (India) | `ta-IN` <sup>Nieuw</sup> | Vrouw | `ta-IN-PallaviNeural` | Algemeen |
-| Telugu (India) | `te-IN` <sup>Nieuw</sup> | Vrouw | `te-IN-ShrutiNeural` | Algemeen |
+| Tamil (India) | `ta-IN` | Vrouw | `ta-IN-PallaviNeural` <sup>Nieuw</sup> | Algemeen |
+| Telugu (India) | `te-IN` | Vrouw | `te-IN-ShrutiNeural` <sup>Nieuw</sup> | Algemeen |
 | Thai (Thailand) | `th-TH` | Vrouw | `th-TH-AcharaNeural` | Algemeen |
-| Thai (Thailand) | `th-TH` <sup>Nieuw</sup> | Vrouw | `th-TH-PremwadeeNeural` | Algemeen |
+| Thai (Thailand) | `th-TH` | Vrouw | `th-TH-PremwadeeNeural` <sup>Nieuw</sup> | Algemeen |
 | Turks (Turkije) | `tr-TR` | Vrouw | `tr-TR-EmelNeural` | Algemeen |
 | Vietnamees (Vietnam) | `vi-VN` <sup>Nieuw</sup> | Vrouw | `vi-VN-HoaiMyNeural` | Algemeen|
 
+#### <a name="neural-voices-in-preview"></a>Neural stemmen in Preview
+
+Hieronder vindt u een open bare preview van Neural stemmen. 
+
+| Taal                         | Landinstelling  | Geslacht | Spraak naam                             | Stijl ondersteuning |
+|----------------------------------|---------|--------|----------------------------------------|---------------|
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Man   | `zh-CN-YunxiNeural` <sup>Nieuw</sup> | Algemeen, meerdere stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Vrouw | `zh-CN-XiaohanNeural` <sup>Nieuw</sup> | Algemeen, meerdere stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Vrouw | `zh-CN-XiaoxuanNeural` <sup>Nieuw</sup> | Algemeen, meerdere rollen-afspelen en [stijlen die beschikbaar zijn met SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Vrouw | `zh-CN-XiaomoNeural` <sup>Nieuw</sup> | Algemeen, meerdere rollen-afspelen en [stijlen die beschikbaar zijn met SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Vrouw | `zh-CN-XiaoruiNeural` <sup>Nieuw</sup> | Senior Voice, meerdere stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles) |
+| Estisch (Estland) | `et-EE` | Vrouw | `et-EE-AnuNeural` <sup>Nieuw</sup> | Algemeen |
+| Gaelisch (Ierland) | `ga-IE` | Vrouw | `ga-IE-OrlaNeural` <sup>Nieuw</sup> | Algemeen |
+| Litouws (Litouwen) | `lt-LT` | Vrouw | `lt-LT-OnaNeural` <sup>Nieuw</sup> | Algemeen |
+| Lets (Letland) | `lv-LV` | Vrouw | `lv-LV-EveritaNeural` <sup>Nieuw</sup> | Algemeen |
+| Maltees (Malta) | `mt-MT` | Vrouw | `mt-MT-GraceNeural` <sup>Nieuw</sup> | Algemeen |
+
+> [!IMPORTANT]
+> Stemmen in de open bare preview zijn alleen beschikbaar in drie service regio's: VS-Oost, Europa-west en Zuidoost-Azië.
+
+Zie [regio's](regions.md#standard-and-neural-voices)voor meer informatie over regionale Beschik baarheid.
+
+Zie voor meer informatie over het configureren en aanpassen van Neural stemmen, zoals gesp roken stijlen, de taal voor de [opmaak van spraak synthese](speech-synthesis-markup.md#adjust-speaking-styles).
+
 > [!IMPORTANT]
 > De `en-US-JessaNeural` stem is gewijzigd in `en-US-AriaNeural` . Als u ' Jessa ' eerder gebruikt, converteer dan naar ' Aria '.
-
-Zie voor meer informatie over het configureren en aanpassen van Neural stemmen de taal voor de [opmaak van spraak synthese](speech-synthesis-markup.md#adjust-speaking-styles).
 
 > [!TIP]
 > U kunt de volledige toewijzing van de service naam blijven gebruiken als ' micro soft server Speech Text to Speech Voice (nl-nl, AriaNeural) ' in uw spraakherkennings aanvragen.
@@ -221,84 +241,83 @@ Meer dan 75 standaard stemmen zijn beschikbaar in meer dan 45 talen en land inst
 
 | Taal | Land instelling (BCP-47) | Geslacht | Spraak naam |
 |--|--|--|--|
-| Arabisch (Arabisch)  |  `ar-EG`  |  Vrouw  |  `ar-EG-Hoda`|
-| Arabisch (Saoedi-Arabië)  |  `ar-SA`  |  Man  |  `ar-SA-Naayf`|
-| Bulgaars (Bulgarije)  |  `bg-BG`  |  Man  |  `bg-BG-Ivan`|
-| Kantonees (traditioneel Chinees, Hongkong)  |  `zh-HK`  |  Man  |  `zh-HK-Danny`|
-| Kantonees (traditioneel Chinees, Hongkong)  |  `zh-HK`  |  Vrouw  |  `zh-HK-TracyRUS`|
-| Catalaans (Spanje)  |  `ca-ES`  |  Vrouw  |  `ca-ES-HerenaRUS`|
-| Kroatisch (Kroatië)  |  `hr-HR`  |  Man  |  `hr-HR-Matej`|
-| Tsjechisch (Tsjechische Republiek)  |  `cs-CZ`  |  Man  |  `cs-CZ-Jakub`|
-| Deens (Denemarken)  |  `da-DK`  |  Vrouw  |  `da-DK-HelleRUS`|
-| Nederlands (Nederland)  |  `nl-NL`  |  Vrouw  |  `nl-NL-HannaRUS`|
-| Engels (Australië)  |  `en-AU`  |  Vrouw  |  `en-AU-Catherine`|
-| Engels (Australië)  |  `en-AU`  |  Vrouw  |  `en-AU-HayleyRUS`|
-| Engels (Canada)  |  `en-CA`  |  Vrouw  |  `en-CA-HeatherRUS`|
-| Engels (Canada)  |  `en-CA`  |  Vrouw  |  `en-CA-Linda`|
-| Engels (India)  |  `en-IN`  |  Vrouw  |  `en-IN-Heera`|
-| Engels (India)  |  `en-IN`  |  Vrouw  |  `en-IN-PriyaRUS`|
-| Engels (India)  |  `en-IN`  |  Man  |  `en-IN-Ravi`|
-| Engels (Ierland)  |  `en-IE`  |  Man  |  `en-IE-Sean`|
-| Engels (Verenigd Koninkrijk)  |  `en-GB`  |  Man  |  `en-GB-George`|
-| Engels (Verenigd Koninkrijk)  |  `en-GB`  |  Vrouw  |  `en-GB-HazelRUS`|
-| Engels (Verenigd Koninkrijk)  |  `en-GB`  |  Vrouw  |  `en-GB-Susan`|
-| Engels (Verenigde Staten)  |  `en-US`  |  Man  |  `en-US-BenjaminRUS`|
-| Engels (Verenigde Staten)  |  `en-US`  |  Man  |  `en-US-GuyRUS`|
-| Engels (Verenigde Staten)  |  `en-US`  |  Vrouw  |  `en-US-JessaRUS`|
-| Engels (Verenigde Staten)  |  `en-US`  |  Vrouw  |  `en-US-ZiraRUS`|
-| Fins (Finland)  |  `fi-FI`  |  Vrouw  |  `fi-FI-HeidiRUS`|
-| Frans (Canada)  |  `fr-CA`  |  Vrouw  |  `fr-CA-Caroline`|
-| Frans (Canada)  |  `fr-CA`  |  Vrouw  |  `fr-CA-HarmonieRUS`|
-| Frans (Frankrijk)  |  `fr-FR`  |  Vrouw  |  `fr-FR-HortenseRUS`|
-| Frans (Frankrijk)  |  `fr-FR`  |  Vrouw  |  `fr-FR-Julie`|
-| Frans (Frankrijk)  |  `fr-FR`  |  Man  |  `fr-FR-Paul`|
-| Frans (Zwitserland)  |  `fr-CH`  |  Man  |  `fr-CH-Guillaume`|
-| Duits (Oostenrijk)  |  `de-AT`  |  Man  |  `de-AT-Michael`|
-| Duits (Duitsland)  |  `de-DE`  |  Vrouw  |  `de-DE-HeddaRUS`|
-| Duits (Duitsland)  |  `de-DE`  |  Man  |  `de-DE-Stefan`|
-| Duits (Zwitserland)  |  `de-CH`  |  Man  |  `de-CH-Karsten`|
-| Grieks (Griekenland)  |  `el-GR`  |  Man  |  `el-GR-Stefanos`|
-| Hebreeuws (Israël)  |  `he-IL`  |  Man  |  `he-IL-Asaf`|
-| Hindi (India)  |  `hi-IN`  |  Man  |  `hi-IN-Hemant`|
-| Hindi (India)  |  `hi-IN`  |  Vrouw  |  `hi-IN-Kalpana`|
-| Hongaars (Hongarije)  |  `hu-HU`  |  Man  |  `hu-HU-Szabolcs`|
-| Indonesisch (Indonesië)  |  `id-ID`  |  Man  |  `id-ID-Andika`|
-| Italiaans (Italië)  |  `it-IT`  |  Man  |  `it-IT-Cosimo`|
-| Italiaans (Italië)  |  `it-IT`  |  Vrouw  |  `it-IT-LuciaRUS`|
-| Japans (Japan)  |  `ja-JP`  |  Vrouw  |  `ja-JP-Ayumi`|
-| Japans (Japan)  |  `ja-JP`  |  Vrouw  |  `ja-JP-HarukaRUS`|
-| Japans (Japan)  |  `ja-JP`  |  Man  |  `ja-JP-Ichiro`|
-| Koreaans (Korea)  |  `ko-KR`  |  Vrouw  |  `ko-KR-HeamiRUS`|
-| Maleis (Maleisië)  |  `ms-MY`  |  Man  |  `ms-MY-Rizwan`|
-| Mandarijn (vereenvoudigd Chinees, China)  |  `zh-CN`  |  Vrouw  |  `zh-CN-HuihuiRUS`|
-| Mandarijn (vereenvoudigd Chinees, China)  |  `zh-CN`  |  Man  |  `zh-CN-Kangkang`|
-| Mandarijn (vereenvoudigd Chinees, China)  |  `zh-CN`  |  Vrouw  |  `zh-CN-Yaoyao`|
-| Mandarijn (traditioneel Chinees, Taiwan)  |  `zh-TW`  |  Vrouw  |  `zh-TW-HanHanRUS`|
-| Mandarijn (traditioneel Chinees, Taiwan)  |  `zh-TW`  |  Vrouw  |  `zh-TW-Yating`|
-| Mandarijn (traditioneel Chinees, Taiwan)  |  `zh-TW`  |  Man  |  `zh-TW-Zhiwei`|
-| Noors, BokmÃ ¥ l (Noor wegen)  |  `nb-NO`  |  Vrouw  |  `nb-NO-HuldaRUS`|
-| Pools (Polen)  |  `pl-PL`  |  Vrouw  |  `pl-PL-PaulinaRUS`|
-| Portugees (Brazilië)  |  `pt-BR`  |  Man  |  `pt-BR-Daniel`|
-| Portugees (Brazilië)  |  `pt-BR`  |  Vrouw  |  `pt-BR-HeloisaRUS`|
-| Portugees (Portugal)  |  `pt-PT`  |  Vrouw  |  `pt-PT-HeliaRUS`|
-| Roemeens (Roemenië)  |  `ro-RO`  |  Man  |  `ro-RO-Andrei`|
-| Russisch (Rusland)  |  `ru-RU`  |  Vrouw  |  `ru-RU-EkaterinaRUS`|
-| Russisch (Rusland)  |  `ru-RU`  |  Vrouw  |  `ru-RU-Irina`|
-| Russisch (Rusland)  |  `ru-RU`  |  Man  |  `ru-RU-Pavel`|
-| Slowaaks (Slowakije)  |  `sk-SK`  |  Man  |  `sk-SK-Filip`|
-| Sloveens (Slovenië)  |  `sl-SI`  |  Man  |  `sl-SI-Lado`|
-| Spaans (Mexico)  |  `es-MX`  |  Vrouw  |  `es-MX-HildaRUS`|
-| Spaans (Mexico)  |  `es-MX`  |  Man  |  `es-MX-Raul`|
-| Spaans (Spanje)  |  `es-ES`  |  Vrouw  |  `es-ES-HelenaRUS`|
-| Spaans (Spanje)  |  `es-ES`  |  Vrouw  |  `es-ES-Laura`|
-| Spaans (Spanje)  |  `es-ES`  |  Man  |  `es-ES-Pablo`|
-| Zweeds (Zweden)  |  `sv-SE`  |  Vrouw  |  `sv-SE-HedvigRUS`|
-| Tamil (India)  |  `ta-IN`  |  Man  |  `ta-IN-Valluvar`|
-| Telugu (India)  |  `te-IN`  |  Vrouw  |  `te-IN-Chitra`|
-| Thai (Thailand)  |  `th-TH`  |  Man  |  `th-TH-Pattara`|
-| Turks (Turkije)  |  `tr-TR`  |  Vrouw  |  `tr-TR-SedaRUS`|
-| Vietnamees (Vietnam)  |  `vi-VN`  |  Man  |  `vi-VN-An`  |
-
+| Arabisch (Arabisch) | `ar-EG` | Vrouw | `ar-EG-Hoda`|
+| Arabisch (Saoedi-Arabië) | `ar-SA` | Man | `ar-SA-Naayf`|
+| Bulgaars (Bulgarije) | `bg-BG` | Man | `bg-BG-Ivan`|
+| Catalaans (Spanje) | `ca-ES` | Vrouw | `ca-ES-HerenaRUS`|
+| Chinees (Kantonees, traditioneel) | `zh-HK` | Man | `zh-HK-Danny`|
+| Chinees (Kantonees, traditioneel) | `zh-HK` | Vrouw | `zh-HK-TracyRUS`|
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Vrouw | `zh-CN-HuihuiRUS`|
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Man | `zh-CN-Kangkang`|
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Vrouw | `zh-CN-Yaoyao`|
+| Chinees (Taiwan Mandarijn) |  `zh-TW` | Vrouw | `zh-TW-HanHanRUS`|
+| Chinees (Taiwan Mandarijn) |  `zh-TW` | Vrouw | `zh-TW-Yating`|
+| Chinees (Taiwan Mandarijn) |  `zh-TW` | Man | `zh-TW-Zhiwei`|
+| Kroatisch (Kroatië) | `hr-HR` | Man | `hr-HR-Matej`|
+| Tsjechisch (Tsjechische Republiek) | `cs-CZ` | Man | `cs-CZ-Jakub`|
+| Deens (Denemarken) | `da-DK` | Vrouw | `da-DK-HelleRUS`|
+| Nederlands (Nederland) | `nl-NL` | Vrouw | `nl-NL-HannaRUS`|
+| Engels (Australië) | `en-AU` | Vrouw | `en-AU-Catherine`|
+| Engels (Australië) | `en-AU` | Vrouw | `en-AU-HayleyRUS`|
+| Engels (Canada) | `en-CA` | Vrouw | `en-CA-HeatherRUS`|
+| Engels (Canada) | `en-CA` | Vrouw | `en-CA-Linda`|
+| Engels (India) | `en-IN` | Vrouw | `en-IN-Heera`|
+| Engels (India) | `en-IN` | Vrouw | `en-IN-PriyaRUS`|
+| Engels (India) | `en-IN` | Man | `en-IN-Ravi`|
+| Engels (Ierland) | `en-IE` | Man | `en-IE-Sean`|
+| Engels (Verenigd Koninkrijk) | `en-GB` | Man | `en-GB-George`|
+| Engels (Verenigd Koninkrijk) | `en-GB` | Vrouw | `en-GB-HazelRUS`|
+| Engels (Verenigd Koninkrijk) | `en-GB` | Vrouw | `en-GB-Susan`|
+| Engels (Verenigde Staten) | `en-US` | Man | `en-US-BenjaminRUS`|
+| Engels (Verenigde Staten) | `en-US` | Man | `en-US-GuyRUS`|
+| Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-JessaRUS`|
+| Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-ZiraRUS`|
+| Fins (Finland) | `fi-FI` | Vrouw | `fi-FI-HeidiRUS`|
+| Frans (Canada) | `fr-CA` | Vrouw | `fr-CA-Caroline`|
+| Frans (Canada) | `fr-CA` | Vrouw | `fr-CA-HarmonieRUS`|
+| Frans (Frankrijk) | `fr-FR` | Vrouw | `fr-FR-HortenseRUS`|
+| Frans (Frankrijk) | `fr-FR` | Vrouw | `fr-FR-Julie`|
+| Frans (Frankrijk) | `fr-FR` | Man | `fr-FR-Paul`|
+| Frans (Zwitserland) | `fr-CH` | Man | `fr-CH-Guillaume`|
+| Duits (Oostenrijk) | `de-AT` | Man | `de-AT-Michael`|
+| Duits (Duitsland) | `de-DE` | Vrouw | `de-DE-HeddaRUS`|
+| Duits (Duitsland) | `de-DE` | Man | `de-DE-Stefan`|
+| Duits (Zwitserland) | `de-CH` | Man | `de-CH-Karsten`|
+| Grieks (Griekenland) | `el-GR` | Man | `el-GR-Stefanos`|
+| Hebreeuws (Israël) | `he-IL` | Man | `he-IL-Asaf`|
+| Hindi (India) | `hi-IN` | Man | `hi-IN-Hemant`|
+| Hindi (India) | `hi-IN` | Vrouw | `hi-IN-Kalpana`|
+| Hongaars (Hongarije) | `hu-HU` | Man | `hu-HU-Szabolcs`|
+| Indonesisch (Indonesië) | `id-ID` | Man | `id-ID-Andika`|
+| Italiaans (Italië) | `it-IT` | Man | `it-IT-Cosimo`|
+| Italiaans (Italië) | `it-IT` | Vrouw | `it-IT-LuciaRUS`|
+| Japans (Japan) | `ja-JP` | Vrouw | `ja-JP-Ayumi`|
+| Japans (Japan) | `ja-JP` | Vrouw | `ja-JP-HarukaRUS`|
+| Japans (Japan) | `ja-JP` | Man | `ja-JP-Ichiro`|
+| Koreaans (Korea) | `ko-KR` | Vrouw | `ko-KR-HeamiRUS`|
+| Maleis (Maleisië) | `ms-MY` | Man | `ms-MY-Rizwan`|
+| Noors (Bokmål, Noorwegen) | `nb-NO` | Vrouw | `nb-NO-HuldaRUS`|
+| Pools (Polen) | `pl-PL` | Vrouw | `pl-PL-PaulinaRUS`|
+| Portugees (Brazilië) | `pt-BR` | Man | `pt-BR-Daniel`|
+| Portugees (Brazilië) | `pt-BR` | Vrouw | `pt-BR-HeloisaRUS`|
+| Portugees (Portugal) | `pt-PT` | Vrouw | `pt-PT-HeliaRUS`|
+| Roemeens (Roemenië) | `ro-RO` | Man | `ro-RO-Andrei`|
+| Russisch (Rusland) | `ru-RU` | Vrouw | `ru-RU-EkaterinaRUS`|
+| Russisch (Rusland) | `ru-RU` | Vrouw | `ru-RU-Irina`|
+| Russisch (Rusland) | `ru-RU` | Man | `ru-RU-Pavel`|
+| Slowaaks (Slowakije) | `sk-SK` | Man | `sk-SK-Filip`|
+| Sloveens (Slovenië) | `sl-SI` | Man | `sl-SI-Lado`|
+| Spaans (Mexico) | `es-MX` | Vrouw | `es-MX-HildaRUS`|
+| Spaans (Mexico) | `es-MX` | Man | `es-MX-Raul`|
+| Spaans (Spanje) | `es-ES` | Vrouw | `es-ES-HelenaRUS`|
+| Spaans (Spanje) | `es-ES` | Vrouw | `es-ES-Laura`|
+| Spaans (Spanje) | `es-ES` | Man | `es-ES-Pablo`|
+| Zweeds (Zweden) | `sv-SE` | Vrouw | `sv-SE-HedvigRUS`|
+| Tamil (India) | `ta-IN` | Man | `ta-IN-Valluvar`|
+| Telugu (India) | `te-IN` | Vrouw | `te-IN-Chitra`|
+| Thai (Thailand) | `th-TH` | Man | `th-TH-Pattara`|
+| Turks (Turkije) | `tr-TR` | Vrouw | `tr-TR-SedaRUS`|
+| Vietnamees (Vietnam) | `vi-VN` | Man | `vi-VN-An` |
 
 > [!IMPORTANT]
 > De `en-US-Jessa` stem is gewijzigd in `en-US-Aria` . Als u ' Jessa ' eerder gebruikt, converteer dan naar ' Aria '.

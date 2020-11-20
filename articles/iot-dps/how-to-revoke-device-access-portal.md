@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: f5bedde9e5e095b1b8637a09263bf18b06bcddea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 120446472038076e34f62b47ba79348e5de8b972
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90532338"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951074"
 ---
 # <a name="how-to-disenroll-a-device-from-azure-iot-hub-device-provisioning-service"></a>Het registreren van een apparaat bij Azure IoT Hub Device Provisioning Service
 
@@ -32,7 +32,7 @@ Het apparaat tijdelijk niet toestaan door de inschrijvings vermelding uit te sch
 
 1. Meld u aan bij de Azure Portal en selecteer **alle resources** in het menu links.
 2. Selecteer in de lijst met resources de inrichtings service waarvan u het apparaat niet wilt toestaan.
-3. Selecteer in uw inrichtings service **inschrijvingen beheren**en selecteer vervolgens het tabblad **afzonderlijke registraties** .
+3. Selecteer in uw inrichtings service **inschrijvingen beheren** en selecteer vervolgens het tabblad **afzonderlijke registraties** .
 4. Selecteer de inschrijvings vermelding voor het apparaat dat u niet wilt toestaan. 
 
     ![Selecteer uw individuele inschrijving](./media/how-to-revoke-device-access-portal/select-individual-enrollment.png)
@@ -45,7 +45,7 @@ Het apparaat permanent niet toestaan door de inschrijvings vermelding te verwijd
 
 1. Meld u aan bij de Azure Portal en selecteer **alle resources** in het menu links.
 2. Selecteer in de lijst met resources de inrichtings service waarvan u het apparaat niet wilt toestaan.
-3. Selecteer in uw inrichtings service **inschrijvingen beheren**en selecteer vervolgens het tabblad **afzonderlijke registraties** .
+3. Selecteer in uw inrichtings service **inschrijvingen beheren** en selecteer vervolgens het tabblad **afzonderlijke registraties** .
 4. Schakel het selectie vakje in naast de inschrijvings vermelding voor het apparaat dat u niet wilt toestaan. 
 5. Selecteer boven aan het venster **verwijderen** en selecteer vervolgens **Ja** om te bevestigen dat u de registratie wilt verwijderen. 
 
@@ -56,7 +56,7 @@ Nadat u de procedure hebt voltooid, ziet u dat uw vermelding is verwijderd uit d
 
 ## <a name="disallow-an-x509-intermediate-or-root-ca-certificate-by-using-an-enrollment-group"></a>Een X. 509-tussenliggend of basis-CA-certificaat niet toestaan met behulp van een registratie groep
 
-X. 509-certificaten worden meestal gerangschikt in een vertrouwens keten van certificaten. Als een certificaat in een wille keurig stadium in een keten wordt aangetast, wordt de vertrouwens relatie verbroken. Het certificaat mag niet worden toegestaan om te voor komen dat Device Provisioning Service in een keten met dat certificaat wordt ingericht. Zie [x. 509-certificaten](./concepts-security.md#x509-certificates)voor meer informatie over x. 509-certificaten en hoe deze worden gebruikt in combi natie met de inrichtings service. 
+X. 509-certificaten worden meestal gerangschikt in een vertrouwens keten van certificaten. Als een certificaat in een wille keurig stadium in een keten wordt aangetast, wordt de vertrouwens relatie verbroken. Het certificaat mag niet worden toegestaan om te voor komen dat Device Provisioning Service in een keten met dat certificaat wordt ingericht. Zie [x. 509-certificaten](./concepts-x509-attestation.md#x509-certificates)voor meer informatie over x. 509-certificaten en hoe deze worden gebruikt in combi natie met de inrichtings service. 
 
 Een registratie groep is een vermelding voor apparaten die een gemeen schappelijk Attestation-mechanisme van X. 509-certificaten delen die zijn ondertekend door dezelfde tussenliggende of basis-CA. De vermelding van de registratie groep is geconfigureerd met het X. 509-certificaat dat is gekoppeld aan de tussenliggende of basis-CA. De vermelding wordt ook geconfigureerd met configuratie waarden, zoals een dubbele status-en IoT hub-verbinding, die worden gedeeld door apparaten met dat certificaat in de certificaat keten. Als u het certificaat niet wilt toestaan, kunt u de bijbehorende registratie groep uitschakelen of verwijderen.
 
@@ -64,7 +64,7 @@ Het certificaat tijdelijk niet toestaan door de registratie groep uit te scha ke
 
 1. Meld u aan bij de Azure Portal en selecteer **alle resources** in het menu links.
 2. Selecteer in de lijst met resources de inrichtings service waarvan u het handtekening certificaat niet wilt toestaan.
-3. Selecteer in uw inrichtings service **inschrijvingen beheren**en selecteer vervolgens het tabblad **inschrijvings groepen** .
+3. Selecteer in uw inrichtings service **inschrijvingen beheren** en selecteer vervolgens het tabblad **inschrijvings groepen** .
 4. Selecteer de registratie groep met het certificaat dat u niet wilt toestaan.
 5. Selecteer **uitschakelen** op de schakel optie **invoer inschakelen** en selecteer vervolgens **Opslaan**.  
 
@@ -75,7 +75,7 @@ Het certificaat permanent niet toestaan door de registratie groep te verwijderen
 
 1. Meld u aan bij de Azure Portal en selecteer **alle resources** in het menu links.
 2. Selecteer in de lijst met resources de inrichtings service waarvan u het apparaat niet wilt toestaan.
-3. Selecteer in uw inrichtings service **inschrijvingen beheren**en selecteer vervolgens het tabblad **inschrijvings groepen** .
+3. Selecteer in uw inrichtings service **inschrijvingen beheren** en selecteer vervolgens het tabblad **inschrijvings groepen** .
 4. Schakel het selectie vakje in naast de registratie groep voor het certificaat dat u wilt niet toestaan. 
 5. Selecteer boven aan het venster **verwijderen** en selecteer vervolgens **Ja** om te bevestigen dat u de registratie groep wilt verwijderen. 
 
@@ -94,7 +94,7 @@ Voer de volgende stappen uit om een afzonderlijk apparaat in een registratie gro
 
 1. Meld u aan bij de Azure Portal en selecteer **alle resources** in het menu links.
 2. Selecteer in de lijst met resources de inrichtings service die de registratie groep bevat voor het apparaat dat u niet wilt toestaan.
-3. Selecteer in uw inrichtings service **inschrijvingen beheren**en selecteer vervolgens het tabblad **afzonderlijke registraties** .
+3. Selecteer in uw inrichtings service **inschrijvingen beheren** en selecteer vervolgens het tabblad **afzonderlijke registraties** .
 4. Selecteer bovenaan de knop **afzonderlijke registratie toevoegen** . 
 5. Selecteer op de pagina **inschrijving toevoegen** de optie **X. 509** als het Attestation- **mechanisme** voor het apparaat.
 
@@ -110,4 +110,4 @@ Wanneer u uw inschrijving hebt gemaakt, moet u de registratie van uitgeschakelde
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Registratie maakt ook deel uit van het grotere proces voor het ongedaan maken van de inrichting. Het ongedaan maken van de inrichting van een apparaat omvat zowel de inschrijving van de inrichtings service als de registratie van IoT hub. Zie voor meer informatie over het volledige proces de [inrichting van apparaten die eerder automatisch zijn ingericht](how-to-unprovision-devices.md) 
+Registratie maakt ook deel uit van het grotere proces voor het ongedaan maken van de inrichting. Het ongedaan maken van de inrichting van een apparaat omvat zowel de inschrijving van de inrichtings service als de registratie van IoT hub. Zie voor meer informatie over het volledige proces de [inrichting van apparaten die eerder automatisch zijn ingericht](how-to-unprovision-devices.md)

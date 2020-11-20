@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
 ms.date: 11/12/2020
-ms.openlocfilehash: 68a7dd1b9a7af9f2667785c8b822b2771510d00e
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: b41f5e9a3bd4d3cbe52cf2e1c567d24de8a661f4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94562778"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949952"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Azure AD B2C met Azure Monitor bewaken
 
@@ -25,7 +25,7 @@ Gebruik Azure Monitor om Azure Active Directory B2C (Azure AD B2C) aanmeld-en [a
 U kunt logboek gebeurtenissen door sturen naar:
 
 * Een Azure- [opslag account](../storage/blobs/storage-blobs-introduction.md).
-* Een [log Analytics-werk ruimte](../azure-monitor/platform/resource-logs-collect-workspace.md) (voor het analyseren van gegevens, het maken van Dash boards en waarschuwingen voor specifieke gebeurtenissen).
+* Een [log Analytics-werk ruimte](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) (voor het analyseren van gegevens, het maken van Dash boards en waarschuwingen voor specifieke gebeurtenissen).
 * Een Azure- [Event hub](../event-hubs/event-hubs-about.md) (en kan worden geïntegreerd met uw logische Splunk-en Sumo-instanties).
 
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
@@ -34,7 +34,7 @@ In dit artikel leert u hoe u de logboeken overbrengt naar een Azure Log Analytic
 
 ## <a name="deployment-overview"></a>Implementatieoverzicht
 
-Azure AD B2C maakt gebruik van [Azure Active Directory bewaking](../active-directory/reports-monitoring/overview-monitoring.md). Als u *Diagnostische instellingen* in azure Active Directory binnen uw Azure AD B2C Tenant wilt inschakelen, gebruikt u [Azure Lighthouse](../lighthouse/concepts/azure-delegated-resource-management.md) voor het [delegeren van een resource](../lighthouse/concepts/azure-delegated-resource-management.md), waarmee uw Azure AD B2C (de **service provider** ) een Azure AD-resource (de **klant** ) kan beheren. Nadat u de stappen in dit artikel hebt voltooid, hebt u toegang tot de resource groep *Azure-AD-B2C-monitor* die de [log Analytics-werk ruimte](../azure-monitor/learn/quick-create-workspace.md) in uw **Azure AD B2C** Portal bevat. U kunt de logboeken ook overdragen van Azure AD B2C naar uw Log Analytics-werk ruimte.
+Azure AD B2C maakt gebruik van [Azure Active Directory bewaking](../active-directory/reports-monitoring/overview-monitoring.md). Als u *Diagnostische instellingen* in azure Active Directory binnen uw Azure AD B2C Tenant wilt inschakelen, gebruikt u [Azure Lighthouse](../lighthouse/concepts/azure-delegated-resource-management.md) voor het [delegeren van een resource](../lighthouse/concepts/azure-delegated-resource-management.md), waarmee uw Azure AD B2C (de **service provider**) een Azure AD-resource (de **klant**) kan beheren. Nadat u de stappen in dit artikel hebt voltooid, hebt u toegang tot de resource groep *Azure-AD-B2C-monitor* die de [log Analytics-werk ruimte](../azure-monitor/learn/quick-create-workspace.md) in uw **Azure AD B2C** Portal bevat. U kunt de logboeken ook overdragen van Azure AD B2C naar uw Log Analytics-werk ruimte.
 
 Tijdens deze implementatie moet u een gebruiker of groep in uw Azure AD B2C Directory machtigen om de Log Analytics werkruimte-instantie te configureren binnen de Tenant die uw Azure-abonnement bevat. Als u de autorisatie wilt maken, implementeert u een [Azure Resource Manager](../azure-resource-manager/index.yml) sjabloon voor uw Azure AD-Tenant met het abonnement.
 
@@ -87,7 +87,7 @@ Om het beheer te vereenvoudigen, raden we u aan Azure AD-gebruikers *groepen* te
 
 ### <a name="33-create-an-azure-resource-manager-template"></a>3,3 een Azure Resource Manager-sjabloon maken
 
-Vervolgens maakt u een Azure Resource Manager sjabloon waarmee Azure AD B2C toegang krijgt tot de Azure AD-resource groep die u eerder hebt gemaakt (bijvoorbeeld *Azure-AD-B2C-monitor* ). Implementeer de sjabloon vanuit het GitHub-voor beeld met behulp van de knop **implementeren in azure** waarmee de Azure portal wordt geopend. Hiermee kunt u de sjabloon direct in de portal configureren en implementeren. Zorg ervoor dat u bent aangemeld bij uw Azure AD-Tenant (niet de Azure AD B2C Tenant) voor deze stappen.
+Vervolgens maakt u een Azure Resource Manager sjabloon waarmee Azure AD B2C toegang krijgt tot de Azure AD-resource groep die u eerder hebt gemaakt (bijvoorbeeld *Azure-AD-B2C-monitor*). Implementeer de sjabloon vanuit het GitHub-voor beeld met behulp van de knop **implementeren in azure** waarmee de Azure portal wordt geopend. Hiermee kunt u de sjabloon direct in de portal configureren en implementeren. Zorg ervoor dat u bent aangemeld bij uw Azure AD-Tenant (niet de Azure AD B2C Tenant) voor deze stappen.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 2. Selecteer het pictogram voor het adres van de map en het **abonnement** op de werk balk van de portal en selecteer vervolgens de map die uw **Azure AD** -Tenant bevat.

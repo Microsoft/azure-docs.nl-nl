@@ -12,12 +12,12 @@ ms.date: 08/03/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4a9323cc92567d681ee8c73a62e0b89c17c22b1e
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a5fcbf80850fd9de77e6f9a431afea6d48cb14d1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647610"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949408"
 ---
 # <a name="manage-azure-ad-b2c-user-accounts-with-microsoft-graph"></a>Azure AD B2C gebruikers accounts beheren met Microsoft Graph
 
@@ -35,13 +35,13 @@ Volg de stappen in dit artikel om een toepassings registratie te maken die uw be
 
 ## <a name="user-management-microsoft-graph-operations"></a>Microsoft Graph bewerkingen voor gebruikers beheer
 
-De volgende gebruikers beheer bewerkingen zijn beschikbaar in de [Microsoft Graph-API](https://docs.microsoft.com/graph/api/resources/user):
+De volgende gebruikers beheer bewerkingen zijn beschikbaar in de [Microsoft Graph-API](/graph/api/resources/user):
 
-- [Een lijst met gebruikers ophalen](https://docs.microsoft.com/graph/api/user-list)
-- [Een gebruiker maken](https://docs.microsoft.com/graph/api/user-post-users)
-- [Een gebruiker ophalen](https://docs.microsoft.com/graph/api/user-get)
-- [Een gebruiker bijwerken](https://docs.microsoft.com/graph/api/user-update)
-- [Een gebruiker verwijderen](https://docs.microsoft.com/graph/api/user-delete)
+- [Een lijst met gebruikers ophalen](/graph/api/user-list)
+- [Een gebruiker maken](/graph/api/user-post-users)
+- [Een gebruiker ophalen](/graph/api/user-get)
+- [Een gebruiker bijwerken](/graph/api/user-update)
+- [Een gebruiker verwijderen](/graph/api/user-delete)
 
 ## <a name="user-properties"></a>Gebruikerseigenschappen
 
@@ -125,7 +125,7 @@ Microsoft Graph-API ondersteunt het maken en bijwerken van een gebruiker met ext
 
 ## <a name="code-sample-how-to-programmatically-manage-user-accounts"></a>Code voorbeeld: gebruikers accounts programmatisch beheren
 
-Dit code voorbeeld is een .NET core-console toepassing die gebruikmaakt van de [Microsoft Graph SDK](https://docs.microsoft.com/graph/sdks/sdks-overview) om te communiceren met Microsoft Graph-API. De code laat zien hoe u de API aanroept om gebruikers programmatisch te beheren in een Azure AD B2C-Tenant.
+Dit code voorbeeld is een .NET core-console toepassing die gebruikmaakt van de [Microsoft Graph SDK](/graph/sdks/sdks-overview) om te communiceren met Microsoft Graph-API. De code laat zien hoe u de API aanroept om gebruikers programmatisch te beheren in een Azure AD B2C-Tenant.
 U kunt [het voorbeeld archief](https://github.com/Azure-Samples/ms-identity-dotnetcore-b2c-account-management/archive/master.zip) (*. zip) downloaden, [door de opslag plaats](https://github.com/Azure-Samples/ms-identity-dotnetcore-b2c-account-management) in github bladeren of de opslag plaats klonen:
 
 ```cmd
@@ -152,7 +152,7 @@ In de toepassing wordt een lijst weer gegeven met opdrachten die u kunt uitvoere
 
 ### <a name="code-discussion"></a>Code discussie
 
-De voorbeeld code maakt gebruik van de [Microsoft Graph SDK](https://docs.microsoft.com/graph/sdks/sdks-overview), die is ontworpen om het bouwen van hoogwaardige, efficiënte en flexibele toepassingen te vereenvoudigen die toegang hebben tot Microsoft Graph.
+De voorbeeld code maakt gebruik van de [Microsoft Graph SDK](/graph/sdks/sdks-overview), die is ontworpen om het bouwen van hoogwaardige, efficiënte en flexibele toepassingen te vereenvoudigen die toegang hebben tot Microsoft Graph.
 
 Voor elke aanvraag voor de Microsoft Graph-API is een toegangs token voor verificatie vereist. De oplossing maakt gebruik van het NuGet-pakket [micro soft. Graph. auth](https://www.nuget.org/packages/Microsoft.Graph.Auth/) dat een op een verificatie gebaseerd op een op een manier gebaseerde wrapper van de micro soft Authentication Library (MSAL) biedt voor gebruik met de SDK van Microsoft Graph.
 
@@ -203,7 +203,7 @@ public static async Task ListUsers(GraphServiceClient graphClient)
 }
 ```
 
-[API-aanroepen maken met behulp van de Microsoft Graph sdk's](https://docs.microsoft.com/graph/sdks/create-requests) bevat informatie over het lezen en schrijven van gegevens van Microsoft Graph, `$select` het beheren van de eigenschappen die worden geretourneerd, het opgeven van aangepaste query parameters en het gebruik van de- `$filter` en- `$orderBy` query parameters.
+[API-aanroepen maken met behulp van de Microsoft Graph sdk's](/graph/sdks/create-requests) bevat informatie over het lezen en schrijven van gegevens van Microsoft Graph, `$select` het beheren van de eigenschappen die worden geretourneerd, het opgeven van aangepaste query parameters en het gebruik van de- `$filter` en- `$orderBy` query parameters.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -211,5 +211,5 @@ Zie [Microsoft Graph beschik bare bewerkingen voor Azure AD B2C](microsoft-graph
 
 <!-- LINK -->
 
-[graph-objectIdentity]: https://docs.microsoft.com/graph/api/resources/objectidentity
+[graph-objectIdentity]: /graph/api/resources/objectidentity
 [graph-user]: (https://docs.microsoft.com/graph/api/resources/user)

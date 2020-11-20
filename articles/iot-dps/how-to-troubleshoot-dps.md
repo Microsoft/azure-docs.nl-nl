@@ -8,16 +8,16 @@ services: iot-dps
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: xujing
-ms.openlocfilehash: 3cbab09c6b50abb590cfe9f2720713a8fa547aa7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2d68314aab636180ff17e330c49c9859b8851b06
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75646469"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950683"
 ---
 # <a name="troubleshooting-with-azure-iot-hub-device-provisioning-service"></a>Problemen oplossen met Azure IoT Hub Device Provisioning Service
 
-Connectiviteits problemen voor IoT-apparaten kunnen lastig zijn om problemen op te lossen omdat er veel mogelijke fout punten zijn, zoals Attestation-fouten, registratie fouten etc. Dit artikel bevat richt lijnen voor het detecteren en oplossen van problemen met connectiviteit met apparaten via [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview).
+Connectiviteits problemen voor IoT-apparaten kunnen lastig zijn om problemen op te lossen omdat er veel mogelijke fout punten zijn, zoals Attestation-fouten, registratie fouten etc. Dit artikel bevat richt lijnen voor het detecteren en oplossen van problemen met connectiviteit met apparaten via [Azure monitor](../azure-monitor/overview.md).
 
 ## <a name="using-azure-monitor-to-view-metrics-and-set-up-alerts"></a>Azure Monitor weer geven van metrische gegevens en waarschuwingen instellen
 
@@ -42,7 +42,7 @@ In de volgende procedure wordt beschreven hoe u een waarschuwing kunt weer geven
 
 6. Als u een waarschuwing van een metriek wilt instellen, selecteert u **nieuwe waarschuwings regels** in de rechter bovenhoek van de Blade metrische gegevens, en gaat u naar Blade voor **waarschuwingen** en selecteert u **nieuwe waarschuwings regels**.
 
-7. Selecteer **voor waarde toevoegen**en selecteer vervolgens de gewenste metrische gegevens en drempel waarde door de volgende aanwijzingen te volgen.
+7. Selecteer **voor waarde toevoegen** en selecteer vervolgens de gewenste metrische gegevens en drempel waarde door de volgende aanwijzingen te volgen.
 
 Zie [Wat zijn klassieke waarschuwingen in Microsoft Azure?](../azure-monitor/platform/alerts-overview.md) voor meer informatie.
 
@@ -81,5 +81,5 @@ Gebruik deze tabel om veelvoorkomende fouten te begrijpen en op te lossen.
 | 401 | Het autorisatie token kan niet worden gevalideerd; het is bijvoorbeeld verlopen of is niet van toepassing op de URI van de aanvraag. Deze fout code wordt ook geretourneerd naar apparaten als onderdeel van de TPM-attest stroom. | 401 Onbevoegd|
 | 404 | Het Device Provisioning service-exemplaar of een bron (bijvoorbeeld een inschrijving) bestaat niet. |404 Niet gevonden |
 | 412 | De ETag in de aanvraag komt niet overeen met de ETag van de bestaande resource, conform RFC7232. | 412-voor waarde is mislukt |
-| 429 | Bewerkingen worden beperkt door de service. Zie [IOT hub Device Provisioning Service limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#iot-hub-device-provisioning-service-limits)voor specifieke service limieten. | 429 te veel aanvragen |
+| 429 | Bewerkingen worden beperkt door de service. Zie [IOT hub Device Provisioning Service limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#iot-hub-device-provisioning-service-limits)voor specifieke service limieten. | 429 te veel aanvragen |
 | 500 | Er is een interne fout opgetreden. | 500 Interne serverfout|

@@ -12,12 +12,12 @@ ms.date: 11/16/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 80ecd02f9aebbca66169d64d6c6d0302d58ca439
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 4426a305d72fdd86ee58b3f4a05153593515d4b5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647661"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949646"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Een SAML-toepassing registreren in Azure AD B2C
 
@@ -73,7 +73,7 @@ U kunt een certificaat gebruiken dat is uitgegeven door een open bare certificer
 
 ### <a name="11-prepare-a-self-signed-certificate"></a>1,1 een zelfondertekend certificaat voorbereiden
 
-Als u nog geen certificaat hebt, kunt u een zelfondertekend certificaat gebruiken voor deze zelf studie. In Windows kunt u de cmdlet [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate) van Power shell gebruiken voor het genereren van een certificaat.
+Als u nog geen certificaat hebt, kunt u een zelfondertekend certificaat gebruiken voor deze zelf studie. In Windows kunt u de cmdlet [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) van Power shell gebruiken voor het genereren van een certificaat.
 
 1. Voer deze Power shell-opdracht uit om een zelfondertekend certificaat te genereren. Wijzig het `-Subject` argument naar wens voor uw toepassing en Azure AD B2C Tenant naam. U kunt ook de `-NotAfter` datum aanpassen om een andere verloop tijd voor het certificaat op te geven.
 
@@ -443,7 +443,7 @@ De volgende opties voor SAML-Relying Party (RP) worden ondersteund via uw eigen 
 
 Een SAML-token is een beveiligings token dat is uitgegeven door Azure AD B2C nadat het aanmelden is geslaagd. Het bevat informatie over de gebruiker, de service provider waarvoor het token is bedoeld, de hand tekening en de geldigheids duur. De volgende tabel geeft een lijst van de claims en eigenschappen die u kunt verwachten in een SAML-token dat is uitgegeven door Azure AD B2C.
 
-|Element  |Eigenschap  |Notities  |
+|Element  |Eigenschap  |Opmerkingen  |
 |---------|---------|---------|
 |`<Response>`| `ID` | Een automatisch gegenereerde unieke id van het antwoord. | 
 |`<Response>`| `InResponseTo` | De ID van de SAML-aanvraag waarnaar dit bericht wordt gestuurd. | 

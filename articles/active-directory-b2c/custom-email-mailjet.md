@@ -11,18 +11,18 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 6f2608dafb77aeba98f188ec04f78649656ef969
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: b74de2bdf1f6239f1006c820579a336946939421
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089652"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949578"
 ---
 # <a name="custom-email-verification-with-mailjet"></a>Aangepaste e-mail verificatie met Mailjet
 
 Gebruik aangepaste e-mail in Azure Active Directory B2C (Azure AD B2C) om aangepaste e-mail te verzenden naar gebruikers die zich registreren voor het gebruik van uw toepassingen. Met behulp van [DisplayControls](display-controls.md) (momenteel in Preview) en de e-mail provider Mailjet van derden kunt u uw eigen e-mail sjabloon gebruiken, *van:* adres en onderwerp, en ondersteuning bieden voor lokalisatie en aangepaste otp-instellingen (eenmalig wacht woord).
 
-Voor aangepaste e-mail verificatie is het gebruik van een e-mail provider van derden, zoals [Mailjet](https://Mailjet.com), [SendGrid](custom-email.md)of [SparkPost](https://sparkpost.com), een aangepaste rest API, of een op http gebaseerde e-mail provider (inclusief uw eigen) vereist. In dit artikel wordt beschreven hoe u een oplossing instelt die gebruikmaakt van Mailjet.
+Voor aangepaste e-mail verificatie is het gebruik van een e-mail provider van derden, zoals [Mailjet](https://Mailjet.com), [SendGrid](./custom-email-sendgrid.md)of [SparkPost](https://sparkpost.com), een aangepaste rest API, of een op http gebaseerde e-mail provider (inclusief uw eigen) vereist. In dit artikel wordt beschreven hoe u een oplossing instelt die gebruikmaakt van Mailjet.
 
 [!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 
@@ -42,16 +42,16 @@ Sla vervolgens de Mailjet API-sleutel op in een Azure AD B2C-beleids sleutel voo
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer op de pagina **overzicht** **identiteits ervaring-Framework**.
-1. Selecteer **beleids sleutels**en selecteer vervolgens **toevoegen**.
-1. Kies voor **Opties**de optie **hand matig**.
+1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
+1. Kies voor **Opties** de optie **hand matig**.
 1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `MailjetApiKey`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
-1. Voer in het **geheim**uw Mailjet- **API-sleutel** in die u eerder hebt vastgelegd.
+1. Voer in het **geheim** uw Mailjet- **API-sleutel** in die u eerder hebt vastgelegd.
 1. Selecteer voor **sleutel gebruik** **hand tekening**.
 1. Selecteer **Maken**.
 1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
-1. Kies voor **Opties**de optie **hand matig**.
+1. Kies voor **Opties** de optie **hand matig**.
 1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `MailjetSecretKey`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
-1. Voer in het **geheim**uw geheime Mailjet- **sleutel** in die u eerder hebt vastgelegd.
+1. Voer in het **geheim** uw geheime Mailjet- **sleutel** in die u eerder hebt vastgelegd.
 1. Selecteer voor **sleutel gebruik** **hand tekening**.
 1. Selecteer **Maken**.
 
@@ -60,7 +60,7 @@ Sla vervolgens de Mailjet API-sleutel op in een Azure AD B2C-beleids sleutel voo
 Als er een Mailjet-account is gemaakt en de Mailjet-API-sleutel die is opgeslagen in een Azure AD B2C-beleids sleutel, maakt u een Mailjet- [sjabloon voor dynamische transactionele acties](https://sendgrid.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/).
 
 1. Open de pagina [transactionele sjablonen](https://app.mailjet.com/templates/transactional) op de site Mailjet en selecteer **een nieuwe sjabloon maken**.
-1. Selecteer **deze optie door deze te coderen in HTML**en vervolgens **code**te selecteren.
+1. Selecteer **deze optie door deze te coderen in HTML** en vervolgens **code** te selecteren.
 1. Voer een unieke sjabloon naam in `Verification email` , zoals, en selecteer vervolgens **maken**.
 1. Plak in de HTML-editor de volgende HTML-sjabloon of gebruik uw eigen. De `{{var:otp:""}}` `{{var:email:""}}` para meters en worden dynamisch vervangen door de waarde voor eenmalig wacht woord en het e-mail adres van de gebruiker.
 
@@ -159,11 +159,11 @@ Als er een Mailjet-account is gemaakt en de Mailjet-API-sleutel die is opgeslage
     ```
 
 1. **Bewerkings onderwerp** aan de linkerkant uitbreiden
-    1. Voer bij **onderwerp**een standaard waarde in voor het onderwerp. Mailjet gebruikt deze waarde wanneer de API geen onderwerp-para meter bevat.
+    1. Voer bij **onderwerp** een standaard waarde in voor het onderwerp. Mailjet gebruikt deze waarde wanneer de API geen onderwerp-para meter bevat.
     1. Typ de naam van uw bedrijf voor de **naam**.
-    1. Selecteer voor het **adres**uw e-mail adres
+    1. Selecteer voor het **adres** uw e-mail adres
     1. Selecteer **Opslaan**.
-1. Selecteer in de rechter bovenhoek **opslaan & publiceren**en klik vervolgens op **Ja, wijzigingen publiceren**
+1. Selecteer in de rechter bovenhoek **opslaan & publiceren** en klik vervolgens op **Ja, wijzigingen publiceren**
 1. Noteer de **sjabloon-id** van de sjabloon die u hebt gemaakt voor gebruik in een latere stap. U geeft deze ID op wanneer u [de claim transformatie toevoegt](#add-the-claims-transformation).
 
 

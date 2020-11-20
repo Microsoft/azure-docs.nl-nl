@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: cbf18abe-41cb-44f7-bdec-966f32c89325
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/24/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5a356e96b82e6fbe855d0b474dcb6b1f59c98333
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b204aa508370c62aaf33688aeb7ec63d3f8f1b0e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88855216"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950615"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-file-share-on-azure"></a>SAP ASCS/SCS instance multi-SID hoge Beschik baarheid met Windows Server Failover Clustering en file share op Azure
 
@@ -32,7 +33,7 @@ U kunt meerdere virtuele IP-adressen beheren door gebruik te maken van een [inte
 
 Als u een SAP-implementatie hebt, kunt u een interne load balancer gebruiken om een Windows-cluster configuratie voor ASCS/SCS-exemplaren (SAP Central Services) te maken.
 
-In dit artikel wordt uitgelegd hoe u vanuit één ASCS/SCS-installatie overstapt naar een SAP multi-SID-configuratie door extra geclusterde SAP ASCS/SCS-exemplaren in een bestaand WSFC-cluster (Windows Server failover clustering) met een **Bestands share**te installeren. Wanneer dit proces is voltooid, hebt u een SAP multi-SID-cluster geconfigureerd.
+In dit artikel wordt uitgelegd hoe u vanuit één ASCS/SCS-installatie overstapt naar een SAP multi-SID-configuratie door extra geclusterde SAP ASCS/SCS-exemplaren in een bestaand WSFC-cluster (Windows Server failover clustering) met een **Bestands share** te installeren. Wanneer dit proces is voltooid, hebt u een SAP multi-SID-cluster geconfigureerd.
 
 > [!NOTE]
 >
@@ -71,13 +72,13 @@ Het doel is om meerdere SAP-geclusterde ASCS-exemplaren (Advanced Business Appli
 
 _**Afbeelding 2:** SAP multi-SID-configuratie in twee clusters_
 
-De installatie van een extra **SAP \<SID2> ** -systeem is identiek aan de installatie van één \<SID> systeem. Er zijn twee extra voorbereidings stappen vereist in het ASCS/SCS-cluster en op de bestands share SOFS cluster.
+De installatie van een extra **SAP \<SID2>** -systeem is identiek aan de installatie van één \<SID> systeem. Er zijn twee extra voorbereidings stappen vereist in het ASCS/SCS-cluster en op de bestands share SOFS cluster.
 
 ## <a name="prepare-the-infrastructure-for-an-sap-multi-sid-scenario"></a>De infra structuur voorbereiden voor een SAP multi-SID-scenario
 
 ### <a name="prepare-the-infrastructure-on-the-domain-controller"></a>De infra structuur op de domein controller voorbereiden
 
-Maak de domein groep ** \<Domain> \ SAP_ \<SID2> _GlobalAdmin**, bijvoorbeeld met \<SID2> = PR2. De naam van de domein groep is \<Domain> \ SAP_PR2_GlobalAdmin.
+Maak de domein groep **\<Domain> \ SAP_ \<SID2> _GlobalAdmin**, bijvoorbeeld met \<SID2> = PR2. De naam van de domein groep is \<Domain> \ SAP_PR2_GlobalAdmin.
 
 ### <a name="prepare-the-infrastructure-on-the-ascsscs-cluster"></a>De infra structuur voorbereiden op het ASCS/SCS-cluster
 
@@ -98,8 +99,8 @@ U kunt de bestaande \<SAPGlobalHost> en Volume1 van het eerste SAP-systeem herge
 _**Afbeelding 3:** Multi-SID SOFS is hetzelfde als de naam van de globale SAP-host_
 
 > [!IMPORTANT]
->Voor het tweede **SAP \<SID2> ** -systeem worden dezelfde Volume1 en dezelfde **\<SAPGlobalHost>** netwerk naam gebruikt.
->Omdat u **SAPMNT** al hebt ingesteld als de share naam voor verschillende SAP-systemen, **\<SAPGlobalHost>** moet u dezelfde **Volume1**gebruiken om de netwerk naam te hergebruiken.
+>Voor het tweede **SAP \<SID2>** -systeem worden dezelfde Volume1 en dezelfde **\<SAPGlobalHost>** netwerk naam gebruikt.
+>Omdat u **SAPMNT** al hebt ingesteld als de share naam voor verschillende SAP-systemen, **\<SAPGlobalHost>** moet u dezelfde **Volume1** gebruiken om de netwerk naam te hergebruiken.
 >
 >Het bestandspad voor de \<SID2> globale host is C:\ClusterStorage \\ **Volume1**\usr\sap \<SID2> \SYS\.
 >

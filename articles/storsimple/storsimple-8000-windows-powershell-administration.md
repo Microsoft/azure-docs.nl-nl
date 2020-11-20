@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: bba3666fbce6a8ea591654d1abdad319f1e0857c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65e9657c3948d8ce5883cd33ca8720f501352105
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86999513"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950666"
 ---
 # <a name="use-windows-powershell-for-storsimple-to-administer-your-device"></a>Een apparaat beheren met Windows PowerShell voor StorSimple
 
@@ -28,7 +28,7 @@ Na het lezen van dit artikel kunt u het volgende doen:
 * Hulp krijgen in Windows PowerShell voor StorSimple.
 
 > [!NOTE]
-> * Met Windows PowerShell voor StorSimple-cmdlets kunt u uw StorSimple-apparaat vanuit een seriële console of extern beheren via Windows Power shell Remoting. Voor meer informatie over elk van de afzonderlijke cmdlets die in deze interface kunnen worden gebruikt, gaat u naar de [cmdlet-naslag voor Windows PowerShell voor StorSimple](https://technet.microsoft.com/library/dn688168.aspx).
+> * Met Windows PowerShell voor StorSimple-cmdlets kunt u uw StorSimple-apparaat vanuit een seriële console of extern beheren via Windows Power shell Remoting. Voor meer informatie over elk van de afzonderlijke cmdlets die in deze interface kunnen worden gebruikt, gaat u naar de [cmdlet-naslag voor Windows PowerShell voor StorSimple](/powershell/module/hcs/?viewFallbackFrom=winserverr2-ps).
 > * De Azure PowerShell StorSimple-cmdlets zijn een andere verzameling cmdlets waarmee u StorSimple service-en migratie taken kunt automatiseren vanaf de opdracht regel. Voor meer informatie over de Azure PowerShell-cmdlets voor StorSimple gaat u naar de naslag informatie voor de [Azure StorSimple-cmdlet](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0&viewFallbackFrom=azuresmps-3.7.0#azure).
 
 
@@ -62,7 +62,7 @@ Zorg ervoor dat u de volgende PuTTy-instellingen gebruikt om vanuit de seriële 
     ![Ondersteunde putty-instellingen](./media/storsimple-windows-powershell-administration/IC740877.png)
 3. Klik op **Toepassen**.
 4. Selecteer in het deel venster **categorie** de optie **vertaling**.
-5. Selecteer **UTF-8**in het vak lijst met **externe teken sets** .
+5. Selecteer **UTF-8** in het vak lijst met **externe teken sets** .
 6. Selecteer bij **verwerking van regel teken tekens** **gebruik Unicode-lijn teken code punten**. Op de volgende scherm afbeelding ziet u de juiste selecties voor PuTTy.
    
     ![Instellingen voor UTF-putty](./media/storsimple-windows-powershell-administration/IC740878.png)
@@ -81,7 +81,7 @@ Het banner bericht bevat basis informatie over StorSimple, zoals het model, de n
 ![Serie banner bericht](./media/storsimple-windows-powershell-administration/IC741098.png)
 
 > [!IMPORTANT]
-> U kunt het banner bericht gebruiken om te bepalen of de controller waarmee u verbonden bent, _actief_ of _passief_is.
+> U kunt het banner bericht gebruiken om te bepalen of de controller waarmee u verbonden bent, _actief_ of _passief_ is.
 
 In de volgende afbeelding ziet u de verschillende runs Pace-opties die beschikbaar zijn in het menu van de seriële console.
 
@@ -178,4 +178,3 @@ U kunt de Help eenvoudig bijwerken in de Windows Power shell-interface. Voer de 
 ## <a name="next-steps"></a>Volgende stappen
 
 Als u problemen ondervindt met uw StorSimple-apparaat tijdens het uitvoeren van een van de bovenstaande werk stromen, raadpleegt u de [Hulpprogram ma's voor het oplossen van problemen met StorSimple-implementaties](storsimple-8000-troubleshoot-deployment.md#tools-for-troubleshooting-storsimple-deployments).
-

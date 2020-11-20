@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/06/2020
 ms.author: vigunase
 ms.subservice: B2C
-ms.openlocfilehash: c8739da859c00a9caf08ac833f7b4ae7ae52e392
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d8c0a5ce6f3befd41c0e1399363fd73726693837
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90084308"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949714"
 ---
 # <a name="recommendations-and-best-practices-for-azure-active-directory-b2c"></a>Aanbevelingen en aanbevolen procedures voor Azure Active Directory B2C
 
@@ -27,7 +27,7 @@ De volgende aanbevolen procedures en aanbevelingen omvatten enkele van de belang
 | Best practice | Beschrijving |
 |--|--|
 | Gebruikers stromen kiezen voor de meeste scenario's | Het Framework voor identiteits ervaring van Azure AD B2C is de kern sterkte van de service. Het beleid beschrijft volledige identiteits ervaringen, zoals aanmelden, aanmelden of profiel bewerking. Om u te helpen bij het instellen van de meest voorkomende identiteits taken, bevat de Azure AD B2C Portal vooraf gedefinieerde, Configureer bare beleids regels met de naam gebruikers stromen. Met gebruikers stromen kunt u binnen enkele minuten fantastische gebruikers ervaringen maken, met slechts enkele klikken. [Meer informatie over het gebruik van gebruikers stromen versus aangepast beleid](custom-policy-overview.md#comparing-user-flows-and-custom-policies).|
-| App-registraties | Elke toepassing (Web, native) en API die wordt beveiligd, moeten zijn geregistreerd in Azure AD B2C. Als een app zowel een web-als een systeem eigen versie van iOS en Android heeft, kunt u deze registreren als één toepassing in Azure AD B2C met dezelfde client-ID. Meer informatie over het [registreren van OIDC-, SAML-, Web-en systeem eigen apps](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-register-applications?tabs=applications). Meer informatie over [toepassings typen die kunnen worden gebruikt in azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/application-types). |
+| App-registraties | Elke toepassing (Web, native) en API die wordt beveiligd, moeten zijn geregistreerd in Azure AD B2C. Als een app zowel een web-als een systeem eigen versie van iOS en Android heeft, kunt u deze registreren als één toepassing in Azure AD B2C met dezelfde client-ID. Meer informatie over het [registreren van OIDC-, SAML-, Web-en systeem eigen apps](./tutorial-register-applications.md?tabs=applications). Meer informatie over [toepassings typen die kunnen worden gebruikt in azure AD B2C](./application-types.md). |
 | Naar facturering van maandelijkse actieve gebruikers verplaatsen | Azure AD B2C is verplaatst van maandelijkse actieve authenticaties naar maandelijkse MAU-facturering (actieve gebruikers). De meeste klanten vinden dit model kosten effectief. Meer [informatie over de facturering van maandelijkse actieve gebruikers](https://azure.microsoft.com/updates/mau-billing/). |
 
 ## <a name="planning-and-design"></a>Planning en ontwerp
@@ -53,7 +53,7 @@ Houd tijdens de implementatie fase rekening met de volgende aanbevelingen.
 | Best practice | Beschrijving |
 |--|--|
 | Aangepaste beleids regels bewerken met de extensie Azure AD B2C voor Visual Studio code | Down load Visual Studio code en deze [door de Community ontwikkelde uitbrei ding van de Visual Studio code Marketplace](https://marketplace.visualstudio.com/items?itemName=AzureADB2CTools.aadb2c). Hoewel dit geen officiële micro soft-product is, bevat de Azure AD B2C-extensie voor Visual Studio code verschillende functies waarmee u eenvoudiger aangepaste beleids regels kunt gebruiken. |
-| Meer informatie over het oplossen van Azure AD B2C | Meer informatie over het [oplossen van problemen met aangepaste beleids regels](https://docs.microsoft.com/azure/active-directory-b2c/troubleshoot-custom-policies?tabs=applications) tijdens de ontwikkeling. Meer informatie over hoe een normale verificatie stroom eruit ziet en hulpprogram ma's gebruikt voor het detecteren van afwijkingen en fouten. Gebruik bijvoorbeeld [Application Insights](troubleshoot-with-application-insights.md) om de uitvoer logboeken van gebruikers ritten te controleren. |
+| Meer informatie over het oplossen van Azure AD B2C | Meer informatie over het [oplossen van problemen met aangepaste beleids regels](./troubleshoot-custom-policies.md?tabs=applications) tijdens de ontwikkeling. Meer informatie over hoe een normale verificatie stroom eruit ziet en hulpprogram ma's gebruikt voor het detecteren van afwijkingen en fouten. Gebruik bijvoorbeeld [Application Insights](troubleshoot-with-application-insights.md) om de uitvoer logboeken van gebruikers ritten te controleren. |
 | Maak gebruik van onze bibliotheek met bewezen aangepaste beleids patronen | Zoek voor [beelden](https://github.com/azure-ad-b2c/samples) voor een aantal verbeterde gebruikers ritten van Azure AD B2C klant identiteit en toegangs beheer (CIAM). |
 
 ## <a name="testing"></a>Testen
@@ -64,7 +64,7 @@ Uw Azure AD B2C-implementatie testen en automatiseren.
 |--|--|
 | Account voor globaal verkeer | Gebruik verkeers bronnen van een ander globaal adres om de vereisten voor prestaties en lokalisatie te testen. Zorg ervoor dat alle HTML-, CSS-en afhankelijkheden voldoen aan uw prestatie behoeften. |
 | Functionele en UI-tests | Test de gebruikers die end-to-end stromen. Voeg elke paar minuten synthetische tests toe met behulp van selenium, VS web test, enzovoort. |
-| Pen testen | Voordat u aan de slag gaat met uw oplossing, voert u de oefeningen voor indringings tests uit om te controleren of alle onderdelen veilig zijn, inclusief eventuele afhankelijkheden van derden. Controleer of u uw Api's met toegangs tokens hebt beveiligd en het juiste verificatie protocol hebt gebruikt voor uw toepassings scenario. Meer informatie over [Indringings tests](https://docs.microsoft.com/azure/security/fundamentals/pen-testing) en de [Microsoft Cloud gecombineerde indringings test regels van engagement](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1). |
+| Pen testen | Voordat u aan de slag gaat met uw oplossing, voert u de oefeningen voor indringings tests uit om te controleren of alle onderdelen veilig zijn, inclusief eventuele afhankelijkheden van derden. Controleer of u uw Api's met toegangs tokens hebt beveiligd en het juiste verificatie protocol hebt gebruikt voor uw toepassings scenario. Meer informatie over [Indringings tests](../security/fundamentals/pen-testing.md) en de [Microsoft Cloud gecombineerde indringings test regels van engagement](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1). |
 | A/B testen | Vlieg uw nieuwe functies met een kleine, wille keurige set gebruikers voordat u de hele populatie uitrollen. Als Java script is ingeschakeld in Azure AD B2C, kunt u integreren met een/B-test programma zoals geoptimaliseerd, duidelijkheid en anderen. |
 | Belasting testen | Azure AD B2C kan worden geschaald, maar uw toepassing kan alleen worden geschaald als alle afhankelijkheden kunnen worden geschaald. Laad-test uw Api's en CDN. |
 | Beperking |  Azure AD B2C beperkt het verkeer als er te veel aanvragen worden verzonden vanuit dezelfde bron in een korte periode. Gebruik verschillende verkeers bronnen tijdens het testen en handel de `AADB2C90229` fout code probleemloos af in uw toepassingen. |
@@ -78,10 +78,10 @@ Uw Azure AD B2C omgeving beheren.
 |--|--|
 | Meerdere omgevingen maken | Voor eenvoudigere bewerkingen en implementaties kunt u afzonderlijke omgevingen maken voor ontwikkeling, testen, voor bereiding op productie en productie. Maak voor elke Azure AD B2C tenants. |
 | Versie beheer voor uw aangepaste beleids regels gebruiken | Overweeg het gebruik van GitHub, Azure opslag plaatsen of een ander versie beheersysteem op de Cloud voor uw aangepaste beleids Azure AD B2C. |
-| Gebruik de Microsoft Graph-API om het beheer van uw B2C-tenants te automatiseren | Microsoft Graph-Api's:<br/>[Framework voor identiteits ervaring](https://docs.microsoft.com/graph/api/resources/trustframeworkpolicy?view=graph-rest-beta&preserve-view=true) beheren (aangepast beleid)<br/>[Sleutels](https://docs.microsoft.com/graph/api/resources/trustframeworkkeyset?view=graph-rest-beta&preserve-view=true)<br/>[Gebruikersstromen](https://docs.microsoft.com/graph/api/resources/identityuserflow?view=graph-rest-beta&preserve-view=true) |
+| Gebruik de Microsoft Graph-API om het beheer van uw B2C-tenants te automatiseren | Microsoft Graph-Api's:<br/>[Framework voor identiteits ervaring](/graph/api/resources/trustframeworkpolicy?preserve-view=true&view=graph-rest-beta) beheren (aangepast beleid)<br/>[Sleutels](/graph/api/resources/trustframeworkkeyset?preserve-view=true&view=graph-rest-beta)<br/>[Gebruikersstromen](/graph/api/resources/identityuserflow?preserve-view=true&view=graph-rest-beta) |
 | Integreren met Azure DevOps | Met een [CI/cd-pijp lijn](deploy-custom-policies-devops.md) kunt u eenvoudig code verplaatsen tussen verschillende omgevingen en de productie gereedheid op elk moment garanderen.   |
 | Integreren met Azure Monitor | [Audit logboek gebeurtenissen](view-audit-logs.md) worden alleen zeven dagen bewaard. [Integreer met Azure monitor](azure-monitor.md) om de logboeken te bewaren voor gebruik op lange termijn, of integreer met hulpprogram ma's voor beveiligings informatie en Event Management van derden om inzicht te krijgen in uw omgeving. |
-| Actieve waarschuwingen en bewaking instellen | [Gebruikers gedrag bijhouden](active-directory-b2c-custom-guide-eventlogger-appins.md) in azure AD B2C met behulp van Application Insights. |
+| Actieve waarschuwingen en bewaking instellen | [Gebruikers gedrag bijhouden](./analytics-with-application-insights.md) in azure AD B2C met behulp van Application Insights. |
 
 ## <a name="support-and-status-updates"></a>Ondersteuning en status updates
 

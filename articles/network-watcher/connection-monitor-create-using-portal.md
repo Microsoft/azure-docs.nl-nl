@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: 8c4df64334957a78fcf05c11625335214f8e032a
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: d652f1eae62270fa8968d64a2bd15a1261dca673
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699369"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949187"
 ---
 # <a name="create-a-monitor-in-connection-monitor-by-using-the-azure-portal"></a>Een monitor maken in de verbindings monitor met behulp van de Azure Portal
 
@@ -102,7 +102,7 @@ Als u in de Azure Portal een test groep wilt maken in een verbindings monitor, g
 
 * **Test groep uitschakelen**: u kunt dit selectie vakje inschakelen om de bewaking uit te scha kelen voor alle bronnen en doelen die door de test groep worden opgegeven. Deze selectie is standaard uitgeschakeld.
 * **Naam**: Geef een naam op voor de test groep.
-* **Bronnen**: u kunt zowel virtuele machines van Azure als lokale computers opgeven als bronnen als er agents op zijn geïnstalleerd. Zie [bewakings agenten installeren](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#install-monitoring-agents)voor meer informatie over het installeren van een agent voor uw bron.
+* **Bronnen**: u kunt zowel virtuele machines van Azure als lokale computers opgeven als bronnen als er agents op zijn geïnstalleerd. Zie [bewakings agenten installeren](./connection-monitor-overview.md#install-monitoring-agents)voor meer informatie over het installeren van een agent voor uw bron.
    * Als u Azure-agents wilt kiezen, selecteert u het tabblad **Azure-eind punten** . Hier ziet u alleen de virtuele machines die zijn gebonden aan de regio die u hebt opgegeven tijdens het maken van de verbindings monitor. Standaard worden Vm's gegroepeerd in het abonnement waarvan ze deel uitmaken. Deze groepen worden samengevouwen. 
    
        U kunt inzoomen op het **abonnements** niveau tot andere niveaus in de hiërarchie:
@@ -117,7 +117,7 @@ Als u in de Azure Portal een test groep wilt maken in een verbindings monitor, g
 
    * Als u on-premises agents wilt kiezen, selecteert u het tabblad **niet-Azure-eind punten** . Standaard worden agents gegroepeerd in werk ruimten per regio. Voor al deze werk ruimten is Netwerkprestatiemeter geconfigureerd. 
    
-       Als u Netwerkprestatiemeter aan uw werk ruimte wilt toevoegen, haalt u deze op via [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.NetworkMonitoringOMS?tab=Overview). Zie [oplossingen controleren in azure monitor](https://docs.microsoft.com/azure/azure-monitor/insights/solutions)voor informatie over het toevoegen van Netwerkprestatiemeter. 
+       Als u Netwerkprestatiemeter aan uw werk ruimte wilt toevoegen, haalt u deze op via [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.NetworkMonitoringOMS?tab=Overview). Zie [oplossingen controleren in azure monitor](../azure-monitor/insights/solutions.md)voor informatie over het toevoegen van Netwerkprestatiemeter. 
    
        Klik onder **verbindings monitor maken** op het tabblad **basis beginselen** , de standaard regio is geselecteerd. Als u de regio wijzigt, kunt u agents kiezen uit werk ruimten in de nieuwe regio. U kunt een of meer agents of subnetten selecteren. In de weer gave **subnet** kunt u specifieke IP-adressen voor bewaking selecteren. Als u meerdere subnetten toevoegt, wordt er een aangepast on-premises netwerk met de naam **OnPremises_Network_1** gemaakt. U kunt ook de **Group by** -selector wijzigen om te groeperen op agents.
 
@@ -140,7 +140,7 @@ Als u in de Azure Portal een test groep wilt maken in een verbindings monitor, g
     
     * Als u niet-Azure-agents als doelen wilt kiezen, selecteert u het tabblad **niet-Azure-eind punten** . Standaard worden agents gegroepeerd in werk ruimten per regio. Al deze werk ruimten zijn Netwerkprestatiemeter geconfigureerd. 
     
-      Als u Netwerkprestatiemeter aan uw werk ruimte wilt toevoegen, haalt u deze op via Azure Marketplace. Zie [oplossingen controleren in azure monitor](https://docs.microsoft.com/azure/azure-monitor/insights/solutions)voor informatie over het toevoegen van Netwerkprestatiemeter. 
+      Als u Netwerkprestatiemeter aan uw werk ruimte wilt toevoegen, haalt u deze op via Azure Marketplace. Zie [oplossingen controleren in azure monitor](../azure-monitor/insights/solutions.md)voor informatie over het toevoegen van Netwerkprestatiemeter. 
 
       Klik onder **verbindings monitor maken** op het tabblad **basis beginselen**   , de standaard regio is geselecteerd. Als u de regio wijzigt, kunt u agents kiezen uit werk ruimten in de nieuwe regio. U kunt een of meer agents of subnetten selecteren. In de weer gave **subnet** kunt u specifieke IP-adressen voor bewaking selecteren. Als u meerdere subnetten toevoegt, wordt er een aangepast on-premises netwerk met de naam **OnPremises_Network_1** gemaakt.  
 
@@ -182,7 +182,7 @@ Als u in de Azure Portal waarschuwingen voor een verbindings monitor wilt maken,
 
 - **Voorwaarde naam**: de waarschuwing wordt gemaakt op basis van de `Test Result(preview)` metriek. Wanneer het resultaat van de test van de verbindings monitor een mislukt resultaat is, wordt de waarschuwings regel geactiveerd. 
 
-- **Naam van de actie groep**: u kunt uw e-mail adres rechtstreeks invoeren of u kunt waarschuwingen maken via actie groepen. Als u uw e-mail adres rechtstreeks invoert, wordt er een actie groep gemaakt met de naam **NPM e-mail ActionGroup** . De e-mail-ID wordt toegevoegd aan die actie groep. Als u actie groepen wilt gebruiken, moet u een eerder gemaakte actie groep selecteren. Zie [actie groepen maken in de Azure Portal](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups)voor meer informatie over het maken van een actie groep. Nadat de waarschuwing is gemaakt, kunt u [uw waarschuwingen beheren](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric#view-and-manage-with-azure-portal). 
+- **Naam van de actie groep**: u kunt uw e-mail adres rechtstreeks invoeren of u kunt waarschuwingen maken via actie groepen. Als u uw e-mail adres rechtstreeks invoert, wordt er een actie groep gemaakt met de naam **NPM e-mail ActionGroup** . De e-mail-ID wordt toegevoegd aan die actie groep. Als u actie groepen wilt gebruiken, moet u een eerder gemaakte actie groep selecteren. Zie [actie groepen maken in de Azure Portal](../azure-monitor/platform/action-groups.md)voor meer informatie over het maken van een actie groep. Nadat de waarschuwing is gemaakt, kunt u [uw waarschuwingen beheren](../azure-monitor/platform/alerts-metric.md#view-and-manage-with-azure-portal). 
 
 - **Naam van waarschuwings regel**: de naam van de verbindings monitor.
 
@@ -201,5 +201,5 @@ Verbindings monitors hebben de volgende schaal limieten:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie [over het analyseren van bewakings gegevens en het instellen van waarschuwingen](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#analyze-monitoring-data-and-set-alerts).
-* Meer informatie [over het vaststellen van problemen in uw netwerk](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#diagnose-issues-in-your-network).
+* Meer informatie [over het analyseren van bewakings gegevens en het instellen van waarschuwingen](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts).
+* Meer informatie [over het vaststellen van problemen in uw netwerk](./connection-monitor-overview.md#diagnose-issues-in-your-network).

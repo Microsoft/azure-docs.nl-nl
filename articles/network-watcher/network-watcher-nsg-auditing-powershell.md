@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 10abd1065fe47556109ed69d36493c165dec1418
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 177215775c9e83286aa98872eed0ab211a8f36ff
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84738206"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948745"
 ---
 # <a name="automate-nsg-auditing-with-azure-network-watcher-security-group-view"></a>NSG auditing automatiseren met de beveiligings groeps weergave van Azure Network Watcher
 
 Klanten worden vaak geconfronteerd met de uitdaging van het controleren van de beveiligings postuur van hun infra structuur. Deze uitdaging is niet anders voor hun virtuele machines in Azure. Het is belang rijk dat u een soortgelijk beveiligings profiel gebruikt op basis van de regels voor de netwerk beveiligings groep (NSG). Met de weer gave beveiligings groep kunt u nu de lijst met regels die zijn toegepast op een virtuele machine in een NSG ophalen. U kunt een Golden NSG-beveiligings profiel definiëren en de weer gave van de beveiligings groep op een wekelijkse uitgebracht initiëren en de uitvoer vergelijken met het profiel Golden en een rapport maken. Op deze manier kunt u alle Vm's die niet voldoen aan het vereiste beveiligings profiel, gemakkelijk identificeren.
 
-Zie [overzicht van netwerk beveiliging](../virtual-network/security-overview.md)als u niet bekend bent met netwerk beveiligings groepen.
+Zie [overzicht van netwerk beveiliging](../virtual-network/network-security-groups-overview.md)als u niet bekend bent met netwerk beveiligings groepen.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -189,16 +189,3 @@ SideIndicator            : <=
 ## <a name="next-steps"></a>Volgende stappen
 
 Als de instellingen zijn gewijzigd, raadpleegt u [netwerk beveiligings groepen beheren](../virtual-network/manage-network-security-group.md) om de netwerk beveiligings groep en beveiligings regels te traceren die in kwestie zijn.
-
-
-
-
-
-
-
-
-
-
-
-
-

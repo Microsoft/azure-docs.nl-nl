@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 888e2287c869200434e198204881d5bd5014f87d
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 29db2214ddabeb6df2aa937c4ccd1f9938143969
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363858"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949442"
 ---
 # <a name="manage-azure-ad-b2c-custom-policies-with-azure-powershell"></a>Azure AD B2C aangepaste beleids regels beheren met Azure PowerShell
 
@@ -31,7 +31,7 @@ Azure PowerShell biedt verschillende cmdlets voor het opdracht regel-en op scrip
 
 * [Azure AD B2C Tenant](tutorial-create-tenant.md)en referenties voor een gebruiker in de directory met de [B2C IEF Policy](../active-directory/roles/permissions-reference.md#b2c-ief-policy-administrator) beheerdersrol
 * [Aangepast beleid](custom-policy-get-started.md) dat is geüpload naar uw Tenant
-* [Module Azure AD Power shell voor Graph **Preview**](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
+* [Module Azure AD Power shell voor Graph **Preview**](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
 
 ## <a name="connect-powershell-session-to-b2c-tenant"></a>Een Power shell-sessie verbinden met de B2C-Tenant
 
@@ -191,15 +191,15 @@ Message: Validation failed: 1 validation error(s) found in policy "B2C_1A_SIGNUP
 ...
 ```
 
-Zie [problemen met Azure AD B2C aangepaste beleids regels en het Framework voor identiteits ervaring oplossen](active-directory-b2c-guide-troubleshooting-custom.md)voor meer informatie over het oplossen van een aangepast beleid.
+Zie [problemen met Azure AD B2C aangepaste beleids regels en het Framework voor identiteits ervaring oplossen](./troubleshoot-custom-policies.md)voor meer informatie over het oplossen van een aangepast beleid.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie [aangepaste beleids regels implementeren vanuit een Azure DevOps-pijp lijn](deploy-custom-policies-devops.md)voor meer informatie over het gebruik van Power shell om aangepast beleid te implementeren als onderdeel van een pijp lijn voor continue integratie/continue levering (CI/cd).
 
 <!-- LINKS - External -->
-[Connect-AzureAD]: https://docs.microsoft.com/powershell/module/azuread/get-azureadmstrustframeworkpolicy
-[Get-AzureADMSTrustFrameworkPolicy]: https://docs.microsoft.com/powershell/module/azuread/get-azureadmstrustframeworkpolicy
-[New-AzureADMSTrustFrameworkPolicy]: https://docs.microsoft.com/powershell/module/azuread/new-azureadmstrustframeworkpolicy
-[Remove-AzureADMSTrustFrameworkPolicy]: https://docs.microsoft.com/powershell/module/azuread/remove-azureadmstrustframeworkpolicy
-[Set-AzureADMSTrustFrameworkPolicy]: https://docs.microsoft.com/powershell/module/azuread/set-azureadmstrustframeworkpolicy
+[Connect-AzureAD]: /powershell/module/azuread/get-azureadmstrustframeworkpolicy
+[Get-AzureADMSTrustFrameworkPolicy]: /powershell/module/azuread/get-azureadmstrustframeworkpolicy
+[New-AzureADMSTrustFrameworkPolicy]: /powershell/module/azuread/new-azureadmstrustframeworkpolicy
+[Remove-AzureADMSTrustFrameworkPolicy]: /powershell/module/azuread/remove-azureadmstrustframeworkpolicy
+[Set-AzureADMSTrustFrameworkPolicy]: /powershell/module/azuread/set-azureadmstrustframeworkpolicy

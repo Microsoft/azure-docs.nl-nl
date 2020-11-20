@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/27/2020
 ms.author: vinigam
 ms.custom: mvc
-ms.openlocfilehash: 5dbb8d508fe824d0264043625c988f43092f3f78
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 13b379fd3b4f788d79cbb6a9bf6d40cb1693eaf9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699233"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948970"
 ---
 # <a name="network-connectivity-monitoring-with-connection-monitor"></a>Netwerk connectiviteit controleren met verbindings monitor
 
@@ -34,7 +34,7 @@ Hier volgen enkele gebruiks voorbeelden voor verbindings monitor:
 - Uw hybride toepassing heeft verbinding nodig met een Azure Storage-eind punt. Uw on-premises site en uw Azure-toepassing maken verbinding met hetzelfde Azure Storage-eind punt. U wilt de latenties van de on-premises site vergelijken met de latenties van de Azure-toepassing.
 - U wilt de connectiviteit controleren tussen uw on-premises instellingen en de virtuele Azure-machines die uw Cloud toepassing hosten.
 
-De verbindings monitor combineert het beste van twee functies: de Network Watcher-functie [verbindings monitor (klassiek)](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#monitor-communication-between-a-virtual-machine-and-an-endpoint) en de NETWERKPRESTATIEMETER (NPM) [service connectiviteits monitor](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor-service-connectivity), controle functie voor [ExpressRoute](https://docs.microsoft.com/azure/expressroute/how-to-npm)en [prestatie bewaking](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor-performance-monitor) .
+De verbindings monitor combineert het beste van twee functies: de Network Watcher-functie [verbindings monitor (klassiek)](./network-watcher-monitoring-overview.md#monitor-communication-between-a-virtual-machine-and-an-endpoint) en de NETWERKPRESTATIEMETER (NPM) [service connectiviteits monitor](../azure-monitor/insights/network-performance-monitor-service-connectivity.md), controle functie voor [ExpressRoute](../expressroute/how-to-npm.md)en [prestatie bewaking](../azure-monitor/insights/network-performance-monitor-performance-monitor.md) .
 
 Hier volgen enkele voor delen van de verbindings monitor:
 
@@ -65,7 +65,7 @@ Verbindings monitor is afhankelijk van licht gewicht uitvoer bare bestanden om c
 
 Als u wilt dat de verbindings monitor uw Azure-Vm's als bewakings bronnen herkent, installeert u de Network Watcher-extensie voor de virtuele machine van de agent. Deze extensie wordt ook wel de *Network Watcher extensie* genoemd. Voor virtuele Azure-machines is de extensie vereist om end-to-end controle en andere geavanceerde functionaliteit te activeren. 
 
-U kunt de Network Watcher-extensie installeren wanneer u [een VM maakt](https://docs.microsoft.com/azure/network-watcher/connection-monitor#create-the-first-vm). U kunt ook de Network Watcher-extensie voor [Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/network-watcher-linux) en [Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/network-watcher-windows)afzonderlijk installeren, configureren en problemen oplossen.
+U kunt de Network Watcher-extensie installeren wanneer u [een VM maakt](./connection-monitor.md#create-the-first-vm). U kunt ook de Network Watcher-extensie voor [Linux](../virtual-machines/extensions/network-watcher-linux.md) en [Windows](../virtual-machines/extensions/network-watcher-windows.md)afzonderlijk installeren, configureren en problemen oplossen.
 
 Regels voor een netwerk beveiligings groep (NSG) of firewall kunnen de communicatie tussen de bron en de bestemming blok keren. De verbindings monitor detecteert dit probleem en geeft deze weer als een diagnostisch bericht in de topologie. Als u verbindings bewaking wilt inschakelen, moet u ervoor zorgen dat de NSG-en firewall regels pakketten toestaan via TCP of ICMP tussen de bron en de bestemming.
 
@@ -73,7 +73,7 @@ Regels voor een netwerk beveiligings groep (NSG) of firewall kunnen de communica
 
 Als u wilt dat verbindings monitor uw on-premises computers als bronnen voor bewaking herkent, installeert u de Log Analytics-agent op de computers. Schakel vervolgens de Netwerkprestatiemeter-oplossing in. Deze agents zijn gekoppeld aan Log Analytics werk ruimten, dus u moet de werk ruimte-ID en de primaire sleutel instellen voordat de agents kunnen worden gecontroleerd.
 
-Zie [Azure monitor virtuele-machine-extensie voor Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-windows)om de log Analytics agent voor Windows-computers te installeren.
+Zie [Azure monitor virtuele-machine-extensie voor Windows](../virtual-machines/extensions/oms-windows.md)om de log Analytics agent voor Windows-computers te installeren.
 
 Als het pad firewalls of virtuele netwerk apparaten (Nva's) bevat, moet u ervoor zorgen dat de bestemming bereikbaar is.
 
@@ -81,7 +81,7 @@ Als het pad firewalls of virtuele netwerk apparaten (Nva's) bevat, moet u ervoor
 
 Alle abonnementen met een virtueel netwerk zijn ingeschakeld met Network Watcher. Wanneer u een virtueel netwerk in uw abonnement maakt, wordt Network Watcher automatisch ingeschakeld in de regio en het abonnement van het virtuele netwerk. Deze automatische inschakeling heeft geen invloed op uw resources of er worden kosten in rekening gebracht. Zorg ervoor dat Network Watcher niet expliciet is uitgeschakeld voor uw abonnement. 
 
-Zie [enable Network Watcher](https://docs.microsoft.com/azure/network-watcher/network-watcher-create)(Engelstalig) voor meer informatie.
+Zie [enable Network Watcher](./network-watcher-create.md)(Engelstalig) voor meer informatie.
 
 ## <a name="create-a-connection-monitor"></a>Een verbindingsmonitor maken 
 
@@ -111,7 +111,7 @@ De verbindings monitor bevat de volgende entiteiten:
 
  ![Diagram van een verbindings monitor, waarbij de relatie tussen test groepen en tests wordt gedefinieerd](./media/connection-monitor-2-preview/cm-tg-2.png)
 
-U kunt een verbindings monitor maken met behulp van [Azure Portal](connection-monitor-preview-create-using-portal.md) of [ARMClient](connection-monitor-preview-create-using-arm-client.md)
+U kunt een verbindings monitor maken met behulp van [Azure Portal](./connection-monitor-create-using-portal.md) of [ARMClient](./connection-monitor-create-using-template.md)
 
 Alle bronnen, doelen en test configuraties die u toevoegt aan een test groep, worden opgesplitst naar afzonderlijke tests. Hier volgt een voor beeld van hoe bronnen en bestemmingen worden uitgesplitst:
 
@@ -213,7 +213,7 @@ Alleen mislukte testen weer geven in verbindings monitor waarbij het bron-IP-adr
 Alleen mislukte testen weer geven in verbindings monitor waarbij de bestemming outlook.office365.com is:
 1. Wijzig de weer gave om deze te **testen**.
 1. Selecteer voor het filter op basis van status de optie **mislukt**.
-1. Voer in het zoek veld *Outlook.office365.com* in
+1. Voer in het zoek veld *Office.live.com* in
 1. Selecteer in **bereik** in het bovenste niveau filter **bestemmingen**.
   
   :::image type="content" source="./media/connection-monitor-2-preview/tests-view.png" alt-text="Scherm opname van een weer gave die is gefilterd zodat alleen mislukte tests voor het Outlook.Office365.com doel worden weer gegeven" lightbox="./media/connection-monitor-2-preview/tests-view.png":::
@@ -271,7 +271,7 @@ In verbindings monitors die zijn gemaakt voor de ervaring van de verbindings mon
 
 Wanneer u metrische gegevens gebruikt, stelt u het resource type in als micro soft. Network/networkWatchers/connectionMonitors
 
-| Gegevens | Weergavenaam | Eenheid | Aggregatietype | Beschrijving | Afmetingen |
+| Metrisch | Weergavenaam | Eenheid | Aggregatietype | Beschrijving | Afmetingen |
 | --- | --- | --- | --- | --- | --- |
 | ProbesFailedPercent | % Tests mislukt | Percentage | Average | Het percentage van de connectiviteits controle tests is mislukt. | Geen dimensies |
 | AverageRoundtripMs | Gem. retour tijd (MS) | Milliseconden | Average | Gemiddelde netwerk-RTT voor connectiviteits controle tests die zijn verzonden tussen de bron en de bestemming. |             Geen dimensies |
@@ -348,5 +348,5 @@ Voor netwerken waarvan de bronnen virtuele Azure-machines zijn, kunnen de volgen
 
 ## <a name="next-steps"></a>Volgende stappen
     
-   * Meer informatie [over het maken van een verbindings monitor met Azure Portal](connection-monitor-preview-create-using-portal.md)  
-   * Meer informatie [over het maken van een verbindings monitor met ARMClient](connection-monitor-preview-create-using-arm-client.md)  
+   * Meer informatie [over het maken van een verbindings monitor met Azure Portal](./connection-monitor-create-using-portal.md)  
+   * Meer informatie [over het maken van een verbindings monitor met ARMClient](./connection-monitor-create-using-template.md)

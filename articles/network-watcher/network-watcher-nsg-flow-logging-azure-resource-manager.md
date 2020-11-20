@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/26/2020
 ms.author: damendo
-ms.openlocfilehash: 6d16d878b0cf7a73c87b5d6e9263a24c4dfb4383
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8db4d4ae56a5a0ee0c92de5d9822614a3270b1c5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84738138"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948677"
 ---
 # <a name="configure-nsg-flow-logs-from-an-azure-resource-manager-template"></a>NSG-stroom logboeken van een Azure Resource Manager sjabloon configureren
 
@@ -31,15 +31,15 @@ ms.locfileid: "84738138"
 > - [Azure Resource Manager](network-watcher-nsg-flow-logging-azure-resource-manager.md)
 
 
-[Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/) is de systeem eigen en krachtige manier waarop u uw [infra structuur kunt beheren als code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code).
+[Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/) is de systeem eigen en krachtige manier waarop u uw [infra structuur kunt beheren als code](/azure/devops/learn/what-is-infrastructure-as-code).
 
-Dit artikel laat u zien hoe u [NSG-stroom logboeken](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview) programmatisch kunt inschakelen met behulp van een Azure Resource Manager sjabloon en Azure PowerShell. We beginnen met het bieden van een overzicht van de eigenschappen van het NSG-flow logboek object, gevolgd door een paar voorbeeld sjablonen. Vervolgens implementeren we de sjabloon met behulp van een lokaal PowerShell-exemplaar.
+Dit artikel laat u zien hoe u [NSG-stroom logboeken](./network-watcher-nsg-flow-logging-overview.md) programmatisch kunt inschakelen met behulp van een Azure Resource Manager sjabloon en Azure PowerShell. We beginnen met het bieden van een overzicht van de eigenschappen van het NSG-flow logboek object, gevolgd door een paar voorbeeld sjablonen. Vervolgens implementeren we de sjabloon met behulp van een lokaal PowerShell-exemplaar.
 
 
 ## <a name="nsg-flow-logs-object"></a>Object NSG-stroomlogboeken
 
 Hieronder wordt het object NSG-stroomlogboeken met alle parameters weergegeven.
-Voor een volledig overzicht van de eigenschappen kunt u de [Sjabloonreferentie NSG-stroomlogboeken](https://docs.microsoft.com/azure/templates/microsoft.network/2019-11-01/networkwatchers/flowlogs#RetentionPolicyParameters) lezen.
+Voor een volledig overzicht van de eigenschappen kunt u de [Sjabloonreferentie NSG-stroomlogboeken](/azure/templates/microsoft.network/2019-11-01/networkwatchers/flowlogs#RetentionPolicyParameters) lezen.
 
 ```json
 {
@@ -76,8 +76,8 @@ Om een Microsoft.Network/networkWatchers/flowLogs-resource te maken, voegt u de 
 
 Als u voor het eerst Azure Resource Manager-sjablonen gebruikt, kunt u er meer informatie over vinden via de onderstaande koppelingen.
 
-* [Resources implementeren met Resource Manager-sjablonen en Azure PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-powershell#deploy-local-template)
-* [Zelfstudie: Uw eerste Azure Resource Manager-sjabloon maken en implementeren](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell)
+* [Resources implementeren met Resource Manager-sjablonen en Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md#deploy-local-template)
+* [Zelfstudie: Uw eerste Azure Resource Manager-sjabloon maken en implementeren](../azure-resource-manager/templates/template-tutorial-create-first-template.md?tabs=azure-powershell)
 
 
 Hieronder vindt u twee voor beelden van volledige sjablonen voor het instellen van NSG-stroom Logboeken.
@@ -172,14 +172,14 @@ New-AzResourceGroupDeployment -Name EnableFlowLog -ResourceGroupName NetworkWatc
 
 ## <a name="verifying-your-deployment"></a>Uw implementatie verifiëren
 
-Er zijn een paar manieren om te controleren of uw implementatie is geslaagd. Uw PowerShell-console zou ‘Geslaagd’ moeten weergegeven bij ‘ProvisioningState’. Daarnaast kunt u de [portalpagina NSG-stroomlogboeken](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) bezoeken om uw wijzigingen te bevestigen. Als er problemen zijn met de implementatie, raadpleegt u [Veelvoorkomende fouten in Azure-implementaties met Azure Resource Manager oplossen](https://docs.microsoft.com/azure/azure-resource-manager/templates/common-deployment-errors).
+Er zijn een paar manieren om te controleren of uw implementatie is geslaagd. Uw PowerShell-console zou ‘Geslaagd’ moeten weergegeven bij ‘ProvisioningState’. Daarnaast kunt u de [portalpagina NSG-stroomlogboeken](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) bezoeken om uw wijzigingen te bevestigen. Als er problemen zijn met de implementatie, raadpleegt u [Veelvoorkomende fouten in Azure-implementaties met Azure Resource Manager oplossen](../azure-resource-manager/templates/common-deployment-errors.md).
 
 ## <a name="deleting-your-resource"></a>Uw resource verwijderen
-Azure maakt resourceverwijdering mogelijk via de implementatiemodus ‘Volledig’. Om een Stroomlogboeken-resource te verwijderen, specificeert u een implementatie in de modus Volledig zonder de resource op te nemen die u wilt verwijderen. Lees meer over de [implementatiemodus Volledig](https://docs.microsoft.com/azure/azure-resource-manager/templates/deployment-modes#complete-mode)
+Azure maakt resourceverwijdering mogelijk via de implementatiemodus ‘Volledig’. Om een Stroomlogboeken-resource te verwijderen, specificeert u een implementatie in de modus Volledig zonder de resource op te nemen die u wilt verwijderen. Lees meer over de [implementatiemodus Volledig](../azure-resource-manager/templates/deployment-modes.md#complete-mode)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het visualiseren van uw NSG-stroom gegevens met behulp van:
 * [Microsoft Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md)
 * [Opensource-hulpprogramma’s](network-watcher-visualize-nsg-flow-logs-open-source-tools.md)
-* [Azure Traffic Analytics](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+* [Azure Traffic Analytics](./traffic-analytics.md)

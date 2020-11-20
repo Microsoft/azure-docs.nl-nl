@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
-ms.openlocfilehash: 857429ab5fd2e2ea9a0cb0173015ceba4bb0bacb
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 47885e64b40db07ca3b4a7380389967a36abbd9e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92504108"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949833"
 ---
 # <a name="add-an-api-connector-to-a-sign-up-user-flow-preview"></a>Een API-connector toevoegen aan een registratie gebruikers stroom (preview-versie)
 
@@ -26,8 +26,8 @@ Als u een [API-connector](api-connectors-overview.md)wilt gebruiken, maakt u eer
 
 ## <a name="create-an-api-connector"></a>Een API-connector maken
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-2. Onder **Azure-Services**selecteert u **Azure AD B2C**.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+2. Onder **Azure-Services** selecteert u **Azure AD B2C**.
 4. Selecteer **API-connectors (preview)** en selecteer vervolgens **nieuwe API-connector**.
 
    ![Een nieuwe API-connector toevoegen](./media/add-api-connector/api-connector-new.png)
@@ -36,13 +36,13 @@ Als u een [API-connector](api-connectors-overview.md)wilt gebruiken, maakt u eer
 6. Geef de **eind punt-URL** voor de API-aanroep op.
 7. Geef de verificatie gegevens op voor de API.
 
-   - Momenteel wordt alleen basis verificatie ondersteund. Als u een API zonder basis verificatie voor ontwikkelings doeleinden wilt gebruiken, voert u gewoon een ' dummy ' **gebruikers naam** en **wacht woord** in die door uw API kunnen worden genegeerd. Voor gebruik met een Azure-functie met een API-sleutel kunt u de code als een query parameter in de **eind punt-URL** toevoegen (bijvoorbeeld https []() ://contoso.azurewebsites.net/API/endpoint<b>? code = 0123456789</b>).
+   - Momenteel wordt alleen basis verificatie ondersteund. Als u een API zonder basis verificatie voor ontwikkelings doeleinden wilt gebruiken, voert u gewoon een ' dummy ' **gebruikers naam** en **wacht woord** in die door uw API kunnen worden genegeerd. Voor gebruik met een Azure-functie met een API-sleutel kunt u de code als een query parameter in de **eind punt-URL** toevoegen (bijvoorbeeld https []() ://contoso.azurewebsites.net/API/endpoint <b>? code = 0123456789</b>).
 
    ![Een nieuwe API-connector configureren](./media/add-api-connector/api-connector-config.png)
 8. Selecteer **Opslaan**.
 
 ## <a name="the-request-sent-to-your-api"></a>De aanvraag die naar uw API wordt verzonden
-Een API-connector resultatenset als een **http post-** aanvraag, waarbij gebruikers kenmerken (' claims ') worden verzonden als sleutel-waardeparen in een JSON-hoofd tekst. Kenmerken worden op dezelfde manier geserialiseerd als [Microsoft Graph](https://docs.microsoft.com/graph/api/resources/user#properties) gebruikers eigenschappen. 
+Een API-connector resultatenset als een **http post-** aanvraag, waarbij gebruikers kenmerken (' claims ') worden verzonden als sleutel-waardeparen in een JSON-hoofd tekst. Kenmerken worden op dezelfde manier geserialiseerd als [Microsoft Graph](/graph/api/resources/user#properties) gebruikers eigenschappen. 
 
 **Voorbeeldaanvraag**
 ```http
@@ -83,16 +83,16 @@ Daarnaast wordt de **gebruikers interface land instellingen (' ui_locales ')** s
 > Als een claim geen waarde heeft op het moment dat het API-eind punt wordt aangeroepen, wordt de claim niet verzonden naar de API. Uw API moet zo worden ontworpen dat er expliciet wordt gecontroleerd of de aanvraag wordt verwerkt.
 
 > [!TIP] 
-> [**identiteiten (' Identities ')**](https://docs.microsoft.com/graph/api/resources/objectidentity) en het **e-mail adres (' e-mail ')** kunnen worden gebruikt door uw API om een gebruiker te identificeren voordat ze een account in uw Tenant hebben. 
+> [**identiteiten (' Identities ')**](/graph/api/resources/objectidentity) en het **e-mail adres (' e-mail ')** kunnen worden gebruikt door uw API om een gebruiker te identificeren voordat ze een account in uw Tenant hebben. 
 
 ## <a name="enable-the-api-connector-in-a-user-flow"></a>De API-connector inschakelen in een gebruikers stroom
 
 Volg deze stappen om een API-connector toe te voegen aan een registratie gebruikers stroom.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-2. Onder **Azure-Services**selecteert u **Azure AD B2C**.
-4. Selecteer **gebruikers stromen**en selecteer vervolgens de gebruikers stroom waaraan u de API-connector wilt toevoegen.
-5. Selecteer **API-connectors**en selecteer vervolgens de API-eind punten die u wilt aanroepen met de volgende stappen in de gebruikers stroom:
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+2. Onder **Azure-Services** selecteert u **Azure AD B2C**.
+4. Selecteer **gebruikers stromen** en selecteer vervolgens de gebruikers stroom waaraan u de API-connector wilt toevoegen.
+5. Selecteer **API-connectors** en selecteer vervolgens de API-eind punten die u wilt aanroepen met de volgende stappen in de gebruikers stroom:
 
    - **Nadat u zich hebt aangemeld met een id-provider**
    - **Voordat u de gebruiker maakt**
@@ -103,7 +103,7 @@ Volg deze stappen om een API-connector toe te voegen aan een registratie gebruik
 
 ## <a name="after-signing-in-with-an-identity-provider"></a>Nadat u zich hebt aangemeld met een id-provider
 
-Een API-connector in deze stap van het registratie proces wordt onmiddellijk geactiveerd nadat de gebruiker is geverifieerd met een id-provider (zoals Google, Facebook, & Azure AD). Deze stap gaat vooraf aan de *-*_kenmerk verzamelings pagina_*_. Dit is het formulier dat wordt weer gegeven aan de gebruiker om gebruikers kenmerken te verzamelen. Deze stap wordt niet aangeroepen als een gebruiker wordt geregistreerd met een lokaal account.
+Een API-connector in deze stap van het registratie proces wordt onmiddellijk geactiveerd nadat de gebruiker is geverifieerd met een id-provider (zoals Google, Facebook, & Azure AD). Deze stap gaat vooraf aan de *-*_kenmerk verzamelings pagina_* _. Dit is het formulier dat wordt weer gegeven aan de gebruiker om gebruikers kenmerken te verzamelen. Deze stap wordt niet aangeroepen als een gebruiker wordt geregistreerd met een lokaal account.
 
 ### <a name="example-request-sent-to-the-api-at-this-step"></a>Voorbeeld aanvraag die wordt verzonden naar de API in deze stap
 ```http
@@ -242,7 +242,7 @@ Content-type: application/json
 | versie                                            | Tekenreeks            | Ja      | De versie van de API.                                                                                                                                                                                                                                                                |
 | actie                                             | Tekenreeks            | Ja      | Waarde moet zijn `Continue` .                                                                                                                                                                                                                                                              |
 | \<builtInUserAttribute>                            | \<attribute-type> | Nee       | Geretourneerde waarden kunnen waarden overschrijven die zijn verzameld van een gebruiker. Ze kunnen ook worden geretourneerd in het token als het is geselecteerd als een _ *-toepassings claim * *.                                              |
-| \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | Nee       | De claim hoeft niet te bevatten `_<extensions-app-id>_` . Geretourneerde waarden kunnen waarden overschrijven die zijn verzameld van een gebruiker. Ze kunnen ook worden geretourneerd in het token als deze als een **toepassings claim**wordt geselecteerd.  |
+| \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | Nee       | De claim hoeft niet te bevatten `_<extensions-app-id>_` . Geretourneerde waarden kunnen waarden overschrijven die zijn verzameld van een gebruiker. Ze kunnen ook worden geretourneerd in het token als deze als een **toepassings claim** wordt geselecteerd.  |
 
 ### <a name="example-of-a-blocking-response"></a>Voor beeld van een blokkerend antwoord
 

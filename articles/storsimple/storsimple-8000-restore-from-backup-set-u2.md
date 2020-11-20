@@ -10,12 +10,12 @@ ms.devlang: NA
 ms.topic: how-to
 ms.date: 07/15/2020
 ms.author: alkohli
-ms.openlocfilehash: e9033caf903967432b713afa00a509bd2d966d8b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ff70df225b5ed27960c96889d409d7005f0fbcc4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972013"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950725"
 ---
 # <a name="restore-a-storsimple-volume-from-a-backup-set"></a>Een StorSimple-volume herstellen op basis van een back-upset
 
@@ -45,7 +45,7 @@ Controleer de volgende opmerkingen voordat u een herstel bewerking start:
 
 ## <a name="how-does-restore-work"></a>Hoe werkt herstellen
 
-Voor apparaten met update 4 of hoger wordt een herstel op basis van Heatmap geïmplementeerd. Wanneer de host verzoekt om toegang tot gegevens te krijgen, worden deze aanvragen gevolgd en wordt er een heatmap gemaakt. Hoge aanvraag frequentie resulteert in gegevens segmenten met hogere hitte, terwijl lagere aanvraag frequenties worden omgezet in segmenten met een lagere hitte. U moet ten minste twee keer toegang hebben tot de gegevens om als _dynamisch_te worden gemarkeerd. Een bestand dat wordt gewijzigd, wordt ook gemarkeerd als _dynamisch_. Zodra u de herstel bewerking initieert, worden de proactieve Hydration van gegevens op basis van de heatmap. Voor oudere versies dan update 4 worden de gegevens tijdens het herstellen gedownload op basis van alleen toegang.
+Voor apparaten met update 4 of hoger wordt een herstel op basis van Heatmap geïmplementeerd. Wanneer de host verzoekt om toegang tot gegevens te krijgen, worden deze aanvragen gevolgd en wordt er een heatmap gemaakt. Hoge aanvraag frequentie resulteert in gegevens segmenten met hogere hitte, terwijl lagere aanvraag frequenties worden omgezet in segmenten met een lagere hitte. U moet ten minste twee keer toegang hebben tot de gegevens om als _dynamisch_ te worden gemarkeerd. Een bestand dat wordt gewijzigd, wordt ook gemarkeerd als _dynamisch_. Zodra u de herstel bewerking initieert, worden de proactieve Hydration van gegevens op basis van de heatmap. Voor oudere versies dan update 4 worden de gegevens tijdens het herstellen gedownload op basis van alleen toegang.
 
 De volgende voor behoud zijn van toepassing op heatmap herstel:
 
@@ -63,7 +63,7 @@ In update 4 kunnen Windows Power shell-cmdlets worden gebruikt om een query uit 
 
 * `Set-HcsRehydrationJob` -Met deze cmdlet kunt u de rehydratatie-taak onderbreken, stoppen en hervatten wanneer de rehydratatie wordt uitgevoerd.
 
-Voor meer informatie over rehydratatie-cmdlets gaat u naar [Windows Power shell cmdlet Reference voor StorSimple](https://technet.microsoft.com/library/dn688168.aspx).
+Voor meer informatie over rehydratatie-cmdlets gaat u naar [Windows Power shell cmdlet Reference voor StorSimple](/powershell/module/hcs/?viewFallbackFrom=winserverr2-ps).
 
 Met automatische rehydratatie is er meestal meer tijdelijke Lees prestaties verwacht. De werkelijke omvang van verbeteringen is afhankelijk van verschillende factoren, zoals het toegangs patroon, het verloop van gegevens en het gegevens type. 
 
@@ -113,7 +113,7 @@ U kunt de Blade **back-up** van de catalogus gebruiken om uw StorSimple-volume t
    > [!IMPORTANT]
    > Zorg ervoor dat u de volumes eerst offline hebt gezet op de host voordat u de volumes offline zet op het apparaat. Als u de volumes niet offline zet op de host, kan dit leiden tot beschadigde gegevens.
    
-4. Ga terug naar het tabblad **back-upcatalogus** en selecteer een back-upset. Klik met de rechter muisknop en selecteer vervolgens **herstellen**in het context menu.
+4. Ga terug naar het tabblad **back-upcatalogus** en selecteer een back-upset. Klik met de rechter muisknop en selecteer vervolgens **herstellen** in het context menu.
 
     ![Lijst met back-upsets 2](./media/storsimple-8000-restore-from-backup-set-u2/restorebu1.png)
 
@@ -137,4 +137,3 @@ Als u de herstel bewerking wilt volt ooien, neemt u het volume offline op de hos
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over het [beheren van StorSimple-volumes](storsimple-8000-manage-volumes-u2.md).
 * Meer informatie over [het gebruik van de StorSimple Apparaatbeheer-service voor het beheren van uw StorSimple-apparaat](storsimple-8000-manager-service-administration.md).
-

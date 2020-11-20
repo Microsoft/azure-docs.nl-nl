@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/04/2017
 ms.author: alkohli
-ms.openlocfilehash: 556a84acb3461fb39b3eb0390b54878254bafabf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3adbd292d42fd6fd2a0e149e103c17968a6f084b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514538"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950751"
 ---
 # <a name="safely-install-and-operate-your-storsimple-device"></a>Uw StorSimple-apparaat veilig installeren en uitvoeren
 ![Pictogram waarschuwings pictogram ](./media/storsimple-safety/IC740879.png)
@@ -114,7 +114,7 @@ Het apparaat is ontworpen om te worden gebruikt met twee PCMs. Elk van de PCMs h
 
 Om de kans op schade, elektrische schokken of dood te verminderen:
 
-* Verwijder de deksels niet uit de PCM. Er is sprake van een bedreiging van elektrische schokken in. [Neem contact op met Microsoft ondersteuning](storsimple-contact-microsoft-support.md)om de PCM te retour neren en een vervanging te verkrijgen.
+* Verwijder de deksels niet uit de PCM. Er is sprake van een bedreiging van elektrische schokken in. [Neem contact op met Microsoft ondersteuning](./storsimple-8000-contact-microsoft-support.md)om de PCM te retour neren en een vervanging te verkrijgen.
 
 ![Meldings pictogram ](./media/storsimple-safety/IC740881.png) **:**
 

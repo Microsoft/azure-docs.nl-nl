@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/27/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: dcabd01cfbda8cd892c82b391bf649b2b464d6fb
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: e522e358a1b76cea08dac550b33d7a2dfa7d926d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927767"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950224"
 ---
 # <a name="sap-hana-availability-within-one-azure-region"></a>Beschik baarheid van SAP HANA binnen een Azure-regio
 In dit artikel worden verschillende beschikbaarheids scenario's binnen één Azure-regio beschreven. Azure heeft veel regio's, verspreid over de hele wereld. Zie [Azure-regio's](https://azure.microsoft.com/regions/)voor de lijst met Azure-regio's. Voor de implementatie van SAP HANA op Vm's binnen één Azure-regio, biedt micro soft de implementatie van één virtuele machine met een HANA-exemplaar. Voor een verhoogde Beschik baarheid kunt u twee virtuele machines implementeren met twee HANA-instanties binnen een [Azure-beschikbaarheidsset](../../windows/tutorial-availability-sets.md) die gebruikmaakt van Hana-systeem replicatie voor Beschik baarheid. 

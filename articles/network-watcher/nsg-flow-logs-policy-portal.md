@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/01/2020
 ms.author: damendo
-ms.openlocfilehash: a603f55bd5bff7b2ed68623e9c712faaf8ac766f
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 54b87da73d4427234e65e406d183525d55c6c00d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876953"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948541"
 ---
 # <a name="quickstart-deploy-and-manage-nsg-flow-logs-using-azure-policy"></a>Quick Start: NSG-stroom logboeken implementeren en beheren met behulp van Azure Policy 
 
@@ -25,8 +25,8 @@ ms.locfileid: "91876953"
 Met Azure Policy kunt u organisatiestandaarden afdwingen en compliance op schaal beoordelen. Veelvoorkomende use-cases voor Azure Policy zijn onder andere het implementeren van governance voor consistentie van resources, naleving van de regelgeving, beveiliging, kosten en beheer. In dit artikel gebruiken we twee ingebouwde beleids regels die beschikbaar zijn voor NSG-stroom Logboeken om de installatie van uw stroom logboeken te beheren. Het eerste beleid markeert alle Nsg's zonder dat er stroom logboeken zijn ingeschakeld. Het tweede beleid implementeert automatisch stroom logboeken voor Nsg's zonder dat er stroom logboeken zijn ingeschakeld. 
 
 Als u voor de eerste keer een Azure-beleid maakt, kunt u het volgende lezen: 
-- [Overzicht van Azure Policy](https://docs.microsoft.com/azure/governance/policy/overview) 
-- [Zelf studie voor het maken van beleid](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal#create-a-policy-assignment).
+- [Overzicht van Azure Policy](../governance/policy/overview.md) 
+- [Zelf studie voor het maken van beleid](../governance/policy/assign-policy-portal.md#create-a-policy-assignment).
 
 
 ## <a name="locate-the-policies"></a>Het beleid zoeken
@@ -134,5 +134,5 @@ U ziet een item zoals de volgende scherm afbeelding wanneer het beleid wordt wee
 
 ## <a name="next-steps"></a>Volgende stappen 
 
--   In deze [zelf studie](https://docs.microsoft.com/azure/network-watcher/quickstart-configure-network-security-group-flow-logs-from-arm-template) gaat u dieper met arm-sjablonen voor het implementeren van stroom logboeken en Traffic Analytics.
--   Meer informatie over [Network Watcher](https://docs.microsoft.com/azure/network-watcher/)
+-   In deze [zelf studie](./quickstart-configure-network-security-group-flow-logs-from-arm-template.md) gaat u dieper met arm-sjablonen voor het implementeren van stroom logboeken en Traffic Analytics.
+-   Meer informatie over [Network Watcher](./index.yml)

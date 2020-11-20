@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/10/2018
 ms.author: damendo
-ms.openlocfilehash: 9a5bd6dff05fe39d62e5bf5f897bc61936686bb7
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 548db64bd93dd561f9c69e9f594d01f4c0825db9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887226"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948337"
 ---
 # <a name="azure-role-based-access-control-permissions-required-to-use-network-watcher-capabilities"></a>Op rollen gebaseerde toegangs beheer machtigingen voor Azure die zijn vereist voor het gebruik van Network Watcher mogelijkheden
 
@@ -108,7 +108,7 @@ Voor Network Watcher mogelijkheden zijn ook de volgende acties vereist:
 | Micro soft. Authorization/ \* /Read                                     | Wordt gebruikt voor het ophalen van Azure-Roltoewijzingen en beleids definities          |
 | Micro soft. resources/abonnementen/resourceGroups/lezen               | Gebruikt voor het inventariseren van alle resource groepen in een abonnement    |
 | Micro soft. Storage/Storage accounts/lezen                              | Wordt gebruikt om de eigenschappen van het opgegeven opslag account op te halen   |
-| Micro soft. Storage/Storage accounts/listServiceSas/Action, </br> Micro soft. Storage/Storage accounts/listAccountSas/Action, <br> Micro soft. Storage/Storage accounts/Listkeys ophalen/Action| Gebruikt voor het ophalen van Shared Access signatures (SAS) om [beveiligde toegang tot het opslag account](https://docs.microsoft.com/azure/storage/common/storage-sas-overview) in te scha kelen en te schrijven naar het opslag account |
+| Micro soft. Storage/Storage accounts/listServiceSas/Action, </br> Micro soft. Storage/Storage accounts/listAccountSas/Action, <br> Micro soft. Storage/Storage accounts/Listkeys ophalen/Action| Gebruikt voor het ophalen van Shared Access signatures (SAS) om [beveiligde toegang tot het opslag account](../storage/common/storage-sas-overview.md) in te scha kelen en te schrijven naar het opslag account |
 | Micro soft. Compute/informatie/lezen, </br> Micro soft. Compute/informatie/schrijven| Wordt gebruikt om u aan te melden bij de VM, een pakket vast te leggen en dit te uploaden naar een opslag account|
 | Micro soft. Compute/informatie/uitbrei dingen/lezen </br> Micro soft. Compute/informatie/Extensions/write| Wordt gebruikt om te controleren of Network Watcher extensie aanwezig is en zo nodig installeren |
 | Micro soft. Compute/virtualMachineScaleSets/lezen, </br> Micro soft. Compute/virtualMachineScaleSets/schrijven| Wordt gebruikt om toegang te krijgen tot de schaal sets van virtuele machines, pakketten vastleggen en uploaden naar het opslag account|

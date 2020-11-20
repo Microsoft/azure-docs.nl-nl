@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b34d5cdd95f44082d05153390209de5145e56d3f
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 84053df34ffda0d4686ad80a9e5f3af00ac53d72
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089567"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949488"
 ---
 # <a name="walkthrough-add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Walkthrough: REST API claims-uitwisselingen toevoegen aan aangepaste beleids regels in Azure Active Directory B2C
 
@@ -53,7 +53,7 @@ Zodra uw REST API de gegevens valideert, moet deze een HTTP 200 (OK) retour nere
 }
 ```
 
-De installatie van het REST API-eind punt valt buiten het bereik van dit artikel. Er is een [Azure functions](https://docs.microsoft.com/azure/azure-functions/functions-reference) -voor beeld gemaakt. U hebt toegang tot de volledige Azure-functie code op [github](https://github.com/azure-ad-b2c/rest-api/tree/master/source-code/azure-function).
+De installatie van het REST API-eind punt valt buiten het bereik van dit artikel. Er is een [Azure functions](../azure-functions/functions-reference.md) -voor beeld gemaakt. U hebt toegang tot de volledige Azure-functie code op [github](https://github.com/azure-ad-b2c/rest-api/tree/master/source-code/azure-function).
 
 ## <a name="define-claims"></a>Claims definiëren
 
@@ -183,9 +183,9 @@ De opmerkingen hierboven `AuthenticationType` en `AllowInsecureAuthInProduction`
 </RelyingParty>
 ```
 
-Herhaal deze stap voor de **ProfileEdit.xml**en **PasswordReset.xml** gebruikers reizen.
+Herhaal deze stap voor de **ProfileEdit.xml** en **PasswordReset.xml** gebruikers reizen.
 
-Sla de bestanden op die u hebt gewijzigd: *TrustFrameworkBase.xml*, en *TrustFrameworkExtensions.xml*, *SignUpOrSignin.xml*, *ProfileEdit.xml*en *PasswordReset.xml*. 
+Sla de bestanden op die u hebt gewijzigd: *TrustFrameworkBase.xml*, en *TrustFrameworkExtensions.xml*, *SignUpOrSignin.xml*, *ProfileEdit.xml* en *PasswordReset.xml*. 
 
 ## <a name="test-the-custom-policy"></a>Het aangepaste beleid testen
 
@@ -193,7 +193,7 @@ Sla de bestanden op die u hebt gewijzigd: *TrustFrameworkBase.xml*, en *TrustFra
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD-tenant bevat door in het bovenste menu op het filter **Map en abonnement** te klikken en de map te kiezen waarin de Azure AD-tenant zich bevindt.
 1. Kies linksboven in de Azure Portal **Alle services**, zoek **App-registraties** en selecteer deze.
 1. Selecteer een **Framework voor identiteits ervaring**.
-1. Selecteer **aangepast beleid uploaden**en upload vervolgens de beleids bestanden die u hebt gewijzigd: *TrustFrameworkBase.xml*en *TrustFrameworkExtensions.xml*, *SignUpOrSignin.xml*, *ProfileEdit.xml*en *PasswordReset.xml*. 
+1. Selecteer **aangepast beleid uploaden** en upload vervolgens de beleids bestanden die u hebt gewijzigd: *TrustFrameworkBase.xml* en *TrustFrameworkExtensions.xml*, *SignUpOrSignin.xml*, *ProfileEdit.xml* en *PasswordReset.xml*. 
 1. Selecteer het registratie-of aanmeldings beleid dat u hebt geüpload en klik op de knop **nu uitvoeren** .
 1. U moet zich kunnen aanmelden met een e-mail adres of een Facebook-account.
 1. Het token dat teruggestuurd naar uw toepassing bevat de `balance` claim.

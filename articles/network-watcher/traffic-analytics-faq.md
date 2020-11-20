@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: damendo
-ms.openlocfilehash: ae87771e8a557ad7cb58c9cad9231784606cdd74
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 25f4ae0dbfd7827a36dede6a889c342ea490e273
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426550"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948473"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Traffic Analytics
 
@@ -56,9 +56,9 @@ Rollen controleren die aan een gebruiker zijn toegewezen voor een abonnement:
 
 2. Selecteer het vereiste abonnement met **Select-AzSubscription**. 
 
-3. Gebruik  **Get-AzRoleAssignment-SignInName [e-mail adres van gebruiker]-IncludeClassicAdministrators**om alle rollen weer te geven die aan een opgegeven gebruiker zijn toegewezen. 
+3. Gebruik  **Get-AzRoleAssignment-SignInName [e-mail adres van gebruiker]-IncludeClassicAdministrators** om alle rollen weer te geven die aan een opgegeven gebruiker zijn toegewezen. 
 
-Als er geen uitvoer wordt weer gegeven, neemt u contact op met de beheerder van de desbetreffende abonnementen om de opdrachten uit te voeren. Zie [Azure-roltoewijzingen toevoegen of verwijderen met Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell)voor meer informatie.
+Als er geen uitvoer wordt weer gegeven, neemt u contact op met de beheerder van de desbetreffende abonnementen om de opdrachten uit te voeren. Zie [Azure-roltoewijzingen toevoegen of verwijderen met Azure PowerShell](../role-based-access-control/role-assignments-powershell.md)voor meer informatie.
 
 
 ## <a name="in-which-azure-regions-is-traffic-analytics-available"></a>In welke Azure-regio's is Traffic Analytics beschikbaar?
@@ -126,7 +126,7 @@ Ja.
 
 ## <a name="can-i-use-an-existing-workspace"></a>Kan ik een bestaande werk ruimte gebruiken?
 
-Ja. Als u een bestaande werk ruimte selecteert, moet u ervoor zorgen dat deze is gemigreerd naar de nieuwe query taal. Als u de werk ruimte niet wilt bijwerken, moet u een nieuwe maken. Zie [Azure monitor-logboeken upgraden naar nieuwe zoek opdracht in Logboeken](../log-analytics/log-analytics-log-search-upgrade.md)voor meer informatie over de nieuwe query taal.
+Ja. Als u een bestaande werk ruimte selecteert, moet u ervoor zorgen dat deze is gemigreerd naar de nieuwe query taal. Als u de werk ruimte niet wilt bijwerken, moet u een nieuwe maken. Zie [Azure monitor-logboeken upgraden naar nieuwe zoek opdracht in Logboeken](../azure-monitor/log-query/log-query-overview.md)voor meer informatie over de nieuwe query taal.
 
 ## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>Kan mijn Azure Storage-account zich in één abonnement bevinden en mijn Log Analytics werk ruimte bevindt zich in een ander abonnement?
 
@@ -176,7 +176,7 @@ U ziet de informatie over de resources op het dash board. Er zijn echter geen ge
 
 ## <a name="can-i-configure-traffic-analytics-using-powershell-or-an-azure-resource-manager-template-or-client"></a>Kan ik Traffic Analytics configureren met Power shell of een Azure Resource Manager sjabloon of client?
 
-U kunt Traffic Analytics configureren met behulp van Windows Power shell vanaf versie 6.2.1. Zie [set-AzNetworkWatcherConfigFlowLog](https://docs.microsoft.com/powershell/module/az.network/set-aznetworkwatcherconfigflowlog)voor informatie over het configureren van flow logboek registratie en Traffic Analytics voor een specifieke NSG met behulp van de set-cmdlet. Zie [Get-AzNetworkWatcherFlowLogStatus](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkwatcherflowlogstatus)om de logboek registratie van de stroom en de status van het Traffic Analytics voor een specifieke NSG op te halen.
+U kunt Traffic Analytics configureren met behulp van Windows Power shell vanaf versie 6.2.1. Zie [set-AzNetworkWatcherConfigFlowLog](/powershell/module/az.network/set-aznetworkwatcherconfigflowlog)voor informatie over het configureren van flow logboek registratie en Traffic Analytics voor een specifieke NSG met behulp van de set-cmdlet. Zie [Get-AzNetworkWatcherFlowLogStatus](/powershell/module/az.network/get-aznetworkwatcherflowlogstatus)om de logboek registratie van de stroom en de status van het Traffic Analytics voor een specifieke NSG op te halen.
 
 Op dit moment kunt u geen Azure Resource Manager-sjabloon gebruiken om Traffic Analytics te configureren.
 
@@ -250,7 +250,7 @@ Als de gegevens in een opslag account dat is verwerkt door Traffic Analytics 10 
 
 ## <a name="how-frequently-does-traffic-analytics-process-data"></a>Hoe vaak worden gegevens Traffic Analytics verwerkt?
 
-Raadpleeg het [gedeelte gegevens aggregatie](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema#data-aggregation) in Traffic Analytics schema en gegevens aggregatie document
+Raadpleeg het [gedeelte gegevens aggregatie](./traffic-analytics-schema.md#data-aggregation) in Traffic Analytics schema en gegevens aggregatie document
 
 ## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Hoe beslist Traffic Analytics dat een IP schadelijk is? 
 
@@ -262,7 +262,7 @@ Traffic Analytics biedt geen ingebouwde ondersteuning voor waarschuwingen. Omdat
 - U kunt de snelkoppeling voor Log Analytics gebruiken in Traffic Analytics. 
 - Gebruik het [schema dat hier wordt beschreven](traffic-analytics-schema.md) om uw query's te schrijven 
 - Klik op nieuwe waarschuwings regel om de waarschuwing te maken
-- Raadpleeg de [documentatie over logboek waarschuwingen](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) voor het maken van de waarschuwing
+- Raadpleeg de [documentatie over logboek waarschuwingen](../azure-monitor/platform/alerts-log.md) voor het maken van de waarschuwing
 
 ## <a name="how-do-i-check-which-vms-are-receiving-most-on-premises-traffic"></a>Hoe kan ik controleren welke Vm's het meest lokale verkeer ontvangen?
 
@@ -349,9 +349,9 @@ De pagina GeoMap bevat twee hoofd secties:
 - Als u wilt overstappen op andere gemarkeerde knoop punten in de kaart, gebruikt u `Tab` of de `Right arrow` sleutel voor voorwaartse verplaatsing. Gebruik `Shift+Tab` of de `Left arrow` sleutel voor achterwaartse verplaatsing.
 - Als u een gemarkeerd knoop punt in de kaart wilt selecteren, gebruikt u de `Enter` of- `Down arrow` sleutel.
 - Wanneer u een van deze knoop punten selecteert, wordt de focus verplaatst naar het **vak informatie** van het knoop punt. De focus wordt standaard verplaatst naar de knop gesloten in het **dialoog venster informatie**. Als u verder wilt gaan in de weer gave van het **vak** , gebruikt u `Right arrow` en de `Left arrow` toetsen om respectievelijk vooruit en achteruit te gaan. Wanneer `Enter` u op hetzelfde effect klikt, wordt de knop prioriteit geselecteerd in het **dialoog venster informatie**.
-- Wanneer u op de `Tab` **knop info**klikt terwijl de focus is, wordt de focus verplaatst naar de eind punten in hetzelfde continent als het geselecteerde knoop punt. Gebruik de- `Right arrow` en- `Left arrow` sleutels om deze eind punten te door lopen.
+- Wanneer u op de `Tab` **knop info** klikt terwijl de focus is, wordt de focus verplaatst naar de eind punten in hetzelfde continent als het geselecteerde knoop punt. Gebruik de- `Right arrow` en- `Left arrow` sleutels om deze eind punten te door lopen.
 - Als u wilt overstappen op andere flow-eind punten of continenten clusters, gebruikt u `Tab` voor voorwaartse verplaatsing en `Shift+Tab` voor achterwaartse verplaatsing.
-- Wanneer de focus zich op **continent-clusters**bevindt, gebruikt u de `Enter` of de `Down` pijl toetsen om de eind punten in het continent-cluster te markeren. Als u de eind punten wilt door lopen en de knop Sluiten in het vak informatie van het continent-cluster, gebruikt u `Right arrow` respectievelijk de of `Left arrow` -sleutel voor voorwaartse en achterwaartse verplaatsing. Op elk eind punt kunt u gebruiken `Shift+L` om over te scha kelen naar de verbindings lijn van het geselecteerde knoop punt naar het eind punt. U kunt `Shift+L` opnieuw op het geselecteerde eind punt drukken om door te gaan.
+- Wanneer de focus zich op **continent-clusters** bevindt, gebruikt u de `Enter` of de `Down` pijl toetsen om de eind punten in het continent-cluster te markeren. Als u de eind punten wilt door lopen en de knop Sluiten in het vak informatie van het continent-cluster, gebruikt u `Right arrow` respectievelijk de of `Left arrow` -sleutel voor voorwaartse en achterwaartse verplaatsing. Op elk eind punt kunt u gebruiken `Shift+L` om over te scha kelen naar de verbindings lijn van het geselecteerde knoop punt naar het eind punt. U kunt `Shift+L` opnieuw op het geselecteerde eind punt drukken om door te gaan.
         
 ### <a name="keyboard-navigation-at-any-stage"></a>Toetsenbord navigatie in elk stadium
     
@@ -400,4 +400,4 @@ De pagina topologie virtuele subnetwerken bevat twee hoofd secties:
 - Nadat u een filter op de banner hebt geselecteerd en erop hebt geklikt `Ctrl+F6` , wordt de focus verplaatst naar een van de gemarkeerde knoop punten (**subnet**) in de weer gave topologie.
 - Als u wilt overstappen op andere gemarkeerde knoop punten in de topologie weergave, gebruikt u de `Shift+Right arrow` sleutel voor voorwaarts verplaatsen. 
 - Focus wordt op gemarkeerde knoop punten verplaatst naar het **vak informatie** van het knoop punt. Focus gaat standaard naar de knop **meer details** in het **dialoog venster informatie**. Als u verder wilt gaan in de weer gave van het **vak** , gebruikt u `Right arrow` en de `Left arrow` toetsen om respectievelijk vooruit en achteruit te gaan. Wanneer `Enter` u op hetzelfde effect klikt, wordt de knop prioriteit geselecteerd in het **dialoog venster informatie**.
-- Wanneer u een van deze knoop punten selecteert, kunt u alle verbindingen met één voor één bekijken door op de toets te drukken `Shift+Left arrow` . Focus wordt verplaatst naar het **vak informatie** van deze verbinding. De focus kan op elk gewenst moment worden teruggedraaid naar het knoop punt door opnieuw op te drukken `Shift+Right arrow` .    
+- Wanneer u een van deze knoop punten selecteert, kunt u alle verbindingen met één voor één bekijken door op de toets te drukken `Shift+Left arrow` . Focus wordt verplaatst naar het **vak informatie** van deze verbinding. De focus kan op elk gewenst moment worden teruggedraaid naar het knoop punt door opnieuw op te drukken `Shift+Right arrow` .

@@ -10,17 +10,18 @@ tags: azure-service-management
 keywords: ''
 ms.assetid: f9cd93dc-71ad-48a4-8778-4e48aec484a6
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-linux
 ms.workload: na
 ms.date: 10/04/2016
 ms.author: sedusch
-ms.openlocfilehash: 3ceeb20b138307b40fcd6f8c03d614fc3e811473
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc7cf98a6dc8d872664229fbca05b48b918b4f6d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87035771"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950392"
 ---
 # <a name="using-sap-on-linux-virtual-machines-in-azure"></a>SAP gebruiken op virtuele Linux-machines in azure
 Cloud computing is een veelgebruikte term die in de IT-sector steeds belangrijker wordt, zowel voor kleine bedrijven als voor grote ondernemingen en multinationals. Microsoft Azure is het cloudserviceplatform van Microsoft dat een groot aantal nieuwe mogelijkheden biedt. Klanten kunnen toepassingen nu snel als cloudservices inrichten en de inrichting weer ongedaan maken, zodat technische of financiële beperkingen geen rol spelen. In plaats van tijd en geld te investeren in de hardware-infrastructuur kunnen bedrijven zich nu richten op de toepassing, bedrijfsprocessen en de voordelen voor klanten en gebruikers.

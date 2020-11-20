@@ -7,17 +7,18 @@ author: rdeltcheva
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 8800adae73de2672dd89678a6346fe6b0df755ba
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: f107ba4dd0150e9727183d0bd334c9279de17337
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144198"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950003"
 ---
 # <a name="high-availability-of-sap-hana-scale-up-with-azure-netapp-files-on-red-hat-enterprise-linux"></a>Hoge Beschik baarheid van SAP HANA omhoog schalen met Azure NetApp Files op Red Hat Enterprise Linux
 
@@ -51,7 +52,7 @@ ms.locfileid: "92144198"
 [sap-hana-ha]:sap-hana-high-availability.md
 [nfs-ha]:high-availability-guide-suse-nfs.md
 
-In dit artikel wordt beschreven hoe u SAP HANA systeem replicatie configureert in een scale-up-implementatie, wanneer de HANA-bestands systemen worden gekoppeld via NFS, met behulp van Azure NetApp Files (ANF). In de voorbeeld configuraties en installatie opdrachten instantie nummer **03**en Hana-systeem-id **HN1** worden gebruikt. SAP HANA replicatie bestaat uit één primair knoop punt en ten minste één secundair knoop punt.
+In dit artikel wordt beschreven hoe u SAP HANA systeem replicatie configureert in een scale-up-implementatie, wanneer de HANA-bestands systemen worden gekoppeld via NFS, met behulp van Azure NetApp Files (ANF). In de voorbeeld configuraties en installatie opdrachten instantie nummer **03** en Hana-systeem-id **HN1** worden gebruikt. SAP HANA replicatie bestaat uit één primair knoop punt en ten minste één secundair knoop punt.
 
 Wanneer de stappen in dit document zijn gemarkeerd met de volgende voor voegsels, is de betekenis als volgt:
 
@@ -219,7 +220,7 @@ Om te voldoen aan de SAP-vereisten voor minimale door Voer voor/Hana/data en/Han
 
 Eerst moet u de Azure NetApp Files volumes maken. Voer vervolgens de volgende stappen uit:
 
-1.  Maak een resourcegroep.
+1.  Een resourcegroep maken.
 2.  Maak een virtueel netwerk.
 3.  Maak een beschikbaarheidsset. Stel het maximale update domein in.
 4.  Maak een load balancer (intern). Standaard load balancer worden aanbevolen.
@@ -236,25 +237,25 @@ Eerst moet u de Azure NetApp Files volumes maken. Voer vervolgens de volgende st
 
 8.  Als u standaard load balancer gebruikt, volgt u deze configuratie stappen:
     1.  Maak eerst een front-end-IP-adres groep:
-        1.  Open de load balancer, selecteer de **frontend-IP-adres groep**en selecteer **toevoegen**.
+        1.  Open de load balancer, selecteer de **frontend-IP-adres groep** en selecteer **toevoegen**.
         1.  Voer de naam in van de nieuwe front-end-IP-adres groep (bijvoorbeeld **Hana-frontend**).
         1.  Stel de **toewijzing** in op **statisch** en voer het IP-adres in (bijvoorbeeld **10.32.0.10**).
         1.  Selecteer **OK**.
         1.  Nadat de nieuwe front-end-IP-groep is gemaakt, noteert u het IP-adres van de groep.
     1.  Maak vervolgens een back-end-pool:
-        1.  Open de load balancer, selecteer **back-endservers**en selecteer **toevoegen**.
+        1.  Open de load balancer, selecteer **back-endservers** en selecteer **toevoegen**.
         1.  Voer de naam van de nieuwe back-end-pool in (bijvoorbeeld **Hana-back-end**).
         1.  Selecteer **een virtuele machine toevoegen**.
         1.  Selecteer * * virtuele machine * *.
         1.  Selecteer de virtuele machines van het SAP HANA cluster en de bijbehorende IP-adressen.
         1.  Selecteer **Toevoegen**.
     1.  Maak vervolgens een status test:
-        1.  Open de load balancer, selecteer **status controles**en selecteer **toevoegen**.
+        1.  Open de load balancer, selecteer **status controles** en selecteer **toevoegen**.
         1.  Voer de naam in van de nieuwe status test (bijvoorbeeld **Hana-HP**).
-        1.  Selecteer TCP als protocol en poort 625**03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
+        1.  Selecteer TCP als protocol en poort 625 **03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
         1.  Selecteer **OK**.
     1.  Maak vervolgens de regels voor taak verdeling:
-        1.  Open de load balancer, selecteer **regels voor taak verdeling**en selecteer **toevoegen**.
+        1.  Open de load balancer, selecteer **regels voor taak verdeling** en selecteer **toevoegen**.
         1.  Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **Hana-lb**).
         1.  Selecteer het front-end-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-frontend**, **Hana-back-end** en **Hana-HP**).
         1.  Selecteer **ha-poorten**.
@@ -265,50 +266,50 @@ Eerst moet u de Azure NetApp Files volumes maken. Voer vervolgens de volgende st
 
 9. Als uw scenario gebruikmaakt van basis load balancer, volgt u deze configuratie stappen:
     1.  Configureer de load balancer. Maak eerst een front-end-IP-adres groep:
-        1.  Open de load balancer, selecteer de **frontend-IP-adres groep**en selecteer **toevoegen**.
+        1.  Open de load balancer, selecteer de **frontend-IP-adres groep** en selecteer **toevoegen**.
         1.  Voer de naam in van de nieuwe front-end-IP-adres groep (bijvoorbeeld **Hana-frontend**).
         1.  Stel de **toewijzing** in op **statisch** en voer het IP-adres in (bijvoorbeeld **10.32.0.10**).
         1.  Selecteer **OK**.
         1.  Nadat de nieuwe front-end-IP-groep is gemaakt, noteert u het IP-adres van de groep.
     1.  Maak vervolgens een back-end-pool:
-        1.  Open de load balancer, selecteer **back-endservers**en selecteer **toevoegen**.
+        1.  Open de load balancer, selecteer **back-endservers** en selecteer **toevoegen**.
         1.  Voer de naam van de nieuwe back-end-pool in (bijvoorbeeld **Hana-back-end**).
         1.  Selecteer **een virtuele machine toevoegen**.
         1.  Selecteer de beschikbaarheidsset die u hebt gemaakt in stap 3.
         1.  Selecteer de virtuele machines van het SAP HANA cluster.
         1.  Selecteer **OK**.
     1.  Maak vervolgens een status test:
-        1.  Open de load balancer, selecteer **status controles**en selecteer **toevoegen**.
+        1.  Open de load balancer, selecteer **status controles** en selecteer **toevoegen**.
         1.  Voer de naam in van de nieuwe status test (bijvoorbeeld **Hana-HP**).
-        1.  Selecteer **TCP** als protocol en poort 625**03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
+        1.  Selecteer **TCP** als protocol en poort 625 **03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
         1.  Selecteer **OK**.
     1.  Maak voor SAP HANA 1,0 de regels voor taak verdeling:
-        1.  Open de load balancer, selecteer **regels voor taak verdeling**en selecteer **toevoegen**.
-        1.  Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3**03**15).
+        1.  Open de load balancer, selecteer **regels voor taak verdeling** en selecteer **toevoegen**.
+        1.  Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3 **03** 15).
         1.  Selecteer het front-end-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-** front-end).
-        1.  Zorg ervoor dat het **protocol** is ingesteld op **TCP**en voer poort 3**03**15 in.
+        1.  Zorg ervoor dat het **protocol** is ingesteld op **TCP** en voer poort 3 **03** 15 in.
         1.  Verhoog de **time-out voor inactiviteit** tot 30 minuten.
         1.  Zorg ervoor dat u **zwevende IP-adressen inschakelt**.
         1.  Selecteer **OK**.
-        1.  Herhaal deze stappen voor poort 3**03**17.
+        1.  Herhaal deze stappen voor poort 3 **03** 17.
     1.  Voor SAP HANA 2,0 maakt u de regels voor taak verdeling voor de systeem database:
-        1.  Open de load balancer, selecteer **regels voor taak verdeling**en selecteer **toevoegen**.
-        1.  Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3**03**13).
+        1.  Open de load balancer, selecteer **regels voor taak verdeling** en selecteer **toevoegen**.
+        1.  Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3 **03** 13).
         1.  Selecteer het front-end-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-** front-end).
-        1.  Zorg ervoor dat het **protocol** is ingesteld op **TCP**en voer poort 3**03**13 in.
+        1.  Zorg ervoor dat het **protocol** is ingesteld op **TCP** en voer poort 3 **03** 13 in.
         1.  Verhoog de **time-out voor inactiviteit** tot 30 minuten.
         1.  Zorg ervoor dat u **zwevende IP-adressen inschakelt**.
         1.  Selecteer **OK**.
-        1.  Herhaal deze stappen voor poort 3**03**14.
+        1.  Herhaal deze stappen voor poort 3 **03** 14.
     1.  Voor SAP HANA 2,0 maakt u eerst de regels voor taak verdeling voor de Tenant database:
-        1.  Open de load balancer, selecteer **regels voor taak verdeling**en selecteer **toevoegen**.
-        1.  Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3**03**40).
+        1.  Open de load balancer, selecteer **regels voor taak verdeling** en selecteer **toevoegen**.
+        1.  Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3 **03** 40).
         1.  Selecteer het frontend-IP-adres, de back-endadresgroep en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-front-end**).
-        1.  Zorg ervoor dat het **protocol** is ingesteld op **TCP**en voer poort 3**03**40 in.
+        1.  Zorg ervoor dat het **protocol** is ingesteld op **TCP** en voer poort 3 **03** 40 in.
         1.  Verhoog de **time-out voor inactiviteit** tot 30 minuten.
         1.  Zorg ervoor dat u **zwevende IP-adressen inschakelt**.
         1.  Selecteer **OK**.
-        1.  Herhaal deze stappen voor de poorten 3**03**41 en 3**03**42.
+        1.  Herhaal deze stappen voor de poorten 3 **03** 41 en 3 **03** 42.
 
 Lees voor meer informatie over de vereiste poorten voor SAP HANA de hoofdstuk [verbindingen met Tenant databases](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) in de hand leiding voor [SAP Hana Tenant-data bases](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) of SAP Note [2388694](https://launchpad.support.sap.com/#/notes/2388694).
 
@@ -418,11 +419,11 @@ Lees voor meer informatie over de vereiste poorten voor SAP HANA de hoofdstuk [v
 
     Voer het **hdblcm** -programma uit vanaf de Hana-DVD. Voer de volgende waarden in bij de prompt:  
     Installatie kiezen: Voer **1** in (voor installatie)  
-    Selecteer extra onderdelen voor installatie: Voer **1**in.  
+    Selecteer extra onderdelen voor installatie: Voer **1** in.  
     Voer het installatiepad [/Hana/Shared] in: druk op ENTER om de standaard instelling te accepteren  
     Voer de naam van de lokale host [..] in: druk op ENTER om de standaard waarde te accepteren  
     Wilt u extra hosts toevoegen aan het systeem? (j/n) [n]: **n**  
-    Voer SAP HANA systeem-ID in: Voer **HN1**in.  
+    Voer SAP HANA systeem-ID in: Voer **HN1** in.  
     Instantie nummer [00] invoeren: Voer **03** in  
     Database modus selecteren/index invoeren [1]: druk op ENTER om de standaard instelling te accepteren  
     Systeem gebruik selecteren/index invoeren [4]: Voer **4** in (voor aangepast)  
@@ -563,7 +564,7 @@ In dit voor beeld heeft elk cluster knooppunt een eigen HANA NFS-bestands systee
 
    Controleer de status van het cluster en alle resources
    > [!NOTE]
-   > Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+   > Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
    
     ```
     sudo pcs status

@@ -10,18 +10,18 @@ ms.custom: mvc
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 5473730484240f2c813c9ae279e1516ed93a45c5
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 0eeff0c8c338b09fbe375587db2b955a143138c2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92214954"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949816"
 ---
 # <a name="add-a-web-api-application-to-your-azure-active-directory-b2c-tenant"></a>Een web-API-toepassing toevoegen aan uw Azure Active Directory B2C-Tenant
 
  Registreer Web-API-resources in uw Tenant, zodat ze aanvragen kunnen accepteren en hierop reageren door client toepassingen die een toegangs token aanbieden. In dit artikel wordt beschreven hoe u een web-API registreert in Azure Active Directory B2C (Azure AD B2C).
 
-Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](https://aka.ms/b2cappregtraining).
+Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 

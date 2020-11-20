@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4e80332b172eeb4c49ae068e1781ffcaf1657f13
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ac75ab31f8c9cdd9405115db4f5c35d28707e29f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978217"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950360"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>SAP-workloads op Azure: controle lijst voor planning en implementatie
 
@@ -150,7 +151,7 @@ U wordt aangeraden een volledige HADR-oplossing en beveiligings ontwerp in te st
         - Als u wilt voor komen dat GUI-time-outs tussen on-premises SAP GUI-interfaces en SAP-toepassings lagen in azure zijn geïmplementeerd, controleert u of deze para meters zijn ingesteld in het standaard. PFL-of het exemplaar profiel:
             - rdisp/keepalive_timeout = 3600
             - rdisp/keepalive = 20
-        - U moet de para meter **enque/encni/set_so_keepalive** instellen op **True**om te voor komen dat er verbinding wordt gemaakt tussen de SAP-in-en SAP-werk processen. Zie ook [SAP-opmerking #2743751](https://launchpad.support.sap.com/#/notes/2743751).  
+        - U moet de para meter **enque/encni/set_so_keepalive** instellen op **True** om te voor komen dat er verbinding wordt gemaakt tussen de SAP-in-en SAP-werk processen. Zie ook [SAP-opmerking #2743751](https://launchpad.support.sap.com/#/notes/2743751).  
         - Als u een configuratie van een Windows-failovercluster gebruikt, moet u ervoor zorgen dat de tijd die moet worden gereageerd op niet-reagerende knoop punten correct is ingesteld voor Azure. In het artikel de [drempel waarden voor het afstemmen van het failover cluster-netwerk](https://techcommunity.microsoft.com/t5/Failover-Clustering/Tuning-Failover-Cluster-Network-Thresholds/ba-p/371834) worden de para meters weer gegeven. Ervan uitgaande dat de cluster knooppunten zich in hetzelfde subnet bevinden, moet u deze para meters wijzigen:
             - SameSubNetDelay = 2000
             - SameSubNetThreshold = 15

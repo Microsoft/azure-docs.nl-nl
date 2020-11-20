@@ -5,18 +5,19 @@ author: MSSedusch
 manager: juergent
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017, devx-track-azurecli
-ms.openlocfilehash: ea53eda3863ea5164142fa0d37fff7be365a4d5c
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: c186e7beeed3a1729560d7deb002d573e0014508
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92894097"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950955"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>Azure Virtual Machines planning en implementatie voor SAP net-Weaver
 
@@ -339,7 +340,7 @@ In het hele document gebruiken we de volgende voor waarden:
 * SAP liggend: deze term verwijst naar de volledige SAP-assets in het IT-landschap van een klant. Het SAP-landschap omvat alle productie-en niet-productie omgevingen.
 * SAP-systeem: de combi natie van DBMS-laag en-toepassingslaag van, bijvoorbeeld een SAP ERP-ontwikkelings systeem, SAP BW test systeem, SAP CRM-productie systeem, enzovoort. In azure-implementaties wordt het niet ondersteund om deze twee lagen te verdelen over on-premises en Azure. Betekent dat een SAP-systeem on-premises is geïmplementeerd of wordt geïmplementeerd in Azure. U kunt de verschillende systemen van een SAP-landschap echter implementeren in azure of on-premises. U kunt bijvoorbeeld het ontwikkel-en test systeem van SAP CRM implementeren in azure, maar het productie systeem op locatie van SAP.
 * Cross-premises of hybride: hierin wordt een scenario beschreven waarin Vm's worden geïmplementeerd naar een Azure-abonnement met site-naar-site-, multi-site-of ExpressRoute-connectiviteit tussen de on-premises Data Center (s) en Azure. In algemene documentatie over Azure worden dit soort implementaties ook beschreven als cross-premises of hybride scenario's. De reden hiervoor is om on-premises domeinen, on-premises Active Directory-OpenLDAP en on-premises DNS uit te breiden naar Azure. De on-premises liggende lands worden uitgebreid naar de Azure-assets van het abonnement. Met deze extensie kunnen Vm's deel uitmaken van het on-premises domein. Domein gebruikers van het on-premises domein hebben toegang tot de servers en kunnen services uitvoeren op deze Vm's (zoals DBMS-Services). Communicatie en naam omzetting tussen Vm's die on-premises en Azure geïmplementeerde Vm's zijn geïmplementeerd, is mogelijk. Dit is het meest voorkomende en bijna exclusieve geval dat SAP-assets in Azure worden geïmplementeerd. Zie [Dit][vpn-gateway-cross-premises-options] artikel en [deze][vpn-gateway-site-to-site-create]voor meer informatie.
-* Azure-bewakings uitbreiding, verbeterde bewaking en Azure-extensie voor SAP: beschrijven een en hetzelfde item. Hierin wordt een VM-extensie beschreven die moet worden geïmplementeerd door u om enkele basis gegevens over de Azure-infra structuur te verstrekken aan de SAP host-agent. SAP in SAP-notities kan worden gebruikt als bewakings uitbreiding of uitgebreide bewaking. In azure wordt hiernaar verwezen als **Azure-extensie voor SAP** .
+* Azure-bewakings uitbreiding, verbeterde bewaking en Azure-extensie voor SAP: beschrijven een en hetzelfde item. Hierin wordt een VM-extensie beschreven die moet worden geïmplementeerd door u om enkele basis gegevens over de Azure-infra structuur te verstrekken aan de SAP host-agent. SAP in SAP-notities kan worden gebruikt als bewakings uitbreiding of uitgebreide bewaking. In azure wordt hiernaar verwezen als **Azure-extensie voor SAP**.
 
 > [!NOTE]
 > Cross-premises of hybride implementaties van SAP-systemen waarbij Azure Virtual Machines SAP-systemen worden uitgevoerd, worden lid van een on-premises domein ondersteund voor SAP-productie systemen. Cross-premises of hybride configuraties worden ondersteund voor het implementeren van onderdelen of het volt ooien van SAP-landschappen in Azure. Zelfs als u het volledige SAP-landschap uitvoert in azure, moeten deze Vm's deel uitmaken van het on-premises domein en ADS/OpenLDAP.
@@ -856,7 +857,7 @@ Als de virtuele machine voldoende is voor het algemeen en uiteindelijk onafhanke
 ---
 > ![Windows-logo.][Logo_Windows] Windows
 >
-> De laatste stap bestaat uit het aanmelden bij een virtuele machine met een beheerders account. Open een Windows-opdracht venster als *beheerder* . Ga naar%windir%\Windows\System32\Sysprep en voer sysprep.exe uit.
+> De laatste stap bestaat uit het aanmelden bij een virtuele machine met een beheerders account. Open een Windows-opdracht venster als *beheerder*. Ga naar%windir%\Windows\System32\Sysprep en voer sysprep.exe uit.
 > Er wordt een klein venster weer gegeven. Het is belang rijk om de optie **generalize** te controleren (de standaard instelling is uitgeschakeld) en de afsluit optie te wijzigen van de standaard waarde voor opnieuw opstarten in afsluiten. Bij deze procedure wordt ervan uitgegaan dat het Sysprep-proces on-premises wordt uitgevoerd in het gast besturingssysteem van een virtuele machine.
 > Als u de procedure wilt uitvoeren met een virtuele machine die al in azure wordt uitgevoerd, volgt u de stappen die in [dit artikel](../../windows/capture-image-resource.md)worden beschreven.
 >
@@ -890,7 +891,7 @@ In dit geval willen we een VHD uploaden, hetzij met ofwel zonder een besturings 
 * Een nieuwe virtuele machine maken op basis van de configuratie van de virtuele machine met *New-AzVM* -Zie <https://docs.microsoft.com/powershell/module/az.compute/new-Azvm>
 * Een gegevens schijf toevoegen aan een nieuwe virtuele machine met *add-AzVMDataDisk* -Zie <https://docs.microsoft.com/powershell/module/az.compute/add-Azvmdatadisk>
 
-**Azure CLI**
+**Azure-CLI**
 
 * Meld u aan bij uw abonnement met *AZ login*
 * Selecteer uw abonnement met *AZ account set--Subscription `<subscription name or id` >*
@@ -918,7 +919,7 @@ Als u een bestaande virtuele machine of VHD vanuit het on-premises netwerk wilt 
   * Beheerde schijf installatie kopie *instellen-AzVMSourceImage* -Zie <https://docs.microsoft.com/powershell/module/az.compute/set-Azvmsourceimage>
 * Een nieuwe virtuele machine maken op basis van de configuratie van de virtuele machine met *New-AzVM* -Zie <https://docs.microsoft.com/powershell/module/az.compute/new-Azvm>
 
-**Azure CLI**
+**Azure-CLI**
 
 * Gebruik *Sysprep* op Windows of *waagent-deprovisioning* in Linux om uw VM te generaliseren: Zie [technische Naslag informatie over Sysprep](/previous-versions/windows/it-pro/windows-vista/cc766049(v=ws.10)) voor Windows of [hoe u een virtuele Linux-machine vastlegt voor gebruik als Resource Manager-sjabloon][capture-image-linux-step-2-create-vm-image] voor Linux
 * Meld u aan bij uw abonnement met *AZ login*
@@ -1178,7 +1179,7 @@ Raadpleeg de [DBMS-implementatie handleiding][dbms-guide] voor meer suggesties e
 
 In de meeste scenario's moet u extra schijven maken om de SAP-data base in de virtuele machine te implementeren. We hebben het gehad over de overwegingen voor het aantal schijven in hoofd stuk [VM/schijf structuur voor SAP-implementaties][planning-guide-5.5.1] van dit document. Met de Azure Portal kunt u schijven koppelen en ontkoppelen nadat een basis-VM is geïmplementeerd. De schijven kunnen worden bijgevoegd of ontkoppeld wanneer de virtuele machine actief is, en wanneer deze wordt gestopt. Wanneer u een schijf koppelt, biedt de Azure Portal een lege schijf of een bestaande schijf die op dit moment niet aan een andere virtuele machine is gekoppeld.
 
-**Opmerking** : schijven kunnen op elk gewenst moment slechts aan één virtuele machine worden gekoppeld.
+**Opmerking**: schijven kunnen op elk gewenst moment slechts aan één virtuele machine worden gekoppeld.
 
 ![Schijven koppelen/loskoppelen met Azure Standard-opslag][planning-guide-figure-1400]
 
@@ -1186,7 +1187,7 @@ Tijdens de implementatie van een nieuwe virtuele machine kunt u bepalen of u Man
 
 Vervolgens moet u beslissen of u een nieuwe en lege schijf wilt maken of dat u een bestaande schijf wilt selecteren die eerder is geüpload en nu moet worden gekoppeld aan de VM.
 
-**Belang rijk** : u wilt caching van host **niet** gebruiken met Azure Standard-opslag. U moet de voor keuren van de host-cache op de standaard waarde geen wijzigen. Met Azure Premium Storage moet u lees cache inschakelen als het I/O-kenmerk voornamelijk wordt gelezen zoals normaal I/O-verkeer met database gegevens bestanden. In het geval van een database transactie logboek bestand wordt geen cache aanbevolen.
+**Belang rijk**: u wilt caching van host **niet** gebruiken met Azure Standard-opslag. U moet de voor keuren van de host-cache op de standaard waarde geen wijzigen. Met Azure Premium Storage moet u lees cache inschakelen als het I/O-kenmerk voornamelijk wordt gelezen zoals normaal I/O-verkeer met database gegevens bestanden. In het geval van een database transactie logboek bestand wordt geen cache aanbevolen.
 
 ---
 > ![Windows-logo.][Logo_Windows] Windows
@@ -1269,8 +1270,8 @@ Het kan nodig zijn om de firewall op uw virtuele machines te configureren om ink
 > De Windows Firewall binnen een Azure geïmplementeerde VM is standaard ingeschakeld. U moet nu toestaan dat de SAP-poort wordt geopend, anders kan de SAP-gebruikers interface geen verbinding maken.
 > Om dit te doen:
 >
-> * Open Control Panel\System en Beveiliging\windows Firewall voor **Geavanceerde instellingen** .
-> * Klik nu met de rechter muisknop op regels voor binnenkomende verbindingen en kies **nieuwe regel** .
+> * Open Control Panel\System en Beveiliging\windows Firewall voor **Geavanceerde instellingen**.
+> * Klik nu met de rechter muisknop op regels voor binnenkomende verbindingen en kies **nieuwe regel**.
 > * In de volgende wizard hebt gekozen voor het maken van een nieuwe **poort** regel.
 > * In de volgende stap van de wizard, sluit u de instelling op TCP en typt u het poort nummer dat u wilt openen. Omdat onze SAP-exemplaar-ID 00 is, hebben we 3200 geduurd. Als uw exemplaar een ander exemplaar nummer heeft, moet de poort die u eerder hebt gedefinieerd op basis van het exemplaar nummer worden geopend.
 > * In het volgende deel van de wizard moet u het item de optie **verbinding toestaan** controleren laten staan.
@@ -1427,7 +1428,7 @@ Add-AzVMDataDisk -VM $vm -Name datadisk -DiskSizeInGB 1023 -CreateOption empty -
 
 ##### <a name="cli"></a>CLI
 
-De volgende voorbeeld code kan worden gebruikt in Linux. Gebruik voor Windows Power shell zoals hierboven wordt beschreven of pas het voor beeld aan om% rgName% in plaats van $rgName te gebruiken en stel de omgevings variabele in met behulp van de Windows-opdracht *reeks* .
+De volgende voorbeeld code kan worden gebruikt in Linux. Gebruik voor Windows Power shell zoals hierboven wordt beschreven of pas het voor beeld aan om% rgName% in plaats van $rgName te gebruiken en stel de omgevings variabele in met behulp van de Windows-opdracht *reeks*.
 
 * Een nieuwe resource groep maken voor elke training/demo-landschap
 
@@ -1510,7 +1511,7 @@ az vm unmanaged-disk attach --resource-group $rgName --vm-name SAPERPDemo --size
 az vm disk attach --resource-group $rgName --vm-name SAPERPDemo --size-gb 1023 --disk datadisk --new
 ```
 
-##### <a name="template"></a>Template
+##### <a name="template"></a>Sjabloon
 
 U kunt de voorbeeld sjablonen gebruiken in de opslag plaats Azure-Quick Start-sjablonen op GitHub.
 
@@ -1776,8 +1777,8 @@ De term **hoge Beschik baarheid (ha)** is in het algemeen gerelateerd aan een se
 
 We kunnen de discussie over SAP hoge Beschik baarheid in Azure in twee delen onderscheiden:
 
-* **Azure-infra structuur hoge Beschik baarheid** , bijvoorbeeld ha of COMPUTE (vm's), netwerk, opslag, enzovoort en de voor delen voor het uitbreiden van de beschik BAARHEID van SAP-toepassingen.
-* **Hoge Beschik baarheid van SAP-toepassing** , bijvoorbeeld ha van SAP-software onderdelen:
+* **Azure-infra structuur hoge Beschik baarheid**, bijvoorbeeld ha of COMPUTE (vm's), netwerk, opslag, enzovoort en de voor delen voor het uitbreiden van de beschik BAARHEID van SAP-toepassingen.
+* **Hoge Beschik baarheid van SAP-toepassing**, bijvoorbeeld ha van SAP-software onderdelen:
   * SAP-toepassings servers
   * SAP ASCS/SCS-instantie
   * DB-server

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 854fe3ab8ad20e13f864b9fb5419628664985dd8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3aa963c4da7802a9db714f25e7b544b3a132d4b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87022664"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948643"
 ---
 # <a name="analyze-your-virtual-machine-security-with-security-group-view-using-azure-cli"></a>De beveiliging van uw virtuele machine analyseren met de weer gave van de beveiligings groep met behulp van Azure CLI
 
@@ -27,7 +27,7 @@ ms.locfileid: "87022664"
 > - [REST API](network-watcher-security-group-view-rest.md)
 
 > [!NOTE]
-> De API voor de weer gave van beveiligings groepen wordt niet meer onderhouden en zal binnenkort worden afgeschaft. Gebruik de [functie effectief beveiligings regels](https://docs.microsoft.com/azure/network-watcher/network-watcher-security-group-view-overview) die dezelfde functionaliteit biedt.
+> De API voor de weer gave van beveiligings groepen wordt niet meer onderhouden en zal binnenkort worden afgeschaft. Gebruik de [functie effectief beveiligings regels](./network-watcher-security-group-view-overview.md) die dezelfde functionaliteit biedt.
 
 
 De weer gave beveiligings groep retourneert geconfigureerde en efficiënte netwerk beveiligings regels die worden toegepast op een virtuele machine. Deze mogelijkheid is nuttig bij het controleren en diagnosticeren van netwerk beveiligings groepen en-regels die zijn geconfigureerd op een virtuele machine om ervoor te zorgen dat verkeer correct wordt toegestaan of geweigerd. In dit artikel laten we zien hoe u de geconfigureerde en efficiënte beveiligings regels kunt ophalen voor een virtuele machine met behulp van Azure CLI
@@ -66,7 +66,7 @@ az network watcher show-security-group-view --resource-group resourceGroupName -
 
 ## <a name="viewing-the-results"></a>De resultaten weer geven
 
-Het volgende voor beeld is een kortere reactie op de geretourneerde resultaten. De resultaten tonen alle effectief en toegepaste beveiligings regels op de virtuele machine, onderverdeeld in groepen **NetworkInterfaceSecurityRules**, **DefaultSecurityRules**en **EffectiveSecurityRules**.
+Het volgende voor beeld is een kortere reactie op de geretourneerde resultaten. De resultaten tonen alle effectief en toegepaste beveiligings regels op de virtuele machine, onderverdeeld in groepen **NetworkInterfaceSecurityRules**, **DefaultSecurityRules** en **EffectiveSecurityRules**.
 
 ```json
 {

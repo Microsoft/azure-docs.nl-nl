@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: 929a2feeb53e8903d675644dcb72b422eceb2858
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: c80f2aaf26c0f0e89014c997151599c8bddbe903
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699097"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948813"
 ---
 # <a name="create-a-connection-monitor-using-the-armclient"></a>Een verbindings monitor maken met behulp van de ARMClient
 
@@ -368,7 +368,7 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
 * Test groepen
     * name: naam van de test groep.
     * testConfigurations-test configuraties op basis waarvan de bron-eind punten verbinding maken met doel eindpunten
-    * bronnen: Kies uit de hierboven gemaakte eind punten. Op Azure-bron eindpunten moet Azure Network Watcher-extensie zijn geïnstalleerd en op niet-Azure gebaseerde bron-eind punten moet Log Analytics agent zijn geïnstalleerd. Zie [bewakings agenten installeren](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#install-monitoring-agents)voor informatie over het installeren van een agent voor uw bron.
+    * bronnen: Kies uit de hierboven gemaakte eind punten. Op Azure-bron eindpunten moet Azure Network Watcher-extensie zijn geïnstalleerd en op niet-Azure gebaseerde bron-eind punten moet Log Analytics agent zijn geïnstalleerd. Zie [bewakings agenten installeren](./connection-monitor-overview.md#install-monitoring-agents)voor informatie over het installeren van een agent voor uw bron.
     * doelen: Kies uit de hierboven gemaakte eind punten. U kunt de verbinding met virtuele machines van Azure of een eind punt (een openbaar IP-adres, URL of FQDN) bewaken door ze als bestemming op te geven. In één test groep kunt u Azure-Vm's, Office 365 Url's, Dynamics 365-Url's en aangepaste eind punten toevoegen.
     * uitschakelen: gebruik dit veld om de bewaking uit te scha kelen voor alle bronnen en doelen die door de test groep worden opgegeven.
 
@@ -400,5 +400,5 @@ Verbindings monitors hebben de volgende schaal limieten:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie [over het analyseren van bewakings gegevens en het instellen van waarschuwingen](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#analyze-monitoring-data-and-set-alerts)
-* Meer informatie [over het vaststellen van problemen in uw netwerk](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#diagnose-issues-in-your-network)
+* Meer informatie [over het analyseren van bewakings gegevens en het instellen van waarschuwingen](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts)
+* Meer informatie [over het vaststellen van problemen in uw netwerk](./connection-monitor-overview.md#diagnose-issues-in-your-network)

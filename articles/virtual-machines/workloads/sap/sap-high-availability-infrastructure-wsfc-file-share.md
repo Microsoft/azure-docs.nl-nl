@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 2ce38add-1078-4bb9-a1da-6f407a9bc910
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 14ffcbf2e111e052f4b45259b0b25664049d3b3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62803bd450db351290bbc12d650d23a4148a4536
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88855374"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94951193"
 ---
 # <a name="prepare-azure-infrastructure-for-sap-high-availability-by-using-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances"></a>Azure-infra structuur voor SAP-hoge Beschik baarheid voorbereiden met behulp van een Windows-failovercluster en een bestands share voor SAP ASCS/SCS-instanties
 
@@ -259,9 +260,9 @@ Voer de volgende handelingen uit om de Azure-infra structuur voor te bereiden:
 * Wanneer u Windows Server 2016 gebruikt, raden we u aan [Azure-cloudwitness][deploy-cloud-witness]te configureren.
 
 
-## <a name="deploy-the-scale-out-file-server-cluster-manually"></a>Het Scale-Out Bestands server cluster hand matig implementeren 
+## <a name="deploy-the-scale-out-file-server-cluster-manually"></a>Het Scale-Out Bestands server cluster hand matig implementeren 
 
-U kunt het micro soft Scale-Out-Bestands server cluster hand matig implementeren, zoals beschreven in de blog [opslagruimten direct in azure][ms-blog-s2d-in-azure]door de volgende code uit te voeren:  
+U kunt het micro soft Scale-Out-Bestands server cluster hand matig implementeren, zoals beschreven in de blog [opslagruimten direct in azure][ms-blog-s2d-in-azure]door de volgende code uit te voeren:  
 
 
 ```powershell
@@ -315,7 +316,7 @@ U wordt aangeraden Managed Disks te gebruiken.
 _**Afbeelding 1**: scherm van de gebruikers interface voor Scale-Out bestands Server bron beheer sjabloon met beheerde schijven_
 
 Ga als volgt te werk in de sjabloon:
-1. Voer in het vak **aantal vm's** het minimum aantal van **2**in.
+1. Voer in het vak **aantal vm's** het minimum aantal van **2** in.
 2. Voer in het vak **aantal VM-schijven** het minimale aantal schijven in op **3** (2 schijven + 1 reserve schijf = 3 schijven).
 3. Voer in het vak **Sofs name** de naam in van het SAP Global host Network, **sapglobalhost**.
 4. Voer in het vak **share naam** de naam van de bestands share in, **sapmnt**.
@@ -328,7 +329,7 @@ De Azure Resource Manager sjabloon voor het implementeren van Scale-Out Bestands
 
 _**Afbeelding 2**: het scherm van de gebruikers interface voor de Scale-Out bestands server Azure Resource Manager sjabloon zonder Managed disks_
 
-Selecteer **Premium Storage**in het vak **type opslag account** . Alle andere instellingen zijn hetzelfde als de instellingen voor beheerde schijven.
+Selecteer **Premium Storage** in het vak **type opslag account** . Alle andere instellingen zijn hetzelfde als de instellingen voor beheerde schijven.
 
 ## <a name="adjust-cluster-timeout-settings"></a>Time-outinstellingen voor het cluster aanpassen
 

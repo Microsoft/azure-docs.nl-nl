@@ -10,18 +10,18 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cdd7f4957b22eb4c87d60e3d57b0cec675659963
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 7ba0604c0fb1a51c5276f2a28fb0e39b878b7639
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131799"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949561"
 ---
 # <a name="localize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Lokalisatie van de gebruikers interface van uw toepassing met behulp van een aangepast beleid in Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Door de taal aanpassing in Azure Active Directory B2C (Azure AD B2C) kunt u verschillende talen aanpassen aan de behoeften van uw klant. Micro soft biedt de vertalingen voor [36 talen](https://docs.microsoft.com/azure/active-directory-b2c/user-flow-language-customization#supported-languages), maar u kunt ook uw eigen vertalingen voor elke taal opgeven. Zelfs als uw ervaring is bedoeld voor slechts één taal, kunt u tekst op de pagina's aanpassen. 
+Door de taal aanpassing in Azure Active Directory B2C (Azure AD B2C) kunt u verschillende talen aanpassen aan de behoeften van uw klant. Micro soft biedt de vertalingen voor [36 talen](./user-flow-language-customization.md#supported-languages), maar u kunt ook uw eigen vertalingen voor elke taal opgeven. Zelfs als uw ervaring is bedoeld voor slechts één taal, kunt u tekst op de pagina's aanpassen. 
 
 In dit artikel wordt beschreven hoe u meerdere land instellingen of talen in het beleid voor gebruikers ritten ondersteunt. Lokalisatie vereist drie stappen: Stel de expliciete lijst met ondersteunde talen in, geef taalspecifieke teken reeksen en verzamelingen op en bewerk de [inhouds definitie](contentdefinitions.md) voor de pagina. 
 
@@ -246,7 +246,7 @@ In het volgende voor beeld worden de aangepaste teken reeksen Engels (en) en Spa
 1. Sla het bestand met extensies op.
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-tenant bevat door in het bovenste menu te klikken op het filter **Map en abonnement** en de map te kiezen waarin de tenant zich bevindt.
 1. Zoek en selecteer **Azure AD B2C**.
-1. Onder **beleids regels**selecteert u **identiteits ervaring-Framework**.
+1. Onder **beleids regels** selecteert u **identiteits ervaring-Framework**.
 1. Selecteer **aangepast beleid uploaden**.
 1. Upload het extensie bestand dat u eerder hebt gewijzigd.
 
@@ -265,4 +265,3 @@ https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/B2C_1A_signup_s
 
 - Meer informatie over het [lokalisatie](localization.md) -element vindt u in de IEF-verwijzing.
 - Zie de lijst met beschik bare [lokalisatie teken reeks-id's](localization-string-ids.md) in azure AD B2C.
-

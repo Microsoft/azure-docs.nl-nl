@@ -7,12 +7,12 @@ ms.date: 05/11/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 5683d40e9565068c6cd79eedb08b036eab2c54cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 37099b551e004ebfc702dce37c2a1499aa46ff10
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531386"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94950719"
 ---
 # <a name="how-to-deprovision-devices-that-were-previously-auto-provisioned"></a>De inrichting van apparaten die eerder automatisch zijn ingericht, ongedaan maken 
 
@@ -25,7 +25,7 @@ Over het algemeen is het ongedaan maken van de inrichting van een apparaat twee 
    - Zie [een apparaat uitschrijven van Azure IOT hub Device Provisioning Service](how-to-revoke-device-access-portal.md)voor meer informatie over het ongedaan maken van de registratie van een apparaat.
    - Zie [inschrijven van apparaten met Service-sdk's](how-to-manage-enrollments-sdks.md)voor meer informatie over het programmatisch verwijderen van een apparaat met een van de sdk's van de inrichtings service.
 
-2. Hef de registratie van het apparaat uit uw IoT Hub op om toekomstige communicatie en gegevens overdracht te voor komen. U kunt de vermelding van het apparaat ook tijdelijk uitschakelen of permanent verwijderen in het identiteits register voor het IoT Hub waar het is ingericht. Zie [apparaten uitschakelen](/azure/iot-hub/iot-hub-devguide-identity-registry#disable-devices) voor meer informatie over uitschakeling. Zie Apparaatbeheer/IoT-apparaten voor uw IoT Hub-resource in de [Azure Portal](https://portal.azure.com).
+2. Hef de registratie van het apparaat uit uw IoT Hub op om toekomstige communicatie en gegevens overdracht te voor komen. U kunt de vermelding van het apparaat ook tijdelijk uitschakelen of permanent verwijderen in het identiteits register voor het IoT Hub waar het is ingericht. Zie [apparaten uitschakelen](../iot-hub/iot-hub-devguide-identity-registry.md#disable-devices) voor meer informatie over uitschakeling. Zie Apparaatbeheer/IoT-apparaten voor uw IoT Hub-resource in de [Azure Portal](https://portal.azure.com).
 
 De exacte stappen die u moet nemen om het inrichten van een apparaat te verwijderen, zijn afhankelijk van het Attestation-mechanisme en de toepasselijke inschrijvings vermelding bij de inrichtings service. In de volgende secties vindt u een overzicht van het proces, op basis van het registratie-en Attestation-type.
 
@@ -49,7 +49,7 @@ Als u een lijst met apparaten wilt zien die zijn ingericht via een registratie g
 
 1. Meld u aan bij de Azure Portal en klik op **alle resources** in het menu aan de linkerkant.
 2. Klik op uw inrichtings service in de lijst met resources.
-3. Klik in uw inrichtings service op **inschrijvingen beheren**en selecteer vervolgens het tabblad **registratie groepen** .
+3. Klik in uw inrichtings service op **inschrijvingen beheren** en selecteer vervolgens het tabblad **registratie groepen** .
 4. Klik op de registratie groep om deze te openen.
 
    ![Vermelding van inschrijvings groep weer geven in de portal](./media/how-to-unprovision-devices/view-enrollment-group.png)
@@ -63,4 +63,4 @@ Bij inschrijvings groepen zijn er twee scenario's waarin u rekening moet houden:
 
 - De inrichting van één apparaat uit een registratie groep ongedaan maken:
   1. Een uitgeschakelde individuele inschrijving maken voor het blad (apparaat) certificaat. Hiermee trekt u de toegang tot de inrichtings service voor dat apparaat in, terwijl er nog steeds toegang wordt verlenen voor andere apparaten die het handtekening certificaat van de registratie groep in hun keten hebben. Verwijder de uitgeschakelde individuele inschrijving niet voor het apparaat. Hierdoor kan het apparaat opnieuw worden inge schreven via de registratie groep. 
-  2. Gebruik de lijst met ingerichte apparaten voor die registratie groep om de IoT-hub te vinden waarmee het apparaat is ingericht en om het uit te scha kelen of te verwijderen uit het id-REGI ster van de hub. 
+  2. Gebruik de lijst met ingerichte apparaten voor die registratie groep om de IoT-hub te vinden waarmee het apparaat is ingericht en om het uit te scha kelen of te verwijderen uit het id-REGI ster van de hub.

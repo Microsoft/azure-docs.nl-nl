@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 0896df301718c74e63a9e18c74615130fa80c952
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 18ffc5aa9c56451099afc4ddbe8b6ac5bd588974
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90986255"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94948762"
 ---
 # <a name="visualize-azure-network-watcher-nsg-flow-logs-using-open-source-tools"></a>NSG-stroomlogboeken van Azure Network Watcher visualiseren met open-sourcehulpprogramma's
 
@@ -41,7 +41,7 @@ Door NSG-stroom logboeken te verbinden met de elastische stack, kunnen we een Ki
 
 #### <a name="install-elasticsearch"></a>Elasticsearch installeren
 
-1. Voor de elastische stack van versie 5,0 en hoger is Java 8 vereist. Voer de opdracht uit `java -version` om uw versie te controleren. Als Java niet is geïnstalleerd, raadpleegt u de documentatie op de [Azure-Suppored JDKs](https://aka.ms/azure-jdks).
+1. Voor de elastische stack van versie 5,0 en hoger is Java 8 vereist. Voer de opdracht uit `java -version` om uw versie te controleren. Als Java niet is geïnstalleerd, raadpleegt u de documentatie op de [Azure-Suppored JDKs](/azure/developer/java/fundamentals/java-jdk-long-term-support).
 2. Down load het juiste binaire pakket voor uw systeem:
 
    ```bash
@@ -195,7 +195,7 @@ Raadpleeg de [documentatie](https://github.com/Azure/azure-diagnostics-tools/tre
 
 3. Als u uw Kibana web interface wilt weer geven, gaat u naar `http://localhost:5601`
 4. Voor dit scenario is het index patroon dat wordt gebruikt voor de stroom logboeken ' NSG-flow-logs '. U kunt het index patroon wijzigen in de sectie uitvoer van het bestand logstash. conf.
-5. Als u het Kibana-dash board extern wilt weer geven, maakt u een inkomende NSG-regel waarmee toegang tot **poort 5601**wordt toegestaan.
+5. Als u het Kibana-dash board extern wilt weer geven, maakt u een inkomende NSG-regel waarmee toegang tot **poort 5601** wordt toegestaan.
 
 ### <a name="create-a-kibana-dashboard"></a>Een Kibana-dash board maken
 

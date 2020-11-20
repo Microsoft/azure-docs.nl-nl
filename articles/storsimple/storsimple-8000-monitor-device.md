@@ -6,19 +6,19 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 10/17/2017
 ms.author: alkohli
-ms.openlocfilehash: 7ffb13912780edcf3d92093e672d1dae983e50a8
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: de4cae90f2cc1223271672d9fc5ba5b42e4409e4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977405"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962430"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-monitor-your-storsimple-device"></a>De StorSimple Apparaatbeheer-service gebruiken om uw StorSimple-apparaat te bewaken
 
 ## <a name="overview"></a>Overzicht
 U kunt de StorSimple Apparaatbeheer-service gebruiken voor het bewaken van specifieke apparaten in uw StorSimple-oplossing. U kunt aangepaste grafieken maken op basis van I/O-prestaties, capaciteits gebruik, netwerk doorvoer en metrische prestatie gegevens van apparaten en deze aan het dash board vastmaken. Ga naar [uw portal-dash board aanpassen](../azure-portal/azure-portal-dashboards.md)voor meer informatie.
 
-Als u de controle-informatie voor een specifiek apparaat wilt weer geven, selecteert u in de Azure Portal de StorSimple Apparaatbeheer-service. Selecteer uw apparaat in de lijst met apparaten en ga vervolgens naar **monitor**. U kunt vervolgens de grafieken **capaciteit**, **gebruik**en **prestaties** zien voor het geselecteerde apparaat.
+Als u de controle-informatie voor een specifiek apparaat wilt weer geven, selecteert u in de Azure Portal de StorSimple Apparaatbeheer-service. Selecteer uw apparaat in de lijst met apparaten en ga vervolgens naar **monitor**. U kunt vervolgens de grafieken **capaciteit**, **gebruik** en **prestaties** zien voor het geselecteerde apparaat.
 
 ## <a name="capacity"></a>Capaciteit
 **Capaciteit** traceert de ingerichte ruimte en de resterende ruimte op het apparaat. De resterende capaciteit wordt vervolgens weer gegeven als lokaal vastgemaakt of gelaagd.
@@ -139,6 +139,5 @@ Met **CPU-gebruik** worden metrische gegevens bijgehouden die zijn gerelateerd a
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [het gebruik van het StorSimple Apparaatbeheer service-dash board](storsimple-device-dashboard.md).
-* Meer informatie over [het gebruik van de StorSimple Apparaatbeheer-service voor het beheren van uw StorSimple-apparaat](storsimple-manager-service-administration.md).
-
+* Meer informatie over [het gebruik van het StorSimple Apparaatbeheer service-dash board](./storsimple-8000-device-dashboard.md).
+* Meer informatie over [het gebruik van de StorSimple Apparaatbeheer-service voor het beheren van uw StorSimple-apparaat](./storsimple-8000-manager-service-administration.md).

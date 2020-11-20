@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: e34701640de24a4c3c13f8d10073b4392af2f28a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b18627d2806662d6d966af95d51873d5623b2393
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88183645"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961121"
 ---
 # <a name="use-the-net-sdk-to-initiate-data-transformation"></a>De .NET SDK gebruiken om de gegevenstransformatie te initiëren
 
@@ -33,7 +33,7 @@ Voordat u begint, moet u ervoor zorgen dat:
 
     - Visual Studio 2012, 2013, 2015 of 2017.
 
-    - Azure Power shell. [Down load Azure Power shell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
+    - Azure Power shell. [Down load Azure Power shell](/powershell/azure/).
 *   Een correct geconfigureerde taak definitie in StorSimple Data Manager binnen een resource groep.
 *   Alle vereiste dll-bestanden. Down load deze DLL-bestanden vanuit de [github-opslag plaats](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/tree/master/Data_Manager_Job_Run/dlls).
 *   [`Get-ConfigurationParams.ps1`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/blob/master/Data_Manager_Job_Run/Get-ConfigurationParams.ps1) script uit de GitHub-opslag plaats.
@@ -149,7 +149,7 @@ Voer de volgende stappen uit om .NET te gebruiken om een gegevens transformatie 
     };
     ```
 
-8. Voeg na de initialisatie de volgende code toe om een gegevens transformatie taak te activeren voor de taak definitie. Sluit de juiste **taak definitie naam**in.
+8. Voeg na de initialisatie de volgende code toe om een gegevens transformatie taak te activeren voor de taak definitie. Sluit de juiste **taak definitie naam** in.
 
     ```
     // Trigger a job, retrieve the jobId and the retry interval for polling.

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: aahi
-ms.openlocfilehash: 3d35a1f6913d0b657956489d0e57836a05f9eb1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 188a348b497a485be0a8091b50a3f2c11b6493c0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90900047"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960747"
 ---
 # <a name="azure-cognitive-services-containers-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure Cognitive Services-containers (FAQ)
 
@@ -50,7 +50,7 @@ Cognitive Services container configuraties van bronnen worden beheerd door klant
 
 **A:** Niet iedereen is bekend met de term ' soevereine Cloud ', dus laten we beginnen met definitie:
 
-> De "soevereine Cloud" bestaat uit de [Azure Government](../../azure-government/documentation-government-welcome.md), [Azure Duitsland](../../germany/germany-welcome.md)en [Azure China 21vianet](https://docs.microsoft.com/azure/china/overview-operations) -Clouds.
+> De "soevereine Cloud" bestaat uit de [Azure Government](../../azure-government/documentation-government-welcome.md), [Azure Duitsland](../../germany/germany-welcome.md)en [Azure China 21vianet](/azure/china/overview-operations) -Clouds.
 
 Helaas worden de Cognitive Services containers *niet* systeem eigen ondersteund in de soevereine Clouds. De containers kunnen worden uitgevoerd in deze Clouds, maar ze worden opgehaald uit de open bare Cloud en er moeten gebruiks gegevens naar het open bare eind punt worden verzonden.
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 6809e8a44120eddbae4965bff30f80b617bdd024
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c308824afdcae5f5c04a316c199bad71ad84a429
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88272158"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961988"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Een Azure Network Watcher-exemplaar maken
 
@@ -129,7 +129,7 @@ Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup Networ
 
 Nu u een exemplaar van Network Watcher hebt, hebt u meer informatie over de beschik bare functies:
 
-* [Topologie](network-watcher-topology-overview.md)
+* [Topologie](./view-network-topology.md)
 * [Pakketopname](network-watcher-packet-capture-overview.md)
 * [IP-stroom controleren](network-watcher-ip-flow-verify-overview.md)
 * [Volgende hop](network-watcher-next-hop-overview.md)

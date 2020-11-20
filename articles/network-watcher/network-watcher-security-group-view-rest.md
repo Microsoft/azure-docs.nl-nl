@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 156da7504a1a5e2a704e52a783fcd3e437a59867
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2efd3e9c9ca97ea3d94b03bd5e440cd24d5da5da
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90986264"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960577"
 ---
 # <a name="analyze-your-virtual-machine-security-with-security-group-view-using-rest-api"></a>Analyseer de beveiliging van uw virtuele machine met de weer gave van de beveiligings groep met REST API
 
@@ -27,7 +27,7 @@ ms.locfileid: "90986264"
 > - [REST API](network-watcher-security-group-view-rest.md)
 
 > [!NOTE]
-> De API voor de weer gave van beveiligings groepen wordt niet meer onderhouden en zal binnenkort worden afgeschaft. Gebruik de [functie effectief beveiligings regels](https://docs.microsoft.com/azure/network-watcher/network-watcher-security-group-view-overview) die dezelfde functionaliteit biedt. 
+> De API voor de weer gave van beveiligings groepen wordt niet meer onderhouden en zal binnenkort worden afgeschaft. Gebruik de [functie effectief beveiligings regels](./network-watcher-security-group-view-overview.md) die dezelfde functionaliteit biedt. 
 
 De weer gave beveiligings groep retourneert geconfigureerde en efficiënte netwerk beveiligings regels die worden toegepast op een virtuele machine. Deze mogelijkheid is nuttig bij het controleren en diagnosticeren van netwerk beveiligings groepen en-regels die zijn geconfigureerd op een virtuele machine om ervoor te zorgen dat verkeer correct wordt toegestaan of geweigerd. In dit artikel laten we zien hoe u de effectief en toegepaste beveiligings regels kunt ophalen voor een virtuele machine met behulp van REST API
 
@@ -115,7 +115,7 @@ armclient post "https://management.azure.com/subscriptions/${subscriptionId}/Res
 
 ## <a name="view-the-response"></a>Bekijk het antwoord
 
-Het volgende voor beeld is het antwoord dat is geretourneerd door de voor gaande opdracht. De resultaten tonen alle effectief en toegepaste beveiligings regels op de virtuele machine, onderverdeeld in groepen **NetworkInterfaceSecurityRules**, **DefaultSecurityRules**en **EffectiveSecurityRules**.
+Het volgende voor beeld is het antwoord dat is geretourneerd door de voor gaande opdracht. De resultaten tonen alle effectief en toegepaste beveiligings regels op de virtuele machine, onderverdeeld in groepen **NetworkInterfaceSecurityRules**, **DefaultSecurityRules** en **EffectiveSecurityRules**.
 
 ```json
 
@@ -186,5 +186,3 @@ Het volgende voor beeld is het antwoord dat is geretourneerd door de voor gaande
 ## <a name="next-steps"></a>Volgende stappen
 
 Ga naar [controle netwerk beveiligings groepen (NSG) met Network Watcher](network-watcher-security-group-view-powershell.md) voor meer informatie over het automatiseren van de validatie van netwerk beveiligings groepen.
-
-

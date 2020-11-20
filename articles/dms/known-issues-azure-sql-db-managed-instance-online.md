@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 6393624cb4520ccd28dff41dd97746873bc13f59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d5c79a141dbe1310762dc90b447fe78848ac10d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330295"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962481"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-managed-instance"></a>Bekende problemen/migratie beperkingen met online migraties naar Azure SQL Managed instance
 
@@ -31,7 +31,7 @@ Bekende problemen en beperkingen die zijn gekoppeld aan online migraties van SQL
 
     Azure Database Migration Service maakt gebruik van de methode Backup en Restore om uw on-premises data bases te migreren naar SQL Managed instance. Azure Database Migration Service ondersteunt alleen back-ups die zijn gemaakt met behulp van een controlesom.
 
-    [Back-upcontrolesoms tijdens het maken of herstellen van back-ups in-of uitschakelen (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017)
+    [Back-upcontrolesoms tijdens het maken of herstellen van back-ups in-of uitschakelen (SQL Server)](/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017)
 
     > [!NOTE]
     > Als u de database back-ups met compressie uitvoert, is de controlesom een standaard gedrag, tenzij expliciet is uitgeschakeld.

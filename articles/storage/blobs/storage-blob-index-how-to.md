@@ -3,18 +3,18 @@ title: BLOB-index Tags gebruiken om gegevens te beheren en te zoeken op Azure Bl
 description: Zie voor beelden van het gebruik van BLOB-index Tags voor het categoriseren, beheren en opvragen van blob-objecten.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 10/19/2020
+ms.date: 11/19/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: how-to
 ms.reviewer: klaasl
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 159252cf850fd59f40d1b59e592153f50d7cb813
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 2e3e16b71d52edd9ab4eaf55651567b95e334b84
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371967"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961784"
 ---
 # <a name="use-blob-index-tags-preview-to-manage-and-find-data-on-azure-blob-storage"></a>Gebruik BLOB index Tags (preview) om gegevens te beheren en te zoeken op Azure Blob Storage
 
@@ -56,13 +56,13 @@ Als blob-index is beschikbaar in preview, wordt het .NET-opslag pakket vrijgegev
 
 ## <a name="upload-a-new-blob-with-index-tags"></a>Een nieuwe BLOB uploaden met index Tags
 
-Het uploaden van een nieuwe blob met index Tags kan worden uitgevoerd door de eigenaar van de gegevens van de [opslag-BLOB](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Bovendien kunnen gebruikers met de machtiging `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [op rollen gebaseerde toegangs beheer](/azure/role-based-access-control/overview) deze bewerking uitvoeren.
+Deze taak kan worden uitgevoerd door een [gegevens eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die toestemming heeft gekregen voor de bewerking van de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [Azure-resource provider](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
 1. Selecteer uw opslag account in de [Azure Portal](https://portal.azure.com/) 
 
-2. Navigeer naar de optie **containers** onder **BLOB service**en selecteer uw container
+2. Navigeer naar de optie **containers** onder **BLOB service** en selecteer uw container
 
 3. Selecteer de knop **uploaden** en blader door het lokale bestands systeem om een bestand te vinden dat u wilt uploaden als een blok-blob.
 
@@ -114,9 +114,9 @@ static async Task BlobIndexTagsOnCreate()
 
 ## <a name="get-set-and-update-blob-index-tags"></a>Labels voor BLOB-indexen ophalen, instellen en bijwerken
 
-Het ophalen van BLOB-index Tags kan worden uitgevoerd door de eigenaar van de [opslag-BLOB](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Bovendien kunnen gebruikers met de machtiging `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read` [op rollen gebaseerde toegangs beheer](/azure/role-based-access-control/overview) deze bewerking uitvoeren.
+Het ophalen van BLOB-index Tags kan worden uitgevoerd door een [gegevens eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die toestemming heeft gekregen voor de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read` [Azure resource provider-bewerking](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
 
-Het instellen en bijwerken van BLOB-index Tags kan worden uitgevoerd door de eigenaar van de gegevens van de [opslag-BLOB](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Bovendien kunnen gebruikers met de machtiging `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [op rollen gebaseerde toegangs beheer](/azure/role-based-access-control/overview) deze bewerking uitvoeren.
+Het instellen en bijwerken van BLOB-index Tags kan worden uitgevoerd door een [gegevens eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die machtigingen heeft gekregen voor de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [Azure resource provider-bewerking](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -132,7 +132,7 @@ Het instellen en bijwerken van BLOB-index Tags kan worden uitgevoerd door de eig
 
 6. Selecteer de knop **Opslaan** om de updates voor uw BLOB te bevestigen
 
-:::image type="content" source="media/storage-blob-index-concepts/blob-index-get-set-tags.png" alt-text="Scherm afbeelding van de Azure Portal waarin wordt weer gegeven hoe u een blob met index Tags uploadt.":::
+:::image type="content" source="media/storage-blob-index-concepts/blob-index-get-set-tags.png" alt-text="Scherm afbeelding van de Azure Portal waarin wordt weer gegeven hoe index Tags op blobs worden opgehaald, ingesteld, bijgewerkt en verwijderd.":::
 
 # <a name="net"></a>[.NET](#tab/net)
 
@@ -193,7 +193,7 @@ static async Task BlobIndexTagsExample()
 
 ## <a name="filter-and-find-data-with-blob-index-tags"></a>Gegevens filteren en vinden met Blob-index Tags
 
-Zoeken en filteren op BLOB index Tags kunnen worden uitgevoerd door de [eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner)van de opslag-blob. Bovendien kunnen gebruikers met de machtiging `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action` [op rollen gebaseerde toegangs beheer](/azure/role-based-access-control/overview) deze bewerking uitvoeren.
+Deze taak kan worden uitgevoerd door een [gegevens eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die toestemming heeft gekregen voor de bewerking van de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action` [Azure-resource provider](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -201,7 +201,7 @@ Binnen het Azure Portal past het filter index Tags van blob automatisch de `@con
 
 1. Selecteer uw opslag account in de [Azure Portal](https://portal.azure.com/). 
 
-2. Navigeer naar de optie **containers** onder **BLOB service**en selecteer uw container
+2. Navigeer naar de optie **containers** onder **BLOB service** en selecteer uw container
 
 3. Selecteer de knop voor het **filteren van BLOB-index Tags** om binnen de geselecteerde container te filteren
 
@@ -209,7 +209,7 @@ Binnen het Azure Portal past het filter index Tags van blob automatisch de `@con
 
 5. Selecteer de knop voor het **filteren van BLOB-index Tags** om extra label filters toe te voegen (Maxi maal 10)
 
-:::image type="content" source="media/storage-blob-index-concepts/blob-index-tag-filter-within-container.png" alt-text="Scherm afbeelding van de Azure Portal waarin wordt weer gegeven hoe u een blob met index Tags uploadt.":::
+:::image type="content" source="media/storage-blob-index-concepts/blob-index-tag-filter-within-container.png" alt-text="Scherm afbeelding van de Azure Portal waarin wordt weer gegeven hoe gecodeerde blobs worden gefilterd en gevonden met index Tags":::
 
 # <a name="net"></a>[.NET](#tab/net)
 
@@ -303,11 +303,11 @@ static async Task FindBlobsByTagsExample()
 
 4. **Filterset** selecteren om een optioneel filter toe te voegen voor voorvoegsel overeenkomst en overeenkomende BLOB-index
 
-  :::image type="content" source="media/storage-blob-index-concepts/blob-index-match-lifecycle-filter-set.png" alt-text="Scherm afbeelding van de Azure Portal waarin wordt weer gegeven hoe u een blob met index Tags uploadt.":::
+  :::image type="content" source="media/storage-blob-index-concepts/blob-index-match-lifecycle-filter-set.png" alt-text="Scherm afbeelding van de Azure Portal waarin wordt weer gegeven hoe index Tags voor levenscyclus beheer moeten worden toegevoegd.":::
 
 5. Selecteer **controleren + toevoegen** om de regel instellingen te controleren
 
-  :::image type="content" source="media/storage-blob-index-concepts/blob-index-lifecycle-management-example.png" alt-text="Scherm afbeelding van de Azure Portal waarin wordt weer gegeven hoe u een blob met index Tags uploadt.":::
+  :::image type="content" source="media/storage-blob-index-concepts/blob-index-lifecycle-management-example.png" alt-text="Scherm afbeelding van de Azure Portal een levenscyclus beheer regel met een filter voor de BLOB index Tags weer geven":::
 
 6. Selecteer **toevoegen** om de nieuwe regel toe te passen op het levenscyclus beheer beleid
 

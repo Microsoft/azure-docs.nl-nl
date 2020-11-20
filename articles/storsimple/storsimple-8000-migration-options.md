@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 181f5433de6653c8b6a2cda085f04e21c64082b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 316b513f761aa422f87c83658e6c50efec25efb4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514658"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961138"
 ---
 # <a name="options-to-migrate-data-from-storsimple-5000-7000-series"></a>Opties voor het migreren van gegevens uit de collectie StorSimple 5000-7000 
 
@@ -43,7 +43,7 @@ Ga voor meer informatie over het migreren van gegevens met behulp van een StorSi
 
 Met deze gloed nieuwe migratie optie kunnen klanten de bestands shares van hun organisatie opslaan in de Azure Files. Deze bestands shares worden vervolgens gecentraliseerd voor on-premises toegang met behulp van Azure File Sync (AFS). AFS kan worden geïmplementeerd op een Windows Server-host. De daad werkelijke gegevens migratie wordt vervolgens uitgevoerd als een host-kopie of met het hulp programma voor migratie.
 
-Ga voor meer informatie over het migreren van gegevens naar Azure File Sync naar [gegevens migreren van de StorSimple 5000-7000-serie naar Azure file sync](storsimple-5000-7000-afs-migration.md).
+Ga voor meer informatie over het migreren van gegevens naar Azure File Sync naar [gegevens migreren van de StorSimple 5000-7000-serie naar Azure file sync](../storage/files/storage-files-migration-storsimple-8000.md).
 
 ### <a name="third-party-options"></a>Opties van derden
 
@@ -127,4 +127,4 @@ A. Het einde van de ondersteunings datum voor de StorSimple 8000-serie wordt [hi
 
 ## <a name="next-steps"></a>Volgende stappen
  - [Gegevens migreren van een StorSimple 5000-7000-serie naar een 8000 Series-apparaat](storsimple-8000-migrate-from-5000-7000.md).
- - [Gegevens migreren van een StorSimple 5000-7000-serie naar Azure File Sync](storsimple-5000-7000-afs-migration.md)
+ - [Gegevens migreren van een StorSimple 5000-7000-serie naar Azure File Sync](../storage/files/storage-files-migration-storsimple-8000.md)

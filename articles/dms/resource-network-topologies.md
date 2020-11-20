@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: reference
 ms.date: 01/08/2020
-ms.openlocfilehash: 5839de1fde8e4a4d5e661d232ae91099a9483bcb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae036b7d893eb268ea55026054bf364dad0b610e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91291568"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961546"
 ---
 # <a name="network-topologies-for-azure-sql-managed-instance-migrations-using-azure-database-migration-service"></a>Netwerk topologieën voor Azure SQL Managed instance-migraties met Azure Database Migration Service
 
@@ -32,7 +32,7 @@ Gebruik deze topologie als uw Azure SQL Managed instance is verbonden met uw on-
 **Vereisten**
 
 - In dit scenario worden de SQL Managed instance en het Azure Database Migration Service-exemplaar in dezelfde Microsoft Azure Virtual Network gemaakt, maar ze gebruiken verschillende subnetten.  
-- Het virtuele netwerk dat in dit scenario wordt gebruikt, is ook verbonden met het on-premises netwerk met behulp van [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) of [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
+- Het virtuele netwerk dat in dit scenario wordt gebruikt, is ook verbonden met het on-premises netwerk met behulp van [ExpressRoute](../expressroute/expressroute-introduction.md) of [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
 ## <a name="sql-managed-instance-isolated-from-the-on-premises-network"></a>SQL Managed instance geïsoleerd van het on-premises netwerk
 
@@ -46,8 +46,8 @@ Gebruik deze netwerk topologie als uw omgeving een of meer van de volgende scena
 
 **Vereisten**
 
-- Het virtuele netwerk dat Azure Database Migration Service voor dit scenario gebruikt, moet ook worden verbonden met het on-premises netwerk met behulp van ofwel https://docs.microsoft.com/azure/expressroute/expressroute-introduction) [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
-- Stel [VNet-netwerk peering](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) in tussen het virtuele netwerk dat wordt gebruikt voor SQL Managed Instance en Azure database Migration service.
+- Het virtuele netwerk dat Azure Database Migration Service voor dit scenario gebruikt, moet ook worden verbonden met het on-premises netwerk met behulp van ofwel https://docs.microsoft.com/azure/expressroute/expressroute-introduction) [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md).
+- Stel [VNet-netwerk peering](../virtual-network/virtual-network-peering-overview.md) in tussen het virtuele netwerk dat wordt gebruikt voor SQL Managed Instance en Azure database Migration service.
 
 ## <a name="cloud-to-cloud-migrations-shared-virtual-network"></a>Cloud-naar-Cloud-migraties: gedeeld virtueel netwerk
 
@@ -71,7 +71,7 @@ Gebruik deze netwerk topologie als uw omgeving een of meer van de volgende scena
 
 **Vereisten**
 
-- Stel [VNet-netwerk peering](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) in tussen het virtuele netwerk dat wordt gebruikt voor SQL Managed Instance en Azure database Migration service.
+- Stel [VNet-netwerk peering](../virtual-network/virtual-network-peering-overview.md) in tussen het virtuele netwerk dat wordt gebruikt voor SQL Managed Instance en Azure database Migration service.
 
 ## <a name="inbound-security-rules"></a>Inkomende beveiligingsregels
 
@@ -85,16 +85,16 @@ Gebruik deze netwerk topologie als uw omgeving een of meer van de volgende scena
 |---------------------------|-------------------------------------------------------|--------------|------------|---------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | beheer                | 443, 9354                                              | TCP          | Alle        | Alle                       | Toestaan      | Beheer vlak communicatie via Service Bus en Azure Blob-opslag. <br/>(Als micro soft-peering is ingeschakeld, hebt u deze regel mogelijk niet nodig.)                                                             |
 | Diagnostiek               | 12000                                                 | TCP          | Alle        | Alle                       | Toestaan      | DMS gebruikt deze regel voor het verzamelen van diagnostische gegevens voor het oplossen van problemen.                                                                                                                      |
-| SQL-bron server         | 1433 (of TCP IP-poort waarnaar SQL Server luistert) | TCP          | Alle        | On-premises adresruimte | Toestaan      | SQL Server bron connectiviteit vanuit DMS <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig.)                                                                                       |
-| SQL Server benoemd exemplaar | 1434                                                  | UDP          | Alle        | On-premises adresruimte | Toestaan      | SQL Server bron connectiviteit van een benoemde instantie van DMS <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig.)                                                                        |
-| SMB-share                 | 445                                                   | TCP          | Alle        | On-premises adresruimte | Toestaan      | SMB-netwerk share voor DMS voor het opslaan van back-upbestanden van data bases voor migraties naar Azure SQL Database MI-en SQL-servers op Azure VM <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig). |
+| SQL-bron server         | 1433 (of TCP IP-poort waarnaar SQL Server luistert) | TCP          | Elk        | On-premises adresruimte | Toestaan      | SQL Server bron connectiviteit vanuit DMS <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig.)                                                                                       |
+| SQL Server benoemd exemplaar | 1434                                                  | UDP          | Elk        | On-premises adresruimte | Toestaan      | SQL Server bron connectiviteit van een benoemde instantie van DMS <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig.)                                                                        |
+| SMB-share                 | 445                                                   | TCP          | Elk        | On-premises adresruimte | Toestaan      | SMB-netwerk share voor DMS voor het opslaan van back-upbestanden van data bases voor migraties naar Azure SQL Database MI-en SQL-servers op Azure VM <br/>(Als u site-naar-site-connectiviteit hebt, hebt u deze regel mogelijk niet nodig). |
 | DMS_subnet                | Alle                                                   | Alle          | Alle        | DMS_Subnet                | Toestaan      |                                                                                                                                                                                                  |
 
 ## <a name="see-also"></a>Zie ook
 
-- [SQL Server migreren naar een beheerd exemplaar van SQL](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance)
-- [Overzicht van vereisten voor het gebruik van Azure Database Migration Service](https://docs.microsoft.com/azure/dms/pre-reqs)
-- [Een virtueel netwerk maken met Azure Portal](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+- [SQL Server migreren naar een beheerd exemplaar van SQL](./tutorial-sql-server-to-managed-instance.md)
+- [Overzicht van vereisten voor het gebruik van Azure Database Migration Service](./pre-reqs.md)
+- [Een virtueel netwerk maken met Azure Portal](../virtual-network/quick-create-portal.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

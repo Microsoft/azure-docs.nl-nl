@@ -11,19 +11,19 @@ ms.author: nigup
 author: nishankgu
 ms.date: 11/09/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperfq2
-ms.openlocfilehash: dd8eff01cd52f8d80eb56f3a1ebe924763c8b70c
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 6cd4bbec89e955c398f7cb6e37ba5c3dcc6427ea
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441696"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961223"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>De toegang tot een Azure Machine Learning-werkruimte beheren
 
 In dit artikel leert u hoe u de toegang (autorisatie) beheert voor een Azure Machine Learning-werk ruimte. [Azure RBAC (op rollen gebaseerd toegangs beheer)](../role-based-access-control/overview.md) wordt gebruikt voor het beheren van de toegang tot Azure-resources, zoals de mogelijkheid om nieuwe resources te maken of bestaande te gebruiken. Gebruikers in uw Azure Active Directory (Azure AD) krijgen specifieke rollen toegewezen, die toegang tot resources verlenen. Azure biedt zowel ingebouwde rollen als de mogelijkheid om aangepaste rollen te maken.
 
 > [!TIP]
-> Hoewel dit artikel gericht is op Azure Machine Learning, bieden afzonderlijke services die Azure ML op hun eigen RBAC-instellingen zijn gebaseerd. Met de informatie in dit artikel kunt u bijvoorbeeld configureren wie Score aanvragen kan indienen bij een model dat is geïmplementeerd als webservice op de Azure Kubernetes-service. Maar de Azure Kubernetes-service biedt een eigen set van Azure RBAC-rollen. Raadpleeg de volgende koppelingen voor informatie over servicespecifieke gegevens die nuttig kunnen zijn met Azure Machine Learning:
+> Hoewel dit artikel gericht is op Azure Machine Learning, bieden afzonderlijke services die Azure ML op hun eigen RBAC-instellingen zijn gebaseerd. Met de informatie in dit artikel kunt u bijvoorbeeld configureren wie Score aanvragen kan indienen bij een model dat is geïmplementeerd als webservice op de Azure Kubernetes-service. Maar de Azure Kubernetes-service biedt een eigen set Azure-rollen. Raadpleeg de volgende koppelingen voor informatie over servicespecifieke gegevens die nuttig kunnen zijn met Azure Machine Learning:
 >
 > * [Toegang tot Azure Kubernetes-cluster resources beheren](../aks/azure-ad-rbac.md)
 > * [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)

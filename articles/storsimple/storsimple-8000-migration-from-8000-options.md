@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 03/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 78ac7e849a3a8f1742701006638a2cb72299bad7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4839f8211e678f5fc2fb3572c7eaa545fbee6c6c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90055772"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961189"
 ---
 # <a name="options-to-migrate-data-from-storsimple-8000-series"></a>Opties voor het migreren van gegevens uit de StorSimple 8000-serie
 
@@ -31,7 +31,7 @@ De klanten die gebruikmaken van de StorSimple 8000-serie beschikken over opties 
 
 Met deze gloed nieuwe migratie optie kunnen klanten de bestands shares van hun organisatie opslaan in de Azure Files. Deze bestands shares worden vervolgens gecentraliseerd voor on-premises toegang met behulp van Azure File Sync (AFS). AFS kan worden geïmplementeerd op een Windows Server-host. De daad werkelijke gegevens migratie wordt vervolgens uitgevoerd als een host-kopie of met het hulp programma voor migratie.
 
-Ga naar [Azure file sync StorSimple 8100 en 8600](https://docs.microsoft.com/azure/storage/files/storage-files-migration-storsimple-8000)voor meer informatie over het migreren van gegevens naar Azure file sync.
+Ga naar [Azure file sync StorSimple 8100 en 8600](../storage/files/storage-files-migration-storsimple-8000.md)voor meer informatie over het migreren van gegevens naar Azure file sync.
 
 ### <a name="third-party-options"></a>Opties van derden
 
@@ -111,4 +111,4 @@ A. De tijd voor het migreren van gegevens is afhankelijk van de hoeveelheid gege
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Gegevens migreren van een StorSimple 8000-serie naar Azure File Sync](https://docs.microsoft.com/azure/storage/files/storage-files-migration-storsimple-8000)
+* [Gegevens migreren van een StorSimple 8000-serie naar Azure File Sync](../storage/files/storage-files-migration-storsimple-8000.md)

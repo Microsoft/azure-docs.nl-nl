@@ -11,21 +11,21 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: f0ec9d2a3794ea910339b4d329bb28f23c5a76b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4baca7f261aa7544b54992a5e1ddf620794774f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91297355"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962277"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Veelvoorkomende problemen met Azure Database Migration Service oplossen
 
 In dit artikel worden enkele veelvoorkomende problemen en fouten beschreven die Azure Database Migration Service gebruikers kunnen aankomen. Het artikel bevat ook informatie over het oplossen van deze problemen en fouten.
 
 > [!NOTE]
-> Afwijking-vrije communicatie
+> Oordeelloze communicatie
 >
-> Micro soft biedt ondersteuning voor een gevarieerde en inbegrips omgeving. Dit artikel bevat verwijzingen naar het woord _Slave_. De micro soft- [stijl gids voor beschik bare communicatie](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) herkent deze als een uitsluitend woord. Het woord wordt in dit artikel gebruikt voor consistentie omdat het momenteel het woord is dat wordt weer gegeven in de software. Wanneer de software is bijgewerkt om het woord te verwijderen, wordt dit artikel zodanig bijgewerkt dat het in uitlijning is.
+> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar het woord _slaaf_. In de [stijlgids voor oordeelloze communicatie](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) wordt dit woord herkend als uitsluitend. Het woord wordt in dit artikel gebruikt voor consistentie, omdat het momenteel het woord is dat wordt weergegeven in de software. Wanneer de software is bijgewerkt om het woord te verwijderen, wordt dit artikel ook bijgewerkt zodat het is afgestemd.
 >
 
 ## <a name="migration-activity-in-queued-state"></a>Migratie activiteit in de wachtrij status
@@ -54,7 +54,7 @@ Wanneer u migreert van MySQL naar Azure Database for MySQL met behulp van Azure 
 
 | Oorzaak         | Oplossing |
 | ------------- | ------------- |
-| Deze fout kan optreden als de gebruiker die de migratie uitvoert, ReplicationAdmin Role en/of privileges van de replicatie-CLIENT, replicatie REPLICA en SUPER (eerdere versies dan MySQL 5.6.6) ontbreekt.<br><br><br><br><br><br><br><br><br><br><br><br><br> | Zorg ervoor dat de [vereiste bevoegdheden](https://docs.microsoft.com/azure/dms/tutorial-mysql-azure-mysql-online#prerequisites) voor het gebruikers account nauw keurig zijn geconfigureerd op het Azure database for MySQL-exemplaar. U kunt bijvoorbeeld de volgende stappen volgen om een gebruiker met de naam ' migrateuser ' te maken met de vereiste bevoegdheden:<br>1. Maak de gebruikers migrateuser@ '% ', geïdentificeerd door ' geheim '; <br>2. ken alle bevoegdheden voor db_name. * toe aan ' migrateuser ' @ '% ', geïdentificeerd door ' geheim '; Herhaal deze stap om toegang te verlenen aan meer data bases <br>3. Grant replicatie slave op *.* op ' migrateuser ' @ '% ' geïdentificeerd door ' geheim ';<br>4. Grant Replication-client op *.* op ' migrateuser ' @ '% ' geïdentificeerd door ' geheim ';<br>5. machtigingen voor leegmaken; |
+| Deze fout kan optreden als de gebruiker die de migratie uitvoert, ReplicationAdmin Role en/of privileges van de replicatie-CLIENT, replicatie REPLICA en SUPER (eerdere versies dan MySQL 5.6.6) ontbreekt.<br><br><br><br><br><br><br><br><br><br><br><br><br> | Zorg ervoor dat de [vereiste bevoegdheden](./tutorial-mysql-azure-mysql-online.md#prerequisites) voor het gebruikers account nauw keurig zijn geconfigureerd op het Azure database for MySQL-exemplaar. U kunt bijvoorbeeld de volgende stappen volgen om een gebruiker met de naam ' migrateuser ' te maken met de vereiste bevoegdheden:<br>1. Maak de gebruikers migrateuser@ '% ', geïdentificeerd door ' geheim '; <br>2. ken alle bevoegdheden voor db_name. * toe aan ' migrateuser ' @ '% ', geïdentificeerd door ' geheim '; Herhaal deze stap om toegang te verlenen aan meer data bases <br>3. Grant replicatie slave op *.* op ' migrateuser ' @ '% ' geïdentificeerd door ' geheim ';<br>4. Grant Replication-client op *.* op ' migrateuser ' @ '% ' geïdentificeerd door ' geheim ';<br>5. machtigingen voor leegmaken; |
 
 ## <a name="error-when-attempting-to-stop-azure-database-migration-service"></a>Fout bij het stoppen van de Azure Database Migration Service
 
@@ -84,7 +84,7 @@ Wanneer u een online migratie uitvoert van SQL Server naar een beheerd exemplaar
 
 | Oorzaak         | Oplossing    |
 | ------------- | ------------- |
-| Deze fout geeft aan dat de toepassings-principal die wordt gebruikt voor online migratie van SQL Server naar SQL Managed instance geen Contribute-machtiging heeft voor het abonnement. Voor bepaalde API-aanroepen met het beheerde exemplaar is deze machtiging vereist voor de herstel bewerking. <br><br><br><br><br><br><br><br><br><br><br><br><br><br> | Gebruik de `Get-AzureADServicePrincipal` Power shell-cmdlet die `-ObjectId` beschikbaar is in het fout bericht om een lijst weer te geven met de weergave naam van de toepassings-id die wordt gebruikt.<br><br> Valideer de machtigingen voor deze toepassing en controleer of deze de [rol Inzender](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) heeft op het abonnements niveau. <br><br> Het Azure Database Migration Service engineering team is bezig om de vereiste toegang te beperken voor de huidige Contribute-rol bij het abonnement. Als u een zakelijke vereiste hebt die het gebruik van een Contribute-functie niet toestaat, neemt u contact op met de ondersteuning van Azure voor meer informatie. |
+| Deze fout geeft aan dat de toepassings-principal die wordt gebruikt voor online migratie van SQL Server naar SQL Managed instance geen Contribute-machtiging heeft voor het abonnement. Voor bepaalde API-aanroepen met het beheerde exemplaar is deze machtiging vereist voor de herstel bewerking. <br><br><br><br><br><br><br><br><br><br><br><br><br><br> | Gebruik de `Get-AzureADServicePrincipal` Power shell-cmdlet die `-ObjectId` beschikbaar is in het fout bericht om een lijst weer te geven met de weergave naam van de toepassings-id die wordt gebruikt.<br><br> Valideer de machtigingen voor deze toepassing en controleer of deze de [rol Inzender](../role-based-access-control/built-in-roles.md#contributor) heeft op het abonnements niveau. <br><br> Het Azure Database Migration Service engineering team is bezig om de vereiste toegang te beperken voor de huidige Contribute-rol bij het abonnement. Als u een zakelijke vereiste hebt die het gebruik van een Contribute-functie niet toestaat, neemt u contact op met de ondersteuning van Azure voor meer informatie. |
 
 ## <a name="error-when-deleting-nic-associated-with-azure-database-migration-service"></a>Fout bij het verwijderen van de NIC die is gekoppeld aan Azure Database Migration Service
 
@@ -102,7 +102,7 @@ Als u verbinding wilt maken met de bron in de wizard Azure Database Migration-se
 
 | Oorzaak         | Oplossing    |
 | ------------- | ------------- |
-| Wanneer u [ExpressRoute](https://azure.microsoft.com/services/expressroute/)gebruikt, [moet](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) Azure database Migration service drie service-eind punten inrichten op het Virtual Network subnet dat is gekoppeld aan de service:<br> --Service Bus-eind punt<br> --Eind punt van opslag<br> --Doel database-eind punt (bijvoorbeeld SQL-eind punt, Cosmos DB-eind punt)<br><br><br><br><br> | [Schakel](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) de vereiste service-eind punten in voor de ExpressRoute-connectiviteit tussen de bron en de Azure database Migration service. <br><br><br><br><br><br><br><br> |
+| Wanneer u [ExpressRoute](https://azure.microsoft.com/services/expressroute/)gebruikt, [moet](./tutorial-sql-server-azure-sql-online.md) Azure database Migration service drie service-eind punten inrichten op het Virtual Network subnet dat is gekoppeld aan de service:<br> --Service Bus-eind punt<br> --Eind punt van opslag<br> --Doel database-eind punt (bijvoorbeeld SQL-eind punt, Cosmos DB-eind punt)<br><br><br><br><br> | [Schakel](./tutorial-sql-server-azure-sql-online.md) de vereiste service-eind punten in voor de ExpressRoute-connectiviteit tussen de bron en de Azure database Migration service. <br><br><br><br><br><br><br><br> |
 
 ## <a name="lock-wait-timeout-error-when-migrating-a-mysql-database-to-azure-db-for-mysql"></a>Fout tijdens vergren deling wacht tijd bij het migreren van een MySQL-data base naar Azure DB voor MySQL
 
@@ -112,7 +112,7 @@ Wanneer u via Azure Database Migration Service een MySQL-data base migreert naar
 
 | Oorzaak         | Oplossing    |
 | ------------- | ------------- |
-| Deze fout treedt op wanneer de migratie is mislukt vanwege een time-out tijdens de migratie. | Overweeg de waarde van de server parameter **innodb_lock_wait_timeout**te verhogen. De hoogst toegestane waarde is 1073741824. |
+| Deze fout treedt op wanneer de migratie is mislukt vanwege een time-out tijdens de migratie. | Overweeg de waarde van de server parameter **innodb_lock_wait_timeout** te verhogen. De hoogst toegestane waarde is 1073741824. |
 
 ## <a name="error-connecting-to-source-sql-server-when-using-dynamic-port-or-named-instance"></a>Fout bij het verbinden met de bron SQL Server bij het gebruik van een dynamische poort of een benoemd exemplaar
 
@@ -126,13 +126,13 @@ Wanneer u probeert om Azure Database Migration Service verbinding te maken met S
 
 ## <a name="additional-known-issues"></a>Meer bekende problemen
 
-* [Bekende problemen/migratie beperkingen met online migraties naar Azure SQL Database](https://docs.microsoft.com/azure/dms/known-issues-azure-sql-online)
-* [Bekende problemen/migratie beperkingen met online migraties naar Azure Database for MySQL](https://docs.microsoft.com/azure/dms/known-issues-azure-mysql-online)
-* [Bekende problemen/migratie beperkingen met online migraties naar Azure Database for PostgreSQL](https://docs.microsoft.com/azure/dms/known-issues-azure-postgresql-online)
+* [Bekende problemen/migratie beperkingen met online migraties naar Azure SQL Database](./known-issues-azure-sql-online.md)
+* [Bekende problemen/migratie beperkingen met online migraties naar Azure Database for MySQL](./known-issues-azure-mysql-online.md)
+* [Bekende problemen/migratie beperkingen met online migraties naar Azure Database for PostgreSQL](./known-issues-azure-postgresql-online.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Bekijk het artikel [Azure database Migration Service Power shell](https://docs.microsoft.com/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration).
-* Bekijk het artikel [How to Configure Server para meters in azure database for MySQL met behulp van de Azure Portal](https://docs.microsoft.com/azure/mysql/howto-server-parameters).
-* Bekijk het artikel [overzicht van de vereisten voor het gebruik van Azure database Migration service](https://docs.microsoft.com/azure/dms/pre-reqs).
-* Raadpleeg de [Veelgestelde vragen over het gebruik van Azure database Migration service](https://docs.microsoft.com/azure/dms/faq).
+* Bekijk het artikel [Azure database Migration Service Power shell](/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration).
+* Bekijk het artikel [How to Configure Server para meters in azure database for MySQL met behulp van de Azure Portal](../mysql/howto-server-parameters.md).
+* Bekijk het artikel [overzicht van de vereisten voor het gebruik van Azure database Migration service](./pre-reqs.md).
+* Raadpleeg de [Veelgestelde vragen over het gebruik van Azure database Migration service](./faq.md).

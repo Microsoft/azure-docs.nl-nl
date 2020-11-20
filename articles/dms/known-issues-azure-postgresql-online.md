@@ -14,12 +14,12 @@ ms.custom:
 - seo-dt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 14722f46f06351504583da7231179d206f7a3c26
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: db2f6e95153610e0a1b79cf5d30cea3c917333d3
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91893727"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962566"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-postgresql-to-azure-db-for-postgresql"></a>Bekende problemen/migratie beperkingen met online migraties van PostgreSQL naar Azure DB voor PostgreSQL
 
@@ -96,13 +96,13 @@ Wanneer u probeert een online migratie uit te voeren vanaf AWS RDS PostgreSQL na
 - **Fout**: De standaardwaarde van de kolom {kolom} in tabel {tabel} in database {database} is verschillend op bron- en doelservers. De waarde {waarde op bron} in de bron en {waarde op doel} op het doel.
 
   **Beperking**: deze fout treedt op wanneer de standaard waarde op een kolom schema afwijkt van de bron-en doel database.
-  **Tijdelijke oplossing**: Zorg ervoor dat het schema op het doel overeenkomt met het schema op de bron. Raadpleeg de [documentatie over Azure postgresql Online Migration](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema)voor meer informatie over het migreren van het schema.
+  **Tijdelijke oplossing**: Zorg ervoor dat het schema op het doel overeenkomt met het schema op de bron. Raadpleeg de [documentatie over Azure postgresql Online Migration](./tutorial-postgresql-azure-postgresql-online.md#migrate-the-sample-schema)voor meer informatie over het migreren van het schema.
 
 - **Fout**: Doeldatabase {database} heeft {aantal tabellen} tabellen terwijl brondatabase {database} {aantal tabellen} tabellen heeft. Het aantal tabellen op de bron- en doeldatabase moet overeenkomen.
 
   **Beperking**: deze fout treedt op wanneer het aantal tabellen verschilt van de bron-en doel database.
 
-  **Tijdelijke oplossing**: Zorg ervoor dat het schema op het doel overeenkomt met het schema op de bron. Raadpleeg de [documentatie over Azure postgresql Online Migration](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema)voor meer informatie over het migreren van het schema.
+  **Tijdelijke oplossing**: Zorg ervoor dat het schema op het doel overeenkomt met het schema op de bron. Raadpleeg de [documentatie over Azure postgresql Online Migration](./tutorial-postgresql-azure-postgresql-online.md#migrate-the-sample-schema)voor meer informatie over het migreren van het schema.
 
 - **Fout:** De bron database {Data Base} is leeg.
 
@@ -113,7 +113,7 @@ Wanneer u probeert een online migratie uit te voeren vanaf AWS RDS PostgreSQL na
 - **Fout:** De doel database {Data Base} is leeg. Migreer het schema.
 
   **Beperking**: deze fout treedt op wanneer er geen schema is in de doel database. Zorg ervoor dat schema op het doel overeenkomt met het schema op de bron.
-  **Tijdelijke oplossing**: Zorg ervoor dat het schema op het doel overeenkomt met het schema op de bron. Raadpleeg de [documentatie over Azure postgresql Online Migration](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema)voor meer informatie over het migreren van het schema.
+  **Tijdelijke oplossing**: Zorg ervoor dat het schema op het doel overeenkomt met het schema op de bron. Raadpleeg de [documentatie over Azure postgresql Online Migration](./tutorial-postgresql-azure-postgresql-online.md#migrate-the-sample-schema)voor meer informatie over het migreren van het schema.
 
 ## <a name="other-limitations"></a>Andere beperkingen
 

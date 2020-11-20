@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: conceptual
 ms.date: 10/25/2019
-ms.openlocfilehash: e950e34a1965e309d226c42bf4b3128cbe3bf3c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dad02735228bb639981bf3f053a74f29d1944e5a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91291500"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961478"
 ---
 # <a name="custom-roles-for-sql-server-to-azure-sql-managed-instance-online-migrations"></a>Aangepaste rollen voor SQL Server naar online migraties van Azure SQL Managed instance
 
@@ -32,7 +32,7 @@ Het is momenteel raadzaam om mini maal twee aangepaste rollen te maken voor de A
 > [!NOTE]
 > De laatste vereiste voor een aangepaste rol kan uiteindelijk worden verwijderd, omdat de nieuwe SQL Managed instance-code wordt geïmplementeerd in Azure.
 
-**Aangepaste rol voor de App-ID**. Deze rol is vereist voor Azure Database Migration Service migratie op het niveau van de *resource* of de *resource groep* (Zie het artikel [de portal gebruiken om een Azure AD-toepassing en Service-Principal te maken die toegang heeft tot resources](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)voor meer informatie over de App-ID).
+**Aangepaste rol voor de App-ID**. Deze rol is vereist voor Azure Database Migration Service migratie op het niveau van de *resource* of de *resource groep* (Zie het artikel [de portal gebruiken om een Azure AD-toepassing en Service-Principal te maken die toegang heeft tot resources](../active-directory/develop/howto-create-service-principal-portal.md)voor meer informatie over de App-ID).
 
 ```json
 {
@@ -83,7 +83,7 @@ Het is momenteel raadzaam om mini maal twee aangepaste rollen te maken voor de A
 
 De bovenstaande JSON moet worden opgeslagen in drie tekst bestanden en u kunt de AzureRM, AZ Power shell-cmdlets of Azure CLI gebruiken om de rollen te maken met behulp van **New-azurermroledefinition wordt (AzureRM)** of **New-AzRoleDefinition (AZ)**.
 
-Zie het artikel [aangepaste Azure-rollen](https://docs.microsoft.com/azure/role-based-access-control/custom-roles)voor meer informatie.
+Zie het artikel [aangepaste Azure-rollen](../role-based-access-control/custom-roles.md)voor meer informatie.
 
 Nadat u deze aangepaste rollen hebt gemaakt, moet u roltoewijzingen toevoegen aan gebruikers en APP-ID ('s) aan de juiste resources of resource groepen:
 
@@ -142,7 +142,7 @@ Als het aantal aangepaste rollen in uw Azure Active Directory geen bezorgdheid i
 
 Als u een rol wilt toewijzen aan gebruikers/APP-ID, opent u de Azure Portal en voert u de volgende stappen uit:
 
-1. Ga naar de resource groep of resource (met uitzonde ring van de rol die moet worden toegekend aan het abonnement), ga naar **Access Control**en schuif vervolgens naar de aangepaste rollen die u zojuist hebt gemaakt.
+1. Ga naar de resource groep of resource (met uitzonde ring van de rol die moet worden toegekend aan het abonnement), ga naar **Access Control** en schuif vervolgens naar de aangepaste rollen die u zojuist hebt gemaakt.
 
 2. Selecteer de gewenste rol, selecteer de APP-ID en sla de wijzigingen op.
 

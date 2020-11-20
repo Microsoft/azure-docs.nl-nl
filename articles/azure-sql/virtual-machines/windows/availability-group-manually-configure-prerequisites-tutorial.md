@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 21562bc17d4bfd4913c9085755d962382d207c79
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 59eae5303d9eca48fa4cec30fe622faf19ffba1f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566789"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961886"
 ---
 # <a name="tutorial-prerequisites-for-creating-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Zelf studie: vereisten voor het maken van beschikbaarheids groepen op SQL Server op Azure Virtual Machines
 
@@ -29,7 +29,7 @@ In deze zelf studie ziet u hoe u de vereisten voor het maken van een SQL Server 
 
 Hoewel in dit artikel handmatig de omgeving van de beschikbaarheidsgroep wordt geconfigureerd, is het ook mogelijk om dit te doen met behulp van de [Azure Portal](availability-group-azure-portal-configure.md), [PowerShell of de Azure CLI](availability-group-az-commandline-configure.md) of [Azure-quickstart-sjablonen](availability-group-quickstart-template-configure.md). 
 
-**Geschatte tijd** : het kan enkele uren duren om de vereisten te volt ooien. Veel van deze tijd wordt besteed aan het maken van virtuele machines.
+**Geschatte tijd**: het kan enkele uren duren om de vereisten te volt ooien. Veel van deze tijd wordt besteed aan het maken van virtuele machines.
 
 In het volgende diagram ziet u wat u in de zelf studie maakt.
 
@@ -91,7 +91,7 @@ Het virtuele netwerk maken in de Azure Portal:
    | --- | --- |
    | **Naam** |autoHAVNET |
    | **Adresruimte** |10.33.0.0/24 |
-   | **Subnetnaam** |Beheerder |
+   | **Subnetnaam** |Administrator |
    | **Subnetadresbereik** |10.33.0.0/29 |
    | **Abonnement** |Geef het abonnement op dat u wilt gebruiken. Het **abonnement** is leeg als u slechts één abonnement hebt. |
    | **Resourcegroep** |Kies **bestaande gebruiken** en kies de naam van de resource groep. |
@@ -199,7 +199,7 @@ De volgende tabel bevat de instellingen voor deze twee computers:
 | **Subnet** |beheerder |
 | **Openbaar IP-adres** |*Dezelfde naam als de virtuele machine* |
 | **Netwerkbeveiligingsgroep** |*Dezelfde naam als de virtuele machine* |
-| **Beschikbaarheidsset** |adavailabilityset </br>**Fout domeinen** : 2 </br>**Update domeinen** : 2|
+| **Beschikbaarheidsset** |adavailabilityset </br>**Fout domeinen**: 2 </br>**Update domeinen**: 2|
 | **Diagnostics** |Ingeschakeld |
 | **Opslagaccount voor diagnose** |*Automatisch gemaakt* |
 
@@ -218,7 +218,7 @@ In de volgende stappen configureert u de **ad-Primary-DC-** computer als een dom
 
     ![Verbinding maken met een virtuele machine](./media/availability-group-manually-configure-prerequisites-tutorial-/20-connectrdp.png)
 
-2. Meld u aan met uw geconfigureerde beheerders account ( **\DomainAdmin** ) en wacht woord ( **Contoso! 0000** ).
+2. Meld u aan met uw geconfigureerde beheerders account (**\DomainAdmin**) en wacht woord (**Contoso! 0000**).
 3. Het **Serverbeheer** dash board moet standaard worden weer gegeven.
 4. Selecteer de koppeling **functies en onderdelen toevoegen** op het dash board.
 
@@ -242,7 +242,7 @@ In de volgende stappen configureert u de **ad-Primary-DC-** computer als een dom
     ![AD DS dialoog venster op de DNS-Server-VM](./media/availability-group-manually-configure-prerequisites-tutorial-/24-addsmore.png)
     
 12. Selecteer in de kolom **actie** van het dialoog venster **alle Server taak Details** de optie **deze server promo veren naar een domein controller**.
-13. Gebruik de volgende waarden in de **Wizard Active Directory Domain Services configuratie** :
+13. Gebruik de volgende waarden in de **Wizard Active Directory Domain Services configuratie**:
 
     | **Pagina** | Instelling |
     | --- | --- |
@@ -285,7 +285,7 @@ Nadat u de eerste domein controller hebt gemaakt en DNS op de eerste server insc
 Nadat de primaire domein controller opnieuw is opgestart, kunt u de tweede domein controller configureren. Deze optionele stap is voor hoge Beschik baarheid. Volg deze stappen om de tweede domein controller te configureren:
 
 1. Open in de Portal de resource groep **SQL-ha-RG** en selecteer de **ad-Secondary-DC-** computer. Op **ad-secundair-DC** selecteert u **verbinding maken** om een RDP-bestand te openen voor toegang tot extern bureau blad.
-2. Meld u aan bij de virtuele machine met behulp van uw geconfigureerde beheerders account ( **BUILTIN\DomainAdmin** ) en wacht woord ( **Contoso! 0000** ).
+2. Meld u aan bij de virtuele machine met behulp van uw geconfigureerde beheerders account (**BUILTIN\DomainAdmin**) en wacht woord (**Contoso! 0000**).
 3. Wijzig het adres van de voor Keurs-DNS-server in het adres van de domein controller.
 4. Selecteer de netwerk interface in **netwerk centrum**.
 
@@ -314,7 +314,7 @@ Nadat de primaire domein controller opnieuw is opgestart, kunt u de tweede domei
     ![Implementatie configuratie](./media/availability-group-manually-configure-prerequisites-tutorial-/28-deploymentconfig.png)
 
 18. Klik op **Selecteren**.
-19. Verbinding maken met behulp van het beheerders account ( **Corp. CONTOSO. COM\domainadmin** ) en het wacht woord ( **Contoso! 0000** ).
+19. Verbinding maken met behulp van het beheerders account (**Corp. CONTOSO. COM\domainadmin**) en het wacht woord (**Contoso! 0000**).
 20. Kies in **een domein in het forest selecteren** uw domein en selecteer vervolgens **OK**.
 21. Gebruik in de **Opties voor domein controller** de standaard waarden en stel een DSRM-wacht woord in.
 
@@ -363,7 +363,7 @@ Gebruik de volgende stappen om elk account te maken.
 
 2. Selecteer **uitbrei dingen** en selecteer vervolgens de knop **Geavanceerd** op het tabblad **beveiliging** .
 3. Selecteer in het dialoog venster **Geavanceerde beveiligings instellingen voor Corp** de optie **toevoegen**.
-4. Klik op **een principal selecteren** , zoek naar **CORP\Install** en selecteer **OK**.
+4. Klik op **een principal selecteren**, zoek naar **CORP\Install** en selecteer **OK**.
 5. Schakel het selectie vakje **alle eigenschappen lezen** in.
 
 6. Schakel het selectie vakje **computer objecten maken** in.
@@ -402,7 +402,7 @@ Maak vervolgens drie Vm's: twee SQL Server Vm's en één virtuele machine voor e
 | Het juiste galerie-item selecteren |**Windows Server 2016 Datacenter** |**SQL Server 2016 SP1 Enter prise op Windows Server 2016** |**SQL Server 2016 SP1 Enter prise op Windows Server 2016** |
 | **Basis beginselen** van de configuratie van virtuele machines |**Name** = cluster-FSW<br/>**Gebruikers naam** = domein Administrator<br/>**Wacht woord** = contoso! 0000<br/>**Abonnement** = uw abonnement<br/>**Resource groep** = SQL-ha-RG<br/>**Locatie** = uw Azure-locatie |**Name** = sqlserver-0<br/>**Gebruikers naam** = domein Administrator<br/>**Wacht woord** = contoso! 0000<br/>**Abonnement** = uw abonnement<br/>**Resource groep** = SQL-ha-RG<br/>**Locatie** = uw Azure-locatie |**Name** = sqlserver-1<br/>**Gebruikers naam** = domein Administrator<br/>**Wacht woord** = contoso! 0000<br/>**Abonnement** = uw abonnement<br/>**Resource groep** = SQL-ha-RG<br/>**Locatie** = uw Azure-locatie |
 | Virtuele-machine configuratie **grootte** |**Grootte** = ds1 \_ v2 (1 VCPU, 3,5 GB) |**Grootte** = DS2 \_ v2 (2 VCPU'S, 7 GB)</br>De omvang moet ondersteuning bieden voor SSD Storage (Premium-schijf ondersteuning). )) |**Grootte** = DS2 \_ v2 (2 VCPU'S, 7 GB) |
-| Configuratie- **instellingen** voor virtuele machines |**Opslag** : gebruik beheerde schijven.<br/>**Virtueel netwerk** = autoHAVNET<br/>**Subnet** = sqlsubnet (10.1.1.0/24)<br/>Het **open bare IP-adres** wordt automatisch gegenereerd.<br/>**Netwerk beveiligings groep** = geen<br/>**Diagnostische gegevens over bewaking** = ingeschakeld<br/>**Opslag account voor diagnostische gegevens** = een automatisch gegenereerd opslag account gebruiken<br/>**Beschikbaarheidsset** = sqlAvailabilitySet<br/> |**Opslag** : gebruik beheerde schijven.<br/>**Virtueel netwerk** = autoHAVNET<br/>**Subnet** = sqlsubnet (10.1.1.0/24)<br/>Het **open bare IP-adres** wordt automatisch gegenereerd.<br/>**Netwerk beveiligings groep** = geen<br/>**Diagnostische gegevens over bewaking** = ingeschakeld<br/>**Opslag account voor diagnostische gegevens** = een automatisch gegenereerd opslag account gebruiken<br/>**Beschikbaarheidsset** = sqlAvailabilitySet<br/> |**Opslag** : gebruik beheerde schijven.<br/>**Virtueel netwerk** = autoHAVNET<br/>**Subnet** = sqlsubnet (10.1.1.0/24)<br/>Het **open bare IP-adres** wordt automatisch gegenereerd.<br/>**Netwerk beveiligings groep** = geen<br/>**Diagnostische gegevens over bewaking** = ingeschakeld<br/>**Opslag account voor diagnostische gegevens** = een automatisch gegenereerd opslag account gebruiken<br/>**Beschikbaarheidsset** = sqlAvailabilitySet<br/> |
+| Configuratie- **instellingen** voor virtuele machines |**Opslag**: gebruik beheerde schijven.<br/>**Virtueel netwerk** = autoHAVNET<br/>**Subnet** = sqlsubnet (10.1.1.0/24)<br/>Het **open bare IP-adres** wordt automatisch gegenereerd.<br/>**Netwerk beveiligings groep** = geen<br/>**Diagnostische gegevens over bewaking** = ingeschakeld<br/>**Opslag account voor diagnostische gegevens** = een automatisch gegenereerd opslag account gebruiken<br/>**Beschikbaarheidsset** = sqlAvailabilitySet<br/> |**Opslag**: gebruik beheerde schijven.<br/>**Virtueel netwerk** = autoHAVNET<br/>**Subnet** = sqlsubnet (10.1.1.0/24)<br/>Het **open bare IP-adres** wordt automatisch gegenereerd.<br/>**Netwerk beveiligings groep** = geen<br/>**Diagnostische gegevens over bewaking** = ingeschakeld<br/>**Opslag account voor diagnostische gegevens** = een automatisch gegenereerd opslag account gebruiken<br/>**Beschikbaarheidsset** = sqlAvailabilitySet<br/> |**Opslag**: gebruik beheerde schijven.<br/>**Virtueel netwerk** = autoHAVNET<br/>**Subnet** = sqlsubnet (10.1.1.0/24)<br/>Het **open bare IP-adres** wordt automatisch gegenereerd.<br/>**Netwerk beveiligings groep** = geen<br/>**Diagnostische gegevens over bewaking** = ingeschakeld<br/>**Opslag account voor diagnostische gegevens** = een automatisch gegenereerd opslag account gebruiken<br/>**Beschikbaarheidsset** = sqlAvailabilitySet<br/> |
 | Instellingen voor configuratie van virtuele machine **SQL Server** |Niet van toepassing |**SQL-connectiviteit** = privé (binnen Virtual Network)<br/>**Poort** = 1433<br/>**SQL-verificatie** = uitschakelen<br/>**Opslag configuratie** = algemeen<br/>**Automatische patching** = zondag om 2:00<br/>**Automatische back-up** = uitgeschakeld</br>**Azure Key Vault-integratie** = uitgeschakeld |**SQL-connectiviteit** = privé (binnen Virtual Network)<br/>**Poort** = 1433<br/>**SQL-verificatie** = uitschakelen<br/>**Opslag configuratie** = algemeen<br/>**Automatische patching** = zondag om 2:00<br/>**Automatische back-up** = uitgeschakeld</br>**Azure Key Vault-integratie** = uitgeschakeld |
 
 <br/>
@@ -422,7 +422,7 @@ U kunt nu lid worden van de virtuele machines aan **Corp.contoso.com**. Voer de 
 3. Selecteer de koppeling voor de **werk groep** .
 4. Selecteer **wijzigen** in de sectie **computer naam** .
 5. Schakel het selectie vakje **domein** in en typ **Corp.contoso.com** in het tekstvak. Selecteer **OK**.
-6. Geef in het pop-upvenster **Windows-beveiliging** de referenties op voor het standaard domein beheerders account ( **CORP\DomainAdmin** ) en het wacht woord ( **Contoso! 0000** ).
+6. Geef in het pop-upvenster **Windows-beveiliging** de referenties op voor het standaard domein beheerders account (**CORP\DomainAdmin**) en het wacht woord (**Contoso! 0000**).
 7. Wanneer het bericht Welkom bij het domein corp.contoso.com wordt weer gegeven, selecteert u **OK**.
 8. Selecteer **sluiten** en selecteer **nu opnieuw opstarten** in het pop-updialoogvenster.
 
@@ -538,14 +538,14 @@ Herhaal de stappen op de andere SQL Server VM.
 
 ### <a name="tuning-failover-cluster-network-thresholds"></a>Drempel waarden voor failover cluster-netwerken afstemmen
 
-Bij het uitvoeren van Windows-Failoverclusterknooppunten in azure-Vm's met SQL Server AlwaysOn, wordt het wijzigen van de cluster instelling in een meer beperkte bewakings status aanbevolen.  Hierdoor is het cluster veel stabieler en betrouwbaarder.  Zie voor meer informatie [IaaS met SQL AlwaysOn-failover cluster network drempels](/windows-server/troubleshoot/iaas-sql-failover-cluser).
+Bij het uitvoeren van Windows-Failoverclusterknooppunten in azure-Vm's met SQL Server AlwaysOn, wordt het wijzigen van de cluster instelling in een meer beperkte bewakings status aanbevolen.  Hierdoor is het cluster veel stabieler en betrouwbaarder.  Zie voor meer informatie [IaaS met SQL AlwaysOn-failover cluster network drempels](/windows-server/troubleshoot/iaas-sql-failover-cluster).
 
 
 ## <a name="configure-the-firewall-on-each-sql-server-vm"></a><a name="endpoint-firewall"></a> De firewall op elke SQL Server VM configureren
 
 Voor de oplossing moeten de volgende TCP-poorten in de firewall zijn geopend:
 
-- **SQL Server VM** : poort 1433 voor een standaard exemplaar van SQL Server.
+- **SQL Server VM**: poort 1433 voor een standaard exemplaar van SQL Server.
 - **Azure Load Balancer-test:** Elke beschik bare poort. Voor beelden regel matig gebruik van 59999.
 - **Eind punt voor database spiegeling:** Elke beschik bare poort. Voor beelden regel matig gebruik van 5022.
 
@@ -562,10 +562,10 @@ De methode voor het openen van de poorten is afhankelijk van de firewall-oplossi
 
    ![SQL-firewall](./media/availability-group-manually-configure-prerequisites-tutorial-/35-tcpports.png)
 
-5. Selecteer **Volgende**.
+5. Selecteer **Next**.
 6. Laat op de pagina **actie** **de optie verbinding toestaan** ingeschakeld en selecteer **volgende**.
 7. Accepteer de standaard instellingen op de **profiel** pagina en selecteer **volgende**.
-8. Geef op de pagina **naam** een regel naam op (zoals **Azure lb probe** ) in het tekstvak **naam** en selecteer vervolgens **volt ooien**.
+8. Geef op de pagina **naam** een regel naam op (zoals **Azure lb probe**) in het tekstvak **naam** en selecteer vervolgens **volt ooien**.
 
 Herhaal deze stappen op de tweede SQL Server VM.
 

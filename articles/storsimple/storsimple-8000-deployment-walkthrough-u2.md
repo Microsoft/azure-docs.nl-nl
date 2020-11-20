@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: alkohli
-ms.openlocfilehash: a56610dd81d6e50da11bbd65bcf0682e399b1783
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2c9feb1131f6d2d0eb75ac71e27dc46c226c52c1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84707392"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961053"
 ---
 # <a name="deploy-your-on-premises-storsimple-device-update-3-and-later"></a>Een on-premises StorSimple-apparaat implementeren (Update 3 en hoger)
 
@@ -166,7 +166,7 @@ U hebt de apparaatconfiguratie voltooid.
 ## <a name="configure-a-new-storage-account-for-the-service"></a>Een nieuw opslagaccount voor de service configureren
 Dit is een optionele stap die u alleen hoeft uit te voeren als u het automatisch maken van een opslagaccount met uw service niet hebt ingeschakeld. U hebt een Microsoft Azure Storage-account nodig om een StorSimple-volumecontainer te maken.
 
-Als u een Azure Storage-account in een andere regio wilt maken, raadpleeg dan [Over Azure Storage-accounts](../storage/common/storage-create-storage-account.md) voor stapsgewijze instructies.
+Als u een Azure Storage-account in een andere regio wilt maken, raadpleeg dan [Over Azure Storage-accounts](../storage/common/storage-account-create.md) voor stapsgewijze instructies.
 
 Voer de volgende stappen uit op de pagina **StorSimple-apparaatbeheerfunctie** van Azure Portal.
 
@@ -207,4 +207,3 @@ De punt van de stereoaansluiting wordt beschouwd als PIN 3 RX, de middelste is P
 ## <a name="next-steps"></a>Volgende stappen
 * [Een StorSimple-cloudapparaat configureren](storsimple-8000-cloud-appliance-u2.md).
 * [Gebruik de StorSimple-apparaatbeheerfunctie om uw StorSimple-apparaat te beheren](storsimple-8000-manager-service-administration.md).
-

@@ -12,18 +12,18 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: e5f9ba7ea4afd81d62cba7b970693f603b53ef9f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e6f94c006de8914fe3ae27cdb8ac4d75a0ac49cc
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316083"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962991"
 ---
 # <a name="redeploy-ssis-packages-to-azure-sql-database-with-azure-database-migration-service"></a>SSIS-pakketten opnieuw implementeren om te Azure SQL Database met Azure Database Migration Service
 
 Als u SQL Server Integration Services (SSIS) gebruikt en u uw SSIS-projecten/-pakketten wilt migreren van de bron-SSISDB die wordt gehost door SQL Server naar de doel-SSISDB die door Azure SQL Database worden gehost, kunt u ze opnieuw implementeren met de wizard Integratie Services implementeren. U kunt de wizard starten vanuit SQL Server Management Studio (SSMS).
 
-Als de gebruikte SSIS-versie ouder is dan 2012, moet u deze eerst converteren met behulp van de wizard Integratie Services-project conversie, die ook kan worden gestart vanuit SSMS, voordat u uw SSIS-projecten/-pakketten opnieuw implementeert in het implementatie model van het project. Zie het artikel [Converting projects to the project Deployment model](https://docs.microsoft.com/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-2017#convert)(Engelstalig) voor meer informatie.
+Als de gebruikte SSIS-versie ouder is dan 2012, moet u deze eerst converteren met behulp van de wizard Integratie Services-project conversie, die ook kan worden gestart vanuit SSMS, voordat u uw SSIS-projecten/-pakketten opnieuw implementeert in het implementatie model van het project. Zie het artikel [Converting projects to the project Deployment model](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-2017#convert)(Engelstalig) voor meer informatie.
 
 > [!NOTE]
 > De Azure Database Migration Service (DMS) biedt momenteel geen ondersteuning voor de migratie van een bron-SSISDB naar Azure SQL Database, maar u kunt uw SSIS-projecten/-pakketten opnieuw implementeren met behulp van het volgende proces.
@@ -40,7 +40,7 @@ Als u deze stappen wilt uitvoeren, hebt u het volgende nodig:
 
 * SSMS-versie 17,2 of hoger.
 * Een exemplaar van de doel database server voor het hosten van SSISDB. Als u er nog geen hebt, maakt u een [logische SQL-Server](../azure-sql/database/logical-servers.md) (zonder een Data Base) met behulp van de Azure portal door te navigeren naar het [formulier](https://ms.portal.azure.com/#create/Microsoft.SQLServer)SQL Server (alleen logische server).
-* SSIS moet worden ingericht in Azure Data Factory (ADF) met Azure-SSIS Integration Runtime (IR) met de doel-SSISDB die wordt gehost door SQL Database (zoals beschreven in het artikel [richt de Azure-SSIS Integration runtime in azure Data Factory in](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure)).
+* SSIS moet worden ingericht in Azure Data Factory (ADF) met Azure-SSIS Integration Runtime (IR) met de doel-SSISDB die wordt gehost door SQL Database (zoals beschreven in het artikel [richt de Azure-SSIS Integration runtime in azure Data Factory in](../data-factory/tutorial-deploy-ssis-packages-azure.md)).
 
 ## <a name="assess-source-ssis-projectspackages"></a>Bron-SSIS-projecten/-pakketten beoordelen
 
@@ -60,9 +60,9 @@ Voer de volgende stappen uit om SSIS-projecten/-pakketten naar Azure SQL Databas
 
     ![Tabblad Eigenschappen van SSIS-verbinding](media/how-to-migrate-ssis-packages/dms-ssis-conncetion-properties-tab.png)
 
-4. Vouw in het Objectverkenner SSMS het knoop punt **Integration Services Catalogs** uit, vouw **SSISDB**uit en als er geen bestaande mappen zijn, klikt u met de rechter muisknop op **SSISDB** en maakt u een nieuwe map.
+4. Vouw in het Objectverkenner SSMS het knoop punt **Integration Services Catalogs** uit, vouw **SSISDB** uit en als er geen bestaande mappen zijn, klikt u met de rechter muisknop op **SSISDB** en maakt u een nieuwe map.
 
-5. Vouw onder **SSISDB**een wille keurige map uit, klik met de rechter muisknop op **projecten**en selecteer vervolgens **project implementeren**.
+5. Vouw onder **SSISDB** een wille keurige map uit, klik met de rechter muisknop op **projecten** en selecteer vervolgens **project implementeren**.
 
     ![SSIS SSISDB-knoop punt uitgebreid](media/how-to-migrate-ssis-packages/dms-ssis-ssisdb-node-expanded.png)
 
@@ -72,9 +72,9 @@ Voer de volgende stappen uit om SSIS-projecten/-pakketten naar Azure SQL Databas
 
 7. Geef op de pagina **bron selecteren** het bestaande SSIS-project op dat u wilt implementeren.
 
-    Als SSMS ook is verbonden met de SQL Server die als host fungeert voor de bron SSISDB, selecteert u **Integration Services Catalog**en voert u de server naam en het pad van het project in uw catalogus in om uw project rechtstreeks te implementeren.
+    Als SSMS ook is verbonden met de SQL Server die als host fungeert voor de bron SSISDB, selecteert u **Integration Services Catalog** en voert u de server naam en het pad van het project in uw catalogus in om uw project rechtstreeks te implementeren.
 
-    U kunt ook een **project implementatie bestand**selecteren en vervolgens het pad naar een bestaand project implementatie bestand (. ispac) opgeven om uw project te implementeren.
+    U kunt ook een **project implementatie bestand** selecteren en vervolgens het pad naar een bestaand project implementatie bestand (. ispac) opgeven om uw project te implementeren.
 
     ![Wizard implementatie bron pagina selecteren](media/how-to-migrate-ssis-packages/dms-deployment-wizard-select-source-page.png)
  
@@ -90,7 +90,7 @@ Voer de volgende stappen uit om SSIS-projecten/-pakketten naar Azure SQL Databas
     c. Selecteer **Bladeren** om de doelmap op te geven in SSISDB en selecteer **volgende**.
 
     > [!NOTE]
-    > De knop **volgende** is alleen ingeschakeld nadat u **verbinding maken**hebt geselecteerd.
+    > De knop **volgende** is alleen ingeschakeld nadat u **verbinding maken** hebt geselecteerd.
 
 10. Bekijk eventuele fouten/waarschuwingen op de pagina **valideren** en wijzig indien nodig de pakketten dienovereenkomstig.
 

@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: f13e402344111dea28514ed7b0d381b46ff73064
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d0103857b6f759560129dbe8e693ec6c0d7291e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743604"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961206"
 ---
 # <a name="use-azure-automation-to-trigger-a-job"></a>Azure Automation gebruiken om een taak te activeren
 
@@ -26,7 +26,7 @@ In dit artikel vindt u informatie over het maken van een Azure Automation runboo
 
 Voordat u begint, moet u ervoor zorgen dat:
 
-*   Azure PowerShell geïnstalleerd op de client computer. [Down load Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps).
+*   Azure PowerShell geïnstalleerd op de client computer. [Down load Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 *   Een correct geconfigureerde taak definitie in een StorSimple Data Manager-service binnen een resource groep.
 *   Down load  [`DataTransformationApp.zip`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/raw/master/Azure%20Automation%20For%20Data%20Manager/DataTransformationApp.zip) het bestand uit de GitHub-opslag plaats. 
 *   Down load [`Trigger-DataTransformation-Job.ps1`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/blob/master/Azure%20Automation%20For%20Data%20Manager/Trigger-DataTransformation-Job.ps1) script uit de GitHub-opslag plaats.
@@ -39,7 +39,7 @@ Voordat u begint, moet u ervoor zorgen dat:
 
     ![Run as Automation-account maken](./media/storsimple-data-manager-job-using-automation/search-automation-account1.png)
 
-2. Klik op **+ toevoegen**om een nieuw Automation-account toe te voegen.
+2. Klik op **+ toevoegen** om een nieuw Automation-account toe te voegen.
 
     ![Run as Automation-account 2 maken](./media/storsimple-data-manager-job-using-automation/add-automation-account1.png)
 
@@ -50,7 +50,7 @@ Voordat u begint, moet u ervoor zorgen dat:
    3. Maak een nieuwe resource groep of Selecteer deze uit een bestaande resource groep.
    4. Selecteer een **locatie**.
    5. Zorg ervoor dat de optie standaard **uitvoeren als-account maken** is geselecteerd.
-   6. Als u een koppeling voor snelle toegang wilt krijgen op het dash board, controleert **u het vastmaken aan dash board**. Klik op **Maken**.
+   6. Als u een koppeling voor snelle toegang wilt krijgen op het dash board, controleert **u het vastmaken aan dash board**. Klik op **Create**.
 
       ![Run as Automation-account 3 maken](./media/storsimple-data-manager-job-using-automation/create-automation-run-as-account.png)
     
@@ -58,7 +58,7 @@ Voordat u begint, moet u ervoor zorgen dat:
     
       ![Melding voor de implementatie van het Automation-account](./media/storsimple-data-manager-job-using-automation/deployment-automation-account-notification1.png)
 
-      Ga naar [een uitvoeren als-account maken](../automation/automation-create-runas-account.md)voor meer informatie.
+      Ga naar [een uitvoeren als-account maken](../automation/manage-runas-account.md)voor meer informatie.
 
 3. Ga in het zojuist gemaakte account naar **gedeelde Resources > modules** en klik op **+ add module**.
 
@@ -84,9 +84,9 @@ Voer de volgende stappen uit om het runbook te importeren, te publiceren en uit 
 
     ![Runbook 1 toevoegen](./media/storsimple-data-manager-job-using-automation/add-runbook-1.png)
 
-2. Klik in **Runbook toevoegen**op **een bestaand runbook importeren**.
+2. Klik in **Runbook toevoegen** op **een bestaand runbook importeren**.
 
-3. Ga naar het Azure PowerShell script bestand `Trigger-DataTransformation-Job.ps1` voor het **Runbook-bestand**. Het type runbook wordt automatisch geselecteerd. Geef een naam en een optionele beschrijving voor het runbook op. Klik op **Maken**.
+3. Ga naar het Azure PowerShell script bestand `Trigger-DataTransformation-Job.ps1` voor het **Runbook-bestand**. Het type runbook wordt automatisch geselecteerd. Geef een naam en een optionele beschrijving voor het runbook op. Klik op **Create**.
 
     ![Runbook 2 toevoegen](./media/storsimple-data-manager-job-using-automation/add-runbook-2.png)
 
@@ -98,7 +98,7 @@ Voer de volgende stappen uit om het runbook te importeren, te publiceren en uit 
 
     ![Runbook 4 toevoegen](./media/storsimple-data-manager-job-using-automation/add-runbook-4.png)
 
-6. Geef de para meters op, zoals de naam van uw StorSimple Data Manager service, de gekoppelde resource groep en de naam van de taak definitie. **Start** de test. Het rapport wordt gegenereerd wanneer de uitvoering is voltooid. Ga voor meer informatie naar How to [test a runbook](../automation/automation-first-runbook-textual-powershell.md#step-3---test-the-runbook).
+6. Geef de para meters op, zoals de naam van uw StorSimple Data Manager service, de gekoppelde resource groep en de naam van de taak definitie. **Start** de test. Het rapport wordt gegenereerd wanneer de uitvoering is voltooid. Ga voor meer informatie naar How to [test a runbook](../automation/learn/automation-tutorial-runbook-textual-powershell.md#step-3---test-the-runbook).
 
     ![Runbook 8 toevoegen](./media/storsimple-data-manager-job-using-automation/add-runbook-8.png)    
 
@@ -110,7 +110,7 @@ Voer de volgende stappen uit om het runbook te importeren, te publiceren en uit 
 
     ![Runbook 7 toevoegen](./media/storsimple-data-manager-job-using-automation/add-runbook-7.png)
 
-9. **Start** het runbook. Voer in **Runbook starten**alle para meters in. Klik op **OK** om de gegevens transformatie taak te verzenden en te starten.
+9. **Start** het runbook. Voer in **Runbook starten** alle para meters in. Klik op **OK** om de gegevens transformatie taak te verzenden en te starten.
 
 10. Als u de voortgang van de taak in Azure Portal wilt controleren, gaat u naar **taken** in uw StorSimple Data Manager-service. Selecteer en klik op de taak om de taak details weer te geven.
 

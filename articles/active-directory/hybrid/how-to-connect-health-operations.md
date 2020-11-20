@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a83d1a4bdc2496f874a963b8858192273260cc8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91b7bd6d05ee0b992ee166b9acb13aff2e605a2c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89276266"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961002"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Azure Active Directory Connect Health bewerkingen
 In dit onderwerp worden de verschillende bewerkingen beschreven die u kunt uitvoeren met behulp van Azure Active Directory (Azure AD) Connect Health.
@@ -40,7 +40,7 @@ U kunt de Azure AD Connect Health-Service configureren om e-mail meldingen te ve
 3. Selecteer aan op de e-mail meldings optie **aan**.
 4. Schakel het selectie vakje in als u wilt dat alle globale beheerders e-mail meldingen ontvangen.
 5. Als u e-mail meldingen wilt ontvangen op elk gewenst e-mail adres, geeft u deze op in het vak **extra e-mail ontvangers** . Als u een e-mail adres uit deze lijst wilt verwijderen, klikt u met de rechter muisknop op het item en selecteert u **verwijderen**.
-6. Klik op **Opslaan**om de wijzigingen te volt ooien. Wijzigingen worden pas van kracht nadat u hebt bespaard.
+6. Klik op **Opslaan** om de wijzigingen te volt ooien. Wijzigingen worden pas van kracht nadat u hebt bespaard.
 
 >[!NOTE] 
 > Wanneer er problemen zijn met de verwerking van synchronisatie aanvragen in onze back-end-service, verzendt deze service een e-mail bericht met de details van de fout naar het e-mail adres (sen) van de beheerder van uw Tenant. We hebben feedback van klanten gehoord die in bepaalde gevallen het volume van deze berichten prohibitively groot zijn zodat we de manier wijzigen waarop we deze berichten verzenden. 
@@ -137,7 +137,7 @@ Als u een gebruiker toegang wilt geven tot het niveau *alle service-exemplaren* 
 3. Selecteer in het deel venster **een rol selecteren** een rol (bijvoorbeeld **eigenaar**).<br>
    ![Scherm opname van Azure AD Connect Health en Azure RBAC-menu configureren](./media/how-to-connect-health-operations/RBAC_add.png)
 4. Typ de naam of id van de doel gebruiker of-groep. U kunt een of meer gebruikers of groepen tegelijk selecteren. Klik op **Selecteren**.
-   ![Scherm afbeelding van Azure AD Connect Health en de lijst met Azure RBAC-rollen](./media/how-to-connect-health-operations/RBAC_select_users.png)
+   ![Scherm opname van Azure AD Connect Health en de lijst met Azure-rollen](./media/how-to-connect-health-operations/RBAC_select_users.png)
 5. Selecteer **OK**.<br>
 6. Nadat de roltoewijzing is voltooid, worden de gebruikers en groepen weer gegeven in de lijst.<br>
    ![Scherm opname van Azure AD Connect Health en Azure RBAC en nieuwe gebruikers gemarkeerd](./media/how-to-connect-health-operations/RBAC_user_list.png)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/27/2017
 ms.author: alkohli
-ms.openlocfilehash: 1d5d57cab9906c04c5c207fa7df2d2fae6f749e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 85d7114f419266124d0d23368b24700af025758a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514600"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961036"
 ---
 # <a name="modify-the-data-0-network-interface-settings-on-your-storsimple-8000-series-device"></a>De DATA 0-netwerk interface-instellingen op uw StorSimple 8000 Series-apparaat wijzigen
 
@@ -38,7 +38,7 @@ Na het lezen van deze zelf studie kunt u het volgende doen:
 U kunt de gegevens van de netwerk instellingen van 0 opnieuw configureren door verbinding te maken met de Windows Power shell-interface van uw StorSimple-apparaat en een installatie wizard-sessie te starten. Voer de volgende stappen uit om de DATA 0-instellingen te wijzigen:
 
 #### <a name="to-modify-data-0-network-settings-through-setup-wizard"></a>DATA 0 netwerk instellingen wijzigen via de wizard Setup
-1. Kies in het menu van de seriële console optie 1, **Meld u aan met volledige toegang**. Geef het **beheerders wachtwoord**voor het apparaat op wanneer u hierom wordt gevraagd. Het standaard wachtwoord is `Password1` .
+1. Kies in het menu van de seriële console optie 1, **Meld u aan met volledige toegang**. Geef het **beheerders wachtwoord** voor het apparaat op wanneer u hierom wordt gevraagd. Het standaard wachtwoord is `Password1` .
 2. Typ in de opdrachtprompt:
    
     `Invoke-HcsSetupWizard`
@@ -64,9 +64,8 @@ Een alternatieve manier om de DATA 0-netwerk interface opnieuw te configureren, 
    * Vast IPv4-adres voor controller 0
    * Vast IPv4-adres voor controller 1
      
-     Ga naar [Windows PowerShell voor StorSimple-cmdlet-verwijzing](https://technet.microsoft.com/library/dn688161.aspx)voor meer informatie over het gebruik van deze cmdlet.
+     Ga naar [Windows PowerShell voor StorSimple-cmdlet-verwijzing](/previous-versions/windows/powershell-scripting/dn688161(v=wps.630))voor meer informatie over het gebruik van deze cmdlet.
 
 ## <a name="next-steps"></a>Volgende stappen
 * Als u andere netwerk interfaces dan DATA 0 wilt configureren, kunt u de [netwerk instellingen configureren in de Azure Portal](storsimple-8000-modify-device-config.md). 
-* Als u problemen ondervindt bij het configureren van uw netwerk interfaces, raadpleegt u [implementatie problemen oplossen](storsimple-troubleshoot-deployment.md).
-
+* Als u problemen ondervindt bij het configureren van uw netwerk interfaces, raadpleegt u [implementatie problemen oplossen](./storsimple-8000-troubleshoot-deployment.md).

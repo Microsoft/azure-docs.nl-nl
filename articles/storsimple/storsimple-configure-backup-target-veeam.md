@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/06/2016
 ms.author: matd
-ms.openlocfilehash: 052859e99ffd0082994d313508ebb6f0496d980b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf28265de2b297dade545695c9369b8074eeb72c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710342"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962549"
 ---
 # <a name="storsimple-as-a-backup-target-with-veeam"></a>StorSimple als een back-updoel met Veeam
 
@@ -81,7 +81,7 @@ StorSimple biedt de volgende voor delen:
 
 Hoewel StorSimple twee belang rijke implementatie scenario's (primair back-updoel en secundair back-updoel) biedt, is het een gewoon, blok opslag apparaat. StorSimple alle compressie en ontdubbeling. Er worden naadloos gegevens verzonden en opgehaald tussen de Cloud en de toepassing en het bestands systeem.
 
-Voor meer informatie over StorSimple raadpleegt u [StorSimple 8000 Series: hybride Cloud Storage-oplossing](storsimple-overview.md). U kunt ook de specificaties van de [technische StorSimple 8000-serie](storsimple-technical-specifications-and-compliance.md)bekijken.
+Voor meer informatie over StorSimple raadpleegt u [StorSimple 8000 Series: hybride Cloud Storage-oplossing](storsimple-overview.md). U kunt ook de specificaties van de [technische StorSimple 8000-serie](./storsimple-8000-technical-specifications-and-compliance.md)bekijken.
 
 > [!IMPORTANT]
 > Het gebruik van een StorSimple-apparaat als back-updoel wordt alleen ondersteund voor StorSimple 8000-update 3 en hoger.
@@ -172,7 +172,7 @@ Als u de oplossing optimaal wilt uitvoeren, raden we u aan deze aanbevolen proce
 
 ### <a name="deploy-storsimple"></a>StorSimple implementeren
 
-Zie [uw on-premises StorSimple-apparaat implementeren](storsimple-deployment-walkthrough-u2.md)voor stapsgewijze instructies voor de implementatie van StorSimple.
+Zie [uw on-premises StorSimple-apparaat implementeren](./storsimple-8000-deployment-walkthrough-u2.md)voor stapsgewijze instructies voor de implementatie van StorSimple.
 
 ### <a name="deploy-veeam"></a>Veeam implementeren
 
@@ -187,7 +187,7 @@ In deze sectie ziet u enkele configuratie voorbeelden. De volgende voor beelden 
 | StorSimple-implementatie taken  | Aanvullende opmerkingen |
 |---|---|
 | Implementeer uw on-premises StorSimple-apparaat. | Ondersteunde versies: update 3 en hoger. |
-| Schakel het doel van de back-up in. | Gebruik deze opdrachten om de doel modus voor back-up in of uit te scha kelen en de status op te halen. Zie [extern verbinding maken met een StorSimple-apparaat](storsimple-remote-connect.md)voor meer informatie.</br> De back-upmodus inschakelen: `Set-HCSBackupApplianceMode -enable` . </br> De back-upmodus uitschakelen: `Set-HCSBackupApplianceMode -disable` . </br> De huidige status van de instellingen van de back-upmodus ophalen: `Get-HCSBackupApplianceMode` . |
+| Schakel het doel van de back-up in. | Gebruik deze opdrachten om de doel modus voor back-up in of uit te scha kelen en de status op te halen. Zie [extern verbinding maken met een StorSimple-apparaat](./storsimple-8000-remote-connect.md)voor meer informatie.</br> De back-upmodus inschakelen: `Set-HCSBackupApplianceMode -enable` . </br> De back-upmodus uitschakelen: `Set-HCSBackupApplianceMode -disable` . </br> De huidige status van de instellingen van de back-upmodus ophalen: `Get-HCSBackupApplianceMode` . |
 | Maak een algemene volume container voor uw volume waarin de back-upgegevens worden opgeslagen. Alle gegevens in een volume container worden ontdubbeld. | StorSimple volume containers definiëren ontdubbeling domeinen.  |
 | Maak StorSimple-volumes. | Maak volumes met grootten zo dicht mogelijk bij het verwachte gebruik, omdat de volume grootte van invloed is op de duur van de Cloud momentopname. Meer informatie over het aanpassen van de grootte van een volume vindt u in het [Bewaar beleid](#retention-policies).</br> </br> Gebruik StorSimple gelaagde volumes en schakel het selectie vakje **dit volume gebruiken voor minder vaak gebruikte gegevens archivering** in. </br> Het gebruik van alleen lokaal vastgemaakte volumes wordt niet ondersteund. |
 | Maak een uniek StorSimple-back-upbeleid voor alle back-updoel volumes. | Een StorSimple-back-upbeleid definieert de volume consistentie groep. |
@@ -213,16 +213,16 @@ Stel uw oplossing in aan de hand van de richt lijnen in de volgende secties.
 - Schakel Windows Server-defragmentatie uit op de StorSimple-volumes.
 - Schakel Windows Server-indexering uit op de StorSimple-volumes.
 - Voer een antivirus scan uit op de bronhost (niet op de StorSimple-volumes).
-- Schakel het standaard [onderhoud van Windows Server](https://msdn.microsoft.com/library/windows/desktop/hh848037.aspx) uit in taak beheer. Doe dit op een van de volgende manieren:
+- Schakel het standaard [onderhoud van Windows Server](/windows/win32/w8cookbook/automatic-maintenance) uit in taak beheer. Doe dit op een van de volgende manieren:
   - De onderhouds Configurator uitschakelen in Windows taak planner.
-  - Down load [PsExec](https://technet.microsoft.com/sysinternals/bb897553.aspx) van Windows Sysinternals. Nadat u PsExec hebt gedownload, voert u Windows Power shell als beheerder uit en typt u:
+  - Down load [PsExec](/sysinternals/downloads/psexec) van Windows Sysinternals. Nadat u PsExec hebt gedownload, voert u Windows Power shell als beheerder uit en typt u:
     ```powershell
     psexec \\%computername% -s schtasks /change /tn “MicrosoftWindowsTaskSchedulerMaintenance Configurator" /disable
     ```
 
 ### <a name="storsimple-best-practices"></a>Best practices voor StorSimple
 
--   Zorg ervoor dat het StorSimple-apparaat is bijgewerkt naar [Update 3 of hoger](storsimple-install-update-3.md).
+-   Zorg ervoor dat het StorSimple-apparaat is bijgewerkt naar [Update 3 of hoger](./index.yml).
 -   Isoleer iSCSI-en Cloud verkeer. Gebruik toegewezen iSCSI-verbindingen voor verkeer tussen StorSimple en de back-upserver.
 -   Zorg ervoor dat uw StorSimple-apparaat een specifiek back-updoel is. Gemengde werk belastingen worden niet ondersteund, omdat deze van invloed zijn op uw RTO en RPO.
 
@@ -239,7 +239,7 @@ Stel uw oplossing in aan de hand van de richt lijnen in de volgende secties.
 -   Schakel ontdubbeling uit voor de back-uptaak.
 -   Stel optimalisatie in op **LAN-doel**.
 -   Schakel de optie **actieve volledige back-up maken** (elke 2 weken) in.
--   Stel in de back-upopslagplaats **gebruik per VM-back-upbestanden**in.
+-   Stel in de back-upopslagplaats **gebruik per VM-back-upbestanden** in.
 -   Stel **meerdere upload stromen per taak gebruiken** in op **8** (Maxi maal 16 is toegestaan). Pas dit aantal aan of uit op basis van het CPU-gebruik op het StorSimple-apparaat.
 
 ## <a name="retention-policies"></a>Bewaarbeleid
@@ -272,7 +272,7 @@ Maak op basis van de voor gaande hypo theses een gelaagd volume van 26 TiB StorS
 
 ### <a name="to-set-up-veeam-storage"></a>Veeam-opslag instellen
 
-1.  Ga in de Veeam-back-up en de replicatie console naar **back-upinfrastructuur**in de **bibliotheek hulpprogram ma's**. Klik met de rechter muisknop op **back-Upopslagplaatsen**en selecteer vervolgens **back-upopslagplaats toevoegen**.
+1.  Ga in de Veeam-back-up en de replicatie console naar **back-upinfrastructuur** in de **bibliotheek hulpprogram ma's**. Klik met de rechter muisknop op **back-Upopslagplaatsen** en selecteer vervolgens **back-upopslagplaats toevoegen**.
 
     ![Scherm opname van de Veeam-beheer console en markeert de optie back-upopslagplaats toevoegen.](./media/storsimple-configure-backup-target-using-veeam/veeamimage1.png)
 
@@ -280,11 +280,11 @@ Maak op basis van de voor gaande hypo theses een gelaagd volume van 26 TiB StorS
 
     ![Veeam-beheer console, naam en beschrijvings pagina](./media/storsimple-configure-backup-target-using-veeam/veeamimage2.png)
 
-3.  Selecteer **micro soft Windows Server**voor het type. Selecteer de Veeam-server. Selecteer **Next**.
+3.  Selecteer **micro soft Windows Server** voor het type. Selecteer de Veeam-server. Selecteer **Next**.
 
     ![Veeam-beheer console, type back-upopslagplaats selecteren](./media/storsimple-configure-backup-target-using-veeam/veeamimage3.png)
 
-4.  Als u een **locatie**wilt opgeven, bladert en selecteert u het volume. Selecteer het selectie vakje **maximum aantal gelijktijdige taken beperken tot:** en stel de waarde in op **4**. Dit zorgt ervoor dat er slechts vier virtuele schijven gelijktijdig worden verwerkt terwijl elke virtuele machine (VM) wordt verwerkt. Selecteer de knop **Geavanceerd** .
+4.  Als u een **locatie** wilt opgeven, bladert en selecteert u het volume. Selecteer het selectie vakje **maximum aantal gelijktijdige taken beperken tot:** en stel de waarde in op **4**. Dit zorgt ervoor dat er slechts vier virtuele schijven gelijktijdig worden verwerkt terwijl elke virtuele machine (VM) wordt verwerkt. Selecteer de knop **Geavanceerd** .
 
     ![Veeam-beheer console, volume selecteren](./media/storsimple-configure-backup-target-using-veeam/veeamimage4.png)
 
@@ -320,7 +320,7 @@ Hier volgt een voor beeld van een GFS-rotatie schema voor vier weken, maandelijk
 |---|---|---|
 | Wekelijks (weken 1-4) | Saturday | Monday-Friday |
 | Maandelijks  | Saturday  |   |
-| Jaarlijks | Saturday  |   |
+| Jaar | Saturday  |   |
 
 
 ### <a name="assign-storsimple-volumes-to-a-veeam-backup-job"></a>StorSimple-volumes toewijzen aan een Veeam-back-uptaak
@@ -329,7 +329,7 @@ Maak voor primair scenario voor back-updoel een dagelijkse taak met uw primaire 
 
 #### <a name="to-assign-storsimple-volumes-to-a-veeam-backup-job"></a>StorSimple-volumes toewijzen aan een Veeam-back-uptaak
 
-1.  Selecteer **back-up & replicatie**in de Veeam-back-up en replicatie console. Klik met de rechter muisknop op **back-up**en selecteer vervolgens **VMware** of **Hyper-V**, afhankelijk van uw omgeving.
+1.  Selecteer **back-up & replicatie** in de Veeam-back-up en replicatie console. Klik met de rechter muisknop op **back-up** en selecteer vervolgens **VMware** of **Hyper-V**, afhankelijk van uw omgeving.
 
     ![Veeam-beheer console, nieuwe back-uptaak](./media/storsimple-configure-backup-target-using-veeam/veeamimage8.png)
 
@@ -345,7 +345,7 @@ Maak voor primair scenario voor back-updoel een dagelijkse taak met uw primaire 
 
     ![Veeam-beheer console, pagina nieuwe back-uptaak](./media/storsimple-configure-backup-target-using-veeam/veeamimage11.png)
 
-5. Selecteer in het dialoog venster **Geavanceerde instellingen** op het tabblad **back-up** de optie **Incrementeel**. Zorg ervoor dat het selectie vakje **synthetische volledige back-ups maken regel matig** wordt uitgeschakeld. Schakel het selectie vakje **periodiek actieve volledige back-ups maken** in. Schakel onder **actieve volledige back-up**het selectie vakje **wekelijks op geselecteerde dagen** in voor zaterdag.
+5. Selecteer in het dialoog venster **Geavanceerde instellingen** op het tabblad **back-up** de optie **Incrementeel**. Zorg ervoor dat het selectie vakje **synthetische volledige back-ups maken regel matig** wordt uitgeschakeld. Schakel het selectie vakje **periodiek actieve volledige back-ups maken** in. Schakel onder **actieve volledige back-up** het selectie vakje **wekelijks op geselecteerde dagen** in voor zaterdag.
 
     ![Scherm opname van de Veeam-beheer console, met name de nieuwe pagina Geavanceerde instellingen voor de back-uptaak](./media/storsimple-configure-backup-target-using-veeam/veeamimage12.png)
 
@@ -400,13 +400,13 @@ GFS draaiing wekelijks, maandelijks en jaarlijks plannen
 | Week 3 | StorSimple weken 2-4 |   |   |   |   |   |
 | Week 4 | StorSimple weken 2-4 |   |   |   |   |   |
 | Maandelijks | StorSimple maandelijks |   |   |   |   |   |
-| Jaarlijks | Jaarlijks StorSimple  |   |   |   |   |   |
+| Jaar | Jaarlijks StorSimple  |   |   |   |   |   |
 
 ### <a name="assign-storsimple-volumes-to-a-veeam-copy-job"></a>StorSimple-volumes toewijzen aan een Veeam-Kopieer taak
 
 #### <a name="to-assign-storsimple-volumes-to-a-veeam-copy-job"></a>StorSimple-volumes toewijzen aan een Veeam-Kopieer taak
 
-1.  Selecteer **back-up & replicatie**in de Veeam-back-up en replicatie console. Klik met de rechter muisknop op **back-up**en selecteer vervolgens **VMware** of **Hyper-V**, afhankelijk van uw omgeving.
+1.  Selecteer **back-up & replicatie** in de Veeam-back-up en replicatie console. Klik met de rechter muisknop op **back-up** en selecteer vervolgens **VMware** of **Hyper-V**, afhankelijk van uw omgeving.
 
     ![Scherm opname van de Veeam-beheer console met de VMware-en Hyper-V-opties die u kunt selecteren.](./media/storsimple-configure-backup-target-using-veeam/veeamimage16.png)
 
@@ -500,23 +500,23 @@ Met Veeam krijgt u snel en gedetailleerd herstel op bestands niveau via StorSimp
 
 Een nood geval kan worden veroorzaakt door diverse factoren. De volgende tabel geeft een lijst van veelvoorkomende scenario's voor herstel na nood gevallen.
 
-| Scenario | Impact | Herstellen | Notities |
+| Scenario | Impact | Herstellen | Opmerkingen |
 |---|---|---|---|
-| StorSimple-apparaat is mislukt | Back-up-en herstel bewerkingen worden onderbroken. | Vervang het apparaat dat is mislukt en voer een [StorSimple-failover en nood herstel](storsimple-device-failover-disaster-recovery.md)uit. | Als u na het herstel van het apparaat een herstel bewerking moet uitvoeren, worden volledige gegevens verzamelingen opgehaald uit de Cloud naar het nieuwe apparaat. Alle bewerkingen bevinden zich in de Cloud snelheid. Het proces voor het opnieuw scannen van indexen en catalogussen kan ertoe leiden dat alle back-upsets worden gescand en opgehaald van de Cloud laag naar de laag van het lokale apparaat. Dit kan een tijdrovend proces zijn. |
+| StorSimple-apparaat is mislukt | Back-up-en herstel bewerkingen worden onderbroken. | Vervang het apparaat dat is mislukt en voer een [StorSimple-failover en nood herstel](./storsimple-8000-device-failover-disaster-recovery.md)uit. | Als u na het herstel van het apparaat een herstel bewerking moet uitvoeren, worden volledige gegevens verzamelingen opgehaald uit de Cloud naar het nieuwe apparaat. Alle bewerkingen bevinden zich in de Cloud snelheid. Het proces voor het opnieuw scannen van indexen en catalogussen kan ertoe leiden dat alle back-upsets worden gescand en opgehaald van de Cloud laag naar de laag van het lokale apparaat. Dit kan een tijdrovend proces zijn. |
 | Veeam-server fout | Back-up-en herstel bewerkingen worden onderbroken. | Bouw de back-upserver opnieuw op en voer data base terugzetten uit zoals beschreven in [Veeam Help Center (technische documentatie)](https://www.veeam.com/documentation-guides-datasheets.html).  | U moet de Veeam-server opnieuw samen stellen of herstellen op de site voor nood herstel. Zet de data base terug naar het meest recente punt. Als de herstelde Veeam-data base niet is gesynchroniseerd met uw meest recente back-uptaken, is indexeren en catalogiseren vereist. Dit proces voor het opnieuw scannen van index en catalogus kan ertoe leiden dat alle back-upsets worden gescand en van de Cloud laag worden opgehaald naar de laag van het lokale apparaat. Hierdoor is het veel tijdrovender. |
 | Site fout die leidt tot verlies van zowel de back-upserver als de StorSimple | Back-up-en herstel bewerkingen worden onderbroken. | Herstel StorSimple eerst en herstel vervolgens Veeam. | Herstel StorSimple eerst en herstel vervolgens Veeam. Als u na het herstel van het apparaat een herstel bewerking moet uitvoeren, worden de volledige gegevens sets van de Cloud naar het nieuwe apparaat opgehaald. Alle bewerkingen bevinden zich in de Cloud snelheid. |
 
 
-## <a name="references"></a>Referenties
+## <a name="references"></a>Verwijzingen
 
 In dit artikel wordt verwezen naar de volgende documenten:
 
-- [StorSimple Multipath I/O instellen](storsimple-configure-mpio-windows-server.md)
-- [Opslag scenario's: Thin Provisioning](https://msdn.microsoft.com/library/windows/hardware/dn265487.aspx)
-- [GPT-stations gebruiken](https://msdn.microsoft.com/windows/hardware/gg463524.aspx#EHD)
-- [Schaduw kopieën voor gedeelde mappen instellen](https://technet.microsoft.com/library/cc771893.aspx)
+- [StorSimple Multipath I/O instellen](./storsimple-8000-configure-mpio-windows-server.md)
+- [Opslag scenario's: Thin Provisioning](/windows-hardware/drivers/storage/thin-provisioning)
+- [GPT-stations gebruiken](/previous-versions/windows/hardware/design/dn653580(v=vs.85)#EHD)
+- [Schaduw kopieën voor gedeelde mappen instellen](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771893(v=ws.11))
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het [herstellen van een back-upset](storsimple-restore-from-backup-set-u2.md).
-- Meer informatie over het uitvoeren van een failover van een [apparaat en nood herstel](storsimple-device-failover-disaster-recovery.md).
+- Meer informatie over het [herstellen van een back-upset](./storsimple-8000-restore-from-backup-set-u2.md).
+- Meer informatie over het uitvoeren van een failover van een [apparaat en nood herstel](./storsimple-8000-device-failover-disaster-recovery.md).

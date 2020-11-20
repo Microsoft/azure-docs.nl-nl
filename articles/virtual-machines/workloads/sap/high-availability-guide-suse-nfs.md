@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: d121430452e0ed445af19f9b1ac89cfdfccdcdae
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 05bcb0aebd44dee60fa3f323e1f109e4c0761ec8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167318"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961954"
 ---
 # <a name="high-availability-for-nfs-on-azure-vms-on-suse-linux-enterprise-server"></a>Hoge Beschik baarheid voor NFS op Azure Vm's op SUSE Linux Enterprise Server
 
@@ -120,7 +121,7 @@ U kunt een van de Quick Start-sjablonen op GitHub gebruiken voor het implementer
    4. Gebruikers naam en beheerders wachtwoord voor beheerder  
       Er wordt een nieuwe gebruiker gemaakt die kan worden gebruikt om u aan te melden bij de computer.
    5. Subnet-ID  
-      Als u de virtuele machine wilt implementeren in een bestaand VNet waarvoor u een subnet hebt gedefinieerd, moet de virtuele machine worden toegewezen aan, de ID van het specifieke subnet benoemen. De ID ziet er meestal uit als/Subscriptions/** &lt; -abonnements &gt; -id**/resourceGroups/naam** &lt; &gt; van de resource groep**/providers/Microsoft.Network/virtualNetworks/naam** &lt; &gt; van het virtuele netwerk**/subnets/** &lt; subnet naam &gt; **
+      Als u de virtuele machine wilt implementeren in een bestaand VNet waarvoor u een subnet hebt gedefinieerd, moet de virtuele machine worden toegewezen aan, de ID van het specifieke subnet benoemen. De ID ziet er meestal uit als/Subscriptions/**&lt; -abonnements &gt; -id**/resourceGroups/naam **&lt; &gt; van de resource groep**/providers/Microsoft.Network/virtualNetworks/naam **&lt; &gt; van het virtuele netwerk**/subnets/**&lt; subnet naam &gt;**
 
 ### <a name="deploy-linux-manually-via-azure-portal"></a>Linux hand matig implementeren via Azure Portal
 
@@ -158,7 +159,7 @@ U moet eerst de virtuele machines voor dit NFS-cluster maken. Daarna maakt u een
          1. Poort 61000 voor NW1
             1. Open de load balancer, selecteer status controles en klik op toevoegen
             1. Voer de naam van de nieuwe status test in (bijvoorbeeld **NW1-HP**)
-            1. TCP als protocol selecteren, poort 610**00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
+            1. TCP als protocol selecteren, poort 610 **00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
             1. Klik op OK
          1. Poort 61001 voor NW2
             * Herhaal de bovenstaande stappen voor het maken van een status test voor NW2
@@ -192,7 +193,7 @@ U moet eerst de virtuele machines voor dit NFS-cluster maken. Daarna maakt u een
          1. Poort 61000 voor NW1
             1. Open de load balancer, selecteer status controles en klik op toevoegen
             1. Voer de naam van de nieuwe status test in (bijvoorbeeld **NW1-HP**)
-            1. TCP als protocol selecteren, poort 610**00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
+            1. TCP als protocol selecteren, poort 610 **00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
             1. Klik op OK
          1. Poort 61001 voor NW2
             * Herhaal de bovenstaande stappen voor het maken van een status test voor NW2

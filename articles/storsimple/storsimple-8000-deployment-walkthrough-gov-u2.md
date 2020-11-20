@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/22/2017
 ms.author: alkohli
-ms.openlocfilehash: fbbb298dd9e5b568e6a1dc2c4ef731b8521f8308
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d736c09fc1c9490f79dfc526895970e01b8b45cc
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85556019"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963178"
 ---
 # <a name="deploy-your-on-premises-storsimple-device-in-the-government-portal"></a>Uw on-premises StorSimple-apparaat implementeren in de overheids Portal
 
@@ -153,7 +153,7 @@ Voer de volgende stappen uit op de Windows Server-host.
 
 > [!IMPORTANT]
 > * Voor hoge beschikbaarheid van uw StorSimple-oplossing wordt u aangeraden om de MPIO op de hostservers te configureren (optioneel) voordat u iSCSI configureert. MPIO-configuratie op hostservers zorgt ervoor dat de servers een koppelings-, netwerk- of interfacefout kunnen tolereren.
-> * Voor MPIO- en iSCSI-installatie- en configuratie-instructies op een Windows Server-host gaat u naar [MPIO configureren voor uw StorSimple-apparaat](storsimple-configure-mpio-windows-server.md). Deze omvatten ook de stappen voor het koppelen, initialiseren en formatteren van StorSimple-volumes.
+> * Voor MPIO- en iSCSI-installatie- en configuratie-instructies op een Windows Server-host gaat u naar [MPIO configureren voor uw StorSimple-apparaat](./storsimple-8000-configure-mpio-windows-server.md). Deze omvatten ook de stappen voor het koppelen, initialiseren en formatteren van StorSimple-volumes.
 > * Voor MPIO- en iSCSI-installatie- en configuratie-instructies op een Linux-host gaat u naar [MPIO configureren voor uw StorSimple Linux-host](storsimple-configure-mpio-on-linux.md).
 
 Als u besluit geen MPIO te configureren, voer dan de volgende stappen uit om uw StorSimple-volumes te koppelen, te initialiseren en te formatteren op een Windows Server-host.
@@ -172,7 +172,7 @@ U kunt op elk moment een handmatige back-up maken. Voor procedures gaat u naar [
 ## <a name="configure-a-new-storage-account-for-the-service"></a>Een nieuw opslagaccount voor de service configureren
 Dit is een optionele stap die u alleen hoeft uit te voeren als u het automatisch maken van een opslagaccount met uw service niet hebt ingeschakeld. U hebt een Microsoft Azure Storage-account nodig om een StorSimple-volumecontainer te maken.
 
-Als u een Azure Storage-account in een andere regio wilt maken, raadpleeg dan [Over Azure Storage-accounts](../storage/common/storage-create-storage-account.md) voor stapsgewijze instructies.
+Als u een Azure Storage-account in een andere regio wilt maken, raadpleeg dan [Over Azure Storage-accounts](../storage/common/storage-account-create.md) voor stapsgewijze instructies.
 
 Voer de volgende stappen uit in de Government-Portal op de pagina **StorSimple Apparaatbeheer service** .
 
@@ -199,4 +199,3 @@ Voer de volgende stappen uit in de Government-Portal om een hand matige back-up 
 ## <a name="next-steps"></a>Volgende stappen
 * Configureer een [virtueel apparaat](storsimple-8000-cloud-appliance-u2.md).
 * Gebruik de [StorSimple Apparaatbeheer-service](storsimple-8000-manager-service-administration.md) om uw StorSimple-apparaat te beheren.
-

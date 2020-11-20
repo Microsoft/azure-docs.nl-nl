@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: troubleshooting
 ms.date: 05/20/2020
-ms.openlocfilehash: 2316e0314c9d8f36aee123d4a516f382f58e83e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b331f8e0af452937028c63fba123cb92f57a6b0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91291653"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962413"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-oracle-to-azure-db-for-postgresql-single-server"></a>Bekende problemen/migratie beperkingen met online migraties van Oracle naar Azure DB voor PostgreSQL-Single server
 
@@ -34,7 +34,7 @@ Azure Database Migration Service biedt geen ondersteuning voor het maken van ver
 
 ## <a name="postgresql-versions-supported-as-a-target-database"></a>PostgreSQL-versies worden ondersteund als doel database
 
-Azure Database Migration Service ondersteunt migraties naar Azure data base for PostgreSQL-Single Server versie 9,5, 9,6, 10 en 11. Zie het artikel [ondersteunde PostgreSQL-database versies](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions) voor actuele informatie over versie ondersteuning in azure data base for PostgreSQL-Single server.
+Azure Database Migration Service ondersteunt migraties naar Azure data base for PostgreSQL-Single Server versie 9,5, 9,6, 10 en 11. Zie het artikel [ondersteunde PostgreSQL-database versies](../postgresql/concepts-supported-versions.md) voor actuele informatie over versie ondersteuning in azure data base for PostgreSQL-Single server.
 
 ## <a name="datatype-limitations"></a>Beperkingen van gegevens typen
 
@@ -48,7 +48,7 @@ De volgende gegevens typen worden **niet** gemigreerd:
 - SDO_GEOMETRY
 - Geneste tabellen
 - Door de gebruiker gedefinieerde gegevens typen
-- Notities
+- Opmerkingen
 - Virtuele kolommen
 - Gerealiseerde weer gaven op basis van de kolom ROWID
 

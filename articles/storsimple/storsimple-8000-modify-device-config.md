@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 09/28/2017
 ms.author: alkohli
-ms.openlocfilehash: a08ddae1d10cc8b26f3aa7ee85e731c2cea15f93
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 5eb5c351462279fe5c4f790e052f73201d211cfb
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962884"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94961172"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-modify-your-storsimple-device-configuration"></a>De StorSimple Apparaatbeheer-service gebruiken om de configuratie van uw StorSimple-apparaat te wijzigen
 
@@ -65,7 +65,7 @@ Uw apparaat moet de tijd synchroniseren om te verifiëren bij de service provide
 
  Selecteer uw tijd zone in de vervolg keuzelijst. U kunt Maxi maal twee NTP-servers (Network Time Protocol) opgeven:
 
- - **Primaire NTP-server** : de configuratie is vereist en wordt opgegeven wanneer u Windows PowerShell voor StorSimple gebruikt om uw apparaat te configureren. U kunt de standaard Windows Server- **time.Windows.com** opgeven als uw NTP-server. U kunt de configuratie van de primaire NTP-server weer geven via de Azure Portal, maar u moet de Windows Power shell-interface gebruiken om deze te wijzigen. Gebruik de `Set-HcsNTPClientServerAddress` cmdlet om de primaire NTP-server van uw apparaat te wijzigen. Ga naar de syntaxis van de cmdlet [set-HcsNTPClientServerAddress](https://technet.microsoft.com/library/dn688138.aspx) voor meer informatie.
+ - **Primaire NTP-server** : de configuratie is vereist en wordt opgegeven wanneer u Windows PowerShell voor StorSimple gebruikt om uw apparaat te configureren. U kunt de standaard Windows Server- **time.Windows.com** opgeven als uw NTP-server. U kunt de configuratie van de primaire NTP-server weer geven via de Azure Portal, maar u moet de Windows Power shell-interface gebruiken om deze te wijzigen. Gebruik de `Set-HcsNTPClientServerAddress` cmdlet om de primaire NTP-server van uw apparaat te wijzigen. Ga naar de syntaxis van de cmdlet [set-HcsNTPClientServerAddress](/previous-versions/windows/powershell-scripting/dn688138(v=wps.630)) voor meer informatie.
 
 - **Secundaire NTP-server** : de configuratie is optioneel. U kunt de portal gebruiken om een secundaire NTP-server te configureren.
 
@@ -85,7 +85,7 @@ Een DNS-server wordt gebruikt wanneer het apparaat probeert te communiceren met 
 
 Voor maximale Beschik baarheid moet u de primaire en secundaire DNS-servers configureren tijdens de initiële implementatie van het apparaat.
 
-**Primaire DNS-server** : u gebruikt de Windows PowerShell voor StorSimple om eerst de primaire DNS-server op te geven tijdens de eerste installatie. U kunt de primaire DNS-server alleen opnieuw configureren via de Windows Power shell-interface. Gebruik de `Set-HcsDNSClientServerAddress` cmdlet om de primaire DNS-server van uw apparaat te wijzigen. Ga naar de syntaxis van de cmdlet [set-HcsDNSClientServerAddress](https://technet.microsoft.com/library/dn688138.aspx) voor meer informatie.
+**Primaire DNS-server** : u gebruikt de Windows PowerShell voor StorSimple om eerst de primaire DNS-server op te geven tijdens de eerste installatie. U kunt de primaire DNS-server alleen opnieuw configureren via de Windows Power shell-interface. Gebruik de `Set-HcsDNSClientServerAddress` cmdlet om de primaire DNS-server van uw apparaat te wijzigen. Ga naar de syntaxis van de cmdlet [set-HcsDNSClientServerAddress](/previous-versions/windows/powershell-scripting/dn688138(v=wps.630)) voor meer informatie.
 
 **Secundaire DNS-server** : als u de secundaire DNS-server wilt wijzigen, gebruikt u de `Set-HcsDNSClientServerAddress` cmdlet in de Windows Power shell-interface van de Blade apparaat-of **netwerk instellingen** van uw StorSimple-apparaat in de Azure Portal.
 
@@ -97,7 +97,7 @@ Als u de secundaire DNS-server in Azure Portal wilt wijzigen, voert u de volgend
 
     ![IP-adres van secundaire DNS-server wijzigen](./media/storsimple-8000-modify-device-config/modify-secondary-dns1.png)
 
-4. Klik in de opdracht balk op **Opslaan** en klik op **OK**als u om bevestiging wordt gevraagd.
+4. Klik in de opdracht balk op **Opslaan** en klik op **OK** als u om bevestiging wordt gevraagd.
 
     ![Wijzigingen opslaan en bevestigen](./media/storsimple-8000-modify-device-config/modify-secondary-dns-2.png)
 
@@ -169,4 +169,3 @@ Voer de volgende stappen uit om de Vip's voor een van de netwerk interfaces te v
 
 * Meer informatie over het [configureren van MPIO voor uw StorSimple-apparaat](storsimple-8000-configure-mpio-windows-server.md).
 * Meer informatie over [het gebruik van de StorSimple Apparaatbeheer-service voor het beheren van uw StorSimple-apparaat](storsimple-8000-manager-service-administration.md).
-

@@ -7,13 +7,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: f84201de1f63704fefcf5de4041b95ed8c2122cd
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 015aadb791172f5033bf0198caad567c9bc03221
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92094055"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965048"
 ---
 # <a name="understand-metrics-for-azure-spring-cloud"></a>Informatie over metrische gegevens voor Azure lente-Cloud
 
@@ -69,7 +68,7 @@ Het tijds bereik kan ook worden aangepast van de laatste 30 minuten tot de laats
 
 ![Metrische wijzigingen](media/metrics/metrics-6.png)
 
-De standaard weergave bevat alle application's-metrische gegevens van een Azure veer Cloud service samen. Metrische gegevens van één app of exemplaar kunnen worden gefilterd in de weer gave.  Klik op **filter toevoegen**, stel de eigenschap in op **app**en selecteer de doel toepassing die u wilt bewaken in het tekstvak **waarden** . 
+De standaard weergave bevat alle application's-metrische gegevens van een Azure veer Cloud service samen. Metrische gegevens van één app of exemplaar kunnen worden gefilterd in de weer gave.  Klik op **filter toevoegen**, stel de eigenschap in op **app** en selecteer de doel toepassing die u wilt bewaken in het tekstvak **waarden** . 
 
 U kunt twee soorten filters (eigenschappen) gebruiken:
 * App: filteren op app-naam
@@ -82,7 +81,7 @@ U kunt ook de optie **splitsing Toep assen** gebruiken om meerdere regels voor �
 ![Metrische splitsing](media/metrics/metrics-8.png)
 
 >[!TIP]
-> U kunt uw eigen grafieken bouwen op de pagina metrische gegevens en deze vastmaken aan uw **dash board**. Maak eerst een naam voor de grafiek.  Selecteer vervolgens **vastmaken aan dash board in de rechter bovenhoek**. U kunt nu uw toepassing op het **dash board**van de portal controleren.
+> U kunt uw eigen grafieken bouwen op de pagina metrische gegevens en deze vastmaken aan uw **dash board**. Maak eerst een naam voor de grafiek.  Selecteer vervolgens **vastmaken aan dash board in de rechter bovenhoek**. U kunt nu uw toepassing op het **dash board** van de portal controleren.
 
 ## <a name="user-metrics-options"></a>Opties voor metrische gegevens van gebruikers
 
@@ -90,13 +89,13 @@ In de volgende tabellen worden de beschik bare metrische gegevens en details wee
 
 ### <a name="error"></a>Fout
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|----|----|----|------------|
 >| Tomcat. Global. error | Tomcat. Global. error | Aantal | Aantal fouten dat is opgetreden in verwerkte aanvragen |
 
 ### <a name="performance"></a>Prestaties
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|----|----|----|------------|
 >| System. CPU. Usage | System. CPU. Usage | Percentage | Recent CPU-gebruik voor het hele systeem. Deze waarde is een double in het interval van [0,0, 1,0]. Een waarde van 0,0 betekent dat alle Cpu's inactief zijn geweest tijdens de meest recente periode, terwijl een waarde van 1,0 betekent dat alle Cpu's op dit moment 100% van de tijd actief werden tijdens de meest recente periode.|
 >| proces. CPU. Usage | CPU-gebruiks percentage van app | Percentage | Recent CPU-gebruik voor het Java Virtual Machine proces. Deze waarde is een double in het interval van [0,0, 1,0]. Een waarde van 0,0 betekent dat geen van de Cpu's threads uit het JVM-proces heeft uitgevoerd gedurende de recent gebruikte periode, terwijl een waarde van 1,0 betekent dat alle Cpu's actief threads van de JVM 100% van de tijd tijdens de laatste periode hebben uitgevoerd. Threads van de JVM bevatten de Application threads en de JVM interne threads.|
@@ -110,11 +109,10 @@ In de volgende tabellen worden de beschik bare metrische gegevens en details wee
 >| JVM. gc. pause. Total. Count | JVM. gc. pause (totaal aantal) | Aantal | Totaal aantal GC-pogingen nadat deze JMV is gestart, inclusief Young en oud GC. |
 >| JVM. gc. pause. Total. time | JVM. gc. pause (Total-Time) | Milliseconden | Totale aantal geconsumeerde GC-tijd nadat deze JMV is gestart, met inbegrip van Young en oud GC. |
 
-::: zone pivot="programming-language-csharp"
 ### <a name="performance-net"></a>Prestaties (.NET)
 
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|------|-----------------------------|------|---------|
 >| CPU-gebruik       | CPU-gebruik      | Milliseconden | De hoeveelheid tijd die de CPU heeft gebruikt voor het proces. |
 >| Werkset     | Working-set    | Mega bytes    | De hoeveelheid werkset die door het proces wordt gebruikt. |
@@ -136,22 +134,20 @@ In de volgende tabellen worden de beschik bare metrische gegevens en details wee
 >| Aantal actieve timers               | actief-timer-aantal               | Aantal | Het aantal timers dat momenteel actief is. Een actieve timer is een tijd die op een bepaald moment in de toekomst is geregistreerd en nog niet is geannuleerd. |
 
 Zie voor meer informatie [DotNet-tellers](/dotnet/core/diagnostics/dotnet-counters).
-::: zone-end
 
 ### <a name="request"></a>Aanvraag
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|----|----|----|------------|
 >| Tomcat. Global. sent | Tomcat. Global. sent | Bytes | De hoeveelheid gegevens die Tomcat webserver heeft verzonden |
 >| Tomcat. Global. ontvangen | Tomcat. Global. ontvangen | Bytes | De hoeveelheid gegevens die Tomcat webserver heeft ontvangen |
 >| Tomcat. Global. Request. Total. Count | Tomcat. Global. Request (totaal aantal) | Aantal | Totaal aantal verwerkte aanvragen van Tomcat-webserver |
 >| Tomcat. Global. Request. Max | Tomcat. Global. Request. Max | Milliseconden | Maximale tijd van de Tomcat-webserver voor het verwerken van een aanvraag |
 
-::: zone pivot="programming-language-csharp"
 ### <a name="request-net"></a>Aanvraag (.NET)
 
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|------|-----------------------------|------|---------|
 >| Aanvragen per seconde | aanvragen per seconde | Aantal | Aanvraag frequentie. |
 >| Totaal aantal aanvragen | Totaal-aanvragen | Aantal | Totaal aantal aanvragen. |
@@ -159,11 +155,10 @@ Zie voor meer informatie [DotNet-tellers](/dotnet/core/diagnostics/dotnet-counte
 >| Mislukte aanvragen | mislukte aanvragen | Aantal | Aantal mislukte aanvragen. |
 
 Zie voor meer informatie [DotNet-tellers](/dotnet/core/diagnostics/dotnet-counters).
-::: zone-end
 
 ### <a name="session"></a>Sessie
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|----|----|----|------------|
 >| Tomcat. Sessions. Active. Max | Tomcat. Sessions. Active. Max | Aantal | Het maximum aantal sessies dat tegelijkertijd actief is geweest |
 >| Tomcat. Sessions. Alive. Max | Tomcat. Sessions. Alive. Max | Milliseconden | Langste tijd (in seconden) dat een verlopen sessie actief was |

@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/22/2020
 ms.author: radeltch
-ms.openlocfilehash: 040220bfac2a3ac1ef54965ba9be35755b9b787b
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 0c5ebd3f7989458a0966fdc792cd3a8a9ea94acc
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487616"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965269"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux-with-azure-netapp-files-for-sap-applications"></a>Azure Virtual Machines hoge Beschik baarheid voor SAP NetWeaver op Red Hat Enterprise Linux met Azure NetApp Files voor SAP-toepassingen
 
@@ -195,13 +196,13 @@ Eerst moet u de Azure NetApp Files volumes maken. Implementeer de Vm's. Daarna m
       1. Selecteer de virtuele machines van het (A) SCS-cluster en de bijbehorende IP-adressen.
       1. Klik op Add.
    1. De status tests maken
-      1. Poort 620**00** voor ASCS
+      1. Poort 620 **00** voor ASCS
          1. Open de load balancer, selecteer status controles en klik op toevoegen
          1. Voer de naam van de nieuwe status test in (bijvoorbeeld **status. QAS. ASCS**)
-         1. TCP als protocol selecteren, poort 620**00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
+         1. TCP als protocol selecteren, poort 620 **00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
          1. Klik op OK
-      1. Poort 621**01** voor ASCS ers
-            * Herhaal de bovenstaande stappen onder ' c ' om een status test te maken voor de ERS (bijvoorbeeld 621**01** en **status. QAS. ERS**)
+      1. Poort 621 **01** voor ASCS ers
+            * Herhaal de bovenstaande stappen onder ' c ' om een status test te maken voor de ERS (bijvoorbeeld 621 **01** en **status. QAS. ERS**)
    1. Taakverdelings regels
       1. Taakverdelings regels voor ASCS
          1. Open de load balancer, selecteer regels voor taak verdeling en klik op toevoegen.
@@ -229,15 +230,15 @@ Eerst moet u de Azure NetApp Files volumes maken. Implementeer de Vm's. Daarna m
       1. De virtuele machines van het (A) SCS-cluster selecteren
       1. Klik op OK
    1. De status tests maken
-      1. Poort 620**00** voor ASCS
+      1. Poort 620 **00** voor ASCS
          1. Open de load balancer, selecteer status controles en klik op toevoegen
          1. Voer de naam van de nieuwe status test in (bijvoorbeeld **status. QAS. ASCS**)
-         1. TCP als protocol selecteren, poort 620**00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
+         1. TCP als protocol selecteren, poort 620 **00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
          1. Klik op OK
-      1. Poort 621**01** voor ASCS ers
-            * Herhaal de bovenstaande stappen onder ' c ' om een status test te maken voor de ERS (bijvoorbeeld 621**01** en **status. QAS. ERS**)
+      1. Poort 621 **01** voor ASCS ers
+            * Herhaal de bovenstaande stappen onder ' c ' om een status test te maken voor de ERS (bijvoorbeeld 621 **01** en **status. QAS. ERS**)
    1. Taakverdelings regels
-      1. 32**00** TCP voor ASCS
+      1. 32 **00** TCP voor ASCS
          1. Open de load balancer, selecteer regels voor taak verdeling en klik op toevoegen.
          1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **lb. QAS. ASCS. 3200**)
          1. Selecteer het frontend-IP-adres voor ASCS, back-endservers en de status test die u eerder hebt gemaakt (bijvoorbeeld front- **End. QAS. ASCS**)
@@ -246,9 +247,9 @@ Eerst moet u de Azure NetApp Files volumes maken. Implementeer de Vm's. Daarna m
          1. **Zorg ervoor dat zwevend IP-adressen zijn ingeschakeld**
          1. Klik op OK
       1. Aanvullende poorten voor de ASCS
-         * Herhaal de bovenstaande stappen onder d voor poorten 36**00**, 39**00**, 81**00**, 5**00**13, 5**00**14, 5**00**16 en TCP voor de ASCS
+         * Herhaal de bovenstaande stappen onder d voor poorten 36 **00**, 39 **00**, 81 **00**, 5 **00** 13, 5 **00** 14, 5 **00** 16 en TCP voor de ASCS
       1. Aanvullende poorten voor de ASCS ERS
-         * Herhaal de bovenstaande stappen onder d voor de poorten 32**01**, 33**01**, 5**01**13, 5**01**14, 5**01**en TCP voor de ASCS ers
+         * Herhaal de bovenstaande stappen onder d voor de poorten 32 **01**, 33 **01**, 5 **01** 13, 5 **01** 14, 5 **01** en TCP voor de ASCS ers
 
       > [!IMPORTANT]
       > Zwevend IP wordt niet ondersteund voor een secundaire IP-configuratie in een NIC in scenario's voor taak verdeling. Zie beperkingen voor [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations)voor meer informatie. Als u een extra IP-adres voor de virtuele machine nodig hebt, implementeert u een tweede NIC.  
@@ -507,7 +508,7 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
    sudo <swpm>/sapinst SAPINST_REMOTE_ACCESS_USER=sapadmin SAPINST_USE_HOSTNAME=<virtual_hostname>
    ```
 
-   Als de installatie geen submap kan maken in/usr/sap/**QAS**/ASCS**00**, probeert u de eigenaar en groep van de ASCS**00** -map in te stellen en het opnieuw te proberen.
+   Als de installatie geen submap kan maken in/usr/sap/**QAS**/ASCS **00**, probeert u de eigenaar en groep van de ASCS **00** -map in te stellen en het opnieuw te proberen.
 
    ```
    sudo chown qasadm /usr/sap/QAS/ASCS00
@@ -574,7 +575,7 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
    sudo <swpm>/sapinst SAPINST_REMOTE_ACCESS_USER=sapadmin SAPINST_USE_HOSTNAME=<virtual_hostname>
    ```
 
-   Als de installatie geen submap kan maken in/usr/sap/**QAS**/ers**01**, probeert u de eigenaar en groep van de map ers**01** in te stellen en het opnieuw te proberen.
+   Als de installatie geen submap kan maken in/usr/sap/**QAS**/ers **01**, probeert u de eigenaar en groep van de map ers **01** in te stellen en het opnieuw te proberen.
 
    ```
    sudo chown qaadm /usr/sap/QAS/ERS01

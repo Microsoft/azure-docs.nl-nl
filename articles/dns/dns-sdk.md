@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 09/19/2016
 ms.author: rohink
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 92509ff96af0ed2a7d77799edca8447ff6839ab6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8e116096afbd01af4914be49d5675881724d5069
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019654"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965592"
 ---
 # <a name="create-dns-zones-and-record-sets-using-the-net-sdk"></a>DNS-zones en-record sets maken met behulp van de .NET SDK
 
@@ -43,7 +43,7 @@ Normaal gesp roken wordt programmatische toegang tot Azure-resources verleend vi
 
 Als u de Azure DNS .NET SDK wilt gebruiken, moet u het **Azure DNS Management Library** NuGet-pakket en andere vereiste Azure-pakketten installeren.
 
-1. Open in **Visual Studio**een project of nieuw project.
+1. Open in **Visual Studio** een project of nieuw project.
 2. Ga naar **hulpprogram ma's** **>** **NuGet package manager** **>** **NuGet-pakketten beheren voor oplossing...**.
 3. Klik op **Bladeren**, schakel het selectie vakje **include Prerelease** in en typ **micro soft. Azure. Management. DNS** in het zoekvak.
 4. Selecteer het pakket en klik op **installeren** om dit toe te voegen aan uw Visual Studio-project.
@@ -79,7 +79,7 @@ Als u de zone in Azure DNS daad werkelijk wilt maken of bijwerken, wordt het zon
 > [!NOTE]
 > DnsManagementClient ondersteunt drie werk modi: synchroon (' CreateOrUpdate '), asynchroon (' CreateOrUpdateAsync ') of asynchroon met toegang tot het HTTP-antwoord (' CreateOrUpdateWithHttpMessagesAsync ').  U kunt een van deze modi kiezen, afhankelijk van de behoeften van uw toepassing.
 
-Azure DNS ondersteunt optimistische gelijktijdigheid, met de naam [eTags](dns-getstarted-create-dnszone.md). In dit voor beeld geeft u ' * ' op voor de header If-None-Match om Azure DNS om een DNS-zone te maken als deze nog niet bestaat.  De aanroep mislukt als er al een zone met de opgegeven naam bestaat in de opgegeven resource groep.
+Azure DNS ondersteunt optimistische gelijktijdigheid, met de naam [eTags](./dns-getstarted-powershell.md). In dit voor beeld geeft u ' * ' op voor de header If-None-Match om Azure DNS om een DNS-zone te maken als deze nog niet bestaat.  De aanroep mislukt als er al een zone met de opgegeven naam bestaat in de opgegeven resource groep.
 
 ```cs
 // Create zone parameters

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
-ms.openlocfilehash: 15396467e92b3e035add03d0d29888558571aa2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3adbf34e4c19a76c2b5b2b1968c7821f37965929
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84711235"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965626"
 ---
 # <a name="configure-reverse-dns-for-services-hosted-in-azure"></a>Omgekeerde DNS configureren voor services die worden gehost in azure
 
@@ -247,11 +247,10 @@ Nee. Azure biedt momenteel alleen ondersteuning voor omgekeerde DNS voor IPv4 Pu
 
 ### <a name="can-i-send-emails-to-external-domains-from-my-azure-compute-services"></a>Kan ik e-mail berichten verzenden naar externe domeinen vanuit mijn Azure Compute-Services?
 
-De technische mogelijkheid om rechtstreeks e-mail berichten te verzenden vanuit een Azure-implementatie is afhankelijk van het type abonnement. Micro soft raadt u aan om vertrouwde mail relay services te gebruiken voor het verzenden van uitgaande e-mail, ongeacht het type abonnement. Zie [verbeterde Azure-beveiliging voor het verzenden van e-mails – November 2017 update](https://blogs.msdn.microsoft.com/mast/2017/11/15/enhanced-azure-security-for-sending-emails-november-2017-update/)voor meer informatie.
+De technische mogelijkheid om rechtstreeks e-mail berichten te verzenden vanuit een Azure-implementatie is afhankelijk van het type abonnement. Micro soft raadt u aan om vertrouwde mail relay services te gebruiken voor het verzenden van uitgaande e-mail, ongeacht het type abonnement. Zie [verbeterde Azure-beveiliging voor het verzenden van e-mails – November 2017 update](../virtual-network/troubleshoot-outbound-smtp-connectivity.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie [Reverse DNS-zoek opdracht op Wikipedia](https://en.wikipedia.org/wiki/Reverse_DNS_lookup)voor meer informatie over omgekeerde DNS.
 <br>
 Informatie over [het hosten van de zone voor reverse lookup voor het IP-adres bereik dat is toegewezen aan uw Internet provider in azure DNS](dns-reverse-dns-for-azure-services.md).
-

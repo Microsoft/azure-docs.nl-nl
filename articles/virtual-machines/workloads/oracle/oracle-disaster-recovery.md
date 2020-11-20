@@ -3,16 +3,17 @@ title: Overzicht van een scenario voor herstel na nood geval van Oracle in uw Az
 description: Een scenario voor herstel na nood gevallen voor een Oracle Database 12c-data base in uw Azure-omgeving
 author: dbakevlar
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: 9736c4d2b048aa18f283689247f5597d7526f1df
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: b8da0b5c55b291af42d9a30db23d6f55f7c0bf2d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480357"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965303"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Herstel na nood geval voor een Oracle Database 12c-data base in een Azure-omgeving
 

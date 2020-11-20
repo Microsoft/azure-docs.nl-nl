@@ -8,18 +8,19 @@ manager: juergent
 editor: ''
 keywords: HLI, HANA, Sku's, S896, S224, S448, S672, Optane, SAP
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/23/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 08872b95c4cff3c261a545f117cc4e6bf24e15a5
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: fd979f553ff03d8373948d73c416a96bb140b544
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94411470"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964759"
 ---
 # <a name="available-skus-for-hana-large-instances"></a>Beschik bare Sku's voor HANA grote instanties
 
@@ -35,7 +36,7 @@ SAP HANA op Azure (grote exemplaren) service op basis van revisie 4 stem pels is
 - West US 2
 - VS - oost
 - VS - oost 2
-- VS - zuid-centraal
+- South Central US
 - Europa -west
 - Europa - noord
 
@@ -104,9 +105,9 @@ Er zijn twee verschillende klassen van hardware die de Sku's delen in:
 
 Een volledige HANA-stempel van een grote instantie wordt niet exclusief toegewezen aan één klant&#39;en gebruik. Dit feit is ook van toepassing op de rekken van reken-en opslag resources die zijn verbonden via een netwerk infrastructuur die in Azure is geïmplementeerd. De infra structuur van een grote instantie, zoals Azure, implementeert verschillende &quot; tenants &quot; voor klanten die zijn geïsoleerd van elkaar op de volgende drie niveaus:
 
-- **Netwerk** : isolatie via virtuele netwerken binnen de Hana grote instantie stempel.
-- **Opslag** : isolatie door virtuele opslag machines met opslag volumes toe te wijzen en opslag volumes tussen tenants te isoleren.
-- **Compute** : toegewezen toewijzing van server eenheden aan één Tenant. Geen harde of zachte partitionering van server eenheden. Er kan geen enkele server of host-eenheid worden gedeeld tussen tenants. 
+- **Netwerk**: isolatie via virtuele netwerken binnen de Hana grote instantie stempel.
+- **Opslag**: isolatie door virtuele opslag machines met opslag volumes toe te wijzen en opslag volumes tussen tenants te isoleren.
+- **Compute**: toegewezen toewijzing van server eenheden aan één Tenant. Geen harde of zachte partitionering van server eenheden. Er kan geen enkele server of host-eenheid worden gedeeld tussen tenants. 
 
 De implementaties van HANA grote instantie-eenheden tussen verschillende tenants zijn niet zichtbaar voor elkaar. HANA grote instantie-eenheden die in verschillende tenants zijn geïmplementeerd, kunnen niet rechtstreeks communiceren met elkaar op het stempel niveau van de grootschalige grote instantie. Alleen HANA grote instantie-eenheden binnen één Tenant kunnen met elkaar communiceren op het niveau van de HANA-grote instantie stempel.
 

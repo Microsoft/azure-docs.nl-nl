@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.date: 02/07/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4
-ms.openlocfilehash: 119436cbe03e619b0d09df30ab2c5dc34126b0ce
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 20d44fd3150f9da31e9c242017e597d4f46e4d5d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629390"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963926"
 ---
 # <a name="trigger-a-run-of-a-machine-learning-pipeline-from-a-logic-app"></a>Een uitvoering van een Machine Learning pijp lijn vanuit een logische app activeren
 
@@ -60,7 +60,7 @@ Als uw logische app is ingericht, gebruikt u deze stappen om een trigger voor uw
     > [!NOTE]
     > Met deze trigger wordt de geselecteerde container bewaakt, maar worden de submappen niet bewaakt.
 
-1. Een HTTP-actie toevoegen die wordt uitgevoerd wanneer een nieuwe of gewijzigde BLOB wordt gedetecteerd. Selecteer **+ nieuwe stap** , zoek naar en selecteer de http-actie.
+1. Een HTTP-actie toevoegen die wordt uitgevoerd wanneer een nieuwe of gewijzigde BLOB wordt gedetecteerd. Selecteer **+ nieuwe stap**, zoek naar en selecteer de http-actie.
 
   > [!div class="mx-imgBorder"]
   > ![HTTP-actie zoeken](media/how-to-trigger-published-pipeline/search-http.png)
@@ -96,7 +96,7 @@ Als uw logische app is ingericht, gebruikt u deze stappen om een trigger voor uw
 1. Selecteer **Opslaan** en uw planning is nu gereed.
 
 > [!IMPORTANT]
-> Als u gebruikmaakt van op rollen gebaseerd toegangs beheer (RBAC) voor het beheren van de toegang tot uw pijp lijn, [stelt u de machtigingen in voor uw pijplijn scenario (training of Score)](how-to-assign-roles.md#common-scenarios).
+> Als u Azure RBAC (op rollen gebaseerd toegangs beheer) gebruikt om de toegang tot uw pijp lijn te beheren, [stelt u de machtigingen voor uw pijplijn scenario (training of Score)](how-to-assign-roles.md#common-scenarios)in.
 
 ## <a name="next-steps"></a>Volgende stappen
 

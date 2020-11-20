@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 07/31/2020
-ms.openlocfilehash: c09f741b37e06010a0bfbab40317980793240e29
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 3a474228776c689dbbd6f15ddd926f29383400ce
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683502"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964708"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Veelgestelde vragen over Azure Red Hat open Shift
 
@@ -21,7 +21,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Microsoft Azure Re
 
 ### <a name="which-azure-regions-are-supported"></a>Welke Azure-regio's worden ondersteund?
 
-Zie [beschik bare regio's](https://docs.openshift.com/aro/4/welcome/index.html#available-regions)voor een lijst met ondersteunde regio's voor Azure Red Hat open Shift 4. x.
+Zie [beschik bare regio's](https://azure.microsoft.com/global-infrastructure/services/?products=openshift&regions=all)voor een lijst met ondersteunde regio's voor Azure Red Hat open Shift 4. x.
 
 Zie [producten beschikbaar per regio](supported-resources.md#azure-regions)voor een lijst met ondersteunde regio's voor Azure Red Hat open Shift 3,11.
 

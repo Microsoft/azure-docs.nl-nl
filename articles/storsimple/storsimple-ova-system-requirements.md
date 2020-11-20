@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 020208a8b67d248c02fc659d4dc48fa22d333839
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5970e82619667a47ba160c84df2cdeb145b0dab8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80298810"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966170"
 ---
 # <a name="storsimple-virtual-array-system-requirements"></a>Systeemvereisten voor StorSimple virtuele array
 
@@ -29,7 +29,7 @@ De systeem vereisten zijn onder andere:
 
 De informatie over de StorSimple-systeem vereisten die in dit artikel wordt gepubliceerd, is alleen van toepassing op virtuele StorSimple-matrices.
 
-* Voor 8000-serie apparaten gaat u naar [systeem vereisten voor uw StorSimple 8000-serie apparaat](storsimple-system-requirements.md).
+* Voor 8000-serie apparaten gaat u naar [systeem vereisten voor uw StorSimple 8000-serie apparaat](./storsimple-8000-system-requirements.md).
 * Voor 7000-serie apparaten gaat u naar [systeem vereisten voor uw StorSimple 5000-7000-serie apparaat](http://onlinehelp.storsimple.com/1_StorSimple_System_Requirements).
 
 ## <a name="software-requirements"></a>Softwarevereisten
@@ -84,12 +84,12 @@ De volgende software vereisten gelden voor de SMB-clients die toegang hebben tot
 
 
 ### <a name="supported-storage-format"></a>Ondersteunde opslag indeling
-Alleen de Azure Block Blob Storage wordt ondersteund. Pagina-blobs worden niet ondersteund. Meer informatie [over blok-blobs en pagina-blobs](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
+Alleen de Azure Block Blob Storage wordt ondersteund. Pagina-blobs worden niet ondersteund. Meer informatie [over blok-blobs en pagina-blobs](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
 
-## <a name="networking-requirements"></a>Netwerk vereisten
+## <a name="networking-requirements"></a>Netwerkvereisten
 De volgende tabel geeft een lijst van de poorten die in uw firewall moeten worden geopend om iSCSI-, SMB-, Cloud-of beheer verkeer toe te staan. *In of* uitgaand van deze *tabel verwijst naar* de richting van waar inkomende clients toegang tot uw apparaat aanvragen. *Out* of *uitgaand* verwijst naar de richting waarin uw StorSimple-apparaat gegevens extern verzendt, behalve de implementatie: bijvoorbeeld uitgaand naar Internet.
 
-| **Poort nummer<sup>1</sup>** | **In of uit** | **Poort bereik** | **Vereist** | **Opmerkingen** |
+| **Poort nummer <sup>1</sup>** | **In of uit** | **Poort bereik** | **Vereist** | **Opmerkingen** |
 | --- | --- | --- | --- | --- |
 | TCP 80 (HTTP) |Uit |WAN |Nee |De uitgaande poort wordt gebruikt voor toegang tot internet om updates op te halen. <br></br>De uitgaande webproxy kan door de gebruiker worden geconfigureerd. |
 | TCP 443 (HTTPS) |Uit |WAN |Ja |De uitgaande poort wordt gebruikt voor toegang tot gegevens in de Cloud. <br></br>De uitgaande webproxy kan door de gebruiker worden geconfigureerd. |

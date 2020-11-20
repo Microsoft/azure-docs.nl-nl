@@ -8,14 +8,14 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: jushiman
-ms.openlocfilehash: 7234c02d387e2fbf21a7f6002e44f84deb851133
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 0aedcc3be4cb319dc24990507d85756bd77777e4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977592"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963824"
 ---
-# <a name="support-for-generation-2-vms-on-azure"></a>Ondersteuning voor virtuele machines van generatie 2 op Azure
+# <a name="support-for-generation-2-vms-on-azure"></a>Ondersteuning voor Generatie 2-VM’s in Azure
 
 Ondersteuning voor virtuele machines van generatie 2 (Vm's) is nu beschikbaar in Azure. U kunt de generatie van een virtuele machine niet wijzigen nadat u deze hebt gemaakt. Controleer de overwegingen op deze pagina voordat u een generatie kiest.
 
@@ -101,11 +101,12 @@ Azure biedt momenteel geen ondersteuning voor enkele van de functies die on-prem
 | Azure Site Recovery               | :heavy_check_mark: | :heavy_check_mark: |
 | Back-up/herstel                    | :heavy_check_mark: | :heavy_check_mark: |
 | Galerie met gedeelde afbeeldingen              | :heavy_check_mark: | :heavy_check_mark: |
-| Azure Disk Encryption             | :heavy_check_mark: | BxDxH                |
+| [Azure Disk Encryption](../security/fundamentals/azure-disk-encryption-vms-vmss.md)             | :heavy_check_mark: | BxDxH                |
+| [Versleuteling aan de serverzijde](disk-encryption.md)            | :heavy_check_mark: | :heavy_check_mark: |
 
 ## <a name="creating-a-generation-2-vm"></a>Een virtuele machine van de tweede generatie maken
 
-### <a name="marketplace-image"></a>Marketplace-installatie kopie
+### <a name="marketplace-image"></a>Marketplace-installatiekopie
 
 In de Azure Portal of Azure CLI kunt u virtuele machines van de tweede generatie maken op basis van een Marketplace-installatie kopie die ondersteuning biedt voor UEFI-opstart bewerkingen.
 
@@ -119,7 +120,7 @@ Hieronder vindt u de stappen voor het maken van een Gen2-VM (Generation 2) in Az
 1. Selecteer een installatie kopie die Gen2 ondersteunt.
 1. Klik op **Create**.
 1. Selecteer op het tabblad **Geavanceerd** onder de sectie **VM-generatie** de optie **generatie 2** .
-1. Ga naar het tabblad **basis** informatie en klik onder **Details van exemplaar**op **grootte** en open de Blade **VM-grootte selecteren** .
+1. Ga naar het tabblad **basis** informatie en klik onder **Details van exemplaar** op **grootte** en open de Blade **VM-grootte selecteren** .
 1. Selecteer een [ondersteunde virtuele machine van de tweede generatie](#generation-2-vm-sizes).
 1. Ga door de rest van de pagina's om het maken van de virtuele machine te volt ooien.
 
@@ -192,7 +193,7 @@ U kunt ook virtuele machines van de tweede generatie maken met behulp van schaal
   1. Ga in het Azure Portal naar de pagina met VM-eigenschappen.
   1. Als u de virtuele machine wilt afsluiten en de toewijzing ongedaan wilt maken, selecteert u de knop **stoppen** .
   1. Selecteer in de sectie **schijven** de besturingssysteem schijf die u wilt verg Roten.
-  1. Selecteer in de sectie **schijven** de optie **configuratie**en werk de **grootte** bij naar de gewenste waarde.
+  1. Selecteer in de sectie **schijven** de optie **configuratie** en werk de **grootte** bij naar de gewenste waarde.
   1. Ga terug naar de pagina met eigenschappen van de virtuele machine en **Start** de virtuele machine.
   
   Mogelijk wordt er een waarschuwing weer gegeven voor besturingssysteem schijven groter dan twee TiB. De waarschuwing is niet van toepassing op virtuele machines van de tweede generatie. BESTURINGSSYSTEEM schijf grootten die groter zijn dan 4 TiB worden echter niet ondersteund.

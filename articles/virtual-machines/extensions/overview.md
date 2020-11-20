@@ -4,16 +4,17 @@ description: Meer informatie over Azure VM-extensies
 services: virtual-machines
 author: amjads1
 ms.service: virtual-machines
+ms.subservice: extensions
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 08/03/2020
 ms.author: amjads
-ms.openlocfilehash: 73738f339bea3e8e075530e5de564c1c0854d283
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b1dd26fce2e0a761ceed211933cb79ce518905e2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87552047"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965881"
 ---
 # <a name="azure-virtual-machine-extensions-and-features"></a>Extensie en functies van virtuele Azure-machines
 Uitbrei dingen zijn kleine toepassingen die configuratie en automatisering na de implementatie bieden op virtuele machines van Azure. Het Azure-platform fungeert als host voor veel uitbrei dingen die de VM-configuratie, bewakings-, beveiligings-en hulpprogramma toepassingen beslaan Uitgevers maken een toepassing, zetten deze in een uitbrei ding en vereenvoudigen de installatie. U hoeft alleen maar de vereiste para meters op te geven. 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/13/2017
 ms.author: alkohli
-ms.openlocfilehash: 30a5f92e0092d3e20db25b519fec46e6018dd543
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 6d98f1a1dfb575f4af8b666d173f9354b5eeac6b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168015"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966238"
 ---
 # <a name="automated-disaster-recovery-solution-using-azure-site-recovery-for-file-shares-hosted-on-storsimple"></a>Geautomatiseerde oplossing voor herstel na nood gevallen met Azure Site Recovery voor bestands shares die worden gehost op StorSimple
 
@@ -44,7 +44,7 @@ Het implementeren van een oplossing voor nood herstel met één klik die gebruik
    - StorSimple-opslag apparaat is on-premises geregistreerd bij Azure StorSimple Manager
    - StorSimple Cloud Appliance gemaakt in azure StorSimple Manager. Het apparaat kan worden bewaard in een afsluit status.
    - Bestands shares die worden gehost op de volumes die zijn geconfigureerd op het StorSimple-opslag apparaat
-   - [Azure site Recovery Services-kluis](../site-recovery/site-recovery-vmm-to-vmm.md) die is gemaakt in een Microsoft Azure-abonnement
+   - [Azure site Recovery Services-kluis](/azure/storsimple/hyper-v-vmm-disaster-recovery) die is gemaakt in een Microsoft Azure-abonnement
 
 Als Azure uw herstel site is, voert u het [hulp programma Azure virtual machine Readiness Assessment](https://azure.microsoft.com/downloads/vm-readiness-assessment/) uit op virtuele machines om ervoor te zorgen dat ze compatibel zijn met Azure-vm's en Azure site Recovery Services.
 
@@ -76,7 +76,7 @@ Voor deze stap is het vereist dat u de on-premises Bestands server omgeving voor
 1. Stel het **Gebruikersaccountbeheer zo in** dat **nooit wordt gewaarschuwd**. Dit is vereist zodat u Azure Automation-scripts kunt gebruiken om de iSCSI-doelen na een failover te verbinden door Azure Site Recovery.
    
    1. Druk op de Windows-toets + Q en zoek naar **UAC**.  
-   1. Selecteer **instellingen**voor Gebruikersaccountbeheer wijzigen.  
+   1. Selecteer **instellingen** voor Gebruikersaccountbeheer wijzigen.  
    1. Sleep de balk naar beneden om **nooit te waarschuwen**.  
    1. Klik op **OK** en selecteer vervolgens **Ja** wanneer u hierom wordt gevraagd.  
    
@@ -94,7 +94,7 @@ Voor deze stap is het vereist dat u de on-premises Bestands server omgeving voor
 1. Klik op **Volgende**.
 1. Ga akkoord **met de gebruiksrecht overeenkomst** en klik op **volgende**.
 1. Klik op **Voltooien**.
-1. Maak bestands shares met behulp van volumes gehaald uit de StorSimple-opslag. Zie [de StorSimple Manager-service gebruiken voor het beheren van volumes](storsimple-manage-volumes.md)voor meer informatie.
+1. Maak bestands shares met behulp van volumes gehaald uit de StorSimple-opslag. Zie [de StorSimple Manager-service gebruiken voor het beheren van volumes](./index.yml)voor meer informatie.
    
    1. Druk op uw on-premises Vm's op de Windows-toets + Q en zoek naar **iSCSI**.
    1. Selecteer **iSCSI-initiator**.
@@ -107,12 +107,12 @@ Voor deze stap is het vereist dat u de on-premises Bestands server omgeving voor
    1. Open de Azure Portal en selecteer het tabblad **volumes en apparaten** . Klik op **automatisch configureren**. Het volume dat u hebt gemaakt, wordt weer gegeven.
    1. Selecteer in de portal het tabblad **apparaten** en selecteer vervolgens **een nieuw virtueel apparaat maken.** (Dit virtuele apparaat wordt gebruikt als er een failover wordt uitgevoerd). Dit nieuwe virtuele apparaat kan offline worden bewaard om extra kosten te voor komen. Als u het virtuele apparaat offline wilt halen, gaat u naar de sectie **virtual machines** op de portal en sluit u deze af.
    1. Ga terug naar de on-premises Vm's en open schijf beheer (druk op de Windows-toets + X en selecteer **schijf beheer**).
-   1. U ziet dat er extra schijven worden weer gegeven (afhankelijk van het aantal volumes dat u hebt gemaakt). Klik met de rechter muisknop op de eerste, selecteer **schijf initialiseren**en selecteer **OK**. Klik met de rechter muisknop op de sectie niet- **toegewezen** , selecteer **Nieuw eenvoudig volume**, wijs er een stationsletter aan toe en voltooi de wizard.
+   1. U ziet dat er extra schijven worden weer gegeven (afhankelijk van het aantal volumes dat u hebt gemaakt). Klik met de rechter muisknop op de eerste, selecteer **schijf initialiseren** en selecteer **OK**. Klik met de rechter muisknop op de sectie niet- **toegewezen** , selecteer **Nieuw eenvoudig volume**, wijs er een stationsletter aan toe en voltooi de wizard.
    1. Herhaal stap l voor alle schijven. U kunt nu alle schijven op **deze PC** weer geven in Windows Verkenner.
    1. Gebruik de functie bestands-en opslag Services om bestands shares op deze volumes te maken.
 
 #### <a name="to-create-and-prepare-an-azure-site-recovery-vault"></a>Een Azure Site Recovery kluis maken en voorbereiden
-Raadpleeg de [documentatie van Azure site Recovery](../site-recovery/site-recovery-hyper-v-site-to-azure.md) om aan de slag te gaan met Azure site Recovery voordat u de bestands Server-VM beveiligt.
+Raadpleeg de [documentatie van Azure site Recovery](/azure/storsimple/hyper-v-azure-tutorial) om aan de slag te gaan met Azure site Recovery voordat u de bestands Server-VM beveiligt.
 
 #### <a name="to-enable-protection"></a>Beveiliging inschakelen
 1. Ontkoppel de iSCSI-doel (en) van de on-premises Vm's die u wilt beveiligen via Azure Site Recovery:
@@ -124,7 +124,7 @@ Raadpleeg de [documentatie van Azure site Recovery](../site-recovery/site-recove
    > [!NOTE]
    > Dit zorgt ervoor dat de bestands shares tijdelijk niet beschikbaar zijn.
    
-1. [Schakel de beveiliging van de virtuele machine](../site-recovery/site-recovery-hyper-v-site-to-azure.md) van de bestands Server-VM in via de Azure site Recovery Portal.
+1. [Schakel de beveiliging van de virtuele machine](/azure/storsimple/hyper-v-azure-tutorial) van de bestands Server-VM in via de Azure site Recovery Portal.
 1. Wanneer de initiële synchronisatie begint, kunt u het doel opnieuw verbinding maken. Ga naar de iSCSI-initiator, selecteer het StorSimple-apparaat en klik op **verbinden**.
 1. Wanneer de synchronisatie is voltooid en de status van de virtuele machine is **beveiligd**, selecteert u de virtuele machine, selecteert u het tabblad **configureren** en werkt u het netwerk van de virtuele machine dienovereenkomstig bij (dit is het netwerk waarvan de failover-VM (s) een deel van heeft). Als het netwerk niet wordt weer gegeven, betekent dit dat de synchronisatie nog steeds gaat plaatsvinden.
 
@@ -230,7 +230,7 @@ U kunt een herstel plan maken in ASR om het proces voor het uitvoeren van de fai
             compress-Archive -Path "$moduleDir" -DestinationPath Microsoft.Azure.Management.StorSimple8000Series.zip
       ```
          
-   1. Importeer de Azure Automation module zip-bestand (Microsoft.Azure.Management.StorSimple8000Series.zip) die in de bovenstaande stap is gemaakt. U kunt dit doen door het Automation-account te selecteren, op **modules** onder gedeelde resources te klikken en vervolgens op **een module toevoegen**te klikken.
+   1. Importeer de Azure Automation module zip-bestand (Microsoft.Azure.Management.StorSimple8000Series.zip) die in de bovenstaande stap is gemaakt. U kunt dit doen door het Automation-account te selecteren, op **modules** onder gedeelde resources te klikken en vervolgens op **een module toevoegen** te klikken.
    
    Nadat u de module StorSimple 8000 Series hebt geïmporteerd, moet het tabblad **modules** er als volgt uitzien:
    

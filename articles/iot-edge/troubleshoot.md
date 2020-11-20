@@ -4,16 +4,16 @@ description: In dit artikel vindt u informatie over de standaard diagnostische v
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 04/27/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 540c4394a73ceff1f68a613561c034ca3bc7efc5
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: daae45c9eca45022225ea47aa048815d5eff70c4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046567"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964504"
 ---
 # <a name="troubleshoot-your-iot-edge-device"></a>Problemen met uw IoT Edge apparaat oplossen
 
@@ -46,6 +46,8 @@ Het hulp programma voor probleem oplossing voert veel controles uit die in deze 
 * *Verbindings controles* Controleer of de IOT Edge runtime toegang kan krijgen tot poorten op het hostapparaat en dat alle IOT Edge onderdelen verbinding kunnen maken met de IOT hub. Met deze set controles worden fouten geretourneerd als het IoT Edge apparaat zich achter een proxy bevindt.
 * De *productie gereedheids controles controleren* op aanbevolen productie best practices, zoals de status van certificerings instanties voor certificaten en de configuratie van het logboek bestand van de module.
 
+Het hulp programma IoT Edge controle gebruikt een container om de diagnostische gegevens uit te voeren. De container installatie kopie, `mcr.microsoft.com/azureiotedge-diagnostics:latest` , is beschikbaar via de [micro soft-container Registry](https://github.com/microsoft/containerregistry). Als u een controle wilt uitvoeren op een apparaat zonder directe toegang tot internet, moeten uw apparaten toegang hebben tot de container installatie kopie.
+
 Zie [IOT Edge problemen met controles oplossen](https://github.com/Azure/iotedge/blob/master/doc/troubleshoot-checks.md)voor meer informatie over elk van de diagnostische gegevens die door dit hulp programma worden uitgevoerd, waaronder wat u moet doen als er een fout of waarschuwing wordt weer gegeven.
 
 ## <a name="gather-debug-information-with-support-bundle-command"></a>Informatie over fout opsporing verzamelen met de opdracht ' ondersteunings bundel '
@@ -66,6 +68,8 @@ In Windows:
 iotedge support-bundle --since 6h
 ```
 
+U kunt ook een [directe methode](how-to-retrieve-iot-edge-logs.md#upload-support-bundle-diagnostics) aanroep naar uw apparaat gebruiken om de uitvoer van de opdracht voor de ondersteunings bundel te uploaden naar Azure Blob Storage.
+
 > [!WARNING]
 > De uitvoer van de `support-bundle` opdracht kan de namen van host, apparaat en module bevatten, informatie die is vastgelegd door uw modules, enzovoort. Houd rekening met het volgende als u de uitvoer in een openbaar forum deelt.
 
@@ -74,6 +78,23 @@ iotedge support-bundle --since 6h
 Als u een oudere versie van IoT Edge hebt, kunt u het probleem mogelijk oplossen door een upgrade uit te voeren. Het `iotedge check` hulp programma controleert of de IOT Edge Security daemon de meest recente versie is, maar controleert niet de versies van de modules IOT Edge hub en agent. Als u de versie van de runtime modules op uw apparaat wilt controleren, gebruikt u de opdrachten `iotedge logs edgeAgent` en `iotedge logs edgeHub` . Het versienummer staat in de logboeken vermeld wanneer de module wordt gestart.
 
 Zie [IOT Edge Security daemon en runtime bijwerken](how-to-update-iot-edge.md)voor instructies voor het bijwerken van uw apparaat.
+
+## <a name="verify-the-installation-of-iot-edge-on-your-devices"></a>De installatie van IoT Edge op uw apparaten controleren
+
+U kunt de installatie van IoT Edge op uw apparaten controleren door [de edgeAgent-module te controleren](https://docs.microsoft.com/azure/iot-edge/how-to-monitor-module-twins).
+
+Voer de volgende opdracht uit [Azure Cloud shell](https://shell.azure.com/)om de meest recente edgeAgent-module te verkrijgen:
+
+   ```azurecli-interactive
+   az iot hub module-twin show --device-id <edge_device_id> --module-id $edgeAgent --hub-name <iot_hub_name>
+   ```
+
+Met deze opdracht worden alle edgeAgent- [gerapporteerde eigenschappen](https://docs.microsoft.com/azure/iot-edge/module-edgeagent-edgehub)uitgevoerd. Hier volgen enkele nuttige items om de status van het apparaat te controleren:
+
+* runtime status
+* Start tijd van runtime
+* laatste afsluit tijd van runtime
+* aantal opnieuw gestart runtime
 
 ## <a name="check-the-status-of-the-iot-edge-security-manager-and-its-logs"></a>Controleer de status van de IoT Edge Security Manager en de bijbehorende logboeken
 
@@ -192,6 +213,8 @@ Zodra de IoT Edge Security daemon wordt uitgevoerd, bekijkt u de logboeken van d
 ```cmd
 iotedge logs <container name>
 ```
+
+U kunt ook een [directe methode](how-to-retrieve-iot-edge-logs.md#upload-module-logs) aanroep naar een module op uw apparaat gebruiken om de logboeken van die module te uploaden naar Azure Blob Storage.
 
 ## <a name="view-the-messages-going-through-the-iot-edge-hub"></a>De berichten weer geven die via de IoT Edge hub worden verzonden
 

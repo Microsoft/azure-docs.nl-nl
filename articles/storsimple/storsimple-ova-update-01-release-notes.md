@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/16/2016
 ms.author: alkohli
-ms.openlocfilehash: 95386f36340aca470769c920e40bbb70e09d34fc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67d3fafb9b4b93ae52bdb09d673bf65cad30b816
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80397871"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966153"
 ---
 # <a name="storsimple-virtual-array-update-02-and-01-release-notes"></a>Release opmerkingen bij Update 0,2 en 0,1 voor StorSimple Virtual array
 ## <a name="overview"></a>Overzicht
@@ -44,7 +44,7 @@ Update 0,2 bevat alle wijzigingen van Update 0,1 naast de oplossing die in de vo
 ## <a name="whats-new-in-the-update-01"></a>Wat is er nieuw in de update 0,1
 Update 0,1 bevat de volgende oplossingen voor fouten en verbeteringen. 
 
-* **Verbeterde tolerantie voor Cloud**storingen: deze release bevat verschillende fout oplossingen rond herstel na nood gevallen, back-ups maken, herstellen en trapsgewijs scha kelen in het geval van een storing in de Cloud verbinding. 
+* **Verbeterde tolerantie voor Cloud** storingen: deze release bevat verschillende fout oplossingen rond herstel na nood gevallen, back-ups maken, herstellen en trapsgewijs scha kelen in het geval van een storing in de Cloud verbinding. 
 * **Verbeterde prestaties voor herstellen**: deze release bevat oplossingen voor fouten die de voltooiings tijd van de herstel taken aanzienlijk verminderen.
 * **Optimalisatie van automatische ruimte winning**: wanneer gegevens worden verwijderd op thin provisioned volumes, moeten de ongebruikte opslag blokken worden vrijgemaakt. Met deze versie is het proces voor het vrijmaken van ruimte in de Cloud verbeterd, waardoor de ongebruikte ruimte sneller beschikbaar is in vergelijking met de vorige versies.
 * **Nieuwe installatie kopieën voor virtuele schijven**: nieuwe VHD, VHDX en VMDK zijn nu beschikbaar via de klassieke Azure-Portal. U kunt deze installatie kopieën downloaden om nieuwe update 0,1-apparaten in te richten.
@@ -69,10 +69,10 @@ De volgende tabel bevat een samen vatting van bekende problemen voor de virtuele
 | --- | --- | --- | --- |
 | **1.** |Updates |De virtuele apparaten die in de preview-versie zijn gemaakt, kunnen niet worden bijgewerkt naar een ondersteunde versie van de algemene Beschik baarheid. |Voor deze virtuele apparaten moet een failover worden uitgevoerd voor de release van de algemene Beschik baarheid met behulp van een werk stroom voor nood herstel (DR). |
 | **2.** |Ingerichte gegevens schijf |Wanneer u een gegevens schijf van een bepaalde grootte hebt ingericht en het bijbehorende virtuele StorSimple-apparaat hebt gemaakt, moet u de gegevens schijf niet uitbreiden of verkleinen. Als u dit probeert te doen, gaan alle gegevens in de lokale lagen van het apparaat verloren. | |
-| **3.** |Groeps beleid |Wanneer een apparaat lid is van een domein, kan het Toep assen van een groeps beleid een nadelige invloed hebben op de werking van het apparaat. |Zorg ervoor dat uw virtuele matrix zich in een eigen organisatie-eenheid (OE) bevindt voor Active Directory en dat er geen groeps beleidsobjecten worden toegepast. |
-| **3.** |Lokale web-UI |Als Verbeterde beveiligings functies zijn ingeschakeld in Internet Explorer (IE ESC), werken sommige lokale web-UI-pagina's, zoals het oplossen van problemen of het onderhoud mogelijk niet goed. De knoppen op deze pagina's werken mogelijk ook niet. |Verbeterde beveiligings functies uitschakelen in Internet Explorer. |
-| **5.** |Lokale web-UI |In een Hyper-V virtuele machine worden de netwerk interfaces in de Web-UI weer gegeven als 10 Gbps-interfaces. |Dit gedrag is een reflectie van Hyper-V. Hyper-V geeft altijd 10 Gbps weer voor virtuele netwerk adapters. |
-| **6.** |Gelaagde volumes of shares |Het vergren delen van een byte bereik voor toepassingen die werken met de StorSimple-gelaagde volumes, wordt niet ondersteund. Als het vergren delen van het byte bereik is ingeschakeld, werkt StorSimple lagen niet. |Aanbevolen maat regelen zijn onder andere: <br></br>Schakel de vergren deling van het byte bereik uit in uw toepassings logica.<br></br>U kunt ervoor kiezen om gegevens voor deze toepassing te plaatsen in lokaal vastgemaakte volumes, in tegens telling tot gelaagde volumes.<br></br>Voor *behoud*: als lokaal vastgemaakte volumes en het vergren delen van het bereik van bytes is ingeschakeld, moet u er rekening mee houden dat het lokaal vastgemaakte volume online kan zijn, zelfs voordat de herstel bewerking is voltooid. Als een herstel bewerking wordt uitgevoerd, moet u wachten tot de herstel bewerking is voltooid. |
+| **3.** |Groepsbeleid |Wanneer een apparaat lid is van een domein, kan het Toep assen van een groeps beleid een nadelige invloed hebben op de werking van het apparaat. |Zorg ervoor dat uw virtuele matrix zich in een eigen organisatie-eenheid (OE) bevindt voor Active Directory en dat er geen groeps beleidsobjecten worden toegepast. |
+| **4.** |Lokale web-UI |Als Verbeterde beveiligings functies zijn ingeschakeld in Internet Explorer (IE ESC), werken sommige lokale web-UI-pagina's, zoals het oplossen van problemen of het onderhoud mogelijk niet goed. De knoppen op deze pagina's werken mogelijk ook niet. |Verbeterde beveiligings functies uitschakelen in Internet Explorer. |
+| **5,0.** |Lokale web-UI |In een Hyper-V virtuele machine worden de netwerk interfaces in de Web-UI weer gegeven als 10 Gbps-interfaces. |Dit gedrag is een reflectie van Hyper-V. Hyper-V geeft altijd 10 Gbps weer voor virtuele netwerk adapters. |
+| **6,5.** |Gelaagde volumes of shares |Het vergren delen van een byte bereik voor toepassingen die werken met de StorSimple-gelaagde volumes, wordt niet ondersteund. Als het vergren delen van het byte bereik is ingeschakeld, werkt StorSimple lagen niet. |Aanbevolen maat regelen zijn onder andere: <br></br>Schakel de vergren deling van het byte bereik uit in uw toepassings logica.<br></br>U kunt ervoor kiezen om gegevens voor deze toepassing te plaatsen in lokaal vastgemaakte volumes, in tegens telling tot gelaagde volumes.<br></br>Voor *behoud*: als lokaal vastgemaakte volumes en het vergren delen van het bereik van bytes is ingeschakeld, moet u er rekening mee houden dat het lokaal vastgemaakte volume online kan zijn, zelfs voordat de herstel bewerking is voltooid. Als een herstel bewerking wordt uitgevoerd, moet u wachten tot de herstel bewerking is voltooid. |
 | **7.** |Gelaagde shares |Het werken met grote bestanden kan leiden tot trage lagen. |Wanneer u werkt met grote bestanden, raden we aan dat het grootste bestand kleiner is dan 3% van de share grootte. |
 | **achtste.** |Gebruikte capaciteit voor shares |Het is mogelijk dat er deel verbruik wordt weer gegeven als er geen gegevens op de share zijn. Dit komt omdat de gebruikte capaciteit voor shares meta gegevens bevat. | |
 | **9,4.** |Herstel na noodgeval |U kunt alleen herstel na nood geval uitvoeren voor een bestands server naar hetzelfde domein als die van het bron apparaat. Herstel na nood gevallen naar een doel apparaat in een ander domein wordt niet ondersteund in deze release. |Dit wordt in een latere versie geïmplementeerd. |
@@ -83,5 +83,4 @@ De volgende tabel bevat een samen vatting van bekende problemen voor de virtuele
 | **15.** |Bestands server * |Als aan een bestand in een map een alternatieve gegevensstream (ADS) is gekoppeld, wordt er geen back-up gemaakt van de ADS of kan deze worden hersteld via herstel na nood gevallen, klonen en herstellen op item niveau. | |
 
 ## <a name="next-step"></a>Volgende stap
-[Installeer updates](storsimple-ova-install-update-01.md) op uw virtuele StorSimple-matrix.
-
+[Installeer updates](./storsimple-virtual-array-install-update-06.md) op uw virtuele StorSimple-matrix.

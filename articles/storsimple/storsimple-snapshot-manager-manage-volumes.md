@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 04/18/2016
 ms.author: alkohli
-ms.openlocfilehash: 79a239def70f0455f63c18d86397ec8d927f244c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 309fa85d0a4d877522a89dd8f1e6e71fb2074744
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90054904"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964963"
 ---
 # <a name="use-storsimple-snapshot-manager-to-view-and-manage-volumes"></a>StorSimple Snapshot Manager gebruiken om volumes weer te geven en te beheren
 ## <a name="overview"></a>Overzicht
@@ -45,7 +45,7 @@ In deze zelf studie wordt uitgelegd hoe u volumes kunt koppelen, initialiseren e
 > 
 
 ## <a name="mount-volumes"></a>Volumes koppelen
-Gebruik de volgende procedure voor het koppelen, initialiseren en Format teren van StorSimple-volumes. Deze procedure maakt gebruik van schijf beheer, een systeem hulpprogramma voor het beheren van harde schijven en de bijbehorende volumes of partities. Ga naar [schijf beheer](https://technet.microsoft.com/library/cc770943.aspx) op de website van micro soft TechNet voor meer informatie over schijf beheer.
+Gebruik de volgende procedure voor het koppelen, initialiseren en Format teren van StorSimple-volumes. Deze procedure maakt gebruik van schijf beheer, een systeem hulpprogramma voor het beheren van harde schijven en de bijbehorende volumes of partities. Ga naar [schijf beheer](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770943(v=ws.11)) op de website van micro soft TechNet voor meer informatie over schijf beheer.
 
 #### <a name="to-mount-volumes"></a>Volumes koppelen
 1. Start de micro soft iSCSI-initiator op de hostcomputer.
@@ -62,7 +62,7 @@ Gebruik de volgende procedure voor het koppelen, initialiseren en Format teren v
      > 
 4. Maak de volumes online:
    
-   1. Klik in schijf beheer met de rechter muisknop op een volume dat **offline**is gemarkeerd.
+   1. Klik in schijf beheer met de rechter muisknop op een volume dat **offline** is gemarkeerd.
    2. Klik op **schijf opnieuw activeren**. Als de schijf opnieuw wordt geactiveerd, moet de schijf **online** zijn gemarkeerd.
 5. Initialiseer het volume (s):
    
@@ -80,20 +80,20 @@ Gebruik de volgende procedure voor het koppelen, initialiseren en Format teren v
       * Selecteer het NTFS-bestands systeem.
       * Geef een clustergrootte van 64 kB op.
       * Voer een snelle formattering uit.
-7. Volumes met meerdere partities Format teren. Voor instructies gaat u naar de sectie ' partities en volumes ' in het [implementeren van schijf beheer](https://msdn.microsoft.com/library/dd163556.aspx).
+7. Volumes met meerdere partities Format teren. Voor instructies gaat u naar de sectie ' partities en volumes ' in het [implementeren van schijf beheer](/previous-versions/tn-archive/dd163556(v=technet.10)).
 
 ## <a name="view-information-about-your-volumes"></a>Informatie over uw volumes weer geven
 Gebruik de volgende procedure om informatie weer te geven over lokale en Azure StorSimple-volumes.
 
 #### <a name="to-view-volume-information"></a>Volume gegevens weer geven
 1. Klik op het pictogram bureau blad om StorSimple Snapshot Manager te starten. 
-2. Klik in het deel venster **bereik** op het knoop punt **volumes** . Een lijst met lokale en gekoppelde volumes, inclusief alle Azure StorSimple-volumes, wordt weer gegeven in het **resultaten** venster. De kolommen in het deel venster met **resultaten** kunnen worden geconfigureerd. (Klik met de rechter muisknop op het knoop punt **volumes** , selecteer **weer gave**en selecteer vervolgens **kolommen toevoegen/verwijderen**.)
+2. Klik in het deel venster **bereik** op het knoop punt **volumes** . Een lijst met lokale en gekoppelde volumes, inclusief alle Azure StorSimple-volumes, wordt weer gegeven in het **resultaten** venster. De kolommen in het deel venster met **resultaten** kunnen worden geconfigureerd. (Klik met de rechter muisknop op het knoop punt **volumes** , selecteer **weer gave** en selecteer vervolgens **kolommen toevoegen/verwijderen**.)
    
     ![De kolommen configureren](./media/storsimple-snapshot-manager-manage-volumes/HCS_SSM_View_volumes.png)
    
    | Kolom met resultaten | Beschrijving |
    |:--- |:--- |
-   |  Naam |De **naam** kolom bevat de stationsletter die aan elk gedetecteerd volume is toegewezen. |
+   |  Name |De **naam** kolom bevat de stationsletter die aan elk gedetecteerd volume is toegewezen. |
    |  Apparaat |De kolom **apparaat** bevat het IP-adres van het apparaat dat is verbonden met de hostcomputer. |
    |  Volume naam apparaat |De kolom **volume naam apparaat** bevat de naam van het volume van het apparaat waartoe het geselecteerde volume behoort. Dit is de volume naam die is gedefinieerd in de Azure Portal voor dat specifieke volume. |
    |  Toegangs paden |In de kolom **toegangs paden** wordt het toegangspad naar het volume weer gegeven. Dit is de stationsletter of het koppel punt waarop het volume toegankelijk is op de hostcomputer. |
@@ -121,7 +121,7 @@ Gebruik de volgende procedure om de volumes die zijn verbonden met StorSimple Sn
 
 #### <a name="to-rescan-the-volumes"></a>De volumes opnieuw scannen
 1. Klik op het pictogram bureau blad om StorSimple Snapshot Manager te starten.
-2. Klik in het deel venster **bereik** met de rechter muisknop op **volumes**en klik vervolgens op **volumes opnieuw scannen**.
+2. Klik in het deel venster **bereik** met de rechter muisknop op **volumes** en klik vervolgens op **volumes opnieuw scannen**.
    
     ![Volumes opnieuw scannen](./media/storsimple-snapshot-manager-manage-volumes/HCS_SSM_Rescan_volumes.png)
    
@@ -133,7 +133,7 @@ Gebruik de volgende procedure om een back-up van een standaard volume te configu
 ### <a name="prerequisites"></a>Vereisten
 Voordat u begint:
 
-* Controleer of het StorSimple-apparaat en de hostcomputer correct zijn geconfigureerd. Ga naar [uw on-premises StorSimple-apparaat implementeren](storsimple-deployment-walkthrough-u2.md)voor meer informatie.
+* Controleer of het StorSimple-apparaat en de hostcomputer correct zijn geconfigureerd. Ga naar [uw on-premises StorSimple-apparaat implementeren](./storsimple-8000-deployment-walkthrough-u2.md)voor meer informatie.
 * Installeer en configureer StorSimple Snapshot Manager. Ga naar [Deploy StorSimple Snapshot Manager](storsimple-snapshot-manager-deployment.md)voor meer informatie.
 
 #### <a name="to-configure-backup-of-a-basic-volume"></a>De back-up van een basis volume configureren
@@ -149,7 +149,7 @@ Voordat u begint:
 8. Klik met de rechter muisknop op de naam van de volume groep.
    
    * Als u een interactieve back-uptaak (op aanvraag) wilt starten, klikt u op **back-up maken**. 
-   * Als u een automatische back-up wilt plannen, klikt u op **back-upbeleid maken**. Selecteer op de pagina **Algemeen** een volume groep in de lijst. Voer op de pagina **planning** de details van de planning in. Klik op **OK**als u klaar bent. 
+   * Als u een automatische back-up wilt plannen, klikt u op **back-upbeleid maken**. Selecteer op de pagina **Algemeen** een volume groep in de lijst. Voer op de pagina **planning** de details van de planning in. Klik op **OK** als u klaar bent. 
 9. Als u wilt controleren of de back-uptaak is gestart, vouwt u het knoop punt **taken** in het deel venster **bereik** uit en klikt u vervolgens op het knoop punt dat **wordt uitgevoerd** . De lijst met actieve taken wordt weer gegeven in het **resultaten** venster. 
 
 ## <a name="configure-and-back-up-a-dynamic-mirrored-volume"></a>Een dynamisch gespiegeld volume configureren en een back-up maken
@@ -166,12 +166,12 @@ Voordat u begint:
 * Configureer twee volumes op het StorSimple-apparaat. (In de voor beelden zijn de beschik bare volumes **schijf 1** en **schijf 2**.) 
 
 ### <a name="step-1-use-disk-management-to-create-a-dynamic-mirrored-volume"></a>Stap 1: schijf beheer gebruiken om een dynamisch gespiegeld volume te maken
-Schijf beheer is een systeem hulpprogramma voor het beheren van harde schijven en de volumes of partities die ze bevatten. Ga naar [schijf beheer](https://technet.microsoft.com/library/cc770943.aspx) op de website van micro soft TechNet voor meer informatie over schijf beheer.
+Schijf beheer is een systeem hulpprogramma voor het beheren van harde schijven en de volumes of partities die ze bevatten. Ga naar [schijf beheer](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770943(v=ws.11)) op de website van micro soft TechNet voor meer informatie over schijf beheer.
 
 #### <a name="to-create-a-dynamic-mirrored-volume"></a>Een dynamisch gespiegeld volume maken
 1. Gebruik een van de volgende opties om schijf beheer te starten: 
    
-   * Open het vak **uitvoeren** , typ **diskmgmt. msc**en druk op ENTER.
+   * Open het vak **uitvoeren** , typ **diskmgmt. msc** en druk op ENTER.
    * Start Serverbeheer, vouw het knoop punt **opslag** uit en selecteer vervolgens **schijf beheer**. 
    * Start **systeem beheer**, vouw het knoop punt **computer beheer** uit en selecteer vervolgens **schijf beheer**. 
 2. Zorg ervoor dat er twee volumes beschikbaar zijn op het StorSimple-apparaat. (In het voor beeld zijn de beschik bare volumes **schijf 1** en **schijf 2**.) 
@@ -179,7 +179,7 @@ Schijf beheer is een systeem hulpprogramma voor het beheren van harde schijven e
    
     ![Nieuw gespiegeld volume](./media/storsimple-snapshot-manager-manage-volumes/HCS_SSM_New_mirrored_volume.png) 
 4. Klik op de pagina **Nieuw gespiegeld volume** op **volgende**.
-5. Selecteer op de pagina **schijven selecteren** de optie **schijf 2** in het **geselecteerde** deel venster, klik op **toevoegen**en klik vervolgens op **volgende**. 
+5. Selecteer op de pagina **schijven selecteren** de optie **schijf 2** in het **geselecteerde** deel venster, klik op **toevoegen** en klik vervolgens op **volgende**. 
 6. Accepteer de standaard instellingen op de pagina stationsletter **of pad toewijzen** en klik op **volgende**. 
 7. Selecteer op de pagina **volume Format teren** in het vak **grootte van toewijzings eenheid** de optie **64 KB**. Schakel het selectie vakje **Snelformatteren** in en klik op **volgende**. 
 8. Controleer uw instellingen op de pagina **het nieuwe gespiegelde volume volt ooien** en klik vervolgens op **volt ooien**. 
@@ -202,7 +202,7 @@ Gebruik de volgende procedure om een dynamisch gespiegeld volume te configureren
 6. Klik met de rechter muisknop op de naam van de volume groep. 
    
    * Als u een interactieve back-uptaak (op aanvraag) wilt starten, klikt u op **back-up maken**. 
-   * Als u een automatische back-up wilt plannen, klikt u op **back-upbeleid maken**. Selecteer op de pagina **Algemeen** de volume groep in de lijst. Voer op de pagina **planning** de details van de planning in. Klik op **OK**als u klaar bent. 
+   * Als u een automatische back-up wilt plannen, klikt u op **back-upbeleid maken**. Selecteer op de pagina **Algemeen** de volume groep in de lijst. Voer op de pagina **planning** de details van de planning in. Klik op **OK** als u klaar bent. 
 7. U kunt de back-uptaak controleren terwijl deze wordt uitgevoerd. Vouw in het deel venster **bereik** het knoop punt **taken** uit en klik vervolgens op **uitvoeren**. de taak Details worden weer gegeven in het deel venster met **resultaten** . Wanneer de back-uptaak is voltooid, worden de details overgebracht naar de taken lijst van de **afgelopen 24** uur. 
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -210,4 +210,4 @@ Gebruik de volgende procedure om een dynamisch gespiegeld volume te configureren
 * Meer informatie over het [gebruik van StorSimple Snapshot Manager om volume groepen te maken en te beheren](storsimple-snapshot-manager-manage-volume-groups.md).
 
 <!--Reference links-->
-[1]: https://msdn.microsoft.com/library/ee338480(v=ws.10).aspx
+[1]: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee338480(v=ws.10)

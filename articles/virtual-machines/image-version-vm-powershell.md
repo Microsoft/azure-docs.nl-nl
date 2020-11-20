@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 757b297d3d74365928cda0934485c0018f28ffee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a7ca8236307bbf8a419d2988e1a6dc1e4c40597
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88225645"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964861"
 ---
 # <a name="preview-create-an-image-from-a-vm"></a>Voor beeld: een installatie kopie maken op basis van een virtuele machine
 
@@ -81,7 +81,7 @@ Zie [Installatiekopiedefinities](./windows/shared-image-galleries.md#image-defin
 
 Maak de definitie van de installatiekopie met behulp van [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion). 
 
-In dit voor beeld heeft de definitie van de installatie kopie de naam *myImageDefinition*en is voor een gespecialiseerde virtuele machine waarop Windows wordt uitgevoerd. Als u een definitie wilt maken voor installatie kopieën met Linux, gebruikt u `-OsType Linux` . 
+In dit voor beeld heeft de definitie van de installatie kopie de naam *myImageDefinition* en is voor een gespecialiseerde virtuele machine waarop Windows wordt uitgevoerd. Als u een definitie wilt maken voor installatie kopieën met Linux, gebruikt u `-OsType Linux` . 
 
 ```azurepowershell-interactive
 $imageDefinition = New-AzGalleryImageDefinition `
@@ -105,7 +105,7 @@ Toegestane tekens voor een installatiekopieversie zijn cijfers en punten. Cijfer
 
 In dit voor beeld is de versie van de installatie kopie *1.0.0* en wordt deze gerepliceerd naar zowel *West-Centraal VS* -en *Zuid-Centraal VS* -data centers. Houd er rekening mee dat u bij het kiezen van doel regio's voor replicatie ook de *bron* regio moet toevoegen als doel voor replicatie.
 
-Als u een installatiekopieversie wilt maken op basis van de virtuele machine, gebruikt u `$vm.Id.ToString()` voor de `-Source`.
+Als u een installatiekopieversie wilt maken op basis van de virtuele machine, gebruikt u `$vm.Id.ToString()` voor de `-SourceImageId`.
 
 ```azurepowershell-interactive
    $region1 = @{Name='South Central US';ReplicaCount=1}
@@ -119,7 +119,7 @@ $job = $imageVersion = New-AzGalleryImageVersion `
    -ResourceGroupName $gallery.ResourceGroupName `
    -Location $gallery.Location `
    -TargetRegion $targetRegions  `
-   -Source $sourceVm.Id.ToString() `
+   -SourceImageId $sourceVm.Id.ToString() `
    -PublishingProfileEndOfLifeDate '2020-12-01' `  
    -asJob 
 ```

@@ -1,7 +1,7 @@
 ---
 title: Een opdracht bijwerken vanuit een webeindpunt
 titleSuffix: Azure Cognitive Services
-description: een opdracht bijwerken vanuit een webeindpunt
+description: Meer informatie over het bijwerken van de status van een opdracht met behulp van een aanroep naar een webeindpunt.
 services: cognitive-services
 author: encorona-ms
 manager: yetian
@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/20/2020
 ms.author: encorona
-ms.openlocfilehash: 4432843ac93002bc92068db191706352234d76e6
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: a24f1337a68f38db273688e9a91c65ac2f4736b4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94571198"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963603"
 ---
 # <a name="update-a-command-from-a-web-endpoint"></a>Een opdracht bijwerken vanuit een webeindpunt
 
-Als voor uw client toepassing de status van een doorlopende opdracht moet worden bijgewerkt zonder spraak invoer, kunt u een aanroep naar een webeindpunt gebruiken om de opdracht bij te werken.
+Als voor uw client toepassing een update moet worden uitgevoerd op de status van een doorlopende opdracht zonder stem invoer, kunt u een aanroep naar een webeindpunt gebruiken om de opdracht bij te werken.
 
-In dit artikel wordt beschreven hoe u een doorlopende opdracht bijwerkt vanuit een webeindpunt.
+In dit artikel leert u hoe u een doorlopende opdracht kunt bijwerken vanuit een webeindpunt.
 
 ## <a name="prerequisites"></a>Vereisten
 > [!div class = "checklist"]
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u een doorlopende opdracht bijwerkt vanuit e
 
 ## <a name="create-an-azure-function"></a>Een Azure-functie maken 
 
-Voor dit voor beeld hebben we een HTTP-Triggered [Azure-functie](https://docs.microsoft.com/azure/azure-functions/) nodig die de volgende invoer (of een subset van deze invoer) ondersteunt.
+Voor dit voor beeld hebt u een [Azure-functie](https://docs.microsoft.com/azure/azure-functions/) met http geactiveerd die de volgende invoer ondersteunt (of een subset van deze invoer):
 
 ```JSON
 {
@@ -48,16 +48,16 @@ Voor dit voor beeld hebben we een HTTP-Triggered [Azure-functie](https://docs.mi
 }
 ```
 
-Hiermee worden de belangrijkste kenmerken van deze invoer gecontroleerd.
+Laten we de belangrijkste kenmerken van deze invoer bekijken:
 
 | Kenmerk | Uitleg |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **conversationId** | ' conversationId ' is de unieke id van de conversatie. deze id kan worden gegenereerd op basis van de client-app. |
-| **currentCommand** | ' currentCommand ' is de opdracht die momenteel actief is in de conversatie. |
-| **name** | ' naam ' is de naam van de opdracht en ' para meters ' is een toewijzing met de huidige waarden van de para meters. |
-| **currentGlobalParameters** | ' currentGlobalParameters ' is ook een toewijzing zoals ' para meters ', maar wordt gebruikt voor algemene para meters. |
+| **conversationId** | De unieke id van de conversatie. Houd er rekening mee dat deze ID kan worden gegenereerd op basis van de client-app. |
+| **currentCommand** | De opdracht die momenteel actief is in de conversatie. |
+| **name** | De naam van de opdracht. Het `parameters` kenmerk is een toewijzing met de huidige waarden van de para meters. |
+| **currentGlobalParameters** | Een kaart zoals `parameters` , die wordt gebruikt voor algemene para meters. |
 
-De uitvoer van de Azure-functie moet de volgende indeling ondersteunen.
+De uitvoer van de Azure-functie moet de volgende indeling ondersteunen:
 
 ```JSON
 {
@@ -74,9 +74,9 @@ De uitvoer van de Azure-functie moet de volgende indeling ondersteunen.
 }
 ```
 
-U kunt deze indeling herkennen omdat deze hetzelfde is als de naam die wordt gebruikt bij het [bijwerken van een opdracht van de client](./how-to-custom-commands-update-command-from-client.md). 
+U kunt deze indeling herkennen omdat deze hetzelfde is als de naam die u hebt gebruikt bij het [bijwerken van een opdracht van de client](./how-to-custom-commands-update-command-from-client.md). 
 
-Maak nu een Azure-functie op basis van NodeJS en kopieer-plak deze code
+Maak nu een Azure-functie op basis van Node.js. Kopieer/plak deze code:
 
 ```nodejs
 module.exports = async function (context, req) {
@@ -94,35 +94,35 @@ module.exports = async function (context, req) {
 }
 ```
 
-Wanneer we deze Azure-functie aanroepen vanuit aangepaste opdrachten, verzenden we de huidige waarden van de conversatie en retour neren we de para meters die u wilt bijwerken of als u de huidige opdracht wilt annuleren.
+Wanneer u deze Azure-functie aanroept vanuit aangepaste opdrachten, verzendt u de huidige waarden van de conversatie. U retourneert de para meters die u wilt bijwerken of als u de huidige opdracht wilt annuleren.
 
 ## <a name="update-the-existing-custom-commands-app"></a>De bestaande aangepaste opdrachten-app bijwerken
 
-We gaan nu de Azure-functie koppelen aan de bestaande aangepaste opdrachten voor apps.
+We gaan de Azure-functie koppelen met de bestaande app voor aangepaste opdrachten:
 
-1. Voeg een nieuwe opdracht met de naam IncrementCounter.
-1. Voeg slechts één voorbeeld zin toe met de waarde ' verhogen '.
-1. Voeg een nieuwe para meter met de naam counter (dezelfde naam zoals opgegeven in de Azure-functie) van het type getal met de standaard waarde 0 toe.
-1. Voeg een nieuw webeind punt toe met de naam IncrementEndpoint met de URL van uw Azure-functie en met externe updates ingeschakeld.
+1. Voeg een nieuwe opdracht toe met de naam `IncrementCounter` .
+1. Voeg slechts één voorbeeld zin toe met de waarde `increment` .
+1. Voeg een nieuwe para meter toe `Counter` (dezelfde naam zoals opgegeven in de Azure-functie) van het type `Number` met de standaard waarde van `0` .
+1. Voeg een nieuw webeind punt toe `IncrementEndpoint` met de naam met de URL van uw Azure-functie, waarbij **externe updates** zijn ingesteld op **ingeschakeld**.
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/custom-commands/set-web-endpoint-with-remote-updates.png" alt-text="Webeindpunt instellen met externe updates":::
-1. Maak een nieuwe interactie regel met de naam ' IncrementRule ' en voeg een aanroep-Web-eindpunt actie toe.
+    > :::image type="content" source="./media/custom-commands/set-web-endpoint-with-remote-updates.png" alt-text="Scherm afbeelding van het instellen van een webeindpunt met externe updates.":::
+1. Maak een nieuwe interactie regel met de naam **IncrementRule** en voeg een **aanroep-Web-eindpunt** actie toe.
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/custom-commands/increment-rule-web-endpoint.png" alt-text="Regel voor incrementeel verhogen":::
-1. In de actie configuratie selecteert u de IncrementEndpoint, configureert u op geslaagd om spraak reacties te verzenden met de waarde van Counter en bij fout met een fout bericht.
+    > :::image type="content" source="./media/custom-commands/increment-rule-web-endpoint.png" alt-text="Scherm afbeelding die het maken van een interactie regel weergeeft.":::
+1. Selecteer in de actie configuratie `IncrementEndpoint` . Configureer **op geslaagd** om een **antwoord te verzenden** met de waarde van `Counter` en configureer **bij fout** met een fout bericht.
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/custom-commands/set-increment-counter-call-endpoint.png" alt-text="Eind punt voor item aanroepen instellen":::
-1. De status na uitvoering van de regel instellen om te wachten op invoer van de gebruiker
+    > :::image type="content" source="./media/custom-commands/set-increment-counter-call-endpoint.png" alt-text="Scherm opname van het instellen van een verhogings teller voor het aanroepen van een webeindpunt.":::
+1. Stel de status na uitvoering van de regel in op **wachten op invoer** van de gebruiker.
 
 ## <a name="test-it"></a>Testen
 
-1. Uw app opslaan en trainen
-1. Klik op testen
-1. Verzend een paar keer ' verhogen ' (dit is de voorbeeld zin voor de opdracht IncrementCounter)
+1. Sla uw app op en Train deze.
+1. Selecteer **Testen**.
+1. Verzend `increment` een paar keer (dit is de voor beeld-zin voor de `IncrementCounter` opdracht).
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/custom-commands/increment-counter-example.png" alt-text="Voor beeld van een oplopend item":::
+    > :::image type="content" source="./media/custom-commands/increment-counter-example.png" alt-text="Scherm afbeelding van een voor beeld van een oplopend item.":::
 
-U ziet hoe de waarde van de teller-para meter op elke beurt wordt verhoogd door de Azure-functie.
+U ziet hoe de functie Azure de waarde van de `Counter` para meter op elke beurt verhoogt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

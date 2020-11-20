@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9055bb9689895a9b74f3d6b5affa325a3b594d65
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 2cdf89fa3281e070d6b1ac762d30d7c391f4126f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874675"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963637"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerrol in Azure Active Directory
 
@@ -707,10 +707,11 @@ Volledige toegang tot het beheren van apparaten in azure AD.
 | **Acties** | **Beschrijving** |
 | --- | --- |
 | microsoft.directory/auditLogs/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op audit logs bevat in Azure Active Directory. |
-| micro soft. Directory/apparaten/bitLockerRecoveryKeys/lezen | Lees de eigenschap devices. bitLockerRecoveryKeys in Azure Active Directory. |
+| micro soft. map/bitlockerKeys/sleutel/lezen | Lees de BitLocker-sleutel objecten en-eigenschappen (met inbegrip van de herstel sleutel) in Azure Active Directory. |
 | micro soft. Directory/apparaten/verwijderen | Apparaten verwijderen in Azure Active Directory. |
 | micro soft. map/apparaten/uitschakelen | Apparaten uitschakelen in Azure Active Directory. |
 | micro soft. map/apparaten/inschakelen | Apparaten inschakelen in Azure Active Directory. |
+| micro soft. Directory/apparaten/extensionAttributes/update | Alle waarden voor de eigenschap devices. extensionAttributes in Azure Active Directory bijwerken. |
 | microsoft.directory/signInReports/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op signInReports in Azure Active Directory. |
 | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
@@ -731,6 +732,7 @@ Kan alle aspecten beheren van Azure AD en micro soft-services die gebruikmaken v
 | micro soft. Directory/toepassingen/allProperties/allTasks | Maak en verwijder toepassingen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
 | micro soft. Directory/appRoleAssignments/allProperties/allTasks | Maak en verwijder appRoleAssignments en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
 | microsoft.directory/auditLogs/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op audit logs bevat in Azure Active Directory. |
+| micro soft. map/bitlockerKeys/sleutel/lezen | Lees de BitLocker-sleutel objecten en-eigenschappen (met inbegrip van de herstel sleutel) in Azure Active Directory. |
 | micro soft. Directory/Contacts/allProperties/allTasks | Maak en Verwijder contact personen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
 | micro soft. Directory/contracten/allProperties/allTasks | Maak en verwijder contracten en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
 | micro soft. Directory/apparaten/allProperties/allTasks | Maak en Verwijder apparaten en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
@@ -1087,6 +1089,7 @@ Kan alles lezen dat een globale beheerder wel kan, maar geen bewerkingen kan ond
 | micro soft. Directory/toepassingen/basis/lezen    | Lees de basis eigenschappen van toepassingen in Azure Active Directory. |
 | micro soft. Directory/toepassingen/eigen aren/lezen    | Lees de eigenschap Applications. Owners in Azure Active Directory. |
 | micro soft. Directory/toepassingen/beleid/lezen    | Lees de eigenschap toepassingen. policies in Azure Active Directory. |
+| micro soft. map/bitlockerKeys/sleutel/lezen | Lees de BitLocker-sleutel objecten en-eigenschappen (met inbegrip van de herstel sleutel) in Azure Active Directory. |
 | micro soft. map/Contacts/basis/lezen    | Lees de basis eigenschappen van contact personen in Azure Active Directory. |
 | micro soft. map/contact personen/memberOf/lezen    | Lees de eigenschap Contacts. memberOf in Azure Active Directory. |
 | micro soft. map/contracten/basis/lezen    | Lees de basis eigenschappen voor contracten in Azure Active Directory. |
@@ -1267,13 +1270,16 @@ Kan alle aspecten van het intune-product beheren.
 
 | **Acties** | **Beschrijving** |
 | --- | --- |
+| micro soft. map/bitlockerKeys/sleutel/lezen | Lees de BitLocker-sleutel objecten en-eigenschappen (met inbegrip van de herstel sleutel) in Azure Active Directory. |
 | micro soft. map/Contacts/basis/update | Basis eigenschappen van contact personen in Azure Active Directory bijwerken. |
 | micro soft. map/Contacts/maken | Maak contact personen in Azure Active Directory. |
 | micro soft. map/contact personen/verwijderen | Verwijder contact personen in Azure Active Directory. |
 | micro soft. map/apparaten/basis/bijwerken | Basis eigenschappen bijwerken op apparaten in Azure Active Directory. |
-| micro soft. Directory/apparaten/bitLockerRecoveryKeys/lezen | Lees de eigenschap devices. bitLockerRecoveryKeys in Azure Active Directory. |
 | micro soft. map/apparaten/maken | Apparaten maken in Azure Active Directory. |
 | micro soft. Directory/apparaten/verwijderen | Apparaten verwijderen in Azure Active Directory. |
+| micro soft. map/apparaten/uitschakelen | Apparaten uitschakelen in Azure Active Directory. |
+| micro soft. map/apparaten/inschakelen | Apparaten inschakelen in Azure Active Directory. |
+| micro soft. Directory/apparaten/extensionAttributes/update | Alle waarden voor de eigenschap devices. extensionAttributes in Azure Active Directory bijwerken. |
 | micro soft. Directory/apparaten/registeredOwners/update | Werk de eigenschap devices. registeredOwners bij in Azure Active Directory. |
 | micro soft. Directory/apparaten/registeredUsers/update | Werk de eigenschap devices. registeredUsers bij in Azure Active Directory. |
 | micro soft. Directory/groepen/appRoleAssignments/update | Werk de eigenschap groups. appRoleAssignments bij in Azure Active Directory. |
@@ -1654,9 +1660,9 @@ Kan beveiligings gegevens en-rapporten lezen en configuratie in azure AD en Micr
 | --- | --- |
 | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
+| micro soft. map/bitlockerKeys/sleutel/lezen | Lees de BitLocker-sleutel objecten en-eigenschappen (met inbegrip van de herstel sleutel) in Azure Active Directory. |
 | micro soft. Directory/toepassingen/beleid/update | Werk de eigenschap Applications. policies bij in Azure Active Directory. |
 | microsoft.directory/auditLogs/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op audit logs bevat in Azure Active Directory. |
-| micro soft. Directory/apparaten/bitLockerRecoveryKeys/lezen | Lees de eigenschap devices. bitLockerRecoveryKeys in Azure Active Directory. |
 | micro soft. map/identityProtection/allProperties/lezen | Alle resources in micro soft. Aad. identityProtection lezen. |
 | micro soft. Directory/identityProtection/allProperties/update | Alle resources in micro soft. Aad. identityProtection bijwerken. |
 | micro soft. Directory/policies/Basic/update | Basis eigenschappen van beleid in Azure Active Directory bijwerken. |
@@ -1706,7 +1712,7 @@ Kan beveiligings gegevens en-rapporten in azure AD en Microsoft 365 lezen.
 | **Acties** | **Beschrijving** |
 | --- | --- |
 | microsoft.directory/auditLogs/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op audit logs bevat in Azure Active Directory. |
-| micro soft. Directory/apparaten/bitLockerRecoveryKeys/lezen | Lees de eigenschap devices. bitLockerRecoveryKeys in Azure Active Directory. |
+| micro soft. map/bitlockerKeys/sleutel/lezen | Lees de BitLocker-sleutel objecten en-eigenschappen (met inbegrip van de herstel sleutel) in Azure Active Directory. |
 | micro soft. Directory/policies/conditionalAccess/Basic/Read | Lees de eigenschap policies. conditionalAccess in Azure Active Directory. |
 | microsoft.directory/signInReports/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op signInReports in Azure Active Directory. |
 | micro soft. Aad. identityProtection/aldaar/Lees | Alle resources in micro soft. Aad. identityProtection lezen. |

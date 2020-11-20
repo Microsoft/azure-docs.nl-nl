@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: eefd67d4d150c0c8d152002a174c62d31fcb8b5f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b6cb195f44bf6c868402481480d9b10802c4d59
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90975070"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965665"
 ---
 # <a name="use-packet-capture-for-proactive-network-monitoring-with-alerts-and-azure-functions"></a>Pakket opname gebruiken voor proactieve netwerk bewaking met waarschuwingen en Azure Functions
 
@@ -39,7 +39,7 @@ Door Network Watcher, waarschuwingen en functies vanuit het Azure-ecosysteem te 
 
 * De nieuwste versie van [Azure PowerShell](/powershell/azure/install-Az-ps).
 * Een bestaand exemplaar van Network Watcher. Als u er nog geen hebt, [maakt u een instantie van Network Watcher](network-watcher-create.md).
-* Een bestaande virtuele machine in dezelfde regio als Network Watcher met de extensie van de [Windows-extensie](../virtual-machines/windows/extensions-nwa.md) of [Linux-virtuele machine](../virtual-machines/linux/extensions-nwa.md).
+* Een bestaande virtuele machine in dezelfde regio als Network Watcher met de extensie van de [Windows-extensie](../virtual-machines/extensions/network-watcher-windows.md) of [Linux-virtuele machine](../virtual-machines/extensions/network-watcher-linux.md).
 
 ## <a name="scenario"></a>Scenario
 
@@ -68,7 +68,7 @@ Dit scenario doet het volgende:
 
 De eerste stap is het maken van een Azure-functie voor het verwerken van de waarschuwing en het maken van een pakket opname.
 
-1. Selecteer in de [Azure Portal](https://portal.azure.com) **een bron**  >  **berekenings**  >  **functie-app**maken.
+1. Selecteer in de [Azure Portal](https://portal.azure.com) **een bron**  >  **berekenings**  >  **functie-app** maken.
 
     ![Een functie-app maken][1-1]
 
@@ -85,7 +85,7 @@ De eerste stap is het maken van een Azure-functie voor het verwerken van de waar
 
 3. Selecteer op de Blade **PacketCaptureExample functie-apps** de optie **functies**  >  **aangepaste functie**  > **+** .
 
-4. Selecteer **http trigger-Power shell**en voer vervolgens de resterende informatie in. Ten slotte selecteert u **maken**om de functie te maken.
+4. Selecteer **http trigger-Power shell** en voer vervolgens de resterende informatie in. Ten slotte selecteert u **maken** om de functie te maken.
 
     |**Instelling** | **Waarde** | **Details** |
     |---|---|---|
@@ -176,7 +176,7 @@ $Encryptedpassword = $secPw | ConvertFrom-SecureString -Key $AESKey
 $Encryptedpassword
 ```
 
-Maak een map met de naam **sleutels** onder **AlertPacketCapturePowerShell**in de app service-editor van de functie-app. Upload vervolgens het bestand **PassEncryptKey. key** dat u hebt gemaakt in het vorige Power shell-voor beeld.
+Maak een map met de naam **sleutels** onder **AlertPacketCapturePowerShell** in de app service-editor van de functie-app. Upload vervolgens het bestand **PassEncryptKey. key** dat u hebt gemaakt in het vorige Power shell-voor beeld.
 
 ![Functie sleutel][functions8]
 
@@ -264,7 +264,7 @@ Het is nu tijd om vanuit de Azure-functie aanroepen naar Network Watcher te make
 4. Navraag pakket vastleggen regel matig tot het is voltooid.
 5. Informeer de gebruiker dat de pakket opname sessie is voltooid.
 
-Het volgende voor beeld is Power shell-code die in de functie kan worden gebruikt. Er zijn waarden die moeten worden vervangen voor **subscriptionId**, **resourceGroupName**en **storageAccountName**.
+Het volgende voor beeld is Power shell-code die in de functie kan worden gebruikt. Er zijn waarden die moeten worden vervangen voor **subscriptionId**, **resourceGroupName** en **storageAccountName**.
 
 ```powershell
             #Import Azure PowerShell modules required to make calls to Network Watcher
@@ -340,20 +340,20 @@ Waarschuwingen kunnen worden geconfigureerd om personen te waarschuwen wanneer e
 
 ### <a name="create-the-alert-rule"></a>De waarschuwings regel maken
 
-Ga naar een bestaande virtuele machine en voeg vervolgens een waarschuwings regel toe. Meer gedetailleerde documentatie over het configureren van waarschuwingen vindt u [in azure monitor voor Azure-Services-Azure Portal](../monitoring-and-diagnostics/insights-alerts-portal.md). Voer de volgende waarden in op de Blade **waarschuwings regel** en selecteer **OK**.
+Ga naar een bestaande virtuele machine en voeg vervolgens een waarschuwings regel toe. Meer gedetailleerde documentatie over het configureren van waarschuwingen vindt u [in azure monitor voor Azure-Services-Azure Portal](../azure-monitor/platform/alerts-classic-portal.md). Voer de volgende waarden in op de Blade **waarschuwings regel** en selecteer **OK**.
 
   |**Instelling** | **Waarde** | **Details** |
   |---|---|---|
   |**Naam**|TCP_Segments_Sent_Exceeded|De naam van de waarschuwings regel.|
   |**Beschrijving**|Drempel waarde verzonden TCP-segmenten overschreden|De beschrijving voor de waarschuwings regel.|
-  |**Meting**|Verzonden TCP-segmenten| De metriek die moet worden gebruikt om de waarschuwing te activeren. |
+  |**Metrisch gegeven**|Verzonden TCP-segmenten| De metriek die moet worden gebruikt om de waarschuwing te activeren. |
   |**Condition**|Groter dan| De voor waarde die moet worden gebruikt bij het evalueren van de metriek.|
   |**Spreek**|100| De waarde van de metriek waarmee de waarschuwing wordt geactiveerd. Deze waarde moet worden ingesteld op een geldige waarde voor uw omgeving.|
   |**Periode**|In de afgelopen vijf minuten| Bepaalt de periode waarin de drempel waarde voor de metriek moet worden gezocht.|
   |**Webhook**|[webhook-URL uit functie-app]| De webhook-URL uit de functie-app die in de vorige stappen is gemaakt.|
 
 > [!NOTE]
-> De metrische gegevens voor TCP-segmenten zijn standaard niet ingeschakeld. Meer informatie over het inschakelen van aanvullende metrische gegevens vindt u [controle en diagnostische gegevens inschakelen](../monitoring-and-diagnostics/insights-how-to-use-diagnostics.md).
+> De metrische gegevens voor TCP-segmenten zijn standaard niet ingeschakeld. Meer informatie over het inschakelen van aanvullende metrische gegevens vindt u [controle en diagnostische gegevens inschakelen](../azure-monitor/overview.md).
 
 ## <a name="review-the-results"></a>De resultaten bekijken
 
@@ -363,11 +363,11 @@ Nadat de criteria voor de waarschuwing zijn geactiveerd, wordt een pakket opname
 
 Als het opname bestand lokaal is opgeslagen, kunt u het ophalen door u aan te melden bij de virtuele machine.
 
-Zie [aan de slag met Azure Blob Storage met .net](../storage/blobs/storage-dotnet-how-to-use-blobs.md)voor instructies over het downloaden van bestanden van Azure-opslag accounts. Een ander hulp programma dat u kunt gebruiken, is [Storage Explorer](https://storageexplorer.com/).
+Zie [aan de slag met Azure Blob Storage met .net](../storage/blobs/storage-quickstart-blobs-dotnet.md)voor instructies over het downloaden van bestanden van Azure-opslag accounts. Een ander hulp programma dat u kunt gebruiken, is [Storage Explorer](https://storageexplorer.com/).
 
 Nadat uw opname is gedownload, kunt u deze weer geven met behulp van elk hulp programma dat een **. Cap** -bestand kan lezen. Hieronder vindt u koppelingen naar twee van deze hulpprogram ma's:
 
-- [Micro soft Message Analyzer](https://technet.microsoft.com/library/jj649776.aspx)
+- [Micro soft Message Analyzer](/message-analyzer/microsoft-message-analyzer-operating-guide)
 - [WireShark](https://www.wireshark.org/)
 
 ## <a name="next-steps"></a>Volgende stappen

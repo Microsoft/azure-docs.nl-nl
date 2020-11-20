@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 1d7d477e50ef4fc47042d57aa973d483a784465d
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 792908236c4f240db64bd3899474d779d5b0570c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127332"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966510"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introductie van stroomlogboeken voor netwerkbeveiligingsgroepen
 
 ## <a name="introduction"></a>Inleiding
 
-Stroom logboeken voor [netwerk beveiligings groepen](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) (NSG) is een functie van Azure Network Watcher waarmee u informatie kunt vastleggen over IP-verkeer dat wordt doorgelopen via een NSG. Stroom gegevens worden verzonden naar Azure Storage accounts van waaruit u toegang hebt, en deze kunt u exporteren naar een wille keurig visualisatie programma, SIEM of ID'S van uw keuze.
+Stroom logboeken voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules) (NSG) is een functie van Azure Network Watcher waarmee u informatie kunt vastleggen over IP-verkeer dat wordt doorgelopen via een NSG. Stroom gegevens worden verzonden naar Azure Storage accounts van waaruit u toegang hebt, en deze kunt u exporteren naar een wille keurig visualisatie programma, SIEM of ID'S van uw keuze.
 
 ![overzicht van stroom logboeken](./media/network-watcher-nsg-flow-logging-overview/homepage.jpg)
 
@@ -54,12 +54,12 @@ Stroom logboeken zijn de bron van waarheid voor alle netwerk activiteiten in uw 
 - Stroom logboeken hebben een Bewaar functie waarmee de logboeken automatisch kunnen worden verwijderd tot een jaar nadat ze zijn gemaakt. 
 
 > [!NOTE]
-> Bewaren is alleen beschikbaar als u gebruikmaakt van [v2-opslag accounts (GPv2) voor algemeen](https://docs.microsoft.com/azure/storage/common/storage-account-overview#types-of-storage-accounts)gebruik. 
+> Bewaren is alleen beschikbaar als u gebruikmaakt van [v2-opslag accounts (GPv2) voor algemeen](../storage/common/storage-account-overview.md#types-of-storage-accounts)gebruik. 
 
 **Basisconcepten**
 
 - Software gedefinieerde netwerken zijn ingedeeld rond virtuele netwerken (VNETs) en subnetten. De beveiliging van deze VNets en subnetten kan worden beheerd met behulp van een NSG.
-- Een netwerk beveiligings groep (NSG) bevat een lijst met _beveiligings regels_ voor het toestaan of weigeren van netwerk verkeer in bronnen waarmee deze is verbonden. Nsg's kan worden gekoppeld aan subnetten, afzonderlijke Vm's of afzonderlijke netwerk interfaces (NIC) die zijn gekoppeld aan Vm's (Resource Manager). Zie [overzicht van netwerk beveiligings groepen](https://docs.microsoft.com/azure/virtual-network/security-overview?toc=%2Fazure%2Fnetwork-watcher%2Ftoc.json)voor meer informatie.
+- Een netwerk beveiligings groep (NSG) bevat een lijst met _beveiligings regels_ voor het toestaan of weigeren van netwerk verkeer in bronnen waarmee deze is verbonden. Nsg's kan worden gekoppeld aan subnetten, afzonderlijke Vm's of afzonderlijke netwerk interfaces (NIC) die zijn gekoppeld aan Vm's (Resource Manager). Zie [overzicht van netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json)voor meer informatie.
 - Alle verkeers stromen in uw netwerk worden geëvalueerd aan de hand van de regels in de desbetreffende NSG.
 - Het resultaat van deze evaluaties is NSG-stroom Logboeken. Stroom logboeken worden verzameld via het Azure-platform en hoeven niet te worden gewijzigd in de resources van de klant.
 - Opmerking: regels bestaan uit twee typen: het beëindigen van & niet-beëindigd, elk met verschillende gedragingen voor logboek registratie.
@@ -309,15 +309,15 @@ Voor voortzetting _C_ en de laatste _E_ stroom status zijn de aantallen voor byt
 
 Gebruik de relevante koppeling hieronder voor hulp lijnen voor het inschakelen van stroom Logboeken.
 
-- [Azure-portal](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
-- [PowerShell](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-powershell)
-- [CLI](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-cli)
-- [REST](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-rest)
-- [Azure Resource Manager](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-azure-resource-manager)
+- [Azure-portal](./network-watcher-nsg-flow-logging-portal.md)
+- [PowerShell](./network-watcher-nsg-flow-logging-powershell.md)
+- [CLI](./network-watcher-nsg-flow-logging-cli.md)
+- [REST](./network-watcher-nsg-flow-logging-rest.md)
+- [Azure Resource Manager](./network-watcher-nsg-flow-logging-azure-resource-manager.md)
 
 ## <a name="updating-parameters"></a>Para meters bijwerken
 
-**Azure Portal**
+**Azure-portal**
 
 Ga in het Azure Portal naar de sectie NSG-stroom Logboeken in Network Watcher. Klik vervolgens op de naam van de NSG. Hiermee wordt het deel venster instellingen voor het stroom logboek weer gegeven. Wijzig de gewenste para meters en druk op **Opslaan** om de wijzigingen te implementeren.
 
@@ -329,8 +329,8 @@ Als u para meters wilt bijwerken via opdracht regel Programma's, gebruikt u deze
 
 *Stroom logboeken lezen en exporteren*
 
-- [&amp;Weergave stroom logboeken downloaden vanuit de portal](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal#download-flow-log)
-- [Stroom logboeken lezen met behulp van Power shell-functies](https://docs.microsoft.com/azure/network-watcher/network-watcher-read-nsg-flow-logs)
+- [&amp;Weergave stroom logboeken downloaden vanuit de portal](./network-watcher-nsg-flow-logging-portal.md#download-flow-log)
+- [Stroom logboeken lezen met behulp van Power shell-functies](./network-watcher-read-nsg-flow-logs.md)
 - [NSG-stroom logboeken exporteren naar Splunk](https://www.splunk.com/en_us/blog/tips-and-tricks/splunking-microsoft-azure-network-watcher-data.html)
 
 Terwijl flow logboeken doel-Nsg's, worden ze niet weer gegeven als de andere logboeken. Stroom logboeken worden alleen in een opslag account opgeslagen en volgen het pad naar Logboeken dat in het volgende voor beeld wordt weer gegeven:
@@ -341,11 +341,11 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 *Stroom logboeken visualiseren*
 
-- [Azure Traffic Analytics](https://docs.microsoft.com/azure/network-watcher/traffic-analytics) is een systeem eigen Azure-service voor het verwerken van stroom logboeken, het uitpakken van inzichten en het visualiseren van stroom Logboeken. 
-- [Vind NSG-stroom logboeken visualiseren met Power BI](https://docs.microsoft.com/azure/network-watcher/network-watcher-visualize-nsg-flow-logs-power-bi)
-- [Vind NSG-stroom logboeken visualiseren met elastische stack](https://docs.microsoft.com/azure/network-watcher/network-watcher-visualize-nsg-flow-logs-open-source-tools)
-- [Vind NSG-stroom logboeken beheren en analyseren met behulp van Grafana](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-grafana)
-- [Vind NSG-stroom logboeken beheren en analyseren met behulp van Graylog](https://docs.microsoft.com/azure/network-watcher/network-watcher-analyze-nsg-flow-logs-graylog)
+- [Azure Traffic Analytics](./traffic-analytics.md) is een systeem eigen Azure-service voor het verwerken van stroom logboeken, het uitpakken van inzichten en het visualiseren van stroom Logboeken. 
+- [Vind NSG-stroom logboeken visualiseren met Power BI](./network-watcher-visualize-nsg-flow-logs-power-bi.md)
+- [Vind NSG-stroom logboeken visualiseren met elastische stack](./network-watcher-visualize-nsg-flow-logs-open-source-tools.md)
+- [Vind NSG-stroom logboeken beheren en analyseren met behulp van Grafana](./network-watcher-nsg-grafana.md)
+- [Vind NSG-stroom logboeken beheren en analyseren met behulp van Graylog](./network-watcher-analyze-nsg-flow-logs-graylog.md)
 
 
 ## <a name="nsg-flow-logging-considerations"></a>Aandachtspunten voor NSG flow-logboek registratie
@@ -355,9 +355,9 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 - Locatie: het gebruikte opslag account moet zich in dezelfde regio bevinden als de NSG.
 - Zelfs wisseling van sleutels: als u de toegangs sleutels wijzigt/roteert naar uw opslag account, werken NSG-stroom logboeken niet meer. U kunt dit probleem oplossen door de NSG-stroom Logboeken uit te scha kelen en opnieuw in te scha kelen.
 
-**Kosten**voor het vastleggen van de stroom: de logboek registratie voor NSG wordt gefactureerd op het volume van de logboeken die zijn gegenereerd. High Traffic volume kan leiden tot een groot stroom logboek volume en de bijbehorende kosten. De prijzen voor het NSG-stroom logboek bevatten geen onderliggende kosten voor opslag. Het gebruik van de functie voor het Bewaar beleid met de logboek registratie van de NSG-stroom houdt in dat afzonderlijke opslag kosten voor langere Peri Oden worden bespaard. Als u de functie voor het Bewaar beleid niet nodig hebt, raden we u aan deze waarde in te stellen op 0. Zie voor meer informatie [Network Watcher prijzen](https://azure.microsoft.com/pricing/details/network-watcher/) en [Azure Storage prijzen](https://azure.microsoft.com/pricing/details/storage/) voor meer informatie.
+**Kosten** voor het vastleggen van de stroom: de logboek registratie voor NSG wordt gefactureerd op het volume van de logboeken die zijn gegenereerd. High Traffic volume kan leiden tot een groot stroom logboek volume en de bijbehorende kosten. De prijzen voor het NSG-stroom logboek bevatten geen onderliggende kosten voor opslag. Het gebruik van de functie voor het Bewaar beleid met de logboek registratie van de NSG-stroom houdt in dat afzonderlijke opslag kosten voor langere Peri Oden worden bespaard. Als u de functie voor het Bewaar beleid niet nodig hebt, raden we u aan deze waarde in te stellen op 0. Zie voor meer informatie [Network Watcher prijzen](https://azure.microsoft.com/pricing/details/network-watcher/) en [Azure Storage prijzen](https://azure.microsoft.com/pricing/details/storage/) voor meer informatie.
 
-**Problemen met door de gebruiker gedefinieerde binnenkomende TCP-regels**: [netwerk beveiligings groepen (nsg's)](https://docs.microsoft.com/azure/virtual-network/security-overview) worden geïmplementeerd als een [stateful firewall](https://en.wikipedia.org/wiki/Stateful_firewall?oldformat=true). Vanwege de beperkingen van het huidige platform worden door de gebruiker gedefinieerde regels die van invloed zijn op binnenkomende TCP-stromen echter op een staatloze manier geïmplementeerd. Als gevolg hiervan worden stromen beïnvloed door door de gebruiker gedefinieerde binnenkomende regels niet beëindigd. Daarnaast worden geen byte-en pakket aantallen voor deze stromen vastgelegd. Het aantal bytes en pakketten dat in de NSG-stroom Logboeken (en Traffic Analytics) wordt gerapporteerd, kan daarom afwijken van de werkelijke getallen. Een opt-in-vlag waarmee deze problemen worden opgelost, is gepland om uiterlijk op december 2020 te zijn. In de tussen tijd kunnen klanten die ernstige problemen ondervinden vanwege dit gedrag, via ondersteuning aanvragen voor intrekken, een ondersteunings aanvraag doen onder Network Watcher > NSG-stroom Logboeken.  
+**Problemen met door de gebruiker gedefinieerde binnenkomende TCP-regels**: [netwerk beveiligings groepen (nsg's)](../virtual-network/network-security-groups-overview.md) worden geïmplementeerd als een [stateful firewall](https://en.wikipedia.org/wiki/Stateful_firewall?oldformat=true). Vanwege de beperkingen van het huidige platform worden door de gebruiker gedefinieerde regels die van invloed zijn op binnenkomende TCP-stromen echter op een staatloze manier geïmplementeerd. Als gevolg hiervan worden stromen beïnvloed door door de gebruiker gedefinieerde binnenkomende regels niet beëindigd. Daarnaast worden geen byte-en pakket aantallen voor deze stromen vastgelegd. Het aantal bytes en pakketten dat in de NSG-stroom Logboeken (en Traffic Analytics) wordt gerapporteerd, kan daarom afwijken van de werkelijke getallen. Een opt-in-vlag waarmee deze problemen worden opgelost, is gepland om uiterlijk op december 2020 te zijn. In de tussen tijd kunnen klanten die ernstige problemen ondervinden vanwege dit gedrag, via ondersteuning aanvragen voor intrekken, een ondersteunings aanvraag doen onder Network Watcher > NSG-stroom Logboeken.  
 
 **Binnenkomende stromen die zijn geregistreerd van Internet ip's naar vm's zonder open bare ip's**: vm's waaraan geen openbaar IP-adres is toegewezen via een openbaar IP-adres dat is gekoppeld aan de NIC als instantie niveau openbaar IP of die deel uitmaken van een basis Load Balancer back-end-groep, gebruiken [standaard SNAT](../load-balancer/load-balancer-outbound-connections.md) en hebben een IP-adres dat is toegewezen door Azure om uitgaande connectiviteit te vergemakkelijken. Als gevolg hiervan ziet u mogelijk stroom logboek vermeldingen voor stromen van IP-adressen van Internet, als de stroom bestemd is voor een poort in het bereik van poorten die zijn toegewezen voor SNAT. Hoewel Azure deze stromen naar de virtuele machine niet toestaat, wordt de poging geregistreerd en wordt deze weer gegeven in het NSG-stroom logboek van Network Watcher. U wordt aangeraden ongewenste binnenkomend Internet verkeer expliciet met NSG te blok keren.
 
@@ -379,13 +379,13 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 - De resource provider van **micro soft. Insights** is niet geregistreerd
 
-Als u een fout _AuthorizationFailed_ of _GatewayAuthenticationFailed_ hebt ontvangen, hebt u mogelijk de resourceprovider Microsoft Insights niet ingeschakeld in uw abonnement. [Volg de instructies](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal#register-insights-provider) om de micro soft Insights-provider in te scha kelen.
+Als u een fout _AuthorizationFailed_ of _GatewayAuthenticationFailed_ hebt ontvangen, hebt u mogelijk de resourceprovider Microsoft Insights niet ingeschakeld in uw abonnement. [Volg de instructies](./network-watcher-nsg-flow-logging-portal.md#register-insights-provider) om de micro soft Insights-provider in te scha kelen.
 
 **Ik heb NSG-stroomlogboeken ingeschakeld maar ik zie de gegevens niet in mijn opslagaccount**
 
 - **Configuratietijd**
 
-Het kan tot vijf minuten duren voordat NSG-stroomlogboeken worden weergegeven in uw opslagaccount (als ze correct zijn geconfigureerd). Er wordt een PT1H.json weergegeven die kan worden geopend [zoals hier wordt beschreven](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal#download-flow-log).
+Het kan tot vijf minuten duren voordat NSG-stroomlogboeken worden weergegeven in uw opslagaccount (als ze correct zijn geconfigureerd). Er wordt een PT1H.json weergegeven die kan worden geopend [zoals hier wordt beschreven](./network-watcher-nsg-flow-logging-portal.md#download-flow-log).
 
 - **Geen verkeer op uw NSG's**
 
@@ -399,7 +399,7 @@ Ondersteuning voor automatisering via ARM-sjablonen is momenteel niet beschikbaa
 
 **Wat gebeurt er met NSG-stroom logboeken?**
 
-Azure-netwerk bronnen kunnen worden gecombineerd en beheerd via [netwerk beveiligings groepen (nsg's)](https://docs.microsoft.com/azure/virtual-network/security-overview). Met NSG-stroom Logboeken kunt u 5-tuple-stroom gegevens registreren over al het verkeer via uw Nsg's. De onbewerkte stroom logboeken worden naar een Azure Storage-account geschreven, waar ze verder kunnen worden verwerkt, geanalyseerd, opgevraagd of geëxporteerd als dat nodig is.
+Azure-netwerk bronnen kunnen worden gecombineerd en beheerd via [netwerk beveiligings groepen (nsg's)](../virtual-network/network-security-groups-overview.md). Met NSG-stroom Logboeken kunt u 5-tuple-stroom gegevens registreren over al het verkeer via uw Nsg's. De onbewerkte stroom logboeken worden naar een Azure Storage-account geschreven, waar ze verder kunnen worden verwerkt, geanalyseerd, opgevraagd of geëxporteerd als dat nodig is.
 
 **Heeft stroom logboeken invloed op mijn netwerk latentie of prestaties?**
 
@@ -411,7 +411,7 @@ Als u een opslag account achter een firewall wilt gebruiken, moet u een uitzonde
 
 - Navigeer naar het opslag account door de naam van het opslag account in de globale zoek opdracht op de portal of op de [pagina opslag accounts](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) te typen.
 - Selecteer in de sectie  **instellingen**  de optie  **firewalls en virtuele netwerken**
-- Selecteer in **toegang toestaan vanuit**de optie  **geselecteerde netwerken**. Tik vervolgens onder  **uitzonde ringen**op het vakje naast * * * * vertrouwde micro soft-Services toegang geven tot dit opslag account * * * *
+- Selecteer in **toegang toestaan vanuit** de optie  **geselecteerde netwerken**. Tik vervolgens onder  **uitzonde ringen** op het vakje naast * * * * vertrouwde micro soft-Services toegang geven tot dit opslag account * * * *
 - Als deze optie al is geselecteerd, is er geen wijziging nodig.
 - Zoek uw doel-NSG op de [overzichts pagina van de NSG-stroom logboeken](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) en schakel NSG-stroom Logboeken in met het hierboven geselecteerde opslag account.
 
@@ -419,15 +419,14 @@ U kunt de Storage-logboeken na enkele minuten controleren. U ziet dan een bijgew
 
 **Hoe kan ik NSG-stroom Logboeken gebruiken met een opslag account achter een service-eind punt?**
 
-NSG-stroom logboeken zijn compatibel met Service-eind punten zonder extra configuratie. Raadpleeg de [zelf studie over het inschakelen van service-eind punten](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint) in uw virtuele netwerk.
+NSG-stroom logboeken zijn compatibel met Service-eind punten zonder extra configuratie. Raadpleeg de [zelf studie over het inschakelen van service-eind punten](../virtual-network/tutorial-restrict-network-access-to-resources.md#enable-a-service-endpoint) in uw virtuele netwerk.
 
 **Wat is het verschil tussen stroom logboeken versie 1 & 2?**
 
-Stroom logboeken versie 2 introduceert het concept van de _stroom status_ & slaat informatie op over verzonden bytes en pakketten. [Meer informatie](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview#log-file)
+Stroom logboeken versie 2 introduceert het concept van de _stroom status_ & slaat informatie op over verzonden bytes en pakketten. [Meer informatie](#log-format)
 
 ## <a name="pricing"></a>Prijzen
 
 NSG-stroom logboeken worden in rekening gebracht per GB aan logboeken die worden verzameld en worden geleverd met een gratis laag van 5 GB/maand per abonnement. Zie de [pagina met prijzen voor Network Watcher](https://azure.microsoft.com/pricing/details/network-watcher/)voor de huidige prijzen in uw regio.
 
 Voor het opslaan van Logboeken wordt afzonderlijk kosten in rekening gebracht. Zie de [pagina met prijzen voor Azure Storage blok-BLOB](https://azure.microsoft.com/pricing/details/storage/blobs/) voor relevante prijzen.
- 

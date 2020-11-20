@@ -10,14 +10,14 @@ ms.subservice: text-analytics
 ms.topic: include
 ms.date: 07/07/2020
 ms.author: aahi
-ms.openlocfilehash: 519625f6468372ec7ace523dae7648212f4f3203
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a0b2c9548f9c1289ae0abd61a72d7146a3bbca29
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91779698"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965142"
 ---
-Vul het [aanvraag formulier voor de Cognitive Services containers](https://aka.ms/csgate) in en verzend het om toegang tot de container aan te vragen.
+Vul het [Cognitive Services aanvraag formulier](https://aka.ms/csgate) in om toegang tot de Text Analytics voor de open bare preview van de status aan te vragen.  Deze toepassing is van toepassing voor zowel de container als de gehoste Web-API Public Preview.
 Het formulier vraagt informatie over u, uw bedrijf en het gebruikers scenario waarvoor u de container gaat gebruiken. Nadat u het formulier hebt verzonden, wordt het door het Azure Cognitive Services-team beoordeeld om te controleren of u voldoet aan de criteria voor toegang tot het persoonlijke container register.
 
 > [!IMPORTANT]
@@ -25,7 +25,7 @@ Het formulier vraagt informatie over u, uw bedrijf en het gebruikers scenario wa
 > * De Azure-resource die u gebruikt om de container uit te voeren, moet zijn gemaakt met de goedgekeurde Azure-abonnements-ID. 
 > * Controleer uw e-mail adres (zowel postvak in-map als ongewenste e-mail) voor updates over de status van uw toepassing van micro soft.
 
-Gebruik de opdracht docker login met de referenties die u in uw onboarding-e-mail hebt gekregen om verbinding te maken met het persoonlijke container register voor Cognitive Services containers.
+Na goed keuring ontvangt u een e-mail bericht met de referenties voor toegang tot het persoonlijke container register.  Gebruik de opdracht docker login met de referenties die u in uw onboarding-e-mail hebt gekregen om verbinding te maken met het persoonlijke container register voor Cognitive Services containers.
 
 
 ```Docker

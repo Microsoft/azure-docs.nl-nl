@@ -7,17 +7,18 @@ author: vermagit
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/20/2020
 ms.author: amverma
-ms.openlocfilehash: eb06f98d1a6e9b76c321e3d202043d656a2d94eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a5aa8983e6cbb0745e05ce275edeadeccb60736
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87829047"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966034"
 ---
 # <a name="infiniband-driver-extension-for-linux"></a>InfiniBand-stuur programma-uitbrei ding voor Linux
 
@@ -69,7 +70,7 @@ In de volgende JSON wordt het schema voor de uitbrei ding weer gegeven.
 
 ### <a name="properties"></a>Eigenschappen
 
-| Naam | Waarde/voor beeld | Gegevenstype |
+| Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | datum |
 | publisher | Micro soft. HpcCompute | tekenreeks |

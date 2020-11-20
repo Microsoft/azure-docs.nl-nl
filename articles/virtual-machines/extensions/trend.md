@@ -4,16 +4,17 @@ description: In dit artikel wordt beschreven hoe u Trend Micro beveiliging kunt 
 author: axayjo
 tags: azure-service-management
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 04/20/2018
 ms.author: akjosh
-ms.openlocfilehash: bed1d567aa48a11c01ae952e6a4a2028e260e6e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9d6d80287d05517933f066d5e49fa31e78a48943
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87288512"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966376"
 ---
 # <a name="how-to-install-and-configure-trend-micro-deep-security-as-a-service-on-a-windows-vm"></a>Trend Micro diepe Security als een service op een Windows-VM installeren en configureren
 
@@ -36,7 +37,7 @@ Als u een item uit de **Marketplace** gebruikt, wordt er een wizard geopend die 
 
 Wanneer u de Blade **instellingen** van de wizard krijgt, voert u de volgende stappen uit:
 
-1. Klik op **uitbrei dingen**en klik vervolgens in het volgende deel venster op **uitbrei ding toevoegen** .
+1. Klik op **uitbrei dingen** en klik vervolgens in het volgende deel venster op **uitbrei ding toevoegen** .
 
    ![Toevoegen van de uitbrei ding starten][1]
 
@@ -44,7 +45,7 @@ Wanneer u de Blade **instellingen** van de wizard krijgt, voert u de volgende st
 
    ![Grondige beveiligings agent identificeren][2]
 
-3. Voer de **Tenant-id** en het **wacht woord voor Tenant activering** in voor de extensie. U kunt desgewenst een **beveiligings beleid-id**invoeren. Klik vervolgens op **OK** om de client toe te voegen.
+3. Voer de **Tenant-id** en het **wacht woord voor Tenant activering** in voor de extensie. U kunt desgewenst een **beveiligings beleid-id** invoeren. Klik vervolgens op **OK** om de client toe te voegen.
 
    ![Details van de extensie opgeven][3]
 
@@ -65,7 +66,7 @@ write-host $vm.VM.ProvisionGuestAgent
 
 Als u de naam van de Cloud service en de virtuele machine niet weet, voert u **Get-AzureVM** uit om die informatie weer te geven voor alle virtuele machines in uw huidige abonnement.
 
-Als de **Write-host-** opdracht **True**retourneert, wordt de VM-agent geïnstalleerd. Als de waarde **False**retourneert, raadpleegt u de instructies en een koppeling naar de down load in de Azure blog post [VM-agent en-extensies-deel 2](https://go.microsoft.com/fwlink/p/?LinkId=403947).
+Als de **Write-host-** opdracht **True** retourneert, wordt de VM-agent geïnstalleerd. Als de waarde **False** retourneert, raadpleegt u de instructies en een koppeling naar de down load in de Azure blog post [VM-agent en-extensies-deel 2](https://go.microsoft.com/fwlink/p/?LinkId=403947).
 
 Als de VM-agent is geïnstalleerd, voert u deze opdrachten uit.
 
@@ -82,7 +83,7 @@ Het duurt enkele minuten voordat de agent wordt gestart wanneer deze is geïnsta
 * Een voor beeld van een [Windows Power shell-script](https://go.microsoft.com/fwlink/?LinkId=404100) voor het configureren van de virtuele machine
 * [Instructies](https://go.microsoft.com/fwlink/?LinkId=404099) voor het voor beeld
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 [Aanmelden bij een virtuele machine met Windows Server]
 
 [Azure VM-extensies en-functies]

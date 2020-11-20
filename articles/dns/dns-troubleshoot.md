@@ -7,18 +7,18 @@ ms.service: dns
 ms.topic: troubleshooting
 ms.date: 09/20/2019
 ms.author: rohink
-ms.openlocfilehash: a63a0c1e0044f5dcd6babb4941e1f4409404cdd2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fae63c61949302e25c9dee2899577fa4f0d2a975
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84711184"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965575"
 ---
 # <a name="azure-dns-troubleshooting-guide"></a>Gids voor het oplossen van problemen Azure DNS
 
 Dit artikel bevat informatie over het oplossen van problemen met veelgestelde vragen over Azure DNS.
 
-Als met deze stappen het probleem niet is opgelost, kunt u ook zoeken naar of uw probleem op onze [micro soft Q&een vraag pagina voor Community-ondersteuning](https://docs.microsoft.com/answers/topics/azure-virtual-network.html). U kunt ook een Azure-ondersteunings aanvraag openen.
+Als met deze stappen het probleem niet is opgelost, kunt u ook zoeken naar of uw probleem op onze [micro soft Q&een vraag pagina voor Community-ondersteuning](/answers/topics/azure-virtual-network.html). U kunt ook een Azure-ondersteunings aanvraag openen.
 
 
 ## <a name="i-cant-create-a-dns-zone"></a>Ik kan geen DNS-zone maken
@@ -34,7 +34,7 @@ Probeer een of meer van de volgende stappen om veelvoorkomende problemen op te l
 ### <a name="recommended-articles"></a>Aanbevolen artikelen
 
 * [DNS-zones en -records](dns-zones-records.md)
-* [Een DNS-zone maken](dns-getstarted-create-dnszone-portal.md)
+* [Een DNS-zone maken](./dns-getstarted-portal.md)
 
 ## <a name="i-cant-create-a-dns-record"></a>Ik kan geen DNS-record maken
 
@@ -50,7 +50,7 @@ Probeer een of meer van de volgende stappen om veelvoorkomende problemen op te l
 ### <a name="recommended-articles"></a>Aanbevolen artikelen
 
 * [DNS-zones en -records](dns-zones-records.md)
-* [Een DNS-zone maken](dns-getstarted-create-dnszone-portal.md)
+* [Een DNS-zone maken](./dns-getstarted-portal.md)
 
 
 
@@ -85,13 +85,12 @@ Voorbeeld van SRV-recordnamen (servicenaam 'sip', protocol 'tcp'):
 ### <a name="recommended-articles"></a>Aanbevolen artikelen
 
 * [DNS-zones en -records](dns-zones-records.md)
-* [DNS-recordsets en -records maken met Azure Portal](dns-getstarted-create-recordset-portal.md)
+* [DNS-recordsets en -records maken met Azure Portal](./dns-getstarted-portal.md)
 * [SRV-recordtype (Wikipedia)](https://en.wikipedia.org/wiki/SRV_record)
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over [Azure DNS zones en records](dns-zones-records.md)
-* Als u Azure DNS wilt gaan gebruiken, leest u hoe u [een DNS-zone maakt](dns-getstarted-create-dnszone-portal.md) en hoe u [DNS-records maakt](dns-getstarted-create-recordset-portal.md).
+* Als u Azure DNS wilt gaan gebruiken, leest u hoe u [een DNS-zone maakt](./dns-getstarted-portal.md) en hoe u [DNS-records maakt](./dns-getstarted-portal.md).
 * Als u een bestaande DNS-zone wilt migreren, leert u hoe u [een DNS-zone bestand importeert en exporteert](dns-import-export.md).
-

@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
-ms.openlocfilehash: 1f15a3b4d8f51ec79fffce09bc006942d08096a6
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 17b978d3f4faebd3870868bceeea4572288ecb07
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427459"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965354"
 ---
 # <a name="sap-businessobjects-bi-platform-deployment-guide-for-linux-on-azure"></a>Handleiding voor SAP BusinessObjects BI-platformimplementatie voor Linux in Azure
 
@@ -36,7 +37,7 @@ In dit voor beeld wordt onder de product versie en de indeling van het bestands 
 - Azure Database for MySQL (versie: 8.0.15)
 - MySQL C API-connector-libmysqlclient (versie: 6.1.11)
 
-| Bestandssysteem        | Beschrijving                                                                                                               | Grootte (GB)             | Eigenaar  | Groep  | Opslag                    |
+| Bestandssysteem        | Beschrijving                                                                                                               | Grootte (GB)             | Eigenaar  | Groep  | Storage                    |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------|-----------------------|--------|--------|----------------------------|
 | /usr/sap           | Het bestands systeem voor de installatie van het SAP BOBI-exemplaar, de standaard Tomcat-webtoepassing en database Stuur programma's (indien nodig) | SAP-formaat richtlijnen | bl1adm | sapsys | Beheerde Premium-schijf-SSD |
 | /usr/sap/frsinput  | De koppelings Directory is voor de gedeelde bestanden op alle BOBI-hosts die worden gebruikt als opslag plaats Directory voor invoer bestanden  | Bedrijfs behoeften         | bl1adm | sapsys | Azure NetApp Files         |
@@ -113,7 +114,7 @@ Houd bij het maken van uw Azure NetApp Files voor de SAP BOBI platform File Repo
 
 Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
 
-**[A]** : de stap is van toepassing op alle hosts
+**[A]**: de stap is van toepassing op alle hosts
 
 ### <a name="format-and-mount-sap-file-system"></a>SAP-bestands systeem Format teren en koppelen
 
@@ -395,15 +396,15 @@ Voor SAP BOBI-toepassings server voor toegang tot de data base is data base clie
 
 Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
 
-**[A]** : de stap is van toepassing op alle hosts.
+**[A]**: de stap is van toepassing op alle hosts.
 
 1. **[A]** op basis van de kern van Linux (SLES of RHEL), moet u kernel-para meters instellen en de vereiste bibliotheken installeren. Raadpleeg de sectie **systeem vereisten** in de [installatie handleiding voor Business Intelligence platform voor UNIX](https://help.sap.com/viewer/65018c09dbe04052b082e6fc4ab60030/4.3/en-US).
 
 2. **[A]** Controleer of de tijd zone op de computer correct is ingesteld. Raadpleeg de [sectie Aanvullende vereisten voor UNIX en Linux](https://help.sap.com/viewer/65018c09dbe04052b082e6fc4ab60030/4.3/en-US/46b143336e041014910aba7db0e91070.html) in de installatie handleiding.
 
-3. **[A] Maak een** gebruikers account ( **BL1** adm) en groep (sapsys) waarmee de achtergrond processen van de software kunnen worden uitgevoerd. Gebruik dit account om de installatie uit te voeren en de software uit te voeren. Voor het account zijn geen hoofd bevoegdheden vereist.
+3. **[A] Maak een** gebruikers account (**BL1** adm) en groep (sapsys) waarmee de achtergrond processen van de software kunnen worden uitgevoerd. Gebruik dit account om de installatie uit te voeren en de software uit te voeren. Voor het account zijn geen hoofd bevoegdheden vereist.
 
-4. **[A]** stel het gebruikers account ( **BL1** adm) in om een ondersteunde UTF-8-land instelling te gebruiken en zorg ervoor dat uw console software UTF-8-teken sets ondersteunt. Om ervoor te zorgen dat uw besturings systeem gebruikmaakt van de juiste land instelling, stelt u de omgevings variabelen LC_ALL en LANG in op uw voorkeurs land instellingen in uw **BL1** adm-gebruikers omgeving.
+4. **[A]** stel het gebruikers account (**BL1** adm) in om een ondersteunde UTF-8-land instelling te gebruiken en zorg ervoor dat uw console software UTF-8-teken sets ondersteunt. Om ervoor te zorgen dat uw besturings systeem gebruikmaakt van de juiste land instelling, stelt u de omgevings variabelen LC_ALL en LANG in op uw voorkeurs land instellingen in uw **BL1** adm-gebruikers omgeving.
 
    ```bash
    # This configuration is for bash shell. If you are using any other shell for sidadm, kindly set environment variable accordingly.
@@ -413,7 +414,7 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
    export LC_ALL=en_US.utf8
    ```
 
-5. **[A]** gebruikers account ( **BL1** adm) configureren.
+5. **[A]** gebruikers account (**BL1** adm) configureren.
 
    ```bash
    # Set ulimit for bl1adm to unlimited
@@ -465,7 +466,7 @@ Volg de installatie handleiding voor het [SAP BOBI-platform](https://help.sap.co
 
 - Selecteer in het scherm **installatie type selecteren** de optie **volledige** installatie op de eerste server (azusbosl1), voor een andere server (Azusbosl2), selecteer **aangepast/uitvouwen** , waarmee de bestaande BOBI-installatie wordt uitgevouwen.
 
-- Selecteer in het venster **standaard of bestaande data base** selecteren **de optie een bestaande data base configureren** , waarin u wordt gevraagd om CMS-en audit database te selecteren. Selecteer **MySQL** voor het CMS-database type en het type controle database.
+- Selecteer in het venster **standaard of bestaande data base** selecteren **de optie een bestaande data base configureren**, waarin u wordt gevraagd om CMS-en audit database te selecteren. Selecteer **MySQL** voor het CMS-database type en het type controle database.
 
   U kunt ook geen controle database selecteren als u geen controle wilt configureren tijdens de installatie.
 

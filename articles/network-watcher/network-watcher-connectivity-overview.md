@@ -11,19 +11,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: damendo
-ms.openlocfilehash: cae3072a3468b232e95d7c1949948b71059695ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6411e019d77b219e40bd91da973e00afda0ff18b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84708940"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965482"
 ---
 # <a name="introduction-to-connection-troubleshoot-in-azure-network-watcher"></a>Inleiding tot verbindings problemen in azure Network Watcher
 
 De functie verbinding oplossen van Network Watcher biedt de mogelijkheid om een directe TCP-verbinding van een virtuele machine naar een virtuele machine (VM), Fully Qualified Domain Name (FQDN), URI of IPv4-adres te controleren. Netwerk scenario's zijn complex, ze worden geïmplementeerd met behulp van netwerk beveiligings groepen, firewalls, door de gebruiker gedefinieerde routes en resources die worden geboden door Azure. Complexe configuraties maken probleem oplossing van connectiviteits problemen lastig. Network Watcher helpt de hoeveelheid tijd te beperken om verbindings problemen op te sporen en op te sporen. De geretourneerde resultaten kunnen inzicht geven in of een connectiviteits probleem wordt veroorzaakt door een platform of een probleem met de gebruikers configuratie. Connectiviteit kan worden gecontroleerd met [Power shell](network-watcher-connectivity-powershell.md), [Azure cli](network-watcher-connectivity-cli.md)en [rest API](network-watcher-connectivity-rest.md).
 
 > [!IMPORTANT]
-> Verbindings problemen oplossen vereist dat de VM-extensie is geïnstalleerd op de VM die u wilt oplossen `AzureNetworkWatcherExtension` . Voor het installeren van de uitbrei ding op een Windows-VM gaat u naar [azure Network Watcher agent-extensie voor virtuele machines voor Windows](../virtual-machines/windows/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) en voor Linux VM gaat u naar de [Azure Network Watcher agent-extensie voor virtuele machines voor Linux](../virtual-machines/linux/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json). De uitbrei ding is niet vereist voor het eind punt van de bestemming.
+> Verbindings problemen oplossen vereist dat de VM-extensie is geïnstalleerd op de VM die u wilt oplossen `AzureNetworkWatcherExtension` . Voor het installeren van de uitbrei ding op een Windows-VM gaat u naar [azure Network Watcher agent-extensie voor virtuele machines voor Windows](../virtual-machines/extensions/network-watcher-windows.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json) en voor Linux VM gaat u naar de [Azure Network Watcher agent-extensie voor virtuele machines voor Linux](../virtual-machines/extensions/network-watcher-linux.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json). De uitbrei ding is niet vereist voor het eind punt van de bestemming.
 
 ## <a name="response"></a>Antwoord
 
@@ -38,7 +38,7 @@ In de volgende tabel ziet u de eigenschappen die worden geretourneerd wanneer he
 |ProbesSent     | Het aantal tests dat is verzonden tijdens de controle. De maximale waarde is 100.        |
 |ProbesFailed     | Het aantal tests dat tijdens de controle is mislukt. De maximale waarde is 100.        |
 |Hops     | Hop per hop-pad van bron naar doel.        |
-|Hops []. Voert     | Type resource. Mogelijke waarden zijn **Source**, **VirtualAppliance**, **VnetLocal**en **Internet**.        |
+|Hops []. Voert     | Type resource. Mogelijke waarden zijn **Source**, **VirtualAppliance**, **VnetLocal** en **Internet**.        |
 |Hops []. Id | De unieke id van de hop.|
 |Hops []. Help | Het IP-adres van de hop.|
 |Hops []. ResourceId | ResourceID van de hop als de hop een Azure-resource is. Als het een Internet bron is, is ResourceID **Internet**. |

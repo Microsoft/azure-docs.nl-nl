@@ -7,17 +7,18 @@ author: hermanndms
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
-ms.openlocfilehash: 5c3a24bc9d754a15a0b372667fbcd689365a9aec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7cf18e2d375d7a45c3641876b8a3ed5974882927
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87088305"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965422"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Controleren en problemen oplossen SAP HANA scale-out instellingen voor hoge Beschik baarheid in SLES 12 SP3 
 
@@ -172,7 +173,7 @@ Het **corosync** -configuratie bestand moet correct zijn op elk knoop punt in he
 
 De inhoud van **corosync. conf** van het test systeem is een voor beeld.
 
-De eerste sectie is **totem**, zoals beschreven in [cluster installatie](./high-availability-guide-suse-pacemaker.md#cluster-installation), stap 11. U kunt de waarde voor **mcastaddr**negeren. U hoeft alleen maar de bestaande vermelding te gebruiken. De vermeldingen voor **token** en **consensus** moeten worden ingesteld volgens [Microsoft Azure SAP Hana documentatie][sles-pacemaker-ha-guide].
+De eerste sectie is **totem**, zoals beschreven in [cluster installatie](./high-availability-guide-suse-pacemaker.md#cluster-installation), stap 11. U kunt de waarde voor **mcastaddr** negeren. U hoeft alleen maar de bestaande vermelding te gebruiken. De vermeldingen voor **token** en **consensus** moeten worden ingesteld volgens [Microsoft Azure SAP Hana documentatie][sles-pacemaker-ha-guide].
 
 <pre><code>
 totem {
@@ -202,7 +203,7 @@ totem {
 }
 </code></pre>
 
-De tweede sectie, logboek registratie, is niet gewijzigd ten **opzichte**van de opgegeven standaard waarden:
+De tweede sectie, logboek registratie, is niet gewijzigd ten **opzichte** van de opgegeven standaard waarden:
 
 <pre><code>
 logging {
@@ -220,7 +221,7 @@ logging {
 }
 </code></pre>
 
-In het derde gedeelte wordt de **nodelist**weer gegeven. Alle knoop punten van het cluster moeten worden weer gegeven met hun **nodeId**:
+In het derde gedeelte wordt de **nodelist** weer gegeven. Alle knoop punten van het cluster moeten worden weer gegeven met hun **nodeId**:
 
 <pre><code>
 nodelist {
@@ -255,7 +256,7 @@ nodelist {
 }
 </code></pre>
 
-In de laatste sectie **quorum**is het belang rijk om de waarde voor **expected_votes** correct in te stellen. Dit moet het aantal knoop punten zijn met inbegrip van het hoofd knooppunt van de maker. En de waarde voor **two_node** moet **0**zijn. Verwijder de vermelding niet volledig. Stel de waarde in op **0**.
+In de laatste sectie **quorum** is het belang rijk om de waarde voor **expected_votes** correct in te stellen. Dit moet het aantal knoop punten zijn met inbegrip van het hoofd knooppunt van de maker. En de waarde voor **two_node** moet **0** zijn. Verwijder de vermelding niet volledig. Stel de waarde in op **0**.
 
 <pre><code>
 quorum {
@@ -370,7 +371,7 @@ systemctl restart iscsid
 </code></pre>
 
 
-U kunt vanuit een wille keurig knoop punt controleren of alle knoop punten **duidelijk**zijn. Zorg ervoor dat u de juiste naam voor het apparaat gebruikt op een specifiek knoop punt:
+U kunt vanuit een wille keurig knoop punt controleren of alle knoop punten **duidelijk** zijn. Zorg ervoor dat u de juiste naam voor het apparaat gebruikt op een specifiek knoop punt:
 
 <pre><code>
 sbd -d /dev/sdm list
@@ -442,7 +443,7 @@ Met deze opdracht wordt het opstart gedrag ingesteld:
 iscsiadm -m node --op=update --name=node.startup --value=automatic
 </code></pre>
 
-Dit item in **/etc/iscsi/iscsid.conf**maken:
+Dit item in **/etc/iscsi/iscsid.conf** maken:
 
 <pre><code>
 node.startup = automatic
@@ -538,7 +539,7 @@ Een belang rijk onderdeel van pacemaker is onderhouds modus. In deze modus kunt 
 crm configure property maintenance-mode=true
 </code></pre>
 
-Wanneer u de **status van CRM**controleert, ziet u in de uitvoer dat alle resources zijn gemarkeerd als **onbeheerd**. In deze status reageert het cluster niet op wijzigingen zoals het starten of stoppen van SAP HANA.
+Wanneer u de **status van CRM** controleert, ziet u in de uitvoer dat alle resources zijn gemarkeerd als **onbeheerd**. In deze status reageert het cluster niet op wijzigingen zoals het starten of stoppen van SAP HANA.
 In het volgende voor beeld ziet u de uitvoer van de opdracht **CRM-status** terwijl het cluster zich in de onderhouds modus bevindt:
 
 <pre><code>
@@ -550,7 +551,7 @@ Last change: Wed Sep 12 07:46:54 2018 by root via cibadmin on hso-hana-vm-s2-1
 7 nodes configured
 17 resources configured
 
-              *** Resource management is DISABLED ***
+              **_ Resource management is DISABLED _*_
   The cluster will not attempt to start, stop or recover services
 
 Online: [ hso-hana-dm hso-hana-vm-s1-0 hso-hana-vm-s1-1 hso-hana-vm-s1-2 hso-hana-vm-s2-0 hso-hana-vm-s2-1 hso-hana-vm-s2-2 ]
@@ -586,7 +587,7 @@ crm configure property maintenance-mode=false
 </code></pre>
 
 
-Een andere **CRM** -opdracht haalt de volledige cluster configuratie op in een editor, zodat u deze kunt bewerken. Nadat de wijzigingen zijn opgeslagen, start het cluster de juiste acties:
+Een andere _ *CRM**-opdracht haalt de volledige cluster configuratie op in een editor, zodat u deze kunt bewerken. Nadat de wijzigingen zijn opgeslagen, start het cluster de juiste acties:
 
 <pre><code>
 crm configure edit
@@ -600,7 +601,7 @@ crm configure show
 
 
 
-Na storingen in cluster bronnen wordt met de opdracht **CRM-status** een lijst met **mislukte acties**weer gegeven. Zie het volgende voor beeld van deze uitvoer:
+Na storingen in cluster bronnen wordt met de opdracht **CRM-status** een lijst met **mislukte acties** weer gegeven. Zie het volgende voor beeld van deze uitvoer:
 
 
 <pre><code>
@@ -656,7 +657,7 @@ Waiting for 7 replies from the CRMd....... OK
 
 ## <a name="failover-or-takeover"></a>Failover of overname
 
-Zoals beschreven in [belang rijke opmerkingen](#important-notes), mag u geen standaard zonder problemen gebruiken om de failover van het cluster of SAP Hana HSR-overname te testen. In plaats daarvan raden we u aan een kernel in te scha kelen, een bron migratie af te dwingen of om alle netwerken op het niveau van het besturings systeem van een virtuele machine af te sluiten. Een andere methode is de CRM-opdracht ** \<node\> stand** . Zie het [SuSE-document][sles-12-ha-paper]. 
+Zoals beschreven in [belang rijke opmerkingen](#important-notes), mag u geen standaard zonder problemen gebruiken om de failover van het cluster of SAP Hana HSR-overname te testen. In plaats daarvan raden we u aan een kernel in te scha kelen, een bron migratie af te dwingen of om alle netwerken op het niveau van het besturings systeem van een virtuele machine af te sluiten. Een andere methode is de CRM-opdracht **\<node\> stand** . Zie het [SuSE-document][sles-12-ha-paper]. 
 
 De volgende drie voorbeeld opdrachten kunnen een clusterfailover geforceerd:
 
@@ -680,9 +681,9 @@ watch SAPHanaSR-showAttr
 
 Het helpt ook de SAP HANA landschaps status te bekijken die afkomstig is van een SAP python-script. De Cluster installatie zoekt naar deze status waarde. Het wordt duidelijk wanneer u denkt dat er een fout is opgetreden in het worker-knoop punt. Als een worker-knoop punt uitvalt, wordt SAP HANA niet onmiddellijk een fout geretourneerd voor de status van het hele scale-out systeem. 
 
-Er zijn enkele nieuwe pogingen om onnodige failovers te voor komen. Het cluster reageert alleen als de status wordt gewijzigd van **OK**, retour waarde **4**, naar **fout**, retour waarde **1**. Het is dus correct als de uitvoer van **SAPHanaSR-showAttr** een virtuele machine met de status **offline**weergeeft. Maar er is nog geen activiteit om de primaire en secundaire te scha kelen. Er wordt geen cluster activiteit geactiveerd, zolang SAP HANA geen fout retourneert.
+Er zijn enkele nieuwe pogingen om onnodige failovers te voor komen. Het cluster reageert alleen als de status wordt gewijzigd van **OK**, retour waarde **4**, naar **fout**, retour waarde **1**. Het is dus correct als de uitvoer van **SAPHanaSR-showAttr** een virtuele machine met de status **offline** weergeeft. Maar er is nog geen activiteit om de primaire en secundaire te scha kelen. Er wordt geen cluster activiteit geactiveerd, zolang SAP HANA geen fout retourneert.
 
-U kunt de status van de SAP HANA landschap controleren als gebruiker ** \<HANA SID\> adm** door het SAP python-script als volgt aan te roepen. Mogelijk moet u het pad aanpassen:
+U kunt de status van de SAP HANA landschap controleren als gebruiker **\<HANA SID\> adm** door het SAP python-script als volgt aan te roepen. Mogelijk moet u het pad aanpassen:
 
 <pre><code>
 watch python /hana/shared/HSO/exe/linuxx86_64/HDB_2.00.032.00.1533114046_eeaf4723ec52ed3935ae0dc9769c9411ed73fec5/python_support/landscapeHostConfiguration.py
@@ -860,7 +861,7 @@ drwxr-xr-x 3 root root   4096 Sep 13 09:01 hso-hana-vm-s2-2
 </code></pre>
 
 
-Binnen het opgegeven tijds bereik is het huidige hoofd knooppunt **HSO-Hana-VM-S1-0** afgebroken. In het **logboek. log**vindt u vermeldingen die betrekking hebben op deze gebeurtenis:
+Binnen het opgegeven tijds bereik is het huidige hoofd knooppunt **HSO-Hana-VM-S1-0** afgebroken. In het **logboek. log** vindt u vermeldingen die betrekking hebben op deze gebeurtenis:
 
 <pre><code>
 2018-09-13T07:38:01+0000 hso-hana-vm-s2-1 su[93494]: (to hsoadm) root on none
@@ -967,7 +968,7 @@ U kunt ook de **hb_report** uitvoer uploaden in Hawk onder **geschiedenis**, zoa
 
 ![Hawk-upload hb_report uitvoer](media/hana-vm-scale-out-HA-troubleshooting/hawk-3.png)
 
-Met de **geschiedenis Verkenner**kunt u vervolgens alle cluster overgangen door lopen die zijn opgenomen in de **hb_report** uitvoer:
+Met de **geschiedenis Verkenner** kunt u vervolgens alle cluster overgangen door lopen die zijn opgenomen in de **hb_report** uitvoer:
 
 ![Hawk overgangen in de hb_report uitvoer](media/hana-vm-scale-out-HA-troubleshooting/hawk-4.png)
 

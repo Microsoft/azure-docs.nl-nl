@@ -5,15 +5,16 @@ author: abhijitpai
 ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/10/2020
-ms.openlocfilehash: 503d3d5ed9b099e01a88ee40ef80e88105beb340
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.date: 11/19/2020
+ms.openlocfilehash: f1a7ffc8225ea20b48df4e1d9a049655ca4776a4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917729"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964657"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
+
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Dit artikel bevat een overzicht van de standaardquota's die worden aangeboden aan verschillende resources in de Azure Cosmos DB.
@@ -194,8 +195,8 @@ Azure Cosmos DB onderhoudt de meta gegevens van het systeem voor elk account. Me
 
 | Resource | Standaardlimiet |
 | --- | --- |
-|Maximum aantal gemaakte verzamelingen per minuut|    5|
-|Maximum aantal gemaakte data bases per minuut|    5|
+|Maximum aantal gemaakte verzamelingen per minuut|    100|
+|Maximum aantal gemaakte data bases per minuut|    100|
 |Maximale update snelheid van ingerichte door Voer per minuut|    5|
 
 ## <a name="limits-for-autoscale-provisioned-throughput"></a>Limieten voor automatisch schalen ingericht door Voer

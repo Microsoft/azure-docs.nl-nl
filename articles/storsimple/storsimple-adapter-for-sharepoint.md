@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/06/2017
 ms.author: alkohli
-ms.openlocfilehash: a33e01d68a31585e216faa51ac8af193d86c6123
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 639efab3a9eaef400b3fbe3d0b134d02f458b865
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90053273"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966289"
 ---
 # <a name="install-and-configure-the-storsimple-adapter-for-sharepoint"></a>De StorSimple-adapter voor share point installeren en configureren
 ## <a name="overview"></a>Overzicht
@@ -53,7 +53,7 @@ De Microsoft Azure StorSimple implementatie van de resource structuur biedt de v
 Het verplaatsen van BLOB-inhoud naar het bestands systeem kan andere kosten besparingen en voor delen bieden. Als u bijvoorbeeld resource structuur gebruikt, kan de duur van de dure opslag op laag 1 worden verminderd en wordt het aantal data bases dat is vereist in de share Point-server farm verminderd door de resource structuur te verkleinen. Andere factoren, zoals de grootte limieten van de data base en de hoeveelheid niet-RBS-inhoud, kunnen ook van invloed zijn op de opslag vereisten. Voor meer informatie over de kosten en voor delen van het gebruik van de resource structuur, Zie [planning voor RBS (share point Foundation 2010)][4] en [het gebruik van de resource structuur in share point 2013][5].
 
 ### <a name="capacity-and-performance-limits"></a>Capaciteits-en prestatie limieten
-Voordat u rekening houdt met het gebruik van de resource structuur in uw share point-oplossing, moet u rekening houden met de geteste prestaties en capaciteits limieten van share Point Server 2010 en share Point server 2013, en hoe deze limieten te maken hebben met acceptabele prestaties. Zie [Software grenzen en limieten voor share point 2013](https://technet.microsoft.com/library/cc262787.aspx)voor meer informatie.
+Voordat u rekening houdt met het gebruik van de resource structuur in uw share point-oplossing, moet u rekening houden met de geteste prestaties en capaciteits limieten van share Point Server 2010 en share Point server 2013, en hoe deze limieten te maken hebben met acceptabele prestaties. Zie [Software grenzen en limieten voor share point 2013](/SharePoint/install/software-boundaries-and-limits-0)voor meer informatie.
 
 Bekijk het volgende voordat u de resource structuur configureert:
 
@@ -138,8 +138,8 @@ Controleer als volgt of de share Point-server farm correct is geconfigureerd:
   1. Sluit alle exemplaren van Internet Explorer.
   2. Start de Serverbeheer.
   3. Klik in het linkerdeel venster op **lokale server**.
-  4. Klik in het rechterdeel venster naast **Verbeterde beveiliging van Internet Explorer**op **ingeschakeld**.
-  5. Klik onder **beheerders**op **uit**.
+  4. Klik in het rechterdeel venster naast **Verbeterde beveiliging van Internet Explorer** op **ingeschakeld**.
+  5. Klik onder **beheerders** op **uit**.
   6. Klik op **OK**.
 
 ## <a name="remote-blob-storage-rbs-prerequisites"></a>Vereisten voor externe BLOB Storage (RBS)
@@ -222,11 +222,11 @@ Voordat u de StorSimple-adapter voor share point-software verwijdert, moet u all
 #### <a name="to-move-the-blobs-back-to-the-content-databases"></a>De BLOBs weer verplaatsen naar de inhouds databases
 1. Down load elk van de externe objecten.
 2. Open de pagina **Centraal beheer van share point** en blader naar **systeem instellingen**.
-3. Klik onder **Azure StorSimple**op **StorSimple-adapter configureren**.
+3. Klik onder **Azure StorSimple** op **StorSimple-adapter configureren**.
 4. Op de pagina **StorSimple-adapter configureren** klikt u op de knop **uitschakelen** onder elk van de inhouds databases die u wilt verwijderen uit externe Blob-opslag. 
 5. Verwijder de objecten uit share point en upload ze vervolgens opnieuw.
 
-U kunt ook de micro soft `RBS Migrate()` Power shell-cmdlet gebruiken die deel uitmaakt van share point. Zie [inhoud migreren naar of uit een resource structuur](https://technet.microsoft.com/library/ff628255.aspx)voor meer informatie.
+U kunt ook de micro soft `RBS Migrate()` Power shell-cmdlet gebruiken die deel uitmaakt van share point. Zie [inhoud migreren naar of uit een resource structuur](/previous-versions/office/sharepoint-foundation-2010/ff628255(v=office.14))voor meer informatie.
 
 Nadat u de BLOBs weer naar de inhouds database hebt verplaatst, gaat u naar de volgende stap: [de adapter verwijderen](#uninstall-the-adapter).
 
@@ -251,15 +251,15 @@ Nadat u de BLOBs weer naar de SQL Server-inhouds databases hebt verplaatst, gebr
 
 #### <a name="to-use-the-control-panel-to-uninstall-the-adapter"></a>Het configuratie scherm gebruiken om de adapter te verwijderen
 1. Open het configuratie scherm en klik vervolgens op **Program ma's en onderdelen**.
-2. Selecteer **StorSimple-adapter voor share point**en klik vervolgens op **verwijderen**.
+2. Selecteer **StorSimple-adapter voor share point** en klik vervolgens op **verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer [informatie over StorSimple](storsimple-overview.md).
 
 <!--Reference links-->
 [1]: https://www.microsoft.com/download/details.aspx?id=44073
-[2]: https://technet.microsoft.com/library/ff628583(v=office.15).aspx
-[3]: https://technet.microsoft.com/library/ff628583(v=office.14).aspx
-[4]: https://technet.microsoft.com/library/ff628569(v=office.14).aspx
-[5]: https://technet.microsoft.com/library/ff628583(v=office.15).aspx
-[8]: https://technet.microsoft.com/library/ff943565.aspx
+[2]: /SharePoint/administration/rbs-planning
+[3]: /previous-versions/office/sharepoint-server-2010/ff628583(v=office.14)
+[4]: /previous-versions/office/sharepoint-foundation-2010/ff628569(v=office.14)
+[5]: /SharePoint/administration/rbs-planning
+[8]: /SharePoint/administration/maintain-rbs

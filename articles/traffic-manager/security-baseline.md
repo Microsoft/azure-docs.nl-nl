@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 9ed6a57dadb70daed9cdf02421b91d310b4b0f07
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4523319c04703c04a293471124329512e31a265
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631457"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964674"
 ---
 # <a name="azure-security-baseline-for-azure-traffic-manager"></a>Azure-beveiligings basislijn voor Azure Traffic Manager
 
@@ -270,7 +270,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 In Resource Manager kunnen eind punten van elk abonnement worden toegevoegd aan Traffic Manager, mits de persoon die het Traffic Manager profiel heeft geconfigureerd Lees toegang heeft tot het eind punt.
 
-Azure Traffic Manager heeft een vooraf gedefinieerde Azure RBAC-rol met de naam ' Azure Traffic Manager Inzender ', die aan gebruikers kan worden toegewezen.
+Azure Traffic Manager heeft een vooraf gedefinieerde Azure-rol met de naam ' Traffic Manager Inzender ' die kan worden toegewezen aan gebruikers.
 
 - [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../role-based-access-control/role-assignments-portal.md)
 
@@ -304,7 +304,7 @@ Azure Traffic Manager heeft een vooraf gedefinieerde Azure RBAC-rol met de naam 
 
 Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource Graph Explorer, is het raadzaam om Azure Resource Manager resources te maken en te gebruiken.
 
-- [Query's maken met Azure resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
+- [Query's maken met Azure Resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
 
 - [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
@@ -369,7 +369,7 @@ Gebruik Azure resource Graph om bronnen in hun abonnementen op te vragen en te d
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
 
 - Niet toegestane resourcetypen
 - Toegestane brontypen
@@ -386,7 +386,7 @@ U kunt ook aangepaste Azure Policy definities maken om nauw keurige bron instell
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
-**Hulp**bij het configureren van voorwaardelijke toegang van Azure om gebruikers de mogelijkheid te bieden om te communiceren met Azure Resource Manager door ' blok toegang ' te configureren voor de app Microsoft Azure management.
+**Hulp** bij het configureren van voorwaardelijke toegang van Azure om gebruikers de mogelijkheid te bieden om te communiceren met Azure Resource Manager door ' blok toegang ' te configureren voor de app Microsoft Azure management.
 
 - [Voorwaardelijke toegang configureren om de toegang tot Azure Resource Manager te blok keren](../role-based-access-control/conditional-access-azure-management.md)
 
@@ -494,7 +494,7 @@ Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 
-- [Labels gebruiken om uw Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags gebruiken om Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
 
 **Azure Security Center bewaking**: Ja
 

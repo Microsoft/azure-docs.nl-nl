@@ -11,19 +11,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/18/2017
 ms.author: rohink
-ms.openlocfilehash: 9b6cac64d2e3def673f6d7c27e80bd64eead9e97
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51e17812e1116f1e625685d5a818c18e25cdb2da
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84689160"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965796"
 ---
 # <a name="how-to-manage-dns-zones-in-the-azure-portal"></a>DNS-zones beheren in de Azure Portal
 
 > [!div class="op_single_selector"]
 > * [Portal](dns-operations-dnszones-portal.md)
 > * [PowerShell](dns-operations-dnszones.md)
-> * [Klassieke Azure-CLI](dns-operations-dnszones-cli-nodejs.md)
+> * [Klassieke Azure-CLI](./dns-operations-dnszones-cli.md)
 > * [Azure-CLI](dns-operations-dnszones-cli.md)
 
 In dit artikel leest u hoe u uw DNS-zones beheert met behulp van de Azure Portal. U kunt ook uw DNS-zones beheren met behulp van de platformoverschrijdende [Azure cli](dns-operations-dnszones-cli.md) of de Azure [Power shell](dns-operations-dnszones.md).
@@ -42,7 +42,7 @@ In dit artikel leest u hoe u uw DNS-zones beheert met behulp van de Azure Portal
    |---|---|---|
    |**Naam**|contoso.com|De naam van de DNS-zone|
    |**Abonnement**|[Uw abonnement]|Selecteer een abonnement waarin de DNS-zone moet worden gemaakt.|
-   |**Resourcegroep**|**Nieuwe maken:** contosoDNSRG|Maak een resourcegroep. De naam van de resourcegroep moet uniek zijn binnen het abonnement dat u hebt geselecteerd. Lees het artikel overzicht van [Resource Manager](../azure-resource-manager/management/overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups) voor meer informatie over resource groepen.|
+   |**Resourcegroep**|**Nieuwe maken:** contosoDNSRG|Een resourcegroep maken. De naam van de resourcegroep moet uniek zijn binnen het abonnement dat u hebt geselecteerd. Lees het artikel overzicht van [Resource Manager](../azure-resource-manager/management/overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups) voor meer informatie over resource groepen.|
    |**Locatie**|VS - west||
 
 > [!NOTE]
@@ -50,13 +50,13 @@ In dit artikel leest u hoe u uw DNS-zones beheert met behulp van de Azure Portal
 
 ## <a name="list-dns-zones"></a>DNS-zones vermelden
 
-Ga in het Azure Portal naar **meer services**  >  **netwerken**  >  **DNS zones**. Elke DNS-zone is een eigen resource en informatie, zoals het aantal record sets en naam servers, kan vanuit deze weer gave worden bekeken. De kolom **naam servers** bevindt zich niet in de standaard weergave. Als u deze wilt toevoegen, klikt u op **kolommen**, selecteert u **naam servers**en klikt u vervolgens op **gereed**.
+Ga in het Azure Portal naar **meer services**  >  **netwerken**  >  **DNS zones**. Elke DNS-zone is een eigen resource en informatie, zoals het aantal record sets en naam servers, kan vanuit deze weer gave worden bekeken. De kolom **naam servers** bevindt zich niet in de standaard weergave. Als u deze wilt toevoegen, klikt u op **kolommen**, selecteert u **naam servers** en klikt u vervolgens op **gereed**.
 
 ![DNS-zones weer geven](./media/dns-operations-dnszones-portal/listzones.png)
 
 ## <a name="delete-a-dns-zone"></a>Een DNS-zone verwijderen
 
-Navigeer naar een DNS-zone in de portal. Klik op **zone verwijderen**op de Blade **DNS-zone** . U wordt vervolgens gevraagd om te bevestigen dat u de DNS-zone wilt verwijderen. Als u een DNS-zone verwijdert, worden ook alle records uit de zone verwijderd.
+Navigeer naar een DNS-zone in de portal. Klik op **zone verwijderen** op de Blade **DNS-zone** . U wordt vervolgens gevraagd om te bevestigen dat u de DNS-zone wilt verwijderen. Als u een DNS-zone verwijdert, worden ook alle records uit de zone verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

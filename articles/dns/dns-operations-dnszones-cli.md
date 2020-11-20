@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2017
 ms.author: rohink
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ff1abd48282a4ec9278d7182fea286178b5bd3ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 469fdbced4601c6ffb4b6aa35e8f943bcb5dde1b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87495910"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965779"
 ---
 # <a name="how-to-manage-dns-zones-in-azure-dns-using-the-azure-cli"></a>DNS-zones beheren in Azure DNS met behulp van de Azure CLI
 
@@ -43,11 +43,11 @@ Controleer voordat u met de configuratie begint of u de volgende items hebt.
 
 * Een Azure-abonnement. Als u nog geen Azure-abonnement hebt, kunt u [uw voordelen als MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) of [u aanmelden voor een gratis account](https://azure.microsoft.com/pricing/free-trial/).
 
-* Installeer de nieuwste versie van de Azure CLI. Deze is beschikbaar voor Windows, Linux en MAC. Lees [Azure CLI installeren](https://docs.microsoft.com/cli/azure/install-az-cli2) voor meer informatie.
+* Installeer de nieuwste versie van de Azure CLI. Deze is beschikbaar voor Windows, Linux en MAC. Lees [Azure CLI installeren](/cli/azure/install-az-cli2) voor meer informatie.
 
 ### <a name="sign-in-to-your-azure-account"></a>Aanmelden bij uw Azure-account
 
-Open een consolevenster en doorloop de verificatie met uw referenties. Raadpleeg [Log in to Azure from the Azure CLI (Aanmelden bij Azure vanaf de Azure CLI)](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest) voor meer informatie.
+Open een consolevenster en doorloop de verificatie met uw referenties. Raadpleeg [Log in to Azure from the Azure CLI (Aanmelden bij Azure vanaf de Azure CLI)](/cli/azure/authenticate-azure-cli?view=azure-cli-latest) voor meer informatie.
 
 ```
 az login
@@ -115,7 +115,7 @@ az network dns zone create --resource-group MyResourceGroup --name contoso.com -
 
 Gebruik om een DNS-zone op te halen `az network dns zone show` . Zie `az network dns zone show --help` voor help.
 
-In het volgende voor beeld worden de DNS-zone *contoso.com* en de bijbehorende gegevens uit de *MyResourceGroup*van de resource groep geretourneerd. 
+In het volgende voor beeld worden de DNS-zone *contoso.com* en de bijbehorende gegevens uit de *MyResourceGroup* van de resource groep geretourneerd. 
 
 ```azurecli
 az network dns zone show --resource-group myresourcegroup --name contoso.com
@@ -193,7 +193,6 @@ az network dns zone delete --resource-group myresourcegroup --name contoso.com
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het [beheren van record sets en records](dns-getstarted-create-recordset-cli.md) in uw DNS-zone.
+Meer informatie over het [beheren van record sets en records](./dns-getstarted-cli.md) in uw DNS-zone.
 
 Meer informatie over hoe u [uw domein kunt delegeren naar Azure DNS](dns-domain-delegation.md).
-

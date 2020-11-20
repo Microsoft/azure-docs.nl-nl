@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/03/2017
 ms.author: damendo
-ms.openlocfilehash: a16e99df57da66d2633947f8aecdf1d2cef9ab15
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 115adb7a71d820a75261837f4c14b1b84adb98da
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84737407"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965524"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-portal"></a>Verbindingen met Azure Network Watcher met de Azure Portal oplossen
 
@@ -37,7 +37,7 @@ In dit artikel wordt ervan uitgegaan dat u de volgende resources hebt:
 * Virtuele machines voor het oplossen van verbindingen met.
 
 > [!IMPORTANT]
-> Verbindings problemen oplossen vereist dat de VM-extensie is geïnstalleerd op de VM die u wilt oplossen `AzureNetworkWatcherExtension` . Voor het installeren van de uitbrei ding op een Windows-VM gaat u naar [azure Network Watcher agent-extensie voor virtuele machines voor Windows](../virtual-machines/windows/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) en voor Linux VM gaat u naar de [Azure Network Watcher agent-extensie voor virtuele machines voor Linux](../virtual-machines/linux/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json). De uitbrei ding is niet vereist voor het eind punt van de bestemming.
+> Verbindings problemen oplossen vereist dat de VM-extensie is geïnstalleerd op de VM die u wilt oplossen `AzureNetworkWatcherExtension` . Voor het installeren van de uitbrei ding op een Windows-VM gaat u naar [azure Network Watcher agent-extensie voor virtuele machines voor Windows](../virtual-machines/extensions/network-watcher-windows.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json) en voor Linux VM gaat u naar de [Azure Network Watcher agent-extensie voor virtuele machines voor Linux](../virtual-machines/extensions/network-watcher-linux.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json). De uitbrei ding is niet vereist voor het eind punt van de bestemming.
 
 ## <a name="check-connectivity-to-a-virtual-machine"></a>Controleer de verbinding met een virtuele machine
 
@@ -45,7 +45,7 @@ In dit voor beeld wordt de verbinding met een virtuele doel machine via poort 80
 
 Ga naar uw Network Watcher en klik op **verbindings problemen oplossen**. Selecteer de virtuele machine waarvoor u de connectiviteit wilt controleren. Kies in de sectie **doel** de optie **Selecteer een virtuele machine** en kies de juiste virtuele machine en poort om te testen.
 
-Wanneer u op **controleren**hebt geklikt, wordt de verbinding tussen de virtuele machines op de opgegeven poort gecontroleerd. In het voor beeld is de doel-VM onbereikbaar. er wordt een lijst met hops weer gegeven.
+Wanneer u op **controleren** hebt geklikt, wordt de verbinding tussen de virtuele machines op de opgegeven poort gecontroleerd. In het voor beeld is de doel-VM onbereikbaar. er wordt een lijst met hops weer gegeven.
 
 ![De connectiviteits resultaten voor een virtuele machine controleren][1]
 

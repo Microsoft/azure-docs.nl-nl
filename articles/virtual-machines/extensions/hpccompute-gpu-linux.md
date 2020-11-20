@@ -8,17 +8,18 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/11/2019
 ms.author: akjosh
-ms.openlocfilehash: 52f896e5cbcc8089ee8683338c99fb514400be4a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c06d8e4ab368934182ed67b91dedb9ba9bcfc199
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86511140"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965320"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Uitbrei ding van NVIDIA GPU-stuur programma voor Linux
 
@@ -86,7 +87,7 @@ Alle instellingen zijn optioneel. Standaard wordt de kernel niet bijgewerkt als 
 | ---- | ---- | ---- | ---- | ---- |
 | updateOS | De kernel bijwerken, zelfs als deze niet vereist is voor installatie van Stuur Programma's | onjuist | de waarde True, false | booleaans |
 | driverVersion | NV: raster versie van het stuur programma<br> NC/ND: CUDA Toolkit-versie. De meest recente Stuur Programma's voor de gekozen CUDA worden automatisch geïnstalleerd. | meest recente | RASTER: ' 430,30 ', ' 418,70 ', ' 410,92 ', ' 410,71 ', ' 390,75 ', ' 390,57 ', ' 390,42 '<br> CUDA: "10.0.130", "9.2.88", "9.1.85" | tekenreeks |
-| installCUDA | Installeer de CUDA Toolkit. Alleen relevant voor virtuele machines van de NC/ND-serie. | true | de waarde True, false | booleaans |
+| installCUDA | Installeer de CUDA Toolkit. Alleen relevant voor virtuele machines van de NC/ND-serie. | waar | de waarde True, false | booleaans |
 
 
 ## <a name="deployment"></a>Implementatie

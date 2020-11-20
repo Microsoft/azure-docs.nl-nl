@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 09/28/2017
 ms.author: alkohli
-ms.openlocfilehash: 3032585c6f0a5cc6143eee06b12b6def50cd7cd0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dcaa83980210a1f5449e8a2e0982cb8e39ff03d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80297710"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966187"
 ---
 # <a name="storsimple-8000-series-software-high-availability-and-networking-requirements"></a>StorSimple 8000-serie software, hoge Beschik baarheid en netwerk vereisten
 
@@ -122,7 +122,7 @@ We raden u aan om de firewall regels voor uitgaand verkeer, op basis van StorSim
 
 Een routerings metriek is gekoppeld aan de interfaces en de gateway die de gegevens naar de opgegeven netwerken routeren. De metrische gegevens van de route ring worden gebruikt door het routerings protocol om het beste pad naar een bepaalde bestemming te berekenen, als er meerdere paden naar hetzelfde doel zijn. Hoe lager de routerings metriek, des te hoger de voor keur.
 
-Als meerdere netwerk interfaces en gateways zijn geconfigureerd voor kanaal verkeer, worden de metrische gegevens van de route ring in de context van StorSimple afgespeeld om de relatieve volg orde te bepalen waarin de interfaces zullen worden gebruikt. De metrische gegevens van de route ring kunnen niet worden gewijzigd door de gebruiker. U kunt de cmdlet echter gebruiken `Get-HcsRoutingTable` om de routerings tabel (en meet waarden) op uw StorSimple-apparaat af te drukken. Meer informatie over Get-HcsRoutingTable-cmdlet bij het [oplossen van problemen met StorSimple-implementatie](storsimple-troubleshoot-deployment.md).
+Als meerdere netwerk interfaces en gateways zijn geconfigureerd voor kanaal verkeer, worden de metrische gegevens van de route ring in de context van StorSimple afgespeeld om de relatieve volg orde te bepalen waarin de interfaces zullen worden gebruikt. De metrische gegevens van de route ring kunnen niet worden gewijzigd door de gebruiker. U kunt de cmdlet echter gebruiken `Get-HcsRoutingTable` om de routerings tabel (en meet waarden) op uw StorSimple-apparaat af te drukken. Meer informatie over Get-HcsRoutingTable-cmdlet bij het [oplossen van problemen met StorSimple-implementatie](./storsimple-8000-troubleshoot-deployment.md).
 
 De Routing metric-algoritme die wordt gebruikt voor update 2 en latere versies kunnen als volgt worden uitgelegd.
 
@@ -250,4 +250,4 @@ Lees deze best practices aandachtig door om te zorgen voor een hoge Beschik baar
 * [Meer informatie over het implementeren van uw StorSimple-oplossing](storsimple-8000-deployment-walkthrough-u2.md).
 
 <!--Reference links-->
-[1]: https://technet.microsoft.com/library/cc731844(v=WS.10).aspx
+[1]: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731844(v=ws.10)

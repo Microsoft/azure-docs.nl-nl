@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 05/13/2020
 ms.author: aahi
-ms.openlocfilehash: 44e81286ffa5930b802df3b3bfe657091175f391
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 68da6a134f2410ca81ae16b8e00c40d0a9c8f22c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363630"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965014"
 ---
 # <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Voor beeld: sleutel zinnen extra heren met behulp van Text Analytics
 
@@ -26,7 +26,8 @@ Deze functie is handig als u snel de belangrijkste punten moet identificeren van
 Zie voor meer informatie [Ondersteunde talen](../language-support.md).
 
 > [!TIP]
-> Text Analytics biedt ook een Docker-containerinstallatiekopie op basis van Linux voor sleuteltermextractie. U kunt de [Text Analytics-container dus dicht bij uw gegevens installeren en uitvoeren](text-analytics-how-to-install-containers.md).
+> * Text Analytics biedt ook een Docker-containerinstallatiekopie op basis van Linux voor sleuteltermextractie. U kunt de [Text Analytics-container dus dicht bij uw gegevens installeren en uitvoeren](text-analytics-how-to-install-containers.md).
+> * U kunt deze functie ook [asynchroon](text-analytics-how-to-call-api.md) gebruiken met behulp van het `/analyze` eind punt.
 
 ## <a name="preparation"></a>Voorbereiding
 

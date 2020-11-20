@@ -8,12 +8,12 @@ ms.service: dns
 ms.topic: how-to
 ms.date: 06/18/2019
 ms.author: rohink
-ms.openlocfilehash: 9302e922d509f3145fd7913835ce896a6da860fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 63bd1d01adf66f33a8ee5349f35063473429b007
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84699461"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964776"
 ---
 # <a name="migrating-legacy-azure-dns-private-zones-to-new-resource-model"></a>Verouderde Azure DNS particuliere zones migreren naar een nieuw resource model
 
@@ -107,10 +107,10 @@ Met deze stap worden de verouderde DNS-zones verwijderd en moeten deze pas worde
 ## <a name="update-your-automation"></a>Uw automatisering bijwerken
 
 Als u Automation gebruikt, inclusief sjablonen, Power shell-scripts of aangepaste code die is ontwikkeld met behulp van SDK, moet u uw automatisering bijwerken om het nieuwe resource model voor de privé-DNS-zones te gebruiken. Hieronder vindt u de koppelingen naar nieuwe persoonlijke DNS CLI/PS/SDK-documentatie.
-* [Azure DNS particuliere zones REST API](https://docs.microsoft.com/rest/api/dns/privatedns/privatezones)
-* [Azure DNS CLI voor persoonlijke zones](https://docs.microsoft.com/cli/azure/ext/privatedns/network/private-dns?view=azure-cli-latest)
-* [Azure DNS persoonlijke zones Power shell](https://docs.microsoft.com/powershell/module/az.privatedns/?view=azps-2.3.2)
-* [Azure DNS-SDK voor particuliere zones](https://docs.microsoft.com/dotnet/api/overview/azure/privatedns/management?view=azure-dotnet-preview)
+* [Azure DNS particuliere zones REST API](/rest/api/dns/privatedns/privatezones)
+* [Azure DNS CLI voor persoonlijke zones](/cli/azure/ext/privatedns/network/private-dns?view=azure-cli-latest)
+* [Azure DNS persoonlijke zones Power shell](/powershell/module/az.privatedns/?view=azps-2.3.2)
+* [Azure DNS-SDK voor particuliere zones](/dotnet/api/overview/azure/privatedns/management?view=azure-dotnet-preview)
 
 ## <a name="need-further-help"></a>Meer hulp nodig
 

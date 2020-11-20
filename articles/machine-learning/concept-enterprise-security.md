@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/09/2020
-ms.openlocfilehash: a9ad018980784a1f809ad28a77dacf9f0328fffa
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 4e2bcb683c9d4c5248315549bf6d6ee26b2a51ac
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873893"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965031"
 ---
 # <a name="enterprise-security-and-governance-for-azure-machine-learning"></a>Enter prise Security en governance voor Azure Machine Learning
 
@@ -28,7 +28,7 @@ Wanneer u een Cloud service gebruikt, is een best practice het beperken van de t
 
 ## <a name="authentication--authorization"></a>Verificatie & autorisatie
 
-De meeste authenticatie voor Azure Machine Learning bronnen gebruiken Azure Active Directory (Azure AD) voor verificatie en op rollen gebaseerd toegangs beheer (Azure RBAC) voor autorisatie. De uitzonde ringen hierop zijn:
+De meeste authenticatie voor Azure Machine Learning bronnen gebruiken Azure Active Directory (Azure AD) voor verificatie en Azure op rollen gebaseerd toegangs beheer (Azure RBAC) voor autorisatie. De uitzonde ringen hierop zijn:
 
 * __SSH__: u kunt SSH-toegang inschakelen voor bepaalde reken resources, zoals Azure machine learning reken instantie. SSH-toegang gebruikt verificatie op basis van een sleutel. Zie [SSH-sleutels maken en beheren](../virtual-machines/linux/create-ssh-keys-detailed.md)voor meer informatie over het maken van SSH-sleutels. Zie [Azure machine learning Compute-instantie maken en beheren](how-to-create-manage-compute-instance.md)voor meer informatie over het inschakelen van SSH-toegang.
 * __Modellen die zijn geïmplementeerd als__ webservices: implementaties op basis van __sleutels__ of op __tokens__ gebaseerd toegangs beheer kunnen worden gebruikt. Sleutels zijn statische teken reeksen. Tokens worden opgehaald met behulp van een Azure AD-account. Zie [verificatie configureren voor modellen die zijn geïmplementeerd als een webservice](how-to-authenticate-web-service.md)voor meer informatie.
@@ -49,7 +49,7 @@ Zie [verificatie voor Azure machine learning-werk ruimte](how-to-setup-authentic
 
 ### <a name="azure-rbac"></a>Azure RBAC
 
-U kunt meerdere werk ruimten maken en elke werk ruimte kan worden gedeeld door meerdere personen. U kunt bepalen welke functies of bewerkingen van de werkruimte gebruikers toegang hebben door hun Azure AD-account toe te wijzen aan Azure RBAC-rollen. Hier volgen de ingebouwde rollen:
+U kunt meerdere werk ruimten maken en elke werk ruimte kan worden gedeeld door meerdere personen. U kunt bepalen welke functies of bewerkingen van de werkruimte gebruikers toegang hebben door hun Azure AD-account toe te wijzen aan Azure-rollen. Hier volgen de ingebouwde rollen:
 
 * Eigenaar
 * Inzender
@@ -91,7 +91,7 @@ Aan elke werk ruimte is ook een aan het systeem toegewezen [beheerde identiteit]
 | Resource | Machtigingen |
 | ----- | ----- |
 | Werkruimte | Inzender |
-| Opslagaccount | Inzender voor Storage Blob-gegevens |
+| Storage-account | Inzender voor Storage Blob-gegevens |
 | Key Vault | Toegang tot alle sleutels, geheimen, certificaten |
 | Azure Container Registry | Inzender |
 | Resource groep die de werk ruimte bevat | Inzender |

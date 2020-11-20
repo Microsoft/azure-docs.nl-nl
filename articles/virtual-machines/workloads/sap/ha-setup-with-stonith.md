@@ -7,18 +7,19 @@ author: saghorpa
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0967c5e354c3b0e433753cf89d830dc2101741af
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b34a7665770308b45732711f5d8328eb1d0a785f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91363117"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965065"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Hoge beschikbaarheid ingesteld in SUSE met behulp van de STONITH
 Dit document bevat gedetailleerde stapsgewijze instructies voor het instellen van de hoge Beschik baarheid op SUSE-besturings systeem met behulp van het STONITH-apparaat.
@@ -75,7 +76,7 @@ Micro soft Service Management biedt deze teken reeks. Wijzig het bestand op **be
 
 ![Scherm afbeelding toont een initiatorname-bestand met InitiatorName-waarden voor een knoop punt.](media/HowToHLI/HASetupWithStonith/initiatorname.png)
 
-1,2 */etc/iscsi/iscsid.conf*wijzigen: set *node.Session.Timeo.replacement_timeout = 5* en *node. startup = Automatic*. Wijzig het bestand op **beide** knoop punten.
+1,2 */etc/iscsi/iscsid.conf* wijzigen: set *node.Session.Timeo.replacement_timeout = 5* en *node. startup = Automatic*. Wijzig het bestand op **beide** knoop punten.
 
 1,3 de detectie opdracht uit te voeren, worden vier sessies weer gegeven. Voer de app uit op beide knoop punten.
 
@@ -260,7 +261,7 @@ Voer de opdracht uit *crm_mon* om ervoor te zorgen dat **beide** knoop punten on
 crm_mon
 ```
 ![Scherm afbeelding toont een console venster met de resultaten van c r m_mon.](media/HowToHLI/HASetupWithStonith/crm-mon.png)
-U kunt zich ook aanmelden bij Hawk om de cluster status *https:// \<node IP> : 7630*te controleren. De standaard gebruiker is hacluster en het wacht woord is Linux. Indien nodig kunt u het wacht woord wijzigen met de opdracht *passwd* .
+U kunt zich ook aanmelden bij Hawk om de cluster status *https:// \<node IP> : 7630* te controleren. De standaard gebruiker is hacluster en het wacht woord is Linux. Indien nodig kunt u het wacht woord wijzigen met de opdracht *passwd* .
 
 ## <a name="7-configure-cluster-properties-and-resources"></a>7. cluster eigenschappen en-bronnen configureren 
 In deze sectie worden de stappen beschreven voor het configureren van de cluster resources.
@@ -322,7 +323,7 @@ crm configure load update crm-vip.txt
 
 ### <a name="74-validate-the-resources"></a>7,4 de resources valideren
 
-Wanneer u de opdracht *crm_mon*uitvoert, ziet u de twee resources.
+Wanneer u de opdracht *crm_mon* uitvoert, ziet u de twee resources.
 ![Scherm afbeelding toont een console venster met twee resources.](media/HowToHLI/HASetupWithStonith/crm_mon_command.png)
 
 U kunt ook de status zien op *https:// \<node IP address> : 7630/CIB/Live/State*

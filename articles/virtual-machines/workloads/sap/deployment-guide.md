@@ -10,17 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 1c4f1951-3613-4a5a-a0af-36b85750c84e
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/16/2020
 ms.author: sedusch
-ms.openlocfilehash: 4494af89ac35a391f7dc6097b14d135a911d99dd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ed30c271e4c2458a33784cbcfc682001b542f2b6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91359610"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964946"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Azure Virtual Machines-implementatie voor SAP NetWeaver
 
@@ -421,10 +422,10 @@ Het volgende stroom diagram toont de SAP-specifieke volg orde van de stappen voo
 
 De eenvoudigste manier om een nieuwe virtuele machine te maken met een installatie kopie van Azure Marketplace is met behulp van de Azure Portal.
 
-1.  Ga naar <https://portal.azure.com/#create/hub>.  U kunt ook **+ Nieuw**in het menu Azure Portal selecteren.
-1.  Selecteer **Compute**en selecteer vervolgens het type besturings systeem dat u wilt implementeren. Bijvoorbeeld Windows Server 2012 R2, SUSE Linux Enterprise Server 12 (SLES 12), Red Hat Enterprise Linux 7,2 (RHEL 7,2) of Oracle Linux 7,2. In de standaard lijst weergave worden niet alle ondersteunde besturings systemen weer gegeven. Selecteer **alles weer geven** voor een volledige lijst. Voor meer informatie over ondersteunde besturings systemen voor de implementatie van SAP-software raadpleegt u SAP Note [1928533].
+1.  Ga naar <https://portal.azure.com/#create/hub>.  U kunt ook **+ Nieuw** in het menu Azure Portal selecteren.
+1.  Selecteer **Compute** en selecteer vervolgens het type besturings systeem dat u wilt implementeren. Bijvoorbeeld Windows Server 2012 R2, SUSE Linux Enterprise Server 12 (SLES 12), Red Hat Enterprise Linux 7,2 (RHEL 7,2) of Oracle Linux 7,2. In de standaard lijst weergave worden niet alle ondersteunde besturings systemen weer gegeven. Selecteer **alles weer geven** voor een volledige lijst. Voor meer informatie over ondersteunde besturings systemen voor de implementatie van SAP-software raadpleegt u SAP Note [1928533].
 1.  Bekijk de voor waarden op de volgende pagina.
-1.  Selecteer **Resource Manager**in het vak **een implementatie model selecteren** .
+1.  Selecteer **Resource Manager** in het vak **een implementatie model selecteren** .
 1.  Selecteer **Maken**.
 
 De wizard begeleidt u bij het instellen van de vereiste para meters voor het maken van de virtuele machine, naast alle vereiste resources, zoals netwerk interfaces en opslag accounts. Enkele van deze para meters zijn:
@@ -503,7 +504,7 @@ Voer in het Azure Portal de volgende para meters voor de sjabloon in:
       * [Opslag structuur van een virtuele machine voor RDBMS-implementaties](./dbms_guide_general.md#65fa79d6-a85f-47ee-890b-22e794f51a64)
       * [Premium Storage: opslag met hoge prestaties voor werk belastingen van virtuele Azure-machines][storage-premium-storage-preview-portal]
       * [Inleiding tot Microsoft Azure Storage][storage-introduction]
-   * **Gebruikers naam** en **beheerders wachtwoord**voor de beheerder: een gebruikers naam en wacht woord.
+   * **Gebruikers naam** en **beheerders wachtwoord** voor de beheerder: een gebruikers naam en wacht woord.
      Er wordt een nieuwe gebruiker gemaakt om u aan te melden bij de virtuele machine.
    * **Nieuw of bestaand subnet**: Hiermee wordt bepaald of er een nieuw virtueel netwerk en subnet wordt gemaakt of een bestaand subnet wordt gebruikt. Als u al een virtueel netwerk hebt dat is verbonden met uw on-premises netwerk, selecteert u **bestaande**.
    * **Subnet-id**: als u de virtuele machine wilt implementeren in een bestaand VNet waarvoor u een subnet hebt gedefinieerd, moet de virtuele machine worden toegewezen aan, de id van het specifieke subnet benoemen. De ID ziet er ongeveer als volgt uit:/Subscriptions/ &lt; -abonnements-id>/resourceGroups/naam van de &lt; resource groep>/providers/Microsoft.Network/virtualNetworks/naam van het &lt; virtuele netwerk>/subnets/- &lt; subnet naam>
@@ -642,7 +643,7 @@ Voer in het Azure Portal de volgende para meters voor de sjabloon in:
    * **VHD-URI van gebruikers installatie kopie** (alleen sjabloon voor onbeheerde schijf installatie kopie): de URI van de VHD van de persoonlijke installatie kopie, bijvoorbeeld https:// &lt; accountname>. blob.core.Windows.net/VHDs/userimage.VHD.
    * **Opslag account voor gebruikers installatie kopie** (alleen sjabloon voor onbeheerde schijf installatie kopieën): de naam van het opslag account waarin de installatie kopie van het privé-besturings systeem is opgeslagen, bijvoorbeeld &lt; accountname> in https:// &lt; account naam>. blob.core.Windows.net/VHDs/userimage.VHD.
    * **userImageId** (alleen sjabloon voor beheerde schijf kopieën): id van de beheerde schijf kopie die u wilt gebruiken
-   * **Gebruikers naam** en **wacht woord**beheerder: de gebruikers naam en het wacht woord.
+   * **Gebruikers naam** en **wacht woord** beheerder: de gebruikers naam en het wacht woord.
 
      Er wordt een nieuwe gebruiker gemaakt om u aan te melden bij de virtuele machine.
    * **Nieuw of bestaand subnet**: Hiermee wordt bepaald of er een nieuw virtueel netwerk en subnet wordt gemaakt of een bestaand subnet wordt gebruikt. Als u al een virtueel netwerk hebt dat is verbonden met uw on-premises netwerk, selecteert u **bestaande**.
@@ -854,14 +855,14 @@ De stappen die u moet nemen voor het configureren van de proxy in Windows versch
 
 Proxy-instellingen moeten correct worden ingesteld voor het lokale systeem account om toegang te krijgen tot internet. Als uw proxy instellingen niet zijn ingesteld door groepsbeleid, kunt u de instellingen voor het lokale systeem account configureren.
 
-1. Ga naar **Start**, Voer **gpedit. msc**in en selecteer vervolgens **Enter**.
+1. Ga naar **Start**, Voer **gpedit. msc** in en selecteer vervolgens **Enter**.
 1. Selecteer **computer configuratie**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **Internet Explorer**. Zorg ervoor dat de instelling **proxy-instellingen per computer (in plaats van per gebruiker)** is uitgeschakeld of niet is geconfigureerd.
-1. Ga in **het configuratie scherm**naar de Internet opties van **netwerk centrum en delen**  >  **Internet Options**.
+1. Ga in **het configuratie scherm** naar de Internet opties van **netwerk centrum en delen**  >  **Internet Options**.
 1. Op het tabblad **verbindingen** selecteert u de knop **LAN-instellingen** .
 1. Schakel het selectievakje **Instellingen automatisch detecteren** uit.
 1. Schakel het selectie vakje **een proxy server gebruiken voor uw LAN** in en voer vervolgens het proxy adres en de poort in.
 1. Selecteer de knop **Geavanceerd** .
-1. Voer in het vak **uitzonde ringen** het IP-adres **168.63.129.16**in. Selecteer **OK**.
+1. Voer in het vak **uitzonde ringen** het IP-adres **168.63.129.16** in. Selecteer **OK**.
 
 #### <a name="linux"></a>Linux
 
@@ -933,7 +934,7 @@ De Azure-extensie voor SAP installeren met behulp van Power shell:
 
 1. Zorg ervoor dat u de nieuwste versie van de cmdlet Azure PowerShell hebt geïnstalleerd. Zie [deploying Azure PowerShell cmdlets][deployment-guide-4.1](Engelstalig) voor meer informatie.  
 1. Voer de volgende PowerShell-cmdlet uit.
-    Voer cmdlet uit voor een lijst met beschik bare omgevingen `Get-AzEnvironment` . Als u wereld wijd Azure wilt gebruiken, is uw omgeving **Cloud**. Selecteer **AzureChinaCloud**voor Azure China 21vianet.
+    Voer cmdlet uit voor een lijst met beschik bare omgevingen `Get-AzEnvironment` . Als u wereld wijd Azure wilt gebruiken, is uw omgeving **Cloud**. Selecteer **AzureChinaCloud** voor Azure China 21vianet.
 
     ```powershell
     $env = Get-AzEnvironment -Name <name of the environment>
@@ -1030,7 +1031,7 @@ De nieuwe VM-extensie voor SAP maakt gebruik van een beheerde identiteit die is 
 1. Zorg ervoor dat u de huidige versie van de VM-extensie voor SAP verwijdert. Het is niet mogelijk om beide versies van de VM-extensie voor SAP op dezelfde virtuele machine te installeren.
 1. Zorg ervoor dat u de nieuwste versie van de Azure PowerShell cmdlet (ten minste 4.3.0) hebt geïnstalleerd. Zie [deploying Azure PowerShell cmdlets][deployment-guide-4.1](Engelstalig) voor meer informatie.
 1. Voer de volgende PowerShell-cmdlet uit.
-    Voer cmdlet uit voor een lijst met beschik bare omgevingen `Get-AzEnvironment` . Als u wereld wijd Azure wilt gebruiken, is uw omgeving **Cloud**. Selecteer **AzureChinaCloud**voor Azure China 21vianet.
+    Voer cmdlet uit voor een lijst met beschik bare omgevingen `Get-AzEnvironment` . Als u wereld wijd Azure wilt gebruiken, is uw omgeving **Cloud**. Selecteer **AzureChinaCloud** voor Azure China 21vianet.
 
     ```powershell
     $env = Get-AzEnvironment -Name <name of the environment>
@@ -1128,7 +1129,7 @@ Azperflib.exe uitvoer toont alle gevulde Azure-prestatie meter items voor SAP. O
 ![Uitvoer van de status controle door azperflib.exe uit te voeren, wat aangeeft dat er geen problemen zijn][deployment-guide-figure-1100]
 <a name="figure-11"></a>
 
-Controleer het resultaat dat wordt geretourneerd voor de **tellers totale** uitvoer. dit wordt gerapporteerd als leeg **en voor de status die**in de voor gaande afbeelding wordt weer gegeven.
+Controleer het resultaat dat wordt geretourneerd voor de **tellers totale** uitvoer. dit wordt gerapporteerd als leeg **en voor de status die** in de voor gaande afbeelding wordt weer gegeven.
 
 Interpreteer de resulterende waarden als volgt:
 
@@ -1136,10 +1137,10 @@ Interpreteer de resulterende waarden als volgt:
 | --- | --- |
 | **API-aanroepen-niet beschikbaar** | Tellers die niet beschikbaar zijn, zijn mogelijk niet van toepassing op de configuratie van de virtuele machine of fouten. Zie de **integriteits status**. |
 | **Totaal aantal tellers-leeg** |De volgende twee Azure-opslag-items kunnen leeg zijn: <ul><li>Lezen van de opslag op latentie server msec</li><li>Opslag gelezen op latentie E2E msec</li></ul>Alle andere tellers moeten waarden bevatten. |
-| **Integriteits status** |Alleen OK als de retour status **OK**is. |
+| **Integriteits status** |Alleen OK als de retour status **OK** is. |
 | **Diagnostics** |Gedetailleerde informatie over de status. |
 
-Als de **status** waarde niet **OK**is, volgt u de instructies in [status controleren voor Azure extension for SAP-configuratie][deployment-guide-5.2].
+Als de **status** waarde niet **OK** is, volgt u de instructies in [status controleren voor Azure extension for SAP-configuratie][deployment-guide-5.2].
 
 #### <a name="run-the-readiness-check-on-a-linux-vm"></a>De gereedheids controle uitvoeren op een virtuele Linux-machine
 
@@ -1153,7 +1154,7 @@ Als de **status** waarde niet **OK**is, volgt u de instructies in [status contro
 
    b. `cat /var/lib/AzureEnhancedMonitor/PerfCounters | grep Error` uitvoeren
 
-   **Verwacht resultaat**: retourneert één regel waarbij de fout **geen**is, bijvoorbeeld **3; config; Fout;; 0; 0; geen; 0; 1456416792; TST-servercs;**
+   **Verwacht resultaat**: retourneert één regel waarbij de fout **geen** is, bijvoorbeeld **3; config; Fout;; 0; 0; geen; 0; 1456416792; TST-servercs;**
 
    c. `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord` uitvoeren
 
@@ -1187,7 +1188,7 @@ Als de voor gaande controle niet is geslaagd, voert u de volgende extra controle
 
    b.  `dump ccm` uitvoeren
 
-   c.  Controleer of de **Virtualization_Configuration** meet waarde voor \Enhanced-controle **waar**is.
+   c.  Controleer of de **Virtualization_Configuration** meet waarde voor \Enhanced-controle **waar** is.
 
 Als u al een SAP NetWeaver ABAP-toepassings server hebt geïnstalleerd, opent u de trans actie ST06 en controleert u of bewaking is ingeschakeld.
 
@@ -1210,7 +1211,7 @@ Met deze controle wordt ervoor gezorgd dat alle prestatie gegevens die in uw SAP
 
 Het XML-bestand dat u kunt openen, http://127.0.0.1:11812/azure4sap/metrics bevat alle Azure-prestatie meter items voor SAP. Het bevat ook een samen vatting en status indicator van de status Azure-extensie voor SAP.
 
-Controleer de waarde van het element **provider status Description** . Als de waarde niet **OK**is, volgt u de instructies in [status controleren voor nieuwe Azure-extensie voor SAP-configuratie][deployment-guide-5.2-new].
+Controleer de waarde van het element **provider status Description** . Als de waarde niet **OK** is, volgt u de instructies in [status controleren voor nieuwe Azure-extensie voor SAP-configuratie][deployment-guide-5.2-new].
 
 #### <a name="run-the-readiness-check-on-a-linux-vm"></a>De gereedheids controle uitvoeren op een virtuele Linux-machine
 
@@ -1252,7 +1253,7 @@ Als de voor gaande controle niet is geslaagd, voert u de volgende extra controle
 
    b.  `dump ccm` uitvoeren
 
-   c.  Controleer of de **Virtualization_Configuration** meet waarde voor \Enhanced-controle **waar**is.
+   c.  Controleer of de **Virtualization_Configuration** meet waarde voor \Enhanced-controle **waar** is.
 
 Als u al een SAP NetWeaver ABAP-toepassings server hebt geïnstalleerd, opent u de trans actie ST06 en controleert u of bewaking is ingeschakeld.
 
@@ -1266,7 +1267,7 @@ Als een van deze controles mislukt en voor gedetailleerde informatie over het op
 Als sommige infrastructuur gegevens niet correct worden afgeleverd, zoals wordt aangegeven door de test die wordt beschreven in de [gereedheids controle voor Azure extension for SAP][deployment-guide-5.1], voert `Test-AzVMAEMExtension` u de cmdlet uit om te controleren of de Azure-infra structuur en de Azure-extensie voor SAP correct zijn geconfigureerd.
 
 1. Zorg ervoor dat u de nieuwste versie van de cmdlet Azure PowerShell hebt geïnstalleerd, zoals beschreven in [Azure PowerShell-cmdlets implementeren][deployment-guide-4.1].
-1. Voer de volgende PowerShell-cmdlet uit. Voer de cmdlet uit voor een lijst met beschik bare omgevingen `Get-AzEnvironment` . Als u wereld wijd Azure wilt gebruiken, selecteert u de **Cloud** -omgeving. Selecteer **AzureChinaCloud**voor Azure China 21vianet.
+1. Voer de volgende PowerShell-cmdlet uit. Voer de cmdlet uit voor een lijst met beschik bare omgevingen `Get-AzEnvironment` . Als u wereld wijd Azure wilt gebruiken, selecteert u de **Cloud** -omgeving. Selecteer **AzureChinaCloud** voor Azure China 21vianet.
 
    ```powershell
    $env = Get-AzEnvironment -Name <name of the environment>
@@ -1279,7 +1280,7 @@ Als sommige infrastructuur gegevens niet correct worden afgeleverd, zoals wordt 
 
    ![Uitvoer van een geslaagde test van de Azure-extensie voor SAP][deployment-guide-figure-1300]
 
-Zorg ervoor dat elk resultaat van de status controle **OK**is. Als sommige controles niet **OK**worden weer gegeven, voert u de update-cmdlet uit zoals beschreven in [de Azure-extensie voor SAP configureren][deployment-guide-4.5]. Wacht 15 minuten en herhaal de controles die zijn beschreven in [gereedheids controle voor Azure Extension voor SAP][deployment-guide-5.1] en [status controle voor Azure-extensie voor SAP-configuratie][deployment-guide-5.2]. Als de controles nog steeds een probleem met enkele of alle items aangeven, raadpleegt u [problemen met de Azure-extensie voor SAP oplossen][deployment-guide-5.3].
+Zorg ervoor dat elk resultaat van de status controle **OK** is. Als sommige controles niet **OK** worden weer gegeven, voert u de update-cmdlet uit zoals beschreven in [de Azure-extensie voor SAP configureren][deployment-guide-4.5]. Wacht 15 minuten en herhaal de controles die zijn beschreven in [gereedheids controle voor Azure Extension voor SAP][deployment-guide-5.1] en [status controle voor Azure-extensie voor SAP-configuratie][deployment-guide-5.2]. Als de controles nog steeds een probleem met enkele of alle items aangeven, raadpleegt u [problemen met de Azure-extensie voor SAP oplossen][deployment-guide-5.3].
 
 > [!Note]
 > U kunt waarschuwingen krijgen in gevallen waarin u beheerde standaard-Azure-schijven gebruikt. Er worden waarschuwingen weer gegeven in plaats van de tests die ' OK ' retour neren. Dit is normaal en bedoeld voor dat schijf type. Zie ook [problemen met de Azure-extensie voor SAP oplossen][deployment-guide-5.3]
@@ -1293,7 +1294,7 @@ Zorg ervoor dat elk resultaat van de status controle **OK**is. Als sommige contr
 Als sommige infrastructuur gegevens niet correct worden afgeleverd, zoals wordt aangegeven door de test die wordt beschreven in de [gereedheids controle voor Azure extension for SAP][deployment-guide-5.1-new], voert `Get-AzVMExtension` u de cmdlet uit om te controleren of de Azure-extensie voor SAP is geïnstalleerd. De `Test-AzVMAEMExtension` biedt nog geen ondersteuning voor de nieuwe extensie. Zodra de cmdlet de nieuwe uitbrei ding ondersteunt, wordt dit artikel bijgewerkt.
 
 1. Zorg ervoor dat u de nieuwste versie van de cmdlet Azure PowerShell hebt geïnstalleerd, zoals beschreven in [Azure PowerShell-cmdlets implementeren][deployment-guide-4.1].
-1. Voer de volgende PowerShell-cmdlet uit. Voer de cmdlet uit voor een lijst met beschik bare omgevingen `Get-AzEnvironment` . Als u wereld wijd Azure wilt gebruiken, selecteert u de **Cloud** -omgeving. Selecteer **AzureChinaCloud**voor Azure China 21vianet.
+1. Voer de volgende PowerShell-cmdlet uit. Voer de cmdlet uit voor een lijst met beschik bare omgevingen `Get-AzEnvironment` . Als u wereld wijd Azure wilt gebruiken, selecteert u de **Cloud** -omgeving. Selecteer **AzureChinaCloud** voor Azure China 21vianet.
 
    ```powershell
    $env = Get-AzEnvironment -Name <name of the environment>

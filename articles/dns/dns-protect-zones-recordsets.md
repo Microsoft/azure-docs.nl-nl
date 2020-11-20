@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: how-to
 ms.date: 2/20/2020
 ms.author: allensu
-ms.openlocfilehash: 52cb1f144608202739dc46f2053950b38d810631
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 8163fcb3b349e298bc89f06523e3e784bdc4ed49
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92330152"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965664"
 ---
 # <a name="how-to-protect-dns-zones-and-records"></a>DNS-zones en -records beschermen
 
@@ -34,7 +34,7 @@ De *myResourceGroup* van de resource groep bevat vijf zones voor Contoso Corpora
 
 De eenvoudigste manier om Azure RBAC-machtigingen toe te wijzen, is [via de Azure Portal](../role-based-access-control/role-assignments-portal.md).  
 
-Open **toegangs beheer (IAM)** voor de resource groep, selecteer **toevoegen**en selecteer vervolgens de rol **Inzender voor DNS-zones** . Selecteer de vereiste gebruikers of groepen om machtigingen te verlenen.
+Open **toegangs beheer (IAM)** voor de resource groep, selecteer **toevoegen** en selecteer vervolgens de rol **Inzender voor DNS-zones** . Selecteer de vereiste gebruikers of groepen om machtigingen te verlenen.
 
 ![Resource groeps niveau Azure RBAC via de Azure Portal](./media/dns-protect-zones-recordsets/rbac1.png)
 
@@ -65,7 +65,7 @@ az role assignment create \
 
 Azure RBAC-regels kunnen worden toegepast op een abonnement, een resource groep of een afzonderlijke resource. De bron kan een afzonderlijke DNS-zone of een afzonderlijke recordset zijn.
 
-De *myResourceGroup* van de resource groep bevat bijvoorbeeld de zone *contoso.com* en een *Customers.contoso.com*subzone. Er worden CNAME-records gemaakt voor elk klant account. Aan het beheerders account dat wordt gebruikt voor het beheren van CNAME-records zijn machtigingen toegewezen voor het maken van records in de zone *Customers.contoso.com* . Het account kan alleen *Customers.contoso.com* beheren.
+De *myResourceGroup* van de resource groep bevat bijvoorbeeld de zone *contoso.com* en een *Customers.contoso.com* subzone. Er worden CNAME-records gemaakt voor elk klant account. Aan het beheerders account dat wordt gebruikt voor het beheren van CNAME-records zijn machtigingen toegewezen voor het maken van records in de zone *Customers.contoso.com* . Het account kan alleen *Customers.contoso.com* beheren.
 
 Azure RBAC-machtigingen op zone niveau kunnen worden verleend via de Azure Portal.  Open **toegangs beheer (IAM)** voor de zone, selecteer **toevoegen**, selecteer de rol **Inzender voor DNS-zone** en selecteer de vereiste gebruikers of groepen om machtigingen te verlenen.
 
@@ -198,11 +198,11 @@ Er zijn twee typen bron vergrendeling: **CanNotDelete** en **alleen-lezen**. Dez
 
 Als u wilt voor komen dat er wijzigingen worden aangebracht, past u een alleen-lezen vergrendeling toe op de zone. Met deze vergren deling voor komt u dat er nieuwe record sets worden gemaakt en dat bestaande record sets worden gewijzigd of verwijderd.
 
-Resource vergrendelingen op zone niveau kunnen worden gemaakt via de Azure Portal.  Selecteer op de pagina DNS-zone de optie **vergren**delen en selecteer **+ toevoegen**:
+Resource vergrendelingen op zone niveau kunnen worden gemaakt via de Azure Portal.  Selecteer op de pagina DNS-zone de optie **vergren** delen en selecteer **+ toevoegen**:
 
 ![Resource vergrendeling op zone niveau via de Azure Portal](./media/dns-protect-zones-recordsets/locks1.png)
 
-Resource vergrendelingen op zone niveau kunnen ook worden gemaakt via [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcelock?view=latest):
+Resource vergrendelingen op zone niveau kunnen ook worden gemaakt via [Azure PowerShell](/powershell/module/az.resources/new-azresourcelock?view=latest):
 
 ```azurepowershell
 # Lock a DNS zone
@@ -216,7 +216,7 @@ $rsg = "<resource group name>"
 New-AzResourceLock -LockLevel $lvl -LockName $lnm -ResourceName $rsc -ResourceType $rty -ResourceGroupName $rsg
 ```
 
-De overeenkomstige opdracht is ook [beschikbaar via de Azure cli](https://docs.microsoft.com/cli/azure/lock?view=azure-cli-latest#az-lock-create):
+De overeenkomstige opdracht is ook [beschikbaar via de Azure cli](/cli/azure/lock?view=azure-cli-latest#az-lock-create):
 
 ```azurecli
 # Lock a DNS zone

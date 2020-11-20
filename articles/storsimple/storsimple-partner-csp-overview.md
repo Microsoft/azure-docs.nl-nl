@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 358399426798ac20897d207c93a8874357e8b781
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c96dcc2bae03b1bd05fb3d1512dba757f180eed8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88181997"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964912"
 ---
 # <a name="what-is-storsimple-for-cloud-solutions-providers-program"></a>Wat is StorSimple voor het programma Cloud Solutions providers?
 
@@ -30,7 +30,7 @@ Microsoft Azure StorSimple is een unieke benadering van bedrijfs opslag met echt
 
 Met StorSimple Virtual array voor Cloud solutions provider (CSP) kunnen partners op deze manier hun verkoop kansen gebruiken. De partners zijn eigenaar van de end-to-end klant levenscyclus met directe inrichting, facturering en ondersteuning van de Cloud Services van micro soft. Kortom, de partners kunnen nu de StorSimple samen met hun services aan klanten afhandelen.
 
-Ga naar de [overzichts pagina van Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview) voor meer informatie over STORSIMPLE voor CSP.
+Ga naar de [overzichts pagina van Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-overview) voor meer informatie over STORSIMPLE voor CSP.
 
 Ga naar [StorSimple in CSP: veelgestelde vragen](storsimple-partner-csp-faq.md)voor meer informatie over facturering, prijzen, prikkels en het verkrijgen van ondersteuning in CSP. 
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 6a7b4d8c3d2e2b33d8e2a9936670992b1c922b6a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 30a07957a75bfe82d8ce350675f0d29b2f03e069
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84737356"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966136"
 ---
 # <a name="perform-network-intrusion-detection-with-network-watcher-and-open-source-tools"></a>Detectie van binnendringing van het netwerk met Network Watcher en open source-hulpprogram ma's uitvoeren
 
@@ -80,7 +80,7 @@ Hoewel de logboeken die Suricata genereren waardevolle informatie bevatten over 
 
 #### <a name="install-elasticsearch"></a>Elasticsearch installeren
 
-1. Voor de elastische stack van versie 5,0 en hoger is Java 8 vereist. Voer de opdracht uit `java -version` om uw versie te controleren. Als Java niet is geïnstalleerd, raadpleegt u de documentatie op de [Azure-Suppored JDKs](https://aka.ms/azure-jdks).
+1. Voor de elastische stack van versie 5,0 en hoger is Java 8 vereist. Voer de opdracht uit `java -version` om uw versie te controleren. Als Java niet is geïnstalleerd, raadpleegt u de documentatie op de [Azure-Suppored JDKs](/azure/developer/java/fundamentals/java-jdk-long-term-support).
 
 1. Down load het juiste binaire pakket voor uw systeem:
 
@@ -236,7 +236,7 @@ Raadpleeg de [officiële documentatie](https://www.elastic.co/guide/en/beats/lib
 1. Als u uw Kibana web interface wilt weer geven, gaat u naar `http://localhost:5601`
 1. Voor dit scenario is het index patroon dat wordt gebruikt voor de logboeken van de Suricata "logstash-*"
 
-1. Als u het Kibana-dash board extern wilt weer geven, maakt u een inkomende NSG-regel waarmee toegang tot **poort 5601**wordt toegestaan.
+1. Als u het Kibana-dash board extern wilt weer geven, maakt u een inkomende NSG-regel waarmee toegang tot **poort 5601** wordt toegestaan.
 
 ### <a name="create-a-kibana-dashboard"></a>Een Kibana-dash board maken
 

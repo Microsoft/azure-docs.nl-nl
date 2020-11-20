@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: damendo
-ms.openlocfilehash: 18023f5a5b36dd971080d7a62fdd44698a205bb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f9b9e91cda93a986fdaaf0f53d8987544e783a2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88272532"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966459"
 ---
 # <a name="read-nsg-flow-logs"></a>NSG-stroomlogboeken lezen
 
 Meer informatie over het lezen van NSG-stroom logboek vermeldingen met Power shell.
 
-NSG-stroom logboeken worden opgeslagen in een opslag account in [blok-blobs](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). Blok-blobs bestaan uit kleinere blokken. Elk logboek is een afzonderlijke blok-blob die elk uur wordt gegenereerd. Nieuwe logboeken worden elk uur gegenereerd, de logboeken worden elke paar minuten bijgewerkt met nieuwe vermeldingen met de meest recente gegevens. In dit artikel leert u hoe u gedeelten van de stroom Logboeken kunt lezen.
+NSG-stroom logboeken worden opgeslagen in een opslag account in [blok-blobs](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). Blok-blobs bestaan uit kleinere blokken. Elk logboek is een afzonderlijke blok-blob die elk uur wordt gegenereerd. Nieuwe logboeken worden elk uur gegenereerd, de logboeken worden elke paar minuten bijgewerkt met nieuwe vermeldingen met de meest recente gegevens. In dit artikel leert u hoe u gedeelten van de stroom Logboeken kunt lezen.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -37,7 +37,7 @@ Voordat u begint, moet u de stroom logboek registratie van de netwerk beveiligin
 
 ## <a name="retrieve-the-block-list"></a>De lijst met geblokkeerde websites ophalen
 
-De volgende Power shell stelt de variabelen in die nodig zijn om de NSG-stroom logboek-BLOB te doorzoeken en geeft een lijst van de blokken in de [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblockblob) -blok-blob. Werk het script bij zodat het geldige waarden voor uw omgeving bevat.
+De volgende Power shell stelt de variabelen in die nodig zijn om de NSG-stroom logboek-BLOB te doorzoeken en geeft een lijst van de blokken in de [CloudBlockBlob](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob) -blok-blob. Werk het script bij zodat het geldige waarden voor uw omgeving bevat.
 
 ```powershell
 function Get-NSGFlowLogCloudBlockBlob {
@@ -189,6 +189,6 @@ Dit scenario is een voor beeld van het lezen van vermeldingen in NSG-stroom logb
 
 Ga naar [elastische stack gebruiken](network-watcher-visualize-nsg-flow-logs-open-source-tools.md), [gebruik Grafana](network-watcher-nsg-grafana.md)en [gebruik Graylog](network-watcher-analyze-nsg-flow-logs-graylog.md) om meer te weten te komen over manieren om NSG-stroom logboeken weer te geven. Een open-source Azure-functie benadering voor het rechtstreeks gebruiken van de blobs en het geven van verschillende log Analytics-consumenten vindt u hier: [Azure Network WATCHER NSG stroom logboeken connector](https://github.com/Microsoft/AzureNetworkWatcherNSGFlowLogsConnector).
 
-U kunt [Azure Traffic Analytics](https://docs.microsoft.com/azure/network-watcher/traffic-analytics) gebruiken om inzicht te krijgen in uw verkeers stromen. Traffic Analytics gebruikt [log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal) om uw verkeers stroom te doorzoeken.
+U kunt [Azure Traffic Analytics](./traffic-analytics.md) gebruiken om inzicht te krijgen in uw verkeers stromen. Traffic Analytics gebruikt [log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md) om uw verkeers stroom te doorzoeken.
 
 Ga voor meer informatie over opslag-blobs naar: [Azure functions Blob Storage-bindingen](../azure-functions/functions-bindings-storage-blob.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 5aa6906f7f06e109342d81db6171773a68642e0c
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 76695d4d8dbc3e3a6b04b89b8f34e41b83a92963
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342277"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965184"
 ---
 # <a name="working-with-security-policies"></a>Werken met beveiligingsbeleid
 
@@ -46,7 +46,7 @@ Ga als volgt te werk als u uw beveiligingsbeleidsregels wilt weergeven in Securi
 
 1. Selecteer in het **Security Center** -dash board **beveiligings beleid**.
 
-    :::image type="content" source="./media/security-center-policies/security-center-policy-mgt.png" alt-text="De pagina beleids beheer&quot;:::
+    :::image type="content" source="./media/security-center-policies/security-center-policy-mgt.png" alt-text="De pagina beleids beheer":::
 
    In het scherm **beleids beheer** ziet u het aantal beheer groepen, abonnementen en werk ruimten, evenals de structuur van uw beheer groep.
 
@@ -57,7 +57,7 @@ Ga als volgt te werk als u uw beveiligingsbeleidsregels wilt weergeven in Securi
    ![pagina beleid](./media/tutorial-security-policy/security-policy-page.png)
 
     > [!NOTE]
-    > Als er naast het standaard beleid een label &quot;MG inherited" is, betekent dit dat het beleid is toegewezen aan een beheer groep en dat is overgenomen door het abonnement dat u bekijkt.
+    > Als er naast het standaard beleid een label "MG inherited" is, betekent dit dat het beleid is toegewezen aan een beheer groep en dat is overgenomen door het abonnement dat u bekijkt.
 
 
 1. Kies uit de beschik bare opties op deze pagina:
@@ -68,18 +68,7 @@ Ga als volgt te werk als u uw beveiligingsbeleidsregels wilt weergeven in Securi
 
     1. Als u het standaard beleid wilt weer geven en bewerken, selecteert u **effectief beleid weer geven** en gaat u verder, zoals hieronder wordt beschreven. 
 
-        :::image type="content" source="./media/security-center-policies/policy-screen.png" alt-text="De pagina beleids beheer&quot;:::
-
-   In het scherm **beleids beheer** ziet u het aantal beheer groepen, abonnementen en werk ruimten, evenals de structuur van uw beheer groep.
-
-1. Selecteer het abonnement of de beheer groep waarvan u het beleid wilt weer geven.
-
-1. De pagina beveiligings beleid voor het abonnement of de beheer groep wordt weer gegeven. Het beschik bare en toegewezen beleid wordt weer gegeven.
-
-   ![pagina beleid](./media/tutorial-security-policy/security-policy-page.png)
-
-    > [!NOTE]
-    > Als er naast het standaard beleid een label &quot;MG inherited":::
+        :::image type="content" source="./media/security-center-policies/policy-screen.png" alt-text="Scherm effectief beleid":::
 
        Dit scherm van het **beveiligings beleid** toont de actie die wordt uitgevoerd door het beleid dat is toegewezen aan het abonnement of de beheer groep die u hebt geselecteerd.
        
@@ -97,7 +86,7 @@ Ga als volgt te werk als u uw beveiligingsbeleidsregels wilt weergeven in Securi
 
 U kunt beveiligings beleid via de Azure Policy Portal bewerken via REST API of met behulp van Windows Power shell.
 
-Security Center maakt gebruik van Role-Based Access Control (RBAC), dat ingebouwde rollen biedt die u kunt toewijzen aan Azure-gebruikers,-groepen en-services. Wanneer gebruikers Security Center openen, zien ze alleen informatie met betrekking tot de resources waartoe ze toegang hebben. Dit betekent dat gebruikers de rol van *eigenaar*, *bijdrager*of *lezer* aan het abonnement van de resource krijgen toegewezen. Er zijn ook twee specifieke Security Center rollen:
+Security Center maakt gebruik van Azure RBAC (op rollen gebaseerd toegangs beheer), dat ingebouwde rollen biedt die u kunt toewijzen aan Azure-gebruikers,-groepen en-services. Wanneer gebruikers Security Center openen, zien ze alleen informatie met betrekking tot de resources waartoe ze toegang hebben. Dit betekent dat gebruikers de rol van *eigenaar*, *bijdrager* of *lezer* aan het abonnement van de resource krijgen toegewezen. Er zijn ook twee specifieke Security Center rollen:
 
 - **Beveiligings lezer**: heeft rechten voor het weer geven van Security Center items, zoals aanbevelingen, waarschuwingen, beleid en status. Kan geen wijzigingen aanbrengen.
 - **Beveiligings beheerder**: heeft dezelfde weergave rechten als de *beveiligings lezer*. Kan het beveiligings beleid ook bijwerken en waarschuwingen negeren.

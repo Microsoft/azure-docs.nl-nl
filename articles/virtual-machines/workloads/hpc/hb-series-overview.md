@@ -3,16 +3,17 @@ title: Overzicht van de VM van de HB-serie-Azure Virtual Machines | Microsoft Do
 description: Meer informatie over de preview-ondersteuning voor de VM-grootte van de HB-serie in Azure.
 author: vermagit
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 08/19/2020
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: d11ec99d10d74956c43c24145abbd291d9e2d2a9
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 1e37f13bc6e819079c63c583a1eeda12af5e213c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996241"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965456"
 ---
 # <a name="hb-series-virtual-machines-overview"></a>Overzicht van virtuele machines uit de HB-serie
 

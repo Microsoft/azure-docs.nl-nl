@@ -13,19 +13,19 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 60d3607a543cac5b8ce71819eb60394d8b8827bf
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: d99ed9304612d5c1d3cbdc56a76cee751f2a4d3f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331110"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966731"
 ---
 # <a name="virtual-network-service-tags"></a>Service tags van virtueel netwerk
 <a name="network-service-tags"></a>
 
 Een servicetag vertegenwoordigt een groep IP-adres voorvoegsels van een bepaalde Azure-service. Micro soft beheert de adres voorvoegsels die zijn opgenomen in het servicetag en werkt de servicetag automatisch bij met gewijzigde adressen, zodat de complexiteit van regel matige updates voor netwerk beveiligings regels wordt geminimaliseerd.
 
-U kunt service tags gebruiken voor het definiëren van netwerk toegangs beheer voor [netwerk beveiligings groepen](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) of [Azure firewall](https://docs.microsoft.com/azure/firewall/service-tags). Gebruik service tags in plaats van specifieke IP-adressen wanneer u beveiligings regels maakt. Door de servicetag naam op te geven, zoals **ApiManagement** , in het juiste *bron* -of *doel* veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren.
+U kunt service tags gebruiken voor het definiëren van netwerk toegangs beheer voor [netwerk beveiligings groepen](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) of [Azure firewall](https://docs.microsoft.com/azure/firewall/service-tags). Gebruik service tags in plaats van specifieke IP-adressen wanneer u beveiligings regels maakt. Door de servicetag naam op te geven, zoals **ApiManagement**, in het juiste *bron* -of *doel* veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren.
 
 U kunt service tags gebruiken om netwerk isolatie te bereiken en uw Azure-resources te beveiligen via het algemene Internet tijdens het openen van Azure-Services met open bare eind punten. Maak regels voor binnenkomende/uitgaande netwerk beveiligings groepen om verkeer naar/van **Internet** te weigeren en verkeer naar/van **Cloud** of andere [beschik bare service Tags](#available-service-tags) van specifieke Azure-Services toe te staan.
 
@@ -42,7 +42,7 @@ De kolommen geven aan of de tag:
 
 Service Tags geven standaard de bereiken weer voor de hele Cloud. Sommige service Tags bieden ook een nauw keurigere controle door de overeenkomende IP-bereiken te beperken tot een bepaalde regio. De service tags **opslag** vertegenwoordigt bijvoorbeeld Azure Storage voor de hele Cloud, maar **opslag. westus** beperkt het bereik tot alleen de IP-adresbereiken van het opslag gebied van de regio westus. In de volgende tabel wordt aangegeven of elk servicetag het regionale bereik ondersteunt.  
 
-| Label | Doel | Kunt u inkomend of uitgaand gebruiken? | Kan regionaal worden? | Kunt gebruiken met Azure Firewall? |
+| Tag | Doel | Kunt u inkomend of uitgaand gebruiken? | Kan regionaal worden? | Kunt gebruiken met Azure Firewall? |
 | --- | -------- |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **ActionGroup** | Actie groep. | Inkomend | Nee | Nee |
 | **ApiManagement** | Beheer verkeer voor Azure API Management-specifieke implementaties. <br/><br/>*Opmerking:* Deze tag vertegenwoordigt het Azure API Management service-eind punt voor besturings vlak per regio. Hierdoor kunnen klanten beheer bewerkingen uitvoeren op de Api's, bewerkingen, beleids regels, NamedValues die zijn geconfigureerd voor de API Management service.  | Inkomend | Ja | Ja |
@@ -56,7 +56,7 @@ Service Tags geven standaard de bereiken weer voor de hele Cloud. Sommige servic
 | **AzureBackup** |Azure Backup.<br/><br/>*Opmerking:* Deze tag bevat een afhankelijkheid van de **opslag** -en **AzureActiveDirectory** -Tags. | Uitgaand | Nee | Ja |
 | **AzureBotService** | Azure Bot Service. | Uitgaand | Nee | Nee |
 | **AzureCloud** | Alle [open bare IP-adressen van data centers](https://www.microsoft.com/download/details.aspx?id=56519). | Uitgaand | Ja | Ja |
-| **AzureCognitiveSearch** | Azure Cognitive Search. <br/><br/>Deze tag of de IP-adressen waarop deze tag wordt toegepast, kunnen worden gebruikt om Indexeer functies beveiligde toegang te geven tot gegevens bronnen. Raadpleeg de documentatie van de [indexers verbinding](https://docs.microsoft.com/azure/search/search-indexer-troubleshooting#connection-errors) voor meer informatie. <br/><br/> *Opmerking* : het IP-adres van de zoek service is niet opgenomen in de lijst met IP-bereiken voor deze servicetag en **moet ook worden toegevoegd** aan de IP-firewall van gegevens bronnen. | Inkomend | Nee | Nee |
+| **AzureCognitiveSearch** | Azure Cognitive Search. <br/><br/>Deze tag of de IP-adressen waarop deze tag wordt toegepast, kunnen worden gebruikt om Indexeer functies beveiligde toegang te geven tot gegevens bronnen. Raadpleeg de documentatie van de [indexers verbinding](https://docs.microsoft.com/azure/search/search-indexer-troubleshooting#connection-errors) voor meer informatie. <br/><br/> *Opmerking*: het IP-adres van de zoek service is niet opgenomen in de lijst met IP-bereiken voor deze servicetag en **moet ook worden toegevoegd** aan de IP-firewall van gegevens bronnen. | Inkomend | Nee | Nee |
 | **AzureConnectors** | Azure Logic Apps connectors voor probe/back-endverbinding. | Inkomend | Ja | Ja |
 | **AzureContainerRegistry** | Azure Container Registry. | Uitgaand | Ja | Ja |
 | **AzureCosmosDB** | Azure Cosmos DB. | Uitgaand | Ja | Ja |
@@ -64,10 +64,11 @@ Service Tags geven standaard de bereiken weer voor de hele Cloud. Sommige servic
 | **AzureDataExplorerManagement** | Beheer van Azure Data Explorer. | Inkomend | Nee | Nee |
 | **AzureDataLake** | Azure Data Lake Storage Gen1. | Uitgaand | Nee | Ja |
 | **AzureDevSpaces** | Azure dev Spaces. | Uitgaand | Nee | Nee |
+| **AzureDevOps** | Azure dev OPS.<br/><br/>*Opmerking: deze tag kan momenteel niet worden geconfigureerd via Azure Portal*| Inkomend | Nee | Ja |
 | **AzureDigitalTwins** | Azure Digital Apparaatdubbels.<br/><br/>*Opmerking:* Deze tag of de IP-adressen waarop deze tag wordt toegepast, kunnen worden gebruikt om de toegang te beperken tot eind punten die zijn geconfigureerd voor gebeurtenis routes. *Deze tag kan momenteel niet worden geconfigureerd via Azure Portal* | Inkomend | Nee | Ja |
 | **AzureEventGrid** | Azure Event Grid. | Beide | Nee | Nee |
 | **AzureFrontDoor. front-end** <br/> **AzureFrontDoor. back-end** <br/> **AzureFrontDoor.FirstParty**  | De voor deur van Azure. | Beide | Nee | Nee |
-| **AzureInformationProtection** | Azure Information Protection.<br/><br/>*Opmerking:* Deze tag heeft een afhankelijkheid van de tags **AzureActiveDirectory** , **AzureFrontDoor. frontend** en **AzureFrontDoor. FirstParty** . | Uitgaand | Nee | Nee |
+| **AzureInformationProtection** | Azure Information Protection.<br/><br/>*Opmerking:* Deze tag heeft een afhankelijkheid van de tags **AzureActiveDirectory**, **AzureFrontDoor. frontend** en **AzureFrontDoor. FirstParty** . | Uitgaand | Nee | Nee |
 | **AzureIoTHub** | Azure IoT Hub. | Uitgaand | Nee | Nee |
 | **AzureKeyVault** | Azure Key Vault.<br/><br/>*Opmerking:* Deze tag bevat een afhankelijkheid van de **AzureActiveDirectory** -tag. | Uitgaand | Ja | Ja |
 | **AzureLoadBalancer** | De Azure-infrastructuur load balancer. De tag wordt omgezet in het [virtuele IP-adres van de host](security-overview.md#azure-platform-considerations) (168.63.129.16) waar de Azure Health-tests afkomstig zijn. Dit omvat alleen test verkeer, niet het werkelijke verkeer naar uw back-end-resource. Als u Azure Load Balancer niet gebruikt, kunt u deze regel onderdrukken. | Beide | Nee | Nee |
@@ -79,7 +80,7 @@ Service Tags geven standaard de bereiken weer voor de hele Cloud. Sommige servic
 | **AzurePlatformLKM** | Windows-licentie verlening of service voor sleutel beheer.<br/><br/>U kunt deze tag gebruiken om de standaard instellingen voor licentie verlening uit te scha kelen. Wees voorzichtig wanneer u deze tag gebruikt. U wordt aangeraden [Azure-platform overwegingen](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations)te lezen.  We raden u ook aan eerst tests uit te voeren voordat u deze tag gebruikt. | Uitgaand | Nee | Nee |
 | **AzureResourceManager** | Azure Resource Manager. | Uitgaand | Nee | Nee |
 | **AzureSignalR** | Azure-Signa lering. | Uitgaand | Nee | Nee |
-| **AzureSiteRecovery** | Azure Site Recovery.<br/><br/>*Opmerking:* Deze tag heeft een afhankelijkheid van de tags **AzureActiveDirectory** , **AzureKeyVault** , **EventHub** , **GuestAndHybridManagement** en **Storage** . | Uitgaand | Nee | Nee |
+| **AzureSiteRecovery** | Azure Site Recovery.<br/><br/>*Opmerking:* Deze tag heeft een afhankelijkheid van de tags **AzureActiveDirectory**, **AzureKeyVault**, **EventHub**,**GuestAndHybridManagement** en **Storage** . | Uitgaand | Nee | Nee |
 | **AzureTrafficManager** | IP-adressen van Azure Traffic Manager test.<br/><br/>Zie [Veelgestelde vragen over Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs)voor meer informatie over het IP-adres van Traffic Manager test. | Inkomend | Nee | Ja |  
 | **BatchNodeManagement** | Beheer verkeer voor implementaties die zijn toegewezen aan Azure Batch. | Beide | Nee | Ja |
 | **CognitiveServicesManagement** | De adresbereiken voor verkeer voor Azure Cognitive Services. | Beide | Nee | Nee |
@@ -148,7 +149,7 @@ De IP-adresbereiken in deze bestanden bevinden zich in CIDR-notatie.
 >Een subset van deze gegevens is gepubliceerd in XML-bestanden voor [Azure Public](https://www.microsoft.com/download/details.aspx?id=41653), [Azure China](https://www.microsoft.com/download/details.aspx?id=42064)en [Azure Duitsland](https://www.microsoft.com/download/details.aspx?id=54770). Deze XML-down loads worden vóór 30 juni 2020 verouderd en zijn na die datum niet meer beschikbaar. U moet migreren naar met behulp van de detectie-API of JSON-bestand downloads, zoals beschreven in de vorige secties.
 
 ### <a name="tips"></a>Tips 
-- U kunt updates van de ene publicatie naar de volgende detecteren door verhoogde *changeNumber* -waarden in het JSON-bestand op te nemen. Elke subsectie (bijvoorbeeld **opslag. westus** ) heeft een eigen *changeNumber* die wordt verhoogd wanneer er wijzigingen optreden. Het hoogste niveau van de *changeNumber* van het bestand wordt verhoogd wanneer een van de subsecties wordt gewijzigd.
+- U kunt updates van de ene publicatie naar de volgende detecteren door verhoogde *changeNumber* -waarden in het JSON-bestand op te nemen. Elke subsectie (bijvoorbeeld **opslag. westus**) heeft een eigen *changeNumber* die wordt verhoogd wanneer er wijzigingen optreden. Het hoogste niveau van de *changeNumber* van het bestand wordt verhoogd wanneer een van de subsecties wordt gewijzigd.
 - Voor voor beelden van het parseren van de servicetag gegevens (bijvoorbeeld het ophalen van alle adresbereiken voor opslag in Westus), raadpleegt u de Help-documentatie voor de [service label detectie-API](https://aka.ms/discoveryapi_powershell) .
 
 ## <a name="next-steps"></a>Volgende stappen

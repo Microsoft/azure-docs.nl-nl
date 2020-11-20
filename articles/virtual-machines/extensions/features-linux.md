@@ -9,17 +9,18 @@ editor: ''
 tags: azure-service-management,azure-resource-manager
 ms.assetid: 52f5d0ec-8f75-49e7-9e15-88d46b420e63
 ms.service: virtual-machines-linux
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
-ms.openlocfilehash: 283eb9b9cbdc03813cf7c765c9ef3be5965919eb
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 129897d3288a900803efbfba8abf86c276077fa8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978336"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966068"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Extensies en functies van virtuele machines voor Linux
 
@@ -107,7 +108,7 @@ info:    vm extension set command OK
 
 ### <a name="azure-portal"></a>Azure Portal
 
-VM-extensies kunnen worden toegepast op een bestaande virtuele machine via de Azure Portal. Selecteer de virtuele machine in de portal, kies **uitbrei dingen**en selecteer vervolgens **toevoegen**. Kies de gewenste uitbrei ding in de lijst met beschik bare uitbrei dingen en volg de instructies in de wizard.
+VM-extensies kunnen worden toegepast op een bestaande virtuele machine via de Azure Portal. Selecteer de virtuele machine in de portal, kies **uitbrei dingen** en selecteer vervolgens **toevoegen**. Kies de gewenste uitbrei ding in de lijst met beschik bare uitbrei dingen en volg de instructies in de wizard.
 
 In de volgende afbeelding ziet u de installatie van de aangepaste script extensie voor Linux van de Azure Portal:
 
@@ -326,7 +327,7 @@ INFO [Microsoft.OSTCExtensions.LinuxDiagnostic-2.3.9027] Launch command:diagnost
 
 ## <a name="agent-permissions"></a>Agent machtigingen
 
-De agent moet worden uitgevoerd als *root*om de taken uit te voeren.
+De agent moet worden uitgevoerd als *root* om de taken uit te voeren.
 
 ## <a name="troubleshoot-vm-extensions"></a>Problemen met VM-extensies oplossen
 
@@ -336,7 +337,7 @@ De volgende stappen voor probleem oplossing zijn van toepassing op alle VM-exten
 
 1. Als u het logboek van de Linux-agent wilt controleren, bekijkt u de activiteit wanneer uw extensie is ingericht in */var/log/waagent.log*
 
-2. Raadpleeg de logboeken van de daad werkelijke extensie voor meer informatie over */var/log/Azure/ \<extensionName> *
+2. Raadpleeg de logboeken van de daad werkelijke extensie voor meer informatie over */var/log/Azure/ \<extensionName>*
 
 3. Raadpleeg de sectie extensie-specifieke documentatie voor het oplossen van problemen met fout codes, bekende problemen etc.
 
@@ -381,7 +382,7 @@ De uitvoer is vergelijkbaar met de volgende voorbeeld uitvoer:
   }
 ```
 
-De uitvoerings status van de extensie kan ook worden gevonden in de Azure Portal. Als u de status van een uitbrei ding wilt weer geven, selecteert u de virtuele machine, kiest u **uitbrei dingen**en selecteert u de gewenste uitbrei ding.
+De uitvoerings status van de extensie kan ook worden gevonden in de Azure Portal. Als u de status van een uitbrei ding wilt weer geven, selecteert u de virtuele machine, kiest u **uitbrei dingen** en selecteert u de gewenste uitbrei ding.
 
 ### <a name="rerun-a-vm-extension"></a>Een VM-extensie opnieuw uitvoeren
 

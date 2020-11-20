@@ -12,18 +12,18 @@ ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/21/2016
 ms.author: rohink
-ms.openlocfilehash: 07776e0361b8221cf3aca9f06c66478aa6127f53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4e713f54ab4702b21763dc9fc6c7b606f94a945
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84701729"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965711"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-azure-powershell"></a>Beheer DNS-records en-record sets in Azure DNS met behulp van Azure PowerShell
 
 > [!div class="op_single_selector"]
 > * [Azure Portal](dns-operations-recordsets-portal.md)
-> * [Klassieke Azure-CLI](dns-operations-recordsets-cli-nodejs.md)
+> * [Klassieke Azure-CLI](./dns-operations-recordsets-cli.md)
 > * [Azure-CLI](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
 
@@ -142,7 +142,7 @@ New-AzDnsRecordSet -Name 10 -RecordType PTR -ZoneName "my-arpa-zone.com" -Resour
 
 ### <a name="create-an-srv-record-set-with-a-single-record"></a>Een SRV-recordset met één record maken
 
-Wanneer u een [SRV-recordset](dns-zones-records.md#srv-records)maakt, geeft u de * \_ service* en het * \_ protocol* op in de naam van de recordset. Het is niet nodig om ' \@ ' in de naam van de recordset op te nemen bij het maken van een SRV-recordset op de zone Apex.
+Wanneer u een [SRV-recordset](dns-zones-records.md#srv-records)maakt, geeft u de *\_ service* en het *\_ protocol* op in de naam van de recordset. Het is niet nodig om ' \@ ' in de naam van de recordset op te nemen bij het maken van een SRV-recordset op de zone Apex.
 
 ```powershell
 New-AzDnsRecordSet -Name "_sip._tls" -RecordType SRV -ZoneName "contoso.com" -ResourceGroupName "MyResourceGroup" -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -Priority 0 -Weight 5 -Port 8080 -Target "sip.contoso.com") 

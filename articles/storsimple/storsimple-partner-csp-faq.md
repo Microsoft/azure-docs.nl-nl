@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 2f606a2ff036c6bc3b4e3c508632d48ae8d40f15
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36b96581d98465b860b630fe2f9a8aa64cf0f64f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400040"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964929"
 ---
 # <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>StorSimple for Cloud solutions provider-programma: veelgestelde vragen
 
@@ -59,7 +59,7 @@ StorSimple Virtual array voor CSP is beschikbaar in alle markten waar StorSimple
 Er zijn meerdere oplossingen:
 
 - De partners kunnen StorSimple Virtual array verkopen. 
-- De partners kunnen oplossingen bieden die zijn gebouwd rond StorSimple en andere Azure-Services of software van derden. Bekijk voor meer informatie enkele mogelijke [oplossingen die van StorSimple zijn](https://aka.ms/storsimple-build-solutions).
+- De partners kunnen oplossingen bieden die zijn gebouwd rond StorSimple en andere Azure-Services of software van derden. Bekijk voor meer informatie enkele mogelijke [oplossingen die van StorSimple zijn](./storsimple-disaster-recovery-using-azure-site-recovery.md).
 - Ze kunnen ook nieuwe bedrijfs modellen ontdekken door beheerde services te leveren.
 
 ### <a name="what-are-the-incentives-available-for-storsimple-csp-partners-do-i-qualify-for-any-csp-program-incentives"></a>Wat zijn de prikkels die beschikbaar zijn voor StorSimple CSP-partners? Kom ik in aanmerking voor de prikkel van een cryptografie programma?

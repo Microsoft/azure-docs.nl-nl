@@ -8,16 +8,17 @@ manager: balar
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 09/23/2020
 ms.author: damendo
-ms.openlocfilehash: 23520a0249e22b3f81c7f7c598ef10d8c3acb550
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: c427a206e0422e66cb526a29a462d8b6bdf6818e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900183"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965932"
 ---
 # <a name="update-the-network-watcher-extension-to-the-latest-version"></a>De Network Watcher-extensie bijwerken naar de nieuwste versie
 
@@ -47,7 +48,7 @@ U kunt de extensie versie controleren met behulp van de Azure Portal, de Azure C
 1. Selecteer de **AzureNetworkWatcher** -extensie om het deel venster met details weer te geven.
 1. Zoek het versie nummer in het veld **versie** .  
 
-#### <a name="use-the-azure-cli"></a>De Azure CLI gebruiken
+#### <a name="use-the-azure-cli"></a>Azure CLI gebruiken
 
 Voer de volgende opdracht uit vanaf een Azure CLI-prompt:
 
@@ -82,7 +83,8 @@ Voer de volgende opdrachten uit:
 Set-AzVMExtension -ResourceGroupName "myResourceGroup1" -Location "WestUS" -VMName "myVM1" -Name "AzureNetworkWatcherExtension" -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentLinux"
 
 #Windows command
-Set-AzVMExtension -ResourceGroupName "myResourceGroup1" -Location "WestUS" -VMName "myVM1" -Name "AzureNetworkWatcherExtension" -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentWindows"
+Set-AzVMExtension -ResourceGroupName "myResourceGroup1" -Location "WestUS" -VMName "myVM1" -Name "NetworkWatcherAgentWindows" -Publisher "Microsoft.Azure.NetworkWatcher" -Type "NetworkWatcherAgentWindows" -ForceRerun "True"
+
 ```
 
 Als dat niet werkt. Verwijder de uitbrei ding en installeer deze opnieuw met behulp van de onderstaande stappen. Hiermee wordt automatisch de meest recente versie toegevoegd.
@@ -143,4 +145,4 @@ Als u de automatische upgrade hebt ingesteld op True voor de extensie Network Wa
 
 ## <a name="support"></a>Ondersteuning
 
-Als u op elk moment meer hulp nodig hebt, raadpleegt u de documentatie voor de Network Watcher-extensie voor [Linux](./network-watcher-linux.md) of [Windows](./network-watcher-windows.md). U kunt ook contact opnemen met de Azure-experts op [MSDN Azure en stack overflow forums](https://azure.microsoft.com/support/forums/). U kunt ook een ondersteunings incident voor Azure opslaan. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/)en selecteer **ondersteuning verkrijgen** . Lees de [Veelgestelde vragen over ondersteuning voor Microsoft Azure](https://azure.microsoft.com/support/faq/)voor meer informatie over het gebruik van Azure-ondersteuning.
+Als u op elk moment meer hulp nodig hebt, raadpleegt u de documentatie voor de Network Watcher-extensie voor [Linux](./network-watcher-linux.md) of [Windows](./network-watcher-windows.md). U kunt ook contact opnemen met de Azure-experts op [MSDN Azure en stack overflow forums](https://azure.microsoft.com/support/forums/). U kunt ook een ondersteunings incident voor Azure opslaan. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/)en selecteer **ondersteuning verkrijgen**. Lees de [Veelgestelde vragen over ondersteuning voor Microsoft Azure](https://azure.microsoft.com/support/faq/)voor meer informatie over het gebruik van Azure-ondersteuning.

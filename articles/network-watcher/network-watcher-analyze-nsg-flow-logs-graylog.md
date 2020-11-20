@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2017
 ms.author: damendo
-ms.openlocfilehash: 62f4a06ec729d896dc11a290bc7a5ccc7c321683
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b363d90d05e95b017c3a655b57dbabc3712a155
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90984055"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965541"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-in-azure-using-network-watcher-and-graylog"></a>Stroom logboeken van netwerk beveiligings groepen beheren en analyseren in azure met behulp van Network Watcher en Graylog
 
@@ -40,7 +40,7 @@ Stroom logboeken voor netwerk beveiligings groepen zijn ingeschakeld met behulp 
 
 ### <a name="enable-network-security-group-flow-logging"></a>Logboek registratie van stroom van netwerk beveiligings groep inschakelen
 
-Voor dit scenario moet u logboek registratie van stroom netwerk beveiligings groep ingeschakeld hebben op ten minste één netwerk beveiligings groep in uw account. Raadpleeg het volgende artikel [Inleiding tot stroom registratie voor netwerk beveiligings groepen](network-watcher-nsg-flow-logging-overview.md)voor instructies over het inschakelen van stroom logboeken voor de netwerk beveiligings groep.
+Voor dit scenario moet u logboek registratie van stroom netwerk beveiligings groep ingeschakeld hebben op ten minste één netwerk beveiligings groep in uw account. Raadpleeg het volgende artikel [Inleiding tot stroom registratie voor netwerk beveiligings groepen](network-watcher-nsg-flow-logging-overview.md)voor instructies over het inschakelen van stroom logboeken voor de netwerk beveiligings groep.
 
 ### <a name="setting-up-graylog"></a>Graylog instellen
 
@@ -53,7 +53,7 @@ In dit voor beeld wordt de minimale Graylog-installatie gebruikt (dat wil zeggen
 
 Graylog kunnen op verschillende manieren worden geïnstalleerd, afhankelijk van uw platform en voor keuren. Raadpleeg de officiële [documentatie](https://docs.graylog.org/en/2.2/pages/installation.html)van Graylog voor een volledige lijst met mogelijke installatie methoden. De Graylog-server toepassing wordt uitgevoerd op Linux-distributies en heeft de volgende vereisten:
 
--  Java SE 8 of hoger – [Azul Azure jdk-documentatie](https://aka.ms/azure-jdks)
+-  Java SE 8 of hoger – [Azul Azure jdk-documentatie](/azure/developer/java/fundamentals/java-jdk-long-term-support)
 -  Elastisch zoeken 2. x (2.1.0 of hoger)- [installatie documentatie voor Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html)
 -  MongoDB 2,4 of hoger – [installatie documentatie voor MongoDb](https://docs.mongodb.com/manual/administration/install-on-linux/)
 
@@ -184,7 +184,7 @@ Nu u een verbinding tot stand hebt gebracht met de stroom logboeken met behulp v
 
 3. Als u de nieuwe invoer wilt starten, selecteert u *GELF UDP* in de vervolg keuzelijst **invoer selecteren** en vult u het formulier in. GELF staat voor de uitgebreide logboek indeling van Graylog. De GELF-indeling wordt ontwikkeld door Graylog. Zie de Graylog- [documentatie](https://docs.graylog.org/en/2.2/pages/gelf.html)voor meer informatie over de voor delen.
 
-   Zorg ervoor dat u de invoer verbindt met het IP-adres waarmee u uw Graylog-server hebt geconfigureerd. Het IP-adres moet overeenkomen met het veld **host** van de UDP-uitvoer van het configuratie bestand Logstash. De standaard poort moet *12201*zijn. Zorg ervoor dat de poort overeenkomt met het **poort** veld in de UDP-uitvoer die is opgegeven in het Logstash-configuratie bestand.
+   Zorg ervoor dat u de invoer verbindt met het IP-adres waarmee u uw Graylog-server hebt geconfigureerd. Het IP-adres moet overeenkomen met het veld **host** van de UDP-uitvoer van het configuratie bestand Logstash. De standaard poort moet *12201* zijn. Zorg ervoor dat de poort overeenkomt met het **poort** veld in de UDP-uitvoer die is opgegeven in het Logstash-configuratie bestand.
 
    ![Scherm afbeelding toont de Graylog-invoer, met opties voor het starten en zoeken van invoer.](./media/network-watcher-analyze-nsg-flow-logs-graylog/inputs.png)
 
@@ -198,7 +198,7 @@ Nu u een verbinding tot stand hebt gebracht met de stroom logboeken met behulp v
 
 ### <a name="search-through-graylog-messages"></a>Zoeken in Graylog-berichten
 
-Nadat u enige tijd hebt geduurd dat uw Graylog-server berichten kan verzamelen, kunt u de berichten doorzoeken. Als u wilt controleren of de berichten naar uw Graylog-server worden verzonden, klikt u op de pagina voor de configuratie van de **invoer** op de knop**ontvangen berichten weer geven**van de UDP-invoer van GELF die u hebt gemaakt. U wordt omgeleid naar een scherm dat lijkt op de volgende afbeelding: 
+Nadat u enige tijd hebt geduurd dat uw Graylog-server berichten kan verzamelen, kunt u de berichten doorzoeken. Als u wilt controleren of de berichten naar uw Graylog-server worden verzonden, klikt u op de pagina voor de configuratie van de **invoer** op de knop **ontvangen berichten weer geven** van de UDP-invoer van GELF die u hebt gemaakt. U wordt omgeleid naar een scherm dat lijkt op de volgende afbeelding: 
 
 ![Scherm afbeelding toont de Graylog-server die het Zoek resultaat, het histogram en de berichten weergeeft.](./media/network-watcher-analyze-nsg-flow-logs-graylog/histogram.png)
 
@@ -246,4 +246,4 @@ Als u Network Watcher integreert met Graylog, hebt u nu een handige en gecentral
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het visualiseren van stroom logboeken voor netwerk beveiligings groepen met Power BI door in [visualiseren netwerk beveiligings groep stroom logboeken met Power bi](network-watcher-visualize-nsg-flow-logs-power-bi.md)te bezoeken.
+Meer informatie over het visualiseren van stroom logboeken voor netwerk beveiligings groepen met Power BI door in [visualiseren netwerk beveiligings groep stroom logboeken met Power bi](network-watcher-visualize-nsg-flow-logs-power-bi.md)te bezoeken.

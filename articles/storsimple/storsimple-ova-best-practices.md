@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: bdf69a9ff7b3260b47042f296a47826e3c52387b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 71b018da6b54ebf2b45a261378ea521a397159e5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81460644"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964980"
 ---
 # <a name="storsimple-virtual-array-best-practices"></a>Best practices virtuele array van StorSimple
 
@@ -111,7 +111,7 @@ De minimale lokale schijf ruimte die nodig is voor herstel is 330 GB.
 
 Factor in een onverwachte groei kunt u een lokale schijf van 1,25-1,5 TB inrichten.
 
-### <a name="group-policy"></a>Groeps beleid
+### <a name="group-policy"></a>Groepsbeleid
 Groepsbeleid is een infra structuur waarmee u specifieke configuraties kunt implementeren voor gebruikers en computers. Groepsbeleid-instellingen zijn opgenomen in groepsbeleid objecten (Gpo's) die zijn gekoppeld aan de volgende Active Directory Domain Services (AD DS) containers: sites, domeinen of organisatie-eenheden (Ou's). 
 
 Als uw virtuele matrix lid is van een domein, kunnen groeps beleidsobjecten hierop worden toegepast. Met deze groeps beleidsobjecten kunnen toepassingen worden geïnstalleerd, zoals een antivirus software die de werking van de virtuele StorSimple-matrix kan beïnvloeden.
@@ -119,7 +119,7 @@ Als uw virtuele matrix lid is van een domein, kunnen groeps beleidsobjecten hier
 Daarom wordt u aangeraden:
 
 * Zorg ervoor dat uw virtuele matrix zich in een eigen organisatie-eenheid (OE) bevindt voor Active Directory.
-* Zorg ervoor dat er geen groeps beleidsobjecten (Gpo's) worden toegepast op uw virtuele matrix. U kunt overname blok keren om ervoor te zorgen dat de virtuele matrix (onderliggend knoop punt) geen Gpo's automatisch overneemt van het bovenliggende item. Ga voor meer informatie naar de [overname blok keren](https://technet.microsoft.com/library/cc731076.aspx).
+* Zorg ervoor dat er geen groeps beleidsobjecten (Gpo's) worden toegepast op uw virtuele matrix. U kunt overname blok keren om ervoor te zorgen dat de virtuele matrix (onderliggend knoop punt) geen Gpo's automatisch overneemt van het bovenliggende item. Ga voor meer informatie naar de [overname blok keren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731076(v=ws.11)).
 
 ### <a name="networking"></a>Netwerken
 De netwerk configuratie voor uw virtuele matrix wordt uitgevoerd via de lokale webgebruikersinterface. Een virtuele netwerk interface wordt ingeschakeld via de Hyper Visor waarin de virtuele matrix is ingericht. Gebruik de pagina [netwerk instellingen](storsimple-virtual-array-deploy3-fs-setup.md) om het IP-adres, subnet en de gateway van de virtuele netwerk interface te configureren.  U kunt ook de primaire en secundaire DNS-server, tijd instellingen en optionele proxy-instellingen voor uw apparaat configureren. De meeste netwerk configuratie is een eenmalige installatie. Bekijk de [StorSimple-netwerk vereisten](storsimple-ova-system-requirements.md#networking-requirements) voordat u de virtuele matrix implementeert.
@@ -137,7 +137,7 @@ Wanneer u uw virtuele matrix implementeert, wordt u aangeraden deze aanbevolen p
   * Statische IP-adressen configureren. U moet een primaire en een secundaire DNS-server configureren.
   * Als u meerdere netwerk interfaces in uw virtuele matrix definieert, kan alleen de eerste netwerk interface (standaard deze interface is **Ethernet**) de Cloud bereiken. Als u het type verkeer wilt beheren, kunt u meerdere virtuele netwerk interfaces maken op uw virtuele array (geconfigureerd als een iSCSI-server) en die interfaces verbinden met verschillende subnetten.
 * Als u de Cloud bandbreedte alleen wilt beperken (gebruikt door de virtuele matrix), configureert u beperking op de router of de firewall. Als u een beperking in uw Hyper Visor definieert, worden alle protocollen met inbegrip van iSCSI en SMB beperkt in plaats van alleen de Cloud bandbreedte.
-* Zorg ervoor dat tijd synchronisatie voor Hyper Visor is ingeschakeld. Als u Hyper-V gebruikt, selecteert u uw virtuele matrix in de Hyper-V-beheer, gaat u naar **instellingen &gt; integratie Services**en zorgt u ervoor dat de **tijd synchronisatie** wordt gecontroleerd.
+* Zorg ervoor dat tijd synchronisatie voor Hyper Visor is ingeschakeld. Als u Hyper-V gebruikt, selecteert u uw virtuele matrix in de Hyper-V-beheer, gaat u naar **instellingen &gt; integratie Services** en zorgt u ervoor dat de **tijd synchronisatie** wordt gecontroleerd.
 
 ### <a name="storage-accounts"></a>Opslagaccounts
 De virtuele StorSimple-matrix kan worden gekoppeld aan één opslag account. Dit opslag account kan een automatisch gegenereerd opslag account zijn, een account in hetzelfde abonnement als de service of een opslag account dat is gerelateerd aan een ander abonnement. Zie [opslag accounts beheren voor uw virtuele matrix](storsimple-virtual-array-manage-storage-accounts.md)voor meer informatie.
@@ -289,4 +289,3 @@ Er moeten mogelijk meerdere virtuele matrices worden geïmplementeerd voor een g
 
 ## <a name="see-also"></a>Zie ook
 Meer informatie over het [beheren van uw StorSimple Virtual array](storsimple-virtual-array-manager-service-administration.md) via de StorSimple Manager-service.
-

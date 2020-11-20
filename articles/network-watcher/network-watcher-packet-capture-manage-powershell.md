@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 100a8ed1987b2edbc0aea1708c8a60b48bf391b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c9a7af7575fcdd19d83e5a4f38ef03ef8948b8c0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84737917"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963467"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-powershell"></a>Pakket opnames beheren met Azure Network Watcher met behulp van Power shell
 
@@ -48,7 +48,7 @@ In dit artikel wordt ervan uitgegaan dat u de volgende resources hebt:
 * Een virtuele machine waarop de pakket Capture-extensie is ingeschakeld.
 
 > [!IMPORTANT]
-> Voor pakket opname is een extensie van een virtuele machine vereist `AzureNetworkWatcherExtension` . Voor het installeren van de uitbrei ding op een Windows-VM gaat u naar [azure Network Watcher agent-extensie voor virtuele machines voor Windows](../virtual-machines/windows/extensions-nwa.md) en voor Linux VM gaat u naar de [Azure Network Watcher agent-extensie voor virtuele machines voor Linux](../virtual-machines/linux/extensions-nwa.md).
+> Voor pakket opname is een extensie van een virtuele machine vereist `AzureNetworkWatcherExtension` . Voor het installeren van de uitbrei ding op een Windows-VM gaat u naar [azure Network Watcher agent-extensie voor virtuele machines voor Windows](../virtual-machines/extensions/network-watcher-windows.md) en voor Linux VM gaat u naar de [Azure Network Watcher agent-extensie voor virtuele machines voor Linux](../virtual-machines/extensions/network-watcher-linux.md).
 
 ## <a name="install-vm-extension"></a>VM-extensie installeren
 
@@ -281,17 +281,3 @@ Meer informatie over het automatiseren van pakket opnames met waarschuwingen voo
 Controleren of bepaalde verkeer is toegestaan in of buiten uw virtuele machine door te kijken naar controle van de [IP-stroom](diagnose-vm-network-traffic-filtering-problem.md)
 
 <!-- Image references -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-

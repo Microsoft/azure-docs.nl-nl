@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: damendo
-ms.openlocfilehash: 28d5ae1451b97c19576baa3f9760b8f784db3175
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 099ead37b8d6b46b767ef59ff24a7e7ff9dc9e3c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84736727"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966442"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-the-portal"></a>Pakket opnames beheren met Azure Network Watcher met behulp van de portal
 
@@ -41,15 +41,15 @@ Als er een netwerk beveiligings groep is gekoppeld aan de netwerk interface of h
 ## <a name="start-a-packet-capture"></a>Een pakket opname starten
 
 1. Ga in uw browser naar de [Azure Portal](https://portal.azure.com) en selecteer **alle services**, en selecteer vervolgens **Network Watcher** in het **gedeelte netwerken**.
-2. Selecteer **pakket opname** onder **Diagnostische hulpprogram Ma's**voor het netwerk. Bestaande pakket opnames worden weer gegeven, ongeacht hun status.
+2. Selecteer **pakket opname** onder **Diagnostische hulpprogram Ma's** voor het netwerk. Bestaande pakket opnames worden weer gegeven, ongeacht hun status.
 3. Selecteer **toevoegen** om een pakket opname te maken. U kunt waarden selecteren voor de volgende eigenschappen:
    - **Abonnement**: het abonnement van de virtuele machine waarvoor u de pakket opname wilt maken, is in.
    - **Resource groep**: de resource groep van de virtuele machine.
    - **Doel-virtuele machine**: de virtuele machine waarvoor u de pakket opname wilt maken.
    - **Naam van pakket opname**: een naam voor het vastleggen van pakketten.
-   - **Opslag account of-bestand**: Selecteer een **opslag account**, een **bestand**of beide. Als u **bestand**selecteert, wordt de vastleg ging geschreven naar een pad binnen de virtuele machine.
-   - **Lokaal**bestandspad: het lokale pad op de virtuele machine waarop de pakket opname wordt opgeslagen (alleen geldig wanneer het *bestand* is geselecteerd). Het pad moet een geldig pad zijn. Als u een virtuele Linux-machine gebruikt, moet het pad beginnen met */var/captures*.
-   - **Opslag accounts**: Selecteer een bestaand opslag account als u een *opslag account*hebt geselecteerd. Deze optie is alleen beschikbaar als u **opslag**hebt geselecteerd.
+   - **Opslag account of-bestand**: Selecteer een **opslag account**, een **bestand** of beide. Als u **bestand** selecteert, wordt de vastleg ging geschreven naar een pad binnen de virtuele machine.
+   - **Lokaal** bestandspad: het lokale pad op de virtuele machine waarop de pakket opname wordt opgeslagen (alleen geldig wanneer het *bestand* is geselecteerd). Het pad moet een geldig pad zijn. Als u een virtuele Linux-machine gebruikt, moet het pad beginnen met */var/captures*.
+   - **Opslag accounts**: Selecteer een bestaand opslag account als u een *opslag account* hebt geselecteerd. Deze optie is alleen beschikbaar als u **opslag** hebt geselecteerd.
    
      > [!NOTE]
      > Premium Storage-accounts worden momenteel niet ondersteund voor het opslaan van pakket opnames.
@@ -74,7 +74,7 @@ Nadat de ingestelde tijds limiet voor het vastleggen van pakketten is verlopen, 
 > [!NOTE]
 > De portal wordt automatisch:
 >  * Hiermee maakt u een Network Watcher in dezelfde regio als de regio waarin de geselecteerde virtuele machine zich bevindt, als de regio nog geen netwerk-Watcher heeft.
->  * Voegt de *AzureNetworkWatcherExtension* [Linux](../virtual-machines/linux/extensions-nwa.md) -of [Windows](../virtual-machines/windows/extensions-nwa.md) -extensie voor virtuele machines toe aan de virtuele machine, als deze nog niet is geïnstalleerd.
+>  * Voegt de *AzureNetworkWatcherExtension* [Linux](../virtual-machines/extensions/network-watcher-linux.md) -of [Windows](../virtual-machines/extensions/network-watcher-windows.md) -extensie voor virtuele machines toe aan de virtuele machine, als deze nog niet is geïnstalleerd.
 
 ## <a name="delete-a-packet-capture"></a>Een pakket opname verwijderen
 

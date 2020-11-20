@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/10/2017
 ms.author: timlt
-ms.openlocfilehash: 64f91263154f7e65238acdcef9d97e5f2d09aad5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9c7a2df83e9d630ce2b4635a830fb941180c758
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87006019"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964997"
 ---
 # <a name="storsimple-8000-series-a-hybrid-cloud-storage-solution"></a>StorSimple 8000-serie: een Hybrid Cloud Storage oplossing
 
@@ -48,7 +48,7 @@ In de volgende tabel worden enkele van de belangrijkste voor delen beschreven di
 | Gegevens mobiliteit |Gegevens die zijn geüpload naar Microsoft Azure Cloud Services, kunnen worden geopend vanaf andere sites voor herstel-en migratie doeleinden. Daarnaast kunt u StorSimple gebruiken om StorSimple-Cloud apparaten te configureren op virtuele machines (Vm's) die worden uitgevoerd in Microsoft Azure. De Vm's kunnen vervolgens virtuele apparaten gebruiken om toegang te krijgen tot opgeslagen gegevens voor test-of herstel doeleinden. |
 | Bedrijfscontinuïteit |Hiermee kunnen gebruikers van de StorSimple 5000-7000-serie hun gegevens migreren naar een StorSimple 8000 Series-apparaat. |
 | Beschik baarheid in de Azure Government Portal |StorSimple is beschikbaar in de Azure Government Portal. Zie [uw on-premises StorSimple-apparaat implementeren in de overheids Portal](storsimple-8000-deployment-walkthrough-gov-u2.md)voor meer informatie. |
-| Gegevens bescherming en-beschik baarheid |De StorSimple 8000-serie ondersteunt zone redundante opslag (ZRS), naast lokaal redundante opslag (LRS) en geografisch redundante opslag (GRS). Raadpleeg [dit artikel over Azure Storage redundantie opties](https://azure.microsoft.com/documentation/articles/storage-redundancy/) voor ZRS-gegevens. |
+| Gegevens bescherming en-beschik baarheid |De StorSimple 8000-serie ondersteunt zone redundante opslag (ZRS), naast lokaal redundante opslag (LRS) en geografisch redundante opslag (GRS). Raadpleeg [dit artikel over Azure Storage redundantie opties](../storage/common/storage-redundancy.md) voor ZRS-gegevens. |
 | Ondersteuning voor essentiële toepassingen |Met StorSimple kunt u de juiste volumes identificeren die lokaal zijn vastgemaakt. Dit zorgt ervoor dat de gegevens die door essentiële toepassingen worden vereist, niet in de cloud worden gelaagd. Lokaal vastgemaakte volumes zijn niet onderhevig aan Cloud latenties of verbindings problemen. Zie [de StorSimple-Apparaatbeheer-service gebruiken voor het beheren van volumes](storsimple-8000-manage-volumes-u2.md)voor meer informatie over lokaal vastgemaakte volumes. |
 | Lage latentie en hoge prestaties |U kunt Cloud apparaten maken die gebruikmaken van de functies van hoge prestaties en lage latentie van Azure Premium Storage. Zie [een StorSimple Cloud Appliance in azure implementeren en beheren](storsimple-8000-cloud-appliance-u2.md)voor meer informatie over StorSimple Premium-Cloud apparaten. |
 
@@ -315,4 +315,3 @@ Voordat u uw Microsoft Azure StorSimple-oplossing implementeert, wordt u aangera
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over [StorSimple-beveiliging](storsimple-8000-security.md).
-

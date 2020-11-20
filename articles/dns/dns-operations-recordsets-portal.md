@@ -7,22 +7,22 @@ ms.service: dns
 ms.topic: how-to
 ms.date: 10/6/2018
 ms.author: rohink
-ms.openlocfilehash: 111d94db1cbec658daabfb1a4c38c8160d6f50b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22ceba69ecf865d906021068a39a9d273b842ca2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84696828"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965728"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>DNS-records en-record sets beheren met behulp van de Azure Portal
 
 In dit artikel wordt beschreven hoe u record sets en records voor uw DNS-zone beheert met behulp van de Azure Portal.
 
-Het is belang rijk dat u begrijpt wat het verschil is tussen DNS-record sets en afzonderlijke DNS-records. Een recordset is een verzameling records in een zone die dezelfde naam hebben en van hetzelfde type zijn. Zie voor meer informatie [DNS-record sets en-records maken met behulp van de Azure Portal](dns-getstarted-create-recordset-portal.md).
+Het is belang rijk dat u begrijpt wat het verschil is tussen DNS-record sets en afzonderlijke DNS-records. Een recordset is een verzameling records in een zone die dezelfde naam hebben en van hetzelfde type zijn. Zie voor meer informatie [DNS-record sets en-records maken met behulp van de Azure Portal](./dns-getstarted-portal.md).
 
 ## <a name="create-a-new-record-set-and-record"></a>Een nieuwe recordset en record maken
 
-Zie [DNS-records maken met behulp van de Azure Portal](dns-getstarted-create-recordset-portal.md)voor het maken van een recordset in de Azure Portal.
+Zie [DNS-records maken met behulp van de Azure Portal](./dns-getstarted-portal.md)voor het maken van een recordset in de Azure Portal.
 
 ## <a name="view-a-record-set"></a>Een recordset weer geven
 

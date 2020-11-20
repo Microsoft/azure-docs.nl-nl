@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/02/2020
+ms.date: 11/18/2020
 ms.author: cherylmc
-ms.openlocfilehash: 64a4eb1b473c8944dadea4e1ee4323dfe4e9bcde
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 9d962d3a4757b4c7b2d217f91aaf73d6ad4164d3
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661117"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964844"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-radius-authentication-powershell"></a>Een punt-naar-site-verbinding met een VNet configureren met RADIUS-verificatie: Power shell
 
@@ -114,7 +114,7 @@ Declareer de waarden die u wilt gebruiken. Gebruik het volgende voorbeeld, en ve
 
 Met de volgende stappen maakt u een resource groep en een virtueel netwerk in de resource groep met drie subnetten. Bij het vervangen van waarden is het belang rijk dat u de naam van het subnet van de gateway altijd ' GatewaySubnet '. Als u een andere naam kiest, mislukt het maken van de gateway.
 
-1. Maak een resourcegroep.
+1. Een resourcegroep maken.
 
    ```azurepowershell-interactive
    New-AzResourceGroup -Name "TestRG" -Location "East US"
@@ -224,7 +224,7 @@ New-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
     -RadiusServerAddress "10.51.0.15" -RadiusServerSecret $Secure_Secret
     ```
 
-   Als u **twee** RADIUS-servers **(preview)** wilt opgeven, gebruikt u de volgende syntaxis. Wijzig de waarde **-vpnclientprotocol toegevoegd** naar wens
+   Als u **twee** RADIUS-servers wilt opgeven, gebruikt u de volgende syntaxis. Wijzig de waarde **-vpnclientprotocol toegevoegd** naar wens
 
     ```azurepowershell-interactive
     $radiusServer1 = New-AzRadiusServer -RadiusServerAddress 10.1.0.15 -RadiusServerSecret $radiuspd -RadiusServerScore 30

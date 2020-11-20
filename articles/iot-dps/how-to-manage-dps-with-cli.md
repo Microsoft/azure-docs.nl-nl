@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: iot-dps
 ms.custom: devx-track-azurecli
 services: iot-dps
-ms.openlocfilehash: 237ca1f0041283bb86b24ad456ab781dc13eeb86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 020b0dbc937885923b26c115f91147437b7a0f9b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90980518"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964725"
 ---
 # <a name="how-to-use-azure-cli-and-the-iot-extension-to-manage-the-iot-hub-device-provisioning-service"></a>Azure CLI en de IoT-extensie gebruiken voor het beheren van de IoT Hub Device Provisioning Service
 
-[Azure cli](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) is een open source-opdracht regel programma voor meerdere platformen voor het beheer van Azure-resources, zoals IOT Edge. Azure CLI is beschikbaar in Windows, Linux en macOS. Met Azure CLI kunt u Azure IoT Hub-resources, Device Provisioning Service-instanties en gekoppelde-hubs uit het vak beheren.
+[Azure cli](/cli/azure?view=azure-cli-latest) is een open source-opdracht regel programma voor meerdere platformen voor het beheer van Azure-resources, zoals IOT Edge. Azure CLI is beschikbaar in Windows, Linux en macOS. Met Azure CLI kunt u Azure IoT Hub-resources, Device Provisioning Service-instanties en gekoppelde-hubs uit het vak beheren.
 
 De IoT-extensie verrijkt Azure CLI met functies als Apparaatbeheer en volledige IoT Edge mogelijkheid.
 
@@ -33,7 +33,7 @@ In deze zelf studie voltooit u eerst de stappen voor het instellen van Azure CLI
 
 ### <a name="install-the-azure-cli"></a>Azure-CLI installeren
 
-Volg de [installatie-instructie](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) voor het instellen van Azure cli in uw omgeving. Uw Azure CLI-versie moet mini maal 2.0.70 of hoger zijn. Gebruik `az –version` om de versie te valideren. In deze versie worden az-extensie-opdrachten ondersteund en is voor het eerst het Knack-opdrachtframework opgenomen. Een eenvoudige manier om Azure CLI 2.0 te installeren in Windows is de [MSI](https://aka.ms/InstallAzureCliWindows) te downloaden en installeren.
+Volg de [installatie-instructie](/cli/azure/install-azure-cli?view=azure-cli-latest) voor het instellen van Azure cli in uw omgeving. Uw Azure CLI-versie moet mini maal 2.0.70 of hoger zijn. Gebruik `az –version` om de versie te valideren. In deze versie worden az-extensie-opdrachten ondersteund en is voor het eerst het Knack-opdrachtframework opgenomen. Een eenvoudige manier om Azure CLI 2.0 te installeren in Windows is de [MSI](https://aka.ms/InstallAzureCliWindows) te downloaden en installeren.
 
 ### <a name="install-iot-extension"></a>IoT-extensie installeren
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 1d6213d49c98f5e09f22e7310183315800d0c6f6
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: fe2d09315dcb2a0958f8a1b8efe7532c64c111d8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359779"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966544"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Zelfstudie: ServiceNow configureren voor automatische gebruikersinrichting
 
@@ -56,13 +56,6 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
    ![Beheerdersrol van ServiceNow](media/servicenow-provisioning-tutorial/servicenow-admin-role.png)
 
-3. Controleer of de volgende instellingen zijn **uitgeschakeld** in ServiceNow:
-
-   1. Selecteer **Systeembeveiliging** > **Instellingen voor hoge beveiliging** > **Basisverificatie vereisen voor inkomende SCHEMA-aanvragen**.
-   2. Selecteer **Systeemeigenschappen** > **Webservices** > **Standaard autorisatie vereisen voor binnenkomende SOAP-aanvragen**.
-     
-   > [!IMPORTANT]
-   > Als deze instellingen zijn *ingeschakeld*, kan de inrichtings-engine niet communiceren met ServiceNow.
 
 ## <a name="step-3-add-servicenow-from-the-azure-ad-application-gallery"></a>Stap 3. ServiceNow toevoegen vanuit de galerie met Azure AD-toepassingen
 
@@ -93,7 +86,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Schermopname van de beheeropties met de optie Inrichting gemarkeerd.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 

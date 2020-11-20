@@ -15,12 +15,12 @@ ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d7e9d73fa94acd2f31452de05ef3caee92d5cf3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2214f085c30419cefb3f6f84139d5592873173f7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90055500"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960118"
 ---
 # <a name="an-introduction-to-storsimple-snapshot-manager"></a>Een inleiding tot StorSimple Snapshot Manager
 
@@ -77,9 +77,9 @@ Zie [StorSimple Snapshot Manager gebruikers interface](storsimple-use-snapshot-m
 ## <a name="volumes-and-volume-groups"></a>Volumes en volume groepen
 Met StorSimple Snapshot Manager maakt u volumes en configureert u ze vervolgens in volume groepen. 
 
-StorSimple Snapshot Manager gebruikt volume groepen om back-ups te maken die toepassings consistent zijn. Toepassings consistentie bestaat wanneer alle gerelateerde bestanden en data bases worden gesynchroniseerd en de werkelijke status van een toepassing op een bepaald moment weer geven. Volume groepen (die ook wel *consistentie groepen*worden genoemd) vormen de basis van een back-up-of herstel taak.
+StorSimple Snapshot Manager gebruikt volume groepen om back-ups te maken die toepassings consistent zijn. Toepassings consistentie bestaat wanneer alle gerelateerde bestanden en data bases worden gesynchroniseerd en de werkelijke status van een toepassing op een bepaald moment weer geven. Volume groepen (die ook wel *consistentie groepen* worden genoemd) vormen de basis van een back-up-of herstel taak.
 
-Volume groepen zijn niet hetzelfde als volume containers. Een volume container bevat een of meer volumes die een account voor Cloud opslag en andere kenmerken delen, zoals versleuteling en bandbreedte gebruik. Eén volume container kan Maxi maal 256 Thin provisioned StorSimple-volumes bevatten. Ga voor meer informatie over volume containers naar [uw volume containers beheren](storsimple-manage-volume-containers.md). Volume groepen zijn verzamelingen van volumes die u configureert om back-upbewerkingen mogelijk te maken. Als u twee volumes selecteert die deel uitmaken van verschillende volume containers, plaatst u deze in één volume groep en maakt u vervolgens een back-upbeleid voor die volume groep. er wordt met behulp van het juiste opslag account een back-up van elk volume in de juiste volume container gemaakt.
+Volume groepen zijn niet hetzelfde als volume containers. Een volume container bevat een of meer volumes die een account voor Cloud opslag en andere kenmerken delen, zoals versleuteling en bandbreedte gebruik. Eén volume container kan Maxi maal 256 Thin provisioned StorSimple-volumes bevatten. Ga voor meer informatie over volume containers naar [uw volume containers beheren](./storsimple-8000-manage-volume-containers.md). Volume groepen zijn verzamelingen van volumes die u configureert om back-upbewerkingen mogelijk te maken. Als u twee volumes selecteert die deel uitmaken van verschillende volume containers, plaatst u deze in één volume groep en maakt u vervolgens een back-upbeleid voor die volume groep. er wordt met behulp van het juiste opslag account een back-up van elk volume in de juiste volume container gemaakt.
 
 > [!NOTE]
 > Alle volumes in een volume groep moeten afkomstig zijn van één Cloud serviceprovider.
@@ -89,7 +89,7 @@ Volume groepen zijn niet hetzelfde als volume containers. Een volume container b
 ## <a name="integration-with-windows-volume-shadow-copy-service"></a>Integratie met Windows Volume Shadow Copy Service
 StorSimple Snapshot Manager maakt gebruik van de Windows Volume Shadow Copy Service (VSS) om toepassings consistente gegevens vast te leggen. VSS maakt toepassings consistentie mogelijk door te communiceren met VSS-bewuste toepassingen om het maken van incrementele moment opnamen te coördineren. VSS zorgt ervoor dat de toepassingen tijdelijk inactief zijn, of quiescent, wanneer moment opnamen worden gemaakt. 
 
-De StorSimple-Snapshot Manager implementatie van VSS werkt met SQL Server en algemene NTFS-volumes. Het proces is als volgt: 
+De StorSimple-Snapshot Manager implementatie van VSS werkt met SQL Server en algemene NTFS-volumes. Het proces verloopt als volgt: 
 
 1. Een aanvrager, meestal een oplossing voor gegevens beheer en-beveiliging (zoals StorSimple Snapshot Manager) of een back-uptoepassing, roept VSS aan en vraagt om informatie te verzamelen van de schrijver-software in de doel toepassing.
 2. VSS neemt contact op met het schrijf onderdeel om een beschrijving van de gegevens op te halen. De schrijver retourneert de beschrijving van de gegevens waarvan een back-up moet worden gemaakt. 
@@ -140,4 +140,3 @@ Ga voor meer informatie over het bewaken van back-uptaken naar [gebruik StorSimp
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over [het gebruik van StorSimple Snapshot Manager voor het beheren van uw StorSimple-oplossing](storsimple-snapshot-manager-admin.md).
 * Down load [StorSimple Snapshot Manager](https://www.microsoft.com/download/details.aspx?id=44220).
-

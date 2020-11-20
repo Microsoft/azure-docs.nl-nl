@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/15/2018
 ms.author: alkohli
-ms.openlocfilehash: 8faf4ca8e27b280a60750d5f349ab0282ed593bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6b750659bf22e856ee8ad7368e3fea64dd7245df
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86999493"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960356"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-monitor-hardware-components-and-status"></a>De StorSimple Apparaatbeheer-service gebruiken voor het bewaken van hardware-onderdelen en-status
 
@@ -62,11 +62,11 @@ Voer de volgende stappen uit om de hardware-status van een onderdeel van een app
    * **Rood uitroep teken** : Hiermee wordt een defect onderdeel aangeduid dat de **status mislukt** heeft.
    * **Wit met zwarte tekst** : Hiermee wordt een onderdeel aangeduid dat niet aanwezig is.
    
-   In de volgende scherm afbeelding ziet u een apparaat met onderdelen in **OK**, **waarschuwing**en **fout** status.
+   In de volgende scherm afbeelding ziet u een apparaat met onderdelen in **OK**, **waarschuwing** en **fout** status.
        
    ![Scherm afbeelding met drie onderdelen in het gedeelte hardware-onderdelen: een in de status niet in orde, een in een mislukte status en een in een waarschuwings status.](./media/storsimple-8000-monitor-hardware-status/hw-health3.png)
 
-   Als u de **lijst met gedeelde onderdelen**uitbreidt, kunnen we zien dat het NVRAM en het cluster gedegradeerd zijn.
+   Als u de **lijst met gedeelde onderdelen** uitbreidt, kunnen we zien dat het NVRAM en het cluster gedegradeerd zijn.
 
    ![Scherm opname van het item gedeelde onderdelen dat is geselecteerd. Op de Blade ernaast bevinden de N V R A M en het cluster een waarschuwings status.](./media/storsimple-8000-monitor-hardware-status/hw-health5.png)
 
@@ -74,7 +74,7 @@ Voer de volgende stappen uit om de hardware-status van een onderdeel van een app
 
    ![Scherm afbeelding van het item controller 1-onderdelen geselecteerd. Het cluster knooppunt bevindt zich in de aangrenzende Blade met de status mislukt.](./media/storsimple-8000-monitor-hardware-status/hw-health4.png)  
 
-4. Neem contact op met Microsoft Ondersteuning als u een onderdeel tegen komt dat niet in **orde** is. Als waarschuwingen zijn ingeschakeld op uw apparaat, ontvangt u een e-mail waarschuwing. Als u een defect hardwareonderdeel moet vervangen, raadpleegt u [StorSimple hardware-onderdeel vervanging](storsimple-hardware-component-replacement.md).
+4. Neem contact op met Microsoft Ondersteuning als u een onderdeel tegen komt dat niet in **orde** is. Als waarschuwingen zijn ingeschakeld op uw apparaat, ontvangt u een e-mail waarschuwing. Als u een defect hardwareonderdeel moet vervangen, raadpleegt u [StorSimple hardware-onderdeel vervanging](./storsimple-8000-hardware-component-replacement.md).
 
 ## <a name="component-list-for-primary-enclosure-of-storsimple-device"></a>Onderdelen lijst voor de primaire behuizing van het StorSimple-apparaat
 De volgende tabel bevat een overzicht van de fysieke en logische onderdelen in de primaire behuizing (aanwezig in 8100 en 8600) van uw on-premises StorSimple-apparaat.
@@ -146,6 +146,5 @@ De volgende tabel bevat een overzicht van de fysieke en logische onderdelen in d
 ## <a name="next-steps"></a>Volgende stappen
 * Als u de StorSimple Apparaatbeheer-service wilt gebruiken om uw apparaat te beheren, gaat u naar [de StorSimple Apparaatbeheer-service gebruiken om uw StorSimple-apparaat te beheren](storsimple-8000-manager-service-administration.md).
 * Als u problemen moet oplossen met een onderdeel van een apparaat met een gedegradeerde of mislukte status, raadpleegt u [StorSimple-bewakings indicatoren](storsimple-monitoring-indicators.md).
-* Zie [StorSimple hardware component Replacement](storsimple-hardware-component-replacement.md)(Engelstalig) als u een defect hardwareonderdeel wilt vervangen.
+* Zie [StorSimple hardware component Replacement](./storsimple-8000-hardware-component-replacement.md)(Engelstalig) als u een defect hardwareonderdeel wilt vervangen.
 * Als er problemen blijven optreden, neemt u [contact op met Microsoft ondersteuning](storsimple-8000-contact-microsoft-support.md).
-

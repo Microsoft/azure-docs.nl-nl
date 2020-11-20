@@ -10,17 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 5e514964-c907-4324-b659-16dd825f6f87
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
-ms.openlocfilehash: cd974377637f535383c4e099ac408bea88f887a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90b0ab4fdabd40e803d1f85a640e4cb387e40c44
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88853111"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94958945"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-windows-with-azure-netapp-filessmb-for-sap-applications"></a>Hoge Beschik baarheid voor SAP NetWeaver op Azure Vm's in Windows met Azure NetApp Files (SMB) voor SAP-toepassingen
 
@@ -120,7 +121,7 @@ Voer de volgende stappen uit, als voor bereiding op het gebruik van Azure NetApp
 7. Koppel het SMB-volume op uw virtuele Windows-machine.
 
 > [!TIP]
-> U vindt de instructies voor het koppelen van het Azure NetApp Files volume, als u in [Azure Portal](https://portal.azure.com/#home) naar het Azure NetApp files-object navigeert, klikt u op de Blade **volumes** en **koppelt**u de instructies.  
+> U vindt de instructies voor het koppelen van het Azure NetApp Files volume, als u in [Azure Portal](https://portal.azure.com/#home) naar het Azure NetApp files-object navigeert, klikt u op de Blade **volumes** en **koppelt** u de instructies.  
 
 ## <a name="prepare-the-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster"></a>De infra structuur voor SAP HA voorbereiden met behulp van een Windows-failovercluster 
 
@@ -146,7 +147,7 @@ U hebt de volgende software van SAP nodig:
 1. Installeer een SAP ASCS/SCS-exemplaar op het eerste cluster knooppunt. Start het SAP SWPM-installatie programma en navigeer naar: **product**  >  **DBMS** > installatie > Application Server ABAP (of Java) > High-Availability systeem > ASCS/SCS-exemplaar > eerste cluster knooppunt.  
 
 2. Selecteer **Bestands share cluster** als de configuratie van de cluster share in SWPM.  
-3. Wanneer u wordt gevraagd om stap **SAP-para meters**van het systeem, voert u de hostnaam in voor de Azure NetApp files SMB-share die u al hebt gemaakt als hostnaam van de **Bestands share**.  In dit voor beeld is de hostnaam van de SMB **-share anfsmb-9562**. 
+3. Wanneer u wordt gevraagd om stap **SAP-para meters** van het systeem, voert u de hostnaam in voor de Azure NetApp files SMB-share die u al hebt gemaakt als hostnaam van de **Bestands share**.  In dit voor beeld is de hostnaam van de SMB **-share anfsmb-9562**. 
 
    > [!IMPORTANT]
    > Als de SWPM-resultaten van de functie voor de voortdurende Beschik baarheid in de voor waarden van de voor gaande controle worden weer gegeven, kunt u dit probleem verhelpen door de instructies in [een vertraagde fout bericht te volgen wanneer u een gedeelde map probeert te openen die niet meer in Windows bestaat](https://support.microsoft.com/help/2820470/delayed-error-message-when-you-try-to-access-a-shared-folder-that-no-l).  

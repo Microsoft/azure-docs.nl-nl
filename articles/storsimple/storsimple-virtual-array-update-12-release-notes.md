@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: article
 ms.date: 05/29/2019
 ms.author: alkohli
-ms.openlocfilehash: ea7e4801dfaad533403c0f927a03735ae409cc52
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1118dfcec67a49365f1f6e5e522e98b97694d052
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "66420601"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960186"
 ---
 # <a name="storsimple-virtual-array-update-12-release-notes"></a>Release opmerkingen bij Update 1,2 StorSimple Virtual array
 
@@ -59,7 +59,7 @@ Er zijn geen nieuwe problemen vermeld in update 1,2. Alle problemen die in de re
 
 Down load KB4502035 en [Pas de update toe via de lokale web-UI](storsimple-virtual-array-install-update-11.md#use-the-local-web-ui).
 
-## <a name="references"></a>Referenties
+## <a name="references"></a>Verwijzingen
 
 Zoekt u een oudere release-Opmerking? Ga naar:
 * [Release opmerkingen bij Update 1,1 StorSimple Virtual array](storsimple-virtual-array-update-11-release-notes.md)
@@ -69,4 +69,4 @@ Zoekt u een oudere release-Opmerking? Ga naar:
 * [Release opmerkingen bij Update 0,4 StorSimple Virtual array](storsimple-virtual-array-update-04-release-notes.md)
 * [Release opmerkingen bij Update 0,3 StorSimple Virtual array](storsimple-ova-update-03-release-notes.md)
 * [Release opmerkingen bij Update 0,1 en 0,2 voor StorSimple Virtual array](storsimple-ova-update-01-release-notes.md)
-* [Release opmerkingen bij de algemene Beschik baarheid van StorSimple Virtual array](storsimple-ova-pp-release-notes.md)
+* [Release opmerkingen bij de algemene Beschik baarheid van StorSimple Virtual array](./storsimple-virtual-array-update-06-release-notes.md)

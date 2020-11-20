@@ -3,16 +3,17 @@ title: Overzicht en architectuur van SAP-oplossingen Azure Monitor Microsoft Doc
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over Azure monitor for SAP-oplossingen
 author: rdeltcheva
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 06/30/2020
 ms.author: radeltch
 ms.reviewer: cynthn
-ms.openlocfilehash: d9730324b2557c8f0bb203f7badbd00e0e7e704e
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 5bb40ec930731b58d457500d83b66c7a187b44d8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91994259"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957432"
 ---
 # <a name="azure-monitor-for-sap-solutions-preview"></a>Azure monitor voor SAP-oplossingen (preview-versie)
 
@@ -21,7 +22,7 @@ ms.locfileid: "91994259"
 Azure Monitor voor SAP-oplossingen is een Azure-systeem eigen bewakings product voor klanten, waarop hun SAP-landschappen op Azure wordt uitgevoerd. Het product werkt met zowel [SAP on Azure virtual machines](./hana-get-started.md) als [SAP on Azure grote instanties](./hana-overview-architecture.md).
 Met Azure Monitor voor SAP-oplossingen kunnen klanten telemetriegegevens van Azure-infra structuur en-data bases op één centrale locatie verzamelen en telemetriegegevens visueel correleren om sneller problemen op te lossen.
 
-Azure Monitor voor SAP-oplossingen wordt aangeboden via Azure Marketplace. Het biedt een eenvoudige, intuïtieve installatie-ervaring en er zijn slechts enkele klikken om de resource te implementeren voor Azure Monitor voor SAP-oplossingen (ook wel **SAP-monitor bron**genoemd).
+Azure Monitor voor SAP-oplossingen wordt aangeboden via Azure Marketplace. Het biedt een eenvoudige, intuïtieve installatie-ervaring en er zijn slechts enkele klikken om de resource te implementeren voor Azure Monitor voor SAP-oplossingen (ook wel **SAP-monitor bron** genoemd).
 
 Klanten kunnen verschillende onderdelen van een SAP-landschap bewaken, zoals Azure Virtual Machines, cluster met hoge Beschik baarheid, SAP HANA data base, enzovoort, door de bijbehorende **provider** voor dat onderdeel toe te voegen.
 

@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/04/2020
 ms.author: radeltch
-ms.openlocfilehash: 6d61bd2c45cc1ba9cd9494750b793d7321288224
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57c6caea2de9063b133d4d5d643629184e412dad
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87797743"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957687"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Pacemaker instellen voor SUSE Linux Enterprise Server in azure
 
@@ -86,7 +87,7 @@ Voer de volgende opdrachten uit op alle **virtuele iSCSI-doel machines**.
 
 Voer de volgende opdrachten uit op alle **virtuele iSCSI-doel machines** om de iSCSI-schijven te maken voor de clusters die door uw SAP-systemen worden gebruikt. In het volgende voor beeld worden SBD-apparaten voor meerdere clusters gemaakt. U ziet hoe u een iSCSI-doel server gebruikt voor meerdere clusters. De SBD-apparaten worden geplaatst op de besturingssysteem schijf. Zorg ervoor dat u voldoende ruimte hebt.
 
-**`nfs`** wordt gebruikt voor het identificeren van het NFS-cluster, **ascsnw1** wordt gebruikt om de ASCS-cluster van **NW1**te identificeren, **dbnw1** wordt gebruikt voor het identificeren van het database cluster van **NW1**, **NFS-0** en **NFS-1** zijn de hostnamen van de NFS-cluster knooppunten, **NW1-xscs-0** en **NW1-xscs-1** zijn de hostnamen van de **NW1** ASCS-cluster knooppunten, en **NW1-DB-0** en **NW1-db-1** zijn de hostnamen van de database cluster knooppunten. Vervang deze door de hostnamen van uw cluster knooppunten en de SID van uw SAP-systeem.
+**`nfs`** wordt gebruikt voor het identificeren van het NFS-cluster, **ascsnw1** wordt gebruikt om de ASCS-cluster van **NW1** te identificeren, **dbnw1** wordt gebruikt voor het identificeren van het database cluster van **NW1**, **NFS-0** en **NFS-1** zijn de hostnamen van de NFS-cluster knooppunten, **NW1-xscs-0** en **NW1-xscs-1** zijn de hostnamen van de **NW1** ASCS-cluster knooppunten, en **NW1-DB-0** en **NW1-db-1** zijn de hostnamen van de database cluster knooppunten. Vervang deze door de hostnamen van uw cluster knooppunten en de SID van uw SAP-systeem.
 
 <pre><code># Create the root folder for all SBD devices
 sudo mkdir /sbd
@@ -367,7 +368,7 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
 1. **[A]** Cloud-netconfig-Azure voor HA-cluster configureren
 
    >[!NOTE]
-   > Controleer de geïnstalleerde versie van Package **Cloud-netconfig-Azure** door **Zypper info Cloud-netconfig-Azure**uit te voeren. Als de versie in uw omgeving 1,3 of hoger is, is het niet meer nodig om het beheer van netwerk interfaces door de invoeg toepassing voor het Cloud netwerk te onderdrukken. Als de versie lager is dan 1,3, raden we aan om het pakket **Cloud-netconfig-Azure** bij te werken naar de meest recente beschik bare versie.  
+   > Controleer de geïnstalleerde versie van Package **Cloud-netconfig-Azure** door **Zypper info Cloud-netconfig-Azure** uit te voeren. Als de versie in uw omgeving 1,3 of hoger is, is het niet meer nodig om het beheer van netwerk interfaces door de invoeg toepassing voor het Cloud netwerk te onderdrukken. Als de versie lager is dan 1,3, raden we aan om het pakket **Cloud-netconfig-Azure** bij te werken naar de meest recente beschik bare versie.  
 
    Wijzig het configuratie bestand voor de netwerk interface zoals hieronder wordt weer gegeven om te voor komen dat de invoeg toepassing van het Cloud netwerk het virtuele IP-adres verwijdert (pacemaker moet de VIP-toewijzing beheren). Zie [SuSE KB 7023633](https://www.suse.com/support/kb/doc/?id=7023633)voor meer informatie. 
 
@@ -442,7 +443,7 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
    >U kunt de uitbrei ding controleren door SUSEConnect---List-Extensions uit te voeren.  
    >De snellere failover-tijden met Azure Fence agent:
    > - op SLES 12 SP4 of SLES 12 SP5 Installeer versie **4.6.2** of hoger van pakket python-Azure-verwerkings-compute  
-   > - op SLES 15 installeren-versie **4.6.2** of hoger van pakket python**3**-Azure--compute 
+   > - op SLES 15 installeren-versie **4.6.2** of hoger van pakket python **3**-Azure--compute 
 
 1. **[A]** omzetting van hostnaam van installatie
 

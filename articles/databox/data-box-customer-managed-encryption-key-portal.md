@@ -1,103 +1,183 @@
 ---
-title: Gebruik de Azure Portal voor het configureren van door de klant beheerde sleutels voor Azure Data Box
-description: Meer informatie over het gebruik van de Azure Portal voor het configureren van door de klant beheerde sleutels met Azure Key Vault voor Azure Data Box. Door de klant beheerde sleutels bieden u de mogelijkheid om toegangs beheer te maken, te draaien, uit te scha kelen en in te trekken.
+title: Gebruik de Azure Portal voor het beheren van door de klant beheerde sleutels voor Azure Data Box
+description: Meer informatie over het gebruik van Azure Portal om door de klant beheerde sleutels te maken en te beheren met Azure Key Vault voor een Azure Data Box. Met door de klant beheerde sleutels kunt u toegangs beheer maken, draaien, uitschakelen en intrekken.
 services: databox
 author: alkohli
 ms.service: databox
 ms.topic: how-to
-ms.date: 05/07/2020
+ms.date: 11/19/2020
 ms.author: alkohli
 ms.subservice: pod
-ms.openlocfilehash: 40b777342c2c565efc5b40d361a259c98eae693c
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: cd9f4ad6b6831b2b15c09b37edc569b3f2d247f7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337709"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94958079"
 ---
 # <a name="use-customer-managed-keys-in-azure-key-vault-for-azure-data-box"></a>Door de klant beheerde sleutels gebruiken in Azure Key Vault voor Azure Data Box
 
-Azure Data Box beveiligt de ontgrendelings sleutel van het apparaat (ook wel apparaatwachtwoord genoemd) dat wordt gebruikt om het apparaat te vergren delen via een versleutelings sleutel. De ontgrendelings sleutel voor een apparaat voor een Data Box order wordt standaard versleuteld met een door micro soft beheerde sleutel. Voor extra controle over de ontgrendelings sleutel van het apparaat kunt u ook een door de klant beheerde sleutel opgeven. 
+Azure Data Box beveiligt de ontgrendelings sleutel van het apparaat (ook wel het wacht woord van het apparaat genoemd), dat wordt gebruikt om een apparaat te vergren delen via een versleutelings sleutel. Deze versleutelings sleutel is standaard een door micro soft beheerde sleutel. Voor extra controle kunt u een door de klant beheerde sleutel gebruiken.
 
-Door de klant beheerde sleutels moeten worden gemaakt en opgeslagen in een Azure Key Vault. Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md)voor meer informatie over Azure Key Vault.
+Het gebruik van een door de klant beheerde sleutel heeft geen invloed op de manier waarop gegevens op het apparaat worden versleuteld. Dit is alleen van invloed op hoe de ontgrendelings sleutel van het apparaat is versleuteld.
 
-In dit artikel wordt beschreven hoe u door de klant beheerde sleutels kunt gebruiken met Azure Data Box in de [Azure Portal](https://portal.azure.com/). Dit artikel is van toepassing op zowel Azure Data Box apparaten als Azure Data Box Heavy apparaten.
+Gebruik een door de klant beheerde sleutel wanneer u een bestelling maakt om dit controle niveau in het hele bestel proces te houden. Zie [zelf studie: Order Azure data Box](data-box-deploy-ordered.md)voor meer informatie.
 
-## <a name="prerequisites"></a>Vereisten
+In dit artikel wordt uitgelegd hoe u een door de klant beheerde sleutel kunt inschakelen voor uw bestaande Data Box order in de [Azure Portal](https://portal.azure.com/). U leert hoe u de sleutel kluis, de sleutel, de versie of de identiteit wijzigt voor uw huidige door de klant beheerde sleutel, of u kunt teruggaan naar het gebruik van een door micro soft beheerde sleutel.
 
-Zorg voordat u begint voor het volgende:
+Dit artikel is van toepassing op Azure Data Box en Azure Data Box Heavy apparaten.
 
-1. U hebt een Azure Data Box volgorde gemaakt volgens de instructies in de [zelf studie: order Azure data Box](data-box-deploy-ordered.md).
+## <a name="requirements"></a>Vereisten
 
-2. U hebt een bestaande Azure Key Vault met een sleutel die u kunt gebruiken om de ontgrendelings sleutel van uw apparaat te beveiligen. Voor informatie over het maken van een sleutel kluis met behulp van de Azure Portal, raadpleegt u [Quick Start: een geheim instellen en ophalen van Azure Key Vault met behulp van de Azure Portal](../key-vault/secrets/quick-create-portal.md).
+De door de klant beheerde sleutel voor een Data Box order moet voldoen aan de volgende vereisten:
 
-    - **Voorlopig verwijderen** en **niet wissen** worden ingesteld op uw bestaande sleutel kluis. Deze eigenschappen zijn niet standaard ingeschakeld. Als u deze eigenschappen wilt inschakelen, raadpleegt u de secties het **inschakelen van zacht verwijderen** en het inschakelen van de **beveiliging opschonen** in een van de volgende artikelen:
+- De sleutel moet worden gemaakt en opgeslagen in een Azure Key Vault met **voorlopig verwijderen** en **niet wissen** ingeschakeld. Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie. U kunt een sleutel kluis en sleutel maken terwijl u uw bestelling maakt of bijwerkt.
 
-        - [Voorlopig verwijderen gebruiken met Power shell](../key-vault/general/soft-delete-powershell.md).
-        - [Voorlopig verwijderen gebruiken met CLI](../key-vault/general/soft-delete-cli.md).
-    - De bestaande sleutel kluis moet een RSA-sleutel hebben van 2048-grootte of meer. Zie [informatie over Azure Key Vault sleutels](../key-vault/keys/about-keys.md)voor meer informatie over sleutels.
-    - De sleutel kluis moet zich in dezelfde regio bevinden als de opslag accounts die worden gebruikt voor uw gegevens. Meerdere opslag accounts kunnen worden gekoppeld aan uw Azure Data Box-resource.
-    - Als u geen bestaande sleutel kluis hebt, kunt u deze inline ook maken zoals beschreven in de volgende sectie.
+- De sleutel moet een RSA-sleutel zijn van 2048 of groter.
 
-## <a name="enable-keys"></a>Sleutels inschakelen
+## <a name="enable-key"></a>Sleutel inschakelen
 
-Het configureren van door de klant beheerde sleutel voor uw Azure Data Box is optioneel. Data Box maakt standaard gebruik van een door micro soft beheerde sleutel voor het beveiligen van uw BitLocker-sleutel. Voer de volgende stappen uit om een door de klant beheerde sleutel in te scha kelen in de Azure Portal:
+Voer de volgende stappen uit als u een door de klant beheerde sleutel wilt inschakelen voor uw bestaande Data Box order in de Azure Portal:
 
-1. Ga naar de Blade **overzicht** voor uw data Box order.
+1. Ga naar het scherm **overzicht** voor uw data Box order.
 
-    ![Blade overzicht van Data Box order](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-1.png)
+    ![Overzichts scherm van een Data Box order-1](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-1.png)
 
-2. Ga naar **instellingen > versleuteling**. Onder **versleutelings type** kunt u kiezen hoe u de ontgrendelings sleutel van het apparaat wilt beveiligen. Een door micro soft beheerde sleutel wordt standaard gebruikt om het wacht woord voor het ontgrendelen van uw apparaat te beveiligen. 
+2. Ga naar **instellingen > versleuteling** en selecteer door de **klant beheerde sleutel**. Selecteer vervolgens **een sleutel en sleutel kluis selecteren**.
 
-    ![Versleutelings optie kiezen](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-2.png)
+    ![Selecteer de door de klant beheerde sleutel versleutelings optie](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-3.png)
 
-3. Selecteer versleutelings type als door de **klant beheerde sleutel**. Nadat u de door de klant beheerde sleutel hebt geselecteerd, **selecteert u een sleutel kluis en sleutel**.
+   Uw abonnement wordt automatisch ingevuld op het scherm **sleutel selecteren in azure Key Vault** .
 
-    ![Door de klant beheerde sleutel selecteren](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-3.png)
+ 3. Voor **sleutel kluis** kunt u een bestaande sleutel kluis selecteren in de vervolg keuzelijst of **nieuwe maken** en een nieuwe sleutel kluis maken.
 
-4. In de Blade **sleutel selecteren op basis van Azure Key Vault** wordt het abonnement automatisch ingevuld. Voor **sleutel kluis** kunt u een bestaande sleutel kluis selecteren in de vervolg keuzelijst.
+     ![Opties voor sleutel kluis bij het selecteren van een door de klant beheerde sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-3-a.png)
 
-    ![Bestaande Azure Key Vault selecteren](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-3-a.png)
+     Als u een nieuwe sleutel kluis wilt maken, voert u het abonnement, de resource groep, de naam van de sleutel kluis en andere informatie in het scherm **nieuwe sleutel kluis maken** in. Zorg ervoor dat in **herstel opties de optie** voor het tijdelijk **verwijderen** en leegmaken van de **beveiliging** is ingeschakeld. Selecteer vervolgens **Controleren en maken**.
 
-    U kunt ook **nieuwe maken** selecteren om een nieuwe sleutel kluis te maken. Voer op de **Blade sleutel kluis maken** de resource groep en de naam van de sleutel kluis in. Zorg ervoor dat de functie voor het **voorlopig verwijderen** en leegmaken van de **beveiliging** is ingeschakeld. Accepteer alle overige standaard waarden. Selecteer **Controleren + maken**.
+      ![Azure Key Vault controleren en maken](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-4.png)
 
-    ![Azure Key Vault controleren en maken](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-4.png)
+      Controleer de informatie voor uw sleutel kluis en selecteer **maken**. Wacht enkele minuten tot het maken van de sleutel kluis is voltooid.
 
-5. Controleer de informatie die is gekoppeld aan uw sleutel kluis en selecteer **maken**. Wacht enkele minuten totdat de sleutel kluis is gemaakt.
+       ![Azure Key Vault met uw instellingen maken](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-5.png)
 
-    ![Azure Key Vault met uw instellingen maken](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-5.png)
-
-6. U kunt in de **sleutel Select from Azure Key Vault** een sleutel selecteren in de bestaande sleutel kluis.
+4. U kunt in het scherm **sleutel selecteren van Azure Key Vault** een bestaande sleutel selecteren in de sleutel kluis of een nieuwe maken.
 
     ![Selecteer een sleutel in Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-6.png)
 
-7. Als u een nieuwe sleutel wilt maken, selecteert u **nieuwe maken** om een sleutel te maken. RSA-sleutel grootte kan 2048 of hoger zijn.
+   Als u een nieuwe sleutel wilt maken, selecteert u **nieuwe maken**. U moet een RSA-sleutel gebruiken. De grootte kan 2048 of hoger zijn.
 
     ![Nieuwe sleutel maken in Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-6-a.png)
 
-8. Geef de naam voor de sleutel op, accepteer de andere standaard waarden en selecteer **maken**.
+    Voer een naam in voor de nieuwe sleutel, accepteer de andere standaard waarden en selecteer **maken**. U wordt gewaarschuwd dat er een sleutel is gemaakt in uw sleutel kluis.
 
     ![Naam nieuwe sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-7.png)
 
-
-9. U wordt gewaarschuwd dat er een sleutel in uw sleutel kluis is gemaakt. Selecteer de **versie** en kies vervolgens **selecteren**.
+5. Voor **versie** kunt u een bestaande sleutel versie selecteren in de vervolg keuzelijst.
 
     ![Selecteer een versie voor de nieuwe sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8.png)
 
-10. In het deel venster **versleutelings type** ziet u de sleutel kluis en de sleutel die is geselecteerd voor de door de klant beheerde sleutel.
+    Als u een nieuwe sleutel versie wilt genereren, selecteert u **nieuwe maken**.
 
-    ![Sleutel en sleutel kluis voor door de klant beheerde sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-9.png)
+    ![Een dialoog venster openen voor het maken van een nieuwe sleutel versie](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8-a.png)
 
-11. Sla de sleutel op. 
+    Kies instellingen voor de nieuwe sleutel versie en selecteer **maken**.
 
-    ![Door de klant beheerde sleutel opslaan](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-10.png)
+    ![Een nieuwe sleutel versie maken](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8-b.png)
+
+6. Wanneer u een sleutel kluis, sleutel en sleutel versie hebt geselecteerd, kiest u **selecteren**.
+
+    ![Een sleutel in een Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8-c.png)
+
+    In de instellingen voor het **versleutelings type** worden de sleutel kluis en de sleutel weer gegeven die u hebt gekozen.
+
+    ![Sleutel en sleutel kluis voor een door de klant beheerde sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-9.png)
+
+7. Selecteer het type identiteit dat moet worden gebruikt voor het beheren van de door de klant beheerde sleutel voor deze resource. U kunt de door het **systeem toegewezen** identiteit gebruiken die tijdens het maken van de order is gegenereerd of een door de gebruiker toegewezen identiteit kiezen.
+
+    Een door de gebruiker toegewezen identiteit is een onafhankelijke resource die u kunt gebruiken om de toegang tot resources te beheren. Zie [beheerde identiteits typen](/azure/active-directory/managed-identities-azure-resources/overview)voor meer informatie.
+
+    ![Het identiteits type selecteren](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-13.png)
+
+    Als u een gebruikers identiteit wilt toewijzen, selecteert u **gebruiker toegewezen**. Selecteer vervolgens **een gebruikers identiteit selecteren** en selecteer de beheerde identiteit die u wilt gebruiken.
+
+    ![Een te gebruiken identiteit selecteren](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-14.png)
+
+    U kunt hier geen nieuwe gebruikers-id maken. Zie een [rol maken, weer geven, verwijderen of toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](/azure-docs/blob/master/articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal)als u wilt weten hoe u er een kunt maken.
+
+    De geselecteerde gebruikers-id wordt weer gegeven in de instellingen voor het **versleutelings type** .
+
+    ![Een geselecteerde gebruikers-id die wordt weer gegeven in de instellingen voor versleutelings type](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-15.png)
+
+ 9. Selecteer **Opslaan** om de bijgewerkte instellingen voor het **versleutelings type** op te slaan.
+
+     ![Sla uw door de klant beheerde sleutel op](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-10.png)
 
     De sleutel-URL wordt weer gegeven onder **versleutelings type**.
 
-    ![Door de klant beheerde sleutel-URL](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-11.png)
+    ![Door de klant beheerde sleutel-URL](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-11.png)<!--Probably need new screen from recent order. Can you provide one? I can't create an order using CMK with the subscription I'm using.-->
 
-> [!IMPORTANT]
-> U kunt micro soft Managed Key uitschakelen en verplaatsen naar door de klant beheerde sleutel op elke fase van de Data Box order. Als u echter de door de klant beheerde sleutel hebt gemaakt, kunt u niet teruggaan naar de door micro soft beheerde sleutel.
+## <a name="change-key"></a>Sleutel wijzigen
+
+Voer de volgende stappen uit om de sleutel kluis, de sleutel en/of de sleutel versie te wijzigen voor de door de klant beheerde sleutel die u momenteel gebruikt:
+
+1. Ga in het venster **overzicht** voor uw data Box order naar **instellingen**  >  **versleuteling** en klik op **sleutel wijzigen**.
+
+    ![Overzichts scherm van een Data Box order met door de klant beheerde sleutel-1](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-16.png)
+
+2. Kies **een andere sleutel kluis en sleutel selecteren**.
+
+    ![Overzichts scherm van een Data Box order, selecteer een andere sleutel en een optie voor de sleutel kluis](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-16-a.png)
+
+3. In het scherm **sleutel selecteren op basis van sleutel kluis ziet u** het abonnement, maar geen sleutel kluis, sleutel of sleutel versie. U kunt een van de volgende wijzigingen aanbrengen:
+
+   - Selecteer een andere sleutel in dezelfde sleutel kluis. U moet de sleutel kluis selecteren voordat u de sleutel en versie selecteert.
+
+   - Selecteer een andere sleutel kluis en wijs een nieuwe sleutel toe.
+
+   - De versie voor de huidige sleutel wijzigen.
+   
+    Wanneer u klaar bent met de wijzigingen, kiest u **selecteren**.
+
+    ![Versleutelings optie kiezen-2](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-17.png)
+
+4. Selecteer **Opslaan**.
+
+    ![Bijgewerkte versleutelings instellingen opslaan-1](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-17-a.png)
+
+## <a name="change-identity"></a>Identiteit wijzigen
+
+Voer de volgende stappen uit om de identiteit te wijzigen die wordt gebruikt om de toegang tot de door de klant beheerde sleutel voor deze order te beheren:
+
+1. Ga in het venster **overzicht** voor de voltooide Data Box order naar **instellingen**  >  **versleuteling**.
+
+2. Breng een van de volgende wijzigingen aan:
+
+     - Als u wilt overschakelen naar een andere gebruikers-id, klikt u op **een andere gebruikers identiteit selecteren**. Selecteer vervolgens een andere identiteit in het deel venster aan de rechter kant van het scherm en kies **selecteren**.
+
+       ![Optie voor het wijzigen van de door de gebruiker toegewezen identiteit voor een door de klant beheerde sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-18.png)
+
+   - Als u wilt overschakelen naar de door het systeem toegewezen identiteit die tijdens het maken van de order is gegenereerd, selecteert u **systeem toegewezen** door **identiteits type selecteren**.
+
+     ![Optie voor het wijzigen van een systeem dat is toegewezen aan een door de klant beheerde sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-19.png)
+
+3. Selecteer **Opslaan**.
+
+    ![Bijgewerkte versleutelings instellingen opslaan-2](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-17-a.png)
+
+## <a name="use-microsoft-managed-key"></a>Door micro soft beheerde sleutel gebruiken
+
+Ga als volgt te werk om een door de klant beheerde sleutel te wijzigen in de micro soft-beheerde sleutel voor uw bestelling:
+
+1. Ga in het venster **overzicht** voor de voltooide Data Box order naar **instellingen**  >  **versleuteling**.
+
+2. Selecteer bij **type** de optie **micro soft Managed Key**.
+
+    ![Overzichts scherm van een Data Box order-5](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-20.png)
+
+3. Selecteer **Opslaan**.
+
+    ![Bijgewerkte versleutelings instellingen opslaan voor een door micro soft beheerde sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-21.png)
 
 ## <a name="troubleshoot-errors"></a>Problemen oplossen
 
@@ -108,12 +188,18 @@ Als u fouten met betrekking tot uw door de klant beheerde sleutel ontvangt, gebr
 | SsemUserErrorEncryptionKeyDisabled| Kan de sleutel niet ophalen omdat de door de klant beheerde sleutel is uitgeschakeld.| Ja, door de sleutel versie in te scha kelen.|
 | SsemUserErrorEncryptionKeyExpired| Kan de sleutel niet ophalen omdat de door de klant beheerde sleutel is verlopen.| Ja, door de sleutel versie in te scha kelen.|
 | SsemUserErrorKeyDetailsNotFound| Kan de sleutel niet ophalen omdat de door de klant beheerde sleutel niet is gevonden.| Als u de sleutel kluis hebt verwijderd, kunt u de door de klant beheerde sleutel niet herstellen.  Als u de sleutel kluis naar een andere Tenant hebt gemigreerd, raadpleegt u [een sleutel kluis Tenant-id wijzigen nadat een abonnement is verplaatst](../key-vault/general/move-subscription.md). Als u de sleutel kluis hebt verwijderd:<ol><li>Ja, als het zich in de duur van de schone beveiliging bevindt, gebruikt u de stappen in [een sleutel kluis herstellen](../key-vault/general/soft-delete-powershell.md#recovering-a-key-vault).</li><li>Nee, als het na de duur van de schone beveiliging valt.</li></ol><br>Als de sleutel kluis een Tenant migratie heeft ontvangen, ja, kan deze worden hersteld met behulp van een van de volgende stappen: <ol><li>Herstel de sleutel kluis terug naar de oude Tenant.</li><li>Stel `Identity = None` in en stel vervolgens de waarde weer in op `Identity = SystemAssigned` . Hiermee wordt de identiteit verwijderd en opnieuw gemaakt zodra de nieuwe identiteit is gemaakt. Inschakelen `Get` , `Wrap` , en `Unwrap` machtigingen voor de nieuwe identiteit in het toegangs beleid van de sleutel kluis.</li></ol> |
-| SsemUserErrorKeyVaultBadRequestException| Kan de sleutel niet ophalen omdat de door de klant beheerde sleutel toegang is ingetrokken.| Ja, controleren of: <ol><li>Sleutel kluis heeft nog steeds de MSI in het toegangs beleid.</li><li>Toegangs beleid voorziet in machtigingen voor ophalen, teruglopen, in-en uitpakken.</li><li>Als de sleutel kluis zich in een vNet achter de firewall bevindt, controleert u of **micro soft Trusted Services toestaan** is ingeschakeld.</li></ol>|
+| SsemUserErrorKeyVaultBadRequestException | Er is een door de klant beheerde sleutel toegepast, maar de toegang tot de sleutel is niet toegestaan of ingetrokken of er kan geen toegang worden verkregen tot de sleutel kluis omdat de firewall is ingeschakeld. | Voeg de geselecteerde identiteit toe aan uw sleutel kluis om toegang tot de door de klant beheerde sleutel in te scha kelen. Als op de sleutel kluis firewall is ingeschakeld, schakelt u over naar een door het systeem toegewezen identiteit en voegt u vervolgens een door de klant beheerde sleutel toe. Zie How to [Enable the key](#enable-key)(Engelstalig) voor meer informatie. |
 | SsemUserErrorKeyVaultDetailsNotFound| Kan de sleutel niet ophalen omdat de bijbehorende sleutel kluis voor de door de klant beheerde sleutel niet is gevonden. | Als u de sleutel kluis hebt verwijderd, kunt u de door de klant beheerde sleutel niet herstellen.  Als u de sleutel kluis naar een andere Tenant hebt gemigreerd, raadpleegt u [een sleutel kluis Tenant-id wijzigen nadat een abonnement is verplaatst](../key-vault/general/move-subscription.md). Als u de sleutel kluis hebt verwijderd:<ol><li>Ja, als het zich in de duur van de schone beveiliging bevindt, gebruikt u de stappen in [een sleutel kluis herstellen](../key-vault/general/soft-delete-powershell.md#recovering-a-key-vault).</li><li>Nee, als het na de duur van de schone beveiliging valt.</li></ol><br>Als de sleutel kluis een Tenant migratie heeft ontvangen, ja, kan deze worden hersteld met behulp van een van de volgende stappen: <ol><li>Herstel de sleutel kluis terug naar de oude Tenant.</li><li>Stel `Identity = None` in en stel vervolgens de waarde weer in op `Identity = SystemAssigned` . Hiermee wordt de identiteit verwijderd en opnieuw gemaakt zodra de nieuwe identiteit is gemaakt. Inschakelen `Get` , `Wrap` , en `Unwrap` machtigingen voor de nieuwe identiteit in het toegangs beleid van de sleutel kluis.</li></ol> |
 | SsemUserErrorSystemAssignedIdentityAbsent  | Kan de sleutel niet ophalen omdat de door de klant beheerde sleutel niet is gevonden.| Ja, controleren of: <ol><li>Sleutel kluis heeft nog steeds de MSI in het toegangs beleid.</li><li>Identiteit is van het type systeem toegewezen.</li><li>Stel Get-, wrap-en Unwrap-machtigingen in voor de identiteit in het toegangs beleid van de sleutel kluis.</li></ol>|
+| SsemUserErrorUserAssignedLimitReached | Toevoegen van een nieuwe door de gebruiker toegewezen identiteit is mislukt omdat u de limiet hebt bereikt van het totale aantal door de gebruiker toegewezen identiteiten dat kan worden toegevoegd. | Voer de bewerking opnieuw uit met minder gebruikers identiteiten of verwijder een door de gebruiker toegewezen identiteiten uit de resource voordat u het opnieuw probeert. |
+| SsemUserErrorCrossTenantIdentityAccessForbidden | De toegang tot de beheerde identiteit is mislukt. <br> Opmerking: dit is voor het scenario wanneer het abonnement wordt verplaatst naar een andere Tenant. De klant moet de identiteit hand matig verplaatsen naar een nieuwe Tenant. PFA-mail voor meer informatie. | Verplaats de identiteit die is geselecteerd voor de nieuwe Tenant waarbij het abonnement aanwezig is. Zie How to [Enable the key](#enable-key)(Engelstalig) voor meer informatie. |
+| SsemUserErrorKekUserIdentityNotFound | Er is een door de klant beheerde sleutel toegepast, maar de door de gebruiker toegewezen identiteit die toegang tot de sleutel heeft, is niet gevonden in de Active Directory. <br> Opmerking: dit is voor het geval wanneer de gebruikers identiteit uit Azure wordt verwijderd.| Probeer een andere door de gebruiker toegewezen identiteit toe te voegen die is geselecteerd voor de sleutel kluis om toegang tot de door de klant beheerde sleutel in te scha kelen. Zie How to [Enable the key](#enable-key)(Engelstalig) voor meer informatie. |
+| SsemUserErrorUserAssignedIdentityAbsent | Kan de sleutel niet ophalen omdat de door de klant beheerde sleutel niet is gevonden. | Kan geen toegang krijgen tot de door de klant beheerde sleutel. De door de gebruiker toegewezen identiteit (UAI) die is gekoppeld aan de sleutel, wordt verwijderd of het type UAI is gewijzigd. |
+| SsemUserErrorCrossTenantIdentityAccessForbidden | De toegang tot de beheerde identiteit is mislukt. <br> Opmerking: dit is voor het scenario wanneer het abonnement wordt verplaatst naar een andere Tenant. De klant moet de identiteit hand matig verplaatsen naar een nieuwe Tenant. PFA-mail voor meer informatie. | Probeer een andere door de gebruiker toegewezen identiteit toe te voegen die is geselecteerd voor de sleutel kluis om toegang tot de door de klant beheerde sleutel in te scha kelen. Zie How to [Enable the key](#enable-key)(Engelstalig) voor meer informatie.|
+| SsemUserErrorKeyVaultBadRequestException | Er is een door de klant beheerde sleutel toegepast, maar de toegang tot de sleutel is niet toegestaan of ingetrokken of er kan geen toegang worden verkregen tot de sleutel kluis omdat de firewall is ingeschakeld. | Voeg de geselecteerde identiteit toe aan uw sleutel kluis om toegang tot de door de klant beheerde sleutel in te scha kelen. Als op de sleutel kluis firewall is ingeschakeld, schakelt u over naar een door het systeem toegewezen identiteit en voegt u vervolgens een door de klant beheerde sleutel toe. Zie How to [Enable the key](#enable-key)(Engelstalig) voor meer informatie. |
 | Algemene fout  | Kan de sleutel niet ophalen.| Dit is een algemene fout. Neem contact op met Microsoft Ondersteuning om de fout op te lossen en de volgende stappen te bepalen.|
-
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is Azure Key Vault](../key-vault/general/overview.md)?
+- [Wat is Azure Key Vault?](../key-vault/general/overview.md)
+- [Quickstart: Een geheim uit Azure Key Vault instellen en ophalen met behulp van de Azure Portal](../key-vault/secrets/quick-create-portal.md)

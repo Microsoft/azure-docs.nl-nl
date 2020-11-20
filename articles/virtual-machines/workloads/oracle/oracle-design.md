@@ -3,16 +3,17 @@ title: Een Oracle-data base ontwerpen en implementeren in azure | Microsoft Docs
 description: Ontwerp en implementeer een Oracle-data base in uw Azure-omgeving.
 author: dbakevlar
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: 9bfd2330f71b9690e2864968cf51cb438bb23676
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 6b7c280d9ff5f4d8a3c35eb11e080bf2f9f287c0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534070"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959166"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Een Oracle-data base ontwerpen en implementeren in azure
 
@@ -143,13 +144,13 @@ Op basis van de vereisten voor de netwerk bandbreedte zijn er verschillende gate
 
 ### <a name="disk-types-and-configurations"></a>Schijf typen en configuraties
 
-- *Standaard besturingssysteem schijven* : deze schijf typen bieden permanente gegevens en caching. Ze zijn geoptimaliseerd voor toegang tot het besturings systeem bij het opstarten en zijn niet bedoeld voor trans acties die zijn gebaseerd op transactionele of Data Warehouse-workloads.
+- *Standaard besturingssysteem schijven*: deze schijf typen bieden permanente gegevens en caching. Ze zijn geoptimaliseerd voor toegang tot het besturings systeem bij het opstarten en zijn niet bedoeld voor trans acties die zijn gebaseerd op transactionele of Data Warehouse-workloads.
 
-- Niet- *beheerde schijven* : met deze schijf typen beheert u de opslag accounts waarin de VHD-bestanden (virtuele harde schijf) worden opgeslagen die overeenkomen met uw VM-schijven. VHD-bestanden worden opgeslagen als pagina-blobs in azure-opslag accounts.
+- Niet- *beheerde schijven*: met deze schijf typen beheert u de opslag accounts waarin de VHD-bestanden (virtuele harde schijf) worden opgeslagen die overeenkomen met uw VM-schijven. VHD-bestanden worden opgeslagen als pagina-blobs in azure-opslag accounts.
 
-- *Beheerde schijven* : Azure beheert de opslag accounts die u gebruikt voor uw VM-schijven. U geeft het schijf type (Premium of Standard) en de grootte van de schijf op die u nodig hebt. Azure maakt en beheert de schijf voor u.
+- *Beheerde schijven*: Azure beheert de opslag accounts die u gebruikt voor uw VM-schijven. U geeft het schijf type (Premium of Standard) en de grootte van de schijf op die u nodig hebt. Azure maakt en beheert de schijf voor u.
 
-- *Premium-opslag schijven* : deze schijf typen zijn het meest geschikt voor productie werkbelastingen. Premium-opslag ondersteunt VM-schijven die kunnen worden gekoppeld aan specifieke Vm's met een grootte van virtuele machines, zoals DS-, DSv2-, GS-en F-serie-Vm's. De Premium-schijf wordt geleverd met verschillende grootten en u kunt kiezen tussen schijven van 32 GB tot 4.096 GB. Elke schijf grootte heeft eigen prestatie specificaties. Afhankelijk van de toepassings vereisten kunt u een of meer schijven aan uw virtuele machine koppelen.
+- *Premium-opslag schijven*: deze schijf typen zijn het meest geschikt voor productie werkbelastingen. Premium-opslag ondersteunt VM-schijven die kunnen worden gekoppeld aan specifieke Vm's met een grootte van virtuele machines, zoals DS-, DSv2-, GS-en F-serie-Vm's. De Premium-schijf wordt geleverd met verschillende grootten en u kunt kiezen tussen schijven van 32 GB tot 4.096 GB. Elke schijf grootte heeft eigen prestatie specificaties. Afhankelijk van de toepassings vereisten kunt u een of meer schijven aan uw virtuele machine koppelen.
 
 Wanneer u een nieuwe beheerde schijf maakt vanuit de portal, kunt u het **account type** kiezen voor het type schijf dat u wilt gebruiken. Niet alle beschik bare schijven worden weer gegeven in de vervolg keuzelijst. Nadat u een bepaalde VM-grootte hebt gekozen, worden in het menu alleen de beschik bare Sku's voor Premium-opslag weer gegeven die zijn gebaseerd op die VM-grootte.
 
@@ -186,9 +187,9 @@ Nadat u een duidelijke afbeelding van de I/O-vereisten hebt, kunt u een combi na
 
 Er zijn drie opties voor het opslaan van hosts in de cache:
 
-- *Alleen-lezen* : alle aanvragen worden in de cache opgeslagen voor toekomstige Lees bewerkingen. Alle schrijf bewerkingen worden direct opgeslagen in Azure Blob-opslag.
+- *Alleen-lezen*: alle aanvragen worden in de cache opgeslagen voor toekomstige Lees bewerkingen. Alle schrijf bewerkingen worden direct opgeslagen in Azure Blob-opslag.
 
-- *Readwrite* : dit is een ' read-ahead ' algoritme. De lees-en schrijf bewerkingen worden opgeslagen in de cache voor toekomstige Lees bewerkingen. Schrijf bewerkingen die niet write-through zijn, worden eerst opgeslagen in de lokale cache. Het biedt ook de laagste schijf latentie voor lichte werk belastingen. Het gebruik van de ReadWrite-cache met een toepassing die het persistent maken van de vereiste gegevens niet verwerkt, kan leiden tot verlies van gegevens, als de virtuele machine vastloopt.
+- *Readwrite*: dit is een ' read-ahead ' algoritme. De lees-en schrijf bewerkingen worden opgeslagen in de cache voor toekomstige Lees bewerkingen. Schrijf bewerkingen die niet write-through zijn, worden eerst opgeslagen in de lokale cache. Het biedt ook de laagste schijf latentie voor lichte werk belastingen. Het gebruik van de ReadWrite-cache met een toepassing die het persistent maken van de vereiste gegevens niet verwerkt, kan leiden tot verlies van gegevens, als de virtuele machine vastloopt.
 
 - *Geen* (uitgeschakeld): met deze optie kunt u de cache overs Laan. Alle gegevens worden overgebracht naar de schijf en blijven bewaard voor Azure Storage. Deze methode biedt u de hoogste I/O-frequentie voor I/O-intensieve workloads. U moet ook rekening houden met transactie kosten.
 
@@ -208,9 +209,9 @@ Nadat de instelling van de gegevens schijf is opgeslagen, kunt u de instelling v
 
 Nadat u uw Azure-omgeving hebt ingesteld en geconfigureerd, is de volgende stap het beveiligen van uw netwerk. Hier volgen enkele aanbevelingen:
 
-- *NSG-beleid* : NSG kan worden gedefinieerd door een SUBNET of NIC. Het is eenvoudiger om de toegang op het subnetniveau te beheren, zowel voor beveiliging als voor het afdwingen van route ring voor zaken als toepassings firewalls.
+- *NSG-beleid*: NSG kan worden gedefinieerd door een SUBNET of NIC. Het is eenvoudiger om de toegang op het subnetniveau te beheren, zowel voor beveiliging als voor het afdwingen van route ring voor zaken als toepassings firewalls.
 
-- *JumpBox* : voor meer veilige toegang moeten beheerders niet rechtstreeks verbinding maken met de toepassings service of-Data Base. Een JumpBox wordt gebruikt als een medium tussen de computer van de beheerder en Azure-resources.
+- *JumpBox*: voor meer veilige toegang moeten beheerders niet rechtstreeks verbinding maken met de toepassings service of-Data Base. Een JumpBox wordt gebruikt als een medium tussen de computer van de beheerder en Azure-resources.
 ![Scherm afbeelding van de pagina met de JumpBox-topologie](./media/oracle-design/jumpbox.png)
 
     De beheerder computer moet alleen IP-beperkte toegang bieden tot de JumpBox. De JumpBox moet toegang hebben tot de toepassing en de data base.

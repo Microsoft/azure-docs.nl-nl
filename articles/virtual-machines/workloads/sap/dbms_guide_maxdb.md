@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7195e3c9f2d38c16bd9cad59a2489157c7c1340f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4257fcca1172502560c182651d649745e494cc1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88654630"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94958962"
 ---
 # <a name="sap-maxdb-livecache-and-content-server-deployment-on-azure-vms"></a>Implementatie van SAP MaxDB, liveCache en Content Server op virtuele machines van Azure
 
@@ -328,7 +329,7 @@ Het is raadzaam om de nieuwste versie van het besturings systeem micro soft Wind
 U kunt de bijgewerkte lijst met SAP MaxDB-documentatie vinden in de volgende SAP-notitie [767598]
 
 ### <a name="sap-maxdb-configuration-guidelines-for-sap-installations-in-azure-vms"></a>SAP MaxDB-configuratie richtlijnen voor SAP-installaties in azure-Vm's
-#### <a name="storage-configuration"></a><a name="b48cfe3b-48e9-4f5b-a783-1d29155bd573"></a>Opslag configuratie
+#### <a name="storage-configuration"></a><a name="b48cfe3b-48e9-4f5b-a783-1d29155bd573"></a>Opslagconfiguratie
 Aanbevolen procedures voor Azure Storage voor SAP MaxDB Volg de algemene aanbevelingen die worden vermeld in de hoofd stuk [opslag structuur van een virtuele machine voor RDBMS-implementaties](./dbms_guide_general.md#65fa79d6-a85f-47ee-890b-22e794f51a64).
 
 > [!IMPORTANT]
@@ -425,7 +426,7 @@ SAP ondersteunt momenteel:
 * **SAP MaxDB-versie 7,9**
 * **Micro soft IIS (Internet Information Server) versie 8,0 (en hoger)**
 
-Het is raadzaam om de nieuwste versie van de SAP-inhouds server en de nieuwste versie van **micro soft IIS**te gebruiken. 
+Het is raadzaam om de nieuwste versie van de SAP-inhouds server en de nieuwste versie van **micro soft IIS** te gebruiken. 
 
 Controleer de meest recente ondersteunde versies van SAP-inhouds server en micro soft IIS in de [SAP-product beschikbaarheids matrix (PAM)][sap-pam].
 
@@ -467,7 +468,7 @@ Als u de SAP-inhouds server configureert om bestanden op te slaan in de SAP MaxD
 
 Als u de SAP-inhouds server configureert voor het opslaan van bestanden in het bestands systeem, moet u een hand matige back-up/herstel bewerking uitvoeren van de volledige bestands structuur waarin de documenten zich bevinden. Net als bij SAP MaxDB Backup/Restore, wordt u aangeraden een speciaal schijf volume te hebben voor back-updoeleinden. 
 
-#### <a name="other"></a>Anders
+#### <a name="other"></a>Overige
 Andere instellingen voor de SAP-inhouds server zijn transparant voor virtuele Azure-machines en worden beschreven in diverse documenten en SAP-opmerkingen:
 
 * <https://service.sap.com/contentserver> 

@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 11/10/2020
 ms.author: normesta
-ms.openlocfilehash: a5cdeba654440e666bc79df361b3f90db8a73b0a
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 3ddcbe57112251a428e11d6c164cdb1224553f98
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578645"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959200"
 ---
 # <a name="access-control-model-in-azure-data-lake-storage-gen2"></a>Access Control model in Azure Data Lake Storage Gen2
 
@@ -43,7 +43,7 @@ Met de volgende rollen wordt een beveiligingsprincipal toegestaan om toegang te 
 | [Inzender voor Storage Blob-gegevens](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) | Lees-, schrijf-en verwijder toegang tot Blob Storage-containers en-blobs. Deze toegang staat de beveiligingsprincipal niet toe het eigendom van een item in te stellen, maar kan de toegangs beheer lijst van items wijzigen die eigendom zijn van de beveiligingsprincipal. |
 | [Lezer voor opslagblobgegevens](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader) | Containers en blobs voor Blob-opslag lezen en weer geven. |
 
-Rollen zoals een [eigenaar](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), [bijdrager](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor), [lezer](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader)en [Inzender voor opslag accounts](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-account-contributor) geven een beveiligingsprincipal een beveiligings-principal toe om een opslag account te beheren, maar bieden geen toegang tot de gegevens in dat account. Deze rollen (exclusief **lezer** ) kunnen echter wel toegang krijgen tot de opslag sleutels die kunnen worden gebruikt in verschillende client hulpprogramma's voor toegang tot de gegevens.
+Rollen zoals een [eigenaar](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), [bijdrager](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor), [lezer](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader)en [Inzender voor opslag accounts](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-account-contributor) geven een beveiligingsprincipal een beveiligings-principal toe om een opslag account te beheren, maar bieden geen toegang tot de gegevens in dat account. Deze rollen (exclusief **lezer**) kunnen echter wel toegang krijgen tot de opslag sleutels die kunnen worden gebruikt in verschillende client hulpprogramma's voor toegang tot de gegevens.
 
 ## <a name="access-control-lists-acls"></a>ACL’s (toegangsbeheerlijsten)
 
@@ -53,16 +53,16 @@ Met Acl's beschikt u over de mogelijkheid om "fijn korrelig" toegangs niveau toe
 
 Tijdens autorisatie op basis van een beveiligings-principal worden de machtigingen in de volgende volg orde geëvalueerd.
 
-: One: &nbsp; &nbsp; de toewijzingen van Azure RBAC-rollen worden eerst geëvalueerd en krijgen voor rang op acl's-toewijzingen.
+: One: &nbsp; &nbsp; Azure-roltoewijzingen worden eerst geëvalueerd en krijgen voor rang op acl's-toewijzingen.
 
-: twee: &nbsp; &nbsp; als de bewerking volledig is geautoriseerd op basis van de toewijzing van Azure RBAC-rollen, worden de acl's helemaal niet geëvalueerd.
+: twee: &nbsp; &nbsp; als de bewerking volledig is geautoriseerd op basis van de toewijzing van Azure-rollen, worden de acl's helemaal niet geëvalueerd.
 
 : drie: &nbsp; &nbsp; als de bewerking niet volledig is geautoriseerd, worden de acl's geëvalueerd.
 
 > [!div class="mx-imgBorder"]
 > ![Data Lake Storage-machtigings stroom](./media/control-access-permissions-data-lake-storage/data-lake-storage-permissions-flow.png)
 
-Vanwege de manier waarop toegangs machtigingen worden geëvalueerd door het systeem, kunt u **geen** ACL gebruiken om de toegang te **beperken** die al is toegekend door een roltoewijzing. Dat komt omdat het systeem eerst de Azure RBAC-roltoewijzingen evalueert, en als de toewijzing voldoende toegangs machtigingen verleent, worden Acl's genegeerd. 
+Vanwege de manier waarop toegangs machtigingen worden geëvalueerd door het systeem, kunt u **geen** ACL gebruiken om de toegang te **beperken** die al is toegekend door een roltoewijzing. Dat komt doordat de toewijzingen van Azure-rollen eerst worden geëvalueerd en als de toewijzing voldoende toegangs machtigingen verleent, worden Acl's genegeerd. 
 
 In het volgende diagram ziet u de machtigings stroom voor drie veelvoorkomende bewerkingen: Mapinhoud weer geven, een bestand lezen en een bestand schrijven.
 
@@ -71,7 +71,7 @@ In het volgende diagram ziet u de machtigings stroom voor drie veelvoorkomende b
 
 ## <a name="permissions-table-combining-azure-rbac-and-acl"></a>Machtigingen tabel: combi neren van Azure RBAC en ACL
 
-In de volgende tabel ziet u hoe u Azure RBAC-rollen en ACL-vermeldingen kunt combi neren zodat een beveiligingsprincipal de bewerkingen kan uitvoeren die in de kolom **bewerking** worden weer gegeven. In deze tabel ziet u een kolom van elk niveau van een fictieve Directory-hiërarchie. Er is een kolom voor de hoofd directory van de container ( `/` ), een submap met de naam **Oregon** , een submap van de Oregon-map met de naam **Rotterdam** en een tekst bestand in de map Rotterdam met de naam **Data.txt**. Deze kolommen worden weer gegeven in [korte vormige](data-lake-storage-access-control.md#short-forms-for-permissions) representaties van de ACL-vermelding die is vereist om machtigingen te verlenen. **N.v.t.** ( _niet van toepassing_ ) wordt weer gegeven in de kolom als een ACL-vermelding niet vereist is om de bewerking uit te voeren.
+In de volgende tabel ziet u hoe u Azure-rollen en ACL-vermeldingen kunt combi neren zodat een beveiligingsprincipal de bewerkingen kan uitvoeren die worden vermeld in de kolom **bewerking** . In deze tabel ziet u een kolom van elk niveau van een fictieve Directory-hiërarchie. Er is een kolom voor de hoofd directory van de container ( `/` ), een submap met de naam **Oregon**, een submap van de Oregon-map met de naam **Rotterdam** en een tekst bestand in de map Rotterdam met de naam **Data.txt**. Deze kolommen worden weer gegeven in [korte vormige](data-lake-storage-access-control.md#short-forms-for-permissions) representaties van de ACL-vermelding die is vereist om machtigingen te verlenen. **N.v.t.** (_niet van toepassing_) wordt weer gegeven in de kolom als een ACL-vermelding niet vereist is om de bewerking uit te voeren.
 
 |    Bewerking             | Toegewezen RBAC-rol               |    /        | Oregon     | Port land | Data.txt |             
 |--------------------------|----------------------------------|-------------|-------------|-----------|----------|
@@ -112,7 +112,7 @@ In de volgende tabel ziet u hoe u Azure RBAC-rollen en ACL-vermeldingen kunt com
 
 [!INCLUDE [Security groups](../../../includes/azure-storage-data-lake-groups.md)]
 
-## <a name="limits-on-azure-rbac-role-assignments-and-acl-entries"></a>Limieten voor Azure RBAC-Roltoewijzingen en ACL-vermeldingen
+## <a name="limits-on-azure-role-assignments-and-acl-entries"></a>Limieten voor Azure-Roltoewijzingen en ACL-vermeldingen
 
 Door groepen te gebruiken, bent u minder waarschijnlijk het maximum aantal roltoewijzingen per abonnement en het maximum aantal ACL'S-vermeldingen per bestand of map te overschrijden. Deze limieten worden in de volgende tabel beschreven.
 

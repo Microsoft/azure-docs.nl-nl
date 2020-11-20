@@ -7,12 +7,12 @@ ms.service: iot-dps
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.author: wesmc
-ms.openlocfilehash: d90b18094a26830ee6909251d46837eff95a812a
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: f1409a931195d236b2729e629e4603c606137593
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91998582"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959778"
 ---
 # <a name="azure-iot-hub-device-provisioning-service-dps-support-for-virtual-networks"></a>Azure IoT Hub Device Provisioning Service (DPS)-ondersteuning voor virtuele netwerken
 
@@ -38,7 +38,7 @@ Om verschillende redenen kunnen klanten de connectiviteit met Azure-resources, z
 
 Veelvoorkomende benaderingen voor het beperken van de connectiviteit zijn [DPS IP-filter regels](./iot-dps-ip-filtering.md) en virtuele netwerken (VNET) met [privé-eind punten](../private-link/private-endpoint-overview.md). Het doel van dit artikel is de VNET-benadering voor DPS te beschrijven met behulp van privé-eind punten. 
 
-Apparaten die in on-premises netwerken werken [, kunnen VPN (virtueel particulier netwerk)](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) of [ExpressRoute](https://azure.microsoft.com/services/expressroute/) privé-peering gebruiken om verbinding te maken met een VNET in Azure en toegang te krijgen tot DPS-bronnen via persoonlijke eind punten. 
+Apparaten die in on-premises netwerken werken [, kunnen VPN (virtueel particulier netwerk)](../vpn-gateway/vpn-gateway-about-vpngateways.md) of [ExpressRoute](https://azure.microsoft.com/services/expressroute/) privé-peering gebruiken om verbinding te maken met een VNET in Azure en toegang te krijgen tot DPS-bronnen via persoonlijke eind punten. 
 
 Een persoonlijk eind punt is een privé-IP-adres dat is toegewezen in een VNET van de klant waarmee een Azure-resource toegankelijk is. Als u een persoonlijk eind punt voor uw DPS-resource hebt, kunt u apparaten in uw VNET toestaan om de inrichting van uw DPS-resource aan te vragen zonder verkeer naar het open bare eind punt toe te staan.
 
@@ -51,7 +51,7 @@ Voordat u doorgaat, controleert u of aan de volgende vereisten wordt voldaan:
 
 * U hebt een Azure VNET ingericht met een subnet waarin het persoonlijke eind punt wordt gemaakt. Zie [een virtueel netwerk maken met behulp van Azure cli](../virtual-network/quick-create-cli.md)voor meer informatie.
 
-* Voor apparaten die in een on-premises netwerk werken, stelt u [VPN (virtueel particulier netwerk)](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) of [ExpressRoute](https://azure.microsoft.com/services/expressroute/) privé-peering in op uw Azure VNET.
+* Voor apparaten die in een on-premises netwerk werken, stelt u [VPN (virtueel particulier netwerk)](../vpn-gateway/vpn-gateway-about-vpngateways.md) of [ExpressRoute](https://azure.microsoft.com/services/expressroute/) privé-peering in op uw Azure VNET.
 
 ## <a name="private-endpoint-limitations"></a>Beperkingen van privé-eind punten
 
@@ -105,7 +105,7 @@ Voer de volgende stappen uit om een persoonlijk eind punt in te stellen:
 
 4. Kies op de pagina _een persoonlijke eindpunt configuratie maken_ het virtuele netwerk en subnet om het persoonlijke eind punt in te maken.
  
-    Klik op **volgende: Tags**en geef eventueel labels voor uw resource op.
+    Klik op **volgende: Tags** en geef eventueel labels voor uw resource op.
 
     ![Persoonlijk eind punt configureren](./media/virtual-network-support/create-private-endpoint-configuration.png)
 
@@ -135,7 +135,7 @@ U kunt een persoonlijk eind punt aanvragen bij een DPS-resource per resource-ID.
 
 3. Kies op de pagina _een persoonlijke eindpunt configuratie maken_ het virtuele netwerk en subnet om het persoonlijke eind punt in te maken.
  
-    Klik op **volgende: Tags**en geef eventueel labels voor uw resource op.
+    Klik op **volgende: Tags** en geef eventueel labels voor uw resource op.
 
 4. Klik op **beoordeling + maken** en vervolgens op **maken** om uw persoonlijke eindpunt aanvraag te maken.
 
@@ -154,5 +154,5 @@ Zie [prijzen van Azure Private Link](https://azure.microsoft.com/pricing/details
 
 Gebruik de onderstaande koppelingen voor meer informatie over DPS-beveiligings functies:
 
-* [Beveiliging](concepts-security.md)
+* [Beveiliging](./concepts-service.md#attestation-mechanism)
 * [TLS 1,2-ondersteuning](tls-support.md)

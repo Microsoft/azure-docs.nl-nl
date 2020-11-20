@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 ms.custom: fasttrack-edit, iot
 services: iot-dps
-ms.openlocfilehash: 1dc97f92e6139475d0d5ac5ea1201d6ff6b8d470
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 45a2b7a64006ab6963290be3ac86a3a5d1e4916d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90532321"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959880"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-device-provisioning-service-sdks"></a>Registratie van apparaten beheren met de Sdk's van Azure Device Provisioning Service
 Een *apparaatregistratie* maakt een record van één apparaat of een groep apparaten die op een bepaald moment bij de Device Provisioning-Service kunnen worden geregistreerd. De registratie record bevat de eerste gewenste configuratie voor de apparaten die deel uitmaken van deze inschrijving, inclusief de gewenste IoT-hub. In dit artikel leest u hoe u de registratie van apparaten voor uw inrichtings service programmatisch beheert met de Azure IoT Provisioning Service Sdk's.  De Sdk's zijn beschikbaar op GitHub in dezelfde opslag plaats als Azure IoT-Sdk's.
@@ -21,12 +21,12 @@ Een *apparaatregistratie* maakt een record van één apparaat of een groep appar
 ## <a name="prerequisites"></a>Vereisten
 * Verkrijg de connection string van uw Device Provisioning service-exemplaar.
 * De beveiligings artefacten van het apparaat verkrijgen voor het [Attestation-mechanisme](concepts-service.md#attestation-mechanism) dat wordt gebruikt:
-    * [**Trusted Platform Module (TPM)**](/azure/iot-dps/concepts-security#trusted-platform-module):
+    * [**Trusted Platform Module (TPM)**](./concepts-tpm-attestation.md):
         * Afzonderlijke inschrijving: registratie-ID en TPM-goedkeurings sleutel van een fysiek apparaat of van TPM-Simulator.
         * De registratie groep is niet van toepassing op TPM-Attestation.
-    * [**X. 509**](/azure/iot-dps/concepts-security):
-        * Individuele inschrijving: het [Leaf-certificaat](/azure/iot-dps/concepts-security) van een fysiek apparaat of van de SDK- [codec](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/) -emulator.
-        * Registratie groep: het [CA/basis certificaat](/azure/iot-dps/concepts-security#root-certificate) of het [tussenliggende certificaat](/azure/iot-dps/concepts-security#intermediate-certificate), dat wordt gebruikt om een apparaat certificaat te maken op een fysiek apparaat.  Het kan ook worden gegenereerd met de SDK-codec-emulator.
+    * [**X. 509**](./concepts-service.md#attestation-mechanism):
+        * Individuele inschrijving: het [Leaf-certificaat](./concepts-service.md#attestation-mechanism) van een fysiek apparaat of van de SDK- [codec](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/) -emulator.
+        * Registratie groep: het [CA/basis certificaat](./concepts-x509-attestation.md#root-certificate) of het [tussenliggende certificaat](./concepts-x509-attestation.md#intermediate-certificate), dat wordt gebruikt om een apparaat certificaat te maken op een fysiek apparaat.  Het kan ook worden gegenereerd met de SDK-codec-emulator.
 * Exacte API-aanroepen kunnen verschillen vanwege taal verschillen. Bekijk de voor beelden die worden weer gegeven op GitHub voor meer informatie:
    * [Voor beelden van Java Provisioning Service-client](https://github.com/Azure/azure-iot-sdk-java/tree/master/provisioning/provisioning-samples)
    * [ Voor beelden vanNode.js inrichten service-clients](https://github.com/Azure/azure-iot-sdk-node/tree/master/provisioning/service/samples)
@@ -35,7 +35,7 @@ Een *apparaatregistratie* maakt een record van één apparaat of een groep appar
 ## <a name="create-a-device-enrollment"></a>Een apparaatinschrijving maken
 Er zijn twee manieren waarop u uw apparaten kunt inschrijven bij de inrichtings service:
 
-* Een **registratie groep** is een vermelding voor een groep apparaten die een gemeen schappelijk Attestation-mechanisme van X. 509-certificaten delen, ondertekend door het [basis certificaat](https://docs.microsoft.com/azure/iot-dps/concepts-security#root-certificate) of het [tussenliggende certificaat](https://docs.microsoft.com/azure/iot-dps/concepts-security#intermediate-certificate). U kunt het beste een registratie groep gebruiken voor een groot aantal apparaten die een gewenste initiële configuratie delen, of voor apparaten die allemaal naar dezelfde Tenant gaan. Houd er rekening mee dat u alleen apparaten kunt inschrijven die gebruikmaken van het 509 Attestation-mechanisme van *X.* 
+* Een **registratie groep** is een vermelding voor een groep apparaten die een gemeen schappelijk Attestation-mechanisme van X. 509-certificaten delen, ondertekend door het [basis certificaat](./concepts-x509-attestation.md#root-certificate) of het [tussenliggende certificaat](./concepts-x509-attestation.md#intermediate-certificate). U kunt het beste een registratie groep gebruiken voor een groot aantal apparaten die een gewenste initiële configuratie delen, of voor apparaten die allemaal naar dezelfde Tenant gaan. Houd er rekening mee dat u alleen apparaten kunt inschrijven die gebruikmaken van het 509 Attestation-mechanisme van *X.* 
 
     U kunt een registratie groep maken met de Sdk's die volgen op deze werk stroom:
 

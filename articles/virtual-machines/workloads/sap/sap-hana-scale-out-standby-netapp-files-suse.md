@@ -10,17 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 5e514964-c907-4324-b659-16dd825f6f87
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/24/2020
 ms.author: radeltch
-ms.openlocfilehash: 21d4af6985dbe246e60fe95f8f03de7f8aa0501b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1383db44922a044f5e51075b6e1feafa70c78009
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91314059"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94958751"
 ---
 # <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-suse-linux-enterprise-server"></a>Een SAP HANA scale-out systeem met stand-by-knoop punt op virtuele Azure-machines implementeren met behulp van Azure NetApp Files op SUSE Linux Enterprise Server 
 
@@ -232,21 +233,21 @@ In de volgende instructies wordt ervan uitgegaan dat u de resource groep, het vi
 
    c. Selecteer het subnet van het virtuele Azure-netwerk. Selecteer [versneld netwerk](../../../virtual-network/create-vm-accelerated-networking-cli.md).  
 
-   Wanneer u de virtuele machines implementeert, wordt de naam van de netwerk interface automatisch gegenereerd. In deze instructies voor de eenvoud verwijzen we naar de automatisch gegenereerde netwerk interfaces, die zijn gekoppeld aan het subnet van het virtuele netwerk van Azure, als **hanadb1-client**, **hanadb2-client**en **hanadb3-client**. 
+   Wanneer u de virtuele machines implementeert, wordt de naam van de netwerk interface automatisch gegenereerd. In deze instructies voor de eenvoud verwijzen we naar de automatisch gegenereerde netwerk interfaces, die zijn gekoppeld aan het subnet van het virtuele netwerk van Azure, als **hanadb1-client**, **hanadb2-client** en **hanadb3-client**. 
 
-3. Maak drie netwerk interfaces, één voor elke virtuele machine, voor het `storage` subnet van het virtuele netwerk (in dit voor beeld **hanadb1-Storage**, **hanadb2-Storage**en **hanadb3-Storage**).  
+3. Maak drie netwerk interfaces, één voor elke virtuele machine, voor het `storage` subnet van het virtuele netwerk (in dit voor beeld **hanadb1-Storage**, **hanadb2-Storage** en **hanadb3-Storage**).  
 
-4. Maak drie netwerk interfaces, één voor elke virtuele machine, voor het `hana`  subnet van het virtuele netwerk (in dit voor beeld **hanadb1-Hana**, **hanadb2-Hana**en **hanadb3-Hana**).  
+4. Maak drie netwerk interfaces, één voor elke virtuele machine, voor het `hana`  subnet van het virtuele netwerk (in dit voor beeld **hanadb1-Hana**, **hanadb2-Hana** en **hanadb3-Hana**).  
 
 5. Koppel de zojuist gemaakte virtuele netwerk interfaces aan de bijbehorende virtuele machines door de volgende stappen uit te voeren:  
 
     a. Ga naar de virtuele machine in de [Azure Portal](https://portal.azure.com/#home).  
 
-    b. Selecteer **virtual machines**in het linkerdeel venster. Filter op de naam van de virtuele machine (bijvoorbeeld **hanadb1**) en selecteer vervolgens de virtuele machine.  
+    b. Selecteer **virtual machines** in het linkerdeel venster. Filter op de naam van de virtuele machine (bijvoorbeeld **hanadb1**) en selecteer vervolgens de virtuele machine.  
 
     c. Selecteer in het deel venster **overzicht** de optie **stoppen** om de toewijzing van de virtuele machine ongedaan te maken.  
 
-    d. Selecteer **netwerken**en koppel vervolgens de netwerk interface. Selecteer in de vervolg keuzelijst **netwerk interface koppelen** de al gemaakte netwerk interfaces voor de `storage` `hana` subnetten en.  
+    d. Selecteer **netwerken** en koppel vervolgens de netwerk interface. Selecteer in de vervolg keuzelijst **netwerk interface koppelen** de al gemaakte netwerk interfaces voor de `storage` `hana` subnetten en.  
     
     e. Selecteer **Opslaan**. 
  
@@ -273,9 +274,9 @@ In de volgende instructies wordt ervan uitgegaan dat u de resource groep, het vi
 
 7. Start de virtuele machines door de volgende stappen uit te voeren:  
 
-    a. Selecteer **virtual machines**in het linkerdeel venster. Filter op de naam van de virtuele machine (bijvoorbeeld **hanadb1**) en selecteer deze.  
+    a. Selecteer **virtual machines** in het linkerdeel venster. Filter op de naam van de virtuele machine (bijvoorbeeld **hanadb1**) en selecteer deze.  
 
-    b. Selecteer **Start**in het deel venster **overzicht** .  
+    b. Selecteer **Start** in het deel venster **overzicht** .  
 
 ## <a name="operating-system-configuration-and-preparation"></a>Configuratie en voor bereiding van het besturings systeem
 
@@ -435,7 +436,7 @@ Configureer en bereid uw besturings systeem uit door de volgende stappen uit te 
     echo "options nfs nfs4_disable_idmapping=Y" >> /etc/modprobe.d/nfs.conf
     </code></pre>
 
-5. **[A]** maak de SAP Hana groep en de gebruiker hand matig. De Id's voor de groep sapsys en de gebruiker **HN1**adm moeten worden ingesteld op dezelfde id's die tijdens het voorbereiden worden opgegeven. (In dit voor beeld zijn de Id's ingesteld op **1001**.) Als de Id's niet juist zijn ingesteld, hebt u geen toegang tot de volumes. De Id's voor de groeps-sapsys en gebruikers accounts **HN1**adm en sapadm moeten op alle virtuele machines hetzelfde zijn.  
+5. **[A]** maak de SAP Hana groep en de gebruiker hand matig. De Id's voor de groep sapsys en de gebruiker **HN1** adm moeten worden ingesteld op dezelfde id's die tijdens het voorbereiden worden opgegeven. (In dit voor beeld zijn de Id's ingesteld op **1001**.) Als de Id's niet juist zijn ingesteld, hebt u geen toegang tot de volumes. De Id's voor de groeps-sapsys en gebruikers accounts **HN1** adm en sapadm moeten op alle virtuele machines hetzelfde zijn.  
 
     <pre><code>
     # Create user group 
@@ -533,7 +534,7 @@ In dit voor beeld voor de implementatie van SAP HANA in scale-out configuratie m
     sudo zypper install libgcc_s1 libstdc++6 libatomic1 
     </code></pre>
 
-4. **[2], [3]** Wijzig het eigendom van SAP HANA `data` en `log` directory's in **HN1**adm.   
+4. **[2], [3]** Wijzig het eigendom van SAP HANA `data` en `log` directory's in **HN1** adm.   
 
     <pre><code>
     # Execute as root
@@ -657,7 +658,7 @@ In dit voor beeld voor de implementatie van SAP HANA in scale-out configuratie m
 
 1. Een knoop punt crash simuleren op een SAP HANA worker-knoop punt. Ga als volgt te werk: 
 
-   a. Voordat u het knooppunt crash simuleert, voert u de volgende opdrachten uit als **HN1**adm om de status van de omgeving vast te leggen:  
+   a. Voordat u het knooppunt crash simuleert, voert u de volgende opdrachten uit als **HN1** adm om de status van de omgeving vast te leggen:  
 
    <pre><code>
     # Check the landscape status
@@ -712,7 +713,7 @@ In dit voor beeld voor de implementatie van SAP HANA in scale-out configuratie m
 
 2. Beëindig de naam server door het volgende te doen:
 
-   a. Voordat u de test uitvoert, controleert u de status van de omgeving door de volgende opdrachten uit te voeren als **HN1**adm:  
+   a. Voordat u de test uitvoert, controleert u de status van de omgeving door de volgende opdrachten uit te voeren als **HN1** adm:  
 
    <pre><code>
     #Landscape status 
@@ -734,7 +735,7 @@ In dit voor beeld voor de implementatie van SAP HANA in scale-out configuratie m
     hanadb3, 3, 50313, 50314, 0.3, HDB|HDB_STANDBY, GRAY
    </code></pre>
 
-   b. Voer de volgende opdrachten uit als **HN1**adm op het actieve hoofd knooppunt, dat in dit geval **hanadb1** is:  
+   b. Voer de volgende opdrachten uit als **HN1** adm op het actieve hoofd knooppunt, dat in dit geval **hanadb1** is:  
 
     <pre><code>
         hn1adm@hanadb1:/usr/sap/HN1/HDB03> HDB kill
@@ -768,7 +769,7 @@ In dit voor beeld voor de implementatie van SAP HANA in scale-out configuratie m
     hn1adm@hanadb1:/usr/sap/HN1/HDB03> HDB start
    </code></pre>
 
-   Nadat SAP HANA op **hanadb1**is gestart, wordt de volgende status verwacht:  
+   Nadat SAP HANA op **hanadb1** is gestart, wordt de volgende status verwacht:  
 
    <pre><code>
     # Check the instance status
@@ -827,7 +828,7 @@ In dit voor beeld voor de implementatie van SAP HANA in scale-out configuratie m
     hn1adm@hanadb3:/usr/sap/HN1/HDB03> HDB start
    </code></pre>
 
-   Nadat SAP HANA op **hanadb3**is gestart, ziet de status er als volgt uit:  
+   Nadat SAP HANA op **hanadb3** is gestart, ziet de status er als volgt uit:  
 
    <pre><code>
     # Check the instance status

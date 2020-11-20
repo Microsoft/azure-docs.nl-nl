@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/29/2019
 ms.author: sedusch
-ms.openlocfilehash: be7cfef5c7121d918c375dae216d293d9d56526b
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: e3f541e28f47bb6456b441811d23baa9e020fde7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92890476"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959149"
 ---
 # <a name="sap-lama-connector-for-azure"></a>SAP LaMa-connector voor Azure
 
@@ -124,7 +125,7 @@ Selecteer beheerde identiteit gebruiken in de configuratie van uw SAP LaMa Azure
 
 ### <a name="create-a-new-connector-in-sap-lama"></a>Een nieuwe connector maken in SAP LaMa
 
-Open de SAP LaMa-website en navigeer naar infra structuur. Ga naar tabblad Cloud managers en klik op toevoegen. Selecteer de Microsoft Azure Cloud Adapter en klik op volgende. Voer de volgende informatie in:
+Open de SAP LaMa-website en navigeer naar infra structuur. Ga naar tabblad Cloud managers en klik op toevoegen. Selecteer de Microsoft Azure Cloud Adapter en klik op volgende. Voer de volgende gegevens in:
 
 * Label: Kies een naam voor de connector instantie
 * Gebruikers naam: de Service-Principal-toepassings-ID of ID van de door de gebruiker toegewezen identiteit van de virtuele machine. Zie [een systeem-of door de gebruiker toegewezen identiteit gebruiken] voor meer informatie
@@ -138,7 +139,7 @@ Open de SAP LaMa-website en navigeer naar infra structuur. Ga naar tabblad Cloud
 * Proxy poort: TCP-poort van de proxy
 * Opslag type wijzigen om kosten op te slaan: Schakel deze instelling in als de Azure-adapter het opslag type van de Managed Disks moet wijzigen om kosten te besparen wanneer de schijven niet worden gebruikt. Voor gegevens schijven waarnaar wordt verwezen in een SAP-exemplaar configuratie, wijzigt de adapter het schijf type in standaard opslag tijdens een instantie, en wordt deze weer voor bereid op het oorspronkelijke opslag type tijdens het voorbereiden van een exemplaar. Als u een virtuele machine in SAP LaMa stopt, wijzigt de adapter het opslag type van alle gekoppelde schijven, met inbegrip van de schijf van het besturings systeem naar de standaard opslag. Als u een virtuele machine in SAP LaMa start, wordt het opslag type door de adapter gewijzigd in het oorspronkelijke opslag type.
 
-Klik op configuratie testen om uw invoer te valideren. U ziet
+Klik op configuratie testen om uw invoer te valideren. U ziet het volgende:
 
 De verbinding is gemaakt: de verbinding met micro soft Cloud is geslaagd. 7 resource groepen gevonden (alleen 10 gevraagde groepen)
 
@@ -274,7 +275,7 @@ Voordat u de SAP software Provisioning Manager (SWPM) start, moet u het IP-adres
 C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h ah1-ascs -n 255.255.255.128
 ```
 
-Voer SWPM uit en gebruik *ah1-ascs* voor de hostnaam van het *ascs-exemplaar* .
+Voer SWPM uit en gebruik *ah1-ascs* voor de hostnaam van het *ascs-exemplaar*.
 
 ![Linux-logo.][Logo_Linux] Linux  
 Voeg de volgende profiel parameter toe aan het SAP host agent-profiel, dat zich bevindt op/usr/sap/hostctrl/exe/host_profile. Zie SAP Note [2628497]voor meer informatie.
@@ -319,7 +320,7 @@ Binnen het NetApp-account specificeert de capaciteits pool de grootte en het typ
 
 ![Groep SAP LaMa NetApp-capaciteit gemaakt ](media/lama/sap-lama-capacitypool-list.png)
 
-De NFS-volumes kunnen nu worden gedefinieerd. Omdat er volumes voor meerdere systemen in één pool zijn, moet een zelfuitlegend naamgevings schema worden gekozen. Door de SID toe te voegen, kunt u gerelateerde volumes samen groeperen. De volgende koppels zijn vereist voor de ASCS en het as-exemplaar *: \<SID\> /sapmnt/* , */usr/sap/ \<SID\>* en */Home/ \<sid\> adm* . Optioneel is */usr/sap/trans* vereist voor de centrale transport Directory, die ten minste wordt gebruikt door alle systemen van één land.
+De NFS-volumes kunnen nu worden gedefinieerd. Omdat er volumes voor meerdere systemen in één pool zijn, moet een zelfuitlegend naamgevings schema worden gekozen. Door de SID toe te voegen, kunt u gerelateerde volumes samen groeperen. De volgende koppels zijn vereist voor de ASCS en het as-exemplaar *: \<SID\> /sapmnt/*, */usr/sap/ \<SID\>* en */Home/ \<sid\> adm*. Optioneel is */usr/sap/trans* vereist voor de centrale transport Directory, die ten minste wordt gebruikt door alle systemen van één land.
 
 > [!NOTE]
 > Tijdens de bèta fase moeten de naam van de volumes uniek zijn binnen het abonnement.
@@ -381,7 +382,7 @@ Voeg een andere virtuele hostnaam en een ander IP-adres toe voor de naam die wor
 /usr/sap/hostctrl/exe/sapacext -a ifup -i eth0 -h ah1-db -n 255.255.255.128
 ```
 
-Voer de installatie van het data base-exemplaar van SWPM op de virtuele machine van de toepassings server uit en niet op de HANA-virtuele machine. Gebruik *ah1-DB* voor de *Data Base-host* in de dialoog *database voor SAP-systeem* .
+Voer de installatie van het data base-exemplaar van SWPM op de virtuele machine van de toepassings server uit en niet op de HANA-virtuele machine. Gebruik *ah1-DB* voor de *Data Base-host* in de dialoog *database voor SAP-systeem*.
 
 #### <a name="install-sap-netweaver-application-server-for-sap-hana"></a>Application Server voor SAP NetWeaver installeren voor SAP HANA
 
@@ -417,7 +418,7 @@ Als u deze hand matig hebt ingesteld, moet u ook nieuwe HDB userstore-vermelding
 /usr/sap/AH1/hdbclient/hdbuserstore SET DEFAULT ah1-db:35041@AH1 SAPABAP1 <password>
 ```
 
-Gebruik *ah1-di-0* voor de *pas-host-naam* in het dialoog venster *primaire Application Server-instantie* .
+Gebruik *ah1-di-0* voor de *pas-host-naam* in het dialoog venster *primaire Application Server-instantie*.
 
 #### <a name="post-installation-steps-for-sap-hana"></a>Stappen na de installatie voor SAP HANA
 
@@ -436,7 +437,7 @@ Voordat u de SAP software Provisioning Manager (SWPM) start, moet u het IP-adres
 C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-ascs -n 255.255.255.128
 ```
 
-Voer SWPM uit en gebruik *AS1-ascs* voor de hostnaam van het *ascs-exemplaar* .
+Voer SWPM uit en gebruik *AS1-ascs* voor de hostnaam van het *ascs-exemplaar*.
 
 #### <a name="install-sql-server"></a>SQL Server installeren
 
@@ -447,9 +448,9 @@ U moet het IP-adres van de virtuele hostnaam van de data base toevoegen aan een 
 C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-db -n 255.255.255.128
 ```
 
-Voer de installatie van het data base-exemplaar van SWPM op de virtuele SQL Server-machine uit. Gebruik SAPINST_USE_HOSTNAME = *AS1-DB* om de hostnaam te overschrijven die wordt gebruikt om verbinding te maken met SQL Server. Als u de virtuele machine hebt geïmplementeerd met behulp van de Azure Resource Manager sjabloon, moet u ervoor zorgen dat de map die wordt gebruikt voor de database gegevens bestanden, wordt ingesteld op *C:\sql\data* en het database logboek bestand op *C:\sql\log* .
+Voer de installatie van het data base-exemplaar van SWPM op de virtuele SQL Server-machine uit. Gebruik SAPINST_USE_HOSTNAME =*AS1-DB* om de hostnaam te overschrijven die wordt gebruikt om verbinding te maken met SQL Server. Als u de virtuele machine hebt geïmplementeerd met behulp van de Azure Resource Manager sjabloon, moet u ervoor zorgen dat de map die wordt gebruikt voor de database gegevens bestanden, wordt ingesteld op *C:\sql\data* en het database logboek bestand op *C:\sql\log*.
 
-Zorg ervoor dat de gebruiker *NT AUTHORITY\SYSTEM* toegang heeft tot de SQL Server en dat de serverrol *sysadmin* . Zie SAP Note [1877727] en [2562184]voor meer informatie.
+Zorg ervoor dat de gebruiker *NT AUTHORITY\SYSTEM* toegang heeft tot de SQL Server en dat de serverrol *sysadmin*. Zie SAP Note [1877727] en [2562184]voor meer informatie.
 
 #### <a name="install-sap-netweaver-application-server"></a>De SAP NetWeaver-toepassings server installeren
 
@@ -460,7 +461,7 @@ Voordat u de SAP software Provisioning Manager (SWPM) start, moet u het IP-adres
 C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-di-0 -n 255.255.255.128
 ```
 
-Gebruik *AS1-di-0* voor de *pas-host-naam* in het dialoog venster *primaire Application Server-instantie* .
+Gebruik *AS1-di-0* voor de *pas-host-naam* in het dialoog venster *primaire Application Server-instantie*.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

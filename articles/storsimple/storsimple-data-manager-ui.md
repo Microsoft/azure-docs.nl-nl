@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 5d6273cbef1664984d466fb15c7f02ca505b18e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 802f732e8d62f5df861be525316b3c31ab4d0655
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88184531"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957925"
 ---
 # <a name="manage-the-storsimple-data-manager-service-in-azure-portal"></a>De StorSimple Data Manager-service beheren in Azure Portal
 
@@ -42,13 +42,13 @@ Voer de volgende stappen uit om een StorSimple Data Manager-service te maken.
 
    2. Kies een **abonnement** in de vervolg keuzelijst. Het abonnement is gekoppeld aan uw factureringsrekening. Dit veld wordt automatisch ingevuld (en kan niet worden geselecteerd) als u slechts één abonnement hebt.
 
-   3. Selecteer een bestaande resource groep of maak een nieuwe groep. Zie [Azure-resourcegroepen](/azure/azure-resource-manager/management/manage-resource-groups-portal) voor meer informatie.
+   3. Selecteer een bestaande resource groep of maak een nieuwe groep. Zie [Azure-resourcegroepen](../azure-resource-manager/management/manage-resource-groups-portal.md) voor meer informatie.
 
    4. Geef de **locatie** voor uw service op die uw opslag accounts en uw StorSimple Data Manager-service inneemt. Uw StorSimple-Apparaatbeheer service, Data Manager-service en het bijbehorende opslag account moeten allemaal in de ondersteunde regio's staan.
     
    5. Als u een koppeling naar deze service op uw dash board wilt ontvangen, selecteert **u vastmaken aan dash board**.
     
-   6. Klik op **Maken**.
+   6. Klik op **Create**.
 
       ![Een StorSimple Data Manager-service maken 3](./media/storsimple-data-manager-ui/create-service-4.png)
 
@@ -74,7 +74,7 @@ Voer de volgende stappen uit om een taak definitie te maken.
 
     ![Bron gegevens opslag plaats configureren](./media/storsimple-data-manager-ui/create-job-definition-2.png)
 
-6. Omdat dit een nieuwe Data Manager-service is, zijn er geen opslag plaatsen voor gegevens geconfigureerd. In **gegevens bron configureren**geeft u de details op van uw StorSimple 8000 Series-apparaat en de gegevens van belang.
+6. Omdat dit een nieuwe Data Manager-service is, zijn er geen opslag plaatsen voor gegevens geconfigureerd. In **gegevens bron configureren** geeft u de details op van uw StorSimple 8000 Series-apparaat en de gegevens van belang.
 
    Als u uw StorSimple Apparaatbeheer wilt toevoegen als gegevens opslagplaats, klikt u op **Nieuw toevoegen** in de vervolg keuzelijst gegevens opslagplaats en klikt u vervolgens op **Gegevens opslagplaats toevoegen**.
 
@@ -94,7 +94,7 @@ Voer de volgende stappen uit om een taak definitie te maken.
 
       Klik op **OK** wanneer u klaar bent. Hiermee wordt uw gegevensopslag plaats opgeslagen. Gebruik deze StorSimple Apparaatbeheer in andere taak definities zonder deze para meters opnieuw in te voeren. Het duurt enkele seconden nadat u op **OK** hebt geklikt voor de zojuist gemaakte opslag plaats voor de bron gegevens die u in de vervolg keuzelijst wilt weer geven.
 
-7. Selecteer in de vervolg keuzelijst voor **Gegevens opslagplaats**de gegevensopslag plaats die u hebt gemaakt. 
+7. Selecteer in de vervolg keuzelijst voor **Gegevens opslagplaats** de gegevensopslag plaats die u hebt gemaakt. 
 
    1. Voer de naam in van het StorSimple 8000-serie apparaat dat de gegevens van belang bevat.
 

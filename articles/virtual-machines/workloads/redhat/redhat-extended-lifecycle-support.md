@@ -3,16 +3,17 @@ title: Uitgebreide levenscyclusondersteuning voor Red Hat Enterprise Linux
 description: Meer informatie over het toevoegen van ondersteuning voor Red Hat Enter prise uitgebreide levens cyclus op
 author: mathapli
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.date: 04/16/2020
 ms.author: mathapli
 ms.reviewer: cynthn
-ms.openlocfilehash: 124ff65087887a437e0b82fbd7b1e4c72e4f7b4c
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 71ff00dbf32ef32ead85be60cdbe53f23c8e35c7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684352"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957568"
 ---
 # <a name="red-hat-enterprise-linux-rhel-extended-lifecycle-support"></a>Ondersteuning voor uitgebreide levenscyclus Red Hat Enterprise Linux (RHEL)
 In dit artikel vindt u informatie over de uitgebreide levenscyclus ondersteuning voor Red Hat Enter prise-installatie kopieën:

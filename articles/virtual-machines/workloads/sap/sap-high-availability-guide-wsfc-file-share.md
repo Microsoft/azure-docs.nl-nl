@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 5e514964-c907-4324-b659-16dd825f6f87
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 07/24/2019
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 721389b557fde41b1461654b03299601e2384108
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 469f6a1021fde661c4eae7951b86c9bb500c7050
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361327"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94958571"
 ---
 # <a name="cluster-an-sap-ascsscs-instance-on-a-windows-failover-cluster-by-using-a-file-share-in-azure"></a>Een SAP ASCS/SCS-exemplaar op een Windows-failovercluster clusteren met behulp van een bestands share in azure
 
@@ -123,7 +124,7 @@ Als u een scale-out bestands share wilt gebruiken, moet uw systeem voldoen aan d
 
 * Ten minste twee cluster knooppunten voor een scale-out bestands share.
 * Elk knoop punt moet ten minste twee lokale schijven hebben.
-* Om prestatie redenen moet u de *tolerantie voor mirroring*gebruiken:
+* Om prestatie redenen moet u de *tolerantie voor mirroring* gebruiken:
     * Twee richtings spiegeling voor een scale-out bestands share met twee cluster knooppunten.
     * Mirroring in drie richtingen voor een scale-out bestands share met drie (of meer) cluster knooppunten.
 * We raden u aan drie (of meer) cluster knooppunten voor een scale-out bestands share te gebruiken met mirroring in drie richtingen.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: damendo
-ms.openlocfilehash: a3cd2323900dfbe6bec8f192822135f0c9dbb1cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad89ac04d753fbe3203851af268aed29813fa587
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84738665"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960390"
 ---
 # <a name="troubleshoot-virtual-network-gateway-and-connections-using-azure-network-watcher"></a>Problemen met Virtual Network-gateway en-verbindingen met Azure Network Watcher oplossen
 
@@ -133,7 +133,7 @@ Wanneer de bewerking is voltooid, wordt de status gewijzigd in **geslaagd**.
 
 ### <a name="retrieve-the-results"></a>De resultaten ophalen
 
-Zodra de **status is geretourneerd, roept**u een Get-methode aan op de kan OPERATIONRESULT niet-URI om de resultaten op te halen.
+Zodra de **status is geretourneerd, roept** u een Get-methode aan op de kan OPERATIONRESULT niet-URI om de resultaten op te halen.
 
 ```powershell
 armclient get "https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Network/locations/westcentralus/operationResults/8a1167b7-6768-4ac1-85dc-703c9c9b9247?api-version=2016-03-30" -verbose
@@ -266,7 +266,7 @@ De volgende antwoorden zijn voor beelden van een typische reactie die wordt gere
 
 ### <a name="retrieve-the-results"></a>De resultaten ophalen
 
-Zodra de **status is geretourneerd, roept**u een Get-methode aan op de kan OPERATIONRESULT niet-URI om de resultaten op te halen.
+Zodra de **status is geretourneerd, roept** u een Get-methode aan op de kan OPERATIONRESULT niet-URI om de resultaten op te halen.
 
 ```powershell
 armclient get "https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Network/locations/westcentralus/operationResults/843b1c31-4717-4fdd-b7a6-4c786ca9c501?api-version=2016-03-30"
@@ -323,7 +323,7 @@ is a transient state while the Azure platform is being updated.",
 
 De actie tekst bevat algemene richt lijnen voor het oplossen van het probleem. Als er een actie kan worden uitgevoerd voor het probleem, wordt er een koppeling met aanvullende richt lijnen gegeven. In het geval dat er geen aanvullende richt lijnen zijn, geeft het antwoord de URL om een ondersteunings aanvraag te openen.  Ga voor meer informatie over de eigenschappen van de reactie en wat is opgenomen naar [Network Watcher probleemoplossings overzicht](network-watcher-troubleshoot-overview.md)
 
-Raadpleeg aan de [slag met Azure Blob Storage met .net](../storage/blobs/storage-dotnet-how-to-use-blobs.md)voor instructies voor het downloaden van bestanden van Azure Storage-accounts. Een ander hulp programma dat kan worden gebruikt, is Storage Explorer. Meer informatie over Storage Explorer kunt u vinden op de volgende koppeling: [Storage Explorer](https://storageexplorer.com/)
+Raadpleeg aan de [slag met Azure Blob Storage met .net](../storage/blobs/storage-quickstart-blobs-dotnet.md)voor instructies voor het downloaden van bestanden van Azure Storage-accounts. Een ander hulp programma dat kan worden gebruikt, is Storage Explorer. Meer informatie over Storage Explorer kunt u vinden op de volgende koppeling: [Storage Explorer](https://storageexplorer.com/)
 
 ## <a name="next-steps"></a>Volgende stappen
 

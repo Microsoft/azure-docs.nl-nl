@@ -3,16 +3,17 @@ title: SAP S/4HANA of BW/4HANA implementeren op een Azure VM | Microsoft Docs
 description: SAP S/4HANA of BW/4HANA implementeren op een Azure VM
 author: hermanndms
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 09/15/2016
 ms.author: hermannd
 ms.reviewer: cynthn
-ms.openlocfilehash: 116de28501b77262ef126ed420982d853376da4e
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 6492e770479042a5a1b4da6f61917832adad4873
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993404"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959285"
 ---
 # <a name="deploy-sap-s4hana-or-bw4hana-on-azure"></a>SAP S/4HANA of BW/4HANA implementeren op Azure
 In dit artikel wordt beschreven hoe u S/4HANA implementeert in azure met behulp van de SAP Cloud Appliance Library (SAP CAL) 3,0. Volg dezelfde stappen om andere oplossingen op basis van SAP HANA, zoals BW/4HANA, te implementeren.
@@ -51,7 +52,7 @@ De pagina **oplossingen** toont enkele van de SAP CAL Hana-oplossingen die besch
 
     c. **Windows Azure geëxploiteerd door 21vianet** is een optie in China die gebruikmaakt van het klassieke implementatie model.
 
-    Selecteer **Microsoft Azure**om in het Resource Manager-model te implementeren.
+    Selecteer **Microsoft Azure** om in het Resource Manager-model te implementeren.
 
     ![Details van SAP CAL-account](./media/cal-s4h/s4h-pic-2a.png)
 
@@ -75,7 +76,7 @@ De pagina **oplossingen** toont enkele van de SAP CAL Hana-oplossingen die besch
 
 1. Als u uw account wilt koppelen aan de gebruiker die u gebruikt om u aan te melden bij de SAP CAL, klikt u op **controleren**. 
  
-1. Klik op **maken**om de koppeling tussen uw gebruiker en het ZOJUIST gemaakte SAP CAL-account te maken.
+1. Klik op **maken** om de koppeling tussen uw gebruiker en het ZOJUIST gemaakte SAP CAL-account te maken.
 
    ![Gebruiker to SAP CAL-account koppeling](./media/cal-s4h/s4h-pic9b.png)
 
@@ -105,7 +106,7 @@ Hier wordt het Basic-pad voor de implementatie beschreven.
 
     a. Selecteer een SAP CAL-account. (Gebruik een account dat is gekoppeld aan de implementatie van het Resource Manager-implementatie model.)
 
-    b. Voer een exemplaar **naam**in.
+    b. Voer een exemplaar **naam** in.
 
     c. Selecteer een Azure- **regio**. De SAP CAL stelt een regio voor. Als u een andere Azure-regio nodig hebt en u geen SAP CAL-abonnement hebt, moet u een CAL-abonnement met SAP Best Ellen.
 
@@ -113,7 +114,7 @@ Hier wordt het Basic-pad voor de implementatie beschreven.
 
    ![Basis modus SAP-CAL: exemplaar maken](./media/cal-s4h/s4h-pic10a.png)
 
-1. Klik op **maken**en klik in het bericht venster dat wordt weer gegeven op **OK**.
+1. Klik op **maken** en klik in het bericht venster dat wordt weer gegeven op **OK**.
 
    ![VM-grootten die door SAP CAL worden ondersteund](./media/cal-s4h/s4h-pic10b.png)
 
@@ -131,7 +132,7 @@ Hier wordt het Basic-pad voor de implementatie beschreven.
 
    ![SAP CAL-objecten die zijn geïmplementeerd in de nieuwe portal](./media/cal-s4h/sapcaldeplyment_portalview.png)
 
-1. Op de SAP CAL-portal wordt de status weer gegeven als **actief**. Klik op **verbinden**om verbinding te maken met de oplossing. Er zijn verschillende opties voor het maken van verbinding met de verschillende onderdelen geïmplementeerd in deze oplossing.
+1. Op de SAP CAL-portal wordt de status weer gegeven als **actief**. Klik op **verbinden** om verbinding te maken met de oplossing. Er zijn verschillende opties voor het maken van verbinding met de verschillende onderdelen geïmplementeerd in deze oplossing.
 
    ![SAP CAL-exemplaren](./media/cal-s4h/active_solution.png)
 

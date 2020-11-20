@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/16/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 80c27613ad3956d565b858b02ed32ac13af3a62c
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 03117b9f0c3cbaea22f36703f689264549b851e8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320478"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959132"
 ---
 # <a name="access-control-lists-acls-in-azure-data-lake-storage-gen2"></a>Toegangs beheer lijsten (Acl's) in Azure Data Lake Storage Gen2
 
@@ -34,7 +34,7 @@ Zie een van de volgende artikelen voor het instellen van machtigingen voor besta
 
 | Omgeving | Artikel |
 |--------|-----------|
-|Azure Opslagverkenner |[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md#managing-access)|
+|Azure Storage Explorer |[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md#managing-access)|
 |.NET |[.NET gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-dotnet.md#manage-access-control-lists-acls)|
 |Java|[Java gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-java.md#manage-access-control-lists-acls)|
 |Python|[Python gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-python.md#manage-access-control-lists-acls)|
@@ -60,7 +60,7 @@ Zowel toegangs-Acl's als standaard-Acl's hebben dezelfde structuur.
 
 ## <a name="levels-of-permission"></a>Machtigings niveaus
 
-De machtigingen voor een container object zijn **lezen**, **schrijven**en **uitvoeren**en kunnen worden gebruikt voor bestanden en mappen, zoals wordt weer gegeven in de volgende tabel:
+De machtigingen voor een container object zijn **lezen**, **schrijven** en **uitvoeren** en kunnen worden gebruikt voor bestanden en mappen, zoals wordt weer gegeven in de volgende tabel:
 
 |            |    Bestand     |   Directory |
 |------------|-------------|----------|
@@ -90,9 +90,9 @@ In het POSIX-stijl model dat wordt gebruikt door Data Lake Storage Gen2, worden 
 
 In de volgende tabel ziet u de ACL-vermeldingen die zijn vereist voor het inschakelen van een beveiligingsprincipal voor het uitvoeren van de bewerkingen die worden vermeld in de kolom **bewerking** . 
 
-In deze tabel ziet u een kolom van elk niveau van een fictieve Directory-hiërarchie. Er is een kolom voor de hoofd directory van de container ( `\` ), een submap met de naam **Oregon**, een submap van de Oregon-map met de naam **Rotterdam**en een tekst bestand in de map Rotterdam met de naam **Data.txt**. 
+In deze tabel ziet u een kolom van elk niveau van een fictieve Directory-hiërarchie. Er is een kolom voor de hoofd directory van de container ( `\` ), een submap met de naam **Oregon**, een submap van de Oregon-map met de naam **Rotterdam** en een tekst bestand in de map Rotterdam met de naam **Data.txt**. 
 
-> [! IMPORANT] in deze tabel wordt ervan uitgegaan dat u **alleen** acl's gebruikt zonder Azure RBAC-roltoewijzingen. Zie [machtigingen tabel: combi neren van Azure RBAC en ACL](data-lake-storage-access-control-model.md#permissions-table-combining-azure-rbac-and-acl)voor een vergelijk bare tabel waarin Azure RBAC samen met acl's wordt gecombineerd.
+> [! IMPORANT] in deze tabel wordt ervan uitgegaan dat u **alleen** acl's gebruikt zonder toewijzingen van Azure-functies. Zie [machtigingen tabel: combi neren van Azure RBAC en ACL](data-lake-storage-access-control-model.md#permissions-table-combining-azure-rbac-and-acl)voor een vergelijk bare tabel waarin Azure RBAC samen met acl's wordt gecombineerd.
 
 |    Bewerking             |    /    | Oregon | Port land | Data.txt     |
 |--------------------------|---------|----------|-----------|--------------|
@@ -119,7 +119,7 @@ Elk bestand en elke map heeft afzonderlijke machtigingen voor deze identiteiten:
 - Benoemde beheerde identiteiten
 - Alle andere gebruikers
 
-De identiteiten van gebruikers en groepen zijn Azure Active Directory-identiteiten (Azure AD). Tenzij anders vermeld, kan een *gebruiker*in de context van data Lake Storage Gen2 verwijzen naar een Azure AD-gebruiker, Service-Principal, beheerde identiteit of beveiligings groep.
+De identiteiten van gebruikers en groepen zijn Azure Active Directory-identiteiten (Azure AD). Tenzij anders vermeld, kan een *gebruiker* in de context van data Lake Storage Gen2 verwijzen naar een Azure AD-gebruiker, Service-Principal, beheerde identiteit of beveiligings groep.
 
 ### <a name="the-owning-user"></a>De gebruiker die eigenaar is
 
@@ -199,7 +199,7 @@ Zoals geïllustreerd in het algoritme voor toegangs controle, beperkt het masker
 
 Voor een nieuwe Data Lake Storage Gen2-container wordt het masker voor de toegangs-ACL van de hoofdmap (/) standaard ingesteld op **750** voor directory's en **640** voor bestanden. In de volgende tabel ziet u de symbolische notatie van deze machtigings niveaus.
 
-|Entiteit|Mappen|Bestanden|
+|Entiteit|Mappen|Files|
 |--|--|--|
 |Gebruiker die eigenaar is|`rwx`|`r-w`|
 |Groep die eigenaar is|`r-x`|`r--`|
@@ -224,7 +224,7 @@ Wanneer een nieuw bestand of nieuwe map wordt gemaakt onder een bestaande map, b
 
 ### <a name="umask"></a>umask
 
-Bij het maken van een bestand of map wordt umask gebruikt om te wijzigen hoe de standaard-Acl's worden ingesteld voor het onderliggende item. umask is een 9-bits waarde op bovenliggende mappen met een LSU-waarde voor de **gebruiker die eigenaar**is, de groep die **eigenaar**is en **andere**.
+Bij het maken van een bestand of map wordt umask gebruikt om te wijzigen hoe de standaard-Acl's worden ingesteld voor het onderliggende item. umask is een 9-bits waarde op bovenliggende mappen met een LSU-waarde voor de **gebruiker die eigenaar** is, de groep die **eigenaar** is en **andere**.
 
 De umask voor het Azure Data Lake Storage Gen2 van een constante waarde die is ingesteld op 007. Deze waarde wordt omgezet naar:
 
@@ -270,7 +270,7 @@ Als HNS is uitgeschakeld, zijn de Azure-autorisatie regels voor Azure RBAC nog s
 
 Zie [hoe machtigingen worden geëvalueerd](data-lake-storage-access-control-model.md#how-permissions-are-evaluated)voor meer informatie over hoe het systeem Azure RBAC en acl's samen evalueert om autorisatie beslissingen te nemen voor bronnen van opslag accounts.
 
-### <a name="what-are-the-limits-for-azure-rbac-role-assignments-and-acl-entries"></a>Wat zijn de limieten voor Azure RBAC-Roltoewijzingen en ACL-vermeldingen?
+### <a name="what-are-the-limits-for-azure-role-assignments-and-acl-entries"></a>Wat zijn de limieten voor Azure-Roltoewijzingen en ACL-vermeldingen?
 
 De volgende tabel bevat een samen vatting van de beperkingen waarmee u rekening moet houden tijdens het gebruik van Azure RBAC voor het beheren van ' grof gekorrelde ' machtigingen (machtigingen die van toepassing zijn op opslag accounts of containers) en het gebruik van Acl's voor het beheren van ' verfijnde ' machtigingen (machtigingen die van toepassing zijn op bestanden en mappen). Gebruik beveiligings groepen voor ACL-toewijzingen. Door groepen te gebruiken, bent u minder waarschijnlijk het maximum aantal roltoewijzingen per abonnement en het maximum aantal Acl's-vermeldingen per bestand of map te overschrijden. 
 
@@ -343,6 +343,6 @@ Het Azure Storage REST API bevat een bewerking met de naam [set-container-ACL](h
 * [POSIX ACL in Ubuntu](https://help.ubuntu.com/community/FilePermissionsACLs)
 * [ACL met behulp van toegangs beheer lijsten op Linux](https://bencane.com/2012/05/27/acl-using-access-control-lists-on-linux/)
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 - [Access Control model in Azure Data Lake Storage Gen2](data-lake-storage-access-control-model.md)

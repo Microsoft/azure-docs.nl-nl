@@ -3,16 +3,17 @@ title: SAP IDE'S EHP7 SP3 implementeren voor SAP ERP 6,0 op Azure | Microsoft Do
 description: SAP IDE'S EHP7 SP3 implementeren voor SAP ERP 6,0 op Azure
 author: hermanndms
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 09/16/2016
 ms.author: hermannd
 ms.reviewer: cynthn
-ms.openlocfilehash: 2e1c20ba5549a1d9660b6e30fafa040d545a6a37
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: dc0c1744c2943d33d516de4ed9d28893541773ad
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993443"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957874"
 ---
 # <a name="deploy-sap-ides-ehp7-sp3-for-sap-erp-60-on-azure"></a>SAP IDE'S EHP7 SP3 implementeren voor SAP ERP 6,0 op Azure
 In dit artikel wordt beschreven hoe u een SAP IDE'S-systeem dat wordt uitgevoerd met SQL Server en het Windows-besturings systeem op Azure implementeert via de SAP Cloud Appliance Library (SAP CAL) 3,0. In de scherm afbeeldingen wordt het stapsgewijze proces weer gegeven. Volg dezelfde stappen om een andere oplossing te implementeren.
@@ -48,7 +49,7 @@ Nadat u zich hebt aangemeld bij de SAP CAL, leidt de eerste pagina meestal naar 
 
     ![Scherm opname toont S A P CAL-accounts met Microsoft Azure.](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic-2a.PNG)
 
-    Selecteer **Microsoft Azure**om in het Resource Manager-model te implementeren.
+    Selecteer **Microsoft Azure** om in het Resource Manager-model te implementeren.
 
     ![Scherm opname toont S A P CAL-accounts.](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic3c.PNG)
 
@@ -72,7 +73,7 @@ Nadat u zich hebt aangemeld bij de SAP CAL, leidt de eerste pagina meestal naar 
 
 1. Als u uw account wilt koppelen aan de gebruiker die u gebruikt om u aan te melden bij de SAP CAL, klikt u op **controleren**. 
 
-1. Klik op **maken**om de koppeling tussen uw gebruiker en het ZOJUIST gemaakte SAP CAL-account te maken.
+1. Klik op **maken** om de koppeling tussen uw gebruiker en het ZOJUIST gemaakte SAP CAL-account te maken.
 
     ![Koppeling van gebruiker naar account](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic9b.PNG)
 
@@ -85,11 +86,11 @@ U hebt een SAP CAL-account gemaakt dat het volgende kan:
 > Voordat u de SAP IDE'S-oplossing op basis van Windows en SQL Server kunt implementeren, moet u zich mogelijk registreren voor een SAP CAL-abonnement. Anders kan de oplossing worden weer gegeven als **vergrendeld** op de pagina overzicht.
 
 ### <a name="deploy-a-solution"></a>Een oplossing implementeren
-1. Nadat u een SAP CAL-account hebt ingesteld, selecteert u **de SAP ide's-oplossing in Windows en SQL Server** oplossing. Klik op **instantie maken**en bevestig het gebruik en de voor waarden. 
+1. Nadat u een SAP CAL-account hebt ingesteld, selecteert u **de SAP ide's-oplossing in Windows en SQL Server** oplossing. Klik op **instantie maken** en bevestig het gebruik en de voor waarden. 
 
 1. Op de pagina **basis modus: instantie maken** moet u het volgende doen:
 
-    a. Voer een exemplaar **naam**in.
+    a. Voer een exemplaar **naam** in.
 
     b. Selecteer een Azure- **regio**. U hebt mogelijk een SAP CAL-abonnement nodig om meerdere Azure-regio's beschikbaar te krijgen.
 

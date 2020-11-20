@@ -7,17 +7,18 @@ author: rdeltcheva
 manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 81cbbe06db2426cda8fde4a8fa0bca2cd8f097bb
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 597bb4392bbe22b0d980e512b136c0d2c92641ad
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144136"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94958826"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-red-hat-enterprise-linux"></a>Hoge Beschik baarheid van SAP HANA op virtuele machines van Azure op Red Hat Enterprise Linux
 
@@ -48,7 +49,7 @@ Op virtuele machines van Azure (Vm's) is HANA-systeem replicatie op Azure moment
 SAP HANA replicatie bestaat uit één primair knoop punt en ten minste één secundair knoop punt. Wijzigingen in de gegevens op het primaire knoop punt worden synchroon of asynchroon gerepliceerd naar het secundaire knoop punt.
 
 In dit artikel wordt beschreven hoe u de virtuele machines implementeert en configureert, het cluster raamwerk installeert en SAP HANA systeem replicatie installeert en configureert.
-In de voorbeeld configuraties worden installatie opdrachten, instantie nummer **03**en Hana-systeem-id **HN1** gebruikt.
+In de voorbeeld configuraties worden installatie opdrachten, instantie nummer **03** en Hana-systeem-id **HN1** gebruikt.
 
 Lees eerst de volgende SAP-opmerkingen en-documenten:
 
@@ -108,11 +109,11 @@ Voer de volgende stappen uit om de sjabloon te implementeren:
     * **SAP-systeem grootte**: Voer het aantal sap's in dat het nieuwe systeem moet bieden. Als u niet zeker weet hoeveel SAP'S het systeem nodig heeft, vraagt u uw SAP-technologie partner of systeem integrator.
     * **Systeem beschikbaarheid**: Selecteer **ha**.
     * **Beheerders naam, beheerders wachtwoord of SSH-sleutel**: er wordt een nieuwe gebruiker gemaakt die kan worden gebruikt om u aan te melden bij de computer.
-    * **Subnet-id**: als u de virtuele machine wilt implementeren in een bestaand VNet waarvoor u een subnet hebt gedefinieerd, moet de virtuele machine worden toegewezen aan, de id van het specifieke subnet benoemen. De ID is doorgaans hetzelfde als **/Subscriptions/ \<subscription ID> /resourceGroups/ \<resource group name> /providers/Microsoft.Network/virtualNetworks/ \<virtual network name> /subnets/ \<subnet name> **. Laat dit leeg als u een nieuw virtueel netwerk wilt maken
+    * **Subnet-id**: als u de virtuele machine wilt implementeren in een bestaand VNet waarvoor u een subnet hebt gedefinieerd, moet de virtuele machine worden toegewezen aan, de id van het specifieke subnet benoemen. De ID is doorgaans hetzelfde als **/Subscriptions/ \<subscription ID> /resourceGroups/ \<resource group name> /providers/Microsoft.Network/virtualNetworks/ \<virtual network name> /subnets/ \<subnet name>**. Laat dit leeg als u een nieuw virtueel netwerk wilt maken
 
 ### <a name="manual-deployment"></a>Handmatige implementatie
 
-1. Maak een resourcegroep.
+1. Een resourcegroep maken.
 1. Maak een virtueel netwerk.
 1. Maak een beschikbaarheidsset.  
    Stel het maximale update domein in.
@@ -133,7 +134,7 @@ Voer de volgende stappen uit om de sjabloon te implementeren:
 1. Als u standaard load balancer gebruikt, volgt u deze configuratie stappen:
    1. Maak eerst een front-end-IP-adres groep:
 
-      1. Open de load balancer, selecteer de **frontend-IP-adres groep**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer de **frontend-IP-adres groep** en selecteer **toevoegen**.
       1. Voer de naam in van de nieuwe front-end-IP-adres groep (bijvoorbeeld **Hana-frontend**).
       1. Stel de **toewijzing** in op **statisch** en voer het IP-adres in (bijvoorbeeld **10.0.0.13**).
       1. Selecteer **OK**.
@@ -141,7 +142,7 @@ Voer de volgende stappen uit om de sjabloon te implementeren:
 
    1. Maak vervolgens een back-end-pool:
 
-      1. Open de load balancer, selecteer **back-endservers**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer **back-endservers** en selecteer **toevoegen**.
       1. Voer de naam van de nieuwe back-end-pool in (bijvoorbeeld **Hana-back-end**).
       1. Selecteer **een virtuele machine toevoegen**.
       1. Selecteer * * virtuele machine * *.
@@ -150,14 +151,14 @@ Voer de volgende stappen uit om de sjabloon te implementeren:
 
    1. Maak vervolgens een status test:
 
-      1. Open de load balancer, selecteer **status controles**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer **status controles** en selecteer **toevoegen**.
       1. Voer de naam in van de nieuwe status test (bijvoorbeeld **Hana-HP**).
-      1. Selecteer **TCP** als protocol en poort 625**03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
+      1. Selecteer **TCP** als protocol en poort 625 **03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
       1. Selecteer **OK**.
 
    1. Maak vervolgens de regels voor taak verdeling:
    
-      1. Open de load balancer, selecteer **regels voor taak verdeling**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer **regels voor taak verdeling** en selecteer **toevoegen**.
       1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **Hana-lb**).
       1. Selecteer het front-end-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-frontend**, **Hana-back-end** en **Hana-HP**).
       1. Selecteer **ha-poorten**.
@@ -169,7 +170,7 @@ Voer de volgende stappen uit om de sjabloon te implementeren:
 1. Als uw scenario gebruikmaakt van basis load balancer, volgt u deze configuratie stappen:
    1. Configureer de load balancer. Maak eerst een front-end-IP-adres groep:
 
-      1. Open de load balancer, selecteer de **frontend-IP-adres groep**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer de **frontend-IP-adres groep** en selecteer **toevoegen**.
       1. Voer de naam in van de nieuwe front-end-IP-adres groep (bijvoorbeeld **Hana-frontend**).
       1. Stel de **toewijzing** in op **statisch** en voer het IP-adres in (bijvoorbeeld **10.0.0.13**).
       1. Selecteer **OK**.
@@ -177,7 +178,7 @@ Voer de volgende stappen uit om de sjabloon te implementeren:
 
    1. Maak vervolgens een back-end-pool:
 
-      1. Open de load balancer, selecteer **back-endservers**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer **back-endservers** en selecteer **toevoegen**.
       1. Voer de naam van de nieuwe back-end-pool in (bijvoorbeeld **Hana-back-end**).
       1. Selecteer **een virtuele machine toevoegen**.
       1. Selecteer de beschikbaarheidsset die u hebt gemaakt in stap 3.
@@ -186,43 +187,43 @@ Voer de volgende stappen uit om de sjabloon te implementeren:
 
    1. Maak vervolgens een status test:
 
-      1. Open de load balancer, selecteer **status controles**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer **status controles** en selecteer **toevoegen**.
       1. Voer de naam in van de nieuwe status test (bijvoorbeeld **Hana-HP**).
-      1. Selecteer **TCP** als protocol en poort 625**03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
+      1. Selecteer **TCP** als protocol en poort 625 **03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
       1. Selecteer **OK**.
 
    1. Maak voor SAP HANA 1,0 de regels voor taak verdeling:
 
-      1. Open de load balancer, selecteer **regels voor taak verdeling**en selecteer **toevoegen**.
-      1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3**03**15).
+      1. Open de load balancer, selecteer **regels voor taak verdeling** en selecteer **toevoegen**.
+      1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3 **03** 15).
       1. Selecteer het front-end-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-** front-end).
-      1. Zorg ervoor dat het **protocol** is ingesteld op **TCP**en voer poort 3**03**15 in.
+      1. Zorg ervoor dat het **protocol** is ingesteld op **TCP** en voer poort 3 **03** 15 in.
       1. Verhoog de **time-out voor inactiviteit** tot 30 minuten.
       1. Zorg ervoor dat u **zwevende IP-adressen inschakelt**.
       1. Selecteer **OK**.
-      1. Herhaal deze stappen voor poort 3**03**17.
+      1. Herhaal deze stappen voor poort 3 **03** 17.
 
    1. Voor SAP HANA 2,0 maakt u de regels voor taak verdeling voor de systeem database:
 
-      1. Open de load balancer, selecteer **regels voor taak verdeling**en selecteer **toevoegen**.
-      1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3**03**13).
+      1. Open de load balancer, selecteer **regels voor taak verdeling** en selecteer **toevoegen**.
+      1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3 **03** 13).
       1. Selecteer het front-end-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-** front-end).
-      1. Zorg ervoor dat het **protocol** is ingesteld op **TCP**en voer poort 3**03**13 in.
+      1. Zorg ervoor dat het **protocol** is ingesteld op **TCP** en voer poort 3 **03** 13 in.
       1. Verhoog de **time-out voor inactiviteit** tot 30 minuten.
       1. Zorg ervoor dat u **zwevende IP-adressen inschakelt**.
       1. Selecteer **OK**.
-      1. Herhaal deze stappen voor poort 3**03**14.
+      1. Herhaal deze stappen voor poort 3 **03** 14.
 
    1. Voor SAP HANA 2,0 maakt u eerst de regels voor taak verdeling voor de Tenant database:
 
-      1. Open de load balancer, selecteer **regels voor taak verdeling**en selecteer **toevoegen**.
-      1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3**03**40).
+      1. Open de load balancer, selecteer **regels voor taak verdeling** en selecteer **toevoegen**.
+      1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld Hana-lb-3 **03** 40).
       1. Selecteer het frontend-IP-adres, de back-endadresgroep en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-front-end**).
-      1. Zorg ervoor dat het **protocol** is ingesteld op **TCP**en voer poort 3**03**40 in.
+      1. Zorg ervoor dat het **protocol** is ingesteld op **TCP** en voer poort 3 **03** 40 in.
       1. Verhoog de **time-out voor inactiviteit** tot 30 minuten.
       1. Zorg ervoor dat u **zwevende IP-adressen inschakelt**.
       1. Selecteer **OK**.
-      1. Herhaal deze stappen voor de poorten 3**03**41 en 3**03**42.
+      1. Herhaal deze stappen voor de poorten 3 **03** 41 en 3 **03** 42.
 
 Lees voor meer informatie over de vereiste poorten voor SAP HANA de hoofdstuk [verbindingen met Tenant databases](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) in de hand leiding voor [SAP Hana Tenant-data bases](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) of [SAP Note 2388694][2388694].
 
@@ -359,8 +360,8 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
    Ga als volgt te werk om SAP HANA-systeem replicatie te installeren <https://access.redhat.com/articles/3004101> .
 
    * Voer het **hdblcm** -programma uit vanaf de Hana-DVD. Voer de volgende waarden in bij de prompt:
-   * Installatie kiezen: Voer **1**in.
-   * Selecteer extra onderdelen voor installatie: Voer **1**in.
+   * Installatie kiezen: Voer **1** in.
+   * Selecteer extra onderdelen voor installatie: Voer **1** in.
    * Voer het installatiepad [/Hana/Shared] in: Selecteer ENTER.
    * Voer de naam van de lokale host [..] in: Selecteer ENTER.
    * Wilt u extra hosts toevoegen aan het systeem? (j/n) [n]: Selecteer ENTER.
@@ -582,9 +583,9 @@ clone clone-max=2 clone-node-max=1 interleave=true
 Maak vervolgens de HANA-resources.
 
 > [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+> Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
-Als u een cluster op **RHEL 7. x**maakt, gebruikt u de volgende opdrachten:  
+Als u een cluster op **RHEL 7. x** maakt, gebruikt u de volgende opdrachten:  
 
 <pre><code># Replace the bold string with your instance number, HANA system ID, and the front-end IP address of the Azure load balancer.
 #
@@ -605,7 +606,7 @@ sudo pcs constraint colocation add g_ip_<b>HN1</b>_<b>03</b> with master SAPHana
 sudo pcs property set maintenance-mode=false
 </code></pre>
 
-Als u een cluster op **RHEL 8. x**maakt, gebruikt u de volgende opdrachten:  
+Als u een cluster op **RHEL 8. x** maakt, gebruikt u de volgende opdrachten:  
 
 <pre><code># Replace the bold string with your instance number, HANA system ID, and the front-end IP address of the Azure load balancer.
 #
@@ -723,7 +724,7 @@ Resource Group: g_ip_HN1_03
 ### <a name="test-the-azure-fencing-agent"></a>De Azure omheinings agent testen
 
 > [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.  
+> Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.  
 
 Resource status voordat u begint met testen:
 

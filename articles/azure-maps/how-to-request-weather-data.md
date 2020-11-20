@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: b5db19a6549e7e4675213973554ff18bf46dda1e
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 3e0dce10d582006ab8c1dabf6d4b3efc82d8f39f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92915401"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957109"
 ---
 # <a name="request-real-time-and-forecasted-weather-data-using-azure-maps-weather-services"></a>Real-time en geraamde weers gegevens aanvragen met behulp van Azure Maps weer Services
 
@@ -27,6 +27,12 @@ In dit artikel leert u het volgende:
 * Vraag dagelijkse prognoses op met behulp van de [down load Daily Forecast API](https://docs.microsoft.com/rest/api/maps/weather/getdailyforecastpreview).
 * Vraag per uur prognoses aan met de API voor het ophalen van een [uur](https://docs.microsoft.com/rest/api/maps/weather/gethourlyforecastpreview).
 * Vraag minuut per minuut prognoses met behulp van de API voor het [ophalen van minuten](https://docs.microsoft.com/rest/api/maps/weather/getminuteforecastpreview).
+
+In deze video vindt u een overzicht van de weers-Services in de Azure Maps met voor beelden voor REST-oproep.
+
+<br/>
+
+<iframe src="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-Maps-Weather-services-for-developers/player" width="960" height="540" allowFullScreen frameBorder="0" title="Azure Maps weer Services voor ontwikkel aars-micro soft Channel 9 video"></iframe>
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -236,7 +242,7 @@ In dit voor beeld gebruikt u de [API Get ingrijpende waarschuwingen](https://doc
 >[!NOTE]
 >In dit voor beeld worden ernstige weer Meldingen opgehaald op het moment van schrijven. Waarschijnlijk zijn er geen ernstige weer waarschuwingen meer op de aangevraagde locatie. Als u de werkelijke ernstige waarschuwings gegevens wilt ophalen wanneer u dit voor beeld uitvoert, moet u gegevens op een andere coördinaten locatie ophalen.
 
-1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag** . Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan** .
+1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag**. Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan**.
 
 2. Selecteer de methode http **ophalen** op het tabblad Builder en voer de volgende URL in. Voor deze aanvraag en andere aanvragen die in dit artikel worden vermeld, vervangt u `{Azure-Maps-Primary-Subscription-key}` door uw primaire abonnementssleutel.
 
@@ -288,7 +294,7 @@ De [down load Daily Forecast API](https://docs.microsoft.com/rest/api/maps/weath
 
 In dit voor beeld gebruikt u de [down load Daily Forecast API](https://docs.microsoft.com/rest/api/maps/weather/getdailyforecastpreview) om de weers voorspelling van vijf dagen op te halen voor coördinaten in Seattle, WA.
 
-1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag** . Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan** .
+1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag**. Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan**.
 
 2. Selecteer de methode http **ophalen** op het tabblad Builder en voer de volgende URL in. Voor deze aanvraag en andere aanvragen die in dit artikel worden vermeld, vervangt u `{Azure-Maps-Primary-Subscription-key}` door uw primaire abonnementssleutel.
 
@@ -536,7 +542,7 @@ De [Forecast-API ophalen](https://docs.microsoft.com/rest/api/maps/weather/getho
 
 In dit voor beeld gebruikt u de [API ontvang per uur](https://docs.microsoft.com/rest/api/maps/weather/gethourlyforecastpreview) om de weers verwachting per uur op te halen voor de komende 12 uur op coördinaten in Seattle, WA.
 
-1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag** . Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan** .
+1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag**. Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan**.
 
 2. Selecteer de methode http **ophalen** op het tabblad Builder en voer de volgende URL in. Voor deze aanvraag en andere aanvragen die in dit artikel worden vermeld, vervangt u `{Azure-Maps-Primary-Subscription-key}` door uw primaire abonnementssleutel.
 
@@ -643,7 +649,7 @@ In dit voor beeld gebruikt u de [API ontvang per uur](https://docs.microsoft.com
 
 In dit voor beeld gebruikt u de [API Get Minute](https://docs.microsoft.com/rest/api/maps/weather/getminuteforecastpreview) voor het ophalen van de weers verwachting per minuut op coördinaten in Seattle, WA. De weers voorspelling wordt de komende 120 minuten gegeven. In onze query wordt gevraag dat de prognose wordt weer gegeven met intervallen van 15 minuten, maar u kunt de para meter instellen op 1 of 5 minuten.
 
-1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag** . Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan** .
+1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag**. Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan**.
 
 2. Selecteer de methode http **ophalen** op het tabblad Builder en voer de volgende URL in. Voor deze aanvraag en andere aanvragen die in dit artikel worden vermeld, vervangt u `{Azure-Maps-Primary-Subscription-key}` door uw primaire abonnementssleutel.
 

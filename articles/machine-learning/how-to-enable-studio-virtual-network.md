@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.date: 10/21/2020
 ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: 7cdd70a44a090b03a3f11626805565469c7c04e7
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: df4d777ad78240b3ca84c51152b37861c4ccc486
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94554662"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959999"
 ---
 # <a name="use-azure-machine-learning-studio-in-an-azure-virtual-network"></a>Azure Machine Learning Studio gebruiken in een virtueel Azure-netwerk
 
@@ -90,7 +90,7 @@ Azure Machine Learning maakt gebruik van [data stores](concept-data.md#datastore
 1. Selecteer in de instellingen voor gegevens archief de optie __Ja__  __Als u wilt dat Azure machine learning-service toegang heeft tot de opslag met behulp van een door werk ruimte beheerde identiteit__.
 
 
-Met deze stappen wordt de door de werk ruimte beheerde identiteit als __lezer__ aan de opslag service toegevoegd met behulp van Azure resource-based Access Control (Azure RBAC). Met __Reader__ toegang kan de werk ruimte Firewall instellingen ophalen en ervoor zorgen dat gegevens het virtuele netwerk niet verlaten.
+Met deze stappen wordt de door de werk ruimte beheerde identiteit als __lezer__ aan de opslag service toegevoegd met behulp van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Met __Reader__ toegang kan de werk ruimte Firewall instellingen ophalen en ervoor zorgen dat gegevens het virtuele netwerk niet verlaten.
 
 > [!NOTE]
 > Het kan tot tien minuten duren voordat deze wijzigingen van kracht worden.

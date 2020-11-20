@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 93d230656fd7ef34e76a143fb3186d23f8d3afed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34bbf4d723e46663efe77560245db74d9dea1fc4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91766239"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957908"
 ---
 # <a name="use-the-device-summary-in-storsimple-device-manager-service"></a>Het apparaat samen vatting gebruiken in StorSimple Apparaatbeheer-service
 
@@ -78,10 +78,10 @@ In het gebied essentiële elementen worden enkele belang rijke eigenschappen vas
 
      In deze grafiek kunt u metrische gegevens weer geven voor de totale primaire opslag (de hoeveelheid door hosts naar uw apparaat geschreven) en de totale Cloud opslag die gedurende een bepaalde periode door uw apparaat wordt gebruikt.
   
-     In deze context verwijst *primaire opslag* naar de totale hoeveelheid gegevens die is geschreven door de host en kan deze worden onderverdeeld op volume type: *primaire, gelaagde opslag* omvat lokaal opgeslagen gegevens en gelaagde gegevens in de Cloud. *Primaire lokaal vastgemaakte opslag* bevat alleen gegevens die lokaal zijn opgeslagen. *Cloud opslag*is aan de andere kant een meting van de totale hoeveelheid gegevens die in de Cloud is opgeslagen. Deze opslag bevat gelaagde gegevens en back-ups. De gegevens die in de Cloud zijn opgeslagen, worden ontdubbeld en gecomprimeerd, terwijl de primaire opslag de hoeveelheid opslag aangeeft die wordt gebruikt voordat de gegevens worden ontdubbeld en gecomprimeerd. (U kunt deze twee getallen vergelijken om een idee te krijgen van de compressie frequentie.) Voor zowel de primaire als de Cloud opslag zijn de weer gegeven hoeveel heden gebaseerd op de tracerings frequentie die u configureert. Als u bijvoorbeeld een frequentie van één week kiest, toont de grafiek de gegevens voor elke dag in de vorige week.
+     In deze context verwijst *primaire opslag* naar de totale hoeveelheid gegevens die is geschreven door de host en kan deze worden onderverdeeld op volume type: *primaire, gelaagde opslag* omvat lokaal opgeslagen gegevens en gelaagde gegevens in de Cloud. *Primaire lokaal vastgemaakte opslag* bevat alleen gegevens die lokaal zijn opgeslagen. *Cloud opslag* is aan de andere kant een meting van de totale hoeveelheid gegevens die in de Cloud is opgeslagen. Deze opslag bevat gelaagde gegevens en back-ups. De gegevens die in de Cloud zijn opgeslagen, worden ontdubbeld en gecomprimeerd, terwijl de primaire opslag de hoeveelheid opslag aangeeft die wordt gebruikt voordat de gegevens worden ontdubbeld en gecomprimeerd. (U kunt deze twee getallen vergelijken om een idee te krijgen van de compressie frequentie.) Voor zowel de primaire als de Cloud opslag zijn de weer gegeven hoeveel heden gebaseerd op de tracerings frequentie die u configureert. Als u bijvoorbeeld een frequentie van één week kiest, toont de grafiek de gegevens voor elke dag in de vorige week.
 
      Selecteer de optie **Cloud opslag die is gebruikt** voor een overzicht van de hoeveelheid Cloud opslag die gedurende een bepaalde periode is verbruikt. Als u de totale opslag die is geschreven door de host wilt zien, selecteert u de optie **primaire GElaagde opslag** en **gebruikte primaire lokaal vastgemaakte opslag** . 
-     Zie [de StorSimple Apparaatbeheer-service gebruiken om uw StorSimple-apparaat te controleren](storsimple-monitor-device.md)voor meer informatie.
+     Zie [de StorSimple Apparaatbeheer-service gebruiken om uw StorSimple-apparaat te controleren](./storsimple-8000-monitor-device.md)voor meer informatie.
 
 
 * In de tegel **capaciteit** wordt de primaire opslag weer gegeven die op het apparaat is ingericht en overgebleven ten opzichte van de totale beschik bare opslag. **Ingericht** heeft betrekking op de hoeveelheid opslag ruimte die is voor bereid en toegewezen voor gebruik. het **resterende gedeelte** verwijst naar de resterende capaciteit die op dit apparaat kan worden ingericht. 
@@ -96,4 +96,3 @@ In het gebied essentiële elementen worden enkele belang rijke eigenschappen vas
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over de [Blade overzicht](storsimple-8000-service-dashboard.md)van de StorSimple-service.
 * Meer informatie over [het gebruik van de StorSimple Apparaatbeheer-service voor het beheren van uw StorSimple-apparaat](storsimple-8000-manager-service-administration.md).
-

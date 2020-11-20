@@ -10,17 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 5e514964-c907-4324-b659-16dd825f6f87
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 520a7649942fc5186d32020853b98297ef8b34d7
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 36c101acc9e272ca0860649aad1a5e18fb5000a5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152107"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94957330"
 ---
 # <a name="high-availability-of-sap-hana-scale-out-system-on-red-hat-enterprise-linux"></a>Hoge Beschik baarheid van SAP HANA scale-out systeem op Red Hat Enterprise Linux 
 
@@ -122,7 +123,7 @@ In de volgende instructies wordt ervan uitgegaan dat u de resource groep, het vi
 Voor de configuratie die in dit document wordt weer gegeven, implementeert u zeven virtuele machines: 
    - drie virtuele machines die fungeren als HANA DB-knoop punten voor de HANA-replicatie site 1: **Hana-S1-db1**, **Hana-S1-DB2** en **Hana-S1-db3**  
    - drie virtuele machines die fungeren als HANA DB-knoop punten voor de HANA-replicatie site 2: **Hana-S2-db1**, **Hana-S2-DB2** en **Hana-S2-db3**  
-   - een kleine virtuele machine die als *hoofd Maker*fungeert: **Hana-s-mm**
+   - een kleine virtuele machine die als *hoofd Maker* fungeert: **Hana-s-mm**
 
    De Vm's die zijn geïmplementeerd als SAP DB HANA-knoop punten moeten worden gecertificeerd door SAP voor HANA zoals gepubliceerd in de [SAP Hana hardware-map](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure). Wanneer u de HANA DB-knoop punten implementeert, moet u ervoor zorgen dat [versneld netwerk](../../../virtual-network/create-vm-accelerated-networking-cli.md) is geselecteerd.  
   
@@ -146,11 +147,11 @@ Voor de configuratie die in dit document wordt weer gegeven, implementeert u zev
 
     a. Ga naar de virtuele machine in de [Azure Portal](https://portal.azure.com/#home).  
 
-    b. Selecteer **virtual machines**in het linkerdeel venster. Filter op de naam van de virtuele machine (bijvoorbeeld **Hana-S1-db1**) en selecteer vervolgens de virtuele machine.  
+    b. Selecteer **virtual machines** in het linkerdeel venster. Filter op de naam van de virtuele machine (bijvoorbeeld **Hana-S1-db1**) en selecteer vervolgens de virtuele machine.  
 
     c. Selecteer in het deel venster **overzicht** de optie **stoppen** om de toewijzing van de virtuele machine ongedaan te maken.  
 
-    d. Selecteer **netwerken**en koppel vervolgens de netwerk interface. Selecteer in de vervolg keuzelijst **netwerk interface koppelen** de al gemaakte netwerk interfaces voor de `inter` `hsr` subnetten en.  
+    d. Selecteer **netwerken** en koppel vervolgens de netwerk interface. Selecteer in de vervolg keuzelijst **netwerk interface koppelen** de al gemaakte netwerk interfaces voor de `inter` `hsr` subnetten en.  
     
     e. Selecteer **Opslaan**. 
  
@@ -187,7 +188,7 @@ Voor de configuratie die in dit document wordt weer gegeven, implementeert u zev
 1. U kunt het beste standaard load balancer gebruiken. Volg deze configuratie stappen voor het implementeren van standaard load balancer:
    1. Maak eerst een front-end-IP-adres groep:
 
-      1. Open de load balancer, selecteer de **frontend-IP-adres groep**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer de **frontend-IP-adres groep** en selecteer **toevoegen**.
       1. Voer de naam in van de nieuwe front-end-IP-adres groep (bijvoorbeeld **Hana-frontend**).
       1. Stel de **toewijzing** in op **statisch** en voer het IP-adres in (bijvoorbeeld **10.23.0.18**).
       1. Selecteer **OK**.
@@ -195,7 +196,7 @@ Voor de configuratie die in dit document wordt weer gegeven, implementeert u zev
 
    1. Maak vervolgens een back-end-pool en voeg alle cluster-Vm's toe aan de back-end-groep:
 
-      1. Open de load balancer, selecteer **back-endservers**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer **back-endservers** en selecteer **toevoegen**.
       1. Voer de naam van de nieuwe back-end-pool in (bijvoorbeeld **Hana-back-end**).
       1. Selecteer **een virtuele machine toevoegen**.
       1. **Virtuele machine** selecteren.
@@ -204,14 +205,14 @@ Voor de configuratie die in dit document wordt weer gegeven, implementeert u zev
 
    1. Maak vervolgens een status test:
 
-      1. Open de load balancer, selecteer **status controles**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer **status controles** en selecteer **toevoegen**.
       1. Voer de naam in van de nieuwe status test (bijvoorbeeld **Hana-HP**).
-      1. Selecteer **TCP** als protocol en poort 625**03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
+      1. Selecteer **TCP** als protocol en poort 625 **03**. Laat de waarde voor **interval** ingesteld op 5 en de drempel waarde voor een **onjuiste status** ingesteld op 2.
       1. Selecteer **OK**.
 
    1. Maak vervolgens de regels voor taak verdeling:
    
-      1. Open de load balancer, selecteer **regels voor taak verdeling**en selecteer **toevoegen**.
+      1. Open de load balancer, selecteer **regels voor taak verdeling** en selecteer **toevoegen**.
       1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **Hana-lb**).
       1. Selecteer het front-end-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **Hana-frontend**, **Hana-back-end** en **Hana-HP**).
       1. Selecteer **ha-poorten**.
@@ -599,7 +600,7 @@ In dit voor beeld voor de implementatie van SAP HANA in scale-out configuratie m
 
 1. **[1]** systeem replicatie op site 1 configureren:
 
-   Maak een back-up van de data bases als **HN1**adm:
+   Maak een back-up van de data bases als **HN1** adm:
 
     ```
     hdbsql -d SYSTEMDB -u SYSTEM -p "passwd" -i 03 "BACKUP DATA USING FILE ('initialbackupSYS')"
@@ -936,7 +937,7 @@ Neem alle virtuele machines op, met inbegrip van de hoofd Maker in het cluster.
 
    3. Maak vervolgens de bron HANA-instantie.  
       > [!NOTE]
-      > Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.  
+      > Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.  
  
       Als u RHEL **7. x** -cluster bouwt, gebruikt u de volgende opdrachten:    
       ```

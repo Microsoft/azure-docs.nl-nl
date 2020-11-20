@@ -10,18 +10,19 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 887caaec-02ba-4711-bd4d-204a7d16b32b
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 02/26/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c837a4020ab1aaad1798d6b19e72e09edafea1f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b409254abbde1c1f6156052c49a07e6cc09a4dfd
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91360349"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94958775"
 ---
 # <a name="high-availability-architecture-and-scenarios-for-sap-netweaver"></a>Architectuur en scenario's met hoge Beschik baarheid voor SAP net-Weaver
 
@@ -233,7 +234,7 @@ ms.locfileid: "91360349"
 
 **Hoge Beschik baarheid**: verwijst naar een reeks technologieën die de IT-verstoringen minimaliseren door middel van een bedrijfs CONTINUÏTEIT van IT-Services via redundante, fout tolerante of met failover beveiligde onderdelen binnen *hetzelfde* Data Center. In ons geval bevindt het data centrum zich in één Azure-regio.
 
-**Herstel na nood**geval heeft ook betrekking op het minimaliseren van de onderbreking van IT-Services en hun herstel, maar in *verschillende* data centers die mogelijk honderden kilo meters van elkaar zijn. In ons geval kunnen de data centers zich in verschillende Azure-regio's binnen dezelfde geopolitieke regio bevinden of op locaties die door u als klant zijn ingesteld.
+**Herstel na nood** geval heeft ook betrekking op het minimaliseren van de onderbreking van IT-Services en hun herstel, maar in *verschillende* data centers die mogelijk honderden kilo meters van elkaar zijn. In ons geval kunnen de data centers zich in verschillende Azure-regio's binnen dezelfde geopolitieke regio bevinden of op locaties die door u als klant zijn ingesteld.
 
 
 ## <a name="overview-of-high-availability"></a>Overzicht van hoge Beschik baarheid
@@ -310,7 +311,7 @@ Twee typen Azure-platform gebeurtenissen kunnen van invloed zijn op de beschik b
 
 Zie [de beschik baarheid van virtuele Windows-machines beheren in azure][azure-virtual-machines-manage-availability]voor meer informatie.
 
-### <a name="azure-storage-redundancy"></a>Azure Storage redundantie
+### <a name="azure-storage-redundancy"></a>Azure Storage-redundantie
 De gegevens in uw opslag account worden altijd gerepliceerd om duurzaamheid en hoge Beschik baarheid te garanderen, die voldoen aan de Azure Storage SLA, zelfs in het geval van tijdelijke hardwarefouten.
 
 Omdat Azure Storage standaard drie installatie kopieën van de gegevens houdt, is het gebruik van RAID 5 of RAID 1 op meerdere Azure-schijven overbodig.

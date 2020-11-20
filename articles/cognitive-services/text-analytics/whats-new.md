@@ -8,18 +8,35 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 10/16/2020
+ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: f0204f5b923cf3363d85be9642d2866436df155a
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.custom: references_regions
+ms.openlocfilehash: 8743e765a050bfc4a2ba93a1b3e0344a960edb76
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369457"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966884"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Wat is er nieuw in de Text Analytics-API?
 
 De Text Analytics-API wordt doorlopend bijgewerkt. In dit artikel vindt u informatie over nieuwe releases en functies, zodat u op de hoogte blijft van recente ontwikkelingen.
+
+## <a name="november-2020"></a>November 2020
+
+* Een [Nieuw eind punt](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Analyze) met Text Analytics-API v 3.1-Preview. 3 voor de nieuwe asynchrone [analyse-API](how-tos/text-analytics-how-to-call-api.md?tabs=analyze), die batch verwerking ondersteunt voor ner, PII en extractie bewerkingen voor sleutel zinnen.
+* Een [Nieuw eind punt](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Health) met Text Analytics-API v 3.1-Preview. 3 voor de nieuwe asynchrone [Text Analytics voor de status](how-tos/text-analytics-for-health.md) gehoste API met ondersteuning voor batch verwerking.
+* De hierboven vermelde nieuwe functies zijn alleen beschikbaar in de volgende regio's: `West US 2` , `East US 2` , `Central US` `North Europe` en `West Europe` regio's.
+* Portugees (Brazilië) `pt-BR` wordt nu ondersteund in [sentimentanalyse](how-tos/text-analytics-how-to-sentiment-analysis.md) v3. x, te beginnen met de model versie `2020-04-01` . Het wordt toegevoegd aan de bestaande `pt-PT` ondersteuning voor Portugees.
+* Bijgewerkte client Bibliotheken, waaronder asynchrone analyse en Text Analytics voor status bewerkingen. U kunt voor beelden vinden op GitHub:
+
+    * [C#](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics)
+    * [Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/)
+    * [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics)
+
+
+> [!div class="nextstepaction"]
+> [Meer informatie over Text Analytics-API v 3.1-Preview. 3](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Languages)
 
 ## <a name="october-2020"></a>Oktober 2020
 
@@ -147,7 +164,7 @@ De namen van de volgende eigenschappen in het JSON-antwoord zijn gewijzigd, indi
 
 ### <a name="text-analytics-api-v31-public-preview"></a>Text Analytics-API v 3.1 open bare preview
    * Nieuwe Sentimentanalyse functie: [opinie analyse](how-tos/text-analytics-how-to-sentiment-analysis.md#opinion-mining)
-   * Nieuw [persoonlijk ( `PII` ) domein filter](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features) voor beveiligde status informatie ( `PHI` ).
+   * Nieuw persoonlijk ( `PII` ) domein filter voor beveiligde status informatie ( `PHI` ).
 
 > [!div class="nextstepaction"]
 > [Meer informatie over Text Analytics-API v 3.1 Preview](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/Languages)
@@ -162,7 +179,7 @@ Als onderdeel van de [Unified Azure SDK-versie](https://techcommunity.microsoft.
    * [JavaScript (node.js)](./quickstarts/text-analytics-sdk.md?pivots=programming-language-javascript&tabs=version-3)
    * [Java](./quickstarts/text-analytics-sdk.md?pivots=programming-language-java&tabs=version-3)
    
-   > [!div class="nextstepaction"]
+> [!div class="nextstepaction"]
 > [Meer informatie over Text Analytics-API v3 SDK](./quickstarts/text-analytics-sdk.md?tabs=version-3)
 
 ### <a name="named-entity-recognition-v3-public-preview"></a>Named entity Recognition v3 open bare preview
@@ -186,9 +203,6 @@ Er zijn nu extra entiteits typen beschikbaar in de open bare preview-service van
     * URL
     * IP-adres
 
-> [!div class="nextstepaction"]
-> [Meer informatie over named entity Recognition v3](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features)
-
 ### <a name="october-2019"></a>Oktober 2019
 
 #### <a name="named-entity-recognition-ner"></a>NER (Herkenning van benoemde entiteiten)
@@ -201,7 +215,7 @@ Er zijn nu extra entiteits typen beschikbaar in de open bare preview-service van
     * Uitgebreide detectie en categorisatie van entiteiten gevonden in tekst. 
     * Herkenning van de volgende nieuwe entiteits typen:
         * Telefoonnummer
-        * IP-adres
+        * Het IP-adres
 
 Koppeling van entiteit ondersteunt Engels en Spaans. NER taal ondersteuning varieert per entiteits type.
 

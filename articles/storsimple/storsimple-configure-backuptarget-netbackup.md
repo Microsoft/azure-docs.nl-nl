@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/15/2017
 ms.author: matd
-ms.openlocfilehash: 23afa82ffda5341242c01cbe024fb71f482345d5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f71cf82b675222836a73eec12d68bd8f62a5538
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710920"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967275"
 ---
 # <a name="storsimple-as-a-backup-target-with-netbackup"></a>StorSimple als back-updoel met NetBackup
 
@@ -79,7 +79,7 @@ StorSimple biedt de volgende voor delen:
 
 Hoewel StorSimple twee belang rijke implementatie scenario's (primair back-updoel en secundair back-updoel) biedt, is het een gewoon, blok opslag apparaat. StorSimple alle compressie en ontdubbeling. Er worden naadloos gegevens verzonden en opgehaald tussen de Cloud en de toepassing en het bestands systeem.
 
-Voor meer informatie over StorSimple raadpleegt u [StorSimple 8000 Series: hybride Cloud Storage-oplossing](storsimple-overview.md). U kunt ook de specificaties van de [technische StorSimple 8000-serie](storsimple-technical-specifications-and-compliance.md)bekijken.
+Voor meer informatie over StorSimple raadpleegt u [StorSimple 8000 Series: hybride Cloud Storage-oplossing](storsimple-overview.md). U kunt ook de specificaties van de [technische StorSimple 8000-serie](./storsimple-8000-technical-specifications-and-compliance.md)bekijken.
 
 > [!IMPORTANT]
 > Het gebruik van een StorSimple-apparaat als back-updoel wordt alleen ondersteund voor StorSimple 8000-update 3 en hoger.
@@ -170,7 +170,7 @@ Als u de oplossing optimaal wilt uitvoeren, raden we u aan deze aanbevolen proce
 
 ### <a name="deploy-storsimple"></a>StorSimple implementeren
 
-Zie [uw on-premises StorSimple-apparaat implementeren](storsimple-deployment-walkthrough-u2.md)voor stapsgewijze instructies voor de implementatie van StorSimple.
+Zie [uw on-premises StorSimple-apparaat implementeren](./storsimple-8000-deployment-walkthrough-u2.md)voor stapsgewijze instructies voor de implementatie van StorSimple.
 
 ### <a name="deploy-netbackup"></a>NetBackup implementeren
 
@@ -185,7 +185,7 @@ In deze sectie ziet u enkele configuratie voorbeelden. De volgende voor beelden 
 | StorSimple-implementatie taken  | Aanvullende opmerkingen |
 |---|---|
 | Implementeer uw on-premises StorSimple-apparaat. | Ondersteunde versies: update 3 en hoger. |
-| Schakel het doel van de back-up in. | Gebruik deze opdrachten om de doel modus voor back-up in of uit te scha kelen en de status op te halen. Zie [extern verbinding maken met een StorSimple-apparaat](storsimple-remote-connect.md)voor meer informatie.</br> De back-upmodus inschakelen: `Set-HCSBackupApplianceMode -enable` . </br> De back-upmodus uitschakelen: `Set-HCSBackupApplianceMode -disable` . </br> De huidige status van de instellingen van de back-upmodus ophalen: `Get-HCSBackupApplianceMode` . |
+| Schakel het doel van de back-up in. | Gebruik deze opdrachten om de doel modus voor back-up in of uit te scha kelen en de status op te halen. Zie [extern verbinding maken met een StorSimple-apparaat](./storsimple-8000-remote-connect.md)voor meer informatie.</br> De back-upmodus inschakelen: `Set-HCSBackupApplianceMode -enable` . </br> De back-upmodus uitschakelen: `Set-HCSBackupApplianceMode -disable` . </br> De huidige status van de instellingen van de back-upmodus ophalen: `Get-HCSBackupApplianceMode` . |
 | Maak een algemene volume container voor uw volume waarin de back-upgegevens worden opgeslagen. Alle gegevens in een volume container worden ontdubbeld. | StorSimple volume containers definiëren ontdubbeling domeinen.  |
 | Maak StorSimple-volumes. | Maak volumes met grootten zo dicht mogelijk bij het verwachte gebruik, omdat de volume grootte van invloed is op de duur van de Cloud momentopname. Meer informatie over het aanpassen van de grootte van een volume vindt u in het [Bewaar beleid](#retention-policies).</br> </br> Gebruik StorSimple gelaagde volumes en schakel het selectie vakje **dit volume gebruiken voor minder vaak gebruikte gegevens archivering** in. </br> Het gebruik van alleen lokaal vastgemaakte volumes wordt niet ondersteund. |
 | Maak een uniek StorSimple-back-upbeleid voor alle back-updoel volumes. | Een StorSimple-back-upbeleid definieert de volume consistentie groep. |
@@ -212,16 +212,16 @@ Stel uw oplossing in aan de hand van de richt lijnen in de volgende secties.
 - Schakel Windows Server-defragmentatie uit op de StorSimple-volumes.
 - Schakel Windows Server-indexering uit op de StorSimple-volumes.
 - Voer een antivirus scan uit op de bronhost (niet op de StorSimple-volumes).
-- Schakel het standaard [onderhoud van Windows Server](https://msdn.microsoft.com/library/windows/desktop/hh848037.aspx) uit in taak beheer. Doe dit op een van de volgende manieren:
+- Schakel het standaard [onderhoud van Windows Server](/windows/win32/w8cookbook/automatic-maintenance) uit in taak beheer. Doe dit op een van de volgende manieren:
   - De onderhouds Configurator uitschakelen in Windows taak planner.
-  - Down load [PsExec](https://technet.microsoft.com/sysinternals/bb897553.aspx) van Windows Sysinternals. Nadat u PsExec hebt gedownload, voert u Windows Power shell als beheerder uit en typt u:
+  - Down load [PsExec](/sysinternals/downloads/psexec) van Windows Sysinternals. Nadat u PsExec hebt gedownload, voert u Windows Power shell als beheerder uit en typt u:
     ```powershell
     psexec \\%computername% -s schtasks /change /tn “MicrosoftWindowsTaskSchedulerMaintenance Configurator" /disable
     ```
 
 ### <a name="storsimple-best-practices"></a>Best practices voor StorSimple
 
--   Zorg ervoor dat het StorSimple-apparaat is bijgewerkt naar [Update 3 of hoger](storsimple-install-update-3.md).
+-   Zorg ervoor dat het StorSimple-apparaat is bijgewerkt naar [Update 3 of hoger](./index.yml).
 -   Isoleer iSCSI-en Cloud verkeer. Gebruik toegewezen iSCSI-verbindingen voor verkeer tussen StorSimple en de back-upserver.
 -   Zorg ervoor dat uw StorSimple-apparaat een specifiek back-updoel is. Gemengde werk belastingen worden niet ondersteund, omdat deze van invloed zijn op uw RTO en RPO.
 
@@ -265,7 +265,7 @@ Maak op basis van de voor gaande hypo theses een gelaagd volume van 26 TiB StorS
 
 ### <a name="to-set-up-netbackup-storage"></a>Opslag voor netback-ups instellen
 
-1.  Selecteer in de beheer console voor netback-ups **media-en Apparaatbeheer**  >  **apparaten**  >  **schijf groepen**. Selecteer in de wizard schijf groep configureren het opslag server type **AdvancedDisk**en selecteer vervolgens **volgende**.
+1.  Selecteer in de beheer console voor netback-ups **media-en Apparaatbeheer**  >  **apparaten**  >  **schijf groepen**. Selecteer in de wizard schijf groep configureren het opslag server type **AdvancedDisk** en selecteer vervolgens **volgende**.
 
     ![Beheer console voor netback-ups, wizard Configuratie van schijf groep](./media/storsimple-configure-backup-target-using-netbackup/nbimage1.png)
 
@@ -304,7 +304,7 @@ Hier volgt een voor beeld van een GFS-rotatie schema voor vier weken, maandelijk
 |---|---|---|
 | Wekelijks (weken 1-4) | Saturday | Monday-Friday |
 | Maandelijks  | Saturday  |   |
-| Jaarlijks | Saturday  |   |
+| Jaar | Saturday  |   |
 
 ## <a name="assigning-storsimple-volumes-to-a-netbackup-backup-job"></a>StorSimple-volumes toewijzen aan een back-uptaak voor netback-ups
 
@@ -312,7 +312,7 @@ In de volgende procedure wordt ervan uitgegaan dat NetBackup en de doelhost zijn
 
 ### <a name="to-assign-storsimple-volumes-to-a-netbackup-backup-job"></a>StorSimple-volumes toewijzen aan een back-uptaak voor netback-ups
 
-1. In de beheer console voor netback-ups selecteert u **NetBackup-beheer**, klikt u met de rechter muisknop op **beleids regels**en selecteert u **Nieuw beleid**.
+1. In de beheer console voor netback-ups selecteert u **NetBackup-beheer**, klikt u met de rechter muisknop op **beleids regels** en selecteert u **Nieuw beleid**.
 
    ![Beheer console voor netback-ups, een nieuw beleid maken](./media/storsimple-configure-backup-target-using-netbackup/nbimage6.png)
 
@@ -324,7 +324,7 @@ In de volgende procedure wordt ervan uitgegaan dat NetBackup en de doelhost zijn
 
    ![Beheer console voor netback-ups, selecteer back-uptype](./media/storsimple-configure-backup-target-using-netbackup/nbimage8.png)
 
-4. Als u het beleids type wilt instellen, selecteert u **standaard**en selecteert u **volgende**.
+4. Als u het beleids type wilt instellen, selecteert u **standaard** en selecteert u **volgende**.
 
    ![Beheer console voor netback-ups, selecteer beleid type](./media/storsimple-configure-backup-target-using-netbackup/nbimage9.png)
 
@@ -346,7 +346,7 @@ In de volgende procedure wordt ervan uitgegaan dat NetBackup en de doelhost zijn
 
    ![Beheer console voor netback-ups, schema's voor een nieuw beleid](./media/storsimple-configure-backup-target-using-netbackup/nbimage13.png)
 
-10. Klik met de rechter muisknop op **differentieel-Inc**. Selecteer **kopiëren naar nieuw**en selecteer vervolgens **OK**.
+10. Klik met de rechter muisknop op **differentieel-Inc**. Selecteer **kopiëren naar nieuw** en selecteer vervolgens **OK**.
 
     ![Beheer console voor netback-ups, schema kopiëren naar een nieuw beleid](./media/storsimple-configure-backup-target-using-netbackup/nbimage14.png)
 
@@ -415,7 +415,7 @@ In de volgende tabel ziet u hoe u back-ups kunt instellen om uit te voeren op de
 | Week 3 | StorSimple weken 2-4 |   |   |   |   |   |
 | Week 4 | StorSimple weken 2-4 |   |   |   |   |   |
 | Maandelijks | StorSimple maandelijks |   |   |   |   |   |
-| Jaarlijks | Jaarlijks StorSimple  |   |   |   |   |   |
+| Jaar | Jaarlijks StorSimple  |   |   |   |   |   |
 
 
 ## <a name="assign-storsimple-volumes-to-a-netbackup-archive-and-duplication-job"></a>StorSimple-volumes toewijzen aan een archief voor netback-ups en een duplicatie taak
@@ -430,19 +430,19 @@ Nadat u de eerste schijf groepen hebt gedefinieerd, moet u drie extra opslag lev
 
 ### <a name="to-assign-storsimple-volumes-to-a-netbackup-archive-and-duplication-job"></a>StorSimple-volumes toewijzen aan een NetBackup-archief en een duplicatie taak
 
-1. Selecteer in de beheer console voor netback-ups **opslag**ruimte voor het levenscyclus beleid voor  >  **Storage Lifecycle Policies**  >  **nieuwe opslag**.
+1. Selecteer in de beheer console voor netback-ups **opslag** ruimte voor het levenscyclus beleid voor  >  **Storage Lifecycle Policies**  >  **nieuwe opslag**.
 
    ![Beheer console voor netback-ups, nieuw beleid voor opslag levenscyclus](./media/storsimple-configure-backup-target-using-netbackup/nbimage20.png)
 
 2. Voer een naam in voor de moment opname en selecteer vervolgens **toevoegen**.
 
-3. Selecteer in het dialoog venster **nieuwe bewerking** op het tabblad **Eigenschappen** voor **bewerking**de optie **back-up**. Selecteer de gewenste waarden voor de **doel opslag**, het **Bewaar type**en de **Bewaar periode**. Selecteer **OK**.
+3. Selecteer in het dialoog venster **nieuwe bewerking** op het tabblad **Eigenschappen** voor **bewerking** de optie **back-up**. Selecteer de gewenste waarden voor de **doel opslag**, het **Bewaar type** en de **Bewaar periode**. Selecteer **OK**.
 
    ![De beheer console van netback-ups, het dialoog venster nieuwe bewerking](./media/storsimple-configure-backup-target-using-netbackup/nbimage22.png)
 
    Hiermee definieert u de eerste back-upbewerking en-opslag plaats.
 
-4. Selecteer de vorige bewerking en selecteer vervolgens **toevoegen**. Selecteer in het dialoog venster **opslag bewerking wijzigen** de gewenste waarden voor de **doel opslag**, het **Bewaar type**en de **Bewaar periode**.
+4. Selecteer de vorige bewerking en selecteer vervolgens **toevoegen**. Selecteer in het dialoog venster **opslag bewerking wijzigen** de gewenste waarden voor de **doel opslag**, het **Bewaar type** en de **Bewaar periode**.
 
    ![Beheer console voor netback-ups, het dialoog venster opslag bewerking wijzigen](./media/storsimple-configure-backup-target-using-netbackup/nbimage23.png)
 
@@ -454,9 +454,9 @@ Nadat u de eerste schijf groepen hebt gedefinieerd, moet u drie extra opslag lev
 
    ![Beheer console voor netback-ups, beleids regels toevoegen in het dialoog venster nieuwe opslag levenscyclus beleid](./media/storsimple-configure-backup-target-using-netbackup/nbimage25.png)
 
-7. Wanneer u klaar bent met het definiëren van uw SLP-Bewaar beleid, definieert u onder **beleid**een back-upbeleid door de stappen te volgen die worden beschreven in het [toewijzen van StorSimple-volumes aan een back-uptaak voor netback](#assigning-storsimple-volumes-to-a-netbackup-backup-job)-ups.
+7. Wanneer u klaar bent met het definiëren van uw SLP-Bewaar beleid, definieert u onder **beleid** een back-upbeleid door de stappen te volgen die worden beschreven in het [toewijzen van StorSimple-volumes aan een back-uptaak voor netback](#assigning-storsimple-volumes-to-a-netbackup-backup-job)-ups.
 
-8. Klik onder **schema's**in het dialoog venster **planning wijzigen** met de rechter muisknop op **volledig**en selecteer vervolgens **wijzigen**.
+8. Klik onder **schema's** in het dialoog venster **planning wijzigen** met de rechter muisknop op **volledig** en selecteer vervolgens **wijzigen**.
 
    ![Beheer console voor netback-ups, het dialoog venster planning wijzigen](./media/storsimple-configure-backup-target-using-netbackup/nbimage26.png)
 
@@ -464,7 +464,7 @@ Nadat u de eerste schijf groepen hebt gedefinieerd, moet u drie extra opslag lev
 
    ![Beheer console voor netback-ups, selectie van beleids opslag negeren](./media/storsimple-configure-backup-target-using-netbackup/nbimage27.png)
 
-10. Selecteer **OK**en herhaal dit voor het incrementele back-upschema.
+10. Selecteer **OK** en herhaal dit voor het incrementele back-upschema.
 
     ![Beheer console voor netback-ups, het dialoog venster planning wijzigen voor incrementele back-ups](./media/storsimple-configure-backup-target-using-netbackup/nbimage28.png)
 
@@ -529,22 +529,22 @@ Herstellen vanaf een StorSimple-apparaat werkt zoals herstellen vanuit elk appar
 
 Een nood geval kan worden veroorzaakt door diverse factoren. De volgende tabel geeft een lijst van veelvoorkomende scenario's voor herstel na nood gevallen.
 
-| Scenario | Impact | Herstellen | Notities |
+| Scenario | Impact | Herstellen | Opmerkingen |
 |---|---|---|---|
-| StorSimple-apparaat is mislukt | Back-up-en herstel bewerkingen worden onderbroken. | Vervang het apparaat dat is mislukt en voer een [StorSimple-failover en nood herstel](storsimple-device-failover-disaster-recovery.md)uit. | Als u na het herstel van het apparaat een herstel bewerking moet uitvoeren, worden volledige gegevens verzamelingen opgehaald uit de Cloud naar het nieuwe apparaat. Alle bewerkingen bevinden zich in de Cloud snelheid. Het proces voor het opnieuw scannen van indexen en catalogussen kan ertoe leiden dat alle back-upsets worden gescand en opgehaald van de Cloud laag naar de laag van het lokale apparaat. Dit kan een tijdrovend proces zijn. |
+| StorSimple-apparaat is mislukt | Back-up-en herstel bewerkingen worden onderbroken. | Vervang het apparaat dat is mislukt en voer een [StorSimple-failover en nood herstel](./storsimple-8000-device-failover-disaster-recovery.md)uit. | Als u na het herstel van het apparaat een herstel bewerking moet uitvoeren, worden volledige gegevens verzamelingen opgehaald uit de Cloud naar het nieuwe apparaat. Alle bewerkingen bevinden zich in de Cloud snelheid. Het proces voor het opnieuw scannen van indexen en catalogussen kan ertoe leiden dat alle back-upsets worden gescand en opgehaald van de Cloud laag naar de laag van het lokale apparaat. Dit kan een tijdrovend proces zijn. |
 | NetBackup-server fout | Back-up-en herstel bewerkingen worden onderbroken. | Maak de back-upserver opnieuw en herstel de data base. | U moet de NetBackup-server opnieuw bouwen of herstellen op de site voor nood herstel. Zet de data base terug naar het meest recente punt. Als de herstelde NetBackup-data base niet is gesynchroniseerd met uw meest recente back-uptaken, is indexeren en catalogiseren vereist. Dit proces voor het opnieuw scannen van index en catalogus kan ertoe leiden dat alle back-upsets worden gescand en van de Cloud laag worden opgehaald naar de laag van het lokale apparaat. Hierdoor is het veel tijdrovender. |
 | Site fout die leidt tot verlies van zowel de back-upserver als de StorSimple | Back-up-en herstel bewerkingen worden onderbroken. | Herstel StorSimple eerst en herstel vervolgens NetBackup. | Herstel StorSimple eerst en herstel vervolgens NetBackup. Als u na het herstel van het apparaat een herstel bewerking moet uitvoeren, worden de volledige gegevens sets van de Cloud naar het nieuwe apparaat opgehaald. Alle bewerkingen bevinden zich in de Cloud snelheid. |
 
-## <a name="references"></a>Referenties
+## <a name="references"></a>Verwijzingen
 
 In dit artikel wordt verwezen naar de volgende documenten:
 
-- [StorSimple Multipath I/O instellen](storsimple-configure-mpio-windows-server.md)
-- [Opslag scenario's: Thin Provisioning](https://msdn.microsoft.com/library/windows/hardware/dn265487.aspx)
-- [GPT-stations gebruiken](https://msdn.microsoft.com/windows/hardware/gg463524.aspx#EHD)
-- [Schaduw kopieën voor gedeelde mappen instellen](https://technet.microsoft.com/library/cc771893.aspx)
+- [StorSimple Multipath I/O instellen](./storsimple-8000-configure-mpio-windows-server.md)
+- [Opslag scenario's: Thin Provisioning](/windows-hardware/drivers/storage/thin-provisioning)
+- [GPT-stations gebruiken](/previous-versions/windows/hardware/design/dn653580(v=vs.85)#EHD)
+- [Schaduw kopieën voor gedeelde mappen instellen](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771893(v=ws.11))
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het [herstellen van een back-upset](storsimple-restore-from-backup-set-u2.md).
-- Meer informatie over het uitvoeren van een failover van een [apparaat en nood herstel](storsimple-device-failover-disaster-recovery.md).
+- Meer informatie over het [herstellen van een back-upset](./storsimple-8000-restore-from-backup-set-u2.md).
+- Meer informatie over het uitvoeren van een failover van een [apparaat en nood herstel](./storsimple-8000-device-failover-disaster-recovery.md).

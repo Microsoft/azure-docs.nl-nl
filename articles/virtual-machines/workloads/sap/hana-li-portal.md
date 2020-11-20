@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 887adb3e8b0a5f0410fc9a7732e2220049b7ba6c
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 550e22ac861b92994f2695594d09fc2935d273d1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927189"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967751"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Beheer van grote Azure HANA-exemplaren via de Azure-portal
 In dit document wordt beschreven hoe [Hana grote instanties](./hana-overview-architecture.md) worden weer gegeven in [Azure Portal](https://portal.azure.com) en welke activiteiten kunnen worden uitgevoerd via Azure Portal met Hana grote instantie-eenheden die voor u zijn geïmplementeerd. Zicht baarheid van HANA grote instanties in Azure Portal wordt gegeven via een Azure-resource provider voor HANA grote instanties, die momenteel beschikbaar zijn in de open bare preview
@@ -60,7 +61,7 @@ In de lijst met resource groepen wordt weer gegeven, moet u mogelijk filteren op
 
 ![Resource groepen filteren in Azure Portal](./media/hana-li-portal/portal-filtering-subscription.png)
 
-Nadat u het juiste abonnement hebt gefilterd, kunt u nog steeds een lange lijst met resource groepen hebben. Zoek er een met een **TXXX** waarbij ' xxx ' drie cijfers is, zoals **-T050** . 
+Nadat u het juiste abonnement hebt gefilterd, kunt u nog steeds een lange lijst met resource groepen hebben. Zoek er een met een **TXXX** waarbij ' xxx ' drie cijfers is, zoals **-T050**. 
 
 Als u de resource groep hebt gevonden, vermeldt u de details ervan. De lijst die u hebt ontvangen, kan er als volgt uitzien:
 
@@ -94,7 +95,7 @@ In de rechter benedenhoek van het overzicht wordt een andere zeer belang rijke i
 Een aanvullend veld in de rechter kolom van de koptekst geeft informatie over de energie status van de HANA grote instantie-eenheid.
 
 > [!NOTE]
-> De energie status geeft aan of de hardware-eenheid is ingeschakeld of uitgeschakeld. Het geeft geen informatie over het besturings systeem dat actief is. Wanneer u een HANA grote instantie-eenheid opnieuw opstart, ondervindt u een korte periode waarin de status van de eenheid wordt **gewijzigd in de** status **gestart** . Als de status **gestart** is, betekent dat het besturings systeem wordt gestart of dat het besturings systeem volledig is gestart. Als gevolg hiervan kunt u na het opnieuw opstarten van de eenheid niet verwachten dat u zich onmiddellijk aanmeldt bij de eenheid zodra de status overschakelt naar **gestart** .
+> De energie status geeft aan of de hardware-eenheid is ingeschakeld of uitgeschakeld. Het geeft geen informatie over het besturings systeem dat actief is. Wanneer u een HANA grote instantie-eenheid opnieuw opstart, ondervindt u een korte periode waarin de status van de eenheid wordt **gewijzigd in de** status **gestart**. Als de status **gestart** is, betekent dat het besturings systeem wordt gestart of dat het besturings systeem volledig is gestart. Als gevolg hiervan kunt u na het opnieuw opstarten van de eenheid niet verwachten dat u zich onmiddellijk aanmeldt bij de eenheid zodra de status overschakelt naar **gestart**.
 > 
 
 Als u op ' meer weer geven ' drukt, wordt extra informatie weer gegeven. Een extra informatie geeft de revisie van de HANA-stempel van de grote instantie weer, de eenheid die is geïmplementeerd in. Zie het artikel [Wat is SAP Hana op Azure (grote exemplaren)](./hana-overview-architecture.md) voor de verschillende revisies van Hana grote instantie tempels
@@ -106,7 +107,7 @@ Meer dan een overzicht van de HANA-eenheden voor grote instanties kunt u de acti
 
 Een van de geregistreerde hoofd activiteiten wordt opnieuw gestart van een eenheid. De weer gegeven gegevens zijn inclusief de status van de activiteit, de tijds tempel die de activiteit heeft geactiveerd, de abonnements-ID waaruit de activiteit is geactiveerd en de Azure-gebruiker die de activiteit heeft geactiveerd. 
 
-Een andere activiteit die wordt opgenomen, is gewijzigd in de eenheid in de meta gegevens van Azure. Naast het opnieuw opstarten, ziet u de activiteit van **Write HANAInstances** . Met dit type activiteit worden geen wijzigingen aangebracht in de HANA-grote exemplaar-eenheid zelf, maar worden wijzigingen in de meta gegevens van de eenheid in azure gedocumenteerd. In de lijst wordt een tag toegevoegd en verwijderd (Zie de volgende sectie).
+Een andere activiteit die wordt opgenomen, is gewijzigd in de eenheid in de meta gegevens van Azure. Naast het opnieuw opstarten, ziet u de activiteit van **Write HANAInstances**. Met dit type activiteit worden geen wijzigingen aangebracht in de HANA-grote exemplaar-eenheid zelf, maar worden wijzigingen in de meta gegevens van de eenheid in azure gedocumenteerd. In de lijst wordt een tag toegevoegd en verwijderd (Zie de volgende sectie).
 
 ## <a name="add-and-delete-an-azure-tag-to-a-hana-large-instance-unit"></a>Een Azure-tag toevoegen en verwijderen in een HANA-eenheid voor grote instanties
 Een andere mogelijkheid is dat u een [tag](../../../azure-resource-manager/management/tag-resources.md) toevoegt aan een Hana-eenheid voor grote instanties. De manier waarop Tags worden toegewezen, verschilt niet van het toewijzen van tags aan Vm's. Net als bij Vm's zijn de Tags aanwezig in de meta gegevens van Azure en, voor HANA grote instanties, dezelfde beperkingen als labels voor Vm's.
@@ -131,7 +132,7 @@ Het Linux-besturings systeem moet opnieuw worden opgestart. er zijn verschillend
 Wanneer u op de knop opnieuw opstarten drukt, wordt u gevraagd of u de eenheid echt opnieuw wilt opstarten. Als u bevestigt door op de knop Ja te drukken, wordt de eenheid opnieuw opgestart.
 
 > [!NOTE]
-> Tijdens het opnieuw opstarten van de eenheid duurt het even voordat de status van de unit wordt **gewijzigd in de** status **gestart** . Als de status **gestart** is, betekent dat het besturings systeem wordt gestart of dat het besturings systeem volledig is gestart. Als gevolg hiervan kunt u na het opnieuw opstarten van de eenheid niet verwachten dat u zich onmiddellijk aanmeldt bij de eenheid zodra de status overschakelt naar **gestart** .
+> Tijdens het opnieuw opstarten van de eenheid duurt het even voordat de status van de unit wordt **gewijzigd in de** status **gestart**. Als de status **gestart** is, betekent dat het besturings systeem wordt gestart of dat het besturings systeem volledig is gestart. Als gevolg hiervan kunt u na het opnieuw opstarten van de eenheid niet verwachten dat u zich onmiddellijk aanmeldt bij de eenheid zodra de status overschakelt naar **gestart**.
 
 > [!IMPORTANT]
 > Afhankelijk van de hoeveelheid geheugen in uw HANA-eenheid voor grote instanties, kan het opnieuw opstarten en opnieuw opstarten van de hardware en het besturings systeem een uur duren

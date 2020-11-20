@@ -1,17 +1,17 @@
 ---
 title: Uw Azure VMware-oplossings resource inschakelen
-description: Meer informatie over het indienen van een ondersteunings aanvraag om uw Azure VMware-oplossings resource in te scha kelen. U kunt ook meer knoop punten aanvragen in uw bestaande privécloud van Azure VMware-oplossingen.
+description: Meer informatie over het indienen van een ondersteunings aanvraag om uw Azure VMware-oplossings resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
 ms.topic: how-to
 ms.date: 11/12/2020
-ms.openlocfilehash: 8e1b891559cb2d01adc9fdf834ef3c9714fe1233
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: cd58611f77c2f2fb1694597fc9ef049420093ccc
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888433"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967360"
 ---
 # <a name="how-to-enable-azure-vmware-solution-resource"></a>Azure VMware Solution resource inschakelen
-Meer informatie over het indienen van een ondersteunings aanvraag om uw [Azure VMware-oplossings](introduction.md) resource in te scha kelen. U kunt ook meer knoop punten aanvragen in uw bestaande privécloud van Azure VMware-oplossingen.
+Meer informatie over het indienen van een ondersteunings aanvraag om uw [Azure VMware-oplossings](introduction.md) resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
 
 ## <a name="eligibility-criteria"></a>Criteria om in aanmerking te komen
 
@@ -22,7 +22,7 @@ U hebt een Azure-account in een Azure-abonnement nodig. Het Azure-abonnement moe
 
 
 ## <a name="enable-azure-vmware-solution-for-ea-customers"></a>Azure VMware-oplossing voor EA-klanten inschakelen
-Voordat u uw Azure VMware Solution-resource maakt, moet u een ondersteuningsticket indienen om uw knooppunten te laten toewijzen. Zodra het ondersteuningsteam uw aanvraag heeft ontvangen, duurt het maximaal vijf werkdagen om uw aanvraag te bevestigen en uw knooppunten toe te wijzen. Als u een bestaande privécloud van Azure VMware Solution hebt en u meer knooppunten wilt toewijzen, dan volgt u hetzelfde proces.
+Voordat u uw Azure VMware-oplossings resource maakt, moet u een ondersteunings ticket indienen waaraan uw hosts zijn toegewezen. Zodra het ondersteuningsteam uw aanvraag heeft ontvangen, duurt het maximaal vijf werkdagen om uw aanvraag te bevestigen en uw hosts toe te wijzen. Als u een bestaande privécloud van Azure VMware Solution hebt en u meer hosts wilt toewijzen, dan volgt u hetzelfde proces.
 
 
 1. Maak in uw Azure Portal onder **Help en ondersteuning** een **[nieuwe ondersteunings aanvraag](https://rc.portal.azure.com/#create/Microsoft.Support)** en geef de volgende informatie op voor het ticket:
@@ -38,20 +38,20 @@ Voordat u uw Azure VMware Solution-resource maakt, moet u een ondersteuningstick
 
    - HAALBAARHEIDs-of productie 
    - Naam regio
-   - Aantal knooppunten
+   - Aantal hosts
    - Eventuele andere gegevens
 
    >[!NOTE]
-   >De Azure VMware-oplossing raadt ten minste drie knoop punten aan om uw privécloud te maken en voor redundantie-N + 1-knoop punten. 
+   >De Azure VMware-oplossing raadt ten minste drie hosts aan om uw privécloud uit te breiden en voor redundantie-N + 1-hosts. 
 
 1. Selecteer **beoordeling + maken** om de aanvraag in te dienen.
 
    Het duurt Maxi maal vijf werk dagen voor een ondersteunings medewerker om uw aanvraag te bevestigen.
 
    >[!IMPORTANT] 
-   >Als u al een bestaande Azure VMware-oplossing hebt en u extra knoop punten aanvraagt, moeten we vijf werk dagen hebben om de knoop punten toe te wijzen. 
+   >Als u al een bestaande Azure VMware-oplossing hebt en u extra hosts wilt aanvragen, moeten we vijf werk dagen hebben om de hosts toe te wijzen. 
 
-1. Voordat u uw knoop punten kunt inrichten, moet u ervoor zorgen dat u de resource provider **micro soft. AVS** registreert in de Azure Portal.  
+1. Voordat u uw hosts kunt inrichten, moet u ervoor zorgen dat u de resource provider **micro soft. AVS** registreert in de Azure Portal.  
 
    ```azurecli-interactive
    az provider register -n Microsoft.AVS --subscription <your subscription ID>
@@ -99,21 +99,21 @@ Na het configureren van het Azure-abonnement en de benodigde vSphere RBAC-machti
 
    - HAALBAARHEIDs-of productie 
    - Naam regio
-   - Aantal knooppunten
+   - Aantal hosts
    - Eventuele andere gegevens
    - Is bedoeld om meerdere klanten te hosten?
 
    >[!NOTE]
-   >De Azure VMware-oplossing raadt ten minste drie knoop punten aan om uw privécloud te maken en voor redundantie-N + 1-knoop punten. 
+   >De Azure VMware-oplossing raadt ten minste drie hosts aan om uw privécloud uit te breiden en voor redundantie-N + 1-hosts. 
 
 1. Selecteer **beoordeling + maken** om de aanvraag in te dienen.
 
    Het duurt Maxi maal vijf werk dagen voor een ondersteunings medewerker om uw aanvraag te bevestigen.
 
    >[!IMPORTANT] 
-   >Als u al een bestaande Azure VMware-oplossing hebt en u extra knoop punten aanvraagt, moeten we vijf werk dagen hebben om de knoop punten toe te wijzen. 
+   >Als u al een bestaande Azure VMware-oplossing hebt en u extra hosts wilt aanvragen, moeten we vijf werk dagen hebben om de hosts toe te wijzen. 
 
-1. Zodra het Azure-abonnement is toegevoegd en u quota hebt ingeschakeld, kan de klant of de beheerder van de partner een Privécloud van Azure VMware-oplossing implementeren via de Azure Portal. Voordat u uw knoop punten kunt inrichten, moet u ervoor zorgen dat u de resource provider **micro soft. AVS** registreert in de Azure Portal.  
+1. Zodra het Azure-abonnement is toegevoegd en u quota hebt ingeschakeld, kan de klant of de beheerder van de partner een Privécloud van Azure VMware-oplossing implementeren via de Azure Portal. Voordat u uw hosts kunt inrichten, moet u ervoor zorgen dat u de resource provider **micro soft. AVS** registreert in de Azure Portal.  
 
    ```azurecli-interactive
    az provider register -n Microsoft.AVS --subscription <your subscription ID>

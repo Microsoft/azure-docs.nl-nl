@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/1/2016
 ms.author: alkohli
-ms.openlocfilehash: d7c7cf335336cc552adaf5d9490bc58d64b0cdc9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2395e3c6f2026bc1024de38122bc20959fdcf9b7
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85515435"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967088"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-administer-your-storsimple-virtual-array"></a>De StorSimple Apparaatbeheer-service gebruiken voor het beheren van de virtuele StorSimple-matrix
 ![proces stroom instellen](./media/storsimple-virtual-array-manager-service-administration/manage4.png)
@@ -34,7 +34,7 @@ Nadat u dit artikel hebt gelezen, weet u hoe u het volgende kunt doen:
 * Uw StorSimple Virtual array beheren via de StorSimple Apparaatbeheer-service
 
 > [!NOTE]
-> Als u de beschik bare beheer opties voor het StorSimple 8000-serie apparaat wilt weer geven, gaat u naar [de StorSimple Manager-service gebruiken om uw StorSimple-apparaat te beheren](storsimple-manager-service-administration.md).
+> Als u de beschik bare beheer opties voor het StorSimple 8000-serie apparaat wilt weer geven, gaat u naar [de StorSimple Manager-service gebruiken om uw StorSimple-apparaat te beheren](./storsimple-8000-manager-service-administration.md).
 > 
 > 
 
@@ -78,4 +78,3 @@ Klik op de juiste procedure in de tabel voor meer informatie over elke werk stro
 
 ## <a name="next-steps"></a>Volgende stappen
 Voor informatie over de Web-UI en hoe u deze kunt gebruiken, gaat u naar [de StorSimple-webgebruikersinterface gebruiken om de virtuele StorSimple-matrix te beheren](storsimple-ova-web-ui-admin.md).
-

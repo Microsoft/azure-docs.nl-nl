@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/22/2020
 ms.author: radeltch
-ms.openlocfilehash: 9b4684f8d9a6bd04a11961632b616258db7344a3
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 496b78de869cc213af6b79b3e72016bba3da1266
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487565"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967428"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux"></a>Azure Virtual Machines hoge Beschik baarheid voor SAP NetWeaver op Red Hat Enterprise Linux
 
@@ -150,7 +151,7 @@ De Azure Marketplace bevat een installatie kopie voor Red Hat Enterprise Linux d
    1. Beheerders naam, beheerders wachtwoord of SSH-sleutel  
       Er wordt een nieuwe gebruiker gemaakt die kan worden gebruikt om u aan te melden bij de computer.
    1. Subnet-ID  
-   Als u de virtuele machine wilt implementeren in een bestaand VNet waarvoor u een subnet hebt gedefinieerd, moet de virtuele machine worden toegewezen aan, de ID van het specifieke subnet benoemen. De ID ziet er meestal uit als/Subscriptions/ **&lt; -abonnements &gt; -id** /resourceGroups/naam **&lt; &gt; van de resource groep** /providers/Microsoft.Network/virtualNetworks/naam **&lt; &gt; van het virtuele netwerk** /subnets/ **&lt; subnet naam &gt;**
+   Als u de virtuele machine wilt implementeren in een bestaand VNet waarvoor u een subnet hebt gedefinieerd, moet de virtuele machine worden toegewezen aan, de ID van het specifieke subnet benoemen. De ID ziet er meestal uit als/Subscriptions/**&lt; -abonnements &gt; -id**/resourceGroups/naam **&lt; &gt; van de resource groep**/providers/Microsoft.Network/virtualNetworks/naam **&lt; &gt; van het virtuele netwerk**/subnets/**&lt; subnet naam &gt;**
 
 ### <a name="deploy-linux-manually-via-azure-portal"></a>Linux hand matig implementeren via Azure Portal
 
@@ -172,14 +173,14 @@ U moet eerst de virtuele machines voor dit cluster maken. Daarna maakt u een loa
    1. De frontend-IP-adressen maken
       1. IP-adres 10.0.0.7 voor de ASCS
          1. Open de load balancer, selecteer de frontend-IP-adres groep en klik op toevoegen
-         1. Voer de naam van de nieuwe front-end-IP-adres groep in (bijvoorbeeld **NW1-ascs-front-end** )
-         1. Stel de toewijzing in op statisch en voer het IP-adres in (bijvoorbeeld **10.0.0.7** )
+         1. Voer de naam van de nieuwe front-end-IP-adres groep in (bijvoorbeeld **NW1-ascs-front-end**)
+         1. Stel de toewijzing in op statisch en voer het IP-adres in (bijvoorbeeld **10.0.0.7**)
          1. Klik op OK
       1. IP-adres 10.0.0.8 voor de ASCS ERS
          * Herhaal de bovenstaande stappen voor het maken van een IP-adres voor de ERS (bijvoorbeeld **10.0.0.8** en **NW1-Aers-** front-end)
    1. Back-endpool maken
       1. Open de load balancer, selecteer back-endservers en klik op toevoegen
-      1. Voer de naam van de nieuwe back-end-groep in (bijvoorbeeld **NW1-back-end** )
+      1. Voer de naam van de nieuwe back-end-groep in (bijvoorbeeld **NW1-back-end**)
       1. Klik op een virtuele machine toevoegen.
       1. Virtuele machine selecteren.
       1. Selecteer de virtuele machines van het (A) SCS-cluster en de bijbehorende IP-adressen.
@@ -187,33 +188,33 @@ U moet eerst de virtuele machines voor dit cluster maken. Daarna maakt u een loa
    1. De status tests maken
       1. Poort 620 **00** voor ASCS
          1. Open de load balancer, selecteer status controles en klik op toevoegen
-         1. Voer de naam van de nieuwe status test in (bijvoorbeeld **NW1-ascs-HP** )
-         1. TCP als protocol selecteren, poort 620 **00** , interval 5 en drempel waarde voor onjuiste status 2 gebruiken
+         1. Voer de naam van de nieuwe status test in (bijvoorbeeld **NW1-ascs-HP**)
+         1. TCP als protocol selecteren, poort 620 **00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
          1. Klik op OK
       1. Poort 621 **02** voor ASCS ers
-         * Herhaal de bovenstaande stappen voor het maken van een status test voor de ERS (bijvoorbeeld 621 **02** en **NW1-Aers-HP** )
+         * Herhaal de bovenstaande stappen voor het maken van een status test voor de ERS (bijvoorbeeld 621 **02** en **NW1-Aers-HP**)
    1. Taakverdelings regels
       1. Taakverdelings regels voor ASCS
          1. Open de load balancer, selecteer taakverdelings regels en klik op toevoegen
-         1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **NW1-lb-ascs** )
-         1. Selecteer het frontend-IP-adres, de back-endadresgroep en de status test die u eerder hebt gemaakt (bijvoorbeeld **NW1-ascs-frontend** , **NW1-back-end** en **NW1-ascs-HP** )
+         1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **NW1-lb-ascs**)
+         1. Selecteer het frontend-IP-adres, de back-endadresgroep en de status test die u eerder hebt gemaakt (bijvoorbeeld **NW1-ascs-frontend**, **NW1-back-end** en **NW1-ascs-HP**)
          1. **Ha-poorten** selecteren
          1. Time-out voor inactiviteit tot 30 minuten verhogen
          1. **Zorg ervoor dat zwevend IP-adressen zijn ingeschakeld**
          1. Klik op OK
-         * Herhaal de bovenstaande stappen om taakverdelings regels voor ERS te maken (bijvoorbeeld **NW1-lb-ers** )
+         * Herhaal de bovenstaande stappen om taakverdelings regels voor ERS te maken (bijvoorbeeld **NW1-lb-ers**)
 1. U kunt ook de volgende stappen uitvoeren als voor uw scenario Basic-load balancer (intern) vereist is:  
    1. De frontend-IP-adressen maken
       1. IP-adres 10.0.0.7 voor de ASCS
          1. Open de load balancer, selecteer de frontend-IP-adres groep en klik op toevoegen
-         1. Voer de naam van de nieuwe front-end-IP-adres groep in (bijvoorbeeld **NW1-ascs-front-end** )
-         1. Stel de toewijzing in op statisch en voer het IP-adres in (bijvoorbeeld **10.0.0.7** )
+         1. Voer de naam van de nieuwe front-end-IP-adres groep in (bijvoorbeeld **NW1-ascs-front-end**)
+         1. Stel de toewijzing in op statisch en voer het IP-adres in (bijvoorbeeld **10.0.0.7**)
          1. Klik op OK
       1. IP-adres 10.0.0.8 voor de ASCS ERS
          * Herhaal de bovenstaande stappen voor het maken van een IP-adres voor de ERS (bijvoorbeeld **10.0.0.8** en **NW1-Aers-** front-end)
    1. Back-endpool maken
       1. Open de load balancer, selecteer back-endservers en klik op toevoegen
-      1. Voer de naam van de nieuwe back-end-groep in (bijvoorbeeld **NW1-back-end** )
+      1. Voer de naam van de nieuwe back-end-groep in (bijvoorbeeld **NW1-back-end**)
       1. Klik op een virtuele machine toevoegen.
       1. Selecteer de Beschikbaarheidsset die u eerder hebt gemaakt
       1. De virtuele machines van het (A) SCS-cluster selecteren
@@ -221,24 +222,24 @@ U moet eerst de virtuele machines voor dit cluster maken. Daarna maakt u een loa
    1. De status tests maken
       1. Poort 620 **00** voor ASCS
          1. Open de load balancer, selecteer status controles en klik op toevoegen
-         1. Voer de naam van de nieuwe status test in (bijvoorbeeld **NW1-ascs-HP** )
-         1. TCP als protocol selecteren, poort 620 **00** , interval 5 en drempel waarde voor onjuiste status 2 gebruiken
+         1. Voer de naam van de nieuwe status test in (bijvoorbeeld **NW1-ascs-HP**)
+         1. TCP als protocol selecteren, poort 620 **00**, interval 5 en drempel waarde voor onjuiste status 2 gebruiken
          1. Klik op OK
       1. Poort 621 **02** voor ASCS ers
-         * Herhaal de bovenstaande stappen voor het maken van een status test voor de ERS (bijvoorbeeld 621 **02** en **NW1-Aers-HP** )
+         * Herhaal de bovenstaande stappen voor het maken van een status test voor de ERS (bijvoorbeeld 621 **02** en **NW1-Aers-HP**)
    1. Taakverdelings regels
       1. 32 **00** TCP voor ASCS
          1. Open de load balancer, selecteer taakverdelings regels en klik op toevoegen
-         1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **NW1-lb-3200** )
-         1. Selecteer het frontend-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **NW1-ascs-front-end** )
-         1. Behoud protocol **TCP** , voer poort **3200** in
+         1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **NW1-lb-3200**)
+         1. Selecteer het frontend-IP-adres, de back-end-pool en de status test die u eerder hebt gemaakt (bijvoorbeeld **NW1-ascs-front-end**)
+         1. Behoud protocol **TCP**, voer poort **3200** in
          1. Time-out voor inactiviteit tot 30 minuten verhogen
          1. **Zorg ervoor dat zwevend IP-adressen zijn ingeschakeld**
          1. Klik op OK
       1. Aanvullende poorten voor de ASCS
-         * Herhaal de bovenstaande stappen voor poorten 36 **00** , 39 **00** , 81 **00** , 5 **00** 13, 5 **00** 14, 5 **00** 16 en TCP voor de ASCS
+         * Herhaal de bovenstaande stappen voor poorten 36 **00**, 39 **00**, 81 **00**, 5 **00** 13, 5 **00** 14, 5 **00** 16 en TCP voor de ASCS
       1. Aanvullende poorten voor de ASCS ERS
-         * Herhaal de bovenstaande stappen voor poort 33 **02** , 5 **02** 13, 5 **02** 14, 5 **02** 16 en TCP voor de ASCS ers
+         * Herhaal de bovenstaande stappen voor poort 33 **02**, 5 **02** 13, 5 **02** 14, 5 **02** 16 en TCP voor de ASCS ers
 
 > [!IMPORTANT]
 > Zwevend IP wordt niet ondersteund voor een secundaire IP-configuratie in een NIC in scenario's voor taak verdeling. Zie beperkingen voor [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations)voor meer informatie. Als u een extra IP-adres voor de virtuele machine nodig hebt, implementeert u een tweede NIC.  
@@ -247,7 +248,7 @@ U moet eerst de virtuele machines voor dit cluster maken. Daarna maakt u een loa
 > Wanneer Vm's zonder open bare IP-adressen in de back-endadresgroep van intern (geen openbaar IP-adres load balancer) worden geplaatst, is er geen uitgaande Internet verbinding, tenzij er aanvullende configuratie wordt uitgevoerd om route ring naar open bare eind punten toe te staan. Zie [connectiviteit van open bare eind punten voor virtual machines met behulp van Azure Standard Load Balancer in scenario's met hoge Beschik baarheid voor SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md)voor meer informatie over het bezorgen van uitgaande verbindingen.  
 
 > [!IMPORTANT]
-> Schakel TCP-tijds tempels niet in op virtuele Azure-machines die achter Azure Load Balancer worden geplaatst. Door TCP-tijds tempels in te scha kelen, mislukken de status controles. Stel para meter **net.IPv4.tcp_timestamps** in op **0** . Zie [Load Balancer Health probe](../../../load-balancer/load-balancer-custom-probe-overview.md)(Engelstalig) voor meer informatie.
+> Schakel TCP-tijds tempels niet in op virtuele Azure-machines die achter Azure Load Balancer worden geplaatst. Door TCP-tijds tempels in te scha kelen, mislukken de status controles. Stel para meter **net.IPv4.tcp_timestamps** in op **0**. Zie [Load Balancer Health probe](../../../load-balancer/load-balancer-custom-probe-overview.md)(Engelstalig) voor meer informatie.
 
 ### <a name="create-pacemaker-cluster"></a>Een pacemaker-cluster maken
 
@@ -406,7 +407,7 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
    sudo &lt;swpm&gt;/sapinst SAPINST_REMOTE_ACCESS_USER=<b>sapadmin</b>
    </code></pre>
 
-   Als de installatie geen submap kan maken in/usr/sap/ **NW1** /ASCS **00** , probeert u de eigenaar en groep van de ASCS **00** -map in te stellen en het opnieuw te proberen.
+   Als de installatie geen submap kan maken in/usr/sap/**NW1**/ASCS **00**, probeert u de eigenaar en groep van de ASCS **00** -map in te stellen en het opnieuw te proberen.
 
    <pre><code>sudo chown nw1adm /usr/sap/<b>NW1</b>/ASCS<b>00</b>
    sudo chgrp sapsys /usr/sap/<b>NW1</b>/ASCS<b>00</b>
@@ -462,7 +463,7 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
    sudo &lt;swpm&gt;/sapinst SAPINST_REMOTE_ACCESS_USER=<b>sapadmin</b>
    </code></pre>
 
-   Als de installatie geen submap kan maken in/usr/sap/ **NW1** /ers **02** , probeert u de eigenaar en groep van de map ers **02** in te stellen en het opnieuw te proberen.
+   Als de installatie geen submap kan maken in/usr/sap/**NW1**/ers **02**, probeert u de eigenaar en groep van de map ers **02** in te stellen en het opnieuw te proberen.
 
    <pre><code>sudo chown nw1adm /usr/sap/<b>NW1</b>/ERS<b>02</b>
    sudo chgrp sapsys /usr/sap/<b>NW1</b>/ERS<b>02</b>
@@ -761,7 +762,7 @@ Volg deze stappen om een SAP-toepassings server te installeren.
      DATABASE: <b>NW1</b>
    </code></pre>
 
-   In de uitvoer ziet u dat het IP-adres van de standaard vermelding verwijst naar de virtuele machine en niet naar het IP-adres van de load balancer. Dit item moet worden gewijzigd om te verwijzen naar de virtuele hostnaam van de load balancer. Zorg ervoor dat u dezelfde poort ( **30313** in de bovenstaande uitvoer) en de naam van de data base ( **HN1** in de bovenstaande uitvoer) gebruikt.
+   In de uitvoer ziet u dat het IP-adres van de standaard vermelding verwijst naar de virtuele machine en niet naar het IP-adres van de load balancer. Dit item moet worden gewijzigd om te verwijzen naar de virtuele hostnaam van de load balancer. Zorg ervoor dat u dezelfde poort (**30313** in de bovenstaande uitvoer) en de naam van de data base (**HN1** in de bovenstaande uitvoer) gebruikt.
 
    <pre><code>su - <b>nw1</b>adm
    hdbuserstore SET DEFAULT <b>nw1-db</b>:<b>30313@NW1</b> <b>SAPABAP1</b> <b>&lt;password of ABAP schema&gt;</b>

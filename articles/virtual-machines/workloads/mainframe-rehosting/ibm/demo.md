@@ -3,6 +3,7 @@ title: Een app voor toepassings ontwikkelaars (ADCD) instellen in IBM zD&T v1 | 
 description: Voer een zD&T-omgeving (IBM Z Development and Test Environment) uit op Azure Virtual Machines (Vm's).
 services: virtual-machines-linux
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 documentationcenter: ''
 author: njray
 manager: edprice
@@ -12,12 +13,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: b2509539551b3991690e6d0313e069ae015eb892
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dcd354b906b4d6c92d8b3186fc8e09c94a31ca55
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87052399"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968397"
 ---
 # <a name="set-up-an-application-developers-controlled-distribution-adcd-in-ibm-zdt-v1"></a>Een toepassings ontwikkelaars ADCD (Controlled Distribution) instellen in IBM zD&T v1
 
@@ -52,17 +53,17 @@ Toegang tot de ADCD-media is vereist. In de onderstaande stappen wordt ervan uit
 
 2. Selecteer **software downloads** en **media toegang**.
 
-3. Selecteer **programma aanbieding en overeenkomst nummer**en klik op **door gaan**.
+3. Selecteer **programma aanbieding en overeenkomst nummer** en klik op **door gaan**.
 
 4. Voer de beschrijving van het onderdeel of het onderdeel nummer in en klik op **Finder**.
 
 5. Klik desgewenst op de alfabetische volg orde van de lijst om theproduct op naam weer te geven en weer te geven.
 
-6. Selecteer **alle besturings systemen** in het **veld besturings systeem**en **alle talen** in het **veld talen**. Klik vervolgens op **Go**.
+6. Selecteer **alle besturings systemen** in het **veld besturings systeem** en **alle talen** in het **veld talen**. Klik vervolgens op **Go**.
 
 7. Klik op **afzonderlijke bestanden selecteren** om de lijst uit te vouwen en de afzonderlijke media weer te geven die u wilt downloaden.
 
-8. Controleer de pakket (en) die u wilt downloaden, selecteer **downloaden**en down load de bestanden naar de gewenste map.
+8. Controleer de pakket (en) die u wilt downloaden, selecteer **downloaden** en down load de bestanden naar de gewenste map.
 
 ## <a name="upload-the-adcd-packages"></a>De ADCD-pakket (en) uploaden
 
@@ -117,7 +118,7 @@ De volgende stap is het configureren van zD&T voor het gebruik van de geüploade
 
 4. Selecteer op de pagina **installatie kopie opslag configureren** de optie **SSH-File Transfer Protocol**.
 
-5. Voor **hostnaam**typt u **localhost** en voert u het mappad in voor de locatie waar u de installatie kopieën hebt geüpload. Bijvoorbeeld/home/MyUserID/ZDT/adcd/nov2017/volumes.
+5. Voor **hostnaam** typt u **localhost** en voert u het mappad in voor de locatie waar u de installatie kopieën hebt geüpload. Bijvoorbeeld/home/MyUserID/ZDT/adcd/nov2017/volumes.
 
 6. Voer de **gebruikers-id** en het **wacht woord** voor de virtuele machine in. Gebruik niet de ZD&T-gebruikers-ID en wacht woord.
 
@@ -127,13 +128,13 @@ De volgende stap is het configureren van zD&T voor het gebruik van de geüploade
 
 De volgende stap is het configureren van de zD&T-doel omgeving. Deze geëmuleerde gehoste omgeving is waar uw installatie kopieën worden uitgevoerd.
 
-1. Selecteer op de pagina **Quick Start** onder **configureren**de optie **doel omgevingen**.
+1. Selecteer op de pagina **Quick Start** onder **configureren** de optie **doel omgevingen**.
 
 2. Selecteer op de pagina **doel omgevingen configureren** de optie **doel toevoegen**.
 
 3. Selecteer **Linux**. IBM ondersteunt twee typen omgevingen: Linux en Cloud (Open stack), maar deze demo wordt uitgevoerd op Linux.
 
-4. Voer op de pagina **doel omgeving toevoegen** voor **hostnaam de waarde** **localhost**in. Blijf **SSH-poort** ingesteld op **22**.
+4. Voer op de pagina **doel omgeving toevoegen** voor **hostnaam de waarde** **localhost** in. Blijf **SSH-poort** ingesteld op **22**.
 
 5. Voer in het vak **Label doel omgeving** een label in, zoals **MyCICS.**
 
@@ -143,7 +144,7 @@ De volgende stap is het configureren van de zD&T-doel omgeving. Deze geëmuleerd
 
 Nadat u de vorige configuratie stappen hebt voltooid, moet u zD&T configureren voor het gebruik van de pakket (en) en de doel omgeving. Opnieuw gebruikt u het proces voor installatie kopie opslag in zD&T, waarmee u de installatie kopieën kunt koppelen en gebruiken. U kunt SSH of FTP gebruiken.
 
-1. Selecteer op de pagina **Quick Start** onder **configureren**de optie **ADCD**. Er wordt een set instructies weer gegeven met de stappen die moeten worden voltooid voordat een ADCD-pakket kan worden gekoppeld. In dit onderwerp wordt uitgelegd waarom we de doel directory op de eerder genoemde manier hebben genoemd.
+1. Selecteer op de pagina **Quick Start** onder **configureren** de optie **ADCD**. Er wordt een set instructies weer gegeven met de stappen die moeten worden voltooid voordat een ADCD-pakket kan worden gekoppeld. In dit onderwerp wordt uitgelegd waarom we de doel directory op de eerder genoemde manier hebben genoemd.
 
 2. Ervan uitgaande dat alle afbeeldingen zijn geüpload naar de juiste directory's, klikt u op de koppeling **afbeelding van ADCD** in de rechter benedenhoek (weer gegeven in stap 7 van de volgende scherm afbeelding).
 

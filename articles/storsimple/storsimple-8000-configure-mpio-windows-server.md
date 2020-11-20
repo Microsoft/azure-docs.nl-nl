@@ -14,18 +14,18 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/26/2018
 ms.author: alkohli
-ms.openlocfilehash: cc88d5b7a458c3666cdb4469d7021917d27115f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d44fada1eddf2d3f80bec085d8a5bf751197eb1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514333"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968805"
 ---
 # <a name="configure-multipath-io-for-your-storsimple-device"></a>Multipath I/O voor uw StorSimple-apparaat configureren
 
 In deze zelf studie worden de stappen beschreven die u moet volgen om de functie Multipath I/O (MPIO) te installeren en te gebruiken op een host waarop Windows Server 2012 R2 wordt uitgevoerd en die is verbonden met een fysiek StorSimple-apparaat. De richt lijnen in dit artikel zijn alleen van toepassing op fysieke apparaten uit de StorSimple 8000-serie. MPIO wordt momenteel niet ondersteund in een StorSimple Cloud Appliance.
 
-Micro soft heeft ondersteuning ontwikkeld voor de functie Multipath I/O (MPIO) in Windows Server om Maxi maal beschik bare fout tolerante iSCSI-netwerk configuraties te bouwen. MPIO maakt gebruik van redundante fysieke padcomponenten, adapters, kabels en switches, om logische paden te maken tussen de server en het opslag apparaat. Als er een fout is opgetreden in een onderdeel waardoor een logisch pad niet kan worden uitgevoerd, maakt logica met meerdere paden een alternatief pad voor I/O, zodat toepassingen nog steeds toegang tot hun gegevens hebben. Afhankelijk van uw configuratie kan MPIO ook de prestaties verbeteren door de belasting voor al deze paden opnieuw in te verdelen. Zie [overzicht van MPIO](https://technet.microsoft.com/library/cc725907.aspx "Overzicht en functies van MPIO")voor meer informatie.
+Micro soft heeft ondersteuning ontwikkeld voor de functie Multipath I/O (MPIO) in Windows Server om Maxi maal beschik bare fout tolerante iSCSI-netwerk configuraties te bouwen. MPIO maakt gebruik van redundante fysieke padcomponenten, adapters, kabels en switches, om logische paden te maken tussen de server en het opslag apparaat. Als er een fout is opgetreden in een onderdeel waardoor een logisch pad niet kan worden uitgevoerd, maakt logica met meerdere paden een alternatief pad voor I/O, zodat toepassingen nog steeds toegang tot hun gegevens hebben. Afhankelijk van uw configuratie kan MPIO ook de prestaties verbeteren door de belasting voor al deze paden opnieuw in te verdelen. Zie [overzicht van MPIO](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725907(v=ws.11) "Overzicht en functies van MPIO")voor meer informatie.
 
 Voor een hoge Beschik baarheid van uw StorSimple-oplossing moet MPIO worden geconfigureerd op uw StorSimple-apparaat. Wanneer MPIO is geïnstalleerd op uw hostservers met Windows Server 2012 R2, kunnen de servers vervolgens een koppeling, netwerk of interface fout verdragen.
 
@@ -63,7 +63,7 @@ Voer de volgende procedure uit om deze functie te installeren op uw Windows Serv
        ![Wizard functies en onderdelen toevoegen 2](./media/storsimple-configure-mpio-windows-server/IC740999.png)
    3. Kies op de pagina **doel server selecteren** de optie **een server uit de Server groep selecteren**. De hostserver moet automatisch worden gedetecteerd. Klik op **Volgende**.
    4. Klik op de pagina **Serverfuncties selecteren** op **Volgende**.
-   5. Selecteer op de pagina **onderdelen selecteren** de optie **Multipath I/O**en klik op **volgende**.
+   5. Selecteer op de pagina **onderdelen selecteren** de optie **Multipath I/O** en klik op **volgende**.
    
        ![Wizard functies en onderdelen toevoegen 5](./media/storsimple-configure-mpio-windows-server/IC741000.png)
    6. Bevestig de selectie op de pagina **installatie selecties bevestigen** en selecteer vervolgens **de doel server automatisch opnieuw opstarten indien nodig**, zoals hieronder wordt weer gegeven. Klik op **Install**.
@@ -81,12 +81,12 @@ MPIO moet worden geconfigureerd voor het identificeren van StorSimple-volumes. V
 
 1. Open de **MPIO-configuratie**. Klik op **Serverbeheer > dash board > hulp middelen > MPIO**.
 2. Selecteer in het dialoog venster **Eigenschappen van MPIO** het tabblad **multi-paden detecteren** .
-3. Selecteer **ondersteuning voor iSCSI-apparaten toevoegen**en klik vervolgens op **toevoegen**.  
+3. Selecteer **ondersteuning voor iSCSI-apparaten toevoegen** en klik vervolgens op **toevoegen**.  
    ![MPIO-eigenschappen ontdekken meerdere paden](./media/storsimple-configure-mpio-windows-server/IC741003.png)
 4. Start de server opnieuw op wanneer dit wordt gevraagd.
 5. Klik in het dialoog venster **Eigenschappen van MPIO** op het tabblad **MPIO-apparaten** . Klik op **toevoegen**.
     </br>![MPIO-eigenschappen MPIO-apparaten](./media/storsimple-configure-mpio-windows-server/IC741004.png)
-6. Voer in het dialoog venster **MPIO-ondersteuning toevoegen** onder **hardware-id apparaat**het serie nummer van het apparaat in. Als u het serie nummer van het apparaat wilt ophalen, opent u de StorSimple-Apparaatbeheer service. Navigeer naar **apparaten > dash board**. Het serie nummer van het apparaat wordt weer gegeven in het deel venster met de rechter **balk** van het dash board van het apparaat.
+6. Voer in het dialoog venster **MPIO-ondersteuning toevoegen** onder **hardware-id apparaat** het serie nummer van het apparaat in. Als u het serie nummer van het apparaat wilt ophalen, opent u de StorSimple-Apparaatbeheer service. Navigeer naar **apparaten > dash board**. Het serie nummer van het apparaat wordt weer gegeven in het deel venster met de rechter **balk** van het dash board van het apparaat.
     </br>
     ![MPIO-ondersteuning toevoegen](./media/storsimple-configure-mpio-windows-server/IC741005.png)
 7. Start de server opnieuw op wanneer dit wordt gevraagd.
@@ -116,7 +116,7 @@ Nadat MPIO is geconfigureerd op Windows Server, kunnen er volume (s) die op het 
 7. Schakel in het dialoog venster **verbinding maken met doel** het selectie vakje **meerdere paden inschakelen** in. Klik op **Geavanceerd**.
 8. Voer in het dialoog venster **Geavanceerde instellingen** de volgende stappen uit:
    
-   1. Selecteer **micro soft iSCSI-initiator**in de vervolg keuzelijst **lokale adapter** .
+   1. Selecteer **micro soft iSCSI-initiator** in de vervolg keuzelijst **lokale adapter** .
    2. Selecteer in de vervolg keuzelijst **INITIATOR IP** het IP-adres van de host.
    3. Selecteer in de vervolg keuzelijst IP van **doel Portal** het IP-adres van de apparaatinterface.
    4. Klik op **OK** om terug te keren naar het dialoog venster **Eigenschappen van iSCSI-initiator** .
@@ -132,7 +132,7 @@ Nadat MPIO is geconfigureerd op Windows Server, kunnen er volume (s) die op het 
 13. Initialiseer de schijf en maak een nieuw volume. Selecteer tijdens het format teren een blok grootte van 64 KB.
     
     ![Schijfbeheer](./media/storsimple-configure-mpio-windows-server/IC741008.png)
-14. Klik onder **schijf beheer**met de rechter muisknop op de **schijf** en selecteer **Eigenschappen**.
+14. Klik onder **schijf beheer** met de rechter muisknop op de **schijf** en selecteer **Eigenschappen**.
 15. Klik in het dialoog venster StorSimple-model # # # # **Eigenschappen multipath-schijf apparaat** op het tabblad **MPIO** .
     
     ![StorSimple 8100 Multi-Path-schijf DeviceProp.](./media/storsimple-configure-mpio-windows-server/IC741009.png)
@@ -172,15 +172,15 @@ In de volgende procedure wordt beschreven hoe u sessies kunt toevoegen wanneer e
    3. Klik op **Geavanceerd**.
 6. In het dialoog venster **Geavanceerde instellingen** :
    
-   1. Selecteer **micro soft iSCSI-initiator**in de vervolg keuzelijst **lokale adapter** .
+   1. Selecteer **micro soft iSCSI-initiator** in de vervolg keuzelijst **lokale adapter** .
    2. Selecteer in de vervolg keuzelijst **INITIATOR IP** het IP-adres dat overeenkomt met de eerste interface op de host (iSCSI-interface).
    3. Selecteer in de vervolg keuzelijst **IP van doel Portal** het IP-adres voor de eerste gegevens interface die op het apparaat is ingeschakeld.
    4. Klik op **OK** om terug te keren naar het dialoog venster Eigenschappen van iSCSI-initiator.
-7. Klik op **Eigenschappen**en klik in het dialoog venster **Eigenschappen** op **sessie toevoegen**.
+7. Klik op **Eigenschappen** en klik in het dialoog venster **Eigenschappen** op **sessie toevoegen**.
 8. Schakel in het dialoog venster **verbinding maken met doel** het selectie vakje **meerdere paden inschakelen** in en klik vervolgens op **Geavanceerd**.
 9. In het dialoog venster **Geavanceerde instellingen** :
    
-   1. Selecteer **micro soft iSCSI-initiator**in de vervolg keuzelijst **lokale adapter** .
+   1. Selecteer **micro soft iSCSI-initiator** in de vervolg keuzelijst **lokale adapter** .
    2. Selecteer in de vervolg keuzelijst **INITIATOR IP** het IP-adres dat overeenkomt met de tweede iSCSI-interface op de host.
    3. Selecteer in de vervolg keuzelijst **IP van doel Portal** het IP-adres voor de tweede gegevens interface die op het apparaat is ingeschakeld.
    4. Klik op **OK** om terug te keren naar het dialoog venster **Eigenschappen van iSCSI-initiator** . U hebt nu een tweede sessie aan het doel toegevoegd.
@@ -191,4 +191,3 @@ In de volgende procedure wordt beschreven hoe u sessies kunt toevoegen wanneer e
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over [het gebruik van de StorSimple Apparaatbeheer-service om de configuratie van uw StorSimple-apparaat te wijzigen](storsimple-8000-modify-device-config.md).
-

@@ -7,12 +7,12 @@ ms.date: 05/16/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 1dcf1b9f62f94b8f75ef2fe77f3e237a387c53eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75a2762a0937efbceaa168f8a2d6409e2e3a7ae4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73890655"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967224"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Samenvatting van functies voor gegevensaanvragen van klanten
 
@@ -62,6 +62,6 @@ Het is ook mogelijk om export bewerkingen uit te voeren voor inschrijvingen en r
 
 ## <a name="links-to-additional-documentation"></a>Koppelingen naar aanvullende documentatie
 
-Volledige documentatie voor Device Provisioning Service-Api's bevindt zich op [https://docs.microsoft.com/rest/api/iot-dps](https://docs.microsoft.com/rest/api/iot-dps) .
+Volledige documentatie voor Device Provisioning Service-Api's bevindt zich op [https://docs.microsoft.com/rest/api/iot-dps](/rest/api/iot-dps) .
 
 Azure IoT Hub- [functies voor gegevens aanvragen](../iot-hub/iot-hub-customer-data-requests.md)van de klant.

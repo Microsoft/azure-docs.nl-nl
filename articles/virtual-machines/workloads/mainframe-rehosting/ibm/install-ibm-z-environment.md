@@ -3,6 +3,7 @@ title: IBM zD&T dev/test-omgeving installeren op Azure | Microsoft Docs
 description: Implementeer de IBM Z-ontwikkelings-en test omgeving (zD&T) op de infra structuur van Azure virtual machine (VM) als een service (IaaS).
 services: virtual-machines-linux
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 documentationcenter: ''
 author: njray
 ms.author: edprice
@@ -12,12 +13,12 @@ ms.topic: conceptual
 ms.date: 04/02/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: 55eb9a0bca3f142c1065f867cebd840cc7958b7e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c12a812f66345a26701b2a1623487fd262ede4be
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86499916"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968329"
 ---
 # <a name="install-ibm-zdt-devtest-environment-on-azure"></a>IBM zD&T dev/test-omgeving installeren op Azure
 
@@ -108,7 +109,7 @@ Het installatie bestand voor de webserver is **ZDT \_ install \_ ee \_ v 12.0.0.
 
 4. Druk op **Enter** en lees de licentie overeenkomsten aandachtig door. Voeg aan het einde van de licentie **Ja** toe om door te gaan.
 
-5. Wanneer u wordt gevraagd het wacht woord voor de zojuist gemaakte gebruiker **ibmsys1**te wijzigen, gebruikt u de opdracht **sudo passwd ibmsys1** en voert u het nieuwe wacht woord in.
+5. Wanneer u wordt gevraagd het wacht woord voor de zojuist gemaakte gebruiker **ibmsys1** te wijzigen, gebruikt u de opdracht **sudo passwd ibmsys1** en voert u het nieuwe wacht woord in.
 
 6. Als u wilt controleren of de installatie is voltooid, voert u
 
@@ -116,7 +117,7 @@ Het installatie bestand voor de webserver is **ZDT \_ install \_ ee \_ v 12.0.0.
     dpkg -l | grep zdtapp
     ```
 
-7. Controleer of de uitvoer de teken reeks **zdtapp 12.0.0.0**bevat, waarmee wordt aangegeven dat het pakket gas is geïnstalleerd
+7. Controleer of de uitvoer de teken reeks **zdtapp 12.0.0.0** bevat, waarmee wordt aangegeven dat het pakket gas is geïnstalleerd
 
 ### <a name="starting-enterprise-edition"></a>Enter prise Edition starten
 

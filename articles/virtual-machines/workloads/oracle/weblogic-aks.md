@@ -2,17 +2,18 @@
 title: Wat zijn oplossingen voor het uitvoeren van Oracle WebLogic Server op de Azure Kubernetes-service
 description: Meer informatie over het uitvoeren van Oracle WebLogic Server op de Azure Kubernetes-service.
 author: rezar
-ms.service: container-service
+ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.date: 10/28/2020
 ms.author: rezar
 ms.reviewer: cynthn
-ms.openlocfilehash: ff7b9b0bfcdc0c06eae14ecfdccabf9e337d3649
-ms.sourcegitcommit: 7a7b6c7ac0aa9dac678c3dfd4b5bcbc45dc030ca
+ms.openlocfilehash: a57d5a00fad9a17e01b96ebdf395fb7a4b857935
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93186672"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968686"
 ---
 # <a name="what-are-solutions-for-running-oracle-weblogic-server-on-the-azure-kubernetes-service"></a>Wat zijn oplossingen voor het uitvoeren van Oracle WebLogic Server op de Azure Kubernetes-service?
 
@@ -34,15 +35,15 @@ Naast het certificeren van WebLogic-Server op AKS, bieden Oracle en micro soft g
 
 In de richt lijnen wordt ervan uitgegaan dat u het domein buiten de docker-installatie kopie implementeert en gebruikmaakt van de standaard docker-installatie kopieën van Oracle. We voegen hulp toe voor het inschakelen van aangepaste installatie kopieën met uw domein in een docker-installatie kopie. Meer gebruiks vriendelijke en Azure service-integraties zijn mogelijk in de toekomst via Marketplace-aanbiedingen die Oracle WebLogic Server op Azure Virtual Machines-oplossingen spie gelen.
 
-_Deze oplossingen zijn uw eigen licentie_ . Er wordt ervan uitgegaan dat u de juiste licenties voor Oracle al hebt en een juiste licentie hebt voor het uitvoeren van aanbiedingen in Azure.
+_Deze oplossingen zijn uw eigen licentie_. Er wordt ervan uitgegaan dat u de juiste licenties voor Oracle al hebt en een juiste licentie hebt voor het uitvoeren van aanbiedingen in Azure.
 
-_Als u geïnteresseerd bent in het samen werken met uw migratie scenario's met het technische team dat deze oplossingen ontwikkelt, vult u [deze korte enquête](https://aka.ms/wls-on-azure-survey) in en neemt u uw contact gegevens op_ . Programma managers, Architects en technici zullen binnenkort een back-up maken en de samen werking sluiten. De kans om samen te werken aan een migratie scenario is gratis, terwijl de oplossingen onder actieve eerste ontwikkeling vallen.
+_Als u geïnteresseerd bent in het samen werken met uw migratie scenario's met het technische team dat deze oplossingen ontwikkelt, vult u [deze korte enquête](https://aka.ms/wls-on-azure-survey) in en neemt u uw contact gegevens op_. Programma managers, Architects en technici zullen binnenkort een back-up maken en de samen werking sluiten. De kans om samen te werken aan een migratie scenario is gratis, terwijl de oplossingen onder actieve eerste ontwikkeling vallen.
 
 ## <a name="deployment-architectures"></a>Implementatie architecturen
 
 Met de oplossingen voor het uitvoeren van Oracle WebLogic Server op de Azure Kubernetes-service kunt u een breed scala aan implementatie architecturen die klaar zijn voor productie, met relatief gemak.
 
-:::image type="content" source="media/oracle-weblogic/weblogic-architecture-aks.png" alt-text="U kunt de voorbeeld scripts gebruiken om WebLogic Server te implementeren op AKS":::
+:::image type="content" source="media/oracle-weblogic/weblogic-architecture-aks.png" alt-text="Complexe WebLogic-Server implementaties zijn ingeschakeld op AKS":::
 
 Meer informatie over de oplossingen biedt klanten de mogelijkheid om hun implementaties verder aan te passen. De configuratie van de implementatie van toepassingen wordt waarschijnlijk uitgebreid met de implementaties van andere Azure-resources. Klanten wordt aangeraden feedback te geven in de enquête over het verder verbeteren van de oplossingen.
 

@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2020
 ms.author: memildin
-ms.openlocfilehash: 575c139a3b417eb9429695d3ea6be26bf5625de5
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 12e5a6db7257678b3d4d14d7583a1a30da0d3a87
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371066"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967139"
 ---
 # <a name="monitor-identity-and-access"></a>Identiteit en toegang bewaken
 
-De beveiligings verbinding is vanuit een netwerk verbinding met een identiteits verbinding ontwikkeld. Met deze ontwikkeling is de beveiliging minder dan het beschermen van uw netwerk en meer informatie over het beheren van de beveiliging van uw apps, gegevens en gebruikers.
+De beveiligingsperimeter is ontwikkeld van een netwerkperimeter naar een identiteitsperimeter. Met deze ontwikkeling is de beveiliging minder dan het beschermen van uw netwerk en meer informatie over het beheren van de beveiliging van uw apps, gegevens en gebruikers.
 
 Door de activiteiten en configuratie-instellingen die betrekking hebben op identiteit te bewaken, kunt u proactieve acties uitvoeren voordat een incident plaatsvindt of reactieve acties om pogingen tot aanvallen te stoppen.
 
@@ -30,7 +30,7 @@ Door de activiteiten en configuratie-instellingen die betrekking hebben op ident
 
 Azure Security Center heeft twee specifieke beveiligings controles om ervoor te zorgen dat u voldoet aan de identiteits-en beveiligings vereisten van uw organisatie: 
 
- - **Toegang en machtigingen beheren** : we raden u aan het [toegangs model voor de minimale bevoegdheid te gebruiken](/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models) en ervoor te zorgen dat u uw gebruikers alleen de toegang verleent die nodig zijn om hun taken uit te voeren. Dit besturings element bevat ook aanbevelingen voor het implementeren van [op rollen gebaseerd toegangs beheer (RBAC)](../role-based-access-control/overview.md) om toegang tot uw resources te beheren.
+ - **Toegang en machtigingen beheren** : we raden u aan het [toegangs model voor de minimale bevoegdheid te gebruiken](/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models) en ervoor te zorgen dat u uw gebruikers alleen de toegang verleent die nodig zijn om hun taken uit te voeren. Dit besturings element bevat ook aanbevelingen voor het implementeren van [op rollen gebaseerd toegangs beheer van Azure (Azure RBAC)](../role-based-access-control/overview.md) voor het beheren van de toegang tot uw resources.
  
  - **Schakel MFA** in als u [MFA](https://www.microsoft.com/security/business/identity/mfa) hebt ingeschakeld, uw accounts veilig zijn en gebruikers nog steeds kunnen worden geverifieerd bij vrijwel elke toepassing met eenmalige aanmelding.
 

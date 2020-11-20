@@ -8,12 +8,12 @@ ms.service: dns
 ms.date: 7/30/2020
 ms.author: rohink
 ms.topic: how-to
-ms.openlocfilehash: 8f17d7f32d774cac283ec335c372e8f68d50931f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2b998432f6c4417da0242d86347ed43acb5071a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87424219"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968227"
 ---
 # <a name="import-and-export-a-dns-zone-file-using-the-azure-cli"></a>Een DNS-zonebestand importeren en exporteren met de Azure CLI
 
@@ -77,7 +77,7 @@ Als er geen zone met deze naam bestaat in de resource groep, wordt deze voor u g
 
 ### <a name="step-1-import-a-zone-file"></a>Stap 1. Een zone bestand importeren
 
-Een zone bestand voor de zone **contoso.com**importeren.
+Een zone bestand voor de zone **contoso.com** importeren.
 
 1. Als u er nog geen hebt, moet u een resource manager-resource groep maken.
 
@@ -179,6 +179,6 @@ az network dns zone export -g myresourcegroup -n contoso.com -f contoso.com.txt
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het [beheren van record sets en records](dns-getstarted-create-recordset-cli.md) in uw DNS-zone.
+* Meer informatie over het [beheren van record sets en records](./dns-getstarted-cli.md) in uw DNS-zone.
 
 * Meer informatie over hoe u [uw domein kunt delegeren naar Azure DNS](dns-domain-delegation.md).

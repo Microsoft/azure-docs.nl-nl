@@ -7,18 +7,19 @@ author: msjuergent
 manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: aff1c8f68e3950b49a0a1bd8e99020b77e0f2019
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9254b3d19bd840b62d2f5f7023eba9a91e605d1e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84677301"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967513"
 ---
 # <a name="sap-hana-large-instances-storage-architecture"></a>Opslag architectuur van SAP HANA (grote exemplaren)
 
@@ -85,7 +86,7 @@ Als u een een HANA-SKU voor grote instanties onderverdelen, kunnen enkele voor b
 | 256 | 400 GB | 160 GB | 304 GB | 160 GB |
 | 512 | 768 GB | 384 GB | 512 GB | 384 GB |
 | 768 | 1.280 GB | 512 GB | 768 GB | 512 GB |
-| 1.024 | 1.792 GB | 640 GB | 1.024 GB | 640 GB |
+| 1\.024 | 1.792 GB | 640 GB | 1.024 GB | 640 GB |
 | 1536 | 3.328 GB | 768 GB | 1.280 GB | 768 GB |
 
 

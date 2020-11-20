@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: eliotga
-ms.openlocfilehash: f67ed44fffe6bd690d6bd76fcefa19d9ee23e52b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dc33dcd2c80b2a6d4a1cc27778e49dc06ac48b34
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90529393"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967309"
 ---
 # <a name="how-to-provision-devices-using-symmetric-key-enrollment-groups"></a>Apparaten inrichten met behulp van symmetrische sleutel registratie groepen
 
@@ -49,7 +49,7 @@ De apparaatcode die in dit artikel wordt beschreven, volgt hetzelfde patroon als
 
 De volgende vereisten gelden voor een ontwikkelomgeving in Windows. Voor Linux of macOS raadpleegt u het desbetreffende gedeelte in [Uw ontwikkelomgeving voorbereiden](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) in de SDK-documentatie.
 
-* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2019 met de workload [Desktopontwikkeling met C++](https://docs.microsoft.com/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development) ingeschakeld. Visual Studio 2015 en Visual Studio 2017 worden ook ondersteund.
+* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2019 met de workload [Desktopontwikkeling met C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development) ingeschakeld. Visual Studio 2015 en Visual Studio 2017 worden ook ondersteund.
 
 * Meest recente versie van [Git](https://git-scm.com/download/) geïnstalleerd.
 
@@ -88,7 +88,7 @@ De SDK bevat de voorbeeldcode voor het gesimuleerde apparaat. Dit gesimuleerde a
     cmake -Dhsm_type_symm_key:BOOL=ON -Duse_prov_client:BOOL=ON  ..
     ```
     
-    Als `cmake` uw C++-compiler niet kan vinden, kunnen er fouten in de build optreden tijdens het uitvoeren van de bovenstaande opdracht. Als dit gebeurt, voert u deze opdracht uit bij de [Visual Studio-opdrachtprompt](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs). 
+    Als `cmake` uw C++-compiler niet kan vinden, kunnen er fouten in de build optreden tijdens het uitvoeren van de bovenstaande opdracht. Als dit gebeurt, voert u deze opdracht uit bij de [Visual Studio-opdrachtprompt](/dotnet/framework/tools/developer-command-prompt-for-vs). 
 
     Zodra het bouwen is voltooid, zijn de laatste paar uitvoerregels vergelijkbaar met de volgende uitvoer:
 
@@ -113,9 +113,9 @@ De SDK bevat de voorbeeldcode voor het gesimuleerde apparaat. Dit gesimuleerde a
 
 2. Selecteer het tabblad **inschrijvingen beheren** en klik vervolgens op de knop **registratie groep toevoegen** boven aan de pagina. 
 
-3. Voer in **registratie groep toevoegen**de volgende gegevens in en klik op de knop **Opslaan** .
+3. Voer in **registratie groep toevoegen** de volgende gegevens in en klik op de knop **Opslaan** .
 
-   - **Groeps naam**: Voer **mylegacydevices**in.
+   - **Groeps naam**: Voer **mylegacydevices** in.
 
    - **Attestation-type**: Selecteer **symmetrische sleutel**.
 
@@ -204,7 +204,7 @@ Op uw apparaat wordt de afgeleide-apparaatwachtwoord gebruikt met uw unieke regi
 
 ## <a name="create-a-device-image-to-provision"></a>Een te inrichten installatie kopie voor een apparaat maken
 
-In deze sectie gaat u een inrichtings voorbeeld met de naam **Prov \_ dev \_ client \_ ** -voor beeld bijwerken in de Azure IOT C-SDK die u eerder hebt ingesteld. 
+In deze sectie gaat u een inrichtings voorbeeld met de naam **Prov \_ dev \_ client \_** -voor beeld bijwerken in de Azure IOT C-SDK die u eerder hebt ingesteld. 
 
 Met deze voorbeeldcode wordt een opstartprocedure van het apparaat gesimuleerd waarbij de inrichtingsaanvraag naar uw Device Provisioning Service-instantie wordt verzonden. De opstart procedure zorgt ervoor dat het apparaat wordt herkend en toegewezen aan de IoT-hub die u hebt geconfigureerd voor de registratie groep.
 
@@ -290,15 +290,4 @@ Houd er rekening mee dat dit de afgeleide apparaatcode bevat die is opgenomen al
 
 * Zie [IOT hub-concepten](concepts-device-reprovision.md) voor het opnieuw inrichten van apparaten voor meer informatie. 
 * [Snelstartgids: een gesimuleerd apparaat inrichten met symmetrische sleutels](quick-create-simulated-device-symm-key.md)
-* Zie voor meer informatie over het ongedaan maken van de inrichting van [apparaten die eerder automatisch zijn ingericht](how-to-unprovision-devices.md) , ongedaan maken 
-
-
-
-
-
-
-
-
-
-
-
+* Zie voor meer informatie over het ongedaan maken van de inrichting van [apparaten die eerder automatisch zijn ingericht](how-to-unprovision-devices.md) , ongedaan maken

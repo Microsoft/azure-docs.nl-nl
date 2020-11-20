@@ -4,18 +4,18 @@ description: IoT Edge het ophalen van de module Logboeken en uploaden naar Azure
 author: v-tcassi
 manager: philmea
 ms.author: v-tcassi
-ms.date: 09/14/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 64264028706c1493f687f032a7ec39e69188bd45
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 97cdc4ad0b1d5e7dfb6642fa0163f810be5d7171
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171923"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966918"
 ---
 # <a name="retrieve-logs-from-iot-edge-deployments"></a>Logboeken ophalen uit IoT Edge-implementaties
 
@@ -141,6 +141,14 @@ az iot hub invoke-module-method \
 
 Gebruik de **UploadModuleLogs** direct-methode om de aangevraagde logboeken te verzenden naar een opgegeven Azure Blob Storage-container.
 
+<!-- 1.2.0 -->
+::: moniker range=">=iotedge-2020-11"
+
+> [!NOTE]
+> Als u logboeken wilt uploaden vanaf een apparaat achter een gateway-apparaat, moet u de [modules API-proxy en Blob Storage](how-to-configure-api-proxy-module.md) hebben geconfigureerd op het apparaat voor de bovenste laag. Deze modules sturen de logboeken van uw lagere laag-apparaat via uw gateway apparaat naar uw opslag in de Cloud.
+
+::: moniker-end
+
 Deze methode accepteert een JSON-nettolading vergelijkbaar met **GetModuleLogs**, met toevoeging van de sleutel ' sasUrl ':
 
 ```json
@@ -260,6 +268,14 @@ In de Azure Portal roept u de methode met de naam van de methode `UploadModuleLo
 ## <a name="upload-support-bundle-diagnostics"></a>Diagnostische gegevens over ondersteunings bundel uploaden
 
 Gebruik de **UploadSupportBundle** directe methode om een zip-bestand van IOT Edge module Logboeken te bundelen en te uploaden naar een beschik bare Azure Blob Storage-container. Met deze directe methode voert [`iotedge support-bundle`](./troubleshoot.md#gather-debug-information-with-support-bundle-command) u de opdracht op uw IOT edge-apparaat uit om de logboeken op te halen.
+
+<!-- 1.2.0 -->
+::: moniker range=">=iotedge-2020-11"
+
+> [!NOTE]
+> Als u logboeken wilt uploaden vanaf een apparaat achter een gateway-apparaat, moet u de [modules API-proxy en Blob Storage](how-to-configure-api-proxy-module.md) hebben geconfigureerd op het apparaat voor de bovenste laag. Deze modules sturen de logboeken van uw lagere laag-apparaat via uw gateway apparaat naar uw opslag in de Cloud.
+
+::: moniker-end
 
 Met deze methode wordt een JSON-nettolading met het volgende schema geaccepteerd:
 

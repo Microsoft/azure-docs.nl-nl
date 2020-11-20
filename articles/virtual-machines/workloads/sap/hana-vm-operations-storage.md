@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: SAP, Azure HANA, opslag met hoge schijf, Premium-opslag
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/05/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bbaa9d33d3a31b682a66b2a3254fc2265b6f8d7b
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: af2eac929e3e3f40e1ac1cd384c943b1e09171a8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357074"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967462"
 ---
 # <a name="sap-hana-azure-virtual-machine-storage-configurations"></a>Configuraties van SAP HANA in virtuele Azure-machineopslag
 
@@ -46,7 +47,7 @@ De minimale SAP HANA gecertificeerde voor waarden voor de verschillende opslag t
 - Azure Ultra Disk ten minste voor het **/Hana/log** -volume. Het **/Hana/data** -volume kan worden geplaatst in Premium Storage zonder Azure write Accelerator of om sneller opnieuw opstarten te krijgen met een hoge schijf
 - **NFS v 4.1** -volumes boven op Azure NetApp files voor **/Hana/log en/Hana/data**. Het volume van/Hana/Shared kan NFS v3 of NFS v 4.1-protocol gebruiken
 
-Sommige opslag typen kunnen worden gecombineerd. Het is bijvoorbeeld mogelijk om **/Hana/data** in te stellen op Premium Storage en **/Hana/log** kunnen op ultra Disk Storage worden geplaatst om de vereiste lage latentie te verkrijgen. Als u een volume gebruikt op basis van ANF voor **/Hana/data** , moet  **/Hana/log** -volume ook worden gebaseerd op NFS op ANF. Het gebruik van NFS op ANF voor een van de volumes (zoals/Hana/data) en Azure Premium Storage of Ultra disk voor het andere volume (zoals **/Hana/log** ) wordt **niet ondersteund**.
+Sommige opslag typen kunnen worden gecombineerd. Het is bijvoorbeeld mogelijk om **/Hana/data** in te stellen op Premium Storage en **/Hana/log** kunnen op ultra Disk Storage worden geplaatst om de vereiste lage latentie te verkrijgen. Als u een volume gebruikt op basis van ANF voor **/Hana/data**, moet  **/Hana/log** -volume ook worden gebaseerd op NFS op ANF. Het gebruik van NFS op ANF voor een van de volumes (zoals/Hana/data) en Azure Premium Storage of Ultra disk voor het andere volume (zoals **/Hana/log**) wordt **niet ondersteund**.
 
 In de on-premises wereld moest u zelden aandacht houden met de I/O-subsystemen en de mogelijkheden ervan. Daarom moest de leverancier van het apparaat controleren of aan de minimale opslag vereisten wordt voldaan voor de SAP HANA. Wanneer u zelf de Azure-infra structuur bouwt, moet u rekening houden met een aantal van deze SAP-vereisten. Enkele van de minimale doorvoer kenmerken die door SAP worden aanbevolen, zijn:
 
@@ -192,7 +193,7 @@ Voor de andere volumes ziet de configuratie er als volgt uit:
 | M416ms_v2 | 11.400 GiB | 2.000 MBps | 1 x P30 | 1 x P10 | 1 x P6 | 
 
 
-Controleer of de opslag doorvoer voor de verschillende voorgestelde volumes voldoet aan de werk belasting die u wilt uitvoeren. Als voor de werk belasting hogere volumes zijn vereist voor **/Hana/data** en **/Hana/log** , moet u het aantal Azure Premium-opslag-vhd's verhogen. Het formaat van een volume met meer Vhd's dan wordt weer gegeven, verhoogt de IOPS en I/O-door Voer binnen de limieten van het type virtuele machine van Azure.
+Controleer of de opslag doorvoer voor de verschillende voorgestelde volumes voldoet aan de werk belasting die u wilt uitvoeren. Als voor de werk belasting hogere volumes zijn vereist voor **/Hana/data** en **/Hana/log**, moet u het aantal Azure Premium-opslag-vhd's verhogen. Het formaat van een volume met meer Vhd's dan wordt weer gegeven, verhoogt de IOPS en I/O-door Voer binnen de limieten van het type virtuele machine van Azure.
 
 Azure Write Accelerator werkt alleen in combi natie met [Azure Managed disks](https://azure.microsoft.com/services/managed-disks/). Ten minste de Azure Premium-opslag schijven die het **/Hana/log** -volume vormen, moeten worden geïmplementeerd als managed disks. Meer gedetailleerde instructies en beperkingen van Azure Write Accelerator vindt u in het artikel [Write Accelerator](../../how-to-enable-write-accelerator.md).
 

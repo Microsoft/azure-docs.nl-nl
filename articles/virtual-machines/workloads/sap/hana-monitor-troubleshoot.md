@@ -7,18 +7,19 @@ author: msjuergent
 manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 047ea4d07f2b497ac8c7deb90c056d63976094f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e560fc996393969eecb45a3fdda24bc940436dc0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77617081"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967717"
 ---
 # <a name="monitoring-and-troubleshooting-from-hana-side"></a>Bewaken en problemen oplossen vanaf de HANA-zijde
 
@@ -99,7 +100,7 @@ Raadpleeg [SAP note #2081065: problemen met SAP Hana netwerk oplossen](https://l
   A. Voer SQL script [_Hana- \_ netwerk \_ Services_](https://launchpad.support.sap.com/#/notes/1969700)uit _._
 
 3. Voer Linux-opdracht **ifconfig** uit (de uitvoer geeft aan of er pakket verlies optreedt).
-4. Voer Linux-opdracht **tcpdump**uit.
+4. Voer Linux-opdracht **tcpdump** uit.
 
 U kunt ook het open source [IPERF](https://iperf.fr/) -hulp programma (of vergelijkbaar) gebruiken om de prestaties van het werkelijke toepassings netwerk te meten.
 

@@ -3,16 +3,17 @@ title: Oracle Golden-Gate implementeren op een Azure Linux-VM | Microsoft Docs
 description: U kunt snel een Oracle Golden-Gate maken en uitvoeren in uw Azure-omgeving.
 author: dbakevlar
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: c480de6da0427b8eda212e02e08c7b3f5426941c
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 3fff58c240341776a3bb99c059c179cc4f9d96e9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534138"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966867"
 ---
 # <a name="implement-oracle-golden-gate-on-an-azure-linux-vm"></a>Oracle Golden-Gate implementeren op een Azure Linux-VM 
 
@@ -24,7 +25,7 @@ Voordat u begint, moet u controleren of de Azure-CLI is geïnstalleerd. Zie voor
 
 ## <a name="prepare-the-environment"></a>De omgeving voorbereiden
 
-Als u de Oracle Golden-Gate-installatie wilt uitvoeren, moet u twee virtuele Azure-machines maken op dezelfde beschikbaarheidsset. De Marketplace-installatie kopie die u gebruikt om de Vm's te maken, is **Oracle: Oracle-data base-ee: 12.1.0.2: Latest** .
+Als u de Oracle Golden-Gate-installatie wilt uitvoeren, moet u twee virtuele Azure-machines maken op dezelfde beschikbaarheidsset. De Marketplace-installatie kopie die u gebruikt om de Vm's te maken, is **Oracle: Oracle-data base-ee: 12.1.0.2: Latest**.
 
 U moet ook bekend zijn met UNIX editor VI en een basis kennis hebben van X11 (X Windows).
 
@@ -389,9 +390,9 @@ Dit is een optionele taak. U kunt deze stap overs Laan als u een Linux-client ge
 3. In PuTTy-sleutel Generator:
 
    - Selecteer de knop **genereren** om een sleutel te genereren.
-   - Kopieer de inhoud van de sleutel ( **CTRL + C** ).
+   - Kopieer de inhoud van de sleutel (**CTRL + C**).
    - Selecteer de knop **persoonlijke sleutel opslaan** .
-   - Negeer de waarschuwing die wordt weer gegeven en selecteer **OK** .
+   - Negeer de waarschuwing die wordt weer gegeven en selecteer **OK**.
 
    ![Scherm afbeelding van de pagina PuTTy-sleutel generator](./media/oracle-golden-gate/puttykeygen.png)
 
@@ -403,21 +404,21 @@ Dit is een optionele taak. U kunt deze stap overs Laan als u een Linux-client ge
    $ cd .ssh
    ```
 
-5. Maak een bestand met de naam **authorized_keys** . Plak de inhoud van de sleutel in dit bestand en sla het bestand op.
+5. Maak een bestand met de naam **authorized_keys**. Plak de inhoud van de sleutel in dit bestand en sla het bestand op.
 
    > [!NOTE]
    > De sleutel moet de teken reeks bevatten `ssh-rsa` . De inhoud van de sleutel moet ook één tekst regel zijn.
    >  
 
-6. Start PuTTY. Selecteer in het deel venster **categorie** de optie **verbinding**  >  **SSH**  >  **auth** . Blader in het vak **persoonlijk sleutel bestand voor verificatie** naar de sleutel die u eerder hebt gegenereerd.
+6. Start PuTTY. Selecteer in het deel venster **categorie** de optie **verbinding**  >  **SSH**  >  **auth**. Blader in het vak **persoonlijk sleutel bestand voor verificatie** naar de sleutel die u eerder hebt gegenereerd.
 
    ![Scherm afbeelding van de pagina persoonlijke sleutel instellen](./media/oracle-golden-gate/setprivatekey.png)
 
-7. Selecteer in het deel venster **categorie** de optie **verbinding**  >  **SSH** -  >  **X11** . Schakel vervolgens het **doorstuur selectie vakje X11 inschakelen** in.
+7. Selecteer in het deel venster **categorie** de optie **verbinding**  >  **SSH**-  >  **X11**. Schakel vervolgens het **doorstuur selectie vakje X11 inschakelen** in.
 
    ![Scherm afbeelding van de pagina X11 inschakelen](./media/oracle-golden-gate/enablex11.png)
 
-8. Ga in het deel venster **categorie** naar **sessie** . Voer de gegevens van de host in en selecteer vervolgens **openen** .
+8. Ga in het deel venster **categorie** naar **sessie**. Voer de gegevens van de host in en selecteer vervolgens **openen**.
 
    ![Scherm afbeelding van de sessie pagina](./media/oracle-golden-gate/puttysession.png)
 

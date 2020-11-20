@@ -3,16 +3,17 @@ title: HPC-toepassingen schalen-Azure Virtual Machines | Microsoft Docs
 description: Meer informatie over het schalen van HPC-toepassingen op Azure-Vm's.
 author: vermagit
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 2c20fcf2624c1f620b68b46e56e0602f15041348
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 7e05d64420cd920242a887b206fd38cd4a655509
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993825"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967003"
 ---
 # <a name="scaling-hpc-applications"></a>HPC-toepassingen schalen
 

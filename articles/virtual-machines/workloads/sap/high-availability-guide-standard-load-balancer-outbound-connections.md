@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/16/2020
 ms.author: radeltch
-ms.openlocfilehash: d4d21ac0fc0f218b9168adfad3e1b2ec42092b42
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a6b62e9c894c25b2c3cd064524881ae5db51ec5a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544746"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968533"
 ---
 # <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>Connectiviteit van open bare eind punten voor Virtual Machines met behulp van Azure Standard Load Balancer in scenario's met hoge Beschik baarheid van SAP
 
@@ -91,7 +92,7 @@ De configuratie zou er als volgt uitzien:
 
 1. Load balancer maken  
    1. Klik in de [Azure Portal](https://portal.azure.com) op alle resources, toevoegen en zoek naar **Load Balancer**  
-   1. Klik op **Maken** . 
+   1. Klik op **Maken**. 
    1. Load Balancer naam **MyPublicILB**  
    1. Selecteer **openbaar** als type, **standaard** als SKU  
    1. Selecteer **openbaar IP-adres maken** en opgeven als een naam **MyPublicILBFrondEndIP**  
@@ -147,14 +148,14 @@ De architectuur ziet er als volgt uit:
    1. Klik op subnet toevoegen. Voer **AzureFirewallSubnet** in als naam. Voer het juiste adres bereik in. Sla op.  
 3. Azure Firewall maken.  
    1. Klik in Azure Portal alle resources selecteren op toevoegen, firewall, maken. Selecteer resource groep (Selecteer dezelfde resource groep, waarbij de Virtual Network is).  
-   1. Voer een naam in voor de Azure Firewall resource. Bijvoorbeeld **MyAzureFirewall** .  
+   1. Voer een naam in voor de Azure Firewall resource. Bijvoorbeeld **MyAzureFirewall**.  
    1. Selecteer regio en selecteer ten minste twee beschikbaarheids zones, uitgelijnd met de beschikbaarheids zones waar uw virtuele machines worden geïmplementeerd.  
    1. Selecteer uw Virtual Network, waarbij de SAP-Vm's en de Azure Standard Load Balancer worden geïmplementeerd.  
-   1. Openbaar IP-adres: Klik op maken en voer een naam in. Voor instantie **MyFirewallPublicIP** .  
+   1. Openbaar IP-adres: Klik op maken en voer een naam in. Voor instantie **MyFirewallPublicIP**.  
 4. Maak Azure Firewall regel om uitgaande connectiviteit met opgegeven open bare eind punten toe te staan. Het voor beeld laat zien hoe u toegang tot het open bare eind punt van de Azure Management API kunt toestaan.  
    1. Selecteer regels, verzameling van netwerk regels en klik vervolgens op verzameling netwerk regels toevoegen.  
-   1. Naam: **MyOutboundRule** , voer prioriteit in, Selecteer actie **toestaan** .  
-   1. Service: naam **ToAzureAPI** .  Protocol: Selecteer **een** . Bron adres: Voer het bereik in voor uw subnet, waarbij de Vm's en Standard Load Balancer worden geïmplementeerd voor instance: **11.97.0.0/24** . Doel poorten: Voer in <b>*</b> .  
+   1. Naam: **MyOutboundRule**, voer prioriteit in, Selecteer actie **toestaan**.  
+   1. Service: naam **ToAzureAPI**.  Protocol: Selecteer **een**. Bron adres: Voer het bereik in voor uw subnet, waarbij de Vm's en Standard Load Balancer worden geïmplementeerd voor instance: **11.97.0.0/24**. Doel poorten: Voer in <b>*</b> .  
    1. Opslaan
    1. Selecteer overzicht als u nog steeds op de Azure Firewall hebt gepositioneerd. Noteer het privé-IP-adres van de Azure Firewall.  
 5. Route naar Azure Firewall maken  
@@ -164,9 +165,9 @@ De architectuur ziet er als volgt uit:
 
    De firewall regel ziet er als volgt uit: ![ diagram dat laat zien hoe de firewall eruitziet.](./media/high-availability-guide-standard-load-balancer/high-availability-guide-standard-load-balancer-firewall-rule.png)
 
-6. Een door de gebruiker gedefinieerde route maken op basis van het subnet van uw Vm's naar het privé-IP-adres van **MyAzureFirewall** .
+6. Een door de gebruiker gedefinieerde route maken op basis van het subnet van uw Vm's naar het privé-IP-adres van **MyAzureFirewall**.
    1. Wanneer u op de route tabel hebt gepositioneerd, klikt u op routes. Selecteer Toevoegen. 
-   1. Route naam: ToMyAzureFirewall, adres voorvoegsel: **0.0.0.0/0** . Type volgende hop: Selecteer een virtueel apparaat. Adres van volgende hop: Voer het privé-IP-adres in van de firewall die u hebt geconfigureerd: **11.97.1.4** .  
+   1. Route naam: ToMyAzureFirewall, adres voorvoegsel: **0.0.0.0/0**. Type volgende hop: Selecteer een virtueel apparaat. Adres van volgende hop: Voer het privé-IP-adres in van de firewall die u hebt geconfigureerd: **11.97.1.4**.  
    1. Opslaan
 
 ## <a name="using-proxy-for-pacemaker-calls-to-azure-management-api"></a>Proxy gebruiken voor pacemaker-aanroepen naar Azure Management API
@@ -185,7 +186,7 @@ U kunt proxy gebruiken om pacemaker-aanroepen naar de open bare Azure Management
 
 ### <a name="pacemaker-configuration-with-proxy"></a>Pacemaker-configuratie met proxy 
 
-Er zijn veel verschillende proxy opties beschikbaar in de branche. Stapsgewijze instructies voor de proxy-implementatie vallen buiten het bereik van dit document. In het onderstaande voor beeld gaan we ervan uit dat uw proxy reageert op **MyProxyService** en luistert naar poort **MyProxyPort** .  
+Er zijn veel verschillende proxy opties beschikbaar in de branche. Stapsgewijze instructies voor de proxy-implementatie vallen buiten het bereik van dit document. In het onderstaande voor beeld gaan we ervan uit dat uw proxy reageert op **MyProxyService** en luistert naar poort **MyProxyPort**.  
 Voer de volgende stappen uit op alle cluster knooppunten om pacemaker toe te staan om te communiceren met de Azure Management API:  
 
 1. Bewerk het pacemaker-configuratie bestand/etc/sysconfig/pacemaker en voeg de volgende regels toe (alle cluster knooppunten):

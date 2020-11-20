@@ -5,14 +5,14 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: plarsen, logicappspm
 ms.topic: conceptual
-ms.date: 08/23/2018
+ms.date: 11/19/2020
 tags: connectors
-ms.openlocfilehash: 6c9c54450788a89a7b1aadbb0b4682a60619c061
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 765bb66b572f0c046222cfb617fe4caa80925256
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334596"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967398"
 ---
 # <a name="access-and-manage-ibm-db2-resources-by-using-azure-logic-apps"></a>Toegang tot en beheer van IBM DB2-resources met behulp van Azure Logic Apps
 
@@ -28,7 +28,7 @@ De IBM DB2-connector ondersteunt deze IBM DB2-platforms en-versies samen met IBM
 
 | Platform | Versie | 
 |----------|---------|
-| IBM DB2 voor z/O'S | 11,1, 10,1 |
+| IBM DB2 voor z/O'S | 12, 11,1, 10,1 |
 | IBM DB2 voor i | 7,3, 7,2, 7,1 |
 | IBM DB2 voor LUW | 11, 10,5 |
 |||
@@ -64,7 +64,7 @@ In de voor beelden in dit artikel wordt de **terugkeer patroon** trigger gebruik
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps, als deze nog niet is geopend.
 
-1. Kies **nieuwe stap**onder de trigger.
+1. Kies **nieuwe stap** onder de trigger.
 
 1. Voer in het zoekvak ' DB2 ' in als uw filter. Voor dit voor beeld selecteert u onder de lijst acties de volgende actie: **tabellen ophalen (preview)**
 
@@ -78,7 +78,7 @@ In de voor beelden in dit artikel wordt de **terugkeer patroon** trigger gebruik
 
 ## <a name="connect-to-cloud-db2"></a>Verbinding maken met Cloud DB2
 
-Als u de verbinding wilt instellen, geeft u deze verbindings Details op wanneer u hierom wordt gevraagd, kiest u **maken**en slaat u vervolgens uw logische app op:
+Als u de verbinding wilt instellen, geeft u deze verbindings Details op wanneer u hierom wordt gevraagd, kiest u **maken** en slaat u vervolgens uw logische app op:
 
 | Eigenschap | Vereist | Beschrijving |
 |----------|----------|-------------|
@@ -109,7 +109,7 @@ Voordat u een verbinding maakt, moet uw on-premises gegevens gateway al zijn ge�
 | **Verificatie** | Ja | Het verificatie type voor de verbinding, bijvoorbeeld ' Basic ' <p><p>**Opmerking**: Selecteer deze waarde in de lijst, die basis of Windows (Kerberos) omvat. |
 | **Gebruikersnaam** | Ja | Uw gebruikers naam voor de data base <p><p>**Opmerking**: deze waarde is een teken reeks waarvan de lengte is gebaseerd op de specifieke Data Base: <p><p>-DB2 voor z/O'S accepteert een 8-byte teken reeks. <br>-DB2 voor ik accepteert een teken reeks van 10 bytes. <br>-DB2 voor Linux of UNIX accepteert een 8-byte teken reeks. <br>-DB2 voor Windows accepteert een teken reeks van 30 bytes. |
 | **Wachtwoord** | Ja | Uw wacht woord voor de data base |
-| **#B0** | Ja | De naam voor de geïnstalleerde on-premises gegevens gateway <p><p>**Opmerking**: Selecteer deze waarde uit de lijst, die alle geïnstalleerde gegevens gateways binnen uw Azure-abonnement en resource groep bevat. |
+| **Gateway** | Ja | De naam voor de geïnstalleerde on-premises gegevens gateway <p><p>**Opmerking**: Selecteer deze waarde uit de lijst, die alle geïnstalleerde gegevens gateways binnen uw Azure-abonnement en resource groep bevat. |
 ||||
 
 Bijvoorbeeld:
@@ -118,22 +118,22 @@ Bijvoorbeeld:
 
 ### <a name="view-output-tables"></a>Uitvoer tabellen weer geven
 
-Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren**op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
+Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren** op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
 
 1. Selecteer **Overzicht** in het menu van de logische app.
 
-1. Onder **samen vatting**selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
+1. Onder **samen vatting** selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
 
    ![Uitvoeringsgeschiedenis weergeven](./media/connectors-create-api-db2/run-history.png)
 
-1. Onder **Logic app run**kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
+1. Onder **Logic app run** kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
 Vouw de actie **tabellen ophalen** uit.
 
    ![Actie uitvouwen](./media/connectors-create-api-db2/expand-action-step.png)
 
-1. Kies **onbewerkte invoer weer**geven om de invoer weer te geven.
+1. Kies **onbewerkte invoer weer** geven om de invoer weer te geven.
 
-1. Kies **onbewerkte uitvoer weer**geven om de uitvoer weer te geven.
+1. Kies **onbewerkte uitvoer weer** geven om de uitvoer weer te geven.
 
    De uitvoer bevat een lijst met tabellen.
 
@@ -159,22 +159,22 @@ Als u één record in een DB2-database tabel wilt ophalen, gebruikt u de actie *
 
    ![Scherm afbeelding met de actie ' Get Row (preview) ' met de geopende lijst ' tabel naam ' en de waarde ' gebied ' geselecteerd.](./media/connectors-create-api-db2/db2-get-row-action-select-table.png)
 
-1. Wanneer u klaar bent, kiest u **Opslaan**op de werk balk van de ontwerp functie.
+1. Wanneer u klaar bent, kiest u **Opslaan** op de werk balk van de ontwerp functie.
 
 ### <a name="view-output-row"></a>Uitvoer rij weer geven
 
-Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren**op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
+Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren** op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
 
 1. Selecteer **Overzicht** in het menu van de logische app.
 
-1. Onder **samen vatting**selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
+1. Onder **samen vatting** selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
 
-1. Onder **Logic app run**kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
+1. Onder **Logic app run** kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
 Vouw de actie **rij ophalen** uit.
 
-1. Kies **onbewerkte invoer weer**geven om de invoer weer te geven.
+1. Kies **onbewerkte invoer weer** geven om de invoer weer te geven.
 
-1. Kies **onbewerkte uitvoer weer**geven om de uitvoer weer te geven.
+1. Kies **onbewerkte uitvoer weer** geven om de uitvoer weer te geven.
 
    De uitvoer bevat de opgegeven rij.
 
@@ -196,22 +196,22 @@ Als u alle records in een DB2-database tabel wilt ophalen, gebruikt u de actie *
 
 1. Als u een filter of query voor resultaten wilt opgeven, kiest u **Geavanceerde opties weer geven**.
 
-1. Wanneer u klaar bent, kiest u **Opslaan**op de werk balk van de ontwerp functie.
+1. Wanneer u klaar bent, kiest u **Opslaan** op de werk balk van de ontwerp functie.
 
 ### <a name="view-output-rows"></a>Uitvoer rijen weer geven
 
-Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren**op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
+Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren** op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
 
 1. Selecteer **Overzicht** in het menu van de logische app.
 
-1. Onder **samen vatting**selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
+1. Onder **samen vatting** selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
 
-1. Onder **Logic app run**kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
+1. Onder **Logic app run** kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
 Vouw de actie **rijen ophalen** uit.
 
-1. Kies **onbewerkte invoer weer**geven om de invoer weer te geven.
+1. Kies **onbewerkte invoer weer** geven om de invoer weer te geven.
 
-1. Kies **onbewerkte uitvoer weer**geven om de uitvoer weer te geven.
+1. Kies **onbewerkte uitvoer weer** geven om de uitvoer weer te geven.
 
    De uitvoer bevat alle records in de opgegeven tabel.
 
@@ -243,22 +243,22 @@ Als u één record wilt toevoegen aan een tabel met een DB2-Data Base, gebruikt 
 
    ![Scherm opname waarin de Logic Apps Designer wordt weer gegeven met de actie-en voorbeeld waarden van de eigenschap invoegen (preview).](./media/connectors-create-api-db2/db2-insert-row-action-select-table.png)
 
-1. Wanneer u klaar bent, kiest u **Opslaan**op de werk balk van de ontwerp functie.
+1. Wanneer u klaar bent, kiest u **Opslaan** op de werk balk van de ontwerp functie.
 
 ### <a name="view-insert-row-outputs"></a>Uitvoer van rij invoegen weer geven
 
-Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren**op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
+Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren** op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
 
 1. Selecteer **Overzicht** in het menu van de logische app.
 
-1. Onder **samen vatting**selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
+1. Onder **samen vatting** selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
 
-1. Onder **Logic app run**kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
+1. Onder **Logic app run** kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
 Vouw de actie **rij invoegen** uit.
 
-1. Kies **onbewerkte invoer weer**geven om de invoer weer te geven.
+1. Kies **onbewerkte invoer weer** geven om de invoer weer te geven.
 
-1. Kies **onbewerkte uitvoer weer**geven om de uitvoer weer te geven.
+1. Kies **onbewerkte uitvoer weer** geven om de uitvoer weer te geven.
 
    De uitvoer bevat de record die u hebt toegevoegd aan de opgegeven tabel.
 
@@ -291,22 +291,22 @@ Als u één record in een DB2-database tabel wilt bijwerken, gebruikt u de actie
 
    ![Scherm opname waarin de Logic Apps Designer wordt weer gegeven met de actie ' update Row (preview) ', waarbij u een tabel selecteert.](./media/connectors-create-api-db2/db2-update-row-action-select-table.png)
 
-1. Wanneer u klaar bent, kiest u **Opslaan**op de werk balk van de ontwerp functie.
+1. Wanneer u klaar bent, kiest u **Opslaan** op de werk balk van de ontwerp functie.
 
 ### <a name="view-update-row-outputs"></a>Resultaten van een bijgewerkte rij weer geven
 
-Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren**op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
+Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren** op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
 
 1. Selecteer **Overzicht** in het menu van de logische app.
 
-1. Onder **samen vatting**selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
+1. Onder **samen vatting** selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
 
-1. Onder **Logic app run**kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
+1. Onder **Logic app run** kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
 Vouw de actie **rij bijwerken** uit.
 
-1. Kies **onbewerkte invoer weer**geven om de invoer weer te geven.
+1. Kies **onbewerkte invoer weer** geven om de invoer weer te geven.
 
-1. Kies **onbewerkte uitvoer weer**geven om de uitvoer weer te geven.
+1. Kies **onbewerkte uitvoer weer** geven om de uitvoer weer te geven.
 
    De uitvoer bevat het record dat u in de opgegeven tabel hebt bijgewerkt.
 
@@ -336,22 +336,22 @@ Als u één record uit een DB2-database tabel wilt verwijderen, gebruikt u de ac
 
    ![Scherm opname waarin de Logic Apps Designer wordt weer gegeven met de actie ' rij verwijderen (preview) ', waarin u een tabel selecteert die u wilt verwijderen.](./media/connectors-create-api-db2/db2-delete-row-action-select-table.png)
 
-1. Wanneer u klaar bent, kiest u **Opslaan**op de werk balk van de ontwerp functie.
+1. Wanneer u klaar bent, kiest u **Opslaan** op de werk balk van de ontwerp functie.
 
 ### <a name="view-delete-row-outputs"></a>Uitvoer van rij verwijderen weer geven
 
-Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren**op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
+Als u uw logische app hand matig wilt uitvoeren, kiest u **uitvoeren** op de werk balk van de ontwerp functie. Nadat de logische app is uitgevoerd, kunt u de uitvoer van de uitvoering bekijken.
 
 1. Selecteer **Overzicht** in het menu van de logische app.
 
-1. Onder **samen vatting**selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
+1. Onder **samen vatting** selecteert u in de sectie **uitvoerings geschiedenis** de meest recente uitvoering, het eerste item in de lijst.
 
-1. Onder **Logic app run**kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
+1. Onder **Logic app run** kunt u nu de status, invoer en uitvoer voor elke stap in uw logische app bekijken.
 Vouw de actie **rij verwijderen** uit.
 
-1. Kies **onbewerkte invoer weer**geven om de invoer weer te geven.
+1. Kies **onbewerkte invoer weer** geven om de invoer weer te geven.
 
-1. Kies **onbewerkte uitvoer weer**geven om de uitvoer weer te geven.
+1. Kies **onbewerkte uitvoer weer** geven om de uitvoer weer te geven.
 
    In de uitvoer is de record die u hebt verwijderd uit de opgegeven tabel niet meer opgenomen.
 

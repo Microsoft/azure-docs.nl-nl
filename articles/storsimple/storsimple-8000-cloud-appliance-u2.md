@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 219e2b77a0f6f30307c43f006fcdd3828d3c8fbf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d78051c1a5af82a986152c8244d25b68dd65d552
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87021372"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968839"
 ---
 # <a name="deploy-and-manage-a-storsimple-cloud-appliance-in-azure-update-3-and-later"></a>Een StorSimple-cloudapparaat implementeren en beheren in Azure (Update 3 en hoger)
 
@@ -47,7 +47,7 @@ Het StorSimple-cloudapparaat is beschikbaar in twee modellen: de Standard 8010 (
 | **Maximale capaciteit** |30 TB |64 TB |
 | **Azure VM** |Standard_A3 (4 kerngeheugens, 7 GB geheugen)| Standard_DS3 (4 kerngeheugens, 14 GB geheugen)|
 | **Beschikbaarheid in regio’s** |Alle Azure-regio's |Azure-regio's waar ondersteuning wordt geboden voor Premium Storage en Azure-VM’s met DS3<br></br>Gebruik [deze lijst](https://azure.microsoft.com/regions/services/) om te kijken of zowel **Virtuele Machines > DS-serie** als **Opslag > Schijfruimte** beschikbaar is in uw regio. |
-| **Opslag type** |Maakt gebruik van Azure Standard-opslag voor lokale schijven<br></br> Ontdek hoe u [een Standard-opslagaccount maakt](../storage/common/storage-create-storage-account.md) |Maakt gebruik van Azure Premium Storage voor lokale schijven<sup>2</sup> <br></br> |
+| **Opslag type** |Maakt gebruik van Azure Standard-opslag voor lokale schijven<br></br> Ontdek hoe u [een Standard-opslagaccount maakt](../storage/common/storage-account-create.md) |Maakt gebruik van Azure Premium Storage voor lokale schijven<sup>2</sup> <br></br> |
 | **Richtlijnen voor de workload** |Bestanden ophalen uit back-ups op itemniveau |Ontwikkelings- en testscenario’s voor cloudapparaten <br></br>Lage latentie en workloads met hogere prestaties<br></br>Secundair apparaat voor herstel na noodgevallen |
 
 <sup>1</sup> *Voorheen bekend als de 1100*.
@@ -96,7 +96,7 @@ Voordat u het cloudapparaat inricht, moet u de volgende voorbereidingen treffen 
 Breng de volgende updates aan in uw StorSimple-apparaatbeheerservice voordat u een cloudapparaat maakt:
 
 * Voeg [Access Control Records](storsimple-8000-manage-acrs.md) toe voor de virtuele machines die gebruikt gaan worden als hostservers voor uw cloudapparaat.
-* Gebruik een [opslagaccount](storsimple-8000-manage-storage-accounts.md#add-a-storage-account) in dezelfde regio als het cloudapparaat. Als u opslagaccounts in andere regio's gebruikt, kan dat leiden tot slechte prestaties. U kunt met het cloudapparaat een Standard- of Premium-opslagaccount gebruiken. Meer informatie over hoe u een [Standard Storage-account](../storage/common/storage-create-storage-account.md) maakt.
+* Gebruik een [opslagaccount](storsimple-8000-manage-storage-accounts.md#add-a-storage-account) in dezelfde regio als het cloudapparaat. Als u opslagaccounts in andere regio's gebruikt, kan dat leiden tot slechte prestaties. U kunt met het cloudapparaat een Standard- of Premium-opslagaccount gebruiken. Meer informatie over hoe u een [Standard Storage-account](../storage/common/storage-account-create.md) maakt.
 * Gebruik een ander opslagaccount voor het maken van het cloudapparaat dan voor het apparaat dat u gebruikt voor uw gegevens. Als u hetzelfde opslagaccount gebruikt, kan dat leiden tot slechte prestaties.
 
 Zorg ervoor dat u over de volgende informatie beschikt voordat u begint:
@@ -267,7 +267,7 @@ Als u alle kosten wilt stoppen, moet u het cloudapparaat verwijderen. Als u de b
 ## <a name="troubleshoot-internet-connectivity-errors"></a>Problemen met internetverbinding oplossen
 Als er tijdens het maken van een cloudapparaat geen verbinding is met internet, mislukt deze stap. Als u problemen met de internetverbinding wilt oplossen, voert u de volgende stappen uit in de klassieke Azure-portal:
 
-1. [Een virtuele Windows-machine maken in de Azure-portal](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal). Deze virtuele machine moet hetzelfde opslagaccount, VNet en subnet gebruiken als die worden gebruikt door uw cloudapparaat. Als er al een bestaande Windows Server-host in Azure is die hetzelfde opslagaccount, VNet en subnet gebruikt, kunt u deze ook gebruiken om het probleem met de internetverbinding op te lossen.
+1. [Een virtuele Windows-machine maken in de Azure-portal](../virtual-machines/windows/quick-create-portal.md). Deze virtuele machine moet hetzelfde opslagaccount, VNet en subnet gebruiken als die worden gebruikt door uw cloudapparaat. Als er al een bestaande Windows Server-host in Azure is die hetzelfde opslagaccount, VNet en subnet gebruikt, kunt u deze ook gebruiken om het probleem met de internetverbinding op te lossen.
 2. Meld u extern aan bij de virtuele machine die u in de vorige stap hebt gemaakt.
 3. Open een opdrachtvenster in de virtuele machine (Win + R en typ vervolgens `cmd`).
 4. Voer de volgende opdracht uit bij de prompt.

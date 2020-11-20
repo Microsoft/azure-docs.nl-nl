@@ -7,18 +7,19 @@ author: saghorpa
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 89da6935d85628b5ce4ff762ad31d3f280682921
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 7f0782738a8aa57b2bc0b87e1378972e3fa5d31c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424244"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967853"
 ---
 # <a name="disaster-recovery-principles"></a>Principes voor herstel na nood gevallen
 
@@ -77,7 +78,7 @@ Met het operations-team wordt de replicatie relatie tot stand gebracht tussen de
 
 Vervolgens stelt u het back-upschema voor opslag momentopname in, of past u dit toe aan uw RTO en RPO in de nood geval. Als u de Recovery Point Objective wilt minimaliseren, stelt u de volgende replicatie intervallen in de HANA-service voor grote exemplaren in:
 - Voor de volumes die worden gedekt door de gecombineerde moment opname (momentopname type **Hana**), ingesteld op elke 15 minuten repliceren naar de equivalente opslag volume doelen op de site voor nood herstel.
-- Stel voor het back-upvolume van het transactie logboek (type **Logboeken**van moment opnamen) elke 3 minuten repliceren naar de equivalente opslag volume doelen op de site voor nood herstel.
+- Stel voor het back-upvolume van het transactie logboek (type **Logboeken** van moment opnamen) elke 3 minuten repliceren naar de equivalente opslag volume doelen op de site voor nood herstel.
 
 Als u de Recovery Point Objective wilt minimaliseren, stelt u het volgende in:
 - Voer een type **Hana** -opslag momentopname uit (zie stap 7: moment opnamen uitvoeren) om de 30 minuten tot 1 uur.

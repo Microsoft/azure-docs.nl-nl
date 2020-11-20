@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 10/19/2020
+ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: 056009c34aec97a8c5c45aea4b93ba41977fa7a6
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 31cba884cff490d43341a4c52f24c32b1e253e42
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94518189"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967326"
 ---
 # <a name="migrate-to-version-3x-of-the-text-analytics-api"></a>Migreren naar versie 3. x van de Text Analytics-API
 
 [!INCLUDE [v3 region availability](includes/v3-region-availability.md)]
 
-Als u versie 2,1 van de Text Analytics-API gebruikt, helpt dit artikel u bij het upgraden van uw toepassing tot het gebruik van versie 3. x. Versie 3,0 is algemeen beschikbaar en introduceert nieuwe functies zoals uitgebreide [entity Recognition (ner)](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features) en [model versie beheer](concepts/model-versioning.md). Er is ook een preview-versie van v 3.1 (v 3.1-Preview. x) beschikbaar, waarmee u functies zoals [opinie Mining](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features)kunt toevoegen. De modellen die in v2 worden gebruikt, ontvangen geen toekomstige updates. 
+Als u versie 2,1 van de Text Analytics-API gebruikt, helpt dit artikel u bij het upgraden van uw toepassing tot het gebruik van versie 3. x. Versie 3,0 is algemeen beschikbaar en introduceert nieuwe functies zoals uitgebreide [entity Recognition (ner)](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-features-and-versions) en [model versie beheer](concepts/model-versioning.md). Er is ook een preview-versie van v 3.1 (v 3.1-Preview. x) beschikbaar, waarmee u functies zoals [opinie Mining](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features)kunt toevoegen. De modellen die in v2 worden gebruikt, ontvangen geen toekomstige updates. 
 
 #### <a name="sentiment-analysis"></a>[Sentimentanalyse](#tab/sentiment-analysis)
 
@@ -38,7 +38,7 @@ Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar 
 Zie de referentie documentatie voor voor beelden van het JSON-antwoord.
 * [Versie 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9)
 * [Versie 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Sentiment) 
-* [Versie 3.1-preview](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-2/operations/Sentiment)
+* [Versie 3.1-preview](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Sentiment)
 
 ### <a name="client-libraries"></a>Clientbibliotheken
 
@@ -70,7 +70,7 @@ U moet uw toepassing ook bijwerken om de [entiteits categorieën](named-entity-t
 Zie de referentie documentatie voor voor beelden van het JSON-antwoord.
 * [Versie 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 * [Versie 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesRecognitionGeneral) 
-* [Versie 3.1-preview](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-2/operations/EntitiesRecognitionGeneral)
+* [Versie 3.1-preview](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/EntitiesRecognitionGeneral)
 
 ### <a name="client-libraries"></a>Clientbibliotheken
 
@@ -92,7 +92,7 @@ Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar 
 Zie de referentie documentatie voor voor beelden van het JSON-antwoord.
 * [Versie 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7)
 * [Versie 3.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages) 
-* [Versie 3,1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-2/operations/Languages)
+* [Versie 3,1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Languages)
 
 ### <a name="client-libraries"></a>Clientbibliotheken
 

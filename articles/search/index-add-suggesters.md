@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/19/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e90c1d1cfa02f63a2b5115124dee2a9da68e2f3f
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 9122d6716aa94a7e0164c9c7774c7c8d85be814a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917270"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968006"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Een suggestie maken om automatisch aanvullen en voorgestelde resultaten in een query in te scha kelen
 
@@ -40,9 +40,11 @@ Een suggestie is een interne gegevens structuur die ondersteuning biedt voor zoe
 
 Als u een suggestie wilt maken, voegt u er een toe aan een [index definitie](/rest/api/searchservice/create-index). Een suggestie haalt een naam en een verzameling velden op waarvoor de typeahead-ervaring is ingeschakeld. en [Stel elke eigenschap](#property-reference)in. Het beste moment om een suggestie te maken, is wanneer u ook het veld definieert dat deze gebruikt.
 
-+ Alleen teken reeks velden gebruiken
++ Gebruik alleen teken reeks velden.
 
-+ Gebruik de standaard standaard-lucene Analyzer ( `"analyzer": null` ) of een [taal analyse](index-add-language-analyzers.md) (bijvoorbeeld `"analyzer": "en.Microsoft"` ) in het veld
++ Als het teken reeks veld deel uitmaakt van een complex type (bijvoorbeeld een veld plaats in adres), neemt u het bovenliggende item op in het veld: `"Address/City"` (rest en C# en python) of `["Address"]["City"]` (Java script).
+
++ Gebruik de standaard standaard-lucene Analyzer ( `"analyzer": null` ) of een [taal analyse](index-add-language-analyzers.md) (bijvoorbeeld `"analyzer": "en.Microsoft"` ) in het veld.
 
 Als u probeert een suggestie te maken met behulp van bestaande velden, wordt deze niet door de API toegestaan. Voor voegsels worden gegenereerd tijdens het indexeren, wanneer gedeeltelijke termen in twee of meer teken combinaties worden getokend op basis van hele voor waarden. Gezien dat bestaande velden al zijn getokend, moet u de index opnieuw samen stellen als u deze wilt toevoegen aan een suggestie. Zie [een Azure Cognitive search-index opnieuw samen stellen](search-howto-reindex.md)voor meer informatie.
 

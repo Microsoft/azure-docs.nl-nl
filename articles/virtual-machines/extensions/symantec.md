@@ -4,16 +4,17 @@ description: Meer informatie over het installeren en configureren van de Symante
 author: roiyz
 tags: azure-service-management
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 03/31/2017
 ms.author: akjosh
-ms.openlocfilehash: a89ec99af02b32d452fba1dffb0387ae6013a7c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e001c85dd960e9d60ff321cfecc8bf8b80de087c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87292422"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967938"
 ---
 # <a name="how-to-install-and-configure-symantec-endpoint-protection-on-a-windows-vm"></a>Symantec-Endpoint Protection installeren en configureren op een Windows-VM
 [!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
@@ -42,7 +43,7 @@ $vm = Get-AzureVM -ServiceName $CSName -Name $VMName
 write-host $vm.VM.ProvisionGuestAgent
 ```
 
-Als de opdracht **Write-host** de **waarde True**weergeeft, wordt de VM-agent geïnstalleerd. Als deze **Onwaar**wordt weer gegeven, raadpleegt u de instructies en een koppeling naar de down load in de Azure blog post [VM-agent en-extensies-deel 2][Agent].
+Als de opdracht **Write-host** de **waarde True** weergeeft, wordt de VM-agent geïnstalleerd. Als deze **Onwaar** wordt weer gegeven, raadpleegt u de instructies en een koppeling naar de down load in de Azure blog post [VM-agent en-extensies-deel 2][Agent].
 
 Als de VM-agent is geïnstalleerd, voert u deze opdrachten uit om de Symantec Endpoint Protection-agent te installeren.
 
@@ -56,10 +57,10 @@ Set-AzureVMExtension -Publisher Symantec –Version $Agent.Version -ExtensionNam
 U kunt als volgt controleren of de Symantec-beveiligings uitbreiding is geïnstalleerd en up-to-date is:
 
 1. Meld u aan bij de virtuele machine. Zie [Aanmelden bij een virtuele machine met Windows Server][Logon]voor instructies.
-2. Klik voor Windows Server 2008 R2 op **Start > Symantec Endpoint Protection**. Voor Windows Server 2012 of Windows Server 2012 R2 typt u **Symantec**in het Start scherm en klikt u vervolgens op **Symantec Endpoint Protection**.
+2. Klik voor Windows Server 2008 R2 op **Start > Symantec Endpoint Protection**. Voor Windows Server 2012 of Windows Server 2012 R2 typt u **Symantec** in het Start scherm en klikt u vervolgens op **Symantec Endpoint Protection**.
 3. Op het tabblad **status** van het venster **status-Symantec Endpoint Protection** past u updates of opnieuw opstarten toe, indien nodig.
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 [Aanmelden bij een virtuele machine met Windows Server][Logon]
 
 [Azure VM-extensies en-functies][Ext]

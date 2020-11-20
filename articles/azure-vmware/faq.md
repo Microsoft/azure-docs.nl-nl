@@ -2,18 +2,18 @@
 title: Veelgestelde vragen
 description: Hier vindt u antwoorden op enkele veelgestelde vragen over de Azure VMware-oplossing.
 ms.topic: conceptual
-ms.date: 11/12/2020
+ms.date: 11/19/2020
 ms.author: dikamath
-ms.openlocfilehash: c9a8b5f9e02cc76789755bf81d309826de1459c5
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 0bc3e0ab5b3017c2d051113a57d79214ffce0836
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920590"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967343"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Veelgestelde vragen over de Azure VMware-oplossing
 
-Antwoorden op veelgestelde vragen over de Azure VMware-oplossing.
+In dit artikel vindt u antwoorden op veelgestelde vragen over de Azure VMware-oplossing.
 
 ## <a name="general"></a>Algemeen
 
@@ -33,7 +33,7 @@ Alle Azure-Services zijn beschikbaar voor klanten met Azure VMware-oplossingen. 
 
 #### <a name="do-i-use-the-same-tools-that-i-use-now-to-manage-private-cloud-resources"></a>Gebruik ik dezelfde hulp middelen die ik nu gebruik voor het beheren van persoonlijke Cloud bronnen?
 
-Ja. De Azure Portal wordt gebruikt voor implementatie en een aantal beheer bewerkingen. vCenter en NSX Manager worden gebruikt voor het beheren van vSphere-en NSX-T-resources.
+Ja. De Azure Portal wordt gebruikt voor implementatie en verschillende beheer bewerkingen. vCenter en NSX Manager worden gebruikt voor het beheren van vSphere-en NSX-T-resources.
 
 #### <a name="can-i-manage-a-private-cloud-with-my-on-premises-vcenter"></a>Kan ik een privécloud beheren met mijn on-premises vCenter?
 
@@ -65,7 +65,7 @@ Met de nieuwe Azure VMware-oplossing beschikt micro soft en VMware over een dire
 Ja, op voor waarde dat het systeem waarop het is geïnstalleerd, toegang kan krijgen tot de privécloud en de open bare DNS gebruikt om ESXi-hostnamen op te lossen.
 
 #### <a name="are-there-special-instructions-for-installing-and-using-vmrc-with-azure-vmware-solution-vms"></a>Zijn er speciale instructies voor het installeren en gebruiken van VMRC met virtuele machines met Azure VMware-oplossingen?
-Nee, gebruik de [instructies van VMware](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-89E7E8F0-DB2B-437F-8F70-BA34C505053F.html) en voer de vereiste VM-vereisten in deze instructies uit. 
+Nee. Gebruik de [instructies van VMware](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-89E7E8F0-DB2B-437F-8F70-BA34C505053F.html) om te voldoen aan de vereisten van de virtuele machine die in deze instructies zijn opgegeven. 
 
 #### <a name="is-vmware-hcx-supported-on-vpns"></a>Worden VMware-HCX ondersteund op Vpn's?
 Nee, vanwege de vereisten voor band breedte en latentie.
@@ -74,7 +74,7 @@ Nee, vanwege de vereisten voor band breedte en latentie.
 Azure Bastion is de aanbevolen service om verbinding te maken met het Jump box om te voor komen dat de Azure VMware-oplossing aan Internet wordt blootgesteld. U kunt Azure Bastion niet gebruiken om verbinding te maken met virtuele machines van Azure VMware-oplossingen omdat ze geen Azure IaaS-objecten zijn.
 
 #### <a name="can-azure-load-balancer-internal-be-used-for-azure-vmware-solution-vms"></a>Kan Azure Load Balancer intern worden gebruikt voor virtuele machines met Azure VMware-oplossingen?
-Nee. Azure Load Balancer intern ondersteunt alleen virtuele Azure IaaS-machines. Azure Load Balancer biedt geen ondersteuning voor back-endservers op basis van IP-adressen; alleen Azure-Vm's of objecten voor virtuele-machine schaal sets waarin Azure VMware-oplossings-Vm's geen Azure-objecten zijn.
+Nee. Azure Load Balancer intern: ondersteunt alleen virtuele Azure IaaS-machines. Azure Load Balancer biedt geen ondersteuning voor back-endservers op basis van IP-adressen; alleen Azure-Vm's of objecten voor virtuele-machine schaal sets waarin Azure VMware-oplossings-Vm's geen Azure-objecten zijn.
 
 #### <a name="can-an-existing-expressroute-gateway-be-used-to-connect-to-azure-vmware-solution"></a>Kan een bestaande ExpressRoute-gateway worden gebruikt om verbinding te maken met de Azure VMware-oplossing?
 Ja, u kunt een bestaande ExpressRoute-gateway gebruiken om verbinding te maken met de Azure VMware-oplossing zolang deze de limiet van vier ExpressRoute-circuits per virtueel netwerk niet overschrijdt.  Om toegang te krijgen tot Azure VMware Solution on-premises via ExpressRoute, moet u beschikken over ExpressRoute Global Reach, omdat de ExpressRoute-gateway geen transitieve routering biedt tussen de verbonden circuits.
@@ -105,7 +105,7 @@ Elke ESXi-host in de Azure VMware-oplossing is geconfigureerd met 4 25-Gbps Nic'
 
 Ja, alle vSAN-gegevens worden standaard versleuteld met sleutels die zijn opgeslagen in Azure Key Vault.
 
-#### <a name="you-document-that-commvault-veritas-and-veeam-have-extended-their-backup-solutions-to-work-with-azure-vmware-solution-what-about-other-independent-software-vendor-isv-backup-solutions"></a>U documenteert dat CommVault, Veritas en Veeam hun back-upoplossingen hebben uitgebreid om met de Azure VMware-oplossing te werken. Hoe zit het met andere back-upoplossingen voor onafhankelijke software leveranciers (ISV)?
+#### <a name="you-document-that-commvault-veritas-and-veeam-have-extended-their-backup-solutions-to-work-with-azure-vmware-solution-what-about-other-independent-software-vendors-isvs-backup-solutions"></a>U documenteert dat CommVault, Veritas en Veeam hun back-upoplossingen hebben uitgebreid om met de Azure VMware-oplossing te werken. Wat zijn de back-upoplossingen van andere onafhankelijke software leveranciers (Isv's)?
 
 Net als we weten, moeten alle back-upoplossingen die gebruikmaken van VMware VADP met de HotAdd-transport modus, direct worden gebruikt in het vak op de Azure VMware-oplossing.
 
@@ -147,7 +147,7 @@ Nee. High-end ESXi-hosts zijn gereserveerd voor gebruik in productie clusters.
 
 #### <a name="what-versions-of-vmware-software-is-used-in-private-clouds"></a>Welke versies van VMware-software worden gebruikt in persoonlijke Clouds?
 
-Persoonlijke Clouds gebruiken vSphere 6,7, vSAN 6,7, VMware HCX en versie 2,5 van NSX-T.  
+Private clouds gebruiken vSphere 6,7 U3, vSAN 6,7 U3, VMware HCX en NSX-T 2,5.  Zie voor meer informatie [de vereisten voor de VMware-software versie](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-54E5293B-8707-4D29-BFE8-EE63539CC49B.html).
 
 #### <a name="do-private-clouds-use-vmware-nsx"></a>Gebruiken persoonlijke Clouds VMware NSX?
 
@@ -163,7 +163,7 @@ Nee, u hoeft NSX niet on-premises te gebruiken.
 
 #### <a name="what-is-the-upgrade-and-update-schedule-for-vmware-software-in-a-private-cloud"></a>Wat is de upgrade en update planning voor VMware-software in een privécloud?
 
-De software bundel upgrades van de privécloud worden uitgevoerd om de software binnen één versie van de meest recente software bundel versie van VMware te blijven gebruiken. De software versies van de privécloud kunnen afwijken van de meest recente versies van de afzonderlijke software onderdelen (ESXi, NSX-T, vCenter, vSAN).
+Met de software bundel upgrades van de privécloud wordt de software binnen één versie van de meest recente software bundel versie van VMware bewaard. De software versies van de privécloud kunnen afwijken van de meest recente versies van de afzonderlijke software onderdelen (ESXi, NSX-T, vCenter, vSAN).
 
 #### <a name="how-often-will-the-private-cloud-software-stack-be-updated"></a>Hoe vaak wordt de software stack voor de privécloud bijgewerkt?
 
@@ -184,7 +184,7 @@ U kunt op een van de volgende twee manieren verbinding maken met de service:
 
 #### <a name="how-do-i-connect-a-workload-vm-to-the-internet-or-an-azure-service-endpoint"></a>Hoe kan ik een werk belasting-VM met internet of een Azure service-eind punt verbinden?
 
-Schakel in het Azure Portal Internet connectiviteit in voor een privécloud. Maak met NSX-T-Manager een NSX-T T1-router en een logische switch. Vervolgens gebruikt u vCenter om een virtuele machine te implementeren op het netwerk segment dat is gedefinieerd door de logische switch. Die VM heeft netwerk toegang tot het internet en naar Azure-Services.
+Schakel in het Azure Portal Internet connectiviteit in voor een privécloud. Maak met NSX-T-Manager een NSX-T T1-router en een logische switch. Vervolgens gebruikt u vCenter om een virtuele machine te implementeren op het netwerk segment dat is gedefinieerd door de logische switch. Deze VM heeft netwerk toegang tot het internet en Azure-Services.
 
 #### <a name="do-i-need-to-restrict-access-from-the-internet-to-vms-on-logical-networks-in-a-private-cloud"></a>Moet ik de toegang van Internet tot Vm's op logische netwerken in een privécloud beperken?
 
@@ -237,7 +237,7 @@ Ja, klanten kunnen Azure VMware-oplossing implementeren binnen een Azure-abonnem
 
 Micro soft biedt ondersteuning voor de Azure VMware-oplossing. U kunt een [ondersteunings aanvraag](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)indienen. 
 
-Voor CSP-Managed abonnementen wordt het eerste ondersteunings niveau geboden door de oplossings provider op dezelfde manier als CSP voor andere Azure-Services.
+Voor door CSP beheerde abonnementen biedt het eerste ondersteunings niveau de oplossings provider op dezelfde manier als CSP voor andere Azure-Services.
 
 #### <a name="what-accounts-do-i-need-to-create-an-azure-vmware-solution-private-cloud"></a>Welke accounts heb ik nodig om een privécloud van Azure VMware-oplossing te maken?
 
@@ -245,11 +245,11 @@ U hebt een Azure-account in een Azure-abonnement nodig.
 
 #### <a name="are-red-hat-solutions-supported-on-azure-vmware-solution"></a>Worden Red Hat-oplossingen ondersteund op de Azure VMware-oplossing?
 
-Micro soft en Red Hat delen een geïntegreerd ondersteunings team dat een uniform contact punt biedt voor Red Hat-ecosystemen die worden uitgevoerd op het Azure-platform.  Net als andere Azure-platform services die met Red Hat Enterprise Linux werken, valt de Azure VMware-oplossing onder de Cloud toegang en het geïntegreerde ondersteunings paraplu, en wordt Red Hat Enterprise Linux ondersteund voor het uitvoeren van een Azure VMware-oplossing in Azure.
+Micro soft en Red Hat delen een geïntegreerd ondersteunings team met co-locatie dat een uniform contact punt biedt voor Red Hat-ecosystemen die worden uitgevoerd op het Azure-platform.  Net als andere Azure-platform services die met Red Hat Enterprise Linux werken, valt de Azure VMware-oplossing onder de Cloud toegang en het geïntegreerde ondersteunings paraplu. Red Hat Enterprise Linux wordt ondersteund voor het uitvoeren van een Azure VMware-oplossing in Azure.
 
 #### <a name="is-vmware-hcx-enterprise-available-and-if-so-how-much-does-it-cost"></a>Is VMware HCX Enter prise beschikbaar en zo ja, hoeveel kost het?
 
-VMware HCX Enter prise is beschikbaar met de Azure VMware-oplossing als een *Preview* -functie/-service. Hoewel VMware HCX Enter prise voor Azure VMware-oplossing in preview is, is het een gratis functie/service en onderhevig aan de voor waarden van de preview-versie van de service. Zodra de VMware HCX Enter prise-service GA, ontvangt u een melding van 30 dagen waarin u wordt overgeschakeld naar de facturering. U kunt deze uitschakelen of de service afmelden.
+VMware HCX Enter prise is beschikbaar met de Azure VMware-oplossing als een *Preview* -functie/-service. Hoewel VMware HCX Enter prise voor Azure VMware-oplossing in preview is, is het een gratis functie/service en onderhevig aan de voor waarden van de preview-versie van de service. Zodra de VMware HCX Enter prise-service GA, ontvangt u een melding van 30 dagen waarin u wordt overgeschakeld naar de facturering. U kunt deze optie uitschakelen of opt-out van de service.
 
 #### <a name="how-do-i-request-a-host-quota-increase-for-azure-vmware-solution"></a>Hoe kan ik een toename voor een quotum van een host voor een Azure VMware-oplossing aanvragen?
 
@@ -260,7 +260,7 @@ Gebruik de volgende procedure voor EA-abonnementen. Eerst hebt u het volgende no
 * Een [Azure Enterprise Agreement (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft.
 * Een Azure-account in een Azure-abonnement.
 
-Voordat u uw Azure VMware-oplossings resource maakt, dient u een ondersteunings ticket in om uw knoop punten toe te wijzen. Het duurt Maxi maal vijf werk dagen om uw aanvraag te bevestigen en uw knoop punten toe te wijzen. Als u een bestaande privécloud van Azure VMware Solution hebt en u meer knooppunten wilt toewijzen, dan volgt u hetzelfde proces.
+Voordat u uw Azure VMware-oplossings resource kunt maken, dient u een ondersteunings ticket in om uw hosts te laten toewijzen. Het duurt Maxi maal vijf werk dagen om te bevestigen en aan uw aanvraag te voldoen. Als u een bestaande privécloud van Azure VMware Solution hebt en u meer hosts wilt toewijzen, dan volgt u hetzelfde proces.
 
 1. Maak in uw Azure Portal onder **Help en ondersteuning** een **[nieuwe ondersteunings aanvraag](https://rc.portal.azure.com/#create/Microsoft.Support)** en geef de volgende informatie op voor het ticket:
    - **Type probleem:** Documentatie
@@ -275,46 +275,47 @@ Voordat u uw Azure VMware-oplossings resource maakt, dient u een ondersteunings 
 
    - HAALBAARHEIDs-of productie 
    - Naam regio
-   - Aantal knooppunten
+   - Aantal hosts
    - Eventuele andere gegevens
 
    >[!NOTE]
-   >De Azure VMware-oplossing raadt ten minste drie knoop punten aan om uw privécloud te maken en voor redundantie-N + 1-knoop punten. 
+   >De Azure VMware-oplossing raadt ten minste drie hosts aan om uw privécloud uit te breiden en voor redundantie-N + 1-hosts. 
 
 1. Selecteer **beoordeling + maken** om de aanvraag in te dienen.
 
    Het duurt Maxi maal vijf werk dagen voor een ondersteunings medewerker om uw aanvraag te bevestigen.
 
    >[!IMPORTANT] 
-   >Als u al een bestaande Azure VMware-oplossing hebt en u extra knoop punten aanvraagt, moeten we vijf werk dagen hebben om de knoop punten toe te wijzen. 
+   >Als u al een bestaande Azure VMware-oplossing hebt en aanvullende hosts hebt aangevraagd, moeten we vijf werk dagen hebben om de hosts toe te wijzen. 
 
-1. Voordat u uw knoop punten kunt inrichten, moet u ervoor zorgen dat u de resource provider **micro soft. AVS** registreert in de Azure Portal.  
+1. Voordat u uw hosts kunt inrichten, moet u ervoor zorgen dat u de resource provider **micro soft. AVS** registreert in de Azure Portal.  
 
    ```azurecli-interactive
    az provider register -n Microsoft.AVS --subscription <your subscription ID>
+   ```
 
-   For additional ways to register the resource provider, see [Azure resource providers and types](../azure-resource-manager/management/resource-providers-and-types.md). 
+   Zie [Azure-resourceproviders en -typen](../azure-resource-manager/management/resource-providers-and-types.md) voor meer manieren om de Azure Synapse-resourceprovider te registeren. 
 
-#### Are Reserved Instances available for purchasing through the Cloud Solution Provider (CSP) program?
+#### <a name="are-reserved-instances-available-for-purchasing-through-the-cloud-solution-provider-csp-program"></a>Kunnen gereserveerde instanties worden aangeschaft via het programma van de Cloud Solution Provider (CSP)?
 
-Yes. CSP can purchase reserved instances for their customers. For more information, see the [Save costs with a reserved instance](reserved-instance.md) article. 
+Ja. CSP kan gereserveerde instanties voor hun klanten kopen. Zie het artikel [kosten besparen met een gereserveerde instantie](reserved-instance.md) voor meer informatie. 
 
-#### Does Azure VMware Solution offer multi-tenancy for hosting CSP partners?
+#### <a name="does-azure-vmware-solution-offer-multi-tenancy-for-hosting-csp-partners"></a>Biedt de Azure VMware-oplossing een multitenancy voor het hosten van CSP-partners?
 
-No. Currently Azure VMware Solution doesn't offer multi-tenancy.
+Nee. Momenteel biedt de Azure VMware-oplossing geen multitenancy.
 
-#### Will traffic between on-premises and Azure VMware Solution over ExpressRoute incur any outbound data transfer charge in the metered data plan?
+#### <a name="will-traffic-between-on-premises-and-azure-vmware-solution-over-expressroute-incur-any-outbound-data-transfer-charge-in-the-metered-data-plan"></a>Maakt het verkeer tussen on-premises en Azure VMware-oplossing via ExpressRoute kosten voor uitgaande gegevens overdracht plaats in het data-abonnement met data limiet?
 
-Traffic in the Azure VMware Solution ExpressRoute circuit isn't metered in any way. Traffic from your ExpressRoute circuit connecting to your on-premises to Azure is charged according to ExpressRoute pricing plans.
+Verkeer in het ExpressRoute-circuit van de Azure VMware-oplossing wordt niet op enigerlei wijze gemeten. Verkeer van uw ExpressRoute-circuit dat verbinding maakt met uw on-premises naar Azure, wordt in rekening gebracht op basis van de ExpressRoute-prijs plannen.
 
 
-## Customer communication
+## <a name="customer-communication"></a>Communicatie van klanten
 
-#### How can I receive an alert when Azure sends service health notifications to my Azure subscription?
+#### <a name="how-can-i-receive-an-alert-when-azure-sends-service-health-notifications-to-my-azure-subscription"></a>Hoe kan ik een waarschuwing ontvangen wanneer Azure service status meldingen verzendt naar mijn Azure-abonnement?
 
-Service issues, planned maintenance, health advisories, security advisories notifications are published through **Service Health** in the Azure portal.  You can take timely actions when you set up activity log alerts for these notifications. For more information, see [Create service health alerts using the Azure portal](../service-health/alerts-activity-log-service-notifications-portal.md#create-service-health-alert-using-azure-portal).
+Problemen met de service, gepland onderhoud, status adviezen, meldingen van beveiligings adviezen worden gepubliceerd via **service Health** in de Azure Portal.  U kunt tijdig acties ondernemen wanneer u waarschuwingen voor activiteiten logboeken instelt voor deze meldingen. Zie [service Health Alerts maken met behulp van de Azure Portal](../service-health/alerts-activity-log-service-notifications-portal.md#create-service-health-alert-using-azure-portal)voor meer informatie.
 
-:::image type="content" source="media/service-health.png" alt-text="Screenshot of Service Health notifications":::
+:::image type="content" source="media/service-health.png" alt-text="Scherm opname van Service Health meldingen":::
 
 
 

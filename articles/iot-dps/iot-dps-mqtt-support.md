@@ -10,12 +10,12 @@ ms.author: ravokkar
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 7683f5d60c5d788707e2f89774cee42e7820db87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a7ec2f4f8fdf631a6bc5096296275291ec41751
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87924203"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967122"
 ---
 # <a name="communicate-with-your-dps-using-the-mqtt-protocol"></a>Communiceren met uw DPS met het MQTT-Protocol
 
@@ -29,22 +29,22 @@ DPS is geen volledig functionele MQTT-Broker en biedt geen ondersteuning voor al
 Alle communicatie met DPS moet worden beveiligd met behulp van TLS/SSL. Daarom biedt DPS geen ondersteuning voor niet-beveiligde verbindingen via poort 1883.
 
  > [!NOTE] 
- > DPS biedt momenteel geen ondersteuning voor apparaten met behulp van TPM- [Attestation-mechanismen](https://docs.microsoft.com/azure/iot-dps/concepts-device#attestation-mechanism) via het MQTT-protocol.
+ > DPS biedt momenteel geen ondersteuning voor apparaten met behulp van TPM- [Attestation-mechanismen](./concepts-service.md#attestation-mechanism) via het MQTT-protocol.
 
 ## <a name="connecting-to-dps"></a>Verbinding maken met DPS
 
 Een apparaat kan het MQTT-protocol gebruiken om verbinding te maken met een DPS met behulp van een van de volgende opties.
 
-* Bibliotheken in de [Azure IOT Provisioning sdk's](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks#microsoft-azure-provisioning-sdks).
+* Bibliotheken in de [Azure IOT Provisioning sdk's](../iot-hub/iot-hub-devguide-sdks.md#microsoft-azure-provisioning-sdks).
 * Het MQTT-protocol direct.
 
 ## <a name="using-the-mqtt-protocol-directly-as-a-device"></a>Het MQTT-protocol direct gebruiken (als een apparaat)
 
 Als een apparaat de Sdk's van het apparaat niet kan gebruiken, kan het nog steeds verbinding maken met de eind punten van het open bare apparaat met behulp van het MQTT-protocol op poort 8883. In het **Connect** -pakket moet het apparaat de volgende waarden gebruiken:
 
-* Gebruik **registratie**voor het veld **ClientId** .
+* Gebruik **registratie** voor het veld **ClientId** .
 
-* Voor het veld **username** gebruikt u `{idScope}/registrations/{registration_id}/api-version=2019-03-31` , waarbij `{idScope}` de [idScope](https://docs.microsoft.com/azure/iot-dps/concepts-device#id-scope) van de DPS is.
+* Voor het veld **username** gebruikt u `{idScope}/registrations/{registration_id}/api-version=2019-03-31` , waarbij `{idScope}` de [idScope](./concepts-service.md#id-scope) van de DPS is.
 
 * Gebruik voor het **wachtwoord** veld een SAS-token. De indeling van de SAS-token is hetzelfde als voor de HTTPS-en AMQP-protocollen:
 
@@ -70,8 +70,8 @@ Als u het MQTT-protocol direct wilt gebruiken, *moet* de client verbinding maken
 
 Als u een apparaat wilt registreren via DPS, moet een apparaat zich abonneren met `$dps/registrations/res/#` als een **onderwerps filter**. Het Joker teken op meerdere niveaus `#` in het onderwerps filter wordt alleen gebruikt om het apparaat in staat te stellen extra eigenschappen in de onderwerpnaam te ontvangen. DPS staat het gebruik van de of- `#` `?` joker tekens voor het filteren van subonderwerpen niet toe. Omdat DPS geen algemene pub-berichten Broker is, worden alleen de gedocumenteerde onderwerps namen en onderwerps filters ondersteund.
 
-Het apparaat moet een REGI ster-bericht publiceren naar DPS met `$dps/registrations/PUT/iotdps-register/?$rid={request_id}` als **onderwerpnaam**. De payload moet het [apparaatregistratie](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice#deviceregistration) -object in JSON-indeling bevatten.
-In een geslaagd scenario krijgt het apparaat een antwoord op de `$dps/registrations/res/202/?$rid={request_id}&retry-after=x` onderwerpnaam waarbij x de waarde voor opnieuw proberen (in seconden) is. De nettolading van het antwoord bevat het object [RegistrationOperationStatus](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice#registrationoperationstatus) in JSON-indeling.
+Het apparaat moet een REGI ster-bericht publiceren naar DPS met `$dps/registrations/PUT/iotdps-register/?$rid={request_id}` als **onderwerpnaam**. De payload moet het [apparaatregistratie](/rest/api/iot-dps/runtimeregistration/registerdevice#deviceregistration) -object in JSON-indeling bevatten.
+In een geslaagd scenario krijgt het apparaat een antwoord op de `$dps/registrations/res/202/?$rid={request_id}&retry-after=x` onderwerpnaam waarbij x de waarde voor opnieuw proberen (in seconden) is. De nettolading van het antwoord bevat het object [RegistrationOperationStatus](/rest/api/iot-dps/runtimeregistration/registerdevice#registrationoperationstatus) in JSON-indeling.
 
 ## <a name="polling-for-registration-operation-status"></a>Polling voor de status van de registratie bewerking
 

@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: daf54b64e33b83b909fe91455cee2f5c1ec27d3d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c288f59b1cb9a85ed4bc978d1c3fba18ba30b572
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91960317"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968754"
 ---
 # <a name="contact-microsoft-support"></a>Neem contact op met Microsoft Ondersteuning
 
@@ -21,7 +21,7 @@ De StorSimple-Apparaatbeheer biedt de mogelijkheid om **een nieuwe ondersteuning
 * Een ondersteunings aanvraag levenscyclus beheren vanuit de portal.
 * Een ondersteunings sessie starten in de Windows Power shell-interface van uw StorSimple-apparaat.
 
-Bekijk de [StorSimple 8000-serie ondersteuning voor sla's en informatie](https://msdn.microsoft.com/library/mt433077.aspx) voordat u een ondersteuningsaanvraag maakt.
+Bekijk de [StorSimple 8000-serie ondersteuning voor sla's en informatie](./storsimple-8000-support-options.md) voordat u een ondersteuningsaanvraag maakt.
 
 ## <a name="create-a-support-request"></a>Een ondersteuningsaanvraag maken
 
@@ -47,7 +47,7 @@ Afhankelijk van uw [ondersteunings plan](https://azure.microsoft.com/support/pla
     2. Geef op of het probleem betrekking heeft op het apparaat of de StorSimple-Apparaatbeheer service.
     3. Kies een **categorie** voor dit probleem en geef meer **informatie** over het probleem.
     4. Geef de begin datum en-tijd op voor het probleem.
-    5. Klik in het **bestand uploaden**op het mappictogram om naar uw ondersteunings pakket te bladeren.
+    5. Klik in het **bestand uploaden** op het mappictogram om naar uw ondersteunings pakket te bladeren.
     6. Controleer de **Diagnostische gegevens voor delen**.
     7. Klik op **Volgende**.
 
@@ -55,7 +55,7 @@ Afhankelijk van uw [ondersteunings plan](https://azure.microsoft.com/support/pla
 
 4. Klik op de Blade **nieuwe ondersteunings aanvraag** op **stap 3 contact gegevens**. Voer de volgende stappen uit op de Blade **contact gegevens** :
 
-   1. Geef in de **contact opties**uw favoriete contact wijze op (telefoon of e-mail) en de taal. De reactie tijd wordt automatisch geselecteerd op basis van uw abonnement.
+   1. Geef in de **contact opties** uw favoriete contact wijze op (telefoon of e-mail) en de taal. De reactie tijd wordt automatisch geselecteerd op basis van uw abonnement.
    2. Geef in de contact gegevens uw naam, e-mail adres, optionele contact persoon, land/regio. Schakel het selectie vakje **wijzigingen in contact persoon opslaan voor toekomstige ondersteunings aanvragen** in.
    3. Klik op **Create**.
    

@@ -10,16 +10,16 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: f247465c7e2c0a212df2821ebc7165d3ee5b15f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ddaed181d017e3167694a9d7edf53c7c09fd5e9
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80876654"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968516"
 ---
 # <a name="deploy-and-run-container-on-azure-container-instance"></a>Container implementeren en uitvoeren in Azure Container Instance
 
-Met de volgende stappen kunt u Azure Cognitive Services-toepassingen in de Cloud eenvoudig schalen met Azure [container instances](https://docs.microsoft.com/azure/container-instances/). Met container opslag kunt u zich richten op het bouwen van uw toepassingen in plaats van de infra structuur te beheren. Zie [functies en voor delen](../cognitive-services-container-support.md#features-and-benefits)voor meer informatie over het gebruik van containers.
+Met de volgende stappen kunt u Azure Cognitive Services-toepassingen in de Cloud eenvoudig schalen met Azure [container instances](../../container-instances/index.yml). Met container opslag kunt u zich richten op het bouwen van uw toepassingen in plaats van de infra structuur te beheren. Zie [functies en voor delen](../cognitive-services-container-support.md#features-and-benefits)voor meer informatie over het gebruik van containers.
 
 ## <a name="prerequisites"></a>Vereisten
 

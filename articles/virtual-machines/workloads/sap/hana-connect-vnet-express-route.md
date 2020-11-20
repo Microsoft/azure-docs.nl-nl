@@ -7,18 +7,19 @@ author: msjuergent
 manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8c7e8d4875a8bf3f53ac536ae95ac7499a74d45c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c5a8a8157721f34abf7761a85febc7bcea3abb88
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082151"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967836"
 ---
 # <a name="connect-a-virtual-network-to-hana-large-instances"></a>Een virtueel netwerk verbinden met HANA grote instanties
 
@@ -32,7 +33,7 @@ Nadat u een virtueel Azure-netwerk hebt gemaakt, kunt u dat netwerk verbinden me
 Als er al een gateway bestaat, controleert u of deze een ExpressRoute-gateway is of niet. Als het geen ExpressRoute-gateway is, verwijdert u de gateway en maakt u deze opnieuw als een ExpressRoute-gateway. Als er al een ExpressRoute-gateway is ingesteld, raadpleegt u de volgende sectie van dit artikel ' virtuele netwerken koppelen '. 
 
 - Gebruik de [Azure Portal](https://portal.azure.com/) of Power shell om een ExpressRoute VPN-gateway te maken die is verbonden met uw virtuele netwerk.
-  - Als u de Azure Portal gebruikt, voegt u een nieuwe **Virtual Network gateway**toe en selecteert u vervolgens **ExpressRoute** als gateway type.
+  - Als u de Azure Portal gebruikt, voegt u een nieuwe **Virtual Network gateway** toe en selecteert u vervolgens **ExpressRoute** als gateway type.
   - Als u Power shell gebruikt, moet u eerst de nieuwste [Azure POWERSHELL SDK](https://azure.microsoft.com/downloads/)downloaden en gebruiken. 
  
 Met de volgende opdrachten maakt u een ExpressRoute-gateway. De tekst voorafgegaan door a _$_ zijn door de gebruiker gedefinieerde variabelen die moeten worden bijgewerkt met uw specifieke informatie.
@@ -149,7 +150,7 @@ Gegevens die nodig zijn en de tref woorden die u voor micro soft moet gebruiken 
 - Onderwerp ' mijn netwerk wijzigen-Global Reach toevoegen '
 - Details: ' Voeg Global Reach toe aan de HANA grote instantie naar de Hana-Tenant voor grote instanties of Voeg Global Reach toe aan on-premises naar de HANA-Tenant van het grote exemplaar.
 - Aanvullende Details voor de HANA grote instantie naar HANA grote instantie Tenant Case: u moet de **twee Azure-regio's** definiëren waarin de twee tenants die u wilt verbinden zich bevinden **en** u moet het **/29 IP-adres bereik** verzenden
-- Aanvullende Details voor de on-premises naar HANA grote instantie Tenant Case: u moet de **Azure-regio** definiëren waarin de Hana-Tenant voor grote instanties wordt geïmplementeerd waarmee u rechtstreeks verbinding wilt maken. Daarnaast moet u de verificatie- **GUID** en de **naam van het circuit peer-id** opgeven die u hebt ontvangen toen u uw ExpressRoute-circuit hebt gemaakt tussen on-premises en Azure. Bovendien moet u uw **ASN**een naam hebben. Het laatste product is een **/29 IP-adres bereik** voor ExpressRoute Global REACH.
+- Aanvullende Details voor de on-premises naar HANA grote instantie Tenant Case: u moet de **Azure-regio** definiëren waarin de Hana-Tenant voor grote instanties wordt geïmplementeerd waarmee u rechtstreeks verbinding wilt maken. Daarnaast moet u de verificatie- **GUID** en de **naam van het circuit peer-id** opgeven die u hebt ontvangen toen u uw ExpressRoute-circuit hebt gemaakt tussen on-premises en Azure. Bovendien moet u uw **ASN** een naam hebben. Het laatste product is een **/29 IP-adres bereik** voor ExpressRoute Global REACH.
 
 > [!NOTE]
 > Als u beide cases wilt laten afhandelen, moet u twee verschillende/29 IP-adresbereiken opgeven die niet overlappen met een ander IP-adres bereik dat tot nu toe is gebruikt. 

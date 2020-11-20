@@ -9,17 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/29/2020
 ms.author: radeltch
-ms.openlocfilehash: 4c444cb84f215ba4f42c14eb64f1d2f441e4280d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6e906e6c86d615852191e2fd65a2b1a58695ed34
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91598301"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968550"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Pacemaker instellen voor Red Hat Enterprise Linux in azure
 
@@ -122,7 +123,7 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
    </code></pre>
 
    > [!IMPORTANT]
-   > Als u de Azure Fence-agent wilt bijwerken, en als u aangepaste rol gebruikt, moet u ervoor zorgen dat u de aangepaste rol bijwerkt om actie **uitgeschakeld**op te nemen. Zie [een aangepaste rol maken voor de Fence-agent](#1-create-a-custom-role-for-the-fence-agent)voor meer informatie.  
+   > Als u de Azure Fence-agent wilt bijwerken, en als u aangepaste rol gebruikt, moet u ervoor zorgen dat u de aangepaste rol bijwerkt om actie **uitgeschakeld** op te nemen. Zie [een aangepaste rol maken voor de Fence-agent](#1-create-a-custom-role-for-the-fence-agent)voor meer informatie.  
 
 1. **[A]** omzetting van hostnaam van installatie
 
@@ -169,13 +170,13 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
 
    Voer de volgende opdrachten uit om de knoop punten te verifiëren en het cluster te maken. Stel het token in op 30000 om onderhoud van het geheugen mogelijk te maken. Zie [dit artikel voor Linux][virtual-machines-linux-maintenance]voor meer informatie.  
    
-   Als u een cluster op **RHEL 7. x**maakt, gebruikt u de volgende opdrachten:  
+   Als u een cluster op **RHEL 7. x** maakt, gebruikt u de volgende opdrachten:  
    <pre><code>sudo pcs cluster auth <b>prod-cl1-0</b> <b>prod-cl1-1</b> -u hacluster
    sudo pcs cluster setup --name <b>nw1-azr</b> <b>prod-cl1-0</b> <b>prod-cl1-1</b> --token 30000
    sudo pcs cluster start --all
    </code></pre>
 
-   Als u een cluster op **RHEL 8. X**maakt, gebruikt u de volgende opdrachten:  
+   Als u een cluster op **RHEL 8. X** maakt, gebruikt u de volgende opdrachten:  
    <pre><code>sudo pcs host auth <b>prod-cl1-0</b> <b>prod-cl1-1</b> -u hacluster
    sudo pcs cluster setup <b>nw1-azr</b> <b>prod-cl1-0</b> <b>prod-cl1-1</b> totem token=30000
    sudo pcs cluster start --all
@@ -294,13 +295,13 @@ sudo pcs property set stonith-timeout=900
 > [!NOTE]
 > De optie pcmk_host_map is alleen vereist in de opdracht als de hostnamen van de RHEL en de namen van Azure-knoop punten niet identiek zijn. Raadpleeg de sectie vet in de opdracht.
 
-Voor RHEL **7. X**gebruikt u de volgende opdracht om het Fence-apparaat te configureren:    
+Voor RHEL **7. X** gebruikt u de volgende opdracht om het Fence-apparaat te configureren:    
 <pre><code>sudo pcs stonith create rsc_st_azure fence_azure_arm login="<b>login ID</b>" passwd="<b>password</b>" resourceGroup="<b>resource group</b>" tenantId="<b>tenant ID</b>" subscriptionId="<b>subscription id</b>" <b>pcmk_host_map="prod-cl1-0:10.0.0.6;prod-cl1-1:10.0.0.7"</b> \
 power_timeout=240 pcmk_reboot_timeout=900 pcmk_monitor_timeout=120 pcmk_monitor_retries=4 pcmk_action_limit=3 \
 op monitor interval=3600
 </code></pre>
 
-Voor RHEL **8. X**gebruikt u de volgende opdracht om het Fence-apparaat te configureren:  
+Voor RHEL **8. X** gebruikt u de volgende opdracht om het Fence-apparaat te configureren:  
 <pre><code>sudo pcs stonith create rsc_st_azure fence_azure_arm username="<b>login ID</b>" password="<b>password</b>" resourceGroup="<b>resource group</b>" tenantId="<b>tenant ID</b>" subscriptionId="<b>subscription id</b>" <b>pcmk_host_map="prod-cl1-0:10.0.0.6;prod-cl1-1:10.0.0.7"</b> \
 power_timeout=240 pcmk_reboot_timeout=900 pcmk_monitor_timeout=120 pcmk_monitor_retries=4 pcmk_action_limit=3 \
 op monitor interval=3600

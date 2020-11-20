@@ -7,12 +7,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.topic: conceptual
 ms.date: 03/12/2020
-ms.openlocfilehash: 580c378df5fc3912aa540b5d85adf99bc42605e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f50c84212e62fae378d9d95e8990e084c82bb99a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86511939"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967207"
 ---
 # <a name="use-azure-iot-dps-ip-connection-filters"></a>IP-verbindingsfilters van Azure IoT DPS gebruiken
 
@@ -22,7 +22,7 @@ Beveiliging is een belangrijk aspect van elke IoT-oplossing. Soms moet u explici
 
 Er zijn twee specifieke situaties waarin het nuttig is om verbindingen met een DPS-eindpunt van bepaalde IP-adressen te blokkeren:
 
-* Uw DPS mag alleen verkeer ontvangen van een opgegeven bereik van IP-adressen en moet alle andere gegevens weigeren. U gebruikt bijvoorbeeld uw DPS met [Azure Express Route](https://azure.microsoft.com/documentation/articles/expressroute-faqs/#supported-services) om privéverbindingen te maken tussen een DPS en uw apparaten.
+* Uw DPS mag alleen verkeer ontvangen van een opgegeven bereik van IP-adressen en moet alle andere gegevens weigeren. U gebruikt bijvoorbeeld uw DPS met [Azure Express Route](../expressroute/expressroute-faqs.md#supported-services) om privéverbindingen te maken tussen een DPS en uw apparaten.
 
 * U moet het verkeer afwijzen van IP-adressen die als verdacht zijn geïdentificeerd door de DPS-beheerder.
 
@@ -48,7 +48,7 @@ Vul de velden in nadat u **IP-filterregel toevoegen** hebt geselecteerd.
 
 ![Nadat u IP-filterregel toevoegen hebt geselecteerd](./media/iot-dps-ip-filtering/ip-filter-after-selecting-add.png)
 
-* Geef een **naam** op voor de IP-filterregel. Dit moet een unieke, niet-hoofdlettergevoelige tekenreeks van maximaal 128 tekens zijn. Alleen de ASCII 7-bits alfanumerieke tekens plus `{'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '''}` worden geaccepteerd.
+* Geef een **naam** op voor de IP-filterregel. Dit moet een unieke, niet-hoofdlettergevoelige tekenreeks van maximaal 128 tekens zijn. Alleen de ASCII 7-bits alfanumerieke tekens plus `{'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '''}` worden geaccepteerd.
 
 * Geef één IPv4-adres op of een blok met IP-adressen in CIDR-notatie. Bijvoorbeeld in CIDR-notatie staat 192.168.100.0/22 voor de 1024 IPv4-adressen van 192.168.100.0 tot en met 192.168.103.255.
 
@@ -74,7 +74,7 @@ Als u een IP-filterregel wilt verwijderen, selecteert u het prullenbakpictogram 
 
 ## <a name="update-ip-filter-rules-in-code"></a>IP-filterregels in code bijwerken
 
-U kunt het DPS-IP-filter ophalen en wijzigen met behulp van het REST-eindpunt van de Azure-resourceprovider. Zie `properties.ipFilterRules` in de [createorupdate-methode](https://docs.microsoft.com/rest/api/iot-dps/iotdpsresource/createorupdate).
+U kunt het DPS-IP-filter ophalen en wijzigen met behulp van het REST-eindpunt van de Azure-resourceprovider. Zie `properties.ipFilterRules` in de [createorupdate-methode](/rest/api/iot-dps/iotdpsresource/createorupdate).
 
 Het bijwerken van de IP-filterregels van DPS wordt momenteel niet ondersteund met Azure CLI of Azure PowerShell, maar kan worden uitgevoerd met Azure Resource Manager-sjablonen. Zie [Azure Resource Manager-sjablonen](../azure-resource-manager/templates/overview.md) voor hulp bij het gebruik van Resource Manager-sjablonen. De volgende sjabloonvoorbeelden laten zien hoe u DPS-IP-filterregels kunt maken, bewerken en verwijderen.
 
@@ -136,7 +136,7 @@ Werk de kenmerken van de IP-filterregel van de sjabloon bij op basis van uw vere
 | Kenmerk                | Beschrijving |
 | ------------------------ | ----------- |
 | **FilterName**           | Geef een naam op voor de IP-filterregel. Dit moet een unieke, niet-hoofdlettergevoelige tekenreeks van maximaal 128 tekens zijn. Alleen de ASCII 7-bits alfanumerieke tekens plus  {'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '''} worden geaccepteerd. |
-| **Actie**               | Geaccepteerde waarden zijn **Accepteren** of **Afwijzen** als actie voor de IP-filterregel. |
+| **Actie**               | Geaccepteerde waarden zijn **Accepteren** of  **Afwijzen** als actie voor de IP-filterregel. |
 | **ipMask**               | Geef één IPv4-adres op of een blok met IP-adressen in CIDR-notatie. Bijvoorbeeld in CIDR-notatie staat 192.168.100.0/22 voor de 1024 IPv4-adressen van 192.168.100.0 tot en met 192.168.103.255. |
 
 

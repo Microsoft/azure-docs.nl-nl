@@ -3,12 +3,12 @@ title: Concepten-persoonlijke Clouds en clusters
 description: Meer informatie over de belangrijkste mogelijkheden van de Azure VMware-oplossing software-gedefinieerde data centers en vSphere-clusters.
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: 0454ade503ce40de46363f65d36a64340219c0b1
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: af34bb0d83d9571ae91dce90cab198a61cfe82a1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874012"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967377"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Azure VMware-oplossing persoonlijke Cloud-en cluster concepten
 
@@ -38,7 +38,7 @@ U gebruikt vSphere en NSX-T-beheer om de meeste andere aspecten van de cluster c
 
 ## <a name="hosts"></a>Hosts
 
-Azure VMware-oplossing Private Cloud clusters gebruiken Hyper-geconvergeerde, Bare-Metal infrastructuur knooppunten. In de volgende tabel ziet u het RAM-geheugen, de CPU en de schijf capaciteit van de host. 
+Azure VMware-oplossing Private Cloud clusters gebruiken Hyper-geconvergeerde, Bare-Metal Infrastructure-hosts. In de volgende tabel ziet u het RAM-geheugen, de CPU en de schijf capaciteit van de host. 
 
 | Hosttype              |             CPU             |   RAM (GB)   |  vSAN NVMe-cache-laag (TB, RAW)  |  vSAN SSD-capaciteits tier (TB, RAW)  |
 | :---                   |            :---:            |    :---:     |               :---:              |                :---:               |

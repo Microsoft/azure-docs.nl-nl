@@ -9,12 +9,12 @@ ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/18/2017
 ms.author: rohink
-ms.openlocfilehash: 19189af6424960b8e20be686af745b10f2d8578b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41eb15a38c97532951723f12d1ac74c90c838eb1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85846838"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968193"
 ---
 # <a name="overview-of-dns-zones-and-records"></a>Overzicht van DNS-zones en -records
 
@@ -93,7 +93,7 @@ Het serie nummer van de zone in de SOA-record wordt niet automatisch bijgewerkt 
 [SRV-records](https://en.wikipedia.org/wiki/SRV_record) worden door verschillende services gebruikt om server locaties op te geven. Bij het opgeven van een SRV-record in Azure DNS:
 
 * De *service* en het *protocol* moeten worden opgegeven als onderdeel van de naam van de recordset, voorafgegaan door onderstrepings tekens.  Bijvoorbeeld: ' \_ SIP. \_ tcp.name '.  Voor een record op de zone Apex is het niet nodig om \@ in de record naam op te geven. u hoeft alleen de service en het protocol te gebruiken, bijvoorbeeld ' \_ SIP '. \_ TCP.
-* De *prioriteit*, het *gewicht*, de *poort*en het *doel* worden opgegeven als para meters van elke record in de recordset.
+* De *prioriteit*, het *gewicht*, de *poort* en het *doel* worden opgegeven als para meters van elke record in de recordset.
 
 ### <a name="txt-records"></a>TXT-records
 
@@ -127,7 +127,7 @@ Azure DNS Power shell gebruikt standaard eTags om gelijktijdige wijzigingen in z
 
 Op het niveau van de Azure DNS REST API worden eTags opgegeven met behulp van HTTP-headers.  Hun gedrag wordt vermeld in de volgende tabel:
 
-| Koptekst | Gedrag |
+| Header | Gedrag |
 | --- | --- |
 | Geen |PUT altijd geslaagd (geen ETag-controles) |
 | If-match \<etag> |Alleen geslaagd als resource bestaat en ETAG overeenkomt |
@@ -143,5 +143,5 @@ De volgende standaard limieten zijn van toepassing wanneer u Azure DNS gebruikt:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Als u Azure DNS wilt gaan gebruiken, leest u hoe u [een DNS-zone maakt](dns-getstarted-create-dnszone-portal.md) en hoe u [DNS-records maakt](dns-getstarted-create-recordset-portal.md).
+* Als u Azure DNS wilt gaan gebruiken, leest u hoe u [een DNS-zone maakt](./dns-getstarted-portal.md) en hoe u [DNS-records maakt](./dns-getstarted-portal.md).
 * Als u een bestaande DNS-zone wilt migreren, leert u hoe u [een DNS-zone bestand importeert en exporteert](dns-import-export.md).

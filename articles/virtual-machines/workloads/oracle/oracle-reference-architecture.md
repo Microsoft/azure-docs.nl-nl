@@ -3,16 +3,17 @@ title: Referentie architecturen voor Oracle-data bases op Azure | Microsoft Docs
 description: Verwijst naar architecturen voor het uitvoeren van Oracle Database Enterprise Edition-data bases op Microsoft Azure Virtual Machines.
 author: dbakevlar
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.date: 12/13/2019
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: d2a6954ffdb9f992ada7fc24dbcc161658b21d23
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 86f3ef8ccac83cdc939cff5572dd81e78137d396
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480425"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968720"
 ---
 # <a name="reference-architectures-for-oracle-database-enterprise-edition-on-azure"></a>Referentie architecturen voor Oracle Database Enterprise Edition op Azure
 
@@ -108,7 +109,7 @@ Het volgende diagram is een architectuur die gebruikmaakt van Oracle Data Guard 
 
 Golden Gate maakt het mogelijk om gegevens op transactie niveau uit te wisselen en te bewerken via meerdere heterogene platformen in de hele onderneming. Er worden doorgevoerde trans acties met trans actie-integriteit en minimale overhead op uw bestaande infra structuur verplaatst. Dankzij de modulaire architectuur hebt u de flexibiliteit om geselecteerde gegevens records, transactionele wijzigingen en wijzigingen in DDL (Data Definition Language) uit verschillende topologieën op te halen en te repliceren.
 
-Met Oracle Golden Gate kunt u uw data base configureren voor maximale Beschik baarheid door bidirectionele replicatie te bieden. Hiermee kunt u een configuratie met **meerdere masters** of **actief-actief**instellen. Het volgende diagram is een aanbevolen architectuur voor Oracle Golden Gate Active-Active-Setup op Azure. In de volgende architectuur is de Oracle-data base geconfigureerd met behulp van een [virtuele machine](../../sizes-memory.md) met hyperthreaded geoptimaliseerd voor geheugen met [beperkte kern vcpu's](../../../virtual-machines/constrained-vcpu.md) om de licentie kosten op te slaan en de prestaties te maximaliseren. Er worden meerdere Premium-of Ultra schijven (Managed disks) gebruikt voor prestaties en beschik baarheid.
+Met Oracle Golden Gate kunt u uw data base configureren voor maximale Beschik baarheid door bidirectionele replicatie te bieden. Hiermee kunt u een configuratie met **meerdere masters** of **actief-actief** instellen. Het volgende diagram is een aanbevolen architectuur voor Oracle Golden Gate Active-Active-Setup op Azure. In de volgende architectuur is de Oracle-data base geconfigureerd met behulp van een [virtuele machine](../../sizes-memory.md) met hyperthreaded geoptimaliseerd voor geheugen met [beperkte kern vcpu's](../../../virtual-machines/constrained-vcpu.md) om de licentie kosten op te slaan en de prestaties te maximaliseren. Er worden meerdere Premium-of Ultra schijven (Managed disks) gebruikt voor prestaties en beschik baarheid.
 
 ![Oracle Database beschikbaarheids zones gebruiken met Data Guard Broker-FSFO](./media/oracle-reference-architecture/oracledb_gg_az.png)
 

@@ -8,17 +8,18 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
+ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: ejarvi
-ms.openlocfilehash: e975e1757b77b4aab52a59d1f0709ef9cadae94e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5a0069e02c5285a950d23abc0ec4bee6e9e467b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80066870"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968380"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Azure Disk Encryption voor Windows (micro soft. Azure. Security. AzureDiskEncryption)
 
@@ -31,7 +32,7 @@ Azure Disk Encryption maakt gebruik van BitLocker om versleuteling van de volled
 Zie voor een volledige lijst met vereisten [Azure Disk Encryption voor Windows-vm's](../windows/disk-encryption-overview.md), met name de volgende secties:
 
 - [Ondersteunde Vm's en besturings systemen](../windows/disk-encryption-overview.md#supported-vms-and-operating-systems)
-- [Netwerk vereisten](../windows/disk-encryption-overview.md#networking-requirements)
+- [Netwerkvereisten](../windows/disk-encryption-overview.md#networking-requirements)
 - [groepsbeleid vereisten](../windows/disk-encryption-overview.md#group-policy-requirements)
 
 ## <a name="extension-schema"></a>Extensie schema
@@ -139,7 +140,7 @@ Gebruiken `AADClientCertificate` :
 
 ### <a name="property-values"></a>Eigenschaps waarden
 
-| Naam | Waarde/voor beeld | Gegevenstype |
+| Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
 | apiVersion | 2019-07-01 | datum |
 | publisher | Micro soft. Azure. Security | tekenreeks |

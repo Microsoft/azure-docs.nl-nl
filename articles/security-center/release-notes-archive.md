@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/11/2020
 ms.author: memildin
-ms.openlocfilehash: e802f798ade5e6bfe0b40b17bbf15df5387ef7c3
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 26192c742ab2e010c18c02226252dbb480b72cee
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357841"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94967156"
 ---
 # <a name="archive-for-whats-new-in-azure-security-center"></a>Wilt u archiveren wat er nieuw is in Azure Security Center?
 
@@ -154,13 +154,13 @@ De detectiemogelijkheden van Windows Crash Dump Analysis (CDA) worden geïntegre
 
 Enkele voordelen hiervan:
 
-- **Proactieve en tijdige detectie van malware** : bij de CDA-benadering werd gewacht op een crash, en werden vervolgens analyses uitgevoerd om schadelijke artefacten te vinden. Bij het gebruik van detectie van bestandsloze aanvallen worden bedreigingen in het geheugen proactief geïdentificeerd terwijl ze worden uitgevoerd. 
+- **Proactieve en tijdige detectie van malware**: bij de CDA-benadering werd gewacht op een crash, en werden vervolgens analyses uitgevoerd om schadelijke artefacten te vinden. Bij het gebruik van detectie van bestandsloze aanvallen worden bedreigingen in het geheugen proactief geïdentificeerd terwijl ze worden uitgevoerd. 
 
-- **Verrijkte waarschuwingen** : de beveiligingswaarschuwingen van detectie van bestandsloze aanvallen bevatten verrijkingen die niet beschikbaar zijn via CDA, zoals informatie over actieve netwerkverbindingen. 
+- **Verrijkte waarschuwingen**: de beveiligingswaarschuwingen van detectie van bestandsloze aanvallen bevatten verrijkingen die niet beschikbaar zijn via CDA, zoals informatie over actieve netwerkverbindingen. 
 
-- **Waarschuwingsaggregatie** : wanneer CDA meerdere aanvalspatronen in één crashdump heeft gedetecteerd, worden er meerdere beveiligingswaarschuwingen geactiveerd. Bij detectie van bestandsloze aanvallen worden alle geïdentificeerde aanvalspatronen uit hetzelfde proces gecombineerd tot één waarschuwing, waardoor de noodzaak om meerdere waarschuwingen met elkaar in verband te brengen, wordt weggenomen.
+- **Waarschuwingsaggregatie**: wanneer CDA meerdere aanvalspatronen in één crashdump heeft gedetecteerd, worden er meerdere beveiligingswaarschuwingen geactiveerd. Bij detectie van bestandsloze aanvallen worden alle geïdentificeerde aanvalspatronen uit hetzelfde proces gecombineerd tot één waarschuwing, waardoor de noodzaak om meerdere waarschuwingen met elkaar in verband te brengen, wordt weggenomen.
 
-- **Minder vereisten voor uw Log Analytics-werkruimte** : crashdumps met mogelijk gevoelige gegevens worden niet meer geüpload naar uw Log Analytics-werkruimte.
+- **Minder vereisten voor uw Log Analytics-werkruimte**: crashdumps met mogelijk gevoelige gegevens worden niet meer geüpload naar uw Log Analytics-werkruimte.
 
 
 
@@ -316,7 +316,7 @@ Meer informatie over [verbeterde beveiligde Score (preview-versie)](secure-score
 
 ## <a name="november-2019"></a>November 2019
 
-De updates in november zijn onder andere:
+Updates in november omvatten:
  - [Bedreigings beveiliging voor Azure Key Vault in Noord-Amerika regio's (preview-versie)](#threat-protection-for-azure-key-vault-in-north-america-regions-preview)
  - [Bedreigings beveiliging voor Azure Storage omvat het controleren van malware-reputatie](#threat-protection-for-azure-storage-includes-malware-reputation-screening)
  - [Werk stroom automatisering met Logic Apps (preview-versie)](#workflow-automation-with-logic-apps-preview)
@@ -392,7 +392,7 @@ Kubernetes is snel de nieuwe standaard voor het implementeren en beheren van sof
 De nieuwe mogelijkheden in deze open bare preview-versie zijn onder andere:
 
 - **Detectie & zicht baarheid** : doorlopende detectie van beheerde AKS-instanties binnen de geregistreerde abonnementen van Security Center.
-- **Veilige Score aanbevelingen** : items die kunnen worden gebruikt om te helpen bij het voldoen aan de aanbevolen procedures voor beveiliging in AKS als onderdeel van de beveiligde Score van de klant, zoals "op rollen gebaseerd Access Control moeten worden toegepast om de toegang tot een Kubernetes-service cluster te beperken".
+- **Veilige Score aanbevelingen** : items die kunnen worden uitgevoerd om klanten te helpen bij het naleven van de aanbevolen beveiligings procedures voor AKS, en het verhogen van hun beveiligde Score. Aanbevelingen zijn items zoals ' op rollen gebaseerd toegangs beheer moeten worden gebruikt om de toegang tot een Kubernetes-service cluster te beperken '.
 - **Detectie van bedreigingen** -host-en cluster-analyses, zoals ' een geprivilegieerde container gedetecteerd '.
 
 

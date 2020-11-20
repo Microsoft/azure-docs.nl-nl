@@ -3,22 +3,23 @@ title: Azure Monitor voor SAP Solutions-providers | Microsoft Docs
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over Azure monitor for SAP Solutions providers.
 author: rdeltcheva
 ms.service: virtual-machines
+ms.subservice: workloads
 ms.topic: article
 ms.date: 06/30/2020
 ms.author: radeltch
 ms.reviewer: cynthn
-ms.openlocfilehash: f5df8bccc10ca64ee9a04f195299c5228b7274c1
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 056eba8694d1727350809121f763181e3cdbdc64
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94356447"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968601"
 ---
 # <a name="azure-monitor-for-sap-solutions-providers-preview"></a>Azure monitor voor SAP-oplossingen providers (preview-versie)
 
 ## <a name="overview"></a>Overzicht  
 
-In de context van Azure Monitor voor SAP-oplossingen verwijst een *provider type* naar een specifieke *provider*. Bijvoorbeeld *SAP Hana* , dat is geconfigureerd voor een specifiek onderdeel in het SAP-landschap, zoals SAP Hana-data base. Een provider bevat de verbindings gegevens voor het bijbehorende onderdeel en helpt u bij het verzamelen van telemetriegegevens van dat onderdeel. Een Azure Monitor voor SAP-oplossingen resource (ook wel bekend als SAP-monitor bron) kan worden geconfigureerd met meerdere providers van hetzelfde provider type of meerdere providers van meerdere provider typen.
+In de context van Azure Monitor voor SAP-oplossingen verwijst een *provider type* naar een specifieke *provider*. Bijvoorbeeld *SAP Hana*, dat is geconfigureerd voor een specifiek onderdeel in het SAP-landschap, zoals SAP Hana-data base. Een provider bevat de verbindings gegevens voor het bijbehorende onderdeel en helpt u bij het verzamelen van telemetriegegevens van dat onderdeel. Een Azure Monitor voor SAP-oplossingen resource (ook wel bekend als SAP-monitor bron) kan worden geconfigureerd met meerdere providers van hetzelfde provider type of meerdere providers van meerdere provider typen.
    
 Klanten kunnen kiezen voor het configureren van verschillende provider typen om het verzamelen van gegevens van een bijbehorend onderdeel in hun SAP-landschap in te scha kelen. Klanten kunnen bijvoorbeeld een provider voor SAP HANA provider type configureren, een andere provider voor een cluster provider type met hoge Beschik baarheid, enzovoort.  
 

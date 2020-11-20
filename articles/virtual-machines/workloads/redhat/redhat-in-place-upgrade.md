@@ -3,16 +3,17 @@ title: In-place upgrade van Red Hat Enterprise Linux-installatie kopieën op Azu
 description: Meer informatie over het in-place upgrade van Red Hat Enter prise 7. x-installatie kopieën naar de meest recente versie van 8. x.
 author: mathapli
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.date: 04/16/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 04a83687161c390d86e1a9b40d33f10cdd6a47d5
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 4487aeba72cc71a31871169c0647efbff34ee068
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916675"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968618"
 ---
 # <a name="red-hat-enterprise-linux-in-place-upgrades"></a>Red Hat Enterprise Linux in-place Upgrades
 

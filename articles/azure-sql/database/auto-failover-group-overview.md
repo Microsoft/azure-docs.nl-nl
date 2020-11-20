@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 11/16/2020
-ms.openlocfilehash: e91a3cc0a96add1f53d220e04fb98d63cc7c33f4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 0d2248b9c0a289f5e4f9f2f8e987365ab58c49c0
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841083"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94988541"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Gebruik groepen voor automatische failover om transparante en gecoördineerde failover van meerdere data bases mogelijk te maken
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -33,7 +33,7 @@ Daarnaast bieden automatische-failover-groepen alleen-lezen-en alleen-lezen list
 
 Wanneer u groepen voor automatische failover gebruikt met automatische failoverbeleid, wordt elke storing die invloed heeft op data bases op een server of een beheerd exemplaar, automatisch failover. U kunt de groep voor automatische failover beheren met:
 
-- [Azure Portal](geo-distributed-application-configure-tutorial.md)
+- [Azure-portal](geo-distributed-application-configure-tutorial.md)
 - [Azure CLI: failover-groep](scripts/add-database-to-failover-group-cli.md)
 - [Power shell: failover-groep](scripts/add-database-to-failover-group-powershell.md)
 - [Rest API: failovergroep](/rest/api/sql/failovergroups).
@@ -142,15 +142,15 @@ Machtigingen voor een failovergroep worden beheerd via [Azure op rollen gebaseer
 
 ### <a name="create-failover-group"></a>Failovergroep maken
 
-Als u een failovergroep wilt maken, moet u RBAC schrijf toegang hebben tot de primaire en secundaire servers en naar alle data bases in de failovergroep. Voor een SQL Managed instance hebt u RBAC-schrijf toegang nodig tot zowel het primaire als het secundaire exemplaar van SQL Managed, maar de machtigingen voor afzonderlijke data bases zijn niet relevant, omdat afzonderlijke SQL Managed instance-data bases niet kunnen worden toegevoegd aan of verwijderd uit een failovergroep.
+Als u een failovergroep wilt maken, hebt u Azure RBAC-schrijf toegang nodig voor de primaire en secundaire servers en voor alle data bases in de failovergroep. Voor een SQL Managed instance hebt u Azure RBAC-schrijf toegang nodig voor het primaire en secundaire SQL Managed instance, maar de machtigingen voor afzonderlijke data bases zijn niet relevant, omdat afzonderlijke SQL Managed instance-data bases niet kunnen worden toegevoegd aan of verwijderd uit een failover-groep.
 
 ### <a name="update-a-failover-group"></a>Een failovergroep bijwerken
 
-Als u een failovergroep wilt bijwerken, moet u RBAC schrijf toegang hebben tot de failovergroep en alle data bases op de huidige primaire server of een beheerd exemplaar.  
+Als u een failovergroep wilt bijwerken, hebt u Azure RBAC-schrijf toegang nodig voor de failovergroep en alle data bases op de huidige primaire server of het beheerde exemplaar.  
 
 ### <a name="fail-over-a-failover-group"></a>Een failover-groep uitvoeren
 
-Als u een failover wilt uitvoeren, moet u RBAC-schrijf toegang hebben tot de failovergroep op de nieuwe primaire server of het beheerde exemplaar.
+Als u failover wilt uitvoeren voor een failovergroep, hebt u Azure RBAC-schrijf toegang nodig voor de failovergroep op de nieuwe primaire server of het beheerde exemplaar.
 
 ## <a name="best-practices-for-sql-database"></a>Aanbevolen procedures voor SQL Database
 
@@ -409,7 +409,7 @@ Houd rekening met de volgende beperkingen:
 
 ## <a name="programmatically-managing-failover-groups"></a>Programmatisch beheer van failover-groepen
 
-Zoals eerder besproken, kunnen automatische failover-groepen en actieve geo-replicatie ook programmatisch worden beheerd met behulp van Azure PowerShell en de REST API. De volgende tabellen bevatten een beschrijving van de beschik bare opdrachten. Actieve geo-replicatie bevat een set Azure Resource Manager Api's voor beheer, met inbegrip van de [Azure SQL database-rest API](/rest/api/sql/) en [Azure PowerShell-cmdlets](/powershell/azure/). Deze Api's vereisen het gebruik van resource groepen en bieden beveiliging op basis van rollen (RBAC). Zie voor meer informatie over het implementeren van toegangs rollen [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/overview.md).
+Zoals eerder besproken, kunnen automatische failover-groepen en actieve geo-replicatie ook programmatisch worden beheerd met behulp van Azure PowerShell en de REST API. De volgende tabellen bevatten een beschrijving van de beschik bare opdrachten. Actieve geo-replicatie bevat een set Azure Resource Manager Api's voor beheer, met inbegrip van de [Azure SQL database-rest API](/rest/api/sql/) en [Azure PowerShell-cmdlets](/powershell/azure/). Deze Api's vereisen het gebruik van resource groepen en bieden ondersteuning voor Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Zie voor meer informatie over het implementeren van toegangs rollen [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ### <a name="manage-sql-database-failover"></a>SQL Database failover beheren
 

@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 04/14/2020
-ms.openlocfilehash: 42f6badabd27ceaa302f635a7a33b0161b870dc5
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3cab3b262f9116903d0b423cd5e4a0ebd03c46fa
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782855"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94984427"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Azure SQL Database lange termijn retentie van back-ups beheren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -31,7 +31,7 @@ In de volgende secties ziet u hoe u de Azure Portal kunt gebruiken voor het conf
 
 U kunt SQL Database configureren om [automatische back-ups te bewaren](long-term-retention-overview.md) gedurende een periode die langer is dan de retentie periode voor uw servicelaag.
 
-1. Selecteer in de Azure Portal uw SQL Server-exemplaar en klik vervolgens op **back-ups beheren** . Schakel op het tabblad **beleid configureren** het selectie vakje in voor de data base waarvoor u het Bewaar beleid voor back-ups op lange termijn wilt instellen of wijzigen. Als het selectie vakje naast de data base niet is ingeschakeld, zijn de wijzigingen voor het beleid niet van toepassing op die data base.  
+1. Selecteer in de Azure Portal uw SQL Server-exemplaar en klik vervolgens op **back-ups beheren**. Schakel op het tabblad **beleid configureren** het selectie vakje in voor de data base waarvoor u het Bewaar beleid voor back-ups op lange termijn wilt instellen of wijzigen. Als het selectie vakje naast de data base niet is ingeschakeld, zijn de wijzigingen voor het beleid niet van toepassing op die data base.  
 
    ![koppeling back-ups beheren](./media/long-term-backup-retention-configure/ltr-configure-ltr.png)
 
@@ -39,7 +39,7 @@ U kunt SQL Database configureren om [automatische back-ups te bewaren](long-term
 
    ![beleid configureren](./media/long-term-backup-retention-configure/ltr-configure-policies.png)
 
-3. Wanneer u klaar bent, klikt u op **Toep assen** .
+3. Wanneer u klaar bent, klikt u op **Toep assen**.
 
 > [!IMPORTANT]
 > Wanneer u een lange termijn beleid voor het bewaren van back-ups inschakelt, kan het tot zeven dagen duren voordat de eerste back-up zichtbaar is en beschikbaar is voor herstel. Zie [lange termijn retentie van back-ups](long-term-retention-overview.md)voor meer informatie over de CADANCE voor LTR-back-ups.
@@ -48,7 +48,7 @@ U kunt SQL Database configureren om [automatische back-ups te bewaren](long-term
 
 Bekijk de back-ups die worden bewaard voor een specifieke data base met een LTR-beleid en herstel van deze back-ups.
 
-1. Selecteer uw server in de Azure Portal en klik vervolgens op **back-ups beheren** . Selecteer de data base waarvoor u beschik bare back-ups wilt weer geven op het tabblad **beschik bare back-ups** .
+1. Selecteer uw server in de Azure Portal en klik vervolgens op **back-ups beheren**. Selecteer de data base waarvoor u beschik bare back-ups wilt weer geven op het tabblad **beschik bare back-ups** .
 
    ![data base selecteren](./media/long-term-backup-retention-configure/ltr-available-backups-select-database.png)
 
@@ -100,7 +100,7 @@ Voor **Remove-AzSqlDatabaseLongTermRetentionBackup** moet u een van de volgende 
 > [!NOTE]
 > De rol SQL Server Inzender heeft geen machtiging voor het verwijderen van LTR-back-ups.
 
-RBAC-machtigingen kunnen worden verleend in *abonnementen* of in het bereik van de *resource groep* . Voor toegang tot LTR-back-ups die deel uitmaken van een verwijderde server, moet de machtiging echter worden verleend in het *abonnements* bereik van die server.
+Er kunnen Azure RBAC-machtigingen worden verleend in *abonnementen* of in het bereik van de *resource groep* . Voor toegang tot LTR-back-ups die deel uitmaken van een verwijderde server, moet de machtiging echter worden verleend in het *abonnements* bereik van die server.
 
 - Micro soft. SQL/locaties/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups/verwijderen
 

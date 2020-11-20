@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec45ce7634b7bc0a8f38f354112cdc2e172f1e17
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 58f0ffa8bd43a8428603334b6c89fa1cf36315b5
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288361"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94987334"
 ---
 # <a name="frequently-asked-questions-identity-protection-in-azure-active-directory"></a>Veelgestelde vragen over identiteits beveiliging in Azure Active Directory
 
@@ -95,6 +95,4 @@ Omdat het gebruikers risico cumulatief is en niet verloopt, kan een gebruiker ee
 
 De hoge cumulatieve risico Score kan worden gebaseerd op andere functies van de aanmelding of het feit dat er meer dan één detectie voor die aanmelding is geactiveerd. Het is ook mogelijk dat een aanmelding een normaal risico (aggregatie) van het medium heeft, zelfs als de detecties die zijn gekoppeld aan de aanmelding, een hoog risico opleveren. 
 
-### <a name="why-is-the-detection-which-is-linked-to-a-risky-sign-in-have-a-different-risk-level-than-the-sign-in-risk-level-real-time"></a>Waarom is de detectie die is gekoppeld aan een Risk ante aanmelding een ander risico niveau dan het risico niveau voor aanmelden (realtime)? 
 
-We hebben onlangs verbeteringen aangebracht in de manier waarop realtime-aanmeldings Risico's worden berekend. Het verschil tussen het niveau van risico detectie en het risico niveau van de aanmelding is een resultaat van die wijzigingen. Houd er rekening mee dat het realtime-aanmeld risico de waarde is die wordt gebruikt tijdens het afdwingen van beleid. 

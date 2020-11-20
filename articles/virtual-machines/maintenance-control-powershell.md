@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 11/19/2020
 ms.author: cynthn
-ms.openlocfilehash: f4cb57eb8d3396667e6c9cb40b7e41b1e97622ed
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: f33cb7d4d005f15d0a5fcc70d56ebd4698f86694
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94981184"
+ms.locfileid: "94988218"
 ---
 # <a name="control-updates-with-maintenance-control-and-azure-powershell"></a>Updates beheren met onderhouds beheer en Azure PowerShell
 
@@ -69,7 +69,7 @@ Get-AzMaintenanceConfiguration | Format-Table -Property Name,Id
 
 ### <a name="create-a-maintenance-configuration-with-scheduled-window"></a>Een onderhouds configuratie maken met een gepland venster
 
-Gebruik New-AzMaintenanceConfiguration om een onderhouds configuratie te maken met een gepland venster wanneer de updates worden toegepast op de resources in Azure. In dit voor beeld wordt een onderhouds configuratie met de naam myConfig gemaakt met een geplande periode van vijf uur op de vierde maandag van elke maand. Wanneer u een gepland venster hebt gemaakt, hoeft u de updates niet meer hand matig toe te passen.
+U kunt ook een gepland venster declareren wanneer de updates worden toegepast op de resources in Azure. In dit voor beeld wordt een onderhouds configuratie met de naam myConfig gemaakt met een geplande periode van vijf uur op de vierde maandag van elke maand. Wanneer u een gepland venster hebt gemaakt, hoeft u de updates niet meer hand matig toe te passen.
 
 ```azurepowershell-interactive
 $config = New-AzMaintenanceConfiguration `
@@ -85,12 +85,10 @@ $config = New-AzMaintenanceConfiguration `
 > [!IMPORTANT]
 > De **duur** van het onderhoud moet *2 uur* of langer zijn. **Terugkeer patroon** van onderhoud moet worden ingesteld op ten minste één keer in 35 dagen.
 
-**Terugkeer patroon** van onderhoud kan worden uitgedrukt als:
- | Waarde | Voorbeeld |
-      |-------|-------------|
-      | alledaags | recurEvery: Day **of** RecurEvery: 3Days | 
-      | weekly | recurEvery: 3Weeks **of** RecurEvery: week zaterdag, zondag | 
-      | keren | recurEvery: month day23, day24 **of** RecurEvery: month laatste zondag **of** RecurEvery: maand vierde maandag | 
+**Terugkeer patroon** van onderhoud kan worden uitgedrukt als dagelijks, wekelijks of maandelijks. Een aantal voorbeelden:
+ - dagelijks: "recurEvery: Day" **of** "RecurEvery: 3Days" 
+ - Wekelijks: ' recurEvery: 3Weeks ' **of** ' RecurEvery: week zaterdag, zondag ' 
+ - Maandelijks: "recurEvery: month day23, day24" **of** "RecurEvery: month last zondag" **of** "RecurEvery: month vierde maandag"  
       
 
 ## <a name="assign-the-configuration"></a>De configuratie toewijzen

@@ -1,19 +1,19 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Virtual Machines
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Virtual Machines. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 10/20/2020
+ms.date: 11/20/2020
 ms.topic: reference
 author: cynthn
 ms.author: cynthn
 ms.service: virtual-machines
 ms.subservice: security
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 4488d2b851b388dcd37df1f7322f23837a78b5a7
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 6066d832bffb8911bd321d1510c91d89cc68acc8
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518667"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94986170"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-virtual-machines"></a>Ingebouwde Azure Policy-definities voor Azure Virtual Machines
 

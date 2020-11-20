@@ -12,12 +12,12 @@ ms.date: 09/29/2020
 ms.author: yulili
 ms.custom: references_regions
 zone_pivot_groups: programming-languages-set-nineteen
-ms.openlocfilehash: 245a00acb07d1c0e769a243413fccdf64d544f5a
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 1cc313daf0e76ddd14865959410b07d9bdc189d7
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93133576"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94984918"
 ---
 # <a name="pronunciation-assessment"></a>Beoordeling van uitspraak
 
@@ -154,12 +154,12 @@ double pronunciationScore = pronunciationAssessmentResult.pronunciationScore;
 
 Deze tabel bevat de configuratie parameters voor de uitspraak beoordeling.
 
-| Parameter | Beschrijving | Vereist/optioneel |
+| Parameter | Beschrijving | Vereist? |
 |-----------|-------------|---------------------|
 | ReferenceText | De tekst waarmee de uitspraak wordt geëvalueerd. | Vereist |
-| GradingSystem | Het punt systeem voor de Score kalibratie. Geaccepteerde waarden zijn `FivePoint` en `HundredMark` . De standaardinstelling is `FivePoint`. | Optioneel |
-| Granulariteit | De granulatie van de evaluatie. Geaccepteerde waarden zijn `Phoneme` , waarmee de score wordt weer gegeven op de volledige tekst, het woord-en foneem-niveau, `Word` waarin de Score van het volledige tekst-en woord niveau wordt weer gegeven, `FullText` waarin de score op het volledige tekst niveau wordt weer geven. De standaardinstelling is `Phoneme`. | Optioneel |
-| EnableMiscue | Hiermee wordt de miscue-berekening ingeschakeld. Als deze functie is ingeschakeld, worden de uitgesp roken woorden vergeleken met de verwijzings tekst en worden deze gemarkeerd met weglating/invoegen op basis van de vergelijking. Geaccepteerde waarden zijn `False` en `True` . De standaardinstelling is `False`. | Optioneel |
+| GradingSystem | Het punt systeem voor de Score kalibratie. Het `FivePoint` systeem geeft een drijvende-komma Score van 0-5 en `HundredMark` geeft een 0-100 drijvende-komma Score. Standaard: `FivePoint`. | Optioneel |
+| Granulariteit | De granulatie van de evaluatie. Geaccepteerde waarden zijn `Phoneme` , waarmee de score wordt weer gegeven op de volledige tekst, het woord-en foneem-niveau, `Word` waarin de Score van het volledige tekst-en woord niveau wordt weer gegeven, `FullText` waarin de score op het volledige tekst niveau wordt weer geven. Standaard: `Phoneme`. | Optioneel |
+| EnableMiscue | Hiermee wordt de miscue-berekening ingeschakeld. Als deze functie is ingeschakeld, worden de uitgesp roken woorden vergeleken met de verwijzings tekst en worden deze gemarkeerd met weglating/invoegen op basis van de vergelijking. Geaccepteerde waarden zijn `False` en `True` . Standaard: `False`. | Optioneel |
 | ScenarioId | Een GUID die een aangepast punt systeem aangeeft. | Optioneel |
 
 ### <a name="pronunciation-assessment-result-parameters"></a>Resultaten van de beoordeling van de uitspraak

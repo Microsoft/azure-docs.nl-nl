@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/13/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 98c42a61e65935446f948e35cb08ed2893dd0b7b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2bb66d8a197a33d6d0ad46502b510662f43ea1ca
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91532514"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94988558"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API voor spraak-naar-tekst
 
@@ -64,9 +64,9 @@ Deze para meters kunnen worden opgenomen in de query reeks van de REST-aanvraag.
 
 Deze tabel bevat de vereiste en optionele kopteksten voor aanvragen voor spraak naar tekst.
 
-|Koptekst| Beschrijving | Vereist/optioneel |
+|Header| Description | Vereist/optioneel |
 |------|-------------|---------------------|
-| `Ocp-Apim-Subscription-Key` | Uw abonnements sleutel voor spraak Services. | Deze header of `Authorization` is vereist. |
+| `Ocp-Apim-Subscription-Key` | De abonnementssleutel voor de Speech-service. | Deze header of `Authorization` is vereist. |
 | `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Deze header of `Ocp-Apim-Subscription-Key` is vereist. |
 | `Pronunciation-Assessment` | Hiermee geeft u de para meters op voor het weer geven van uitspraak cijfers in de herkennings resultaten, waarmee de uitspraak kwaliteit van spraak invoer wordt beoordeeld, met indica toren van nauw keurigheid, Fluency, volledigheid, enzovoort. Deze para meter is een base64-gecodeerde JSON met meerdere gedetailleerde para meters. Zie [para meters voor uitspraak beoordeling](#pronunciation-assessment-parameters) voor het bouwen van deze koptekst. | Optioneel |
 | `Content-type` | Hierin worden de indeling en codec van de gegeven audio gegevens beschreven. Geaccepteerde waarden zijn `audio/wav; codecs=audio/pcm; samplerate=16000` en `audio/ogg; codecs=opus` . | Vereist |
@@ -90,10 +90,10 @@ Audio wordt verzonden in de hoofd tekst van de HTTP- `POST` aanvraag. Deze moet 
 
 In deze tabel worden de vereiste en optionele para meters voor de uitspraak beoordeling weer gegeven.
 
-| Parameter | Beschrijving | Vereist/optioneel |
+| Parameter | Beschrijving | Vereist? |
 |-----------|-------------|---------------------|
 | ReferenceText | De tekst waarmee de uitspraak wordt geëvalueerd. | Vereist |
-| GradingSystem | Het punt systeem voor de Score kalibratie. Geaccepteerde waarden zijn `FivePoint` en `HundredMark` . De standaardinstelling is `FivePoint`. | Optioneel |
+| GradingSystem | Het punt systeem voor de Score kalibratie. Het `FivePoint` systeem geeft een drijvende-komma Score van 0-5 en `HundredMark` geeft een 0-100 drijvende-komma Score. Standaard: `FivePoint`. | Optioneel |
 | Granulariteit | De granulatie van de evaluatie. Geaccepteerde waarden zijn `Phoneme` , waarmee de score wordt weer gegeven op de volledige tekst, het woord-en foneem-niveau, `Word` waarin de Score van het volledige tekst-en woord niveau wordt weer gegeven, `FullText` waarin de score op het volledige tekst niveau wordt weer geven. De standaardinstelling is `Phoneme`. | Optioneel |
 | Dimensie | Hiermee worden de uitvoer criteria gedefinieerd. Geaccepteerde waarden zijn `Basic` , waarbij alleen de nauw keurigheid wordt weer gegeven. hier worden de `Comprehensive` scores voor meer dimensies weer gegeven (bijvoorbeeld fluency Score en volledige score op het volledige tekst niveau, fout type op woord niveau). Controleer de [antwoord parameters](#response-parameters) om de definities van verschillende Score dimensies en Word-fout typen weer te geven. De standaardinstelling is `Basic`. | Optioneel |
 | EnableMiscue | Hiermee wordt de miscue-berekening ingeschakeld. Als deze functie is ingeschakeld, worden de uitgesp roken woorden vergeleken met de verwijzings tekst en worden deze gemarkeerd met weglating/invoegen op basis van de vergelijking. Geaccepteerde waarden zijn `False` en `True` . De standaardinstelling is `False`. | Optioneel |

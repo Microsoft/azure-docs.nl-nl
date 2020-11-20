@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure API Management
 description: Een overzicht van de ingebouwde Azure Policy-beleidsdefinities voor Azure API Management. Deze ingebouwde beleidsdefinities bieden benaderingen voor het beheren van uw Azure-resources.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 author: georgewallace
 ms.author: gwallace
 ms.service: api-management
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: bbbec42fbfa11043733111707e70bfc4ddeb9811
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 95258ca84fd786e7b3f4f5d718bf40165ad3125b
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94738018"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94988138"
 ---
 # <a name="azure-policy-built-in-policy-definitions-for-azure-api-management"></a>Lijst met ingebouwde beleidsdefinities van Azure Policy voor Azure API Management
 

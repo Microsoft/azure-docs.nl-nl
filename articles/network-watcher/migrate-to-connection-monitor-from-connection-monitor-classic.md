@@ -1,5 +1,5 @@
 ---
-title: Migreren naar verbindings monitor vanuit verbindings monitor
+title: Migreren naar verbindings monitor (preview) vanuit verbindings monitor
 titleSuffix: Azure Network Watcher
 description: Meer informatie over hoe u kunt migreren naar verbindings monitor vanuit verbindings monitor.
 services: network-watcher
@@ -12,16 +12,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/20/2020
 ms.author: vinigam
-ms.openlocfilehash: 0ae1a1f36b9f81145b49245d8e6ace37ab36f834
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d785ecd48816150cd33d8e2f5fcce2ff36f1603f
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94974829"
+ms.locfileid: "94985787"
 ---
-# <a name="migrate-to-connection-monitor-from-connection-monitor-classic"></a>Migreren naar verbindings monitor vanuit verbindings monitor (klassiek)
+# <a name="migrate-to-connection-monitor-preview-from-connection-monitor-classic"></a>Migreren naar verbindings monitor (preview) vanuit verbindings monitor (klassiek)
 
-U kunt bestaande verbindings monitors migreren naar nieuwe, verbeterde verbindings controle met slechts enkele klikken en met een downtime van nul. Zie [verbindings monitor](./connection-monitor-overview.md)voor meer informatie over de voor delen.
+U kunt bestaande verbindings monitors migreren naar nieuwe, verbeterde verbindings controle (preview) met slechts enkele klikken en met een downtime van nul. Zie [verbindings monitor](./connection-monitor-overview.md)voor meer informatie over de voor delen.
+
+> [!IMPORTANT]
+> De verbindings monitor is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="key-points-to-note"></a>Belangrijkste punten om te noteren
 

@@ -5,7 +5,7 @@ services: active-directory
 author: curtand
 ms.author: curtand
 manager: daveba
-ms.date: 11/15/2020
+ms.date: 11/17/2020
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: enterprise-users
@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cac88e57ce0135295ac4b7078111102fa69e6838
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e89793ed8404bf36f2857f228d94fdf2a8828d43
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94646590"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94984257"
 ---
 # <a name="restrict-guest-access-permissions-preview-in-azure-active-directory"></a>Machtigingen voor gast toegang (preview) beperken in Azure Active Directory
 
@@ -155,7 +155,8 @@ Service zonder huidige ondersteuning heeft mogelijk compatibiliteits problemen m
 Vraag | Antwoord
 -------- | ------
 Waar zijn deze machtigingen van toepassing? | Deze machtigingen op mapniveau worden afgedwongen voor Azure AD-Services en-portals, met inbegrip van de Microsoft Graph, Power shell v2, de Azure Portal en mijn apps-Portal. Microsoft 365 services die gebruikmaken van Microsoft 365 groepen voor samenwerkings scenario's, worden ook beïnvloed, met name Outlook, micro soft teams en share point.
-Welke onderdelen van de portal van mijn apps beïnvloeden deze functie? | De functionaliteit van de groepen in de portal mijn apps voldoet aan deze nieuwe machtigingen. Dit omvat alle paden voor het weer geven van de groepen lijst en groepslid maatschappen in mijn apps. Er zijn geen wijzigingen aangebracht in de beschik baarheid voor groeps tegels. De beschik baarheid van de groeps tegel wordt nog steeds beheerd door de bestaande groeps instelling in de Azure-beheer Portal.
+Wat is de invloed van beperkte machtigingen op welke groepen gasten kunnen worden weer geven? | Gasten kunnen de lijst met groepen of gebruikers niet opsommen, ongeacht de standaard of beperkte machtigingen voor gasten. Gasten kunnen groepen weer geven waarvan ze lid zijn in zowel de Azure Portal als de portal mijn apps, afhankelijk van de machtigingen:<li>**Standaard machtigingen**: als u wilt zoeken naar de groepen waarvan ze lid zijn in de Azure Portal, moet de gast in de lijst **alle gebruikers** zoeken naar hun object-id en vervolgens **groepen** selecteren. Hier ziet u de lijst met groepen waarvan deze deel uitmaken, met inbegrip van alle groeps gegevens, met inbegrip van de naam, het e-mail adres, enzovoort. In de portal mijn apps kunnen ze een lijst zien van de groepen waarvan ze zijn en de groepen waarvan ze lid zijn.</li><li>**Beperkte machtigingen voor gasten**: in de Azure portal kunnen ze nog steeds de lijst met groepen waarvan ze deel uitmaken, vinden door te zoeken naar hun object-id in de lijst alle gebruikers en vervolgens groepen te selecteren. Ze kunnen alleen zeer beperkte Details over de groep weer geven, met name de object-ID. De kolommen naam en e-mail adres zijn leeg en het groeps type wordt niet herkend. In de portal mijn apps hebben ze geen toegang tot de lijst met groepen waarvan ze lid zijn of groepen waarvan ze deel uitmaken.</li><br>Zie [standaard gebruikers machtigingen](../fundamentals/users-default-permissions.md#member-and-guest-users)voor een gedetailleerde vergelijking van de mapmachtigingen die afkomstig zijn van de Graph API.
+Welke onderdelen van de portal van mijn apps beïnvloeden deze functie? | De functionaliteit van de groepen in de portal mijn apps voldoet aan deze nieuwe machtigingen. Dit omvat alle paden voor het weer geven van de groepen lijst en groepslid maatschappen in mijn apps. Er zijn geen wijzigingen aangebracht in de beschik baarheid voor groeps tegels. De beschik baarheid van de groeps tegel wordt nog steeds beheerd door de bestaande groeps instelling in de Azure Portal.
 Deze machtigingen overschrijven gast instellingen voor share point of micro soft teams? | Nee. Deze bestaande instellingen bepalen nog steeds de ervaring en toegang in deze toepassingen. Als u bijvoorbeeld problemen in share point ziet, controleert u de instellingen voor extern delen.
 Wat zijn de bekende compatibiliteits problemen in planner en Yammer? | <li>Als de machtigingen zijn ingesteld op beperkt, hebben gasten die zijn aangemeld bij de planner-app of het openen van de planner in micro soft teams geen toegang tot hun plannen of taken.<li>Als de machtigingen zijn ingesteld op beperkt, kunnen gasten die zijn aangemeld bij Yammer de groep niet verlaten.
 Worden mijn bestaande gast machtigingen gewijzigd in mijn Tenant? | Er zijn geen wijzigingen aangebracht in de huidige instellingen. We behouden achterwaartse compatibiliteit met uw huidige instellingen. U bepaalt wanneer u wijzigingen wilt aanbrengen.

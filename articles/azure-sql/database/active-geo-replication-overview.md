@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 08/27/2020
-ms.openlocfilehash: 7c16e3b991bffd9c6bbcc4759a07b9e122ef5b72
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: c7a24dbe93bf0096e327804be07acc3f67d2f03b
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93125339"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94985753"
 ---
 # <a name="creating-and-using-active-geo-replication---azure-sql-database"></a>Actieve geo-replicatie-Azure SQL Database maken en gebruiken
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -64,8 +64,8 @@ Omdat de secundaire data bases leesbaar zijn, kunnen ze worden gebruikt voor het
 
 Naast herstel na nood geval kan geo-replicatie worden gebruikt in de volgende scenario's:
 
-- **Database migratie** : u kunt actieve geo-replicatie gebruiken om een Data Base te migreren van de ene server naar een andere online met minimale downtime.
-- **Toepassings upgrades** : u kunt een extra secundair als een failback-kopie maken tijdens de upgrade van de toepassing.
+- **Database migratie**: u kunt actieve geo-replicatie gebruiken om een Data Base te migreren van de ene server naar een andere online met minimale downtime.
+- **Toepassings upgrades**: u kunt een extra secundair als een failback-kopie maken tijdens de upgrade van de toepassing.
 
 Voor een echte bedrijfs continuïteit is het toevoegen van database redundantie tussen data centers slechts een deel van de oplossing. Het herstellen van een toepassing (Service) End-to-end na een onherstelbare fout vereist het herstellen van alle onderdelen die de service en eventuele afhankelijke services vormen. Voor beelden van deze onderdelen zijn de client software (bijvoorbeeld een browser met een aangepaste Java script), web-front-ends, opslag en DNS. Het is van essentieel belang dat alle onderdelen zich in dezelfde storingen bevinden en beschikbaar komen binnen de beoogde herstel tijd (RTO) van uw toepassing. Daarom moet u alle afhankelijke services identificeren en inzicht krijgen in de garanties en mogelijkheden die ze bieden. Vervolgens moet u de juiste stappen nemen om ervoor te zorgen dat uw service functioneert tijdens de failover van de services waarvan deze afhankelijk is. Zie [cloud oplossingen ontwerpen voor herstel na nood gevallen met actieve geo-replicatie](designing-cloud-solutions-for-disaster-recovery.md)voor meer informatie over het ontwerpen van oplossingen voor herstel na nood gevallen.
 
@@ -244,7 +244,7 @@ Als u de vertraging wilt meten met betrekking tot wijzigingen op de primaire dat
 
 ## <a name="programmatically-managing-active-geo-replication"></a>Programmatisch beheer van actieve geo-replicatie
 
-Zoals eerder besproken, kan actieve geo-replicatie ook programmatisch worden beheerd met behulp van Azure PowerShell en de REST API. De volgende tabellen bevatten een beschrijving van de beschik bare opdrachten. Actieve geo-replicatie bevat een set Azure Resource Manager Api's voor beheer, met inbegrip van de [Azure SQL database-rest API](/rest/api/sql/) en [Azure PowerShell-cmdlets](/powershell/azure/). Deze Api's vereisen het gebruik van resource groepen en bieden beveiliging op basis van rollen (RBAC). Zie voor meer informatie over het implementeren van toegangs rollen [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/overview.md).
+Zoals eerder besproken, kan actieve geo-replicatie ook programmatisch worden beheerd met behulp van Azure PowerShell en de REST API. De volgende tabellen bevatten een beschrijving van de beschik bare opdrachten. Actieve geo-replicatie bevat een set Azure Resource Manager Api's voor beheer, met inbegrip van de [Azure SQL database-rest API](/rest/api/sql/) en [Azure PowerShell-cmdlets](/powershell/azure/). Deze Api's vereisen het gebruik van resource groepen en bieden ondersteuning voor Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Zie voor meer informatie over het implementeren van toegangs rollen [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ### <a name="t-sql-manage-failover-of-single-and-pooled-databases"></a>T-SQL: failover van één en gepoolde data bases beheren
 
@@ -253,9 +253,9 @@ Zoals eerder besproken, kan actieve geo-replicatie ook programmatisch worden beh
 
 | Opdracht | Beschrijving |
 | --- | --- |
-| [ALTER DATA BASE](/sql/t-sql/statements/alter-database-transact-sql?preserve-view=true&view=azuresqldb-current) |Gebruik het argument secundair op SERVER toevoegen om een secundaire Data Base voor een bestaande Data Base te maken en gegevens replicatie te starten |
-| [ALTER DATA BASE](/sql/t-sql/statements/alter-database-transact-sql?preserve-view=true&view=azuresqldb-current) |FAILOVER of FORCE_FAILOVER_ALLOW_DATA_LOSS gebruiken om naar een secundaire data base te scha kelen die primair moet zijn om FAILOVER te initiëren |
-| [ALTER DATA BASE](/sql/t-sql/statements/alter-database-transact-sql?preserve-view=true&view=azuresqldb-current) |Gebruik secundaire verwijderen op de SERVER om een gegevens replicatie tussen een SQL Database en de opgegeven secundaire data base te beëindigen. |
+| [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?preserve-view=true&view=azuresqldb-current) |Gebruik het argument secundair op SERVER toevoegen om een secundaire Data Base voor een bestaande Data Base te maken en gegevens replicatie te starten |
+| [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?preserve-view=true&view=azuresqldb-current) |FAILOVER of FORCE_FAILOVER_ALLOW_DATA_LOSS gebruiken om naar een secundaire data base te scha kelen die primair moet zijn om FAILOVER te initiëren |
+| [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?preserve-view=true&view=azuresqldb-current) |Gebruik secundaire verwijderen op de SERVER om een gegevens replicatie tussen een SQL Database en de opgegeven secundaire data base te beëindigen. |
 | [sys.geo_replication_links](/sql/relational-databases/system-dynamic-management-views/sys-geo-replication-links-azure-sql-database) |Retourneert informatie over alle bestaande replicatie koppelingen voor elke Data Base op een server. |
 | [sys.dm_geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database) |Hiermee worden de laatste replicatie tijd, de laatste replicatie vertraging en andere informatie over de replicatie koppeling voor een bepaalde data base opgehaald. |
 | [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) |Hier wordt de status weer gegeven voor alle database bewerkingen, inclusief de status van de replicatie koppelingen. |

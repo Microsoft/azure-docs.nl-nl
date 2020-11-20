@@ -1,5 +1,5 @@
 ---
-title: Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
+title: Migreren naar verbindings monitor (preview) van Netwerkprestatiemeter
 titleSuffix: Azure Network Watcher
 description: Meer informatie over het migreren naar verbindings monitor vanuit Netwerkprestatiemeter.
 services: network-watcher
@@ -12,16 +12,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/20/2020
 ms.author: vinigam
-ms.openlocfilehash: 949f717c56892f8a1d0826e8e6f1f2164a4a142c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 38ea682b4f3894f373d16908b942b4fa578741c4
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94974836"
+ms.locfileid: "94985804"
 ---
-# <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
+# <a name="migrate-to-connection-monitor-preview-from-network-performance-monitor"></a>Migreren naar verbindings monitor (preview) van Netwerkprestatiemeter
 
 U kunt tests migreren van Netwerkprestatiemeter (NPM) naar een nieuwe, verbeterde verbindings monitor met één klik en met een downtime van nul. Zie [verbindings monitor](./connection-monitor-overview.md)voor meer informatie over de voor delen.
+
+> [!IMPORTANT]
+> De verbindings monitor is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 >[!NOTE]
 > Alleen tests van de service verbindings monitor kunnen worden gemigreerd naar de verbindings monitor.

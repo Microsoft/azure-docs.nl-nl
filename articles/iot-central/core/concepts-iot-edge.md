@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - device-developer
 - iot-edge
-ms.openlocfilehash: 5c51649e742f6e314e0e324ae19c38f1a83b02ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c4248246be845aa8608aac8b8a3ce761ea1ef86
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90016857"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94987045"
 ---
 # <a name="connect-azure-iot-edge-devices-to-an-azure-iot-central-application"></a>Azure IoT Edge-apparaten verbinden met een Azure IoT Central-toepassing
 
@@ -25,7 +25,7 @@ IoT Edge bestaat uit drie onderdelen:
 
 * **IOT Edge modules** zijn containers waarop Azure-Services, partner services of uw eigen code worden uitgevoerd. Modules worden op IoT Edge apparaten geïmplementeerd en lokaal op deze apparaten uitgevoerd.
 * De **IOT Edge runtime** wordt op elk IOT edge apparaat uitgevoerd en beheert de modules die op elk apparaat zijn geïmplementeerd.
-* Met een **Cloud interface** kunt u IOT edge apparaten op afstand bewaken en beheren. IoT Central is de Cloud interface.
+* Met een **cloudinterface** kunt u op afstand de IoT Edge-apparaten controleren en beheren. IoT Central is de Cloud interface.
 
 Een **Azure IOT Edge** apparaat kan een gateway apparaat zijn, met downstream-apparaten die verbinding maken met het IOT edge apparaat. In dit artikel wordt meer informatie over verbindings patronen voor downstream-apparaten gedeeld.
 
@@ -63,9 +63,9 @@ In azure IoT Central kunt u een implementatie manifest importeren om een sjabloo
 
 IoT Central modellen een IoT Edge apparaat als volgt:
 
-* Elke IoT Edge-apparaatprofiel heeft een hulp model voor het apparaat.
+* Elke IoT Edge-apparaatprofiel heeft een model apparaat.
 * Voor elke aangepaste module die wordt vermeld in het implementatie manifest, wordt een module mogelijkheidsprofiel gegenereerd.
-* Er wordt een relatie tot stand gebracht tussen elk module mogelijkheidsprofiel en een mogelijkheidsprofiel.
+* Er wordt een relatie tot stand gebracht tussen elk module functionaliteits model en een model apparaat.
 * Een module-functionaliteits model implementeert module interfaces.
 * Elke module interface bevat telemetrie, eigenschappen en opdrachten.
 
@@ -73,7 +73,7 @@ IoT Central modellen een IoT Edge apparaat als volgt:
 
 ## <a name="iot-edge-gateway-devices"></a>IoT Edge gateway-apparaten
 
-Als u een IoT Edge apparaat als gateway apparaat hebt geselecteerd, kunt u downstream-relaties toevoegen aan de apparaatfuncties voor apparaten die u wilt verbinden met het gateway apparaat.
+Als u een IoT Edge apparaat hebt geselecteerd om een gateway apparaat te zijn, kunt u downstream-relaties toevoegen aan apparaten modellen voor apparaten die u wilt verbinden met het gateway apparaat.
 
 ## <a name="next-steps"></a>Volgende stappen
 

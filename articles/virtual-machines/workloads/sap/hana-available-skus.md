@@ -12,15 +12,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/23/2020
+ms.date: 11/20/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fd979f553ff03d8373948d73c416a96bb140b544
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 2732f9fc4b1b9251391180874a055e8ffd8d9e7a
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964759"
+ms.locfileid: "94985073"
 ---
 # <a name="available-skus-for-hana-large-instances"></a>Beschik bare Sku's voor HANA grote instanties
 
@@ -33,12 +33,15 @@ SAP HANA op Azure (grote exemplaren) service op basis van alleen revisie 3 stem 
 
 SAP HANA op Azure (grote exemplaren) service op basis van revisie 4 stem pels is beschikbaar in verschillende configuraties in de Azure-regio's van:
 
-- West US 2
+- VS - west 2
 - VS - oost
-- VS - oost 2
-- South Central US
+
+BareMetal-infra structuur (gecertificeerd voor SAP HANA workload) op basis van de revisie 4,2-stem pels. Het is beschikbaar in verschillende configuraties in de Azure-regio's van:
 - Europa -west
 - Europa - noord
+- VS - oost 2
+- VS - zuid-centraal
+
 
 
 

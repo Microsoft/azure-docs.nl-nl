@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: cc33d3c07461b5662e1454ec131dbc2b5f19a390
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 7b048581b29fa4244c42261810f382b229a627dd
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92126170"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94985961"
 ---
 # <a name="azure-iot-central-architecture"></a>Azure IoT Central-architectuur
 
@@ -54,7 +54,7 @@ IoT Central kunt de volgende mogelijkheden voor IoT Edge apparaten:
   - De telemetrie van elke module verzendt.
   - De eigenschappen van elke module rapporteren.
   - De opdrachten waarop elke module reageert, worden beantwoord.
-  - De relaties tussen een IoT Edge functionaliteits model en het functionaliteits model voor het downstream-apparaat.
+  - De relaties tussen een IoT Edge gateway apparaat en het downstream-apparaat.
   - Cloud eigenschappen die niet op het IoT Edge apparaat zijn opgeslagen.
   - Aanpassingen, dashboards en formulieren die deel uitmaken van uw IoT Central-toepassing.
 
@@ -133,12 +133,12 @@ In een Azure IoT Central-toepassing worden met Apparaatinstellingen het gedrag e
 
 ![Sjabloon architectuur](media/concepts-architecture/template-architecture.png)
 
-In een IoT Central toepassings apparaat sjabloon bevat:
+In een IoT Central- [apparaatprofiel](concepts-device-templates.md) bevat:
 
-- Met **hulp modellen voor apparaten** kunt u de mogelijkheden van een apparaat opgeven, zoals de telemetrie die het verzendt, de eigenschappen die de status van het apparaat definiëren en de opdrachten waarop het apparaat reageert. De mogelijkheden van het apparaat zijn ingedeeld in een of meer interfaces.
+- Een **apparaatprofiel** om de mogelijkheden van een apparaat op te geven, zoals de telemetrie die het verzendt, de eigenschappen die de status van het apparaat definiëren en de opdrachten waarop het apparaat reageert. De mogelijkheden van het apparaat zijn ingedeeld in een of meer interfaces.
 - Met **Cloud eigenschappen** geeft u de eigenschappen op IOT Central winkels voor een apparaat. Deze eigenschappen worden alleen opgeslagen in IoT Central en worden nooit naar een apparaat verzonden.
 - Met **weer gaven** worden de Dash boards en formulieren opgegeven die de opbouw functie maakt, zodat de operator de apparaten kan controleren en beheren.
-- Met **aanpassingen** kunnen de opbouw functie enkele van de definities in het hulp model van het apparaat overschrijven zodat deze relevanter worden voor de IOT Central-toepassing.
+- Met **aanpassingen** kan de opbouw functie enkele van de definities in het model van het apparaat overschrijven om ze relevanter te maken voor de IOT Central-toepassing.
 
 Een toepassing kan een of meer gesimuleerde en echte apparaten op basis van elk apparaatprofiel hebben.
 
@@ -152,7 +152,7 @@ In een Azure IoT Central-toepassing kunt u [taken maken en uitvoeren](howto-run-
 
 ## <a name="role-based-access-control-rbac"></a>Toegangsbeheer op basis van rollen (RBAC)
 
-Een [beheerder kan toegangs regels definiëren](howto-manage-users-roles.md) voor een Azure IOT Central-toepassing met behulp van een van de vooraf gedefinieerde rollen of door een aangepaste rol te maken. Rollen bepalen tot welke gebieden van de toepassing gebruikers toegang hebben en welke acties ze kunnen uitvoeren.
+Elke IoT Central toepassing heeft zijn eigen ingebouwde RBAC-systeem. Een [beheerder kan toegangs regels definiëren](howto-manage-users-roles.md) voor een Azure IOT Central-toepassing met behulp van een van de vooraf gedefinieerde rollen of door een aangepaste rol te maken. Rollen bepalen tot welke gebieden van de toepassing gebruikers toegang hebben en welke acties ze kunnen uitvoeren.
 
 ## <a name="security"></a>Beveiliging
 

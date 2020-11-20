@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 04/29/2020
-ms.openlocfilehash: 8b0d6665b440516d29cc9aeb0b6e50f509528574
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: ec193eab02d937e9d93b8632fa171fec8227d6c2
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92503433"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94987487"
 ---
 # <a name="manage-azure-sql-managed-instance-long-term-backup-retention-powershell"></a>Lange termijn back-ups van Azure SQL Managed instance beheren (Power shell)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -30,7 +30,7 @@ In de volgende secties ziet u hoe u Power shell kunt gebruiken voor het configur
 
 ## <a name="azure-roles-to-manage-long-term-retention"></a>Azure-functies voor het beheren van lange termijn retentie
 
-Voor **Get-AzSqlInstanceDatabaseLongTermRetentionBackup** en **Restore-AzSqlInstanceDatabase**moet u een van de volgende rollen hebben:
+Voor **Get-AzSqlInstanceDatabaseLongTermRetentionBackup** en **Restore-AzSqlInstanceDatabase** moet u een van de volgende rollen hebben:
 
 - Rol van abonnements eigenaar of
 - Rol Inzender voor beheerde instanties of
@@ -39,7 +39,7 @@ Voor **Get-AzSqlInstanceDatabaseLongTermRetentionBackup** en **Restore-AzSqlInst
   - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionManagedInstanceBackups/read`
   - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/read`
 
-Voor **Remove-AzSqlInstanceDatabaseLongTermRetentionBackup**moet u een van de volgende rollen hebben:
+Voor **Remove-AzSqlInstanceDatabaseLongTermRetentionBackup** moet u een van de volgende rollen hebben:
 
 - Rol van abonnements eigenaar of
 - Aangepaste rol met de volgende machtiging:
@@ -48,7 +48,7 @@ Voor **Remove-AzSqlInstanceDatabaseLongTermRetentionBackup**moet u een van de vo
 > [!NOTE]
 > De rol Inzender voor beheerde instanties heeft geen machtiging voor het verwijderen van V.L.N.R.-back-ups.
 
-RBAC-machtigingen kunnen worden verleend in *abonnementen* of in het bereik van de *resource groep* . Voor toegang tot LTR-back-ups die deel uitmaken van een verwijderde instantie, moet de machtiging echter worden verleend in het *abonnements* bereik van dat exemplaar.
+Er kunnen Azure RBAC-machtigingen worden verleend in *abonnementen* of in het bereik van de *resource groep* . Voor toegang tot LTR-back-ups die deel uitmaken van een verwijderde instantie, moet de machtiging echter worden verleend in het *abonnements* bereik van dat exemplaar.
 
 - `Microsoft.Sql/locations/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/delete`
 

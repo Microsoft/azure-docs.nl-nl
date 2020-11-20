@@ -10,12 +10,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
 ms.date: 08/31/2020
-ms.openlocfilehash: 7bcdabdb4e49d198b9acb7a1c57312b31a5b4fff
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 51e9e66e2fd8ff60dd20c275a66fd13c047cc629
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842223"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94985515"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>Door de gebruiker geïnitieerde hand matige failover op een SQL-beheerd exemplaar
 
@@ -37,9 +37,9 @@ U kunt overwegen om een van de volgende redenen een [hand matige failover](../da
 
 ## <a name="initiate-manual-failover-on-sql-managed-instance"></a>Hand matige failover initiëren op een SQL-beheerd exemplaar
 
-### <a name="rbac-permissions-required"></a>RBAC-machtigingen vereist
+### <a name="azure-rbac-permissions-required"></a>Vereiste Azure RBAC-machtigingen
 
-De gebruiker die een failover initieert, moet een van de volgende RBAC-rollen hebben:
+Gebruikers die een failover initiëren, moeten een van de volgende Azure-rollen hebben:
 
 - De rol van abonnements eigenaar of
 - Rol van beheerde instantie Inzender of

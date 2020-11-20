@@ -1,5 +1,5 @@
 ---
-title: Verbindings monitor maken-Power shell
+title: Verbindings monitor maken (preview)-Power shell
 titleSuffix: Azure Network Watcher
 description: Meer informatie over het maken van een verbindings monitor met behulp van Power shell.
 services: network-watcher
@@ -12,16 +12,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: fa8b2d967a336343d23c5f6aa4477ebcf2396407
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b1ffce75d5c38177c70db3ec1fc024a01821d3ab
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949034"
+ms.locfileid: "94984240"
 ---
-# <a name="create-a-connection-monitor-using-powershell"></a>Een verbindings monitor maken met behulp van Power shell
+# <a name="create-a-connection-monitor-preview-using-powershell"></a>Een verbindings monitor maken (preview) met behulp van Power shell
 
 Meer informatie over het maken van een verbindings monitor om de communicatie tussen uw resources te bewaken met behulp van Power shell.
+
+> [!IMPORTANT]
+> De verbindings monitor is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="before-you-begin"></a>Voordat u begint 
 
@@ -80,7 +84,7 @@ New-AzNetworkWatcherConnectionMonitor -NetworkWatcherName $nw -ResourceGroupName
 
 * Eindpunten
     * naam: unieke naam voor elk eind punt
-    * resourceId: voor Azure-eind punten verwijst de resource-ID naar de Azure Resource Manager Resource-ID voor virtuele machines. Voor niet-Azure-eind punten verwijst Resource-ID naar de resource-ID van de Azure Resource Manager voor de Log Analytics werk ruimte die is gekoppeld aan niet-Azure-agents.
+    * resourceId: voor Azure-eind punten verwijst de resource-ID naar de Azure Resource Manager Resource-ID voor virtuele machines. Voor niet-Azure-eind punten verwijst Resource-ID naar de Azure Resource Manager Resource-ID voor de Log Analytics-werk ruimte die is gekoppeld aan niet-Azure-agents.
     * adres: alleen van toepassing als de resource-ID niet is opgegeven of als de resource-ID Log Analytics werk ruimte is. Als dit wordt gebruikt in combi natie met Log Analytics Resource-ID, verwijst dit naar de FQDN van de agent die kan worden gebruikt voor de bewaking. Als u zonder Resource-ID gebruikt, kan dit de URL of het IP-adres van een openbaar eind punt zijn.
     * filter: voor niet-Azure-eind punten gebruikt u filter om agents te selecteren uit Log Analytics werk ruimte die wordt gebruikt voor de bewaking van de bron van de verbindings monitor. Als er geen filters zijn ingesteld, kunnen alle agents die deel uitmaken van de Log Analytics-werk ruimte worden gebruikt voor de bewaking
         * type: Stel type in als agent adres
@@ -100,6 +104,10 @@ New-AzNetworkWatcherConnectionMonitor -NetworkWatcherName $nw -ResourceGroupName
         * preferHTTPS: Geef op of HTTPS via HTTP moet worden gebruikt
         * poort: Geef de doel poort van uw keuze op.
         * disableTraceRoute: dit is van toepassing op test groepen waarvan het protocol TCP of ICMP is. Het stoppen van bronnen van het detecteren van topologie en hop-by-Hop RTT wordt gestopt.
+        * methode: dit is van toepassing op test configuraties waarvan het Protocol HTTP is. Selecteer de HTTP-aanvraag methode: GET of POST
+        * pad-Geef para meters op die moeten worden toegevoegd aan de URL
+        * validStatusCodes: Kies toepasselijke status codes. Als de antwoord code niet overeenkomt met deze lijst, wordt een diagnostisch bericht weer gegeven
+        * requestHeaders: Geef aangepaste aanvraag header teken reeksen op die worden door gegeven aan de bestemming
     * successThreshold-u kunt drempels instellen voor de volgende netwerk parameters:
         * checksFailedPercent: Stel het percentage controles in dat kan mislukken wanneer bronnen de connectiviteit met bestemmingen controleren met behulp van de criteria die u hebt opgegeven. Voor het TCP-of ICMP-protocol kan het percentage mislukte controles worden vergeleken met het percentage pakket verlies. Voor het HTTP-protocol vertegenwoordigt dit veld het percentage HTTP-aanvragen dat geen antwoord heeft ontvangen.
         * roundTripTimeMs: Stel de RTT in milliseconden in om te bepalen hoe lang bronnen kunnen worden verbonden met het doel via de test configuratie.

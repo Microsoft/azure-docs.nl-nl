@@ -1,5 +1,5 @@
 ---
-title: Verbindings monitor maken-ARMClient
+title: 'Verbindings monitor maken (preview): ARM-sjabloon'
 titleSuffix: Azure Network Watcher
 description: Meer informatie over het maken van een verbindings monitor met behulp van de ARMClient.
 services: network-watcher
@@ -12,16 +12,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: c80f2aaf26c0f0e89014c997151599c8bddbe903
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: e1a0ecd85d07aa4fdf5482c5104c17eb4a068688
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948813"
+ms.locfileid: "94984223"
 ---
-# <a name="create-a-connection-monitor-using-the-armclient"></a>Een verbindings monitor maken met behulp van de ARMClient
+# <a name="create-a-connection-monitor-using-the-arm-template"></a>Een verbindings monitor maken met de ARM-sjabloon
 
 Meer informatie over het maken van een verbindings monitor voor het bewaken van de communicatie tussen uw resources met behulp van de ARMClient. Het ondersteunt hybride en Azure-Cloud implementaties.
+
+> [!IMPORTANT]
+> De verbindings monitor is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="before-you-begin"></a>Voordat u begint 
 

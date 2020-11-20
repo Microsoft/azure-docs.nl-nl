@@ -1,16 +1,16 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Logic Apps
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Logic Apps. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.topic: reference
 ms.suite: integration
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 7bfb8e392a22e53ce44d1e75a1443b09197a5979
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 2e641285afba589404ec4c50b722e31efc7d853d
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94745141"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94985179"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-logic-apps"></a>Ingebouwde Azure Policy-definities voor Azure Logic Apps
 

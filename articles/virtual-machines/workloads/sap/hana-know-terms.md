@@ -11,15 +11,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 02/21/2020
+ms.date: 11/20/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b65190c0fd2fcac132f762116a63357a08e6bf02
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 7777888bd27325e9094032458922969494a9a64e
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967734"
+ms.locfileid: "94984954"
 ---
 # <a name="know-the-terms"></a>Inzicht in de voorwaarden
 
@@ -45,6 +45,7 @@ Verschillende algemene definities worden veel gebruikt in de architectuur en tec
 - **Revisie**: er zijn twee verschillende stempel revisies voor Hana grote instantie tempels. Deze verschillen qua architectuur en nabijheid van Azure virtual machine-hosts
     - Revisie 3 (Rev 3): is het oorspronkelijke ontwerp dat is geïmplementeerd vanaf medio het jaar 2016
     - "Revisie 4" (Rev 4): is een nieuw ontwerp dat dichter bij de hosts van virtuele Azure-machines kan zorgen en met die lagere netwerk latentie tussen virtuele machines van Azure en HANA grote instantie-eenheden. 
+    - "Revisie 4,2" (Rev 4,2): op bestaande revisie 4-Dc's worden bronnen gebrand voor BareMetal-infra structuur.  Klanten hebben toegang tot hun resources als BareMetal-exemplaren van de Azure Portal. 
 
 Er zijn verschillende extra resources beschikbaar voor het implementeren van een SAP-werk belasting in de Cloud. Als u van plan bent een implementatie van SAP HANA in azure uit te voeren, moet u zich bewust zijn van de beginselen van Azure IaaS en de implementatie van SAP-workloads op Azure IaaS. Zie [SAP-oplossingen op virtuele machines van Azure gebruiken](get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) voor meer informatie voordat u doorgaat. 
 

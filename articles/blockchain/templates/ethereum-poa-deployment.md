@@ -5,12 +5,12 @@ ms.date: 07/23/2020
 ms.topic: how-to
 ms.reviewer: ravastra
 ms.custom: devx-track-js
-ms.openlocfilehash: d1d3ad94957e791b2178b6c60d4c7debdec2b391
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5bbfca4d890440574ee6717ca910969226fc781a
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91283425"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94987062"
 ---
 # <a name="deploy-ethereum-proof-of-authority-consortium-solution-template-on-azure"></a>Ethereum proof-of-Authority consortium-oplossings sjabloon implementeren in azure
 
@@ -48,7 +48,7 @@ De implementatie van elk consortium omvat:
 * Azure Monitor voor het samen voegen van Logboeken en prestatie statistieken
 * VNet-gateway (optioneel) voor het toestaan van VPN-verbindingen tussen privé-VNets
 
-De RPC-en peering-eind punten zijn standaard toegankelijk via het open bare IP-adres om vereenvoudigde connectiviteit tussen abonnementen en Clouds mogelijk te maken. Voor toegangs beheer op toepassings niveau kunt u [de machtigings contracten van de pariteit](https://wiki.parity.io/Permissioning)gebruiken. Netwerken die achter Vpn's zijn geïmplementeerd, maken gebruik van VNet-gateways voor connectiviteit tussen verschillende abonnementen. Omdat VPN-en VNet-implementaties complexer zijn, kunt u beginnen met een openbaar IP-model bij het maken van een prototype van een oplossing.
+De RPC-en peering-eind punten zijn standaard toegankelijk via het open bare IP-adres om vereenvoudigde connectiviteit tussen abonnementen en Clouds mogelijk te maken. Voor toegangs beheer op toepassings niveau kunt u de machtigings contracten van de pariteit gebruiken. Netwerken die achter Vpn's zijn geïmplementeerd, maken gebruik van VNet-gateways voor connectiviteit tussen verschillende abonnementen. Omdat VPN-en VNet-implementaties complexer zijn, kunt u beginnen met een openbaar IP-model bij het maken van een prototype van een oplossing.
 
 Docker-containers worden gebruikt voor betrouw baarheid en modulariteit. Azure Container Registry wordt gebruikt voor het hosten en leveren van geversiete installatie kopieën als onderdeel van elke implementatie. De container installatie kopieën bestaan uit:
 
@@ -86,7 +86,7 @@ Selecteer **Block Chain**  >  **Ethereum proof-of-Authority Consortium (preview)
 
 ### <a name="basics"></a>Basisbeginselen
 
-Geef onder **basis principes**waarden op voor de standaard parameters voor elke implementatie.
+Geef onder **basis principes** waarden op voor de standaard parameters voor elke implementatie.
 
 ![Basisbeginselen](./media/ethereum-poa-deployment/basic-blade.png)
 
@@ -98,50 +98,50 @@ VM-gebruikers naam | Gebruikers naam van de beheerder van elke geïmplementeerde
 Verificatietype | De methode voor verificatie bij de virtuele machine. | Wachtwoord
 Wachtwoord | Het wacht woord voor het beheerders account voor elk van de virtuele machines die zijn geïmplementeerd. Alle Vm's hebben in eerste instantie hetzelfde wacht woord. U kunt het wacht woord na het inrichten wijzigen. | 12-72 tekens 
 Abonnement | Het abonnement waarop het consortium netwerk moet worden geïmplementeerd |
-Resource Group| De resource groep waarvoor het consortium netwerk moet worden geïmplementeerd. | myResourceGroup
-Locatie | De Azure-regio voor de resource groep. | West US 2
+Resourcegroep| De resource groep waarvoor het consortium netwerk moet worden geïmplementeerd. | myResourceGroup
+Locatie | De Azure-regio voor de resource groep. | VS - west 2
 
 Selecteer **OK**.
 
 ### <a name="deployment-regions"></a>Implementatie regio's
 
-Geef onder *implementatie regio's*het aantal regio's en locaties voor elk op. U kunt Maxi maal vijf regio's implementeren. De eerste regio moet overeenkomen met de locatie van de resource groep uit de sectie *basis beginselen* . Voor ontwikkel-en test netwerken kunt u één regio per lid gebruiken. Implementeer voor productie over twee of meer regio's voor hoge Beschik baarheid.
+Geef onder *implementatie regio's* het aantal regio's en locaties voor elk op. U kunt Maxi maal vijf regio's implementeren. De eerste regio moet overeenkomen met de locatie van de resource groep uit de sectie *basis beginselen* . Voor ontwikkel-en test netwerken kunt u één regio per lid gebruiken. Implementeer voor productie over twee of meer regio's voor hoge Beschik baarheid.
 
 ![implementatie regio's](./media/ethereum-poa-deployment/deployment-regions.png)
 
 Parameter | Beschrijving | Voorbeeldwaarde
 ----------|-------------|--------------
 Aantal regio's|Aantal regio's voor de implementatie van het consortium netwerk| 2
-Eerste regio | Eerste regio voor het implementeren van het consortium netwerk | West US 2
+Eerste regio | Eerste regio voor het implementeren van het consortium netwerk | VS - west 2
 Tweede regio | Tweede regio voor het implementeren van het consortium netwerk. Extra regio's zijn zichtbaar wanneer het aantal regio's twee of meer is. | VS - oost 2
 
 Selecteer **OK**.
 
 ### <a name="network-size-and-performance"></a>Netwerk grootte en-prestaties
 
-Geef onder *netwerk grootte en prestaties*invoer op voor de grootte van het consortium netwerk. De opslag grootte van het validatie knooppunt bepaalt de mogelijke grootte van de Block chain. De grootte kan na de implementatie worden gewijzigd.
+Geef onder *netwerk grootte en prestaties* invoer op voor de grootte van het consortium netwerk. De opslag grootte van het validatie knooppunt bepaalt de mogelijke grootte van de Block chain. De grootte kan na de implementatie worden gewijzigd.
 
 ![Netwerk grootte en-prestaties](./media/ethereum-poa-deployment/network-size-and-performance.png)
 
 Parameter | Beschrijving | Voorbeeldwaarde
 ----------|-------------|--------------
 Aantal validator-knoop punten met gelijke taak verdeling | Het aantal validatie knooppunten dat moet worden ingericht als onderdeel van het netwerk. | 2
-Prestaties van het knoop punt opslag valideren | Het type beheerde schijf voor elk van de geïmplementeerde validatie knooppunten. Zie [prijzen voor opslag](https://azure.microsoft.com/pricing/details/managed-disks/) voor meer informatie over prijzen. | Standard SSD
+Prestaties van het knoop punt opslag valideren | Het type beheerde schijf voor elk van de geïmplementeerde validatie knooppunten. Zie [prijzen voor opslag](https://azure.microsoft.com/pricing/details/managed-disks/) voor meer informatie over prijzen. | Standard - SSD
 Grootte van de virtuele machine van het validatie knooppunt | De grootte van de virtuele machine die wordt gebruikt voor validatie knooppunten. Zie [prijzen van virtuele machines](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) voor meer informatie over prijzen. | Standard D2 v3
 
 De virtuele machine en de opslaglaag zijn van invloed op de netwerk prestaties.  Gebruik de volgende tabel om rendabele efficiëntie te kiezen:
 
 SKU van virtuele machine|Opslaglaag|Prijs|Doorvoer|Latentie
 ---|---|---|---|---
-F1|Standard SSD|gebrek|gebrek|hoog
-D2_v3|Standard SSD|gemiddeld|gemiddeld|gemiddeld
-F16s|Premium SSD|hoog|hoog|gebrek
+F1|Standard - SSD|gebrek|gebrek|hoog
+D2_v3|Standard - SSD|gemiddeld|gemiddeld|gemiddeld
+F16s|Premium - SSD|hoog|hoog|gebrek
 
 Selecteer **OK**.
 
 ### <a name="ethereum-settings"></a>Ethereum-instellingen
 
-Geef onder *Ethereum-instellingen*Ethereum configuratie-instellingen op.
+Geef onder *Ethereum-instellingen* Ethereum configuratie-instellingen op.
 
 ![Ethereum-instellingen](./media/ethereum-poa-deployment/ethereum-settings.png)
 
@@ -341,7 +341,7 @@ ssh -p 4000 poaadmin\@leader4vb.eastus.cloudapp.azure.com.
 
 Als u extra transactie knooppunten wilt ophalen, verhoogt u het poort nummer met één.
 
-Als u in meer dan één regio hebt geïmplementeerd, wijzigt u de opdracht in de DNS-naam of het IP-adres van de load balancer in die regio. Als u de DNS-naam of het IP-adres van de andere regio's wilt vinden, zoekt u de bron met de naam Conventie ** \* \* \* \* \* -lbpip-REG \# ** en bekijkt u de eigenschappen van de DNS-naam en IP-adres.
+Als u in meer dan één regio hebt geïmplementeerd, wijzigt u de opdracht in de DNS-naam of het IP-adres van de load balancer in die regio. Als u de DNS-naam of het IP-adres van de andere regio's wilt vinden, zoekt u de bron met de naam Conventie **\* \* \* \* \* -lbpip-REG \#** en bekijkt u de eigenschappen van de DNS-naam en IP-adres.
 
 ## <a name="azure-traffic-manager-load-balancing"></a>Taak verdeling van Azure Traffic Manager
 
@@ -370,7 +370,7 @@ Als u besluit een Traffic Manager profiel te maken, kunt u de DNS-naam van het p
 
 1. Kies het tabblad **eind punten** en selecteer de knop **toevoegen** .
 1. Geef het eind punt een unieke naam.
-1. Kies **openbaar IP-adres**bij **doel bron type**.
+1. Kies **openbaar IP-adres** bij **doel bron type**.
 1. Kies het open bare IP-adres van de load balancer van de eerste regio.
 
     ![Routering verkeer beheer](./media/ethereum-poa-deployment/traffic-manager-routing.png)
@@ -605,7 +605,7 @@ Truffle-projecten bevatten een configuratie bestand voor de netwerk verbindings 
 > [!WARNING]
 > Stuur nooit uw persoonlijke Ethereum-sleutel via het netwerk. Zorg ervoor dat elke trans actie eerst lokaal wordt ondertekend en dat de ondertekende trans actie via het netwerk wordt verzonden.
 
-1. U hebt de instructie voor het Ethereum-beheerders account nodig voor het [implementeren van uw Block chain-netwerk](#ethereum-settings). Als u de account hebt gemaakt met het-gebruikgemaakt van het-gemaskeerd masker, kunt u de instructie van het-demask ophalen. Selecteer het pictogram Administrator-account in de rechter bovenhoek van de gegevensmasker extensie en selecteer **instellingen > beveiliging & Privacy > Geef zaad woorden**op.
+1. U hebt de instructie voor het Ethereum-beheerders account nodig voor het [implementeren van uw Block chain-netwerk](#ethereum-settings). Als u de account hebt gemaakt met het-gebruikgemaakt van het-gemaskeerd masker, kunt u de instructie van het-demask ophalen. Selecteer het pictogram Administrator-account in de rechter bovenhoek van de gegevensmasker extensie en selecteer **instellingen > beveiliging & Privacy > Geef zaad woorden** op.
 1. Vervang de inhoud van `truffle-config.js` in uw Truffle-project door de volgende inhoud. Vervang de waarden van de tijdelijke aanduiding voor het eind punt en de instructie.
 
     ```javascript
@@ -685,7 +685,7 @@ Nu uw slimme contract is geïmplementeerd, kunt u een trans actie verzenden om e
 
 ## <a name="webassembly-wasm-support"></a>Ondersteuning voor webassembly (WASM)
 
-Ondersteuning voor webassembly is al voor u ingeschakeld op nieuwe geïmplementeerde PoA-netwerken. Dit maakt het mogelijk om intelligente contracten te ontwikkelen in elke taal die wordt gepoold naar Web-Assembly (roest, C, C++). Zie voor meer informatie: [pariteits overzicht van Webassembly](https://wiki.parity.io/WebAssembly-Home) en [zelf studie van parity tech](https://github.com/paritytech/pwasm-tutorial)
+Ondersteuning voor webassembly is al voor u ingeschakeld op nieuwe geïmplementeerde PoA-netwerken. Dit maakt het mogelijk om intelligente contracten te ontwikkelen in elke taal die wordt gepoold naar Web-Assembly (roest, C, C++). Zie [zelf studie over pariteits technische](https://github.com/paritytech/pwasm-tutorial)voor meer informatie.
 
 ## <a name="faq"></a>Veelgestelde vragen
 

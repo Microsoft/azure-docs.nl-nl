@@ -7,12 +7,12 @@ ms.author: viviali
 ms.date: 06/25/2020
 ms.topic: how-to
 ms.service: iot-central
-ms.openlocfilehash: 812fd0c10b63cfe469a10a99069f201fcc2cc658
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 9e5f4fd14f56f0a2dff45dd2650ea552b07fecd7
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92126734"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94987351"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export-legacy"></a>IoT-gegevens exporteren naar Cloud bestemmingen met behulp van gegevens export (verouderd)
 
@@ -22,7 +22,7 @@ ms.locfileid: "92126734"
 > - Zie [IOT-gegevens naar Cloud bestemmingen exporteren met behulp van gegevens export](./howto-export-data.md)voor meer informatie over de nieuwe functies voor het exporteren van gegevens.
 > - Zie voor meer informatie over de verschillen tussen de functies voor het exporteren van de voorbeeld gegevens en verouderde gegevens export de [vergelijkings tabel](./howto-export-data.md#comparison-of-legacy-data-export-and-data-export).
 
-In dit artikel wordt beschreven hoe u de functie voor gegevens export kunt gebruiken in azure IoT Central. Met deze functie kunt u uw gegevens continu exporteren naar **azure Event hubs**, **Azure service bus**of **Azure Blob Storage** -exemplaren. Gegevens export maakt gebruik van de JSON-indeling en kan informatie over telemetrie, apparaatgegevens en apparaatinstellingen bevatten. De geëxporteerde gegevens gebruiken voor:
+In dit artikel wordt beschreven hoe u de functie voor gegevens export kunt gebruiken in azure IoT Central. Met deze functie kunt u uw gegevens continu exporteren naar **azure Event hubs**, **Azure service bus** of **Azure Blob Storage** -exemplaren. Gegevens export maakt gebruik van de JSON-indeling en kan informatie over telemetrie, apparaatgegevens en apparaatinstellingen bevatten. De geëxporteerde gegevens gebruiken voor:
 
 - Inzichten en analyse van warme paden. Deze optie omvat het activeren van aangepaste regels in Azure Stream Analytics, het activeren van aangepaste werk stromen in Azure Logic Apps, of het door geven via Azure Functions door lopen om te worden getransformeerd.
 - Analyse van koude paden zoals trainings modellen in de analyse van Azure Machine Learning of lange termijn in micro soft Power BI.
@@ -85,9 +85,9 @@ Nu u een bestemming hebt voor het exporteren van gegevens, voert u de volgende s
     > [!Tip]
     > Als het exporteren van **gegevens** niet in het linkerdeel venster wordt weer gegeven, bent u niet gemachtigd om de gegevens export in uw app te configureren. Neem contact op met een beheerder om het exporteren van gegevens in te stellen.
 
-3. Selecteer de knop **+ Nieuw** . Kies een van de **azure Blob Storage**, **azure Event hubs**, **Azure service bus wachtrij**of het **Azure service bus onderwerp** als bestemming voor de export. Het maximum aantal uitvoer bewerkingen per toepassing is vijf.
+3. Selecteer de knop **+ Nieuw** . Kies een van de **azure Blob Storage**, **azure Event hubs**, **Azure service bus wachtrij** of het **Azure service bus onderwerp** als bestemming voor de export. Het maximum aantal uitvoer bewerkingen per toepassing is vijf.
 
-4. Voer een naam in voor de export. Selecteer in de vervolg keuzelijst uw **naam ruimte**of **Voer een Connection String**in.
+4. Voer een naam in voor de export. Selecteer in de vervolg keuzelijst uw **naam ruimte** of **Voer een Connection String** in.
 
     - U ziet alleen opslag accounts, Event Hubs naam ruimten en Service Bus naam ruimten in hetzelfde abonnement als uw IoT Central-toepassing. Als u wilt exporteren naar een bestemming buiten dit abonnement, kiest u **een Connection String invoeren** en gaat u naar stap 6.
     - Voor apps die zijn gemaakt met behulp van het prijs plan gratis, is de enige manier om de gegevens export te configureren via een connection string. Apps voor het gratis prijs plan hebben geen bijbehorend Azure-abonnement.
@@ -100,7 +100,7 @@ Nu u een bestemming hebt voor het exporteren van gegevens, voert u de volgende s
 
     - Event Hubs of Service Bus gaat u naar de naam ruimte in de Azure Portal:
         - Een connection string gebruiken voor de volledige naam ruimte:
-            1. Onder **instellingen**selecteert u **beleid voor gedeelde toegang**
+            1. Onder **instellingen** selecteert u **beleid voor gedeelde toegang**
             2. Maak een nieuwe sleutel of kies een bestaande sleutel die machtigingen voor **verzenden** heeft.
             3. De primaire of secundaire connection string kopiëren
         - Als u connection string wilt gebruiken voor een specifiek Event Hub exemplaar of Service Bus-wachtrij of-onderwerp, gaat u naar **entiteiten > Event hubs** of **entiteiten** > **onderwerpen**>. Kies een specifiek exemplaar en volg de bovenstaande stappen om een connection string op te halen.
@@ -111,7 +111,7 @@ Nu u een bestemming hebt voor het exporteren van gegevens, voert u de volgende s
 
     Plak de connection string. Typ de naam van het exemplaar of de hoofdletter gevoelige **container**.
 
-7. Kies onder te **exporteren gegevens**de typen gegevens die u wilt exporteren door het type in te stellen **op on**.
+7. Kies onder te **exporteren gegevens** de typen gegevens die u wilt exporteren door het type in te stellen **op on**.
 
 8. Als u gegevens export wilt inschakelen, schakelt u de **ingeschakelde** wissel knop **in**. Selecteer **Opslaan**.
 
@@ -382,7 +382,6 @@ In dit voor beeld wordt een bericht weer gegeven over device-sjabloon gegevens i
                           {
                               "@id": "<id>",
                               "@type": ["Command"],
-                              "commandType": "synchronous",
                               "request": {
                                   "@id": "<id>",
                                   "@type": ["SchemaField"],
@@ -506,7 +505,6 @@ In dit voor beeld wordt een bericht weer gegeven met apparaat-en eigenschappen g
                           {
                               "@id": "<id>",
                               "@type": ["Command"],
-                              "commandType": "synchronous",
                               "request": {
                                   "@id": "<id>",
                                   "@type": ["SchemaField"],
@@ -555,17 +553,17 @@ In dit voor beeld wordt een bericht weer gegeven met apparaat-en eigenschappen g
 > [!Note]
 > De gegevens indeling van de telemetrie-stroom wordt niet beïnvloed door deze wijziging. Alleen de apparaten en apparaatnamen van de gegevens stromen worden beïnvloed.
 
-Als u een bestaande gegevens export in uw preview-toepassing hebt met de *apparaten* en de streams voor *apparaat-sjablonen* ingeschakeld, werkt u de export op **30 juni 2020**bij. Deze vereiste geldt voor export naar Azure Blob Storage, Azure Event Hubs en Azure Service Bus.
+Als u een bestaande gegevens export in uw preview-toepassing hebt met de *apparaten* en de streams voor *apparaat-sjablonen* ingeschakeld, werkt u de export op **30 juni 2020** bij. Deze vereiste geldt voor export naar Azure Blob Storage, Azure Event Hubs en Azure Service Bus.
 
 Vanaf 3 februari 2020 heeft alle nieuwe exports in toepassingen met apparaten en apparaatinstellingen ingeschakeld de hierboven beschreven gegevens indeling. Alle exports die vóór deze datum zijn gemaakt, blijven op de oude gegevens indeling tot en met 30 juni 2020, op het moment dat deze exports automatisch worden gemigreerd naar de nieuwe gegevens indeling. De nieuwe gegevens indeling komt overeen met het [apparaat](/rest/api/iotcentral/devices/get), de [apparaat-eigenschap](/rest/api/iotcentral/devices/getproperties), de eigenschap van de [apparaat-Cloud](/rest/api/iotcentral/devices/getcloudproperties)en de object [sjabloon](/rest/api/iotcentral/devicetemplates/get) objecten in de IOT Central open bare API.
 
-Voor **apparaten**zijn er belang rijke verschillen tussen de oude gegevens indeling en de nieuwe gegevens indeling:
+Voor **apparaten** zijn er belang rijke verschillen tussen de oude gegevens indeling en de nieuwe gegevens indeling:
 - `@id` voor het apparaat wordt verwijderd, `deviceId` wordt de naam gewijzigd in `id` 
 - `provisioned` markering is toegevoegd om de inrichtings status van het apparaat te beschrijven
 - `approved` markering is toegevoegd om de goedkeurings status van het apparaat te beschrijven
 - `properties` inclusief apparaat-en Cloud eigenschappen, komt overeen met entiteiten in de open bare API
 
-Voor **apparaatprofielen**zijn de verschillen tussen de oude gegevens indeling en de nieuwe gegevens indeling als volgt:
+Voor **apparaatprofielen** zijn de verschillen tussen de oude gegevens indeling en de nieuwe gegevens indeling als volgt:
 
 - `@id` de naam van de sjabloon voor het apparaat is gewijzigd in `id`
 - `@type` de naam van de apparaatprofiel wordt gewijzigd in `types` en is nu een matrix

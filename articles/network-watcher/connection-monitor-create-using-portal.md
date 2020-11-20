@@ -1,5 +1,5 @@
 ---
-title: Verbindings monitor maken-Azure Portal
+title: Verbindings monitor maken (preview)-Azure Portal
 titleSuffix: Azure Network Watcher
 description: In dit artikel wordt beschreven hoe u een monitor maakt in de verbindings monitor met behulp van de Azure Portal.
 services: network-watcher
@@ -12,16 +12,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
-ms.openlocfilehash: d652f1eae62270fa8968d64a2bd15a1261dca673
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f1ba23d53d79587c9d75c1d840c1d3857725d8dd
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949187"
+ms.locfileid: "94984376"
 ---
-# <a name="create-a-monitor-in-connection-monitor-by-using-the-azure-portal"></a>Een monitor maken in de verbindings monitor met behulp van de Azure Portal
+# <a name="create-a-monitor-in-connection-monitor-preview-by-using-the-azure-portal"></a>Een monitor maken in de verbindings monitor (preview) met behulp van de Azure Portal
 
 Meer informatie over het gebruik van verbindings monitor om de communicatie tussen uw resources te bewaken. In dit artikel wordt beschreven hoe u een monitor maakt met behulp van de Azure Portal. De verbindings monitor ondersteunt hybride en Azure-Cloud implementaties.
+
+> [!IMPORTANT]
+> De verbindings monitor is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="before-you-begin"></a>Voordat u begint 
 

@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 07/31/2020
-ms.openlocfilehash: b3919cbbe0ba7a796a21ae566afb8e2d9fa784db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0362c9ed4f736474dbd49e1bfaf1373e0f48acd6
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88716670"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992706"
 ---
 # <a name="transform-json-and-xml-using-liquid-templates-as-maps-in-azure-logic-apps"></a>JSON en XML transformeren met behulp van liquide sjablonen als Maps in Azure Logic Apps
 
@@ -80,7 +80,7 @@ In dit artikel wordt beschreven hoe u deze taken uitvoert:
 
    ![Integratie account selecteren](./media/logic-apps-enterprise-integration-liquid-transform/select-integration-account.png)
 
-1. Selecteer in het deel venster **overzicht** onder **onderdelen**de optie **kaarten**.
+1. Selecteer in het deel venster **overzicht** onder **onderdelen** de optie **kaarten**.
 
     ![Tegel ' Maps ' selecteren](./media/logic-apps-enterprise-integration-liquid-transform/select-maps-tile.png)
 
@@ -89,7 +89,7 @@ In dit artikel wordt beschreven hoe u deze taken uitvoert:
    | Eigenschap | Waarde | Beschrijving |
    |----------|-------|-------------|
    | **Naam** | `JsonToJsonTemplate` | De naam voor uw kaart, in dit voor beeld ' JsonToJsonTemplate ' |
-   | **Toewijzings type** | **Liquid** | Het type voor uw kaart. Voor JSON naar JSON-trans formatie moet u **liquide middelen**selecteren. |
+   | **Toewijzings type** | **Liquid** | Het type voor uw kaart. Voor JSON naar JSON-trans formatie moet u **liquide middelen** selecteren. |
    | **Diagram** | `SimpleJsonToJsonTemplate.liquid` | In dit voor beeld wordt een bestaande vloeistof sjabloon of kaart bestand gebruikt voor trans formatie, dat "SimpleJsonToJsonTemplate. liquide" is. U kunt dit bestand vinden met behulp van de bestands kiezer. Zie [limieten en configuratie](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits)voor limieten voor kaart grootte. |
    |||
 
@@ -101,7 +101,7 @@ In dit artikel wordt beschreven hoe u deze taken uitvoert:
 
 1. Voeg in de ontwerp functie voor logische apps de [aanvraag trigger](../connectors/connectors-native-reqres.md#add-request) toe aan uw logische app.
 
-1. Kies **nieuwe stap**onder de trigger. Typ als filter in het zoekvak `liquid` en selecteer deze actie: **JSON TRANSFORMEREN naar JSON-liquide**
+1. Kies **nieuwe stap** onder de trigger. Typ als filter in het zoekvak `liquid` en selecteer deze actie: **JSON TRANSFORMEREN naar JSON-liquide**
 
    ![Een liquide actie zoeken en selecteren](./media/logic-apps-enterprise-integration-liquid-transform/search-action-liquid.png)
 
@@ -112,7 +112,7 @@ In dit artikel wordt beschreven hoe u deze taken uitvoert:
    Als de lijst met kaarten leeg is, is de logische app waarschijnlijk niet gekoppeld aan uw integratie account. 
    Voer de volgende stappen uit om uw logische app te koppelen aan het integratie account met de vloeistof sjabloon of kaart:
 
-   1. Selecteer **werk stroom instellingen**in het menu van de logische app.
+   1. Selecteer **werk stroom instellingen** in het menu van de logische app.
 
    1. Selecteer in de lijst **een integratie account selecteren** het integratie account en selecteer **Opslaan**.
 
@@ -152,7 +152,7 @@ U kunt met behulp van [postman](https://www.getpostman.com/postman) of een soort
 
   * Als uw sjabloon gebruikmaakt van [liquide filters](https://shopify.github.io/liquid/basics/introduction/#filters), moet u ervoor zorgen dat u de [DotLiquid-en C#-naamgevings conventies](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers#filter-and-output-casing)volgt die gebruikmaken van een *zin*. Voor alle liquide trans formaties moet u ervoor zorgen dat filter namen in uw sjabloon ook wel zin hoofdletter gebruik gebruiken. Anders werken de filters niet.
 
-    Als u bijvoorbeeld het filter gebruikt, `replace` gebruiken `Replace` en niet `replace` . Dezelfde regel is van toepassing als u voor beelden op [DotLiquid online](http://dotliquidmarkup.org/try-online)probeert. Zie [Shopify Liquid filters](https://shopify.dev/docs/themes/liquid/reference/filters) en [DotLiquid Liquid filters](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Developers#create-your-own-filters)(Engelstalig) voor meer informatie. De Shopify-specificatie bevat voor beelden voor elk filter, zodat u deze voor beelden kunt uitproberen op [DotLiquid-online proberen](https://dotliquidmarkup.org/try-online).
+    Als u bijvoorbeeld het filter gebruikt, `replace` gebruiken `Replace` en niet `replace` . Dezelfde regel is van toepassing als u voor beelden op [DotLiquid online](http://dotliquidmarkup.org/try-online)probeert. Zie [Shopify Liquid filters](https://shopify.dev/docs/themes/liquid/reference/filters) en [DotLiquid Liquid filters](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Developers#create-your-own-filters)(Engelstalig) voor meer informatie. De Shopify-specificatie bevat voor beelden voor elk filter, zodat u deze voor beelden kunt uitproberen op [DotLiquid-online proberen](http://dotliquidmarkup.org/try-online).
 
   * Het `json` filter van de Shopify-extensie filters is momenteel [niet geïmplementeerd in DotLiquid](https://github.com/dotliquid/dotliquid/issues/384). Normaal gesp roken kunt u dit filter gebruiken om tekst uitvoer voor te bereiden voor het parseren van JSON-teken reeksen, maar in plaats daarvan moet u het `Replace` filter gebruiken.
 
@@ -244,7 +244,7 @@ Hier volgen de voorbeeld invoer en uitvoer:
 
 * [Shopify liquide taal en voor beelden](https://shopify.github.io/liquid/basics/introduction/)
 * [DotLiquid](http://dotliquidmarkup.org/)
-* [DotLiquid-online proberen](https://dotliquidmarkup.org/try-online)
+* [DotLiquid-online proberen](http://dotliquidmarkup.org/try-online)
 * [DotLiquid GitHub](https://github.com/dotliquid/dotliquid)
 * [Problemen met DotLiquid GitHub](https://github.com/dotliquid/dotliquid/issues/)
 * Meer informatie over [Maps](../logic-apps/logic-apps-enterprise-integration-maps.md)

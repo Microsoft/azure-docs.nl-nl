@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 36e61c8d1e0e41fd981f5483eff1f30814b22b92
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 3655b117b641a6179bd6539aaf3f75af07f21a1a
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905176"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992366"
 ---
 # <a name="azure-ddos-rapid-response"></a>Azure DDoS Rapid-antwoord
 
@@ -38,7 +38,7 @@ U moet DRR alleen benaderen als:
 ## <a name="engage-drr-during-an-active-attack"></a>DRR tijdens een actieve aanval benaderen
 
 1. Kies bij Azure Portal tijdens het maken van een nieuwe ondersteunings aanvraag het **probleem type** technisch.
-2. Kies **service** als **DDoS-beveiliging** .
+2. Kies **service** als **DDoS-beveiliging**.
 3. Kies een resource in de vervolg keuzelijst resource. _U moet een DDoS-abonnement selecteren dat is gekoppeld aan het virtuele netwerk dat wordt beveiligd door DDoS Protection Standard om DRR te benaderen._
 
     ![Resource kiezen](./media/ddos-rapid-response/choose-resource.png)
@@ -51,7 +51,7 @@ U moet DRR alleen benaderen als:
 
 DRR volgt het Azure Rapid Response-ondersteunings model. Raadpleeg het [ondersteunings bereik en de reactie tijd](https://azure.microsoft.com/en-us/support/plans/response/) voor meer informatie over snelle reacties.
 
-Lees de [DDoS Protection Standard-documentatie](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview)voor meer informatie.
+Lees de [DDoS Protection Standard-documentatie](./ddos-protection-overview.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

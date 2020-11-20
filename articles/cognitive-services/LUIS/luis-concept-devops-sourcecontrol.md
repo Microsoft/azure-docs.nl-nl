@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/28/2020
-ms.openlocfilehash: 25f2c4f4698785326f80c24d3749e7585e85d5bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e49b713aca23c0373fa71d772ef7567372abe456
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91309503"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94990564"
 ---
 # <a name="devops-practices-for-luis"></a>DevOps-procedures voor LUIS
 
@@ -54,11 +54,11 @@ Als u een LUIS-app in een indeling wilt opslaan `.lu` en deze wilt plaatsen onde
 
 > [!TIP]
 > Als u werkt met de JSON-export van een LUIS-app, kunt u [deze converteren naar LUDown](https://github.com/microsoft/botframework-cli/tree/master/packages/luis#bf-luisconvert) met behulp van de [BotBuilder-HULPPROGRAM ma's Luis cli](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS). Gebruik de `--sort` optie om ervoor te zorgen dat de intenties en uitingen alfabetisch worden gesorteerd.  
-> Houd er rekening mee dat **. ** Met de Lu-export functie die in de Luis-Portal is ingebouwd, wordt de uitvoer al gesorteerd.
+> Houd er rekening mee dat **.** Met de Lu-export functie die in de Luis-Portal is ingebouwd, wordt de uitvoer al gesorteerd.
 
 ### <a name="build-the-luis-app-from-source"></a>De LUIS-app bouwen vanuit de bron
 
-Als u een LUIS-app wilt *bouwen op basis van bron* , betekent dit dat u [een nieuwe Luis-App-versie kunt maken door de `.lu` bron te importeren](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) , [de versie te trainen](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) en te[publiceren](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app). U kunt dit doen in de LUIS-portal of op de opdracht regel:
+Als u een LUIS-app wilt *bouwen op basis van bron* , betekent dit dat u [een nieuwe Luis-App-versie kunt maken door de `.lu` bron te importeren](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) , [de versie te trainen](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) en te [publiceren](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app). U kunt dit doen in de LUIS-portal of op de opdracht regel:
 
 - Gebruik de LUIS-Portal om [de `.lu` versie](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) van de app te importeren vanuit broncode beheer en de app te [trainen](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) en te [publiceren](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app) .
 
@@ -74,7 +74,7 @@ De volgende typen bestanden voor uw LUIS-toepassing moeten worden onderhouden on
 
 - [Batch test bestanden](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-batch-test#batch-file-format) (uitingen en verwachte resultaten) die worden gebruikt voor het testen van de prestaties
 
-### <a name="credentialsand-keys-are-not-checked-in"></a>Referenties en sleutels zijn niet ingecheckt
+### <a name="credentials-and-keys-are-not-checked-in"></a>Referenties en sleutels zijn niet ingecheckt
 
 Neem geen abonnements sleutels of soort gelijke vertrouwelijke waarden op in bestanden die u incheckt bij uw opslag plaats, waar ze mogelijk zichtbaar zijn voor onbevoegden. De sleutels en andere waarden die u moet gebruiken voor het inchecken, zijn onder andere:
 

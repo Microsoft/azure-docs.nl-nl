@@ -6,12 +6,12 @@ ms.topic: reference
 ms.custom: devx-track-csharp
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: 32734ff9df2e55d24789742cd49984d8da212a17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3d09ec4c4ab578a87f0d983c0f243bee2a84597
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212184"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94991227"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Azure Functions SendGrid-bindingen
 
@@ -41,6 +41,7 @@ In het volgende voor beeld ziet u een [C#-functie](functions-dotnet-class-librar
 
 ```cs
 using SendGrid.Helpers.Mail;
+using System.Text.Json;
 
 ...
 
@@ -49,7 +50,7 @@ public static void Run(
     [ServiceBusTrigger("myqueue", Connection = "ServiceBusConnection")] Message email,
     [SendGrid(ApiKey = "CustomSendGridKeyAppSettingName")] out SendGridMessage message)
 {
-var emailObject = JsonConvert.DeserializeObject<OutgoingEmail>(Encoding.UTF8.GetString(email.Body));
+var emailObject = JsonSerializer.Deserialize<OutgoingEmail>(Encoding.UTF8.GetString(email.Body));
 
 message = new SendGridMessage();
 message.AddTo(emailObject.To);
@@ -71,15 +72,16 @@ public class OutgoingEmail
 
 ```cs
 using SendGrid.Helpers.Mail;
+using System.Text.Json;
 
 ...
 
 [FunctionName("SendEmail")]
-public static async void Run(
+public static async Task Run(
  [ServiceBusTrigger("myqueue", Connection = "ServiceBusConnection")] Message email,
  [SendGrid(ApiKey = "CustomSendGridKeyAppSettingName")] IAsyncCollector<SendGridMessage> messageCollector)
 {
- var emailObject = JsonConvert.DeserializeObject<OutgoingEmail>(Encoding.UTF8.GetString(email.Body));
+ var emailObject = JsonSerializer.Deserialize<OutgoingEmail>(Encoding.UTF8.GetString(email.Body));
 
  var message = new SendGridMessage();
  message.AddTo(emailObject.To);
@@ -189,7 +191,7 @@ Dit is de JavaScript-code:
 ```javascript
 module.exports = function (context, input) {
     var message = {
-         "personalizations": [ { "to": [ { "email": "sample@sample.com" } ] } ],
+         "personalizations": [ { "to": [ { "email": "sample@sample.com" } ] } ],
         from: { email: "sender@contoso.com" },
         subject: "Azure news",
         content: [{
@@ -355,16 +357,16 @@ Met de aantekening [SendGridOutput](https://github.com/Azure/azure-functions-jav
 
 De volgende tabel geeft een lijst van de bindings configuratie-eigenschappen die beschikbaar zijn in de  *function.jsin* het bestand en het `SendGrid` kenmerk/aantekening.
 
-| *function.jsbij* eigenschap | Kenmerk/annotatie-eigenschap | Beschrijving | Optioneel |
+| *function.jsbij* eigenschap | Kenmerk/annotatie-eigenschap | Description | Optioneel |
 |--------------------------|-------------------------------|-------------|----------|
-| type |N.v.t.| Moet worden ingesteld op `sendGrid`.| Nee |
-| richting |N.v.t.| Moet worden ingesteld op `out`.| Nee |
-| naam |n.v.t.| De naam van de variabele die wordt gebruikt in de functie code voor de aanvraag of aanvraag tekst. Deze waarde is `$return` wanneer er slechts één retour waarde is. | Nee |
-| apiKey | ApiKey | De naam van een app-instelling die uw API-sleutel bevat. Als deze niet is ingesteld, is de standaard naam voor de app-instelling *AzureWebJobsSendGridApiKey*.| Nee |
-| in op| Tot | Het e-mail adres van de ontvanger. | Ja |
-| from| Van | Het e-mail adres van de afzender. |  Ja |
+| type |N.v.t.| Moet worden ingesteld op `sendGrid`.| No |
+| richting |N.v.t.| Moet worden ingesteld op `out`.| No |
+| naam |n.v.t.| De naam van de variabele die wordt gebruikt in de functie code voor de aanvraag of aanvraag tekst. Deze waarde is `$return` wanneer er slechts één retour waarde is. | No |
+| apiKey | ApiKey | De naam van een app-instelling die uw API-sleutel bevat. Als deze niet is ingesteld, is de standaard naam voor de app-instelling *AzureWebJobsSendGridApiKey*.| No |
+| tot| Tot | Het e-mail adres van de ontvanger. | Yes |
+| from| Van | Het e-mail adres van de afzender. |  Yes |
 | Onderwerp| Onderwerp | Het onderwerp van het e-mail bericht. | Ja |
-| tekst| Tekst | De inhoud van het e-mail bericht. | Ja |
+| tekst| Tekst | De inhoud van het e-mail bericht. | Yes |
 
 Voor optionele eigenschappen zijn mogelijk standaard waarden in de binding gedefinieerd en worden ze programmatisch toegevoegd of genegeerd.
 

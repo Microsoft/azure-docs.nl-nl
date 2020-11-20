@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: eefb658c689128c1d91858ac906c09e71d05cda6
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 5c80e5e611c275c2a2262963aa0759075fca836b
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888943"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94989391"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>DDoS-beschermingstelemetrie bekijken en configureren
 
-Azure DDoS Protection Standard biedt uitgebreide aanval en visualisatie met DDoS-aanvals analyses. Klanten die hun virtuele netwerken beschermen tegen DDoS-aanvallen, hebben een gedetailleerde zicht baarheid van het aanvals verkeer en acties die zijn ondernomen om de aanval via rapporten voor aanvallen te beperken & beperkende stroom Logboeken. Uitgebreide telemetrie wordt weer gegeven via Azure Monitor, met inbegrip van gedetailleerde metrische gegevens tijdens de duur van een DDoS-aanval. U kunt waarschuwingen configureren voor een van de Azure Monitor metrische gegevens die door DDoS Protection worden weer gegeven. Logboek registratie kan verder worden geïntegreerd met [Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-ddos-protection), Splunk (Azure Event hubs), OMS Log Analytics en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure monitor.
+Azure DDoS Protection Standard biedt uitgebreide aanval en visualisatie met DDoS-aanvals analyses. Klanten die hun virtuele netwerken beschermen tegen DDoS-aanvallen, hebben een gedetailleerde zicht baarheid van het aanvals verkeer en acties die zijn ondernomen om de aanval via rapporten voor aanvallen te beperken & beperkende stroom Logboeken. Uitgebreide telemetrie wordt weer gegeven via Azure Monitor, met inbegrip van gedetailleerde metrische gegevens tijdens de duur van een DDoS-aanval. U kunt waarschuwingen configureren voor een van de Azure Monitor metrische gegevens die door DDoS Protection worden weer gegeven. Logboek registratie kan verder worden geïntegreerd met [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md), Splunk (Azure Event hubs), OMS Log Analytics en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure monitor.
 
 In deze zelfstudie leert u het volgende:
 
@@ -49,8 +49,8 @@ U kunt een van de beschik bare metrische gegevens voor DDoS-beveiliging selecter
     |Naam                     | Voer _MyDdosAlert_ in.                                                                                |
     |Abonnement             | Selecteer het abonnement dat het open bare IP-adres bevat waarvoor u waarschuwingen wilt ontvangen.        |
     |Resourcegroep           | Selecteer de resource groep die het open bare IP-adres bevat waarvoor u waarschuwingen wilt ontvangen.      |
-    |Resource                 | Selecteer het open bare IP-adres met het open bare IP-adres waarvoor u waarschuwingen wilt ontvangen. DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met open bare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services#services-that-can-be-deployed-into-a-virtual-network), met uitzonde ring van Azure app service omgevingen en Azure VPN gateway. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.                   |
-    |Gegevens                   | Selecteer **onder DDoS-aanval of niet**.                                                                |
+    |Resource                 | Selecteer het open bare IP-adres met het open bare IP-adres waarvoor u waarschuwingen wilt ontvangen. DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met open bare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network), met uitzonde ring van Azure app service omgevingen en Azure VPN gateway. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.                   |
+    |Metrisch                   | Selecteer **onder DDoS-aanval of niet**.                                                                |
     |Drempelwaarde                | 1- **1** betekent dat u een aanval ondervindt. **0** betekent dat u geen aanval ondervindt.                         |
     |Periode                   | Selecteer de waarde die u kiest.                                                                   |
     |Melden via E-mail         | Schakel het selectie vakje in.                                                                                 |
@@ -95,7 +95,7 @@ Beleids drempels worden automatisch geconfigureerd via het samen stellen van het
 
 ## <a name="view-ddos-protection-alerts-in-azure-security-center"></a>Waarschuwingen voor DDoS-beveiliging in Azure Security Center weer geven
 
-Azure Security Center bevat een lijst met [beveiligings waarschuwingen](/azure/security-center/security-center-managing-and-responding-alerts)met informatie over het onderzoeken en oplossen van problemen. Met deze functie krijgt u een uniforme weer gave van waarschuwingen, waaronder waarschuwingen met betrekking tot DDoS-aanvallen en de acties die zijn ondernomen om de aanval in een nabije periode te verminderen.
+Azure Security Center bevat een lijst met [beveiligings waarschuwingen](../security-center/security-center-managing-and-responding-alerts.md)met informatie over het onderzoeken en oplossen van problemen. Met deze functie krijgt u een uniforme weer gave van waarschuwingen, waaronder waarschuwingen met betrekking tot DDoS-aanvallen en de acties die zijn ondernomen om de aanval in een nabije periode te verminderen.
 Er zijn twee specifieke waarschuwingen die u zult zien voor een detectie en beperking van de DDoS-aanval:
 
 - **DDoS-aanval gedetecteerd voor openbaar IP-adres**: deze waarschuwing wordt gegenereerd wanneer de DDoS Protection-service detecteert dat een van uw open bare IP-adressen het doel is van een DDoS-aanval.

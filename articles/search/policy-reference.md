@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Cognitive Search
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Cognitive Search. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.topic: reference
 author: HeidiSteen
 ms.author: heidist
 ms.service: search
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 61be53bb2d76187d7e5ab116482998eda6eb243f
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: a57e1856b9a732d10a521ae05c0b087d9ab5be58
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94746484"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94990909"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-cognitive-search"></a>Ingebouwde Azure Policy-definities voor Azure Cognitive Search
 

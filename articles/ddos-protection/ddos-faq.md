@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 871ededce1db5e4c3179c187fc46a828cd157456
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 6c475971f604c951280d0351d593cd5d96879d31
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886274"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992400"
 ---
 # <a name="azure-ddos-protection-standard-frequent-asked-questions"></a>Veelgestelde vragen over Azure DDoS Protection
 
@@ -29,7 +29,7 @@ Distributed Denial of service, of DDoS, is een type aanval waarbij een aanvaller
 Azure DDoS Protection Standard, gecombineerd met de aanbevolen procedures voor het ontwerpen van toepassingen, biedt verbeterde DDoS-beperkings functies om te beschermen tegen DDoS-aanvallen. Het wordt automatisch afgestemd om uw specifieke Azure-resources in een virtueel netwerk te beveiligen. Beveiliging is eenvoudig in te scha kelen op een nieuw of bestaand virtueel netwerk en er zijn geen wijzigingen in de toepassing of resource. Het heeft verschillende voor delen ten opzichte van de Basic-service, inclusief logboek registratie, waarschuwingen en telemetrie. Zie [Azure DDoS Protection Standard-overzicht](ddos-protection-overview.md) voor meer informatie. 
 
 ## <a name="what-about-protection-at-the-service-layer-layer-7"></a>Hoe zit het met de beveiliging van de service laag (laag 7)?
-Klanten kunnen Azure DDoS Protection Service in combi natie met [Application Gateway WAF SKU](https://docs.microsoft.com/azure/web-application-firewall/ag/ag-overview) voor beveiliging gebruiken op de netwerklaag (laag 3 en 4, aangeboden door Azure DDoS Protection Service) en op de toepassingslaag (laag 7, aangeboden door Application Gateway WAF SKU).
+Klanten kunnen Azure DDoS Protection Service in combi natie met [Application Gateway WAF SKU](../web-application-firewall/ag/ag-overview.md) voor beveiliging gebruiken op de netwerklaag (laag 3 en 4, aangeboden door Azure DDoS Protection Service) en op de toepassingslaag (laag 7, aangeboden door Application Gateway WAF SKU).
 
 ## <a name="are-services-unsafe-in-azure-without-the-service"></a>Zijn er onveilige Services in azure zonder de service?
 Services die op Azure worden uitgevoerd, worden inherent beschermd door Azure DDoS Protection Basic dat is geïmplementeerd om de infra structuur van Azure te beveiligen. De beveiliging die de infra structuur beveiligt, heeft echter een veel hogere drempel waarde dan de meeste toepassingen de capaciteit hebben om te kunnen omgaan, en biedt geen telemetrie of waarschuwingen, zodat een verkeers volume kan worden aangemerkt als onschadelijk door het platform. 
@@ -64,6 +64,3 @@ Zie [testen met behulp van simulaties](test-through-simulations.md).
 ## <a name="how-long-does-it-take-for-the-metrics-to-load-on-portal"></a>Hoe lang duurt het om de metrische gegevens te laden op de portal?
 De metrische gegevens moeten binnen vijf minuten zichtbaar zijn op de portal. Als uw resource wordt aangevallen, worden er binnen 5-7 minuten andere metrische gegevens weer gegeven op de portal. 
     
-
-
-

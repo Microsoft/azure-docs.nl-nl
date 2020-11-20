@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: c7a94a24bd825249859ff699ab82ce4d3ae8fce1
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: b309ce01595e2e62bea7f78ae728d83bc7d9b9be
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842240"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992162"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Playbook voor het adresseren van algemene beveiligings vereisten met Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -107,12 +107,12 @@ Centraal identiteits beheer biedt de volgende voor delen:
 > [!NOTE]
 >
 > - Azure AD-verificatie wordt vastgelegd in Azure SQL-audit logboeken, maar niet in Logboeken van Azure AD-aanmelding.
-> - RBAC-machtigingen die in Azure worden verleend, zijn niet van toepassing op Azure SQL Database of machtigingen voor SQL Managed instance. Dergelijke machtigingen moeten hand matig worden gemaakt/toegewezen met behulp van bestaande SQL-machtigingen.
+> - Azure RBAC-machtigingen die worden verleend in azure, zijn niet van toepassing op de machtigingen Azure SQL Database of SQL Managed instance. Dergelijke machtigingen moeten hand matig worden gemaakt/toegewezen met behulp van bestaande SQL-machtigingen.
 > - Aan de client zijde moet Azure AD-verificatie toegang hebben tot internet of via door de gebruiker gedefinieerde route (UDR) naar een virtueel netwerk.
 > - Het Azure AD-toegangs token wordt opgeslagen in de cache aan de client zijde en de levens duur is afhankelijk van de configuratie van het token. Zie het artikel [levens duur van Configureer bare tokens in azure Active Directory](../../active-directory/develop/active-directory-configurable-token-lifetimes.md)
 > - Zie voor hulp bij het oplossen van problemen met Azure AD-verificatie de volgende blog: [problemen met Azure AD oplossen](https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991).
 
-### <a name="azure-ad-multi-factor-authentication"></a>Azure AD-Multi-Factor Authentication
+### <a name="azure-ad-multi-factor-authentication"></a>Azure AD Multi-Factor Authentication
 
 > Vermeld in: OSA-Oefen #2, ISO-Access Control (AC)
 
@@ -376,7 +376,7 @@ Schei ding van taken is niet beperkt tot de gegevens in een Data Base, maar beva
 
 - Zorg ervoor dat u alle bron code-wijzigingen kent. Code kan zich in T-SQL-scripts bevindt. Dit kan ad-hoc opdrachten zijn om uit te voeren of te worden geïmplementeerd in formulieren van weer gaven, functies, triggers en opgeslagen procedures. Het kan een onderdeel zijn van SQL Agent-taak definities (stappen). Het kan ook worden uitgevoerd vanuit SSIS-pakketten, Azure Data Factory en andere services.
 
-## <a name="data-protection"></a>Gegevensbescherming
+## <a name="data-protection"></a>Gegevensbeveiliging
 
 Gegevens beveiliging is een reeks mogelijkheden voor het beveiligen van belang rijke informatie tegen inbreuk door versleuteling of het afwijzen van een schijf.
 

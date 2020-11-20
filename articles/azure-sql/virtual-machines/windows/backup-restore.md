@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/04/2018
 ms.author: mikeray
-ms.openlocfilehash: a386ea5149b36a4e82b4c935e2373f505c6c83cf
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: db270224a753f815a2d94e6a1fa79ebbedf49278
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789876"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94991533"
 ---
 # <a name="backup-and-restore-for-sql-server-on-azure-vms"></a>Back-ups maken en herstellen voor SQL Server op virtuele machines in azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -31,7 +31,7 @@ In het eerste deel van dit artikel vindt u een overzicht van de beschik bare opt
 
 De volgende tabel bevat informatie over verschillende opties voor back-up en herstel voor SQL Server op Azure-Vm's:
 
-| Strategie | SQL-versies | Beschrijving |
+| Strategie | SQL-versies | Description |
 |---|---|---|
 | [Automatische back-up](#automated) | 2014<br/> 2016<br/> 2017 | Met automatische back-up kunt u regel matige back-ups plannen voor alle data bases op een SQL Server-VM. Back-ups worden Maxi maal 30 dagen opgeslagen in azure Storage. Vanaf SQL Server 2016 biedt automatische back-up v2 extra opties, zoals het configureren van hand matige planning en de frequentie van volledige en logboek back-ups. |
 | [Azure Backup voor SQL-VM's](#azbackup) | 2008<br/> 2012<br/> 2014<br/> 2016<br/> 2017 | Azure Backup biedt een back-upfunctie voor bedrijfs klasse voor SQL Server op Azure-Vm's. Met deze service kunt u back-ups centraal beheren voor meerdere servers en duizenden data bases. Data bases kunnen worden hersteld naar een bepaald punt in de tijd in de portal. Het biedt een aanpasbaar Bewaar beleid waarmee back-ups voor jaren kunnen worden onderhouden. |
@@ -55,23 +55,23 @@ Als u een Data Base wilt herstellen, moet u de vereiste back-upbestand (en) in h
 
 Raadpleeg een van de volgende artikelen voor meer informatie over het configureren van automatische back-ups voor virtuele SQL-machines:
 
-- **SQL Server 2016/2017** : [automatische back-up v2 voor Azure virtual machines](automated-backup.md)
-- **SQL Server 2014** : [geautomatiseerde back-up voor SQL Server 2014 virtual machines](automated-backup-sql-2014.md)
+- **SQL Server 2016/2017**: [automatische back-up v2 voor Azure virtual machines](automated-backup.md)
+- **SQL Server 2014**: [geautomatiseerde back-up voor SQL Server 2014 virtual machines](automated-backup-sql-2014.md)
 
 ## <a name="azure-backup-for-sql-vms"></a><a id="azbackup"></a> Azure Backup voor virtuele SQL-machines
 
 [Azure backup](../../../backup/index.yml) biedt een back-upfunctie voor bedrijfs klasse voor SQL Server op Azure-vm's. Alle back-ups worden opgeslagen en beheerd in een Recovery Services kluis. Er zijn verschillende voor delen die deze oplossing biedt, met name voor ondernemingen:
 
-- Geen back-up van de **infra structuur** : u hoeft geen back-upservers of opslag locaties te beheren.
-- **Schaal** : Beveilig veel SQL-vm's en duizenden data bases.
+- Geen back-up van de **infra structuur**: u hoeft geen back-upservers of opslag locaties te beheren.
+- **Schaal**: Beveilig veel SQL-vm's en duizenden data bases.
 - **Betalen** naar gebruik: deze mogelijkheid is een afzonderlijke service van Azure backup, maar net als bij alle Azure-Services betaalt u alleen voor wat u gebruikt.
-- **Centraal beheer en controle** : u kunt al uw back-ups centraal beheren, met inbegrip van andere werk belastingen die Azure Backup ondersteunt, vanuit één dash board in Azure.
-- Op **beleid gebaseerde back-up en retentie** : Maak standaard back-upbeleid voor reguliere back-ups. Bewaar beleid voor het bewaren van back-ups voor jaren.
-- **Ondersteuning voor SQL always on** : detecteer en beveilig een SQL Server altijd op configuratie en zorg ervoor dat de back-upvoorkeur voor Back-upgroepen wordt geaccepteerd.
-- **herstel punt doelstelling van 15 minuten (RPO)** : Configureer back-ups van SQL-transactie logboeken tot Maxi maal elke 15 minuten.
+- **Centraal beheer en controle**: u kunt al uw back-ups centraal beheren, met inbegrip van andere werk belastingen die Azure Backup ondersteunt, vanuit één dash board in Azure.
+- Op **beleid gebaseerde back-up en retentie**: Maak standaard back-upbeleid voor reguliere back-ups. Bewaar beleid voor het bewaren van back-ups voor jaren.
+- **Ondersteuning voor SQL always on**: detecteer en beveilig een SQL Server altijd op configuratie en zorg ervoor dat de back-upvoorkeur voor Back-upgroepen wordt geaccepteerd.
+- **herstel punt doelstelling van 15 minuten (RPO)**: Configureer back-ups van SQL-transactie logboeken tot Maxi maal elke 15 minuten.
 - **Herstel** naar een bepaald tijdstip: gebruik de portal om data bases te herstellen naar een specifiek punt, zonder dat u hand matig meerdere volledige, differentiële en logboek back-ups hoeft te herstellen.
-- **Geconsolideerde e-mail waarschuwingen voor mislukte pogingen** : Configureer geconsolideerde e-mail meldingen voor eventuele fouten.
-- **Op rollen gebaseerd toegangs beheer** : Bepaal wie back-up-en herstel bewerkingen kan beheren via de portal.
+- **Geconsolideerde e-mail waarschuwingen voor mislukte pogingen**: Configureer geconsolideerde e-mail meldingen voor eventuele fouten.
+- **Toegangs beheer op basis van rollen**: Bepaal wie back-up-en herstel bewerkingen kan beheren via de portal.
 
 Bekijk de volgende video voor een kort overzicht van hoe het werkt samen met een demo:
 
@@ -108,9 +108,9 @@ Vanaf SQL Server 2012 SP1 CU2 kunt u rechtstreeks een back-up maken en herstelle
 
 Zie voor meer informatie de een van de volgende artikelen op basis van uw versie van SQL Server:
 
-- **SQL Server 2016/2017** : [back-up naar URL SQL Server](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service)
-- **SQL Server 2014** : [SQL Server 2014-back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service?viewFallbackFrom=sql-server-2014)
-- **SQL Server 2012** : [SQL Server 2012-back-up naar URL](/previous-versions/sql/sql-server-2012/jj919148(v=sql.110))
+- **SQL Server 2016/2017**: [back-up naar URL SQL Server](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service)
+- **SQL Server 2014**: [SQL Server 2014-back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service?viewFallbackFrom=sql-server-2014)
+- **SQL Server 2012**: [SQL Server 2012-back-up naar URL](/previous-versions/sql/sql-server-2012/jj919148(v=sql.110))
 
 ### <a name="managed-backup"></a>Beheerde back-up
 

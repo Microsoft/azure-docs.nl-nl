@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 10b10309e438bab3c99cb2ed7202eaa272d24abe
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: dec2c845780b62e9a595c73504037142c511c0e6
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905230"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94989408"
 ---
 # <a name="manage-ddos-protection-plans-permissions-and-restrictions"></a>DDoS Protection plannen beheren: machtigingen en beperkingen
 
@@ -30,14 +30,14 @@ Een DDoS-beschermings plan werkt in verschillende regio's en abonnementen. Hetze
 
 Als u wilt werken met DDoS-beveiligings plannen, moet uw account worden toegewezen aan de rol [netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) rol waaraan de juiste acties in de volgende tabel zijn toegewezen:
 
-| Actie                                            | Name                                     |
+| Bewerking                                            | Name                                     |
 | ---------                                         | -------------                            |
 | Micro soft. Network/ddosProtectionPlans/lezen        | Een DDoS-beschermings plan lezen              |
 | Micro soft. Network/ddosProtectionPlans/schrijven       | Een DDoS-beschermings plan maken of bijwerken  |
 | Micro soft. Network/ddosProtectionPlans/verwijderen      | Een DDoS-beschermings plan verwijderen            |
 | Micro soft. Network/ddosProtectionPlans/samen voegen/actie | Lid worden van een DDoS-beschermings plan              |
 
-Als u DDoS-beveiliging wilt inschakelen voor een virtueel netwerk, moet aan uw account ook de juiste acties worden toegewezen [voor virtuele netwerken](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#permissions).
+Als u DDoS-beveiliging wilt inschakelen voor een virtueel netwerk, moet aan uw account ook de juiste acties worden toegewezen [voor virtuele netwerken](../virtual-network/manage-virtual-network.md#permissions).
 
 ## <a name="azure-policy"></a>Azure Policy
 
@@ -51,4 +51,4 @@ Voor klanten die verschillende abonnementen hebben en die ervoor willen zorgen d
 Ga door naar de zelf studies voor meer informatie over het weer geven en configureren van telemetrie voor uw DDoS-beveiligings plan.
 
 > [!div class="nextstepaction"]
-> [Telemetrie van DDoS-beveiliging weer geven en configureren](telemetry-monitoring-alerting.md)
+> [DDoS-beschermingstelemetrie bekijken en configureren](telemetry-monitoring-alerting.md)

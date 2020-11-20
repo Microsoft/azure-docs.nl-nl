@@ -10,12 +10,12 @@ ms.author: jhirono
 author: jhirono
 ms.reviewer: larryfr
 ms.date: 11/09/2020
-ms.openlocfilehash: a133cdb72e304a254305833b9ae6e8a7ebe30ab3
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 211ef9571b5a126686b4583330dc0f80863fd47e
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540005"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992043"
 ---
 # <a name="data-encryption-with-azure-machine-learning"></a>Gegevens versleuteling met Azure Machine Learning
 
@@ -129,6 +129,12 @@ Elke virtuele machine heeft ook een lokale tijdelijke schijf voor besturingssyst
 ### <a name="azure-databricks"></a>Azure Databricks
 
 Azure Databricks kunnen worden gebruikt in Azure Machine Learning pijp lijnen. Het Databricks File System (DBFS) dat door Azure Databricks wordt gebruikt, is standaard versleuteld met een door micro soft beheerde sleutel. Zie door de klant beheerde sleutels [configureren op standaard (root) DBFS](/azure/databricks/security/customer-managed-keys-dbfs)om Azure Databricks te configureren voor het gebruik van door de klant beheerde sleutels.
+
+### <a name="microsoft-generated-data"></a>Door micro soft gegenereerde gegevens
+
+Wanneer u services zoals automatische Machine Learning gebruikt, kan micro soft een tijdelijke, vooraf verwerkte gegevens genereren voor het trainen van meerdere modellen. Deze gegevens worden opgeslagen in een gegevens opslag in uw werk ruimte, zodat u op de juiste wijze toegangs controle en versleuteling kunt afdwingen.
+
+U kunt ook [Diagnostische gegevens die vanuit uw geïmplementeerde eind punt zijn geregistreerd](how-to-enable-app-insights.md) , versleutelen in uw Azure-toepassing Insights-exemplaar.
 
 ## <a name="encryption-in-transit"></a>Versleuteling tijdens overdracht
 

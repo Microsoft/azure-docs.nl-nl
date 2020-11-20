@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: genemi, jrasnick, vanto
 ms.date: 06/26/2019
-ms.openlocfilehash: 4be3f8c6cd416743c2d1118cf2de01073c3022ff
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 25c2157a8de237d0ec66caa72d59c810d419ac76
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790488"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94989119"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>DNS-alias voor Azure SQL Database
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -60,8 +60,8 @@ De volgende eigenschappen zijn van toepassing op elke DNS-alias voor uw server:
 - *Server is vereist:* Er kan geen DNS-alias worden gemaakt tenzij deze verwijst naar exact één server, en de server moet al bestaan. Een bijgewerkte alias moet altijd verwijzen naar precies één bestaande server.
   - Wanneer u een server verwijdert, worden ook alle DNS-aliassen die naar de server verwijzen, door het Azure-systeem verwijderd.
 - *Niet gebonden aan een regio:* DNS-aliassen zijn niet gebonden aan een regio. DNS-aliassen kunnen worden bijgewerkt om te verwijzen naar een server die zich in een geografische regio bevindt.
-  - Wanneer u echter een alias bijwerkt om te verwijzen naar een andere server, moeten beide servers aanwezig zijn in hetzelfde Azure- *abonnement* .
-- *Machtigingen:* Voor het beheren van een DNS-alias moet de gebruiker machtigingen voor *Server Inzender* of hoger hebben. Zie [aan de slag met Role-Based Access Control in de Azure Portal](../../role-based-access-control/overview.md)voor meer informatie.
+  - Wanneer u echter een alias bijwerkt om te verwijzen naar een andere server, moeten beide servers aanwezig zijn in hetzelfde Azure- *abonnement*.
+- *Machtigingen:* Voor het beheren van een DNS-alias moet de gebruiker machtigingen voor *Server Inzender* of hoger hebben. Zie voor meer informatie aan [de slag met op rollen gebaseerd toegangs beheer van Azure in de Azure Portal](../../role-based-access-control/overview.md).
 
 ## <a name="manage-your-dns-aliases"></a>Uw DNS-aliassen beheren
 

@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: 4539709dbac992979af6a56e3dae81725a35739d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 5c5276f11da687f14630bafd007532d172ef3737
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324996"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94990802"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Virtuele netwerk service-eind punten en-regels gebruiken voor servers in Azure SQL Database
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -55,7 +55,7 @@ Er is een schei ding van beveiligings rollen in het beheer van Virtual Network S
 - **Netwerk beheerder:** &nbsp; Schakel het eind punt in.
 - **Database beheerder:** &nbsp; Werk de toegangs beheer lijst (ACL) bij om het opgegeven subnet toe te voegen aan de-server.
 
-*Alternatief voor RBAC:*
+*Alternatief voor Azure RBAC:*
 
 De rollen van de netwerk beheerder en de database beheerder hebben meer mogelijkheden dan nodig zijn voor het beheren van regels voor het virtuele netwerk. Er is slechts een subset van de mogelijkheden nodig.
 
@@ -89,7 +89,7 @@ Voor Azure SQL Database heeft de functie regels voor virtuele netwerken de volge
 
 Wanneer u service-eind punten voor Azure SQL Database gebruikt, raadpleegt u de volgende overwegingen:
 
-- **Uitgaand naar Azure SQL database open bare ip's is vereist** : netwerk beveiligings groepen (nsg's) moeten zijn geopend voor het Azure SQL database van IP-adressen om verbinding te kunnen maken. U kunt dit doen met behulp van NSG- [service Tags](../../virtual-network/network-security-groups-overview.md#service-tags) voor Azure SQL database.
+- **Uitgaand naar Azure SQL database open bare ip's is vereist**: netwerk beveiligings groepen (nsg's) moeten zijn geopend voor het Azure SQL database van IP-adressen om verbinding te kunnen maken. U kunt dit doen met behulp van NSG- [service Tags](../../virtual-network/network-security-groups-overview.md#service-tags) voor Azure SQL database.
 
 ### <a name="expressroute"></a>ExpressRoute
 
@@ -149,7 +149,7 @@ Poly base en de instructie COPY worden meestal gebruikt voor het laden van gegev
        CREATE MASTER KEY [ENCRYPTION BY PASSWORD = 'somepassword'];
        ```
 
-   1. Create Data Base scoped Credential met **Identity = ' managed service Identity '** :
+   1. Create Data Base scoped Credential met **Identity = ' managed service Identity '**:
 
        ```sql
        CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
@@ -188,7 +188,7 @@ U kunt de vlag **IgnoreMissingVNetServiceEndpoint** instellen met behulp van Pow
 
 ## <a name="errors-40914-and-40615"></a>Fouten 40914 en 40615
 
-Verbindings fout 40914 is gekoppeld aan *regels voor virtuele netwerken* , zoals opgegeven in het deel venster Firewall in de Azure Portal. Fout 40615 is vergelijkbaar, maar heeft betrekking op *IP-adres regels* op de firewall.
+Verbindings fout 40914 is gekoppeld aan *regels voor virtuele netwerken*, zoals opgegeven in het deel venster Firewall in de Azure Portal. Fout 40615 is vergelijkbaar, maar heeft betrekking op *IP-adres regels* op de firewall.
 
 ### <a name="error-40914"></a>Fout 40914
 

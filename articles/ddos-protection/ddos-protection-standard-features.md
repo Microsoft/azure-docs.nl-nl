@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 133a27d8aef6c9df16ffcabfb4fac6c118665890
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: b3f903b69cebd22e870f7ccd5923e6f08455dff3
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905203"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992383"
 ---
-# <a name="azure-ddos-protection-standard-features"></a>Azure DDoS Protection standaard functies
+# <a name="azure-ddos-protection-standard-features"></a>Azure DDoS Protection Standard-functies
 
 De volgende secties bevatten een overzicht van de belangrijkste functies van de Azure DDoS Protection Standard-Service.
 
@@ -48,13 +48,13 @@ De Azure DDoS Protection Basic-service helpt klanten te beschermen en te voor ko
 
 ## <a name="ddos-protection-telemetry-monitoring-and-alerting"></a>DDoS Protection telemetrie, bewaking en waarschuwingen
 
-DDoS Protection Standard maakt voor de duur van een DDoS-aanval uitgebreide telemetrie mogelijk via [Azure monitor](/azure/azure-monitor/overview) . U kunt waarschuwingen configureren voor elk van de Azure Monitor metrische gegevens die DDoS Protection gebruikt. U kunt logboek registratie integreren met Splunk (Azure Event Hubs), Azure Monitor-logboeken en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure Monitor.
+DDoS Protection Standard maakt voor de duur van een DDoS-aanval uitgebreide telemetrie mogelijk via [Azure monitor](../azure-monitor/overview.md) . U kunt waarschuwingen configureren voor elk van de Azure Monitor metrische gegevens die DDoS Protection gebruikt. U kunt logboek registratie integreren met Splunk (Azure Event Hubs), Azure Monitor-logboeken en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure Monitor.
 
 ### <a name="ddos-mitigation-policies"></a>DDoS-beperkings beleid
 
 Selecteer in de Azure Portal **Monitor**  >  **metrische gegevens** controleren. Selecteer de resource groep in het deel venster **metrische gegevens** , selecteer een resource type voor het **open bare IP-adres** en selecteer uw open bare Azure IP-adres. DDoS-metrische gegevens worden weer gegeven in het deel venster **beschik bare metrische gegevens** .
 
-DDoS Protection Standard geldt voor elk openbaar IP-adres van de beveiligde bron, in het virtuele netwerk waarop DDoS is ingeschakeld, drie opties voor het beperken van de oplossing (TCP SYN, TCP en UDP). U kunt de drempel waarden voor het beleid weer geven door de metrische **inkomende pakketten te selecteren om de DDoS-beperking te activeren** .
+DDoS Protection Standard geldt voor elk openbaar IP-adres van de beveiligde bron, in het virtuele netwerk waarop DDoS is ingeschakeld, drie opties voor het beperken van de oplossing (TCP SYN, TCP en UDP). U kunt de drempel waarden voor het beleid weer geven door de metrische **inkomende pakketten te selecteren om de DDoS-beperking te activeren**.
 
 ![Diagram beschik bare metrische gegevens en metrische gegevens](./media/ddos-best-practices/image-7.png)
 
@@ -72,7 +72,7 @@ Zie [Azure DDoS Protection Standard beheren met de Azure Portal](manage-ddos-pro
 
 ## <a name="web-application-firewall-for-resource-attacks"></a>Web Application Firewall voor bron aanvallen
 
-Wat specifiek is voor bron aanvallen op de toepassingslaag, moet u een Web Application Firewall (WAF) configureren om webtoepassingen te beveiligen. Een WAF inspecteert inkomend webverkeer om SQL-injecties, cross-site scripting, DDoS en andere Layer 7-aanvallen te blok keren. Azure biedt [WAF als een functie van Application Gateway](/azure/application-gateway/application-gateway-web-application-firewall-overview) voor gecentraliseerde beveiliging van uw webtoepassingen van veelvoorkomende aanvallen en beveiligings problemen. Er zijn andere WAF-aanbiedingen beschikbaar van Azure-partners die mogelijk beter geschikt zijn voor uw behoeften via [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?search=WAF&page=1).
+Wat specifiek is voor bron aanvallen op de toepassingslaag, moet u een Web Application Firewall (WAF) configureren om webtoepassingen te beveiligen. Een WAF inspecteert inkomend webverkeer om SQL-injecties, cross-site scripting, DDoS en andere Layer 7-aanvallen te blok keren. Azure biedt [WAF als een functie van Application Gateway](../web-application-firewall/ag/ag-overview.md) voor gecentraliseerde beveiliging van uw webtoepassingen van veelvoorkomende aanvallen en beveiligings problemen. Er zijn andere WAF-aanbiedingen beschikbaar van Azure-partners die mogelijk beter geschikt zijn voor uw behoeften via [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?search=WAF&page=1).
 
 Zelfs firewalls voor webtoepassingen zijn gevoelig voor volumetrische aanvallen en status afputting. We raden u ten zeerste aan om DDoS Protection Standard in te scha kelen op het virtuele WAF-netwerk om te helpen beschermen tegen maat-en protocol aanvallen. Zie de sectie met [DDoS Protection referentie architecturen](ddos-protection-reference-architectures.md) voor meer informatie.
 

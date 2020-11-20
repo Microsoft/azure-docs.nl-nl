@@ -5,14 +5,14 @@ services: web-application-firewall
 ms.topic: article
 author: winthrop28
 ms.service: web-application-firewall
-ms.date: 11/19/2020
+ms.date: 11/20/2020
 ms.author: victorh
-ms.openlocfilehash: 9fb8bf689e2767f681994258c4d2c51be41d6c68
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b546b043b856fd6ec69acd63fd69a01c48d0553b
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952128"
+ms.locfileid: "94990122"
 ---
 # <a name="azure-web-application-firewall-waf-policy-overview"></a>Overzicht van het beleid voor Azure Web Application firewall (WAF)
 
@@ -41,9 +41,9 @@ Stel dat er op uw toepassingsgateway een globaal beleid is toegepast. Vervolgens
 
 Voor nog meer aanpassing van het URI-niveau, kunt u een WAF-beleid koppelen aan een op pad gebaseerde regel. Als er bepaalde pagina's binnen één site zijn waarvoor verschillende beleids regels zijn vereist, kunt u wijzigingen aanbrengen in het WAF-beleid dat alleen van invloed is op een opgegeven URI. Dit kan van toepassing zijn op een betaling of aanmeldings pagina, of andere Uri's die een nog specifiek WAF-beleid nodig hebben dan de andere sites achter uw WAF.
 
-Net als bij een WAF per site worden minder specifieke beleids regels genegeerd. Dit betekent dat een beleid per URI op een URL-pad-map overschrijft elk per site of globaal WAF-beleid hierboven.
+Net als bij per-site WAF-beleid worden minder specifieke beleids regels genegeerd. Dit betekent dat een beleid per URI op een URL-pad-map overschrijft elk per site of globaal WAF-beleid hierboven.
 
-## <a name="example"></a>Voorbeeld
+### <a name="example"></a>Voorbeeld
 
 Stel dat u drie sites hebt: contoso.com, fabrikam.com en adatum.com die zich achter dezelfde toepassings gateway bevindt. U wilt dat een WAF wordt toegepast op alle drie de sites, maar u hebt extra beveiliging nodig met adatum.com, omdat klanten producten bezoeken, zoeken en kopen.
 

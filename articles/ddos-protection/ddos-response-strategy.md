@@ -1,5 +1,5 @@
 ---
-title: Onderdelen van een DDoS-respons strategie
+title: Onderdelen van een DDoS-reactiestrategie
 description: Meer informatie over hoe u Azure DDoS Protection Standard kunt gebruiken om te reageren op DDoS-aanvallen.
 services: ddos-protection
 documentationcenter: na
@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 23822ce5b311dc479824128d66bc18a15473862d
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 0a80f03ee82e8d1216353482dc867402adcf7d09
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905175"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992230"
 ---
-# <a name="components-of-a-ddos-response-strategy"></a>Onderdelen van een DDoS-respons strategie
+# <a name="components-of-a-ddos-response-strategy"></a>Onderdelen van een DDoS-reactiestrategie
 
 Een DDoS-aanval die gericht is op Azure-resources, vereist meestal een minimale tussen komst van een gebruikers oogpunt. Als onderdeel van een strategie voor incident reacties is het niet meer mogelijk om de impact op de bedrijfs continuïteit te beperken.
 
@@ -44,9 +44,9 @@ Het is belang rijk om het bereik van uw risico van een DDoS-aanval voortdurend t
 
 - Zijn mijn Services actief/actief met failover over meerdere regio's?
 
-Het is essentieel dat u het normale gedrag van een toepassing begrijpt en bereidt om te reageren als de toepassing niet naar verwachting functioneert tijdens een DDoS-aanval. Beschikken over monitors die zijn geconfigureerd voor uw bedrijfskritische toepassingen die het client gedrag simuleren, en u waarschuwen wanneer relevante afwijkingen worden gedetecteerd. Raadpleeg de [Aanbevolen procedures voor bewaking en diagnose](https://docs.microsoft.com/azure/architecture/best-practices/monitoring#monitoring-and-diagnostics-scenarios) om inzicht te krijgen in de status van uw toepassing.
+Het is essentieel dat u het normale gedrag van een toepassing begrijpt en bereidt om te reageren als de toepassing niet naar verwachting functioneert tijdens een DDoS-aanval. Beschikken over monitors die zijn geconfigureerd voor uw bedrijfskritische toepassingen die het client gedrag simuleren, en u waarschuwen wanneer relevante afwijkingen worden gedetecteerd. Raadpleeg de [Aanbevolen procedures voor bewaking en diagnose](/azure/architecture/best-practices/monitoring#monitoring-and-diagnostics-scenarios) om inzicht te krijgen in de status van uw toepassing.
 
-[Azure-toepassing Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) is een UITBREID bare apm-service (Application Performance Management) voor webontwikkelaars op meerdere platforms. Gebruik Application Insights om uw Live Web-app te bewaken. Er worden automatisch prestatie afwijkingen gedetecteerd. Het bevat hulpprogram ma's voor analyse waarmee u problemen kunt vaststellen en inzicht kunt krijgen in wat gebruikers met uw app doen. Het is bedoeld om u te helpen de prestaties en bruikbaarheid continu te verbeteren.
+[Azure-toepassing Insights](../azure-monitor/app/app-insights-overview.md) is een UITBREID bare apm-service (Application Performance Management) voor webontwikkelaars op meerdere platforms. Gebruik Application Insights om uw Live Web-app te bewaken. Er worden automatisch prestatie afwijkingen gedetecteerd. Het bevat hulpprogram ma's voor analyse waarmee u problemen kunt vaststellen en inzicht kunt krijgen in wat gebruikers met uw app doen. Het is bedoeld om u te helpen de prestaties en bruikbaarheid continu te verbeteren.
 
 ## <a name="customer-ddos-response-team"></a>DDoS Response Team van de klant
 
@@ -56,7 +56,7 @@ We raden u aan om simulatie oefeningen te gebruiken als een normaal onderdeel va
 
 ## <a name="alerts-during-an-attack"></a>Waarschuwingen tijdens een aanval
 
-Azure DDoS Protection Standard identificeert en vermindert DDoS-aanvallen zonder tussen komst van de gebruiker. Als u een melding wilt ontvangen wanneer er een actieve beperking is voor een beveiligd openbaar IP-adres, kunt u [een waarschuwing configureren](telemetry-monitoring-alerting.md) voor de metriek **onder DDoS-aanval of niet** . U kunt ervoor kiezen om waarschuwingen te maken voor de andere DDoS-metrische gegevens om inzicht te krijgen in de schaal van de aanval, het verkeer dat wordt verwijderd en andere details.
+Azure DDoS Protection Standard identificeert en vermindert DDoS-aanvallen zonder tussen komst van de gebruiker. Als u een melding wilt ontvangen wanneer er een actieve beperking is voor een beveiligd openbaar IP-adres, kunt u [een waarschuwing configureren](telemetry-monitoring-alerting.md) voor de metriek **onder DDoS-aanval of niet**. U kunt ervoor kiezen om waarschuwingen te maken voor de andere DDoS-metrische gegevens om inzicht te krijgen in de schaal van de aanval, het verkeer dat wordt verwijderd en andere details.
 
 ### <a name="when-to-contact-microsoft-support"></a>Wanneer u contact opneemt met micro soft ondersteuning
 

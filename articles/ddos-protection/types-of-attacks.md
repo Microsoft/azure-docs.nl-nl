@@ -11,20 +11,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 50dd5cf9a51ebcc6b2df188838ef2910afcd224d
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 8b213755aeed1590df3d1f5e91f44796c13c7711
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905269"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94991771"
 ---
 # <a name="types-of-ddos-attacks-overview"></a>Overzicht van typen DDoS-aanvallen
 
 DDoS Protection Standard kan de volgende typen aanvallen beperken:
 
-- **Volumetrische aanvallen** : deze aanvallen flooden de netwerklaag met een aanzienlijke hoeveelheid schijnbaar betrouwbaar verkeer. Ze omvatten UDP-flooden, versterking van stromen en andere vervalste pakket stromen. DDoS Protection Standard verkleint deze potentiële multi-Gigabyte-aanvallen door ze te absorberen en te reinigen, met de wereld wijde schaal van Azure automatisch.
-- **Protocol aanvallen** : deze aanvallen genereren een doel dat niet toegankelijk is door een zwakte te misbruiken in de Layer 3-en Layer 4-protocol stack. Ze omvatten SYN-flood-aanvallen, reflectie-aanvallen en andere protocol aanvallen. DDoS Protection Standard verkleint deze aanvallen, onderscheidt zich van schadelijk en betrouwbaar verkeer door interactie met de client en het blok keren van schadelijk verkeer. 
-- **Resource (Application) Layer-aanvallen** : deze aanvallen richten op webtoepassingen, om de overdracht van gegevens tussen hosts te verstoren. Ze omvatten HTTP-protocol schendingen, SQL-injectie, cross-site scripting en andere Layer 7-aanvallen. Gebruik een firewall voor webtoepassingen, zoals de Azure [Application Gateway Web Application firewall](../application-gateway/application-gateway-web-application-firewall-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json), en DDoS Protection standaard om bescherming tegen deze aanvallen te bieden. Er zijn ook Web Application Firewall aanbiedingen van derden beschikbaar in [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=web%20application%20firewall).
+- **Volumetrische aanvallen**: deze aanvallen flooden de netwerklaag met een aanzienlijke hoeveelheid schijnbaar betrouwbaar verkeer. Ze omvatten UDP-flooden, versterking van stromen en andere vervalste pakket stromen. DDoS Protection Standard verkleint deze potentiële multi-Gigabyte-aanvallen door ze te absorberen en te reinigen, met de wereld wijde schaal van Azure automatisch.
+- **Protocol aanvallen**: deze aanvallen genereren een doel dat niet toegankelijk is door een zwakte te misbruiken in de Layer 3-en Layer 4-protocol stack. Ze omvatten SYN-flood-aanvallen, reflectie-aanvallen en andere protocol aanvallen. DDoS Protection Standard verkleint deze aanvallen, onderscheidt zich van schadelijk en betrouwbaar verkeer door interactie met de client en het blok keren van schadelijk verkeer. 
+- **Resource (Application) Layer-aanvallen**: deze aanvallen richten op webtoepassingen, om de overdracht van gegevens tussen hosts te verstoren. Ze omvatten HTTP-protocol schendingen, SQL-injectie, cross-site scripting en andere Layer 7-aanvallen. Gebruik een firewall voor webtoepassingen, zoals de Azure [Application Gateway Web Application firewall](../web-application-firewall/ag/ag-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json), en DDoS Protection standaard om bescherming tegen deze aanvallen te bieden. Er zijn ook Web Application Firewall aanbiedingen van derden beschikbaar in [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=web%20application%20firewall).
 
 ## <a name="azure-ddos-protection-standard"></a>Azure DDoS Protection Standard
 

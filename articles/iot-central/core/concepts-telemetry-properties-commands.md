@@ -3,17 +3,17 @@ title: De telemetrie-, Property-en Command-Payloads in azure IoT Central | Micro
 description: Met Azure IoT Central-Apparaatbeheer kunt u opgeven welke telemetrie, eigenschappen en opdrachten van een apparaat moeten worden geïmplementeerd. Inzicht in de indeling van de gegevens die een apparaat kan uitwisselen met IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 06/12/2020
+ms.date: 11/05/2020
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 9e5288bb177d5827f05003e4561bc79240a71b59
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 24fbe347aeb0b47ffd1ba694f761d909ff2950f8
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427874"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94989544"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Payloads van telemetrie, eigenschappen en opdrachten
 
@@ -29,12 +29,12 @@ In dit artikel wordt beschreven hoe de JSON-nettoladingen van apparaten worden v
 
 In het artikel wordt niet elk mogelijk type telemetrie, eigenschap en opdracht Payload beschreven, maar de voor beelden illustreren alle sleutel typen.
 
-Elk voor beeld toont een fragment van het apparaatcompatibiliteit (device capability model, DCM) dat het type en de voor beeld-JSON-nettoladingen definieert om te laten zien hoe het apparaat moet communiceren met de IoT Central-toepassing.
+Elk voor beeld toont een fragment van het model van het apparaat dat het type en de voor beeld-JSON-nettoladingen definieert om te laten zien hoe het apparaat moet communiceren met de IoT Central-toepassing.
 
 > [!NOTE]
-> IoT Central accepteert een geldige JSON, maar kan alleen worden gebruikt voor visualisaties als deze overeenkomt met een definitie in de DCM. U kunt gegevens exporteren die niet overeenkomen met een definitie. Zie [IOT-gegevens exporteren naar bestemmingen in azure](howto-export-data.md).
+> IoT Central accepteert een geldige JSON, maar kan alleen worden gebruikt voor visualisaties als deze overeenkomt met een definitie in het model van het apparaat. U kunt gegevens exporteren die niet overeenkomen met een definitie. Zie [IOT-gegevens exporteren naar bestemmingen in azure](howto-export-data.md).
 
-Het JSON-bestand dat de DCM definieert, maakt gebruik van de [Digital-taal (DTDL) v1](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v1-preview/dtdlv1.md). Deze specificatie bevat de definitie van de `@id` eigenschaps indeling.
+Het JSON-bestand dat het model van het apparaat definieert, maakt gebruik van de [Digital-taal versie 2 (DTDL) v2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md).
 
 Zie de [client toepassing maken en verbinden met uw azure IOT Central-toepassing (Node.js)](tutorial-connect-device-nodejs.md) en [een client toepassing maken en verbinden met uw python-zelf studies (Azure IOT Central Application)](tutorial-connect-device-python.md) voor een voor beeld van een apparaatcode dat enkele van deze nettoladingen bevat die in gebruik zijn.
 
@@ -56,11 +56,10 @@ Met IoT Central kunt u de onbewerkte gegevens weer geven die een apparaat naar e
 
 In deze sectie ziet u voor beelden van primitieve telemetrie-typen die een apparaat streamt naar een IoT Central-toepassing.
 
-Het volgende code fragment van een DCM toont de definitie van een `boolean` telemetrie-type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `boolean` telemetrie-type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "BooleanTelemetry"
@@ -76,11 +75,10 @@ Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als in he
 { "BooleanTelemetry": true }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een `string` telemetrie-type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `string` telemetrie-type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "StringTelemetry"
@@ -96,11 +94,10 @@ Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als in he
 { "StringTelemetry": "A string value - could be a URL" }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een `integer` telemetrie-type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `integer` telemetrie-type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "IntegerTelemetry"
@@ -117,11 +114,10 @@ Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als in he
 { "IntegerTelemetry": 23 }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een `double` telemetrie-type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `double` telemetrie-type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "DoubleTelemetry"
@@ -137,11 +133,10 @@ Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als in he
 { "DoubleTelemetry": 56.78 }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een `dateTime` telemetrie-type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `dateTime` telemetrie-type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "DateTimeTelemetry"
@@ -151,17 +146,16 @@ Het volgende code fragment van een DCM toont de definitie van een `dateTime` tel
 }
 ```
 
-Een apparaatclient moet de telemetrie als JSON verzenden die lijkt op het volgende voor beeld- `DateTime` typen moet voldoen aan ISO 8061-compatibel:
+Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als de volgende voorbeeld `DateTime` typen moeten de ISO 8061-indeling hebben:
 
 ```json
 { "DateTimeTelemetry": "2020-08-30T19:16:13.853Z" }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een `duration` telemetrie-type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `duration` telemetrie-type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "DurationTelemetry"
@@ -171,7 +165,7 @@ Het volgende code fragment van een DCM toont de definitie van een `duration` tel
 }
 ```
 
-Een apparaatclient moet de telemetrie als JSON verzenden die lijkt op het volgende voor beeld: de duur van de ISO 8601-duur moet voldoen aan de voor waarden.
+Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als de volgende voor beelden: de duur van de client moet de ISO 8601-indeling hebben.
 
 ```json
 { "DurationTelemetry": "PT10H24M6.169083011336625S" }
@@ -181,11 +175,10 @@ Een apparaatclient moet de telemetrie als JSON verzenden die lijkt op het volgen
 
 In deze sectie ziet u voor beelden van complexe telemetriegegevens die een apparaat streamt naar een IoT Central-toepassing.
 
-Het volgende code fragment van een DCM toont de definitie van een `geopoint` telemetrie-type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `geopoint` telemetrie-type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "GeopointTelemetry"
@@ -207,18 +200,16 @@ Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als in he
 }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een `Enum` telemetrie-type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `Enum` telemetrie-type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "EnumTelemetry"
   },
   "name": "EnumTelemetry",
   "schema": {
-    "@id": "<element id>",
     "@type": "Enum",
     "displayName": {
       "en": "Enum"
@@ -226,8 +217,6 @@ Het volgende code fragment van een DCM toont de definitie van een `Enum` telemet
     "valueSchema": "integer",
     "enumValues": [
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Item1"
         },
@@ -235,8 +224,6 @@ Het volgende code fragment van een DCM toont de definitie van een `Enum` telemet
         "name": "Item1"
       },
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Item2"
         },
@@ -244,8 +231,6 @@ Het volgende code fragment van een DCM toont de definitie van een `Enum` telemet
         "name": "Item2"
       },
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Item3"
         },
@@ -263,26 +248,22 @@ Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als in he
 { "EnumTelemetry": 1 }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een `Object` type telemetrie. Dit object heeft drie velden met typen `dateTime` , `integer` en `Enum` :
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `Object` telemetrie-type weer gegeven. Dit object heeft drie velden met typen `dateTime` , `integer` en `Enum` :
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "ObjectTelemetry"
   },
   "name": "ObjectTelemetry",
   "schema": {
-    "@id": "<element id>",
     "@type": "Object",
     "displayName": {
       "en": "Object"
     },
     "fields": [
       {
-        "@id": "<element id>",
-        "@type": "SchemaField",
         "displayName": {
           "en": "Property1"
         },
@@ -290,8 +271,6 @@ Het volgende code fragment van een DCM toont de definitie van een `Object` type 
         "schema": "dateTime"
       },
       {
-        "@id": "<element id>",
-        "@type": "SchemaField",
         "displayName": {
           "en": "Property2"
         },
@@ -299,14 +278,11 @@ Het volgende code fragment van een DCM toont de definitie van een `Object` type 
         "schema": "integer"
       },
       {
-        "@id": "<element id>",
-        "@type": "SchemaField",
         "displayName": {
           "en": "Property3"
         },
         "name": "Property3",
         "schema": {
-          "@id": "<element id>",
           "@type": "Enum",
           "displayName": {
             "en": "Enum"
@@ -314,8 +290,6 @@ Het volgende code fragment van een DCM toont de definitie van een `Object` type 
           "valueSchema": "integer",
           "enumValues": [
             {
-              "@id": "<element id>",
-              "@type": "EnumValue",
               "displayName": {
                 "en": "Item1"
               },
@@ -323,8 +297,6 @@ Het volgende code fragment van een DCM toont de definitie van een `Object` type 
               "name": "Item1"
             },
             {
-              "@id": "<element id>",
-              "@type": "EnumValue",
               "displayName": {
                 "en": "Item2"
               },
@@ -332,8 +304,6 @@ Het volgende code fragment van een DCM toont de definitie van een `Object` type 
               "name": "Item2"
             },
             {
-              "@id": "<element id>",
-              "@type": "EnumValue",
               "displayName": {
                 "en": "Item3"
               },
@@ -360,11 +330,10 @@ Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als in he
 }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een `vector` telemetrie-type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een `vector` telemetrie-type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Telemetry",
   "displayName": {
     "en": "VectorTelemetry"
@@ -390,14 +359,13 @@ Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als in he
 
 In deze sectie vindt u voor beelden van telemetriegegevens en statussen die een apparaat naar een IoT Central-toepassing verzendt.
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `integer` gebeurtenis type:
+Het volgende code fragment van een model van een apparaat toont de definitie van een `integer` gebeurtenis type:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": [
     "Telemetry",
-    "SemanticType/Event"
+    "Event"
   ],
   "displayName": {
     "en": "IntegerEvent"
@@ -413,27 +381,23 @@ Een apparaatclient moet de gebeurtenis gegevens als JSON verzenden die eruitziet
 { "IntegerEvent": 74 }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een `integer` status type:
+Het volgende code fragment van een model van een apparaat toont de definitie van een `integer` status type:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": [
     "Telemetry",
-    "SemanticType/State"
+    "State"
   ],
   "displayName": {
     "en": "IntegerState"
   },
   "name": "IntegerState",
   "schema": {
-    "@id": "<element id>",
     "@type": "Enum",
     "valueSchema": "integer",
     "enumValues": [
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Level1"
         },
@@ -441,8 +405,6 @@ Het volgende code fragment van een DCM toont de definitie van een `integer` stat
         "name": "Level1"
       },
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Level2"
         },
@@ -450,8 +412,6 @@ Het volgende code fragment van een DCM toont de definitie van een `integer` stat
         "name": "Level2"
       },
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Level3"
         },
@@ -478,17 +438,17 @@ Een apparaatclient moet de status als JSON verzenden die eruitziet als in het vo
 
 In deze sectie vindt u voor beelden van primitieve eigenschaps typen die een apparaat naar een IoT Central-toepassing verzendt.
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `boolean` eigenschaps type:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een `boolean` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "BooleanProperty"
   },
   "name": "BooleanProperty",
-  "schema": "boolean"
+  "schema": "boolean",
+  "writable": false
 }
 ```
 
@@ -498,17 +458,17 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 { "BooleanProperty": false }
 ```
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `boolean` eigenschaps type:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een `boolean` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "LongProperty"
   },
   "name": "LongProperty",
-  "schema": "long"
+  "schema": "long",
+  "writable": false
 }
 ```
 
@@ -518,17 +478,17 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 { "LongProperty": 439 }
 ```
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `date` eigenschaps type:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een `date` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "DateProperty"
   },
   "name": "DateProperty",
-  "schema": "date"
+  "schema": "date",
+  "writable": false
 }
 ```
 
@@ -538,17 +498,17 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 { "DateProperty": "2020-05-17" }
 ```
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `duration` eigenschaps type:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een `duration` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "DurationProperty"
   },
   "name": "DurationProperty",
-  "schema": "duration"
+  "schema": "duration",
+  "writable": false
 }
 ```
 
@@ -558,17 +518,17 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 { "DurationProperty": "PT10H24M6.169083011336625S" }
 ```
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `float` eigenschaps type:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een `float` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "FloatProperty"
   },
   "name": "FloatProperty",
-  "schema": "float"
+  "schema": "float",
+  "writable": false
 }
 ```
 
@@ -578,17 +538,17 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 { "FloatProperty": 1.9 }
 ```
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `string` eigenschaps type:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een `string` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "StringProperty"
   },
   "name": "StringProperty",
-  "schema": "string"
+  "schema": "string",
+  "writable": false
 }
 ```
 
@@ -602,17 +562,17 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 
 In deze sectie vindt u voor beelden van complexe eigenschaps typen die een apparaat naar een IoT Central-toepassing verzendt.
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `geopoint` eigenschaps type:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een `geopoint` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "GeopointProperty"
   },
   "name": "GeopointProperty",
-  "schema": "geopoint"
+  "schema": "geopoint",
+  "writable": false
 }
 ```
 
@@ -628,18 +588,17 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 }
 ```
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `Enum` eigenschaps type:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een `Enum` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "EnumProperty"
   },
   "name": "EnumProperty",
+  "writable": false,
   "schema": {
-    "@id": "<element id>",
     "@type": "Enum",
     "displayName": {
       "en": "Enum"
@@ -647,8 +606,6 @@ Het volgende code fragment vanuit een DCM toont de definitie van een `Enum` eige
     "valueSchema": "integer",
     "enumValues": [
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Item1"
         },
@@ -656,8 +613,6 @@ Het volgende code fragment vanuit een DCM toont de definitie van een `Enum` eige
         "name": "Item1"
       },
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Item2"
         },
@@ -665,8 +620,6 @@ Het volgende code fragment vanuit een DCM toont de definitie van een `Enum` eige
         "name": "Item2"
       },
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Item3"
         },
@@ -684,26 +637,23 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 { "EnumProperty": 1 }
 ```
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `Object` eigenschaps type. Dit object heeft twee velden met typen `string` en `integer` :
+Het volgende code fragment van een model van een apparaat toont de definitie van een `Object` eigenschaps type. Dit object heeft twee velden met typen `string` en `integer` :
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "ObjectProperty"
   },
   "name": "ObjectProperty",
+  "writable": false,
   "schema": {
-    "@id": "<element id>",
     "@type": "Object",
     "displayName": {
       "en": "Object"
     },
     "fields": [
       {
-        "@id": "<element id>",
-        "@type": "SchemaField",
         "displayName": {
           "en": "Field1"
         },
@@ -711,8 +661,6 @@ Het volgende code fragment vanuit een DCM toont de definitie van een `Object` ei
         "schema": "integer"
       },
       {
-        "@id": "<element id>",
-        "@type": "SchemaField",
         "displayName": {
           "en": "Field2"
         },
@@ -735,17 +683,17 @@ Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende
 }
 ```
 
-Het volgende code fragment vanuit een DCM toont de definitie van een `vector` eigenschaps type:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een `vector` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "VectorProperty"
   },
   "name": "VectorProperty",
-  "schema": "vector"
+  "schema": "vector",
+  "writable": false
 }
 ```
 
@@ -769,7 +717,7 @@ IoT Central verwacht een reactie van het apparaat naar updates van schrijf bare 
 
 `ac` is een numeriek veld dat gebruikmaakt van de waarden in de volgende tabel:
 
-| Waarde | Label | Beschrijving |
+| Waarde | Label | Description |
 | ----- | ----- | ----------- |
 | `'ac': 200` | Voltooid | De bewerking voor het wijzigen van de eigenschap is voltooid. |
 | `'ac': 202`  of `'ac': 201` | In behandeling | De bewerking voor het wijzigen van de eigenschap is in behandeling of wordt uitgevoerd |
@@ -780,11 +728,10 @@ IoT Central verwacht een reactie van het apparaat naar updates van schrijf bare 
 
 `ad` is een beschrijving van een optie teken reeks.
 
-Het volgende code fragment van een DCM toont de definitie van een Beschrijf bare `string` eigenschaps type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een Beschrijf bare `string` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "StringPropertyWritable"
@@ -816,11 +763,10 @@ Het apparaat moet de volgende JSON-Payload verzenden naar IoT Central nadat de u
 }
 ```
 
-Het volgende code fragment van een DCM toont de definitie van een Beschrijf bare `Enum` eigenschaps type:
+In het volgende code fragment van een apparaatprofiel wordt de definitie van een Beschrijf bare `Enum` eigenschaps type weer gegeven:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Property",
   "displayName": {
     "en": "EnumPropertyWritable"
@@ -828,7 +774,6 @@ Het volgende code fragment van een DCM toont de definitie van een Beschrijf bare
   "name": "EnumPropertyWritable",
   "writable": true,
   "schema": {
-    "@id": "<element id>",
     "@type": "Enum",
     "displayName": {
       "en": "Enum"
@@ -836,8 +781,6 @@ Het volgende code fragment van een DCM toont de definitie van een Beschrijf bare
     "valueSchema": "integer",
     "enumValues": [
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Item1"
         },
@@ -845,8 +788,6 @@ Het volgende code fragment van een DCM toont de definitie van een Beschrijf bare
         "name": "Item1"
       },
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Item2"
         },
@@ -854,8 +795,6 @@ Het volgende code fragment van een DCM toont de definitie van een Beschrijf bare
         "name": "Item2"
       },
       {
-        "@id": "<element id>",
-        "@type": "EnumValue",
         "displayName": {
           "en": "Item3"
         },
@@ -888,38 +827,32 @@ Het apparaat moet de volgende JSON-Payload verzenden naar IoT Central nadat de u
 }
 ```
 
-## <a name="commands"></a>Opdrachten
+## <a name="commands"></a>Opdracht
 
-### <a name="synchronous-command-types"></a>Synchrone opdracht typen
+> [!NOTE]
+> In de gebruikers interface van IoT Central kunt u de **wachtrij selecteren als u offline** kiest voor een opdracht. Deze instelling is niet opgenomen als u een model of interface uit de sjabloon voor het apparaat exporteert.
 
-Het volgende code fragment van een DCM toont de definitie van een synchrone opdracht die geen para meters heeft en waarvan niet wordt verwacht dat het apparaat iets retourneert:
+Het volgende code fragment van een model van een apparaat toont de definitie van een opdracht die geen para meters heeft en die niet verwacht dat het apparaat iets retourneert:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Command",
-  "commandType": "synchronous",
-  "durable": false,
   "displayName": {
-    "en": "SynchronousCommandBasic"
+    "en": "CommandBasic"
   },
-  "name": "SynchronousCommandBasic"
+  "name": "CommandBasic"
 }
 ```
 
 Het apparaat ontvangt een lege Payload in de aanvraag en retourneert een lege nettolading in het antwoord met een `200` http-antwoord code om aan te geven dat dit is geslaagd.
 
-Het volgende code fragment van een DCM toont de definitie van een synchrone opdracht met een gehele para meter en die het apparaat verwacht een geheel getal te retour neren:
+Het volgende code fragment van een model van een apparaat toont de definitie van een opdracht met een integer-para meter en die verwacht dat het apparaat een integerwaarde retourneert:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Command",
-  "commandType": "synchronous",
-  "durable": false,
   "request": {
-    "@id": "<element id>",
-    "@type": "SchemaField",
+    "@type": "CommandPayload",
     "displayName": {
       "en": "RequestParam"
     },
@@ -927,8 +860,7 @@ Het volgende code fragment van een DCM toont de definitie van een synchrone opdr
     "schema": "integer"
   },
   "response": {
-    "@id": "<element id>",
-    "@type": "SchemaField",
+    "@type": "CommandPayload",
     "displayName": {
       "en": "ResponseParam"
     },
@@ -936,39 +868,32 @@ Het volgende code fragment van een DCM toont de definitie van een synchrone opdr
     "schema": "integer"
   },
   "displayName": {
-    "en": "SynchronousCommandSimple"
+    "en": "CommandSimple"
   },
-  "name": "SynchronousCommandSimple"
+  "name": "CommandSimple"
 }
 ```
 
 Het apparaat ontvangt een geheel getal als de aanvraag lading. Het apparaat moet een geheel getal retour neren als de reactie Payload met een `200` http-antwoord code om aan te geven dat dit is geslaagd.
 
-Het volgende code fragment van een DCM toont de definitie van een synchrone opdracht die een object parameter heeft en die het apparaat verwacht een object te retour neren. In dit voor beeld hebben beide objecten de velden integer en string:
+Het volgende code fragment van een model van een apparaat toont de definitie van een opdracht die een object parameter heeft en die het apparaat verwacht een object te retour neren. In dit voor beeld hebben beide objecten de velden integer en string:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Command",
-  "commandType": "synchronous",
-  "durable": false,
   "request": {
-    "@id": "<element id>",
-    "@type": "SchemaField",
+    "@type": "CommandPayload",
     "displayName": {
       "en": "RequestParam"
     },
     "name": "RequestParam",
     "schema": {
-      "@id": "<element id>",
       "@type": "Object",
       "displayName": {
         "en": "Object"
       },
       "fields": [
         {
-          "@id": "<element id>",
-          "@type": "SchemaField",
           "displayName": {
             "en": "Field1"
           },
@@ -976,8 +901,6 @@ Het volgende code fragment van een DCM toont de definitie van een synchrone opdr
           "schema": "integer"
         },
         {
-          "@id": "<element id>",
-          "@type": "SchemaField",
           "displayName": {
             "en": "Field2"
           },
@@ -988,22 +911,18 @@ Het volgende code fragment van een DCM toont de definitie van een synchrone opdr
     }
   },
   "response": {
-    "@id": "<element id>",
-    "@type": "SchemaField",
+    "@type": "CommandPayload",
     "displayName": {
       "en": "ResponseParam"
     },
     "name": "ResponseParam",
     "schema": {
-      "@id": "<element id>",
       "@type": "Object",
       "displayName": {
         "en": "Object"
       },
       "fields": [
         {
-          "@id": "<element id>",
-          "@type": "SchemaField",
           "displayName": {
             "en": "Field1"
           },
@@ -1011,8 +930,6 @@ Het volgende code fragment van een DCM toont de definitie van een synchrone opdr
           "schema": "integer"
         },
         {
-          "@id": "<element id>",
-          "@type": "SchemaField",
           "displayName": {
             "en": "Field2"
           },
@@ -1023,9 +940,9 @@ Het volgende code fragment van een DCM toont de definitie van een synchrone opdr
     }
   },
   "displayName": {
-    "en": "SynchronousCommandComplex"
+    "en": "CommandComplex"
   },
-  "name": "SynchronousCommandComplex"
+  "name": "CommandComplex"
 }
 ```
 
@@ -1041,19 +958,15 @@ Het volgende code fragment toont een voor beeld van een nettolading van de react
 { "Field1": 87, "Field2": "Another string value" }
 ```
 
-### <a name="asynchronous-command-types"></a>Asynchrone opdracht typen
+### <a name="long-running-commands"></a>Langlopende opdrachten
 
-Het volgende code fragment vanuit een DCM toont de definitie van een asynchrone opdracht. De opdracht heeft een gehele para meter en verwacht dat het apparaat een geheel getal retourneert:
+In het volgende code fragment van een model van een apparaat wordt de definitie van een opdracht weer gegeven. De opdracht heeft een gehele para meter en verwacht dat het apparaat een geheel getal retourneert:
 
 ```json
 {
-  "@id": "<element id>",
   "@type": "Command",
-  "commandType": "asynchronous",
-  "durable": false,
   "request": {
-    "@id": "<element id>",
-    "@type": "SchemaField",
+    "@type": "CommandPayload",
     "displayName": {
       "en": "RequestParam"
     },
@@ -1061,8 +974,7 @@ Het volgende code fragment vanuit een DCM toont de definitie van een asynchrone 
     "schema": "integer"
   },
   "response": {
-    "@id": "<element id>",
-    "@type": "SchemaField",
+    "@type": "CommandPayload",
     "displayName": {
       "en": "ResponseParam"
     },
@@ -1070,19 +982,19 @@ Het volgende code fragment vanuit een DCM toont de definitie van een asynchrone 
     "schema": "integer"
   },
   "displayName": {
-    "en": "AsynchronousCommandSimple"
+    "en": "LongRunningCommandSimple"
   },
-  "name": "AsynchronousCommandSimple"
+  "name": "LongRunningCommandSimple"
 }
 ```
 
-Het apparaat ontvangt een geheel getal als de aanvraag lading. Het apparaat moet een lege nettolading retour neren met een `202` http-antwoord code om aan te geven dat het apparaat de aanvraag voor asynchrone verwerking heeft geaccepteerd.
+Het apparaat ontvangt een geheel getal als de aanvraag lading. Als het apparaat tijd nodig heeft om deze opdracht te verwerken, moet het een lege nettolading retour neren met een `202` http-antwoord code om aan te geven dat het apparaat de aanvraag voor verwerking heeft geaccepteerd.
 
 Wanneer het apparaat klaar is met de verwerking van de aanvraag, moet er een eigenschap naar IoT Central worden verzonden die eruitziet als in het volgende voor beeld. De naam van de eigenschap moet hetzelfde zijn als de naam van de opdracht:
 
 ```json
 {
-  "AsynchronousCommandSimple": {
+  "LongRunningCommandSimple": {
     "value": 87
   }
 }

@@ -8,12 +8,12 @@ ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
 ms.custom: device-developer, devx-track-azurecli
-ms.openlocfilehash: f4f35aed10465fb06460f2818a876444bf989e01
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 2bbf400840c968587de3a0a0951d28c7c35b210f
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843958"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94990887"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Probleem oplossen waarbij gegevens van uw apparaten niet worden weergegeven in Azure IoT Central
 
@@ -130,12 +130,12 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 }
 ```
 
-| Inrichtings status van apparaten | Beschrijving | Mogelijke beperking |
+| Inrichtings status van apparaten | Description | Mogelijke beperking |
 | - | - | - |
 | Ingericht | Er is geen onmiddellijk herkenbaar probleem. | N.v.t. |
 | Geregistreerd | Het apparaat is nog niet verbonden met IoT Central. | Controleer de logboeken van uw apparaten op verbindings problemen. |
 | Geblokkeerd | Het apparaat kan geen verbinding maken met IoT Central. | Het apparaat is geblokkeerd om verbinding te maken met de IoT Central-toepassing. Deblokkeren van het apparaat in IoT Central en probeer het opnieuw. Zie [apparaten blok keren](concepts-get-connected.md#device-status-values)voor meer informatie. |
-| Goedgekeurde | Het apparaat is niet goedgekeurd. | Het apparaat is niet goedgekeurd om verbinding te maken met de IoT Central-toepassing. Keur het apparaat goed in IoT Central en probeer het opnieuw. Zie [apparaten goed keuren](concepts-get-connected.md#connect-without-registering-devices) voor meer informatie |
+| Goedgekeurde | Het apparaat is niet goedgekeurd. | Het apparaat is niet goedgekeurd om verbinding te maken met de IoT Central-toepassing. Keur het apparaat goed in IoT Central en probeer het opnieuw. Zie [apparaten goed keuren](concepts-get-connected.md#device-registration) voor meer informatie |
 | Gekoppelde | Het apparaat is niet gekoppeld aan een sjabloon voor het apparaat. | Koppel het apparaat aan een apparaatprofiel zodat IoT Central weet hoe de gegevens moeten worden geparseerd. |
 
 Meer informatie over [Apparaatstatus](concepts-get-connected.md#device-status-values).
@@ -150,7 +150,7 @@ De volgende tabellen bevatten de algemene fout codes en mogelijke acties om te b
 
 Als u problemen met uw verificatie stroom ziet:
 
-| Foutcode | Beschrijving | Mogelijke beperking |
+| Foutcode | Description | Mogelijke beperking |
 | - | - | - |
 | 400 | De hoofd tekst van de aanvraag is ongeldig. Het kan bijvoorbeeld niet worden geparseerd of het object kan niet worden gevalideerd. | Zorg ervoor dat u de juiste aanvraag tekst verzendt als onderdeel van de Attestation-stroom of gebruik een apparaat-SDK. |
 | 401 | Het autorisatie token kan niet worden gevalideerd. Het is bijvoorbeeld verlopen of is niet van toepassing op de URI van de aanvraag. Deze fout code wordt ook geretourneerd naar apparaten als onderdeel van de TPM-attest stroom. | Zorg ervoor dat uw apparaat de juiste referenties heeft. |

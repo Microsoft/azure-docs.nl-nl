@@ -3,17 +3,17 @@ title: Wat zijn Device-sjablonen in azure IoT Central | Microsoft Docs
 description: Met Azure IoT Central Device-sjablonen kunt u het gedrag opgeven van de apparaten die zijn verbonden met uw toepassing. Een sjabloon voor een apparaat geeft de telemetrie, eigenschappen en opdrachten op die het apparaat moet implementeren. Een sjabloon voor een apparaat definieert ook de gebruikers interface voor het apparaat in IoT Central zoals de formulieren en dash boards die een operator gebruikt.
 author: dominicbetts
 ms.author: dobett
-ms.date: 05/21/2020
+ms.date: 11/05/2020
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 75317b5c6af2d0ce89d2db32f4343d9cc73a1a81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e82a377d62184c8ae1d2e8f076b228e36005887a
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91813165"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992672"
 ---
 # <a name="what-are-device-templates"></a>Wat zijn apparaatsjablonen?
 
@@ -25,86 +25,99 @@ Met een oplossings functie voor oplossingen worden apparaatprofielen toegevoegd 
 
 Een sjabloon voor een apparaat bestaat uit de volgende secties:
 
-- _Een mogelijkheidsprofiel (DCM)_. In dit deel van de sjabloon voor het apparaat wordt gedefinieerd hoe het apparaat samenwerkt met uw toepassing. Een ontwikkelaar van het apparaat implementeert het gedrag dat is gedefinieerd in DCM.
-    - _Interfaces_. Een DCM bevat een of meer interfaces die de telemetrie, eigenschappen en opdrachten definiëren die het apparaat moet implementeren.
-- _Eigenschappen_van de Cloud. In dit deel van de sjabloon kunt u de oplossings ontwikkelaar de meta gegevens van het apparaat opgeven die moeten worden opgeslagen. Cloud eigenschappen worden nooit gesynchroniseerd met apparaten en bestaan alleen in de toepassing. Cloud eigenschappen hebben geen invloed op de code die een ontwikkelaar van het apparaat schrijft om de DCM te implementeren.
-- _Aanpassingen_. In dit deel van de sjabloon voor het apparaat kan de oplossings ontwikkelaar enkele van de definities in de DCM overschrijven. Aanpassingen zijn handig als de oplossings ontwikkelaar wil verfijnen hoe de toepassing een waarde verwerkt, zoals het wijzigen van de weergave naam voor een eigenschap of de kleur die wordt gebruikt om een telemetrie-waarde weer te geven. Aanpassingen hebben geen invloed op de code die een ontwikkelaar van het apparaat schrijft om de DCM te implementeren.
-- _Weer gaven_. In dit deel van de sjabloon kunt u met de oplossings ontwikkelaar visualisaties definiëren om gegevens van het apparaat weer te geven en formulieren voor het beheren en controleren van een apparaat. De weer gaven gebruiken DCM, Cloud eigenschappen en aanpassingen. Weer gaven hebben geen invloed op de code die een ontwikkelaar van het apparaat schrijft om de DCM te implementeren.
+- _Een model voor apparaten_. In dit deel van de sjabloon voor het apparaat wordt gedefinieerd hoe het apparaat samenwerkt met uw toepassing. Een ontwikkelaar van het apparaat implementeert het gedrag dat in het model is gedefinieerd.
+    - _Standaard onderdeel_. Elk model van het apparaat heeft een standaard onderdeel. De interface van het standaard onderdeel beschrijft mogelijkheden die specifiek zijn voor het model van het apparaat.
+    - _Onderdelen_. Een model kan naast het standaard onderdeel ook onderdelen bevatten om de mogelijkheden van het apparaat te beschrijven. Elk onderdeel heeft een interface die de mogelijkheden van het onderdeel beschrijft. Onderdeel interfaces kunnen opnieuw worden gebruikt in andere apparaat modellen. Voor beelden van verschillende modellen voor telefoon apparaten kunnen dezelfde camera-interface gebruiken.
+    - _Overgenomen interfaces_. Een apparaatprofiel bevat een of meer interfaces waarmee de mogelijkheden van het standaard onderdeel worden uitgebreid.
+- _Eigenschappen_ van de Cloud. In dit deel van de sjabloon kunt u de oplossings ontwikkelaar de meta gegevens van het apparaat opgeven die moeten worden opgeslagen. Cloud eigenschappen worden nooit gesynchroniseerd met apparaten en bestaan alleen in de toepassing. Cloud eigenschappen hebben geen invloed op de code die een ontwikkelaar van het apparaat schrijft om het model te implementeren.
+- _Aanpassingen_. In dit deel van de sjabloon voor het apparaat kan de oplossings ontwikkelaar sommige definities in het model van het apparaat overschrijven. Aanpassingen zijn handig als de oplossings ontwikkelaar wil verfijnen hoe de toepassing een waarde verwerkt, zoals het wijzigen van de weergave naam voor een eigenschap of de kleur die wordt gebruikt om een telemetrie-waarde weer te geven. Aanpassingen hebben geen invloed op de code die een ontwikkelaar van het apparaat schrijft om het model te implementeren.
+- _Weer gaven_. In dit deel van de sjabloon kunt u met de oplossings ontwikkelaar visualisaties definiëren om gegevens van het apparaat weer te geven en formulieren voor het beheren en controleren van een apparaat. De weer gaven gebruiken het model, de eigenschappen van de Cloud en aanpassingen. Weer gaven hebben geen invloed op de code die een ontwikkelaar van het apparaat schrijft om het model te implementeren.
 
-## <a name="device-capability-models"></a>Modellen voor apparaatfuncties
+## <a name="device-models"></a>Apparaatmodellen
 
-Een DCM bepaalt hoe een apparaat samenwerkt met uw IoT Central-toepassing. De ontwikkelaar van het apparaat moet ervoor zorgen dat het apparaat het gedrag implementeert dat in de DCM is gedefinieerd, zodat IoT Central het apparaat kunt bewaken en beheren. Een DCM bestaat uit een of meer _interfaces_, en elke interface kan een verzameling _telemetrie_ -typen, _Apparaateigenschappen_en _opdrachten_definiëren. Een oplossings ontwikkelaar kan een JSON-bestand importeren dat de DCM in een apparaatprofiel definieert, of u kunt de Web-UI in IoT Central gebruiken om een DCM te maken of te bewerken. Wijzigingen aan een DCM die zijn gemaakt met behulp van de Web-UI, hebben een versie van de [sjabloon](./howto-version-device-template.md).
+Een apparaatprofiel definieert hoe een apparaat samenwerkt met uw IoT Central-toepassing. De ontwikkelaar van het apparaat moet ervoor zorgen dat het apparaat het gedrag implementeert dat is gedefinieerd in het model apparaat, zodat IoT Central het apparaat kunt bewaken en beheren. Een apparaatprofiel bestaat uit een of meer _interfaces_, en elke interface kan een verzameling _telemetrie_ -typen, _Apparaateigenschappen_ en _opdrachten_ definiëren. Een oplossings ontwikkelaar kan een JSON-bestand importeren waarmee het model van het apparaat in een apparaatprofiel wordt gedefinieerd, of u kunt de Web-UI in IoT Central gebruiken om een model te maken of te bewerken. Wijzigingen in een model dat is gemaakt met behulp van de Web-UI, hebben een [versie nummer](./howto-version-device-template.md)van de sjabloon.
 
-Een oplossings ontwikkelaar kan ook een JSON-bestand met de DCM exporteren. Een ontwikkelaar van een apparaat kan dit JSON-document gebruiken om te begrijpen hoe het apparaat moet communiceren met de IoT Central-toepassing.
+Een oplossings ontwikkelaar kan ook een JSON-bestand met het model van het apparaat exporteren. Een ontwikkelaar van een apparaat kan dit JSON-document gebruiken om te begrijpen hoe het apparaat moet communiceren met de IoT Central-toepassing.
 
-Het JSON-bestand dat de DCM definieert, maakt gebruik van de [Digital-taal (DTDL) v1](https://github.com/Azure/IoTPlugandPlay/tree/master/DTDL). IoT Central verwacht dat het JSON-bestand de DCM bevat met de interfaces die in line zijn gedefinieerd, in plaats van afzonderlijke bestanden.
+Het JSON-bestand dat het model van het apparaat definieert, maakt gebruik van de [Digital-taal versie 2 (DTDL) v2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). IoT Central verwacht dat het JSON-bestand het apparaatprofiel bevat met de interfaces die in line zijn gedefinieerd, in plaats van afzonderlijke bestanden.
 
 Een typisch IoT-apparaat bestaat uit:
 
 - Aangepaste onderdelen, die de dingen zijn die uw apparaat uniek maken.
 - Standaard onderdelen, die voor alle apparaten gebruikelijk zijn.
 
-Deze onderdelen worden _interfaces_ genoemd in een DCM. Interfaces definiëren de details van elk onderdeel dat door uw apparaat wordt geïmplementeerd. Interfaces kunnen worden gebruikt in DCMs.
+Deze onderdelen worden _interfaces_ genoemd in een model voor apparaten. Interfaces definiëren de details van elk onderdeel dat door uw apparaat wordt geïmplementeerd. Interfaces kunnen worden gebruikt in verschillende modellen. In de DTDL verwijst een onderdeel naar een interface die is gedefinieerd in een afzonderlijk DTDL-bestand.
 
-In het volgende voor beeld wordt het overzicht van het mogelijkheidsprofiel voor een omgevings sensor apparaat met twee interfaces weer gegeven:
+In het volgende voor beeld ziet u het overzicht van het model van het apparaat voor een temperatuur controller apparaat. Het standaard onderdeel bevat definities voor `workingSet` , `serialNumber` en `reboot` . Het model van het apparaat omvat ook `thermostat` de `deviceInformation` interfaces en:
 
 ```json
 {
-  "@id": "urn:contoso:sensor_device:1",
-  "@type": "CapabilityModel",
-  "displayName": "Environment Sensor Capability Model",
-  "implements": [
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:TemperatureController;1",
+  "@type": "Interface",
+  "displayName": "Temperature Controller",
+  "description": "Device with two thermostats and remote reboot.",
+  "contents": [
     {
-      "@type": "InterfaceInstance",
-      "name": "deviceinfo",
-      "schema": {
-        "@id": "urn:azureiot:DeviceManagement:DeviceInformation:1",
-        "@type": "Interface",
-        "displayName": "Device Information",
-        "@context": "http://azureiot.com/v1/contexts/IoTModel.json",
-        "contents": [
-          ...
-        ]
+      "@type": [
+        "Telemetry", "DataSize"
+      ],
+      "name": "workingSet",
+      "displayName": "Working Set",
+      "description": "Current working set of the device memory in KiB.",
+      "schema": "double",
+      "unit" : "kibibyte"
+    },
+    {
+      "@type": "Property",
+      "name": "serialNumber",
+      "displayName": "Serial Number",
+      "description": "Serial number of the device.",
+      "schema": "string"
+    },
+    {
+      "@type": "Command",
+      "name": "reboot",
+      "displayName": "Reboot",
+      "description": "Reboots the device after waiting the number of seconds specified.",
+      "request": {
+        "name": "delay",
+        "displayName": "Delay",
+        "description": "Number of seconds to wait before rebooting the device.",
+        "schema": "integer"
       }
     },
     {
-      "@type": "InterfaceInstance",
-      "name": "sensor",
-      "schema": {
-        "@id": "urn:contoso:EnvironmentalSensor:1",
-        "@type": "Interface",
-        "displayName": "Environmental Sensor",
-        "@context": "http://azureiot.com/v1/contexts/IoTModel.json",
-        "contents": [
-          ...
-        ]
-      }
+      "@type" : "Component",
+      "schema": "dtmi:com:example:Thermostat;1",
+      "name": "thermostat",
+      "displayName": "Thermostat",
+      "description": "Thermostat One."
+    },
+    {
+      "@type": "Component",
+      "schema": "dtmi:azure:DeviceManagement:DeviceInformation;1",
+      "name": "deviceInformation",
+      "displayName": "Device Information interface",
+      "description": "Optional interface with basic device hardware information."
     }
-  ],
-  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+  ]
 }
 ```
-
-Een mogelijkheidsprofiel heeft enkele vereiste velden:
-
-- `@id`: een unieke ID in de vorm van een eenvoudige, uniforme resource naam.
-- `@type`: declareert dat dit object een mogelijkheidsprofiel is.
-- `@context`: Hiermee geeft u de DTDL-versie op die wordt gebruikt voor het functionaliteits model.
-- `implements`: hier worden de interfaces weer gegeven die uw apparaat implementeert.
-
-Elk item in de lijst met interfaces in de sectie implements heeft een:
-
-- `name`: de programmeer naam van de interface.
-- `schema`: de interface die het functionaliteits model implementeert.
 
 Een interface bevat enkele vereiste velden:
 
 - `@id`: een unieke ID in de vorm van een eenvoudige, uniforme resource naam.
 - `@type`: declareert dat dit object een interface is.
 - `@context`: Hiermee geeft u de DTDL-versie op die voor de interface wordt gebruikt.
-- `contents`: hier worden de eigenschappen, telemetrie en opdrachten vermeld die het apparaat vormen.
+- `contents`: hier worden de eigenschappen, telemetrie en opdrachten vermeld die het apparaat vormen. De mogelijkheden kunnen in meerdere interfaces worden gedefinieerd.
 
 Er zijn enkele optionele velden die u kunt gebruiken om meer informatie toe te voegen aan het mogelijkheidsprofiel, zoals weergave naam en beschrijving.
+
+Elk item in de lijst met interfaces in de sectie implements heeft een:
+
+- `name`: de programmeer naam van de interface.
+- `schema`: de interface die het functionaliteits model implementeert.
 
 ## <a name="interfaces"></a>Interfaces
 
@@ -114,55 +127,105 @@ Met de DTDL kunt u de mogelijkheden van uw apparaat beschrijven. Gerelateerde mo
 - `Telemetry`. Telemetrie-velden vertegenwoordigen metingen van Sens oren. Wanneer uw apparaat een sensor meting afneemt, moet er een telemetrie-gebeurtenis worden verzonden die de sensor gegevens bevat.
 - `Commands`. Opdrachten vertegenwoordigen methoden die gebruikers van uw apparaat op het apparaat kunnen uitvoeren. Bijvoorbeeld een reset opdracht of een opdracht om een ventilator in of uit te scha kelen.
 
-In het volgende voor beeld ziet u de definitie van de omgevings sensor interface:
+In het volgende voor beeld wordt de Thermo staat-interface definitie weer gegeven:
 
 ```json
 {
-  "@type": "Property",
-  "displayName": "Device State",
-  "description": "The state of the device. Two states online/offline are available.",
-  "name": "state",
-  "schema": "boolean"
-},
-{
-  "@type": "Property",
-  "displayName": "Customer Name",
-  "description": "The name of the customer currently operating the device.",
-  "name": "name",
-  "schema": "string",
-  "writable": true
-},
-{
-  "@type": [
-    "Telemetry",
-    "SemanticType/Temperature"
-  ],
-  "description": "Current temperature on the device",
-  "displayName": "Temperature",
-  "name": "temp",
-  "schema": "double",
-  "unit": "Units/Temperature/fahrenheit"
-},
-{
-  "@type": "Command",
-  "name": "turnon",
-  "comment": "This Commands will turn-on the LED light on the device.",
-  "commandType": "synchronous"
-},
-{
-  "@type": "Command",
-  "name": "turnoff",
-  "comment": "This Commands will turn-off the LED light on the device.",
-  "commandType": "synchronous"
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:Thermostat;1",
+  "@type": "Interface",
+  "displayName": "Thermostat",
+  "description": "Reports current temperature and provides desired temperature control.",
+  "contents": [
+    {
+      "@type": [
+        "Telemetry",
+        "Temperature"
+      ],
+      "name": "temperature",
+      "displayName" : "Temperature",
+      "description" : "Temperature in degrees Celsius.",
+      "schema": "double",
+      "unit": "degreeCelsius"
+    },
+    {
+      "@type": [
+        "Property",
+        "Temperature"
+      ],
+      "name": "targetTemperature",
+      "schema": "double",
+      "displayName": "Target Temperature",
+      "description": "Allows to remotely specify the desired target temperature.",
+      "unit" : "degreeCelsius",
+      "writable": true
+    },
+    {
+      "@type": [
+        "Property",
+        "Temperature"
+      ],
+      "name": "maxTempSinceLastReboot",
+      "schema": "double",
+      "unit" : "degreeCelsius",
+      "displayName": "Max temperature since last reboot.",
+      "description": "Returns the max temperature since last device reboot."
+    },
+    {
+      "@type": "Command",
+      "name": "getMaxMinReport",
+      "displayName": "Get Max-Min report.",
+      "description": "This command returns the max, min and average temperature from the specified time to the current time.",
+      "request": {
+        "name": "since",
+        "displayName": "Since",
+        "description": "Period to return the max-min report.",
+        "schema": "dateTime"
+      },
+      "response": {
+        "name" : "tempReport",
+        "displayName": "Temperature Report",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "maxTemp",
+              "displayName": "Max temperature",
+              "schema": "double"
+            },
+            {
+              "name": "minTemp",
+              "displayName": "Min temperature",
+              "schema": "double"
+            },
+            {
+              "name" : "avgTemp",
+              "displayName": "Average Temperature",
+              "schema": "double"
+            },
+            {
+              "name" : "startTime",
+              "displayName": "Start Time",
+              "schema": "dateTime"
+            },
+            {
+              "name" : "endTime",
+              "displayName": "End Time",
+              "schema": "dateTime"
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 ```
 
-In dit voor beeld worden twee eigenschappen weer gegeven (één alleen-lezen en één beschrijfbaar), een type telemetrie en twee opdrachten. Een minimale veld Beschrijving heeft een:
+In dit voor beeld worden twee eigenschappen (één alleen-lezen en één beschrijfbaar), een type telemetrie en een opdracht weer gegeven. Een minimale veld Beschrijving heeft een:
 
 - `@type` het type mogelijkheid opgeven: `Telemetry` , `Property` of `Command` .  In sommige gevallen bevat het type een semantisch type om IoT Central in te scha kelen om een aantal veronderstellingen te maken over het afhandelen van de waarde.
 - `name` voor de telemetrische waarde.
 - `schema` om het gegevens type voor de telemetrie of de eigenschap op te geven. Deze waarde kan een primitief type zijn, zoals double, integer, Boolean of string. Complexe object typen, matrices en Maps worden ook ondersteund.
-- `commandType` om op te geven hoe de opdracht moet worden afgehandeld.
 
 Met optionele velden, zoals weergave naam en-beschrijving, kunt u meer details toevoegen aan de interface en de mogelijkheden.
 
@@ -180,33 +243,36 @@ Voor Beschrijf bare eigenschappen retourneert de apparaatnaam een gewenste statu
 
 ## <a name="telemetry"></a>Telemetrie
 
-Met IoT Central kunt u telemetrie in dash boards en grafieken weer geven en regels gebruiken om acties te activeren wanneer de drempel waarden zijn bereikt. IoT Central gebruikt de informatie in de DCM, zoals gegevens typen, eenheden en weergave namen, om te bepalen hoe telemetrische waarden moeten worden weer gegeven.
+Met IoT Central kunt u telemetrie in dash boards en grafieken weer geven en regels gebruiken om acties te activeren wanneer de drempel waarden zijn bereikt. IoT Central gebruikt de gegevens in het model van het apparaat, zoals gegevens typen, eenheden en weergave namen, om te bepalen hoe telemetrische waarden moeten worden weer gegeven.
 
 U kunt de functie gegevens export van IoT Central gebruiken om telemetrie te streamen naar andere bestemmingen, zoals opslag of Event Hubs.
 
 ## <a name="commands"></a>Opdracht
 
-Opdrachten zijn ofwel synchroon of asynchroon. Een synchrone opdracht moet standaard binnen 30 seconden worden uitgevoerd en het apparaat moet zijn verbonden als de opdracht binnenkomt. Als het apparaat op tijd reageert of als het apparaat niet is verbonden, mislukt de opdracht.
+Een opdracht moet standaard binnen 30 seconden worden uitgevoerd en het apparaat moet zijn verbonden als de opdracht binnenkomt. Als het apparaat op tijd reageert of als het apparaat niet is verbonden, mislukt de opdracht.
 
-Gebruik asynchrone opdrachten voor langlopende bewerkingen. Het apparaat verzendt voortgangs informatie met behulp van telemetrie-berichten. Deze voortgangs berichten hebben de volgende header-eigenschappen:
+Opdrachten kunnen aanvraag parameters hebben en een antwoord retour neren.
 
-- `iothub-command-name`: de naam van de opdracht, bijvoorbeeld `UpdateFirmware` .
-- `iothub-command-request-id`: de aanvraag-ID die is gegenereerd aan de server zijde en die tijdens de eerste aanroep naar het apparaat wordt verzonden.
-- `iothub-interface-id`: De ID van de interface waarop deze opdracht is gedefinieerd, bijvoorbeeld `urn:example:AssetTracker:1` .
- `iothub-interface-name`: de naam van de instantie van deze interface, bijvoorbeeld `myAssetTracker` .
-- `iothub-command-statuscode`: de status code die is geretourneerd van het apparaat, bijvoorbeeld `202` .
+### <a name="offline-commands"></a>Offline opdrachten
+
+U kunt wachtrij opdrachten kiezen als een apparaat momenteel offline is door de optie **wachtrij als offline** in te scha kelen voor een opdracht in de sjabloon voor het apparaat.
+
+Offline opdrachten zijn eenrichtings meldingen naar het apparaat vanuit uw oplossing. Offline opdrachten kunnen aanvraag parameters hebben, maar retour neren geen antwoord.
+
+> [!NOTE]
+> Deze optie is alleen beschikbaar in de gebruikers interface van IoT Central web. Deze instelling is niet opgenomen als u een model of interface uit de sjabloon voor het apparaat exporteert.
 
 ## <a name="cloud-properties"></a>Cloudeigenschappen
 
-Cloud eigenschappen maken deel uit van de sjabloon van het apparaat, maar maken geen deel uit van de DCM. Met Cloud eigenschappen kunnen de oplossings ontwikkelaar de meta gegevens van een apparaat opgeven om op te slaan in de IoT Central-toepassing. Cloud eigenschappen hebben geen invloed op de code die een ontwikkelaar van het apparaat schrijft om de DCM te implementeren.
+Cloud eigenschappen maken deel uit van de sjabloon van het apparaat, maar maken geen deel uit van het model van het apparaat. Met Cloud eigenschappen kunnen de oplossings ontwikkelaar de meta gegevens van een apparaat opgeven om op te slaan in de IoT Central-toepassing. Cloud eigenschappen hebben geen invloed op de code die een ontwikkelaar van het apparaat schrijft om het model te implementeren.
 
 Een oplossings ontwikkelaar kan Cloud eigenschappen toevoegen aan dash boards en weer gaven naast apparaateigenschappen om een operator in staat te stellen de apparaten te beheren die zijn verbonden met de toepassing. Een oplossings ontwikkelaar kan ook Cloud eigenschappen gebruiken als onderdeel van een regel definitie om een drempel waarde te maken die kan worden bewerkt door een operator.
 
 ## <a name="customizations"></a>Aanpassingen
 
-Aanpassingen maken deel uit van de sjabloon voor het apparaat, maar maken geen deel uit van de DCM. Met aanpassingen kan de oplossings ontwikkelaar enkele definities in de DCM verbeteren of negeren. Een oplossings ontwikkelaar kan bijvoorbeeld de weergave naam voor een type telemetrie of een eigenschap wijzigen. Ontwikkel aars van oplossingen kunnen ook aanpassingen gebruiken om validatie toe te voegen, zoals een minimum-of maximum lengte voor een eigenschap van een teken reeks apparaat.
+Aanpassingen maken deel uit van de sjabloon voor het apparaat, maar maken geen deel uit van het model van het apparaat. Met aanpassingen kunt u de oplossings ontwikkelaar een aantal definities in het model van het apparaat verbeteren of negeren. Een oplossings ontwikkelaar kan bijvoorbeeld de weergave naam voor een type telemetrie of een eigenschap wijzigen. Ontwikkel aars van oplossingen kunnen ook aanpassingen gebruiken om validatie toe te voegen, zoals een minimum-of maximum lengte voor een eigenschap van een teken reeks apparaat.
 
-Aanpassingen kunnen van invloed zijn op de code die een ontwikkelaar van het apparaat schrijft om de DCM te implementeren. Een aanpassing kan bijvoorbeeld de minimum-en maximum lengte van teken reeksen of minimale en maximale numerieke waarden voor telemetrie instellen.
+Aanpassingen kunnen van invloed zijn op de code die een ontwikkelaar van het apparaat schrijft om het model te implementeren. Een aanpassing kan bijvoorbeeld de minimum-en maximum lengte van teken reeksen of minimale en maximale numerieke waarden voor telemetrie instellen.
 
 ## <a name="views"></a>Weergaven
 
@@ -219,7 +285,7 @@ Een oplossings ontwikkelaar maakt weer gaven waarmee Opera tors verbonden appara
 - Tegels waarmee de operator opdrachten kan aanroepen, inclusief opdrachten die een Payload verwachten.
 - Tegels voor het weer geven van labels, afbeeldingen of tekst verlaging.
 
-De telemetrie, eigenschappen en opdrachten die u aan een weer gave kunt toevoegen, worden bepaald door de DCM, Cloud eigenschappen en aanpassingen in de sjabloon voor het apparaat.
+De telemetrie, eigenschappen en opdrachten die u aan een weer gave kunt toevoegen, worden bepaald door het model, de eigenschappen van de Cloud en aanpassingen in de sjabloon voor het apparaat.
 
 ## <a name="next-steps"></a>Volgende stappen
 

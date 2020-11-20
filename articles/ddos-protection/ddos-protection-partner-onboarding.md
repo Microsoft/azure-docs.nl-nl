@@ -8,12 +8,12 @@ mms.devlang: na
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: kumud
-ms.openlocfilehash: 70793b585a11da2eccb43fd6cf47053774f1e991
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 4cc0fd970f9adc26f5fdb024f501dcb0edf77bde
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905211"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992417"
 ---
 # <a name="partnering-with-azure-ddos-protection-standard"></a>Partnering met Azure DDoS Protection Standard
 In dit artikel worden de mogelijkheden voor partner ondersteuning beschreven die worden ingeschakeld door de Azure DDoS Protection Standard. Dit artikel is bedoeld om product managers en rollen van bedrijfs ontwikkeling inzicht te geven in de investerings paden en om inzicht te krijgen in de verwerkings waarde van de partner.
@@ -77,8 +77,8 @@ De volgende stappen zijn vereist voor partners voor het configureren van integra
 
 - [Azure DDoS Protection product pagina](https://azure.microsoft.com/services/ddos-protection/)
 - [Documentatie over Azure DDoS Protection](ddos-protection-overview.md)
-- [Naslag informatie over Azure DDoS Protection-API](https://docs.microsoft.com/rest/api/virtualnetwork/ddosprotectionplans)
-- [Naslag informatie over Azure Virtual Network API](https://docs.microsoft.com/rest/api/virtualnetwork/virtualnetworks)
+- [Naslag informatie over Azure DDoS Protection-API](/rest/api/virtualnetwork/ddosprotectionplans)
+- [Naslag informatie over Azure Virtual Network API](/rest/api/virtualnetwork/virtualnetworks)
 
 ### <a name="get-help"></a>Hulp vragen
 

@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto, emlisa
 ms.date: 10/26/2020
-ms.openlocfilehash: 1485f06af2bb3c4912df3e34cb23c409b7db3dc2
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 39119f62fa938f5f4f6529539d4ca9a84bdf8fd7
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92780356"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94989187"
 ---
 # <a name="an-overview-of-azure-sql-database-and-sql-managed-instance-security-capabilities"></a>Een overzicht van de beveiligings mogelijkheden van Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -41,22 +41,22 @@ Met [virtuele netwerk service-eind punten](../../virtual-network/virtual-network
 Met [regels voor virtuele netwerken](vnet-service-endpoint-rule-overview.md) kunnen Azure SQL database alleen communicatie accepteren die worden verzonden vanuit geselecteerde subnetten binnen een virtueel netwerk.
 
 > [!NOTE]
-> Het beheren van toegang met firewall regels is *niet* van toepassing op een **SQL Managed instance** . Zie [verbinding maken met een beheerd exemplaar](../managed-instance/connect-application-instance.md) voor meer informatie over de benodigde netwerk configuratie
+> Het beheren van toegang met firewall regels is *niet* van toepassing op een **SQL Managed instance**. Zie [verbinding maken met een beheerd exemplaar](../managed-instance/connect-application-instance.md) voor meer informatie over de benodigde netwerk configuratie
 
 ## <a name="access-management"></a>Toegangsbeheer
 
 > [!IMPORTANT]
-> Het beheren van data bases en servers binnen Azure wordt bepaald door de roltoewijzingen van uw portal-gebruikers account. Zie op [rollen gebaseerd toegangs beheer in de Azure Portal](../../role-based-access-control/overview.md)voor meer informatie over dit artikel.
+> Het beheren van data bases en servers binnen Azure wordt bepaald door de roltoewijzingen van uw portal-gebruikers account. Zie voor meer informatie over dit artikel [Azure op rollen gebaseerd toegangs beheer in de Azure Portal](../../role-based-access-control/overview.md).
 
 ### <a name="authentication"></a>Verificatie
 
 Verificatie is het proces waarbij de gebruiker wordt geclaimd. Azure SQL Database en SQL Managed instance ondersteunen twee typen verificatie:
 
-- **SQL-verificatie** :
+- **SQL-verificatie**:
 
     SQL-verificatie verwijst naar de verificatie van een gebruiker wanneer er verbinding wordt gemaakt met Azure SQL Database of een door Azure SQL beheerd exemplaar met behulp van de gebruikers naam en het wacht woord. Een **Server beheerder** meldt zich aan met een gebruikers naam en wacht woord wanneer de server wordt gemaakt. Met deze referenties kan een **Server beheerder** zich verifiëren bij elke Data Base op die server of instantie als de eigenaar van de data base. Daarna kunnen extra SQL-aanmeldingen en-gebruikers worden gemaakt door de server beheerder, waarmee gebruikers verbinding maken met behulp van de gebruikers naam en het wacht woord.
 
-- **Azure Active Directory-verificatie** :
+- **Azure Active Directory-verificatie**:
 
     Azure Active Directory-verificatie is een mechanisme om verbinding te maken met [Azure SQL database](sql-database-paas-overview.md), [Azure SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md) en [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) met behulp van identiteiten in azure Active Directory (Azure AD). Met Azure AD-verificatie kunnen beheerders de identiteiten en machtigingen van database gebruikers centraal beheren, samen met andere Azure-Services op één centrale locatie. Dit omvat de minimale wacht woord opslag en maakt beleid voor gecentraliseerde wachtwoord rotatie mogelijk.
 
@@ -65,7 +65,7 @@ Verificatie is het proces waarbij de gebruiker wordt geclaimd. Azure SQL Databas
     Er zijn extra Azure AD-verificatie opties beschikbaar [Active Directory universele verificatie voor SQL Server Management Studio](authentication-mfa-ssms-overview.md) verbindingen, waaronder [multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md) en [voorwaardelijke toegang](conditional-access-configure.md).
 
 > [!IMPORTANT]
-> Het beheren van data bases en servers binnen Azure wordt bepaald door de roltoewijzingen van uw portal-gebruikers account. Zie op [rollen gebaseerd toegangs beheer in azure Portal](../../role-based-access-control/overview.md)voor meer informatie over dit artikel. Het beheren van toegang met firewall regels is *niet* van toepassing op een **SQL Managed instance** . Raadpleeg het volgende artikel over het [maken van een verbinding met een beheerd exemplaar](../managed-instance/connect-application-instance.md) voor meer informatie over de benodigde netwerk configuratie.
+> Het beheren van data bases en servers binnen Azure wordt bepaald door de roltoewijzingen van uw portal-gebruikers account. Zie voor meer informatie over dit artikel [Azure op rollen gebaseerd toegangs beheer in azure Portal](../../role-based-access-control/overview.md). Het beheren van toegang met firewall regels is *niet* van toepassing op een **SQL Managed instance**. Raadpleeg het volgende artikel over het [maken van een verbinding met een beheerd exemplaar](../managed-instance/connect-application-instance.md) voor meer informatie over de benodigde netwerk configuratie.
 
 ## <a name="authorization"></a>Autorisatie
 
@@ -103,7 +103,7 @@ SQL Database, SQL Managed instance en Azure Synapse Analytics te allen tijde ver
 
 Als best practice kunt u het beste een versleutelde verbinding opgeven in de connection string die door de toepassing wordt gebruikt en het server certificaat _**niet**_ vertrouwen. Dit dwingt uw toepassing af om het server certificaat te verifiëren en zorgt er daarom voor dat uw toepassing kwetsbaar is voor man in het middelste type aanvallen.
 
-Als u bijvoorbeeld het ADO.NET-stuur programma gebruikt, wordt dit bereikt via  **versleutelen = True** en **TrustServerCertificate = False** . Als u uw connection string van de Azure Portal opvraagt, worden de juiste instellingen weer geven.
+Als u bijvoorbeeld het ADO.NET-stuur programma gebruikt, wordt dit bereikt via  **versleutelen = True** en **TrustServerCertificate = False**. Als u uw connection string van de Azure Portal opvraagt, worden de juiste instellingen weer geven.
 
 > [!IMPORTANT]
 > Houd er rekening mee dat sommige niet-micro soft-Stuur Programma's standaard geen gebruikmaken van TLS of gebruikmaken van een oudere versie van TLS (<1,2) om te kunnen werken. In dit geval kunt u met de server nog steeds verbinding maken met uw data base. We raden u echter aan de beveiligings Risico's te evalueren waarmee dergelijke Stuur Programma's en toepassingen verbinding kunnen maken met SQL Database, met name als u gevoelige gegevens opslaat.

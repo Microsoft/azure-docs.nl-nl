@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/22/2020
-ms.openlocfilehash: cb673efb3e5d14e72e945bcf8c23d57495823720
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 56d5eb981aa02d9da83973d49e8df79fcd9c7e9c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394948"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021011"
 ---
 # <a name="securing-azure-sql-edge"></a>Azure SQL Edge beveiligen
 
@@ -34,14 +34,14 @@ Het implementeren van platform beveiliging begint met het blijven van onbevoegde
 - Host-poorten opgeven en beperken die worden gebruikt voor Azure SQL Edge
 - Zorg ervoor dat het juiste toegangs beheer wordt toegepast op alle gegevens volumes die als host optreden voor Azure SQL Edge-gegevens. 
 
-Zie [netwerk protocollen en TDS-eind punten](//previous-versions/sql/sql-server-2008-r2/ms191220(v=sql.105))voor meer informatie over Azure SQL Edge-netwerk protocollen en TDS-eind punten.
+Zie [netwerk protocollen en TDS-eind punten](/previous-versions/sql/sql-server-2008-r2/ms191220(v=sql.105))voor meer informatie over Azure SQL Edge-netwerk protocollen en TDS-eind punten.
 
 ## <a name="authentication-and-authorization"></a>Verificatie en autorisatie 
 
 ### <a name="authentication"></a>Verificatie  
 Verificatie is het proces waarbij de gebruiker wordt geclaimd. Azure SQL Edge ondersteunt momenteel alleen het `SQL Authentication` mechanisme.
 
-- *SQL-verificatie* :
+- *SQL-verificatie*:
 
     SQL-verificatie verwijst naar de verificatie van een gebruiker bij het verbinden met Azure SQL Edge met behulp van de gebruikers naam en het wacht woord. Het wacht woord voor de SQL **sa** -aanmelding moet worden opgegeven tijdens de implementatie van SQL Edge. Daarna kunnen extra SQL-aanmeldingen en-gebruikers worden gemaakt door de server beheerder, waarmee gebruikers verbinding maken met behulp van de gebruikers naam en het wacht woord.
 

@@ -9,12 +9,12 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
-ms.openlocfilehash: 6bc238389ac470e6127a582eb174ec7bc438e36b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e83cca79a4dc99533ab17cca7e96e1ac802d598
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91650865"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020790"
 ---
 # <a name="azure-time-series-insights-gen2-event-sources"></a>Azure Time Series Insights Gen2-gebeurtenis bronnen
 
@@ -27,7 +27,7 @@ Gebeurtenissen moeten worden verzonden als JSON met UTF-8-code ring.
 
 ## <a name="create-or-edit-event-sources"></a>Gebeurtenis bronnen maken of bewerken
 
-De bron (nen) van uw gebeurtenis kan in hetzelfde Azure-abonnement wonen als uw Azure Time Series Insights Gen2-omgeving of een ander abonnement. U kunt de [Azure Portal](time-series-insights-update-create-environment.md#create-a-preview-payg-environment), [Azure cli](https://github.com/Azure/azure-cli-extensions/tree/master/src/timeseriesinsights), [ARM-sjablonen](time-series-insights-manage-resources-using-azure-resource-manager-template.md)en de [rest API](/rest/api/time-series-insights/management(gen1/gen2)/eventsources) gebruiken om de gebeurtenis bronnen van uw omgeving te maken, bewerken of verwijderen.
+De bron (nen) van uw gebeurtenis kan in hetzelfde Azure-abonnement wonen als uw Azure Time Series Insights Gen2-omgeving of een ander abonnement. U kunt de [Azure Portal](./tutorials-set-up-tsi-environment.md#create-an-azure-time-series-insights-gen2-environment), [Azure cli](https://github.com/Azure/azure-cli-extensions/tree/master/src/timeseriesinsights), [ARM-sjablonen](time-series-insights-manage-resources-using-azure-resource-manager-template.md)en de [rest API](/rest/api/time-series-insights/management(gen1/gen2)/eventsources) gebruiken om de gebeurtenis bronnen van uw omgeving te maken, bewerken of verwijderen.
 
 Wanneer u een gebeurtenis bron verbindt, worden in uw Azure Time Series Insights Gen2-omgeving alle gebeurtenissen gelezen die momenteel zijn opgeslagen in uw IOT of event hub, te beginnen met de oudste gebeurtenis.
 
@@ -45,7 +45,7 @@ Wanneer u een gebeurtenis bron verbindt, worden in uw Azure Time Series Insights
 
 - Ga niet verder dan de limiet van de [doorvoer snelheid](./concepts-streaming-ingress-throughput-limits.md) van uw omgeving of per partitie limiet.
 
-- Configureer een [waarschuwing](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-environment-mitigate-latency#monitor-latency-and-throttling-with-alerts) over vertraging als uw omgeving problemen ondervindt bij het verwerken van gegevens.
+- Configureer een [waarschuwing](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts) over vertraging als uw omgeving problemen ondervindt bij het verwerken van gegevens.
 
 - Gebruik Streaming-opname alleen voor bijna realtime-en recente gegevens, en het streamen van historische gegevens wordt niet ondersteund.
 
@@ -64,7 +64,7 @@ Het gebruik van de streaming-pijp lijn voor het importeren van historische gegev
 
 ## <a name="event-source-timestamp"></a>Tijds tempel gebeurtenis bron
 
-Wanneer u een gebeurtenis bron configureert, wordt u gevraagd om een time stamp-ID-eigenschap op te geven. De eigenschap time stamp wordt gebruikt om gebeurtenissen gedurende een periode bij te houden. Dit is de tijd die wordt gebruikt als de $event. $ts in de [query-api's](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute) en voor het uitzetten van reeksen in de Azure time series Insights Verkenner. Als er geen eigenschap wordt gegeven tijdens de aanmaak tijd, of als de tijds tempel eigenschap ontbreekt in een gebeurtenis, worden de IoT Hub van de gebeurtenis of de gebeurtenissen hubs in de wachtrij gezet als standaard waarde gebruikt. Eigenschaps waarden van tijds tempels worden opgeslagen in UTC.
+Wanneer u een gebeurtenis bron configureert, wordt u gevraagd om een time stamp-ID-eigenschap op te geven. De eigenschap time stamp wordt gebruikt om gebeurtenissen gedurende een periode bij te houden. Dit is de tijd die wordt gebruikt als de $event. $ts in de [query-api's](/rest/api/time-series-insights/dataaccessgen2/query/execute) en voor het uitzetten van reeksen in de Azure time series Insights Verkenner. Als er geen eigenschap wordt gegeven tijdens de aanmaak tijd, of als de tijds tempel eigenschap ontbreekt in een gebeurtenis, worden de IoT Hub van de gebeurtenis of de gebeurtenissen hubs in de wachtrij gezet als standaard waarde gebruikt. Eigenschaps waarden van tijds tempels worden opgeslagen in UTC.
 
 Over het algemeen kunnen gebruikers ervoor kiezen de tijds tempel eigenschap aan te passen en de tijd te gebruiken waarop de sensor of tag de Lees bewerking heeft gegenereerd, in plaats van de standaard hub in de wachtrij te gebruiken. Dit is met name nodig wanneer apparaten een onherstelbaar connectiviteits verlies hebben en een batch van vertraagde berichten wordt doorgestuurd naar Azure Time Series Insights-Gen2.
 

@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 211ad590ab01d0be26d799064e1227accc619585
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 2c143c299cec1d48dd5438d5350c818d5cc93800
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94496951"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023715"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -63,7 +63,7 @@ Enkele algemene richt lijnen om u te helpen bij het kiezen van de juiste service
 U kunt reken-en opslag Resources kiezen tijdens de implementatie en deze vervolgens wijzigen nadat u de [Azure Portal](../../database/scale-resources.md) hebt gebruikt zonder uitval tijd voor uw toepassing. 
 
 > [!IMPORTANT]
-> Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](/../../managed-instance/connectivity-architecture-overview.md#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](/../../managed-instance/virtual-network-subnet-create-arm-template?branch=release-ignite-arc-data)   configureren van [bestaande](/../../managed-instance/vnet-existing-add-subnet?branch=release-ignite-arc-data)   netwerken. 
+> Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](/azure/azure-sql/managed-instance/connectivity-architecture-overview#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](/azure/azure-sql/managed-instance/virtual-network-subnet-create-arm-template?branch=release-ignite-arc-data)   configureren van [bestaande](/azure/azure-sql/managed-instance/vnet-existing-add-subnet?branch=release-ignite-arc-data)   netwerken. 
 
 ### <a name="sql-server-vm-alternative"></a>SQL Server VM-alternatief
 
@@ -203,7 +203,7 @@ Sommige functies zijn alleen beschikbaar als het [compatibiliteits niveau van de
 
 Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde migratie projecten voor meer hulp.
 
-|Asset  |Beschrijving  |
+|Asset  |Description  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
 |[Hulp programma DBLoader](https://github.com/microsoft/DataMigrationTeam/tree/master/DBLoader%20Utility)|De DBLoader kan worden gebruikt voor het laden van gegevens uit tekst bestanden met scheidings tekens naar SQL Server. Dit Windows-console hulpprogramma maakt gebruik van de SQL Server Native Client bulkload-interface, die werkt op alle versies van SQL Server, waaronder Azure SQL MI.|

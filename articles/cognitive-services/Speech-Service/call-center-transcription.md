@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: c592055be1987786b94623bde5352e2a3cc0e092
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 19d4cc388494e149b7f258a8e9f154041a3dd070
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91630148"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021963"
 ---
 # <a name="speech-service-for-telephony-data"></a>Spraak service voor telefoon gegevens
 
@@ -60,7 +60,7 @@ Het is niet ongebruikelijk dat er 35 procent van een ondersteunings oproep wordt
 
 ### <a name="translation"></a>Omzetting
 
-Sommige bedrijven experimenteren met het bieden van vertaalde transcripten van ondersteunings gesprekken van vreemde talen zodat bezorg managers de wereld wijde ervaring van hun klanten kunnen begrijpen. Onze [Vertaal](/azure/cognitive-services/speech-service/speech-translation) mogelijkheden zijn niet meer zo. We kunnen audio-naar-audio-of audio-naar-tekst omzetten voor een groot aantal land instellingen.
+Sommige bedrijven experimenteren met het bieden van vertaalde transcripten van ondersteunings gesprekken van vreemde talen zodat bezorg managers de wereld wijde ervaring van hun klanten kunnen begrijpen. Onze [Vertaal](./speech-translation.md) mogelijkheden zijn niet meer zo. We kunnen audio-naar-audio-of audio-naar-tekst omzetten voor een groot aantal land instellingen.
 
 ### <a name="text-to-speech"></a>Text to Speech
 
@@ -94,7 +94,7 @@ Een typische oplossing maakt gebruik van de volgende services:
 
 - De speech-service wordt gebruikt om spraak-naar-tekst te transcriberen. Voor de speech-service is een Standard-abonnement (S0) vereist om de batch transcriptie-API te gebruiken. Gratis abonnementen (F0) werken niet.
 - [Azure Storage](https://azure.microsoft.com/services/storage/) wordt gebruikt voor het opslaan van telefoon gegevens en de transcripten die worden geretourneerd door de batch transcriptie API. Voor dit opslag account moeten meldingen worden gebruikt, specifiek voor wanneer nieuwe bestanden worden toegevoegd. Deze meldingen worden gebruikt om het transcriptie-proces te activeren.
-- [Azure functions](https://docs.microsoft.com/azure/azure-functions/) wordt gebruikt om de SAS-URI (Shared Access signatures) voor elke record te maken en de HTTP POST-aanvraag voor het starten van een transcriptie te activeren. Daarnaast wordt Azure Functions gebruikt voor het maken van aanvragen voor het ophalen en verwijderen van transcripties met behulp van de batch transcriptie-API.
+- [Azure functions](../../azure-functions/index.yml) wordt gebruikt om de SAS-URI (Shared Access signatures) voor elke record te maken en de HTTP POST-aanvraag voor het starten van een transcriptie te activeren. Daarnaast wordt Azure Functions gebruikt voor het maken van aanvragen voor het ophalen en verwijderen van transcripties met behulp van de batch transcriptie-API.
 
 Intern gebruiken we de bovenstaande technologieën om micro soft-klant gesprekken in batch-modus te ondersteunen.
 :::image type="content" source="media/scenarios/call-center-batch-pipeline.png" alt-text="Technologieën die worden gebruikt ter ondersteuning van micro soft-klant gesprekken in batch-modus.":::
@@ -111,7 +111,7 @@ Intern gebruiken we de bovenstaande technologieën om in realtime micro soft-kla
 
 ## <a name="a-word-on-ivrs"></a>Een woord op IVRs
 
-De speech-service kan eenvoudig worden geïntegreerd in een oplossing met behulp van de [spraak-SDK](speech-sdk.md) of de [rest API](rest-apis.md). Call Center transcriptie kan echter extra technologieën vereisen. Normaal gesp roken is er een verbinding tussen een IVR-systeem en Azure vereist. Hoewel we deze onderdelen niet aanbieden, is hier een beschrijving van wat een verbinding met een IVR tot stand brengt.
+De speech-service kan eenvoudig worden geïntegreerd in een oplossing met behulp van de [spraak-SDK](speech-sdk.md) of de [rest API](./overview.md#reference-docs). Call Center transcriptie kan echter extra technologieën vereisen. Normaal gesp roken is er een verbinding tussen een IVR-systeem en Azure vereist. Hoewel we deze onderdelen niet aanbieden, is hier een beschrijving van wat een verbinding met een IVR tot stand brengt.
 
 Verschillende IVR-of Telephony-service producten (zoals Genesys of AudioCodes) bieden integratie mogelijkheden die kunnen worden gebruikt voor het inschakelen van inkomende en uitgaande audio doorvoer door middel van een Azure-service. In principe kan een aangepaste Azure-service een specifieke interface bieden voor het definiëren van telefoon gesprek sessies (zoals het aanroepen van de start of het aanroepen van een WebSocket) en een API voor het ontvangen van inkomende streams die wordt gebruikt met de spraak service. Uitgaande reacties, zoals conversatie transcriptie of verbindingen met het bot-Framework, kunnen worden gesynthesizerd met de tekst-naar-spraak-service van micro soft en worden teruggestuurd naar de IVR voor afspelen.
 
@@ -121,12 +121,12 @@ Een ander scenario is directe integratie met behulp van SIP (Session Initiation 
 
  De speech-service werkt goed met ingebouwde modellen. Het is echter mogelijk dat u de ervaring voor uw product of omgeving verder wilt aanpassen en afstemmen. Aanpassingsopties variëren van het afstemmen van akoestische modellen tot unieke spraakstijlen voor uw merk. Nadat u een aangepast model hebt gemaakt, kunt u het gebruiken met een van de functies van de speech-service in realtime of in batch modus.
 
-| Speech Service | Modelleren | Beschrijving |
+| Speech Service | Modelleren | Description |
 | -------------- | ----- | ----------- |
-| Spraak naar tekst | [Akoestisch model](how-to-customize-acoustic-models.md) | Maak een aangepast akoestische model voor toepassingen, hulpprogram ma's of apparaten die in bepaalde omgevingen worden gebruikt, zoals in een auto of op een fabriek, elk met specifieke registratie voorwaarden. Voor beelden zijn onder andere geaccentde spraak, specifieke achtergrond geluiden of het gebruik van een specifieke microfoon voor de opname. |
-|                | [Taalmodel](how-to-customize-language-model.md) | Maak een aangepast taal model om transcriptie te verbeteren van de branchespecifieke woorden lijst en grammatica, zoals medische terminologie of het jargon. |
-|                | [Uitspraakmodel](how-to-customize-pronunciation.md) | Met een aangepast uitspraak model kunt u het fonetische formulier definiëren en weer geven voor een woord of term. Het is handig voor het afhandelen van aangepaste voor waarden, zoals product namen of acroniemen. Alles wat u nodig hebt om aan de slag te gaan is een uitspraak bestand dat een eenvoudig `.txt` bestand is. |
-| Tekst naar spraak | [Spraakstijl](how-to-customize-voice-font.md) | Met aangepaste spraak lettertypen kunt u een herken bare, een-op-een-spraak voor uw merk maken. Er is slechts een kleine hoeveelheid gegevens nodig om aan de slag te gaan. Hoe meer gegevens u verstrekt, des te meer natuurlijke en Human-like uw gesp roken letter type klinkt. |
+| Spraak naar tekst | [Akoestisch model](./how-to-custom-speech-train-model.md) | Maak een aangepast akoestische model voor toepassingen, hulpprogram ma's of apparaten die in bepaalde omgevingen worden gebruikt, zoals in een auto of op een fabriek, elk met specifieke registratie voorwaarden. Voor beelden zijn onder andere geaccentde spraak, specifieke achtergrond geluiden of het gebruik van een specifieke microfoon voor de opname. |
+|                | [Taalmodel](./how-to-custom-speech-train-model.md) | Maak een aangepast taal model om transcriptie te verbeteren van de branchespecifieke woorden lijst en grammatica, zoals medische terminologie of het jargon. |
+|                | [Uitspraakmodel](./how-to-custom-speech-train-model.md) | Met een aangepast uitspraak model kunt u het fonetische formulier definiëren en weer geven voor een woord of term. Het is handig voor het afhandelen van aangepaste voor waarden, zoals product namen of acroniemen. Alles wat u nodig hebt om aan de slag te gaan is een uitspraak bestand dat een eenvoudig `.txt` bestand is. |
+| Tekst naar spraak | [Spraakstijl](./how-to-custom-voice-create-voice.md) | Met aangepaste spraak lettertypen kunt u een herken bare, een-op-een-spraak voor uw merk maken. Er is slechts een kleine hoeveelheid gegevens nodig om aan de slag te gaan. Hoe meer gegevens u verstrekt, des te meer natuurlijke en Human-like uw gesp roken letter type klinkt. |
 
 ## <a name="sample-code"></a>Voorbeeldcode
 
@@ -138,7 +138,7 @@ De voorbeeld code is beschikbaar op GitHub voor elk van de functies van de spraa
 
 ## <a name="reference-docs"></a>Naslagdocumentatie
 
-- [Speech-SDK](speech-sdk-reference.md)
+- [Speech-SDK](./speech-sdk.md)
 - [Speech Devices SDK](speech-devices-sdk.md)
 - [REST API: Spraak-naar-tekst](rest-speech-to-text.md)
 - [REST API: Tekst-naar-spraak](rest-text-to-speech.md)

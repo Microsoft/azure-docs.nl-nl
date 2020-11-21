@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 08/15/2020
-ms.openlocfilehash: 1681217c9e55b67ee2a6737aeece5303256bc1e6
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 654d7b4ddb332906aba330da20d42a0e16ec79e6
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461801"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021436"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Wat wordt er bewaakt door Azure Monitor?:
 In dit artikel worden de verschillende toepassingen en services beschreven die door Azure Monitor worden bewaakt. 
@@ -40,7 +40,7 @@ Inzichten bieden een aangepaste bewakings ervaring voor bepaalde toepassingen en
 
 Oplossingen zijn gebaseerd op logboek query's en weer gaven die zijn aangepast voor een bepaalde toepassing of service. Ze verzamelen en analyseren alleen logboeken en worden na verloop van tijd afgeschaft om inzicht te krijgen in de voor keuren.
 
-| Oplossing | Beschrijving |
+| Oplossing | Description |
 |:---|:---|
 | [Status van agent](insights/solution-agenthealth.md) | Analyseer de status en configuratie van Log Analytics agents. |
 | [Waarschuwingsbeheer](platform/alert-management-solution.md) | Analyseer waarschuwingen die zijn verzameld van System Center Operations Manager, nagios of zabbix. |
@@ -55,7 +55,7 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 - Logboeken: de service ondersteunt Diagnostische instellingen waarmee de logboeken en metrische gegevens van het platform kunnen worden verzameld voor Azure Monitor Logboeken.
 - Inzicht: er is een inzicht beschikbaar voor de service die een aangepaste bewakings ervaring biedt voor de service.
 
-| Service | Metrische gegevens | Logboeken | Inzicht | Opmerkingen |
+| Service | Metrische gegevens | Logboeken | Inzicht | Notities |
 |:---|:---|:---|:---|:---|
 |Active Directory | Nee | Ja | [Ja](../active-directory/reports-monitoring/howto-use-azure-monitor-workbooks.md) |  |
 |Active Directory B2C | Nee | Nee | Nee |  |
@@ -111,7 +111,7 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 |ExpressRoute | Ja | Ja | Nee |  |
 |Firewall | Ja | Ja | Nee |  |
 |Front Door | Ja | Ja | Nee |  |
-|Functions | Ja | Ja | Nee |  |
+|Functies | Ja | Ja | Nee |  |
 |HDInsight | Nee | Ja | Nee |  |
 |HPC Cache | Nee | Nee | Nee |  |
 |Information Protection | Nee | Ja | Nee |  |
@@ -126,17 +126,17 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 |Managed Applications  | Nee | Nee | Nee |  |
 |Maps  | Nee | Nee | Nee |  |
 |Media Services | Ja | Ja | Nee |  |
-|Microsoft Flow | Nee | Nee | Nee |  |
 |Microsoft Managed Desktop | Nee | Nee | Nee |  |
 |Microsoft PowerApps | Nee | Nee | Nee |  |
 |Microsoft Social Engagement | Nee | Nee | Nee |  |
 |Microsoft Stream | Ja | Ja | Nee |  |
-|Migreren | Nee | Nee | Nee |  |
+|Migrate | Nee | Nee | Nee |  |
 |Multi-Factor Authentication | Nee | Ja | Nee |  |
 |Network Watcher | Ja | Ja | Nee |  |
 |Notification Hubs | Ja | Nee | Nee |  |
 |Open Datasets | Nee | Nee | Nee |  |
 |Beleid | Nee | Nee | Nee |  |
+|Power Automate | Nee | Nee | Nee |  |
 |Power BI Embedded | Ja | Ja | Nee |  |
 |Private Link | Nee | Nee | Nee |  |
 |Communicatie platform voor project spooler | Nee | Nee | Nee |  |
@@ -145,7 +145,7 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 |Resource Graph | Nee | Nee | Nee |  |
 |Resource Manager | Nee | Nee | Nee |  |
 |Retail-zoek opdracht: door Bing | Nee | Nee | Nee |  |
-|Search | Ja | Ja | Nee |  |
+|Zoeken | Ja | Ja | Nee |  |
 |Service Bus | Ja | Ja | Nee |  |
 |Service Fabric | Nee | Ja | Nee | De agent die is vereist om het gast besturingssysteem en de werk stromen te bewaken.  |
 |Aanmeldings Portal | Nee | Nee | Nee |  |
@@ -187,7 +187,7 @@ Zie [overzicht van Azure monitor-agents](platform/agents-overview.md) voor meer 
 ## <a name="product-integrations"></a>Product integraties
 De services en oplossingen in de volgende tabel slaan hun gegevens op in een Log Analytics-werk ruimte, zodat deze kunnen worden geanalyseerd met andere logboek gegevens die worden verzameld door Azure Monitor.
 
-| Product/service | Beschrijving |
+| Product/service | Description |
 |:---|:---|
 | [Azure Automation](../automation/index.yml) | Updates van het besturings systeem beheren en wijzigingen bijhouden op Windows-en Linux-computers. Zie [Wijzigingen bijhouden](../automation/change-tracking/overview.md) en [updatebeheer](../automation/update-management/update-mgmt-overview.md). |
 | [Azure Information Protection ](/azure/information-protection/) | U kunt documenten en e-mail berichten classificeren en optioneel beveiligen. Zie [centrale rapportage voor Azure Information Protection](/azure/information-protection/reports-aip#configure-a-log-analytics-workspace-for-the-reports). |
@@ -208,7 +208,7 @@ De services en oplossingen in de volgende tabel slaan hun gegevens op in een Log
 ## <a name="other-solutions"></a>Andere oplossingen
 Andere oplossingen zijn beschikbaar voor het bewaken van verschillende toepassingen en services, maar actieve ontwikkeling is gestopt en is mogelijk niet beschikbaar in alle regio's. Deze worden gedekt door de Azure Log Analytics gegevens opname service level agreement.
 
-| Oplossing | Beschrijving |
+| Oplossing | Description |
 |:---|:---|
 | [Active Directory status controle](insights/ad-assessment.md) | Het risico en de status van uw Active Directory omgevingen evalueren. |
 | [Replicatie status van Active Directory](insights/ad-replication-status.md) | Bewaakt uw Active Directory-omgeving regel matig voor replicatie fouten. |
@@ -222,7 +222,7 @@ Andere oplossingen zijn beschikbaar voor het bewaken van verschillende toepassin
 
 ## <a name="third-party-integration"></a>Integratie van derden
 
-| Oplossing | Beschrijving |
+| Oplossing | Description |
 |:---|:---|
 | [ITSM](platform/itsmc-overview.md) | Met de IT Service Management-connector (ITSMC) kunt u Azure verbinden met een ondersteund ITSM-product/service (IT-servicebeheer).  |
 

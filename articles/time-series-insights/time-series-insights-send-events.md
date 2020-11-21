@@ -11,33 +11,33 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: 2b83433a135fec486701b4538793f0c3e0a6fa6e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a9115b5400cc6d6c1ecc5740af796d831f5dee3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91611823"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023255"
 ---
 # <a name="send-events-to-an-azure-time-series-insights-gen1-environment-by-using-an-event-hub"></a>Gebeurtenissen verzenden naar een Azure Time Series Insights gen1-omgeving met behulp van een Event Hub
 
 > [!CAUTION]
 > Dit is een Gen1-artikel.
 
-In dit artikel wordt uitgelegd hoe u een Event Hub in azure Event Hubs maakt en configureert. Ook wordt beschreven hoe u een voorbeeld toepassing uitvoert om gebeurtenissen te pushen naar Azure Time Series Insights van Event Hubs. Als u een bestaande Event Hub hebt met gebeurtenissen in JSON-indeling, kunt u deze zelf studie overs Laan en uw omgeving bekijken in [Azure time series Insights](./time-series-insights-update-create-environment.md).
+In dit artikel wordt uitgelegd hoe u een Event Hub in azure Event Hubs maakt en configureert. Ook wordt beschreven hoe u een voorbeeld toepassing uitvoert om gebeurtenissen te pushen naar Azure Time Series Insights van Event Hubs. Als u een bestaande Event Hub hebt met gebeurtenissen in JSON-indeling, kunt u deze zelf studie overs Laan en uw omgeving bekijken in [Azure time series Insights](./tutorials-set-up-tsi-environment.md).
 
 ## <a name="configure-an-event-hub"></a>Een Event Hub configureren
 
-1. Lees de [Event hubs documentatie](https://docs.microsoft.com/azure/event-hubs/)voor meer informatie over het maken van een event hub.
-1. Zoek in het zoekvak naar **Event hubs**. Selecteer **Event hubs**in de weer gegeven lijst.
+1. Lees de [Event hubs documentatie](../event-hubs/index.yml)voor meer informatie over het maken van een event hub.
+1. Zoek in het zoekvak naar **Event hubs**. Selecteer **Event hubs** in de weer gegeven lijst.
 1. Selecteer uw Event Hub.
-1. Wanneer u een Event Hub maakt, maakt u een Event Hub naam ruimte. Als u nog geen Event Hub in de naam ruimte hebt gemaakt, maakt u in het menu onder **entiteiten**een event hub.  
+1. Wanneer u een Event Hub maakt, maakt u een Event Hub naam ruimte. Als u nog geen Event Hub in de naam ruimte hebt gemaakt, maakt u in het menu onder **entiteiten** een event hub.  
 
     [![Lijst met Event hubs](media/send-events/tsi-connect-event-hub-namespace.png)](media/send-events/tsi-connect-event-hub-namespace.png#lightbox)
 
 1. Nadat u een Event Hub hebt gemaakt, selecteert u deze in de lijst met Event hubs.
-1. Selecteer in het menu onder **entiteiten**de optie **Event hubs**.
+1. Selecteer in het menu onder **entiteiten** de optie **Event hubs**.
 1. Selecteer de naam van de Event Hub om deze te configureren.
-1. Selecteer onder **overzicht**de optie **consumenten groepen**en selecteer vervolgens **consumenten groep**.
+1. Selecteer onder **overzicht** de optie **consumenten groepen** en selecteer vervolgens **consumenten groep**.
 
     [![Een Consumer groep maken](media/send-events/add-event-hub-consumer-group.png)](media/send-events/add-event-hub-consumer-group.png#lightbox)
 
@@ -46,7 +46,7 @@ In dit artikel wordt uitgelegd hoe u een Event Hub in azure Event Hubs maakt en 
     > [!IMPORTANT]
     > Zorg ervoor dat deze Consumer groep niet wordt gebruikt door een andere service, zoals een Azure Stream Analytics-taak of een andere Azure Time Series Insights omgeving. Als de Consumer groep wordt gebruikt door de andere services, worden Lees bewerkingen negatief beïnvloed voor deze omgeving en voor andere services. Als u **$default** als de Consumer groep gebruikt, kunnen andere lezers uw consumenten groep mogelijk hergebruiken.
 
-1. Selecteer in het menu onder **instellingen**de optie **beleid voor gedeelde toegang**en selecteer vervolgens **toevoegen**.
+1. Selecteer in het menu onder **instellingen** de optie **beleid voor gedeelde toegang** en selecteer vervolgens **toevoegen**.
 
     [![Selecteer beleid voor gedeelde toegang en selecteer vervolgens de knop toevoegen](media/send-events/add-shared-access-policy.png)](media/send-events/add-shared-access-policy.png#lightbox)
 
@@ -54,7 +54,7 @@ In dit artikel wordt uitgelegd hoe u een Event Hub in azure Event Hubs maakt en 
 
     [![Voer in het vak beleids naam MySendPolicy in](media/send-events/configure-shared-access-policy-confirm.png)](media/send-events/configure-shared-access-policy-confirm.png#lightbox)
 
-1. Schakel onder **claim**het selectie vakje **verzenden** in.
+1. Schakel onder **claim** het selectie vakje **verzenden** in.
 
 ## <a name="add-an-azure-time-series-insights-instance"></a>Een Azure Time Series Insights-exemplaar toevoegen
 
@@ -62,13 +62,13 @@ In Azure Time Series Insights Gen2 kunt u contextuele gegevens toevoegen aan ink
 
 ### <a name="create-an-azure-time-series-insights-event-source"></a>Een Azure Time Series Insights gebeurtenis bron maken
 
-1. Als u nog geen gebeurtenis bron hebt gemaakt, voert u de stappen uit om [een gebeurtenis bron te maken](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-eventhub).
+1. Als u nog geen gebeurtenis bron hebt gemaakt, voert u de stappen uit om [een gebeurtenis bron te maken](./how-to-ingest-data-event-hub.md).
 
 1. Stel een waarde in voor `timeSeriesId` . Lees voor meer informatie over **tijd reeks-ID-** [modellen](./concepts-model-overview.md).
 
 ### <a name="push-events-to-windmills-sample"></a>Push gebeurtenissen naar Windmills-voor beeld
 
-1. Zoek in de zoek balk naar **Event hubs**. Selecteer **Event hubs**in de weer gegeven lijst.
+1. Zoek in de zoek balk naar **Event hubs**. Selecteer **Event hubs** in de weer gegeven lijst.
 
 1. Selecteer uw Event Hub-exemplaar.
 
@@ -84,7 +84,7 @@ In Azure Time Series Insights Gen2 kunt u contextuele gegevens toevoegen aan ink
 1. Selecteer **klikken om te starten**.
 
     > [!TIP]
-    > De Windmill Simulator maakt ook JSON die u kunt gebruiken als een Payload met de [Azure time series INSIGHTS ga query-api's](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query).
+    > De Windmill Simulator maakt ook JSON die u kunt gebruiken als een Payload met de [Azure time series INSIGHTS ga query-api's](/rest/api/time-series-insights/gen1-query).
 
     > [!NOTE]
     > De Simulator blijft gegevens verzenden totdat het tabblad browser is gesloten.
@@ -201,11 +201,11 @@ In Azure Time Series Insights Gen2 kunt u contextuele gegevens toevoegen aan ink
 
     |location|manufacturer.name|manufacturer.location|events.id|events.timestamp|events.data.type|events.data.units|events.data.value|
     |---|---|---|---|---|---|---|---|
-    |WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
+    |WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|druk|psi|108.09|
     |WestUs|manufacturer1|EastUs|device2|2016-01-08T01:17:00Z|vibration|abs G|217.09|
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Bekijk uw omgeving](https://insights.timeseries.azure.com) in de Azure time series Insights Explorer.
 
-* Meer informatie over [IOT Hub-apparaten](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct)
+* Meer informatie over [IOT Hub-apparaten](../iot-hub/iot-hub-devguide-messages-construct.md)

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: fcbcaab7b5cd050e072aaded3e2c09a94a451072
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: bf314510a8569a825ccd309ec855e3ff186bba86
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578532"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023374"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Integratie van virtuele bureau blad-partners van Windows
 
@@ -350,7 +350,7 @@ SSH2 is een Windows-service provider met toegevoegde waarde waarmee uw IT-teams 
 appCURE legt toepassings details vast van het uitvoeren van toepassingen om ervoor te zorgen dat alle punten die van invloed kunnen zijn op de toepassingen van uw eind gebruiker worden begrepen. appCURE updates en levert deze vervolgens op uw nieuwe virtuele Windows-bureau blad. Door alle toepassings integratie punten in uw huidige omgeving vast te leggen, biedt appCURE de snelheid om IT-resources te optimaliseren en te plannen voor uw migraties beter en sneller dan ooit voordat organisaties hun productie sneller kunnen uitvoeren.
 
 - [Bekijk de kortere oplossing](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Fs38).
-- [Ga naar de partner pagina](/azure/virtual-desktop/partners#ssh2).
+- [Ga naar de partner pagina](#ssh2).
 
 ## <a name="thinprint"></a>ThinPrint
 

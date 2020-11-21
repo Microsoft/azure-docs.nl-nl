@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/03/2020
 ms.author: wolfma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f89dd6b7926baf6c1c64cff81e8b613461a3e925
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: b9ed43019e7af0cb810c3e0fc849281a458a43e1
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93345496"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023630"
 ---
 # <a name="how-to-use-batch-transcription"></a>Batch-transcriptie gebruiken
 
@@ -46,7 +46,7 @@ Net als bij alle functies van de speech-service maakt u een abonnements sleutel 
 >[!NOTE]
 > Voor de speech-service is een Standard-abonnement (S0) vereist om batch-transcriptie te gebruiken. Sleutels voor gratis abonnementen (F0) werken niet. Zie [prijzen en limieten](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)voor meer informatie.
 
-Volg de stappen in [akoestische aanpassing](how-to-customize-acoustic-models.md) en [taal aanpassing](how-to-customize-language-model.md)als u van plan bent om modellen aan te passen. Als u de gemaakte modellen in batch transcriptie wilt gebruiken, hebt u hun model locatie nodig. U kunt de model locatie ophalen wanneer u de details van het model ( `self` eigenschap) inspecteert. Een geïmplementeerd aangepast eind punt is *niet nodig* voor de batch transcriptie-service.
+Volg de stappen in [akoestische aanpassing](./how-to-custom-speech-train-model.md) en [taal aanpassing](./how-to-custom-speech-train-model.md)als u van plan bent om modellen aan te passen. Als u de gemaakte modellen in batch transcriptie wilt gebruiken, hebt u hun model locatie nodig. U kunt de model locatie ophalen wanneer u de details van het model ( `self` eigenschap) inspecteert. Een geïmplementeerd aangepast eind punt is *niet nodig* voor de batch transcriptie-service.
 
 >[!NOTE]
 > Als onderdeel van de REST API heeft batch transcriptie een set [quota en limieten](speech-services-quotas-and-limits.md#batch-transcription), die we aanmoedigen te beoordelen. Om optimaal te profiteren van de mogelijkheid van batch transcriptie om een groot aantal audio bestanden efficiënt te transcriberen, raden we u aan om altijd meerdere bestanden per aanvraag te verzenden of een Blob Storage-container aan te wijzen met de audio bestanden om te transcriberen. Met de service worden de bestanden gelijktijdig getranscribeerd, waardoor de verlever tijd is verminderd. Het gebruik van meerdere bestanden in één aanvraag is zeer eenvoudig en eenvoudig: Zie de [configuratie](#configuration) sectie. 
@@ -64,7 +64,7 @@ De batch transcriptie-API ondersteunt de volgende indelingen:
 Voor audio stromen met stereo worden de linker-en rechter kanalen gesplitst tijdens de transcriptie. Er wordt een JSON-resultaat bestand gemaakt voor elk kanaal.
 Als u een geordende definitieve transcriptie wilt maken, gebruikt u de tijds tempels die per utterance zijn gegenereerd.
 
-### <a name="configuration"></a>Configuration
+### <a name="configuration"></a>Configuratie
 
 Configuratie parameters worden als JSON opgegeven.
 
@@ -182,7 +182,7 @@ Gebruik deze optionele eigenschappen om transcriptie te configureren:
 
 ### <a name="storage"></a>Storage
 
-Batch transcriptie kan audio lezen van een open bare Internet-URI en kan audio lezen of transcripties schrijven met behulp van een SAS-URI met [Azure Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview).
+Batch transcriptie kan audio lezen van een open bare Internet-URI en kan audio lezen of transcripties schrijven met behulp van een SAS-URI met [Azure Blob Storage](../../storage/blobs/storage-blobs-overview.md).
 
 ## <a name="batch-transcription-result"></a>Resultaten batch-transcriptie
 

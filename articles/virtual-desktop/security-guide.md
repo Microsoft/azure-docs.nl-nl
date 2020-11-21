@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: dc39c1e43580c5cf302e85664783dba4509889af
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: d3033af32229be238831740c11a1112513259a43
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842631"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023153"
 ---
 # <a name="security-best-practices"></a>Aanbevolen procedures voor beveiliging
 
@@ -35,10 +35,10 @@ Hier vindt u de beveiligings behoeften die u nodig hebt voor de implementatie va
 |Session Host-besturings systeem|Yes|
 |Implementatie configuratie|Yes|
 |Netwerk besturings elementen|Yes|
-|Besturings vlak voor virtualisatie|Nee|
-|Fysieke hosts|Nee|
-|Fysiek netwerk|Nee|
-|Fysiek Data Center|Nee|
+|Besturings vlak voor virtualisatie|No|
+|Fysieke hosts|No|
+|Fysiek netwerk|No|
+|Fysiek Data Center|No|
 
 De beveiligings behoeften die de klant niet verantwoordelijk is voor worden verwerkt door micro soft.
 
@@ -62,7 +62,7 @@ Zie [uw Azure-abonnement op Security Center Standard voorbereiden](../security-c
 
 ### <a name="improve-your-secure-score"></a>Uw veiligheidsscore verbeteren
 
-Een beveiligde Score biedt aanbevelingen en best practice advies voor het verbeteren van de beveiliging van uw organisatie. Aan de hand van deze aanbevelingen kunt u kiezen welke u het belangrijkst vindt, en met de opties voor snel oplossen kunt u snel potentiële beveiligings problemen oplossen. Deze aanbevelingen worden ook na verloop van tijd bijgewerkt, zodat u altijd op de hoogte bent van de beste manieren om de beveiliging van uw omgeving te hand haven. Zie [uw beveiligde Score verbeteren in azure Security Center](../security-center/security-center-secure-score.md)voor meer informatie.
+Een beveiligde Score biedt aanbevelingen en best practice advies voor het verbeteren van de beveiliging van uw organisatie. Aan de hand van deze aanbevelingen kunt u kiezen welke u het belangrijkst vindt, en met de opties voor snel oplossen kunt u snel potentiële beveiligings problemen oplossen. Deze aanbevelingen worden ook na verloop van tijd bijgewerkt, zodat u altijd op de hoogte bent van de beste manieren om de beveiliging van uw omgeving te hand haven. Zie [uw beveiligde Score verbeteren in azure Security Center](../security-center/secure-score-security-controls.md)voor meer informatie.
 
 ## <a name="windows-virtual-desktop-security-best-practices"></a>Aanbevolen procedures voor de beveiliging van Windows Virtual Desktop
 
@@ -74,13 +74,13 @@ Als u multi-factor Authentication vereist voor alle gebruikers en beheerders in 
 
 ### <a name="enable-conditional-access"></a>Voorwaardelijke toegang inschakelen
 
-Als u [voorwaardelijke toegang](../active-directory/conditional-access/best-practices.md) inschakelt, kunt u Risico's beheren voordat u gebruikers toegang verleent tot uw virtuele Windows-desktop omgeving. Wanneer u bepaalt welke gebruikers toegang moeten verlenen, raden we u aan om ook te bepalen wie de gebruiker is, hoe ze zich aanmelden en welk apparaat ze gebruiken.
+Als u [voorwaardelijke toegang](../active-directory/conditional-access/overview.md) inschakelt, kunt u Risico's beheren voordat u gebruikers toegang verleent tot uw virtuele Windows-desktop omgeving. Wanneer u bepaalt welke gebruikers toegang moeten verlenen, raden we u aan om ook te bepalen wie de gebruiker is, hoe ze zich aanmelden en welk apparaat ze gebruiken.
 
 ### <a name="collect-audit-logs"></a>Audit logboeken verzamelen
 
 Als u controle logboek verzameling inschakelt, kunt u de activiteiten van gebruikers en beheerders met betrekking tot het virtuele bureau blad van Windows bekijken. Enkele voor beelden van belang rijke audit logboeken:
 
--   [Azure-activiteitenlogboek](../azure-monitor/platform/activity-log-collect.md)
+-   [Azure-activiteiten logboek](../azure-monitor/platform/activity-log.md)
 -   [Azure Active Directory activiteiten logboek](../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md)
 -   [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md)
 -   [Sessie-hosts](../azure-monitor/platform/agent-windows.md)
@@ -93,7 +93,7 @@ Bij het kiezen van een implementatie model kunt u externe gebruikers toegang bie
 
 ### <a name="monitor-usage-with-azure-monitor"></a>Gebruik controleren met Azure Monitor
 
-Controleer het gebruik en de beschik baarheid van uw Windows Virtual Desktop-service met [Azure monitor](https://azure.microsoft.com/services/monitor/). Overweeg [service Health Alerts](../service-health/alerts-activity-log-service-notifications.md) te maken voor de virtueel-bureaublad service van Windows om meldingen te ontvangen wanneer er een gebeurtenis is die invloed heeft op de service.
+Controleer het gebruik en de beschik baarheid van uw Windows Virtual Desktop-service met [Azure monitor](https://azure.microsoft.com/services/monitor/). Overweeg [service Health Alerts](../service-health/alerts-activity-log-service-notifications-portal.md) te maken voor de virtueel-bureaublad service van Windows om meldingen te ontvangen wanneer er een gebeurtenis is die invloed heeft op de service.
 
 ## <a name="session-host-security-best-practices"></a>Aanbevolen procedures voor de beveiliging van sessies
 

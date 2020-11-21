@@ -9,12 +9,12 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 09/28/2020
-ms.openlocfilehash: a1f633548ed36320f40e485f540923c8e3045a99
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0839d2c734418824952f37cb177490e56e1133c5
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91460863"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023306"
 ---
 # <a name="json-flattening-escaping-and-array-handling"></a>JSON-platmaken, escapen en matrixafhandeling
 
@@ -22,18 +22,18 @@ Uw Azure Time Series Insights Gen2-omgeving maakt dynamische kolommen van uw war
 
 > [!IMPORTANT]
 >
-> * Controleer de onderstaande regels voordat u een [eigenschap voor de tijd reeks-id](time-series-insights-update-how-to-id.md) en/of de juiste tijds tempel van de gebeurtenis bron selecteert [(s)](concepts-streaming-ingestion-event-sources.md#event-source-timestamp). Als uw TS-ID of-tijds tempel zich in een genest object bevindt of een of meer van de volgende speciale tekens bevat, is het belang rijk om ervoor te zorgen dat de naam van de eigenschap die u opgeeft, overeenkomt met de naam van de kolom *nadat* de opname regels zijn toegepast. Zie voor beeld [B](concepts-json-flattening-escaping-rules.md#example-b) hieronder.
+> * Controleer de onderstaande regels voordat u een [eigenschap voor de tijd reeks-id](./how-to-select-tsid.md) en/of de juiste tijds tempel van de gebeurtenis bron selecteert [(s)](concepts-streaming-ingestion-event-sources.md#event-source-timestamp). Als uw TS-ID of-tijds tempel zich in een genest object bevindt of een of meer van de volgende speciale tekens bevat, is het belang rijk om ervoor te zorgen dat de naam van de eigenschap die u opgeeft, overeenkomt met de naam van de kolom *nadat* de opname regels zijn toegepast. Zie voor beeld [B](concepts-json-flattening-escaping-rules.md#example-b) hieronder.
 
-| Regel | Voor beeld JSON | [Syntaxis van de expressie time series](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) | Naam van eigenschaps kolom in Parquet
+| Regel | Voor beeld JSON | [Syntaxis van de expressie time series](/rest/api/time-series-insights/reference-time-series-expression-syntax) | Naam van eigenschaps kolom in Parquet
 |---|---|---|---|
 | Het gegevens type Azure Time Series Insights Gen2 wordt toegevoegd aan het einde van de kolom naam als "_ \<dataType\> " | ```"type": "Accumulated Heat"``` | `$event.type.String` |`type_string` |
 | De [eigenschap tijds tempel](concepts-streaming-ingestion-event-sources.md#event-source-timestamp) van de gebeurtenis bron wordt opgeslagen in azure time series Insights Gen2 als tijds tempel in de opslag en de waarde die is opgeslagen in UTC. U kunt de tijds tempel eigenschap van uw gebeurtenis aanpassen zodat deze voldoet aan de behoeften van uw oplossing, maar de naam van de kolom in warme en koude opslag is ' tijds tempel '. Andere JSON-eigenschappen (datetime) die niet de bron tijds tempel van de gebeurtenis zijn, worden opgeslagen met _datetime in de kolom naam, zoals vermeld in de bovenstaande regel.  | ```"ts": "2020-03-19 14:40:38.318"``` |  `$event.$ts` | `timestamp` |
 | De namen van JSON-eigenschappen die de speciale tekens bevatten. [\ en ' worden voorafgegaan door [' en ']  |  ```"id.wasp": "6A3090FD337DE6B"``` |  `$event['id.wasp'].String` | `['id.wasp']_string` |
 | Binnen [' en '] is er nog meer Escapes van enkele aanhalings tekens en backslashes. Een enkele aanhalings tekens worden geschreven als \ ' en een back slash wordt geschreven als \\\ | ```"Foo's Law Value": "17.139999389648"``` | `$event['Foo\'s Law Value'].Double` | `['Foo\'s Law Value']_double` |
 | Geneste JSON-objecten worden afgevlakt met een punt als scheidings teken. Het nesten van Maxi maal 10 niveaus wordt ondersteund. |  ```"series": {"value" : 316 }``` | `$event.series.value.Long`, `$event['series']['value'].Long` of `$event.series['value'].Long` |  `series.value_long` |
-| Matrices van primitieve typen worden opgeslagen als het dynamische type |  ```"values": [154, 149, 147]``` | Dynamische typen kunnen alleen worden opgehaald via de [GetEvents](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents) -API | `values_dynamic` |
+| Matrices van primitieve typen worden opgeslagen als het dynamische type |  ```"values": [154, 149, 147]``` | Dynamische typen kunnen alleen worden opgehaald via de [GetEvents](/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents) -API | `values_dynamic` |
 | Matrices die objecten bevatten, zijn afhankelijk van de object inhoud: als de TS-ID (s) of de eigenschap time stamp zich binnen de objecten in een matrix bevindt, wordt de matrix opgerold, zodat de eerste JSON-nettolading meerdere gebeurtenissen genereert. Hierdoor kunt u meerdere gebeurtenissen batchgewijs in één JSON-structuur. Alle eigenschappen op het hoogste niveau die peers zijn voor de matrix, worden met elk niet-gerollt object opgeslagen. Als uw TS-ID en tijds tempel zich *niet* in de matrix bevinden, wordt deze als het dynamische type opgeslagen. | Zie de voor beelden [A](concepts-json-flattening-escaping-rules.md#example-a), [B](concepts-json-flattening-escaping-rules.md#example-b)en [C](concepts-json-flattening-escaping-rules.md#example-c) hieronder
-| Matrices met gemengde elementen worden niet afgevlakt. |  ```"values": ["foo", {"bar" : 149}, 147]``` | Dynamische typen kunnen alleen worden opgehaald via de [GetEvents](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents) -API | `values_dynamic` |
+| Matrices met gemengde elementen worden niet afgevlakt. |  ```"values": ["foo", {"bar" : 149}, 147]``` | Dynamische typen kunnen alleen worden opgehaald via de [GetEvents](/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents) -API | `values_dynamic` |
 | 512 tekens is de naam limiet van de JSON-eigenschap. Als de naam langer is dan 512 tekens, wordt deze afgekapt tot 512 en ' _< ' hashCode ' > ' wordt toegevoegd. **Houd er rekening mee** dat dit ook geldt voor eigenschapnamen die zijn samengevoegd van een object, waarbij een genest objectpad wordt aangeduid. |``"data.items.datapoints.values.telemetry<...continuing to over 512 chars>" : 12.3440495`` |`"$event.data.items.datapoints.values.telemetry<...continuing to include all chars>.Double"` | `data.items.datapoints.values.telemetry<...continuing to 512 chars>_912ec803b2ce49e4a541068d495ab570_double` |
 
 ## <a name="understanding-the-dual-behavior-for-arrays"></a>Meer informatie over het dubbele gedrag voor matrices
@@ -44,7 +44,7 @@ In sommige gevallen zijn matrices met objecten echter alleen zinvol in de contex
 
 ### <a name="how-to-know-if-my-array-of-objects-will-produce-multiple-events"></a>Hoe weet ik of mijn matrix van objecten meerdere gebeurtenissen zal genereren?
 
-Als een of meer van uw tijd reeks-ID-verwerkte (s) zijn genest binnen objecten in een matrix *of* als de tijds tempel eigenschap van de gebeurtenis is genest, wordt deze door de opname engine gesplitst om meerdere gebeurtenissen te maken. De namen van eigenschappen die u hebt ingevoerd voor uw TS-ID ('s) en/of Time Stamp moeten voldoen aan de bovenstaande afvlakkings regels en geven daarom de vorm van uw JSON aan. Zie de voor beelden hieronder en lees de hand leiding voor het [selecteren van een time series-ID-eigenschap.](time-series-insights-update-how-to-id.md)
+Als een of meer van uw tijd reeks-ID-verwerkte (s) zijn genest binnen objecten in een matrix *of* als de tijds tempel eigenschap van de gebeurtenis is genest, wordt deze door de opname engine gesplitst om meerdere gebeurtenissen te maken. De namen van eigenschappen die u hebt ingevoerd voor uw TS-ID ('s) en/of Time Stamp moeten voldoen aan de bovenstaande afvlakkings regels en geven daarom de vorm van uw JSON aan. Zie de voor beelden hieronder en lees de hand leiding voor het [selecteren van een time series-ID-eigenschap.](./how-to-select-tsid.md)
 
 ### <a name="example-a"></a>Voor beeld A
 

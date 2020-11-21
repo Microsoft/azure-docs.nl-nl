@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32d9683012a5900569740080d61ac21b464a5cd4
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: d0da8755199645b12e9c6ed75a42881fe86e70b5
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490607"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023034"
 ---
 # <a name="what-is-risk"></a>Wat is risico?
 
@@ -41,7 +41,7 @@ Een gebruikers risico vertegenwoordigt de waarschijnlijkheid dat een bepaalde id
 
 Deze Risico's worden offline berekend met de interne en externe Threat Intelligence-bronnen van micro soft, waaronder beveiligings onderzoekers, politie professionals, beveiligings teams bij micro soft en andere vertrouwde bronnen.
 
-| Risico detectie | Beschrijving |
+| Risico detectie | Description |
 | --- | --- |
 | Gelekte referenties | Dit type risico detectie geeft aan dat de geldige referenties van de gebruiker zijn gelekt. Wanneer Cybercriminals geldige wacht woorden van legitieme gebruikers beveiligt, delen ze deze referenties vaak. Dit delen geschiedt doorgaans door op het donkere web te plaatsen, sites te plakken of door de referenties op de zwarte markt te verhandelen en te verkopen. Wanneer de micro soft lekkende referentie Service gebruikers referenties ophaalt van de donkere websites, plak sites of andere bronnen, worden ze gecontroleerd op basis van de huidige geldige referenties van de Azure AD-gebruikers om geldige overeenkomsten te vinden. Zie [Veelgestelde vragen](#common-questions)voor meer informatie over gelekte referenties. |
 | Azure AD-bedreigingsinformatie | Dit type risico detectie duidt op de activiteit van de gebruiker die ongebruikelijk is voor de gegeven gebruiker of is consistent met bekende aanvals patronen op basis van de interne en externe informatie bronnen van micro soft. |
@@ -52,7 +52,7 @@ Een aanmeldings risico duidt op de kans dat een bepaalde verificatie aanvraag ni
 
 Deze Risico's kunnen in realtime worden berekend of offline worden berekend met behulp van de interne en externe Threat Intelligence-bronnen van micro soft, waaronder beveiligings onderzoekers, politie professionals, beveiligings teams bij micro soft en andere vertrouwde bronnen.
 
-| Risico detectie | Detectie type | Beschrijving |
+| Risico detectie | Detectie type | Description |
 | --- | --- | --- |
 | Anoniem IP-adres | Real-time | Dit type risico detectie duidt op aanmeldingen vanaf een anoniem IP-adres (bijvoorbeeld Tor browser of anoniem VPN). Deze IP-adressen worden meestal gebruikt door Actors die hun aanmeld telemetrie (IP-adres, locatie, apparaat enzovoort) willen verbergen voor mogelijk schadelijk doel. |
 | Ongewoon traject | Offline | Dit type risico detectie identificeert twee aanmeldingen die afkomstig zijn van geografische locaties, waarbij ten minste één van de locaties mogelijk ook ongewoon kan zijn voor de gebruiker, gezien het gedrag van het verleden. Deze machine learning-algoritme houdt onder andere rekening met de tijd tussen de twee aanmeldingen en de tijd die nodig zou zijn voor de gebruiker om van de eerste locatie naar de tweede te gaan, wat aangeeft dat een andere gebruiker dezelfde referenties gebruikt. <br><br> Het algoritme negeert duidelijke ' fout-positieven ' die bijdragen aan de niet-bewaarde reis omstandigheden, zoals Vpn's en locaties die regel matig door andere gebruikers in de organisatie worden gebruikt. Het systeem heeft een initiële leer periode van het eerste aantal van 14 dagen of 10 aanmeldingen, waarbij het een nieuwe gebruiker aanmeldt. |
@@ -66,7 +66,7 @@ Deze Risico's kunnen in realtime worden berekend of offline worden berekend met 
 
 ### <a name="other-risk-detections"></a>Andere risico detecties
 
-| Risico detectie | Detectie type | Beschrijving |
+| Risico detectie | Detectie type | Description |
 | --- | --- | --- |
 | Er is extra risico gedetecteerd | Realtime of offline | Deze detectie geeft aan dat een van de bovenstaande Premium-detecties is gedetecteerd. Aangezien de Premium-detecties alleen zichtbaar zijn voor Azure AD Premium P2-klanten, hebben ze de titel ' extra risico gedetecteerd ' voor klanten zonder Azure AD Premium P2-licenties. |
 
@@ -74,7 +74,7 @@ Deze Risico's kunnen in realtime worden berekend of offline worden berekend met 
 
 ### <a name="risk-levels"></a>Risiconiveaus
 
-Met Identity Protection wordt het risico gecategoriseerd in drie niveaus: laag, gemiddeld en hoog. 
+Met Identity Protection wordt het risico gecategoriseerd in drie niveaus: laag, gemiddeld en hoog. Wanneer u [aangepaste beleids regels voor identiteits beveiliging](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-policies#custom-conditional-access-policy)configureert, kunt u deze ook configureren om te activeren op een **risico** niveau. Geen risico betekent dat er geen actieve indicatie is dat de identiteit van de gebruiker is aangetast.
 
 Microsoft biedt geen specifieke details over de manier waarop het risico wordt berekend, maar hoe hoger het niveau is, hoe betrouwbaarder het is dat de gebruiker of het aanmelden is gecompromitteerd. Een voorbeeld: één geval van onbekende aanmeldingseigenschappen voor een gebruiker kan minder bedreigend zijn dan gelekte referenties voor een andere gebruiker.
 

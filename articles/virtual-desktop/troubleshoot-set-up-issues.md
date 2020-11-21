@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d02642b49951b4b116eaae6dbea490ef2720c15d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 126a8e48a8db1c41299a7cb7a34f172342110667
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90084410"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023119"
 ---
 # <a name="host-pool-creation"></a>Hostgroepen maken
 
@@ -26,7 +26,7 @@ Ga naar de [technische community van Windows virtueel bureau blad](https://techc
 
 ## <a name="acquiring-the-windows-10-enterprise-multi-session-image"></a>De afbeelding voor meerdere sessies van Windows 10 Enter prise ophalen
 
-Als u de Windows 10 Enter prise-installatie kopie voor meerdere sessies wilt gebruiken, gaat u naar Azure Marketplace en selecteert u aan de **slag**met  >  **micro soft Windows 10** > en [Windows 10 Enter prise multi-session versie 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
+Als u de Windows 10 Enter prise-installatie kopie voor meerdere sessies wilt gebruiken, gaat u naar Azure Marketplace en selecteert u aan de **slag** met  >  **micro soft Windows 10** > en [Windows 10 Enter prise multi-session versie 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
 
 ## <a name="issues-with-using-the-azure-portal-to-create-host-pools"></a>Problemen met het gebruik van de Azure Portal om hostgroepen te maken
 
@@ -57,9 +57,9 @@ Oplossen: u moet gebruikers opnieuw toewijzen aan app-groepen.
 
 Volg deze instructies voor het oplossen van problemen met mislukte implementaties van Azure Resource Manager sjablonen en Power shell DSC.
 
-1. Bekijk fouten in de implementatie met behulp [van de weer gave-implementatie bewerkingen met Azure Resource Manager](../azure-resource-manager/resource-manager-deployment-operations.md).
-2. Als er geen fouten in de implementatie zijn, controleert u de fouten in het activiteiten logboek met behulp van [activiteiten logboeken weer geven om acties op resources te controleren](../azure-resource-manager/resource-group-audit.md).
-3. Wanneer de fout is geïdentificeerd, gebruikt u het fout bericht en de resources in [problemen met veelvoorkomende Azure-implementatie fouten oplossen met Azure Resource Manager](../azure-resource-manager/resource-manager-common-deployment-errors.md) om het probleem op te lossen.
+1. Bekijk fouten in de implementatie met behulp [van de weer gave-implementatie bewerkingen met Azure Resource Manager](../azure-resource-manager/templates/deployment-history.md).
+2. Als er geen fouten in de implementatie zijn, controleert u de fouten in het activiteiten logboek met behulp van [activiteiten logboeken weer geven om acties op resources te controleren](../azure-resource-manager/management/view-activity-logs.md).
+3. Wanneer de fout is geïdentificeerd, gebruikt u het fout bericht en de resources in [problemen met veelvoorkomende Azure-implementatie fouten oplossen met Azure Resource Manager](../azure-resource-manager/templates/common-deployment-errors.md) om het probleem op te lossen.
 4. Verwijder alle resources die tijdens de vorige implementatie zijn gemaakt en probeer de sjabloon opnieuw te implementeren.
 
 ### <a name="error-your-deployment-failedhostnamejoindomain"></a>Fout: de implementatie is mislukt.... \<hostname> /JoinDomain
@@ -91,7 +91,7 @@ Ga als volgt te werk om dit probleem op te lossen:
 
 1. Open de Azure Portal en ga naar het tabblad **virtuele netwerken** .
 2. Zoek uw VNET en selecteer vervolgens **DNS-servers**.
-3. Het menu DNS-servers moet aan de rechter kant van het scherm worden weer gegeven. Selecteer **aangepast**in dat menu.
+3. Het menu DNS-servers moet aan de rechter kant van het scherm worden weer gegeven. Selecteer **aangepast** in dat menu.
 4. Zorg ervoor dat de DNS-servers die worden vermeld onder aangepast overeenkomen met uw domein controller of Active Directory domein. Als uw DNS-server niet wordt weer geven, kunt u deze toevoegen door de waarde ervan in te voeren in het veld **DNS-server toevoegen** .
 
 ### <a name="error-your-deployment-failedunauthorized"></a>Fout: Uw implementatie is mislukt...\Unauthorized

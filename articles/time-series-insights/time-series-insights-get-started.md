@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 401d22ee68ba0652eb684b03b06fddf0b0fe3d72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61af7922318514a7b86a349d1970c59d4d168d85
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569464"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023323"
 ---
 # <a name="create-a-new-azure-time-series-insights-gen1-environment-in-the-azure-portal"></a>Maak een nieuwe Azure Time Series Insights gen1-omgeving in de Azure Portal
 
@@ -31,9 +31,9 @@ Met Azure Time Series Insights kunt u aan de slag gaan met het visualiseren en o
 
 Volg deze stappen om een omgeving te maken:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-1. Selecteer de knop **+ een resource maken** .
+1. Selecteer de knop **+ Een resource maken**.
 
 1. Selecteer de categorie **Internet of Things** en selecteer **Time Series Insights**.
 
@@ -60,7 +60,7 @@ Volg deze stappen om een omgeving te maken:
 
    [![De meldingen bekijken](media/time-series-insights-get-started/tsi-deploy-notifications.png)](media/time-series-insights-get-started/tsi-deploy-notifications.png#lightbox)
 
-1. Controleer de configuratie-instellingen van uw implementatie in het **overzicht**van bronnen.
+1. Controleer de configuratie-instellingen van uw implementatie in het **overzicht** van bronnen.
 
    [![De Azure Time Series Insights pincode voor het dash board maken](media/time-series-insights-get-started/tsi-verify-deployment.png)](media/time-series-insights-get-started/tsi-verify-deployment.png#lightbox)
 
@@ -68,9 +68,9 @@ Volg deze stappen om een omgeving te maken:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Definieer het beleid voor gegevens toegang](time-series-insights-data-access.md) om uw omgeving te beveiligen.
+* [Definieer het beleid voor gegevens toegang](./concepts-access-policies.md) om uw omgeving te beveiligen.
 
-* [Een event hub-gebeurtenis bron toevoegen](time-series-insights-how-to-add-an-event-source-eventhub.md) aan uw Azure time series Insights-omgeving.
+* [Een event hub-gebeurtenis bron toevoegen](./how-to-ingest-data-event-hub.md) aan uw Azure time series Insights-omgeving.
 
 * [Gebeurtenissen verzenden](time-series-insights-send-events.md) naar de bron van de gebeurtenis.
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/12/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 90db861a4ef4fc951844d3ae82a51d20cf9dc8c5
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 3d19a60fd6a22eb9245722c6ff69d3b39c05d29e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91875101"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023170"
 ---
 # <a name="safe-url-list"></a>Lijst met veilige URL's
 
@@ -34,7 +34,7 @@ De virtuele machines van Azure die u voor virtuele Windows-Bureau bladen maakt, 
 |mrsglobalsteus2prod.blob.core.windows.net|443|Updates van Agent- en SXS-stack|AzureCloud|
 |wvdportalstorageblob.blob.core.windows.net|443|Ondersteuning Azure-portal|AzureCloud|
 | 169.254.169.254 | 80 | [Azure instance meta data service-eind punt](../virtual-machines/windows/instance-metadata-service.md) | N.v.t. |
-| 168.63.129.16 | 80 | [Status controle van sessie-host](../virtual-network/security-overview.md#azure-platform-considerations) | N.v.t. |
+| 168.63.129.16 | 80 | [Status controle van sessie-host](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | N.v.t. |
 
 >[!IMPORTANT]
 >Windows Virtual Desktop biedt nu ondersteuning voor de FQDN-tag. Zie [Azure Firewall gebruiken om Windows Virtual Desktop-implementaties te beveiligen](../firewall/protect-windows-virtual-desktop.md) voor meer informatie.
@@ -56,7 +56,7 @@ De virtuele machines van Azure die u voor virtuele Windows-Bureau bladen maakt, 
 |mrsglobalstugviffx.core.usgovcloudapi.net|443|Updates van Agent- en SXS-stack|AzureCloud|
 |wvdportalstorageblob.blob.core.usgovcloudapi.net|443|Ondersteuning Azure-portal|AzureCloud|
 | 169.254.169.254 | 80 | [Azure instance meta data service-eind punt](../virtual-machines/windows/instance-metadata-service.md) | N.v.t. |
-| 168.63.129.16 | 80 | [Status controle van sessie-host](../virtual-network/security-overview.md#azure-platform-considerations) | N.v.t. |
+| 168.63.129.16 | 80 | [Status controle van sessie-host](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | N.v.t. |
 
 In de volgende tabel vindt u optionele URL's waar uw virtuele Azure-machines toegang tot kunnen hebben.
 
@@ -78,7 +78,7 @@ In de volgende tabel vindt u optionele URL's waar uw virtuele Azure-machines toe
 >U moet het jokerteken (*) gebruiken voor URL's met serviceverkeer. Als u liever geen * gebruikt voor agent-gerelateerd verkeer, dan kunt u als volgt URL's zonder jokers vinden:
 >
 >1. Registreer uw virtuele machines bij de Windows Virtual Desktop-hostgroep.
->2. Open **Logboeken**en ga naar **Windows logs**  >  **Application**  >  **WVD-agent** en zoek naar gebeurtenis-id 3701.
+>2. Open **Logboeken** en ga naar **Windows logs**  >  **Application**  >  **WVD-agent** en zoek naar gebeurtenis-id 3701.
 >3. Deblokkeren van de Url's die u vindt onder gebeurtenis-ID 3701. De Url's onder gebeurtenis-ID 3701 zijn specifiek voor een regio. U moet het deblokkeren van het proces herhalen met de relevante Url's voor elke regio waarin u uw virtuele machines wilt implementeren.
 
 ## <a name="remote-desktop-clients"></a>Extern bureaublad-clients

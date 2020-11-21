@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: bd1ab5110313380c90e71ed161935c7274a845b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dda50a443babca88a0a650fde60df0744d0a1d2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839245"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021827"
 ---
 # <a name="continuous-deployment-with-azure-devops"></a>Continue implementatie met Azure DevOps
 
@@ -25,7 +25,7 @@ In dit artikel leert u hoe u doorlopende implementatie kunt instellen voor uw aa
 > [!div class = "checklist"]
 > * Een aangepaste opdrachten voor het ontwikkelen van toepassingen (DEV)
 > * Een aangepaste opdrachten toepassing voor productie (PROD)
-> * Registreren voor [Azure-pijp lijnen](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops)
+> * Registreren voor [Azure-pijp lijnen](/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops)
 
 ## <a name="exportimportpublish"></a>Exporteren/importeren/publiceren
 
@@ -80,7 +80,7 @@ De scripts worden gehost op [Cognitive Services Voice Assistant-aangepaste opdra
 
 1. Ga naar de hoofd pagina van de pijp lijn.
 1. Selecteer in de vervolg keuzelijst bovenhoek de optie **pijp lijn bewerken**. Hiermee krijgt u een YAML-editor. 
-1. Selecteer **variabelen**in de rechter bovenhoek naast de knop uitvoeren. Klik op **nieuwe variabele**.
+1. Selecteer **variabelen** in de rechter bovenhoek naast de knop uitvoeren. Klik op **nieuwe variabele**.
 1. Voeg deze variabelen toe:
     
     | Variabele | Beschrijving |
@@ -99,18 +99,18 @@ De scripts worden gehost op [Cognitive Services Voice Assistant-aangepaste opdra
 
 ## <a name="deploy-from-source-code"></a>Implementeren vanuit broncode
 
-Als u de definitie van uw toepassing in een opslag plaats wilt blijven gebruiken, bieden we de scripts voor implementaties van de bron code. Omdat de scripts zich in bash bevinden, moet u, als u Windows gebruikt, het [Linux-subsysteem](https://docs.microsoft.com/windows/wsl/install-win10)installeren.
+Als u de definitie van uw toepassing in een opslag plaats wilt blijven gebruiken, bieden we de scripts voor implementaties van de bron code. Omdat de scripts zich in bash bevinden, moet u, als u Windows gebruikt, het [Linux-subsysteem](/windows/wsl/install-win10)installeren.
 
 De scripts worden gehost op [Cognitive Services Voice Assistant-aangepaste opdrachten](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/tree/master/custom-commands). Kloon de scripts in de bash-map naar uw opslag plaats. Zorg ervoor dat u hetzelfde pad behoudt.
 
-### <a name="prepare-your-repository"></a>Uw opslag plaats voorbereiden
+### <a name="prepare-your-repository"></a>Uw opslagplaats voorbereiden
 
 1. Maak een map voor uw toepassing. in ons voor beeld wordt er een gemaakt met de naam ' apps '.
 1. Werk de argumenten van het onderstaande bash-script bij en voer deze uit. Hiermee wordt het dialoog model van uw toepassing geïmporteerd in het bestand myapp.jsop
     ```BASH
     bash/export.sh -r <region> -s <subscriptionkey> -c en-us -a <appid> -f apps/myapp.json
     ```
-    | Argumenten | Beschrijving |
+    | Argumenten | Description |
     | ------- | --------------- | ----------- |
     | regio | de regio van de toepassing, d.w.z. westus2. |
     | subscriptionkey | de abonnements sleutel van uw spraak bron. |
@@ -156,7 +156,7 @@ De scripts worden gehost op [Cognitive Services Voice Assistant-aangepaste opdra
 
 1. Ga naar de hoofd pagina van de pijp lijn.
 1. Selecteer in de vervolg keuzelijst bovenhoek de optie **pijp lijn bewerken**. Hiermee krijgt u een YAML-editor. 
-1. Selecteer **variabelen**in de rechter bovenhoek naast de knop uitvoeren. Klik op **nieuwe variabele**.
+1. Selecteer **variabelen** in de rechter bovenhoek naast de knop uitvoeren. Klik op **nieuwe variabele**.
 1. Voeg deze variabelen toe:
 
     | Variabele | Beschrijving |

@@ -12,12 +12,12 @@ ms.date: 11/03/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
 zone_pivot_groups: keyword-quickstart
-ms.openlocfilehash: 2d15da55c0bab42571d2a9660156a780c5d27881
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 49ac70b6881085f48c8bc3a12e31e4a1aa220c6a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305854"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021946"
 ---
 # <a name="get-started-with-custom-keyword"></a>Aan de slag met Aangepast sleutelwoord
 
@@ -39,7 +39,7 @@ Voordat u een aangepast tref woord kunt gebruiken, moet u een tref woord maken m
 
 1. Maak een **Nieuw project** op de pagina [aangepast tref woord](https://aka.ms/sdsdk-wakewordportal) . 
 
-1. Voer een **naam** , een optionele **Beschrijving** en selecteer de taal. U hebt één project per taal nodig en de ondersteuning is momenteel beperkt tot de `en-US` taal.
+1. Voer een **naam**, een optionele **Beschrijving** en selecteer de taal. U hebt één project per taal nodig en de ondersteuning is momenteel beperkt tot de `en-US` taal.
 
     ![Uw trefwoord project beschrijven](media/custom-keyword/custom-kws-portal-new-project.png)
 
@@ -49,7 +49,7 @@ Voordat u een aangepast tref woord kunt gebruiken, moet u een tref woord maken m
 
 1. Als u een nieuw trefwoord model wilt maken, klikt u op **model trainen**.
 
-1. Voer een **naam** in voor het model, een optionele **Beschrijving** en het **tref woord** van uw keuze en klik vervolgens op **volgende**. Zie de [richt lijnen](speech-devices-sdk-kws-guidelines.md#choose-an-effective-keyword) voor het kiezen van een effectief tref woord.
+1. Voer een **naam** in voor het model, een optionele **Beschrijving** en het **tref woord** van uw keuze en klik vervolgens op **volgende**. Zie de [richt lijnen](./custom-keyword-overview.md#choose-an-effective-keyword) voor het kiezen van een effectief tref woord.
 
     ![Voer uw tref woord in](media/custom-keyword/custom-kws-portal-new-model.png)
 
@@ -79,4 +79,4 @@ Voordat u een aangepast tref woord kunt gebruiken, moet u een tref woord maken m
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Test uw aangepaste tref woord met de Quick start voor de [Speech-apparaten SDK](https://aka.ms/sdsdk-quickstart).
+Test uw aangepaste tref woord met de Quick start voor de [Speech-apparaten SDK](./speech-devices-sdk-quickstart.md?pivots=platform-android).

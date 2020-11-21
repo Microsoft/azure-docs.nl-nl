@@ -3,12 +3,12 @@ title: Een klant onboarden in Azure Lighthouse
 description: Meer informatie over hoe u een klant kunt opsturen naar Azure Lighthouse, zodat de resources toegankelijk zijn en kunnen worden beheerd via uw eigen Tenant met behulp van Azure delegated resource management.
 ms.date: 09/24/2020
 ms.topic: how-to
-ms.openlocfilehash: d80fef21e4b7cf1705b67df3c8d08f91bac589bf
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 43f28073c996167c82e241476020bdc341486b26
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042862"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024293"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Een klant onboarden in Azure Lighthouse
 
@@ -67,7 +67,7 @@ Als service provider wilt u mogelijk meerdere taken uitvoeren voor één klant, 
 Om het beheer te vereenvoudigen, kunt u het beste Azure AD-gebruikers groepen gebruiken voor elke rol. Dit biedt u de flexibiliteit om afzonderlijke gebruikers toe te voegen aan of te verwijderen uit de groep die toegang heeft, zodat u het onboarding-proces niet hoeft te herhalen om gebruikers wijzigingen door te voeren. U kunt rollen toewijzen aan een service-principal die nuttig kan zijn voor automatiserings scenario's.
 
 > [!IMPORTANT]
-> Als u machtigingen wilt toevoegen voor een Azure AD-groep, moet u het **groeps type** instellen op **beveiliging** . Deze optie wordt geselecteerd wanneer de groep wordt gemaakt. Zie [Een basisgroep maken en leden toevoegen met behulp van Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) voor meer informatie.
+> Als u machtigingen wilt toevoegen voor een Azure AD-groep, moet u het **groeps type** instellen op **beveiliging**. Deze optie wordt geselecteerd wanneer de groep wordt gemaakt. Zie [Een basisgroep maken en leden toevoegen met behulp van Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) voor meer informatie.
 
 Bij het definiëren van uw autorisatie moet u het principe van de minimale bevoegdheid volgen, zodat gebruikers alleen over de benodigde machtigingen beschikken om hun taak te volt ooien. Zie voor richt lijnen en informatie over ondersteunde rollen [tenants, gebruikers en rollen in azure Lighthouse-scenario's](../concepts/tenants-users-roles.md).
 
@@ -211,8 +211,8 @@ De implementatie kan worden uitgevoerd in de Azure Portal, met behulp van Power 
 ### <a name="azure-portal"></a>Azure Portal
 
 1. Selecteer in onze [github-opslag plaats](https://github.com/Azure/Azure-Lighthouse-samples/)de knop **implementeren in azure** die wordt weer gegeven naast de sjabloon die u wilt gebruiken. De sjabloon wordt in Azure Portal geopend.
-1. Voer uw waarden in voor de naam van het **MSP-aanbod** , de beschrijving van het **MSP-aanbod** , **beheerd door de Tenant-id** en **autorisaties** . Als u wilt, kunt u **para meters bewerken** selecteren om waarden in te voeren voor `mspOfferName` , `mspOfferDescription` , `managedbyTenantId` en `authorizations` rechtstreeks in het parameter bestand. Zorg ervoor dat u deze waarden bijwerkt in plaats van de standaard waarden van de sjabloon te gebruiken.
-1. Selecteer **controleren en maken** en selecteer vervolgens **maken** .
+1. Voer uw waarden in voor de naam van het **MSP-aanbod**, de beschrijving van het **MSP-aanbod**, **beheerd door de Tenant-id** en **autorisaties**. Als u wilt, kunt u **para meters bewerken** selecteren om waarden in te voeren voor `mspOfferName` , `mspOfferDescription` , `managedbyTenantId` en `authorizations` rechtstreeks in het parameter bestand. Zorg ervoor dat u deze waarden bijwerkt in plaats van de standaard waarden van de sjabloon te gebruiken.
+1. Selecteer **controleren en maken** en selecteer vervolgens **maken**.
 
 Na enkele minuten ziet u een melding dat de implementatie is voltooid.
 
@@ -265,7 +265,7 @@ Wanneer het abonnement van een klant is geslaagd voor Azure Lighthouse, kunnen g
 In de Tenant van de service provider:
 
 1. Navigeer naar de [pagina mijn klanten](view-manage-customers.md).
-2. Selecteer **Klanten** .
+2. Selecteer **Klanten**.
 3. Bevestig dat u de abonnement/abonnementen kunt zien met de naam van de aanbieding die u in de Resource Manager-sjabloon hebt opgenomen.
 
 > [!IMPORTANT]
@@ -274,7 +274,7 @@ In de Tenant van de service provider:
 In de Tenant van de klant:
 
 1. Navigeer naar de [pagina service providers](view-manage-service-providers.md).
-2. Selecteer **Aanbiedingen van serviceproviders** .
+2. Selecteer **Aanbiedingen van serviceproviders**.
 3. Bevestig dat u de abonnement/abonnementen kunt zien met de naam van de aanbieding die u in de Resource Manager-sjabloon hebt opgenomen.
 
 > [!NOTE]
@@ -286,6 +286,11 @@ In de Tenant van de klant:
 # Log in first with Connect-AzAccount if you're not using Cloud Shell
 
 Get-AzContext
+
+# Confirm successful onboarding for Azure Lighthouse
+
+Get-AzManagedServicesDefinition
+Get-AzManagedServicesAssignment
 ```
 
 ### <a name="azure-cli"></a>Azure CLI

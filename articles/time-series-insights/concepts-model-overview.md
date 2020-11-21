@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: a61dd6c17ad4d11c6dd7294c9a4f96270748c16a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0c201ce984a216a5cc62e221c0433f83a7eeabae
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91630658"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021759"
 ---
 # <a name="time-series-model-in-azure-time-series-insights-gen2"></a>Time Series-model in Azure Time Series Insights Gen2
 
@@ -24,7 +24,7 @@ In dit artikel worden de tijdreeks modellen, de mogelijkheden en het maken en bi
 > [!TIP]
 >
 > * Ga naar de [Contoso wikkeling-Farm demo](https://insights.timeseries.azure.com/preview/samples) omgeving voor een live time series model-voor beeld.
-> * Meer informatie [over het werken met een time series-model](/azure/time-series-insights/how-to-edit-your-model) met behulp van de Azure time series Insights Explorer.
+> * Meer informatie [over het werken met een time series-model](./how-to-edit-your-model.md) met behulp van de Azure time series Insights Explorer.
 
 ## <a name="summary"></a>Samenvatting
 
@@ -65,7 +65,7 @@ Met het doel om eenvoudig en moeiteloos tijd Series contextualization te beheren
 
 ### <a name="components"></a>Onderdelen
 
-Time Series model heeft drie kern onderdelen:
+Het Time Series-model heeft drie kernonderdelen:
 
 * [Exemplaren van de time series-model](#time-series-model-instances)
 * [Time Series-model hiërarchieën](#time-series-model-hierarchies)
@@ -75,7 +75,7 @@ Deze onderdelen worden gecombineerd om een time series-model op te geven en om u
 
 [![Overzichts grafiek voor tijdreeks model](media/v2-update-tsm/time-series-model-overview.png)](media/v2-update-tsm/time-series-model-overview.png#lightbox)
 
-Een time series-model kan worden gemaakt en beheerd via de [Azure time series Insights Explorer](/azure/time-series-insights/concepts-model-overview). Instellingen voor tijdreeks modellen kunnen worden beheerd via de [API voor model instellingen](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis).
+Een time series-model kan worden gemaakt en beheerd via de [Azure time series Insights Explorer](). Instellingen voor tijdreeks modellen kunnen worden beheerd via de [API voor model instellingen](/rest/api/time-series-insights/reference-model-apis).
 
 ## <a name="time-series-model-instances"></a>Exemplaren van de time series-model
 
@@ -95,14 +95,14 @@ De [demo](https://insights.timeseries.azure.com/preview/samples) van de contoso-
 
 ### <a name="instance-properties"></a>Instantie-eigenschappen
 
-Instanties worden gedefinieerd door **timeSeriesId**, **typeId**, **name**, **Description**, **hierarchyIds**en **instanceFields**. Elk exemplaar wordt toegewezen aan slechts één *type*en een of meer *hiërarchieën*.
+Instanties worden gedefinieerd door **timeSeriesId**, **typeId**, **name**, **Description**, **hierarchyIds** en **instanceFields**. Elk exemplaar wordt toegewezen aan slechts één *type* en een of meer *hiërarchieën*.
 
 | Eigenschap | Beschrijving |
 | --- | ---|
 | timeSeriesId | De unieke ID van de tijd reeks waaraan het exemplaar is gekoppeld. In de meeste gevallen worden instanties uniek geïdentificeerd door een eigenschap zoals deviceId of assetId. In sommige gevallen kan een specifiek samengestelde ID worden gebruikt die Maxi maal drie eigenschappen combineert. |
 | typeId | De hoofdletter gevoelige unieke teken reeks-ID van het tijds reeks model waaraan het exemplaar is gekoppeld. Alle gedetecteerde nieuwe instanties worden standaard gekoppeld aan een standaard type.
-| naam | De eigenschap **name** is optioneel en hoofdletter gevoelig. Als de **naam** niet beschikbaar is, wordt standaard **timeSeriesId**. Als er een naam wordt gegeven, is **timeSeriesId** nog steeds beschikbaar [.](time-series-insights-update-explorer.md#4-time-series-well) |
-| description | Een tekst beschrijving van het exemplaar. |
+| naam | De eigenschap **name** is optioneel en hoofdletter gevoelig. Als de **naam** niet beschikbaar is, wordt standaard **timeSeriesId**. Als er een naam wordt gegeven, is **timeSeriesId** nog steeds beschikbaar [.](./concepts-ux-panels.md#4-time-series-well) |
+| beschrijving | Een tekst beschrijving van het exemplaar. |
 | hierarchyIds | Hiermee definieert u de hiërarchieën waarvan het exemplaar deel uitmaakt. |
 | instanceFields | De eigenschappen van een exemplaar en alle statische gegevens waarmee een exemplaar wordt gedefinieerd. Ze definiëren waarden van hiërarchie-of niet-hiërarchie-eigenschappen, terwijl indexeren ook ondersteuning biedt voor het uitvoeren van zoek bewerkingen. |
 
@@ -129,7 +129,7 @@ Exemplaren hebben de volgende JSON-weer gave:
 ```
 
 > [!TIP]
-> Lees het artikel over het [uitvoeren van gegevens query's](time-series-insights-update-tsq.md#time-series-model-query-tsm-q-apis) en de [API-documentatie](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis#instances-api)van het exemplaar van API voor instance-api's maken, lezen, bijwerken en verwijderen (ruw).
+> Lees het artikel over het [uitvoeren van gegevens query's](./concepts-query-overview.md#time-series-model-query-tsm-q-apis) en de [API-documentatie](/rest/api/time-series-insights/reference-model-apis#instances-api)van het exemplaar van API voor instance-api's maken, lezen, bijwerken en verwijderen (ruw).
 
 ## <a name="time-series-model-hierarchies"></a>Time Series-model hiërarchieën
 
@@ -143,7 +143,7 @@ In de demo van de [Contoso-Wind Farm](https://insights.timeseries.azure.com/prev
 
 ### <a name="hierarchy-definition"></a>Hiërarchie definitie
 
-Hiërarchieën worden gedefinieerd door de hiërarchie **-id**, **naam**en **bron**.
+Hiërarchieën worden gedefinieerd door de hiërarchie **-id**, **naam** en **bron**.
 
 | Eigenschap | Beschrijving |
 | ---| ---|
@@ -186,7 +186,7 @@ In het vorige voor beeld van JSON:
 * `ManufactureDate` Hiermee definieert u een hiërarchie met bovenliggend `year` en onderliggend item `month` . Elk `ManufactureDate` kan meerdere hebben `years` , die op zijn beurt meerdere kunnen bevatten `months` .
 
 > [!TIP]
-> Lees voor de hiërarchie-API maken, lezen, bijwerken en verwijderen (ruwe) ondersteuning het artikel [gegevens query's](concepts-query-overview.md#time-series-model-query-tsm-q-apis) en de documentatie van de [hiërarchie-API](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis#hierarchies-api).
+> Lees voor de hiërarchie-API maken, lezen, bijwerken en verwijderen (ruwe) ondersteuning het artikel [gegevens query's](concepts-query-overview.md#time-series-model-query-tsm-q-apis) en de documentatie van de [hiërarchie-API](/rest/api/time-series-insights/reference-model-apis#hierarchies-api).
 
 ### <a name="hierarchy-example"></a>Voorbeeld van een hiërarchie
 
@@ -216,7 +216,7 @@ Op basis van de instantie velden die worden gebruikt in de vorige definitie en e
 | ID4 | ' buil ding ' = ' 1000 ', ' Floor ' = ' 10 '  |
 | ID5 | Geen: ' buil ding ', ' Floor ' of ' room ' is ingesteld. |
 
-Time Series **id1** en **ID4** worden weer gegeven als onderdeel van de hiërarchie **H1** in de [Azure time series Insights Explorer](time-series-insights-update-explorer.md) , omdat ze volledig gedefinieerde en correct bestelde *bouw*-, *vloer*-en *room* -para meters hebben gedefinieerd.
+Time Series **id1** en **ID4** worden weer gegeven als onderdeel van de hiërarchie **H1** in de [Azure time series Insights Explorer](./concepts-ux-panels.md) , omdat ze volledig gedefinieerde en correct bestelde *bouw*-, *vloer*-en *room* -para meters hebben gedefinieerd.
 
 De andere zijn ingedeeld onder niet- *bovenliggende instanties* , omdat ze niet voldoen aan de opgegeven gegevens hiërarchie.
 
@@ -224,24 +224,24 @@ De andere zijn ingedeeld onder niet- *bovenliggende instanties* , omdat ze niet 
 
 Met de *typen* tijd reeks modellen kunt u variabelen of formules voor het uitvoeren van berekeningen definiëren. Typen zijn gekoppeld aan een specifiek exemplaar.
 
-Een type kan een of meer variabelen hebben. Een exemplaar van een time series-model kan bijvoorbeeld van het type *temperatuur sensor*zijn, dat bestaat uit de *gemiddelde Tempe ratuur*, *minimale Tempe ratuur*en de *maximale Tempe ratuur*.
+Een type kan een of meer variabelen hebben. Een exemplaar van een time series-model kan bijvoorbeeld van het type *temperatuur sensor* zijn, dat bestaat uit de *gemiddelde Tempe ratuur*, *minimale Tempe ratuur* en de *maximale Tempe ratuur*.
 
 In de demo van de [Contoso wikkeling-Farm](https://insights.timeseries.azure.com/preview/samples) worden verschillende typen Time Series-modellen gevisualiseerd die aan hun respectieve instanties zijn gekoppeld.
 
 [![Voor beeld van type time series-model](media/v2-update-tsm/time-series-model-types.png)](media/v2-update-tsm/time-series-model-types.png#lightbox)
 
 > [!TIP]
-> Lees voor de typen API maken, lezen, bijwerken en verwijderen (ruwe) ondersteuning, het [gegevens query](concepts-query-overview.md#time-series-model-query-tsm-q-apis) -artikel en de [type API rest-documentatie](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis#types-api).
+> Lees voor de typen API maken, lezen, bijwerken en verwijderen (ruwe) ondersteuning, het [gegevens query](concepts-query-overview.md#time-series-model-query-tsm-q-apis) -artikel en de [type API rest-documentatie](/rest/api/time-series-insights/reference-model-apis#types-api).
 
 ### <a name="type-properties"></a>Type-eigenschappen
 
-De typen van de tijd reeks model worden gedefinieerd op basis van **id**, **naam**, **Beschrijving**en **variabelen**.
+De typen van de tijd reeks model worden gedefinieerd op basis van **id**, **naam**, **Beschrijving** en **variabelen**.
 
 | Eigenschap | Beschrijving |
 | ---| ---|
 | id | De hoofdletter gevoelige unieke teken reeks-ID voor het type. |
 | naam | Een teken reeks die wordt gebruikt om een naam op te geven voor het type. |
-| description | Een beschrijving van de teken reeks voor het type. |
+| beschrijving | Een beschrijving van de teken reeks voor het type. |
 | variabelen | Geef de variabelen op die zijn gekoppeld aan het type. |
 
 Typen voldoen aan het volgende JSON-voor beeld:
@@ -288,7 +288,7 @@ De tijdreeks model typen kunnen veel variabelen hebben die formule-en verwerking
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Lees de referentie documentatie voor [Time Series model](https://docs.microsoft.com/rest/api/time-series-insights/reference-model-apis) voor meer informatie over het bewerken van het model via api's.
+* Lees de referentie documentatie voor [Time Series model](/rest/api/time-series-insights/reference-model-apis) voor meer informatie over het bewerken van het model via api's.
 
 * Verken de formules en berekeningen die u kunt maken met [Time Series model-variabelen](./concepts-variables.md)
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: shlo
-ms.openlocfilehash: 7df082cd5044f142d8d5900ec1fff6c182262bd9
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 348277d42c543bc45cf98bfeaf7ea8313afe8f6f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425120"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021980"
 ---
 # <a name="disclosure-design-patterns"></a>Ontwerppatronen van openbaarmakingen
 Nu u&#39;dat u het juiste [niveau van openbaar making](concepts-disclosure-guidelines.md#disclosure-assessment) hebt vastgesteld voor uw synthetische spraak ervaring,&#39;een goede tijd om mogelijke ontwerp patronen te verkennen.
@@ -241,17 +241,17 @@ Gebruik openbaar making als een kans om zonder problemen te werken.
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 - [Richt lijnen voor micro soft bot](https://www.microsoft.com/research/uploads/prod/2018/11/Bot_Guidelines_Nov_2018.pdf)
-- [Richt lijnen voor Cortana-ontwerp](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
-- [Richt lijnen voor spraak ontwerp van micro soft Windows UWP](https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)
-- [Richt lijnen voor spraak opdrachten voor micro soft Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/voice-design#top-things-users-should-know-about-speech-in-mixed-reality)
+- [Richt lijnen voor Cortana-ontwerp](/cortana/voice-commands/voicecommand-design-guidelines)
+- [Richt lijnen voor spraak ontwerp van micro soft Windows UWP](/windows/uwp/design/input/speech-interactions)
+- [Richt lijnen voor spraak opdrachten voor micro soft Windows Mixed Reality](/windows/mixed-reality/voice-design#top-things-users-should-know-about-speech-in-mixed-reality)
 
 ## <a name="reference-docs"></a>Naslagdocumentatie
 
-* [Openbaar making voor spraak-talen](https://aka.ms/disclosure-voice-talent)
+* [Openbaar making voor spraak-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent)
 * [Richt lijnen voor de verantwoordelijke implementatie van synthetische spraak technologie](concepts-guidelines-responsible-deployment-synthetic.md)
 * [Overzicht van beperking](concepts-gating-overview.md)
 * [Vrijgeven](concepts-disclosure-guidelines.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Openbaar making voor spraak-talen](https://aka.ms/disclosure-voice-talent)
+* [Openbaar making voor spraak-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent)

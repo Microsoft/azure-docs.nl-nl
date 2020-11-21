@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/09/2019
 ms.author: shlo
-ms.openlocfilehash: 73e6e4e69a245485ca473f048bbeafef21dbbf37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d66c02b58da295c74a38fb921a081cc4036763a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73836789"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021912"
 ---
 # <a name="custom-neural-voice-gating-overview"></a>Overzicht van Custom Neural Voice beperking
 
@@ -28,7 +28,7 @@ Als onderdeel van de toezeg ging van micro soft om verantwoordelijk AI te ontwer
 ### <a name="guidance-for-deploying-custom-neural-voice"></a>Richt lijnen voor het implementeren van aangepaste Neural Voice
 
 - [Richt lijnen voor de verantwoordelijke implementatie](concepts-guidelines-responsible-deployment-synthetic.md): onze beste aanbevelingen op basis van ons onderzoek
-- [Openbaar making voor Voice-talen](https://aka.ms/disclosure-voice-talent): wat u moet weten en dat Voice-talen worden geïnformeerd over de technologie om deze op een verantwoorde manier te gebruiken
+- [Openbaar making voor Voice-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent): wat u moet weten en dat Voice-talen worden geïnformeerd over de technologie om deze op een verantwoorde manier te gebruiken
 - [Openbaar makings ontwerp](concepts-disclosure-guidelines.md): ervaringen ontwerpen zodat gebruikers weten wanneer een synthetische stem wordt gebruikt en uw service vertrouwen
 
 ### <a name="why-custom-neural-voice-is-a-gated-technology"></a>Waarom aangepaste Neural Voice een gated-technologie is
@@ -41,11 +41,11 @@ Als u toegang wilt krijgen tot aangepaste Neural Voice, moet u beginnen met het 
 
 De toegang tot de aangepaste Neural Voice-service is onderhevig aan de enige keuze van micro soft op basis van onze geschiktheids criteria, het hebben-proces en de beschik baarheid om een beperkt aantal klanten te ondersteunen tijdens deze geteste preview.
 
-Als onderdeel van het toepassings proces moet u de uitdrukkelijke schriftelijke toestemming van Voice-talen verkrijgen voordat u een spraak lettertype maakt, zoals het delen [van de openbaar making voor Voice-talen](https://aka.ms/disclosure-voice-talent). U moet er ook voor zorgen dat bij het implementeren van het spraak lettertype, uw implementatie [de synthetische aard](concepts-disclosure-guidelines.md) van de service aan gebruikers vermeldt, toewijzing aan de micro soft synthetische spraak service in uw service voorwaarden biedt en een feedback kanaal kan ondersteunen waarmee gebruikers van de service problemen kunnen rapporteren en gegevens met micro soft mogen delen. Meer informatie over onze gebruiks voorwaarden [vindt u hier](https://aka.ms/custom-neural-code-of-conduct).
+Als onderdeel van het toepassings proces moet u de uitdrukkelijke schriftelijke toestemming van Voice-talen verkrijgen voordat u een spraak lettertype maakt, zoals het delen [van de openbaar making voor Voice-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent). U moet er ook voor zorgen dat bij het implementeren van het spraak lettertype, uw implementatie [de synthetische aard](concepts-disclosure-guidelines.md) van de service aan gebruikers vermeldt, toewijzing aan de micro soft synthetische spraak service in uw service voorwaarden biedt en een feedback kanaal kan ondersteunen waarmee gebruikers van de service problemen kunnen rapporteren en gegevens met micro soft mogen delen. Meer informatie over onze gebruiks voorwaarden [vindt u hier](/legal/cognitive-services/speech-service/tts-code-of-conduct).
 
 ## <a name="reference-docs"></a>Naslagdocumentatie
 
-* [Openbaarmaking voor spraaktalent](https://aka.ms/disclosure-voice-talent)
+* [Openbaarmaking voor spraaktalent](/legal/cognitive-services/speech-service/disclosure-voice-talent)
 * [Richt lijnen voor de verantwoordelijke implementatie van synthetische spraak technologie](concepts-guidelines-responsible-deployment-synthetic.md)
 * [Vrijgeven](concepts-disclosure-guidelines.md)
 

@@ -8,12 +8,12 @@ services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
-ms.openlocfilehash: 105faf796583eb0f272eea7a316648993fdafd0d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 680b3c5a9548fa06d0139bd441b5583c27427a77
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653771"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020773"
 ---
 # <a name="visualize-data-from-azure-time-series-insights-in-power-bi"></a>Gegevens visualiseren van Azure Time Series Insights in Power BI
 
@@ -32,7 +32,7 @@ Zorg ervoor dat u zich aanmeldt voor een [gratis Azure-abonnement](https://azure
 ## <a name="prerequisites"></a>Vereisten
 
 * Down load en installeer de nieuwste versie van [Power bi Desktop](https://powerbi.microsoft.com/downloads/)
-* Een [Azure time series Insights Gen2-omgeving](time-series-insights-update-how-to-manage.md) hebben of maken
+* Een [Azure time series Insights Gen2-omgeving](./how-to-provision-manage.md) hebben of maken
 
 > [!IMPORTANT]
 >
@@ -59,7 +59,7 @@ Aan de slag:
 
 1. Stel de para meters in op dit tabblad:
 
-   1. Geef een relatieve periode op die u wilt weer geven. Als u tevreden bent met uw bestaande weer gave, kunt u deze als een **bestaande periode**laten staan.
+   1. Geef een relatieve periode op die u wilt weer geven. Als u tevreden bent met uw bestaande weer gave, kunt u deze als een **bestaande periode** laten staan.
 
    1. U kunt kiezen tussen **geaggregeerde** en **onbewerkte gebeurtenissen**.
 
@@ -94,7 +94,7 @@ Aan de slag:
 
     [![Kies aangepaste query maken](media/how-to-connect-power-bi/confirm-the-connection.png)](media/how-to-connect-power-bi/confirm-the-connection.png#lightbox)
 
-1. Kies **aangepaste query maken**in het vervolg keuzemenu onder **gegevens bron**. Plak vanuit het klem bord in het onderstaande veld optionele **aangepaste query (optioneel)** en druk vervolgens op **OK**.
+1. Kies **aangepaste query maken** in het vervolg keuzemenu onder **gegevens bron**. Plak vanuit het klem bord in het onderstaande veld optionele **aangepaste query (optioneel)** en druk vervolgens op **OK**.
 
     [![Geef de aangepaste query door en selecteer OK](media/how-to-connect-power-bi/custom-query-load.png)](media/how-to-connect-power-bi/custom-query-load.png#lightbox)  
 
@@ -130,7 +130,7 @@ Zodra u het rapport hebt gemaakt, kunt u het publiceren naar Power BI Reporting 
 
 ## <a name="advanced-editing"></a>Geavanceerd bewerken
 
-Als u al een gegevensset in Power BI hebt geladen, maar u de query wilt wijzigen (zoals de para meters voor datum/tijd of omgevings-ID), kunt u dit doen via de Geavanceerde editor functionaliteit van Power BI. Raadpleeg de [documentatie van Power bi](https://docs.microsoft.com/power-bi/desktop-query-overview) voor meer informatie.
+Als u al een gegevensset in Power BI hebt geladen, maar u de query wilt wijzigen (zoals de para meters voor datum/tijd of omgevings-ID), kunt u dit doen via de Geavanceerde editor functionaliteit van Power BI. Raadpleeg de [documentatie van Power bi](/power-bi/desktop-query-overview) voor meer informatie.
 
 Als een overzicht:
 
@@ -140,12 +140,12 @@ Als een overzicht:
     [![Query's bewerken in de Geavanceerde editor](media/how-to-connect-power-bi/power-bi-advanced-query-editing.png)](media/how-to-connect-power-bi/power-bi-advanced-query-editing.png#lightbox)
 
 1. Wijzig de JSON-Payload naar wens.
-1. Selecteer **gereed** en **sluit & pas** in het venster van de **Power query editor**toe.
+1. Selecteer **gereed** en **sluit & pas** in het venster van de **Power query editor** toe.
 
 De interface geeft nu de gewenste wijzigingen weer.  
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [Power bi connector concepten](https://docs.microsoft.com/power-bi/desktop-query-overview) voor Azure time series Insights.
+* Meer informatie over [Power bi connector concepten](/power-bi/desktop-query-overview) voor Azure time series Insights.
 
-* Meer informatie over [Power bi bureau blad](https://docs.microsoft.com/power-bi/desktop-query-overview).
+* Meer informatie over [Power bi bureau blad](/power-bi/desktop-query-overview).

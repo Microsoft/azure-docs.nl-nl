@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 10/14/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 175b2268727364040640b319c24019bdf9b48df9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e4cb4fe8a701600290d24c055e2be5187a711c5
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89433701"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023391"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Een VHD-hoofdinstallatiekopie voorbereiden en aanpassen
 
@@ -111,10 +111,10 @@ Tijdzone omleiding kan worden afgedwongen op groepsbeleid niveau, omdat alle vir
 
 Tijd zones omleiden:
 
-1. Open de **console Groepsbeleidbeheer**op de Active Directory-server.
+1. Open de **console Groepsbeleidbeheer** op de Active Directory-server.
 2. Breid uw domein en groepsbeleid objecten uit.
 3. Klik met de rechter muisknop op het **Groepsbeleid-object** dat u hebt gemaakt voor de instellingen voor groeps beleid en selecteer **bewerken**.
-4. Ga in het **Groepsbeleidsbeheer-editor**naar **computer configuratie**  >  **beleid**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **extern bureaublad-services**  >  **extern bureaublad**apparaat voor sessie-host  >  **en bron omleiding**.
+4. Ga in het **Groepsbeleidsbeheer-editor** naar **computer configuratie**  >  **beleid**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **extern bureaublad-services**  >  **extern bureaublad** apparaat voor sessie-host  >  **en bron omleiding**.
 5. Schakel de instelling **tijd zone omleiding toestaan** in.
 
 U kunt deze opdracht ook uitvoeren op de hoofd installatie kopie om tijd zones om te leiden:
@@ -189,7 +189,7 @@ In de volgende instructies wordt uitgelegd hoe u uw master installatie kopie upl
 
 1. Converteer de VM-installatie kopie (VHD) naar vast als u dat nog niet hebt gedaan. Als u de afbeelding niet naar vast hebt geconverteerd, is het niet mogelijk om de installatie kopie te maken.
 
-2. Upload de VHD naar een BLOB-container in uw opslag account. U kunt snel uploaden met het [Storage Explorer-hulp programma](https://azure.microsoft.com/features/storage-explorer/). Zie [dit artikel](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows)voor meer informatie over het Storage Explorer-hulp programma.
+2. Upload de VHD naar een BLOB-container in uw opslag account. U kunt snel uploaden met het [Storage Explorer-hulp programma](https://azure.microsoft.com/features/storage-explorer/). Zie [dit artikel](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows)voor meer informatie over het Storage Explorer-hulp programma.
 
     > [!div class="mx-imgBorder"]
     > ![Een scherm opname van het zoek venster van het Microsoft Azure Storage Explorer-hulp programma. Het selectie vakje upload. VHD-of vhdx-bestanden als pagina-blobs (aanbevolen) is ingeschakeld.](media/897aa9a9b6acc0aa775c31e7fd82df02.png)

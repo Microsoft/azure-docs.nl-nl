@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
-ms.openlocfilehash: 0cbc57922b31f1b3879bb2cad8a988a1ba4cc368
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40c5e3474d3992108ef61d34e745bc63c1f7a713
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85307590"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020943"
 ---
 # <a name="add-language-generation-templates-for-speech-responses"></a>Taalgeneratiesjablonen toevoegen voor spraakreacties
 
@@ -34,7 +34,7 @@ U moet de stappen in de volgende artikelen hebben voltooid:
 
 ## <a name="language-generation-templates-overview"></a>Sjablonen voor het genereren van talen
 
-Aangepaste opdrachten sjablonen zijn gebaseerd op de LG- [sjablonen](https://aka.ms/speech/cc-lg-format)van BotFramework. Aangezien aangepaste opdrachten een nieuwe LG-sjabloon maken, indien nodig (dat wil zeggen, voor spraak reacties in para meters of acties), hoeft u de naam van de LG-sjabloon niet op te geven. In plaats van uw sjabloon te definiëren als:
+Aangepaste opdrachten sjablonen zijn gebaseerd op de LG- [sjablonen](/azure/bot-service/file-format/bot-builder-lg-file-format#templates)van BotFramework. Aangezien aangepaste opdrachten een nieuwe LG-sjabloon maken, indien nodig (dat wil zeggen, voor spraak reacties in para meters of acties), hoeft u de naam van de LG-sjabloon niet op te geven. In plaats van uw sjabloon te definiëren als:
 
  ```
     # CompletionAction
@@ -51,7 +51,7 @@ U hoeft alleen de hoofd tekst van de sjabloon als volgt te definiëren zonder de
 
 Met deze wijziging wordt het verschil in de spraak reacties naar de client verzonden. Voor dezelfde utterance zou de bijbehorende spraak reactie dus wille keurig worden gekozen uit de beschik bare opties.
 
-Door gebruik te maken van LG sjablonen kunt u ook complexe spraak reacties voor opdrachten definiëren met behulp van adaptieve expressies. U kunt de indeling van de [LG-sjablonen](https://aka.ms/speech/cc-lg-format) raadplegen voor meer informatie. Aangepaste opdrachten bieden standaard ondersteuning voor alle mogelijkheden met de volgende kleine verschillen:
+Door gebruik te maken van LG sjablonen kunt u ook complexe spraak reacties voor opdrachten definiëren met behulp van adaptieve expressies. U kunt de indeling van de [LG-sjablonen](/azure/bot-service/file-format/bot-builder-lg-file-format#templates) raadplegen voor meer informatie. Aangepaste opdrachten bieden standaard ondersteuning voor alle mogelijkheden met de volgende kleine verschillen:
 
 * In de entiteiten van LG-sjablonen worden weer gegeven als $ {EntityName}. In aangepaste opdrachten gebruiken we geen entiteiten, maar para meters kunnen worden gebruikt als variabelen met een van de volgende weer gaven $ {para meter naam} of {para meter naam}
 * Sjabloon samenstelling en-uitbrei ding worden niet ondersteund in aangepaste opdrachten. Dit komt doordat u het bestand nooit `.lg` rechtstreeks bewerkt, maar alleen de antwoorden van automatisch gemaakte sjablonen.
@@ -64,7 +64,7 @@ Wijzig de **TurnOnOff** -opdracht om een nieuwe para meter toe te voegen aan de 
 
 | Instelling            | Voorgestelde waarde       | 
 | ------------------ | --------------------- | 
-| Naam               | `SubjectContext`         | 
+| Name               | `SubjectContext`         | 
 | Is wereld wijd          | uitgeschakeld             | 
 | Vereist           | uitgeschakeld               | 
 | Type               | Tekenreeks                |
@@ -110,8 +110,8 @@ Een andere manier om aangepaste opdrachten te beantwoorden, is door een aangepas
 > ![Voorbeeld zinnen met para meters](media/custom-commands/select-custom-voice.png)
 
 > [!NOTE]
-> - Voor **open bare stemmen**zijn **Neural typen** alleen beschikbaar voor bepaalde regio's. Zie [standaard en Neural stemmen per regio/eind punt](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices)om de beschik baarheid te controleren.
-> - Voor **aangepaste stemmen**kunnen ze worden gemaakt op de pagina aangepast spraak project. Zie [aan de slag met aangepaste spraak](./how-to-custom-voice.md).
+> - Voor **open bare stemmen** zijn **Neural typen** alleen beschikbaar voor bepaalde regio's. Zie [standaard en Neural stemmen per regio/eind punt](./regions.md#standard-and-neural-voices)om de beschik baarheid te controleren.
+> - Voor **aangepaste stemmen** kunnen ze worden gemaakt op de pagina aangepast spraak project. Zie [aan de slag met aangepaste spraak](./how-to-custom-voice.md).
 
 De toepassing reageert nu op de geselecteerde stem, in plaats van de standaard stem.
 

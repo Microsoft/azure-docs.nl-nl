@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: trbye
-ms.openlocfilehash: 2b0bb997ecea55d25748152bab7bb6963d67657f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e8c7e21b0784aacc85bd02e3c1702e1a710e76ab
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91357638"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021878"
 ---
 # <a name="what-is-direct-line-speech"></a>Wat is Direct Line-spraak?
 
@@ -37,9 +37,9 @@ We bieden ook Quick starts die zijn ontworpen om u te laten werken met code en s
 
 | Snelstart | Platform | API-verwijzing |
 |------------|----------|---------------|
-| C#, UWP | Windows | [Bladeren](https://aka.ms/csspeech/csharpref) |
-| Java | Windows, macOS, Linux | [Bladeren](https://aka.ms/csspeech/javaref) |
-| Java | Android | [Bladeren](https://aka.ms/csspeech/javaref) |
+| C#, UWP | Windows | [Bladeren](/dotnet/api/microsoft.cognitiveservices.speech) |
+| Java | Windows, macOS, Linux | [Bladeren](/java/api/com.microsoft.cognitiveservices.speech) |
+| Java | Android | [Bladeren](/java/api/com.microsoft.cognitiveservices.speech) |
 
 ## <a name="sample-code"></a>Voorbeeldcode
 
@@ -48,23 +48,23 @@ Voorbeeld code voor het maken van een spraak-assistent is beschikbaar op GitHub.
 * [Voorbeelden van spraakassistenten (SDK)](https://aka.ms/csspeech/samples)
 * [Zelf studie: spraak inschakelen voor uw assistent met de spraak-SDK, C #](tutorial-voice-enable-your-bot-speech-sdk.md)
 
-## <a name="customization"></a>Aanpassen
+## <a name="customization"></a>Aanpassing
 
-Spraak assistenten die zijn gemaakt met Speech Service kunnen gebruikmaken van het volledige aanbod aan aanpassings opties voor [spraak naar tekst](speech-to-text.md), [tekst naar spraak](text-to-speech.md)en [aangepaste trefwoord selectie](speech-devices-sdk-create-kws.md).
+Spraak assistenten die zijn gemaakt met Speech Service kunnen gebruikmaken van het volledige aanbod aan aanpassings opties voor [spraak naar tekst](speech-to-text.md), [tekst naar spraak](text-to-speech.md)en [aangepaste trefwoord selectie](./custom-keyword-basics.md).
 
 > [!NOTE]
-> Aanpassings opties variëren per taal/land instelling (Zie [ondersteunde talen](supported-languages.md)).
+> Aanpassings opties variëren per taal/land instelling (Zie [ondersteunde talen](./language-support.md)).
 
-Direct line speech en de bijbehorende functionaliteit voor spraak assistenten zijn een ideale aanvulling op de [Virtual assistent-oplossing en de ondernemings sjabloon](https://docs.microsoft.com/azure/bot-service/bot-builder-enterprise-template-overview). Hoewel directe lijn spraak kan worden gebruikt met een compatibele bot, bieden deze resources een herbruikbare basis lijn voor gesp roken ervaringen van hoge kwaliteit, evenals algemene ondersteunende vaardig heden en modellen om snel aan de slag te gaan.
+Direct line speech en de bijbehorende functionaliteit voor spraak assistenten zijn een ideale aanvulling op de [Virtual assistent-oplossing en de ondernemings sjabloon](/azure/bot-service/bot-builder-enterprise-template-overview). Hoewel directe lijn spraak kan worden gebruikt met een compatibele bot, bieden deze resources een herbruikbare basis lijn voor gesp roken ervaringen van hoge kwaliteit, evenals algemene ondersteunende vaardig heden en modellen om snel aan de slag te gaan.
 
 ## <a name="reference-docs"></a>Naslagdocumentatie
 
-* [Speech-SDK](speech-sdk-reference.md)
-* [Azure Bot Service](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
+* [Speech-SDK](./speech-sdk.md)
+* [Azure Bot Service](/azure/bot-service/?view=azure-bot-service-4.0)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Verkrijg gratis een spraakserviceabonnementssleutel](overview.md#try-the-speech-service-for-free)
 * [De Speech SDK ophalen](speech-sdk.md)
-* [Een basisbot maken en implementeren](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
+* [Een basisbot maken en implementeren](/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
 * [De Virtual assistent-oplossing en ondernemings sjabloon ophalen](https://github.com/Microsoft/AI)

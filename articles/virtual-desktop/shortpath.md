@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: ee37ab90910058378172223a3435047346f5fe7c
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 6ffe631dc237e7efaf1d6bfd9ac79ab7431c7371
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701778"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023136"
 ---
 # <a name="windows-virtual-desktop-rdp-shortpath-preview"></a>RDP-shortpath van Windows virtueel bureau blad (preview-versie)
 
@@ -36,7 +36,7 @@ RDP-shortpath breidt multi transport mogelijkheden van RDP uit. Er wordt geen re
 
 UDP-poort 3390 wordt alleen gebruikt voor het binnenkomende shortpath-verkeer dat wordt geverifieerd via reverse Connect-Trans Port. RDP shortpath-listener negeert alle verbindings pogingen met de listener, tenzij ze overeenkomen met de reverse Connect-sessie.
 
-RDP-shortpath gebruikt een TLS-verbinding tussen de client en de sessie-host met de certificaten van de sessiehost. Het certificaat dat wordt gebruikt voor RDP-versleuteling wordt standaard automatisch gegenereerd door het besturings systeem tijdens de implementatie. Zo nodig kunnen klanten centraal beheerde certificaten implementeren die zijn uitgegeven door de certificerings instantie van de onderneming. Zie [Windows Server-documentatie](/troubleshoot/windows-server/remote/remote-desktop-listener-certificate-configurations.md)voor meer informatie over certificaat configuraties.
+RDP-shortpath gebruikt een TLS-verbinding tussen de client en de sessie-host met de certificaten van de sessiehost. Het certificaat dat wordt gebruikt voor RDP-versleuteling wordt standaard automatisch gegenereerd door het besturings systeem tijdens de implementatie. Zo nodig kunnen klanten centraal beheerde certificaten implementeren die zijn uitgegeven door de certificerings instantie van de onderneming. Zie [Windows Server-documentatie](/troubleshoot/windows-server/remote/remote-desktop-listener-certificate-configurations)voor meer informatie over certificaat configuraties.
 
 ## <a name="rdp-shortpath-connection-sequence"></a>RDP shortpath-verbindings reeks
 
@@ -187,7 +187,7 @@ De mogelijke waarden zijn:
 * **0** : gebruikers verbinding maakt geen gebruik van RDP-shortpath
 * **1** -gebruikers verbinding maakt gebruik van RDP-shortpath
   
-In de volgende query lijst kunt u verbindings gegevens bekijken. U kunt deze query uitvoeren in de [log Analytics query-editor](../azure-monitor/log-query/get-started-portal.md#write-and-run-basic-queries). Vervang elke query door `userupn` de UPN van de gebruiker die u wilt zoeken.
+In de volgende query lijst kunt u verbindings gegevens bekijken. U kunt deze query uitvoeren in de [log Analytics query-editor](../azure-monitor/log-query/log-analytics-tutorial.md#write-a-query). Vervang elke query door `userupn` de UPN van de gebruiker die u wilt zoeken.
 
 ```kusto
 let Events = WVDConnections | where UserName == "userupn" ;

@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: 1f4dfc4b80aff01e4b7fe7ebae4850b28cd6a498
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9abd1f305e47eca743dc9274e0ec1f0a950dd6a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83588595"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021266"
 ---
 # <a name="translator-30-languages"></a>Translator 3,0: talen
 
@@ -34,7 +34,7 @@ Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
 <table width="100%">
   <th width="20%">Query parameter</th>
-  <th>Beschrijving</th>
+  <th>Description</th>
   <tr>
     <td>api-versie</td>
     <td><em>Vereiste para meter</em>.<br/>De versie van de API die door de client is aangevraagd. Waarde moet zijn `3.0` .</td>
@@ -248,7 +248,7 @@ Hier volgen de mogelijke HTTP-status codes die een aanvraag retourneert.
 
 <table width="100%">
   <th width="20%">Statuscode</th>
-  <th>Beschrijving</th>
+  <th>Description</th>
   <tr>
     <td>200</td>
     <td>Voltooid.</td>
@@ -275,7 +275,7 @@ Hier volgen de mogelijke HTTP-status codes die een aanvraag retourneert.
   </tr>
 </table> 
 
-Als er een fout optreedt, wordt door de aanvraag ook een JSON-fout bericht geretourneerd. De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfers wordt gevolgd door een getal van drie cijfers om de fout verder te categoriseren. Algemene fout codes vindt u op de [referentie pagina van v3 Translator](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
+Als er een fout optreedt, wordt door de aanvraag ook een JSON-fout bericht geretourneerd. De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfers wordt gevolgd door een getal van drie cijfers om de fout verder te categoriseren. Algemene fout codes vindt u op de [referentie pagina van v3 Translator](./v3-0-reference.md#errors). 
 
 ## <a name="examples"></a>Voorbeelden
 

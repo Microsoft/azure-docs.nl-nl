@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 05/01/2020
 ms.author: mamccrea
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9fbf4eab55ec2cf8e4f0e27969ca4a22eb1f27ad
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 753c7ff48960711cbedbf6b5d8644a26502dd413
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578612"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023736"
 ---
 # <a name="use-net-for-apache-spark-with-azure-synapse-analytics"></a>.NET gebruiken voor Apache Spark met Azure Synapse Analytics
 
@@ -74,9 +74,11 @@ De .NET Spark-notebook is gebaseerd op de [interactieve .net](https://github.com
 
 ### <a name="install-nuget-packages-in-notebooks"></a>NuGet-pakketten installeren in notitie blokken
 
-U kunt NuGet-pakketten van uw keuze in uw notitie blok installeren met behulp van het `#r` symbool voor de naam van het NuGet-pakket. In het volgende diagram ziet u een voor beeld:
+U kunt NuGet-pakketten van uw keuze in uw notebook installeren met behulp van de `#r nuget` opdracht Magic vóór de naam van het NuGet-pakket. In het volgende diagram ziet u een voor beeld:
 
 ![Scherm opname van het gebruik van #r voor het installeren van een Spark .NET notebook NuGet-pakket](./media/apache-spark-development-using-notebooks/synapse-spark-dotnet-notebook-nuget.png)
+
+Zie voor meer informatie over het werken met NuGet-pakketten in notebooks de [.net Interactive-documentatie](https://github.com/dotnet/interactive/blob/main/docs/nuget-overview.md).
 
 ### <a name="net-for-apache-spark-c-kernel-features"></a>.NET for Apache Spark C#-kernel-functies
 

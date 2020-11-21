@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 61c31b24b01b40da4d73a308a4f304f6ff242e41
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 729e22f8ad94d2119d0f3f3e9fc474cc83a493a8
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88691408"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023068"
 ---
 # <a name="deploy-the-windows-virtual-desktop-classic-diagnostics-tool"></a>Het Windows-hulp programma voor virtueel bureau blad (klassiek) implementeren
 
@@ -94,10 +94,10 @@ Het Power shell-script uitvoeren:
 2.  Ga naar de [github-opslag plaats van RDS-sjablonen](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/diagnostics-sample/deploy/scripts) en voer het **CreateLogAnalyticsWorkspaceforDiagnostics.ps1** script uit in Power shell.
 3. Voer de volgende waarden in voor de para meters:
 
-    - Voer voor **ResourceGroupName**de naam in voor de resource groep.
-    - Voer voor **LogAnalyticsWorkspaceName**een unieke naam in voor uw log Analytics-werk ruimte.
-    - Voer bij **locatie**de Azure-regio in die u gebruikt.
-    - Voer de **Azure-abonnements-id**in die u kunt vinden in de Azure portal onder **abonnementen**.
+    - Voer voor **ResourceGroupName** de naam in voor de resource groep.
+    - Voer voor **LogAnalyticsWorkspaceName** een unieke naam in voor uw log Analytics-werk ruimte.
+    - Voer bij **locatie** de Azure-regio in die u gebruikt.
+    - Voer de **Azure-abonnements-id** in die u kunt vinden in de Azure portal onder **abonnementen**.
 
 4. Voer de referenties in van een gebruiker met gedelegeerde beheerders toegang.
 5. Meld u aan bij de Azure Portal met de referenties van dezelfde gebruiker.
@@ -121,7 +121,7 @@ U kunt als volgt de aanbevolen prestatie meter items hand matig configureren:
     -   Processor informatie ( \* ) \\ processor tijd
     -   Gebruikers invoer vertraging per sessie ( \* ) \\ maximale invoer vertraging
 
-Meer informatie over de prestatie meter items [in Windows-en Linux-prestatie gegevens bronnen in azure monitor](/azure/azure-monitor/platform/data-sources-performance-counters).
+Meer informatie over de prestatie meter items [in Windows-en Linux-prestatie gegevens bronnen in azure monitor](../../azure-monitor/platform/data-sources-performance-counters.md).
 
 >[!NOTE]
 >Alle extra tellers die u configureert, worden niet weer gegeven in het diagnostische hulp programma zelf. Als u deze wilt weer geven in het diagnostische hulp programma, moet u het configuratie bestand van het hulp programma configureren. Instructies voor het uitvoeren van een geavanceerd beheer vindt u op een later tijdstip in GitHub.
@@ -144,7 +144,7 @@ Om ervoor te zorgen dat de app-registratie API-machtigingen heeft:
 Zorg ervoor dat uw Log Analytics-werk ruimte de vooraf geconfigureerde Windows-prestatie meter items heeft:
 
 1. Ga in het [Azure Portal](https://portal.azure.com/)naar **log Analytics-werk ruimten** om de geconfigureerde Windows-prestatie meter items te controleren.
-2. Selecteer onder **instellingen**de optie **Geavanceerde instellingen**.
+2. Selecteer onder **instellingen** de optie **Geavanceerde instellingen**.
 3. Daarna gaat u naar **gegevens**  >  **Windows-prestatie meter items**.
 4. Zorg ervoor dat de volgende prestatie meter items zijn geconfigureerd:
 
@@ -162,7 +162,7 @@ Als u de status van virtuele machines wilt kunnen bekijken, moet u de Log Analyt
 2. Ga naar uw Log Analytics-werk ruimte.
 3. Selecteer in het linkerdeel venster onder gegevens bronnen voor werk ruimte de optie **virtuele machines**.
 4. Selecteer de naam van de virtuele machine waarmee u verbinding wilt maken.
-5. Selecteer **Verbinding maken**.
+5. Selecteer **Verbinden**.
 
 ## <a name="deploy-the-diagnostics-tool"></a>Het diagnosehulpprogramma implementeren
 
@@ -204,7 +204,7 @@ De omleidings-URI instellen:
 
 Voordat u het hulp programma voor diagnostische gegevens beschikbaar maakt voor uw gebruikers, moet u ervoor zorgen dat ze over de volgende machtigingen beschikken:
 
-- Gebruikers hebben lees toegang nodig voor log Analytics. Zie [aan de slag met rollen, machtigingen en beveiliging met Azure monitor](/azure/azure-monitor/platform/roles-permissions-security)voor meer informatie.
+- Gebruikers hebben lees toegang nodig voor log Analytics. Zie [aan de slag met rollen, machtigingen en beveiliging met Azure monitor](../../azure-monitor/platform/roles-permissions-security.md)voor meer informatie.
 -  Gebruikers hebben ook lees toegang nodig voor de Windows-Tenant voor virtueel bureau blad (functie voor RDS-lezer). Zie voor meer informatie [gedelegeerde toegang in virtueel bureau blad van Windows](delegated-access-virtual-desktop-2019.md).
 
 U moet uw gebruikers ook de volgende informatie geven:

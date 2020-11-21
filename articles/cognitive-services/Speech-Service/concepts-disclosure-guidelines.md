@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: shlo
-ms.openlocfilehash: bae801ac64950b0b0e9fe45585a3411477ebf12b
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 2276e66fa47b1c125a8c30f3c73a7c948f65a35d
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150857"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021929"
 ---
 # <a name="disclosure-design-guidelines"></a>Richtlijnen voor het ontwerpen van openbaarmakingen
 Meer informatie over het bouwen en onderhouden van vertrouwen met klanten door transparante informatie te krijgen over de synthetische aard van uw stem ervaring.
@@ -76,7 +76,7 @@ Gebruik het volgende diagram om te bepalen of uw synthetische spraak ervaring ee
 
 ## <a name="reference-docs"></a>Naslagdocumentatie
 
-* [Openbaar making voor spraak-talen](https://aka.ms/disclosure-voice-talent)
+* [Openbaar making voor spraak-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent)
 * [Richt lijnen voor de verantwoordelijke implementatie van synthetische spraak technologie](concepts-guidelines-responsible-deployment-synthetic.md)
 * [Overzicht van beperking](concepts-gating-overview.md)
 

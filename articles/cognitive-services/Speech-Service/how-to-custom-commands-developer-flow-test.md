@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ec8e40c0908855cd06d647bdd9121106e3553c11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c0bd21f55fee4d8487826deae23093ede293c8c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88918907"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021810"
 ---
 # <a name="test-your-custom-commands-application"></a>Uw toepassing voor aangepaste opdrachten testen
 
@@ -49,11 +49,10 @@ Een Universeel Windows-platform-client toepassing (UWP) met spraak-SDK instellen
 - [Procedure: Web-eind punten instellen](./how-to-custom-commands-setup-web-endpoints.md)
 
 Voor andere programmeer talen en platformen:
-- [Speech SDK-programmeer talen, platforms, scenario capaciteiten](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk)
+- [Speech SDK-programmeer talen, platforms, scenario capaciteiten](./speech-sdk.md)
 - [Voorbeeld codes voor spraak assistenten](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
 > [Bekijk de voor beelden op GitHub](https://aka.ms/speech/cc-samples)
-

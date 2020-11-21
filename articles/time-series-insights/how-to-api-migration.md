@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: shresha
-ms.openlocfilehash: 1effb62619f9767cc90c99e037445e7a95981460
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 3aedbef079ba62f42ea79afdcd9995d7ee23d9fa
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078235"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020722"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>Migreren naar nieuwe Azure Time Series Insights API-versies Gen2
 
@@ -24,9 +24,9 @@ ms.locfileid: "92078235"
 Als u een Azure Time Series Insights Gen2-omgeving hebt gemaakt op het moment dat deze in open bare Preview was (vóór 16 juli 2020), moet u de omgeving van de TSI bijwerken met de nieuwe algemene beschik bare versies van Api's door de stappen te volgen die in dit artikel worden beschreven. Deze wijziging is niet van invloed op gebruikers die gebruikmaken van de gen1-versie van Azure Time Series Insights.
 
 > [!IMPORTANT]
-> Met de updates die in dit artikel worden beschreven, worden alleen de API-versies bijgewerkt die worden gebruikt in uw TSI-omgeving. Deze wijziging is niet gerelateerd aan de nieuwe [JSON afvlakking-en Escape-regels](https://docs.microsoft.com/azure/time-series-insights/concepts-json-flattening-escaping-rules) die zijn geïntroduceerd voor Gen2-omgevingen.
+> Met de updates die in dit artikel worden beschreven, worden alleen de API-versies bijgewerkt die worden gebruikt in uw TSI-omgeving. Deze wijziging is niet gerelateerd aan de nieuwe [JSON afvlakking-en Escape-regels](./concepts-json-flattening-escaping-rules.md) die zijn geïntroduceerd voor Gen2-omgevingen.
 
-De nieuwe API-versie is `2020-07-31` en gebruikt een bijgewerkte syntaxis van de [expressie time series](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
+De nieuwe API-versie is `2020-07-31` en gebruikt een bijgewerkte syntaxis van de [expressie time series](/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 Gebruikers moeten de [tijdreeks model variabelen](./concepts-variables.md), opgeslagen query's, Power bi query's en aangepaste hulp middelen voor het maken van aanroepen naar de API-eind punten migreren. Als u vragen hebt of problemen hebt met betrekking tot het migratie proces, verzendt u een ondersteunings ticket via de Azure Portal en vermeldt u dit document.
 
@@ -84,28 +84,28 @@ Als uw aangepaste toepassing aanroepen naar de volgende REST-eind punten aanroep
 
 - Api's voor time series model
   - Api's voor model instellingen
-    - [Toevoegen](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/modelsettings/get)
-    - [Bijwerken](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/modelsettings/update)
+    - [Ophalen](/rest/api/time-series-insights/dataaccessgen2/modelsettings/get)
+    - [Bijwerken](/rest/api/time-series-insights/dataaccessgen2/modelsettings/update)
   - Exemplaar-Api's
-    - [Alle batch bewerkingen](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)
-    - [List](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/list)
-    - [Zoeken](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/search)
-    - [Voorstellen](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/suggest)
+    - [Alle batch bewerkingen](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)
+    - [List](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/list)
+    - [Zoeken](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/search)
+    - [Voorstellen](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/suggest)
   - Hiërarchie-Api's
-    - [Alle batch bewerkingen](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/executebatch)
-    - [List](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/list)
+    - [Alle batch bewerkingen](/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/executebatch)
+    - [List](/rest/api/time-series-insights/dataaccessgen2/timeserieshierarchies/list)
   - Typen-Api's
-    - [Verwijderen, bewerkingen ophalen](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch)
-    - [List](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/list)
+    - [Verwijderen, bewerkingen ophalen](/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch)
+    - [List](/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/list)
 
-Voor de volgende REST-eind punten moet u de API-versie bijwerken naar `2020-07-31` in de URI en zorgen dat alle exemplaren van de `tsx` eigenschap de bijgewerkte syntaxis van de [expressie time series](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)gebruiken.
+Voor de volgende REST-eind punten moet u de API-versie bijwerken naar `2020-07-31` in de URI en zorgen dat alle exemplaren van de `tsx` eigenschap de bijgewerkte syntaxis van de [expressie time series](/rest/api/time-series-insights/reference-time-series-expression-syntax)gebruiken.
 
 - Typen-Api's
-  - [Put-bewerking](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput)
+  - [Put-bewerking](/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput)
 - Query-API's
-  - [GetEvents](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents)
-  - [GetSeries](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getseries)
-  - [GetAggregateSeries](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)
+  - [GetEvents](/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents)
+  - [GetSeries](/rest/api/time-series-insights/dataaccessgen2/query/execute#getseries)
+  - [GetAggregateSeries](/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)
 
 ### <a name="examples"></a>Voorbeelden
 
@@ -358,7 +358,7 @@ U `value` kunt de ook `coalesce($event['Temp'].Double, toDouble($event['Temp'].L
 
 #### <a name="invalidinput"></a>InvalidInput
 
-Als u de volgende fout ziet, gebruikt u de nieuwe API-versie ( `2020-07-31` ), maar de TSX-syntaxis is niet bijgewerkt. Controleer de syntaxis van de expressie voor de [tijd reeks](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) en de bovenstaande migratie voorbeelden. Zorg ervoor dat alle `tsx` eigenschappen correct zijn bijgewerkt voordat u de API-aanvraag opnieuw verzendt.
+Als u de volgende fout ziet, gebruikt u de nieuwe API-versie ( `2020-07-31` ), maar de TSX-syntaxis is niet bijgewerkt. Controleer de syntaxis van de expressie voor de [tijd reeks](/rest/api/time-series-insights/reference-time-series-expression-syntax) en de bovenstaande migratie voorbeelden. Zorg ervoor dat alle `tsx` eigenschappen correct zijn bijgewerkt voordat u de API-aanvraag opnieuw verzendt.
 
 ```JSON
 {

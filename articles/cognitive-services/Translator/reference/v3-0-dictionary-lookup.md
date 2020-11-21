@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 01/21/2020
 ms.author: swmachan
-ms.openlocfilehash: b2d111f22b8ef36b20b93b65ff1ea6f7b52ea8f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ada9c06f0befbea4b9aa85f95651e96dec595b7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83584736"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021283"
 ---
 # <a name="translator-30-dictionary-lookup"></a>Translator 3,0: opzoeken in woorden lijst
 
@@ -33,18 +33,18 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
-| Query parameter  | Beschrijving |
+| Query parameter  | Description |
 | ------ | ----------- |
 | api-versie <img width=200/>   | **Vereiste para meter**.<br/>De versie van de API die door de client is aangevraagd. Waarde moet `3.0` |
 | from | **Vereiste para meter**.<br/>Geeft de taal van de invoer tekst aan. De bron taal moet een van de [ondersteunde talen](./v3-0-languages.md) zijn die in het `dictionary` bereik zijn opgenomen. |
-| in op   | **Vereiste para meter**.<br/>Hiermee geeft u de taal van de uitvoer tekst op. De doel taal moet een van de [ondersteunde talen](v3-0-languages.md) zijn die in het `dictionary` bereik zijn opgenomen. |
+| tot   | **Vereiste para meter**.<br/>Hiermee geeft u de taal van de uitvoer tekst op. De doel taal moet een van de [ondersteunde talen](v3-0-languages.md) zijn die in het `dictionary` bereik zijn opgenomen. |
 
 
 Aanvraag headers zijn onder andere:
 
 | Kopteksten  | Beschrijving |
 | ------ | ----------- |
-| Verificatieheader(s) <img width=200/>  | **Vereiste aanvraagheader**.<br/>Zie <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">Beschikbare opties voor verificatie</a>. |
+| Verificatieheader(s) <img width=200/>  | **Vereiste aanvraagheader**.<br/>Zie <a href="/azure/cognitive-services/translator/reference/v3-0-reference#authentication">Beschikbare opties voor verificatie</a>. |
 | Content-Type | **Vereiste aanvraagheader**.<br/>Hiermee geeft u het inhoudstype van de payload op. Mogelijke waarden zijn: `application/json` . |
 | Content-Length   | **Vereiste aanvraagheader**.<br/>De lengte van de aanvraagtekst. |
 | X-ClientTraceId   | **Optioneel**.<br/>Een door de client gegenereerde GUID om de aanvraag op unieke wijze te identificeren. U kunt deze header weglaten als u de tracerings-id in de queryreeks opneemt middels een queryparameter met de naam `ClientTraceId`. |
@@ -80,7 +80,7 @@ Een geslaagde reactie is een JSON-matrix met één resultaat voor elke teken ree
 
     * `posTag`: Een teken reeks waarmee deze term wordt gekoppeld aan een deel van een spraak label.
 
-        | Label naam | Beschrijving  |
+        | Label naam | Description  |
         |----------|--------------|
         | Corr      | Bijvoeglijke naamwoorden   |
         | ADV      | Beparameters      |

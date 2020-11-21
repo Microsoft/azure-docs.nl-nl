@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5810bea7920dbfe91a836814124cbe4c7f6f3bee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: edfbbdd1b30cba74cf4f63d6b5e84c2e616e1a0f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653788"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020977"
 ---
 # <a name="azure-time-series-insights-explorer"></a>Azure Time Series Insights Explorer
 
@@ -25,11 +25,11 @@ In dit artikel worden de verschillende functies en opties beschreven die beschik
 
 Om aan de slag te gaan met de Azure Time Series Insights Explorer, moet u het volgende doen:
 
-* Een Azure Time Series Insights Gen2-omgeving hebben ingericht. Lees de [Azure time series Insights Gen2](./time-series-insights-update-create-environment.md) -zelf studie voor meer informatie over het inrichten van een exemplaar.
-* [Geef gegevens toegang](./time-series-insights-data-access.md) tot de Azure time series Insights Gen2-omgeving die u hebt gemaakt voor het account. U kunt ook toegang verlenen aan anderen en aan uzelf.
+* Een Azure Time Series Insights Gen2-omgeving hebben ingericht. Lees de [Azure time series Insights Gen2](./tutorials-set-up-tsi-environment.md) -zelf studie voor meer informatie over het inrichten van een exemplaar.
+* [Geef gegevens toegang](./concepts-access-policies.md) tot de Azure time series Insights Gen2-omgeving die u hebt gemaakt voor het account. U kunt ook toegang verlenen aan anderen en aan uzelf.
 * Voeg een gebeurtenis bron toe aan de Azure Time Series Insights Gen2-omgeving om gegevens naar de omgeving te pushen:
-  * Meer informatie [over verbinding maken met een event hub](./time-series-insights-how-to-add-an-event-source-eventhub.md)
-  * Meer informatie [over verbinding maken met een IOT-hub](./time-series-insights-how-to-add-an-event-source-iothub.md)
+  * Meer informatie [over verbinding maken met een event hub](./how-to-ingest-data-event-hub.md)
+  * Meer informatie [over verbinding maken met een IOT-hub](./how-to-ingest-data-iot-hub.md)
 
 ## <a name="explore-the-azure-time-series-insights-explorer"></a>De Azure Time Series Insights Explorer verkennen
 
@@ -133,7 +133,7 @@ Hier wordt een voor beeld van een **overlappende grafiek** gegeven:
 
   [![De optie overlappende grafieken](media/v2-update-explorer/tsi-preview-explorer-overlapping-chart.png)](media/v2-update-explorer/tsi-preview-explorer-overlapping-chart.png#lightbox)
 
-De knop **meer acties** wordt uitgebreid om de **down load als CSV**weer te geven, **verbinding te maken met Power bi**, **diagram gegevens weer te geven als een tabel**en opties voor **onbewerkte gebeurtenissen te verkennen** .
+De knop **meer acties** wordt uitgebreid om de **down load als CSV** weer te geven, **verbinding te maken met Power bi**, **diagram gegevens weer te geven als een tabel** en opties voor **onbewerkte gebeurtenissen te verkennen** .
 
   [![Optie voor meer acties](media/v2-update-explorer/more-actions-icon.png)](media/v2-update-explorer/more-actions-icon.png#lightbox)
 
@@ -154,13 +154,13 @@ De volgende Webbe sturings elementen zijn beschikbaar in Azure Time Series Insig
 
 1. **Besturings element voor de binnenste datum bereik schuif regelaar**: gebruik de twee eindpunt besturings elementen door ze over de gewenste periode te slepen. Dit binnenste datum bereik wordt beperkt door de schuif regelaar voor het buitenste datum bereik.
 
-1. **Knoppen voor het datum bereik verg Roten**of verkleinen: u kunt uw tijds periode verg Roten of verkleinen door een van de knoppen voor het gewenste interval te selecteren.
+1. **Knoppen voor het datum bereik verg Roten** of verkleinen: u kunt uw tijds periode verg Roten of verkleinen door een van de knoppen voor het gewenste interval te selecteren.
 
 1. **Besturings element voor het samen vouwen van tijds duur**: met dit Webbe sturings element kunt u alle besturings elementen verbergen, behalve de schuif regelaar binnen het bereik van de binnenkant.
 
 1. **Besturings element voor schuif regelaar voor datum bereik**: gebruik de besturings elementen voor het eind punt om het buitenste datum bereik te selecteren. Dit is beschikbaar voor het besturings element binnen het bereik van datums.
 
-1. **Besturings element voor schuif regelaar voor tijd bereik**: met deze optie kunt u snel scha kelen tussen vooraf ingestelde tijdgebonden selecties, zoals de laatste **30 minuten**, de **laatste 12 uur**of een **aangepast bereik**. Als u deze waarde wijzigt, worden ook de beschik bare afdrukbereiken gewijzigd die worden besproken in het hulp programma voor de schuif regelaar.
+1. **Besturings element voor schuif regelaar voor tijd bereik**: met deze optie kunt u snel scha kelen tussen vooraf ingestelde tijdgebonden selecties, zoals de laatste **30 minuten**, de **laatste 12 uur** of een **aangepast bereik**. Als u deze waarde wijzigt, worden ook de beschik bare afdrukbereiken gewijzigd die worden besproken in het hulp programma voor de schuif regelaar.
 
    [![Van en naar selectie paneel](media/v2-update-explorer/to-and-from-element.png)](media/v2-update-explorer/to-and-from-element.png#lightbox)
 
@@ -221,7 +221,7 @@ In het deel venster Editor voor Azure Time Series Insights termen van Gen2 worde
 | `IN` | Teken reeks, BOOL, double, DateTime, time span, NULL | Alle operanden moeten van hetzelfde type zijn of NULL-constante zijn. |
 | `HAS` | Tekenreeks | Aan de rechter kant zijn alleen letterlijke teken reeksen met constanten toegestaan. Lege teken reeks en NULL zijn niet toegestaan. |
 
-Lees de [expressie time series (TSX)](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)voor meer informatie over ondersteunde query bewerkingen en gegevens typen.
+Lees de [expressie time series (TSX)](/rest/api/time-series-insights/reference-time-series-expression-syntax)voor meer informatie over ondersteunde query bewerkingen en gegevens typen.
 
 ### <a name="examples-of-where-clauses"></a>Voor beelden van WHERE-componenten
 
@@ -245,4 +245,4 @@ U kunt elementen weer geven en verbergen in het deel venster grafiek door het zi
 
 * Meer informatie over [gegevens modellering](./concepts-model-overview.md) in azure time series Insights Gen2.
 
-* Meer informatie [over het vaststellen en oplossen van problemen met](./time-series-insights-update-how-to-troubleshoot.md) uw omgeving.
+* Meer informatie [over het vaststellen en oplossen van problemen met](./how-to-diagnose-troubleshoot.md) uw omgeving.

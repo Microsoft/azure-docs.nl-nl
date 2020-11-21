@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: nitinme
-ms.openlocfilehash: 81c4c26f252cdd9eb302a7f8f362c8bf52e48629
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4b7950759914724234ec89e6eaee13b48e735ec9
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91825591"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024310"
 ---
 # <a name="migrate-from-bing-speech-to-the-speech-service"></a>Migreren van Bing Speech naar de speech-service
 
@@ -28,7 +28,7 @@ Een service-abonnements sleutel met één spraak verleent toegang tot de volgend
 * [Spraak naar tekst](speech-to-text.md)
 * [Aangepaste spraak naar tekst ](https://cris.ai)
 * [Tekst-naar-spraak](text-to-speech.md)
-* [Aangepaste tekst naar spraak](how-to-customize-voice-font.md)
+* [Aangepaste tekst naar spraak](./how-to-custom-voice-create-voice.md)
 * [Spraakomzetting](speech-translation.md) (bevat geen [tekstomzetting](../translator/translator-info-overview.md))
 
 De [Speech SDK](speech-sdk.md) is een functionele vervanging voor de Bing speech-client Bibliotheken, maar gebruikt een andere API.
@@ -63,7 +63,7 @@ De speech-service gebruikt een op tijd gebaseerd prijs model (in plaats van een 
 
 Als u of uw organisatie toepassingen in ontwikkeling of productie heeft die gebruikmaken van een Bing Speech-API, moet u ze zo snel mogelijk bijwerken om de spraak service te gebruiken. Raadpleeg de [documentatie](index.yml) van de speech-service voor beschik bare sdk's, code voorbeelden en zelf studies.
 
-De rest- [api's](rest-apis.md) van de speech-service zijn compatibel met de Bing speech-api's. Als u momenteel de Bing Speech REST-Api's gebruikt, hoeft u alleen het REST-eind punt te wijzigen en over te scha kelen naar een sleutel voor een spraak service-abonnement.
+De rest- [api's](./overview.md#reference-docs) van de speech-service zijn compatibel met de Bing speech-api's. Als u momenteel de Bing Speech REST-Api's gebruikt, hoeft u alleen het REST-eind punt te wijzigen en over te scha kelen naar een sleutel voor een spraak service-abonnement.
 
 Als u een Bing Speech-client bibliotheek gebruikt voor een specifieke programmeer taal, moet u voor de migratie naar de [Speech SDK](speech-sdk.md) wijzigingen aanbrengen in uw toepassing, omdat de API anders is. De Speech SDK kan uw code eenvoudiger maken, en u hebt ook toegang tot nieuwe functies. De Speech SDK is beschikbaar in een groot aantal programmeer talen. Api's op alle platforms zijn vergelijkbaar en versnellen de ontwikkeling van meerdere platforms.
 
@@ -72,14 +72,14 @@ De speech-service biedt geen globaal eind punt. Bepaal of uw toepassing efficië
 Om aan de slag te gaan met de Speech SDK:
 
 1. Down load de [spraak-SDK](speech-sdk.md).
-1. Werk met de Quick Start- [hand leidingen](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet) en [zelf studies](how-to-recognize-intents-from-speech-csharp.md)voor de spraakherkennings service. Bekijk ook de [code voorbeelden](samples.md) om ervaring te krijgen met de nieuwe api's.
+1. Werk met de Quick Start- [hand leidingen](./get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnet) en [zelf studies](how-to-recognize-intents-from-speech-csharp.md)voor de spraakherkennings service. Bekijk ook de [code voorbeelden](./speech-sdk.md#sample-source-code) om ervaring te krijgen met de nieuwe api's.
 1. Werk uw toepassing bij om de speech-service te gebruiken.
 
 ## <a name="support"></a>Ondersteuning
 
 Bing Speech klanten contact opnemen met klant ondersteuning door een [ondersteunings ticket](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)te openen. U kunt ook contact met ons opnemen als voor uw ondersteunings [abonnement een technisch ondersteunings plan](https://azure.microsoft.com/support/plans/)nodig is.
 
-Ga naar de [ondersteunings pagina](support.md)voor spraak Services voor spraak service, SDK en API-ondersteuning.
+Ga naar de [ondersteunings pagina](../cognitive-services-support-options.md?context=%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext%253fcontext%253d%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext)voor spraak Services voor spraak service, SDK en API-ondersteuning.
 
 ## <a name="next-steps"></a>Volgende stappen
 

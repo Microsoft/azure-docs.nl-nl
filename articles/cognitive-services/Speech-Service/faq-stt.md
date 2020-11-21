@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: panosper
-ms.openlocfilehash: 0fe5b1350fdcf53eeda11f6de430d8d02a24fdbf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c0b399f84e793d9e762c89dbbd1901bb5a95f26
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397756"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024324"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Veelgestelde vragen over spraak naar tekst
 
-Als u in deze veelgestelde vragen geen antwoorden op uw vragen kunt vinden, kunt u [Andere ondersteunings opties](support.md)bekijken.
+Als u in deze veelgestelde vragen geen antwoorden op uw vragen kunt vinden, kunt u [Andere ondersteunings opties](../cognitive-services-support-options.md?context=%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext%253fcontext%253d%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext)bekijken.
 
 ## <a name="general"></a>Algemeen
 
@@ -29,7 +29,7 @@ Als u in deze veelgestelde vragen geen antwoorden op uw vragen kunt vinden, kunt
 
 **V: waar kan ik beginnen als ik een basis lijn model wil gebruiken?**
 
-**A**: u moet eerst een [abonnements sleutel](overview.md#try-the-speech-service-for-free)ophalen. Als u REST-aanroepen naar de voorgeïmplementeerde basislijn modellen wilt maken, raadpleegt u de [rest api's](rest-apis.md). Als u websockets wilt gebruiken, [downloadt u de SDK](speech-sdk.md).
+**A**: u moet eerst een [abonnements sleutel](overview.md#try-the-speech-service-for-free)ophalen. Als u REST-aanroepen naar de voorgeïmplementeerde basislijn modellen wilt maken, raadpleegt u de [rest api's](./overview.md#reference-docs). Als u websockets wilt gebruiken, [downloadt u de SDK](speech-sdk.md).
 
 **V: moet ik altijd een aangepast spraak model maken?**
 
@@ -167,4 +167,4 @@ De spraak ervaring die is ingebouwd in Microsoft 365, zoals dicteer functie en P
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Problemen oplossen](troubleshooting.md)
-- [Opmerkingen bij de release](releasenotes.md)
+- [Releaseopmerkingen](releasenotes.md)

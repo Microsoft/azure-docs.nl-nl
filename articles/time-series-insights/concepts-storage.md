@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 09/28/2020
 ms.custom: seodec18
-ms.openlocfilehash: b186c2d2c4b5efc8e1e052a63505549e860b5619
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b512a80fcfc26efbe5c008884509aebfd86ed3e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91460825"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020841"
 ---
 # <a name="data-storage"></a>Gegevensopslag
 
@@ -27,7 +27,7 @@ Wanneer u een Azure Time Series Insights Gen2-omgeving maakt, hebt u de volgende
 
 * Koude gegevens opslag:
   * Maak een nieuwe Azure Storage-Resource in het abonnement en de regio die u hebt gekozen voor uw omgeving.
-  * Een bestaand Azure Storage-account koppelen. Deze optie is alleen beschikbaar als u vanuit een Azure Resource Manager- [sjabloon](https://docs.microsoft.com/azure/templates/microsoft.timeseriesinsights/allversions)implementeert en niet zichtbaar is in de Azure Portal.
+  * Een bestaand Azure Storage-account koppelen. Deze optie is alleen beschikbaar als u vanuit een Azure Resource Manager- [sjabloon](/azure/templates/microsoft.timeseriesinsights/allversions)implementeert en niet zichtbaar is in de Azure Portal.
 * Warme gegevens opslag:
   * Een warme Store is optioneel en kan worden ingeschakeld of uitgeschakeld tijdens of na het inrichten. Als u besluit om warme Store op een later tijdstip in te scha kelen en er al gegevens in uw koel winkel staan, raadpleegt u [deze](concepts-storage.md#warm-store-behavior) sectie hieronder om het verwachte gedrag te begrijpen. De Bewaar periode voor de warme Store-gegevens kan 7 tot 31 dagen worden geconfigureerd. Dit kan ook worden aangepast als dat nodig is.
 
@@ -40,14 +40,14 @@ Wanneer een gebeurtenis wordt opgenomen, wordt deze in zowel de warme Store (ind
 
 ## <a name="data-availability"></a>Beschikbaarheid van gegevens
 
-Azure Time Series Insights Gen2 partities en index gegevens voor optimale query prestaties. Gegevens worden beschikbaar gesteld voor het uitvoeren van een query vanuit zowel warme (indien ingeschakeld) als koud opgeslagen na de index. De hoeveelheid gegevens die wordt opgenomen en de doorvoer snelheid per partitie kan van invloed zijn op de beschik baarheid. Bekijk de [doorvoer beperkingen](./concepts-streaming-ingress-throughput-limits.md) van de gebeurtenis bron en [Aanbevolen procedures](./concepts-streaming-ingestion-event-sources.md#streaming-ingestion-best-practices) voor de beste prestaties. U kunt ook een vertragings [waarschuwing](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-environment-mitigate-latency#monitor-latency-and-throttling-with-alerts) configureren om te worden gewaarschuwd als uw omgeving problemen ondervindt bij het verwerken van gegevens.
+Azure Time Series Insights Gen2 partities en index gegevens voor optimale query prestaties. Gegevens worden beschikbaar gesteld voor het uitvoeren van een query vanuit zowel warme (indien ingeschakeld) als koud opgeslagen na de index. De hoeveelheid gegevens die wordt opgenomen en de doorvoer snelheid per partitie kan van invloed zijn op de beschik baarheid. Bekijk de [doorvoer beperkingen](./concepts-streaming-ingress-throughput-limits.md) van de gebeurtenis bron en [Aanbevolen procedures](./concepts-streaming-ingestion-event-sources.md#streaming-ingestion-best-practices) voor de beste prestaties. U kunt ook een vertragings [waarschuwing](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts) configureren om te worden gewaarschuwd als uw omgeving problemen ondervindt bij het verwerken van gegevens.
 
 > [!IMPORTANT]
 > Het kan een periode van Maxi maal 60 seconden duren voordat de gegevens beschikbaar zijn. Als u na 60 seconden een langere latentie ondervindt, kunt u een ondersteunings ticket indienen via de Azure Portal.
 
 ## <a name="warm-store"></a>Warme Store
 
-Gegevens in uw warme archief zijn alleen beschikbaar via de [Time Series query-api's](./time-series-insights-update-tsq.md), de [Azure time series Insights TSI-verkenner](./time-series-insights-update-explorer.md)of de Power bi- [connector](./how-to-connect-power-bi.md). Query's voor warme Stores zijn gratis en er is geen quotum, maar er is een [limiet van 30](https://docs.microsoft.com/rest/api/time-series-insights/reference-api-limits#query-apis---limits) gelijktijdige aanvragen.
+Gegevens in uw warme archief zijn alleen beschikbaar via de [Time Series query-api's](./concepts-query-overview.md), de [Azure time series Insights TSI-verkenner](./concepts-ux-panels.md)of de Power bi- [connector](./how-to-connect-power-bi.md). Query's voor warme Stores zijn gratis en er is geen quotum, maar er is een [limiet van 30](/rest/api/time-series-insights/reference-api-limits#query-apis---limits) gelijktijdige aanvragen.
 
 ### <a name="warm-store-behavior"></a>Gedrag voor warme opslag
 
@@ -77,9 +77,9 @@ Om de query prestaties en de beschik baarheid van gegevens te garanderen, moet u
 
 #### <a name="accessing-cold-store-data"></a>Toegang tot koude Store-gegevens
 
-U hebt niet alleen toegang tot uw gegevens via de Api's van de [Azure time series Insights Explorer](./time-series-insights-update-explorer.md) -en [Time Series-query](./time-series-insights-update-tsq.md), maar u kunt ook uw gegevens rechtstreeks openen vanuit de Parquet-bestanden die zijn opgeslagen in het koel huis. U kunt bijvoorbeeld gegevens in een Jupyter-notebook lezen, transformeren en opschonen en deze vervolgens gebruiken om uw Azure Machine Learning model te trainen in dezelfde Spark-werk stroom.
+U hebt niet alleen toegang tot uw gegevens via de Api's van de [Azure time series Insights Explorer](./concepts-ux-panels.md) -en [Time Series-query](./concepts-query-overview.md), maar u kunt ook uw gegevens rechtstreeks openen vanuit de Parquet-bestanden die zijn opgeslagen in het koel huis. U kunt bijvoorbeeld gegevens in een Jupyter-notebook lezen, transformeren en opschonen en deze vervolgens gebruiken om uw Azure Machine Learning model te trainen in dezelfde Spark-werk stroom.
 
-Als u gegevens rechtstreeks vanuit uw Azure Storage-account wilt openen, moet u lees toegang hebben tot het account dat wordt gebruikt om uw Azure Time Series Insights Gen2-gegevens op te slaan. U kunt vervolgens geselecteerde gegevens lezen op basis van de aanmaak tijd van het Parquet-bestand dat zich bevindt in de `PT=Time` map die hieronder wordt beschreven in de sectie [Parquet-bestands indeling](#parquet-file-format-and-folder-structure) .  Zie [toegang tot de resources van uw opslag account beheren](../storage/blobs/storage-manage-access-to-resources.md)voor meer informatie over het inschakelen van lees toegang tot uw opslag account.
+Als u gegevens rechtstreeks vanuit uw Azure Storage-account wilt openen, moet u lees toegang hebben tot het account dat wordt gebruikt om uw Azure Time Series Insights Gen2-gegevens op te slaan. U kunt vervolgens geselecteerde gegevens lezen op basis van de aanmaak tijd van het Parquet-bestand dat zich bevindt in de `PT=Time` map die hieronder wordt beschreven in de sectie [Parquet-bestands indeling](#parquet-file-format-and-folder-structure) .  Zie [toegang tot de resources van uw opslag account beheren](../storage/blobs/anonymous-read-access-configure.md)voor meer informatie over het inschakelen van lees toegang tot uw opslag account.
 
 #### <a name="data-deletion"></a>Gegevens verwijderen
 
@@ -123,6 +123,6 @@ Azure Time Series Insights Gen2-gebeurtenissen worden als volgt toegewezen aan d
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [gegevens modellering](./time-series-insights-update-tsm.md).
+* Meer informatie over [gegevens modellering](./concepts-model-overview.md).
 
-* Plan uw [Azure time series Insights Gen2-omgeving](./time-series-insights-update-plan.md).
+* Plan uw [Azure time series Insights Gen2-omgeving](./how-to-plan-your-environment.md).

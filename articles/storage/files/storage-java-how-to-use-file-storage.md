@@ -4,47 +4,65 @@ description: Meer informatie over het ontwikkelen van Java-toepassingen en-servi
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/19/2017
+ms.date: 11/18/2020
 ms.custom: devx-track-java
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 977777aff4aa32bf6876e1d573970d71ec71584e
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 25baa278961b93b04e60f2e997b98753cb6cf3ab
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629764"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024106"
 ---
 # <a name="develop-for-azure-files-with-java"></a>Ontwikkelen voor Azure Files met Java
+
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
+
+Meer informatie over de basis beginselen voor het ontwikkelen van Java-toepassingen die gebruikmaken van Azure Files om gegevens op te slaan. Maak een console toepassing en leer basis acties met behulp van Azure Files-Api's:
+
+- Azure-bestands shares maken en verwijderen
+- Directory's maken en verwijderen
+- Bestanden en mappen in een Azure-bestands share opsommen
+- Een bestand uploaden, downloaden en verwijderen
 
 [!INCLUDE [storage-check-out-samples-java](../../../includes/storage-check-out-samples-java.md)]
 
-## <a name="about-this-tutorial"></a>Over deze zelfstudie
-In deze zelf studie wordt gedemonstreerd hoe u Java gebruikt voor het ontwikkelen van toepassingen of services die gebruikmaken van Azure Files om bestands gegevens op te slaan. In deze zelf studie maken we een console toepassing en laten we zien hoe u basis bewerkingen uitvoert met Java en Azure Files:
-
-* Azure-bestands shares maken en verwijderen
-* Directory's maken en verwijderen
-* Bestanden en mappen in een Azure-bestands share opsommen
-* Een bestand uploaden, downloaden en verwijderen
-
-> [!Note]  
-> Omdat Azure Files mogelijk toegankelijk is via SMB, is het mogelijk om toepassingen te schrijven die toegang hebben tot de Azure-bestands share met behulp van de standaard Java-I/O-klassen. In dit artikel wordt beschreven hoe u toepassingen schrijft die gebruikmaken van de Azure Storage Java SDK, die gebruikmaakt van de [Azure Files rest API](/rest/api/storageservices/file-service-rest-api) om te praten met Azure files.
-
 ## <a name="create-a-java-application"></a>Een Java-toepassing maken
-U hebt de Java Development Kit (JDK) en de [Azure Storage SDK voor Java](https://github.com/Azure/azure-storage-java)nodig om de voor beelden te maken. U moet ook een Azure-opslag account hebben gemaakt.
+
+U hebt de Java Development Kit (JDK) en de [Azure Storage SDK voor Java](https://github.com/azure/azure-sdk-for-java)nodig om de voor beelden te maken. U moet ook een Azure-opslag account hebben gemaakt.
 
 ## <a name="set-up-your-application-to-use-azure-files"></a>Uw toepassing instellen voor gebruik Azure Files
-Als u de Azure Storage Api's wilt gebruiken, voegt u de volgende instructie toe aan de bovenkant van het Java-bestand waar u van plan bent om toegang te krijgen tot de opslag service.
+
+Als u de Azure Files-Api's wilt gebruiken, voegt u de volgende code toe boven aan het Java-bestand van waaruit u toegang wilt krijgen tot Azure Files.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_ImportStatements":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
 
 ```java
-// Include the following imports to use blob APIs.
+// Include the following imports to use Azure Files APIs v11
 import com.microsoft.azure.storage.*;
 import com.microsoft.azure.storage.file.*;
 ```
 
+---
+
 ## <a name="set-up-an-azure-storage-connection-string"></a>Een Azure Storage-connection string instellen
-Als u Azure Files wilt gebruiken, moet u verbinding maken met uw Azure-opslag account. De eerste stap is het configureren van een connection string, dat we gebruiken om verbinding te maken met uw opslag account. We gaan nu een statische variabele definiëren.
+
+Als u Azure Files wilt gebruiken, moet u verbinding maken met uw Azure-opslag account. Configureer een connection string en gebruik het om verbinding te maken met uw opslag account. Definieer een statische variabele voor de connection string.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+Vervang *\<storage_account_name\>* en *\<storage_account_key\>* door de werkelijke waarden voor uw opslag account.
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_ConnectionString":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
+
+Vervang *your_storage_account_name* en *your_storage_account_key* door de werkelijke waarden voor uw opslag account.
 
 ```java
 // Configure the connection-string with your values
@@ -54,13 +72,19 @@ public static final String storageConnectionString =
     "AccountKey=your_storage_account_key";
 ```
 
-> [!NOTE]
-> Vervang your_storage_account_name en your_storage_account_key door de werkelijke waarden voor uw opslag account.
-> 
-> 
+---
 
-## <a name="connecting-to-an-azure-storage-account"></a>Verbinding maken met een Azure Storage-account
-Als u verbinding wilt maken met uw opslag account, moet u het **Cloud Storage account** -object gebruiken om een Connection String door te geven aan de methode **parse** .
+## <a name="access-azure-files-storage"></a>Toegang tot Azure Files Storage
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+Maak een [ShareClient](/java/api/com.azure.storage.file.share.shareclient) -object om toegang te krijgen tot Azure files. Gebruik de klasse [ShareClientBuilder](/java/api/com.azure.storage.file.share.shareclientbuilder) om een nieuw **ShareClient** -object te maken.
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_createClient":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
+
+Als u toegang wilt krijgen tot uw opslag account, gebruikt u het **Cloud Storage account** -object en geeft u de connection string door aan de methode **parse** .
 
 ```java
 // Use the CloudStorageAccount object to connect to your storage account
@@ -73,8 +97,21 @@ try {
 
 **Cloud Storage account. parse** genereert een InvalidKeyException, zodat u deze in een try/catch-blok moet plaatsen.
 
-## <a name="create-an-azure-file-share"></a>Een Azure-bestandsshare maken
-Alle bestanden en mappen in Azure Files bevinden zich in een container met de naam **share**. Uw opslag account kan zoveel shares bevatten als uw account capaciteit toestaat. Als u toegang wilt krijgen tot een share en de inhoud ervan, moet u een Azure Files-client gebruiken.
+---
+
+## <a name="create-a-file-share"></a>Een bestandsshare maken
+
+Alle bestanden en mappen in Azure Files worden opgeslagen in een container die een share wordt genoemd.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+De methode [ShareClient. Create](/java/api/com.azure.storage.file.share.shareclient.create) genereert een uitzonde ring als de share al bestaat. Plaats de aanroep om in een blok te **maken** `try/catch` en de uitzonde ring af te handelen.
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_createFileShare":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
+
+Maak een Azure Files-client om toegang te krijgen tot een share en de inhoud ervan.
 
 ```java
 // Create the Azure Files client.
@@ -88,7 +125,7 @@ Met behulp van de Azure Files-client kunt u vervolgens een verwijzing naar een s
 CloudFileShare share = fileClient.getShareReference("sampleshare");
 ```
 
-Als u de share daad werkelijk wilt maken, gebruikt u de methode **createIfNotExists** van het object CloudFileShare.
+Als u de share daad werkelijk wilt maken, gebruikt u de methode **createIfNotExists** van het object **CloudFileShare** .
 
 ```java
 if (share.createIfNotExists()) {
@@ -96,10 +133,23 @@ if (share.createIfNotExists()) {
 }
 ```
 
-Op dit moment bevat **share** een verwijzing naar een share met de naam **sampleshare**.
+Op dit moment bevat **share** een verwijzing naar een share met de naam **voorbeeld share**.
 
-## <a name="delete-an-azure-file-share"></a>Een Azure-bestands share verwijderen
-Het verwijderen van een share wordt uitgevoerd door de methode **deleteIfExists** aan te roepen voor een CloudFileShare-object. Hier volgt een voor beeld van een code die dat doet.
+---
+
+## <a name="delete-a-file-share"></a>Een bestandsshare verwijderen
+
+Met de volgende voorbeeld code wordt een bestands share verwijderd.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+Verwijder een share door de methode [ShareClient. Delete](/java/api/com.azure.storage.file.share.shareclient.delete) aan te roepen.
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_deleteFileShare":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
+
+Verwijder een share door de methode **deleteIfExists** aan te roepen voor een **CloudFileShare** -object.
 
 ```java
 try
@@ -121,8 +171,21 @@ try
 }
 ```
 
+---
+
 ## <a name="create-a-directory"></a>Een map maken
-U kunt opslag ook indelen door bestanden in submappen te plaatsen in plaats van deze allemaal in de hoofdmap. Met Azure Files kunt u zoveel mappen maken als uw account toestaat. Met de onderstaande code wordt een submap gemaakt met de naam **sampledir** onder de hoofdmap.
+
+Beheer opslag door bestanden in submappen in te voegen in plaats van deze allemaal in de hoofdmap te plaatsen.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+Met de volgende code wordt een directory gemaakt door [ShareDirectoryClient. Create](/java/api/com.azure.storage.file.share.sharedirectoryclient.create)aan te roepen. De voorbeeld methode retourneert een `Boolean` waarde die aangeeft of de Directory is gemaakt.
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_createDirectory":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
+
+Met de volgende code wordt een submap gemaakt met de naam **sampledir** onder de hoofdmap.
 
 ```java
 //Get a reference to the root directory for the share.
@@ -138,8 +201,19 @@ if (sampleDir.createIfNotExists()) {
 }
 ```
 
+---
+
 ## <a name="delete-a-directory"></a>Een map verwijderen
-Het verwijderen van een directory is een eenvoudige taak, hoewel u er zeker van moet zijn dat u geen map kunt verwijderen die nog bestanden of andere mappen bevat.
+
+Het verwijderen van een directory is een eenvoudige taak. U kunt geen map verwijderen die nog bestanden of submappen bevat.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+De methode [ShareDirectoryClient. Delete](/java/api/com.azure.storage.file.share.sharedirectoryclient.delete) genereert een uitzonde ring als de map niet bestaat of niet leeg is. De aanroep **verwijderen** uit een `try/catch` blok en de uitzonde ring afhandelen.
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_deleteDirectory":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
 
 ```java
 // Get a reference to the root directory for the share.
@@ -154,8 +228,19 @@ if ( containerDir.deleteIfExists() ) {
 }
 ```
 
+---
+
 ## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>Bestanden en mappen in een Azure-bestands share opsommen
-U kunt eenvoudig een lijst met bestanden en mappen in een share verkrijgen door **listFilesAndDirectories** aan te roepen op een CloudFileDirectory-verwijzing. De-methode retourneert een lijst met ListFileItem-objecten die u kunt herhalen. Met de volgende code wordt bijvoorbeeld een lijst met bestanden en mappen in de hoofdmap weer geven.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+Een lijst met bestanden en mappen ophalen door het aanroepen van [ShareDirectoryClient. listFilesAndDirectories](/java/api/com.azure.storage.file.share.sharedirectoryclient.listfilesanddirectories). De-methode retourneert een lijst met [ShareFileItem](/java/api/com.azure.storage.file.share.models.sharefileitem) -objecten waarop u kunt herhalen. De volgende code bevat een lijst met bestanden en mappen in de map die is opgegeven door de para meter *mapnaam* .
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_enumerateFilesAndDirs":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
+
+Een lijst met bestanden en mappen ophalen door **listFilesAndDirectories** op een **CloudFileDirectory** -verwijzing aan te roepen. De-methode retourneert een lijst met **ListFileItem** -objecten waarop u kunt herhalen. De volgende code bevat een lijst met bestanden en mappen in de hoofdmap.
 
 ```java
 //Get a reference to the root directory for the share.
@@ -166,10 +251,21 @@ for ( ListFileItem fileItem : rootDir.listFilesAndDirectories() ) {
 }
 ```
 
-## <a name="upload-a-file"></a>Bestand uploaden
-In deze sectie leert u hoe u een bestand van de lokale opslag uploadt naar de hoofdmap van een share.
+---
 
-De eerste stap bij het uploaden van een bestand is het verkrijgen van een verwijzing naar de map waar deze zich moet bevinden. U doet dit door de methode **getRootDirectoryReference** van het object share aan te roepen.
+## <a name="upload-a-file"></a>Bestand uploaden
+
+Meer informatie over het uploaden van een bestand uit de lokale opslag.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+Met de volgende code wordt een lokaal bestand geüpload naar Azure File Storage door de methode [ShareFileClient. uploadFromFile](/java/api/com.azure.storage.file.share.sharefileclient.uploadfromfile) aan te roepen. De volgende voorbeeld methode retourneert een `Boolean` waarde die aangeeft of het opgegeven bestand is geüpload.
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_uploadFile":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
+
+Haal een verwijzing op naar de map waarin het bestand wordt geüpload door de methode **getRootDirectoryReference** aan te roepen voor het share-object.
 
 ```java
 //Get a reference to the root directory for the share.
@@ -179,15 +275,28 @@ CloudFileDirectory rootDir = share.getRootDirectoryReference();
 Nu u een verwijzing naar de hoofdmap van de share hebt, kunt u een bestand uploaden naar de map met de volgende code.
 
 ```java
-        // Define the path to a local file.
-        final String filePath = "C:\\temp\\Readme.txt";
-    
-        CloudFile cloudFile = rootDir.getFileReference("Readme.txt");
-        cloudFile.uploadFromFile(filePath);
+// Define the path to a local file.
+final String filePath = "C:\\temp\\Readme.txt";
+
+CloudFile cloudFile = rootDir.getFileReference("Readme.txt");
+cloudFile.uploadFromFile(filePath);
 ```
 
+---
+
 ## <a name="download-a-file"></a>Een bestand downloaden
-Een van de frequentere bewerkingen die u kunt uitvoeren op Azure Files is het downloaden van bestanden. In het volgende voor beeld wordt SampleFile.txt door de code gedownload en wordt de inhoud ervan weer gegeven.
+
+Een van de vaker voorkomende bewerkingen is het downloaden van bestanden van Azure Files opslag.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+In het volgende voor beeld wordt het opgegeven bestand gedownload naar de lokale map die is opgegeven in de para meter *destDir* . De voorbeeld methode zorgt ervoor dat de gedownloade bestands naam uniek is door in afwachting van de datum en tijd.
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_downloadFile":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
+
+In het volgende voor beeld wordt SampleFile.txt gedownload en wordt de inhoud ervan weer gegeven.
 
 ```java
 //Get a reference to the root directory for the share.
@@ -203,8 +312,21 @@ CloudFile file = sampleDir.getFileReference("SampleFile.txt");
 System.out.println(file.downloadText());
 ```
 
+---
+
 ## <a name="delete-a-file"></a>Een bestand verwijderen
-Een andere algemene Azure Files bewerking is het verwijderen van een bestand. Met de volgende code wordt een bestand verwijderd met de naam SampleFile.txt opgeslagen in een map met de naam **sampledir**.
+
+Een andere algemene Azure Files bewerking is het verwijderen van een bestand.
+
+# <a name="java-v12"></a>[Java-V12](#tab/java)
+
+Met de volgende code wordt het opgegeven bestand verwijderd. In het voor beeld wordt eerst een [ShareDirectoryClient](/java/api/com.azure.storage.file.share.sharedirectoryclient) gemaakt op basis van de para meter *mapnaam* . Vervolgens krijgt de code een [ShareFileClient](/java/api/com.azure.storage.file.share.sharefileclient) van de Directory-client, op basis van de *filename* -para meter. Ten slotte roept de voorbeeld methode [ShareFileClient. Delete](/java/api/com.azure.storage.file.share.sharefileclient.delete) aan om het bestand te verwijderen.
+
+:::code language="java" source="~/azure-storage-snippets/files/howto/java/java-v12/files-howto-v12/src/main/java/com/files/howto/App.java" id="Snippet_deleteFile":::
+
+# <a name="java-v11"></a>[Java-V11](#tab/java11)
+
+Met de volgende code wordt een bestand verwijderd met de naam SampleFile.txt opgeslagen in een map met de naam **sampledir**.
 
 ```java
 // Get a reference to the root directory for the share.
@@ -222,14 +344,17 @@ if ( file.deleteIfExists() ) {
 }
 ```
 
+---
+
 ## <a name="next-steps"></a>Volgende stappen
+
 Als u meer wilt weten over andere Azure Storage-Api's, volgt u deze koppelingen.
 
-* [Azure voor Java-Ontwikkel aars](/java/azure)/)
-* [Azure Storage SDK voor Java](https://github.com/azure/azure-storage-java)
-* [Azure Storage SDK voor Android](https://github.com/azure/azure-storage-android)
-* [Azure Storage Client SDK-referentie](https://javadoc.io/doc/com.microsoft.azure/azure-core/0.8.0/index.html)
-* [REST-API voor Azure Storage-services](/rest/api/storageservices/)
-* [Blog van het Azure Storage-team](/archive/blogs/windowsazurestorage/)
-* [Gegevens overdragen met het AzCopy-hulp programma van Command-Line](../common/storage-use-azcopy-v10.md)
-* [Problemen met betrekking tot Azure Files oplossen - Windows](storage-troubleshoot-windows-file-connection-problems.md)
+- [Azure voor Java-Ontwikkel aars](/azure/developer/java)
+- [Azure SDK voor Java](https://github.com/azure/azure-sdk-for-java)
+- [Azure SDK voor Android](https://github.com/azure/azure-sdk-for-android)
+- [Naslag informatie voor de Azure file share-client bibliotheek voor Java SDK](/java/api/overview/azure/storage-file-share-readme)
+- [REST-API voor Azure Storage-services](/rest/api/storageservices/)
+- [Blog van het Azure Storage-team](https://azure.microsoft.com/blog/topics/storage-backup-and-recovery/)
+- [Gegevens overdragen met het AzCopy-hulp programma van Command-Line](../common/storage-use-azcopy-v10.md)
+- [Problemen met betrekking tot Azure Files oplossen - Windows](storage-troubleshoot-windows-file-connection-problems.md)

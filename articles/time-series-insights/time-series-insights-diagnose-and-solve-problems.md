@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: troubleshooting
 ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 231f2e4df1445c60378ac06aab0d0e56f410c1c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15f2ff5aaa1d731c13125d0a3ab4ac32acb9276c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91530133"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023272"
 ---
 # <a name="diagnose-and-solve-issues-in-your-azure-time-series-insights-gen1-environment"></a>Problemen vaststellen en oplossen in uw Azure Time Series Insights gen1-omgeving
 
@@ -37,7 +37,7 @@ Als er geen gegevens worden weer gegeven in de [Azure time series Insights Explo
 
 ### <a name="cause-a-event-source-data-isnt-in-json-format"></a>Oorzaak van een: gebeurtenis bron gegevens bevindt zich niet in JSON-indeling
 
-Azure Time Series Insights ondersteunt alleen JSON-gegevens. Zie [ondersteunde JSON-shapes](./how-to-shape-query-json.md)voor json-voor beelden.
+Azure Time Series Insights ondersteunt alleen JSON-gegevens. Zie [ondersteunde JSON-shapes](./concepts-json-flattening-escaping-rules.md)voor json-voor beelden.
 
 ### <a name="cause-b-the-event-source-key-is-missing-a-required-permission"></a>Oorzaak B: er ontbreekt een vereiste machtiging voor de bron sleutel van de gebeurtenis
 
@@ -85,7 +85,7 @@ Stel dat er een omgeving is waarin berichten van een Event Hub worden opgenomen.
 
 Een S1-SKU-omgeving met een capaciteit van 3 kan per minuut slechts 2.100 gebeurtenissen binnenkomen (1.000.000 gebeurtenissen per dag = 700 gebeurtenissen per minuut bij drie eenheden = 2.100 gebeurtenissen per minuut).
 
-Zie [ondersteunde JSON-shapes](./how-to-shape-query-json.md)voor meer informatie over hoe afvlakking logisch werkt.
+Zie [ondersteunde JSON-shapes](./concepts-json-flattening-escaping-rules.md)voor meer informatie over hoe afvlakking logisch werkt.
 
 #### <a name="recommended-resolutions-for-excessive-throttling"></a>Aanbevolen oplossingen voor buitensporige beperking
 
@@ -127,7 +127,7 @@ Houd er rekening mee dat de naam van de tijds tempel eigenschap hoofdletter gevo
 
 De eenvoudigste manier om ervoor te zorgen dat de naam van de tijds tempel eigenschap wordt vastgelegd en correct werkt, is door de Azure Time Series Insights Explorer te gebruiken. Selecteer in de Azure Time Series Insights Explorer, in de grafiek, een periode nadat u de naam van de tijds tempel eigenschap hebt ingevoerd. Klik met de rechter muisknop op de selectie en selecteer vervolgens **gebeurtenissen verkennen**.
 
-De eerste kolomkop moet de naam van de eigenschap time stamp zijn. Naast het **tijds tempel**van het woord **($TS)** wordt weer gegeven.
+De eerste kolomkop moet de naam van de eigenschap time stamp zijn. Naast het **tijds tempel** van het woord **($TS)** wordt weer gegeven.
 
 De volgende waarden worden niet weer gegeven:
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 1c9b0b48c7862990cfa2c8ba38bde0851058a228
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49d9b91df896646da7bf36e077d9f3c9187137dd
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86023020"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021793"
 ---
 # <a name="debug-errors-when-running-a-custom-commands-application"></a>Fouten opsporen bij het uitvoeren van een toepassing voor aangepaste opdrachten
 
@@ -86,13 +86,13 @@ Language Understanding (LUIS) heeft limieten voor resource gebruik. Meestal is d
 
     Voeg een Voorspellings bron toe aan uw aangepaste opdrachten voor de toepassing: 
     1. Ga naar **instellingen**, Luis-resource
-    1. Kies een Voorspellings bron van de **Voorspellings bron**of klik op **nieuwe resource maken** 
+    1. Kies een Voorspellings bron van de **Voorspellings bron** of klik op **nieuwe resource maken** 
 
 - De LUIS-Voorspellings resource overschrijdt de limiet
 
     Als u een overf0-Voorspellings resource hebt, heeft deze een limiet van 10 duizend/maand, 5 query's per seconde.
 
-Raadpleeg voor meer informatie over LUIS-resource limieten [Language Understanding resource gebruik en-limiet](https://docs.microsoft.com/azure/cognitive-services/luis/luis-limits#resource-usage-and-limits)
+Raadpleeg voor meer informatie over LUIS-resource limieten [Language Understanding resource gebruik en-limiet](../luis/luis-limits.md#resource-usage-and-limits)
 
 ### <a name="connection-to-the-recognizer-failed"></a>De verbinding met de herkenner is mislukt
 Dit betekent meestal dat er een tijdelijke verbindings fout is opgetreden bij het Language Understanding (LUIS) Recognizer. Probeer het opnieuw en het probleem moet worden opgelost.
@@ -123,7 +123,7 @@ Onverwachte reacties kunnen meerdere oorzaken hebben. Enkele controles om te beg
 
     De nauw keurigheid van de LUIS-herkenning kan worden beïnvloed wanneer twee opdrachten soort gelijke intentie-en voorbeeld zinnen delen. U kunt de functionaliteit van opdrachten en voorbeeld zinnen zo DISTINCT mogelijk maken.
 
-    Raadpleeg [LUIS best practice](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-best-practices)voor Best practice om de nauw keurigheid van de herkenning te verbeteren.
+    Raadpleeg [LUIS best practice](../luis/luis-concept-best-practices.md)voor Best practice om de nauw keurigheid van de herkenning te verbeteren.
 
 - Dialoog venster is geannuleerd
     

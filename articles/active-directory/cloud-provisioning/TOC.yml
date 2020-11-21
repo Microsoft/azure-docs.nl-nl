@@ -19,7 +19,7 @@
 - name: Concepten
   items:
     - name: Wat is wachtwoord-hashsynchronisatie?
-      href: ../hybrid/whatis-phs.md?context=azure%2factive-directory%2fcloud-provisioning%2fcontext%2fcloud-provisioning-context
+      href: ../hybrid/whatis-phs.md?context=%2fazure%2factive-directory%2fcloud-provisioning%2fcontext%2fcloud-provisioning-context
     - name: 'Informatie over het Azure AD-schema, kenmerken en expressies'
       href: concept-attributes.md
     - name: Expressies schrijven voor kenmerktoewijzingen in Azure Active Directory
@@ -63,10 +63,10 @@
 - name: Naslaginformatie
   items:
     - name: Versiegeschiedenis voor de agent voor Azure AD Connect-cloudinrichting
-      href: ../app-provisioning/provisioning-agent-release-version-history.md?context=azure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context
+      href: ../app-provisioning/provisioning-agent-release-version-history.md?context=%2fazure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context
     - name: Veelgestelde vragen over Azure AD Connect-cloudinrichting
       href: reference-cloud-provisioning-faq.md
     - name: Kenmerken die worden gesynchroniseerd
-      href: ../hybrid/reference-connect-sync-attributes-synchronized.md?context=azure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context
+      href: ../hybrid/reference-connect-sync-attributes-synchronized.md?context=%2fazure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context
     - name: Eenvoudige Active Directory en Azure AD-omgeving
       href: tutorial-basic-ad-azure.md

@@ -11,12 +11,12 @@ metadata:
   author: gvashishtha
   ms.author: gopalv
   ms.date: 09/13/2019
-  ms.openlocfilehash: 8405c652a749f560fd06754830ef46692e1f8db4
-  ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+  ms.openlocfilehash: 6cce3a1c8ec5c330c84009a8c20cbddd769b129c
+  ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/04/2020
-  ms.locfileid: "93314795"
+  ms.lasthandoff: 11/20/2020
+  ms.locfileid: "94985770"
 landingContent:
 - title: Aan de slag met uw Data Science Virtual Machine
   linkLists:
@@ -55,4 +55,4 @@ landingContent:
     - text: Azure Machine Learning-rekeninstantie
       url: ../concept-compute-instance.md
     - text: Onze ML-producten vergelijken
-      url: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure%252fmachine-learning%252fstudio%252fcontext%252fml-context
+      url: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=%2fazure%2fmachine-learning%2fstudio%2fcontext%2fml-context

@@ -4,12 +4,12 @@
   items:
     - name: 'Azure AD-gebruikers, -groepen, -licenties en -rollen'
       href: directory-overview-user-model.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Gebruikers toevoegen aan Azure AD
-      href: ../fundamentals/add-users-azure-active-directory.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      href: ../fundamentals/add-users-azure-active-directory.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - name: Licenties toewijzen aan gebruikers
-      href: /azure/active-directory/fundamentals/license-users-groups?context=azure/active-directory/enterprise-users/context/ugr-context
+      href: /azure/active-directory/fundamentals/license-users-groups?context=%2fazure/active-directory/enterprise-users/context/ugr-context
     - name: Verlooptijd van groepen instellen
       href: groups-quickstart-expiration.md
     - name: Naamgevingsbeleid voor groepen instellen
@@ -22,34 +22,34 @@
   expanded: true
   items:
     - name: Standaardgebruikersmachtigingen vergelijken
-      href: ../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      href: ../fundamentals/users-default-permissions.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - name: Basisprincipes van groepslicenties
-      href: ../fundamentals/active-directory-licensing-whatis-azure-portal.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      href: ../fundamentals/active-directory-licensing-whatis-azure-portal.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - name: Toegang beheren met groepen
-      href: ../fundamentals/active-directory-manage-groups.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      href: ../fundamentals/active-directory-manage-groups.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
 - name: Instructiegidsen
   expanded: true
   items:
     - name: Gebruikers beheren
       items:
         - name: Gebruikers maken
-          href: ../fundamentals/add-users-azure-active-directory.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/add-users-azure-active-directory.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Gebruikers bulksgewijs maken
           href: users-bulk-add.md
         - name: Gebruikersprofielen beheren
-          href: ../fundamentals/active-directory-users-profile-azure-portal.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-users-profile-azure-portal.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Gebruikersgegevens downloaden
           href: users-bulk-download.md
         - name: Gebruikersaccounts delen
           href: users-sharing-accounts.md
         - name: Gebruikers aan beheerdersrollen toewijzen
-          href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Verbeteringen voor gebruikersbeheer
           href: users-search-enhanced.md
         - name: Gebruikers bulksgewijs verwijderen
           href: users-bulk-delete.md
         - name: Een verwijderde gebruiker herstellen
-          href: ../fundamentals/active-directory-users-restore.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-users-restore.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Gebruikers bulksgewijs herstellen
           href: users-bulk-restore.md
         - name: De toegang van een gebruiker intrekken
@@ -57,17 +57,17 @@
         - name: Een account in een niet-beheerde directory sluiten
           href: users-close-account.md
         - name: Gastgebruikers toevoegen
-          href: /azure/active-directory/b2b/what-is-b2b?context=azure/active-directory/enterprise-users/context/ugr-context
+          href: /azure/active-directory/b2b/what-is-b2b?context=%2fazure/active-directory/enterprise-users/context/ugr-context
         - name: Rol toewijzen aan gastgebruiker
-          href: /azure/active-directory/b2b/add-guest-to-role?context=azure/active-directory/enterprise-users/context/ugr-context
+          href: /azure/active-directory/b2b/add-guest-to-role?context=%2fazure/active-directory/enterprise-users/context/ugr-context
         - name: Toegang van gastgebruikers beperken
           href: users-restrict-guest-permissions.md
         - name: Dynamische groepen en gasten
-          href: /azure/active-directory/b2b/use-dynamic-groups?context=azure/active-directory/enterprise-users/context/ugr-context
+          href: /azure/active-directory/b2b/use-dynamic-groups?context=%2fazure/active-directory/enterprise-users/context/ugr-context
     - name: Uw organisatie beheren
       items:
         - name: Azure AD-organisaties
-          href: ../fundamentals/active-directory-whatis.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-whatis.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Domeinnamen beheren
           href: domains-manage.md
         - name: Subdomeinen verifiëren als beheerd
@@ -81,13 +81,13 @@
         - name: Een directory overnemen
           href: domains-admin-takeover.md
         - name: Azure AD Connect
-          href: ../hybrid/whatis-hybrid-identity.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../hybrid/whatis-hybrid-identity.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - name: Groepen beheren
       items:
         - name: Toegang beheren met groepen
-          href: ../fundamentals/active-directory-manage-groups.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-manage-groups.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Groep maken (Azure-portal)
-          href: ../fundamentals/active-directory-groups-create-azure-portal.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-groups-create-azure-portal.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Groepen beheren met PowerShell voor Graph (v2)
           href: groups-settings-v2-cmdlets.md
         - name: Groepen beheren met PowerShell MSOnline
@@ -95,7 +95,7 @@
         - name: Groeps- en ledenlijsten zoeken
           href: groups-members-owners-search.md
         - name: Groepsleden toevoegen of verwijderen
-          href: ../fundamentals/active-directory-groups-members-azure-portal.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-groups-members-azure-portal.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Dynamische groepen
           items:
             - name: Een dynamische groep maken
@@ -117,11 +117,11 @@
         - name: Verwijderde groepen herstellen
           href: groups-restore-deleted.md
         - name: Groepsinstellingen beheren
-          href: ../fundamentals/active-directory-groups-settings-azure-portal.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-groups-settings-azure-portal.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Eigenaren van groepen beheren
-          href: ../fundamentals/active-directory-accessmanagement-managing-group-owners.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-accessmanagement-managing-group-owners.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Groepen in groepen beheren
-          href: ../fundamentals/active-directory-groups-membership-azure-portal.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-groups-membership-azure-portal.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Groepstoegang tot SaaS-apps toevoegen
           href: groups-saasapps.md
         - name: Naamgevingsbeleid voor groepen instellen
@@ -135,7 +135,7 @@
     - name: Licenties toewijzen
       items:
         - name: Licenties toewijzen aan gebruikers
-          href: ../fundamentals/license-users-groups.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/license-users-groups.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Licenties toewijzen aan een groep
           href: licensing-groups-assign.md
         - name: Problemen met groepslicenties oplossen
@@ -153,7 +153,7 @@
     - name: Aanmelding beheren
       items:
         - name: Bedrijfshuisstijl aanpassen
-          href: ../fundamentals/customize-branding.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/customize-branding.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Aanmeldingsopties
           href: signin-account-support.md
         - name: Home Realm Discovery
@@ -167,7 +167,7 @@
     - name: Problemen oplossen
       items:
         - name: Ondersteuning voor Azure AD vragen
-          href: ../fundamentals/active-directory-troubleshooting-support-howto.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+          href: ../fundamentals/active-directory-troubleshooting-support-howto.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Problemen met groepen oplossen
           href: groups-troubleshooting.md
         - name: Problemen met groepslicenties oplossen

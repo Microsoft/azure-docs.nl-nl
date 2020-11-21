@@ -7,7 +7,7 @@
       displayName: overview
       href: studio-classic-overview.md
     - name: Onze ML-producten vergelijken
-      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/classic/context/ml-context
+      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=%2fazure/machine-learning/classic/context/ml-context
 - name: Snelstartgidsen
   items:
     - name: Uw eerste experiment opzetten

@@ -2,7 +2,7 @@
   items:
     - name: Aan de slag met Azure
       href: azure-operations-guide.md
-    - name: Snelstartgidsen
+    - name: Quickstarts
       items:
         - name: Virtual Machines
           items:
@@ -32,24 +32,24 @@
               href: ../../site-recovery/azure-to-azure-quickstart.md
     - name: Zelfstudies
       items:
-        - name: Virtuele machines
+        - name: Virtual Machines
           items:
             - name: Een virtuele Windows-machine maken/beheren
               href: ../../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
             - name: Virtuele Linux-machines maken/beheren
               href: ../../virtual-machines/linux/tutorial-manage-vm.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
             - name: Jenkins CI/CD Pipeline
-              href: /azure/developer/jenkins/pipeline-with-github-and-docker?toc=%252fazure%252fguides%252foperations%252ftoc.json
+              href: /azure/developer/jenkins/pipeline-with-github-and-docker?toc=%2fazure%2fguides%2foperations%2ftoc.json
             - name: Taakverdelingen maken voor virtuele machines
               href: ../../virtual-machines/linux/tutorial-load-balancer.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
             - name: Azure Resource Manager-sjablonen maken
-              href: ../../azure-resource-manager/templates/template-syntax.md?toc=%252fazure%252fguides%252foperations%252ftoc.json
+              href: ../../azure-resource-manager/templates/template-syntax.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
             - name: Back-ups van VM's maken op schaal
               href: ../../backup/tutorial-backup-vm-at-scale.md
     - name: Handleidingen
       items:
         - name: Uw Azure-factuur en de dagelijkse gebruiksgegevens downloaden
-          href: ../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md?toc=%252fazure%252fguides%252foperations%252ftoc.json
+          href: ../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
     - name: Resources
       items:
         - name: Azure-productcatalogus
@@ -60,4 +60,4 @@
           href: 'https://azure.microsoft.com/pricing/calculator/'
         - name: Overzicht van Microsoft Azure Portal
           href: 'https://azure.microsoft.com/documentation/articles/azure-portal-overview/'
-    - name: Verwijzingen
+    - name: Referenties

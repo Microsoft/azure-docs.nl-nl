@@ -12,12 +12,12 @@ metadata:
   title: Documentatie voor Language Understanding (LUIS)
   titleSuffix: Azure Cognitive Services
   description: Met de Language Understanding-service (LUIS) begrijpt uw toepassing wat een persoon in zijn eigen woorden wilt. Met behulp van machine learning geeft LUIS ontwikkelaars de mogelijkheid om toepassingen te ontwikkelen die gebruikersinvoer in een natuurlijke taal ontvangen en hieraan betekenis geven.
-  ms.openlocfilehash: 3bae2e6e0a79dbc0106dc71a9510aa4dc318650c
-  ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+  ms.openlocfilehash: ff928f1879f8cfd356fa020ff6afaa68b72f63c5
+  ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/22/2020
-  ms.locfileid: "92364181"
+  ms.lasthandoff: 11/21/2020
+  ms.locfileid: "95019378"
 landingContent:
 - title: Over Language Understanding (LUIS)
   linkLists:
@@ -70,7 +70,7 @@ landingContent:
     - text: Intentie toevoegen met voorbeelduitingen
       url: luis-how-to-add-intents.md
     - text: Entiteiten toevoegen
-      url: luis-how-to-add-example-utterances.md
+      url: ./luis-how-to-add-entities.md
     - text: Een woordgroepenlijstfunctie toevoegen
       url: luis-how-to-add-features.md
 - title: Versie, trainen, testen en publiceren
@@ -78,7 +78,7 @@ landingContent:
   - linkListType: concept
     links:
     - text: Versiebeheer
-      url: luis-concept-version.md
+      url: ./luis-concept-app-iteration.md
     - text: Interactief testen
       url: luis-concept-test.md
     - text: Batchgewijs testen
@@ -110,15 +110,15 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Met C# met REST
-      url: luis-get-started-cs-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
     - text: Met Go met REST
-      url: luis-get-started-go-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
     - text: Met Java met REST
-      url: luis-get-started-java-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
     - text: Met Node.js met REST
-      url: luis-get-started-node-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
     - text: Met Python met REST
-      url: luis-get-started-python-get-intent.md
+      url: ./luis-get-started-get-intent-from-rest.md
 - title: Naslaginformatie
   linkLists:
   - linkListType: reference

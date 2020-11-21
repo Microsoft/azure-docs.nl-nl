@@ -5,7 +5,7 @@
   items:
     - name: Wat zijn Azure-wachtrijen?
       href: storage-queues-introduction.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Wachtrijen beheren zonder code
       items:
@@ -70,7 +70,7 @@
         - name: Gegevensbewerkingen autoriseren
           href: ../common/authorization-resource-provider.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Ingebouwde beveiligingsmaatregelen
-          href: ../common/security-baseline.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json
+          href: ../common/security-baseline.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Azure-privé-eindpunten gebruiken
           href: ../common/storage-private-endpoints.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Besturingselementen voor beveiliging van Azure Policy

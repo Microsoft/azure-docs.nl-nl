@@ -4,7 +4,7 @@
   items:
     - name: Wat is Translator?
       href: translator-info-overview.md
-    - name: Snelstartgids
+    - name: Snelstart
       href: quickstart-translator.md
     - name: Taalondersteuning
       href: language-support.md
@@ -23,7 +23,7 @@
     - name: Instructiegidsen
       items:
         - name: Registreren voor Translator
-          href: translator-text-how-to-signup.md
+          href: ./translator-how-to-signup.md
         - name: Migreren naar V3 Text-API
           href: migrate-to-v3.md
         - name: Filteren op grof taalgebruik toevoegen

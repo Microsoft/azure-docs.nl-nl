@@ -12,12 +12,12 @@ metadata:
   ms.date: 10/19/2020
   author: curtand
   ms.author: curtand
-  ms.openlocfilehash: 3918c28d9657b077eefd5226be656ab6ad5a7dbf
-  ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+  ms.openlocfilehash: c6f9f80e9aecb68e1bd88f04a6aa032cf87470d7
+  ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/22/2020
-  ms.locfileid: "92372698"
+  ms.lasthandoff: 11/20/2020
+  ms.locfileid: "94986025"
 landingContent:
 - title: Over Enterprise-gebruikersbeheer
   linkLists:
@@ -26,29 +26,29 @@ landingContent:
     - text: Gebruikers, groepen, domeinen en licenties
       url: directory-overview-user-model.md
     - text: Overzicht van aangepaste rollen
-      url: ../roles/custom-overview.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      url: ../roles/custom-overview.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
   - linkListType: concept
     links:
     - text: Organisatieonafhankelijkheid in Azure AD
       url: licensing-directory-independence.md
     - text: Toegang beheren met behulp van groepen
-      url: ../fundamentals/active-directory-manage-groups.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      url: ../fundamentals/active-directory-manage-groups.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
 - title: Aan de slag
   linkLists:
   - linkListType: quickstart
     links:
     - text: Een gebruiker toevoegen
-      url: ../fundamentals/add-users-azure-active-directory.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      url: ../fundamentals/add-users-azure-active-directory.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - text: Verloopbeleid voor groepen instellen
       url: groups-quickstart-expiration.md
     - text: Licenties toewijzen aan gebruikers
-      url: ../fundamentals/license-users-groups.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      url: ../fundamentals/license-users-groups.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
 - title: Azure AD-domeinnamen beheren
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Uw aangepaste domeinnaam toevoegen
-      url: ../fundamentals/add-custom-domain.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      url: ../fundamentals/add-custom-domain.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - text: Aangepaste domeinnamen beheren
       url: domains-manage.md
 - title: Groepen beheren
@@ -66,6 +66,6 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Een aangepaste domeinnaam toevoegen
-      url: ../fundamentals/add-custom-domain.md?context=azure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
+      url: ../fundamentals/add-custom-domain.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - text: Aangepaste domeinnamen beheren
       url: domains-manage.md

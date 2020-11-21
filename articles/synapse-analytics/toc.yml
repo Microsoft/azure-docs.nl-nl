@@ -1,5 +1,5 @@
 - name: Azure Synapse (voorbeeld van werkruimte)
-  href: sql-data-warehouse/index.yml
+  href: overview-what-is.md
 - name: Overschakelen naar Azure Synapse (voorheen SQL DW)
   href: ./sql-data-warehouse/sql-data-warehouse-overview-what-is.md
 - name: Overzicht
@@ -7,10 +7,8 @@
     - name: Wat is Azure Synapse?
       href: overview-what-is.md
       displayName: overview
-    - name: Cheatsheet
-      href: overview-cheat-sheet.md
-    - name: Veelgestelde vragen
-      href: overview-faq.md
+    - name: Terminologie
+      href: overview-terminology.md
     - name: Releaseopmerkingen
       href: release-notes.md
 - name: Snelstartgidsen

@@ -69,7 +69,7 @@
           href: troubleshoot-agent-onboard.md
         - name: Problemen met VM-extensies
           href: troubleshoot-vm-extensions.md
-- name: Naslaginformatie
+- name: Verwijzing
   items:
     - name: Gegevenslocatie
       href: data-residency.md
@@ -84,7 +84,7 @@
     - name: Aan de slag
       href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/hybridcompute/mgmt/2020-08-02/hybridcompute'
     - name: Java
-      href: /java/api/overview/azure/hybridcompute/management
+      href: /java/api/overview/azure/compute/resourcemanagement
     - name: Javascript
       href: /javascript/api/%40azure/arm-hybridcompute
     - name: Python

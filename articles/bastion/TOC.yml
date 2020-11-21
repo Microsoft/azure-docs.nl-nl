@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Bastion?
       href: bastion-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Een host met VM-instellingen maken
@@ -21,6 +21,10 @@
       href: work-remotely-support.md
     - name: Bastion- en VNet-peering
       href: vnet-peering.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
 - name: Instructiegidsen
   items:
     - name: Een host maken

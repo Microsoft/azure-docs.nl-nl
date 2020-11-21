@@ -78,7 +78,7 @@
     - name: Dangling DNS en overname van subdomein
       href: subdomain-takeover.md
     - name: Veilige hybride netwerkarchitectuur
-      href: /azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?bc=%252fazure%252fsecurity%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fsecurity%252ftoc.json
+      href: /azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?bc=%2fazure%2fsecurity%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsecurity%2ftoc.json
 - name: IaaS-beveiliging
   items:
     - name: Microsoft Antimalware
@@ -118,7 +118,7 @@
         - name: Controlelijst voor beveiliging
           href: database-security-checklist.md
     - name: Gids voor opslagbeveiliging
-      href: ../../storage/blobs/security-recommendations.md?bc=%252fazure%252fsecurity%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fsecurity%252ftoc.json
+      href: ../../storage/blobs/security-recommendations.md?bc=%2fazure%2fsecurity%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsecurity%2ftoc.json
     - name: Klanten-lockbox
       href: customer-lockbox-overview.md
     - name: Beveiligingsbasislijn voor Klanten-lockbox

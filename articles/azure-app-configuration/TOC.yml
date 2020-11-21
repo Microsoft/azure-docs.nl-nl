@@ -100,6 +100,8 @@
           href: concept-enable-rbac.md
         - name: Een door Azure beheerde identiteit toewijzen
           href: overview-managed-identity.md
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
     - name: Hoge beschikbaarheid
       items:
         - name: Tolerantie en herstel na noodgevallen

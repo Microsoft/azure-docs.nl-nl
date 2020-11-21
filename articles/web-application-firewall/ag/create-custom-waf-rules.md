@@ -6,20 +6,22 @@ services: web-application-firewall
 ms.topic: article
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 11/14/2019
+ms.date: 11/20/2020
 ms.author: victorh
-ms.openlocfilehash: bfa6690c636e15fa933f50698cd81359600b5c05
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f164418c29e9838928f3d03519342ebef40e16e7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77368300"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015694"
 ---
 # <a name="create-and-use-web-application-firewall-v2-custom-rules-on-application-gateway"></a>Aangepaste regels voor Web Application firewall v2 maken en gebruiken op Application Gateway
 
 Web Application firewall (WAF) v2 op Azure-toepassing gateway biedt beveiliging voor webtoepassingen. Deze beveiliging wordt verzorgd door de OWASP (open Web Application Security project) kern regelset (CRS). In sommige gevallen moet u mogelijk uw eigen aangepaste regels maken om te voldoen aan uw specifieke behoeften. Zie [custom web application firewall rules Overview](custom-waf-rules-overview.md)(Engelstalig) voor meer informatie over aangepaste regels voor WAF.
 
 In dit artikel ziet u een aantal voor beelden van aangepaste regels die u kunt maken en gebruiken met uw v2-WAF. Zie [aangepaste regels voor Web Application firewall configureren met](configure-waf-custom-rules.md)behulp van Azure PowerShell voor meer informatie over het implementeren van een WAF met een aangepaste regel met behulp van Azure PowerShell.
+
+De JSON-fragmenten die in dit artikel worden weer gegeven, zijn afgeleid van een [ApplicationGatewayWebApplicationFirewallPolicies](/templates/microsoft.network/applicationgatewaywebapplicationfirewallpolicies) -resource.
 
 >[!NOTE]
 > Als uw toepassings gateway geen gebruik maakt van de WAF-laag, wordt de optie voor het bijwerken van de toepassings gateway naar de laag WAF weer gegeven in het rechterdeel venster.
@@ -229,7 +231,7 @@ Overeenkomende CRS-regel: `SecRule REMOTE_ADDR "@ipMatch 192.168.5.0/24" "id:700
 
 ## <a name="example-4"></a>Voorbeeld 4
 
-Voor dit voor beeld wilt u User-Agent *evilbot*blok keren en verkeer in het bereik 192.168.5.0/24. Als u dit wilt doen, kunt u twee afzonderlijke match-voor waarden maken en deze in dezelfde regel plaatsen. Dit zorgt ervoor dat als beide *evilbot* in de User-Agent header **en** IP-adressen uit het bereik 192.168.5.0/24 overeenkomen, de aanvraag wordt geblokkeerd.
+Voor dit voor beeld wilt u User-Agent *evilbot* blok keren en verkeer in het bereik 192.168.5.0/24. Als u dit wilt doen, kunt u twee afzonderlijke match-voor waarden maken en deze in dezelfde regel plaatsen. Dit zorgt ervoor dat als beide *evilbot* in de User-Agent header **en** IP-adressen uit het bereik 192.168.5.0/24 overeenkomen, de aanvraag wordt geblokkeerd.
 
 Logic: p **en** q
 
@@ -301,7 +303,7 @@ Hier volgt de bijbehorende JSON:
 
 ## <a name="example-5"></a>Voorbeeld 5
 
-Voor dit voor beeld wilt u blok keren als de aanvraag zich buiten het IP-adres bereik *192.168.5.0/24*bevindt, of de teken reeks van de gebruikers agent is niet *Chrome* (wat betekent dat de gebruiker de Chrome-browser niet gebruikt). Omdat deze logica gebruikmaakt van **of**, zijn de twee voor waarden in afzonderlijke regels, zoals in het volgende voor beeld wordt weer gegeven. *myrule1* en *myrule2* moeten beide overeenkomen om het verkeer te blok keren.
+Voor dit voor beeld wilt u blok keren als de aanvraag zich buiten het IP-adres bereik *192.168.5.0/24* bevindt, of de teken reeks van de gebruikers agent is niet *Chrome* (wat betekent dat de gebruiker de Chrome-browser niet gebruikt). Omdat deze logica gebruikmaakt van **of**, zijn de twee voor waarden in afzonderlijke regels, zoals in het volgende voor beeld wordt weer gegeven. *myrule1* en *myrule2* moeten beide overeenkomen om het verkeer te blok keren.
 
 Logic: **niet** (p **en** q) = **niet** p **of geen** q.
 
@@ -388,7 +390,7 @@ En de bijbehorende JSON:
 
 ## <a name="example-6"></a>Voorbeeld 6
 
-U wilt aangepaste SQLI blok keren. Aangezien de logica die hier wordt gebruikt, is **of**en alle waarden in de *RequestUri*zijn, kan alle *MatchValues* in een door komma's gescheiden lijst staan.
+U wilt aangepaste SQLI blok keren. Aangezien de logica die hier wordt gebruikt, is **of** en alle waarden in de *RequestUri* zijn, kan alle *MatchValues* in een door komma's gescheiden lijst staan.
 
 Logic: p **of** q **of** r
 

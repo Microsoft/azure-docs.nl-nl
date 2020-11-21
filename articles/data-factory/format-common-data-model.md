@@ -1,18 +1,18 @@
 ---
 title: Common Data Model-indeling
 description: Gegevens transformeren met behulp van het meta gegevens systeem van common data model
-author: djpmsft
+author: kromerm
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/13/2020
-ms.author: daperlov
-ms.openlocfilehash: 452aa3406ac09dd8342d8ade0b56b126067b7582
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.date: 11/20/2020
+ms.author: makromer
+ms.openlocfilehash: 7fc3a63f841a88451746d088a527a41d756e711f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636405"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015168"
 ---
 # <a name="common-data-model-format-in-azure-data-factory"></a>Gemeen schappelijke gegevens model indeling in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -38,7 +38,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
 | ---- | ----------- | -------- | -------------- | ---------------- |
 | Indeling | Indeling moet `cdm` | ja | `cdm` | indeling |
-| Meta gegevens indeling | Waar de entiteits verwijzing naar de gegevens zich bevindt. Als u CDM versie 1,0 gebruikt, kiest u Manifest. Als u vóór 1,0 een CDM-versie gebruikt, kiest u model.jsop. | Ja | `'manifest'` of `'model'` | manifestType |
+| Meta gegevens indeling | Waar de entiteits verwijzing naar de gegevens zich bevindt. Als u CDM versie 1,0 gebruikt, kiest u Manifest. Als u vóór 1,0 een CDM-versie gebruikt, kiest u model.jsop. | Yes | `'manifest'` of `'model'` | manifestType |
 | Hoofd locatie: container | Container naam van de map CDM | ja | Tekenreeks | System |
 | Hoofd locatie: mappad | Locatie van de hoofdmap van de map CDM | ja | Tekenreeks | folderPath |
 | Manifest bestand: pad naar entiteit | Mappad van de entiteit binnen de hoofdmap | nee | Tekenreeks | entityPath |
@@ -52,7 +52,11 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Verzameling entiteit | Pad naar entiteits verwijzing | ja | Tekenreeks | vennootschap |
 | Geen bestanden gevonden | Als deze eigenschap waar is, wordt er geen fout gegenereerd als er geen bestanden worden gevonden | nee | `true` of `false` | ignoreNoFilesFound |
 
-Als de definitie van de entiteit die u wilt gebruiken in uw bron transformatie zich in dezelfde map bevindt als de map Data, kunt u de selectie van entiteit gebruiken uit verzameling opheffen en eenvoudigweg typen in de entiteit van de entiteit die u wilt gebruiken als entiteits verwijzing.
+Wanneer u ' entiteits verwijzing ' selecteert in de bron-en Sink-trans formaties, kunt u uit deze drie opties kiezen voor de locatie van de verwijzing naar de entiteit:
+
+* Lokaal maakt gebruik van de entiteit die is gedefinieerd in het manifest bestand dat al wordt gebruikt door ADF
+* Als u Aangepast kiest, wordt u gevraagd naar een bestand met een entiteits manifest dat verschilt van de ADF van het manifest bestand.
+* Standard maakt gebruik van een verwijzing naar een entiteit van de standaard bibliotheek van CDM-entiteiten die worden onderhouden in ```Github``` .
 
 ### <a name="sink-settings"></a>Sink-instellingen
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0e4a6d9180d2a9949cebc40cf30edffac73ef9d0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6c899b4f0dd7a3b91521c6d78b531d1c804ac105
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94653535"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015304"
 ---
 # <a name="speech-service-containers-frequently-asked-questions-faq"></a>Veelgestelde vragen over Speech-Service containers
 
@@ -292,7 +292,7 @@ Helpt u bij het invullen van de volgende metrische test gegevens, waaronder welk
 
 | Eindpunt                                                | Functionele test                                                   | SDK | REST-API |
 |---------------------------------------------------------|-------------------------------------------------------------------|-----|----------|
-| `/speech/synthesize/cognitiveservices/v1`               | Tekst van de synthesizer (tekst-naar-spraak)                                  |     | Ja      |
+| `/speech/synthesize/cognitiveservices/v1`               | Tekst van de synthesizer (tekst-naar-spraak)                                  |     | Yes      |
 | `/speech/recognition/dictation/cognitiveservices/v1`    | Cognitive Services on-premises dicteren v1 WebSocket-eind punt        | Ja | Nee       |
 | `/speech/recognition/interactive/cognitiveservices/v1`  | Het Cognitive Services on-premises interactieve v1 WebSocket-eind punt  |     |          |
 | `/speech/recognition/conversation/cognitiveservices/v1` | Het on-premises RIP-WebSocket-eind punt van de cognitieve Services |     |          |
@@ -324,7 +324,7 @@ https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/6805d96bf69d
 <b>Welke modus moet ik voor verschillende audio bestanden gebruiken?</b>
 </summary>
 
-**Antwoord:** Hier volgt een [Snelstartgids](quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-python)voor het gebruik van python. U kunt de andere talen vinden die zijn gekoppeld aan de docs-site.
+**Antwoord:** Hier volgt een [Snelstartgids](./get-started-speech-to-text.md?pivots=programming-language-python)voor het gebruik van python. U kunt de andere talen vinden die zijn gekoppeld aan de docs-site.
 
 Net duidelijk voor de interactieve, conversatie en dictering; Dit is een geavanceerde manier om de specifieke manier op te geven waarop de spraak aanvraag wordt verwerkt door de service. Voor de on-premises containers moeten we de volledige URI opgeven (aangezien deze lokale machine bevat), zodat deze gegevens uit de abstractie worden gelekt. We werken samen met het SDK-team om dit in de toekomst bruikbaarder te maken.
 

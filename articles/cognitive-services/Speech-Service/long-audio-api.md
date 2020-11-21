@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: trbye
-ms.openlocfilehash: be38d3e78108a15c9f7875a15156e0eeba5a6211
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a538deb3b7da19261e1bc2b7c0d29f35315f786
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88167756"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015410"
 ---
 # <a name="long-audio-api-preview"></a>Lange audio-API (preview-versie)
 
@@ -27,7 +27,7 @@ Aanvullende voor delen van de API voor lange audio:
 * Het is niet nodig om een spraak eindpunt te implementeren omdat er stemmen zijn die geen real-time batch-modus hebben.
 
 > [!NOTE]
-> De lange audio-API ondersteunt nu zowel [open bare Neural stemmen](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#neural-voices) als [aangepaste Neural stemmen](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-custom-voice#custom-neural-voices).
+> De lange audio-API ondersteunt nu zowel [open bare Neural stemmen](./language-support.md#neural-voices) als [aangepaste Neural stemmen](./how-to-custom-voice.md#custom-neural-voices).
 
 ## <a name="workflow"></a>Werkstroom
 
@@ -44,7 +44,7 @@ Wanneer u het tekst bestand voorbereidt, moet u het volgende controleren:
 * Is tekst zonder opmaak (. txt) of SSML tekst (. txt)
 * Is gecodeerd als [UTF-8 met een byte order Mark (bom)](https://www.w3.org/International/questions/qa-utf8-bom.en#bom)
 * Is één bestand, geen zip
-* Bevat meer dan 400 tekens voor onbewerkte tekst of 400 [factureer bare tekens](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech#pricing-note) voor SSML tekst en minder dan 10.000 alinea's
+* Bevat meer dan 400 tekens voor onbewerkte tekst of 400 [factureer bare tekens](./text-to-speech.md#pricing-note) voor SSML tekst en minder dan 10.000 alinea's
   * Voor tekst zonder opmaak wordt elke alinea gescheiden door op **Enter/Return** - [invoer voor beeld tekst zonder opmaak](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Java/en-US.txt) weer te geven
   * Voor SSML tekst wordt elk SSML-stuk beschouwd als een alinea. SSML stuks moeten worden gescheiden door verschillende alinea's- [voor beeld van SSML-tekst invoer](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Java/SSMLTextInputSample.txt) weer geven
 > [!NOTE]
@@ -114,7 +114,7 @@ Als de para meter **PublicVoice** is ingesteld op **True**, is de stem open bare
 Bereid een invoer tekst bestand voor in tekst zonder opmaak of SSML tekst en voeg de volgende code toe aan `voice_synthesis_client.py` :
 
 > [!NOTE]
-> ' concatenateResult ' is een optionele para meter. Als deze para meter niet is ingesteld, worden de audio-uitvoer per alinea gegenereerd. U kunt de audio waarden ook samen voegen in 1 uitvoer door de para meter in te stellen. De audio-uitvoer wordt standaard ingesteld op RIFF-16khz-16-mono-PCM. Zie [audio-uitvoer indelingen](https://docs.microsoft.com/azure/cognitive-services/speech-service/long-audio-api#audio-output-formats)voor meer informatie over ondersteunde audio-uitvoer.
+> ' concatenateResult ' is een optionele para meter. Als deze para meter niet is ingesteld, worden de audio-uitvoer per alinea gegenereerd. U kunt de audio waarden ook samen voegen in 1 uitvoer door de para meter in te stellen. De audio-uitvoer wordt standaard ingesteld op RIFF-16khz-16-mono-PCM. Zie [audio-uitvoer indelingen](#audio-output-formats)voor meer informatie over ondersteunde audio-uitvoer.
 
 ```python
 parser.add_argument('--submit', action="store_true", default=False, help='submit a synthesis request')
@@ -278,7 +278,7 @@ De volgende tabel bevat een overzicht van de HTTP-antwoord codes en berichten va
 |        | 404 | Het model dat is gedeclareerd in de definitie van de audio-synthese, is niet gevonden: {modelID}. | Controleer of {modelID} juist is. |
 |        | 429 | De limiet voor actieve audio-synthese overschrijdt. Wacht tot sommige aanvragen zijn voltooid. | De server mag Maxi maal 120 aanvragen voor elk Azure-account uitvoeren en in de wachtrij plaatsen. Wacht tot er nieuwe aanvragen zijn verzonden totdat sommige aanvragen zijn voltooid. |
 | Alles       | 429 | Er zijn te veel aanvragen. | De client mag Maxi maal 5 aanvragen voor de server per seconde indienen voor elk Azure-account. Verminder de aanvraag hoeveelheid per seconde. |
-| Verwijderen    | 400 | De stem synthese taak is nog in gebruik. | U kunt alleen **voltooide** of **mislukte**aanvragen verwijderen. |
+| Verwijderen    | 400 | De stem synthese taak is nog in gebruik. | U kunt alleen **voltooide** of **mislukte** aanvragen verwijderen. |
 | GetByID   | 404 | De opgegeven entiteit is niet gevonden. | Controleer of de synthese-ID juist is. |
 
 ## <a name="regions-and-endpoints"></a>Regio's en eind punten
@@ -291,11 +291,11 @@ De lange audio-API is beschikbaar in meerdere regio's met unieke eind punten.
 | Canada - midden | `https://canadacentral.customvoice.api.speech.microsoft.com` |
 | VS - oost | `https://eastus.customvoice.api.speech.microsoft.com` |
 | India - centraal | `https://centralindia.customvoice.api.speech.microsoft.com` |
-| South Central US | `https://southcentralus.customvoice.api.speech.microsoft.com` |
+| VS - zuid-centraal | `https://southcentralus.customvoice.api.speech.microsoft.com` |
 | Azië - zuidoost | `https://southeastasia.customvoice.api.speech.microsoft.com` |
 | Verenigd Koninkrijk Zuid | `https://uksouth.customvoice.api.speech.microsoft.com` |
 | Europa -west | `https://westeurope.customvoice.api.speech.microsoft.com` |
-| West US 2 | `https://westus2.customvoice.api.speech.microsoft.com` |
+| VS - west 2 | `https://westus2.customvoice.api.speech.microsoft.com` |
 
 ## <a name="audio-output-formats"></a>Indelingen audio-uitvoer
 

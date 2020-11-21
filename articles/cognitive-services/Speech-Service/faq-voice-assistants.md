@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: travisw
-ms.openlocfilehash: 8480299c2c889a243150028ac9651f4b62656aec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d399507499a320116ff1c732a1ffc0ad84b5731
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74110341"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015439"
 ---
 # <a name="voice-assistants-frequently-asked-questions"></a>Veelgestelde vragen over spraak assistenten
 
-Als u geen antwoorden op uw vragen in dit document kunt vinden, Bekijk dan [Andere ondersteunings opties](support.md).
+Als u geen antwoorden op uw vragen in dit document kunt vinden, Bekijk dan [Andere ondersteunings opties](../cognitive-services-support-options.md?context=%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext%253fcontext%253d%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext).
 
 ## <a name="general"></a>Algemeen
 
@@ -35,9 +35,9 @@ Als u geen antwoorden op uw vragen in dit document kunt vinden, Bekijk dan [Ande
 
 **A:** De beste manier om te beginnen met het maken van een aangepaste opdrachten (preview)-toepassing of basis-bot-raam werk.
 
-- [Een aangepaste opdrachten (preview)-toepassing maken](quickstart-custom-speech-commands-create-new.md)
-- [Een eenvoudige bot-Framework-bot maken](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
-- [Een bot aansluiten op het directe lijn spraak kanaal](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+- [Een aangepaste opdrachten (preview)-toepassing maken](./quickstart-custom-commands-application.md)
+- [Een eenvoudige bot-Framework-bot maken](/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
+- [Een bot aansluiten op het directe lijn spraak kanaal](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 
 ## <a name="debugging"></a>Foutopsporing
 
@@ -62,7 +62,7 @@ Raadpleeg de [sectie zelf studie](tutorial-voice-enable-your-bot-speech-sdk.md#r
 **A:** Deze fout wijst op een communicatie probleem tussen uw assistent en de Voice Assistant-service.
 
 - Voor aangepaste opdrachten (preview) moet u ervoor zorgen dat uw aangepaste opdrachten (preview-toepassing) worden gepubliceerd
-- Zorg ervoor dat u [uw bot op het directe lijn spraak kanaal hebt aangesloten](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech), het [Streaming-Protocol ondersteuning](https://aka.ms/botframework/addstreamingprotocolsupport) voor uw bot hebt toegevoegd (met de gerelateerde ondersteuning voor websockets) en controleer vervolgens of uw bot reageert op inkomende aanvragen van het kanaal.
+- Zorg ervoor dat u [uw bot op het directe lijn spraak kanaal hebt aangesloten](/azure/bot-service/bot-service-channel-connect-directlinespeech), het [Streaming-Protocol ondersteuning](/azure/bot-service/directline-speech-bot) voor uw bot hebt toegevoegd (met de gerelateerde ondersteuning voor websockets) en controleer vervolgens of uw bot reageert op inkomende aanvragen van het kanaal.
 
 **V: deze code werkt nog steeds niet en/of ik krijg een andere fout bij het gebruik van een `DialogServiceConnector` . Wat moet ik doen?**
 
@@ -71,4 +71,4 @@ Raadpleeg de [sectie zelf studie](tutorial-voice-enable-your-bot-speech-sdk.md#r
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Problemen oplossen](troubleshooting.md)
-- [Opmerkingen bij de release](releasenotes.md)
+- [Releaseopmerkingen](releasenotes.md)

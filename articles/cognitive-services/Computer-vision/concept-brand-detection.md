@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: pafarley
-ms.openlocfilehash: 87cb0f93201b5111e4d5e954ee62451405436fa0
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 46cead6f7b9362dc9b48fda15c0d04b13c2f989c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94538725"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013656"
 ---
 # <a name="detect-popular-brands-in-images"></a>Populaire merken detecteren in installatie kopieën
 
@@ -23,7 +23,7 @@ Merk detectie is een gespecialiseerde modus van [object detectie](concept-object
 
 De Computer Vision-service detecteert of er merk logo's zijn in een bepaalde afbeelding. Als dit het geval is, wordt de merk naam, een betrouwbaarheids Score en de coördinaten van een selectie kader rond het logo geretourneerd.
 
-De ingebouwde logo database heeft betrekking op populaire merken in consumenten elektronica, kleren en meer. Als u merkt dat het merk dat u zoekt niet wordt gedetecteerd door de Computer Vision-service, kunt u beter uw eigen logo detector maken en trainen met behulp van de [Custom Vision](https://docs.microsoft.com/azure/cognitive-services/Custom-Vision-Service/) -service.
+De ingebouwde logo database heeft betrekking op populaire merken in consumenten elektronica, kleren en meer. Als u merkt dat het merk dat u zoekt niet wordt gedetecteerd door de Computer Vision-service, kunt u beter uw eigen logo detector maken en trainen met behulp van de [Custom Vision](../custom-vision-service/index.yml) -service.
 
 ## <a name="brand-detection-example"></a>Voor beeld van merk detectie
 

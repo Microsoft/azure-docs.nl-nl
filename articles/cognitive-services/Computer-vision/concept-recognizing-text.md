@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 4eb2835bd09e6548149ee90cb7232bf230de0300
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 73887515eea344e920455e3c24f3eae3d5ad515a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94538747"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013740"
 ---
 # <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
 
@@ -138,7 +138,7 @@ Ga aan de slag met de Computer Vision de Quick Start van de [OCR SDK](./quicksta
 ## <a name="supported-languages-for-print-text"></a>Ondersteunde talen voor afdruk tekst
 De [Lees-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) biedt ondersteuning voor het extra heren van gedrukte tekst in het Engels, Spaans, Duits, Frans, Italiaans, Portugees en Nederlandstalige talen.
 
-Zie de [ondersteunde talen](https://docs.microsoft.com/azure/cognitive-services/computer-vision/language-support#optical-character-recognition-ocr) voor de volledige lijst met talen die door OCR worden ondersteund.
+Zie de [ondersteunde talen](./language-support.md#optical-character-recognition-ocr) voor de volledige lijst met talen die door OCR worden ondersteund.
 
 ### <a name="read-32-preview-adds-simplified-chinese-and-japanese"></a>In de preview-versie van 3,2 wordt vereenvoudigd Chinees en Japans toegevoegd
 De [open bare preview-versie van de lees 3,2-API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-1/operations/5d986960601faab4bf452005) voegt ondersteuning toe voor vereenvoudigd Chinees en Japans. Als uw scenario ondersteuning vereist voor meer talen, raadpleegt u de sectie [OCR API](#ocr-api) . 
@@ -150,7 +150,7 @@ De Lees bewerking biedt momenteel alleen ondersteuning voor het extra heren van 
 De [rest API 3. x](./QuickStarts/CSharp-hand-text.md) is de voorkeurs optie voor de meeste klanten vanwege het gemak van integratie en snelle productiviteit. Azure en de Computer Vision service-afhandelings schaal, prestaties, gegevens beveiliging en nalevings behoeften terwijl u zich richt op het voldoen aan de behoeften van uw klanten.
 
 ## <a name="deploy-on-premise-with-docker-containers"></a>On-premises implementeren met docker-containers
-De [Lees docker-container (preview)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/computer-vision-how-to-install-containers) biedt u de mogelijkheid om de nieuwe OCR-mogelijkheden in uw eigen lokale omgeving te implementeren. Containers zijn ideaal voor specifieke vereisten voor beveiliging en gegevensbeheer.
+De [Lees docker-container (preview)](./computer-vision-how-to-install-containers.md) biedt u de mogelijkheid om de nieuwe OCR-mogelijkheden in uw eigen lokale omgeving te implementeren. Containers zijn ideaal voor specifieke vereisten voor beveiliging en gegevensbeheer.
 
 ## <a name="example-outputs"></a>Voorbeeld uitvoer
 
@@ -186,7 +186,7 @@ De Lees-API ondersteunt afbeeldingen en documenten die meerdere talen bevatten, 
 
 ## <a name="ocr-api"></a>OCR-API
 
-De [OCR-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f20d) maakt gebruik van een ouder herkennings model, ondersteunt alleen installatie kopieën en voert synchroon uit, wat direct met de gedetecteerde tekst wordt geretourneerd. Zie de [OCR-ondersteunde talen](https://docs.microsoft.com/azure/cognitive-services/computer-vision/language-support#optical-character-recognition-ocr) en lees vervolgens de API.
+De [OCR-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f20d) maakt gebruik van een ouder herkennings model, ondersteunt alleen installatie kopieën en voert synchroon uit, wat direct met de gedetecteerde tekst wordt geretourneerd. Zie de [OCR-ondersteunde talen](./language-support.md#optical-character-recognition-ocr) en lees vervolgens de API.
 
 ## <a name="data-privacy-and-security"></a>Gegevensprivacy en -beveiliging
 

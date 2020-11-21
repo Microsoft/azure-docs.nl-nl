@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: swmachan
-ms.openlocfilehash: dff69f00833cc3f8004befd330d144f4da0e332d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8841c55d8f276f048db53a531bd2e9218e498b34
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89566582"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016493"
 ---
 # <a name="request-limits-for-translator"></a>Aanvraag limieten voor Translator
 
@@ -52,17 +52,17 @@ Als u deze limieten bereikt of overschrijdt, of als u een deel van het quotum te
 | S3/C3 | 120.000.000 tekens per uur |
 | S4/C4 | 200.000.000 tekens per uur |
 
-De limieten voor [meerdere service abonnementen](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication) zijn gelijk aan die van de S1-laag.
+De limieten voor [meerdere service abonnementen](./reference/v3-0-reference.md#authentication) zijn gelijk aan die van de S1-laag.
 
 Deze limieten zijn beperkt tot de standaard Vertaal modellen van micro soft. Aangepaste Vertaal modellen die gebruikmaken van aangepaste vertalers, zijn beperkt tot 1.800 tekens per seconde.
 
 ## <a name="latency"></a>Latentie
 
-Het conversie programma heeft een maximale latentie van 15 seconden met standaard modellen en 120 seconden wanneer aangepaste modellen worden gebruikt. Normaal gesp roken worden antwoorden op *tekst binnen 100 tekens* geretourneerd in 150 milliseconden tot 300 milliseconden. De aangepaste Translator-modellen hebben vergelijk bare latentie kenmerken voor een continue aanvraag frequentie en kunnen een hogere latentie hebben wanneer uw aanvraag frequentie loopt. Reactie tijden variëren op basis van de grootte van de aanvraag en het taal paar. Als u binnen deze tijds Panne geen vertaling of een [fout](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors) bericht ontvangt, controleert u uw code, uw netwerk verbinding en probeer het opnieuw. 
+Het conversie programma heeft een maximale latentie van 15 seconden met standaard modellen en 120 seconden wanneer aangepaste modellen worden gebruikt. Normaal gesp roken worden antwoorden op *tekst binnen 100 tekens* geretourneerd in 150 milliseconden tot 300 milliseconden. De aangepaste Translator-modellen hebben vergelijk bare latentie kenmerken voor een continue aanvraag frequentie en kunnen een hogere latentie hebben wanneer uw aanvraag frequentie loopt. Reactie tijden variëren op basis van de grootte van de aanvraag en het taal paar. Als u binnen deze tijds Panne geen vertaling of een [fout](./reference/v3-0-reference.md#errors) bericht ontvangt, controleert u uw code, uw netwerk verbinding en probeer het opnieuw. 
 
 ## <a name="sentence-length-limits"></a>Maximale lengte van zin
 
-Wanneer u de functie [BreakSentence](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-break-sentence) gebruikt, is de lengte van de zin beperkt tot 275 tekens. Er zijn uitzonde ringen voor deze talen:
+Wanneer u de functie [BreakSentence](./reference/v3-0-break-sentence.md) gebruikt, is de lengte van de zin beperkt tot 275 tekens. Er zijn uitzonde ringen voor deze talen:
 
 | Taal | Code | Teken limiet |
 |----------|------|-----------------|
@@ -80,5 +80,5 @@ Wanneer u de functie [BreakSentence](https://docs.microsoft.com/azure/cognitive-
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Prijzen](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)
-* [Regionale beschikbaarheid](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)
-* [v3 Translator-naslaginformatie](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)
+* [Regionale Beschik baarheid](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)
+* [v3 Translator-naslaginformatie](./reference/v3-0-reference.md)

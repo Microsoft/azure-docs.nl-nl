@@ -9,12 +9,12 @@ ms.date: 10/16/2020
 ms.author: euang
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: fbcc7ffbde49acfd9afc180418d618060eb923c1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 6f777b605c5050b7fa4b3b9e3671f3638ad67372
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313540"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016255"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Bibliotheken voor Apache Spark beheren in azure Synapse Analytics
 
@@ -92,9 +92,9 @@ Als u een bibliotheek wilt installeren op een Spark-pool (preview), rechtstreeks
 Voer de volgende code uit om te controleren of de juiste versies van de juiste bibliotheken zijn geïnstalleerd
 
 ```python
-import pip #needed to use the pip functions
-for i in pip.get_installed_distributions(local_only=True):
-    print(i)
+import pkg_resources
+for d in pkg_resources.working_set:
+     print(d)
 ```
 ### <a name="update-python-packages"></a>Python-pakketten bijwerken
 Pakketten kunnen op elk moment tussen sessies worden toegevoegd of gewijzigd. Wanneer een nieuw pakket configuratie bestand wordt geüpload, worden de bestaande pakketten en versies overschreven.  

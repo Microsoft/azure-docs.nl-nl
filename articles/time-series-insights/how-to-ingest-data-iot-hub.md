@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/02/2020
 ms.custom: seodec18
-ms.openlocfilehash: 28a1990155e1406bf9b79572b3e5307cadfb8076
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09ee98bf8bbe0067f9c79ce4767f3cf68b83fb43
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665919"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016799"
 ---
 # <a name="add-an-iot-hub-event-source-to-your-azure-time-series-insight-environment"></a>Een IoT hub-gebeurtenis bron toevoegen aan uw Azure time series Insight-omgeving
 
@@ -27,7 +27,7 @@ In dit artikel wordt beschreven hoe u de Azure Portal kunt gebruiken om een gebe
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een [Azure time series Insights omgeving](time-series-insights-update-create-environment.md)maken.
+* Een [Azure time series Insights omgeving](./tutorials-set-up-tsi-environment.md)maken.
 * Maak een [IOT-hub met behulp van de Azure Portal](../iot-hub/iot-hub-create-through-portal.md).
 * Voor de IoT-hub moeten actieve bericht gebeurtenissen worden verzonden in.
 * Maak een speciale consumenten groep in de IoT-hub voor de Azure time series Insight-omgeving die u wilt gebruiken. Elke Azure time series Insight-gebeurtenis bron moet een eigen toegewezen consumenten groep hebben die niet wordt gedeeld met een andere Consumer. Als meerdere lezers gebeurtenissen van dezelfde consumenten groep gebruiken, kunnen alle lezers waarschijnlijk fouten vertonen. Lees de [hand leiding voor Azure IOT hub-ontwikkel aars](../iot-hub/iot-hub-devguide.md)voor meer informatie.
@@ -40,27 +40,27 @@ Een nieuwe consumenten groep toevoegen aan uw IoT-hub:
 
 1. Zoek en open uw IoT-hub in de [Azure Portal](https://portal.azure.com).
 
-1. Selecteer onder **instellingen**de optie **ingebouwde eind punten**en selecteer vervolgens het eind punt **gebeurtenissen** .
+1. Selecteer onder **instellingen** de optie **ingebouwde eind punten** en selecteer vervolgens het eind punt **gebeurtenissen** .
 
    [![Selecteer op de pagina eind punten samen stellen de knop gebeurtenissen](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png#lightbox)
 
-1. Voer onder **consumenten groepen**een unieke naam in voor de consumenten groep. Gebruik dezelfde naam in uw Azure time series Insight-omgeving wanneer u een nieuwe gebeurtenis bron maakt.
+1. Voer onder **consumenten groepen** een unieke naam in voor de consumenten groep. Gebruik dezelfde naam in uw Azure time series Insight-omgeving wanneer u een nieuwe gebeurtenis bron maakt.
 
 1. Selecteer **Opslaan**.
 
 ## <a name="add-a-new-event-source"></a>Een nieuwe gebeurtenis bron toevoegen
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 1. Selecteer **Alle resources** in het menu aan de linkerkant. Selecteer uw Azure time series Insight-omgeving.
 
-1. Selecteer onder **instellingen**de optie **gebeurtenis bronnen**en selecteer vervolgens **toevoegen**.
+1. Selecteer onder **instellingen** de optie **gebeurtenis bronnen** en selecteer vervolgens **toevoegen**.
 
    [![Selecteer gebeurtenis bronnen en selecteer vervolgens de knop toevoegen](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-add-event-source.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-add-event-source.png#lightbox)
 
-1. Voer in het deel venster **nieuwe bron van gebeurtenis** de naam van de **gebeurtenis bron**een unieke naam in voor deze Azure time series Insight-omgeving. Voer bijvoorbeeld **gebeurtenis-stream**in.
+1. Voer in het deel venster **nieuwe bron van gebeurtenis** de naam van de **gebeurtenis bron** een unieke naam in voor deze Azure time series Insight-omgeving. Voer bijvoorbeeld **gebeurtenis-stream** in.
 
-1. Selecteer **IOT hub**voor **bron**.
+1. Selecteer **IOT hub** voor **bron**.
 
 1. Selecteer een waarde voor de **optie importeren**:
 
@@ -107,7 +107,7 @@ Een nieuwe consumenten groep toevoegen aan uw IoT-hub:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Definieer gegevens toegangs beleid](time-series-insights-data-access.md) voor het beveiligen van de gegevens.
+* [Definieer gegevens toegangs beleid](./concepts-access-policies.md) voor het beveiligen van de gegevens.
 
 * [Gebeurtenissen verzenden](time-series-insights-send-events.md) naar de bron van de gebeurtenis.
 

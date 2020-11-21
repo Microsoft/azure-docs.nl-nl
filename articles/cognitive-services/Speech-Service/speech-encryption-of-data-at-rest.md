@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: egeaney
-ms.openlocfilehash: b9b76b2eb5e9536561f73a92b6911a2f82122a1b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa0fe33dff0161767b74546aad49003d8fc70c16
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89078092"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015253"
 ---
 # <a name="speech-service-encryption-of-data-at-rest"></a>Spraak service versleuteling van gegevens in rust
 
@@ -33,11 +33,11 @@ Wanneer u Custom Speech en een aangepaste spraak-service gebruikt, kan de volgen
 
 Standaard worden uw gegevens opgeslagen in de opslag van micro soft en gebruikt uw abonnement micro soft Managed Encryption Keys. U hebt ook de mogelijkheid om uw eigen opslag account voor te bereiden. Toegang tot de Store wordt beheerd door de beheerde identiteit en de spraakherkennings service heeft geen rechtstreekse toegang tot uw eigen gegevens, zoals gegevens over spraak tracering, aanpassings training en aangepaste modellen.
 
-Zie [Wat zijn beheerde](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)identiteiten voor meer informatie over beheerde identiteiten.
+Zie [Wat zijn beheerde](../../active-directory/managed-identities-azure-resources/overview.md)identiteiten voor meer informatie over beheerde identiteiten.
 
 ## <a name="bring-your-own-storage-byos-for-customization-and-logging"></a>Uw eigen opslag (BYOS) meenemen voor aanpassing en logboek registratie
 
-Als u toegang wilt aanvragen om uw eigen opslag te maken, vult u het [BYOS-aanvraag formulier (uw eigen opslag)](https://aka.ms/cogsvc-cmk)in en verzendt u dit. Na goed keuring moet u uw eigen opslag account maken om de gegevens op te slaan die nodig zijn voor aanpassing en logboek registratie. Wanneer u een opslag account toevoegt, wordt door de speech service-bron een door het systeem toegewezen beheerde identiteit ingeschakeld. Nadat de door het systeem toegewezen beheerde identiteit is ingeschakeld, wordt deze bron geregistreerd bij Azure Active Directory (AAD). Nadat het is geregistreerd, krijgt de beheerde identiteit toegang tot het opslag account. Meer informatie over beheerde identiteiten vindt u hier. Zie [Wat zijn beheerde](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)identiteiten voor meer informatie over beheerde identiteiten.
+Als u toegang wilt aanvragen om uw eigen opslag te maken, vult u het [BYOS-aanvraag formulier (uw eigen opslag)](https://aka.ms/cogsvc-cmk)in en verzendt u dit. Na goed keuring moet u uw eigen opslag account maken om de gegevens op te slaan die nodig zijn voor aanpassing en logboek registratie. Wanneer u een opslag account toevoegt, wordt door de speech service-bron een door het systeem toegewezen beheerde identiteit ingeschakeld. Nadat de door het systeem toegewezen beheerde identiteit is ingeschakeld, wordt deze bron geregistreerd bij Azure Active Directory (AAD). Nadat het is geregistreerd, krijgt de beheerde identiteit toegang tot het opslag account. Meer informatie over beheerde identiteiten vindt u hier. Zie [Wat zijn beheerde](../../active-directory/managed-identities-azure-resources/overview.md)identiteiten voor meer informatie over beheerde identiteiten.
 
 > [!IMPORTANT]
 > Als u door het systeem toegewezen beheerde identiteiten uitschakelt, wordt de toegang tot het opslag account verwijderd. Dit zorgt ervoor dat de onderdelen van de spraak service die toegang tot het opslag account vereisen, niet meer werken.  
@@ -50,4 +50,4 @@ De spraak service biedt momenteel geen ondersteuning voor Klanten-lockbox. Klant
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Speech service-aanvraag formulier voor uw eigen opslag (BYOS)](https://aka.ms/cogsvc-cmk)
-* [Wat zijn beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+* [Wat zijn beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md).

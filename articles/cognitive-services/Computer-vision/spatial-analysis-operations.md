@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: aahi
-ms.openlocfilehash: 80f0d29de6b3013ad02ed1a5d34bebdf81a8766b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9d1b6e20bf2decfe051e79e073736f71181260fa
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91628210"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014540"
 ---
 # <a name="spatial-analysis-operations"></a>Ruimtelijke analyse bewerkingen
 
@@ -23,7 +23,7 @@ Met ruimtelijke analyse kunt u het realtime streamen van video van camera's anal
 
 De container voor ruimtelijke analyse implementeert de volgende bewerkingen:
 
-| Bewerkings-id| Beschrijving|
+| Bewerkings-id| Description|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -32,18 +32,18 @@ De container voor ruimtelijke analyse implementeert de volgende bewerkingen:
 
 Alle bovenstaande bewerkingen zijn ook beschikbaar in de `.debug` versie, die de mogelijkheid hebben om de video frames te visualiseren wanneer ze worden verwerkt. U moet `xhost +` op de hostcomputer worden uitgevoerd om de visualisatie van video frames en-gebeurtenissen in te scha kelen.
 
-| Bewerkings-id| Beschrijving|
+| Bewerkings-id| Description|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount. debug | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline. debug | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
 | cognitiveservices. Vision. spatialanalysis-personcrossingpolygon. debug | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br> Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de zone kruist en informatie bevat. |
 | cognitiveservices. Vision. spatialanalysis-persondistance. debug | Hiermee wordt getraceerd wanneer mensen een afstands regel schenden. <br> Verzendt een _personDistanceEvent_ regel matig met de locatie van elke afstands schending. |
 
-Ruimtelijke analyse kan ook worden uitgevoerd met [Live video Analytics](https://aka.ms/lva-spatial-analysis) als video Ai-module. 
+Ruimtelijke analyse kan ook worden uitgevoerd met [Live video Analytics](../../media-services/live-video-analytics-edge/spatial-analysis-tutorial.md) als video Ai-module. 
 
 <!--more details on the setup can be found in the [LVA Setup page](LVA-Setup.md). Below is the list of the operations supported with Live Video Analytics. -->
 
-| Bewerkings-id| Beschrijving|
+| Bewerkings-id| Description|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount. livevideoanalytics | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline. livevideoanalytics | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -57,7 +57,7 @@ Live video Analytics-bewerkingen zijn ook beschikbaar in de `.debug` versie (bij
 
 Dit zijn de para meters die vereist zijn voor elk van deze ruimtelijke analyse bewerkingen.
 
-| Bewerkingsparameters| Beschrijving|
+| Bewerkingsparameters| Description|
 |---------|---------|
 | Bewerkings-ID | De bewerkings-id uit de bovenstaande tabel.|
 | enabled | Booleaans: waar of onwaar|
@@ -88,7 +88,7 @@ Dit zijn de para meters die vereist zijn voor elk van deze ruimtelijke analyse b
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -121,7 +121,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `lines` | list| Lijst met regels.|
 | `name` | tekenreeks| Beschrijvende naam voor deze regel.|
@@ -152,7 +152,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -184,7 +184,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -638,8 +638,8 @@ Voorbeeld JSON voor detecties die door deze bewerking worden uitgevoerd.
 
 Mogelijk wilt u de detectie van ruimtelijke analyses of gebeurtenissen in uw toepassing integreren. Hier volgen enkele benaderingen waarmee u rekening moet houden: 
 
-* Gebruik de Azure Event hub SDK voor de gekozen programmeer taal om verbinding te maken met het Azure IoT Hub-eind punt en de gebeurtenissen te ontvangen. Zie [apparaat-naar-Cloud-berichten lezen van het ingebouwde eind punt](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-read-builtin) voor meer informatie. 
-* Stel **bericht routering** in op uw Azure-IOT hub om de gebeurtenissen te verzenden naar andere eind punten of sla de gebeurtenissen op in uw gegevens opslag. Zie [IOT hub Message Routing](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c) voor meer informatie. 
+* Gebruik de Azure Event hub SDK voor de gekozen programmeer taal om verbinding te maken met het Azure IoT Hub-eind punt en de gebeurtenissen te ontvangen. Zie [apparaat-naar-Cloud-berichten lezen van het ingebouwde eind punt](../../iot-hub/iot-hub-devguide-messages-read-builtin.md) voor meer informatie. 
+* Stel **bericht routering** in op uw Azure-IOT hub om de gebeurtenissen te verzenden naar andere eind punten of sla de gebeurtenissen op in uw gegevens opslag. Zie [IOT hub Message Routing](../../iot-hub/iot-hub-devguide-messages-d2c.md) voor meer informatie. 
 * Stel een Azure Stream Analytics-taak in om de gebeurtenissen in realtime te verwerken wanneer ze binnenkomen en visualisaties maken. 
 
 ## <a name="deploying-spatial-analysis-operations-at-scale-multiple-cameras"></a>Ruimtelijke analyse bewerkingen op schaal implementeren (meerdere camera's)
@@ -725,7 +725,7 @@ U kunt de prestaties en het gebruik van de Gpu's optimaal benutten door gebruik 
       }
   }
   ```
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `batch_size` | int | Hiermee wordt het aantal camera's aangegeven dat in de bewerking wordt gebruikt. |
 

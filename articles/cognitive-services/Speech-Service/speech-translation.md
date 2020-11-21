@@ -12,12 +12,12 @@ ms.date: 09/01/2020
 ms.author: erhopf
 ms.custom: devx-track-csharp, cog-serv-seo-aug-2020
 keywords: spraak omzetting
-ms.openlocfilehash: e54659b0d4504def272d3de40d5e953d98404a8d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36c2943d7cd5ce2c5c7c4a8501dc0033aa8c9cbc
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91630067"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015202"
 ---
 # <a name="what-is-speech-translation"></a>Wat is spraakomzetting?
 
@@ -48,13 +48,13 @@ Voorbeeld code voor de Speech SDK is beschikbaar op GitHub. Deze voor beelden he
 
 ## <a name="migration-guides"></a>Migratiehandleidingen
 
-Als uw toepassingen, hulpprogram ma's of producten de [Translator Speech-API](https://docs.microsoft.com/azure/cognitive-services/translator-speech/overview)gebruiken, hebben we gidsen gemaakt om u te helpen migreren naar de spraak service.
+Als uw toepassingen, hulpprogram ma's of producten de [Translator Speech-API](./how-to-migrate-from-translator-speech-api.md)gebruiken, hebben we gidsen gemaakt om u te helpen migreren naar de spraak service.
 
 * [Migreren van de Translator Speech-API naar de speech-service](how-to-migrate-from-translator-speech-api.md)
 
 ## <a name="reference-docs"></a>Naslagdocumentatie
 
-* [Speech-SDK](speech-sdk-reference.md)
+* [Speech-SDK](./speech-sdk.md)
 * [Speech Devices SDK](speech-devices-sdk.md)
 * [REST API: Spraak-naar-tekst](rest-speech-to-text.md)
 * [REST API: Tekst-naar-spraak](rest-text-to-speech.md)

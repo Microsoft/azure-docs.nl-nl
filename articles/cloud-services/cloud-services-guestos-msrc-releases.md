@@ -10,14 +10,14 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.author: yohaddad
-ms.openlocfilehash: 5a5e448660583204d424358e571c4bfb74890e8d
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: e84342bff0d2bbc3b034afc1b3c5e8a7dc4a9eb1
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94737826"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015524"
 ---
 # <a name="azure-guest-os"></a>Azure-gast besturingssysteem
 In de volgende tabellen ziet u de micro soft Security Response Center-updates (MSRC) die zijn toegepast op het Azure-gast besturingssysteem. Zoek in dit artikel om te bepalen of een bepaalde update van toepassing is op het gast besturingssysteem dat u gebruikt. Updates worden altijd uitgevoerd voor de desbetreffende [familie][family-explain] waarin ze zijn geïntroduceerd.
@@ -29,10 +29,10 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 
 | Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
 | --- | --- | --- | --- | --- |
-|  Rel 20-11 |  [4586793]  |  Meest recente cumulatieve update | 6,25 | 10 november 2020 |
+|  OOB rel 20-11 |  [4594442]  |  Meest recente cumulatieve update | 6,25 | 17 november 2020 |
+|  OOB rel 20-11 |  [4594441]  |  Meest recente cumulatieve update | 5,49 | 19 november 2020 |
 |  Rel 20-11 |  [4580325]  |  Flash-Update | 3,91, 4,84, 5,49, 6,25 | 13 oktober 2020 |
 |  Rel 20-11 |  [4586768]  |  Cumulatieve update voor IE | 2,104, 3,91, 4,84 | 10 november 2020 |
-|  Rel 20-11 |  [4586830]  |  Meest recente cumulatieve update | 5,49 | 10 november 2020 |
 |  Rel 20-11 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 2,104 | 10 november 2020 |
 |  Rel 20-11 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 2,104 | 10 november 2020 |
 |  Rel 20-11 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 4,84 | 10 november 2020 |
@@ -52,10 +52,10 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 |  Rel 20-11 |  [4494175]  |  Micro | 5,49 | 1 sep, 2020 |
 |  Rel 20-11 |  [4494174]  |  Micro | 6,25 | 3 sep, 2020 |
 
-[4586793]: https://support.microsoft.com/kb/4586793
+[4594442]: https://support.microsoft.com/kb/4594442
+[4594441]: https://support.microsoft.com/kb/4594441
 [4580325]: https://support.microsoft.com/kb/4580325
 [4586768]: https://support.microsoft.com/kb/4586768
-[4586830]: https://support.microsoft.com/kb/4586830
 [4578952]: https://support.microsoft.com/kb/4578952
 [4578955]: https://support.microsoft.com/kb/4578955
 [4578953]: https://support.microsoft.com/kb/4578953

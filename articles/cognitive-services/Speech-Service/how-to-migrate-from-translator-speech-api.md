@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: aahi
-ms.openlocfilehash: d6b1085d51d7345b233087986127cbc97c0597e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2fb03721baa80e77a5fd387600a272e6b1cfc7d3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362058"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013642"
 ---
 # <a name="migrate-from-the-translator-speech-api-to-the-speech-service"></a>Migreren van de Translator Speech-API naar de speech-service
 
@@ -37,7 +37,7 @@ Gebruik dit artikel om uw toepassingen van de micro soft-Translator Speech-API n
 | Meerdere talen vertaald in één aanvraag | : heavy_minus_sign:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
 | Sdk's beschikbaar                                    | : heavy_minus_sign:                                              | :heavy_check_mark:                 | Raadpleeg de [documentatie](index.yml) van de speech-service voor beschik bare sdk's.                                                                                                                                                    |
 | Websockets verbindingen                            | :heavy_check_mark:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
-| API voor talen                                     | :heavy_check_mark:                                              | : heavy_minus_sign:                 | De spraak service ondersteunt hetzelfde bereik van talen als beschreven in het [naslag artikel over de Vertaal talen](../translator-speech/languages-reference.md) . |
+| API voor talen                                     | :heavy_check_mark:                                              | : heavy_minus_sign:                 | De spraak service ondersteunt hetzelfde bereik van talen als beschreven in het [naslag artikel over de Vertaal talen]() . |
 | Filter en markering voor scheld woorden                       | : heavy_minus_sign:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
 | . WAV/PCM als invoer                                 | :heavy_check_mark:                                              | :heavy_check_mark:                 |                                                                                                                                                                                                                                                                                    |
 | Andere bestands typen als invoer                         | : heavy_minus_sign:                                              | : heavy_minus_sign:                 |                                                                                                                                                                                                                                                                                    |
@@ -62,9 +62,9 @@ Als u of uw organisatie toepassingen in ontwikkeling of productie heeft die gebr
 ## <a name="next-steps"></a>Volgende stappen
 
 * [De spraak service gratis uitproberen](overview.md#try-the-speech-service-for-free)
-* [Quick Start: spraak herkennen in een UWP-app met behulp van de Speech SDK](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=uwp)
+* [Quick Start: spraak herkennen in een UWP-app met behulp van de Speech SDK](./get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=uwp)
 
 ## <a name="see-also"></a>Zie ook
 
 * [Wat is de speech-service](overview.md)
-* [Documentatie voor speech-service en spraak SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-qsg)
+* [Documentatie voor speech-service en spraak SDK](./speech-devices-sdk-quickstart.md?pivots=platform-android)

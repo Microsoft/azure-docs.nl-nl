@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 10/22/2020
 ms.author: bwren
-ms.openlocfilehash: 35ed275419cc4319e7edfed608340853c986a927
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: d00ffb1cb9b9fd6231322d4ef5bfebfbe242eac7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515622"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014234"
 ---
 # <a name="azure-monitor-logs-overview"></a>Overzicht van Azure Monitor logboeken
 Azure Monitor-Logboeken is een functie van Azure Monitor waarmee logboek-en prestatie gegevens van [bewaakte bronnen](../monitor-reference.md)worden verzameld en ingedeeld. Gegevens uit verschillende bronnen, zoals [platform logboeken](platform-logs-overview.md) van Azure-Services, logboek-en prestatie gegevens van [virtuele machines](agents-overview.md), en gebruiks-en prestatie gegevens van [toepassingen](../app/app-insights-overview.md) kunnen worden geconsolideerd in één werk ruimte, zodat ze kunnen worden geanalyseerd met behulp van een geavanceerde query taal die snel miljoenen records kan analyseren. U kunt een eenvoudige query uitvoeren waarbij alleen een specifieke set records wordt opgehaald of een geavanceerde gegevens analyse uit te voeren om essentiële patronen in uw bewakings gegevens te identificeren. Werk met logboek query's en hun resultaten interactief met behulp van Log Analytics, gebruik deze in een waarschuwings regel voor het proactief ontvangen van problemen of het visualiseren van de resultaten in een werkmap of dash board.
@@ -75,8 +75,8 @@ Gegevens worden opgehaald uit een Log Analytics-werk ruimte met behulp van een l
 ## <a name="log-analytics"></a>Log Analytics
 Gebruik Log Analytics, een hulp programma in de Azure Portal, om logboek query's te bewerken en uit te voeren en de resultaten interactief te analyseren. U kunt vervolgens de query's gebruiken die u hebt gemaakt ter ondersteuning van andere functies in Azure Monitor, zoals waarschuwingen voor logboek query's en werkmappen. Toegang tot Log Analytics via de optie **Logboeken** in het menu Azure monitor of vanuit de meeste andere services in de Azure Portal.
 
-- Zie [overzicht van log Analytics in azure monitor](/log-query/log-analytics-overview.md) voor een beschrijving van log Analytics. 
-- Zie [log Analytics zelf studie](/log-query/log-analytics-tutorial.md) voor instructies over het gebruik van log Analytics-functies voor het maken van een eenvoudige logboek query en het analyseren van de resultaten.
+- Zie [overzicht van log Analytics in azure monitor](/azure/azure-monitor/log-query/log-analytics-overview) voor een beschrijving van log Analytics. 
+- Zie [log Analytics zelf studie](/azure/azure-monitor/log-query/log-analytics-tutorial) voor instructies over het gebruik van log Analytics-functies voor het maken van een eenvoudige logboek query en het analyseren van de resultaten.
 
 
 

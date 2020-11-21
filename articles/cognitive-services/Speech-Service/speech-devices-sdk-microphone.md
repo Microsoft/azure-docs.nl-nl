@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/16/2019
 ms.author: erhopf
-ms.openlocfilehash: eace63effdbd62d8f08395aa16683627b475a963
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 698a1d52af6c2472d6c025851ead1a0b6a6dff82
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86232522"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015338"
 ---
 # <a name="speech-devices-sdk-microphone-array-recommendations"></a>Aanbevelingen voor SDK-microfoon matrix voor speech-apparaten
 
@@ -97,7 +97,7 @@ De volgende richt lijnen voor architectuur zijn nodig bij het integreren van mic
 | Sampling-klok      | De audio van het apparaat mag geen jitter-en drop-outs met lage drift hebben |
 | Record mogelijkheid   | Het apparaat moet tegelijkertijd onbewerkte individuele kanaal gegevens kunnen vastleggen |
 | USB                 | Alle USB-audio-invoer apparaten moeten descriptors instellen volgens de [USB-audio apparaten Rev3 spec](https://www.usb.org/document-library/usb-audio-devices-rev-30-and-adopters-agreement) |
-| Geometrie van microfoon | Stuur Programma's moeten [geometrie-descriptors](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry) op de juiste wijze implementeren |
+| Geometrie van microfoon | Stuur Programma's moeten [geometrie-descriptors](/windows-hardware/drivers/audio/ksproperty-audio-mic-array-geometry) op de juiste wijze implementeren |
 | Detectie     | Apparaten mogen geen niet-opgemaakte of niet-bewerkte hardware, firmware of op software gebaseerde niet-lineaire, niet-gestuurde algoritmen voor audio verwerking van het apparaat hebben |
 | Capture-indeling      | Vastleg indelingen moeten een mini maal sampling frequentie van 16 kHz en een aanbevolen 24-bits diepte gebruiken |
 

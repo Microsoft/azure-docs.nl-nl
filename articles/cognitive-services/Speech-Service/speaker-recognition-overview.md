@@ -12,12 +12,12 @@ ms.date: 09/02/2020
 ms.author: trbye
 ms.custom: cog-serv-seo-aug-2020
 keywords: sprekerherkenning, biometrische spraak
-ms.openlocfilehash: 5001ac166b37f3a3852bc14261a5b5d199d778cd
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: d07a9960c8a586fa137b4b717afbf91740c265d3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844559"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015321"
 ---
 # <a name="what-is-speaker-recognition-preview"></a>Wat is Speaker Recognition (preview)?
 
@@ -70,10 +70,10 @@ Net als bij alle Cognitive Services resources moeten ontwikkel aars die gebruikm
 | Welke audio-indelingen worden ondersteund? | Mono 16-bits, 16kHz PCM-encoded WAV |
 | **Accepteren** en **weigeren** van antwoorden is niet nauw keurig, hoe kunt u de drempel waarde afstemmen? | Omdat de optimale drempel sterk varieert met scenario's, bepaalt de API of ' geaccepteerd ' of ' afwijzen ' op basis van een standaard drempelwaarde van 0,5. Ervaren gebruikers worden geadviseerd om de standaard beslissing te negeren en het resultaat te verfijnen op basis van uw eigen scenario. |
 | Kunt u één spreker meerdere keren inschrijven? | Ja, voor een tekst afhankelijke verificatie kunt u een spreker van Maxi maal 50 keer inschrijven. Voor tekst onafhankelijke verificatie of Speaker-identificatie kunt u inschrijven met Maxi maal 300 seconden aan audio. |
-| Welke gegevens worden opgeslagen in azure? | Inschrijvings audio wordt opgeslagen in de service totdat het spraak profiel wordt [verwijderd](speaker-recognition-basics.md#deleting-voice-profile-enrollments). Audio-voor beelden voor herkenning blijven niet behouden of worden opgeslagen. |
+| Welke gegevens worden opgeslagen in azure? | Inschrijvings audio wordt opgeslagen in de service totdat het spraak profiel wordt [verwijderd](./get-started-speaker-recognition.md#deleting-voice-profile-enrollments). Audio-voor beelden voor herkenning blijven niet behouden of worden opgeslagen. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> * Voltooi het Speaker Recognition [basis-artikel](speaker-recognition-basics.md) voor een uitvoering van veelvoorkomende ontwerp patronen die u in uw toepassingen kunt gebruiken.
+> * Voltooi het Speaker Recognition [basis-artikel](./get-started-speaker-recognition.md) voor een uitvoering van veelvoorkomende ontwerp patronen die u in uw toepassingen kunt gebruiken.
 > * Raadpleeg de [video zelf studie](https://azure.microsoft.com/resources/videos/speaker-recognition-text-independent-verification-developer-tutorial/) voor tekst onafhankelijke luidspreker verificatie.

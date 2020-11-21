@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/02/2020
 ms.custom: lyhughes
-ms.openlocfilehash: 320d92ef0ad6d02dbe7c31b883eb7f73472378ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56a1d5aab2f665f9c5bd8f6fa322f35e55483c7b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667806"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016714"
 ---
 # <a name="upcoming-changes-to-json-flattening-and-escaping-rules-for-new-environments"></a>Aanstaande wijzigingen in JSON-afvlakking en-Escape regels voor nieuwe omgevingen
 
@@ -44,17 +44,17 @@ Matrices met objecten worden altijd afgevlakt, waardoor er meerdere gebeurteniss
 
 Nieuwe implementaties moeten overeenkomen met de nieuwe opname regels. Als uw TS-ID bijvoorbeeld is `telemetry_tagId` , moet u alle Azure Resource Manager sjablonen of geautomatiseerde implementatie scripts bijwerken om te configureren `telemetry.tagId` als de OMGEVINGS-id. U hebt deze wijziging ook nodig voor tijds tempels van gebeurtenis bronnen in geneste JSON.
 
-### <a name="if-your-payload-contains-nested-json-or-special-characters-and-you-automate-authoring-time-series-model-variable-expressions"></a>Als uw payload geneste JSON of speciale tekens bevat en u de variabelen expressies voor het maken van de [tijd reeks](.\time-series-insights-update-tsm.md) kunt automatiseren
+### <a name="if-your-payload-contains-nested-json-or-special-characters-and-you-automate-authoring-time-series-model-variable-expressions"></a>Als uw payload geneste JSON of speciale tekens bevat en u de variabelen expressies voor het maken van de [tijd reeks](./concepts-model-overview.md) kunt automatiseren
 
-Werk uw client code bij waarmee [TypesBatchPut](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput) wordt uitgevoerd, zodat deze overeenkomen met de nieuwe opname regels. U moet bijvoorbeeld een eerdere [Time Series-expressie](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) van `"value": {"tsx": "$event.series_value.Double"}` op een van de volgende opties bijwerken:
+Werk uw client code bij waarmee [TypesBatchPut](/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput) wordt uitgevoerd, zodat deze overeenkomen met de nieuwe opname regels. U moet bijvoorbeeld een eerdere [Time Series-expressie](/rest/api/time-series-insights/reference-time-series-expression-syntax) van `"value": {"tsx": "$event.series_value.Double"}` op een van de volgende opties bijwerken:
 
 * `"value": {"tsx": "$event.series.value.Double"}`
 * `"value": {"tsx": "$event['series']['value'].Double"}`
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [Azure time series Insights Gen2-opslag en](./time-series-insights-update-storage-ingress.md)inkomend verkeer.
+* Meer informatie over [Azure time series Insights Gen2-opslag en](./concepts-ingestion-overview.md)inkomend verkeer.
 
 * Meer informatie over het uitvoeren van een query op uw gegevens met behulp van [Time Series query-api's](./concepts-query-overview.md).
 
-* Meer informatie over de [syntaxis van de nieuwe time series-expressie](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
+* Meer informatie over de [syntaxis van de nieuwe time series-expressie](/rest/api/time-series-insights/reference-time-series-expression-syntax).

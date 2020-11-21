@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/13/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2bb66d8a197a33d6d0ad46502b510662f43ea1ca
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 89e5fa180b011cbedebc25a5e5d555a2190805f8
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94988558"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015355"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API voor spraak-naar-tekst
 
@@ -30,7 +30,7 @@ Houd rekening met het volgende voordat u de spraak-naar-tekst REST API gebruikt:
 Als het verzenden van meer audio een vereiste is voor uw toepassing, kunt u overwegen om de [spraak-SDK](speech-sdk.md) of een rest API op basis van een bestand te gebruiken, zoals [batch transcriptie](batch-transcription.md).
 
 > [!TIP]
-> Zie de [documentatie](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure) van Azure Government voor Government Cloud (FairFax)-eind punten.
+> Zie de [documentatie](../../azure-government/compare-azure-government-global-azure.md) van Azure Government voor Government Cloud (FairFax)-eind punten.
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-rest-auth.md)]
 
@@ -307,5 +307,5 @@ Een typische reactie op erkenning met beoordeling van de uitspraak:
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Een gratis Azure-account maken](https://azure.microsoft.com/free/cognitive-services/)
-- [Akoestische modellen aanpassen](how-to-customize-acoustic-models.md)
-- [Taalmodellen aanpassen](how-to-customize-language-model.md)
+- [Akoestische modellen aanpassen](./how-to-custom-speech-train-model.md)
+- [Taalmodellen aanpassen](./how-to-custom-speech-train-model.md)

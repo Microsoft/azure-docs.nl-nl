@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: 2c415fc92d2d338c568c422b1db2579563527839
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: f07efcc18f3eff7e40232941befb563cd236266b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442052"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013032"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Een Azure Resource Manager sjabloon gebruiken om een werk ruimte te maken voor Azure Machine Learning
 
@@ -38,6 +38,10 @@ Zie [een toepassing implementeren met Azure Resource Manager sjabloon](../azure-
     * __Azure Container Registry voor de werkruimte achter uw virtuele netwerk__
 
     Zie [Quota's beheren en verhogen](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases)voor meer informatie.
+
+## <a name="limitations"></a>Beperkingen
+
+* Wanneer u een nieuwe werk ruimte maakt, kunt u de werk ruimte toestaan de Azure-Services te maken die deze automatisch vereist of bestaande Services biedt. Wanneer u bestaande services levert, moeten deze services allemaal deel uitmaken van hetzelfde Azure-abonnement als de werk ruimte.
 
 ## <a name="workspace-resource-manager-template"></a>Werkruimte Resource Manager-sjabloon
 

@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 546c53334b7700ab73c22edb2d82b324bfad61a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e0f1ea42aa2ba888b89dd652d3397a3a2163a3e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569445"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016204"
 ---
 # <a name="plan-your-azure-time-series-insights-gen1-environment"></a>Uw Azure Time Series Insights gen1-omgeving plannen
 
@@ -67,7 +67,7 @@ U kunt de Bewaar periode aanpassen en scha kelen tussen de twee modi op de confi
 
 1. Selecteer uw Time Series Insights omgeving in het [Azure Portal](https://portal.azure.com).
 
-1. Selecteer in het deel venster **Time Series Insights omgeving** onder **instellingen**de optie **opslag configuratie**.
+1. Selecteer in het deel venster **Time Series Insights omgeving** onder **instellingen** de optie **opslag configuratie**.
 
 1. Voer in het vak **tijdstip van bewaren van gegevens (in dagen)** een waarde in tussen 1 en 400.
 
@@ -92,7 +92,7 @@ Beperking en latentie spelen een rol in capaciteit per minuut. Als u een Prikker
 
 Als u bijvoorbeeld een enkele S1-SKU hebt, hebt u gegevens binnenkomen met een snelheid van 720 gebeurtenissen per minuut, en de gegevens snelheids pieken voor minder dan een uur met een snelheid van 1.440 gebeurtenissen of minder, er is geen merkbaar latentie in uw omgeving. Als u echter meer dan één uur 1.440 gebeurtenissen per minuut overschrijdt, zal er waarschijnlijk een latentie optreden in gegevens die worden gevisualiseerd en beschikbaar zijn voor query's in uw omgeving.
 
-Mogelijk weet u niet vooraf hoeveel gegevens u naar verwachting pusht. In dit geval kunt u gegevens-telemetrie voor [azure IOT hub](../iot-hub/iot-hub-metrics.md) en [Azure Event hubs](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/25/using-the-azure-rest-apis-to-retrieve-event-hub-metrics/) vinden in uw Azure Portal-abonnement. U kunt de telemetrie gebruiken om te bepalen hoe uw omgeving moet worden ingericht. Gebruik het deel venster **metrische gegevens** in de Azure portal voor de betreffende gebeurtenis bron om de telemetrie weer te geven. Als u de metrische gegevens van uw gebeurtenis bron begrijpt, kunt u uw Azure Time Series Insights omgeving effectiever plannen en inrichten.
+Mogelijk weet u niet vooraf hoeveel gegevens u naar verwachting pusht. In dit geval kunt u gegevens-telemetrie voor [azure IOT hub](../iot-hub/monitor-iot-hub.md) en [Azure Event hubs](/archive/blogs/cloud_solution_architect/using-the-azure-rest-apis-to-retrieve-event-hub-metrics) vinden in uw Azure Portal-abonnement. U kunt de telemetrie gebruiken om te bepalen hoe uw omgeving moet worden ingericht. Gebruik het deel venster **metrische gegevens** in de Azure portal voor de betreffende gebeurtenis bron om de telemetrie weer te geven. Als u de metrische gegevens van uw gebeurtenis bron begrijpt, kunt u uw Azure Time Series Insights omgeving effectiever plannen en inrichten.
 
 ### <a name="calculate-ingress-requirements"></a>Ingangs vereisten berekenen
 
@@ -128,6 +128,6 @@ Lees onze [documentatie over referentie gegevensset](time-series-insights-add-re
 
 - Ga aan de slag door [een nieuwe Azure time series Insights-omgeving te maken in de Azure Portal](time-series-insights-get-started.md).
 
-- Meer informatie over het [toevoegen van een event hubs gebeurtenis bron](time-series-insights-how-to-add-an-event-source-eventhub.md) aan Azure time series Insights.
+- Meer informatie over het [toevoegen van een event hubs gebeurtenis bron](./how-to-ingest-data-event-hub.md) aan Azure time series Insights.
 
-- Meer informatie over het [configureren van een IOT hub gebeurtenis bron](time-series-insights-how-to-add-an-event-source-iothub.md).
+- Meer informatie over het [configureren van een IOT hub gebeurtenis bron](./how-to-ingest-data-iot-hub.md).

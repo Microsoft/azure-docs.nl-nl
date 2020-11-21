@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: 7de78a52482b2f07cb4e5e036509e0f9e402a3f4
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: aa85822b433e2d8128df9ae3664411ea3fcddec4
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576271"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95012936"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Een werk ruimte maken voor Azure Machine Learning met Azure CLI
 
@@ -26,9 +26,13 @@ In dit artikel leert u hoe u een Azure Machine Learning-werk ruimte maakt met be
 
 * Een **Azure-abonnement**. Als u er nog geen hebt, probeer [dan de gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
 
-* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving** , hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving**, hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 
     Als u [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/) gebruikt, opent u de CLI via de browser en bevindt deze zich in de cloud.
+
+## <a name="limitations"></a>Beperkingen
+
+* Wanneer u een nieuwe werk ruimte maakt, kunt u de werk ruimte toestaan de Azure-Services te maken die deze automatisch vereist of bestaande Services biedt. Wanneer u bestaande services levert, moeten deze services allemaal deel uitmaken van hetzelfde Azure-abonnement als de werk ruimte.
 
 ## <a name="connect-the-cli-to-your-azure-subscription"></a>De CLI koppelen aan uw Azure-abonnement
 
@@ -107,7 +111,7 @@ Zie [az group](/cli/azure/group?preserve-view=true&view=azure-cli-latest) voor m
 
 ### <a name="automatically-create-required-resources"></a>Automatisch vereiste resources maken
 
-Als u een nieuwe werk ruimte wilt maken waar de __Services automatisch worden gemaakt__ , gebruikt u de volgende opdracht:
+Als u een nieuwe werk ruimte wilt maken waar de __Services automatisch worden gemaakt__, gebruikt u de volgende opdracht:
 
 ```azurecli-interactive
 az ml workspace create -w <workspace-name> -g <resource-group-name>
@@ -189,7 +193,7 @@ Als u een werk ruimte wilt maken waarin bestaande resources worden gebruikt, moe
 > [!IMPORTANT]
 > U hoeft niet alle bestaande resources op te geven. U kunt een of meer opgeven. U kunt bijvoorbeeld een bestaand opslag account opgeven en de andere resources worden gemaakt door de werk ruimte.
 
-+ **Azure Storage account** : `az storage account show --name <storage-account-name> --query "id"`
++ **Azure Storage account**: `az storage account show --name <storage-account-name> --query "id"`
 
     Het antwoord van deze opdracht is vergelijkbaar met de volgende tekst en is de ID voor uw opslag account:
 
@@ -198,7 +202,7 @@ Als u een werk ruimte wilt maken waarin bestaande resources worden gebruikt, moe
     > [!IMPORTANT]
     > Als u een bestaand Azure Storage account wilt gebruiken, kan het geen Premium-account zijn (Premium_LRS en Premium_GRS). Het kan ook geen hiërarchische naam ruimte hebben (gebruikt met Azure Data Lake Storage Gen2). Geen enkele Premium-opslag of hiërarchische naam ruimte wordt ondersteund met het _standaard_ opslag account van de werk ruimte. U kunt Premium-opslag of een hiërarchische naam ruimte gebruiken met _niet-standaard_ opslag accounts.
 
-+ **Azure-toepassing Insights** :
++ **Azure-toepassing Insights**:
 
     1. Installeer de Application Insights-extensie:
 
@@ -216,13 +220,13 @@ Als u een werk ruimte wilt maken waarin bestaande resources worden gebruikt, moe
 
         `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/microsoft.insights/components/<application-insight-name>"`
 
-+ **Azure Key Vault** : `az keyvault show --name <key-vault-name> --query "ID"`
++ **Azure Key Vault**: `az keyvault show --name <key-vault-name> --query "ID"`
 
     Het antwoord van deze opdracht is vergelijkbaar met de volgende tekst en is de ID voor uw sleutel kluis:
 
     `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<key-vault-name>"`
 
-+ **Azure container Registry** : `az acr show --name <acr-name> -g <resource-group-name> --query "id"`
++ **Azure container Registry**: `az acr show --name <acr-name> -g <resource-group-name> --query "id"`
 
     Het antwoord van deze opdracht is vergelijkbaar met de volgende tekst en is de ID voor het container register:
 

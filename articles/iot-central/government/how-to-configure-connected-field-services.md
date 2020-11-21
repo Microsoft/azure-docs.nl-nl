@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 2b3e006f717ed1c66c7db29dbd70c226d2d75ea8
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 702de11abc274d1f4001df5b28498928fde71109
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127213"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014455"
 ---
 # <a name="build-end-to-end-solution-with-azure-iot-central-and-dynamics-365-field-service"></a>End-to-end-oplossing bouwen met de veld Service Azure IoT Central en Dynamics 365 
 
@@ -21,7 +21,7 @@ ms.locfileid: "92127213"
 Als ontwerper kunt u de integratie van uw Azure IoT Central-toepassing naar andere bedrijfs systemen inschakelen. 
 
 
-In een oplossing voor een verbonden afval beheer kunt u bijvoorbeeld de verzen ding van heftrucks voor vuilnis verzamelingen optimaliseren. De optimalisatie kan worden uitgevoerd op basis van IoT Sens oren-gegevens van verbonden afval bakken. In uw [IOT Central verbonden afval beheer toepassing](./tutorial-connected-waste-management.md) kunt u regels en acties configureren en deze instellen om waarschuwingen te maken in de Dynamics-veld service. Dit scenario wordt bereikt door gebruik te maken van Microsoft Flow, dat rechtstreeks in IoT Central wordt geconfigureerd voor het automatiseren van werk stromen tussen toepassingen en services. Daarnaast kunnen gegevens op basis van service activiteiten in de veld service worden teruggestuurd naar Azure IoT Central. 
+In een oplossing voor een verbonden afval beheer kunt u bijvoorbeeld de verzen ding van heftrucks voor vuilnis verzamelingen optimaliseren. De optimalisatie kan worden uitgevoerd op basis van IoT Sens oren-gegevens van verbonden afval bakken. In uw [IOT Central verbonden afval beheer toepassing](./tutorial-connected-waste-management.md) kunt u regels en acties configureren en deze instellen om waarschuwingen te maken in de Dynamics-veld service. Dit scenario wordt gerealiseerd met behulp van energie automatisering, dat rechtstreeks wordt geconfigureerd in IoT Central voor het automatiseren van werk stromen tussen toepassingen en services. Daarnaast kunnen gegevens op basis van service activiteiten in de veld service worden teruggestuurd naar Azure IoT Central. 
 
 ## <a name="how-to-connect-your-azure-iot-central-application-with-dynamics-365-field-services"></a>Uw Azure IoT Central-toepassing verbinden met Dynamics 365 Field Services 
 

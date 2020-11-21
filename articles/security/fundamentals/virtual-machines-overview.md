@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/2/2019
 ms.author: terrylan
-ms.openlocfilehash: d22ce3941b00903be8532caaa36a9ce55e2f2c6f
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 91dfb3cb07cca8ec89c77dea43f1cd075db11bbf
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409787"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014761"
 ---
 # <a name="azure-virtual-machines-security-overview"></a>Overzicht van Azure Virtual Machines-beveiliging
 Dit artikel bevat een overzicht van de belangrijkste Azure-beveiligings functies die kunnen worden gebruikt met virtuele machines.
@@ -57,7 +57,7 @@ Meer informatie over antimalware-software om uw virtuele machines te beschermen:
 
 Voor nog krachtigere beveiliging kunt u het gebruik van [Windows Defender Advanced Threat Protection](/windows/security/threat-protection/windows-defender-atp/windows-defender-advanced-threat-protection)gebruiken. Met Windows Defender ATP krijgt u het volgende:
 
-* [Kwets baarheid voor aanvallen verminderen](/windows/security/threat-protection/windows-defender-atp/overview-attack-surface-reduction)  
+* [Kwetsbaarheid voor aanvallen verminderen](/windows/security/threat-protection/windows-defender-atp/overview-attack-surface-reduction)  
 * [Beveiliging van de volgende generatie](/windows/security/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10)  
 * [Endpoint Protection en respons](/windows/security/threat-protection/windows-defender-atp/overview-endpoint-detection-response)
 * [Geautomatiseerd onderzoek en herstel](/windows/security/threat-protection/windows-defender-atp/automated-investigations-windows-defender-advanced-threat-protection)
@@ -108,16 +108,16 @@ Een belang rijk onderdeel van de BCDR-strategie van uw organisatie is het bepale
 
 Site Recovery:
 
-* **Vereenvoudigt uw BCDR-strategie** : site Recovery maakt het eenvoudig om de replicatie, failover en het herstel van meerdere werk belastingen en apps vanaf één locatie te verwerken. Site Recovery organiseert de replicatie en failover, maar onderschept geen toepassings gegevens of bevat er informatie over.
-* **Voorziet in flexibele replicatie** : door site Recovery te gebruiken, kunt u workloads repliceren die worden uitgevoerd op virtuele Hyper-V-machines, virtuele VMware-machines en fysieke Windows/Linux-servers.
-* **Biedt ondersteuning voor failover en herstel** : site Recovery voorziet in testfailover voor het ondersteunen van herstel na nood gevallen zonder dat dit van invloed is op productie omgevingen. Bovendien kunt u bij verwachte uitval geplande failovers uitvoeren zonder gegevensverlies, en bij onverwachte noodsituaties ongeplande failovers met minimaal gegevensverlies (afhankelijk van de replicatiefrequentie). Na een failover kunt u weer een failback uitvoeren naar uw primaire sites. De herstelplannen van Site Recovery kunnen scripts en Azure Automation-werkmappen bevatten, zodat u failovers en het herstel van toepassingen met meerdere lagen naar behoefte kunt aanpassen.
-* **Elimineert secundaire data centers** : u kunt repliceren naar een secundaire on-premises site of naar Azure. Als u Azure als doel gebruikt voor herstel na nood gevallen, elimineert u de kosten en complexiteit van het onderhouden van een secundaire site. Gerepliceerde gegevens worden opgeslagen in Azure Storage.
-* Kan worden **geïntegreerd met bestaande BCDR-technologieën** : site Recovery partners met de BCDR-functies van andere toepassingen. U kunt bijvoorbeeld Site Recovery gebruiken om de SQL Server back-end van zakelijke workloads te helpen beveiligen. Dit omvat systeem eigen ondersteuning voor SQL Server altijd aan om de failover van beschikbaarheids groepen te beheren.
+* **Vereenvoudigt uw BCDR-strategie**: site Recovery maakt het eenvoudig om de replicatie, failover en het herstel van meerdere werk belastingen en apps vanaf één locatie te verwerken. Site Recovery organiseert de replicatie en failover, maar onderschept geen toepassings gegevens of bevat er informatie over.
+* **Voorziet in flexibele replicatie**: door site Recovery te gebruiken, kunt u workloads repliceren die worden uitgevoerd op virtuele Hyper-V-machines, virtuele VMware-machines en fysieke Windows/Linux-servers.
+* **Biedt ondersteuning voor failover en herstel**: site Recovery voorziet in testfailover voor het ondersteunen van herstel na nood gevallen zonder dat dit van invloed is op productie omgevingen. Bovendien kunt u bij verwachte uitval geplande failovers uitvoeren zonder gegevensverlies, en bij onverwachte noodsituaties ongeplande failovers met minimaal gegevensverlies (afhankelijk van de replicatiefrequentie). Na een failover kunt u weer een failback uitvoeren naar uw primaire sites. De herstelplannen van Site Recovery kunnen scripts en Azure Automation-werkmappen bevatten, zodat u failovers en het herstel van toepassingen met meerdere lagen naar behoefte kunt aanpassen.
+* **Elimineert secundaire data centers**: u kunt repliceren naar een secundaire on-premises site of naar Azure. Als u Azure als doel gebruikt voor herstel na nood gevallen, elimineert u de kosten en complexiteit van het onderhouden van een secundaire site. Gerepliceerde gegevens worden opgeslagen in Azure Storage.
+* Kan worden **geïntegreerd met bestaande BCDR-technologieën**: site Recovery partners met de BCDR-functies van andere toepassingen. U kunt bijvoorbeeld Site Recovery gebruiken om de SQL Server back-end van zakelijke workloads te helpen beveiligen. Dit omvat systeem eigen ondersteuning voor SQL Server altijd aan om de failover van beschikbaarheids groepen te beheren.
 
 Meer informatie:
 
 * [Wat is Azure Site Recovery?](../../site-recovery/site-recovery-overview.md)
-* [Hoe werkt Azure Site Recovery?](/azure/security/fundamentals/azure-to-azure-architecture)
+* [Hoe werkt Azure Site Recovery?](/azure/site-recovery/azure-to-azure-architecture)
 * [Welke workloads worden beveiligd door Azure Site Recovery?](../../site-recovery/site-recovery-workload.md)
 
 ## <a name="virtual-networking"></a>Virtueel netwerk

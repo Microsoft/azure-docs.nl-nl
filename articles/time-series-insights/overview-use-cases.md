@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/02/2020
 ms.custom: seodec18
-ms.openlocfilehash: b5b6233c0978f15aad94b7f66f8935c2d6f6f1c1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b8f13a20232fab61dc082c1b12b7ddaa11807554
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91666956"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016187"
 ---
 # <a name="azure-time-series-insights-gen2-use-cases"></a>Gebruikscases van Azure Time Series Insights Gen2
 
@@ -30,7 +30,7 @@ In dit artikel worden met name de volgende vragen beantwoord:
 
 Een overzicht van deze gebruiks scenario's wordt beschreven in de volgende secties.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Azure Time Series Insights Gen2 is een end-to-end-, platform-as-a-service-aanbieding. Het wordt gebruikt voor het verzamelen, verwerken, opslaan, analyseren en opvragen van zeer contextuele, time-series geoptimaliseerde gegevens voor IoT-schaal. Het is ideaal voor het verkennen van ad hoc gegevens en operationele analyses. Azure Time Series Insights Gen2 is een unieke uitbreid bare, aangepaste service aanbieding die voldoet aan de uitgebreide behoeften van industriële IoT-implementaties.
 
@@ -52,13 +52,13 @@ Klanten kunnen profiteren van de snelheid voor het snel diagnosticeren van probl
 
 Er zijn drie manieren om te communiceren met gegevens die zijn opgeslagen in Azure Time Series Insights Gen2:
 
-* De eerste en eenvoudigste manier om aan de slag te gaan is met de Azure Time Series Insights Gen2 Explorer. U kunt deze gebruiken om snel al uw IoT-gegevens op één plek te visualiseren. Het bevat hulpprogram ma's zoals de heatmap waarmee u afwijkingen in uw gegevens kunt herkennen. Het biedt ook een perspectief weergave. Gebruik it om Maxi maal vier weer gaven te vergelijken van een of meer Azure Time Series Insights Gen2 omgevingen in één dash board. Het dash board geeft u een overzicht van de gegevens van uw tijd reeks op al uw locaties. Meer informatie over de [Azure time series Insights Gen2 Explorer](./time-series-insights-update-explorer.md). Lees [Azure time series Insights Gen2-planning](./time-series-insights-update-plan.md)als u uw omgeving wilt plannen.
+* De eerste en eenvoudigste manier om aan de slag te gaan is met de Azure Time Series Insights Gen2 Explorer. U kunt deze gebruiken om snel al uw IoT-gegevens op één plek te visualiseren. Het bevat hulpprogram ma's zoals de heatmap waarmee u afwijkingen in uw gegevens kunt herkennen. Het biedt ook een perspectief weergave. Gebruik it om Maxi maal vier weer gaven te vergelijken van een of meer Azure Time Series Insights Gen2 omgevingen in één dash board. Het dash board geeft u een overzicht van de gegevens van uw tijd reeks op al uw locaties. Meer informatie over de [Azure time series Insights Gen2 Explorer](./concepts-ux-panels.md). Lees [Azure time series Insights Gen2-planning](./how-to-plan-your-environment.md)als u uw omgeving wilt plannen.
 
 * De tweede manier om te beginnen is met behulp van de Java script SDK om snel krachtige grafieken en grafieken in uw webtoepassing in te sluiten. Met slechts een paar regels code kunt u krachtige query's ontwerpen. Gebruik deze om lijn diagrammen, cirkel diagrammen, staaf diagrammen, heatmap, gegevens rasters en meer te vullen. Al deze elementen zijn out-of-the-box met behulp van de SDK. De SDK is ook abstracties Azure Time Series Insights Gen2-query-Api's. U kunt ze gebruiken om SQL-achtige predikaten te schrijven om de gegevens op te vragen die u op een dash board wilt weer geven. Azure Time Series Insights Gen2 biedt voor hybride oplossingen voor presentaties met para meters Url's. Ze bieden naadloze verbindings punten met de Azure Time Series Insights Gen2 Explorer voor diepe Dives in gegevens.
 
   * Meer informatie over de [js-client bibliotheek](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) en de voor [beeld-client](https://github.com/Microsoft/tsiclient) documentatie voor meer info over de Java script SDK.
 
-  * Meer informatie over het delen van Url's en de nieuwe gebruikers interface vindt u [in de Azure time series Insights Gen2 Explorer om visualiseren van gegevens](time-series-insights-update-explorer.md)te bekijken.
+  * Meer informatie over het delen van Url's en de nieuwe gebruikers interface vindt u [in de Azure time series Insights Gen2 Explorer om visualiseren van gegevens](./concepts-ux-panels.md)te bekijken.
 
 * De derde manier om te beginnen is het gebruik van de krachtige Api's om gegevens op te vragen die zijn opgeslagen in Azure Time Series Insights Gen2. Azure time series Insights Gen2 heeft tijdelijke Opera tors zoals `from` ,, en `to` `first` `last` . Het bevat aggregaties en trans formaties zoals,,,,, `average` `sum` `min` `max` `time-weighted average` `time-weighted sum` enzovoort. Daarnaast kunt u filteren, reken kundige en Booleaanse Opera Tors, scalaire functies, enzovoort. Al deze opera tors bieden downstream-toepassingen de mogelijkheid om snel interessante trends en patronen in uw gegevens te vinden. Gebruik ze om Homegrown-visualisaties te vullen om afwijkingen op te sporen.
 
@@ -100,6 +100,6 @@ Azure Time Series Insights Gen2 overbrugt de kloof tussen IoT-gegevens en geavan
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over de [Azure time series Insights Gen2 Explorer](./time-series-insights-update-explorer.md).
-* Lees [Azure time series Insights best practices voor Gen2](./time-series-insights-update-plan.md) om uw omgeving te plannen.
+* Meer informatie over de [Azure time series Insights Gen2 Explorer](./concepts-ux-panels.md).
+* Lees [Azure time series Insights best practices voor Gen2](./how-to-plan-your-environment.md) om uw omgeving te plannen.
 * Lees de documentatie van de [voorbeeld client](https://github.com/Microsoft/tsiclient) .

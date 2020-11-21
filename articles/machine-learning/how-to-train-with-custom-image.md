@@ -10,12 +10,12 @@ author: saachigopal
 ms.date: 10/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 4b4a1e601a5a0dbf5e56fc1d930e14150f27fee3
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: a441d1d22f938e1d1e05aea547929fa3b315d406
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93398229"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95012891"
 ---
 # <a name="train-a-model-by-using-a-custom-docker-image"></a>Een model trainen met behulp van een aangepaste docker-installatie kopie
 
@@ -138,7 +138,7 @@ print(compute_target.get_status().serialize())
 
 ## <a name="configure-your-training-job"></a>Uw trainings taak configureren
 
-Voor deze zelf studie gebruikt u het trainings script *Train.py* in [github](https://github.com/Azure/azureml-examples/blob/main/code/train/fastai/pets-resnet34/train.py). In de praktijk kunt u een aangepast trainings script maken en dit uitvoeren, net als bij Azure Machine Learning.
+Voor deze zelf studie gebruikt u het trainings script *Train.py* in [github](https://github.com/Azure/azureml-examples/blob/main/workflows/train/fastai/pets/src/train.py). In de praktijk kunt u een aangepast trainings script maken en dit uitvoeren, net als bij Azure Machine Learning.
 
 Maak een `ScriptRunConfig` resource om uw taak te configureren voor uitvoering op het gewenste [Compute-doel](how-to-set-up-training-targets.md).
 

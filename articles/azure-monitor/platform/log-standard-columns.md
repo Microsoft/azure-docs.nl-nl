@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/09/2020
-ms.openlocfilehash: 695b0b0ac06e63912ca0a471be3d96c148458c29
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: dc3d119479d2dce45b286463f3d6a76410220dd0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104237"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014217"
 ---
 # <a name="standard-columns-in-azure-monitor-logs"></a>Standaard kolommen in Azure Monitor-logboeken
 Gegevens in Azure Monitor logboeken worden [opgeslagen als een set records in een log Analytics werk ruimte of Application Insights toepassing](./data-platform-logs.md), elk met een bepaald gegevens type met een unieke set kolommen. Veel gegevens typen hebben standaard kolommen die gemeen schappelijk zijn voor meerdere typen. In dit artikel worden deze kolommen beschreven en vindt u voor beelden van hoe u deze kunt gebruiken in query's.
@@ -48,7 +48,7 @@ exceptions
 ```
 
 ## <a name="_timereceived"></a>\_TimeReceived
-De kolom ** \_ TimeReceived** bevat de datum en tijd waarop de record is ontvangen door het Azure monitor opname punt in de Azure-Cloud. Dit kan handig zijn om latentie problemen tussen de gegevens bron en de cloud te identificeren. Een voor beeld hiervan is een netwerk probleem dat een vertraging veroorzaakt bij het verzenden van gegevens van een agent. Zie [opname tijd van logboek gegevens in azure monitor](data-ingestion-time.md) voor meer informatie.
+De kolom **\_ TimeReceived** bevat de datum en tijd waarop de record is ontvangen door het Azure monitor opname punt in de Azure-Cloud. Dit kan handig zijn om latentie problemen tussen de gegevens bron en de cloud te identificeren. Een voor beeld hiervan is een netwerk probleem dat een vertraging veroorzaakt bij het verzenden van gegevens van een agent. Zie [opname tijd van logboek gegevens in azure monitor](data-ingestion-time.md) voor meer informatie.
 
 De volgende query geeft de gemiddelde latentie per uur voor gebeurtenis records van een agent. Dit omvat de tijd van de agent naar de Cloud en de totale tijd voor de record die beschikbaar is voor logboek query's.
 
@@ -74,11 +74,11 @@ search *
 
 ```
 ## <a name="_itemid"></a>\_ItemId
-De kolom ** \_ Itemid** bevat een unieke id voor de record.
+De kolom **\_ Itemid** bevat een unieke id voor de record.
 
 
 ## <a name="_resourceid"></a>\_ResourceId
-De kolom ** \_ ResourceID** bevat een unieke id voor de resource waaraan de record is gekoppeld. Dit geeft u een standaard kolom die wordt gebruikt om uw query te beperken tot alleen records van een bepaalde resource, of om gerelateerde gegevens over meerdere tabellen samen te voegen.
+De kolom **\_ ResourceID** bevat een unieke id voor de resource waaraan de record is gekoppeld. Dit geeft u een standaard kolom die wordt gebruikt om uw query te beperken tot alleen records van een bepaalde resource, of om gerelateerde gegevens over meerdere tabellen samen te voegen.
 
 Voor Azure-resources is de waarde van **_ResourceId** de [URL van de Azure-resource-id](../../azure-resource-manager/templates/template-functions-resource.md). De kolom is momenteel beperkt tot Azure-resources, maar wordt uitgebreid naar bronnen buiten Azure, zoals on-premises computers.
 
@@ -124,7 +124,7 @@ union withsource = tt *
 Gebruik deze `union withsource = tt *` query's spaarzaam als scans over gegevens typen duur zijn om uit te voeren.
 
 ## <a name="_isbillable"></a>\_IsBillable
-De kolom ** \_ IsBillable** geeft aan of geconsumeerde gegevens Factureerbaar zijn. Gegevens met ** \_ IsBillable** gelijk aan `false` worden gratis verzameld en worden niet in rekening gebracht voor uw Azure-account.
+De kolom **\_ IsBillable** geeft aan of geconsumeerde gegevens Factureerbaar zijn. Gegevens met **\_ IsBillable** gelijk aan `false` worden gratis verzameld en worden niet in rekening gebracht voor uw Azure-account.
 
 ### <a name="examples"></a>Voorbeelden
 Gebruik de volgende query om een lijst op te halen met computers die gefactureerde gegevens typen verzenden:
@@ -151,7 +151,7 @@ union withsource = tt *
 ```
 
 ## <a name="_billedsize"></a>\_BilledSize
-De kolom ** \_ BilledSize** geeft de grootte in bytes aan gegevens aan die worden gefactureerd voor uw Azure-account als ** \_ IsBillable** is ingesteld op True.
+De kolom **\_ BilledSize** geeft de grootte in bytes aan gegevens aan die worden gefactureerd voor uw Azure-account als **\_ IsBillable** is ingesteld op True.
 
 
 ### <a name="examples"></a>Voorbeelden
@@ -211,4 +211,4 @@ union withsource = tt *
 
 - Lees meer over hoe [Azure monitor logboek gegevens worden opgeslagen](../log-query/log-query-overview.md).
 - Lees een les over het [schrijven van logboek query's](../log-query/get-started-queries.md).
-- Maak een les over het [koppelen van tabellen in logboek query's](../log-query/joins.md).
+- Maak een les over het [koppelen van tabellen in logboek query's](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#joins).

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: 64884f07bc59e5ff2b29eac645ddb469ef3db465
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6b3fdf052ce7f0d6a5c3497aa1ac971d9249546a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87325182"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015586"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms"></a>Logboeken van Azure Monitor voor VM's opvragen
 
@@ -112,7 +112,7 @@ Elke eigenschap RemoteIp in de tabel *VMConnection* wordt gecontroleerd op basis
 |:--|:--|
 |MaliciousIp |Het RemoteIp-adres |
 |IndicatorThreadType |Gedetecteerde bedreigings indicator is een van de volgende waarden: *botnet*, *C2*, *CryptoMining*, *Darknet*, *DDoS*, *MaliciousUrl*, *malware*, *phishing*, *proxy*, *pua's geblokkeerd*, *Watch list*.   |
-|Beschrijving |Beschrijving van de waargenomen bedreiging. |
+|Description |Beschrijving van de waargenomen bedreiging. |
 |TLPLevel |TLP-niveau (Traffic Light Protocol) is een van de gedefinieerde waarden, *wit*, *groen*, *geel*, *rood*. |
 |Betrouwbaarheid |De waarden zijn *0 – 100*. |
 |Ernst |De waarden zijn *0 – 5*, waarbij *5* het ernstigste en *0* is. De standaard waarde is *3*.  |
@@ -131,7 +131,7 @@ Elke record in VMBoundPort wordt geïdentificeerd aan de hand van de volgende ve
 | Eigenschap | Beschrijving |
 |:--|:--|
 |Proces | De identiteit van het proces (of groep processen) waarmee de poort is gekoppeld.|
-|Onderzoek | IP-adres van poort (kan *IP-adressen*van joker tekens zijn) |
+|Onderzoek | IP-adres van poort (kan *IP-adressen* van joker tekens zijn) |
 |Poort |Het poort nummer |
 |Protocol | Het protocol.  Voor beeld: *TCP* of *UDP* (alleen *TCP* wordt momenteel ondersteund).|
  
@@ -233,7 +233,7 @@ Records met een type *VMProcess* hebben inventaris gegevens voor met TCP verbond
 |Groep | Naam van de proces groep. Processen in dezelfde groep zijn logisch gerelateerd, bijvoorbeeld een deel van hetzelfde product of systeem onderdeel. |
 |StartTime | De begin tijd van de proces groep |
 |FirstPid | De eerste pincode in de proces groep |
-|Beschrijving | De proces beschrijving |
+|Description | De proces beschrijving |
 |CompanyName | De naam van het bedrijf |
 |Internenaam | De interne naam |
 |ProductName | De naam van het product |
@@ -475,5 +475,5 @@ De prestatie meter items die momenteel zijn verzameld in de tabel *InsightsMetri
 
 * Als u geen logboek query's in Azure Monitor kunt schrijven, raadpleegt u [hoe u log Analytics](../log-query/get-started-portal.md) in de Azure Portal gebruikt om logboek query's te schrijven.
 
-* Meer informatie over het [schrijven van zoek query's](../log-query/search-queries.md).
+* Meer informatie over het [schrijven van zoek query's](/azure/azure-monitor/log-query/get-started-queries).
 

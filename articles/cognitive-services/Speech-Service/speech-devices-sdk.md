@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: erhopf
-ms.openlocfilehash: 560c156c8e2c3d69c099b2ad573fa0d214f3f80b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0309329b37436022dc88f8951853c4bb09a2c080
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91355071"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015270"
 ---
 # <a name="what-is-the-speech-devices-sdk"></a>Wat is de SDK voor spraak apparaten?
 
@@ -29,9 +29,9 @@ De SDK voor spraak apparaten kan u helpen bij het volgende:
 
 De speech-apparaten SDK verbruikt de [spraak-SDK](speech-sdk.md). Met onze geavanceerde algoritmen voor geluids verwerking met de microfoon matrix van het apparaat kunt u de audio naar de [Speech-Service](overview.md)verzenden. Het biedt nauw keurige [spraak herkenning](speech-to-text.md) via ruis, Echo annulering, beamforming en dereverberation.
 
-U kunt ook de speech apparaten SDK gebruiken om omgevings apparaten te bouwen die uw eigen [aangepaste sleutel woord](speech-devices-sdk-create-kws.md)hebben. Een aangepast tref woord biedt een hint waarmee een gebruikers interactie wordt gestart die uniek is voor uw merk.
+U kunt ook de speech apparaten SDK gebruiken om omgevings apparaten te bouwen die uw eigen [aangepaste sleutel woord](./custom-keyword-basics.md)hebben. Een aangepast tref woord biedt een hint waarmee een gebruikers interactie wordt gestart die uniek is voor uw merk.
 
-De SDK voor spraak apparaten maakt een groot aantal scenario's met spraak functionaliteit mogelijk, zoals [spraak assistenten](https://aka.ms/bots/speech/va), bestel systemen voor stations, [conversatie transcriptie](conversation-transcription-service.md)en slimme sprekers. U kunt reageren op gebruikers met tekst, ze weer in een standaard-of [aangepaste stem](how-to-customize-voice-font.md)terugspreken, Zoek resultaten opgeven, [vertalen](speech-translation.md) naar andere talen en meer. We kijken ernaar uit om te zien wat u bouwt.
+De SDK voor spraak apparaten maakt een groot aantal scenario's met spraak functionaliteit mogelijk, zoals [spraak assistenten](./voice-assistants.md), bestel systemen voor stations, [conversatie transcriptie](./conversation-transcription.md)en slimme sprekers. U kunt reageren op gebruikers met tekst, ze weer in een standaard-of [aangepaste stem](./how-to-custom-voice-create-voice.md)terugspreken, Zoek resultaten opgeven, [vertalen](speech-translation.md) naar andere talen en meer. We kijken ernaar uit om te zien wat u bouwt.
 
 ## <a name="get-the-speech-devices-sdk"></a>De Speech Devices SDK ophalen
 

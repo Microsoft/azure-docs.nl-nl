@@ -8,19 +8,19 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.author: jhirono
 author: jhirono
-ms.date: 11/13/2020
+ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: e3d95be52215b03a30dc4b5c7f251357f163b24a
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: c67dcbbe2ca6dea533260f59831556c4338374ba
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616090"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013004"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Werkruimte gebruiken met een aangepaste DNS-server
 
-Wanneer u Azure Machine Learning met een virtueel netwerk gebruikt, zijn er [verschillende manieren om DNS-naam omzetting te verwerken](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md). Standaard verwerkt Azure automatisch naam omzetting voor uw werk ruimte en persoonlijk eind punt. Als u in plaats daarvan _uw eigen aangepaste DNS-server gebruikt_ , moet u hand matig DNS-vermeldingen maken voor de werk ruimte.
+Wanneer u een Azure Machine Learning-werk ruimte met een persoonlijk eind punt gebruikt, zijn er [verschillende manieren om DNS-naam omzetting te verwerken](../private-link/private-endpoint-dns.md). Standaard verwerkt Azure automatisch naam omzetting voor uw werk ruimte en persoonlijk eind punt. Als u in plaats daarvan _uw eigen aangepaste DNS-server gebruikt_, moet u hand matig DNS-vermeldingen maken voor de werk ruimte.
 
 > [!IMPORTANT]
 > In dit artikel wordt alleen beschreven hoe u de Fully Qualified Domain Name (FQDN) en IP-adressen voor deze vermeldingen kunt vinden. Deze bevat geen informatie over het configureren van de DNS-records voor deze items. Raadpleeg de documentatie bij uw DNS-software voor informatie over het toevoegen van records.
@@ -33,6 +33,8 @@ Wanneer u Azure Machine Learning met een virtueel netwerk gebruikt, zijn er [ver
 
 - Vertrouwd met het gebruik van [netwerk isolatie tijdens de training & deinterferentie](./how-to-network-security-overview.md).
 
+- Vertrouwd met de [configuratie van de DNS-zone voor het persoonlijke eind punt van Azure](../private-link/private-endpoint-dns.md)
+
 - Optioneel, [Azure cli](/cli/azure/install-azure-cli) of [Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="find-the-ip-addresses"></a>De IP-adressen zoeken
@@ -43,7 +45,7 @@ De volgende lijst bevat de volledig gekwalificeerde domein namen (FQDN) die word
 * `<workspace-GUID>.workspace.<region>.experiments.azureml.net`
 * `<workspace-GUID>.workspace.<region>.modelmanagement.azureml.net`
 * `<workspace-GUID>.workspace.<region>.aether.ms`
-* `ml-<workspace-name>-<region>-<workspace-guid>.notebooks.azure.ml`
+* `ml-<workspace-name>-<region>-<workspace-guid>.notebooks.azure.net`
 * Als u een reken instantie maakt, moet u ook een vermelding voor toevoegen `<instance-name>.<region>.instances.azureml.ms` met het privé-IP-eind punt van de werk ruimte.
 
     > [!NOTE]

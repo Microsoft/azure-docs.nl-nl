@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 7e41eb0f6a61f7b195e251739ae93207c731cac5
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 5cc8a4508ceeda245fbc10a81e16f3ecf05284c7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535874"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013621"
 ---
 # <a name="detect-adult-content"></a>Inhoud voor volwassenen detecteren
 
 Computer Vision kunnen materiaal voor volwassenen in afbeeldingen detecteren zodat ontwikkel aars de weer gave van deze installatie kopieën in hun software kunnen beperken. Inhouds vlaggen worden toegepast met een score tussen nul en één zodat ontwikkel aars de resultaten kunnen interpreteren op basis van hun eigen voor keuren.
 
 > [!NOTE]
-> Veel van deze functionaliteit wordt aangeboden door de [Azure content moderator](https://docs.microsoft.com/azure/cognitive-services/content-moderator/overview) -service. Bekijk dit alternatief voor oplossingen voor meer strenge toezicht scenario's voor inhoud, zoals tekst toezicht en Human Review-werk stromen.
+> Veel van deze functionaliteit wordt aangeboden door de [Azure content moderator](../content-moderator/overview.md) -service. Bekijk dit alternatief voor oplossingen voor meer strenge toezicht scenario's voor inhoud, zoals tekst toezicht en Human Review-werk stromen.
 
 ## <a name="content-flag-definitions"></a>Definities van inhouds markeringen
 
@@ -37,5 +37,5 @@ In de categorie ' volwassene ' zijn er verschillende categorieën:
 
 U kunt inhoud voor volwassenen detecteren met de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . Wanneer u de waarde van `Adult` aan de query parameter **visualFeatures** toevoegt, retourneert de API drie Booleaanse eigenschappen &mdash; `isAdultContent` , `isRacyContent` en `isGoryContent` &mdash; in het bijbehorende JSON-antwoord. De-methode retourneert ook de bijbehorende eigenschappen &mdash; `adultScore` , `racyScore` en `goreScore` &mdash; die betrouw bare scores vertegenwoordigen tussen nul en één voor elke betreffende categorie.
 
-- [Snelstartgids: een afbeelding analyseren (.NET SDK)](./quickstarts-sdk/csharp-analyze-sdk.md)
+- [Snelstartgids: een afbeelding analyseren (.NET SDK)](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
 - [Quick Start: een afbeelding analyseren (REST API)](./quickstarts/csharp-analyze.md)

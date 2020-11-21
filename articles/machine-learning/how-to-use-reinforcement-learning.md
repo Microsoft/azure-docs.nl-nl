@@ -10,12 +10,12 @@ author: peterclu
 ms.date: 05/05/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: cf4b321425ccaae877c2ff5c9b54f429d95a3515
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b9966d4d9ab0a37f5484ec9eb9b7e2472a6b41dc
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93312308"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95012908"
 ---
 # <a name="reinforcement-learning-preview-with-azure-machine-learning"></a>Educatief leren (preview) met Azure Machine Learning
 
@@ -52,7 +52,7 @@ Voer deze code uit in een van de volgende omgevingen. U wordt aangeraden om Azur
     - Installeer de [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
     - Installeer de [Azure machine learning RL SDK](/python/api/azureml-contrib-reinforcementlearning/?preserve-view=true&view=azure-ml-py): `pip install --upgrade azureml-contrib-reinforcementlearning`
     - Maak een [configuratie bestand voor de werk ruimte](how-to-configure-environment.md#workspace).
-    - Voer de [installatie notitieblok](https://aka.ms/azure-rl-env-setup) van het virtuele netwerk uit om de netwerk poorten te openen die worden gebruikt voor Distributed versterking learning.
+    - Voer het virtuele netwerk uit om netwerk poorten te openen die worden gebruikt voor gedistribueerde versterking van het onderwijs.
 
 
 ## <a name="how-to-train-a-pong-playing-agent"></a>Een Pong-agent trainen

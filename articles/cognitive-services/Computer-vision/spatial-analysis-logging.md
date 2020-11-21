@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: aahi
-ms.openlocfilehash: 8154ef7a90011da8c15f52870eebb6c80ebaebca
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: dd1b6d216f6225a13d86aa2435b5b1c807547ec3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92496099"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014574"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Telemetrie en probleem oplossing
 
@@ -51,7 +51,7 @@ Invoer:
 Uitvoer:
 1. Azure Monitor
 
-De opgegeven ruimtelijke analyse-telegrafie module publiceert alle telemetriegegevens die zijn verzonden door de container voor ruimtelijke analyse naar Azure Monitor. Raadpleeg de [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview) voor meer informatie over het toevoegen van Azure monitor aan uw abonnement.
+De opgegeven ruimtelijke analyse-telegrafie module publiceert alle telemetriegegevens die zijn verzonden door de container voor ruimtelijke analyse naar Azure Monitor. Raadpleeg de [Azure monitor](../../azure-monitor/overview.md) voor meer informatie over het toevoegen van Azure monitor aan uw abonnement.
 
 Nadat u Azure Monitor hebt ingesteld, moet u referenties maken waarmee de module telemetrie kan verzenden. U kunt de Azure Portal gebruiken om een nieuwe service-principal te maken of de Azure CLI-opdracht hieronder gebruiken om er een te maken.
 
@@ -103,7 +103,7 @@ Zodra de telegrafie module is geïmplementeerd, zijn de gerapporteerde metrische
 
 ### <a name="system-health-events"></a>Systeem status gebeurtenissen
 
-| Gebeurtenisnaam | Beschrijving|
+| Gebeurtenisnaam | Description|
 |------|---------|
 |archon_exit    |Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
 |archon_error   |Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.  |
@@ -215,8 +215,8 @@ Selecteer uw apparaat in de IoT Edge Portal en vervolgens de module **diagnostie
 Logboeken worden op aanvraag geüpload met de `getRTCVLogs` methode IOT Edge in de `diagnostics` module. 
 
 
-1. Ga naar de pagina IoT Hub Portal, selecteer **edge-apparaten**en selecteer vervolgens uw apparaat en de module diagnostiek. 
-2. Ga naar de pagina Details van de module en klik op het tabblad **_directe methode_*_.
+1. Ga naar de pagina IoT Hub Portal, selecteer **edge-apparaten** en selecteer vervolgens uw apparaat en de module diagnostiek. 
+2. Ga naar de pagina Details van de module en klik op het tabblad **_directe methode_* _.
 3. Typ `getRTCVLogs` de naam van de methode en een JSON-indelings teken reeks in payload. U kunt `{}` een lege Payload opgeven. 
 4. Stel de time-out voor de verbinding en de methode in en klik op _ * methode Invoke * *.
 5. Selecteer uw doel container en bouw een JSON-teken reeks voor de nettolading op met de para meters die worden beschreven in de sectie **syntaxis van logboek registratie** . Klik op **methode aanroepen** om de aanvraag uit te voeren.
@@ -224,7 +224,7 @@ Logboeken worden op aanvraag geüpload met de `getRTCVLogs` methode IOT Edge in 
 >[!NOTE]
 > `getRTCVLogs`Als de methode wordt aangeroepen met een lege Payload, wordt een lijst geretourneerd met alle containers die op het apparaat zijn geïmplementeerd. De naam van de methode is hoofdletter gevoelig. U krijgt een 501-fout als er een onjuiste methode naam wordt opgegeven.
 
-:::image type="content" source="./media/spatial-analysis/direct-log-collection.png" alt-text="Azure Monitor telemetrie-rapport":::
+:::image type="content" source="./media/spatial-analysis/direct-log-collection.png" alt-text="Aanroepen van de methode getRTCVLogs ":::
 ![pagina directe methode getRTCVLogs](./media/spatial-analysis/direct-log-collection.png)
 
  
@@ -243,9 +243,9 @@ De onderstaande tabel geeft een lijst van de para meters die u kunt gebruiken bi
 
 De volgende tabel bevat de kenmerken in de query-antwoord.
 
-| Zoek | Beschrijving|
+| Zoek | Description|
 |--|--|
-|DoPost| *Waar* of *Onwaar*. Hiermee wordt aangegeven of Logboeken zijn geüpload of niet. Wanneer u ervoor kiest geen logboeken te uploaden, retourneert de API informatie ***synchroon**_. Wanneer u ervoor kiest om logboeken te uploaden, retourneert de API 200, als de aanvraag geldig is, waarna logboeken _*_asynchroon_*_ worden geüpload.|
+|DoPost| *Waar* of *Onwaar*. Hiermee wordt aangegeven of Logboeken zijn geüpload of niet. Wanneer u ervoor kiest geen logboeken te uploaden, retourneert de API informatie ***synchroon** _. Wanneer u ervoor kiest om logboeken te uploaden, retourneert de API 200, als de aanvraag geldig is, waarna logboeken _*_asynchroon_*_ worden geüpload.|
 |TimeFilter| Tijd filter toegepast op de logboeken.|
 |ValueFilters| Tref woorden filters die worden toegepast op de logboeken. |
 |Neem| Start tijd van methode-uitvoering. |
@@ -316,8 +316,8 @@ In de volgende sectie vindt u informatie over fout opsporing en verificatie van 
 
 ### <a name="access-the-kubernetes-api-endpoint"></a>Toegang tot het Kubernetes API-eind punt. 
 
-1. Ga in de lokale gebruikers interface van het apparaat naar de pagina _*apparaten**. 
-2. Kopieer het eind punt van de Kubernetes API-service onder de **eind punten**van het apparaat. Dit eindpunt is een tekenreeks met de volgende indeling: `https://compute..[device-IP-address]`.
+1. Ga in de lokale gebruikers interface van het apparaat naar de pagina _ *apparaten**. 
+2. Kopieer het eind punt van de Kubernetes API-service onder de **eind punten** van het apparaat. Dit eindpunt is een tekenreeks met de volgende indeling: `https://compute..[device-IP-address]`.
 3. Sla de tekenreeks met het eindpunt op. U gebruikt dit later bij het configureren `kubectl` voor toegang tot het Kubernetes-cluster.
 
 ### <a name="connect-to-powershell-interface"></a>Verbinding maken met de Power shell-interface
@@ -326,7 +326,7 @@ Op afstand verbinding maken vanaf een Windows-client. Nadat het Kubernetes-clust
 
 > [!TIP]
 > * Voordat u begint, moet u ervoor zorgen dat Windows Power shell 5,0 of hoger wordt uitgevoerd op de Windows-client.
-> * Power shell is ook [beschikbaar in Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux).
+> * Power shell is ook [beschikbaar in Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 
 1. Een Windows Power shell-sessie uitvoeren als beheerder. 
     1. Zorg ervoor dat de Windows Remote Management-service wordt uitgevoerd op de client. Typ bij de opdracht prompt `winrm quickconfig` .

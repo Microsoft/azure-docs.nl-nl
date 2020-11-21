@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 08/06/2020
 ms.author: swmachan
-ms.openlocfilehash: 59e064dc2b9d33bda966eb50544c8383b0394dd3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15f20bab91a4feab056a9f8cd6b012792f036be2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89566599"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016544"
 ---
 # <a name="translator-30-translate"></a>Translator 3,0: vertalen
 
@@ -37,13 +37,13 @@ Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
 <table width="100%">
   <th width="20%">Query parameter</th>
-  <th>Beschrijving</th>
+  <th>Description</th>
   <tr>
     <td>api-versie</td>
     <td><em>Vereiste para meter</em>.<br/>De versie van de API die door de client is aangevraagd. Waarde moet zijn <code>3.0</code> .</td>
   </tr>
   <tr>
-    <td>in op</td>
+    <td>tot</td>
     <td><em>Vereiste para meter</em>.<br/>Hiermee geeft u de taal van de uitvoer tekst op. De doel taal moet een van de <a href="./v3-0-languages.md">ondersteunde talen</a> zijn die in het <code>translation</code> bereik zijn opgenomen. Gebruik bijvoorbeeld <code>to=de</code> om naar Duits te vertalen.<br/>Het is mogelijk om naar meerdere talen tegelijk te vertalen door de para meter in de query teken reeks te herhalen. Gebruik bijvoorbeeld <code>to=de&to=it</code> om te vertalen naar Duits en Italiaans.</td>
   </tr>
 </table>
@@ -52,10 +52,10 @@ Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
 <table width="100%">
   <th width="20%">Query parameter</th>
-  <th>Beschrijving</th>
+  <th>Description</th>
   <tr>
     <td>from</td>
-    <td><em>Optionele para meter</em>.<br/>Geeft de taal van de invoer tekst aan. Ga na welke talen kunnen worden vertaald door <a href="./v3-0-languages.md">ondersteunde talen</a> te zoeken met behulp van de <code>translation</code> Scope. Als de <code>from</code> para meter niet is opgegeven, wordt automatische taal detectie toegepast om de bron taal te bepalen. <br/><br/>U moet de <code>from</code> para meter gebruiken in plaats van automatische detectie wanneer u de functie <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">dynamische woorden lijst</a> gebruikt.</td>
+    <td><em>Optionele para meter</em>.<br/>Geeft de taal van de invoer tekst aan. Ga na welke talen kunnen worden vertaald door <a href="./v3-0-languages.md">ondersteunde talen</a> te zoeken met behulp van de <code>translation</code> Scope. Als de <code>from</code> para meter niet is opgegeven, wordt automatische taal detectie toegepast om de bron taal te bepalen. <br/><br/>U moet de <code>from</code> para meter gebruiken in plaats van automatische detectie wanneer u de functie <a href="/azure/cognitive-services/translator/dynamic-dictionary">dynamische woorden lijst</a> gebruikt.</td>
   </tr>  
   <tr>
     <td>textType</td>
@@ -63,7 +63,7 @@ Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
   </tr>
   <tr>
     <td>category</td>
-    <td><em>Optionele para meter</em>.<br/>Een teken reeks waarmee de categorie (domein) van de vertaling wordt opgegeven. Deze para meter wordt gebruikt voor het ophalen van vertalingen van een aangepast systeem dat is gebouwd met <a href="../customization.md">aangepaste vertaler</a>. Voeg de categorie-ID uit de <a href="https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/how-to-create-project#view-project-details">Project gegevens</a> van uw aangepaste vertaler toe aan deze para meter om uw geïmplementeerde aangepaste systeem te gebruiken. De standaard waarde is: <code>general</code> .</td>
+    <td><em>Optionele para meter</em>.<br/>Een teken reeks waarmee de categorie (domein) van de vertaling wordt opgegeven. Deze para meter wordt gebruikt voor het ophalen van vertalingen van een aangepast systeem dat is gebouwd met <a href="../customization.md">aangepaste vertaler</a>. Voeg de categorie-ID uit de <a href="/azure/cognitive-services/translator/custom-translator/how-to-create-project#view-project-details">Project gegevens</a> van uw aangepaste vertaler toe aan deze para meter om uw geïmplementeerde aangepaste systeem te gebruiken. De standaard waarde is: <code>general</code> .</td>
   </tr>
   <tr>
     <td>profanityAction</td>
@@ -107,7 +107,7 @@ Aanvraag headers zijn onder andere:
   <th>Beschrijving</th>
   <tr>
     <td>Verificatieheader(s)</td>
-    <td><em>Vereiste aanvraagheader</em>.<br/>Zie <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">Beschikbare opties voor verificatie</a>.</td>
+    <td><em>Vereiste aanvraagheader</em>.<br/>Zie <a href="/azure/cognitive-services/translator/reference/v3-0-reference#authentication">Beschikbare opties voor verificatie</a>.</td>
   </tr>
   <tr>
     <td>Content-Type</td>
@@ -199,7 +199,7 @@ Hier volgen de mogelijke HTTP-status codes die een aanvraag retourneert.
 
 <table width="100%">
   <th width="20%">Statuscode</th>
-  <th>Beschrijving</th>
+  <th>Description</th>
   <tr>
     <td>200</td>
     <td>Voltooid.</td>
@@ -234,7 +234,7 @@ Hier volgen de mogelijke HTTP-status codes die een aanvraag retourneert.
   </tr>
 </table> 
 
-Als er een fout optreedt, wordt door de aanvraag ook een JSON-fout bericht geretourneerd. De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfers wordt gevolgd door een getal van drie cijfers om de fout verder te categoriseren. Algemene fout codes vindt u op de [referentie pagina van v3 Translator](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
+Als er een fout optreedt, wordt door de aanvraag ook een JSON-fout bericht geretourneerd. De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfers wordt gevolgd door een getal van drie cijfers om de fout verder te categoriseren. Algemene fout codes vindt u op de [referentie pagina van v3 Translator](./v3-0-reference.md#errors). 
 
 ## <a name="examples"></a>Voorbeelden
 

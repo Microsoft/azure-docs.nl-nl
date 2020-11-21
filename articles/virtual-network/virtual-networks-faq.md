@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2020
 ms.author: kumud
-ms.openlocfilehash: 7ab9b5166aab07e0629cdd280f8cdccbd0702c99
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 00ef685c755c0fa6f5217d567bfa255ea940d72a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927716"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015966"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Veelgestelde vragen over virtuele Azure-netwerken (FAQ)
 
@@ -123,8 +123,8 @@ Nee. Een VNet is beperkt tot één regio. Een virtueel netwerk omvat echter besc
 
 ### <a name="can-i-connect-a-vnet-to-another-vnet-in-azure"></a>Kan ik een VNet verbinden met een ander VNet in azure?
 Ja. U kunt verbinding maken met een VNet met een ander VNet met behulp van:
-- **Peering van het virtuele netwerk** : Zie [overzicht van VNet-peering](virtual-network-peering-overview.md) voor meer informatie
-- **Een Azure-VPN gateway** : Zie [een vnet-naar-VNet-verbinding configureren](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie. 
+- **Peering van het virtuele netwerk**: Zie [overzicht van VNet-peering](virtual-network-peering-overview.md) voor meer informatie
+- **Een Azure-VPN gateway**: Zie [een vnet-naar-VNet-verbinding configureren](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie. 
 
 ## <a name="name-resolution-dns"></a>Naam omzetting (DNS)
 
@@ -159,10 +159,10 @@ Ja. Alle netwerk interfaces (NIC) die zijn gekoppeld aan een virtuele machine di
 ### <a name="what-are-the-different-types-of-ip-addresses-i-can-assign-to-vms"></a>Wat zijn de verschillende typen IP-adressen die ik aan Vm's kan toewijzen?
 * **Privé:** Toegewezen aan elke NIC binnen elke VM. Het adres wordt toegewezen met behulp van de statische of dynamische methode. Privé-IP-adressen worden toegewezen uit het bereik dat u hebt opgegeven in de instellingen van het subnet van uw VNet. Voor resources die zijn geïmplementeerd via het klassieke implementatie model, worden privé IP-adressen toegewezen, zelfs als ze niet zijn verbonden met een VNet. Het gedrag van de toewijzings methode verschilt, afhankelijk van het feit of een resource is geïmplementeerd met de Resource Manager of het klassieke implementatie model: 
 
-  - **Resource Manager** : een privé-IP-adres dat is toegewezen aan de dynamische of statische methode blijft toegewezen aan een virtuele machine (Resource Manager) totdat de resource wordt verwijderd. Het verschil is dat u het adres selecteert dat u wilt toewijzen wanneer u statische gebruikt en Azure kiest wanneer u dynamische gebruikt. 
-  - **Klassiek** : een privé-IP-adres dat is toegewezen aan de dynamische methode kan worden gewijzigd wanneer een virtuele machine (klassieke) VM opnieuw wordt opgestart nadat de status gestopt (toewijzing ongedaan gemaakt) is bereikt. Als u er zeker van wilt zijn dat het privé-IP-adres voor een bron die via het klassieke implementatie model wordt geïmplementeerd, nooit wordt gewijzigd, wijst u een privé-IP-adres toe met de statische methode.
+  - **Resource Manager**: een privé-IP-adres dat is toegewezen aan de dynamische of statische methode blijft toegewezen aan een virtuele machine (Resource Manager) totdat de resource wordt verwijderd. Het verschil is dat u het adres selecteert dat u wilt toewijzen wanneer u statische gebruikt en Azure kiest wanneer u dynamische gebruikt. 
+  - **Klassiek**: een privé-IP-adres dat is toegewezen aan de dynamische methode kan worden gewijzigd wanneer een virtuele machine (klassieke) VM opnieuw wordt opgestart nadat de status gestopt (toewijzing ongedaan gemaakt) is bereikt. Als u er zeker van wilt zijn dat het privé-IP-adres voor een bron die via het klassieke implementatie model wordt geïmplementeerd, nooit wordt gewijzigd, wijst u een privé-IP-adres toe met de statische methode.
 
-* **Openbaar:** Optioneel toegewezen aan Nic's die zijn gekoppeld aan virtuele machines die zijn geïmplementeerd via het Azure Resource Manager-implementatie model. Het adres kan worden toegewezen met de statische of dynamische toewijzings methode. Alle Vm's en Cloud Services rolinstanties die via het klassieke implementatie model zijn geïmplementeerd, bestaan in een Cloud service, waaraan een *dynamisch* , openbaar virtueel IP-adres (VIP) is toegewezen. Een openbaar *statisch* IP-adres, een [gereserveerd IP adres](virtual-networks-reserved-public-ip.md)genoemd, kan optioneel als VIP worden toegewezen. U kunt open bare IP-adressen toewijzen aan afzonderlijke Vm's of Cloud Services rolinstanties die worden geïmplementeerd via het klassieke implementatie model. Deze adressen worden een [openbaar IP-adres op exemplaar niveau](virtual-networks-instance-level-public-ip.md) genoemd en kunnen dynamisch worden toegewezen.
+* **Openbaar:** Optioneel toegewezen aan Nic's die zijn gekoppeld aan virtuele machines die zijn geïmplementeerd via het Azure Resource Manager-implementatie model. Het adres kan worden toegewezen met de statische of dynamische toewijzings methode. Alle Vm's en Cloud Services rolinstanties die via het klassieke implementatie model zijn geïmplementeerd, bestaan in een Cloud service, waaraan een *dynamisch*, openbaar virtueel IP-adres (VIP) is toegewezen. Een openbaar *statisch* IP-adres, een [gereserveerd IP adres](virtual-networks-reserved-public-ip.md)genoemd, kan optioneel als VIP worden toegewezen. U kunt open bare IP-adressen toewijzen aan afzonderlijke Vm's of Cloud Services rolinstanties die worden geïmplementeerd via het klassieke implementatie model. Deze adressen worden een [openbaar IP-adres op exemplaar niveau](virtual-networks-instance-level-public-ip.md) genoemd en kunnen dynamisch worden toegewezen.
 
 ### <a name="can-i-reserve-a-private-ip-address-for-a-vm-that-i-will-create-at-a-later-time"></a>Kan ik een persoonlijk IP-adres reserveren voor een virtuele machine die ik op een later tijdstip moet maken?
 Nee. U kunt geen privé-IP-adres reserveren. Als er een privé-IP-adres beschikbaar is, wordt het toegewezen aan een virtuele machine of rolinstantie door de DHCP-server. De virtuele machine kan al dan niet de VM zijn waaraan u het privé-IP-adres wilt toewijzen. U kunt echter het privé-IP-adres van een al gemaakte virtuele machine wijzigen in elk beschikbaar privé-IP-adres.
@@ -271,7 +271,7 @@ U kunt via VNet-gateways verbinding maken met deze resources via ExpressRoute of
 Ja. Het is mogelijk om VNet-peering (lokaal of globaal) tot stand te brengen als uw abonnementen deel uitmaken van verschillende Azure Active Directory tenants. U kunt dit doen via Portal, Power shell of CLI.
 
 ### <a name="my-vnet-peering-connection-is-in-initiated-state-why-cant-i-connect"></a>Mijn VNet-peering-verbinding heeft de status *gestart* , waarom kan ik geen verbinding maken?
-Als uw peering-verbinding een *geïnitieerde* status heeft, betekent dit dat u slechts één koppeling hebt gemaakt. Er moet een bidirectionele koppeling worden gemaakt om een geslaagde verbinding te kunnen maken. Voor bijvoorbeeld een peer VNet A naar VNet B, moet er een koppeling worden gemaakt van VNetA naar VNetB en van VNetB naar VNetA. Als u beide koppelingen maakt, wordt de status gewijzigd in *verbonden* .
+Als uw peering-verbinding een *geïnitieerde* status heeft, betekent dit dat u slechts één koppeling hebt gemaakt. Er moet een bidirectionele koppeling worden gemaakt om een geslaagde verbinding te kunnen maken. Voor bijvoorbeeld een peer VNet A naar VNet B, moet er een koppeling worden gemaakt van VNetA naar VNetB en van VNetB naar VNetA. Als u beide koppelingen maakt, wordt de status gewijzigd in *verbonden*.
 
 ### <a name="my-vnet-peering-connection-is-in-disconnected-state-why-cant-i-create-a-peering-connection"></a>Mijn VNet-peering-verbinding heeft de status niet *verbonden* , waarom kan ik geen peering-verbinding maken?
 Als uw VNet-peering-verbinding de status *verbroken* heeft, betekent dit dat een van de gemaakte koppelingen is verwijderd. Als u een peering-verbinding wilt herstellen, moet u de koppeling verwijderen en opnieuw maken.
@@ -281,6 +281,9 @@ Ja. U kunt VNets op verschillende abonnementen en in verschillende regio's.
 
 ### <a name="can-i-peer-two-vnets-with-matching-or-overlapping-address-ranges"></a>Kan ik twee VNets met overeenkomende of overlappende adresbereiken?
 Nee. Adres ruimten mogen niet overlappen om VNet-peering in te scha kelen.
+
+### <a name="can-i-peer-a-vnet-to-two-different-vnets-with-the-the-use-remote-gateway-option-enabled-on-both-the-peerings"></a>Kan ik een VNet met twee verschillende VNets gelijkwaardig met de optie externe gateway gebruiken ingeschakeld op beide peerings?
+Nee. U kunt de optie externe gateway gebruiken alleen inschakelen voor één peering op een van de VNets.
 
 ### <a name="how-much-do-vnet-peering-links-cost"></a>Wat zijn de kosten voor VNet-peering koppelingen?
 Er worden geen kosten in rekening gebracht voor het maken van een VNet-peering-verbinding. Gegevens overdracht tussen peering-verbindingen wordt in rekening gebracht. [Hier weer geven](https://azure.microsoft.com/pricing/details/virtual-network/).
@@ -334,7 +337,7 @@ De eerste stap is een bewerking aan het netwerk en de tweede stap is een bewerki
 >[!NOTE]
 > Beide bewerkingen die hierboven worden beschreven, moeten worden voltooid voordat u de toegang tot de Azure-service kunt beperken tot het toegestane VNet en subnet. Alleen het inschakelen van service-eind punten voor de Azure-service aan de kant van het netwerk biedt geen beperkte toegang. Daarnaast moet u ook VNet-Acl's instellen op de service kant van Azure.
 
-Bepaalde services (zoals SQL en CosmosDB) maken uitzonde ringen op de bovenstaande volg orde mogelijk via de vlag **IgnoreMissingVnetServiceEndpoint** . Zodra de vlag is ingesteld op **True** , kunnen VNet-acl's worden ingesteld op de Azure-service naast het instellen van de service-eind punten aan de kant van het netwerk. Azure-Services bieden deze vlag om klanten te helpen in gevallen waarin de specifieke IP-firewalls zijn geconfigureerd in Azure-Services en de service-eind punten aan de kant van het netwerk in te scha kelen, kunnen leiden tot een connectiviteits vertraging sinds de bron-IP van een openbaar IPv4-adres naar een particulier adres wordt gewijzigd. Het instellen van VNet-Acl's op de service kant van Azure voordat u service-eind punten instelt op de netwerk zijde, kunt u helpen om een verbinding te verbreken.
+Bepaalde services (zoals SQL en CosmosDB) maken uitzonde ringen op de bovenstaande volg orde mogelijk via de vlag **IgnoreMissingVnetServiceEndpoint** . Zodra de vlag is ingesteld op **True**, kunnen VNet-acl's worden ingesteld op de Azure-service naast het instellen van de service-eind punten aan de kant van het netwerk. Azure-Services bieden deze vlag om klanten te helpen in gevallen waarin de specifieke IP-firewalls zijn geconfigureerd in Azure-Services en de service-eind punten aan de kant van het netwerk in te scha kelen, kunnen leiden tot een connectiviteits vertraging sinds de bron-IP van een openbaar IPv4-adres naar een particulier adres wordt gewijzigd. Het instellen van VNet-Acl's op de service kant van Azure voordat u service-eind punten instelt op de netwerk zijde, kunt u helpen om een verbinding te verbreken.
 
 ### <a name="do-all-azure-services-reside-in-the-azure-virtual-network-provided-by-the-customer-how-does-vnet-service-endpoint-work-with-azure-services"></a>Bevinden alle Azure-Services zich in het virtuele Azure-netwerk van de klant? Hoe werkt het VNet-service-eind punt met Azure-Services?
 

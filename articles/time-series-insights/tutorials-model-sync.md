@@ -10,16 +10,16 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.custom: dpalled
-ms.openlocfilehash: c3948a5bdfce583384992fb87bf40e9e7251974d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0d02a6e3eb2aef4a02c90360b2016e64af579081
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91344008"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014727"
 ---
 # <a name="model-synchronization-between-azure-digital-twins-and-time-series-insights-gen2"></a>Modelsynchronisatie tussen Azure Digital Twins en Time Series Insights Gen2
 
-In dit artikel worden aanbevolen procedures en hulpprogram ma's beschreven die worden gebruikt voor het vertalen van het activa model in azure Digital Apparaatdubbels (ADT) naar activa model in Azure Time Series Insights (TSI).  Dit artikel is het tweede deel van een tweedelige zelf studie met uitleg over de integratie van Azure Digital Apparaatdubbels met Azure Time Series Insights. Integratie van Azure Digital Apparaatdubbels met Time Series Insights maakt archivering mogelijk en traceert de geschiedenis van teleelementen en berekende eigenschappen van digitale Apparaatdubbels. In deze reeks zelf studies zijn ontwikkel aars gericht op het integreren van Time Series Insights met Azure Digital Apparaatdubbels. In deel 1 wordt uitgelegd hoe  [u gegevens pijplijn gaat maken die in de actuele tijd reeks gegevens van Azure Digital apparaatdubbels naar Time Series Insights](https://docs.microsoft.com/azure/digital-twins/how-to-integrate-time-series-insights) . in dat tweede deel van de reeks zelf studies wordt de synchronisatie van Asset model tussen Azure Digital apparaatdubbels en time series Insights uitgelegd. In deze zelf studie worden de aanbevolen procedures beschreven voor het kiezen en het vaststellen van naamgevings regels voor de tijd reeks-ID (TS-ID) en het hand matig instellen van hiërarchieën in time series model (TSM).
+In dit artikel worden aanbevolen procedures en hulpprogram ma's beschreven die worden gebruikt voor het vertalen van het activa model in azure Digital Apparaatdubbels (ADT) naar activa model in Azure Time Series Insights (TSI).  Dit artikel is het tweede deel van een tweedelige zelf studie met uitleg over de integratie van Azure Digital Apparaatdubbels met Azure Time Series Insights. Integratie van Azure Digital Apparaatdubbels met Time Series Insights maakt archivering mogelijk en traceert de geschiedenis van teleelementen en berekende eigenschappen van digitale Apparaatdubbels. In deze reeks zelf studies zijn ontwikkel aars gericht op het integreren van Time Series Insights met Azure Digital Apparaatdubbels. In deel 1 wordt uitgelegd hoe  [u gegevens pijplijn gaat maken die in de actuele tijd reeks gegevens van Azure Digital apparaatdubbels naar Time Series Insights](../digital-twins/how-to-integrate-time-series-insights.md) . in dat tweede deel van de reeks zelf studies wordt de synchronisatie van Asset model tussen Azure Digital apparaatdubbels en time series Insights uitgelegd. In deze zelf studie worden de aanbevolen procedures beschreven voor het kiezen en het vaststellen van naamgevings regels voor de tijd reeks-ID (TS-ID) en het hand matig instellen van hiërarchieën in time series model (TSM).
 
 ## <a name="choosing-a-time-series-id"></a>Een tijd reeks-ID kiezen
 
@@ -29,7 +29,7 @@ De time series-ID is een unieke id die wordt gebruikt voor het identificeren van
 
 ## <a name="contextualizing-time-series"></a>Contextualizing tijd reeks
 
-Het Contextualization van gegevens (vooral ruimtelijke aard) in Time Series Insights wordt bereikt door middel van Asset-hiërarchieën en hetzelfde wordt gebruikt voor eenvoudige navigatie van gegevens via een structuur weergave in Time Series Insights Explorer. Typen tijd reeksen en hiërarchieën worden gedefinieerd met behulp van Time Series model (TSM) in Time Series Insights. Typen in TSM Help voor het definiëren van variabelen, terwijl hiërarchie niveaus en waarden voor het exemplaar veld worden gebruikt om de structuur weergave in de Time Series Insights Explorer te maken. Raadpleeg de [documentatie voor online time series Insights](https://docs.microsoft.com/azure/time-series-insights/concepts-model-overview)voor meer informatie over TSM.
+Het Contextualization van gegevens (vooral ruimtelijke aard) in Time Series Insights wordt bereikt door middel van Asset-hiërarchieën en hetzelfde wordt gebruikt voor eenvoudige navigatie van gegevens via een structuur weergave in Time Series Insights Explorer. Typen tijd reeksen en hiërarchieën worden gedefinieerd met behulp van Time Series model (TSM) in Time Series Insights. Typen in TSM Help voor het definiëren van variabelen, terwijl hiërarchie niveaus en waarden voor het exemplaar veld worden gebruikt om de structuur weergave in de Time Series Insights Explorer te maken. Raadpleeg de [documentatie voor online time series Insights](./concepts-model-overview.md)voor meer informatie over TSM.
 
 In azure Digital Apparaatdubbels wordt de verbinding tussen assets aangegeven met dubbele relaties. Dubbele relaties zijn gewoon een grafiek van verbonden assets. In de tijd reeks inzicht zijn de relaties tussen assets echter hiërarchisch. Dat wil zeggen dat activa een bovenliggende/onderliggende soort od-relatie hebben en wordt weer gegeven met behulp van een boom structuur. Om relatie-informatie van Azure Digital Apparaatdubbels te converteren naar Time Series Insights-hiërarchieën, moeten we relevante hiërarchische relaties kiezen uit Azure Digital Apparaatdubbels. Azure Digital Apparaatdubbels maakt gebruik van een open standaard, model taal met de naam Digital-dubbele definitie taal (DTDL). In DTDL modellen worden beschreven met behulp van een variant van JSON met de naam JSON-LD. Raadpleeg de [DTDL-documentatie](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md) voor volledige informatie over de specificatie.
 
@@ -82,7 +82,7 @@ Hieronder ziet u hoe de client toepassing kan navigeren op de dubbele relatie do
 
 > [!Note]
 >
-> In dit voor beeld van een code fragment wordt ervan uitgegaan dat lezers bekend zijn met [deel 01](https://docs.microsoft.com/azure/digital-twins/tutorial-end-to-end#set-up-the-sample-function-app) van de zelf studie en dat deze code wijziging is doorgevoerd in de functie ' ProcessHubToDTEvents '.
+> In dit voor beeld van een code fragment wordt ervan uitgegaan dat lezers bekend zijn met [deel 01](../digital-twins/tutorial-end-to-end.md#set-up-the-sample-function-app) van de zelf studie en dat deze code wijziging is doorgevoerd in de functie ' ProcessHubToDTEvents '.
 
 ```csharp
 if (propertyPath.Equals("/Flow"))
@@ -114,7 +114,7 @@ relationship for " + twinId);
 
 ## <a name="updating-instance-fields-using-apis"></a>Exemplaar velden bijwerken met behulp van Api's
 
-In deze sectie van de zelf studie wordt uitgelegd hoe u met Time Series Insights model-Api's naar model wijzigingen luistert in azure Digital Apparaatdubbels, zoals het maken, verwijderen van apparaatdubbels of het wijzigen van de relaties tussen apparaatdubbels en het bijwerken van exemplaar velden en hiërarchieën via een programma. Deze methode voor het bijwerken van Time Series Insights model wordt meestal bereikt via Azure functions. In azure Digital Apparaatdubbels kunnen gebeurtenis meldingen, zoals dubbele optellingen of verwijderingen, worden gerouteerd door downstream-Services, zoals Event Hubs die op zijn beurt kunnen worden ingevoerd in azure functions. Meer informatie over gebeurtenis Routering en-filters worden [hier](https://docs.microsoft.com/azure/digital-twins/how-to-manage-routes-portal)beschreven.  In het resterende deel van deze sectie wordt uitgelegd hoe u Time Series Insights model-Api's in azure functions kunt gebruiken om Time Series Insights model bij te werken in reactie op een dubbele toevoeging (een type model wijziging) in azure Digital Apparaatdubbels.
+In deze sectie van de zelf studie wordt uitgelegd hoe u met Time Series Insights model-Api's naar model wijzigingen luistert in azure Digital Apparaatdubbels, zoals het maken, verwijderen van apparaatdubbels of het wijzigen van de relaties tussen apparaatdubbels en het bijwerken van exemplaar velden en hiërarchieën via een programma. Deze methode voor het bijwerken van Time Series Insights model wordt meestal bereikt via Azure functions. In azure Digital Apparaatdubbels kunnen gebeurtenis meldingen, zoals dubbele optellingen of verwijderingen, worden gerouteerd door downstream-Services, zoals Event Hubs die op zijn beurt kunnen worden ingevoerd in azure functions. Meer informatie over gebeurtenis Routering en-filters worden [hier](../digital-twins/how-to-manage-routes-portal.md)beschreven.  In het resterende deel van deze sectie wordt uitgelegd hoe u Time Series Insights model-Api's in azure functions kunt gebruiken om Time Series Insights model bij te werken in reactie op een dubbele toevoeging (een type model wijziging) in azure Digital Apparaatdubbels.
 
 ### <a name="receiving-and-identifying-twin-addition-event-notification"></a>Gebeurtenis melding dubbele optelling ontvangen en identificeren
 
@@ -227,4 +227,4 @@ private async Task<TimeSeriesInstance> AddHierarchyToInstanceAsync(TimeSeriesIns
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In de reeks zelf studies wordt uitgelegd hoe u met Time Series Insights Api's historische gegevens uit Azure Digital Apparaatdubbels kunt opvragen. Het is een werk dat wordt uitgevoerd en de sectie wordt bijgewerkt wanneer dit klaar is. In de tussen tijd wordt het aanbevolen om te verwijzen naar [Time Series Insights data query API-documentatie](https://docs.microsoft.com/azure/time-series-insights/concepts-query-overview).
+In de reeks zelf studies wordt uitgelegd hoe u met Time Series Insights Api's historische gegevens uit Azure Digital Apparaatdubbels kunt opvragen. Het is een werk dat wordt uitgevoerd en de sectie wordt bijgewerkt wanneer dit klaar is. In de tussen tijd wordt het aanbevolen om te verwijzen naar [Time Series Insights data query API-documentatie](./concepts-query-overview.md).

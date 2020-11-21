@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 9ed4e47cf946827e2e4b9aaeb14d9668e96aeaa5
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: e76612c6c1b83ddb7e88377824902fe6290e7aaf
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873774"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015236"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
 
@@ -243,7 +243,7 @@ De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijle
 
 Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor elke Neural-stem.
 
-| Spraak                   | Stijl                     | Beschrijving                                                 |
+| Spraak                   | Stijl                     | Description                                                 |
 |-------------------------|---------------------------|-------------------------------------------------------------|
 | `en-US-AriaNeural`      | `style="newscast-formal"` | Een formele, vertrouwende en bindende Toon voor nieuws levering |
 |                         | `style="newscast-casual"` | Een veelzijdige en informe Toon voor algemene nieuws levering        |
@@ -383,7 +383,7 @@ Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te v
 | `strength` | Hiermee geeft u de relatieve duur van een onderbreking op met een van de volgende waarden:<ul><li>geen</li><li>x-zwak</li><li>Schakel</li><li>gemiddeld (standaard)</li><li>strakk</li><li>x-Strong</li></ul> | Optioneel |
 | `time` | Hiermee geeft u de absolute duur van een onderbreking in seconden of milliseconden, deze waarde moet worden ingesteld op minder dan 5000ms. Voor beelden van geldige waarden zijn `2s` en `500ms` | Optioneel |
 
-| Hoger                      | Beschrijving |
+| Hoger                      | Description |
 |-------------------------------|-------------|
 | Geen, of als er geen waarde wordt gegeven | 0 MS        |
 | x-zwak                        | 250 MS      |
@@ -587,7 +587,7 @@ U kunt ook uw verwachte `alias` acroniem of afgekort term direct opgeven. Bijvoo
 
 Zie [gebruik-versie 1,0 (conuitspraak Lexicon Specification) (Engelstalig)](https://www.w3.org/TR/pronunciation-lexicon/)voor meer informatie over het aangepaste Lexicon bestand.
 
-Publiceer vervolgens uw aangepaste Lexicon bestand. Er zijn geen beperkingen voor het opslaan van dit bestand, maar we raden u aan [Azure Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)te gebruiken.
+Publiceer vervolgens uw aangepaste Lexicon bestand. Er zijn geen beperkingen voor het opslaan van dit bestand, maar we raden u aan [Azure Blob Storage](../../storage/blobs/storage-quickstart-blobs-portal.md)te gebruiken.
 
 Nadat u uw aangepaste Lexicon hebt gepubliceerd, kunt u ernaar verwijzen vanuit uw SSML.
 

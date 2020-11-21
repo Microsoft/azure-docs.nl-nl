@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/21/2018
-ms.openlocfilehash: 00fdaf93553c97112c67caa66cb2246756b63c33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c59b5646e011afa6b8487e8145a1cb07e6e2a8ff
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86207488"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015576"
 ---
 # <a name="splunk-to-azure-monitor-log-query"></a>Splunk naar Azure Monitor-logboek query
 
@@ -96,7 +96,7 @@ Voor de onderste resultaten kunt u in Splunk gebruiken `tail` . In Azure Monitor
 | | Operator | Voorbeeld |
 |:---|:---|:---|
 | **Splunk** | **horen** |  <code>Event.Rule="330009.2"<br>&#124; sort Event.Sequence<br>&#124; head 20</code> |
-| **Azure Monitor** | **top** | <code>Office_Hub_OHubBGTaskError<br>&#124; top 20 by Event_Sequence</code> |
+| **Azure Monitor** | **Boven** | <code>Office_Hub_OHubBGTaskError<br>&#124; top 20 by Event_Sequence</code> |
 
 ### <a name="extending-the-result-set-with-new-fieldscolumns"></a>De resultatenset uitbreiden met nieuwe velden/kolommen
 Splunk heeft ook een `eval` functie die niet vergelijkbaar is met de `eval` operator. Zowel de `eval` operator in Splunk als de `extend` operator in azure monitor ondersteunen alleen scalaire functies en reken kundige Opera tors.
@@ -123,7 +123,7 @@ Splunk lijkt geen operator vergelijkbaar met te hebben `project-away` . U kunt d
 | **Azure Monitor** | **project**<br>**project-weg** | <code>Office_Hub_OHubBGTaskError<br>&#124; project exception, state</code> |
 
 ### <a name="aggregation"></a>Aggregatie
-Bekijk de [aggregaties in azure monitor logboek query's](aggregations.md) voor de verschillende aggregatie functies.
+Bekijk de [aggregaties in azure monitor logboek query's](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#aggregations) voor de verschillende aggregatie functies.
 
 | | Operator | Voorbeeld |
 |:---|:---|:---|

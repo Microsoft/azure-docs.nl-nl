@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3528ff790f16b5ec759989966ab35b8bad6565a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 86b465d0b3c28c50a8aa85247a14e189d4586a47
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91629451"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016272"
 ---
 # <a name="grant-data-access-to-an-environment"></a>Gegevens toegang verlenen tot een omgeving
 
@@ -24,7 +24,7 @@ In dit artikel worden de twee soorten Azure Time Series Insights toegangs beleid
 
 ## <a name="sign-in-to-azure-time-series-insights"></a>Aanmelden bij Azure Time Series Insights
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 1. Zoek uw Azure Time Series Insights omgeving door `Time Series Insights environments` in het **zoekvak** te typen. Selecteer `Time Series Insights environments` in de zoek resultaten.
 1. Selecteer uw Azure Time Series Insights omgeving in de lijst.
 
@@ -32,7 +32,7 @@ In dit artikel worden de twee soorten Azure Time Series Insights toegangs beleid
 
 Volg deze stappen om toegang tot gegevens toe te kennen voor een gebruikers-principal.
 
-1. Selecteer **beleid voor gegevens toegang**en selecteer **+ toevoegen**.
+1. Selecteer **beleid voor gegevens toegang** en selecteer **+ toevoegen**.
 
     [![Een beleid voor gegevens toegang selecteren en toevoegen](media/data-access/data-access-select-add-button.png)](media/data-access/data-access-select-add-button.png#lightbox)
 
@@ -60,7 +60,7 @@ Volg deze stappen om toegang tot gegevens toe te kennen voor een gebruikers-prin
 
 ## <a name="provide-guest-access-from-another-azure-ad-tenant"></a>Gast toegang bieden vanuit een andere Azure AD-Tenant
 
-De `Guest` rol is geen beheer functie. Het is een term die wordt gebruikt voor een account dat van de ene Tenant naar de andere wordt uitgenodigd. Nadat het gast account is uitgenodigd voor de directory van de Tenant, kan dit hetzelfde toegangs beheer hebben als een ander account. U kunt beheer toegang tot een Azure Time Series Insights omgeving verlenen met behulp van de Blade Access Control (IAM). U kunt ook toegang tot de gegevens in de omgeving verlenen via de Blade Data Access-beleids regels. Lees [Azure Active Directory B2B-samenwerkings gebruikers toevoegen in de Azure Portal](https://docs.microsoft.com/azure/active-directory/b2b/add-users-administrator)voor meer informatie over Azure Active Directory (Azure AD).
+De `Guest` rol is geen beheer functie. Het is een term die wordt gebruikt voor een account dat van de ene Tenant naar de andere wordt uitgenodigd. Nadat het gast account is uitgenodigd voor de directory van de Tenant, kan dit hetzelfde toegangs beheer hebben als een ander account. U kunt beheer toegang tot een Azure Time Series Insights omgeving verlenen met behulp van de Blade Access Control (IAM). U kunt ook toegang tot de gegevens in de omgeving verlenen via de Blade Data Access-beleids regels. Lees [Azure Active Directory B2B-samenwerkings gebruikers toevoegen in de Azure Portal](../active-directory/external-identities/add-users-administrator.md)voor meer informatie over Azure Active Directory (Azure AD).
 
 Volg deze stappen om gast toegang tot een Azure Time Series Insights omgeving toe te kennen aan een Azure AD-gebruiker vanuit een andere Tenant.
 
@@ -100,7 +100,7 @@ Volg deze stappen om gast toegang tot een Azure Time Series Insights omgeving to
 
     [![Gast selecteert aan de slag om te accepteren](media/data-access/data-access-email-invitation.png)](media/data-access/data-access-email-invitation.png#lightbox)
 
-1. Nadat u **aan de slag**hebt geselecteerd, wordt de gast gebruiker weer gegeven met een machtigings venster dat is gekoppeld aan de organisatie van de beheerder. Wanneer u toestemming verleent door **accepteren**te selecteren, wordt de gebruiker aangemeld.
+1. Nadat u **aan de slag** hebt geselecteerd, wordt de gast gebruiker weer gegeven met een machtigings venster dat is gekoppeld aan de organisatie van de beheerder. Wanneer u toestemming verleent door **accepteren** te selecteren, wordt de gebruiker aangemeld.
 
     [![Machtigingen voor gast beoordelingen en accepteren](media/data-access/data-access-grant-permission-sign-in.png)](media/data-access/data-access-grant-permission-sign-in.png#lightbox)
 
@@ -124,4 +124,4 @@ Volg deze stappen om gast toegang tot een Azure Time Series Insights omgeving to
 
 * Lees [verificatie en autorisatie](time-series-insights-authentication-and-authorization.md) voor de stappen voor het registreren van Azure Active Directory-apps.
 
-* Bekijk [uw omgeving in de Azure time series Insights Explorer](./time-series-insights-update-explorer.md).
+* Bekijk [uw omgeving in de Azure time series Insights Explorer](./concepts-ux-panels.md).

@@ -10,12 +10,12 @@ author: sdgilley
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
-ms.openlocfilehash: 1a7204fea1a77dbca57ffc7d512f81e46c4d3b5f
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 9524577d40c3b6b65bb3c3c8ff9e257b015ed90d
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873387"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95012938"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Azure Machine Learning-werk ruimten maken en beheren 
 
@@ -27,6 +27,10 @@ Als uw behoeften veranderen of vereisten voor automatisering verhogen, kunt u oo
 
 * Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 * Als u de python-SDK gebruikt, [installeert u de SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+
+## <a name="limitations"></a>Beperkingen
+
+* Wanneer u een nieuwe werk ruimte maakt, kunt u de werk ruimte toestaan de Azure-Services te maken die deze automatisch vereist of bestaande Services biedt. Wanneer u bestaande services levert, moeten deze services allemaal deel uitmaken van hetzelfde Azure-abonnement als de werk ruimte.
 
 ## <a name="create-a-workspace"></a>Een werkruimte maken
 
@@ -131,7 +135,7 @@ Als u problemen ondervindt bij het openen van uw abonnement, raadpleegt u [verif
    Abonnement |Selecteer het Azure-abonnement dat u wilt gebruiken.
    Resourcegroep | Gebruik een bestaande resourcegroep in uw abonnement of voer een naam in om een nieuwe resourcegroep te maken. Een resourcegroep bevat gerelateerde resources voor een Azure-oplossing. In dit voorbeeld gebruiken we **docs-aml**. U hebt de rol *Inzender* of *eigenaar* nodig voor het gebruik van een bestaande resource groep.  Zie [toegang tot een Azure machine learning-werk ruimte beheren](how-to-assign-roles.md)voor meer informatie over toegang.
    Regio | Selecteer de Azure-regio die het dichtst bij uw gebruikers ligt en de gegevens bronnen om uw werk ruimte te maken.
-   | Opslagaccount | Het standaard opslag account voor de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
+   | Storage-account | Het standaard opslag account voor de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
    | Key Vault | De Azure Key Vault die wordt gebruikt door de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
    | Application Insights | Het Application Insights-exemplaar voor de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
    | Container Registry | De Azure Container Registry voor de werk ruimte. Standaard wordt een nieuw item _niet_ gemaakt voor de werk ruimte. In plaats daarvan wordt deze gemaakt wanneer u deze nodig hebt tijdens het maken van een docker-installatie kopie tijdens de training of implementatie. |

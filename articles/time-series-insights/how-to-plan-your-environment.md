@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: cb12777a6a4fa1e75cd65bc597c87442d592aad5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c8d96d7b5952c020493af278ee1ea8ad5ff46716
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91598120"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016782"
 ---
 # <a name="plan-your-azure-time-series-insights-gen2-environment"></a>Uw Azure Time Series Insights Gen2-omgeving plannen
 
@@ -45,7 +45,7 @@ Als onderdeel van het inrichtings proces geeft u op of u een warme Store wilt in
 Query's in de warme Store zijn gratis, terwijl query's voor de koude opslag kosten in rekening worden gebracht. Het is belang rijk om inzicht te krijgen in uw query patronen en uw warme archief configuratie dienovereenkomstig te plannen. We raden u aan om interactieve analyses uit te voeren op de meest recente gegevens in uw warme archief-en patroon analyse en op lange termijn trends.
 
 > [!NOTE]
-> Lees de [API-verwijzing](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#uri-parameters)voor meer informatie over het uitvoeren van een query op uw warme gegevens.
+> Lees de [API-verwijzing](/rest/api/time-series-insights/dataaccessgen2/query/execute#uri-parameters)voor meer informatie over het uitvoeren van een query op uw warme gegevens.
 
 Als u wilt beginnen, hebt u drie extra items nodig:
 
@@ -64,7 +64,7 @@ Selecteer een tijd reeks-ID om een nieuwe Azure Time Series Insights omgeving te
 > [!IMPORTANT]
 > Time Series-Id's *kunnen later niet worden gewijzigd*. Verifieer elk één voor de uiteindelijke selectie en het eerste gebruik.
 
-U kunt Maxi maal drie sleutels selecteren om uw resources uniek te onderscheiden. Lees [Aanbevolen procedures voor het kiezen van een tijd reeks-id](./time-series-insights-update-how-to-id.md) en [opname regels](concepts-json-flattening-escaping-rules.md)voor meer informatie.
+U kunt Maxi maal drie sleutels selecteren om uw resources uniek te onderscheiden. Lees [Aanbevolen procedures voor het kiezen van een tijd reeks-id](./how-to-select-tsid.md) en [opname regels](concepts-json-flattening-escaping-rules.md)voor meer informatie.
 
 De **tijds tempel** eigenschap is ook belang rijk. U kunt deze eigenschap aanwijzen wanneer u gebeurtenis bronnen toevoegt. Elke gebeurtenis bron heeft een optionele time stamp-eigenschap die wordt gebruikt om gebeurtenis bronnen na verloop van tijd bij te houden. Time Stamp-waarden zijn hoofdletter gevoelig en moeten worden opgemaakt als afzonderlijke specificatie van elke bron van de gebeurtenis.
 
@@ -74,7 +74,7 @@ Als u niets opgeeft, wordt het tijdstip waarop de gebeurtenis in de IoT Hub of e
 
 U kunt nu het time series-model van uw Azure Time Series Insights omgeving configureren. Het nieuwe model maakt het eenvoudig om IoT-gegevens te vinden en analyseren. Hiermee wordt de inschakeling, het onderhoud en de verrijking van tijdreeks gegevens mogelijk en helpt u gegevens sets te voorbereiden. Het model maakt gebruik van Time Series-Id's, die zijn toegewezen aan een exemplaar dat de unieke resource koppelt aan variabelen, zoals typen en hiërarchieën. Lees meer informatie over het overzicht van [Time Series-modellen](./concepts-model-overview.md) .
 
-Het model is dynamisch, zodat het op elk gewenst moment kan worden gebouwd. Als u snel aan de slag wilt gaan, bouwt en uploadt u deze voordat u gegevens naar Azure Time Series Insights pusht. Lees [het time series-model gebruiken](/azure/time-series-insights/concepts-model-overview)om uw model te bouwen.
+Het model is dynamisch, zodat het op elk gewenst moment kan worden gebouwd. Als u snel aan de slag wilt gaan, bouwt en uploadt u deze voordat u gegevens naar Azure Time Series Insights pusht. Lees [het time series-model gebruiken](./concepts-model-overview.md)om uw model te bouwen.
 
 Voor veel klanten is het time series-model gekoppeld aan een bestaand Asset model of ERP-systeem dat al aanwezig is. Als u geen bestaand model hebt, wordt een vooraf ontwikkelde gebruikers ervaring [gegeven](https://github.com/Microsoft/tsiclient) om snel aan de slag te gaan. Als u wilt bepalen hoe een model u kan helpen, bekijkt u de voor [beeld-demo omgeving](https://insights.timeseries.azure.com/preview/demo).
 

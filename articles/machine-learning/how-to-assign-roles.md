@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 11/09/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperfq2
-ms.openlocfilehash: 6cd4bbec89e955c398f7cb6e37ba5c3dcc6427ea
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 90abd46e73ecb50b5e6de40218571d0ec899752e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961223"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95012958"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>De toegang tot een Azure Machine Learning-werkruimte beheren
 
@@ -27,7 +27,7 @@ In dit artikel leert u hoe u de toegang (autorisatie) beheert voor een Azure Mac
 >
 > * [Toegang tot Azure Kubernetes-cluster resources beheren](../aks/azure-ad-rbac.md)
 > * [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
-> * [Azure RBAC gebruiken voor toegang tot BLOB-gegevens](/storage/common/storage-auth-aad-rbac-portal.md)
+> * [Azure RBAC gebruiken voor toegang tot BLOB-gegevens](/azure/storage/common/storage-auth-aad-rbac-portal)
 
 > [!WARNING]
 > Het Toep assen van sommige functies kan de functionaliteit van de gebruikers interface in Azure Machine Learning Studio beperken voor andere gebruikers. Als de rol van een gebruiker bijvoorbeeld niet de mogelijkheid heeft om een reken instantie te maken, is de optie voor het maken van een reken instantie niet beschikbaar in Studio. Dit gedrag wordt verwacht en voor komt dat de gebruiker probeert bewerkingen uit te voeren die een fout bericht krijgen dat de toegang is geweigerd.

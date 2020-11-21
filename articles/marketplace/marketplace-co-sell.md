@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: vamahtan
 ms.author: vamahtan
-ms.date: 11/17/2020
-ms.openlocfilehash: 730178d974ba95db968332ac669f701486b513bd
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.date: 11/20/2020
+ms.openlocfilehash: 9d6970331024ea0cd08e890cc62507d9eb230678
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94738523"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016327"
 ---
 # <a name="co-sell-partner-engagement"></a>Betrokkenheid van partner bij collectieve verkoop
 
@@ -85,6 +85,13 @@ Start uw directe verkoop traject rechtstreeks in het partner centrum volgens ond
         :::image type="content" source="media/co-sell/co-sell-request-review.png" alt-text="In deze afbeelding ziet u de vervolg keuzelijst CED om een mede-verkoop beoordeling aan te vragen.":::
 
     De CED neemt contact met u op om het proces te volt ooien.
+
+## <a name="see-your-offers-co-sell-status"></a>Bekijk de status van de mede verkoop van uw aanbieding
+
+Voor aanbiedingen met de [optie voor co-sell in Partner Center](./partner-center-portal/commercial-marketplace-co-sell.md)kunt u de huidige mede-verkoop status van uw aanbieding bekijken op de overzichts pagina van de aanbieding:
+
+ :::image type="content" source="media/co-sell/co-sell-status.png" alt-text="Deze afbeelding toont de huidige mede-verkoop status van aanbiedingen.":::
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

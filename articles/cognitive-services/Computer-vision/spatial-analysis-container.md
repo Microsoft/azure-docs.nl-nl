@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: aahi
-ms.openlocfilehash: 6ebc1831b990b540bcb9a3856c380c28142af536
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 2f03746a6a5afc388db2beeff84b3ab4cbd393b5
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357110"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014591"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>De container voor ruimtelijke analyse installeren en uitvoeren (preview-versie)
 
@@ -34,7 +34,7 @@ Als u de container voor ruimtelijke analyse wilt uitvoeren, hebt u een compute-a
 
 #### <a name="azure-stack-edge-device"></a>[Azure Stack edge-apparaat](#tab/azure-stack-edge)
 
-Azure Stack Edge is een hardware-as-a-service-oplossing en een met AI ingeschakeld Edge computing-apparaat met mogelijkheden voor netwerk gegevens overdracht. Zie de [documentatie van Azure stack Edge](https://docs.microsoft.com/azure/databox-online/azure-stack-edge-deploy-prep)voor gedetailleerde instructies voor voor bereiding en installatie.
+Azure Stack Edge is een hardware-as-a-service-oplossing en een met AI ingeschakeld Edge computing-apparaat met mogelijkheden voor netwerk gegevens overdracht. Zie de [documentatie van Azure stack Edge](../../databox-online/azure-stack-edge-deploy-prep.md)voor gedetailleerde instructies voor voor bereiding en installatie.
 
 #### <a name="desktop-machine"></a>[Desktop computer](#tab/desktop-machine)
 
@@ -59,7 +59,7 @@ In dit artikel downloadt en installeert u de volgende software pakketten. De hos
 * [NVIDIA grafische Stuur Programma's](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html) en [NVIDIA CUDA Toolkit](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
 * Configuraties voor [NVIDIA MPS](https://docs.nvidia.com/deploy/pdf/CUDA_Multi_Process_Service_Overview.pdf) (multi-process-service).
 * [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-engine---community-1) en [NVIDIA-Docker2](https://github.com/NVIDIA/nvidia-docker) 
-* [Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux) runtime.
+* [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) runtime.
 
 ---
 
@@ -93,7 +93,7 @@ Het is raadzaam om een Azure Stack edge-apparaat te gebruiken voor uw hostcomput
  
 Ruimtelijke analyse maakt gebruik van de reken functies van de Azure Stack Edge om een AI-oplossing uit te voeren. Als u de reken functies wilt inschakelen, moet u het volgende doen: 
 
-* U hebt [verbinding gemaakt en](https://docs.microsoft.com/azure/databox-online/azure-stack-edge-deploy-connect-setup-activate) uw Azure stack edge-apparaat geactiveerd. 
+* U hebt [verbinding gemaakt en](../../databox-online/azure-stack-edge-deploy-connect-setup-activate.md) uw Azure stack edge-apparaat geactiveerd. 
 * U hebt een Windows-client systeem waarop Power shell 5,0 of hoger wordt uitgevoerd om toegang te krijgen tot het apparaat.  
 * Als u een Kubernetes-cluster wilt implementeren, moet u uw Azure Stack edge-apparaat configureren via de **lokale gebruikers interface** van de [Azure Portal](https://portal.azure.com/): 
   1. De compute-functie op uw Azure Stack edge-apparaat inschakelen. Als u Compute wilt inschakelen, gaat u naar de **Compute** -pagina in de webinterface voor uw apparaat. 
@@ -117,7 +117,7 @@ Wanneer de Edge-rekenprocesrol wordt geconfigureerd op het Edge-apparaat, worden
 
 > [!NOTE]
 > * Momenteel wordt alleen het Linux-platform ondersteund voor IoT Edge apparaten. Zie het artikel [logboek registratie en probleem oplossing](spatial-analysis-logging.md) voor hulp bij het oplossen van problemen met het Azure stack edge-apparaat.
-> * Zie [een IOT edge apparaat configureren om te communiceren via een proxy](https://docs.microsoft.com/azure/iot-edge/how-to-configure-proxy-support#azure-portal) server voor meer informatie over het configureren van een IOT edge apparaat om te communiceren via een proxy server
+> * Zie [een IOT edge apparaat configureren om te communiceren via een proxy](../../iot-edge/how-to-configure-proxy-support.md#azure-portal) server voor meer informatie over het configureren van een IOT edge apparaat om te communiceren via een proxy server
 
 ###  <a name="enable-mps-on-azure-stack-edge"></a>MPS inschakelen op Azure Stack rand 
 
@@ -129,7 +129,7 @@ Wanneer de Edge-rekenprocesrol wordt geconfigureerd op het Edge-apparaat, worden
     winrm quickconfig
     ```
     
-    Als er waarschuwingen over een firewall uitzondering worden weer gegeven, controleert u het type netwerk verbinding en raadpleegt u de documentatie van [Windows Remote Management](https://docs.microsoft.com/windows/win32/winrm/installation-and-configuration-for-windows-remote-management) .
+    Als er waarschuwingen over een firewall uitzondering worden weer gegeven, controleert u het type netwerk verbinding en raadpleegt u de documentatie van [Windows Remote Management](/windows/win32/winrm/installation-and-configuration-for-windows-remote-management) .
 
 3. Wijs een variabele toe aan het IP-adres van het apparaat. 
     
@@ -246,7 +246,7 @@ sudo systemctl --now enable nvidia-mps.service
 
 ## <a name="configure-azure-iot-edge-on-the-host-computer"></a>Azure IoT Edge op de hostcomputer configureren
 
-Als u de container voor ruimtelijke analyse op de hostcomputer wilt implementeren, moet u een exemplaar van een [Azure IOT hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-create-through-portal) -service maken met behulp van de prijs categorie Standard (S1) of gratis (F0). Als uw hostcomputer een Azure Stack Edge is, gebruikt u hetzelfde abonnement en dezelfde resource groep die wordt gebruikt door de Azure Stack Edge-resource.
+Als u de container voor ruimtelijke analyse op de hostcomputer wilt implementeren, moet u een exemplaar van een [Azure IOT hub](../../iot-hub/iot-hub-create-through-portal.md) -service maken met behulp van de prijs categorie Standard (S1) of gratis (F0). Als uw hostcomputer een Azure Stack Edge is, gebruikt u hetzelfde abonnement en dezelfde resource groep die wordt gebruikt door de Azure Stack Edge-resource.
 
 Gebruik de Azure CLI om een exemplaar van Azure IoT Hub te maken. Vervang de para meters, indien van toepassing. U kunt de Azure-IoT Hub ook maken op de [Azure Portal](https://portal.azure.com/).
 
@@ -261,7 +261,7 @@ az iot hub create --name "test-iot-hub-123" --sku S1 --resource-group "test-reso
 az iot hub device-identity create --hub-name "test-iot-hub-123" --device-id "my-edge-device" --edge-enabled
 ```
 
-Als de hostcomputer geen Azure Stack edge-apparaat is, moet u [Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux) versie 1.0.9 installeren. Volg deze stappen om de juiste versie te downloaden:
+Als de hostcomputer geen Azure Stack edge-apparaat is, moet u [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) versie 1.0.9 installeren. Volg deze stappen om de juiste versie te downloaden:
 
 Ubuntu-Server 18,04:
 ```bash
@@ -292,7 +292,7 @@ Installeer de 1.0.9-release:
 sudo apt-get install iotedge=1.0.9* libiothsm-std=1.0.9*
 ```
 
-Registreer vervolgens de hostcomputer als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](https://docs.microsoft.com/azure/iot-edge/how-to-register-device#register-in-the-azure-portal).
+Registreer vervolgens de hostcomputer als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-manual-provision-symmetric-key.md?view=iotedge-2018-06).
 
 U moet het IoT Edge apparaat verbinden met uw Azure-IoT Hub. U moet de connection string kopiëren van het IoT Edge apparaat dat u eerder hebt gemaakt. U kunt ook de onderstaande opdracht uitvoeren in de Azure CLI.
 
@@ -306,7 +306,7 @@ Open op de hostcomputer  `/etc/iotedge/config.yaml` om te bewerken. Vervang door
 sudo systemctl restart iotedge
 ```
 
-Implementeer de container voor ruimtelijke analyse als een IoT-module op de hostcomputer, hetzij van de [Azure Portal](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-portal) of [Azure cli](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-cli). Als u de portal gebruikt, stelt u de afbeeldings-URI in op de locatie van uw Azure Container Registry. 
+Implementeer de container voor ruimtelijke analyse als een IoT-module op de hostcomputer, hetzij van de [Azure Portal](../../iot-edge/how-to-deploy-modules-portal.md) of [Azure cli](../../iot-edge/how-to-deploy-modules-cli.md). Als u de portal gebruikt, stelt u de afbeeldings-URI in op de locatie van uw Azure Container Registry. 
 
 Gebruik de onderstaande stappen om de container te implementeren met behulp van de Azure CLI.
 
@@ -335,7 +335,7 @@ In de volgende tabel ziet u de verschillende omgevings variabelen die worden geb
 > [!IMPORTANT]
 > De `Eula` `Billing` Opties, en `ApiKey` moeten worden opgegeven om de container uit te voeren. anders wordt de container niet gestart.  Zie [facturering](#billing)voor meer informatie.
 
-Wanneer u het implementatie manifest voor [Azure stack edge-apparaten](https://go.microsoft.com/fwlink/?linkid=2142179) of [een desktop machine](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) met uw eigen instellingen en een selectie van bewerkingen hebt bijgewerkt, kunt u de onderstaande [Azure cli](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-cli) -opdracht gebruiken om de container op de hostcomputer te implementeren, als een IOT Edge-module.
+Wanneer u het implementatie manifest voor [Azure stack edge-apparaten](https://go.microsoft.com/fwlink/?linkid=2142179) of [een desktop machine](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) met uw eigen instellingen en een selectie van bewerkingen hebt bijgewerkt, kunt u de onderstaande [Azure cli](../../iot-edge/how-to-deploy-modules-cli.md) -opdracht gebruiken om de container op de hostcomputer te implementeren, als een IOT Edge-module.
 
 ```azurecli
 az login
@@ -366,14 +366,14 @@ U moet [ruimtelijke analyse bewerkingen](spatial-analysis-operations.md) gebruik
 
 ## <a name="redeploy-or-delete-the-deployment"></a>Implementatie opnieuw implementeren of verwijderen
 
-Als u de implementatie wilt bijwerken, moet u ervoor zorgen dat uw vorige implementaties zijn geïmplementeerd, of moet u IoT Edge-apparaten verwijderen die niet zijn voltooid. Anders wordt deze implementaties voortgezet, waardoor het systeem een slechte status heeft. U kunt de Azure Portal of de [Azure cli](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/edge/deployment)gebruiken.
+Als u de implementatie wilt bijwerken, moet u ervoor zorgen dat uw vorige implementaties zijn geïmplementeerd, of moet u IoT Edge-apparaten verwijderen die niet zijn voltooid. Anders wordt deze implementaties voortgezet, waardoor het systeem een slechte status heeft. U kunt de Azure Portal of de [Azure cli](/cli/azure/ext/azure-cli-iot-ext/iot/edge/deployment)gebruiken.
 
 ## <a name="use-the-output-generated-by-the-container"></a>De uitvoer gebruiken die door de container is gegenereerd
 
 Als u de uitvoer wilt gaan gebruiken die door de container is gegenereerd, raadpleegt u de volgende artikelen:
 
-*   Gebruik de Azure Event hub SDK voor de gekozen programmeer taal om verbinding te maken met het Azure IoT Hub-eind punt en de gebeurtenissen te ontvangen. Zie [apparaat-naar-Cloud-berichten lezen van het ingebouwde eind punt](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-read-builtin) voor meer informatie. 
-*   Stel bericht routering in op uw Azure-IoT Hub om de gebeurtenissen naar andere eind punten te verzenden of de gebeurtenissen op te slaan in Azure Blob Storage, enzovoort. Zie [IOT hub Message Routing](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c) voor meer informatie. 
+*   Gebruik de Azure Event hub SDK voor de gekozen programmeer taal om verbinding te maken met het Azure IoT Hub-eind punt en de gebeurtenissen te ontvangen. Zie [apparaat-naar-Cloud-berichten lezen van het ingebouwde eind punt](../../iot-hub/iot-hub-devguide-messages-read-builtin.md) voor meer informatie. 
+*   Stel bericht routering in op uw Azure-IoT Hub om de gebeurtenissen naar andere eind punten te verzenden of de gebeurtenissen op te slaan in Azure Blob Storage, enzovoort. Zie [IOT hub Message Routing](../../iot-hub/iot-hub-devguide-messages-d2c.md) voor meer informatie. 
 
 ## <a name="running-spatial-analysis-with-a-recorded-video-file"></a>Ruimtelijke analyse uitvoeren met een opgenomen video bestand
 
@@ -381,7 +381,7 @@ U kunt ruimtelijke analyse gebruiken met zowel opgenomen als live video. Als u r
     1. **Beveiligde overdracht moet** worden gewijzigd in **uitgeschakeld**
     2. **Open bare BLOB-toegang** tot **ingeschakeld** wijzigen toestaan
 
-Navigeer naar het gedeelte **container** en maak een nieuwe container of gebruik een bestaande. Upload het video bestand vervolgens naar de container. Vouw de bestands instellingen voor het geüploade bestand uit en selecteer **Sa's genereren**. Zorg ervoor dat u de **verval datum** lang genoeg instelt om de test periode te bedekken. **Toegestane protocollen** instellen op *http* ( *https* wordt niet ondersteund).
+Navigeer naar het gedeelte **container** en maak een nieuwe container of gebruik een bestaande. Upload het video bestand vervolgens naar de container. Vouw de bestands instellingen voor het geüploade bestand uit en selecteer **Sa's genereren**. Zorg ervoor dat u de **verval datum** lang genoeg instelt om de test periode te bedekken. **Toegestane protocollen** instellen op *http* (*https* wordt niet ondersteund).
 
 Klik op **SAS-token en URL genereren** en kopieer de URL van de BLOB-SAS. Vervang het begin `https` door `http` en test de URL in een browser die het afspelen van video ondersteunt.
 

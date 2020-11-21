@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 31219fda04095d48b55165f59c27f3dee85485a9
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 8c6d26de62364b6aca671d1e4283a01c1b78c397
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843635"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014829"
 ---
 # <a name="tenant-and-host-pool-creation-in-windows-virtual-desktop-classic"></a>Tenant en hostgroep maken in Windows virtueel bureau blad (klassiek)
 
@@ -49,7 +49,7 @@ Contact your IT Admin to review the configuration of your service subscriptions.
 
 **Oorzaak:** Er is geen toestemming verleend aan het virtuele bureau blad van Windows in het Azure Active Directory-exemplaar.
 
-**Fix:** [Volg deze hand leiding](https://docs.microsoft.com/azure/virtual-desktop/virtual-desktop-fall-2019/tenant-setup-azure-active-directory#grant-permissions-to-windows-virtual-desktop) om toestemming te verlenen.
+**Fix:** [Volg deze hand leiding](./tenant-setup-azure-active-directory.md#grant-permissions-to-windows-virtual-desktop) om toestemming te verlenen.
 
 ### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Fout: De gebruiker is niet gemachtigd om een query uit te voeren op de beheerservice
 
@@ -140,9 +140,9 @@ Als uw bewerkings sjabloon de quotum limiet overschrijdt, kunt u een van de volg
 
 Volg deze instructies voor het oplossen van problemen met mislukte implementaties van Azure Resource Manager sjablonen en Power shell DSC.
 
-1. Bekijk fouten in de implementatie met behulp [van de weer gave-implementatie bewerkingen met Azure Resource Manager](../../azure-resource-manager/resource-manager-deployment-operations.md).
-2. Als er geen fouten in de implementatie zijn, controleert u de fouten in het activiteiten logboek met behulp van [activiteiten logboeken weer geven om acties op resources te controleren](../../azure-resource-manager/resource-group-audit.md).
-3. Wanneer de fout is geïdentificeerd, gebruikt u het fout bericht en de resources in [problemen met veelvoorkomende Azure-implementatie fouten oplossen met Azure Resource Manager](../../azure-resource-manager/resource-manager-common-deployment-errors.md) om het probleem op te lossen.
+1. Bekijk fouten in de implementatie met behulp [van de weer gave-implementatie bewerkingen met Azure Resource Manager](../../azure-resource-manager/templates/deployment-history.md).
+2. Als er geen fouten in de implementatie zijn, controleert u de fouten in het activiteiten logboek met behulp van [activiteiten logboeken weer geven om acties op resources te controleren](../../azure-resource-manager/management/view-activity-logs.md).
+3. Wanneer de fout is geïdentificeerd, gebruikt u het fout bericht en de resources in [problemen met veelvoorkomende Azure-implementatie fouten oplossen met Azure Resource Manager](../../azure-resource-manager/templates/common-deployment-errors.md) om het probleem op te lossen.
 4. Verwijder alle resources die tijdens de vorige implementatie zijn gemaakt en probeer de sjabloon opnieuw te implementeren.
 
 ### <a name="error-your-deployment-failedhostnamejoindomain"></a>Fout: de implementatie is mislukt.... \<hostname> /JoinDomain

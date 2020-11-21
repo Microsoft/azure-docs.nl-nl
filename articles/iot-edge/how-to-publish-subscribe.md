@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: ef92895374f07c79f8ba8d626a0aab3d89733f40
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 1ace40098e1d53c6199accea755ffb6969781663
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629645"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015660"
 ---
 # <a name="publish-and-subscribe-with-azure-iot-edge"></a>Publiceren en abonneren met Azure IoT Edge
 
@@ -209,7 +209,7 @@ Nu u begrijpt hoe u verbinding kunt maken met de IoT Edge MQTT Broker, gaan we k
 
 ## <a name="publish-and-subscribe-on-user-defined-topics"></a>Publiceer en Abonneer u op door de gebruiker gedefinieerde onderwerpen
 
-In dit artikel gebruikt u één client met de naam **sub_client** die zich abonneert op een onderwerp en een andere client met de naam **pub_client** die naar een onderwerp publiceert. We gebruiken de [symmetrische sleutel verificatie](how-to-authenticate-downstream-device.md#symmetric-key-authentication) , maar u kunt dit ook doen met [x. 509 zelfondertekende authenticatie](how-to-authenticate-downstream-device.md#x509-self-signed-authentication) of [x. 509 zelfondertekende authenticatie](./how-to-authenticate-downstream-device.md#x509-self-signed-authentication).
+In dit artikel gebruikt u één client met de naam **sub_client** die zich abonneert op een onderwerp en een andere client met de naam **pub_client** die naar een onderwerp publiceert. We gebruiken de [symmetrische sleutel verificatie](how-to-authenticate-downstream-device.md#symmetric-key-authentication) , maar u kunt dit ook doen met [x. 509 zelfondertekende verificatie](how-to-authenticate-downstream-device.md#x509-self-signed-authentication) of [x. 509 CA-ondertekende verificatie](./how-to-authenticate-downstream-device.md#x509-ca-signed-authentication).
 
 ### <a name="create-publisher-and-subscriber-clients"></a>Publisher-en Subscriber-clients maken
 

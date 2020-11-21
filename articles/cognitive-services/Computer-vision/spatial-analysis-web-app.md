@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: aahi
-ms.openlocfilehash: 24d4dd4d0caa49b9514bf19f707ea87b0b071a79
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 9b9390b498f28fc8f9029f1c11805b970aaca73d
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357093"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014557"
 ---
 # <a name="how-to-deploy-a-people-counting-web-application"></a>Procedure: een web-app voor het tellen van een persoon implementeren
 
@@ -31,7 +31,7 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 * Azure-abonnement: [u kunt een gratis abonnement nemen](https://azure.microsoft.com/free/cognitive-services/)
-* Basis informatie over Azure IoT Edge implementatie configuraties en een [Azure IOT hub](https://docs.microsoft.com/azure/iot-hub/)
+* Basis informatie over Azure IoT Edge implementatie configuraties en een [Azure IOT hub](../../iot-hub/index.yml)
 * Een geconfigureerde [hostcomputer](spatial-analysis-container.md).
 
 ## <a name="deploy-the-spatial-analysis-container"></a>De container voor ruimtelijke analyse implementeren
@@ -65,7 +65,7 @@ az iot hub device-identity create --hub-name "<IoT Hub Name>" --device-id "<Edge
 
 Implementeer de container voor ruimtelijke analyse als een IoT-module op de hostcomputer met behulp van de Azure CLI. Voor het implementatie proces is een manifest bestand voor implementatie vereist waarin de vereiste containers, variabelen en configuraties voor uw implementatie worden beschreven. U vindt een voor beeld [Azure stack Edge-specifiek implementatie manifest](https://github.com/Azure-Samples/cognitive-services-rest-api-samples/) en een [niet-Azure stack Edge-specifiek implementatie manifest](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) op github, dat een eenvoudige implementatie configuratie bevat voor de container *met ruimtelijke analyse* . 
 
-U kunt ook de Azure IoT-uitbrei dingen voor Visual Studio code gebruiken om bewerkingen uit te voeren met uw IoT-hub. Ga naar [Deploy Azure IOT Edge-modules van Visual Studio code](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-vscode) voor meer informatie.
+U kunt ook de Azure IoT-uitbrei dingen voor Visual Studio code gebruiken om bewerkingen uit te voeren met uw IoT-hub. Ga naar [Deploy Azure IOT Edge-modules van Visual Studio code](../../iot-edge/how-to-deploy-modules-vscode.md) voor meer informatie.
 
 > [!NOTE] 
 > De containers *ruimtelijke analyse-telegrafie* en *ruimtelijke analyse* zijn optioneel. U kunt ervoor kiezen om deze te verwijderen uit de *DeploymentManifest.jsin* het bestand. Raadpleeg het artikel over [telemetrie en probleem oplossing](./spatial-analysis-logging.md) voor meer informatie. U kunt twee voorbeeld *DeploymentManifest.jsvinden op* bestanden op github voor een [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179) of een andere [desktop computer](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)

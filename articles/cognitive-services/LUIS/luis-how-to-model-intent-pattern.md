@@ -9,15 +9,15 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
-ms.openlocfilehash: 914ca77b18d0469c3ea926848be4c60aab04c9c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c5e1cc5cdda921e63315c2904d560b7ad3939776
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91539101"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018851"
 ---
 # <a name="how-to-add-patterns-to-improve-prediction-accuracy"></a>Patronen toevoegen om de nauw keurigheid van de voor spelling te verbeteren
-Nadat een LUIS-app eind punt uitingen ontvangt, gebruikt u een [patroon](luis-concept-patterns.md) om de nauw keurigheid van de voor spelling te verbeteren voor uitingen die een patroon onthult in de woord volgorde en woord keuze. Patronen gebruiken specifieke [syntaxis](luis-concept-patterns.md#pattern-syntax) om de locatie van: [entiteiten](luis-concept-entity-types.md), entiteits [rollen](luis-concept-roles.md)en optionele tekst aan te geven.
+Nadat een LUIS-app eind punt uitingen ontvangt, gebruikt u een [patroon](luis-concept-patterns.md) om de nauw keurigheid van de voor spelling te verbeteren voor uitingen die een patroon onthult in de woord volgorde en woord keuze. Patronen gebruiken specifieke [syntaxis](luis-concept-patterns.md#pattern-syntax) om de locatie van: [entiteiten](luis-concept-entity-types.md), entiteits [rollen](./luis-concept-entity-types.md)en optionele tekst aan te geven.
 
 > [!CAUTION]
 > Patronen zijn alleen van toepassing op machine learning-entiteit, niet voor subentiteiten.
@@ -26,7 +26,7 @@ Nadat een LUIS-app eind punt uitingen ontvangt, gebruikt u een [patroon](luis-co
 
 1. Meld u aan bij de [LUIS-portal](https://www.luis.ai) en selecteer uw **abonnement** en **Ontwerpresource** om de apps weer te geven die aan die ontwerpresource zijn toegewezen.
 1. Open uw app door de naam ervan op **mijn apps** -pagina te selecteren.
-1. Selecteer **patronen** in het linkerpaneel onder Verbeter de **prestaties**van de app.
+1. Selecteer **patronen** in het linkerpaneel onder Verbeter de **prestaties** van de app.
 
 1. Selecteer de juiste intentie voor het patroon.
 
@@ -35,7 +35,7 @@ Nadat een LUIS-app eind punt uitingen ontvangt, gebruikt u een [patroon](luis-co
     > [!div class="mx-imgBorder"]
     > ![Scherm afbeelding van de entiteit voor het patroon](./media/luis-how-to-model-intent-pattern/patterns-3.png)
 
-    Als uw entiteit een [rol](luis-concept-roles.md)bevat, geeft u de rol op met één dubbele punt, `:` achter de naam van de entiteit, zoals `{Location:Origin}` . De lijst met rollen voor de entiteiten wordt weer gegeven in een lijst. Selecteer de rol en selecteer vervolgens ENTER.
+    Als uw entiteit een [rol](./luis-concept-entity-types.md)bevat, geeft u de rol op met één dubbele punt, `:` achter de naam van de entiteit, zoals `{Location:Origin}` . De lijst met rollen voor de entiteiten wordt weer gegeven in een lijst. Selecteer de rol en selecteer vervolgens ENTER.
 
     > [!div class="mx-imgBorder"]
     > ![Scherm opname van entiteit met rol](./media/luis-how-to-model-intent-pattern/patterns-4.png)

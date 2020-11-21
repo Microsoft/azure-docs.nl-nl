@@ -9,15 +9,15 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 09/27/2019
-ms.openlocfilehash: e93822f4a2992f619b598474082caa56562b6e36
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 73b279f98011181b329cdb010041022ab0da57f0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91538361"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018630"
 ---
 # <a name="prebuilt-domain-reference-for-your-luis-app"></a>Vooraf ontwikkelde domein referentie voor uw LUIS-app
-Deze verwijzing bevat informatie over de [vooraf ontwikkelde domeinen](luis-how-to-use-prebuilt-domains.md), die vooraf gebouwde verzamelingen van intenties en entiteiten zijn die Luis aanbieden.
+Deze verwijzing bevat informatie over de [vooraf ontwikkelde domeinen](./howto-add-prebuilt-models.md), die vooraf gebouwde verzamelingen van intenties en entiteiten zijn die Luis aanbieden.
 
 [Aangepaste domeinen](luis-how-to-start-new-app.md)beginnen daarentegen zonder intenties en modellen. U kunt vooraf opgebouwde domein intents en entiteiten aan een aangepast model toevoegen.
 

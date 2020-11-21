@@ -5,12 +5,12 @@ author: gundarev
 ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: denisgun
-ms.openlocfilehash: 7599a0c7b48bdc371d851ec20282af82e77783bf
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: c3a23276ce19f6d7b4cf341bac155ec84363fe5f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505305"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018338"
 ---
 # <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop"></a>GPU-versnelling (graphics processing unit) configureren voor Windows Virtual Desktop
 
@@ -23,27 +23,27 @@ Volg de instructies in dit artikel om een door GPU geoptimaliseerde virtuele mac
 
 ## <a name="select-an-appropriate-gpu-optimized-azure-virtual-machine-size"></a>Selecteer een geschikte door GPU geoptimaliseerde grootte voor virtuele Azure-machines
 
-Selecteer een van de VM-grootten van de [NV-serie](/azure/virtual-machines/nv-series), de [NVv3](/azure/virtual-machines/nvv3-series)of de [NVv4-serie](/azure/virtual-machines/nvv4-series) . Deze zijn afgestemd op app-en bureau blad-virtualisatie en bieden apps en de Windows-gebruikers interface om GPU te versnellen. De juiste keuze voor uw hostgroep is afhankelijk van een aantal factoren, waaronder uw specifieke app-workloads, de gewenste kwaliteit van de gebruikers ervaring en de kosten. Over het algemeen bieden grotere en meer compatibele Gpu's een betere gebruikers ervaring met een bepaalde gebruikers densiteit, terwijl kleinere en fractionele GPU-grootten meer nauw keurige controle over de kosten en kwaliteit toestaan.
+Selecteer een van de VM-grootten van de [NV-serie](../virtual-machines/nv-series.md), de [NVv3](../virtual-machines/nvv3-series.md)of de [NVv4-serie](../virtual-machines/nvv4-series.md) . Deze zijn afgestemd op app-en bureau blad-virtualisatie en bieden apps en de Windows-gebruikers interface om GPU te versnellen. De juiste keuze voor uw hostgroep is afhankelijk van een aantal factoren, waaronder uw specifieke app-workloads, de gewenste kwaliteit van de gebruikers ervaring en de kosten. Over het algemeen bieden grotere en meer compatibele Gpu's een betere gebruikers ervaring met een bepaalde gebruikers densiteit, terwijl kleinere en fractionele GPU-grootten meer nauw keurige controle over de kosten en kwaliteit toestaan.
 
 >[!NOTE]
 >De virtuele machines NC, NCv2, NCv3, ND en NDv2 Series van Azure zijn over het algemeen niet geschikt voor Windows-sessies met een virtueel bureau blad. Deze Vm's zijn afgestemd op gespecialiseerde, high-performance Compute-of machine learning-hulpprogram ma's, zoals die zijn gebouwd met NVIDIA CUDA. Voor algemene app-en desktop versnelling met NVIDIA-Gpu's zijn NVIDIA-raster licenties vereist; Dit wordt door Azure verschaft voor de aanbevolen VM-grootten, maar moet afzonderlijk worden gerangschikt voor virtuele machines van NC/ND-Series.
 
 ## <a name="create-a-host-pool-provision-your-virtual-machine-and-configure-an-app-group"></a>Een hostgroep maken, uw virtuele machine inrichten en een app-groep configureren
 
-Maak een nieuwe hostgroep met behulp van een virtuele machine met de grootte die u hebt geselecteerd. Zie [zelf studie: een hostgroep maken met de Azure Portal](/azure/virtual-desktop/create-host-pools-azure-marketplace)voor instructies.
+Maak een nieuwe hostgroep met behulp van een virtuele machine met de grootte die u hebt geselecteerd. Zie [zelf studie: een hostgroep maken met de Azure Portal](./create-host-pools-azure-marketplace.md)voor instructies.
 
 Het virtuele bureau blad van Windows ondersteunt de weer gave en code ring van GPU-versnellen in de volgende besturings systemen:
 
 * Windows 10 versie 1511 of hoger
 * Windows Server 2016 of hoger
 
-U moet ook een app-groep configureren of de standaard bureau blad-app-groep (met de naam bureau blad-toepassings groep) gebruiken die automatisch wordt gemaakt wanneer u een nieuwe hostgroep maakt. Zie [zelf studie: app-groepen beheren voor virtuele Windows-Bureau bladen](/azure/virtual-desktop/manage-app-groups)voor instructies.
+U moet ook een app-groep configureren of de standaard bureau blad-app-groep (met de naam bureau blad-toepassings groep) gebruiken die automatisch wordt gemaakt wanneer u een nieuwe hostgroep maakt. Zie [zelf studie: app-groepen beheren voor virtuele Windows-Bureau bladen](./manage-app-groups.md)voor instructies.
 
 ## <a name="install-supported-graphics-drivers-in-your-virtual-machine"></a>Ondersteunde grafische Stuur Programma's installeren in uw virtuele machine
 
-Als u gebruik wilt maken van de GPU-mogelijkheden van virtuele machines uit de Azure N-serie in Windows Virtual Desktop, moet u de juiste grafische Stuur Programma's installeren. Volg de instructies op de [ondersteunde besturings systemen en stuur Programma's](/azure/virtual-machines/windows/sizes-gpu#supported-operating-systems-and-drivers) om stuur Programma's te installeren van de juiste grafische leverancier, hetzij hand matig of via een Azure VM-extensie.
+Als u gebruik wilt maken van de GPU-mogelijkheden van virtuele machines uit de Azure N-serie in Windows Virtual Desktop, moet u de juiste grafische Stuur Programma's installeren. Volg de instructies op de [ondersteunde besturings systemen en stuur Programma's](../virtual-machines/sizes-gpu.md#supported-operating-systems-and-drivers) om stuur Programma's te installeren van de juiste grafische leverancier, hetzij hand matig of via een Azure VM-extensie.
 
-Alleen stuur Programma's die worden gedistribueerd door Azure, worden ondersteund voor virtuele Windows-Bureau bladen. Voor virtuele machines uit de Azure NV met NVIDIA-Gpu's worden alleen [NVIDIA-raster Stuur Programma's](/azure/virtual-machines/windows/n-series-driver-setup#nvidia-grid-drivers)en geen Nvidia Tesla (CUDA)-Stuur Programma's ondersteund, die ondersteuning bieden voor GPU-versnelling voor algemeen gebruik, apps en Desk tops.
+Alleen stuur Programma's die worden gedistribueerd door Azure, worden ondersteund voor virtuele Windows-Bureau bladen. Voor virtuele machines uit de Azure NV met NVIDIA-Gpu's worden alleen [NVIDIA-raster Stuur Programma's](../virtual-machines/windows/n-series-driver-setup.md#nvidia-grid-drivers)en geen Nvidia Tesla (CUDA)-Stuur Programma's ondersteund, die ondersteuning bieden voor GPU-versnelling voor algemeen gebruik, apps en Desk tops.
 
 Na installatie van het stuur programma is het opnieuw opstarten van de virtuele machine vereist. Gebruik de verificaties tappen in de bovenstaande instructies om te controleren of grafische Stuur Programma's zijn geïnstalleerd.
 
@@ -92,7 +92,7 @@ Als u vaak toepassingen gebruikt die een hoogwaardige inhouds opleveren, zoals 3
 
 Voer een van de volgende handelingen uit om te controleren of apps de GPU gebruiken voor Rendering:
 
-* Voor virtuele Azure-machines met een NVIDIA GPU gebruikt u het `nvidia-smi` hulp programma zoals beschreven in [installatie van stuur programma controleren](/azure/virtual-machines/windows/n-series-driver-setup#verify-driver-installation) om te controleren op GPU-gebruik bij het uitvoeren van uw apps.
+* Voor virtuele Azure-machines met een NVIDIA GPU gebruikt u het `nvidia-smi` hulp programma zoals beschreven in [installatie van stuur programma controleren](../virtual-machines/windows/n-series-driver-setup.md#verify-driver-installation) om te controleren op GPU-gebruik bij het uitvoeren van uw apps.
 * In ondersteunde besturingssysteem versies kunt u taak beheer gebruiken om te controleren op GPU-gebruik. Selecteer de GPU op het tabblad prestaties om te zien of apps gebruikmaken van de GPU.
 
 ## <a name="verify-gpu-accelerated-frame-encoding"></a>GPU-versneld frame codering controleren
@@ -115,5 +115,5 @@ U kunt als volgt controleren of Extern bureaublad gebruikmaakt van de video code
 
 Deze instructies moeten u uitvoeren met GPU-versnelling op één sessiehost (één virtuele machine). Enkele aanvullende overwegingen voor het inschakelen van GPU-versnelling in een grotere hostgroep:
 
-* U kunt een [VM-extensie](/azure/virtual-machines/extensions/overview) gebruiken om de installatie van het stuur programma en updates van een aantal virtuele machines te vereenvoudigen. Gebruik de [uitbrei ding NVIDIA GPU-stuur programma](/azure/virtual-machines/extensions/hpccompute-gpu-windows) voor VM'S met NVIDIA-gpu's en gebruik de extensie van het [AMD GPU-stuur programma](/azure/virtual-machines/extensions/hpccompute-amd-gpu-windows) voor Vm's met AMD-gpu's.
-* Overweeg het gebruik van Active Directory groepsbeleid om de configuratie van groeps beleid te vereenvoudigen over een aantal Vm's. Zie [werken met Groepsbeleid-objecten](https://go.microsoft.com/fwlink/p/?LinkId=620889)voor meer informatie over het implementeren van Groepsbeleid in het Active Directory domein.
+* U kunt een [VM-extensie](../virtual-machines/extensions/overview.md) gebruiken om de installatie van het stuur programma en updates van een aantal virtuele machines te vereenvoudigen. Gebruik de [uitbrei ding NVIDIA GPU-stuur programma](../virtual-machines/extensions/hpccompute-gpu-windows.md) voor VM'S met NVIDIA-gpu's en gebruik de extensie van het [AMD GPU-stuur programma](../virtual-machines/extensions/hpccompute-amd-gpu-windows.md) voor Vm's met AMD-gpu's.
+* Overweeg het gebruik van Active Directory groepsbeleid om de configuratie van groeps beleid te vereenvoudigen over een aantal Vm's. Zie [werken met Groepsbeleid-objecten](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731212(v=ws.11))voor meer informatie over het implementeren van Groepsbeleid in het Active Directory domein.

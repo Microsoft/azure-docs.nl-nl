@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 49a763af8d936ec9fd15c59c908ba9015f803930
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 639f2ef12d190a56e04a9b48d96ea0a6537d243c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568635"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020109"
 ---
 # <a name="azure-time-series-insights-gen1-explorer"></a>Azure Time Series Insights gen1 Explorer
 
@@ -45,8 +45,8 @@ Azure Time Series Insights is een volledig beheerde service voor analyse, opslag
 Voordat u Azure Time Series Insights Explorer kunt gebruiken, moet u het volgende doen:
 
 - Een Azure Time Series Insights-omgeving maken. Lees voor meer informatie [hoe u aan de slag gaat met Azure time series Insights](./time-series-insights-get-started.md).
-- [Bied toegang](time-series-insights-data-access.md) tot uw account in de omgeving.
-- Voeg een [IOT-hub](time-series-insights-how-to-add-an-event-source-iothub.md) of [Event hub](time-series-insights-how-to-add-an-event-source-eventhub.md) gebeurtenis bron toe.
+- [Bied toegang](./concepts-access-policies.md) tot uw account in de omgeving.
+- Voeg een [IOT-hub](./how-to-ingest-data-iot-hub.md) of [Event hub](./how-to-ingest-data-event-hub.md) gebeurtenis bron toe.
 
 ## <a name="explore-and-query-data"></a>Gegevens verkennen en opvragen
 
@@ -65,9 +65,9 @@ Binnen enkele minuten nadat u uw gebeurtenis bron hebt verbonden met uw Azure Ti
 1. Vervolgens wordt een grafiek weer gegeven met een telling van alle gebeurtenissen tijdens de geselecteerde tijds periode. Hier hebt u een aantal besturings elementen:
 
     - **Paneel voor termen editor**: de term ruimte is de locatie waar u een query op uw omgeving uitvoert. Deze bevindt zich aan de linkerkant van het scherm:
-      - **Meting**: in deze vervolg keuzelijst worden alle numerieke kolommen (**dubbele**waarden) weer gegeven.
+      - **Meting**: in deze vervolg keuzelijst worden alle numerieke kolommen (**dubbele** waarden) weer gegeven.
       - **Splitsen op**: deze vervolg keuzelijst bevat categorische kolommen (**teken reeksen**).
-      - U kunt de stap interpolatie inschakelen, het minimum en maximum weer geven en de y-as van het configuratie scherm naast **meting**aanpassen. U kunt ook aanpassen of de weer gegeven gegevens een aantal, een gemiddelde of een som van de gegevens zijn.
+      - U kunt de stap interpolatie inschakelen, het minimum en maximum weer geven en de y-as van het configuratie scherm naast **meting** aanpassen. U kunt ook aanpassen of de weer gegeven gegevens een aantal, een gemiddelde of een som van de gegevens zijn.
       - U kunt Maxi maal vijf termen toevoegen die op dezelfde x-as worden weer gegeven. Selecteer **toevoegen** om een nieuwe term toe te voegen of gebruik de knop **deze term klonen** om een kopie van een bestaande term toe te voegen.
 
         [![Voor waarden selecteren, filteren en query paneel](media/time-series-insights-explorer/tsi-ga-explorer-add-or-clone.png)](media/time-series-insights-explorer/tsi-ga-explorer-add-or-clone.png#lightbox)
@@ -115,7 +115,7 @@ Binnen enkele minuten nadat u uw gebeurtenis bron hebt verbonden met uw Azure Ti
 
 1. Wanneer u gebeurtenissen bekijkt door te selecteren of met de rechter muisknop te klikken, wordt het deel venster **gebeurtenissen** beschikbaar gesteld. Hier kunt u al uw onbewerkte gebeurtenissen controleren en uw gebeurtenissen exporteren als JSON-of CSV-bestanden. Azure Time Series Insights worden alle onbewerkte gegevens opgeslagen.
 
-    [![Evenementen](media/time-series-insights-explorer/tsi-ga-explorer-events-panel.png)](media/time-series-insights-explorer/tsi-ga-explorer-events-panel.png#lightbox)
+    [![Gebeurtenissen](media/time-series-insights-explorer/tsi-ga-explorer-events-panel.png)](media/time-series-insights-explorer/tsi-ga-explorer-events-panel.png#lightbox)
 
 1. Selecteer het tabblad **Statistieken** nadat u gebeurtenissen hebt bekeken om patronen en kolom statistieken weer te geven.
 

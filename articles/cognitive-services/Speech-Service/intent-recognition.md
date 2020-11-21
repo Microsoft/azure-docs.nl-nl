@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: v-demjoh
 keywords: intentieherkenning
-ms.openlocfilehash: 0d718459e0fd0ea410232d3a165b560aa8c59cd1
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 215b25e440b8cad76e0656e47d32b184edf4ac66
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92174634"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018698"
 ---
 # <a name="what-is-intent-recognition"></a>Wat is de intentie herkenning?
 
@@ -29,7 +29,7 @@ Met behulp van de intentie herkenning kunnen uw toepassingen, hulpprogram ma's e
 
 * LUIS kan worden geïntegreerd met de Speech-service voor het herkennen van intenties van spraak. U hebt geen abonnement op de Speech-service nodig, alleen op LUIS.
 * Herkenning van spraak intentie is geïntegreerd met de SDK. U kunt een LUIS-sleutel gebruiken met de spraak service.
-* Intentie herkenning via de Speech SDK wordt [aangeboden in een subset van regio's die worden ondersteund door Luis](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#intent-recognition).
+* Intentie herkenning via de Speech SDK wordt [aangeboden in een subset van regio's die worden ondersteund door Luis](./regions.md#intent-recognition).
 
 ## <a name="get-started"></a>Aan de slag
 
@@ -39,8 +39,8 @@ Bekijk de [Snelstartgids](quickstarts/intent-recognition.md) om aan de slag te g
 
 Voorbeeld code voor intentie herkenning:
 
-* [Snelstart: Een vooraf gemaakte app voor huisautomatisering gebruiken](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app)
-* [Intenties van gesproken inhoud herkennen met de Speech SDK voor C#](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp)
+* [Snelstart: Een vooraf gemaakte app voor huisautomatisering gebruiken](../luis/luis-get-started-create-app.md)
+* [Intenties van gesproken inhoud herkennen met de Speech SDK voor C#](./how-to-recognize-intents-from-speech-csharp.md)
 * [Intentie herkenning en andere spraak Services met eenheid in C #](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/unity/speechrecognizer)
 * [Intenties herkennen met Speech SDK voor python](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/python/console)
 * [Intentie herkenning en andere spraak Services met behulp van de Speech SDK voor C++ in Windows](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/cpp/windows/console)
@@ -49,7 +49,7 @@ Voorbeeld code voor intentie herkenning:
 
 ## <a name="reference-docs"></a>Naslagdocumentatie
 
-* [Speech-SDK](speech-sdk-reference.md)
+* [Speech-SDK](./speech-sdk.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 08/13/2020
-ms.openlocfilehash: 926b79e672c14249ec7c2b053dba7eb3a31443a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 455c7d66748740ae6e2cc11c6a44bbf30c1cbced
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91536037"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018834"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Migreren naar een Azure-resource bewerkings sleutel
 
@@ -40,7 +40,7 @@ Migratie moet worden uitgevoerd vanuit de LUIS-Portal. Als u de ontwerp sleutels
 * Eigen aren worden gevraagd e-mail berichten te verzenden naar mede werkers om hen te informeren over de migratie.
 * Toepassingen worden niet met u gemigreerd als u een samen werker van de toepassing bent.
 * Het is niet mogelijk dat een eigenaar weet dat mede werkers zijn gemigreerd.
-* Bij de migratie worden niet automatisch samen werkers verzameld en verplaatst of toegevoegd aan de Azure-ontwerp bron. De eigenaar van de app is degene die deze stap na de migratie moet uitvoeren. Voor deze stap zijn [machtigingen vereist voor de Azure-ontwerp bron](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-collaborate).
+* Bij de migratie worden niet automatisch samen werkers verzameld en verplaatst of toegevoegd aan de Azure-ontwerp bron. De eigenaar van de app is degene die deze stap na de migratie moet uitvoeren. Voor deze stap zijn [machtigingen vereist voor de Azure-ontwerp bron](./luis-how-to-collaborate.md).
 * Nadat deel nemers zijn toegewezen aan de Azure-resource, moeten ze migreren naar Access-toepassingen. Anders hebben ze geen toegang tot het maken van de toepassingen.
 * Een gemigreerde gebruiker kan niet worden toegevoegd als een samen werker van de toepassing.
 * Als u de Voorspellings sleutels hebt die zijn toegewezen aan toepassingen die eigendom zijn van een andere gebruiker, wordt de migratie voor zowel de eigenaar als de mede werkers geblokkeerd. Zie de aanbevelingen verderop in dit artikel.
@@ -59,7 +59,7 @@ Migratie moet worden uitgevoerd vanuit de LUIS-Portal. Als u de ontwerp sleutels
 |Portal|Doel|
 |--|--|
 |[Azure](https://azure.microsoft.com/free/cognitive-services)| Voorspellings-en ontwerp resources maken.<br> Mede werkers aan resources toewijzen.|
-|[LUIS](https://www.luis.ai)| Migreren naar nieuwe ontwerp resources.<br> Nieuwe ontwerp resources maken in de migratie stroom.<br> U kunt voor spellingen en het ontwerpen van resources voor apps toewijzen of verwijderen **Manage**via de  >  pagina**Azure-resources** beheren. <br> Verplaats toepassingen van de ene ontwerp bron naar een andere.  |
+|[LUIS](https://www.luis.ai)| Migreren naar nieuwe ontwerp resources.<br> Nieuwe ontwerp resources maken in de migratie stroom.<br> U kunt voor spellingen en het ontwerpen van resources voor apps toewijzen of verwijderen **Manage** via de  >  pagina **Azure-resources** beheren. <br> Verplaats toepassingen van de ene ontwerp bron naar een andere.  |
 
 > [!Note]
 > Het is gratis om uw LUIS-app te ontwerpen, zoals wordt aangegeven door de laag F0. Meer informatie [over prijs categorieën](luis-limits.md#key-limits).
@@ -163,7 +163,7 @@ In de lijst **mijn apps** worden de apps weer gegeven die zijn gemigreerd naar d
 
 U hoeft niet de sleutel van de ontwerp bron te weten om uw apps in de LUIS-portal te kunnen bewerken.
 
-Als u van plan bent om uw apps programmatisch te bewerken, hebt u de sleutel waarden van de ontwerp functie nodig. Deze waarden worden weer gegeven op **Manage**de  >  pagina**Azure-resources** beheren in de Luis-Portal. Ze zijn ook beschikbaar in de Azure Portal op de pagina **sleutels** van de resource. U kunt ook meer ontwerp resources maken en deze toewijzen vanaf dezelfde pagina.
+Als u van plan bent om uw apps programmatisch te bewerken, hebt u de sleutel waarden van de ontwerp functie nodig. Deze waarden worden weer gegeven op **Manage** de  >  pagina **Azure-resources** beheren in de Luis-Portal. Ze zijn ook beschikbaar in de Azure Portal op de pagina **sleutels** van de resource. U kunt ook meer ontwerp resources maken en deze toewijzen vanaf dezelfde pagina.
 
  > [!div class="mx-imgBorder"]
  > ![Pagina voor het beheren van ontwerp resources](./media/migrate-authoring-key/manage-authoring-resource-2.png)
@@ -174,7 +174,7 @@ Als u van plan bent om uw apps programmatisch te bewerken, hebt u de sleutel waa
 
 Meer informatie [over het toevoegen van inzenders](luis-how-to-collaborate.md) aan uw ontwerp bron. Inzenders hebben toegang tot alle toepassingen onder die resource.
 
-U kunt mede werkers toevoegen aan de ontwerp bron vanuit het Azure Portal op de pagina **Access Control (IAM)** voor die resource. Zie [toegang tot Inzender toevoegen](luis-migration-authoring-steps.md#after-the-migration-process-add-contributors-to-your-authoring-resource)voor meer informatie.
+U kunt mede werkers toevoegen aan de ontwerp bron vanuit het Azure Portal op de pagina **Access Control (IAM)** voor die resource. Zie mede werkers [toevoegen aan uw app](luis-how-to-collaborate.md)voor meer informatie.
 
 > [!Note]
 > Als de eigenaar van de LUIS-app is gemigreerd en de samen werker als bijdrager is toegevoegd aan de Azure-resource, heeft de mede werker nog steeds geen toegang tot de app, tenzij deze ook worden gemigreerd.
@@ -214,10 +214,10 @@ Als u samen met toepassingen werkt en u een voor spelling/runtime-sleutel aan de
 
 U wordt aangeraden dat u:
 * Toepassingen exporteren als back-up. Dit is een optionele stap in het migratie proces.
-* Toewijzing van de Voorspellings resources op de **Manage**  >  pagina**Azure-resources** beheren.
+* Toewijzing van de Voorspellings resources op de **Manage**  >  pagina **Azure-resources** beheren.
 * Het migratie proces wordt uitgevoerd.
 * Importeer toepassingen na de migratie.
-* De Voorspellings sleutels worden opnieuw toegewezen aan uw toepassingen **Manage**via de  >  pagina**Azure-resources** beheren.
+* De Voorspellings sleutels worden opnieuw toegewezen aan uw toepassingen **Manage** via de  >  pagina **Azure-resources** beheren.
 
 > [!Note]
 > Wanneer u uw toepassingen importeert nadat u bent gemigreerd, hebben ze verschillende app-Id's. Ze zijn ook verschillend van de productie. U bent nu eigenaar van deze toepassingen.
@@ -229,7 +229,7 @@ Wanneer u uw Azure-abonnement in de vervolg keuzelijst wilt migreren, maar niet 
 * Zorg ervoor dat u zich in de juiste Tenant bevindt die is gekoppeld aan uw geldige abonnement. U kunt tenants van de avatar naar links van uw initialen op deze werk balk overschakelen: ![ werk balk waar u tenants kunt overschakelen](./media/migrate-authoring-key/switch-user-tenant-2.png)
 
 Als u een bestaande ontwerp bron hebt, maar deze niet kunt vinden wanneer u de optie **bestaande ontwerp bron gebruiken** selecteert:
-* Uw resource is waarschijnlijk gemaakt op een andere locatie dan de portal waar u bent aangemeld. Controleer de [Luis-ontwerp regio's en-portals](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-authoring-regions).
+* Uw resource is waarschijnlijk gemaakt op een andere locatie dan de portal waar u bent aangemeld. Controleer de [Luis-ontwerp regio's en-portals](./luis-reference-regions.md#luis-authoring-regions).
 * Maak in plaats daarvan een nieuwe resource vanuit de LUIS-Portal.
 
 Als u de optie **nieuwe ontwerp bron maken** selecteert en de migratie mislukt met het fout bericht ' kan de Azure-gegevens van de gebruiker niet ophalen, opnieuw proberen ':

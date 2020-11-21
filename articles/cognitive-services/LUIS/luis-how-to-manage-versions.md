@@ -9,16 +9,16 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
-ms.openlocfilehash: 3cf4ce5dc7061065ea501ae1c00cd5b9e5404770
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b93e9fd4047ee3731ef6fe4652bb92ce5145987d
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540860"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018817"
 ---
 # <a name="use-versions-to-edit-and-test-without-impacting-staging-or-production-apps"></a>Versies gebruiken om te bewerken en te testen zonder dat dit van invloed is op staging-of productie-apps
 
-Met versies kunt u verschillende modellen bouwen en publiceren. Het is een goed idee om het huidige actieve model te klonen naar een andere [versie](luis-concept-version.md) van de app voordat u wijzigingen aanbrengt in het model.
+Met versies kunt u verschillende modellen bouwen en publiceren. Het is een goed idee om het huidige actieve model te klonen naar een andere [versie](./luis-concept-app-iteration.md) van de app voordat u wijzigingen aanbrengt in het model.
 
 De actieve versie is de versie die u bewerkt in de LUIS-portal voor het **maken** van intenties, entiteiten, functies en patronen. Wanneer u de ontwerp-Api's gebruikt, hoeft u de actieve versie niet in te stellen, omdat de versie-specifieke REST API-aanroepen de versie in de route bevatten.
 
@@ -66,4 +66,3 @@ U kunt een `.json` of een `.lu` versie van uw toepassing importeren.
 * Als u een versie wilt **verwijderen** , selecteert u een versie in de lijst en selecteert u vervolgens **verwijderen** op de werk balk. Selecteer **OK**.
 * Als u de naam van een versie wilt **wijzigen** , selecteert u een versie in de lijst en selecteert u vervolgens **naam wijzigen** in de werk balk. Voer een nieuwe naam in en selecteer **gereed**.
 * Als u een versie wilt **exporteren** , selecteert u een versie in de lijst en selecteert u vervolgens **app exporteren** in de werk balk. Kies JSON of LU om te exporteren voor een back-up of om op te slaan in broncode beheer, kies **exporteren voor container** om [deze app te gebruiken in een Luis-container](luis-container-howto.md).
-

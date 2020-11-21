@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/28/2020
-ms.openlocfilehash: e49b713aca23c0373fa71d772ef7567372abe456
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 9e322ac89d8ecad93c2002aa302c155f895911f4
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990564"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019191"
 ---
 # <a name="devops-practices-for-luis"></a>DevOps-procedures voor LUIS
 
@@ -18,7 +18,7 @@ Software-engineers die een Language Understanding-app (LUIS) ontwikkelen, kunnen
 
 ## <a name="source-control-and-branch-strategies-for-luis"></a>Broncodebeheer en vertakkingsstrategieën voor LUIS
 
-Een van de belangrijkste factoren die het succes van DevOps is, is afhankelijk van het [bron beheer](https://docs.microsoft.com/azure/devops/user-guide/source-control?view=azure-devops). Met een broncode beheer systeem kunnen ontwikkel aars samen werken aan code en wijzigingen bijhouden. Door het gebruik van branches kunnen ontwikkel aars scha kelen tussen verschillende versies van de code basis en onafhankelijk van andere leden van het team. Wanneer ontwikkel aars een [pull-aanvraag](https://help.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (PR) opleggen om updates van de ene vertakking naar een andere te stellen, of wanneer wijzigingen worden samengevoegd, kan dit de trigger zijn voor het maken van [automatische builds](luis-concept-devops-automation.md) en het continu testen van code.
+Een van de belangrijkste factoren die het succes van DevOps is, is afhankelijk van het [bron beheer](/azure/devops/user-guide/source-control?view=azure-devops). Met een broncode beheer systeem kunnen ontwikkel aars samen werken aan code en wijzigingen bijhouden. Door het gebruik van branches kunnen ontwikkel aars scha kelen tussen verschillende versies van de code basis en onafhankelijk van andere leden van het team. Wanneer ontwikkel aars een [pull-aanvraag](https://help.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (PR) opleggen om updates van de ene vertakking naar een andere te stellen, of wanneer wijzigingen worden samengevoegd, kan dit de trigger zijn voor het maken van [automatische builds](luis-concept-devops-automation.md) en het continu testen van code.
 
 Door gebruik te maken van de concepten en richt lijnen die in dit document worden beschreven, kunt u een LUIS-App ontwikkelen tijdens het bijhouden van wijzigingen in een broncode beheer systeem. Volg deze aanbevolen procedures voor software techniek:
 
@@ -42,13 +42,13 @@ Door gebruik te maken van de concepten en richt lijnen die in dit document worde
 
 ## <a name="source-control"></a>Broncodebeheer
 
-Als u de [definitie](https://docs.microsoft.com/azure/cognitive-services/luis/app-schema-definition) van het app-schema van een Luis-app in een broncode beheersysteem wilt behouden, gebruikt u de [LUDown-indeling ( `.lu` )](https://docs.microsoft.com/azure/bot-service/file-format/bot-builder-lu-file-format?view=azure-bot-service-4.0)  voor de weer gave van de app. `.lu` de indeling heeft de voor keur om te `.json` Format teren omdat deze door iedereen kan worden gelezen, waardoor het eenvoudiger is om wijzigingen aan te brengen en te controleren in pull.
+Als u de [definitie](./app-schema-definition.md) van het app-schema van een Luis-app in een broncode beheersysteem wilt behouden, gebruikt u de [LUDown-indeling ( `.lu` )](/azure/bot-service/file-format/bot-builder-lu-file-format?view=azure-bot-service-4.0)  voor de weer gave van de app. `.lu` de indeling heeft de voor keur om te `.json` Format teren omdat deze door iedereen kan worden gelezen, waardoor het eenvoudiger is om wijzigingen aan te brengen en te controleren in pull.
 
 ### <a name="save-a-luis-app-using-the-ludown-format"></a>Een LUIS-app opslaan met de LUDown-indeling
 
 Als u een LUIS-app in een indeling wilt opslaan `.lu` en deze wilt plaatsen onder broncode beheer:
 
-- OFWEL: [Exporteer de app](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#other-actions) -versie `.lu` vanuit de [Luis-Portal](https://www.luis.ai/) en voeg deze toe aan uw opslag plaats voor broncode beheer
+- OFWEL: [Exporteer de app](./luis-how-to-manage-versions.md#other-actions) -versie `.lu` vanuit de [Luis-Portal](https://www.luis.ai/) en voeg deze toe aan uw opslag plaats voor broncode beheer
 
 - OF: gebruik een tekst editor om een `.lu` bestand voor een Luis-app te maken en toe te voegen aan uw opslag plaats voor broncode beheer
 
@@ -58,9 +58,9 @@ Als u een LUIS-app in een indeling wilt opslaan `.lu` en deze wilt plaatsen onde
 
 ### <a name="build-the-luis-app-from-source"></a>De LUIS-app bouwen vanuit de bron
 
-Als u een LUIS-app wilt *bouwen op basis van bron* , betekent dit dat u [een nieuwe Luis-App-versie kunt maken door de `.lu` bron te importeren](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) , [de versie te trainen](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) en te [publiceren](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app). U kunt dit doen in de LUIS-portal of op de opdracht regel:
+Als u een LUIS-app wilt *bouwen op basis van bron* , betekent dit dat u [een nieuwe Luis-App-versie kunt maken door de `.lu` bron te importeren](./luis-how-to-manage-versions.md#import-version) , [de versie te trainen](./luis-how-to-train.md) en te [publiceren](./luis-how-to-publish-app.md). U kunt dit doen in de LUIS-portal of op de opdracht regel:
 
-- Gebruik de LUIS-Portal om [de `.lu` versie](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions#import-version) van de app te importeren vanuit broncode beheer en de app te [trainen](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) en te [publiceren](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app) .
+- Gebruik de LUIS-Portal om [de `.lu` versie](./luis-how-to-manage-versions.md#import-version) van de app te importeren vanuit broncode beheer en de app te [trainen](./luis-how-to-train.md) en te [publiceren](./luis-how-to-publish-app.md) .
 
 - Gebruik de [bot Framework opdracht regel interface voor Luis](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS) op de opdracht regel of in een CI/cd-werk [import](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisversionimport) stroom om de `.lu` versie van de app te importeren vanuit broncode beheer in een Luis-toepassing, en de app te [trainen](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luistrainrun) en te [publiceren](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisapplicationpublish) .
 
@@ -72,7 +72,7 @@ De volgende typen bestanden voor uw LUIS-toepassing moeten worden onderhouden on
 
 - [Definitie bestanden voor de eenheids test](luis-concept-devops-testing.md#writing-tests) (uitingen en verwachte resultaten)
 
-- [Batch test bestanden](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-batch-test#batch-file-format) (uitingen en verwachte resultaten) die worden gebruikt voor het testen van de prestaties
+- [Batch test bestanden](./luis-concept-batch-test.md#batch-file-format) (uitingen en verwachte resultaten) die worden gebruikt voor het testen van de prestaties
 
 ### <a name="credentials-and-keys-are-not-checked-in"></a>Referenties en sleutels zijn niet ingecheckt
 
@@ -81,7 +81,7 @@ Neem geen abonnements sleutels of soort gelijke vertrouwelijke waarden op in bes
 - LUIS-ontwerpen en Voorspellings sleutels
 - LUIS-ontwerpen en Voorspellings eindpunten
 - Sleutels van Azure-abonnement
-- Toegangs tokens, zoals het token voor een Azure- [Service-Principal](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest) die wordt gebruikt voor Automation-verificatie
+- Toegangs tokens, zoals het token voor een Azure- [Service-Principal](/cli/azure/ad/sp?view=azure-cli-latest) die wordt gebruikt voor Automation-verificatie
 
 #### <a name="strategies-for-securely-managing-secrets"></a>Strategieën voor het veilig beheren van geheimen
 
@@ -92,7 +92,7 @@ Strategieën voor het veilig beheren van geheimen zijn onder andere:
 
 ## <a name="branching-and-merging"></a>Vertakkingen en samen voegen
 
-Gedistribueerde versie beheersystemen zoals git bieden flexibiliteit bij het publiceren, delen, bekijken en herhalen van code wijzigingen via ontwikkelings filialen die met anderen worden gedeeld. Pas een [Git-vertakkings strategie](https://docs.microsoft.com/azure/devops/repos/git/git-branching-guidance) toe die geschikt is voor uw team.
+Gedistribueerde versie beheersystemen zoals git bieden flexibiliteit bij het publiceren, delen, bekijken en herhalen van code wijzigingen via ontwikkelings filialen die met anderen worden gedeeld. Pas een [Git-vertakkings strategie](/azure/devops/repos/git/git-branching-guidance) toe die geschikt is voor uw team.
 
 Welke vertakkings strategie u ook neemt, een belang rijk principe van de IT-afdeling is dat team leden, onafhankelijk van het werk dat in andere branches gaat, met de oplossing in een *functie vertakking* kunnen werken.
 
@@ -110,7 +110,7 @@ Ontwikkel aars kunnen voor een LUIS-app onafhankelijk van andere vertakkingen we
 
 1. Het maken van een functie vertakking van de hoofd vertakking (afhankelijk van uw branche strategie, meestal Master of ontwikkeling).
 
-1. [Maak een nieuwe Luis-app in de Luis-Portal](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-start-new-app) (de '*dev Branch-app*'), uitsluitend ter ondersteuning van het werk in de functie vertakking.
+1. [Maak een nieuwe Luis-app in de Luis-Portal](./luis-how-to-start-new-app.md) (de '*dev Branch-app*'), uitsluitend ter ondersteuning van het werk in de functie vertakking.
 
    * Als de `.lu` bron voor uw oplossing al in uw vertakking bestaat, omdat deze is opgeslagen nadat het werk in een andere vertakking eerder in het project is uitgevoerd, maakt u de Luis-app voor ontwikkel aars door het bestand te importeren `.lu` .
 
@@ -120,11 +120,11 @@ Ontwikkel aars kunnen voor een LUIS-app onafhankelijk van andere vertakkingen we
 
 1. De updates testen: Zie [testen voor Luis DevOps](luis-concept-devops-testing.md) voor meer informatie over het testen van uw app dev Branch.
 
-1. Exporteer de actieve versie van uw dev Branch-app `.lu` uit de [lijst met versies](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions).
+1. Exporteer de actieve versie van uw dev Branch-app `.lu` uit de [lijst met versies](./luis-how-to-manage-versions.md).
 
 1. Controleer uw updates en bestudeer de peer beoordeling van uw updates. Als u GitHub gebruikt, verhoogt u een pull- [aanvraag](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).
 
-1. Wanneer de wijzigingen zijn goedgekeurd, voegt u de updates samen in de hoofd vertakking. Op dit moment maakt u een nieuwe [versie](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions) van de *hoofd* -Luis-app met behulp van de bijgewerkte `.lu` in-Master. Zie [versie beheer](#versioning) voor overwegingen bij het instellen van de versie naam.
+1. Wanneer de wijzigingen zijn goedgekeurd, voegt u de updates samen in de hoofd vertakking. Op dit moment maakt u een nieuwe [versie](./luis-how-to-manage-versions.md) van de *hoofd* -Luis-app met behulp van de bijgewerkte `.lu` in-Master. Zie [versie beheer](#versioning) voor overwegingen bij het instellen van de versie naam.
 
 1. Wanneer de functie vertakking wordt verwijderd, is het een goed idee om de LUIS-app voor ontwikkel aars te verwijderen die u hebt gemaakt voor het functie-Branch-werk.
 
@@ -144,9 +144,9 @@ U kunt op hetzelfde moment meerdere ontwikkel aars ondersteunen die aan dezelfde
 
 - Als u het hierboven beschreven patroon in [ontwikkel aars kunt gebruiken om te werken met onafhankelijke vertakkingen](#developers-can-work-from-independent-branches), zal deze vertakking een unieke Luis-toepassing gebruiken ter ondersteuning van de ontwikkeling. De LUIS-app ' dev Branch ' wordt gemaakt door het eerste lid van het ontwikkel team dat in de functie vertakking begint te werken.
 
-- [Voeg team leden als mede](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-collaborate) werkers toe aan de Luis-app voor ontwikkel aars.
+- [Voeg team leden als mede](./luis-how-to-collaborate.md) werkers toe aan de Luis-app voor ontwikkel aars.
 
-- Wanneer het functie vertakkings werk is voltooid, exporteert u de actieve versie van de app dev Branch LUIS `.lu` uit de [lijst met versies](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-manage-versions), slaat u het bijgewerkte `.lu` bestand op in de opslag plaats en inchecken en brengt u de wijzigingen aan.
+- Wanneer het functie vertakkings werk is voltooid, exporteert u de actieve versie van de app dev Branch LUIS `.lu` uit de [lijst met versies](./luis-how-to-manage-versions.md), slaat u het bijgewerkte `.lu` bestand op in de opslag plaats en inchecken en brengt u de wijzigingen aan.
 
 ### <a name="incorporating-changes-from-one-branch-to-another-with-rebase-or-merge"></a>Wijzigingen van de ene vertakking in de andere opnemen met opnieuw baseren of samen voegen
 
@@ -183,7 +183,7 @@ Een LUIS-app in de LUDown-indeling is leesbaar voor mensen, die ondersteuning bi
 
 ## <a name="versioning"></a>Versiebeheer
 
-Een toepassing bestaat uit meerdere onderdelen, zoals een bot die wordt uitgevoerd in [Azure bot service](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0), [QnA Maker](https://www.qnamaker.ai/), [Azure Speech Service](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview), enzovoort. Als u het doel van het lossen van toepassingen wilt benutten, gebruikt u [versie beheer](https://docs.microsoft.com/azure/devops/learn/git/what-is-version-control) , zodat elk onderdeel van een toepassing afzonderlijk wordt bijgewerkt, waardoor ontwikkel aars alleen op het versie nummer kijken of updates kunnen detecteren. Het is eenvoudiger om uw LUIS-app onafhankelijk van andere onderdelen te maken als u deze in een eigen opslag plaats behoudt.
+Een toepassing bestaat uit meerdere onderdelen, zoals een bot die wordt uitgevoerd in [Azure bot service](/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0), [QnA Maker](https://www.qnamaker.ai/), [Azure Speech Service](../speech-service/overview.md), enzovoort. Als u het doel van het lossen van toepassingen wilt benutten, gebruikt u [versie beheer](/azure/devops/learn/git/what-is-version-control) , zodat elk onderdeel van een toepassing afzonderlijk wordt bijgewerkt, waardoor ontwikkel aars alleen op het versie nummer kijken of updates kunnen detecteren. Het is eenvoudiger om uw LUIS-app onafhankelijk van andere onderdelen te maken als u deze in een eigen opslag plaats behoudt.
 
 Voor de LUIS-app voor de hoofd vertakking moet een versie beheer schema worden toegepast. Wanneer u updates samenvoegt naar de `.lu` Luis-app in de Master, importeert u die bijgewerkte bron vervolgens in een nieuwe versie in de Luis-app voor de hoofd vertakking.
 
@@ -195,7 +195,7 @@ Het versie nummer van elke update wordt verhoogd met het laatste cijfer.
 
 De primaire/secundaire versie kan worden gebruikt om het bereik van de wijzigingen aan de functionaliteit van de LUIS-app aan te geven:
 
-* Primaire versie: een belang rijke wijziging, zoals ondersteuning voor een nieuwe [intentie](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-intent) of [entiteit](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-entity-types)
+* Primaire versie: een belang rijke wijziging, zoals ondersteuning voor een nieuwe [intentie](./luis-concept-intent.md) of [entiteit](./luis-concept-entity-types.md)
 * Secundaire versie: een kleine wijziging die compatibel is met eerdere versies, zoals na aanzienlijke nieuwe training
 * Bouwen: er is geen functionaliteits wijziging, alleen een andere build.
 

@@ -11,19 +11,19 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: fb0c29fb68d0bcd2405cc031008c1c8e5035476f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d6f0e5230fb3c59cab690620e837f476f3392a48
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569384"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020075"
 ---
 # <a name="manage-reference-data-for-an-azure-time-series-insights-gen-1-environment-using-c-sharp"></a>Referentie gegevens beheren voor een Azure Time Series Insights-omgeving van 1 generatie met C-Kruis
 
 > [!CAUTION]
 > Dit is een Gen1-artikel.
 
-In dit artikel wordt beschreven hoe u C#-, [MSAL.net](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)-en Azure Active Directory kunt combi neren om PROGRAMMATISCHe API-aanvragen te maken voor de [referentie Gegevensbeheer API](https://docs.microsoft.com/rest/api/time-series-insights/gen1-reference-data-api)van Azure time series Insights gen 1.
+In dit artikel wordt beschreven hoe u C#-, [MSAL.net](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)-en Azure Active Directory kunt combi neren om PROGRAMMATISCHe API-aanvragen te maken voor de [referentie Gegevensbeheer API](/rest/api/time-series-insights/gen1-reference-data-api)van Azure time series Insights gen 1.
 
 > [!TIP]
 > GA C#-code voorbeelden weer geven op [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/gen1-sample/csharp-tsi-gen1-sample) .
@@ -33,8 +33,8 @@ In dit artikel wordt beschreven hoe u C#-, [MSAL.net](https://github.com/AzureAD
 De voorbeeld code hieronder bevat de volgende functies:
 
 * Een toegangs Token ophalen met behulp van [MSAL.net](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) **PublicClientApplication**.
-* Sequentiële bewerkingen voor maken, lezen, bijwerken en verwijderen voor de [referentie gegevensbeheer-API](https://docs.microsoft.com/rest/api/time-series-insights/gen1-reference-data-api)van de gen 1.
-* Algemene antwoord codes, inclusief [veelvoorkomende fout codes](https://docs.microsoft.com/rest/api/time-series-insights/gen1-reference-data-api#validation-and-error-handling).
+* Sequentiële bewerkingen voor maken, lezen, bijwerken en verwijderen voor de [referentie gegevensbeheer-API](/rest/api/time-series-insights/gen1-reference-data-api)van de gen 1.
+* Algemene antwoord codes, inclusief [veelvoorkomende fout codes](/rest/api/time-series-insights/gen1-reference-data-api#validation-and-error-handling).
 
     De referentie Gegevensbeheer-API verwerkt elk item afzonderlijk en een fout met één item verhindert niet dat de anderen kunnen volt ooien. Als uw aanvraag bijvoorbeeld 100 items heeft en er een fout optreedt in een item, worden er 99 items geschreven en wordt er een geweigerd.
 
@@ -42,7 +42,7 @@ De voorbeeld code hieronder bevat de volgende functies:
 
 Voer de volgende stappen uit voordat u de voorbeeld code compileert en uitvoert:
 
-1. [Richt een Azure time series Insights omgeving van gen 1](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started
+1. [Richt een Azure time series Insights omgeving van gen 1](./time-series-insights-get-started.md
 ) in.
 
 1. Maak in uw omgeving [een set met referentie gegevens](time-series-insights-add-reference-data-set.md) . Gebruik het volgende referentie gegevens schema:
@@ -61,7 +61,7 @@ Voer de volgende stappen uit voordat u de voorbeeld code compileert en uitvoert:
 
 ## <a name="project-dependencies"></a>Projectafhankelijkheden
 
-Het is raadzaam om de nieuwste versie van Visual Studio en **NetCore. app**te gebruiken:
+Het is raadzaam om de nieuwste versie van Visual Studio en **NetCore. app** te gebruiken:
 
 * [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) -versie 16.4.2 +
 * [NetCore. app](https://www.nuget.org/packages/Microsoft.NETCore.App/2.2.8) -versie 2.2.8
@@ -313,4 +313,4 @@ namespace CsharpTsiMsalGaSample
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Lees de naslag informatie over [referentie gegevensbeheer-API](https://docs.microsoft.com/rest/api/time-series-insights/gen1-reference-data-api) voor gen 1.
+* Lees de naslag informatie over [referentie gegevensbeheer-API](/rest/api/time-series-insights/gen1-reference-data-api) voor gen 1.

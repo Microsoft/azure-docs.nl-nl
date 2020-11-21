@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 11/19/2019
-ms.openlocfilehash: 30b4256b37dc3329801a730192e25f7c24a45594
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60b100e1100b8a4925a967f8b7265f1612e5beb7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540899"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018902"
 ---
 # <a name="add-contributors-to-your-app"></a>Inzenders toevoegen aan uw app
 
@@ -66,7 +66,7 @@ Als u inzenders/mede werkers aan een LUIS-app toevoegt, geeft u precies het e-ma
 
 ### <a name="azure-active-directory-resources"></a>Azure Active Directory resources
 
-Als u [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) (Azure AD) in uw organisatie gebruikt, moet language UNDERSTANDING (Luis) toestemming hebben voor de informatie over de toegang van gebruikers wanneer ze Luis willen gebruiken. De resources die LUIS nodig hebben, zijn mini maal.
+Als u [Azure Active Directory](../../active-directory/index.yml) (Azure AD) in uw organisatie gebruikt, moet language UNDERSTANDING (Luis) toestemming hebben voor de informatie over de toegang van gebruikers wanneer ze Luis willen gebruiken. De resources die LUIS nodig hebben, zijn mini maal.
 
 De gedetailleerde beschrijving wordt weer gegeven wanneer u zich probeert aan te melden met een account met beheerders toestemming of geen beheerder toestemming vereist, zoals toestemming van de beheerder:
 
@@ -87,7 +87,7 @@ De Tenant beheerder moet direct samen werken met de gebruiker die toegang nodig 
 
 Als de Tenant beheerder alleen bepaalde gebruikers in staat wilt stellen om LUIS te gebruiken, zijn er enkele mogelijke oplossingen:
 * De "toestemming van de beheerder" (toestemming geven aan alle gebruikers van de Azure AD), maar vervolgens ingesteld op "ja" de "gebruikers toewijzing vereist" onder eigenschappen van bedrijfs toepassing en uiteindelijk alleen de gewenste gebruikers aan de toepassing toewijzen/toevoegen. Met deze methode wordt de beheerder nog steeds ' toestemming van de beheerder ' gegeven aan de app, maar het is mogelijk om de gebruikers te beheren die er toegang toe hebben.
-* Een tweede oplossing is het gebruik van de [Azure AD Identity and Access Management API in Microsoft Graph](https://docs.microsoft.com/graph/azuread-identity-access-management-concept-overview) om toestemming te geven aan elke specifieke gebruiker.
+* Een tweede oplossing is het gebruik van de [Azure AD Identity and Access Management API in Microsoft Graph](/graph/azuread-identity-access-management-concept-overview) om toestemming te geven aan elke specifieke gebruiker.
 
 Meer informatie over Azure Active Directory-gebruikers en-toestemming:
 * [Uw app beperken](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) tot een set gebruikers

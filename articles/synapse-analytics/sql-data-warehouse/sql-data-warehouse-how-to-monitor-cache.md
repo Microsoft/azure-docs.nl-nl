@@ -7,34 +7,34 @@ manager: craigg
 ms.service: synapse-analytics
 ms.subservice: sql-dw
 ms.topic: conceptual
-ms.date: 09/06/2018
+ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: fa5025e0a2bd260adeb23b4ab7c4d5f8bd83a43a
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: 041751b5b23dbb3153f1ae638303579a860c0e5b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93026799"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020160"
 ---
-# <a name="how-to-monitor-the-gen2-cache"></a>De Gen2-cache bewaken
+# <a name="how-to-monitor-the-adaptive-cache"></a>De adaptieve cache bewaken
 
-In dit artikel wordt beschreven hoe u langzame query prestaties bewaakt en oplost door te bepalen of uw werk belasting optimaal gebruikmaakt van de Gen2-cache.
+In dit artikel wordt beschreven hoe u langzame query prestaties bewaakt en oplost door te bepalen of uw werk belasting optimaal gebruikmaakt van de adaptieve cache voor toegewezen SQL-groepen.
 
-De Gen2-opslag architectuur bevat automatisch uw meest query's in de opgeslagen column Store-segmenten in een cache op NVMe gebaseerd Ssd's ontworpen voor Gen2 data warehouses. Betere prestaties worden gerealiseerd wanneer uw query's segmenten ophalen die zich in de cache bevinden.
+Met de speciale opslag architectuur van de SQL-groep worden automatisch de regel matig opgevraagde column Store-segmenten gelaagd in een cache op een op NVMe gebaseerd Ssd's. U krijgt betere prestaties wanneer uw query's segmenten ophalen die zich in de cache bevinden.
  
 ## <a name="troubleshoot-using-the-azure-portal"></a>Problemen oplossen met behulp van de Azure Portal
 
-U kunt Azure Monitor gebruiken om de Gen2-cache gegevens weer te geven om de prestaties van query's op te lossen. Ga eerst naar de Azure Portal en klik op **monitor** , **metrische gegevens** en **+ een bereik selecteren** :
+U kunt Azure Monitor gebruiken om de metrische gegevens van de cache weer te geven om de prestaties van query's op te lossen. Ga eerst naar de Azure Portal en klik op **monitor**, **metrische gegevens** en **+ een bereik selecteren**:
 
 ![Scherm afbeelding toont een bereik selecteren dat is geselecteerd in metrische gegevens in de Azure Portal.](./media/sql-data-warehouse-how-to-monitor-cache/cache-0.png)
 
-Gebruik de balken zoeken en vervolg keuzelijst om uw data warehouse te zoeken. Selecteer vervolgens Toep assen.
+Gebruik de balken zoeken en vervolg keuzelijst om uw toegewezen SQL-groep te zoeken. Selecteer vervolgens Toep assen.
 
 ![Scherm afbeelding toont het deel venster een bereik selecteren waar u uw data warehouse kunt selecteren.](./media/sql-data-warehouse-how-to-monitor-cache/cache-1.png)
 
-De belangrijkste metrische gegevens voor het oplossen van problemen met de Gen2-cache zijn het **percentage cache treffers** en het **percentage cache gebruik** . Selecteer **percentage cache treffers** en gebruik vervolgens de knop **metriek toevoegen** om **percentage gebruikt geheugen** toe te voegen. 
+De belangrijkste metrische gegevens voor het oplossen van problemen met de cache zijn **cache treffer percentages** en **percentage cache gebruik**. Selecteer **percentage cache treffers** en gebruik vervolgens de knop **metriek toevoegen** om **percentage gebruikt geheugen** toe te voegen. 
 
 ![Metrische cache gegevens](./media/sql-data-warehouse-how-to-monitor-cache/cache-2.png)
 

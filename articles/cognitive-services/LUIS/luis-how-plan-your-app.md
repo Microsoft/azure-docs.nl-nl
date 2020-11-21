@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/14/2020
-ms.openlocfilehash: 69f2048da0b4690d9de72e96e296edbd55c4cd9f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 66df23466694fe8b9caea4e56565cde6d8fd7416
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91309452"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018953"
 ---
 # <a name="plan-your-luis-app-schema-with-subject-domain-and-data-extraction"></a>Uw LUIS-app-schema plannen met onderwerp domein en gegevens extractie
 
@@ -21,7 +21,7 @@ Een LUIS-app-schema bevat [intents](luis-glossary.md#intent) en [entiteiten](lui
 Een LUIS-app wordt gecentreerd rond een onderwerps domein. U kunt bijvoorbeeld een reis-app hebben die de boeking van tickets, vluchten, hotels en huur auto's afhandelt. Een andere app kan inhoud bevatten die betrekking heeft op de uitoefening, het bijhouden van de geschiktheid en het instellen van doelen. Het identificeren van het domein helpt u bij het vinden van woorden of zinsdelen die relevant zijn voor uw domein.
 
 > [!TIP]
-> LUIS biedt [vooraf gemaakte domeinen](luis-how-to-use-prebuilt-domains.md) voor veel algemene scenario's. Controleer of u een vooraf gebouwd domein kunt gebruiken als uitgangs punt voor uw app.
+> LUIS biedt [vooraf gemaakte domeinen](./howto-add-prebuilt-models.md) voor veel algemene scenario's. Controleer of u een vooraf gebouwd domein kunt gebruiken als uitgangs punt voor uw app.
 
 ## <a name="identify-your-intents"></a>Uw intenties identificeren
 
@@ -49,7 +49,7 @@ In het voor beeld uitingen identificeert u de entiteiten die u wilt extra heren.
 Wanneer u bepaalt welke entiteiten in uw app moeten worden gebruikt, moet u er ook voor zorgen dat er verschillende typen entiteiten zijn voor het vastleggen van relaties tussen object typen. [Entiteiten in Luis](luis-concept-entity-types.md) bieden meer details over de verschillende typen.
 
 > [!TIP]
-> LUIS biedt [vooraf gemaakte entiteiten](luis-prebuilt-entities.md) voor veelvoorkomende, gespreks gebruikers scenario's. Overweeg het gebruik van vooraf gemaakte entiteiten als uitgangs punt voor de ontwikkeling van uw toepassing.
+> LUIS biedt [vooraf gemaakte entiteiten](./howto-add-prebuilt-models.md) voor veelvoorkomende, gespreks gebruikers scenario's. Overweeg het gebruik van vooraf gemaakte entiteiten als uitgangs punt voor de ontwikkeling van uw toepassing.
 
 ## <a name="resolution-with-intent-or-entity"></a>Oplossing met intentie of entiteit?
 
@@ -79,4 +79,3 @@ Om het uitpakken van functies toe te voegen aan de subentiteiten. U kiest uw fun
 
 > [!div class="nextstepaction"]
 > [Learning the LUIS Development lifecylce](luis-concept-app-iteration.md)
-

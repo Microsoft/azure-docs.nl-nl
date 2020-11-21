@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/18/2020
-ms.openlocfilehash: fcc803e87b2efd3e94b90eb17258ab3bb156359f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2dd06a7b4c8e6296cda747d17fd3d5be5db0af6b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541426"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018885"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Een nieuwe LUIS-app maken in de LUIS-Portal
 Er zijn een aantal manieren om een LUIS-app te maken. U kunt een LUIS-app maken in de LUIS-portal of via de LUIS-ontwerp- [api's](developer-reference-resource.md).
@@ -24,7 +24,7 @@ Er zijn een aantal manieren om een LUIS-app te maken. U kunt een LUIS-app maken 
 U kunt op verschillende manieren een nieuwe app maken in de portal:
 
 * Begin met een lege app en maak intents, uitingen en entiteiten.
-* Begin met een lege app en voeg een [vooraf gebouwd domein](luis-how-to-use-prebuilt-domains.md)toe.
+* Begin met een lege app en voeg een [vooraf gebouwd domein](./howto-add-prebuilt-models.md)toe.
 * Importeer een LUIS-app uit een- `.lu` of- `.json` bestand dat al de intenties, uitingen en entiteiten bevat.
 
 ## <a name="using-the-authoring-apis"></a>De ontwerp-Api's gebruiken
@@ -43,7 +43,7 @@ U kunt op een aantal manieren een nieuwe app maken met behulp van de ontwerp-Api
 
 ## <a name="create-new-app-in-luis"></a>Nieuwe app maken in LUIS
 
-1. Selecteer uw **abonnement**op **mijn apps** pagina en ontwerp de **resource** en vervolgens **+ maken**. 
+1. Selecteer uw **abonnement** op **mijn apps** pagina en ontwerp de **resource** en vervolgens **+ maken**. 
 
 > [!div class="mx-imgBorder"]
 > ![Lijst met apps van LUIS](./media/create-app-in-portal.png)
@@ -75,4 +75,4 @@ De context werkbalk bevat andere acties:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als het ontwerp van uw app de detectie van de opzet bevat, [maakt u nieuwe intenties](luis-how-to-add-intents.md)en voegt u bijvoorbeeld uitingen toe. Als het ontwerp van uw app alleen gegevens extractie is, voegt u bijvoorbeeld uitingen toe aan de geen intentie, vervolgens [maakt u entiteiten](luis-how-to-add-example-utterances.md)en labelt u het voor beeld uitingen met deze entiteiten.
+Als het ontwerp van uw app de detectie van de opzet bevat, [maakt u nieuwe intenties](luis-how-to-add-intents.md)en voegt u bijvoorbeeld uitingen toe. Als het ontwerp van uw app alleen gegevens extractie is, voegt u bijvoorbeeld uitingen toe aan de geen intentie, vervolgens [maakt u entiteiten](./luis-how-to-add-entities.md)en labelt u het voor beeld uitingen met deze entiteiten.

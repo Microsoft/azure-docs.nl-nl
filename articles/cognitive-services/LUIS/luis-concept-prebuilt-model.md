@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/10/2019
-ms.openlocfilehash: 32755ea9dccd2a7d4a0e727c7a006491d5ea3521
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6642e59c2957b298d54bc587853752b9fce74686
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91535880"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019140"
 ---
 # <a name="prebuilt-models"></a>Vooraf gemaakte modellen
 
@@ -61,4 +61,4 @@ Wanneer een vooraf samengestelde entiteit is opgenomen in uw toepassing, zijn de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het [toevoegen van vooraf gemaakte entiteiten](luis-prebuilt-entities.md) aan uw app.
+Meer informatie over het [toevoegen van vooraf gemaakte entiteiten](./howto-add-prebuilt-models.md) aan uw app.

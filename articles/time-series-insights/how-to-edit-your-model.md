@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/02/2020
 ms.custom: seodec18
-ms.openlocfilehash: cac4234d5bd93de8b059ea53a4697dae1bf5c64c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89efc1d4f34b250d211f9fd7492588bd2896eb6e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667876"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016850"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-gen2"></a>Gegevens modellering in Azure Time Series Insights Gen2
 
@@ -24,11 +24,11 @@ In dit artikel wordt beschreven hoe u kunt werken met een time series-model in A
 > [!TIP]
 >
 > * Meer informatie over het [Time Series-model](concepts-model-overview.md).
-> * Meer informatie over het navigeren in de [Azure time series Insights Gen2 Explorer](./time-series-insights-update-explorer.md).
+> * Meer informatie over het navigeren in de [Azure time series Insights Gen2 Explorer](./concepts-ux-panels.md).
 
 ## <a name="instances"></a>exemplaren
 
-De Azure Time Series Insights Explorer ondersteunt instanties voor **maken**, **lezen**, **bijwerken**en **verwijderen** in de browser.
+De Azure Time Series Insights Explorer ondersteunt instanties voor **maken**, **lezen**, **bijwerken** en **verwijderen** in de browser.
 
 Selecteer om te beginnen de **model** weergave in de weer gave **analyse** van Azure time series Insights Explorer.
 
@@ -69,14 +69,14 @@ Selecteer om te beginnen de **model** weergave in de weer gave **analyse** van A
 
    [![Verwijder een exemplaar door verwijderen te selecteren.](media/v2-update-how-to-tsm/how-to-tsm-delete-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-instance.png#lightbox)
 
-1. Bevestig de verwijdering door **verwijderen**te selecteren.
+1. Bevestig de verwijdering door **verwijderen** te selecteren.
 
 > [!NOTE]
 > Een exemplaar moet een veld validatie controle door geven die moet worden verwijderd.
 
 ## <a name="hierarchies"></a>Hiërarchieën
 
-De Azure Time Series Insights Explorer ondersteunt de bewerkingen voor het **maken**, **lezen**, **bijwerken**en **verwijderen** van hiërarchieën in de browser.
+De Azure Time Series Insights Explorer ondersteunt de bewerkingen voor het **maken**, **lezen**, **bijwerken** en **verwijderen** van hiërarchieën in de browser.
 
 Selecteer om te beginnen de **model** weergave in de weer gave **analyse** van Azure time series Insights Explorer.
 
@@ -122,7 +122,7 @@ Selecteer om te beginnen de **model** weergave in de weer gave **analyse** van A
 
     [![Een hiërarchie verwijderen door de knop verwijderen te selecteren.](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png#lightbox)
 
-1. Bevestig de verwijdering door **verwijderen**te selecteren.
+1. Bevestig de verwijdering door **verwijderen** te selecteren.
 
 ## <a name="types"></a>Typen
 
@@ -137,7 +137,7 @@ Selecteer om te beginnen de **model** weergave in de weer gave **analyse** van A
     [![Deel venster tijd reeks model typen.](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png#lightbox)
 
 1. Selecteer **+ toevoegen** om het pop-upvenster **een nieuw type toevoegen** modaal weer te geven.
-1. Voer eigenschappen en variabelen in voor uw type. Klik op **Opslaan**als u het bestand hebt ingevoerd.
+1. Voer eigenschappen en variabelen in voor uw type. Klik op **Opslaan** als u het bestand hebt ingevoerd.
 
     [![Configuratie-instellingen om een type toe te voegen.](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png#lightbox)
 
@@ -165,12 +165,12 @@ Selecteer om te beginnen de **model** weergave in de weer gave **analyse** van A
 
    [![Verwijder een type door verwijderen te selecteren.](media/v2-update-how-to-tsm/how-to-tsm-delete-type.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-type.png#lightbox)
 
-1. Bevestig de verwijdering door **verwijderen**te selecteren.
+1. Bevestig de verwijdering door **verwijderen** te selecteren.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * Lees [gegevens modellering](./concepts-model-overview.md)voor meer informatie over het time series-model.
 
-* Lees voor meer informatie over de Gen2 [visualiseren gegevens in de Azure time series Insights Gen2 Explorer](./time-series-insights-update-explorer.md).
+* Lees voor meer informatie over de Gen2 [visualiseren gegevens in de Azure time series Insights Gen2 Explorer](./concepts-ux-panels.md).
 
 * Lees [ondersteunde JSON-vormen](./time-series-insights-send-events.md#supported-json-shapes)voor meer informatie over ondersteunde JSON-vormen.

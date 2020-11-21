@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: a5760db2d6e453d631680d6154e6d9a03ce55cd6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59cf250a9db5a1f6759495c1b5a3c48cb07cde15
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541336"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018783"
 ---
 # <a name="prediction-endpoint-changes-for-v3"></a>Wijzigingen in het Voorspellings eindpunt voor v3
 
@@ -60,7 +60,7 @@ Als u geen van uw client toepassing of-integratie (bot-Framework en Bing Spellin
 
 ### <a name="bing-spell-check"></a>Bing Spellingcontrole
 
-Deze API wordt niet ondersteund in het v3-Voorspellings eindpunt-door gebruik te gaan van het v2 API-Voorspellings eindpunt voor spelling correcties. Als u een spelling correctie nodig hebt terwijl u v3 API gebruikt, moet de client toepassing de [Bing spellingcontrole](https://docs.microsoft.com/azure/cognitive-services/bing-spell-check/overview) -API aanroepen en de tekst wijzigen in de juiste spelling voordat de tekst naar de Luis-API wordt verzonden.
+Deze API wordt niet ondersteund in het v3-Voorspellings eindpunt-door gebruik te gaan van het v2 API-Voorspellings eindpunt voor spelling correcties. Als u een spelling correctie nodig hebt terwijl u v3 API gebruikt, moet de client toepassing de [Bing spellingcontrole](../bing-spell-check/overview.md) -API aanroepen en de tekst wijzigen in de juiste spelling voordat de tekst naar de Luis-API wordt verzonden.
 
 ## <a name="bot-framework-and-azure-bot-service-client-applications"></a>Bot Framework en Azure Bot Service-client toepassingen
 
@@ -109,7 +109,7 @@ Als u een query wilt uitvoeren op versie, moet u eerst [via API publiceren](http
 |`externalEntities`|matrix|Alleen v3|Niet vereist.|[Externe entiteiten](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) bieden uw Luis-app de mogelijkheid om entiteiten tijdens runtime te identificeren en te labelen, die kunnen worden gebruikt als functies voor bestaande entiteiten. |
 |`options.datetimeReference`|tekenreeks|Alleen v3|Geen standaard waarde|Wordt gebruikt om de [datetimeV2-offset](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity)te bepalen. De indeling voor de datetimeReference is [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).|
 |`options.preferExternalEntities`|booleaans|Alleen v3|onjuist|Hiermee wordt aangegeven of de externe entiteit van de gebruiker [(met dezelfde naam als bestaande entiteit)](schema-change-prediction-runtime.md#override-existing-model-predictions) wordt gebruikt of dat de bestaande entiteit in het model wordt gebruikt voor de voor spelling. |
-|`query`|tekenreeks|Alleen v3|Vereist.|**In v2**bevindt de utterance die moet worden voor speld in de `q` para meter. <br><br>**In v3**wordt de functionaliteit door gegeven in de `query` para meter.|
+|`query`|tekenreeks|Alleen v3|Vereist.|**In v2** bevindt de utterance die moet worden voor speld in de `q` para meter. <br><br>**In v3** wordt de functionaliteit door gegeven in de `query` para meter.|
 
 ## <a name="response-changes"></a>Reactie wijzigingen
 
@@ -162,9 +162,9 @@ De wijzigingen in het JSON-schema van het antwoord zijn toegestaan voor:
 
 #### <a name="marking-placement-of-entities-in-utterances"></a>Plaatsing van entiteiten in uitingen markeren
 
-**In v2**werd een entiteit in een utterance gemarkeerd met de `startIndex` and `endIndex` .
+**In v2** werd een entiteit in een utterance gemarkeerd met de `startIndex` and `endIndex` .
 
-**In v3**wordt de entiteit gemarkeerd met `startIndex` en `entityLength` .
+**In v3** wordt de entiteit gemarkeerd met `startIndex` en `entityLength` .
 
 #### <a name="access-instance-for-entity-metadata"></a>Toegang `$instance` voor entiteits-meta gegevens
 

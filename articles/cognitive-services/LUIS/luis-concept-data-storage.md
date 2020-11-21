@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 12693fb11556380e62df277be093ce20c02ff372
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: fd7499bd5e216f2a625d87ea13996da851a1889e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92018029"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019208"
 ---
 # <a name="data-storage-and-removal-in-language-understanding-luis-cognitive-services"></a>Gegevens opslag en verwijderen in Language Understanding (LUIS) Cognitive Services
 LUIS slaat gegevens op die zijn versleuteld in een Azure-gegevens opslag die overeenkomt met de regio die is opgegeven door de sleutel. Deze gegevens worden 30 dagen bewaard. 
@@ -26,8 +26,8 @@ Gebruikers hebben volledige controle over het [exporteren](luis-how-to-start-new
 
 Uitingen kan op twee verschillende plaatsen worden opgeslagen. 
 
-* Tijdens **het ontwerp proces**worden uitingen gemaakt en opgeslagen in de bedoeling. Uitingen in intenties zijn vereist voor een geslaagde LUIS-app. Zodra de app is gepubliceerd en er query's worden ontvangen op het eind punt, wordt de query reeks van het eindpunt verzoek, `log=false` , bepaalt of het eind punt utterance is opgeslagen. Als het eind punt wordt opgeslagen, maakt het deel uit van het actieve Learning uitingen dat wordt weer gegeven in de sectie **Build** van de portal, in de sectie beoordeling van het **eind punt uitingen** . 
-* Wanneer u **endpoint uitingen bekijkt**en een utterance aan een intentie toevoegt, wordt de utterance niet meer opgeslagen als onderdeel van het eind punt uitingen dat moet worden gecontroleerd. Deze wordt toegevoegd aan de intenties van de app. 
+* Tijdens **het ontwerp proces** worden uitingen gemaakt en opgeslagen in de bedoeling. Uitingen in intenties zijn vereist voor een geslaagde LUIS-app. Zodra de app is gepubliceerd en er query's worden ontvangen op het eind punt, wordt de query reeks van het eindpunt verzoek, `log=false` , bepaalt of het eind punt utterance is opgeslagen. Als het eind punt wordt opgeslagen, maakt het deel uit van het actieve Learning uitingen dat wordt weer gegeven in de sectie **Build** van de portal, in de sectie beoordeling van het **eind punt uitingen** . 
+* Wanneer u **endpoint uitingen bekijkt** en een utterance aan een intentie toevoegt, wordt de utterance niet meer opgeslagen als onderdeel van het eind punt uitingen dat moet worden gecontroleerd. Deze wordt toegevoegd aan de intenties van de app. 
 
 <a name="utterances-in-an-intent"></a>
 
@@ -55,7 +55,7 @@ Als u niet bent gemigreerd, kunt u uw account verwijderen. alle apps worden same
 Het verwijderen van het account is beschikbaar op de pagina **instellingen** . Selecteer uw account naam in de rechter bovenhoek om naar de pagina **instellingen** te gaan.
 
 ## <a name="delete-an-authoring-resource"></a>Een ontwerp bron verwijderen
-Als u hebt [gemigreerd naar een](https://docs.microsoft.com/azure/cognitive-services/luis/luis-migration-authoring)bewerkings resource, verwijdert u de resource zelf uit het Azure Portal worden alle toepassingen die zijn gekoppeld aan die resource verwijderd, samen met hun voorbeeld uitingen en Logboeken. De gegevens worden 90 dagen bewaard voordat deze permanent worden verwijderd.    
+Als u hebt [gemigreerd naar een](./luis-migration-authoring.md)bewerkings resource, verwijdert u de resource zelf uit het Azure Portal worden alle toepassingen die zijn gekoppeld aan die resource verwijderd, samen met hun voorbeeld uitingen en Logboeken. De gegevens worden 90 dagen bewaard voordat deze permanent worden verwijderd.    
 
 Als u uw resource wilt verwijderen, gaat u naar de [Azure Portal](https://ms.portal.azure.com/#home) en selecteert u uw Luis-ontwerp bron. Ga naar het tabblad **overzicht** en klik op de knop **verwijderen** boven aan de pagina. Bevestig dat uw resource is verwijderd. 
 

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 10/30/2020
 keywords: Java, jakartaee, javaee, microprofile, open-vrijheid, WebSphere-vrijheid, Aro, openshift, Red Hat
-ms.openlocfilehash: ee4baf8eed26a43728fa52289bce86108c9e8c4a
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 41891b58942efbfd705747cc16219185f2a2daa2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94414578"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018389"
 ---
 # <a name="deploy-a-java-application-with-open-libertywebsphere-liberty-on-an-azure-red-hat-openshift-4-cluster"></a>Een Java-toepassing met open vrijheid/WebSphere vrijheid implementeren op een Azure Red Hat openshift 4-cluster
 
@@ -65,7 +65,7 @@ Houd rekening met deze items wanneer u de stappen hebt voltooid om het ingebouwd
 
 1. Meld u met de referenties aan bij de open Shift-webconsole vanuit uw browser `kubeadmin` .
 2. Navigeer naar **beheer**  >  **naam** ruimten  >  **maken naam ruimte**.
-3. Vul bij `open-liberty-demo` **naam** in en selecteer **maken** , zoals volgende wordt weer gegeven.
+3. Vul bij `open-liberty-demo` **naam** in en selecteer **maken**, zoals volgende wordt weer gegeven.
 
    ![naam ruimte maken](./media/howto-deploy-java-liberty-app/create-namespace.png)
 
@@ -98,7 +98,7 @@ Nadat u een verbinding hebt gemaakt met het cluster, installeert u de open bare 
 2. Navigeer naar **Opera tors**  >  **OperatorHub** en zoek naar een **open bare vrijheids operator**.
 3. Selecteer **Open-vrijheids operator** in de zoek resultaten.
 4. Selecteer **Installeren**.
-5. Controleer in het pop- **Upabonnement operator maken** **alle naam ruimten op het cluster (standaard) voor de** **installatie modus** , het **bèta versie** - **Update kanaal** en de **automatische** **goedkeurings strategie** :
+5. Controleer in het pop- **Upabonnement operator maken** **alle naam ruimten op het cluster (standaard) voor de** **installatie modus**, het **bèta versie** - **Update kanaal** en de **automatische** **goedkeurings strategie**:
 
    ![operator abonnement maken voor open vrijheids operator](./media/howto-deploy-java-liberty-app/install-operator.png)
 6. Selecteer **Abonneren** en wacht enkele minuten of twee totdat de open vrijheids operator wordt weer gegeven.
@@ -126,7 +126,7 @@ Als u de toepassing op open vrijheid wilt uitvoeren, moet u een open-vrijheids s
    [INFO] Source compilation was successful.
    ```
 
-1. Open [http://localhost:9080/](http://localhost:9080/) in uw browser om de start pagina van de toepassing te bezoeken. De toepassing ziet er ongeveer als volgt uit:
+1. Open `http://localhost:9080/` in uw browser om de start pagina van de toepassing te bezoeken. De toepassing ziet er ongeveer als volgt uit:
 
    ![Webgebruikersinterface voor de Java-Cafe](./media/howto-deploy-java-liberty-app/javaee-cafe-web-ui.png)
 1. Druk op **Control-C** om de toepassing te stoppen en de vrijheids server te openen.
@@ -164,7 +164,7 @@ Voordat u de container toepassing implementeert op een extern cluster, voert u u
 
 1. Voer `docker run -it --rm -p 9080:9080 javaee-cafe-simple:1.0.0` uit in uw-console.
 2. Wacht tot de vrijheids server is gestart en de toepassing is geïmplementeerd.
-3. Open [http://localhost:9080/](http://localhost:9080/) in uw browser om de start pagina van de toepassing te bezoeken.
+3. Open `http://localhost:9080/` in uw browser om de start pagina van de toepassing te bezoeken.
 4. Druk op **Control-C** om de toepassing en vrijheids server te stoppen.
 
 ### <a name="push-the-image-to-the-container-image-registry"></a>Push de installatie kopie naar het container installatie kopie register

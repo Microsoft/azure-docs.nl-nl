@@ -11,12 +11,12 @@ ms.date: 9/25/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 60fb258fe2c6063b9b9a3ced0f4ba5f71ffd9d7c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3ead3393218255808eb67983251fcf9f2561c82c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449528"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020177"
 ---
 # <a name="use-azure-stream-analytics-with-azure-synapse-analytics"></a>Azure Stream Analytics met Azure Synapse Analytics gebruiken
 
@@ -32,7 +32,7 @@ In dit artikel leert u hoe u uw data warehouse kunt gebruiken als een uitvoer fi
     2. Toepassing voor gebeurtenis Generator configureren en starten
     3. Een Stream Analytics-taak inrichten
     4. Taak invoer en-query opgeven
-* Azure Synapse SQL-groep voor uw data warehouse: als u een nieuw data warehouse wilt maken, volgt u de stappen in de [Quick Start om een nieuw data warehouse te maken](create-data-warehouse-portal.md).
+* Synapse toegewezen SQL-groep voor uw data warehouse: als u een nieuw data warehouse wilt maken, volgt u de stappen in de [Quick Start om een nieuw data warehouse te maken](create-data-warehouse-portal.md).
 
 ## <a name="specify-streaming-output-to-point-to-your-data-warehouse"></a>Streaming-uitvoer opgeven zodat deze naar uw data warehouse verwijst
 
@@ -52,8 +52,8 @@ Voer de volgende waarden in:
 
 * *Uitvoer alias*: Voer een beschrijvende naam in voor deze taak uitvoer.
 * *Abonnement*:
-  * Als uw data warehouse zich in hetzelfde abonnement bevindt als de Stream Analytics taak, klikt u op ***Azure Synapse Analytics selecteren in uw abonnementen***.
-  * Als uw data warehouse zich in een ander abonnement bevindt, klikt u op Azure Synapse Analytics-instellingen hand matig opgeven.
+  * Als uw data warehouse zich in hetzelfde abonnement bevindt als de Stream Analytics taak, klikt u op ***Selecteer Azure Synapse Analytics van uw abonnementen** _.
+  _ Als uw data warehouse zich in een ander abonnement bevindt, klikt u op on hand matig Azure Synapse Analytics-instellingen opgeven.
 * *Data Base*: Selecteer de doel database in de vervolg keuzelijst.
 * *Gebruikers naam*: Geef de gebruikers naam op van een account met schrijf machtigingen voor de data base.
 * *Wacht woord*: Geef het wacht woord op voor het opgegeven gebruikers account.
@@ -100,23 +100,23 @@ WITH (DISTRIBUTION = ROUND_ROBIN)
 
 ### <a name="step-5"></a>Stap 5
 
-Klik in de Azure Portal voor Stream Analytics taak op de naam van uw taak.  Klik op de knop ***testen*** in het deel venster ***uitvoer Details*** .
+Klik in de Azure Portal voor Stream Analytics taak op de naam van uw taak.  Klik op de knop **_toets_* _ in het deel venster _*_uitvoer Details_*_ .
 
 ![De knop testen op Details van Outpout ](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asatest.png) als de verbinding met de data base slaagt, wordt er een melding weer geven in de portal.
 
 ### <a name="step-6"></a>Stap 6
 
-Klik op het ***query*** menu onder ***taak topologie*** en wijzig de query om gegevens in te voegen in de stream-uitvoer die u hebt gemaakt.  Klik op de knop ***geselecteerde query testen*** om uw query te testen.  Klik op de knop ***query opslaan*** wanneer de query test is voltooid.
+Klik op het _*_query_*_ menu onder _*_taak topologie_*_ en wijzig de query om gegevens in te voegen in de stream-uitvoer die u hebt gemaakt.  Klik op de knop _*_geselecteerde query testen_*_ om uw query te testen.  Klik op de knop _*_query opslaan_*_ wanneer de query test is voltooid.
 
 ![Query opslaan](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asaquery.png)
 
 ### <a name="step-7"></a>Stap 7
 
-Start de Azure Stream Analytics taak.  Klik op de knop ***Start*** in het menu ***overzicht*** .
+Start de Azure Stream Analytics taak.  Klik op de knop _*_Start_*_ in het menu _*_overzicht_*_ .
 
 ![Stream Analytics-taak starten](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asastart.png)
 
-Klik op de knop ***Start*** in het deel venster taak starten.
+Klik op de knop _ *_Start_** in het deel venster taak starten.
 
 ![Klik op Start](./media/sql-data-warehouse-integrate-azure-stream-analytics/sqlpool-asastartconfirm.png)
 

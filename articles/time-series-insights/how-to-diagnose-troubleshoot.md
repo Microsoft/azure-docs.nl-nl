@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: b994e8ce34319da4827d389b49e23ed6e5bcde95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d26a0ef86ab96940f3d5bb96d87340b77f1faca
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653754"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016833"
 ---
 # <a name="diagnose-and-troubleshoot-an-azure-time-series-insights-gen2-environment"></a>Een Azure Time Series Insights Gen2-omgeving diagnosticeren en problemen oplossen
 
@@ -39,7 +39,7 @@ Er zijn verschillende veelvoorkomende redenen waarom uw gegevens mogelijk niet w
 
 - De bron gegevens van uw gebeurtenis bevindt zich niet in JSON-indeling.
 
-    Time Series Insights ondersteunt alleen JSON-gegevens. Lees voor JSON-voor beelden [ondersteunde JSON-vormen](./how-to-shape-query-json.md).
+    Time Series Insights ondersteunt alleen JSON-gegevens. Lees voor JSON-voor beelden [ondersteunde JSON-vormen](./concepts-json-flattening-escaping-rules.md).
 
 - Er ontbreekt een vereiste machtiging voor de bron sleutel van uw gebeurtenis.
 
@@ -61,13 +61,13 @@ Er zijn verschillende veelvoorkomende redenen waarom uw gegevens mogelijk niet w
 
 - De eigenschap voor de tijd reeks-ID die is opgegeven bij het inrichten, is onjuist, ontbreekt of is null.
 
-    Dit probleem kan optreden als de time series-ID-eigenschap onjuist is geconfigureerd op het moment van de inrichting van de omgeving. Lees [Aanbevolen procedures voor het kiezen van een time series-id](./time-series-insights-update-how-to-id.md)voor meer informatie. Op dit moment kunt u een bestaande Time Series Insights omgeving niet bijwerken om een andere tijd reeks-ID te gebruiken.
+    Dit probleem kan optreden als de time series-ID-eigenschap onjuist is geconfigureerd op het moment van de inrichting van de omgeving. Lees [Aanbevolen procedures voor het kiezen van een time series-id](./how-to-select-tsid.md)voor meer informatie. Op dit moment kunt u een bestaande Time Series Insights omgeving niet bijwerken om een andere tijd reeks-ID te gebruiken.
 
 ## <a name="problem-some-data-shows-but-some-is-missing"></a>Probleem: sommige gegevens worden weer gegeven, maar er ontbreekt een deel
 
 Mogelijk verzendt u gegevens zonder de tijd reeks-ID.
 
-- Dit probleem kan optreden wanneer u gebeurtenissen verzendt zonder het veld tijd reeks-ID in de payload. Lees [ondersteunde JSON-vormen](./how-to-shape-query-json.md)voor meer informatie.
+- Dit probleem kan optreden wanneer u gebeurtenissen verzendt zonder het veld tijd reeks-ID in de payload. Lees [ondersteunde JSON-vormen](./concepts-json-flattening-escaping-rules.md)voor meer informatie.
 - Dit probleem kan optreden omdat uw omgeving wordt beperkt.
 
     > [!NOTE]
@@ -111,7 +111,7 @@ Als de tijds tempel eigenschap niet expliciet is opgegeven, wordt de IoT-hub van
 
 - U hebt mogelijk toegang tot een Time Series Insights S1-of S2-omgeving.
 
-   Time Series-modellen worden alleen ondersteund in omgevingen met betalen per gebruik. Lees voor meer informatie over het openen van de S1-of S2-omgeving vanuit de Time Series Insights Gen2 Explorer [visualiseren gegevens in de Explorer](./time-series-insights-update-explorer.md).
+   Time Series-modellen worden alleen ondersteund in omgevingen met betalen per gebruik. Lees voor meer informatie over het openen van de S1-of S2-omgeving vanuit de Time Series Insights Gen2 Explorer [visualiseren gegevens in de Explorer](./concepts-ux-panels.md).
 
    [![Geen gebeurtenissen in de omgeving.](media/preview-troubleshoot/troubleshoot-no-events.png)](media/preview-troubleshoot/troubleshoot-no-events.png#lightbox)
 
@@ -121,7 +121,7 @@ Als de tijds tempel eigenschap niet expliciet is opgegeven, wordt de IoT-hub van
 
 ## <a name="problem-all-my-instances-in-the-gen2-explorer-lack-a-parent"></a>Probleem: al mijn instanties in de Gen2 Explorer hebben geen bovenliggend item
 
-Dit probleem kan zich voordoen als in uw omgeving geen hiërarchie voor tijdreeks modellen is gedefinieerd. Lees voor meer informatie over het [werken met Time Series-modellen](/azure/time-series-insights/time-series-insights-overview).
+Dit probleem kan zich voordoen als in uw omgeving geen hiërarchie voor tijdreeks modellen is gedefinieerd. Lees voor meer informatie over het [werken met Time Series-modellen](./time-series-insights-overview.md).
 
   [![Bij niet-bovenliggende instanties wordt een waarschuwing weer gegeven.](media/preview-troubleshoot/unparented-instances.png)](media/preview-troubleshoot/unparented-instances.png#lightbox)
 
@@ -135,8 +135,8 @@ Dit probleem kan optreden als u geen gebruik maakt van de nieuwste versie van de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het [werken met Time Series-modellen](/azure/time-series-insights/time-series-insights-overview).
+- Meer informatie over het [werken met Time Series-modellen](./time-series-insights-overview.md).
 
-- Meer informatie over [ondersteunde JSON-vormen](./how-to-shape-query-json.md).
+- Meer informatie over [ondersteunde JSON-vormen](./concepts-json-flattening-escaping-rules.md).
 
-- Bekijk [planning en limieten](./time-series-insights-update-plan.md) in azure time series Insights Gen2.
+- Bekijk [planning en limieten](./how-to-plan-your-environment.md) in azure time series Insights Gen2.

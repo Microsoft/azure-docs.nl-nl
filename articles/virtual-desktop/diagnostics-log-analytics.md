@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 05/27/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a3fccc934fafd8ff7db2cffbd6ba641329ba8de2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d8b696b175c4ef841eef1a51f1d357d1781cba7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89006802"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018287"
 ---
 # <a name="use-log-analytics-for-the-diagnostics-feature"></a>Log Analytics gebruiken voor de functie voor diagnostische gegevens
 
@@ -46,7 +46,7 @@ Met Azure Monitor kunt u gegevens van Windows virtueel bureau blad analyseren en
 Voordat u Log Analytics kunt gebruiken, moet u een werk ruimte maken. Volg hiervoor de instructies in een van de volgende twee artikelen:
 
 - Als u liever Azure Portal gebruikt, raadpleegt u [een log Analytics-werk ruimte maken in azure Portal](../azure-monitor/learn/quick-create-workspace.md).
-- Zie [een log Analytics-werk ruimte maken met Power shell als u de voor](../azure-monitor/learn/quick-create-workspace-posh.md)keur geeft aan Power shell.
+- Zie [een log Analytics-werk ruimte maken met Power shell als u de voor](../azure-monitor/platform/powershell-workspace-configuration.md)keur geeft aan Power shell.
 
 Nadat u uw werk ruimte hebt gemaakt, volgt u de instructies in [Windows-computers verbinden met Azure monitor](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key) om de volgende informatie te verkrijgen:
 
@@ -83,7 +83,7 @@ Log Analytics instellen voor een nieuw object:
 6. Selecteer **Opslaan**.
 
 >[!NOTE]
->Log Analytics biedt u de mogelijkheid om gegevens te streamen naar [Event hubs](../event-hubs/event-hubs-about.md) of deze te archiveren in een opslag account. Zie [Azure-bewakings gegevens streamen naar een event hub](../azure-monitor/platform/stream-monitoring-data-event-hubs.md) en [Azure-resource logboeken archiveren in een opslag account](../azure-monitor/platform/resource-logs-collect-storage.md)voor meer informatie over deze functie.
+>Log Analytics biedt u de mogelijkheid om gegevens te streamen naar [Event hubs](../event-hubs/event-hubs-about.md) of deze te archiveren in een opslag account. Zie [Azure-bewakings gegevens streamen naar een event hub](../azure-monitor/platform/stream-monitoring-data-event-hubs.md) en [Azure-resource logboeken archiveren in een opslag account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)voor meer informatie over deze functie.
 
 ## <a name="how-to-access-log-analytics"></a>Toegang tot Log Analytics
 
@@ -91,7 +91,7 @@ U hebt toegang tot Log Analytics-werk ruimten op het Azure Portal of Azure Monit
 
 ### <a name="access-log-analytics-on-a-log-analytics-workspace"></a>Toegang tot Log Analytics op een Log Analytics werk ruimte
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 
 2. Zoeken naar **log Analytics-werk ruimte**.
 
@@ -99,7 +99,7 @@ U hebt toegang tot Log Analytics-werk ruimten op het Azure Portal of Azure Monit
 
 4. Selecteer in de lijst de werk ruimte die u hebt geconfigureerd voor het virtueel-bureaublad object van Windows.
 
-5. Selecteer **Logboeken**in uw werk ruimte. U kunt de menu lijst filteren met de functie **zoeken** .
+5. Selecteer **Logboeken** in uw werk ruimte. U kunt de menu lijst filteren met de functie **zoeken** .
 
 ### <a name="access-log-analytics-on-azure-monitor"></a>Toegang tot Log Analytics op Azure Monitor
 
@@ -114,7 +114,7 @@ U hebt toegang tot Log Analytics-werk ruimten op het Azure Portal of Azure Monit
 5. U kunt een query uitvoeren op diagnostische gegevens. Alle diagnostische tabellen hebben het voor voegsel ' WVD '.
 
 >[!NOTE]
->Voor meer informatie over de tabellen die zijn opgeslagen in Azure Monitor logboeken, raadpleegt u de [Azure monitor gegevens opnieuw opfence](https://docs.microsoft.com/azure/azure-monitor/reference/). Alle tabellen die betrekking hebben op virtuele Bureau bladen van Windows, hebben de naam ' WVD '.
+>Voor meer informatie over de tabellen die zijn opgeslagen in Azure Monitor logboeken, raadpleegt u de [Azure monitor gegevens opnieuw opfence](/azure/azure-monitor/reference/). Alle tabellen die betrekking hebben op virtuele Bureau bladen van Windows, hebben de naam ' WVD '.
 
 ## <a name="cadence-for-sending-diagnostic-events"></a>Uitgebracht voor het verzenden van diagnostische gebeurtenissen
 
@@ -134,9 +134,9 @@ Access-voorbeeld query's via de Azure Monitor Log Analytics gebruikers interface
 1. Selecteer **virtueel bureau blad voor Windows** om beschik bare query's te controleren.
 1. Selecteer **uitvoeren** om de geselecteerde query uit te voeren.
 
-Meer informatie over de voorbeeld query interface in [opgeslagen query's in Azure Monitor Log Analytics](../azure-monitor/log-query/saved-queries.md).
+Meer informatie over de voorbeeld query interface in [opgeslagen query's in Azure Monitor Log Analytics](../azure-monitor/log-query/example-queries.md).
 
-Met de volgende query lijst kunt u verbindings gegevens of-problemen voor één gebruiker controleren. U kunt deze query's uitvoeren in de [log Analytics query-editor](../azure-monitor/log-query/get-started-portal.md#write-and-run-basic-queries). Vervang elke query door `userupn` de UPN van de gebruiker die u wilt zoeken.
+Met de volgende query lijst kunt u verbindings gegevens of-problemen voor één gebruiker controleren. U kunt deze query's uitvoeren in de [log Analytics query-editor](../azure-monitor/log-query/log-analytics-tutorial.md#write-a-query). Vervang elke query door `userupn` de UPN van de gebruiker die u wilt zoeken.
 
 
 Alle verbindingen voor één gebruiker zoeken:

@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 00a3c1d0a2a905e6435b811d5f2611c16a5de502
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: b60a6e53e8fecd71885204690231776ff69fc08f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92328876"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018372"
 ---
 # <a name="configure-device-redirections"></a>Apparaatomleidingen configureren
 
@@ -19,11 +19,11 @@ Met het configureren van apparaatomleiding voor uw Windows Virtual Desktop-omgev
 
 ## <a name="supported-device-redirections"></a>Ondersteunde omleidingen van apparaten
 
-Elke client ondersteunt verschillende omleidingen van apparaten. Bekijk [de clients](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-app-compare) voor de volledige lijst met ondersteunde omleidingen voor apparaten voor elke client.
+Elke client ondersteunt verschillende omleidingen van apparaten. Bekijk [de clients](/windows-server/remote/remote-desktop-services/clients/remote-desktop-app-compare) voor de volledige lijst met ondersteunde omleidingen voor apparaten voor elke client.
 
 ## <a name="customizing-rdp-properties-for-a-host-pool"></a>RDP-eigenschappen voor een hostgroep aanpassen
 
-Voor meer informatie over het aanpassen van RDP-eigenschappen voor een hostgroep met Power shell of de Azure Portal, raadpleegt u [RDP-eigenschappen](customize-rdp-properties.md). Zie [supported RDP file Settings](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context)(Engelstalig) voor een volledige lijst met ondersteunde RDP-eigenschappen.
+Voor meer informatie over het aanpassen van RDP-eigenschappen voor een hostgroep met Power shell of de Azure Portal, raadpleegt u [RDP-eigenschappen](customize-rdp-properties.md). Zie [supported RDP file Settings](/windows-server/remote/remote-desktop-services/clients/rdp-files?context=%2fazure%2fvirtual-desktop%2fcontext%2fcontext)(Engelstalig) voor een volledige lijst met ondersteunde RDP-eigenschappen.
 
 ## <a name="setup-device-redirections"></a>Apparaatomleiding instellen
 
@@ -78,7 +78,7 @@ Stel eerst de volgende RDP-eigenschap in om de omleiding van USB-apparaten in te
 
 Stel vervolgens de volgende groepsbeleid in op het lokale apparaat van de gebruiker:
 
-- Navigeer naar **computer configuratie**  >  **beleid** >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **extern bureaublad-services**  >  **verbinding met extern bureaublad**  >  **USB-apparaatomleiding**van client RemoteFX.
+- Navigeer naar **computer configuratie**  >  **beleid** >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **extern bureaublad-services**  >  **verbinding met extern bureaublad**  >  **USB-apparaatomleiding** van client RemoteFX.
 - Selecteer **RDP-omleiding van andere ondersteunde RemoteFX USB-apparaten vanaf deze computer toestaan**.
 - Selecteer de optie **ingeschakeld** en selecteer vervolgens het dialoog venster **beheerders en gebruikers in het vak toegangs rechten voor RemoteFX USB-omleiding** .
 - Selecteer **OK**.

@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: dc759bb9af852fab5313686ebaffefda9220f45a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d80d97a609aa3a464b9b114439fe7f4058e287c3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91614237"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020143"
 ---
 # <a name="create-a-reference-data-set-for-your-azure-time-series-insights-gen1-environment-using-the-azure-portal"></a>Maak een set referentie gegevens voor uw Azure Time Series Insights gen1-omgeving met behulp van de Azure Portal
 
@@ -37,7 +37,7 @@ Referentie gegevens worden niet met terugwerkende kracht samengevoegd. Daarom wo
 
 ## <a name="add-a-reference-data-set"></a>Een set met referentie gegevens toevoegen
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 1. Zoek uw bestaande Azure Time Series Insights-omgeving. Selecteer **alle resources** in het menu aan de linkerkant van het Azure Portal. Selecteer uw Azure Time Series Insights omgeving.
 
@@ -102,12 +102,12 @@ Referentie gegevens worden niet met terugwerkende kracht samengevoegd. Daarom wo
 
     [![Upload rijen en bevestig gegevens.](media/add-reference-data-set/confirm-upload-reference-data.png)](media/add-reference-data-set/confirm-upload-reference-data.png#lightbox)
 
-    Op de pagina wordt de voltooide upload bevestigd en wordt het bericht met de **gegevensset geüpload**weer gegeven.
+    Op de pagina wordt de voltooide upload bevestigd en wordt het bericht met de **gegevensset geüpload** weer gegeven.
 
     > [!WARNING]
     > Kolommen of eigenschappen die worden gedeeld tussen referentie gegevens sets, bevatten een dubbele fout bij het uploaden van **eigenschaps namen** . De fout verhindert niet dat het uploaden van de referentie gegevens sets is geslaagd. Het kan worden verwijderd door het combi neren van rijen die de gedupliceerde eigenschaps naam delen.
 
-1. Selecteer **een rij toevoegen**, **rijen bulksgewijs importeren**of **Voeg een kolom** toe om meer referentie gegevens waarden toe te voegen, indien nodig.
+1. Selecteer **een rij toevoegen**, **rijen bulksgewijs importeren** of **Voeg een kolom** toe om meer referentie gegevens waarden toe te voegen, indien nodig.
 
     [![Voeg een rij toe, rijen voor bulksgewijs importeren of Voeg een kolom toe.](media/add-reference-data-set/add-row-or-bulk-upload.png)](media/add-reference-data-set/add-row-or-bulk-upload.png#lightbox)
 
@@ -121,4 +121,4 @@ Referentie gegevens worden niet met terugwerkende kracht samengevoegd. Daarom wo
 
 - Programmatisch [referentiegegevens beheren](time-series-insights-manage-reference-data-csharp.md).
 
-- Lees [referentie gegevens-API](https://docs.microsoft.com/rest/api/time-series-insights/gen1-reference-data-api) -document voor de volledige API-referentie.
+- Lees [referentie gegevens-API](/rest/api/time-series-insights/gen1-reference-data-api) -document voor de volledige API-referentie.

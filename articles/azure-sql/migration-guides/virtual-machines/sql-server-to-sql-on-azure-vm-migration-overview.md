@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: d47abaade13958b4e28d3ad5f62b88e8a53e89a9
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: a910edfbbe1ad07dca806026396c506f7e90e6e7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917835"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019429"
 ---
 # <a name="migration-overview-sql-server-to-sql-server-on-azure-vms"></a>Migratie overzicht: SQL Server SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -75,9 +75,9 @@ De volgende tabel bevat informatie over de beschik bare methode voor de migratie
 
 |**Methode** | **Minimale bron versie** | **Minimale doel versie** | **Beperking van bron back-upgrootte** |  **Opmerkingen** |
 | --- | --- | --- | --- | --- |
-| [Azure Migrate](../../../migrate/index.yml) | SQL Server 2008 SP4| SQL Server 2008 SP4| [Opslag limiet voor Azure VM](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |  Bestaande SQL Server worden verplaatst naar een exemplaar van SQL Server op een virtuele Azure-machine. Kan werk belastingen voor de migratie van Maxi maal 35.000 Vm's schalen. <br /><br /> Bron server (s) blijven online-en onderhouds aanvragen tijdens de synchronisatie van Server gegevens en beperken de downtime. <br /><br /> **Automatisering & scripting**: [Azure site Recovery scripts](../../../migrate/how-to-migrate-at-scale.md) en [voor beeld van geschaalde migratie en planning voor Azure](/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-scale)|
+| [Azure Migrate](../../../migrate/index.yml) | SQL Server 2008 SP4| SQL Server 2008 SP4| [Opslag limiet voor Azure VM](https://azure.microsoft.com/documentation/articles/azure-resource-manager/management/azure-subscription-service-limits/) |  Bestaande SQL Server worden verplaatst naar een exemplaar van SQL Server op een virtuele Azure-machine. Kan werk belastingen voor de migratie van Maxi maal 35.000 Vm's schalen. <br /><br /> Bron server (s) blijven online-en onderhouds aanvragen tijdens de synchronisatie van Server gegevens en beperken de downtime. <br /><br /> **Automatisering & scripting**: [Azure site Recovery scripts](../../../migrate/how-to-migrate-at-scale.md) en [voor beeld van geschaalde migratie en planning voor Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-scale)|
 
-## <a name="migrate"></a>Migreren  
+## <a name="migrate"></a>Migrate  
 
 Vanwege het gemak van de installatie is de aanbevolen migratie benadering om lokaal een lokale SQL Server [back-up](/sql/t-sql/statements/backup-transact-sql) te maken en het bestand vervolgens naar Azure te kopiëren. Deze methode ondersteunt grotere data bases (>1 TB) voor alle versies van SQL Server vanaf 2008 en grotere database back-ups (>1 TB). Voor data bases die beginnen met SQL Server 2014, die kleiner zijn dan 1 TB en die goede connectiviteit met Azure hebben, is [SQL Server back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url) de betere benadering. 
 

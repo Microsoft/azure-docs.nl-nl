@@ -10,17 +10,17 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: c7a62bb3ed07ffbd8cfef520e5d504c810d11e5a
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 1558c396566b2fcfc098a749407d5e7a28316b6f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94496910"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019446"
 ---
 # <a name="migration-guide-sql-server-to-sql-server-on-azure-vms"></a>Migratie handleiding: SQL Server SQL Server op virtuele machines van Azure 
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
 
-Deze migratie handleiding leert u uw gebruikers databases te **ontdekken** , **evalueren** en **migreren** van SQL Server naar een exemplaar van SQL Server op Azure virtual machines (vm's) met behulp van de back-up-en herstel-en logboek verzending, waarbij de [Data Base migration assistant (DMA)](/sql/dma/dma-overview) wordt gebruikt voor evaluatie. 
+Deze migratie handleiding leert u uw gebruikers databases te **ontdekken**, **evalueren** en **migreren** van SQL Server naar een exemplaar van SQL Server op Azure virtual machines (vm's) met behulp van de back-up-en herstel-en logboek verzending, waarbij de [Data Base migration assistant (DMA)](/sql/dma/dma-overview) wordt gebruikt voor evaluatie. 
 
 U kunt SQL Server die on-premises of op worden uitgevoerd, migreren:
 
@@ -40,7 +40,7 @@ Voor de migratie naar SQL Server op Azure Vm's is het volgende vereist:
 - [Data Base-migration assistant (DMA)](https://www.microsoft.com/download/details.aspx?id=53595).
 - Een [Azure migrate-project](/azure/migrate/create-manage-projects).
 - Een voor bereide doel [SQL Server op de Azure-VM](/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal) die dezelfde of een grotere versie heeft dan de bron SQL Server.
-- [Connectiviteit tussen Azure en on-premises](/architecture/reference-architectures/hybrid-networking).
+- [Connectiviteit tussen Azure en on-premises](/azure/architecture/reference-architectures/hybrid-networking).
 - [Een geschikte migratie strategie kiezen](sql-server-to-sql-on-azure-vm-migration-overview.md#migrate).
 
 ## <a name="pre-migration"></a>Premigratie
@@ -59,7 +59,7 @@ Zie [Services en hulpprogram ma's](../../../dms/dms-tools-matrix.md#business-jus
 
 ### <a name="assess"></a>Evalueren
 
-Nadat u alle gegevens bronnen hebt gedetecteerd, gebruikt u de [Data Migration Assistant (DMA)](/dma/dma-overview) voor het beoordelen van on-premises SQL Server instantie (s) die worden gemigreerd naar een exemplaar van SQL Server op Azure VM om inzicht te krijgen in de hiaten tussen de bron-en doel exemplaren. 
+Nadat u alle gegevens bronnen hebt gedetecteerd, gebruikt u de [Data Migration Assistant (DMA)](/sql/dma/dma-overview) voor het beoordelen van on-premises SQL Server instantie (s) die worden gemigreerd naar een exemplaar van SQL Server op Azure VM om inzicht te krijgen in de hiaten tussen de bron-en doel exemplaren. 
 
 
 > [!NOTE]
@@ -123,7 +123,7 @@ Voer de volgende stappen uit om een standaard migratie uit te voeren met back-up
 1. Toepassingen onderbreken/stoppen die gebruikmaken van data bases die bedoeld zijn voor migratie. 
 1. Zorg ervoor dat de gebruikers database (s) inactief zijn door gebruik te maken van de [modus voor één gebruiker](/sql/relational-databases/databases/set-a-database-to-single-user-mode). 
 1. Voer een volledige back-up van de data base uit naar een on-premises locatie.
-1. Kopieer uw lokale back-upbestand (en) naar uw VM met behulp van extern bureau blad, [Azure Data Explorer](/data-explorer/data-explorer-overview)of het [AZCopy-opdracht regel programma](../../../storage/common/storage-use-azcopy-v10.md) (> 2 TB back-ups aanbevolen).
+1. Kopieer uw lokale back-upbestand (en) naar uw VM met behulp van extern bureau blad, [Azure Data Explorer](/azure/data-explorer/data-explorer-overview)of het [AZCopy-opdracht regel programma](../../../storage/common/storage-use-azcopy-v10.md) (> 2 TB back-ups aanbevolen).
 1. Back-ups van de volledige data base herstellen naar de SQL Server op de virtuele machine van Azure.
 
 ### <a name="log-shipping--minimize-downtime"></a>Logboek verzending (downtime minimaliseren)
@@ -133,7 +133,7 @@ Voer de volgende stappen uit om een minimale downtime-migratie uit te voeren met
 1. Stel de connectiviteit in voor de doel SQL Server op Azure VM op basis van uw vereisten. Zie [verbinding maken met een SQL Server virtuele machine op Azure (Resource Manager)](../../virtual-machines/windows/ways-to-connect-to-sql.md).
 1. Zorg ervoor dat de lokale gebruikers database (s) die moeten worden gemigreerd, zich in het volledige of bulksgewijs vastgelegde herstel model bevinden.
 1. Voer een volledige back-up van de Data Base naar een on-premises locatie en wijzig alle bestaande back-uptaken van de volledige data base om [COPY_ONLY](/sql/relational-databases/backup-restore/copy-only-backups-sql-server) tref woord te gebruiken om de logboek keten te bewaren.
-1. Kopieer uw lokale back-upbestand (en) naar uw VM met behulp van extern bureau blad, [Azure Data Explorer](/data-explorer/data-explorer-overview)of het [AZCopy-opdracht regel programma](../../../storage/common/storage-use-azcopy-v10.md) (>1 TB back-ups aanbevolen).
+1. Kopieer uw lokale back-upbestand (en) naar uw VM met behulp van extern bureau blad, [Azure Data Explorer](/azure/data-explorer/data-explorer-overview)of het [AZCopy-opdracht regel programma](../../../storage/common/storage-use-azcopy-v10.md) (>1 TB back-ups aanbevolen).
 1. Herstel de volledige back-ups van de Data Base op de SQL Server op de virtuele machine van Azure.
 1. Stel de [back-upfunctie voor logboeken](/sql/database-engine/log-shipping/configure-log-shipping-sql-server) in tussen de on-premises data base en het doel SQL Server op de Azure VM. Zorg ervoor dat u de data base (s) niet opnieuw initialiseert omdat deze al is voltooid in de vorige stappen.
 1. **Knippen** naar de doel server. 
@@ -213,7 +213,7 @@ Raadpleeg de volgende bronnen voor meer informatie over deze problemen en specif
 
 - Zie voor meer informatie over Azure SQL:
    - [Implementatieopties](../../azure-sql-iaas-vs-paas-what-is-overview.md)
-   - [SQL Server op virtuele machines in azure](../../virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md)
+   - [SQL Server in Azure VM's](../../virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md)
    - [Reken machine totale eigendoms kosten Azure](https://azure.microsoft.com/pricing/tco/calculator/) 
 
 

@@ -9,18 +9,18 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
 ms.service: cognitive-services
-ms.openlocfilehash: c2802f1b41ed2842e12c808a8c380ebd646ffa03
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2401c032f0fc90024e0049fad5f696b8a184544
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540928"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95018936"
 ---
 # <a name="add-intents-to-determine-user-intention-of-utterances"></a>Intenties toevoegen om te bepalen wat de gebruikers intentie van uitingen zijn
 
 Voeg [intenties](luis-concept-intent.md) toe aan uw Luis-app om groepen vragen of opdrachten te identificeren die hetzelfde doel hebben.
 
-In de LUIS-Portal worden de intenties beheerd vanuit de **eerste sectie van de navigatie** balk en vervolgens vanuit de **intenties**van het linkerdeel venster.
+In de LUIS-Portal worden de intenties beheerd vanuit de **eerste sectie van de navigatie** balk en vervolgens vanuit de **intenties** van het linkerdeel venster.
 
 ## <a name="add-an-intent-to-your-app"></a>Een intentie toevoegen aan uw app
 
@@ -34,7 +34,7 @@ In de LUIS-Portal worden de intenties beheerd vanuit de **eerste sectie van de n
 
     Het doel van de opzet heeft [voor beeld uitingen](luis-concept-utterance.md) nodig om uitingen te voors pellen bij het gepubliceerde prediction-eind punt.
 
-## <a name="add-an-example-utterance"></a>Een voor beeld-utterance toevoegen
+## <a name="add-an-example-utterance"></a>Een voorbeelduiting toevoegen
 
 Voor beelden van uitingen zijn tekst voorbeelden van gebruikers vragen of-opdrachten. Als u Language Understanding wilt leren (LUIS) wanneer u dit opzet wilt voors pellen, moet u bijvoorbeeld uitingen toevoegen aan een intentie. LUIS moet binnen het bereik van 15 tot 30 voor beeld uitingen zijn om te beginnen met de bedoeling. Voeg geen voor beeld-uitingen toe. Elke utterance moet zorgvuldig worden gekozen voor de manier waarop deze afwijkt van de voor beelden die al in de bedoeling zijn.
 
@@ -81,4 +81,4 @@ Nadat u intenties hebt toegevoegd, bewerkt of verwijderd, [traint](luis-how-to-t
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het toevoegen van [voor beeld-uitingen](luis-how-to-add-example-utterances.md) met entiteiten.
+Meer informatie over het toevoegen van [voor beeld-uitingen](./luis-how-to-add-entities.md) met entiteiten.

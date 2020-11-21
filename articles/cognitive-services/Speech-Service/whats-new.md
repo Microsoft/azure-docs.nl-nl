@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: erhopf
-ms.openlocfilehash: 87832057e955f8408b369e2f55096a713780e965
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 5c4f02eff06c08f1829f9f1c74d1dcb09ee57905
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410773"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024786"
 ---
 # <a name="speech-service-whats-new-in-docs"></a>Speech Service: what's New in docs
 
@@ -38,17 +38,17 @@ Als u meer informatie wilt over updates voor de speech-service, spraak-SDK, Spee
 
 * [Over de Speech SDK audio input stream API](how-to-use-audio-input-streams.md) -bijgewerkte toegestane voor beelden per seconde.
 * [Automatische taal detectie voor voor spraak naar tekst](how-to-automatic-language-detection.md) toegevoegde objectieve C-instructies voor documentatie.
-* [Kies een modus voor spraak herkenning: er](how-to-choose-recognition-mode.md) zijn Java script-instructies toegevoegd aan de documentatie.
+* [Kies een modus voor spraak herkenning: er](./get-started-speech-to-text.md) zijn Java script-instructies toegevoegd aan de documentatie.
 * [CONFIGUREER RHEL/CentOS 7 voor Speech SDK](how-to-configure-rhel-centos-7.md) : verbeterde installatie-instructies.
-* [Woordgroepen lijsten voor](how-to-phrase-lists.md) java script-instructies die zijn toegevoegd aan een tekst-invoeg module voor documentatie.
-* [Quick Start: asynchrone synthese voor lange-vorm audio in python (preview)](quickstarts/text-to-speech/async-synthesis-long-form-audio.md) -bijgewerkt met ondersteuning voor open bare Neural stemmen en bijbehorende para meters.
-* [Quick Start: spraak herkennen vanuit een audio bestand](quickstarts/speech-to-text-from-file.md) -toegevoegde java script-instructies in de documentatie.
-* [Quick Start: spraak herkennen aan de hand van een door de microfoon](quickstarts/speech-to-text-from-microphone.md ) toegevoegde en Java script-instructies.
+* [Woordgroepen lijsten voor](./get-started-speech-to-text.md) java script-instructies die zijn toegevoegd aan een tekst-invoeg module voor documentatie.
+* [Quick Start: asynchrone synthese voor lange-vorm audio in python (preview)](./long-audio-api.md) -bijgewerkt met ondersteuning voor open bare Neural stemmen en bijbehorende para meters.
+* [Quick Start: spraak herkennen vanuit een audio bestand](./get-started-speech-to-text.md) -toegevoegde java script-instructies in de documentatie.
+* [Quick Start: spraak herkennen aan de hand van een door de microfoon](./get-started-speech-to-text.md) toegevoegde en Java script-instructies.
 * [Snelstartgids: spraak die is opgeslagen in Blob Storage herkennen](quickstarts/from-blob.md) -java script-instructies toegevoegd aan documentatie.
 * [Quickstart: Spraak, intenties en entiteiten herkennen met Language Understanding (LUIS)](quickstarts/intent-recognition.md)
 * [Snelstartgids: ontwikkel omgeving instellen](quickstarts/setup-platform.md) -java script-instructies toegevoegd aan documentatie.
-* [Quick Start: spraak samen voegen in een audio bestand](quickstarts/text-to-speech-audio-file.md) -toegevoegde java script-instructies aan de documentatie.
-* [Quick Start: stem de spraak op een door de spreker](quickstarts/text-to-speech.md) toegevoegde java script-instructies aan de documentatie.
+* [Quick Start: spraak samen voegen in een audio bestand](./get-started-text-to-speech.md) -toegevoegde java script-instructies aan de documentatie.
+* [Quick Start: stem de spraak op een door de spreker](./get-started-text-to-speech.md) toegevoegde java script-instructies aan de documentatie.
 * [Wat is een tref woord?](custom-keyword-overview.md) -De inhoud en koppelingen van aan de slag zijn bijgewerkt.
 * [Geef de bron taal op voor spraak naar tekst](how-to-specify-source-language.md) toegevoegde java script en de doel-C-instructies voor documentatie.
 
@@ -58,7 +58,7 @@ Deze problemen zijn in mei geopend. Deze tabel geeft een lijst van de gebruiker 
 
 Deze tabel wordt maandelijks bijgewerkt en weerspiegelt alleen problemen die in mei zijn geopend.  
 
-|Id|Gebruiker|Beschrijving|Had|Staat|Type|
+|Id|Gebruiker|Description|Had|Status|Type|
 | :--- | :--- | :--- | :--- | :--- | :--- |
 |[56045](https://github.com/MicrosoftDocs/azure-docs/issues/56045)|rhalaly|De activiteit is verwijderd omdat het eind punt van de bot ontbreekt|2020-05-31|Gesloten|Probleem|
 |[56038](https://github.com/MicrosoftDocs/azure-docs/issues/56038)|rhalaly|Verkeerde stappen voor de publicatie-bot|2020-05-31|Openen|Probleem|

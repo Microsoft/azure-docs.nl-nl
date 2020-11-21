@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/27/2020
 ms.author: cynthn
 ms.reviewer: olayemio
-ms.openlocfilehash: 1fbdae2480caef5bf1d190124ca3be6c5b97a2f9
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 40d3ff736194c4634b949af52ee7b09db20dd06d
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576356"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026128"
 ---
 # <a name="create-a-managed-disk-from-an-image-version"></a>Een beheerde schijf maken op basis van een installatie kopie versie
 
@@ -33,9 +33,9 @@ az sig image-version list \
    -o table
 ```
 
-Stel de `source` variabele in op de id van de installatie kopie en gebruik [AZ Disk Create](//cli/azure/disk#az_disk_create) om de beheerde schijf te maken. 
+Stel de `source` variabele in op de id van de installatie kopie en gebruik [AZ Disk Create](/cli/azure/disk?view=azure-cli-latest#az_disk_create) om de beheerde schijf te maken. 
 
-In dit voor beeld exporteren we de besturingssysteem schijf van de versie van de installatie kopie voor het maken van een beheerde schijf met de naam *myManagedOSDisk* , in de regio *oostus* , in een resource groep met de naam *myResourceGroup*. 
+In dit voor beeld exporteren we de besturingssysteem schijf van de versie van de installatie kopie voor het maken van een beheerde schijf met de naam *myManagedOSDisk*, in de regio *oostus* , in een resource groep met de naam *myResourceGroup*. 
 
 ```azurecli-interactive
 source="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/galleries/<galleryName>/images/<galleryImageDefinition>/versions/<imageVersion>"
@@ -47,7 +47,7 @@ az disk create --resource-group myResourceGroup --location EastUS --name myManag
 
 Als u een gegevens schijf uit de versie van de installatie kopie wilt exporteren, voegt u `--gallery-image-reference-lun` deze toe om de LUN-locatie op te geven van de gegevens schijf die u wilt exporteren. 
 
-In dit voor beeld exporteren we de gegevens schijf die zich bevindt op LUN 0 van de versie van de installatie kopie om een beheerde schijf te maken met de naam *myManagedDataDisk* , in de regio *Oost* -eenheid, in een resource groep met de naam *myResourceGroup*. 
+In dit voor beeld exporteren we de gegevens schijf die zich bevindt op LUN 0 van de versie van de installatie kopie om een beheerde schijf te maken met de naam *myManagedDataDisk*, in de regio *Oost* -eenheid, in een resource groep met de naam *myResourceGroup*. 
 
 ```azurecli-interactive
 source="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/galleries/<galleryName>/images/<galleryImageDefinition>/versions/<imageVersion>"
@@ -77,7 +77,7 @@ $sourceImgVer = Get-AzGalleryImageVersion `
 
 Nadat u de `source` variabele hebt ingesteld op de id van de installatie kopie versie, gebruikt u [New-AzDiskConfig](/powershell/module/az.compute/new-azdiskconfig) om een schijf configuratie te maken en [nieuwe-AzDisk](/powershell/module/az.compute/new-azdisk) om de schijf te maken. 
 
-In dit voor beeld exporteren we de besturingssysteem schijf van de versie van de installatie kopie voor het maken van een beheerde schijf met de naam *myManagedOSDisk* , in de regio *oostus* , in een resource groep met de naam *myResourceGroup*. 
+In dit voor beeld exporteren we de besturingssysteem schijf van de versie van de installatie kopie voor het maken van een beheerde schijf met de naam *myManagedOSDisk*, in de regio *oostus* , in een resource groep met de naam *myResourceGroup*. 
 
 Een schijf configuratie maken.
 ```azurepowershell-interactive
@@ -97,7 +97,7 @@ New-AzDisk -Disk $diskConfig `
 
 Als u een gegevens schijf wilt exporteren naar de versie van de installatie kopie, voegt u een LUN-ID toe aan de schijf configuratie om de LUN-locatie op te geven van de gegevens schijf die u wilt exporteren. 
 
-In dit voor beeld exporteren we de gegevens schijf die zich bevindt op LUN 0 van de versie van de installatie kopie om een beheerde schijf te maken met de naam *myManagedDataDisk* , in de regio *Oost* -eenheid, in een resource groep met de naam *myResourceGroup*. 
+In dit voor beeld exporteren we de gegevens schijf die zich bevindt op LUN 0 van de versie van de installatie kopie om een beheerde schijf te maken met de naam *myManagedDataDisk*, in de regio *Oost* -eenheid, in een resource groep met de naam *myResourceGroup*. 
 
 Een schijf configuratie maken.
 ```azurepowershell-interactive

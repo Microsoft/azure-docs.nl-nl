@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/11/2019
-ms.openlocfilehash: 44a7a89740be3d6d502c5d22c79b46582034d88a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cda71c6e825ff27ba9b03e1306ccb287663e8613
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91535952"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025956"
 ---
 # <a name="patterns-improve-prediction-accuracy"></a>Nauw keurigheid van de voor spelling verbeteren
 Patronen zijn ontworpen om de nauw keurigheid te verbeteren wanneer verschillende uitingen zeer vergelijkbaar zijn.  Een patroon biedt u de mogelijkheid om nauw keuriger te zijn voor een intentie zonder veel meer uitingen te bieden.
@@ -48,7 +48,7 @@ Een patroon is hoofd zakelijk bedoeld om de voor spelling van intenties en rolle
 Het is niet raadzaam om verbeterde entiteits voorspellingen te zien als u meerdere uitingen samenvouwt tot één patroon. Voor eenvoudige entiteiten die moeten worden gestart, moet u uitingen toevoegen of de lijst entiteiten gebruiken. anders wordt uw patroon niet geactiveerd.
 
 ## <a name="patterns-use-entity-roles"></a>Patronen gebruiken entiteits rollen
-Als twee of meer entiteiten in een patroon contextuele gerelateerde zijn, gebruiken patronen entiteits [rollen](luis-concept-roles.md) om contextuele informatie over entiteiten te extra heren.
+Als twee of meer entiteiten in een patroon contextuele gerelateerde zijn, gebruiken patronen entiteits [rollen](./luis-concept-entity-types.md) om contextuele informatie over entiteiten te extra heren.
 
 ## <a name="prediction-scores-with-and-without-patterns"></a>Voorspellings scores met en zonder patronen
 Gezien voldoende voor beeld uitingen, kan LUIS de Voorspellings betrouwbaarheid zonder patronen verg Roten. Patronen verhogen de betrouwbaarheids Score zonder zoveel uitingen te bieden.

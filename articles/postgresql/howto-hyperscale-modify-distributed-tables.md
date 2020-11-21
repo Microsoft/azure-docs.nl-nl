@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 8/10/2020
-ms.openlocfilehash: 628944f9763dc79148e0b64c97158064208412bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cf9f9ca5b8690a38c6e5aa6f519378c0a2e3a4f2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88136937"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026434"
 ---
 # <a name="distribute-and-modify-tables"></a>Tabellen distribueren en bewerken
 
@@ -140,7 +140,7 @@ Als een nieuwe tabel niet is gerelateerd aan anderen in de groep impliciete groe
 SELECT create_distributed_table('A', 'foo', colocate_with => 'none');
 ```
 
-Het splitsen van niet-gerelateerde tabellen in hun eigen groep met co-locaties verbetert de [Shard](howto-hyperscale-scaling.md#rebalance-shards) -prestaties, omdat Shards in dezelfde groep samen moeten worden verplaatst.
+Het splitsen van niet-gerelateerde tabellen in hun eigen groep met co-locaties verbetert de [Shard](howto-hyperscale-scale-rebalance.md) -prestaties, omdat Shards in dezelfde groep samen moeten worden verplaatst.
 
 Wanneer tabellen inderdaad verwant zijn (bijvoorbeeld wanneer ze worden gekoppeld), kan het zinvol zijn om ze expliciet te verplaatsen. De toename van de juiste co-locatie is belang rijker dan de overhead van de herverdeling.
 

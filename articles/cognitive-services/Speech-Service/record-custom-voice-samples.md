@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: erhopf
-ms.openlocfilehash: 2897fe2e0cc8aeb929b0a33f5cdaba9c60f2a244
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dae7b8e0485c1a2456b85e0910f60b2164d4e41c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81261581"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026315"
 ---
 # <a name="record-voice-samples-to-create-a-custom-voice"></a>Stemvoorbeelden vastleggen om een aangepaste stem te maken
 
@@ -71,7 +71,7 @@ De uitingen in uw script kan vanaf elke locatie worden opgehaald: fictief, niet-
 
 Uw uitingen hoeft niet afkomstig te zijn uit dezelfde bron of van hetzelfde soort bron. Ze hoeven nog niets te doen met elkaar. Als u echter woord sets gebruiken (bijvoorbeeld ' u bent aangemeld ') in uw spraak toepassing, moet u deze in uw script toevoegen. Hiermee krijgt u uw aangepaste stem een betere kans op Pronouncing deze zinsdelen goed. En als u besluit om een opname te gebruiken in plaats van de gesynthesizerde spraak, hebt u deze al in dezelfde stem.
 
-Consistentie is het kiezen van Voice-talen, het is de Hallmark van een goed script. Uw script moet veel verschillende woorden en zinnen bevatten met verschillende lengten, structuren en stemmingen van zinnen. Elk geluid in de taal moet meerdere keren worden weer gegeven en in talrijke contexten ( *fonetische dekking*genoemd).
+Consistentie is het kiezen van Voice-talen, het is de Hallmark van een goed script. Uw script moet veel verschillende woorden en zinnen bevatten met verschillende lengten, structuren en stemmingen van zinnen. Elk geluid in de taal moet meerdere keren worden weer gegeven en in talrijke contexten ( *fonetische dekking* genoemd).
 
 Bovendien moet de tekst alle manieren bevatten waarop een bepaald geluid kan worden weer gegeven en kan elk geluid op verschillende plaatsen in de zinnen worden geplaatst. Zowel declaratieve zinnen als vragen moeten worden opgenomen en gelezen met de juiste intonation.
 
@@ -104,7 +104,7 @@ Onder copyright recht kan een actor het lezen van auteurs rechtelijk beschermde 
 
 Gelukkig is het mogelijk om deze problemen volledig te voor komen. Er zijn veel tekst bronnen die u kunt gebruiken zonder toestemming of licentie.
 
-|Tekst bron|Beschrijving|
+|Tekst bron|Description|
 |-|-|
 |[CMU Arctic verzameling](http://festvox.org/cmu_arctic/)|Ongeveer 1100 zinnen die u hebt geselecteerd in auteurs rechtelijk beschermde werken speciaal voor gebruik in spraak-synthese projecten. Een uitstekend uitgangs punt.|
 |Werkt niet meer<br>onder copyright|Werkt normaal gesp roken vóór 1923. Voor het Engels biedt [Project Gutenberg](https://www.gutenberg.org/) tien duizenden van deze werken. Mogelijk wilt u zich richten op nieuwere werken, omdat de taal dichter bij het moderne Engels ligt.|
@@ -211,7 +211,7 @@ Luister zorgvuldig naar elk bestand. In deze fase kunt u kleine ongewenste gelui
 
 Converteer elk bestand naar 16 bits en een sample frequentie van 16 kHz voordat u opslaat. Als u de Studio chatter hebt vastgelegd, verwijdert u het tweede kanaal. Sla elk bestand op in de WAV-indeling en noem de bestanden met het utterance nummer uit het script.
 
-Maak tot slot de *transcript* die elk WAV-bestand koppelt aan een tekst versie van de bijbehorende utterance. Het [maken van aangepaste spraak lettertypen](how-to-customize-voice-font.md) bevat details over de vereiste indeling. U kunt de tekst rechtstreeks vanuit uw script kopiëren. Maak vervolgens een zip-bestand van de WAV-bestanden en de tekst transcript.
+Maak tot slot de *transcript* die elk WAV-bestand koppelt aan een tekst versie van de bijbehorende utterance. Het [maken van aangepaste spraak lettertypen](./how-to-custom-voice-create-voice.md) bevat details over de vereiste indeling. U kunt de tekst rechtstreeks vanuit uw script kopiëren. Maak vervolgens een zip-bestand van de WAV-bestanden en de tekst transcript.
 
 Archiveer de oorspronkelijke opnamen op een veilige plaats voor het geval u ze later nodig hebt. Bewaar ook het script en de notities.
 
@@ -220,4 +220,4 @@ Archiveer de oorspronkelijke opnamen op een veilige plaats voor het geval u ze l
 U bent klaar om uw opnamen te uploaden en uw aangepaste stem te maken.
 
 > [!div class="nextstepaction"]
-> [Aangepaste spraak lettertypen maken](how-to-customize-voice-font.md)
+> [Aangepaste spraak lettertypen maken](./how-to-custom-voice-create-voice.md)

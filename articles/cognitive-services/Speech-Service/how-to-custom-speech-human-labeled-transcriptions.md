@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 81b4ffc8f77673e52bb78f891e3de618b67e0d1b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1d62d36d5cc48edc198e5d7bfc49f7f31b89a2c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74806059"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025613"
 ---
 # <a name="how-to-create-human-labeled-transcriptions"></a>Transcripties met menselijke labels maken
 
@@ -29,7 +29,7 @@ Transcripties voor het Engels van de mens moet worden verschaft als tekst zonder
 
 Enkele voorbeelden:
 
-| Te vermijden tekens | Substitution | Opmerkingen |
+| Te vermijden tekens | Substitution | Notities |
 | ------------------- | ------------ | ----- |
 | "Hallo wereld" | "Hello world" | De aanhalings tekens openen en sluiten worden vervangen door de juiste ASCII-tekens. |
 | Dag van John | Dag van John | De apostrof is vervangen door het juiste ASCII-teken. |
@@ -84,7 +84,7 @@ Transcripties voor Mandarijn-Chinees met menselijke labels moeten een UTF-8-code
 
 Enkele voorbeelden:
 
-| Te vermijden tekens | Substitution   | Opmerkingen |
+| Te vermijden tekens | Substitution   | Notities |
 | ------------------- | -------------- | ----- |
 | "你好" | "你好" | De aanhalings tekens openen en sluiten worden vervangen door de juiste tekens. |
 | 需要什么帮助? | 需要什么帮助？| Het vraag teken is vervangen door het juiste teken. |
@@ -164,7 +164,7 @@ Hier volgen enkele voor beelden van normalisatie automatisch uitgevoerd op de tr
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Uw gegevens voorbereiden en testen](how-to-custom-speech-test-data.md)
+- [Uw gegevens voorbereiden en testen](./how-to-custom-speech-test-and-train.md)
 - [Uw gegevens controleren](how-to-custom-speech-inspect-data.md)
 - [Uw gegevens evalueren](how-to-custom-speech-evaluate-data.md)
 - [Uw model trainen](how-to-custom-speech-train-model.md)

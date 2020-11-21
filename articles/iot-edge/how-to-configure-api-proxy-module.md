@@ -12,19 +12,19 @@ ms.custom:
 - amqp
 - mqtt
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: f7536034eeac8548304f6a7f861910a99cd72a27
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 894398d63e326db3c6ee9de9bebc426a6e621600
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94447765"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024667"
 ---
 # <a name="configure-the-api-proxy-module-for-your-gateway-hierarchy-scenario-preview"></a>De API-proxy module configureren voor uw gateway hiërarchie scenario (preview-versie)
 
 Met de API-proxy module kunnen IoT Edge-apparaten HTTP-aanvragen via gateways verzenden in plaats van directe verbindingen met Cloud Services te maken. In dit artikel worden de configuratie opties beschreven, zodat u de module kunt aanpassen ter ondersteuning van de vereisten voor de gateway-hiërarchie.
 
 >[!NOTE]
->Voor deze functie is IoT Edge versie 1,2, in open bare preview, een Linux-container vereist.
+>Voor deze functie is IoT Edge versie 1.2, in openbare preview, met Linux-containers vereist.
 
 In sommige netwerk architecturen hebben IoT Edge apparaten achter gateways geen rechtstreekse toegang tot de Cloud. Modules die proberen verbinding te maken met Cloud Services, zullen mislukken. De API-proxy module biedt ondersteuning voor downstream IoT Edge-apparaten in deze configuratie door het opnieuw routeren van module verbindingen om de lagen van een gateway hiërarchie door te lopen. Het biedt clients een veilige manier om via HTTPS te communiceren met meerdere services zonder tunneling, maar door de verbindingen op elke laag te beëindigen. De API-proxy module fungeert als een proxy module tussen de IoT Edge-apparaten in een gateway-hiërarchie totdat deze het IoT Edge apparaat in de bovenste laag bereikt. Op dat moment worden door de services die worden uitgevoerd op de bovenste laag IoT Edge apparaat deze aanvragen afhandelt, en in de API-proxy module alle HTTP-verkeer van lokale services naar de Cloud via één poort.
 
@@ -50,7 +50,7 @@ De API-proxy module wordt geleverd met een standaard configuratie die algemene s
 
 Momenteel zijn de standaard omgevings variabelen:
 
-| Omgevingsvariabele | Beschrijving |
+| Omgevingsvariabele | Description |
 | -------------------- | ----------- |
 | `PROXY_CONFIG_ENV_VAR_LIST` | Een lijst met alle variabelen die u wilt bijwerken in een lijst met door komma's gescheiden waarden. Met deze stap wordt voor komen dat de verkeerde configuratie-instellingen per ongeluk worden gewijzigd.
 | `NGINX_DEFAULT_PORT` | Hiermee wijzigt u de poort waarnaar de nginx-proxy luistert. Als u deze omgevings variabele bijwerkt, moet u ervoor zorgen dat de poort die u selecteert ook wordt weer gegeven in de module dockerfile en is gedeclareerd als een poort binding in het implementatie manifest.<br><br>De standaard waarde is 443.<br><br>Wanneer de implementatie wordt geïmplementeerd vanuit Azure Marketplace, wordt de standaard poort bijgewerkt naar 8000, om conflicten met de edgeHub-module te voor komen. Zie [open poorten minimaliseren](#minimize-open-ports)voor meer informatie. |
@@ -113,7 +113,7 @@ Dit scenario vereist dat downstream IoT Edge-apparaten verwijzen naar de domein 
 
 Deze use-case wordt geïllustreerd in de zelf studie [een hiërarchie van IOT edge apparaten maken met behulp van gateways](tutorial-nested-iot-edge.md).
 
-Configureer de volgende modules in de **bovenste laag** :
+Configureer de volgende modules in de **bovenste laag**:
 
 * Een docker-register module
   * Configureer de module met een naam die kan worden onthouden, zoals het *REGI ster* en maak een poort in de module beschikbaar voor het ontvangen van aanvragen.
@@ -121,7 +121,7 @@ Configureer de volgende modules in de **bovenste laag** :
 * Een API-proxy module
   * Configureer de volgende omgevings variabelen:
 
-    | Naam | Waarde |
+    | Name | Waarde |
     | ---- | ----- |
     | `DOCKER_REQUEST_ROUTE_ADDRESS` | De naam van de register module en open poort. Bijvoorbeeld `registry:5000`. |
     | `NGINX_DEFAULT_PORT` | De poort waarop de nginx-proxy luistert naar aanvragen van downstream-apparaten. Bijvoorbeeld `8000`. |
@@ -147,7 +147,7 @@ Configureer de volgende module op een **lagere laag** voor dit scenario:
 * Een API-proxy module
   * Configureer de volgende omgevings variabelen:
 
-    | Naam | Waarde |
+    | Name | Waarde |
     | ---- | ----- |
     | `NGINX_DEFAULT_PORT` | De poort waarop de nginx-proxy luistert naar aanvragen van downstream-apparaten. Bijvoorbeeld `8000`. |
 
@@ -173,13 +173,13 @@ Een ander gebruiks voorbeeld voor de API-proxy module is om IoT Edge-apparaten i
 
 In dit scenario wordt de [Azure Blob Storage op IOT Edge](https://azuremarketplace.microsoft.com/marketplace/apps/azure-blob-storage.edge-azure-blob-storage) module in de bovenste laag gebruikt om het maken en uploaden van blobs af te handelen.
 
-Configureer de volgende modules in de **bovenste laag** :
+Configureer de volgende modules in de **bovenste laag**:
 
 * Een Azure-Blob Storage op IoT Edge-module.
 * Een API-proxy module
   * Configureer de volgende omgevings variabelen:
 
-    | Naam | Waarde |
+    | Name | Waarde |
     | ---- | ----- |
     | `BLOB_UPLOAD_ROUTE_ADDRESS` | De naam van de Blob Storage-module en de open poort. Bijvoorbeeld `azureblobstorageoniotedge:1102`. |
     | `NGINX_DEFAULT_PORT` | De poort waarop de nginx-proxy luistert naar aanvragen van downstream-apparaten. Bijvoorbeeld `8000`. |
@@ -205,7 +205,7 @@ Configureer de volgende module op een **lagere laag** voor dit scenario:
 * Een API-proxy module
   * Configureer de volgende omgevings variabelen:
 
-    | Naam | Waarde |
+    | Name | Waarde |
     | ---- | ----- |
     | `NGINX_DEFAULT_PORT` | De poort waarop de nginx-proxy luistert naar aanvragen van downstream-apparaten. Bijvoorbeeld `8000`. |
 
@@ -263,7 +263,7 @@ Wanneer de API proxy-module een proxy configuratie parseert, vervangt deze eerst
 
 Als u de proxy configuratie dynamisch wilt bijwerken, gebruikt u de volgende stappen:
 
-1. Schrijf het configuratie bestand. U kunt deze standaard sjabloon als referentie gebruiken: [nginx_default_config. conf](hhttps://github.com/Azure/iotedge/blob/master/edge-modules/api-proxy-module/templates/nginx_default_config.conf)
+1. Schrijf het configuratie bestand. U kunt deze standaard sjabloon als referentie gebruiken: [nginx_default_config. conf](https://github.com/Azure/iotedge/blob/master/edge-modules/api-proxy-module/templates/nginx_default_config.conf)
 1. Kopieer de tekst van het configuratie bestand en converteer het naar base64.
 1. Plak het gecodeerde configuratie bestand als de waarde van de `proxy_config` gewenste eigenschap in de module dubbele.
 

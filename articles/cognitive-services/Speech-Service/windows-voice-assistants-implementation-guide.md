@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: travisw
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a529875536c2feafe05695e5d20daed0873a95e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0503e0bf2fe152296ca6890e14503d05bd3bbeef
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88934443"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024769"
 ---
 # <a name="implementing-voice-assistants-on-windows"></a>Spraak assistenten implementeren in Windows
 
@@ -30,15 +30,15 @@ Nadat u [uw omgeving hebt ingesteld](how-to-windows-voice-assistants-get-started
 
 #### <a name="ensure-that-the-microphone-is-available-and-accessible-then-monitor-its-state"></a>Zorg ervoor dat de microfoon beschikbaar en toegankelijk is en controleer vervolgens de status
 
-MVA moet een microfoon hebben zodat deze toegankelijk is om een spraak activering te kunnen detecteren. Gebruik de klassen [AppCapability](https://docs.microsoft.com/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability?view=winrt-18362), [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher?view=winrt-18362)en [MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture?view=winrt-18362) om te controleren op de privacy van de microfoon, de aanwezigheid van apparaten en de apparaatstatus (zoals volume en dempen).
+MVA moet een microfoon hebben zodat deze toegankelijk is om een spraak activering te kunnen detecteren. Gebruik de klassen [AppCapability](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability?view=winrt-18362), [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher?view=winrt-18362)en [MediaCapture](/uwp/api/windows.media.capture.mediacapture?view=winrt-18362) om te controleren op de privacy van de microfoon, de aanwezigheid van apparaten en de apparaatstatus (zoals volume en dempen).
 
 ### <a name="register-the-application-with-the-background-service"></a>De toepassing registreren bij de achtergrond service
 
-De toepassing moet worden geregistreerd bij de achtergrond service om MVA de toepassing op de achtergrond te starten. Bekijk [hier](https://docs.microsoft.com/windows/uwp/launch-resume/register-a-background-task)een volledige hand leiding voor de registratie van de achtergrond service.
+De toepassing moet worden geregistreerd bij de achtergrond service om MVA de toepassing op de achtergrond te starten. Bekijk [hier](/windows/uwp/launch-resume/register-a-background-task)een volledige hand leiding voor de registratie van de achtergrond service.
 
 ### <a name="unlock-the-limited-access-feature"></a>De functie beperkte toegang ontgrendelen
 
-Gebruik de functie sleutel voor beperkte toegang van micro soft om de functie Voice Assistant te ontgrendelen. Gebruik de [LimitedAccessFeature](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures?view=winrt-18362) -klasse van de Windows SDK om dit te doen.
+Gebruik de functie sleutel voor beperkte toegang van micro soft om de functie Voice Assistant te ontgrendelen. Gebruik de [LimitedAccessFeature](/uwp/api/windows.applicationmodel.limitedaccessfeatures?view=winrt-18362) -klasse van de Windows SDK om dit te doen.
 
 ### <a name="register-the-keyword-for-the-application"></a>Het tref woord voor de toepassing registreren
 
@@ -86,7 +86,7 @@ Zodra een spraak agent toepassing is geactiveerd door de stem, is de volgende st
 
 ### <a name="retrieve-activation-audio"></a>Activerings audio ophalen
 
-Maak een [AudioGraph](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph) en geef deze door aan de `CreateAudioDeviceInputNodeAsync` van `ConversationalAgentSession` . Hiermee wordt de audio buffer van de grafiek geladen met de audio, te *beginnen ongeveer drie seconden voordat het sleutel woord is gedetecteerd*. Deze extra toonaangevende audio is opgenomen om een breed scala aan sleutel woorden en luidspreker snelheden te bieden. Vervolgens verwerkt u de gebeurtenis [QuantumStarted](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.quantumstarted?view=winrt-18362) uit het audio diagram om de audio gegevens op te halen.
+Maak een [AudioGraph](/uwp/api/windows.media.audio.audiograph) en geef deze door aan de `CreateAudioDeviceInputNodeAsync` van `ConversationalAgentSession` . Hiermee wordt de audio buffer van de grafiek geladen met de audio, te *beginnen ongeveer drie seconden voordat het sleutel woord is gedetecteerd*. Deze extra toonaangevende audio is opgenomen om een breed scala aan sleutel woorden en luidspreker snelheden te bieden. Vervolgens verwerkt u de gebeurtenis [QuantumStarted](/uwp/api/windows.media.audio.audiograph.quantumstarted?view=winrt-18362) uit het audio diagram om de audio gegevens op te halen.
 
 ```csharp
 var inputNode = await agentSession.CreateAudioDeviceInputNodeAsync(audioGraph);
@@ -118,7 +118,7 @@ De volgende stappen zijn van toepassing op de vereisten om een spraak-assistent 
 
 Ga naar de [hand leiding best practices](windows-voice-assistants-best-practices.md)voor hulp bij het ontwerpen van de bovenstaande vergrendelings ervaring.
 
-Wanneer een app een weer gave boven slot toont, wordt deze als ' kiosk modus ' beschouwd. Zie de documentatie voor de [kiosk modus](https://docs.microsoft.com/windows-hardware/drivers/partnerapps/create-a-kiosk-app-for-assigned-access)voor meer informatie over het implementeren van een app die gebruikmaakt van de kiosk modus.
+Wanneer een app een weer gave boven slot toont, wordt deze als ' kiosk modus ' beschouwd. Zie de documentatie voor de [kiosk modus](/windows-hardware/drivers/partnerapps/create-a-kiosk-app-for-assigned-access)voor meer informatie over het implementeren van een app die gebruikmaakt van de kiosk modus.
 
 ### <a name="transitioning-above-lock"></a>Overgangen boven slot
 
@@ -149,7 +149,7 @@ De vermelding van de toepassing op de pagina privacy-instellingen voor spraak ac
 Gebruik de API om de toepassing op een programmatische manier te sluiten wanneer deze boven of onder de vergren deling wordt gebruikt `WindowService.CloseWindow()` . Hiermee worden alle UWP levenscyclus methoden geactiveerd, inclusief OnSuspend, waardoor de toepassing het exemplaar kan verwijderen voordat deze wordt `ConversationalAgentSession` gesloten.
 
 > [!NOTE]
-> De toepassing kan worden gesloten zonder het [onderstaande vergrendelings exemplaar](https://docs.microsoft.com/windows-hardware/drivers/partnerapps/create-a-kiosk-app-for-assigned-access#add-a-way-out-of-assigned-access-)te sluiten. In dit geval moet de bovenstaande vergrendelings weergave ' opschonen ', zodat u zeker weet dat er geen gebeurtenis-handlers of taken worden uitgevoerd die de bovenstaande vergrendelings weergave proberen te bewerken.
+> De toepassing kan worden gesloten zonder het [onderstaande vergrendelings exemplaar](/windows-hardware/drivers/partnerapps/create-a-kiosk-app-for-assigned-access#add-a-way-out-of-assigned-access-)te sluiten. In dit geval moet de bovenstaande vergrendelings weergave ' opschonen ', zodat u zeker weet dat er geen gebeurtenis-handlers of taken worden uitgevoerd die de bovenstaande vergrendelings weergave proberen te bewerken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

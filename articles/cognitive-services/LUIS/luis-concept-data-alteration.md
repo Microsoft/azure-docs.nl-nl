@@ -6,12 +6,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/06/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f3eb30662cae5f117942db6322b27491670abb1b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 621a41f743b751a8c24bf6f6ad8497fb5c79775c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324838"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026007"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Utterance-gegevens wijzigen vóór of tijdens de voor spelling
 LUIS biedt manieren om de utterance voor of tijdens de voor spelling te bewerken. Dit zijn onder andere het corrigeren van de [Spelling](luis-tutorial-bing-spellcheck.md)en het oplossen van problemen met de tijd zone voor vooraf ontwikkelde [datetimeV2](luis-reference-prebuilt-datetimev2.md).
@@ -98,7 +98,7 @@ Als u de geretourneerde vooraf gemaakte datetimeV2 wilt aanpassen aan zomer tijd
 
 #### <a name="v2-prediction-c-code-determines-correct-value-of-parameter"></a>V2-voor spelling C#-code bepaalt de juiste waarde van para meter
 
-De volgende C#-code maakt gebruik van de methode [FindSystemTimeZoneById](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples) van de klasse [time zone info](https://docs.microsoft.com/dotnet/api/system.timezoneinfo) om de juiste offset waarde te bepalen op basis van de systeem tijd:
+De volgende C#-code maakt gebruik van de methode [FindSystemTimeZoneById](/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples) van de klasse [time zone info](/dotnet/api/system.timezoneinfo) om de juiste offset waarde te bepalen op basis van de systeem tijd:
 
 ```csharp
 // Get CST zone id

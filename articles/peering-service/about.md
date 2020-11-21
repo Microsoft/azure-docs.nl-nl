@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
 ms.date: 05/18/2020
 ms.author: derekol
-ms.openlocfilehash: 03ece391b6f33b47f34705cec1c5907602ac7b23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 198ba23920179e71e095e498ee2173d7f0111d42
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400176"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026726"
 ---
 # <a name="azure-peering-service-overview"></a>Overzicht van Azure peering-service
 
@@ -45,7 +45,7 @@ Peering-service is:
 Peering-service is geen privé-connectiviteits product, zoals Azure ExpressRoute of een VPN-product.
 
 > [!NOTE]
-> Zie [ExpressRoute-documentatie](https://docs.microsoft.com/azure/expressroute/)voor meer informatie over ExpressRoute.
+> Zie [ExpressRoute-documentatie](../expressroute/index.yml)voor meer informatie over ExpressRoute.
 >
 
 ## <a name="background"></a>Achtergrond
@@ -57,7 +57,7 @@ Service providers van micro soft en partners zorgen ervoor dat het verkeer voor 
 ![Micro soft-netwerk en open bare connectiviteit](./media/peering-service-about/peering-service-background-final.png)
 
 > [!NOTE]
-> Zie het [wereld wijde netwerk van micro soft](https://docs.microsoft.com/azure/networking/microsoft-global-network)voor meer informatie over het globale micro soft-netwerk.
+> Zie het [wereld wijde netwerk van micro soft](../networking/microsoft-global-network.md)voor meer informatie over het globale micro soft-netwerk.
 >
 
 ## <a name="why-use-peering-service"></a>Waarom peering service gebruiken?

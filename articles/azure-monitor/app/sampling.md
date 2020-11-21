@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e4c5000adb2339d3fd0f828781a60f75c75894b5
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 87e33940d927fc9116c03345011e21398384d484
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168593"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024412"
 ---
 # <a name="sampling-in-application-insights"></a>Steekproeven in Application Insights
 
@@ -25,7 +25,7 @@ Wanneer metrische aantallen worden weer gegeven in de portal, worden ze opnieuw 
 * Beproefde vaste-rente Beschik baarheid is beschikbaar in recente versies van de Application Insights Sdk's voor ASP.NET, ASP.NET Core, java (zowel de agent als de SDK) en python.
 * Opname sampling werkt op het eind punt van de Application Insights service. Dit geldt alleen wanneer er geen andere steek proeven van kracht zijn. Als de SDK voor beelden van uw telemetrie is, wordt opname sampling uitgeschakeld.
 * Als u voor webtoepassingen aangepaste gebeurtenissen registreert en er zeker van wilt zijn dat een set gebeurtenissen wordt behouden of verwijderd, moeten de gebeurtenissen dezelfde `OperationId` waarde hebben.
-* Als u analyse query's schrijft, moet u [rekening houden met steek proeven](../log-query/aggregations.md). Met name in plaats van records eenvoudigweg te tellen, moet u gebruiken `summarize sum(itemCount)` .
+* Als u analyse query's schrijft, moet u [rekening houden met steek proeven](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#aggregations). Met name in plaats van records eenvoudigweg te tellen, moet u gebruiken `summarize sum(itemCount)` .
 * Sommige typen telemetrie, met inbegrip van metrische gegevens over prestaties en aangepaste metrische gegevens, worden altijd bewaard, ongeacht of steek proeven zijn ingeschakeld of niet.
 
 De volgende tabel bevat een overzicht van de beschik bare bemonsterings typen voor elke SDK en type toepassing:
@@ -34,7 +34,7 @@ De volgende tabel bevat een overzicht van de beschik bare bemonsterings typen vo
 |-|-|-|-|
 | ASP.NET | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-aspnet-applications) | [Ja](#configuring-fixed-rate-sampling-for-aspnet-applications) | Alleen als er geen andere steek proeven van kracht zijn |
 | ASP.NET Core | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Ja](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Alleen als er geen andere steek proeven van kracht zijn |
-| Azure Functions | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-azure-functions) | Nee | Alleen als er geen andere steek proeven van kracht zijn |
+| Azure Functions | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-azure-functions) | No | Alleen als er geen andere steek proeven van kracht zijn |
 | Java | Nee | [Ja](#configuring-fixed-rate-sampling-for-java-applications) | Alleen als er geen andere steek proeven van kracht zijn |
 | Node.JS | Nee | [Ja](./nodejs.md#sampling) | Alleen als er geen andere steek proeven van kracht zijn
 | Python | Nee | [Ja](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Alleen als er geen andere steek proeven van kracht zijn |
@@ -78,7 +78,7 @@ In [`ApplicationInsights.config`](./configuration-with-applicationinsights-confi
 
 * `<MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>`
   
-    Het doel aantal [logische bewerkingen](./correlation.md#data-model-for-telemetry-correlation) dat het adaptieve algoritme **op elke server host**gericht is. Als uw web-app op veel hosts wordt uitgevoerd, verlaagt u deze waarde zodat deze binnen de doel frequentie van het verkeer op de Application Insights Portal blijft.
+    Het doel aantal [logische bewerkingen](./correlation.md#data-model-for-telemetry-correlation) dat het adaptieve algoritme **op elke server host** gericht is. Als uw web-app op veel hosts wordt uitgevoerd, verlaagt u deze waarde zodat deze binnen de doel frequentie van het verkeer op de Application Insights Portal blijft.
 
 * `<EvaluationInterval>00:00:15</EvaluationInterval>` 
   

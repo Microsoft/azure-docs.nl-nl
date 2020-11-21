@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/10/2019
-ms.openlocfilehash: cf138248e878b21531df2035dfeda1b90162ea99
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf5ab7361c84fb787366c7c361829e52362fe427
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91536100"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025905"
 ---
 # <a name="intents-in-your-luis-app"></a>Intenties in uw LUIS-app
 
@@ -32,7 +32,7 @@ App-intenties voor reizen   |   Voorbeelden van utterances   |
 Alle toepassingen worden geleverd met de vooraf gedefinieerde intentie, '[geen](#none-intent)', de terugval opzet.
 
 ## <a name="prebuilt-domains-provide-intents"></a>Vooraf ontwikkelde domeinen bieden intenties
-Naast de intenties die u definieert, kunt u vooraf ontwikkelde intenties gebruiken uit een van de [vooraf ontwikkelde domeinen](luis-how-to-use-prebuilt-domains.md).
+Naast de intenties die u definieert, kunt u vooraf ontwikkelde intenties gebruiken uit een van de [vooraf ontwikkelde domeinen](./howto-add-prebuilt-models.md).
 
 ## <a name="return-all-intents-scores"></a>Alle uitstaande scores van intenties retour neren
 U wijst een utterance toe aan één intentie. Wanneer LUIS een utterance op het eind punt ontvangt, wordt standaard het hoogste doel voor die utterance geretourneerd.
@@ -59,7 +59,7 @@ Maak een intentie wanneer de _bedoeling_ van de gebruiker een actie in uw client
 
 ## <a name="prebuilt-domain-intents"></a>Vooraf ontwikkelde domein intentie
 
-[Vooraf ontwikkelde domeinen](luis-how-to-use-prebuilt-domains.md) bieden intenties met uitingen.
+[Vooraf ontwikkelde domeinen](./howto-add-prebuilt-models.md) bieden intenties met uitingen.
 
 ## <a name="none-intent"></a>None- intent
 

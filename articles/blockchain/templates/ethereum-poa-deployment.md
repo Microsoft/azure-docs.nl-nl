@@ -5,12 +5,12 @@ ms.date: 07/23/2020
 ms.topic: how-to
 ms.reviewer: ravastra
 ms.custom: devx-track-js
-ms.openlocfilehash: 5bbfca4d890440574ee6717ca910969226fc781a
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: e680bc601b7f230314c1063523a003e95a849c0a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94987062"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024395"
 ---
 # <a name="deploy-ethereum-proof-of-authority-consortium-solution-template-on-azure"></a>Ethereum proof-of-Authority consortium-oplossings sjabloon implementeren in azure
 
@@ -48,7 +48,9 @@ De implementatie van elk consortium omvat:
 * Azure Monitor voor het samen voegen van Logboeken en prestatie statistieken
 * VNet-gateway (optioneel) voor het toestaan van VPN-verbindingen tussen privé-VNets
 
-De RPC-en peering-eind punten zijn standaard toegankelijk via het open bare IP-adres om vereenvoudigde connectiviteit tussen abonnementen en Clouds mogelijk te maken. Voor toegangs beheer op toepassings niveau kunt u de machtigings contracten van de pariteit gebruiken. Netwerken die achter Vpn's zijn geïmplementeerd, maken gebruik van VNet-gateways voor connectiviteit tussen verschillende abonnementen. Omdat VPN-en VNet-implementaties complexer zijn, kunt u beginnen met een openbaar IP-model bij het maken van een prototype van een oplossing.
+De RPC-en peering-eind punten zijn standaard toegankelijk via het open bare IP-adres om vereenvoudigde connectiviteit mogelijk te maken tussen
+
+abonnementen en Clouds. Voor toegangs beheer op toepassings niveau kunt u [de machtigings contracten van de pariteit](https://openethereum.github.io/Permissioning.html)gebruiken. Netwerken die achter Vpn's zijn geïmplementeerd, maken gebruik van VNet-gateways voor connectiviteit tussen verschillende abonnementen. Omdat VPN-en VNet-implementaties complexer zijn, kunt u beginnen met een openbaar IP-model bij het maken van een prototype van een oplossing.
 
 Docker-containers worden gebruikt voor betrouw baarheid en modulariteit. Azure Container Registry wordt gebruikt voor het hosten en leveren van geversiete installatie kopieën als onderdeel van elke implementatie. De container installatie kopieën bestaan uit:
 
@@ -685,7 +687,7 @@ Nu uw slimme contract is geïmplementeerd, kunt u een trans actie verzenden om e
 
 ## <a name="webassembly-wasm-support"></a>Ondersteuning voor webassembly (WASM)
 
-Ondersteuning voor webassembly is al voor u ingeschakeld op nieuwe geïmplementeerde PoA-netwerken. Dit maakt het mogelijk om intelligente contracten te ontwikkelen in elke taal die wordt gepoold naar Web-Assembly (roest, C, C++). Zie [zelf studie over pariteits technische](https://github.com/paritytech/pwasm-tutorial)voor meer informatie.
+Ondersteuning voor webassembly is al voor u ingeschakeld op nieuwe geïmplementeerde PoA-netwerken. Dit maakt het mogelijk om intelligente contracten te ontwikkelen in elke taal die wordt gepoold naar Web-Assembly (roest, C, C++). Zie voor meer informatie: [pariteits overzicht van Webassembly](https://openethereum.github.io/WebAssembly-Home.html) en [zelf studie van parity tech](https://github.com/paritytech/pwasm-tutorial)
 
 ## <a name="faq"></a>Veelgestelde vragen
 

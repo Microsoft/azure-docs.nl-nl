@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: trbye
-ms.openlocfilehash: 5d95525c7dfecd44758c86903ca4a96c2290df52
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c27493748381a3aced92aab41745f352f228c50e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487773"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024990"
 ---
 # <a name="what-is-conversation-transcription-in-meetings-preview"></a>Wat is een conversatie transcriptie in vergaderingen (preview-versie)?
 
@@ -54,7 +54,7 @@ Dit is een overzicht op hoog niveau van de werking van de conversatie transcript
 
 ## <a name="expected-inputs"></a>Verwachte invoer
 
-- **Multi Channel audio stream** : Zie de [micro soft speech Device SDK-microfoon](https://aka.ms/cts/microphone)voor informatie over de specificatie en het ontwerp. Raadpleeg voor meer informatie of een Development Kit aanschaffen [micro soft speech Device SDK](https://aka.ms/cts/getsdk)(Engelstalig).
+- **Multi Channel audio stream** : Zie de [micro soft speech Device SDK-microfoon](./speech-devices-sdk-microphone.md)voor informatie over de specificatie en het ontwerp. Raadpleeg voor meer informatie of een Development Kit aanschaffen [micro soft speech Device SDK](./get-speech-devices-sdk.md)(Engelstalig).
 - Voor **beelden van gebruikers spraak** : conversatie transcriptie moet vóór de conversatie gebruikers profielen hebben. U moet audio-opnames van elke gebruiker verzamelen en vervolgens de opnamen naar de [service Signature generate](https://aka.ms/cts/signaturegenservice) verzenden om de audio te valideren en gebruikers profielen te genereren.
 
 > [!NOTE]

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 3/16/2020
-ms.openlocfilehash: 7e455565a0cd5e1fc96a6fe7d9e0502da3214fcf
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 73705434aef3ee438c02fbfd6502d30e7620b695
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92909910"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026451"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---hyperscale-citus"></a>Gebruik de Azure Portal om waarschuwingen in te stellen voor de Azure Database for PostgreSQL-grootschalige (Citus)
 
@@ -26,8 +26,8 @@ U kunt een waarschuwing configureren om de volgende acties uit te voeren wanneer
 * Een webhook aanroepen.
 
 U kunt informatie over waarschuwings regels configureren en ophalen met behulp van:
-* [Azure Portal](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Azure-portal](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
+* [Azure-CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Een waarschuwings regel maken op basis van een metriek van de Azure Portal
@@ -41,13 +41,13 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
 
 4. De pagina **regel maken** wordt geopend, zoals hieronder wordt weer gegeven. Vul de vereiste gegevens in:
 
-   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/4-add-rule-form.png" alt-text="Waarschuwings regels selecteren":::
+   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/4-add-rule-form.png" alt-text="Formulier voor metrische waarschuwing toevoegen":::
 
-5. Selecteer in de sectie **voor waarde** de optie **toevoegen** .
+5. Selecteer in de sectie **voor waarde** de optie **toevoegen**.
 
 6. Selecteer een waarde in de lijst met signalen waarop u wilt worden gewaarschuwd. In dit voor beeld selecteert u ' opslag percentage '.
    
-   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/6-configure-signal-logic.png" alt-text="Waarschuwings regels selecteren":::
+   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/6-configure-signal-logic.png" alt-text="Scherm afbeelding toont de logica pagina voor signalen configureren, waar u verschillende signalen kunt weer geven.":::
 
 7. De waarschuwings logica configureren:
 
@@ -58,13 +58,13 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
    
    Selecteer **gereed** wanneer u klaar bent.
 
-   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/7-set-threshold-time.png" alt-text="Waarschuwings regels selecteren":::
+   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/7-set-threshold-time.png" alt-text="Scherm afbeelding toont het deel venster waarin u waarschuwings logica kunt configureren.":::
 
 8. Selecteer in de sectie **actie groepen** de optie **nieuwe maken** om een nieuwe groep te maken voor het ontvangen van meldingen over de waarschuwing.
 
 9. Vul het formulier actie groep toevoegen in met een naam, korte naam, abonnement en resource groep.
 
-    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/9-add-action-group.png" alt-text="Waarschuwings regels selecteren":::
+    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/9-add-action-group.png" alt-text="Scherm afbeelding toont het formulier actie groep toevoegen waarin u de beschreven waarden kunt invoeren.":::
 
 10. Een actie type voor **e-mail/SMS/push/Voice** configureren.
     
@@ -72,11 +72,11 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
    
     Selecteer **OK** wanneer u klaar bent.
 
-    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/10-action-group-type.png" alt-text="Waarschuwings regels selecteren":::
+    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/10-action-group-type.png" alt-text="Scherm afbeelding toont het deel venster E-mail/sec. M S/push/Voice.":::
 
 11. Geef een naam, beschrijving en ernst voor de waarschuwings regel op.
 
-    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/11-name-description-severity.png" alt-text="Waarschuwings regels selecteren"::: 
+    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/11-name-description-severity.png" alt-text="Scherm afbeelding toont het deel venster waarschuwings Details."::: 
 
 12. Selecteer **waarschuwings regel maken** om de waarschuwing te maken.
 
@@ -101,8 +101,8 @@ We raden u aan om op elk knoop punt in elke server groep schijf ruimte waarschuw
 Wanneer de schijf de schijfruimte limiet nadert, kunt u met deze technieken meer vrije ruimte krijgen:
 
 * Controleer het Bewaar beleid voor gegevens. Verplaats zo mogelijk oudere gegevens naar koude opslag.
-* Overweeg om [knoop punten toe te voegen](howto-hyperscale-scaling.md#add-worker-nodes) aan de Server groep en Shards te herverdelen. Met herverdeling worden de gegevens verdeeld over meer computers.
-* Overweeg [de capaciteit](howto-hyperscale-scaling.md#increase-or-decrease-vcores-on-nodes) van worker-knoop punten te groeien. Elke werk nemer kan Maxi maal 2 TiB aan opslag ruimte hebben. Het toevoegen van knoop punten moet echter worden uitgevoerd voordat het formaat van knoop punten wordt gewijzigd, omdat het toevoegen van knoop punten sneller is voltooid.
+* Overweeg om [knoop punten toe te voegen](howto-hyperscale-scale-grow.md#add-worker-nodes) aan de Server groep en Shards te herverdelen. Met herverdeling worden de gegevens verdeeld over meer computers.
+* Overweeg [de capaciteit](howto-hyperscale-scale-grow.md#increase-or-decrease-vcores-on-nodes) van worker-knoop punten te groeien. Elke werk nemer kan Maxi maal 2 TiB aan opslag ruimte hebben. Het toevoegen van knoop punten moet echter worden uitgevoerd voordat het formaat van knoop punten wordt gewijzigd, omdat het toevoegen van knoop punten sneller is voltooid.
 
 ### <a name="cpu-usage"></a>CPU-gebruik
 

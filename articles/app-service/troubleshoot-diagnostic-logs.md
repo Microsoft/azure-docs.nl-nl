@@ -5,12 +5,12 @@ ms.assetid: c9da27b2-47d4-4c33-a3cb-1819955ee43b
 ms.topic: article
 ms.date: 09/17/2019
 ms.custom: devx-track-csharp, seodec18, devx-track-azurecli
-ms.openlocfilehash: a4670da5f5e89a4e020e26d1d704f172b8ab0864
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 99a3c9a9c26eebe8dfdf11baf718fd13f7539607
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968312"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025273"
 ---
 # <a name="enable-diagnostics-logging-for-apps-in-azure-app-service"></a>Diagnostische logboek registratie inschakelen voor apps in Azure App Service
 ## <a name="overview"></a>Overzicht
@@ -23,7 +23,7 @@ In dit artikel wordt gebruikgemaakt van de [Azure Portal](https://portal.azure.c
 >
 >
 
-|Type|Platform|Locatie|Beschrijving|
+|Type|Platform|Locatie|Description|
 |-|-|-|-|
 | Toepassingslogboeken | Windows, Linux | App Service bestands systeem en/of Azure Storage-blobs | Registreert berichten die zijn gegenereerd door de toepassings code. De berichten kunnen worden gegenereerd door het webframework dat u kiest, of vanuit de code van uw toepassing rechtstreeks met het standaard logboek registratie patroon van uw taal. Aan elk bericht wordt een van de volgende categorieën toegewezen: **kritiek**, **fout**, **waarschuwing**, **info**, **fout opsporing** en **tracering**. U kunt selecteren hoe uitgebreid u de logboek registratie wilt maken door het Ernst niveau in te stellen wanneer u logboek registratie van toepassingen inschakelt.|
 | Logboek registratie van webserver| Windows | App Service bestands systeem of Azure Storage-blobs| Onbewerkte HTTP-aanvraag gegevens in de [uitgebreide W3C-indeling van logboek bestand](/windows/desktop/Http/w3c-logging). Elk logboek bericht bevat gegevens zoals de HTTP-methode, bron-URI, client-IP, client poort, gebruikers agent, respons code, enzovoort. |
@@ -166,7 +166,7 @@ Voor Linux/container-apps bevat het ZIP-bestand console-uitvoer logboeken voor d
 
 Voor Windows-apps bevat het ZIP-bestand de inhoud van de *D:\Home\LogFiles* -map in het app service-Bestands systeem. Het heeft de volgende structuur:
 
-| Logboek type | Directory | Beschrijving |
+| Logboek type | Directory | Description |
 |-|-|-|
 | **Toepassings logboeken** |*/LogFiles/Application/* | Bevat een of meer tekst bestanden. De indeling van de logboek berichten is afhankelijk van de logboek registratie provider die u gebruikt. |
 | **Traceringen van mislukte aanvragen** | */LogFiles/W3SVC#########/* | Bevat XML-bestanden en een XSL-bestand. U kunt de opgemaakte XML-bestanden weer geven in de browser. |
@@ -185,16 +185,18 @@ Met de nieuwe [integratie van Azure monitor](https://aka.ms/appsvcblog-azmon)kun
 
 De volgende tabel bevat de ondersteunde logboek typen en beschrijvingen: 
 
-| Logboek type | Windows | Windows-container | Linux | Linux-container | Beschrijving |
+| Logboek type | Windows | Windows-container | Linux | Linux-container | Description |
 |-|-|-|-|-|-|
 | AppServiceConsoleLogs | Java SE & Tomcat | Ja | Ja | Ja | Standaard uitvoer en standaard fout |
 | AppServiceHTTPLogs | Ja | Ja | Ja | Ja | Webserver logboeken |
-| AppServiceEnvironmentPlatformLogs | Ja | N.v.t. | Ja | Ja | App Service Environment: schalen, configuratie wijzigingen en status logboeken|
+| AppServiceEnvironmentPlatformLogs | Yes | N.v.t. | Ja | Ja | App Service Environment: schalen, configuratie wijzigingen en status logboeken|
 | AppServiceAuditLogs | Ja | Ja | Ja | Ja | Aanmeldings activiteiten via FTP en kudu |
 | AppServiceFileAuditLogs | Ja | Ja | TBA | TBA | Bestands wijzigingen in de site-inhoud; alleen beschikbaar voor de Premium-laag en hoger |
-| AppServiceAppLogs | ASP.NET | ASP.NET | Java SE & Tomcat verwerkt-installatie kopieën | Java SE & Tomcat verwerkt-installatie kopieën | Toepassings logboeken |
+| AppServiceAppLogs | ASP.NET | ASP.NET | Java SE & Tomcat verwerkt installatie kopieën <sup>1</sup> | Java SE & Tomcat verwerkt installatie kopieën <sup>1</sup> | Toepassings logboeken |
 | AppServiceIPSecAuditLogs  | Ja | Ja | Ja | Ja | Aanvragen van IP-regels |
 | AppServicePlatformLogs  | TBA | Ja | Ja | Ja | Container bewerkings logboeken |
+
+<sup>1</sup> voor Java SE-apps voegt u ' $website _AZMON_PREVIEW_ENABLED ' toe aan de app-instellingen en stelt u deze in op 1 of op True.
 
 ## <a name="next-steps"></a><a name="nextsteps"></a> Volgende stappen
 * [Logboeken doorzoeken met Azure Monitor](../azure-monitor/log-query/log-query-overview.md)

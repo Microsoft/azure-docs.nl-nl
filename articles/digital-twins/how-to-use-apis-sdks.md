@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a09563e787573f3cb3dd510229822a0b0fbcb6c9
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: d349d07a66b21766ea529661c2f27d0c76ea4d3b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93395883"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024718"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>De Azure Digital Twins-API's en -SDK's gebruiken
 
@@ -31,11 +31,11 @@ De meest recente versie van de Control vlak-API is _**2020-10-31**_.
 De Control-Api's gebruiken:
 * U kunt de Api's rechtstreeks aanroepen door te verwijzen naar de laatste Swagger in de map van het [besturings vlak Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins). Deze opslag plaats bevat ook een map met voor beelden waarin het gebruik wordt weer gegeven.
 * U kunt momenteel toegang krijgen tot Sdk's voor besturings-Api's in...
-  - [**.Net (C#)**](https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/) ( [referentie [automatisch gegenereerd]](/dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet&preserve-view=true)) ( [bron](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins))
-  - [**Java**](https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_10_31/azure-mgmt-digitaltwins/1.0.0/jar) ( [referentie [automatisch gegenereerd]](/java/api/overview/azure/digitaltwins/management?preserve-view=true&view=azure-java-preview)) ( [bron](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/mgmt-v2020_10_31))
-  - [**Java script**](https://www.npmjs.com/package/@azure/arm-digitaltwins) ( [bron](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/arm-digitaltwins))
-  - [**Python**](https://pypi.org/project/azure-mgmt-digitaltwins/) ( [bron](https://github.com/Azure/azure-sdk-for-python/tree/release/v3/sdk/digitaltwins/azure-mgmt-digitaltwins))
-  - [**Go**](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/digitaltwins/mgmt/2020-10-31/digitaltwins) ( [bron](https://github.com/Azure/azure-sdk-for-go/tree/master/services/digitaltwins/mgmt/2020-10-31/digitaltwins))
+  - [**.Net (C#)**](https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/) ([referentie [automatisch gegenereerd]](/dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet&preserve-view=true)) ([bron](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins))
+  - [**Java**](https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_10_31/azure-mgmt-digitaltwins/1.0.0/jar) ([referentie [automatisch gegenereerd]](/java/api/overview/azure/digitaltwins?view=azure-java-stable)) ([bron](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/mgmt-v2020_10_31))
+  - [**Java script**](https://www.npmjs.com/package/@azure/arm-digitaltwins) ([bron](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/arm-digitaltwins))
+  - [**Python**](https://pypi.org/project/azure-mgmt-digitaltwins/) ([bron](https://github.com/Azure/azure-sdk-for-python/tree/release/v3/sdk/digitaltwins/azure-mgmt-digitaltwins))
+  - [**Go**](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/digitaltwins/mgmt/2020-10-31/digitaltwins) ([bron](https://github.com/Azure/azure-sdk-for-go/tree/master/services/digitaltwins/mgmt/2020-10-31/digitaltwins))
 
 U kunt ook beheer vlak-Api's uitoefenen door interactie met Azure Digital Apparaatdubbels via de [Azure Portal](https://portal.azure.com) en [cli](how-to-use-cli.md).
 
@@ -83,7 +83,7 @@ De Azure Digital Apparaatdubbels .NET (C#) SDK maakt deel uit van de Azure SDK v
 
 Als u de SDK wilt gebruiken, voegt u het NuGet-pakket **Azure. DigitalTwins. core** toe aan uw project. U hebt ook de nieuwste versie van het **Azure. Identity** -pakket nodig.
 
-* In Visual Studio kunt u pakketten toevoegen met NuGet Package Manager (toegankelijk via *Hulpprogram ma's > NuGet package manager > NuGet-pakketten beheren voor oplossing* ). 
+* In Visual Studio kunt u pakketten toevoegen met NuGet Package Manager (toegankelijk via *Hulpprogram ma's > NuGet package manager > NuGet-pakketten beheren voor oplossing*). 
 * Met het opdracht regel programma .NET kunt u het volgende uitvoeren:
 
     ```cmd/sh

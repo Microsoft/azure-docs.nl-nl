@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 8/11/2020
 ms.author: swmachan
-ms.openlocfilehash: 6b211dd8ca735ea9ee4a5209aa6030398cca472e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8175cbd469c8a3933526d01f433e1def714783b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88121014"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024497"
 ---
 # <a name="translator-v30"></a>Translator v 3.0
 
@@ -41,7 +41,7 @@ Aanvragen voor de micro soft Translator zijn in de meeste gevallen verwerkt door
 
 Als u wilt afdwingen dat de aanvraag wordt verwerkt door een specifieke Azure-geografie, wijzigt u het globale eind punt in de API-aanvraag naar het gewenste regionale eind punt:
 
-|Beschrijving|Azure-Geografie|Basis-URL|
+|Description|Azure-Geografie|Basis-URL|
 |:--|:--|:--|
 |Azure|Algemeen (niet-regionaal)|   api.cognitive.microsofttranslator.com|
 |Azure|Verenigde Staten|   api-nam.cognitive.microsofttranslator.com|
@@ -147,7 +147,7 @@ Een verificatie token is 10 minuten geldig. Het token moet opnieuw worden gebrui
 
 ## <a name="virtual-network-support"></a>Ondersteuning voor virtuele netwerken
 
-De Translator-service is nu beschikbaar met de mogelijkheden van Virtual Network (VNET) in alle regio's van de open bare Azure-Cloud. Als u Virtual Network wilt inschakelen, raadpleegt u [Azure Cognitive Services virtuele netwerken configureren](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal). 
+De Translator-service is nu beschikbaar met de mogelijkheden van Virtual Network (VNET) in alle regio's van de open bare Azure-Cloud. Als u Virtual Network wilt inschakelen, raadpleegt u [Azure Cognitive Services virtuele netwerken configureren](../../cognitive-services-virtual-networks.md?tabs=portal). 
 
 Wanneer u deze functie inschakelt, moet u het aangepaste eind punt gebruiken om het conversie programma aan te roepen. U kunt het globale Translator-eind punt ("api.cognitive.microsofttranslator.com") niet gebruiken en u kunt zich niet verifiëren met een toegangs token.
 
@@ -188,7 +188,7 @@ Zo kan een klant met een gratis proef abonnement de volgende fout melding ontvan
 ```
 De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfers wordt gevolgd door een getal van drie cijfers om de fout verder te categoriseren. Veelvoorkomende fout codes zijn:
 
-| Code | Beschrijving |
+| Code | Description |
 |:----|:-----|
 | 400000| Een van de aanvraag invoer is ongeldig.|
 | 400001| De para meter "scope" is ongeldig.|
@@ -230,13 +230,13 @@ De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfe
 | 503000| De service is tijdelijk niet beschikbaar. Probeer het opnieuw. Als de fout zich blijft voordoen, meldt u deze met de datum/tijd van de fout, verzoekt u de aanvraag-id van de antwoord header X-id-aanvraag en de client-id van de aanvraag header X-ClientTraceId.|
 
 ## <a name="metrics"></a>Metrische gegevens 
-Met metrische gegevens kunt u het gebruik van de Vertaler en beschik baarheid in Azure Portal weer geven, onder de sectie metrische gegevens, zoals wordt weer gegeven in de onderstaande scherm afbeelding. Zie [gegevens en platform metrieken](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics)voor meer informatie.
+Met metrische gegevens kunt u het gebruik van de Vertaler en beschik baarheid in Azure Portal weer geven, onder de sectie metrische gegevens, zoals wordt weer gegeven in de onderstaande scherm afbeelding. Zie [gegevens en platform metrieken](../../../azure-monitor/platform/data-platform-metrics.md)voor meer informatie.
 
 ![Metrische gegevens van vertaler](../media/translatormetrics.png)
 
 Deze tabel bevat de beschik bare metrische gegevens met een beschrijving van hoe ze worden gebruikt voor het bewaken van API-aanroepen voor vertalingen.
 
-| Metrische gegevens | Beschrijving |
+| Metrische gegevens | Description |
 |:----|:-----|
 | TotalCalls| Totaal aantal API-aanroepen.|
 | TotalTokenCalls| Totaal aantal API-aanroepen via token service met verificatie token.|

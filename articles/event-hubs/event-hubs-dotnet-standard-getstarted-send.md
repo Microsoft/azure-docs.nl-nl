@@ -4,18 +4,18 @@ description: Dit artikel bevat een overzicht van het maken van een .NET Core-toe
 ms.topic: quickstart
 ms.date: 09/25/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1c0f5a5fb45ee45cb9b7e399dc39ad29406b15dc
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 7962e28ecdc7e2c04fefeb0faf6feb5b730d979c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578991"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024531"
 ---
 # <a name="send-events-to-and-receive-events-from-azure-event-hubs---net-azuremessagingeventhubs"></a>Gebeurtenissen verzenden naar en ontvangen van Azure Event Hubs - .NET (Azure.Messaging.EventHubs) 
 In deze quickstart ziet u hoe u gebeurtenissen kunt verzenden naar en ontvangen van een Event Hub met behulp van de .NET-bibliotheek **Azure.Messaging.EventHubs**. 
 
 > [!IMPORTANT]
-> In deze snelstartgids wordt gebruik gemaakt van de nieuwe **Azure.Messaging.EventHubs** -bibliotheek. Zie [Event Hubs verzenden en ontvangen met de Microsoft.Azure.EventHubs-bibliotheek](event-hubs-dotnet-standard-get-started-send-legacy.md) voor een quickstart die gebruikmaakt van de oude **Microsoft.Azure.EventHubs** -bibliotheek. 
+> In deze snelstartgids wordt gebruik gemaakt van de nieuwe **Azure.Messaging.EventHubs**-bibliotheek. Zie [Event Hubs verzenden en ontvangen met de Microsoft.Azure.EventHubs-bibliotheek](event-hubs-dotnet-standard-get-started-send-legacy.md) voor een quickstart die gebruikmaakt van de oude **Microsoft.Azure.EventHubs**-bibliotheek. 
 
 
 
@@ -35,7 +35,7 @@ In deze sectie wordt beschreven hoe u een .NET Core-consoletoepassing maakt voor
 
 1. Start Visual Studio 2019. 
 1. Selecteer **Een nieuw project maken**. 
-1. Voer in het dialoogvenster **Een nieuw project maken** de volgende stappen uit: Als dit dialoogvenster niet wordt weergegeven, selecteert u in het menu **Bestand** , **Nieuw** en vervolgens **Project**. 
+1. Voer in het dialoogvenster **Een nieuw project maken** de volgende stappen uit: Als dit dialoogvenster niet wordt weergegeven, selecteert u in het menu **Bestand**, **Nieuw** en vervolgens **Project**. 
     1. Selecteer de programmeertaal **C#** .
     1. Selecteer **Console** als het type toepassing. 
     1. Selecteer **Console-app (.NET Core)** in de lijst met resultaten. 
@@ -58,7 +58,7 @@ In deze sectie wordt beschreven hoe u een .NET Core-consoletoepassing maakt voor
 
 ### <a name="write-code-to-send-messages-to-the-event-hub"></a>Code schrijven om berichten te verzenden naar de event hub
 
-1. Voeg aan het begin van het bestand `using`Program.cs **de volgende** -instructies toe:
+1. Voeg aan het begin van het bestand `using`Program.cs **de volgende**-instructies toe:
 
     ```csharp
     using System;
@@ -113,7 +113,7 @@ In deze sectie ziet u hoe u een .NET Core-consoletoepassing schrijft die met geb
 > [!WARNING]
 > Als u deze code op Azure Stack Hub uitvoert, treden er runtimefouten op tenzij u zich richt op een specifieke versie van de Storage-API. Dat komt doordat de Event Hubs-SDK de meest recente Azure Storage-API gebruikt die beschikbaar is in Azure maar die niet beschikbaar is op uw Azure Stack Hub-platform. Azure Stack Hub biedt mogelijk ondersteuning voor een andere versie van de Storage Blob-SDK dan de versies die doorgaans in Azure beschikbaar zijn. Als u Azure Blob-opslag gebruikt als controlepuntopslag, controleert u de [ondersteunde versie van de Azure Storage-API voor uw build van Azure Stack Hub](/azure-stack/user/azure-stack-acs-differences?#api-version) en stelt u die versie in uw code als doel in. 
 >
-> Als u bijvoorbeeld op Azure Stack Hub versie 2005 uitvoert, is de hoogste beschikbare versie van de Storage-service versie 2019-02-02. De Event Hubs-SDK-clientbibliotheek maakt standaard gebruik van de hoogste beschikbare versie op Azure (2019-07-07 op het moment van de release van de SDK). In dit geval moet u naast de volgende stappen in deze sectie ook code toevoegen om de API-versie van de Storage-service te richten op 2019-02-02. Zie [dit voorbeeld op GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs) voor een voorbeeld van hoe u een specifieke versie van Storage-API instelt. 
+> Als u bijvoorbeeld op Azure Stack Hub versie 2005 uitvoert, is de hoogste beschikbare versie van de Storage-service versie 2019-02-02. De Event Hubs-SDK-clientbibliotheek maakt standaard gebruik van de hoogste beschikbare versie op Azure (2019-07-07 op het moment van de release van de SDK). In dit geval moet u naast de volgende stappen in deze sectie ook code toevoegen om de API-versie van de Storage-service te richten op 2019-02-02. Zie [dit voorbeeld op GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/) voor een voorbeeld van hoe u een specifieke versie van Storage-API instelt. 
  
 
 ### <a name="create-an-azure-storage-and-a-blob-container"></a>Een Azure Storage en een blobcontainer maken
@@ -128,7 +128,7 @@ In deze quickstart gebruikt u Azure Storage als controlepuntopslag. Volg deze st
 
 ### <a name="create-a-project-for-the-receiver"></a>Een project maken voor de ontvanger
 
-1. Klik in het Solution Explorer-venster met de rechtermuisknop op de oplossing **EventHubQuickStart** , wijs naar **Toevoegen** en selecteer **Nieuw project**. 
+1. Klik in het Solution Explorer-venster met de rechtermuisknop op de oplossing **EventHubQuickStart**, wijs naar **Toevoegen** en selecteer **Nieuw project**. 
 1. Selecteer **Consoletoepassing (.NET Core)** en selecteer **Volgende**. 
 1. Voer **EventHubsReceiver** in als **Projectnaam** en selecteer **Maken**. 
 
@@ -148,7 +148,7 @@ In deze quickstart gebruikt u Azure Storage als controlepuntopslag. Volg deze st
 
 ### <a name="update-the-main-method"></a>De main-methode bijwerken 
 
-1. Voeg aan het begin van het bestand `using`Program.cs **de volgende** -instructies toe.
+1. Voeg aan het begin van het bestand `using`Program.cs **de volgende**-instructies toe.
 
     ```csharp
     using System;
@@ -218,7 +218,7 @@ In deze quickstart gebruikt u Azure Storage als controlepuntopslag. Volg deze st
 1. Bouw het project en controleer of er geen fouten zijn.
 
     > [!NOTE]
-    > Zie [dit bestand op de GitHub](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample01_HelloWorld.cs) voor de volledige broncode met meer informatieve opmerkingen.
+    > Zie [dit bestand op de GitHub](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample01_HelloWorld.md) voor de volledige broncode met meer informatieve opmerkingen.
 6. Voer de ontvangende toepassing uit. 
 1. Als het goed is, ziet u nu een bericht dat de gebeurtenis is ontvangen. 
 

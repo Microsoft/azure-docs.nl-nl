@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/11/2019
 ms.author: benoah
-ms.openlocfilehash: a529ac8b7ce16d3ee4463f1b4bc2e8007e5b79b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d80ffb575c6aa15695279584b58288cbc16be43
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73836769"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024973"
 ---
 # <a name="guidelines-for-responsible-deployment-of-synthetic-voice-technology"></a>Richt lijnen voor de verantwoordelijke implementatie van synthetische spraak technologie
 Hier volgen de algemene ontwerp richtlijnen van micro soft voor het gebruik van synthetische spraak technologie. Deze zijn ontwikkeld in studies die micro soft heeft uitgevoerd met behulp van stem talen, consumenten en personen met een speech immuunziekten om de verantwoordelijke ontwikkeling van synthetische spraak te begeleiden.
@@ -39,7 +39,7 @@ In ambigue, transactionele scenario's (bijvoorbeeld een ondersteunings centrum v
 Wanneer u werkt met spraak-talen, zoals stem actors, is de onderstaande richt lijn van toepassing.
 
 ### <a name="obtain-meaningful-consent-from-voice-talent"></a>Nuttige toestemming verkrijgen van spraak-talen
-Voice-talen verwachten de controle over hun spraak lettertype (hoe en wanneer het wordt gebruikt) en worden gecompenseerd wanneer het wordt gebruikt. Systeem eigen aren moeten daarom expliciete schriftelijke toestemming van Voice-talen verkrijgen en duidelijke contractuele specificaties hebben over use cases, de duur van het gebruik, de compensatie, enzovoort. Sommige stem talen bieden geen informatie over het potentieel schadelijke gebruik van de technologie en moeten worden ondergebracht door systeem eigen aars over de mogelijkheden van de technologie. Lees voor meer informatie over stem talen en toestemming onze [openbaar making voor Voice-talen](https://aka.ms/disclosure-voice-talent).
+Voice-talen verwachten de controle over hun spraak lettertype (hoe en wanneer het wordt gebruikt) en worden gecompenseerd wanneer het wordt gebruikt. Systeem eigen aren moeten daarom expliciete schriftelijke toestemming van Voice-talen verkrijgen en duidelijke contractuele specificaties hebben over use cases, de duur van het gebruik, de compensatie, enzovoort. Sommige stem talen bieden geen informatie over het potentieel schadelijke gebruik van de technologie en moeten worden ondergebracht door systeem eigen aars over de mogelijkheden van de technologie. Lees voor meer informatie over stem talen en toestemming onze [openbaar making voor Voice-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent).
 
 
 ## <a name="considerations-for-those-with-speech-disorders"></a>Aandachtspunten voor degenen met Speech immuunziekten
@@ -57,13 +57,13 @@ Personen met spraak immuunziekten willen updates aan hun synthetische stem aanbr
 
 ## <a name="reference-docs"></a>Naslagdocumentatie
 
-* [Openbaar making voor spraak-talen](https://aka.ms/disclosure-voice-talent)
+* [Openbaar making voor spraak-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent)
 * [Overzicht van beperking](concepts-gating-overview.md)
 * [Vrijgeven](concepts-disclosure-guidelines.md)
 * [Ontwerp patronen voor openbaar making](concepts-disclosure-patterns.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Openbaar making voor spraak-talen](https://aka.ms/disclosure-voice-talent)
+* [Openbaar making voor spraak-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent)
 * [Vrijgeven](concepts-disclosure-guidelines.md)
 * [Ontwerp patronen voor openbaar making](concepts-disclosure-patterns.md)

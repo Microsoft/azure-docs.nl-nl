@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 0aba809fd18dfd74a344a32b2335aba9426c9845
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 5c20fbbe25b51160f42f233d30c39ccaec0f5cac
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94496734"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026041"
 ---
 # <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Migratie handleiding: SQL Server naar een door SQL beheerd exemplaar
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -99,7 +99,7 @@ Als u de prestaties van uw werk belasting wilt vergelijken met de oorspronkelijk
 
 ### <a name="create-sql-managed-instance"></a>Door SQL beheerd exemplaar maken 
 
-Maak op basis van de informatie in de fase detecteren en beoordelen een passend, met een doel gericht SQL beheerd exemplaar. U kunt dit doen met behulp van de sjabloon [Azure Portal](../../managed-instance/instance-create-quickstart.md), [Power shell](../../managed-instance/scripts/create-configure-managed-instance-powershell.md)of een [Azure Resource Manager (arm)](/../../managed-instance/create-template-quickstart.md). 
+Maak op basis van de informatie in de fase detecteren en beoordelen een passend, met een doel gericht SQL beheerd exemplaar. U kunt dit doen met behulp van de sjabloon [Azure Portal](../../managed-instance/instance-create-quickstart.md), [Power shell](../../managed-instance/scripts/create-configure-managed-instance-powershell.md)of een [Azure Resource Manager (arm)](/azure/azure-sql/managed-instance/create-template-quickstart). 
 
 
 ## <a name="migrate"></a>Migrate
@@ -142,7 +142,7 @@ In het volgende diagram ziet u een overzicht van het proces:
 
 Voer de volgende stappen uit om te migreren met back-up en herstel: 
 
-1. Maak een back-up van uw Data Base naar Azure Blob-opslag. Gebruik bijvoorbeeld [back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url) in [SQL Server Management Studio](/ssms/download-sql-server-management-studio-ssms). Gebruik het [hulp programma Microsoft Azure](https://go.microsoft.com/fwlink/?LinkID=324399) om data bases te ondersteunen die ouder zijn dan SQL Server 2012 SP1 Cu2. 
+1. Maak een back-up van uw Data Base naar Azure Blob-opslag. Gebruik bijvoorbeeld [back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url) in [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms). Gebruik het [hulp programma Microsoft Azure](https://go.microsoft.com/fwlink/?LinkID=324399) om data bases te ondersteunen die ouder zijn dan SQL Server 2012 SP1 Cu2. 
 1. Maak verbinding met uw met Azure SQL beheerd exemplaar met behulp van SQL Server Management Studio. 
 1. Een referentie maken met behulp van een Shared Access Signature voor toegang tot uw Azure Blob Storage-account met uw database back-ups. Bijvoorbeeld:
 
@@ -191,10 +191,10 @@ Nadat de gegevens zijn gemigreerd naar de doel omgeving, moeten alle toepassinge
 
 De test benadering voor database migratie bestaat uit de volgende activiteiten:
 
-1. **Validatie tests ontwikkelen** : als u database migratie wilt testen, moet u SQL-query's gebruiken. U moet de validatie query's maken om te worden uitgevoerd op zowel de bron-als de doel database. Uw validatie query's moeten betrekking hebben op het bereik dat u hebt gedefinieerd.
-1. **Test omgeving instellen** : de test omgeving moet een kopie van de bron database en de doel database bevatten. Zorg ervoor dat u de test omgeving isoleert.
-1. **Validatie tests uitvoeren** : Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
-1. **Prestatie testen uitvoeren** : prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
+1. **Validatie tests ontwikkelen**: als u database migratie wilt testen, moet u SQL-query's gebruiken. U moet de validatie query's maken om te worden uitgevoerd op zowel de bron-als de doel database. Uw validatie query's moeten betrekking hebben op het bereik dat u hebt gedefinieerd.
+1. **Test omgeving instellen**: de test omgeving moet een kopie van de bron database en de doel database bevatten. Zorg ervoor dat u de test omgeving isoleert.
+1. **Validatie tests uitvoeren**: Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
+1. **Prestatie testen uitvoeren**: prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
 
    > [!NOTE]
    > Voor hulp bij het ontwikkelen en uitvoeren van validatie tests na de migratie, moet u rekening houden met de oplossing voor gegevens kwaliteit die beschikbaar is via de partner [QuerySurge](https://www.querysurge.com/company/partners/microsoft). 

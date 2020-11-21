@@ -5,18 +5,18 @@ author: cynthn
 ms.service: virtual-machines
 ms.topic: how-to
 ms.workload: infrastructure-services
-ms.date: 04/20/2020
+ms.date: 11/20/2020
 ms.author: cynthn
-ms.openlocfilehash: 67e33732574d2a6c173675d5adf0a7d1c2050688
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d94cd649df9da6b36ac484d4fc1e6acef7a21bb7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90528173"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026162"
 ---
 # <a name="control-updates-with-maintenance-control-and-the-azure-cli"></a>Updates beheren met onderhouds beheer en de Azure CLI
 
-Met de onderhouds controle kunt u bepalen wanneer u updates wilt Toep assen op uw geïsoleerde Vm's en voor Azure toegewezen hosts. In dit onderwerp worden de Azure CLI-opties voor onderhouds beheer beschreven. Zie [platform updates beheren met onderhouds beheer](maintenance-control.md)voor meer informatie over de voor delen van het gebruik van onderhouds beheer, de beperkingen en andere beheer opties.
+Met de onderhouds controle kunt u bepalen wanneer platform updates moeten worden toegepast op de host-infra structuur van uw geïsoleerde Vm's en voor Azure toegewezen hosts. In dit onderwerp worden de Azure CLI-opties voor onderhouds beheer beschreven. Zie [platform updates beheren met onderhouds beheer](maintenance-control.md)voor meer informatie over de voor delen van het gebruik van onderhouds beheer, de beperkingen en andere beheer opties.
 
 ## <a name="create-a-maintenance-configuration"></a>Een onderhoudsconfiguratie maken
 
@@ -28,14 +28,14 @@ az group create \
    --name myMaintenanceRG
 az maintenance configuration create \
    -g myMaintenanceRG \
-   --name myConfig \
-   --maintenanceScope host\
+   --resource-name myConfig \
+   --maintenance-scope host\
    --location eastus
 ```
 
 Kopieer de configuratie-ID uit de uitvoer, zodat u deze later kunt gebruiken.
 
-Met `--maintenanceScope host` kunt u ervoor zorgen dat de onderhouds configuratie wordt gebruikt om updates voor de host te beheren.
+Met `--maintenance-scope host` kunt u ervoor zorgen dat de onderhouds configuratie wordt gebruikt voor het beheren van updates voor de host-infra structuur.
 
 Als u probeert een configuratie met dezelfde naam te maken, maar op een andere locatie, krijgt u een fout melding. Configuratie namen moeten uniek zijn voor uw resource groep.
 
@@ -44,6 +44,30 @@ U kunt een query uitvoeren voor beschik bare onderhouds configuraties met `az ma
 ```azurecli-interactive
 az maintenance configuration list --query "[].{Name:name, ID:id}" -o table 
 ```
+
+### <a name="create-a-maintenance-configuration-with-scheduled-window"></a>Een onderhouds configuratie maken met een gepland venster
+U kunt ook een gepland venster declareren wanneer de updates worden toegepast op de resources in Azure. In dit voor beeld wordt een onderhouds configuratie met de naam myConfig gemaakt met een geplande periode van vijf uur op de vierde maandag van elke maand. Wanneer u een gepland venster hebt gemaakt, hoeft u de updates niet meer hand matig toe te passen.
+
+```azurecli-interactive
+az maintenance configuration create \
+   -g myMaintenanceRG \
+   --resource-name myConfig \
+   --maintenance-scope host \
+   --location eastus \
+   --maintenance-window-duration "05:00" \
+   --maintenance-window-recur-every "Month Fourth Monday" \
+   --maintenance-window-start-date-time "2020-12-30 08:00" \
+   --maintenance-window-time-zone "Pacific Standard Time"
+```
+
+> [!IMPORTANT]
+> De **duur** van het onderhoud moet *2 uur* of langer zijn. **Terugkeer patroon** van onderhoud moet worden ingesteld op ten minste één keer in 35 dagen.
+
+Terugkeer patroon van onderhoud kan worden uitgedrukt als dagelijks, wekelijks of maandelijks. Een aantal voorbeelden:
+- **dagelijks** onderhoud-venster-keer-elke: "dag" **of** "3Days"
+- **wekelijks** onderhoud: venster herhalen-elke: "3Weeks" **of** "week zaterdag, zondag"
+- **maandelijks**-onderhouds venster-elke: "month day23, day24" **of** "month afgelopen zondag" **of** "month 4e maandag"
+
 
 ## <a name="assign-the-configuration"></a>De configuratie toewijzen
 
@@ -251,7 +275,7 @@ Gebruik `az maintenance configuration delete` om een onderhouds configuratie te 
 az maintenance configuration delete \
    --subscription 1111abcd-1a11-1a2b-1a12-123456789abc \
    -g myResourceGroup \
-   --name myConfig
+   --resource-name myConfig
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

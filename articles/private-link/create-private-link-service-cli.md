@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 87fe02aed19ae7e5858715748a2b4c4da87a07b3
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e0b9ac3f16a170bb14925b555e8894cb10080488
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658567"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026179"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Een persoonlijke koppelings service maken met behulp van Azure CLI
 In dit artikel wordt beschreven hoe u een persoonlijke koppelings service maakt in azure met behulp van Azure CLI.
@@ -79,7 +79,7 @@ Een load balancer-regel definieert de front-end-IP-configuratie voor het binnenk
 ```
 ### <a name="create-backend-servers"></a>Back-endservers maken
 
-In dit voor beeld hebben we geen betrekking op het maken van virtuele machines. U kunt de stappen in Quick Start volgen [: Maak een interne Load Balancer voor het laden van vm's met behulp van Azure cli](/load-balancer/quickstart-load-balancer-standard-internal-cli#create-backend-servers) om twee virtuele machines te maken die moeten worden gebruikt als back-endservers voor de Load Balancer. 
+In dit voor beeld hebben we geen betrekking op het maken van virtuele machines. U kunt de stappen in Quick Start volgen [: Maak een interne Load Balancer voor het laden van vm's met behulp van Azure cli](/azure/load-balancer/quickstart-load-balancer-standard-internal-cli) om twee virtuele machines te maken die moeten worden gebruikt als back-endservers voor de Load Balancer. 
 
 
 ### <a name="disable-private-link-service-network-policies-on-subnet"></a>Particuliere koppeling service-netwerk beleid op subnet uitschakelen 

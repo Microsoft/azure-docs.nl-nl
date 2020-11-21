@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: trbye
-ms.openlocfilehash: 272367d5311952b45c73febe0e05b1ec2d225261
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ae164b1300119481e495e647dd491beafdd5241
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88056683"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025075"
 ---
 # <a name="get-started-with-custom-voice"></a>Aan de slag met Custom Voice
 
@@ -42,7 +42,7 @@ In het onderstaande diagram worden de stappen beschreven voor het maken van een 
 De aanpassings functie voor Neural stem is momenteel beschikbaar als open bare preview, beperkt tot geselecteerde klanten. Vul dit [toepassings formulier](https://go.microsoft.com/fwlink/?linkid=2108737) in om aan de slag te gaan.
 
 > [!NOTE]
-> Als onderdeel van de toezeg ging van micro soft om verantwoordelijk AI te ontwerpen, is onze intentie het beschermen van de rechten van personen en samenleving en het bevorderen van transparante Inter-computer interacties. Daarom is aangepaste Neural Voice niet algemeen beschikbaar voor alle klanten. U krijgt mogelijk pas toegang tot de technologie nadat uw toepassingen zijn gecontroleerd en u hebt vastgelegd dat u deze kunt gebruiken in overeenstemming met onze ethische principes. Meer informatie over het [beperking-proces](https://aka.ms/custom-neural-gating-overview)van de toepassing.
+> Als onderdeel van de toezeg ging van micro soft om verantwoordelijk AI te ontwerpen, is onze intentie het beschermen van de rechten van personen en samenleving en het bevorderen van transparante Inter-computer interacties. Daarom is aangepaste Neural Voice niet algemeen beschikbaar voor alle klanten. U krijgt mogelijk pas toegang tot de technologie nadat uw toepassingen zijn gecontroleerd en u hebt vastgelegd dat u deze kunt gebruiken in overeenstemming met onze ethische principes. Meer informatie over het [beperking-proces](./concepts-gating-overview.md)van de toepassing.
 
 ## <a name="set-up-your-azure-account"></a>Uw Azure-account instellen
 
@@ -62,7 +62,7 @@ Zodra u een Azure-account en een spraak service-abonnement hebt gemaakt, moet u 
 
 Inhoud, zoals gegevens, modellen, testen en eind punten, zijn ingedeeld in **projecten** in de aangepaste Voice Portal. Elk project is specifiek voor een land/taal en het geslacht van de stem die u wilt maken. U kunt bijvoorbeeld een project voor een vrouwelijke stem maken voor de chat bots van uw Call Center die Engels gebruiken in de Verenigde Staten (en-US).
 
-Als u uw eerste project wilt maken, selecteert u het tabblad **tekst naar spraak/aangepast stem** en klikt u vervolgens op **Nieuw project**. Volg de instructies in de wizard om het project te maken. Nadat u een project hebt gemaakt, ziet u vier tabbladen: **gegevens**, **training**, **testen**en **implementatie**. Gebruik de koppelingen in de [volgende stappen](#next-steps) voor meer informatie over het gebruik van elk tabblad.
+Als u uw eerste project wilt maken, selecteert u het tabblad **tekst naar spraak/aangepast stem** en klikt u vervolgens op **Nieuw project**. Volg de instructies in de wizard om het project te maken. Nadat u een project hebt gemaakt, ziet u vier tabbladen: **gegevens**, **training**, **testen** en **implementatie**. Gebruik de koppelingen in de [volgende stappen](#next-steps) voor meer informatie over het gebruik van elk tabblad.
 
 > [!IMPORTANT]
 > De [aangepaste Voice Portal](https://aka.ms/custom-voice) is onlangs bijgewerkt. Als u eerdere gegevens, modellen, tests en gepubliceerde eind punten in de CRIS.ai-portal of met Api's hebt gemaakt, moet u een nieuw project maken in de nieuwe portal om verbinding met deze oude entiteiten te maken.

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: 9bcc3d08fa29109cf4178f8eb0c3efe661323ef0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e6f01354bb5aa2b78d3c9962bac49be39dd2c81f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541778"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025990"
 ---
 # <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Gegevens uit utterance-tekst ophalen met intents en entiteiten
 LUIS biedt u de mogelijkheid om gegevens op te halen uit de uitingen van de natuurlijke taal van een gebruiker. De gegevens worden geëxtraheerd op een manier die kan worden gebruikt door een programma, toepassing of chat-bot om actie te ondernemen. In de volgende secties vindt u informatie over de gegevens die worden geretourneerd door intenties en entiteiten met voor beelden van JSON.
@@ -66,7 +66,7 @@ De primaire gegevens zijn de naam van het bovenste score **doel**. Het eindpunt 
 }
 ```
 
-Meer informatie over het [v3-Voorspellings eindpunt](luis-migration-api-v3.md).
+Meer informatie over het [V3-voorspellingseindpunt](luis-migration-api-v3.md).
 
 * * *
 
@@ -126,7 +126,7 @@ Stel de query string-para meter in `show-all-intents=true` . Het eindpunt antwoo
 }
 ```
 
-Meer informatie over het [v3-Voorspellings eindpunt](luis-migration-api-v3.md).
+Meer informatie over het [V3-voorspellingseindpunt](luis-migration-api-v3.md).
 
 * * *
 
@@ -189,7 +189,7 @@ Als u vooraf gemaakte domeinen toevoegt, geeft de naam van het doel het domein a
 }
 ```
 
-Meer informatie over het [v3-Voorspellings eindpunt](luis-migration-api-v3.md).
+Meer informatie over het [V3-voorspellingseindpunt](luis-migration-api-v3.md).
 
 * * *
 
@@ -232,9 +232,9 @@ De entiteiten [persoons](luis-reference-prebuilt-person.md) -en [GeographyV2](lu
 
 ### <a name="names-of-people"></a>Namen van personen
 
-De naam van een persoon kan een geringe indeling hebben, afhankelijk van de taal en de cultuur. Gebruik een vooraf gedefinieerde entiteit **[persoon](luis-reference-prebuilt-person.md)** of een **[eenvoudige entiteit](luis-concept-entity-types.md#simple-entity)** met [rollen](luis-concept-roles.md) van de voor-en achternaam.
+De naam van een persoon kan een geringe indeling hebben, afhankelijk van de taal en de cultuur. Gebruik een vooraf gedefinieerde entiteit **[persoon](luis-reference-prebuilt-person.md)** of een **[eenvoudige entiteit](luis-concept-entity-types.md)** met rollen van de voor-en achternaam.
 
-Als u de eenvoudige entiteit gebruikt, moet u voor beelden opgeven die gebruikmaken van de voor-en achternaam in verschillende delen van de utterance, in uitingen met verschillende lengten en uitingen voor alle intenten, inclusief de geen intentie. [Bekijk](luis-how-to-review-endoint-utt.md) de eind punten uitingen regel matig om namen te labelen die niet correct zijn voor speld.
+Als u de eenvoudige entiteit gebruikt, moet u voor beelden opgeven die gebruikmaken van de voor-en achternaam in verschillende delen van de utterance, in uitingen met verschillende lengten en uitingen voor alle intenten, inclusief de geen intentie. [Bekijk](./luis-how-to-review-endpoint-utterances.md) de eind punten uitingen regel matig om namen te labelen die niet correct zijn voor speld.
 
 ### <a name="names-of-places"></a>Namen van locaties
 
@@ -242,17 +242,17 @@ Locatie namen worden ingesteld en bekend, zoals steden, regio's, provincies, pro
 
 ### <a name="new-and-emerging-names"></a>Nieuwe en opkomende namen
 
-Sommige apps moeten nieuwe en opkomende namen kunnen vinden, zoals producten of bedrijven. Deze typen namen zijn het lastigste type gegevens extractie. Begin met een **[eenvoudige entiteit](luis-concept-entity-types.md#simple-entity)** en voeg een [woordgroepen lijst](luis-concept-feature.md)toe. [Bekijk](luis-how-to-review-endoint-utt.md) de eind punten uitingen regel matig om namen te labelen die niet correct zijn voor speld.
+Sommige apps moeten nieuwe en opkomende namen kunnen vinden, zoals producten of bedrijven. Deze typen namen zijn het lastigste type gegevens extractie. Begin met een **[eenvoudige entiteit](luis-concept-entity-types.md#simple-entity)** en voeg een [woordgroepen lijst](luis-concept-feature.md)toe. [Bekijk](./luis-how-to-review-endpoint-utterances.md) de eind punten uitingen regel matig om namen te labelen die niet correct zijn voor speld.
 
 ## <a name="patternany-entity-data"></a>Patroon. alle entiteits gegevens
 
 [Patroon. any](reference-entity-pattern-any.md) is een tijdelijke aanduiding met variabele lengte die alleen wordt gebruikt in de sjabloon van een patroon utterance om te markeren waar de entiteit begint en eindigt. De entiteit die in het patroon wordt gebruikt, moet worden gevonden om het patroon te kunnen Toep assen.
 
 ## <a name="sentiment-analysis"></a>Sentimentanalyse
-Als sentiment-analyse is geconfigureerd tijdens het [publiceren](luis-how-to-publish-app.md#sentiment-analysis), omvat het JSON-antwoord Luis sentiment analyse. Meer informatie over sentiment analyse vindt u in de [Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) -documentatie.
+Als sentiment-analyse is geconfigureerd tijdens het [publiceren](luis-how-to-publish-app.md#sentiment-analysis), omvat het JSON-antwoord Luis sentiment analyse. Meer informatie over sentiment analyse vindt u in de [Text Analytics](../text-analytics/index.yml) -documentatie.
 
 ## <a name="key-phrase-extraction-entity-data"></a>Entiteits gegevens voor de extractie van sleutel zinnen
-De [sleutel frase extractie-entiteit](luis-reference-prebuilt-keyphrase.md) retourneert sleutel zinnen in de utterance, die door [Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/)worden gegeven.
+De [sleutel frase extractie-entiteit](luis-reference-prebuilt-keyphrase.md) retourneert sleutel zinnen in de utterance, die door [Text Analytics](../text-analytics/index.yml)worden gegeven.
 
 ## <a name="data-matching-multiple-entities"></a>Gegevens die overeenkomen met meerdere entiteiten
 

@@ -10,20 +10,20 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/09/2020
 ms.author: kaprochi
-ms.openlocfilehash: de0065abaf5669859e864186fc9a3fb88219414b
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: f82ea154d5949f4d229ac76e7a7ce2a89d15ac13
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555818"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025664"
 ---
 # <a name="cicd-for-custom-speech"></a>CI/CD voor Custom Speech
 
 Implementeer geautomatiseerd trainings-, test-en release beheer om continue verbetering van Custom Speech modellen mogelijk te maken bij het Toep assen van updates op trainings-en test gegevens. Via een efficiënte implementatie van CI/CD-werk stromen kunt u ervoor zorgen dat het eind punt voor het best presterende Custom Speech model altijd beschikbaar is.
 
-[Continue integratie](https://docs.microsoft.com/azure/devops/learn/what-is-continuous-integration) (CI) is de technische praktijk van het regel matig door voeren van updates in een gedeelde opslag plaats en het uitvoeren van een geautomatiseerde build. Met CI-werk stromen voor Custom Speech traint u een nieuw model van de gegevens bronnen en voert u automatische tests uit voor het nieuwe model om ervoor te zorgen dat het beter presteert dan het vorige model.
+[Continue integratie](/azure/devops/learn/what-is-continuous-integration) (CI) is de technische praktijk van het regel matig door voeren van updates in een gedeelde opslag plaats en het uitvoeren van een geautomatiseerde build. Met CI-werk stromen voor Custom Speech traint u een nieuw model van de gegevens bronnen en voert u automatische tests uit voor het nieuwe model om ervoor te zorgen dat het beter presteert dan het vorige model.
 
-[Continue levering](https://docs.microsoft.com/azure/devops/learn/what-is-continuous-delivery) (cd) haalt modellen uit het CI-proces en maakt een eind punt voor elk verbeterd Custom speech model. Met CD kunnen eind punten eenvoudig worden geïntegreerd in oplossingen.
+[Continue levering](/azure/devops/learn/what-is-continuous-delivery) (cd) haalt modellen uit het CI-proces en maakt een eind punt voor elk verbeterd Custom speech model. Met CD kunnen eind punten eenvoudig worden geïntegreerd in oplossingen.
 
 Aangepaste CI/CD-oplossingen zijn mogelijk, maar voor een robuuste, vooraf gemaakte oplossing gebruikt u de [DevOps-opslag plaats](https://github.com/Azure-Samples/Speech-Service-DevOps-Template)van de sjabloon, waarmee CI/cd-werk stromen worden uitgevoerd met github-acties.
 
@@ -73,7 +73,7 @@ De meeste teams vereisen een hand matig controle-en goedkeurings proces voor imp
 
 Gebruik de volgende hulpprogram ma's voor CI/CD Automation-werk stromen voor Custom Speech:
 
-- [Azure cli](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) voor het maken van een Azure-Service-Principal-verificatie, het opvragen van Azure-abonnementen en het opslaan van test resultaten in Azure Blob.
+- [Azure cli](/cli/azure/?view=azure-cli-latest) voor het maken van een Azure-Service-Principal-verificatie, het opvragen van Azure-abonnementen en het opslaan van test resultaten in Azure Blob.
 - [Azure speech cli](spx-overview.md) om te communiceren met de spraak service vanaf de opdracht regel of een geautomatiseerde werk stroom.
 
 ## <a name="devops-solution-for-custom-speech-using-github-actions"></a>DevOps-oplossing voor Custom Speech met GitHub-acties
@@ -84,7 +84,7 @@ De [opslag plaats van de speech DevOps-sjabloon](https://github.com/Azure-Sample
 
 - Kopieer de sjabloon opslagplaats naar uw GitHub-account en maak vervolgens Azure-resources en een [Service-Principal](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) voor de GITHUB acties CI/cd-werk stromen.
 - Door loop de '[dev Inner-lus](https://mitchdenny.com/the-inner-loop/)'. Werk de training bij en test gegevens van een functie vertakking, test de wijzigingen met een tijdelijk ontwikkel model en verhoog een pull-aanvraag om de wijzigingen voor te stellen en te controleren.
-- Wanneer trainings gegevens worden bijgewerkt in een pull-aanvraag naar de *Master* , traint u modellen met de GitHub-acties CI-werk stroom.
+- Wanneer trainings gegevens worden bijgewerkt in een pull-aanvraag naar de *Master*, traint u modellen met de GitHub-acties CI-werk stroom.
 - Voer automatische nauwkeurigheids tests uit om de [Word-fout frequentie](how-to-custom-speech-evaluate-data.md#evaluate-custom-speech-accuracy) (wer) van een model vast te leggen. Sla de test resultaten op in Azure Blob.
 - Voer de CD-werk stroom uit om een eind punt te maken wanneer de WER wordt verbeterd.
 

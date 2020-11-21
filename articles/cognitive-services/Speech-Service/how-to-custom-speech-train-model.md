@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: 34c0703ee7c335ca904a21bcce6ed44abc6dc13f
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 9193da2f3841bb94aa395399c31d7fe826c395e0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555784"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025596"
 ---
-# <a name="train-and-deploy-a-custom-speech-model"></a>Een Custom Speech model trainen en implementeren
+# <a name="train-and-deploy-a-custom-speech-model"></a>Een Custom Speech-model trainen en implementeren
 
 In dit artikel leert u hoe u Custom Speech modellen traint en implementeert. Training van een model voor spraak naar tekst kan de nauw keurigheid van de herkenning voor het basislijn model van micro soft verbeteren. Een model wordt getraind met behulp van transcripties en gerelateerde tekst. Deze gegevens sets en eerder geüploade audio gegevens worden gebruikt voor het verfijnen en trainen van het spraak-naar-tekst model.
 
@@ -33,7 +33,7 @@ Als u herkennings problemen ondervindt met een basis model, kan het gebruik van 
 
 ## <a name="train-and-evaluate-a-model"></a>Een model trainen en evalueren
 
-De eerste stap voor het trainen van een model is het uploaden van trainings gegevens. Gebruik voor [bereiding en test uw gegevens](how-to-custom-speech-test-data.md) voor stapsgewijze instructies voor het voorbereiden van transcripties en gerelateerde tekst met menselijke labels (uitingen en uitspraak). Nadat u de trainings gegevens hebt geüpload, volgt u deze instructies om te beginnen met het trainen van uw model:
+De eerste stap voor het trainen van een model is het uploaden van trainings gegevens. Gebruik voor [bereiding en test uw gegevens](./how-to-custom-speech-test-and-train.md) voor stapsgewijze instructies voor het voorbereiden van transcripties en gerelateerde tekst met menselijke labels (uitingen en uitspraak). Nadat u de trainings gegevens hebt geüpload, volgt u deze instructies om te beginnen met het trainen van uw model:
 
 1. Meld u aan bij de [Custom speech Portal](https://speech.microsoft.com/customspeech).
 2. Navigeer naar **spraak-naar-tekst > Custom Speech > [name of project] > training**.
@@ -61,7 +61,7 @@ Selecteer vervolgens **eind punt toevoegen** en voer een **naam** en **Beschrijv
 > [!NOTE]
 > Vergeet niet om akkoord te gaan met de gebruiks voorwaarden en prijs gegevens.
 
-Selecteer vervolgens **maken**. Met deze actie keert u terug naar de **implementatie** pagina. De tabel bevat nu een vermelding die overeenkomt met uw aangepaste eind punt. De status van het eind punt toont de huidige status. Het kan tot 30 minuten duren om een nieuw eind punt te instantiëren met uw aangepaste modellen. Wanneer de status van de implementatie verandert in **voltooid** , is het eind punt klaar voor gebruik.
+Selecteer vervolgens **maken**. Met deze actie keert u terug naar de **implementatie** pagina. De tabel bevat nu een vermelding die overeenkomt met uw aangepaste eind punt. De status van het eind punt toont de huidige status. Het kan tot 30 minuten duren om een nieuw eind punt te instantiëren met uw aangepaste modellen. Wanneer de status van de implementatie verandert in **voltooid**, is het eind punt klaar voor gebruik.
 
 Nadat het eind punt is geïmplementeerd, wordt de naam van het eind punt weer gegeven als een koppeling. Klik op de koppeling om informatie weer te geven die specifiek is voor uw eind punt, zoals de eindpunt sleutel, eind punt-URL en voorbeeld code.
 
@@ -77,6 +77,6 @@ Logboek gegevens kunnen worden gedownload onder **eindpunt > Details**.
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-- [Uw gegevens voorbereiden en testen](how-to-custom-speech-test-data.md)
+- [Uw gegevens voorbereiden en testen](./how-to-custom-speech-test-and-train.md)
 - [Uw gegevens controleren](how-to-custom-speech-inspect-data.md)
 - [Uw gegevens evalueren](how-to-custom-speech-evaluate-data.md)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 86db8c88fae7a5fd1ec4828d8936c6cb8172a61c
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 446731e084084ca301b350f6fec0c4065485a40f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94564562"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026621"
 ---
 # <a name="cluster-configuration-best-practices-sql-server-on-azure-vms"></a>Aanbevolen procedures voor clusterconfiguratie (SQL Server op virtuele machines van Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -33,7 +33,7 @@ Gebruik één NIC per server (cluster knooppunt) en één subnet. Azure-netwerke
 
 ### <a name="tuning-failover-cluster-network-thresholds"></a>Drempel waarden voor failover cluster-netwerken afstemmen
 
-Bij het uitvoeren van Windows-Failoverclusterknooppunten in azure-Vm's met SQL Server AlwaysOn, wordt het wijzigen van de cluster instelling in een meer beperkte bewakings status aanbevolen.  Hierdoor is het cluster veel stabieler en betrouwbaarder.  Zie voor meer informatie [IaaS met SQL AlwaysOn-failover cluster network drempels](/windows-server/troubleshoot/iaas-sql-failover-cluser).
+Bij het uitvoeren van Windows-Failoverclusterknooppunten in azure-Vm's met SQL Server AlwaysOn, wordt het wijzigen van de cluster instelling in een meer beperkte bewakings status aanbevolen.  Hierdoor is het cluster veel stabieler en betrouwbaarder.  Zie voor meer informatie [IaaS met SQL AlwaysOn-failover cluster network drempels](/windows-server/troubleshoot/iaas-sql-failover-cluster).
 
 ## <a name="quorum"></a>Quorum
 
@@ -60,7 +60,7 @@ Een gedeelde Azure-schijf configureren als de schijfwitness.
 Zie [een schijfwitness configureren](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)om aan de slag te gaan.
 
 
-**Ondersteund besturingssysteem** : Alle   
+**Ondersteund besturingssysteem**: Alle   
 
 
 ### <a name="cloud-witness"></a>Cloudwitness
@@ -70,7 +70,7 @@ Een cloudwitness is een type quorum-Witness van het failovercluster dat gebruikm
 Zie [een Cloudwitness configureren](/windows-server/failover-clustering/deploy-cloud-witness#CloudWitnessSetUp)om aan de slag te gaan.
 
 
-**Ondersteund besturingssysteem** : Windows Server 2016 en hoger   
+**Ondersteund besturingssysteem**: Windows Server 2016 en hoger   
 
 
 ### <a name="file-share-witness"></a>Bestandsshare-witness
@@ -82,7 +82,7 @@ Als u een Azure-bestands share wilt gebruiken, kunt u deze koppelen aan hetzelfd
 Zie [Configure a file share Witness](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)om aan de slag te gaan.
 
 
-**Ondersteund besturingssysteem** : Windows Server 2012 en hoger   
+**Ondersteund besturingssysteem**: Windows Server 2012 en hoger   
 
 ## <a name="connectivity"></a>Connectiviteit
 
@@ -108,9 +108,9 @@ Er is een lichte vertraging bij de failover wanneer u de load balancer gebruikt,
 
 Meer informatie over het configureren van Azure Load Balancer voor het [failover-cluster exemplaar](failover-cluster-instance-vnn-azure-load-balancer-configure.md) of een [beschikbaarheids groep](availability-group-vnn-azure-load-balancer-configure.md)
 
-**Ondersteund besturingssysteem** : Alle   
-**Ondersteunde SQL-versie** : Alle   
-**Ondersteunde HADR-oplossing** : failover-cluster exemplaar en beschikbaarheids groep   
+**Ondersteund besturingssysteem**: Alle   
+**Ondersteunde SQL-versie**: Alle   
+**Ondersteunde HADR-oplossing**: failover-cluster exemplaar en beschikbaarheids groep   
 
 
 ### <a name="distributed-network-name-dnn"></a>Gedistribueerde netwerknaam (DNN)
@@ -128,9 +128,9 @@ De meeste SQL Server functies werken op transparante wijze met FCI-en beschikbaa
 
 Als u aan de slag wilt gaan, leert u hoe u een gedistribueerde netwerk naam bron kunt configureren voor [een failovercluster](failover-cluster-instance-distributed-network-name-dnn-configure.md) of een [beschikbaarheids groep](availability-group-distributed-network-name-dnn-listener-configure.md)
 
-**Ondersteund besturingssysteem** : Windows Server 2016 en hoger   
-**Ondersteunde SQL-versie** : SQL Server 2019 Cu2 (FCI) en SQL Server 2019 CU8 (AG)   
-**Ondersteunde HADR-oplossing** : failover-cluster exemplaar en beschikbaarheids groep   
+**Ondersteund besturingssysteem**: Windows Server 2016 en hoger   
+**Ondersteunde SQL-versie**: SQL Server 2019 Cu2 (FCI) en SQL Server 2019 CU8 (AG)   
+**Ondersteunde HADR-oplossing**: failover-cluster exemplaar en beschikbaarheids groep   
 
 
 ## <a name="limitations"></a>Beperkingen

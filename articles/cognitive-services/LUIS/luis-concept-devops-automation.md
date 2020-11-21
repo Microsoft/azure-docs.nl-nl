@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/5/2020
-ms.openlocfilehash: a74ad7b995f0112346e2212866655107f72c03e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 370dade1b74634649c9de44864a0fd9f5cac988f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324804"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025973"
 ---
 # <a name="continuous-integration-and-continuous-delivery-workflows-for-luis-devops"></a>Werkstromen voor continue integratie en continue levering voor LUIS DevOps
 
@@ -27,9 +27,9 @@ Configureer in het systeem voor broncode beheer (SCM) automatische build pijp li
 
 De **CI/cd-werk stroom** combineert twee complementaire ontwikkelings processen:
 
-* [Continue integratie](https://docs.microsoft.com/azure/devops/learn/what-is-continuous-integration) (CI) is de technische praktijk van het veelvuldig door voeren van code in een gedeelde opslag plaats en het uitvoeren van een geautomatiseerde build. Met een geautomatiseerd [test](luis-concept-devops-testing.md) proces kunt u voor elke update controleren of de LUDown-bron nog geldig is en kan worden geïmporteerd in een Luis-app, maar ook een groep tests waarmee wordt gecontroleerd of de getrainde app de intenties en entiteiten kan herkennen die nodig zijn voor uw oplossing.
+* [Continue integratie](/azure/devops/learn/what-is-continuous-integration) (CI) is de technische praktijk van het veelvuldig door voeren van code in een gedeelde opslag plaats en het uitvoeren van een geautomatiseerde build. Met een geautomatiseerd [test](luis-concept-devops-testing.md) proces kunt u voor elke update controleren of de LUDown-bron nog geldig is en kan worden geïmporteerd in een Luis-app, maar ook een groep tests waarmee wordt gecontroleerd of de getrainde app de intenties en entiteiten kan herkennen die nodig zijn voor uw oplossing.
 
-* [Continue levering](https://docs.microsoft.com/azure/devops/learn/what-is-continuous-delivery) (cd) zorgt voor een continue integratie concept om de toepassing automatisch te implementeren in een omgeving waarin u meer gedetailleerde tests kunt uitvoeren. Met de CD kunnen we tijdig ontdekken wat er onvoorziene problemen zijn die zich voordoen als gevolg van onze wijzigingen, en ook om meer te weten te komen over hiaten in onze test dekking.
+* [Continue levering](/azure/devops/learn/what-is-continuous-delivery) (cd) zorgt voor een continue integratie concept om de toepassing automatisch te implementeren in een omgeving waarin u meer gedetailleerde tests kunt uitvoeren. Met de CD kunnen we tijdig ontdekken wat er onvoorziene problemen zijn die zich voordoen als gevolg van onze wijzigingen, en ook om meer te weten te komen over hiaten in onze test dekking.
 
 Het doel van continue integratie en continue levering is ervoor te zorgen dat ' Master is altijd shippable, '. Voor een LUIS-app betekent dit dat we, indien nodig, een wille keurige versie van de master branch LUIS-app kunnen nemen en deze op productie kan leveren.
 
@@ -41,7 +41,7 @@ Gebruik de volgende hulpprogram ma's voor het maken van Automation-werk stromen 
 
 * [Bot Framework tools Luis cli](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS) voor het werken met Luis-apps en-versies, Train, test en publiceer ze in de Luis-service.
 
-* [Azure cli](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) voor het opvragen van Azure-abonnementen, ophalen van Luis-ontwerp-en Voorspellings sleutels en het maken van een Azure- [Service-Principal](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest) die wordt gebruikt voor Automation-verificatie.
+* [Azure cli](/cli/azure/?view=azure-cli-latest) voor het opvragen van Azure-abonnementen, ophalen van Luis-ontwerp-en Voorspellings sleutels en het maken van een Azure- [Service-Principal](/cli/azure/ad/sp?view=azure-cli-latest) die wordt gebruikt voor Automation-verificatie.
 
 * [NLU. DevOps](https://github.com/microsoft/NLU.DevOps) -hulp programma voor [het testen van een Luis-app](luis-concept-devops-testing.md) en het analyseren van test resultaten.
 
@@ -70,7 +70,7 @@ Deze werk stroom moet:
 * Train en publiceer de versie van de LUIS-app.
 
   > [!NOTE]
-  > Zoals in het geval van [tests in een geautomatiseerde build-werk stroom wordt](luis-concept-devops-testing.md#running-tests-in-an-automated-build-workflow) uitgelegd, moet u de Luis-App-versie onder test publiceren, zodat de hulpprogram MA'S zoals NLU. DevOps heeft toegang tot het bestand. LUIS biedt alleen ondersteuning voor twee benoemde publicatie sleuven, *fase ring* en *productie* voor een Luis-app, maar u kunt ook [rechtstreeks een versie publiceren](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisapplicationpublish) en [query's uitvoeren op versie](https://docs.microsoft.com/azure/cognitive-services/luis/luis-migration-api-v3#changes-by-slot-name-and-version-name). Gebruik direct versie publiceren in uw Automation-werk stromen om te voor komen dat u de benoemde publicatie sleuven beperkt.
+  > Zoals in het geval van [tests in een geautomatiseerde build-werk stroom wordt](luis-concept-devops-testing.md#running-tests-in-an-automated-build-workflow) uitgelegd, moet u de Luis-App-versie onder test publiceren, zodat de hulpprogram MA'S zoals NLU. DevOps heeft toegang tot het bestand. LUIS biedt alleen ondersteuning voor twee benoemde publicatie sleuven, *fase ring* en *productie* voor een Luis-app, maar u kunt ook [rechtstreeks een versie publiceren](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisapplicationpublish) en [query's uitvoeren op versie](./luis-migration-api-v3.md#changes-by-slot-name-and-version-name). Gebruik direct versie publiceren in uw Automation-werk stromen om te voor komen dat u de benoemde publicatie sleuven beperkt.
 
 * Voer alle [eenheids tests](luis-concept-devops-testing.md)uit.
 
@@ -84,13 +84,13 @@ Deze werk stroom moet:
 
 De CD-taak in een CI/CD-werk stroom wordt voorwaardelijk uitgevoerd op het slagen van het build-en automatische eenheids testen. Het is de taak om de LUIS-toepassing automatisch te implementeren in een omgeving waarin u meer tests kunt uitvoeren.
 
-Er is geen aanbevolen oplossing voor het implementeren van uw LUIS-app en u moet het proces implementeren dat geschikt is voor uw project. De [Luis DevOps-sjabloon](https://github.com/Azure-Samples/LUIS-DevOps-Template) opslag plaats implementeert een eenvoudige oplossing voor het publiceren van [de nieuwe Luis-App-versie](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-publish-app) naar de *productie* publicatie sleuf. Dit is prima voor een eenvoudige installatie. Als u echter een aantal verschillende productie omgevingen tegelijk wilt ondersteunen, zoals *ontwikkeling*, *staging* en *bedoeld*, zal de limiet van twee benoemde publicatie sleuven per app ontoereikend zijn.
+Er is geen aanbevolen oplossing voor het implementeren van uw LUIS-app en u moet het proces implementeren dat geschikt is voor uw project. De [Luis DevOps-sjabloon](https://github.com/Azure-Samples/LUIS-DevOps-Template) opslag plaats implementeert een eenvoudige oplossing voor het publiceren van [de nieuwe Luis-App-versie](./luis-how-to-publish-app.md) naar de *productie* publicatie sleuf. Dit is prima voor een eenvoudige installatie. Als u echter een aantal verschillende productie omgevingen tegelijk wilt ondersteunen, zoals *ontwikkeling*, *staging* en *bedoeld*, zal de limiet van twee benoemde publicatie sleuven per app ontoereikend zijn.
 
 Andere opties voor het implementeren van een app-versie zijn onder andere:
 
 * Laat de App-versie gepubliceerd op het directe versie-eind punt en implementeer een proces om downstream productie omgevingen met het direct versie-eind punt zo nodig te configureren.
 * Onderhoud verschillende LUIS-apps voor elke productie omgeving en schrijf automatiserings stappen om het `.lu` in een nieuwe versie in de Luis-app voor de doel productie omgeving te importeren, om deze te trainen en te publiceren.
-* Exporteer de geteste LUIS-App-versie naar een [Luis docker-container](https://docs.microsoft.com/azure/cognitive-services/luis/luis-container-howto?tabs=v3) en implementeer de Luis-container in azure [container instances](https://docs.microsoft.com/azure/container-instances/).
+* Exporteer de geteste LUIS-App-versie naar een [Luis docker-container](./luis-container-howto.md?tabs=v3) en implementeer de Luis-container in azure [container instances](../../container-instances/index.yml).
 
 ## <a name="release-management"></a>Releasebeheer
 

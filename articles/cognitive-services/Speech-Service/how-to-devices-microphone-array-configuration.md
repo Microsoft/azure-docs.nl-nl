@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/01/2020
 ms.author: wellsi
-ms.openlocfilehash: a2652bed6c8e7dec0a6fe8f9471793c3873646bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cf0580c96f5bf78f0444b2bb39088f2a417fd658
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82781755"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025058"
 ---
 # <a name="how-to-configure-a-microphone-array"></a>Een microfoonmatrix configureren
 
-In dit artikel leert u hoe u een [microfoon matrix](https://aka.ms/sdsdk-microphone)kunt configureren. Het bevat het instellen van de werk hoek en het selecteren van de microfoon die wordt gebruikt voor de speech-apparaten SDK.
+In dit artikel leert u hoe u een [microfoon matrix](./speech-devices-sdk-microphone.md)kunt configureren. Het bevat het instellen van de werk hoek en het selecteren van de microfoon die wordt gebruikt voor de speech-apparaten SDK.
 
-De SDK voor spraak apparaten werkt het beste met een microfoon matrix die is ontworpen volgens [onze richt lijnen](https://aka.ms/sdsdk-microphone). De configuratie van de microfoon matrix kan worden geleverd door het besturings systeem of worden geleverd via een van de volgende methoden.
+De SDK voor spraak apparaten werkt het beste met een microfoon matrix die is ontworpen volgens [onze richt lijnen](./speech-devices-sdk-microphone.md). De configuratie van de microfoon matrix kan worden geleverd door het besturings systeem of worden geleverd via een van de volgende methoden.
 
 De SDK voor spraak apparaten heeft eerst ondersteunde microfoon matrices door te selecteren uit een vaste set configuraties.
 
@@ -49,7 +49,7 @@ Als er een microfoon matrix wordt opgegeven met `AudioConfig::FromMicrophoneInpu
 De micro soft audio-stack in de speech-apparaten SDK ondersteunt alleen downsamplen voor voorbeeld frequenties die integraal veelvouden van 16 KHz zijn. Daarnaast worden de volgende indelingen ondersteund: 32-bits IEEE little endian float, 32-bits little endian ondertekende int, 24-bits little endian ondertekende int, 16-bits little endian ondertekende int en 8-bits ondertekende int.
 
 ## <a name="android"></a>Android
-Momenteel wordt alleen [roobo v1](speech-devices-sdk-android-quickstart.md) ondersteund door de speech-apparaten SDK. Gedrag is hetzelfde als eerdere versies, met uitzonde ring van de `MicArrayGeometryConfigFile` eigenschap now kan worden gebruikt om een JSON-bestand met beamforming-bereik op te geven.
+Momenteel wordt alleen [roobo v1](./speech-devices-sdk-quickstart.md?pivots=platform-android%253fpivots%253dplatform-android) ondersteund door de speech-apparaten SDK. Gedrag is hetzelfde als eerdere versies, met uitzonde ring van de `MicArrayGeometryConfigFile` eigenschap now kan worden gebruikt om een JSON-bestand met beamforming-bereik op te geven.
 
 ## <a name="microphone-array-configuration-json"></a>Configuratie van de microfoon matrix JSON
 

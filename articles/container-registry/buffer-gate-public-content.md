@@ -4,13 +4,13 @@ description: Procedures en werk stromen in Azure Container Registry voor het beh
 author: dlepow
 ms.topic: article
 ms.author: danlep
-ms.date: 10/29/2020
-ms.openlocfilehash: def1c3a9b8a1086f453c7e71d766ab0dd89b0c2d
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.date: 11/20/2020
+ms.openlocfilehash: 0c92899528d417f9c91f8f8930ca4932dc74e850
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347519"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024735"
 ---
 # <a name="manage-public-content-with-azure-container-registry"></a>Open bare inhoud beheren met Azure Container Registry
 
@@ -26,6 +26,8 @@ Als er sprake is van een goede controle, kunnen afhankelijkheden van open bare r
 ## <a name="authenticate-with-docker-hub"></a>Verifiëren met docker hub
 
 Als eerste stap, als u momenteel open bare installatie kopieën uit docker hub als onderdeel van een build of implementatie werk stroom haalt, raden we u aan om te [verifiëren met behulp van een docker hub-account](https://docs.docker.com/docker-hub/download-rate-limit/#how-do-i-authenticate-pull-requests) in plaats van een anonieme pull-aanvraag te doen.
+
+Wanneer u regel matig anonieme pull-aanvragen maakt, ziet u mogelijk docker-fouten die vergelijkbaar zijn met `ERROR: toomanyrequests: Too Many Requests.` of `You have reached your pull rate limit.` worden geverifieerd bij docker hub om deze fouten te voor komen.
 
 > [!NOTE]
 > Vanaf 2 november 2020 zijn de [Download frequentie limieten](https://docs.docker.com/docker-hub/download-rate-limit) van toepassing op anonieme en geverifieerde aanvragen voor docker-hub vanuit docker Free plan-accounts en worden afgedwongen door respectievelijk het IP-adres en de docker-id. 
@@ -46,21 +48,21 @@ Verschillende Azure-Services, waaronder App Service en Azure Container Instances
 
 **App Service**
 
-* **Bron van installatie kopie** : docker hub
-* **Toegang voor opslag plaats** : persoonlijk
-* **Aanmelding** : \<Docker Hub username>
-* **Wachtwoord** : \<Docker Hub token>
+* **Bron van installatie kopie**: docker hub
+* **Toegang voor opslag plaats**: persoonlijk
+* **Aanmelding**: \<Docker Hub username>
+* **Wachtwoord**: \<Docker Hub token>
 
 Zie [docker hub Authenticated Pulls on app service](https://azure.github.io/AppService/2020/10/15/Docker-Hub-authenticated-pulls-on-App-Service.html)voor meer informatie.
 
 **Azure Container Instances**
 
-* **Bron van installatie kopie** : docker hub of ander REGI ster
-* **Type installatie kopie** : persoonlijk
-* **Aanmeldings server voor installatie kopie register** : docker.io
-* **Register gebruikers naam voor installatie kopie** : \<Docker Hub username>
-* **Register wachtwoord voor installatie kopie** : \<Docker Hub token>
-* **Installatie kopie** : docker.io/ \<repo name\> :\<tag>
+* **Bron van installatie kopie**: docker hub of ander REGI ster
+* **Type installatie kopie**: persoonlijk
+* **Aanmeldings server voor installatie kopie register**: docker.io
+* **Register gebruikers naam voor installatie kopie**: \<Docker Hub username>
+* **Register wachtwoord voor installatie kopie**: \<Docker Hub token>
+* **Installatie kopie**: docker.io/ \<repo name\> :\<tag>
 
 ## <a name="import-images-to-an-azure-container-registry"></a>Installatie kopieën importeren in een Azure container Registry
  

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 9e9eca3bb230bbfc969a5a429f664e602ad0d78b
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 6d6a392d25aa96ab9b4dbb7763b37c1021db71aa
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888314"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026281"
 ---
 # <a name="azure-security-baseline-for-azure-front-door"></a>Azure-beveiligings basislijn voor Azure front deur
 
@@ -202,7 +202,7 @@ Het is raadzaam dat de klant een proces maakt om het kenmerk en de wijzigingen i
 
 ## <a name="logging-and-threat-detection"></a>Logboek registratie en detectie van bedreigingen
 
-*Zie [Azure Security Bench Mark: Logging and Threat Detection](/azure/security/benchmarks/security-controls-v2-logging-threat-protection)(Engelstalig) voor meer informatie.*
+*Zie [Azure Security Bench Mark: Logging and Threat Detection](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)(Engelstalig) voor meer informatie.*
 
 ### <a name="lt-3-enable-logging-for-azure-network-activities"></a>LT-3: logboek registratie inschakelen voor Azure-netwerk activiteiten
 
@@ -338,7 +338,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevings syste
 
 ## <a name="posture-and-vulnerability-management"></a>Postuur en beveiligings beheer
 
-*Zie voor meer informatie de [Azure Security Bench Mark: postuur en het beveiligings beleid](/azure/security/benchmarks/security-controls-v2-vulnerability-management).*
+*Zie voor meer informatie de [Azure Security Bench Mark: postuur en het beveiligings beleid](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
 
 ### <a name="pv-3-establish-secure-configurations-for-compute-resources"></a>PV-3: veilige configuraties voor reken bronnen instellen
 
@@ -409,7 +409,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 - [Basis beginselen van Azure-beveiliging-Azure-gegevens beveiliging,-versleuteling en-opslag](../security/fundamentals/encryption-overview.md)
 
-- [Azure Security Bench Mark-gegevens beveiliging](/azure/security/benchmarks/security-benchmark-v2-data-protection)
+- [Azure Security Bench Mark-gegevens beveiliging](/azure/security/benchmarks/security-controls-v2-data-protection)
 
 **Azure Security Center bewaking**: niet van toepassing
 
@@ -437,7 +437,7 @@ Zorg ervoor dat de segmentatie strategie consistent wordt geïmplementeerd in al
 
 **Hulp**: regel matig de Risico's voor uw afzonderlijke assets en de omgeving waarin ze worden gehost. Volg prioriteiten voor hoogwaardige en zeer belichte aanvallen, zoals gepubliceerde toepassingen, netwerk binnenkomend en uitgevende punten, gebruikers-en beheerders eindpunten, enzovoort.
 
-- [Azure Security Bench Mark-postuur en beveiligings beheer](/azure/security/benchmarks/security-benchmark-v2-posture-vulnerability-management)
+- [Azure Security Bench Mark-postuur en beveiligings beheer](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
 
 **Azure Security Center bewaking**: niet van toepassing
 
@@ -479,7 +479,7 @@ Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
 - [Aanbevolen procedures voor Azure-beveiliging 11-architectuur. Eén uniforme beveiligings strategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Bench Mark-netwerk beveiliging](/azure/security/benchmarks/security-benchmark-v2-network-security)
+- [Azure Security Bench Mark-netwerk beveiliging](/azure/security/benchmarks/security-controls-v2-network-security)
 
 - [Overzicht van Azure-netwerk beveiliging](../security/fundamentals/network-overview.md)
 
@@ -505,9 +505,9 @@ Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten
 
 Zie voor meer informatie de volgende verwijzingen:
 
-- [Azure Security Bench Mark-Identity Management](/azure/security/benchmarks/security-benchmark-v2-identity-management)
+- [Azure Security Bench Mark-Identity Management](/azure/security/benchmarks/security-controls-v2-identity-management)
 
-- [Azure Security-benchmark-privileged Access](/azure/security/benchmarks/security-benchmark-v2-privileged-access)
+- [Azure Security-benchmark-privileged Access](/azure/security/benchmarks/security-controls-v2-privileged-access)
 
 - [Aanbevolen procedures voor Azure-beveiliging 11-architectuur. Eén uniforme beveiligings strategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -539,9 +539,9 @@ Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten
 
 Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
-- [Azure Security Bench Mark-logboek registratie en detectie van bedreigingen](/azure/security/benchmarks/security-benchmark-v2-logging-threat-detection)
+- [Azure Security Bench Mark-logboek registratie en detectie van bedreigingen](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
 
-- [Azure Security Bench Mark-incident respons](/azure/security/benchmarks/security-benchmark-v2-incident-response)
+- [Azure Security Bench Mark-incident respons](/azure/security/benchmarks/security-controls-v2-incident-response)
 
 - [Aanbevolen procedure voor Azure-beveiliging 4-proces. Reactie processen voor incidenten bijwerken voor Cloud](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 

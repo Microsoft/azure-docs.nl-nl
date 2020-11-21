@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 073fab4aee084513db4ca05af6c12087c0a8f911
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 6b231b5af208a51cbe8f4370c2dc532be1ba3af9
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92206370"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024922"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Zelf studie: spraak-uw bot inschakelen met de Speech SDK
 
@@ -72,10 +72,10 @@ De client-app die u in deze zelf studie maakt, maakt gebruik van een aantal Azur
 1. <a href="https://ms.portal.azure.com/#create/Microsoft.ResourceGroup" target="_blank">Een resource groep maken <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 1. U wordt gevraagd om de volgende informatie op te geven:
    * Stel **abonnement** in op **gratis proef versie** (u kunt ook een bestaand abonnement gebruiken).
-   * Voer een naam in voor de **resource groep**. We raden **SpeechEchoBotTutorial-ResourceGroup**aan.
+   * Voer een naam in voor de **resource groep**. We raden **SpeechEchoBotTutorial-ResourceGroup** aan.
    * Selecteer in de vervolg keuzelijst **regio** **VS West**.
 1. Klik op **Controleren en maken**. U ziet een banner waarvoor Lees **validatie is geslaagd**.
-1. Klik op **Maken**. Het kan enkele minuten duren om de resource groep te maken.
+1. Klik op **Create**. Het kan enkele minuten duren om de resource groep te maken.
 1. Net als bij de resources die u later in deze zelf studie maakt, is het een goed idee om deze resource groep vast te maken aan uw dash board voor eenvoudige toegang. Als u deze resource groep wilt vastmaken, klikt u op het speld pictogram rechts van de naam van de resource groep.
 
 ### <a name="choosing-an-azure-region"></a>Een Azure-regio kiezen
@@ -91,7 +91,7 @@ Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations
 
 Nu u een resource groep in een ondersteunde regio hebt, is de volgende stap het maken van afzonderlijke resources voor elke service die u in deze zelf studie gaat gebruiken.
 
-### <a name="create-a-speech-service-resource"></a>Een speech service-resource maken
+### <a name="create-a-speech-service-resource"></a>Een Spraak-serviceresource maken
 
 Volg deze instructies om een spraak bron te maken:
 
@@ -99,9 +99,9 @@ Volg deze instructies om een spraak bron te maken:
 4. U wordt gevraagd om de volgende informatie op te geven:
    * Geef uw resource een **naam**. U kunt **het beste SpeechEchoBotTutorial-speech**
    * Zorg ervoor dat een **gratis proef versie** is geselecteerd voor het **abonnement**.
-   * Selecteer voor **locatie**de optie **VS-West**.
-   * Selecteer voor **prijs categorie**de optie **F0**. Dit is de gratis laag.
-   * Voor **resource groep**selecteert u **SpeechEchoBotTutorial-ResourceGroup**.
+   * Selecteer voor **locatie** de optie **VS-West**.
+   * Selecteer voor **prijs categorie** de optie **F0**. Dit is de gratis laag.
+   * Voor **resource groep** selecteert u **SpeechEchoBotTutorial-ResourceGroup**.
 5. Nadat u alle vereiste gegevens hebt ingevoerd, klikt u op **maken**. Het kan een paar minuten duren voordat de resource is gemaakt.
 6. Verderop in deze zelf studie hebt u abonnements sleutels voor deze service nodig. U kunt deze sleutels op elk gewenst moment openen vanuit het **overzicht** van uw resource (sleutels beheren) of **sleutels**.
 
@@ -118,13 +118,13 @@ De volgende stap is het maken van een App Service-abonnement. Een App Service-pl
 1. <a href="https://ms.portal.azure.com/#create/Microsoft.AppServicePlanCreate" target="_blank">Een Azure App Service plan maken <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 4. U wordt gevraagd om de volgende informatie op te geven:
    * Stel **abonnement** in op **gratis proef versie** (u kunt ook een bestaand abonnement gebruiken).
-   * Voor **resource groep**selecteert u **SpeechEchoBotTutorial-ResourceGroup**.
+   * Voor **resource groep** selecteert u **SpeechEchoBotTutorial-ResourceGroup**.
    * Geef uw resource een **naam**. We raden **SpeechEchoBotTutorial-AppServicePlan** aan
    * Selecteer voor **besturings systeem** **Windows**.
    * Selecteer voor **regio** **VS-West**.
    * Zorg ervoor dat **standaard S1** is geselecteerd voor de **prijs categorie**. Dit moet de standaard waarde zijn. Als dat niet het geval is, moet u ervoor zorgen dat u het **besturings systeem** instelt op **Windows** zoals hierboven wordt beschreven.
 5. Klik op **Controleren en maken**. U ziet een banner waarvoor Lees **validatie is geslaagd**.
-6. Klik op **Maken**. Het kan enkele minuten duren om de resource groep te maken.
+6. Klik op **Create**. Het kan enkele minuten duren om de resource groep te maken.
 
 Controleer op dit punt of de resource groep (**SpeechEchoBotTutorial-ResourceGroup**) twee resources heeft:
 
@@ -149,7 +149,7 @@ Nu u enkele resources hebt gemaakt, gaan we een bot bouwen. We beginnen met het 
    ```
 
 2. Start Visual Studio.
-3. Selecteer in de werk balk **File**  >  **Open**  >  **Project/Solution**en open de echo bot project-oplossing:
+3. Selecteer in de werk balk **File**  >  **Open**  >  **Project/Solution** en open de echo bot project-oplossing:
 
    ```
    samples\csharp_dotnetcore\02.echo-bot\EchoBot.sln
@@ -181,7 +181,7 @@ De [bot Framework-emulator](https://github.com/microsoft/botframework-emulator) 
 De volgende stap is het implementeren van de echo-bot in Azure. Er zijn enkele manieren om een bot te implementeren, maar in deze zelf studie wordt u geadviseerd om rechtstreeks vanuit Visual Studio te publiceren.
 
 > [!NOTE]
-> U kunt ook een bot implementeren met behulp van de [Azure cli](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli) -en [implementatie sjablonen](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/adaptive-dialog/03.core-bot).
+> U kunt ook een bot implementeren met behulp van de [Azure cli](/azure/bot-service/bot-builder-deploy-az-cli) -en [implementatie sjablonen](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/adaptive-dialog/03.core-bot).
 
 > [!NOTE]
 > Als **publiceren...** niet wordt weer gegeven tijdens het uitvoeren van de volgende stappen, gebruikt u Visual Studio Installer om de **ASP.net-en Web Development** -werk belasting toe te voegen.
@@ -192,16 +192,16 @@ De volgende stap is het implementeren van de echo-bot in Azure. Er zijn enkele m
    samples\csharp_dotnetcore\02.echo-bot\EchoBot.sln
    ```
 
-1. Klik in de **Solution Explorer**met de rechter muisknop op het **EchoBot** -project en selecteer **publiceren...**
+1. Klik in de **Solution Explorer** met de rechter muisknop op het **EchoBot** -project en selecteer **publiceren...**
 1. Er wordt een nieuw venster met de titel **Publish** geopend.
-1. Selecteer **Azure**, klik op **volgende**, selecteer **Azure app service (Windows)**, klik op **volgende**en klik vervolgens op **een nieuw Azure app service maken...** door het groene plus teken.
+1. Selecteer **Azure**, klik op **volgende**, selecteer **Azure app service (Windows)**, klik op **volgende** en klik vervolgens op **een nieuw Azure app service maken...** door het groene plus teken.
 1. Wanneer het venster **app service (Windows)** wordt weer gegeven:
-   * Klik op **een account toevoegen**en meld u aan met de referenties van uw Azure-account. Als u al bent aangemeld, selecteert u het gewenste account in de vervolg keuzelijst.
-   * Voor de **naam**moet u een wereld wijd unieke naam invoeren voor uw bot. Deze naam wordt gebruikt om een unieke bot-URL te maken. Er wordt een standaard waarde ingevuld, inclusief de datum en tijd (bijvoorbeeld: "EchoBot20190805125647"). U kunt de standaard naam voor deze zelf studie gebruiken.
-   * Voor het **abonnement**stelt u deze in op **gratis proef versie**
-   * Voor **resource groep**selecteert u **SpeechEchoBotTutorial-ResourceGroup**
-   * Voor **hosting plan**selecteert u **SpeechEchoBotTutorial-AppServicePlan**
-1. Klik op **Maken**. Klik in het laatste scherm van de wizard op **volt ooien**.
+   * Klik op **een account toevoegen** en meld u aan met de referenties van uw Azure-account. Als u al bent aangemeld, selecteert u het account dat u wilt in de vervolgkeuzelijst.
+   * Voor de **naam** moet u een wereld wijd unieke naam invoeren voor uw bot. Deze naam wordt gebruikt om een unieke bot-URL te maken. Er wordt een standaard waarde ingevuld, inclusief de datum en tijd (bijvoorbeeld: "EchoBot20190805125647"). U kunt de standaard naam voor deze zelf studie gebruiken.
+   * Voor het **abonnement** stelt u deze in op **gratis proef versie**
+   * Voor **resource groep** selecteert u **SpeechEchoBotTutorial-ResourceGroup**
+   * Voor **hosting plan** selecteert u **SpeechEchoBotTutorial-AppServicePlan**
+1. Klik op **Create**. Klik in het laatste scherm van de wizard op **volt ooien**.
 1. Klik aan de rechter kant van het venster publiceren op **publiceren** . Visual Studio implementeert de bot naar Azure.
 1. Er wordt een bericht weer gegeven in het uitvoer venster van Visual Studio dat er als volgt uitziet:
 
@@ -224,7 +224,7 @@ De volgende stap is het implementeren van de echo-bot in Azure. Er zijn enkele m
 U moet een kleine configuratie wijziging aanbrengen zodat uw bot met behulp van websockets met het directe lijn spraak kanaal kan communiceren. Volg deze stappen om Web sockets in te scha kelen:
 
 1. Ga naar het [Azure Portal](https://portal.azure.com)en klik op uw app service. De resource moet een naam hebben die vergelijkbaar is met **EchoBot20190805125647** (uw unieke app-naam).
-2. Klik in het navigatie deel venster links onder **instellingen**op **configuratie**.
+2. Klik in het navigatie deel venster links onder **instellingen** op **configuratie**.
 3. Selecteer het tabblad **algemene instellingen** .
 4. Zoek de wissel knop voor **Web sockets** en stel deze **in op aan**.
 5. Klik op **Opslaan**.
@@ -234,18 +234,18 @@ U moet een kleine configuratie wijziging aanbrengen zodat uw bot met behulp van 
 
 ## <a name="create-a-channel-registration"></a>Een kanaal registratie maken
 
-Nu u een Azure App Service hebt gemaakt om uw bot te hosten, is de volgende stap het maken van een **bot-kanaal registratie**. Het maken van een kanaal registratie is een vereiste voor het registreren van uw bot met bot Framework-kanalen, waaronder direct line speech Channel. Zie [een bot verbinden met kanalen](https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0)als u meer wilt weten over hoe bots kanalen gebruiken.
+Nu u een Azure App Service hebt gemaakt om uw bot te hosten, is de volgende stap het maken van een **bot-kanaal registratie**. Het maken van een kanaal registratie is een vereiste voor het registreren van uw bot met bot Framework-kanalen, waaronder direct line speech Channel. Zie [een bot verbinden met kanalen](/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0)als u meer wilt weten over hoe bots kanalen gebruiken.
 
 1. <a href="https://ms.portal.azure.com/#create/Microsoft.BotServiceConnectivityGalleryPackage" target="_blank">Een Azure bot-kanaal registratie maken <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 2. U wordt gevraagd om de volgende informatie op te geven:
-   * Voor **bot-ingang**voert u **SpeechEchoBotTutorial-BotRegistration-# # #** # in en vervangt u door een wille keurig **####** aantal van uw keuze. Houd er rekening mee dat de bot-ingang globaal uniek moet zijn. Als u een bot-ingang opgeeft, maar het fout bericht ophalen _de aangevraagde bot-id niet beschikbaar is_, kiest u een ander getal. In de onderstaande voor beelden hebben we 8726 gebruikt.
-   * Selecteer voor **abonnement**een **gratis proef versie**.
-   * Voor **resource groep**selecteert u **SpeechEchoBotTutorial-ResourceGroup**.
-   * Selecteer voor **locatie**de optie **VS-West**.
-     * Selecteer voor **prijs categorie**de optie **F0**.
-     * Voor **berichten eind punt**voert u de URL voor uw web-app in waarbij het `/api/messages` pad aan het einde is toegevoegd. Als uw wereld wijde unieke app-naam bijvoorbeeld **EchoBot20190805125647**is, zou uw e-mail eindpunt: `https://EchoBot20190805125647.azurewebsites.net/api/messages/` .
-     * Voor **Application Insights**kunt u dit instellen op **uit**. Zie [bot Analytics](https://docs.microsoft.com/azure/bot-service/bot-service-manage-analytics?view=azure-bot-service-4.0)voor meer informatie.
-     * **Automatisch maken van app-id en wacht woord**negeren.
+   * Voor **bot-ingang** voert u **SpeechEchoBotTutorial-BotRegistration-# # #** # in en vervangt u door een wille keurig **####** aantal van uw keuze. Houd er rekening mee dat de bot-ingang globaal uniek moet zijn. Als u een bot-ingang opgeeft, maar het fout bericht ophalen _de aangevraagde bot-id niet beschikbaar is_, kiest u een ander getal. In de onderstaande voor beelden hebben we 8726 gebruikt.
+   * Selecteer voor **abonnement** een **gratis proef versie**.
+   * Voor **resource groep** selecteert u **SpeechEchoBotTutorial-ResourceGroup**.
+   * Selecteer voor **locatie** de optie **VS-West**.
+     * Selecteer voor **prijs categorie** de optie **F0**.
+     * Voor **berichten eind punt** voert u de URL voor uw web-app in waarbij het `/api/messages` pad aan het einde is toegevoegd. Als uw wereld wijde unieke app-naam bijvoorbeeld **EchoBot20190805125647** is, zou uw e-mail eindpunt: `https://EchoBot20190805125647.azurewebsites.net/api/messages/` .
+     * Voor **Application Insights** kunt u dit instellen op **uit**. Zie [bot Analytics](/azure/bot-service/bot-service-manage-analytics?view=azure-bot-service-4.0)voor meer informatie.
+     * **Automatisch maken van app-id en wacht woord** negeren.
 5. Klik onder aan de Blade **registratie van bot-kanalen** op **maken**.
 
 Controleer op dit punt de resource groep **SpeechEchoBotTutorial-ResourceGroup** in de Azure Portal. Er moeten nu ten minste vier resources worden weer gegeven:
@@ -268,7 +268,7 @@ De registratie pagina van Azure bot-kanalen bevat een **test in de optie Web Cha
 1. Selecteer in de **bot Management** -navigatie de optie **instellingen**. Kopieer de waarde onder **micro soft app id**
 1. Open de Visual Studio EchoBot-oplossing. Zoek in het Solution Explorer naar en dubbel klik op **appsettings.jsop**
 1. Vervang de lege teken reeks naast **MicrosoftAppId** in het JSON-bestand met de GEKOPIEERDE id-waarde
-1. Terug naar de Azure Portal, in **bot Management** -navigatie, selecteert **u instellingen**en klikt u op **(beheren)** naast **micro soft app-id**
+1. Terug naar de Azure Portal, in **bot Management** -navigatie, selecteert **u instellingen** en klikt u op **(beheren)** naast **micro soft app-id**
 1. Klik op **Nieuw client geheim**. Voeg een beschrijving toe (bijvoorbeeld Web Chat) en klik op **toevoegen**. Het nieuwe geheim kopiëren
 1. Vervang de lege teken reeks naast **MicrosoftAppPassword** in het JSON-bestand door de gekopieerde geheime waarde
 1. Sla het JSON-bestand op. Het ziet er ongeveer als volgt uit:
@@ -287,22 +287,22 @@ Nu is het tijd om uw bot te registreren met het directe-lijn spraak kanaal. Met 
 
 1. Zoek en open uw **SpeechEchoBotTutorial-BotRegistration-# #** # #-resource in de [Azure Portal](https://portal.azure.com).
 1. Selecteer in de **bot Management** -navigatie de optie **kanalen**.
-   * Klik onder **meer kanalen**op **direct line speech**.
-   * Bekijk de tekst op de pagina met de titel **directe lijn spraak configureren**en vouw vervolgens de vervolg keuzelijst **cognitieve service account** uit.
+   * Klik onder **meer kanalen** op **direct line speech**.
+   * Bekijk de tekst op de pagina met de titel **directe lijn spraak configureren** en vouw vervolgens de vervolg keuzelijst **cognitieve service account** uit.
    * Selecteer de spraak resource die u eerder hebt gemaakt (bijvoorbeeld **SpeechEchoBotTutorial-speech**) in het menu om uw bot te koppelen aan de sleutel van uw spraak abonnement.
    * Negeer de rest van de optionele velden.
    * Klik op **Opslaan**.
 
 1. Klik in de navigatie van het **bot-beheer** op **instellingen**.
-   * Schakel het selectie vakje **streaming-eind punt inschakelen**in het vak in. Dit is nodig om een communicatie protocol te maken dat is gebaseerd op Web-sockets tussen uw bot en het directe lijn spraak kanaal.
+   * Schakel het selectie vakje **streaming-eind punt inschakelen** in het vak in. Dit is nodig om een communicatie protocol te maken dat is gebaseerd op Web-sockets tussen uw bot en het directe lijn spraak kanaal.
    * Klik op **Opslaan**.
 
 > [!TIP]
-> Als u meer informatie wilt, raadpleegt u [een bot aansluiten op direct line speech](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech?view=azure-bot-service-4.0). Deze pagina bevat aanvullende informatie en bekende problemen.
+> Als u meer informatie wilt, raadpleegt u [een bot aansluiten op direct line speech](/azure/bot-service/bot-service-channel-connect-directlinespeech?view=azure-bot-service-4.0). Deze pagina bevat aanvullende informatie en bekende problemen.
 
 ## <a name="run-the-windows-voice-assistant-client"></a>De Windows Voice Assistant-client uitvoeren
 
-In deze stap gaat u de Windows Voice Assistant-client uitvoeren. De client is een Windows Presentation Foundation-app (WPF) in C# die de [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk) gebruikt om de communicatie met uw bot te beheren met behulp van het directe spraak kanaal. Gebruik het om te communiceren met en test uw bot voordat u een aangepaste client-app schrijft. Het is een open-source, dus u kunt het uitvoer bare bestand downloaden en uitvoeren, of het zelf bouwen.
+In deze stap gaat u de Windows Voice Assistant-client uitvoeren. De client is een Windows Presentation Foundation-app (WPF) in C# die de [Speech SDK](./speech-sdk.md) gebruikt om de communicatie met uw bot te beheren met behulp van het directe spraak kanaal. Gebruik het om te communiceren met en test uw bot voordat u een aangepaste client-app schrijft. Het is een open-source, dus u kunt het uitvoer bare bestand downloaden en uitvoeren, of het zelf bouwen.
 
 De Windows Voice Assistant-client beschikt over een eenvoudige gebruikers interface waarmee u de verbinding met uw bot kunt configureren, het tekst gesprek kunt bekijken, de activiteiten van de bot-Framework in JSON-indeling kunt bekijken en adaptieve kaarten weer geven. Het biedt ook ondersteuning voor het gebruik van aangepaste tref woorden. U gebruikt deze client om met uw bot te praten en een antwoord op de telefoon te ontvangen.
 
@@ -326,9 +326,9 @@ Als er een fout bericht wordt weer gegeven in het hoofd venster van de app, gebr
 | Fout | Wat moet u doen? |
 |-------|----------------------|
 |Fout (AuthenticationFailure): bijwerken van WebSocket is mislukt met een verificatie fout (401). Controleren op juiste abonnements sleutel (of autorisatie token) en regio naam| Controleer op de pagina instellingen van de app of u de sleutel voor spraak abonnementen en de regio juist hebt ingevoerd.<br>Zorg ervoor dat de spraak sleutel en de sleutel regio correct zijn ingevoerd. |
-|Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1011. Fout Details: er kan geen verbinding worden gemaakt met de bot voordat een bericht wordt verzonden | Zorg ervoor dat u het selectie vakje [streaming-eind punt inschakelen](#register-the-direct-line-speech-channel) en/of [ **websockets** ](#enable-web-sockets) op op hebt ingeschakeld.<br>Zorg ervoor dat uw Azure App Service actief is. Als dat het geval is, start u de App Service opnieuw op.|
-|Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1002. Fout Details: de server heeft de status code ' 503 ' geretourneerd wanneer de status code ' 101 ' werd verwacht | Zorg ervoor dat u het selectie vakje [streaming-eind punt inschakelen](#register-the-direct-line-speech-channel) en/of [ **websockets** ](#enable-web-sockets) op op hebt ingeschakeld.<br>Zorg ervoor dat uw Azure App Service actief is. Als dat het geval is, start u de App Service opnieuw op.|
-|Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1011. Fout Details: de antwoord status code geeft geen succes aan: 500 (InternalServerError)| Uw bot heeft een Neural-stem opgegeven in het veld [uitspreken](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#speak) van uitvoer activiteit, maar de Azure-regio die aan uw spraak abonnements sleutel is gekoppeld, biedt geen ondersteuning voor Neural stemmen. Zie de [standaard-en Neural stemmen](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices).|
+|Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1011. Fout Details: er kan geen verbinding worden gemaakt met de bot voordat een bericht wordt verzonden | Zorg ervoor dat u het selectie vakje [streaming-eind punt inschakelen](#register-the-direct-line-speech-channel) en/of [ **websockets**](#enable-web-sockets) op op hebt ingeschakeld.<br>Zorg ervoor dat uw Azure App Service actief is. Als dat het geval is, start u de App Service opnieuw op.|
+|Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1002. Fout Details: de server heeft de status code ' 503 ' geretourneerd wanneer de status code ' 101 ' werd verwacht | Zorg ervoor dat u het selectie vakje [streaming-eind punt inschakelen](#register-the-direct-line-speech-channel) en/of [ **websockets**](#enable-web-sockets) op op hebt ingeschakeld.<br>Zorg ervoor dat uw Azure App Service actief is. Als dat het geval is, start u de App Service opnieuw op.|
+|Fout (ConnectionFailure): de verbinding is door de externe host gesloten. Fout code: 1011. Fout Details: de antwoord status code geeft geen succes aan: 500 (InternalServerError)| Uw bot heeft een Neural-stem opgegeven in het veld [uitspreken](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#speak) van uitvoer activiteit, maar de Azure-regio die aan uw spraak abonnements sleutel is gekoppeld, biedt geen ondersteuning voor Neural stemmen. Zie de [standaard-en Neural stemmen](./regions.md#standard-and-neural-voices).|
 
 Als uw probleem niet wordt opgelost in de tabel, raadpleegt u [spraak assistenten: veelgestelde vragen](faq-voice-assistants.md). Als uw probleem nog steeds niet kan worden opgelost nadat u alle stappen in deze zelf studie hebt uitgevoerd, voert u een nieuw probleem in op de GitHub-pagina van de  [Voice Assistant](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/issues).
 
@@ -337,7 +337,7 @@ Als uw probleem niet wordt opgelost in de tabel, raadpleegt u [spraak assistente
 Als u verbonden bent met een bot en er in de afgelopen vijf minuten geen activiteit is opgetreden, sluit de service automatisch de WebSocket-verbinding met de client en met de bot. Dit is standaard. Er wordt een bericht weer gegeven in de onderste balk: *Er is een time-out opgetreden voor de actieve verbinding, maar u kunt opnieuw verbinding maken op aanvraag*. U hoeft niet op de knop opnieuw verbinding maken te klikken. u hoeft alleen maar op de knop microfoon te drukken en te praten, een SMS-bericht te typen of het tref woord te zeggen (als er een is ingeschakeld). De verbinding wordt automatisch hersteld.  
 ### <a name="view-bot-activities"></a>Bot-activiteiten weer geven
 
-Elke bot verzendt en ontvangt **activiteiten** berichten. In het venster **activiteiten logboek** van de Windows Voice Assistant-client ziet u getimede logboeken met elke activiteit die de client heeft ontvangen van de bot. U kunt ook de activiteiten zien die de client naar de bot heeft verzonden met behulp van de- [`DialogServiceConnector.SendActivityAsync`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.sendactivityasync)  methode. Wanneer u een logboek item selecteert, worden de details van de gekoppelde activiteit als JSON weer gegeven.
+Elke bot verzendt en ontvangt **activiteiten** berichten. In het venster **activiteiten logboek** van de Windows Voice Assistant-client ziet u getimede logboeken met elke activiteit die de client heeft ontvangen van de bot. U kunt ook de activiteiten zien die de client naar de bot heeft verzonden met behulp van de- [`DialogServiceConnector.SendActivityAsync`](/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.sendactivityasync)  methode. Wanneer u een logboek item selecteert, worden de details van de gekoppelde activiteit als JSON weer gegeven.
 
 Hier volgt een voor beeld van een JSON van een activiteit die de client heeft ontvangen:
 
@@ -380,8 +380,8 @@ Zie [velden in de activiteit](https://github.com/microsoft/botframework-sdk/blob
 ### <a name="view-client-source-code-for-calls-to-the-speech-sdk"></a>Client bron code weer geven voor aanroepen naar de Speech SDK
 
 De Windows Voice Assistant-client maakt gebruik van het NuGet-pakket [micro soft. CognitiveServices. speech](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/), dat de Speech SDK bevat. Een goede plaats om te beginnen met het controleren van de voorbeeld code is de methode InitSpeechConnector () in het bestand [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) , waarmee deze twee Speech SDK-objecten worden gemaakt:
-- [`DialogServiceConfig`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconfig) -Voor configuratie-instellingen (bijvoorbeeld sleutel voor spraak abonnementen, sleutel regio)
-- [`DialogServiceConnector`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.-ctor) -De kanaal verbinding en gebeurtenissen van client abonnementen beheren voor het verwerken van herkende spraak-en bot-reacties.
+- [`DialogServiceConfig`](/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconfig) -Voor configuratie-instellingen (bijvoorbeeld sleutel voor spraak abonnementen, sleutel regio)
+- [`DialogServiceConnector`](/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.-ctor) -De kanaal verbinding en gebeurtenissen van client abonnementen beheren voor het verwerken van herkende spraak-en bot-reacties.
 
 ## <a name="add-custom-keyword-activation"></a>Aangepaste trefwoord activering toevoegen
 
@@ -394,11 +394,11 @@ De detectie van het tref woord wordt uitgevoerd op de client-app. Als u een tref
 
 Volg deze stappen om een trefwoord model te maken, de Windows Voice Assistant-client te configureren voor het gebruik van dit model en tot slot het te testen met uw bot.
 
-1. Volg deze instructies voor [het maken van een aangepast tref woord met behulp van de speech-service](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-create-kws).
+1. Volg deze instructies voor [het maken van een aangepast tref woord met behulp van de speech-service](./custom-keyword-basics.md).
 2. Pak het model bestand uit dat u in de vorige stap hebt gedownload. Dit moet een naam voor het tref woord zijn. U zoekt naar een bestand met de naam `kws.table` .
 3. Ga in de Windows Voice Assistant-client naar het menu **instellingen** (Zoek het tandwiel pictogram in de rechter bovenhoek). Zoek het pad naar het **model bestand** en voer de volledige padnaam op voor het `kws.table` bestand uit stap 2.
 4. Zorg ervoor dat het selectie vakje is **ingeschakeld**. Dit bericht wordt weer gegeven naast het selectie vakje: ' Luister naar het tref woord bij de volgende verbinding '. Als u het verkeerde bestand of een ongeldig pad hebt, wordt een fout bericht weer gegeven.
-5. Voer de sleutel van uw spraak **abonnement**, de regio van de **abonnements sleutel**en klik vervolgens op **OK** om het menu **instellingen** te sluiten.
+5. Voer de sleutel van uw spraak **abonnement**, de regio van de **abonnements sleutel** en klik vervolgens op **OK** om het menu **instellingen** te sluiten.
 6. Klik op **opnieuw verbinding maken**. Er wordt een bericht weer gegeven met de volgende tekst: ' nieuw gesprek gestart-type, druk op de microfoon knop of zeg het tref woord '. De app luistert nu voortdurend.
 7. Spreek een wille keurige woord groep in die begint met uw tref woord. Bijvoorbeeld:**{uw tref woord}**, wat is het tijdstip? '. U hoeft niet te onderbreken na het uttering van het sleutel woord. Wanneer u klaar bent, gebeuren er twee dingen:
    * U ziet een transcriptie van uw Spaak
@@ -412,8 +412,8 @@ Volg deze stappen om een trefwoord model te maken, de Windows Voice Assistant-cl
 
 In de Windows Voice Assistant-client bron code bekijkt u deze bestanden om de code te controleren die wordt gebruikt om de detectie van tref woorden in te scha kelen:
 
-1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) bevat een aanroep van de methode Speech SDK [`KeywordRecognitionModel.fromFile()`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?view=azure-node-latest&preserve-view=true#fromfile-string-) , die wordt gebruikt om het model te instantiëren vanuit een lokaal bestand op schijf.
-1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) bevat een aanroep naar de Speech SDK [`DialogServiceConnector.StartKeywordRecognitionAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) -methode, waarmee doorlopende trefwoord detectie wordt geactiveerd.
+1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) bevat een aanroep van de methode Speech SDK [`KeywordRecognitionModel.fromFile()`](/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?preserve-view=true&view=azure-node-latest#fromfile-string-) , die wordt gebruikt om het model te instantiëren vanuit een lokaal bestand op schijf.
+1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) bevat een aanroep naar de Speech SDK [`DialogServiceConnector.StartKeywordRecognitionAsync()`](/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) -methode, waarmee doorlopende trefwoord detectie wordt geactiveerd.
 
 ## <a name="optional-change-the-language-and-bot-voice"></a>Beschrijving De taal-en bot-stem wijzigen
 
@@ -461,7 +461,7 @@ Nu u de nood zakelijke wijziging hebt aangebracht in de bot, is de volgende stap
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u de in deze zelf studie geïmplementeerde ECHO-bot niet wilt blijven gebruiken, kunt u deze verwijderen en alle bijbehorende Azure-resources door simpelweg de Azure-resource groep **SpeechEchoBotTutorial-ResourceGroup**te verwijderen.
+Als u de in deze zelf studie geïmplementeerde ECHO-bot niet wilt blijven gebruiken, kunt u deze verwijderen en alle bijbehorende Azure-resources door simpelweg de Azure-resource groep **SpeechEchoBotTutorial-ResourceGroup** te verwijderen.
 
 1. Klik vanuit de [Azure Portal](https://portal.azure.com)op **resource groepen** in de navigatie van Azure- **Services** .
 2. Zoek de resource groep met de naam: **SpeechEchoBotTutorial-ResourceGroup**. Klik op de drie puntjes (...).
@@ -470,15 +470,15 @@ Als u de in deze zelf studie geïmplementeerde ECHO-bot niet wilt blijven gebrui
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Uw eigen client-app bouwen met de Speech SDK](quickstart-voice-assistant-csharp-uwp.md)
+> [Uw eigen client-app bouwen met de Speech SDK](./quickstarts/voice-assistants.md?pivots=programming-language-csharp)
 
 ## <a name="see-also"></a>Zie ook
 
 * Implementatie in een [Azure-regio](https://azure.microsoft.com/global-infrastructure/locations/) in de buurt om de reactie tijd van bot te bekijken
-* Implementeren in een [Azure-regio die hoogwaardige NEURAL TTS-stemmen ondersteunt](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices)
+* Implementeren in een [Azure-regio die hoogwaardige NEURAL TTS-stemmen ondersteunt](./regions.md#standard-and-neural-voices)
 * Prijzen gekoppeld aan direct-lijn spraak kanaal:
   * [Prijzen van bot-service](https://azure.microsoft.com/pricing/details/bot-service/)
   * [Speech Service](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)
 * Bouwen en implementeren van uw eigen spraak ingeschakelde bot:
-  * Een [bot-Framework-bot](https://dev.botframework.com/)bouwen. Registreer deze met [direct line speech Channel](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech?view=azure-bot-service-4.0) en [Pas uw bot aan voor spraak](https://docs.microsoft.com/azure/bot-service/directline-speech-bot?view=azure-bot-service-4.0)
+  * Een [bot-Framework-bot](https://dev.botframework.com/)bouwen. Registreer deze met [direct line speech Channel](/azure/bot-service/bot-service-channel-connect-directlinespeech?view=azure-bot-service-4.0) en [Pas uw bot aan voor spraak](/azure/bot-service/directline-speech-bot?view=azure-bot-service-4.0)
   * Bestaande [bot-Framework oplossingen](https://microsoft.github.io/botframework-solutions/index)verkennen: een [virtuele assistent](https://microsoft.github.io/botframework-solutions/overview/virtual-assistant-solution/) bouwen en [uitbreiden naar direct line speech](https://microsoft.github.io/botframework-solutions/clients-and-channels/tutorials/enable-speech/1-intro/)

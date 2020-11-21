@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: travisw
-ms.openlocfilehash: 4ea2f88b02738645af3f8fc32d5fdb99168a1122
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77d756bc0c7bbdfa38bb1262638ef85b051fc234
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82997379"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026485"
 ---
 # <a name="getting-started-with-voice-assistants-on-windows"></a>Aan de slag met spraak assistenten in Windows
 
@@ -25,17 +25,17 @@ In deze hand leiding worden de stappen beschreven voor het ontwikkelen van een t
 
 Als u een spraak assistent voor Windows wilt gaan ontwikkelen, moet u ervoor zorgen dat u de juiste ontwikkel omgeving hebt.
 
-- **Visual Studio:**   U moet [micro soft Visual Studio 2017](https://visualstudio.microsoft.com/), de Community Edition of hoger installeren
-- **Windows-versie**: een PC met een Windows Insider Fast ring-build van Windows en de Windows Insider-versie van de Windows SDK.Deze voorbeeld code wordt gecontroleerd als werken op Windows Insider release-build 19025.vb_release_analog .191112-1600 met Windows SDK 19018.Alle builds of SDK boven de opgegeven versies moeten compatibel zijn.
-- **UWP Development tools**: de universeel Windows-platform development-werk belasting in Visual Studio.Zie de pagina UWP [ophalen instellen](https://docs.microsoft.com/windows/uwp/get-started/get-set-up) om uw machine gereed te maken voor het ontwikkelen van UWP-toepassingen.
+- **Visual Studio:** U moet [micro soft Visual Studio 2017](https://visualstudio.microsoft.com/), de Community Edition of hoger installeren
+- **Windows-versie**: een PC met een Windows Insider Fast ring-build van Windows en de Windows Insider-versie van de Windows SDK. Deze voorbeeld code wordt gecontroleerd als werken op Windows Insider release-build 19025.vb_release_analog .191112-1600 met Windows SDK 19018. Alle builds of SDK boven de opgegeven versies moeten compatibel zijn.
+- **UWP Development tools**: de universeel Windows-platform development-werk belasting in Visual Studio. Zie de pagina UWP [ophalen instellen](/windows/uwp/get-started/get-set-up) om uw machine gereed te maken voor het ontwikkelen van UWP-toepassingen.
 - **Een werkende microfoon en audio-uitvoer**
 
 ## <a name="obtain-resources-from-microsoft"></a>Bronnen van micro soft ophalen
 
 Voor sommige resources die nodig zijn voor een volledig aangepaste spraak agent in Windows, zijn resources van micro soft vereist. Het [UWP Voice Assistant](windows-voice-assistants-faq.md#the-uwp-voice-assistant-sample) -voor beeld bevat een aantal voor beelden van deze bronnen voor de eerste ontwikkeling en tests, waardoor deze sectie niet nodig is voor de eerste ontwikkeling.
 
-- **Trefwoord model:**   Voor spraak activering is een trefwoord model van micro soft vereist in de vorm van een bin-bestand. Het. bin-bestand in het voor beeld van de UWP Voice Assistant is getraind op het tref woord ' Contoso '.
-- **Token voor beperkte toegang:** Omdat de ConversationalAgent-Api's toegang bieden tot de microfoon audio, worden ze beschermd onder beperkingen voor beperkte toegang.Als u een beperkte toegangs functie wilt gebruiken, moet u een token met beperkte toegang verkrijgen dat is verbonden met de pakket-id van uw toepassing van micro soft.
+- **Trefwoord model:** Voor spraak activering is een trefwoord model van micro soft vereist in de vorm van een bin-bestand. Het. bin-bestand in het voor beeld van de UWP Voice Assistant is getraind op het tref woord ' Contoso '.
+- **Token voor beperkte toegang:** Omdat de ConversationalAgent-Api's toegang bieden tot de microfoon audio, worden ze beschermd onder beperkingen voor beperkte toegang. Als u een beperkte toegangs functie wilt gebruiken, moet u een token met beperkte toegang verkrijgen dat is verbonden met de pakket-id van uw toepassing van micro soft.
 
 ## <a name="establish-a-dialog-service"></a>Een dialoog service maken
 
@@ -48,8 +48,8 @@ Voor een volledige spraak assistent-ervaring heeft de toepassing een dialoog ser
 
 Dit zijn de vereisten voor het maken van een Basic-dialoog service met behulp van direct line speech.
 
-- **Abonnement op spraak Services:** Een abonnement voor cognitieve spraak Services voor conversies van spraak naar tekst en tekst naar spraak. Probeer [hier](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started)gratis spraak Services.
-- **Bot-Framework-bot:**  Een bot gemaakt met behulp van bot Framework versie 4,2 of hoger die is geabonneerd op [direct line speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/direct-line-speech) om spraak invoer en uitvoer mogelijk te maken. [Deze hand leiding](https://docs.microsoft.com/azure/cognitive-services/speech-service/tutorial-voice-enable-your-bot-speech-sdk) bevat stapsgewijze instructies voor het maken van een "echo bot" en het abonneren op direct line speech. U kunt [hier](https://blog.botframework.com/2018/05/07/build-a-microsoft-bot-framework-bot-with-the-bot-builder-sdk-v4/) ook terecht voor de stappen voor het maken van een aangepaste bot en vervolgens [dezelfde stappen volgen om u te abonneren](https://docs.microsoft.com/azure/cognitive-services/speech-service/tutorial-voice-enable-your-bot-speech-sdk) op direct line speech, maar met uw nieuwe bot in plaats van met de "echo bot".
+- **Abonnement op spraak Services:** Een abonnement voor cognitieve spraak Services voor conversies van spraak naar tekst en tekst naar spraak. Probeer [hier](./overview.md#try-the-speech-service-for-free)gratis spraak Services.
+- **Bot-Framework-bot:**  Een bot gemaakt met behulp van bot Framework versie 4,2 of hoger die is geabonneerd op [direct line speech](./direct-line-speech.md) om spraak invoer en uitvoer mogelijk te maken. [Deze hand leiding](./tutorial-voice-enable-your-bot-speech-sdk.md) bevat stapsgewijze instructies voor het maken van een "echo bot" en het abonneren op direct line speech. U kunt [hier](https://blog.botframework.com/2018/05/07/build-a-microsoft-bot-framework-bot-with-the-bot-builder-sdk-v4/) ook terecht voor de stappen voor het maken van een aangepaste bot en vervolgens [dezelfde stappen volgen om u te abonneren](./tutorial-voice-enable-your-bot-speech-sdk.md) op direct line speech, maar met uw nieuwe bot in plaats van met de "echo bot".
 
 ## <a name="try-out-the-sample-app"></a>De voor beeld-app uitproberen
 

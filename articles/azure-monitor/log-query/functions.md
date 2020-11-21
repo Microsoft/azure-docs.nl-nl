@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/31/2020
-ms.openlocfilehash: 155f27b9f04db74955640aad8f582fdf05539368
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 678a6f0dc19d966f3d15e713008c19c8fbb96f5e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87511935"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024361"
 ---
 # <a name="using-functions-in-azure-monitor-log-queries"></a>Functies in Azure Monitor-logboek query's gebruiken
 
@@ -23,7 +23,7 @@ Maak een functie met Log Analytics in het Azure Portal door op **Opslaan** te kl
 
 | Instelling | Beschrijving |
 |:---|:---|
-| Naam           | Weergave naam voor de query in **query Explorer**. |
+| Name           | Weergave naam voor de query in **query Explorer**. |
 | Opslaan als        | Functie |
 | Functie alias | Korte naam voor het gebruik van de functie in andere query's. Mag geen spaties bevatten en moet uniek zijn. |
 | Categorie       | Een categorie voor het ordenen van opgeslagen query's en functies in **query Explorer**. |
@@ -56,10 +56,10 @@ security_updates_last_day | where Title contains "SQL"
 ## <a name="next-steps"></a>Volgende stappen
 Zie andere lessen voor het schrijven van Azure Monitor logboek query's:
 
-- [Tekenreeksbewerkingen](string-operations.md)
-- [Datum- en tijdbewerkingen](datetime-operations.md)
-- [Aggregatiefuncties](aggregations.md)
-- [Geavanceerde aggregaties](advanced-aggregations.md)
-- [JSON en gegevensstructuren](json-data-structures.md)
-- [Samenvoegingen](joins.md)
-- [Grafieken](charts.md)
+- [Tekenreeksbewerkingen](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#string-operations)
+- [Datum- en tijdbewerkingen](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#date-and-time-operations)
+- [Aggregatiefuncties](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#aggregations)
+- [Geavanceerde aggregaties](/azure/data-explorer/write-queries#advanced-aggregations)
+- [JSON en gegevensstructuren](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#json-and-data-structures)
+- [Samenvoegingen](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#joins)
+- [Diagrammen](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#charts)

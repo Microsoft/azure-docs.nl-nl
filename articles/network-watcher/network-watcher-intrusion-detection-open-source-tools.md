@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 30a07957a75bfe82d8ce350675f0d29b2f03e069
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 6834f9cc8202f49f53c20f3941945bba4a4b2efd
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966136"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026743"
 ---
 # <a name="perform-network-intrusion-detection-with-network-watcher-and-open-source-tools"></a>Detectie van binnendringing van het netwerk met Network Watcher en open source-hulpprogram ma's uitvoeren
 
@@ -246,7 +246,7 @@ Voor dit artikel hebben we een voor beeld van een dash board voor u gegeven om t
 
 1. Ga op het tabblad **beheer** van Kibana naar **opgeslagen objecten** en importeer alle drie de bestanden. Op het tabblad **dash board** kunt u het voorbeeld dashboard openen en laden.
 
-U kunt ook uw eigen visualisaties en dash boards maken die zijn afgestemd op metrische gegevens van uw eigen interesse. Lees meer over het maken van Kibana-visualisaties in de [officiële documentatie](https://www.elastic.co/guide/en/kibana/current/visualize.html)van Kibana.
+U kunt ook uw eigen visualisaties en dash boards maken die zijn afgestemd op metrische gegevens van uw eigen interesse. Lees meer over het maken van Kibana-visualisaties in de [officiële documentatie](https://www.tutorialspoint.com/kibana/kibana_create_visualization.htm)van Kibana.
 
 ![kibana-dash board][2]
 

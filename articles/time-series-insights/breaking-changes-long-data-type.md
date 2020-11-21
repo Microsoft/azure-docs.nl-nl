@@ -10,18 +10,18 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: dpalled
-ms.openlocfilehash: 2cf86ed4fd4305a37d27bf7a88e8493821ef085c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3460cd8a88733ede041f6c0635ba40797675ed03
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91629094"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025324"
 ---
 # <a name="adding-support-for-long-data-type-in-azure-time-series-insights-gen2"></a>Ondersteuning toevoegen voor lang gegevens type in Azure Time Series Insights Gen2
 
 Het toevoegen van ondersteuning voor lang gegevens type is van invloed op de manier waarop we numerieke gegevens in Azure Time Series Insights Gen2-omgevingen opslaan en indexeren. Als u een gen1-omgeving hebt, kunt u deze wijzigingen negeren.
 
-Vanaf 29 juni of 30 juni 2020, afhankelijk van uw regio, worden uw gegevens als **lang** en **dubbel**geïndexeerd.  Als u vragen hebt of problemen hebt met betrekking tot deze wijziging, verzendt u een ondersteunings ticket via de Azure Portal en vermeldt u deze communicatie.
+Vanaf 29 juni of 30 juni 2020, afhankelijk van uw regio, worden uw gegevens als **lang** en **dubbel** geïndexeerd.  Als u vragen hebt of problemen hebt met betrekking tot deze wijziging, verzendt u een ondersteunings ticket via de Azure Portal en vermeldt u deze communicatie.
 
 Als u een van de volgende situaties ondervindt, moet u de aanbevolen wijzigingen aanbrengen:
 
@@ -42,11 +42,11 @@ Afhankelijk van uw IoT-oplossing en beperkingen, hebt u mogelijk niet de zicht b
 - U kunt preventief de aanbevolen wijzigingen aanbrengen voor alle numerieke Tags.
 - U kunt een subset van gebeurtenissen tijdelijk door sturen naar opslag om uw schema beter te begrijpen en te verkennen.
 
-Als u gebeurtenissen wilt opslaan, schakelt u [gebeurtenis vastleggen](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview) in voor Azure Event hubs of stuurt u een [route](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c#azure-storage) van uw IOT hub naar Azure Blob-opslag.
+Als u gebeurtenissen wilt opslaan, schakelt u [gebeurtenis vastleggen](../event-hubs/event-hubs-capture-overview.md) in voor Azure Event hubs of stuurt u een [route](../iot-hub/iot-hub-devguide-messages-d2c.md#azure-storage-as-a-routing-endpoint) van uw IOT hub naar Azure Blob-opslag.
 
-Gegevens kunnen ook worden waargenomen via de [Event hub Verkenner](https://marketplace.visualstudio.com/items?itemName=Summer.azure-event-hub-explorer)of door de [Event processor host](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-send#receive-events)te gebruiken.
+Gegevens kunnen ook worden waargenomen via de [Event hub Verkenner](https://marketplace.visualstudio.com/items?itemName=Summer.azure-event-hub-explorer)of door de [Event processor host](../event-hubs/event-hubs-dotnet-standard-getstarted-send.md#receive-events)te gebruiken.
 
-Als u IoT Hub gebruikt, gaat u naar [apparaat-naar-Cloud-berichten lezen van het ingebouwde eind punt](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-read-builtin) voor toegang tot het ingebouwde eind punt.
+Als u IoT Hub gebruikt, gaat u naar [apparaat-naar-Cloud-berichten lezen van het ingebouwde eind punt](../iot-hub/iot-hub-devguide-messages-read-builtin.md) voor toegang tot het ingebouwde eind punt.
 
 > [!NOTE]
 > U kunt onderbrekingen ondervinden als u de aanbevolen wijzigingen niet aanbrengt. De betrokken Time Series Insights variabelen die worden geopend via de query-Api's of Time Series Insights Explorer, retour neren bijvoorbeeld **Null** (dat wil zeggen dat er geen gegevens worden weer gegeven in de Explorer).
@@ -66,7 +66,7 @@ Als u momenteel telemetriegegevens van een geheel getal verzendt, worden uw gege
 
 De gegevens van het gehele getal worden wegge schreven naar **propertyValue_long**. Eerder opgenomen (en toekomstige opgenomen) numerieke gegevens in **propertyValue_double** worden niet gekopieerd.
 
-Als u gegevens over deze twee kolommen wilt opvragen voor de eigenschap **propertyValue** , moet u de functie **Coalesce ()** SCALAIR gebruiken in uw TSX. De functie accepteert argumenten van hetzelfde **gegevens type** en retourneert de eerste niet-null-waarde in de argumenten lijst. Zie [Azure time series Insights Gen2 Data Access-concepten](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#other-functions)voor meer informatie.
+Als u gegevens over deze twee kolommen wilt opvragen voor de eigenschap **propertyValue** , moet u de functie **Coalesce ()** SCALAIR gebruiken in uw TSX. De functie accepteert argumenten van hetzelfde **gegevens type** en retourneert de eerste niet-null-waarde in de argumenten lijst. Zie [Azure time series Insights Gen2 Data Access-concepten](/rest/api/time-series-insights/reference-time-series-expression-syntax#other-functions)voor meer informatie.
 
 #### <a name="variable-definition-in-tsx---numeric"></a>Variabele definitie in TSX-numeriek
 
@@ -78,7 +78,7 @@ Als u gegevens over deze twee kolommen wilt opvragen voor de eigenschap **proper
 
 [![Scherm afbeelding toont het dialoog venster een nieuwe variabele toevoegen voor de variabele PropertyValue met een aangepaste waarde, numeriek.](media/time-series-insights-long-data-type/var-def.png)](media/time-series-insights-long-data-type/var-def.png#lightbox)
 
-U kunt ook **Coalesce ($Event. PropertyValue. double, toDouble ($Event. PropertyValue. Long))** gebruiken als de aangepaste [Time Series-expressie](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
+U kunt ook **Coalesce ($Event. PropertyValue. double, toDouble ($Event. PropertyValue. Long))** gebruiken als de aangepaste [Time Series-expressie](/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 #### <a name="inline-variable-definition-using-tsx-query-apis---numeric"></a>Definitie van inline-variabele met behulp van TSX-query-Api's-numeriek
 
@@ -126,7 +126,7 @@ U kunt ook **Coalesce ($Event. PropertyValue. double, toDouble ($Event. Property
 }
 ```
 
-U kunt ook **Coalesce ($Event. PropertyValue. double, toDouble ($Event. PropertyValue. Long))** gebruiken als de aangepaste [Time Series-expressie](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
+U kunt ook **Coalesce ($Event. PropertyValue. double, toDouble ($Event. PropertyValue. Long))** gebruiken als de aangepaste [Time Series-expressie](/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 > [!NOTE]
 > U wordt aangeraden deze variabelen bij te werken op alle locaties die kunnen worden gebruikt. Deze locaties zijn onder andere tijdreeks model, opgeslagen query's en Power BI connector query's.
@@ -145,9 +145,9 @@ Als u momenteel Categorische variabelen gebruikt waarmee gehele waarden worden t
 
 [![Scherm afbeelding toont het dialoog venster een nieuwe variabele toevoegen voor de variabele PropertyValue met een aangepaste waarde, categorische.](media/time-series-insights-long-data-type/var-def-cat.png)](media/time-series-insights-long-data-type/var-def-cat.png#lightbox)
 
-U kunt ook **Coalesce ($Event. PropertyValue. double, toDouble ($Event. PropertyValue. Long))** gebruiken als de aangepaste [Time Series-expressie](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax).
+U kunt ook **Coalesce ($Event. PropertyValue. double, toDouble ($Event. PropertyValue. Long))** gebruiken als de aangepaste [Time Series-expressie](/rest/api/time-series-insights/preview#time-series-expression-and-syntax).
 
-Categorische-variabelen vereisen nog steeds een waarde van het type geheel getal. Het **gegevens type** van alle argumenten in **Coalesce ()** moet van het type **Long** zijn in de aangepaste [Time Series-expressie.](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)
+Categorische-variabelen vereisen nog steeds een waarde van het type geheel getal. Het **gegevens type** van alle argumenten in **Coalesce ()** moet van het type **Long** zijn in de aangepaste [Time Series-expressie.](/rest/api/time-series-insights/reference-time-series-expression-syntax)
 
 #### <a name="inline-variable-definition-using-tsx-query-apis---categorical"></a>Definitie van inline-variabele met behulp van TSX-query-Api's-categorische
 
@@ -227,7 +227,7 @@ Categorische-variabelen vereisen nog steeds een waarde van het type geheel getal
 }
 ```
 
-Categorische-variabelen vereisen nog steeds een waarde van het type geheel getal. Het **gegevens type** van alle argumenten in **Coalesce ()** moet van het type **Long** zijn in de aangepaste [Time Series-expressie](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
+Categorische-variabelen vereisen nog steeds een waarde van het type geheel getal. Het **gegevens type** van alle argumenten in **Coalesce ()** moet van het type **Long** zijn in de aangepaste [Time Series-expressie](/rest/api/time-series-insights/reference-time-series-expression-syntax).
 
 > [!NOTE]
 > U wordt aangeraden deze variabelen bij te werken op alle locaties die kunnen worden gebruikt. Deze locaties zijn onder andere tijdreeks model, opgeslagen query's en Power BI connector query's.

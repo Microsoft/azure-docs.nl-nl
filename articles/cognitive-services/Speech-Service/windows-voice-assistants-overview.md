@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: travisw
-ms.openlocfilehash: fbcb262fee6a2cc62bfe64e8a8589c92b4fe2b17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e8b009ecc2181edfaad5da3d8d05ad0c1909051
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82997445"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024752"
 ---
 # <a name="voice-assistants-on-windows"></a>Spraak assistenten in Windows
 
@@ -37,7 +37,7 @@ Wanneer de gebruiker een tref woord spreekt, stuurt het tref woord software-of h
 
 ### <a name="registration"></a>Registratie
 
-De eerste keer dat een spraak geactiveerde toepassing wordt uitgevoerd, worden de App-ID en trefwoord gegevens geregistreerd via de ConversationalAgent-Api's. AAR registreert alle configuraties in de globale toewijzing met het sleutel woord hardware of software op het systeem, zodat het sleutel woord van de toepassing kan worden gedetecteerd. De toepassing wordt ook [geregistreerd bij de service achtergrond](https://docs.microsoft.com/windows/uwp/launch-resume/register-a-background-task).
+De eerste keer dat een spraak geactiveerde toepassing wordt uitgevoerd, worden de App-ID en trefwoord gegevens geregistreerd via de ConversationalAgent-Api's. AAR registreert alle configuraties in de globale toewijzing met het sleutel woord hardware of software op het systeem, zodat het sleutel woord van de toepassing kan worden gedetecteerd. De toepassing wordt ook [geregistreerd bij de service achtergrond](/windows/uwp/launch-resume/register-a-background-task).
 
 Houd er rekening mee dat dit betekent dat een toepassing niet kan worden geactiveerd door de stem totdat deze eenmaal is uitgevoerd en de registratie is toegestaan.
 

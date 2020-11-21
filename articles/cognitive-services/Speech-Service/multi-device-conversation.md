@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: trbye
-ms.openlocfilehash: 15b69e664ae9a01635afb44d7b6b7c24d7551ce9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c2dbaf8f65208126c52617d4b89d901b3670dac
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87921415"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025171"
 ---
 # <a name="what-is-multi-device-conversation-preview"></a>Wat is een uitwisseling van meerdere apparaten (preview-versie)?
 
 Met **meerdere apparaten** kunt u eenvoudig een spraak-of tekst conversatie maken tussen meerdere clients en de berichten coördineren die ertussen worden verzonden.
 
-Met een **conversatie met meerdere apparaten**kunt u het volgende doen:
+Met een **conversatie met meerdere apparaten** kunt u het volgende doen:
 
 - Verbind meerdere clients met hetzelfde gesprek en beheer het verzenden en ontvangen van berichten ertussen.
 - U kunt eenvoudig audio van elke client transcriberen en de transcriptie naar anderen verzenden, met een optionele vertaling.
@@ -72,7 +72,7 @@ Elke client kan audio-of chat berichten verzenden. De service maakt gebruik van 
 
 ## <a name="overview-of-conversation-host-and-participant"></a>Overzicht van conversatie, host en deel nemer
 
-Een **gesprek** is een sessie die één gebruiker start voor de andere deelnemende gebruikers die u wilt toevoegen. Alle clients maken verbinding met de conversatie met de **conversatie code**van vijf letters.
+Een **gesprek** is een sessie die één gebruiker start voor de andere deelnemende gebruikers die u wilt toevoegen. Alle clients maken verbinding met de conversatie met de **conversatie code** van vijf letters.
 
 Elke conversatie maakt meta gegevens die het volgende bevatten:
 -    Tijds tempels van wanneer de conversatie is gestart en beëindigd
@@ -100,12 +100,12 @@ Een **deel nemer** is een gebruiker die deelneemt aan een gesprek.
 
 ## <a name="language-support"></a>Taalondersteuning
 
-Bij het maken of toevoegen van een conversatie moet elke gebruiker een **primaire taal**kiezen: de taal waarin ze worden gepraat en expres berichten verzenden in, en ook de taal waarin de berichten van andere gebruikers worden weer geven.
+Bij het maken of toevoegen van een conversatie moet elke gebruiker een **primaire taal** kiezen: de taal waarin ze worden gepraat en expres berichten verzenden in, en ook de taal waarin de berichten van andere gebruikers worden weer geven.
 
 Er zijn twee soorten talen: alleen **spraak naar tekst** en **tekst**:
 - Als de gebruiker een **spraak-naar-tekst** -taal kiest als primaire taal, kunnen de spraak-en tekst invoer in de conversatie worden gebruikt.
 
-- Als de gebruiker een taal gebruikt die **alleen uit tekst** is gekozen, kunnen ze alleen tekst invoer gebruiken en expres berichten verzenden in de conversatie. Alleen-tekst talen zijn de talen die worden ondersteund voor tekst omzetting, maar niet voor spraak naar tekst. U kunt de beschik bare talen zien op de pagina [taal ondersteuning](supported-languages.md) .
+- Als de gebruiker een taal gebruikt die **alleen uit tekst** is gekozen, kunnen ze alleen tekst invoer gebruiken en expres berichten verzenden in de conversatie. Alleen-tekst talen zijn de talen die worden ondersteund voor tekst omzetting, maar niet voor spraak naar tekst. U kunt de beschik bare talen zien op de pagina [taal ondersteuning](./language-support.md) .
 
 Naast hun primaire taal kan elke deel nemer ook extra talen opgeven voor het vertalen van de conversatie.
 
@@ -119,7 +119,7 @@ Hieronder volgt een samen vatting van wat de gebruiker kan doen in een conversat
 | De conversatie vertalen | ✔️ | ✔️ |
 
 > [!NOTE]
-> Zie [ondersteunde talen](supported-languages.md)voor lijsten met beschik bare talen voor spraak naar tekst en tekst vertalingen.
+> Zie [ondersteunde talen](./language-support.md)voor lijsten met beschik bare talen voor spraak naar tekst en tekst vertalingen.
 
 
 

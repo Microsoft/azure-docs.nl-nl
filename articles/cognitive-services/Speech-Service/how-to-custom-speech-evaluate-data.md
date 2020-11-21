@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: affbf57fcda5ff9fb56e148c2fa8769e7aa775e6
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: b8b3a0aa6d9790dbb5900eac2d79074f44a749d2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555801"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025647"
 ---
-# <a name="evaluate-and-improve-custom-speech-accuracy"></a>De nauw keurigheid van Custom Speech evalueren en verbeteren
+# <a name="evaluate-and-improve-custom-speech-accuracy"></a>Nauwkeurigheid van Custom Speech beoordelen en verbeteren
 
 In dit artikel leert u hoe u de nauw keurigheid van de spraak-naar-tekst modellen of uw eigen aangepaste modellen van micro soft kunt verfijnen en verbeteren. Audio en menselijk gelabelde transcriptie-gegevens zijn vereist om nauw keurigheid te testen en er moet een representatieve audio van 30 minuten tot 5 uur worden opgegeven.
 
@@ -136,5 +136,5 @@ De volgende tabel geeft een overzicht van de scenario's voor spraak herkenning e
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-* [Uw gegevens voorbereiden en testen](how-to-custom-speech-test-data.md)
+* [Uw gegevens voorbereiden en testen](./how-to-custom-speech-test-and-train.md)
 * [Uw gegevens controleren](how-to-custom-speech-inspect-data.md)

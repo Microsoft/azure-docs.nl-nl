@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/04/2020
-ms.openlocfilehash: 5c3ac14af6eb863daa9eadd32727f4fb53d2185f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46e9ece70d9f980065c719ee1205eb46591b45c0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322854"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025239"
 ---
 # <a name="upgrade-composite-entity-to-machine-learning-entity"></a>Upgrade van samengestelde entiteit naar machine-learning-entiteit
 
@@ -29,7 +29,7 @@ Het upgrade proces:
     * Als onderliggende entiteit wordt gebruikt in Composite _en_ als een afzonderlijke entiteit (gelabeld in voor beeld uitingen), wordt deze toegevoegd aan de versie als een entiteit en als subentiteit aan de nieuwe machine learning-entiteit.
     * Als de onderliggende entiteit een rol gebruikt, wordt elke rol geconverteerd naar een subentiteit met dezelfde naam.
     * Als de onderliggende entiteit een niet-machine learning-entiteit is (reguliere expressie, lijst entiteit of vooraf samengestelde entiteit), wordt een nieuwe subentiteit gemaakt met dezelfde naam en de nieuwe subentiteit heeft een functie met de niet-machine learning-entiteit waarvoor de vereiste functie is toegevoegd.
-* Namen worden bewaard, maar moeten uniek zijn op hetzelfde niveau van subentiteiten/dochter items. Raadpleeg de [unieke naamgevings limieten](luis-boundaries.md#name-uniqueness).
+* Namen worden bewaard, maar moeten uniek zijn op hetzelfde niveau van subentiteiten/dochter items. Raadpleeg de [unieke naamgevings limieten](./luis-limits.md#name-uniqueness).
 * Labels in voor beelden uitingen worden overgeschakeld naar een nieuwe machine learning-entiteit met subentiteiten.
 
 Gebruik de volgende tabel om te begrijpen hoe uw model wordt gewijzigd:
@@ -54,7 +54,7 @@ Voordat u een update uitvoert, moet u het volgende doen:
     > [!div class="mx-imgBorder"]
     > ![Upgrade van meldingen starten](./media/update-composite-entity/notification-begin-update.png)
 
-1. Selecteer **Nu bijwerken**in het pop-upvenster.
+1. Selecteer **Nu bijwerken** in het pop-upvenster.
 
 1. Bekijk **wat er gebeurt wanneer u gegevens bijwerkt** en selecteer vervolgens **door gaan**.
 

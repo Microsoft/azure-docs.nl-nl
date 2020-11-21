@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 49922599adb30e6c631f29b4831fda60cc000a40
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fa3a6d16b79800043bdcd3f183dd86fa278dd1a9
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91360120"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026024"
 ---
 # <a name="integrate-with-a-client-application-using-speech-sdk"></a>Integreren met een client toepassing met behulp van Speech SDK
 
@@ -35,7 +35,7 @@ U hebt ook het volgende nodig:
 > [!div class = "checklist"]
 > * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) of hoger. Deze hand leiding is gebaseerd op Visual Studio 2019.
 > * Een Azure-abonnements sleutel voor spraak Services. [Ontvang een gratis versie](overview.md#try-the-speech-service-for-free) of maak deze op de [Azure Portal](https://portal.azure.com)
-> * [Uw apparaat inschakelen voor ontwikkeling](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
+> * [Uw apparaat inschakelen voor ontwikkeling](/windows/uwp/get-started/enable-your-device-for-development)
 
 ## <a name="step-1-publish-custom-commands-application"></a>Stap 1: de toepassing voor het publiceren van aangepaste opdrachten
 
@@ -43,7 +43,7 @@ U hebt ook het volgende nodig:
 1. Ga naar **instellingen**, selecteer **Luis resource**
 1. Als er geen **Voorspellings resource** is toegewezen, selecteert u een query Voorspellings sleutel of maakt u een nieuwe.
 
-    De query Voorspellings sleutel is altijd vereist voor het publiceren van een toepassing. Voor meer informatie over LUIS-bronnen verwijzen we naar [Create Luis resource](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-azure-subscription)
+    De query Voorspellings sleutel is altijd vereist voor het publiceren van een toepassing. Voor meer informatie over LUIS-bronnen verwijzen we naar [Create Luis resource](../luis/luis-how-to-azure-subscription.md)
 
 1. Ga terug naar bewerkings opdrachten, selecteer **publiceren**
 
@@ -129,7 +129,7 @@ Voeg de code achter de bron toe zodat de toepassing werkt zoals verwacht. De bro
 
 Voeg als volgt de code-behind bron toe:
 
-1. Open in **Solution Explorer**het bron bestand van de code-behind `MainPage.xaml.cs` (gegroepeerd onder `MainPage.xaml` )
+1. Open in **Solution Explorer** het bron bestand van de code-behind `MainPage.xaml.cs` (gegroepeerd onder `MainPage.xaml` )
 
 1. Vervang de inhoud van het bestand door de volgende code: 
 
@@ -404,7 +404,7 @@ Voeg als volgt de code-behind bron toe:
 
 1. Kies in de menu balk de optie **bestand**  >  **Alles opslaan** om uw wijzigingen op te slaan.
 
-## <a name="try-it-out"></a>Uitproberen
+## <a name="try-it-out"></a>Probeer het eens
 
 1. Kies in de menubalk **Build** > **Build Solution** om de toepassing te bouwen. De code moet zonder fouten worden gecompileerd.
 
@@ -416,7 +416,7 @@ Voeg als volgt de code-behind bron toe:
 
    ![Verzoek om toegang tot microfoon](media/sdk/qs-csharp-uwp-10-access-prompt.png)
 
-1. Selecteer **Talk**en spreek een Engelse zin of zin in op de microfoon van uw apparaat. De gesproken tekst wordt verzonden naar de Direct Line Speech-service en getranscribeerd naar tekst, die in het venster wordt weergegeven.
+1. Selecteer **Talk** en spreek een Engelse zin of zin in op de microfoon van uw apparaat. De gesproken tekst wordt verzonden naar de Direct Line Speech-service en getranscribeerd naar tekst, die in het venster wordt weergegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

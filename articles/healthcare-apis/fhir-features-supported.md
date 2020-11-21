@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 02/07/2019
 ms.author: cavoeg
-ms.openlocfilehash: 609bd01e8dcb0e9202d1d9dbe1d1fc1a01cac550
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 71097f13fffbbe5cb57a69c98fb0ab272e16af5c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368278"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026298"
 ---
 # <a name="features"></a>Functies
 
@@ -49,19 +49,19 @@ Eerdere versies die momenteel worden ondersteund, zijn onder andere: `3.0.2`
 | haalt                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `self` en `next` worden ondersteund                     |
 | schakels                 | Nee        | Nee        | Nee        |                                                     |
 
-## <a name="search"></a>Search
+## <a name="search"></a>Zoeken
 
 Alle typen zoek parameters worden ondersteund. 
 
 | Type zoek parameter | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking |
 |-----------------------|-----------|-----------|-----------|---------|
-| Aantal                | Ja       | Ja       | Ja       |         |
+| Getal                | Ja       | Ja       | Ja       |         |
 | Datum/datum/tijd         | Ja       | Ja       | Ja       |         |
 | Tekenreeks                | Ja       | Ja       | Ja       |         |
 | Token                 | Ja       | Ja       | Ja       |         |
-| Naslaginformatie             | Ja       | Ja       | Ja       |         |
+| Referentie             | Ja       | Ja       | Ja       |         |
 | Composite             | Ja       | Ja       | Ja       |         |
-| Aantal              | Ja       | Ja       | Ja       |         |
+| Hoeveelheid              | Ja       | Ja       | Ja       |         |
 | URI                   | Ja       | Ja       | Ja       |         |
 | Specifiek               | Nee        | Nee        | Nee        |         |
 
@@ -100,8 +100,8 @@ Alle typen zoek parameters worden ondersteund.
 |-------------------------|-----------|-----------|-----------|---------|
 | `_sort`                 | Gedeeltelijk        | Gedeeltelijk   | Gedeeltelijk        |   `_sort=_lastUpdated` wordt ondersteund       |
 | `_count`                | Ja       | Ja       | Ja       | `_count` is beperkt tot 100 tekens. Als deze waarde hoger is dan 100, wordt alleen 100 geretourneerd en wordt er een waarschuwing in de bundel geretourneerd. |
-| `_include`              | Nee        | Ja       | Nee        |         |
-| `_revinclude`           | Nee        | Ja       | Nee        | Opgenomen items zijn beperkt tot 100. |
+| `_include`              | Ja       | Ja       | Ja       |Opgenomen items zijn beperkt tot 100. Include op PaaS en OSS on Cosmos DB omvat niet: ITER-ondersteuning.|
+| `_revinclude`           | Ja       | Ja       | Ja       | Opgenomen items zijn beperkt tot 100. Include op PaaS en OSS on Cosmos DB omvat niet: ITER-ondersteuning.|
 | `_summary`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `_summary=count` wordt ondersteund |
 | `_total`                | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | _total = niet en _total = nauw keurig      |
 | `_elements`             | Ja       | Ja       | Ja       |         |
@@ -132,6 +132,27 @@ Cosmos DB is een wereld wijd gedistribueerde multi-model-data base (SQL API, Mon
 De FHIR-server gebruikt [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) voor toegangs beheer. Met name Role-Based Access Control (RBAC) wordt afgedwongen, als de `FhirServer:Security:Enabled` configuratie parameter is ingesteld op `true` en voor alle aanvragen (behalve `/metadata` ) naar de FHIR-server moet de `Authorization` aanvraag header zijn ingesteld op `Bearer <TOKEN>` . Het token moet een of meer rollen bevatten zoals gedefinieerd in de `roles` claim. Een aanvraag wordt toegestaan als het token een rol bevat waarmee de opgegeven actie kan worden uitgevoerd voor de opgegeven bron.
 
 Op dit moment worden de toegestane acties voor een bepaalde rol *globaal* toegepast op de API.
+
+## <a name="service-limits"></a>Servicelimieten
+
+* [**Aanvraag eenheden (RUs)**](https://docs.microsoft.com/azure/cosmos-db/concepts-limits) : u kunt maxi maal 10.000 RUs configureren in de portal voor Azure API voor FHIR. U hebt mini maal 400 RUs of 10 RUs/GB nodig, afhankelijk van wat groter is. Als u meer dan 10.000 RUs nodig hebt, kunt u een ondersteunings ticket plaatsen om dit te verg root. De Maxi maal beschik bare waarde is 1.000.000.
+
+* **Gelijktijdige verbindingen** en **instanties** : door dafault hebt u vijf gelijktijdige verbindingen op twee instanties in het cluster (voor een totaal van 10 gelijktijdige aanvragen). Als u denkt dat u meer gelijktijdige aanvragen nodig hebt, opent u een ondersteunings ticket met informatie over uw behoeften.
+
+* **Bundel grootte** : elke bundel is beperkt tot 500 items.
+
+* **Gegevens grootte** : gegevens/documenten moeten iets kleiner zijn dan 2 MB.
+
+## <a name="performance-expectations"></a>Prestatie verwachtingen
+
+De prestaties van het systeem zijn afhankelijk van het aantal RUs, gelijktijdige verbindingen en het type bewerkingen dat u uitvoert (put, post, enz.). Hieronder vindt u enkele algemene bereiken van wat u kunt verwachten op basis van het geconfigureerde RUs. Over het algemeen schaalt prestaties lineair met een toename van RUs:
+
+| # RUs | Bronnen per seconde |
+|----------|---------------|
+| 400      | 5-10          |
+| 1000    | 100-150       |
+| 10.000   | 225-400       |
+| 100.000  | 2500-4000   |
 
 ## <a name="next-steps"></a>Volgende stappen
 

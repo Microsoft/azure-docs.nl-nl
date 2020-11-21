@@ -10,17 +10,17 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: erhopf
-ms.openlocfilehash: c55d69e99715a0c646c4e836df06cf105f9770bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3ff2a1f92cabb61f58d70b732738e613afa7cd9
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319104"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025630"
 ---
 # <a name="inspect-custom-speech-data"></a>Custom Speech-gegevens controleren
 
 > [!NOTE]
-> Op deze pagina wordt ervan uitgegaan dat u [test gegevens voorbereiden voor Custom speech](how-to-custom-speech-test-data.md) hebt gelezen en een gegevensset hebt geüpload voor inspectie.
+> Op deze pagina wordt ervan uitgegaan dat u [test gegevens voorbereiden voor Custom speech](./how-to-custom-speech-test-and-train.md) hebt gelezen en een gegevensset hebt geüpload voor inspectie.
 
 Custom Speech biedt hulp middelen waarmee u de herkennings kwaliteit van een model visueel kunt controleren door audio gegevens te vergelijken met het bijbehorende herkennings resultaat. Vanuit de [Custom speech Portal](https://speech.microsoft.com/customspeech)kunt u geüploade audio afspelen en bepalen of het gegeven herkennings resultaat juist is. Met dit hulp programma kunt u de kwaliteit van het spraak-naar-tekst model van micro soft-basis lijn controleren, een getraind aangepast model controleren of transcriptie vergelijken met twee modellen.
 
@@ -35,7 +35,7 @@ Volg deze instructies om een test te maken:
 3. Klik op **test toevoegen**.
 4. Selecteer **kwaliteit controleren (alleen audio gegevens)**. Geef de test een naam, beschrijving en selecteer uw audio gegevensset.
 5. Selecteer Maxi maal twee modellen die u wilt testen.
-6. Klik op **Maken**.
+6. Klik op **Create**.
 
 Nadat een test is gemaakt, kunt u zien hoe een model de door u opgegeven audio gegevensset transcribeert of resultaten vergelijken van twee modellen naast elkaar.
 
@@ -104,4 +104,4 @@ De bestanden die naar gegevens worden geëxporteerd, worden gebruikt als een mer
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-- [Test gegevens voorbereiden voor Custom Speech](how-to-custom-speech-test-data.md)
+- [Test gegevens voorbereiden voor Custom Speech](./how-to-custom-speech-test-and-train.md)

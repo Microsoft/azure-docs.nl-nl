@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 9c84b35318637f5b89e6c88c0ebb3fd6616533fc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aeb90e8e064c44f4d17f920261ed58310f0e55f0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86023122"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025698"
 ---
 # <a name="debug-errors-when-authoring-a-custom-commands-application"></a>Fouten opsporen tijdens het ontwerpen van een toepassing voor aangepaste opdrachten
 
@@ -24,7 +24,7 @@ In dit artikel wordt beschreven hoe u fouten oplost tijdens het maken van de toe
 ## <a name="errors-when-creating-an-application"></a>Fouten bij het maken van een toepassing
 Aangepaste opdrachten maken ook een toepassing in [Luis](https://www.luis.ai/) bij het maken van een toepassing voor aangepaste opdrachten. 
 
-[Luis beperkt 500-toepassingen per ontwerp bron](https://docs.microsoft.com/azure/cognitive-services/luis/luis-limits). Het maken van een LUIS-toepassing kan mislukken als u een ontwerp bron gebruikt die al 500 toepassingen bevat. 
+[Luis beperkt 500-toepassingen per ontwerp bron](../luis/luis-limits.md). Het maken van een LUIS-toepassing kan mislukken als u een ontwerp bron gebruikt die al 500 toepassingen bevat. 
 
 Zorg ervoor dat de geselecteerde LUIS-ontwerp bron minder dan 500 toepassingen bevat. Als dat niet het geval is, kunt u een nieuwe LUIS-ontwerp bron maken, overschakelen naar een andere, of proberen om uw LUIS-toepassingen op te schonen.  
 
@@ -53,15 +53,15 @@ LUIS heeft ingebouwde Ja/geen intenties. Als er voorbeeld zinnen met alleen ' ja
 
 | Zoek | Variaties | 
 | ------- | --------- | 
-| Ja | Zeker, OK |
-| Nee | Klopt, niet | 
+| Yes | Zeker, OK |
+| No | Klopt, niet | 
 
 ### <a name="common-sample-sentences"></a>Algemene voorbeeld zinnen
 Aangepaste opdrachten staan geen veelvoorkomende voorbeeld zinnen toe die worden gedeeld tussen verschillende opdrachten. De training van een toepassing kan mislukken als sommige voorbeeld zinnen in één opdracht al zijn gedefinieerd in een andere opdracht. 
 
 Zorg ervoor dat er geen veelvoorkomende voorbeeld zinnen worden gedeeld tussen verschillende opdrachten. 
 
-Voor best practice van het verdelen van uw voorbeeld zinnen over verschillende opdrachten, verwijzen wij u naar [LUIS best practice](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-best-practices).
+Voor best practice van het verdelen van uw voorbeeld zinnen over verschillende opdrachten, verwijzen wij u naar [LUIS best practice](../luis/luis-concept-best-practices.md).
 
 ### <a name="empty-sample-sentences"></a>Lege voorbeeld zinnen
 U moet ten minste één voorbeeld zin voor elke opdracht hebben.
@@ -82,7 +82,7 @@ U kunt bijvoorbeeld een para meter {tuig} definiëren voor de onderstaande voorb
 | Een vlucht boeken | Een {-voer tuig boeken} |
 | Een taxi boeken | Een {-voer tuig boeken} |
 
-Raadpleeg [LUIS best practice](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-best-practices)voor Best Practice van Luis training.
+Raadpleeg [LUIS best practice](../luis/luis-concept-best-practices.md)voor Best Practice van Luis training.
 
 ## <a name="cant-update-luis-key"></a>Kan de LUIS-sleutel niet bijwerken
 ### <a name="reassign-to-e0-authoring-resource"></a>Opnieuw toewijzen aan E0-ontwerp bron

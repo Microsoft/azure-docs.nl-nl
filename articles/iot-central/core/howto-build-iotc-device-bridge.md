@@ -9,18 +9,18 @@ ms.date: 07/09/2019
 ms.topic: how-to
 manager: peterpr
 ms.custom: device-developer
-ms.openlocfilehash: fb6029a91714ed0229876bbaf6bb0790565be29c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: fc8ea41e804344735cfa2400d5d763622d8811c8
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427835"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026247"
 ---
 # <a name="build-the-iot-central-device-bridge-to-connect-other-iot-clouds-to-iot-central"></a>De IoT Central Device Bridge bouwen om andere IoT-Clouds te verbinden met IoT Central
 
 *Dit onderwerp is van toepassing op beheerders.*
 
-De IoT Central Device Bridge is een open-source oplossing die uw Sigfox, partikel, het netwerk van de zaken en andere Clouds verbindt met uw IoT Central-app. Of u nu apparaten voor het bijhouden van activa gebruikt die zijn verbonden met het lage-energie netwerk van Sigfox, of met behulp van apparaten voor lucht kwaliteit bewaking op het partikel apparaat in de Cloud, of met behulp van bodem vocht bewakings apparaten op TTN, kunt u rechtstreeks gebruikmaken van de kracht van IoT Central met de IoT Central apparaat-brug. De apparaats brug verbindt andere IoT-Clouds met IoT Central door de gegevens die uw apparaten verzenden naar de andere Clouds, door te sturen naar uw IoT Central-app. In uw IoT Central-app kunt u regels maken en analyses uitvoeren op die gegevens, werk stromen maken in Microsoft Flow en Azure Logic apps, die gegevens exporteren, en nog veel meer. De [IOT Central Device Bridge](https://aka.ms/iotcentralgithubdevicebridge) ophalen van github
+De IoT Central Device Bridge is een open-source oplossing die uw Sigfox, partikel, het netwerk van de zaken en andere Clouds verbindt met uw IoT Central-app. Of u nu apparaten voor het bijhouden van activa gebruikt die zijn verbonden met het lage-energie netwerk van Sigfox, of met behulp van apparaten voor lucht kwaliteit bewaking op het partikel apparaat in de Cloud, of met behulp van bodem vocht bewakings apparaten op TTN, kunt u rechtstreeks gebruikmaken van de kracht van IoT Central met de IoT Central apparaat-brug. De apparaats brug verbindt andere IoT-Clouds met IoT Central door de gegevens die uw apparaten verzenden naar de andere Clouds, door te sturen naar uw IoT Central-app. In uw IoT Central-app kunt u regels maken en analyses uitvoeren op die gegevens, werk stromen maken in Power-automatisering en Azure Logic apps, gegevens exporteren en nog veel meer. De [IOT Central Device Bridge](https://aka.ms/iotcentralgithubdevicebridge) ophalen van github
 
 ## <a name="what-is-it-and-how-does-it-work"></a>Wat is het en hoe werkt het?
 De IoT Central Device Bridge is een open-source oplossing in GitHub. U kunt nu de knop ' implementeren naar Azure ' gebruiken waarmee u een aangepaste Azure Resource Manager sjabloon met verschillende Azure-resources in uw Azure-abonnement implementeert. De resources zijn onder andere:

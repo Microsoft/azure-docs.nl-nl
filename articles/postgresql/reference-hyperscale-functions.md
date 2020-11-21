@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: reference
 ms.date: 08/10/2020
-ms.openlocfilehash: 16c3a45e0d88a0546772b3fdc855c90f2e450d14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f324ef44d002f50bf27c08072e904c1d92b5512f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250328"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026230"
 ---
 # <a name="functions-in-the-hyperscale-citus-sql-api"></a>Functies in de grootschalige (Citus) SQL-API
 
@@ -40,7 +40,7 @@ Deze functie vervangt het gebruik van \_ stramien \_ gedistribueerde \_ tabel ma
 
 **Ga naar \_ :** (optioneel) Neem de huidige tabel op in de groep voor co-locaties van een andere tabel. Standaard worden tabellen naast elkaar geplaatst wanneer ze worden gedistribueerd door kolommen van hetzelfde type, hetzelfde Shard aantal hebben en dezelfde replicatie factor hebben. Mogelijke waarden voor `colocate_with` zijn `default` , `none` om een nieuwe groep met co-locaties te starten of de naam van een andere tabel om deze tabel te vinden.  (Zie [Table](concepts-hyperscale-colocation.md)-co-locatie.)
 
-Houd er wel voor dat de standaard waarde van de `colocate_with` impliciete co-locatie is. De co- [locatie](concepts-hyperscale-colocation.md) kan een fantastische ding zijn wanneer tabellen aan elkaar zijn gerelateerd of worden gekoppeld.  Als twee tabellen echter geen verband houden met het gebruik van hetzelfde gegevens type voor hun distributie kolommen, kunnen ze per ongeluk de prestaties tijdens het [herverdelen van Shard](howto-hyperscale-scaling.md#rebalance-shards)afnemen.  De tabel Shards wordt onnodig verplaatst in een \" trapsgewijze verplaatsing.\"
+Houd er wel voor dat de standaard waarde van de `colocate_with` impliciete co-locatie is. De co- [locatie](concepts-hyperscale-colocation.md) kan een fantastische ding zijn wanneer tabellen aan elkaar zijn gerelateerd of worden gekoppeld.  Als twee tabellen echter geen verband houden met het gebruik van hetzelfde gegevens type voor hun distributie kolommen, kunnen ze per ongeluk de prestaties tijdens het [herverdelen van Shard](howto-hyperscale-scale-rebalance.md)afnemen.  De tabel Shards wordt onnodig verplaatst in een \" trapsgewijze verplaatsing.\"
 
 Als een nieuwe gedistribueerde tabel niet is gerelateerd aan andere tabellen, kunt u het beste opgeven `colocate_with => 'none'` .
 
@@ -194,13 +194,13 @@ Een tuple met de volgende informatie:
 
 **logische \_ relid:** OID van de gedistribueerde tabel. Deze verwijst naar de kolom relfilenode in de catalogus tabel van de PG- \_ klasse System.
 
-** \_ type onderdeel opslag \_ :** het type opslag dat wordt gebruikt voor de tabel. Mogelijk ' (standaard tabel), ' f ' (refererende tabel) of ' c ' (kolom in tabel).
+**\_ type onderdeel opslag \_ :** het type opslag dat wordt gebruikt voor de tabel. Mogelijk ' (standaard tabel), ' f ' (refererende tabel) of ' c ' (kolom in tabel).
 
 **onderdeel \_ methode:** de distributie methode die wordt gebruikt voor de tabel. Kan ' a ' (toevoegen) of ' h ' (hash) zijn.
 
 **onderdeel \_ sleutel:** de kolom distributie voor de tabel.
 
-** \_ aantal onderdelen replica's \_ :** huidig aantal Shard-replicaties.
+**\_ aantal onderdelen replica's \_ :** huidig aantal Shard-replicaties.
 
 **grootte van onderdeel \_ \_ :** huidige maximale grootte van Shard in bytes.
 
@@ -253,7 +253,7 @@ Zie [een distributie kolom kiezen](concepts-hyperscale-choose-distribution-colum
 
 **tabel \_ naam:** de gedistribueerde tabel.
 
-** \_ var- \_ tekst kolom:** de waarde van `partkey` in de `pg_dist_partition` tabel.
+**\_ var- \_ tekst kolom:** de waarde van `partkey` in de `pg_dist_partition` tabel.
 
 #### <a name="return-value"></a>Retourwaarde
 
@@ -470,7 +470,7 @@ Met name probeert de Shard-herbalancer het gebruik van alle worker-knoop punten 
 > -   `force_logical`: Gebruik logische replicatie, zelfs als de tabel geen replica-id heeft. Alle gelijktijdige bijwerk-en verwijderings instructies voor de tabel mislukken tijdens de replicatie.
 > -   `block_writes`: Gebruik COPY (blokkerende schrijf bewerkingen) voor tabellen die geen primaire sleutel of replica-id hebben.
 
-** \_ alleen afvoer:** (optioneel) als deze optie waar is, verplaatst u Shards uit worker-knoop punten die zijn `shouldhaveshards` ingesteld op False in [pg_dist_node](reference-hyperscale-metadata.md#worker-node-table); Verplaats geen andere Shards.
+**\_ alleen afvoer:** (optioneel) als deze optie waar is, verplaatst u Shards uit worker-knoop punten die zijn `shouldhaveshards` ingesteld op False in [pg_dist_node](reference-hyperscale-metadata.md#worker-node-table); Verplaats geen andere Shards.
 
 **strategie voor opnieuw verdelen \_ :** (optioneel) de naam van een strategie in [pg_dist_rebalance_strategy](reference-hyperscale-metadata.md#rebalancer-strategy-table).
 Als dit argument wordt wegge laten, wordt met de functie de standaard strategie gekozen, zoals aangegeven in de tabel.
@@ -508,7 +508,7 @@ Tuples met deze kolommen:
 
 -   **tabel \_ naam**: de tabel waarvan Shards zou worden verplaatst
 -   **shardid**: de Shard in kwestie
--   ** \_ grootte van Shard**: grootte in bytes
+-   **\_ grootte van Shard**: grootte in bytes
 -   **SourceName**: hostnaam van het bron knooppunt
 -   **sourceport**: poort van het bron knooppunt
 -   **TargetName**: de hostnaam van het doel knooppunt
@@ -529,7 +529,7 @@ Tuples met deze kolommen:
 -   **sessie-id**: post gres PID van de monitor voor opnieuw verdelen
 -   **tabel \_ naam**: de tabel waarvan de Shards worden verplaatst
 -   **shardid**: de Shard in kwestie
--   ** \_ grootte van Shard**: grootte in bytes
+-   **\_ grootte van Shard**: grootte in bytes
 -   **SourceName**: hostnaam van het bron knooppunt
 -   **sourceport**: poort van het bron knooppunt
 -   **TargetName**: de hostnaam van het doel knooppunt
@@ -563,9 +563,9 @@ Zie voor meer informatie over deze argumenten de overeenkomstige kolom waarden i
 
 **naam:** id voor de nieuwe strategie
 
-** \_ \_ functie Shard Cost:** identificeert de functie die wordt gebruikt om de \" kosten \" van elke Shard te bepalen
+**\_ \_ functie Shard Cost:** identificeert de functie die wordt gebruikt om de \" kosten \" van elke Shard te bepalen
 
-** \_ functie knooppunt capaciteit \_ :** identificeert de functie om de capaciteit van het knoop punt te meten
+**\_ functie knooppunt capaciteit \_ :** identificeert de functie om de capaciteit van het knoop punt te meten
 
 **Shard \_ toegestaan \_ op \_ knooppunt \_ functie:** identificeert de functie die bepaalt welke Shards kan worden geplaatst op welke knoop punten
 

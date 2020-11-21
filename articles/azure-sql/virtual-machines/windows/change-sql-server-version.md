@@ -14,12 +14,12 @@ ms.date: 06/08/2020
 ms.author: RamaKoni
 ms.reviewer: sqlblt, daleche
 ms.custom: seo-lt-2019
-ms.openlocfilehash: a0ecc36d78ffde002dac971a749889104ff10073
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: b9223ffc564620804b36f6f0e71602b3888a9f42
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556451"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025375"
 ---
 # <a name="in-place-change-of-sql-server-version-on-azure-vm"></a>In-place wijziging van de SQL Server-versie op de Azure-VM
 
@@ -66,7 +66,7 @@ Als u de versie van SQL Server wilt bijwerken, moet u de SQL Server Setup-media 
 
    :::image type="content" source="./media/change-sql-server-version/upgrade.png" alt-text="Selectie voor het bijwerken van de versie van SQL Server":::
 
-1. Selecteer op de pagina **product code** een optie om aan te geven of u een upgrade uitvoert naar een gratis versie van SQL Server of dat u een PID-sleutel hebt voor een productie versie van het product. Zie [edities en ondersteunde functies van SQL Server 2019 (15. x)](/sql/sql-server/editions-and-components-of-sql-server-version-155) en [ondersteunde versie-en editie-Upgrades (SQL Server 2016)](/sql/database-engine/install-windows/supported-version-and-edition-upgrades)voor meer informatie.
+1. Selecteer op de pagina **product code** een optie om aan te geven of u een upgrade uitvoert naar een gratis versie van SQL Server of dat u een PID-sleutel hebt voor een productie versie van het product. Zie [edities en ondersteunde functies van SQL Server 2019 (15. x)](/sql/sql-server/editions-and-components-of-sql-server-version-15) en [ondersteunde versie-en editie-Upgrades (SQL Server 2016)](/sql/database-engine/install-windows/supported-version-and-edition-upgrades)voor meer informatie.
 1. Selecteer **volgende** totdat u de pagina **gereed voor de upgrade** hebt bereikt en selecteer vervolgens **upgrade**. Het installatie venster reageert mogelijk enkele minuten niet meer wanneer de wijziging wordt doorgevoerd. Op een **volledige** pagina wordt bevestigd dat uw upgrade is voltooid. Zie [de volledige procedure](/sql/database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup#procedure)voor een stapsgewijze procedure voor het uitvoeren van een upgrade.
 
    :::image type="content" source="./media/change-sql-server-version/complete-page.png" alt-text="Volledige pagina":::

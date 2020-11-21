@@ -5,18 +5,18 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/14/2020
-ms.openlocfilehash: 0c8d4a5013f23a805c22dc5c44444de6b10ab369
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 18e44ec43e1169aa054e6e5b4591ccd8611a7f4d
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316236"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025222"
 ---
 # <a name="regular-expression-entity"></a>Een entiteit in de vorm van een reguliere expressie
 
 Een reguliere expressie-entiteit extraheert een entiteit op basis van een reguliere expressie patroon dat u opgeeft.
 
-Een reguliere expressie is het meest geschikt voor onbewerkte utterance-tekst. Case wordt genegeerd en de cultuur variant wordt genegeerd.  Reguliere expressie-overeenkomsten worden toegepast na wijzigingen in de spelling controle op het teken niveau, niet op het token niveau. Als de reguliere expressie te complex is, zoals het gebruik van een groot aantal haken, kunt u de expressie niet toevoegen aan het model. Maakt gebruik van een deel, maar niet alle [.net regex](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions) -bibliotheek.
+Een reguliere expressie is het meest geschikt voor onbewerkte utterance-tekst. Case wordt genegeerd en de cultuur variant wordt genegeerd.  Reguliere expressie-overeenkomsten worden toegepast na wijzigingen in de spelling controle op het teken niveau, niet op het token niveau. Als de reguliere expressie te complex is, zoals het gebruik van een groot aantal haken, kunt u de expressie niet toevoegen aan het model. Maakt gebruik van een deel, maar niet alle [.net regex](/dotnet/standard/base-types/regular-expressions) -bibliotheek.
 
 **De entiteit is goed geschikt wanneer:**
 

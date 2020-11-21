@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 11/19/2020
 ms.author: cynthn
-ms.openlocfilehash: f33cb7d4d005f15d0a5fcc70d56ebd4698f86694
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 2cc935e81e867609159b5c150b6ee7c346bb9f8e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94988218"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026145"
 ---
 # <a name="control-updates-with-maintenance-control-and-azure-powershell"></a>Updates beheren met onderhouds beheer en Azure PowerShell
 
-Met de onderhouds controle kunt u bepalen wanneer u updates wilt Toep assen op uw geïsoleerde Vm's en voor Azure toegewezen hosts. In dit onderwerp worden de Azure PowerShell opties voor onderhouds beheer beschreven. Zie [platform updates beheren met onderhouds beheer](maintenance-control.md)voor meer informatie over de voor delen van het gebruik van onderhouds beheer, de beperkingen en andere beheer opties.
+Met de onderhouds controle kunt u bepalen wanneer platform updates moeten worden toegepast op de host-infra structuur van uw geïsoleerde Vm's en voor Azure toegewezen hosts. In dit onderwerp worden de Azure PowerShell opties voor onderhouds beheer beschreven. Zie [platform updates beheren met onderhouds beheer](maintenance-control.md)voor meer informatie over de voor delen van het gebruik van onderhouds beheer, de beperkingen en andere beheer opties.
  
 ## <a name="enable-the-powershell-module"></a>De Power shell-module inschakelen
 
@@ -86,9 +86,9 @@ $config = New-AzMaintenanceConfiguration `
 > De **duur** van het onderhoud moet *2 uur* of langer zijn. **Terugkeer patroon** van onderhoud moet worden ingesteld op ten minste één keer in 35 dagen.
 
 **Terugkeer patroon** van onderhoud kan worden uitgedrukt als dagelijks, wekelijks of maandelijks. Een aantal voorbeelden:
- - dagelijks: "recurEvery: Day" **of** "RecurEvery: 3Days" 
- - Wekelijks: ' recurEvery: 3Weeks ' **of** ' RecurEvery: week zaterdag, zondag ' 
- - Maandelijks: "recurEvery: month day23, day24" **of** "RecurEvery: month last zondag" **of** "RecurEvery: month vierde maandag"  
+ - **dagelijks**-RecurEvery ' dag ' **of** ' 3Days ' 
+ - **wekelijks**: RecurEvery "3Weeks" **of** "week zaterdag, zondag" 
+ - **Monthly**-RecurEvery "month day23, day24" **of** "month afgelopen zondag" **of** "month 4e maandag"  
       
 
 ## <a name="assign-the-configuration"></a>De configuratie toewijzen

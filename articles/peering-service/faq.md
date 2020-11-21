@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
 ms.date: 05/18/2020
 ms.author: derekol
-ms.openlocfilehash: 55c5e6c5b718dc2de295b9b4418ddc8607a69f8f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 95ce90dbbf47ffe527fe6f25704d9cd28b834ea9
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84872048"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026692"
 ---
 # <a name="peering-service-faq"></a>Veelgestelde vragen over peering-service
 
@@ -36,7 +36,7 @@ A. Ja, klanten kunnen dit doen. Selecteer de partner-ISP per regio die tegemoetk
 
 **Nils. Wat is een micro soft Edge-PoP?**
 
-A. Het is een fysieke locatie waar micro soft verbinding maakt met andere netwerken. In de micro soft Edge PoP-locatie worden services, zoals Azure front deur en Azure CDN, gehost. Zie [Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-features)voor meer informatie.
+A. Het is een fysieke locatie waar micro soft verbinding maakt met andere netwerken. In de micro soft Edge PoP-locatie worden services, zoals Azure front deur en Azure CDN, gehost. Zie [Azure CDN](../cdn/cdn-features.md)voor meer informatie.
 
 ## <a name="peering-service-unique-characteristics"></a>Peering-service: unieke kenmerken
 

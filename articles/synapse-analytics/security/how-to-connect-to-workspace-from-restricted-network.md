@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 10/25/2020
 ms.author: xujiang1
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7cff2d8245095489fbba3b7af24b416885995e4d
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 55ec8be176dc7274a3b9a1feca53726d57eeb422
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94637129"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024462"
 ---
 # <a name="connect-to-workspace-resources-from-a-restricted-network"></a>Verbinding maken met werkruimte bronnen vanuit een beperkt netwerk
 
@@ -21,9 +21,9 @@ Stel dat u een IT-beheerder bent die het beperkte netwerk van uw organisatie beh
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Azure-abonnement** : als u nog geen Azure-abonnement hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
-* **Azure Synapse Analytics-werk ruimte** : u kunt er een maken op basis van Azure Synapse Analytics. U hebt de naam van de werk ruimte nodig in stap 4.
-* **Een beperkt netwerk** : de IT-beheerder onderhoudt het beperkte netwerk voor de organisatie en heeft toestemming voor het configureren van het netwerk beleid. U hebt de naam van het virtuele netwerk en het bijbehorende subnet nodig in stap 3.
+* **Azure-abonnement**: als u nog geen Azure-abonnement hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
+* **Azure Synapse Analytics-werk ruimte**: u kunt er een maken op basis van Azure Synapse Analytics. U hebt de naam van de werk ruimte nodig in stap 4.
+* **Een beperkt netwerk**: de IT-beheerder onderhoudt het beperkte netwerk voor de organisatie en heeft toestemming voor het configureren van het netwerk beleid. U hebt de naam van het virtuele netwerk en het bijbehorende subnet nodig in stap 3.
 
 
 ## <a name="step-1-add-network-outbound-security-rules-to-the-restricted-network"></a>Stap 1: uitgaande beveiligings regels voor het netwerk toevoegen aan het beperkte netwerk
@@ -40,7 +40,7 @@ De volgende scherm afbeelding toont Details voor de uitgaande regel Azure Resour
 
 Wanneer u de andere drie regels maakt, vervangt u de waarde van de **doel service-tag** door **AzureFrontDoor.** front-end, **AzureActiveDirectory** of **AzureMonitor** uit de lijst.
 
-Zie [overzicht van service Tags](/azure/virtual-network/service-tags-overview.md)voor meer informatie.
+Zie [overzicht van service Tags](/azure/virtual-network/service-tags-overview)voor meer informatie.
 
 ## <a name="step-2-create-private-link-hubs"></a>Stap 2: Maak een persoonlijke koppelings hubs
 
@@ -78,7 +78,7 @@ Nadat het eind punt van de persoonlijke koppeling is gemaakt, kunt u toegang kri
 Als u toegang wilt krijgen tot de resources in uw Azure Synapse Analytics Studio-werkruimte resource, moet u het volgende maken:
 
 - Ten minste één persoonlijk eind punt met een type **ontwikkelaar** van een **doel-subresource**.
-- Twee andere optionele persoonlijke koppelings eindpunten met typen **SQL** of **SqlOnDemand** , afhankelijk van de resources in de werk ruimte die u wilt gebruiken.
+- Twee andere optionele persoonlijke koppelings eindpunten met typen **SQL** of **SqlOnDemand**, afhankelijk van de resources in de werk ruimte die u wilt gebruiken.
 
 Het maken van deze in de vorige stap is vergelijkbaar met hoe u het eind punt maakt.  
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 0e2406cd35fb2d4dd99da4f5139a9f0f80697912
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: e50d7aba5cc5b3d5d620d844cc9ad169ad8b3bf6
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566245"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025888"
 ---
 # <a name="set-up-web-endpoints"></a>Webeindpunten instellen
 
@@ -49,10 +49,10 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
    | Kopteksten | Sleutel: app, waarde: gebruik de eerste acht cijfers van uw toepassings-id | De headerparameters die moeten worden meegenomen in de aanvraagheader.|
 
     > [!NOTE]
-    > - Het voorbeeld-webeindpunt dat is gemaakt met behulp van [Azure Functions](https://docs.microsoft.com/azure/azure-functions/), dat wordt gekoppeld aan de database waarin de apparaatstatus van de tv en ventilator worden opgeslagen
+    > - Het voorbeeld-webeindpunt dat is gemaakt met behulp van [Azure Functions](../../azure-functions/index.yml), dat wordt gekoppeld aan de database waarin de apparaatstatus van de tv en ventilator worden opgeslagen
     > - De voorgestelde header is alleen nodig voor het voorbeeldeindpunt
     > - Om ervoor te zorgen dat de waarde van de header uniek is in het voorbeeldeindpunt, gebruikt u de eerste acht cijfers van uw toepassings-id
-    > - In het echt kan het webeindpunt het eindpunt zijn van de [IOT-hub](https://docs.microsoft.com/azure/iot-hub/about-iot-hub) waarmee uw apparaten worden beheerd
+    > - In het echt kan het webeindpunt het eindpunt zijn van de [IOT-hub](../../iot-hub/about-iot-hub.md) waarmee uw apparaten worden beheerd
 
 1. Klik op **Opslaan**.
 

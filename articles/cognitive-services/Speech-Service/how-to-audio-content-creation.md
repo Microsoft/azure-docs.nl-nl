@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/31/2020
 ms.author: trbye
-ms.openlocfilehash: 5685a2553b95308a1c18c3e490737338f609b594
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 7d4d1acac591bfe6ce40efcf6166357d43718363
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94330934"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024956"
 ---
 # <a name="improve-synthesis-with-the-audio-content-creation-tool"></a>De synthese verbeteren met het hulp programma voor het maken van een audio-inhoud
 
@@ -33,13 +33,13 @@ Het maken van audio-inhoud is een gratis hulp programma, maar u betaalt voor de 
 
 ### <a name="step-1---create-an-azure-account"></a>Stap 1: een Azure-account maken
 
-Als u wilt werken met het maken van audio-inhoud, moet u een [Microsoft-account](https://account.microsoft.com/account) en een [Azure-account](https://azure.microsoft.com/free/ai/)hebben. Volg deze instructies om [het account](get-started.md#new-resource)in te stellen. 
+Als u wilt werken met het maken van audio-inhoud, moet u een [Microsoft-account](https://account.microsoft.com/account) en een [Azure-account](https://azure.microsoft.com/free/ai/)hebben. Volg deze instructies om [het account](./overview.md#try-the-speech-service-for-free)in te stellen. 
 
 [Azure Portal](https://portal.azure.com/) is de centrale plaats waar u uw Azure-account kunt beheren. U kunt de spraak resource maken, de product toegang beheren en alles bewaken van eenvoudige web-apps tot complexe Cloud implementaties. 
 
 ### <a name="step-2---create-a-speech-resource"></a>Stap 2: een spraak bron maken
 
-Nadat u zich hebt aangemeld voor het Azure-account, moet u een spraak bron maken onder uw Azure-account om toegang te krijgen tot spraak Services. Bekijk de instructies voor het [maken van een spraak resource](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview#create-the-azure-resource). 
+Nadat u zich hebt aangemeld voor het Azure-account, moet u een spraak bron maken onder uw Azure-account om toegang te krijgen tot spraak Services. Bekijk de instructies voor het [maken van een spraak resource](./overview.md#create-the-azure-resource). 
 
 Het kan even duren voordat u uw nieuwe spraakresource is geïmplementeerd. Zodra de implementatie is voltooid, kunt u de traject voor het maken van de audio-inhoud starten. 
 
@@ -63,7 +63,7 @@ Dit diagram toont de stappen die nodig zijn om tekst-naar-spraak-uitvoer te verf
 2. [Maak een audio-afstemmings bestand](#create-an-audio-tuning-file) met behulp van onbewerkte tekst of SSML-scripts. Typ of upload uw inhoud in om audio content te maken.
 3. Kies de stem en de taal voor de script inhoud. Voor het maken van audio-inhoud [zijn alle micro soft tekst-naar-spraak-stemmen](language-support.md#text-to-speech)opgenomen. U kunt standaard, Neural of uw eigen aangepaste stem gebruiken.
    >[!NOTE]
-   > Toegang voor gestuurde Neural is beschikbaar voor aangepaste stemmen op het niveau van een hoge definitie die vergelijkbaar is met spraak herkenning. Zie [beperking process](https://aka.ms/ignite2019/speech/ethics)(Engelstalig) voor meer informatie.
+   > Toegang voor gestuurde Neural is beschikbaar voor aangepaste stemmen op het niveau van een hoge definitie die vergelijkbaar is met spraak herkenning. Zie [beperking process](./text-to-speech.md)(Engelstalig) voor meer informatie.
 
 4. Klik op het **afspeel** pictogram (een drie hoek) om de standaard-synthese uitvoer te bekijken. Verbeter vervolgens de uitvoer door de uitspraak, het afbreek teken, de hoogte, de rente, de intonation, de stem stijl en meer te wijzigen. Zie voor een volledige lijst met opties [spraak synthese Markup Language (Engelstalig](speech-synthesis-markup.md)). Hier volgt een [video](https://www.youtube.com/watch?v=O1wIJ7mts_w) om te laten zien hoe u spraak uitvoer nauw keuriger kunt afstemmen met het maken van audio-inhoud. 
 5. [Uw afgestemde audio](#export-tuned-audio)opslaan en exporteren. Wanneer u de afstemmings track opslaat in het systeem, kunt u blijven werken en de uitvoer herhalen. Wanneer u tevreden bent met de uitvoer, kunt u een taak voor het maken van een audio maken met de export functie. U kunt de status van de export taak bekijken en de uitvoer downloaden voor gebruik met uw apps en producten.
@@ -140,7 +140,7 @@ Volg deze stappen om een gebruiker toe te voegen aan een spraak bron, zodat deze
 
     :::image source="media/audio-content-creation/add-role-first.png" alt-text="Dialoog venster rol toevoegen":::
 
-1. De gebruikers die u toevoegt, ontvangen een uitnodigings-e-mail. Nadat deze zijn geklikt op **uitnodiging accepteren**  >  **accepteren om lid te worden van Azure** , kunnen ze [audio-inhoud maken](https://aka.ms/audiocontentcreation)gebruiken.
+1. De gebruikers die u toevoegt, ontvangen een uitnodigings-e-mail. Nadat deze zijn geklikt op **uitnodiging accepteren**  >  **accepteren om lid te worden van Azure**, kunnen ze [audio-inhoud maken](https://aka.ms/audiocontentcreation)gebruiken.
 
 Gebruikers die zich in dezelfde spraak resource bevinden, zien elkaars werk in het maken van audio Contents Studio. Als u wilt dat elke afzonderlijke gebruiker een unieke en particuliere werk plek heeft bij het maken van audio-inhoud, moet u voor elke gebruiker [een nieuwe spraak bron maken](#step-2---create-a-speech-resource) en elke gebruiker de unieke toegang geven tot de spraak resource. 
 
@@ -160,7 +160,7 @@ Als u een van de gebruikers toegang wilt geven tot andere gebruikers, moet u de 
 
 ## <a name="see-also"></a>Zie ook
 
-* [Lange audio-API](https://aka.ms/long-audio-api)
+* [Lange audio-API](./long-audio-api.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 11/17/2020
+ms.date: 11/18/2020
 ms.author: b-juche
-ms.openlocfilehash: 6fbb9b054433905d41d0171ab08b4647618be466
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: b30ed0cca680013b85efe064d59fb7cb73d753d2
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94745680"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95239547"
 ---
 # <a name="troubleshoot-cross-region-replication"></a>Problemen met replicatie tussen regio's oplossen
 
@@ -50,6 +50,12 @@ In dit artikel worden fout berichten en oplossingen beschreven die u kunnen help
 |-|-|
 |     `Replication   cannot be deleted, mirror state needs to be in status: Broken before deleting`    |     Controleer of replicatie is verbroken of niet is geïnitialiseerd en niet-actief is (de initialisatie is mislukt).    |
 |     `Cannot delete   source replication`    |     Het verwijderen van de replicatie vanaf de bron kant is niet toegestaan. Zorg ervoor dat u de replicatie van de doel zijde verwijdert.    |
+
+## <a name="errors-deleting-volume"></a>Fouten bij het verwijderen van het volume
+
+|     Foutbericht    |     Oplossing    |
+|-|-|
+| `Volume is a member of an active volume replication relationship`  |  Verwijder replicatie voordat u het volume verwijdert. Zie [replicaties verwijderen](cross-region-replication-delete.md). Voor deze bewerking moet u de peering verbreekt voordat de replicatie voor het volume wordt verwijderd. |
 | `Volume with replication cannot be deleted`  |  Verwijder replicatie voordat u het volume verwijdert. Zie [replicaties verwijderen](cross-region-replication-delete.md). Voor deze bewerking moet u de peering verbreekt voordat de replicatie voor het volume wordt verwijderd. 
 
 ## <a name="errors-resyncing-volume"></a>Fouten bij het opnieuw synchroniseren van volume
@@ -69,7 +75,7 @@ In dit artikel worden fout berichten en oplossingen beschreven die u kunnen help
 
 * [Replicatie in meerdere regio's](cross-region-replication-introduction.md)
 * [Vereisten en overwegingen voor het gebruik van replicatie tussen regio's](cross-region-replication-requirements-considerations.md)
-* [Replicatiepeering maken](cross-region-replication-create-peering.md)
+* [Volume replicatie maken](cross-region-replication-create-peering.md)
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)

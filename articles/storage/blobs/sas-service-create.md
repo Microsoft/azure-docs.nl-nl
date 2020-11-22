@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 10/30/2020
+ms.date: 11/20/2020
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 66ad9f84985c7f35d410c6b1c3508efd33526c83
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 0b2d18165bf2c5a4f70f1cbc555db79020ce988f
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93147721"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95250614"
 ---
 # <a name="create-a-service-sas-for-a-container-or-blob"></a>Een service-SAS maken voor een container of BLOB
 
@@ -32,7 +32,7 @@ In het volgende code voorbeeld wordt een SAS voor een container gemaakt. Als de 
 
 Een service-SAS is ondertekend met de toegangs sleutel voor het account. Gebruik de [StorageSharedKeyCredential](/dotnet/api/azure.storage.storagesharedkeycredential) -klasse om de referentie te maken die wordt gebruikt om de sa's te ondertekenen. Maak vervolgens een nieuw [BlobSasBuilder](/dotnet/api/azure.storage.sas.blobsasbuilder) -object en roep de [ToSasQueryParameters](/dotnet/api/azure.storage.sas.blobsasbuilder.tosasqueryparameters) aan om de SAS-token teken reeks op te halen.
 
-:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_GetContainerSasUri":::
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_GetServiceSasUriForContainer":::
 
 ### <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
 
@@ -114,13 +114,13 @@ function getContainerSasUri(containerClient, sharedKeyCredential, storedPolicyNa
 
 In het volgende code voorbeeld wordt een SAS gemaakt op een blob. Als de naam van een bestaand opgeslagen toegangs beleid wordt gegeven, wordt dat beleid gekoppeld aan de SAS. Als er geen opgeslagen toegangs beleid wordt gegeven, maakt de code een ad-hoc-SA'S op de blob.
 
-### <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
 
 Een service-SAS is ondertekend met de toegangs sleutel voor het account. Gebruik de [StorageSharedKeyCredential](/dotnet/api/azure.storage.storagesharedkeycredential) -klasse om de referentie te maken die wordt gebruikt om de sa's te ondertekenen. Maak vervolgens een nieuw [BlobSasBuilder](/dotnet/api/azure.storage.sas.blobsasbuilder) -object en roep de [ToSasQueryParameters](/dotnet/api/azure.storage.sas.blobsasbuilder.tosasqueryparameters) aan om de SAS-token teken reeks op te halen.
 
-:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_GetBlobSasUri":::
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_GetServiceSasUriForBlob":::
 
-### <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
 
 Als u een service-SAS voor een BLOB wilt maken, roept u de methode [CloudBlob. GetSharedAccessSignature](/dotnet/api/microsoft.azure.storage.blob.cloudblob.getsharedaccesssignature) aan.
 
@@ -203,6 +203,14 @@ function getBlobSasUri(containerClient, blobName, sharedKeyCredential, storedPol
 ```
 
 ---
+
+## <a name="create-a-service-sas-for-a-directory"></a>Een service-SAS voor een directory maken
+
+In een opslag account waarvoor een hiërarchische naam ruimte is ingeschakeld, kunt u een service-SAS voor een directory maken. Als u de service-SA'S wilt maken, controleert u of u versie 12.5.0 of hoger van het pakket [Azure. storage. files. DataLake](https://www.nuget.org/packages/Azure.Storage.Files.DataLake/) hebt geïnstalleerd.
+
+In het volgende voor beeld ziet u hoe u een service-SAS maakt voor een map met de V12-client bibliotheek voor .NET:
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_GetServiceSasUriForDirectory":::
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 

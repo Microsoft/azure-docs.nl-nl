@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3610fa5ea442e5ccb15255d8a1ddcee211871aeb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be72c2152bdb8e1155d2dd29547f93ba3605d462
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84463940"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95251090"
 ---
 # <a name="how-to-investigate-risk"></a>Procedure: Risico onderzoeken
 
-Identiteits beveiliging biedt organisaties drie rapporten die ze kunnen gebruiken om identiteits Risico's te onderzoeken in hun omgeving. Deze rapporten zijn de **Risk ante gebruikers**, **Risk ante aanmeldingen**en **risico detecties**. Onderzoek van gebeurtenissen is belang rijk voor een beter inzicht in en het identificeren van zwakke punten in uw beveiligings strategie.
+Identiteits beveiliging biedt organisaties drie rapporten die ze kunnen gebruiken om identiteits Risico's te onderzoeken in hun omgeving. Deze rapporten zijn de **Risk ante gebruikers**, **Risk ante aanmeldingen** en **risico detecties**. Onderzoek van gebeurtenissen is belang rijk voor een beter inzicht in en het identificeren van zwakke punten in uw beveiligings strategie.
 
 In alle drie de rapporten kunnen gebeurtenissen in worden gedownload. CSV-indeling voor verdere analyse buiten het Azure Portal. Met de rapporten Risk ante gebruikers en Risk ante aanmeldingen kunt u de meest recente 2500-vermeldingen downloaden, terwijl u met het rapport risico detecties de meest recente 5000-records kunt downloaden.
 
@@ -90,6 +90,10 @@ Met de informatie die door het rapport van de risico detectie wordt verstrekt, k
 - Koppeling naar meer details van Microsoft Cloud App Security (MCAS).
 
 Beheerders kunnen vervolgens teruggaan naar het rapport met het risico of het aanmeldingen van de gebruiker om acties uit te voeren op basis van verzamelde gegevens.
+
+> [!NOTE] 
+> Ons systeem kan detecteren dat de risico gebeurtenis die aan de risico Score van de risico gebruiker heeft bijgedragen, een valse positieve of het gebruikers risico is hersteld met beleids afdwinging, zoals het volt ooien van een MFA-prompt of een beveiligde wachtwoord wijziging. Daarom zal ons systeem de risico status negeren en een risico Details van ' AI bevestigde aanmeldings beveiliging ', waardoor het risico van de gebruiker niet langer wordt gebijdrage. 
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

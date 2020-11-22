@@ -3,12 +3,12 @@ title: Aanbevolen procedures
 description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
 ms.date: 11/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: a799aa7de19b9d5b0b8e085252cb172efebd05dc
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 6aaed76ad398b5278850dd66ce1da6d5bd33807f
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916862"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95254660"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
@@ -38,7 +38,7 @@ In dit artikel wordt een verzameling aanbevolen procedures en handige tips besch
 
 ### <a name="pool-lifetime-and-billing"></a>Levens duur van groep en facturering
 
-De levens duur van de groep kan variëren, afhankelijk van de toewijzings methode en opties die worden toegepast op de groeps configuratie. Pools kunnen op elk moment een wille keurige levens duur hebben en een verschillend aantal reken knooppunten in de pool. Het is uw verantwoordelijkheid om de reken knooppunten in de groep expliciet te beheren of door de functies van de service (automatisch schalen of autogroepen).
+De levens duur van de groep kan variëren, afhankelijk van de toewijzings methode en opties die worden toegepast op de groeps configuratie. Pools kunnen op elk moment een wille keurige levens duur hebben en een verschillend aantal reken knooppunten in de pool. Het is uw verantwoordelijkheid om de reken knooppunten in de groep expliciet te beheren of door de functies van de service ([automatisch schalen](nodes-and-pools.md#automatic-scaling-policy) of [autogroepen](nodes-and-pools.md#autopools)).
 
 - **Bewaar Pools nieuw.**
     Wijzig de grootte van uw Pools in nul om de paar maanden om ervoor te zorgen dat u de [nieuwste updates voor de knooppunt agent en](https://github.com/Azure/Batch/blob/master/changelogs/nodeagent/CHANGELOG.md)oplossingen krijgt. Uw pool ontvangt geen updates voor de knooppunt agent, tenzij deze opnieuw worden gemaakt of het formaat van 0 reken knooppunten wordt gewijzigd. Voordat u de groep opnieuw maakt of het formaat ervan wijzigt, is het raadzaam om de logboeken van de-agent te downloaden voor fout opsporing, zoals beschreven in de sectie [knoop punten](#nodes) .
@@ -93,7 +93,7 @@ Er is een standaard quotum voor taak- [en taak planning](batch-quota-limit.md#re
 
 ### <a name="save-task-data"></a>Taak gegevens opslaan
 
-Reken knooppunten zijn van nature. Er zijn veel functies in batch, zoals automatisch groeperen en automatisch schalen, waarmee knoop punten eenvoudig kunnen worden verwijderd. Wanneer knoop punten de pool verlaten (vanwege het wijzigen van het formaat of het verwijderen van een pool), worden alle bestanden op deze knoop punten ook verwijderd. Als gevolg hiervan moet een taak de uitvoer van het knoop punt waarop het wordt uitgevoerd, verplaatsen naar een duurzame Store voordat deze wordt voltooid. Als een taak mislukt, moeten de logboeken worden verplaatst die nodig zijn om de fout in een duurzame opslag te diagnosticeren.
+Reken knooppunten zijn van nature. Er zijn veel functies in batch, zoals automatisch [groeperen](nodes-and-pools.md#autopools) en [automatisch schalen](nodes-and-pools.md#automatic-scaling-policy) , waarmee knoop punten eenvoudig kunnen worden verwijderd. Wanneer knoop punten een pool verlaten (vanwege het wijzigen van de grootte of het verwijderen van een pool), worden alle bestanden op deze knoop punten ook verwijderd. Als gevolg hiervan moet een taak de uitvoer van het knoop punt waarop het wordt uitgevoerd, verplaatsen naar een duurzame Store voordat deze wordt voltooid. Als een taak mislukt, moeten de logboeken worden verplaatst die nodig zijn om de fout in een duurzame opslag te diagnosticeren.
 
 Batch heeft geïntegreerde ondersteunings Azure Storage voor het uploaden van gegevens via [OutputFiles](batch-task-output-files.md), evenals een groot aantal gedeelde bestands systemen, of u kunt de upload zelf in uw taken uitvoeren.
 

@@ -5,12 +5,12 @@ ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 08/30/2019
-ms.openlocfilehash: 83384dd24141cfeb7b03f388e6e3505fea8f496e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: d3812cb27d2d9ea7a49038f566f8b4cc5d779172
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92221074"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241689"
 ---
 # <a name="develop-u-sql-scripts-by-using-data-lake-tools-for-visual-studio"></a>U-SQL-scripts ontwikkelen met Data Lake-tools voor Visual Studio
 
@@ -51,9 +51,9 @@ Voor deze zelfstudie moet Data Lake-tools voor Visual Studio zijn geïnstalleerd
 
 1. Open Visual Studio.
 
-1. Open **Server Explorer** door Server Explorer **weer geven**te selecteren  >  **Server Explorer**.
+1. Open **Data Lake Analytics Explorer** door data Lake Analytics **Explorer weer geven** te selecteren  >  **Data Lake Analytics Explorer**.
 
-1. Klik met de rechter muisknop op **Azure**en selecteer **verbinding maken met Microsoft Azure abonnement**. Volg de instructies in **Aanmelden bij uw account**.
+1. Klik met de rechter muisknop op **Azure** en selecteer **verbinding maken met Microsoft Azure abonnement**. Volg de instructies in **Aanmelden bij uw account**.
 
 1. Selecteer in **Server Explorer** **Azure**  >  **Data Lake Analytics**. U ziet een lijst met uw Data Lake Analytics-accounts.
 
@@ -80,15 +80,15 @@ OUTPUT @a
 
 1. Selecteer in Visual Studio **Bestand** > **Nieuw** > **Project**.
 
-1. Selecteer het type **U-SQL-project** en selecteer vervolgens **volgende**. Selecteer in **uw nieuwe project configureren de**optie **maken**.
+1. Selecteer het type **U-SQL-project** en selecteer vervolgens **volgende**. Selecteer in **uw nieuwe project configureren de** optie **maken**.
 
    Visual Studio maakt een oplossing die een **script. usql** -bestand bevat.
 
 1. Plak het script van [uw eerste U-SQL-script](#write-your-first-u-sql-script) in het venster **script. usql** .
 
-1. Klik in **Solution Explorer**met de rechter muisknop op **script. Usql**en selecteer **script verzenden**.
+1. Klik in **Solution Explorer** met de rechter muisknop op **script. Usql** en selecteer **script verzenden**.
 
-1. In **taak verzenden**kiest u uw data Lake Analytics account en selecteert u **verzenden**.
+1. In **taak verzenden** kiest u uw data Lake Analytics account en selecteert u **verzenden**.
 
    ![U-SQL Visual Studio-project verzenden](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-submit-job-vs2019.png)
 
@@ -104,7 +104,7 @@ Als de taak is verzonden, wordt het tabblad **Job view** geopend, waarin de voor
 
 ![Prestatiegrafiek U-SQL Visual Studio Data Lake Analytics-taak](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-performance-graph.png)
 
-Selecteer **vernieuwen**om de nieuwste taak status weer te geven en het scherm te vernieuwen.
+Selecteer **vernieuwen** om de nieuwste taak status weer te geven en het scherm te vernieuwen.
 
 ## <a name="check-job-status"></a>Taakstatus controleren
 

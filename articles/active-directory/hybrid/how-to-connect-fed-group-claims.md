@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.date: 02/27/2019
 ms.author: billmath
 author: billmath
-ms.openlocfilehash: ce438ad0725aff677f897a635a0cd32d92bbbdbe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cb828eeb408a170b93ffc73b58f14b3f7a883cc4
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91265466"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95247231"
 ---
 # <a name="configure-group-claims-for-applications-with-azure-active-directory"></a>Groeps claims configureren voor toepassingen met Azure Active Directory
 
@@ -74,7 +74,7 @@ Er zijn twee stappen voor het configureren van Azure Active Directory voor het v
 
 ## <a name="add-group-claims-to-tokens-for-saml-applications-using-sso-configuration"></a>Groeps claims toevoegen aan tokens voor SAML-toepassingen met SSO-configuratie
 
-Als u groeps claims wilt configureren voor een SAML-toepassing in een galerie of niet-galerie, opent u **zakelijke toepassingen**, klikt u op de toepassing in de lijst, selecteert u **configuratie van eenmalige aanmelding**en selecteert u vervolgens **gebruikers kenmerken & claims**.
+Als u groeps claims wilt configureren voor een SAML-toepassing in een galerie of niet-galerie, opent u **zakelijke toepassingen**, klikt u op de toepassing in de lijst, selecteert u **configuratie van eenmalige aanmelding** en selecteert u vervolgens **gebruikers kenmerken & claims**.
 
 Klik op **een groepclaim toevoegen**  
 
@@ -144,8 +144,9 @@ Geldige waarden zijn:
 |----------|-------------|
 | **Hele** | Beveiligings groepen, distributie lijsten en rollen meedeelt |
 | **Beveiligings groep** | Verzendt beveiligings groepen waarvan de gebruiker lid is in de groeps claim |
-| **"DirectoryRole** | Als er adreslijst rollen aan de gebruiker zijn toegewezen, worden ze verzonden als een ' WIDS-claim (groeps claim wordt niet verzonden) |
-| **' Variabele applicationgroup** | Verzendt alleen de groepen die expliciet zijn toegewezen aan de toepassing en waarvan de gebruiker lid is |
+| **"DirectoryRole"** | Als er adreslijst rollen aan de gebruiker zijn toegewezen, worden ze verzonden als een ' WIDS-claim (groeps claim wordt niet verzonden) |
+| **Variabele applicationgroup** | Verzendt alleen de groepen die expliciet zijn toegewezen aan de toepassing en waarvan de gebruiker lid is |
+| **Geen** | Er zijn geen groepen geretourneerd. (De niet-sensetive is dus niet mogelijk en kan ook rechtstreeks in het toepassings manifest worden ingesteld.) |
 
    Bijvoorbeeld:
 

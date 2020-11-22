@@ -1,25 +1,25 @@
 ---
-title: Azure-app configuratie REST API-Key-Value
+title: Azure-app configuratie REST API-sleutel waarde
 description: Referentie pagina's voor het werken met sleutel waarden met behulp van de Azure-app configuratie REST API
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 50d97a330507e9361674776acf29d1007ee5bf58
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: f89b3f2fa4805eeb2fd9f9d511c8f228b98139ac
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93423994"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241026"
 ---
-# <a name="key-values"></a>Key-Values
-
-API-versie: 1,0
+# <a name="key-values"></a>Sleutelwaarden
 
 Een sleutel waarde is een resource die wordt geïdentificeerd door een unieke combi natie van `key`  +  `label` . `label` is optioneel. Als u expliciet wilt verwijzen naar een sleutel waarde zonder label, gebruikt u \ 0 (URL gecodeerd als ``%00`` ). Bekijk de Details voor elke bewerking.
 
-## <a name="operations"></a>Bewerkingen
+Dit artikel is van toepassing op API-versie 1,0.
+
+## <a name="operations"></a>Operations
 
 - Ophalen
 - Meerdere lijsten
@@ -45,10 +45,10 @@ Een sleutel waarde is een resource die wordt geïdentificeerd door een unieke co
 }
 ```
 
-## <a name="get-key-value"></a>Key-Value ophalen
+## <a name="get-key-value"></a>Sleutel waarde ophalen
 
-**Vereist:** ``{key}`` , ``{api-version}``  
-*Optioneel:* ``label`` -Als u dit weglaat, impliceert dit een sleutel waarde zonder label
+Vereist: ``{key}`` , ``{api-version}``  
+Optioneel: ``label`` (als u dit weglaat, impliceert dit een sleutel waarde zonder label.)
 
 ```http
 GET /kv/{key}?label={label}&api-version={api-version}
@@ -87,7 +87,7 @@ HTTP/1.1 404 Not Found
 
 ## <a name="get-conditionally"></a>Ophalen (voorwaardelijk)
 
-Om de caching, het gebruik `If-Match` of de aanvraag headers van de client te verbeteren `If-None-Match` . Het `etag` argument maakt deel uit van de sleutel weergave. Zie de [sectie 14,24 en 14,26](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+Om de caching, het gebruik `If-Match` of de aanvraag headers van de client te verbeteren `If-None-Match` . Het `etag` argument maakt deel uit van de sleutel weergave. Zie de [secties 14,24 en 14,26](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)voor meer informatie.
 
 Met de volgende aanvraag wordt de sleutel waarde alleen opgehaald als de huidige representatie niet overeenkomt met de opgegeven `etag` :
 
@@ -109,12 +109,9 @@ of
 HTTP/1.1 200 OK
 ```
 
-## <a name="list-key-values"></a>Key-Values weer geven
+## <a name="list-key-values"></a>Sleutel waarden weer geven
 
-Zie **filters** voor aanvullende opties
-
-*Optioneel:* ``key`` -Als niet wordt opgegeven, impliceert dit **een wille keurige** toets.
-*Optioneel:* ``label`` -Indien niet opgegeven, impliceert dit **een wille keurig** label.
+Optioneel: ``key`` (indien niet opgegeven, is dit een wille keurige toets.) Optioneel: ``label`` (indien niet opgegeven, impliceert dit een wille keurig label.)
 
 ```http
 GET /kv?label=*&api-version={api-version} HTTP/1.1
@@ -127,9 +124,11 @@ HTTP/1.1 200 OK
 Content-Type: application/vnd.microsoft.appconfig.kvset+json; charset=utf-8
 ```
 
+Zie de sectie ' filteren ' verderop in dit artikel voor meer opties.
+
 ## <a name="pagination"></a>Paginering
 
-Het resultaat wordt gepagineerd als het aantal geretourneerde items de reactie limiet overschrijdt. Volg de optionele `Link` antwoord headers en gebruik `rel="next"` voor navigatie.
+Het resultaat wordt gepagineerd als het aantal geretourneerde items de reactie limiet overschrijdt. Volg de optionele `Link` reactie headers en gebruik `rel="next"` voor navigatie.
 De inhoud biedt ook een volgende koppeling in de vorm van de `@nextLink` eigenschap. De gekoppelde URI bevat het `api-version` argument.
 
 ```http
@@ -226,15 +225,15 @@ _ *Voor beelden**
 
 ## <a name="request-specific-fields"></a>Specifieke velden aanvragen
 
-Gebruik de optionele `$select` query teken reeks parameter en geef een door komma's gescheiden lijst met aangevraagde velden op. Als de `$select` para meter wordt wegge laten, bevat het antwoord de standaardset.
+Gebruik de optionele `$select` query teken reeks parameter en geef een door komma's gescheiden lijst op met de aangevraagde velden. Als de `$select` para meter wordt wegge laten, bevat het antwoord de standaardset.
 
 ```http
 GET /kv?$select=key,value&api-version={api-version} HTTP/1.1
 ```
 
-## <a name="time-based-access"></a>Toegang Time-Based
+## <a name="time-based-access"></a>Toegang op basis van tijd
 
-Een weer gave van het resultaat verkrijgen, omdat deze zich in een eerder tijdstip bevond. Zie sectie [2.1.1](https://tools.ietf.org/html/rfc7089#section-2.1). Paginering wordt nog steeds ondersteund, zoals hierboven is gedefinieerd.
+Een weer gave van het resultaat verkrijgen, omdat deze zich in een eerder tijdstip bevond. Zie voor meer informatie sectie [2.1.1](https://tools.ietf.org/html/rfc7089#section-2.1). De paginering wordt nog steeds ondersteund zoals eerder in dit artikel is gedefinieerd.
 
 ```http
 GET /kv?api-version={api-version} HTTP/1.1
@@ -260,8 +259,8 @@ Link: <{relative uri}>; rel="original"
 
 ## <a name="set-key"></a>Sleutel instellen
 
-- **Vereist:**``{key}``
-- *Optioneel:* ``label`` -Als niet opgegeven of label = %00 impliceert dat KV zonder label.
+- Vereist: ``{key}``
+- Optioneel: ``label`` (indien niet opgegeven, of label = %00, impliceert deze sleutel waarde zonder label.)
 
 ```http
 PUT /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -323,9 +322,9 @@ Content-Type: application/problem+json; charset="utf-8"
 ## <a name="set-key-conditionally"></a>Sleutel instellen (voorwaardelijk)
 
 Gebruik `If-Match` of aanvraag headers om race voorwaarden te voor komen `If-None-Match` . Het `etag` argument maakt deel uit van de sleutel weergave.
-Als `If-Match` of `If-None-Match` wordt wegge laten, wordt de bewerking onvoorwaardelijk uitgevoerd.
+Als `If-Match` of `If-None-Match` wordt wegge laten, is de bewerking onvoorwaardelijk.
 
-Met het volgende antwoord wordt de waarde alleen bijgewerkt als de huidige representatie overeenkomt met de opgegeven `etag`
+Met het volgende antwoord wordt de waarde alleen bijgewerkt als de huidige representatie overeenkomt met de opgegeven `etag` :
 
 ```http
 PUT /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -333,7 +332,7 @@ Content-Type: application/vnd.microsoft.appconfig.kv+json
 If-Match: "4f6dd610dd5e4deebc7fbaef685fb903"
 ```
 
-Met het volgende antwoord wordt de waarde alleen bijgewerkt als de huidige representatie *niet* overeenkomt met de opgegeven `etag`
+Met het volgende antwoord wordt de waarde alleen bijgewerkt als de huidige representatie niet overeenkomt met de opgegeven `etag` :
 
 ```http
 PUT /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -349,7 +348,7 @@ Content-Type: application/vnd.microsoft.appconfig.kv+json;
 If-Match: "*"
 ```
 
-Met de volgende aanvraag wordt de waarde alleen toegevoegd als een representatie nog *niet* bestaat:
+Met de volgende aanvraag wordt de waarde alleen toegevoegd als een representatie nog niet bestaat:
 
 ```http
 PUT /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -373,8 +372,8 @@ HTTP/1.1 412 PreconditionFailed
 
 ## <a name="delete"></a>Verwijderen
 
-- **Vereist:** `{key}` , `{api-version}`
-- *Optioneel:* `{label}` -Als niet opgegeven of label = %00 impliceert dat KV zonder label.
+- Vereist: `{key}` , `{api-version}`
+- Optioneel: `{label}` (indien niet opgegeven, of label = %00, impliceert deze sleutel waarde zonder label.)
 
 ```http
 DELETE /kv/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -396,4 +395,4 @@ HTTP/1.1 204 No Content
 
 ## <a name="delete-key-conditionally"></a>Sleutel verwijderen (voorwaardelijk)
 
-Vergelijkbaar met **instellen van sleutel (voorwaardelijk)**
+Dit is vergelijkbaar met de sectie ' set Key (voorwaardelijk) ' eerder in dit artikel.

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/16/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: a0d474208f11c203ca65e9ac296fa381d8633a8b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 12c9fd43933f9f54e013752c5fe482ce31650536
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663568"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95238391"
 ---
 # <a name="create-an-app-service-environment"></a>Een App Service Environment maken
 
@@ -48,7 +48,7 @@ De ASEv3 wordt alleen aangeboden in regio's selecteren. Er worden meer regio's t
 
 ## <a name="creating-an-ase-in-the-portal"></a>Een ASE maken in de portal
 
-1. Als u een ASEv3 wilt maken, zoekt u op Marketplace naar **app service Environment v3**.  
+1. Als u een ASEv3 wilt maken, zoekt u op de Marketplace naar **app service Environment (preview)**.  
 2. Basis beginselen: Selecteer het abonnement, selecteer of maak de resource groep en voer de naam van uw ASE in.  De naam van de ASE wordt ook gebruikt voor het domein achtervoegsel van uw ASE.  Als uw ASE-naam *Contoso* is, wordt het domein achtervoegsel *contoso.appserviceenvironment.net*.  Deze naam wordt automatisch ingesteld in uw Azure DNS particuliere zone die wordt gebruikt door het Vnet waarin de ASE wordt geïmplementeerd. 
 
     ![App Service Environment tabblad basis principes maken](./media/creation/creation-basics.png)

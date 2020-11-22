@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: b-juche
-ms.openlocfilehash: 4df96f1c508df22e98a9c611ed04fecf6734970a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db1e8ce2e4fe9ae81bc2299ae70e9ff83941b5b4
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91278291"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95245871"
 ---
 # <a name="cross-region-replication-of-azure-netapp-files-volumes"></a>Replicatie tussen regio's van Azure NetApp Files volumes
 
@@ -111,10 +111,11 @@ De kosten voor de opslag capaciteit van de vaste Azure NetApp Files voor maand 2
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Vereisten en overwegingen voor het gebruik van replicatie tussen regio's](cross-region-replication-requirements-considerations.md)
-* [Replicatiepeering maken](cross-region-replication-create-peering.md)
+* [Volume replicatie maken](cross-region-replication-create-peering.md)
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
+* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)
 
 

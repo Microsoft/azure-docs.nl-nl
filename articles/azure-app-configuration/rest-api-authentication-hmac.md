@@ -1,38 +1,38 @@
 ---
 title: Configuratie REST API-HMAC-verificatie Azure-app
-description: Gebruik HMAC om te verifiëren bij Azure-app configuratie met behulp van de REST API
+description: HMAC gebruiken voor verificatie bij Azure-app configuratie met behulp van de REST API
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 236670cb59a98ee097baaeb35174489d66e6e786
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 4171155f5a9f72ef0c021bd0e37fe4ec2f206646
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424014"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95253351"
 ---
 # <a name="hmac-authentication---rest-api-reference"></a>HMAC-verificatie-REST API referentie
 
-HTTP-aanvragen kunnen worden geverifieerd met behulp van het **HMAC-sha256-** verificatie schema. Deze aanvragen moeten via TLS worden verzonden.
+U kunt HTTP-aanvragen verifiëren met behulp van het HMAC-SHA256-verificatie schema. (HMAC verwijst naar verificatie code op basis van hash-berichten.) Deze aanvragen moeten via TLS worden verzonden.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - **Referentie** - \<Access Key ID\>
 - De **geheime** sleutel waarde voor een gedecodeerde toegangs code. ``base64_decode(<Access Key Value>)``
 
-De waarden voor referentie (ook wel id genoemd) en geheim (ook wel ' value ' genoemd) moeten worden verkregen van het Azure-app-configuratie-exemplaar, dat kan worden uitgevoerd met behulp van de [Azure Portal](https://portal.azure.com) of de [Azure cli](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest&preserve-view=true).
+De waarden voor referentie (ook wel genoemd `id` ) en geheim (ook wel genoemd `value` ) moeten worden verkregen van het exemplaar van Azure-app configuratie. U kunt dit doen met behulp van de [Azure Portal](https://portal.azure.com) of de [Azure cli](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest&preserve-view=true).
 
 Geef elke aanvraag met alle HTTP-headers die vereist zijn voor authenticatie. De mini maal vereiste waarde is:
 
-|  Aanvraagkoptekst | Beschrijving  |
+|  Aanvraagheader | Beschrijving  |
 | --------------- | ------------ |
-| **Host** | De Internet-host en het poort nummer. Zie sectie  [3.2.2](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2.2) |
-| **Datum** | De datum en tijd waarop de aanvraag afkomstig is. De waarde mag niet meer dan 15 minuten zijn vanaf het huidige GMT. De waarde is een HTTP-datum, zoals beschreven in sectie [3.3.1](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1)
-| **x-MS-date** | Hetzelfde als ```Date``` hierboven. Het kan worden gebruikt in plaats van wanneer de agent rechtstreeks toegang heeft tot de ```Date``` aanvraag header of een proxy wijzigt. Als ```x-ms-date``` en ```Date``` beide zijn verschaft, ```x-ms-date``` heeft dit prioriteit. |
+| **Host** | De Internet-host en het poort nummer. Zie sectie  [3.2.2](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2.2)voor meer informatie. |
+| **Datum** | De datum en tijd waarop de aanvraag afkomstig is. De waarde mag niet meer dan 15 minuten uit de huidige Coordinated Universal Time (Greenwich Mean Time) zijn. De waarde is een HTTP-datum, zoals beschreven in sectie [3.3.1](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1).
+| **x-MS-date** | Hetzelfde als ```Date``` hierboven. U kunt dit in plaats daarvan gebruiken wanneer de agent niet rechtstreeks toegang heeft tot de ```Date``` aanvraag header of een proxy wijzigt. Als ```x-ms-date``` en ```Date``` beide zijn verschaft, ```x-ms-date``` heeft dit prioriteit. |
 | **x-MS-content-sha256** | Base64 Encoded SHA256-hash van de aanvraag tekst. Het moet worden vermeld, zelfs als er geen hoofd tekst is. ```base64_encode(SHA256(body))```|
-| **Autorisatie** | Verificatie gegevens die worden vereist door **het HMAC-sha256-** schema. Indeling en Details worden hieronder uitgelegd. |
+| **Autorisatie** | Verificatie gegevens die worden vereist door het HMAC-SHA256-schema. Indeling en Details worden verderop in dit artikel beschreven. |
 
 **Voorbeeld:**
 
@@ -49,20 +49,20 @@ Authorization: HMAC-SHA256 Credential={Access Key ID}&SignedHeaders=x-ms-date;ho
 
 ``Authorization``: **HMAC-sha256**```Credential```=\<value\>&```SignedHeaders```=\<value\>&```Signature```=\<value\>
 
-|  Argument | Beschrijving  |
+|  Argument | Description  |
 | ------ | ------ |
-| **HMAC-SHA256** | Verificatie schema _(vereist)_ |
+| **HMAC-SHA256** | Autorisatie schema. _lang_ |
 | **Referentie** | De ID van de toegangs sleutel die wordt gebruikt voor het berekenen van de hand tekening. _lang_ |
 | **SignedHeaders** | HTTP-aanvraag headers worden toegevoegd aan de hand tekening. _lang_ |
-| **Handtekening** | Base64 Encoded HMACSHA256 van **teken reeks-naar-teken**. _lang_|
+| **Handtekening** | Base64 Encoded HMACSHA256 van teken reeks-naar-teken. _lang_|
 
 ### <a name="credential"></a>Referentie
 
-De ID van de toegangs sleutel die wordt gebruikt om de **hand tekening** te berekenen.
+De ID van de toegangs sleutel die wordt gebruikt om de hand tekening te berekenen.
 
 ### <a name="signed-headers"></a>Ondertekende headers
 
-De namen van de HTTP-aanvraag headers die zijn gescheiden door punt komma's zijn vereist om de aanvraag te ondertekenen Deze HTTP-headers moeten ook correct worden voorzien van de aanvraag. **Gebruik geen spaties**.
+Namen van HTTP-aanvraag headers, gescheiden door punt komma's, die vereist zijn voor het ondertekenen van de aanvraag. Deze HTTP-headers moeten ook correct worden voorzien van de aanvraag. Gebruik geen spaties.
 
 ### <a name="required-http-request-headers"></a>Vereiste HTTP-aanvraag headers
 
@@ -76,7 +76,7 @@ x-MS-date; host; x-MS-content-sha256; ```Content-Type``` ;```Accept```
 
 ### <a name="signature"></a>Handtekening
 
-Base64 Encoded HMACSHA256 hash van de **teken reeks-naar-teken** met de toegangs sleutel geïdentificeerd door `Credential` .
+Met base64 gecodeerde HMACSHA256-hash van de teken reeks-naar-teken. Er wordt gebruikgemaakt van de toegangs sleutel die wordt geïdentificeerd door `Credential` .
 ```base64_encode(HMACSHA256(String-To-Sign, Secret))```
 
 ### <a name="string-to-sign"></a>Teken reeks-naar-teken
@@ -87,11 +87,11 @@ _Teken reeks-naar-teken =_
 
 **HTTP_METHOD** + ' \n ' + **path_and_query** + ' \n ' + **signed_headers_values**
 
-|  Argument | Beschrijving  |
+|  Argument | Description  |
 | ------ | ------ |
-| **HTTP_METHOD** | De naam van de HTTP-methode met hoofd letters die wordt gebruikt met de aanvraag. Zie [sectie 9](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) |
-|**path_and_query** | Het samen voegen van de aanvraag absolute URI het pad en de query reeks. Zie [sectie 3,3](https://tools.ietf.org/html/rfc3986#section-3.3).
-| **signed_headers_values** | Door punt komma's gescheiden waarden van alle HTTP-aanvraag headers die worden vermeld in **SignedHeaders**. De indeling volgt de **SignedHeaders** -semantiek. |
+| **HTTP_METHOD** | De naam van de HTTP-methode die wordt gebruikt in combi natie met de aanvraag. Zie [Section 9](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)(Engelstalig) voor meer informatie. |
+|**path_and_query** | Het samen voegen van de aanvraag absolute URI het pad en de query reeks. Zie voor meer informatie [sectie 3,3](https://tools.ietf.org/html/rfc3986#section-3.3).
+| **signed_headers_values** | Door punt komma's gescheiden waarden van alle HTTP-aanvraag headers die worden vermeld in `SignedHeaders` . De indeling volgt `SignedHeaders` semantiek. |
 
 **Voorbeeld:**
 
@@ -110,16 +110,18 @@ HTTP/1.1 401 Unauthorized
 WWW-Authenticate: HMAC-SHA256, Bearer
 ```
 
-**Reden:** De header van de autorisatie aanvraag met het HMAC-SHA256-schema is niet gegeven.
-**Oplossing:** Geldige ```Authorization``` HTTP-aanvraag header opgeven
+**Reden:** De header van de autorisatie aanvraag met het HMAC-SHA256-schema is niet ingevuld.
+
+**Oplossing:** Geef een geldige ```Authorization``` HTTP-aanvraag header op.
 
 ```http
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: HMAC-SHA256 error="invalid_token" error_description="The access token has expired", Bearer
 ```
 
-**Reden:** ```Date``` of ```x-ms-date``` de aanvraag header is langer dan 15 minuten vanaf de huidige GMT-tijd.
-**Oplossing:** Geef de juiste datum en tijd op
+**Reden:** ```Date``` of ```x-ms-date``` de aanvraag header is meer dan 15 minuten uit de huidige Coordinated Universal Time (Greenwich Mean Time).
+
+**Oplossing:** Geef de juiste datum en tijd op.
 
 
 ```http
@@ -127,14 +129,14 @@ HTTP/1.1 401 Unauthorized
 WWW-Authenticate: HMAC-SHA256 error="invalid_token" error_description="Invalid access token date", Bearer
 ```
 
-**Reden:** Ontbrekende of ongeldige ```Date``` of ```x-ms-date``` aanvraag header
+**Reden:** Ontbrekende of ongeldige ```Date``` of ```x-ms-date``` aanvraag header.
 
 ```http
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: HMAC-SHA256 error="invalid_token" error_description="[Credential][SignedHeaders][Signature] is required", Bearer
 ```
 
-**Reden:** Een vereiste para meter ontbreekt uit de ```Authorization``` aanvraag header
+**Reden:** Er ontbreekt een vereiste para meter in de ```Authorization``` aanvraag header.
 
 ```http
 HTTP/1.1 401 Unauthorized
@@ -142,7 +144,8 @@ WWW-Authenticate: HMAC-SHA256 error="invalid_token" error_description="Invalid C
 ```
 
 **Reden:** De gegeven [ ```Host``` ]/[toegangs sleutel-id] is niet gevonden.
-**Oplossing:** Controleer de ```Credential``` para meter van de ```Authorization``` aanvraag header en controleer of het een geldige toegangs sleutel-id is. Zorg ervoor dat de ```Host``` header naar het geregistreerde account wijst.
+
+**Oplossing:** Controleer de ```Credential``` para meter van de ```Authorization``` aanvraag header. Zorg ervoor dat het een geldige toegangs sleutel-ID is en zorg ervoor dat de ```Host``` header naar het geregistreerde account wijst.
 
 ```http
 HTTP/1.1 401 Unauthorized
@@ -150,15 +153,17 @@ WWW-Authenticate: HMAC-SHA256 error="invalid_token" error_description="Invalid S
 ```
 
 **Reden:** De ```Signature``` opgegeven waarde komt niet overeen met wat de server verwacht.
-**Oplossing:** Controleer of het ```String-To-Sign``` juist is. Controleer of het ```Secret``` juist is en correct wordt gebruikt (met base64 gedecodeerd vóór het gebruik). Zie de sectie **voor beelden** .
+
+**Oplossing:** Controleer of het ```String-To-Sign``` juist is. Controleer of het ```Secret``` juist is en correct wordt gebruikt (met base64 gedecodeerd vóór het gebruik).
 
 ```http
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: HMAC-SHA256 error="invalid_token" error_description="Signed request header 'xxx' is not provided", Bearer
 ```
 
-**Reden:** De aanvraag header ontbreekt die is vereist voor de ```SignedHeaders``` para meter in de ```Authorization``` header.
-**Oplossing:** Geef de vereiste header op met de juiste waarde.
+**Reden:** De aanvraag header ontbreekt die is vereist voor ```SignedHeaders``` de para meter in de  ```Authorization``` koptekst.
+
+**Oplossing:** Geef de vereiste header op, met de juiste waarde.
 
 ```http
 HTTP/1.1 401 Unauthorized
@@ -166,13 +171,14 @@ WWW-Authenticate: HMAC-SHA256 error="invalid_token" error_description="XXX is re
 ```
 
 **Reden:** Ontbrekende para meter in ```SignedHeaders``` .
-**Oplossing:** Controleer de minimale vereisten voor de **ondertekende headers** .
+
+**Oplossing:** Controleer de minimale vereisten voor de ondertekende headers.
 
 ## <a name="code-snippets"></a>Codefragmenten
 
 ### <a name="javascript"></a>Javascript
 
-*Vereisten* : [crypto-js](https://code.google.com/archive/p/crypto-js/)
+*Vereisten*: [crypto-js](https://code.google.com/archive/p/crypto-js/)
 
 ```js
 function signRequest(host, 
@@ -362,7 +368,7 @@ import (
     "time"
 )
 
-//SignRequest Setup the auth header for accessing Azure AppConfiguration service
+//SignRequest Setup the auth header for accessing Azure App Configuration service
 func SignRequest(id string, secret string, req *http.Request) error {
     method := req.Method
     host := req.URL.Host
@@ -537,7 +543,7 @@ Invoke-RestMethod -Uri $uri -Method $method -Headers $headers -Body $body
 
 ### <a name="bash"></a>Bash
 
-*Vereisten* :
+*Vereisten*:
 
 | Vereiste | Opdracht | Geteste versies |
 | ------------ | ------- | --------------- |

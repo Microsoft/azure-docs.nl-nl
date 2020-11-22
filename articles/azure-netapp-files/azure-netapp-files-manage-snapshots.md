@@ -12,18 +12,21 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/12/2020
+ms.date: 11/18/2020
 ms.author: b-juche
-ms.openlocfilehash: c64bc8bf265a8e3cc3c490827bdbd79661e3528a
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 03b7941385517fe694f0743194655a1b6a1c0e1e
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94591735"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95253555"
 ---
 # <a name="manage-snapshots-by-using-azure-netapp-files"></a>Momentopnamen beheren met behulp van Azure NetApp Files
 
 Azure NetApp Files ondersteunt het maken van moment opnamen op aanvraag en het gebruik van momentopname beleid om het automatisch maken van moment opnamen te plannen. U kunt een moment opname ook herstellen naar een nieuw volume, een enkel bestand herstellen met behulp van een-client of een bestaand volume terugzetten met behulp van een moment opname.
+
+> [!NOTE] 
+> Zie [vereisten en overwegingen voor het gebruik van replicatie tussen regio's](cross-region-replication-requirements-considerations.md)voor overwegingen met betrekking tot het beheer van moment opnamen in replicatie tussen regio's.
 
 ## <a name="create-an-on-demand-snapshot-for-a-volume"></a>Een moment opname op aanvraag maken voor een volume
 
@@ -77,7 +80,7 @@ Met een momentopname beleid kunt u de frequentie voor het maken van moment opnam
 
 2.  Stel in het venster snap shot-beleid de beleids status in op **ingeschakeld**. 
 
-3.  Klik op het tabblad **elk uur** , **dagelijks** , **wekelijks** of **maandelijks** om elk uur, dagelijks, wekelijks of maandelijks momentopname beleid te maken. Geef het **aantal moment opnamen op dat moet worden bewaard**.  
+3.  Klik op het tabblad **elk uur**, **dagelijks**, **wekelijks** of **maandelijks** om elk uur, dagelijks, wekelijks of maandelijks momentopname beleid te maken. Geef het **aantal moment opnamen op dat moet worden bewaard**.  
 
     Zie [resource limieten voor Azure NetApp files](azure-netapp-files-resource-limits.md) over het maximum aantal moment opnamen dat is toegestaan voor een volume. 
 
@@ -232,7 +235,7 @@ Als u de map met moment opnamen niet ziet, is deze mogelijk verborgen omdat de o
 
 ## <a name="revert-a-volume-using-snapshot-revert"></a>Een volume herstellen met behulp van moment opname terugzetten
 
-Met de functie voor het terugdraaien van moment opnamen kunt u een volume snel herstellen naar de status waarin het zich bevond toen een bepaalde moment opname werd gemaakt. In de meeste gevallen is het herstellen van een volume veel sneller dan het herstellen van afzonderlijke bestanden van een moment opname naar het actieve bestands systeem. Het is ook meer ruimte-efficiënt vergeleken met het herstellen van een moment opname naar een nieuw volume. 
+Met de functie voor het terugdraaien van momentopnamen kunt u een volume snel herstellen naar de status waarin het zich bevond toen een bepaalde momentopname werd gemaakt. In de meeste gevallen is het herstellen van een volume veel sneller dan het herstellen van afzonderlijke bestanden van een momentopname naar het actieve bestandssysteem. Het is ook meer ruimte-efficiënt vergeleken met het herstellen van een momentopname naar een nieuw volume. 
 
 U kunt de optie volume herstellen vinden in het menu moment opnamen van een volume. Nadat u een moment opname voor de reversie hebt geselecteerd, wordt het volume door Azure NetApp Files teruggezet naar de gegevens en tijds tempels die het bevat toen de geselecteerde moment opname werd gemaakt. 
 

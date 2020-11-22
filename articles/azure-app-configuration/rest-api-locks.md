@@ -1,37 +1,35 @@
 ---
 title: Azure-app configuratie REST API-vergren delingen
-description: Naslag pagina's voor het werken met sleutel-waardeparen met behulp van de Azure-app configuratie REST API
+description: Naslag pagina's voor het werken met sleutel-waarde vergrendelingen met behulp van de Azure-app configuratie REST API
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 4949db646c54d75f60d29d3c631d0f4ee8d7c26e
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 7e63b48f2119c48cd43717acee7b13b1701e0032
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424312"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241264"
 ---
 # <a name="locks"></a>Vergrendelingen
 
-API-versie: 1,0
-
-Deze API biedt semantiek voor vergren delen/ontgrendelen voor de bron van de sleutel waarde. Het ondersteunt de volgende bewerkingen:
+Deze API (versie 1,0) biedt vergrendelings-en ontgrendelings semantiek voor de bron van de sleutel waarde. Het ondersteunt de volgende bewerkingen:
 
 - Vergren deling
 - Vergren deling verwijderen
 
-Indien aanwezig, `label` moet een expliciete label waarde zijn ( **geen** Joker teken). Voor alle bewerkingen is het een optionele para meter. Als u dit weglaat, betekent dit dat er geen label is.
+Indien aanwezig, `label` moet een expliciete label waarde zijn (geen joker teken). Voor alle bewerkingen is het een optionele para meter. Als u dit weglaat, betekent dit dat er geen label is.
 
 ## <a name="prerequisites"></a>Vereisten
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-rest-api-prereqs.md)]
 
-## <a name="lock-key-value"></a>Key-Value vergren delen
+## <a name="lock-key-value"></a>Lock-waarde
 
-- **Vereist:** ``{key}`` , ``{api-version}``  
-- *Optioneel:*``label``
+- Vereist: ``{key}`` , ``{api-version}``  
+- Beschrijving ``label``
 
 ```http
 PUT /locks/{key}?label={label}&api-version={api-version} HTTP/1.1
@@ -63,10 +61,10 @@ Als de sleutel waarde niet bestaat, wordt het volgende antwoord geretourneerd:
 HTTP/1.1 404 Not Found
 ```
 
-## <a name="unlock-key-value"></a>Key-Value ontgrendelen
+## <a name="unlock-key-value"></a>Sleutel waarde ontgrendelen
 
-- **Vereist:** ``{key}`` , ``{api-version}``  
-- *Optioneel:*``label``
+- Vereist: ``{key}`` , ``{api-version}``  
+- Beschrijving ``label``
 
 ```http
 DELETE /locks/{key}?label={label}?api-version={api-version} HTTP/1.1
@@ -98,9 +96,9 @@ Als de sleutel waarde niet bestaat, wordt het volgende antwoord geretourneerd:
 HTTP/1.1 404 Not Found
 ```
 
-## <a name="conditional-lockunlock"></a>Voorwaardelijke vergren deling/ontgrendelen
+## <a name="conditional-lock-and-unlock"></a>Voorwaardelijke vergren deling en ontgrendelen
 
-Gebruik `If-Match` of aanvraag headers om race voorwaarden te voor komen `If-None-Match` . Het `etag` argument maakt deel uit van de sleutel weergave. Als `If-Match` of `If-None-Match` wordt wegge laten, wordt de bewerking onvoorwaardelijk uitgevoerd.
+Gebruik `If-Match` of aanvraag headers om race voorwaarden te voor komen `If-None-Match` . Het `etag` argument maakt deel uit van de sleutel weergave. Als `If-Match` of `If-None-Match` wordt wegge laten, is de bewerking onvoorwaardelijk.
 
 Met de volgende aanvraag wordt de bewerking alleen toegepast als de huidige weer gave van de sleutel waarde overeenkomt met de opgegeven `etag` :
 

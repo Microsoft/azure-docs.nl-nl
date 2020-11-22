@@ -3,12 +3,12 @@ title: Zacht verwijderen voor Azure Backup
 description: Meer informatie over het gebruik van beveiligings functies in Azure Backup om back-ups veiliger te maken.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: d7998c7f9def6ce9965ded3b6ec700f7975891eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da473b1d886ec2fe95a7baae76b09aff38fb3cd7
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91271542"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95254024"
 ---
 # <a name="soft-delete-for-azure-backup"></a>Zacht verwijderen voor Azure Backup
 
@@ -36,8 +36,8 @@ Het is belang rijk om te onthouden dat de functie eenmaal is uitgeschakeld wanne
 Voer de volgende stappen uit om de tijdelijke verwijdering uit te scha kelen:
 
 1. Ga in het Azure Portal naar uw kluis en ga naar **instellingen**  ->  **Eigenschappen**.
-2. Selecteer **beveiligings instellingen**bijwerken in het deel venster Eigenschappen  ->  **Update**.  
-3. Selecteer in het deel venster beveiligings instellingen onder **voorlopig verwijderen**de optie **uitschakelen**.
+2. Selecteer **beveiligings instellingen** bijwerken in het deel venster Eigenschappen  ->  **Update**.  
+3. Selecteer in het deel venster beveiligings instellingen onder **voorlopig verwijderen** de optie **uitschakelen**.
 
 ![Tijdelijke verwijdering uitschakelen](./media/backup-azure-security-feature-cloud/disable-soft-delete.png)
 
@@ -77,23 +77,23 @@ Volg deze stappen:
 
    ![Voorlopig verwijderd item kiezen](./media/backup-azure-security-feature-cloud/vm-soft-delete.png)
 
-3. Selecteer de optie **verwijderen ongedaan**maken.
+3. Selecteer de optie **verwijderen ongedaan** maken.
 
    ![Kies verwijderen ongedaan maken](./media/backup-azure-security-feature-cloud/choose-undelete.png)
 
-4. Er wordt een venster weer gegeven. Selecteer **verwijderen ongedaan**maken.
+4. Er wordt een venster weer gegeven. Selecteer **verwijderen ongedaan** maken.
 
    ![Selecteer verwijderen ongedaan maken](./media/backup-azure-security-feature-cloud/undelete-vm.png)
 
 5. Kies **back-upgegevens verwijderen** om de back-upgegevens permanent te verwijderen.
 
-   ![Back-upgegevens verwijderen kiezen](/azure/backup/media/backup-azure-manage-vms/delete-backup-buttom.png)
+   ![Back-upgegevens verwijderen kiezen](./media/backup-azure-manage-vms/delete-backup-button.png)
 
 6. Typ de naam van het back-upitem om te bevestigen dat u de herstel punten wilt verwijderen.
 
-   ![Typ de naam van het back-upitem](/azure/backup/media/backup-azure-manage-vms/delete-backup-data1.png)
+   ![Typ de naam van het back-upitem](./media/backup-azure-manage-vms/delete-backup-data.png)
 
-7. Selecteer **verwijderen**als u de back-upgegevens voor het item wilt verwijderen. Een meldings bericht laat u weten dat de back-upgegevens zijn verwijderd.
+7. Selecteer **verwijderen** als u de back-upgegevens voor het item wilt verwijderen. Een meldings bericht laat u weten dat de back-upgegevens zijn verwijderd.
 
 ### <a name="using-azure-powershell"></a>Azure PowerShell gebruiken
 

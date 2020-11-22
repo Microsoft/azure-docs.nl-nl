@@ -1,5 +1,5 @@
 ---
-title: Replicaties voor Azure NetApp Files replicatie tussen regio's verwijderen | Microsoft Docs
+title: Volume replicaties of-volumes verwijderen voor Azure NetApp Files replicatie tussen regio's | Microsoft Docs
 description: Hierin wordt beschreven hoe u een replicatie verbinding verwijdert die niet meer nodig is tussen de bron-en de doel volumes.
 services: azure-netapp-files
 documentationcenter: ''
@@ -12,23 +12,41 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/17/2020
+ms.date: 11/18/2020
 ms.author: b-juche
-ms.openlocfilehash: e08b69271ba9d115c26418bc5e421ee6c94b031d
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 5ce7a591acd8203775808457219b0ec392cd696e
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695704"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95249887"
 ---
-# <a name="delete-replications"></a>Replicaties verwijderen
+# <a name="delete-volume-replications-or-volumes"></a>Volume replicaties of volumes verwijderen
 
-U kunt de replicatie verbinding tussen de bron-en doel volumes beëindigen door de volume replicatie te verwijderen. U kunt de Verwijder bewerking uitvoeren vanaf de bron-of het doel volume. De Verwijder bewerking verwijdert alleen de verificatie van de replicatie. de bron of het doel volume wordt niet verwijderd. 
+In dit artikel wordt beschreven hoe u volume replicatie verwijdert. Ook wordt beschreven hoe u het bron-of doel volume verwijdert.
 
-## <a name="steps"></a>Stappen
+## <a name="delete-volume-replications"></a>Volume replicaties verwijderen
 
-1. Zorg ervoor dat de replicatie peering is verbroken voordat u de volume replicatie verwijdert.    
-    Zie de status [van de replicatie relatie weer geven](cross-region-replication-display-health-status.md) en [peering voor replicatie](cross-region-replication-manage-disaster-recovery.md#break-replication-peering-to-activate-the-destination-volume)verenigen.  
+U kunt de replicatie verbinding tussen de bron-en doel volumes beëindigen door de volume replicatie te verwijderen. U moet de replicatie verwijderen van het doel volume. De Verwijder bewerking verwijdert alleen de verificatie van de replicatie. de bron of het doel volume wordt niet verwijderd. 
+
+1. Zorg ervoor dat de replicatie peering is verbroken voordat u de volume replicatie verwijdert. De replicatie-peering verbreekt: 
+
+    1. Selecteer het *doel* volume. Klik op **replicatie** onder Storage-service.  
+
+    2.  Controleer de volgende velden voordat u doorgaat:  
+        * Zorg ervoor dat in de spiegel status ***gespiegelde** _ worden weer gegeven.   
+            Probeer replicatie peering niet te verstoren als de spiegel status _Uninitialized * bevat.
+        * Zorg ervoor dat de relatie status wordt weer gegeven ***niet-actieve** _.   
+            Probeer replicatie peering niet te verstoren als de relatie status _Transferring * bevat.   
+
+        Zie de status [van de replicatie relatie weer geven](cross-region-replication-display-health-status.md). 
+
+    3.  Klik op **verbreekt peering**.  
+
+    4.  Typ **Ja** wanneer u hierom wordt gevraagd en klik op **onderbreken**. 
+
+        ![Replicatie peering verstoren](../media/azure-netapp-files/cross-region-replication-break-replication-peering.png)
+
 
 1. Selecteer **replicatie** van het bron-of doel volume om de volume replicatie te verwijderen.  
 
@@ -37,6 +55,16 @@ U kunt de replicatie verbinding tussen de bron-en doel volumes beëindigen door 
 3. Bevestig de verwijdering door **Ja** te typen en op **verwijderen** te klikken.   
 
     ![Replicatie verwijderen](../media/azure-netapp-files/cross-region-replication-delete-replication.png)
+
+## <a name="delete-source-or-destination-volumes"></a>Bron-of doel volumes verwijderen
+
+Als u het bron-of doel volume wilt verwijderen, moet u de volgende stappen uitvoeren in de beschreven volg orde. Anders treedt de `Volume with replication cannot be deleted` fout op.  
+
+1. [Verwijder de volume replicatie](#delete-volume-replications)vanaf het doel volume.   
+
+2. Verwijder het doel-of bron volume naar wens door met de rechter muisknop op de naam van het volume te klikken en **verwijderen** te selecteren.   
+
+    ![Scherm opname van het snelmenu van een volume.](../media/azure-netapp-files/cross-region-replication-delete-volume.png)
 
 ## <a name="next-steps"></a>Volgende stappen  
 

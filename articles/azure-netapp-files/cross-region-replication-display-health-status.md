@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: b-juche
-ms.openlocfilehash: 95c1202fb56e882554d40926e9d5ecec7be49086
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a14656bc1abc42fdc3e948fdae1ca07469681d21
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90708657"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95249849"
 ---
 # <a name="display-health-status-of-replication-relationship"></a>Status van replicatierelatie weergeven 
 
@@ -58,5 +58,6 @@ U kunt de replicatie status weer geven op het bron volume of het doel volume.
 * [Replicatie in meerdere regio's](cross-region-replication-introduction.md)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
+* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)
 

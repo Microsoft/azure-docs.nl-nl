@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 94cf1f34db590abeb084c5e95367781e50c85efc
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: fa7292d423d8b716ffd75a1a20431fb5a79bbf96
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650092"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95237337"
 ---
 # <a name="cloud-provisioning-troubleshooting"></a>Problemen met het inrichten van Clouds oplossen
 
@@ -43,7 +43,7 @@ Deze items kunnen worden geverifieerd in de Azure Portal en op de lokale server 
 
 Voer de volgende stappen uit om te controleren of de agent door Azure wordt gezien en in orde is.
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 1. Selecteer aan de linkerkant **Azure Active Directory**  >  **Azure AD CONNECT**. Selecteer in het midden de optie **inrichting beheren (preview)**.
 1. Selecteer **Alle agents controleren** op het scherm **Azure AD Provisioning (preview)** .
 
@@ -124,40 +124,17 @@ Om dit probleem op te lossen, wijzigt u het Power shell-uitvoerings beleid op de
 
 ### <a name="log-files"></a>Logboekbestanden
 
-De agent verzendt standaard minimale foutberichten en stack-traceringsgegevens. U vindt deze traceer Logboeken in de map *C:\PROGRAMDATA\MICROSOFT\AZURE AD Connect Provisioning Agent\Trace*.
+De agent verzendt standaard minimale foutberichten en stack-traceringsgegevens. U vindt deze traceer Logboeken in de map **C:\PROGRAMDATA\MICROSOFT\AZURE AD Connect Provisioning Agent\Trace**.
 
 Volg deze stappen om aanvullende informatie te verzamelen voor het oplossen van problemen met de agent.
 
-1. Stop de service **Microsoft Azure ad het verbinden van inrichtings agent**.
-1. Maak een kopie van het oorspronkelijke configuratie bestand: *C:\Program Files\Microsoft Azure AD Connect inrichting Agent\AADConnectProvisioningAgent.exe.config*.
-1. Vervang de bestaande `<system.diagnostics>` sectie door het volgende en alle tracerings berichten worden naar het bestand *ProvAgentTrace. log*.
+1.  Installeer de AADCloudSyncTools Power shell-module, zoals [hier](reference-powershell.md#install-the-aadcloudsynctools-powershell-module)wordt beschreven.
+2. Gebruik de `Export-AADCloudSyncToolsLogs` Power shell-cmdlet om de gegevens vast te leggen.  U kunt de volgende Schakel opties gebruiken om uw gegevens verzameling te verfijnen.
+      - SkipVerboseTrace alleen huidige logboeken exporteren zonder uitgebreide logboeken te vastleggen (standaard = onwaar)
+      - TracingDurationMins om een andere vastleg duur op te geven (standaard = 3 minuten)
+      - OutputPath om een ander uitvoerpad op te geven (standaard = documenten van de gebruiker)
 
-   ```xml
-     <system.diagnostics>
-         <sources>
-         <source name="AAD Connect Provisioning Agent">
-             <listeners>
-             <add name="console"/>
-             <add name="etw"/>
-             <add name="textWriterListener"/>
-             </listeners>
-         </source>
-         </sources>
-         <sharedListeners>
-         <add name="console" type="System.Diagnostics.ConsoleTraceListener" initializeData="false"/>
-         <add name="etw" type="System.Diagnostics.EventLogTraceListener" initializeData="Azure AD Connect Provisioning Agent">
-             <filter type="System.Diagnostics.EventTypeFilter" initializeData="All"/>
-         </add>
-         <add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:/ProgramData/Microsoft/Azure AD Connect Provisioning Agent/Trace/ProvAgentTrace.log"/>
-         </sharedListeners>
-     </system.diagnostics>
-    
-   ```
-1. Start de service **Microsoft Azure AD verbinding inrichtings agent**.
-1. Gebruik de volgende opdracht om het bestand af te sluiten en problemen op te lossen. 
-    ```
-    Get-Content “C:/ProgramData/Microsoft/Azure AD Connect Provisioning Agent/Trace/ProvAgentTrace.log” -Wait
-    ```
+
 ## <a name="object-synchronization-problems"></a>Problemen met object synchronisatie
 
 De volgende sectie bevat informatie over het oplossen van object synchronisatie.
@@ -203,6 +180,22 @@ Als u de status selecteert, ziet u aanvullende informatie over de quarantaine. U
   Gebruik de volgende aanvraag:
  
   `POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/restart`
+
+## <a name="repairing-the-the-cloud-sync-service-account"></a>Het account voor Cloud Sync service herstellen
+Als u het Cloud Sync Service-account moet herstellen, kunt u de gebruiken `Repair-AADCloudSyncToolsAccount` .  
+
+
+   1.  Gebruik de installatie stappen die [hier](reference-powershell.md#install-the-aadcloudsynctools-powershell-module) worden beschreven om te beginnen en vervolgens door te gaan met de resterende stappen.
+   2.  Van een Windows Power shell-sessie met beheerders bevoegdheden, kunt u het volgende typen of kopiëren en plakken: 
+    ```
+    Connect-AADCloudSyncTools
+    ```  
+   3. Voer uw Azure AD-referenties voor de globale beheerder in
+   4. Typ of kopieer en plak het volgende: 
+    ```
+    Repair-AADCloudSyncToolsAccount
+    ```  
+   5. Zodra dit is voltooid, moet u zeggen dat het account is hersteld.
 
 ## <a name="next-steps"></a>Volgende stappen 
 

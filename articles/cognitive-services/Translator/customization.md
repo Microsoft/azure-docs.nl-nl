@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: 95cb4aa5827190abf125669f2423c808cf8c92a5
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 9c4410cb2b9550bc111da96204ada15313867fb1
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368930"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95238085"
 ---
 # <a name="customize-your-text-translations"></a>Uw tekst vertalingen aanpassen
 
@@ -38,28 +38,6 @@ Het aangepaste systeem is vervolgens beschikbaar via een regel matige aanroep na
 Gezien het passende type en de juiste hoeveelheid trainings gegevens, is het niet ongebruikelijk om te verwachten dat er geen winst meer is tussen 5 en 10, of zelfs meer BLEU punten op Vertaal kwaliteit door gebruik te maken van aangepaste vertalers.
 
 Meer informatie over de verschillende aanpassings niveaus op basis van beschik bare gegevens vindt u in de [Gebruikers handleiding voor aangepaste vertalers](./custom-translator/overview.md).
-
-
-## <a name="microsoft-translator-hub"></a>Micro soft Translator-hub
-
-> [!NOTE]
-> De verouderde micro soft Translator-hub wordt op 17 mei 2019 buiten gebruik gesteld. [Belang rijke migratie-informatie en-datums weer geven](https://www.microsoft.com/translator/business/hub/).  
-
-## <a name="custom-translator-versus-hub"></a>Aangepaste Translator versus hub
-
-| Functie | Hub | Custom Translator |
-| ------- | :-: | :---------------: |
-|Status van aanpassings functie    | Algemene Beschik baarheid    | Algemene Beschik baarheid |
-| Tekst-API-versie    | Alleen v2    | Alleen v3 |
-| SMT-aanpassing    | Ja    | Nee |
-| NMT aanpassen    | Nee    | Ja |
-| Nieuwe aanpassing van Unified speech Services    | Nee    | Ja |
-| [Geen tracering](https://www.aka.ms/notrace) | Ja    | Ja |
-
-## <a name="collaborative-translations-framework"></a>Framework voor gezamenlijke vertalingen
-
-> [!NOTE]
-> Vanaf 1 februari 2018, AddTranslation () en AddTranslationArray () zijn niet meer beschikbaar voor gebruik met Translator v 2.0. Deze methoden mislukken en er worden niets geschreven. Translator v 3.0 biedt geen ondersteuning voor deze methoden.
 
 ## <a name="next-steps"></a>Volgende stappen
 

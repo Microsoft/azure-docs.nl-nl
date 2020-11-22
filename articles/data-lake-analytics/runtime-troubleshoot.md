@@ -5,12 +5,12 @@ ms.reviewer: jasonh
 ms.service: data-lake-analytics
 ms.topic: troubleshooting
 ms.date: 10/10/2019
-ms.openlocfilehash: c20333c83275edb90a266afec3ec3756ae1e0e7e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 41b7c80c85331f288343351749e6b2e5292b30c6
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92216263"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241604"
 ---
 # <a name="learn-how-to-troubleshoot-u-sql-runtime-failures-due-to-runtime-changes"></a>Meer informatie over het oplossen van problemen met U-SQL-runtime als gevolg van runtime wijzigingen
 
@@ -33,7 +33,7 @@ U kunt de geschiedenis bekijken van welke runtime versie uw vorige taken hebben 
 
 1. Ga in het Azure Portal naar uw Data Lake Analytics-account.
 2. Selecteer **alle taken weer geven**. Er wordt een lijst weer gegeven met alle actieve en recent voltooide taken in het account.
-3. Klik desgewenst op **filter** om u te helpen de taken te vinden op **tijds bereik**, **taak naam**en waarden voor **Auteur** .
+3. Klik desgewenst op **filter** om u te helpen de taken te vinden op **tijds bereik**, **taak naam** en waarden voor **Auteur** .
 4. U kunt de runtime zien die wordt gebruikt in de voltooide taken.
 
 ![De runtime versie van een eerdere taak weer geven](./media/runtime-troubleshoot/prior-job-usql-runtime-version-.png)
@@ -49,11 +49,25 @@ Release_20190318_adl_3394512_2 betekent bijvoorbeeld dat de tweede versie van de
 
 Er zijn twee mogelijke runtime-versie problemen die kunnen optreden:
 
-1. Een script of gebruikers code verandert het gedrag van een release in de volgende. Dergelijke breuk wijzigingen worden normaal gesp roken vooraf door gegeven aan de publicatie van release opmerkingen. Als u een dergelijke wijziging tegen komt, neemt u contact op met Microsoft Ondersteuning om dit gedrag te melden (als dit nog niet is gedocumenteerd) en verzendt u uw taken voor de oudere runtime versie.
+1. Een script of gebruikers code verandert het gedrag van een release in de volgende. Dergelijke breuk wijzigingen worden normaal gesp roken vooraf door gegeven aan de publicatie van release opmerkingen. Als u een dergelijke wijziging tegen komt, neemt u contact op met Microsoft Ondersteuning om dit Afbrekings gedrag te melden (als dit nog niet is gedocumenteerd) en verzendt u uw taken voor de oudere runtime versie.
 
 2. U hebt een niet-standaard runtime gebruikt, hetzij expliciet, impliciet als deze is vastgemaakt aan uw account en deze runtime is na enige tijd verwijderd. Als er ontbrekende Runtimes optreden, moet u uw scripts bijwerken om uit te voeren met de huidige standaard runtime. Als u meer tijd nodig hebt, neemt u contact op met Microsoft Ondersteuning
 
-## <a name="see-also"></a>Zie tevens
+## <a name="known-issues"></a>Bekende problemen
+
+* Als u verwijst naar Newtonsoft.Jsin File Version 12.0.3 of gaat u in een USQL-script, treedt de volgende compilatie fout op:
+
+    *"We vinden het jammer. taken die worden uitgevoerd in uw Data Lake Analytics-account, zullen waarschijnlijk langzamer worden uitgevoerd of niet worden voltooid. Deze functionaliteit kan niet automatisch worden hersteld naar uw Azure Data Lake Analytics-account vanwege een onverwacht probleem. Er is contact gemaakt met Azure Data Lake engineers om te onderzoeken. "*  
+
+    Waarbij de aanroep stack het volgende bevat:  
+    `System.IndexOutOfRangeException: Index was outside the bounds of the array.`  
+    `at Roslyn.Compilers.MetadataReader.PEFile.CustomAttributeTableReader.get_Item(UInt32 rowId)`  
+    `...`
+
+    **Oplossing**: gebruik Newtonsoft.Jsop File v 12.0.2 of lager.
+
+
+## <a name="see-also"></a>Zie ook
 
 - [Overzicht van Azure Data Lake Analytics](data-lake-analytics-overview.md)
 - [Azure Data Lake Analytics beheren met Azure Portal](data-lake-analytics-manage-use-portal.md)

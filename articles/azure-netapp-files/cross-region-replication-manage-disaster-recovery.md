@@ -14,34 +14,34 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: b-juche
-ms.openlocfilehash: ad006279a656758ba856cd3f39c17b0410e525e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eab55f881c250c2e07717604d4ba00587a8b6031
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90708649"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95243202"
 ---
 # <a name="manage-disaster-recovery-using-cross-region-replication"></a>Herstel na nood gevallen met replicatie tussen regio's beheren 
 
-Een voortdurende replicatie tussen de bron-en doel volumes (Zie [replicatie-peering maken](cross-region-replication-create-peering.md)) bereidt u voor op een nood herstel gebeurtenis. 
+Een voortdurende replicatie tussen de bron-en doel volumes (Zie [volume replicatie maken](cross-region-replication-create-peering.md)) bereidt u voor op een nood herstel gebeurtenis. 
 
-Wanneer een dergelijke gebeurtenis zich voordoet, kunt u een [failover naar het doel volume](#break-replication-peering-to-activate-the-destination-volume)maken, waardoor de client kan lezen van en schrijven naar het doel volume. 
+Wanneer een dergelijke gebeurtenis zich voordoet, kunt u een [failover uitvoeren naar het doel volume](#fail-over-to-destination-volume), zodat de client kan lezen van en schrijven naar het doel volume. 
 
-Na herstel na nood gevallen kunt u een failback uitvoeren naar het bron volume met een [Resync-bewerking](#resync-replication-to-reactivate-the-source-volume) waarmee de gegevens van het bron volume worden overschreven door de gegevens van het doel volume.  Vervolgens [stelt u de bron-naar-doel-replicatie](#reestablish-source-to-destination-replication) opnieuw in en koppelt u het bron volume voor de client voor toegang. 
+Na nood herstel kunt u een [Resync](#resync-replication) -bewerking uitvoeren om een failback uit te voeren naar het bron volume. Vervolgens [stelt u de bron-naar-doel-replicatie](#reestablish-source-to-destination-replication) opnieuw in en koppelt u het bron volume voor de client voor toegang. 
 
 De details worden hieronder beschreven. 
 
-## <a name="break-replication-peering-to-activate-the-destination-volume"></a>Replicatie-peering verstoren om het doel volume te activeren
+## <a name="fail-over-to-destination-volume"></a>Failover naar doel volume
 
 Wanneer u het doel volume moet activeren (bijvoorbeeld wanneer u een failover naar de doel regio wilt maken), moet u replicatie peering verstoren en het doel volume vervolgens koppelen.  
 
 1. Selecteer het doel volume om replicatie peering te verstoren. Klik op **replicatie** onder Storage-service.  
 
 2.  Controleer de volgende velden voordat u doorgaat:  
-    * Zorg ervoor dat ***gespiegelde***statussen worden weer gegeven.   
-        Probeer replicatie peering niet te verstoren als de status van de mirror niet- *geïnitialiseerd*blijkt.
-    * Zorg ervoor dat de relatie status ***niet-actief***wordt weer gegeven.   
-        Probeer replicatie peering niet te verstoren als de relatie status de *overdracht*toont.   
+    * Zorg ervoor dat in de spiegel status ***gespiegelde** _ worden weer gegeven.   
+        Probeer replicatie peering niet te verstoren als de spiegel status _Uninitialized * bevat.
+    * Zorg ervoor dat de relatie status wordt weer gegeven ***niet-actieve** _.   
+        Probeer replicatie peering niet te verstoren als de relatie status _Transferring * bevat.   
 
     Zie de status [van de replicatie relatie weer geven](cross-region-replication-display-health-status.md). 
 
@@ -54,7 +54,7 @@ Wanneer u het doel volume moet activeren (bijvoorbeeld wanneer u een failover na
 5.  Koppel het doel volume aan de hand van de stappen in [een volume koppelen of ontkoppelen voor virtuele Windows-of Linux-machines](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md).   
     Met deze stap kan een client toegang krijgen tot het doel volume.
 
-## <a name="resync-replication-to-reactivate-the-source-volume"></a>Replicatie opnieuw synchroniseren om het bron volume opnieuw te activeren   
+## <a name="resync-volumes-after-disaster-recovery"></a><a name="resync-replication"></a>Volumes opnieuw synchroniseren na nood herstel
 
 Nadat het nood herstel is uitgevoerd, kunt u het bron volume opnieuw activeren door een Resync-bewerking uit te voeren.  De hersynchronisatie-bewerking keert het replicatie proces om en synchroniseert gegevens van het doel volume naar het bron volume.  
 
@@ -63,7 +63,7 @@ Nadat het nood herstel is uitgevoerd, kunt u het bron volume opnieuw activeren d
 
 1. Selecteer het *bron* volume om de replicatie opnieuw te synchroniseren. Klik op **replicatie** onder Storage-service. Klik vervolgens op opnieuw **synchroniseren**.  
 
-2. Typ **Ja** wanneer u hierom wordt gevraagd en klik op de knop **Resync** . 
+2. Typ **Ja** wanneer u hierom wordt gevraagd en klik op opnieuw **synchroniseren**. 
  
     ![Replicatie synchroniseren](../media/azure-netapp-files/cross-region-replication-resync-replication.png)
 
@@ -80,10 +80,10 @@ Nadat de hersynchronisatie-bewerking van de doel-naar-bron is voltooid, moet u r
 1. De replicatie-peering verbreekt:  
     a. Selecteer het *doel* volume. Klik op **replicatie** onder Storage-service.  
     b. Controleer de volgende velden voordat u doorgaat:   
-    * Zorg ervoor dat ***gespiegelde***statussen worden weer gegeven.   
-    Probeer replicatie peering niet te verstoren als de status van de mirror niet- *geïnitialiseerd*blijkt.  
-    * Zorg ervoor dat de relatie status ***niet-actief***wordt weer gegeven.   
-    Probeer replicatie peering niet te verstoren als de relatie status de *overdracht*toont.    
+    * Zorg ervoor dat in de spiegel status ***gespiegelde** _ worden weer gegeven.   
+    Probeer replicatie peering niet te verstoren als de spiegel status _uninitialized * bevat.  
+    * Zorg ervoor dat de relatie status wordt weer gegeven ***niet-actieve** _.   
+    Probeer replicatie peering niet te verstoren als de relatie status _transferring * bevat.    
 
         Zie de status [van de replicatie relatie weer geven](cross-region-replication-display-health-status.md). 
 
@@ -103,5 +103,6 @@ Nadat de hersynchronisatie-bewerking van de doel-naar-bron is voltooid, moet u r
 * [Vereisten en overwegingen voor het gebruik van replicatie tussen regio's](cross-region-replication-requirements-considerations.md)
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
+* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/16/2020
 ms.author: b-juche
-ms.openlocfilehash: f2a50872fdb71419a0c3f068712ec67523a098e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b664dcd1cb12808960ffacf91c6d02d58632c4e
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90708646"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95243134"
 ---
 # <a name="requirements-and-considerations-for-using-cross-region-replication"></a>Vereisten en overwegingen voor het gebruik van replicatie tussen regio's 
 
@@ -38,12 +38,14 @@ Houd rekening met de volgende vereisten en overwegingen voor [het gebruik van de
 * Het configureren van de volume replicatie voor bron volumes die zijn gemaakt op basis van een moment opname, wordt op dit moment niet ondersteund.
 * Nadat u de replicatie van meerdere regio's hebt ingesteld, maakt het replicatie proces *snapmirror-moment opnamen* om verwijzingen tussen het bron volume en het doel volume op te geven. Snapmirror-moment opnamen worden automatisch gerecycled wanneer er een nieuwe wordt gemaakt voor elke incrementele overdracht. U kunt snapmirror-moment opnamen pas verwijderen als de replicatie relatie en het volume zijn verwijderd. 
 * U kunt hand matige moment opnamen verwijderen van het bron volume van een replicatie relatie wanneer de replicatie relatie actief of verbroken is, en ook nadat de replicatie relatie is verwijderd. U kunt hand matige moment opnamen voor het doel volume pas verwijderen als de replicatie relatie is verbroken.
+* Het is niet mogelijk om terug te keren naar een moment opname die is gemaakt voordat het replicatie doel volume werd aangemaakt.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Replicatiepeering maken](cross-region-replication-create-peering.md)
+* [Volume replicatie maken](cross-region-replication-create-peering.md)
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
+* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)
 
 

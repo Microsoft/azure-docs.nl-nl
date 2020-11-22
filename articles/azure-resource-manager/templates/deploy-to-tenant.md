@@ -2,13 +2,13 @@
 title: Resources implementeren voor Tenant
 description: Hierin wordt beschreven hoe u resources implementeert in het Tenant bereik in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
-ms.date: 10/22/2020
-ms.openlocfilehash: 854ccbd43509b6c0b5a04357844c78c32b7e6396
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 11/20/2020
+ms.openlocfilehash: 65a5e90616f8883b338d22fa31eee6932452b5fd
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92668693"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95242658"
 ---
 # <a name="tenant-deployments-with-arm-templates"></a>Tenant implementaties met ARM-sjablonen
 
@@ -36,11 +36,19 @@ Voor het maken van beheer groepen gebruikt u:
 
 * [managementGroups](/azure/templates/microsoft.management/managementgroups)
 
+Voor het maken van abonnementen gebruikt u:
+
+* [aliassen](/azure/templates/microsoft.subscription/aliases)
+
 Voor het beheren van kosten gebruikt u:
 
 * [billingProfiles](/azure/templates/microsoft.billing/billingaccounts/billingprofiles)
 * [Schriften](/azure/templates/microsoft.billing/billingaccounts/billingprofiles/instructions)
 * [invoiceSections](/azure/templates/microsoft.billing/billingaccounts/billingprofiles/invoicesections)
+
+Gebruik voor het configureren van de portal:
+
+* [tenantConfigurations](/azure/templates/microsoft.portal/tenantconfigurations)
 
 ## <a name="schema"></a>Schema
 
@@ -88,7 +96,7 @@ De principal heeft nu de vereiste machtigingen voor het implementeren van de sja
 
 De opdrachten voor Tenant implementaties wijken af van de opdrachten voor het implementeren van resource groepen.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment Tenant Create](/cli/azure/deployment/tenant#az-deployment-tenant-create)voor Azure cli:
 
@@ -123,12 +131,12 @@ Zie voor meer gedetailleerde informatie over implementatie opdrachten en opties 
 
 ## <a name="deployment-scopes"></a>Implementatie bereiken
 
-Wanneer u implementeert in een beheer groep, kunt u resources implementeren voor het volgende:
+Wanneer u implementeert naar een Tenant, kunt u resources implementeren voor het volgende:
 
 * de Tenant
 * beheer groepen binnen de Tenant
 * geabonneerd
-* resource groepen (via twee geneste implementaties)
+* Resourcegroepen
 * [uitbreidings bronnen](scope-extension-resources.md) kunnen worden toegepast op resources
 
 De gebruiker die de sjabloon implementeert, moet toegang hebben tot het opgegeven bereik.
@@ -155,81 +163,33 @@ Als u een abonnement in de Tenant wilt instellen, gebruikt u een geneste impleme
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-subscription.json" highlight="10,18":::
 
+### <a name="scope-to-resource-group"></a>Bereik voor resource groep
+
+U kunt ook doel groepen in de Tenant richten. De gebruiker die de sjabloon implementeert, moet toegang hebben tot het opgegeven bereik.
+
+Als u een resource groep in de Tenant wilt richten, gebruikt u een geneste implementatie. Stel de `subscriptionId` Eigenschappen en in `resourceGroup` . Stel geen locatie in voor de geneste implementatie, omdat deze is geïmplementeerd op de locatie van de resource groep.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/tenant-to-rg.json" highlight="9,10,18":::
+
 ## <a name="deployment-location-and-name"></a>Locatie en naam van de implementatie
 
 Voor implementaties op Tenant niveau moet u een locatie opgeven voor de implementatie. De locatie van de implementatie is gescheiden van de locatie van de resources die u implementeert. De implementatie locatie geeft aan waar de implementatie gegevens moeten worden opgeslagen.
 
-U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam **azuredeploy.jsop** implementeert, maakt de standaard implementatie naam **azuredeploy** .
+U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam **azuredeploy.jsop** implementeert, maakt de standaard implementatie naam **azuredeploy**.
 
 Voor elke implementatie naam is de locatie onveranderbaar. U kunt geen implementatie op één locatie maken wanneer er een bestaande implementatie met dezelfde naam op een andere locatie is. Als u de fout code krijgt `InvalidDeploymentLocation` , moet u een andere naam of dezelfde locatie gebruiken als de vorige implementatie voor die naam.
 
 ## <a name="create-management-group"></a>Beheergroep maken
 
-Met de [volgende sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/tenant-deployments/new-mg) maakt u een beheer groep.
+Met de volgende sjabloon maakt u een beheer groep.
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "mgName": {
-      "type": "string",
-      "defaultValue": "[concat('mg-', uniqueString(newGuid()))]"
-    }
-  },
-  "resources": [
-    {
-      "type": "Microsoft.Management/managementGroups",
-      "apiVersion": "2019-11-01",
-      "name": "[parameters('mgName')]",
-      "properties": {
-      }
-    }
-  ]
-}
-```
+:::code language="json" source="~/quickstart-templates/tenant-deployments/new-mg/azuredeploy.json":::
 
 ## <a name="assign-role"></a>Rol toewijzen
 
-De [volgende sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/tenant-deployments/tenant-role-assignment) wijst een rol toe aan het Tenant bereik.
+De volgende sjabloon wijst een rol toe aan het Tenant bereik.
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "principalId": {
-      "type": "string",
-      "metadata": {
-        "description": "principalId if the user that will be given contributor access to the resourceGroup"
-      }
-    },
-    "roleDefinitionId": {
-      "type": "string",
-      "defaultValue": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
-      "metadata": {
-        "description": "roleDefinition for the assignment - default is owner"
-      }
-    }
-  },
-  "variables": {
-    // This creates an idempotent guid for the role assignment
-    "roleAssignmentName": "[guid('/', parameters('principalId'), parameters('roleDefinitionId'))]"
-  },
-  "resources": [
-    {
-      "name": "[variables('roleAssignmentName')]",
-      "type": "Microsoft.Authorization/roleAssignments",
-      "apiVersion": "2019-04-01-preview",
-      "properties": {
-        "roleDefinitionId": "[tenantResourceId('Microsoft.Authorization/roleDefinitions', parameters('roleDefinitionId'))]",
-        "principalId": "[parameters('principalId')]",
-        "scope": "/"
-      }
-    }
-  ]
-}
-```
+:::code language="json" source="~/quickstart-templates/tenant-deployments/tenant-role-assignment/azuredeploy.json":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

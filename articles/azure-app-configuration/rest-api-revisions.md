@@ -6,23 +6,22 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 7d1990d6bc524a69de2b22b4f7c5aeec88c3ce9d
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 668345da8bb89412f7b1dd36975c5bed6f229580
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424070"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95246381"
 ---
 # <a name="key-value-revisions"></a>Revisies van sleutel waarden
 
-API-versie: 1,0
+Een *sleutel waarde-revisie* definieert de historische weer gave van een sleutel waarde resource. Revisies verlopen na 7 dagen voor gratis laag winkels of 30 dagen voor de Standard-laag. Revisies ondersteunen de `List` bewerking.
 
-Een **sleutel waarde-revisie** definieert de historische weer gave van een sleutel waarde resource. Revisies verlopen na 7 dagen voor gratis laag winkels of 30 dagen voor de Standard-laag. Revisies ondersteunen de volgende bewerkingen:
+Voor alle bewerkingen ``key`` is een optionele para meter. Als u dit weglaat, wordt een wille keurige toets.
 
-- Lijst
+Voor alle bewerkingen ``label`` is een optionele para meter. Als u dit weglaat, impliceert dit een wille keurig label.
 
-Voor alle bewerkingen ``key`` is een optionele para meter. Als u dit weglaat, wordt **een wille keurige** toets.
-Voor alle bewerkingen ``label`` is een optionele para meter. Als u dit weglaat, impliceert dit **een wille keurig** label.
+Dit artikel is van toepassing op API-versie 1,0.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -62,7 +61,7 @@ Accept-Ranges: items
 
 ## <a name="pagination"></a>Paginering
 
-Het resultaat wordt gepagineerd als het aantal geretourneerde items de reactie limiet overschrijdt. Volg de optionele ``Link`` reactie header en gebruik ``rel="next"`` voor navigatie.  De inhoud biedt ook een volgende koppeling in de vorm van de ``@nextLink`` eigenschap.
+Het resultaat wordt gepagineerd als het aantal geretourneerde items de reactie limiet overschrijdt. Volg de optionele ``Link`` reactie header en gebruik ``rel="next"`` voor navigatie. De inhoud biedt ook een volgende koppeling in de vorm van de ``@nextLink`` eigenschap.
 
 ```http
 GET /revisions?api-version={api-version} HTTP/1.1
@@ -88,7 +87,7 @@ Link: <{relative uri}>; rel="next"
 
 ## <a name="list-subset-of-revisions"></a>Subset van revisies weer geven
 
-De `Range` aanvraag header gebruiken. Het antwoord bevat een `Content-Range` koptekst. Als de server niet kan voldoen aan het aangevraagde bereik, reageert deze met HTTP `416` (RangeNotSatisfiable)
+De `Range` aanvraag header gebruiken. Het antwoord bevat de header `Content-Range`. Als de server niet kan voldoen aan het aangevraagde bereik, reageert het met HTTP `416` ( `RangeNotSatisfiable` ).
 
 ```http
 GET /revisions?api-version={api-version} HTTP/1.1
@@ -135,6 +134,8 @@ GET /revisions?key={key}&label={label}&api-version={api-version}
 
 ### <a name="reserved-characters"></a>Gereserveerde tekens
 
+De gereserveerde tekens zijn:
+
 `*`, `\`, `,`
 
 Als een gereserveerd teken deel uitmaakt van de waarde, moet het worden voorafgegaan door `\{Reserved Character}` . Niet-gereserveerde tekens kunnen ook worden opgenomen in een escape-teken.
@@ -160,19 +161,19 @@ Content-Type: application/problem+json; charset=utf-8
 
 ### <a name="examples"></a>Voorbeelden
 
-- Alles
+- Hele
 
     ```http
     GET /revisions
     ```
 
-- Items waarbij de sleutel naam begint met **ABC**
+- Items waarbij de sleutel naam begint met **ABC**:
 
     ```http
     GET /revisions?key=abc*&api-version={api-version}
     ```
 
-- Items waarbij de sleutel naam **ABC** of **xyz** is en labels bevatten **Prod**
+- Items waarbij de sleutel naam **ABC** of **xyz** is en labels bevatten **Prod**:
 
     ```http
     GET /revisions?key=abc,xyz&label=*prod*&api-version={api-version}
@@ -186,9 +187,9 @@ Gebruik de optionele `$select` query teken reeks parameter en geef een door komm
 GET /revisions?$select=value,label,last_modified&api-version={api-version} HTTP/1.1
 ```
 
-## <a name="time-based-access"></a>Toegang Time-Based
+## <a name="time-based-access"></a>Toegang op basis van tijd
 
-Een weer gave van het resultaat verkrijgen, omdat deze zich in een eerder tijdstip bevond. Zie sectie [2.1.1](https://tools.ietf.org/html/rfc7089#section-2.1)
+Een weer gave van het resultaat verkrijgen, omdat deze zich in een eerder tijdstip bevond. Zie voor meer informatie [http-Framework voor Time-Based toegang tot resource Staten--'memento](https://tools.ietf.org/html/rfc7089#section-2.1), punt 2.1.1.
 
 ```http
 GET /revisions?api-version={api-version} HTTP/1.1

@@ -2,17 +2,17 @@
 title: Knoop punten en Pools in Azure Batch
 description: Meer informatie over reken knooppunten en Pools en hoe deze worden gebruikt in een Azure Batch werk stroom vanuit een ontwikkelings oogpunt.
 ms.topic: conceptual
-ms.date: 11/10/2020
-ms.openlocfilehash: 77f3a1c954f5591537436c9ee747052b3a642ec4
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.date: 11/20/2020
+ms.openlocfilehash: 880a956a2d839483c59578afad1b62146799578a
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537608"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95243066"
 ---
 # <a name="nodes-and-pools-in-azure-batch"></a>Knoop punten en Pools in Azure Batch
 
-In een Azure Batch-werk stroom is een *reken knooppunt* (of een *knoop punt* ) een virtuele machine die een deel van de werk belasting van uw toepassing verwerkt. Een *pool* is een verzameling van deze knoop punten waarop uw toepassing kan worden uitgevoerd. In dit artikel vindt u meer informatie over knoop punten en groepen, samen met overwegingen bij het maken en gebruiken van deze in een Azure Batch werk stroom.
+In een Azure Batch-werk stroom is een *reken knooppunt* (of een *knoop punt*) een virtuele machine die een deel van de werk belasting van uw toepassing verwerkt. Een *pool* is een verzameling van deze knoop punten waarop uw toepassing kan worden uitgevoerd. In dit artikel vindt u meer informatie over knoop punten en groepen, samen met overwegingen bij het maken en gebruiken van deze in een Azure Batch werk stroom.
 
 ## <a name="nodes"></a>Knooppunten
 
@@ -40,7 +40,7 @@ Aan elk knooppunt dat aan een pool wordt toegevoegd, wordt een unieke naam en ee
 
 Een pool kan alleen worden gebruikt door de Batch-account waarin deze is gemaakt. Een batch-account kan meerdere Pools maken om te voldoen aan de resource vereisten van de toepassingen die worden uitgevoerd.
 
-De pool kan hand matig of automatisch door de batch-service worden gemaakt wanneer u het werk opgeeft dat moet worden uitgevoerd. Wanneer u een pool maakt, kunt u de volgende kenmerken opgeven:
+De pool kan hand matig of [automatisch door de batch-service](#autopools) worden gemaakt wanneer u het werk opgeeft dat moet worden uitgevoerd. Wanneer u een pool maakt, kunt u de volgende kenmerken opgeven:
 
 - [Besturings systeem en versie van knoop punt](#operating-system-and-version)
 - [Knooppunt type en het doel aantal knoop punten](#node-type-and-target)
@@ -68,7 +68,7 @@ Er zijn twee soorten pool configuraties beschikbaar in batch.
 
 De **virtuele-machine configuratie** geeft aan dat de groep bestaat uit virtuele machines van Azure. Deze virtuele machines kunnen worden gemaakt met Linux- of Windows-installatiekopieën.
 
-De [batch-knooppunt agent](https://github.com/Azure/Batch/blob/master/changelogs/nodeagent/CHANGELOG.md) is een programma dat wordt uitgevoerd op elk knoop punt in de pool en biedt de opdracht-en besturings interface tussen het knoop punt en de batch-service. Er zijn verschillende implementaties van de knooppunt agent, ook wel Sku's genoemd, voor verschillende besturings systemen. Wanneer u een pool maakt op basis van de virtuele-machineconfiguratie, moet u niet alleen de grootte van de knooppunten opgeven en de bron van de installatiekopieën waarmee u ze hebt gemaakt, maar ook de **verwijzing naar de installatiekopie van de virtuele machine** en de Batch- **knooppuntagent-SKU** die op de knooppunten moet worden geïnstalleerd. Zie [Linux-rekenknooppunten in Azure Batch-pools inrichten](batch-linux-nodes.md) voor meer informatie over het opgeven van deze pooleigenschappen. U kunt desgewenst een of meer lege gegevensschijven koppelen aan pool-VM's die zijn gemaakt op basis van Marketplace-installatiekopieën of gegevensschijven opnemen in aangepaste installatiekopieën die worden gebruikt voor het maken van de virtuele machines. Wanneer u gegevens schijven inneemt, moet u de schijven koppelen en Format teren vanuit een VM om ze te gebruiken.
+De [batch-knooppunt agent](https://github.com/Azure/Batch/blob/master/changelogs/nodeagent/CHANGELOG.md) is een programma dat wordt uitgevoerd op elk knoop punt in de pool en biedt de opdracht-en besturings interface tussen het knoop punt en de batch-service. Er zijn verschillende implementaties van de knooppunt agent, ook wel Sku's genoemd, voor verschillende besturings systemen. Wanneer u een pool maakt op basis van de virtuele-machineconfiguratie, moet u niet alleen de grootte van de knooppunten opgeven en de bron van de installatiekopieën waarmee u ze hebt gemaakt, maar ook de **verwijzing naar de installatiekopie van de virtuele machine** en de Batch-**knooppuntagent-SKU** die op de knooppunten moet worden geïnstalleerd. Zie [Linux-rekenknooppunten in Azure Batch-pools inrichten](batch-linux-nodes.md) voor meer informatie over het opgeven van deze pooleigenschappen. U kunt desgewenst een of meer lege gegevensschijven koppelen aan pool-VM's die zijn gemaakt op basis van Marketplace-installatiekopieën of gegevensschijven opnemen in aangepaste installatiekopieën die worden gebruikt voor het maken van de virtuele machines. Wanneer u gegevens schijven inneemt, moet u de schijven koppelen en Format teren vanuit een VM om ze te gebruiken.
 
 ### <a name="cloud-services-configuration"></a>Cloud Services configuratie
 
@@ -184,6 +184,10 @@ Aan het ene uiteinde van het spectrum kunt u een pool maken voor elke job wannee
 Als, aan het andere uiteinde van het spectrum, het onmiddellijk starten van jobs de hoogste prioriteit heeft, kunt u een pool voortijdig maken en de knooppunten ervan beschikbaar stellen voordat er jobs worden verzonden. In dit scenario kunnen taken onmiddellijk worden gestart, maar blijven knooppunten mogelijk inactief terwijl wordt gewacht tot er taken worden toegewezen.
 
 Een gecombineerde benadering wordt meestal gebruikt voor het verwerken van een variabele, maar doorlopende belasting. U kunt een pool hebben waarin meerdere taken worden verzonden en u kunt het aantal knoop punten omhoog of omlaag schalen op basis van de taak belasting. U kunt dit reactief doen, op basis van de huidige workload, of proactief als de workload kan worden voorspeld. Zie het [beleid voor automatisch schalen](#automatic-scaling-policy)voor meer informatie.
+
+## <a name="autopools"></a>Autogroepen
+
+Een [autopool](/rest/api/batchservice/job/add#autopoolspecification) is een groep die wordt gemaakt door de batch-service wanneer een taak wordt verzonden, in plaats van vóór de taken die worden uitgevoerd in de groep. Met de batch-service wordt de levens duur van een automatisch groep beheerd volgens de kenmerken die u opgeeft. Meestal worden deze groepen ook automatisch verwijderd nadat de taken zijn voltooid.
 
 ## <a name="security-with-certificates"></a>Beveiliging met certificaten
 

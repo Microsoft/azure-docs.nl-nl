@@ -1,5 +1,5 @@
 ---
-title: Replicatie-peering maken voor Azure NetApp Files | Microsoft Docs
+title: Volume replicatie maken voor Azure NetApp Files | Microsoft Docs
 description: Hierin wordt beschreven hoe u peering voor volume replicatie maakt voor Azure NetApp Files om replicatie tussen verschillende regio's in te stellen.
 services: azure-netapp-files
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: b-juche
-ms.openlocfilehash: df70f8a37a7223119068afd323583ea6126ca542
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 412724a072bfc03a67bf1005173702f757c6fdf4
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90708662"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95249934"
 ---
-# <a name="create-replication-peering-for-azure-netapp-files"></a>Replicatie-peering maken voor Azure NetApp Files
+# <a name="create-volume-replication-for-azure-netapp-files"></a>Volume replicatie voor Azure NetApp Files maken
 
 > [!IMPORTANT]
 > De functie voor replicatie van meerdere regio's is momenteel beschikbaar als open bare preview. U moet een Waitlist-aanvraag indienen om toegang te krijgen tot de functie via de [Waitlist-verzend pagina van Azure NetApp files cross-Region replicatie](https://aka.ms/anfcrrpreviewsignup). Wacht op een officiële bevestigings-e-mail van het Azure NetApp Files team voordat u de functie voor replicatie tussen regio's gebruikt.
@@ -82,7 +82,7 @@ Zorg ervoor dat voor het NFS-protocol de export beleids regels voldoen aan de ve
 
     ![Volume replicatie maken](../media/azure-netapp-files/cross-region-replication-create-volume-replication.png)
 
-9. Klik op **controleren + maken**en klik vervolgens op **maken** om het volume voor gegevens replicatie te maken.   
+9. Klik op **controleren + maken** en klik vervolgens op **maken** om het volume voor gegevens replicatie te maken.   
 
     ![Replicatie controleren en maken](../media/azure-netapp-files/cross-region-replication-review-create-replication.png)
 
@@ -113,5 +113,6 @@ Als u de replicatie wilt autoriseren, moet u de bron-ID van het replicatie doel 
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
+* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met kruis regio's oplossen-replicatie](troubleshoot-cross-region-replication.md)
 

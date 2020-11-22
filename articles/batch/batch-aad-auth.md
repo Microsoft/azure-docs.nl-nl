@@ -4,12 +4,12 @@ description: Batch ondersteunt Azure AD voor verificatie vanuit de batch-service
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: has-adal-ref
-ms.openlocfilehash: 685b84f1e628ea67689d3de8bf64c9641edba6fc
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 784e92eaa2cd672d511177066befcfd7effc7ca4
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920505"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95252637"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Batch-service oplossingen verifiëren met Active Directory
 
@@ -144,7 +144,7 @@ U kunt een aangepaste rol gebruiken om machtigingen te verlenen aan een Azure AD
 - Microsoft.BatCH/batchAccounts/Read (voor elke Lees bewerking)
 - Microsoft.BatCH/batchAccounts/Listkeys ophalen/Action (voor een wille keurige bewerking)
 
-Aangepaste rollen zijn voor gebruikers die zijn geverifieerd door Azure AD, niet met de referenties van het batch-account (gedeelde sleutel). Houd er rekening mee dat de referenties van het batch-account volledige machtiging bieden voor het batch-account. Houd er ook rekening mee dat taken die gebruikmaken van de groeps beleidsniveau machtigingen vereisen.
+Aangepaste rollen zijn voor gebruikers die zijn geverifieerd door Azure AD, niet met de referenties van het batch-account (gedeelde sleutel). Houd er rekening mee dat de referenties van het batch-account volledige machtiging bieden voor het batch-account. Houd er ook rekening mee dat taken die [gebruikmaken van de groeps](nodes-and-pools.md#autopools) beleidsniveau machtigingen vereisen.
 
 > [!NOTE]
 > Bepaalde roltoewijzingen moeten worden opgegeven in het actie veld, terwijl anderen moeten worden opgegeven in het veld DataAction. Zie bewerkingen voor Azure- [resource providers](../role-based-access-control/resource-provider-operations.md#microsoftbatch)voor meer informatie.

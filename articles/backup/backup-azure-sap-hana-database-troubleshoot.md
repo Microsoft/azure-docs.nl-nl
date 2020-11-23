@@ -3,12 +3,12 @@ title: Back-upfouten van SAP HANA databases oplossen
 description: Hierin wordt beschreven hoe u veelvoorkomende fouten oplost die zich kunnen voordoen wanneer u Azure Backup gebruikt om back-ups te maken van SAP HANA-data bases.
 ms.topic: troubleshooting
 ms.date: 11/7/2019
-ms.openlocfilehash: 5cdad55ef849b9ced31646466e2c2c170ebf0827
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b9fa73ee38e337a547816432212bc68d419f40bb
+ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89377681"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95411322"
 ---
 # <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Problemen met back-ups van SAP HANA-data bases in azure oplossen
 
@@ -116,7 +116,7 @@ Dit scenario kan twee mogelijke gevallen omvatten. Meer informatie over het make
 
     - De uitbrei ding is al aanwezig op de VM, maar is niet zichtbaar voor een van de services
     - Het pre-registratie script uitvoeren
-    - De extensie voor dezelfde computer opnieuw registreren in de Azure Portal (Details van de**back-**  ->  **upweergave** -> de relevante Azure-VM selecteren-> opnieuw registreren)
+    - De extensie voor dezelfde computer opnieuw registreren in de Azure Portal (Details van de **back-**  ->  **upweergave** -> de relevante Azure-VM selecteren-> opnieuw registreren)
     - De al bestaande back-updatabasen (van de verwijderde virtuele machine) moeten vervolgens worden gestart met een back-up
 
 2. De nieuwe virtuele machine die is gemaakt, heeft:
@@ -153,7 +153,7 @@ Upgrades naar het besturings systeem, de wijziging van de versie van de dit SDC 
 - Zorg ervoor dat de nieuwe versie van het besturings systeem, de dit SDC of de MDC momenteel wordt [ondersteund door Azure backup](sap-hana-backup-support-matrix.md#scenario-support)
 - [Beveiliging stoppen met het bewaren van gegevens](sap-hana-db-manage.md#stop-protection-for-an-sap-hana-database) voor de data base
 - De upgrade of update uitvoeren
-- Voer het script voor de voorafgaande registratie opnieuw uit. Normaal gesp roken verwijdert het upgrade proces de benodigde rollen. Als u het script voor de voorafgaande registratie uitvoert, worden alle vereiste rollen gecontroleerd
+- Voer het script voor de voorafgaande registratie opnieuw uit. Het upgrade proces kan vaak [de benodigde rollen](tutorial-backup-sap-hana-db.md#what-the-pre-registration-script-does)verwijderen. Als u het script voor de voorafgaande registratie uitvoert, kunt u alle vereiste rollen controleren.
 - De beveiliging voor de data base opnieuw hervatten
 
 ## <a name="sdc-to-mdc-upgrade-with-no-change-in-sid"></a>Dit SDC naar MDC upgrade zonder wijziging in SID
@@ -164,7 +164,7 @@ Upgrades van dit SDC naar MDC die geen SID-wijziging veroorzaken, kunnen als vol
 - [Beveiliging stoppen met het bewaren van gegevens](sap-hana-db-manage.md#stop-protection-for-an-sap-hana-database) voor de oude dit SDC-data base
 - Voer de upgrade uit. Na voltooiing is het HANA-systeem nu MDC met een systeem database en Tenant Db's
 - Voer het [script voor de voorafgaande registratie](https://aka.ms/scriptforpermsonhana) opnieuw uit
-- De extensie voor dezelfde computer opnieuw registreren in de Azure Portal (Details van de**back-**  ->  **upweergave** -> de relevante Azure-VM selecteren-> opnieuw registreren)
+- De extensie voor dezelfde computer opnieuw registreren in de Azure Portal (Details van de **back-**  ->  **upweergave** -> de relevante Azure-VM selecteren-> opnieuw registreren)
 - Selecteer **db's opnieuw detecteren** voor dezelfde VM. Deze actie moet de nieuwe Db's weer geven in stap 3 als SYSTEMDB en Tenant database, niet dit SDC
 - De oudere dit SDC-data base blijft aanwezig in de kluis en oudere back-upgegevens worden bewaard volgens het beleid
 - Back-up configureren voor deze data bases
@@ -177,7 +177,7 @@ Upgrades van dit SDC naar MDC die een SID-wijziging veroorzaken, kunnen als volg
 - **Beveiliging stoppen met het bewaren van gegevens** voor de oude dit SDC-data base
 - Voer de upgrade uit. Na voltooiing is het HANA-systeem nu MDC met een systeem database en Tenant Db's
 - Voer het [script voor de voorafgaande registratie](https://aka.ms/scriptforpermsonhana) opnieuw uit met de juiste Details (nieuwe sid en MDC). Als gevolg van een wijziging in de SID, kunnen er problemen ontstaan met het uitvoeren van het script. Neem contact op met Azure Backup ondersteuning als u problemen ondervindt.
-- De extensie voor dezelfde computer opnieuw registreren in de Azure Portal (Details van de**back-**  ->  **upweergave** -> de relevante Azure-VM selecteren-> opnieuw registreren)
+- De extensie voor dezelfde computer opnieuw registreren in de Azure Portal (Details van de **back-**  ->  **upweergave** -> de relevante Azure-VM selecteren-> opnieuw registreren)
 - Selecteer **db's opnieuw detecteren** voor dezelfde VM. Deze actie moet de nieuwe Db's weer geven in stap 3 als SYSTEMDB en Tenant database, niet dit SDC
 - De oudere dit SDC-data base blijft aanwezig in de kluis en de oude back-upgegevens worden bewaard volgens het beleid
 - Back-up configureren voor deze data bases
@@ -187,7 +187,7 @@ Upgrades van dit SDC naar MDC die een SID-wijziging veroorzaken, kunnen als volg
 Controleer op een of meer van de volgende symptomen voordat u de bewerking opnieuw registreren start:
 
 - Alle bewerkingen (zoals back-up, herstel en configuratie back-up) mislukken op de virtuele machine met een van de volgende fout codes: **WorkloadExtensionNotReachable, UserErrorWorkloadExtensionNotInstalled, WorkloadExtensionNotPresent, WorkloadExtensionDidntDequeueMsg**.
-- Als het gebied voor de **back-upstatus** voor het back-upitem **niet bereikbaar**is, geeft u alle andere oorzaken uit die kunnen resulteren in dezelfde status:
+- Als het gebied voor de **back-upstatus** voor het back-upitem **niet bereikbaar** is, geeft u alle andere oorzaken uit die kunnen resulteren in dezelfde status:
 
   - Onvoldoende machtigingen voor het uitvoeren van back-upbewerkingen op de VM
   - De virtuele machine wordt afgesloten, waardoor er geen back-ups kunnen worden gemaakt

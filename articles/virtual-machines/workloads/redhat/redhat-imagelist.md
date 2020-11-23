@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/16/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: b03d559b8952a61896fa79a568fb8200b3618fed
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: ea0e8c148a847ecc23bab5e87a1dc60a626cf0c1
+ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968635"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95411611"
 ---
 # <a name="red-hat-enterprise-linux-rhel-images-available-in-azure"></a>Red Hat Enterprise Linux-installatie kopieën (RHEL) die beschikbaar zijn in azure
 Azure biedt een aantal RHEL-installatie kopieën voor verschillende use cases.
@@ -55,12 +55,14 @@ RHEL          | 6.7      | UITGANG    | Linux-agent | Uitgebreide levenscyclus o
 |             | 8-LVM-Gen2| LVM    | Linux-agent | Hyper-V-generatie 2-RHEL 8. x-familie van installatie kopieën. Gekoppeld aan reguliere opslag plaatsen.
 |             | 8        | LVM    | Linux-agent | RHEL 8,0-installatie kopieën.
 |             | 8-Gen2   | LVM    | Linux-agent | Hyper-V-generatie 2-RHEL 8,0 installatie kopieën.
-|             | 8.1      | LVM    | Linux-agent | RHEL 8,2-installatie kopieën. Momenteel gekoppeld aan reguliere opslag plaatsen.
-|             | 81gen2   | LVM    | Linux-agent | Hyper-V-generatie 2-RHEL 8,1 installatie kopieën. Momenteel gekoppeld aan reguliere opslag plaatsen.
-|             | 8,1-CI   | LVM    | Linux-agent | RHEL 8,1-installatie kopieën die gebruikmaken van Cloud-init als inrichtings agent. Momenteel gekoppeld aan reguliere opslag plaatsen.
-|             | 81-CI-Gen2| LVM    | Linux-agent | Hyper-V-generatie 2-RHEL 8,1-installatie kopieën met Cloud-init als inrichtings agent. Momenteel gekoppeld aan reguliere opslag plaatsen.
-|             | 8,2      | LVM    | Linux-agent | RHEL 8,2-installatie kopieën. Momenteel gekoppeld aan reguliere opslag plaatsen.
-|             | 82gen2   | LVM    | Linux-agent | Hyper-V-generatie 2-RHEL 8,1 installatie kopieën. Momenteel gekoppeld aan reguliere opslag plaatsen.
+|             | 8.1      | LVM    | Linux-agent | Standaard gekoppeld aan EUS-opslag plaatsen.
+|             | 81gen2   | LVM    | Linux-agent | Hyper-V-generatie 2: verbonden met EUS-opslag plaatsen vanaf november 2020.
+|             | 8,1-CI   | LVM    | Linux-agent | Verbonden met EUS-opslag plaatsen vanaf november 2020.
+|             | 81-CI-Gen2| LVM    | Linux-agent | Hyper-V-generatie 2: verbonden met EUS-opslag plaatsen vanaf november 2020.
+|             | 8,2      | LVM    | Linux-agent | Verbonden met EUS-opslag plaatsen vanaf november 2020.
+|             | 82gen2   | LVM    | Linux-agent | Hyper-V-generatie 2: verbonden met EUS-opslag plaatsen vanaf november 2020.
+|             | 8.3   | LVM    | Linux-agent |  Gekoppeld aan reguliere opslag plaatsen (EUS niet beschikbaar voor RHEL 8,3)
+|             | 83-Gen2   | LVM    | Linux-agent |Hyper-V-generatie 2: gekoppeld aan reguliere opslag plaatsen (EUS niet beschikbaar voor RHEL 8,3)
 RHEL-SAP      | 7.4      | LVM    | Linux-agent | RHEL 7,4 voor SAP HANA en zakelijke apps. Aan de E4S-opslag plaatsen wordt een Premium voor SAP en RHEL, en de basis reken kosten in rekening gebracht.
 |             | 74sap-Gen2| LVM    | Linux-agent | RHEL 7,4 voor SAP HANA en zakelijke apps. Installatie kopie van de 2e generatie. Aan de E4S-opslag plaatsen wordt een Premium voor SAP en RHEL, en de basis reken kosten in rekening gebracht.
 |             | 7,5       | LVM    | Linux-agent | RHEL 7,5 voor SAP HANA en zakelijke apps. Aan de E4S-opslag plaatsen wordt een Premium voor SAP en RHEL, en de basis reken kosten in rekening gebracht.
@@ -76,6 +78,11 @@ RHEL-SAP-APPS | 6.8       | UITGANG    | Linux-agent | RHEL 6,8 voor SAP Busines
 |             | 7.4       | LVM    | Linux-agent | RHEL 7,4 voor SAP Business Applications.
 |             | 7.6       | LVM    | Linux-agent | RHEL 7,6 voor SAP Business Applications.
 |             | 7,7       | LVM    | Linux-agent | RHEL 7,7 voor SAP Business Applications.
+|             | 77-Gen2       | LVM    | Linux-agent | RHEL 7,7 voor SAP Business Applications. Installatie kopie van de 2e generatie
+|             | 8.1       | LVM    | Linux-agent | RHEL 8,1 voor SAP Business Applications.
+|             | 81-Gen2      | LVM    | Linux-agent | RHEL 8,1 voor SAP Business Applications. Installatie kopie van de 2e generatie.
+|             | 8,2       | LVM    | Linux-agent | RHEL 8,2 voor SAP Business Applications.
+|             | 82-Gen2      | LVM    | Linux-agent | RHEL 8,2 voor SAP Business Applications. Installatie kopie van de 2e generatie.
 RHEL-HA       | 7.4       | LVM    | Linux-agent | RHEL 7,4 met HA-invoeg toepassing. In wordt een Premium voor HA en RHEL boven op de basis reken kosten in rekening gebracht. Verouderd in de RHEL-SAP-HA-installatie kopieën.
 |             | 7,5       | LVM    | Linux-agent | RHEL 7,5 met HA-invoeg toepassing. In wordt een Premium voor HA en RHEL boven op de basis reken kosten in rekening gebracht. Verouderd in de RHEL-SAP-HA-installatie kopieën.
 |             | 7.6       | LVM    | Linux-agent | RHEL 7,6 met HA-invoeg toepassing. In wordt een Premium voor HA en RHEL boven op de basis reken kosten in rekening gebracht. Verouderd in de RHEL-SAP-HA-installatie kopieën.
@@ -86,6 +93,10 @@ RHEL-SAP-HA   | 7.4          | LVM    | Linux-agent | RHEL 7,4 voor SAP met HA e
 |             | 76sapha-Gen2 | LVM    | Linux-agent | RHEL 7,6 voor SAP met HA en Update Services. Installatie kopie van de 2e generatie. Gekoppeld aan E4S-opslag plaatsen. Berekent een Premium voor SAP-en HA-opslag plaatsen, evenals RHEL, bovenop de kosten voor basis berekeningen.
 |             | 7,7          | LVM    | Linux-agent | RHEL 7,7 voor SAP met HA en Update Services. Gekoppeld aan E4S-opslag plaatsen. Berekent een Premium voor SAP-en HA-opslag plaatsen, evenals RHEL, bovenop de kosten voor basis berekeningen.
 |             | 77sapha-Gen2 | LVM    | Linux-agent | RHEL 7,7 voor SAP met HA en Update Services. Installatie kopie van de 2e generatie. Gekoppeld aan E4S-opslag plaatsen. Berekent een Premium voor SAP-en HA-opslag plaatsen, evenals RHEL, bovenop de kosten voor basis berekeningen.
+|             | 8.1          | LVM    | Linux-agent | RHEL 8,1 voor SAP met HA en Update Services. Gekoppeld aan E4S-opslag plaatsen. Berekent een Premium voor SAP-en HA-opslag plaatsen, evenals RHEL, bovenop de kosten voor basis berekeningen.
+|             | 81sapha-Gen2          | LVM    | Linux-agent | RHEL 8,1 voor SAP met HA en Update Services. 2 installatie kopieën van de tweede generatie die zijn gekoppeld aan E4S-opslag plaatsen. Berekent een Premium voor SAP-en HA-opslag plaatsen, evenals RHEL, bovenop de kosten voor basis berekeningen.
+|             | 8,2          | LVM    | Linux-agent | RHEL 8,2 voor SAP met HA en Update Services. Berekent een Premium voor SAP-en HA-opslag plaatsen, evenals RHEL, bovenop de kosten voor basis berekeningen.
+|             | 82sapha-Gen2          | LVM    | Linux-agent | RHEL 8,2 voor SAP met HA en Update Services. 2 installatie kopieën van de tweede generatie die zijn gekoppeld aan E4S-opslag plaatsen. Berekent een Premium voor SAP-en HA-opslag plaatsen, evenals RHEL, bovenop de kosten voor basis berekeningen.
 RHEL-BYOS     |RHEL-lvm74| LVM    | Linux-agent | RHEL 7,4 BYOS-installatie kopieën die niet zijn gekoppeld aan een bron van updates, brengen geen kosten in rekening voor een RHEL Premium.
 |             |RHEL-lvm75| LVM    | Linux-agent | RHEL 7,5 BYOS-installatie kopieën die niet zijn gekoppeld aan een bron van updates, brengen geen kosten in rekening voor een RHEL Premium.
 |             |RHEL-lvm76| LVM    | Linux-agent | RHEL 7,6 BYOS-installatie kopieën die niet zijn gekoppeld aan een bron van updates, brengen geen kosten in rekening voor een RHEL Premium.

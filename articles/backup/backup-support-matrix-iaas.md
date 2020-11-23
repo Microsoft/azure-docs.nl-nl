@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.custom: references_regions
-ms.openlocfilehash: cff5c68803d0930bbf3310a385ffa0132bcbb3b1
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2c38af9a2e1c4c71bb2d5661758f663efe13a946
+ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95017023"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95414076"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Ondersteuningsmatrix voor back-up van Azure-VM
 
@@ -160,7 +160,7 @@ Grootte van de gegevens schijf | De afzonderlijke schijf grootte kan Maxi maal 3
 Opslagtype | Standard-HDD, Standard-SSD Premium-SSD.
 Managed Disks | Ondersteund.
 Versleutelde schijven | Ondersteund.<br/><br/> Voor Azure-Vm's met Azure Disk Encryption kan een back-up worden gemaakt (met of zonder de Azure AD-app).<br/><br/> Versleutelde Vm's kunnen niet worden hersteld op het niveau van het bestand of de map. U moet de volledige VM herstellen.<br/><br/> U kunt versleuteling inschakelen voor virtuele machines die al worden beveiligd door Azure Backup.
-Schijven waarop Write Accelerator is ingeschakeld | Niet ondersteund.<br/><br/> Azure Backup worden de schijven die zijn ingeschakeld tijdens het maken van de back-up automatisch uitgesloten van Write Accelerator (WA). Omdat er geen back-up is gemaakt, kunt u deze schijven niet herstellen vanaf herstel punten van de virtuele machine. <br><br> **Belang rijke Opmerking**: virtuele machines met WA-schijven hebben Internet connectiviteit nodig voor een geslaagde back-up (zelfs als deze schijven zijn uitgesloten van de back-up).
+Schijven waarop Write Accelerator is ingeschakeld | Vanaf 23 november 2020, ondersteund in de regio's Korea-centraal (KRC) en Zuid-Afrika-noord (SAN).<br/><br/> Azure Backup maakt een back-up van de virtuele machines met schijven die schrijven Accelarted (WA) zijn ingeschakeld tijdens het maken van een back-up.  
 Back-up maken & ontdubbelde Vm's/schijven herstellen | Azure Backup biedt geen ondersteuning voor ontdubbeling. Raadpleeg dit [artikel](./backup-support-matrix.md#disk-deduplication-support) voor meer informatie <br/> <br/>  -Azure Backup wordt niet gedupliceerd over Vm's in de Recovery Services kluis <br/> <br/>  -Als er Vm's aanwezig zijn tijdens het herstellen, kunnen de bestanden niet worden hersteld omdat de kluis de indeling niet begrijpt. U kunt echter de volledige VM-herstel bewerking uitvoeren.
 Schijf toevoegen aan beveiligde VM | Ondersteund.
 Grootte van schijf op beveiligde virtuele machine wijzigen | Ondersteund.

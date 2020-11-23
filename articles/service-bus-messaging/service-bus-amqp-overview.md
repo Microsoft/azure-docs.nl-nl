@@ -2,23 +2,25 @@
 title: Overzicht van AMQP 1,0 in Azure Service Bus
 description: Lees hoe Azure Service Bus Advanced Message Queueing Protocol (AMQP) ondersteunt, een open standaard protocol.
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: c91c7965b94216f3f3bcb47e0cb652ce22a0217a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/20/2020
+ms.openlocfilehash: a643869d7d89b287e899b1eab89c5b9ec11856e5
+ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88066335"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95396804"
 ---
 # <a name="amqp-10-support-in-service-bus"></a>Ondersteuning voor AMQP 1,0 in Service Bus
-Zowel de Azure Service Bus Cloud service als on-premises [service bus voor Windows Server (Service Bus 1,1)](/previous-versions/service-bus-archive/dn282144(v=azure.100)) ondersteunen het AMQP (Advanced Message queueing Protocol) 1,0. Met AMQP kunt u platform onafhankelijke, hybride toepassingen bouwen met behulp van een open standaard protocol. U kunt toepassingen bouwen met behulp van onderdelen die zijn gebouwd met behulp van verschillende talen en frameworks, en die worden uitgevoerd op verschillende besturings systemen. Al deze onderdelen kunnen verbinding maken met Service Bus en gestructureerde bedrijfs berichten efficiënt en met volledige betrouw baarheid uitwisselen.
+De Azure Service Bus-Cloud service maakt gebruik van het [Advanced Message queueing Protocol (AMQP) 1,0](http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-overview-v1.0.html) als het belangrijkste communicatie middel. Micro soft heeft partners in de branche, zowel klanten als leveranciers van concurrerende Messa ging-makelaars, ontwikkeld om AMQP in het afgelopen decennium te ontwikkelen en ontwikkelen, met nieuwe uitbrei dingen die worden ontwikkeld in het [Oasis AMQP Technical Committee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp). AMQP 1,0 is een ISO-en IEC-norm ([iso 19464:20149](https://www.iso.org/standard/64955.html)). 
+
+AMQP stelt u in staat om platformoverschrijdende, hybride toepassingen te bouwen met behulp van een leverancier-neutraal en implementatie-neutraal open standaard protocol. U kunt toepassingen bouwen met behulp van onderdelen die zijn gebouwd met behulp van verschillende talen en frameworks, en die worden uitgevoerd op verschillende besturings systemen. Al deze onderdelen kunnen verbinding maken met Service Bus en gestructureerde bedrijfs berichten efficiënt en met volledige betrouw baarheid uitwisselen.
 
 ## <a name="introduction-what-is-amqp-10-and-why-is-it-important"></a>Inleiding: wat is AMQP 1,0 en waarom is het belang rijk?
-Normaal gesp roken hebben op berichten georiënteerde middlewareproducten een eigen protocol gebruikt voor communicatie tussen client toepassingen en makelaars. Dit betekent dat als u de Messa ging-Broker van een bepaalde leverancier hebt geselecteerd, u de bibliotheken van die leverancier moet gebruiken om uw client toepassingen te verbinden met die Broker. Dit leidt tot een zekere mate van afhankelijkheid van die leverancier, omdat het voor de poort van een toepassing naar een ander product nood zakelijk is dat code wijzigingen in alle verbonden toepassingen worden aangebracht. 
+Normaal gesp roken hebben op berichten georiënteerde middlewareproducten een eigen protocol gebruikt voor communicatie tussen client toepassingen en makelaars. Dit betekent dat als u de Messa ging-Broker van een bepaalde leverancier hebt geselecteerd, u de bibliotheken van die leverancier moet gebruiken om uw client toepassingen te verbinden met die Broker. Dit leidt tot een zekere mate van afhankelijkheid van die leverancier, omdat het voor de poort van een toepassing naar een ander product nood zakelijk is dat code wijzigingen in alle verbonden toepassingen worden aangebracht. In de Java-Community zijn taalspecifieke API-standaarden zoals Java Message Service (JMS) en de abstractie van het lente-Framework minder goed, maar hebben ze een zeer smal functie bereik en kunnen ontwikkel aars met andere talen worden uitgesloten.
 
-Bovendien is het maken van de communicatie van Messa ging-Brokers van verschillende leveranciers lastig. Dit vereist meestal bridging op toepassings niveau om berichten van het ene naar het andere systeem te verplaatsen en te vertalen tussen hun eigen bericht indelingen. Dit is een algemene vereiste. bijvoorbeeld wanneer u een nieuwe, geïntegreerde interface moet bieden voor oudere systemen of als u de IT-systemen wilt integreren na een fusie.
+Bovendien is het maken van de communicatie van Messa ging-Brokers van verschillende leveranciers lastig. Dit vereist meestal bridging op toepassings niveau om berichten van het ene naar het andere systeem te verplaatsen en te vertalen tussen hun eigen bericht indelingen. Dit is een algemene vereiste. bijvoorbeeld wanneer u een nieuwe, geïntegreerde interface moet bieden voor oudere systemen of als u de IT-systemen wilt integreren na een fusie. Met AMQP kunt u rechtstreeks verbinding maken met Brokers, bijvoorbeeld met behulp van routers zoals [Apache Qpid Dispatch router](https://qpid.apache.org/components/dispatch-router/index.html) of Broker-native "shovels", zoals het [RabbitMQ](service-bus-integrate-with-rabbitmq.md).
 
-De software-industrie is een bedrijf dat snel kan worden verplaatst. nieuwe programmeer talen en toepassings raamwerken worden in een soms bewildering tempo geïntroduceerd. Op dezelfde manier kunnen de vereisten van IT-systemen in de loop van tijd en ontwikkel aars profiteren van de nieuwste platform functies. Soms wordt deze platformen echter niet ondersteund door de leverancier van de geselecteerde berichten. Omdat berichten protocollen eigendom zijn, is het niet mogelijk dat anderen bibliotheken voor deze nieuwe platforms bieden. Daarom moet u benaderingen gebruiken zoals het maken van gateways of bruggen waarmee u het bericht product kunt blijven gebruiken.
+De software-industrie is een bedrijf dat snel kan worden verplaatst. nieuwe programmeer talen en toepassings raamwerken worden in een soms bewildering tempo geïntroduceerd. Op dezelfde manier kunnen de vereisten van IT-systemen in de loop van tijd en ontwikkel aars profiteren van de nieuwste platform functies. Soms wordt deze platformen echter niet ondersteund door de leverancier van de geselecteerde berichten. Als de berichten protocollen eigendom zijn, is het niet mogelijk dat anderen bibliotheken voor deze nieuwe platforms bieden. Daarom moet u benaderingen gebruiken zoals het maken van gateways of bruggen waarmee u het bericht product kunt blijven gebruiken.
 
 De ontwikkeling van de Advanced Message Queueing Protocol (AMQP) 1,0 is gemotiveerd door deze problemen. Het is afkomstig van de Morgan-oplossing van JP, wie, zoals de meeste ondernemingen van financiële dienst verlening, zware gebruikers van de bericht georiënteerde middleware. Het doel is eenvoudig: om een open-standaard berichten protocol te maken dat het mogelijk maakt om op berichten gebaseerde toepassingen te bouwen met behulp van onderdelen die zijn gemaakt met verschillende talen, frameworks en besturings systemen, waarbij alles wordt gebruikt voor het gebruik van de beste onderdelen van een assortiment leveranciers.
 
@@ -40,6 +42,8 @@ In oktober 2011 werd het ontwikkelings werk overgegaan naar een technisch comit�
 * **Technologie leveranciers**: Axway software, Huawei Technologies, IIT software, INETCO Systems, Kaazing, micro soft, Mitre Corporation, Primeton Technologies, progressief software, Red Hat, Sita, Software AG, Solace Systems, VMware, WSO2, Zenika.
 * **Gebruikers bedrijven**: Bank of America, Credit Suisse, Deutsche boerse, Goldman Sachs, JPMorgan-nadoende.
 
+De huidige stoelen van het [OASIS AMQP Technical Committee] (( https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp) Red Hat en micro soft vertegenwoordigen.
+
 Enkele van de meest voorkomende voor delen van open standaarden zijn:
 
 * Minder kans op het vergren delen van een leverancier
@@ -50,7 +54,7 @@ Enkele van de meest voorkomende voor delen van open standaarden zijn:
 * Lager en beheersbaar risico
 
 ## <a name="amqp-10-and-service-bus"></a>AMQP 1,0 en Service Bus
-AMQP 1,0-ondersteuning in Azure Service Bus houdt in dat u nu kunt gebruikmaken van de Service Bus Queuing en Brokered Messaging functies publiceert/abonneert vanuit diverse platformen met behulp van een efficiënt binair protocol. Daarnaast kunt u toepassingen bouwen die bestaan uit onderdelen die zijn gebouwd met behulp van een combi natie van talen, frameworks en besturings systemen.
+AMQP 1,0-ondersteuning in Azure Service Bus houdt in dat u gebruik kunt maken van de Service Bus Queuing en de functies voor het publiceren en abonneren van Brokered Messaging vanuit diverse platformen met behulp van een efficiënt binair protocol. Daarnaast kunt u toepassingen bouwen die bestaan uit onderdelen die zijn gebouwd met behulp van een combi natie van talen, frameworks en besturings systemen.
 
 In de volgende afbeelding ziet u een voorbeeld implementatie waarbij Java-clients die worden uitgevoerd op Linux, worden geschreven met behulp van de standaard JMS-API (Java Message Service) en .NET-clients die worden uitgevoerd op Windows, Exchange-berichten via Service Bus met AMQP 1,0.
 
@@ -58,21 +62,31 @@ In de volgende afbeelding ziet u een voorbeeld implementatie waarbij Java-client
 
 **Afbeelding 1: voor beeld van implementatie scenario met verschillende platform berichten met behulp van Service Bus en AMQP 1,0**
 
-Op dit moment zijn de volgende client bibliotheken bekend om samen te werken met Service Bus:
+Alle ondersteunde Service Bus-client bibliotheken die beschikbaar zijn via de Azure SDK gebruiken AMQP 1,0.
+
+- [Azure Service Bus voor .NET](https://docs.microsoft.com/dotnet/api/overview/azure/service-bus?view=azure-dotnet&preserve-view=true)
+- [Azure Service Bus bibliotheken voor Java](https://docs.microsoft.com/java/api/overview/azure/servicebus?view=azure-java-stable&preserve-view=true)
+- [Azure Service Bus provider voor Java JMS 2,0](how-to-use-java-message-service-20.md)
+- [Azure Service Bus-modules voor Java script en type script](https://docs.microsoft.com/javascript/api/overview/azure/service-bus?view=azure-node-latest&preserve-view=true)
+- [Azure Service Bus bibliotheken voor python](https://docs.microsoft.com/python/api/overview/azure/servicebus?view=azure-python&preserve-view=true)
+
+Daarnaast kunt u Service Bus gebruiken vanuit elke AMQP 1,0 compatibele protocol stack:
 
 | Taal | Bibliotheek |
 | --- | --- |
-| Java |JMS-client (Apache Qpid Java Message Service)<br/>IIT software SwiftMQ Java-client |
-| C |Apache Qpid Proton-C |
-| PHP |Apache Qpid Proton-PHP |
-| Python |Apache Qpid Proton-Python |
-| C# |AMQP .NET Lite |
+| Java | [Apache Qpid Proton-J](https://qpid.apache.org/proton/index.html) |
+| C/C++ |[Azure UAMQP C](https://github.com/azure/azure-uamqp-c/), [Apache Qpid Proton-C](https://qpid.apache.org/proton/index.html) |
+| Python |[Azure uAMQP voor python](https://github.com/azure/azure-uamqp-python/), [Apache Qpid Proton python](https://qpid.apache.org/releases/qpid-proton-0.32.0/proton/python/docs/overview.html) |
+| PHP | [Azure-uAMQP voor PHP](https://github.com/vsouz4/azure-uamqp-php/) |
+| Ruby | [Apache Qpid Proton ruby](https://github.com/apache/qpid-proton/tree/master/ruby) |
+| Aan de slag | [Azure go AMQP](https://github.com/Azure/go-amqp), [Apache Qpid Proton go](https://github.com/apache/qpid-proton/tree/master/go/examples)
+| C#/F #/VB | [AMQP .net Lite](https://github.com/Azure/amqpnetlite), [Apache NMS AMQP](https://github.com/apache/activemq-nms-amqp)|
+| Java script/knoop punt | [Rhea](https://github.com/grs/rhea) |
 
 **Afbeelding 2: tabel met AMQP 1,0-client bibliotheken**
 
 ## <a name="summary"></a>Samenvatting
 * AMQP 1,0 is een open, betrouw bare berichten protocol dat u kunt gebruiken voor het bouwen van platformoverschrijdende, hybride toepassingen. AMQP 1,0 is een OASIS-standaard.
-* AMQP 1,0-ondersteuning is nu beschikbaar in Azure Service Bus en Service Bus voor Windows Server (Service Bus 1,1). De prijs is hetzelfde als voor de bestaande protocollen.
 
 ## <a name="next-steps"></a>Volgende stappen
 Wilt u meer weten? Ga naar de volgende koppelingen:
@@ -80,10 +94,8 @@ Wilt u meer weten? Ga naar de volgende koppelingen:
 * [Service Bus van .NET gebruiken met AMQP]
 * [Service Bus van Java gebruiken met AMQP]
 * [Apache Qpid Proton-C op een Azure Linux-VM installeren]
-* [AMQP in Service Bus voor Windows Server]
 
 [0]: ./media/service-bus-amqp-overview/service-bus-amqp-1.png
 [Service Bus van .NET gebruiken met AMQP]: service-bus-amqp-dotnet.md
 [Service Bus van Java gebruiken met AMQP]: ./service-bus-java-how-to-use-jms-api-amqp.md
-[Apache Qpid Proton-C op een Azure Linux-VM installeren]: 
-[AMQP in Service Bus for Windows Server]: /previous-versions/service-bus-archive/dn574799(v=azure.100)
+[Apache Qpid Proton-C installeren op een Azure Linux-VM]:: 

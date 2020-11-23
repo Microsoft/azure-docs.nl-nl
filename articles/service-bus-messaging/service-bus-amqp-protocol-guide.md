@@ -3,26 +3,26 @@ title: AMQP 1,0 in Azure Service Bus en Event Hubs protocol handleiding | Micros
 description: Protocol gids voor expressies en beschrijving van AMQP 1,0 in Azure Service Bus en Event Hubs
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: ffccd49d37dbf2a8fc404e9895b648e53007675c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 32e71211ed1574cade0567f7944b154eea062b24
+ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88064533"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95396872"
 ---
 # <a name="amqp-10-in-azure-service-bus-and-event-hubs-protocol-guide"></a>AMQP 1,0 in Azure Service Bus en Event Hubs protocol gids
 
-Het Advanced Message queueing Protocol 1,0 is een gestandaardiseerd protocol voor framing en overdracht voor asynchrone, veilige en betrouw bare overdracht van berichten tussen twee partijen. Het is het primaire protocol van Azure Service Bus Messa ging en Azure Event Hubs. Beide services ondersteunen ook HTTPS. Het eigen SBMP-protocol dat ook wordt ondersteund, wordt in het voor deel van AMQP.
+Het Advanced Message queueing Protocol 1,0 is een gestandaardiseerd protocol voor framing en overdracht voor asynchrone, veilige en betrouw bare overdracht van berichten tussen twee partijen. Het is het primaire protocol van Azure Service Bus Messa ging en Azure Event Hubs.  
 
-AMQP 1,0 is het resultaat van een brede samen werking bij het samen stellen van middleware-leveranciers, zoals micro soft en Red Hat, met veel gebruikers voor het door geven van berichten, zoals JP Morgan, die de financiële dienst verleners vertegenwoordigen. Het technisch normalisatie forum voor het AMQP-protocol en de extensie specificaties is OASIS en heeft een formele goed keuring behaald als een internationale norm als ISO/IEC 19494.
+AMQP 1,0 is het resultaat van een brede samen werking bij het samen stellen van middleware-leveranciers, zoals micro soft en Red Hat, met veel gebruikers voor het door geven van berichten, zoals JP Morgan, die de financiële dienst verleners vertegenwoordigen. Het technisch normalisatie forum voor het AMQP-protocol en de extensie specificaties is OASIS en heeft een formele goed keuring behaald als een internationale norm als ISO/IEC 19494:2014. 
 
 ## <a name="goals"></a>Doelstellingen
 
-In dit artikel vindt u een beknopt overzicht van de basis concepten van de AMQP 1,0 Messa ging-specificatie, samen met een kleine set concepten-extensie specificaties die momenteel worden voltooid in het OASIS AMQP Technical Committee en wordt uitgelegd hoe Azure Service Bus implementeert en bouwt op basis van deze specificaties.
+In dit artikel vindt u een overzicht van de basis concepten van de AMQP 1,0-bericht specificatie over de extensie specificaties die zijn ontwikkeld door het [technisch Oasis AMQP Technical Committee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp) en wordt uitgelegd hoe Azure service bus implementeert en bouwt op basis van deze specificaties.
 
 Het doel is voor alle ontwikkel aars die een bestaande AMQP 1,0-client stack gebruiken op elk platform om te kunnen communiceren met Azure Service Bus via AMQP 1,0.
 
-Algemene AMQP 1,0-stacks van algemeen gebruik, zoals Apache proton of AMQP.NET lite, implementeren al alle kern AMQP 1,0-protocollen. Deze basis bewegingen worden soms verpakt met een API van een hoger niveau. Apache Proton biedt zelfs twee, de verplichte Mess enger-API en de reactieve reactor-API.
+Algemene AMQP 1,0-stacks van algemeen gebruik, zoals [Apache Qpid Proton](https://qpid.apache.org/proton/index.html) of [AMQP.net Lite](https://github.com/Azure/amqpnetlite), implementeren alle kern AMQP 1,0-protocol elementen zoals sessies of koppelingen. Deze basis elementen worden soms verpakt met een API van een hoger niveau. Apache Proton biedt zelfs twee, de verplichte Mess enger-API en de reactieve reactor-API.
 
 In de volgende bespreking gaan we ervan uit dat het beheer van AMQP-verbindingen,-sessies en-koppelingen en de verwerking van frame overdrachten en datatransport besturing worden verwerkt door de respectieve stack (zoals Apache Proton-C) en niet veel als enige specifieke aandacht van toepassings ontwikkelaars. We gaan abstracten uitgaan van een paar API-primitieven, zoals de mogelijkheid om verbinding te maken, en om een vorm van de abstractie objecten van de *afzender* en de *ontvanger* te maken, die respectievelijk een of meer vorm `send()` en `receive()` bewerkingen hebben.
 
@@ -30,7 +30,7 @@ Bij het bespreken van geavanceerde mogelijkheden van Azure Service Bus, zoals he
 
 ## <a name="what-is-amqp"></a>Wat is AMQP?
 
-AMQP is een framing-en overdrachts protocol. Framing houdt in dat het een structuur biedt voor binaire gegevens stromen die in een van beide richtingen van een netwerk verbinding stromen. De structuur biedt een overzicht van de afzonderlijke gegevens blokken ( *frames*genoemd) die moeten worden uitgewisseld tussen de verbonden partijen. De overdrachts mogelijkheden zorgen ervoor dat beide communicerende partijen een gemeen schappelijk inzicht kunnen krijgen over wanneer frames moeten worden overgedragen, en wanneer overdrachten worden beschouwd als voltooid.
+AMQP is een framing-en overdrachts protocol. Framing houdt in dat het een structuur biedt voor binaire gegevens stromen die in een van beide richtingen van een netwerk verbinding stromen. De structuur biedt een overzicht van de afzonderlijke gegevens blokken ( *frames* genoemd) die moeten worden uitgewisseld tussen de verbonden partijen. De overdrachts mogelijkheden zorgen ervoor dat beide communicerende partijen een gemeen schappelijk inzicht kunnen krijgen over wanneer frames moeten worden overgedragen, en wanneer overdrachten worden beschouwd als voltooid.
 
 In tegens telling tot eerdere verlopen concept versies die zijn geproduceerd door de AMQP-werk groep en die nog steeds worden gebruikt door een paar bericht Brokers, schrijft de laatste en gestandaardiseerde AMQP 1,0-protocol niet de aanwezigheid van een Message Broker of een bepaalde topologie voor entiteiten binnen een Message Broker.
 
@@ -46,7 +46,7 @@ De meest gezaghebbende bron om meer te weten te komen over de manier waarop AMQP
 
 ### <a name="connections-and-sessions"></a>Verbindingen en sessies
 
-AMQP roept *de Program ma's*voor communicatie Programma's aan; Deze bevatten *knoop punten*, die de communicerende entiteiten binnen deze containers zijn. Een wachtrij kan een dergelijk knoop punt zijn. AMQP maakt multiplexing mogelijk, waardoor een enkele verbinding kan worden gebruikt voor veel communicatie paden tussen knoop punten. een toepassings-client kan bijvoorbeeld gelijktijdig van de ene wachtrij ontvangen en via dezelfde netwerk verbinding naar een andere wachtrij verzenden.
+AMQP roept *de Program ma's* voor communicatie Programma's aan; Deze bevatten *knoop punten*, die de communicerende entiteiten binnen deze containers zijn. Een wachtrij kan een dergelijk knoop punt zijn. AMQP maakt multiplexing mogelijk, waardoor een enkele verbinding kan worden gebruikt voor veel communicatie paden tussen knoop punten. een toepassings-client kan bijvoorbeeld gelijktijdig van de ene wachtrij ontvangen en via dezelfde netwerk verbinding naar een andere wachtrij verzenden.
 
 ![Diagram waarin sessies en verbindingen tussen containers worden weer gegeven.][1]
 
@@ -77,14 +77,14 @@ Clients die gebruikmaken van AMQP-verbindingen via TCP, moeten poorten 5671 en 5
 
 ![Lijst met doel poorten][4]
 
-Een .NET-client zou mislukken met een SocketException (' er is een poging gedaan om toegang te krijgen tot een socket op een manier die niet wordt toegestaan door de toegangs machtigingen ') als deze poorten zijn geblokkeerd door de firewall. De functie kan worden uitgeschakeld door de instelling `EnableAmqpLinkRedirect=false` in de met-teken reeks, waardoor de clients met de externe service via poort 5671 kunnen communiceren.
+Een .NET-client zou mislukken met een SocketException (' er is een poging gedaan om toegang te krijgen tot een socket op een manier die niet wordt toegestaan door de toegangs machtigingen ') als deze poorten zijn geblokkeerd door de firewall. De functie kan worden uitgeschakeld door `EnableAmqpLinkRedirect=false` in de Connection String in te stellen, waardoor de clients met de externe service via poort 5671 kunnen communiceren.
 
 
 ### <a name="links"></a>Koppelingen
 
 AMQP brengt berichten over koppelingen over. Een koppeling is een communicatie traject dat is gemaakt over een sessie die het overdragen van berichten in één richting mogelijk maakt. de onderhandeling over de overdrachts status bevindt zich boven de koppeling en bidirectionele tussen de verbonden partijen.
 
-![Scherm opname met een sessie carryign een koppelings verbinding tussen twee containers.][2]
+![Scherm opname van een sessie met een koppeling tussen twee containers.][2]
 
 Koppelingen kunnen worden gemaakt door elke container op elk gewenst moment en via een bestaande sessie, waardoor AMQP afwijkt van een groot aantal andere protocollen, waaronder HTTP en MQTT, waarbij het initiëren van transfers en transfer Path een exclusieve bevoegdheid is van de partij die de socket verbinding maakt.
 
@@ -120,9 +120,9 @@ Om mogelijke dubbele verzen dingen te compenseren, ondersteunt Service Bus dupli
 
 Naast het stroom beheer model op sessie niveau dat eerder is besproken, heeft elke koppeling een eigen stroom beheer model. Met Datatransport besturing op sessie niveau kan de container te allen tijde niet te veel frames tegelijk verwerken, de Datatransport besturing op koppelings niveau zorgt ervoor dat de toepassing wordt belast met het aantal berichten dat via een koppeling moet worden verwerkt en wanneer.
 
-![Scherm opname van een logboek met bron, doel, bron poort, doel poort en protocol naam. In de rij Fiest wordt de doel poort 10401 (0x28 A 1) in zwart beschreven.][4]
+![Scherm opname van een logboek met bron, doel, bron poort, doel poort en protocol naam. In de eerste rij wordt de doel poort 10401 (0x28 A 1) in zwart beschreven.][4]
 
-Bij een koppeling kunnen de overdrachten alleen plaatsvinden wanneer de afzender voldoende *link-tegoed*heeft. Link tegoed is een teller die door de ontvanger wordt ingesteld met behulp van de *flow* Performative, die is gericht op een koppeling. Wanneer de afzender een koppelings tegoed heeft gekregen, wordt geprobeerd dat tegoed te gebruiken door berichten te leveren. Elke bericht bezorging verlaagt het resterende tegoed van de link met 1. Wanneer het tegoed voor de koppeling wordt gebruikt, worden de leveringen gestopt.
+Bij een koppeling kunnen de overdrachten alleen plaatsvinden wanneer de afzender voldoende *link-tegoed* heeft. Link tegoed is een teller die door de ontvanger wordt ingesteld met behulp van de *flow* Performative, die is gericht op een koppeling. Wanneer de afzender een koppelings tegoed heeft gekregen, wordt geprobeerd dat tegoed te gebruiken door berichten te leveren. Elke bericht bezorging verlaagt het resterende tegoed van de link met 1. Wanneer het tegoed voor de koppeling wordt gebruikt, worden de leveringen gestopt.
 
 Als Service Bus zich in de ontvanger van de receiver bevindt, wordt de afzender direct een tegoed van meer dan links verstrekt, zodat berichten direct kunnen worden verzonden. Als tegoed voor de koppeling wordt gebruikt, stuurt Service Bus af en toe een *stroom* Performative naar de afzender om het tegoed van de link bij te werken.
 
@@ -130,7 +130,7 @@ In de rol afzender verzendt Service Bus berichten om een openstaand link-tegoed 
 
 Een ' Receive '-aanroep op het API-niveau wordt omgezet in een *stroom* Performative die wordt verzonden naar service bus door de client. service bus verbruikt dat tegoed door het eerste beschik bare, niet-vergrendelde bericht uit de wachtrij te vergren delen en te verplaatsen. Als er geen bericht beschikbaar is om te worden geleverd, blijft het openstaande tegoed door een koppeling die is gemaakt met die entiteit, opgeslagen in de volg orde van aankomst, en worden berichten vergrendeld en overgedragen zodra deze beschikbaar komen, om een openstaand tegoed te gebruiken.
 
-De vergren deling van een bericht wordt vrijgegeven wanneer de overdracht wordt vereffend met een van de *geaccepteerde*, *Geweigerde*of *vrijgegeven*statussen van de Terminal. Het bericht wordt van Service Bus verwijderd wanneer de status van de terminal wordt *geaccepteerd*. Het blijft in Service Bus en wordt bij de volgende ontvanger bezorgd wanneer de overdracht een van de andere statussen bereikt. Service Bus verplaatst het bericht automatisch naar de deadletter-wachtrij van de entiteit wanneer het maximum aantal bezorgingen dat is toegestaan voor de entiteit bereikt als gevolg van herhaalde weigeringen of releases.
+De vergren deling van een bericht wordt vrijgegeven wanneer de overdracht wordt vereffend met een van de *geaccepteerde*, *Geweigerde* of *vrijgegeven* statussen van de Terminal. Het bericht wordt van Service Bus verwijderd wanneer de status van de terminal wordt *geaccepteerd*. Het blijft in Service Bus en wordt bij de volgende ontvanger bezorgd wanneer de overdracht een van de andere statussen bereikt. Service Bus verplaatst het bericht automatisch naar de deadletter-wachtrij van de entiteit wanneer het maximum aantal bezorgingen dat is toegestaan voor de entiteit bereikt als gevolg van herhaalde weigeringen of releases.
 
 Hoewel de Service Bus-Api's een dergelijke optie vandaag niet direct beschikbaar maken, kan een AMQP-client met een lager niveau het link-credit model gebruiken om de interactie ' pull-Style ' in te scha kelen voor elke ontvangst aanvraag in een ' push-stijl ' model door een groot aantal koppelings kredieten te verlenen en vervolgens berichten te ontvangen wanneer deze beschikbaar zijn zonder verdere interactie. Push wordt ondersteund via de instellingen van de eigenschap [MessagingFactory. PrefetchCount](/dotnet/api/microsoft.servicebus.messaging.messagingfactory) of [MessageReceiver. PrefetchCount](/dotnet/api/microsoft.servicebus.messaging.messagereceiver) . Als ze niet gelijk zijn aan nul, gebruikt de AMQP-client deze als het tegoed van de koppeling.
 
@@ -222,8 +222,8 @@ Alle eigenschappen die door de toepassing moeten worden gedefinieerd, moeten wor
 | --- | --- | --- |
 | bericht-id |Een door de toepassing gedefinieerde, vrije-vorm-id voor dit bericht. Wordt gebruikt voor duplicaten detectie. |[MessageId](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
 | user-id |Door de toepassing gedefinieerde gebruikers-id die niet wordt geïnterpreteerd door Service Bus. |Niet toegankelijk via de Service Bus-API. |
-| in op |De door de toepassing gedefinieerde doel-id, die niet wordt geïnterpreteerd door Service Bus. |[Aan](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
-| Onderwerp |Door de toepassing gedefinieerde doel-id voor bericht, niet geïnterpreteerd door Service Bus. |[Label](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
+| tot |De door de toepassing gedefinieerde doel-id, die niet wordt geïnterpreteerd door Service Bus. |[Aan](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
+| Onderwerp |Door de toepassing gedefinieerde doel-id voor bericht, niet geïnterpreteerd door Service Bus. |[Adres](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
 | beantwoorden |Een door de toepassing gedefinieerde antwoord-Path-Indicator die niet wordt geïnterpreteerd door Service Bus. |[ReplyTo](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
 | correlation-id |Door de toepassing gedefinieerde correlatie-id, die niet wordt geïnterpreteerd door Service Bus. |[Correlatie](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
 | inhouds type |Door de toepassing gedefinieerde inhouds type-indicator voor de hoofd tekst, niet geïnterpreteerd door Service Bus. |[Invoer](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
@@ -319,7 +319,7 @@ In deze sectie vindt u geavanceerde mogelijkheden van Azure Service Bus die zijn
 
 ### <a name="amqp-management"></a>AMQP-beheer
 
-De AMQP-beheer specificatie is de eerste van de concept uitbreidingen die in dit artikel worden besproken. Deze specificatie definieert een set protocollen die is gelaagd boven op het AMQP-protocol waarmee beheer interacties met de infra structuur voor berichten via AMQP worden toegestaan. De specificatie definieert algemene bewerkingen, zoals *maken*, *lezen*, *bijwerken*en *verwijderen* voor het beheren van entiteiten in een infra structuur voor berichten en een set query bewerkingen.
+De AMQP-beheer specificatie is de eerste van de concept uitbreidingen die in dit artikel worden besproken. Deze specificatie definieert een set protocollen die is gelaagd boven op het AMQP-protocol waarmee beheer interacties met de infra structuur voor berichten via AMQP worden toegestaan. De specificatie definieert algemene bewerkingen, zoals *maken*, *lezen*, *bijwerken* en *verwijderen* voor het beheren van entiteiten in een infra structuur voor berichten en een set query bewerkingen.
 
 Voor al deze gebaren is een aanvraag/antwoord interactie tussen de client en de infra structuur voor berichten vereist. de specificatie definieert daarom hoe u het interactie patroon op AMQP kunt model leren: de client maakt verbinding met de infra structuur voor berichten, initieert een sessie en maakt vervolgens een paar koppelingen. Op één koppeling fungeert de-client als afzender en op de andere, fungeert deze als ontvanger, waardoor er een paar koppelingen worden gemaakt die kunnen fungeren als een bi-directioneel kanaal.
 
@@ -366,7 +366,7 @@ Het aanvraag bericht heeft de volgende toepassings eigenschappen:
 
 De eigenschap *name* identificeert de entiteit waaraan het token moet worden gekoppeld. In Service Bus is het het pad naar de wachtrij, of onderwerp/abonnement. De eigenschap *type* geeft het token type aan:
 
-| Token type | Beschrijving van het token | Type hoofd tekst | Notities |
+| Token type | Beschrijving van het token | Type hoofd tekst | Opmerkingen |
 | --- | --- | --- | --- |
 | AMQP: JWT |JSON Web Token (JWT) |AMQP-waarde (teken reeks) |Nog niet beschikbaar. |
 | AMQP: swt |Eenvoudig webtoken (SWT) |AMQP-waarde (teken reeks) |Alleen ondersteund voor SWT-tokens die zijn uitgegeven door AAD/ACS |

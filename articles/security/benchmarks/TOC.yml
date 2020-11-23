@@ -81,6 +81,8 @@
       href: /azure/data-explorer/security-baseline
     - name: Azure Data Factory-beveiligingsbasislijn
       href: ../../data-factory/security-baseline.md
+    - name: Azure Data Share-beveiligingsbasislijn
+      href: ../../data-share/security-baseline.md
     - name: Azure Database for MySQL-beveiligingsbasislijn
       href: ../../mysql/security-baseline.md
     - name: Azure Database for MariaDB-beveiligingsbasislijn
@@ -91,6 +93,8 @@
       href: ../../postgresql/postgresql-hyperscale-security-baseline.md
     - name: Azure Databricks-beveiligingsbasislijn
       href: /azure/databricks/scenarios/security-baseline
+    - name: Azure Defender for IoT-beveiligingsbasislijn
+      href: ../../defender-for-iot/security-baseline.md
     - name: Azure DNS-beveiligingsbasislijn
       href: ../../dns/security-baseline.md
     - name: Azure DevTest Labs-beveiligingsbasislijn
@@ -101,18 +105,24 @@
       href: ../../frontdoor/security-baseline.md
     - name: Azure Functions-beveiligingsbasislijn
       href: ../../azure-functions/security-baseline.md
+    - name: Azure HPC Cache-beveiligingsbasislijn
+      href: ../../hpc-cache/security-baseline.md
     - name: Azure Information Protection-beveiligingsbasislijn
       href: /azure/information-protection/security-baseline
     - name: Azure IoT Hub-beveiligingsbasislijn
       href: ../../iot-hub/security-baseline.md
     - name: Azure Kubernetes Service-beveiligingsbasislijn
       href: ../../aks/security-baseline.md
+    - name: Azure Lighthouse-beveiligingsbasislijn
+      href: ../../lighthouse/security-baseline.md
     - name: Azure Load Balancer-beveiligingsbasislijn
       href: ../../load-balancer/security-baseline.md
     - name: Azure Monitor-beveiligingsbasislijn
       href: ../../azure-monitor/security-baseline.md
     - name: Azure Machine Learning-beveiligingsbasislijn
       href: ../../machine-learning/security-baseline.md
+    - name: Azure Migrate Learning-beveiligingsbasislijn
+      href: ../../migrate/security-baseline.md
     - name: Azure Policy-beveiligingsbasislijn
       href: ../../governance/policy/concepts/azure-security-benchmark-baseline.md
     - name: Azure Private Link-beveiligingsbasislijn

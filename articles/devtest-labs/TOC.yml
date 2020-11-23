@@ -191,6 +191,8 @@
           href: use-managed-identities-environments.md
         - name: Beveiligingswaarschuwingen voor omgevingen
           href: environment-security-alerts.md
+        - name: Een toepassingsgerichte omgeving maken
+          href: create-application-centric-environment.md
     - name: Herbruikbare sjablonen beheren
       items:
         - name: Aangepaste installatiekopieën versus formules

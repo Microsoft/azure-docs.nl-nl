@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/16/2020
-ms.openlocfilehash: 6033ca5b0eaf6845d14407832c776dd8e006226b
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 647256949d1f8f13439a0a5db87f3b02d697d32b
+ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686780"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95318130"
 ---
 # <a name="enable-azure-monitor-for-vms-guest-health-preview"></a>Azure Monitor voor VM's gast status inschakelen (preview)
 Met Azure Monitor voor VM's gast status kunt u de status van een virtuele machine weer geven zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u deze functie inschakelt in uw abonnement en hoe u gast bewaking voor elke virtuele machine inschakelt.
@@ -24,12 +24,18 @@ De open bare preview heeft de volgende beperkingen Azure Monitor voor VM's de ga
   - Ubuntu 16,04 LTS, Ubuntu 18,04 LTS
   - Windows Server 2012 of hoger
 - De virtuele machine moet zich in een van de volgende regio's bevinden:
-  - Australia Southeast
+  - Australië - oost
+  - Australië - zuidoost
+  - India - centraal
   - Central US
   - VS - oost
   - VS - oost 2
   - VS-Oost 2 EUAP
+  - Duitsland - west-centraal
+  - Japan - oost
+  - VS - noord-centraal
   - Europa - noord
+  - VS - zuid-centraal
   - Azië - zuidoost
   - Verenigd Koninkrijk Zuid
   - Europa -west

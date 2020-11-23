@@ -6,13 +6,13 @@ ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 10/20/2020
-ms.openlocfilehash: 66d420a902cbfb56ece75646ee39bbba774b6208
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.date: 11/21/2020
+ms.openlocfilehash: 30521e85feda0fc19329364dcb710d322ae8cfc1
+ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92312418"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95323233"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Overzicht van Azure Monitor agents
 
@@ -34,20 +34,20 @@ De volgende tabellen bieden een snelle vergelijking van de Azure Monitor agents 
 
 | | Azure Monitor-agent (preview-versie) | Diagnostiek<br>extensie (WAD) | Log Analytics<br>agent | Afhankelijkheid<br>agent |
 |:---|:---|:---|:---|:---|
-| **Omgevingen worden ondersteund** | Azure | Azure | Azure<br>Andere Cloud<br>On-premises | Azure<br>Andere Cloud<br>On-premises | 
+| **Omgevingen worden ondersteund** | Azure<br>Andere Cloud (Azure-boog)<br>On-premises (Azure-boog)  | Azure | Azure<br>Andere Cloud<br>On-premises | Azure<br>Andere Cloud<br>On-premises | 
 | **Agent vereisten**  | Geen | Geen | Geen | Vereist Log Analytics-agent |
 | **Verzamelde gegevens** | Gebeurtenislogboeken<br>Prestaties | Gebeurtenislogboeken<br>ETW-gebeurtenissen<br>Prestaties<br>Logboeken op basis van bestanden<br>IIS-logboeken<br>.NET-app-logboeken<br>Crashdumps<br>Logboeken met diagnostische gegevens van agent | Gebeurtenislogboeken<br>Prestaties<br>Logboeken op basis van bestanden<br>IIS-logboeken<br>Inzicht en oplossingen<br>Overige services | Proces afhankelijkheden<br>Metrische netwerk verbindings gegevens |
-| **Gegevens die worden verzonden naar** | Azure Monitor-logboeken<br>Azure Monitor metrische gegevens | Azure Storage<br>Azure Monitor metrische gegevens<br>Event Hub | Azure Monitor-logboeken | Azure Monitor-logboeken<br>(via Log Analytics-agent) |
+| **Gegevens die worden verzonden naar** | Azure Monitor-logboeken<br>Metrische gegevens van Azure Monitor | Azure Storage<br>Metrische gegevens van Azure Monitor<br>Event Hub | Azure Monitor-logboeken | Azure Monitor-logboeken<br>(via Log Analytics-agent) |
 | **Services en**<br>**functies**<br>**geboden** | Log Analytics<br>Metrics-explorer | Metrics-explorer | Azure Monitor voor virtuele machines<br>Log Analytics<br>Azure Automation<br>Azure Security Center<br>Azure Sentinel | Azure Monitor voor virtuele machines<br>Servicetoewijzing |
 
 ### <a name="linux-agents"></a>Linux-agents
 
 | | Azure Monitor-agent (preview-versie) | Diagnostiek<br>extensie (LAD) | Telegrafie<br>agent | Log Analytics<br>agent | Afhankelijkheid<br>agent |
 |:---|:---|:---|:---|:---|:---|
-| **Omgevingen worden ondersteund** | Azure | Azure | Azure<br>Andere Cloud<br>On-premises | Azure<br>Andere Cloud<br>On-premises | Azure<br>Andere Cloud<br>On-premises |
+| **Omgevingen worden ondersteund** | Azure<br>Andere Cloud (Azure-boog)<br>On-premises (Arc-boog) | Azure | Azure<br>Andere Cloud<br>On-premises | Azure<br>Andere Cloud<br>On-premises | Azure<br>Andere Cloud<br>On-premises |
 | **Agent vereisten**  | Geen | Geen | Geen | Geen | Vereist Log Analytics-agent |
 | **Verzamelde gegevens** | Syslog<br>Prestaties | Syslog<br>Prestaties | Prestaties | Syslog<br>Prestaties| Proces afhankelijkheden<br>Metrische netwerk verbindings gegevens |
-| **Gegevens die worden verzonden naar** | Azure Monitor-logboeken<br>Azure Monitor metrische gegevens | Azure Storage<br>Event Hub | Azure Monitor metrische gegevens | Azure Monitor-logboeken | Azure Monitor-logboeken<br>(via Log Analytics-agent) |
+| **Gegevens die worden verzonden naar** | Azure Monitor-logboeken<br>Metrische gegevens van Azure Monitor | Azure Storage<br>Event Hub | Metrische gegevens van Azure Monitor | Azure Monitor-logboeken | Azure Monitor-logboeken<br>(via Log Analytics-agent) |
 | **Services en**<br>**functies**<br>**geboden** | Log Analytics<br>Metrics-explorer | | Metrics-explorer | Azure Monitor voor virtuele machines<br>Log Analytics<br>Azure Automation<br>Azure Security Center<br>Azure Sentinel | Azure Monitor voor virtuele machines<br>Servicetoewijzing |
 
 
@@ -56,7 +56,7 @@ De [Azure monitor-agent](azure-monitor-agent-overview.md) bevindt zich momenteel
 
 Gebruik de Azure Monitor agent als u het volgende moet doen:
 
-- Verzamel logboeken en metrische gegevens voor gasten van elke virtuele machine in azure, in andere Clouds of on-premises. (Alleen in de preview-versie van Azure)
+- Verzamel logboeken en metrische gegevens voor gasten van elke virtuele machine in azure, in andere Clouds of on-premises. (Azure-Arc vereist voor virtuele machines buiten Azure.) 
 - Gegevens verzenden naar Azure Monitor logboeken en Azure Monitor metrieken voor analyse met Azure Monitor. 
 - Gegevens verzenden naar Azure Storage voor archiveren.
 - Gegevens verzenden naar hulpprogram ma's van derden met behulp van [Azure Event hubs](diagnostics-extension-stream-event-hubs.md).
@@ -190,13 +190,13 @@ Omdat de afhankelijkheids agent werkt op het niveau van de kernel, is ondersteun
 | Distributie | Besturingssysteemversie | Kernelversie |
 |:---|:---|:---|
 |  Red Hat Linux 7   | 7.6     | 3.10.0-957  |
-|                    | 7.5     | 3.10.0-862  |
+|                    | 7,5     | 3.10.0-862  |
 |                    | 7.4     | 3.10.0-693  |
 | Red Hat Linux 6    | 6.10    | 2.6.32-754 |
 |                    | 6.9     | 2.6.32-696  |
 | CentOSPlus         | 6.10    | 2.6.32-754.3.5<br>2.6.32-696.30.1 |
 |                    | 6.9     | 2.6.32-696.30.1<br>2.6.32-696.18.7 |
-| Ubuntu Server      | 18,04   | 5.3.0-1020<br>5,0 (inclusief door Azure afgestemde kernel)<br>4,18* <br> 4,15* |
+| Ubuntu Server      | 18,04   | 5.3.0-1020<br>5,0 (inclusief door Azure afgestemde kernel)<br>4,18 *<br> 4,15* |
 |                    | 16.04.3 | 4,15. * |
 |                    | 16,04   | 4,13.\*<br>4,11.\*<br>4,10.\*<br>4,8.\*<br>4,4.\* |
 | SUSE Linux 12 Enter prise server | 12 SP4 | 4,12. * (inclusief door Azure afgestemde kernel) |

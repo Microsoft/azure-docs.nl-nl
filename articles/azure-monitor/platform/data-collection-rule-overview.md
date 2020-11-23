@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/19/2020
-ms.openlocfilehash: 64dfc7400380505c882979e68a3bf0adcb8942a0
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 048068a74151bb986392b5cb27787385fc0f5363
+ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107960"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95315529"
 ---
 # <a name="data-collection-rules-in-azure-monitor-preview"></a>Regels voor het verzamelen van gegevens in Azure Monitor (preview-versie)
 Met regels voor gegevens verzameling (DCR) worden gegevens in Azure Monitor gedefinieerd en wordt aangegeven waar de gegevens moeten worden verzonden of opgeslagen. Dit artikel bevat een overzicht van regels voor het verzamelen van gegevens, inclusief de inhoud en structuur en hoe u deze kunt maken en gebruiken.
@@ -49,19 +49,7 @@ Elke gegevens bron heeft een gegevens bron type. Elk type definieert een unieke 
 
 
 ## <a name="limits"></a>Limieten
-De volgende tabel bevat de limieten die momenteel van toepassing zijn op elke regel voor het verzamelen van gegevens.
-
-| Limiet | Waarde |
-|:---|:---|
-| Maximum aantal gegevens bronnen | 10 |
-| Maximum aantal tellers voor prestatie meter items | 100 |
-| Maximum aantal namen van faciliteiten in syslog | 20 |
-| Het maximum aantal XPath-query's in het gebeurtenis logboek | 100 |
-| Maximum aantal gegevens stromen | 10 |
-| Maximum aantal gegevens stromen | 10 |
-| Maximum aantal uitbrei dingen | 10 |
-| Maximale grootte van extensie-instellingen | 32 KB |
-| Maximum aantal Log Analytics-werk ruimten | 10 |
+Zie [Azure Monitor service limieten](../service-limits.md#data-collection-rules)voor limieten die van toepassing zijn op elke regel voor het verzamelen van gegevens.
 
 
 ## <a name="create-a-dcr"></a>Een DCR maken

@@ -60,15 +60,15 @@ Als u de kosten voor het maken van back-ups van Azure-VM's of on-premises server
 
     - Met deze optie kunt u op een snelle manier back-ups van tot wel zeven dagen geleden terugzetten, met behulp van momentopnamen die op schijven zijn opgeslagen.
 
-- **Optioneel** : Back-up van selectieve schijf
+- **Optioneel**: Back-up van selectieve schijf
 
   - Als u de optie **Back-up van selectieve schijf** gebruikt bij het maken van back-ups van Azure-VM's, kiest u de optie **Exclude Disk** en voert u het schijfpercentage dat van back-ups moet worden uitgesloten in termen van grootte in. Als u bijvoorbeeld een VM hebt die is verbonden met drie schijven waarvan 200 GB per schijf is gebruikt en u wilt twee van de schijven uitsluiten van back-ups, voert u 66,7% in.
 
-- **Optioneel** : Opslagredundantie voor back-ups
+- **Optioneel**: Opslagredundantie voor back-ups
 
   - Hiermee wordt de redundantie aangegeven van het opslagaccount waarnaar de back-upgegevens worden verzonden. U kunt het beste **GRS** gebruiken voor de hoogste beschikbaarheid. Dit zorgt ervoor dat een kopie van uw back-upgegevens wordt bewaard in een andere regio, wat u helpt om te voldoen aan meerdere nalevingsstandaarden. Wijzig de redundantie in **LRS** als u een back-up maakt van ontwikkel- of testomgevingen waarvoor geen back-up op bedrijfsniveau is vereist. Selecteer de optie **RAGRS** in het werkblad als u meer inzicht wilt in de kosten wanneer [Herstellen in meerdere regio's](backup-azure-arm-restore-vms.md#cross-region-restore) is ingeschakeld voor uw back-ups.
 
-- **Optioneel** : regionale prijzen wijzigen of kortingstarieven toepassen
+- **Optioneel**: regionale prijzen wijzigen of kortingstarieven toepassen
 
   - Als u de schattingen voor een andere regio of kortingstarieven wilt zien, selecteert u **Ja** voor de optie **Wilt u schattingen voor een andere regio proberen?** en voert u de tarieven in waarmee u de schattingen wilt uitvoeren.
 
@@ -82,7 +82,7 @@ Als u de kosten voor het maken van back-ups van SQL-servers in Azure-VM's met be
 
 - Wat is de verwachte compressie voor de back-upgegevens van uw SQL-servers?
 
-  - De meeste Azure Backup-klanten zien dat de back-upgegevens 80% compressie hebben ten opzichte van de SQL-servergrootte wanneer de SQL-compressie is **ingeschakeld** .
+  - De meeste Azure Backup-klanten zien dat de back-upgegevens 80% compressie hebben ten opzichte van de SQL-servergrootte wanneer de SQL-compressie is **ingeschakeld**.
 
   - Als u verwacht een andere compressie te zien, voert u die in dit veld in
 
@@ -114,11 +114,11 @@ Als u de kosten voor het maken van back-ups van SQL-servers in Azure-VM's met be
 
   - Hoe lang verwacht u de jaarlijkse back-ups te zullen bewaren? (in jaren)
 
-- **Optioneel** : Opslagredundantie voor back-ups
+- **Optioneel**: Opslagredundantie voor back-ups
 
   - Hiermee wordt de redundantie aangegeven van het opslagaccount waarnaar de back-upgegevens worden verzonden. U kunt het beste **GRS** gebruiken voor de hoogste beschikbaarheid. Dit zorgt ervoor dat een kopie van uw back-upgegevens wordt bewaard in een andere regio, wat u helpt om te voldoen aan meerdere nalevingsstandaarden. Wijzig de redundantie in **LRS** als u een back-up maakt van ontwikkel- of testomgevingen waarvoor geen back-up op bedrijfsniveau is vereist.
 
-- **Optioneel** : regionale prijzen wijzigen of kortingstarieven toepassen
+- **Optioneel**: regionale prijzen wijzigen of kortingstarieven toepassen
 
   - Als u de schattingen voor een andere regio of kortingstarieven wilt zien, selecteert u **Ja** voor de optie **Wilt u schattingen voor een andere regio proberen?** en voert u de tarieven in waarmee u de schattingen wilt uitvoeren.
 
@@ -144,10 +144,10 @@ Als u de kosten voor het maken van back-ups van SAP HANA-servers in Azure-VM's m
   - Hoe lang verwacht u de wekelijkse back-ups te zullen bewaren? (in weken)
   - Hoe lang verwacht u de maandelijkse back-ups te zullen bewaren? (in maanden)
   - Hoe lang verwacht u de jaarlijkse back-ups te zullen bewaren? (in jaren)
-- **Optioneel** : Opslagredundantie voor back-ups
+- **Optioneel**: Opslagredundantie voor back-ups
   
   - Hiermee wordt de redundantie aangegeven van het opslagaccount waarnaar de back-upgegevens worden verzonden. U kunt het beste **GRS** gebruiken voor de hoogste beschikbaarheid. Dit zorgt ervoor dat een kopie van uw back-upgegevens wordt bewaard in een andere regio, wat u helpt om te voldoen aan meerdere nalevingsstandaarden. Wijzig de redundantie in **LRS** als u een back-up maakt van ontwikkel- of testomgevingen waarvoor geen back-up op bedrijfsniveau is vereist.
-- **Optioneel** : regionale prijzen wijzigen of kortingstarieven toepassen
+- **Optioneel**: regionale prijzen wijzigen of kortingstarieven toepassen
   
   - Als u de schattingen voor een andere regio of kortingstarieven wilt zien, selecteert u **Ja** voor de optie **Wilt u schattingen voor een andere regio proberen?** en voert u de tarieven in waarmee u de schattingen wilt uitvoeren.
   
@@ -155,7 +155,7 @@ Als u de kosten voor het maken van back-ups van SAP HANA-servers in Azure-VM's m
 
 Als u een schatting wilt van de kosten voor het maken van back-ups van Azure-bestandsshares met behulp van de [back-upoplossing op basis van momentopnamen](azure-file-share-backup-overview.md) van Azure Backup, hebt u de volgende parameters nodig:
 
-- Grootte ( **in GB** ) van de bestandsshares waarvan u een back-up wilt maken.
+- Grootte (**in GB**) van de bestandsshares waarvan u een back-up wilt maken.
 
 - Als u een back-up van bestandsshares van meerdere opslagaccounts wilt maken, geeft u het aantal opslagaccounts op dat als host fungeert voor de bestandsshares met de bovenstaande grootte.
 
@@ -174,7 +174,7 @@ Als u een schatting wilt van de kosten voor het maken van back-ups van Azure-bes
 
   Raadpleeg [de ondersteuningsmatrix voor Azure-bestandsshares](azure-file-share-support-matrix.md#retention-limits) voor de maximaal ondersteunde retentiewaarden per categorie.
 
-- **Optioneel** : regionale prijzen wijzigen of kortingstarieven toepassen.
+- **Optioneel**: regionale prijzen wijzigen of kortingstarieven toepassen.
   - De standaardwaarden die zijn ingesteld voor de opslagkosten voor momentopnamen per GB en de kosten van beveiligde instanties in de schatter zijn voor de regio US - oost. Als u de schattingen voor een andere regio of kortingstarieven wilt zien, selecteert u **Ja** voor de optie **Wilt u schattingen voor een andere regio proberen?** Voer vervolgens de tarieven in waarmee u de schattingen wilt uitvoeren.
 
 ## <a name="next-steps"></a>Volgende stappen

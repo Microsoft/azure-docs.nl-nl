@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/10/2020
-ms.openlocfilehash: 76f541a45c56669d17103f16997f3d036955b773
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: cf64deb17bea508637debb5612231d355d523fbb
+ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94919676"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95315580"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Overzicht van Azure Monitor-agent (preview)
 De Azure Monitor-agent (AMA) verzamelt bewakings gegevens van het gast besturingssysteem van virtuele machines en levert deze aan Azure Monitor. In deze artikelen vindt u een overzicht van de Azure Monitor-agent, inclusief hoe u deze kunt installeren en hoe u gegevens verzameling kunt configureren.
@@ -54,7 +54,7 @@ De volgende beperkingen zijn van toepassing tijdens de open bare preview van de 
 
 - De Azure Monitor-agent biedt geen ondersteuning voor oplossingen en inzichten zoals Azure Monitor voor VM's en Azure Security Center. Het enige scenario dat momenteel wordt ondersteund, is het verzamelen van gegevens met behulp van de regels voor gegevens verzameling die u configureert. 
 - Regels voor het verzamelen van gegevens moeten in dezelfde regio worden gemaakt als de Log Analytics werk ruimte die als bestemming wordt gebruikt.
-- Er worden momenteel alleen virtuele Azure-machines ondersteund. On-premises virtuele machines, virtuele-machine schaal sets, Arc voor servers, Azure Kubernetes-service en andere compute-resource typen worden momenteel niet ondersteund.
+- Azure virtual machines en servers met Azure Arc ingeschakeld worden momenteel ondersteund. Virtuele-machine schaal sets, Azure Kubernetes-service en andere compute-resource typen worden momenteel niet ondersteund.
 - De virtuele machine moet toegang hebben tot de volgende HTTPS-eind punten:
   - *.ods.opinsights.azure.com
   - *. ingest.monitor.azure.com
@@ -76,7 +76,7 @@ De volgende tabel bevat de gegevens typen die u op dit moment kunt verzamelen me
 
 De Azure Monitor-agent verzendt gegevens naar Azure Monitor metrieken of een Log Analytics-werk ruimte die Azure Monitor logboeken ondersteunt.
 
-| Gegevensbron | Bestemmingen | Beschrijving |
+| Gegevensbron | Bestemmingen | Description |
 |:---|:---|:---|
 | Prestaties        | Metrische gegevens van Azure Monitor<br>Log Analytics-werkruimte | Numerieke waarden meten de prestaties van verschillende aspecten van het besturings systeem en de werk belastingen. |
 | Windows-gebeurtenis logboeken | Log Analytics-werkruimte | Gegevens die worden verzonden naar het Windows-systeem voor gebeurtenis registratie. |
@@ -94,50 +94,8 @@ Voor de Azure Monitor-agent zijn geen sleutels vereist, maar hiervoor is een doo
 ## <a name="networking"></a>Netwerken
 De Azure Monitor-agent ondersteunt Azure-service tags (zowel AzureMonitor-als AzureResourceManager-Tags zijn vereist), maar zijn nog niet geschikt voor Azure Monitor persoonlijke koppelings bereiken of directe proxy's.
 
-## <a name="install-the-azure-monitor-agent"></a>De Azure Monitor-agent installeren
-De Azure Monitor-agent wordt geïmplementeerd als een [Azure VM-extensie](../../virtual-machines/extensions/overview.md) met de details in de volgende tabel. 
-
-| Eigenschap | Windows | Linux |
-|:---|:---|:---|
-| Publisher | Micro soft. Azure. monitor  | Micro soft. Azure. monitor |
-| Type      | AzureMonitorWindowsAgent | AzureMonitorLinuxAgent  |
-| TypeHandlerVersion  | 1.0 | 1.5 |
-
-Installeer de Azure Monitor agent met behulp van een van de methoden om virtuele-machine agents te installeren, inclusief het volgende met behulp van Power shell of CLI. U kunt de agent ook installeren en gegevens verzameling configureren op virtuele machines in uw Azure-abonnement met behulp van de portal met de procedure die wordt beschreven in [gegevens verzameling configureren voor de Azure monitor-agent (preview)](data-collection-rule-azure-monitor-agent.md#create-using-the-azure-portal).
-
-### <a name="windows"></a>Windows
-
-# <a name="cli"></a>[CLI](#tab/CLI1)
-
-```azurecli
-az vm extension set --name AzureMonitorWindowsAgent --publisher Microsoft.Azure.Monitor --ids {resource ID of the VM}
-
-```
-
-# <a name="powershell"></a>[PowerShell](#tab/PowerShell1)
-
-```powershell
-Set-AzVMExtension -Name AMAWindows -ExtensionType AzureMonitorWindowsAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName {Resource Group Name} -VMName {VM name} -Location eastus
-```
----
-
-
-### <a name="linux"></a>Linux
-
-# <a name="cli"></a>[CLI](#tab/CLI2)
-
-```azurecli
-az vm extension set --name AzureMonitorLinuxAgent --publisher Microsoft.Azure.Monitor --ids {resource ID of the VM}
-
-```
-
-# <a name="powershell"></a>[PowerShell](#tab/PowerShell2)
-
-```powershell
-Set-AzVMExtension -Name AMALinux -ExtensionType AzureMonitorLinuxAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName {Resource Group Name} -VMName {VM name} -Location eastus -TypeHandlerVersion 1.5
-```
----
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- [Installeer Azure monitor agent](azure-monitor-agent-install.md) op virtuele Windows-en Linux-machines.
 - [Maak een gegevensverzamelings regel](data-collection-rule-azure-monitor-agent.md) voor het verzamelen van gegevens van de agent en verzend deze naar Azure monitor.

@@ -8,12 +8,12 @@ ms.topic: reference
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 6ea9440c153e26e36aa17b55c4cb712dd08d4508
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 3ff01455c56dd259ea64878f912eb3f2431547e7
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042674"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95495249"
 ---
 # <a name="microsoft-sdks-for-iot-plug-and-play"></a>Micro soft Sdk's voor IoT Plug en Play
 
@@ -23,11 +23,11 @@ Met de IoT Plug en Play-bibliotheken en Sdk's kunnen ontwikkel aars IoT-oplossin
 
 | Taal | Pakket | Code opslagplaats | Voorbeelden | Snelstartgids | Referentie |
 |---|---|---|---|---|---|
-| C-apparaat | [vcpkg 1.3.9](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/setting_up_vcpkg.md) | [GitHub](https://github.com/Azure/azure-iot-sdk-c) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device-c.md) | [Verwijzing](/azure/iot-hub/iot-c-sdk-ref/) |
-| .NET-apparaat | [NuGet 1.31.0](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client) | [GitHub](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/) | [Voorbeelden](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/device/PnpDeviceSamples) | [Verbinding maken met IoT Hub](quickstart-connect-device-csharp.md) | [Verwijzing](/dotnet/api/microsoft.azure.devices.client?preserve-view=true&view=azure-dotnet) |
-| Java-apparaat | [Maven 1.26.0](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot/iot-device-client) | [GitHub](https://github.com/Azure/azure-iot-sdk-java/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples/pnp-device-sample) | [Verbinding maken met IoT Hub](quickstart-connect-device-java.md) | [Verwijzing](/java/api/com.microsoft.azure.sdk.iot.device?preserve-view=true&view=azure-java-stable) |
-| Python-apparaat | [PIP 2.3.0](https://pypi.org/project/azure-iot-device/) | [GitHub](https://github.com/Azure/azure-iot-sdk-python/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device-python.md) | [Verwijzing](/python/api/azure-iot-device/azure.iot.device?preserve-view=true&view=azure-python) |
-| Knoop punt-apparaat | [NPM 1.17.2](https://www.npmjs.com/package/azure-iot-device)  | [GitHub](https://github.com/Azure/azure-iot-sdk-node/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/device/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device-node.md) | [Verwijzing](/javascript/api/azure-iot-device/?preserve-view=true&view=azure-node-latest) |
+| C-apparaat | [vcpkg 1.3.9](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/setting_up_vcpkg.md) | [GitHub](https://github.com/Azure/azure-iot-sdk-c) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/azure/iot-hub/iot-c-sdk-ref/) |
+| .NET-apparaat | [NuGet 1.31.0](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client) | [GitHub](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/) | [Voorbeelden](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/device/PnpDeviceSamples) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/dotnet/api/microsoft.azure.devices.client?preserve-view=true&view=azure-dotnet) |
+| Java-apparaat | [Maven 1.26.0](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot/iot-device-client) | [GitHub](https://github.com/Azure/azure-iot-sdk-java/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples/pnp-device-sample) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/java/api/com.microsoft.azure.sdk.iot.device?preserve-view=true&view=azure-java-stable) |
+| Python-apparaat | [PIP 2.3.0](https://pypi.org/project/azure-iot-device/) | [GitHub](https://github.com/Azure/azure-iot-sdk-python/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/python/api/azure-iot-device/azure.iot.device?preserve-view=true&view=azure-python) |
+| Knoop punt-apparaat | [NPM 1.17.2](https://www.npmjs.com/package/azure-iot-device)  | [GitHub](https://github.com/Azure/azure-iot-sdk-node/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/device/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/javascript/api/azure-iot-device/?preserve-view=true&view=azure-node-latest) |
 | Inge sloten C-apparaat | N.v.t. | [GitHub](https://github.com/Azure/azure-sdk-for-c/)| [Voorbeelden](howto-use-embedded-c.md#samples) | [Embedded C gebruiken](howto-use-embedded-c.md) | N.v.t.
 
 ## <a name="service-sdks"></a>Service-SDK's
@@ -37,9 +37,9 @@ Met de IoT Plug en Play-bibliotheken en Sdk's kunnen ontwikkel aars IoT-oplossin
 | .NET-IoT Hub-service | [NuGet 1.27.1](https://www.nuget.org/packages/Microsoft.Azure.Devices ) | [GitHub](https://github.com/Azure/azure-iot-sdk-csharp) | [Voorbeelden](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/PnpServiceSamples) | N.v.t. | [Verwijzing](/dotnet/api/microsoft.azure.devices?preserve-view=true&view=azure-dotnet) |
 | Java-IoT Hub-service | [Maven 1.26.0](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot/iot-service-client/1.26.0) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples/pnp-service-sample) | N.v.t. | [Verwijzing](/java/api/com.microsoft.azure.sdk.iot.service?preserve-view=true&view=azure-java-stable) |
 | Node-IoT Hub-service | [NPM 1.13.0](https://www.npmjs.com/package/azure-iothub) | [GitHub](https://github.com/Azure/azure-iot-sdk-node) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/service/samples) | N.v.t. | [Verwijzing](/javascript/api/azure-iothub/?preserve-view=true&view=azure-node-latest) |
-| Python-Digital Apparaatdubbels-service | [PIP 2.2.3](https://pypi.org/project/azure-iot-hub) | [GitHub](https://github.com/Azure/azure-iot-sdk-python) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-hub/samples) | [Interactie met IoT Hub Digital Apparaatdubbelse API](quickstart-service-python.md) | N.v.t. |
-| Node-Digital Apparaatdubbels-service | [NPM 1.13.0](https://www.npmjs.com/package/azure-iot-digitaltwins-service) | [GitHub](https://github.com/Azure/azure-iot-sdk-node) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/service/samples/javascript) | [Interactie met IoT Hub Digital Apparaatdubbelse API](quickstart-service-node.md) | N.v.t. |
+| Python-Digital Apparaatdubbels-service | [PIP 2.2.3](https://pypi.org/project/azure-iot-hub) | [GitHub](https://github.com/Azure/azure-iot-sdk-python) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-hub/samples) | [Interactie met IoT Hub Digital Apparaatdubbelse API](quickstart-service.md) | N.v.t. |
+| Node-Digital Apparaatdubbels-service | [NPM 1.13.0](https://www.npmjs.com/package/azure-iot-digitaltwins-service) | [GitHub](https://github.com/Azure/azure-iot-sdk-node) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/service/samples/javascript) | [Interactie met IoT Hub Digital Apparaatdubbelse API](quickstart-service.md) | N.v.t. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u de Sdk's en bibliotheken wilt uitproberen, raadpleegt u de  [hand leiding voor ontwikkel aars](concepts-developer-guide-device-csharp.md) en de Quick Start van het [apparaat](quickstart-connect-device-c.md) en de [service Snelstartgids](quickstart-service-node.md).
+Als u de Sdk's en bibliotheken wilt uitproberen, raadpleegt u de  [hand leiding voor ontwikkel aars](concepts-developer-guide-device.md) en de Quick Start van het [apparaat](quickstart-connect-device.md) en de [service Snelstartgids](quickstart-service.md).

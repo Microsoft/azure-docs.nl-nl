@@ -7,19 +7,18 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: enterprise-users
 ms.topic: how-to
 ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 330a34f38aaa73fca8290d1638219fa8f517e1cb
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 734e6824f13e62ad080500eff18c4892e1f76807
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647372"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95503671"
 ---
 # <a name="change-subdomain-authentication-type-in-azure-active-directory"></a>Het verificatie type van het subdomein wijzigen in Azure Active Directory
 

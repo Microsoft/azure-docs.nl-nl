@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 04/10/2020
+ms.date: 11/18/2020
 ms.author: victorh
-ms.openlocfilehash: 84110e749dac9267e994385aa5f6d05e3ba224a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 01f7aa61d3bfb3c712320bbf138160a7ff8197c7
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87087540"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95502197"
 ---
 # <a name="configure-azure-firewall-rules"></a>Azure Firewall-regels configureren
 U kunt NAT-regels, netwerk regels en toepassings regels configureren op Azure Firewall. Regel verzamelingen worden verwerkt op basis van het regel type in volg orde van prioriteit, waarbij een lager aantal is van 100 tot 65.000. De naam van een regel verzameling mag alleen letters, cijfers, onderstrepings tekens, punten of afbreek streepjes bevatten. De naam moet beginnen met een letter of cijfer en eindigen op een letter, cijfer of onderstrepings teken. De maximale naam mag Maxi maal 80 tekens lang zijn.
@@ -26,7 +26,13 @@ U kunt de prioriteits nummers van uw regel verzameling het beste in 100 stappen 
 
 ### <a name="network-rules-and-applications-rules"></a>Netwerk regels en toepassings regels
 
-Als u netwerk regels en toepassings regels configureert, worden netwerk regels in volg orde van prioriteit toegepast vóór toepassings regels. De regels worden afgesloten. Dus als er een overeenkomst wordt gevonden in een netwerk regel, worden er geen andere regels verwerkt.  Als er geen overeenkomst met de netwerk regel is en als het Protocol HTTP, HTTPS of MSSQL is, wordt het pakket vervolgens geëvalueerd op basis van de toepassings regels in volg orde van prioriteit. Als er nog geen overeenkomst wordt gevonden, wordt het pakket vergeleken met de [verzameling van de infrastructuur regel](infrastructure-fqdns.md). Als er dan nog steeds geen overeenkomende regel is, wordt het pakket standaard afgewezen.
+Als u netwerk regels en toepassings regels configureert, worden netwerk regels in volg orde van prioriteit toegepast vóór toepassings regels. De regels worden afgesloten. Dus als er een overeenkomst wordt gevonden in een netwerk regel, worden er geen andere regels verwerkt.  Als er geen overeenkomst met de netwerk regel is en als het Protocol HTTP, HTTPS of MSSQL is, wordt het pakket vervolgens geëvalueerd op basis van de toepassings regels in volg orde van prioriteit. Als er nog geen overeenkomst wordt gevonden, wordt het pakket vergeleken met de [verzameling van de infrastructuur regel](infrastructure-fqdns.md). Als er nog steeds geen overeenkomst is, wordt het pakket standaard geweigerd.
+
+#### <a name="network-rule-protocol"></a>Netwerk regel Protocol
+
+Netwerk regels kunnen worden geconfigureerd voor **TCP**, **UDP**, **ICMP** of **een** IP-protocol. Elk IP-protocol bevat alle IP-protocollen zoals gedefinieerd in het [protocol nummer van de Internet Assigned Numbers Authority (IANA)](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) . Als een doel poort expliciet is geconfigureerd, wordt de regel omgezet naar een TCP + UDP-regel.
+
+Vóór 9 november 2020 **alle** bewarende **TCP**, **UDP** of **ICMP**. Het is dus mogelijk dat u voor die datum een regel hebt geconfigureerd met protocol = any en de doel poorten = ' * '. Als u geen IP-protocol wilt toestaan zoals momenteel is gedefinieerd, wijzigt u de regel om de gewenste protocollen expliciet te configureren (TCP, UDP of ICMP).
 
 ## <a name="inbound-connectivity"></a>Binnenkomende connectiviteit
 
@@ -57,7 +63,7 @@ De verbinding met google.com is toegestaan vanwege een overeenkomende netwerk re
 
 - Actie: Weigeren
 
-|naam  |Brontype  |Bron  |Protocol: poort|Doel-FQDN-naam|
+|naam  |Brontype  |Bron  |Protocol:Poort|Doel-FQDN-naam|
 |---------|---------|---------|---------|----------|----------|
 |Weigeren: Google     |Het IP-adres|*|http: 80, https: 443|google.com
 

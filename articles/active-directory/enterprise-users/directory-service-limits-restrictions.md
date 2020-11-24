@@ -7,7 +7,6 @@ author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.subservice: enterprise-users
 ms.topic: reference
 ms.workload: identity
 ms.date: 11/15/2019
@@ -15,12 +14,12 @@ ms.author: curtand
 ms.custom: aaddev;it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07e59e8b13da729f84233459c9a2d3b7edb836fc
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 19306d3350d905cea840a1c791b69f3b098e75fe
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650917"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95488960"
 ---
 # <a name="azure-ad-service-limits-and-restrictions"></a>Servicelimieten en -beperkingen voor Azure AD
 

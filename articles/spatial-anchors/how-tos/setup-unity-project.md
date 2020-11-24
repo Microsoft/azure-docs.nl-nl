@@ -1,19 +1,19 @@
 ---
 title: Ruimtelijke Azure-ankers installeren voor Unity
 description: Een eenheids project configureren voor het gebruik van Azure-ruimtelijke ankers
-author: craigktreasure
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: crtreasu
-ms.date: 09/29/2020
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: how-to
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: da983719dc66656aa28cab4aea0bae558c2a7162
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2330310b0bf4e165af71208477db128650a787cf
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91530410"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95496937"
 ---
 # <a name="configuring-azure-spatial-anchors-in-a-unity-project"></a>Ruimtelijke Azure-ankers configureren in een Unity-project
 
@@ -55,7 +55,7 @@ Ruimtelijke-ankers voor Azure voor eenheid worden momenteel gedistribueerd met u
 #### <a name="android-only-configure-the-maintemplategradle-file"></a>Alleen Android: Configureer het bestand mainTemplate. gradle
 
 1. Ga naar **Edit** > **Project Settings** > **Player**.
-2. Selecteer in het **deel venster Inspector** voor instellingen van de **speler**het pictogram **Android** .
+2. Selecteer in het **deel venster Inspector** voor instellingen van de **speler** het pictogram **Android** .
 3. Schakel onder de sectie **bouwen** het selectie vakje **aangepaste hoofd Gradle-sjabloon** in om een aangepaste Gradle-sjabloon te genereren op `Assets\Plugins\Android\mainTemplate.gradle` .
 4. Open het `mainTemplate.gradle` bestand in een tekst editor.
 5. `dependencies`Plak de volgende afhankelijkheden in de sectie:

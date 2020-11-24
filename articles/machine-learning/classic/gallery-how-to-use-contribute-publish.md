@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/11/2019
-ms.openlocfilehash: fc405c56538ab305d6e0b8a22c1095458cb1264e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: eacc7adae16785049022cd05f04904d97b0b3a6d
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309888"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95486123"
 ---
 # <a name="share-and-discover-resources-in-the-azure-ai-gallery"></a>Resources delen en ontdekken in de Azure AI Gallery
 
-**VAN TOEPASSING OP:** ![ja](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![nee ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**van toepassing op:** ![ Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek). ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (klassiek) ![ Dit is een X, wat betekent dat dit artikel van toepassing is op Azure machine learning.](../../../includes/media/aml-applies-to-skus/no.png)[ Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
 
 
 
@@ -48,12 +48,12 @@ U kunt zelfs een belang rijke resource delen met vrienden of collega's met behul
 
 Wanneer u zich aanmeldt, wordt u lid van de galerie-community. Zo kunt u bronnen downloaden of uw eigen galerie-items bijdragen zodat anderen kunnen profiteren van de oplossingen die u hebt gedetecteerd.
 
-U kunt **experimenten** , **aangepaste modules** downloaden om te gebruiken bij het ontwikkelen van uw eigen analyse oplossingen.
-U kunt **experimenten** , **zelf studies** en **verzamelingen** bijdragen aan de galerie.
+U kunt **experimenten**, **aangepaste modules** downloaden om te gebruiken bij het ontwikkelen van uw eigen analyse oplossingen.
+U kunt **experimenten**, **zelf studies** en **verzamelingen** bijdragen aan de galerie.
 
 ## <a name="download-experiments-modules"></a>Experimenten, modules downloaden
 
-U kunt **experimenten** , **aangepaste modules** downloaden in uw eigen machine learning Studio (klassieke) werk ruimte om te gebruiken bij het ontwikkelen van uw eigen oplossingen.
+U kunt **experimenten**, **aangepaste modules** downloaden in uw eigen machine learning Studio (klassieke) werk ruimte om te gebruiken bij het ontwikkelen van uw eigen oplossingen.
 
 Een resource downloaden vanuit de AI-galerie:
 
@@ -65,7 +65,7 @@ Een resource downloaden vanuit de AI-galerie:
 Een resource downloaden vanuit Studio (klassiek):
 
 1. Selecteer in Studio (klassiek) de optie **Nieuw**.
-1. Selecteer **module** , **experiment** of **notebook**.
+1. Selecteer **module**, **experiment** of **notebook**.
 1. Blader of zoek naar een galerie resource.
 1. Plaats de muis op de resource en selecteer vervolgens **openen in Studio**.
     ![Galerie met open Gallerys openen in Machine Learning Studio (klassiek)](./media/gallery-how-to-use-contribute-publish/open-experiment-from-studio.png)
@@ -108,7 +108,7 @@ En u kunt zich aanmelden met een discussie hulpprogramma zoals Disqus om melding
 
 1. Kies op de pagina **selectie van afbeeldingen** een miniatuur afbeelding voor uw experiment. De miniatuur afbeelding wordt weer gegeven aan de bovenkant van de pagina Details van experiment en op de tegel experiment. Andere gebruikers zien de miniatuur afbeelding wanneer ze door de galerie bladeren. U kunt een installatie kopie van uw computer uploaden of een Stock installatie kopie selecteren in de galerie.
 
-1. Kies op de pagina **instellingen** onder **zicht baarheid** of u uw inhoud openbaar ( **openbaar** ) wilt publiceren of alleen toegankelijk wilt maken voor personen die een koppeling naar de pagina hebben (niet **vermeld** ).
+1. Kies op de pagina **instellingen** onder **zicht baarheid** of u uw inhoud openbaar (**openbaar**) wilt publiceren of alleen toegankelijk wilt maken voor personen die een koppeling naar de pagina hebben (niet **vermeld**).
 
    > [!TIP]
    > Als u er zeker van wilt zijn dat uw documentatie correct wordt weer gegeven voordat u deze openbaar vrijgeeft, kunt u het experiment eerst als niet- **weer** gegeven publiceren. Later kunt u de zichtbaarheids instelling wijzigen in **openbaar** op de pagina met details van het experiment. Houd er rekening mee dat nadat u een experiment hebt ingesteld op **openbaar** , dit later niet meer kan worden gewijzigd in niet **weer geven**.
@@ -125,13 +125,13 @@ U kunt de volgende gegevens voor uw experiment rechtstreeks in de galerie wijzig
 * Samen vatting of beschrijving
 * Tags
 * Installatiekopie
-* Zichtbaarheids instelling ( **openbaar** of niet in **lijst** )
+* Zichtbaarheids instelling (**openbaar** of niet in **lijst**)
 
 U kunt ook het experiment uit de galerie verwijderen.
 
 U kunt deze wijzigingen aanbrengen of het experiment verwijderen via de pagina Details van experiment of van uw profiel pagina in de galerie.
 
-* Selecteer op de pagina experiment Details de optie **bewerken** om de details van uw experiment te wijzigen. De pagina Details wordt in de bewerkings modus geactiveerd. Als u wijzigingen wilt aanbrengen, selecteert u **bewerken** naast de naam, samen vatting of tags van het experiment. Wanneer u klaar bent met het maken van wijzigingen, selecteert u **gereed**. Als u de zichtbaarheids instellingen voor het experiment ( **openbaar** of niet- **weer geven** ) wilt wijzigen, of als u het experiment uit de galerie wilt verwijderen, selecteert u het pictogram **instellingen** .
+* Selecteer op de pagina experiment Details de optie **bewerken** om de details van uw experiment te wijzigen. De pagina Details wordt in de bewerkings modus geactiveerd. Als u wijzigingen wilt aanbrengen, selecteert u **bewerken** naast de naam, samen vatting of tags van het experiment. Wanneer u klaar bent met het maken van wijzigingen, selecteert u **gereed**. Als u de zichtbaarheids instellingen voor het experiment (**openbaar** of niet- **weer geven**) wilt wijzigen, of als u het experiment uit de galerie wilt verwijderen, selecteert u het pictogram **instellingen** .
 
 * Selecteer op de pagina Profiel de pijl-omlaag voor het experiment en selecteer vervolgens **bewerken**. Hiermee gaat u naar de pagina Details voor uw experiment in de bewerkings modus. Wanneer u klaar bent met het maken van wijzigingen, selecteert u **gereed**. Als u het experiment uit de galerie wilt verwijderen, selecteert u **verwijderen**.
 
@@ -202,6 +202,6 @@ Nadat u een tag hebt ingevoerd, drukt u op de tab-toets om een andere tag in te 
 
 We willen dat de galerie wordt aangestuurd door onze gebruikers en voor onze gebruikers. Gebruik het lachebekje aan de rechter kant om ons te laten weten wat u vindt of hate over de galerie.  
 
-![Feedback](./media/gallery-how-to-use-contribute-publish/feedback.png)
+![Met een feedback venster kunt u een glim lach verzenden, een frons verzenden of tekst invoeren. Er is een knop verzenden.](./media/gallery-how-to-use-contribute-publish/feedback.png)
 
 **[GA NAAR DE GALERIE >>](https://gallery.azure.ai)**

@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 01/06/2017
-ms.openlocfilehash: 5a588195f2095b2d0cb261e1573eeb9ec881f2fd
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: f77c0fb09dddd884335d31d630904ea6aeafeaf5
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322834"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95495199"
 ---
 # <a name="deploy-an-azure-machine-learning-studio-classic-web-service"></a>Een Azure Machine Learning Studio-webservice (klassiek) implementeren
 
-**VAN TOEPASSING OP:** ![ja](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![nee ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**van toepassing op:** ![ Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek). ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (klassiek) ![ Dit is een X, wat betekent dat dit artikel van toepassing is op Azure machine learning.](../../../includes/media/aml-applies-to-skus/no.png)[ Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
 
 
 Met Azure Machine Learning Studio (klassiek) kunt u een voorspellende analyse oplossing bouwen en testen. Vervolgens kunt u de oplossing implementeren als een webservice.
@@ -250,7 +250,7 @@ Als u de service voor batch uitvoering wilt testen, klikt u op de koppeling **te
 
 Op de pagina **configuratie** kunt u de weergave naam van de service wijzigen en een beschrijving geven. De naam en beschrijving worden weer gegeven in de [Azure Portal](https://portal.azure.com/) waar u uw webservices beheert.
 
-U kunt een beschrijving opgeven voor de invoer gegevens, uitvoer gegevens en para meters van de webservice door een teken reeks op te geven voor elke kolom onder **invoer schema** , **uitvoer schema** en **Web Service-para meter**. Deze beschrijvingen worden gebruikt in de voorbeeld code documentatie van de webservice.
+U kunt een beschrijving opgeven voor de invoer gegevens, uitvoer gegevens en para meters van de webservice door een teken reeks op te geven voor elke kolom onder **invoer schema**, **uitvoer schema** en **Web Service-para meter**. Deze beschrijvingen worden gebruikt in de voorbeeld code documentatie van de webservice.
 
 U kunt logboek registratie inschakelen om te controleren of er fouten zijn opgetreden die u ziet wanneer de webservice wordt geopend. Zie [logboek registratie inschakelen voor machine learning Studio (klassieke) webservices](web-services-logging.md)voor meer informatie.
 

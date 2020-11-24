@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: contperfq2
-ms.openlocfilehash: 8482ba608ee5fcefb006234b339cd9b711a38020
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 55607527ced2e5d93a61cfd85477758482f18daa
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445299"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95495420"
 ---
 # <a name="install-and-use-azure-iot-explorer"></a>Azure IoT Explorer installeren en gebruiken
 
@@ -40,7 +40,7 @@ Ga naar [Azure IOT Explorer](https://github.com/Azure/azure-iot-explorer/release
 
 ## <a name="use-azure-iot-explorer"></a>Azure IoT Explorer gebruiken
 
-Voor een apparaat kunt u een verbinding maken met uw eigen apparaat of een van de voor beelden van gesimuleerde apparaten gebruiken. Voor een aantal voor beelden van gesimuleerde apparaten die in verschillende talen zijn geschreven, raadpleegt [u de toepassing een voor beeld van IOT-Plug en Play apparaat verbinden met IOT hub](quickstart-connect-device-node.md) Quick starts.
+Voor een apparaat kunt u een verbinding maken met uw eigen apparaat of een van de voor beelden van gesimuleerde apparaten gebruiken. Zie voor een aantal voor beelden van gesimuleerde apparaten die in verschillende talen zijn geschreven, de [toepassing een voor beeld van een IoT Plug en Play-apparaat verbinden met IOT hub](quickstart-connect-device.md) Quick Start.
 
 ### <a name="connect-to-your-hub"></a>Verbinding maken met uw hub
 
@@ -78,7 +78,7 @@ Selecteer op de pagina **apparaten** lijst een waarde in de kolom **apparaat-id*
 
 ### <a name="device"></a>Apparaat
 
-Deze sectie bevat de **identiteit** van het apparaat, het  **apparaat dubbele** , **telemetrie** , **directe methode** , **Cloud-naar-apparaat-bericht** , **module-identiteits**  tabbladen.
+Deze sectie bevat de **identiteit** van het apparaat, het  **apparaat dubbele**, **telemetrie**, **directe methode**, **Cloud-naar-apparaat-bericht**, **module-identiteits**  tabbladen.
 
 - U kunt de gegevens van de [apparaat-id](../iot-hub/iot-hub-devguide-identity-registry.md) weer geven en bijwerken op het tabblad **apparaat-id** .
 - U kunt de dubbele gegevens van het [apparaat](../iot-hub/iot-hub-devguide-device-twins.md) openen op het tabblad **apparaat dubbele** .
@@ -109,7 +109,7 @@ U kunt de alleen-lezen eigenschappen die zijn gedefinieerd in een interface weer
 1. Bekijk een voor beeld van de payload die naar het apparaat moet worden verzonden.
 1. Verzend de wijziging.
 
-Nadat u een wijziging hebt ingediend, kunt u de status van de update volgen: **synchronisatie** , **geslaagd** of **fout**. Wanneer de synchronisatie is voltooid, ziet u de nieuwe waarde van uw eigenschap in de kolom **gemelde eigenschap** . Als u naar andere pagina's navigeert voordat de synchronisatie is voltooid, ontvangt het hulp programma nog steeds een melding wanneer de update is voltooid. U kunt ook het meldingen centrum van het hulp programma gebruiken om de meldings geschiedenis te bekijken.
+Nadat u een wijziging hebt ingediend, kunt u de status van de update volgen: **synchronisatie**, **geslaagd** of **fout**. Wanneer de synchronisatie is voltooid, ziet u de nieuwe waarde van uw eigenschap in de kolom **gemelde eigenschap** . Als u naar andere pagina's navigeert voordat de synchronisatie is voltooid, ontvangt het hulp programma nog steeds een melding wanneer de update is voltooid. U kunt ook het meldingen centrum van het hulp programma gebruiken om de meldings geschiedenis te bekijken.
 
 #### <a name="commands"></a>Opdrachten
 

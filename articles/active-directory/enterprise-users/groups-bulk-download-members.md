@@ -8,17 +8,16 @@ manager: daveba
 ms.date: 11/15/2020
 ms.topic: how-to
 ms.service: active-directory
-ms.subservice: enterprise-users
 ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59327b33a228dfde2c303b63393a372b12370a05
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: f90a790f5f7862d3b19dea34505dabc64ea00172
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647406"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95490782"
 ---
 # <a name="bulk-download-members-of-a-group-in-azure-active-directory"></a>Leden van een groep bulksgewijs downloaden in Azure Active Directory
 

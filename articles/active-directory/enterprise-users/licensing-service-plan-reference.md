@@ -10,18 +10,17 @@ editor: ''
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.subservice: enterprise-users
 ms.date: 11/15/2020
 ms.author: kakern
 ms.reviewer: kakern
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db07f18b97936389d9b2360f7d4476c67d9f284a
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a980181a1e9bc50c0ec5e941c07025fde6817afb
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94646896"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95502969"
 ---
 # <a name="product-names-and-service-plan-identifiers-for-licensing"></a>Product namen en service plan-id's voor licentie verlening
 

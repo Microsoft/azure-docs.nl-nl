@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 82182c24f87a82df5ee040b7853588f74dda449f
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 76e19c36f0fa4096966c5dd23d2384b6b30f2271
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92909944"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95498857"
 ---
 # <a name="business-card-concepts"></a>Concepten van visitekaartjes
 
@@ -52,15 +52,15 @@ De API voor het visite kaartje kan ook alle herkende tekst van de visite kaart r
 
 ## <a name="the-analyze-business-card-operation"></a>De bewerking visite kaartje analyseren
 
-De [kaart](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync) voor het analyseren van een visite kaartje neemt een afbeelding of PDF van een visite kaartje als invoer en extraheert de gewenste waarden. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
+De [kaart](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeBusinessCardAsync) voor het analyseren van een visite kaartje neemt een afbeelding of PDF van een visite kaartje als invoer en extraheert de gewenste waarden. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
 
 |Reactie header| Resultaten-URL |
 |:-----|:----|
-|Operation-Location | `https://cognitiveservice/formrecognizer/v2.1-preview.1/prebuilt/businessCard/analyzeResults/49a36324-fc4b-4387-aa06-090cfbf0064f` |
+|Operation-Location | `https://cognitiveservice/formrecognizer/v2.1-preview.2/prebuilt/businessCard/analyzeResults/49a36324-fc4b-4387-aa06-090cfbf0064f` |
 
 ## <a name="the-get-analyze-business-card-result-operation"></a>De resultaat bewerking voor het analyseren van bedrijfs kaarten ophalen
 
-De tweede stap bestaat uit het aanroepen van de [resultaat bewerking analyse van bedrijfs kaart ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/GetAnalyzeBusinessCardResult) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking visite kaartje analyseren. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
+De tweede stap bestaat uit het aanroepen van de [resultaat bewerking analyse van bedrijfs kaart ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/GetAnalyzeBusinessCardResult) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking visite kaartje analyseren. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
 
 |Veld| Type | Mogelijke waarden |
 |:-----|:----:|:----|
@@ -394,4 +394,4 @@ De Business Card-API voorziet ook in de [verwerkings functie voor AIBuilder-bedr
 ## <a name="see-also"></a>Zie ook
 
 * [Wat is Form Recognizer?](./overview.md)
-* [REST API referentie documenten](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync)
+* [REST API referentie documenten](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeBusinessCardAsync)

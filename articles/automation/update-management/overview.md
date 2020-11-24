@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 10/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 09bd82225fb7d8a6eefe84b5a70660e4553a3070
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: abcc2b60fd796a80342fe48c3c9027388660476a
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360782"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95488144"
 ---
 # <a name="update-management-overview"></a>Overzicht van updatebeheer
 
@@ -20,7 +20,7 @@ U kunt Updatebeheer in Azure Automation gebruiken om updates van besturings syst
 > U kunt een computer die is geconfigureerd met Updatebeheer niet gebruiken om aangepaste scripts uit Azure Automation uit te voeren. Op deze computer kan alleen het door micro soft ondertekende update script worden uitgevoerd.
 
 > [!NOTE]
-> Op dit moment wordt het inschakelen van Updatebeheer rechtstreeks vanaf een server waarop Arc is ingeschakeld, niet ondersteund. Zie [updatebeheer inschakelen in uw Automation-account](../../automation/update-management/enable-from-automation-account.md) voor meer informatie over vereisten en het inschakelen van uw server.
+> Op dit moment wordt het rechtstreeks inschakelen van Updatebeheer vanaf een server met Azure Arc niet ondersteund. Raadpleeg [Updatebeheer inschakelen vanuit uw Automation-account](../../automation/update-management/enable-from-automation-account.md) om te zien wat de vereisten zijn en hoe u updatebeheer voor uw server inschakelt.
 
 Als u de beschik bare *essentiële* en *beveiligings* patches automatisch op uw Azure-VM wilt downloaden en installeren, controleert u [automatische VM-gast patches](../../virtual-machines/windows/automatic-vm-guest-patching.md) voor Windows-vm's.
 
@@ -72,7 +72,7 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 > [!NOTE]
 > Update-evaluatie van Linux-machines wordt alleen ondersteund in bepaalde regio's, zoals vermeld in het Automation-account en de tabel Log Analytics werkruimte [toewijzingen](../how-to/region-mappings.md#supported-mappings).
 
-|Besturingssysteem  |Notities  |
+|Besturingssysteem  |Opmerkingen  |
 |---------|---------|
 |Windows Server 2019 (Data Center/Data Center core/Standard)<br><br>Windows Server 2016 (Data Center/Data Center core/Standard)<br><br>Windows Server 2012 R2 (Data Center/Standard)<br><br>Windows Server 2012 ||
 |Windows Server 2008 R2 (RTM en SP1 Standard)| Updatebeheer ondersteunt evaluaties en patches voor dit besturings systeem. De [Hybrid Runbook worker](../automation-windows-hrw-install.md) wordt ondersteund voor Windows Server 2008 R2. |
@@ -88,7 +88,7 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 
 De volgende tabel bevat een lijst met niet-ondersteunde besturings systemen:
 
-|Besturingssysteem  |Notities  |
+|Besturingssysteem  |Opmerkingen  |
 |---------|---------|
 |Windows-client     | Client besturingssystemen (zoals Windows 7 en Windows 10) worden niet ondersteund.<br> Voor Azure Windows virtueel bureau blad (WVD), de aanbevolen methode<br> voor het beheren van updates is [micro soft Endpoint Configuration Manager](../../virtual-desktop/configure-automatic-updates.md) voor patch beheer voor Windows 10-client computers. |
 |Windows Server 2016 Nano Server     | Niet ondersteund.       |
@@ -132,7 +132,7 @@ Updatebeheer maakt gebruik van de resources die in deze sectie worden beschreven
 
 Nadat u Updatebeheer hebt ingeschakeld, wordt elke Windows-computer die rechtstreeks is verbonden met uw Log Analytics-werk ruimte automatisch geconfigureerd als een Hybrid Runbook Worker ter ondersteuning van de runbooks die Updatebeheer ondersteunen.
 
-Elke Windows-computer die wordt beheerd door Updatebeheer wordt weer gegeven in het deel venster Hybrid worker Groups als een Hybrid worker-groep voor het Automation-account. De groepen gebruiken de `Hostname FQDN_GUID` naamgevings Conventie. U kunt deze groepen niet richten op runbooks in uw account. Als u probeert, mislukt de poging. Deze groepen zijn bedoeld om alleen Updatebeheer te ondersteunen. Zie [Hybrid Runbook Workers weer geven](../automation-hybrid-runbook-worker.md#view-hybrid-runbook-workers)voor meer informatie over het weer geven van de lijst met Windows-machines die als Hybrid Runbook worker zijn geconfigureerd.
+Elke Windows-computer die wordt beheerd door Updatebeheer wordt weer gegeven in het deel venster Hybrid worker Groups als een Hybrid worker-groep voor het Automation-account. De groepen gebruiken de `Hostname FQDN_GUID` naamgevings Conventie. U kunt deze groepen niet richten op runbooks in uw account. Als u probeert, mislukt de poging. Deze groepen zijn bedoeld om alleen Updatebeheer te ondersteunen. Zie [Hybrid Runbook Workers weer geven](../automation-hybrid-runbook-worker.md#view-system-hybrid-runbook-workers)voor meer informatie over het weer geven van de lijst met Windows-machines die als Hybrid Runbook worker zijn geconfigureerd.
 
 U kunt de Windows-computer toevoegen aan een Hybrid Runbook Worker groep in uw Automation-account ter ondersteuning van Automation-runbooks als u hetzelfde account gebruikt voor Updatebeheer en het lidmaatschap van de Hybrid Runbook Worker-groep. Deze functionaliteit is toegevoegd aan versie 7.2.12024.0 van de Hybrid Runbook Worker.
 

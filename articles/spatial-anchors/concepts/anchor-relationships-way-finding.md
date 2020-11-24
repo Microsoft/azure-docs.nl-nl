@@ -1,19 +1,19 @@
 ---
 title: Relaties tussen ankers en wegwijzers
 description: Meer informatie over het conceptuele model achter anker relaties. Meer informatie over het verbinden van ankers binnen een Space en het gebruik van de nabije API om te voldoen aan een manier om een scenario te vinden.
-author: ramonarguelles
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: rgarcia
-ms.date: 02/24/2019
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 13c85dff40e266287d893d9e45b32a66a33f027e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c321eae9451715077aa50d163b62b51ec88ce1a
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83006022"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95496882"
 ---
 # <a name="anchor-relationships-and-way-finding-in-azure-spatial-anchors"></a>Verankeringen en manier om te vinden in azure ruimtelijke ankers
 

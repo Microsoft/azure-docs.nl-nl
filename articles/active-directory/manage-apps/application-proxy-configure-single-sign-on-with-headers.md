@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 61bff59114d25b2f3167a34100ec2f742036bb90
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: d39d72a79d4b273918986d0d350df4706592c77d
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663550"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95503173"
 ---
 # <a name="header-based-single-sign-on-for-on-premises-apps-with-azure-ad-app-proxy-preview"></a>Eenmalige aanmelding op basis van een header voor on-premises apps met Azure AD-app proxy (preview-versie)
 
@@ -85,7 +85,7 @@ Voordat u aan de slag gaat met eenmalige aanmelding voor toepassingen die op Kop
 ## <a name="test-your-app"></a>Uw app testen 
 
 Wanneer u al deze stappen hebt voltooid, moet uw app actief zijn en beschikbaar zijn. De app testen: 
-1. Open een browser en navigeer naar de **externe URL**   in de proxy-instellingen van de toepassing. 
+1. Open een nieuw browser venster of een nieuwe persoonlijke browser om ervoor te zorgen dat eerder in de cache geplaatste headers worden gewist. Ga vervolgens naar de **externe URL**   van de proxy-instellingen van de toepassing.
 2. Meld u aan met het test account dat u aan de app hebt toegewezen. Als u de toepassing kunt laden en aanmelden met behulp van SSO, bent u goed. 
 
 

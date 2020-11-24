@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/19/2020
 ms.author: yelevin
-ms.openlocfilehash: 657221a2acbf592a56cb4659ced2199023bc5e5b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a0a677342534cd92d5530199076e3d2e7084134d
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658788"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95494774"
 ---
 # <a name="identify-advanced-threats-with-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Geavanceerde bedreigingen met UEBA (User and entity Behavior Analytics) identificeren in azure Sentinel
 
@@ -91,7 +91,7 @@ De volgende typen entiteiten worden momenteel geïdentificeerd in azure Sentinel
 - Host
 - IP-adres (IP)
 - Malware
-- File
+- Bestand
 - Proces
 - Cloud toepassing (CloudApplication)
 - Domein naam (DNS)
@@ -205,7 +205,7 @@ U kunt de [Jupyter-notebook](https://github.com/Azure/Azure-Sentinel-Notebooks/t
 
 Met de machtigings analyse kunt u de mogelijke gevolgen bepalen van het compromissen van een organisatie-Asset door een aanvaller. Deze invloed wordt ook wel de ' versterking van de activa ' genoemd. Beveiligings analisten kunnen deze informatie gebruiken om de prioriteit van onderzoek en incidenten te bepalen.
 
-Azure Sentinel bepaalt de directe en transitieve toegangs rechten van een bepaalde gebruiker tot Azure-resources door de Azure-abonnementen te evalueren die de gebruiker rechtstreeks of via groepen of service-principals kan benaderen. Deze informatie, evenals de volledige lijst van het lidmaatschap van de Azure AD-beveiligings groep van de gebruiker, wordt vervolgens opgeslagen in de tabel **UserAccessAnalytics** . In de onderstaande scherm afbeelding ziet u een voor beeld van een rij in de tabel UserAccessAnalytics voor de gebruiker Alex Johnson. **Bron entiteit** is het account van de gebruiker of Service-Principal en de **doel entiteit** is de resource waartoe de bron entiteit toegang heeft. De waarden van **toegangs niveau** en **toegangs type** zijn afhankelijk van het toegangs beheer model van de doel entiteit. U kunt zien dat Alex toegang heeft tot het Azure-abonnement *Contoso Hotels-Tenant*. Het model voor het toegangs beheer van het abonnement is RBAC.   
+Azure Sentinel bepaalt de directe en transitieve toegangs rechten van een bepaalde gebruiker tot Azure-resources door de Azure-abonnementen te evalueren die de gebruiker rechtstreeks of via groepen of service-principals kan benaderen. Deze informatie, evenals de volledige lijst van het lidmaatschap van de Azure AD-beveiligings groep van de gebruiker, wordt vervolgens opgeslagen in de tabel **UserAccessAnalytics** . In de onderstaande scherm afbeelding ziet u een voor beeld van een rij in de tabel UserAccessAnalytics voor de gebruiker Alex Johnson. **Bron entiteit** is het account van de gebruiker of Service-Principal en de **doel entiteit** is de resource waartoe de bron entiteit toegang heeft. De waarden van **toegangs niveau** en **toegangs type** zijn afhankelijk van het toegangs beheer model van de doel entiteit. U kunt zien dat Alex toegang heeft tot het Azure-abonnement *Contoso Hotels-Tenant*. Het model voor het toegangs beheer van het abonnement is Azure RBAC.   
 
 :::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/user-access-analytics.png" alt-text="Scherm opname van de analyse tabel voor gebruikers toegang":::
 

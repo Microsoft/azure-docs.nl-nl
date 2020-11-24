@@ -7,12 +7,12 @@ ms.date: 07/23/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: dda0e3d6739e94df4ce5910938c164e3db336bce
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 5f82206a7c86c5ae1e6477419faee0dca88ef883
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445571"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95495284"
 ---
 # <a name="use-iot-plug-and-play-models-in-an-iot-solution"></a>IoT Plug en Play-modellen gebruiken in een IoT-oplossing
 
@@ -125,7 +125,7 @@ Voer de volgende stappen uit nadat u de model-ID voor een nieuwe apparaat-verbin
 
 1. Met de model definitie van het verbonden apparaat kunt u de mogelijkheden van het apparaat opsommen.
 
-1. Met de genummerde mogelijkheden van het apparaat kunt u gebruikers toestaan om te [communiceren met het apparaat](quickstart-service-node.md).
+1. Met de genummerde mogelijkheden van het apparaat kunt u gebruikers toestaan om te [communiceren met het apparaat](quickstart-service.md).
 
 ### <a name="custom-store"></a>Aangepast archief
 
@@ -137,12 +137,12 @@ Voer de volgende stappen uit nadat u de model-ID voor een nieuwe apparaat-verbin
 
 1. Met de model definitie van het verbonden apparaat kunt u de mogelijkheden van het apparaat opsommen. 
 
-1. Met de genummerde mogelijkheden van het apparaat kunt u gebruikers toestaan om te [communiceren met het apparaat](quickstart-service-node.md).  
+1. Met de genummerde mogelijkheden van het apparaat kunt u gebruikers toestaan om te [communiceren met het apparaat](quickstart-service.md).  
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Nu u hebt geleerd hoe u IoT Plug en Play-modellen integreert in een IoT-oplossing, kunt u de volgende stappen volgen:
 
-- [Interactie met een apparaat vanuit uw oplossing](quickstart-service-node.md)
+- [Interactie met een apparaat vanuit uw oplossing](quickstart-service.md)
 - [IoT digitale dubbele REST API](/rest/api/iothub/service/digitaltwin)
 - [Azure IoT Explorer](howto-use-iot-explorer.md)

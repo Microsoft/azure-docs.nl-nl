@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 5125fff0ef8987d313c6611e4d5de08d090f2263
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 769dea079339af2c6307d9230e047a654dc3d5dd
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913191"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95492207"
 ---
 # <a name="receipt-concepts"></a>Concepten van ontvangsten
 
@@ -57,6 +57,13 @@ De kwitantie-API retourneert ook de volgende informatie:
 * OCR-onbewerkte tekst (OCR: geëxtraheerde tekst uitvoer voor de volledige ontvangst)
 * Selectie kader voor elke waarde, regel en woord
 
+## <a name="try-it-out"></a>Probeer het eens
+
+Als u de service voor de ontvangst van de formulier herkenning wilt uitproberen, gaat u naar het hulp programma online voor beeld-UI:
+
+> [!div class="nextstepaction"]
+> [Vooraf gebouwde modellen proberen](https://fott-preview.azurewebsites.net/)
+
 ## <a name="input-requirements"></a>Vereisten voor invoer
 
 [!INCLUDE [input reqs](./includes/input-requirements-receipts.md)]
@@ -64,7 +71,7 @@ De kwitantie-API retourneert ook de volgende informatie:
 ## <a name="supported-locales"></a>Ondersteunde land instellingen 
 
 * **Vooraf gemaakte ontvangst versie 2.0** (ga) ondersteunt verkoop ontvangsten in de land instelling en-US
-* **Vooraf gemaakte bevestigingen v 2.1-Preview. 1** (open bare preview) voegt extra ondersteuning toe voor de volgende land instellingen en ontvangstbewijs: 
+* **Vooraf gemaakte bevestigingen v 2.1-Preview. 2** (open bare preview) voegt extra ondersteuning toe voor de volgende land instellingen en ontvangstbewijs: 
   * EN-AU 
   * EN-CA 
   * EN-GB 
@@ -73,12 +80,12 @@ De kwitantie-API retourneert ook de volgende informatie:
   > [!NOTE]
   > Taalinvoer 
   >
-  > Vooraf ontwikkelde ontvangst versie 2.1-Preview. 1 bevat een optionele aanvraag parameter voor het opgeven van een land instelling voor de ontvangst van extra Engelse markten. Voor verkoop ontvangsten in het Engels vanuit Australië (EN-AU), Canada (EN-CA), Groot-Brittannië (en-GB) en India (EN-IN) kunt u de land instelling opgeven om de resultaten te verbeteren. Als er geen land instelling is opgegeven in v 2.1-Preview. 1, wordt het model standaard ingesteld op het model nl-nl.
+  > Vooraf ontwikkelde ontvangst versie 2.1-Preview. 2 heeft een optionele aanvraag parameter voor het opgeven van een land instelling voor de ontvangst van extra Engelse markten. Voor verkoop ontvangsten in het Engels vanuit Australië (EN-AU), Canada (EN-CA), Groot-Brittannië (en-GB) en India (EN-IN) kunt u de land instelling opgeven om de resultaten te verbeteren. Als er geen land instelling is opgegeven in v 2.1-Preview. 2, wordt het model standaard ingesteld op het model nl-nl.
 
 
 ## <a name="the-analyze-receipt-operation"></a>De bewerking toename analyseren
 
-De [analyse-ontvangst](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeReceiptAsync) neemt een afbeelding of PDF van een ontvangst op als de invoer en extraheert de waarden van interest en text. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
+De [analyse-ontvangst](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeReceiptAsync) neemt een afbeelding of PDF van een ontvangst op als de invoer en extraheert de waarden van interest en text. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
 
 |Reactie header| Resultaten-URL |
 |:-----|:----|
@@ -86,7 +93,7 @@ De [analyse-ontvangst](https://westcentralus.dev.cognitive.microsoft.com/docs/se
 
 ## <a name="the-get-analyze-receipt-result-operation"></a>De bewerking resultaat van het analyseren van toename ophalen
 
-De tweede stap bestaat uit het aanroepen van de bewerking [resultaat analyse ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/GetAnalyzeReceiptResult) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking voor het analyseren van een ontvangst. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
+De tweede stap bestaat uit het aanroepen van de bewerking [resultaat analyse ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/GetAnalyzeReceiptResult) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking voor het analyseren van een ontvangst. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
 
 |Veld| Type | Mogelijke waarden |
 |:-----|:----:|:----|

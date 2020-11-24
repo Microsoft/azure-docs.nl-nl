@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/05/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 5d14068f6be4717f74e4917d6fccf1082cd0efd3
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 48a7912b1a6375111b6f9af1496cbbd41966202c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331754"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95556218"
 ---
 ### <a name="which-regions-are-available"></a><a name="regions"></a>Welke regio's zijn beschikbaar?
 
@@ -89,7 +89,7 @@ Een sessie mag alleen worden gestart vanuit de Azure-portal. Meld u aan bij de A
 
 ### <a name="how-do-i-handle-deployment-failures"></a><a name="udr">Wat doe ik met implementatiefouten?</a>
 
-Bekijk de foutberichten goed en [dien een ondersteuningsaanvraag in de Azure-portal in](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request), als dat nog nodig is. Implementatiefouten kunnen het gevolg zijn van [limieten voor Azure-abonnementen, quota en beperkingen](../articles/azure-resource-manager/management/azure-subscription-service-limits.md). Klanten kunnen met name te maken krijgen met de limiet voor het aantal openbare IP-adressen dat is toegestaan per abonnement. Hierdoor kan de implementatie van Azure Bastion mislukken.
+Bekijk de foutberichten goed en [dien een ondersteuningsaanvraag in de Azure-portal in](../articles/azure-portal/supportability/how-to-create-azure-support-request.md), als dat nog nodig is. Implementatiefouten kunnen het gevolg zijn van [limieten voor Azure-abonnementen, quota en beperkingen](../articles/azure-resource-manager/management/azure-subscription-service-limits.md). Klanten kunnen met name te maken krijgen met de limiet voor het aantal openbare IP-adressen dat is toegestaan per abonnement. Hierdoor kan de implementatie van Azure Bastion mislukken.
 
 ### <a name="how-do-i-incorporate-azure-bastion-in-my-disaster-recovery-plan"></a><a name="dr"></a>Hoe neem ik Azure Bastion op in mijn plan voor herstel na noodgevallen?
 

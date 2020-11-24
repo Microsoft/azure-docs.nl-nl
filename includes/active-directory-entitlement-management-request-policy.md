@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 03/30/2020
 ms.author: ajburnle
 ms.custom: include file
-ms.openlocfilehash: 239fcc1e57cb4bd56a8704f8a840689d44617fcf
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: b7029c5cdd004910caa83425536bbe481e4b01f3
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93029439"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95557639"
 ---
 ## <a name="for-users-in-your-directory"></a>Voor gebruikers in uw Directory
 
-Volg deze stappen als u wilt toestaan dat gebruikers in uw directory dit toegangs pakket kunnen aanvragen. Wanneer u het aanvraag beleid definieert, kunt u afzonderlijke gebruikers of meer vaak groepen gebruikers opgeven. Uw organisatie kan bijvoorbeeld al een groep hebben, zoals **alle werk nemers** .  Als deze groep wordt toegevoegd aan het beleid voor gebruikers die toegang kunnen aanvragen, kan een lid van die groep vervolgens toegang vragen.
+Volg deze stappen als u wilt toestaan dat gebruikers in uw directory dit toegangs pakket kunnen aanvragen. Wanneer u het aanvraag beleid definieert, kunt u afzonderlijke gebruikers of meer vaak groepen gebruikers opgeven. Uw organisatie kan bijvoorbeeld al een groep hebben, zoals **alle werk nemers**.  Als deze groep wordt toegevoegd aan het beleid voor gebruikers die toegang kunnen aanvragen, kan een lid van die groep vervolgens toegang vragen.
 
-1. Klik in de sectie **gebruikers die toegang kunnen aanvragen** , op **voor gebruikers in uw directory** .
+1. Klik in de sectie **gebruikers die toegang kunnen aanvragen** , op **voor gebruikers in uw directory**.
 
     Wanneer u deze optie selecteert, worden er nieuwe opties weer gegeven om te verfijnen wie in uw directory dit toegangs pakket kan aanvragen.
 
@@ -33,9 +33,9 @@ Volg deze stappen als u wilt toestaan dat gebruikers in uw directory dit toegang
     | **Alle leden (exclusief gasten)** | Kies deze optie als u wilt dat alle gebruikers in uw directory dit toegangs pakket kunnen aanvragen. Deze optie bevat geen gast gebruikers die u mogelijk hebt uitgenodigd voor uw Directory. |
     | **Alle gebruikers (inclusief gasten)** | Selecteer deze optie als u wilt dat alle leden van gebruikers en gast gebruikers in uw directory dit toegangs pakket kunnen aanvragen. |
 
-    Gast gebruikers verwijzen naar externe gebruikers die zijn uitgenodigd voor uw directory met [Azure AD B2B](../articles/active-directory/b2b/what-is-b2b.md). Zie [Wat zijn de standaard gebruikers machtigingen in azure Active Directory?](../articles/active-directory/fundamentals/users-default-permissions.md)voor meer informatie over de verschillen tussen gebruikers van het lid en gast gebruikers.
+    Gast gebruikers verwijzen naar externe gebruikers die zijn uitgenodigd voor uw directory met [Azure AD B2B](../articles/active-directory/external-identities/what-is-b2b.md). Zie [Wat zijn de standaard gebruikers machtigingen in azure Active Directory?](../articles/active-directory/fundamentals/users-default-permissions.md)voor meer informatie over de verschillen tussen gebruikers van het lid en gast gebruikers.
 
-1. Als u **specifieke gebruikers en groepen** hebt geselecteerd, klikt u op **gebruikers en groepen toevoegen** .
+1. Als u **specifieke gebruikers en groepen** hebt geselecteerd, klikt u op **gebruikers en groepen toevoegen**.
 
 1. Selecteer in het deel venster gebruikers en groepen selecteren de gebruikers en groepen die u wilt toevoegen.
 
@@ -47,10 +47,10 @@ Volg deze stappen als u wilt toestaan dat gebruikers in uw directory dit toegang
 
 ## <a name="for-users-not-in-your-directory"></a>Voor gebruikers die niet in uw Directory voor komt
 
- **Gebruikers die zich niet in uw directory** bevinden, verwijzen naar gebruikers in een andere Azure AD-Directory of een ander domein. Deze gebruikers zijn mogelijk nog niet in uw directory uitgenodigd. Azure AD-mappen moeten zodanig worden geconfigureerd dat uitnodigingen in **samenwerkings beperkingen** worden toegestaan. Zie [externe B2B-samen werking inschakelen en beheren wie gasten kan uitnodigen](../articles/active-directory/b2b/delegate-invitations.md)voor meer informatie.
+ **Gebruikers die zich niet in uw directory** bevinden, verwijzen naar gebruikers in een andere Azure AD-Directory of een ander domein. Deze gebruikers zijn mogelijk nog niet in uw directory uitgenodigd. Azure AD-mappen moeten zodanig worden geconfigureerd dat uitnodigingen in **samenwerkings beperkingen** worden toegestaan. Zie [externe B2B-samen werking inschakelen en beheren wie gasten kan uitnodigen](../articles/active-directory/external-identities/delegate-invitations.md)voor meer informatie.
 
 > [!NOTE]
-> Er wordt een gast gebruikers account voor een gebruiker gemaakt dat nog niet in uw directory is waarvan de aanvraag is goedgekeurd of automatisch goedgekeurd. De gast wordt uitgenodigd, maar ontvangt geen uitnodigings-e-mail. In plaats daarvan ontvangen ze een e-mail bericht wanneer hun toegangs pakket toewijzing wordt bezorgd. Later, wanneer deze gast gebruiker geen toegangs pakket toewijzingen meer heeft, omdat de laatste toewijzing is verlopen of is geannuleerd, wordt het gast gebruikers account geblokkeerd om zich aan te melden en vervolgens te verwijderen. Als u wilt dat gast gebruikers voor onbepaalde tijd in uw Directory blijven, zelfs als ze geen toegangs pakket toewijzingen hebben, kunt u de instellingen voor uw rechten beheer configuratie wijzigen. Zie [Eigenschappen van een Azure Active Directory B2B-samenwerkings gebruiker](../articles/active-directory/b2b/user-properties.md)voor meer informatie over het gast gebruikers object.
+> Er wordt een gast gebruikers account voor een gebruiker gemaakt dat nog niet in uw directory is waarvan de aanvraag is goedgekeurd of automatisch goedgekeurd. De gast wordt uitgenodigd, maar ontvangt geen uitnodigings-e-mail. In plaats daarvan ontvangen ze een e-mail bericht wanneer hun toegangs pakket toewijzing wordt bezorgd. Later, wanneer deze gast gebruiker geen toegangs pakket toewijzingen meer heeft, omdat de laatste toewijzing is verlopen of is geannuleerd, wordt het gast gebruikers account geblokkeerd om zich aan te melden en vervolgens te verwijderen. Als u wilt dat gast gebruikers voor onbepaalde tijd in uw Directory blijven, zelfs als ze geen toegangs pakket toewijzingen hebben, kunt u de instellingen voor uw rechten beheer configuratie wijzigen. Zie [Eigenschappen van een Azure Active Directory B2B-samenwerkings gebruiker](../articles/active-directory/external-identities/user-properties.md)voor meer informatie over het gast gebruikers object.
 
 Volg deze stappen als u wilt toestaan dat gebruikers die geen toegang hebben tot uw directory dit toegangs pakket aanvragen:
 
@@ -78,10 +78,10 @@ Volg deze stappen als u wilt toestaan dat gebruikers die geen toegang hebben tot
 
     Als de organisatie waarmee u wilt samen werken, zich niet in de lijst bevindt, kunt u uw beheerder vragen om deze toe te voegen als een verbonden organisatie. Zie [add a Connected Organization](../articles/active-directory/governance/entitlement-management-organization.md)(Engelstalig) voor meer informatie.
 
-1. Wanneer u alle verbonden organisaties hebt geselecteerd, klikt u op **selecteren** .
+1. Wanneer u alle verbonden organisaties hebt geselecteerd, klikt u op **selecteren**.
 
     > [!NOTE]
-    > Alle gebruikers van de geselecteerde verbonden organisaties kunnen dit toegangs pakket aanvragen. Dit omvat gebruikers in azure AD van alle subdomeinen die zijn gekoppeld aan de organisatie, tenzij deze domeinen worden geblokkeerd door de Azure B2B-lijst voor toestaan of weigeren. Zie [uitnodigingen voor B2B-gebruikers van specifieke organisaties toestaan of blok keren](../articles/active-directory/b2b/allow-deny-list.md)voor meer informatie.
+    > Alle gebruikers van de geselecteerde verbonden organisaties kunnen dit toegangs pakket aanvragen. Dit omvat gebruikers in azure AD van alle subdomeinen die zijn gekoppeld aan de organisatie, tenzij deze domeinen worden geblokkeerd door de Azure B2B-lijst voor toestaan of weigeren. Zie [uitnodigingen voor B2B-gebruikers van specifieke organisaties toestaan of blok keren](../articles/active-directory/external-identities/allow-deny-list.md)voor meer informatie.
 
 1. De sectie [goed keuring](#approval) overs Laan.
 
@@ -89,7 +89,7 @@ Volg deze stappen als u wilt toestaan dat gebruikers die geen toegang hebben tot
 
 Volg deze stappen als u toegangs aanvragen wilt overs Laan en wilt toestaan dat beheerders rechtstreeks specifieke gebruikers aan dit toegangs pakket toewijzen. Gebruikers hoeven het toegangs pakket niet aan te vragen. U kunt nog steeds levenscyclus instellingen instellen, maar er zijn geen aanvraag instellingen.
 
-1. Klik in de sectie **gebruikers die toegang kunnen vragen** , op **geen (alleen beheerders direct toewijzingen** ).
+1. Klik in de sectie **gebruikers die toegang kunnen vragen** , op **geen (alleen beheerders direct toewijzingen**).
 
     ![Toegang tot pakket-requests-geen alleen directe toewijzingen voor beheerders](./media/active-directory-entitlement-management-request-policy/none-admin-direct-assignments-only.png)
 
@@ -117,9 +117,9 @@ Bekijk de volgende video voor een demonstratie van het toevoegen van een multi-f
 
 Volg deze stappen om de goedkeurings instellingen op te geven voor aanvragen voor het toegangs pakket:
 
-1. Als u goed keuring wilt vereisen voor aanvragen van de geselecteerde gebruikers, stelt u de schakel optie **goed keuring vereisen** in op **Ja** . Als u wilt dat aanvragen automatisch worden goedgekeurd, stelt u de wissel knop in op **Nee** .
+1. Als u goed keuring wilt vereisen voor aanvragen van de geselecteerde gebruikers, stelt u de schakel optie **goed keuring vereisen** in op **Ja**. Als u wilt dat aanvragen automatisch worden goedgekeurd, stelt u de wissel knop in op **Nee**.
 
-1. Als u wilt dat gebruikers een reden opgeven om het toegangs pakket aan te vragen, stelt u de optie uitschakeling van **aanvrager vereisen** in op **Ja** .
+1. Als u wilt dat gebruikers een reden opgeven om het toegangs pakket aan te vragen, stelt u de optie uitschakeling van **aanvrager vereisen** in op **Ja**.
     
 1. Bepaal nu of aanvragen met één of twee fasen moeten worden goedgekeurd. Stel in hoeveel **fasen** moeten worden overgeschakeld op **1** voor de goed keuring van één fase of stel de wissel knop in op **2** voor goed keuring in twee fasen.
 
@@ -131,7 +131,7 @@ Gebruik de volgende stappen om goed keurders toe te voegen nadat u hebt gekozen 
 
 1. De **eerste goed keurder** toevoegen:
     
-    Als het beleid is ingesteld op het bepalen van de toegang voor gebruikers in uw directory, kunt u **Manager selecteren als fiatteur** . U kunt ook een specifieke gebruiker toevoegen door te klikken op **goed keurders toevoegen** na selectie specifieke goed keurders selecteren in het vervolg keuzemenu.
+    Als het beleid is ingesteld op het bepalen van de toegang voor gebruikers in uw directory, kunt u **Manager selecteren als fiatteur**. U kunt ook een specifieke gebruiker toevoegen door te klikken op **goed keurders toevoegen** na selectie specifieke goed keurders selecteren in het vervolg keuzemenu.
     
     ![Toegang tot pakket aanvragen-voor gebruikers in Directory-First goed keurder](./media/active-directory-entitlement-management-request-policy/approval-single-stage-first-approver-manager.png)
 
@@ -145,11 +145,11 @@ Gebruik de volgende stappen om goed keurders toe te voegen nadat u hebt gekozen 
 
 1. Als u **specifieke goed keurders kiezen** hebt geselecteerd, klikt u op goed keurders **toevoegen** om een of meer gebruikers of groepen in uw directory te selecteren voor goed keurders.
 
-1. In het vak onder **besluit moet worden aangegeven hoeveel dagen?** , geeft u het aantal dagen op dat een fiatteur een aanvraag voor dit toegangs pakket moet beoordelen.
+1. In het vak onder **besluit moet worden aangegeven hoeveel dagen?**, geeft u het aantal dagen op dat een fiatteur een aanvraag voor dit toegangs pakket moet beoordelen.
 
     Als een aanvraag niet binnen deze tijds periode is goedgekeurd, wordt deze automatisch geweigerd. De gebruiker moet een andere aanvraag indienen voor het toegangs pakket.
 
-1. Als u goed keurders wilt verplichten om een motivering te geven voor de beslissing, stelt u de uitvulling van de fiatteur in op **Ja** .
+1. Als u goed keurders wilt verplichten om een motivering te geven voor de beslissing, stelt u de uitvulling van de fiatteur in op **Ja**.
 
     De motivering is zichtbaar voor andere goed keurders en de aanvrager.
 
@@ -167,9 +167,9 @@ Als u een 2-fase goedkeuring hebt geselecteerd, moet u een tweede goed keurder t
 
     ![Toegang tot pakket aanvragen-voor gebruikers buiten de Directory-tweede goed keurder](./media/active-directory-entitlement-management-request-policy/out-directory-second-approver.png) 
 
-1. Geef het aantal dagen op dat de tweede goed keurder de aanvraag moet goed keuren in het vak onder **besluit moeten worden gedaan in het aantal dagen?** . 
+1. Geef het aantal dagen op dat de tweede goed keurder de aanvraag moet goed keuren in het vak onder **besluit moeten worden gedaan in het aantal dagen?**. 
 
-1. Stel de uitvulling van de goed keurder vereisen in op **Ja** of **Nee** .
+1. Stel de uitvulling van de goed keurder vereisen in op **Ja** of **Nee**.
 
 ### <a name="alternate-approvers"></a>Alternatieve goed keurders
 
@@ -182,7 +182,7 @@ Nadat de aanvraag is doorgestuurd naar de alternatieve goed keurders, kunnen de 
 We kunnen personen of groepen mensen een lijst geven als fiatteurs en alternatieve goed keurders. Zorg ervoor dat u de lijst met verschillende groepen van personen de eerste, tweede en alternatieve goed keurders vermeldt.
 Als u bijvoorbeeld Anne en Bob als eerste fiatteur (s) hebt genoteerd, vermeldt u Carola en Dave als alternatieve goed keurders. Gebruik de volgende stappen om alternatieve goed keurders toe te voegen aan een toegangs pakket:
 
-1. Klik onder de eerste goed keurder, tweede goed keurder of beide op **Geavanceerde aanvraag instellingen weer geven** .
+1. Klik onder de eerste goed keurder, tweede goed keurder of beide op **Geavanceerde aanvraag instellingen weer geven**.
 
     ![Toegangs pakket-beleid: Geavanceerde aanvraag instellingen weer geven](./media/active-directory-entitlement-management-request-policy/alternate-approvers-click-advanced-request.png)
 
@@ -198,7 +198,7 @@ Als u bijvoorbeeld Anne en Bob als eerste fiatteur (s) hebt genoteerd, vermeldt 
 
 ## <a name="enable-requests"></a>Aanvragen inschakelen
 
-1. Als u wilt dat het toegangs pakket onmiddellijk beschikbaar wordt gesteld voor gebruikers in het aanvraag beleid om aan te vragen, verplaatst u de schakel optie inschakelen naar **Ja** .
+1. Als u wilt dat het toegangs pakket onmiddellijk beschikbaar wordt gesteld voor gebruikers in het aanvraag beleid om aan te vragen, verplaatst u de schakel optie inschakelen naar **Ja**.
 
     U kunt deze altijd in de toekomst inschakelen nadat u klaar bent met het maken van het toegangs pakket.
 
@@ -206,7 +206,7 @@ Als u bijvoorbeeld Anne en Bob als eerste fiatteur (s) hebt genoteerd, vermeldt 
 
     ![Scherm afbeelding met de optie voor het inschakelen van nieuwe aanvragen en toewijzingen.](./media/active-directory-entitlement-management-request-policy/enable-requests.png)
 
-1. Klik op **Volgende** .
+1. Klik op **Volgende**.
 
 ## <a name="add-requestor-information-preview-to-an-access-package"></a>Informatie van de aanvrager (preview-versie) toevoegen aan een toegangs pakket
 
@@ -216,24 +216,24 @@ Als u bijvoorbeeld Anne en Bob als eerste fiatteur (s) hebt genoteerd, vermeldt 
 
     ![Toegangs pakket-beleid-instelling van gegevens van aanvrager inschakelen](./media/active-directory-entitlement-management-request-policy/add-requestor-info-question.png)
 
-1. Als u uw eigen lokalisatie opties wilt toevoegen, klikt u op **lokalisatie toevoegen** .
+1. Als u uw eigen lokalisatie opties wilt toevoegen, klikt u op **lokalisatie toevoegen**.
     1. Selecteer in het deel venster **lokalisaties voor vraag toevoegen** de **taal code** voor de taal waarin u de vraag lokalisatie.
     1. In de taal die u hebt geconfigureerd, typt u de vraag in het **gelokaliseerde** tekstvak.
-    1. Zodra u alle benodigde lokalisaties hebt toegevoegd, klikt u op **Opslaan** .
+    1. Zodra u alle benodigde lokalisaties hebt toegevoegd, klikt u op **Opslaan**.
 
     ![Toegangs pakket-beleid: gelokaliseerde tekst configureren](./media/active-directory-entitlement-management-request-policy/add-localization-question.png)
 
-1. Selecteer de **antwoord indeling** waarin aanvragers moeten reageren. Antwoord indelingen zijn: *korte tekst* , *meerdere keuzen* en *lange tekst* .
+1. Selecteer de **antwoord indeling** waarin aanvragers moeten reageren. Antwoord indelingen zijn: *korte tekst*, *meerdere keuzen* en *lange tekst*.
  
     ![Toegangs pakket-beleid: Selecteer weer geven en bewerken van de antwoord indeling voor meerdere keuzes](./media/active-directory-entitlement-management-request-policy/answer-format-view-edit.png)
  
 1. Als u meerdere keuzen selecteert, klikt u op de knop **weer geven en bewerken** om de antwoord opties te configureren.
     1. Nadat u weer geven en bewerken hebt geselecteerd, wordt het deel venster **weer gave/bewerken vragen** geopend.
     1. Typ de antwoord opties die u wilt toewijzen aan de aanvrager bij het beantwoorden van de vraag in de vakken **antwoord waarden** .
-    1. Typ zoveel reacties als u nodig hebt en klik vervolgens op **Opslaan** .
+    1. Typ zoveel reacties als u nodig hebt en klik vervolgens op **Opslaan**.
     
     ![Toegangs pakket-beleid: meerdere keuze opties opgeven](./media/active-directory-entitlement-management-request-policy/answer-multiple-choice.png)
   
-1. Als u wilt dat aanvragers deze vraag beantwoorden wanneer ze toegang tot een toegangs pakket aanvragen, klikt u op het selectie vakje onder **vereist** .
+1. Als u wilt dat aanvragers deze vraag beantwoorden wanneer ze toegang tot een toegangs pakket aanvragen, klikt u op het selectie vakje onder **vereist**.
 
 1. Klik op Next

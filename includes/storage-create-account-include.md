@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 11/20/2018
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 1295160beac83351f3f5243054f91558ad6e0191
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 193cd8ff83eeabcf155dba91dd69a6eba72febd6
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87020969"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95559086"
 ---
 ## <a name="create-an-azure-storage-account"></a>Een Azure-opslagaccount maken
 
 De eenvoudigste manier om uw eerste Azure-opslag account te maken, is met behulp van de [Azure Portal](https://portal.azure.com). Zie [Een opslagaccount maken](../articles/storage/common/storage-account-create.md) voor meer informatie.
 
-U kunt ook een Azure-opslagaccount maken met behulp van [Azure PowerShell](../articles/storage/common/storage-powershell-guide-full.md), [Azure CLI](../articles/storage/common/storage-azure-cli.md) of de [Azure Storage Resource Provider voor .NET](https://azure.microsoft.com/resources/samples/storage-dotnet-resource-provider-getting-started/).
+U kunt ook een Azure-opslagaccount maken met behulp van [Azure PowerShell](/powershell/module/az.storage/), [Azure CLI](../articles/storage/blobs/storage-quickstart-blobs-cli.md) of de [Azure Storage Resource Provider voor .NET](https://azure.microsoft.com/resources/samples/storage-dotnet-resource-provider-getting-started/).
 
 Als u op dit moment liever geen opslag account maakt in azure, kunt u ook de Azurite-opslag emulator gebruiken om uw code uit te voeren en te testen in een lokale omgeving. Zie voor meer informatie [de Azurite-emulator gebruiken voor het ontwikkelen van lokale Azure Storage](../articles/storage/common/storage-use-azurite.md).

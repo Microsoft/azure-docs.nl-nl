@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/17/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: ca4bd3d3b40934323bab8036f3ce72e9281f1de4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4b93685160250a5abe7c050db89978ae8ceb1a9
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67176471"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95556799"
 ---
 > [!div class="op_single_selector"]
 > * [C op Windows](../articles/iot-accelerators/iot-accelerators-connecting-devices.md)
@@ -21,7 +21,7 @@ ms.locfileid: "67176471"
 > * [C op Raspberry Pi](../articles/iot-accelerators/iot-accelerators-connecting-pi-c.md)
 > * [Node.js (algemeen)](../articles/iot-accelerators/iot-accelerators-connecting-devices-node.md)
 > * [Node.js op Raspberry Pi](../articles/iot-accelerators/iot-accelerators-connecting-pi-node.md)
-> * [MXChip IoT DevKit](../articles/iot-accelerators/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringV2.md)
+> * [MXChip IoT DevKit](../articles/iot-accelerators/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2.md)
 
 In deze zelf studie implementeert u een **Chiller** -apparaat dat de volgende telemetrie verzendt naar de [oplossings versneller](../articles/iot-accelerators/about-iot-accelerators.md)voor externe controle:
 
@@ -54,13 +54,13 @@ Wanneer het implementatie proces voor de oplossing voor externe controle is volt
 ### <a name="add-your-device-to-the-remote-monitoring-solution"></a>Uw apparaat toevoegen aan de oplossing voor bewaking op afstand
 
 > [!NOTE]
-> Als u al een apparaat in uw oplossing hebt toegevoegd, kunt u deze stap overs Laan. De volgende stap vereist echter dat uw apparaat connection string. U kunt de connection string van een apparaat ophalen via de [Azure Portal](https://portal.azure.com) of met het hulp programma [AZ IOT](https://docs.microsoft.com/cli/azure/iot?view=azure-cli-latest) cli.
+> Als u al een apparaat in uw oplossing hebt toegevoegd, kunt u deze stap overs Laan. De volgende stap vereist echter dat uw apparaat connection string. U kunt de connection string van een apparaat ophalen via de [Azure Portal](https://portal.azure.com) of met het hulp programma [AZ IOT](/cli/azure/iot?view=azure-cli-latest) cli.
 
 Een apparaat kan alleen verbinding maken met de oplossings versneller als het zichzelf identificeert IoT Hub met geldige referenties. U hebt de mogelijkheid om de apparaat-connection string die deze referenties bevat op te slaan wanneer u het apparaat aan de oplossing toevoegt. Verderop in deze zelf studie neemt u het apparaat connection string in uw client toepassing op.
 
 Als u een apparaat wilt toevoegen aan uw oplossing voor controle op afstand, voert u de volgende stappen uit op de pagina **device Explorer** in de oplossing:
 
-1. Kies **+ nieuw apparaat**en kies vervolgens **real** als **type apparaat**:
+1. Kies **+ nieuw apparaat** en kies vervolgens **real** als **type apparaat**:
 
     ![Echt apparaat toevoegen](media/iot-suite-selector-connecting/devicesprovision.png)
 
@@ -68,7 +68,7 @@ Als u een apparaat wilt toevoegen aan uw oplossing voor controle op afstand, voe
 
     ![Opties voor apparaten kiezen](media/iot-suite-selector-connecting/devicesoptions.png)
 
-1. Kies **Toepassen**. Noteer vervolgens de waarden voor de **apparaat-id**, de **primaire sleutel**en de **primaire sleutel van de verbindings reeks** :
+1. Kies **Toepassen**. Noteer vervolgens de waarden voor de **apparaat-id**, de **primaire sleutel** en de **primaire sleutel van de verbindings reeks** :
 
     ![Referenties ophalen](media/iot-suite-selector-connecting/credentials.png)
 
@@ -78,4 +78,4 @@ De client toepassing implementeert het ingebouwde **Chiller** -model. In een opl
 
 * De eigenschappen die het apparaat rapporteert aan de oplossing. Een **Chiller** -apparaat rapporteert bijvoorbeeld informatie over de firmware en locatie.
 * De typen telemetrie die het apparaat naar de oplossing verzendt. Een **Chiller** -apparaat verzendt bijvoorbeeld Tempe ratuur, vochtigheid en druk waarden.
-* De methoden die u kunt plannen vanuit de oplossing om op het apparaat te worden uitgevoerd. Een **Chiller** -apparaat moet bijvoorbeeld methoden voor **opnieuw opstarten**, **FirmwareUpdate**, **EmergencyValveRelease**en **IncreasePressure** implementeren.
+* De methoden die u kunt plannen vanuit de oplossing om op het apparaat te worden uitgevoerd. Een **Chiller** -apparaat moet bijvoorbeeld methoden voor **opnieuw opstarten**, **FirmwareUpdate**, **EmergencyValveRelease** en **IncreasePressure** implementeren.

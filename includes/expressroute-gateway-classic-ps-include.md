@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/13/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 70ac106995324c758bde942d12191a01e3457e6e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0c05eb88df27ba9e71c0f61bad75457d893a7ce
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67175769"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95558355"
 ---
 > [!NOTE]
 > Deze voor beelden zijn niet van toepassing op configuraties met S2S/ExpressRoute naast elkaar.
@@ -25,7 +25,7 @@ Wanneer u een gateway aan een virtueel netwerk toevoegt met behulp van het klass
 
 ### <a name="download-the-network-configuration-file"></a>Het netwerk configuratie bestand downloaden
 
-1. Down load het netwerk configuratie bestand met behulp van de stappen in het artikel [netwerk configuratie bestand](../articles/virtual-network/virtual-networks-using-network-configuration-file.md) . Open het bestand met een tekst editor.
+1. Down load het netwerk configuratie bestand met behulp van de stappen in het artikel [netwerk configuratie bestand](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file) . Open het bestand met een tekst editor.
 2. Voeg een lokale netwerk site toe aan het bestand. U kunt elk geldig adres voorvoegsel gebruiken. U kunt elk geldig IP-adres voor de VPN-gateway toevoegen. De adres waarden in deze sectie worden niet gebruikt voor ExpressRoute-bewerkingen, maar zijn vereist voor bestands validatie. In het voor beeld is ' branch1 ' de naam van de site. U kunt een andere naam gebruiken, maar u moet dezelfde waarde gebruiken in het gedeelte gateway van het bestand.
 
    ```
@@ -92,10 +92,10 @@ Get-AzureVNetGateway
 
 ## <a name="resize-a-gateway"></a>Het formaat van een gateway wijzigen
 
-Er zijn een aantal [Gateway-sku's](../articles/expressroute/expressroute-about-virtual-network-gateways.md). U kunt de volgende opdracht gebruiken om de gateway-SKU op elk gewenst moment te wijzigen.
+Er zijn verschillende [gateway-SKU's](../articles/expressroute/expressroute-about-virtual-network-gateways.md). U kunt de volgende opdracht gebruiken om de gateway-SKU op elk gewenst moment te wijzigen.
 
 > [!IMPORTANT]
-> Deze opdracht werkt niet voor de Ultra Performance-gateway. Als u uw gateway wilt wijzigen in een Ultra Performance-gateway, verwijdert u eerst de bestaande ExpressRoute-gateway en maakt u vervolgens een nieuwe Ultra Performance-gateway. Als u uw gateway wilt downgradeen van een Ultra Performance-gateway, verwijdert u eerst de Ultra Performance-gateway en maakt u vervolgens een nieuwe gateway.
+> Deze opdracht werkt niet voor een UltraPerformance-gateway. Als u uw gateway wilt wijzigen in een UltraPerformance-gateway, verwijdert u eerst de bestaande ExpressRoute-gateway en maakt u vervolgens een nieuwe UltraPerformance-gateway. Als u uw UltraPerformance-gateway wilt downgraden, verwijdert u eerst de UltraPerformance-gateway en maakt u vervolgens een nieuwe gateway.
 >
 >
 

@@ -4,33 +4,33 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/05/2019
 ms.author: cshoe
-ms.openlocfilehash: d8c6b79dca97de3dd46eb9c677f2c94191f276b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0cd514c852e13b83a679821ca2d940e4ed112bd8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89304121"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95554455"
 ---
 Gebruik de functietrigger om te reageren op een gebeurtenis die naar een event hub-gebeurtenisstroom wordt verzonden. U moet leestoegang hebben tot de onderliggende event hub om de trigger in te stellen. Wanneer de functie wordt geactiveerd, wordt het aan de functie doorgegeven bericht getypeerd als een tekenreeks.
 
 ## <a name="scaling"></a>Schalen
 
-Elk exemplaar van een door een gebeurtenis geactiveerde functie wordt ondersteund door één [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor)-exemplaar. De trigger (verzorgd door Event Hubs) zorgt ervoor dat slechts één [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor)-exemplaar een lease kan krijgen op een bepaalde partitie.
+Elk exemplaar van een door een gebeurtenis geactiveerde functie wordt ondersteund door één [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor)-exemplaar. De trigger (verzorgd door Event Hubs) zorgt ervoor dat slechts één [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor)-exemplaar een lease kan krijgen op een bepaalde partitie.
 
 Denk bijvoorbeeld aan de volgende Event Hub:
 
 * 10 partities
 * 1\.000 gebeurtenissen, gelijkmatig verdeeld over alle partities, met 100 berichten in elke partitie
 
-Wanneer uw functie voor het eerst wordt ingeschakeld, is er slechts één exemplaar van de functie. We noemen het eerste functie-exemplaar `Function_0`. De `Function_0`-functie heeft één exemplaar van [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor) dat een lease heeft op alle tien partities. Dit exemplaar leest gebeurtenissen van partities 0-9. Vanaf dit punt gebeurt een van de volgende dingen:
+Wanneer uw functie voor het eerst wordt ingeschakeld, is er slechts één exemplaar van de functie. We noemen het eerste functie-exemplaar `Function_0`. De `Function_0`-functie heeft één exemplaar van [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor) dat een lease heeft op alle tien partities. Dit exemplaar leest gebeurtenissen van partities 0-9. Vanaf dit punt gebeurt een van de volgende dingen:
 
 * **Er zijn geen nieuwe functie-exemplaren nodig**: `Function_0` kan alle 1.000 gebeurtenissen verwerken voordat de schaallogica van Functions in werking treedt. In dit geval worden alle 1.000 berichten verwerkt door `Function_0`.
 
-* **Er wordt een extra functie-exemplaar toegevoegd**: Als de schaallogica van Functions vaststelt dat `Function_0` meer berichten heeft dan deze kan verwerken, wordt er een nieuw functie-app-exemplaar (`Function_1`) gemaakt. Deze nieuwe functie heeft ook een gekoppeld exemplaar van [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor). Als de onderliggende Event Hubs detecteren dat een nieuw host-exemplaar berichten probeert te lezen, worden de partities over de host-exemplaren verdeeld. Partities 0-4 kunnen bijvoorbeeld worden toegewezen aan `Function_0`, en partities 5-9 aan `Function_1`.
+* **Er wordt een extra functie-exemplaar toegevoegd**: Als de schaallogica van Functions vaststelt dat `Function_0` meer berichten heeft dan deze kan verwerken, wordt er een nieuw functie-app-exemplaar (`Function_1`) gemaakt. Deze nieuwe functie heeft ook een gekoppeld exemplaar van [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor). Als de onderliggende Event Hubs detecteren dat een nieuw host-exemplaar berichten probeert te lezen, worden de partities over de host-exemplaren verdeeld. Partities 0-4 kunnen bijvoorbeeld worden toegewezen aan `Function_0`, en partities 5-9 aan `Function_1`.
 
 * **Er worden nog N functie-exemplaren toegevoegd**: Als de schaallogica van Functions vaststelt dat zowel `Function_0` als `Function_1` meer berichten hebben dan ze kunnen verwerken, worden er nieuwe `Functions_N` functie-app-exemplaren gemaakt.  Er worden apps gemaakt tot het punt waarop `N` groter is dan het aantal event hub-partities. In ons voorbeeld verdeelt Event Hubs de partities opnieuw, in dit geval over de exemplaren `Function_0`...`Functions_9`.
 
-Wanneer er wordt geschaald, is `N` exemplaren een getal dat groter is dan het aantal event hub-partities. Dit patroon wordt gebruikt om ervoor te zorgen dat er [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor)-exemplaren beschikbaar zijn voor het verkrijgen van vergrendelingen op partities wanneer deze beschikbaar worden vanuit andere exemplaren. Er worden alleen kosten in rekening gebracht voor de resources die worden gebruikt wanneer het functie-exemplaar wordt uitgevoerd. Met andere woorden, er worden geen kosten in rekening gebracht voor deze overinrichting.
+Wanneer er wordt geschaald, is `N` exemplaren een getal dat groter is dan het aantal event hub-partities. Dit patroon wordt gebruikt om ervoor te zorgen dat er [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor)-exemplaren beschikbaar zijn voor het verkrijgen van vergrendelingen op partities wanneer deze beschikbaar worden vanuit andere exemplaren. Er worden alleen kosten in rekening gebracht voor de resources die worden gebruikt wanneer het functie-exemplaar wordt uitgevoerd. Met andere woorden, er worden geen kosten in rekening gebracht voor deze overinrichting.
 
 Wanneer de uitvoering van alle functies is voltooid (met of zonder fouten), worden controlepunten toegevoegd aan het gekoppelde opslagaccount. Wanneer het toevoegen van controlepunten slaagt, worden alle 1.000 berichten nooit meer opgehaald.
 
@@ -343,7 +343,7 @@ Kenmerken worden niet ondersteund door Python.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Gebruik vanuit de Java-[functies-runtimebibliotheek](https://docs.microsoft.com/java/api/overview/azure/functions/runtime) de [EventHubTrigger](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhubtrigger)-aantekening voor parameters waarvan de waarde afkomstig is van Event Hub. Door parameters met deze aantekeningen wordt de functie uitgevoerd wanneer er een gebeurtenis optreedt. Deze aantekening kan worden gebruikt met systeemeigen Java-typen, POJO's of nullbare waarden met `Optional<T>`.
+Gebruik vanuit de Java-[functies-runtimebibliotheek](/java/api/overview/azure/functions/runtime) de [EventHubTrigger](/java/api/com.microsoft.azure.functions.annotation.eventhubtrigger)-aantekening voor parameters waarvan de waarde afkomstig is van Event Hub. Door parameters met deze aantekeningen wordt de functie uitgevoerd wanneer er een gebeurtenis optreedt. Deze aantekening kan worden gebruikt met systeemeigen Java-typen, POJO's of nullbare waarden met `Optional<T>`.
 
 ---
 
@@ -366,11 +366,11 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 
 ## <a name="event-metadata"></a>Gebeurtenismetagegevens
 
-De Event Hubs-trigger biedt verschillende [metagegevenseigenschappen](../articles/azure-functions/./functions-bindings-expressions-patterns.md). Metagegevenseigenschappen kunnen worden gebruikt als onderdeel van bindingsexpressies in andere bindingen of als parameters in uw code. De eigenschappen zijn afkomstig van de [Event Data](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.eventdata)-klasse.
+De Event Hubs-trigger biedt verschillende [metagegevenseigenschappen](../articles/azure-functions/./functions-bindings-expressions-patterns.md). Metagegevenseigenschappen kunnen worden gebruikt als onderdeel van bindingsexpressies in andere bindingen of als parameters in uw code. De eigenschappen zijn afkomstig van de [Event Data](/dotnet/api/microsoft.servicebus.messaging.eventdata)-klasse.
 
 |Eigenschap|Type|Beschrijving|
 |--------|----|-----------|
-|`PartitionContext`|[PartitionContext](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.partitioncontext)|Het `PartitionContext`-exemplaar.|
+|`PartitionContext`|[PartitionContext](/dotnet/api/microsoft.servicebus.messaging.partitioncontext)|Het `PartitionContext`-exemplaar.|
 |`EnqueuedTimeUtc`|`DateTime`|De wachtrijtijd in UTC.|
 |`Offset`|`string`|De offset van de gegevens ten opzichte van de Event Hub-partitiestroom. De offset is een markering of id voor een gebeurtenis binnen de Event Hubs-stroom. De id is uniek binnen een partitie van de Event Hubs-stroom.|
 |`PartitionKey`|`string`|De partitie waarnaar gebeurtenisgegevens moeten worden verzonden.|

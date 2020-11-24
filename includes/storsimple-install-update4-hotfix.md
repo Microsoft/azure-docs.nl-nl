@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 89ad3dfffa82f062ef8bc808da19440adfa32f05
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc42c22579346c272ee5a6f41147e6b5b09643ba
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86050395"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95559380"
 ---
 #### <a name="to-download-hotfixes"></a>Hotfixes downloaden
 
@@ -101,7 +101,7 @@ Voer de volgende stappen uit om hotfixes in de normale modus te installeren en t
    * `FriendlySoftwareVersion: StorSimple 8000 Series Update 4.0`
    * `HcsSoftwareVersion: 6.3.9600.17820`
    
-     Als het versienummer niet is gewijzigd nadat de update is toegepast, kon de hotfix blijkbaar niet worden toegepast. Neem in dat geval contact op met [Microsoft Support](../articles/storsimple/storsimple-contact-microsoft-support.md) voor verdere hulp.
+     Als het versienummer niet is gewijzigd nadat de update is toegepast, kon de hotfix blijkbaar niet worden toegepast. Neem in dat geval contact op met [Microsoft Support](../articles/storsimple/storsimple-8000-contact-microsoft-support.md) voor verdere hulp.
      
      > [!IMPORTANT]
      > U moet de actieve controller opnieuw starten via de `Restart-HcsController` cmdlet voordat u de volgende update toepast.
@@ -169,7 +169,7 @@ Volg onderstaande instructies om de updates van de schijffirmware te installeren
     ```
 
 3. Bewaak de installatievoortgang met de opdracht `Get-HcsUpdateStatus`. De update is voltooid als de `RunInProgress` verandert in `False`.
-4. Wanneer de installatie is voltooid, wordt de controller waarop de hotfix van de onderhoudsmodus is geïnstalleerd, opnieuw opstart. Meld u aan als optie 1, **Meld u aan met volledige toegang**en controleer de versie van de schijf firmware. Type:
+4. Wanneer de installatie is voltooid, wordt de controller waarop de hotfix van de onderhoudsmodus is geïnstalleerd, opnieuw opstart. Meld u aan als optie 1, **Meld u aan met volledige toegang** en controleer de versie van de schijf firmware. Type:
    
    `Get-HcsFirmwareVersion`
    
@@ -267,4 +267,3 @@ Volg onderstaande instructies om de updates van de schijffirmware te installeren
    `Exit-HcsMaintenanceMode`
 
 5. De controllers starten opnieuw op wanneer u de onderhoudsmodus afsluit. Wanneer de updates van de schijffirmware met succes zijn toegepast en de onderhoudsmodus is afgesloten, gaat u weer naar de klassieke Azure-portal. Het is mogelijk dat in de portal gedurende 24 uur niet wordt weergegeven dat u de updates van de onderhoudsmodus hebt geïnstalleerd.
-

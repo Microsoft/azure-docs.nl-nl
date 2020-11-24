@@ -8,19 +8,19 @@ ms.topic: include
 ms.date: 10/29/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: e8e3df77df53b887c4367e46b05d8a7ea4eed2f6
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 946ff043828034340ae3273fc0629e32de755540
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93061599"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95558996"
 ---
 ## <a name="create-a-self-signed-root-certificate"></a><a name="rootcert"></a>Een zelfondertekend basis certificaat maken
 
-Gebruik de cmdlet New-SelfSignedCertificate om een zelfondertekend basis certificaat te maken. Zie [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate)voor meer informatie over para meters.
+Gebruik de cmdlet New-SelfSignedCertificate om een zelfondertekend basis certificaat te maken. Zie [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate)voor meer informatie over para meters.
 
 1. Open op een computer met Windows 10 of Windows Server 2016 een Windows Power shell-console met verhoogde bevoegdheden. Deze voor beelden werken niet in de Azure Cloud Shell ' Probeer het '. U moet deze voor beelden lokaal uitvoeren.
-1. Gebruik het volgende voor beeld om het zelfondertekende basis certificaat te maken. In het volgende voor beeld wordt een zelfondertekend basis certificaat gemaakt met de naam ' P2SRootCert ', dat automatisch wordt geïnstalleerd in ' certificaten-huidige Gebruiker\persoonlijk\certificaten '. U kunt het certificaat weer geven door *certmgr. msc* te openen of *gebruikers certificaten te beheren* .
+1. Gebruik het volgende voor beeld om het zelfondertekende basis certificaat te maken. In het volgende voor beeld wordt een zelfondertekend basis certificaat gemaakt met de naam ' P2SRootCert ', dat automatisch wordt geïnstalleerd in ' certificaten-huidige Gebruiker\persoonlijk\certificaten '. U kunt het certificaat weer geven door *certmgr. msc* te openen of *gebruikers certificaten te beheren*.
 
    Meld u aan met de `Connect-AzAccount` cmdlet. Voer vervolgens het volgende voor beeld uit met alle benodigde wijzigingen.
 
@@ -39,7 +39,7 @@ Op elke clientcomputer die via punt-naar-site verbinding maakt met een VNet, moe
 
 De volgende stappen helpen u bij het genereren van een client certificaat van een zelfondertekend basis certificaat. U kunt meerdere client certificaten genereren uit hetzelfde basis certificaat. Wanneer u client certificaten genereert met behulp van de onderstaande stappen, wordt het client certificaat automatisch geïnstalleerd op de computer die u hebt gebruikt voor het genereren van het certificaat. Als u een client certificaat op een andere client computer wilt installeren, kunt u het certificaat exporteren.
 
-In de voor beelden wordt de New-SelfSignedCertificate-cmdlet gebruikt om een client certificaat te genereren dat binnen een jaar verloopt. Zie [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate)voor meer informatie over para meters, zoals het instellen van een andere verloop waarde voor het client certificaat.
+In de voor beelden wordt de New-SelfSignedCertificate-cmdlet gebruikt om een client certificaat te genereren dat binnen een jaar verloopt. Zie [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate)voor meer informatie over para meters, zoals het instellen van een andere verloop waarde voor het client certificaat.
 
 ### <a name="example-1---powershell-console-session-still-open"></a>Voor beeld 1: Power shell-console sessie is nog geopend
 

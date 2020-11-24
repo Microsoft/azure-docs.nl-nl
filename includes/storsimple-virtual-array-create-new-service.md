@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/15/2018
 ms.author: alkohli
 ms.custom: include file
-ms.openlocfilehash: 7bdbfd8ffd44f9515ae4df20c55b09c8a0adcaef
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 1be6a654962b513cfcf755d45e562b86067e7b25
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376035"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95560636"
 ---
 #### <a name="to-create-a-new-service"></a>Een nieuwe service maken
 
@@ -29,13 +29,13 @@ ms.locfileid: "93376035"
 
     2.  Kies een **abonnement** in de vervolgkeuzelijst. Het abonnement is gekoppeld aan uw factureringsrekening. Dit veld wordt niet weergegeven als u slechts één abonnement hebt.
 
-    3.  Voor **resource groep** selecteert u een bestaande of een nieuwe groep maken. Zie [Azure-resourcegroepen](/azure/azure-resource-manager/management/manage-resource-groups-portal) voor meer informatie.
+    3.  Voor **resource groep** selecteert u een bestaande of een nieuwe groep maken. Zie [Azure-resourcegroepen](../articles/azure-resource-manager/management/manage-resource-groups-portal.md) voor meer informatie.
 
     4.  Geef een **locatie** voor uw service op. Zie [Azure-regio's](https://azure.microsoft.com/regions/#services) voor meer informatie over welke services beschikbaar zijn in welke regio. Kies in het algemeen een **locatie** die het dichtst bij de geografische regio ligt waar u uw apparaat wilt implementeren. U kunt ook rekening houden met het volgende:
 
         -   Als u bestaande workloads in azure hebt die u ook wilt implementeren met uw StorSimple-apparaat, wordt u aangeraden dat Data Center te gebruiken.
 
-        -   Uw StorSimple-Apparaatbeheer en Azure-opslag kunnen zich op twee verschillende locaties bevinden. In dat geval moet u de StorSimple--apparaatbeheerfunctie en het Azure Storage-account afzonderlijk maken. Als u een Azure-opslag account wilt maken, gaat u naar Azure Storage in het Azure Portal en volgt u de stappen in [een opslag account maken](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account). Nadat u dit account hebt gemaakt, voegt u het toe aan de StorSimple-apparaatbeheerfunctie met de stappen in [Een nieuw opslagaccount voor de service maken](https://azure.microsoft.com/documentation/articles/storsimple-deployment-walkthrough/#configure-a-new-storage-account-for-the-service).
+        -   Uw StorSimple-Apparaatbeheer en Azure-opslag kunnen zich op twee verschillende locaties bevinden. In dat geval moet u de StorSimple--apparaatbeheerfunctie en het Azure Storage-account afzonderlijk maken. Als u een Azure-opslag account wilt maken, gaat u naar Azure Storage in het Azure Portal en volgt u de stappen in [een opslag account maken](../articles/storage/common/storage-account-create.md). Nadat u dit account hebt gemaakt, voegt u het toe aan de StorSimple-apparaatbeheerfunctie met de stappen in [Een nieuw opslagaccount voor de service maken](../articles/storsimple/storsimple-virtual-array-manage-storage-accounts.md#add-a-storage-account-credential).
 
         -   Als u het virtuele apparaat in de overheids Portal implementeert, is de StorSimple-Apparaatbeheer-service beschikbaar in Amerikaanse Iowa en Amerikaanse Virginia-locaties.
 
@@ -48,5 +48,3 @@ ms.locfileid: "93376035"
         ![Nieuwe service maken 2](./media/storsimple-virtual-array-create-new-service/createnewservice4.png)  
 
 U wordt omgeleid naar de pagina **service** -lands. Het maken van de service duurt enkele minuten. Nadat de service is gemaakt, krijgt u hierover een melding en wordt de status van de service gewijzigd in **Actief**.
-
-

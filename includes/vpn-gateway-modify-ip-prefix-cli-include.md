@@ -1,6 +1,6 @@
 ---
-title: Include-bestand
-description: Include-bestand
+title: bestand opnemen
+description: bestand opnemen
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: 2b2c2a8f471aba36592f76caf46b7d26d7e3bb31
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: f222d4a7f4724506112a47eff61ccc48354dd622
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755600"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95557934"
 ---
 ### <a name="to-modify-local-network-gateway-ip-address-prefixes---no-gateway-connection"></a><a name="noconnection"></a>IP-adresvoorvoegsels wijzigen voor de gateway van een lokaal netwerk - geen gatewayverbinding
 
-Als u geen gatewayverbinding hebt en u IP-adresvoorvoegsels wilt toevoegen of verwijderen, gebruikt u dezelfde opdracht die u gebruikt voor het maken van de gateway van het lokale netwerk, [az network local-gateway create](https://docs.microsoft.com/cli/azure/network/local-gateway). U kunt deze opdracht ook gebruiken om het gateway-IP-adres voor het VPN-apparaat bij te werken. Gebruik de bestaande naam van de gateway van uw lokale netwerk om de huidige instellingen te overschrijven. Als u een andere naam gebruikt, maakt u een nieuwe lokale netwerkgateway in plaats van de bestaande gateway te overschrijven.
+Als u geen gatewayverbinding hebt en u IP-adresvoorvoegsels wilt toevoegen of verwijderen, gebruikt u dezelfde opdracht die u gebruikt voor het maken van de gateway van het lokale netwerk, [az network local-gateway create](/cli/azure/network/local-gateway). U kunt deze opdracht ook gebruiken om het gateway-IP-adres voor het VPN-apparaat bij te werken. Gebruik de bestaande naam van de gateway van uw lokale netwerk om de huidige instellingen te overschrijven. Als u een andere naam gebruikt, maakt u een nieuwe lokale netwerkgateway in plaats van de bestaande gateway te overschrijven.
 
 Elke keer dat u een wijziging aanbrengt, moet de volledige lijst met voorvoegsels worden opgegeven, niet alleen de voorvoegsels die u wilt wijzigen. Geef alleen de voorvoegsels op die u wilt houden. In dit geval 10.0.0.0/24 en 20.0.0.0/24
 
@@ -27,7 +27,7 @@ az network local-gateway create --gateway-ip-address 23.99.221.164 --name Site2 
 
 ### <a name="to-modify-local-network-gateway-ip-address-prefixes---existing-gateway-connection"></a><a name="withconnection"></a>IP-adresvoorvoegsels wijzigen voor de gateway van een lokaal netwerk - bestaande gatewayverbinding
 
-Als u een gatewayverbinding hebt en u IP-adresvoorvoegsels wilt toevoegen of verwijderen, kunt u de voorvoegsels bijwerken met [az network local-gateway update](https://docs.microsoft.com/cli/azure/network/local-gateway). Dit veroorzaakt enige downtime in uw VPN-verbinding. Als u de IP-adresvoorvoegsels wijzigt, hoeft u de VPN-gateway niet te verwijderen.
+Als u een gatewayverbinding hebt en u IP-adresvoorvoegsels wilt toevoegen of verwijderen, kunt u de voorvoegsels bijwerken met [az network local-gateway update](/cli/azure/network/local-gateway). Dit veroorzaakt enige downtime in uw VPN-verbinding. Als u de IP-adresvoorvoegsels wijzigt, hoeft u de VPN-gateway niet te verwijderen.
 
 Elke keer dat u een wijziging aanbrengt, moet de volledige lijst met voorvoegsels worden opgegeven, niet alleen de voorvoegsels die u wilt wijzigen. In dit voorbeeld zijn 10.0.0.0/24 en 20.0.0.0/24 al aanwezig. We voegen de voorvoegsels 30.0.0.0/24 en 40.0.0.0/24 toe en geven alle 4 voorvoegsels op bij het bijwerken.
 

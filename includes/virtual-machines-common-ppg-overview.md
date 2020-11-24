@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/30/2019
 ms.author: zivr
 ms.custom: include file
-ms.openlocfilehash: b5827d60b5968eb9f5e9e0a2ca5ec884366aea3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: daed8dc62fdfd86ecf785a0bfd83b2b6c0b4cc03
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91376699"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95555295"
 ---
 Het plaatsen van Vm's in één regio vermindert de fysieke afstand tussen de exemplaren. Als u ze in één beschikbaarheids zone plaatst, worden deze ook fysiek dichter bij elkaar gebracht. Naarmate de Azure-footprint groeit, kan één beschikbaarheids zone echter meerdere fysieke data centers omvatten, wat kan leiden tot een netwerk latentie die van invloed is op uw toepassing. 
 
@@ -66,7 +66,7 @@ U kunt het volgende doen om de uitlijnings status van uw proximity-plaatsings gr
 
     - **Uitgelijnd**: de resource bevindt zich binnen dezelfde latentie envelop van de plaatsings groep voor nabijheid.
 
-    - **Onbekend**: de toewijzing van ten minste één van de VM-resources is ongedaan gemaakt. Zodra de back-up is gestart, moet de status weer **uitgelijnd**zijn.
+    - **Onbekend**: de toewijzing van ten minste één van de VM-resources is ongedaan gemaakt. Zodra de back-up is gestart, moet de status weer **uitgelijnd** zijn.
 
     - **Niet uitgelijnd**: ten minste één VM-resource is niet uitgelijnd met de Proximity-plaatsings groep. De specifieke resources die niet zijn uitgelijnd, worden ook afzonderlijk in het gedeelte Membership genoemd
 
@@ -82,7 +82,7 @@ Als u een proximity-plaatsings groep hebt `Not Aligned` , kunt u de betrokken br
 Als er een toewijzings fout is opgetreden vanwege implementatie beperkingen, moet u mogelijk alle resources in de desbetreffende proximity-plaatsings groep (inclusief de uitgelijnde resources) eerst stop\deallocate en vervolgens opnieuw opstarten om de uitlijning te herstellen.
 
 ## <a name="best-practices"></a>Aanbevolen procedures 
-- Voor de laagste latentie gebruikt u proximity-plaatsings groepen samen met versneld netwerken. Zie [een virtuele Linux-machine maken met versneld netwerken](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) of [een virtuele Windows-machine maken met versneld netwerken](/azure/virtual-network/create-vm-accelerated-networking-powershell?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)voor meer informatie.
+- Voor de laagste latentie gebruikt u proximity-plaatsings groepen samen met versneld netwerken. Zie [een virtuele Linux-machine maken met versneld netwerken](../articles/virtual-network/create-vm-accelerated-networking-cli.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) of [een virtuele Windows-machine maken met versneld netwerken](../articles/virtual-network/create-vm-accelerated-networking-powershell.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json)voor meer informatie.
 - Implementeer alle VM-grootten in één sjabloon. Als u wilt voor komen dat er op hardware wordt gelandd die geen ondersteuning biedt voor alle VM-Sku's en-groottes die u nodig hebt, moet u alle toepassings lagen in één sjabloon toevoegen, zodat ze allemaal tegelijk worden geïmplementeerd.
 - Als u uw implementatie met Power shell, CLI of de SDK bijwerkt, wordt er mogelijk een toewijzings fout weer geven `OverconstrainedAllocationRequest` . In dit geval moet u de toewijzing van alle bestaande Vm's stoppen of ongedaan maken en de volg orde wijzigen in het implementatie script om te beginnen met de VM-SKU/-grootten die zijn mislukt. 
 - Wanneer u een bestaande plaatsings groep hergebruikt van waaruit Vm's zijn verwijderd, wacht u totdat de verwijdering volledig is voltooid voordat u virtuele machines toevoegt.

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/15/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 535ee447ff63aabb9af1f32252fb4e4dd2c392de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 764d75872eb1bad0647235cd70f9984ebd7789bd
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91779588"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95555890"
 ---
 De volgende tabel vermeldt quotuminformatie die specifiek is voor Azure Service Bus-berichten. Voor informatie over prijzen en andere quota voor Service Bus raadpleegt u [Service Bus-prijzen](https://azure.microsoft.com/pricing/details/service-bus/).
 
@@ -21,11 +21,11 @@ De volgende tabel vermeldt quotuminformatie die specifiek is voor Azure Service 
 | --- | --- | --- | --- |
 | Maximumaantal Basic- of Standard-naamruimten per Azure-abonnement |Naamruimte |Verdere aanvragen voor aanvullende Basic of Standard-naamruimten worden geweigerd door de Azure Portal. |100|
 | Maximumaantal Premium-naamruimten per Azure-abonnement |Naamruimte |Verdere aanvragen voor aanvullende Premium-naamruimten worden geweigerd door de Portal. |100 |
-| Wachtrij- of onderwerpgrootte |Entiteit |Gedefinieerd bij het maken van de wachtrij of het onderwerp. <br/><br/> Verdere binnenkomende berichten worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |1, 2, 3, 4 GB of 5 GB.<br /><br />In de Premium-SKU en de Standard-SKU waar [partitioneren](/azure/service-bus-messaging/service-bus-partitioning) is ingeschakeld is de maximumgrootte van de wachtrij of het onderwerp 80 GB. |
+| Wachtrij- of onderwerpgrootte |Entiteit |Gedefinieerd bij het maken van de wachtrij of het onderwerp. <br/><br/> Verdere binnenkomende berichten worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |1, 2, 3, 4 GB of 5 GB.<br /><br />In de Premium-SKU en de Standard-SKU waar [partitioneren](../articles/service-bus-messaging/service-bus-partitioning.md) is ingeschakeld is de maximumgrootte van de wachtrij of het onderwerp 80 GB. |
 | Aantal gelijktijdige verbindingen in een naamruimte |Naamruimte |Volgende aanvragen voor extra verbindingen worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. REST-bewerkingen tellen niet mee voor gelijktijdige TCP-verbindingen. |Netberichten: 1000.<br /><br />AMQP: 5000. |
 | Aantal gelijktijdige ontvangen verzoeken in een wachtrij, onderwerp of abonnementsentiteit |Entiteit |Verdere ontvangstverzoeken worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. Dit quotum is van toepassing op het gecombineerde aantal gelijktijdige ontvangstbewerkingen in alle abonnementen op een onderwerp. |5.000 |
 | Aantal onderwerpen of wachtrijen per naamruimte |Naamruimte |Verdere verzoeken om nieuwe onderwerpen of wachtrijen in de naamruimte te maken, worden geweigerd. Als dit wordt geconfigureerd via de [Azure Portal][Azure portal], wordt er een foutbericht gegenereerd. Als deze wordt aangeroepen vanuit de beheer-API, wordt een uitzondering ontvangen door de aanroepende code. |10.000 voor de Basic- of Standard-laag. Het totale aantal onderwerpen en wachtrijen in een naamruimte moet minder zijn dan of gelijk zijn aan 10.000. <br/><br/>Voor de Premium-laag 1.000 per Messaging-eenheid. De maximumlimiet is 4000. |
-| Aantal [gepartitioneerde onderwerpen](/azure/service-bus-messaging/service-bus-partitioning) of wachtrijen per naamruimte |Naamruimte |Verdere verzoeken om nieuwe gepartitioneerde onderwerpen of wachtrijen in de naamruimte te maken, worden geweigerd. Als dit wordt geconfigureerd via de [Azure Portal][Azure portal], wordt er een foutbericht gegenereerd. Indien aangeroepen vanuit de beheer-API, wordt de uitzondering **QuotaExceededException** ontvangen door de aanroepende code. |Basic- en Standard-lagen: 100.<br/><br/>Gepartitioneerde entiteiten worden niet ondersteund in de [Premium-laag](../articles/service-bus-messaging/service-bus-premium-messaging.md).<br/><br />Elke gepartitioneerde wachtrij of onderwerp telt voor het quotum van 1000 entiteiten per naamruimte. |
+| Aantal [gepartitioneerde onderwerpen](../articles/service-bus-messaging/service-bus-partitioning.md) of wachtrijen per naamruimte |Naamruimte |Verdere verzoeken om nieuwe gepartitioneerde onderwerpen of wachtrijen in de naamruimte te maken, worden geweigerd. Als dit wordt geconfigureerd via de [Azure Portal][Azure portal], wordt er een foutbericht gegenereerd. Indien aangeroepen vanuit de beheer-API, wordt de uitzondering **QuotaExceededException** ontvangen door de aanroepende code. |Basic- en Standard-lagen: 100.<br/><br/>Gepartitioneerde entiteiten worden niet ondersteund in de [Premium-laag](../articles/service-bus-messaging/service-bus-premium-messaging.md).<br/><br />Elke gepartitioneerde wachtrij of onderwerp telt voor het quotum van 1000 entiteiten per naamruimte. |
 | Maximale grootte van ieder berichtentiteitspad: wachtrij of onderwerp |Entiteit |- |260 tekens. |
 | Maximale grootte van berichtentiteitsnaam: naamruimte, abonnement of abonnementsregel |Entiteit |- |50 tekens. |
 | Maximale berichtgrootte van een [bericht-ID](/dotnet/api/microsoft.azure.servicebus.message.messageid) | Entiteit |- | 128 |

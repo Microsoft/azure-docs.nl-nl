@@ -4,12 +4,12 @@ ms.service: storage
 ms.topic: include
 ms.date: 09/28/2020
 ms.author: normesta
-ms.openlocfilehash: 6d90b4b68f1f9f4a0fcd20c1d371a32759449fab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b18687c0a6f3e48d94431e88be8ae8137c9dcdb
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91711255"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95556200"
 ---
 | Eigenschap | Beschrijving |
 |:--- |:---|
@@ -33,8 +33,8 @@ ms.locfileid: "91711255"
 |**contentLengthHeader** | De waarde van de content-length-header voor de aanvraag die naar de opslag service wordt verzonden. Als de aanvraag is voltooid, is deze waarde gelijk aan requestBodySize. Als een aanvraag mislukt, is deze waarde mogelijk niet gelijk aan requestBodySize of kan deze leeg zijn. |
 |**tlsVersion** | De TLS-versie die wordt gebruikt in de verbinding van de aanvraag. Bijvoorbeeld: `TLS 1.2`. |
 |**smbTreeConnectID** | De SMB- **treeConnectId** (Server Message Block) is ingesteld tijdens de structuur verbindings tijd. Bijvoorbeeld: `0x3` |
-|**smbPersistentHandleID** | De permanente ingangs-ID van een SMB2-aanvraag maken die de netwerk verbinding verbreekt.  Ernaar wordt verwezen in [MS-SMB2](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/f1d9b40d-e335-45fc-9d0b-199a31ede4c3) 2.2.14.1 als **SMB2_FILEID. Permanent**. Bijvoorbeeld: `0x6003f` |
-|**smbVolatileHandleID** | Vluchtige ingangs-ID van een SMB2 maken-aanvraag die wordt gerecycled bij het opnieuw verbinden met het netwerk.  Ernaar wordt verwezen in [MS-SMB2](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/f1d9b40d-e335-45fc-9d0b-199a31ede4c3) 2.2.14.1 als **SMB2_FILEID. Vluchtig**. Bijvoorbeeld: `0xFFFFFFFF00000065` |
+|**smbPersistentHandleID** | De permanente ingangs-ID van een SMB2-aanvraag maken die de netwerk verbinding verbreekt.  Ernaar wordt verwezen in [MS-SMB2](/openspecs/windows_protocols/ms-smb2/f1d9b40d-e335-45fc-9d0b-199a31ede4c3) 2.2.14.1 als **SMB2_FILEID. Permanent**. Bijvoorbeeld: `0x6003f` |
+|**smbVolatileHandleID** | Vluchtige ingangs-ID van een SMB2 maken-aanvraag die wordt gerecycled bij het opnieuw verbinden met het netwerk.  Ernaar wordt verwezen in [MS-SMB2](/openspecs/windows_protocols/ms-smb2/f1d9b40d-e335-45fc-9d0b-199a31ede4c3) 2.2.14.1 als **SMB2_FILEID. Vluchtig**. Bijvoorbeeld: `0xFFFFFFFF00000065` |
 |**smbMessageID** | De verbinding met de relatieve **MessageId**. Bijvoorbeeld: `0x3b165` |
 |**smbCreditsConsumed** | De ingang of uitgave die door de aanvraag wordt verbruikt in eenheden van 64 kB. Bijvoorbeeld: `0x3` |
 |**smbCommandDetail** | Meer informatie over deze specifieke aanvraag in plaats van het algemene type aanvraag. Bijvoorbeeld: `0x2000 bytes at offset 0xf2000` |

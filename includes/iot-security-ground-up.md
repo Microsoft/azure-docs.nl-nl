@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/24/2018
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: 4f7ec9bbf7877d8067b3d8b1566a5cd2c2075281
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 234407e6973657ba3ad0d78189e7cb1d363c15e2
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86050295"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95561675"
 ---
 De Internet of Things (IoT) vormt unieke beveiligings-, privacy-en nalevings uitdagingen voor bedrijven wereld wijd. In tegens telling tot traditionele Cyber technologie waarbij deze problemen rond software en hoe deze worden geïmplementeerd, is IoT wat er gebeurt wanneer de Cyber en de fysieke werelden convergeren. Het beveiligen van IoT-oplossingen vereist dat beveiligde inrichting van apparaten, beveiligde connectiviteit tussen deze apparaten en de Cloud, en de beveiliging van gegevens in de Cloud wordt gewaarborgd tijdens de verwerking en opslag. Voor het werken met deze functionaliteit zijn echter apparaten die zijn beperkt tot resources, geografische distributie van implementaties en een groot aantal apparaten binnen een oplossing.
 
@@ -39,11 +39,11 @@ De [Security Development Lifecycle (SDL)](https://www.microsoft.com/sdl/) biedt 
 
 Microsoft Azure biedt een volledige Cloud oplossing, een die een voortdurend groeiende verzameling van geïntegreerde Cloud Services combineert: analyse, machine learning, opslag, beveiliging, netwerken en Internet, met een toonaangevende toezeg ging voor de bescherming en privacy van uw gegevens. In het geval van een [schending](https://azure.microsoft.com/blog/red-teaming-using-cutting-edge-threat-simulation-to-harden-the-microsoft-enterprise-cloud/) van micro soft wordt gebruikgemaakt van een speciaal *rood team* van software beveiligings experts die aanvallen simuleren, de mogelijkheid van Azure testen om te detecteren, te beschermen tegen opkomende bedreigingen en te herstellen van inbreuken. Het [wereld wijde incidenten](https://www.microsoft.com/en-us/TrustCenter/Security/DesignOpSecurity) team van micro soft werkt rond de klok om de gevolgen van aanvallen en schadelijke activiteiten te verhelpen. Het team volgt vastgelegde procedures voor incident beheer, communicatie en herstel, en maakt gebruik van Detecteer bare en voorspelbaarde interfaces met interne en externe partners.
 
-De systemen van micro soft bieden voortdurende indringings detectie en preventie, preventie van aanvallen van services, regel matige indringings tests en forensische-hulpprogram ma's waarmee bedreigingen kunnen worden geïdentificeerd en verminderd. [Multi-factor Authentication](../articles/active-directory/authentication/multi-factor-authentication.md) biedt een extra beveiligingslaag waarmee eind gebruikers toegang hebben tot het netwerk. En voor de toepassing en de host-provider biedt micro soft toegangs beheer, bewaking, anti-malware, scan van beveiligings problemen, patches en configuratie beheer.
+De systemen van micro soft bieden voortdurende indringings detectie en preventie, preventie van aanvallen van services, regel matige indringings tests en forensische-hulpprogram ma's waarmee bedreigingen kunnen worden geïdentificeerd en verminderd. [Multi-factor Authentication](../articles/active-directory/authentication/concept-mfa-howitworks.md) biedt een extra beveiligingslaag waarmee eind gebruikers toegang hebben tot het netwerk. En voor de toepassing en de host-provider biedt micro soft toegangs beheer, bewaking, anti-malware, scan van beveiligings problemen, patches en configuratie beheer.
 
 De oplossings Accelerators maken gebruik van de beveiliging en privacy die zijn ingebouwd in het Azure-platform, samen met de SDL-en OSA-processen voor een veilige ontwikkeling en werking van alle micro soft-software. Deze procedures bieden beveiliging van de infra structuur, netwerk beveiliging en identiteits-en beheer functies die van toepassing zijn op de beveiliging van elke oplossing.
 
-De [Azure-IOT hub](../articles/iot-hub/about-iot-hub.md) in de [IOT-oplossings versnellers](../articles/iot-fundamentals/iot-introduction.md) biedt een volledig beheerde service die betrouw bare en veilige bidirectionele communicatie mogelijk maakt tussen IOT-apparaten en Azure-Services, zoals [Azure machine learning](../articles/machine-learning/studio/what-is-machine-learning.md) en [Azure stream Analytics](../articles/stream-analytics/stream-analytics-introduction.md) met behulp van beveiligings referenties per apparaat en toegangs beheer.
+De [Azure-IOT hub](../articles/iot-hub/about-iot-hub.md) in de [IOT-oplossings versnellers](../articles/iot-fundamentals/iot-introduction.md) biedt een volledig beheerde service die betrouw bare en veilige bidirectionele communicatie mogelijk maakt tussen IOT-apparaten en Azure-Services, zoals [Azure machine learning](../articles/machine-learning/classic/index.yml) en [Azure stream Analytics](../articles/stream-analytics/stream-analytics-introduction.md) met behulp van beveiligings referenties per apparaat en toegangs beheer.
 
 Voor de beste communicatie over de beveiligings-en privacyfuncties die zijn ingebouwd in de Azure IoT-oplossings accelerators, wordt in dit artikel de suite onderverdeeld in de drie primaire beveiligings gebieden.
 
@@ -89,7 +89,7 @@ Met behulp van Azure Active Directory (AAD) voor gebruikers verificatie en-autor
 
 Zodra de gegevens zich in de cloud bevinden, kunnen ze worden verwerkt en opgeslagen in een door de gebruiker gedefinieerde werk stroom. De toegang tot elk deel van de gegevens wordt bepaald door Azure Active Directory, afhankelijk van de gebruikte opslag service.
 
-Alle sleutels die worden gebruikt door de IoT-infra structuur, worden opgeslagen in de cloud in beveiligde opslag, met de mogelijkheid om in te richten op de sleutel sleutels moet opnieuw worden ingericht. Gegevens kunnen worden opgeslagen in [Azure Cosmos DB](../articles/cosmos-db/introduction.md) of in [SQL database](../articles/sql-database/sql-database-faq.md), waardoor de definitie van het gewenste beveiligings niveau kan worden bepaald. Daarnaast biedt Azure een manier om alle toegang tot uw gegevens te bewaken en te controleren om u te waarschuwen over inbreuken of onbevoegde toegang.
+Alle sleutels die worden gebruikt door de IoT-infra structuur, worden opgeslagen in de cloud in beveiligde opslag, met de mogelijkheid om in te richten op de sleutel sleutels moet opnieuw worden ingericht. Gegevens kunnen worden opgeslagen in [Azure Cosmos DB](../articles/cosmos-db/introduction.md) of in [SQL database](../articles/azure-sql/database/sql-database-paas-overview.md), waardoor de definitie van het gewenste beveiligings niveau kan worden bepaald. Daarnaast biedt Azure een manier om alle toegang tot uw gegevens te bewaken en te controleren om u te waarschuwen over inbreuken of onbevoegde toegang.
 
 ## <a name="conclusion"></a>Conclusie
 

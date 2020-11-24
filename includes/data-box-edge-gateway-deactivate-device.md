@@ -4,18 +4,18 @@ ms.service: databox
 ms.topic: include
 ms.date: 03/05/2019
 ms.author: alkohli
-ms.openlocfilehash: 21c19027d21a87e199d74644cfc5c8f3cd52ba4c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c1b56cfb85595b8a17dc18f69a0b162d504c04ec
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79129232"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95554647"
 ---
 Om uw apparaat te herstellen naar de fabrieksinstellingen, moet u alle gegevens op de gegevensschijf en de opstartschijf veilig wissen. 
 
 Gebruik de `Reset-HcsAppliance` cmdlet om zowel de gegevens schijven als de opstart schijf of alleen de gegevens schijven te wissen. `ClearData`Met de `BootDisk` Opties en kunt u de gegevens schijven en de opstart schijf respectievelijk wissen.
 
-De `BootDisk` Switch wist de opstart schijf en maakt het apparaat onbruikbaar. Deze optie dient alleen te worden gebruikt wanneer het apparaat moet worden geretourneerd naar Microsoft. Zie [het apparaat terugsturen naar micro soft](https://docs.microsoft.com/azure/databox-online/data-box-edge-return-device)voor meer informatie.
+De `BootDisk` Switch wist de opstart schijf en maakt het apparaat onbruikbaar. Deze optie dient alleen te worden gebruikt wanneer het apparaat moet worden geretourneerd naar Microsoft. Zie [het apparaat terugsturen naar micro soft](../articles/databox-online/azure-stack-edge-return-device.md)voor meer informatie.
 
 Als u het apparaat opnieuw instelt in de lokale webinterface, worden alleen de gegevensschijven veilig gewist, maar wordt de opstartschijf intact gehouden. De opstartschijf bevat de apparaatconfiguratie.
 

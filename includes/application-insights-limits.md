@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: mbullwin
 ms.custom: include file
-ms.openlocfilehash: bb9f398643007271935a434e22978e555e002232
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 76176c72ad77341d7db1c8f4158a90836b74a91c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91779176"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95561889"
 ---
 Er gelden enkele beperkingen voor het aantal meetgegevens en gebeurtenissen per toepassing, per instrumentatiesleutel. De limieten zijn afhankelijk van de [prijscategorie](https://azure.microsoft.com/pricing/details/application-insights/) die u kiest.
 
@@ -21,7 +21,7 @@ Er gelden enkele beperkingen voor het aantal meetgegevens en gebeurtenissen per 
 | --- | --- | --- |
 | Totale hoeveelheid gegevens per dag | 100 GB | U kunt gegevens beperken door een maximum in te stellen. Als u meer gegevens nodig hebt, kunt u de limiet in de portal verhogen tot 1000 GB. Voor capaciteiten groter dan 1000 GB stuurt u een mail naar AIDataCap@microsoft.com.
 | Beperking | 32.000 gebeurtenissen per seconde | De limiet wordt gemeten in een minuut.
-| Bewaartijd voor gegevens | [30 - 730 dagen](https://docs.microsoft.com/azure/azure-monitor/app/pricing#change-the-data-retention-period)  | Deze resource is voor [Search](../articles/azure-monitor/app/diagnostic-search.md), [Analytics](../articles/azure-monitor/app/analytics.md) en [Metrics Explorer](../articles/azure-monitor/app/metrics-explorer.md).
+| Bewaartijd voor gegevens | [30 - 730 dagen](../articles/azure-monitor/app/pricing.md#change-the-data-retention-period)  | Deze resource is voor [Search](../articles/azure-monitor/app/diagnostic-search.md), [Analytics](../articles/azure-monitor/log-query/log-query-overview.md) en [Metrics Explorer](../articles/azure-monitor/platform/metrics-charts.md).
 | Bewaartijd van gedetailleerde resultaten van [beschikbaarheidstests met meerdere stappen](../articles/azure-monitor/app/availability-multistep.md) | 90 dagen | Deze resource biedt gedetailleerde resultaten van elke stap.
 | Maximale grootte telemetriegegeven | 64 KB |
 | Maximumaantal telemetriegegevens per batch | 64 K |

@@ -5,18 +5,18 @@ ms.subservice: pod
 ms.topic: include
 ms.date: 09/git14/2020
 ms.author: alkohli
-ms.openlocfilehash: 91f91b1260cc445f90c2608fc5259ad61acd37ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 25c2ea04cd062554a975c63aae9b97846e646d68
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90533239"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95557224"
 ---
-Hier volgt een lijst met de ondersteunde opslag accounts en de opslag typen voor het Data Box apparaat. Zie [typen opslag accounts](/azure/storage/common/storage-account-overview#types-of-storage-accounts)voor een volledige lijst van alle verschillende soorten opslag accounts en de volledige mogelijkheden hiervan.
+Hier volgt een lijst met de ondersteunde opslag accounts en de opslag typen voor het Data Box apparaat. Zie [typen opslag accounts](../articles/storage/common/storage-account-overview.md#types-of-storage-accounts)voor een volledige lijst van alle verschillende soorten opslag accounts en de volledige mogelijkheden hiervan.
 
 De volgende tabel bevat de ondersteunde opslag accounts voor import orders.
 
-| **Opslag account/ondersteunde opslag typen** | **Blok-blob** |**Pagina-BLOB*** |**Azure-bestanden** |**Opmerkingen**|
+| **Opslag account/ondersteunde opslag typen** | **Blok-blob** |**Pagina-BLOB** _ |_ *Azure files** |**Opmerkingen**|
 | --- | --- | -- | -- | -- |
 | Klassieke standaard | J | J | J |
 | Algemene v1-standaard  | J | J | J | Zowel warm als koud worden ondersteund.|
@@ -29,7 +29,7 @@ De volgende tabel bevat de ondersteunde opslag accounts voor import orders.
 
 De volgende tabel bevat de ondersteunde opslag accounts voor export orders.
 
-| **Opslag account/ondersteunde opslag typen** | **Blok-blob** |**Pagina-BLOB*** |**Azure-bestanden** |**Ondersteunde toegangs lagen**|
+| **Opslag account/ondersteunde opslag typen** | **Blok-blob** |**Pagina-BLOB** _ |_ *Azure files** |**Ondersteunde toegangslagen**|
 | --- | --- | -- | -- | -- |
 | Klassieke standaard | J | J | J | |
 | Algemene v1-standaard  | J | J | J | Warm, cool|
@@ -47,5 +47,3 @@ De volgende tabel bevat de ondersteunde opslag accounts voor export orders.
 > - Gegevens die zijn geüpload naar pagina-blobs, moeten 512 bytes, zoals Vhd's, zijn uitgelijnd.
 > - Maxi maal 80 TB kan worden geëxporteerd.
 > - Bestands geschiedenis en BLOB-moment opnamen worden niet geëxporteerd.
-
-

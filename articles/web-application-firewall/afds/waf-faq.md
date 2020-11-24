@@ -8,12 +8,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/05/2020
 ms.author: victorh
-ms.openlocfilehash: 5b60082db53b458adc53ac23d98731ad1c97b52b
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 5c2763112b1aa2d58f5dc57cea72a3d0bdea961e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94563644"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95545666"
 ---
 # <a name="frequently-asked-questions-for-azure-web-application-firewall-on-azure-front-door-service"></a>Veelgestelde vragen over Azure Web Application firewall op de Azure front-deur service
 
@@ -57,6 +57,17 @@ U kunt de IP-Access Control lijst in uw back-end configureren om alleen uitgaand
 
 Er zijn twee opties voor het Toep assen van WAF-beleid in Azure. WAF met Azure front deur is een wereld wijd gedistribueerde, Edge-beveiligings oplossing. WAF met Application Gateway is een regionale, toegewezen oplossing. We raden u aan een oplossing te kiezen op basis van uw algemene prestatie-en beveiligings vereisten. Zie [taak verdeling met de Application Delivery Suite van Azure](../../frontdoor/front-door-lb-with-azure-app-delivery-suite.md)voor meer informatie.
 
+## <a name="whats-the-recommended-approach-to-enabling-waf-on-front-door"></a>Wat is de aanbevolen methode om WAF in te scha kelen op de voor deur?
+
+Wanneer u de WAF op een bestaande toepassing inschakelt, is het gebruikelijk om onjuiste positieve detecties te hebben waarbij de WAF-regels legitiem verkeer als een bedreiging detecteren. Om het risico van gevolgen voor uw gebruikers tot een minimum te beperken, raden we het volgende proces aan:
+
+* Schakel de WAF in [ **detectie** modus](./waf-front-door-create-portal.md#change-mode) in om ervoor te zorgen dat de WAF geen aanvragen blokkeert wanneer u dit proces doorloopt.
+  > [!IMPORTANT]
+  > In dit proces wordt beschreven hoe u de WAF inschakelt op een nieuwe of bestaande oplossing wanneer uw prioriteit de verstoringen van de gebruikers van uw toepassing minimaliseert. Als u een aanval of dreigende dreiging ondervindt, kunt u in plaats daarvan de WAF direct implementeren in **preventie** modus en het afstemmings proces gebruiken om de WAF in de loop van de tijd te controleren en af te stemmen. Dit leidt waarschijnlijk tot een deel van uw rechtmatige verkeer. Daarom wordt u aangeraden dit alleen te doen wanneer u een bedreiging ondervindt.
+* Volg onze [richt lijnen voor het afstemmen van de WAF](./waf-front-door-tuning.md). Voor dit proces moet u diagnostische logboek registratie inschakelen, de logboeken regel matig bekijken en regel uitsluitingen en andere oplossingen toevoegen.
+* Herhaal dit hele proces en controleer de logboeken regel matig, totdat u er zeker van bent dat er geen legitiem verkeer wordt geblokkeerd. Het hele proces kan enkele weken duren. In het ideale geval moet u minder onjuiste positieve detecties zien na elke afstemmings wijziging die u aanbrengt.
+* Schakel ten slotte de WAF in in de **modus preventie**.
+* Zelfs wanneer u de WAF uitvoert in productie, moet u de logboeken controleren om andere onregelmatige detecties te identificeren. Door de logboeken regel matig te controleren, kunt u ook zien welke aanvals pogingen zijn geblokkeerd.
 
 ## <a name="do-you-support-same-waf-features-in-all-integrated-platforms"></a>Biedt u ondersteuning voor dezelfde WAF-functies in alle geïntegreerde platformen?
 

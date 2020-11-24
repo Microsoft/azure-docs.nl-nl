@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 7700f1c92aecab76dbc347814b7b161bc3d822a0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 338332eb90fda9afe7655f9f2ad19ed726419b6c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67176091"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95555056"
 ---
 ### <a name="to-configure-and-register-the-device"></a>Het apparaat configureren en registreren
 1. Open de Windows PowerShell-interface op de seriële console van het StorSimple-apparaat. Zie [PuTTY gebruiken om verbinding te maken met de seriële console van het apparaat](../articles/storsimple/storsimple-8000-deployment-walkthrough-gov-u2.md#use-putty-to-connect-to-the-device-serial-console) voor instructies. **Volg de procedure exact, omdat u anders geen toegang hebt tot de console.**
@@ -43,7 +43,7 @@ ms.locfileid: "67176091"
    4. Configureer eventueel uw webproxyserver.
       
       > [!IMPORTANT]
-      > De configuratie van uw webproxy is weliswaar optioneel, maar houd er rekening mee dat als u een webproxy gebruikt, deze alleen hier kan worden geconfigureerd. Zie [Configure web proxy for your device](../articles/storsimple/storsimple-configure-web-proxy.md) (Webproxy voor uw apparaat configureren) voor meer informatie.
+      > De configuratie van uw webproxy is weliswaar optioneel, maar houd er rekening mee dat als u een webproxy gebruikt, deze alleen hier kan worden geconfigureerd. Zie [Configure web proxy for your device](../articles/storsimple/storsimple-8000-configure-web-proxy.md) (Webproxy voor uw apparaat configureren) voor meer informatie.
      
 6. Druk op CTRL + C om de wizard Setup af te sluiten.
 8. Voer de volgende cmdlet uit om het apparaat te laten verwijzen naar de Microsoft Azure Government-Portal (omdat het standaard verwijst naar de klassieke open bare Azure-Portal). Hiermee worden beide controllers opnieuw opgestart. We raden u aan twee PuTTy-sessies te gebruiken om gelijktijdig verbinding te maken met beide controllers, zodat u kunt zien wanneer elke controller opnieuw wordt opgestart.
@@ -86,4 +86,3 @@ ms.locfileid: "67176091"
         Als het apparaat na een paar minuten nog steeds offline is, moet u ervoor zorgen dat uw firewallnetwerk is geconfigureerd zoals wordt beschreven in [Netwerkvereisten voor uw StorSimple-apparaat](../articles/storsimple/storsimple-8000-system-requirements.md).
        
         Controleer of poort 9354 open is voor uitgaande communicatie, omdat de servicebus deze poort gebruikt voor de communicatie van de StorSimple-apparaatbeheerfunctie naar het apparaat.
-

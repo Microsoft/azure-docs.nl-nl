@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 09/30/2020
 ms.author: twooley
 ms.custom: include file
-ms.openlocfilehash: 358de5761f3535b5f1e75d82539ee8e3ecdbd289
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 297641bbaccb44739d67fdd26f0c1f64062bba46
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665593"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95560769"
 ---
 **Azure Data Lake Storage Gen2** is geen accounttype voor toegewezen service of opslag. Het behoort tot de nieuwste mogelijkheden voor de analyse van big data.  Deze mogelijkheden zijn beschikbaar in een opslagaccount voor algemeen gebruik v2 of in een BlockBlobStorage-opslagaccount, en u kunt deze mogelijkheden verkrijgen door de functie **Hiërarchische naamruimte** van het account in te schakelen. Raadpleeg deze artikelen voor schaaldoelen. 
 
-- [Schaaldoelen voor Blob Storage](https://docs.microsoft.com/azure/storage/blobs/scalability-targets#scale-targets-for-blob-storage).
-- [Schaaldoelen voor standaard opslagaccounts](https://docs.microsoft.com/azure/storage/common/scalability-targets-standard-account?toc=/azure/storage/blobs/toc.json#scale-targets-for-standard-storage-accounts).
+- [Schaaldoelen voor Blob Storage](../articles/storage/blobs/scalability-targets.md#scale-targets-for-blob-storage).
+- [Schaaldoelen voor standaard opslagaccounts](../articles/storage/common/scalability-targets-standard-account.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#scale-targets-for-standard-storage-accounts).
 
 **Azure Data Lake Storage Gen1** is een toegewezen service. Het is een ondernemingsbrede opslagplaats op hyperschaal voor analytische workloads van big data. U kunt Data Lake Storage Gen1 gebruiken om gegevens van elke grootte, elk type en elke opnamesnelheid op één enkele locatie vast te leggen voor operationele en experimentele analyses. Er geldt geen limiet voor de hoeveelheid gegevens die u in een Data Lake Storage Gen1-account kunt opslaan.
 

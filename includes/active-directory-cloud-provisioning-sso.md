@@ -5,12 +5,12 @@ ms.subservice: cloud-provisioning
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath
-ms.openlocfilehash: 3aa1571b46938b03f556fa124d3f0a2a70f2c5c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d95e40623f17a39145778a2fc067dccc68fd872
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79504390"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95555040"
 ---
 ## <a name="steps-to-enable-single-sign-on"></a>Stappen voor het inschakelen van eenmalige aanmelding
 Cloud inrichting werkt met eenmalige aanmelding.  Er is momenteel geen optie om SSO in te scha kelen wanneer de agent is geïnstalleerd, maar u kunt de onderstaande stappen gebruiken om SSO in te scha kelen en te gebruiken. 
@@ -23,7 +23,7 @@ Cloud inrichting werkt met eenmalige aanmelding.  Er is momenteel geen optie om 
 
 ### <a name="step-2-import-the-seamless-sso-powershell-module"></a>Stap 2: de naadloze SSO Power shell-module importeren
 
-1. Down load en Installeer [Azure AD Power shell](https://docs.microsoft.com/powershell/azure/active-directory/overview).
+1. Down load en Installeer [Azure AD Power shell](/powershell/azure/active-directory/overview).
 2. Blader naar de map `%programfiles%\Microsoft Azure Active Directory Connect`.
 3. Importeer de naadloze SSO Power shell-module met behulp van deze opdracht: `Import-Module .\AzureADSSO.psd1` .
 

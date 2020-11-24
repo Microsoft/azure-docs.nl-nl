@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: 489ee630deb56aef6c004067f29779053fbcd3e7
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 3fe622d2ff4f6f8aff546452db0f475cfd44eb1b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755916"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95559537"
 ---
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
@@ -63,8 +63,8 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 
 U kunt ook een sleutelkluis maken met behulp van een [Resource Manager-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
 
-1. Klik in de quickstart-sjabloon van Azure op **Implementeren naar Azure** .
-2. Selecteer het abonnement, de resourcegroep, de locatie van de resourcegroep, de naam van de sleutelkluis, de object-id, de juridische voorwaarden en de overeenkomst en klik vervolgens op **Aankoop** . 
+1. Klik in de quickstart-sjabloon van Azure op **Implementeren naar Azure**.
+2. Selecteer het abonnement, de resourcegroep, de locatie van de resourcegroep, de naam van de sleutelkluis, de object-id, de juridische voorwaarden en de overeenkomst en klik vervolgens op **Aankoop**. 
 
 
 ##  <a name="set-key-vault-advanced-access-policies"></a>Geavanceerd toegangsbeleid voor de sleutelkluis instellen
@@ -117,10 +117,10 @@ Gebruik [az keyvault update](/cli/azure/keyvault#az-keyvault-update) om schijfve
 
 ### <a name="azure-portal"></a>Azure Portal
 
-1. Selecteer uw sleutelkluis, ga naar **Toegangsbeleid** en **Klik hierop om geavanceerde beleidsregels weer te geven** .
+1. Selecteer uw sleutelkluis, ga naar **Toegangsbeleid** en **Klik hierop om geavanceerde beleidsregels weer te geven**.
 2. Schakel het selectievakje **Toegang tot Azure Disk Encryption voor volumeversleuteling inschakelen** in.
-3. Selecteer indien nodig **Toegang tot Azure Virtual Machines inschakelen voor implementatie** en/of **Toegang tot Azure Resource Manager inschakelen voor sjabloonimplementatie** . 
-4. Klik op **Opslaan** .
+3. Selecteer indien nodig **Toegang tot Azure Virtual Machines inschakelen voor implementatie** en/of **Toegang tot Azure Resource Manager inschakelen voor sjabloonimplementatie**. 
+4. Klik op **Opslaan**.
 
     ![Geavanceerd toegangsbeleid voor Azure Key Vault](../articles/virtual-machines/media/disk-encryption/keyvault-portal-fig4.png)
 
@@ -131,7 +131,7 @@ Als u een Key Encryption Key (KEK) wilt gebruiken als een extra beveiligingslaag
 
 U kunt een nieuwe KEK genereren met behulp van de Azure CLI-opdracht [az keyvault key create](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-create), de Azure PowerShell-cmdlet [Add-AzKeyVaultKey](/powershell/module/az.keyvault/add-azkeyvaultkey) of de [Azure-portal](https://portal.azure.com/). U moet een RSA-sleuteltype genereren. Azure Disk Encryption biedt nog geen ondersteuning voor het gebruik van Elliptic Curve-sleutels.
 
-U kunt in plaats daarvan een KEK importeren uit uw HSM voor on-premises sleutelbeheer. Zie onze [Key Vault-documentatie](/azure/key-vault/key-vault-hsm-protected-keys) voor meer informatie.
+U kunt in plaats daarvan een KEK importeren uit uw HSM voor on-premises sleutelbeheer. Zie onze [Key Vault-documentatie](../articles/key-vault/keys/hsm-protected-keys.md) voor meer informatie.
 
 De URL's voor uw sleutelkluis-KEK moeten versiebeheer hebben. Azure dwingt deze beperking van versiebeheer af. Zie de volgende voorbeelden voor geldige geheim- en KEK-URL's:
 

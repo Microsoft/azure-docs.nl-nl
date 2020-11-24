@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/25/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 6e0612a017650f0c6e4c9f63d9a5fd097b0b92c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 32978257c3e209dc78a29c6e8ae0d1c4ae016a5b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89304077"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95561045"
 ---
 ## <a name="update-resources"></a>Resources bijwerken
 
@@ -36,7 +36,7 @@ Versie van installatiekopie:
 
 Als u van plan bent om replica regio's toe te voegen, moet u de door de bron beheerde installatie kopie niet verwijderen. De door de bron beheerde installatie kopie is nodig voor het repliceren van de installatie kopie versie naar extra regio's. 
 
-Als u de beschrijving van een galerie wilt bijwerken, gebruikt u [Update-AzGallery](https://docs.microsoft.com/powershell/module/az.compute/update-azgallery).
+Als u de beschrijving van een galerie wilt bijwerken, gebruikt u [Update-AzGallery](/powershell/module/az.compute/update-azgallery).
 
 ```azurepowershell-interactive
 Update-AzGallery `
@@ -44,7 +44,7 @@ Update-AzGallery `
    -ResourceGroupName $resourceGroup.Name
 ```
 
-In dit voor beeld ziet u hoe u [Update-AzGalleryImageDefinition](https://docs.microsoft.com/powershell/module/az.compute/update-azgalleryimagedefinition) gebruikt om de einddatum datum bij te werken voor de definitie van de installatie kopie.
+In dit voor beeld ziet u hoe u [Update-AzGalleryImageDefinition](/powershell/module/az.compute/update-azgalleryimagedefinition) gebruikt om de einddatum datum bij te werken voor de definitie van de installatie kopie.
 
 ```azurepowershell-interactive
 Update-AzGalleryImageDefinition `
@@ -54,7 +54,7 @@ Update-AzGalleryImageDefinition `
    -EndOfLifeDate 01/01/2030
 ```
 
-In dit voor beeld ziet u hoe u met [Update-AzGalleryImageVersion](https://docs.microsoft.com/powershell/module/az.compute/update-azgalleryimageversion) de versie van de installatie kopie kunt uitsluiten van gebruik als de *nieuwste* afbeelding.
+In dit voor beeld ziet u hoe u met [Update-AzGalleryImageVersion](/powershell/module/az.compute/update-azgalleryimageversion) de versie van de installatie kopie kunt uitsluiten van gebruik als de *nieuwste* afbeelding.
 
 ```azurepowershell-interactive
 Update-AzGalleryImageVersion `
@@ -65,7 +65,7 @@ Update-AzGalleryImageVersion `
    -PublishingProfileExcludeFromLatest
 ```
 
-In dit voor beeld ziet u hoe u met [Update-AzGalleryImageVersion](https://docs.microsoft.com/powershell/module/az.compute/update-azgalleryimageversion) deze versie van de installatie kopie opneemt in overweging voor de *nieuwste* afbeelding.
+In dit voor beeld ziet u hoe u met [Update-AzGalleryImageVersion](/powershell/module/az.compute/update-azgalleryimageversion) deze versie van de installatie kopie opneemt in overweging voor de *nieuwste* afbeelding.
 
 ```azurepowershell-interactive
 Update-AzGalleryImageVersion `
@@ -103,4 +103,3 @@ Remove-AzGallery `
 
 Remove-AzResourceGroup -Name $resourceGroup
 ```
-

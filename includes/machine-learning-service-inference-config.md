@@ -4,22 +4,22 @@ ms.service: machine-learning
 ms.topic: include
 ms.date: 01/28/2020
 ms.author: larryfr
-ms.openlocfilehash: f500df6a592769928470d22468ff2fdff18293a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f7798e684a0a144cfe5285a0dd926a3b440934a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88748819"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95559212"
 ---
-De vermeldingen in het document `inferenceconfig.json` zijn toegewezen aan de parameters voor de klasse [InferenceConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py). In de volgende tabel wordt de toewijzing beschreven tussen de entiteiten in het JSON-document en de parameters voor de methode:
+De vermeldingen in het document `inferenceconfig.json` zijn toegewezen aan de parameters voor de klasse [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py). In de volgende tabel wordt de toewijzing beschreven tussen de entiteiten in het JSON-document en de parameters voor de methode:
 
 | JSON-entiteit | Methodeparameter | Beschrijving |
 | ----- | ----- | ----- |
 | `entryScript` | `entry_script` | Pad naar een lokaal bestand dat de code bevat waarmee de installatiekopie kan worden uitgevoerd. |
 | `sourceDirectory` | `source_directory` | Optioneel. Pad naar de mappen die alle bestanden bevatten waarmee de installatiekopie kan worden gemaakt, zodat u eenvoudig toegang hebt tot alle bestanden in deze map of submap. U kunt een volledige map vanaf uw lokale computer uploaden als afhankelijkheden voor de webservice. Opmerking: De paden entry_script, conda_file en extra_docker_file_steps zijn relatieve paden naar het pad source_directory. |
-| `environment` | `environment` | Optioneel.  Azure Machine Learning-[omgeving](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py).|
+| `environment` | `environment` | Optioneel.  Azure Machine Learning-[omgeving](/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py).|
 
-U kunt de volledige specificaties van een Azure Machine Learning-[omgeving](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) opnemen in het configuratiebestand voor deductie. Als de omgeving niet aanwezig is in uw werkruimte, wordt deze door Azure Machine Learning gemaakt. Als de omgeving al bestaat, werkt Azure Machine Learning deze indien nodig bij. De volgende JSON-code is een voorbeeld:
+U kunt de volledige specificaties van een Azure Machine Learning-[omgeving](/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) opnemen in het configuratiebestand voor deductie. Als de omgeving niet aanwezig is in uw werkruimte, wordt deze door Azure Machine Learning gemaakt. Als de omgeving al bestaat, werkt Azure Machine Learning deze indien nodig bij. De volgende JSON-code is een voorbeeld:
 
 ```json
 {
@@ -65,7 +65,7 @@ U kunt de volledige specificaties van een Azure Machine Learning-[omgeving](http
 }
 ```
 
-U kunt ook een bestaande Azure Machine Learning-[omgeving](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) gebruiken met aparte CLI-parameters en de omgevingssleutel uit het configuratiebestand voor deductie verwijderen. Gebruik -e voor de naam van de omgeving en --ev voor de versie van de omgeving. Als u --ev niet opgeeft, wordt de nieuwste versie gebruikt. Dit is een voorbeeld van een configuratiebestand voor deductie:
+U kunt ook een bestaande Azure Machine Learning-[omgeving](/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) gebruiken met aparte CLI-parameters en de omgevingssleutel uit het configuratiebestand voor deductie verwijderen. Gebruik -e voor de naam van de omgeving en --ev voor de versie van de omgeving. Als u --ev niet opgeeft, wordt de nieuwste versie gebruikt. Dit is een voorbeeld van een configuratiebestand voor deductie:
 
 ```json
 {
@@ -76,7 +76,7 @@ U kunt ook een bestaande Azure Machine Learning-[omgeving](https://docs.microsof
 
 De volgende opdracht laat zien hoe u een model implementeert met het vorige configuratiebestand voor deductie (genaamd myInferenceConfig.json). 
 
-Hierbij wordt ook de nieuwste versie van een bestaande Azure Machine Learning-[omgeving](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) (genaamd AzureML-Minimal) gebruikt.
+Hierbij wordt ook de nieuwste versie van een bestaande Azure Machine Learning-[omgeving](/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) (genaamd AzureML-Minimal) gebruikt.
 
 ```azurecli-interactive
 az ml model deploy -m mymodel:1 --ic myInferenceConfig.json -e AzureML-Minimal --dc deploymentconfig.json

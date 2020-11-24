@@ -6,12 +6,12 @@ ms.topic: include
 ms.date: 10/14/2020
 ms.author: olayemio
 ms.custom: include file
-ms.openlocfilehash: b17480c1a2a0bd8588289627a51780999e1f311c
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 29cbb2f6a7f0faf91852e520f15b779b3fe229c8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897752"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95553994"
 ---
 Shared Image Gallery is een service waarmee u structuur en organisatie kunt bouwen rond uw installatiekopieën. Galerieën met gedeelde installatiekopieën bieden:
 
@@ -45,7 +45,7 @@ De functie Shared Image Gallery heeft meerdere resourcetypen:
 
 Definities van installatiekopieën vormen een logische groepering voor versies van een installatiekopie. De definitie van de installatiekopie bevat informatie over waarom de installatiekopie is gemaakt, voor welk besturingssysteem de kopie wordt gebruikt en andere informatie over het gebruik ervan. Een definitie van een installatiekopie lijkt op een plan met alle details voor het maken van een specifieke installatiekopie. U implementeert geen VM op basis van een definitie van een installatiekopie, maar van versies van installatiekopieën die zijn gemaakt op basis van de definitie.
 
-Er zijn drie parameters voor elke definitie van de installatiekopie. Deze worden gecombineerd gebruikt: **Uitgever** , **Aanbieding** en **SKU**. Deze worden gebruikt om een specifieke definitie van een installatiekopie te vinden. Er zijn versies van installatiekopieën die een of twee parameters gemeenschappelijk hebben, maar niet alle drie.  Hier ziet u drie voorbeelden van definities van installatiekopieën en de bijbehorende waarden:
+Er zijn drie parameters voor elke definitie van de installatiekopie. Deze worden gecombineerd gebruikt: **Uitgever**, **Aanbieding** en **SKU**. Deze worden gebruikt om een specifieke definitie van een installatiekopie te vinden. Er zijn versies van installatiekopieën die een of twee parameters gemeenschappelijk hebben, maar niet alle drie.  Hier ziet u drie voorbeelden van definities van installatiekopieën en de bijbehorende waarden:
 
 |Definitie van installatiekopie|Uitgever|Aanbieding|Sku|
 |---|---|---|---|
@@ -71,7 +71,7 @@ Hieronder ziet u andere parameters die voor de definitie van uw installatiekopie
 - Tag: u kunt tags toevoegen wanneer u de definitie van de installatiekopie maakt. Zie [Tags gebruiken om uw esources te organiseren](../articles/azure-resource-manager/management/tag-resources.md) voor meer informatie over tags
 - Aanbevelingen voor minimum- en maximumwaarden voor vCPU en geheugen: als uw installatiekopie aanbevelingen voor vCPU en geheugen bevat, kunt u die gegevens koppelen aan de definitie van uw installatiekopie.
 - Niet-toegestane schijftypen: u kunt informatie opgeven over de opslagbehoeften voor uw VM. Als de installatiekopie bijvoorbeeld niet geschikt is voor standaard-HDD-schijven, voegt u deze toe aan de lijst met niet-toegestane schijftypen.
-- Aankoopplaninformatie voor Marketplace-installatiekopieën: `-PurchasePlanPublisher`, `-PurchasePlanName` en `-PurchasePlanProduct`. Zie [Installatiekopieën zoeken in Azure Marketplace](https://docs.microsoft.com/azure/virtual-machines/windows/cli-ps-findimage) en [Aankoopplaninformatie van Marketplace leveren bij het maken van installatiekopieën](../articles/virtual-machines/marketplace-images.md) voor meer informatie over het aankoopplan.
+- Aankoopplaninformatie voor Marketplace-installatiekopieën: `-PurchasePlanPublisher`, `-PurchasePlanName` en `-PurchasePlanProduct`. Zie [Installatiekopieën zoeken in Azure Marketplace](../articles/virtual-machines/windows/cli-ps-findimage.md) en [Aankoopplaninformatie van Marketplace leveren bij het maken van installatiekopieën](../articles/virtual-machines/marketplace-images.md) voor meer informatie over het aankoopplan.
 
 
 ## <a name="image-versions"></a>Installatiekopieversies
@@ -110,7 +110,7 @@ Elk abonnement kent limieten voor het implementeren van resources met behulp van
 - 10 replica's van versies van installatiekopieën per abonnement per regio
 - Schijven die aan de installatiekopie zijn gekoppeld, mogen niet groter zijn dan 1 TB
 
-Zie [Resourcegebruik controleren op basis van limieten](https://docs.microsoft.com/azure/networking/check-usage-against-limits) voor voorbeelden voor het controleren van uw huidige gebruik.
+Zie [Resourcegebruik controleren op basis van limieten](../articles/networking/check-usage-against-limits.md) voor voorbeelden voor het controleren van uw huidige gebruik.
  
 ## <a name="scaling"></a>Schalen
 Met Shared Image Gallery kunt u het aantal replica's van de installatiekopieën opgeven dat in Azure moet worden bewaard. Dit komt van pas bij implementatiescenario's met meerdere VM's omdat de VM-implementaties over verschillende replica's kunnen worden gespreid. Hierdoor wordt de kans kleiner dat het maken van exemplaren wordt beperkt als gevolg van het overbelasten van één replica.
@@ -128,7 +128,7 @@ U wordt altijd aangeraden het voor meer replica's te zorgen vanwege factoren als
 
 [Azure Zone Redundant Storage (ZRS)](https://azure.microsoft.com/blog/azure-zone-redundant-storage-in-public-preview/) (Zone-redundante opslag (ZRS) van Azure) biedt tolerantie voor een fout in de beschikbaarheidszone in de regio. Dankzij de algemene beschikbaarheid van Shared Image Gallery kunt u ervoor kiezen uw installatiekopieën op te slaan in ZRS-accounts in regio's met beschikbaarheidszones. 
 
-U kunt voor elk van de doelregio's ook het accounttype kiezen. Het standaardtype opslagaccount is Standard_LRS, maar u kunt Standard_ZRS kiezen voor regio's met beschikbaarheidszones. Controleer [hier](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) de regionale beschikbaarheid van ZRS.
+U kunt voor elk van de doelregio's ook het accounttype kiezen. Het standaardtype opslagaccount is Standard_LRS, maar u kunt Standard_ZRS kiezen voor regio's met beschikbaarheidszones. Controleer [hier](../articles/storage/common/storage-redundancy.md) de regionale beschikbaarheid van ZRS.
 
 ![Afbeelding met ZRS](./media/shared-image-galleries/zrs.png)
 
@@ -183,11 +183,11 @@ Versie van installatiekopie:
 
 De volgende SDK's bieden ondersteuning voor het maken van galerieën met gedeelde installatiekopieën:
 
-- [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/virtualmachines/management?view=azure-dotnet)
-- [Java](https://docs.microsoft.com/java/azure/?view=azure-java-stable)
-- [Node.js](https://docs.microsoft.com/javascript/api/@azure/arm-compute)
-- [Python](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python)
-- [Go](https://docs.microsoft.com/azure/go/)
+- [.NET](/dotnet/api/overview/azure/virtualmachines/management?view=azure-dotnet)
+- [Java](/java/azure/?view=azure-java-stable)
+- [Node.js](/javascript/api/@azure/arm-compute)
+- [Python](/python/api/overview/azure/virtualmachines?view=azure-python)
+- [Go](/azure/go/)
 
 ## <a name="templates"></a>Sjablonen
 
@@ -244,8 +244,8 @@ Ja. Er zijn drie scenario's die zijn gebaseerd op de typen installatiekopieën d
 
  Scenario 3: Als u een VHD hebt in uw lokale bestandssysteem, moet u de VHD uploaden naar een beheerde installatiekopie. Vervolgens kunt u er een definitie van de installatiekopie en een versie van de installatiekopie van maken.
 
-- Als de VHD van een Windows-VM is, raadpleegt u [Een VHD uploaden](https://docs.microsoft.com/azure/virtual-machines/windows/upload-generalized-managed).
-- Als de VHD van een Linux-VM is, raadpleegt u [Een VHD uploaden](https://docs.microsoft.com/azure/virtual-machines/linux/upload-vhd#option-1-upload-a-vhd)
+- Als de VHD van een Windows-VM is, raadpleegt u [Een VHD uploaden](../articles/virtual-machines/windows/upload-generalized-managed.md).
+- Als de VHD van een Linux-VM is, raadpleegt u [Een VHD uploaden](../articles/virtual-machines/linux/upload-vhd.md#option-1-upload-a-vhd)
 
 ### <a name="can-i-create-an-image-version-from-a-specialized-disk"></a>Kan ik een versie van een installatiekopie maken op basis van een gespecialiseerde schijf?
 
@@ -310,4 +310,4 @@ Voor implementaties van virtuele machines en virtuele-machineschaalsets die gebr
 
 ### <a name="can-i-update-my-virtual-machine-scale-set-created-using-managed-image-to-use-shared-image-gallery-images"></a>Kan ik mijn virtuele-machineschaalset bijwerken die met een beheerde installatiekopie is gemaakt, voor het gebruik van installatiekopieën uit Shared Image Gallery?
 
-Ja, u kunt de verwijzing naar de installatiekopie van de schaalset bijwerken van een beheerde installatiekopie naar een installatiekopie van een galerie met gedeelde installatiekopieën, op voorwaarde dat het type besturingssysteem, de Hyper-V-generatie en de indeling van de gegevensschijf van de installatiekopieën overeenkomen. 
+Ja, u kunt de verwijzing naar de installatiekopie van de schaalset bijwerken van een beheerde installatiekopie naar een installatiekopie van een galerie met gedeelde installatiekopieën, op voorwaarde dat het type besturingssysteem, de Hyper-V-generatie en de indeling van de gegevensschijf van de installatiekopieën overeenkomen.

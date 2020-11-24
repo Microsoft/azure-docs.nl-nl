@@ -1,6 +1,6 @@
 ---
-title: Include-bestand
-description: Include-bestand
+title: bestand opnemen
+description: bestand opnemen
 services: virtual-machines
 author: roygara
 ms.service: virtual-machines
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/14/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 7831eaaa478a3f28ff158d5c9599abaf8a107c15
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 74c77356df4f35461a8b9f1459712cdcf7f77cbf
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684428"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95555245"
 ---
 Gedeelde Azure-schijven is een nieuwe functie voor Azure Managed disks waarmee u tegelijkertijd een beheerde schijf kunt koppelen aan meerdere virtuele machines (Vm's). Als u een beheerde schijf aan meerdere Vm's koppelt, kunt u nieuwe, geclusterde toepassingen implementeren of migreren naar Azure.
 
@@ -41,7 +41,7 @@ Gedeelde schijven bieden ondersteuning voor verschillende besturings systemen. Z
 
 ### <a name="windows"></a>Windows
 
-Gedeelde Azure-schijven worden ondersteund op Windows Server 2008 en nieuwer. De meeste op Windows gebaseerde clustering bouwt voort op WSFC, die alle basis infrastructuur voor de communicatie van het cluster knooppunt afhandelt, zodat uw toepassingen kunnen profiteren van parallelle toegangs patronen. Met WSFC kunt u zowel CSV- als niet-CSV-opties maken, afhankelijk van uw versie van Windows Server. Raadpleeg [Een failovercluster maken](https://docs.microsoft.com/windows-server/failover-clustering/create-failover-cluster)voor meer informatie.
+Gedeelde Azure-schijven worden ondersteund op Windows Server 2008 en nieuwer. De meeste op Windows gebaseerde clustering bouwt voort op WSFC, die alle basis infrastructuur voor de communicatie van het cluster knooppunt afhandelt, zodat uw toepassingen kunnen profiteren van parallelle toegangs patronen. Met WSFC kunt u zowel CSV- als niet-CSV-opties maken, afhankelijk van uw versie van Windows Server. Raadpleeg [Een failovercluster maken](/windows-server/failover-clustering/create-failover-cluster)voor meer informatie.
 
 Enkele populaire toepassingen die worden uitgevoerd op WSFC zijn:
 

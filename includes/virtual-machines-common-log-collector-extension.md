@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 09c4420647043fccc408631fec75854667923721
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a442b5de7a256dd8bcf47da741bd41894709c3a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74085234"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95556508"
 ---
 Voor het vaststellen van problemen met een Microsoft Azure-Cloud service moet u de logboek bestanden van de service verzamelen op virtuele machines terwijl de problemen optreden. U kunt de AzureLogCollector-extensie op aanvraag gebruiken voor het uitvoeren van een eenmalige verzameling logboeken van een of meer virtuele machines in de Cloud service (van beide webrollen en werk rollen) en het overdragen van de verzamelde bestanden naar een Azure-opslag account. dit gebeurt zonder dat u zich op afstand hoeft aan te melden bij een van de virtuele machines.
 
@@ -44,11 +44,11 @@ In zowel de verzamel modus kunnen extra mappen voor gegevens verzameling worden 
 * Azure PowerShell. Zie [install Azure PowerShell](/powershell/azure/install-az-ps)] (Engelstalig) voor installatie-instructies.
 
 ## <a name="add-the-extension"></a>De extensie toevoegen
-U kunt [Microsoft Azure PowerShell](https://msdn.microsoft.com/library/dn495240.aspx) -cmdlets of [rest-Api's voor Service beheer](https://msdn.microsoft.com/library/ee460799.aspx) gebruiken om de AzureLogCollector-extensie toe te voegen.
+U kunt [Microsoft Azure PowerShell](/previous-versions/azure/dn495240(v=azure.100)) -cmdlets of [rest-Api's voor Service beheer](/previous-versions/azure/ee460799(v=azure.100)) gebruiken om de AzureLogCollector-extensie toe te voegen.
 
-Voor Cloud Services kan de bestaande Azure Power shell-cmdlet **set-AzureServiceExtension**worden gebruikt om de uitbrei ding in te scha kelen op instanties van Cloud service-rollen. Telkens wanneer deze uitbrei ding is ingeschakeld via deze cmdlet, wordt de logboek verzameling geactiveerd voor de geselecteerde rolinstantie van geselecteerde rollen.
+Voor Cloud Services kan de bestaande Azure Power shell-cmdlet **set-AzureServiceExtension** worden gebruikt om de uitbrei ding in te scha kelen op instanties van Cloud service-rollen. Telkens wanneer deze uitbrei ding is ingeschakeld via deze cmdlet, wordt de logboek verzameling geactiveerd voor de geselecteerde rolinstantie van geselecteerde rollen.
 
-Voor Virtual Machines kan de bestaande Azure Power shell-cmdlet **set-AzureVMExtension**worden gebruikt om de uitbrei ding op virtual machines in te scha kelen. Elke keer dat deze extensie wordt ingeschakeld via de cmdlets, wordt de logboek verzameling geactiveerd voor elk exemplaar.
+Voor Virtual Machines kan de bestaande Azure Power shell-cmdlet **set-AzureVMExtension** worden gebruikt om de uitbrei ding op virtual machines in te scha kelen. Elke keer dat deze extensie wordt ingeschakeld via de cmdlets, wordt de logboek verzameling geactiveerd voor elk exemplaar.
 
 Intern gebruikt deze extensie de op JSON gebaseerde PublicConfiguration en PrivateConfiguration. Hier volgt een voor beeld van een JSON voor de open bare en particuliere configuratie.
 
@@ -86,7 +86,7 @@ Intern gebruikt deze extensie de op JSON gebaseerde PublicConfiguration en Priva
 ```
 
 > [!NOTE]
-> Deze extensie heeft geen **privateConfiguration**nodig. U kunt alleen een lege structuur voor het argument **– PrivateConfiguration** opgeven.
+> Deze extensie heeft geen **privateConfiguration** nodig. U kunt alleen een lege structuur voor het argument **– PrivateConfiguration** opgeven.
 > 
 > 
 
@@ -528,4 +528,3 @@ else
 
 ## <a name="next-steps"></a>Volgende stappen
 Nu kunt u uw logboeken op één eenvoudige locatie bekijken of kopiëren.
-

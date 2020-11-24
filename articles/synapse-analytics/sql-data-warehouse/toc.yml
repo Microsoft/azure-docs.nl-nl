@@ -1,4 +1,4 @@
-- name: Azure Synapse (SQL DW)
+- name: Azure Synapse (voorheen SQL DW)
   href: index.yml
 - name: Overschakelen naar Azure Synapse (voorbeeld van werkruimte)
   href: ../overview-what-is.md

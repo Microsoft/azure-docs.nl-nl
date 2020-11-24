@@ -6,7 +6,7 @@
       href: overview.md
     - name: 'Over sleutels, geheimen en certificaten'
       href: about-keys-secrets-certificates.md
-- name: Snelstartgidsen
+- name: Snelstarts
   expanded: true
   items:
     - name: CLI
@@ -23,6 +23,10 @@
           href: tutorial-net-virtual-machine.md
         - name: Azure Key Vault gebruiken met een virtuele machine in Python
           href: tutorial-python-virtual-machine.md
+    - name: Azure App Service
+      items:
+        - name: Azure Key Vault gebruiken met een web-app in .NET
+          href: tutorial-net-create-vault-azure-web-app.md
     - name: Azure Kubernetes Service
       items:
         - name: Azure Key Vault integreren met Kubernetes
@@ -31,8 +35,6 @@
       items:
         - name: Toegang tot Azure Blob Storage met Azure Databricks en Azure Key Vault
           href: integrate-databricks-blob-storage.md
-    - name: Key Vault verbinden met een web-app met een beheerde identiteit en .NET
-      href: tutorial-net-create-vault-azure-web-app.md
 - name: Voorbeelden
   items:
     - name: Key Vault-codevoorbeelden

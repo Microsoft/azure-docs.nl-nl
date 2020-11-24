@@ -139,7 +139,7 @@
           href: understand-spark-code-concepts.md
     - name: Problemen met U-SQL-taken oplossen
       items:
-        - name: Runtime-fouten met U-SQL oplossen
+        - name: U-SQL-runtimefouten en bekende problemen oplossen
           href: runtime-troubleshoot.md
         - name: Problemen met een .NET-upgrade oplossen
           href: dotnet-upgrade-troubleshoot.md

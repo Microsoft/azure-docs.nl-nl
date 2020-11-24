@@ -4,6 +4,8 @@
   items:
     - name: Overzicht van Azure Backup
       href: backup-overview.md
+    - name: Wat is er nieuw in Azure Backup
+      href: whats-new.md
     - name: Prijzen
       href: 'https://azure.microsoft.com/pricing/details/backup/'
 - name: Snelstartgidsen

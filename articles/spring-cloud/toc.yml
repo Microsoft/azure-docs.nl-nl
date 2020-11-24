@@ -5,7 +5,7 @@
   items:
     - name: Wat is Azure Spring Cloud?
       href: spring-cloud-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Uw eerste app lanceren
@@ -75,6 +75,8 @@
           href: spring-cloud-howto-launch-from-source.md
         - name: IntelliJ gebruiken om apps te implementeren
           href: spring-cloud-tutorial-intellij-deploy-apps.md
+        - name: Azure Spring Cloud implementeren met Azure PowerShell
+          href: spring-cloud-howto-deploy-powershell.md
     - name: Configureren
       items:
         - name: 'Een app starten, stoppen en verwijderen'

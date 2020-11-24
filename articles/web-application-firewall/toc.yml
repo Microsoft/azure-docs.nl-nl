@@ -67,6 +67,8 @@
           href: ./ag/application-gateway-waf-faq.md
     - name: Front Door
       items:
+        - name: Afstemmen
+          href: ./afds/waf-front-door-tuning.md
         - name: Aangepaste regels
           href: ./afds/waf-front-door-custom-rules.md
         - name: Uitsluitingslijsten

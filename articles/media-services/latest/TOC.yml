@@ -270,9 +270,13 @@
     - name: Transformaties en taken maken
       items:
         - name: Transformaties maken
-          href: cli-create-transform.md
+          href: how-to-create-transform.md
         - name: Een eenvoudige audiotransformatie maken met REST
           href: how-to-create-basic-audio-transform.md
+        - name: Een copyAllBitrateNonInterleaved-transformatie maken met REST
+          href: how-to-create-copyallbitratenoninterleaved-transform.md
+        - name: Video's kopiëren zonder codering met REST
+          href: how-to-create-copy-video-audio-transform.md
         - name: Taken maken
           href: cli-create-jobs.md
         - name: Taakinvoer maken met een lokaal bestand en .NET

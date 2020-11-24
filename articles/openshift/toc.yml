@@ -8,47 +8,45 @@
 - name: Zelfstudies
   expanded: true
   items:
-    - name: '1: Een Azure Red Hat OpenShift 4-cluster maken'
+    - name: 1 - Een ARO-cluster maken
       href: tutorial-create-cluster.md
-    - name: '2: Verbinding maken met een Azure Red Hat OpenShift 4-cluster'
+    - name: 1 - Verbinding maken met een ARO-cluster
       href: tutorial-connect-cluster.md
-    - name: '3: Een Azure Red Hat OpenShift 4-cluster verwijderen'
+    - name: 1 - Een ARO-cluster verwijderen
       href: tutorial-delete-cluster.md
 - name: Instructiegidsen
   items:
-    - name: Een Azure Red Hat OpenShift 4-privécluster maken
-      href: howto-create-private-cluster-4x.md
-    - name: Een Azure Files StorageClass maken in Azure Red Hat OpenShift 4
-      href: howto-create-a-storageclass.md
-    - name: Pullgeheim bijwerken voor een Azure Red Hat OpenShift 4-cluster
-      href: howto-add-update-pull-secret.md
-    - name: DNS forwarding configureren voor een Azure Red Hat OpenShift 4-cluster
-      href: dns-forwarding.md
-    - name: Ingebouwd containerregister voor Azure Red Hat OpenShift 4 configureren
-      href: built-in-container-registry.md
-    - name: Azure Active Directory-verificatie configureren voor een Azure Red Hat OpenShift 4-cluster
+    - name: Netwerken
+      items:
+        - name: Een ARO-privécluster maken
+          href: howto-create-private-cluster-4x.md
+        - name: DNS-forwarding configureren
+          href: dns-forwarding.md
+    - name: Verificatie en beveiliging
       items:
         - name: Azure Active Directory-verificatie (CLI) configureren
           href: configure-azure-ad-cli.md
         - name: Azure Active Directory-verificatie (portal) configureren
           href: configure-azure-ad-ui.md
-    - name: Een back-up maken en een toepassing herstellen met Velero
+        - name: Pull-geheim bijwerken voor een ARO-cluster
+          href: howto-add-update-pull-secret.md
+    - name: Back-ups en herstellen
       items:
         - name: Een back-up maken van een clustertoepassing met Velero
           href: howto-create-a-backup.md
         - name: Een herstel maken van een clustertoepassing met Velero
           href: howto-create-a-restore.md
-    - name: Bewaking en logboekregistratie voor Azure Red Hat OpenShift 4
+    - name: Bewaking en registratie
       items:
-        - name: Azure Monitor voor containers in Azure Red Hat OpenShift 4 (preview-versie)
+        - name: Azure Monitor voor containers
           items:
-            - name: Azure Monitor voor containers configureren voor Azure Red Hat OpenShift 4 (preview-versie)
+            - name: Azure Monitor configureren voor containers voor ARO 4 (preview)
               href: ../azure-monitor/insights/container-insights-azure-redhat4-setup.md
-            - name: Azure Monitor uitschakelen voor containers in Azure Red Hat OpenShift 3.11 (preview-versie)
+            - name: Azure Monitor uitschakelen voor containers in ARO 4 (preview)
               href: ../azure-monitor/insights/container-insights-optout-openshift-v4.md
-    - name: Open Liberty/WebSphere Liberty in Azure Red Hat OpenShift 4-cluster
+    - name: Toepassingen ontwikkelen en uitvoeren
       items:
-        - name: Een Open Liberty/WebSphere Liberty-app implementeren in een Azure Red Hat OpenShift 4-cluster
+        - name: Een Open Liberty-/WebSphere Liberty-app implementeren
           href: howto-deploy-java-liberty-app.md
     - name: Azure Red Hat OpenShift 3.11
       items:
@@ -85,9 +83,9 @@
               href: cluster-administration-security-context-constraints.md
 - name: Concepten
   items:
-    - name: Netwerken in Azure Red Hat OpenShift 4-clusters
+    - name: Netwerken
       href: concepts-networking.md
-    - name: Migreren van een Azure Red Hat OpenShift 3.11 naar Azure Red Hat OpenShift 4
+    - name: Migreren van ARO 3.11 naar ARO 4
       href: migration.md
 - name: Naslaginformatie
   items:
@@ -101,17 +99,15 @@
       href: openshift-faq.md
     - name: Problemen oplossen
       href: troubleshoot.md
-    - name: Ondersteunde resources voor Azure Red Hat OpenShift 3.11
-      href: supported-resources.md
-    - name: Ondersteunde bronnen voor Azure Red Hat OpenShift 4.3
+    - name: Ondersteuningsbeleid voor ARO 4
       href: support-policies-v4.md
-    - name: Levenscyclusondersteuning voor Azure Red Hat OpenShift 4
+    - name: Ondersteuningslevenscyclus voor ARO 4
       href: support-lifecycle.md
     - name: Regionale beschikbaarheid
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Documentatie voor Azure Red Hat OpenShift 4.3
+    - name: Red Hat OpenShift 4-documentatie
       href: 'https://docs.openshift.com/aro/4/welcome/index.html'
-    - name: Documentatie voor Azure Red Hat OpenShift 3.11
-      href: 'https://docs.openshift.com/aro/3/welcome/index.html'
     - name: Azure-roadmap
       href: 'https://azure.microsoft.com/roadmap/'
+    - name: AKS-roadmap
+      href: 'https://github.com/Azure/OpenShift/projects/1'

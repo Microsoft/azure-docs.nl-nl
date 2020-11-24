@@ -69,8 +69,12 @@
       href: ../../automation/security-baseline.md
     - name: Azure Advisor-beveiligingsbasislijn
       href: ../../advisor/security-baseline.md
+    - name: Azure App Configuration-beveiligingsbasislijn
+      href: ../../azure-app-configuration/security-baseline.md
     - name: Azure Backup-beveiligingsbasislijn
       href: ../../backup/security-baseline.md
+    - name: Azure Bastion-beveiligingsbasislijn
+      href: ../../bastion/security-baseline.md
     - name: Azure Cache voor Redis-beveiligingsbasislijn
       href: ../../azure-cache-for-redis/security-baseline.md
     - name: Azure Cognitive Search-beveiligingsbasislijn
@@ -201,5 +205,7 @@
       href: ../../virtual-machines/windows/security-baseline.md
     - name: Virtual Network-beveiligingsbasislijn
       href: ../../virtual-network/security-baseline.md
+    - name: Virtual Network NAT-beveiligingsbasislijn
+      href: ../../virtual-network/nat-security-baseline.md
     - name: VPN Gateway-beveiligingsbasislijn
       href: ../../vpn-gateway/security-baseline.md

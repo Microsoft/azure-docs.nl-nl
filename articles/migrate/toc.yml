@@ -32,10 +32,12 @@
           href: tutorial-discover-gcp.md
     - name: Evalueren
       items:
-        - name: VMware-VM's evalueren voor migratie naar Azure-VM's
-          href: tutorial-assess-vmware-azure-vm.md
-        - name: VMware-VM's evalueren voor migratie naar AVS
-          href: tutorial-assess-vmware-azure-vmware-solution.md
+        - name: VMware-VM's evalueren
+          items:
+            - name: VMware-VM's evalueren voor migratie naar Azure-VM's
+              href: tutorial-assess-vmware-azure-vm.md
+            - name: VMware-VM's evalueren voor migratie naar AVS
+              href: tutorial-assess-vmware-azure-vmware-solution.md
         - name: Hyper-V-VM's evalueren voor migratie naar Azure
           href: tutorial-assess-hyper-v.md
         - name: Fysieke servers beoordelen voor migratie naar Azure
@@ -44,19 +46,19 @@
           href: tutorial-assess-aws.md
         - name: GCP-instanties beoordelen voor migratie naar Azure
           href: tutorial-assess-gcp.md
-        - name: Geïmporteerde servers beoordelen
+        - name: Geïmporteerde servers beoordelen voor migratie naar Azure
           href: tutorial-discover-import.md
     - name: Migreren
       items:
         - name: Virtuele VMware-machines migreren
           items:
-            - name: Over migratieopties voor VMware-VM's
+            - name: Migratieopties voor VMware-VM's
               href: server-migrate-overview.md
-            - name: VMware-VM's migreren met migratie zonder agent - Azure Portal
+            - name: Migreren met een agentloze migratie (portal)
               href: tutorial-migrate-vmware.md
-            - name: VMware-VM's migreren met migratie op basis van een agent
+            - name: Migreren met een op agent gebaseerde migratie
               href: tutorial-migrate-vmware-agent.md
-            - name: VMware-VM's migreren met migratie zonder agent - PowerShell
+            - name: Migreren met een agentloze migratie (PowerShell)
               href: tutorial-migrate-vmware-powershell.md
         - name: Hyper-V-VM's migreren
           href: tutorial-migrate-hyper-v.md
@@ -68,128 +70,150 @@
           href: tutorial-migrate-gcp-virtual-machines.md
 - name: Concepten
   items:
-    - name: Een migratieplan bouwen
-      href: concepts-migration-planning.md
-    - name: Ondersteuningsmatrices
+    - name: Algemeen
       items:
-        - name: Algemene ondersteuning
+        - name: Azure Migrate-ondersteuning
           href: migrate-support-matrix.md
-        - name: Ondersteuning voor VMware-evaluatie
+        - name: Beveiligingsbasislijn voor Azure Migrate
+          href: security-baseline.md
+    - name: Ontdekken
+      items:
+        - name: VMware-detectieondersteuning
           href: migrate-support-matrix-vmware.md
-        - name: Ondersteuning voor VMware-migratie
-          href: migrate-support-matrix-vmware-migration.md
-        - name: Ondersteuning voor Hyper-V-evaluatie
+        - name: Hyper-V-detectieondersteuning
           href: migrate-support-matrix-hyper-v.md
-        - name: Ondersteuning voor Hyper-V-migratie
-          href: migrate-support-matrix-hyper-v-migration.md
-        - name: Ondersteuning voor evaluatie van fysieke servers
+        - name: Detectieondersteuning voor fysieke servers
           href: migrate-support-matrix-physical.md
-        - name: Ondersteuning voor migratie van fysieke servers
-          href: migrate-support-matrix-physical-migration.md
         - name: Azure Migrate-apparaatvereisten
           href: migrate-appliance.md
+        - name: Azure Migrate-apparaatarchitectuur
+          href: migrate-appliance-architecture.md
+        - name: Overzicht van afhankelijkheidsanalyse
+          href: concepts-dependency-visualization.md
+    - name: Evalueren
+      items:
+        - name: Evaluatieoverzicht (migreren naar Azure-VM's)
+          href: concepts-assessment-calculation.md
+        - name: Overzicht van evaluaties (migreren naar AVS)
+          href: concepts-azure-vmware-solution-assessment-calculation.md
+        - name: Best practices voor evaluaties
+          href: best-practices-assessment.md
+    - name: Migrate
+      items:
+        - name: Een migratieplan bouwen
+          href: concepts-migration-planning.md
+        - name: Ondersteuning voor VMware-migratie
+          href: migrate-support-matrix-vmware-migration.md
+        - name: Ondersteuning voor Hyper-V-migratie
+          href: migrate-support-matrix-hyper-v-migration.md
+        - name: Ondersteuning voor migratie van fysieke servers
+          href: migrate-support-matrix-physical-migration.md
         - name: Replicatie-apparaatvereisten
           href: migrate-replication-appliance.md
-    - name: Beveiliging
-      items:
-        - name: Beveiligingsbasislijn
-          href: security-baseline.md
-    - name: Azure Migrate-apparaatarchitectuur
-      href: migrate-appliance-architecture.md
-    - name: Hyper-V-migratiearchitectuur
-      href: hyper-v-migration-architecture.md
-    - name: Migratiearchitectuur op basis van een VMware-agent
-      href: agent-based-migration-architecture.md
-    - name: Overzicht van evaluatie (migreren naar Azure-VM's)
-      href: concepts-assessment-calculation.md
-    - name: Overzicht van evaluaties (migreren naar AVS)
-      href: concepts-azure-vmware-solution-assessment-calculation.md
-    - name: Best practices voor evaluaties
-      href: best-practices-assessment.md
-    - name: Overzicht van afhankelijkheidsanalyse
-      href: concepts-dependency-visualization.md
+        - name: Hyper-V-migratiearchitectuur
+          href: hyper-v-migration-architecture.md
+        - name: Migratiearchitectuur op basis van een VMware-agent
+          href: agent-based-migration-architecture.md
 - name: Instructiegidsen
   items:
     - name: Azure Migrate-projecten maken en beheren
       href: create-manage-projects.md
-    - name: Een hulpprogramma voor de eerste keer toevoegen
-      href: how-to-add-tool-first-time.md
     - name: Voorbereiden om te werken met ISV-hulpprogramma's/Movere
       href: prepare-isv-movere.md
-    - name: Evaluatiehulpprogramma's toevoegen
-      href: how-to-assess.md
-    - name: Azure Migrate-apparaat implementeren
+    - name: Ontdekken
       items:
-        - name: Apparaat implementeren met sjabloon (VMware)
-          href: how-to-set-up-appliance-vmware.md
-        - name: Apparaat implementeren met sjabloon (Hyper-V)
-          href: how-to-set-up-appliance-hyper-v.md
-        - name: Apparaat implementeren met script (VMware/Hyper-V)
-          href: deploy-appliance-script.md
-        - name: Apparaat implementeren voor fysieke servers
-          href: how-to-set-up-appliance-physical.md
-        - name: Apparaat implementeren in Azure Government
-          href: deploy-appliance-script-government.md
-    - name: Detectiebereik beperken voor VMware-VM's
-      href: set-discovery-scope.md
-    - name: Toepassingen/rollen/functies detecteren
-      href: how-to-discover-applications.md
-    - name: Machines groeperen voor evaluatie
-      href: how-to-create-a-group.md
-    - name: Machine-afhankelijkheden analyseren (op basis van agents)
-      href: how-to-create-group-machine-dependencies.md
-    - name: Machine-afhankelijkheden analyseren (zonder agents)
-      href: how-to-create-group-machine-dependencies-agentless.md
-    - name: Een Azure VM-evaluatie maken
-      href: how-to-create-assessment.md
-    - name: Een AVS-evaluatie maken
-      href: how-to-create-azure-vmware-solution-assessment.md
-    - name: Een SQL Server-database evalueren
-      href: /sql/dma/dma-assess-sql-data-estate-to-sqldb
-    - name: Een beoordeling aanpassen
-      href: how-to-modify-assessment.md
-    - name: Migratiehulpprogramma's toevoegen
-      href: how-to-migrate.md
-    - name: VMware-machines migreren naar Azure-VM's die zijn versleuteld met SSE en CMK
-      href: how-to-migrate-vmware-vms-with-cmk-disks.md
-    - name: Windows 2003-servers voorbereiden voor migratie
-      href: prepare-windows-server-2003-migration.md
-    - name: Machines op migratie voorbereiden
-      href: prepare-for-migration.md
-    - name: Een Azure Migrate-project verwijderen
-      href: how-to-delete-project.md
-    - name: Met een eerdere versie werken
-      href: migrate-v1.md
-    - name: Evaluatie en migratie schalen
+        - name: Het Azure Migrate-apparaat implementeren
+          items:
+            - name: Apparaat implementeren met sjabloon (VMware)
+              href: how-to-set-up-appliance-vmware.md
+            - name: Apparaat implementeren met sjabloon (Hyper-V)
+              href: how-to-set-up-appliance-hyper-v.md
+            - name: Apparaat implementeren met script (VMware/Hyper-V)
+              href: deploy-appliance-script.md
+            - name: Apparaat implementeren voor fysieke servers
+              href: how-to-set-up-appliance-physical.md
+            - name: Apparaat implementeren in Azure Government
+              href: deploy-appliance-script-government.md
+        - name: Detectiebereik beperken voor VMware-VM's
+          href: set-discovery-scope.md
+        - name: Toepassingen/rollen/functies detecteren
+          href: how-to-discover-applications.md
+        - name: Machine-afhankelijkheden analyseren (op basis van agents)
+          href: how-to-create-group-machine-dependencies.md
+        - name: Machine-afhankelijkheden analyseren (zonder agents)
+          href: how-to-create-group-machine-dependencies-agentless.md
+    - name: Evalueren
       items:
-        - name: Een groot aantal VMware-VM's evalueren
-          href: scale-vmware-assessment.md
-        - name: Een groot aantal Hyper-V-VM's evalueren
-          href: scale-hyper-v-assessment.md
-        - name: Een groot aantal fysieke servers evalueren
-          href: scale-physical-assessment.md
-        - name: Migratie van een groot aantal VM's automatiseren
-          href: how-to-migrate-at-scale.md
-        - name: Informatie over automatiseren van VMware-migratie
-          href: how-to-automate-migration.md
-        - name: Migratievoorbeelden (Contoso-reeks)
-          href: contoso-migration-overview.md
+        - name: Evaluatiehulpprogramma's toevoegen
+          href: how-to-assess.md
+        - name: Machines groeperen voor evaluatie
+          href: how-to-create-a-group.md
+        - name: Een Azure VM-evaluatie maken
+          href: how-to-create-assessment.md
+        - name: Een AVS-evaluatie maken
+          href: how-to-create-azure-vmware-solution-assessment.md
+        - name: Een SQL Server-database evalueren
+          href: /sql/dma/dma-assess-sql-data-estate-to-sqldb
+        - name: Een beoordeling aanpassen
+          href: how-to-modify-assessment.md
+        - name: Evaluatie schalen
+          items:
+            - name: Een groot aantal VMware-VM's evalueren
+              href: scale-vmware-assessment.md
+            - name: Een groot aantal Hyper-V-VM's evalueren
+              href: scale-hyper-v-assessment.md
+            - name: Een groot aantal fysieke servers evalueren
+              href: scale-physical-assessment.md
+    - name: Migrate
+      items:
+        - name: Migratiehulpprogramma's toevoegen
+          href: how-to-migrate.md
+        - name: Machines op migratie voorbereiden
+          href: prepare-for-migration.md
+        - name: Virtuele VMware-machines migreren
+          items:
+            - name: VMware-VM's migreren naar versleutelde Azure-VM's
+              href: how-to-migrate-vmware-vms-with-cmk-disks.md
+            - name: Windows 2003-servers voorbereiden voor migratie
+              href: prepare-windows-server-2003-migration.md
+        - name: Migratie schalen
+          items:
+            - name: Migratie van een groot aantal VM's automatiseren
+              href: how-to-migrate-at-scale.md
+            - name: Informatie over automatiseren van VMware-migratie
+              href: how-to-automate-migration.md
+    - name: Beheren
+      items:
+        - name: Een Azure Migrate-project verwijderen
+          href: how-to-delete-project.md
+        - name: Werken met een eerdere versie van Azure Migrate
+          href: migrate-v1.md
 - name: Problemen oplossen
   items:
-    - name: Problemen met Azure Migrate oplossen
-      href: troubleshoot-general.md
-    - name: Problemen met Azure Migrate-projecten oplossen
-      href: troubleshoot-project.md
-    - name: Problemen met Azure Migrate-apparaat/-detectie oplossen
-      href: troubleshoot-appliance-discovery.md
-    - name: Problemen met de evaluatie/afhankelijkheid oplossen
-      href: troubleshoot-assessment.md
-    - name: Replicatieproblemen oplossen in agentloze VMware-migratie
-      href: troubleshoot-changed-block-tracking-replication.md
+    - name: Algemeen
+      items:
+        - name: Problemen met Azure Migrate oplossen
+          href: troubleshoot-general.md
+        - name: Problemen met Azure Migrate-projecten oplossen
+          href: troubleshoot-project.md
+    - name: Ontdekken
+      items:
+        - name: Problemen met Azure Migrate-apparaat/-detectie oplossen
+          href: troubleshoot-appliance-discovery.md
+    - name: Evalueren
+      items:
+        - name: Problemen met de evaluatie/afhankelijkheid oplossen
+          href: troubleshoot-assessment.md
+    - name: Migrate
+      items:
+        - name: Replicatieproblemen oplossen in agentloze VMware-migratie
+          href: troubleshoot-changed-block-tracking-replication.md
 - name: Resources
   items:
     - name: Migratie in het Cloud Adoption Framework
       href: /azure/cloud-adoption-framework/migrate/
+    - name: Contoso-migratievoorbeelden
+      href: /azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-overview
     - name: REST-API
       href: /rest/api/migrate/
     - name: Resource Manager-sjabloon

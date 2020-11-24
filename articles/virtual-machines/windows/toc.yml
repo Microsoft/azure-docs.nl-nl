@@ -4,7 +4,7 @@
   items:
     - name: Informatie over virtuele machines
       href: overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Virtuele machine maken - Portal
       href: quick-create-portal.md

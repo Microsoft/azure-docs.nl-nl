@@ -115,12 +115,10 @@
             - name: Toegangsbeheer
               items:
                 - name: Overzicht
-                  href: ../sql-database/sql-database-control-access.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+                  href: ./security/access-control.md
+                  displayname: 'access, control'
                 - name: 'Synapse-werkruimte: beheerde identiteit'
                   href: ./security/synapse-workspace-managed-identity.md
-                - name: SQL-pools
-                  href: ./sql/access-control.md
-                  displayname: 'access, control'
         - name: 'Integratie van hulpprogramma''s (AI, ETL, BI)'
           items:
             - name: Probleem met Synapse Studio oplossen
@@ -304,6 +302,8 @@
               href: ./sql-data-warehouse/sql-data-warehouse-concept-resource-utilization-query-activity.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Beveiliging
           items:
+            - name: Database-toegangsbeheer
+              href: ../sql-database/sql-database-control-access.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Gegevensbeveiliging
               items:
                 - name: Beveiliging op kolomniveau

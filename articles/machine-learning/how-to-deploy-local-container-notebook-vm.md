@@ -11,12 +11,12 @@ ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
 ms.date: 03/05/2020
-ms.openlocfilehash: 05d810928a71aec0e3314c32051e5f3565413564
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 17b2d717ac6f244cb3ddddfdbc2f29581aa1f59f
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444602"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95527306"
 ---
 # <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>Een model implementeren om reken instanties te Azure Machine Learning
 
@@ -40,7 +40,7 @@ Een voor beeld van een notebook dat lokale implementaties bevat, is opgenomen in
 
 1. Selecteer uw Azure Machine Learning Reken instanties in [Azure machine learning Studio](https://ml.azure.com).
 
-1. Open de `samples-*` submap en open `how-to-use-azureml/deploy-to-local/register-model-deploy-local.ipynb` . Als het notitie blok eenmaal is geopend, voert u het uit.
+1. Open de `samples-*` submap en open `how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local.ipynb` . Als het notitie blok eenmaal is geopend, voert u het uit.
 
     ![Scherm afbeelding van de actieve lokale service op notebook](./media/how-to-deploy-local-container-notebook-vm/deploy-local-service.png)
 

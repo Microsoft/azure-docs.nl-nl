@@ -7,12 +7,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 03/15/2020
 ms.author: matjazl
-ms.openlocfilehash: c62593251cb0e19c91d1c4877d1b33fe407ebd06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 096e4e3ecbcedaec674e074a2baccbb336e03c94
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87847003"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95524195"
 ---
 # <a name="configure-local-rbac-for-fhir"></a>Lokale RBAC configureren voor FHIR 
 
@@ -23,7 +23,7 @@ In dit artikel wordt uitgelegd hoe u de Azure-API voor FHIR configureert om een 
 
 ## <a name="add-service-principal"></a>Service-principal toevoegen
 
-Met lokale RBAC kunt u een externe Azure Active Directory Tenant met uw FHIR-server gebruiken. Om het RBAC-systeem in staat te stellen groepslid maatschappen in deze Tenant te controleren, moet de Azure API voor FHIR een Service-Principal in de Tenant hebben. Deze service-principal wordt automatisch gemaakt in tenants die zijn gekoppeld aan abonnementen die de Azure-API voor FHIR hebben geïmplementeerd. als uw Tenant echter geen abonnement heeft, moet een Tenant beheerder deze service-principal maken met een van de volgende opdrachten:
+Met lokale RBAC kunt u een externe Azure Active Directory Tenant met uw FHIR-server gebruiken. Om het lokale RBAC-systeem in staat te stellen groepslid maatschappen in deze Tenant te controleren, moet de Azure API voor FHIR een Service-Principal in de Tenant hebben. Deze service-principal wordt automatisch gemaakt in tenants die zijn gekoppeld aan abonnementen die de Azure-API voor FHIR hebben geïmplementeerd. als uw Tenant echter geen abonnement heeft, moet een Tenant beheerder deze service-principal maken met een van de volgende opdrachten:
 
 De `Az` Power shell-module gebruiken:
 

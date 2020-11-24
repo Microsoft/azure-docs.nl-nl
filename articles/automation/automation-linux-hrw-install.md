@@ -3,24 +3,26 @@ title: Een Linux-Hybrid Runbook Worker implementeren in Azure Automation
 description: In dit artikel wordt uitgelegd hoe u een Azure Automation Hybrid Runbook Worker installeert voor het uitvoeren van runbooks op Linux-computers in uw lokale Data Center of cloud omgeving.
 services: automation
 ms.subservice: process-automation
-ms.date: 10/06/2020
+ms.date: 11/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: c84f168104be4ba4cb8af2e31be82eed0e2ae83a
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 9b06024b7dc25f37f75c71b822f6aeea32c3e26a
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205181"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95509066"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Een Linux-Hybrid Runbook Worker implementeren
 
-U kunt de functie Hybrid Runbook Worker van Azure Automation gebruiken om runbooks rechtstreeks uit te voeren op de computer waarop de rol wordt gehost en aan resources in de omgeving om deze lokale resources te beheren. De Linux-Hybrid Runbook Worker voert runbooks uit als een speciale gebruiker die kan worden uitgebreid voor het uitvoeren van opdrachten die moeten worden uitgebreid. Azure Automation runbooks opslaat en beheert en vervolgens aan een of meer aangewezen computers worden geleverd. In dit artikel wordt beschreven hoe u de Hybrid Runbook Worker op een Linux-computer installeert, hoe u de werk nemer verwijdert en hoe u een Hybrid Runbook Worker groep verwijdert.
+U kunt de functie gebruikers Hybrid Runbook Worker van Azure Automation gebruiken om runbooks rechtstreeks op de Azure-of niet-Azure-machine uit te voeren, inclusief servers die zijn geregistreerd bij [servers met Azure Arc-functionaliteit](../azure-arc/servers/overview.md). Op de computer of server die als host fungeert voor de rol, kunt u runbooks rechtstreeks uitvoeren en aan resources in de omgeving om deze lokale resources te beheren.
+
+De Linux-Hybrid Runbook Worker voert runbooks uit als een speciale gebruiker die kan worden uitgebreid voor het uitvoeren van opdrachten die moeten worden uitgebreid. Azure Automation runbooks opslaat en beheert en vervolgens aan een of meer aangewezen computers worden geleverd. In dit artikel wordt beschreven hoe u de Hybrid Runbook Worker op een Linux-computer installeert, hoe u de werk nemer verwijdert en hoe u een Hybrid Runbook Worker groep verwijdert.
 
 Nadat u een runbook worker hebt geïmplementeerd, raadpleegt u [Runbooks uitvoeren op een Hybrid Runbook worker](automation-hrw-run-runbooks.md) voor meer informatie over het configureren van runbooks voor het automatiseren van processen in uw on-premises Data Center of een andere cloud omgeving.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
+Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt.
 
 ### <a name="a-log-analytics-workspace"></a>Een Log Analytics-werk ruimte
 
@@ -28,23 +30,9 @@ De functie Hybrid Runbook Worker is afhankelijk van een Azure Monitor Log Analyt
 
 Als u geen Azure Monitor Log Analytics-werk ruimte hebt, raadpleegt u de [ontwerp richtlijnen voor Azure monitor logboek](../azure-monitor/platform/design-logs-deployment.md) voordat u de werk ruimte maakt.
 
-Als u een werk ruimte hebt, maar deze niet is gekoppeld aan uw Automation-account en u een automatiserings functie inschakelt, voegt u functionaliteit toe voor Azure Automation, inclusief ondersteuning voor de Hybrid Runbook Worker. Wanneer u een van de Azure Automation functies in uw Log Analytics-werk ruimte, met name [updatebeheer](update-management/update-mgmt-overview.md) of [Wijzigingen bijhouden en inventaris](change-tracking/overview.md), inschakelt, worden de werk onderdelen automatisch naar de agent computer gepusht.
-
-Als u de functie Updatebeheer wilt toevoegen aan uw werk ruimte, voert u de volgende Power shell-cmdlet uit:
-
-```powershell-interactive
-    Set-AzOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsResourceGroup> -WorkspaceName <logAnalyticsWorkspaceName> -IntelligencePackName "Updates" -Enabled $true
-```
-
-Voer de volgende Power shell-cmdlet uit om de functie Wijzigingen bijhouden en inventaris aan uw werk ruimte toe te voegen:
-
-```powershell-interactive
-    Set-AzOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsResourceGroup> -WorkspaceName <logAnalyticsWorkspaceName> -IntelligencePackName "ChangeTracking" -Enabled $true
-```
-
 ### <a name="log-analytics-agent"></a>Log Analytics-agent
 
-De Hybrid Runbook Worker-rol vereist de [log Analytics-agent](../azure-monitor/platform/log-analytics-agent.md) voor het ondersteunde Linux-besturings systeem.
+De Hybrid Runbook Worker-rol vereist de [log Analytics-agent](../azure-monitor/platform/log-analytics-agent.md) voor het ondersteunde Linux-besturings systeem. Voor servers of computers die buiten Azure worden gehost, kunt u de Log Analytics-agent installeren met [servers met Azure Arc-functionaliteit](../azure-arc/servers/overview.md).
 
 >[!NOTE]
 >Nadat u de Log Analytics-agent voor Linux hebt geïnstalleerd, moet u de machtigingen van de `sudoers.d` map of het eigendom niet wijzigen. De sudo-machtiging is vereist voor het **nxautomation** -account. Dit is de gebruikers context waarin de Hybrid Runbook worker wordt uitgevoerd. De machtigingen mogen niet worden verwijderd. Als u dit beperkt tot bepaalde mappen of opdrachten, kan dit leiden tot een belang rijke wijziging.
@@ -54,17 +42,17 @@ De Hybrid Runbook Worker-rol vereist de [log Analytics-agent](../azure-monitor/p
 
 De functie Hybrid Runbook Worker ondersteunt de volgende distributies:
 
-* Amazon Linux 2012,09 tot 2015,09 (x86/x64)
-* CentOS Linux 5, 6 en 7 (x86/x64)
-* Oracle Linux 5, 6 en 7 (x86/x64)
-* Red Hat Enterprise Linux Server 5, 6 en 7 (x86/x64)
-* Debian GNU/Linux 6, 7 en 8 (x86/x64)
-* Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS en 18,04 (x86/x64)
-* SUSE Linux Enterprise Server 12 (x86/x64)
+* Amazon Linux 2012,09 tot 2015,09 (x64)
+* CentOS Linux 5, 6 en 7 (x64)
+* Oracle Linux 5, 6 en 7 (x64)
+* Red Hat Enterprise Linux Server 5, 6 en 7 (x64)
+* Debian GNU/Linux 6, 7 en 8 (x64)
+* Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS en 18,04 (x64)
+* SUSE Linux Enterprise Server 12 (x64)
 
 ### <a name="minimum-requirements"></a>Minimale vereisten
 
-De minimale vereisten voor een Linux-Hybrid Runbook Worker zijn:
+De minimale vereisten voor een Linux-systeem en gebruikers Hybrid Runbook Worker zijn:
 
 * Twee kernen
 * 4 GB aan RAM-geheugen
@@ -79,6 +67,13 @@ De minimale vereisten voor een Linux-Hybrid Runbook Worker zijn:
 |PAM | Pluggable Authentication Modules|
 | **Optioneel pakket** | **Beschrijving** | **Minimale versie**|
 | PowerShell Core | Als u Power shell-runbooks wilt uitvoeren, moet Power shell Core zijn geïnstalleerd. Zie [Power shell core in Linux installeren](/powershell/scripting/install/installing-powershell-core-on-linux) voor meer informatie over het installeren ervan. | 6.0.0 |
+
+### <a name="adding-a-machine-to-a-hybrid-runbook-worker-group"></a>Een machine toevoegen aan een Hybrid Runbook Worker groep
+
+U kunt de werk computer toevoegen aan een Hybrid Runbook Worker groep in een van uw Automation-accounts. Voor computers die als host fungeren voor het systeem Hybrid Runbook worker die wordt beheerd door Updatebeheer, kunnen ze worden toegevoegd aan een Hybrid Runbook Worker groep. Maar u moet hetzelfde Automation-account gebruiken voor zowel Updatebeheer als het lidmaatschap van de Hybrid Runbook Worker groep.
+
+>[!NOTE]
+>Azure Automation [updatebeheer](update-management/update-mgmt-overview.md) installeert automatisch het systeem Hybrid Runbook worker op een Azure-of niet-Azure-machine die is ingeschakeld voor updatebeheer. Deze werk nemer is echter niet geregistreerd met Hybrid Runbook Worker groepen in uw Automation-account. Als u uw runbooks op deze computers wilt uitvoeren, moet u deze toevoegen aan een Hybrid Runbook Worker groep. Volg stap 4 onder de sectie [een Linux-Hybrid Runbook worker installeren](#install-a-linux-hybrid-runbook-worker) om het toe te voegen aan een groep.
 
 ## <a name="supported-linux-hardening"></a>Ondersteunde Linux-beveiliging
 
@@ -100,15 +95,40 @@ Hybrid Runbook Workers van Linux ondersteunen een beperkt aantal typen Runbook i
 
 <sup>1</sup> Power shell-runbooks vereisen dat Power shell core wordt geïnstalleerd op de Linux-machine. Zie [Power shell core in Linux installeren](/powershell/scripting/install/installing-powershell-core-on-linux) voor meer informatie over het installeren ervan.
 
+### <a name="network-configuration"></a>Netwerkconfiguratie
+
+Zie [uw netwerk configureren](automation-hybrid-runbook-worker.md#network-planning)voor de netwerk vereisten voor de Hybrid Runbook Worker.
+
 ## <a name="install-a-linux-hybrid-runbook-worker"></a>Een Linux-Hybrid Runbook Worker installeren
 
 Als u een Linux-Hybrid Runbook Worker wilt installeren en configureren, voert u de volgende stappen uit.
 
-1. Implementeer de Log Analytics-agent op de doel computer.
+1. Schakel de Azure Automation oplossing in uw Log Analytics-werk ruimte in door de volgende opdracht uit te voeren in een Power shell-opdracht prompt met verhoogde bevoegdheid of in Cloud Shell in de [Azure Portal](https://portal.azure.com):
 
-    * Voor Azure-Vm's installeert u de Log Analytics-agent voor Linux met behulp [van de virtuele-machine extensie voor Linux](../virtual-machines/extensions/oms-linux.md). Met de uitbrei ding wordt de Log Analytics agent geïnstalleerd op virtuele machines van Azure en worden virtuele machines geregistreerd in een bestaande Log Analytics-werk ruimte met behulp van een Azure Resource Manager-sjabloon of de Azure CLI. Zodra de agent is geïnstalleerd, kan de virtuele machine worden toegevoegd aan een Hybrid Runbook Worker groep in uw Automation-account.
+    ```powershell
+    Set-AzOperationalInsightsIntelligencePack -ResourceGroupName <resourceGroupName> -WorkspaceName <workspaceName> -IntelligencePackName "AzureAutomation" -Enabled $true
+    ```
 
-    * Voor niet-Azure Vm's installeert u de Log Analytics-agent voor Linux met behulp van de implementatie opties die worden beschreven in het artikel [verbinding maken met Linux-computers met Azure monitor](../azure-monitor/platform/agent-linux.md) . U kunt dit proces herhalen voor meerdere machines om meerdere werk nemers aan uw omgeving toe te voegen. Zodra de agent is geïnstalleerd, kunnen de virtuele machines worden toegevoegd aan een Hybrid Runbook Worker groep in uw Automation-account.
+2. Implementeer de Log Analytics-agent op de doel computer.
+
+    * Voor Azure-Vm's installeert u de Log Analytics-agent voor Linux met behulp [van de virtuele-machine extensie voor Linux](../virtual-machines/extensions/oms-linux.md). Met de uitbrei ding wordt de Log Analytics agent op virtuele machines van Azure geïnstalleerd en worden virtuele machines geregistreerd in een bestaande Log Analytics-werk ruimte. U kunt een Azure Resource Manager-sjabloon, de Azure CLI of de Azure Policy gebruiken om de implementatie Log Analytics agent toe te wijzen voor het ingebouwde beleid [voor *Linux* -of *Windows* -vm's](../governance/policy/samples/built-in-policies.md#monitoring) . Zodra de agent is geïnstalleerd, kan de computer worden toegevoegd aan een Hybrid Runbook Worker groep in uw Automation-account.
+
+    * Voor niet-Azure-machines kunt u de Log Analytics-agent installeren met [servers voor Azure Arc ingeschakeld](../azure-arc/servers/overview.md). Arc ingeschakelde servers ondersteunen de implementatie van de Log Analytics agent met behulp van de volgende methoden:
+
+        - Het Framework van VM-extensies gebruiken.
+
+            Met deze functie in azure Arc enabled servers kunt u de VM-extensie van Log Analytics agent implementeren op een niet-Azure Windows-en/of Linux-server. VM-extensies kunnen worden beheerd met behulp van de volgende methoden op uw hybride computers of servers die worden beheerd door servers met Arc-functionaliteit:
+
+            - De [Azure Portal](../azure-arc/servers/manage-vm-extensions-portal.md)
+            - De [Azure cli](../azure-arc/servers/manage-vm-extensions-cli.md)
+            - [Azure PowerShell](../azure-arc/servers/manage-vm-extensions-powershell.md)
+            - Azure [Resource Manager-sjablonen](../azure-arc/servers/manage-vm-extensions-template.md)
+
+        - Azure Policy gebruiken.
+
+            Met deze methode gebruikt u de Azure Policy [log Analytics agent implementeren voor Linux of Windows Azure Arc machines](../governance/policy/samples/built-in-policies.md#monitoring) ingebouwd beleid om te controleren of de op de Arc ingeschakelde server de log Analytics-agent is geïnstalleerd. Als de agent niet is geïnstalleerd, wordt deze automatisch geïmplementeerd met een herstel taak. Als u van plan bent om de machines met Azure Monitor voor VM's te controleren, gebruikt u in plaats daarvan het Azure Monitor voor VM's-initiatief [inschakelen](../governance/policy/samples/built-in-initiatives.md#monitoring) en configureert u de log Analytics agent.
+
+        U kunt het beste de Log Analytics-agent voor Windows of Linux installeren met behulp van Azure Policy.
 
     > [!NOTE]
     > Als u de configuratie wilt beheren van machines die ondersteuning bieden voor de Hybrid Runbook Worker rol met behulp van desired state Configuration (DSC), moet u de computers als DSC-knoop punten toevoegen.
@@ -116,27 +136,27 @@ Als u een Linux-Hybrid Runbook Worker wilt installeren en configureren, voert u 
     > [!NOTE]
     > Het [nxautomation-account](automation-runbook-execution.md#log-analytics-agent-for-linux) met de bijbehorende sudo-machtigingen moet aanwezig zijn tijdens de installatie van de Linux-Hybrid Worker. Als u de werk nemer probeert te installeren en het account niet aanwezig is of niet de juiste machtigingen heeft, mislukt de installatie.
 
-2. Controleer of de agent wordt gerapporteerd aan de werk ruimte.
+3. Controleer of de agent wordt gerapporteerd aan de werk ruimte.
 
     De Log Analytics-agent voor Linux verbindt machines met een Azure Monitor Log Analytics-werk ruimte. Wanneer u de agent op de computer installeert en verbindt met uw werk ruimte, worden automatisch de onderdelen gedownload die vereist zijn voor de Hybrid Runbook Worker.
 
     Wanneer de agent na een paar minuten verbinding heeft gemaakt met uw Log Analytics-werk ruimte, kunt u de volgende query uitvoeren om te controleren of er heartbeat-gegevens naar de werk ruimte worden verzonden.
 
     ```kusto
-    Heartbeat 
+    Heartbeat
     | where Category == "Direct Agent"
     | where TimeGenerated > ago(30m)
     ```
 
     In de zoek resultaten ziet u heartbeat-records voor de machine, waarmee wordt aangegeven dat deze is verbonden en dat er wordt gerapporteerd aan de service. Standaard stuurt elke agent een heartbeat-record naar de toegewezen werk ruimte.
 
-3. Voer de volgende opdracht uit om de machine toe te voegen aan een Hybrid Runbook worker groep, waarbij u de waarden opgeeft voor de para meters,, `-w` `-k` `-g` en `-e` .
+4. Voer de volgende opdracht uit om de machine toe te voegen aan een Hybrid Runbook worker groep, waarbij u de waarden opgeeft voor de para meters,, `-w` `-k` `-g` en `-e` .
 
     U kunt de vereiste gegevens voor para meters `-k` en `-e` op de pagina **sleutels** in uw Automation-account ophalen. Selecteer **sleutels** onder de sectie **account instellingen** aan de linkerkant van de pagina.
 
     ![Pagina sleutels beheren](media/automation-hybrid-runbook-worker/elements-panel-keys.png)
 
-    * `-e`Kopieer de waarde voor **URL**voor de para meter.
+    * `-e`Kopieer de waarde voor **URL** voor de para meter.
 
     * Kopieer voor de `-k` para meter de waarde voor de **primaire toegangs sleutel**.
 
@@ -148,7 +168,7 @@ Als u een Linux-Hybrid Runbook Worker wilt installeren en configureren, voert u 
    sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/onboarding.py --register -w <logAnalyticsworkspaceId> -k <automationSharedKey> -g <hybridGroupName> -e <automationEndpoint>
    ```
 
-4. Nadat de opdracht is voltooid, toont de pagina Hybrid Worker groepen in uw Automation-account de nieuwe groep en het aantal leden. Als dit een bestaande groep is, wordt het aantal leden verhoogd. U kunt de groep selecteren in de lijst op de pagina Hybrid Worker groepen en de tegel **Hybrid Workers** selecteren. Op de pagina Hybrid Workers ziet u elk lid van de groep die wordt weer gegeven.
+5. Controleer de implementatie nadat het script is voltooid. Op de pagina **Hybrid Runbook worker groepen** in uw Automation-account, onder het tabblad **gebruikers Hybrid Runbook Workers Group** , worden de nieuwe of bestaande groep en het aantal leden weer gegeven. Als het een bestaande groep is, wordt het aantal leden verhoogd. U kunt de groep selecteren in de lijst op de pagina vanuit het menu aan de linkerkant de optie **Hybrid Workers** kiezen. Op de pagina **Hybrid Workers** kunt u elk lid van de groep weer geven.
 
     > [!NOTE]
     > Als u de Log Analytics extensie van de virtuele machine voor Linux voor een Azure-VM gebruikt, wordt u aangeraden om in te stellen dat er `autoUpgradeMinorVersion` `false` problemen met de Hybrid Runbook Worker kunnen ontstaan door de versie van automatische upgrades. Zie [Azure cli-implementatie](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment)voor meer informatie over het hand matig bijwerken van de extensie.
@@ -161,7 +181,7 @@ Voor Linux Hybrid Runbook Workers is standaard handtekening validatie vereist. A
  sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/require_runbook_signature.py --false <logAnalyticsworkspaceId>
  ```
 
-## <a name="remove-the-hybrid-runbook-worker-from-an-on-premises-linux-machine"></a><a name="remove-linux-hybrid-runbook-worker"></a>De Hybrid Runbook Worker van een on-premises Linux-machine verwijderen
+## <a name="remove-the-hybrid-runbook-worker"></a><a name="remove-linux-hybrid-runbook-worker"></a>De Hybrid Runbook Worker verwijderen
 
 U kunt de opdracht `ls /var/opt/microsoft/omsagent` op de Hybrid Runbook worker gebruiken om de werk ruimte-id op te halen. Er wordt een map gemaakt met de naam van de werk ruimte-ID.
 

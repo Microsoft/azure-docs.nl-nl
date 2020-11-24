@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1f9e4fd2f7f55f916743074b57f89788c0d32f7d
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 636bc3c64dcd15ead36a9a4e969e802d49895dca
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427489"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522240"
 ---
 # <a name="azure-security-baseline-for-azure-private-link"></a>Azure-beveiligings basislijn voor persoonlijke Azure-koppeling
 
@@ -28,7 +28,7 @@ Deze beveiligings basislijn past richt lijnen toe van de [Azure Security Bench M
 
 Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke resources plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 - [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
@@ -64,11 +64,11 @@ U kunt ook gegevens voor Azure Sentinel of een SIEM van derden inschakelen op ba
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: controle logboek registratie inschakelen voor Azure-resources
 
-**Hulp**bij het inschakelen van Azure monitor activiteiten logboeken, de logboek bewerkingen die worden uitgevoerd op persoonlijke koppelings resources, zoals, die de bewerking hebben gestart toen de bewerking plaatsvond, de status van de bewerking en andere nuttige controle-informatie. 
+**Hulp** bij het inschakelen van Azure monitor activiteiten logboeken, de logboek bewerkingen die worden uitgevoerd op persoonlijke koppelings resources, zoals, die de bewerking hebben gestart toen de bewerking plaatsvond, de status van de bewerking en andere nuttige controle-informatie. 
 
 - [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
 
-- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 - [Logboek registratie en controle voor persoonlijke koppeling](private-link-overview.md#logging-and-monitoring)
 
@@ -96,7 +96,7 @@ Een andere mogelijkheid is om gegevens in te scha kelen naar Azure Sentinel of e
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Log Analytics-werk ruimte begrijpen](../azure-monitor/log-query/get-started-portal.md)
+- [Log Analytics-werk ruimte begrijpen](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 - [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
@@ -142,7 +142,7 @@ Schakel gegevens naar Azure Sentinel of een SIEM van derden in op basis van de z
 
 Schakel ook Just-in-time/alleen-voldoende toegang in met behulp van Azure Active Directory (Azure AD) Privileged Identity Management geprivilegieerde rollen voor micro soft-Services en Azure Resource Manager.
 
-- [Meer informatie over Privileged Identity Management](/azure/active-directory/privileged-identity-management/)
+- [Meer informatie over Privileged Identity Management](../active-directory/privileged-identity-management/index.yml)
 
 **Azure Security Center bewaking**: Ja
 
@@ -188,7 +188,7 @@ Schakel ook Just-in-time/alleen-voldoende toegang in met behulp van Azure Active
 
 **Hulp**: gebruik de functie voor risico detectie van Azure Active Directory (Azure AD) om waarschuwingen en rapporten weer te geven over Risk ante gebruikers gedrag. Security Center waarschuwingen voor risico detectie opnemen in Azure Monitor en aangepaste waarschuwingen/meldingen configureren met actie groepen.
 
-- [Meer informatie over Azure Security Center risico detecties (verdachte activiteiten)](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Meer informatie over Azure Security Center risico detecties (verdachte activiteiten)](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Azure-activiteiten logboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
@@ -222,7 +222,7 @@ Schakel ook Just-in-time/alleen-voldoende toegang in met behulp van Azure Active
 
 **Hulp**: Azure Active Directory biedt logboeken waarmee u verlopen accounts kunt detecteren. U kunt ook Azure Identity Access revisies gebruiken om groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -248,7 +248,7 @@ Stroom lijn dit proces door Diagnostische instellingen voor Azure AD-gebruikers 
 
 Gegevens opnemen in azure Sentinel voor verder onderzoek.
 
-- [Risk ante aanmeldingen voor Azure AD weer geven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Risk ante aanmeldingen voor Azure AD weer geven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -258,7 +258,7 @@ Gegevens opnemen in azure Sentinel voor verder onderzoek.
 
 **Verantwoordelijkheid**: klant
 
-## <a name="data-protection"></a>Gegevensbeveiliging
+## <a name="data-protection"></a>Gegevensbescherming
 
 *Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 
@@ -270,11 +270,11 @@ Beperk het toegangs niveau voor uw Azure-resources met uw toepassingen en bedrij
 
 Toegang tot Azure-resources beheren via Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Azure Security Center bewaking**: niet van toepassing
 
@@ -348,7 +348,7 @@ Zorg ervoor dat u de juiste machtigingen (lezen) hebt in uw Tenant en dat u alle
 
 **Richt lijnen**: Tags Toep assen op Azure-resources met behulp van meta gegevens om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Azure Security Center bewaking**: niet van toepassing
 
@@ -360,11 +360,11 @@ Zorg ervoor dat u de juiste machtigingen (lezen) hebt in uw Tenant en dat u alle
 
 Sluit de inventaris regel matig af en zorg ervoor dat niet-geautoriseerde resources tijdig worden verwijderd uit het abonnement.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Azure Security Center bewaking**: niet van toepassing
 
@@ -380,7 +380,7 @@ Sluit de inventaris regel matig af en zorg ervoor dat niet-geautoriseerde resour
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
 
 - Niet toegestane resourcetypen
 
@@ -410,7 +410,7 @@ Gebruik ook de resource grafiek van Azure voor het opvragen/detecteren van resou
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
-**Hulp: gebruik**Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
+**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
 
 - Niet toegestane resourcetypen
 
@@ -418,7 +418,7 @@ Gebruik ook de resource grafiek van Azure voor het opvragen/detecteren van resou
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](/azure/governance/policy/samples/not-allowed-resource-types)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/index.md)
 
 - [Voor beeld van Azure-beleid-ingebouwde invoeg toepassingen voor persoonlijke koppeling](../governance/policy/samples/built-in-policies.md)
 
@@ -634,7 +634,7 @@ De klant is verantwoordelijk voor het herbemiddeling van waarschuwingen op basis
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 
-- [Tags gebruiken om Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
 **Azure Security Center bewaking**: Ja
 
@@ -664,7 +664,7 @@ Bekijk incidenten, plaats een voorval om te controleren of de problemen zijn opg
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10,5: beveiligings waarschuwingen opnemen in uw reactie systeem van uw incident
 
-**Hulp: exporteer**Security Center waarschuwingen en aanbevelingen met behulp van de functie continue export om Risico's voor Azure-resources te identificeren. Met doorlopend exporteren kunt u waarschuwingen en aanbevelingen hand matig of op een doorlopende manier exporteren. 
+**Hulp: exporteer** Security Center waarschuwingen en aanbevelingen met behulp van de functie continue export om Risico's voor Azure-resources te identificeren. Met doorlopend exporteren kunt u waarschuwingen en aanbevelingen hand matig of op een doorlopende manier exporteren. 
 
 Gebruik ook de Security Center Data Connector om de waarschuwingen naar Azure Sentinel te streamen, zoals vereist voor uw bedrijfs activiteiten.
 
@@ -706,5 +706,5 @@ Gebruik de strategie van micro soft en de uitvoering van de implementatie van de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de [Azure Security-Bench Mark](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligings basislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie de [Azure Security-Bench Mark](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligings basislijnen](../security/benchmarks/security-baselines-overview.md)

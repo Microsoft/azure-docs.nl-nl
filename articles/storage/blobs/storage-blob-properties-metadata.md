@@ -9,12 +9,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: how-to
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 19d20a208672667e5a4354fd1b7d185d0c00f8d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 984fb00e163a090534da1fb41850dcfef6c5d516
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399122"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95521526"
 ---
 # <a name="manage-blob-properties-and-metadata-with-net"></a>BLOB-eigenschappen en meta gegevens beheren met .NET
 
@@ -24,7 +24,7 @@ Naast de gegevens die ze bevatten, ondersteunen blobs systeem eigenschappen en m
 
 - **Systeem eigenschappen**: systeem eigenschappen bestaan op elke Blob Storage-Resource. Sommige van deze kunnen worden gelezen of ingesteld, terwijl anderen alleen-lezen zijn. Onder de kaften sommige systeem eigenschappen overeenkomen met bepaalde standaard-HTTP-headers. De Azure Storage-client bibliotheek voor .NET houdt deze eigenschappen voor u bij.
 
-- Door de **gebruiker gedefinieerde META**gegevens: door de gebruiker gedefinieerde meta gegevens bestaan uit een of meer naam/waarde-paren die u opgeeft voor een Blob Storage-Resource. U kunt meta gegevens gebruiken om aanvullende waarden met de resource op te slaan. Meta gegevens waarden zijn alleen bedoeld voor eigen doel einden en zijn niet van invloed op de werking van de resource.
+- Door de **gebruiker gedefinieerde META** gegevens: door de gebruiker gedefinieerde meta gegevens bestaan uit een of meer naam/waarde-paren die u opgeeft voor een Blob Storage-Resource. U kunt meta gegevens gebruiken om aanvullende waarden met de resource op te slaan. Meta gegevens waarden zijn alleen bedoeld voor eigen doel einden en zijn niet van invloed op de werking van de resource.
 
 > [!NOTE]
 > BLOB index Tags bieden ook de mogelijkheid om wille keurige, door de gebruiker gedefinieerde sleutel/waarde-kenmerken op te slaan naast een Azure Blob Storage-Resource. Net als bij meta gegevens worden alleen BLOB-index Tags automatisch geïndexeerd en doorzoekbaar gemaakt door de systeem eigen BLOB-service. Meta gegevens kunnen niet worden geïndexeerd en er wordt een query uitgevoerd, tenzij u een afzonderlijke service, zoals Azure Search, gebruikt.
@@ -126,7 +126,7 @@ U kunt meta gegevens opgeven als een of meer naam/waarde-paren voor een BLOB of 
 - [SetMetadataAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblob.setmetadataasync)
 ---
 
-Naam/waarde-paren van meta gegevens zijn geldige HTTP-headers en moeten voldoen aan alle beperkingen voor HTTP-headers. Namen van meta gegevens moeten geldige namen voor HTTP-headers en geldige C#-id's zijn, mogen alleen ASCII-tekens bevatten en moeten worden behandeld als niet hoofdletter gevoelig. [Base64-Encode](https://docs.microsoft.com/dotnet/api/system.convert.tobase64string) of [URL-Codeer](https://docs.microsoft.com/dotnet/api/system.web.httputility.urlencode) meta data-waarden die niet-ASCII-tekens bevatten.
+Naam/waarde-paren van meta gegevens zijn geldige HTTP-headers en moeten voldoen aan alle beperkingen voor HTTP-headers. Namen van meta gegevens moeten geldige namen voor HTTP-headers en geldige C#-id's zijn, mogen alleen ASCII-tekens bevatten en moeten worden behandeld als niet hoofdletter gevoelig. [Base64-Encode](/dotnet/api/system.convert.tobase64string) of [URL-Codeer](/dotnet/api/system.web.httputility.urlencode) meta data-waarden die niet-ASCII-tekens bevatten.
 
 De naam van uw meta gegevens moet voldoen aan de naamgevings conventies voor C#-id's. Namen van meta gegevens behouden de case die wordt gebruikt wanneer ze zijn gemaakt, maar zijn niet hoofdletter gevoelig bij het instellen of lezen. Als twee of meer meta gegevens headers met dezelfde naam worden verzonden voor een resource, retourneert Azure Blob Storage de HTTP-fout code 400 (ongeldige aanvraag).
 

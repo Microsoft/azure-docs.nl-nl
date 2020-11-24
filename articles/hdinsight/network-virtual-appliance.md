@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: c831e099eca3cd6e6da20f55ad19980ae8e9ddc5
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 557f0a6a37747d3a461ced8de16fd1fcf0d1abab
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545919"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95524110"
 ---
 # <a name="configure-network-virtual-appliance-in-azure-hdinsight"></a>Virtueel netwerk apparaat configureren in azure HDInsight
 
@@ -22,7 +22,7 @@ ms.locfileid: "92545919"
 Azure Firewall FQDN-label wordt automatisch geconfigureerd om verkeer toe te staan voor veel van de algemene essentiële FQDN-namen. Als u een ander virtueel netwerk apparaat wilt gebruiken, moet u een aantal extra functies configureren. Houd rekening met de volgende factoren wanneer u uw virtuele netwerk apparaat configureert:
 
 * Services die geschikt zijn voor service-eind punten kunnen worden geconfigureerd met Service-eind punten die leiden tot het overs laan van de NVA, meestal voor kosten-of prestatie overwegingen.
-* Als ResourceProviderConnection is ingesteld op *outbound* , kunt u privé-eind punten gebruiken voor de opslag-en SQL-servers voor meta Stores en hoeft u deze niet toe te voegen aan de NVA.
+* Als ResourceProviderConnection is ingesteld op *outbound*, kunt u privé-eind punten gebruiken voor de opslag-en SQL-servers voor meta Stores en hoeft u deze niet toe te voegen aan de NVA.
 * Afhankelijkheden van IP-adressen zijn voor niet-HTTP/S-verkeer (TCP-en UDP-verkeer).
 * FQDN HTTP/HTTPS-eind punten kunnen worden goedgekeurd in uw NVA-apparaat.
 * Wijs de route tabel toe die u hebt gemaakt voor uw HDInsight-subnet.
@@ -41,7 +41,7 @@ U kunt eventueel een of meer van de volgende service-eind punten inschakelen, wa
 
 | **Eindpunt** | **Details** |
 |---|---|
-| [Hier](hdinsight-management-ip-addresses.md) gepubliceerde ip's | Deze IP-adressen zijn voor de HDInsight-resource provider en moeten worden opgenomen in de UDR om asymmetrische route ring te voor komen. Deze regel is alleen nodig als de ResourceProviderConnection is ingesteld op *binnenkomend* . Als de ResourceProviderConnection is ingesteld op *outbound* , zijn deze IP-adressen niet nodig in de UDR.  |
+| [Hier](hdinsight-management-ip-addresses.md) gepubliceerde ip's | Deze IP-adressen zijn voor de HDInsight-resource provider en moeten worden opgenomen in de UDR om asymmetrische route ring te voor komen. Deze regel is alleen nodig als de ResourceProviderConnection is ingesteld op *binnenkomend*. Als de ResourceProviderConnection is ingesteld op *outbound* , zijn deze IP-adressen niet nodig in de UDR.  |
 | Privé-IP-adressen van AAD-DS | Alleen vereist voor ESP-clusters als de VNETs niet zijn gekoppeld.|
 
 
@@ -57,6 +57,7 @@ De onderstaande lijst bevat alleen enkele FQDN-namen die nodig kunnen zijn voor 
 | security.ubuntu.com:80                                                |
 | ocsp.msocsp.com:80                                                    |
 | ocsp.digicert.com:80                                                  |
+| microsoft.com/pki/mscorp/cps/default.htm:443                                      |
 | microsoft.com:80                                                      |
 |login.windows.net:443                                                  |
 |login.microsoftonline.com:443                                          |

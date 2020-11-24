@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/12/2018
 ms.author: cawa
-ms.openlocfilehash: 91bc7adaf7829766c471056c50c1c3abd70dda63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a53f947eb2a44cc8773be8ee2b2bd03ca899be22
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87828775"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95520999"
 ---
 # <a name="microsoft-azure-storage-explorer-release-notes"></a>Opmerkingen bij de release Microsoft Azure Storage Explorer
 
@@ -86,7 +86,7 @@ Als u vorige versies van Storage Explorer wilt downloaden, gaat u naar de [pagin
 * Functies voor beheerde schijven worden niet ondersteund in Azure Stack.
 * Als het uploaden of plakken van de schijf mislukt en er een nieuwe schijf is gemaakt vóór de fout, wordt de schijf niet door Storage Explorer verwijderd.
 * Afhankelijk van het annuleren van het uploaden of plakken van een schijf, is het mogelijk om de nieuwe schijf beschadigd te laten. Als dit het geval is, moet u de nieuwe schijf verwijderen of hand matig de schijf-Api's aanroepen om de inhoud van de schijf te vervangen, zodat deze niet meer beschadigd is.
-* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) voor het oplossen van problemen voor meer informatie.
+* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](./storage/common/storage-explorer-troubleshooting.md) voor het oplossen van problemen voor meer informatie.
 * Het ontkoppelen van een resource die is gekoppeld via SAS URI, zoals een BLOB-container, kan een fout veroorzaken die voor komt dat andere bijlagen correct worden weer gegeven. U kunt dit probleem omzeilen door het groeps knooppunt te vernieuwen. Zie #537 voor meer informatie.
 * Als u VS voor Mac gebruikt en ooit een aangepaste AAD-configuratie hebt gemaakt, kunt u zich mogelijk niet aanmelden. U kunt het probleem omzeilen door de inhoud van ~/te verwijderen. IdentityService/AadConfigurations. Als u dit doet, neemt u een opmerking over dit probleem op.
 * Azurite heeft alle opslag-Api's nog niet volledig geïmplementeerd. Daarom kunnen er onverwachte fouten of gedrag zijn bij het gebruik van Azurite voor de ontwikkelings opslag.
@@ -108,7 +108,7 @@ Als u vorige versies van Storage Explorer wilt downloaden, gaat u naar de [pagin
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
+* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](./storage/common/storage-explorer-troubleshooting.md?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
 
 ## <a name="previous-releases"></a>Vorige versies
 
@@ -176,7 +176,7 @@ Als u vorige versies van Storage Explorer wilt downloaden, gaat u naar de [pagin
   * Een moment opname van een schijf maken
 
 Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk gemaakt door AzCopy V10 toevoegen.
-* Storage Explorer kan nu worden geïnstalleerd via de module archief op Linux. Wanneer u via de snap Store installeert, worden alle afhankelijkheden voor u geïnstalleerd, inclusief .NET core! Op dit moment hebben we gecontroleerd of Storage Explorer goed werkt op Ubuntu en CentOS. Als u problemen ondervindt tijdens de installatie vanuit de snap Store op andere Linux distributies, [opent u een probleem op github](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=snaps&template=bug-report.md&title=). Zie de [aan de slag-hand leiding](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux)voor meer informatie over het installeren vanuit de snap Store. #68
+* Storage Explorer kan nu worden geïnstalleerd via de module archief op Linux. Wanneer u via de snap Store installeert, worden alle afhankelijkheden voor u geïnstalleerd, inclusief .NET core! Op dit moment hebben we gecontroleerd of Storage Explorer goed werkt op Ubuntu en CentOS. Als u problemen ondervindt tijdens de installatie vanuit de snap Store op andere Linux distributies, [opent u een probleem op github](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=snaps&template=bug-report.md&title=). Zie de [aan de slag-hand leiding](./vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=linux)voor meer informatie over het installeren vanuit de snap Store. #68
 * Er zijn twee belang rijke wijzigingen aangebracht in de Azure Active Directory (Azure AD) die zijn bedoeld om de functie nuttiger te maken voor ADLS Gen2 gebruikers:
   * U selecteert nu de Tenant waaraan de resource die u wilt koppelen, zich bevindt. Dit betekent dat u geen RBAC-toegang meer nodig hebt tot het abonnement van de resource.
   * Als u een ADLS Gen2 BLOB-container koppelt, kunt u nu koppelen aan een specifiek pad in de container.
@@ -202,7 +202,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
 * Afhankelijk van het annuleren van het uploaden of plakken van een schijf, is het mogelijk om de nieuwe schijf beschadigd te laten. Als dit het geval is, moet u de nieuwe schijf verwijderen of hand matig de schijf-Api's aanroepen om de inhoud van de schijf te vervangen, zodat deze niet meer beschadigd is.
 * Afhankelijk van het annuleren van het uploaden of plakken van een schijf, is het mogelijk om de nieuwe schijf beschadigd te laten. Als dit het geval is, moet u de nieuwe schijf verwijderen of hand matig de schijf-Api's aanroepen om de inhoud van de schijf te vervangen, zodat deze niet meer beschadigd is.
 * Wanneer u een niet-AzCopy-BLOB downloadt, wordt de MD5 voor grote bestanden niet gecontroleerd. Dit wordt veroorzaakt door een fout in de opslag-SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) voor het oplossen van problemen voor meer informatie.
+* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](./storage/common/storage-explorer-troubleshooting.md) voor het oplossen van problemen voor meer informatie.
 * Het ontkoppelen van een resource die is gekoppeld via SAS URI, zoals een BLOB-container, kan een fout veroorzaken die voor komt dat andere bijlagen correct worden weer gegeven. U kunt dit probleem omzeilen door het groeps knooppunt te vernieuwen. Zie #537 voor meer informatie.
 * Als u VS voor Mac gebruikt en ooit een aangepaste AAD-configuratie hebt gemaakt, kunt u zich mogelijk niet aanmelden. U kunt het probleem omzeilen door de inhoud van ~/te verwijderen. IdentityService/AadConfigurations. Als u dit doet, neemt u een opmerking over dit probleem op.
 * Azurite heeft alle opslag-Api's nog niet volledig geïmplementeerd. Daarom kunnen er onverwachte fouten of gedrag zijn bij het gebruik van Azurite voor de ontwikkelings opslag.
@@ -224,7 +224,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
+* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](./storage/common/storage-explorer-troubleshooting.md?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
 
 
 ## <a name="version-1100"></a>Versie 1.10.0
@@ -250,7 +250,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
     * Een moment opname van een schijf maken
 
     Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk gemaakt door AzCopy V10 toevoegen.
-* Storage Explorer kan nu worden geïnstalleerd via de module archief op Linux. Wanneer u via de snap Store installeert, worden alle afhankelijkheden voor u geïnstalleerd, inclusief .NET core! Op dit moment hebben we gecontroleerd of Storage Explorer goed werkt op Ubuntu en CentOS. Als u problemen ondervindt tijdens de installatie vanuit de snap Store op andere Linux distributies, [opent u een probleem op github](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=snaps&template=bug-report.md&title=). Zie de [aan de slag-hand leiding](https://aka.ms/storageexplorer/snapinformation)voor meer informatie over het installeren vanuit de snap Store. [#68](https://www.github.com/Microsoft/AzureStorageExplorer/issues/68)
+* Storage Explorer kan nu worden geïnstalleerd via de module archief op Linux. Wanneer u via de snap Store installeert, worden alle afhankelijkheden voor u geïnstalleerd, inclusief .NET core! Op dit moment hebben we gecontroleerd of Storage Explorer goed werkt op Ubuntu en CentOS. Als u problemen ondervindt tijdens de installatie vanuit de snap Store op andere Linux distributies, [opent u een probleem op github](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=snaps&template=bug-report.md&title=). Zie de [aan de slag-hand leiding](./vs-azure-tools-storage-manage-with-storage-explorer.md)voor meer informatie over het installeren vanuit de snap Store. [#68](https://www.github.com/Microsoft/AzureStorageExplorer/issues/68)
 * Er zijn twee belang rijke wijzigingen aangebracht in de Azure Active Directory (Azure AD) die zijn bedoeld om de functie nuttiger te maken voor ADLS Gen2 gebruikers: * u selecteert nu de Tenant waaraan de resource die u wilt koppelen, zich bevindt. Dit betekent dat u geen RBAC-toegang meer nodig hebt tot het abonnement van de resource.
         * Als u een ADLS Gen2 BLOB-container koppelt, kunt u nu koppelen aan een specifiek pad in de container.
 * Wanneer u Acl's voor ADLS Gen2-bestanden en-mappen beheert, worden in Storage Explorer nu de beschrijvende namen voor entiteiten in de ACL weer gegeven. [#957](https://www.github.com/Microsoft/AzureStorageExplorer/issues/957)
@@ -276,7 +276,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
 * Als het uploaden of plakken van de schijf mislukt en er een nieuwe schijf is gemaakt vóór de fout, wordt de schijf niet door Storage Explorer verwijderd.
 * Afhankelijk van het annuleren van het uploaden of plakken van een schijf, is het mogelijk om de nieuwe schijf beschadigd te laten. Als dit het geval is, moet u de nieuwe schijf verwijderen of hand matig de schijf-Api's aanroepen om de inhoud van de schijf te vervangen, zodat deze niet meer beschadigd is.
 * Wanneer u een niet-AzCopy-BLOB downloadt, wordt de MD5 voor grote bestanden niet gecontroleerd. Dit wordt veroorzaakt door een fout in de opslag-SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) voor het oplossen van problemen voor meer informatie.
+* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](./storage/common/storage-explorer-troubleshooting.md) voor het oplossen van problemen voor meer informatie.
 * Het ontkoppelen van een resource die is gekoppeld via SAS URI, zoals een BLOB-container, kan een fout veroorzaken die voor komt dat andere bijlagen correct worden weer gegeven. U kunt dit probleem omzeilen door het groeps knooppunt te vernieuwen. Zie #537 voor meer informatie.
 * Als u VS voor Mac gebruikt en ooit een aangepaste AAD-configuratie hebt gemaakt, kunt u zich mogelijk niet aanmelden. U kunt het probleem omzeilen door de inhoud van ~/te verwijderen. IdentityService/AadConfigurations. Als u dit doet, neemt u een opmerking over dit probleem op.
 * Azurite heeft alle opslag-Api's nog niet volledig geïmplementeerd. Daarom kunnen er onverwachte fouten of gedrag zijn bij het gebruik van Azurite voor de ontwikkelings opslag.
@@ -298,7 +298,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
+* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](./storage/common/storage-explorer-troubleshooting.md?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
 
 ## <a name="version-190"></a>Versie 1.9.0
 7/1/2019
@@ -334,7 +334,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
 ### <a name="known-issues"></a>Bekende problemen
 
 * Wanneer u een niet-AzCopy-BLOB downloadt, wordt de MD5 voor grote bestanden niet gecontroleerd. Dit wordt veroorzaakt door een fout in de opslag-SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) voor het oplossen van problemen voor meer informatie.
+* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](./storage/common/storage-explorer-troubleshooting.md) voor het oplossen van problemen voor meer informatie.
 * Bij een poging om toegang te krijgen tot ADLS Gen2 blobs na een proxy kan mislukken.
 * Het ontkoppelen van een resource die is gekoppeld via SAS URI, zoals een BLOB-container, kan een fout veroorzaken die voor komt dat andere bijlagen correct worden weer gegeven. U kunt dit probleem omzeilen door het groeps knooppunt te vernieuwen. Zie #537 voor meer informatie.
 * Als u VS voor Mac gebruikt en ooit een aangepaste AAD-configuratie hebt gemaakt, kunt u zich mogelijk niet aanmelden. U kunt het probleem omzeilen door de inhoud van ~/te verwijderen. IdentityService/AadConfigurations. Als u dit doet, neemt u een opmerking over dit probleem op.
@@ -356,7 +356,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
+* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](./storage/common/storage-explorer-troubleshooting.md?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
 
 ## <a name="version-181"></a>Versie 1.8.1
 5/13/2019
@@ -391,7 +391,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
 ### <a name="known-issues"></a>Bekende problemen
 
 * Wanneer u een niet-AzCopy-BLOB downloadt, wordt de MD5 voor grote bestanden niet gecontroleerd. Dit wordt veroorzaakt door een fout in de opslag-SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) voor het oplossen van problemen voor meer informatie.
+* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](./storage/common/storage-explorer-troubleshooting.md) voor het oplossen van problemen voor meer informatie.
 * Bij een poging om toegang te krijgen tot ADLS Gen2 blobs na een proxy kan mislukken.
 * Het ontkoppelen van een resource die is gekoppeld via SAS URI, zoals een BLOB-container, kan een fout veroorzaken die voor komt dat andere bijlagen correct worden weer gegeven. U kunt dit probleem omzeilen door het groeps knooppunt te vernieuwen. Zie #537 voor meer informatie.
 * Als u VS voor Mac gebruikt en ooit een aangepaste AAD-configuratie hebt gemaakt, kunt u zich mogelijk niet aanmelden. U kunt het probleem omzeilen door de inhoud van ~/te verwijderen. IdentityService/AadConfigurations. Als u dit doet, neemt u een opmerking over dit probleem op.
@@ -413,7 +413,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
+* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](./storage/common/storage-explorer-troubleshooting.md?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
 
 ## <a name="version-180"></a>Versie 1.8.0
 1/5/2019
@@ -443,7 +443,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
 ### <a name="known-issues"></a>Bekende problemen
 
 * Wanneer u een niet-AzCopy-BLOB downloadt, wordt de MD5 voor grote bestanden niet gecontroleerd. Dit wordt veroorzaakt door een fout in de opslag-SDK. [#1212](https://www.github.com/Microsoft/AzureStorageExplorer/issues/1212)
-* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) voor het oplossen van problemen voor meer informatie.
+* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](./storage/common/storage-explorer-troubleshooting.md) voor het oplossen van problemen voor meer informatie.
 * Bij een poging om toegang te krijgen tot ADLS Gen2 blobs na een proxy kan mislukken.
 * Het ontkoppelen van een resource die is gekoppeld via SAS URI, zoals een BLOB-container, kan een fout veroorzaken die voor komt dat andere bijlagen correct worden weer gegeven. U kunt dit probleem omzeilen door het groeps knooppunt te vernieuwen. Zie #537 voor meer informatie.
 * Als u VS voor Mac gebruikt en ooit een aangepaste AAD-configuratie hebt gemaakt, kunt u zich mogelijk niet aanmelden. U kunt het probleem omzeilen door de inhoud van ~/te verwijderen. IdentityService/AadConfigurations. Als u dit doet, neemt u een opmerking over dit probleem op.
@@ -465,7 +465,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
     ./StorageExplorer.exe --disable-gpu
     ```
 
-* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
+* Voor het uitvoeren van Storage Explorer op Linux moeten bepaalde afhankelijkheden eerst worden geïnstalleerd. Raadpleeg de [hand leiding voor het oplossen van problemen met](./storage/common/storage-explorer-troubleshooting.md?tabs=1804#linux-dependencies) Storage Explorer voor meer informatie.
 
 ## <a name="version-170"></a>Versie 1.7.0
 3/5/2019
@@ -499,7 +499,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
 
 ### <a name="known-issues"></a>Bekende problemen
 
-* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting) voor het oplossen van problemen voor meer informatie.
+* Wanneer u RBAC gebruikt, heeft Storage Explorer bepaalde beheer laag machtigingen nodig om toegang te krijgen tot uw opslag resources. Raadpleeg de [hand leiding](./storage/common/storage-explorer-troubleshooting.md) voor het oplossen van problemen voor meer informatie.
 * Bij een poging om toegang te krijgen tot ADLS Gen2 blobs na een proxy kan mislukken.
 * Het ontkoppelen van een resource die is gekoppeld via SAS URI, zoals een BLOB-container, kan een fout veroorzaken die voor komt dat andere bijlagen correct worden weer gegeven. U kunt dit probleem omzeilen door het groeps knooppunt te vernieuwen. Zie #537 voor meer informatie.
 * Het ontkoppelen van een resource die is gekoppeld via SAS URI, zoals een BLOB-container, kan een fout veroorzaken die voor komt dat andere bijlagen correct worden weer gegeven. U kunt dit probleem omzeilen door het groeps knooppunt te vernieuwen. Zie #537 voor meer informatie.
@@ -559,7 +559,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
         
 ### <a name="new"></a>Nieuw
 
-* U kunt nu Storage Explorer gebruiken om toegang te krijgen tot uw BLOB-gegevens via [RBAC](https://go.microsoft.com/fwlink/?linkid=2045904&clcid=0x409). Als u bent aangemeld en Storage Explorer de sleutels voor uw opslag account niet kan ophalen, wordt een OAuth-token gebruikt voor verificatie bij interactie met uw gegevens.
+* U kunt nu Storage Explorer gebruiken om toegang te krijgen tot uw BLOB-gegevens via [RBAC](./storage/common/storage-auth-aad-rbac-portal.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json). Als u bent aangemeld en Storage Explorer de sleutels voor uw opslag account niet kan ophalen, wordt een OAuth-token gebruikt voor verificatie bij interactie met uw gegevens.
 * Storage Explorer ondersteunt nu ADLS Gen2-opslag accounts. Als Storage Explorer detecteert dat hiërarchische naam ruimte is ingeschakeld voor een opslag account, wordt ' (ADLS Gen2 preview) ' weer gegeven naast de naam van uw opslag account. Storage Explorer kan detecteren of hiërarchische naam ruimte is ingeschakeld wanneer u bent aangemeld, of als u uw opslag account hebt gekoppeld aan de naam en sleutel. Voor ADLS Gen2 opslag accounts kunt u Storage Explorer gebruiken voor het volgende:
   * Containers maken en verwijderen
   * Container eigenschappen en-machtigingen beheren (aan de linkerkant)
@@ -628,7 +628,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
         
 ### <a name="new"></a>Nieuw
 
-* U kunt nu Storage Explorer gebruiken om toegang te krijgen tot uw BLOB-gegevens via [RBAC](https://go.microsoft.com/fwlink/?linkid=2045904&clcid=0x409). Als u bent aangemeld en Storage Explorer de sleutels voor uw opslag account niet kan ophalen, wordt een OAuth-token gebruikt voor verificatie bij interactie met uw gegevens.
+* U kunt nu Storage Explorer gebruiken om toegang te krijgen tot uw BLOB-gegevens via [RBAC](./storage/common/storage-auth-aad-rbac-portal.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json). Als u bent aangemeld en Storage Explorer de sleutels voor uw opslag account niet kan ophalen, wordt een OAuth-token gebruikt voor verificatie bij interactie met uw gegevens.
 * Storage Explorer ondersteunt nu ADLS Gen2-opslag accounts. Als Storage Explorer detecteert dat hiërarchische naam ruimte is ingeschakeld voor een opslag account, wordt ' (ADLS Gen2 preview) ' weer gegeven naast de naam van uw opslag account. Storage Explorer kan detecteren of hiërarchische naam ruimte is ingeschakeld wanneer u bent aangemeld, of als u uw opslag account hebt gekoppeld aan de naam en sleutel. Voor ADLS Gen2 opslag accounts kunt u Storage Explorer gebruiken voor het volgende:
   * Containers maken en verwijderen
   * Container eigenschappen en-machtigingen beheren (aan de linkerkant)
@@ -683,7 +683,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
 
 ### <a name="new"></a>Nieuw
 
-* U kunt nu Storage Explorer gebruiken om toegang te krijgen tot uw BLOB-gegevens via [RBAC](https://go.microsoft.com/fwlink/?linkid=2045904&clcid=0x409). Als u bent aangemeld en Storage Explorer de sleutels voor uw opslag account niet kan ophalen, wordt een OAuth-token gebruikt voor verificatie bij interactie met uw gegevens.
+* U kunt nu Storage Explorer gebruiken om toegang te krijgen tot uw BLOB-gegevens via [RBAC](./storage/common/storage-auth-aad-rbac-portal.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json). Als u bent aangemeld en Storage Explorer de sleutels voor uw opslag account niet kan ophalen, wordt een OAuth-token gebruikt voor verificatie bij interactie met uw gegevens.
 * Storage Explorer ondersteunt nu ADLS Gen2-opslag accounts. Als Storage Explorer detecteert dat hiërarchische naam ruimte is ingeschakeld voor een opslag account, wordt ' (ADLS Gen2 preview) ' weer gegeven naast de naam van uw opslag account. Storage Explorer kan detecteren of hiërarchische naam ruimte is ingeschakeld wanneer u bent aangemeld, of als u uw opslag account hebt gekoppeld aan de naam en sleutel. Voor ADLS Gen2 opslag accounts kunt u Storage Explorer gebruiken voor het volgende:
   * Containers maken en verwijderen
   * Container eigenschappen en-machtigingen beheren (aan de linkerkant)
@@ -1144,7 +1144,7 @@ Ten slotte wordt de ondersteuning voor het gebruik van AzCopy met bestands share
 
 ### <a name="new"></a>Nieuw
 * Storage Explorer ondersteunt nu het gebruik van Azurite. Opmerking: de verbinding met Azurite wordt vastgelegd voor de standaard ontwikkelings eindpunten.
-* Storage Explorer ondersteunt nu alleen toegangs lagen voor Blob-en GPV2-opslag accounts. Lees [hier](https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers)meer over toegangs lagen.
+* Storage Explorer ondersteunt nu alleen toegangs lagen voor Blob-en GPV2-opslag accounts. Lees [hier](./storage/blobs/storage-blob-storage-tiers.md)meer over toegangs lagen.
 * Een begin tijd is niet langer vereist bij het genereren van een SAS.
 
 ### <a name="fixes"></a>Oplossingen
@@ -1204,7 +1204,7 @@ Ten slotte wordt de ondersteuning voor het gebruik van AzCopy met bestands share
 * Storage Explorer feedback bevindt zich nu op GitHub. U kunt onze pagina met problemen bereiken door te klikken op de knop feedback linksonder of door naar te gaan [https://github.com/Microsoft/AzureStorageExplorer/issues](https://github.com/Microsoft/AzureStorageExplorer/issues) . U kunt suggesties doen, problemen melden, vragen stellen of een andere vorm van feedback geven.
 * Als u problemen ondervindt met TLS/SSL-certificaten en niet het foutieve certificaat kan vinden, kunt u Storage Explorer nu starten vanaf de opdracht regel met de `--ignore-certificate-errors` vlag. Wanneer met deze markering wordt gestart, negeert Storage Explorer TLS/SSL-certificaat fouten.
 * Er is nu een download optie in het context menu voor Blob-en file-items.
-* Verbeterde ondersteuning voor toegankelijkheid en scherm lezers. Als u afhankelijk bent van toegankelijkheids functies, raadpleegt u de [toegankelijkheids documentatie](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-accessibility) voor meer informatie.
+* Verbeterde ondersteuning voor toegankelijkheid en scherm lezers. Als u afhankelijk bent van toegankelijkheids functies, raadpleegt u de [toegankelijkheids documentatie](./vs-azure-tools-storage-explorer-accessibility.md) voor meer informatie.
 * Storage Explorer maakt nu gebruik van elektroden 1.8.3
 
 ### <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
@@ -1313,7 +1313,7 @@ Ten slotte wordt de ondersteuning voor het gebruik van AzCopy met bestands share
 
 ### <a name="fixes"></a>Oplossingen
 * Verbeteringen in de prestaties van het opstarten.
-* Verschillende oplossingen voor fouten.
+* Diverse oplossingen voor problemen.
 
 ### <a name="known-issues"></a>Bekende problemen
 * Storage Explorer geen ADFS-accounts ondersteunt.

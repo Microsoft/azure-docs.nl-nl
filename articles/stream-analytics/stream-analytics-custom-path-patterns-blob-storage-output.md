@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: b6d6838779d4f219a8ce10b2cf3ae6cd620762a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 72718285ff83a23acd21a5e29001ea96e1f061c8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317851"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95531352"
 ---
 # <a name="azure-stream-analytics-custom-blob-output-partitioning"></a>Aangepaste BLOB-uitvoer partitioneren Azure Stream Analytics
 
@@ -25,7 +25,7 @@ Aangepaste veld-of invoer kenmerken verbeteren stroomafwaartse werk stromen voor
 
 ### <a name="partition-key-options"></a>Opties voor partitie sleutels
 
-De partitie sleutel of kolom naam die wordt gebruikt voor het partitioneren van invoer gegevens mag alfanumerieke tekens bevatten met afbreek streepjes, onderstrepingen en spaties. Het is niet mogelijk om geneste velden te gebruiken als partitie sleutel, tenzij u deze gebruikt in combi natie met aliassen. De partitie sleutel moet NVARCHAR (MAX) zijn.
+De partitie sleutel of kolom naam die wordt gebruikt voor het partitioneren van invoer gegevens mag alfanumerieke tekens bevatten met afbreek streepjes, onderstrepingen en spaties. Het is niet mogelijk om geneste velden te gebruiken als partitie sleutel, tenzij u deze gebruikt in combi natie met aliassen. De partitie sleutel moet NVARCHAR (MAX), BIGINT, FLOAT of BIT (1,2 compatibiliteits niveau of hoger) zijn. Zie [Azure stream Analytics gegevens typen](https://docs.microsoft.com/stream-analytics-query/data-types-azure-stream-analytics)voor meer informatie.
 
 ### <a name="example"></a>Voorbeeld
 
@@ -33,7 +33,7 @@ Stel dat een taak invoer gegevens ontvangt van Live gebruikers sessies die zijn 
 
 ![Pad patroon met client-id](./media/stream-analytics-custom-path-patterns-blob-storage-output/stream-analytics-path-pattern-client-id.png)
 
-En als de taak invoer sensor gegevens van miljoenen Sens oren bevat, waarbij elke sensor een **sensor_id**heeft, zou het patroon van het pad **{sensor_id}** zijn voor het partitioneren van elke sensor gegevens naar andere mappen.  
+En als de taak invoer sensor gegevens van miljoenen Sens oren bevat, waarbij elke sensor een **sensor_id** heeft, zou het patroon van het pad **{sensor_id}** zijn voor het partitioneren van elke sensor gegevens naar andere mappen.  
 
 
 Met behulp van de REST API kan het gedeelte uitvoer van een JSON-bestand dat voor de aanvraag wordt gebruikt, er als volgt uitzien:  
@@ -62,6 +62,8 @@ U ziet dat elke record in de BLOB een **client_id** kolom heeft die overeenkomt 
 2. Partitie sleutels zijn niet hoofdletter gevoelig, waardoor partitie sleutels als ' John ' en ' John ' gelijkwaardig zijn. Expressies kunnen ook niet worden gebruikt als partitie sleutels. Bijvoorbeeld: **{Columna + columnB}** werkt niet.  
 
 3. Wanneer een invoer stroom bestaat uit records met een kardinaliteit van de partitie sleutel onder 8000, worden de records toegevoegd aan bestaande blobs en worden alleen nieuwe blobs gemaakt wanneer dat nodig is. Als de kardinaliteit meer dan 8000 is, is er geen garantie dat er bestaande blobs worden geschreven naar en er geen nieuwe blobs worden gemaakt voor een wille keurig aantal records met dezelfde partitie sleutel.
+
+4. Als de BLOB-uitvoer is [geconfigureerd als onveranderbaar](../storage/blobs/storage-blob-immutable-storage.md), maakt stream Analytics elke keer dat er gegevens worden verzonden een nieuwe blob.
 
 ## <a name="custom-datetime-path-patterns"></a>Patronen voor aangepaste DateTime-paden
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: dineshm
-ms.openlocfilehash: 62cd31ab6f63aec5ddeb675bca3621a329ab1f2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c4c6b5b23a0609a5d68eb72c614ce282ae04a817
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87826565"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95519095"
 ---
 # <a name="reacting-to-blob-storage-events"></a>Reageren op gebeurtenissen van Blob Storage
 
@@ -29,17 +29,17 @@ Als u Blob Storage-gebeurtenissen wilt proberen, raadpleegt u een van de volgend
 
 |Als u dit hulp programma wilt gebruiken:    |Zie dit artikel: |
 |--|-|
-|Azure Portal    |[Quickstart: Blob Storage-gebeurtenissen routeren naar een webeindpunt met Azure Portal](https://docs.microsoft.com/azure/event-grid/blob-event-quickstart-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|PowerShell    |[Snelstartgids: opslag gebeurtenissen naar een webeindpunt door sturen met Power shell](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-quickstart-powershell?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Azure CLI    |[Snelstartgids: opslag gebeurtenissen naar een webeindpunt door sturen met Azure CLI](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-quickstart?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Azure Portal    |[Quickstart: Blob Storage-gebeurtenissen routeren naar een webeindpunt met Azure Portal](../../event-grid/blob-event-quickstart-portal.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json)|
+|PowerShell    |[Snelstartgids: opslag gebeurtenissen naar een webeindpunt door sturen met Power shell](./storage-blob-event-quickstart-powershell.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json)|
+|Azure CLI    |[Snelstartgids: opslag gebeurtenissen naar een webeindpunt door sturen met Azure CLI](./storage-blob-event-quickstart.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json)|
 
 Zie deze artikelen voor meer gedetailleerde voor beelden van het reageren op Blob Storage-gebeurtenissen met behulp van Azure functions:
 
 - [Zelf studie: een Databricks Delta tabel bijwerken met behulp van Azure data Lake Storage Gen2-gebeurtenissen](data-lake-storage-events.md).
-- [Zelfstudie: Formaat van geüploade afbeeldingen automatisch wijzigen met Event Grid](https://docs.microsoft.com/azure/event-grid/resize-images-on-storage-blob-upload-event?tabs=dotnet)
+- [Zelfstudie: Formaat van geüploade afbeeldingen automatisch wijzigen met Event Grid](../../event-grid/resize-images-on-storage-blob-upload-event.md?tabs=dotnet)
 
 >[!NOTE]
-> Alleen opslag accounts van het type **StorageV2 (algemeen gebruik v2)**, **BlockBlobStorage**en **BlobStorage** ondersteunings gebeurtenis integratie. **Storage (algemeen gebruik v1)** biedt *geen* ondersteuning voor integratie met Event grid.
+> Alleen opslag accounts van het type **StorageV2 (algemeen gebruik v2)**, **BlockBlobStorage** en **BlobStorage** ondersteunings gebeurtenis integratie. **Storage (algemeen gebruik v1)** biedt *geen* ondersteuning voor integratie met Event grid.
 
 ## <a name="the-event-model"></a>Het gebeurtenis model
 
@@ -60,7 +60,7 @@ Zie het artikel over het [schema voor Blob Storage-gebeurtenissen](../../event-g
 
 BLOB- [gebeurtenissen kunnen worden gefilterd](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest) op basis van het gebeurtenis type, de naam van de container of de naam van het object dat is gemaakt/verwijderd. Filters in Event Grid komen overeen met het begin of het einde van het onderwerp, zodat gebeurtenissen met een overeenkomend onderwerp naar de abonnee gaan.
 
-Zie [gebeurtenissen filteren voor Event grid voor](https://docs.microsoft.com/azure/event-grid/how-to-filter-events)meer informatie over het Toep assen van filters.
+Zie [gebeurtenissen filteren voor Event grid voor](../../event-grid/how-to-filter-events.md)meer informatie over het Toep assen van filters.
 
 Het onderwerp van Blob Storage-gebeurtenissen maakt gebruik van de volgende indeling:
 
@@ -96,13 +96,13 @@ Toepassingen die Blob Storage-gebeurtenissen verwerken, moeten een aantal aanbev
 > [!div class="checklist"]
 > * Omdat meerdere abonnementen kunnen worden geconfigureerd voor het routeren van gebeurtenissen naar dezelfde gebeurtenis-handler, is het belang rijk om te voor komen dat gebeurtenissen afkomstig zijn uit een bepaalde bron, maar om het onderwerp van het bericht te controleren om ervoor te zorgen dat het afkomstig is van het opslag account dat u verwacht.
 > * Controleer ook of de Event type is ingesteld als een voor bereiding op het proces en ga er niet van uit dat alle gebeurtenissen die u ontvangt, de verwachte typen zijn.
-> * Wanneer berichten na enige vertraging kunnen arriveren, gebruikt u de ETAG-velden om te begrijpen of uw informatie over objecten nog steeds actueel is. Zie voor meer informatie over het gebruik van het ETAG-veld [gelijktijdigheid beheren in Blob Storage](https://docs.microsoft.com/azure/storage/common/storage-concurrency?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#managing-concurrency-in-blob-storage). 
+> * Wanneer berichten na enige vertraging kunnen arriveren, gebruikt u de ETAG-velden om te begrijpen of uw informatie over objecten nog steeds actueel is. Zie voor meer informatie over het gebruik van het ETAG-veld [gelijktijdigheid beheren in Blob Storage](../common/storage-concurrency.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#managing-concurrency-in-blob-storage). 
 > * Wanneer berichten niet in de juiste volg orde arriveren, kunt u de sequencer-velden gebruiken om de volg orde van gebeurtenissen op een bepaald object te begrijpen. Het veld sequencer is een teken reeks waarde die de logische volg orde van gebeurtenissen voor een bepaalde BLOB-naam vertegenwoordigt. U kunt standaard teken reeks vergelijking gebruiken om inzicht te krijgen in de relatieve volg orde van twee gebeurtenissen op dezelfde blobnaam.
 > * Opslag gebeurtenissen garanderen mini maal één keer aan abonnees, wat ervoor zorgt dat alle berichten worden gegenereerd. Als gevolg van nieuwe pogingen of Beschik baarheid van abonnementen, kunnen er af en toe dubbele berichten optreden. Zie [Event grid aflevering van berichten en probeer](../../event-grid/delivery-and-retry.md)het opnieuw.
 > * Gebruik het veld blobType om te begrijpen welk type bewerkingen op de BLOB zijn toegestaan en welke client bibliotheek typen u moet gebruiken voor toegang tot de blob. Geldige waarden zijn ofwel `BlockBlob` of `PageBlob` . 
 > * Gebruik het URL-veld met `CloudBlockBlob` de `CloudAppendBlob` Constructors om toegang te krijgen tot de blob.
 > * Velden negeren die u niet begrijpt. Met deze procedure kunt u de nieuwe functies die in de toekomst kunnen worden toegevoegd, flexibeler maken.
-> * Als u ervoor wilt zorgen dat de gebeurtenis **micro soft. storage. BlobCreated** alleen wordt geactiveerd als een blok-BLOB volledig is doorgevoerd, filtert u de gebeurtenis voor de `CopyBlob` -, `PutBlob` - `PutBlockList` of `FlushWithClose` rest API-aanroepen. Met deze API-aanroepen wordt de gebeurtenis **micro soft. storage. BlobCreated** alleen geactiveerd wanneer gegevens volledig zijn doorgevoerd in een blok-blob. Zie [gebeurtenissen filteren voor Event grid voor](https://docs.microsoft.com/azure/event-grid/how-to-filter-events)meer informatie over het maken van een filter.
+> * Als u ervoor wilt zorgen dat de gebeurtenis **micro soft. storage. BlobCreated** alleen wordt geactiveerd als een blok-BLOB volledig is doorgevoerd, filtert u de gebeurtenis voor de `CopyBlob` -, `PutBlob` - `PutBlockList` of `FlushWithClose` rest API-aanroepen. Met deze API-aanroepen wordt de gebeurtenis **micro soft. storage. BlobCreated** alleen geactiveerd wanneer gegevens volledig zijn doorgevoerd in een blok-blob. Zie [gebeurtenissen filteren voor Event grid voor](../../event-grid/how-to-filter-events.md)meer informatie over het maken van een filter.
 
 
 ## <a name="next-steps"></a>Volgende stappen

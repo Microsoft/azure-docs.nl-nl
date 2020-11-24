@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: raynew
-ms.openlocfilehash: 716928761d23c2cf04ebcc72e253ad7884408065
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34064fe3fe88a34b0dd2430d7adec3ebcb17ebcc
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90061836"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95528224"
 ---
 # <a name="move-resources-across-regions-from-resource-group"></a>Resources verplaatsen tussen regio's (van resource groep)
 
@@ -26,8 +26,8 @@ In dit artikel vindt u informatie over het verplaatsen van resources in een spec
 
 - U hebt *eigenaars* toegang nodig voor het abonnement waarin resources zich bevinden die u wilt verplaatsen.
     - De eerste keer dat u een resource toevoegt voor een specifieke bron-en doel toewijzing in een Azure-abonnement, maakt resource-overschakeling een door het [systeem toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (voorheen bekend als managed service identify (MSI)) die wordt vertrouwd door het abonnement.
-    - Om de identiteit te maken en deze de juiste rol toe te wijzen (Inzender of Administrator voor gebruikerstoegang in het bronabonnement), moet het account dat u gebruikt om resources toe te voegen *Eigenaars*machtigingen hebben voor het abonnement. [Meer informatie](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) over rollen in Azure.
-- Het abonnement heeft voldoende quota nodig om de bron resources in de doel regio te maken. Als dat niet het geval is, moet u aanvullende limieten aanvragen. [Meer informatie](/azure/azure-resource-manager/management/azure-subscription-service-limits).
+    - Om de identiteit te maken en deze de juiste rol toe te wijzen (Inzender of Administrator voor gebruikerstoegang in het bronabonnement), moet het account dat u gebruikt om resources toe te voegen *Eigenaars* machtigingen hebben voor het abonnement. [Meer informatie](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) over rollen in Azure.
+- Het abonnement heeft voldoende quota nodig om de bron resources in de doel regio te maken. Als dat niet het geval is, moet u aanvullende limieten aanvragen. [Meer informatie](../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Verifieer prijzen en kosten voor de doelregio waarnaar u virtuele machines verplaatst. Gebruik de [prijscalculator](https://azure.microsoft.com/pricing/calculator/) om u daarbij te helpen.
 - Controleer of de resources die u wilt verplaatsen, worden ondersteund door resource-overschakeling:
     - Azure-VM's en gekoppelde schijven
@@ -64,15 +64,15 @@ Selecteer de resources die u wilt verplaatsen. U kunt resources verplaatsen naar
 
     ![Selectie voor het verplaatsen van resources naar een andere regio](./media/move-region-within-resource-group/select-move-region.png)
     
-4. Selecteer in **bron + bestemming**de doel regio waarnaar u de resources wilt verplaatsen. Selecteer vervolgens **Volgende**.
+4. Selecteer in **bron + bestemming** de doel regio waarnaar u de resources wilt verplaatsen. Selecteer vervolgens **Volgende**.
 
 
     ![Bron-en doel pagina voor het selecteren van de doel regio](./media/move-region-within-resource-group/source-target.png)
 
 
-7. Selecteer **volgende**in **resources die moeten worden verplaatst**.  
-8. Selecteer in **resources selecteren**de resource die u wilt verplaatsen. U kunt alleen resources selecteren waarvoor verplaatsing wordt ondersteund. Selecteer vervolgens **Done**.
-9. Selecteer **volgende**bij **resources verplaatsen**. 
+7. Selecteer **volgende** in **resources die moeten worden verplaatst**.  
+8. Selecteer in **resources selecteren** de resource die u wilt verplaatsen. U kunt alleen resources selecteren waarvoor verplaatsing wordt ondersteund. Selecteer vervolgens **Done**.
+9. Selecteer **volgende** bij **resources verplaatsen**. 
 10. Controleer de bron-en doel gegevens in **beoordeling + toevoegen**.
 11. Controleer of u begrijpt dat meta gegevens over de resources die worden verplaatst, worden opgeslagen in een resource groep die voor dit doel is gemaakt en dat u het verplaatsen van resources toestaat een door het systeem beheerde identiteit te maken voor toegang tot de abonnements bronnen.
 1. Selecteer **door gaan** om te beginnen met het toevoegen van de resources.
@@ -138,7 +138,7 @@ Initieer de verplaatsing als volgt:
 
 Ga als volgt te werk om het verplaatsingsproces door te voeren en te voltooien:
 
-1. In **meerdere regio's**selecteert u de resource groep > **door voeren verplaatsen**
+1. In **meerdere regio's** selecteert u de resource groep > **door voeren verplaatsen**
 2. **resources verplaatsen**, selecteer **door voeren**.
 
 > [!NOTE]
@@ -183,7 +183,7 @@ Nadat de bronresourcegroep is verplaatst, kunt u het verplaatsen van de andere r
 Nu de resources zijn voorbereid, kunt u de verplaatsing initiëren.
 
 1. Selecteer in **Tussen regio's** resources met de status *Initiëren verplaatsing in behandeling*. Selecteer vervolgens **initiëren verplaatsen**.
-2. In **resources verplaatsen**selecteert u **verplaatsen starten**.
+2. In **resources verplaatsen** selecteert u **verplaatsen starten**.
 
     ![Selecteren voor de knop verplaatsen initiëren](./media/move-region-within-resource-group/initiate-move.png)
 
@@ -203,15 +203,15 @@ Nu de resources zijn voorbereid, kunt u de verplaatsing initiëren.
 Na de eerste verplaatsing kunt u beslissen of u de verplaatsing wilt doorvoeren of verwijderen. 
 
 - **Verwijderen**: Mogelijk wilt u een verplaatsing verwijderen als u een test uitvoert en de bronresource niet echt wilt verplaatsen. Als u de verplaatsing negeert, wordt de resource teruggezet in de status *Initiëren verplaatsing in behandeling*.
-- **Doorvoeren**: Met doorvoeren wordt de verplaatsing naar de doelregio voltooid. Na het doorvoeren heeft een bronresource de status *Verwijderen bron in behandeling*en kunt u besluiten of u deze wilt verwijderen.
+- **Doorvoeren**: Met doorvoeren wordt de verplaatsing naar de doelregio voltooid. Na het doorvoeren heeft een bronresource de status *Verwijderen bron in behandeling* en kunt u besluiten of u deze wilt verwijderen.
 
 
 ## <a name="discard-the-move"></a>De verplaatsing verwijderen 
 
 U kunt de verplaatsing als volgt verwijderen:
 
-1. In **meerdere regio's**selecteert u resources met status *doorvoer verplaatsen in behandeling*en selecteert u **verplaatsen negeren**.
-2. Selecteer **negeren**bij **verplaatsen negeren**.
+1. In **meerdere regio's** selecteert u resources met status *doorvoer verplaatsen in behandeling* en selecteert u **verplaatsen negeren**.
+2. Selecteer **negeren** bij **verplaatsen negeren**.
 3. Controleer de voortgang van de verplaatsing in de meldingenbalk.
 4. Wanneer de meldingen aangeven dat de verplaatsing is geslaagd, selecteert u **vernieuwen**. 
 
@@ -223,8 +223,8 @@ U kunt de verplaatsing als volgt verwijderen:
 Als u het verplaatsingsproces wilt voltooien, moet u de verplaatsing doorvoeren. 
 
 
-1. In **meerdere regio's**selecteert u resources met status *doorvoer verplaatsen in behandeling*en selecteert u **verplaatsen door voeren**.
-2. In **resources door voeren**selecteert u **door voeren**.
+1. In **meerdere regio's** selecteert u resources met status *doorvoer verplaatsen in behandeling* en selecteert u **verplaatsen door voeren**.
+2. In **resources door voeren** selecteert u **door voeren**.
 
     ![Pagina voor het doorvoeren van resources om de verplaatsing te voltooien](./media/move-region-within-resource-group/commit-resources.png)
 
@@ -244,7 +244,7 @@ Als u het verplaatsingsproces wilt voltooien, moet u de verplaatsing doorvoeren.
 
 Na de verplaatsing kunt u desgewenst de resources in de bronregio verwijderen. 
 
-1. In **meerdere regio's**selecteert u de naam van elke bron resource die u wilt verwijderen.
+1. In **meerdere regio's** selecteert u de naam van elke bron resource die u wilt verwijderen.
 2. Selecteer **Verwijderen** op de eigenschappenpagina van elke resource.
 
 ## <a name="delete-additional-resources-created-for-move"></a>Aanvullende resources verwijderen die zijn gemaakt om te worden verplaatst

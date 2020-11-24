@@ -1,17 +1,17 @@
 ---
 title: Azure Red Hat open Shift 4-cluster ondersteunings beleid
-description: Meer informatie over de vereisten voor het ondersteunings beleid voor Red Hat open Shift 4.
+description: Meer informatie over de vereisten voor het ondersteunings beleid voor Red Hat open Shift 4
 author: sakthi-vetrivel
 ms.author: suvetriv
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 04/24/2020
-ms.openlocfilehash: e396cfa032a3030467b2e2318d61393713894cd4
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.date: 11/23/2020
+ms.openlocfilehash: c8d52609043f173e896668eadeb8c59493739859
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628217"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95521135"
 ---
 # <a name="azure-red-hat-openshift-support-policy"></a>Ondersteunings beleid voor Azure Red Hat open Shift
 
@@ -23,7 +23,7 @@ Bepaalde configuraties voor Azure Red Hat open Shift 4-clusters kunnen van invlo
 ## <a name="cluster-configuration-requirements"></a>Vereisten voor cluster configuratie
 
 * Alle open Shift-cluster operators moeten in een beheerde status blijven. De lijst met cluster operators kan worden geretourneerd door uit te voeren `oc get clusteroperators` .
-* Het cluster moet mini maal één worker-knoop punt hebben. Schaal de cluster medewerkers niet op nul.
+* Het cluster moet mini maal twee werk knooppunten hebben. Schaal de cluster medewerkers niet op nul of probeer het cluster niet correct af te zetten.
 * Verwijder of wijzig de cluster Prometheus-en Alertmanager-Services niet.
 * Verwijder geen service Alertmanager-regels.
 * Verwijder of wijzig de logboek registratie van Azure Red Hat open Shift-service (mdsd peul) niet.

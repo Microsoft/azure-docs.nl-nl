@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: a9423069b917c37e77b70a4466e489918cd330c4
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: a2f46440a4214e298bc6d2f3b9c2b5680437ead7
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92143930"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522699"
 ---
 # <a name="azure-resource-logs"></a>Azure-resourcelogboeken
 Azure-resource logboeken zijn [platform logboeken](platform-logs-overview.md) die inzicht bieden in bewerkingen die zijn uitgevoerd in een Azure-resource. De inhoud van bron Logboeken is afhankelijk van de Azure-service en het resource type. Bron logboeken worden niet standaard verzameld. U moet een diagnostische instelling maken voor elke Azure-resource om de resource logboeken te verzenden naar een Log Analytics-werk ruimte die u wilt gebruiken met [Azure monitor-logboeken](data-platform-logs.md), Azure Event hubs om buiten Azure door te sturen of om te Azure Storage voor archivering.
@@ -54,7 +54,7 @@ De tabel AzureDiagnostics ziet er als volgt uit:
 | ... |
 
 ### <a name="resource-specific"></a>Resource-specifiek
-In deze modus worden afzonderlijke tabellen in de geselecteerde werk ruimte gemaakt voor elke categorie die in de diagnostische instelling is geselecteerd. Deze methode wordt aanbevolen omdat het veel gemakkelijker is om met de gegevens in logboek query's te werken, een betere detectie van schema's en hun structuur te bieden, de prestaties te verbeteren voor zowel opname latentie als query tijden, en de mogelijkheid om RBAC-rechten te verlenen aan een specifieke tabel. Alle Azure-Services worden uiteindelijk naar de Resource-Specific modus gemigreerd. 
+In deze modus worden afzonderlijke tabellen in de geselecteerde werk ruimte gemaakt voor elke categorie die in de diagnostische instelling is geselecteerd. Deze methode wordt aanbevolen omdat het veel gemakkelijker is om met de gegevens in logboek query's te werken, een betere detectie van schema's en hun structuur te bieden, de prestaties te verbeteren voor zowel opname latentie als query tijden, en de mogelijkheid om Azure RBAC-rechten te verlenen voor een specifieke tabel. Alle Azure-Services worden uiteindelijk naar de Resource-Specific modus gemigreerd. 
 
 Het bovenstaande voor beeld resulteert in het maken van drie tabellen:
  

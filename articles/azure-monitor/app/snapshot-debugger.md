@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.custom: devx-track-dotnet
 ms.date: 10/23/2019
 ms.reviewer: cweining
-ms.openlocfilehash: b439dcfc755f0113ffabf792850a2bd0fbcf322e
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: cbbec71ff8ab762ea0da764a7db9459123850271
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996518"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95530230"
 ---
 # <a name="debug-snapshots-on-exceptions-in-net-apps"></a>Momentopnamen voor foutopsporing over uitzonderingen in .NET-apps
 Wanneer er een uitzonde ring optreedt, kunt u automatisch een moment opname van de fout opsporing verzamelen vanuit uw Live Web-app. De moment opname toont de status van de bron code en variabelen op het moment dat de uitzonde ring werd gegenereerd. Met de Snapshot Debugger in [Azure-toepassing Insights](./app-insights-overview.md) wordt de telemetrie van de uitzonde ring van uw web-app gecontroleerd. Er worden moment opnamen van uw belangrijkste uitzonde ringen verzameld, zodat u over de benodigde informatie beschikt voor het vaststellen van problemen in de productie. Neem het [snap shot Collector NuGet-pakket](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) in uw toepassing op en Configureer eventueel verzamelings parameters in [ApplicationInsights.config](./configuration-with-applicationinsights-config.md). Moment opnamen worden weer gegeven op [uitzonde ringen](./asp-net-exceptions.md) in de Application Insights Portal.
@@ -39,7 +39,7 @@ Raadpleeg de gids voor het [oplossen van problemen](snapshot-debugger-troublesho
 
 ## <a name="grant-permissions"></a>Machtigingen verlenen
 
-Toegang tot momentopnames is beveiligd met RBAC (op rollen gebaseerd toegangsbeheer). Als u een momentopname wilt inspecteren, moet de eigenaar van het abonnement u eerst toevoegen aan de benodigde rol.
+Toegang tot moment opnamen wordt beschermd door Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Als u een momentopname wilt inspecteren, moet de eigenaar van het abonnement u eerst toevoegen aan de benodigde rol.
 
 > [!NOTE]
 > Eigen aren en mede werkers hebben deze rol niet automatisch. Als ze moment opnamen willen bekijken, moeten ze zichzelf aan de rol toevoegen.

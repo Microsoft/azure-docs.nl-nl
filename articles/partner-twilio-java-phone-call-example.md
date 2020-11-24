@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
 ms.custom: devx-track-java
-ms.openlocfilehash: 9a28677063c6f6dd7bb7bcf6746dbc541308891f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cad25990d0ba7e27f4a90adc587f0c8a0a2c551a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87305904"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95521067"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-java-application-on-azure"></a>Een telefoon gesprek doen met behulp van Twilio in een Java-toepassing in azure
 In het volgende voor beeld ziet u hoe u Twilio kunt gebruiken om een aanroep te doen van een webpagina die wordt gehost in Azure. De resulterende toepassing vraagt de gebruiker om telefoon gesprek waarden, zoals wordt weer gegeven in de volgende scherm afbeelding.
@@ -177,7 +177,7 @@ Hieronder vindt u de stappen op hoog niveau om uw toepassing uit te voeren. meer
 3. Compileer uw toepassing voor de compute-emulator.
 4. Start uw implementatie in de compute-emulator.
 5. Open een browser en voer uit `http://localhost:8080/TwilioCloud/callform.jsp` .
-6. Voer waarden in het formulier in, klik op **deze aanroep maken**en Bekijk de resultaten in makecall.jsp.
+6. Voer waarden in het formulier in, klik op **deze aanroep maken** en Bekijk de resultaten in makecall.jsp.
 
 Wanneer u klaar bent om te implementeren in azure, compileert u opnieuw voor implementatie naar de Cloud, implementeert u deze naar Azure en voert u http://*your_hosted_name*. cloudapp.net/TwilioCloud/callform.jsp uit in de browser (Vervang uw waarde voor *your_hosted_name*).
 
@@ -186,7 +186,7 @@ Deze code werd verschaft om u de basis functionaliteit te laten zien met behulp 
 
 * In plaats van een webformulier te gebruiken, kunt u Azure Storage-blobs of SQL Database gebruiken om telefoon nummers op te slaan en tekst aan te roepen. Zie [How to use the Blob Storage service from Java][howto_blob_storage_java](Engelstalig) voor meer informatie over het gebruik van Azure Storage-blobs in Java. 
 * U kunt **RoleEnvironment. getConfigurationSettings** gebruiken om de Twilio-account-id en het verificatie token op te halen uit de configuratie-instellingen van uw implementatie, in plaats van de waarden in makecall.jsp vast te schrijven. Zie [de Azure service runtime-bibliotheek in JSP gebruiken][azure_runtime_jsp]voor meer informatie over de **RoleEnvironment** -klasse.
-* Met de makecall.jsp code wordt een Twilio-URL, [https://twimlets.com/message][twimlet_message_url] ,, toegewezen aan de **URL** -variabele. Deze URL biedt een TwiML-antwoord (Twilio Markup Language) waarmee Twilio wordt geïnformeerd over hoe u kunt door gaan met de aanroep. De TwiML die wordt geretourneerd, kan bijvoorbeeld een ** &lt; dicteer &gt; ** opdracht bevatten die resulteert in de tekst die wordt gesp roken naar de ontvanger van het gesprek. In plaats van de Twilio-URL te gebruiken, kunt u uw eigen service bouwen om te reageren op de aanvraag van Twilio. Zie [Twilio gebruiken voor spraak-en SMS-mogelijkheden in Java][howto_twilio_voice_sms_java]voor meer informatie. Meer informatie over TwiML vindt u op [https://www.twilio.com/docs/api/twiml][twiml] , en meer informatie over ** &lt; dict &gt; ** en andere Twilio-werk woorden vindt u op [https://www.twilio.com/docs/api/twiml/say][twilio_say] .
+* Met de makecall.jsp code wordt een Twilio-URL, [https://twimlets.com/message][twimlet_message_url] ,, toegewezen aan de **URL** -variabele. Deze URL biedt een TwiML-antwoord (Twilio Markup Language) waarmee Twilio wordt geïnformeerd over hoe u kunt door gaan met de aanroep. De TwiML die wordt geretourneerd, kan bijvoorbeeld een **&lt; dicteer &gt;** opdracht bevatten die resulteert in de tekst die wordt gesp roken naar de ontvanger van het gesprek. In plaats van de Twilio-URL te gebruiken, kunt u uw eigen service bouwen om te reageren op de aanvraag van Twilio. Zie [Twilio gebruiken voor spraak-en SMS-mogelijkheden in Java][howto_twilio_voice_sms_java]voor meer informatie. Meer informatie over TwiML vindt u op [https://www.twilio.com/docs/api/twiml][twiml] , en meer informatie over **&lt; dict &gt;** en andere Twilio-werk woorden vindt u op [https://www.twilio.com/docs/api/twiml/say][twilio_say] .
 * Lees de Twilio Security-richt lijnen op [https://www.twilio.com/docs/security][twilio_docs_security] .
 
 Zie voor meer informatie over Twilio [https://www.twilio.com/docs][twilio_docs] .
@@ -203,12 +203,12 @@ Zie voor meer informatie over Twilio [https://www.twilio.com/docs][twilio_docs] 
 [twimlet_message_url]: https://twimlets.com/message
 [twiml]: https://www.twilio.com/docs/api/twiml
 [twilio_api_service]: https://api.twilio.com
-[add_ca_cert]: java-add-certificate-ca-store.md
-[azure_java_eclipse_hello_world]: https://docs.microsoft.com/java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app 
+[add_ca_cert]: /azure/developer/java/sdk/java-sdk-add-certificate-ca-store
+[azure_java_eclipse_hello_world]: /java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app
 [howto_twilio_voice_sms_java]: partner-twilio-java-how-to-use-voice-sms.md
 [howto_blob_storage_java]: https://www.windowsazure.com/develop/java/how-to-guides/blob-storage/
 [howto_sql_azure_java]: https://msdn.microsoft.com/library/windowsazure/hh749029.aspx
-[azure_runtime_jsp]: https://msdn.microsoft.com/library/windowsazure/hh690948.aspx
+[azure_runtime_jsp]: /previous-versions/azure/hh690948(v=azure.100)
 [twilio_docs_security]: https://www.twilio.com/docs/security
 [twilio_docs]: https://www.twilio.com/docs
 [twilio_say]: https://www.twilio.com/docs/api/twiml/say

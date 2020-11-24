@@ -9,19 +9,18 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 03/20/2017
-ms.openlocfilehash: cb5e73d81d6c66dd4e605b16cc025f3ea30a9424
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c92f8c74da76b2ac938892e27f3d6be9c70c3238
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309201"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95507255"
 ---
 # <a name="how-a-machine-learning-studio-classic-model-progresses-from-an-experiment-to-a-web-service"></a>Hoe een model van Machine Learning Studio (klassiek) van een experiment naar een webservice wordt uitgevoerd
 
-**VAN TOEPASSING OP:** ![ja](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![nee ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**van toepassing op:** ![ Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek). ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (klassiek) ![ Dit is een X, wat betekent dat dit artikel van toepassing is op Azure machine learning.](../../../includes/media/aml-applies-to-skus/no.png)[ Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
 
-
-Azure Machine Learning Studio (klassiek) biedt een interactief canvas waarmee u een * *_experiment_* _ kunt ontwikkelen, uitvoeren, testen en herhalen. Dit is een voorspellend analyse model. Er zijn tal van beschik bare modules die kunnen:
+Azure Machine Learning Studio (klassiek) biedt een interactief canvas waarmee u een **_experiment_* _ kunt ontwikkelen, uitvoeren, testen en herhalen. Dit is een voorspellend analyse model. Er zijn tal van beschik bare modules die kunnen:
 
 _ Invoer van gegevens in uw experiment
 * De gegevens bewerken
@@ -30,7 +29,7 @@ _ Invoer van gegevens in uw experiment
 * De resultaten evalueren
 * Uitvoer van de laatste waarden
 
-Zodra u tevreden bent met uw experiment, kunt u dit implementeren als een * **klassiek Azure machine learning-webservice** _ of een _*_nieuwe Azure machine learning-webservice_*_ , zodat gebruikers nieuwe gegevens kunnen verzenden en de resultaten terugkrijgen.
+Zodra u tevreden bent met uw experiment, kunt u dit implementeren als een ***klassiek Azure machine learning-webservice** _ of een _*_nieuwe Azure machine learning-webservice_*_ , zodat gebruikers nieuwe gegevens kunnen verzenden en de resultaten terugkrijgen.
 
 In dit artikel geven we een overzicht van de mechanismen van hoe uw Machine Learning model van een ontwikkelings experiment naar een operationele webservice verloopt.
 
@@ -49,10 +48,10 @@ Hier volgen de stappen die een typische oplossing volgt wanneer u deze ontwikkel
 *Afbeelding 1: fasen van een typisch voorspellend analyse model*
 
 ### <a name="the-training-experiment"></a>Het trainings experiment
-Het *- **trainings experiment** _ is de eerste fase van het ontwikkelen van uw web-service in machine learning Studio (klassiek). Het trainings experiment is bedoeld om u een plek te geven voor het ontwikkelen, testen, herhalen en uiteindelijk trainen van een machine learning model. U kunt zelfs meerdere modellen tegelijk trainen tijdens het zoeken naar de beste oplossing, maar nadat u klaar bent met het experimenteren, selecteert u één getraind model en verwijdert u de rest van het experiment. Voor een voor beeld van het ontwikkelen van een experiment voor voorspellende analyses raadpleegt u [een Predictive Analytics oplossing ontwikkelen voor een beoordeling van de krediet risico in azure machine learning Studio (klassiek)](tutorial-part1-credit-risk.md).
+Het *-**trainings experiment** _ is de eerste fase van het ontwikkelen van uw web-service in machine learning Studio (klassiek). Het trainings experiment is bedoeld om u een plek te geven voor het ontwikkelen, testen, herhalen en uiteindelijk trainen van een machine learning model. U kunt zelfs meerdere modellen tegelijk trainen tijdens het zoeken naar de beste oplossing, maar nadat u klaar bent met het experimenteren, selecteert u één getraind model en verwijdert u de rest van het experiment. Voor een voor beeld van het ontwikkelen van een experiment voor voorspellende analyses raadpleegt u [een Predictive Analytics oplossing ontwikkelen voor een beoordeling van de krediet risico in azure machine learning Studio (klassiek)](tutorial-part1-credit-risk.md).
 
 ### <a name="the-predictive-experiment"></a>Het voorspellende experiment
-Zodra u een getraind model hebt in uw trainings experiment, klikt u op _*webservice instellen* * en selecteert u **Predictive web service** in machine learning Studio (klassiek) om het proces van het converteren van uw trainings experiment naar een * *_voorspellend experiment_* te initiëren_. Het doel van het voorspellende experiment is het gebruik van uw getrainde model om nieuwe gegevens te scoren, met als doel een Azure-webservice te gebruiken.
+Zodra u een getraind model hebt in uw trainings experiment, klikt u op _*webservice instellen** en selecteert u **Predictive web service** in machine learning Studio (klassiek) om het proces van het converteren van uw trainings experiment naar een **_voorspellend experiment_* te initiëren_. Het doel van het voorspellende experiment is het gebruik van uw getrainde model om nieuwe gegevens te scoren, met als doel een Azure-webservice te gebruiken.
 
 Deze conversie vindt plaats door de volgende stappen uit te voeren:
 
@@ -70,7 +69,7 @@ In dit conversie proces wordt het trainings experiment niet verwijderd. Wanneer 
 >
 
 ### <a name="the-web-service"></a>De webservice
-Zodra u tevreden bent over uw voorspellende experiment, kunt u uw service als een klassieke webservice of een nieuwe webservice implementeren op basis van Azure Resource Manager. Als u uw model wilt operationeel maken door het te implementeren als een *klassieke machine learning-webservice* , klikt u op **webservice implementeren** en selecteert u **Web service implementeren [klassiek]**. Als u de *nieuwe machine learning-webservice* wilt implementeren, klikt u op **webservice implementeren** en selecteert u **Web service implementeren [New]**. Gebruikers kunnen nu gegevens naar uw model verzenden met de webservice REST API en de resultaten terugsturen. Zie [How to consume an Azure Machine Learning Web service](consume-web-services.md) (Azure Machine Learning-webservice gebruiken) voor meer informatie.
+Zodra u tevreden bent over uw voorspellende experiment, kunt u uw service als een klassieke webservice of een nieuwe webservice implementeren op basis van Azure Resource Manager. Als u uw model wilt operationeel maken door het te implementeren als een *klassieke machine learning-webservice*, klikt u op **webservice implementeren** en selecteert u **Web service implementeren [klassiek]**. Als u de *nieuwe machine learning-webservice* wilt implementeren, klikt u op **webservice implementeren** en selecteert u **Web service implementeren [New]**. Gebruikers kunnen nu gegevens naar uw model verzenden met de webservice REST API en de resultaten terugsturen. Zie [How to consume an Azure Machine Learning Web service](consume-web-services.md) (Azure Machine Learning-webservice gebruiken) voor meer informatie.
 
 ## <a name="the-non-typical-case-creating-a-non-predictive-web-service"></a>Het niet-typische geval: het maken van een niet-voorspellende webservice
 Als uw experiment geen voorspellend analyse model traint, hoeft u geen Oefen experiment en een score voor punten te maken. er is slechts één experiment, en u kunt het implementeren als een webservice. Machine Learning Studio (klassiek) detecteert of uw experiment een voorspellend model bevat door de modules te analyseren die u hebt gebruikt.

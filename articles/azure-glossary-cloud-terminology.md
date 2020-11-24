@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: 63adb5d6898fd467a0557aa147e54f814c167e72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e183ad8a6e25c12f073f51e9416b4fc0ed9365f
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400126"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95530400"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Microsoft Azure verklarende woorden lijst: een woorden lijst met Cloud terminologie op het Azure-platform
 
@@ -37,14 +37,14 @@ Zie [registreren voor een Azure-abonnement met uw Microsoft 365 account](cost-ma
 Een andere naam voor de [App app service](#app-service-app).
 
 ## <a name="app-service-app"></a>App Service-app
-De reken resources die [Azure app service](app-service/overview.md) biedt voor het hosten van een website of webtoepassing, Web-API of back-end van een [mobiele app](app-service-mobile/app-service-mobile-value-prop.md). App Service-apps worden ook wel *app Services*, *Web apps*, *API apps*en *mobiele apps*genoemd.
+De reken resources die [Azure app service](app-service/overview.md) biedt voor het hosten van een website of webtoepassing, Web-API of back-end van een [mobiele app](/previous-versions/azure/app-service-mobile/app-service-mobile-value-prop). App Service-apps worden ook wel *app Services*, *Web apps*, *API apps* en *mobiele apps* genoemd.
 
 ## <a name="availability-set"></a>beschikbaarheidsset
 Een verzameling virtuele machines die samen worden beheerd om de redundantie en betrouw baarheid van toepassingen te bieden. Als u een beschikbaarheidsset gebruikt, zorgt u ervoor dat tijdens een geplande of niet-geplande onderhouds gebeurtenis ten minste één virtuele machine beschikbaar is.  
-Zie [de beschik baarheid van virtuele Windows-machines beheren](virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](virtual-machines/linux/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)
 
 ## <a name="azure-classic-deployment-model"></a><a name="classic-model"></a>Klassieke Azure-implementatie model
-Een van de twee [implementatie modellen](resource-manager-deployment-model.md) die worden gebruikt voor het implementeren van resources in azure (het nieuwe model is Azure Resource Manager). Sommige Azure-Services bieden alleen ondersteuning voor het Resource Manager-implementatie model, sommige ondersteunen alleen het klassieke implementatie model en sommige ondersteunen beide. In de documentatie voor elke Azure-service wordt aangegeven welke model (en) ze ondersteunen.
+Een van de twee [implementatie modellen](./azure-resource-manager/management/deployment-models.md) die worden gebruikt voor het implementeren van resources in azure (het nieuwe model is Azure Resource Manager). Sommige Azure-Services bieden alleen ondersteuning voor het Resource Manager-implementatie model, sommige ondersteunen alleen het klassieke implementatie model en sommige ondersteunen beide. In de documentatie voor elke Azure-service wordt aangegeven welke model (en) ze ondersteunen.
 
 ## <a name="azure-command-line-interface-cli"></a><a name="cli"></a>Azure-opdrachtregelinterface (CLI)
 Een opdracht regel interface die kan worden gebruikt voor het beheren van Azure-Services vanuit Windows, macOS en Linux.  Sommige services of service functies kunnen alleen worden beheerd via Power shell of de CLI. Zie [Azure cli](/cli/azure)
@@ -54,19 +54,19 @@ Een opdracht regel interface voor het beheren van Azure-Services via een opdrach
 Zie [Azure PowerShell installeren en configureren](/powershell/azure/)
 
 ## <a name="azure-resource-manager-deployment-model"></a><a name="arm-model"></a>Azure Resource Manager implementatie model
-Een van de twee [implementatie modellen](resource-manager-deployment-model.md) die worden gebruikt voor het implementeren van resources in Microsoft Azure (de andere is het klassieke implementatie model). Sommige Azure-Services bieden alleen ondersteuning voor het Resource Manager-implementatie model, sommige ondersteunen alleen het klassieke implementatie model en sommige ondersteunen beide. In de documentatie voor elke Azure-service wordt aangegeven welke model (en) ze ondersteunen.
+Een van de twee [implementatie modellen](./azure-resource-manager/management/deployment-models.md) die worden gebruikt voor het implementeren van resources in Microsoft Azure (de andere is het klassieke implementatie model). Sommige Azure-Services bieden alleen ondersteuning voor het Resource Manager-implementatie model, sommige ondersteunen alleen het klassieke implementatie model en sommige ondersteunen beide. In de documentatie voor elke Azure-service wordt aangegeven welke model (en) ze ondersteunen.
 
 ## <a name="fault-domain"></a>fout domein
 Het verzamelen van virtuele machines in een beschikbaarheidsset die mogelijk tegelijk kunnen mislukken. Een voor beeld is een groep machines in een rek die een gemeen schappelijke voedings bron en netwerk switch delen. In Azure worden de virtuele machines in een beschikbaarheidsset automatisch gescheiden in meerdere fout domeinen.  
-Zie [de beschik baarheid van virtuele Windows-machines beheren](virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) of [de beschik baarheid van virtuele Linux-machines beheren](virtual-machines/linux/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)  
+Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) of [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)  
 
 ## <a name="geo"></a>geo
-Een gedefinieerde grens voor gegevens locatie die doorgaans twee of meer regio's bevatten. De grenzen kunnen zich binnen of buiten de nationale grenzen bevinden en worden beïnvloed door de belasting verordening. Elke geo heeft ten minste één regio. Voor beelden van geografische gebieden zijn Azië en Stille Oceaan en Japan. Ook wel *geografie*genoemd.  
+Een gedefinieerde grens voor gegevens locatie die doorgaans twee of meer regio's bevatten. De grenzen kunnen zich binnen of buiten de nationale grenzen bevinden en worden beïnvloed door de belasting verordening. Elke geo heeft ten minste één regio. Voor beelden van geografische gebieden zijn Azië en Stille Oceaan en Japan. Ook wel *geografie* genoemd.  
 Zie [Azure-regio's](best-practices-availability-paired-regions.md)
 
 ## <a name="geo-replication"></a>Geo-replicatie
 Het proces van het automatisch repliceren van inhoud, zoals blobs, tabellen en wacht rijen binnen een regionaal paar.  
-Zie [actieve Geo-Replication voor Azure SQL database](sql-database/sql-database-geo-replication-overview.md)
+Zie [actieve Geo-Replication voor Azure SQL database](./azure-sql/database/auto-failover-group-overview.md)
 <!-- The meaning of "geo" in this term seems to be different than the meaning provided in the "geo" entry -->
 
 ## <a name="image"></a>image
@@ -91,7 +91,7 @@ Bekijk de [pagina met details](https://azure.microsoft.com/support/legal/offer-d
 De beveiligde webportal die wordt gebruikt om Azure-Services te implementeren en te beheren.
 
 ## <a name="region"></a>regio
-Een gebied binnen een geografische regio dat geen nationale grenzen overschrijdt en een of meer data centers bevat. Prijzen, regionale Services en aanbiedings typen worden weer gegeven op regio niveau. Een regio is doorgaans gekoppeld aan een andere regio, die Maxi maal honderd kilo meters kan zijn. Regionale paren kunnen worden gebruikt als mechanisme voor nood herstel en scenario's met hoge Beschik baarheid. Ook wel *locatie*genoemd.  
+Een gebied binnen een geografische regio dat geen nationale grenzen overschrijdt en een of meer data centers bevat. Prijzen, regionale Services en aanbiedings typen worden weer gegeven op regio niveau. Een regio is doorgaans gekoppeld aan een andere regio, die Maxi maal honderd kilo meters kan zijn. Regionale paren kunnen worden gebruikt als mechanisme voor nood herstel en scenario's met hoge Beschik baarheid. Ook wel *locatie* genoemd.  
 Zie [Azure-regio's](best-practices-availability-paired-regions.md)
 
 ## <a name="resource"></a>resource
@@ -104,7 +104,7 @@ Zie [Azure Resource Manager overzicht](azure-resource-manager/management/overvie
 
 ## <a name="resource-manager-template"></a><a name="arm-template"></a>Resource Manager-sjabloon
 Een JSON-bestand waarmee declaratieve een of meer Azure-resources worden gedefinieerd en waarmee afhankelijkheden tussen de geïmplementeerde resources worden gedefinieerd. De sjabloon kan worden gebruikt om de resources consistent en herhaaldelijk te implementeren.  
-Zie [Azure Resource Manager sjablonen ontwerpen](resource-group-authoring-templates.md)
+Zie [Azure Resource Manager sjablonen ontwerpen](./azure-resource-manager/templates/template-syntax.md)
 
 ## <a name="resource-provider"></a>resource provider
 Een service die de resources levert die u kunt implementeren en beheren via Resource Manager. Elke resourceprovider biedt bewerkingen voor het werken met de resources die zijn geïmplementeerd. Resource providers zijn toegankelijk via de Azure Portal, Azure PowerShell en verschillende Program ma's voor programmering.  
@@ -119,11 +119,11 @@ De overeenkomst met een beschrijving van de toezeg gingen van micro soft voor up
 Zie [Service Level Agreements](https://azure.microsoft.com/support/legal/sla/)
 
 ## <a name="shared-access-signature-sas"></a><a name="sas"></a>Shared Access Signature (SAS)
-Een hand tekening waarmee u beperkte toegang tot een bron kunt verlenen zonder uw account sleutel te tonen. [Azure Storage maakt bijvoorbeeld gebruik van SAS](storage/common/storage-dotnet-shared-access-signature-part-1.md) om client toegang toe te kennen aan objecten zoals blobs. [IOT hub maakt gebruik van SAS](iot-hub/iot-hub-devguide-security.md#security-tokens) om apparaten toestemming te verlenen voor het verzenden van telemetrie.
+Een hand tekening waarmee u beperkte toegang tot een bron kunt verlenen zonder uw account sleutel te tonen. [Azure Storage maakt bijvoorbeeld gebruik van SAS](./storage/common/storage-sas-overview.md) om client toegang toe te kennen aan objecten zoals blobs. [IOT hub maakt gebruik van SAS](iot-hub/iot-hub-devguide-security.md#security-tokens) om apparaten toestemming te verlenen voor het verzenden van telemetrie.
 
 ## <a name="storage-account"></a>opslagaccount
 Een account waarmee u toegang krijgt tot de Azure Blob-, wachtrij-, tabel-en bestands Services in Azure Storage. De naam van het opslag account definieert de unieke naam ruimte voor Azure Storage gegevens objecten.  
-Zie [over Azure Storage-accounts](storage/common/storage-create-storage-account.md)
+Zie [over Azure Storage-accounts](./storage/common/storage-account-create.md)
 
 ## <a name="subscription"></a>abonnement
 De overeenkomst van een klant met micro soft waarmee ze Azure-Services kunnen verkrijgen. De abonnements prijzen en gerelateerde voor waarden gelden voor de aanbieding die is gekozen voor het abonnement.
@@ -131,11 +131,11 @@ Zie [Microsoft Online Subscription overeenkomst](https://azure.microsoft.com/sup
 
 ## <a name="tag"></a>tag
 Een indexerings term waarmee u resources kunt categoriseren op basis van uw vereisten voor het beheren of factureren. Wanneer u een complexe verzameling resources hebt, kunt u Tags gebruiken om deze activa te visualiseren op de manier die het meest zinvol is. U kunt bijvoorbeeld resources taggen die een vergelijkbare rol hebben in uw organisatie of bij dezelfde afdeling horen.  
-Zie [Tags gebruiken om uw Azure-resources te organiseren](resource-group-using-tags.md)
+Zie [Tags gebruiken om uw Azure-resources te organiseren](./azure-resource-manager/management/tag-resources.md)
 
 ## <a name="update-domain"></a>domein bijwerken
 De verzameling virtuele machines in een beschikbaarheidsset die tegelijkertijd worden bijgewerkt. Virtuele machines in hetzelfde update domein worden samen opnieuw gestart tijdens gepland onderhoud. Azure start nooit meer dan één update domein per keer opnieuw op. Wordt ook wel een upgrade domein genoemd.  
-Zie [de beschik baarheid van virtuele Windows-machines beheren](virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](virtual-machines/linux/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)
 
 ## <a name="virtual-machine"></a><a name="vm"></a>virtuele machine
 De software-implementatie van een fysieke computer waarop een besturings systeem wordt uitgevoerd. Meerdere virtuele machines kunnen tegelijkertijd op dezelfde hardware worden uitgevoerd. In azure zijn virtuele machines beschikbaar in verschillende grootten.  
@@ -144,7 +144,7 @@ Raadpleeg de [documentatie van virtual machines](https://azure.microsoft.com/doc
 ## <a name="virtual-machine-extension"></a><a name="vm-extension"></a>extensie van virtuele machine
 Een resource die gedrag of functies implementeert die andere Program ma's kunnen gebruiken of waarmee u kunt communiceren met een actieve computer. U kunt bijvoorbeeld de VM-toegangs uitbreiding gebruiken om waarden voor externe toegang op een virtuele Azure-machine opnieuw in te stellen of te wijzigen.
 <!-- This definition seems obscure to me; maybe a list of examples would work better than a conceptual definition? -->
-Zie [over extensies en functies van virtuele machines (Windows)](virtual-machines/windows/extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) of [over extensies en functies van virtuele machines (Linux)](virtual-machines/linux/extensions-features.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+Zie [over extensies en functies van virtuele machines (Windows)](./virtual-machines/extensions/features-windows.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) of [over extensies en functies van virtuele machines (Linux)](./virtual-machines/extensions/features-linux.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)
 
 ## <a name="virtual-network"></a><a name="vnet"></a>virtueel netwerk
 Een netwerk waarmee u verbinding maakt tussen uw Azure-resources die zijn geïsoleerd van alle andere Azure-tenants. Met een [Azure-VPN gateway](vpn-gateway/vpn-gateway-about-vpngateways.md) kunt u verbindingen tot stand brengen tussen virtuele netwerken en tussen een virtueel netwerk en een on-premises netwerk. U kunt de IP-adres blokken, DNS-instellingen, beveiligings beleid en route tabellen volledig beheren binnen een virtueel netwerk.  
@@ -159,4 +159,3 @@ Een andere naam voor de [App app service](#app-service-app).
 * [Cloud Resource Center](https://azure.microsoft.com/resources/)  
 * [Azure voor uw zakelijke toepassing](https://azure.microsoft.com/overview/business-apps-on-azure/)
 * [Azure in uw Data Center](https://azure.microsoft.com/overview/business-apps-on-azure/)
-

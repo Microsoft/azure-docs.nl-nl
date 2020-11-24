@@ -16,12 +16,12 @@ ms.date: 10/30/2014
 ms.author: erikre
 ms.reviewer: vibhork;dominic.may@sendgrid.com;elmer.thomas@sendgrid.com
 ms.custom: devx-track-java
-ms.openlocfilehash: 3957d7501634be01a978481787885ae13ad3273b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57daf9170a7f97c6c141532dafe759cde9d1c77b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88225951"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95519061"
 ---
 # <a name="how-to-send-email-using-sendgrid-from-java-in-an-azure-deployment"></a>E-mail verzenden met SendGrid vanuit java in een Azure-implementatie
 In het volgende voor beeld ziet u hoe u SendGrid kunt gebruiken om e-mail berichten te verzenden van een webpagina die wordt gehost in Azure. De resulterende toepassing vraagt de gebruiker om e-mail waarden, zoals in de volgende scherm afbeelding wordt weer gegeven.
@@ -215,11 +215,11 @@ Naast het verzenden van het e-mail bericht levert emailform.jsp een resultaat vo
 ![Resultaat van e-mail verzenden][emailresult]
 
 ## <a name="next-steps"></a>Volgende stappen
-Implementeer uw toepassing in de compute-emulator en voer de volgende handelingen uit in een browser emailform.jsp, geef waarden op in het formulier, klik op **Dit e-mail bericht verzenden**en Bekijk de resultaten in sendemail.jsp.
+Implementeer uw toepassing in de compute-emulator en voer de volgende handelingen uit in een browser emailform.jsp, geef waarden op in het formulier, klik op **Dit e-mail bericht verzenden** en Bekijk de resultaten in sendemail.jsp.
 
 Deze code is opgenomen om u te laten zien hoe u SendGrid in Java kunt gebruiken in Azure. Voordat u naar Azure implementeert in productie, wilt u mogelijk meer fout afhandeling of andere functies toevoegen. Bijvoorbeeld: 
 
-* U kunt Azure Storage-blobs of SQL Database gebruiken om e-mail adressen en e-mail berichten op te slaan in plaats van een webformulier te gebruiken. Zie [How to use the Blob Storage service from Java](https://azure.microsoft.com/develop/java/how-to-guides/blob-storage/)(Engelstalig) voor meer informatie over het gebruik van Azure Storage-blobs in Java. Zie [using SQL database in Java](https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-java)(Engelstalig) voor meer informatie over het gebruik van SQL database in Java.
+* U kunt Azure Storage-blobs of SQL Database gebruiken om e-mail adressen en e-mail berichten op te slaan in plaats van een webformulier te gebruiken. Zie [How to use the Blob Storage service from Java](https://azure.microsoft.com/develop/java/how-to-guides/blob-storage/)(Engelstalig) voor meer informatie over het gebruik van Azure Storage-blobs in Java. Zie [using SQL database in Java](./azure-sql/database/connect-query-java.md)(Engelstalig) voor meer informatie over het gebruik van SQL database in Java.
 * Zie [e-mail verzenden met SendGrid vanuit Java](store-sendgrid-java-how-to-send-email.md)voor meer informatie over het gebruik van SendGrid in Java.
 
 [emailform]: ./media/store-sendgrid-java-how-to-send-email-example/SendGridJavaEmailform.jpg

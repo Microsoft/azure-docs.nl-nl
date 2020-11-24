@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: raynew
-ms.openlocfilehash: ca22def6bc152d03c3992ed7e94ac2b5ccf179e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27e7c899f0d22789c10541fc98a0d2c63a7843ec
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604475"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95533052"
 ---
 # <a name="modify-target-settings"></a>Doelinstelling wijzigen
 
@@ -41,8 +41,8 @@ De configuratie-instellingen die u kunt wijzigen, worden in de tabel samenvatten
 **VM-SKU** | Het [VM-type](https://azure.microsoft.com/pricing/details/virtual-machines/series/) (beschikbaar in de doel regio) dat wordt gebruikt voor de doel-VM.<br/><br/> De geselecteerde doel-VM mag niet kleiner zijn dan de bron-VM.
 **Netwerk bronnen** | Opties voor virtuele netwerken (VNets)/Network-beveiligings groepen/netwerk interfaces:<br/><br/> -Maak een nieuwe resource met dezelfde naam in de doel regio.<br/><br/> -Maak een nieuwe resource met een andere naam in de doel regio.<br/><br/> -Gebruik een bestaande netwerk bron in de doel regio.<br/><br/> Als u een nieuwe doel bron maakt, met uitzonde ring van de instellingen die u wijzigt, worden dezelfde instellingen toegewezen als voor de bron resource.
 **Naam openbaar IP-adres** | Geef de naam op.
-**Openbaar IP-adres SKU** | Geef de [SKU](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm#sku)op.
-**Zone openbaar IP-adres** | Geef de [zone](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm#standard) op voor standaard open bare IP-adressen.<br/><br/> Als u het zone redundant wilt maken, voert u in als **zone redundant**.
+**Openbaar IP-adres SKU** | Geef de [SKU](../virtual-network/public-ip-addresses.md#sku)op.
+**Zone openbaar IP-adres** | Geef de [zone](../virtual-network/public-ip-addresses.md#standard) op voor standaard open bare IP-adressen.<br/><br/> Als u het zone redundant wilt maken, voert u in als **zone redundant**.
 **Naam van load balancer** | Geef de naam op.
 **Load Balancer-SKU** | Basic of Standard. We raden u aan om standaard te gebruiken.
 **Load Balancer-zone** | Geef een zone op voor de load balancer. <br/><br/> Als u het zone redundant wilt maken, voert u in als **zone redundant**.
@@ -62,7 +62,7 @@ U wijzigt de doel instellingen voor een resource met behulp van de **doel config
 Een instelling wijzigen: 
 
 1. Klik in de pagina **over verschillende regio's** > **doel configuratie** kolom op de koppeling voor de bron vermelding.
-2. In **configuratie-instellingen**kunt u een nieuwe virtuele machine in de doel regio maken.
+2. In **configuratie-instellingen** kunt u een nieuwe virtuele machine in de doel regio maken.
 3. Wijs een nieuwe beschikbaarheids zone, beschikbaarheidsset of SKU toe aan de doel-VM. **Beschikbaarheids zone** en **SKU**.
 
 Wijzigingen worden alleen aangebracht voor de resource die u wilt bewerken. U moet een afhankelijke resource afzonderlijk bijwerken.
@@ -90,8 +90,8 @@ Wanneer u Azure SQL Database resources verplaatst, kunt u de doel instellingen v
 
 U wijzigt de doel instellingen voor een Azure SQL Database resource als volgt: 
 
-1. Klik in **meerdere regio's**voor de resource die u wilt wijzigen, op de **doel configuratie** vermelding.
-2. Geef in **configuratie-instellingen**de doel instellingen op die in de bovenstaande tabel worden beschreven.
+1. Klik in **meerdere regio's** voor de resource die u wilt wijzigen, op de **doel configuratie** vermelding.
+2. Geef in **configuratie-instellingen** de doel instellingen op die in de bovenstaande tabel worden beschreven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

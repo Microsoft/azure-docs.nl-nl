@@ -7,12 +7,12 @@ ms.subservice: blobs
 ms.topic: how-to
 ms.author: normesta
 ms.date: 04/07/2020
-ms.openlocfilehash: 02b7e02c33161db33420e2efe1ef4b70a138d127
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e458f98d82c910ec845ebf951b7f6470b6aba10d
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84465215"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95527323"
 ---
 # <a name="integrate-a-static-website-with-azure-cdn"></a>Een statische website integreren met Azure CDN
 
@@ -41,13 +41,13 @@ U kunt Azure CDN rechtstreeks vanuit uw opslag account inschakelen voor uw stati
    Om het eind punt van een statische website te vinden, gaat u naar de **statische website** -instellingen voor uw opslag account.  Kopieer het primaire eind punt en plak het in de CDN-configuratie.
 
    > [!IMPORTANT]
-   > Zorg ervoor dat u de protocol-id (*bijvoorbeeld*https) en de afsluitende slash in de URL verwijdert. Als het eind punt van de statische website bijvoorbeeld is `https://mystorageaccount.z5.web.core.windows.net/` , geeft u `mystorageaccount.z5.web.core.windows.net` in het veld **hostnaam van oorsprong** op.
+   > Zorg ervoor dat u de protocol-id (*bijvoorbeeld* https) en de afsluitende slash in de URL verwijdert. Als het eind punt van de statische website bijvoorbeeld is `https://mystorageaccount.z5.web.core.windows.net/` , geeft u `mystorageaccount.z5.web.core.windows.net` in het veld **hostnaam van oorsprong** op.
 
    In de volgende afbeelding ziet u een voor beeld van een eindpunt configuratie:
 
    ![Scherm opname van voor beeld van CDN-eindpunt configuratie](media/storage-blob-static-website-custom-domain/add-cdn-endpoint.png)
 
-1. Selecteer **maken**en wacht tot het CDN is ingericht. Zodra het eindpunt is gemaakt, wordt dit weergegeven in de lijst met eindpunten. (Als het formulier fouten bevat, wordt er een uitroep teken naast dat veld weer gegeven.)
+1. Selecteer **maken** en wacht tot het CDN is ingericht. Zodra het eindpunt is gemaakt, wordt dit weergegeven in de lijst met eindpunten. (Als het formulier fouten bevat, wordt er een uitroep teken naast dat veld weer gegeven.)
 
 1. Als u wilt controleren of het CDN-eind punt correct is geconfigureerd, klikt u op het eind punt om naar de instellingen te navigeren. Zoek in het CDN-overzicht voor uw opslag account de hostnaam van het eind punt en ga naar het eind punt, zoals wordt weer gegeven in de volgende afbeelding. De indeling van uw CDN-eind punt is vergelijkbaar met `https://staticwebsitesamples.azureedge.net` .
 
@@ -63,7 +63,7 @@ U kunt Azure CDN rechtstreeks vanuit uw opslag account inschakelen voor uw stati
 
 Als u niet langer een object in de cache in Azure CDN nodig hebt, kunt u een van de volgende stappen uitvoeren:
 
-* Maak de container persoonlijk in plaats van openbaar. Zie [anonieme lees toegang tot containers en blobs beheren](storage-manage-access-to-resources.md)voor meer informatie.
+* Maak de container persoonlijk in plaats van openbaar. Zie [Anonieme leestoegang tot containers en blobs beheren](./anonymous-read-access-configure.md) voor meer informatie.
 * Schakel het CDN-eindpunt uit of verwijder het met behulp van Azure Portal.
 * Wijzig de gehoste service zodat deze niet meer reageert op aanvragen voor het object.
 

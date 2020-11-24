@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: 6fd20cd9e3172d6ce80d2c18c2cfa41fcc044929
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 8021d659c144bfb68c2714f1680b6ad27a51b56a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92508026"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522342"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Wat is een privé-eindpunt van Azure?
 
@@ -28,7 +28,7 @@ Een privé-eindpunt in Azure is een netwerkinterface waarmee u privé en veilig 
 |Subnet    |  Het subnet voor het implementeren en toewijzen van privé-IP-adressen van een virtueel netwerk. Zie de sectie beperkingen in dit artikel voor meer informatie over het subnet.         |
 |Persoonlijke koppelings bron    |   De bron van de persoonlijke koppeling om verbinding te maken met behulp van de resource-ID of alias, uit de lijst met beschik bare typen. Er wordt een unieke netwerk-id gegenereerd voor al het verkeer dat wordt verzonden naar deze bron.       |
 |Subresource van doel   |      De subresource waarmee verbinding moet worden gemaakt. Elk resource type voor een persoonlijke koppeling heeft verschillende opties om te selecteren op basis van voor keur.    |
-|Goedkeurings methode voor verbinding    |  Automatisch of hand matig. Op basis van RBAC-machtigingen (op rollen gebaseerd toegangs beheer) kan uw persoonlijke eind punt automatisch worden goedgekeurd. Als u probeert verbinding te maken met een persoonlijke koppelings bron zonder RBAC, gebruikt u de hand matige methode om de eigenaar van de resource toe te staan de verbinding goed te keuren.        |
+|Goedkeurings methode voor verbinding    |  Automatisch of hand matig. Op basis van Azure RBAC-machtigingen (op rollen gebaseerd toegangs beheer) kan uw persoonlijke eind punt automatisch worden goedgekeurd. Als u probeert verbinding te maken met een persoonlijke koppelings bron zonder Aure RBAC, gebruikt u de hand matige methode om de eigenaar van de resource toe te staan de verbinding goed te keuren.        |
 |Aanvraag bericht     |  U kunt een bericht opgeven dat de aangevraagde verbindingen hand matig moeten worden goedgekeurd. Dit bericht kan worden gebruikt om een specifieke aanvraag te identificeren.        |
 |Verbindingsstatus   |   Een alleen-lezen eigenschap waarmee wordt opgegeven of het persoonlijke eind punt actief is. Alleen persoonlijke eind punten in een goedgekeurde status kunnen worden gebruikt om verkeer te verzenden. Aanvullende beschik bare statussen: <br>-**Goedgekeurd**: de verbinding is automatisch of hand matig goedgekeurd en is klaar om te worden gebruikt.</br><br>-**In behandeling**: de verbinding is hand matig gemaakt en in afwachting van goed keuring door de resource-eigenaar van de persoonlijke koppeling.</br><br>-**Geweigerd**: de verbinding is geweigerd door de resource-eigenaar van de persoonlijke koppeling.</br><br>-**Verbinding verbroken**: de verbinding is verwijderd door de resource-eigenaar van de persoonlijke koppeling. Het persoonlijke eind punt wordt informatieve en moet worden verwijderd voor opschoning. </br>|
 
@@ -45,9 +45,9 @@ Hier volgen enkele belang rijke informatie over persoonlijke eind punten:
  
 - Er kunnen meerdere persoonlijke eind punten worden gemaakt met behulp van dezelfde persoonlijke koppelings resource. Voor één netwerk dat gebruikmaakt van een gemeen schappelijke DNS-server configuratie, is het aanbevolen een enkel persoonlijk eind punt te gebruiken voor een bepaalde persoonlijke koppelings bron om dubbele vermeldingen of conflicten in DNS-omzetting te voor komen. 
  
-- Meerdere persoonlijke eind punten kunnen worden gemaakt op dezelfde of verschillende subnetten binnen hetzelfde virtuele netwerk. Er zijn limieten voor het aantal privé-eind punten dat u in een abonnement kunt maken. Zie [Azure-limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits)voor meer informatie.
+- Meerdere persoonlijke eind punten kunnen worden gemaakt op dezelfde of verschillende subnetten binnen hetzelfde virtuele netwerk. Er zijn limieten voor het aantal privé-eind punten dat u in een abonnement kunt maken. Zie [Azure-limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits)voor meer informatie.
 
-- Het abonnement van de persoonlijke koppelings resource moet ook zijn geregistreerd bij de resource provider Micosoft. Network. Zie [Azure-resource providers](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types)voor meer informatie.
+- Het abonnement van de persoonlijke koppelings resource moet ook zijn geregistreerd bij de resource provider Micosoft. Network. Zie [Azure-resource providers](../azure-resource-manager/management/resource-providers-and-types.md)voor meer informatie.
 
  
 ## <a name="private-link-resource"></a>Persoonlijke koppelings bron 
@@ -65,8 +65,8 @@ Een persoonlijke koppelings bron is het doel doel van een gegeven persoonlijk ei
 |**Azure Database for PostgreSQL-één server** | Microsoft.DBforPostgreSQL/servers    | postgresqlServer |
 |**Azure Database for MySQL** | Microsoft.DBforMySQL/servers    | mysqlServer |
 |**Azure Database for MariaDB** | Microsoft.DBforMariaDB/servers    | mariadbServer |
-|**Azure IoT Hub** | Micro soft. devices/IotHubs    | iotHub |
-|**Azure Key Vault** | Micro soft.-sleutel kluis/-kluizen    | kluis |
+|**Azure IoT Hub** | Microsoft.Devices/IotHubs    | iotHub |
+|**Azure Key Vault** | Microsoft.KeyVault/vaults    | kluis |
 |**Azure Kubernetes Service - Kubernetes API** | Micro soft. container service/managedClusters    | beheer |
 |**Azure Search** | Micro soft. Search/searchService| searchService|  
 |**Azure Container Registry** | Micro soft. ContainerRegistry/registers    | registry |
@@ -136,7 +136,7 @@ De volgende tabel bevat een lijst met bekende beperkingen bij het gebruik van pr
 - [Een persoonlijk eind punt maken voor SQL Database met behulp van de portal](create-private-endpoint-portal.md)
 - [Een persoonlijk eind punt maken voor SQL Database met behulp van Power shell](create-private-endpoint-powershell.md)
 - [Een persoonlijk eind punt maken voor SQL Database met CLI](create-private-endpoint-cli.md)
-- [Een persoonlijk eind punt voor het opslag account maken met behulp van de portal](create-private-endpoint-storage-portal.md)
+- [Een persoonlijk eind punt voor het opslag account maken met behulp van de portal](./tutorial-private-endpoint-storage-portal.md)
 - [Een persoonlijk eind punt voor Azure Cosmos-account maken met behulp van de portal](../cosmos-db/how-to-configure-private-endpoints.md)
 - [Uw eigen persoonlijke koppelings service maken met behulp van Azure PowerShell](create-private-link-service-powershell.md)
 - [Uw eigen persoonlijke koppeling maken voor Azure Database for PostgreSQL-één server met behulp van de portal](../postgresql/howto-configure-privatelink-portal.md)

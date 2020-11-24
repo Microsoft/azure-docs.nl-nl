@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: daa3f3b1687b01005f32cbd2665c84b933c993b8
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 706fa1666dc327955294fb350b673aed40d6bf48
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837614"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95520659"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
@@ -26,7 +26,9 @@ Klanten hebben een probleem met de vertraging tussen wanneer de voor waarden van
 
 Voor een tijdige reactie op beleids schendingen of beveiligings problemen is een ' conversatie ' vereist tussen de uitgever van het token, zoals Azure AD, en de Relying Party, zoals Exchange Online. Deze twee richtings conversatie biedt ons twee belang rijke mogelijkheden. De Relying Party kan zien wanneer dingen zijn gewijzigd, zoals een client die afkomstig is van een nieuwe locatie, en de uitgever van het token kenbaar maakt. Het biedt ook de token uitgever een manier om de Relying Party te laten weten dat tokens voor een bepaalde gebruiker niet meer worden geëerbiedigd vanwege inbreuk op het account, het uitschakelen of andere problemen. Het mechanisme voor deze conversatie is een voortdurende toegangs beoordeling (CAE). Het doel is om reactie bijna in realtime te zijn, maar in sommige gevallen kan een latentie van Maxi maal 15 minuten worden waargenomen als gevolg van de doorgifte tijd van de gebeurtenis.
 
-De eerste implementatie van voortdurende toegangs beoordeling is gericht op Exchange, teams en share point online. 
+De eerste implementatie van voortdurende toegangs beoordeling is gericht op Exchange, teams en share point online.
+
+Als u uw toepassingen wilt voorbereiden op het gebruik van CAE, raadpleegt u [api's voor continue toegang gebruiken in uw toepassingen](/develop/app-resilience-continuous-access-evaluation.md).
 
 ### <a name="key-benefits"></a>Belangrijkste voordelen
 

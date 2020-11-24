@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 15026c378c4c399915e99b0910f1e6518f5adfc8
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: c8ed791fc9496e67acdcfbfafddad9170ac47535
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151864"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522580"
 ---
 # <a name="azure-security-baseline-for-azure-monitor"></a>Azure-beveiligings basislijn voor Azure Monitor
 
@@ -26,7 +26,7 @@ Azure Monitor maakt deel uit van de Azure Core-Services en de Azure Monitor-serv
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: Azure-resources in virtuele netwerken beveiligen
 
-**Hulp**bij het inschakelen van een persoonlijke Azure-koppeling om toegang te verlenen tot Azure SaaS-Services (bijvoorbeeld Azure monitor) en Azure gehoste klanten/partner services via een persoonlijk eind punt in uw virtuele netwerk. Verkeer tussen uw virtuele netwerk en de services wordt via het backbonenetwerk van Microsoft geleid, waarmee de risico's van het openbare internet worden vermeden.
+**Hulp** bij het inschakelen van een persoonlijke Azure-koppeling om toegang te verlenen tot Azure SaaS-Services (bijvoorbeeld Azure monitor) en Azure gehoste klanten/partner services via een persoonlijk eind punt in uw virtuele netwerk. Verkeer tussen uw virtuele netwerk en de services wordt via het backbonenetwerk van Microsoft geleid, waarmee de risico's van het openbare internet worden vermeden.
 
 Als u wilt toestaan dat verkeer wordt bereikt Azure Monitor, gebruikt u de AzureMonitor-service tags om inkomend en uitgaand verkeer via netwerk beveiligings groepen toe te staan. Als u wilt toestaan dat test verkeer voor beschikbaarheids bewaking Azure Monitor bereikt, gebruikt u de ApplicationInsightsAvailability-service code voor al het binnenkomende verkeer via netwerk beveiligings groepen.
 
@@ -306,7 +306,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 **Verantwoordelijkheid**: klant
 
-## <a name="data-protection"></a>Gegevensbeveiliging
+## <a name="data-protection"></a>Gegevensbescherming
 
 *Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 
@@ -324,7 +324,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: systemen isoleren die gevoelige informatie opslaan of verwerken
 
-**Richt lijnen**: isolatie implementeren met afzonderlijke abonnementen en beheer groepen voor afzonderlijke beveiligings domeinen, zoals omgevings type en gegevens gevoeligheids niveau. U kunt het toegangs niveau voor uw Azure Monitor en gerelateerde resources beperken die worden vereist door uw toepassingen en bedrijfs omgevingen. U kunt de toegang tot Azure Monitor beheren via Azure Active Directory op rollen gebaseerd toegangs beheer.
+**Richt lijnen**: isolatie implementeren met afzonderlijke abonnementen en beheer groepen voor afzonderlijke beveiligings domeinen, zoals omgevings type en gegevens gevoeligheids niveau. U kunt het toegangs niveau voor uw Azure Monitor en gerelateerde resources beperken die worden vereist door uw toepassingen en bedrijfs omgevingen. U kunt de toegang tot Azure Monitor beheren via op rollen gebaseerd toegangs beheer van Azure.
 
 - [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
@@ -361,7 +361,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 ### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6: op rollen gebaseerd toegangs beheer gebruiken voor het beheren van de toegang tot bronnen
 
-**Hulp**: gebruik Azure op rollen gebaseerd toegangs beheer (RBAC) voor het beheren van de toegang tot Azure monitor.
+**Richt lijnen**: gebruik Azure RBAC (op rollen gebaseerd toegangs beheer) voor het beheren van de toegang tot Azure monitor.
 
 - [Rollen, machtigingen en beveiliging in Azure Monitor](platform/roles-permissions-security.md)
 
@@ -469,7 +469,7 @@ Gebruik Azure resource Graph om bronnen in hun abonnementen op te vragen en te d
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Query's maken met Azure resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
+- [Query's maken met Azure Resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
 
 **Azure Security Center bewaking**: Ja
 
@@ -685,7 +685,7 @@ Gebruik Azure Security Center bedreigings detectie voor gegevens Services om mal
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: zorg voor de bescherming van back-ups en door de klant beheerde sleutels
 
-**Hulp**: Azure DevOps gebruiken om uw code veilig op te slaan en te beheren, zoals aangepaste Azure-beleids regels, Azure Resource Manager sjablonen. Als u resources wilt beveiligen die u beheert in azure DevOps, kunt u machtigingen verlenen of weigeren aan specifieke gebruikers, ingebouwde beveiligings groepen of groepen die zijn gedefinieerd in Azure Active Directory (Azure AD) als deze zijn geïntegreerd met Azure DevOps, of Active Directory als dit is geïntegreerd met TFS.   Gebruik op rollen gebaseerd toegangs beheer voor het beveiligen van sleutels die door de klant worden beheerd. 
+**Hulp**: Azure DevOps gebruiken om uw code veilig op te slaan en te beheren, zoals aangepaste Azure-beleids regels, Azure Resource Manager sjablonen. Als u resources wilt beveiligen die u beheert in azure DevOps, kunt u machtigingen verlenen of weigeren aan specifieke gebruikers, ingebouwde beveiligings groepen of groepen die zijn gedefinieerd in Azure Active Directory (Azure AD) als deze zijn geïntegreerd met Azure DevOps, of Active Directory als dit is geïntegreerd met TFS.   Gebruik Azure op rollen gebaseerd toegangs beheer voor het beveiligen van sleutels die door de klant worden beheerd. 
 
 Daarnaast schakelt u Soft-Delete in Key Vault in om de beveiliging van sleutels te beschermen tegen onbedoelde of schadelijke verwijdering. Als Azure Storage wordt gebruikt voor het opslaan van back-ups van Azure Resource Manager-sjablonen, schakelt u de optie zacht verwijderen in om uw gegevens op te slaan en te herstellen wanneer blobs of BLOB-moment opnamen worden verwijderd. 
 
@@ -727,7 +727,7 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 
-- [Labels gebruiken om uw Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
+- [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
 **Azure Security Center bewaking**: niet van toepassing
 

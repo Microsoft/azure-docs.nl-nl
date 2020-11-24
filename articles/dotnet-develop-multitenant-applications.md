@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/05/2015
 ms.author: wpickett
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 71114b6663d010437e5778d288eacf4e120b3da5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d36a2804519e5728dd068cc6c06ad005244e8c95
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91395971"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95524093"
 ---
 # <a name="multitenant-applications-in-azure"></a>Multitenant-toepassingen in Azure
 Een multi tenant-toepassing is een gedeelde bron waarmee ' gebruikers in afzonderlijke tenants ' de toepassing kunnen bekijken alsof ze hun eigen. Een typisch voor beeld van een multi tenant-toepassing is een scenario waarin alle gebruikers van de toepassing van verschillende tenants de gebruikers ervaring kunnen aanpassen, maar anders dezelfde basis vereisten voor het bedrijf hebben. Voor beelden van grote multi tenant-toepassingen zijn Microsoft 365, Outlook.com en visualstudio.com.
@@ -43,7 +43,7 @@ Een goed geïmplementeerde multi tenant-toepassing biedt de volgende voor delen 
 
 Kortom, hoewel er veel overwegingen zijn die u moet uitvoeren om een uiterst schaal bare service te bieden, zijn er ook een aantal doel stellingen en vereisten voor veel multi tenant-toepassingen. Sommige zijn mogelijk niet relevant voor specifieke scenario's en het belang van individuele doel stellingen en vereisten verschillen in elk scenario. Als provider van de multi tenant-toepassing hebt u ook doel stellingen en vereisten, zoals, aan de doel stellingen van de Tenant en vereisten, winstgevendheid, facturering, meerdere service niveaus, inrichting, onderhoud en automatisering.
 
-Zie [een toepassing met meerdere tenants in azure hosten][Hosting a Multi-Tenant Application on Azure]voor meer informatie over aanvullende overwegingen voor het ontwerpen van een multi tenant-toepassing. Zie voor informatie over algemene gegevensarchitectuurpatronen van multitenant software as a service (SaaS)-databasetoepassingen, [Ontwerppatronen voor multitenant SaaS-toepassingen met Azure SQL Database](sql-database/sql-database-design-patterns-multi-tenancy-saas-applications.md). 
+Zie [een toepassing met meerdere tenants in azure hosten][Hosting a Multi-Tenant Application on Azure]voor meer informatie over aanvullende overwegingen voor het ontwerpen van een multi tenant-toepassing. Zie voor informatie over algemene gegevensarchitectuurpatronen van multitenant software as a service (SaaS)-databasetoepassingen, [Ontwerppatronen voor multitenant SaaS-toepassingen met Azure SQL Database](./azure-sql/database/saas-tenancy-app-design-patterns.md). 
 
 Azure biedt een groot aantal functies waarmee u de belangrijkste problemen kunt oplossen die zich voordoen bij het ontwerpen van een multi tenant systeem.
 
@@ -92,5 +92,5 @@ Azure biedt een aantal manieren om nieuwe tenants in te richten voor de toepassi
 
 <!--links-->
 
-[Hosting a Multi-Tenant Application on Azure]: https://msdn.microsoft.com/library/hh534480.aspx
+[Hosting a Multi-Tenant Application on Azure]: /previous-versions/msp-n-p/hh534480(v=pandp.10)
 [Designing Multitenant Applications on Azure]: https://msdn.microsoft.com/library/windowsazure/hh689716

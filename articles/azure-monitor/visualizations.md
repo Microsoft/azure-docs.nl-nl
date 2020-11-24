@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/17/2020
-ms.openlocfilehash: 4c9f74f5a9950a299b34e22c1e86dd91f8c82364
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9f95a5e85ec4eebf82cca707476750595331d73
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90983599"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522665"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Gegevens van Azure Monitor visualiseren
 Dit artikel bevat een overzicht van de beschik bare methoden voor het visualiseren van logboek-en metrische gegevens die zijn opgeslagen in Azure Monitor.
@@ -49,7 +49,7 @@ Hier volgt een video-overzicht van het maken van Dash boards.
 - Diep gaande integratie in Azure. Visualisaties kunnen worden vastgemaakt aan dash boards van meerdere Azure-pagina's, waaronder Metrics Explorer, Log Analytics en Application Insights.
 - Ondersteunt metrische gegevens en Logboeken.
 - Combi neer gegevens uit meerdere bronnen, inclusief uitvoer van [Metrics Explorer](platform/metrics-charts.md), [logboek query's](log-query/log-query-overview.md)en [kaarten](app/app-map.md) en beschik baarheid in Application Insights.
-- Optie voor persoonlijke of gedeelde Dash boards. Geïntegreerd met Azure [Role Based Authentication (RBAC)](../role-based-access-control/overview.md).
+- Optie voor persoonlijke of gedeelde Dash boards. Geïntegreerd met [op rollen gebaseerd toegangs beheer van Azure (Azure RBAC)](../role-based-access-control/overview.md).
 - Automatisch vernieuwen. Het vernieuwen van metrische gegevens is afhankelijk van het tijds bereik met mini maal vijf minuten. Logboeken worden elk uur vernieuwd, met een optie voor hand matige vernieuwing op aanvraag door te klikken op het pictogram Vernieuwen op een bepaalde visualisatie of door het volledige dash board te vernieuwen.
 - Parametrized metrische Dash boards met tijds tempel en aangepaste para meters.
 - Flexibele indelings opties.

@@ -12,12 +12,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
-ms.openlocfilehash: 2ce0e34032d8f0d07af3a7dcd3c47558814be7bd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf1ab01b39d594002bc5e677ffe6c3049fbb91ce
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91826820"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95521016"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-php"></a>Twilio gebruiken voor spraak-en SMS-mogelijkheden in PHP
 In deze hand leiding wordt gedemonstreerd hoe u veelvoorkomende programmeer taken uitvoert met de Twilio API-service in Azure. De besproken scenario's zijn onder andere het maken van een telefoon oproep en het verzenden van een SMS-bericht (Short Message Service). Zie de sectie [volgende stappen](#NextSteps) voor meer informatie over Twilio en het gebruik van spraak en SMS in uw toepassingen.
@@ -38,20 +38,20 @@ De Twilio-API is een resterende API die spraak-en SMS-functionaliteit biedt voor
 De belangrijkste aspecten van de Twilio-API zijn Twilio-werk woorden en Twilio Markup Language (TwiML).
 
 ### <a name="twilio-verbs"></a><a id="Verbs"></a>Twilio-werk woorden
-De API maakt gebruik van Twilio-werk woorden. de term ** &lt; zeg &gt; ** geeft bijvoorbeeld Twilio aan audibly een bericht te verzenden bij een aanroep.
+De API maakt gebruik van Twilio-werk woorden. de term **&lt; zeg &gt;** geeft bijvoorbeeld Twilio aan audibly een bericht te verzenden bij een aanroep.
 
 Hier volgt een lijst met Twilio-werk woorden. Meer informatie over de andere bewerkingen en mogelijkheden via [documentatie voor Twilio Markup Language](https://www.twilio.com/docs/api/twiml).
 
-* ** &lt; Dial &gt; **: verbindt de beller met een andere telefoon.
-* ** &lt; Verzamelen &gt; **: Hiermee worden numerieke cijfers op het telefoon blok verzameld.
-* ** &lt; Ophangen &gt; **: beëindigt een aanroep.
-* ** &lt; Afspelen &gt; **: Hiermee wordt een audio bestand afgespeeld.
-* ** &lt; Pause &gt; **: wacht een opgegeven aantal seconden op de achtergrond.
-* ** &lt; Record &gt; **: registreert de stem van de beller en retourneert een URL van een bestand dat de opname bevat.
-* ** &lt; Omleiden &gt; **: overdracht van de besturing van een aanroep of SMS naar de TWIML op een andere URL.
-* ** &lt; Afwijzen &gt; **: Hiermee wordt een inkomende oproep naar uw Twilio-nummer afgewezen zonder dat u wordt gefactureerd
-* ** &lt; Zeg &gt; **: Hiermee wordt tekst geconverteerd naar spraak die tijdens een aanroep wordt gemaakt.
-* ** &lt; SMS &gt; **: er wordt een SMS-bericht verzonden.
+* **&lt; Dial &gt;**: verbindt de beller met een andere telefoon.
+* **&lt; Verzamelen &gt;**: Hiermee worden numerieke cijfers op het telefoon blok verzameld.
+* **&lt; Ophangen &gt;**: beëindigt een aanroep.
+* **&lt; Afspelen &gt;**: Hiermee wordt een audio bestand afgespeeld.
+* **&lt; Pause &gt;**: wacht een opgegeven aantal seconden op de achtergrond.
+* **&lt; Record &gt;**: registreert de stem van de beller en retourneert een URL van een bestand dat de opname bevat.
+* **&lt; Omleiden &gt;**: overdracht van de besturing van een aanroep of SMS naar de TWIML op een andere URL.
+* **&lt; Afwijzen &gt;**: Hiermee wordt een inkomende oproep naar uw Twilio-nummer afgewezen zonder dat u wordt gefactureerd
+* **&lt; Zeg &gt;**: Hiermee wordt tekst geconverteerd naar spraak die tijdens een aanroep wordt gemaakt.
+* **&lt; SMS &gt;**: er wordt een SMS-bericht verzonden.
 
 ### <a name="twiml"></a><a id="TwiML"></a>TwiML
 TwiML is een reeks op XML gebaseerde instructies op basis van de Twilio-werk woorden die Twilio over het verwerken van een aanroep of SMS.
@@ -210,7 +210,7 @@ print $response;
 
 Zie voor meer informatie over TwiML [https://www.twilio.com/docs/api/twiml][twiml_reference] . 
 
-Zodra u uw PHP-pagina hebt ingesteld om TwiML-reacties te geven, gebruikt u de URL van de PHP-pagina als de URL die wordt door gegeven aan de-  `Services_Twilio->account->calls->create`  methode. Als u bijvoorbeeld een webtoepassing met de naam **MyTwiML** hebt geïmplementeerd in een door Azure gehoste service en de naam van de PHP-pagina **MyTwiML. php**is, kan de URL worden door gegeven aan  **Services_Twilio->account->-aanroepen->maken**  , zoals in het volgende voor beeld wordt weer gegeven:
+Zodra u uw PHP-pagina hebt ingesteld om TwiML-reacties te geven, gebruikt u de URL van de PHP-pagina als de URL die wordt door gegeven aan de-  `Services_Twilio->account->calls->create`  methode. Als u bijvoorbeeld een webtoepassing met de naam **MyTwiML** hebt geïmplementeerd in een door Azure gehoste service en de naam van de PHP-pagina **MyTwiML. php** is, kan de URL worden door gegeven aan  **Services_Twilio->account->-aanroepen->maken**  , zoals in het volgende voor beeld wordt weer gegeven:
 
 ```php
 require_once 'Services/Twilio.php';
@@ -262,7 +262,7 @@ Nu u de basis principes van de Twilio-service hebt geleerd, volgt u deze koppeli
 [howto_phonecall_php]: partner-twilio-php-make-phone-call.md
 [twilio_voice_request]: https://www.twilio.com/docs/api/twiml/twilio_request
 [twilio_sms_request]: https://www.twilio.com/docs/api/twiml/sms/twilio_request
-[misc_role_config_settings]: https://msdn.microsoft.com/library/windowsazure/hh690945.aspx
+[misc_role_config_settings]: /previous-versions/azure/hh690945(v=azure.100)
 [twimlet_message_url]: https://twimlets.com/message
 [twimlet_message_url_hello_world]: https://twimlets.com/message?Message%5B0%5D=Hello%20World
 [twiml_reference]: https://www.twilio.com/docs/api/twiml

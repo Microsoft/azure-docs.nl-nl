@@ -8,17 +8,16 @@ ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.date: 11/29/2017
-ms.openlocfilehash: 3cfdeaee863c8e11a76ac5842ae6c35d370e2ae2
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 74210475cc8c0efd274d6e80c3f1c89b5206a97d
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322541"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95509498"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio-classic"></a>Modelresultaten in Azure Machine Learning Studio (klassiek) interpreteren
 
-**VAN TOEPASSING OP:** ![ja](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![nee ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
-
+**van toepassing op:** ![ Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek). ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (klassiek) ![ Dit is een X, wat betekent dat dit artikel van toepassing is op Azure machine learning.](../../../includes/media/aml-applies-to-skus/no.png)[ Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
 
 In dit onderwerp wordt uitgelegd hoe u de Voorspellings resultaten in Azure Machine Learning Studio (klassiek) kunt visualiseren en interpreteren. Nadat u een model hebt getraind en voor spellingen hebt uitgevoerd (het ' gescoorde ' model '), moet u het Voorspellings resultaat begrijpen en interpreteren.
 
@@ -107,7 +106,7 @@ In de trainings gegevens zijn er 16 functies geëxtraheerd uit handgeschreven le
 
 Afbeelding 6. Letter herkenning van het probleem met de classificatie van multi klassen
 
-Het visualiseren van de resultaten van de module [score model][score-model] door te klikken op de uitvoer poort van de module [score model][score-model] en vervolgens te klikken op **visualiseren** , ziet u inhoud zoals weer gegeven in afbeelding 7.
+Het visualiseren van de resultaten van de module [score model][score-model] door te klikken op de uitvoer poort van de module [score model][score-model] en vervolgens te klikken op **visualiseren**, ziet u inhoud zoals weer gegeven in afbeelding 7.
 
 ![Resultaten van score model](./media/interpret-model-results/7.png)
 
@@ -247,7 +246,7 @@ Afbeelding 20. Systeem experiment voor aanbevolen systemen
 
 **Beoordelingen voor een bepaalde gebruiker en een bepaald item voors pellen**
 
-Als u de optie **beoordelings voorspelling** selecteert onder **Aanbevolen Voorspellings type** , vraagt u het aanbevolen systeem om de classificatie voor een bepaalde gebruiker en een bepaald item te voors pellen. De visualisatie van de [Score matchbox-aanbevolen][score-matchbox-recommender] uitvoer ziet eruit als afbeelding 21.
+Als u de optie **beoordelings voorspelling** selecteert onder **Aanbevolen Voorspellings type**, vraagt u het aanbevolen systeem om de classificatie voor een bepaalde gebruiker en een bepaald item te voors pellen. De visualisatie van de [Score matchbox-aanbevolen][score-matchbox-recommender] uitvoer ziet eruit als afbeelding 21.
 
 ![Score resultaat van het aanbevolen systeem-classificatie voor spelling](./media/interpret-model-results/21.png)
 
@@ -257,7 +256,7 @@ De eerste twee kolommen zijn de door de invoer gegevens opgegeven combi Naties v
 
 **Het aanbevelen van items aan een bepaalde gebruiker**
 
-Door **item aanbeveling** te selecteren onder **Aanbevolen Voorspellings type** , vraagt u het aanbevolen systeem om items aan een bepaalde gebruiker aan te bevelen. De laatste para meter die in dit scenario moet worden gekozen, is de *Aanbevolen selectie van items*. De optie **van nominale items (voor de model evaluatie)** is voornamelijk bedoeld voor de model evaluatie tijdens het trainings proces. Voor deze Voorspellings fase kiezen we **uit alle items**. De visualisatie van de [Score matchbox-aanbevolen][score-matchbox-recommender] uitvoer ziet eruit als afbeelding 22.
+Door **item aanbeveling** te selecteren onder **Aanbevolen Voorspellings type**, vraagt u het aanbevolen systeem om items aan een bepaalde gebruiker aan te bevelen. De laatste para meter die in dit scenario moet worden gekozen, is de *Aanbevolen selectie van items*. De optie **van nominale items (voor de model evaluatie)** is voornamelijk bedoeld voor de model evaluatie tijdens het trainings proces. Voor deze Voorspellings fase kiezen we **uit alle items**. De visualisatie van de [Score matchbox-aanbevolen][score-matchbox-recommender] uitvoer ziet eruit als afbeelding 22.
 
 ![Resultaat van de Score van het aanbevolen systeem--item aanbeveling](./media/interpret-model-results/22.png)
 
@@ -267,7 +266,7 @@ De eerste van de zes kolommen duidt op de opgegeven gebruikers-Id's voor het aan
 
 **Gebruikers zoeken die zijn gerelateerd aan een bepaalde gebruiker**
 
-Als u **gerelateerde gebruikers** selecteert onder **Aanbevolen Voorspellings type** , vraagt u het aanbevolen systeem om verwante gebruikers te vinden voor een bepaalde gebruiker. Gerelateerde gebruikers zijn de gebruikers die vergelijk bare voor keuren hebben. De laatste para meter die in dit scenario moet worden gekozen, is *gerelateerde gebruikers selectie*. De optie **van gebruikers die geclassificeerde items (voor de model evaluatie),** is voornamelijk bedoeld voor de model evaluatie tijdens het trainings proces. Kies **uit alle gebruikers** voor deze Voorspellings fase. De visualisatie van de [Score matchbox-aanbevolen][score-matchbox-recommender] uitvoer ziet eruit als afbeelding 23.
+Als u **gerelateerde gebruikers** selecteert onder **Aanbevolen Voorspellings type**, vraagt u het aanbevolen systeem om verwante gebruikers te vinden voor een bepaalde gebruiker. Gerelateerde gebruikers zijn de gebruikers die vergelijk bare voor keuren hebben. De laatste para meter die in dit scenario moet worden gekozen, is *gerelateerde gebruikers selectie*. De optie **van gebruikers die geclassificeerde items (voor de model evaluatie),** is voornamelijk bedoeld voor de model evaluatie tijdens het trainings proces. Kies **uit alle gebruikers** voor deze Voorspellings fase. De visualisatie van de [Score matchbox-aanbevolen][score-matchbox-recommender] uitvoer ziet eruit als afbeelding 23.
 
 ![Score resultaat van het aanbevelen van systeem-gerelateerde gebruikers](./media/interpret-model-results/23.png)
 
@@ -277,7 +276,7 @@ In de eerste van de zes kolommen worden de opgegeven gebruikers-Id's weer gegeve
 
 **Items zoeken die betrekking hebben op een bepaald item**
 
-Als u **Verwante items** selecteert onder **Voorspellings type** , vraagt u het aanbevolen systeem om verwante items naar een bepaald item te zoeken. Gerelateerde items zijn de items die waarschijnlijk dezelfde gebruiker hebben. De laatste para meter die in dit scenario moet worden gekozen, is *gerelateerde item selectie*. De optie **van nominale items (voor de model evaluatie)** is voornamelijk bedoeld voor de model evaluatie tijdens het trainings proces. We kiezen **uit alle items** voor deze Voorspellings fase. De visualisatie van de [Score matchbox-aanbevolen][score-matchbox-recommender] uitvoer ziet eruit als afbeelding 24.
+Als u **Verwante items** selecteert onder **Voorspellings type**, vraagt u het aanbevolen systeem om verwante items naar een bepaald item te zoeken. Gerelateerde items zijn de items die waarschijnlijk dezelfde gebruiker hebben. De laatste para meter die in dit scenario moet worden gekozen, is *gerelateerde item selectie*. De optie **van nominale items (voor de model evaluatie)** is voornamelijk bedoeld voor de model evaluatie tijdens het trainings proces. We kiezen **uit alle items** voor deze Voorspellings fase. De visualisatie van de [Score matchbox-aanbevolen][score-matchbox-recommender] uitvoer ziet eruit als afbeelding 24.
 
 ![Score resultaat van het aanbevelen van systeem-gerelateerde items](./media/interpret-model-results/24.png)
 

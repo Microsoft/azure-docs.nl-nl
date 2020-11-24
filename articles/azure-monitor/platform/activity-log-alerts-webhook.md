@@ -4,12 +4,12 @@ description: Meer informatie over het schema van de JSON dat wordt gepost naar e
 ms.topic: conceptual
 ms.date: 03/31/2017
 ms.subservice: alerts
-ms.openlocfilehash: 0ebaf7f0cc52ac131573226dfff5516581745c67
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 026613c3f5710137fb110153b34f9ed74bbf8a7b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104271"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522784"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Webhooks voor Azure-activiteiten logboek waarschuwingen
 Als onderdeel van de definitie van een actie groep kunt u webhook-eind punten configureren voor het ontvangen van waarschuwings meldingen voor activiteiten Logboeken. Met webhooks kunt u deze meldingen naar andere systemen sturen voor nabewerkingen of aangepaste acties. In dit artikel ziet u hoe de payload voor het HTTP POST-bericht naar een webhook eruit ziet.
@@ -262,14 +262,14 @@ Zie [service Health Notifications](../../service-health/service-notifications.md
 | conditionType |Altijd ' gebeurtenis '. |
 | naam |De naam van de waarschuwings regel. |
 | id |De resource-ID van de waarschuwing. |
-| description |De beschrijving van de waarschuwing wordt ingesteld wanneer de waarschuwing wordt gemaakt. |
+| beschrijving |De beschrijving van de waarschuwing wordt ingesteld wanneer de waarschuwing wordt gemaakt. |
 | subscriptionId |Azure-abonnements-ID. |
 | tijdstempel |Tijdstip waarop de gebeurtenis is gegenereerd door de Azure-service die de aanvraag heeft verwerkt. |
 | resourceId |De resource-ID van de betrokken resource. |
 | resourceGroupName |De naam van de resource groep voor de betrokken resource. |
 | properties |Set `<Key, Value>` paren (dat wil zeggen `Dictionary<String, String>` ) met details over de gebeurtenis. |
 | gebeurtenislog |Element dat meta gegevens bevat over de gebeurtenis. |
-| autorisatie |De Role-Based Access Control eigenschappen van de gebeurtenis. Deze eigenschappen omvatten doorgaans de actie, de rol en het bereik. |
+| autorisatie |De op rollen gebaseerde toegangs beheer eigenschappen van de gebeurtenis van Azure. Deze eigenschappen omvatten doorgaans de actie, de rol en het bereik. |
 | category |De categorie van de gebeurtenis. Ondersteunde waarden zijn onder andere: beheer, waarschuwing, beveiliging, ServiceHealth en aanbeveling. |
 | aanroeper |Het e-mail adres van de gebruiker die de bewerking, UPN-claim of SPN-claim heeft uitgevoerd op basis van Beschik baarheid. Kan null zijn voor bepaalde systeem aanroepen. |
 | correlationId |Meestal een GUID in een teken reeks indeling. Gebeurtenissen met correlationId horen bij dezelfde grotere actie en delen meestal een correlationId. |

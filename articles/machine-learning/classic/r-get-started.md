@@ -9,17 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/01/2019
-ms.openlocfilehash: b7c442aaf6484e8e47bd6d00c91023fba43af75d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: bca2f0229a15f44ff8f3589a9c1e80032036b97c
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325014"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95507213"
 ---
 # <a name="get-started-with-azure-machine-learning-studio-classic-in-r"></a>Aan de slag met Azure Machine Learning Studio (klassiek) in R
 
-**VAN TOEPASSING OP:** ![ja](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![nee ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
-
+**van toepassing op:** ![ Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek). ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (klassiek) ![ Dit is een X, wat betekent dat dit artikel van toepassing is op Azure machine learning.](../../../includes/media/aml-applies-to-skus/no.png)[ Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
 
 <!-- Stephen F Elston, Ph.D. -->
 In deze zelf studie leert u hoe u Azure Machine Learning Studio (klassiek) kunt gebruiken om R-code te maken, te testen en uit te voeren. Uiteindelijk hebt u een volledige oplossing voor prognoses.
@@ -122,9 +121,9 @@ Lees de informatie over als u de laatste regel van deze code op dit moment niet 
 
 RStudio is een veel gebruikte IDE voor R. We gebruiken RStudio om een deel van de R-code die in deze hand leiding wordt gebruikt, te bewerken, te testen en op te lossen. Nadat de R-code is getest en klaar is, kunt u uit de RStudio-editor knippen en plakken in een Machine Learning Studio (klassiek) [R-script module uitvoeren][execute-r-script] .
 
-Als u de R-programmeer taal niet op uw computer hebt geïnstalleerd, doet u dat nu. Gratis down loads van de open source R-taal zijn beschikbaar op het [uitgebreide r-archief netwerk (kranen)](https://www.r-project.org/). Down loads zijn beschikbaar voor Windows, Mac OS en Linux/UNIX. Kies een nabijgelegen mirror en volg de download instructies. Daarnaast bevat KRANen veel nuttige analyse-en gegevens manipulatie pakketten.
+Als u de R-programmeer taal niet op uw computer hebt geïnstalleerd, doet u dat nu. Gratis down loads van de open source R-taal zijn beschikbaar op het [uitgebreide r-archief netwerk (kranen)](https://www.r-project.org/). Down loads zijn beschikbaar voor Windows, macOS en Linux/UNIX. Kies een nabijgelegen mirror en volg de download instructies. Daarnaast bevat KRANen veel nuttige analyse-en gegevens manipulatie pakketten.
 
-Als u niet bekend bent met RStudio, moet u de desktop versie downloaden en installeren. U kunt de RStudio-down loads voor Windows, Mac OS en Linux/UNIX vinden op [RStudio](http://www.rstudio.com/products/RStudio/). Volg de instructies voor het installeren van RStudio op uw desktop computer.
+Als u niet bekend bent met RStudio, moet u de desktop versie downloaden en installeren. U kunt de RStudio-down loads voor Windows, macOS en Linux/UNIX vinden op [RStudio](http://www.rstudio.com/products/RStudio/). Volg de instructies voor het installeren van RStudio op uw desktop computer.
 
 Een zelf studie Inleiding tot RStudio is beschikbaar op [het gebruik van de RSTUDIO IDE](https://support.rstudio.com/hc/sections/200107586-Using-RStudio).
 
@@ -159,7 +158,7 @@ Nu we een aantal gegevens hebben in Machine Learning Studio (klassiek), moeten w
 1. Sleep **csdairydata.csv gegevensset** naar het experiment.
 1. Voer in het vak **Zoek proef items** bovenaan in het linkerdeel venster de opdracht [R-script uitvoeren][execute-r-script]in. De module wordt weer gegeven in de lijst zoeken.
 1. Sleep de module [R-script uitvoeren][execute-r-script] naar uw pallet.
-1. Verbind de uitvoer van **csdairydata.csv gegevensset** met de meest linkse invoer ( **Dataset1** ) van het [R-script uitvoeren][execute-r-script].
+1. Verbind de uitvoer van **csdairydata.csv gegevensset** met de meest linkse invoer (**Dataset1**) van het [R-script uitvoeren][execute-r-script].
 1. Selecteer **Opslaan**.
 
 Op dit moment moet uw experiment er ongeveer als volgt uitzien.
@@ -1276,11 +1275,11 @@ Vanuit deze resultaten ziet u dat het toevoegen van de seizoensgebonden factoren
 
 RStudio is goed gedocumenteerd. Hier vindt u enkele koppelingen naar de belangrijkste secties van de RStudio-documentatie om aan de slag te gaan.
 
-* **Projecten maken** : u kunt uw R-code in projecten indelen en beheren met behulp van RStudio. Zie [using projects](https://support.rstudio.com/hc/articles/200526207-Using-Projects)(Engelstalig) voor meer informatie. Volg deze instructies en maak een project voor de R-code voorbeelden in dit artikel.
-* **R-code bewerken en uitvoeren** : RStudio biedt een geïntegreerde omgeving voor het bewerken en uitvoeren van r-code. Zie [code bewerken en uitvoeren](https://support.rstudio.com/hc/articles/200484448-Editing-and-Executing-Code)voor meer informatie.
-* **Debug** : RStudio bevat krachtige functies voor fout opsporing. Zie [fout opsporing met RStudio](https://support.rstudio.com/hc/articles/200713843-Debugging-with-RStudio)voor meer informatie over deze functies. Zie [probleem oplossing](https://support.rstudio.com/hc/articles/200534337-Breakpoint-Troubleshooting)voor meer informatie over functies voor het oplossen van onderbrekings punten.
+* **Projecten maken**: u kunt uw R-code in projecten indelen en beheren met behulp van RStudio. Zie [using projects](https://support.rstudio.com/hc/articles/200526207-Using-Projects)(Engelstalig) voor meer informatie. Volg deze instructies en maak een project voor de R-code voorbeelden in dit artikel.
+* **R-code bewerken en uitvoeren**: RStudio biedt een geïntegreerde omgeving voor het bewerken en uitvoeren van r-code. Zie [code bewerken en uitvoeren](https://support.rstudio.com/hc/articles/200484448-Editing-and-Executing-Code)voor meer informatie.
+* **Debug**: RStudio bevat krachtige functies voor fout opsporing. Zie [fout opsporing met RStudio](https://support.rstudio.com/hc/articles/200713843-Debugging-with-RStudio)voor meer informatie over deze functies. Zie [probleem oplossing](https://support.rstudio.com/hc/articles/200534337-Breakpoint-Troubleshooting)voor meer informatie over functies voor het oplossen van onderbrekings punten.
 
-## <a name="further-reading"></a><a id="appendixb"></a>Meer informatie
+## <a name="further-reading"></a><a id="appendixb"></a>Meer lezen
 
 Deze zelf studie R-programmeer behandelt de basis beginselen van wat u nodig hebt om de R-taal met Machine Learning Studio (klassiek) te gebruiken. Als u niet bekend bent met R, zijn er twee inleidingen beschikbaar op KRANen:
 

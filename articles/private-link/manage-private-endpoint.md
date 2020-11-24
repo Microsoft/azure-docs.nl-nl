@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 20695d183ea8184f7ee2948b3897fa1f3a741411
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2987cd1ff8c678f7079e13e8b9bc657817c066f1
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84737492"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95531369"
 ---
 # <a name="manage-a-private-endpoint-connection"></a>Manage a Private Endpoint connection (Een privé-eindpuntverbinding beheren)
 Een persoonlijke Azure-koppeling werkt op een goedkeurings stroom model voor de persoonlijke koppeling service, waarmee de gebruiker van de private link een verbinding kan aanvragen met de service provider voor het gebruik van de service. De service provider kan vervolgens bepalen of de gebruiker verbinding mag maken of niet. Met de persoonlijke Azure-koppeling kunnen de service providers de verbinding van het particuliere eind punt op hun resources beheren. In dit artikel vindt u instructies voor het beheren van de verbindingen met een privé-eind punt.
@@ -20,8 +20,8 @@ Een persoonlijke Azure-koppeling werkt op een goedkeurings stroom model voor de 
 ![Privé-eind punten beheren](media/manage-private-endpoint/manage-private-endpoint.png)
 
 Er zijn twee methoden voor het goed keuren van een verbinding die een persoonlijke koppelings service gebruiker kan kiezen uit:
-- **Automatisch**: als de service gebruiker RBAC-machtigingen heeft voor de resource van de service provider, kan de gebruiker de automatische goedkeurings methode kiezen. In dit geval is er geen actie vereist van de service provider en wordt de verbinding automatisch goedgekeurd wanneer de aanvraag de resource van de service provider bereikt. 
-- **Hand matig**: als de service gebruiker geen RBAC-machtigingen heeft voor de resource van de service provider, kan de gebruiker de hand matige goedkeurings methode kiezen. In dit geval wordt de verbindings aanvraag op de service resources weer gegeven als **in behandeling**. De service provider moet de aanvraag hand matig goed keuren voordat verbindingen kunnen worden gemaakt. In hand matige gevallen kan de service gebruiker ook een bericht opgeven met de aanvraag om meer context te bieden aan de service provider. De service provider heeft de volgende opties waaruit u kunt kiezen voor alle verbindingen met privé-eind punten: **goedgekeurd**, **afwijzen**, **verwijderen**.
+- **Automatisch**: als de service verbruiker Azure RBAC-machtigingen heeft voor de resource van de service provider, kan de gebruiker de automatische goedkeurings methode kiezen. In dit geval is er geen actie vereist van de service provider en wordt de verbinding automatisch goedgekeurd wanneer de aanvraag de resource van de service provider bereikt. 
+- **Hand matig**: als de service gebruiker geen Azure RBAC-machtigingen voor de resource van de service provider heeft, kan de gebruiker de hand matige goedkeurings methode kiezen. In dit geval wordt de verbindings aanvraag op de service resources weer gegeven als **in behandeling**. De service provider moet de aanvraag hand matig goed keuren voordat verbindingen kunnen worden gemaakt. In hand matige gevallen kan de service gebruiker ook een bericht opgeven met de aanvraag om meer context te bieden aan de service provider. De service provider heeft de volgende opties waaruit u kunt kiezen voor alle verbindingen met privé-eind punten: **goedgekeurd**, **afwijzen**, **verwijderen**.
 
 In de onderstaande tabel ziet u de verschillende acties van de service provider en de resulterende status van de verbinding voor privé-eind punten.  De service provider kan ook de verbindings status van de verbinding met het particuliere eind punt op een later tijdstip wijzigen zonder tussen komst van de gebruiker. Met deze actie wordt de status van het eind punt op de gebruikers zijde bijgewerkt. 
 
@@ -38,7 +38,7 @@ In de onderstaande tabel ziet u de verschillende acties van de service provider 
 Portal is de voorkeurs methode voor het beheren van privé-eindpunt verbindingen op Azure PaaS-resources. Op dit moment hebben we geen Power shell/CLI-ondersteuning voor het beheer van verbindingen op Azure PaaS-resources.
 1. Meld u aan bij Azure Portal op https://portal.azure.com.
 2. Navigeer naar het persoonlijke koppelings centrum.
-3. Onder **resources**selecteert u het bron type dat u wilt beheren van de verbindingen met een privé-eind punt.
+3. Onder **resources** selecteert u het bron type dat u wilt beheren van de verbindingen met een privé-eind punt.
 4. Voor elk van uw bron typen kunt u het aantal privé-eindpunt verbindingen bekijken dat eraan is gekoppeld. U kunt de resources op de gewenste manier filteren.
 5. Selecteer de verbindingen met het persoonlijke eind punt.  Selecteer in de lijst met verbindingen de verbinding die u wilt beheren. 
 6. U kunt de status van de verbinding wijzigen door bovenaan de opties te selecteren.

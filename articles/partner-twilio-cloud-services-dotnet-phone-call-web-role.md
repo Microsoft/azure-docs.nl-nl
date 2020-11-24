@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/04/2016
 ms.author: mimckitt
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 536a28801193cdbb4204ca1432892abdc7fb297e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22e0a19c0e2f5b29b35ebf43a3f250959c9b636d
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91268482"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95521118"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-web-role-on-azure"></a>Een telefoon gesprek doen met behulp van Twilio in een webrol in azure
 In deze hand leiding wordt gedemonstreerd hoe u Twilio kunt gebruiken om een aanroep uit te voeren vanaf een webpagina die wordt gehost in Azure. De resulterende toepassing vraagt de gebruiker om een gesprek te voeren met het opgegeven aantal en bericht, zoals wordt weer gegeven in de volgende scherm afbeelding.
@@ -41,7 +41,7 @@ U moet bekend zijn met het maken van een eenvoudige [ondernemingsrol op Azure][a
 2. Klik met de rechter muisknop op **verwijzingen**.
 3. Klik op **NuGet-pakketten beheren**.
 4. Klik op **online**.
-5. Typ *twilio*in het vak online zoeken.
+5. Typ *twilio* in het vak online zoeken.
 6. Klik op **installeren** in het Twilio-pakket.
 
 De volgende code laat zien hoe u een webformulier maakt om gebruikers gegevens op te halen voor het maken van een aanroep. In dit voor beeld wordt een ASP.NET-webrol met de naam **TwilioCloud** gemaakt.
@@ -186,5 +186,5 @@ Deze code werd verschaft om u de basis functionaliteit te laten zien met behulp 
 [twilio_say]: https://www.twilio.com/docs/api/twiml/say
 
 
-[azure_runtime_ref_dotnet]: https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
-[azure_webroles_get_started]: https://docs.microsoft.com/azure/cloud-services/cloud-services-dotnet-get-started
+[azure_runtime_ref_dotnet]: /previous-versions/azure/reference/ee741722(v=azure.100)
+[azure_webroles_get_started]: ./cloud-services/cloud-services-dotnet-get-started.md

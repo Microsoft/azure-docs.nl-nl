@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 10/08/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: cf96906b0dab9a94febe83468f813c7cae0675b0
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 1c957330fbd54660367fa350d6985929f0bbd3d1
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91874812"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95531386"
 ---
 # <a name="optimize-costs-for-blob-storage-with-reserved-capacity"></a>Kosten optimaliseren voor blob-opslag met gereserveerde capaciteit
 
@@ -38,7 +38,7 @@ Azure Storage gereserveerde capaciteit is beschikbaar voor één abonnement of v
 
 Wanneer u Azure Storage gereserveerde capaciteit aanschaft, kunt u de reserve ring gebruiken voor blok-blobs en Azure Data Lake Storage Gen2 gegevens. Er wordt een reserve ring toegepast op uw gebruik binnen het aangeschafte bereik en kan niet worden beperkt tot een specifiek opslag account, container of object binnen het abonnement.
 
-Een Azure Storage reserve ring geldt alleen voor de hoeveelheid gegevens die is opgeslagen in een abonnement of een gedeelde resource groep. Kosten voor vroegtijdige verwijdering, bewerkingen, band breedte en gegevens overdracht worden niet opgenomen in de reserve ring. Zodra u een reserve ring koopt, worden de capaciteits kosten die overeenkomen met de reserverings kenmerken, in rekening gebracht tegen de kortings tarieven in plaats van op basis van de betalen naar gebruik-tarieven. Zie [Wat zijn Azure Reservations?](/azure/billing/billing-save-compute-costs-reservations)voor meer informatie over Azure-reserve ringen.
+Een Azure Storage reserve ring geldt alleen voor de hoeveelheid gegevens die is opgeslagen in een abonnement of een gedeelde resource groep. Kosten voor vroegtijdige verwijdering, bewerkingen, band breedte en gegevens overdracht worden niet opgenomen in de reserve ring. Zodra u een reserve ring koopt, worden de capaciteits kosten die overeenkomen met de reserverings kenmerken, in rekening gebracht tegen de kortings tarieven in plaats van op basis van de betalen naar gebruik-tarieven. Zie [Wat zijn Azure Reservations?](../../cost-management-billing/reservations/save-compute-costs-reservations.md)voor meer informatie over Azure-reserve ringen.
 
 ### <a name="supported-account-types-tiers-and-redundancy-options"></a>Ondersteunde account typen, lagen en redundantie opties
 
@@ -67,7 +67,7 @@ Er zijn vandaag nog reserve ringen beschikbaar voor 100 TiB-of 1 PiB-blokken, me
 
 ## <a name="purchase-azure-storage-reserved-capacity"></a>Gereserveerde capaciteit van Azure Storage aankoop
 
-U kunt Azure Storage gereserveerde capaciteit aanschaffen via de [Azure Portal](https://portal.azure.com). Betaal vooraf of per maand voor de reservering. Zie voor meer informatie over aankopen met maandelijkse betalingen [Azure-reserve ringen aanschaffen met vooraf of maandelijks betalen](/azure/billing/billing-monthly-payments-reservations).
+U kunt Azure Storage gereserveerde capaciteit aanschaffen via de [Azure Portal](https://portal.azure.com). Betaal vooraf of per maand voor de reservering. Zie voor meer informatie over aankopen met maandelijkse betalingen [Azure-reserve ringen aanschaffen met vooraf of maandelijks betalen](../../cost-management-billing/reservations/prepare-buy-reservation.md).
 
 Zie [inzicht in de korting op Azure Storage gereserveerde capaciteit](../../cost-management-billing/reservations/understand-storage-charges.md)voor hulp bij het identificeren van de reserverings voorwaarden die geschikt zijn voor uw scenario.
 
@@ -81,11 +81,11 @@ Volg deze stappen om gereserveerde capaciteit aan te schaffen:
 
    |Veld  |Beschrijving  |
    |---------|---------|
-   |**Bereik**   |  Hiermee wordt aangegeven hoeveel abonnementen het facturerings voordeel kunnen gebruiken dat is gekoppeld aan de reserve ring. Het bepaalt ook hoe de reserve ring wordt toegepast op specifieke abonnementen. <br/><br/> Als u **gedeeld**selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in een abonnement binnen uw facturerings context. De facturerings context is gebaseerd op de manier waarop u zich hebt geregistreerd voor Azure. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen per gebruik-klanten bevat het gedeelde bereik alle afzonderlijke abonnementen met betalen per gebruik-tarieven die zijn gemaakt door de account beheerder.  <br/><br/>  Als u **één abonnement**selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in het geselecteerde abonnement. <br/><br/> Als u **één resource groep**selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in het geselecteerde abonnement en de geselecteerde resource groep in dat abonnement. <br/><br/> U kunt het reserverings bereik wijzigen nadat u de reserve ring hebt aangeschaft.  |
+   |**Bereik**   |  Hiermee wordt aangegeven hoeveel abonnementen het facturerings voordeel kunnen gebruiken dat is gekoppeld aan de reserve ring. Het bepaalt ook hoe de reserve ring wordt toegepast op specifieke abonnementen. <br/><br/> Als u **gedeeld** selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in een abonnement binnen uw facturerings context. De facturerings context is gebaseerd op de manier waarop u zich hebt geregistreerd voor Azure. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen per gebruik-klanten bevat het gedeelde bereik alle afzonderlijke abonnementen met betalen per gebruik-tarieven die zijn gemaakt door de account beheerder.  <br/><br/>  Als u **één abonnement** selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in het geselecteerde abonnement. <br/><br/> Als u **één resource groep** selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in het geselecteerde abonnement en de geselecteerde resource groep in dat abonnement. <br/><br/> U kunt het reserverings bereik wijzigen nadat u de reserve ring hebt aangeschaft.  |
    |**Abonnement**  | Het abonnement dat wordt gebruikt om te betalen voor de Azure Storage reserve ring. De betalings wijze voor het geselecteerde abonnement wordt gebruikt bij het opladen van de kosten. Het abonnement moet een van de volgende typen zijn: <br/><br/>  Enterprise Agreement (nummers van aanbiedingen: MS-AZR-0017P of MS-AZR-0148P): voor een Enter prise-abonnement worden de kosten in rekening gebracht op basis van de monetaire toezeg ging van de inschrijving of worden aangerekend als overschrijding. <br/><br/> Individueel abonnement met betalen per gebruik-tarieven (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P): voor een afzonderlijk abonnement met betalen per gebruik-tarieven, worden de kosten in rekening gebracht op de credit card-of factuur betalings methode voor het abonnement.    |
    | **Regio** | De regio waar de reserve ring van kracht is. |
-   | **Toegangslaag** | De Access-laag waar de waarvoor de reserve ring geldt. Opties zijn onder andere *Hot*, *cool*en *Archive*. Zie [Azure Blob Storage: warme, cool en archief toegangs lagen](storage-blob-storage-tiers.md)voor meer informatie over toegangs lagen. |
-   | **Redundantie** | De redundantie optie voor de reserve ring. Opties zijn *LRS*, *ZRS*, *GRS*, *GZRS*, *Ra-GRS*en *Ra-GZRS*. Zie [Azure Storage redundantie](../common/storage-redundancy.md)voor meer informatie over redundantie opties. |
+   | **Toegangslaag** | De Access-laag waar de waarvoor de reserve ring geldt. Opties zijn onder andere *Hot*, *cool* en *Archive*. Zie [Azure Blob Storage: warme, cool en archief toegangs lagen](storage-blob-storage-tiers.md)voor meer informatie over toegangs lagen. |
+   | **Redundantie** | De redundantie optie voor de reserve ring. Opties zijn *LRS*, *ZRS*, *GRS*, *GZRS*, *Ra-GRS* en *Ra-GZRS*. Zie [Azure Storage redundantie](../common/storage-redundancy.md)voor meer informatie over redundantie opties. |
    | **Facturerings frequentie** | Hiermee wordt aangegeven hoe vaak het account wordt gefactureerd voor de reserve ring. De opties zijn *maandelijks* of *vooraf*. |
    | **Grootte** | De hoeveelheid capaciteit die moet worden gereserveerd. |
    |**Termijn**  | Eén jaar of drie jaar.   |
@@ -102,7 +102,7 @@ Nadat u een reserve ring hebt aangeschaft, wordt deze automatisch toegepast op e
 
 U kunt een reserve ring uitwisselen of terugbetalen, met bepaalde beperkingen. Deze beperkingen worden beschreven in de volgende secties.
 
-Als u een reserve ring wilt omruilen of terugbetalen, gaat u naar de reserverings details in het Azure Portal. Selecteer **Exchange** of **terugbetaling**en volg de instructies om een ondersteunings aanvraag in te dienen. Wanneer de aanvraag is verwerkt, ontvangt micro soft u een e-mail om de voltooiing van de aanvraag te bevestigen.
+Als u een reserve ring wilt omruilen of terugbetalen, gaat u naar de reserverings details in het Azure Portal. Selecteer **Exchange** of **terugbetaling** en volg de instructies om een ondersteunings aanvraag in te dienen. Wanneer de aanvraag is verwerkt, ontvangt micro soft u een e-mail om de voltooiing van de aanvraag te bevestigen.
 
 Zie voor meer informatie over Azure Reservations-beleid [self-service uitwisselingen en terugstortingen voor Azure Reservations](../../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md).
 

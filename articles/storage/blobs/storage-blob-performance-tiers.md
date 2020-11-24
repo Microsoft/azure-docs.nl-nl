@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: clausjor
-ms.openlocfilehash: ff82986b27d038c536872b07e1308b0d48fadaef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 404999cfac5037702eb61fdf74b2c5245ce9eb30
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74270227"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95526116"
 ---
 # <a name="performance-tiers-for-block-blob-storage"></a>Prestatielagen voor blok-blobopslag
 
@@ -83,6 +83,6 @@ Het is niet mogelijk om gegevens die zijn opgeslagen in een Premium Block Blob-o
 Evalueer warme, cool en Archive in GPv2-en Blob Storage-accounts.
 
 - [Meer informatie over reactiveren BLOB-gegevens uit de laag archief](storage-blob-rehydration.md)
-- [Gebruik van de huidige opslagaccounts evalueren door metrische gegevens voor Azure Storage in te schakelen](../common/storage-enable-and-view-metrics.md)
+- [Gebruik van de huidige opslagaccounts evalueren door metrische gegevens voor Azure Storage in te schakelen](./monitor-blob-storage.md)
 - [Controleer de prijzen voor warme, koude en archief in Blob Storage en GPv2-accounts per regio](https://azure.microsoft.com/pricing/details/storage/)
 - [Prijzen voor gegevensoverdracht controleren](https://azure.microsoft.com/pricing/details/data-transfers/)

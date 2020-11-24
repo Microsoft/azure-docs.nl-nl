@@ -2,13 +2,13 @@
 title: Resources implementeren voor het abonnement
 description: Hierin wordt beschreven hoe u een resource groep maakt in een Azure Resource Manager sjabloon. Ook wordt uitgelegd hoe u resources kunt implementeren in het bereik van Azure-abonnementen.
 ms.topic: conceptual
-ms.date: 10/26/2020
-ms.openlocfilehash: 7b0edde4f3571255e92c65d82429b4ddd1a689b8
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 11/23/2020
+ms.openlocfilehash: c87f6fa590e1f769816fb0ee3cba3aad1997de15
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92668887"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95519860"
 ---
 # <a name="subscription-deployments-with-arm-templates"></a>Implementaties van abonnementen met ARM-sjablonen
 
@@ -90,7 +90,7 @@ Het schema voor een parameter bestand is hetzelfde voor alle implementatie berei
 
 Gebruik de implementatie opdrachten op abonnements niveau om te implementeren in een abonnement.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment sub Create](/cli/azure/deployment/sub#az-deployment-sub-create)voor Azure cli. In het volgende voor beeld wordt een sjabloon geïmplementeerd voor het maken van een resource groep:
 
@@ -104,7 +104,7 @@ az deployment sub create \
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Gebruik voor de Power shell-implementatie opdracht [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) of **New-AzSubscriptionDeployment** . In het volgende voor beeld wordt een sjabloon geïmplementeerd voor het maken van een resource groep:
+Gebruik voor de Power shell-implementatie opdracht [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) of **New-AzSubscriptionDeployment**. In het volgende voor beeld wordt een sjabloon geïmplementeerd voor het maken van een resource groep:
 
 ```azurepowershell-interactive
 New-AzSubscriptionDeployment `
@@ -131,20 +131,28 @@ Zie voor meer gedetailleerde informatie over implementatie opdrachten en opties 
 Wanneer u naar een abonnement implementeert, kunt u resources implementeren voor het volgende:
 
 * het doel abonnement van de bewerking
-* resource groepen binnen het abonnement
+* elk abonnement in de Tenant
+* resource groepen binnen het abonnement of andere abonnementen
+* de Tenant voor het abonnement
 * [uitbreidings bronnen](scope-extension-resources.md) kunnen worden toegepast op resources
 
-U kunt niet implementeren in een abonnement dat verschilt van het doel abonnement. De gebruiker die de sjabloon implementeert, moet toegang hebben tot het opgegeven bereik.
+De gebruiker die de sjabloon implementeert, moet toegang hebben tot het opgegeven bereik.
 
 In deze sectie wordt beschreven hoe u verschillende bereiken kunt opgeven. U kunt deze verschillende bereiken combi neren in één sjabloon.
 
-### <a name="scope-to-subscription"></a>Bereik voor abonnement
+### <a name="scope-to-target-subscription"></a>Bereik voor het doel abonnement
 
 Als u resources wilt implementeren in het doel abonnement, voegt u deze resources toe aan de sectie resources van de sjabloon.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/default-sub.json" highlight="5":::
 
 Zie [resource groepen maken](#create-resource-groups) en [beleids definitie toewijzen](#assign-policy-definition)voor voor beelden van het implementeren van het abonnement.
+
+### <a name="scope-to-other-subscription"></a>Bereik voor ander abonnement
+
+Als u resources wilt implementeren voor een abonnement dat verschilt van het abonnement van de bewerking, voegt u een geneste implementatie toe. Stel de `subscriptionId` eigenschap in op de id van het abonnement dat u wilt implementeren. Stel de `location` eigenschap voor de geneste implementatie in.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/sub-to-sub.json" highlight="9,10,14":::
 
 ### <a name="scope-to-resource-group"></a>Bereik voor resource groep
 
@@ -154,11 +162,23 @@ Als u resources wilt implementeren voor een resource groep binnen het abonnement
 
 Zie [resource groep en resources maken](#create-resource-group-and-resources)voor een voor beeld van de implementatie van een resource groep.
 
+### <a name="scope-to-tenant"></a>Bereik naar Tenant
+
+U kunt resources maken op de Tenant door de `scope` set in te stellen op `/` . De gebruiker die de sjabloon implementeert, moet de [vereiste toegang hebben om te implementeren op de Tenant](deploy-to-tenant.md#required-access).
+
+U kunt een geneste implementatie gebruiken met `scope` en `location` instellen.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/subscription-to-tenant.json" highlight="9,10,14":::
+
+Of u kunt het bereik instellen op `/` voor sommige resource typen, zoals beheer groepen.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/subscription-create-mg.json" highlight="12,15":::
+
 ## <a name="deployment-location-and-name"></a>Locatie en naam van de implementatie
 
 Voor implementaties op abonnements niveau moet u een locatie opgeven voor de implementatie. De locatie van de implementatie is gescheiden van de locatie van de resources die u implementeert. De implementatie locatie geeft aan waar de implementatie gegevens moeten worden opgeslagen.
 
-U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam **azuredeploy.jsop** implementeert, maakt de standaard implementatie naam **azuredeploy** .
+U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam **azuredeploy.jsop** implementeert, maakt de standaard implementatie naam **azuredeploy**.
 
 Voor elke implementatie naam is de locatie onveranderbaar. U kunt geen implementatie op één locatie maken wanneer er een bestaande implementatie met dezelfde naam op een andere locatie is. Als u de fout code krijgt `InvalidDeploymentLocation` , moet u een andere naam of dezelfde locatie gebruiken als de vorige implementatie voor die naam.
 

@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/21/2019
 ms.author: cawa
-ms.openlocfilehash: 07652f2ac88475664f30e8189204b5649f966d16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48f00d964a87790b8d8c9b1d8eceaed26d15199e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88033611"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95531964"
 ---
 # <a name="manage-azure-blob-storage-resources-with-storage-explorer"></a>Azure Blob Storage-resources beheren met Storage Explorer
 
 ## <a name="overview"></a>Overzicht
 
-[Azure Blob Storage](storage/blobs/storage-dotnet-how-to-use-blobs.md) is een service voor het opslaan van grote hoeveel heden ongestructureerde gegevens, zoals tekst of binaire gegevens, die overal ter wereld toegankelijk zijn via http of https.
+[Azure Blob Storage](./storage/blobs/storage-quickstart-blobs-dotnet.md) is een service voor het opslaan van grote hoeveel heden ongestructureerde gegevens, zoals tekst of binaire gegevens, die overal ter wereld toegankelijk zijn via http of https.
 U kunt Blob Storage gebruiken om gegevens openbaar te maken of om toepassingsgegevens privé op te slaan. In dit artikel leert u hoe u Storage Explorer kunt gebruiken om te werken met Blob-containers en-blobs.
 
 ## <a name="prerequisites"></a>Vereisten
@@ -43,7 +43,7 @@ De volgende stappen laten zien hoe u een BLOB-container maakt in Storage Explore
 
 1. Open Storage Explorer.
 2. Vouw in het linkerdeelvenster het opslagaccount uit waarin u de blobcontainer wilt maken.
-3. Klik met de rechter muisknop op **BLOB-containers**en selecteer **BLOB-container maken**in het context menu.
+3. Klik met de rechter muisknop op **BLOB-containers** en selecteer **BLOB-container maken** in het context menu.
 
    ![Het contextmenu Blobcontainers maken][0]
 4. Er wordt een tekstvak onder de map **BLOB containers** weer gegeven. Voer een naam in voor de blobcontainer. Zie [een container maken](storage/blobs/storage-quickstart-blobs-dotnet.md#create-a-container) voor informatie over regels en beperkingen voor het benoemen van BLOB-containers.
@@ -61,7 +61,7 @@ De volgende stappen laten zien hoe u de inhoud van een BLOB-container in Storage
 
 1. Open Storage Explorer.
 2. Vouw in het linkerdeel venster het opslag account uit met de BLOB-container die u wilt weer geven.
-3. Vouw de **BLOB-containers**van het opslag account uit.
+3. Vouw de **BLOB-containers** van het opslag account uit.
 4. Klik met de rechter muisknop op de BLOB-container die u wilt weer geven en selecteer in het context menu **Open BLOB container editor**.
    U kunt ook dubbel klikken op de BLOB-container die u wilt weer geven.
 
@@ -78,8 +78,8 @@ De volgende stappen laten zien hoe u een BLOB-container in Storage Explorer kunt
 
 1. Open Storage Explorer.
 2. Vouw in het linkerdeel venster het opslag account uit met de BLOB-container die u wilt weer geven.
-3. Vouw de **BLOB-containers**van het opslag account uit.
-4. Klik met de rechter muisknop op de BLOB-container die u wilt verwijderen en selecteer **verwijderen**in het context menu.
+3. Vouw de **BLOB-containers** van het opslag account uit.
+4. Klik met de rechter muisknop op de BLOB-container die u wilt verwijderen en selecteer **verwijderen** in het context menu.
    U kunt ook op **verwijderen** drukken om de geselecteerde BLOB-container te verwijderen.
 
    ![Context menu van BLOB-container verwijderen][4]
@@ -95,8 +95,8 @@ De volgende stappen laten zien hoe u een BLOB-container kopieert van het ene ops
 
 1. Open Storage Explorer.
 2. Vouw in het linkerdeel venster het opslag account uit met de BLOB-container die u wilt kopiëren.
-3. Vouw de **BLOB-containers**van het opslag account uit.
-4. Klik met de rechter muisknop op de BLOB-container die u wilt kopiëren en selecteer **BLOB-container kopiëren**in het context menu.
+3. Vouw de **BLOB-containers** van het opslag account uit.
+4. Klik met de rechter muisknop op de BLOB-container die u wilt kopiëren en selecteer **BLOB-container kopiëren** in het context menu.
 
    ![Context menu van BLOB-container kopiëren][6]
 5. Klik met de rechter muisknop op het gewenste ' doel '-opslag account waarin u de BLOB-container wilt plakken en selecteer in het context menu de optie **BLOB-container plakken**.
@@ -105,14 +105,14 @@ De volgende stappen laten zien hoe u een BLOB-container kopieert van het ene ops
 
 ## <a name="get-the-sas-for-a-blob-container"></a>De SAS ophalen voor een blobcontainer
 
-Een [SAS (Shared Access Signature; handtekening voor gedeelde toegang)](storage/common/storage-dotnet-shared-access-signature-part-1.md) biedt gedelegeerde toegang tot bronnen in uw opslagaccount.
+Een [Shared Access Signature (SAS)](./storage/common/storage-sas-overview.md) biedt gedelegeerde toegang tot resources in uw opslag account.
 Dit betekent dat u een client gedurende de opgegeven periode een beperkte set machtigingen kunt verlenen voor objecten in uw opslagaccount, zonder dat u hiervoor de toegangssleutels voor het account hoeft te delen.
 
 De volgende stappen laten zien hoe u een SAS voor een BLOB-container maakt:
 
 1. Open Storage Explorer.
 2. Vouw in het linkerdeel venster het opslag account uit met de BLOB-container waarvoor u een SAS wilt ophalen.
-3. Vouw de **BLOB-containers**van het opslag account uit.
+3. Vouw de **BLOB-containers** van het opslag account uit.
 4. Klik met de rechter muisknop op de gewenste BLOB-container en selecteer in het context menu **Get Shared Access Signature**.
 
    ![Het context menu van SAS ophalen][8]
@@ -132,7 +132,7 @@ De volgende stappen laten zien hoe u toegangs beleid voor een BLOB-container kun
 
 1. Open Storage Explorer.
 2. Vouw in het linkerdeel venster het opslag account uit met de BLOB-container waarvan u het toegangs beleid wilt beheren.
-3. Vouw de **BLOB-containers**van het opslag account uit.
+3. Vouw de **BLOB-containers** van het opslag account uit.
 4. Selecteer de gewenste BLOB-container en selecteer in het context menu **toegangs beleid beheren**.
 
    ![Contextmenu Toegangsbeleid beheren][11]
@@ -153,7 +153,7 @@ De volgende stappen laten zien hoe u een openbaar toegangs niveau kunt opgeven v
 
 1. Open Storage Explorer.
 2. Vouw in het linkerdeel venster het opslag account uit met de BLOB-container waarvan u het toegangs beleid wilt beheren.
-3. Vouw de **BLOB-containers**van het opslag account uit.
+3. Vouw de **BLOB-containers** van het opslag account uit.
 4. Selecteer de gewenste BLOB-container en klik in het context menu op **openbaar toegangs niveau instellen**.
 
    ![Context menu voor openbaar toegangs niveau instellen][13]
@@ -170,7 +170,7 @@ De volgende stappen laten zien hoe u de blobs (en mappen) binnen een BLOB-contai
 
 1. Open Storage Explorer.
 2. Vouw in het linkerdeelvenster het opslagaccount uit met de blob-container die u wilt beheren.
-3. Vouw de **BLOB-containers**van het opslag account uit.
+3. Vouw de **BLOB-containers** van het opslag account uit.
 4. Dubbel klik op de BLOB-container die u wilt weer geven.
 5. In het hoofd venster wordt de inhoud van de BLOB-container weer gegeven.
 
@@ -183,10 +183,10 @@ De volgende stappen laten zien hoe u de blobs (en mappen) binnen een BLOB-contai
      1. Selecteer **Uploaden** op de werkbalk van het hoofdvenster en selecteer vervolgens **Bestanden uploaden** in de vervolgkeuzelijst.
 
         ![Menu voor Bestanden uploaden][15]
-     2. Selecteer in het dialoogvenster **Bestanden uploaden** de knop met de weglatingstekens (**... **) rechts van het tekstvak **Bestanden** om de bestanden te selecteren die u wilt uploaden.
+     2. Selecteer in het dialoogvenster **Bestanden uploaden** de knop met de weglatingstekens (**...**) rechts van het tekstvak **Bestanden** om de bestanden te selecteren die u wilt uploaden.
 
         ![Opties voor uploaden van bestanden][16]
-     3. Geef het type **BLOB-type**op. Zie [een container maken](storage/blobs/storage-quickstart-blobs-dotnet.md#create-a-container) voor meer informatie.
+     3. Geef het type **BLOB-type** op. Zie [een container maken](storage/blobs/storage-quickstart-blobs-dotnet.md#create-a-container) voor meer informatie.
      4. U kunt desgewenst een doelmap opgeven waarin de geselecteerde bestanden worden geüpload. Als de doelmap niet bestaat, wordt deze gemaakt.
      5. Selecteer **Uploaden**.
    * **Een map uploaden naar een BLOB-container**
@@ -194,10 +194,10 @@ De volgende stappen laten zien hoe u de blobs (en mappen) binnen een BLOB-contai
      1. Selecteer **Uploaden** op de werkbalk van het hoofdvenster en selecteer vervolgens **Map uploaden** in de vervolgkeuzelijst.
 
         ![Menu voor uploaden van map][17]
-     2. Selecteer in het dialoogvenster **Map uploaden** de knop met de weglatingstekens (**... **) rechts van het tekstvak **Map** om de map te selecteren waarvan u de inhoud wilt uploaden.
+     2. Selecteer in het dialoogvenster **Map uploaden** de knop met de weglatingstekens (**...**) rechts van het tekstvak **Map** om de map te selecteren waarvan u de inhoud wilt uploaden.
 
         ![Opties voor het uploaden van mappen][18]
-     3. Geef het type **BLOB-type**op. Zie [een container maken](storage/blobs/storage-quickstart-blobs-dotnet.md#create-a-container) voor meer informatie.
+     3. Geef het type **BLOB-type** op. Zie [een container maken](storage/blobs/storage-quickstart-blobs-dotnet.md#create-a-container) voor meer informatie.
      4. Geef desgewenst een doelmap op waarin de inhoud van de geselecteerde map moet worden geüpload. Als de doelmap niet bestaat, wordt deze gemaakt.
      5. Selecteer **Uploaden**.
    * **Een BLOB downloaden naar uw lokale computer**

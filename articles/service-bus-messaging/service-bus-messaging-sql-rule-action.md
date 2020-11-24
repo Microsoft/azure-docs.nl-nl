@@ -1,20 +1,19 @@
 ---
-title: Naslag informatie over de SQLRuleAction-syntaxis in Azure Service Bus
-description: Dit artikel bevat een verwijzing naar de SQLRuleAction-syntaxis. De acties worden geschreven in de syntaxis op basis van SQL-taal die wordt uitgevoerd voor een brokered bericht.
+title: Regel voor Azure Service Bus abonnement de SQL-actie syntaxis | Microsoft Docs
+description: Dit artikel bevat een verwijzing voor de syntaxis van de SQL-regel actie. De acties worden geschreven in de syntaxis op basis van SQL-taal die wordt uitgevoerd op een bericht.
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 61fa6e046b4d4a0ba91bf8608c846755026d07ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/24/2020
+ms.openlocfilehash: a156a9d8f18a7763f03c63b56681fa25ce6de289
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85341579"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95808851"
 ---
-# <a name="sqlruleaction-syntax-reference-for-azure-service-bus"></a>Naslag informatie voor SQLRuleAction-syntaxis voor Azure Service Bus
+# <a name="subscription-rule-sql-action-syntax"></a>Syntaxis van SQL-actie voor abonnements regel
 
-Een *SqlRuleAction* is een instantie van de klasse [SqlRuleAction](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction) en vertegenwoordigt een set acties die zijn geschreven in de SQL-taal syntaxis die wordt uitgevoerd op een [BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage).   
+Een *SQL-actie* wordt gebruikt om de meta gegevens van een bericht te manipuleren nadat een bericht is geselecteerd door een filter van een abonnements regel. Het is een tekst expressie die wordt geleaneerd op een subset van de SQL-92-standaard. Actie-expressies worden gebruikt met het `sqlExpression` element van de eigenschap Action van een service bus `Rule` in een [Azure Resource Manager sjabloon](service-bus-resource-manager-namespace-topic-with-rule.md)of het argument van de Azure cli- `az servicebus topic subscription rule create` opdracht [`--action-sql-expression`](https://docs.microsoft.com/cli/azure/servicebus/topic/subscription/rule?view=azure-cli-latest&preserve-view=true#az_servicebus_topic_subscription_rule_create) , en verschillende SDK-functies waarmee abonnements regels kunnen worden beheerd.
   
-Dit artikel bevat informatie over de grammatica van de SQL-regel actie.  
   
 ```  
 <statements> ::=
@@ -186,7 +185,7 @@ Booleaanse constanten worden vertegenwoordigd door de tref woorden `TRUE` of `FA
   
 Teken reeks constanten worden tussen enkele aanhalings tekens geplaatst en bevatten geldige Unicode-tekens. Een enkel aanhalings teken in een teken reeks constante wordt weer gegeven als twee enkele aanhalings tekens.  
   
-## <a name="function"></a>functieassembly  
+## <a name="function"></a>-functie  
   
 ```  
 <function> :=  
@@ -211,5 +210,9 @@ De `property(name)` functie retourneert de waarde van de eigenschap waarnaar wor
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Klasse SQLRuleAction](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction)
-- [Klasse SQLFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)
+- [SQLRuleAction-klasse (.NET Framework)](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction)
+- [SQLRuleAction-klasse (.NET Standard)](/dotnet/api/microsoft.azure.servicebus.sqlruleaction)
+- [SqlRuleAction-klasse (Java)](/java/api/com.microsoft.azure.servicebus.rules.sqlruleaction)
+- [SqlRuleAction (Java script)](/javascript/api/@azure/service-bus/sqlruleaction)
+- [regel voor het abonnement AZ servicebus topic](/cli/azure/servicebus/topic/subscription/rule)
+- [New-AzServiceBusRule](/powershell/module/az.servicebus/new-azservicebusrule)

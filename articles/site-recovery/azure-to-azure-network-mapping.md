@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: harshacs
-ms.openlocfilehash: b5ae68dea228e834b2449152bd3ef357f2a74e83
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff1f80641dc3db1f6b69fc0223c60022f8cf8435
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90069489"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95811631"
 ---
 # <a name="set-up-network-mapping-and-ip-addressing-for-vnets"></a>Netwerktoewijzing en IP-adressering instellen voor VNets
 
@@ -26,11 +26,11 @@ Voordat u netwerken toewijst, moet u [Azure VNets](../virtual-network/virtual-ne
 
 Wijs netwerken als volgt toe:
 
-1. Klik in **site Recovery-infra structuur**op **+ netwerk toewijzing**.
+1. Klik in **site Recovery-infra structuur** op **+ netwerk toewijzing**.
 
     ![ Een netwerk toewijzing maken](./media/site-recovery-network-mapping-azure-to-azure/network-mapping1.png)
 
-3. Selecteer in **netwerk toewijzing toevoegen**de bron-en doel locatie. In ons voor beeld wordt de bron-VM uitgevoerd in de regio Azië-oost en repliceert deze naar de regio Zuidoost-Azië.
+3. Selecteer in **netwerk toewijzing toevoegen** de bron-en doel locatie. In ons voor beeld wordt de bron-VM uitgevoerd in de regio Azië-oost en repliceert deze naar de regio Zuidoost-Azië.
 
     ![Bron en doel selecteren](./media/site-recovery-network-mapping-azure-to-azure/network-mapping2.png)
 3. Maak nu een netwerk toewijzing in tegenovergestelde richting. In ons voor beeld is de bron nu Zuidoost-Azië en wordt het doel Azië-oost.
@@ -85,7 +85,7 @@ Andere adres ruimte | Het volgende beschik bare IP-adres in het doel-subnet word
 **Doelnet netwerk** | **Details**
 --- | ---
 Het doelnet netwerk is het failover-VNet | -Het doel-IP-adres is statisch met hetzelfde IP-adres. <br/><br/>  -Als er al een IP-adres is toegewezen, is het IP-adres het volgende beschik bare aan het einde van het subnet-bereik. Bijvoorbeeld: als het IP-adres van de bron 10.0.0.19 is en het failover-netwerk het bereik 10.0.0.0/24 gebruikt, is het volgende IP-adres dat is toegewezen aan de doel-VM 10.0.0.254.
-Het doelnet netwerk is geen failover-VNet | -Het doel-IP-adres is statisch met hetzelfde IP-adres.<br/><br/>  -Als er al een IP-adres is toegewezen, is het IP-adres het volgende beschik bare aan het einde van het subnet-bereik.<br/><br/> Bijvoorbeeld: als het statische IP-adres van de bron 10.0.0.19 is en failover zich op een netwerk bevindt dat niet het failovercluster is, met het bereik 10.0.0.0/24, dan wordt het statische IP-adres van het doel 10.0.0.0.19 als dit beschikbaar is, en is het ook 10.0.0.254.
+Het doelnet netwerk is geen failover-VNet | -Het doel-IP-adres is statisch met hetzelfde IP-adres.<br/><br/>  -Als er al een IP-adres is toegewezen, is het IP-adres het volgende beschik bare aan het einde van het subnet-bereik.<br/><br/> Bijvoorbeeld: als het statische IP-adres van de bron 10.0.0.19 is en failover zich op een netwerk bevindt dat niet het failovercluster is, met het bereik 10.0.0.0/24, dan wordt het statische IP-adres van het doel 10.0.0.19 als dit beschikbaar is, en is het ook 10.0.0.254.
 
 - De failover VNet is het doelnet doel netwerk dat u selecteert bij het instellen van herstel na nood gevallen.
 - U wordt aangeraden altijd een niet-productie netwerk te gebruiken voor een testfailover.

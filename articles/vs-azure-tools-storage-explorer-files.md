@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/09/2017
 ms.author: cawa
-ms.openlocfilehash: 1b76413bb78baa211fee3aebe37075188ec8c69e
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: f9a828b78dc5ba6bdbc77e22daa75be4182015f0
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/24/2020
-ms.locfileid: "95531947"
+ms.locfileid: "95805701"
 ---
 # <a name="using-storage-explorer-with-azure-file-storage"></a>Opslagverkenner gebruiken met Azure File Storage
 
@@ -31,7 +31,7 @@ U moet het volgende doen om de stappen in dit artikel uit te voeren:
 
 - [Storage Explorer downloaden en installeren](https://www.storageexplorer.com/)
 
-- [Verbinding maken met een Azure-opslag account of-service](//azure/vs-azure-tools-storage-manage-with-storage-explorer#connect-to-a-storage-account-or-service)
+- [Verbinding maken met een Azure-opslag account of-service](/azure/vs-azure-tools-storage-manage-with-storage-explorer#connect-to-a-storage-account-or-service)
 
 ## <a name="create-a-file-share"></a>Een bestandsshare maken
 
@@ -47,7 +47,7 @@ Voer de volgende stappen uit om een bestandsshare te maken binnen Storage Explor
 
     ![Bestandsshare maken](media/vs-azure-tools-storage-explorer-files/image1.png)
 
-1. U ziet een tekstvak onder de map **Bestandsshares**. Voer een naam in voor de bestandsshare. Zie de sectie [Naamgevingsregels voor shares](//azure/storage/storage-dotnet-how-to-use-blobs) voor een lijst van regels en beperkingen voor namen van bestandsshares.
+1. U ziet een tekstvak onder de map **Bestandsshares**. Voer een naam in voor de bestandsshare. Zie de sectie [Naamgevingsregels voor shares](/azure/storage/storage-dotnet-how-to-use-blobs) voor een lijst van regels en beperkingen voor namen van bestandsshares.
 
     ![Een naam opgeven voor de share](media/vs-azure-tools-storage-explorer-files/image2.png)
 
@@ -77,7 +77,7 @@ Volg de volgende stappen om de inhoud van een bestandsshare weer te geven binnen
 
 ## <a name="delete-a-file-share"></a>Een bestandsshare verwijderen
 
-U kunt op ieder moment bestandsshares toevoegen en verwijderen. Zie [Managing files in a file share](//azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container) (Bestanden beheren in een bestandsshare) voor informatie over het verwijderen van afzonderlijke bestanden.
+U kunt op ieder moment bestandsshares toevoegen en verwijderen. Zie [Managing files in a file share](/azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container) (Bestanden beheren in een bestandsshare) voor informatie over het verwijderen van afzonderlijke bestanden.
 
 Voer de volgende stappen uit om een bestandsshare te wissen binnen Storage Explorer:
 
@@ -97,7 +97,7 @@ Voer de volgende stappen uit om een bestandsshare te wissen binnen Storage Explo
 
 ## <a name="copy-a-file-share"></a>Een bestandsshare kopiëren
 
-U kunt met Storage Explorer een bestandsshare naar het klembord kopiëren en de bestandsshare vervolgens in een ander opslagaccount plakken. Zie [Managing files in a file share](//azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container) (Bestanden beheren in een bestandsshare) voor informatie over het kopiëren van afzonderlijke bestanden.
+U kunt met Storage Explorer een bestandsshare naar het klembord kopiëren en de bestandsshare vervolgens in een ander opslagaccount plakken. Zie [Managing files in a file share](/azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container) (Bestanden beheren in een bestandsshare) voor informatie over het kopiëren van afzonderlijke bestanden.
 
 In de volgende stappen ziet u hoe u een bestandsshare van het ene opslagaccount naar het andere kopieert.
 
@@ -117,7 +117,7 @@ In de volgende stappen ziet u hoe u een bestandsshare van het ene opslagaccount 
 
 ## <a name="get-the-sas-for-a-file-share"></a>De SAS voor een bestandsshare ophalen
 
-Een [Shared Access Signature (SAS)](//azure/storage/storage-dotnet-shared-access-signature-part-1) biedt gedelegeerde toegang tot resources in uw opslag account. Dit betekent dat u een client gedurende de opgegeven periode een beperkte set machtigingen kunt verlenen voor objecten in uw opslagaccount, zonder dat u hiervoor de toegangssleutels voor het account hoeft te delen.
+Een [Shared Access Signature (SAS)](/azure/storage/storage-dotnet-shared-access-signature-part-1) biedt gedelegeerde toegang tot resources in uw opslag account. Dit betekent dat u een client gedurende de opgegeven periode een beperkte set machtigingen kunt verlenen voor objecten in uw opslagaccount, zonder dat u hiervoor de toegangssleutels voor het account hoeft te delen.
 
 Voer de volgende stappen uit om een SAS te maken voor een bestandsshare:
 

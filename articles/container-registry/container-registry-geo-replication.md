@@ -5,12 +5,12 @@ author: stevelas
 ms.topic: article
 ms.date: 07/21/2020
 ms.author: stevelas
-ms.openlocfilehash: a26a3a0902b76359dc7441d97fa2516989ec7f0b
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 636896edf8180052508f366bcc548efe13dec1e2
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92486869"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95810049"
 ---
 # <a name="geo-replication-in-azure-container-registry"></a>Geo-replicatie in Azure Container Registry
 
@@ -18,9 +18,9 @@ Bedrijven die lokale aanwezigheid willen, of een back-up zonder opnieuw opstarte
 
 Een register met geo-replicatie biedt de volgende voordelen:
 
-* Er kan één register/installatiekopie/tagnaam in meerdere regio’s worden gebruikt
-* Registertoegang dicht bij het netwerk vanuit regionale implementaties
-* Geen extra kosten voor uitgaande gegevens, omdat installatiekopieën uit een lokaal, gerepliceerd register in dezelfde regio als uw containerhost worden gehaald
+* U kunt één REGI ster-, afbeeldings-en tagnaam gebruiken in meerdere regio's
+* Verbeter de prestaties en betrouw baarheid van regionale implementaties met netwerk-sluit register toegang
+* Verlaag de kosten voor gegevens overdracht door afbeeldings lagen van een lokaal, gerepliceerd REGI ster in dezelfde of nabijgelegen regio als de container host op te halen.
 * Eén beheerpunt voor een register in meerdere regio's
 
 > [!NOTE]
@@ -56,8 +56,9 @@ Typische uitdagingen van meerdere registers zijn onder meer:
 De functie voor geo-replicatie van Azure Container Registry biedt de volgende voordelen:
 
 * Eén register beheren voor alle regio's: `contoso.azurecr.io`
-* Eén configuratie van installatiekopie-implementaties beheren, omdat voor alle regio's dezelfde installatiekopie-URL wordt gebruikt: `contoso.azurecr.io/public/products/web:1.2`
-* Push naar één REGI ster, terwijl ACR de geo-replicatie beheert. U kunt regionale [webhooks](container-registry-webhook.md) configureren om u op de hoogte te stellen van gebeurtenissen in specifieke replica's.
+* Eén configuratie van installatie kopie-implementaties beheren, omdat alle regio's dezelfde afbeeldings-URL gebruiken: `contoso.azurecr.io/public/products/web:1.2`
+* Push naar één REGI ster, terwijl ACR de geo-replicatie beheert. ACR repliceert alleen unieke lagen en vermindert de gegevens overdracht tussen regio's. 
+* Configureer regionale [webhooken](container-registry-webhook.md) om u op de hoogte te stellen van gebeurtenissen in specifieke replica's.
 
 ## <a name="configure-geo-replication"></a>Geo-replicatie configureren
 
@@ -131,7 +132,7 @@ Als u de DNS-omzetting naar de dichtstbijzijnde replica tijdens het pushen van i
 
 Als u bewerkingen wilt uitvoeren met een geo-gerepliceerd REGI ster, wilt u Traffic Manager route ring mogelijk tijdelijk uitschakelen voor een of meer replicaties. Vanaf Azure CLI versie 2,8 kunt u een `--region-endpoint-enabled` optie (preview) configureren wanneer u een gerepliceerde regio maakt of bijwerkt. Wanneer u de optie van een replicatie instelt `--region-endpoint-enabled` op `false` , stuurt Traffic Manager geen push-of pull-aanvragen meer naar die regio. Standaard wordt route ring naar alle replicaties ingeschakeld en wordt de gegevens synchronisatie voor alle replicaties uitgevoerd, ongeacht of route ring is in-of uitgeschakeld.
 
-Als u route ring naar een bestaande replicatie wilt uitschakelen, voert u eerst [AZ ACR Replication List][az-acr-replication-list] uit om de replicaties in het REGI ster weer te geven. Vervolgens voert u [AZ ACR-replicatie update][az-acr-replication-update] uit en stelt u deze `--region-endpoint-enabled false` in voor een specifieke replicatie. Als u bijvoorbeeld de instelling voor de *westus* -replicatie in *myregistry*wilt configureren:
+Als u route ring naar een bestaande replicatie wilt uitschakelen, voert u eerst [AZ ACR Replication List][az-acr-replication-list] uit om de replicaties in het REGI ster weer te geven. Vervolgens voert u [AZ ACR-replicatie update][az-acr-replication-update] uit en stelt u deze `--region-endpoint-enabled false` in voor een specifieke replicatie. Als u bijvoorbeeld de instelling voor de *westus* -replicatie in *myregistry* wilt configureren:
 
 ```azurecli
 # Show names of existing replications

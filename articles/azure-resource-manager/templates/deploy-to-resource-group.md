@@ -2,13 +2,13 @@
 title: Resources implementeren in resource groepen
 description: Hierin wordt beschreven hoe u resources in een Azure Resource Manager sjabloon implementeert. U ziet hoe u meer dan één resource groep kunt bereiken.
 ms.topic: conceptual
-ms.date: 11/18/2020
-ms.openlocfilehash: 5e33f0d505759944ccaf2233aa122b6ab701c91f
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.date: 11/24/2020
+ms.openlocfilehash: 9d0bec51fa55ee377eb647a11fb554ec3b81e9eb
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917423"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95807727"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Implementaties van resource groepen met ARM-sjablonen
 
@@ -42,7 +42,7 @@ Gebruik voor parameter bestanden:
 
 Als u wilt implementeren in een resource groep, gebruikt u de implementatie opdrachten voor de resource groep.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create)voor Azure cli. In het volgende voor beeld wordt een sjabloon geïmplementeerd voor het maken van een resource groep:
 
@@ -201,7 +201,7 @@ New-AzResourceGroupDeployment `
   -secondSubscriptionID $secondSub
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u twee opslag accounts wilt implementeren voor twee resource groepen in **hetzelfde abonnement**, gebruikt u:
 

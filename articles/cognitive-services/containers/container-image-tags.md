@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: reference
 ms.date: 11/17/2020
 ms.author: aahi
-ms.openlocfilehash: 90ac4891dbca34ff2d9bdb9653e27ad2a495b317
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 09a83c28d07540b8ecd813e7ab2f10ceee891d7a
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021249"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95792976"
 ---
 # <a name="azure-cognitive-services-container-image-tags-and-release-notes"></a>Azure Cognitive Services container-afbeeldings Tags en opmerkingen bij de release
 
@@ -52,6 +52,17 @@ Voor deze container installatie kopie zijn de volgende tags beschikbaar. U kunt 
 
 # <a name="latest-version"></a>[Nieuwste versie](#tab/current)
 
+Release opmerkingen voor `3.2-preview.1` :
+
+* Nieuwe container van v 3.2
+
+| Afbeeldings Tags                    | Notities |
+|-------------------------------|:------|
+| `latest`                      |       |
+| `3.2-preview.1` |  |
+
+# <a name="previous-versions"></a>[Vorige versies](#tab/previous)
+
 Release opmerkingen voor `v2.0.013250001-amd64-preview` :
 
 * Verminder het geheugen gebruik voor de container.
@@ -59,13 +70,6 @@ Release opmerkingen voor `v2.0.013250001-amd64-preview` :
 * Vast ontbrekend resultaat wanneer de redis-cache is ingesteld en `ResultExpirationPeriod` is ingesteld op 0.
 * De limiet voor de grootte van de aanvraag hoofdtekst van 26MB verwijderen. De container kan nu >26MB-bestanden accepteren.
 * Tijds tempel en build-versie toevoegen aan console logboek registratie.
-
-| Afbeeldings Tags                    | Notities |
-|-------------------------------|:------|
-| `latest`                      |       |
-| `2.0.013250001-amd64-preview` |  |
-
-# <a name="previous-versions"></a>[Vorige versies](#tab/previous)
 
 Release opmerkingen voor `1.1.013050001-amd64-preview`
 
@@ -88,6 +92,7 @@ Release opmerkingen voor `1.1.013050001-amd64-preview`
 
 | Afbeeldings Tags                    | Notities |
 |-------------------------------|:------|
+| `2.0.013250001-amd64-preview` |       |
 | `1.1.013050001-amd64-preview` |       |
 | `1.1.011580001-amd64-preview` |       |
 | `1.1.009920003-amd64-preview` |       |

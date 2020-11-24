@@ -2,13 +2,13 @@
 title: Resources implementeren voor het abonnement
 description: Hierin wordt beschreven hoe u een resource groep maakt in een Azure Resource Manager sjabloon. Ook wordt uitgelegd hoe u resources kunt implementeren in het bereik van Azure-abonnementen.
 ms.topic: conceptual
-ms.date: 11/23/2020
-ms.openlocfilehash: c87f6fa590e1f769816fb0ee3cba3aad1997de15
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.date: 11/24/2020
+ms.openlocfilehash: 2d4bd0db32a4bf0224b9da3af6e03ca86d7b496e
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/24/2020
-ms.locfileid: "95519860"
+ms.locfileid: "95807709"
 ---
 # <a name="subscription-deployments-with-arm-templates"></a>Implementaties van abonnementen met ARM-sjablonen
 
@@ -90,7 +90,7 @@ Het schema voor een parameter bestand is hetzelfde voor alle implementatie berei
 
 Gebruik de implementatie opdrachten op abonnements niveau om te implementeren in een abonnement.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment sub Create](/cli/azure/deployment/sub#az-deployment-sub-create)voor Azure cli. In het volgende voor beeld wordt een sjabloon geïmplementeerd voor het maken van een resource groep:
 
@@ -125,6 +125,14 @@ Zie voor meer gedetailleerde informatie over implementatie opdrachten en opties 
 * [Resources implementeren met ARM-sjablonen en Azure Resource Manager REST API](deploy-rest.md)
 * [Een implementatie knop gebruiken voor het implementeren van sjablonen uit de GitHub-opslag plaats](deploy-to-azure-button.md)
 * [ARM-sjablonen implementeren vanuit Cloud Shell](deploy-cloud-shell.md)
+
+## <a name="deployment-location-and-name"></a>Locatie en naam van de implementatie
+
+Voor implementaties op abonnements niveau moet u een locatie opgeven voor de implementatie. De locatie van de implementatie is gescheiden van de locatie van de resources die u implementeert. De implementatie locatie geeft aan waar de implementatie gegevens moeten worden opgeslagen. Er is ook een locatie vereist voor [beheer groep](deploy-to-management-group.md) -en [Tenant](deploy-to-tenant.md) implementaties. Voor implementaties van [resource groepen](deploy-to-resource-group.md) wordt de locatie van de resource groep gebruikt om de implementatie gegevens op te slaan.
+
+U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam **azuredeploy.jsop** implementeert, maakt de standaard implementatie naam **azuredeploy**.
+
+Voor elke implementatie naam is de locatie onveranderbaar. U kunt geen implementatie op één locatie maken wanneer er een bestaande implementatie met dezelfde naam op een andere locatie is. Als u bijvoorbeeld een implementatie van een abonnement met de naam **deployment1** in **centralus** maakt, kunt u later geen andere implementatie maken met de naam **deployment1** , maar een locatie van **westus**. Als u de fout code krijgt `InvalidDeploymentLocation` , moet u een andere naam of dezelfde locatie gebruiken als de vorige implementatie voor die naam.
 
 ## <a name="deployment-scopes"></a>Implementatie bereiken
 
@@ -173,14 +181,6 @@ U kunt een geneste implementatie gebruiken met `scope` en `location` instellen.
 Of u kunt het bereik instellen op `/` voor sommige resource typen, zoals beheer groepen.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/subscription-create-mg.json" highlight="12,15":::
-
-## <a name="deployment-location-and-name"></a>Locatie en naam van de implementatie
-
-Voor implementaties op abonnements niveau moet u een locatie opgeven voor de implementatie. De locatie van de implementatie is gescheiden van de locatie van de resources die u implementeert. De implementatie locatie geeft aan waar de implementatie gegevens moeten worden opgeslagen.
-
-U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam **azuredeploy.jsop** implementeert, maakt de standaard implementatie naam **azuredeploy**.
-
-Voor elke implementatie naam is de locatie onveranderbaar. U kunt geen implementatie op één locatie maken wanneer er een bestaande implementatie met dezelfde naam op een andere locatie is. Als u de fout code krijgt `InvalidDeploymentLocation` , moet u een andere naam of dezelfde locatie gebruiken als de vorige implementatie voor die naam.
 
 ## <a name="resource-groups"></a>Resourcegroepen
 

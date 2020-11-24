@@ -5,31 +5,20 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: conceptual
-ms.date: 11/23/2020
+ms.date: 11/24/2020
 ms.author: victorh
-ms.openlocfilehash: 650cf1e9b0e9fbbadc5a783cad844898698bf017
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 73a07af0fa98adf66d6104f1ab545d31a0cfd6d7
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95509745"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95802028"
 ---
 # <a name="azure-firewall-manager-policy-overview"></a>Overzicht van Azure Firewall Manager-beleid
 
 Firewallbeleid is een Azure-resource die NAT-, netwerk-, toepassingsregelverzamelingen bevat en instellingen voor Bedreigingsinformatie. Het is een globale resource die kan worden gebruikt in verschillende Azure Firewall-exemplaren in Beveiligde virtuele hubs en virtuele netwerken voor hubs. Beleidsregels werken in verschillende regio’s en abonnementen.
 
 ![Azure Firewall Manager-beleid](media/policy-overview/policy-overview.png)
-
-## <a name="availability"></a>Beschikbaarheid
-
-Firewallbeleid is een maximaal beschikbare en automatisch gerepliceerde resource. Als er zich een zeldzame regionale ramp voordoet, worden voor firewallbeleidbewerking een failover uitgevoerd naar gekoppelde Azure-regio's. Voor herstelbewerkingen wordt een failover uitgevoerd naar de primaire regio voor zowel synchrone als asynchrone bewerkingen. 
-
-Gekoppelde regio's bieden verschillende voordelen, waaronder:
-- fysieke isolatie, gescheiden door ten minste 300 mijl
-- sneller herstel na noodgevallen
-- locatievereisten voor vergadergegevens die door de geografie worden voorgeschreven
-
-Raadpleeg voor meer informatie over gekoppelde regio's [Bedrijfscontinuïteit en herstel na noodgevallen (BCDR): gekoppelde Azure-regio's](../best-practices-availability-paired-regions.md) voor meer informatie.
 
 ## <a name="policy-creation-and-association"></a>Beleid maken en koppelen
 

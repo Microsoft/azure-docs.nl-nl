@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9b06024b7dc25f37f75c71b822f6aeea32c3e26a
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 07c04274829530942bab0e3267200f6524c4ddc7
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95509066"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95793408"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Een Linux-Hybrid Runbook Worker implementeren
 
@@ -40,15 +40,15 @@ De Hybrid Runbook Worker-rol vereist de [log Analytics-agent](../azure-monitor/p
 
 ### <a name="supported-linux-operating-systems"></a>Ondersteunde Linux-besturingssystemen
 
-De functie Hybrid Runbook Worker ondersteunt de volgende distributies:
+De functie Hybrid Runbook Worker ondersteunt de volgende distributies. Er wordt ervan uitgegaan dat alle besturings systemen x64 zijn. x86 wordt niet ondersteund voor elk besturings systeem.
 
-* Amazon Linux 2012,09 tot 2015,09 (x64)
-* CentOS Linux 5, 6 en 7 (x64)
-* Oracle Linux 5, 6 en 7 (x64)
-* Red Hat Enterprise Linux Server 5, 6 en 7 (x64)
-* Debian GNU/Linux 6, 7 en 8 (x64)
-* Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS en 18,04 (x64)
-* SUSE Linux Enterprise Server 12 (x64)
+* Amazon Linux 2012,09 tot 2015,09
+* CentOS Linux 5, 6 en 7
+* Oracle Linux 5, 6 en 7
+* Red Hat Enterprise Linux Server 5, 6 en 7
+* Debian GNU/Linux 6, 7 en 8
+* Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS en 18,04 LTS
+* SUSE Linux Enterprise Server 12
 
 ### <a name="minimum-requirements"></a>Minimale vereisten
 
@@ -87,11 +87,11 @@ Hybrid Runbook Workers van Linux ondersteunen een beperkt aantal typen Runbook i
 
 |Type Runbook | Ondersteund |
 |-------------|-----------|
-|Python 2 |Ja |
+|Python 2 |Yes |
 |PowerShell |Ja<sup>1</sup> |
-|PowerShell-werkstroom |Nee |
-|Grafisch |Nee |
-|Grafische power shell-werk stroom |Nee |
+|PowerShell-werkstroom |No |
+|Grafisch |No |
+|Grafische power shell-werk stroom |No |
 
 <sup>1</sup> Power shell-runbooks vereisen dat Power shell core wordt geïnstalleerd op de Linux-machine. Zie [Power shell core in Linux installeren](/powershell/scripting/install/installing-powershell-core-on-linux) voor meer informatie over het installeren ervan.
 

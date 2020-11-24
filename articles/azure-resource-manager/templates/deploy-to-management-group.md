@@ -2,13 +2,13 @@
 title: Resources implementeren in beheer groep
 description: Hierin wordt beschreven hoe u resources kunt implementeren in het bereik van de beheer groep in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
-ms.date: 11/23/2020
-ms.openlocfilehash: 54d4c096fab09bf31e121a7aae0eed3d2462e0c4
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.date: 11/24/2020
+ms.openlocfilehash: 79cdb35de40501dfc0794155dcf807cced94bfa7
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/24/2020
-ms.locfileid: "95519877"
+ms.locfileid: "95798593"
 ---
 # <a name="management-group-deployments-with-arm-templates"></a>Implementaties van beheer groepen met ARM-sjablonen
 
@@ -71,7 +71,7 @@ Het schema voor een parameter bestand is hetzelfde voor alle implementatie berei
 
 Als u wilt implementeren in een beheer groep, gebruikt u de opdrachten voor de implementatie van beheer groepen.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment mg Create](/cli/azure/deployment/mg#az-deployment-mg-create)voor Azure cli:
 
@@ -106,6 +106,14 @@ Zie voor meer gedetailleerde informatie over implementatie opdrachten en opties 
 * [Een implementatie knop gebruiken voor het implementeren van sjablonen uit de GitHub-opslag plaats](deploy-to-azure-button.md)
 * [ARM-sjablonen implementeren vanuit Cloud Shell](deploy-cloud-shell.md)
 
+## <a name="deployment-location-and-name"></a>Locatie en naam van de implementatie
+
+Voor implementaties op beheer groepniveau moet u een locatie opgeven voor de implementatie. De locatie van de implementatie is gescheiden van de locatie van de resources die u implementeert. De implementatie locatie geeft aan waar de implementatie gegevens moeten worden opgeslagen. Voor [abonnementen](deploy-to-subscription.md) en [Tenant](deploy-to-tenant.md) -implementaties is ook een locatie vereist. Voor implementaties van [resource groepen](deploy-to-resource-group.md) wordt de locatie van de resource groep gebruikt om de implementatie gegevens op te slaan.
+
+U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam **azuredeploy.jsop** implementeert, maakt de standaard implementatie naam **azuredeploy**.
+
+Voor elke implementatie naam is de locatie onveranderbaar. U kunt geen implementatie op één locatie maken wanneer er een bestaande implementatie met dezelfde naam op een andere locatie is. Als u bijvoorbeeld een implementatie van een beheer groep maakt met de naam **deployment1** in **centraalus**, kunt u later geen andere implementatie maken met de naam **deployment1** maar een locatie van **westus**. Als u de fout code krijgt `InvalidDeploymentLocation` , moet u een andere naam of dezelfde locatie gebruiken als de vorige implementatie voor die naam.
+
 ## <a name="deployment-scopes"></a>Implementatie bereiken
 
 Wanneer u implementeert in een beheer groep, kunt u resources implementeren voor het volgende:
@@ -131,7 +139,7 @@ Resources die zijn gedefinieerd in de sectie resources van de sjabloon, worden t
 
 Als u een andere beheer groep wilt instellen, voegt u een geneste implementatie toe en geeft u de `scope` eigenschap op. Stel de `scope` eigenschap in op een waarde in de notatie `Microsoft.Management/managementGroups/<mg-name>` .
 
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/scope-mg.json" highlight="10,17,22":::
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/scope-mg.json" highlight="10,17,18,22":::
 
 ### <a name="scope-to-subscription"></a>Bereik voor abonnement
 
@@ -139,7 +147,7 @@ U kunt ook abonnementen in een beheer groep richten. De gebruiker die de sjabloo
 
 Gebruik een geneste implementatie en de eigenschap om een abonnement in de beheer groep te richten `subscriptionId` .
 
-:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/mg-to-subscription.json" highlight="10,18":::
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/mg-to-subscription.json" highlight="9,10,18":::
 
 ### <a name="scope-to-resource-group"></a>Bereik voor resource groep
 
@@ -162,14 +170,6 @@ U kunt een geneste implementatie gebruiken met `scope` en `location` instellen.
 Of u kunt het bereik instellen op `/` voor sommige resource typen, zoals beheer groepen.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/management-group-create-mg.json" highlight="12,15":::
-
-## <a name="deployment-location-and-name"></a>Locatie en naam van de implementatie
-
-Voor implementaties op beheer groepniveau moet u een locatie opgeven voor de implementatie. De locatie van de implementatie is gescheiden van de locatie van de resources die u implementeert. De implementatie locatie geeft aan waar de implementatie gegevens moeten worden opgeslagen.
-
-U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam **azuredeploy.jsop** implementeert, maakt de standaard implementatie naam **azuredeploy**.
-
-Voor elke implementatie naam is de locatie onveranderbaar. U kunt geen implementatie op één locatie maken wanneer er een bestaande implementatie met dezelfde naam op een andere locatie is. Als u de fout code krijgt `InvalidDeploymentLocation` , moet u een andere naam of dezelfde locatie gebruiken als de vorige implementatie voor die naam.
 
 ## <a name="azure-policy"></a>Azure Policy
 

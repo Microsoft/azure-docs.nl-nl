@@ -2,13 +2,13 @@
 title: Taken en taken in Azure Batch
 description: Meer informatie over taken en taken en hoe deze worden gebruikt in een Azure Batch werk stroom vanuit een ontwikkelings oogpunt.
 ms.topic: conceptual
-ms.date: 05/12/2020
-ms.openlocfilehash: 5120b76f34e81c2ceeba88767a656b5ee0d40c2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/23/2020
+ms.openlocfilehash: e1ca721ec7527d9d042c129c22cf0266e57c32e9
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85955366"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95808597"
 ---
 # <a name="jobs-and-tasks-in-azure-batch"></a>Taken en taken in Azure Batch
 
@@ -18,15 +18,17 @@ In Azure Batch vertegenwoordigt een *taak* een reken kundige eenheid. Een *taak*
 
 Een job is een verzameling taken. Deze beheert hoe de berekening door de taken op rekenknooppunten in een pool wordt uitgevoerd.
 
-Een taak specificeert de [pool](nodes-and-pools.md#pools) waarin het werk moet worden uitgevoerd. U kunt voor elke job een nieuwe pool maken of één groep gebruiken voor een groot aantal jobs. U kunt een pool maken voor elke job die aan een jobplanning is gekoppeld, maar ook voor alle jobs die aan een jobplanning zijn gekoppeld.
+Een taak specificeert de [pool](nodes-and-pools.md#pools) waarin het werk moet worden uitgevoerd. U kunt voor elke job een nieuwe pool maken of één groep gebruiken voor een groot aantal jobs. U kunt een pool maken voor elke taak die is gekoppeld aan een [taak schema](#scheduled-jobs)of één pool voor alle taken die aan een taak schema zijn gekoppeld.
 
 ### <a name="job-priority"></a>Jobprioriteit
 
-U kunt een optionele taak prioriteit toewijzen aan taken die u maakt. De Batch-service gebruikt de prioriteit van de job om de volgorde van de jobplanning binnen een account te bepalen (verwar dit niet met een [geplande job](#scheduled-jobs)). De prioriteitswaarden gaan van -1000 tot 1000, waarbij -1000 de laagste prioriteit is en 1000 de hoogste. U kunt de prioriteit van een job bijwerken door gebruik te maken van de bewerking [Update the properties of a job](/rest/api/batchservice/job/update) (Batch REST) of door de eigenschap [CloudJob.Priority](/dotnet/api/microsoft.azure.batch.cloudjob) (Batch .NET) te wijzigen.
+U kunt een optionele taak prioriteit toewijzen aan taken die u maakt. De batch-service gebruikt de prioriteits waarde van de taak om de volg orde van de planning (voor alle taken binnen de taak) wtihin elke groep te bepalen.
 
-Binnen hetzelfde account hebben jobs met hogere prioriteit in de planning voorrang op jobs met lagere prioriteit. Een job met hogere prioriteit in het ene account heeft geen planningsvoorrang op een andere job met een lagere prioriteitswaarde in een ander account. Taken met lagere prioriteit die al worden uitgevoerd, kunnen niet worden verschoven.
+Als u de prioriteit van een taak wilt bijwerken, roept u de [Update de eigenschappen van een taak](/rest/api/batchservice/job/update) bewerking aan (batch rest) of wijzigt u de [eigenschap cloudjob. Priority](/dotnet/api/microsoft.azure.batch.cloudjob) (batch .net). Prioriteits waarden variëren van-1000 (laagste prioriteit) tot 1000 (hoogste prioriteit).
 
-De jobplanning tussen pools verloopt onafhankelijk. Tussen verschillende pools is er geen garantie dat een job met hogere prioriteit eerst wordt gepland als de gekoppelde pool over te weinig niet-actieve knooppunten beschikt. Binnen dezelfde pool hebben jobs met dezelfde prioriteit evenveel kans om gepland te worden.
+Binnen dezelfde groep hebben taken met een hogere prioriteit een plannings prioriteit boven taken met een lagere prioriteit. Taken in taken met een lagere prioriteit die al worden uitgevoerd, worden niet afgebroken door taken in een taak met een hogere prioriteit. Taken met hetzelfde prioriteits niveau hebben een gelijke kans om te worden gepland, en de volg orde van de taak uitvoering is niet gedefinieerd.
+
+Een taak met een waarde met hoge prioriteit die in een groep wordt uitgevoerd, heeft geen invloed op de planning van taken die worden uitgevoerd in een afzonderlijke groep of in een ander batch-account. De taak prioriteit is niet van toepassing op [autopools](nodes-and-pools.md#autopools)die worden gemaakt wanneer de taak wordt verzonden.
 
 ### <a name="job-constraints"></a>Taak beperkingen
 
@@ -39,9 +41,9 @@ Met beperkingen voor jobs kunt u bepaalde limieten aan uw taken stellen:
 
 De clienttoepassing kan taken toevoegen aan een taak, maar u kunt ook een [jobbeheertaak](#job-manager-task) opgeven. Een jobbeheertaak bevat de benodigde informatie om de vereiste taken voor een job te maken, waarbij de jobbeheertaak wordt uitgevoerd op een van de rekenknooppunten binnen de pool. De taak taak beheer wordt specifiek verwerkt door batch; Zodra de taak is gemaakt, wordt deze in de wachtrij geplaatst en opnieuw opgestart als deze mislukt. Taak beheer taak is vereist voor taken die zijn gemaakt met een [taak planning](#scheduled-jobs), omdat dit de enige manier is om de taken te definiëren voordat de taak wordt geïnstantieerd.
 
-Standaard blijven jobs in de actieve status wanneer alle taken binnen de job zijn voltooid. U kunt dit gedrag wijzigen zodat de job automatisch wordt beëindigd wanneer alle taken binnen de job zijn voltooid. Stel de eigenschap **onAllTasksComplete** ([OnAllTasksComplete](/dotnet/api/microsoft.azure.batch.cloudjob) in Batch .NET) van de job in op *terminatejob* om de job automatisch te beëindigen wanneer alle taken de status Voltooid hebben.
+Standaard blijven jobs in de actieve status wanneer alle taken binnen de job zijn voltooid. U kunt dit gedrag wijzigen zodat de job automatisch wordt beëindigd wanneer alle taken binnen de job zijn voltooid. Stel de eigenschap **onAllTasksComplete** van de taak ([onAllTasksComplete](/dotnet/api/microsoft.azure.batch.cloudjob) in batch .net) in op `terminatejob` * om de taak automatisch te beëindigen wanneer alle taken de status voltooid hebben.
 
-De batch-service beschouwt een taak *zonder taken om alle taken te* kunnen volt ooien. Daarom wordt deze optie meestal gebruikt met een [Jobbeheertaak](#job-manager-task). Als u de automatische beëindiging van een job wilt gebruiken zonder jobbeheer, moet u eerst de eigenschap **onAllTasksComplete** van een nieuwe job instellen op *noaction*. Vervolgens stelt u de eigenschap in op *terminatejob* als u klaar bent met taken toevoegen aan de job.
+De batch-service beschouwt een taak *zonder taken om alle taken te* kunnen volt ooien. Daarom wordt deze optie meestal gebruikt met een [Jobbeheertaak](#job-manager-task). Als u automatische taak beëindiging wilt gebruiken zonder taak beheer, moet u eerst de eigenschap **onAllTasksComplete** van een nieuwe taak instellen op `noaction` en vervolgens instellen op `terminatejob` * ' alleen nadat u klaar bent met het toevoegen van taken aan de taak.
 
 ### <a name="scheduled-jobs"></a>Geplande jobs
 

@@ -1,22 +1,23 @@
 ---
-title: Naslag informatie over Azure Service Bus SQLFilter | Microsoft Docs
-description: Dit artikel bevat informatie over SQLFilter-grammatica. Een SqlFilter ondersteunt een subset van de SQL-92-standaard.
+title: Azure Service Bus regel voor abonnements regels SQL-filter syntaxis | Microsoft Docs
+description: In dit artikel vindt u meer informatie over de grammatica van SQL-filters. Een SQL-filter ondersteunt een subset van de SQL-92-standaard.
 ms.topic: article
-ms.date: 11/17/2020
-ms.openlocfilehash: 7f3c744b691e678ef18c8fa721ccfaecaee9c1e2
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.date: 11/24/2020
+ms.openlocfilehash: bd263e8177652165376d4f6fe9e231af71ebdcbe
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888467"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95805636"
 ---
-# <a name="sqlfilter-syntax"></a>SQLFilter-syntaxis
+# <a name="subscription-rule-sql-filter-syntax"></a>Syntaxis van SQL-filter voor abonnements regels
 
-Een *SqlFilter* -object is een instantie van de [klasse SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)en vertegenwoordigt een op SQL-taal gebaseerde filter expressie, die wordt geëvalueerd op basis van een [`BrokeredMessage`](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) . Een SqlFilter ondersteunt een subset van de SQL-92-standaard.  
+Een *SQL-filter* is een van de beschik bare filter typen voor abonnementen op het service bus-onderwerp. Het is een tekst expressie die wordt geleaneerd op een subset van de SQL-92-standaard. Filter expressies worden gebruikt met het `sqlExpression` element van de eigenschap ' sqlFilter ' van een service bus `Rule` in een [Azure Resource Manager sjabloon](service-bus-resource-manager-namespace-topic-with-rule.md), of het argument van de Azure cli- `az servicebus topic subscription rule create` opdracht [`--filter-sql-expression`](https://docs.microsoft.com/cli/azure/servicebus/topic/subscription/rule?view=azure-cli-latest&preserve-view=true#az_servicebus_topic_subscription_rule_create) , en verschillende SDK-functies waarmee abonnements regels kunnen worden beheerd.
+
+Service Bus Premium ondersteunt ook de [syntaxis van de JMS SQL-bericht selectie](https://docs.oracle.com/javaee/7/api/javax/jms/Message.html) via de JMS 2,0-API.
+
   
- In dit onderwerp vindt u meer informatie over SqlFilter-grammatica.  
-  
-```  
+``` 
 <predicate ::=  
       { NOT <predicate> }  
       | <predicate> AND <predicate>  
@@ -182,7 +183,7 @@ Booleaanse constanten worden vertegenwoordigd door de tref woorden **True** of *
 
 Teken reeks constanten worden tussen enkele aanhalings tekens geplaatst en bevatten geldige Unicode-tekens. Een enkel aanhalings teken in een teken reeks constante wordt weer gegeven als twee enkele aanhalings tekens.  
   
-## <a name="function"></a>functieassembly  
+## <a name="function"></a>-functie  
   
 ```  
 <function> :=  
@@ -324,4 +325,7 @@ Zie voor een C#-voor beeld [onderwerp filters voor beeld op github](https://gith
 
 - [SQLFilter-klasse (.NET Framework)](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)
 - [SQLFilter-klasse (.NET Standard)](/dotnet/api/microsoft.azure.servicebus.sqlfilter)
-- [Klasse SQLRuleAction](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction)
+- [SqlFilter-klasse (Java)](/java/api/com.microsoft.azure.servicebus.rules.SqlFilter)
+- [SqlRuleFilter (Java script)](/javascript/api/@azure/service-bus/sqlrulefilter)
+- [regel voor het abonnement AZ servicebus topic](/cli/azure/servicebus/topic/subscription/rule)
+- [New-AzServiceBusRule](/powershell/module/az.servicebus/new-azservicebusrule)

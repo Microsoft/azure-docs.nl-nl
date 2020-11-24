@@ -7,12 +7,12 @@ ms.service: cache
 ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 10/09/2020
-ms.openlocfilehash: f7b4a22c0473acb7da0708f095c25b4f3f78fe66
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 5fd82105c94bb9be2d07c8843834465821acd8bc
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445588"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95803781"
 ---
 # <a name="how-to-configure-virtual-network-support-for-a-premium-azure-cache-for-redis"></a>Virtual Network ondersteuning configureren voor een Premium Azure-cache voor redis
 Azure cache voor redis heeft verschillende cache aanbiedingen, die flexibiliteit bieden bij het kiezen van de cache grootte en-functies, inclusief functies van de Premium-laag, zoals clustering, persistentie en ondersteuning voor virtuele netwerken. Een VNet is een privé netwerk in de Cloud. Wanneer een Azure-cache voor redis-exemplaar is geconfigureerd met een VNet, is het niet openbaar adresseerbaar en is deze alleen toegankelijk vanaf virtuele machines en toepassingen binnen het VNet. In dit artikel wordt beschreven hoe u ondersteuning voor virtuele netwerken kunt configureren voor een Premium Azure-cache voor een redis-exemplaar.
@@ -130,7 +130,7 @@ Er zijn negen uitgaande poort vereisten. Uitgaande aanvragen in deze bereiken zi
 
 | Poort(en) | Richting | Transportprotocol | Doel | Lokaal IP-adres | Extern IP-adres |
 | --- | --- | --- | --- | --- | --- |
-| 80, 443 |Uitgaand |TCP |Afhankelijkheden van redis op Azure Storage/PKI (Internet) | (Redis-subnet) |* |
+| 80, 443 |Uitgaand |TCP |Afhankelijkheden van redis op Azure Storage/PKI (Internet) | (Redis-subnet) |* <sup>3</sup> |
 | 443 | Uitgaand | TCP | Afhankelijkheid van redis op Azure Key Vault en Azure Monitor | (Redis-subnet) | AzureKeyVault, AzureMonitor <sup>1</sup> |
 | 53 |Uitgaand |TCP/UDP |Redis-afhankelijkheden op DNS (Internet/VNet) | (Redis-subnet) | 168.63.129.16 en 169.254.169.254 <sup>2</sup> en een aangepaste DNS-server voor het subnet <sup>3</sup> |
 | 8443 |Uitgaand |TCP |Interne communicatie voor redis | (Redis-subnet) | (Redis-subnet) |
@@ -146,6 +146,8 @@ Er zijn negen uitgaande poort vereisten. Uitgaande aanvragen in deze bereiken zi
 
 <sup>3</sup> niet nodig voor subnetten zonder aangepaste DNS-server, of nieuwere redis-caches die aangepaste DNS negeren.
 
+<sup>4</sup> Zie [aanvullende VNET-netwerk connectiviteits vereisten](#additional-vnet-network-connectivity-requirements)voor meer informatie.
+
 #### <a name="geo-replication-peer-port-requirements"></a>Vereisten voor geo-replicatie peer-poort
 
 Als u gebruikmaakt van georeplicatie tussen caches in virtuele netwerken van Azure, moet u er rekening mee houden dat de aanbevolen configuratie het blok keren van poorten 15000-15999 voor het hele subnet in zowel binnenkomende als uitgaande richting naar beide caches, zodat alle replica onderdelen in het subnet direct met elkaar kunnen communiceren, zelfs in het geval van een toekomstige geo-failover.
@@ -156,13 +158,13 @@ Er zijn acht vereisten voor het poort bereik voor inkomend verkeer. Inkomende aa
 
 | Poort(en) | Richting | Transportprotocol | Doel | Lokaal IP-adres | Extern IP-adres |
 | --- | --- | --- | --- | --- | --- |
-| 6379, 6380 |Inkomend |TCP |Client communicatie naar redis, Azure-taak verdeling | (Redis-subnet) | (Redis subnet), Virtual Network, Azure Load Balancer <sup>1</sup> |
+| 6379, 6380 |Inkomend |TCP |Client communicatie naar redis, Azure-taak verdeling | (Redis-subnet) | (Redis subnet), (client subnet), AzureLoadBalancer <sup>1</sup> |
 | 8443 |Inkomend |TCP |Interne communicatie voor redis | (Redis-subnet) |(Redis-subnet) |
-| 8500 |Inkomend |TCP/UDP |Azure-taakverdeling | (Redis-subnet) |Azure Load Balancer |
-| 10221-10231 |Inkomend |TCP |Client communicatie met redis-clusters, interne communicatie voor redis | (Redis-subnet) |(Redis subnet), Azure Load Balancer, (client-subnet) |
-| 13000-13999 |Inkomend |TCP |Client communicatie met redis-clusters, Azure-taak verdeling | (Redis-subnet) |Virtual Network, Azure Load Balancer |
-| 15000-15999 |Inkomend |TCP |Client communicatie met redis-clusters, Azure-taak verdeling en Geo-Replication | (Redis-subnet) |Virtual Network, Azure Load Balancer, (geo-replica peer-subnet) |
-| 16001 |Inkomend |TCP/UDP |Azure-taakverdeling | (Redis-subnet) |Azure Load Balancer |
+| 8500 |Inkomend |TCP/UDP |Azure-taakverdeling | (Redis-subnet) | AzureLoadBalancer |
+| 10221-10231 |Inkomend |TCP |Client communicatie met redis-clusters, interne communicatie voor redis | (Redis-subnet) |(Redis subnet), AzureLoadBalancer, (client-subnet) |
+| 13000-13999 |Inkomend |TCP |Client communicatie met redis-clusters, Azure-taak verdeling | (Redis-subnet) | (Redis subnet), (client subnet), AzureLoadBalancer |
+| 15000-15999 |Inkomend |TCP |Client communicatie met redis-clusters, Azure-taak verdeling en Geo-Replication | (Redis-subnet) | (Redis subnet), (client subnet), AzureLoadBalancer, (geo-replica peer subnet) |
+| 16001 |Inkomend |TCP/UDP |Azure-taakverdeling | (Redis-subnet) | AzureLoadBalancer |
 | 20226 |Inkomend |TCP |Interne communicatie voor redis | (Redis-subnet) |(Redis-subnet) |
 
 <sup>1</sup> u kunt de service label ' AzureLoadBalancer ' (Resource Manager) (of ' AZURE_LOADBALANCER ' voor klassiek) gebruiken om de NSG-regels te ontwerpen.
@@ -171,10 +173,10 @@ Er zijn acht vereisten voor het poort bereik voor inkomend verkeer. Inkomende aa
 
 Er zijn vereisten voor de netwerk verbinding voor Azure cache voor redis die in eerste instantie niet in een virtueel netwerk kunnen worden bereikt. Azure cache voor redis vereist dat alle volgende items goed werken wanneer ze binnen een virtueel netwerk worden gebruikt.
 
-* Uitgaande netwerk verbinding met Azure Storage eind punten wereld wijd. Dit geldt ook voor eind punten die zich in dezelfde regio bevinden als de Azure-cache voor redis-exemplaar, evenals opslag eindpunten die zich in **andere** Azure-regio's bevinden. Azure Storage-eind punten worden omgezet onder de volgende DNS-domeinen: *Table.core.Windows.net* , *blob.core.Windows.net* , *Queue.core.Windows.net* en *File.core.Windows.net*. 
-* Uitgaande netwerk verbinding met *OCSP.Digicert.com* , *crl4.Digicert.com* , *OCSP.msocsp.com* , *mscrl.Microsoft.com* , *crl3.Digicert.com* , *cacerts.Digicert.com* , *oneocsp.Microsoft.com* en *CRL.Microsoft.com*. Deze connectiviteit is vereist voor de ondersteuning van TLS/SSL-functionaliteit.
+* Uitgaande netwerk verbinding met Azure Storage eind punten wereld wijd. Dit geldt ook voor eind punten die zich in dezelfde regio bevinden als de Azure-cache voor redis-exemplaar, evenals opslag eindpunten die zich in **andere** Azure-regio's bevinden. Azure Storage-eind punten worden omgezet onder de volgende DNS-domeinen: *Table.core.Windows.net*, *blob.core.Windows.net*, *Queue.core.Windows.net* en *File.core.Windows.net*. 
+* Uitgaande netwerk verbinding met *OCSP.Digicert.com*, *crl4.Digicert.com*, *OCSP.msocsp.com*, *mscrl.Microsoft.com*, *crl3.Digicert.com*, *cacerts.Digicert.com*, *oneocsp.Microsoft.com* en *CRL.Microsoft.com*. Deze connectiviteit is vereist voor de ondersteuning van TLS/SSL-functionaliteit.
 * De DNS-configuratie voor het virtuele netwerk moet geschikt zijn voor het oplossen van alle eind punten en domeinen die worden vermeld in de eerdere punten. Aan deze DNS-vereisten kan worden voldaan door ervoor te zorgen dat een geldige DNS-infra structuur is geconfigureerd en onderhouden voor het virtuele netwerk.
-* Uitgaande netwerk verbinding met de volgende Azure Monitor-eind punten die worden omgezet onder de volgende DNS-domeinen: *shoebox2-Black.shoebox2.Metrics.nsatc.net* , *North-prod2.prod2.Metrics.nsatc.net* , *azglobal-Black.azglobal.Metrics.nsatc.net* , *shoebox2-Red.shoebox2.Metrics.nsatc.net* , *East-prod2.prod2.Metrics.nsatc.net* , *azglobal-Red.azglobal.Metrics.nsatc.net*.
+* Uitgaande netwerk verbinding met de volgende Azure Monitor-eind punten die worden omgezet onder de volgende DNS-domeinen: *shoebox2-Black.shoebox2.Metrics.nsatc.net*, *North-prod2.prod2.Metrics.nsatc.net*, *azglobal-Black.azglobal.Metrics.nsatc.net*, *shoebox2-Red.shoebox2.Metrics.nsatc.net*, *East-prod2.prod2.Metrics.nsatc.net*, *azglobal-Red.azglobal.Metrics.nsatc.net*.
 
 ### <a name="how-can-i-verify-that-my-cache-is-working-in-a-vnet"></a>Hoe kan ik controleren of mijn cache werkt in een VNET?
 
@@ -218,19 +220,19 @@ Als u de DNS-naam niet kunt omzetten, bevatten sommige client bibliotheken confi
 VNets kan alleen worden gebruikt met Premium-caches.
 
 ### <a name="why-does-creating-an-azure-cache-for-redis-fail-in-some-subnets-but-not-others"></a>Waarom wordt het maken van een Azure-cache voor redis mislukt in sommige subnetten, maar niet op andere computers?
-Als u een Azure-cache voor redis implementeert voor een resource manager VNet, moet de cache zich in een toegewijd subnet bevinden dat geen ander bron type bevat. Als er een poging wordt gedaan om een Azure-cache te implementeren voor redis naar een resource manager VNet-subnet dat andere bronnen bevat, mislukt de implementatie. U moet de bestaande resources in het subnet verwijderen voordat u een nieuwe Azure-cache kunt maken voor redis.
+Als u een Azure-cache voor redis implementeert in een VNet, moet de cache zich in een toegewijd subnet bevinden dat geen ander bron type bevat. Als er een poging wordt gedaan om een Azure-cache te implementeren voor redis naar een resource manager VNet-subnet dat andere bronnen bevat (zoals toepassings gateways, uitgaande NAT, enzovoort), mislukt de implementatie meestal. U moet bestaande resources van andere typen verwijderen voordat u een nieuwe Azure-cache kunt maken voor redis.
 
-U kunt meerdere typen resources implementeren op een klassiek VNet zolang er voldoende IP-adressen beschikbaar zijn.
+Er moeten ook voldoende IP-adressen beschikbaar zijn in het subnet.
 
 ### <a name="what-are-the-subnet-address-space-requirements"></a>Wat zijn de adres ruimte vereisten voor het subnet?
 Azure reserveert een aantal IP-adressen binnen elk subnet en deze adressen kunnen niet worden gebruikt. Het eerste en laatste IP-adres van de subnetten zijn gereserveerd voor protocol conformiteit, samen met drie meer adressen die worden gebruikt voor Azure-Services. Zie [zijn er beperkingen voor het gebruik van IP-adressen in deze subnetten?](../virtual-network/virtual-networks-faq.md#are-there-any-restrictions-on-using-ip-addresses-within-these-subnets) voor meer informatie.
 
-Naast de IP-adressen die worden gebruikt door de Azure VNET-infra structuur, maakt elk redis-exemplaar in het subnet gebruik van twee IP-adressen per Shard en één extra IP-adres voor de load balancer. Een niet-geclusterde cache wordt beschouwd als een Shard.
+Naast de IP-adressen die worden gebruikt door de Azure VNET-infra structuur, maakt elk redis-exemplaar in het subnet gebruik van twee IP-adressen per cluster Shard (plus extra IP-adressen voor aanvullende replica's, indien van toepassing) en een extra IP-adres voor de load balancer. Een niet-geclusterde cache wordt beschouwd als een Shard.
 
 ### <a name="do-all-cache-features-work-when-hosting-a-cache-in-a-vnet"></a>Werken alle cache functies wanneer ze een cache in een VNET hosten?
 Wanneer uw cache deel uitmaakt van een VNET, hebben alleen clients in het VNET toegang tot de cache. Als gevolg hiervan werken de volgende cache beheer functies op dit moment niet.
 
-* Redis-console: omdat de redis-console wordt uitgevoerd in uw lokale browser, die zich buiten het VNET bevindt, kan er geen verbinding worden gemaakt met uw cache.
+* Redis-console: omdat de redis-console wordt uitgevoerd in uw lokale browser, die meestal op een ontwikkelaars computer staat die niet met het VNET is verbonden, kan deze geen verbinding maken met uw cache.
 
 
 ## <a name="use-expressroute-with-azure-cache-for-redis"></a>ExpressRoute gebruiken met Azure cache voor redis
@@ -256,7 +258,7 @@ Het maken van een verbinding met een Azure-cache voor redis-instantie van een on
 >De routes die in een UDR zijn gedefinieerd, **moeten** specifiek genoeg zijn om voor rang te hebben op alle routes die worden geadverteerd door de ExpressRoute-configuratie. In het volgende voor beeld wordt het brede adres bereik 0.0.0.0/0 gebruikt. Dit kan mogelijk per ongeluk worden overschreven door route advertenties met meer specifieke adresbereiken.
 
 >[!WARNING]  
->Azure cache voor redis wordt niet ondersteund met ExpressRoute-configuraties die **onjuiste cross-Advertising-routes van het open bare pad naar het privé** -peering-pad. ExpressRoute-configuraties waarvoor open bare peering is geconfigureerd, ontvangen route-advertisements van micro soft voor een groot aantal Microsoft Azure IP-adresbereiken. Als deze adresbereiken onjuist zijn geadverteerd op het pad van de privé-peering, is het resultaat dat alle uitgaande netwerk pakketten van de Azure-cache voor het subnet van het redis-exemplaar onjuist geforceerd worden getunneld naar de on-premises netwerk infrastructuur van een klant. Deze netwerk stroom verbreekt Azure-cache voor redis. De oplossing voor dit probleem is het stoppen van cross-Advertising routes van het open bare pad naar het privé-peering-pad.
+>Azure cache voor redis wordt niet ondersteund met ExpressRoute-configuraties die **onjuiste cross-Advertising-routes van het open bare pad naar het privé**-peering-pad. ExpressRoute-configuraties waarvoor open bare peering is geconfigureerd, ontvangen route-advertisements van micro soft voor een groot aantal Microsoft Azure IP-adresbereiken. Als deze adresbereiken onjuist zijn geadverteerd op het pad van de privé-peering, is het resultaat dat alle uitgaande netwerk pakketten van de Azure-cache voor het subnet van het redis-exemplaar onjuist geforceerd worden getunneld naar de on-premises netwerk infrastructuur van een klant. Deze netwerk stroom verbreekt Azure-cache voor redis. De oplossing voor dit probleem is het stoppen van cross-Advertising routes van het open bare pad naar het privé-peering-pad.
 
 
 In dit [overzicht](../virtual-network/virtual-networks-udr-overview.md)vindt u achtergrond informatie over door de gebruiker gedefinieerde routes.

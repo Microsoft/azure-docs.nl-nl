@@ -5,12 +5,12 @@ description: Meer informatie over het maken van een RDP-verbinding met Windows S
 services: container-service
 ms.topic: article
 ms.date: 06/04/2019
-ms.openlocfilehash: ed849ec928cc09cd0e8911929c4abc6ae54b1536
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c774e2287d0540c73cdd2234843d6766e7f2fb91
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82208037"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95792254"
 ---
 # <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Verbinding maken met de cluster Windows Server-knoop punten van RDP naar Azure Kubernetes service (AKS) voor onderhoud of probleem oplossing
 
@@ -20,9 +20,9 @@ In dit artikel wordt beschreven hoe u een RDP-verbinding met een AKS-knoop punt 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-In dit artikel wordt ervan uitgegaan dat u een bestaand AKS-cluster hebt met een Windows Server-knoop punt. Als u een AKS-cluster nodig hebt, raadpleegt u het artikel over het [maken van een AKS-cluster met een Windows-container met behulp van de Azure cli][aks-windows-cli]. U hebt de gebruikers naam en het wacht woord van de Windows-beheerder nodig voor het Windows Server-knoop punt dat u wilt oplossen. U hebt ook een RDP-client nodig, zoals [Microsoft extern bureaublad][rdp-mac].
+In dit artikel wordt ervan uitgegaan dat u een bestaand AKS-cluster hebt met een Windows Server-knoop punt. Als u een AKS-cluster nodig hebt, raadpleegt u het artikel over het [maken van een AKS-cluster met een Windows-container met behulp van de Azure cli][aks-windows-cli]. U hebt de gebruikers naam en het wacht woord van de Windows-beheerder nodig voor het Windows Server-knoop punt dat u wilt oplossen. Als u ze niet kent, kunt u ze opnieuw instellen door [extern bureaublad-services of het beheerders wachtwoord opnieuw in te stellen in een Windows-VM ](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/reset-rdp). U hebt ook een RDP-client nodig, zoals [Microsoft extern bureaublad][rdp-mac].
 
-Ook moet de Azure CLI-versie 2.0.61 of hoger zijn geïnstalleerd en geconfigureerd. Voer  `az --version` uit om de versie te bekijken. Als u wilt installeren of upgraden, raadpleegt u [Azure cli installeren][install-azure-cli].
+Ook moet de Azure CLI-versie 2.0.61 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="deploy-a-virtual-machine-to-the-same-subnet-as-your-cluster"></a>Een virtuele machine implementeren op hetzelfde subnet als uw cluster
 

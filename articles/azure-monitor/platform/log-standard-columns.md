@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/09/2020
-ms.openlocfilehash: dc3d119479d2dce45b286463f3d6a76410220dd0
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2370f76bacb8645f1b343da4f056c8bcf06a26dd
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014217"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95796727"
 ---
 # <a name="standard-columns-in-azure-monitor-logs"></a>Standaard kolommen in Azure Monitor-logboeken
 Gegevens in Azure Monitor logboeken worden [opgeslagen als een set records in een log Analytics werk ruimte of Application Insights toepassing](./data-platform-logs.md), elk met een bepaald gegevens type met een unieke set kolommen. Veel gegevens typen hebben standaard kolommen die gemeen schappelijk zijn voor meerdere typen. In dit artikel worden deze kolommen beschreven en vindt u voor beelden van hoe u deze kunt gebruiken in query's.
@@ -80,7 +80,7 @@ De kolom **\_ Itemid** bevat een unieke id voor de record.
 ## <a name="_resourceid"></a>\_ResourceId
 De kolom **\_ ResourceID** bevat een unieke id voor de resource waaraan de record is gekoppeld. Dit geeft u een standaard kolom die wordt gebruikt om uw query te beperken tot alleen records van een bepaalde resource, of om gerelateerde gegevens over meerdere tabellen samen te voegen.
 
-Voor Azure-resources is de waarde van **_ResourceId** de [URL van de Azure-resource-id](../../azure-resource-manager/templates/template-functions-resource.md). De kolom is momenteel beperkt tot Azure-resources, maar wordt uitgebreid naar bronnen buiten Azure, zoals on-premises computers.
+Voor Azure-resources is de waarde van **_ResourceId** de [URL van de Azure-resource-id](../../azure-resource-manager/templates/template-functions-resource.md). De kolom is beperkt tot Azure-resources, waaronder [Azure-Arc](../../azure-arc/overview.md) -resources, of op aangepaste logboeken die de resource-id tijdens opname hebben aangegeven.
 
 > [!NOTE]
 > Sommige gegevens typen bevatten al velden met een Azure-Resource-ID of ten minste delen daarvan, zoals de abonnements-ID. Hoewel deze velden voor compatibiliteit met eerdere versies worden bewaard, is het raadzaam om de _ResourceId te gebruiken voor het uitvoeren van kruis correlatie, omdat het consistenter is.
@@ -111,17 +111,47 @@ AzureActivity
 ) on _ResourceId  
 ```
 
-Met de volgende query worden **_ResourceId** geparseerd en worden gefactureerde gegevens volumes per Azure-abonnement geaggregeerd.
+Met de volgende query worden **_ResourceId** geparseerd en worden gefactureerde gegevens volumes per Azure-resource groep geaggregeerd.
 
 ```Kusto
 union withsource = tt * 
 | where _IsBillable == true 
 | parse tolower(_ResourceId) with "/subscriptions/" subscriptionId "/resourcegroups/" 
     resourceGroup "/providers/" provider "/" resourceType "/" resourceName   
-| summarize Bytes=sum(_BilledSize) by subscriptionId | sort by Bytes nulls last 
+| summarize Bytes=sum(_BilledSize) by resourceGroup | sort by Bytes nulls last 
 ```
 
 Gebruik deze `union withsource = tt *` query's spaarzaam als scans over gegevens typen duur zijn om uit te voeren.
+
+Het is altijd efficiënter om de SubscriptionId- \_ kolom te gebruiken dan extra heren door de kolom ResourceID te parseren \_ .
+
+## <a name="_substriptionid"></a>\_SubstriptionId
+De kolom **\_ SubscriptionId** bevat de abonnements-id van de resource waaraan de record is gekoppeld. Dit geeft u een standaard kolom die wordt gebruikt om uw query te beperken tot records van een bepaald abonnement of om verschillende abonnementen te vergelijken.
+
+Voor Azure-resources is de waarde van **__SubscriptionId** het gedeelte van het abonnement van de URL van de [Azure-resource-id](../../azure-resource-manager/templates/template-functions-resource.md). De kolom is beperkt tot Azure-resources, waaronder [Azure-Arc](../../azure-arc/overview.md) -resources, of op aangepaste logboeken die de resource-id tijdens opname hebben aangegeven.
+
+> [!NOTE]
+> Sommige gegevens typen bevatten al velden met de ID van het Azure-abonnement. Hoewel deze velden voor achterwaartse compatibiliteit worden bewaard, is het raadzaam om de \_ SubscriptionId-kolom te gebruiken om een kruis correlatie uit te voeren, omdat het consistenter is.
+### <a name="examples"></a>Voorbeelden
+Met de volgende query worden prestatie gegevens onderzocht op computers van een specifiek abonnement. 
+
+```Kusto
+Perf 
+| where TimeGenerated > ago(24h) and CounterName == "memoryAllocatableBytes"
+| where _SubscriptionId == "57366bcb3-7fde-4caf-8629-41dc15e3b352"
+| summarize avgMemoryAllocatableBytes = avg(CounterValue) by Computer
+```
+
+Met de volgende query worden **_ResourceId** geparseerd en worden gefactureerde gegevens volumes per Azure-abonnement geaggregeerd.
+
+```Kusto
+union withsource = tt * 
+| where _IsBillable == true 
+| summarize Bytes=sum(_BilledSize) by _SubscriptionId | sort by Bytes nulls last 
+```
+
+Gebruik deze `union withsource = tt *` query's spaarzaam als scans over gegevens typen duur zijn om uit te voeren.
+
 
 ## <a name="_isbillable"></a>\_IsBillable
 De kolom **\_ IsBillable** geeft aan of geconsumeerde gegevens Factureerbaar zijn. Gegevens met **\_ IsBillable** gelijk aan `false` worden gratis verzameld en worden niet in rekening gebracht voor uw Azure-account.
@@ -168,8 +198,7 @@ Gebruik de volgende query om de omvang van de factureer bare gebeurtenissen die 
 ```Kusto
 union withsource=table * 
 | where _IsBillable == true 
-| parse _ResourceId with "/subscriptions/" SubscriptionId "/" *
-| summarize Bytes=sum(_BilledSize) by  SubscriptionId | sort by Bytes nulls last 
+| summarize Bytes=sum(_BilledSize) by  _SubscriptionId | sort by Bytes nulls last 
 ```
 
 Gebruik de volgende query om de omvang van de factureer bare gebeurtenissen per resource groep te bekijken:
@@ -178,7 +207,7 @@ Gebruik de volgende query om de omvang van de factureer bare gebeurtenissen per 
 union withsource=table * 
 | where _IsBillable == true 
 | parse _ResourceId with "/subscriptions/" SubscriptionId "/resourcegroups/" ResourceGroupName "/" *
-| summarize Bytes=sum(_BilledSize) by  SubscriptionId, ResourceGroupName | sort by Bytes nulls last 
+| summarize Bytes=sum(_BilledSize) by  _SubscriptionId, ResourceGroupName | sort by Bytes nulls last 
 
 ```
 

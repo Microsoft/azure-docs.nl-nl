@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: tamram
 ms.custom: security-recommendations
-ms.openlocfilehash: becaadda37cdc7cf25fb3881dda0961e8640ad12
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 64799013d8d71e63300a8b48e5ca5b0d4d02c634
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/24/2020
-ms.locfileid: "95538356"
+ms.locfileid: "95808033"
 ---
 # <a name="security-recommendations-for-blob-storage"></a>Beveiligings aanbevelingen voor Blob Storage
 
@@ -25,7 +25,7 @@ Enkele van de aanbevelingen in dit artikel kunnen automatisch worden bewaakt doo
 
 Azure Security Center regel matig de beveiligings status van uw Azure-resources analyseren om mogelijke beveiligings problemen te identificeren. Vervolgens krijgt u aanbevelingen over hoe u deze kunt aanpakken. Zie [beveiligings aanbevelingen in azure Security Center](../../security-center/security-center-recommendations.md)voor meer informatie over Azure Security Center aanbevelingen.
 
-## <a name="data-protection"></a>Gegevensbescherming
+## <a name="data-protection"></a>Gegevensbeveiliging
 
 | Aanbeveling | Opmerkingen | Beveiligingscentrum |
 |-|----|--|
@@ -73,5 +73,5 @@ Azure Security Center regel matig de beveiligings status van uw Azure-resources 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Documentatie voor Azure-beveiliging](//azure/security/)
+- [Documentatie voor Azure-beveiliging](../../security/index.yml)
 - [Documentatie voor beveiligde ontwikkel aars](../../security/develop/index.yml).

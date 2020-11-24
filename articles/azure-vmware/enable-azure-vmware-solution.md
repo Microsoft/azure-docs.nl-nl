@@ -3,12 +3,12 @@ title: Uw Azure VMware-oplossings resource inschakelen
 description: Meer informatie over het indienen van een ondersteunings aanvraag om uw Azure VMware-oplossings resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
 ms.topic: how-to
 ms.date: 11/12/2020
-ms.openlocfilehash: cd58611f77c2f2fb1694597fc9ef049420093ccc
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 68f8fe38c67ec5ddad7cf662a7996330ee2a1e73
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967360"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95794718"
 ---
 # <a name="how-to-enable-azure-vmware-solution-resource"></a>Azure VMware Solution resource inschakelen
 Meer informatie over het indienen van een ondersteunings aanvraag om uw [Azure VMware-oplossings](introduction.md) resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
@@ -64,7 +64,7 @@ Voordat u uw Azure VMware-oplossings resource maakt, moet u een ondersteunings t
 Csp's moeten [micro soft Partner Center](https://partner.microsoft.com) gebruiken om de Azure VMware-oplossing voor hun klanten in te scha kelen. 
 
    >[!IMPORTANT] 
-   >Azure VMware Solution service biedt geen multi tenant-omgeving en daarom kunnen hosting partners nog niet worden ondersteund. 
+   >Azure VMware Solution service biedt geen multitenancy vereist. Hosting partners die dit vereisen, worden niet ondersteund. 
 
 1. Selecteer in **partner centrum** **CSP** om toegang te krijgen tot het gebied **klanten** .
 
@@ -113,13 +113,16 @@ Na het configureren van het Azure-abonnement en de benodigde vSphere RBAC-machti
    >[!IMPORTANT] 
    >Als u al een bestaande Azure VMware-oplossing hebt en u extra hosts wilt aanvragen, moeten we vijf werk dagen hebben om de hosts toe te wijzen. 
 
-1. Zodra het Azure-abonnement is toegevoegd en u quota hebt ingeschakeld, kan de klant of de beheerder van de partner een Privécloud van Azure VMware-oplossing implementeren via de Azure Portal. Voordat u uw hosts kunt inrichten, moet u ervoor zorgen dat u de resource provider **micro soft. AVS** registreert in de Azure Portal.  
+1. Als het abonnement wordt beheerd door de service provider, moet het beheer team Azure Portal van de procedure voor het opnieuw uitvoeren van de **beheerder namens** (administrate) van het partner centrum. Een in Azure Portal een [Cloud shell](../cloud-shell/overview.md) -exemplaar starten en de resource provider **micro soft. AVS** registreren en door gaan met de implementatie van de Privécloud van de Azure VMware-oplossing.  
 
    ```azurecli-interactive
    az provider register -n Microsoft.AVS --subscription <your subscription ID>
    ```
 
    Zie [Azure-resourceproviders en -typen](../azure-resource-manager/management/resource-providers-and-types.md) voor meer manieren om de Azure Synapse-resourceprovider te registeren.
+
+1. Als het abonnement direct door de klant wordt beheerd, moet de registratie van de resource provider **micro soft. AVS** door een gebruiker met voldoende machtigingen in het abonnement worden uitgevoerd. Zie [Azure resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md) voor meer informatie en manieren om de resource provider te registreren. 
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

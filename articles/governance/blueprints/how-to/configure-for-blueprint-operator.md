@@ -1,14 +1,14 @@
 ---
 title: Uw omgeving instellen voor de operator blauw drukken
 description: Meer informatie over het configureren van uw Azure-omgeving voor gebruik met de blauw druk-operator Azure ingebouwde rol.
-ms.date: 08/27/2020
+ms.date: 11/24/2020
 ms.topic: how-to
-ms.openlocfilehash: ae881ac6d0714401f8c80e880b4d288f594b7cf3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db8450516feab2fae4136f549959a29b006059aa
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91535778"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95804924"
 ---
 # <a name="configure-your-environment-for-a-blueprint-operator"></a>Uw omgeving configureren voor een Blueprint Operator
 
@@ -28,7 +28,9 @@ De eerste stap is het verlenen van de rol van de **blauw druk-operator** aan het
 
 Een definitie van een blauw druk kan door het systeem toegewezen of door de gebruiker toegewezen beheerde identiteiten gebruiken. Bij gebruik van de functie van de **blauw druk-operator** moet de definitie van de blauw druk echter worden geconfigureerd voor gebruik van een door de gebruiker toegewezen beheerde identiteit. Daarnaast moet aan het account of de beveiligings groep die de functie van de **blauw druk-operator** wordt verleend, de rol **Managed Identity-operator** worden verleend voor de door de gebruiker toegewezen beheerde identiteit. Zonder deze machtiging mislukken de opdrachten voor blauw drukken vanwege onvoldoende machtigingen.
 
-1. [Een door de gebruiker toegewezen beheerde identiteit maken](../../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md#create-a-user-assigned-managed-identity) voor gebruik door een toegewezen blauw druk
+1. [Een door de gebruiker toegewezen beheerde identiteit maken](../../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md#create-a-user-assigned-managed-identity) voor gebruik door een toegewezen blauw druk.
+
+1. Ken de door de gebruiker toegewezen beheerde identiteit toe aan alle rollen of machtigingen die vereist zijn voor de definitie van de blauw druk voor het beoogde bereik.
 
 1. [Voeg een roltoewijzing](../../../role-based-access-control/role-assignments-portal.md#add-a-role-assignment) van de **operator Managed Identity** toe aan het account of de beveiligings groep. Bereik de roltoewijzing aan de nieuwe door de gebruiker toegewezen beheerde identiteit.
 

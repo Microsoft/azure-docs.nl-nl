@@ -4,14 +4,13 @@ ms.date: 04/17/2019
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.openlocfilehash: 1b3f9fff835e39c737227d6817c3a1dd901f3c65
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be2242e22ad2815a70be1a56cb77696afbd9a8d3
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85367564"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95562032"
 ---
 > [!NOTE]
 > Dit artikel is bijgewerkt voor het gebruik van de nieuwe Azure PowerShell Az-module. De AzureRM-module kan nog worden gebruikt en krijgt bugoplossingen tot ten minste december 2020.
-> Zie voor meer informatie over de nieuwe Az-module en compatibiliteit met AzureRM [Introductie van de nieuwe Az-module van Azure PowerShell](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.3.0). Raadpleeg [Azure PowerShell installeren](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.3.0) voor instructies over de installatie van de Az-module.
-
+> Zie voor meer informatie over de nieuwe Az-module en compatibiliteit met AzureRM [Introductie van de nieuwe Az-module van Azure PowerShell](/powershell/azure/new-azureps-module-az?view=azps-3.3.0). Raadpleeg [Azure PowerShell installeren](/powershell/azure/install-az-ps?view=azps-3.3.0) voor instructies over de installatie van de Az-module.

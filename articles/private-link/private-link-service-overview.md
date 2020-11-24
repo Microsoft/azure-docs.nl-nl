@@ -7,16 +7,16 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: sumi
-ms.openlocfilehash: a6bbb2abe24eba96fd2c55b7aaf15ccd8ae33530
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27dba675f82c4d34ec793cf492c18b293a6c8c77
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87760941"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544255"
 ---
 # <a name="what-is-azure-private-link-service"></a>Wat is Azure Private Link service?
 
-Persoonlijke koppelings service van Azure is de verwijzing naar uw eigen service die wordt aangestuurd door een persoonlijke Azure-koppeling. De service die wordt uitgevoerd achter [Azure Standard Load Balancer](../load-balancer/load-balancer-standard-overview.md) kan worden ingeschakeld voor toegang tot persoonlijke koppelingen, zodat gebruikers die toegang hebben tot uw service, privé kunnen zijn vanuit hun eigen VNets. Uw klanten kunnen een persoonlijk eind punt in hun VNet maken en aan deze service toewijzen. In dit artikel worden de concepten beschreven die betrekking hebben op de kant van de service provider. 
+Persoonlijke koppelings service van Azure is de verwijzing naar uw eigen service die wordt aangestuurd door een persoonlijke Azure-koppeling. De service die wordt uitgevoerd achter [Azure Standard Load Balancer](../load-balancer/load-balancer-overview.md) kan worden ingeschakeld voor toegang tot persoonlijke koppelingen, zodat gebruikers die toegang hebben tot uw service, privé kunnen zijn vanuit hun eigen VNets. Uw klanten kunnen een persoonlijk eind punt in hun VNet maken en aan deze service toewijzen. In dit artikel worden de concepten beschreven die betrekking hebben op de kant van de service provider. 
 
 :::image type="content" source="./media/private-link-service-overview/consumer-provider-endpoint.png" alt-text="Werk stroom van persoonlijke koppelings service" border="true":::
 
@@ -57,7 +57,7 @@ Een persoonlijke koppelings service specificeert de volgende eigenschappen:
 |---------|---------|
 |Inrichtings status (provisioningState)  |Een alleen-lezen eigenschap met een lijst met de huidige inrichtings status voor de persoonlijke koppelings service. Toepas bare inrichtings statussen zijn: "verwijderen; Is mislukt Is voltooid Bijwerken. Wanneer de inrichtings status geslaagd is, hebt u de service voor persoonlijke koppelingen ingericht.        |
 |Alias (alias)     | Alias is een wereld wijd unieke alleen-lezen teken reeks voor uw service. Het helpt u bij het maskeren van de klant gegevens voor uw service en tegelijkertijd een gemakkelijk te delen naam voor uw service te maken. Wanneer u een persoonlijke koppelings service maakt, genereert Azure de alias voor uw service die u met uw klanten kunt delen. Uw klanten kunnen deze alias gebruiken om een verbinding met uw service aan te vragen.          |
-|Zicht baarheid (zicht baarheid)     | Zicht baarheid is de eigenschap waarmee de belichtings instellingen voor uw privé koppelings service worden beheerd. Service providers kunnen ervoor kiezen om de bloot stelling aan hun service te beperken tot abonnementen met machtigingen voor op rollen gebaseerde toegangs beheer (RBAC), een beperkt aantal abonnementen of alle Azure-abonnementen.          |
+|Zicht baarheid (zicht baarheid)     | Zicht baarheid is de eigenschap waarmee de belichtings instellingen voor uw privé koppelings service worden beheerd. Service providers kunnen ervoor kiezen om de bloot stelling aan hun service te beperken tot abonnementen met Azure RBAC-machtigingen (op rollen gebaseerd toegangs beheer), een beperkte set abonnementen of alle Azure-abonnementen.          |
 |Automatische goed keuring (automatisch goed keuren)    |   Automatische goed keuring beheert de geautomatiseerde toegang tot de persoonlijke koppelings service. De abonnementen die zijn opgegeven in de lijst met automatische goed keuringen, worden automatisch goedgekeurd wanneer een verbinding wordt aangevraagd vanuit privé-eind punten in die abonnementen.          |
 |Load Balancer frontend-IP-configuratie (loadBalancerFrontendIpConfigurations)    |    De service voor persoonlijke koppelingen is gekoppeld aan het frontend-IP-adres van een Standard Load Balancer. Al het verkeer dat is bestemd voor de service, zal de frontend van de SLB bereiken. U kunt SLB-regels zo configureren dat dit verkeer wordt doorgestuurd naar de juiste back-endservers waar uw toepassingen worden uitgevoerd. IP-configuraties van Load Balancer-frontend zijn anders dan NAT IP-configuraties.      |
 |NAT IP-configuratie (ipConfigurations)    |    Deze eigenschap verwijst naar de NAT-IP-configuratie (Network Address Translation) voor de persoonlijke koppelings service. Het NAT IP-adres kan worden gekozen vanuit elk subnet in het virtuele netwerk van een service provider. De service voor persoonlijke koppelingen voert NAT-bestemming uit op het verkeer van de persoonlijke verbinding. Dit zorgt ervoor dat er geen IP-conflict is tussen de bron-en doel ruimte (service provider). Aan de doel zijde (service provider zijde) wordt het NAT IP-adres weer gegeven als bron-IP voor alle pakketten die door uw service worden ontvangen en de doel-IP voor alle pakketten die door uw service worden verzonden.       |
@@ -76,7 +76,7 @@ Een persoonlijke koppelings service specificeert de volgende eigenschappen:
  
 - Eén persoonlijke koppelings service kan worden geopend vanuit meerdere persoonlijke eind punten die deel uitmaken van verschillende VNets, abonnementen en/of Active Directory tenants. De verbinding wordt tot stand gebracht via een werk stroom voor verbindingen. 
  
-- Er kunnen meerdere services voor persoonlijke koppelingen worden gemaakt op hetzelfde Standard Load Balancer met verschillende front-end IP-configuraties. Er zijn limieten voor het aantal persoonlijke koppelings Services dat u kunt maken per Standard Load Balancer en per abonnement. Zie [Azure-limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits)voor meer informatie.
+- Er kunnen meerdere services voor persoonlijke koppelingen worden gemaakt op hetzelfde Standard Load Balancer met verschillende front-end IP-configuraties. Er zijn limieten voor het aantal persoonlijke koppelings Services dat u kunt maken per Standard Load Balancer en per abonnement. Zie [Azure-limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits)voor meer informatie.
  
 - Aan de persoonlijke koppelings service kunnen meer dan één NAT IP-configuratie zijn gekoppeld. Bij het kiezen van meer dan één NAT IP-configuratie kunnen service providers worden geschaald. Op dit moment kunnen service providers Maxi maal acht NAT IP-adressen per privé koppelings service toewijzen. Met elk IP-adres van NAT kunt u meer poorten toewijzen voor uw TCP-verbindingen en daarom uitschalen. Nadat u meerdere NAT IP-adressen aan een persoonlijke koppelings service hebt toegevoegd, kunt u de NAT IP-adressen niet verwijderen. Dit wordt gedaan om ervoor te zorgen dat actieve verbindingen niet worden beïnvloed tijdens het verwijderen van de NAT IP-adressen.
 
@@ -95,7 +95,7 @@ Volledige alias:  *voor voegsel*. {GUID}. *regio*. Azure. privatelinkservice
 
 ## <a name="control-service-exposure"></a>Service blootstelling controleren
 
-Met de service voor persoonlijke koppelingen kunt u de bloot stelling van uw service met de instelling zicht baarheid beheren. U kunt de service privé maken voor het gebruik van verschillende VNets die u bezit (alleen RBAC-machtigingen), de bloot stelling beperken tot een beperkt aantal abonnementen die u vertrouwt, of het publiek openbaar maken zodat alle Azure-abonnementen verbindingen kunnen aanvragen op de privé koppelings service. De instellingen voor zicht baarheid bepalen of een consument verbinding kan maken met uw service of niet. 
+Met de service voor persoonlijke koppelingen kunt u de bloot stelling van uw service met de instelling zicht baarheid beheren. U kunt de service privé maken voor het gebruik van verschillende VNets waarvan u eigenaar bent (alleen Azure RBAC-machtigingen), de bloot stelling beperken tot een beperkt aantal abonnementen die u vertrouwt of openbaar maken zodat alle Azure-abonnementen verbindingen kunnen aanvragen op de privé koppelings service. De instellingen voor zicht baarheid bepalen of een consument verbinding kan maken met uw service of niet. 
 
 ## <a name="control-service-access"></a>Toegang tot de service beheren
 

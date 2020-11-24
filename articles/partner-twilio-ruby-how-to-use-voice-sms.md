@@ -12,12 +12,12 @@ ms.devlang: ruby
 ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
-ms.openlocfilehash: 19372b30a5e56738230216777897c08b07a0a86a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49203195bf7746d0bff1b9543d1641f69ab23359
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86170697"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95542674"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-ruby"></a>Twilio gebruiken voor spraak-en SMS-mogelijkheden in Ruby
 In deze hand leiding wordt gedemonstreerd hoe u veelvoorkomende programmeer taken uitvoert met de Twilio API-service in Azure. De besproken scenario's zijn onder andere het maken van een telefoon oproep en het verzenden van een SMS-bericht (Short Message Service). Zie de sectie [volgende stappen](#NextSteps) voor meer informatie over Twilio en het gebruik van spraak en SMS in uw toepassingen.
@@ -48,20 +48,20 @@ Als voor beeld wordt met de volgende TwiML de tekst **Hallo wereld** naar spraak
 Alle TwiML-documenten hebben `<Response>` als hoofd element. Daar kunt u Twilio-werk woorden gebruiken om het gedrag van uw toepassing te definiëren.
 
 ### <a name="twiml-verbs"></a><a id="Verbs"></a>TwiML-werk woorden
-Twilio-werk woorden zijn XML-tags waarmee wordt aangegeven Twilio wat er moet **gebeuren**. De term ** &lt; zeg &gt; ** geeft bijvoorbeeld Twilio aan audibly een bericht te verzenden bij een aanroep. 
+Twilio-werk woorden zijn XML-tags waarmee wordt aangegeven Twilio wat er moet **gebeuren**. De term **&lt; zeg &gt;** geeft bijvoorbeeld Twilio aan audibly een bericht te verzenden bij een aanroep. 
 
 Hier volgt een lijst met Twilio-werk woorden.
 
-* ** &lt; Dial &gt; **: verbindt de beller met een andere telefoon.
-* ** &lt; Verzamelen &gt; **: Hiermee worden numerieke cijfers op het telefoon blok verzameld.
-* ** &lt; Ophangen &gt; **: beëindigt een aanroep.
-* ** &lt; Afspelen &gt; **: Hiermee wordt een audio bestand afgespeeld.
-* ** &lt; Pause &gt; **: wacht een opgegeven aantal seconden op de achtergrond.
-* ** &lt; Record &gt; **: registreert de stem van de beller en retourneert een URL van een bestand dat de opname bevat.
-* ** &lt; Omleiden &gt; **: overdracht van de besturing van een aanroep of SMS naar de TWIML op een andere URL.
-* ** &lt; Afwijzen &gt; **: Hiermee wordt een inkomende oproep naar uw Twilio-nummer afgewezen zonder dat u wordt gefactureerd
-* ** &lt; Zeg &gt; **: Hiermee wordt tekst geconverteerd naar spraak die tijdens een aanroep wordt gemaakt.
-* ** &lt; SMS &gt; **: er wordt een SMS-bericht verzonden.
+* **&lt; Dial &gt;**: verbindt de beller met een andere telefoon.
+* **&lt; Verzamelen &gt;**: Hiermee worden numerieke cijfers op het telefoon blok verzameld.
+* **&lt; Ophangen &gt;**: beëindigt een aanroep.
+* **&lt; Afspelen &gt;**: Hiermee wordt een audio bestand afgespeeld.
+* **&lt; Pause &gt;**: wacht een opgegeven aantal seconden op de achtergrond.
+* **&lt; Record &gt;**: registreert de stem van de beller en retourneert een URL van een bestand dat de opname bevat.
+* **&lt; Omleiden &gt;**: overdracht van de besturing van een aanroep of SMS naar de TWIML op een andere URL.
+* **&lt; Afwijzen &gt;**: Hiermee wordt een inkomende oproep naar uw Twilio-nummer afgewezen zonder dat u wordt gefactureerd
+* **&lt; Zeg &gt;**: Hiermee wordt tekst geconverteerd naar spraak die tijdens een aanroep wordt gemaakt.
+* **&lt; SMS &gt;**: er wordt een SMS-bericht verzonden.
 
 Zie [TwiML][twiml]voor meer informatie over Twilio-werk woorden, hun kenmerken en TwiML. Zie [TWILIO API][twilio_api](Engelstalig) voor meer informatie over de TWILIO-API.
 
@@ -206,4 +206,4 @@ Nu u de basis principes van de Twilio-service hebt geleerd, volgt u deze koppeli
 [twilio_support]: https://www.twilio.com/help/contact
 [twilio_quickstarts]: https://www.twilio.com/docs/quickstart
 [sinatra]: http://www.sinatrarb.com/
-[azure_vm_setup]: https://docs.microsoft.com/azure/virtual-machines/linux/classic/ruby-rails-web-app
+[azure_vm_setup]: /previous-versions/azure/virtual-machines/linux/classic/ruby-rails-web-app

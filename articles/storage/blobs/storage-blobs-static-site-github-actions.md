@@ -9,19 +9,19 @@ ms.reviewer: dineshm
 ms.date: 09/11/2020
 ms.subservice: blobs
 ms.custom: devx-track-javascript, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 3adbc0a2d55a2adc2ab7c1f82b0a358542eefc2a
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 799c0dbc3ddb673cafe0fe4962f7346a841bd4b7
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842444"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95543099"
 ---
 # <a name="set-up-a-github-actions-workflow-to-deploy-your-static-website-in-azure-storage"></a>Stel een GitHub actions-werk stroom in om uw statische website te implementeren in Azure Storage
 
 Aan de slag met [github-acties](https://docs.github.com/en/actions) met behulp van een werk stroom voor het implementeren van een statische site naar een Azure Storage-account. Zodra u een werk stroom voor GitHub-acties hebt ingesteld, kunt u uw site automatisch implementeren in azure vanaf GitHub wanneer u wijzigingen aanbrengt in de code van uw site.
 
 > [!NOTE]
-> Als u [statische web apps van Azure](https://docs.microsoft.com/azure/static-web-apps/)gebruikt, hoeft u de werk stroom voor github-acties niet hand matig in te stellen.
+> Als u [statische web apps van Azure](../../static-web-apps/index.yml)gebruikt, hoeft u de werk stroom voor github-acties niet hand matig in te stellen.
 > Met Azure static Web Apps wordt automatisch een GitHub actions-werk stroom gemaakt. 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -187,4 +187,4 @@ Wanneer uw statische website en GitHub-opslag plaats niet meer nodig zijn, moet 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Meer informatie over statische Web Apps van Azure](https://docs.microsoft.com/azure/static-web-apps/)
+> [Meer informatie over statische Web Apps van Azure](../../static-web-apps/index.yml)

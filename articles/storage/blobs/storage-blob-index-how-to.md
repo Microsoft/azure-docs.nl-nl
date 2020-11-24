@@ -9,12 +9,12 @@ ms.subservice: blobs
 ms.topic: how-to
 ms.reviewer: klaasl
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2e3e16b71d52edd9ab4eaf55651567b95e334b84
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 411815ca2f947c47b8dfb0d2e5d61f8ea18f3545
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961784"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95541246"
 ---
 # <a name="use-blob-index-tags-preview-to-manage-and-find-data-on-azure-blob-storage"></a>Gebruik BLOB index Tags (preview) om gegevens te beheren en te zoeken op Azure Blob Storage
 
@@ -38,7 +38,7 @@ Als blob-index is beschikbaar in preview, wordt het .NET-opslag pakket vrijgegev
 
 2. Zoek in de NuGet package manager het pakket **Azure. storage. blobs** en Installeer versie **12.7.0-Preview. 1** of hoger voor uw project. U kunt ook de Power shell-opdracht uitvoeren: `Install-Package Azure.Storage.Blobs -Version 12.7.0-preview.1`
 
-   Zie [een pakket zoeken en installeren](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package)voor meer informatie.
+   Zie [een pakket zoeken en installeren](/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package)voor meer informatie.
 
 3. Voeg de volgende using-instructies toe aan de bovenkant van het code bestand.
 
@@ -56,7 +56,7 @@ Als blob-index is beschikbaar in preview, wordt het .NET-opslag pakket vrijgegev
 
 ## <a name="upload-a-new-blob-with-index-tags"></a>Een nieuwe BLOB uploaden met index Tags
 
-Deze taak kan worden uitgevoerd door een [gegevens eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die toestemming heeft gekregen voor de bewerking van de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [Azure-resource provider](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
+Deze taak kan worden uitgevoerd door een [gegevens eigenaar](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die toestemming heeft gekregen voor de bewerking van de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [Azure-resource provider](../../role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -114,9 +114,9 @@ static async Task BlobIndexTagsOnCreate()
 
 ## <a name="get-set-and-update-blob-index-tags"></a>Labels voor BLOB-indexen ophalen, instellen en bijwerken
 
-Het ophalen van BLOB-index Tags kan worden uitgevoerd door een [gegevens eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die toestemming heeft gekregen voor de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read` [Azure resource provider-bewerking](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
+Het ophalen van BLOB-index Tags kan worden uitgevoerd door een [gegevens eigenaar](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die toestemming heeft gekregen voor de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read` [Azure resource provider-bewerking](../../role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
 
-Het instellen en bijwerken van BLOB-index Tags kan worden uitgevoerd door een [gegevens eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die machtigingen heeft gekregen voor de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [Azure resource provider-bewerking](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
+Het instellen en bijwerken van BLOB-index Tags kan worden uitgevoerd door een [gegevens eigenaar](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die machtigingen heeft gekregen voor de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` [Azure resource provider-bewerking](../../role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -193,7 +193,7 @@ static async Task BlobIndexTagsExample()
 
 ## <a name="filter-and-find-data-with-blob-index-tags"></a>Gegevens filteren en vinden met Blob-index Tags
 
-Deze taak kan worden uitgevoerd door een [gegevens eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die toestemming heeft gekregen voor de bewerking van de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action` [Azure-resource provider](/azure/role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
+Deze taak kan worden uitgevoerd door een [gegevens eigenaar](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) van de opslag-BLOB of een beveiligingsprincipal die toestemming heeft gekregen voor de bewerking van de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action` [Azure-resource provider](../../role-based-access-control/resource-provider-operations.md#microsoftstorage) via een aangepaste Azure-rol.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 

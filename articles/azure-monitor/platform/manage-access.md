@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
-ms.openlocfilehash: 7acd287964d25cc7e98c11ec1986c73d8ae265da
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 79e5b1ddde0ff5f0d09dc1c20e3b20ec4de3d925
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104135"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536673"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor
 
@@ -23,7 +23,7 @@ In dit artikel wordt uitgelegd hoe u de toegang tot logboeken beheert en hoe u d
 * Gebruikers die toegang nodig hebben tot logboek gegevens van specifieke bronnen met behulp van Azure op rollen gebaseerd toegangs beheer (Azure RBAC), ook wel bekend als [resource-context](design-logs-deployment.md#access-mode)
 * Gebruikers die toegang nodig hebben tot logboek gegevens in een specifieke tabel in de werk ruimte met behulp van Azure RBAC.
 
-Lees de [implementatie van uw Azure monitor-logboeken](design-logs-deployment.md) voor meer informatie over de concepten van de logboeken met RBAC en toegangs strategieën.
+Lees de [implementatie van uw Azure monitor-logboeken](design-logs-deployment.md) om inzicht te krijgen in de logboeken van de concepten van Azure RBAC en toegangs strategieën.
 
 ## <a name="configure-access-control-mode"></a>Toegangs beheer modus configureren
 
@@ -106,7 +106,7 @@ Aan elke werk ruimte kunnen meerdere accounts worden gekoppeld en elk account ka
 
 Voor de volgende activiteiten zijn ook Azure-machtigingen vereist:
 
-|Bewerking |Azure-machtigingen nodig |Notities |
+|Actie |Azure-machtigingen nodig |Opmerkingen |
 |-------|-------------------------|------|
 | Bewakings oplossingen toevoegen en verwijderen | `Microsoft.Resources/deployments/*` <br> `Microsoft.OperationalInsights/*` <br> `Microsoft.OperationsManagement/*` <br> `Microsoft.Automation/*` <br> `Microsoft.Resources/deployments/*/write` | Deze machtigingen moeten worden toegekend op het niveau van de resourcegroep of het abonnement. |
 | De prijscategorie wijzigen | `Microsoft.OperationalInsights/workspaces/*/write` | |
@@ -137,9 +137,9 @@ De rol van Log Analytics lezer omvat de volgende acties van Azure:
 | Type    | Machtiging | Beschrijving |
 | ------- | ---------- | ----------- |
 | Actie | `*/read`   | De mogelijkheid om alle Azure-resources en-resource configuratie weer te geven. Omvat: <br> Status van de VM-extensie <br> Configuratie van Azure Diagnostics voor resources <br> Alle eigenschappen en instellingen van alle resources. <br> Voor werk ruimten kunnen volledige onbeperkte machtigingen de werk ruimte-instellingen lezen en query's uitvoeren op de gegevens. Bekijk meer gedetailleerde opties hierboven. |
-| Bewerking | `Microsoft.OperationalInsights/workspaces/analytics/query/action` | Afgeschaft, u hoeft ze niet aan gebruikers toe te wijzen. |
-| Bewerking | `Microsoft.OperationalInsights/workspaces/search/action` | Afgeschaft, u hoeft ze niet aan gebruikers toe te wijzen. |
-| Bewerking | `Microsoft.Support/*` | Mogelijkheid ondersteuningsaanvragen te openen |
+| Actie | `Microsoft.OperationalInsights/workspaces/analytics/query/action` | Afgeschaft, u hoeft ze niet aan gebruikers toe te wijzen. |
+| Actie | `Microsoft.OperationalInsights/workspaces/search/action` | Afgeschaft, u hoeft ze niet aan gebruikers toe te wijzen. |
+| Actie | `Microsoft.Support/*` | Mogelijkheid ondersteuningsaanvragen te openen |
 |Geen bewerking | `Microsoft.OperationalInsights/workspaces/sharedKeys/read` | Hiermee wordt voor komen dat de werkruimte sleutel die is vereist voor het gebruik van de gegevensverzamelings-API en agents wordt gelezen. Hiermee wordt voor komen dat de gebruiker nieuwe resources aan de werk ruimte toevoegt |
 
 Leden van de rol *Inzender van Log Analytics* kunnen:
@@ -194,9 +194,9 @@ Wanneer gebruikers een query uitvoeren op Logboeken vanuit een werk ruimte met b
 | `Microsoft.Insights/logs/<tableName>/read`<br><br>Voorbeelden:<br>`Microsoft.Insights/logs/*/read`<br>`Microsoft.Insights/logs/Heartbeat/read` | De mogelijkheid om alle logboek gegevens voor de resource weer te geven.  |
 | `Microsoft.Insights/diagnosticSettings/write` | De mogelijkheid om Diagnostische instellingen te configureren om Logboeken in te stellen voor deze bron. |
 
-`/read`machtigingen worden meestal verleend vanuit een rol die _ \* /Read of_ _\*_ machtigingen bevat, zoals de ingebouwde functie [lezer](../../role-based-access-control/built-in-roles.md#reader) en [Inzender](../../role-based-access-control/built-in-roles.md#contributor) . Aangepaste rollen met specifieke acties of speciale ingebouwde rollen bevatten mogelijk niet deze machtiging.
+`/read`machtigingen worden meestal verleend vanuit een rol die _\* /Read of_ _\*_ machtigingen bevat, zoals de ingebouwde functie [lezer](../../role-based-access-control/built-in-roles.md#reader) en [Inzender](../../role-based-access-control/built-in-roles.md#contributor) . Aangepaste rollen met specifieke acties of speciale ingebouwde rollen bevatten mogelijk niet deze machtiging.
 
-Zie [definiëren per-tabel toegangs beheer](#table-level-rbac) hieronder als u een ander toegangs beheer voor verschillende tabellen wilt maken.
+Zie [definiëren per-tabel toegangs beheer](#table-level-azure-rbac) hieronder als u een ander toegangs beheer voor verschillende tabellen wilt maken.
 
 ## <a name="custom-role-examples"></a>Voor beelden van aangepaste rollen
 
@@ -239,9 +239,9 @@ Zie [definiëren per-tabel toegangs beheer](#table-level-rbac) hieronder als u e
 
     * Gebruikers de volgende machtigingen verlenen voor hun resources: `*/read` , toegewezen aan de rol van lezer of `Microsoft.Insights/logs/*/read` . 
 
-## <a name="table-level-rbac"></a>RBAC op tabel niveau
+## <a name="table-level-azure-rbac"></a>Azure RBAC voor tabel niveau
 
-Met **RBAC op tabel niveau** kunt u naast de andere machtigingen nauw keurigere controle definiëren voor gegevens in een log Analytics-werk ruimte. Met dit besturings element kunt u specifieke gegevens typen definiëren die alleen toegankelijk zijn voor een specifieke groep gebruikers.
+Met **Azure RBAC op tabel niveau** kunt u naast de andere machtigingen nauw keurigere controle definiëren voor gegevens in een log Analytics-werk ruimte. Met dit besturings element kunt u specifieke gegevens typen definiëren die alleen toegankelijk zijn voor een specifieke groep gebruikers.
 
 U implementeert Table Access Control met [aangepaste Azure-rollen](../../role-based-access-control/custom-roles.md) om toegang te verlenen tot specifieke [tabellen](./data-platform-logs.md) in de werk ruimte. Deze rollen worden toegepast op werk ruimten met [toegangs beheer modi](design-logs-deployment.md#access-control-mode) werk ruimte-context of resource-context, ongeacht de [toegangs modus](design-logs-deployment.md#access-mode)van de gebruiker.
 
@@ -302,7 +302,7 @@ Soms zijn aangepaste logboeken afkomstig uit bronnen die niet rechtstreeks zijn 
 
 ### <a name="considerations"></a>Overwegingen
 
-* Als een gebruiker algemene Lees machtigingen heeft met de Standard Reader-of Inzender rollen die de _ \* /Read_ -actie bevatten, wordt het toegangs beheer per tabel overschreven en hebben ze toegang tot alle logboek gegevens.
+* Als een gebruiker algemene Lees machtigingen heeft met de Standard Reader-of Inzender rollen die de _\* /Read_ -actie bevatten, wordt het toegangs beheer per tabel overschreven en hebben ze toegang tot alle logboek gegevens.
 * Als een gebruiker toegang verleent per tabel, maar geen andere machtigingen heeft, zouden ze toegang kunnen krijgen tot logboek gegevens vanuit de API, maar niet van de Azure Portal. Als u toegang wilt bieden vanaf de Azure Portal, gebruikt u Log Analytics Reader als basis functie.
 * Beheerders en eigen aars van het abonnement hebben toegang tot alle gegevens typen, ongeacht andere machtigings instellingen.
 * Werkruimte eigenaren worden beschouwd als elke andere gebruiker voor toegangs beheer per tabel.

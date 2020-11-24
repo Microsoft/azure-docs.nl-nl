@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 352c057a74d1be5f440041b9f13127e8730edf82
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 4252e3a7f8c3ff9d0ec782a2a9222553c063463c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698067"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95533273"
 ---
 # <a name="configure-an-aks-cluster"></a>Een AKS-cluster configureren
 
@@ -237,47 +237,28 @@ az aks nodepool add --name gen2 --cluster-name myAKSCluster --resource-group myR
 Als u reguliere gen1-knooppunt groepen wilt maken, kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` .
 
 
-## <a name="ephemeral-os-preview"></a>Kortstondige OS (preview-versie)
+## <a name="ephemeral-os"></a>Kortstondig besturings systeem
 
-De besturingssysteem schijf voor een virtuele machine van Azure wordt standaard automatisch gerepliceerd naar Azure Storage om gegevens verlies te voor komen, omdat de VM moet worden verplaatst naar een andere host. Omdat containers echter niet zijn ontworpen om de lokale status persistent te maken, biedt dit gedrag een beperkte waarde bij een aantal nadelen, waaronder het langzamer inrichten van knoop punten en een hogere latentie bij lees/schrijf bewerkingen.
+Standaard repliceert Azure de besturingssysteem schijf voor een virtuele machine automatisch naar Azure-opslag om gegevens verlies te voor komen, omdat de VM naar een andere host moet worden verplaatst. Omdat containers echter niet zijn ontworpen om de lokale status persistent te maken, biedt dit gedrag een beperkte waarde bij een aantal nadelen, waaronder het langzamer inrichten van knoop punten en een hogere latentie bij lees/schrijf bewerkingen.
 
 Tijdelijke besturingssysteem schijven worden daarentegen alleen op de hostcomputer opgeslagen, net als een tijdelijke schijf. Dit biedt een lagere latentie voor lezen/schrijven, met snellere knooppunt schaling en cluster upgrades.
 
 Net als de tijdelijke schijf wordt een tijdelijke besturingssysteem schijf opgenomen in de prijs van de virtuele machine, zodat u geen extra opslag kosten in rekening brengt.
 
-De `EnableEphemeralOSDiskPreview` functie registreren:
+> [!IMPORTANT]
+>Wanneer een gebruiker niet expliciet beheerde schijven voor het besturings systeem aanvraagt, wordt AKS standaard ingesteld op tijdelijk besturings systeem, indien mogelijk voor een bepaalde nodepool-configuratie.
 
-```azurecli
-az feature register --name EnableEphemeralOSDiskPreview --namespace Microsoft.ContainerService
-```
+Wanneer u het tijdelijke besturings systeem gebruikt, moet de besturingssysteem schijf passen in de cache van de virtuele machine. De grootte van de VM-cache is tussen haakjes naast i/o-door Voer (' cache grootte in GiB ') beschikbaar in de [Azure-documentatie](../virtual-machines/dv3-dsv3-series.md) .
 
-Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
+Met de AKS standaard grootte van virtuele machines Standard_DS2_v2 met de standaard besturingssysteem grootte van 100 GB als voor beeld, ondersteunt deze VM-grootte tijdelijke besturings systemen, maar heeft alleen 86GB van de cache grootte. Deze configuratie wordt standaard ingesteld op het beheer van schijven als de gebruiker niet expliciet opgeeft. Als een gebruiker het tijdelijke besturings systeem expliciet heeft aangevraagd, ontvangt deze een validatie fout.
 
-```azurecli
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableEphemeralOSDiskPreview')].{Name:name,State:properties.state}"
-```
+Als een gebruiker hetzelfde Standard_DS2_v2 aanvraagt met een schijf van 60 GB, wordt deze configuratie standaard ingesteld op kortstondige besturings systemen: de aangevraagde grootte van 60 GB is kleiner dan de maximale cache grootte van 86GB.
 
-Wanneer de status wordt weer gegeven als geregistreerd, vernieuwt u de registratie van de `Microsoft.ContainerService` resource provider met behulp van de opdracht [AZ provider REGI ster](/cli/azure/provider?view=azure-cli-latest#az-provider-register&preserve-view=true) :
+Met behulp van Standard_D8s_v3 met een besturingssysteem schijf van 100 GB ondersteunt deze VM-grootte tijdelijke besturings systemen en heeft dit 200 GB aan cache ruimte. Als een gebruiker niet het schijf type van het besturings systeem opgeeft, ontvangt de nodepool standaard tijdelijk besturings systeem. 
 
-```azurecli
-az provider register --namespace Microsoft.ContainerService
-```
+Voor het tijdelijke besturings systeem is ten minste versie 2.15.0 van de Azure CLI vereist.
 
-Voor het tijdelijke besturings systeem is ten minste versie 0.4.63 van de CLI-extensie AKS-Preview vereist.
-
-Als u de AKS-preview CLI-extensie wilt installeren, gebruikt u de volgende Azure CLI-opdrachten:
-
-```azurecli
-az extension add --name aks-preview
-```
-
-Gebruik de volgende Azure CLI-opdrachten om de CLI-extensie AKS-preview te installeren:
-
-```azurecli
-az extension update --name aks-preview
-```
-
-### <a name="use-ephemeral-os-on-new-clusters-preview"></a>Kortstondige besturings systemen gebruiken in nieuwe clusters (preview-versie)
+### <a name="use-ephemeral-os-on-new-clusters"></a>Kortstondige besturings systeem op nieuwe clusters gebruiken
 
 Configureer het cluster voor het gebruik van tijdelijke besturingssysteem schijven wanneer het cluster wordt gemaakt. Gebruik de `--node-osdisk-type` markering om kortstondig besturings systeem in te stellen als het schijf type van het besturings systeem voor het nieuwe cluster.
 
@@ -285,9 +266,9 @@ Configureer het cluster voor het gebruik van tijdelijke besturingssysteem schijv
 az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS3_v2 --node-osdisk-type Ephemeral
 ```
 
-Als u een normaal cluster wilt maken met behulp van besturingssysteem schijven die zijn gekoppeld aan het netwerk, kunt u dit doen door de aangepaste code te weglaten of op te `--node-osdisk-type` geven `--node-osdisk-type=Managed` . U kunt er ook voor kiezen om meer tijdelijke OS-knooppunt groepen toe te voegen aan de hand van hieronder.
+Als u een normaal cluster wilt maken met behulp van besturingssysteem schijven die zijn gekoppeld aan het netwerk, kunt u dit doen door op te geven `--node-osdisk-type=Managed` . U kunt er ook voor kiezen om meer tijdelijke OS-knooppunt groepen toe te voegen aan de hand van hieronder.
 
-### <a name="use-ephemeral-os-on-existing-clusters-preview"></a>Kortstondige besturings systeem op bestaande clusters gebruiken (preview-versie)
+### <a name="use-ephemeral-os-on-existing-clusters"></a>Kortstondige besturings systeem op bestaande clusters gebruiken
 Configureer een nieuwe knooppunt groep om tijdelijke besturingssysteem schijven te gebruiken. Gebruik de `--node-osdisk-type` vlag om in te stellen als het schijf type van het besturings systeem voor die knooppunt groep.
 
 ```azurecli
@@ -297,7 +278,7 @@ az aks nodepool add --name ephemeral --cluster-name myAKSCluster --resource-grou
 > [!IMPORTANT]
 > Met het tijdelijke besturings systeem kunt u installatie kopieën van VM'S en instanties implementeren tot aan de grootte van de VM-cache. In het geval van AKS gebruikt de standaard schijf configuratie van het knoop punt 100GiB, wat betekent dat u een VM-grootte nodig hebt die een cache heeft die groter is dan 100 GiB. De standaard Standard_DS2_v2 heeft een cache grootte van 86 GiB, die niet groot genoeg is. Het Standard_DS3_v2 heeft een cache grootte van 172 GiB, die groot genoeg is. U kunt ook de standaard grootte van de besturingssysteem schijf verminderen met behulp van `--node-osdisk-size` . De minimale grootte voor AKS-installatie kopieën is 30GiB. 
 
-Als u knooppunt groepen met door het netwerk gekoppelde besturingssysteem schijven wilt maken, kunt u dit doen door de aangepaste code weg te laten `--node-osdisk-type` .
+Als u knooppunt groepen met door het netwerk gekoppelde besturingssysteem schijven wilt maken, kunt u dit doen door op te geven `--node-osdisk-type Managed` .
 
 ## <a name="custom-resource-group-name"></a>Aangepaste naam van resource groep
 

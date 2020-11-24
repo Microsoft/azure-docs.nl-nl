@@ -4,12 +4,12 @@ description: Metrische gegevens en klassieke Api's automatisch schalen, ook wel 
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 11/19/2018
-ms.openlocfilehash: 38a30f2adc0de7ccb9a9a3a4ba7ed53fd5fda3f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a8900d238e7542864e3dc53f9d192e579e2c96d1
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87317379"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536690"
 ---
 # <a name="azure-monitor-retirement-of-classic-deployment-model-apis-for-metrics-and-autoscale"></a>Azure Monitor buiten gebruik stellen van de Api's van het klassieke implementatie model voor metrische gegevens en automatisch schalen
 
@@ -53,7 +53,7 @@ Als u niet zeker weet of uw code of aangepaste hulp middelen de klassieke Api's 
 
 De bestaande mogelijkheden voor automatisch schalen en metrische gegevens blijven werken via de nieuwe Api's.  
 
-Migratie naar nieuwere Api's wordt geleverd met mogelijkheden op basis van Resource Manager, zoals ondersteuning voor consistente Role-Based Access Control (RBAC) in al uw bewakings Services. U krijgt ook extra functionaliteit voor metrische gegevens: 
+Migratie naar nieuwere Api's wordt geleverd met mogelijkheden op basis van Resource Manager, zoals ondersteuning voor consistent Azure-op rollen gebaseerd toegangs beheer (Azure RBAC) in al uw bewakings Services. U krijgt ook extra functionaliteit voor metrische gegevens: 
 
 - ondersteuning voor dimensies
 - consistente nauw keurigheid van metrische gegevens over 1 minuut voor alle services 

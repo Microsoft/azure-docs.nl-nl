@@ -9,12 +9,12 @@ ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: klaasl
 ms.custom: references_regions
-ms.openlocfilehash: 3174dbd36d9bb39ce606ec12f88397f795e91526
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4f84c3c2f6fc671a8cb6ac70313361540e3dd815
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832429"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95523277"
 ---
 # <a name="manage-and-find-azure-blob-data-with-blob-index-tags-preview"></a>Azure Blob-gegevens beheren en vinden met Blob index Tags (preview)
 
@@ -51,7 +51,7 @@ Deze blobs worden gescheiden met behulp van een voor voegsel van de naam van de 
 BLOB-index Tags zijn sleutel-waardeparen die kunnen worden toegepast op nieuwe of bestaande objecten in uw opslag account. U kunt index Tags tijdens het upload proces opgeven met behulp van [put-BLOB](/rest/api/storageservices/put-blob), [blokkerings lijst plaatsen](/rest/api/storageservices/put-block-list)of BLOB-bewerkingen [kopiëren](/rest/api/storageservices/copy-blob) en de optionele `x-ms-tags` koptekst. Als u al blobs in uw opslag account hebt, roept u de [set BLOB-Tags](/rest/api/storageservices/set-blob-tags) aan die een opgemaakt XML-document door geven met de index Tags in de hoofd tekst van de aanvraag.
 
 > [!IMPORTANT]
-> Het instellen van BLOB-index Tags kan worden uitgevoerd door de eigenaar van de [opslag-BLOB](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) en door iedereen met een Shared Access Signature die gemachtigd is om toegang te krijgen tot de labels van de BLOB (de `t` SAS-machtiging).
+> Het instellen van BLOB-index Tags kan worden uitgevoerd door de eigenaar van de [opslag-BLOB](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) en door iedereen met een Shared Access Signature die gemachtigd is om toegang te krijgen tot de labels van de BLOB (de `t` SAS-machtiging).
 >
 > Daarnaast kunnen RBAC-gebruikers met de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write` machtiging deze bewerking uitvoeren.
 
@@ -87,7 +87,7 @@ De volgende limieten gelden voor BLOB-index Tags:
 BLOB-index Tags worden opgeslagen als subresource naast de blobgegevens en kunnen onafhankelijk van de onderliggende BLOB-gegevens inhoud worden opgehaald. BLOB-index Tags voor één BLOB kunnen worden opgehaald met de bewerking [BLOB-labels ophalen](/rest/api/storageservices/get-blob-tags) . Met de bewerking [lijst-blobs](/rest/api/storageservices/list-blobs) met de `include:tags` para meter worden ook alle blobs in een container en de bijbehorende BLOB-index Tags geretourneerd.
 
 > [!IMPORTANT]
-> Het ophalen en weer geven van BLOB-index Tags kan worden uitgevoerd door de eigenaar van de gegevens van de [opslag-BLOB](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) en door iedereen met een Shared Access Signature die gemachtigd is om toegang te krijgen tot de labels van de BLOB (de `t` SAS-machtiging).
+> Het ophalen en weer geven van BLOB-index Tags kan worden uitgevoerd door de eigenaar van de gegevens van de [opslag-BLOB](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) en door iedereen met een Shared Access Signature die gemachtigd is om toegang te krijgen tot de labels van de BLOB (de `t` SAS-machtiging).
 >
 > Daarnaast kunnen RBAC-gebruikers met de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read` machtiging deze bewerking uitvoeren.
 
@@ -100,7 +100,7 @@ Met de indexerings engine worden uw sleutel waarden kenmerken in een multi-dimen
 Met de bewerking [blobs per Tags zoeken](/rest/api/storageservices/find-blobs-by-tags) kunt u een gefilterde set blobs ophalen waarvan de index Tags overeenkomen met een bepaalde query-expressie. `Find Blobs by Tags` ondersteunt filteren op alle containers in uw opslag account of u kunt het filteren op slechts één container bereiken. Omdat alle index code sleutels en-waarden teken reeksen zijn, gebruiken relationele Opera tors een lexografische-sortering.
 
 > [!IMPORTANT]
-> Het zoeken van gegevens met behulp van BLOB-index Tags kan worden uitgevoerd door de eigenaar van de gegevens van de [opslag-BLOB](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) en door iedereen met een Shared Access Signature die gemachtigd is om blobs te vinden op basis van tags (de `f` SAS-machtiging).
+> Het zoeken van gegevens met behulp van BLOB-index Tags kan worden uitgevoerd door de eigenaar van de gegevens van de [opslag-BLOB](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) en door iedereen met een Shared Access Signature die gemachtigd is om blobs te vinden op basis van tags (de `f` SAS-machtiging).
 >
 > Daarnaast kunnen RBAC-gebruikers met de `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action` machtiging deze bewerking uitvoeren.
 
@@ -235,7 +235,7 @@ Aanroepers die gebruikmaken van een [Azure AD-identiteit](../common/storage-auth
 | [BLOB-labels ophalen](/rest/api/storageservices/get-blob-tags)           | Micro soft. Storage/Storage accounts/blobServices/containers/blobs/tags/lezen     |
 | [Blobs zoeken op labels](/rest/api/storageservices/find-blobs-by-tags) | Micro soft. Storage/Storage accounts/blobServices/containers/blobs/filter/actie |
 
-Aanvullende machtigingen, gescheiden van de onderliggende BLOB-gegevens, zijn vereist voor bewerkingen voor index Tags. De rol [opslag-BLOB-gegevens eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner) wordt machtigingen verleend voor alle drie de bewerkingen van de BLOB-index Tags. Er worden alleen machtigingen voor en bewerkingen verleend aan de [gegevens lezer](/azure/role-based-access-control/built-in-roles#storage-blob-data-reader) van de opslag-BLOB `Find Blobs by Tags` `Get Blob Tags` .
+Aanvullende machtigingen, gescheiden van de onderliggende BLOB-gegevens, zijn vereist voor bewerkingen voor index Tags. De rol [opslag-BLOB-gegevens eigenaar](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) wordt machtigingen verleend voor alle drie de bewerkingen van de BLOB-index Tags. Er worden alleen machtigingen voor en bewerkingen verleend aan de [gegevens lezer](../../role-based-access-control/built-in-roles.md#storage-blob-data-reader) van de opslag-BLOB `Find Blobs by Tags` `Get Blob Tags` .
 
 ### <a name="sas-permissions"></a>SAS-machtigingen
 

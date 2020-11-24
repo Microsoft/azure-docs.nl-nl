@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: rdhillon
-ms.openlocfilehash: 1e5253d617c87d5869cebc817da6d265ebfdfa7e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 45a7a146dd929408b50a0045fe2598726ee05505
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77539464"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544306"
 ---
 # <a name="troubleshoot-azure-private-link-connectivity-problems"></a>Problemen met de connectiviteit van Azure Private Link oplossen
 
@@ -37,7 +37,7 @@ Hier volgen de verbindings scenario's die beschikbaar zijn met een persoonlijke 
 
 ## <a name="deployment-troubleshooting"></a>Problemen met implementatie oplossen
 
-Lees de informatie over het [uitschakelen van netwerk beleid op de privé koppelings service](https://docs.microsoft.com/azure/private-link/disable-private-link-service-network-policy) voor het oplossen van problemen waarbij u het bron-IP-adres niet kunt selecteren in het subnet van uw keuze voor uw persoonlijke koppelings service.
+Lees de informatie over het [uitschakelen van netwerk beleid op de privé koppelings service](./disable-private-link-service-network-policy.md) voor het oplossen van problemen waarbij u het bron-IP-adres niet kunt selecteren in het subnet van uw keuze voor uw persoonlijke koppelings service.
 
 Zorg ervoor dat de instelling **privateLinkServiceNetworkPolicies** is uitgeschakeld voor het subnet waarmee u het bron-IP-adres selecteert.
 
@@ -51,7 +51,7 @@ Als u verbindings problemen ondervindt met het instellen van uw persoonlijke kop
 
       ![Persoonlijk koppelings centrum](./media/private-link-tsg/private-link-center.png)
 
-    b. Selecteer **privé link services**in het linkerdeel venster.
+    b. Selecteer **privé link services** in het linkerdeel venster.
 
       ![Services voor persoonlijke koppelingen](./media/private-link-tsg/private-link-service.png)
 
@@ -59,7 +59,7 @@ Als u verbindings problemen ondervindt met het instellen van uw persoonlijke kop
 
     d. Controleer de verbindingen van het privé-eind punt.
      - Zorg ervoor dat het persoonlijke eind punt waarvan u verbinding zoekt, wordt vermeld met een **goedgekeurde** verbindings status.
-     - Als de status **in behandeling**is, selecteert u deze en keurt u deze goed.
+     - Als de status **in behandeling** is, selecteert u deze en keurt u deze goed.
 
        ![Verbindingen met privé-eind punten](./media/private-link-tsg/pls-private-endpoint-connections.png)
 
@@ -99,9 +99,9 @@ Als u verbindings problemen ondervindt met het instellen van uw persoonlijke kop
        - Als de verbinding wordt gemaakt met de back-end-pool op basis van de regels voor taak verdeling, is uw load balancer operationeel.
        - U kunt ook de load balancer metriek door Azure Monitor bekijken om te zien of gegevens via de load balancer stromen.
 
-1. Gebruik [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview) om te zien of gegevens stromen.
+1. Gebruik [Azure monitor](../azure-monitor/overview.md) om te zien of gegevens stromen.
 
-    a. Selecteer **metrische gegevens**op de bron van de persoonlijke koppelings service.
+    a. Selecteer **metrische gegevens** op de bron van de persoonlijke koppelings service.
      - Selecteer **bytes in** of **uitgaande bytes**.
      - Controleer of de gegevens stroom lopen wanneer u verbinding probeert te maken met de persoonlijke koppelings service. Er wordt een vertraging van ongeveer 10 minuten verwacht.
 
@@ -111,5 +111,5 @@ Als u verbindings problemen ondervindt met het instellen van uw persoonlijke kop
 
 ## <a name="next-steps"></a>Volgende stappen
 
- * [Een service voor persoonlijke koppelingen maken](https://docs.microsoft.com/azure/private-link/create-private-link-service-cli)
+ * [Een service voor persoonlijke koppelingen maken](./create-private-link-service-cli.md)
  * [Probleemoplossings gids voor Azure private Endpoint](troubleshoot-private-endpoint-connectivity.md)

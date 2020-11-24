@@ -3,12 +3,12 @@ title: Instellingen van Azure Service Fabric cluster wijzigen
 description: In dit artikel worden de infrastructuur instellingen en het Fabric-upgrade beleid beschreven dat u kunt aanpassen.
 ms.topic: reference
 ms.date: 08/30/2019
-ms.openlocfilehash: a83d24b4badd78750756a3cb4564b1e53fd30593
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 1f16e89dd1131f6aea64e5e72a342b3b737f3728
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648222"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95542640"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Instellingen voor Service Fabric-cluster aanpassen
 In dit artikel worden de verschillende infrastructuur instellingen voor uw Service Fabric cluster beschreven die u kunt aanpassen. Voor clusters die worden gehost in azure, kunt u instellingen aanpassen via de [Azure Portal](https://portal.azure.com) of met behulp van een Azure Resource Manager sjabloon. Zie [de configuratie van een Azure-cluster upgraden](service-fabric-cluster-config-upgrade-azure.md)voor meer informatie. Voor zelfstandige clusters past u de instellingen aan door de *ClusterConfig.jsin* het bestand bij te werken en een configuratie-upgrade uit te voeren op uw cluster. Zie [de configuratie van een zelfstandig cluster upgraden](service-fabric-cluster-config-upgrade-windows-server.md)voor meer informatie.
@@ -141,6 +141,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |IsEnabled|BOOL, default is FALSE|Statisch|Hiermee wordt DNS in-of uitgeschakeld. DNS is standaard uitgeschakeld en deze configuratie moet worden ingesteld om het in te scha kelen. |
 |PartitionPrefix|teken reeks, standaard is '--'|Statisch|Hiermee wordt de teken reeks waarde voor het partitie voorvoegsel in DNS-query's voor gepartitioneerde services beheerd. De waarde: <ul><li>Moet voldoen aan de RFC-normen, omdat deze deel uitmaakt van een DNS-query.</li><li>Mag geen punt bevatten: '. ', aangezien punt conflicten met het gedrag van DNS-achtervoegsels.</li><li>Mag niet langer zijn dan 5 tekens.</li><li>Kan geen lege teken reeks zijn.</li><li>Als de instelling PartitionPrefix wordt overschreven, moet PartitionSuffix worden overschreven en vice versa.</li></ul>Zie [service Fabric DNS-service](service-fabric-dnsservice.md)voor meer informatie.|
 |PartitionSuffix|teken reeks, standaard instelling is|Statisch|Hiermee beheert u de waarde van de teken reeks voor partitie achtervoegsel in DNS-query's voor gepartitioneerde Services. De waarde: <ul><li>Moet voldoen aan de RFC-normen, omdat deze deel uitmaakt van een DNS-query.</li><li>Mag geen punt bevatten: '. ', aangezien punt conflicten met het gedrag van DNS-achtervoegsels.</li><li>Mag niet langer zijn dan 5 tekens.</li><li>Als de instelling PartitionPrefix wordt overschreven, moet PartitionSuffix worden overschreven en vice versa.</li></ul>Zie [service Fabric DNS-service](service-fabric-dnsservice.md)voor meer informatie. |
+|RetryTransientFabricErrors|BOOL, default is True|Statisch|De instelling bepaalt de mogelijkheden voor opnieuw proberen bij het aanroepen van Service Fabric-Api's vanuit DNS. Wanneer deze functie is ingeschakeld, worden er Maxi maal drie keer opnieuw geprobeerd als er een tijdelijke fout optreedt.|
 
 ## <a name="eventstoreservice"></a>EventStoreService
 
@@ -423,7 +424,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |AzureStorageMaxConnections | Int, standaard waarde is 5000 |Dynamisch|Het maximum aantal gelijktijdige verbindingen met Azure Storage. |
 |AzureStorageMaxWorkerThreads | Int, standaard waarde is 25 |Dynamisch|Het maximum aantal worker-threads parallel. |
 |AzureStorageOperationTimeout | Tijd in seconden, standaard waarde is 6000 |Dynamisch|Geef een tijds duur in seconden op. Time-out voor het volt ooien van de xstore-bewerking. |
-|CleanupApplicationPackageOnProvisionSuccess|BOOL, default is FALSE |Dynamisch|Hiermee wordt het automatisch opruimen van het toepassings pakket bij een geslaagde inrichting in-of uitgeschakeld.<br/> *De aanbevolen procedure is om te gebruiken `true` .*
+|CleanupApplicationPackageOnProvisionSuccess|BOOL, default is True |Dynamisch|Hiermee wordt het automatisch opruimen van het toepassings pakket bij een geslaagde inrichting in-of uitgeschakeld.
 |CleanupUnusedApplicationTypes|BOOL, default is FALSE |Dynamisch|Met deze configuratie als deze functie is ingeschakeld, kan de registratie van ongebruikte toepassings type versies automatisch ongedaan worden gemaakt om de meest recente drie ongebruikte versies over te slaan, waardoor de schijf ruimte die wordt ingen Omen door Image Store De automatische opschoning wordt geactiveerd aan het einde van de inrichting van het specifieke app-type en wordt ook periodiek eenmaal per dag uitgevoerd voor alle toepassings typen. Het aantal ongebruikte versies dat moet worden overgeslagen, kan worden geconfigureerd met behulp van de para meter MaxUnusedAppTypeVersionsToKeep. <br/> *De aanbevolen procedure is om te gebruiken `true` .*
 |DisableChecksumValidation | BOOL, default is False |Statisch| Met deze configuratie kan de controlesom validatie tijdens het inrichten van de toepassing worden in-of uitgeschakeld. |
 |DisableServerSideCopy | BOOL, default is False |Statisch|Met deze configuratie wordt het exemplaar van het toepassings pakket op de installatie kopie opslag tijdens het inrichten van de toepassing ingeschakeld of uitgeschakeld. |
@@ -520,6 +521,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |AutoDetectAvailableResources|BOOL, default is TRUE|Statisch|Met deze configuratie wordt de automatische detectie geactiveerd van beschik bare bronnen op het knoop punt (CPU en geheugen) wanneer deze configuratie is ingesteld op True, worden de werkelijke capaciteit gelezen en gecorrigeerd als de gebruiker onjuiste knooppunt capaciteit heeft opgegeven of deze niet heeft gedefinieerd als deze configuratie is ingesteld op false. er wordt een waarschuwing weer gegeven dat de gebruiker onjuiste knooppunt capaciteit heeft opgegeven. maar we zullen deze niet corrigeren. Dit betekent dat de gebruiker de capaciteit wil opgeven die is opgegeven als > dan het knoop punt echt heeft of als de capaciteit niet is gedefinieerd. Er wordt een onbeperkte capaciteit aangenomen |
 |BalancingDelayAfterNewNode | Tijd in seconden, standaard waarde is 120 |Dynamisch|Geef een tijds duur in seconden op. Start geen taak verdeling binnen deze periode na het toevoegen van een nieuw knoop punt. |
 |BalancingDelayAfterNodeDown | Tijd in seconden, standaard waarde is 120 |Dynamisch|Geef een tijds duur in seconden op. Onderhouds activiteiten binnen deze periode niet starten na een gebeurtenis omlaag in een knoop punt. |
+|BlockNodeInUpgradeConstraintPriority | Int, standaard is 0 |Dynamisch|Bepaalt de prioriteit van de capaciteits beperking: 0: hard; 1: zacht; negatief: negeren  |
 |CapacityConstraintPriority | Int, standaard is 0 | Dynamisch|Bepaalt de prioriteit van de capaciteits beperking: 0: hard; 1: zacht; negatief: negeren. |
 |ConsecutiveDroppedMovementsHealthReportLimit | Int, standaard waarde is 20 | Dynamisch|Hiermee definieert u het aantal opeenvolgende keren dat door ResourceBalancer verzonden bewegingen worden verwijderd voordat diagnostische gegevens worden uitgevoerd en status waarschuwingen worden verzonden. Negatief: er zijn geen waarschuwingen verzonden onder deze voor waarde. |
 |ConstraintFixPartialDelayAfterNewNode | Tijd in seconden, standaard waarde is 120 |Dynamisch| Geef een tijds duur in seconden op. DDo geen FaultDomain-en upgrade Domain-beperkings schendingen binnen deze periode oplossen na het toevoegen van een nieuw knoop punt. |
@@ -758,7 +760,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |PropertyWriteBatch |teken reeks, standaard instelling is "beheerder" |Dynamisch|Beveiligings configuraties voor het benoemen van schrijf bewerkingen voor eigenschappen. |
 |ProvisionApplicationType |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het inrichten van het toepassings type. |
 |ProvisionFabric |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het inrichten van MSI en/of cluster manifest. |
-|Query’s uitvoeren |teken reeks, standaard is ' \| \| gebruiker beheerder ' |Dynamisch| Beveiligings configuratie voor query's. |
+|Query |teken reeks, standaard is ' \| \| gebruiker beheerder ' |Dynamisch| Beveiligings configuratie voor query's. |
 |RecoverPartition |teken reeks, standaard instelling is "beheerder" | Dynamisch|Beveiligings configuratie voor het herstellen van een partitie. |
 |RecoverPartitions |teken reeks, standaard instelling is "beheerder" | Dynamisch|Beveiligings configuratie voor het herstellen van partities. |
 |RecoverServicePartitions |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het herstellen van service partities. |

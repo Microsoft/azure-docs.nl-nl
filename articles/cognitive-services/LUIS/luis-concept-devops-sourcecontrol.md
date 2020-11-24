@@ -4,13 +4,13 @@ description: Uw Language Understanding-app (LUIS) onderhouden onder broncode beh
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/28/2020
-ms.openlocfilehash: 9e322ac89d8ecad93c2002aa302c155f895911f4
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.date: 11/18/2020
+ms.openlocfilehash: cf5c88df4e2ac6b95e99a3a78b1bf1e45bf534ed
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95019191"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95535551"
 ---
 # <a name="devops-practices-for-luis"></a>DevOps-procedures voor LUIS
 
@@ -53,7 +53,7 @@ Als u een LUIS-app in een indeling wilt opslaan `.lu` en deze wilt plaatsen onde
 - OF: gebruik een tekst editor om een `.lu` bestand voor een Luis-app te maken en toe te voegen aan uw opslag plaats voor broncode beheer
 
 > [!TIP]
-> Als u werkt met de JSON-export van een LUIS-app, kunt u [deze converteren naar LUDown](https://github.com/microsoft/botframework-cli/tree/master/packages/luis#bf-luisconvert) met behulp van de [BotBuilder-HULPPROGRAM ma's Luis cli](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS). Gebruik de `--sort` optie om ervoor te zorgen dat de intenties en uitingen alfabetisch worden gesorteerd.  
+> Als u werkt met de JSON-export van een LUIS-app, kunt u [deze converteren naar LUDown](https://github.com/microsoft/botframework-cli/tree/master/packages/luis#bf-luisconvert).  Gebruik de `--sort` optie om ervoor te zorgen dat de intenties en uitingen alfabetisch worden gesorteerd.  
 > Houd er rekening mee dat **.** Met de Lu-export functie die in de Luis-Portal is ingebouwd, wordt de uitvoer al gesorteerd.
 
 ### <a name="build-the-luis-app-from-source"></a>De LUIS-app bouwen vanuit de bron

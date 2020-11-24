@@ -9,14 +9,14 @@ ms.date: 10/10/2019
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3a3395873d7655118e3fcc9c36cdfc3855f8f000
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14da8b6cb695703f1881b6b0b9858772bde386c5
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91714820"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544748"
 ---
-# <a name="performance-and-scalability-checklist-for-blob-storage"></a>Controle lijst voor prestaties en schaal baarheid voor Blob Storage
+# <a name="performance-and-scalability-checklist-for-blob-storage"></a>Controlelijst voor prestaties en schaalbaarheid voor Blob-opslag
 
 Micro soft heeft een aantal bewezen prak tijken ontwikkeld voor het ontwikkelen van toepassingen met hoge prestaties met Blob Storage. Deze controlelijst vermeldt de belangrijkste procedures die ontwikkelaars kunnen volgen om de prestaties te optimaliseren. Neem bij het ontwerpen van uw toepassing en tijdens het gehele proces deze procedures in acht.
 
@@ -59,7 +59,7 @@ In dit artikel worden bewezen procedures voor het uitvoeren van prestaties in ee
 
 Als uw toepassing een van de schaalbaarheidsdoelen benadert of overschrijdt, kunnen er meer latenties in of beperkingen voor transacties optreden. Wanneer Azure Storage uw toepassing beperkt, begint de service met het retourneren van de foutcodes 503 (server bezet) of 500 (time-out voor bewerking). Het vermijden van deze fouten door binnen de grenzen van de schaalbaarheidsdoelen te blijven vormt een belangrijk onderdeel van het verbeteren van de prestaties van uw toepassing.
 
-Zie [Schaalbaarheids- en prestatiedoelen voor Azure Storage](/azure/storage/queues/scalability-targets#scale-targets-for-queue-storage) voor meer informatie over de schaalbaarheidsdoelen voor de Queue-service.
+Zie [Schaalbaarheids- en prestatiedoelen voor Azure Storage](../queues/scalability-targets.md#scale-targets-for-queue-storage) voor meer informatie over de schaalbaarheidsdoelen voor de Queue-service.
 
 ### <a name="maximum-number-of-storage-accounts"></a>Maximumaantal opslagaccounts
 
@@ -100,7 +100,7 @@ Meer informatie over hoe Azure Storage uw BLOB-gegevens partitioneert, is handig
 
 Blob-opslag maakt gebruik van een partitie schema op basis van bereik voor schalen en taak verdeling. Elke BLOB heeft een partitie sleutel die bestaat uit de volledige naam van de BLOB (account + container + blob). De partitie sleutel wordt gebruikt voor het partitioneren van BLOB-gegevens in bereiken. De bereiken worden vervolgens gelijkmatig verdeeld over de Blob-opslag.
 
-Partitioneren op basis van een bereik houdt in dat naam conventies die gebruikmaken van lexicale ordening (bijvoorbeeld *mypayroll*, *myperformance*, *myemployees*, enzovoort) of tijds tempels (*log20160101*, *log20160102*, *log20160102*enzovoort), meer zullen leiden tot de partities die zich op dezelfde partitie server bevinden. , totdat meer belasting nodig is, moeten ze worden opgesplitst in kleinere bereiken. Door co-locaties op dezelfde partitie server te plaatsen, verbetert u de prestaties, zodat een belang rijk onderdeel van de prestatie verbetering de naam blobs biedt op een manier die ze het meest effectief organiseert.
+Partitioneren op basis van een bereik houdt in dat naam conventies die gebruikmaken van lexicale ordening (bijvoorbeeld *mypayroll*, *myperformance*, *myemployees*, enzovoort) of tijds tempels (*log20160101*, *log20160102*, *log20160102* enzovoort), meer zullen leiden tot de partities die zich op dezelfde partitie server bevinden. , totdat meer belasting nodig is, moeten ze worden opgesplitst in kleinere bereiken. Door co-locaties op dezelfde partitie server te plaatsen, verbetert u de prestaties, zodat een belang rijk onderdeel van de prestatie verbetering de naam blobs biedt op een manier die ze het meest effectief organiseert.
 
 Alle blobs in een container kunnen bijvoorbeeld worden bediend door één server totdat de belasting voor deze blobs verdere herverdeling van de partitielay-bereiken vereist. Op dezelfde manier kan een groep met zeer bewaarde accounts met hun namen die zijn gerangschikt in lexicale volg orde worden bediend door één server totdat de belasting van een of meer van deze accounts moet worden verdeeld over meerdere partitie servers.
 
@@ -195,7 +195,7 @@ ServicePointManager.DefaultConnectionLimit = 100; //(Or More)
 
 Zie de documentatie voor meer informatie over het instellen van de verbindings limiet voor andere programmeer talen.  
 
-Zie voor meer informatie het blogbericht [Webservices: Gelijktijdige verbindingen](https://blogs.msdn.microsoft.com/darrenj/2005/03/07/web-services-concurrent-connections/).  
+Zie voor meer informatie het blogbericht [Webservices: Gelijktijdige verbindingen](/archive/blogs/darrenj/web-services-concurrent-connections).  
 
 ### <a name="increase-minimum-number-of-threads"></a>Minimumaantal threads verhogen
 
@@ -213,7 +213,7 @@ Parallelle uitvoering kan ideaal zijn voor de prestaties, maar wees voorzichtig 
 
 ## <a name="client-libraries-and-tools"></a>Clientbibliotheken en hulpprogramma's
 
-Gebruik altijd de nieuwste clientbibliotheken en hulpprogramma's van Microsoft voor de beste prestaties. Azure Storage-clientbibliotheken zijn beschikbaar in diverse talen. Azure Storage biedt ook ondersteuning voor PowerShell en Azure CLI. Microsoft ontwikkelt deze clientbibliotheken en hulpprogramma's actief met het oog op de prestaties, houdt ze up-to-date met de nieuwste serviceversies en zorgt ervoor dat ze een groot aantal van de bewezen uitvoeringspraktijken intern verwerken. Zie de referentiedocumentatie bij [Azure Storage](/azure/storage/#reference) voor meer informatie.
+Gebruik altijd de nieuwste clientbibliotheken en hulpprogramma's van Microsoft voor de beste prestaties. Azure Storage-clientbibliotheken zijn beschikbaar in diverse talen. Azure Storage biedt ook ondersteuning voor PowerShell en Azure CLI. Microsoft ontwikkelt deze clientbibliotheken en hulpprogramma's actief met het oog op de prestaties, houdt ze up-to-date met de nieuwste serviceversies en zorgt ervoor dat ze een groot aantal van de bewezen uitvoeringspraktijken intern verwerken.
 
 ## <a name="handle-service-errors"></a>Servicefouten afhandelen
 
@@ -243,11 +243,11 @@ Als u gegevens wilt kopiëren binnen hetzelfde opslag account, gebruikt u de bew
 
 ### <a name="use-azcopy"></a>AzCopy gebruiken
 
-Het AzCopy-opdracht regel programma is een eenvoudige en efficiënte optie voor bulk overdracht van blobs naar, van en tussen opslag accounts. AzCopy is geoptimaliseerd voor dit scenario en kan hoge overdrachts snelheden bezorgen. AzCopy versie 10 gebruikt de `Put Block From URL` bewerking voor het kopiëren van BLOB-gegevens over opslag accounts. Zie voor meer informatie [kopiëren of verplaatsen van gegevens naar Azure Storage met behulp van AzCopy V10 toevoegen](/azure/storage/common/storage-use-azcopy-v10).  
+Het AzCopy-opdracht regel programma is een eenvoudige en efficiënte optie voor bulk overdracht van blobs naar, van en tussen opslag accounts. AzCopy is geoptimaliseerd voor dit scenario en kan hoge overdrachts snelheden bezorgen. AzCopy versie 10 gebruikt de `Put Block From URL` bewerking voor het kopiëren van BLOB-gegevens over opslag accounts. Zie voor meer informatie [kopiëren of verplaatsen van gegevens naar Azure Storage met behulp van AzCopy V10 toevoegen](../common/storage-use-azcopy-v10.md).  
 
 ### <a name="use-azure-data-box"></a>Azure Data Box gebruiken
 
-Voor het importeren van grote hoeveel heden gegevens in Blob Storage kunt u de Azure Data Box-serie gebruiken voor offline overdrachten. Door micro soft geleverde Data Box-apparaten zijn een goede keuze om grote hoeveel heden gegevens naar Azure te verplaatsen wanneer u beperkt bent door tijd, netwerk beschikbaarheid of kosten. Zie de [documentatie van Azure DataBox](/azure/databox/)voor meer informatie.
+Voor het importeren van grote hoeveel heden gegevens in Blob Storage kunt u de Azure Data Box-serie gebruiken voor offline overdrachten. Door micro soft geleverde Data Box-apparaten zijn een goede keuze om grote hoeveel heden gegevens naar Azure te verplaatsen wanneer u beperkt bent door tijd, netwerk beschikbaarheid of kosten. Zie de [documentatie van Azure DataBox](../../databox/index.yml)voor meer informatie.
 
 ## <a name="content-distribution"></a>Inhouds distributie
 

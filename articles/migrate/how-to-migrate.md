@@ -2,19 +2,19 @@
 title: Migratie hulpprogramma's toevoegen in Azure Migrate
 description: Meer informatie over het toevoegen van hulpprogram ma's voor migratie in Azure Migrate.
 ms.topic: article
-ms.date: 04/26/2020
-ms.openlocfilehash: b6ac8ed64d3f12783cc16f0428874a19d027adf9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/23/2020
+ms.openlocfilehash: 5ff5fb54e077896fb6169ad53ce29483cd2c2f89
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86109804"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95545293"
 ---
 # <a name="add-migration-tools"></a>Migratiehulpprogramma's toevoegen
 
 In dit artikel wordt beschreven hoe u migratie hulpprogramma's toevoegt in [Azure migrate](./migrate-services-overview.md).
 
-- Als u een hulp programma voor migratie wilt toevoegen en nog geen Azure Migrate project hebt ingesteld, volgt u dit [artikel](how-to-add-tool-first-time.md).
+- Als u een hulp programma voor migratie wilt toevoegen en nog geen Azure Migrate project hebt ingesteld, volgt u dit [artikel](create-manage-projects.md).
 - Als u een ISV-hulp programma voor migratie hebt toegevoegd, [volgt u de stappen](prepare-isv-movere.md)om te voor bereiding op het werken met het hulp programma.
 
 ## <a name="select-a-migration-scenario"></a>Een migratie scenario selecteren
@@ -23,46 +23,69 @@ In dit artikel wordt beschreven hoe u migratie hulpprogramma's toevoegt in [Azur
 2. Selecteer het migratie scenario dat u wilt gebruiken:
 
     - Als u machines en werk belastingen wilt migreren naar Azure, selecteert u **servers beoordelen en migreren**.
-    - Als u on-premises SQL Server data bases wilt migreren, selecteert u **data bases evalueren en migreren**.
-    - Als u on-premises Web-Apps wilt migreren, selecteert u **Web-apps evalueren en migreren**.
-    - Als u grote hoeveel heden on-premises gegevens naar Azure wilt migreren in de offline modus, selecteert u **een Data Box order**.
+    - Als u on-premises data bases wilt migreren, selecteert u **data bases evalueren en migreren**.
+    - Als u on-premises Web-Apps wilt migreren, selecteert u **meer**  >  **Web apps** verkennen.
+    - Als u gegevens wilt migreren naar Azure met behulp van het vak Data, selecteert u **meer**  >  **Data Box** verkennen.
 
-    ![Beoordelings scenario](./media/how-to-migrate/assess-scenario.png)
+    ![Opties voor het selecteren van een migratie scenario](./media/how-to-migrate/migrate-scenario.png)
+
 
 ## <a name="select-a-server-migration-tool"></a>Selecteer een hulp programma voor server migratie
 
-1. Klik op **servers beoordelen en migreren**.
-2. Selecteer in **Azure migrate-servers**, als u nog geen migratie hulpprogramma's hebt toegevoegd, onder **migratie Hulpprogramma's**, **hier op klikken om een hulp programma voor migratie toe te voegen**. Als u hulpprogram ma's voor migratie al hebt toegevoegd, selecteert u **wijzigen**in **meer migratie hulpprogramma's toevoegen**.
+1. Een hulp programma toevoegen:
 
-    > [!NOTE]
-    > Als u naar een ander project moet navigeren, klikt u in **Azure migrate-servers**naast **Details voor een ander migratie project**op **Klik hier**.
+    - Als u een Azure Migrate project hebt gemaakt met behulp van de optie **servers beoordelen en migraties** in de portal, wordt het hulp programma voor migratie van Azure migrate server automatisch toegevoegd aan het project. Als u aanvullende hulpprogram ma's voor migratie wilt toevoegen, in **servers**, naast **migratie hulpprogramma's**, selecteert u **meer hulp middelen toevoegen**.
+    
+         ![Knop voor het toevoegen van aanvullende hulpprogram ma's voor migratie](./media/how-to-migrate/add-migration-tools.png)
 
-3. Selecteer in **Azure migrate**het migratie hulpprogramma dat u wilt gebruiken.
-    - Als u Azure Migrate server migratie gebruikt, kunt u migraties rechtstreeks in het Azure Migrate-project instellen en uitvoeren.
-    - Als u een beoordelings programma van derden gebruikt, navigeert u naar de koppeling die u voor de ISV hebt gekregen en voert u de migratie uit volgens de instructies die ze bieden.
+    - Als u een project hebt gemaakt met behulp van een andere optie en nog geen migratie hulpprogramma's hebt **Servers**, selecteert u in de  >  **hulpprogram ma's** voor servers migreren **hier klikken**.
+
+    ![Knop om eerste migratie hulpprogramma's toe te voegen](./media/how-to-migrate/no-migration-tool.png)
+
+2. Selecteer in **Azure migrate**  >  **hulp middelen toevoegen** de hulpprogram ma's die u wilt toevoegen. Selecteer vervolgens **hulp programma toevoegen**.
+
+    ![Beoordelings hulpprogramma's selecteren in lijst](./media/how-to-migrate/select-migration-tool.png)
+
 
 ## <a name="select-a-database-migration-tool"></a>Selecteer een hulp programma voor database migratie
 
-1. Klik op **data bases evalueren en migreren**
-2. Klik in **data bases**op **Extra toevoegen**.
-3. Selecteer in een hulp programma toevoegen > hulp **programma voor migratie selecteren**het hulp programma dat u wilt gebruiken om uw data base te migreren.
+Als u een Azure Migrate project hebt gemaakt met behulp van de optie **Data Base evalueren en migreren** in de portal, wordt het hulp programma voor database migratie automatisch toegevoegd aan het project. 
+
+1. Als het hulp programma voor database migratie zich niet in het project bevindt, selecteert u in **data bases**  >  -**evaluatie Programma's** de optie **Klik hier**.
+    
+    ![Hulp programma voor database migratie toevoegen](./media/how-to-migrate/no-database-migration-tool.png)
+
+
+2. In **Azure migrate**  >  **hulp middelen toevoegen** selecteert u het hulp programma voor database migratie. Selecteer vervolgens **hulp programma toevoegen**.
+
+    ![Het hulp programma voor database migratie selecteren in de lijst](./media/how-to-migrate/select-database-migration-tool.png)
+
+    
 
 ## <a name="select-a-web-app-migration-tool"></a>Een hulp programma voor migratie van web-apps selecteren
 
-1. Klik op **Web-apps evalueren en migreren**.
-2. Volg de koppeling naar het migratie hulpprogramma voor de Azure App Service. Gebruik het hulp programma voor migratie om het volgende te doen:
+Als u een Azure migrate project hebt gemaakt met behulp van de optie **meer**  >  **webapps** verkennen in de portal, wordt het hulp programma voor migratie van de web-app automatisch toegevoegd aan het project. 
 
-    - **Apps online beoordelen**: u kunt apps met een open bare URL online beoordelen en migreren met behulp van de Azure app Service Migration Assistant.
-    - **.Net/php**: voor interne .net-en PHP-apps kunt u de migration assistant downloaden en uitvoeren.
+1. Als het hulp programma voor migratie van de web-app zich niet in het project bevindt, selecteert u in **Web apps**  >  -**evaluatie hulpprogramma's** **hier op**.
+
+    ![Hulp programma voor migratie van web-apps toevoegen](./media/how-to-migrate/no-web-app-migration-tool.png)
+ 
+
+2. In **Azure migrate**  >  **hulp middelen toevoegen** selecteert u het hulp programma voor migratie van webtoepassingen. Selecteer vervolgens **hulp programma toevoegen**.
+
+    ![De webapp-evaluatie hulpprogramma's selecteren in de lijst](./media/how-to-migrate/select-web-app-migration-tool.png)
+
 
 ## <a name="order-an-azure-data-box"></a>Een Azure Data Box best Ellen
 
-Als u grote hoeveel heden gegevens naar Azure wilt migreren, kunt u een Azure DAta Box best Ellen voor offline gegevens overdracht.
+Als u grote hoeveel heden gegevens naar Azure wilt migreren, kunt u een Azure Data Box voor offline gegevens overdracht best Ellen.
 
-1. Klik op **order a data Box**.
-2. Geef uw abonnement op in **uw Azure data box selecteren**. 
-3. De overdracht is een import bewerking naar Azure. Geef de gegevens bron en de Azure-regio bestemming voor de gegevens op.
+1. Selecteer in **overzicht** de optie **meer verkennen**.
+2. In **verkennen** selecteert u **Data Box**.
+3. Selecteer in aan de **slag met data Box** het abonnement en de resource groep die u wilt gebruiken voor het best Ellen van een Data box.
+4. Het **overdrachts type** is een import naar Azure. Geef het land op waarin de gegevens zich bevinden en de Azure-regio waarnaar u de gegevens wilt overdragen. 
+5. Klik op **Toep assen** om de instellingen op te slaan.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Probeer een migratie uit met Azure Migrate server migratie voor [Hyper-V-](tutorial-migrate-hyper-v.md) of [VMware](tutorial-migrate-vmware.md) -vm's.
+Voer een migratie uit met behulp van het hulp programma voor migratie van de Azure Migrate-server voor [Hyper-V-](tutorial-migrate-hyper-v.md) of [VMware](tutorial-migrate-vmware.md) -vm's.

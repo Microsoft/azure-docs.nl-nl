@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/03/2020
 ms.author: barbkess
 ms.custom: references_regions
-ms.openlocfilehash: b720d9dd824018d885ccc9860ee9fd8a90a46051
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d42eabe3afeb738b0cbb011881678839fe0ba2d7
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84194321"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95539053"
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>Bedrijfscontinuïteit en herstel na noodgeval (BCDR): gekoppelde Azure-regio's
 
@@ -43,7 +43,7 @@ Nee. Hoewel een bepaalde Azure-service afhankelijk is van een regionale combi na
 
 ## <a name="must-i-use-azure-regional-pairs"></a>Moet ik regionale paren van Azure gebruiken?
 
-Nee. Klanten kunnen Azure-Services gebruiken voor het ontwikkelen van een flexibele service zonder dat dit afhankelijk is van de regionale paren van Azure.  We raden u echter aan om bedrijfs continuïteit nood herstel (BCDR) over regionale paren te configureren om te profiteren van [isolatie](./security/fundamentals/isolation-choices.md) en de [Beschik baarheid](./availability-zones/az-overview.md)te verbeteren. We adviseren voor toepassingen die meerdere actieve regio’s ondersteunen om, waar mogelijk, beide regio’s in een regiopaar te gebruiken. Dit zorgt voor optimale Beschik baarheid van toepassingen en een geminimaliseerde herstel tijd bij een nood geval. Als dat mogelijk is, kunt u uw toepassing ontwerpen voor een [maximale tolerantie](https://docs.microsoft.com/azure/architecture/framework/resiliency/overview) en een gemakkelijke [nood herstel](https://docs.microsoft.com/azure/architecture/framework/resiliency/backup-and-recovery).
+Nee. Klanten kunnen Azure-Services gebruiken voor het ontwikkelen van een flexibele service zonder dat dit afhankelijk is van de regionale paren van Azure.  We raden u echter aan om bedrijfs continuïteit nood herstel (BCDR) over regionale paren te configureren om te profiteren van [isolatie](./security/fundamentals/isolation-choices.md) en de [Beschik baarheid](./availability-zones/az-overview.md)te verbeteren. We adviseren voor toepassingen die meerdere actieve regio’s ondersteunen om, waar mogelijk, beide regio’s in een regiopaar te gebruiken. Dit zorgt voor optimale Beschik baarheid van toepassingen en een geminimaliseerde herstel tijd bij een nood geval. Als dat mogelijk is, kunt u uw toepassing ontwerpen voor een [maximale tolerantie](/azure/architecture/framework/resiliency/overview) en een gemakkelijke [nood herstel](/azure/architecture/framework/resiliency/backup-and-recovery).
 
 ## <a name="azure-regional-pairs"></a>Azure-regionale paren
 
@@ -52,11 +52,11 @@ Nee. Klanten kunnen Azure-Services gebruiken voor het ontwikkelen van een flexib
 | Asia-Pacific |Azië-oost (Hongkong) | Zuidoost-Azië (Singapore) |
 | Australië |Australië - oost |Australië - zuidoost |
 | Australië |Australië - centraal |Australië - centraal 2 |
-| Brazilië |Brazil South |South Central US |
+| Brazilië |Brazil South |VS - zuid-centraal |
 | Canada |Canada - midden |Canada - oost |
 | China |China - noord |China East|
 | China |China - noord 2 |China - oost 2|
-| Europa |Europa-noord (Ierland) |Europa-west (Nederland) |
+| Europa |Europa - noord (Ierland) |Europa - west (Nederland) |
 | Frankrijk |Frankrijk - centraal|Frankrijk - zuid|
 | Duitsland |Duitsland - centraal |Duitsland - noordoost |
 | India |India - centraal |India - zuid |
@@ -66,7 +66,7 @@ Nee. Klanten kunnen Azure-Services gebruiken voor het ontwikkelen van een flexib
 | Noord-Amerika |VS - oost |VS - west |
 | Noord-Amerika |VS - oost 2 |Central US |
 | Noord-Amerika |VS - noord-centraal |VS - zuid-centraal |
-| Noord-Amerika |West US 2 |VS - west-centraal |
+| Noord-Amerika |VS - west 2 |VS - west-centraal |
 | Noorwegen | Noorwegen - oost | Noorwegen - west |
 | Zuid-Afrika | Zuid-Afrika - noord |Zuid-Afrika - west |
 | Zwitserland | Zwitserland - noord |Zwitserland - west |
@@ -94,9 +94,9 @@ Zoals bedoeld in afbeelding 2.
 
 1. **Azure Compute (IaaS)** : u moet extra reken resources vooraf inrichten om ervoor te zorgen dat resources beschikbaar zijn in een andere regio tijdens een nood geval. Zie voor meer informatie [Azure tolerante technische richt lijnen](https://github.com/uglide/azure-content/blob/master/articles/resiliency/resiliency-technical-guidance.md). 
 
-2. **Azure Storage** : als u beheerde schijven gebruikt, kunt u meer informatie vinden over [Cross-Region-back-ups](https://docs.microsoft.com/azure/architecture/resiliency/recovery-loss-azure-region#virtual-machines) met Azure backup en [virtuele machines](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication) van de ene naar de andere regio repliceren met Azure site Recovery. Als u opslag accounts gebruikt, wordt de geo-redundante opslag (GRS) standaard geconfigureerd wanneer een Azure Storage-account wordt gemaakt. Met GRS worden uw gegevens automatisch drie keer binnen de primaire regio gerepliceerd, en drie keer in de gekoppelde regio. Zie [Azure Storage redundantie opties](storage/common/storage-redundancy.md)voor meer informatie.
+2. **Azure Storage** : als u beheerde schijven gebruikt, kunt u meer informatie vinden over [Cross-Region-back-ups](/azure/architecture/resiliency/recovery-loss-azure-region#virtual-machines) met Azure backup en [virtuele machines](./site-recovery/azure-to-azure-tutorial-enable-replication.md) van de ene naar de andere regio repliceren met Azure site Recovery. Als u opslag accounts gebruikt, wordt de geo-redundante opslag (GRS) standaard geconfigureerd wanneer een Azure Storage-account wordt gemaakt. Met GRS worden uw gegevens automatisch drie keer binnen de primaire regio gerepliceerd, en drie keer in de gekoppelde regio. Zie [Azure Storage redundantie opties](storage/common/storage-redundancy.md)voor meer informatie.
 
-3. **Azure SQL database** – met Azure SQL database geo-replicatie kunt u asynchrone replicatie van trans acties naar elke regio in de wereld configureren. We raden u echter aan deze bronnen in een gekoppelde regio te implementeren voor de meeste scenario's voor herstel na nood gevallen. Zie [geo-replicatie in Azure SQL database](sql-database/sql-database-geo-replication-overview.md)voor meer informatie.
+3. **Azure SQL database** – met Azure SQL database geo-replicatie kunt u asynchrone replicatie van trans acties naar elke regio in de wereld configureren. We raden u echter aan deze bronnen in een gekoppelde regio te implementeren voor de meeste scenario's voor herstel na nood gevallen. Zie [geo-replicatie in Azure SQL database](./azure-sql/database/auto-failover-group-overview.md)voor meer informatie.
 
 4. **Azure Resource Manager**: Resource Manager biedt inherent logische isolatie van componenten binnen regio’s. Dit betekent dat logische fouten in één regio minder waarschijnlijk van invloed zijn op de andere.
 

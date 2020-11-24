@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: raynew
-ms.openlocfilehash: 3236e0a95c6a4b4f57ac38ed067011c3d6848b5a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 176f12a0a06a5bcae601463e30189bc139d3531f
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89670399"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95543847"
 ---
 # <a name="move-resources-across-regions-in-powershell"></a>Resources verplaatsen tussen regio's in Power shell
 
@@ -25,7 +25,7 @@ Meer informatie over hoe u Azure-resources naar een andere regio kunt verplaatse
 
 ## <a name="before-you-start"></a>Voordat u begint
 
-- Uw Azure-abonnement moet toegang hebben tot het verplaatsen van resources en u moet [eigenaar](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) -of [gebruikers toegang hebben tot beheerders](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) machtigingen voor het abonnement.
+- Uw Azure-abonnement moet toegang hebben tot het verplaatsen van resources en u moet [eigenaar](../role-based-access-control/built-in-roles.md#owner) -of [gebruikers toegang hebben tot beheerders](../role-based-access-control/built-in-roles.md#user-access-administrator) machtigingen voor het abonnement.
 - Resource-overschakeling houdt geen wijzigingen en upgrades bij, dus breng de vereiste wijzigingen aan in resources voordat u ze gaat verplaatsen.
 - Wanneer u resources verplaatst met Power shell, kunt u de instellingen voor de doel regio op dit moment niet bewerken. Wijzig deze instellingen rechtstreeks in de portal.
 - Wanneer u resources toevoegt aan een verzameling die u wilt verplaatsen, worden de meta gegevens over de verplaatsing opgeslagen in een resource groep die voor het doel is gemaakt, ter voor bereiding om ze te verplaatsen naar een andere regio. Deze resource groep bevindt zich momenteel in de regio's VS-Oost 2 of Europa-noord. Azure-resources kunnen worden verplaatst tussen open bare regio's die gebruikmaken van meta gegevens die in een van deze regio's aanwezig zijn.
@@ -347,7 +347,7 @@ Invoke-AzResourceMoverInitiateMove -SubscriptionId <subscription-id> -ResourceGr
 Na de eerste verplaatsing kunt u beslissen of u de verplaatsing wilt doorvoeren of verwijderen. 
 
 - **Verwijderen**: Mogelijk wilt u een verplaatsing verwijderen als u een test uitvoert en de bronresource niet echt wilt verplaatsen. Als u de verplaatsing negeert, wordt de resource teruggezet in de status *Initiëren verplaatsing in behandeling*. U kunt de verplaatsing vervolgens opnieuw starten als dat nodig is.
-- **Doorvoeren**: Met doorvoeren wordt de verplaatsing naar de doelregio voltooid. Na het doorvoeren heeft een bronresource de status *Verwijderen bron in behandeling*en kunt u besluiten of u deze wilt verwijderen.
+- **Doorvoeren**: Met doorvoeren wordt de verplaatsing naar de doelregio voltooid. Na het doorvoeren heeft een bronresource de status *Verwijderen bron in behandeling* en kunt u besluiten of u deze wilt verwijderen.
 
 ### <a name="discard"></a>Verwijderen
 

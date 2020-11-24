@@ -3,12 +3,12 @@ title: Omgevingsvariabelen voor de runtime van taken
 description: Richt lijnen voor de omgevings variabele van de taak runtime en naslag informatie voor Azure Batch Analytics.
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.openlocfilehash: 6b8ade312146802ede6e12181a082a8fcd3842fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a2cab5011eb04586dc361bf1cec9c1f162d70117
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85960908"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95538526"
 ---
 # <a name="azure-batch-runtime-environment-variables"></a>Omgevings variabelen Azure Batch-runtime
 
@@ -24,7 +24,7 @@ Als u de huidige waarde van een omgevings variabele wilt ophalen, start u `cmd.e
 
 `cmd /c set <ENV_VARIABLE_NAME>`
 
-`/bin/sh printenv <ENV_VARIABLE_NAME>`
+`/bin/sh -c "printenv <ENV_VARIABLE_NAME>"`
 
 ## <a name="command-line-expansion-of-environment-variables"></a>Opdracht regel expansie van omgevings variabelen
 
@@ -32,7 +32,7 @@ De opdracht regels die door taken op reken knooppunten worden uitgevoerd, worden
 
 `cmd /c MyTaskApplication.exe %MY_ENV_VAR%`
 
-`/bin/sh -c MyTaskApplication $MY_ENV_VAR`
+`/bin/sh -c "MyTaskApplication $MY_ENV_VAR"`
 
 ## <a name="environment-variables"></a>Omgevingsvariabelen
 

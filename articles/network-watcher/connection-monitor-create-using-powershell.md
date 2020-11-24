@@ -1,5 +1,5 @@
 ---
-title: Verbindings monitor maken (preview)-Power shell
+title: Verbindings monitor maken-Power shell
 titleSuffix: Azure Network Watcher
 description: Meer informatie over het maken van een verbindings monitor met behulp van Power shell.
 services: network-watcher
@@ -10,22 +10,19 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/30/2020
+ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: b1ffce75d5c38177c70db3ec1fc024a01821d3ab
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 1a554177bf7084b9a7f4c413dbe82271b3ab6b3a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984240"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95545530"
 ---
-# <a name="create-a-connection-monitor-preview-using-powershell"></a>Een verbindings monitor maken (preview) met behulp van Power shell
+# <a name="create-a-connection-monitor-using-powershell"></a>Een verbindings monitor maken met behulp van Power shell
 
 Meer informatie over het maken van een verbindings monitor om de communicatie tussen uw resources te bewaken met behulp van Power shell.
 
-> [!IMPORTANT]
-> De verbindings monitor is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="before-you-begin"></a>Voordat u begint 
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 2/1/2019
 ms.author: ripohane
 ms.reviewer: dineshm
-ms.openlocfilehash: 297595c6c4a9c82c3d0293f2cea2db66ea9ca54a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0de8d8d5ff0f14d0268dbcca743f4d06ed877903
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89180402"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544391"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Blob-opslag koppelen als een bestands systeem met blobfuse
 
@@ -23,12 +23,12 @@ ms.locfileid: "89180402"
 In deze hand leiding wordt beschreven hoe u blobfuse gebruikt en hoe u een BLOB storage-container koppelt aan Linux en toegang tot gegevens. Lees de informatie in [de blobfuse-opslag plaats](https://github.com/Azure/azure-storage-fuse)voor meer informatie over blobfuse.
 
 > [!WARNING]
-> Blobfuse garandeert niet 100% POSIX-compatibiliteit, omdat de aanvragen eenvoudigweg worden omgezet in [BLOB rest api's](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api). Wijzig de naam van bewerkingen bijvoorbeeld Atomic in POSIX, maar niet in blobfuse.
+> Blobfuse garandeert niet 100% POSIX-compatibiliteit, omdat de aanvragen eenvoudigweg worden omgezet in [BLOB rest api's](/rest/api/storageservices/blob-service-rest-api). Wijzig de naam van bewerkingen bijvoorbeeld Atomic in POSIX, maar niet in blobfuse.
 > Ga naar [de blobfuse-bron code opslagplaats](https://github.com/azure/azure-storage-fuse)voor een volledige lijst met verschillen tussen een systeem eigen bestands systeem en blobfuse.
 > 
 
 ## <a name="install-blobfuse-on-linux"></a>Blobfuse installeren in Linux
-Blobfuse binaire bestanden zijn beschikbaar in [de micro soft-software opslagplaatsen voor Linux](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) voor Ubuntu-en RHEL-distributies. Als u blobfuse voor deze distributies wilt installeren, configureert u een van de opslag plaatsen in de lijst. U kunt ook de binaire bestanden van de bron code maken na de [Azure Storage installatie stappen](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source) als er geen binaire bestanden beschikbaar zijn voor uw distributie.
+Blobfuse binaire bestanden zijn beschikbaar in [de micro soft-software opslagplaatsen voor Linux](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) voor Ubuntu-en RHEL-distributies. Als u blobfuse voor deze distributies wilt installeren, configureert u een van de opslag plaatsen in de lijst. U kunt ook de binaire bestanden van de bron code maken na de [Azure Storage installatie stappen](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source) als er geen binaire bestanden beschikbaar zijn voor uw distributie.
 
 Blobfuse ondersteunt de installatie op Ubuntu 14,04, 16,04 en 18,04. Voer deze opdracht uit om ervoor te zorgen dat er een van de volgende versies is geïmplementeerd:
 ```
@@ -36,7 +36,7 @@ lsb_release -a
 ```
 
 ### <a name="configure-the-microsoft-package-repository"></a>De micro soft-pakket opslagplaats configureren
-Configureer de [opslag plaats voor Linux-pakketten voor micro soft-producten](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software).
+Configureer de [opslag plaats voor Linux-pakketten voor micro soft-producten](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software).
 
 Als voor beeld voor een Enter prise Linux 6-distributie:
 ```bash
@@ -144,5 +144,4 @@ echo "hello world" > test/blob.txt
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Start pagina van Blobfuse](https://github.com/Azure/azure-storage-fuse#blobfuse)
-* [Blobfuse problemen melden](https://github.com/Azure/azure-storage-fuse/issues) 
-
+* [Blobfuse problemen melden](https://github.com/Azure/azure-storage-fuse/issues)

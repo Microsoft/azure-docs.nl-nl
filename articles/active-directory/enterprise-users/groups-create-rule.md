@@ -13,17 +13,17 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a55791544bf2b2f17ba189f7e4aca498469c365b
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 2a1f970a97616fbc38a2f5d274998596992d4a45
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95503130"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522070"
 ---
 # <a name="create-or-update-a-dynamic-group-in-azure-active-directory"></a>Een dynamische groep in Azure Active Directory maken of bijwerken
 
 In Azure Active Directory (Azure AD) kunt u regels gebruiken om het groepslid maatschap te bepalen op basis van eigenschappen van gebruikers of apparaten. In dit artikel leest u hoe u een regel instelt voor een dynamische groep in de Azure Portal.
-Dynamische lidmaatschappen worden ondersteund voor beveiligings groepen of Microsoft 365 groepen. Wanneer een regel voor groepslid maatschap wordt toegepast, worden de kenmerken van gebruikers en apparaten geëvalueerd voor overeenkomsten met de lidmaatschaps regel. Wanneer een kenmerk wordt gewijzigd voor een gebruiker of apparaat, worden alle regels voor de dynamische groep in de organisatie verwerkt voor wijzigingen in het lidmaatschap. Gebruikers en apparaten worden toegevoegd of verwijderd als ze voldoen aan de voor waarden voor een groep. Beveiligings groepen kunnen worden gebruikt voor apparaten of gebruikers, maar Microsoft 365 groepen kunnen alleen gebruikers groepen zijn.
+Dynamische lidmaatschappen worden ondersteund voor beveiligings groepen of Microsoft 365 groepen. Wanneer een regel voor groepslid maatschap wordt toegepast, worden de kenmerken van gebruikers en apparaten geëvalueerd voor overeenkomsten met de lidmaatschaps regel. Wanneer een kenmerk wordt gewijzigd voor een gebruiker of apparaat, worden alle regels voor de dynamische groep in de organisatie verwerkt voor wijzigingen in het lidmaatschap. Gebruikers en apparaten worden toegevoegd of verwijderd als ze voldoen aan de voor waarden voor een groep. Beveiligings groepen kunnen worden gebruikt voor apparaten of gebruikers, maar Microsoft 365 groepen kunnen alleen gebruikers groepen zijn. Voor het gebruik van dynamische groepen is Azure AD Premium P1-licentie vereist. Zie [dynamische lidmaatschaps regels voor groepen](https://docs.microsoft.com/azure/active-directory/enterprise-users/groups-dynamic-membership) voor meer informatie. 
 
 ## <a name="rule-builder-in-the-azure-portal"></a>De opbouwfunctie voor regels in Azure Portal
 
@@ -79,7 +79,7 @@ Als de regel die u hebt ingevoerd niet geldig is, wordt uitgelegd waarom de rege
 
 ## <a name="turn-on-or-off-welcome-email"></a>Welkomst bericht in-of uitschakelen
 
-Wanneer een nieuwe Microsoft 365 groep wordt gemaakt, wordt een welkomst-e-mail melding verzonden naar de gebruikers die aan de groep zijn toegevoegd. Later, als de kenmerken van een gebruiker of apparaat wijzigen, worden alle regels van de dynamische groep in de organisatie verwerkt voor wijzigingen in het lidmaatschap. Gebruikers die zijn toegevoegd, ontvangen ook de welkomst melding. U kunt dit gedrag uitschakelen in [Exchange Power shell](/powershell/module/exchange/users-and-groups/Set-UnifiedGroup?view=exchange-ps).
+Wanneer een nieuwe Microsoft 365 groep wordt gemaakt, wordt een welkomst-e-mail melding verzonden naar de gebruikers die aan de groep zijn toegevoegd. Later, als de kenmerken van een gebruiker of apparaat wijzigen, worden alle regels van de dynamische groep in de organisatie verwerkt voor wijzigingen in het lidmaatschap. Gebruikers die zijn toegevoegd, ontvangen ook de welkomst melding. U kunt dit gedrag uitschakelen in [Exchange Power shell](/powershell/module/exchange/users-and-groups/Set-UnifiedGroup?view=exchange-ps&preserve-view=true).
 
 ## <a name="check-processing-status-for-a-rule"></a>De verwerkings status controleren voor een regel
 

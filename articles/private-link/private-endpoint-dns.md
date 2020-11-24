@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: bb1f4b5e37cecc33cef115f26c44ad6375c7e327
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: d682495cb7add446adf1634de6e9ed6756d1468e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94734375"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544374"
 ---
 # <a name="azure-private-endpoint-dns-configuration"></a>DNS-configuratie van Azure-privé-eindpunt
 
@@ -125,7 +125,7 @@ Dit model kan worden uitgebreid naar meerdere peered virtuele netwerken die zijn
 > [!IMPORTANT]
 > Als u een persoonlijk eind punt in een hub-en-spoke-model gebruikt vanuit een ander abonnement, moet u dezelfde privé-DNS-zone opnieuw gebruiken op de hub.
 
-In dit scenario is er een [hub-en-spoke](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) -netwerk topologie met de spoke-netwerken die een gemeen schappelijk persoonlijk eind punt delen en alle spoke-virtuele netwerken zijn gekoppeld aan dezelfde particuliere DNS-zone. 
+In dit scenario is er een [hub-en-spoke](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) -netwerk topologie met de spoke-netwerken die een gemeen schappelijk persoonlijk eind punt delen en alle spoke-virtuele netwerken zijn gekoppeld aan dezelfde particuliere DNS-zone. 
 
 :::image type="content" source="media/private-endpoint-dns/hub-and-spoke-azure-dns.png" alt-text="Hub en spoke met door Azure verschafte DNS":::
 
@@ -141,7 +141,7 @@ Het volgende scenario is geschikt voor een on-premises netwerk met een DNS-doors
 U hebt de volgende resources nodig om correct te configureren:
 
 - On-premises netwerk
-- Virtueel netwerk [verbonden met on-premises](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/)
+- Virtueel netwerk [verbonden met on-premises](/azure/architecture/reference-architectures/hybrid-networking/)
 - DNS-doorstuur server geïmplementeerd in azure 
 - Privé-DNS zones [privatelink.database.Windows.net](../dns/private-dns-privatednszone.md) met [een record typen](../dns/dns-zones-records.md#record-types)
 - Informatie over privé-eind punt (FQDN-record naam en privé-IP-adres)
@@ -158,7 +158,7 @@ Deze configuratie kan worden uitgebreid voor een on-premises netwerk waarop al e
 U hebt de volgende resources nodig om correct te configureren:
 
 - On-premises netwerk met een aangepaste DNS-oplossing 
-- Virtueel netwerk [verbonden met on-premises](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/)
+- Virtueel netwerk [verbonden met on-premises](/azure/architecture/reference-architectures/hybrid-networking/)
 - DNS-doorstuur server geïmplementeerd in azure
 - Privé-DNS zones [privatelink.database.Windows.net](../dns/private-dns-privatednszone.md)  met [een record typen](../dns/dns-zones-records.md#record-types)
 - Informatie over privé-eind punt (FQDN-record naam en privé-IP-adres)
@@ -187,7 +187,7 @@ Deze DNS-doorstuur server is verantwoordelijk voor het omzetten van alle DNS-que
 U hebt de volgende resources nodig om correct te configureren:
 
 - On-premises netwerk
-- Virtueel netwerk [verbonden met on-premises](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/)
+- Virtueel netwerk [verbonden met on-premises](/azure/architecture/reference-architectures/hybrid-networking/)
 - [Gekoppeld virtueel netwerk](../virtual-network/virtual-network-peering-overview.md) 
 - DNS-doorstuur server geïmplementeerd in azure
 - Privé-DNS zones [privatelink.database.Windows.net](../dns/private-dns-privatednszone.md)  met [een record typen](../dns/dns-zones-records.md#record-types)

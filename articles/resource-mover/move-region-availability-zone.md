@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: raynew
-ms.openlocfilehash: 315ea9b683ccd583f5c29c7527013f0d924336f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 88006fb354af2673496c6476090d7f73c8a005e6
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90061870"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95542997"
 ---
 # <a name="move-azure-vms-to-an-availability-zone-in-another-region"></a>Virtuele Azure-machines verplaatsen naar een beschikbaarheids zone in een andere regio
 
@@ -34,8 +34,8 @@ Als u Vm's wilt verplaatsen naar een andere beschikbaarheids zone in dezelfde re
 
 - Toegang voor de *eigenaar* van het abonnement waarin resources zich bevinden die u wilt verplaatsen.
     - De eerste keer dat u een resource toevoegt voor een specifieke bron-en doel toewijzing in een Azure-abonnement, maakt resource-overschakeling een door het [systeem toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (voorheen bekend als managed service identify (MSI)) die wordt vertrouwd door het abonnement.
-    - Om de identiteit te maken en deze de juiste rol toe te wijzen (Inzender of Administrator voor gebruikerstoegang in het bronabonnement), moet het account dat u gebruikt om resources toe te voegen *Eigenaars*machtigingen hebben voor het abonnement. [Meer informatie](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) over rollen in Azure.
-- Het abonnement heeft voldoende quota nodig om de bron resources in de doel regio te maken. Als dat niet het geval is, moet u aanvullende limieten aanvragen. [Meer informatie](/azure/azure-resource-manager/management/azure-subscription-service-limits).
+    - Om de identiteit te maken en deze de juiste rol toe te wijzen (Inzender of Administrator voor gebruikerstoegang in het bronabonnement), moet het account dat u gebruikt om resources toe te voegen *Eigenaars* machtigingen hebben voor het abonnement. [Meer informatie](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) over rollen in Azure.
+- Het abonnement heeft voldoende quota nodig om de bron resources in de doel regio te maken. Als dat niet het geval is, moet u aanvullende limieten aanvragen. [Meer informatie](../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Verifieer prijzen en kosten voor de doelregio waarnaar u virtuele machines verplaatst. Gebruik de [prijscalculator](https://azure.microsoft.com/pricing/calculator/) om u daarbij te helpen.
     
 
@@ -66,7 +66,7 @@ Selecteer de resources die u wilt verplaatsen.
 
     ![Zoeken naar resource verplaatsen](./media/move-region-availability-zone/search.png)
 
-2. Selecteer in **overzicht**aan de **slag**.
+2. Selecteer in **overzicht** aan de **slag**.
 
     ![Knop om aan de slag te gaan](./media/move-region-availability-zone/get-started.png)
 
@@ -142,7 +142,7 @@ Initieer de verplaatsing als volgt:
 
 Ga als volgt te werk om het verplaatsingsproces door te voeren en te voltooien:
 
-1. In **meerdere regio's**selecteert u de resource groep > **door voeren verplaatsen**
+1. In **meerdere regio's** selecteert u de resource groep > **door voeren verplaatsen**
 2. Klik in **Resources verplaatsen** op **Doorvoeren**.
 
 > [!NOTE]
@@ -157,16 +157,16 @@ Voordat we de rest van de resources verplaatsen, stellen we een doel beschikbaar
 
     ![VM-eigenschappen](./media/move-region-availability-zone/select-vm-settings.png)
 
-3. Geef in **configuratie-instellingen**de instelling voor de doel-VM op. U kunt als volgt een virtuele machine in de doel regio configureren:
+3. Geef in **configuratie-instellingen** de instelling voor de doel-VM op. U kunt als volgt een virtuele machine in de doel regio configureren:
     -  Maak een nieuwe equivalente resource in de doel regio. Met uitzonde ring van de instellingen die u opgeeft, wordt de doel resource gemaakt met dezelfde instellingen als de bron.
     - Selecteer een bestaande virtuele machine in de doel regio. 
 
-4. Selecteer in **zones**de zone waarin u de virtuele machine wilt plaatsen wanneer deze wordt verplaatst.
+4. Selecteer in **zones** de zone waarin u de virtuele machine wilt plaatsen wanneer deze wordt verplaatst.
 
     Wijzigingen worden alleen aangebracht voor de resource die u wilt bewerken. U moet afhankelijke resources afzonderlijk bijwerken.
 
-5. Geef in **SKU**de [Azure-laag](..//virtual-machines/sizes.md) op die u wilt toewijzen aan de doel-VM.
-6. Selecteer in **beschikbaarheidsset**een beschikbaarheidsset als u wilt dat de doel-VM wordt uitgevoerd in een beschikbaarheidsset in de beschikbaarheids zone.
+5. Geef in **SKU** de [Azure-laag](..//virtual-machines/sizes.md) op die u wilt toewijzen aan de doel-VM.
+6. Selecteer in **beschikbaarheidsset** een beschikbaarheidsset als u wilt dat de doel-VM wordt uitgevoerd in een beschikbaarheidsset in de beschikbaarheids zone.
 7. Selecteer **Save changes**.
 
     ![instellingen VM](./media/move-region-availability-zone/vm-settings.png)
@@ -215,7 +215,7 @@ Nu de resources zijn voorbereid, kunt u de verplaatsing initiëren.
 Na de eerste verplaatsing kunt u beslissen of u de verplaatsing wilt doorvoeren of verwijderen. 
 
 - **Verwijderen**: Mogelijk wilt u een verplaatsing verwijderen als u een test uitvoert en de bronresource niet echt wilt verplaatsen. Als u de verplaatsing negeert, wordt de resource teruggezet in de status *Initiëren verplaatsing in behandeling*.
-- **Doorvoeren**: Met doorvoeren wordt de verplaatsing naar de doelregio voltooid. Na het doorvoeren heeft een bronresource de status *Verwijderen bron in behandeling*en kunt u besluiten of u deze wilt verwijderen.
+- **Doorvoeren**: Met doorvoeren wordt de verplaatsing naar de doelregio voltooid. Na het doorvoeren heeft een bronresource de status *Verwijderen bron in behandeling* en kunt u besluiten of u deze wilt verwijderen.
 
 ## <a name="discard-the-move"></a>De verplaatsing verwijderen 
 

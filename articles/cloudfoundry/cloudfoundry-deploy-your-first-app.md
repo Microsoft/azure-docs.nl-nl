@@ -7,12 +7,12 @@ ms.subservice: workloads
 ms.topic: article
 ms.date: 06/14/2017
 ms.author: seanmck
-ms.openlocfilehash: 18f9f62ba28595289d37975200352c26788e69cc
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: c8afc4f15f421a7b60b95d09b954e7742c24c66e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040029"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95519673"
 ---
 # <a name="deploy-your-first-app-to-cloud-foundry-on-microsoft-azure"></a>Uw eerste app implementeren in Cloud Foundry in Microsoft Azure
 
@@ -64,7 +64,7 @@ cf target -o testorg -s dev
 Wanneer u nu een toepassing implementeert, wordt deze automatisch gemaakt in de nieuwe organisatie en ruimte. Als u wilt bevestigen dat er momenteel geen apps in de nieuwe organisatie of ruimte zijn, typt u `cf apps` opnieuw.
 
 > [!NOTE] 
-> Zie de [Cloud Foundry-documentatie][cf-orgs-spaces-docs]voor meer informatie over organisaties en Spaces en hoe deze kunnen worden gebruikt voor op rollen gebaseerd toegangs beheer (RBAC).
+> Zie de [documentatie van Cloud Foundry][cf-orgs-spaces-docs]voor meer informatie over organisaties en Spaces en hoe ze kunnen worden gebruikt voor Cloud Foundry op rollen gebaseerd toegangs beheer (Cloud Foundry RBAC).
 
 ## <a name="deploy-an-application"></a>Een app implementeren
 
@@ -114,7 +114,7 @@ U kunt de Cloud Foundry CLI gebruiken om logboeken voor een toepassing weer te g
 cf logs hello-spring-cloud
 ```
 
-De logboeken opdracht maakt standaard gebruik van *staart* , waarin nieuwe logboeken worden weer gegeven wanneer ze zijn geschreven. Als u nieuwe logboeken wilt weer geven, vernieuwt u de Hello-lente-Cloud-app in de browser.
+De logboeken opdracht maakt standaard gebruik van *staart*, waarin nieuwe logboeken worden weer gegeven wanneer ze zijn geschreven. Als u nieuwe logboeken wilt weer geven, vernieuwt u de Hello-lente-Cloud-app in de browser.
 
 Als u logboeken wilt weer geven die al zijn geschreven, voegt u de `recent` switch toe:
 

@@ -12,12 +12,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
-ms.openlocfilehash: e75b5a265ba85813581e39a548d897ea57a33da6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef0642b26898249d78f5103e8a8f80198887bed9
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88080555"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95542521"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-php-application-on-azure"></a>Een telefoon gesprek doen met behulp van Twilio in een PHP-toepassing in azure
 In het volgende voor beeld ziet u hoe u Twilio kunt gebruiken om een oproep te doen van een PHP-webpagina die wordt gehost in Azure. De resulterende toepassing vraagt de gebruiker om telefoon gesprek waarden, zoals wordt weer gegeven in de volgende scherm afbeelding.
@@ -29,7 +29,7 @@ U moet de volgende stappen uitvoeren om de code in dit onderwerp te gebruiken:
 1. Haal een Twilio-account en verificatie token op uit uw [Twilio-console][twilio_console]. Als u aan de slag wilt gaan met Twilio, evalueert u de prijzen op [https://www.twilio.com/pricing][twilio_pricing] . U kunt zich aanmelden voor een proef account op [https://www.twilio.com/try-twilio][try_twilio] .
 2. Verkrijg de [Twilio-bibliotheek voor php](https://github.com/twilio/twilio-php) of installeer deze als een peer pakket. Raadpleeg het [Leesmij-bestand](https://github.com/twilio/twilio-php/blob/master/README.md)voor meer informatie.
 3. Installeer de Azure SDK voor PHP. 
-<!-- For an overview of the SDK and instructions on installing it, see [Set up the Azure SDK for PHP](app-service-web/web-sites-php-mysql-deploy-use-git.md) -->
+<!-- For an overview of the SDK and instructions on installing it, see [Set up the Azure SDK for PHP](./app-service/quickstart-php.md) -->
 
 ## <a name="create-a-web-form-for-making-a-call"></a>Een webformulier maken voor het aanroepen van een gesprek
 De volgende HTML-code laat zien hoe u een webpagina (**callform.html**) bouwt waarmee gebruikers gegevens worden opgehaald voor het maken van een gesprek:
@@ -67,7 +67,7 @@ De volgende HTML-code laat zien hoe u een webpagina (**callform.html**) bouwt wa
 ```
 
 ## <a name="create-the-code-to-make-the-call"></a>De code maken om de aanroep uit te voeren
-De volgende code laat zien hoe u **makecall. php**bouwt, die wordt aangeroepen wanneer de gebruiker het formulier dat wordt weer gegeven door **callform.html**verzendt. Met de onderstaande code wordt het aanroep bericht gemaakt en wordt de aanroep gegenereerd. Zorg er ook voor dat u uw Twilio-account en verificatie token gebruikt in de [Twilio-console][twilio_console] in plaats van de waarden voor tijdelijke aanduidingen die zijn toegewezen aan **$sid** en **$token** in de onderstaande code.
+De volgende code laat zien hoe u **makecall. php** bouwt, die wordt aangeroepen wanneer de gebruiker het formulier dat wordt weer gegeven door **callform.html** verzendt. Met de onderstaande code wordt het aanroep bericht gemaakt en wordt de aanroep gegenereerd. Zorg er ook voor dat u uw Twilio-account en verificatie token gebruikt in de [Twilio-console][twilio_console] in plaats van de waarden voor tijdelijke aanduidingen die zijn toegewezen aan **$sid** en **$token** in de onderstaande code.
 
 ```html
 <html>
@@ -129,8 +129,8 @@ Zie voor meer informatie over Twilio [https://www.twilio.com/docs][twilio_docs] 
 [twilio_api_service]: https://api.twilio.com
 [build_php_azure_app]: http://azurephp.interoperabilitybridges.com/articles/build-and-deploy-a-windows-azure-php-application
 [howto_twilio_voice_sms_php]: partner-twilio-php-how-to-use-voice-sms.md
-[howto_blob_storage_php]: https://azure.microsoft.com/documentation/articles/storage-php-how-to-use-blobs/
-[howto_sql_azure_php]: https://azure.microsoft.com/documentation/articles/sql-database-php-how-to-use/
+[howto_blob_storage_php]: ./storage/blobs/storage-quickstart-blobs-php.md
+[howto_sql_azure_php]: ./azure-sql/database/connect-query-content-reference-guide.md
 [twilio_call_properties]: https://www.twilio.com/docs/api/rest/call#instance-properties
 [twilio_docs_security]: https://www.twilio.com/docs/security
 [twilio_docs]: https://www.twilio.com/docs

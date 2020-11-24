@@ -3,18 +3,18 @@ title: Een Azure Monitor Application Insights klassieke resource migreren naar e
 description: Meer informatie over de stappen die nodig zijn om uw Azure Monitor Application Insights klassieke resource bij te werken naar het nieuwe model op basis van werk ruimte.
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 0d2c7d1b9ee57e6d201205c04557e1b5f5623eb0
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 709cff1326bb6393a14c594ea434a6c16fb80860
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930574"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536520"
 ---
 # <a name="migrate-to-workspace-based-application-insights-resources"></a>Migreren naar op werk ruimte gebaseerde Application Insights resources
 
 In deze hand leiding wordt stapsgewijs uitgelegd hoe u een klassieke Application Insights resource migreert naar een resource op basis van een werk ruimte. Resources op basis van een werk ruimte ondersteunen volledige integratie tussen Application Insights en Log Analytics. Resources op basis van een werk ruimte verzenden Application Insights telemetrie naar een algemene Log Analytics-werk ruimte, waarmee u toegang krijgt tot [de nieuwste functies van Azure monitor](#new-capabilities) terwijl logboeken voor de toepassings-, infra structuur en het platform op één geconsolideerde locatie worden bewaard.
 
-Met resources op basis van een werk ruimte kunt u algemene Role-Based Access Control (RBAC) voor uw resources maken en de nood zaak van query's tussen apps en werk ruimten voor komen.
+Met resources op basis van een werk ruimte kunnen veelvoorkomende Azure-functies voor op rollen gebaseerd toegangs beheer (Azure RBAC) worden gebruikt in uw resources en hoeft u niet meer te vragen over cross-app-en werkruimte query's.
 
 **Op werk ruimte gebaseerde resources zijn momenteel beschikbaar in alle commerciële regio's en de Amerikaanse overheid van Azure**
 
@@ -51,7 +51,7 @@ Als u geen bestaande resource hoeft te migreren en u in plaats daarvan een nieuw
 - Continue export wordt niet ondersteund voor op werk ruimte gebaseerde resources en moet worden uitgeschakeld.
 Zodra de migratie is voltooid, kunt u [Diagnostische instellingen](../platform/diagnostic-settings.md) gebruiken om gegevens archivering te configureren voor een opslag account of streaming naar Azure Event hub.  
 
-- Controleer de huidige Bewaar instellingen onder **Algemeen**  >  **gebruik en geschatte kosten**  >  voor het**bewaren van gegevens** voor uw log Analytics-werk ruimte. Deze instelling is van invloed op hoe lang nieuwe opgenomen gegevens worden opgeslagen nadat u uw Application Insights-resource hebt gemigreerd. Als u momenteel Application Insights gegevens langer dan de standaard 90 dagen opslaat en deze grotere Bewaar periode wilt behouden, moet u mogelijk de Bewaar instellingen voor uw werk ruimte aanpassen.
+- Controleer de huidige Bewaar instellingen onder **Algemeen**  >  **gebruik en geschatte kosten**  >  voor het **bewaren van gegevens** voor uw log Analytics-werk ruimte. Deze instelling is van invloed op hoe lang nieuwe opgenomen gegevens worden opgeslagen nadat u uw Application Insights-resource hebt gemigreerd. Als u momenteel Application Insights gegevens langer dan de standaard 90 dagen opslaat en deze grotere Bewaar periode wilt behouden, moet u mogelijk de Bewaar instellingen voor uw werk ruimte aanpassen.
 
 ## <a name="migrate-your-resource"></a>Uw resource migreren
 
@@ -219,7 +219,7 @@ Als u de toegangs beheer modus uit veiligheids overwegingen voor uw huidige doel
 
 De verouderde functionaliteit voor continue export wordt niet ondersteund voor op werk ruimte gebaseerde resources. Voordat u de migratie uitvoert, moet u doorlopend exporteren uitschakelen.
 
-1. Selecteer in de resource weergave van uw Application Insights **doorlopend exporteren**onder de kop **configureren** .
+1. Selecteer in de resource weergave van uw Application Insights **doorlopend exporteren** onder de kop **configureren** .
 
     ![Menu-item doorlopend exporteren](./media/convert-classic-resource/continuous-export.png)
 
@@ -237,7 +237,7 @@ De verouderde functionaliteit voor continue export wordt niet ondersteund voor o
 
 U hoeft geen wijzigingen aan te brengen voordat u de migratie uitvoert, maar dit bericht meldt u dat uw huidige Application Insights Bewaar instellingen niet zijn ingesteld op de standaard retentie periode van 90 dagen. Dit bericht betekent dat u de Bewaar instellingen voor uw Log Analytics-werk ruimte kunt wijzigen voordat u de migratie uitvoert en nieuwe gegevens opneemt. 
 
-U kunt de huidige Bewaar instellingen voor log Analytics controleren onder **Algemeen**  >  **gebruik en geschatte kosten**voor  >  het**bewaren van gegevens** vanuit de log Analytics-gebruikers interface. Deze instelling is van invloed op hoe lang nieuwe opgenomen gegevens worden opgeslagen nadat u uw Application Insights-resource hebt gemigreerd.
+U kunt de huidige Bewaar instellingen voor log Analytics controleren onder **Algemeen**  >  **gebruik en geschatte kosten** voor  >  het **bewaren van gegevens** vanuit de log Analytics-gebruikers interface. Deze instelling is van invloed op hoe lang nieuwe opgenomen gegevens worden opgeslagen nadat u uw Application Insights-resource hebt gemigreerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

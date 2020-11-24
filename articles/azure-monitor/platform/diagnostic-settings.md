@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.subservice: logs
-ms.openlocfilehash: 517de5c4003655c5fea2f2e7949fb513b1a3c381
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 950fcdc5cd6a5bbf3fa61ebd5e23be89691c4370
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842427"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95535789"
 ---
 # <a name="create-diagnostic-settings-to-send-platform-logs-and-metrics-to-different-destinations"></a>Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen
 [Platform logboeken](platform-logs-overview.md) in azure, met inbegrip van het Azure-activiteiten logboek en de resource logboeken, bieden gedetailleerde diagnostische en controle-informatie voor Azure-resources en het Azure-platform waarvan ze afhankelijk zijn. [Metrische platform gegevens](data-platform-metrics.md) worden standaard verzameld en worden meestal opgeslagen in de data base met Azure monitor gegevens. In dit artikel vindt u informatie over het maken en configureren van diagnostische instellingen voor het verzenden van platform metrieken en platform logboeken naar verschillende bestemmingen.
@@ -52,7 +52,7 @@ Platform-logboeken en-metrische gegevens kunnen worden verzonden naar de doelen 
 
 ### <a name="destination-requirements"></a>Doel vereisten
 
-Alle doelen voor de diagnostische instelling moeten worden gemaakt voordat u de diagnostische instellingen maakt. De bestemming hoeft zich niet in hetzelfde abonnement te betreden als de resource die logboeken verzendt zolang de gebruiker die de instelling configureert de juiste RBAC-toegang heeft tot beide abonnementen. De volgende tabel bevat unieke vereisten voor elke bestemming, met inbegrip van regionale beperkingen.
+Alle doelen voor de diagnostische instelling moeten worden gemaakt voordat u de diagnostische instellingen maakt. De bestemming hoeft zich niet in hetzelfde abonnement te betreden als de resource die logboeken verzendt zolang de gebruiker die de instelling configureert, de juiste toegang tot Azure RBAC heeft voor beide abonnementen. De volgende tabel bevat unieke vereisten voor elke bestemming, met inbegrip van regionale beperkingen.
 
 | Doel | Vereisten |
 |:---|:---|

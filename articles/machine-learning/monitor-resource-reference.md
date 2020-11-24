@@ -9,12 +9,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 10/02/2020
-ms.openlocfilehash: bab74a1db04bb557aa6604fe76c05ba3d087f8c0
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: d231de8e262194cd7dda2462a3f54d7d531eb63c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540787"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95542079"
 ---
 # <a name="monitoring-azure-machine-learning-data-reference"></a>Naslag informatie over Azure machine learning-gegevens bewaken
 
@@ -26,7 +26,7 @@ In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn ve
 
 **Modelleren**
 
-| Gegevens | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Beschrijving |
 | ----- | ----- | ----- |
 | Model implementeren is mislukt | Aantal | Het aantal model implementaties dat is mislukt. |
 | Model implementeren gestart | Aantal | Het aantal model implementaties is gestart. |
@@ -38,7 +38,7 @@ In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn ve
 
 Quota gegevens zijn alleen voor het berekenen van Azure Machine Learning.
 
-| Gegevens | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Beschrijving |
 | ----- | ----- | ----- |
 | Actieve kernen | Aantal | Het aantal actieve reken kernen. |
 | Actieve knoop punten | Aantal | Het aantal actieve knoop punten. |
@@ -56,16 +56,16 @@ Quota gegevens zijn alleen voor het berekenen van Azure Machine Learning.
 
 **Resource**
 
-| Gegevens | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Beschrijving |
 | ----- | ----- | ----- |
 | CpuUtilization | Percentage | Hoeveel procent van de CPU voor een bepaald knoop punt is gebruikt tijdens een uitvoering/taak. Deze metrische gegevens worden alleen gepubliceerd wanneer een taak wordt uitgevoerd op een knoop punt. Eén taak kan gebruikmaken van een of meer knoop punten. Deze metriek wordt per knoop punt gepubliceerd. |
 | GpuUtilization | Percentage | Hoeveel percentage van de GPU voor een bepaald knoop punt is gebruikt tijdens een uitvoering/taak. Eén knoop punt kan een of meer Gpu's hebben. Deze metrische gegevens worden per GPU per knoop punt gepubliceerd. |
 
-**Uitvoeringsrun**
+**Uitvoeren**
 
 Informatie over trainings uitvoeringen.
 
-| Gegevens | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Beschrijving |
 | ----- | ----- | ----- |
 | Voltooide uitvoeringen | Aantal | Het aantal voltooide uitvoeringen. |
 | Mislukte uitvoeringen | Aantal | Het aantal mislukte uitvoeringen. |
@@ -79,7 +79,7 @@ Azure Machine Learning heeft de volgende dimensies die zijn gekoppeld aan de met
 
 | Dimensie | Beschrijving |
 | ---- | ---- |
-| Clusternaam | De naam van het reken exemplaar. Beschikbaar voor alle quota-metrische gegevens. |
+| Clusternaam | De naam van de bron van het berekenings cluster. Beschikbaar voor alle quota-metrische gegevens. |
 | Naam van VM-familie | De naam van de VM-familie die door het cluster wordt gebruikt. Beschikbaar voor percentage quotum gebruik. |
 | VM-prioriteit | De prioriteit van de virtuele machine. Beschikbaar voor percentage quotum gebruik.
 | CreatedTime | Alleen beschikbaar voor CpuUtilization en GpuUtilization. |
@@ -228,7 +228,7 @@ De volgende schema's zijn in gebruik door Azure Machine Learning
 | TotalE2ETimeInSeconds | Het totale tijds knooppunt is actief |
 
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 - Zie [bewaking Azure machine learning](monitor-azure-machine-learning.md) voor een beschrijving van de bewakings Azure machine learning.
 - Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

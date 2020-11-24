@@ -1,19 +1,19 @@
 ---
-title: StylesObject voor dynamische Azure Maps
-description: Naslag Gids voor het JSON-schema en de syntaxis voor de StylesObject die worden gebruikt voor het maken van de dynamische Azure Maps.
+title: Naslag Gids voor StylesObject-Schema's voor dynamische Azure Maps
+description: Naslag Gids voor het dynamische Azure Maps StylesObject-schema en de syntaxis.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 06/19/2020
+ms.date: 11/20/2020
 ms.topic: reference
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 4284956138002d209ab0934cdd052748ef8aab78
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f6bc4c62febf24dee790ac6136b1661426d4d619
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966272"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536945"
 ---
 # <a name="stylesobject-schema-reference-guide-for-dynamic-maps"></a>Naslag Gids voor StylesObject-Schema's voor dynamische kaarten
 
@@ -21,9 +21,15 @@ ms.locfileid: "94966272"
 
 ## <a name="styleobject"></a>StyleObject
 
-A `StyleObject` is een [`BooleanTypeStyleRule`](#booleantypestylerule) of een [`NumericTypeStyleRule`](#numerictypestylerule) .
+Een `StyleObject` is een van de volgende stijl regels:
 
-In de JSON hieronder ziet u een `BooleanTypeStyleRule` benoemde `occupied` en `NumericTypeStyleRule` benoemde `temperature` .
+ * [`BooleanTypeStyleRule`](#booleantypestylerule)
+ * [`NumericTypeStyleRule`](#numerictypestylerule)
+ * [`StringTypeStyleRule`](#stringtypestylerule)
+
+In de JSON hieronder ziet u een voor beeld van het gebruik van elk van de drie stijl typen.  De `BooleanTypeStyleRule` wordt gebruikt om de dynamische stijl te bepalen voor functies waarvan de `occupied` eigenschap True en False is.  De `NumericTypeStyleRule` wordt gebruikt om de stijl te bepalen voor functies waarvan `temperature` de eigenschap binnen een bepaald bereik valt. Ten slotte `StringTypeStyleRule` wordt de gebruikt voor het afstemmen van specifieke stijlen `meetingType` .
+
+
 
 ```json
  "styles": [
@@ -56,6 +62,18 @@ In de JSON hieronder ziet u een `BooleanTypeStyleRule` benoemde `occupied` en `N
               "color": "#eba834"
             }
         ]
+    },
+    {
+      "keyname": "meetingType",
+      "type": "string",
+      "rules": [
+        {
+          "private": "#FF0000",
+          "confidential": "#FF00AA",
+          "allHands": "#00FF00",
+          "brownBag": "#964B00"
+        }
+      ]
     }
 ]
 ```
@@ -108,7 +126,7 @@ In het volgende JSON-voor beeld bevatten beide bereiken waar wanneer de waarde v
 
 ### <a name="rangeobject"></a>RangeObject
 
-De `RangeObject` definieert een numerieke bereik waarde van een [`NumberRuleObject`](#numberruleobject) . Voor de *status* waarde die in het bereik moet vallen, moeten alle gedefinieerde voor waarden waar zijn. 
+De `RangeObject` definieert een numerieke bereik waarde van een [`NumberRuleObject`](#numberruleobject) . Voor de *status* waarde die in het bereik moet vallen, moeten alle gedefinieerde voor waarden waar zijn.
 
 | Eigenschap | Type | Beschrijving | Vereist |
 |-----------|----------|-------------|-------------|
@@ -144,13 +162,55 @@ De volgende JSON illustreert een `NumericTypeStyleRule` *status* met de naam `te
 }
 ```
 
+## <a name="stringtypestylerule"></a>StringTypeStyleRule
+
+A `StringTypeStyleRule` is een [`StyleObject`](#styleobject) en bestaat uit de volgende eigenschappen:
+
+| Eigenschap | Type | Beschrijving | Vereist |
+|-----------|----------|-------------|-------------|
+| `keyName` | tekenreeks |  De *naam* van de of dynamische eigenschap.  Een `keyName` moet uniek zijn binnen de  `StyleObject` matrix.| Ja |
+| `type` | tekenreeks |De waarde is ' String '. | Ja |
+| `rules` | [`StringRuleObject`](#stringruleobject)[]| Een matrix van N aantal *status* waarden.| Ja |
+
+### <a name="stringruleobject"></a>StringRuleObject
+
+Een `StringRuleObject` bestaat uit Maxi maal N aantal status waarden die de mogelijke teken reeks waarden van de eigenschap van een functie zijn. Als de eigenschaps waarde van het onderdeel niet overeenkomt met een van de gedefinieerde status waarden, heeft die functie geen dynamische stijl. Als er dubbele status waarden worden opgegeven, heeft de eerste prioriteit.
+
+De teken reeks waarde die overeenkomt, is hoofdletter gevoelig.
+
+| Eigenschap | Type | Beschrijving | Vereist |
+|-----------|----------|-------------|-------------|
+| `stateValue1` | tekenreeks | De kleur wanneer de waarde teken reeks stateValue1 is. | Nee |
+| `stateValue2` | tekenreeks | De kleur wanneer de waarde teken reeks stateValue is. | Nee |
+| `stateValueN` | tekenreeks | De kleur wanneer de waarde teken reeks stateValueN is. | Nee |
+
+### <a name="example-of-stringtypestylerule"></a>Voor beeld van StringTypeStyleRule
+
+De volgende JSON illustreert een `StringTypeStyleRule` die stijlen definieert die zijn gekoppeld aan specifieke typen vergaderingen.
+
+```json
+    {
+      "keyname": "meetingType",
+      "type": "string",
+      "rules": [
+        {
+          "private": "#FF0000",
+          "confidential": "#FF00AA",
+          "allHands": "#00FF00",
+          "brownBag": "#964B00"
+        }
+      ]
+    }
+
+```
+
 ## <a name="booleantypestylerule"></a>BooleanTypeStyleRule
 
 A `BooleanTypeStyleRule` is een [`StyleObject`](#styleobject) en bestaat uit de volgende eigenschappen:
 
 | Eigenschap | Type | Beschrijving | Vereist |
 |-----------|----------|-------------|-------------|
-| `keyName` | tekenreeks |  De *naam* van de of dynamische eigenschap.  Een `keyName` moet uniek zijn binnen de Style-matrix.| Ja |
+| `keyName` | tekenreeks |  De *naam* van de of dynamische eigenschap.  Een `keyName` moet uniek zijn binnen de `StyleObject`  matrix.| Ja |
 | `type` | tekenreeks |De waarde is Booleaans. | Ja |
 | `rules` | [`BooleanRuleObject`](#booleanruleobject)i| Een Boole-paar met kleuren voor `true` en `false` *status* waarden.| Ja |
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/03/2020
-ms.openlocfilehash: 1c0247c5adfe60dc2436c832cf3d561882ae3a5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7ce0aea6bb257f0a52a843ce53cc904ed0a775dd
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91760158"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536197"
 ---
 # <a name="audit-queries-in-azure-monitor-logs-preview"></a>Query's controleren in Azure Monitor Logboeken (preview-versie)
 Controle logboeken voor logboek query's bieden telemetrie over logboek query's die in Azure Monitor worden uitgevoerd. Dit omvat informatie zoals wanneer een query werd uitgevoerd, wie deze uitvoert, welk hulp programma is gebruikt, de query tekst en prestatie statistieken die de uitvoering van de query beschrijven.
@@ -50,7 +50,7 @@ Telkens wanneer een query wordt uitgevoerd, wordt een controle record gemaakt. A
 | QueryTimeRangeEnd     | Het einde van het geselecteerde tijds bereik voor de query. Dit kan niet worden ingevuld in bepaalde scenario's, zoals wanneer de query wordt gestart vanuit Log Analytics en het tijds bereik is opgegeven in de query in plaats van de tijd kiezer.  |
 | QueryText             | De tekst van de query die is uitgevoerd. |
 | RequestTarget         | API-URL is gebruikt om de query te verzenden.  |
-| RequestContext        | Lijst met resources waarvoor de query is aangevraagd om uit te voeren. Bevat Maxi maal drie teken reeks matrices: werk ruimten, toepassingen en resources. De doel query's van een abonnement of resource groep worden als *resources*weer gegeven. Bevat het doel dat is geïmpliceerd door RequestTarget.<br>De resource-ID voor elke resource wordt opgenomen als deze kan worden omgezet. Het kan mogelijk niet worden opgelost als er een fout wordt geretourneerd bij het openen van de resource. In dit geval wordt de specifieke tekst van de query gebruikt.<br>Als de query een dubbel zinnige naam gebruikt, zoals de naam van een werk ruimte die in meerdere abonnementen voor komt, wordt deze dubbel zinnige naam gebruikt. |
+| RequestContext        | Lijst met resources waarvoor de query is aangevraagd om uit te voeren. Bevat Maxi maal drie teken reeks matrices: werk ruimten, toepassingen en resources. De doel query's van een abonnement of resource groep worden als *resources* weer gegeven. Bevat het doel dat is geïmpliceerd door RequestTarget.<br>De resource-ID voor elke resource wordt opgenomen als deze kan worden omgezet. Het kan mogelijk niet worden opgelost als er een fout wordt geretourneerd bij het openen van de resource. In dit geval wordt de specifieke tekst van de query gebruikt.<br>Als de query een dubbel zinnige naam gebruikt, zoals de naam van een werk ruimte die in meerdere abonnementen voor komt, wordt deze dubbel zinnige naam gebruikt. |
 | RequestContextFilters | Set filters die zijn opgegeven als onderdeel van de aanroep van de query. Bevat Maxi maal drie mogelijke teken reeks matrices:<br>-ResourceTypes-type resource om het bereik van de query te beperken<br>-Werk ruimten: lijst met werk ruimten om de query te beperken tot<br>-WorkspaceRegions-lijst met werkruimte regio's om de query te beperken |
 | ResponseCode          | HTTP-antwoord code geretourneerd tijdens het verzenden van de query. |
 | ResponseDurationMs    | Tijdstip waarop het antwoord wordt geretourneerd.  |
@@ -66,7 +66,7 @@ Telkens wanneer een query wordt uitgevoerd, wordt een controle record gemaakt. A
 
 - Query's worden alleen geregistreerd wanneer ze worden uitgevoerd in een gebruikers context. Er wordt geen service-to-service in azure vastgelegd. De twee primaire sets van query's die deze uitsluiting omvat, zijn facturerings berekeningen en automatische waarschuwings uitvoeringen. In het geval van waarschuwingen wordt alleen de geplande waarschuwings query zelf vastgelegd. de eerste uitvoering van de waarschuwing in het scherm voor het maken van waarschuwingen wordt uitgevoerd in een gebruikers context, en is beschikbaar voor controle doeleinden. 
 - Prestatie statistieken zijn niet beschikbaar voor query's die afkomstig zijn van de Azure Data Explorer-proxy. Alle andere gegevens voor deze query's worden nog steeds ingevuld.
-- De *h* -hint van teken reeksen die [teken reeks-literals](/azure/data-explorer/kusto/query/scalar-data-types/string#obfuscated-string-literals) vergelijkt, heeft geen invloed op de controle logboeken van de query. De query's worden precies zo vastgelegd als verzonden zonder dat de teken reeks is verborgen. U moet ervoor zorgen dat alleen gebruikers die nalevings rechten hebben om deze gegevens te zien, dit kunnen doen met behulp van de verschillende RBAC-modi die beschikbaar zijn in Log Analytics-werk ruimten.
+- De *h* -hint van teken reeksen die [teken reeks-literals](/azure/data-explorer/kusto/query/scalar-data-types/string#obfuscated-string-literals) vergelijkt, heeft geen invloed op de controle logboeken van de query. De query's worden precies zo vastgelegd als verzonden zonder dat de teken reeks is verborgen. U moet ervoor zorgen dat alleen gebruikers die nalevings rechten hebben om deze gegevens te zien, hiervoor de verschillende Kubernetes RBAC-of Azure RBAC-modi kunnen gebruiken die beschikbaar zijn in Log Analytics-werk ruimten.
 - Voor query's die gegevens uit meerdere werk ruimten bevatten, wordt de query alleen vastgelegd in de werk ruimten waartoe de gebruiker toegang heeft.
 
 ## <a name="costs"></a>Kosten  

@@ -1,5 +1,5 @@
 ---
-title: Migreren naar verbindings monitor (preview) van Netwerkprestatiemeter
+title: Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
 titleSuffix: Azure Network Watcher
 description: Meer informatie over het migreren naar verbindings monitor vanuit Netwerkprestatiemeter.
 services: network-watcher
@@ -10,22 +10,19 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/20/2020
+ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: 38ea682b4f3894f373d16908b942b4fa578741c4
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: cd0d4c2dc550beef1b5fceb373a4cb96ed75a172
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94985804"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544493"
 ---
-# <a name="migrate-to-connection-monitor-preview-from-network-performance-monitor"></a>Migreren naar verbindings monitor (preview) van Netwerkprestatiemeter
+# <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
 
 U kunt tests migreren van Netwerkprestatiemeter (NPM) naar een nieuwe, verbeterde verbindings monitor met één klik en met een downtime van nul. Zie [verbindings monitor](./connection-monitor-overview.md)voor meer informatie over de voor delen.
 
-> [!IMPORTANT]
-> De verbindings monitor is momenteel beschikbaar als open bare preview.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 >[!NOTE]
 > Alleen tests van de service verbindings monitor kunnen worden gemigreerd naar de verbindings monitor.

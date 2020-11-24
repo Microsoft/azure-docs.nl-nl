@@ -6,12 +6,12 @@ author: markwolff
 ms.author: marwolff
 ms.date: 06/23/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5b15492a36032a53ac81929eb55bce0bc70e040c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6403ecd534d17298a10ffcf8f089a2b010fa3a51
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335127"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536452"
 ---
 # <a name="source-map-support-for-javascript-applications"></a>Ondersteuning van bron toewijzing voor Java script-toepassingen
 
@@ -67,7 +67,7 @@ Als u het opslag account of de BLOB-container wilt configureren of wijzigen die 
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-### <a name="required-role-based-access-control-rbac-settings-on-your-blob-container"></a>Vereiste RBAC-instellingen (op rollen gebaseerd toegangs beheer) in de BLOB-container
+### <a name="required-azure-role-based-access-control-azure-rbac-settings-on-your-blob-container"></a>Vereiste Azure RBAC-instellingen (op rollen gebaseerd toegangs beheer) voor de BLOB-container
 
 Alle gebruikers op de portal die deze functie gebruiken, moeten ten minste worden toegewezen als een [gegevens lezer][storage blob data reader] voor de opslag-BLOB aan uw BLOB-container. U moet deze rol toewijzen aan iemand anders die de bron kaarten via deze functie gaat gebruiken.
 

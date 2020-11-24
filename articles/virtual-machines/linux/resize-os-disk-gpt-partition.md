@@ -1,6 +1,6 @@
 ---
-title: Het formaat wijzigen van een besturingssysteem schijf met een GPT-partitie | Microsoft Docs
-description: Dit artikel bevat instructies voor het wijzigen van de grootte van een besturingssysteem schijf met een GPT-partitie.
+title: Het formaat van een besturingssysteem schijf met een GPT-partitie wijzigen
+description: In dit artikel vindt u instructies voor het wijzigen van de grootte van een besturingssysteem schijf met een GPT-partitie (GUID-partitie tabel) in Linux.
 services: virtual-machines-linux
 documentationcenter: ''
 author: kailashmsft
@@ -14,17 +14,17 @@ ms.devlang: azurecli
 ms.date: 05/03/2020
 ms.author: kaib
 ms.custom: seodec18
-ms.openlocfilehash: 99b723322ce7636edce3ae5b59a69b96e288ca24
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 3565b165c669af3566667d9bdfa401d15fcce101
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93392687"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544153"
 ---
 # <a name="resize-an-os-disk-that-has-a-gpt-partition"></a>Het formaat van een besturingssysteem schijf met een GPT-partitie wijzigen
 
 > [!NOTE]
-> Dit scenario geldt alleen voor besturingssysteem schijven met een GPT-partitie (GUID-partitie tabel).
+> Dit artikel is alleen van toepassing op besturingssysteem schijven met een GPT-partitie (GUID-partitie tabel).
 
 In dit artikel wordt beschreven hoe u de grootte van een besturingssysteem schijf met een GPT-partitie in Linux kunt verg Roten. 
 
@@ -78,14 +78,14 @@ De volgende instructies zijn van toepassing op door Linux goedgekeurde distribut
 
 ### <a name="ubuntu"></a>Ubuntu
 
-Verhoog de grootte van de besturingssysteem schijf in Ubuntu 16. x en 18. x:
+Verhoog de grootte van de besturingssysteem schijf in Ubuntu 16. *x* en 18. *x*:
 
 1. Stop de virtuele machine.
 1. Verhoog de grootte van de besturingssysteem schijf van de portal.
 1. Start de virtuele machine opnieuw op en meld u aan bij de VM als een **hoofd** gebruiker.
 1. Controleer of op de besturingssysteem schijf nu een groter formaat van het bestands systeem wordt weer gegeven.
 
-Zoals in het volgende voor beeld wordt weer gegeven, is het formaat van de besturingssysteem schijf gewijzigd van de portal naar 100 GB. Op het **/dev/sda1** -bestands systeem dat is gekoppeld, **/** wordt 97 GB weer gegeven.
+In het volgende voor beeld is de grootte van de besturingssysteem schijf gewijzigd van de portal naar 100 GB. Op het **/dev/sda1** -bestands systeem dat is gekoppeld, **/** wordt 97 GB weer gegeven.
 
 ```
 user@myvm:~# df -Th
@@ -112,19 +112,19 @@ De grootte van de besturingssysteem schijf in SUSE 12 SP4, SUSE SLES 12 voor SAP
 
 Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
 
-1. Gebruik de volgende opdracht om toegang te krijgen tot uw VM als een **hoofd** gebruiker:
+1. Gebruik deze opdracht om toegang te krijgen tot uw VM als een **hoofd** gebruiker:
 
    ```
    # sudo -i
    ```
 
-1. Gebruik de volgende opdracht om het **growpart** -pakket te installeren, dat wordt gebruikt om de grootte van de partitie te wijzigen:
+1. Gebruik de volgende opdracht om het **growpart** -pakket te installeren dat u gebruikt om de grootte van de partitie te wijzigen:
 
    ```
    # zypper install growpart
    ```
 
-1. Gebruik de `lsblk` opdracht om de partitie te vinden die is gekoppeld aan de hoofdmap van het bestands systeem (/). In dit geval ziet u dat partitie 4 van apparaat sda is gekoppeld aan/:
+1. Gebruik de `lsblk` opdracht om de partitie te vinden die is gekoppeld aan de hoofdmap van het bestands systeem ( **/** ). In dit geval ziet u dat partitie 4 van Device **SDA** is gekoppeld aan **/** :
 
    ```
    # lsblk
@@ -138,7 +138,7 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    └─sdb1   8:17   0    4G  0 part /mnt/resource
    ```
 
-1. Wijzig de grootte van de vereiste partitie met behulp `growpart` van de opdracht met behulp van het partitie nummer dat u in de vorige stap hebt gevonden.
+1. Wijzig de grootte van de vereiste partitie door gebruik te maken van de `growpart` opdracht en het partitie nummer dat u in de vorige stap hebt bepaald:
 
    ```
    # growpart /dev/sda 4
@@ -177,7 +177,7 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
 
 1. Gebruik op basis van het bestandssysteem type de juiste opdrachten om de grootte van het bestands systeem te wijzigen.
    
-   Voor **xfs** , gebruikt u de volgende opdracht:
+   Voor **xfs**, gebruikt u deze opdracht:
    
    ```
    #xfs_growfs /
@@ -200,13 +200,13 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    data blocks changed from 7470331 to 12188923
    ```
    
-   Voor **ext4** , gebruikt u de volgende opdracht:
+   Voor **ext4**, gebruikt u deze opdracht:
    
    ```
    #resize2fs /dev/sda4
    ```
    
-1. Controleer de verhoogde grootte van het bestands systeem voor **VG-th** , met behulp van de volgende opdracht:
+1. Controleer de verhoogde grootte van het bestands systeem voor **VG-th** met behulp van deze opdracht:
    
    ```
    #df -Thl
@@ -233,13 +233,13 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
 
 ### <a name="rhel-with-lvm"></a>RHEL met LVM
 
-1. Gebruik de volgende opdracht om toegang te krijgen tot uw VM als een **hoofd** gebruiker:
+1. Gebruik deze opdracht om toegang te krijgen tot uw VM als een **hoofd** gebruiker:
 
    ```bash
    [root@dd-rhel7vm ~]# sudo -i
    ```
 
-1. Gebruik de `lsblk` opdracht om te zoeken naar het logische volume (LV) dat is gekoppeld aan de hoofdmap van het bestands systeem (/). In dit geval ziet u dat **_rootvg-rootlv_*_ is gekoppeld aan _* /**.  Als een ander bestands systeem gewenst is, vervangt u de LV en het koppel punt door dit document.
+1. Gebruik de `lsblk` opdracht om te bepalen welk logisch volume (LV) is gekoppeld aan de hoofdmap van het bestands systeem ( **/** ). In dit geval ziet u dat **rootvg-rootlv** is gekoppeld aan **/** . Als u een ander bestands systeem wilt, vervangt u de LV en het koppel punt in dit artikel.
 
    ```shell
    [root@dd-rhel7vm ~]# lsblk -f
@@ -258,7 +258,7 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
       └─rootvg-rootlv     xfs                 4f3e6f40-61bf-4866-a7ae-5c6a94675193   /
    ```
 
-1. Controleer of er vrije ruimte is in de LVM volume groep met de hoofd partitie.  Als er vrije ruimte is, gaat u verder met stap **12**
+1. Controleer of er vrije ruimte is in de LVM-volume groep (VG) die de hoofd partitie bevat. Als er vrije ruimte is, gaat u verder met stap 12.
 
    ```bash
    [root@dd-rhel7vm ~]# vgdisplay rootvg
@@ -284,17 +284,15 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    VG UUID               lPUfnV-3aYT-zDJJ-JaPX-L2d7-n8sL-A9AgJb
    ```
 
-   In dit voor beeld wordt met de regel **vrije PE/grootte** aangegeven dat er 38.02 GB beschikbaar is in de volume groep.  Het wijzigen van de grootte van de schijf is niet vereist voordat er ruimte aan de volume groep wordt toegevoegd
+   In dit voor beeld ziet u in de **vrije PE/grootte** van de regel dat er 38,02 GB gratis is in de volume groep. U hoeft het formaat van de schijf niet te wijzigen voordat u ruimte aan de volume groep toevoegt.
 
-1. Verhoog de grootte van de besturingssysteem schijf in RHEL 7. x met LVM:
+1. Verhoog de grootte van de besturingssysteem schijf in RHEL 7. *x* met LVM:
 
    1. Stop de virtuele machine.
    1. Verhoog de grootte van de besturingssysteem schijf van de portal.
    1. Start de virtuele machine.
 
-1. Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
-
-   1. Installeer het pakket **Cloud-utils-growpart** om de **growpart** -opdracht op te geven. Dit is vereist om de besturingssysteem schijf groter te maken.
+1. Wanneer de virtuele machine opnieuw is opgestart, installeert u het pakket **Cloud-utils-growpart** om de opdracht te verkrijgen `growpart` , die u nodig hebt om de grootte van de besturingssysteem schijf te verg Roten.
 
       Dit pakket is vooraf geïnstalleerd op de meeste installatie kopieën van Azure Marketplace.
 
@@ -302,14 +300,14 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
       [root@dd-rhel7vm ~]# yum install cloud-utils-growpart
       ```
 
-1. Bepaal op welke schijf en partitie LVM fysieke volume (HW) in de volume groep (VG) met de naam rootvg met de **pvscan** -opdracht.  Noteer de grootte en de beschik bare ruimte tussen de vier Kante haken **[]**.
+1. Bepaal op welke schijf en partitie LVM fysieke volume of volumes (HW) in de volume groep met de naam **rootvg** met behulp van de `pvscan` opdracht. Let op de grootte en vrije ruimte tussen de vier Kante haken (**[** en **]**).
 
    ```bash
    [root@dd-rhel7vm ~]# pvscan
      PV /dev/sda4   VG rootvg          lvm2 [<63.02 GiB / <38.02 GiB free]
    ```
 
-1. Controleer de grootte van de partitie met **lsblk**.  Bekijk de 
+1. Controleer de grootte van de partitie met behulp van `lsblk` . 
 
    ```bash
    [root@dd-rhel7vm ~]# lsblk /dev/sda4
@@ -323,14 +321,14 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    └─rootvg-rootlv 253:6    0   2G  0 lvm  /
    ```
 
-1. Vouw de partitie met deze HW uit met behulp van **growpart** , de naam van het apparaat en het partitie nummer.  Hiermee wordt de opgegeven partitie uitgebreid voor het gebruik van alle vrije aaneengesloten ruimte op het apparaat.
+1. Vouw de partitie die deze HW bevat uit met `growpart` de apparaatnaam en het partitie nummer. Hierdoor wordt de opgegeven partitie uitgebreid voor het gebruik van alle vrije aaneengesloten ruimte op het apparaat.
 
    ```bash
    [root@dd-rhel7vm ~]# growpart /dev/sda 4
    CHANGED: partition=4 start=2054144 old: size=132161536 end=134215680 new: size=199272414 end=201326558
    ```
 
-1. Controleer of de grootte van de partitie is gewijzigd in de verwachte grootte met de **lsblk** -opdracht.  U ziet dat in het voor beeld sda4 is gewijzigd van 63G naar 95G.
+1. Controleer of de grootte van de partitie is gewijzigd in de verwachte grootte met behulp van de `lsblk` opdracht opnieuw. U ziet dat in het voor beeld **sda4** is gewijzigd van 63 gb in 95 GB.
 
    ```bash
    [root@dd-rhel7vm ~]# lsblk /dev/sda4
@@ -344,7 +342,7 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    └─rootvg-rootlv 253:6    0   2G  0 lvm  /
    ```
 
-1. Vouw de PV uit om de rest van de zojuist uitgebreide partitie te gebruiken
+1. Vouw de PV uit om de rest van de zojuist uitgebreide partitie te gebruiken:
 
    ```bash
    [root@dd-rhel7vm ~]# pvresize /dev/sda4
@@ -352,14 +350,14 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    1 physical volume(s) resized or updated / 0 physical volume(s) not resized
    ```
 
-1. Controleer of de nieuwe grootte van de HW de verwachte grootte heeft, vergeleken met de waarden van de oorspronkelijke **[grootte/vrije]** .
+1. Controleer of de nieuwe grootte van de HW de verwachte grootte heeft, en vergelijk deze met de oorspronkelijke waarden voor **[grootte/vrij]** :
 
    ```bash
    [root@dd-rhel7vm ~]# pvscan
    PV /dev/sda4   VG rootvg          lvm2 [<95.02 GiB / <70.02 GiB free]
    ```
 
-1. Vouw het gewenste logische volume (LV) uit met de gewenste hoeveelheid. dit hoeft niet alle vrije ruimte in de volume groep te zijn.  In het volgende voor beeld wordt **/dev/mapper/rootvg-rootlv** gewijzigd van 2 GB in 12 GB (een toename van 10 GB) met de volgende opdracht. Met deze opdracht wordt ook de grootte van het bestands systeem gewijzigd.
+1. Vouw het gewenste logische volume (LV) uit op basis van het gewenste bedrag. De hoeveelheid hoeft niet alle vrije ruimte in de volume groep te zijn. In het volgende voor beeld wordt de grootte van **/dev/mapper/rootvg-rootlv** gewijzigd van 2 GB in 12 GB (een toename van 10 GB). Met deze opdracht wordt ook de grootte van het bestands systeem gewijzigd.
 
    ```bash
    [root@dd-rhel7vm ~]# lvresize -r -L +10G /dev/mapper/rootvg-rootlv
@@ -383,7 +381,7 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    data blocks changed from 524288 to 3145728
    ```
 
-1. De opdracht lvresize roept automatisch de juiste grootte van het bestands systeem in de LV aan. Controleer of **/dev/mapper/rootvg-rootlv** , dat is gekoppeld aan, **/** een verhoogde bestands systeem grootte heeft met de volgende opdracht:
+1. De `lvresize` opdracht roept de juiste formaat wijziging automatisch aan voor het bestands systeem in de LV. Controleer of **/dev/mapper/rootvg-rootlv**, dat is gekoppeld aan **/** , een verhoogde bestandssysteem grootte heeft met behulp van de volgende opdracht:
 
    ```shell
    [root@dd-rhel7vm ~]# df -Th /
@@ -399,26 +397,27 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    ```
 
 > [!NOTE]
-> Als u dezelfde procedure wilt gebruiken om de grootte van een ander logisch volume te wijzigen, wijzigt u de **LV** -naam in stap **12**.
+> Als u dezelfde procedure wilt gebruiken om de grootte van een ander logisch volume te wijzigen, wijzigt u de LV-naam in stap 12.
 
 ### <a name="rhel-raw"></a>RHEL RAW
 >[!NOTE]
 >Maak altijd een moment opname van de virtuele machine voordat u de schijf grootte van het besturings systeem verg root.
 
-De besturingssysteem schijf in RHEL met onbewerkte partitie verg Roten:
+De besturingssysteem schijf in een RHEL RAW-partitie verg Roten:
 
-Stop de virtuele machine.
-Verhoog de grootte van de besturingssysteem schijf van de portal.
-Start de virtuele machine.
+1. Stop de virtuele machine.
+1. Verhoog de grootte van de besturingssysteem schijf van de portal.
+1. Start de virtuele machine.
+
 Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
 
-1. Gebruik de volgende opdracht om toegang te krijgen tot uw VM als een **hoofd** gebruiker:
+1. Gebruik deze opdracht om toegang te krijgen tot uw VM als een **hoofd** gebruiker:
  
    ```
    sudo su
    ```
 
-1. Installeer het **gptfdisk** -pakket, dat vereist is voor het verg Roten van de besturingssysteem schijf.
+1. Installeer het **gptfdisk** -pakket, dat u nodig hebt om de schijf grootte van het besturings systeem te verg Roten:
 
    ```
    yum install gdisk -y
@@ -429,70 +428,71 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
     gdisk -l /dev/sda
     ```
 
-1. De details van het partitie type worden weer geven. Zorg ervoor dat het GPT is. De basis partitie identificeren. Wijzig of verwijder de opstart partitie (BIOS-opstart partitie) en de systeem partitie (EFI-systeem partitie) niet.
+1. U ziet de details van het partitie type. Zorg ervoor dat het GPT is. De basis partitie identificeren. Wijzig of verwijder de opstart partitie (BIOS-opstart partitie) of de systeem partitie (EFI-systeem partitie) niet.
 
-1. Gebruik de volgende opdracht om het partitioneren voor de eerste keer te starten. 
+1. Gebruik deze opdracht om het partitioneren voor de eerste keer te starten: 
     ```
     gdisk /dev/sda
     ```
 
-1. U ziet nu een bericht waarin u wordt gevraagd om de volgende opdracht (' opdracht:? voor hulp '). 
+1. Er wordt een bericht weer gegeven waarin u wordt gevraagd om de volgende opdracht: `Command: ? for help` . Selecteer de toets **w** :
 
    ```
    w
    ```
 
-1. Er wordt een waarschuwing weer gegeven met de melding ' waarschuwing! De secundaire header is te vroeg op de schijf geplaatst. Wilt u dit probleem corrigeren? (J/N): ". U moet op Y drukken
+1. U ontvangt dit bericht: `Warning! Secondary header is placed too early on the disk! Do you want to
+correct this problem? (Y/N)` . Selecteer de **Y** -toets: 
 
    ```
    Y
    ```
 
-1. Er wordt een bericht weer gegeven waarin wordt gemeld dat de definitieve controles zijn voltooid en om bevestiging wordt gevraagd. Druk op Y
+1. Er wordt een bericht weer gegeven met de mede deling dat de eind controles zijn voltooid en er wordt gevraagd om bevestiging. Selecteer de **Y** -toets:
 
    ```
    Y
    ```
 
-1. Controleren of alles goed is gebeurd met behulp van de partprobe-opdracht
+1. Gebruik de `partprobe` opdracht om te controleren of alles juist is opgetreden:
 
    ```
    partprobe
    ```
 
-1. De bovenstaande stappen hebben ervoor gezorgd dat de secundaire GPT-header aan het einde wordt geplaatst. De volgende stap is het proces van het wijzigen van de grootte te starten met het hulp programma gdisk opnieuw. Gebruik de volgende opdracht.
+1. U hebt de vorige stappen voltooid om ervoor te zorgen dat de secundaire GPT-header aan het einde wordt geplaatst. Start vervolgens het proces van het wijzigen van het formaat met het `gdisk` hulp programma opnieuw. Gebruik de volgende opdracht:
 
    ```
    gdisk /dev/sda
    ```
-1. Druk in het menu opdracht op ' p ' om een lijst met partities weer te geven. Identificeren van de hoofd partitie (in de stappen wordt sda2 beschouwd als de basis partitie) en de opstart partitie (in de stappen wordt sda3 beschouwd als de opstart partitie) 
+1. Selecteer in het menu opdracht de **p** -toets om een lijst met partities weer te geven. De basis partitie identificeren. (In deze stappen wordt **sda2** beschouwd als de hoofd partitie.) De opstart partitie identificeren. (In deze stappen wordt **sda3** beschouwd als de opstart partitie.) 
 
    ```
    p
    ```
-    ![Hoofd partitie en opstart partitie](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw1.png)
+    ![Scherm opname van de hoofd partitie en de opstart partitie.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw1.png)
 
-1. Druk op ' om de partitie te verwijderen en selecteer het partitie nummer dat is toegewezen aan opstarten (in dit voor beeld is ' 3 ')
+1. Selecteer de **d** -sleutel om de partitie te verwijderen. Selecteer vervolgens het partitie nummer dat is toegewezen aan de opstart partitie. (In dit voor beeld is dit **3**.)
    ```
    d
    3
    ```
-1. Druk op ' om de partitie te verwijderen en selecteer het partitie nummer dat is toegewezen aan het opstarten (in dit voor beeld is ' 2 ')
+1. Selecteer de **d** -sleutel om de partitie te verwijderen. Selecteer het partitie nummer dat is toegewezen aan de opstart partitie. (In dit voor beeld is dit **2**.)
    ```
    d
    2
    ```
-    ![De hoofd partitie en opstart partitie verwijderen](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw2.png)
+    ![Scherm afbeelding met de stappen voor het verwijderen van de basis-en opstart partities.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw2.png)
 
-1. Als u de basis partitie opnieuw wilt maken met een verhoogde grootte, drukt u op ' n ', voert u het partitie nummer in dat u eerder voor root (' 2 ' voor dit voor beeld) hebt verwijderd en kiest u de eerste sector als ' standaard waarde ', laatste sector als ' waarde van de laatste sector-opstart grootte ' (' 4096 in dit geval ' overeenkomt met het 8300 2-
+1. Als u de hoofd partitie opnieuw wilt maken met een grotere grootte, selecteert u de **n** -sleutel en voert u vervolgens het partitie nummer in dat u eerder voor de hoofdmap hebt verwijderd (**2** in dit voor beeld). Kies `Default Value` voor de eerste sector. Kies `Last sector value -  boot size sector` voor de laatste sector ( `4096` in dit geval bij een installatie van 2 MB). Kies `8300` voor de hex-code.
    ```
    n
    2
    (Enter default)
-   (Calculateed value of Last sector value - 4096)
+   (Calculated value of Last sector value - 4096)
    8300
    ```
-1. Als u de opstart partitie opnieuw wilt maken, drukt u op ' n ', voert u het partitie nummer in dat u eerder voor het opstarten hebt verwijderd (' 3 ' voor dit voor beeld) en kiest u de eerste sector als standaard waarde, laatste sector als standaard waarde en hexadecimale code als ' EF02 '
+1. Als u de opstart partitie opnieuw wilt maken, selecteert u de **n** -sleutel en voert u vervolgens het partitie nummer in dat u eerder voor het opstarten hebt verwijderd (**3** in dit voor beeld). Kies `Default Value` voor de eerste sector en de laatste sector. Kies `EF02` voor de hex-code.
    ```
    n
    3
@@ -501,28 +501,28 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    EF02
    ```
 
-1. Schrijf de wijzigingen met de opdracht ' w ' en druk op ' Y ' om te bevestigen
+1. Schrijf de wijzigingen met behulp van de `w` opdracht en selecteer vervolgens `Y` om de wijzigingen te bevestigen:
    ```
    w
    Y
    ```
-1. Voer de opdracht ' partprobe ' uit om te controleren op schijf stabiliteit
+1. Voer de `partprobe` opdracht uit om te controleren op schijf stabiliteit:
    ```
    partprobe
    ```
-1. De virtuele machine opnieuw opstarten en de grootte van de hoofd partitie zijn verhoogd
+1. Start de VM opnieuw op. De grootte van de hoofd partitie moet worden verhoogd.
    ```
    reboot
    ```
 
-   ![Nieuwe hoofd partitie en opstart partitie](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw3.png)
+   ![Scherm opname van de stappen voor het opnieuw maken van de opstart partitie.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw3.png)
 
-1. Voer de xfs_growfs opdracht uit op de partitie om de grootte ervan te wijzigen
+1. Voer de `xfs_growfs` opdracht op de partitie uit om de grootte ervan te wijzigen:
    ```
    xfs_growfs /dev/sda2
    ```
 
-   ![XFS-groeiende FS](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw4.png)
+   ![Scherm afbeelding met het resultaat van het uitvoeren van xfs_growfs.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw4.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

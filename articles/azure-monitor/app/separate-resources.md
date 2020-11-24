@@ -3,12 +3,12 @@ title: 'Hoe kunt u uw Application Insights-implementatie ontwerpen: een VS veel 
 description: Telemetrie omleiden naar verschillende bronnen voor ontwikkelings-, test-en productie tempels.
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 264cbe35e7af50577b345d686b639e47760f428d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49e9b8920af7333e0d95e23e6e5cf0828d448609
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88258727"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536350"
 ---
 # <a name="how-many-application-insights-resources-should-i-deploy"></a>Hoeveel Application Insights resources moeten worden geïmplementeerd
 
@@ -26,7 +26,7 @@ Elke Application Insights resource wordt geleverd met metrische gegevens die bes
 
 -   Voor toepassings onderdelen die samen worden geïmplementeerd. Meestal ontwikkeld door één team, dat wordt beheerd door dezelfde set DevOps/ITOps-gebruikers.
 -   Als het zinvol is om Key Performance Indica tors (Kpi's) te verzamelen, zoals reactie duur, fout frequenties in dash board, enzovoort, standaard (u kunt kiezen om te segmenteren op rol naam in de Metrics Explorer-ervaring).
--   Als het niet nodig is om op rollen gebaseerde Access Control (RBAC) anders te beheren tussen de onderdelen van de toepassing.
+-   Als het niet nodig is om Azure RBAC (op rollen gebaseerd toegangs beheer) anders te beheren tussen de onderdelen van de toepassing.
 -   Als u geen metrische waarschuwings criteria nodig hebt die verschillen tussen de onderdelen.
 -   Als u doorlopend exporteren niet anders hoeft te beheren dan de onderdelen.
 -   Als u facturering/quota's niet anders hoeft te beheren tussen de onderdelen.

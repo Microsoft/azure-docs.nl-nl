@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2019
-ms.openlocfilehash: 7e1deb11eb8ae754198cae5be7ecf7150262a61e
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: a817c12a367d7c14f693389920e49b368a35cc06
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94411385"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522869"
 ---
 # <a name="optimize-log-queries-in-azure-monitor"></a>Logboek query's in Azure Monitor optimaliseren
 Azure Monitor logboeken maakt gebruik van [Azure Data Explorer (ADX)](/azure/data-explorer/) om logboek gegevens op te slaan en query's uit te voeren voor het analyseren van die gegevens. Het maakt, beheert en onderhoudt de ADX-clusters en optimaliseert deze voor de werk belasting van uw logboek analyse. Wanneer u een query uitvoert, wordt deze geoptimaliseerd en doorgestuurd naar het juiste ADX-cluster waarin de werkruimte gegevens worden opgeslagen. Zowel Azure Monitor-Logboeken als Azure Data Explorer maakt gebruik van veel automatische optimalisatie mechanismen voor query's. Automatische optimalisaties bieden een aanzienlijke Boost, maar er zijn enkele gevallen waarin u de query prestaties aanzienlijk kunt verbeteren. In dit artikel worden de prestatie overwegingen en verschillende technieken uitgelegd om ze op te lossen.
@@ -131,7 +131,7 @@ SecurityEvent
 
 Hoewel sommige aggregatie opdrachten zoals [Max ()](/azure/kusto/query/max-aggfunction), [Sum ()](/azure/kusto/query/sum-aggfunction), [Count (](/azure/kusto/query/count-aggfunction)) en [AVG ()](/azure/kusto/query/avg-aggfunction) een laag CPU-effect hebben vanwege hun logica, zijn andere complexer, en zijn er heuristische en schattingen opgenomen die ervoor zorgen dat ze efficiënt kunnen worden uitgevoerd. Zo maakt [DCount ()](/azure/kusto/query/dcount-aggfunction) gebruik van het HyperLogLog-algoritme om een nauw keurigheid te bieden voor het aantal grote sets gegevens, zonder dat elke waarde daad werkelijk wordt geteld. de percentiel functies voeren vergelijk bare benaderingen uit met behulp van het dichtstbijzijnde rang percentiel-algoritme. Enkele van de opdrachten bevatten optionele para meters om de impact te verminderen. De functie [makenset ()](/azure/kusto/query/makeset-aggfunction) heeft bijvoorbeeld een optionele para meter voor het definiëren van de maximale set grootte, die aanzienlijk van invloed is op de CPU en het geheugen.
 
-Opdrachten voor [samen voegen](/azure/kusto/query/joinoperator?pivots=azuremonitor) en [samen vattingen](/azure/kusto/query/summarizeoperator) kunnen een hoog CPU-gebruik veroorzaken wanneer ze een grote set gegevens verwerken. Hun complexiteit is rechtstreeks gerelateerd aan het aantal mogelijke waarden, aangeduid als *kardinaliteit* , van de kolommen die worden gebruikt als de in- `by` samenvatten of als de koppelings kenmerken. Raadpleeg de documentatie artikelen en optimaliserings tips voor uitleg en Optima Lise ring van deelname en samenvatten.
+Opdrachten voor [samen voegen](/azure/kusto/query/joinoperator?pivots=azuremonitor) en [samen vattingen](/azure/kusto/query/summarizeoperator) kunnen een hoog CPU-gebruik veroorzaken wanneer ze een grote set gegevens verwerken. Hun complexiteit is rechtstreeks gerelateerd aan het aantal mogelijke waarden, aangeduid als *kardinaliteit*, van de kolommen die worden gebruikt als de in- `by` samenvatten of als de koppelings kenmerken. Raadpleeg de documentatie artikelen en optimaliserings tips voor uitleg en Optima Lise ring van deelname en samenvatten.
 
 De volgende query's produceren bijvoorbeeld precies hetzelfde resultaat omdat **CounterPath** altijd een-op-een is toegewezen aan **CounterName** en **object naam**. De tweede is efficiënter naarmate de aggregatie dimensie kleiner is:
 
@@ -463,7 +463,7 @@ Query gedrag dat de parallelle uitvoering kan verminderen, omvat:
 - Het gebruik van serialisatie en venster functies, zoals de [operator serialize](/azure/kusto/query/serializeoperator), [Next ()](/azure/kusto/query/nextfunction), [vorig ()](/azure/kusto/query/prevfunction)en [Row](/azure/kusto/query/rowcumsumfunction) . De functies time series en gebruikers analyse kunnen in enkele van deze gevallen worden gebruikt. Er kunnen ook inefficiënte serialisatie optreden als de volgende Opera tors niet aan het einde van de query worden gebruikt: [Range](/azure/kusto/query/rangeoperator), [Sort](/azure/kusto/query/sortoperator), [order](/azure/kusto/query/orderoperator), [Top](/azure/kusto/query/topoperator), [Top-hitters](/azure/kusto/query/tophittersoperator), [getschema](/azure/kusto/query/getschemaoperator).
 -    Gebruik van de aggregatie functie van [DCount ()](/azure/kusto/query/dcount-aggfunction) dwingt het systeem een centrale kopie van de afzonderlijke waarden te hebben. Wanneer de schaal van de gegevens hoog is, kunt u de optionele para meters van de functie DCount gebruiken om de nauw keurigheid te verlagen.
 -    In veel gevallen verlaagt de operator voor [samen voegen](/azure/kusto/query/joinoperator?pivots=azuremonitor) de algehele parallelle uitvoering. Onderzoek wille keurige volg orde als alternatief wanneer de prestaties problemen veroorzaken.
--    In het geval van query's in een resource bereik kunnen de RBAC-controles voorafgaand aan uitvoering wellicht een rol spelen in situaties waarin een zeer groot aantal Azure-roltoewijzingen is opgenomen. Dit kan leiden tot langere controles die resulteren in een lagere parallelle uitvoering. Bijvoorbeeld: er wordt een query uitgevoerd op een abonnement met duizenden resources en elke resource heeft veel roltoewijzingen op het niveau van de resource, niet op het abonnement of de resource groep.
+-    In het geval van query's in een resource bereik kunnen de Kubernetes RBAC-of Azure RBAC-controles voorafgaand aan het uitvoeren van een zeer groot aantal Azure-roltoewijzingen zijn. Dit kan leiden tot langere controles die resulteren in een lagere parallelle uitvoering. Bijvoorbeeld: er wordt een query uitgevoerd op een abonnement met duizenden resources en elke resource heeft veel roltoewijzingen op het niveau van de resource, niet op het abonnement of de resource groep.
 -    Als een query kleine delen van gegevens verwerkt, is de parallelle kracht laag omdat het systeem deze niet verspreidt over veel reken knooppunten.
 
 

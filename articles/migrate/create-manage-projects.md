@@ -2,22 +2,62 @@
 title: Azure Migrate-projecten maken en beheren
 description: U kunt projecten vinden, maken, beheren en verwijderen in Azure Migrate.
 ms.topic: how-to
-ms.date: 07/23/2020
-ms.openlocfilehash: d60868f9d0d4c60291cfd92a9e8d11fd3f9a42b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/23/2020
+ms.openlocfilehash: 95f123188f7906cbd5c7a209c9fd01be006e9a7e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87071805"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95534917"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Azure Migrate-projecten maken en beheren
 
 In dit artikel wordt beschreven hoe u [Azure migrate](migrate-services-overview.md) projecten maakt, beheert en verwijdert.
 
+Een Azure Migrate project wordt gebruikt voor het opslaan van de metagegevens voor detectie, evaluatie en migratie die zijn verzameld uit de omgeving die u wilt beoordelen of migreren. In een project kunt u gedetecteerde assets volgen, beoordelingen maken en migraties naar Azure organiseren.  
+
+## <a name="verify-permissions"></a>Machtigingen controleren
+
+Controleer of u de juiste machtigingen hebt om een Azure Migrate project te maken:
+
+1. Open in het Azure Portal het relevante abonnement en selecteer **toegangs beheer (IAM)**.
+2. In **toegang controleren**, zoek het relevante account en selecteer de weer gave-machtigingen. U moet de machtigingen *Inzender* of *Eigenaar* hebben. 
+
 
 ## <a name="create-a-project-for-the-first-time"></a>Voor de eerste keer een project maken
 
-De eerste keer dat u Azure Migrate instelt, maakt u een project en voegt u een hulp programma voor beoordeling of migratie toe. [Volg deze instructies](how-to-add-tool-first-time.md) om de eerste keer in te stellen.
+Stel een nieuw Azure Migrate project in een Azure-abonnement in.
+
+1. Zoek in het Azure Portal naar *Azure migrate*.
+2. Selecteer **Azure migrate** in **Services**.
+3. Selecteer in **Overzicht** de optie **Servers evalueren en migreren**.
+
+    ![Optie in overzicht om servers te evalueren en te migreren](./media/create-manage-projects/assess-migrate-servers.png)
+
+4. Selecteer in **servers** de optie **project maken**.
+
+    ![Knop om het project te maken](./media/create-manage-projects/create-project.png)
+
+5. Selecteer in **project maken** het Azure-abonnement en de resource groep. Maak een resourcegroep als u er nog geen hebt.
+6. Geef in **Projectdetails** de projectnaam en het geografische gebied op waarin u het project wilt maken.
+    - De geografie wordt alleen gebruikt om de meta gegevens op te slaan die zijn verzameld van on-premises machines. U kunt een wille keurige doel regio voor migratie selecteren. 
+    - Bekijk ondersteunde geografische regio's voor [openbare](migrate-support-matrix.md#supported-geographies-public-cloud) clouds en [overheidsclouds](migrate-support-matrix.md#supported-geographies-azure-government).
+
+8. Selecteer **Maken**.
+
+   ![Pagina naar invoer van project instellingen](./media/create-manage-projects/project-details.png)
+
+
+Wacht een paar minuten tot het Azure Migrate-project is geïmplementeerd.
+
+## <a name="create-a-project-in-a-specific-region"></a>Een project maken in een specifieke regio
+
+In de portal kunt u de geografie selecteren waarin u het project wilt maken. Als u het project binnen een specifieke Azure-regio wilt maken, gebruikt u de volgende API-opdracht om het project te maken.
+
+```rest
+PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/MigrateProjects/<mymigrateprojectname>?api-version=2018-09-01-preview "{location: 'centralus', properties: {}}"
+``````
+
 
 ## <a name="create-additional-projects"></a>Aanvullende projecten maken
 
@@ -30,24 +70,24 @@ Als u al een Azure Migrate project hebt en u een aanvullend project wilt maken, 
 
 3. Als u een nieuw project wilt maken, selecteert u **hier klikken**.
 
-   ![Een tweede Azure Migrate-project maken](./media/create-manage-projects/create-new-project.png)
-
 
 ## <a name="find-a-project"></a>Een project zoeken
 
 Zoek een project op de volgende manier:
 
-1. Zoek in het [Azure Portal](https://portal.azure.com)naar **Azure migrate**.
-2. Selecteer in het Azure Migrate Dash **Servers**Board > servers **wijzigen** in de rechter bovenhoek.
+1. Zoek in het [Azure Portal](https://portal.azure.com)naar *Azure migrate*.
+2. Selecteer in het Azure Migrate Dash **Servers** Board > servers **wijzigen** in de rechter bovenhoek.
 
     ![Overschakelen naar een bestaand Azure Migrate project](./media/create-manage-projects/switch-project.png)
 
 3. Selecteer het juiste abonnement en Azure Migrate project.
 
 
+### <a name="find-a-legacy-project"></a>Een oud project zoeken
+
 Als u het project hebt gemaakt in de [vorige versie](migrate-services-overview.md#azure-migrate-versions) van Azure migrate, kunt u het als volgt vinden:
 
-1. Zoek in het [Azure Portal](https://portal.azure.com)naar **Azure migrate**.
+1. Zoek in het [Azure Portal](https://portal.azure.com)naar *Azure migrate*.
 2. Als u in de vorige versie van het dash board van Azure Migrate een project hebt gemaakt, wordt er een banner weer gegeven dat verwijst naar oudere projecten. Selecteer de banner.
 
     ![Toegang tot bestaande projecten](./media/create-manage-projects/access-existing-projects.png)
@@ -78,7 +118,7 @@ Opmerking:
 
 1. Blader naar de Log Analytics werkruimte die aan het project is gekoppeld.
 
-    - Als u het Azure migrate project nog niet hebt verwijderd, kunt u de koppeling naar de werk ruimte in **Essentials**  >  **Server-evaluatie**vinden.
+    - Als u het Azure migrate project nog niet hebt verwijderd, kunt u de koppeling naar de werk ruimte in **Essentials**  >  **Server-evaluatie** vinden.
        ![De werk ruimte LA ](./media/create-manage-projects/loganalytics-workspace.png) .
        
     - Als u het Azure Migrate project al hebt verwijderd, selecteert u **resource groepen** in het linkerdeel venster van de Azure Portal en zoekt u de werk ruimte.

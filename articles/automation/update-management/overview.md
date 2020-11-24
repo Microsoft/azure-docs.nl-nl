@@ -3,14 +3,14 @@ title: Overzicht van Azure Automation Updatebeheer
 description: Dit artikel bevat een overzicht van de functie Updatebeheer die updates implementeert voor uw Windows-en Linux-computers.
 services: automation
 ms.subservice: update-management
-ms.date: 10/26/2020
+ms.date: 11/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: abcc2b60fd796a80342fe48c3c9027388660476a
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: eadceb17d01b40deab656bdd6223cb8f0844f54f
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95488144"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95528241"
 ---
 # <a name="update-management-overview"></a>Overzicht van updatebeheer
 
@@ -76,10 +76,10 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 |---------|---------|
 |Windows Server 2019 (Data Center/Data Center core/Standard)<br><br>Windows Server 2016 (Data Center/Data Center core/Standard)<br><br>Windows Server 2012 R2 (Data Center/Standard)<br><br>Windows Server 2012 ||
 |Windows Server 2008 R2 (RTM en SP1 Standard)| Updatebeheer ondersteunt evaluaties en patches voor dit besturings systeem. De [Hybrid Runbook worker](../automation-windows-hrw-install.md) wordt ondersteund voor Windows Server 2008 R2. |
-|CentOS 6 (x86/x64) en 7 (x64)      | Linux-agents moeten toegang hebben tot een update opslagplaats. Voor op classificaties gebaseerde patches moeten `yum` beveiligings gegevens worden geretourneerd die CentOS niet hebben in de RTM-releases. Zie [Update classificaties in Linux](view-update-assessments.md#linux)voor meer informatie over op CentOS gebaseerde patches op basis van classificatie.          |
-|Red Hat Enterprise 6 (x86/x64) en 7 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats.        |
+|CentOS 6 en 7 (x64)      | Linux-agents moeten toegang hebben tot een update opslagplaats. Voor op classificaties gebaseerde patches moeten `yum` beveiligings gegevens worden geretourneerd die CentOS niet hebben in de RTM-releases. Zie [Update classificaties in Linux](view-update-assessments.md#linux)voor meer informatie over op CentOS gebaseerde patches op basis van classificatie.          |
+|Red Hat Enter prise 6 en 7 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats.        |
 |SUSE Linux Enterprise Server 12 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats.        |
-|Ubuntu 14,04 LTS, 16,04 LTS en 18,04 (x86/x64)      |Linux-agents moeten toegang hebben tot een update opslagplaats.         |
+|Ubuntu 14,04 LTS, 16,04 LTS en 18,04 (x64)      |Linux-agents moeten toegang hebben tot een update opslagplaats.         |
 
 > [!NOTE]
 > Virtuele-machine schaal sets van Azure kunnen worden beheerd via Updatebeheer. Updatebeheer werkt op de instanties zelf en niet op basis van de installatie kopie. U moet de updates op een incrementele manier plannen, zodat niet alle VM-exemplaren tegelijk worden bijgewerkt. U kunt knoop punten voor virtuele-machine schaal sets toevoegen door de stappen onder [een niet-Azure-computer toevoegen aan wijzigingen bijhouden en inventarisatie te](../automation-tutorial-installed-software.md#add-a-non-azure-machine-to-change-tracking-and-inventory)volgen.

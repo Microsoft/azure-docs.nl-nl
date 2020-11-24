@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: normesta
 ms.date: 03/04/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 5c9d7faebe7fefdddbf194e3a9ad36b4644115e0
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 8ca670049b49500e6b6310bca25cb78ded31a294
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746456"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95537846"
 ---
 # <a name="host-a-static-website-in-azure-storage"></a>Een statische website hosten in Azure Storage
 
@@ -38,25 +38,25 @@ Het hosten van statische websites is een functie die u moet inschakelen op het o
 
 4. Selecteer **Ingeschakeld** om het hosten van statische websites in te schakelen voor het opslagaccount.
 
-5. Geef in het veld **naam van index document** een standaard index pagina op (bijvoorbeeld: *index.html* ). 
+5. Geef in het veld **naam van index document** een standaard index pagina op (bijvoorbeeld: *index.html*). 
 
    De standaardindexpagina wordt weergegeven wanneer een gebruiker naar de hoofdmap van uw statische website navigeert.  
 
-6. Geef in het veld **pad naar fout document** een standaardfouten pagina op (bijvoorbeeld: *404.html* ). 
+6. Geef in het veld **pad naar fout document** een standaardfouten pagina op (bijvoorbeeld: *404.html*). 
 
    De standaardfoutpagina wordt weergegeven wanneer een gebruiker probeert te navigeren naar een pagina die niet in uw statische website bestaat.
 
-7. Klik op **Opslaan** . Het eindpunt voor uw statische website wordt nu weergegeven in de Azure-portal. 
+7. Klik op **Opslaan**. Het eindpunt voor uw statische website wordt nu weergegeven in de Azure-portal. 
 
     ![Het hosten van een statische website inschakelen voor een opslagaccount](media/storage-blob-static-website-host/enable-static-website-hosting.png)
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 <a id="cli"></a>
 
-U kunt statisch website hosting inschakelen met behulp van de [Azure Command-Line interface (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+U kunt statisch website hosting inschakelen met behulp van de [Azure Command-Line interface (CLI)](/cli/azure/?view=azure-cli-latest).
 
-1. Open eerst de [Azure Cloud shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest)of als u de Azure cli lokaal hebt [geïnstalleerd](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) , opent u een opdracht console toepassing zoals Windows Power shell.
+1. Open eerst de [Azure Cloud shell](../../cloud-shell/overview.md?view=azure-cli-latest)of als u de Azure cli lokaal hebt [geïnstalleerd](/cli/azure/install-azure-cli?view=azure-cli-latest) , opent u een opdracht console toepassing zoals Windows Power shell.
 
 2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van het opslag account dat als host voor uw statische website gaat.
 
@@ -136,9 +136,9 @@ U kunt statisch website hosting inschakelen met behulp van de module Azure Power
 
 ### <a name="portal"></a>[Portal](#tab/azure-portal)
 
-In deze instructies wordt uitgelegd hoe u bestanden kunt uploaden met behulp van de versie van Storage Explorer die wordt weer gegeven in de Azure Portal. U kunt echter ook de versie van [Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) gebruiken die buiten de Azure portal wordt uitgevoerd. U kunt [AzCopy](../common/storage-use-azcopy-v10.md), Power shell, CLI of een aangepaste toepassing gebruiken die bestanden kan uploaden naar de **$Web** container van uw account. Zie [zelf studie: een statische website op Blob Storage hosten](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website-host)voor een stapsgewijze zelf studie die bestanden uploadt met Visual Studio code.
+In deze instructies wordt uitgelegd hoe u bestanden kunt uploaden met behulp van de versie van Storage Explorer die wordt weer gegeven in de Azure Portal. U kunt echter ook de versie van [Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) gebruiken die buiten de Azure portal wordt uitgevoerd. U kunt [AzCopy](../common/storage-use-azcopy-v10.md), Power shell, CLI of een aangepaste toepassing gebruiken die bestanden kan uploaden naar de **$Web** container van uw account. Zie [zelf studie: een statische website op Blob Storage hosten](./storage-blob-static-website-host.md)voor een stapsgewijze zelf studie die bestanden uploadt met Visual Studio code.
 
-1. Selecteer **Storage Explorer (preview)** .
+1. Selecteer **Storage Explorer (preview)**.
 
 2. Vouw het knoop punt **BLOB containers** uit en selecteer vervolgens de container **$Web** .
 
@@ -151,9 +151,9 @@ In deze instructies wordt uitgelegd hoe u bestanden kunt uploaden met behulp van
    ![Inhouds typen controleren](media/storage-blob-static-website/storage-blob-static-website-content-type.png)
 
    >[!NOTE]
-   > Storage Explorer wordt deze eigenschap automatisch ingesteld op `text/html` voor gebruikelijke, herkende extensies zoals `.html` . In sommige gevallen moet u dit echter zelf instellen. Als u deze eigenschap niet instelt op `text/html` , wordt gebruikers door de browser gevraagd het bestand te downloaden in plaats van de inhoud te renderen. Als u deze eigenschap wilt instellen, klikt u met de rechter muisknop op het bestand en klikt u vervolgens op **Eigenschappen** .
+   > Storage Explorer wordt deze eigenschap automatisch ingesteld op `text/html` voor gebruikelijke, herkende extensies zoals `.html` . In sommige gevallen moet u dit echter zelf instellen. Als u deze eigenschap niet instelt op `text/html` , wordt gebruikers door de browser gevraagd het bestand te downloaden in plaats van de inhoud te renderen. Als u deze eigenschap wilt instellen, klikt u met de rechter muisknop op het bestand en klikt u vervolgens op **Eigenschappen**.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Objecten uploaden naar de *$Web* container vanuit een bronmap.
 
@@ -173,7 +173,7 @@ az storage blob upload-batch -s <source-path> -d '$web' --account-name <storage-
 > [!NOTE]
 > Als u een locatie-installatie van Azure CLI gebruikt, kunt u het pad naar een wille keurige locatie op de lokale computer gebruiken (bijvoorbeeld: `C:\myFolder` .
 >
-> Als u Azure Cloud Shell gebruikt, moet u verwijzen naar een bestands share die zichtbaar is voor de Cloud Shell. Deze locatie kan de bestands share zijn van de Cloud share zelf of een bestaande bestands share die u koppelt van de Cloud Shell. Zie [bestanden in azure Cloud shell persistent](https://docs.microsoft.com/azure/cloud-shell/persisting-shell-storage)maken voor meer informatie over hoe u dit doet.
+> Als u Azure Cloud Shell gebruikt, moet u verwijzen naar een bestands share die zichtbaar is voor de Cloud Shell. Deze locatie kan de bestands share zijn van de Cloud share zelf of een bestaande bestands share die u koppelt van de Cloud Shell. Zie [bestanden in azure Cloud shell persistent](../../cloud-shell/persisting-shell-storage.md)maken voor meer informatie over hoe u dit doet.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -204,11 +204,11 @@ U kunt de pagina's van uw site vanuit een browser weer geven met behulp van de o
 
 ### <a name="portal"></a>[Portal](#tab/azure-portal)
 
-In het deel venster dat wordt weer gegeven naast de pagina account overzicht van uw opslag account, selecteert u **statische website** . De URL van uw site wordt weer gegeven in het veld voor het **primaire eind punt** .
+In het deel venster dat wordt weer gegeven naast de pagina account overzicht van uw opslag account, selecteert u **statische website**. De URL van uw site wordt weer gegeven in het veld voor het **primaire eind punt** .
 
 ![Metrische gegevens voor metrische gegevens van statische websites Azure Storage](./media/storage-blob-static-website/storage-blob-static-website-url.png)
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Zoek de open bare URL van uw statische website met behulp van de volgende opdracht:
 
@@ -249,7 +249,7 @@ Wanneer u metrische gegevens hebt ingeschakeld, worden verkeers statistieken voo
    > [!NOTE]
    > Metrische gegevens worden gegenereerd door te hooken in verschillende metrische Api's. In de portal worden alleen de API-leden weer gegeven die binnen een bepaalde periode zijn gebruikt, zodat ze alleen kunnen worden gericht op leden die gegevens retour neren. Om ervoor te zorgen dat u het benodigde API-lid kunt selecteren, is de eerste stap om het tijds bestek uit te breiden.
 
-2. Klik op de knop tijds bestek, kies een tijds bestek en klik vervolgens op **Toep assen** .
+2. Klik op de knop tijds bestek, kies een tijds bestek en klik vervolgens op **Toep assen**.
 
    ![Tijds bereik voor metrische gegevens van statische websites Azure Storage](./media/storage-blob-static-website/storage-blob-static-website-metrics-time-range.png)
 
@@ -279,4 +279,3 @@ Wanneer u metrische gegevens hebt ingeschakeld, worden verkeers statistieken voo
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over het configureren van een aangepast domein met uw statische website. Zie [een aangepast domein toewijzen aan een Azure Blob Storage-eind punt](storage-custom-domain-name.md).
-

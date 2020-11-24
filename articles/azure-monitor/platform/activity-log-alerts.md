@@ -4,12 +4,12 @@ description: Ontvang een melding via SMS, webhook, SMS, e-mail en meer wanneer b
 ms.subservice: alerts
 ms.topic: conceptual
 ms.date: 09/17/2018
-ms.openlocfilehash: 7ed73678e0df1e068782c2a094846132be58cfe2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 836fc20b6c3d46766801dce0e2aeda83a217d6a3
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86516121"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536078"
 ---
 # <a name="alerts-on-activity-log"></a>Meldingen over activiteitenlogboek
 
@@ -40,7 +40,7 @@ Waarschuwingen voor activiteiten logboeken bevatten enkele algemene opties:
     - Abonnements niveau: bijvoorbeeld alle virtuele machines in een abonnement (of) alle resources in een abonnement
 - **Resource groep**: standaard wordt de waarschuwings regel opgeslagen in dezelfde resource groep als die van het doel dat in bereik is gedefinieerd. De gebruiker kan ook de resource groep definiëren waarin de waarschuwings regel moet worden opgeslagen.
 - **Resource type**: in Resource Manager gedefinieerde naam ruimte voor het doel van de waarschuwing.
-- **Bewerkings naam**: de naam van de [Azure Resource Manager bewerking](../../role-based-access-control/resource-provider-operations.md) die wordt gebruikt voor Role-Based Access Control. Bewerkingen die niet zijn geregistreerd met Azure Resource Manager kunnen niet worden gebruikt in een waarschuwings regel voor het activiteiten logboek.
+- **Bewerkings naam**: de [bewerkings](../../role-based-access-control/resource-provider-operations.md) naam van de Azure-resource provider die wordt gebruikt voor toegangs beheer op basis van rollen. Bewerkingen die niet zijn geregistreerd met Azure Resource Manager kunnen niet worden gebruikt in een waarschuwings regel voor het activiteiten logboek.
 - **Niveau**: het Ernst niveau van de gebeurtenis (informatief, waarschuwing, fout of kritiek).
 - **Status**: de status van de gebeurtenis, meestal gestart, mislukt of geslaagd.
 - **Gebeurtenis gestart door**: ook wel bekend als de aanroeper. Het e-mail adres of de Azure Active Directory id van de gebruiker die de bewerking heeft uitgevoerd.
@@ -60,5 +60,5 @@ Zie voor meer informatie over actie groepen [actie groepen maken en beheren in d
 
 - Een [overzicht van waarschuwingen](alerts-overview.md)weer geven.
 - Meer informatie over het [maken en wijzigen van waarschuwingen voor activiteiten logboeken](alerts-activity-log.md).
-- Controleer het [webhook-schema](activity-log-alerts-webhook.md)van de waarschuwing voor het activiteiten logboek.
-- Meer informatie over [service status meldingen](../../service-health/service-notifications.md).
+- Bekijk het [webhookschema voor waarschuwingen voor het activiteitenlogboek](activity-log-alerts-webhook.md).
+- Meer informatie over [servicestatusmeldingen](../../service-health/service-notifications.md).

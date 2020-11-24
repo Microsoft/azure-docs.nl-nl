@@ -7,18 +7,20 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 989115224489ff8fff360a34b27c338ea3e33058
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: d587c4dbdd8f46d6e098ff96f464d456fffc9ccf
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145817"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95529979"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Inleiding tot Azure Defender voor containerregisters
 
 Azure Container Registry (ACR) is een beheerde, privé-Docker-registerservice die uw containerinstallatiekopieën voor Azure-implementaties in een centraal register opslaat en beheert. Het is gebaseerd op het opensource Docker Registry 2.0.
 
 Om alle registers op basis van Azure Resource Manager in uw abonnement te beschermen, schakelt u **Azure Defender voor containerregisters** in op abonnementsniveau. Security Center scant vervolgens installatiekopieën die naar het register worden gepusht, of installatiekopieën die in de laatste 30 dagen zijn opgehaald. Deze functie wordt in rekening gebracht per installatiekopie.
+
+[!INCLUDE [Defender for container registries availability info](../../includes/security-center-availability-defender-for-container-registries.md)]
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-container-registries"></a>Wat zijn de voordelen van Azure Defender voor containerregisters?
 
@@ -43,11 +45,11 @@ Door alleen een melding te geven als er problemen zijn, vermindert Security Cent
 
 Er zijn drie triggers voor het scannen van installatiekopieën:
 
-- **Bij push** : wanneer een installatiekopie naar het register wordt gepusht, wordt deze automatisch door Security Center gescand. U kunt het scannen van een installatiekopie activeren door deze naar uw opslagplaats te pushen.
+- **Bij push**: wanneer een installatiekopie naar het register wordt gepusht, wordt deze automatisch door Security Center gescand. U kunt het scannen van een installatiekopie activeren door deze naar uw opslagplaats te pushen.
 
-- **Recent opgehaald** : aangezien er elke dag nieuwe beveiligingsproblemen worden ontdekt, scant **Azure Defender voor containerregisters** ook alle installatiekopieën die de afgelopen 30 dagen zijn opgehaald. Er zijn geen extra kosten verbonden aan het opnieuw scannen. Zoals hierboven gezegd, wordt u één keer per installatiekopie gefactureerd.
+- **Recent opgehaald**: aangezien er elke dag nieuwe beveiligingsproblemen worden ontdekt, scant **Azure Defender voor containerregisters** ook alle installatiekopieën die de afgelopen 30 dagen zijn opgehaald. Er zijn geen extra kosten verbonden aan het opnieuw scannen. Zoals hierboven gezegd, wordt u één keer per installatiekopie gefactureerd.
 
-- **Bij import** : Azure Container Registry heeft functies voor het importeren van installatiekopieën in uw register vanuit Docker Hub, Microsoft-containerregister of een ander Azure-containerregister. **Azure Defender voor containerregisters** scant alle ondersteunde installatiekopieën die u importeert. Zie [Containerinstallatiekopieën importeren in een containerregister](../container-registry/container-registry-import-images.md) voor meer informatie.
+- **Bij import**: Azure Container Registry heeft functies voor het importeren van installatiekopieën in uw register vanuit Docker Hub, Microsoft-containerregister of een ander Azure-containerregister. **Azure Defender voor containerregisters** scant alle ondersteunde installatiekopieën die u importeert. Zie [Containerinstallatiekopieën importeren in een containerregister](../container-registry/container-registry-import-images.md) voor meer informatie.
  
 De scan wordt doorgaans binnen 2 minuten voltooid, maar kan tot 15 minuten duren. Bevindingen worden beschikbaar gesteld als Security Center-aanbevelingen zoals deze:
 

@@ -4,12 +4,12 @@ description: Overzicht van waarschuwingen in Azure. Waarschuwingen, klassieke wa
 ms.subservice: alerts
 ms.topic: conceptual
 ms.date: 01/28/2018
-ms.openlocfilehash: e71f048a0a96323552b426663a235ed66fa2ef87
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: b8d24eab79bdf16e4d883549be00431bd5372af8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108793"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536044"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Overzicht van waarschuwingen in Microsoft Azure 
 
@@ -76,7 +76,7 @@ U kunt de status van een waarschuwing instellen om op te geven waar deze zich in
 
 De volgende waarschuwings statussen worden ondersteund.
 
-| Status | Beschrijving |
+| Staat | Beschrijving |
 |:---|:---|
 | Nieuw | Het probleem is gedetecteerd en nog niet gecontroleerd. |
 | Bevestigd | Een beheerder heeft de waarschuwing gecontroleerd en aan het werk gegaan. |
@@ -140,7 +140,7 @@ Er zijn waarschuwingen beschikbaar in verschillende Azure-bewakings Services. Zi
 
 
 ## <a name="all-alerts-page"></a>Pagina alle waarschuwingen 
-Selecteer **Totaal aantal waarschuwingen**om de pagina **alle waarschuwingen** weer te geven. Hier kunt u een lijst weer geven met waarschuwingen die zijn gemaakt in de geselecteerde tijd. U kunt een lijst weer geven van de afzonderlijke waarschuwingen of een lijst van de Smart-groepen die de waarschuwingen bevatten. Selecteer de banner aan de bovenkant van de pagina om tussen de weer gaven te scha kelen.
+Selecteer **Totaal aantal waarschuwingen** om de pagina **alle waarschuwingen** weer te geven. Hier kunt u een lijst weer geven met waarschuwingen die zijn gemaakt in de geselecteerde tijd. U kunt een lijst weer geven van de afzonderlijke waarschuwingen of een lijst van de Smart-groepen die de waarschuwingen bevatten. Selecteer de banner aan de bovenkant van de pagina om tussen de weer gaven te scha kelen.
 
 ![Scherm afbeelding van alle pagina waarschuwingen](media/alerts-overview/all-alerts-page.png)
 
@@ -173,9 +173,9 @@ De pagina waarschuwings Details bevat de volgende secties:
 | Geschiedenis | Een lijst met alle acties die worden uitgevoerd door de waarschuwing en eventuele wijzigingen aan de waarschuwing. Momenteel beperkt tot status wijzigingen. |
 | Diagnostiek | Informatie over de Smart-groep waarin de waarschuwing is opgenomen. Het *aantal meldingen verwijst naar* het aantal waarschuwingen dat is opgenomen in de slimme groep. Bevat ook andere waarschuwingen in dezelfde slimme groep die zijn gemaakt in de afgelopen 30 dagen, ongeacht het tijd filter op de lijst pagina met waarschuwingen. Selecteer een waarschuwing om de details ervan weer te geven. |
 
-## <a name="role-based-access-control-rbac-for-your-alert-instances"></a>Op rollen gebaseerd toegangs beheer (RBAC) voor uw waarschuwings instanties
+## <a name="azure-role-based-access-control-azure-rbac-for-your-alert-instances"></a>Op rollen gebaseerd toegangs beheer op basis van Azure (Azure RBAC) voor uw waarschuwings instanties
 
-Voor het gebruik en het beheer van waarschuwings instanties moet de gebruiker beschikken over de ingebouwde rollen van Azure voor het [bewaken van Inzender](../../role-based-access-control/built-in-roles.md#monitoring-contributor) of [bewakings lezer](../../role-based-access-control/built-in-roles.md#monitoring-reader). Deze rollen worden met elk Azure Resource Manager bereik ondersteund, van het abonnements niveau tot gedetailleerde toewijzingen op het niveau van een resource. Als een gebruiker bijvoorbeeld alleen toegang voor de bewaking van inzenders voor de virtuele machine heeft `ContosoVM1` , kan die gebruiker alleen waarschuwingen gebruiken en beheren die zijn gegenereerd op `ContosoVM1` .
+Voor het verbruik en Beheer van waarschuwingsexemplaren moet de gebruiker beschikken over de ingebouwde Azure-rollen [Bewakingsinzender](../../role-based-access-control/built-in-roles.md#monitoring-contributor) of [Bewakingslezer](../../role-based-access-control/built-in-roles.md#monitoring-reader). Deze rollen worden met elk Azure Resource Manager-bereik ondersteund, van het abonnementsniveau tot gedetailleerde toewijzingen op het niveau van een resource. Als een gebruiker bijvoorbeeld alleen toegang voor de bewaking van inzenders voor de virtuele machine heeft `ContosoVM1` , kan die gebruiker alleen waarschuwingen gebruiken en beheren die zijn gegenereerd op `ContosoVM1` .
 
 ## <a name="manage-your-alert-instances-programmatically"></a>Uw waarschuwings instanties programmatisch beheren
 

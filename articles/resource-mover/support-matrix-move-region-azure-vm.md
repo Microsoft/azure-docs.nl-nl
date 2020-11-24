@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 10/11/2020
 ms.author: raynew
-ms.openlocfilehash: b59bc33698be516ec5a2e289b52dafcb9e9efcbe
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 4da707ab698599c8ea5dd8e1ea8647f543eb2a68
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341855"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95524246"
 ---
 # <a name="support-for-moving-azure-vms-between-azure-regions"></a>Ondersteuning voor het verplaatsen van virtuele Azure-machines tussen Azure-regio's
 
@@ -121,11 +121,11 @@ Deze tabel bevat een overzicht van de ondersteuning voor de Azure VM-besturingss
 
 **Onderdeel** | **Ondersteuning** | **Details**
 --- | --- | ---
-Maximale grootte van de besturingssysteem schijf | 2048 GB | Meer [informatie](../virtual-machines/windows/managed-disks-overview.md) over VM-schijven.
-Tijdelijke schijf | Niet ondersteund | De tijdelijke schijf wordt altijd uitgesloten van het voorbereidings proces.<br/><br/> Sla geen permanente gegevens op de tijdelijke schijf op. [Meer informatie](../virtual-machines/windows/managed-disks-overview.md#temporary-disk).
+Maximale grootte van de besturingssysteem schijf | 2048 GB | Meer [informatie](../virtual-machines/managed-disks-overview.md) over VM-schijven.
+Tijdelijke schijf | Niet ondersteund | De tijdelijke schijf wordt altijd uitgesloten van het voorbereidings proces.<br/><br/> Sla geen permanente gegevens op de tijdelijke schijf op. [Meer informatie](../virtual-machines/managed-disks-overview.md#temporary-disk).
 Maximale grootte van gegevens schijf | 8192 GB voor beheerde schijven
 Minimale grootte van gegevens schijf |  2 GB voor beheerde schijven |
-Maximum aantal gegevens schijven | Maxi maal 64, in overeenstemming met de ondersteuning voor een specifieke Azure VM-grootte | Meer [informatie](../virtual-machines/windows/sizes.md) over VM-grootten.
+Maximum aantal gegevens schijven | Maxi maal 64, in overeenstemming met de ondersteuning voor een specifieke Azure VM-grootte | Meer [informatie](../virtual-machines/sizes.md) over VM-grootten.
 Wijzigings frequentie van gegevens schijven | Maxi maal 10 MBps per schijf voor Premium-opslag. Maxi maal 2 MBps per schijf voor standaard opslag. | Als de gemiddelde waarde voor het wijzigen van de gegevens op de schijf continu hoger is dan het maximum, wordt de voor bereiding niet opvangen.<br/><br/>  Als het maximum echter sporadisch wordt overschreden, kan de voor bereiding worden opgevangen, maar ziet u mogelijk enigszins vertraagde herstel punten.
 Gegevens schijf (standaard opslag account) | Niet ondersteund. | Wijzig het opslag type in beheerde schijf en probeer vervolgens de virtuele machine te verplaatsen.
 Gegevens schijf (Premium Storage-account) | Niet ondersteund | Wijzig het opslag type in beheerde schijf en probeer vervolgens de virtuele machine te verplaatsen.

@@ -3,12 +3,12 @@ title: Distributie op Azure VMware-oplossing implementeren
 description: Meer informatie over het implementeren van VMware horizon op de Azure VMware-oplossing.
 ms.topic: how-to
 ms.date: 09/29/2020
-ms.openlocfilehash: fb5e5b4c5f5da4c140f8d3575b963545f3a57db8
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 6d5d8e12e358e2289128af9840660be18f5f217a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93423100"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95537438"
 ---
 # <a name="deploy-horizon-on-azure-vmware-solution"></a>Distributie op Azure VMware-oplossing implementeren 
 
@@ -139,22 +139,6 @@ In de tabellen ziet u de algemene werk belastingen voor aanmelding VSI werk bela
 #### <a name="power-worker-workloads"></a>Power work-workloads
 
 :::image type="content" source="media/horizon/common-vdi-profiles-vsi-workloads-power.png" alt-text="Tabel met algemene VDI-profielen voor VMware-horizon voor aanmelding VSI Power work-workloads" lightbox="media/horizon/common-vdi-profiles-vsi-workloads-power.png" border="false":::
-
-### <a name="azure-vmware-solution-host-instance"></a>Azure VMware Solution host-instantie
-
-* PowerEdge R640-server-DSS beperkt
-
-* 36 kernen \@ 2,3 GHz
-
-* 576 GB RAM-GEHEUGEN
-
-* HBA330 12 Gbps SAS HBA-controller (niet-RAID)
-
-* 1,92 TB SSD SATA mix 6 Gbps 512 2.5 in Hot-pluggeen-station, 3 DWPD, 10512 TBW
-
-* Intel 1,6 TB, NVMe, gemengd gebruik Express Flash, 2,5 SFF-station, U. 2, P4600 met transporteur
-
-* 2 vSAN-schijf groepen: 1,6 x 4 (1.92 TB)
 
 ### <a name="horizon-sizing-inputs"></a>Invoer van Horizon formaat
 

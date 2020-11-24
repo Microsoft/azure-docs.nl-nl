@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: allensu
-ms.openlocfilehash: 6ee6d88b5247209d5628c7f85f1985507d53811d
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 2e5edb0ccf20ab0dba14864487f2b2ddef7d57e7
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913718"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544204"
 ---
 # <a name="azure-private-link-frequently-asked-questions-faq"></a>Veelgestelde vragen over persoonlijke koppelingen van Azure
 
@@ -20,8 +20,8 @@ ms.locfileid: "92913718"
 
 ### <a name="what-is-azure-private-endpoint-and-azure-private-link-service"></a>Wat is Azure private endpoint en Azure Private Link service?
 
-- **[Persoonlijk Azure-eind punt](private-endpoint-overview.md)** : Azure persoonlijk eind punt is een netwerk interface waarmee u privé en veilig kunt verbinden met een service die wordt aangestuurd door een persoonlijke Azure-koppeling. U kunt privé-eind punten gebruiken om verbinding te maken met een Azure PaaS-service die een persoonlijke koppeling of een persoonlijke koppelings service ondersteunt.
-- **[Persoonlijke Azure-koppelings service](private-link-service-overview.md)** : Azure Private Link service is een service die is gemaakt door een service provider. Op dit moment kan een persoonlijke koppelings service worden gekoppeld aan de front-end-IP-configuratie van een Standard Load Balancer. 
+- **[Persoonlijk Azure-eind punt](private-endpoint-overview.md)**: Azure persoonlijk eind punt is een netwerk interface waarmee u privé en veilig kunt verbinden met een service die wordt aangestuurd door een persoonlijke Azure-koppeling. U kunt privé-eind punten gebruiken om verbinding te maken met een Azure PaaS-service die een persoonlijke koppeling of een persoonlijke koppelings service ondersteunt.
+- **[Persoonlijke Azure-koppelings service](private-link-service-overview.md)**: Azure Private Link service is een service die is gemaakt door een service provider. Op dit moment kan een persoonlijke koppelings service worden gekoppeld aan de front-end-IP-configuratie van een Standard Load Balancer. 
 
 ### <a name="how-is-traffic-being-sent-when-using-private-link"></a>Hoe wordt het verkeer verzonden wanneer een persoonlijke koppeling wordt gebruikt?
 Verkeer wordt privé verzonden met micro soft backbone. Er wordt geen verbinding met Internet verzonden. Persoonlijke Azure-koppeling slaat geen klant gegevens op.
@@ -69,8 +69,8 @@ Ja. Een service voor persoonlijke koppelingen kan verbindingen van meerdere pers
 ### <a name="how-should-i-control-the-exposure-of-my-private-link-service"></a>Hoe kan ik de bloot stelling van mijn persoonlijke koppelings service controleren?
 U kunt de bloot stelling regelen met behulp van de zichtbaarheids configuratie voor de service private link. De zicht baarheid ondersteunt drie instellingen:
 
-- **Geen** : alleen abonnementen met RBAC-toegang kunnen de service vinden. 
-- Met **beperkte** abonnementen die zijn goedgekeurd en met RBAC-toegang, kan de service worden gevonden. 
+- **Geen** : alleen abonnementen met toegang tot Azure RBAC kunnen de service vinden. 
+- Alleen **beperkte** abonnementen die zijn goedgekeurd en met toegang tot Azure RBAC, kunnen de service vinden. 
 - **Alle** -iedereen kan de service vinden. 
  
 ### <a name="can-i-create-a-private-link-service-with-basic-load-balancer"></a>Kan ik een persoonlijke koppelings service maken met basis load balancer? 

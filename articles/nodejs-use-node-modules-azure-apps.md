@@ -14,12 +14,12 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2016
 ms.author: routlaw
-ms.openlocfilehash: 6c1bbe48ca5205cf1db49d67a711e9a7523e1845
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f61f08f32ebb2b721846d3c3017405af99421104
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88077115"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95542215"
 ---
 # <a name="using-nodejs-modules-with-azure-applications"></a>Node.js-modules gebruiken met Azure-toepassingen
 Dit document bevat richt lijnen voor het gebruik van Node.js modules met toepassingen die worden gehost op Azure. Het biedt richt lijnen om ervoor te zorgen dat uw toepassing gebruikmaakt van een specifieke versie van een module en gebruikmaakt van systeem eigen modules met Azure.
@@ -55,9 +55,9 @@ Azure App Service biedt geen ondersteuning voor alle systeem eigen modules en ka
 
 ### <a name="using-a-packagejson-file"></a>Een package.jsgebruiken voor een bestand
 
-De **package.jsop** bestand is een manier om de afhankelijkheden op het hoogste niveau op te geven die nodig zijn voor de toepassing, zodat het hosting platform de afhankelijkheden kan installeren, in plaats van de map met **knooppunt \_ modules** als onderdeel van de implementatie te hoeven opnemen. Nadat de toepassing is geïmplementeerd, wordt de **NPM-installatie** opdracht gebruikt voor het parseren ** van depackage.jsin** het bestand en het installeren van alle afhankelijkheden die worden vermeld.
+De **package.jsop** bestand is een manier om de afhankelijkheden op het hoogste niveau op te geven die nodig zijn voor de toepassing, zodat het hosting platform de afhankelijkheden kan installeren, in plaats van de map met **knooppunt \_ modules** als onderdeel van de implementatie te hoeven opnemen. Nadat de toepassing is geïmplementeerd, wordt de **NPM-installatie** opdracht gebruikt voor het parseren **van depackage.jsin** het bestand en het installeren van alle afhankelijkheden die worden vermeld.
 
-Tijdens de ontwikkeling kunt u de para meters **--Opslaan**, **--Save-dev**of **---Save-optional** gebruiken bij het installeren van modules om automatisch een vermelding voor de module toe te voegen aan uw **package.js** voor het bestand. Zie [NPM-install (](https://docs.npmjs.com/cli/install)Engelstalig) voor meer informatie.
+Tijdens de ontwikkeling kunt u de para meters **--Opslaan**, **--Save-dev** of **---Save-optional** gebruiken bij het installeren van modules om automatisch een vermelding voor de module toe te voegen aan uw **package.js** voor het bestand. Zie [NPM-install (](https://docs.npmjs.com/cli/install)Engelstalig) voor meer informatie.
 
 Een mogelijk probleem met de **package.jsop** bestand is dat alleen de versie van afhankelijkheden op het hoogste niveau wordt opgegeven. Elke module die is geïnstalleerd, kan de versie van de modules waarvan deze afhankelijk is, mogelijk niet opgeven. het is dus mogelijk dat u een andere afhankelijkheids keten hebt dan die in ontwikkeling.
 
@@ -73,7 +73,7 @@ Een mogelijk probleem met de **package.jsop** bestand is dat alleen de versie va
 ### <a name="using-a-npm-shrinkwrapjson-file"></a>Een npm-shrinkwrap.jsgebruiken voor een bestand
 De **npm-shrinkwrap.jsin** het bestand is een poging om de beperkingen van de module versie van de **package.jsvoor** het bestand op te lossen. Hoewel de **package.jsin** het bestand alleen versies bevat voor de modules op het hoogste niveau, bevatten de **npm-shrinkwrap.jsin** het bestand de versie vereisten voor de volledige module afhankelijkheids keten.
 
-Wanneer uw toepassing gereed is voor productie, kunt u de versie vereisten vergren delen en een **npm-shrinkwrap.jsin** het bestand maken met behulp van de opdracht **NPM Shrinkwrap** . Met deze opdracht worden de versies gebruikt die momenteel zijn geïnstalleerd in de map **node \_ modules** en worden deze versies opgenomen in de **npm-shrinkwrap.jsin** het bestand. Nadat de toepassing is geïmplementeerd in de hostomgeving, wordt de **NPM-installatie** opdracht gebruikt voor het parseren ** van denpm-shrinkwrap.jsin** het bestand en het installeren van alle afhankelijkheden die worden weer gegeven. Zie [NPM-Shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap)voor meer informatie.
+Wanneer uw toepassing gereed is voor productie, kunt u de versie vereisten vergren delen en een **npm-shrinkwrap.jsin** het bestand maken met behulp van de opdracht **NPM Shrinkwrap** . Met deze opdracht worden de versies gebruikt die momenteel zijn geïnstalleerd in de map **node \_ modules** en worden deze versies opgenomen in de **npm-shrinkwrap.jsin** het bestand. Nadat de toepassing is geïmplementeerd in de hostomgeving, wordt de **NPM-installatie** opdracht gebruikt voor het parseren **van denpm-shrinkwrap.jsin** het bestand en het installeren van alle afhankelijkheden die worden weer gegeven. Zie [NPM-Shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap)voor meer informatie.
 
 > [!NOTE]
 > Als uw <b>npm-shrinkwrap.jsin</b> het bestand verwijst naar Azure app service, ziet u mogelijk een fout die vergelijkbaar is met het volgende voor beeld bij het publiceren van de toepassing met behulp van git:
@@ -89,6 +89,6 @@ Nu u begrijpt hoe u Node.js modules kunt gebruiken met Azure, leert u hoe u [de 
 
 Zie het [Node.js-ontwikkelaarscentrum](/azure/developer/javascript/) voor meer informatie.
 
-[specify the Node.js version]: nodejs-specify-node-version-azure-apps.md
+[specify the Node.js version]: ./app-service/overview.md
 [How to use the Azure Command-Line Interface for Mac and Linux]:cli-install-nodejs.md
 [Custom Website Deployment Scripts with Kudu]: https://channel9.msdn.com/Shows/Azure-Friday/Custom-Web-Site-Deployment-Scripts-with-Kudu-with-David-Ebbo

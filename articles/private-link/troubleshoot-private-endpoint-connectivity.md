@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: rdhillon
-ms.openlocfilehash: fcc482e6231bbd925fd500a37989052765dede58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f861f9efa6ecc1886647ed6c460b6718ff97e8a1
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77538531"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522325"
 ---
 # <a name="troubleshoot-azure-private-endpoint-connectivity-problems"></a>Verbindingsproblemen met het Azure-privé-eindpunt oplossen
 
@@ -43,7 +43,7 @@ Bekijk deze stappen om te controleren of alle gebruikelijke configuraties naar v
 
       ![Persoonlijk koppelings centrum](./media/private-endpoint-tsg/private-link-center.png)
 
-    b. Selecteer **privé-eind punten**in het linkerdeel venster.
+    b. Selecteer **privé-eind punten** in het linkerdeel venster.
     
       ![Privé-eindpunten](./media/private-endpoint-tsg/private-endpoints.png)
 
@@ -56,7 +56,7 @@ Bekijk deze stappen om te controleren of alle gebruikelijke configuraties naar v
     
        ![Virtuele netwerk en DNS-configuratie](./media/private-endpoint-tsg/vnet-dns-configuration.png)
     
-1. Gebruik [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview) om te zien of gegevens stromen.
+1. Gebruik [Azure monitor](../azure-monitor/overview.md) om te zien of gegevens stromen.
 
     a. Selecteer op de resource van het persoonlijke eind punt de optie **monitor**.
      - Selecteer **gegevens in** of **uit de gegevens**. 
@@ -68,7 +68,7 @@ Bekijk deze stappen om te controleren of alle gebruikelijke configuraties naar v
 
     a. Selecteer de client-VM.
 
-    b. Selecteer **verbinding oplossen**en selecteer vervolgens het tabblad **uitgaande verbindingen** .
+    b. Selecteer **verbinding oplossen** en selecteer vervolgens het tabblad **uitgaande verbindingen** .
     
       ![Uitgaande verbindingen Network Watcher-testen](./media/private-endpoint-tsg/network-watcher-outbound-connection.png)
     
@@ -80,7 +80,7 @@ Bekijk deze stappen om te controleren of alle gebruikelijke configuraties naar v
      - Plak de FQDN van de persoonlijke eindpunt resource.
      - Geef een poort op. Gebruik normaal gesp roken 443 voor Azure Storage of Azure Cosmos DB en 1336 voor SQL.
 
-    e. Selecteer **testen**en valideer de test resultaten.
+    e. Selecteer **testen** en valideer de test resultaten.
     
       ![Network Watcher-test resultaten](./media/private-endpoint-tsg/network-watcher-test-results.png)
     
@@ -93,7 +93,7 @@ Bekijk deze stappen om te controleren of alle gebruikelijke configuraties naar v
        - Controleer of de privé-DNS-zone record bestaat. Als deze niet bestaat, maakt u deze.
      - Als u aangepaste DNS gebruikt:
        - Controleer uw aangepaste DNS-instellingen en controleer of de DNS-configuratie juist is.
-       Zie [overzicht van privé-eind punten: DNS-configuratie](https://docs.microsoft.com/azure/private-link/private-endpoint-overview#dns-configuration)voor meer informatie.
+       Zie [overzicht van privé-eind punten: DNS-configuratie](./private-endpoint-overview.md#dns-configuration)voor meer informatie.
 
     b. Als de verbinding mislukt als gevolg van netwerk beveiligings groepen (Nsg's) of door de gebruiker gedefinieerde routes:
      - Controleer de uitgaande regels voor NSG en maak de juiste regels voor uitgaande verbindingen om verkeer toe te staan.
@@ -107,5 +107,5 @@ Bekijk deze stappen om te controleren of alle gebruikelijke configuraties naar v
 
 ## <a name="next-steps"></a>Volgende stappen
 
- * [Een persoonlijk eind punt maken op het bijgewerkte subnet (Azure Portal)](https://docs.microsoft.com/azure/private-link/create-private-endpoint-portal)
+ * [Een persoonlijk eind punt maken op het bijgewerkte subnet (Azure Portal)](./create-private-endpoint-portal.md)
  * [Probleemoplossings gids voor persoonlijke koppelingen van Azure](troubleshoot-private-link-connectivity.md)

@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 author: parthpandyaMSFT
 ms.author: parthp
-ms.date: 7/14/2020
-ms.openlocfilehash: 653e6aad7f57b4d683f2f71ed22e402ed5d1fca8
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.date: 11/19/2020
+ms.openlocfilehash: a20c495553dfe9a16c34a2972575d21cc95eef44
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630291"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95537132"
 ---
 # <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Gids voor onboarding bij Microsoft Business Applications ISV Connect-programma
 
@@ -38,7 +38,7 @@ Voor deelname aan dit programma moet u de [Business Applications addendum](https
 > Voor deze stap is een *eigenaar* of *Manager* -rol vereist in het partner centrum voor uw account om juridische overeenkomsten te ondertekenen.
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard).
-1. Selecteer **instellingen** (tandwiel pictogram) en vervolgens **instellingen voor ontwikkel aars**.
+1. Selecteer **instellingen** (tandwiel pictogram) > **account instellingen**.
 1. **Overeenkomsten** selecteren.
 1. Selecteer de versie koppeling en Bekijk de overeenkomst.
 1. Selecteer **overeenkomst accepteren** om akkoord te gaan en de overeenkomst te accepteren.
@@ -51,8 +51,8 @@ Stel facturerings gegevens in voor het Business Applications ISV Connect-program
 > Voor deze stap is een *eigenaar* of *Manager* -rol vereist in het partner centrum voor uw account om de facturerings gegevens bij te werken.
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard).
-1. Selecteer **instellingen** (tandwiel pictogram) en vervolgens **instellingen voor ontwikkel aars**.
-1. Selecteer **facturerings profiel** onder **account instellingen**.
+1. Selecteer **instellingen** (tandwiel pictogram) > **account instellingen**.
+1. Onder **organisatie profiel** selecteert u **facturerings profiel** en vervolgens het tabblad **ontwikkelaar** .
 1. Controleer de gegevens van de primaire contact persoon en de facturering die van uw rechts persoon is gevuld.
 1. Als u wijzigingen wilt aanbrengen, selecteert u **bijwerken**.
 1. Geef indien van toepassing BTW-ID-ID-instellingen op.

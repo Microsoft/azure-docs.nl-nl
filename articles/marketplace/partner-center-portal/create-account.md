@@ -8,12 +8,12 @@ ms.date: 11/02/2020
 author: parthpandyaMSFT
 ms.author: parthp
 ms.custom: contperfq2
-ms.openlocfilehash: e15937797077e3fa46a12e726a3ce690c3979cbd
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: ccdc87d03181bad1aba4dd362a651fa42381343a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628778"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95542283"
 ---
 # <a name="create-a-commercial-marketplace-account-in-partner-center"></a>Een commercieel Marketplace-account maken in het partner centrum
 
@@ -67,7 +67,7 @@ Uw uitgevers profiel bevat uw bedrijfs naam en MPN-ID. Als u dit nog niet hebt g
 
     Nadat u bent Inge schreven, wordt u naar de pagina overzicht van commerciële Marketplace geleid. Het account voor commerciële Marketplace wordt weer gegeven in het linkerdeel venster.
 
-1. Als u wilt controleren of het account voor commerciële Marketplace als geregistreerd wordt vermeld, selecteert u **instellingen** (tandwiel pictogram) in de rechter bovenhoek > Program ma's voor **ontwikkel aars**  >  **Programs**.
+1. Als u wilt controleren of het account voor commerciële Marketplace als geregistreerd wordt vermeld, selecteert u **instellingen** (tandwiel pictogram) in de rechter bovenhoek > Program ma's voor **account instellingen**  >  **Programs**.
 
 U hebt nu een commercieel Marketplace-account gemaakt in het partner centrum. Ga door met [het toevoegen van nieuwe uitgevers aan de commerciële Marketplace](#add-new-publishers-to-the-commercial-marketplace-program).
 
@@ -91,7 +91,7 @@ Wanneer u uw Microsoft Partner Network-account gebruikt, wordt het zakelijke e-m
 > U moet een **account beheerder** of een rol van **globale beheerder** hebben om u aan te melden bij Microsoft Partner Network.
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/) met uw Microsoft Partner Network-account.
-1. **Instellingen** voor  >  **ontwikkel aars instellingen** selecteren  >  **Program ma's**  >  **aan de slag**.
+1. Selecteer **instellingen**  >  **account instellingen**  >  **Program ma's**  >  **aan de slag**.
 
    Microsoft Partner Network uw abonnement detecteert en het deel venster van het **Publisher-profiel** wordt weer gegeven.
 
@@ -103,7 +103,7 @@ Wanneer u uw Microsoft Partner Network-account gebruikt, wordt het zakelijke e-m
 
     Nadat u bent Inge schreven, wordt u naar de pagina overzicht van commerciële Marketplace geleid. Het account voor commerciële Marketplace wordt weer gegeven in het linkerdeel venster.
 
-1. Als u wilt controleren of het account voor commerciële Marketplace als geregistreerd wordt weer gegeven, selecteert u **instellingen** voor  >  **ontwikkelaars instellingen**  >  **Program ma's**.
+1. Als u wilt controleren of het account voor commerciële Marketplace als geregistreerd wordt vermeld, selecteert u **instellingen**  >  **account instellingen**  >  **Program ma's**.
 
 U hebt nu een commercieel Marketplace-account gemaakt in het partner centrum. Ga door met [het toevoegen van nieuwe uitgevers aan de commerciële Marketplace](#add-new-publishers-to-the-commercial-marketplace-program).
 
@@ -119,7 +119,7 @@ U hebt nu een commercieel Marketplace-account gemaakt in het partner centrum. Ga
 Wanneer u zich registreert voor het commerciële Marketplace-programma met hetzelfde account als uw ontwikkelaars programma, kunt u al uw bestaande programma registraties bekijken in het linkerdeel venster van partner Center.
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/) met uw bestaande account.
-1. Selecteer **instellingen**  >  **ontwikkel aars instellingen**  >  **Program ma's**  >  **aan de slag** en voer uw zakelijke e-mail adres in.
+1. Selecteer **instellingen**  >  **account instellingen**  >  **Program ma's**  >  **aan de slag** en voer uw zakelijke e-mail adres in.
 1. Vul de details in op de pagina met het **Publisher-profiel** .
 2. Lees de voor waarden in de [overeenkomst voor micro soft Publisher](https://go.microsoft.com/fwlink/?LinkID=699560)en selecteer vervolgens **accepteren en door gaan** om uw registratie te volt ooien.
 
@@ -128,7 +128,7 @@ Wanneer u zich registreert voor het commerciële Marketplace-programma met hetze
 
     Nadat u bent Inge schreven, wordt u naar de pagina overzicht van commerciële Marketplace geleid. Het account voor commerciële Marketplace wordt weer gegeven in het linkerdeel venster.
 
-1. Als u wilt controleren of het account voor commerciële Marketplace als geregistreerd wordt weer gegeven, selecteert u **instellingen** voor  >  **ontwikkelaars instellingen**  >  **Program ma's**.
+1. Als u wilt controleren of het account voor commerciële Marketplace als geregistreerd wordt vermeld, selecteert u **instellingen**  >  **account instellingen**  >  **Program ma's**.
 
 U hebt nu een commercieel Marketplace-account gemaakt in het partner centrum. Voor hulp bij het toevoegen van uitgevers gaat u verder met [het toevoegen van nieuwe uitgevers aan de commerciële Marketplace](#add-new-publishers-to-the-commercial-marketplace-program).
 
@@ -142,7 +142,7 @@ De publicatie overeenkomst en het profiel gegevens van het bedrijf worden overge
 
 ## <a name="add-new-publishers-to-the-commercial-marketplace-program"></a>Nieuwe uitgevers toevoegen aan het commerciële Marketplace-programma
 
-Een organisatie kan meerdere uitgevers koppelen aan een commerciële Marketplace-account. Een bestaande gebruiker kan meer uitgevers toevoegen nadat u zich hebt aangemeld bij partner centrum door **instellingen** te selecteren  >  **ontwikkelaars instellingen**  >  **Uitgever**  >  **Publisher toevoegen**.
+Een organisatie kan meerdere uitgevers koppelen aan een commerciële Marketplace-account. Een bestaande gebruiker kan meer uitgevers toevoegen nadat u zich hebt aangemeld bij het partner centrum door **instellingen**  >  **account instellingen** te selecteren  >  **organisatie profiel-**  >  **id's**  >  **Voeg Publisher toe**.
 
 >[!NOTE]
 >Voordat u een nieuwe uitgever toevoegt, moet u de lijst met bestaande uitgevers controleren door u aan te melden bij partner centrum en **account instellingen** te selecteren  >  **Publishers**.
@@ -155,9 +155,9 @@ Extra gebruikers van dezelfde Azure Active Directory-Tenant kunnen de volgende s
 4. Kies de MPN-ID die u wilt koppelen aan de uitgever.
 5. De details van de **Uitgever** op het formulier bijwerken.
 
-   * **Uitgevers naam** : de naam die wordt weer gegeven in de commerciële Marketplace met de aanbieding.  
-   * **PublisherID** : een id die wordt gebruikt door het partner centrum om de uitgever uniek te identificeren. De standaard waarde voor dit veld is gekoppeld aan een bestaande en unieke uitgever-ID in het systeem. Omdat de uitgevers-ID niet opnieuw kan worden gebruikt, moet dit veld worden bijgewerkt.  
-   * **Contact gegevens** : werk de contact gegevens zo nodig bij.
+   * **Uitgevers naam**: de naam die wordt weer gegeven in de commerciële Marketplace met de aanbieding.  
+   * **PublisherID**: een id die wordt gebruikt door het partner centrum om de uitgever uniek te identificeren. De standaard waarde voor dit veld is gekoppeld aan een bestaande en unieke uitgever-ID in het systeem. Omdat de uitgevers-ID niet opnieuw kan worden gebruikt, moet dit veld worden bijgewerkt.  
+   * **Contact gegevens**: werk de contact gegevens zo nodig bij.
 
 Nadat dit proces is voltooid, gaat u naar het account voor commerciële Marketplace dat in het linkerdeel venster wordt weer gegeven voor het beheren van de zojuist gemaakte Uitgever. Als u het account voor commerciële Marketplace niet ziet, vernieuwt u de pagina. De nieuwe uitgever wordt weer gegeven in de lijst **uitgevers** .
 

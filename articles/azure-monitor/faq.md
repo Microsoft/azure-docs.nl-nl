@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: b52cc38c40d8b6a39961ab28d9f0600ea7ee2201
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 391d9562bc73265a10976f485c78e3966aa4fe83
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841900"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536282"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -412,7 +412,7 @@ Unieke aanpassingen die vaak hand matig moeten worden gemaakt of moeten worden b
 - Aangepaste Dash boards en werkmappen opnieuw maken. 
 - Het bereik van aangepaste logboek-en metrische waarschuwingen opnieuw maken of bijwerken. 
 - Beschikbaarheids waarschuwingen opnieuw maken.
-- Maak de instellingen voor aangepaste Role-Based Access Control (RBAC) opnieuw die vereist zijn voor uw gebruikers om toegang te krijgen tot de nieuwe resource. 
+- Maak alle aangepaste Azure-functies op basis van op rollen gebaseerde toegangs beheer (Azure RBAC) opnieuw die vereist zijn voor uw gebruikers om toegang te krijgen tot de nieuwe resource. 
 - Replicatie-instellingen met betrekking tot opname steekproef, gegevens retentie, dagelijks Cap en aangepaste metrische gegevens activering. Deze instellingen worden bepaald via het deel venster **gebruik en geschatte kosten** .
 - Een integratie die afhankelijk is van API-sleutels zoals [release annotaties](/azure/azure-monitor/app/annotations), [Live Metrics Channel Secure Control](app/live-stream.md#secure-the-control-channel) , enzovoort. U moet nieuwe API-sleutels genereren en de bijbehorende integratie bijwerken. 
 - Continue export in klassieke resources moet opnieuw worden geconfigureerd.
@@ -680,9 +680,9 @@ De tabel ContainerInventory bevat informatie over zowel gestopte als actieve con
 
 Als u de fout melding **abonnements registratie voor micro soft. OperationsManagement** ontvangt, kunt u deze oplossen door de resource provider **micro soft. OperationsManagement** te registreren in het abonnement waarin de werk ruimte is gedefinieerd. De documentatie voor hoe u dit doet, vindt u [hier](../azure-resource-manager/templates/error-register-resource-provider.md).
 
-### <a name="is-there-support-for-rbac-enabled-aks-clusters"></a>Is er ondersteuning voor AKS-clusters met RBAC ingeschakeld?
+### <a name="is-there-support-for-kubernetes-rbac-enabled-aks-clusters"></a>Is er ondersteuning voor Kubernetes RBAC ingeschakelde AKS-clusters?
 
-De container bewakings oplossing biedt geen ondersteuning voor RBAC, maar wordt wel ondersteund met Azure Monitor voor containers. Op de pagina oplossings Details wordt mogelijk niet de juiste informatie weer gegeven op de Blades waarin de gegevens voor deze clusters worden weer gegeven.
+De container bewakings oplossing biedt geen ondersteuning voor Kubernetes RBAC, maar wordt wel ondersteund met Azure Monitor voor containers. Op de pagina oplossings Details wordt mogelijk niet de juiste informatie weer gegeven op de Blades waarin de gegevens voor deze clusters worden weer gegeven.
 
 ### <a name="how-do-i-enable-log-collection-for-containers-in-the-kube-system-namespace-through-helm"></a>Hoe kan ik logboek verzameling voor containers in de uitvoeren-naam ruimte inschakelen via helm?
 

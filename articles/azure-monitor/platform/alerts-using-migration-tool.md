@@ -6,12 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
-ms.openlocfilehash: e49525018a3e23ecbbf92d7a8b3f7c50804432b8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d7bcf3e5c0b50d3d6eb8f71dc70f0ff064ff3465
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91358658"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95536027"
 ---
 # <a name="use-the-voluntary-migration-tool-to-migrate-your-classic-alert-rules"></a>Gebruik het hulp programma voor vrijwillige migratie om uw klassieke waarschuwings regels te migreren
 
@@ -45,7 +45,7 @@ Voer de volgende stappen uit om de migratie van uw klassieke waarschuwings regel
 
 1. Selecteer in [Azure Portal](https://portal.azure.com) **monitor**.
 
-1. Selecteer **waarschuwingen**en selecteer vervolgens **waarschuwings regels beheren** of **klassieke waarschuwingen weer geven**.
+1. Selecteer **waarschuwingen** en selecteer vervolgens **waarschuwings regels beheren** of **klassieke waarschuwingen weer geven**.
 
 1. Selecteer **migreren naar nieuwe regels** om naar de pagina migratie lands te gaan. Op deze pagina wordt een lijst weer gegeven met al uw abonnementen en hun migratie status:
 
@@ -83,7 +83,7 @@ Wanneer een abonnement gereed voor migratie wordt, ontvangt de eigenaar van het 
 
 ### <a name="who-can-trigger-the-migration"></a>Wie kan de migratie activeren?
 
-Gebruikers aan wie de rol bewakings bijdrage aan hen is toegewezen op het abonnements niveau, kunnen de migratie activeren. Meer [informatie over Role-Based Access Control voor het migratie proces](alerts-understand-migration.md#who-can-trigger-the-migration).
+Gebruikers aan wie de rol bewakings bijdrage aan hen is toegewezen op het abonnements niveau, kunnen de migratie activeren. Meer [informatie over toegangs beheer op basis van rollen voor het migratie proces](alerts-understand-migration.md#who-can-trigger-the-migration).
 
 ### <a name="how-long-will-the-migration-take"></a>Hoe lang duurt de migratie?
 
@@ -95,5 +95,5 @@ Raadpleeg de [hand leiding voor probleem oplossing](alerts-understand-migration.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Voorbereiden op de migratie](alerts-prepare-migration.md)
+- [Voorbereiden voor de migratie](alerts-prepare-migration.md)
 - [Werking van het hulpprogramma voor migratie](alerts-understand-migration.md)

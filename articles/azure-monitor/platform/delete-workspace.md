@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: 2ce048ea8c9a4414b1c9f049569251c39d931c9a
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 0858d448cf768dbe6ea48f07247725fac30da860
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92174158"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95758889"
 ---
 # <a name="delete-and-recover-azure-log-analytics-workspace"></a>Azure Log Analytics-werk ruimte verwijderen en herstellen
 
@@ -41,14 +41,16 @@ Met de bewerking voor het verwijderen van de werk ruimte wordt de resource manag
 > [!NOTE] 
 > Geïnstalleerde oplossingen en gekoppelde services, zoals uw Azure Automation account, worden permanent verwijderd uit de werk ruimte tijdens het verwijderen en kunnen niet worden hersteld. Deze moeten na de herstel bewerking opnieuw worden geconfigureerd om de werk ruimte naar de eerder geconfigureerde status te brengen.
 
-U kunt een werk ruimte verwijderen met behulp van [Power shell](/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace?view=azurermps-6.13.0), [rest API](/rest/api/loganalytics/workspaces/delete)of in de [Azure Portal](https://portal.azure.com).
+U kunt een werk ruimte verwijderen met behulp van [Power shell](/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace?view=azurermps-6.13.0&preserve-view=true), [rest API](/rest/api/loganalytics/workspaces/delete)of in de [Azure Portal](https://portal.azure.com).
 
 ### <a name="azure-portal"></a>Azure Portal
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
 2. Selecteer in de Azure-portal de optie **Alle services**. Typ in de lijst met resources **Log Analytics**. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Selecteer **Log Analytics-werkruimten**.
 3. Selecteer een werk ruimte in de lijst met Log Analytics-werk ruimten en klik vervolgens op **verwijderen**  boven in het middelste deel venster.
-4. Er wordt een bevestigings pagina weer gegeven waarin de gegevens opname in de afgelopen week wordt weer gegeven in de werk ruimte. Typ de naam van de werk ruimte die u wilt bevestigen en klik vervolgens op **verwijderen**.
+4. Er wordt een bevestigings pagina weer gegeven waarin de gegevens opname in de afgelopen week wordt weer gegeven in de werk ruimte. 
+5. Als u de werk ruimte permanent wilt verwijderen om de optie later te herstellen, selecteert u het selectie vakje **de werk ruimte permanent verwijderen** .
+6. Typ de naam van de werk ruimte die u wilt bevestigen en klik vervolgens op **verwijderen**.
 
    ![Verwijderen van werk ruimte bevestigen](media/delete-workspace/workspace-delete.png)
 
@@ -60,11 +62,12 @@ PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-
 ## <a name="permanent-workspace-delete"></a>Permanente werk ruimte verwijderen
 De methode voor het zacht verwijderen past mogelijk niet in sommige scenario's zoals ontwikkelen en testen, waarbij u een implementatie met dezelfde instellingen en werkruimte naam moet herhalen. In dergelijke gevallen kunt u uw werk ruimte permanent verwijderen en de periode voor voorlopig verwijderen negeren. Met de bewerking permanent verwijderen van werk ruimte wordt de naam van de werk ruimte vrijgegeven en kunt u een nieuwe werk ruimte maken met dezelfde naam.
 
-
 > [!IMPORTANT]
 > Gebruik de permanente bewerking voor het verwijderen van werk ruimten met een waarschuwing omdat het onomkeerbaar is en u de werk ruimte en de gegevens niet kunt herstellen.
 
-Voeg de tag '-ForceDelete ' toe om uw werk ruimte permanent te verwijderen. De optie-ForceDelete is momenteel beschikbaar met AZ. OperationalInsights 2.3.0 of hoger. 
+Als u een werk ruimte permanent wilt verwijderen met de Azure Portal, selecteert u het selectie vakje **de werk ruimte permanent verwijderen** voordat u op de knop **verwijderen** klikt.
+
+Als u een werk ruimte permanent wilt verwijderen met behulp van Power shell, voegt u het label '-ForceDelete ' toe om uw werk ruimte permanent te verwijderen. De optie-ForceDelete is momenteel beschikbaar met AZ. OperationalInsights 2.3.0 of hoger. 
 
 ```powershell
 PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Name "workspace-name" -ForceDelete
@@ -78,7 +81,7 @@ U kunt uw werk ruimte herstellen tijdens de tijdelijke periode, inclusief gegeve
 - Abonnements-id
 - Naam resourcegroep
 - Werkruimtenaam
-- Regio
+- Region
 
 ### <a name="azure-portal"></a>Azure Portal
 

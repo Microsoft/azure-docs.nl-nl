@@ -5,18 +5,18 @@ description: Een beschrijving van de beperkingen en beperkingen van de indeling 
 author: SureshJa
 ms.author: sureshja
 manager: CelesteDG
-ms.date: 10/29/2020
+ms.date: 11/23/2020
 ms.topic: conceptual
 ms.subservice: develop
 ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: marsma, lenalepa, manrath
-ms.openlocfilehash: a2838e40844b83d1e90789439ce286f2738e22c4
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 30ea74b249937544a0bf9811cad60f02c1ca45c7
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331852"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95752780"
 ---
 # <a name="redirect-uri-reply-url-restrictions-and-limitations"></a>Omleidings-URI (antwoord-URL) beperkingen en beperkingen
 
@@ -51,25 +51,32 @@ Als u omleidings-Uri's wilt toevoegen met een HTTP-schema naar app-registraties 
 
 Per [RFC 8252-secties 8,3](https://tools.ietf.org/html/rfc8252#section-8.3) en [7,3](https://tools.ietf.org/html/rfc8252#section-7.3), worden ' loop back-' of ' localhost ' omleidings-uri's geleverd met twee speciale overwegingen:
 
-1. `http` URI-schema's zijn acceptabel omdat de omleiding nooit het apparaat verlaat. Als zodanig zijn beide acceptabel:
-    - `http://127.0.0.1/myApp`
-    - `https://127.0.0.1/myApp`
-1. Als gevolg van tijdelijke poortbereiken die vaak vereist zijn voor systeem eigen toepassingen, wordt het poort onderdeel (bijvoorbeeld `:5001` of `:443` ) genegeerd voor de doel einden van het afstemmen van een omleidings-URI. Als gevolg hiervan worden al deze als gelijkwaardig beschouwd:
-    - `http://127.0.0.1/MyApp`
-    - `http://127.0.0.1:1234/MyApp`
-    - `http://127.0.0.1:5000/MyApp`
-    - `http://127.0.0.1:8080/MyApp`
+1. `http` URI-schema's zijn acceptabel omdat de omleiding nooit het apparaat verlaat. Als zodanig zijn beide Uri's acceptabel:
+    - `http://localhost/myApp`
+    - `https://localhost/myApp`
+1. Als gevolg van tijdelijke poortbereiken die vaak vereist zijn voor systeem eigen toepassingen, wordt het poort onderdeel (bijvoorbeeld `:5001` of `:443` ) genegeerd voor de doel einden van het afstemmen van een omleidings-URI. Als gevolg hiervan worden al deze Uri's als gelijkwaardig beschouwd:
+    - `http://localhost/MyApp`
+    - `http://localhost:1234/MyApp`
+    - `http://localhost:5000/MyApp`
+    - `http://localhost:8080/MyApp`
 
 Uit het oogpunt van ontwikkeling betekent dit een aantal dingen:
 
 * Registreer niet meerdere omleidings-Uri's waarbij alleen de poort verschilt. Op de aanmeldings server wordt één wille keurig gekozen en wordt het gedrag gebruikt dat aan die omleidings-URI is gekoppeld (bijvoorbeeld of het een `web` -, `native` -of `spa` -type omleiding is).
 
     Dit is vooral belang rijk wanneer u verschillende verificatie stromen wilt gebruiken in dezelfde toepassings registratie, bijvoorbeeld zowel de autorisatie code subsidie als de impliciete stroom. Om het juiste reactie gedrag te koppelen aan elke omleidings-URI, moet de aanmeldings server kunnen onderscheiden van de omleidings-Uri's en kan dit niet doen als alleen de poort verschilt.
-* Als u meerdere omleidings-Uri's op localhost wilt registreren om verschillende stromen tijdens de ontwikkeling te testen, moet u deze onderscheiden met de *padcomponent* van de URI. `http://127.0.0.1/MyWebApp`Komt bijvoorbeeld niet overeen `http://127.0.0.1/MyNativeApp` .
+* Als u meerdere omleidings-Uri's op localhost wilt registreren om verschillende stromen tijdens de ontwikkeling te testen, moet u deze onderscheiden met de *padcomponent* van de URI. `http://localhost/MyWebApp`Komt bijvoorbeeld niet overeen `http://localhost/MyNativeApp` .
 * Het IPv6-loop back-adres ( `[::1]` ) wordt momenteel niet ondersteund.
-* Als u wilt voor komen dat uw app wordt verbroken door onjuist geconfigureerde firewalls of de naam van netwerk interfaces is gewijzigd, gebruikt u het IP-adres van de letterlijke waarde `127.0.0.1` in de omleidings-URI in plaats van `localhost` .
 
-    Als u het `http` schema met het IP-adres van de letterlijke loop back-waarde wilt gebruiken `127.0.0.1` , moet u het kenmerk [replyUrlsWithType](reference-app-manifest.md#replyurlswithtype-attribute) momenteel wijzigen in het manifest van de [toepassing](reference-app-manifest.md).
+#### <a name="prefer-127001-over-localhost"></a>Liever 127.0.0.1 via localhost
+
+Als u wilt voor komen dat uw app wordt verbroken door onjuist geconfigureerde firewalls of de naam van netwerk interfaces is gewijzigd, gebruikt u het IP-adres van de letterlijke waarde `127.0.0.1` in de omleidings-URI in plaats van `localhost` . Bijvoorbeeld `https://127.0.0.1`.
+
+U kunt echter het tekstvak **omleidings-uri's** in de Azure Portal gebruiken om een omleidings-URI op basis van loop back toe te voegen die gebruikmaakt van het `http` schema:
+
+:::image type="content" source="media/reply-url/portal-01-no-http-loopback-redirect-uri.png" alt-text="Fout dialoogvenster in Azure Portal met niet-toegestane http-gebaseerde loop back omleidings-URI":::
+
+Als u een omleidings-URI wilt toevoegen die gebruikmaakt `http` van het schema met het `127.0.0.1` loop back-adres, moet u het kenmerk [replyUrlsWithType](reference-app-manifest.md#replyurlswithtype-attribute) momenteel wijzigen in het manifest van de [toepassing](reference-app-manifest.md).
 
 ## <a name="restrictions-on-wildcards-in-redirect-uris"></a>Beperkingen voor joker tekens in omleidings-Uri's
 

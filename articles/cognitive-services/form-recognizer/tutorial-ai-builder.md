@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: tutorial
-ms.date: 10/23/2020
+ms.date: 11/23/2020
 ms.author: pafarley
-ms.openlocfilehash: bb4b69902f73a22cbd2b0fd5ad97c547ceb76a5c
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 3ba08f11fb52fc0ffe3acda5e81e21b7e7629628
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912324"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95757417"
 ---
 # <a name="tutorial-create-a-form-processing-app-with-ai-builder"></a>Zelfstudie: Een app voor het verwerken van formulieren maken met AI Builder
 
@@ -61,7 +61,7 @@ Op de pagina **Documenten toevoegen** moet u voorbeelddocumenten opgeven om het 
 
 ### <a name="upload-your-documents"></a>Uw documenten uploaden
 
-1. Selecteer **Documenten toevoegen** , selecteer minimaal vijf documenten en selecteer vervolgens **Uploaden**.
+1. Selecteer **Documenten toevoegen**, selecteer minimaal vijf documenten en selecteer vervolgens **Uploaden**.
 1. Nadat het uploaden is voltooid, selecteert u **Sluiten**.
 1. Selecteer vervolgens **Analyseren**.
 
@@ -89,8 +89,8 @@ Op de pagina voor veldselectie kiest u de velden die voor u van belang zijn:
 
     Wanneer u op een gedetecteerd veld klikt, wordt de volgende informatie weergegeven:
 
-    - **Veldnaam** : De naam van het label voor het gedetecteerde veld.
-    - **Veldwaarde** : De waarde voor het gedetecteerde veld.
+    - **Veldnaam**: De naam van het label voor het gedetecteerde veld.
+    - **Veldwaarde**: De waarde voor het gedetecteerde veld.
 
 > [!div class="mx-imgBorder"]
 > ![pagina voor tagging](./media/tutorial-ai-builder/select-fields-page.png)

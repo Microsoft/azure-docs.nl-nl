@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/3/2020
-ms.openlocfilehash: ed767055c1227d39fc29ac77a44c96b19030ad28
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 8033117d9e3c31f8aa9bba06afb7c3b1b7bba67f
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535857"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95751025"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Ondersteunde Azure Database for MySQL server versies
 
@@ -46,7 +46,7 @@ Raadpleeg de opmerkingen bij de [versie](https://dev.mysql.com/doc/relnotes/mysq
 ## <a name="managing-updates-and-upgrades"></a>Updates en upgrades beheren
 De service beheert automatisch patches voor het oplossen van problemen met versie-updates. Bijvoorbeeld 5.7.20 installeren naar 5.7.21.  
 
-Upgrades van de secundaire en primaire versie worden momenteel niet ondersteund. Een upgrade van MySQL 5.6 naar MySQL 5.7 wordt bijvoorbeeld niet ondersteund. Als u een upgrade wilt uitvoeren van 5.6 naar 5.7, gebruikt u [dump en herstel](./concepts-migrate-dump-restore.md) op een server die is gemaakt met de nieuwe versie van de engine.
+De upgrade van de primaire versie wordt momenteel ondersteund door de service voor upgrades van MySQL v 5.6 naar v 5.7. Zie [belang rijke versie-upgrades uitvoeren](how-to-major-version-upgrade.md)voor meer informatie. Als u een upgrade wilt uitvoeren van 5,7 naar 8,0, raden we u aan [dump en herstel](./concepts-migrate-dump-restore.md) uit te voeren op een server die is gemaakt met de nieuwe engine versie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

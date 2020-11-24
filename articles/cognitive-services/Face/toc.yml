@@ -5,7 +5,7 @@
   items:
     - name: Wat is de Face-service?
       href: Overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: De clientbibliotheek gebruiken
       href: Quickstarts/client-libraries.md
@@ -71,6 +71,16 @@
           href: Face-API-How-to-Topics/deploy-face-container-on-container-instances.md
         - name: Documentatie voor Cognitive Services-containers
           href: ../containers/index.yml
+- name: Uitgebreide scenario's
+  items:
+    - name: Face-inschrijving
+      items:
+        - name: Overzicht
+          href: enrollment-overview.md
+        - name: Instructiegidsen
+          items:
+            - name: Een inschrijvings-app maken met React
+              href: build-enrollment-app.md
 - name: Naslaginformatie
   items:
     - name: Face-API

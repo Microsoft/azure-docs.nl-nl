@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: 366826e591ed131ca63dc94eae994773217438d1
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: af3935bab5cd4d6a2aa4a9e3250f6beec19a8ea4
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95511485"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95736668"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Vooraf gebouwd factuur model voor formulier herkenning
 
@@ -74,7 +74,7 @@ De JSON-uitvoer heeft drie delen:
 
 Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtraheerd. Hieronder vindt u de velden die zijn geëxtraheerd uit een factuur in het JSON-uitvoer antwoord (de onderstaande uitvoer gebruikt deze [voorbeeld factuur](./media/sample-invoice.jpg))  
 
-|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Description | Tekst | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | CustomerName | tekenreeks | Klant wordt gefactureerd | Micro soft Corp |  |
 | CustomerId | tekenreeks | Referentie-ID voor de klant | CID-12345 |  |
@@ -107,7 +107,8 @@ Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtrahe
 ## <a name="next-steps"></a>Volgende stappen
 
 - Probeer uw eigen facturen en voor beelden in de voor [beeld-UI voor formulier herkenning](https://fott-preview.azurewebsites.net/).
-- U kunt ook de Snelstartgids voor het [ophalen van factuur gegevens](./QuickStarts/python-invoices.md) gebruiken om het ophalen van factuur gegevens te implementeren met behulp van python en de rest API.
+- Voltooi de [Snelstartgids van de client bibliotheek](quickstarts/client-library.md) van een formulier om te beginnen met het schrijven van een app voor het verwerken van facturen met de formulier Recognizer in de taal van uw keuze.
+- U kunt ook de Snelstartgids voor het [ophalen van factuur gegevens](./quickstarts/python-invoices.md) gebruiken om het ophalen van factuur gegevens te implementeren met behulp van python en de rest API.
 ## <a name="see-also"></a>Zie ook
 
 * [Wat is Form Recognizer?](./overview.md)

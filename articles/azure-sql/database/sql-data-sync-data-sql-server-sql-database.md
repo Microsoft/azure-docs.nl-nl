@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/20/2019
-ms.openlocfilehash: 01c5d4395eb584631efb9b3b956b9a987e46b0db
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: c77001707eda7c208ad19a014a1f0cff2b85b25d
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540617"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95736473"
 ---
 # <a name="what-is-sql-data-sync-for-azure"></a>Wat is SQL Data Sync voor Azure?
 
@@ -44,7 +44,7 @@ Bij de gegevens synchronisatie wordt gebruikgemaakt van een hub-en spoke-topolog
 Een synchronisatie groep heeft de volgende eigenschappen:
 
 - In het **synchronisatie schema** wordt beschreven welke gegevens worden gesynchroniseerd.
-- De **synchronisatie richting** kan bidirectionele zijn of kan in slechts één richting stromen. Dat wil zeggen dat de synchronisatie richting van de *hub naar het lid* , of van het lid is van een *hub* of van beide kan zijn.
+- De **synchronisatie richting** kan bidirectionele zijn of kan in slechts één richting stromen. Dat wil zeggen dat de synchronisatie richting van de *hub naar het lid*, of van het lid is van een *hub* of van beide kan zijn.
 - Het **synchronisatie-interval** beschrijft hoe vaak synchronisatie plaatsvindt.
 - Het **beleid** voor het oplossen van conflicten is een beleid op groeps niveau, dat *hub wint* of lid van een *WINS-server* kan zijn.
 
@@ -74,14 +74,14 @@ Gegevens synchronisatie is niet de aanbevolen oplossing voor de volgende scenari
 - **Gegevens synchroniseren:** Gegevens synchronisatie is ontworpen in een hub-en spoke-model. De hub wordt met elk lid afzonderlijk gesynchroniseerd. Wijzigingen van de hub worden gedownload naar het lid en vervolgens worden wijzigingen van het lid geüpload naar de hub.
 - **Conflicten oplossen:** Gegevens synchronisatie biedt twee opties voor het oplossen van conflicten, *hub WINS* of *lid van WINS*.
   - Als u *hub WINS* selecteert, worden wijzigingen in het lid altijd overschreven door de wijzigingen in de hub.
-  - Als u *lid bent van WINS* , worden wijzigingen in het lid overschreven in de hub. Als er meer dan één lid is, is de uiteindelijke waarde afhankelijk van welk lid het eerst synchroniseert.
+  - Als u *lid bent van WINS*, worden wijzigingen in het lid overschreven in de hub. Als er meer dan één lid is, is de uiteindelijke waarde afhankelijk van welk lid het eerst synchroniseert.
 
 ## <a name="compare-with-transactional-replication"></a>Vergelijken met transactionele replicatie
 
 | | Gegevens synchroniseren | Transactionele replicatie |
 |---|---|---|
 | **Voordelen** | -Actief-actief ondersteuning<br/>-Bi-richting tussen on-premises en Azure SQL Database | -Laagste latentie<br/>-Transactionele consistentie<br/>-Bestaande topologie na migratie opnieuw gebruiken <br/>-Ondersteuning voor Azure SQL Managed instance |
-| **Nadelen** | -minimum frequentie van 5 minuten tussen synchronisaties<br/>-Geen transactionele consistentie<br/>-Hogere gevolgen voor de prestaties | -Kan niet publiceren vanaf Azure SQL Database <br/>-Hoge onderhouds kosten |
+| **Nadelen** | -Geen transactionele consistentie<br/>-Hogere gevolgen voor de prestaties | -Kan niet publiceren vanaf Azure SQL Database <br/>-Hoge onderhouds kosten |
 
 ## <a name="get-started"></a>Aan de slag 
 
@@ -166,7 +166,6 @@ Met gegevens synchronisatie kunnen alleen-lezen of door het systeem gegenereerde
 | Tabellen in een synchronisatie groep                                          | 500                    | Meerdere synchronisatie groepen maken |
 | Kolommen in een tabel in een synchronisatie groep                              | 1000                   |                             |
 | Grootte van gegevensrij in een tabel                                        | 24 MB                  |                             |
-| Minimum interval voor synchronisatie frequentie (sinds vorige synchronisatie is gestart)     | 5 minuten              |                             |
 
 > [!NOTE]
 > Er kunnen Maxi maal 30 eind punten in één synchronisatie groep bestaan als er slechts één synchronisatie groep is. Als er meer dan één synchronisatie groep is, kan het totale aantal eind punten voor alle synchronisatie groepen niet meer dan 30 zijn. Als een Data Base deel uitmaakt van meerdere synchronisatie groepen, wordt deze als meerdere eind punten geteld, niet een.

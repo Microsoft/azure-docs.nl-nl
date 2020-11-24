@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/13/2019
 author: trkeya
 ms.author: trkeya
-ms.openlocfilehash: f628c2a4c2f8eb474bbc34ef2d3fd2f03f668992
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: de85e4eb553f623790b472e79f8f97487ba96b48
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629900"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95751110"
 ---
 # <a name="test-drive-technical-configuration"></a>Technische configuratie van test drive
 
@@ -34,11 +34,13 @@ Micro soft kan de complexiteit van het instellen van een test drive verwijderen 
 
 - **URL van exemplaar** (vereist): de URL waar de klant de test drive begint. Doorgaans de URL van uw Dynamics 365-exemplaar waarop uw app wordt uitgevoerd, waarbij voorbeeld gegevens zijn geïnstalleerd (bijvoorbeeld `https://testdrive.crm.dynamics.com` ).
 
-- **URL** van de Web-API voor het exemplaar (vereist): Haal de Web-API-URL voor uw Dynamics 365-exemplaar op door u aan te melden bij uw Microsoft 365-account en te navigeren naar **instellingen**  >  **aanpassing**  >  **ontwikkelaars resources**  >  **instance Web API (Service root URL)** , kopieer de URL die u hier kunt vinden (bijvoorbeeld `https://testdrive.crm.dynamics.com/api/data/v9.0` ).
+- **URL** van de Web-API voor het exemplaar (vereist): Haal de Web-API-URL voor uw Dynamics 365-exemplaar op door u aan te melden bij uw Microsoft 365-account en te navigeren naar **instellingen**  >  **aanpassing**  >  **ontwikkelaars resources**  >  **instance Web API (Service root URL)**, kopieer de URL die u hier kunt vinden (bijvoorbeeld `https://testdrive.crm.dynamics.com/api/data/v9.0` ).
 
 - **Rolnaam** (vereist): Geef de beveiligingsrol naam op die u hebt gedefinieerd in uw aangepaste Dynamics 365 test drive, die wordt toegewezen aan de gebruiker tijdens hun test drive (bijvoorbeeld test station-Role).
 
-Volg [deze instructies](https://github.com/Microsoft/AppSource/blob/patch-1/Microsoft%20Hosted%20Test%20Drive/Setup-your-Azure-subscription-for-Dynamics365-Microsoft-Hosted-Test-Drives.md)voor meer informatie over het instellen van uw Dynamics 365-omgeving voor test drive en het verlenen van AppSource-machtiging voor het inrichten en ongedaan maken van test drive gebruikers in uw Tenant.
+Volg [deze instructies](https://docs.microsoft.com/azure/marketplace/test-drive-azure-subscription-setup)voor meer informatie over het instellen van uw Dynamics 365-omgeving voor test drive en het verlenen van AppSource-machtiging voor het inrichten en ongedaan maken van test drive gebruikers in uw Tenant.
+
+Voor stapsgewijze instructies voor het weer geven en configureren van uw gehoste test drive gaat u naar de pagina [gedetailleerde configuratie voor gehoste test drive](https://docs.microsoft.com/azure/marketplace/test-drive-hosted-detailed-config) .
 
 ## <a name="logic-app-test-drive"></a>test drive van logische app
 
@@ -74,7 +76,7 @@ Als u wilt dat micro soft de test drive namens u kan implementeren, maakt en ver
 
 - **Azure AD-App-ID** (vereist): voer uw Azure Active Directory (AD) [-toepassings-id](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)) in. Als u deze ID wilt vinden, meldt u zich aan bij de [Azure Portal](https://portal.azure.com/), selecteert u het tabblad Active Directory in het menu aan de linkerkant, selecteert u **app-registraties** en zoekt u naar de weer gegeven **toepassings-id** (zoals `50c464d3-4930-494c-963c-1e951d15360e` ).
 
-- **Azure AD-App-client geheim** (vereist): Voer uw Azure AD-toepassings [client geheim](../active-directory/develop/howto-create-service-principal-portal.md#option-2-create-a-new-application-secret)in. Als u deze waarde wilt vinden, meldt u zich aan bij de [Azure Portal](https://portal.azure.com/). Selecteer in het linkermenu het tabblad **Azure Active Directory** , selecteer **app-registraties** en selecteer uw test drive-app. Selecteer vervolgens **certificaten en geheimen** , selecteer **Nieuw client geheim** , voer een beschrijving in, selecteer **nooit** onder **verloopt** en kies **toevoegen**. Zorg ervoor dat u de waarde kopieert. Navigeer niet weg van de pagina voordat u de waarde kopieert.
+- **Azure AD-App-client geheim** (vereist): Voer uw Azure AD-toepassings [client geheim](../active-directory/develop/howto-create-service-principal-portal.md#option-2-create-a-new-application-secret)in. Als u deze waarde wilt vinden, meldt u zich aan bij de [Azure Portal](https://portal.azure.com/). Selecteer in het linkermenu het tabblad **Azure Active Directory** , selecteer **app-registraties** en selecteer uw test drive-app. Selecteer vervolgens **certificaten en geheimen**, selecteer **Nieuw client geheim**, voer een beschrijving in, selecteer **nooit** onder **verloopt** en kies **toevoegen**. Zorg ervoor dat u de waarde kopieert. Navigeer niet weg van de pagina voordat u de waarde kopieert.
 
 ## <a name="test-drive-listings"></a>Test stations
 
@@ -92,6 +94,8 @@ De optie voor het **testen van stations** vindt u op het tabblad **test station*
   - **Miniatuur** (533 x 324 pixels): de afbeelding moet de PNG-indeling hebben.
 
 Als u uw test drive momenteel in partner centrum maakt, selecteert u **concept opslaan** voordat u doorgaat.
+
+Voor stapsgewijze instructies voor het weer geven en configureren van uw gehoste test drive gaat u naar de pagina [gedetailleerde configuratie voor gehoste test drive](https://docs.microsoft.com/azure/marketplace/test-drive-hosted-detailed-config) .
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

@@ -7,12 +7,12 @@ ms.custom: references_regions
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: d3bedfae88544d0b0ebd07868438559305279fed
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: a4380ae7fdb523f8b2f5bc14fefa094b6d96e547
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/24/2020
-ms.locfileid: "95530111"
+ms.locfileid: "95750523"
 ---
 # <a name="configure-log-analytics-workspace-for-azure-monitor-for-vms"></a>Log Analytics-werkruimte voor Azure Monitor voor VM's configureren
 Azure Monitor voor VM's verzamelt gegevens uit een of meer Log Analytics-werk ruimten in Azure Monitor. Voordat u agents voorbereidt, moet u een werk ruimte maken en configureren. In dit artikel worden de vereisten van de werk ruimte beschreven en om deze voor Azure Monitor voor VM's te configureren.
@@ -38,8 +38,8 @@ Open Log Analytics-werk ruimten in de Azure Portal in het menu **log Analytics-w
 U kunt een nieuwe Log Analytics-werk ruimte maken met behulp van een van de volgende methoden. Zie de [implementatie van uw Azure monitor-logboeken ontwerpen](../platform/design-logs-deployment.md) voor hulp bij het bepalen van het aantal werk ruimten dat u in uw omgeving moet gebruiken en hoe u de toegangs strategie kunt ontwerpen.
 
 
-* [Azure-portal](../../azure-monitor/learn/quick-create-workspace.md)
-* [Azure-CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)
+* [Azure Portal](../../azure-monitor/learn/quick-create-workspace.md)
+* [Azure CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)
 * [PowerShell](../platform/powershell-workspace-configuration.md)
 * [Azure Resource Manager](../samples/resource-manager-workspace.md)
 
@@ -80,7 +80,7 @@ Voordat een Log Analytics-werk ruimte kan worden gebruikt met Azure Monitor voor
 ### <a name="azure-portal"></a>Azure Portal
 Er zijn drie opties voor het configureren van een bestaande werk ruimte met behulp van de Azure Portal. Deze worden hieronder beschreven.
 
-Als u één werk ruimte wilt configureren, selecteert u de **andere opties voor onboarding** en configureert u vervolgens **een werk ruimte**. Selecteer een abonnement en een werk ruimte en klik vervolgens op **configureren**.
+Als u één werk ruimte wilt configureren, gaat u naar de optie **virtual machines** in het menu **Azure monitor** , selecteert u de **andere opties voor onboarding** en **configureert u vervolgens een werk ruimte**. Selecteer een abonnement en een werk ruimte en klik vervolgens op **configureren**.
 
 [![Werkruimte configureren](media/vminsights-enable-at-scale-policy/configure-workspace.png)](media/vminsights-enable-at-scale-policy/configure-workspace.png#lightbox)
 

@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
-ms.openlocfilehash: 9dc6433170144635ad05033d110f448cf314179b
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 2214dbc9dcbd4ba7728065ee45471e9f94b9e513
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628846"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95739992"
 ---
 # <a name="overview---on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Overzicht-on-premises Active Directory Domain Services authenticatie via SMB voor Azure-bestands shares
 
@@ -24,7 +24,7 @@ Als u geen ervaring hebt met Azure-bestands shares, raden we u aan onze [plannin
 
 - AD DS-identiteiten die worden gebruikt voor Azure Files on-premises AD DS verificatie moeten worden gesynchroniseerd met Azure AD. Synchronisatie van wacht woord-hash is optioneel. 
 - Biedt ondersteuning voor Azure-bestands shares die worden beheerd door Azure File Sync.
-- Ondersteunt Kerberos-verificatie met AD met RC4-HMAC en [AES 256-versleuteling](./storage-troubleshoot-windows-file-connection-problems.md#azure-files-on-premises-ad-ds-authentication-support-for-aes-256-kerberos-encryption). AES 128 Kerberos-versleuteling wordt nog niet ondersteund.
+- Ondersteunt Kerberos-verificatie met AD met RC4-HMAC en [AES 256-versleuteling](./storage-troubleshoot-windows-file-connection-problems.md#azure-files-on-premises-ad-ds-authentication-support-for-aes-256-kerberos-encryption). Ondersteuning voor AES 256-versleuteling is momenteel beperkt tot opslag accounts met namen <= 15 tekens lang zijn. AES 128 Kerberos-versleuteling wordt nog niet ondersteund.
 - Biedt ondersteuning voor eenmalige aanmelding.
 - Alleen ondersteund op clients met een nieuwere versie van het besturings systeem dan Windows 7 of Windows Server 2008 R2.
 - Alleen ondersteund voor het AD-forest waarin het opslag account is geregistreerd. U kunt standaard alleen toegang krijgen tot Azure-bestands shares met de AD DS referenties van één forest. Als u toegang nodig hebt tot uw Azure-bestands share vanuit een ander forest, moet u ervoor zorgen dat u de juiste forestvertrouwensrelatie hebt geconfigureerd. Raadpleeg de [Veelgestelde vragen](storage-files-faq.md#ad-ds--azure-ad-ds-authentication) voor meer informatie.

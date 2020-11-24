@@ -4,12 +4,12 @@ description: Patronen automatisch schalen in azure voor Web Apps, schaal sets vo
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: 414716fbbb36167e52c4f3b98c70ae7696ffea8f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7fdb3588833dd9bcf989e020cd1dd861c6e28f37
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327052"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95745313"
 ---
 # <a name="best-practices-for-autoscale"></a>Aanbevolen procedures voor Automatisch schalen
 Azure Monitor automatisch schalen is alleen van toepassing op [Virtual Machine Scale sets](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [Cloud Services](https://azure.microsoft.com/services/cloud-services/), [app service-Web apps](https://azure.microsoft.com/services/app-service/web/)en [API Management Services](../../api-management/api-management-key-concepts.md).
@@ -74,6 +74,9 @@ In dit geval
 4. De scale-in-regel voor automatisch schalen maakt een schatting van de uiteindelijke status als deze moet worden geschaald. Bijvoorbeeld: 60 x 3 (aantal huidige instanties) = 180/2 (laatste aantal instanties bij omlaag geschaald) = 90. De functie voor automatisch schalen kan daarom niet worden geschaald omdat deze nu opnieuw moet worden uitgeschaald. In plaats daarvan wordt de schaal overs Laan.
 5. De volgende keer dat de controles automatisch worden uitgevoerd, blijft de CPU tot 50. Er wordt opnieuw een schatting gemaakt van 50 x 3-instantie = 150/2 instanties = 75, wat lager is dan de drempel waarde voor uitschalen van 80. de schaal wordt dus gewijzigd in 2 exemplaren.
 
+> [!NOTE]
+> Als de engine voor automatisch schalen detecteert dat gaat en neer kan optreden als gevolg van schalen naar het doel aantal exemplaren, wordt er ook geschaald naar een ander aantal exemplaren tussen het huidige aantal en het aantal doelen. Als gaat en neer niet binnen dit bereik optreedt, wordt de schaal bewerking door automatisch schalen voortgezet met het nieuwe doel.
+
 ### <a name="considerations-for-scaling-threshold-values-for-special-metrics"></a>Overwegingen voor het schalen van drempelwaarden voor speciale metrische gegevens
  De drempel waarde is het gemiddelde aantal berichten dat beschikbaar is op basis van het huidige aantal instanties voor speciale metrische gegevens, zoals de metrische gegevens van de opslag of Service Bus wachtrij lengte. Kies zorgvuldig de drempel waarde voor deze metriek.
 
@@ -115,8 +118,8 @@ Op dezelfde manier wordt met de functie voor automatisch schalen naar het standa
 
 Er zijn gevallen waarin het mogelijk is om meerdere regels in een profiel in te stellen. De volgende regels voor automatisch schalen worden gebruikt door de engine voor automatisch schalen wanneer er meerdere regels zijn ingesteld.
 
-Bij *uitschalen worden automatisch*schalen uitgevoerd als aan een regel wordt voldaan.
-Bij *schalen naar automatisch*schalen moeten aan alle regels worden voldaan.
+Bij *uitschalen worden automatisch* schalen uitgevoerd als aan een regel wordt voldaan.
+Bij *schalen naar automatisch* schalen moeten aan alle regels worden voldaan.
 
 Stel dat u de volgende vier regels voor automatisch schalen hebt:
 
@@ -143,6 +146,8 @@ Automatisch schalen wordt in het activiteiten logboek geplaatst als aan een van 
 * De service voor automatisch schalen kan geen schaal actie ondernemen.
 * Er zijn geen metrische gegevens beschikbaar voor de service voor automatisch schalen om een schaal beslissing te nemen.
 * Metrische gegevens zijn beschikbaar (herstel) opnieuw om een schaal beslissing te nemen.
+* Met automatisch schalen wordt gaat en neer gedetecteerd en wordt de schaal poging afgebroken. In deze situatie ziet u een logboek type van `Flapping` . Als u dit ziet, moet u nagaan of uw drempel waarden te smal zijn.
+* Automatisch schalen detecteert gaat en neer, maar kan nog steeds worden geschaald. In deze situatie ziet u een logboek type van `FlappingOccurred` . Als u dit ziet, heeft de engine voor automatisch schalen geprobeerd om te schalen (bijvoorbeeld van 4 instanties naar 2), maar heeft vastgesteld dat dit tot gevolg heeft dat gaat en neer. In plaats daarvan is de engine voor automatisch schalen geschaald naar een ander aantal instanties (bijvoorbeeld door drie instanties te gebruiken in plaats van 2). Dit heeft geen gaat en neer meer veroorzaakt, waardoor deze is geschaald naar dit aantal instanties.
 
 U kunt ook een waarschuwing voor een activiteiten logboek gebruiken om de status van de engine voor automatisch schalen te controleren. Hier volgen enkele voor beelden [van het maken van een waarschuwing voor een activiteiten logboek om alle bewerkingen voor het automatisch schalen van de engine voor uw abonnement te bewaken](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert) of om [een waarschuwing voor een activiteiten logboek te maken voor het bewaken van alle mislukte bewerkingen voor automatisch schalen in-of uitschalen in uw abonnement](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-failed-alert).
 

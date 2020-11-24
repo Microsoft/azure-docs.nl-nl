@@ -3,12 +3,12 @@ title: Logboeken van Azure Monitor voor containers opvragen | Microsoft Docs
 description: Azure Monitor voor containers worden metrische gegevens en logboek registraties verzameld, en in dit artikel worden de records beschreven en worden voorbeeld query's opgenomen.
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: a540ae828b14f231b3b327b714876550cc744a7e
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 08c42fab84cb5180497f8da4f077b9bd82283ad4
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91994019"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95747676"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-containers"></a>Logboeken van Azure Monitor voor containers opvragen
 
@@ -16,7 +16,7 @@ Azure Monitor voor containers verzamelt prestatie gegevens, inventaris gegevens 
 
 ## <a name="container-records"></a>Container records
 
-In de volgende tabel vindt u de details van de records die worden verzameld door Azure Monitor voor containers. 
+In de volgende tabel worden de details van de records die worden verzameld door Azure Monitor voor containers gegeven. Zie de naslag informatie voor de tabellen [ContainerInventory](/azure/azure-monitor/reference/tables/containerinventory) en [ContainerLog](/azure/azure-monitor/reference/tables/containerlog) voor een overzicht van de kolom beschrijvingen.
 
 | Gegevens | Gegevensbron | Gegevenstype | Velden |
 |------|-------------|-----------|--------|
@@ -47,7 +47,7 @@ De container logboeken uitvoer die wordt doorgestuurd naar uw werk ruimte zijn S
 
 Het is vaak handig om query's te bouwen die beginnen met een voor beeld of twee en deze vervolgens te wijzigen zodat ze aan uw vereisten voldoen. Om geavanceerdere query's te kunnen bouwen, kunt u experimenteren met de volgende voorbeeld query's:
 
-| Query’s uitvoeren | Beschrijving | 
+| Query | Description | 
 |-------|-------------|
 | ContainerInventory<br> &#124; project computer, name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; weergave tabel | Alle levenscyclus gegevens van een container weer geven| 
 | KubeEvents_CL<br> &#124; waar niet (IsEmpty (Namespace_s))<br> &#124; sorteren op TimeGenerated desc<br> &#124; weergave tabel | Kubernetes-gebeurtenissen|

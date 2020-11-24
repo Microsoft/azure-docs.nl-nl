@@ -3,12 +3,12 @@ title: AMQP 1,0 in Azure Service Bus en Event Hubs protocol handleiding | Micros
 description: Protocol gids voor expressies en beschrijving van AMQP 1,0 in Azure Service Bus en Event Hubs
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 32e71211ed1574cade0567f7944b154eea062b24
-ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
+ms.openlocfilehash: e001327c2c7da08cb9a3552f97fc9a7d8b7921a2
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95396872"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95736711"
 ---
 # <a name="amqp-10-in-azure-service-bus-and-event-hubs-protocol-guide"></a>AMQP 1,0 in Azure Service Bus en Event Hubs protocol gids
 
@@ -42,7 +42,7 @@ Het AMQP 1,0-protocol is uitbreidbaar, waardoor er meer specificaties kunnen wor
 
 In deze sectie wordt het basis gebruik van AMQP 1,0 met Azure Service Bus uitgelegd. Dit omvat het maken van verbindingen, sessies en koppelingen, en het overdragen van berichten naar en van Service Bus entiteiten zoals wacht rijen, onderwerpen en abonnementen.
 
-De meest gezaghebbende bron om meer te weten te komen over de manier waarop AMQP werkt, is de AMQP 1,0-specificatie, maar de specificatie werd geschreven om de implementatie nauw keurig te begeleiden en niet om het protocol te leren kennen. Deze sectie richt zich op het introduceren van zoveel terminologie als nodig is voor het beschrijven van de manier waarop Service Bus AMQP 1,0 gebruikt. Voor een uitgebreidere inleiding tot AMQP, evenals een bredere bespreking van AMQP 1,0, kunt u [deze video cursus][this video course]bekijken.
+De meest gezaghebbende bron om meer te weten te komen over de manier waarop AMQP werkt, is de [AMQP 1,0-specificatie](http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-overview-v1.0.html), maar de specificatie werd geschreven om de implementatie nauw keurig te begeleiden en niet om het protocol te leren kennen. Deze sectie richt zich op het introduceren van zoveel terminologie als nodig is voor het beschrijven van de manier waarop Service Bus AMQP 1,0 gebruikt. Voor een uitgebreidere inleiding tot AMQP, evenals een bredere bespreking van AMQP 1,0, kunt u [deze video cursus][this video course]bekijken.
 
 ### <a name="connections-and-sessions"></a>Verbindingen en sessies
 
@@ -67,7 +67,7 @@ Sessies hebben een flow control model op basis van een venster; Wanneer een sess
 
 Dit model op basis van een venster is ongeveer hetzelfde als het TCP-concept van een datatransport besturing op basis van een venster, maar op het sessie niveau binnen de socket. Het concept van het protocol dat meerdere gelijktijdige sessies mogelijk maakt, bestaat, zodat het verkeer met hoge prioriteit een vertraging heeft onderlopend normaal verkeer, zoals een snelle Lane in de weg.
 
-Azure Service Bus gebruikt momenteel slechts één sessie voor elke verbinding. De Service Bus maximale frame grootte is 262.144 bytes (256-K bytes) voor Service Bus standaard en Event Hubs. Het is 1.048.576 (1 MB) voor Service Bus Premium. Service Bus geen specifieke beperkings Vensters op sessie niveau, maar het venster wordt regel matig opnieuw ingesteld als onderdeel van datatransport besturing op koppelings niveau (Zie [de volgende sectie](#links)).
+Azure Service Bus gebruikt momenteel slechts één sessie voor elke verbinding. De Service Bus maximale frame grootte is 262.144 bytes (256-K bytes) voor Service Bus standaard. Het is 1.048.576 (1 MB) voor Service Bus Premium en Event Hubs. Service Bus geen specifieke beperkings Vensters op sessie niveau, maar het venster wordt regel matig opnieuw ingesteld als onderdeel van datatransport besturing op koppelings niveau (Zie [de volgende sectie](#links)).
 
 Verbindingen, kanalen en sessies zijn kortstondig. Als de onderliggende verbinding is samengevouwen, worden verbindingen, TLS-tunnel, SASL-autorisatie context en sessies opnieuw tot stand gebracht.
 
@@ -359,14 +359,14 @@ Het aanvraag bericht heeft de volgende toepassings eigenschappen:
 
 | Sleutel | Optioneel | Waardetype | Inhoud van waarde |
 | --- | --- | --- | --- |
-| bewerking |Nee |tekenreeks |**put-token** |
-| type |Nee |tekenreeks |Het type van het token dat wordt geplaatst. |
-| naam |Nee |tekenreeks |De "doel groep" waarop het token van toepassing is. |
+| bewerking |No |tekenreeks |**put-token** |
+| type |No |tekenreeks |Het type van het token dat wordt geplaatst. |
+| naam |No |tekenreeks |De "doel groep" waarop het token van toepassing is. |
 | verval |Ja |tijdstempel |De verloop tijd van het token. |
 
 De eigenschap *name* identificeert de entiteit waaraan het token moet worden gekoppeld. In Service Bus is het het pad naar de wachtrij, of onderwerp/abonnement. De eigenschap *type* geeft het token type aan:
 
-| Token type | Beschrijving van het token | Type hoofd tekst | Opmerkingen |
+| Token type | Beschrijving van het token | Type hoofd tekst | Notities |
 | --- | --- | --- | --- |
 | AMQP: JWT |JSON Web Token (JWT) |AMQP-waarde (teken reeks) |Nog niet beschikbaar. |
 | AMQP: swt |Eenvoudig webtoken (SWT) |AMQP-waarde (teken reeks) |Alleen ondersteund voor SWT-tokens die zijn uitgegeven door AAD/ACS |
@@ -378,8 +378,8 @@ Het antwoord bericht heeft de volgende *eigenschaps* waarden van de toepassing:
 
 | Sleutel | Optioneel | Waardetype | Inhoud van waarde |
 | --- | --- | --- | --- |
-| status-code |Nee |int |HTTP-antwoord code **[RFC2616]**. |
-| status-beschrijving |Ja |tekenreeks |De beschrijving van de status. |
+| status-code |No |int |HTTP-antwoord code **[RFC2616]**. |
+| status-beschrijving |Yes |tekenreeks |De beschrijving van de status. |
 
 De client kan *put-token* herhaaldelijk aanroepen en voor elke entiteit in de infra structuur voor berichten. De tokens zijn toegewezen aan de huidige client en verankerd op de huidige verbinding, wat betekent dat de server behouden tokens verwijdert wanneer de verbinding wordt verbroken.
 

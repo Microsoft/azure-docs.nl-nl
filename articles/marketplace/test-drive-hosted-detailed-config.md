@@ -7,12 +7,12 @@ ms.topic: article
 author: trkeya
 ms.author: trkeya
 ms.date: 11/06/2020
-ms.openlocfilehash: 0765c05e08dda782c084775fb83b22a52558fa0d
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 9e8aecfe8b16d8af755d3f4c3c71b875d4e8ec40
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491610"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95751246"
 ---
 # <a name="detailed-configuration-for-hosted-test-drives"></a>Gedetailleerde configuratie voor gehoste test stations
 
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u een gehoste test drive configureert voor D
 
     - **Type test drive** : Kies **micro soft hosted (Dynamics 365 voor Customer engagement & PowerApps)**. Dit geeft aan dat micro soft de service zal hosten en onderhouden die de test drive gebruikers inrichting en het ongedaan maken van de inrichting uitvoert.
 
-5. Verleen Microsoft AppSource toestemming om test drive gebruikers in uw Tenant in te richten en deze ongedaan te maken met behulp van [deze instructies](https://github.com/Microsoft/AppSource/blob/master/Microsoft%20Hosted%20Test%20Drive/Setup-your-Azure-subscription-for-Dynamics365-Microsoft-Hosted-Test-Drives.md). In deze stap genereert u de **Azure AD-App-ID** en **Azure AD-App sleutel** waarden die hieronder worden genoemd.
+5. Verleen Microsoft AppSource toestemming om test drive gebruikers in uw Tenant in te richten en deze ongedaan te maken met behulp van [deze instructies](https://docs.microsoft.com/azure/marketplace/test-drive-azure-subscription-setup). In deze stap genereert u de **Azure AD-App-ID** en **Azure AD-App sleutel** waarden die hieronder worden genoemd.
 6. Vul deze velden in op de pagina **technische configuratie van test station** .
 
     [![De pagina met de test drive technische configuratie.](media/test-drive/technical-config-details.png)](media/test-drive/technical-config-details.png#lightbox)

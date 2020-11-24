@@ -7,24 +7,24 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: keferna
 ms.author: keferna
-ms.date: 09/04/2020
-ms.openlocfilehash: c52fabcfc2ff22df2de6dd93f2543d625310baef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/30/2020
+ms.openlocfilehash: 83c575aa40b80d9a8e39263e89a5e7860c8f8774
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89484338"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95741658"
 ---
-# <a name="publishing-guide-for-container-offers"></a>Publicatie handleiding voor container aanbiedingen
+# <a name="publishing-guide-for-azure-container-offers"></a>Publicatie handleiding voor Azure container-aanbiedingen
 
-Met container aanbiedingen kunt u uw container installatie kopie naar Azure Marketplace publiceren. Gebruik deze hand leiding om inzicht te krijgen in de vereisten voor deze aanbieding. 
+Met Azure container kunt u uw container installatie kopie naar Azure Marketplace publiceren. Gebruik deze hand leiding om inzicht te krijgen in de vereisten voor dit aanbiedings type.
 
-Container aanbiedingen zijn transactie aanbiedingen die worden geïmplementeerd en gefactureerd via Azure Marketplace. De optie voor het weer geven van een gebruiker is ' nu ophalen '.
+Azure container-aanbiedingen zijn transactie aanbiedingen die worden geïmplementeerd en gefactureerd via Azure Marketplace. De optie voor het weer geven van een gebruiker is ' nu ophalen '.
 
-Gebruik het type *container* aanbod wanneer uw oplossing een docker-container installatie kopie is die is ingesteld als een Kubernetes Azure container service-exemplaar. 
+Gebruik het Azure container-aanbod type wanneer uw oplossing een docker-container installatie kopie is die is ingesteld als een Kubernetes Azure-container exemplaar.
 
 > [!NOTE]
-> Voor beelden van Azure container service-exemplaren op basis van Kubernetes zijn Azure Kubernetes service of Azure Container Instances, de keuze van Azure-klanten voor een op Kubernetes gebaseerde container-runtime.  
+> Een Azure-container exemplaar is een run time docker-exemplaar dat de snelste en eenvoudigste manier biedt om een container in azure uit te voeren, zonder dat u virtuele machines hoeft te beheren en zonder dat u een service van een hoger niveau hoeft te gebruiken. Container instanties kunnen rechtstreeks worden geïmplementeerd in azure of worden gedistribueerd door Azure Kubernetes Services of Azure Kubernetes service engine.  
 
 Micro soft biedt momenteel ondersteuning voor de BYOL-licentie modellen (gratis en meebrengen van eigen licentie).
 
@@ -39,9 +39,6 @@ Micro soft biedt momenteel ondersteuning voor de BYOL-licentie modellen (gratis 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u dit nog niet hebt gedaan, leert u hoe u [uw Cloud activiteiten kunt verg Roten met Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
+- Zie [technische activa van Azure-container maken](create-azure-container-technical-assets.md)voor het voorbereiden van technische assets voor een container aanbieding.
 
-Registreren voor en werken in het partner centrum:
-
-- [Meld u aan bij Partner Center](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) om uw aanbieding te maken of te volt ooien.
-- Zie [een Azure-container aanbieding maken](./partner-center-portal/create-azure-container-offer.md) voor meer informatie.
+- Als u een Azure-container aanbod wilt maken, raadpleegt u [een Azure-container aanbieding maken in azure Marketplace](create-azure-container-offer.md) voor meer informatie.

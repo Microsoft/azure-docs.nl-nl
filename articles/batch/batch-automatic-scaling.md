@@ -2,14 +2,14 @@
 title: Automatisch schalen rekenknooppunten in een Azure Batch-pool
 description: Schakel automatisch schalen in een Cloud groep in om het aantal reken knooppunten in de pool dynamisch aan te passen.
 ms.topic: how-to
-ms.date: 10/08/2020
+ms.date: 11/23/2020
 ms.custom: H1Hack27Feb2017, fasttrack-edit, devx-track-csharp
-ms.openlocfilehash: 5774acbfc035ab61267dddb31b01b0e82689f690
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 033272f22b98b27c67e9a551bce952368d35a043
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91849789"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95737289"
 ---
 # <a name="create-an-automatic-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Een automatische formule voor het schalen van reken knooppunten in een batch-pool maken
 
@@ -135,6 +135,9 @@ U kunt de waarde van deze door de service gedefinieerde variabelen ophalen om aa
 > [!TIP]
 > Deze alleen-lezen service gedefinieerde variabelen zijn *objecten* die verschillende methoden bieden om toegang te krijgen tot gegevens die zijn gekoppeld aan elk. Zie [voorbeeld gegevens verkrijgen](#obtain-sample-data) verderop in dit artikel voor meer informatie.
 
+> [!NOTE]
+> Gebruiken `$RunningTasks` bij schalen op basis van het aantal taken dat op een bepaald moment wordt uitgevoerd en `$ActiveTasks` bij het schalen op basis van het aantal taken dat in de wachtrij is geplaatst om te worden uitgevoerd.
+
 ## <a name="types"></a>Typen
 
 Formules voor automatisch schalen ondersteunen de volgende typen:
@@ -163,7 +166,7 @@ Formules voor automatisch schalen ondersteunen de volgende typen:
   - TimeInterval_Week
   - TimeInterval_Year
 
-## <a name="operations"></a>Operations
+## <a name="operations"></a>Bewerkingen
 
 Deze bewerkingen zijn toegestaan voor de typen die worden vermeld in de vorige sectie.
 
@@ -186,9 +189,9 @@ Deze bewerkingen zijn toegestaan voor de typen die worden vermeld in de vorige s
 | TimeInterval- *operator* TimeInterval |<, <=, = =, >=, >,! = |double |
 | dubbele *operator* dubbele |&&,  &#124;&#124; |double |
 
-Bij het testen van een dubbele met een ternaire operator ( `double ? statement1 : statement2` ), is niet nul **waar**en is nul **False**.
+Bij het testen van een dubbele met een ternaire operator ( `double ? statement1 : statement2` ), is niet nul **waar** en is nul **False**.
 
-## <a name="functions"></a>Functies
+## <a name="functions"></a>Functions
 
 U kunt deze vooraf gedefinieerde **functies** gebruiken voor het definiëren van een formule voor automatisch schalen.
 
@@ -226,7 +229,7 @@ U kunt zowel de metrische gegevens van de resource als de taak gebruiken wanneer
 
 <table>
   <tr>
-    <th>Gegevens</th>
+    <th>Metrisch</th>
     <th>Beschrijving</th>
   </tr>
   <tr>
@@ -381,7 +384,7 @@ $NodeDeallocationOption = taskcompletion;
 ```
 
 > [!NOTE]
-> Indien gewenst kunt u zowel opmerkingen als regel einden in formule teken reeksen toevoegen.
+> Indien gewenst kunt u zowel opmerkingen als regel einden in formule teken reeksen toevoegen. Houd er ook rekening mee dat het ontbreken van een punt komma kan leiden tot evaluatie fouten.
 
 ## <a name="automatic-scaling-interval"></a>Interval voor automatisch schalen
 

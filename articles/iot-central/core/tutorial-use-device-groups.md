@@ -3,17 +3,16 @@ title: 'Zelfstudie: Apparaatgroepen gebruiken in uw Azure IoT Central-toepassing
 description: 'Zelfstudie: Als operator leert u hoe u apparaatgroepen kunt gebruiken om telemetrie te analyseren vanaf apparaten in uw Azure IoT Central-toepassing.'
 author: dominicbetts
 ms.author: dobett
-ms.date: 02/12/2020
+ms.date: 11/16/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-manager: peterpfr
-ms.openlocfilehash: 3192a9f121d4380a3e681747596fc91997662bf0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c26afc9cf9630f6d26ddc76759393a6ea1a8696
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90967944"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94990270"
 ---
 # <a name="tutorial-use-device-groups-to-analyze-device-telemetry"></a>Zelfstudie: Apparaatgroepen gebruiken om apparaattelemetrie te analyseren
 
@@ -29,17 +28,18 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u begint, voltooit u de quickstarts [Een Azure IoT Central-toepassing maken](./quick-deploy-iot-central.md) en [Een gesimuleerd apparaat toevoegen aan uw IoT Central-toepassing](./quick-create-simulated-device.md) om de **MXChip IoT DevKit**-apparaatsjabloon te maken waarmee u kunt werken.
+Voordat u begint, voltooit u de quickstarts [Een Azure IoT Central-toepassing maken](./quick-deploy-iot-central.md) en [Een gesimuleerd apparaat toevoegen aan uw IoT Central-toepassing](./quick-create-simulated-device.md) om de apparaatsjabloon **Sensor Controller** te maken waarmee u kunt werken.
 
 ## <a name="create-simulated-devices"></a>Gesimuleerde apparaten maken
 
-Voordat u een apparaatgroep kunt maken, voegt u ten minste vijf gesimuleerde apparaten toe vanuit de apparaatsjabloon **MXChip IoT DevKit** om in deze zelfstudie te gebruiken:
+Voordat u een apparaatgroep kunt maken, voegt u ten minste vijf gesimuleerde apparaten toe op basis van de apparaatsjabloon **Sensor Controller** om in deze zelfstudie te gebruiken:
 
-![Vijf gesimuleerde sensorapparaten](./media/tutorial-use-device-groups/simulated-devices.png)
+
+:::image type="content" source="media/tutorial-use-device-groups/simulated-devices.png" alt-text="Schermopname met vijf gesimuleerde sensorcontrollerapparaten":::
 
 Voor vier van de gesimuleerde sensorapparaten gebruikt u de weergave **Apparaat beheren** om de naam van de klant in te stellen op *Contoso*:
 
-![Klantnaam instellen op Contoso](./media/tutorial-use-device-groups/customer-name.png)
+:::image type="content" source="media/tutorial-use-device-groups/customer-name.png" alt-text="Schermafbeelding die laat zien hoe u de cloudeigenschap Klantnaam instelt":::
 
 ## <a name="create-a-device-group"></a>Een apparaatgroep maken
 
@@ -47,20 +47,18 @@ Een apparaatgroep maken:
 
 1. Kies **Apparaatgroepen** in het linkerdeelvenster.
 
-1. Selecteer **+** :
+1. Selecteer **+ Nieuw**.
 
-    ![Nieuwe apparaatgroep](media/tutorial-use-device-groups/image1.png)
+1. Noem uw apparaatgroep *Contoso-apparaten*. U kunt ook een beschrijving toevoegen. Een apparaatgroep kan alleen apparaten uit één apparaatsjabloon bevatten. Kies de apparaatsjabloon **Sensor Controller** om te gebruiken voor deze groep.
 
-1. Geef uw apparaatgroep de naam *Contoso-apparaten*. U kunt ook een beschrijving toevoegen. Een apparaatgroep kan alleen apparaten uit één apparaatsjabloon bevatten. Kies de apparaatsjabloon **MXChip IoT DevKit** om te gebruiken voor deze groep.
-
-1. Als u de apparaatgroep wilt aanpassen zodat deze alleen de apparaten bevat die horen bij **Contoso**, selecteert u **+ Filter**. Selecteer de eigenschap **Klantnaam**, de vergelijkingsoperator **Is gelijk aan** en **Contoso** als waarde. U kunt meerdere filters en apparaten toevoegen die voldoen aan **alle** filtercriteria die in de apparaatgroep zijn geplaatst. De apparaatgroep die u maakt, is toegankelijk voor iedereen die toegang heeft tot de toepassing, zodat iedereen de apparaatgroep kan bekijken, wijzigen of verwijderen:
-
-    ![Apparaatgroepquery](media/tutorial-use-device-groups/image2.png)
+1. Als u de apparaatgroep wilt aanpassen zodat deze alleen de apparaten bevat die horen bij **Contoso**, selecteert u **+ Filter**. Selecteer de eigenschap **Klantnaam**, de vergelijkingsoperator **Is gelijk aan** en **Contoso** als waarde. U kunt meerdere filters en apparaten toevoegen die voldoen aan **alle** filtercriteria die in de apparaatgroep zijn geplaatst. De apparaatgroep die u maakt, is toegankelijk voor iedereen die toegang heeft tot de toepassing, zodat iedereen de apparaatgroep kan bekijken, wijzigen of verwijderen.
 
     > [!TIP]
     > De apparaatgroep is een dynamische query. Telkens wanneer u de lijst met apparaten bekijkt, kunnen er andere apparaten in de lijst staan. De lijst is afhankelijk van de apparaten die op dat moment voldoen aan de criteria van de query.
 
 1. Kies **Opslaan**.
+
+:::image type="content" source="media/tutorial-use-device-groups/device-group-query.png" alt-text="Schermopname die de queryconfiguratie van de apparaatgroep weergeeft":::
 
 > [!NOTE]
 > Selecteer Azure IoT Edge-sjablonen voor Azure IoT Edge-apparaten om een apparaatgroep te maken.
@@ -75,13 +73,13 @@ De telemetrie voor een apparaatgroep analyseren:
 
 1. Selecteer de apparaatgroep **Contoso-apparaten** die u hebt gemaakt. Voeg vervolgens de telemetrietypen **Temperatuur** en **Vochtigheid** toe:
 
-    ![Analyses maken](./media/tutorial-use-device-groups/create-analysis.png)
+    :::image type="content" source="media/tutorial-use-device-groups/create-analysis.png" alt-text="Schermopname die de telemetrietypen weergeeft die zijn geselecteerd voor analyse":::
 
-    Gebruik de tandwielpictogrammen naast de telemetrietypen om een aggregatietype te selecteren. De standaardwaarde is **Gemiddeld**. Gebruik **Splitsen op** om te wijzigen hoe de statistische gegevens worden weergegeven. Als u bijvoorbeeld hebt gesplitst op apparaat-id, ziet u een plot voor elk apparaat wanneer u **Analyse**selecteert.
+    Gebruik de tandwielpictogrammen naast de telemetrietypen om een aggregatietype te selecteren. De standaardwaarde is **Gemiddeld**. Gebruik **Groeperen op** om te wijzigen hoe de statistische gegevens worden weergegeven. Als u bijvoorbeeld hebt gesplitst op apparaat-id, ziet u een plot voor elk apparaat wanneer u **Analyse** selecteert.
 
 1. Selecteer **Analyseren** om de gemiddelde telemetriegegevens weer te geven:
 
-    ![Analyse weergeven](./media/tutorial-use-device-groups/view-analysis.png)
+    :::image type="content" source="media/tutorial-use-device-groups/view-analysis.png" alt-text="Schermopname waarin de gemiddelde waarden voor alle Contoso-apparaten worden weergegeven":::
 
     U kunt de weergave aanpassen, de weergegeven tijdsperiode wijzigen en de gegevens exporteren.
 

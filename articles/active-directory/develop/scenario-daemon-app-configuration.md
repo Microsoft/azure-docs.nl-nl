@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 09/19/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 24e3841abc9c397ab307e55405bdcc208815570e
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 6864502a9d338a786e1e77dbf9888a7818bb94e9
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444160"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95748645"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Daemon-app die web-Api's aanroept-code configuratie
 
@@ -26,7 +26,7 @@ Meer informatie over het configureren van de code voor uw daemon-toepassing die 
 
 Deze micro soft-bibliotheken ondersteunen daemon-apps:
 
-  MSAL-bibliotheek | Beschrijving
+  MSAL-bibliotheek | Description
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | De .NET Framework-en .NET Core-platformen worden ondersteund voor het bouwen van daemon-toepassingen. (UWP, Xamarin. iOS en Xamarin. Android worden niet ondersteund omdat deze platformen worden gebruikt voor het bouwen van open bare client toepassingen.)
   ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Ondersteuning voor daemon-toepassingen in python.
@@ -36,9 +36,9 @@ Deze micro soft-bibliotheken ondersteunen daemon-apps:
 
 Voor daemon-toepassingen worden toepassings machtigingen gebruikt in plaats van gedelegeerde machtigingen. Het ondersteunde account type kan dus geen account zijn in een organisatorische map of persoonlijke Microsoft-account (bijvoorbeeld Skype, Xbox, Outlook.com). Er is geen Tenant beheerder om toestemming te verlenen voor een daemon-toepassing voor een persoonlijk micro soft-account. U moet *accounts in mijn organisatie* of *accounts in een organisatie* kiezen.
 
-De in de toepassings configuratie opgegeven instantie moet dus worden getenantd (een Tenant-ID of een domein naam opgeven die is gekoppeld aan uw organisatie).
+De in de toepassings configuratie opgegeven instantie moet worden getenantd (met een Tenant-ID of een domein naam die is gekoppeld aan uw organisatie).
 
-Als u een ISV bent en een multi tenant hulp programma wilt bieden, kunt u gebruiken `organizations` . Maar houd er rekening mee dat u ook moet uitleggen wat uw klanten zijn om toestemming van de beheerder te verlenen. Zie [toestemming vragen voor een hele Tenant](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant)voor meer informatie. Er is momenteel een beperking in MSAL: `organizations` is alleen toegestaan wanneer de referenties van de client een toepassings geheim zijn (niet een certificaat).
+Zelfs als u een multi tenant-hulp programma wilt opgeven, gebruikt u een Tenant-ID of domein naam en **niet** `common` of `organizations` met deze stroom, omdat de service niet betrouwbaar kan afleiden welke Tenant moet worden gebruikt.
 
 ## <a name="configure-and-instantiate-the-application"></a>De toepassing configureren en instantiëren
 

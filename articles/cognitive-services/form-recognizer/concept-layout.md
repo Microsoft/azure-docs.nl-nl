@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: 3c2e691d673b385d597957cf5a4ce3c3f18ba466
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: b489964e5ef8ea483cbe203be1ff665078a6d66a
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95511478"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95741726"
 ---
 # <a name="form-recognizer-layout-service"></a>Indelings service voor formulier herkenning
 
@@ -86,11 +86,10 @@ De indeling extraheert tabellen uit documenten (PDF, TIFF) en afbeeldingen (jpg,
 
 De indeling haalt ook selectie markeringen uit documenten op. De door geëxtraheerde selectie markeringen zijn onder andere het begrenzingsvak, betrouw baarheid en status (geselecteerd/uitgeschakeld). Informatie over selectie markeringen wordt geëxtraheerd in de `"readResults"` sectie van de JSON-uitvoer. 
 
-<<< selectie markeringen toevoegen>>>
-
 ## <a name="next-steps"></a>Volgende stappen
 
 - Probeer uw eigen indelings extractie met behulp van de voor [beeld-UI voor formulier herkenning](https://fott-preview.azurewebsites.net/)
+- Voltooi de Quick Start van de [client bibliotheek](quickstarts/client-library.md) van een formulier om de lay-outs in de door u gewenste taal te halen.
 - U kunt ook de Snelstartgids voor het [uitpakken](./QuickStarts/python-layout.md) van indelings gegevens gebruiken om de extractie van lay-outgegevens te implementeren met python en de rest API.
 
 ## <a name="see-also"></a>Zie ook

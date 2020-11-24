@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 92eda77d03e547e814cac85f5ac8bb03b552d135
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: ed6d3b927254d44863b7fd0a597528813be791cf
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95506548"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95736600"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Wat is er nieuw in Form Recognizer?
 
@@ -38,13 +38,13 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
   > [Meer informatie over indelings extractie](concept-layout.md)
 
 - **Nieuwe ondersteunde taal: Japans** -de volgende nieuwe talen worden nu ondersteund: voor `AnalyzeLayout` en `AnalyzeCustomForm` : Japans ( `ja` ). [Taalondersteuning](language-support.md)
-- **Tekst lijn stijl vermelding (handgeschreven/afdrukken) (alleen Latijnse talen)** : met formulier herkenning wordt nu een `appearance` object geclassificeerd waarin wordt aangegeven of elke tekst regel handgeschreven stijl is of niet, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen.
+- **Tekst lijn stijl vermelding (handgeschreven/Overig) (alleen Latijnse talen)** : met formulier herkenning wordt nu een `appearance` object geclassificeerd waarin wordt aangegeven of elke tekst regel handgeschreven stijl is of niet, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen.
 - **Kwaliteits verbeteringen** : extractie verbeteringen, waaronder de extractie van één cijfer.
 - **Nieuwe try-it-out-functie in de voorbeeld label van het formulier Recognizer-voor beeld van het hulp programma** voor het opvullen van vooraf gemaakte factuur-, ontvangst-en visite kaart modellen en de lay-out-API met behulp van het voor beeld labelen van de formulier herkenning. Bekijk hoe uw gegevens worden geëxtraheerd zonder dat u code hoeft te schrijven.
 
   > [Het voorbeeld programma voor formulier herkenning uitproberen](https://fott-preview.azurewebsites.net/)
 
-  ![FOTT-voor beeld](./media/fott-preview.jpg)
+  ![FOTT-voor beeld](./media/ui-preview.jpg)
 
 ## <a name="august-2020"></a>Augustus 2020
 
@@ -85,7 +85,7 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
 * **Valuta-ondersteuning** -detectie en extractie van globale valuta symbolen.
 * **Azure gov** -formulier herkenning is nu ook beschikbaar in azure gov.
 * **Verbeterde beveiligings functies**: 
-   * Als u **uw eigen sleutel** formulier Recognizer zet, worden uw gegevens automatisch versleuteld wanneer deze worden opgeslagen in de cloud om deze te beschermen en om u te helpen te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. U kunt uw abonnement nu ook beheren met uw eigen coderings sleutels. [Door de klant beheerde sleutels (CMK), ook wel bekend als het nemen van uw eigen sleutel (BYOK)](./form-recognizer-encryption-of-data-at-rest.md), bieden meer flexibiliteit voor het maken, draaien, uitschakelen en intrekken van toegangs beheer. U kunt ook de versleutelingssleutels controleren die worden gebruikt voor het beveiligen van uw gegevens.  
+   * Als u **uw eigen sleutel** formulier Recognizer zet, worden uw gegevens automatisch versleuteld wanneer deze worden opgeslagen in de cloud om deze te beschermen en om u te helpen te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Uw abonnement maakt standaard gebruik van door Microsoft beheerde versleutelingssleutels. U kunt uw abonnement nu ook beheren met uw eigen coderings sleutels. [Door de klant beheerde sleutels, ook wel bekend als uw eigen sleutel (BYOK)](./form-recognizer-encryption-of-data-at-rest.md), bieden meer flexibiliteit voor het maken, draaien, uitschakelen en intrekken van toegangs beheer. U kunt ook de versleutelingssleutels controleren die worden gebruikt voor het beveiligen van uw gegevens.  
    * **Persoonlijke eind punten** – Hiermee kunt u een virtueel netwerk (VNet) [gebruiken om veilig toegang te krijgen tot gegevens via een privé-koppeling.](../../private-link/private-link-overview.md)
 
 

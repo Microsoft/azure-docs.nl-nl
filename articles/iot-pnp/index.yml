@@ -11,12 +11,12 @@ metadata:
   ms.author: dobett
   manager: philmea
   ms.date: 10/31/2019
-  ms.openlocfilehash: 5b01154fa3e5821ca577e4a910facff8d9cb968a
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: 75aa276fb41ebe717caa5c2f0dbdab5f9709237e
+  ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "91598046"
+  ms.lasthandoff: 11/23/2020
+  ms.locfileid: "95495233"
 landingContent:
 - title: Info over IoT Plug en Play
   linkLists:
@@ -30,20 +30,12 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Een voorbeeldapparaat verbinden met IoT Hub (C)
-      url: quickstart-connect-device-c.md
-    - text: Een voorbeeldapparaat verbinden met IoT Hub (C#)
-      url: quickstart-connect-device-csharp.md
-    - text: Een voorbeeldapparaat verbinden met IoT Hub (Java)
-      url: quickstart-connect-device-java.md
-    - text: Een voorbeeldapparaat verbinden met IoT Hub (Node.js)
-      url: quickstart-connect-device-node.md
-    - text: Een voorbeeldapparaat verbinden met IoT Hub (Python)
-      url: quickstart-connect-device-python.md
+    - text: Een voorbeeldapparaat verbinden met IoT Hub
+      url: quickstart-connect-device.md
   - linkListType: concept
     links:
     - text: Ontwikkelaarsgids
-      url: concepts-developer-guide-device-csharp.md
+      url: concepts-developer-guide-device.md
     - text: Onderdelen
       url: concepts-components.md
     - text: Conventies voor IoT Plug en Play
@@ -54,10 +46,8 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Interactie met een apparaat vanuit uw oplossing (Node.js)
-      url: quickstart-service-node.md
-    - text: Interactie met een apparaat vanuit uw oplossing (Python)
-      url: quickstart-service-python.md
+    - text: Interactie met een apparaat vanuit uw oplossing
+      url: quickstart-service.md
   - linkListType: concept
     links:
     - text: Architectuur

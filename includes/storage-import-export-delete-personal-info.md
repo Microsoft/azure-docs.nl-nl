@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/18/2018
 ms.author: cshoe
 ms.custom: include file
-ms.openlocfilehash: e6a0ded137162328fd446b65ddb4a15fa6f1db88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 137aca7c6c857ee6e833c359b710e1c1848d15ed
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67176248"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95554874"
 ---
 ## <a name="deleting-personal-information"></a>Persoonlijke gegevens verwijderen
 
@@ -27,7 +27,7 @@ Persoonlijke gegevens zijn relevant voor de import/export-service (via de portal
 - Adres
 - Plaats
 - Postcode
-- Status
+- Staat
 - Land/Provincie/Regio
 - Stations-ID
 - Accountnummer van transporteur
@@ -37,7 +37,7 @@ Wanneer een import/export-taak wordt gemaakt, bieden gebruikers contact gegevens
 
 Persoonlijke contact gegevens kunnen op de volgende manieren worden verwijderd:
 
-- Gegevens die met de taak zijn opgeslagen, worden met de taak verwijderd. Gebruikers kunnen taken hand matig verwijderen en voltooide taken worden na 90 dagen automatisch verwijderd. U kunt de taken hand matig verwijderen via de REST API of de Azure Portal. Als u de taak in de Azure Portal wilt verwijderen, gaat u naar uw import/export-taak en klikt u op *verwijderen* in de opdracht balk. Zie [een import/export-taak verwijderen](../articles/storage/common/storage-import-export-cancelling-and-deleting-jobs.md)voor meer informatie over het verwijderen van een import/export-taak via rest API.
+- Gegevens die met de taak zijn opgeslagen, worden met de taak verwijderd. Gebruikers kunnen taken hand matig verwijderen en voltooide taken worden na 90 dagen automatisch verwijderd. U kunt de taken hand matig verwijderen via de REST API of de Azure Portal. Als u de taak in de Azure Portal wilt verwijderen, gaat u naar uw import/export-taak en klikt u op *verwijderen* in de opdracht balk. Zie [een import/export-taak verwijderen](/previous-versions/azure/storage/common/storage-import-export-cancelling-and-deleting-jobs)voor meer informatie over het verwijderen van een import/export-taak via rest API.
 
 - De contact gegevens die in de Portal instellingen zijn opgeslagen, kunnen worden verwijderd door de Portal instellingen te verwijderen. U kunt de Portal-instellingen verwijderen door de volgende stappen uit te voeren:
   - Meld u aan bij [Azure Portal](https://portal.azure.com).

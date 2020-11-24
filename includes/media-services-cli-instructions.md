@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 01/28/2019
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: 5ebbac39c8850737ea6f9ef333e45d305a520655
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1327ac49920af353d6adbbe592ab4189417e60e8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79461211"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564044"
 ---
 ## <a name="use-cli-shell"></a>CLI-shell gebruiken
 
-Het is raadzaam om [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest) te gebruiken om CLI-opdrachten uit te voeren. **Cloud Shell** is een gratis, interactieve shell waarmee u de stappen in dit artikel kunt uitvoeren. Er zijn vooraf algemene Azure-hulpprogramma's geïnstalleerd en geconfigureerd in Cloud Shell die u kunt gebruiken bij uw account. Deze biedt de mogelijkheid om zelf de shell-ervaring te kiezen die het beste past bij uw manier van werken. Linux-gebruikers kunnen kiezen voor een Bash-ervaring en Windows-gebruikers kunnen kiezen voor PowerShell.
+Het is raadzaam om [Azure Cloud Shell](../articles/cloud-shell/overview.md?view=azure-cli-latest) te gebruiken om CLI-opdrachten uit te voeren. **Cloud Shell** is een gratis, interactieve shell waarmee u de stappen in dit artikel kunt uitvoeren. Er zijn vooraf algemene Azure-hulpprogramma's geïnstalleerd en geconfigureerd in Cloud Shell die u kunt gebruiken bij uw account. Deze biedt de mogelijkheid om zelf de shell-ervaring te kiezen die het beste past bij uw manier van werken. Linux-gebruikers kunnen kiezen voor een Bash-ervaring en Windows-gebruikers kunnen kiezen voor PowerShell.
 
-U kunt de CLI ook lokaal installeren. Zie [Install the Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (Azure CLI installeren) voor instructies voor uw platform.
+U kunt de CLI ook lokaal installeren. Zie [Install the Azure CLI](/cli/azure/install-azure-cli) (Azure CLI installeren) voor instructies voor uw platform.
 
 ### <a name="sign-in"></a>Aanmelden
 

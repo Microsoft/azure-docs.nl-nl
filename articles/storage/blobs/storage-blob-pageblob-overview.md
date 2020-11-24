@@ -10,12 +10,12 @@ ms.author: tamram
 ms.reviewer: wielriac
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5558a57812414f6f1bb1be053a089af98533155a
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 39c1972eba84f4f1990c87112c5801c386849640
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288333"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95545955"
 ---
 # <a name="overview-of-azure-page-blobs"></a>Overzicht van Azure-pagina-blobs
 
@@ -31,7 +31,7 @@ Pagina-blobs kunnen alleen de laag **Hot** Access gebruiken, ze kunnen geen **ko
 
 ## <a name="sample-use-cases"></a>Voorbeelden van toepassingsscenario’s
 
-We bespreken enkele gebruiks voorbeelden voor pagina-blobs die beginnen met Azure IaaS-schijven. Azure-pagina-blobs zijn de ruggen graat van het platform voor virtuele schijven voor Azure IaaS. Zowel Azure-besturings systemen als-gegevens schijven worden geïmplementeerd als virtuele schijven waar gegevens blijvend worden opgeslagen in het Azure Storage-platform en vervolgens worden geleverd aan de virtuele machines voor maximale prestaties. Azure-schijven worden bewaard in de Hyper-V [VHD-indeling](https://technet.microsoft.com/library/dd979539.aspx) en opgeslagen als een pagina- [BLOB](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs#about-page-blobs) in azure Storage. Naast het gebruik van virtuele schijven voor Azure IaaS Vm's, kunnen pagina-blobs ook PaaS-en DBaaS-scenario's, zoals Azure SQL DB-Service, die momenteel gebruikmaken van pagina-blobs voor het opslaan van SQL-gegevens en snelle, wille keurige Lees bewerkingen voor de data base inschakelen. Een ander voor beeld is dat als u een PaaS-service voor gedeelde media toegang hebt voor toepassingen voor gezamenlijke video bewerking, de pagina-blobs snelle toegang tot wille keurige locaties in de media bieden. Het biedt ook snelle en efficiënte bewerking en samen voeging van hetzelfde medium door meerdere gebruikers. 
+We bespreken enkele gebruiks voorbeelden voor pagina-blobs die beginnen met Azure IaaS-schijven. Azure-pagina-blobs zijn de ruggen graat van het platform voor virtuele schijven voor Azure IaaS. Zowel Azure-besturings systemen als-gegevens schijven worden geïmplementeerd als virtuele schijven waar gegevens blijvend worden opgeslagen in het Azure Storage-platform en vervolgens worden geleverd aan de virtuele machines voor maximale prestaties. Azure-schijven worden bewaard in de Hyper-V [VHD-indeling](/previous-versions/windows/it-pro/windows-7/dd979539(v=ws.10)) en opgeslagen als een pagina- [BLOB](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs#about-page-blobs) in azure Storage. Naast het gebruik van virtuele schijven voor Azure IaaS Vm's, kunnen pagina-blobs ook PaaS-en DBaaS-scenario's, zoals Azure SQL DB-Service, die momenteel gebruikmaken van pagina-blobs voor het opslaan van SQL-gegevens en snelle, wille keurige Lees bewerkingen voor de data base inschakelen. Een ander voor beeld is dat als u een PaaS-service voor gedeelde media toegang hebt voor toepassingen voor gezamenlijke video bewerking, de pagina-blobs snelle toegang tot wille keurige locaties in de media bieden. Het biedt ook snelle en efficiënte bewerking en samen voeging van hetzelfde medium door meerdere gebruikers. 
 
 Micro soft-services van derden, zoals Azure Site Recovery, Azure Backup, en veel ontwikkel aars hebben toonaangevende innovaties geïmplementeerd met behulp van de REST-interface van de pagina-blob. Hier volgen enkele van de unieke scenario's die in azure zijn geïmplementeerd: 
 
@@ -47,7 +47,7 @@ Beide typen opslag die worden aangeboden met pagina-blobs hebben hun eigen prijs
 
 ### <a name="rest-api"></a>REST-API
 
-Raadpleeg het volgende document om aan de slag te gaan met [ontwikkelen met behulp van pagina-blobs](storage-dotnet-how-to-use-blobs.md). Bekijk bijvoorbeeld hoe u met de Storage-client bibliotheek voor .NET toegang hebt tot pagina-blobs. 
+Raadpleeg het volgende document om aan de slag te gaan met [ontwikkelen met behulp van pagina-blobs](./storage-quickstart-blobs-dotnet.md). Bekijk bijvoorbeeld hoe u met de Storage-client bibliotheek voor .NET toegang hebt tot pagina-blobs. 
 
 In het volgende diagram worden de algemene relaties tussen accounts, containers en pagina-blobs beschreven.
 
@@ -63,7 +63,7 @@ Eerst moet u een verwijzing naar een container ophalen. Als u een pagina-BLOB wi
 
 # <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
 
-Als u een pagina-BLOB wilt maken, maakt u eerst een **CloudBlobClient** -object met de basis-URI voor toegang tot de Blob-opslag voor uw opslag account ( *pbaccount* in afbeelding 1) samen met het object **StorageCredentialsAccountAndKey** , zoals wordt weer gegeven in het volgende voor beeld. In het voor beeld wordt vervolgens een verwijzing naar een **CloudBlobContainer** -object gemaakt en vervolgens de container ( *testvhds* ) gemaakt als deze nog niet bestaat. Maak vervolgens met behulp van het object **CloudBlobContainer** een verwijzing naar een **CloudPageBlob** -object door de naam van de pagina-BLOB (OS4. VHD) op te geven die u wilt openen. Als u de pagina-BLOB wilt maken, roept u [CloudPageBlob. Create](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.create)aan en geeft u de maximale grootte voor de BLOB op die moet worden gemaakt. De *blobSize* moet een meervoud van 512 bytes zijn.
+Als u een pagina-BLOB wilt maken, maakt u eerst een **CloudBlobClient** -object met de basis-URI voor toegang tot de Blob-opslag voor uw opslag account (*pbaccount* in afbeelding 1) samen met het object **StorageCredentialsAccountAndKey** , zoals wordt weer gegeven in het volgende voor beeld. In het voor beeld wordt vervolgens een verwijzing naar een **CloudBlobContainer** -object gemaakt en vervolgens de container (*testvhds*) gemaakt als deze nog niet bestaat. Maak vervolgens met behulp van het object **CloudBlobContainer** een verwijzing naar een **CloudPageBlob** -object door de naam van de pagina-BLOB (OS4. VHD) op te geven die u wilt openen. Als u de pagina-BLOB wilt maken, roept u [CloudPageBlob. Create](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.create)aan en geeft u de maximale grootte voor de BLOB op die moet worden gemaakt. De *blobSize* moet een meervoud van 512 bytes zijn.
 
 ```csharp
 using Microsoft.Azure;

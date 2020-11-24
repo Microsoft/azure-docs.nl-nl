@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 9f0a3c3a96a73bd71a9b0c769a3ceff85ae428f1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94f248edfebd6c6fedb78a54eee220c0ef38b4ab
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89017614"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95545858"
 ---
 # <a name="getting-started-with-azure-queue-storage-and-visual-studio-connected-services-cloud-services-projects"></a>Aan de slag met aan Azure Queue Storage en Visual Studio verbonden services (cloudserviceprojecten)
 [!INCLUDE [storage-try-azure-tools-queues](../../includes/storage-try-azure-tools-queues.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "89017614"
 ## <a name="overview"></a>Overzicht
 In dit artikel wordt beschreven hoe u aan de slag gaat met Azure Queue Storage in Visual Studio nadat u een Azure-opslag account in een Cloud Services-project hebt gemaakt of gerefereerd met behulp van het dialoog venster **verbonden services toevoegen** van Visual Studio.
 
-We laten u zien hoe u een wachtrij in code kunt maken. We laten ook zien hoe u eenvoudige wachtrij bewerkingen kunt uitvoeren, zoals het toevoegen, wijzigen, lezen en verwijderen van wachtrij berichten. De voor beelden zijn geschreven in C#-code en gebruiken de [Microsoft Azure Storage-client bibliotheek voor .net](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+We laten u zien hoe u een wachtrij in code kunt maken. We laten ook zien hoe u eenvoudige wachtrij bewerkingen kunt uitvoeren, zoals het toevoegen, wijzigen, lezen en verwijderen van wachtrij berichten. De voor beelden zijn geschreven in C#-code en gebruiken de [Microsoft Azure Storage-client bibliotheek voor .net](/previous-versions/azure/dn261237(v=azure.100)).
 
 Met de bewerking **verbonden services toevoegen** installeert u de juiste NuGet-pakketten voor toegang tot Azure Storage in uw project en voegt u de Connection String voor het opslag account toe aan uw project configuratie bestanden.
 
@@ -69,7 +69,7 @@ Als u toegang wilt krijgen tot wacht rijen in Visual Studio Cloud Services-proje
 **Opmerking:** Gebruik alle bovenstaande code vóór de code in de volgende voor beelden.
 
 ## <a name="create-a-queue-in-code"></a>Een wachtrij maken in code
-Als u de wachtrij in code wilt maken, voegt u een aanroep naar **CreateIfNotExists**toe.
+Als u de wachtrij in code wilt maken, voegt u een aanroep naar **CreateIfNotExists** toe.
 
 ```csharp
 // Create the CloudQueue if it does not exist
@@ -101,7 +101,7 @@ CloudQueueMessage peekedMessage = messageQueue.PeekMessage();
 Met uw code kan een bericht uit een wachtrij in twee stappen worden verwijderd (uit de wachtrij).
 
 1. Roep **GetMessage** aan om het volgende bericht in een wachtrij op te halen. Een bericht dat wordt geretourneerd door **GetMessage**, wordt onzichtbaar voor andere codes die berichten lezen uit deze wachtrij. Standaard blijft het bericht onzichtbaar gedurende 30 seconden.
-2. Roep **DeleteMessage**aan om het verwijderen van het bericht uit de wachtrij te volt ooien.
+2. Roep **DeleteMessage** aan om het verwijderen van het bericht uit de wachtrij te volt ooien.
 
 Dit proces in twee stappen voor het verwijderen van een bericht zorgt ervoor dat als de code er niet in slaagt een bericht te verwerken vanwege hardware- of softwareproblemen, een ander exemplaar van uw code hetzelfde bericht kan ophalen en het opnieuw kan proberen. Met de volgende code wordt **DeleteMessage** direct aangeroepen nadat het bericht is verwerkt.
 
@@ -150,7 +150,7 @@ Console.WriteLine("Number of messages in queue: " + cachedMessageCount);
 ```
 
 ## <a name="use-the-async-await-pattern-with-common-azure-queue-apis"></a>Het Async-Await patroon gebruiken met algemene Azure-wachtrij-Api's
-Dit voor beeld laat zien hoe u het Async-Await patroon kunt gebruiken met algemene Azure-wachtrij-Api's. In het voor beeld wordt de async-versie van elk van de opgegeven methoden aangeroepen. Dit kan worden gezien door de **asynchrone** na reparatie van elke methode. Wanneer een asynchrone methode wordt gebruikt, wordt het async-await-patroon onderbroken totdat de aanroep is voltooid. Dit gedrag zorgt ervoor dat de huidige thread andere werkzaamheden kan uitvoeren, waardoor prestatie knelpunten worden voor komen en de algehele reactie snelheid van uw toepassing wordt verbeterd. Zie [Async en Await (C# en Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx) voor meer informatie over het gebruik van het Async-Await-patroon in .NET.
+Dit voor beeld laat zien hoe u het Async-Await patroon kunt gebruiken met algemene Azure-wachtrij-Api's. In het voor beeld wordt de async-versie van elk van de opgegeven methoden aangeroepen. Dit kan worden gezien door de **asynchrone** na reparatie van elke methode. Wanneer een asynchrone methode wordt gebruikt, wordt het async-await-patroon onderbroken totdat de aanroep is voltooid. Dit gedrag zorgt ervoor dat de huidige thread andere werkzaamheden kan uitvoeren, waardoor prestatie knelpunten worden voor komen en de algehele reactie snelheid van uw toepassing wordt verbeterd. Zie [Async en Await (C# en Visual Basic)](/previous-versions/hh191443(v=vs.140)) voor meer informatie over het gebruik van het Async-Await-patroon in .NET.
 
 ```csharp
 // Create a message to put in the queue
@@ -179,4 +179,3 @@ messageQueue.Delete();
 
 ## <a name="next-steps"></a>Volgende stappen
 [!INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
-

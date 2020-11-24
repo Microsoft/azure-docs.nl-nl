@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: eeda43b972e30c573743c8c59f75cfae61d7ee85
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 26a5537496d9e881ece135437c403baf4a4fd67c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413140"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564202"
 ---
 Voor nu hebben Ultra disks de volgende beperkingen:
 
@@ -26,7 +26,7 @@ De volgende tabel geeft een overzicht van de regio's Ultra disks zijn beschikbaa
 
 |Regio's  |Redundantie opties  |
 |---------|---------|
-|Brazilië - zuid     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
+|Brazil South     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |India - centraal     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |Azië - oost     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |Duitsland - west-centraal     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
@@ -40,15 +40,15 @@ De volgende tabel geeft een overzicht van de regio's Ultra disks zijn beschikbaa
 |Australië - oost     |Drie beschikbaarheids zones         |
 |Azië - zuidoost    |Drie beschikbaarheids zones        |
 |Canada-centraal *     |Drie beschikbaarheids zones          |
-|VS - centraal     |Drie beschikbaarheids zones          |
+|Central US     |Drie beschikbaarheids zones          |
 |VS - oost     |Drie beschikbaarheids zones          |
-|US - oost 2     |Drie beschikbaarheids zones         |
+|VS - oost 2     |Drie beschikbaarheids zones         |
 |Frankrijk - centraal    |Twee beschikbaarheids zones        |
 |Japan - oost    |Drie beschikbaarheids zones        |
 |Europa - noord    |Drie beschikbaarheids zones        |
 |Verenigd Koninkrijk Zuid    |Drie beschikbaarheids zones        |
 |Europa -west    | Drie beschikbaarheids zones|
-|West US 2    |Drie beschikbaarheids zones|
+|VS - west 2    |Drie beschikbaarheids zones|
 
 \* Neem contact op met de ondersteuning van Azure om toegang te krijgen tot Beschikbaarheidszones voor deze regio.
 
@@ -67,7 +67,7 @@ De volgende tabel geeft een overzicht van de regio's Ultra disks zijn beschikbaa
     - [Mv2](../articles/virtual-machines/workloads/sap/hana-vm-operations-storage.md)
 - Niet elke VM-grootte is beschikbaar in elke ondersteunde regio met ultra disks.
 - Zijn alleen beschikbaar als gegevens schijven. 
-- Standaard de fysieke sector grootte van 4.000 ondersteunen. de 512E-sector grootte is beschikbaar als een algemeen beschik bare aanbieding, maar u moet [zich wel registreren](https://aka.ms/ultradisk512e). De meeste toepassingen zijn compatibel met formaten van 4.000 sectoren, maar sommige sectoren vereisen een grootte van 512 bytes. Een voor beeld hiervan is Oracle Database, waarvoor release 12,2 of hoger is vereist om de onbestelbare schijven van 4.000 te ondersteunen. Voor oudere versies van Oracle DB is de sector grootte van 512 bytes vereist.
+- Standaard de fysieke sector grootte van 4.000 ondersteunen. de 512E-sector grootte is beschikbaar als een algemeen beschik bare aanbieding (geen aanmelding vereist), maar is momenteel alleen beschikbaar via CLI of Power shell. De meeste toepassingen zijn compatibel met formaten van 4.000 sectoren, maar sommige sectoren vereisen een grootte van 512 bytes. Een voor beeld hiervan is Oracle Database, waarvoor release 12,2 of hoger is vereist om de onbestelbare schijven van 4.000 te ondersteunen. Voor oudere versies van Oracle DB is de sector grootte van 512 bytes vereist.
 - Kan alleen worden gemaakt als lege schijven.
 - Biedt momenteel geen ondersteuning voor schijf momentopnamen, VM-installatie kopieën, beschikbaarheids sets, voor Azure toegewezen hosts of Azure Disk Encryption.
 - Biedt momenteel geen ondersteuning voor integratie met Azure Backup of Azure Site Recovery.

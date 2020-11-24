@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 17df5dca584b760cc52ddc171e92fb26b418c347
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b68fce603801c7bc1aee2af871df257b5f69197
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79500199"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95563530"
 ---
 1. Installeer client certificaten op de Windows 10-client, zoals wordt weer gegeven in dit artikel van [punt-naar-site VPN-client](../articles/vpn-gateway/point-to-site-how-to-vpn-client-install-azure-cert.md) . Het certificaat moet zich in het huidige gebruikers archief beslaan.
 
-1. Configureer de always on VPN-client via Power shell, Configuration Manager of intune door de instructies in [Windows 10 client altijd op VPN-verbindingen configureren](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections)te volgen.
+1. Configureer de always on VPN-client via Power shell, Configuration Manager of intune door de instructies in [Windows 10 client altijd op VPN-verbindingen configureren](/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections)te volgen.
 
 ### <a name="example-configuration-for-the-user-tunnel"></a>Voorbeeld configuratie voor de gebruikers tunnel
 
@@ -128,6 +128,6 @@ Nadat u de virtuele netwerk gateway hebt geconfigureerd en het client certificaa
    ```
    
    ![MachineCertTest](./media/vpn-gateway-vwan-always-on-user/p2s2.jpg)
-1. Zoek de vermelding **UserTest** onder **VPN-instellingen**en selecteer vervolgens **verbinding maken**.
+1. Zoek de vermelding **UserTest** onder **VPN-instellingen** en selecteer vervolgens **verbinding maken**.
 
 1. Als de verbinding is geslaagd, hebt u een always on-gebruikers tunnel geconfigureerd.

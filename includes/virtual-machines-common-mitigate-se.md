@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/12/2019
 ms.author: cynthn;kareni
 ms.custom: include file
-ms.openlocfilehash: 6668d9753d0b93ab907d37cdeff8315f488cff7a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8594ce713a8675505e0ee3051018b05992b160a9
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73935888"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95563027"
 ---
 **Laatste document update**: 12 November 2019 10:00 am PST.
 
@@ -21,9 +21,9 @@ De openbaar making van een [nieuwe klasse van CPU-beveiligings problemen](https:
 
 Micro soft heeft oplossingen geïmplementeerd in al onze Cloud Services. De infra structuur die Azure uitvoert en de werk belastingen van de klant van elkaar isoleert, is beveiligd. Dit betekent dat een mogelijke aanvaller die dezelfde infra structuur gebruikt, uw toepassing niet kan aanvallen met behulp van deze beveiligings problemen.
 
-Azure gebruikt zoveel mogelijk geheugen voor het behoud van het [onderhoud](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates#maintenance-that-doesnt-require-a-reboot) om de gevolgen van de klant te minimaliseren en de nood zaak voor het opnieuw opstarten te voor komen. Azure gaat verder met het gebruik van deze methoden bij het maken van systeemwerksysteem updates voor de host en het beschermen van onze klanten.
+Azure gebruikt zoveel mogelijk geheugen voor het behoud van het [onderhoud](../articles/virtual-machines/maintenance-and-updates.md?bc=%252fazure%252fvirtual-machines%252fwindows%252fbreadcrumb%252ftoc.json%252c%252fazure%252fvirtual-machines%252fwindows%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json%253ftoc%253d%252fazure%252fvirtual-machines%252fwindows%252ftoc.json#maintenance-that-doesnt-require-a-reboot) om de gevolgen van de klant te minimaliseren en de nood zaak voor het opnieuw opstarten te voor komen. Azure gaat verder met het gebruik van deze methoden bij het maken van systeemwerksysteem updates voor de host en het beschermen van onze klanten.
 
-Meer informatie over hoe beveiliging is geïntegreerd in elk aspect van Azure is beschikbaar op de [Azure Security-documentatie](https://docs.microsoft.com/azure/security/) site. 
+Meer informatie over hoe beveiliging is geïntegreerd in elk aspect van Azure is beschikbaar op de [Azure Security-documentatie](../articles/security/index.yml) site. 
 
 > [!NOTE] 
 > Sinds dit document voor het eerst werd gepubliceerd, zijn er meerdere varianten van deze beveiligings klasse vermeld. Micro soft blijft zwaar belegd in het beschermen van onze klanten en het leveren van hulp. Deze pagina wordt bijgewerkt, omdat er verdere oplossingen blijven worden uitgebracht. 
@@ -43,7 +43,7 @@ Hoewel een update van het besturings systeem niet vereist is om uw toepassingen 
 
 | Aanbod | Aanbevolen actie  |
 |----------|---------------------|
-| Azure Cloud Services  | Schakel [automatisch bijwerken](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-configure-portal) in of zorg ervoor dat het nieuwste gast besturingssysteem wordt uitgevoerd. |
+| Azure Cloud Services  | Schakel [automatisch bijwerken](../articles/cloud-services/cloud-services-how-to-configure-portal.md) in of zorg ervoor dat het nieuwste gast besturingssysteem wordt uitgevoerd. |
 | Azure Linux Virtual Machines | Installeer updates van de provider van uw besturings systeem. Zie [Linux](#linux) verderop in dit document voor meer informatie. |
 | Azure Windows Virtual Machines  | Installeer de meest recente beveiligings update.
 | Andere Azure PaaS Services | Er is geen actie nodig voor klanten die deze services gebruiken. Azure houdt automatisch uw versies van het besturings systeem up-to-date. |
@@ -72,7 +72,7 @@ U kunt aanvullende beveiligings functies in uw VM of Cloud service inschakelen a
 Het doel besturingssysteem moet up-to-date zijn om deze aanvullende beveiligings functies in te scha kelen. Hoewel er veel speculatieve uitvoering-kanaal problemen zijn ingeschakeld, moeten de extra functies die hier worden beschreven, hand matig worden ingeschakeld en kan dit de prestaties nadelig beïnvloeden. 
 
 
-**Stap 1: Hyper-Threading uitschakelen op de virtuele machine** -klanten die niet-vertrouwde code uitvoeren op een Hyper-Threaded VM, moeten Hyper-Threading uitschakelen of verplaatsen naar een VM-grootte zonder Hyper Thread. Raadpleeg [dit document](https://docs.microsoft.com/azure/virtual-machines/windows/acu) voor een lijst met Hyper-Threaded VM-grootten (waarbij de verhouding van VCPU naar Core 2:1 is). Als u wilt controleren of Hyper-Threading voor uw virtuele machine is ingeschakeld, raadpleegt u het onderstaande script met behulp van de Windows-opdracht regel vanuit de VM.
+**Stap 1: Hyper-Threading uitschakelen op de virtuele machine** -klanten die niet-vertrouwde code uitvoeren op een Hyper-Threaded VM, moeten Hyper-Threading uitschakelen of verplaatsen naar een VM-grootte zonder Hyper Thread. Raadpleeg [dit document](../articles/virtual-machines/acu.md) voor een lijst met Hyper-Threaded VM-grootten (waarbij de verhouding van VCPU naar Core 2:1 is). Als u wilt controleren of Hyper-Threading voor uw virtuele machine is ingeschakeld, raadpleegt u het onderstaande script met behulp van de Windows-opdracht regel vanuit de VM.
 
 Typ `wmic` om de interactieve interface in te voeren. Typ vervolgens het onderstaande om de hoeveelheid fysieke en logische processors op de virtuele machine weer te geven.
 
@@ -108,10 +108,10 @@ Als de uitvoer wordt weer gegeven `MDS mitigation is enabled: False` , [neemt u 
 **Stap 3**: Volg de instructies in [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) om beveiligingen in te scha kelen met behulp van de register sleutels om KVAS (kernel Virtual Address shadowing) en BTI-ondersteuning (vertakkings doel injectie) in te scha kelen `Session Manager` . Opnieuw opstarten is vereist.
 
 
-**Stap 4**: voor implementaties die gebruikmaken van [geneste virtualisatie](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization) (alleen D3 en E3): deze instructies zijn van toepassing in de virtuele machine die u als Hyper-V-host gebruikt.
+**Stap 4**: voor implementaties die gebruikmaken van [geneste virtualisatie](../articles/virtual-machines/windows/nested-virtualization.md) (alleen D3 en E3): deze instructies zijn van toepassing in de virtuele machine die u als Hyper-V-host gebruikt.
 
 1.  Volg de instructies in [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) om beveiliging in te scha kelen met behulp van de `MinVmVersionForCpuBasedMitigations` register sleutels.
-2.  Stel het type Hyper Visor scheduler in op `Core` door de instructies [hier](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)te volgen.
+2.  Stel het type Hyper Visor scheduler in op `Core` door de instructies [hier](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)te volgen.
 
 
 ### <a name="linux"></a>Linux
@@ -119,7 +119,7 @@ Als de uitvoer wordt weer gegeven `MDS mitigation is enabled: False` , [neemt u 
 <a name="linux"></a>Het inschakelen van de set aanvullende beveiligings functies in vereist dat het doel besturingssysteem volledig up-to-date is. Sommige beperkende factoren worden standaard ingeschakeld. In de volgende sectie worden de functies beschreven die standaard zijn uitgeschakeld en/of afhankelijk van de hardware-ondersteuning (micro code). Het inschakelen van deze functies kan invloed hebben op de prestaties. Raadpleeg de documentatie van uw besturings systeem provider voor verdere instructies
 
 
-**Stap 1: Hyper-Threading uitschakelen op de virtuele machine** -klanten die niet-vertrouwde code uitvoeren op een Hyper-Threaded VM, moeten Hyper-Threading uitschakelen of verplaatsen naar een niet-Hyper-Threaded VM.  Raadpleeg [dit document](https://docs.microsoft.com/azure/virtual-machines/linux/acu) voor een lijst met Hyper-Threaded VM-grootten (waarbij de verhouding van VCPU naar Core 2:1 is). Als u wilt controleren of u een Hyper-Threaded VM uitvoert, voert u de `lscpu` opdracht uit in de Linux-VM. 
+**Stap 1: Hyper-Threading uitschakelen op de virtuele machine** -klanten die niet-vertrouwde code uitvoeren op een Hyper-Threaded VM, moeten Hyper-Threading uitschakelen of verplaatsen naar een niet-Hyper-Threaded VM.  Raadpleeg [dit document](../articles/virtual-machines/acu.md) voor een lijst met Hyper-Threaded VM-grootten (waarbij de verhouding van VCPU naar Core 2:1 is). Als u wilt controleren of u een Hyper-Threaded VM uitvoert, voert u de `lscpu` opdracht uit in de Linux-VM. 
 
 Als `Thread(s) per core = 2` , dan is Hyper-Threading ingeschakeld. 
 
@@ -179,11 +179,3 @@ Dit artikel bevat richt lijnen voor de onderstaande speculatieve uitvoering-aanv
 
 Asynchrone afbreek bewerking voor transactionele synchronisatie-uitbrei dingen (Intel® TSX):  
 - [CVE-2019-11135](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-11135) – TSX-trans actie asynchroon afbreken (TAA)
-
-
-
-
-
-
-
-

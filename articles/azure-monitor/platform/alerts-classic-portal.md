@@ -6,11 +6,11 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 09/18/2018
 ms.openlocfilehash: 613620ddf4889efb7cf3df95150be97f79724a98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87852137"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013102"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Klassieke metrische waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor
 
@@ -32,7 +32,7 @@ Klassieke metrische waarschuwingen in Azure Monitor bieden een manier om een mel
 
     ![Waarschuwing toevoegen](media/alerts-classic-portal/AddAlertOnlyParamsPage.png)
 
-4. **Geef** uw waarschuwings regel een naam. Kies vervolgens een **Beschrijving**die ook wordt weer gegeven in e-mail meldingen.
+4. **Geef** uw waarschuwings regel een naam. Kies vervolgens een **Beschrijving** die ook wordt weer gegeven in e-mail meldingen.
 
 5. Selecteer de **metrische gegevens** die u wilt bewaken. Kies vervolgens een voor **waarde** en **drempel** waarde voor de metriek. Kies ook de tijds **periode** waaraan de metrische regel moet voldoen voordat de waarschuwing wordt geactiveerd. Als u bijvoorbeeld de periode in de afgelopen vijf minuten gebruikt en uw waarschuwing zoekt naar een CPU die hoger is dan 80%, wordt de waarschuwing geactiveerd wanneer de CPU gedurende vijf minuten 80 consistent is. Nadat de eerste trigger is uitgevoerd, wordt deze opnieuw geactiveerd wanneer de CPU gedurende 5 minuten onder 80% blijft. De meting van de CPU-metriek gebeurt elke minuut.
 

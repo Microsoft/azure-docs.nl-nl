@@ -9,11 +9,11 @@ ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
 ms.openlocfilehash: af1850f77c1d13c761bfc2a143074b5067b349b4
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92014049"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013000"
 ---
 # <a name="analysis-services-database-backup-and-restore"></a>Back-up en herstel van Analysis Services-Data Base
 
@@ -25,7 +25,7 @@ Het maken van een back-up van tabellaire model databases in Azure Analysis Servi
 > 
 
 > [!NOTE]
-> Als het opslag account zich in een andere regio bevindt, configureert u Firewall-instellingen voor het opslag account om toegang vanaf **geselecteerde netwerken**toe te staan. Geef in het **adres bereik**van de firewall het IP-adres bereik op voor de regio waarin de Analysis Services-server zich bevindt. Het configureren van Firewall instellingen voor opslag accounts om toegang vanaf alle netwerken toe te staan, wordt ondersteund, maar het kiezen van geselecteerde netwerken en het opgeven van een IP-adres bereik verdient de voor keur. Zie [Veelgestelde vragen over netwerk connectiviteit](analysis-services-network-faq.md#backup-and-restore)voor meer informatie.
+> Als het opslag account zich in een andere regio bevindt, configureert u Firewall-instellingen voor het opslag account om toegang vanaf **geselecteerde netwerken** toe te staan. Geef in het **adres bereik** van de firewall het IP-adres bereik op voor de regio waarin de Analysis Services-server zich bevindt. Het configureren van Firewall instellingen voor opslag accounts om toegang vanaf alle netwerken toe te staan, wordt ondersteund, maar het kiezen van geselecteerde netwerken en het opgeven van een IP-adres bereik verdient de voor keur. Zie [Veelgestelde vragen over netwerk connectiviteit](analysis-services-network-faq.md#backup-and-restore)voor meer informatie.
 
 Back-ups worden opgeslagen met de extensie. ABF. Voor in-Memory tabellaire modellen worden zowel model gegevens als meta gegevens opgeslagen. Voor DirectQuery-modellen in tabel vorm worden alleen model meta gegevens opgeslagen. Back-ups kunnen worden gecomprimeerd en versleuteld, afhankelijk van de opties die u kiest.
 
@@ -35,11 +35,11 @@ Voordat u een back-up maakt, moet u de opslag instellingen voor uw server config
 
 
 ### <a name="to-configure-storage-settings"></a>Opslag instellingen configureren
-1.  Klik in Azure Portal >- **instellingen**op **back-up**.
+1.  Klik in Azure Portal >- **instellingen** op **back-up**.
 
     ![Back-ups in instellingen](./media/analysis-services-backup/aas-backup-backups.png)
 
-2.  Klik op **ingeschakeld**en klik vervolgens op **opslag instellingen**.
+2.  Klik op **ingeschakeld** en klik vervolgens op **opslag instellingen**.
 
     ![Inschakelen](./media/analysis-services-backup/aas-backup-enable.png)
 
@@ -59,7 +59,7 @@ Voordat u een back-up maakt, moet u de opslag instellingen voor uw server config
 
 1. Klik in SSMS met de rechter muisknop op een Data Base > **Maak een back-up**.
 
-2. Klik in back- **updatabasebestand**  >  **Backup file**op **Bladeren**.
+2. Klik in back- **updatabasebestand**  >  **Backup file** op **Bladeren**.
 
 3. Controleer in het dialoog venster **bestand opslaan als** het mappad en typ een naam voor het back-upbestand. 
 
@@ -91,7 +91,7 @@ Bij het herstellen moet het back-upbestand zich in het opslag account bevinden d
 
 1. Klik in SSMS met de rechter muisknop op een Data Base > **herstellen**.
 
-2. Klik in het dialoog venster **back-updatabase** in **back-upbestand**op **Bladeren**.
+2. Klik in het dialoog venster **back-updatabase** in **back-upbestand** op **Bladeren**.
 
 3. Selecteer in het dialoog venster **database bestanden zoeken** het bestand dat u wilt herstellen.
 
@@ -107,6 +107,6 @@ Gebruik de cmdlet [Restore-ASDatabase](/powershell/module/sqlserver/restore-asda
 
 ## <a name="related-information"></a>Gerelateerde informatie
 
-[Azure-opslag accounts](../storage/common/storage-account-create.md)  
+[Azure-opslagaccounts](../storage/common/storage-account-create.md)  
 [Hoge Beschik baarheid](analysis-services-bcdr.md)      
 [Veelgestelde vragen over de netwerk verbinding Analysis Services](analysis-services-network-faq.md)

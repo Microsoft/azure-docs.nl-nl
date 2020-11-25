@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 03/05/2020
 ms.custom: seodec18
 ms.openlocfilehash: 0e8d5fa14678a2a26234dfcd73f4a50af62ca7aa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962873"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012937"
 ---
 # <a name="configure-a-custom-domain-name-in-azure-app-service-with-traffic-manager-integration"></a>Een aangepaste domein naam configureren in Azure App Service met Traffic Manager-integratie
 
@@ -19,7 +19,7 @@ ms.locfileid: "88962873"
 > [!NOTE]
 > Zie voor Cloud Services [een aangepaste domein naam configureren voor een Azure-Cloud service](../cloud-services/cloud-services-custom-domain-name-portal.md).
 
-Wanneer u [Azure Traffic Manager](../traffic-manager/index.yml) gebruikt om verkeer te verdelen naar [Azure app service](overview.md), is de app service-App toegankelijk via ** \<traffic-manager-endpoint> . trafficmanager.net**. U kunt een aangepaste domein naam, zoals www \. contoso.com, toewijzen met uw app service-app om een herken bare domein naam voor uw gebruikers te bieden.
+Wanneer u [Azure Traffic Manager](../traffic-manager/index.yml) gebruikt om verkeer te verdelen naar [Azure app service](overview.md), is de app service-App toegankelijk via **\<traffic-manager-endpoint> . trafficmanager.net**. U kunt een aangepaste domein naam, zoals www \. contoso.com, toewijzen met uw app service-app om een herken bare domein naam voor uw gebruikers te bieden.
 
 In dit artikel wordt beschreven hoe u een aangepaste domein naam configureert met een App Service-app die is geïntegreerd met [Traffic Manager](../traffic-manager/traffic-manager-overview.md).
 

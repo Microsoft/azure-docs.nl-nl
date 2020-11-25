@@ -9,11 +9,11 @@ ms.service: azure-maps
 services: azure-maps
 manager: philMea
 ms.openlocfilehash: 2c3e46bf386e70cbe35d96728ede896d6bf0dc7d
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895831"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013119"
 ---
 # <a name="drawing-package-requirements"></a>Vereisten voor tekenpakketten
 
@@ -50,9 +50,9 @@ U kunt de DWG-bestanden op een wille keurige manier in de map indelen, maar het 
 
 ## <a name="dwg-files-requirements"></a>Vereisten voor DWG-bestanden
 
-Er is één DWG-bestand vereist voor elk niveau van de faciliteit. De gegevens van het niveau moeten zich in één DWG-bestand bevinden. Alle externe verwijzingen ( _xrefs_ ) moeten aan de bovenliggende tekening worden gebonden. Daarnaast elk DWG-bestand:
+Er is één DWG-bestand vereist voor elk niveau van de faciliteit. De gegevens van het niveau moeten zich in één DWG-bestand bevinden. Alle externe verwijzingen (_xrefs_) moeten aan de bovenliggende tekening worden gebonden. Daarnaast elk DWG-bestand:
 
-* U moet de _buiten_ -en _eenheids_ lagen definiëren. U kunt eventueel de volgende optionele lagen definiëren: _wand_ , _deur_ , _UnitLabel_ , _zone_ en _ZoneLabel_ .
+* U moet de _buiten_ -en _eenheids_ lagen definiëren. U kunt eventueel de volgende optionele lagen definiëren: _wand_, _deur_, _UnitLabel_, _zone_ en _ZoneLabel_.
 * Mag geen functies van meerdere niveaus bevatten.
 * Mag geen functies van meerdere faciliteiten bevatten.
 
@@ -85,7 +85,7 @@ De volgende tabel geeft een overzicht van de ondersteunde entiteits typen en ond
 | [Eenheid](#unit-layer) |  Veelhoek, poly lijn (gesloten), cirkel | Verticale binnendringingen, eenheden
 | [Muren](#wall-layer)  | Veelhoek, poly lijn (gesloten), cirkel | Niet van toepassing. Zie de laag met de [wand](#wall-layer)voor meer informatie.
 | [Door](#door-layer) | Veelhoek, poly lijn, lijn, CircularArc, cirkel | Openingen
-| [Gebied](#zone-layer) | Veelhoek, poly lijn (gesloten), cirkel | Zone
+| [Zone](#zone-layer) | Veelhoek, poly lijn (gesloten), cirkel | Zone
 | [UnitLabel](#unitlabel-layer) | Tekst (één regel) | Niet van toepassing. Deze laag kan alleen eigenschappen toevoegen aan de eenheids functies van de laag eenheden. Zie de [UnitLabel-laag](#unitlabel-layer)voor meer informatie.
 | [ZoneLabel](#zonelabel-layer) | Tekst (één regel) | Niet van toepassing. Deze laag kan alleen eigenschappen toevoegen aan zone functies van de ZonesLayer. Zie de [ZoneLabel-laag](#zonelabel-layer)voor meer informatie.
 
@@ -176,13 +176,13 @@ Hoewel er vereisten gelden wanneer u de manifest-objecten gebruikt, zijn niet al
 
 | Object | Vereist | Beschrijving |
 | :----- | :------- | :------- |
-| `version` | true |Schema versie van manifest. Op dit moment wordt alleen versie 1,1 ondersteund.|
-| `directoryInfo` | true | Geeft een overzicht van de geografische locatie-en contact gegevens. Het kan ook worden gebruikt voor een overzicht van de geografische en contact gegevens van een inzittende. |
-| `buildingLevels` | true | Hiermee geeft u de niveaus van de gebouwen en de bestanden die het ontwerp van de niveaus bevatten. |
-| `georeference` | true | Bevat numerieke geografische gegevens voor de faciliteit tekening. |
-| `dwgLayers` | true | Een lijst met de namen van de lagen en elke laag bevat de namen van de eigen functies. |
-| `unitProperties` | false | Kan worden gebruikt om aanvullende meta gegevens voor de onderdelen van de eenheid in te voegen. |
-| `zoneProperties` | false | Kan worden gebruikt om aanvullende meta gegevens in te voegen voor de zone-functies. |
+| `version` | waar |Schema versie van manifest. Op dit moment wordt alleen versie 1,1 ondersteund.|
+| `directoryInfo` | waar | Geeft een overzicht van de geografische locatie-en contact gegevens. Het kan ook worden gebruikt voor een overzicht van de geografische en contact gegevens van een inzittende. |
+| `buildingLevels` | waar | Hiermee geeft u de niveaus van de gebouwen en de bestanden die het ontwerp van de niveaus bevatten. |
+| `georeference` | waar | Bevat numerieke geografische gegevens voor de faciliteit tekening. |
+| `dwgLayers` | waar | Een lijst met de namen van de lagen en elke laag bevat de namen van de eigen functies. |
+| `unitProperties` | onjuist | Kan worden gebruikt om aanvullende meta gegevens voor de onderdelen van de eenheid in te voegen. |
+| `zoneProperties` | onjuist | Kan worden gebruikt om aanvullende meta gegevens in te voegen voor de zone-functies. |
 
 In de volgende secties worden de vereisten voor elk object gedetailleerd beschreven.
 
@@ -190,20 +190,20 @@ In de volgende secties worden de vereisten voor elk object gedetailleerd beschre
 
 | Eigenschap  | Type | Vereist | Description |
 |-----------|------|----------|-------------|
-| `name`      | tekenreeks | true   |  De naam van het gebouw. |
-| `streetAddress`|    tekenreeks |    false    | Het adres van het gebouw. |
-|`unit`     | tekenreeks    |  false    |  Eenheid in gebouw. |
-| `locality` |    tekenreeks |    false |    De naam van een gebied, groep of regio. Bijvoorbeeld "overlake" of "Central District". De lokale locatie maakt geen deel uit van het post adres. |
-| `adminDivisions` |    JSON-matrix met teken reeksen |    false     | Een matrix met adres ontwerpen (land, staat, plaats) of (land, prefectuur, stad, stad). Gebruik ISO 3166-land codes en ISO 3166-2 staat/regio codes. |
-| `postalCode` |    tekenreeks    | false    | De e-mail BIC-code. |
-| `hoursOfOperation` |    tekenreeks |     false | Voldoet aan de [OSM Openings uren](https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification) -indeling. |
-| `phone`    | tekenreeks |    false |    Het telefoon nummer dat aan het gebouw is gekoppeld. De land code moet worden meegenomen. |
-| `website`    | tekenreeks |    false    | De website die aan het gebouw is gekoppeld. Moet beginnen met http of https. |
-| `nonPublic` |    booleaans    | false | Vlag waarmee wordt aangegeven of het gebouw open is. |
-| `anchorLatitude` | numeriek |    false | Breedte graad van een faciliteit anker (punaise). |
-| `anchorLongitude` | numeriek |    false | Lengte graad van een faciliteit anker (punaise). |
-| `anchorHeightAboveSeaLevel`  | numeriek | false | Hoogte van de grond vloer van de faciliteit boven Sea-niveau, in meters. |
-| `defaultLevelVerticalExtent` | numeriek | false | De standaard hoogte (breedte) van een niveau van deze faciliteit dat moet worden gebruikt wanneer een niveau `verticalExtent` niet is gedefinieerd. |
+| `name`      | tekenreeks | waar   |  De naam van het gebouw. |
+| `streetAddress`|    tekenreeks |    onjuist    | Het adres van het gebouw. |
+|`unit`     | tekenreeks    |  onjuist    |  Eenheid in gebouw. |
+| `locality` |    tekenreeks |    onjuist |    De naam van een gebied, groep of regio. Bijvoorbeeld "overlake" of "Central District". De lokale locatie maakt geen deel uit van het post adres. |
+| `adminDivisions` |    JSON-matrix met teken reeksen |    onjuist     | Een matrix met adres ontwerpen (land, staat, plaats) of (land, prefectuur, stad, stad). Gebruik ISO 3166-land codes en ISO 3166-2 staat/regio codes. |
+| `postalCode` |    tekenreeks    | onjuist    | De e-mail BIC-code. |
+| `hoursOfOperation` |    tekenreeks |     onjuist | Voldoet aan de [OSM Openings uren](https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification) -indeling. |
+| `phone`    | tekenreeks |    onjuist |    Het telefoon nummer dat aan het gebouw is gekoppeld. De land code moet worden meegenomen. |
+| `website`    | tekenreeks |    onjuist    | De website die aan het gebouw is gekoppeld. Moet beginnen met http of https. |
+| `nonPublic` |    booleaans    | onjuist | Vlag waarmee wordt aangegeven of het gebouw open is. |
+| `anchorLatitude` | numeriek |    onjuist | Breedte graad van een faciliteit anker (punaise). |
+| `anchorLongitude` | numeriek |    onjuist | Lengte graad van een faciliteit anker (punaise). |
+| `anchorHeightAboveSeaLevel`  | numeriek | onjuist | Hoogte van de grond vloer van de faciliteit boven Sea-niveau, in meters. |
+| `defaultLevelVerticalExtent` | numeriek | onjuist | De standaard hoogte (breedte) van een niveau van deze faciliteit dat moet worden gebruikt wanneer een niveau `verticalExtent` niet is gedefinieerd. |
 
 ### `buildingLevels`
 
@@ -211,31 +211,31 @@ Het `buildingLevels` object bevat een JSON-matrix met de niveaus van gebouwen.
 
 | Eigenschap  | Type | Vereist | Description |
 |-----------|------|----------|-------------|
-|`levelName`    |tekenreeks    |true |    Beschrijvende niveau naam. Bijvoorbeeld: Floor 1, lobby, Blue parkeren of Basement.|
-|`ordinal` | geheel getal |    true | Bepaalt de verticale volg orde van niveaus. Elke faciliteit moet een niveau hebben met een rang telwoord van 0. |
-|`heightAboveFacilityAnchor` | numeriek | false |    Niveau hoogte boven het anker in meters. |
-| `verticalExtent` | numeriek | false | De hoogte (breedte) van het niveau in meters. |
-|`filename` |    tekenreeks |    true |    Bestandssysteempad naar het bestands systeem van de CAD-tekening voor een gebouw niveau. Deze moet relatief zijn ten opzichte van de hoofdmap van het zip-bestand van het gebouw. |
+|`levelName`    |tekenreeks    |waar |    Beschrijvende niveau naam. Bijvoorbeeld: Floor 1, lobby, Blue parkeren of Basement.|
+|`ordinal` | geheel getal |    waar | Bepaalt de verticale volg orde van niveaus. Elke faciliteit moet een niveau hebben met een rang telwoord van 0. |
+|`heightAboveFacilityAnchor` | numeriek | onjuist |    Niveau hoogte boven het anker in meters. |
+| `verticalExtent` | numeriek | onjuist | De hoogte (breedte) van het niveau in meters. |
+|`filename` |    tekenreeks |    waar |    Bestandssysteempad naar het bestands systeem van de CAD-tekening voor een gebouw niveau. Deze moet relatief zijn ten opzichte van de hoofdmap van het zip-bestand van het gebouw. |
 
 ### `georeference`
 
 | Eigenschap  | Type | Vereist | Beschrijving |
 |-----------|------|----------|-------------|
-|`lat`    | numeriek |    true |    Decimale weer gave van graden met een breedte graad op de oorspronkelijke positie van de tekening. De oorsprongs coördinaten moeten zich in WGS84 Web Mercator () bekomen `EPSG:3857` .|
-|`lon`    |numeriek|    true|    Decimale weer gave van graden met de lengte van de faciliteit tekening. De oorsprongs coördinaten moeten zich in WGS84 Web Mercator () bekomen `EPSG:3857` . |
-|`angle`|    numeriek|    true|   De hoek rechtsom, in graden, tussen True en de verticale as (Y) van de tekening.   |
+|`lat`    | numeriek |    waar |    Decimale weer gave van graden met een breedte graad op de oorspronkelijke positie van de tekening. De oorsprongs coördinaten moeten zich in WGS84 Web Mercator () bekomen `EPSG:3857` .|
+|`lon`    |numeriek|    waar|    Decimale weer gave van graden met de lengte van de faciliteit tekening. De oorsprongs coördinaten moeten zich in WGS84 Web Mercator () bekomen `EPSG:3857` . |
+|`angle`|    numeriek|    waar|   De hoek rechtsom, in graden, tussen True en de verticale as (Y) van de tekening.   |
 
 ### `dwgLayers`
 
 | Eigenschap  | Type | Vereist | Beschrijving |
 |-----------|------|----------|-------------|
-|`exterior`    |tekenreeksmatrix|    true|    Namen van lagen die het buitenste bouw profiel definiëren.|
-|`unit`|    tekenreeksmatrix|    true|    Namen van lagen waarmee eenheden worden gedefinieerd.|
-|`wall`|    tekenreeksmatrix    |false|    Namen van lagen waarmee wanden worden gedefinieerd.|
-|`door`    |tekenreeksmatrix|    false   | Namen van lagen waarmee deuren worden gedefinieerd.|
-|`unitLabel`    |tekenreeksmatrix|    false    |Namen van lagen waarmee de namen van eenheden worden gedefinieerd.|
-|`zone` | tekenreeksmatrix    | false    | Namen van lagen waarmee zones worden gedefinieerd.|
-|`zoneLabel` | tekenreeksmatrix |     false |    Namen van lagen waarmee de namen van zones worden gedefinieerd.|
+|`exterior`    |tekenreeksmatrix|    waar|    Namen van lagen die het buitenste bouw profiel definiëren.|
+|`unit`|    tekenreeksmatrix|    waar|    Namen van lagen waarmee eenheden worden gedefinieerd.|
+|`wall`|    tekenreeksmatrix    |onjuist|    Namen van lagen waarmee wanden worden gedefinieerd.|
+|`door`    |tekenreeksmatrix|    onjuist   | Namen van lagen waarmee deuren worden gedefinieerd.|
+|`unitLabel`    |tekenreeksmatrix|    onjuist    |Namen van lagen waarmee de namen van eenheden worden gedefinieerd.|
+|`zone` | tekenreeksmatrix    | onjuist    | Namen van lagen waarmee zones worden gedefinieerd.|
+|`zoneLabel` | tekenreeksmatrix |     onjuist |    Namen van lagen waarmee de namen van zones worden gedefinieerd.|
 
 ### `unitProperties`
 
@@ -243,19 +243,19 @@ Het `unitProperties` object bevat een JSON-matrix met de eigenschappen van de ee
 
 | Eigenschap  | Type | Vereist | Description |
 |-----------|------|----------|-------------|
-|`unitName`    |tekenreeks    |true    |De naam van de eenheid die aan deze record moet worden gekoppeld `unitProperty` . Deze record is alleen geldig wanneer er een label overeenkomst `unitName` in de lagen is gevonden `unitLabel` . |
-|`categoryName`|    tekenreeks|    false    |Categorie naam. Raadpleeg de [categorie](https://aka.ms/pa-indoor-spacecategories)voor een volledige lijst met categorieën. |
-|`navigableBy`| tekenreeksmatrix |    false    |Hiermee worden de typen navigatie agenten aangegeven die de eenheid kunnen passeren. Deze eigenschap informeert de wayfinding-mogelijkheden. De toegestane waarden zijn: `pedestrian` , `wheelchair` , `machine` , `bicycle` , `automobile` , `hiredAuto` , `bus` , `railcar` , `emergency` , `ferry` , `boat` en `disallowed` .|
-|`routeThroughBehavior`|    tekenreeks|    false    |Het gedrag van de route voor de eenheid. De toegestane waarden zijn `disallowed` , `allowed` en `preferred` . De standaardwaarde is `allowed`.|
-|`occupants`    |matrix van directoryInfo-objecten |false    |De lijst met inzittenden voor de eenheid. |
-|`nameAlt`|    tekenreeks|    false|    De alternatieve naam van de eenheid. |
-|`nameSubtitle`|    tekenreeks    |false|    Subtitel van de eenheid. |
-|`addressRoomNumber`|    tekenreeks|    false|    Kamer, eenheid, appartement of suite nummer van de eenheid.|
-|`verticalPenetrationCategory`|    tekenreeks|    false| Als deze eigenschap is gedefinieerd, is de resulterende functie een verticale indringing (VRT) in plaats van een eenheid. U kunt VRTs gebruiken om naar andere VRT-functies te gaan in de bovenstaande niveaus. Verticale indringing is een [categorie](https://aka.ms/pa-indoor-spacecategories) naam. Als deze eigenschap is gedefinieerd, `categoryName` wordt de eigenschap overschreven door `verticalPenetrationCategory` . |
-|`verticalPenetrationDirection`|    tekenreeks|    false    |Als `verticalPenetrationCategory` is gedefinieerd, definieert u eventueel de geldige reis richting. De toegestane waarden zijn: `lowToHigh` , `highToLow` , en `both` `closed` . De standaardwaarde is `both`.|
-| `nonPublic` | booleaans | false | Hiermee wordt aangegeven of de eenheid open is voor het publiek. |
-| `isRoutable` | booleaans | false | Als deze eigenschap is ingesteld op `false` , kunt u niet naar of door de eenheid gaan. De standaardwaarde is `true`. |
-| `isOpenArea` | booleaans | false | Hiermee kan de navigatie agent de eenheid invoeren zonder dat er een openings koppeling met de eenheid nodig is. Deze waarde is standaard ingesteld op `true` voor eenheden zonder openingen en `false` voor eenheden met openingen. Hand matig `isOpenArea` instellen `false` op een eenheid zonder openingen resulteert in een waarschuwing. Dit komt doordat de resulterende eenheid niet bereikbaar is voor een navigatie agent.|
+|`unitName`    |tekenreeks    |waar    |De naam van de eenheid die aan deze record moet worden gekoppeld `unitProperty` . Deze record is alleen geldig wanneer er een label overeenkomst `unitName` in de lagen is gevonden `unitLabel` . |
+|`categoryName`|    tekenreeks|    onjuist    |Categorie naam. Raadpleeg de [categorie](https://aka.ms/pa-indoor-spacecategories)voor een volledige lijst met categorieën. |
+|`navigableBy`| tekenreeksmatrix |    onjuist    |Hiermee worden de typen navigatie agenten aangegeven die de eenheid kunnen passeren. Deze eigenschap informeert de wayfinding-mogelijkheden. De toegestane waarden zijn: `pedestrian` , `wheelchair` , `machine` , `bicycle` , `automobile` , `hiredAuto` , `bus` , `railcar` , `emergency` , `ferry` , `boat` en `disallowed` .|
+|`routeThroughBehavior`|    tekenreeks|    onjuist    |Het gedrag van de route voor de eenheid. De toegestane waarden zijn `disallowed` , `allowed` en `preferred` . De standaardwaarde is `allowed`.|
+|`occupants`    |matrix van directoryInfo-objecten |onjuist    |De lijst met inzittenden voor de eenheid. |
+|`nameAlt`|    tekenreeks|    onjuist|    De alternatieve naam van de eenheid. |
+|`nameSubtitle`|    tekenreeks    |onjuist|    Subtitel van de eenheid. |
+|`addressRoomNumber`|    tekenreeks|    onjuist|    Kamer, eenheid, appartement of suite nummer van de eenheid.|
+|`verticalPenetrationCategory`|    tekenreeks|    onjuist| Als deze eigenschap is gedefinieerd, is de resulterende functie een verticale indringing (VRT) in plaats van een eenheid. U kunt VRTs gebruiken om naar andere VRT-functies te gaan in de bovenstaande niveaus. Verticale indringing is een [categorie](https://aka.ms/pa-indoor-spacecategories) naam. Als deze eigenschap is gedefinieerd, `categoryName` wordt de eigenschap overschreven door `verticalPenetrationCategory` . |
+|`verticalPenetrationDirection`|    tekenreeks|    onjuist    |Als `verticalPenetrationCategory` is gedefinieerd, definieert u eventueel de geldige reis richting. De toegestane waarden zijn: `lowToHigh` , `highToLow` , en `both` `closed` . De standaardwaarde is `both`.|
+| `nonPublic` | booleaans | onjuist | Hiermee wordt aangegeven of de eenheid open is voor het publiek. |
+| `isRoutable` | booleaans | onjuist | Als deze eigenschap is ingesteld op `false` , kunt u niet naar of door de eenheid gaan. De standaardwaarde is `true`. |
+| `isOpenArea` | booleaans | onjuist | Hiermee kan de navigatie agent de eenheid invoeren zonder dat er een openings koppeling met de eenheid nodig is. Deze waarde is standaard ingesteld op `true` voor eenheden zonder openingen en `false` voor eenheden met openingen. Hand matig `isOpenArea` instellen `false` op een eenheid zonder openingen resulteert in een waarschuwing. Dit komt doordat de resulterende eenheid niet bereikbaar is voor een navigatie agent.|
 
 ### `zoneProperties`
 
@@ -263,11 +263,11 @@ Het `zoneProperties` object bevat een JSON-matrix met zone-eigenschappen.
 
 | Eigenschap  | Type | Vereist | Beschrijving |
 |-----------|------|----------|-------------|
-|zone naam        |tekenreeks    |true    |De naam van de zone die aan de record moet worden gekoppeld `zoneProperty` . Deze record is alleen geldig wanneer een label overeenkomst `zoneName` wordt gevonden in de `zoneLabel` laag van de zone.  |
-|categoryName|    tekenreeks|    false    |Categorie naam. Raadpleeg de [categorie](https://aka.ms/pa-indoor-spacecategories)voor een volledige lijst met categorieën. |
-|zoneNameAlt|    tekenreeks|    false    |Alternatieve naam van de zone.  |
-|zoneNameSubtitle|    tekenreeks |    false    |Ondertitel van de zone. |
-|zoneSetId|    tekenreeks |    false    | Stel ID in om een relatie tussen meerdere zones tot stand te brengen, zodat deze kunnen worden opgevraagd of als groep kan worden geselecteerd. Bijvoorbeeld zones die meerdere niveaus beslaan. |
+|zone naam        |tekenreeks    |waar    |De naam van de zone die aan de record moet worden gekoppeld `zoneProperty` . Deze record is alleen geldig wanneer een label overeenkomst `zoneName` wordt gevonden in de `zoneLabel` laag van de zone.  |
+|categoryName|    tekenreeks|    onjuist    |Categorie naam. Raadpleeg de [categorie](https://aka.ms/pa-indoor-spacecategories)voor een volledige lijst met categorieën. |
+|zoneNameAlt|    tekenreeks|    onjuist    |Alternatieve naam van de zone.  |
+|zoneNameSubtitle|    tekenreeks |    onjuist    |Ondertitel van de zone. |
+|zoneSetId|    tekenreeks |    onjuist    | Stel ID in om een relatie tussen meerdere zones tot stand te brengen, zodat deze kunnen worden opgevraagd of als groep kan worden geselecteerd. Bijvoorbeeld zones die meerdere niveaus beslaan. |
 
 ### <a name="sample-drawing-package-manifest"></a>Voor beeld van teken pakket manifest
 

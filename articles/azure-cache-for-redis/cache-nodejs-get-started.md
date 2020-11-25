@@ -9,11 +9,11 @@ ms.date: 05/21/2018
 ms.author: yegu
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-js
 ms.openlocfilehash: aa22cffc1fc38e055c6c2bb504c311c012f31ac2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93087142"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012898"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-in-nodejs"></a>Quickstart: Azure Cache voor Redis in Node.js gebruiken
 

@@ -12,11 +12,11 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.openlocfilehash: e73126cfc54294a7b9d54ff62c406d5e686ac470
-ms.sourcegitcommit: 7a7b6c7ac0aa9dac678c3dfd4b5bcbc45dc030ca
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93186770"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95982706"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Een Azure-SSIS Integration Runtime samenvoegen met een virtueel netwerk
 
@@ -170,8 +170,8 @@ Als u een NSG wilt implementeren voor het subnet dat door uw Azure-SSIS IR wordt
 |---|---|---|---|---|---|---|
 | Uitgaand | TCP | VirtualNetwork | * | AzureCloud | 443 | De knoop punten van uw Azure-SSIS IR in het virtuele netwerk gebruiken deze poort voor toegang tot Azure-Services, zoals Azure Storage en Azure Event Hubs. |
 | Uitgaand | TCP | VirtualNetwork | * | Internet | 80 | Beschrijving De knoop punten van uw Azure-SSIS IR in het virtuele netwerk gebruiken deze poort om een certificaatintrekkingslijst van Internet te downloaden. Als u dit verkeer blokkeert, kan dit leiden tot prestatie downgrade bij het starten van IR en verliest u de mogelijkheid om de intrekkings lijst voor certificaten te controleren op het gebruik van certificaten. Als u de bestemming verder wilt beperken tot bepaalde FQDN-verwijzingen, raadpleegt u de sectie **Azure ExpressRoute of UDR gebruiken**|
-| Uitgaand | TCP | VirtualNetwork | * | SQL | 1433, 11000-11999 | Beschrijving Deze regel is alleen vereist wanneer de knoop punten van uw Azure-SSIS IR in het virtuele netwerk toegang hebben tot een SSISDB die wordt gehost door uw server. Als uw server verbindings beleid is ingesteld op **proxy** in plaats van **omleiden** , is alleen poort 1433 vereist. <br/><br/> Deze uitgaande beveiligings regel is niet van toepassing op een SSISDB die wordt gehost door uw SQL Managed instance in het virtuele netwerk of SQL Database geconfigureerd met een persoonlijk eind punt. |
-| Uitgaand | TCP | VirtualNetwork | * | VirtualNetwork | 1433, 11000-11999 | Beschrijving Deze regel is alleen vereist wanneer de knoop punten van uw Azure-SSIS IR in het virtuele netwerk toegang hebben tot een SSISDB die wordt gehost door uw SQL Managed instance in het virtuele netwerk of SQL Database geconfigureerd met een persoonlijk eind punt. Als uw server verbindings beleid is ingesteld op **proxy** in plaats van **omleiden** , is alleen poort 1433 vereist. |
+| Uitgaand | TCP | VirtualNetwork | * | SQL | 1433, 11000-11999 | Beschrijving Deze regel is alleen vereist wanneer de knoop punten van uw Azure-SSIS IR in het virtuele netwerk toegang hebben tot een SSISDB die wordt gehost door uw server. Als uw server verbindings beleid is ingesteld op **proxy** in plaats van **omleiden**, is alleen poort 1433 vereist. <br/><br/> Deze uitgaande beveiligings regel is niet van toepassing op een SSISDB die wordt gehost door uw SQL Managed instance in het virtuele netwerk of SQL Database geconfigureerd met een persoonlijk eind punt. |
+| Uitgaand | TCP | VirtualNetwork | * | VirtualNetwork | 1433, 11000-11999 | Beschrijving Deze regel is alleen vereist wanneer de knoop punten van uw Azure-SSIS IR in het virtuele netwerk toegang hebben tot een SSISDB die wordt gehost door uw SQL Managed instance in het virtuele netwerk of SQL Database geconfigureerd met een persoonlijk eind punt. Als uw server verbindings beleid is ingesteld op **proxy** in plaats van **omleiden**, is alleen poort 1433 vereist. |
 | Uitgaand | TCP | VirtualNetwork | * | Storage | 445 | Beschrijving Deze regel is alleen vereist als u SSIS-pakket wilt uitvoeren dat is opgeslagen in Azure Files. |
 ||||||||
 
@@ -184,9 +184,9 @@ U moet onder andere dingen doen om het hele scenario te laten werken
    -   Inkomend verkeer tussen Azure Batch beheer Services en de Azure-SSIS IR kan niet worden gerouteerd via een firewall apparaat.
    -   Het firewall apparaat moet uitgaand verkeer toestaan dat door Azure-SSIS IR wordt vereist.
 
-Inkomend verkeer tussen Azure Batch beheer Services en de Azure-SSIS IR kan niet worden gerouteerd naar een firewall apparaat anders wordt het verkeer verbroken vanwege een asymmetrisch routerings probleem. Routes moeten worden gedefinieerd voor binnenkomend verkeer zodat het verkeer op dezelfde manier als het kan worden beantwoord. U kunt specifieke Udr's definiëren voor het routeren van verkeer tussen Azure Batch beheer Services en de Azure-SSIS IR met het type volgende hop als **Internet** .
+Inkomend verkeer tussen Azure Batch beheer Services en de Azure-SSIS IR kan niet worden gerouteerd naar een firewall apparaat anders wordt het verkeer verbroken vanwege een asymmetrisch routerings probleem. Routes moeten worden gedefinieerd voor binnenkomend verkeer zodat het verkeer op dezelfde manier als het kan worden beantwoord. U kunt specifieke Udr's definiëren voor het routeren van verkeer tussen Azure Batch beheer Services en de Azure-SSIS IR met het type volgende hop als **Internet**.
 
-Als uw Azure-SSIS IR bijvoorbeeld zich bevindt op `UK South` en u het uitgaande verkeer via Azure firewall wilt controleren, krijgt u eerst een lijst met IP-adres bereik van `BatchNodeManagement.UKSouth` de service [Tags uit de download koppeling met het IP-adres bereik](https://www.microsoft.com/download/details.aspx?id=56519) of de [service label detectie-API](../virtual-network/service-tags-overview.md#service-tags-on-premises). Pas vervolgens de volgende Udr's van gerelateerde IP-bereik routes toe met het volgende hop-type als **Internet** , samen met de 0.0.0.0/0-route met het type van de volgende hop als **virtueel apparaat** .
+Als uw Azure-SSIS IR bijvoorbeeld zich bevindt op `UK South` en u het uitgaande verkeer via Azure firewall wilt controleren, krijgt u eerst een lijst met IP-adres bereik van `BatchNodeManagement.UKSouth` de service [Tags uit de download koppeling met het IP-adres bereik](https://www.microsoft.com/download/details.aspx?id=56519) of de [service label detectie-API](../virtual-network/service-tags-overview.md#service-tags-on-premises). Pas vervolgens de volgende Udr's van gerelateerde IP-bereik routes toe met het volgende hop-type als **Internet** , samen met de 0.0.0.0/0-route met het type van de volgende hop als **virtueel apparaat**.
 
 ![UDR-instellingen voor Azure Batch](media/join-azure-ssis-integration-runtime-virtual-network/azurebatch-udr-settings.png)
 
@@ -272,7 +272,7 @@ Als u wilt dat uitgaand verkeer door een firewall apparaat wordt toegestaan, moe
 Als u geen mogelijkheid hebt om uitgaand verkeer van Azure-SSIS IR te controleren, kunt u gewoon een route Toep assen om al het verkeer naar het volgende hop-type **Internet** te forceren:
 
 -   In een Azure ExpressRoute-scenario kunt u de route 0.0.0.0/0 Toep assen met het type van de volgende hop als **Internet** op het subnet dat als host fungeert voor de Azure-SSIS IR. 
--   In een NVA-scenario kunt u de bestaande, 0.0.0.0/0-route die is toegepast op het subnet waarop de Azure-SSIS IR als host van het **virtuele apparaat** wordt gehost op **Internet** , wijzigen.
+-   In een NVA-scenario kunt u de bestaande, 0.0.0.0/0-route die is toegepast op het subnet waarop de Azure-SSIS IR als host van het **virtuele apparaat** wordt gehost op **Internet**, wijzigen.
 
 ![Een route toevoegen](media/join-azure-ssis-integration-runtime-virtual-network/add-route-for-vnet.png)
 
@@ -282,9 +282,9 @@ Als u geen mogelijkheid hebt om uitgaand verkeer van Azure-SSIS IR te controlere
 ### <a name="set-up-the-resource-group"></a><a name="resource-group"></a> De resource groep instellen
 
 Het Azure-SSIS IR moet bepaalde netwerk bronnen maken onder dezelfde resource groep als het virtuele netwerk. Deze resources omvatten:
-- Een Azure-load balancer met de naam *\<Guid> -azurebatch-cloudserviceloadbalancer* .
-- Een openbaar IP-adres van Azure, met de naam *\<Guid> -azurebatch-cloudservicepublicip* .
-- Een netwerk beveiligings groep, met de naam *\<Guid> -azurebatch-cloudservicenetworksecuritygroup* . 
+- Een Azure-load balancer met de naam *\<Guid> -azurebatch-cloudserviceloadbalancer*.
+- Een openbaar IP-adres van Azure, met de naam *\<Guid> -azurebatch-cloudservicepublicip*.
+- Een netwerk beveiligings groep, met de naam *\<Guid> -azurebatch-cloudservicenetworksecuritygroup*. 
 
 > [!NOTE]
 > U kunt nu uw eigen statische open bare IP-adressen voor Azure-SSIS IR nemen. In dit scenario worden alleen de Azure load balancer-en netwerk beveiligings groep onder dezelfde resource groep gemaakt als uw statische open bare IP-adressen in plaats van het virtuele netwerk.
@@ -340,11 +340,11 @@ Gebruik de portal om een Azure Resource Manager virtueel netwerk te configureren
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
 
-1. Selecteer **meer services** . Filter voor en selecteer **virtuele netwerken** . 
+1. Selecteer **meer services**. Filter voor en selecteer **virtuele netwerken**. 
 
 1. Filter en selecteer uw virtuele netwerk in de lijst. 
 
-1. Selecteer op de pagina **virtueel netwerk** **Eigenschappen** . 
+1. Selecteer op de pagina **virtueel netwerk** **Eigenschappen**. 
 
 1. Selecteer de knop kopiëren voor de **resource-id** om de resource-id voor het virtuele netwerk naar het klem bord te kopiëren. Sla de ID op in het klem bord in OneNote of in een bestand. 
 
@@ -352,7 +352,7 @@ Gebruik de portal om een Azure Resource Manager virtueel netwerk te configureren
 
 1. Controleer of de Azure Batch provider is geregistreerd in het Azure-abonnement met het virtuele netwerk. Of Registreer de Azure Batch-provider. Als u al een Azure Batch account in uw abonnement hebt, wordt uw abonnement geregistreerd voor Azure Batch. (Als u de Azure-SSIS IR maakt in de Data Factory Portal, wordt de Azure Batch provider automatisch voor u geregistreerd.) 
 
-   1. Selecteer in het Azure Portal in het linkermenu **abonnementen** . 
+   1. Selecteer in het Azure Portal in het linkermenu **abonnementen**. 
 
    1. Selecteer uw abonnement. 
 
@@ -370,11 +370,11 @@ Gebruik de portal om een klassiek virtueel netwerk te configureren voordat u pro
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
 
-1. Selecteer **meer services** . Filter voor en selecteer **virtuele netwerken (klassiek)** . 
+1. Selecteer **meer services**. Filter voor en selecteer **virtuele netwerken (klassiek)**. 
 
 1. Filter en selecteer uw virtuele netwerk in de lijst. 
 
-1. Selecteer op de pagina **virtueel netwerk (klassiek)** de optie **Eigenschappen** . 
+1. Selecteer op de pagina **virtueel netwerk (klassiek)** de optie **Eigenschappen**. 
 
    ![Resource-ID van klassiek virtueel netwerk](media/join-azure-ssis-integration-runtime-virtual-network/classic-vnet-resource-id.png)
 
@@ -390,9 +390,9 @@ Gebruik de portal om een klassiek virtueel netwerk te configureren voordat u pro
 
        ![De knoppen toegangs beheer en toevoegen](media/join-azure-ssis-integration-runtime-virtual-network/access-control-add.png)
 
-   1. Selecteer **Roltoewijzing toevoegen** .
+   1. Selecteer **Roltoewijzing toevoegen**.
 
-   1. Selecteer op de pagina **roltoewijzing toevoegen** , voor **rol** , de **Inzender voor klassieke virtuele machines** . Plak **ddbf3205-c6bd-46ae-8127-60eb93363864** in het **selectie** vakje en selecteer vervolgens **Microsoft Azure batch** in de lijst met zoek resultaten. 
+   1. Selecteer op de pagina **roltoewijzing toevoegen** , voor **rol**, de **Inzender voor klassieke virtuele machines**. Plak **ddbf3205-c6bd-46ae-8127-60eb93363864** in het **selectie** vakje en selecteer vervolgens **Microsoft Azure batch** in de lijst met zoek resultaten. 
 
        ![Zoek resultaten op de pagina functie toewijzing toevoegen](media/join-azure-ssis-integration-runtime-virtual-network/azure-batch-to-vm-contributor.png)
 
@@ -406,7 +406,7 @@ Gebruik de portal om een klassiek virtueel netwerk te configureren voordat u pro
 
 1. Controleer of de Azure Batch provider is geregistreerd in het Azure-abonnement met het virtuele netwerk. Of Registreer de Azure Batch-provider. Als u al een Azure Batch account in uw abonnement hebt, wordt uw abonnement geregistreerd voor Azure Batch. (Als u de Azure-SSIS IR maakt in de Data Factory Portal, wordt de Azure Batch provider automatisch voor u geregistreerd.) 
 
-   1. Selecteer in het Azure Portal in het linkermenu **abonnementen** . 
+   1. Selecteer in het Azure Portal in het linkermenu **abonnementen**. 
 
    1. Selecteer uw abonnement. 
 
@@ -422,11 +422,11 @@ Nadat u uw Azure Resource Manager virtuele netwerk of het klassieke virtuele net
 
 1. Start micro soft Edge of Google Chrome. Momenteel ondersteunen alleen deze webbrowsers de Data Factory-gebruikers interface. 
 
-1. Selecteer in de [Azure Portal](https://portal.azure.com)in het linkermenu **gegevens fabrieken** . Als er geen **gegevens fabrieken** worden weer gegeven in het menu, selecteert u **meer services** en selecteert u in de sectie **Intelligence en analyse** **gegevens fabrieken** . 
+1. Selecteer in de [Azure Portal](https://portal.azure.com)in het linkermenu **gegevens fabrieken**. Als er geen **gegevens fabrieken** worden weer gegeven in het menu, selecteert u **meer services** en selecteert u in de sectie **Intelligence en analyse** **gegevens fabrieken**. 
 
    ![Lijst met gegevens fabrieken](media/join-azure-ssis-integration-runtime-virtual-network/data-factories-list.png)
 
-1. Selecteer uw data factory met de Azure-SSIS IR in de lijst. U ziet de start pagina voor uw data factory. Selecteer de tegel **Maken en bewaken** . U ziet de Data Factory gebruikers interface op een afzonderlijk tabblad. 
+1. Selecteer uw data factory met de Azure-SSIS IR in de lijst. U ziet de start pagina voor uw data factory. Selecteer de tegel **Maken en bewaken**. U ziet de Data Factory gebruikers interface op een afzonderlijk tabblad. 
 
    ![Startpagina van de gegevensfactory](media/join-azure-ssis-integration-runtime-virtual-network/data-factory-home-page.png)
 
@@ -466,11 +466,11 @@ Nadat u uw Azure Resource Manager virtuele netwerk of het klassieke virtuele net
       
       1. Voor het **tweede statische open bare IP-adres** selecteert u het tweede statische open bare IP-adres dat [voldoet aan de vereisten](#publicIP) voor uw Azure-SSIS IR. Als u er geen hebt, klikt u op **nieuwe koppeling maken** om statische open bare IP-adressen te maken op Azure Portal en klikt u vervolgens op de knop Vernieuwen hier, zodat u ze kunt selecteren.
 
-   1. Selecteer **VNet-validatie** . Als de validatie is geslaagd, selecteert u **door gaan** . 
+   1. Selecteer **VNet-validatie**. Als de validatie is geslaagd, selecteert u **door gaan**. 
 
    ![Geavanceerde instellingen met een virtueel netwerk](./media/tutorial-create-azure-ssis-runtime-portal/advanced-settings-vnet.png)
 
-1. Controleer in de sectie **samen vatting** alle instellingen voor uw Azure-SSIS IR. Selecteer vervolgens **bijwerken** .
+1. Controleer in de sectie **samen vatting** alle instellingen voor uw Azure-SSIS IR. Selecteer vervolgens **bijwerken**.
 
 1. Start uw Azure-SSIS IR door de knop **Start** te selecteren in de kolom **acties** voor uw Azure-SSIS IR. Het duurt ongeveer 20 tot 30 minuten om de Azure-SSIS IR die aan een virtueel netwerk zijn gekoppeld, te starten. 
 

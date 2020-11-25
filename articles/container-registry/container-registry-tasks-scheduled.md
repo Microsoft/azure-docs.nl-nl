@@ -2,17 +2,17 @@
 title: 'Zelf studie: een ACR-taak plannen'
 description: In deze zelf studie leert u hoe u een Azure Container Registry taak uitvoert volgens een gedefinieerd schema door een of meer timer triggers in te stellen
 ms.topic: article
-ms.date: 06/27/2019
-ms.openlocfilehash: 3202b5d8c426165d81129f1affa69b3a3d515ce9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/24/2020
+ms.openlocfilehash: 13a4ccac4ea97538583c1c063a6dc61e4d25686a
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78402877"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030608"
 ---
-# <a name="run-an-acr-task-on-a-defined-schedule"></a>Een ACR-taak uitvoeren volgens een gedefinieerd schema
+# <a name="tutorial-run-an-acr-task-on-a-defined-schedule"></a>Zelf studie: een ACR-taak uitvoeren volgens een gedefinieerd schema
 
-In deze zelf studie ziet u hoe u een [ACR-taak](container-registry-tasks-overview.md) kunt uitvoeren volgens een schema. Een taak plannen door een of meer *Timer triggers*in te stellen. Timer triggers kunnen alleen worden gebruikt of in combi natie met andere taak triggers.
+In deze zelf studie ziet u hoe u een [ACR-taak](container-registry-tasks-overview.md) kunt uitvoeren volgens een schema. Een taak plannen door een of meer *Timer triggers* in te stellen. Timer triggers kunnen alleen worden gebruikt of in combi natie met andere taak triggers.
 
 In deze zelf studie vindt u informatie over het plannen van taken en:
 
@@ -25,8 +25,7 @@ Het plannen van een taak is handig voor scenario's zoals de volgende:
 * Voer een container werkbelasting uit voor geplande onderhouds bewerkingen. Voer bijvoorbeeld een container-app uit om overbodige installatie kopieën uit het REGI ster te verwijderen.
 * Voer tijdens de werkdag een set tests uit op een productie-afbeelding als onderdeel van de bewaking van uw live-site.
 
-U kunt de Azure Cloud Shell of een lokale installatie van de Azure CLI gebruiken om de voor beelden in dit artikel uit te voeren. Als u het lokaal wilt gebruiken, is versie 2.0.68 of hoger vereist. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
-
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 ## <a name="about-scheduling-a-task"></a>Over het plannen van een taak
 
@@ -37,19 +36,29 @@ U kunt de Azure Cloud Shell of een lokale installatie van de Azure CLI gebruiken
     * Geef meerdere timer triggers op wanneer u de taak maakt of voeg ze later toe.
     * Noem eventueel de triggers voor eenvoudiger beheer, of ACR taken bieden standaard namen voor triggers.
     * Als timers overlap pingen per keer worden gepland, wordt de taak door ACR-taken geactiveerd op het geplande tijdstip voor elke timer.
-* **Andere taak triggers** : in een taak die door een timer wordt geactiveerd, kunt u ook triggers inschakelen op basis van updates van de [bron code](container-registry-tutorial-build-task.md) of [basis installatie kopie](container-registry-tutorial-base-image-update.md). Net als andere ACR taken kunt u een geplande taak ook [hand matig activeren][az-acr-task-run] .
+* **Andere taak triggers** : in een taak die door een timer wordt geactiveerd, kunt u ook triggers inschakelen op basis van updates van de [bron code](container-registry-tutorial-build-task.md) of [basis installatie kopie](container-registry-tutorial-base-image-update.md). Net als andere ACR taken kunt u een geplande taak ook [hand matig uitvoeren][az-acr-task-run] .
 
 ## <a name="create-a-task-with-a-timer-trigger"></a>Een taak maken met een timer trigger
 
+### <a name="task-command"></a>Taakopdracht
+
+Vul eerst de volgende shell-omgevings variabele in met een waarde die geschikt is voor uw omgeving. Hoewel deze stap strikt genomen niet vereist is, vereenvoudigt u hiermee de uitvoering van meerregelige Azure CLI-opdrachten in deze zelfstudie. Als u de omgevings variabele niet opgeeft, moet u elke waarde hand matig vervangen, overal waar deze in de voorbeeld opdrachten wordt weer gegeven.
+
+[![Starten insluiten](https://shell.azure.com/images/launchcloudshell.png "Azure Cloud Shell starten")](https://shell.azure.com)
+
+```console
+ACR_NAME=<registry-name>        # The name of your Azure container registry
+```
+
 Wanneer u een taak maakt met de opdracht [AZ ACR Task Create][az-acr-task-create] , kunt u eventueel een timer trigger toevoegen. Voeg de `--schedule` para meter toe en geef een cron-expressie door voor de timer.
 
-Als eenvoudig voor beeld wordt met de volgende opdracht de `hello-world` installatie kopie vanaf docker hub elke dag uitgevoerd om 21:00 UTC. De taak wordt uitgevoerd zonder een bron code context.
+Als eenvoudig voor beeld wordt met de volgende taak de `hello-world` installatie kopie van micro soft container Registry elke dag om 21:00 UTC geactiveerd. De taak wordt uitgevoerd zonder een bron code context.
 
 ```azurecli
 az acr task create \
-  --name mytask \
-  --registry myregistry \
-  --cmd hello-world \
+  --name timertask \
+  --registry $ACR_NAME \
+  --cmd mcr.microsoft.com/hello-world \
   --schedule "0 21 * * *" \
   --context /dev/null
 ```
@@ -57,30 +66,32 @@ az acr task create \
 Voer de opdracht [AZ ACR Task show][az-acr-task-show] uit om te zien dat de timer trigger is geconfigureerd. De trigger voor het bijwerken van de basis installatie kopie is standaard ook ingeschakeld.
 
 ```azurecli
-az acr task show --name mytask --registry registry --output table
+az acr task show --name timertask --registry $ACR_NAME --output table
 ```
 
 ```output
 NAME      PLATFORM    STATUS    SOURCE REPOSITORY       TRIGGERS
 --------  ----------  --------  -------------------     -----------------
-mytask    linux       Enabled                           BASE_IMAGE, TIMER
+timertask linux       Enabled                           BASE_IMAGE, TIMER
 ```
+
+## <a name="trigger-the-task"></a>De taak activeren
 
 Activeer de taak hand matig met [AZ ACR Task run][az-acr-task-run] om er zeker van te zijn dat deze correct is ingesteld:
 
 ```azurecli
-az acr task run --name mytask --registry myregistry
+az acr task run --name timertask --registry $ACR_NAME
 ```
 
-Als de container wordt uitgevoerd, ziet de uitvoer er ongeveer als volgt uit:
+Als de container met succes wordt uitgevoerd, ziet de uitvoer er ongeveer als volgt uit. De uitvoer wordt versmald om de belangrijkste stappen weer te geven
 
 ```output
 Queued a run with ID: cf2a
 Waiting for an agent...
-2019/06/28 21:03:36 Using acb_vol_2ca23c46-a9ac-4224-b0c6-9fde44eb42d2 as the home volume
-2019/06/28 21:03:36 Creating Docker network: acb_default_network, driver: 'bridge'
+2020/11/20 21:03:36 Using acb_vol_2ca23c46-a9ac-4224-b0c6-9fde44eb42d2 as the home volume
+2020/11/20 21:03:36 Creating Docker network: acb_default_network, driver: 'bridge'
 [...]
-2019/06/28 21:03:38 Launching container with name: acb_step_0
+2020/11/20 21:03:38 Launching container with name: acb_step_0
 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -90,17 +101,16 @@ This message shows that your installation appears to be working correctly.
 Na de geplande tijd voert u de opdracht [AZ ACR Task List-runs][az-acr-task-list-runs] uit om te controleren of de timer de taak als verwacht heeft geactiveerd:
 
 ```azurecli
-az acr task list-runs --name mytask --registry myregistry --output table
+az acr task list-runs --name timertask --registry $ACR_NAME --output table
 ```
 
 Wanneer de timer is geslaagd, is de uitvoer vergelijkbaar met het volgende:
 
 ```output
-RUN ID    TASK     PLATFORM    STATUS     TRIGGER    STARTED               DURATION
---------  -------- ----------  ---------  ---------  --------------------  ----------
-[...]
-cf2b      mytask   linux       Succeeded  Timer      2019-06-28T21:00:23Z  00:00:06
-cf2a      mytask   linux       Succeeded  Manual     2019-06-28T20:53:23Z  00:00:06
+RUN ID    TASK       PLATFORM    STATUS     TRIGGER    STARTED               DURATION
+--------  ---------  ----------  ---------  ---------  --------------------  ----------
+ca15      timertask  linux       Succeeded  Timer      2020-11-20T21:00:23Z  00:00:06
+ca14      timertask  linux       Succeeded  Manual     2020-11-20T20:53:35Z  00:00:06
 ```
 
 ## <a name="manage-timer-triggers"></a>Timer Triggers beheren
@@ -109,12 +119,12 @@ Gebruik de opdracht [AZ ACR Task timer][az-acr-task-timer] om de timer triggers 
 
 ### <a name="add-or-update-a-timer-trigger"></a>Een timer trigger toevoegen of bijwerken
 
-Nadat een taak is gemaakt, voegt u eventueel een timer trigger toe met behulp van de opdracht [AZ ACR taak timer add][az-acr-task-timer-add] . In het volgende voor beeld wordt een timer trigger naam *timer2* toegevoegd aan *mytask* die u eerder hebt gemaakt. Deze timer activeert de taak elke dag om 10:30 UTC.
+Nadat een taak is gemaakt, voegt u eventueel een timer trigger toe met behulp van de opdracht [AZ ACR taak timer add][az-acr-task-timer-add] . In het volgende voor beeld wordt een timer trigger naam *timer2* toegevoegd aan *timerTask* die u eerder hebt gemaakt. Deze timer activeert de taak elke dag om 10:30 UTC.
 
 ```azurecli
 az acr task timer add \
-  --name mytask \
-  --registry myregistry \
+  --name timertask \
+  --registry $ACR_NAME \
   --timer-name timer2 \
   --schedule "30 10 * * *"
 ```
@@ -123,8 +133,8 @@ Het schema van een bestaande trigger bijwerken of de status ervan wijzigen met b
 
 ```azurecli
 az acr task timer update \
-  --name mytask \
-  --registry myregistry \
+  --name timertask \
+  --registry $ACR_NAME \
   --timer-name timer2 \
   --schedule "30 11 * * *"
 ```
@@ -134,7 +144,7 @@ az acr task timer update \
 De opdracht [AZ ACR Task timer List][az-acr-task-timer-list] bevat de timer triggers die zijn ingesteld voor een taak:
 
 ```azurecli
-az acr task timer list --name mytask --registry myregistry
+az acr task timer list --name timertask --registry $ACR_NAME
 ```
 
 Voorbeelduitvoer:
@@ -156,12 +166,12 @@ Voorbeelduitvoer:
 
 ### <a name="remove-a-timer-trigger"></a>Een timer trigger verwijderen
 
-Gebruik de opdracht [AZ ACR taak timer Remove][az-acr-task-timer-remove] om een timer trigger van een taak te verwijderen. In het volgende voor beeld wordt de trigger *timer2* verwijderd uit *mytask*:
+Gebruik de opdracht [AZ ACR taak timer Remove][az-acr-task-timer-remove] om een timer trigger van een taak te verwijderen. In het volgende voor beeld wordt de trigger *timer2* verwijderd uit *timerTask*:
 
 ```azurecli
 az acr task timer remove \
-  --name mytask \
-  --registry myregistry \
+  --name timertask \
+  --registry $ACR_NAME \
   --timer-name timer2
 ```
 

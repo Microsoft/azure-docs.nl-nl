@@ -1,19 +1,19 @@
 ---
-title: Preview-versie van Azure Monitor voor netwerken
+title: Azure Monitor voor netwerken
 description: Een overzicht van Azure Monitor voor netwerken, waarmee een uitgebreid overzicht van de status en metrische gegevens voor alle geïmplementeerde netwerk bronnen wordt geboden zonder enige configuratie.
 ms.subservice: ''
 ms.topic: conceptual
-author: bwren
-ms.author: bwren
-ms.date: 09/24/2020
-ms.openlocfilehash: e2a43c4d0423b286984631fda75e5ff806ae9a57
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+author: KumudD
+ms.author: kumud
+ms.date: 11/25/2020
+ms.openlocfilehash: 52ca879d5a680d0e62cc469e768236eac11f3719
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92102758"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030159"
 ---
-# <a name="azure-monitor-for-networks-preview"></a>Preview-versie van Azure Monitor voor netwerken
+# <a name="azure-monitor-for-networks"></a>Azure Monitor voor netwerken
 Azure Monitor voor netwerken biedt een uitgebreid overzicht van de [status](../../service-health/resource-health-checks-resource-types.md) en [metrische gegevens](../platform/metrics-supported.md) voor alle geïmplementeerde netwerk bronnen, zonder dat hiervoor configuratie is vereist. Het biedt ook toegang tot netwerk bewakings mogelijkheden zoals [verbindings monitor](../../network-watcher/connection-monitor-preview.md), [flow logboek registratie voor netwerk beveiligings groepen (nsg's)](../../network-watcher/network-watcher-nsg-flow-logging-overview.md)en [Traffic Analytics](../../network-watcher/traffic-analytics.md). En het biedt andere [Diagnostische](../../network-watcher/network-watcher-monitoring-overview.md#diagnostics) functies voor het netwerk.
 
 Azure Monitor voor netwerken is gestructureerd rond de volgende belang rijke onderdelen van bewaking:
@@ -26,14 +26,14 @@ Azure Monitor voor netwerken is gestructureerd rond de volgende belang rijke ond
 
 De pagina **overzicht** van Azure monitor voor netwerken biedt een eenvoudige manier om de inventaris van uw netwerk bronnen te visualiseren, samen met resource status en waarschuwingen. Het is onderverdeeld in vier functionele gebieden: zoeken en filteren, resource status en metrische gegevens, waarschuwingen en afhankelijkheids weergave.
 
-![Scherm opname van de pagina overzicht.](media/network-insights-overview/overview.png)
+[ ![ Scherm opname van de pagina overzicht](media/network-insights-overview/overview.png)](media/network-insights-overview/overview.png)#lightbox)
 
 ### <a name="search-and-filtering"></a>Zoeken en filteren
-U kunt de weer gave resource status en waarschuwingen aanpassen met behulp van filters als **abonnement**, **resource groep**en **type**.
+U kunt de weer gave resource status en waarschuwingen aanpassen met behulp van filters als **abonnement**, **resource groep** en **type**.
 
 U kunt het zoekvak gebruiken om te zoeken naar resources en de bijbehorende resources. Een openbaar IP-adres is bijvoorbeeld gekoppeld aan een toepassings gateway. Bij een zoek opdracht naar de DNS-naam van het open bare IP-adres worden zowel het open bare IP-adres als de bijbehorende toepassings gateway geretourneerd:
 
-![Scherm opname van Azure Monitor voor netwerken Zoek resultaten weer gegeven.](media/network-insights-overview/search.png)
+[![Scherm opname van Azure Monitor voor netwerken Zoek resultaten weer gegeven.](media/network-insights-overview/search.png)](media/network-insights-overview/search.png#lightbox)
 
 
 ### <a name="resource-health-and-metrics"></a>Resource status en-metrische gegevens
@@ -57,7 +57,7 @@ Met de afhankelijkheids weergave kunt u visualiseren hoe een bron is geconfigure
 
 De afhankelijkheids weergave voor Application Gateway biedt een vereenvoudigde weer gave van de manier waarop de front-end Ip's zijn verbonden met de listeners, regels en de back-end-pool. De verbindings lijnen zijn in kleur gecodeerd en bieden aanvullende informatie op basis van de status van de back-end-pool. De weer gave biedt ook een gedetailleerde weer gave van Application Gateway metrische gegevens en metrische gegevens voor alle gerelateerde back-end-groepen, zoals schaal sets voor virtuele machines en VM-exemplaren.
 
-![Scherm opname van de afhankelijkheids weergave in Azure Monitor voor netwerken.](media/network-insights-overview/dependency-view.png)
+[![Scherm opname van de afhankelijkheids weergave in Azure Monitor voor netwerken.](media/network-insights-overview/dependency-view.png)](media/network-insights-overview/dependency-view.png#lightbox)
 
 De afhankelijkheids grafiek biedt eenvoudige navigatie naar configuratie-instellingen. Klik met de rechter muisknop op een back-end-groep voor toegang tot andere gegevens. Als de back-end-pool bijvoorbeeld een virtuele machine is, hebt u rechtstreeks toegang tot VM Insights en Azure Network Watcher verbinding oplossen om verbindings problemen te identificeren:
 
@@ -73,17 +73,17 @@ Selecteer **gedetailleerde metrische gegevens weer geven** om een vooraf geconfi
 
 ## <a name="connectivity"></a><a name="connectivity"></a>Connectiviteit
 
-Het tabblad **connectiviteit** biedt een eenvoudige manier om alle tests te visualiseren die zijn geconfigureerd via verbindings monitor en [verbindings monitor (preview)](../../network-watcher/connection-monitor-preview.md) voor de geselecteerde set abonnementen.
+Het tabblad **connectiviteit** biedt een eenvoudige manier om alle tests te visualiseren die zijn geconfigureerd via [verbindings monitor](../../network-watcher/connection-monitor-overview.md) en verbindings monitor (klassiek) voor de geselecteerde set abonnementen.
 
 ![Scherm opname van het tabblad connectiviteit in Azure Monitor voor netwerken.](media/network-insights-overview/azure-monitor-for-networks-connectivity-tab.png)
 
 Tests worden gegroepeerd op **bron** -en **doel** tegels en de bereik baarheids status voor elke test weer gegeven. Bereik bare instellingen bieden eenvoudige toegang tot configuraties voor uw bereik baarheids criteria, op basis van mislukte controles (%) en RTT (MS). Nadat u de waarden hebt ingesteld, wordt de status van elke test update op basis van de selectie criteria.
 
-![Scherm opname van de connectiviteits tests in Azure Monitor voor netwerken.](media/network-insights-overview/azure-monitor-for-networks-connectivity-tests.png)
+[![Scherm opname van de connectiviteits tests in Azure Monitor voor netwerken.](media/network-insights-overview/azure-monitor-for-networks-connectivity-tests.png)](media/network-insights-overview/azure-monitor-for-networks-connectivity-tests.png#lightbox)
 
 U kunt een wille keurige bron-of doel tegel selecteren om een metrische weer gave te openen:
 
-![Scherm opname van de verbindings gegevens in Azure Monitor voor netwerken.](media/network-insights-overview/azure-monitor-for-networks-connectivity-metrics.png)
+[![Scherm opname van de verbindings gegevens in Azure Monitor voor netwerken.](media/network-insights-overview/azure-monitor-for-networks-connectivity-metrics.png)](media/network-insights-overview/azure-monitor-for-networks-connectivity-metrics.png#lightbox)
 
 
 U kunt elk wille keurig item in de raster weergave selecteren. Selecteer het pictogram in de kolom **bereik baarheid** om naar de portal-pagina van de verbindings monitor te gaan en Bekijk de topologie van de hop-by-hop en de connectiviteit die invloed heeft op de problemen die worden geïdentificeerd. Selecteer de waarde in de kolom **waarschuwing** om naar waarschuwingen te gaan. Selecteer de grafieken **mislukte percentages** en **Round-trip tijd (MS)** om naar de pagina metrische gegevens voor de geselecteerde verbindings monitor te gaan.
@@ -93,13 +93,13 @@ Het **waarschuwings** venster aan de rechter kant van de pagina biedt een over
 ## <a name="traffic"></a><a name="traffic"></a>Verkeer
 Het tabblad **verkeer** biedt toegang tot alle nsg's die zijn geconfigureerd voor [NSG-stroom logboeken](../../network-watcher/network-watcher-nsg-flow-logging-overview.md) en [Traffic Analytics](../../network-watcher/traffic-analytics.md) voor de geselecteerde set abonnementen, gegroepeerd op locatie. Met de zoek functionaliteit op dit tabblad kunt u de Nsg's identificeren die is geconfigureerd voor het gezochte IP-adres. U kunt zoeken naar elk IP-adres in uw omgeving. In de weer gave naast elkaar gerangschikte regio's worden alle Nsg's weer gegeven samen met de NSG-stroom logboeken en de configuratie status van Traffic Analytics.
 
-![Scherm opname van het tabblad verkeer in Azure Monitor voor netwerken.](media/network-insights-overview/azure-monitor-for-networks-traffic-view.png)
+[![Scherm opname van het tabblad verkeer in Azure Monitor voor netwerken.](media/network-insights-overview/azure-monitor-for-networks-traffic-view.png)](media/network-insights-overview/azure-monitor-for-networks-traffic-view.png#lightbox)
 
 Als u een wille keurige tegel selecteert, wordt er een raster weergave weer gegeven. Het raster biedt NSG-stroom logboeken en Traffic Analytics in een weer gave die gemakkelijk te lezen en te configureren is:  
 
-![Scherm opname van de weer gave van het verkeers gebied in Azure Monitor voor netwerken.](media/network-insights-overview/azure-monitor-for-networks-traffic-region-view.png)
+[![Scherm opname van de weer gave van het verkeers gebied in Azure Monitor voor netwerken.](media/network-insights-overview/azure-monitor-for-networks-traffic-region-view.png)](media/network-insights-overview/azure-monitor-for-networks-traffic-region-view.png#lightbox)
 
-U kunt elk wille keurig item in de raster weergave selecteren. Selecteer het pictogram in de kolom **NSF configuratie status** om het NSG-stroom logboek en de configuratie van de Traffic Analytics te bewerken. Selecteer de waarde in de kolom **waarschuwing** om naar de waarschuwingen voor verkeer te gaan die zijn geconfigureerd voor de geselecteerde NSG. U kunt ook naar de weer gave Traffic Analytics gaan door de **Traffic Analytics-werk ruimte**te selecteren.  
+U kunt elk wille keurig item in de raster weergave selecteren. Selecteer het pictogram in de kolom **NSF configuratie status** om het NSG-stroom logboek en de configuratie van de Traffic Analytics te bewerken. Selecteer de waarde in de kolom **waarschuwing** om naar de waarschuwingen voor verkeer te gaan die zijn geconfigureerd voor de geselecteerde NSG. U kunt ook naar de weer gave Traffic Analytics gaan door de **Traffic Analytics-werk ruimte** te selecteren.  
 
 Het **waarschuwings** venster aan de rechter kant van de pagina biedt een overzicht van alle Traffic Analytics op werk ruimte gebaseerde waarschuwingen voor alle abonnementen. Selecteer de waarschuwings aantallen om naar een pagina met gedetailleerde waarschuwingen te gaan.
 

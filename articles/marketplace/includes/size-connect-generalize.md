@@ -7,12 +7,12 @@ ms.topic: include
 author: mingshen-ms
 ms.author: krsh
 ms.date: 10/20/2020
-ms.openlocfilehash: ecbafe0d3f39b1bd6f7c494695ea17e067f0c79e
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 6c7536e38a0d2cf7d4e906947aff645c74e459c0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129274"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028139"
 ---
 ## <a name="generalize-the-image"></a>De installatie kopie generaliseren
 
@@ -40,14 +40,14 @@ Het volgende proces generaliseert een Linux-VM en implementeert deze opnieuw als
 
 ### <a name="take-a-snapshot-of-the-vm-disk"></a>Een moment opname van de VM-schijf maken
 
-1. Meld u aan bij [Azure Portal](https://ms.portal.azure.com/).
-2. Selecteer **een resource maken** in de linkerbovenhoek, zoek naar en selecteer **moment opname** .
+1. Meld u aan bij de [Azure-portal](https://ms.portal.azure.com/).
+2. Selecteer **een resource maken** in de linkerbovenhoek, zoek naar en selecteer **moment opname**.
 3. Selecteer  **maken** op de Blade moment opname.
 4. Voer een **naam** in voor de moment opname.
 5. Selecteer een bestaande resource groep of voer een naam in voor een nieuwe.
 6. Voor de **bron schijf** selecteert u de beheerde schijf voor de moment opname.
 7. Het **account type** selecteren dat moet worden gebruikt voor het opslaan van de moment opname. Gebruik **Standard-HDD** tenzij u het hebt opgeslagen op een high-upssd.
-8. Selecteer **Maken** .
+8. Selecteer **Maken**.
 
 #### <a name="extract-the-vhd"></a>De VHD extra heren
 
@@ -81,7 +81,7 @@ destinationVHDFileName=myvhdfilename.vhd
 
 az account set --subscription $subscriptionId
 
-sas=$(az snapshot grant-access --resource-group $resourceGroupName --name $ snapshotName --duration-in-seconds $sasExpiryDuration --query [accessSas] -o tsv)
+sas=$(az snapshot grant-access --resource-group $resourceGroupName --name $snapshotName --duration-in-seconds $sasExpiryDuration --query [accessSas] -o tsv)
 
 az storage blob copy start --destination-blob $destinationVHDFileName --destination-container $storageContainerName --account-name $storageAccountName --account-key $storageAccountKey --source-uri $sas
 ```

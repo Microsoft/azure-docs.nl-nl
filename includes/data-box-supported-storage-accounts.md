@@ -6,11 +6,11 @@ ms.topic: include
 ms.date: 09/git14/2020
 ms.author: alkohli
 ms.openlocfilehash: 25c2ea04cd062554a975c63aae9b97846e646d68
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95557224"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026518"
 ---
 Hier volgt een lijst met de ondersteunde opslag accounts en de opslag typen voor het Data Box apparaat. Zie [typen opslag accounts](../articles/storage/common/storage-account-overview.md#types-of-storage-accounts)voor een volledige lijst van alle verschillende soorten opslag accounts en de volledige mogelijkheden hiervan.
 

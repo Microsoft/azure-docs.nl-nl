@@ -16,12 +16,12 @@ ms.date: 09/28/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96106cc1d9f9040f98c7d9201f05b4cff87af7e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1cdf983dc8fed64c7d283ac216eb803746add95
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449844"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029367"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Een verbonden organisatie toevoegen in het beheer van rechten van Azure AD
 
@@ -56,9 +56,9 @@ Volg de instructies in deze sectie om een extern Azure AD-Directory of-domein to
 
 **Vereiste rol**: *globale beheerder* of *gebruikers beheerder*
 
-1. Selecteer **Azure Active Directory**In het Azure Portal en selecteer vervolgens **Identity governance**.
+1. Selecteer **Azure Active Directory** In het Azure Portal en selecteer vervolgens **Identity governance**.
 
-1. Selecteer **verbonden organisaties**in het linkerdeel venster en selecteer vervolgens **verbonden organisatie toevoegen**.
+1. Selecteer **verbonden organisaties** in het linkerdeel venster en selecteer vervolgens **verbonden organisatie toevoegen**.
 
     ![De knop verbonden organisatie toevoegen](./media/entitlement-management-organization/connected-organization.png)
 
@@ -93,7 +93,7 @@ Volg de instructies in deze sectie om een extern Azure AD-Directory of-domein to
 
     Sponsors zijn interne of externe gebruikers in uw directory die het contact punt vormen voor de relatie met deze verbonden organisatie. Interne sponsors zijn lid van gebruikers in uw Directory. Externe sponsors zijn gast gebruikers van de verbonden organisatie die eerder zijn uitgenodigd en zich al in uw directory bevinden. Sponsors kunnen worden gebruikt als goed keurders wanneer gebruikers in deze verbonden organisatie toegang aanvragen tot dit toegangs pakket. Zie [Azure Active Directory B2B-samenwerkings gebruikers toevoegen in de Azure Portal](../external-identities/add-users-administrator.md)voor informatie over het uitnodigen van een gast gebruiker aan uw Directory.
 
-    Wanneer u **toevoegen/verwijderen**selecteert, wordt er een deel venster geopend waarin u interne of externe sponsors kunt kiezen. In het deel venster wordt een niet-gefilterde lijst met gebruikers en groepen in uw directory weer gegeven.
+    Wanneer u **toevoegen/verwijderen** selecteert, wordt er een deel venster geopend waarin u interne of externe sponsors kunt kiezen. In het deel venster wordt een niet-gefilterde lijst met gebruikers en groepen in uw directory weer gegeven.
 
     ![Het deel venster sponsors](./media/entitlement-management-organization/organization-sponsors.png)
 
@@ -107,9 +107,9 @@ Als de verbonden organisatie wijzigingen aanbrengt in een ander domein, wijzigt 
 
 **Vereiste rol**: *globale beheerder* of *gebruikers beheerder*
 
-1. Selecteer **Azure Active Directory**In het Azure Portal en selecteer vervolgens **Identity governance**.
+1. Selecteer **Azure Active Directory** In het Azure Portal en selecteer vervolgens **Identity governance**.
 
-1. Selecteer **verbonden organisaties**in het linkerdeel venster en selecteer vervolgens de verbonden organisatie om deze te openen.
+1. Selecteer **verbonden organisaties** in het linkerdeel venster en selecteer vervolgens de verbonden organisatie om deze te openen.
 
 1. Selecteer **bewerken** in het overzichts venster van de verbonden organisatie om de naam, beschrijving of status van de organisatie te wijzigen.  
 
@@ -124,9 +124,9 @@ Als u geen relatie meer hebt met een extern Azure AD-adres lijst of-domein, kunt
 
 **Vereiste rol**: *globale beheerder* of *gebruikers beheerder*
 
-1. Selecteer **Azure Active Directory**In het Azure Portal en selecteer vervolgens **Identity governance**.
+1. Selecteer **Azure Active Directory** In het Azure Portal en selecteer vervolgens **Identity governance**.
 
-1. Selecteer **verbonden organisaties**in het linkerdeel venster en selecteer vervolgens de verbonden organisatie om deze te openen.
+1. Selecteer **verbonden organisaties** in het linkerdeel venster en selecteer vervolgens de verbonden organisatie om deze te openen.
 
 1. Selecteer **verwijderen** in het overzichts venster van de verbonden organisatie om deze te verwijderen.
 
@@ -148,12 +148,12 @@ Er zijn twee verschillende soorten status eigenschappen voor verbonden organisat
 
 - Een voorgestelde verbonden organisatie is een verbonden organisatie die automatisch is gemaakt, maar waarvoor geen beheerder de organisatie heeft gemaakt of goedgekeurd. Wanneer een gebruiker zich aanmeldt voor een toegangs pakket buiten een geconfigureerde verbonden organisatie, krijgen alle automatisch gemaakte verbonden organisaties de **voorgestelde** status, omdat er geen beheerder in de Tenant is ingesteld die samen werking. 
     
-    Voorgestelde verbonden organisaties worden niet weer gegeven in de Pickers voor geconfigureerde verbonden organisaties en zijn niet in het bereik voor de instelling alle geconfigureerde verbonden organisaties voor elk beleid. 
+    Voorgestelde verbonden organisaties bevinden zich niet in het bereik van de instelling ' alle geconfigureerde verbonden organisaties ' op beleids regels, maar kunnen alleen worden gebruikt in beleids regels voor beleids regels die gericht zijn op specifieke organisaties. 
 
-Alleen gebruikers van geconfigureerde verbonden organisaties kunnen toegangs pakketten aanvragen die beschikbaar zijn voor gebruikers van alle geconfigureerde organisaties. Gebruikers van voorgestelde verbonden organisaties hebben een ervaring alsof er geen verbonden organisatie voor dat domein is en geen toegang tot het toegangs pakket heeft totdat de status door een beheerder is gewijzigd.
+Alleen gebruikers van geconfigureerde verbonden organisaties kunnen toegangs pakketten aanvragen die beschikbaar zijn voor gebruikers van alle geconfigureerde organisaties. Gebruikers van voorgestelde verbonden organisaties hebben een ervaring alsof er geen verbonden organisatie voor dat domein is. kan alleen toegangs pakketten zien en aanvragen die zijn gericht aan hun specifieke organisatie of het bereik van een gebruiker.
 
 > [!NOTE]
-> Als onderdeel van het implementeren van deze nieuwe functie werden alle verbonden organisaties die zijn gemaakt vóór 09/09/20, als **geconfigureerd**beschouwd. Als u een toegangs pakket hebt waarmee gebruikers van een organisatie zich kunnen registreren, moet u uw lijst met verbonden organisaties die zijn gemaakt vóór die datum controleren om ervoor te zorgen dat er geen gecategoriseerd is als **geconfigureerd**.  Een beheerder kan de eigenschap **State** zo nodig bijwerken. Zie [een verbonden organisatie bijwerken](#update-a-connected-organization)voor meer informatie.
+> Als onderdeel van het implementeren van deze nieuwe functie werden alle verbonden organisaties die zijn gemaakt vóór 09/09/20, als **geconfigureerd** beschouwd. Als u een toegangs pakket hebt waarmee gebruikers van een organisatie zich kunnen registreren, moet u uw lijst met verbonden organisaties die zijn gemaakt vóór die datum controleren om ervoor te zorgen dat er geen gecategoriseerd is als **geconfigureerd**.  Een beheerder kan de eigenschap **State** zo nodig bijwerken. Zie [een verbonden organisatie bijwerken](#update-a-connected-organization)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

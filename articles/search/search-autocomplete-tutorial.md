@@ -7,22 +7,22 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/10/2020
+ms.date: 11/24/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 1bf0a4a86ccc36960f218fabebda5bc82eb29019
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 5b498b8f49f2f0636b010e3c4d86f13ad44ac090
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94426167"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029010"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps"></a>Automatisch aanvullen en suggesties aan client-apps toevoegen
 
-Search-as-u-type is een algemene techniek voor het verbeteren van de productiviteit van door de gebruiker geïnitieerde query's. In azure Cognitive Search wordt deze ervaring ondersteund via *automatisch aanvullen* , waardoor een term of woord groep is gebaseerd op gedeeltelijke invoer (het volt ooien van ' micro ' met ' micro soft '). Een ander formulier is *suggesties* : een korte lijst met overeenkomende documenten (waarbij Boek titels worden geretourneerd met een id zodat u een koppeling naar een detail pagina kunt maken). Automatisch aanvullen en suggesties worden voorgesteld op basis van een overeenkomst in de index. De service biedt geen query's die nul resultaten retour neren.
+Search-as-u-type is een algemene techniek voor het verbeteren van de productiviteit van door de gebruiker geïnitieerde query's. In azure Cognitive Search wordt deze ervaring ondersteund via *automatisch aanvullen*, waardoor een term of woord groep is gebaseerd op gedeeltelijke invoer (het volt ooien van ' micro ' met ' micro soft '). Een tweede gebruikers ervaring is *suggesties* of een korte lijst met overeenkomende documenten (waarbij Boek titels worden geretourneerd met een id zodat u een koppeling kunt maken naar een detail pagina over dat boek). Automatisch aanvullen en suggesties worden voorgesteld op basis van een overeenkomst in de index. De service biedt geen query's die nul resultaten retour neren.
 
 Als u deze ervaringen wilt implementeren in azure Cognitive Search, hebt u het volgende nodig:
 
-+ Een *suggestie* voor de back-end.
++ Een *suggestie* definitie die is inge sloten in het index schema.
 + Een *query* die de API voor [automatisch aanvullen](/rest/api/searchservice/autocomplete) of [suggesties](/rest/api/searchservice/suggestions) voor de aanvraag specificeert.
 + Een *UI-besturings element* voor het afhandelen van interacties die zoeken naar u typen in uw client-app. U kunt het beste een bestaande Java script-bibliotheek gebruiken voor dit doel.
 

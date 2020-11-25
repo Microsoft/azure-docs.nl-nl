@@ -9,12 +9,12 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 11/10/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 955990ed9209ea1e12eed824241e8a5a456ed73b
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 4e64d866b5bd2f725db3be31d0fdd2f8663cfd7c
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444874"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029690"
 ---
 # <a name="azure-tls-certificate-changes"></a>Wijzigingen in Azure TLS-certificaat  
 
@@ -30,6 +30,7 @@ Servicespecifieke Details:
 - [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub) en [DPS](../../iot-dps/index.yml) blijven in de Baltimore CyberTrust Root CA, maar de tussenliggende CA's veranderen. [Klik hier voor meer informatie](https://techcommunity.microsoft.com/t5/internet-of-things/azure-iot-tls-changes-are-coming-and-why-you-should-care/ba-p/1658456).
 - [Azure Storage](../../storage/index.yml) blijft aanwezig in de basis-CA van Baltimore CyberTrust, maar de tussenliggende CA's veranderen. [Klik hier voor meer informatie](https://techcommunity.microsoft.com/t5/azure-storage/azure-storage-tls-changes-are-coming-and-why-you-care/ba-p/1705518).
 - [Azure cache voor redis](../../azure-cache-for-redis/index.yml) blijft aanwezig op Baltimore Cyber Trust-basis certificerings instantie, maar de tussenliggende ca's worden gewijzigd. [Klik hier voor meer informatie](../../azure-cache-for-redis/cache-whats-new.md).
+- Azure Instance Metadata Service blijft aanwezig op de basis-CA Baltimore Cyber Trust, maar de tussenliggende certificerings instantie verandert. [Klik hier voor meer informatie](https://docs.microsoft.com/answers/questions/172717/action-required-for-attested-data-tls-with-azure-i.html).
 
 > [!IMPORTANT]
 > Klanten moeten hun toepassing(en) mogelijk bijwerken na deze wijziging om verbindingsfouten te voorkomen wanneer ze proberen verbinding te maken met Azure-services.
@@ -70,11 +71,11 @@ Hier zijn enkele manieren om vast te stellen of uw toepassing wordt beïnvloed:
 - Als u een toepassing hebt die integreert met Azure-API's of andere Azure-services, en u niet zeker weet of de toepassing gebruikmaakt van certificaatkoppeling, neemt u contact op met de leverancier.
 
 - Voor verschillende besturingssystemen en taalruntimes die communiceren met Azure-services, zijn mogelijk extra stappen vereist om de certificaatketen juist te bouwen met deze nieuwe basis-CA's.
-    - **Linux** : Voor veel distributies moet u de CA's toevoegen aan /etc/ssl/certs. Raadpleeg de documentatie van de distributie voor specifieke instructies.
-    - **Java** : Controleer of het Java-sleutelarchief de CA's bevat die hierboven worden vermeld.
-    - **Windows uitgevoerd in omgevingen zonder verbinding** : Voor systemen die worden uitgevoerd in omgevingen zonder verbinding, moeten de nieuwe basis-CA's worden toegevoegd aan het archief Vertrouwde basiscertificeringsinstanties, en de tussenliggende CA's aan het archief Tussenliggende certificeringsinstanties.
-    - **Android** : Raadpleeg de documentatie voor uw apparaat en versie van Android.
-    - **Andere hardwareapparaten, met name IoT** : Neem contact op met de fabrikant van het apparaat.
+    - **Linux**: Voor veel distributies moet u de CA's toevoegen aan /etc/ssl/certs. Raadpleeg de documentatie van de distributie voor specifieke instructies.
+    - **Java**: Controleer of het Java-sleutelarchief de CA's bevat die hierboven worden vermeld.
+    - **Windows uitgevoerd in omgevingen zonder verbinding**: Voor systemen die worden uitgevoerd in omgevingen zonder verbinding, moeten de nieuwe basis-CA's worden toegevoegd aan het archief Vertrouwde basiscertificeringsinstanties, en de tussenliggende CA's aan het archief Tussenliggende certificeringsinstanties.
+    - **Android**: Raadpleeg de documentatie voor uw apparaat en versie van Android.
+    - **Andere hardwareapparaten, met name IoT**: Neem contact op met de fabrikant van het apparaat.
 
 - Als u een omgeving hebt waarin firewallregels zijn ingesteld om alleen uitgaande oproepen toe te staan naar specifieke CRL-downloadlocaties (certificaatintrekkingslijst) en/of OCSP-verificatielocaties (Online Certificate Status Protocol). U hebt de volgende CRL- en OCSP-URL's nodig:
 

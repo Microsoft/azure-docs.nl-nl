@@ -8,54 +8,55 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 11/23/2019
 ms.author: juliako
-ms.openlocfilehash: 1c3326456fefbbef9228cf26b5821f306cd21601
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1ca7c677e5f1eb55d74cca45e757676674f303c
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80127915"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030510"
 ---
 # <a name="search-for-exact-moments-in-videos-with-video-indexer"></a>Zoeken naar exacte momenten in Video's met Video Indexer
 
-In dit onderwerp vindt u de zoek opties waarmee u kunt zoeken naar exacte momenten in Video's.
+In dit onderwerp leest u hoe u de Video Indexer-website kunt gebruiken om te zoeken naar exacte momenten in Video's.
 
 1. Ga naar de [video indexer](https://www.videoindexer.ai/) -website en meld u aan.
-2. Zoek naar alle Video's in uw account.
+1. Geef de zoek woorden op en de zoek opdracht wordt uitgevoerd tussen alle Video's in de bibliotheek van uw account. 
 
-    In het volgende voor beeld wordt gezocht naar alle Video's die praten over beveiliging en waarin Satya wordt weer gegeven.
+    U kunt uw zoek opdracht filteren door **filters** te selecteren. In het onderstaande voor beeld zoeken we naar ' micro soft ' die wordt weer gegeven als alleen tekst op het scherm (OCR).
 
-    ![Video zoeken in Video Indexer](./media/video-indexer-search/video-indexer-search01.png)
+    :::image type="content" source="./media/video-indexer-search/filter.png" alt-text="Filter, alleen tekst":::
+1. Druk op **zoeken** om het resultaat te bekijken.
 
-3. Doorzoek de samen vatting van de video.
+    :::image type="content" source="./media/video-indexer-search/results.png" alt-text="Zoek resultaat van video":::
 
-    U kunt vervolgens een video doorzoeken door **afspelen** op de video te selecteren. Vervolgens kunt u zoeken naar exacte momenten in de video door het tabblad **zoeken** te selecteren.
+    Als u een van de resultaten selecteert, biedt de speler het precieze moment in de video.
+1. Bekijk en zoek de gesamenvate inzichten van de video door te klikken op **afspelen** op de video of door een van de oorspronkelijke Zoek resultaten te selecteren. 
 
-    In het volgende voor beeld zoeken we naar ' beveiligd ' in de geselecteerde video.
+    U kunt de **inzichten** weer geven, zoeken en bewerken. Wanneer u een van de inzichten selecteert, brengt de speler u op dat precieze moment in de video.  
 
-    ![Zoeken in een video met Video Indexer](./media/video-indexer-search/video-indexer-search02.png)
+    :::image type="content" source="./media/video-indexer-search/insights.png" alt-text="De inzichten van de video weer geven, zoeken en bewerken":::
 
-    Als u een van de resultaten selecteert, biedt de speler het precieze moment in de video. U kunt de weer gave van de speler/inzichten en synchronisatie in uw app verkrijgen. Zie [video indexer widgets insluiten in uw app](video-indexer-embed-widgets.md)voor meer informatie.
+    Als u de video via Video Indexer widgets insluit, kunt u de weer gave van de speler/inzichten en synchronisatie in uw app verkrijgen. Zie [video indexer widgets insluiten in uw app](video-indexer-embed-widgets.md)voor meer informatie.
+1. U kunt de transcripten weer geven, zoeken en bewerken door op het tabblad **tijd lijn** te klikken. 
 
-4. Zoek de gedetailleerde uitsplitsing van de video.
+    :::image type="content" source="./media/video-indexer-search/timeline.png" alt-text="De transcripten van de video weer geven, zoeken en bewerken":::
 
-    Als u uw eigen clip wilt maken op basis van de video die u hebt gevonden, selecteert u de knop **bewerken** . Op deze pagina ziet u de video samen met de inzichten als filters. Zie [video indexer Insights weer geven en bewerken](video-indexer-view-edit.md)voor meer informatie.
+    Als u de tekst wilt bewerken, selecteert u **bewerken** in de rechter bovenhoek en wijzigt u de tekst naar behoefte. 
 
-    U kunt zoeken naar exacte momenten in de video om alleen de regels weer te geven waarin u bent geïnteresseerd. Gebruik de side Insights om de onderdelen te filteren die u wilt zien. Wanneer u klaar bent, kunt u een voor beeld van de clip bekijken en vervolgens **publiceren** selecteren om de nieuwe clip te maken die wordt weer gegeven in de galerie.
+    U kunt de transcripten ook vertalen en downloaden door de gewenste optie te selecteren in de rechter bovenhoek. 
 
-    In het volgende voor beeld is gezocht naar de tekst ' Mixed Reality '. We hebben ook extra filters toegepast, zoals in het onderstaande scherm wordt weer gegeven.
+## <a name="embed-download-create-projects"></a>Insluiten, downloaden, projecten maken
 
-    ![Zoeken naar een exact tijdstip in Video Indexer](./media/video-indexer-search/video-indexer-search03.png)
+U kunt uw video insluiten door **</>insluiten** onder uw video in te scha kelen. Zie [visuele objecten insluiten in uw toepassing](video-indexer-embed-widgets.md)voor meer informatie.
+
+U kunt de bron video, inzichten van de video, transcripten downloaden door te klikken op **downloaden** onder uw video.
+
+U kunt een clip maken op basis van uw video van specifieke lijnen en momenten door te klikken op **openen in editor**. Bewerk vervolgens de video en sla het project op. Zie [de uitgebreide inzichten van uw Video's gebruiken](use-editor-create-project.md)voor meer informatie.
+
+:::image type="content" source="./media/video-indexer-search/embed-download-create-projects.png" alt-text="Insluiten, downloaden, projecten van de video maken":::
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u het precieze moment hebt gevonden in de video waarmee u wilt werken, kunt u door gaan met het verwerken van de video. Zie de volgende onderwerpen voor meer informatie:
-
-- [Uitgebreide inzichten van uw Video's gebruiken](use-editor-create-project.md)
-- [REST-API van Video Indexer gebruiken](video-indexer-use-apis.md)
-- [Video Indexer-widgets insluiten in uw toepassingen](video-indexer-embed-widgets.md)
-
-## <a name="see-also"></a>Zie ook
-
-[Overzicht van Video Indexer](video-indexer-overview.md)
+[REST-API van Video Indexer gebruiken](video-indexer-use-apis.md)

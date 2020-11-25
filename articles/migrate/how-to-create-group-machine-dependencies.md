@@ -2,13 +2,13 @@
 title: Afhankelijkheids analyse op basis van een agent instellen in de evaluatie van Azure Migrate server
 description: In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate server-evaluatie.
 ms.topic: how-to
-ms.date: 6/09/2020
-ms.openlocfilehash: c5c019ec995f59b61fb96917bed50bd8ba3f61d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/25/2020
+ms.openlocfilehash: 17c6e3e24596727350b11946bdf6896e22d41529
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89022374"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028959"
 ---
 # <a name="set-up-dependency-visualization"></a>Visualisatie van afhankelijkheid instellen
 
@@ -38,13 +38,13 @@ In dit artikel wordt beschreven hoe u analyse van agentloze afhankelijkheden ins
 
 ## <a name="associate-a-workspace"></a>Een werk ruimte koppelen
 
-1. Nadat u computers voor beoordeling hebt gedetecteerd, klikt u in **servers**  >  **Azure migrate: Server evaluatie**op **overzicht**.  
-2. Klik in **Azure migrate: Server evaluatie**op **essentiële**elementen.
-3. Klik in de **OMS-werk ruimte**op **configuratie vereist**.
+1. Nadat u computers voor beoordeling hebt gedetecteerd, klikt u in **servers**  >  **Azure migrate: Server evaluatie** op **overzicht**.  
+2. Klik in **Azure migrate: Server evaluatie** op **essentiële** elementen.
+3. Klik in de **OMS-werk ruimte** op **configuratie vereist**.
 
-     ![Log Analytics werkruimte configureren](./media/how-to-create-group-machine-dependencies/oms-workspace-select.png)   
+     ![Log Analytics-werkruimte configureren](./media/how-to-create-group-machine-dependencies/oms-workspace-select.png)   
 
-4. In de **werk ruimte OMS configureren**geeft u op of u een nieuwe werk ruimte wilt maken of een bestaande wilt gebruiken.
+4. In de **werk ruimte OMS configureren** geeft u op of u een nieuwe werk ruimte wilt maken of een bestaande wilt gebruiken.
     - U kunt een bestaande werk ruimte selecteren uit alle werk ruimten in het project abonnement migreren.
     - U hebt toegang tot de lezer nodig om de werk ruimte te koppelen.
 5. Als u een nieuwe werk ruimte maakt, selecteert u een locatie.
@@ -59,10 +59,10 @@ Installeer de agents op elke computer die u wilt analyseren.
 > [!NOTE]
 > Voor computers die worden bewaakt door System Center Operations Manager 2012 R2 of hoger, hoeft u de MMA-agent niet te installeren. Servicetoewijzing integreert met Operations Manager. [Volg](../azure-monitor/insights/service-map-scom.md#prerequisites) de richt lijnen voor integratie.
 
-1. Klik in **Azure migrate: Server evaluatie**op **gedetecteerde servers**.
+1. Klik in **Azure migrate: Server evaluatie** op **gedetecteerde servers**.
 2. Voor elke computer die u wilt analyseren met afhankelijkheids visualisatie, klikt u in de kolom **afhankelijkheden** op **Agent installatie vereist**.
 3. Down load de MMA-en Dependency-agent voor Windows of Linux op de pagina **afhankelijkheden** .
-4. Onder **MMA-agent configureren kopieert u**de werk ruimte-ID en-sleutel. U hebt deze nodig wanneer u de MMA-Agent installeert.
+4. Onder **MMA-agent configureren kopieert u** de werk ruimte-ID en-sleutel. U hebt deze nodig wanneer u de MMA-Agent installeert.
 
     ![De agents installeren](./media/how-to-create-group-machine-dependencies/dependencies-install.png)
 
@@ -83,7 +83,7 @@ Installeer de agent als volgt op een Windows-computer:
 
 U kunt de agent installeren vanaf de opdracht regel of met behulp van een geautomatiseerde methode als Configuration Manager of [Intigua](https://www.intigua.com/intigua-for-azure-migration).
 - [Meer informatie](../azure-monitor/platform/log-analytics-agent.md#installation-options) over het gebruiken van deze methoden om de MMA-agent te installeren.
-- De MMA-agent kan ook worden geïnstalleerd met behulp van dit [script](https://go.microsoft.com/fwlink/?linkid=2104394).
+- De MMA-agent kan ook worden geïnstalleerd met behulp van dit [script](https://github.com/brianbar-MSFT/Install-MMA).
 - Meer [informatie](../azure-monitor/platform/agents-overview.md#supported-operating-systems) over de Windows-besturings systemen die worden ondersteund door MMA.
 
 ### <a name="install-mma-on-a-linux-machine"></a>MMA installeren op een Linux-computer
@@ -116,7 +116,7 @@ Maak nu een groep voor evaluatie.
 > [!NOTE]
 > Groepen waarvoor u afhankelijkheden wilt visualiseren, mogen niet meer dan 10 machines bevatten. Als u meer dan 10 computers hebt, splitst u deze in kleinere groepen.
 
-1. Klik in **Azure migrate: Server evaluatie**op **gedetecteerde servers**.
+1. Klik in **Azure migrate: Server evaluatie** op **gedetecteerde servers**.
 2. Klik in de kolom **afhankelijkheden** op **afhankelijkheden weer geven** voor elke computer die u wilt controleren.
 3. Op de afhankelijkheids kaart ziet u het volgende:
     - Inkomende (clients) en uitgaande (servers) TCP-verbindingen van en naar de computer.
@@ -152,9 +152,9 @@ U kunt een query uitvoeren op afhankelijkheids gegevens die zijn vastgelegd door
 Voer een query uit voor afhankelijkheids gegevens als volgt:
 
 1. Nadat u de agents hebt geïnstalleerd, gaat u naar de portal en klikt u op **Overzicht**.
-2. Klik in **Azure migrate: Server evaluatie**op **overzicht**. Klik op de pijl-omlaag om de **kernen**uit te vouwen.
-3. Klik in de **OMS-werk ruimte**op de naam van de werk ruimte.
-3. Klik op de pagina Log Analytics werk ruimte > **Algemeen**op **Logboeken**.
+2. Klik in **Azure migrate: Server evaluatie** op **overzicht**. Klik op de pijl-omlaag om de **kernen** uit te vouwen.
+3. Klik in de **OMS-werk ruimte** op de naam van de werk ruimte.
+3. Klik op de pagina Log Analytics werk ruimte > **Algemeen** op **Logboeken**.
 4. Schrijf uw query en klik op **uitvoeren**.
 
 ### <a name="sample-queries"></a>Voorbeeldquery's

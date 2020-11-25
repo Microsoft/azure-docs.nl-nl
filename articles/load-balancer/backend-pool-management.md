@@ -8,12 +8,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 07/07/2020
 ms.author: allensu
-ms.openlocfilehash: 81fad1c77b917c1e3eaf7ddd200c3fea83cb0e0a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3934946dd8e20b7888fc41a4fd6ecc233381f1ff
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88589670"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029724"
 ---
 # <a name="backend-pool-management"></a>Beheer van back-endpools
 De back-endpool is een essentieel onderdeel van de load balancer. Met de back-endpool wordt de groep resources gedefinieerd die het verkeer verwerken voor een bepaalde taakverdelingsregel.
@@ -45,14 +45,14 @@ De volgende voorbeelden zijn gericht op de bewerkingen voor het maken en vullen 
 
 ### <a name="powershell"></a>PowerShell
 Maak een nieuwe back-endpool:
- 
+ 
 ```azurepowershell-interactive
 $resourceGroup = "myResourceGroup"
 $loadBalancerName = "myLoadBalancer"
 $backendPoolName = "myBackendPool"
 
-$backendPool = 
-New-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -BackendAddressPoolName $backendPoolName  
+$backendPool = 
+New-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -BackendAddressPoolName $backendPoolName  
 ```
 
 Maak een nieuwe netwerkinterface en voeg deze toe aan de back-endpool:
@@ -81,7 +81,7 @@ $backendPoolName = "myBackendPool"
 
 $lb =
 Get-AzLoadBalancer -ResourceGroupName $res
-Get-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -BackendAddressPoolName $backendPoolName 
+Get-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -BackendAddressPoolName $backendPoolName 
 ```
 
 Maak een nieuwe virtuele machine en koppel de netwerkinterface om deze in de back-endpool te plaatsen:
@@ -115,7 +115,7 @@ Maak de back-endpool:
 
 ```azurecli-interactive
 az network lb address-pool create \
---resourceGroup myResourceGroup \
+--resource-group myResourceGroup \
 --lb-name myLB \
 --name myBackendPool 
 ```
@@ -273,18 +273,18 @@ $vnetName = "myVnet"
 $location = "eastus"
 $nicName = "myNic"
 
-$backendPool = New-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -Name $backendPoolName  
+$backendPool = New-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -Name $backendPoolName  
 ```
 
 Werk de back-endpool bij met een nieuw IP-adres uit het bestaand virtueel netwerk:
- 
+ 
 ```azurepowershell-interactive
-$virtualNetwork = 
-Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $resourceGroup 
- 
-$ip1 = New-AzLoadBalancerBackendAddressConfig -IpAddress "10.0.0.5" -Name "TestVNetRef" -VirtualNetwork $virtualNetwork  
- 
-$backendPool.LoadBalancerBackendAddresses.Add($ip1) 
+$virtualNetwork = 
+Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $resourceGroup 
+ 
+$ip1 = New-AzLoadBalancerBackendAddressConfig -IpAddress "10.0.0.5" -Name "TestVNetRef" -VirtualNetwork $virtualNetwork  
+ 
+$backendPool.LoadBalancerBackendAddresses.Add($ip1) 
 
 Set-AzLoadBalancerBackendAddressPool -InputObject $backendPool
 ```
@@ -292,7 +292,7 @@ Set-AzLoadBalancerBackendAddressPool -InputObject $backendPool
 Haal de gegevens van de back-endpool op voor de load balancer om te bevestigen dat de back-endadressen zijn toegevoegd aan de back-endpool:
 
 ```azurepowershell-interactive
-Get-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -Name $backendPoolName 
+Get-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -Name $backendPoolName 
 ```
 Maak een netwerkinterface en voeg deze toe aan de back-endpool. Stel het IP-adres in op een van de back-endadressen:
 

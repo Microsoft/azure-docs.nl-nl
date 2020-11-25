@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 08/03/2020
 ms.author: matjazl
-ms.openlocfilehash: 744bcfe196629f76c5505f36ef9c8c224fefe601
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d013af82a862f1bc6b5324e7523aeea5593a4f94
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95909064"
+ms.locfileid: "96030659"
 ---
 # <a name="frequently-asked-questions-about-the-azure-api-for-fhir"></a>Veelgestelde vragen over de Azure API voor FHIR
 
@@ -122,7 +122,7 @@ We hebben een verzameling referentie architecturen die beschikbaar zijn op de Gi
 
 ### <a name="where-can-i-see-an-example-of-connecting-a-web-application-to-azure-api-for-fhir"></a>Waar kan ik een voor beeld zien van het verbinden van een webtoepassing met Azure API voor FHIR?
 
-We hebben een [github-pagina met een status architectuur](https://github.com/microsoft/health-architectures) die voorbeeld toepassingen en-scenario's bevat. In dit voor beeld ziet u hoe u een webtoepassing verbindt met Azure API voor FHIR.  
+We hebben een [github-pagina met een status architectuur](https://aka.ms/health-architectures) die voorbeeld toepassingen en-scenario's bevat. In dit voor beeld ziet u hoe u een webtoepassing verbindt met Azure API voor FHIR.  
 
 ## <a name="azure-api-for-fhir-features-and-services"></a>Azure API voor FHIR-functies en-services 
 

@@ -4,12 +4,12 @@ ms.service: virtual-machine-scale-sets
 ms.topic: include
 ms.date: 04/26/2019
 ms.author: manayar
-ms.openlocfilehash: 633f7f9231e08acdb0e08ee97067d2a469bbdb45
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff3434a7d1b5b4643d9aca5fae03ac03fe65b514
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75980174"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028285"
 ---
 U kunt de voorgaande sjabloon implementeren met behulp van de [Azure Resource Manager-documentatie](../articles/azure-resource-manager/templates/deploy-powershell.md).
 
@@ -21,4 +21,4 @@ U kunt zien hoe u de [basis sjabloon voor schaal sets](../articles/virtual-machi
 
 U kunt zien hoe u de [sjabloon Basic Scale set](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) wijzigt om [een Linux-schaalset te implementeren met automatisch schalen op basis van gast](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-guest-based-autoscale-linux.md).
 
-Raadpleeg de [overzichts pagina van de schaalset](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md)voor meer informatie over schaal sets.
+Raadpleeg de [overzichts pagina van de schaalset](../articles/virtual-machine-scale-sets/overview.md)voor meer informatie over schaal sets.

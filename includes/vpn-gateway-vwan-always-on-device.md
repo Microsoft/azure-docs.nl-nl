@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 594ad352d5fd8431ffaf6d681c891c967cf9d32a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34e841a5f17d589c4fbef54a4a8674a99ac6c640
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90606504"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027371"
 ---
 Aan de volgende vereisten moet worden voldaan om een apparaat tunnel te kunnen instellen:
 
@@ -22,13 +22,13 @@ Aan de volgende vereisten moet worden voldaan om een apparaat tunnel te kunnen i
 * Er kan slechts één tunnel van een apparaat per apparaat worden geconfigureerd.
 
 1. Client certificaten installeren op de Windows 10-client met behulp van het artikel [punt-naar-site VPN-client](../articles/vpn-gateway/point-to-site-how-to-vpn-client-install-azure-cert.md) . Het certificaat moet zich in het archief van de lokale computer bestaan.
-1. Maak een VPN-profiel en configureer de tunnel van het apparaat in de context van het lokale systeem account met behulp van [deze instructies](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/vpn-device-tunnel-config#vpn-device-tunnel-configuration).
+1. Maak een VPN-profiel en configureer de tunnel van het apparaat in de context van het lokale systeem account met behulp van [deze instructies](/windows-server/remote/remote-access/vpn/vpn-device-tunnel-config#vpn-device-tunnel-configuration).
 
 ### <a name="configuration-example-for-device-tunnel"></a>Configuratie voorbeeld voor de tunnel van apparaten
 
 Nadat u de virtuele netwerk gateway hebt geconfigureerd en het client certificaat in het archief van de lokale computer op de Windows 10-client hebt geïnstalleerd, gebruikt u de volgende voor beelden om een tunnel voor client apparaten te configureren:
 
-1. Kopieer de volgende tekst en sla deze op als ***devicecert.ps1***.
+1. Kopieer de volgende tekst en sla deze op als ***devicecert.ps1** _.
 
    ```
    Param(
@@ -80,7 +80,7 @@ Nadat u de virtuele netwerk gateway hebt geconfigureerd en het client certificaa
    $Message = "Complete."
    Write-Host "$Message"
    ```
-1. Kopieer de volgende tekst en sla deze op als ***VPNProfile.xml*** in dezelfde map als **devicecert.ps1**. Bewerk de volgende tekst zodat deze overeenkomt met uw omgeving.
+1. Kopieer de volgende tekst en sla deze op als _*_VPNProfile.xml_*_ in dezelfde map als _ * devicecert.ps1 * *. Bewerk de volgende tekst zodat deze overeenkomt met uw omgeving.
 
    * `<Servers>azuregateway-1234-56-78dc.cloudapp.net</Servers> <= Can be found in the VpnSettings.xml in the downloaded profile zip file`
    * `<Address>192.168.3.5</Address> <= IP of resource in the vnet or the vnet address space`
@@ -115,7 +115,7 @@ Nadat u de virtuele netwerk gateway hebt geconfigureerd en het client certificaa
    <RegisterDNS>true</RegisterDNS>
    </VPNProfile>
    ```
-1. Down load **PsExec** van [Sysinternals](https://docs.microsoft.com/sysinternals/downloads/psexec) en pak de bestanden uit naar **C:\PSTools**.
+1. Down load **PsExec** van [Sysinternals](/sysinternals/downloads/psexec) en pak de bestanden uit naar **C:\PSTools**.
 1. Start Power shell op basis van een opdracht prompt van de beheerder door de volgende opdracht uit te voeren:
 
    ```
@@ -131,7 +131,7 @@ Nadat u de virtuele netwerk gateway hebt geconfigureerd en het client certificaa
    ```
    
    ![Scherm afbeelding toont een Power shell-venster met MachineCertTest met behulp van het script devicesert.](./media/vpn-gateway-vwan-always-on-device/machinecerttest.png)
-1. Voer **Rasphone**uit.
+1. Voer **Rasphone** uit.
 
    ![Scherm afbeelding toont het dialoog venster uitvoeren met Rasphone geselecteerd.](./media/vpn-gateway-vwan-always-on-device/rasphone.png)
 1. Zoek de vermelding **MachineCertTest** en klik op **verbinden**.

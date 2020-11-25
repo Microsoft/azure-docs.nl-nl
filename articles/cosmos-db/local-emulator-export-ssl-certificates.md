@@ -7,12 +7,12 @@ ms.date: 09/17/2020
 author: deborahc
 ms.author: dech
 ms.custom: devx-track-python, devx-track-java, contperfq1
-ms.openlocfilehash: 23d9c6730857cf4ed7f8b8062d5529bedd8e2740
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 1825dd34855b356367722eefbfb5eb6dd9c78ae3
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95997168"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029180"
 ---
 # <a name="export-the-azure-cosmos-db-emulator-certificates-for-use-with-java-python-and-nodejs-apps"></a>De Azure Cosmos DB-emulator certificaten exporteren voor gebruik met Java-, python-en Node.js-apps
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -67,7 +67,7 @@ U moet het Emulator-certificaat exporteren om het Emulator-eind punt te kunnen g
 
 Bij het uitvoeren van Java-toepassingen of MongoDB-toepassingen die gebruikmaken van een Java-client, is het eenvoudiger om het certificaat te installeren in het standaard certificaat archief van Java dan door de vlaggen door te geven `-Djavax.net.ssl.trustStore=<keystore> -Djavax.net.ssl.trustStorePassword="<password>"` . De opgenomen Java-demonstratie toepassing ( `https://localhost:8081/_explorer/index.html` ) is bijvoorbeeld afhankelijk van het standaard certificaat archief.
 
-Volg de instructies in het gedeelte [een certificaat aan het Archief voor Java-certificaten toevoegen](/azure/developer/java/sdk/java-sdk-add-certificate-ca-store) om het X. 509-certificaat te importeren in het standaard-Java-certificaat archief. Houd er rekening mee dat u werkt in de map *% JAVA_HOME%* wanneer u het hulp programma voor het uitvoeren van de functie uitvoert. Nadat het certificaat in het certificaat archief is geïmporteerd, kunnen clients voor SQL-en Azure Cosmos DB-API voor MongoDB verbinding maken met de Azure Cosmos-emulator.
+Volg de instructies in het gedeelte [een certificaat aan het Archief voor Java-certificaten toevoegen](/azure/developer/java/sdk/java-sdk-add-certificate-ca-store) om het X. 509-certificaat te importeren in het standaard-Java-certificaat archief. Houd er rekening mee dat u werkt in de map *% JAVA_HOME%* wanneer u het hulp programma voor het uitvoeren van de functie uitvoert. Nadat het certificaat in het certificaat archief is geïmporteerd, kunnen clients voor SQL-en Azure Cosmos DB-API voor MongoDB verbinding maken met de Azure Cosmos DB-emulator.
 
 U kunt ook het volgende bash-script uitvoeren om het certificaat te importeren:
 

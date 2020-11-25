@@ -12,18 +12,18 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 9f65ffc9ef24b18ce0f18571c1f3fc91e7ca7fdf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85414603"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96024228"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Als conditie activiteit in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 De If Condition Activity biedt dezelfde functionaliteit als een If-instructie in een programmeertaal. Er wordt een reeks activiteiten uitgevoerd wanneer de voor waarde wordt geëvalueerd `true` en een andere set activiteiten wanneer de voor waarde wordt geëvalueerd `false` . 
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```json
 
@@ -69,7 +69,7 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de activiteit voor de if-voor waarde. | Tekenreeks | Ja
 type | Moet worden ingesteld op **IfCondition** | Tekenreeks | Ja
-expression | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie met Booleaanse waarde voor resultaat type | Ja
+expression | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie met Booleaanse waarde voor resultaat type | Yes
 ifTrueActivities | Een set activiteiten die worden uitgevoerd wanneer de expressie wordt geëvalueerd `true` . | Matrix | Ja
 ifFalseActivities | Een set activiteiten die worden uitgevoerd wanneer de expressie wordt geëvalueerd `false` . | Matrix | Ja
 

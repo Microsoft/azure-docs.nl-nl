@@ -9,13 +9,13 @@ ms.topic: reference
 ms.custom: troubleshooting
 author: likebupt
 ms.author: keli19
-ms.date: 04/16/2020
-ms.openlocfilehash: 569cf130b464d97e0ac10904ffd86365b57610a5
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.date: 11/25/2020
+ms.openlocfilehash: af7ac49fd6c1a31a8363c4ba0bf925787613ecc2
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420832"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030404"
 ---
 # <a name="exceptions-and-error-codes-for-the-designer"></a>Uitzonde ringen en fout codes voor de ontwerper
 
@@ -281,11 +281,18 @@ Als het model is getraind met een van de gespecialiseerde trainings modules, kop
 
  Deze fout treedt op wanneer een kolom te veel unieke waarden bevat.  U ziet deze fout bijvoorbeeld als u opgeeft dat een kolom moet worden verwerkt als categorische-gegevens, maar er zijn te veel unieke waarden in de kolom om te voor komen dat de verwerking is voltooid. Deze fout kan ook worden weer geven als het aantal unieke waarden in twee invoer niet overeenkomt.   
 
+De fout van unieke waarden is groter dan is toegestaan als aan **beide** volgende voor waarden wordt voldaan:
+
+- Meer dan 97% exemplaren van één kolom zijn unieke waarden, wat betekent dat bijna alle categorieën van elkaar verschillen.
+- Eén kolom heeft meer dan 1000 unieke waarden.
+
 **Oplossing:**
 
 Open de module die de fout heeft gegenereerd en Identificeer de kolommen die als invoer worden gebruikt. Voor sommige modules kunt u met de rechter muisknop op de gegevensset-invoer klikken en **visualiseren** selecteren om statistieken op te halen voor afzonderlijke kolommen, inclusief het aantal unieke waarden en de distributie.
 
 Voor kolommen die u wilt gebruiken voor groepering of categorisatie, neemt u stappen om het aantal unieke waarden in kolommen te verminderen. U kunt op verschillende manieren beperken, afhankelijk van het gegevens type van de kolom. 
+
+Normaal gesp roken heeft de kolom de fout melding als een functie voor het trainen van modellen. Daarom kunt u [meta gegevens bewerken](../algorithm-module-reference/edit-metadata.md) gebruiken om die kolom als **heldere functie** te markeren. deze wordt niet gebruikt tijdens de training van een model. 
 <!--
 + For text data, you might be able to use [Preprocess Text](preprocess-text.md) to collapse similar entries. 
 + For numeric data, you can create a smaller number of bins using [Group Data into Bins](group-data-into-bins.md), remove or truncate values using [Clip Values](clip-values.md), or use machine learning methods such as [Principal Component Analysis](principal-component-analysis.md) or [Learning with Counts](data-transformation-learning-with-counts.md) to reduce the dimensionality of the data.  

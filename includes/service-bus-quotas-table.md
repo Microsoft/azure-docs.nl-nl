@@ -9,11 +9,11 @@ ms.date: 07/15/2020
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: 764d75872eb1bad0647235cd70f9984ebd7789bd
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95555890"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027933"
 ---
 De volgende tabel vermeldt quotuminformatie die specifiek is voor Azure Service Bus-berichten. Voor informatie over prijzen en andere quota voor Service Bus raadpleegt u [Service Bus-prijzen](https://azure.microsoft.com/pricing/details/service-bus/).
 

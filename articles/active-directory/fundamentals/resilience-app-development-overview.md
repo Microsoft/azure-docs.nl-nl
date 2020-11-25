@@ -11,18 +11,16 @@ author: knicholasa
 ms.author: nichola
 manager: martinco
 ms.date: 11/23/2020
-ms.openlocfilehash: f6078ed96106d6a53b55195ee950e2165334221d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c2c2f9d0ad7bfa50f543b57326b9fc8dab0069c6
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919681"
+ms.locfileid: "96029299"
 ---
 # <a name="increase-resilience-of-authentication-and-authorization-applications-you-develop"></a>Verbeter de flexibiliteit van verificatie-en autorisatie toepassingen die u ontwikkelt
 
 Micro soft Identity maakt gebruik van moderne verificatie en autorisatie op basis van tokens. Dit betekent dat een toepassing tokens van een id-provider verkrijgt om de gebruiker te verifiëren en om de toepassing te autoriseren om beveiligde Api's aan te roepen.
-
-![Afbeelding van de toepassing die micro soft Identity aanroept](media/resilience-app-development-overview/app-overview.png)
 
 Een token is geldig gedurende een bepaalde periode voordat de app een nieuwe moet verkrijgen. Een aanroep voor het ophalen van een token kan echter niet worden uitgevoerd vanwege een probleem, zoals een netwerk-of infrastructuur fout of een storing in de verificatie service. In dit document worden de stappen beschreven die een ontwikkelaar kan ondernemen om de flexibiliteit in hun toepassingen te verhogen als er een fout optreedt bij het ophalen van een token.
 

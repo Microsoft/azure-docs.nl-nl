@@ -5,19 +5,19 @@ ms.topic: conceptual
 author: lgayhardt
 ms.custom: devx-track-java
 ms.author: lagayhar
-ms.date: 05/24/2019
-ms.openlocfilehash: 12497d3ac86888ed861e8d5f655f45c8cbe4b6e3
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.date: 11/22/2020
+ms.openlocfilehash: 1a68cea423678dd8582d65b839d57076e84de940
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996164"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029537"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Snelstartgids: aan de slag met Application Insights in een Java-webproject
 
 
-> [!IMPORTANT]
-> De aanbevolen benadering voor het bewaken van Java-toepassingen is het gebruik van de automatische instrumentatie zonder de code te wijzigen. Volg de richt lijnen voor [Application Insights Java 3,0-agent](./java-in-process-agent.md).
+> [!CAUTION]
+> Vanaf november 2020 wordt voor het bewaken van Java-toepassingen de automatische instrumentatie aanbevolen met de Azure Monitor Application Insights 3,0-agent. Zie [Application Insights Java 3,0-agent](./java-in-process-agent.md)voor meer informatie over hoe u aan de slag kunt gaan.
 
 In deze Snelstartgids gebruikt u Application Insights SDK om de aanvraag te instrumenteren, afhankelijkheden bij te houden en prestatie meter items te verzamelen, prestatie problemen en uitzonde ringen te diagnosticeren en code te schrijven om te volgen wat gebruikers met uw app doen.
 
@@ -30,7 +30,7 @@ Application Insights is een uitbreidbare analyseservice voor webontwikkelaars di
 
 ## <a name="get-an-application-insights-instrumentation-key"></a>Een Application Insights-instrumentatiesleutel ophalen
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Maak in de Azure Portaleen Application Insights-resource. Stel het toepassingstype in op Java-webtoepassing.
 
 3. Zoek de instrumentatiesleutel van de nieuwe resource. U moet deze sleutel zo dadelijk in de code van uw project plakken.
@@ -123,7 +123,7 @@ Vervang de instrumentatie sleutel door de toets die u hebt ontvangen van de Azur
 </ApplicationInsights>
 ```
 
-Het configuratie bestand kan optioneel zijn op elke locatie die toegankelijk is voor uw toepassing.  De eigenschap System `-Dapplicationinsights.configurationDirectory` geeft de map op die *ApplicationInsights.xml*bevat. Bijvoorbeeld: een configuratiebestand in `E:\myconfigs\appinsights\ApplicationInsights.xml` wordt geconfigureerd met eigenschap `-Dapplicationinsights.configurationDirectory="E:\myconfigs\appinsights"`.
+Het configuratie bestand kan optioneel zijn op elke locatie die toegankelijk is voor uw toepassing.  De eigenschap System `-Dapplicationinsights.configurationDirectory` geeft de map op die *ApplicationInsights.xml* bevat. Bijvoorbeeld: een configuratiebestand in `E:\myconfigs\appinsights\ApplicationInsights.xml` wordt geconfigureerd met eigenschap `-Dapplicationinsights.configurationDirectory="E:\myconfigs\appinsights"`.
 
 * De instrumentatiesleutel wordt samen met alle telemetrie-items verzonden en instrueert Application Insights om deze in de resource weer te geven.
 * Het onderdeel voor de HTTP-aanvraag is optioneel. Het verzendt automatisch telemetrie over aanvragen en reactietijden naar de portal.
@@ -221,7 +221,7 @@ De configuratie van de inkomende SDK wordt verder uitgelegd in ons artikel over 
 De uitgaande SDK-configuratie wordt gedefinieerd in het [AI-Agent.xml](java-agent.md) -bestand.
 
 ## <a name="performance-counters"></a>Prestatiemeteritems
-Open **onderzoek**, **metrische gegevens**om een aantal prestatie meter items weer te geven.
+Open **onderzoek**, **metrische gegevens** om een aantal prestatie meter items weer te geven.
 
 ![Scherm afbeelding van het deel venster metrische gegevens met het proces eigen bytes geselecteerd](./media/java-get-started/011-perf-counters.png)
 

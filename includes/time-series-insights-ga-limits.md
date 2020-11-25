@@ -9,18 +9,18 @@ author: deepakpalled
 ms.author: dpalled
 manager: diviso
 ms.custom: include file
-ms.openlocfilehash: 1aff5780aa5f4cf21d862a5cee3b140179dac03c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e584b6eff16636f0657c586f6c630dbf8bbb99b2
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88704600"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027101"
 ---
 Hieronder vindt u een overzicht van de belangrijkste limieten in Azure Time Series Insights gen1.
 
 ### <a name="sku-ingress-rates-and-capacities"></a>Tarieven en capaciteit van de SKU
 
-De snelheid en capaciteit van de SKU van de sku's van de S2 bieden flexibiliteit bij het configureren van een nieuwe Azure Time Series Insights-omgeving. Uw SKU-capaciteit geeft uw dagelijkse ingangs rente aan op basis van het aantal gebeurtenissen of opgeslagen bytes, afhankelijk van wat het eerste komt. Houd er rekening mee dat ingangen *per minuut*wordt gemeten en dat **beperking** wordt toegepast met behulp van het token bucket algoritme. Binnenkomend verkeer wordt gemeten in blokken van 1 KB. Zo wordt een werkelijke gebeurtenis van 0,8 KB gemeten als één gebeurtenis, en wordt een gebeurtenis van 2,6 KB geteld als drie gebeurtenissen.
+De snelheid en capaciteit van de SKU van de sku's van de S2 bieden flexibiliteit bij het configureren van een nieuwe Azure Time Series Insights-omgeving. Uw SKU-capaciteit geeft uw dagelijkse ingangs rente aan op basis van het aantal gebeurtenissen of opgeslagen bytes, afhankelijk van wat het eerste komt. Houd er rekening mee dat ingangen *per minuut* wordt gemeten en dat **beperking** wordt toegepast met behulp van het token bucket algoritme. Binnenkomend verkeer wordt gemeten in blokken van 1 KB. Zo wordt een werkelijke gebeurtenis van 0,8 KB gemeten als één gebeurtenis, en wordt een gebeurtenis van 2,6 KB geteld als drie gebeurtenissen.
 
 | Capaciteit van S1-SKU | Ingangs frequentie | Maximale opslag capaciteit
 | --- | --- | --- |
@@ -44,7 +44,7 @@ S2-SKU-omgevingen ondersteunen aanzienlijk meer gebeurtenissen per maand en hebb
 
 ### <a name="property-limits"></a>Eigenschaps limieten
 
-Limieten voor gen1-eigenschappen zijn afhankelijk van de geselecteerde SKU-omgeving. De opgegeven gebeurtenis eigenschappen hebben bijbehorende JSON-, CSV-en grafiek kolommen die kunnen worden weer gegeven in de [Azure time series Insights Explorer](https://docs.microsoft.com/azure/time-series-insights/time-series-quickstart).
+Limieten voor gen1-eigenschappen zijn afhankelijk van de geselecteerde SKU-omgeving. De opgegeven gebeurtenis eigenschappen hebben bijbehorende JSON-, CSV-en grafiek kolommen die kunnen worden weer gegeven in de [Azure time series Insights Explorer](../articles/time-series-insights/time-series-quickstart.md).
 
 | SKU | Maximum aantal eigenschappen |
 | --- | --- |
@@ -55,9 +55,9 @@ Limieten voor gen1-eigenschappen zijn afhankelijk van de geselecteerde SKU-omgev
 
 Er worden Maxi maal twee gebeurtenis bronnen per instantie ondersteund.
 
-* Meer informatie over het [toevoegen van een event hub bron](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-eventhub).
-* [Een IOT hub-bron](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-iothub)configureren.
+* Meer informatie over het [toevoegen van een event hub bron](../articles/time-series-insights/how-to-ingest-data-event-hub.md).
+* [Een IOT hub-bron](../articles/time-series-insights/how-to-ingest-data-iot-hub.md)configureren.
 
 ### <a name="api-limits"></a>API-limieten
 
-REST API limieten voor Azure Time Series Insights gen1 zijn opgegeven in de [referentie documentatie van rest API](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability).
+REST API limieten voor Azure Time Series Insights gen1 zijn opgegeven in de [referentie documentatie van rest API](/rest/api/time-series-insights/dataaccess(preview)/query/getavailability).

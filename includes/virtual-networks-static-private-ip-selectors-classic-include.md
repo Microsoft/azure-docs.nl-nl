@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: genli
 ms.custom: include file
-ms.openlocfilehash: e2c045501b54b5536ebe7440030676c965a52849
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43517e7d5f62ccde695bc00c6a7aabb511913189
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67175945"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027918"
 ---
 > [!div class="op_single_selector"]
 > * [Azure-portal](../articles/virtual-network/virtual-networks-static-private-ip-arm-pportal.md)
@@ -21,4 +21,4 @@ ms.locfileid: "67175945"
 > * [Azure-CLI](../articles/virtual-network/virtual-networks-static-private-ip-arm-cli.md)
 > * [Azure Portal (klassiek)](../articles/virtual-network/virtual-networks-static-private-ip-classic-pportal.md)
 > * [Power shell (klassiek)](../articles/virtual-network/virtual-networks-static-private-ip-classic-ps.md)
-> * [Azure CLI (klassiek)](../articles/virtual-network/virtual-networks-static-private-ip-classic-cli.md)
+> * [Azure CLI (klassiek)](/previous-versions/azure/virtual-network/virtual-networks-static-private-ip-classic-cli)

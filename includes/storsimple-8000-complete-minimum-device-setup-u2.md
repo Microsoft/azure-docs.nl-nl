@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 05719d9633429c4b8ee6fee79833f594c94ab23d
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 867cdc97ff91d5932230b733dee4d7660d499c39
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376116"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026633"
 ---
 #### <a name="to-complete-the-minimum-storsimple-device-setup"></a>De minimale StorSimple-apparaatinstelling voltooien
 
@@ -24,7 +24,7 @@ ms.locfileid: "93376116"
    
    1. Geef een **beschrijvende naam** voor het apparaat op. De standaardapparaatnaam bevat informatie zoals het model en serienummer van het apparaat. U kunt een beschrijvende naam van maximaal 64 tekens toewijzen om uw apparaat te beheren.
    2. Stel de **tijdzone** in op basis van de geografische regio waarin het apparaat wordt geïmplementeerd. Het apparaat gebruikt deze tijdzone gebruiken voor alle geplande bewerkingen.
-   3. Onder de **DATA 0-INSTELLINGEN** :
+   3. Onder de **DATA 0-INSTELLINGEN**:
 
        1. Uw DATA 0-netwerkinterface wordt weergegeven als ingeschakeld met de netwerkinstellingen (IP, subnet, gateway) geconfigureerd via de installatiewizard. DATA 0 wordt ook automatisch ingeschakeld voor de cloud, evenals voor iSCSI.
 
@@ -41,4 +41,4 @@ ms.locfileid: "93376116"
     ![StorSimple mini maal instellen netwerk interfaces van het apparaat 3](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig4.png)
 
 <!--Link reference-->
-[Test]: https://technet.microsoft.com/library/dn715782(v=wps.630).aspx
+[Test]: /previous-versions/windows/powershell-scripting/dn715782(v=wps.630)

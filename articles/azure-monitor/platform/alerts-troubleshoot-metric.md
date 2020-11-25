@@ -4,16 +4,16 @@ description: Veelvoorkomende problemen met Azure Monitor metrische waarschuwinge
 author: harelbr
 ms.author: harelbr
 ms.topic: troubleshooting
-ms.date: 10/05/2020
+ms.date: 11/25/2020
 ms.subservice: alerts
-ms.openlocfilehash: 2e68a780890b8ddf857bf8f52a0ecf9a4c24b36c
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 5a57e8b7f3bf2c3e820a3befee0ee69c48a2afa9
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342124"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029873"
 ---
-# <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen in Azure Monitor metrische waarschuwingen oplossen 
+# <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen met metrische waarschuwingen in Azure Monitor oplossen 
 
 In dit artikel worden veelvoorkomende problemen in Azure Monitor [metrische waarschuwingen](alerts-metric-overview.md) beschreven en wordt uitgelegd hoe u deze problemen kunt oplossen.
 
@@ -44,7 +44,7 @@ Als u denkt dat een metrische waarschuwing moet worden geactiveerd, maar niet is
 
 Als u denkt dat uw metrische waarschuwing niet hoeft te worden geactiveerd, maar dit wel is gelukt, kunt u de volgende stappen uitvoeren om het probleem op te lossen.
 
-1. Raadpleeg de [lijst met geactiveerde waarschuwingen](https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/AzureMonitoringBrowseBlade/alertsV2) om de geactiveerde waarschuwing te vinden en klik om de details ervan weer te geven. Lees de informatie in **Waarom is deze waarschuwing geactiveerd?** om de metrische grafiek, **metrische waarde**en **drempel waarde** weer te geven op het moment dat de waarschuwing werd geactiveerd.
+1. Raadpleeg de [lijst met geactiveerde waarschuwingen](https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/AzureMonitoringBrowseBlade/alertsV2) om de geactiveerde waarschuwing te vinden en klik om de details ervan weer te geven. Lees de informatie in **Waarom is deze waarschuwing geactiveerd?** om de metrische grafiek, **metrische waarde** en **drempel waarde** weer te geven op het moment dat de waarschuwing werd geactiveerd.
 
     > [!NOTE] 
     > Als u een voor waarde voor de dynamische drempel waarden gebruikt en u er zeker van wilt zijn dat de gebruikte drempel waarden onjuist zijn, geeft u feedback met behulp van het frons pictogram. Deze feedback is van invloed op het machine learning algoritme onderzoek en helpt toekomstige detecties te verbeteren.
@@ -142,7 +142,7 @@ Als u de Resource Manager-sjabloon van een metrische waarschuwings regel exporte
 2. Schakel in de sectie Overzicht het selectie vakje **verborgen typen weer geven** in.
 3. Selecteer in het filter **type** *micro soft. Insights/metricalerts*.
 4. Selecteer de relevante waarschuwings regel om de details ervan weer te geven.
-5. Selecteer onder **instellingen**de optie **sjabloon exporteren**.
+5. Selecteer onder **instellingen** de optie **sjabloon exporteren**.
 
 ## <a name="metric-alert-rules-quota-too-small"></a>Het quotum voor de waarschuwings regels voor metrische gegevens is te klein
 
@@ -241,6 +241,8 @@ Houd rekening met de volgende beperkingen voor de namen van regels voor metrisch
 - De naam van de regel voor metrische waarschuwingen mag niet de volgende tekens bevatten: * # & +:  < > ? @ % { } \ / 
 - De namen van regels voor metrische waarschuwingen mogen niet eindigen op een spatie of een punt
 
+> [!NOTE] 
+> Als de naam van de waarschuwings regel tekens bevat die niet alfabetisch of numeriek zijn (bijvoorbeeld spaties, lees tekens of symbolen), kunnen deze tekens URL-gecodeerd zijn wanneer ze door bepaalde clients worden opgehaald.
 
 ## <a name="restrictions-when-using-dimensions-in-a-metric-alert-rule-with-multiple-conditions"></a>Beperkingen bij het gebruik van dimensies in een metrische waarschuwings regel met meerdere voor waarden
 

@@ -1,10 +1,15 @@
 ---
-ms.openlocfilehash: dba7a3cc7a68d360fd6e56511b71ae364f624646
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: ggailey777
+ms.service: azure-functions
+ms.topic: include
+ms.date: 09/20/2020
+ms.author: glenga
+ms.openlocfilehash: 7d1bf8dd2d1c8feab8b051a8edad7d5e570ee11b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89569272"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028408"
 ---
 De standaardtijd zone die wordt gebruikt in de CRON-expressies is Coordinated Universal Time (UTC). Als u de CRON-expressie op basis van een andere tijd zone wilt gebruiken, maakt u een app-instelling voor de functie-app met de naam `WEBSITE_TIME_ZONE` . 
 
@@ -12,22 +17,16 @@ De waarde van deze instelling is afhankelijk van het besturings systeem en het p
 
 |Besturingssysteem |Plannen |Waarde |
 |-|-|-|
-| **Windows** |Alles | Stel de waarde in op de naam van de gewenste tijd zone, zoals weer gegeven in de [micro soft-tijd zone-index](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749073(v=ws.10)). |
+| **Windows** |Alles | Stel de waarde in op de naam van de gewenste tijd zone die is opgegeven door de tweede regel van elk paar dat wordt opgegeven door de Windows-opdracht `tzutil.exe /L` |
 | **Linux** |Premium<br/>Toegewezen |Stel de waarde in op de naam van de gewenste tijd zone, zoals weer gegeven in de [TZ-data base](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). |
 
 > [!NOTE]
 > `WEBSITE_TIME_ZONE` wordt momenteel niet ondersteund in het verbruiks abonnement voor Linux.
 
-*Eastern (standaard tijd* ) (Windows) of *America/New_York* (Linux) is bijvoorbeeld UTC-05:00. Als u wilt dat uw timer trigger wordt geactiveerd om 10:00 uur EST elke dag, gebruikt u de volgende NCRONTAB-expressie die accounts voor UTC-tijd zone:
-
-```
-"0 0 15 * * *"
-``` 
-
-Of maak een app-instelling voor de naam van de functie `WEBSITE_TIME_ZONE` -app, stel de waarde in op `Eastern Standard Time` (Windows) of `America/New_York` (Linux) en gebruik vervolgens de volgende NCRONTAB-expressie: 
+Eastern time in de Verenigde Staten (vertegenwoordigd door `Eastern Standard Time` (Windows) of `America/New_York` (Linux)) gebruikt in dat geval utc-05:00 tijdens de standaard tijd en UTC-04:00 tijdens de zomer tijd. Als u wilt dat een timer trigger wordt geactiveerd om 10:00 uur Eastern time elke dag, maakt u een app-instelling voor uw functie `WEBSITE_TIME_ZONE` -app met de naam, stelt u de waarde in op `Eastern Standard Time` (Windows) of `America/New_York` (Linux) en gebruikt u vervolgens de volgende NCRONTAB-expressie: 
 
 ```
 "0 0 10 * * *"
 ``` 
 
-Wanneer u gebruikt `WEBSITE_TIME_ZONE` , wordt de tijd aangepast voor tijd wijzigingen in de specifieke tijd zone, zoals zomer tijd. 
+Wanneer u `WEBSITE_TIME_ZONE` de tijd gebruikt, wordt het tijdstip gewijzigd in de specifieke tijd zone, inclusief zomer tijd en wijzigingen in de standaard tijd.

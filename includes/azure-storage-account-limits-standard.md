@@ -9,11 +9,11 @@ ms.date: 09/30/2020
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: ef9efe389894af7c792e980922ca422e9d05929b
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95553387"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026766"
 ---
 In de volgende tabel staan de standaardlimieten voor Azure algemeen v1, v2, Blob Storage en blok-blob-opslagaccounts. De limiet voor *inkomend verkeer* verwijst naar alle gegevens die naar een opslagaccount worden verzonden. De limiet voor *uitgaand verkeer* verwijst naar alle gegevens die vanaf een opslagaccount worden ontvangen.
 

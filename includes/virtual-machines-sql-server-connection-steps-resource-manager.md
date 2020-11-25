@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: 51dc04fbef8d09878f33d7fda6f15039d3afba3e
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95553623"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027367"
 ---
 ### <a name="configure-a-dns-label-for-the-public-ip-address"></a>Een DNS-label configureren voor het openbare IP-adres
 

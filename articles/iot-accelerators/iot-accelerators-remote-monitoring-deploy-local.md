@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 01/17/2019
 ms.topic: conceptual
 ms.openlocfilehash: a1eba1fceb959bd475d205176c2c53f6409fdc77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73890890"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96024143"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---visual-studio"></a>De externe controle oplossings versneller implementeren lokaal-Visual Studio
 
@@ -64,7 +64,7 @@ De volgende stappen laten zien hoe u de micro Services voor externe controle uit
 
 1. Start Visual Studio.
 1. Open de oplossing **Remote-monitoring. SLN** in de map **Services** in uw lokale kopie van de opslag plaats.
-1. Klik in **Solution Explorer**met de rechter muisknop op de oplossing en klik op **Eigenschappen**.
+1. Klik in **Solution Explorer** met de rechter muisknop op de oplossing en klik op **Eigenschappen**.
 1. Selecteer **algemene eigenschappen > project voor opstarten**.
 1. Selecteer **meerdere opstart projecten** en stel **actie** in die moet worden **gestart** voor de volgende projecten:
     * WebService (asa-manager\WebService)
@@ -96,14 +96,14 @@ npm install
 npm start
 ```
 
-Wanneer het starten is voltooid, wordt in uw browser de pagina **http: \/ /localhost: 3000/dash board**weer gegeven. De fouten op deze pagina worden verwacht. Als u de toepassing zonder fouten wilt weer geven, voert u de volgende stap uit.
+Wanneer het starten is voltooid, wordt in uw browser de pagina **http: \/ /localhost: 3000/dash board** weer gegeven. De fouten op deze pagina worden verwacht. Als u de toepassing zonder fouten wilt weer geven, voert u de volgende stap uit.
 
 ### <a name="configure-and-run-nginx"></a>NGINX configureren en uitvoeren
 
 Stel een reverse-proxy server in om de webtoepassing en micro services die worden uitgevoerd op uw lokale computer te koppelen:
 
 * Kopieer het bestand **nginx. conf** vanuit de map **webui\scripts\localhost** in uw lokale kopie van de opslag plaats naar de installatiemap van **nginx\conf** .
-* Voer **nginx**uit.
+* Voer **nginx** uit.
 
 Zie [nginx voor Windows](https://nginx.org/en/docs/windows.html)voor meer informatie over het uitvoeren van **nginx**.
 

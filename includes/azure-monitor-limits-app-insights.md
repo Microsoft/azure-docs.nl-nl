@@ -9,11 +9,11 @@ ms.date: 02/07/2019
 ms.author: robb
 ms.custom: include file
 ms.openlocfilehash: 397011cfd862607932f671c1f2cacd25513bdeb2
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95558664"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026771"
 ---
 Er gelden enkele beperkingen voor het aantal meetgegevens en gebeurtenissen per toepassing, per instrumentatiesleutel. De limieten zijn afhankelijk van de [prijscategorie](https://azure.microsoft.com/pricing/details/application-insights/) die u kiest.
 

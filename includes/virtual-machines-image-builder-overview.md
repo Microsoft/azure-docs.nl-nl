@@ -1,20 +1,20 @@
 ---
-author: cynthn
-ms.author: cynthn
+author: ''
+ms.author: danielsollondon
 ms.date: 08/03/2020
 ms.topic: include
 ms.service: virtual-machines-linux
 manager: daberry
-ms.openlocfilehash: a5a201a9f993db2be00645d8d60a11c5be9cdbe0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c028fc1abd77bda1a41857a7a7c77da1ad1b2d2
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89303976"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027241"
 ---
 Met gestandaardiseerde installatie kopieën van virtuele machines kunnen organisaties migreren naar de Cloud en zorgen voor consistentie in de implementaties. Installatie kopieën bevatten doorgaans vooraf gedefinieerde beveiligings-en configuratie-instellingen en de benodigde software. Voor het instellen van uw eigen Imaging-pijp lijn zijn tijd, infra structuur en configuratie vereist, maar met Azure VM Image Builder kunt u een eenvoudige configuratie bieden waarmee uw installatie kopie wordt beschreven, verzonden naar de service en de installatie kopie wordt gebouwd en gedistribueerd.
  
-Met de opbouw functie voor installatie kopieën van Azure VM (Azure Image Builder) kunt u beginnen met een Azure Marketplace-installatie kopie op basis van Windows of Linux, bestaande aangepaste installatie kopieën of Red Hat Enterprise Linux (RHEL) ISO en begint met het toevoegen van uw eigen aanpassingen. Omdat de opbouw functie voor installatie kopieën is gebaseerd op [HashiCorp Packer](https://packer.io/), kunt u ook uw bestaande scripts voor de shell-inrichtings pakket importeren. U kunt ook opgeven waar u wilt dat uw installatie kopieën worden gehost, in de [Galerie met gedeelde installatie kopieën van Azure](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries)als een beheerde installatie kopie of een VHD.
+Met de opbouw functie voor installatie kopieën van Azure VM (Azure Image Builder) kunt u beginnen met een Azure Marketplace-installatie kopie op basis van Windows of Linux, bestaande aangepaste installatie kopieën of Red Hat Enterprise Linux (RHEL) ISO en begint met het toevoegen van uw eigen aanpassingen. Omdat de opbouw functie voor installatie kopieën is gebaseerd op [HashiCorp Packer](https://packer.io/), kunt u ook uw bestaande scripts voor de shell-inrichtings pakket importeren. U kunt ook opgeven waar u wilt dat uw installatie kopieën worden gehost, in de [Galerie met gedeelde installatie kopieën van Azure](../articles/virtual-machines/windows/shared-image-galleries.md)als een beheerde installatie kopie of een VHD.
 
 > [!IMPORTANT]
 > Azure Image Builder is momenteel beschikbaar als open bare preview.
@@ -59,12 +59,8 @@ Ondersteuning voor RHEL Iso's wordt niet meer ondersteund.
 
 ## <a name="how-it-works"></a>Uitleg
 
-
-![Conceptuele tekening van Azure Image Builder](./media/virtual-machines-image-builder-overview/image-builder.png)
-
 De opbouw functie voor installatie kopieën van Azure is een volledig beheerde Azure-service die toegankelijk is voor een Azure-resource provider. Het Azure Image Builder-proces bestaat uit drie hoofd onderdelen: bron, aanpassen en distribueren. deze worden weer gegeven in een sjabloon. In het onderstaande diagram ziet u de onderdelen, met een aantal eigenschappen. 
  
-
 
 **Image Builder-proces** 
 
@@ -81,14 +77,14 @@ Wanneer u zich registreert voor de (AIB), verleent dit de AIB-service toestemmin
 
 Als u wilt dat Azure VM Image Builder installatie kopieën naar de beheerde installatie kopieën of naar een galerie met gedeelde installatie kopieën kan distribueren, moet u een door de gebruiker toegewezen Azure-identiteit maken die machtigingen heeft voor het lezen en schrijven van installatie kopieën. Als u toegang hebt tot Azure Storage, hebt u machtigingen nodig om persoonlijke containers te lezen.
 
-In eerste instantie moet u de [aan de gebruiker toegewezen beheerde identiteits documentatie voor Azure maken](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli) volgen voor het maken van een identiteit.
+In eerste instantie moet u de [aan de gebruiker toegewezen beheerde identiteits documentatie voor Azure maken](../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md) volgen voor het maken van een identiteit.
 
 Als u de identiteit hebt die u nodig hebt om deze machtigingen te verlenen, kunt u dit doen door een aangepaste functie definitie van Azure te gebruiken en vervolgens de door de gebruiker toegewezen beheerde identiteit toe te wijzen om de aangepaste roldefinitie te gebruiken.
 
 De machtigingen worden [hier](https://github.com/danielsollondon/azvmimagebuilder/blob/master/aibPermissions.md#azure-vm-image-builder-permissions-explained-and-requirements)uitgebreid beschreven en de voor beelden laten zien hoe dit wordt geïmplementeerd.
 
 > [!Note]
-> Eerder met AIB zou u de SPN van AIB gebruiken en de SPN-machtigingen verlenen aan de installatie kopie resource groepen. We gaan weg van dit model om toekomstige mogelijkheden te bieden. Van 26 mei 2020, de opbouw functie voor installatie kopieën accepteert geen sjablonen die geen door de gebruiker toegewezen identiteit hebben, bestaande sjablonen moeten opnieuw worden ingediend bij de service met een [gebruikers identiteit](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-json?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json&bc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fbreadcrumb%2Ftoc.json#identity). In deze voor beelden ziet u al hoe u een door de gebruiker toegewezen identiteit kunt maken en toevoegen aan een sjabloon. Raadpleeg deze [documentatie](https://github.com/danielsollondon/azvmimagebuilder#service-updates-and-latest-release-information) voor meer informatie over deze wijziging en releases van updates.
+> Eerder met AIB zou u de SPN van AIB gebruiken en de SPN-machtigingen verlenen aan de installatie kopie resource groepen. We gaan weg van dit model om toekomstige mogelijkheden te bieden. Van 26 mei 2020, de opbouw functie voor installatie kopieën accepteert geen sjablonen die geen door de gebruiker toegewezen identiteit hebben, bestaande sjablonen moeten opnieuw worden ingediend bij de service met een [gebruikers identiteit](../articles/virtual-machines/linux/image-builder-json.md?bc=%252fazure%252fvirtual-machines%252fwindows%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json#identity). In deze voor beelden ziet u al hoe u een door de gebruiker toegewezen identiteit kunt maken en toevoegen aan een sjabloon. Raadpleeg deze [documentatie](https://github.com/danielsollondon/azvmimagebuilder#service-updates-and-latest-release-information) voor meer informatie over deze wijziging en releases van updates.
 
 ## <a name="costs"></a>Kosten
 U maakt een aantal reken-, netwerk-en opslag kosten bij het maken, maken en opslaan van installatie kopieën met Azure Image Builder. Deze kosten zijn vergelijkbaar met de kosten die zijn gemaakt bij het hand matig maken van aangepaste installatie kopieën. Voor de resources worden er kosten in rekening gebracht voor uw Azure-tarieven. 
@@ -105,4 +101,3 @@ De opbouw functie voor installatie kopieën ondersteunt momenteel alleen systeem
 ## <a name="next-steps"></a>Volgende stappen 
  
 Zie de artikelen voor het bouwen van [Linux](../articles/virtual-machines/linux/image-builder.md) -of [Windows](../articles/virtual-machines/windows/image-builder.md) -installatie kopieën om de Azure Image Builder uit te proberen.
- 

@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.openlocfilehash: cedfd719a5f0aeed6fc2e932d3aa5189b83c9796
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95555661"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027949"
 ---
 De [Configuration Manager-bibliotheek van Microsoft Azure voor .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/) biedt een klasse voor het parseren van een verbindingsreeks uit een configuratiebestand. De klasse [CloudConfigurationManager](/previous-versions/azure/reference/mt634650(v=azure.100)) parseert configuratie-instellingen. Het parseert instellingen voor client toepassingen die worden uitgevoerd op het bureau blad, op een mobiel apparaat, op een virtuele machine van Azure of in een Azure-Cloud service.
 

@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 01/17/2019
 ms.topic: conceptual
 ms.openlocfilehash: 8f1d20e9a6a78d99a23fe4b98aeb4f3eb8359da7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73890960"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96024177"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---visual-studio-code"></a>De externe bewaking Solution Accelerator Local-Visual Studio code implementeren
 
@@ -80,14 +80,14 @@ npm install
 npm start
 ```
 
-Wanneer het starten is voltooid, wordt in uw browser de pagina **http: \/ /localhost: 3000/dash board**weer gegeven. De fouten op deze pagina worden verwacht. Als u de toepassing zonder fouten wilt weer geven, voert u de volgende stap uit.
+Wanneer het starten is voltooid, wordt in uw browser de pagina **http: \/ /localhost: 3000/dash board** weer gegeven. De fouten op deze pagina worden verwacht. Als u de toepassing zonder fouten wilt weer geven, voert u de volgende stap uit.
 
 ### <a name="configure-and-run-nginx"></a>NGINX configureren en uitvoeren
 
 Stel een reverse-proxy server in om de webtoepassing en micro services die worden uitgevoerd op uw lokale computer te koppelen:
 
 * Kopieer het bestand **nginx. conf** van de map **webui\scripts\localhost** naar de installatiemap van **nginx\conf** .
-* Voer **nginx**uit.
+* Voer **nginx** uit.
 
 Zie [nginx voor Windows](https://nginx.org/en/docs/windows.html)voor meer informatie over het uitvoeren van **nginx**.
 

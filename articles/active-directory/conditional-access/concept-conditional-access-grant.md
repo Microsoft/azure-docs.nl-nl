@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ef2d233024ab3e9cd086e8285e681dc9f42f3f7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a8915ae349e33390ce5bb687d7c07a21665a0258
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95904015"
+ms.locfileid: "96029401"
 ---
 # <a name="conditional-access-grant"></a>Voorwaardelijke toegang: verlenen
 
@@ -108,7 +108,7 @@ Deze instelling is van toepassing op de volgende iOS-en Android-apps:
 - De goedgekeurde client-apps ondersteunen de functie intune-Mobile Application Management.
 - De vereiste **goedgekeurde client-app vereisen** :
    - Biedt alleen ondersteuning voor de voor waarde iOS en Android voor Device platform.
-   - Er is een Broker-app vereist om het apparaat te registreren. Op iOS is de Broker-app Microsoft Authenticator en op Android, Intune-bedrijfsportal app.
+   - Er is een Broker-app vereist om het apparaat te registreren. De Broker-app kan de Microsoft Authenticator voor iOS of de Microsoft Authenticator of micro soft-bedrijfs portal voor Android-apparaten zijn.
 - Voorwaardelijke toegang kan niet worden beschouwd als micro soft Edge in de InPrivate-modus van een goedgekeurde client-app.
 
 Zie het artikel [How to: goedgekeurde client-apps vereisen voor toegang tot Cloud app met voorwaardelijke toegang](app-based-conditional-access.md) voor configuratie voorbeelden.

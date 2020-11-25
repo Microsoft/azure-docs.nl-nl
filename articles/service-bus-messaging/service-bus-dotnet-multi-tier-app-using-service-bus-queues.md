@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 746257195220d26ad5d011a39022a3957e8cb1ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40529df5195a29fbf2ff4887311932c2ffbf471d
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021779"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029892"
 ---
 # <a name="net-multi-tier-application-using-azure-service-bus-queues"></a>.NET-toepassing met meerdere lagen die Azure Service Bus-wachtrijen gebruikt
 
@@ -52,7 +52,7 @@ In de volgende gedeelten wordt de code besproken waarmee deze architectuur wordt
 
 ## <a name="create-a-namespace"></a>Een naamruimte maken
 
-De eerste stap is het maken van een *naam ruimte*en het verkrijgen van een [Shared Access Signature SAS-](service-bus-sas.md) sleutel voor die naam ruimte. Een naamruimte biedt een toepassingsbegrenzing voor elke toepassing die toegankelijk is via Service Bus. Er wordt automatisch een SAS-sleutel gegenereerd wanneer er een naamruimte wordt gemaakt. De combinatie van naamruimte en SAS-sleutel biedt Service Bus de benodigde referenties voor het verifiëren van toegang tot een toepassing.
+De eerste stap is het maken van een *naam ruimte* en het verkrijgen van een [Shared Access Signature SAS-](service-bus-sas.md) sleutel voor die naam ruimte. Een naamruimte biedt een toepassingsbegrenzing voor elke toepassing die toegankelijk is via Service Bus. Er wordt automatisch een SAS-sleutel gegenereerd wanneer er een naamruimte wordt gemaakt. De combinatie van naamruimte en SAS-sleutel biedt Service Bus de benodigde referenties voor het verifiëren van toegang tot een toepassing.
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
@@ -63,7 +63,7 @@ Vervolgens voegt u code toe waarmee items worden verzonden naar een Service Bus-
 
 ### <a name="create-the-project"></a>Het project maken
 
-1. Visual Studio starten met administratorbevoegdheden: klik met de rechtermuisknop op het programmapictogram **Visual Studio** en klik vervolgens op **Als administrator uitvoeren**. Voor de Azure-rekenemulator, die verderop in dit artikel wordt besproken, is vereist dat Visual Studio wordt gestart met administratorbevoegdheden.
+1. Visual Studio starten met administratorbevoegdheden: klik met de rechtermuisknop op het programmapictogram **Visual Studio** en klik vervolgens op **Als administrator uitvoeren**. De Azure Compute-emulator, die verderop in dit artikel wordt besproken, vereist dat Visual Studio met beheerders bevoegdheden wordt gestart.
    
    Klik in het menu **Bestand** van Visual Studio op **Nieuw** en klik vervolgens op **Project**.
 2. Klik vanuit **Geïnstalleerde sjablonen** onder **Visual C#** op **Cloud** en klik vervolgens op **Azure Cloud Service**. Geef het project de naam **MultiTierApp**. Klik vervolgens op **OK**.

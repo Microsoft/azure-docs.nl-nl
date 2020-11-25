@@ -6,11 +6,11 @@ ms.author: dpalled
 manager: diviso
 ms.date: 07/09/2020
 ms.openlocfilehash: f25c335c568c112c05f81df51d69e83aeff423e2
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95557886"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027674"
 ---
 ## <a name="business-disaster-recovery"></a>Bedrijfs nood herstel
 

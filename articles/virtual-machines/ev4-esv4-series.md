@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: b8f6768ebf988ff568739c86303b52ea5b0a9234
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 01e9787d9b812334d959ce6ae9b929ec8734ffb5
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92018709"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030472"
 ---
 # <a name="ev4-and-esv4-series"></a>Ev4- en Esv4-serie
 
@@ -58,7 +58,7 @@ Esv4-serie-grootten worden uitgevoerd op Intel &reg; Xeon &reg; Platinum 8272CL 
 [Premium Storage caching](premium-storage-performance.md): ondersteund<br>
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
-[Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
+[Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maxi maal aantal niet-opgeslagen schijf doorvoer: IOPS/MBps | Max. aantal NIC's|Verwachte netwerk bandbreedte (Mbps) |

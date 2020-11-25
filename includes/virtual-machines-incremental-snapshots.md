@@ -9,11 +9,11 @@ ms.date: 09/15/2018
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: a662598efdca05769c7da9fbeecdf692dccdacb5
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95553669"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028560"
 ---
 ## <a name="overview"></a>Overzicht
 Azure Storage biedt de mogelijkheid om moment opnamen van blobs te maken. Met moment opnamen wordt de BLOB-status op dat moment vastgelegd. In dit artikel wordt een scenario beschreven waarin u back-ups van virtuele-machine schijven kunt onderhouden met behulp van moment opnamen. U kunt deze methodologie gebruiken wanneer u ervoor kiest om Azure Backup en de herstel service niet te gebruiken en een aangepaste back-upstrategie voor de virtuele-machine schijven te maken. Voor virtuele machines met bedrijfs-of essentiële werk belastingen is het raadzaam om [Azure backup](../articles/backup/backup-azure-vms-introduction.md) te gebruiken als onderdeel van de back-upstrategie.  

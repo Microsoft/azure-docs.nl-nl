@@ -1,6 +1,6 @@
 ---
-title: Include-bestand
-description: Include-bestand
+title: bestand opnemen
+description: bestand opnemen
 services: iot-accelerators
 author: dominicbetts
 ms.service: iot-accelerators
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/16/2018
 ms.author: dobett
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: 817c41a969f03ad04d372c516a16ef6b770f3e18
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: e3eed0e7378f513e45e0eb9ac719a92e87ec1d53
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755785"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028370"
 ---
 ## <a name="access-the-virtual-machine"></a>Toegang tot de virtuele machine
 
@@ -35,7 +35,7 @@ De volgende stappen laten zien hoe u de virtuele machine van Azure configureert 
     az network nsg rule update --name SSH --nsg-name contoso-simulation-nsg -g contoso-simulation --access Allow -o table
     ```
 
-    Schakel SSH-toegang alleen in tijdens testen en ontwikkeling. Als u SSH inschakelt, [moet u dit zo snel mogelijk weer uitschakelen](https://docs.microsoft.com/azure/security/fundamentals/network-best-practices#disable-rdpssh-access-to-virtual-machines).
+    Schakel SSH-toegang alleen in tijdens testen en ontwikkeling. Als u SSH inschakelt, [moet u dit zo snel mogelijk weer uitschakelen](../articles/security/fundamentals/network-best-practices.md#disable-rdpssh-access-to-virtual-machines).
 
 1. Werk het wacht woord voor het **azureuser** -account op de virtuele machine bij naar een wacht woord dat u kent. Kies uw eigen wacht woord wanneer u de volgende opdracht uitvoert:
 

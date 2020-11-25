@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9020e364a5c8d7a59dad5549e88036dc9edaad7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c30ad26f079e6353dc4763b9ae968c33882d8ab6
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90089663"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029344"
 ---
 # <a name="device-identity-and-desktop-virtualization"></a>Apparaat-id en desktop-virtualisatie
 
@@ -48,20 +48,19 @@ Voordat u apparaat-id's configureert in azure AD voor uw VDI-omgeving, moet u ve
 
 | Type apparaat-id | Id-infrastructuur | Windows-apparaten | VDI-platform versie | Ondersteund |
 | --- | --- | --- | --- | --- |
-| Hybride Azure AD-deelname | Federatief<sup>3</sup> | Windows huidige en Windows down level | Permanent | Ja |
+| Hybride Azure AD-deelname | Federatief<sup>3</sup> | Windows huidige en Windows down level | Permanent | Yes |
 |   |   | Windows actueel | Niet-persistent | Ja<sup>5</sup> |
 |   |   | Downlevel Windows | Niet-persistent | Ja<sup>6</sup> |
-|   | Beheerd<sup>4</sup> | Windows huidige en Windows down level | Permanent | Ja |
-|   |   | Windows actueel | Niet-persistent | Nee |
+|   | Beheerd<sup>4</sup> | Windows huidige en Windows down level | Permanent | Yes |
+|   |   | Windows actueel | Niet-persistent | No |
 |   |   | Downlevel Windows | Niet-persistent | Ja<sup>6</sup> |
-| Azure AD-deelname | Federatief | Windows actueel | Permanent | Nee |
-|   |   |   | Niet-persistent | Nee |
-|   | Beheerd | Windows actueel | Permanent | Nee |
-|   |   |   | Niet-persistent | Nee |
+| Azure AD-deelname | Federatief | Windows actueel | Permanent | No |
+|   |   |   | Niet-persistent | No |
+|   | Beheerd | Windows actueel | Permanent | No |
+|   |   |   | Niet-persistent | No |
 | Azure AD-geregistreerd | Federatief/beheerd | Windows-huidige/Windows-down level | Persistent/niet-persistent | Niet van toepassing |
 
-<sup>1</sup> **Windows-huidige** apparaten vertegenwoordigen Windows 10, Windows Server 2016 en Windows Server 2019.
-
+<sup>1</sup> **Windows-huidige** apparaten vertegenwoordigen Windows 10, Windows Server 2016 V1803 of hoger en Windows Server 2019.
 <sup>2</sup> **Windows-down level-** apparaten vertegenwoordigen windows 7, Windows 8,1, Windows Server 2008 R2, Windows Server 2012 en Windows Server 2012 R2. Zie [ondersteuning voor Windows 7](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support)voor meer informatie over ondersteuning voor Windows 7. Zie voor ondersteunings informatie over Windows Server 2008 R2 voor [bereiding op Windows server 2008 end of support](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
 <sup>3</sup> een **federatieve** infra structuur voor identiteiten is een omgeving met een id-provider, zoals AD FS of een andere IDP van derden.

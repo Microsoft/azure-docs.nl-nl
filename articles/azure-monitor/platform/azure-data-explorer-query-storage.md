@@ -7,12 +7,12 @@ ms.author: bwren
 ms.reviewer: bwren
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 8710e0cdd6c930338009fb2b7f3bd98fafcfad3e
-ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
+ms.openlocfilehash: 18ece47187e3f83277d7d925ad958d2ede7cb337
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95411560"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030013"
 ---
 # <a name="query-exported-data-from-azure-monitor-using-azure-data-explorer-preview"></a>Gegevens van Azure Monitor geëxporteerd met Azure Data Explorer (preview-versie)
 Bij het exporteren van gegevens uit Azure Monitor naar een Azure Storage-account is een lage Bewaar periode en de mogelijkheid om Logboeken opnieuw toe te wijzen aan verschillende regio's. Gebruik Azure Data Explorer om query's uit te voeren op gegevens die zijn geëxporteerd uit uw Log Analytics-werk ruimten. Eenmaal geconfigureerd, worden ondersteunde tabellen die vanuit uw werk ruimten worden verzonden naar een Azure-opslag account, beschikbaar als gegevens bron voor Azure-Data Explorer.
@@ -122,7 +122,7 @@ In de volgende afbeelding ziet u een voor beeld van de uitvoer.
 
 >[!TIP]
 >* Kopieer, plak en voer vervolgens de uitvoer van het script in uw Azure Data Explorer-client hulpprogramma uit om de tabel en toewijzing te maken.
->* Als u alle gegevens in de container wilt gebruiken, kunt u het script aanpassen en de URL wijzigen in ' https://your.blob.core.windows.net/containername ; SecKey'
+>* Als u alle gegevens in de container wilt gebruiken, wijzigt u het script en wijzigt u de URL in ' https://your.blob.core.windows.net/containername ; SecKey'
 
 ## <a name="query-the-exported-data-from-azure-data-explorer"></a>Query's uitvoeren op de geëxporteerde gegevens van Azure Data Explorer 
 

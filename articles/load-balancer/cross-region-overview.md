@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: allensu
 ms.custom: references_regions
-ms.openlocfilehash: 8b2f8e82cac1d26689659286a5a0f81f06fb68ca
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: f0630599c7c52f11a4cf3153bae38ad2d515b6bc
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695058"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029758"
 ---
 # <a name="cross-region-load-balancer-preview"></a>Load balancer voor meerdere regio's (preview-versie)
 
@@ -35,7 +35,7 @@ Azure Standard Load Balancer ondersteunt taak verdeling tussen regio's, waarbij 
 * [Bouwen op bestaande Load Balancer](#build-cross-region-solution-on-existing-azure-load-balancer) oplossing zonder leer curve
 
 > [!IMPORTANT]
-> De load balancer voor meerdere regio's is momenteel beschikbaar als preview-versie en is niet algemeen verkrijgbaar.  Neem contact op met het volgende om toegang te krijgen tot de preview-versie van load balancer voor meerdere regio's [crossregionlb@microsoft.com](mailto:crossregionlb@microsoft.com) . </br> </br>
+> De load balancer voor meerdere regio's is momenteel beschikbaar als preview-versie en is verborgen in de preview-Portal. Meld u aan om **https://preview.portal.azure.com/?feature.globallb=true** de functie weer te geven en te implementeren.. </br> </br>
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 De taak verdeling tussen regio's biedt dezelfde voor delen van hoge prestaties en lage latentie als regionale standaard load balancer. 
@@ -97,7 +97,7 @@ Voeg uw bestaande load balancer-implementaties toe aan een kruis regio load bala
 In de **regio thuis** wordt de Load Balancer van de Kruis regio geïmplementeerd. Deze regio heeft geen invloed op hoe het verkeer wordt doorgestuurd. Als een thuis regio uitvalt, heeft dit geen invloed op de stroom van het verkeer.
 
 ### <a name="home-regions"></a>Thuis regio's
-* US - oost 2
+* VS - oost 2
 * VS - west
 * Europa -west
 * Azië - zuidoost
@@ -122,14 +122,14 @@ De load balancer over meerdere regio's stuurt het verkeer naar de juiste regiona
 * VS - west 
 * Europa - noord 
 * VS - zuid-centraal 
-* US - west 2 
+* VS - west 2 
 * Verenigd Koninkrijk Zuid 
 * Azië - zuidoost 
 * VS - noord-centraal 
-* Japan East 
+* Japan - oost 
 * Azië - oost 
 * VS - west-centraal 
-* Australia Southeast 
+* Australië - zuidoost 
 * Australië - oost 
 * India - centraal 
 
@@ -149,6 +149,6 @@ Load balancer over meerdere regio's, deelt u de [Sla](https://azure.microsoft.co
  
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Een openbare standaard load balancer maken](quickstart-load-balancer-standard-public-portal.md) om aan de slag te gaan met een load balancer.
+- Zie [zelf studie: een Load Balancer voor meerdere regio's maken met behulp van de Azure portal voor het maken van](tutorial-cross-region-portal.md) een cross-regio Load Balancer.
+- Zie [een open bare standaard Load Balancer maken](quickstart-load-balancer-standard-public-portal.md) om een standaard regionale Load Balancer te maken.
 - Meer informatie over [Azure Load Balancer](load-balancer-overview.md).
-- [Veelgestelde vragen](load-balancer-faqs.md) over Load Balancer

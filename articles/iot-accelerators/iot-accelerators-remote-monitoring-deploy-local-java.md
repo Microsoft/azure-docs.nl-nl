@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 01/24/2019
 ms.topic: conceptual
 ms.openlocfilehash: 78573cfe00d8e2e7ddcbf705dffdd5530f82c4e0
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91998606"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96024194"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---intellij"></a>De externe controle oplossings versneller implementeren lokaal-IntelliJ
 
@@ -98,7 +98,7 @@ Als u de vereiste Azure-resources nog niet hebt gemaakt, voert u de volgende sta
    Het script voegt ook een set omgevings variabelen toe aan uw lokale machine. De naam van elke variabele heeft de voor voegsel- **pc's**. Deze omgevings variabelen bieden Details waarmee externe controle de configuratie waarden van een Azure Key Vault bron kan lezen.
 
    > [!TIP]
-   > Wanneer het script is voltooid, worden de omgevings variabelen opgeslagen in een bestand met de naam ** \<your home folder\> \\ . PCs \\ \<solution name\> . env**. U kunt deze gebruiken voor toekomstige implementaties van oplossings versnelling. Houd er rekening mee dat alle omgevings variabelen die op uw lokale computer zijn ingesteld, de waarden in het ** \\ \\ lokale \\ . env** -bestand van Services-scripts overschrijven wanneer u **docker-opstellen**uitvoert.
+   > Wanneer het script is voltooid, worden de omgevings variabelen opgeslagen in een bestand met de naam **\<your home folder\> \\ . PCs \\ \<solution name\> . env**. U kunt deze gebruiken voor toekomstige implementaties van oplossings versnelling. Houd er rekening mee dat alle omgevings variabelen die op uw lokale computer zijn ingesteld, de waarden in het **\\ \\ lokale \\ . env** -bestand van Services-scripts overschrijven wanneer u **docker-opstellen** uitvoert.
 
 1. Sluit uw opdracht regel omgeving.
 
@@ -109,7 +109,7 @@ Als u de vereiste Azure-resources al hebt gemaakt, stelt u de bijbehorende omgev
 * **PCS_AAD_APPID**: de Azure Active Directory-toepassings-id (Azure AD).
 * **PCS_AAD_APPSECRET**: het Azure AD-toepassings geheim.
 
-Configuratie waarden worden gelezen uit deze Key Vault bron. Deze omgevings variabelen kunnen worden opgeslagen in het bestand ** \<your home folder\> \\ . pc's \\ \<solution name\> . env** van de implementatie. Houd er rekening mee dat omgevings variabelen die op uw lokale computer zijn ingesteld, waarden in het bestand ** \\ \\ Local \\ . env van Services-scripts** worden vervangen wanneer u **docker-opstellen**uitvoert.
+Configuratie waarden worden gelezen uit deze Key Vault bron. Deze omgevings variabelen kunnen worden opgeslagen in het bestand **\<your home folder\> \\ . pc's \\ \<solution name\> . env** van de implementatie. Houd er rekening mee dat omgevings variabelen die op uw lokale computer zijn ingesteld, waarden in het bestand **\\ \\ Local \\ . env van Services-scripts** worden vervangen wanneer u **docker-opstellen** uitvoert.
 
 Een deel van de configuratie die nodig is voor de micro service, wordt opgeslagen in een exemplaar van Key Vault dat is gemaakt tijdens de eerste implementatie. De bijbehorende variabelen in de sleutel kluis moeten naar behoefte worden gewijzigd.
 
@@ -159,9 +159,9 @@ De volgende stappen laten zien hoe u micro Services voor externe controle uitvoe
 
 #### <a name="create-run-configurations"></a>Uitvoerings configuraties maken
 
-1. Selecteer **Run**  >  **bewerkings configuraties**uitvoeren.
-1. Selecteer **nieuwe configuratie**  >  **SBT taak**toevoegen.
-1. Voer een **naam**in en voer vervolgens **taken** in als **Run**.
+1. Selecteer **Run**  >  **bewerkings configuraties** uitvoeren.
+1. Selecteer **nieuwe configuratie**  >  **SBT taak** toevoegen.
+1. Voer een **naam** in en voer vervolgens **taken** in als **Run**.
 1. Selecteer de **werkmap** op basis van de service die u wilt uitvoeren.
 1. Selecteer **OK Toep assen**  >  **OK** om uw keuzes op te slaan.
 1. Uitvoerings configuraties maken voor de volgende webservices:
@@ -176,8 +176,8 @@ In de volgende afbeelding ziet u een voor beeld van het toevoegen van een config
 
 #### <a name="create-a-compound-configuration"></a>Een samengestelde configuratie maken
 
-1. Als u alle services tegelijk wilt uitvoeren, selecteert u **nieuwe configuratie**  >  **verbinding**toevoegen.
-1. Voer een **naam**in en selecteer vervolgens **SBT-taken toevoegen**.
+1. Als u alle services tegelijk wilt uitvoeren, selecteert u **nieuwe configuratie**  >  **verbinding** toevoegen.
+1. Voer een **naam** in en selecteer vervolgens **SBT-taken toevoegen**.
 1. Selecteer **OK Toep assen**  >  **OK** om uw keuzes op te slaan.
 
 De volgende afbeelding laat bijvoorbeeld zien hoe u alle SBT-taken aan één configuratie toevoegt:

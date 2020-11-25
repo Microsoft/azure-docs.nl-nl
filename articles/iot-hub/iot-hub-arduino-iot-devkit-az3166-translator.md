@@ -10,11 +10,11 @@ ms.date: 12/19/2018
 ms.author: liydu
 ms.custom: devx-track-csharp
 ms.openlocfilehash: be26c6fe03dac9b9ff9dbff4a2bdce391ec0837e
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147873"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96024160"
 ---
 # <a name="use-iot-devkit-az3166-with-azure-functions-and-cognitive-services-to-make-a-language-translator"></a>IoT DevKit AZ3166 met Azure Functions en Cognitive Services gebruiken om een taal vertaler te maken
 
@@ -31,7 +31,7 @@ Voer eerst de volgende taken uit om de stappen in deze zelf studie uit te voeren
 ## <a name="create-azure-cognitive-service"></a>Een Azure cognitieve service maken
 
 1. Klik in de Azure Portal op **een resource maken** en zoek naar **spraak**. Vul het formulier in om een Speech Service te maken.
-  ![Speech Service](media/iot-hub-arduino-iot-devkit-az3166-translator/speech-service.png)
+  ![Speech-Service](media/iot-hub-arduino-iot-devkit-az3166-translator/speech-service.png)
 
 1. Ga naar de spraak service die u zojuist hebt gemaakt, klik op de sectie **sleutels** om de **key1** voor DevKit toegang tot deze te kopiëren en te noteren.
   ![Sleutels kopiëren](media/iot-hub-arduino-iot-devkit-az3166-translator/copy-keys.png)
@@ -84,7 +84,7 @@ Voer eerst de volgende taken uit om de stappen in deze zelf studie uit te voeren
 ## <a name="build-and-upload-device-code"></a>Apparaatcode bouwen en uploaden
 
 1. Schakel de DevKit over naar de **configuratie modus** :
-   * Houd **de**knop ingedrukt.
+   * Houd **de** knop ingedrukt.
    * Knop **opnieuw instellen** indrukken en loslaten.
 
    Het scherm wordt weer gegeven met de DevKit-ID en- **configuratie**.

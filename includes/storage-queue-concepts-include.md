@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 08/21/2020
 ms.author: tamram
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 3aa21fb99ac5ab24674bf5d4b62fd3fca98de632
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 45df30f4f1444b6148af9f3c7d47b94909ccef3d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88853665"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027176"
 ---
 ## <a name="what-is-queue-storage"></a>Wat is Queue Storage?
 
@@ -22,8 +22,8 @@ De Azure Queue-service bevat de volgende onderdelen:
 
 ![Azure Queue-service-onderdelen](./media/storage-queue-concepts-include/azure-queue-service-components.png)
 
-* **Opslag account:** Alle toegang tot Azure Storage wordt uitgevoerd via een opslag account. Zie voor meer informatie over opslag accounts [overzicht van opslag account](../articles/storage/common/storage-account-overview.md).
-* **Wachtrij:** Een wachtrij bevat een set berichten. Alle berichten moeten zich in een wachtrij bevinden. De naam van een wachtrij mag alleen kleine letters bevatten. Zie [Naming Queues and Metadata](https://msdn.microsoft.com/library/azure/dd179349.aspx) (Wachtrijen en metagegevens een naam geven) voor informatie over de naamgeving van wachtrijen.
+* **Opslag account:** Alle toegang tot Azure Storage wordt uitgevoerd via een opslag account. Zie [Overzicht van opslagaccount](../articles/storage/common/storage-account-overview.md) voor meer informatie over opslagaccounts.
+* **Wachtrij:** Een wachtrij bevat een set berichten. Alle berichten moeten zich in een wachtrij bevinden. De naam van een wachtrij mag alleen kleine letters bevatten. Zie [Naming Queues and Metadata](/rest/api/storageservices/Naming-Queues-and-Metadata) (Wachtrijen en metagegevens een naam geven) voor informatie over de naamgeving van wachtrijen.
 * **Bericht:** Een bericht in een willekeurige indeling, van maximaal 64 KB. Een bericht kan maximaal 7 dagen in de wachtrij blijven staan. Voor versie 29-07-2017 of hoger mag de maximale time-to-live elk positief getal zijn. Of -1 om aan te geven dat het bericht niet verloopt. Als deze parameter wordt weggelaten, is de standaard time-to-live zeven dagen.
 * **URL-indeling:** Wacht rijen zijn adresseerbaar met behulp van de volgende URL-indeling: http:// `<storage account>` . Queue.core.Windows.net/`<queue>`
 

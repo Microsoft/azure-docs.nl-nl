@@ -3,14 +3,14 @@ title: Azure Automation Updatebeheer inschakelen vanuit runbook
 description: Dit artikel beschrijft hoe u Updatebeheer kunt inschakelen vanuit een runbook.
 services: automation
 ms.topic: conceptual
-ms.date: 09/30/2020
+ms.date: 11/24/2020
 ms.custom: mvc
-ms.openlocfilehash: ec102015355e3312f5dc15fa526fa543da75e0de
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 5a9f12a823a22bfb48ccb4482d3402464aa77fea
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92222288"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95908354"
 ---
 # <a name="enable-update-management-from-a-runbook"></a>Updatebeheer inschakelen vanuit een runbook
 
@@ -28,13 +28,13 @@ Deze methode gebruikt twee runbooks:
 
 * Azure-abonnement. Als u nog geen abonnement hebt, kunt u [uw voordelen als MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Automation-account](../automation-security-overview.md) voor het beheren van computers.
-* [Log Analytics-werkruimte](../../azure-monitor/platform/design-logs-deployment.md)
+* [Log Analytics werk ruimte](../../azure-monitor/platform/design-logs-deployment.md)
 * Een [virtuele machine](../../virtual-machines/windows/quick-create-portal.md).
 * Twee Automation-assets, die worden gebruikt door het **Enable-AutomationSolution** runbook. Dit runbook, als het nog niet bestaat in uw Automation-account, wordt tijdens de eerste uitvoering automatisch geïmporteerd door het runbook **Enable-MultipleSolution** .
     * *LASolutionSubscriptionId*: abonnement-id van waar de log Analytics-werk ruimte zich bevindt.
     * *LASolutionWorkspaceId*: werk ruimte-id van de log Analytics-werk ruimte die is gekoppeld aan uw Automation-account.
 
-    Deze variabelen worden gebruikt voor het configureren van de werk ruimte van de onboarded VM. Als deze niet zijn opgegeven, zoekt het script eerst naar een virtuele machine die is onboarded naar Updatebeheer in het abonnement, gevolgd door het abonnement waarin het Automation-account zich bevindt, gevolgd door alle andere abonnementen waartoe uw gebruikers account toegang heeft. Als de configuratie niet juist is geconfigureerd, kan dit ertoe leiden dat uw apparaten op een wille keurige Log Analytics-werk ruimte worden uitgevoerd.
+    Deze variabelen worden gebruikt voor het configureren van de werk ruimte van de onboarded VM en u moet deze hand matig maken. Als deze niet zijn opgegeven, zoekt het script eerst naar een virtuele machine die is onboarded naar Updatebeheer in het abonnement, gevolgd door het abonnement waarin het Automation-account zich bevindt, gevolgd door alle andere abonnementen waartoe uw gebruikers account toegang heeft. Als de configuratie niet juist is geconfigureerd, kan dit ertoe leiden dat uw apparaten op een wille keurige Log Analytics-werk ruimte worden uitgevoerd.
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
@@ -52,7 +52,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 ## <a name="install-and-update-modules"></a>Modules installeren en bijwerken
 
-Het is vereist om bij te werken naar de meest recente Azure-modules en de module [AZ. OperationalInsights](/powershell/module/az.operationalinsights) te importeren om updatebeheer voor uw virtuele machines in te scha kelen met het runbook.
+Het is vereist om bij te werken naar de meest recente Azure-modules en de [AzureRM. OperationalInsights](/powershell/module/azurerm.operationalinsights) -module te importeren om updatebeheer voor uw virtuele machines in te scha kelen met het runbook.
 
 1. Selecteer **Modules** onder **Gedeelde resources** in uw Automation-account.
 
@@ -66,9 +66,9 @@ Het is vereist om bij te werken naar de meest recente Azure-modules en de module
 
 5. Selecteer **Bladeren in galerie** om de modulegalerie te openen.
 
-6. Zoek naar `Az.OperationalInsights` en importeer deze module in uw Automation-account.
+6. Zoek naar `AzureRM.OperationalInsights` en importeer deze module in uw Automation-account.
 
-    ![De module OperationalInsights importeren](media/enable-from-runbook/import-operational-insights-module.png)
+    ![De module OperationalInsights importeren](media/enable-from-runbook/import-operational-insights-module-azurerm.png)
 
 ## <a name="select-azure-vm-to-manage"></a>Te beheren Azure-VM selecteren
 

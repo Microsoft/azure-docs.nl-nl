@@ -10,12 +10,12 @@ ms.date: 10/19/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: dcf34d896deafad77d16619f3883ddd103fc55d4
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: c35ee7bcdefa5091d9c887430182638f066cb9fa
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95790709"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95900880"
 ---
 # <a name="create-develop-and-maintain-synapse-studio-preview-notebooks-in-azure-synapse-analytics"></a>Synapse Studio-notebooks maken, ontwikkelen en onderhouden in azure Synapse Analytics
 
@@ -399,68 +399,6 @@ U kunt rechtstreeks toegang krijgen tot gegevens in het primaire opslag account.
 
 ![gegevens naar cel](./media/apache-spark-development-using-notebooks/synapse-data-to-cell.png)
 
-## <a name="visualize-data-in-a-notebook"></a>Gegevens in een notitie blok visualiseren
-
-### <a name="produce-rendered-table-view"></a>Weer gave van gerenderde tabel genereren
-
-Een weer gave met resultaten in tabel vorm wordt geleverd met de optie voor het maken van een staaf diagram, lijn diagram, cirkel diagram, spreidings diagram en vlak diagram. U kunt uw gegevens visualiseren zonder dat u code hoeft te schrijven. De grafieken kunnen worden aangepast in de **grafiek opties**. 
-
-De uitvoer van **%% SQL** Magic-opdrachten wordt standaard weer gegeven in de gerenderde tabel weergave. U kunt <code>display(df)</code> de weer gave van de gerenderde tabel maken met de functie DataFrames, Panda DataFrames, List of robuuste gedistribueerde gegevens sets (RDD).
-
-   [![Builtin-grafieken](./media/apache-spark-development-using-notebooks/synapse-builtin-charts.png)](./media/apache-spark-development-using-notebooks/synapse-builtin-charts.png#lightbox)
-
-### <a name="visualize-built-in-charts-from-large-scale-dataset"></a>Ingebouwde grafieken visualiseren vanuit een grootschalige gegevensset 
-
-De <code>display(df)</code> functie gebruikt standaard alleen de eerste 1000 rijen van de gegevens om de grafieken weer te geven. Controleer de **aggregatie over alle resultaten** en selecteer de knop **Toep** assen om de grafiek te genereren op basis van de hele gegevensset. Een Spark-taak wordt geactiveerd wanneer de grafiek instelling wordt gewijzigd. het duurt even om de berekening te volt ooien en de grafiek weer te geven. 
-    [![ingebouwd-grafieken-aggregatie-alle](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-aggregation-all.png)](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-aggregation-all.png#lightbox)
-
-
-
-### <a name="visualize-data-statistic-information"></a>Gegevens statistiek gegevens visualiseren
-U kunt gebruiken <code>display(df, summary = True)</code> om de statistische samen vatting van een gegeven Spark-data frame te controleren die de kolom naam, het kolom Type, de unieke waarden en ontbrekende waarden voor elke kolom bevatten. U kunt ook selecteren in een specifieke kolom om de minimale waarde, de maximale waarde, de gemiddelde waarde en de standaard afwijking weer te geven.
-    [![ingebouwd-grafieken-samen vatting ](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-summary.png)](./media/apache-spark-development-using-notebooks/synapse-builtin-charts-summary.png#lightbox)
-
-### <a name="render-html-or-interactive-libraries"></a>HTML-of interactieve bibliotheken weer geven
-
-U kunt HTML-code, waaronder Java script, CSS, D3 of interactieve Bibliotheken, zoals **bokeh**, weer geven met behulp van **displayHTML ()**.
-
-De volgende afbeelding is een voor beeld van het uitzetten van glyphs over een kaart met behulp van **bokeh**.
-
-   ![bokeh-voor beeld](./media/apache-spark-development-using-notebooks/synapse-bokeh-image.png)
-   
-
-Voer de volgende voorbeeld code uit om de bovenstaande afbeelding te tekenen.
-
-```python
-from bokeh.plotting import figure, output_file
-from bokeh.tile_providers import get_provider, Vendors
-from bokeh.embed import file_html
-from bokeh.resources import CDN
-from bokeh.models import ColumnDataSource
-
-tile_provider = get_provider(Vendors.CARTODBPOSITRON)
-
-# range bounds supplied in web mercator coordinates
-p = figure(x_range=(-9000000,-8000000), y_range=(4000000,5000000),
-           x_axis_type="mercator", y_axis_type="mercator")
-p.add_tile(tile_provider)
-
-# plot datapoints on the map
-source = ColumnDataSource(
-    data=dict(x=[ -8800000, -8500000 , -8800000],
-              y=[4200000, 4500000, 4900000])
-)
-
-p.circle(x="x", y="y", size=15, fill_color="blue", fill_alpha=0.8, source=source)
-
-# create an html document that embeds the Bokeh plot
-html = file_html(p, CDN, "my plot1")
-
-# display this html
-displayHTML(html)
-
-```
-
 ## <a name="save-notebooks"></a>Notitie blokken opslaan
 
 U kunt één notitie blok of alle notitie blokken in uw werk ruimte opslaan.
@@ -539,11 +477,11 @@ Net als Jupyter-notebooks hebben Azure Synapse Studio-notebooks een modale gebru
 
 1. Een cel bevindt zich in de opdracht modus als er geen tekst cursor wordt gevraagd om te typen. Wanneer een cel zich in de opdracht modus bevindt, kunt u het notitie blok als geheel bewerken, maar niet typen in afzonderlijke cellen. Voer de opdracht modus in door te drukken `ESC` of door met de muis te klikken buiten het editor gebied van een cel.
 
-   ![opdracht modus](./media/apache-spark-development-using-notebooks/synapse-command-mode2.png)
+   ![opdracht modus](./media/apache-spark-development-using-notebooks/synapse-command-mode-2.png)
 
 2. De bewerkings modus wordt aangegeven door een tekst cursor waarin u wordt gevraagd in het gebied van de editor te typen. Wanneer een cel zich in de bewerkings modus bevindt, kunt u in de cel typen. Voer de bewerkings modus in door te drukken `Enter` of door met de muis te klikken op het editor gebied van een cel.
    
-   ![bewerkingsmodus](./media/apache-spark-development-using-notebooks/synapse-edit-mode2.png)
+   ![bewerkingsmodus](./media/apache-spark-development-using-notebooks/synapse-edit-mode-2.png)
 
 ### <a name="shortcut-keys-under-command-mode"></a>Sneltoetsen onder de opdracht modus
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: dc695cc36113430cb1820d978ed41f5250cad33e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 3e040146673ba16c07856f30b88771d0063713e9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94974823"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95896880"
 ---
 # <a name="azure-security-baseline-for-azure-hpc-cache"></a>Azure-beveiligings basislijn voor Azure HPC-cache
 
@@ -305,7 +305,7 @@ Azure Advanced Threat Protection (ATP) is een beveiligings oplossing die Active 
 
 **Hulp**: HPC-cache maakt gebruik van Azure RBAC om de toegang tot bedrijfskritische systemen te isoleren door te beperken welke accounts bevoegde toegang krijgen tot de abonnementen en beheer groepen waarin ze zich bevinden.
 
-Maak standaard procedures voor het gebruik van specifieke beheerders accounts. Voor het maken van een cache vereist HPC-cache dat gebruikers voldoende bevoegdheden hebben in het abonnement om Nic's te maken. Als u Blob Storage gebruikt, zijn de RBAC-rollen opslag account Inzender en de gegevensinzender voor opslag-blobs vereist voor de HPC-cache om toegang te krijgen tot de opslag. 
+Maak standaard procedures voor het gebruik van specifieke beheerders accounts. Voor het maken van een cache vereist HPC-cache dat gebruikers voldoende bevoegdheden hebben in het abonnement om Nic's te maken. Bij gebruik van Blob Storage zijn de Inzender voor Azure rollen storage-opslag account en Inzender voor opslag-blobs vereist voor de HPC-cache voor toegang tot de opslag. 
 
 Zorg ervoor dat u ook de toegang tot de beheer-, identiteits-en beveiligings systemen beperkt die beheerders toegang hebben tot uw bedrijfskritische assets, zoals Active Directory-domein controllers (Dc's), beveiligings hulpprogramma's en Systeembeheer Programma's met agents die zijn geïnstalleerd op essentiële bedrijfs systemen. Aanvallers die deze beheer-en beveiligings systemen misbruiken, kunnen ze onmiddellijk weaponize om bedrijfs kritieke activa te manipuleren.
 

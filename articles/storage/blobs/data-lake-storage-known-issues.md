@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/28/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 909d64d3d32e8b9a314f7afb06b9c0121f624cec
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 32f8ab3f7e222108bec4ec81b14c113705370096
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358480"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95913059"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Bekende problemen met Azure Data Lake Storage Gen2
 
@@ -41,21 +41,21 @@ BLOB-Api's en Data Lake Storage Gen2-Api's kunnen op dezelfde gegevens worden ge
 
 In deze sectie worden de problemen en beperkingen beschreven met het gebruik van BLOB-Api's en Data Lake Storage Gen2 Api's om op dezelfde gegevens te werken.
 
-* U kunt geen blob-API en Data Lake Storage-Api's gebruiken om naar hetzelfde exemplaar van een bestand te schrijven. Als u naar een bestand schrijft met behulp van Data Lake Storage Gen2 Api's, zijn de blokken van dat bestand niet zichtbaar voor aanroepen naar de BLOB-API voor [blok keren ophalen](https://docs.microsoft.com/rest/api/storageservices/get-block-list) . De enige uitzonde ring hierop is wanneer u overschrijft. U kunt een bestand/BLOB overschrijven met behulp van de API.
+* U kunt geen blob-API en Data Lake Storage-Api's gebruiken om naar hetzelfde exemplaar van een bestand te schrijven. Als u naar een bestand schrijft met behulp van Data Lake Storage Gen2 Api's, zijn de blokken van dat bestand niet zichtbaar voor aanroepen naar de BLOB-API voor [blok keren ophalen](/rest/api/storageservices/get-block-list) . De enige uitzonde ring hierop is wanneer u overschrijft. U kunt een bestand/BLOB overschrijven met behulp van de API.
 
-* Wanneer u de bewerking [lijst-blobs](https://docs.microsoft.com/rest/api/storageservices/list-blobs) gebruikt zonder een scheidings teken op te geven, bevatten de resultaten zowel directory's als blobs. Als u ervoor kiest om een scheidings teken te gebruiken, gebruikt u alleen een slash ( `/` ). Dit is het enige ondersteunde scheidings teken.
+* Wanneer u de bewerking [lijst-blobs](/rest/api/storageservices/list-blobs) gebruikt zonder een scheidings teken op te geven, bevatten de resultaten zowel directory's als blobs. Als u ervoor kiest om een scheidings teken te gebruiken, gebruikt u alleen een slash ( `/` ). Dit is het enige ondersteunde scheidings teken.
 
-* Als u de [Delete BLOB](https://docs.microsoft.com/rest/api/storageservices/delete-blob) API gebruikt om een map te verwijderen, wordt die map alleen verwijderd als deze leeg is. Dit betekent dat u de BLOB-API niet recursief kunt gebruiken.
+* Als u de [Delete BLOB](/rest/api/storageservices/delete-blob) API gebruikt om een map te verwijderen, wordt die map alleen verwijderd als deze leeg is. Dit betekent dat u de BLOB-API niet recursief kunt gebruiken.
 
 Deze BLOB REST Api's worden niet ondersteund:
 
-* [BLOB plaatsen (pagina)](https://docs.microsoft.com/rest/api/storageservices/put-blob)
-* [Pagina plaatsen](https://docs.microsoft.com/rest/api/storageservices/put-page)
-* [Paginabereiken ophalen](https://docs.microsoft.com/rest/api/storageservices/get-page-ranges)
-* [BLOB voor incrementele kopie](https://docs.microsoft.com/rest/api/storageservices/incremental-copy-blob)
-* [Pagina van URL plaatsen](https://docs.microsoft.com/rest/api/storageservices/put-page-from-url)
-* [Blok toevoegen](https://docs.microsoft.com/rest/api/storageservices/append-block)
-* [Blok van URL toevoegen](https://docs.microsoft.com/rest/api/storageservices/append-block-from-url)
+* [BLOB plaatsen (pagina)](/rest/api/storageservices/put-blob)
+* [Pagina plaatsen](/rest/api/storageservices/put-page)
+* [Paginabereiken ophalen](/rest/api/storageservices/get-page-ranges)
+* [BLOB voor incrementele kopie](/rest/api/storageservices/incremental-copy-blob)
+* [Pagina van URL plaatsen](/rest/api/storageservices/put-page-from-url)
+* [Blok toevoegen](/rest/api/storageservices/append-block)
+* [Blok van URL toevoegen](/rest/api/storageservices/append-block-from-url)
 
 
 Niet-beheerde VM-schijven worden niet ondersteund in accounts met een hiërarchische naam ruimte. Als u een hiërarchische naam ruimte wilt inschakelen op een opslag account, plaatst u onbeheerde VM-schijven in een opslag account waarvoor de functie hiërarchische naam ruimte niet is ingeschakeld.
@@ -70,7 +70,7 @@ De mogelijkheid om ACL-wijzigingen van de bovenliggende map toe te passen op ond
 
 ## <a name="azcopy"></a>AzCopy
 
-Gebruik alleen de meest recente versie van AzCopy ([AzCopy V10 toevoegen](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)). Eerdere versies van AzCopy, zoals AzCopy v 8.1, worden niet ondersteund.
+Gebruik alleen de meest recente versie van AzCopy ([AzCopy V10 toevoegen](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json)). Eerdere versies van AzCopy, zoals AzCopy v 8.1, worden niet ondersteund.
 
 <a id="storage-explorer"></a>
 
@@ -92,7 +92,7 @@ Toepassingen van derden die gebruikmaken van REST-Api's voor werken, blijven wer
 
 ## <a name="access-control-lists-acl-and-anonymous-read-access"></a>Toegangs beheer lijsten (ACL) en anonieme lees toegang
 
-Als [anonieme lees toegang](storage-manage-access-to-resources.md) is verleend aan een container, hebben acl's geen invloed op die container of de bestanden in die container.
+Als [anonieme lees toegang](./anonymous-read-access-configure.md) is verleend aan een container, hebben acl's geen invloed op die container of de bestanden in die container.
 
 ## <a name="diagnostic-logs"></a>Diagnostische logboeken
 

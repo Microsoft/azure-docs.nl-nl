@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2dddad5692ab2eebb6ef9b427c091be449791d7c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96d1eaff4d1b93ad3bb489f177020c351fe4d13d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91818357"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95904032"
 ---
 # <a name="conditional-access-conditions"></a>Voorwaardelijke toegang: voor waarden
 
@@ -57,7 +57,7 @@ Als u verouderde verificatie blokkeert met de voor waarde van **andere clients**
 
 Bij het configureren van een locatie als voor waarde kunnen organisaties ervoor kiezen om locaties op te nemen of uit te sluiten. Deze benoemde locaties kunnen de open bare IPv4-netwerk gegevens, het land of de regio of zelfs onbekende gebieden bevatten die niet aan specifieke landen of regio's zijn toegewezen. Alleen IP-bereiken kunnen als een vertrouwde locatie worden gemarkeerd.
 
-Bij het opnemen van **een locatie**bevat deze optie een IP-adres op Internet die niet alleen de benoemde locaties heeft geconfigureerd. Als u **een wille keurige locatie**selecteert, kunnen beheerders ervoor kiezen **alle vertrouwde** of **geselecteerde locaties**uit te sluiten.
+Bij het opnemen van **een locatie** bevat deze optie een IP-adres op Internet die niet alleen de benoemde locaties heeft geconfigureerd. Als u **een wille keurige locatie** selecteert, kunnen beheerders ervoor kiezen **alle vertrouwde** of **geselecteerde locaties** uit te sluiten.
 
 Sommige organisaties kunnen er bijvoorbeeld voor kiezen om geen multi-factor Authentication te vereisen wanneer hun gebruikers zijn verbonden met het netwerk op een vertrouwde locatie, zoals hun fysieke hoofd kantoor. Beheerders kunnen een beleid maken dat een wille keurige locatie bevat, maar sluit de geselecteerde locaties voor hun hoofd netwerken uit.
 
@@ -105,7 +105,7 @@ Deze voor waarden worden meestal gebruikt voor het vereisen van een beheerd appa
 
 Deze instelling werkt met alle browsers. Om echter te voldoen aan het beleid van een apparaat, zoals een vereiste apparaat vereist, worden de volgende besturings systemen en browsers ondersteund:
 
-| OS | Browsers |
+| Besturingssysteem | Browsers |
 | :-- | :-- |
 | Windows 10 | Micro soft Edge, Internet Explorer, Chrome |
 | Windows 8/8,1 | Internet Explorer, Chrome |
@@ -137,7 +137,7 @@ Als u deze uitbrei ding automatisch wilt implementeren in Chrome-browsers, maakt
 - Type REG_SZ (teken reeks)
 - Data ppnbnpeolgkicgegkbkbjmhlideopiji; https \: //clients2.Google.com/service/UPDATE2/CRX
 
-Voor Chrome-ondersteuning in **Windows 8,1 en 7**maakt u de volgende register sleutel:
+Voor Chrome-ondersteuning in **Windows 8,1 en 7** maakt u de volgende register sleutel:
 
 - Pad HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls
 - Naam 1
@@ -174,7 +174,7 @@ Deze instelling heeft gevolgen voor toegangs pogingen van de volgende mobiele ap
 
 ### <a name="exchange-activesync-clients"></a>Exchange ActiveSync-clients
 
-- Organisaties kunnen alleen Exchange ActiveSync-clients selecteren wanneer ze beleid toewijzen aan gebruikers of groepen. Als u **alle gebruikers**selecteert, worden alle **gast-en externe gebruikers**of **Directory-rollen** door alle gebruikers geblokkeerd.
+- Organisaties kunnen alleen Exchange ActiveSync-clients selecteren wanneer ze beleid toewijzen aan gebruikers of groepen. Als u **alle gebruikers** selecteert, worden alle **gast-en externe gebruikers** of **Directory-rollen** door alle gebruikers geblokkeerd.
 - Bij het maken van een beleid dat is toegewezen aan Exchange ActiveSync-clients, moet **Exchange Online** de enige Cloud toepassing zijn die aan het beleid is toegewezen. 
 - Organisaties kunnen het bereik van dit beleid beperken tot specifieke platformen met behulp van de voor waarde **apparaat platforms** .
 
@@ -187,14 +187,14 @@ Raadpleeg voor meer informatie de volgende artikelen:
 
 ### <a name="other-clients"></a>Andere clients
 
-Door **andere clients**te selecteren, kunt u een voor waarde opgeven die van invloed is op apps die gebruikmaken van basis verificatie met e-mail protocollen als IMAP-, MAPI-, pop-, SMTP-en oudere Office-apps die geen moderne verificatie gebruiken.
+Door **andere clients** te selecteren, kunt u een voor waarde opgeven die van invloed is op apps die gebruikmaken van basis verificatie met e-mail protocollen als IMAP-, MAPI-, pop-, SMTP-en oudere Office-apps die geen moderne verificatie gebruiken.
 
 ## <a name="device-state-preview"></a>Apparaatstatus (preview-versie)
 
 De toestand Apparaatstatus kan worden gebruikt om apparaten uit te sluiten die zijn toegevoegd aan hybride Azure AD en/of apparaten die zijn gemarkeerd als compatibel met een Microsoft Intune nalevings beleid van het beleid voor voorwaardelijke toegang van een organisatie.
 
 Bijvoorbeeld *alle gebruikers* die toegang hebben tot de Cloud-app voor het *Microsoft Azure beheer* , inclusief **alle Apparaatstatus** , met uitzonde ring van **hybride Azure AD gekoppelde** apparaten en **apparaten die als compatibel zijn gemarkeerd** en voor *Access controls*, **blok keren**. 
-   - In dit voor beeld wordt een beleid gemaakt dat alleen toegang verleent tot Microsoft Azure beheer van apparaten die zijn toegevoegd aan hybride Azure AD en/of apparaten die als compatibel zijn gemarkeerd.
+   - In dit voor beeld wordt een beleid gemaakt dat alleen toegang verleent tot Microsoft Azure beheer van apparaten die zijn toegevoegd aan hybride Azure AD of apparaten die als compatibel zijn gemarkeerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

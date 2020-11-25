@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 05/05/2020
-ms.openlocfilehash: c4a564834166686e8280f1117269742b489fc62c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 398324099f923a5141b172d61f9fd41a69dbf069
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334749"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025290"
 ---
 # <a name="tutorial-build-a-luis-app-to-determine-user-intentions"></a>Zelfstudie: Een LUIS-app bouwen om gebruikersintenties te bepalen
 
@@ -116,7 +116,7 @@ Om een uiting te classificeren heeft de intent voorbeelden nodig van gebruikersu
     `get a medium vegetarian pizza for delivery`
 
   
-    De parameter van de queryreeks is `query`, de utterance**query** wordt doorgegeven in de URI. Deze utterance is niet hetzelfde als een van de voorbeeldutterances. Dit is een goede test om te controleren of LUIS de `OrderPizza`-intent leert en voorspelt als de hoogst scorende intent.
+    De parameter van de queryreeks is `query`, de utterance **query** wordt doorgegeven in de URI. Deze utterance is niet hetzelfde als een van de voorbeeldutterances. Dit is een goede test om te controleren of LUIS de `OrderPizza`-intent leert en voorspelt als de hoogst scorende intent.
 
     ```JSON
     {
@@ -146,7 +146,7 @@ Om een uiting te classificeren heeft de intent voorbeelden nodig van gebruikersu
 
     Het JSON-resultaat identificeert de hoogst scorende intent als **`prediction.topIntent`** -eigenschap. Alle scores liggen tussen 1 en 0, met de betere score dichterbij 1.
 
-1. Wijzig de URL-**query**parameter om zodat deze zich richt op de intent **Begroeting**:
+1. Wijzig de URL-**query** parameter om zodat deze zich richt op de intent **Begroeting**:
 
     `Howdy`
 
@@ -193,7 +193,7 @@ Nadat LUIS de JSON-reactie heeft geretourneerd, is LUIS klaar met deze aanvraag.
 * [Trainen](luis-how-to-train.md)
 * [Hoe u kunt publiceren](luis-how-to-publish-app.md)
 * [Testen in de LUIS-portal](luis-interactive-test.md)
-* [Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
+* [Azure Bot](/azure/bot-service/?view=azure-bot-service-4.0)
 
 
 ## <a name="next-steps"></a>Volgende stappen

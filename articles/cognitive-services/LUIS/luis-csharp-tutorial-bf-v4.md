@@ -6,16 +6,16 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a8d6481bdf3476f8f91c437138f4b6f1ebd1f1de
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 931fa2c10a47e5d00f8e83b31b16618b06da8a46
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92058196"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019106"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-c"></a>Zelfstudie: een web-app-bot met Language Understanding in C# gebruiken
 
-Bouw met behulp van C# een chatbot met ingebouwd taalbegrip (LUIS). De bot is gebouwd met de Azure-resource [Web-app-bot](https://docs.microsoft.com/azure/bot-service/) en [Bot Framework versie](https://github.com/Microsoft/botbuilder-dotnet) 4.
+Bouw met behulp van C# een chatbot met ingebouwd taalbegrip (LUIS). De bot is gebouwd met de Azure-resource [Web-app-bot](/azure/bot-service/) en [Bot Framework versie](https://github.com/Microsoft/botbuilder-dotnet) 4.
 
 **In deze zelfstudie leert u het volgende:**
 
@@ -336,4 +336,4 @@ Start de bot in Visual Studio 2019. Er wordt een browservenster geopend met de w
 Bekijk meer [voorbeelden](https://github.com/microsoft/botframework-solutions) met gespreksbots.
 
 > [!div class="nextstepaction"]
-> [Een Language Understanding-app bouwen met een aangepast onderwerpdomein](luis-quickstart-intents-only.md)
+> [Een Language Understanding-app bouwen met een aangepast onderwerpdomein](./tutorial-intents-only.md)

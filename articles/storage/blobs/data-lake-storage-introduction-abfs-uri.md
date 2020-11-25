@@ -8,12 +8,12 @@ ms.date: 12/06/2018
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: jamesbak
-ms.openlocfilehash: 7c9c452d608bc2c5f64292d72f3eae6825bf1ce2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 948b5aa0ad015f9f3c693e13219ec034724687c0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87828248"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95913161"
 ---
 # <a name="use-the-azure-data-lake-storage-gen2-uri"></a>URI van Azure Data Lake Storage Gen2 gebruiken
 
@@ -48,4 +48,4 @@ Als het account dat u wilt adresseren echter is ingesteld als het standaard best
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+- [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)

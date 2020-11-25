@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 29f7e8bbf9a1b8d48940287a4845c2b55804b247
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 18d228af5c162159d52b5583613d4449d1195af2
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015372"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95894232"
 ---
 # <a name="speech-service-release-notes"></a>Release opmerkingen bij de spraak service
 
@@ -45,8 +45,8 @@ ms.locfileid: "95015372"
 - **Java script**: er is ondersteuning toegevoegd voor de `ConversationTranscriber` API. Lees [hier](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-conversation-transcription?pivots=programming-language-javascript)de documentatie. 
 - **C++/c #**: nieuwe `AudioDataStream FromWavFileInput` methode toegevoegd (om te lezen. WAV-bestanden) [hier (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/audiodatastream) en [hier (C#)](
 https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
--  **C++/c #/Java/python/Objective-C/Swift**: er is een `stopSpeakingAsync()` methode toegevoegd om de tekst-naar-spraak-synthese te stoppen. Lees de referentie documentatie [hier (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace), [hier (C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), hier ( [Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech?view=azure-java-stable), [hier (python)](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python), en [hier (objectief-C/Swift)](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
-- **C#, C++, Java**: een `FromDialogServiceConnector()` functie toegevoegd aan de `Connection` klasse die kan worden gebruikt voor het bewaken van verbindings-en verbreken van gebeurtenissen voor `DialogServiceConnector` . Lees de referentie documentatie [hier (C#)](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [hier (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/connection), en [hier (Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.connection?view=azure-java-stable).
+-  **C++/c #/Java/python/Objective-C/Swift**: er is een `stopSpeakingAsync()` methode toegevoegd om de tekst-naar-spraak-synthese te stoppen. Lees de referentie documentatie [hier (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace), [hier (C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), hier ( [Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech), [hier (python)](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python), en [hier (objectief-C/Swift)](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
+- **C#, C++, Java**: een `FromDialogServiceConnector()` functie toegevoegd aan de `Connection` klasse die kan worden gebruikt voor het bewaken van verbindings-en verbreken van gebeurtenissen voor `DialogServiceConnector` . Lees de referentie documentatie [hier (C#)](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [hier (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/connection), en [hier (Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.connection).
 <!-- - **C++/C#/Java/Python/Objective-C/Swift**: Added support for Pronunciation Assessment, which evaluates speech pronunciation and gives speakers feedback on the accuracy and fluency of spoken audio. Read the documentation [here](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-pronunciation-assessment). -->
 
 **Laatste wijziging**

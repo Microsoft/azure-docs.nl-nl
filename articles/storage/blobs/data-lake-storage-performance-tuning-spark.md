@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 8ae9f96b42c0eb36a9380589780d141711c7ae4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c99d57ddd86ecff71c35ad6c0f2c2561e279b4b0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88034728"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912804"
 ---
 # <a name="tune-performance-spark-hdinsight--azure-data-lake-storage-gen2"></a>Prestaties afstemmen: Spark, HDInsight & Azure Data Lake Storage Gen2
 
@@ -23,9 +23,9 @@ Bij het afstemmen van de prestaties van Spark moet u rekening houden met het aan
 ## <a name="prerequisites"></a>Vereisten
 
 * **Een Azure-abonnement**. Zie [Gratis proefversie van Azure ophalen](https://azure.microsoft.com/pricing/free-trial/).
-* **Een Azure data Lake Storage Gen2-account**. Zie [Quick Start: een Azure data Lake Storage Gen2 Storage-account maken](data-lake-storage-quickstart-create-account.md)voor instructies over het maken van een.
-* **Azure HDInsight-cluster** met toegang tot een Data Lake Storage Gen2-account. Zie [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2). Zorg ervoor dat Extern bureaublad voor het cluster is ingeschakeld.
-* **Spark-cluster wordt uitgevoerd op Data Lake Storage Gen2**.  Zie [HDInsight Spark-cluster gebruiken voor het analyseren van gegevens in data Lake Storage Gen2](https://docs.microsoft.com/azure/hdinsight/hdinsight-apache-spark-use-with-data-lake-store) voor meer informatie
+* **Een Azure data Lake Storage Gen2-account**. Zie [Quick Start: een Azure data Lake Storage Gen2 Storage-account maken](../common/storage-account-create.md)voor instructies over het maken van een.
+* **Azure HDInsight-cluster** met toegang tot een Data Lake Storage Gen2-account. Zie [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md). Zorg ervoor dat Extern bureaublad voor het cluster is ingeschakeld.
+* **Spark-cluster wordt uitgevoerd op Data Lake Storage Gen2**.  Zie [HDInsight Spark-cluster gebruiken voor het analyseren van gegevens in data Lake Storage Gen2](../../hdinsight/spark/apache-spark-use-with-data-lake-store.md) voor meer informatie
 * **Richt lijnen voor het afstemmen van de prestaties van data Lake Storage Gen2**.  Zie [Data Lake Storage Gen2 richt lijnen voor het afstemmen van prestaties](data-lake-storage-performance-tuning-guidance.md) voor algemene concepten. 
 
 ## <a name="parameters"></a>Parameters
@@ -124,4 +124,3 @@ uitvoerder-kern geheugens = 4
 - num-uitvoerende modules = min (geheugen beperking, CPU-beperking)
 - num-uitvoerende modules = min (16, 16)
 - num-uitvoerendes = 16
-

@@ -2,17 +2,19 @@
 title: Uitvoer in sjablonen
 description: Hierin wordt beschreven hoe u uitvoer waarden definieert in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
-ms.date: 02/25/2020
-ms.openlocfilehash: 203bfc66e9515ef14a5fe1315ef5b9ee07075041
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/24/2020
+ms.openlocfilehash: 8f782a78e523ebc55faac98344643982172476fa
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79460021"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95911427"
 ---
 # <a name="outputs-in-azure-resource-manager-template"></a>Uitvoer in Azure Resource Manager sjabloon
 
 In dit artikel wordt beschreven hoe u uitvoer waarden definieert in uw Azure Resource Manager sjabloon. U gebruikt uitvoer wanneer u waarden van de geïmplementeerde resources moet retour neren.
+
+De indeling van elke uitvoer waarde moet overeenkomen met een van de [gegevens typen](template-syntax.md#data-types).
 
 ## <a name="define-output-values"></a>Uitvoer waarden definiëren
 
@@ -114,7 +116,7 @@ In de volgende voor beelden ziet u scenario's voor het gebruik van uitvoer.
 |---------|---------|
 |[Variabelen kopiëren](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copyvariables.json) | Maakt complexe variabelen en voert deze waarden uit. Implementeert geen resources. |
 |[Openbaar IP-adres](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) | Hiermee maakt u een openbaar IP-adres en voert u de resource-ID uit. |
-|[Load balancer](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) | Koppelingen naar de vorige sjabloon. Maakt gebruik van de resource-ID in de uitvoer bij het maken van de load balancer. |
+|[Load Balancer](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) | Koppelingen naar de vorige sjabloon. Maakt gebruik van de resource-ID in de uitvoer bij het maken van de load balancer. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

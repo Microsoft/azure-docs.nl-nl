@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: noakup
 ms.author: noakuper
 ms.date: 09/03/2020
-ms.openlocfilehash: a487e6989792c63aaf5baf9ddb3875df549561a4
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 7cb427c83345a4603c6fe7727c1cc42c1943c456
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144012"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95908247"
 ---
 # <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Door de klant beheerde opslag accounts gebruiken in Azure Monitor Log Analytics
 
-Log Analytics is afhankelijk van Azure Storage in verschillende scenario's. Dit gebruik wordt doorgaans automatisch beheerd. In sommige gevallen moet u echter uw eigen opslag account opgeven en beheren, ook wel een door de klant beheerd opslag account genoemd. Dit document bevat informatie over het gebruik van door de klant beheerde opslag voor de opname van WAD/LAD-logboeken, specifieke scenario's voor persoonlijke koppelingen en CMK-versleuteling. 
+Log Analytics is afhankelijk van Azure Storage in verschillende scenario's. Dit gebruik wordt doorgaans automatisch beheerd. In sommige gevallen moet u echter uw eigen opslag account opgeven en beheren, ook wel een door de klant beheerd opslag account genoemd. Dit document bevat informatie over het gebruik van door de klant beheerde opslag voor de opname van WAD/LAD-logboeken, specifieke scenario's voor persoonlijke koppelingen en versleuteling van door de klant beheerde sleutel (CMK). 
 
 > [!NOTE]
 > U wordt aangeraden geen afhankelijkheid te nemen van de inhoud Log Analytics uploads naar door de klant beheerde opslag, op voorwaarde dat de opmaak en inhoud kan veranderen.

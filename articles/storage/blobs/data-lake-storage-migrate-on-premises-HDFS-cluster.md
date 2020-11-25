@@ -8,12 +8,12 @@ ms.author: normesta
 ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: jamesbak
-ms.openlocfilehash: a50f85e76f16f1e5ba8823adb1ea1aa02157fcee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e58137dd680ff9a2be2bd657f0969304b526873f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88032557"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95913110"
 ---
 # <a name="migrate-from-on-prem-hdfs-store-to-azure-storage-with-azure-data-box"></a>Migreren van on-premises HDFS-opslag naar Azure Storage met Azure Data Box
 
@@ -37,9 +37,9 @@ U hebt deze dingen nodig om de migratie te volt ooien.
 
 * Een [Azure data Box-apparaat](https://azure.microsoft.com/services/storage/databox/).
 
-  * [Bestel uw data Box](https://docs.microsoft.com/azure/databox/data-box-deploy-ordered) of [Data Box Heavy](https://docs.microsoft.com/azure/databox/data-box-heavy-deploy-ordered). 
+  * [Bestel uw data Box](../../databox/data-box-deploy-ordered.md) of [Data Box Heavy](../../databox/data-box-heavy-deploy-ordered.md). 
 
-  * Kabel en sluit uw [Data Box](https://docs.microsoft.com/azure/databox/data-box-deploy-set-up) of [Data Box Heavy](https://docs.microsoft.com/azure/databox/data-box-heavy-deploy-set-up) aan op een on-premises netwerk.
+  * Kabel en sluit uw [Data Box](../../databox/data-box-deploy-set-up.md) of [Data Box Heavy](../../databox/data-box-heavy-deploy-set-up.md) aan op een on-premises netwerk.
 
 Als u klaar bent, kunt u beginnen.
 
@@ -59,7 +59,7 @@ Volg deze stappen om gegevens te kopiëren via de REST-Api's van blob/object Sto
 
 2. Kopieer in het dialoog venster opslag account voor toegang en gegevens uploaden het **BLOB service-eind punt** en de sleutel van het **opslag account**. Laat de `https://` en de afsluitende slash weg van het eind punt van de BLOB-service.
 
-    In dit geval is het eind punt: `https://mystorageaccount.blob.mydataboxno.microsoftdatabox.com/` . Het host-gedeelte van de URI die u gaat gebruiken, is: `mystorageaccount.blob.mydataboxno.microsoftdatabox.com` . Zie How to [Connect to rest over http](/azure/databox/data-box-deploy-copy-data-via-rest)(Engelstalig) voor een voor beeld. 
+    In dit geval is het eind punt: `https://mystorageaccount.blob.mydataboxno.microsoftdatabox.com/` . Het host-gedeelte van de URI die u gaat gebruiken, is: `mystorageaccount.blob.mydataboxno.microsoftdatabox.com` . Zie How to [Connect to rest over http](../../databox/data-box-deploy-copy-data-via-rest.md)(Engelstalig) voor een voor beeld. 
 
      ![Dialoog venster toegang tot opslag account en gegevens uploaden](media/data-lake-storage-migrate-on-premises-HDFS-cluster/data-box-connection-string-http.png)
 
@@ -161,7 +161,7 @@ Volg deze stappen om gegevens te kopiëren via de REST-Api's van blob/object Sto
 
 Volg deze stappen om het Data Box-apparaat voor te bereiden en te verzenden naar micro soft.
 
-1. Eerst  [voorbereiding voor verzending op uw data box of Data Box Heavy](https://docs.microsoft.com/azure/databox/data-box-deploy-copy-data-via-rest).
+1. Eerst  [voorbereiding voor verzending op uw data box of Data Box Heavy](../../databox/data-box-deploy-copy-data-via-rest.md).
 
 2. Nadat de voor bereiding van het apparaat is voltooid, kunt u de stuk lijst bestanden downloaden. U gebruikt deze stuk lijst of manifest bestanden later om te controleren of de gegevens zijn geüpload naar Azure.
 
@@ -169,9 +169,9 @@ Volg deze stappen om het Data Box-apparaat voor te bereiden en te verzenden naar
 
 4. Maak een afspraak met UPS om het pakket op te laten halen.
 
-    * Zie [uw data Box verzenden](https://docs.microsoft.com/azure/databox/data-box-deploy-picked-up)voor data Box apparaten.
+    * Zie [uw data Box verzenden](../../databox/data-box-deploy-picked-up.md)voor data Box apparaten.
 
-    * Zie [uw data Box Heavy verzenden](https://docs.microsoft.com/azure/databox/data-box-heavy-deploy-picked-up)voor data Box Heavy apparaten.
+    * Zie [uw data Box Heavy verzenden](../../databox/data-box-heavy-deploy-picked-up.md)voor data Box Heavy apparaten.
 
 5. Nadat micro soft uw apparaat heeft ontvangen, is het verbonden met het Data Center-netwerk en worden de gegevens geüpload naar het opslag account dat u hebt opgegeven toen u de volg orde van het apparaat plaatste. Controleer de stuk lijst bestanden op basis waarvan al uw gegevens naar Azure worden geüpload. 
 
@@ -184,11 +184,11 @@ U hebt de gegevens al in uw Azure Storage-account. U kunt nu toegangs machtiging
 
 ### <a name="create-a-service-principal-for-your-azure-data-lake-storage-gen2-account"></a>Een service-principal maken voor uw Azure Data Lake Storage Gen2-account
 
-Als u een Service-Principal wilt maken, raadpleegt u [How to: gebruik de portal om een Azure AD-toepassing en Service-Principal te maken die toegang hebben tot resources](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+Als u een Service-Principal wilt maken, raadpleegt u [How to: gebruik de portal om een Azure AD-toepassing en Service-Principal te maken die toegang hebben tot resources](../../active-directory/develop/howto-create-service-principal-portal.md).
 
-* Wanneer u de stappen uitvoert in de sectie [De toepassing toewijzen aan een rol](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application) van het artikel, moet u ervoor zorgen dat de rol **Gegevensbijdrager voor opslagblob** is toegewezen aan de service-principal.
+* Wanneer u de stappen uitvoert in de sectie [De toepassing toewijzen aan een rol](../../active-directory/develop/howto-create-service-principal-portal.md#assign-a-role-to-the-application) van het artikel, moet u ervoor zorgen dat de rol **Gegevensbijdrager voor opslagblob** is toegewezen aan de service-principal.
 
-* Bij het uitvoeren van de stappen in de sectie [waarden ophalen voor aanmelden in](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) het artikel, toepassings-id en client geheime waarden opslaan in een tekst bestand. U hebt deze binnenkort nodig.
+* Bij het uitvoeren van de stappen in de sectie [waarden ophalen voor aanmelden in](../../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in) het artikel, toepassings-id en client geheime waarden opslaan in een tekst bestand. U hebt deze binnenkort nodig.
 
 ### <a name="generate-a-list-of-copied-files-with-their-permissions"></a>Een lijst met gekopieerde bestanden met hun machtigingen genereren
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 85499839992f872896153e360507d7d1ba7fea38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4db85357ee970d13d6b4fcce195cae66932bed18
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88037198"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912787"
 ---
 # <a name="tune-performance-storm-hdinsight--azure-data-lake-storage-gen2"></a>Prestaties afstemmen: Storm, HDInsight & Azure Data Lake Storage Gen2
 
@@ -22,9 +22,9 @@ Begrijp de factoren die u moet overwegen wanneer u de prestaties van een Azure S
 ## <a name="prerequisites"></a>Vereisten
 
 * **Een Azure-abonnement**. Zie [Gratis proefversie van Azure ophalen](https://azure.microsoft.com/pricing/free-trial/).
-* **Een Azure data Lake Storage Gen2-account**. Zie [Snelstartgids: een opslag account maken voor analyse](data-lake-storage-quickstart-create-account.md)voor instructies over het maken van een.
-* **Azure HDInsight-cluster** met toegang tot een Data Lake Storage Gen2-account. Zie [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2). Zorg ervoor dat Extern bureaublad voor het cluster is ingeschakeld.
-* **Een storm-cluster wordt uitgevoerd op Data Lake Storage Gen2**. Zie [Storm op HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-overview)voor meer informatie.
+* **Een Azure data Lake Storage Gen2-account**. Zie [Snelstartgids: een opslag account maken voor analyse](../common/storage-account-create.md)voor instructies over het maken van een.
+* **Azure HDInsight-cluster** met toegang tot een Data Lake Storage Gen2-account. Zie [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md). Zorg ervoor dat Extern bureaublad voor het cluster is ingeschakeld.
+* **Een storm-cluster wordt uitgevoerd op Data Lake Storage Gen2**. Zie [Storm op HDInsight](../../hdinsight/storm/apache-storm-overview.md)voor meer informatie.
 * **Richt lijnen voor het afstemmen van de prestaties van data Lake Storage Gen2**.  Zie [Data Lake Storage Gen2 richt lijnen voor het afstemmen van prestaties](data-lake-storage-performance-tuning-guidance.md)voor algemene concepten.   
 
 ## <a name="tune-the-parallelism-of-the-topology"></a>De parallellisme van de topologie afstemmen
@@ -110,10 +110,10 @@ Als u de limieten bereikt van de band breedte van Data Lake Storage Gen2, worden
 
 Als u wilt controleren of u een beperking krijgt, schakelt u de logboek registratie voor fout opsporing in aan de client zijde:
 
-1. In **Ambari**  >  **Storm**  >  **config**  >  **Advanced Storm-worker-log4j**, Wijzig ** &lt; root level = "info &gt; "** naar ** &lt; root level = "Debug &gt; "**. Start alle knoop punten/service opnieuw op om de configuratie van kracht te laten worden.
+1. In **Ambari**  >  **Storm**  >  **config**  >  **Advanced Storm-worker-log4j**, Wijzig **&lt; root level = "info &gt; "** naar **&lt; root level = "Debug &gt; "**. Start alle knoop punten/service opnieuw op om de configuratie van kracht te laten worden.
 2. Bewaak de Storm-topologie logboeken op worker-knoop punten (onder/var/log/Storm/worker-Artifacts/ &lt; &gt; / &lt; -topologie poort &gt; /Worker.log) voor data Lake Storage Gen2 beperkings uitzonderingen.
 
 ## <a name="next-steps"></a>Volgende stappen
-In [deze blog](https://blogs.msdn.microsoft.com/shanyu/2015/05/14/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs/)kunt u naar aanvullende prestaties afstemmen voor Storm.
+In [deze blog](/archive/blogs/shanyu/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs)kunt u naar aanvullende prestaties afstemmen voor Storm.
 
 Voor een extra voor beeld dat wordt uitgevoerd, raadpleegt u [dit op github](https://github.com/hdinsight/storm-performance-automation).

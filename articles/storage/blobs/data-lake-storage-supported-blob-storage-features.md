@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: b670ec3cee2ebd1cc98ea2e04fb2b0dfd90e4e1a
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 900021e258bb96c0d0c83ef182262515449ad5df
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594212"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912583"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Blob-opslag functies die beschikbaar zijn in Azure Data Lake Storage Gen2
 
@@ -31,7 +31,7 @@ De volgende tabel laat zien hoe elke Blob Storage-functie wordt ondersteund met 
 |Statische-toegangslaag|Algemeen beschikbaar|Niet ondersteund|[Azure Blob-opslag: dynamische en statische toegangslagen, en archieftoegangslaag](storage-blob-storage-tiers.md)|
 |Gebeurtenissen|Algemeen beschikbaar|Algemeen beschikbaar|[Reageren op gebeurtenissen van Blob Storage](storage-blob-event-overview.md)|
 |Metrische gegevens (klassiek)|Algemeen beschikbaar|Algemeen beschikbaar|[Azure Storage Analytics-metrische gegevens (klassiek)](../common/storage-analytics-metrics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Metrische gegevens in Azure Monitor|Algemeen beschikbaar|Preview|[Metrische gegevens van Azure Storage in Azure Monitor](../common/storage-metrics-in-azure-monitor.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Metrische gegevens in Azure Monitor|Algemeen beschikbaar|Preview|[Metrische gegevens van Azure Storage in Azure Monitor](./monitor-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Power shell-opdrachten voor Blob-opslag|Algemeen beschikbaar|Algemeen beschikbaar|[Quickstart: Blobs uploaden, downloaden en vermelden met PowerShell](storage-quickstart-blobs-powershell.md)|
 |Azure CLI-opdrachten voor Blob Storage|Algemeen beschikbaar|Algemeen beschikbaar|[Quickstart: Blobs maken, downloaden, uploaden en weergeven met Azure CLI](storage-quickstart-blobs-cli.md)|
 |Api's voor Blob-opslag|Algemeen beschikbaar|Algemeen beschikbaar|[Snelstart: De Azure Blob Storage-clientbibliotheek v12 voor .NET](storage-quickstart-blobs-dotnet.md)<br>[Quickstart: Blobs beheren met Java v12 SDK](storage-quickstart-blobs-java.md)<br>[Quickstart: Blobs beheren met Python v12 SDK](storage-quickstart-blobs-python.md)<br>[Quickstart: Blobs beheren met JavaScript v12 SDK in Node.js](storage-quickstart-blobs-nodejs.md)|
@@ -39,12 +39,12 @@ De volgende tabel laat zien hoe elke Blob Storage-functie wordt ondersteund met 
 |Access-laag archiveren|Algemeen beschikbaar|Niet ondersteund|[Azure Blob-opslag: dynamische en statische toegangslagen, en archieftoegangslaag](storage-blob-storage-tiers.md)|
 |Levenscyclus beheer beleid (lagen)|Algemeen beschikbaar|Nog niet ondersteund|[De levenscyclus van Azure Blob-opslag beheren](storage-lifecycle-management-concepts.md)|
 |Levenscyclus beheer beleid (BLOB verwijderen)|Algemeen beschikbaar|Algemeen beschikbaar|[De levenscyclus van Azure Blob-opslag beheren](storage-lifecycle-management-concepts.md)|
-|Aanmelden Azure Monitor|Preview |Preview|[Bewakings Azure Storage](../common/monitor-storage.md)|
+|Aanmelden Azure Monitor|Preview |Preview|[Bewakings Azure Storage](./monitor-blob-storage.md)|
 |Momentopnamen|Preview|Preview|[BLOB-moment opnamen](snapshots-overview.md)|
 |Statische websites|Preview|Preview|[Een statische website hosten in Azure Storage](storage-blob-static-website.md)|
 |Onveranderbare opslag|Preview|Preview|[Bedrijfs kritieke blobgegevens opslaan met onveranderlijke opslag](storage-blob-immutable-storage.md)|
 |Container zacht verwijderen|Preview|Preview|[Voorlopig verwijderen voor containers (preview-versie)](soft-delete-container-overview.md)|
-|BLOB zacht verwijderen|Nog niet ondersteund|Nog niet ondersteund|[Blobs voorlopig verwijderen](storage-blob-soft-delete.md)|
+|BLOB zacht verwijderen|Nog niet ondersteund|Nog niet ondersteund|[Blobs voorlopig verwijderen](./soft-delete-blob-overview.md)|
 |Blobfuse|Algemeen beschikbaar|Algemeen beschikbaar|[Blob-opslag koppelen als een bestands systeem met blobfuse](storage-how-to-mount-container-linux.md)|
 |Account-failover|Nog niet ondersteund|Nog niet ondersteund|[Herstel na nood gevallen en failover van accounts](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |BLOB-container-ACL|Niet ondersteund<div role="complementary" aria-labelledby="blob-container-ACL"><sup>1</sup></div>|Niet ondersteund<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|Zie de verwante opmerking onder deze tabel.|

@@ -9,12 +9,12 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: artek
-ms.openlocfilehash: 1d720aed44358dd314bc4226adb9ad517139cd18
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2b36dd600efa864913e0087c49bffd556e8330d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87836306"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912396"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>De HDFS CLI gebruiken met Data Lake Storage Gen2
 
@@ -29,7 +29,7 @@ Zie de [officiële documentatie](https://hadoop.apache.org/docs/r2.4.1/hadoop-pr
 
 ## <a name="use-the-hdfs-cli-with-an-hdinsight-hadoop-cluster-on-linux"></a>De HDFS CLI gebruiken met een HDInsight Hadoop-cluster in Linux
 
-Maak eerst [externe toegang tot services](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-information#remote-access-to-services). Als u [SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix) selecteert, ziet de Power shell-voorbeeld code er als volgt uit:
+Maak eerst [externe toegang tot services](../../hdinsight/hdinsight-hadoop-linux-information.md#remote-access-to-services). Als u [SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md) selecteert, ziet de Power shell-voorbeeld code er als volgt uit:
 
 ```powershell
 #Connect to the cluster via SSH.
@@ -120,4 +120,4 @@ U kunt de volledige lijst met opdrachten bekijken op de website van [Apache Hado
 
 * [Een Azure Data Lake Storage Gen2-account gebruiken in Azure Databricks](./data-lake-storage-quickstart-create-databricks-account.md)
 
-* [Meer informatie over toegangs beheer lijsten voor bestanden en mappen](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
+* [Meer informatie over toegangs beheer lijsten voor bestanden en mappen](./data-lake-storage-access-control.md)

@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: ed6d3b927254d44863b7fd0a597528813be791cf
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 10ae9e1356cea954435d15441d74f4f86a804578
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95736600"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95893977"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Wat is er nieuw in Form Recognizer?
 
@@ -40,11 +40,14 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
 - **Nieuwe ondersteunde taal: Japans** -de volgende nieuwe talen worden nu ondersteund: voor `AnalyzeLayout` en `AnalyzeCustomForm` : Japans ( `ja` ). [Taalondersteuning](language-support.md)
 - **Tekst lijn stijl vermelding (handgeschreven/Overig) (alleen Latijnse talen)** : met formulier herkenning wordt nu een `appearance` object geclassificeerd waarin wordt aangegeven of elke tekst regel handgeschreven stijl is of niet, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen.
 - **Kwaliteits verbeteringen** : extractie verbeteringen, waaronder de extractie van één cijfer.
-- **Nieuwe try-it-out-functie in de voorbeeld label van het formulier Recognizer-voor beeld van het hulp programma** voor het opvullen van vooraf gemaakte factuur-, ontvangst-en visite kaart modellen en de lay-out-API met behulp van het voor beeld labelen van de formulier herkenning. Bekijk hoe uw gegevens worden geëxtraheerd zonder dat u code hoeft te schrijven.
+- **Nieuwe try-it-out-functie in de vorm van voor beeld van herkenning en labelen hulp programma** : de mogelijkheid om vooraf gemaakte factuur-, ontvangst-en visite kaart modellen en de lay-out van de indelings-API te gebruiken met behulp van het voor beeld labelen Bekijk hoe uw gegevens worden geëxtraheerd zonder dat u code hoeft te schrijven.
 
   > [Het voorbeeld programma voor formulier herkenning uitproberen](https://fott-preview.azurewebsites.net/)
 
   ![FOTT-voor beeld](./media/ui-preview.jpg)
+  
+- **Feedback-lus** : bij het analyseren van bestanden via het hulp programma voor het labelen van het voor beeld kunt u dit nu ook toevoegen aan de Trainingsset en adujst de classificatielabels indien nodig en train om het model te verbeteren.
+- **Documets automatisch labelen** -Automitcally labels extra documenten op basis van eerder gelabelde documenten in het project. 
 
 ## <a name="august-2020"></a>Augustus 2020
 

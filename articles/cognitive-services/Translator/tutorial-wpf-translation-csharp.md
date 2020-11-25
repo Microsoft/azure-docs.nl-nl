@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.date: 05/26/2020
 ms.author: swmachan
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ef5384abd63dcd9aeb4789dc4955f4b80068d330
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d239b89aaf0bc140916d38583f4263f7bf660f1a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88921236"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023613"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Zelfstudie: Een vertaal-app maken met WPF
 
-In deze zelfstudie bouwt u een [Windows Presentation Foundation-app (WPF)](https://docs.microsoft.com/visualstudio/designers/getting-started-with-wpf?view=vs-2019) die gebruikmaakt van Azure Cognitive Service voor tekstvertaling, taaldetectie en spellingscontrole. Hierbij wordt één abonnementssleutel gebruikt. Met de app worden API's aangeroepen vanuit Translator en [Bing Spellingcontrole](https://azure.microsoft.com/services/cognitive-services/spell-check/).
+In deze zelfstudie bouwt u een [Windows Presentation Foundation-app (WPF)](/visualstudio/designers/getting-started-with-wpf?view=vs-2019) die gebruikmaakt van Azure Cognitive Service voor tekstvertaling, taaldetectie en spellingscontrole. Hierbij wordt één abonnementssleutel gebruikt. Met de app worden API's aangeroepen vanuit Translator en [Bing Spellingcontrole](https://azure.microsoft.com/services/cognitive-services/spell-check/).
 
 Wat is WPF? Dit is een UI-framework waarmee u apps voor computers maakt. Het WPF-ontwikkelingsplatform biedt ondersteuning voor een breed scala aan app-ontwikkelingsfuncties, waaronder een app-model, resources, besturingselementen, afbeeldingen, lay-out, gegevensbinding, documenten en beveiliging. Dit is een subset van het .NET Framework, dus als u al eerder apps hebt gemaakt met het .NET Framework met behulp van ASP.NET of Windows Forms, is de programmeerervaring vergelijkbaar. In WPF wordt gebruikgemaakt van de Extensible Application Markup Language (XAML) om een declaratief model te creëren voor app-programmering. Dit model wordt in de volgende secties besproken.
 
@@ -40,16 +40,16 @@ Deze lijst bevat de Cognitive Services in deze zelfstudie worden gebruikt. Klik 
 
 | Service | Functie | Beschrijving |
 |---------|---------|-------------|
-| Translator | [Talen ophalen](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) | Hiermee haalt u een volledige lijst ondersteunde talen op voor het vertalen van tekst. |
-| Translator | [Vertalen](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | Hiermee vertaalt u tekst naar meer dan 70 talen. |
-| Translator | [Detecteren](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect) | Hiermee detecteert u de taal van ingevoerde tekst. Biedt ook een betrouwbaarheidsscore voor de detectie. |
-| Bing Spellingcontrole | [Spellingscontrole](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | Hiermee corrigeert u spelfouten om de nauwkeurigheid van de vertaling te vergroten. |
+| Translator | [Talen ophalen](./reference/v3-0-languages.md) | Hiermee haalt u een volledige lijst ondersteunde talen op voor het vertalen van tekst. |
+| Translator | [Vertalen](./reference/v3-0-translate.md) | Hiermee vertaalt u tekst naar meer dan 70 talen. |
+| Translator | [Detecteren](./reference/v3-0-detect.md) | Hiermee detecteert u de taal van ingevoerde tekst. Biedt ook een betrouwbaarheidsscore voor de detectie. |
+| Bing Spellingcontrole | [Spellingscontrole](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | Hiermee corrigeert u spelfouten om de nauwkeurigheid van de vertaling te vergroten. |
 
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u doorgaat, zorgt u voor de volgende zaken:
 
-* Een Azure Cognitive Services-abonnement. [Haal een Cognitive Services-toegangssleutel op](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#create-a-new-azure-cognitive-services-resource).
+* Een Azure Cognitive Services-abonnement. [Haal een Cognitive Services-toegangssleutel op](../cognitive-services-apis-create-account.md#create-a-new-azure-cognitive-services-resource).
 * Een Windows-machine
 * [Visual Studio 2019](https://www.visualstudio.com/downloads/) - Community of Enterprise
 
@@ -83,14 +83,14 @@ We gaan assembly's toevoegen aan het project om objecten te serialiseren en dese
 1. Op het tabblad **Assembly's** staan alle .NET Framework-assembly's die beschikbaar zijn voor verwijzing. Gebruik de zoekbalk rechtsboven om naar verwijzingen te zoeken.
    ![Assembly-verwijzingen toevoegen](media/add-assemblies-2019.png)
 1. Selecteer de volgende verwijzingen voor uw project:
-   * [System.Runtime.Serialization](https://docs.microsoft.com/dotnet/api/system.runtime.serialization)
-   * [System.Web](https://docs.microsoft.com/dotnet/api/system.web)
+   * [System.Runtime.Serialization](/dotnet/api/system.runtime.serialization)
+   * [System.Web](/dotnet/api/system.web)
    * System.Web.Extensions
-   * [System.Windows](https://docs.microsoft.com/dotnet/api/system.windows)
+   * [System.Windows](/dotnet/api/system.windows)
 1. Wanneer u deze verwijzingen hebt toegevoegd aan uw project, klikt u op **OK** om **Reference Manager** te sluiten.
 
 > [!NOTE]
-> Als u graag meer wilt weten over assembly-verwijzingen, ziet u [How to: Add or remove reference using the Reference Manager](https://docs.microsoft.com/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019) (Instructies: verwijzingen toevoegen of verwijderen via Reference Manager).
+> Als u graag meer wilt weten over assembly-verwijzingen, ziet u [How to: Add or remove reference using the Reference Manager](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019) (Instructies: verwijzingen toevoegen of verwijderen via Reference Manager).
 
 ### <a name="install-newtonsoftjson"></a>NewtonSoft.Json installeren
 
@@ -269,7 +269,7 @@ Translator ondersteunt op dit moment meer dan 70 talen. In de loop van de tijd w
 In deze sectie maken we een `GET`-aanvraag voor de talenresource. Hierbij geven we op dat we een lijst willen zien van de talen die beschikbaar zijn voor vertaling.
 
 > [!NOTE]
-> Met de talenresource kunt u de ondersteunde talen filteren op basis van de volgende queryparameters: transliteratie, woordenlijst en vertaling. Zie de [API-naslaginformatie](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) voor meer informatie.
+> Met de talenresource kunt u de ondersteunde talen filteren op basis van de volgende queryparameters: transliteratie, woordenlijst en vertaling. Zie de [API-naslaginformatie](./reference/v3-0-languages.md) voor meer informatie.
 
 Voordat we verdergaan, bekijkt u de voorbeelduitvoer van een aanroep naar de talenresource:
 
@@ -581,4 +581,4 @@ De broncode voor dit project is beschikbaar op GitHub.
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Microsoft Translator-verwijzing](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference)
+> [Microsoft Translator-verwijzing](./reference/v3-0-reference.md)

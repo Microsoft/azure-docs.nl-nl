@@ -12,17 +12,20 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: 38be8b97b3255e4e63301e693d2a5f295e8d801b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8881dc3f67ac1c9f699bd2bf7bcf1dbbcd5e9c0c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92779965"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95905324"
 ---
 # <a name="powershell-and-the-azure-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>Power shell en Azure CLI: Schakel Transparent Data Encryption in met door de klant beheerde sleutel van Azure Key Vault
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 In dit artikel wordt beschreven hoe u een sleutel gebruikt uit Azure Key Vault voor Transparent Data Encryption (TDE) op Azure SQL Database of Azure Synapse Analytics (voorheen SQL Data Warehouse). Voor meer informatie over de TDE met ondersteuning voor Azure Key Vault Integration-Bring Your Own Key (BYOK), gaat u naar [TDe met door de klant beheerde sleutels in azure Key Vault](transparent-data-encryption-byok-overview.md).
+
+> [!NOTE] 
+> Azure SQL ondersteunt nu het gebruik van een RSA-sleutel die is opgeslagen in een beheerde HSM als TDE-Protector. Deze functie is beschikbaar als **open bare preview**. Azure Key Vault Managed HSM is een volledig beheerde, Maxi maal beschik bare, door standaarden compatibele Cloud service met één Tenant waarmee u cryptografische sleutels voor uw Cloud toepassingen kunt beveiligen met behulp van FIPS 140-2 level 3 gevalideerd Hsm's. Meer informatie over [beheerde hsm's](../../key-vault/managed-hsm/index.yml).
 
 ## <a name="prerequisites-for-powershell"></a>Vereisten voor Power shell
 
@@ -36,7 +39,8 @@ In dit artikel wordt beschreven hoe u een sleutel gebruikt uit Azure Key Vault v
 - De sleutel moet de volgende kenmerken hebben om te kunnen worden gebruikt voor TDE:
   - Geen verval datum
   - Niet uitgeschakeld
-  - Kan de *Get* -, *Terugloop* -, *sleutel bewerking uitpakken*
+  - Kan de *Get*-, *Terugloop*-, *sleutel bewerking uitpakken*
+- **(In preview-versie)** Als u een beheerde HSM-sleutel wilt gebruiken, volgt u de instructies om [een beheerde HSM te maken en te activeren met behulp van Azure cli](../../key-vault/managed-hsm/quick-create-cli.md)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -70,6 +74,8 @@ Gebruik de cmdlet [set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/se
    Set-AzKeyVaultAccessPolicy -VaultName <KeyVaultName> `
        -ObjectId $server.Identity.PrincipalId -PermissionsToKeys get, wrapKey, unwrapKey
    ```
+Als u machtigingen wilt toevoegen aan uw server op een beheerde HSM, voegt u de lokale RBAC-rol ' beheerde HSM crypto-service ' toe aan de-server. Hiermee wordt de server in staat stellen om Get-, terugloop-, uitpakkende sleutel bewerkingen uit te voeren op de sleutels in de beheerde HSM.
+[Instructies voor het inrichten van server toegang op een beheerde HSM](../../key-vault/managed-hsm/role-management.md)
 
 ## <a name="add-the-key-vault-key-to-the-server-and-set-the-tde-protector"></a>Voeg de Key Vault sleutel toe aan de server en stel de TDE-beveiliging in
 
@@ -79,10 +85,15 @@ Gebruik de cmdlet [set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/se
 - Gebruik de cmdlet [Get-AzSqlServerTransparentDataEncryptionProtector](/powershell/module/az.sql/get-azsqlservertransparentdataencryptionprotector) om te controleren of de TDe-Protector is geconfigureerd zoals bedoeld.
 
 > [!NOTE]
+> **(In preview-versie)** Gebruik AZ. SQL 2.11.1-versie van Power shell voor beheerde HSM-sleutels.
+
+> [!NOTE]
 > De gecombineerde lengte van de naam van de sleutel kluis en de naam van de sleutel mag niet langer zijn dan 94 tekens.
 
 > [!TIP]
-> Een voor beeld van een KeyId van Key Vault: https://contosokeyvault.vault.azure.net/keys/Key1/1a1a2b2b3c3c4d4d5e5e6f6f7g7g8h8h
+> Een voor beeld van een KeyId van Key Vault:<br/>https://contosokeyvault.vault.azure.net/keys/Key1/1a1a2b2b3c3c4d4d5e5e6f6f7g7g8h8h
+>
+> Een voor beeld van een beheerde HSM KeyId:<br/>https://contosoMHSM.managedhsm.azure.net/keys/myrsakey
 
 ```powershell
 # add the key from Key Vault to the server
@@ -239,7 +250,7 @@ Controleer het volgende als er een probleem optreedt:
 
 - Als de nieuwe sleutel niet kan worden toegevoegd aan de server, of als de nieuwe sleutel niet kan worden bijgewerkt als de TDE-Protector, controleert u het volgende:
    - De sleutel mag geen verval datum hebben
-   - Voor de sleutel moet de bewerking *Get* , *wrap* en *uitpakken van sleutel* bewerkingen zijn ingeschakeld.
+   - Voor de sleutel moet de bewerking *Get*, *wrap* en *uitpakken van sleutel* bewerkingen zijn ingeschakeld.
 
 ## <a name="next-steps"></a>Volgende stappen
 

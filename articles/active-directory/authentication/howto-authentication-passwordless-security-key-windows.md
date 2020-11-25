@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/30/2020
+ms.date: 11/24/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fba2610b3343744c448e390bc2d713b38da481d
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 25c6ccb4661fde1efb088cd8535bf2759f2057b3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839468"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95902757"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Aanmeldings wachtwoord zonder wacht woord inschakelen voor Windows 10-apparaten met Azure Active Directory (preview-versie)
 
@@ -134,7 +134,7 @@ Organisaties kunnen met **hybride Azure AD gekoppelde apparaten** de volgende Gr
 - Als u dit beleid instelt op **ingeschakeld** , kunnen gebruikers zich aanmelden met beveiligings sleutels.
 - Als u dit beleid instelt op **uitgeschakeld** of **niet geconfigureerd** , kunnen gebruikers zich niet meer aanmelden met beveiligings sleutels.
 
-Voor deze groepsbeleid instelling is een bijgewerkte versie van de `credentialprovider.admx` Groepsbeleid sjabloon vereist. Deze nieuwe sjabloon is beschikbaar in de volgende versie van Windows Server en met Windows 10 20H1. Deze instelling kan worden beheerd met een apparaat waarop een van deze nieuwere versies van Windows of een andere versie wordt uitgevoerd door de richt lijnen in het ondersteunings onderwerp te volgen, [het centrale archief voor Groepsbeleid-Beheersjablonen in Windows te maken en te beheren](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
+Voor deze groepsbeleid instelling is een bijgewerkte versie van de `CredentialProviders.admx` Groepsbeleid sjabloon vereist. Deze nieuwe sjabloon is beschikbaar in de volgende versie van Windows Server en met Windows 10 20H1. Deze instelling kan worden beheerd met een apparaat waarop een van deze nieuwere versies van Windows of een andere versie wordt uitgevoerd door de richt lijnen in het ondersteunings onderwerp te volgen, [het centrale archief voor Groepsbeleid-Beheersjablonen in Windows te maken en te beheren](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
 
 ## <a name="sign-in-with-fido2-security-key"></a>Aanmelden met FIDO2-beveiligings sleutel
 

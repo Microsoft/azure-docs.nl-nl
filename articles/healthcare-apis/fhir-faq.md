@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 08/03/2020
 ms.author: matjazl
-ms.openlocfilehash: 8f4d16931f09f94af81dd4e0f178ce6e0f990881
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 744bcfe196629f76c5505f36ef9c8c224fefe601
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94426201"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95909064"
 ---
 # <a name="frequently-asked-questions-about-the-azure-api-for-fhir"></a>Veelgestelde vragen over de Azure API voor FHIR
 
@@ -65,6 +65,10 @@ Raadpleeg de [release](https://github.com/microsoft/fhir-server/releases) van de
 
 SLIMME (Vervang bare medische toepassingen en herbruikbare technologie) op FHIR is een set open specificaties voor het integreren van partner toepassingen met FHIR-servers en andere Health IT-systemen, zoals elektronische status records en informatie uitwisselingen van de status. Door een slimme on FHIR-toepassing te maken, kunt u ervoor zorgen dat uw toepassing toegankelijk is en kan worden gebruikt door een verdwaald van verschillende systemen.
 Verificatie en Azure API voor FHIR. Ga voor meer informatie naar Smart [Health](https://smarthealthit.org/).
+
+### <a name="where-can-i-find-what-version-of-fhir-is-running-on-my-database"></a>Waar kan ik vinden welke versie van FHIR op mijn Data Base wordt uitgevoerd. 
+
+U kunt de exacte FHIR-versie die wordt weer gegeven in de instructie Capability vinden onder de eigenschap ' fhirVersion '.
 
 ## <a name="fhir-implementations-and-specifications"></a>FHIR-implementaties en-specificaties
 

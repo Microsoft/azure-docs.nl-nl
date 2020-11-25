@@ -1,30 +1,30 @@
 ---
-title: VM-grootten kiezen voor Pools
-description: Kiezen uit de beschik bare VM-grootten voor reken knooppunten in Azure Batch Pools
+title: VM-grootten en-installatie kopieën kiezen voor Pools
+description: Kiezen uit de beschik bare VM-grootten en versies van besturings systemen voor reken knooppunten in Azure Batch Pools
 ms.topic: conceptual
-ms.date: 10/23/2020
+ms.date: 11/24/2020
 ms.custom: seodec18
-ms.openlocfilehash: fd093006a9eb0c9746a19cb5f91b280145ddfb7e
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 8bb54a4db62f56f442f7cec81e6768241a05ffee
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517052"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95895227"
 ---
-# <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Een VM-grootte voor reken knooppunten in een Azure Batch groep kiezen
+# <a name="choose-a-vm-size-and-image-for-compute-nodes-in-an-azure-batch-pool"></a>Een VM-grootte en-afbeelding kiezen voor reken knooppunten in een Azure Batch pool
 
 Wanneer u een knooppunt grootte voor een Azure Batch groep selecteert, kunt u kiezen uit vrijwel alle VM-grootten die beschikbaar zijn in Azure. Azure biedt tal van grootten voor Linux-en Windows-Vm's voor verschillende werk belastingen.
 
-Er zijn enkele uitzonde ringen en beperkingen voor het kiezen van een VM-grootte:
-
-* Sommige VM-reeksen of VM-grootten worden niet ondersteund in batch.
-* Sommige VM-grootten zijn beperkt en moeten specifiek worden ingeschakeld voordat ze kunnen worden toegewezen.
-
 ## <a name="supported-vm-series-and-sizes"></a>Ondersteunde VM-reeksen en-groottes
+
+Er zijn enkele uitzonde ringen en beperkingen voor het kiezen van een VM-grootte voor de batch-pool:
+
+- Sommige VM-reeksen of VM-grootten worden niet ondersteund in batch.
+- Sommige VM-grootten zijn beperkt en moeten specifiek worden ingeschakeld voordat ze kunnen worden toegewezen.
 
 ### <a name="pools-in-virtual-machine-configuration"></a>Groepen in de configuratie van de virtuele machine
 
-Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle VM-grootten ([Linux](../virtual-machines/sizes.md), [Windows](../virtual-machines/sizes.md)). Raadpleeg de volgende tabel voor meer informatie over ondersteunde grootten en beperkingen.
+Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle [VM-grootten](../virtual-machines/sizes.md). Raadpleeg de volgende tabel voor meer informatie over ondersteunde grootten en beperkingen.
 
 | VM-reeks  | Ondersteunde grootten |
 |------------|---------|
@@ -71,6 +71,7 @@ Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle VM-groot
 <sup>2</sup> deze VM-serie kan alleen worden gebruikt met VM-installatie kopieën van generatie 2.
 
 ### <a name="using-generation-2-vm-images"></a>VM-installatie kopieën van generatie 2 gebruiken
+
 Sommige VM-reeksen, zoals [Mv2](../virtual-machines/mv2-series.md), kunnen alleen worden gebruikt met [VM-installatie kopieën van generatie 2](../virtual-machines/generation-2.md). VM-installatie kopieën van de 2e generatie zijn opgegeven als een VM-installatie kopie, met behulp van de eigenschap SKU van de configuratie [' imageReference '](/rest/api/batchservice/pool/add#imagereference) ; de teken reeksen ' SKU ' hebben een achtervoegsel zoals '-G2 ' of '-Gen2 '. Gebruik de [lijst met ondersteunde installatie](/rest/api/batchservice/account/listsupportedimages) kopieën, [Power shell](/powershell/module/az.batch/get-azbatchsupportedimage)of [Azure cli](/cli/azure/batch/pool/supported-images), voor een lijst met VM-installatie kopieën die worden ondersteund door batch, inclusief installatie kopieën van de 2e generatie.
 
 ### <a name="pools-in-cloud-service-configuration"></a>Groepen in de Cloud service configuratie
@@ -84,19 +85,27 @@ Batch-Pools in de Cloud service configuratie ondersteunen alle [VM-grootten voor
 
 ## <a name="size-considerations"></a>Overwegingen over grootte
 
-* **Toepassings vereisten** : Houd rekening met de kenmerken en vereisten van de toepassing die u op de knoop punten uitvoert. Houd ook rekening met het feit of bijvoorbeeld de toepassing meerdere threads heeft en hoeveel geheugen deze gebruikt. Zo kunt u gemakkelijker de meest geschikte en voordeligste knooppuntgrootte bepalen. Voor [mpi-werk belastingen](batch-mpi.md) of CUDA-toepassingen met meerdere instanties kunt u respectievelijk gespecialiseerde VM-grootten met [HPC](../virtual-machines/sizes-hpc.md) of [GPU-](../virtual-machines/sizes-gpu.md) capaciteit overwegen. (Zie [met RDMA compatibele of GPU-compatibele instanties in batch-Pools gebruiken](batch-pool-compute-intensive-sizes.md).)
+- **Toepassings vereisten** : Houd rekening met de kenmerken en vereisten van de toepassing die u op de knoop punten uitvoert. Houd ook rekening met het feit of bijvoorbeeld de toepassing meerdere threads heeft en hoeveel geheugen deze gebruikt. Zo kunt u gemakkelijker de meest geschikte en voordeligste knooppuntgrootte bepalen. Voor [mpi-werk belastingen](batch-mpi.md) of CUDA-toepassingen met meerdere instanties kunt u respectievelijk gespecialiseerde VM-grootten met [HPC](../virtual-machines/sizes-hpc.md) of [GPU-](../virtual-machines/sizes-gpu.md) capaciteit overwegen. Zie voor meer informatie [gebruik van RDMA-compatibele of GPU-ingeschakelde instanties in batch-Pools](batch-pool-compute-intensive-sizes.md).
 
-* **Taken per knoop punt** : het is gebruikelijk om een knooppunt grootte te selecteren, ervan uitgaande dat er één taak tegelijk op een knoop punt wordt uitgevoerd. Het kan echter handig zijn om meerdere taken (en dus meerdere toepassings exemplaren) parallel op reken knooppunten [uit te voeren](batch-parallel-node-tasks.md) tijdens de taak uitvoering. In dit geval is het gebruikelijk om een multicore-knooppunt grootte te kiezen die geschikt is voor de verhoogde vraag van parallelle taak uitvoering.
+- **Taken per knoop punt** : het is gebruikelijk om een knooppunt grootte te selecteren, ervan uitgaande dat er één taak tegelijk op een knoop punt wordt uitgevoerd. Het kan echter handig zijn om meerdere taken (en dus meerdere toepassings exemplaren) parallel op reken knooppunten [uit te voeren](batch-parallel-node-tasks.md) tijdens de taak uitvoering. In dit geval is het gebruikelijk om een multicore-knooppunt grootte te kiezen die geschikt is voor de verhoogde vraag van parallelle taak uitvoering.
 
-* **Laad niveaus voor verschillende taken** : alle knoop punten in een groep hebben dezelfde grootte. Als u toepassingen met verschillende systeemvereisten en/of workloadniveaus wilt uitvoeren, moet u afzonderlijke pools maken.
+- **Laad niveaus voor verschillende taken** : alle knoop punten in een groep hebben dezelfde grootte. Als u toepassingen met verschillende systeemvereisten en/of workloadniveaus wilt uitvoeren, moet u afzonderlijke pools maken.
 
-* **Beschik baarheid van regio** : een VM-serie of-grootte is mogelijk niet beschikbaar in de regio's waar u uw batch-accounts maakt. Zie [producten beschikbaar per regio](https://azure.microsoft.com/regions/services/)om te controleren of er een grootte beschikbaar is.
+- **Beschik baarheid van regio** : een VM-serie of-grootte is mogelijk niet beschikbaar in de regio's waar u uw batch-accounts maakt. Zie [producten beschikbaar per regio](https://azure.microsoft.com/regions/services/)om te controleren of er een grootte beschikbaar is.
 
-* **Quota's** : de [kernen Quota's](batch-quota-limit.md#resource-quotas) in uw batch-account kunnen het aantal knoop punten van een bepaalde grootte beperken die u aan een batch-pool kunt toevoegen. Raadpleeg [dit artikel](batch-quota-limit.md#increase-a-quota)als u een quota verhoging wilt aanvragen. 
+- **Quota's** : de [kernen Quota's](batch-quota-limit.md#resource-quotas) in uw batch-account kunnen het aantal knoop punten van een bepaalde grootte beperken die u aan een batch-pool kunt toevoegen. Als dat nodig is, kunt u [een quotum verhoging aanvragen](batch-quota-limit.md#increase-a-quota).
 
-* **Groeps configuratie** : in het algemeen hebt u meer opties voor VM-grootte wanneer u een groep in de virtuele-machine configuratie maakt, vergeleken met de configuratie van de Cloud service.
+- **Groeps configuratie** : in het algemeen hebt u meer opties voor VM-grootte wanneer u een groep in de virtuele-machine configuratie maakt, vergeleken met de configuratie van de Cloud service.
+
+## <a name="supported-vm-images"></a>Ondersteunde VM-installatiekopieën
+
+Gebruik een van de volgende Api's om een lijst op te halen met Windows-en Linux VM-installatie kopieën die momenteel worden ondersteund door batch, met inbegrip van de SKU-Id's van de node-agent voor elke installatie kopie:
+
+- Batch-service REST API: [ondersteunde installatie kopieën weer geven](/rest/api/batchservice/account/listsupportedimages)
+- Power shell: [Get-AzBatchSupportedImage](/powershell/module/az.batch/get-azbatchsupportedimage)
+- Azure CLI: [AZ-batch pool ondersteund-installatie kopieën](/cli/azure/batch/pool/supported-images)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over de [Werkstroom van de batch-service en primaire resources](batch-service-workflow-features.md) als pools, knooppunten, jobs en taken.
-* Zie voor meer informatie over het gebruik van Compute-intensieve VM-grootten [RDMA-compatibele of GPU-compatibele instanties in batch-Pools gebruiken](batch-pool-compute-intensive-sizes.md).
+- Meer informatie over de [Werkstroom van de batch-service en primaire resources](batch-service-workflow-features.md) als pools, knooppunten, jobs en taken.
+- Zie voor meer informatie over het gebruik van Compute-intensieve VM-grootten [RDMA-compatibele of GPU-compatibele instanties in batch-Pools gebruiken](batch-pool-compute-intensive-sizes.md).

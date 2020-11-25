@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u Azure Resource Manager-sjablonen impl
 ms.topic: conceptual
 ms.date: 10/13/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: adb0b9d9a7da19c45904a5d222573e1880915b12
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 3dcb246956aae274f17cf938ee3d406562b22941
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841679"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95905256"
 ---
 # <a name="deploy-azure-resource-manager-templates-by-using-github-actions"></a>Azure Resource Manager sjablonen implementeren met behulp van GitHub-acties
 
@@ -112,7 +112,7 @@ Het werk stroom bestand moet worden opgeslagen in de map **. github/werk stromen
         steps:
 
           # Checkout code
-        - uses: actions/checkout@master
+        - uses: actions/checkout@main
 
           # Log into Azure
         - uses: azure/login@v1
@@ -137,7 +137,7 @@ Het werk stroom bestand moet worden opgeslagen in de map **. github/werk stromen
     De eerste sectie van het werk stroom bestand bevat:
 
     - **naam**: de naam van de werk stroom.
-    - **op**: de naam van de GitHub-gebeurtenissen die de werk stroom activeren. De werk stroom wordt geactiveerd wanneer er sprake is van een push gebeurtenis in de hoofd vertakking, waardoor ten minste één van de opgegeven bestanden wordt gewijzigd. De twee bestanden zijn het werk stroom bestand en het sjabloon bestand.
+    - **op**: de naam van de GitHub-gebeurtenissen die de werk stroom activeren. De werk stroom wordt geactiveerd wanneer er sprake is van een push gebeurtenis op de hoofd vertakking, waardoor ten minste één van de opgegeven bestanden wordt gewijzigd. De twee bestanden zijn het werk stroom bestand en het sjabloon bestand.
 
 1. Selecteer **Doorvoeren starten**.
 1. Selecteer **rechtstreeks door voeren naar de hoofd vertakking**.
@@ -152,7 +152,6 @@ Omdat de werk stroom zo is geconfigureerd dat deze wordt geactiveerd door het we
 1. Selecteer **arm implementeren** in het menu om de implementatie te controleren.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
-
 Als uw resource groep en opslag plaats niet meer nodig zijn, moet u de resources opschonen die u hebt geïmplementeerd door de resource groep en de GitHub-opslag plaats te verwijderen. 
 
 ## <a name="next-steps"></a>Volgende stappen

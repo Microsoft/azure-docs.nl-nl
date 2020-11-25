@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 09/23/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 828b5c34aaccf2a53aa197f921a8ef02d46821ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2350177373bc99907c437d814d8f01193f18f3fd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91280467"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95895720"
 ---
 # <a name="perform-a-point-in-time-restore-on-block-blob-data"></a>Herstel naar een bepaald tijdstip uitvoeren op blok-BLOB-gegevens
 
@@ -29,19 +29,19 @@ Zie herstel naar een bepaald tijdstip [voor blok-blobs voor](point-in-time-resto
 
 Voordat u herstel naar een bepaald tijdstip inschakelt en configureert, moet u de vereisten voor het opslag account inschakelen: voorlopig verwijderen, feed wijzigen en BLOB-versie beheer. Raadpleeg de volgende artikelen voor meer informatie over het inschakelen van elk van deze functies:
 
-- [Voorlopig verwijderen inschakelen voor blobs](soft-delete-enable.md)
+- [Voorlopig verwijderen inschakelen voor blobs](./soft-delete-blob-enable.md)
 - [De wijzigings feed in-en uitschakelen](storage-blob-change-feed.md#enable-and-disable-the-change-feed)
 - [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)
 
 > [!IMPORTANT]
 > Het inschakelen van de functie voor voorlopig verwijderen, wijzigings invoer en BLOB-versie beheer kan leiden tot extra kosten. Zie voor meer informatie [voorlopig verwijderen voor blobs](soft-delete-blob-overview.md), [ondersteuning voor feeds wijzigen in Azure Blob Storage](storage-blob-change-feed.md)en [BLOB-versie beheer](versioning-overview.md).
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 Voer de volgende stappen uit om herstel naar een bepaald tijdstip met de Azure Portal te configureren:
 
 1. Ga in Azure Portal naar uw opslagaccount.
-1. Kies onder **instellingen**de optie **gegevens beveiliging**.
+1. Kies onder **instellingen** de optie **gegevens beveiliging**.
 1. Selecteer herstel naar een bepaald **tijdstip inschakelen** . Wanneer u deze optie selecteert, wordt voorlopig verwijderen voor blobs, versie beheer en wijzigings feed ook ingeschakeld.
 1. Stel het maximale herstel punt voor herstel naar een bepaald tijdstip in dagen in. Dit aantal moet minstens één dag kleiner zijn dan de retentie periode die is opgegeven voor het voorlopig verwijderen van de blob.
 1. Sla uw wijzigingen op.
@@ -112,17 +112,17 @@ Alleen blok-blobs worden hersteld. Pagina-blobs en toevoeg-blobs worden niet opg
 
 U kunt alle containers in het opslag account herstellen om ze te retour neren naar de vorige status op een bepaald moment.
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 Voer de volgende stappen uit om alle containers en blobs in het opslag account te herstellen met de Azure Portal:
 
 1. Navigeer naar de lijst met containers voor uw opslag account.
-1. Kies op de werk balk de optie **containers herstellen**en vervolgens **alle herstellen**.
+1. Kies op de werk balk de optie **containers herstellen** en vervolgens **alle herstellen**.
 1. Geef in het deel venster **alle containers herstellen** het herstel punt op door een datum en tijd op te geven.
 1. Bevestig dat u wilt door gaan door het selectie vakje in te scha kelen.
 1. Selecteer **herstellen** om de herstel bewerking te starten.
 
-    :::image type="content" source="media/point-in-time-restore-manage/restore-all-containers-portal.png" alt-text="Scherm afbeelding die laat zien hoe u herstel naar een bepaald tijdstip in de Azure Portal kunt configureren":::
+    :::image type="content" source="media/point-in-time-restore-manage/restore-all-containers-portal.png" alt-text="Scherm afbeelding die laat zien hoe u alle containers herstelt naar een opgegeven herstel punt":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -158,25 +158,25 @@ Restore-AzStorageBlobRange -ResourceGroupName $rgName `
 
 U kunt een of meer lexicographical-bereiken van blobs binnen één container of meerdere containers herstellen om deze blobs op een bepaald moment in hun vorige status te retour neren.
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 Voer de volgende stappen uit om een reeks blobs in een of meer containers te herstellen met de Azure Portal:
 
 1. Navigeer naar de lijst met containers voor uw opslag account.
 1. Selecteer de container of containers die u wilt herstellen.
-1. Kies op de werk balk de optie **containers herstellen**en vervolgens **herstellen geselecteerd**.
+1. Kies op de werk balk de optie **containers herstellen** en vervolgens **herstellen geselecteerd**.
 1. Geef in het deel venster **geselecteerde containers herstellen** het herstel punt op door een datum en tijd op te geven.
 1. Geef de bereiken op die u wilt herstellen. Gebruik een slash (/) om de container naam te afbakenen vanuit het voor voegsel van de blob.
 1. Standaard bevat het deel venster **geselecteerde containers herstellen** een bereik dat alle blobs in de container bevat. Verwijder dit bereik als u de volledige container niet wilt herstellen. Het standaard bereik wordt weer gegeven in de volgende afbeelding.
 
-    :::image type="content" source="media/point-in-time-restore-manage/delete-default-blob-range.png" alt-text="Scherm afbeelding die laat zien hoe u herstel naar een bepaald tijdstip in de Azure Portal kunt configureren":::
+    :::image type="content" source="media/point-in-time-restore-manage/delete-default-blob-range.png" alt-text="Scherm afbeelding met het standaard-BLOB-bereik dat moet worden verwijderd voordat het aangepaste bereik wordt opgegeven":::
 
 1. Bevestig dat u wilt door gaan door het selectie vakje in te scha kelen.
 1. Selecteer **herstellen** om de herstel bewerking te starten.
 
 In de volgende afbeelding ziet u een herstel bewerking voor een set bereiken.
 
-:::image type="content" source="media/point-in-time-restore-manage/restore-multiple-container-ranges-portal.png" alt-text="Scherm afbeelding die laat zien hoe u herstel naar een bepaald tijdstip in de Azure Portal kunt configureren":::
+:::image type="content" source="media/point-in-time-restore-manage/restore-multiple-container-ranges-portal.png" alt-text="Scherm afbeelding die laat zien hoe u de bereiken van blobs in een of meer containers kunt herstellen":::
 
 De herstel bewerking die wordt weer gegeven in de afbeelding, voert de volgende acties uit:
 
@@ -186,7 +186,7 @@ De herstel bewerking die wordt weer gegeven in de afbeelding, voert de volgende 
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Als u één bereik van blobs wilt herstellen, roept u de opdracht **Restore-AzStorageBlobRange** aan en geeft u een lexicographical-bereik van container-en BLOB-namen op voor de `-BlobRestoreRange` para meter. Als u bijvoorbeeld de blobs in één container met de naam *container1*wilt herstellen, kunt u een bereik opgeven dat begint met *container1* en eindigt met *container2*. Er zijn geen vereisten voor de containers met de naam in het begin-en eind bereik. Omdat het einde van het bereik exclusief is, zelfs als het opslag account een container met de naam *container2*bevat, wordt alleen de container met de naam *container1* hersteld:
+Als u één bereik van blobs wilt herstellen, roept u de opdracht **Restore-AzStorageBlobRange** aan en geeft u een lexicographical-bereik van container-en BLOB-namen op voor de `-BlobRestoreRange` para meter. Als u bijvoorbeeld de blobs in één container met de naam *container1* wilt herstellen, kunt u een bereik opgeven dat begint met *container1* en eindigt met *container2*. Er zijn geen vereisten voor de containers met de naam in het begin-en eind bereik. Omdat het einde van het bereik exclusief is, zelfs als het opslag account een container met de naam *container2* bevat, wordt alleen de container met de naam *container1* hersteld:
 
 ```powershell
 $range = New-AzStorageBlobRangeToRestore -StartRange container1 `
@@ -248,6 +248,6 @@ Als u de herstel bewerking synchroon wilt uitvoeren en de uitvoering wilt blok k
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Herstel naar een bepaald tijdstip voor blok-blobs](point-in-time-restore-overview.md)
-- [Voorlopig verwijderen](soft-delete-overview.md)
+- [Voorlopig verwijderen](./soft-delete-blob-overview.md)
 - [Feed wijzigen](storage-blob-change-feed.md)
 - [BLOB-versie beheer](versioning-overview.md)

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: fb908fe94f940073753ea8e1cde3da2b2a0c4b6b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4b1e5dd3c72122ade2fd4d4092bb18a7acf215f5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88034767"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912940"
 ---
 # <a name="tune-performance-hive-hdinsight--azure-data-lake-storage-gen2"></a>Prestaties afstemmen: Hive, HDInsight & Azure Data Lake Storage Gen2
 
@@ -22,9 +22,9 @@ De standaard instellingen zijn ingesteld om goede prestaties te bieden in veel v
 ## <a name="prerequisites"></a>Vereisten
 
 * **Een Azure-abonnement**. Zie [Gratis proefversie van Azure ophalen](https://azure.microsoft.com/pricing/free-trial/).
-* **Een Data Lake Storage Gen2-account**. Zie [Quick Start: een Azure data Lake Storage Gen2 Storage-account maken](data-lake-storage-quickstart-create-account.md) voor instructies over het maken van een
-* **Azure HDInsight-cluster** met toegang tot een Data Lake Storage Gen2-account. Zie [Azure data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2)
-* **Hive wordt uitgevoerd op HDInsight**.  Zie [Hive in Hdinsight gebruiken](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-hive) voor meer informatie over het uitvoeren van Hive-taken in hdinsight
+* **Een Data Lake Storage Gen2-account**. Zie [Quick Start: een Azure data Lake Storage Gen2 Storage-account maken](../common/storage-account-create.md) voor instructies over het maken van een
+* **Azure HDInsight-cluster** met toegang tot een Data Lake Storage Gen2-account. Zie [Azure data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md)
+* **Hive wordt uitgevoerd op HDInsight**.  Zie [Hive in Hdinsight gebruiken](../../hdinsight/hadoop/hdinsight-use-hive.md) voor meer informatie over het uitvoeren van Hive-taken in hdinsight
 * **Richt lijnen voor het afstemmen van de prestaties van data Lake Storage Gen2**.  Zie [Data Lake Storage Gen2 richt lijnen voor het afstemmen van prestaties](data-lake-storage-performance-tuning-guidance.md) voor algemene concepten.
 
 ## <a name="parameters"></a>Parameters
@@ -51,7 +51,7 @@ Dit zijn de belangrijkste instellingen die u kunt afstemmen voor betere Data Lak
 
 **Stel hive.exec. reducr. bytes. per. versmaller** : de standaard waarde werkt goed als de gegevens niet zijn gecomprimeerd.  Voor gegevens die zijn gecomprimeerd, moet u de grootte van de reducer verkleinen.  
 
-**Component. TEZ. container. size instellen** : in elk knoop punt wordt het geheugen opgegeven door garen. nodemanager. resource. Memory-MB en moet standaard correct worden ingesteld op het HDI-cluster.  Zie dit [bericht](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-hive-out-of-memory-error-oom)voor meer informatie over het instellen van het juiste geheugen in garens.
+**Component. TEZ. container. size instellen** : in elk knoop punt wordt het geheugen opgegeven door garen. nodemanager. resource. Memory-MB en moet standaard correct worden ingesteld op het HDI-cluster.  Zie dit [bericht](../../hdinsight/hdinsight-hadoop-hive-out-of-memory-error-oom.md)voor meer informatie over het instellen van het juiste geheugen in garens.
 
 I/O-intensieve workloads kunnen profiteren van meer parallellisatie door de TEZ-container grootte te verlagen. Dit geeft de gebruiker meer containers waarmee de gelijktijdigheid wordt verhoogd.  Sommige Hive-query's vereisen echter een aanzienlijke hoeveelheid geheugen (bijvoorbeeld MapJoin).  Als de taak onvoldoende geheugen heeft, treedt er een uitzonde ring voor onvoldoende geheugen op tijdens runtime.  Als er uitzonde ringen uit het geheugen worden weer gegeven, moet u het geheugen verg Roten.   
 
@@ -73,6 +73,6 @@ Stel dat u een D14-cluster van 8 knoop punten hebt.
 ## <a name="further-information-on-hive-tuning"></a>Meer informatie over Hive-afstemming
 
 Hier volgen enkele blogs waarmee u uw Hive-query's kunt afstemmen:
-* [Hive-query's voor Hadoop in HDInsight optimaliseren](https://azure.microsoft.com/documentation/articles/hdinsight-hadoop-optimize-hive-query/)
-* [Apache Hive-query's in Azure HDInsight optimaliseren](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-optimize-hive-query)
+* [Hive-query's voor Hadoop in HDInsight optimaliseren](../../hdinsight/hdinsight-hadoop-optimize-hive-query.md)
+* [Apache Hive-query's in Azure HDInsight optimaliseren](../../hdinsight/hdinsight-hadoop-optimize-hive-query.md)
 * [Ignite Talk to optimize component in HDInsight](https://channel9.msdn.com/events/Machine-Learning-and-Data-Sciences-Conference/Data-Science-Summit-2016/MSDSS25)

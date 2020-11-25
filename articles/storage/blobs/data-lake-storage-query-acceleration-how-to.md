@@ -9,12 +9,12 @@ ms.date: 09/09/2020
 ms.author: normesta
 ms.reviewer: jamsbak
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: b7f566f85ebdb6b481797823cba78aa968747e9f
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: b02f5a7c390c5594a7c5692798a0691c8d9a42d0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746427"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912770"
 ---
 # <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration"></a>Gegevens filteren met behulp van Azure Data Lake Storage-query versnelling
 
@@ -26,7 +26,7 @@ Met de functie voor het versnellen van query's kunnen toepassingen en analyse ra
 
 - U hebt een Azure-abonnement nodig voor toegang tot Azure Storage. Als u nog geen abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
 
-- Een **v2-** opslag account voor algemeen gebruik. Zie [een opslag account maken](../common/storage-quickstart-create-account.md).
+- Een **v2-** opslag account voor algemeen gebruik. Zie [een opslag account maken](../common/storage-account-create.md).
 
 - Kies een tabblad om alle SDK-specifieke vereisten te bekijken.
 
@@ -92,7 +92,7 @@ Als u query versnelling wilt gebruiken, moet u eerst de functie voor query versn
 
 #### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-1. Open de [Azure Cloud shell](https://docs.microsoft.com/azure/cloud-shell/overview)of open een opdracht console toepassing zoals Windows Power shell als u de Azure cli lokaal hebt [geïnstalleerd](https://docs.microsoft.com/cli/azure/install-azure-cli) .
+1. Open de [Azure Cloud shell](../../cloud-shell/overview.md)of open een opdracht console toepassing zoals Windows Power shell als u de Azure cli lokaal hebt [geïnstalleerd](/cli/azure/install-azure-cli) .
 
 2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van het opslag account.
 
@@ -328,7 +328,7 @@ Get-QueryCsv $ctx $container $blob "SELECT * FROM BlobStorage WHERE _3 = 'Heming
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
-De asynchrone methode `BlobQuickQueryClient.QueryAsync` verzendt de query naar de API voor query versnelling, waarna de resultaten worden teruggestuurd naar de toepassing als een [Stream](https://docs.microsoft.com/dotnet/api/system.io.stream) -object.
+De asynchrone methode `BlobQuickQueryClient.QueryAsync` verzendt de query naar de API voor query versnelling, waarna de resultaten worden teruggestuurd naar de toepassing als een [Stream](/dotnet/api/system.io.stream) -object.
 
 ```cs
 static async Task QueryHemingway(BlockBlobClient blob)

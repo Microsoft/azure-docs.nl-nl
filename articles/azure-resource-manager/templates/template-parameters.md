@@ -2,19 +2,21 @@
 title: Para meters in sjablonen
 description: Hierin wordt beschreven hoe u para meters definieert in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
-ms.date: 09/05/2019
-ms.openlocfilehash: 89c6984c587e8dae59c1825a99d4f8da1c06dafb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/24/2020
+ms.openlocfilehash: 8cdc95037967a32c2d8464f4dc39b1e7369102bb
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76122420"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95911410"
 ---
 # <a name="parameters-in-azure-resource-manager-templates"></a>Parameters in Azure Resource Manager templates (Parameters in Azure Resource Manager-sjablonen)
 
 In dit artikel wordt beschreven hoe u para meters definieert en gebruikt in uw Azure Resource Manager sjabloon. Door verschillende waarden voor para meters op te geven, kunt u een sjabloon gebruiken voor verschillende omgevingen.
 
 Resource Manager zet parameter waarden om voordat de implementatie bewerkingen worden gestart. Wanneer de para meter wordt gebruikt in de sjabloon, wordt deze vervangen door de omgezette waarde.
+
+Elke para meter moet worden ingesteld op een van de [gegevens typen](template-syntax.md#data-types).
 
 ## <a name="define-parameter"></a>Para meter definiëren
 
@@ -57,7 +59,7 @@ In de sjabloon verwijst u naar de waarde voor de para meter met behulp van de [p
 
 ## <a name="template-functions"></a>Sjabloonfuncties
 
-Wanneer u de standaard waarde voor een para meter opgeeft, kunt u de meeste sjabloon functies gebruiken. U kunt een andere parameter waarde gebruiken om een standaard waarde te maken. De volgende sjabloon toont het gebruik van functies in de standaard waarde. Als er geen naam wordt gegeven voor de site, maakt deze een unieke teken reeks waarde en voegt deze toe aan de **site**. Als er geen naam wordt gegeven voor het host-abonnement, neemt deze de waarde voor de-site en de **-plan**toe.
+Wanneer u de standaard waarde voor een para meter opgeeft, kunt u de meeste sjabloon functies gebruiken. U kunt een andere parameter waarde gebruiken om een standaard waarde te maken. De volgende sjabloon toont het gebruik van functies in de standaard waarde. Als er geen naam wordt gegeven voor de site, maakt deze een unieke teken reeks waarde en voegt deze toe aan de **site**. Als er geen naam wordt gegeven voor het host-abonnement, neemt deze de waarde voor de-site en de **-plan** toe.
 
 ```json
 "parameters": {

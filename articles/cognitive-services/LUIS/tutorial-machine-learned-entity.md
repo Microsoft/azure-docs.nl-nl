@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 05/08/2020
-ms.openlocfilehash: 1f85ba0c64db23e156f384fadcc5ca7bf84a58d4
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: aa2783abe86b90a907510dec8d7eb40162820ad5
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130748"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025256"
 ---
 # <a name="tutorial-extract-structured-data-from-user-utterance-with-machine-learning-entities-in-language-understanding-luis"></a>Zelfstudie: Gestructureerde gegevens uit de uiting van de gebruiker extraheren met machine learning-entiteiten in Language Understanding (LUIS)
 
@@ -110,7 +110,7 @@ Door een lijst met bekende grootten toe te voegen die door de clienttoepassing w
 
 1. Selecteer **Entiteiten** in het menu links en selecteer vervolgens **+ Maken**.
 
-1. Stel de naam van de entiteit in als `SizeListentity` en stel het type in als **Lijst** , zodat het gemakkelijk te identificeren is in vergelijking met de `SizePhraselist` die in de vorige sectie is gemaakt.
+1. Stel de naam van de entiteit in als `SizeListentity` en stel het type in als **Lijst**, zodat het gemakkelijk te identificeren is in vergelijking met de `SizePhraselist` die in de vorige sectie is gemaakt.
 
 1. Voeg de grootten toe die de clienttoepassing verwacht: `Small`, `Medium`, `Large`en `XLarge`. Voeg vervolgens synoniemen toe voor elk. De synoniemen moeten de termen zijn die een gebruiker invoert in de chatbot. De entiteit wordt geëxtraheerd met een lijstentiteit wanneer deze precies overeenkomt met de genormaliseerde waarde of synoniemen.
 
@@ -236,7 +236,7 @@ Om een voorspelling van LUIS te ontvangen in een chatbot of een andere clienttoe
 
     ![Schermopname van knop om vanuit LUIS te publiceren naar eindpunt in menu rechtsboven](./media/howto-publish/publish-button.png)
 
-1. Selecteer de sleuf **Productie** , selecteer **Instellingen wijzigen** , selecteer **Sentimentanalyse** en selecteer **Gereed**.
+1. Selecteer de sleuf **Productie**, selecteer **Instellingen wijzigen**, selecteer **Sentimentanalyse** en selecteer **Gereed**.
 
     > [!div class="mx-imgBorder"]
     > ![Schermopname van publiceren naar eindpunt vanuit LUIS](./media/tutorial-machine-learned-entity/publish-with-sentiment-analysis.png)
@@ -297,7 +297,7 @@ Om een voorspelling van LUIS te ontvangen in een chatbot of een andere clienttoe
 
 ## <a name="related-information"></a>Gerelateerde informatie
 
-* [Zelfstudie - Intenties](luis-quickstart-intents-only.md)
+* [Zelfstudie - Intenties](./tutorial-intents-only.md)
 * [Concept - Entiteiten](luis-concept-entity-types.md) - conceptuele informatie
 * [Concept - Functies](luis-concept-feature.md) - conceptuele informatie
 * [Trainen](luis-how-to-train.md)
@@ -309,4 +309,4 @@ Om een voorspelling van LUIS te ontvangen in een chatbot of een andere clienttoe
 In deze zelfstudie gebruikt de app een machine learning-entiteit om de intentie van de uiting van een gebruiker te vinden en details uit die uiting te extraheren. Door de machine learning-entiteit te gebruiken, kunt u de details van de entiteit afbreken.
 
 > [!div class="nextstepaction"]
-> [Een vooraf gemaakte entiteit KeyPhrase toevoegen](luis-quickstart-intent-and-key-phrase.md)
+> [Een vooraf gemaakte entiteit KeyPhrase toevoegen](./luis-reference-prebuilt-keyphrase.md)

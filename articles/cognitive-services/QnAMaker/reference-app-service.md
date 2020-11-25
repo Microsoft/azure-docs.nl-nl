@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 11/9/2020
-ms.openlocfilehash: d2095919d6f6be482390250fd8d0ee20e9015237
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 1dfe14d96efd37e3dec7faeae1dfff21122958bc
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444857"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95894198"
 ---
 # <a name="service-configuration"></a>Serviceconfiguratie
 
@@ -18,7 +18,7 @@ Voor elke versie van QnA Maker wordt een andere set met Azure-resources (Service
 
 ## <a name="app-service"></a>App Service
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 QnA Maker gebruikt de App Service voor het leveren van de query runtime die wordt gebruikt door de [generateAnswer-API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/runtime/generateanswer).
 
@@ -37,7 +37,7 @@ U kunt een afzonderlijke instelling instellen via de lijst toepassings instellin
 
 U moet de service **opnieuw starten** op de pagina **overzicht** van de Azure Portal, wanneer u klaar bent met het aanbrengen van wijzigingen.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 App Service aanpassingen zijn niet van toepassing op QnA Maker beheerd (preview).
 
@@ -47,7 +47,7 @@ App Service aanpassingen zijn niet van toepassing op QnA Maker beheerd (preview)
 
 De QnA Maker-service biedt de configuratie voor de volgende gebruikers om samen te werken aan één QnA Maker-service en alle kennissen daarvan.
 
-Meer informatie [over het toevoegen van samen](./how-to/collaborate-knowledge-base.md) werkers aan uw service.
+Meer informatie [over het toevoegen van samen](./reference-role-based-access-control.md) werkers aan uw service.
 
 ## <a name="change-azure-cognitive-search"></a>Azure Cognitive Search wijzigen
 
@@ -59,11 +59,11 @@ Meer informatie [over hoe u de tekst van uw standaard antwoorden kunt wijzigen](
 
 ## <a name="telemetry"></a>Telemetrie
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 Application Insights wordt gebruikt voor het bewaken van telemetrie met QnA Maker GA. Er zijn geen configuratie-instellingen specifiek voor QnA Maker.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 Meer informatie [over hoe u telemetrie kunt toevoegen aan uw QnA Maker Managed-Service (preview)](How-To/get-analytics-knowledge-base.md). 
 

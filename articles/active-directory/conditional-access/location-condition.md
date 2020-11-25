@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 06/15/2020
+ms.date: 11/24/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 08e236d798f700a3c48dd41ba61941bc0037d613
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 888ed2fa24b82c0dda3361df1c63bb802e58f5fe
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88055374"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95904100"
 ---
 # <a name="using-the-location-condition-in-a-conditional-access-policy"></a>De locatie voorwaarde gebruiken in een beleid voor voorwaardelijke toegang 
 
@@ -37,7 +37,7 @@ De netwerk locatie wordt bepaald door het open bare IP-adres dat een client bied
 
 ## <a name="named-locations"></a>Benoemde locaties
 
-Locaties worden aangeduid in het Azure portal onder **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**met de  >  **naam locaties**. Deze benoemde netwerk locaties kunnen locaties bevatten zoals de hoofd netwerkbereiken van een organisatie, bereiken van VPN-netwerken of bereiken die u wilt blok keren. 
+Locaties worden aangeduid in het Azure portal onder **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang** met de  >  **naam locaties**. Deze benoemde netwerk locaties kunnen locaties bevatten zoals de hoofd netwerkbereiken van een organisatie, bereiken van VPN-netwerken of bereiken die u wilt blok keren. 
 
 ![Benoemde locaties in de Azure Portal](./media/location-condition/new-named-location.png)
 
@@ -64,13 +64,13 @@ Met deze optie kunt u bepalen in het beleid voor voorwaardelijke toegang, waarbi
 Sommige organisaties kunnen ervoor kiezen om volledige IP-grenzen van landen of regio's te definiëren als benoemde locaties voor beleids regels voor voorwaardelijke toegang. Ze kunnen deze locaties gebruiken bij het blok keren van onnodig verkeer wanneer ze weten dat gebruikers nooit van een locatie, zoals Noord-Korea, zijn. Deze toewijzingen van het IP-adres aan het land worden regel matig bijgewerkt. 
 
 > [!NOTE]
-> Landen bevatten geen IPv6-adresbereiken, alleen bekende IPv4-adresbereiken en kunnen niet worden gemarkeerd als vertrouwd.
+> IPv6-adresbereiken kunnen niet worden toegewezen aan landen. Alleen IPv4-adressen zijn toegewezen aan landen.
 
 ![Maak een nieuwe locatie op basis van een land of regio in de Azure Portal](./media/location-condition/new-named-location-country-region.png)
 
 #### <a name="include-unknown-areas"></a>Onbekende gebieden bevatten
 
-Sommige IP-adressen zijn niet toegewezen aan een bepaald land of bepaalde regio. Als u deze IP-locaties wilt vastleggen, schakelt u het selectie vakje **onbekende gebieden opnemen** bij het definiëren van een locatie in. Met deze optie kunt u kiezen of deze IP-adressen op de genoemde locatie moeten worden opgenomen. Gebruik deze instelling wanneer het beleid dat gebruikmaakt van de benoemde locatie, moet worden toegepast op onbekende locaties.
+Sommige IP-adressen zijn niet toegewezen aan een bepaald land of bepaalde regio, inclusief alle IPv6-adressen. Als u deze IP-locaties wilt vastleggen, schakelt u het selectie vakje **onbekende gebieden opnemen** bij het definiëren van een locatie in. Met deze optie kunt u kiezen of deze IP-adressen op de genoemde locatie moeten worden opgenomen. Gebruik deze instelling wanneer het beleid dat gebruikmaakt van de benoemde locatie, moet worden toegepast op onbekende locaties.
 
 ### <a name="configure-mfa-trusted-ips"></a>Vertrouwde IP-adressen van MFA configureren
 
@@ -80,7 +80,7 @@ Als u vertrouwde IP-adressen hebt geconfigureerd, worden ze als door **MFA vertr
 
 ### <a name="skipping-multi-factor-authentication"></a>Multi-factor Authentication overs Laan
 
-Op de pagina instellingen voor multi-factor Authentication-Service kunt u zakelijke intranet gebruikers identificeren door  **multi-factor Authentication overs laan voor aanvragen van federatieve gebruikers op mijn intranet**te selecteren. Deze instelling geeft aan dat de binnen bedrijfs netwerk claim, die wordt uitgegeven door AD FS, moet worden vertrouwd en gebruikt om de gebruiker te identificeren als in het bedrijfs netwerk. Zie [de functie voor vertrouwde IP-adressen inschakelen met behulp van voorwaardelijke toegang](../authentication/howto-mfa-mfasettings.md#enable-the-trusted-ips-feature-by-using-conditional-access)voor meer informatie.
+Op de pagina instellingen voor multi-factor Authentication-Service kunt u zakelijke intranet gebruikers identificeren door  **multi-factor Authentication overs laan voor aanvragen van federatieve gebruikers op mijn intranet** te selecteren. Deze instelling geeft aan dat de binnen bedrijfs netwerk claim, die wordt uitgegeven door AD FS, moet worden vertrouwd en gebruikt om de gebruiker te identificeren als in het bedrijfs netwerk. Zie [de functie voor vertrouwde IP-adressen inschakelen met behulp van voorwaardelijke toegang](../authentication/howto-mfa-mfasettings.md#enable-the-trusted-ips-feature-by-using-conditional-access)voor meer informatie.
 
 Nadat u deze optie hebt ingeschakeld, worden door de benoemde locatie die door **MFA wordt vertrouwd ip's** toegepast op alle beleids regels waarvoor deze optie is geselecteerd.
 
@@ -114,7 +114,7 @@ Er zijn nu twee opties voor het maken van de preview-versie:
 - **Locatie van IP-bereiken**
 
 > [!NOTE]
-> Landen bevatten geen IPv6-adresbereiken, alleen bekende IPv4-adresbereiken en kunnen niet worden gemarkeerd als vertrouwd.
+> IPv6-adresbereiken kunnen niet worden toegewezen aan landen. Alleen IPv4-adressen zijn toegewezen aan landen.
 
 ![Preview-interface voor benoemde locaties](./media/location-condition/named-location-preview.png)
 
@@ -128,7 +128,7 @@ Wanneer u de locatie voorwaarde configureert, hebt u de mogelijkheid om ondersch
 
 ### <a name="any-location"></a>Elke locatie
 
-Als u een **wille keurige locatie** selecteert, wordt er standaard een beleid toegepast op alle IP-adressen. Dit betekent elk adres op internet. Deze instelling is niet beperkt tot IP-adressen die u hebt geconfigureerd als benoemde locatie. Wanneer u **een wille keurige locatie**selecteert, kunt u nog steeds specifieke locaties uitsluiten van een beleid. U kunt bijvoorbeeld een beleid Toep assen op alle locaties behalve vertrouwde locaties om het bereik in te stellen op alle locaties, met uitzonde ring van het bedrijfs netwerk.
+Als u een **wille keurige locatie** selecteert, wordt er standaard een beleid toegepast op alle IP-adressen. Dit betekent elk adres op internet. Deze instelling is niet beperkt tot IP-adressen die u hebt geconfigureerd als benoemde locatie. Wanneer u **een wille keurige locatie** selecteert, kunt u nog steeds specifieke locaties uitsluiten van een beleid. U kunt bijvoorbeeld een beleid Toep assen op alle locaties behalve vertrouwde locaties om het bereik in te stellen op alle locaties, met uitzonde ring van het bedrijfs netwerk.
 
 ### <a name="all-trusted-locations"></a>Alle vertrouwde locaties
 
@@ -157,7 +157,7 @@ Het grootste deel van het IPv6-verkeer dat via een proxy naar Azure AD wordt ver
 Dit zijn de meest voorkomende oorzaken voor het configureren van IPv6-bereiken op uw benoemde locaties. Daarnaast kunt u, als u Azure VNets gebruikt, verkeer afkomstig van een IPv6-adres. Als u VNet-verkeer hebt geblokkeerd door een beleid voor voorwaardelijke toegang, controleert u het aanmeld logboek van Azure AD. Zodra u het verkeer hebt geïdentificeerd, kunt u het IPv6-adres dat wordt gebruikt, ophalen en uitsluiten van uw beleid. 
 
 > [!NOTE]
-> Als u een IP-CIDR-bereik voor één adres wilt opgeven, past u het/32-bitmask toe. Als u het IPv6-adres 2607: fb90: b27a: 6f69: f8d5: dea0: fb39:74a en wilt uitsluiten van dat ene adres als bereik, gebruikt u 2607: fb90: b27a: 6f69: f8d5: dea0: fb39:74a/32.
+> Als u een IP-CIDR-bereik voor één adres wilt opgeven, past u het/128-bitmask toe. Als u het IPv6-adres 2607: fb90: b27a: 6f69: f8d5: dea0: fb39:74a en wilt uitsluiten van dat ene adres als bereik, gebruikt u 2607: fb90: b27a: 6f69: f8d5: dea0: fb39:74a/128.
 
 ### <a name="identifying-ipv6-traffic-in-the-azure-ad-sign-in-activity-reports"></a>IPv6-verkeer identificeren in de rapporten van de aanmeldings activiteiten van Azure AD
 

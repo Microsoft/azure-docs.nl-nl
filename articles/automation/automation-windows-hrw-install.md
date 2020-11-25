@@ -3,14 +3,14 @@ title: Een Windows-Hybrid Runbook Worker implementeren in Azure Automation
 description: In dit artikel wordt uitgelegd hoe u een Hybrid Runbook Worker implementeert die u kunt gebruiken om runbooks uit te voeren op Windows-computers in uw lokale Data Center of in de cloud omgeving.
 services: automation
 ms.subservice: process-automation
-ms.date: 11/23/2020
+ms.date: 11/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: cb501b954897beb73ae05bfdc7b5ded2221dc114
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 31bb0fac302a81c2523a2d2855ca1930cb266ac4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95493924"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95906616"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Een Windows-Hybrid Runbook Worker implementeren
 
@@ -50,7 +50,7 @@ De functie Hybrid Runbook Worker ondersteunt de volgende besturings systemen:
 
 De minimale vereisten voor een Windows-systeem en-gebruikers Hybrid Runbook Worker zijn:
 
-* Windows Power shell 5,1 of hoger ([WMF 5,1 downloaden](https://www.microsoft.com/download/details.aspx?id=54616))
+* Windows Power shell 5,1 ([down load WMF 5,1](https://www.microsoft.com/download/details.aspx?id=54616)). Power shell core wordt niet ondersteund.
 * .NET framework 4.6.2 of hoger
 * Twee kernen
 * 4 GB aan RAM-geheugen

@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: nichola
-ms.openlocfilehash: 26dd255e6edff7c339ab9766bb71889cf4e2deaa
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 8f184de8953e8e8bfe982d2502ca476fb54a66c9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577640"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95903709"
 ---
 # <a name="five-steps-for-integrating-all-your-apps-with-azure-ad"></a>Vijf stappen voor het integreren van al uw apps met Azure AD
 
@@ -46,7 +46,7 @@ Ten slotte kunt u ook de apps integreren die u zelf ontwikkelt. Dit wordt behand
 
 Vervolgens ontdekken we de werk nemers van de toepassingen die vaak gebruikmaken van en bepalen we uw werk om ze te integreren met Azure AD.
 
-U kunt beginnen met Microsoft Cloud App Security&#39;s- [hulpprogram ma's voor Cloud detectie](/cloud-app-security/tutorial-shadow-it) om schaduw te detecteren en te beheren &quot; &quot; in uw netwerk (dat wil zeggen, apps die niet worden beheerd door de IT-afdeling). U kunt [micro soft Defender Advanced Threat Protection (ATP) gebruiken](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) om het detectie proces te vereenvoudigen en uit te breiden.
+U kunt beginnen met de [hulpprogram ma's voor Cloud detectie](/cloud-app-security/tutorial-shadow-it) van Microsoft Cloud app Security om de schaduw kopie te detecteren en te beheren in uw netwerk (dat wil zeggen: apps die niet worden beheerd door de IT-afdeling). U kunt [micro soft Defender Advanced Threat Protection (ATP) gebruiken](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) om het detectie proces te vereenvoudigen en uit te breiden.
 
 Daarnaast kunt u het [rapport AD FS toepassings activiteit](../manage-apps/migrate-adfs-application-activity.md) in de Azure Portal gebruiken om alle AD FS-apps in uw organisatie te detecteren, het aantal unieke gebruikers dat zich heeft aangemeld en de compatibiliteit voor het integreren met Azure AD.
 
@@ -66,7 +66,7 @@ Tijdens het detectie proces hebt u mogelijk toepassingen gevonden die niet worde
 - Bespaar geld door de nood zaak van on-premises gebruikers inrichten en verificatie te elimineren, evenals licentie kosten die zijn betaald aan andere Cloud-id-providers voor dezelfde service.
 - Verminder de administratieve overhead en schakel betere beveiliging in met minder redundantie in uw proces voor identiteits-en toegangs beheer.
 - Stel werk nemers in staat om toegang te krijgen tot alle toepassingen die ze nodig hebben via de [MyApps-Portal](../manage-apps/access-panel-collections.md).
-- Verbeter de intelligentie van Azure AD-&#39;s die betrekking hebben op [identiteits beveiliging](../identity-protection/overview-identity-protection.md) , zoals voorwaardelijke toegang door de hoeveelheid gegevens die wordt opgehaald uit uw app-gebruik te verhogen en de voor delen van de nieuwe apps uit te breiden.
+- Verbeter de intelligentie van de services voor [identiteits beveiliging](../identity-protection/overview-identity-protection.md) van Azure AD, zoals voorwaardelijke toegang, door de hoeveelheid gegevens die wordt opgehaald uit uw app-gebruik te verhogen en de voor delen ervan uit te breiden naar de nieuwe toegevoegde apps.
 
 We hebben hulp gepubliceerd voor het beheer van het bedrijfs proces van het integreren van apps met Azure AD, met inbegrip van een [poster](https://aka.ms/AppOnePager) en [presentatie](https://aka.ms/AppGuideline) die u kunt gebruiken om de eigen aren van zakelijke en toepassingen op de hoogte te stellen en geïnteresseerd te zijn. U kunt deze voor beelden met uw eigen huis stijl wijzigen en deze publiceren naar uw organisatie via uw bedrijfs portal, nieuws brief of ander medium wanneer u dit proces gaat volt ooien.
 
@@ -103,10 +103,10 @@ Daarnaast kunt u bezorgings controllers voor toepassingen integreren, zoals F5 B
 
 Voor apps die in uw bedrijf zijn gebouwd, kunnen uw ontwikkel aars het [micro soft-identiteits platform](../develop/index.yml) gebruiken voor het implementeren van verificatie en autorisatie. Toepassingen die zijn geïntegreerd met het platform, worden [geregistreerd met Azure AD](../develop/quickstart-register-app.md) en worden op dezelfde manier beheerd als andere apps in uw port Folio.
 
-Ontwikkel aars kunnen het platform gebruiken voor apps die intern worden gebruikt en klant gerichte apps, en er zijn andere voor delen van het gebruik van het platform. [Micro soft-verificatie bibliotheken (MSAL)](../develop/msal-overview.md), die deel uitmaken van het platform, stelt ontwikkel aars in staat om moderne ervaringen in te scha kelen, zoals multi-factor Authentication en het gebruik van beveiligings sleutels voor toegang tot hun apps zonder dat ze zelf een implementatie nodig hebben. Daarnaast hebben apps die zijn geïntegreerd met het micro soft-identiteits platform toegang tot [Microsoft Graph](../develop/microsoft-graph-intro.md) -een uniform API-eind punt dat de Microsoft 365 gegevens bevat waarmee de patronen van productiviteit, identiteit en beveiliging in een organisatie worden beschreven. Ontwikkel aars kunnen deze informatie gebruiken om functies te implementeren die de productiviteit van uw gebruikers verg Roten. U kunt bijvoorbeeld door de gebruikers te identificeren die de gebruiker heeft gecommuniceerd met onlangs en halen in de gebruikers interface van de app&#39;s.
+Ontwikkel aars kunnen het platform gebruiken voor apps die intern worden gebruikt en klant gerichte apps, en er zijn andere voor delen van het gebruik van het platform. [Micro soft-verificatie bibliotheken (MSAL)](../develop/msal-overview.md), die deel uitmaken van het platform, stelt ontwikkel aars in staat om moderne ervaringen in te scha kelen, zoals multi-factor Authentication en het gebruik van beveiligings sleutels voor toegang tot hun apps zonder dat ze zelf een implementatie nodig hebben. Daarnaast hebben apps die zijn geïntegreerd met het micro soft-identiteits platform toegang tot [Microsoft Graph](../develop/microsoft-graph-intro.md) -een uniform API-eind punt dat de Microsoft 365 gegevens bevat waarmee de patronen van productiviteit, identiteit en beveiliging in een organisatie worden beschreven. Ontwikkel aars kunnen deze informatie gebruiken om functies te implementeren die de productiviteit van uw gebruikers verg Roten. Bijvoorbeeld door de personen te identificeren die de gebruiker heeft gecommuniceerd met recent en deze te halen in de gebruikers interface van de app.
 
 We hebben een [video serie](https://www.youtube.com/watch?v=zjezqZPPOfc&amp;list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX) met een uitgebreide inleiding tot het platform, evenals een [groot aantal code voorbeelden](../develop/sample-v2-code.md) in ondersteunde talen en platformen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Bronnen voor het migreren van toepassingen naar Azure Active Directory](../manage-apps/migration-resources.md)
+- [Resources voor het migreren van toepassingen naar Azure Active Directory](../manage-apps/migration-resources.md)

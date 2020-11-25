@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: tutorial
 ms.date: 06/25/2020
 ms.author: trbye
-ms.openlocfilehash: c4195ff1b81097a3620f68939f32147a26e16d60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f547b353091cc81816f0974fced8d4dc836d22b2
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85391601"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023817"
 ---
 # <a name="quickstart-getting-a-luis-endpoint-key"></a>Quickstart: een LUIS-eindpuntsleutel ophalen
 
@@ -37,7 +37,7 @@ LUIS maakt gebruik van drie soorten sleutels:
 |Starter|Hiermee kunt u uw LUIS-toepassing testen met alleen tekst|
 |Eindpunt |Hiermee kunt u toegang verlenen tot een bepaalde LUIS-app|
 
-Voor deze zelfstudie hebt u het een sleutel van het type eindpunt nodig. In de zelfstudie wordt gebruikgemaakt van de voorbeeld-app Home Automation van LUIS. Deze app kunt u maken aan de hand van de instructies in de quickstart [ Een vooraf gemaakte Home Automation-app gebruiken](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app). Als u de beschikking hebt over een eigen LUIS-app, kunt u die ook gebruiken.
+Voor deze zelfstudie hebt u het een sleutel van het type eindpunt nodig. In de zelfstudie wordt gebruikgemaakt van de voorbeeld-app Home Automation van LUIS. Deze app kunt u maken aan de hand van de instructies in de quickstart [ Een vooraf gemaakte Home Automation-app gebruiken](../../luis/luis-get-started-create-app.md). Als u de beschikking hebt over een eigen LUIS-app, kunt u die ook gebruiken.
 
 Wanneer u een LUIS-app maakt, wordt er automatisch een starter-sleutel gegenereerd, zodat u de app kunt testen met tekstquery's. Deze sleutel zorgt er overigens niet voor dat de integratie van de Speech-service wordt ingeschakeld en werkt ook niet met deze zelfstudie. Maak een LUIS-resource in het Azure-dashboard en wijs deze toe aan de LUIS-app. U kunt de gratis versie van het abonnement gebruiken voor deze zelfstudie.
 

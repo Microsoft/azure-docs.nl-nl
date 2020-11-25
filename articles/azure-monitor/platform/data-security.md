@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 03/04/2019
-ms.openlocfilehash: ef34dbfd3af326dbf2d82e09a4c5c8c8e4a91a84
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/11/2020
+ms.openlocfilehash: 5aa379f6601bc324bd08c53f251b2097141eec69
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87319793"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95911631"
 ---
 # <a name="log-analytics-data-security"></a>Log Analytics gegevens beveiliging
 Dit document is bedoeld om informatie te verschaffen die specifiek is voor Log Analytics, een functie van Azure Monitor, om de informatie over [Vertrouwenscentrum van Azure](https://www.microsoft.com/en-us/trust-center?rtc=1)aan te vullen.  
@@ -27,11 +27,17 @@ De Log Analytics-service beheert uw gegevens op basis van de Cloud veilig door d
 * Naleving
 * Certificeringen voor beveiligings standaarden
 
+U kunt ook aanvullende beveiligings functies gebruiken die zijn ingebouwd in Azure Monitor en Log Analytics. Voor deze functies is meer beheerders beheer vereist. 
+* Door de klant beheerde sleutels (Security)
+* Persoonlijke Azure-opslag
+* Private Link-netwerken 
+* Toegangs limieten voor Azure die zijn ingesteld door Azure lockbox
+
 Neem contact met ons op met eventuele vragen, suggesties of problemen met betrekking tot een van de volgende informatie, waaronder ons beveiligings beleid voor [ondersteunings opties voor Azure](https://azure.microsoft.com/support/options/).
 
 ## <a name="sending-data-securely-using-tls-12"></a>Veilig gegevens verzenden met behulp van TLS 1,2 
 
-Om ervoor te zorgen dat de beveiliging van gegevens die onderweg zijn naar Log Analytics, raden we u ten zeerste aan de agent te configureren voor het gebruik van ten minste Transport Layer Security (TLS) 1,2. Oudere versies van TLS/Secure Sockets Layer (SSL) zijn kwetsbaar voor aanvallen en terwijl ze nog steeds werken om achterwaartse compatibiliteit mogelijk te maken, worden ze **niet aanbevolen**en wordt de branche snel verplaatst om ondersteuning voor deze oudere protocollen te annuleren. 
+Om ervoor te zorgen dat de beveiliging van gegevens die onderweg zijn naar Log Analytics, raden we u ten zeerste aan de agent te configureren voor het gebruik van ten minste Transport Layer Security (TLS) 1,2. Oudere versies van TLS/Secure Sockets Layer (SSL) zijn kwetsbaar voor aanvallen en terwijl ze nog steeds werken om achterwaartse compatibiliteit mogelijk te maken, worden ze **niet aanbevolen** en wordt de branche snel verplaatst om ondersteuning voor deze oudere protocollen te annuleren. 
 
 De [PCI Security Standards Council](https://www.pcisecuritystandards.org/) heeft een [deadline ingesteld van 30 juni 2018](https://www.pcisecuritystandards.org/pdfs/PCI_SSC_Migrating_from_SSL_and_Early_TLS_Resource_Guide.pdf) om oudere versies van TLS/SSL uit te scha kelen en te upgraden naar meer beveiligde protocollen. Als de ondersteuning voor Azure wordt verouderd als uw agents niet via ten minste TLS 1,2 kunnen communiceren, kunt u geen gegevens verzenden naar Log Analytics. 
 
@@ -170,6 +176,15 @@ De Bewaar periode van verzamelde gegevens die zijn opgeslagen in de data base is
 
 ## <a name="4-use-log-analytics-to-access-the-data"></a>4. gebruik Log Analytics om toegang te krijgen tot de gegevens
 Als u toegang wilt krijgen tot uw Log Analytics-werk ruimte, meldt u zich aan bij de Azure Portal met behulp van het organisatie account of Microsoft-account dat u eerder hebt ingesteld. Al het verkeer tussen de portal en de Log Analytics-service wordt verzonden via een beveiligd HTTPS-kanaal. Wanneer u de portal gebruikt, wordt er een sessie-ID gegenereerd op de gebruikers-client (webbrowser) en worden gegevens opgeslagen in een lokale cache totdat de sessie wordt beëindigd. Wanneer het is beëindigd, wordt de cache verwijderd. Cookies aan de client zijde, die geen persoons gegevens bevatten, worden niet automatisch verwijderd. Sessie cookies zijn gemarkeerd als HTTPOnly en zijn beveiligd. Na een vooraf vastgestelde niet-actieve periode wordt de Azure Portal-sessie beëindigd.
+
+
+## <a name="additional-security-features"></a>Aanvullende beveiligings functies
+U kunt deze aanvullende beveiligings functies gebruiken om uw Azure Monitor/Log Analytics-omgeving verder te beveiligen. Voor deze functies is meer beheerders beheer vereist. 
+- Door de [klant beheerde sleutels (beveiliging)](customer-managed-keys.md) : u kunt door de klant beheerde sleutels gebruiken om gegevens te versleutelen die naar uw log Analytics-werk ruimten worden verzonden. Hiervoor is het gebruik van Azure Key Vault vereist. 
+- [Persoonlijke/door de klant beheerde opslag](private-storage.md) : beheer uw persoonlijke versleutelde opslag account en vertel log Analytics het gebruik ervan om bewakings gegevens op te slaan 
+- [Particulier netwerk](private-link-security.md) : met de persoonlijke Azure-koppeling kunt u Azure PaaS-Services (met inbegrip van Azure monitor) veilig koppelen aan uw virtuele netwerk met behulp van privé-eind punten. 
+- [Azure klant-lockbox](/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-preview) -Klanten-lockbox voor Microsoft Azure biedt klanten een interface voor het controleren en goed keuren of afwijzen van aanvragen voor toegang tot klant gegevens. Dit wordt gebruikt in gevallen waarin een Microsoft-engineer toegang heeft tot klant gegevens tijdens een ondersteuningsaanvraag.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over het verzamelen van gegevens met Log Analytics voor uw virtuele Azure-machines na de [Snelstartgids van Azure VM](../learn/quick-collect-azurevm.md).  

@@ -10,12 +10,12 @@ ms.date: 09/22/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: aed3116976d57df81da399495fd9da3722ba770a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ca09e41e6d5b83f14d2dfee4107135585b7e945a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91960674"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95908792"
 ---
 # <a name="point-in-time-restore-for-block-blobs"></a>Herstel naar een bepaald tijdstip voor blok-blobs
 
@@ -49,7 +49,7 @@ De bewerking **BLOB-bereiken herstellen** retourneert een Restore-id waarmee de 
 
 Herstel naar een bepaald tijdstip vereist dat de volgende Azure Storage-functies worden ingeschakeld voordat u herstel naar een bepaald tijdstip kunt inschakelen:
 
-- [Voorlopig verwijderen](soft-delete-overview.md)
+- [Voorlopig verwijderen](./soft-delete-blob-overview.md)
 - [Feed wijzigen](storage-blob-change-feed.md)
 - [BLOB-versie beheer](versioning-overview.md)
 
@@ -92,5 +92,5 @@ Zie de [prijzen voor blok-blobs](https://azure.microsoft.com/pricing/details/sto
 
 - [Herstel naar een bepaald tijdstip uitvoeren op blok-BLOB-gegevens](point-in-time-restore-manage.md)
 - [Ondersteuning voor feed wijzigen in Azure Blob Storage](storage-blob-change-feed.md)
-- [Voorlopig verwijderen inschakelen voor blobs](soft-delete-enable.md)
+- [Voorlopig verwijderen inschakelen voor blobs](./soft-delete-blob-enable.md)
 - [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)

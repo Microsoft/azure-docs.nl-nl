@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 49a89ee90d28c9c7a3f59424b773ee0f221381e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: add763b713b93604e089d7aec586876fecd2887c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89301946"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95895635"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-the-azure-portal"></a>Snelstartgids: een openbaar IP-adres maken met behulp van de Azure Portal
 
@@ -28,15 +28,15 @@ Voer de volgende stappen uit om een standaard zone-redundant openbaar IP-adres t
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Selecteer **Een resource maken**. 
-3. Typ *openbaar IP-adres*in het zoekvak.
-4. Selecteer **openbaar IP-adres**in de zoek resultaten. Selecteer vervolgens op de pagina **openbaar IP-adres** **maken**.
+3. Typ *openbaar IP-adres* in het zoekvak.
+4. Selecteer **openbaar IP-adres** in de zoek resultaten. Selecteer vervolgens op de pagina **openbaar IP-adres** **maken**.
 5. Voer op de pagina **openbaar IP-adres maken** de volgende gegevens in of Selecteer deze: 
 
     | Instelling                 | Waarde                       |
     | ---                     | ---                         |
     | IP-versie              | IPv4 selecteren                 |    
     | SKU                     | selecteer **Standard**         |
-    | Naam                    | *MyStandardZRPublicIP* invoeren          |
+    | Name                    | *MyStandardZRPublicIP* invoeren          |
     | IP-adrestoewijzing   | Opmerking: dit wordt vergrendeld als ' statisch '                                        |
     | Time-out voor inactiviteit (minuten)  | Wijzig de waarde in 4        |
     | DNS-naamlabel          | Laat de waarde leeg    |
@@ -47,46 +47,21 @@ Voer de volgende stappen uit om een standaard zone-redundant openbaar IP-adres t
 
 Houd er rekening mee dat dit alleen geldige selecties zijn in regio's met [Beschikbaarheidszones](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).  (U kunt ook een specifieke zone in deze regio's selecteren, maar het is niet mogelijk om een zonegebonden fout te maken.)
 
-# <a name="standard-sku---no-zones"></a>[**Standaard-SKU-geen zones**](#tab/option-create-public-ip-standard)
-
-Voer de volgende stappen uit om een standaard openbaar IP-adres te maken als een niet-zonegebonden resource met de naam **myStandardPublicIP**.
-
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
-2. Selecteer **Een resource maken**. 
-3. Typ *openbaar IP-adres*in het zoekvak.
-4. Selecteer **openbaar IP-adres**in de zoek resultaten. Selecteer vervolgens op de pagina **openbaar IP-adres** **maken**.
-5. Voer op de pagina **openbaar IP-adres maken** de volgende gegevens in of Selecteer deze: 
-
-    | Instelling                 | Waarde                       |
-    | ---                     | ---                         |
-    | IP-versie              | IPv4 selecteren                 |    
-    | SKU                     | selecteer **Standard**         |
-    | Naam                    | *MyStandardPublicIP* invoeren          |
-    | IP-adrestoewijzing   | Opmerking: dit wordt vergrendeld als ' statisch '                                        |
-    | Time-out voor inactiviteit (minuten)  | Wijzig de waarde in 4        |
-    | DNS-naamlabel          | Laat de waarde leeg    |
-    | Abonnement            | Selecteer uw abonnement.   |
-    | Resourcegroep          | Selecteer **nieuwe maken** , voer myResourceGroup in en selecteer **OK** . |
-    | Locatie                | Selecteer **VS Oost 2**      |
-    | Beschikbaarheidszone       | Selecteer **geen zone** (en zie de opmerking hieronder) |
-
-Deze selectie is geldig in alle regio's en is de standaard selectie voor standaard open bare IP-adressen in regio's zonder dat u hoeft te [Beschikbaarheidszones](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).
-
 # <a name="basic-sku"></a>[**Basis-SKU**](#tab/option-create-public-ip-basic)
 
 Voer de volgende stappen uit om een eenvoudig, statisch openbaar IP-adres te maken met de naam **myBasicPublicIP**.  Algemene open bare Ip's hebben niet het concept van beschikbaarheids zones.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Selecteer **Een resource maken**. 
-3. Typ *openbaar IP-adres*in het zoekvak.
-4. Selecteer **openbaar IP-adres**in de zoek resultaten. Selecteer vervolgens op de pagina **openbaar IP-adres** **maken**.
+3. Typ *openbaar IP-adres* in het zoekvak.
+4. Selecteer **openbaar IP-adres** in de zoek resultaten. Selecteer vervolgens op de pagina **openbaar IP-adres** **maken**.
 5. Voer op de pagina **openbaar IP-adres maken** de volgende gegevens in of Selecteer deze: 
 
     | Instelling                 | Waarde                       |
     | ---                     | ---                         |
     | IP-versie              | IPv4 selecteren                 |    
     | SKU                     | selecteer **Standard**         |
-    | Naam                    | *MyBasicPublicIP* invoeren          |
+    | Name                    | *MyBasicPublicIP* invoeren          |
     | IP-adrestoewijzing   | **Statisch** kiezen (zie opmerking hieronder)                                     |
     | Time-out voor inactiviteit (minuten)  | Wijzig de waarde in 4        |
     | DNS-naamlabel          | Laat de waarde leeg    |

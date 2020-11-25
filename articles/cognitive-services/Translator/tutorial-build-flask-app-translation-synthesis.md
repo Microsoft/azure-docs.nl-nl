@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 05/26/2020
 ms.author: swmachan
 ms.custom: devx-track-python, devx-track-js
-ms.openlocfilehash: 41d7fe8e22b39d8755f86e5ee490aa6e7dff97fc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1cbe4d44f5e1c8b34a3d7bb9d05b9546f320b81c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330618"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023463"
 ---
 # <a name="tutorial-build-a-flask-app-with-azure-cognitive-services"></a>Zelfstudie: Een Flask-app bouwen met Azure Cognitive Services
 
@@ -64,7 +64,7 @@ Zoals eerder vermeld, hebt u voor deze zelfstudie drie abonnementssleutels nodig
 * Text Analytics
 * Speech Services
 
-Gebruik [Een Cognitive Services-account maken in de Azure-portal](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) voor stapsgewijze instructies om resources te maken.
+Gebruik [Een Cognitive Services-account maken in de Azure-portal](../cognitive-services-apis-create-account.md) voor stapsgewijze instructies om resources te maken.
 
 > [!IMPORTANT]
 > Voor deze zelfstudie maakt u uw resources in de regio US - west. Als u een andere regio gebruikt, moet u de basis-URL in elk van uw Python-bestanden aanpassen.
@@ -475,7 +475,7 @@ Druk op **Ctrl+C** om de app af te sluiten. Ga vervolgens naar de volgende secti
 
 ## <a name="analyze-sentiment"></a>Stemming analyseren
 
-De [Text Analytics-API](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) kan worden gebruikt voor het uitvoeren van sentiment-analyse, het uitpakken van sleutelzinnen uit tekst of het detecteren van de brontaal. In deze app gaan we sentimentanalyse gebruiken om te bepalen of de opgegeven tekst positief, neutraal of negatief is. De API retourneert een numerieke score tussen 0 en 1. Scores in de buurt van 1 wijzen op een positief gevoel, terwijl scores in de buurt van 0 op een negatief gevoel wijzen.
+De [Text Analytics-API](../text-analytics/overview.md) kan worden gebruikt voor het uitvoeren van sentiment-analyse, het uitpakken van sleutelzinnen uit tekst of het detecteren van de brontaal. In deze app gaan we sentimentanalyse gebruiken om te bepalen of de opgegeven tekst positief, neutraal of negatief is. De API retourneert een numerieke score tussen 0 en 1. Scores in de buurt van 1 wijzen op een positief gevoel, terwijl scores in de buurt van 0 op een negatief gevoel wijzen.
 
 In deze sectie gaat u de volgende dingen doen:
 
@@ -659,7 +659,7 @@ Druk op **Ctrl+C** om de app af te sluiten. Ga vervolgens naar de volgende secti
 
 ## <a name="convert-text-to-speech"></a>Tekst naar spraak converteren
 
-Met de [Tekst-naar-spraak-API](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech) kan uw app tekst converteren naar natuurlijke, mensachtige, gesynthetiseerde spraak. De service biedt ondersteuning voor standaard-, neurale en aangepaste stemmen. In de voorbeeld-app wordt een aantal beschikbare stemmen gebruikt. Zie [Ondersteunde talen](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech) voor een volledige lijst.
+Met de [Tekst-naar-spraak-API](../speech-service/text-to-speech.md) kan uw app tekst converteren naar natuurlijke, mensachtige, gesynthetiseerde spraak. De service biedt ondersteuning voor standaard-, neurale en aangepaste stemmen. In de voorbeeld-app wordt een aantal beschikbare stemmen gebruikt. Zie [Ondersteunde talen](../speech-service/language-support.md#text-to-speech) voor een volledige lijst.
 
 In deze sectie gaat u de volgende dingen doen:
 
@@ -954,7 +954,7 @@ Ga naar het opgegeven serveradres. Typ tekst in het invoergebied, selecteer een 
 > [!TIP]
 > Als de wijzigingen die u hebt aangebracht, niet worden weergegeven, of als de app niet werkt zoals verwacht, wist u de cache of opent u een privé-/incognitovenster.
 
-Dat is alles. U hebt een werkende app waarmee vertalingen worden gemaakt, sentiment geanalyseerd en spraak gesynthetiseerd. Druk op **Ctrl+C** om de app af te sluiten. Bekijk ook andere [Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/).
+Dat is alles. U hebt een werkende app waarmee vertalingen worden gemaakt, sentiment geanalyseerd en spraak gesynthetiseerd. Druk op **Ctrl+C** om de app af te sluiten. Bekijk ook andere [Azure Cognitive Services](../index.yml).
 
 ## <a name="get-the-source-code"></a>De broncode ophalen
 
@@ -962,6 +962,6 @@ De broncode voor dit project is beschikbaar op [GitHub](https://github.com/Micro
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Naslaginformatie over Translator](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference)
+* [Naslaginformatie over Translator](./reference/v3-0-reference.md)
 * [Naslaginformatie over de Text Analytics-API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7)
-* [Naslaginformatie voor de Text to Speech-API](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech)
+* [Naslaginformatie voor de Text to Speech-API](../speech-service/rest-text-to-speech.md)

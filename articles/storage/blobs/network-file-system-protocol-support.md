@@ -9,12 +9,12 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 41ad20de6b7a800ff1f97a7ff371c8e0012fed27
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 78455659d76d259c626745c93770428c25042b2d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88166974"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95908809"
 ---
 # <a name="network-file-system-nfs-30-protocol-support-in-azure-blob-storage-preview"></a>Ondersteuning voor het protocol Network File System (NFS) 3,0 in Azure Blob-opslag (preview-versie)
 
@@ -64,13 +64,13 @@ Een client kan verbinding maken via een openbaar of een [persoonlijk eind punt](
 
   U moet uw opslag account configureren om toegang tot dit gepeerde VNet toe te staan. Zie [toegang verlenen vanuit een virtueel netwerk](../common/storage-network-security.md#grant-access-from-a-virtual-network)voor meer informatie.
 
-- Een on-premises netwerk dat is verbonden met uw primaire VNet met behulp van [VPN gateway](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) of een [ExpressRoute-gateway](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager). 
+- Een on-premises netwerk dat is verbonden met uw primaire VNet met behulp van [VPN gateway](../../vpn-gateway/vpn-gateway-about-vpngateways.md) of een [ExpressRoute-gateway](../../expressroute/expressroute-howto-add-gateway-portal-resource-manager.md). 
 
   Zie [toegang vanaf on-premises netwerken configureren](../common/storage-network-security.md#configuring-access-from-on-premises-networks)voor meer informatie.
 
 - Een on-premises netwerk dat is verbonden met een peered netwerk.
 
-  U kunt dit doen met behulp van [VPN gateway](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) of een [ExpressRoute-gateway](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager) samen met [gateway-door Voer](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/vnet-peering#gateway-transit). 
+  U kunt dit doen met behulp van [VPN gateway](../../vpn-gateway/vpn-gateway-about-vpngateways.md) of een [ExpressRoute-gateway](../../expressroute/expressroute-howto-add-gateway-portal-resource-manager.md) samen met [gateway-door Voer](/azure/architecture/reference-architectures/hybrid-networking/vnet-peering#gateway-transit). 
 
 > [!IMPORTANT]
 > Als u verbinding maakt vanaf een on-premises netwerk, moet u ervoor zorgen dat de client uitgaande communicatie toestaat via de poorten 111 en 2048. Het protocol NFS 3,0 maakt gebruik van deze poorten.
@@ -114,8 +114,3 @@ Tijdens de preview-periode worden er geen kosten in rekening gebracht. Prijzen v
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie [Blob Storage koppelen met behulp van het NFS-protocol (Network File System) 3,0 (preview)](network-file-system-protocol-support-how-to.md)om aan de slag te gaan.
-
-
-
-
-

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
-ms.openlocfilehash: 406371325ddf8b555ede481582e19635b85abe49
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 10a2ae71d8c26d82a4a730bab3ba16e7c62d1243
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461563"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95911733"
 ---
 # <a name="collect-custom-logs-with-log-analytics-agent-in-azure-monitor"></a>Aangepaste logboeken met Log Analytics agent verzamelen in Azure Monitor
 
@@ -30,6 +30,7 @@ De logboek bestanden die moeten worden verzameld, moeten voldoen aan de volgende
 
 - Het logboek bestand mag geen circulaire logboek registratie of logboek rotatie toestaan, waarbij het bestand wordt overschreven door nieuwe vermeldingen.
 - Het logboek bestand moet ASCII-of UTF-8-code ring gebruiken.  Andere indelingen, zoals UTF-16, worden niet ondersteund.
+- Voor Linux wordt tijd zone converesion niet ondersteund voor tijds tempels in de logboeken.
 
 >[!NOTE]
 > Als er dubbele vermeldingen in het logboek bestand staan, worden deze door Azure Monitor verzameld. De query resultaten zijn echter inconsistent wanneer de filter resultaten meer gebeurtenissen weer geven dan het aantal resultaten. Het is belang rijk dat u het logboek valideert om te bepalen of de toepassing die deze maakt, dit gedrag veroorzaakt en zo goed mogelijk verhelpt voordat u de aangepaste definitie van de logboek verzameling maakt.  
@@ -53,7 +54,7 @@ Gebruik de volgende procedure om een aangepast logboek bestand te definiëren.  
 De wizard aangepast logboek wordt uitgevoerd in de Azure Portal en stelt u in staat om een nieuw aangepast logboek te definiëren dat u wilt verzamelen.
 
 1. Selecteer in de Azure Portal **log Analytics werk ruimten** > uw werk ruimte > **Geavanceerde instellingen**.
-2. Klik op **Data**  >  **aangepaste logboeken**voor gegevens.
+2. Klik op **Data**  >  **aangepaste logboeken** voor gegevens.
 3. Standaard worden alle configuratie wijzigingen automatisch naar alle agents gepusht. Voor Linux-agents wordt een configuratie bestand verzonden naar de gefluente gegevens verzamelaar.
 4. Klik op **toevoegen +** om de wizard Aangepaste logboeken te openen.
 
@@ -77,7 +78,7 @@ Een toepassing kan bijvoorbeeld elke dag een logboek bestand maken met de datum 
 
 De volgende tabel bevat voor beelden van geldige patronen om andere logboek bestanden op te geven.
 
-| Beschrijving | Pad |
+| Description | Pad |
 |:--- |:--- |
 | Alle bestanden in *C:\Logs* met de extensie. txt op de Windows-agent |C:\Logs \\ \* . txt |
 | Alle bestanden in *C:\Logs* met een naam die begint met log en een. txt-extensie in Windows-agent |C:\Logs\log \* . txt |
@@ -91,8 +92,8 @@ De volgende tabel bevat voor beelden van geldige patronen om andere logboek best
 ### <a name="step-4-provide-a-name-and-description-for-the-log"></a>Stap 4. Geef een naam en beschrijving voor het logboek op
 De naam die u opgeeft, wordt gebruikt voor het logboek type zoals hierboven is beschreven.  Deze wordt altijd beëindigd met _CL om het te onderscheiden als een aangepast logboek.
 
-1. Typ een naam voor het logboek.  Het ** \_ cl** -achtervoegsel wordt automatisch ingevuld.
-2. Voeg een optionele **Beschrijving**toe.
+1. Typ een naam voor het logboek.  Het **\_ cl** -achtervoegsel wordt automatisch ingevuld.
+2. Voeg een optionele **Beschrijving** toe.
 3. Klik op **volgende** om de aangepaste definitie van het logboek op te slaan.
 
 ### <a name="step-5-validate-that-the-custom-logs-are-being-collected"></a>Stap 5. Controleren of de aangepaste logboeken worden verzameld
@@ -112,7 +113,7 @@ Gebruik het volgende proces in de Azure Portal om een aangepast logboek te verwi
 1. Selecteer in het menu **Data** van de **Geavanceerde instellingen** voor uw werk ruimte de optie **aangepaste logboeken** om alle aangepaste logboeken weer te geven.
 2. Klik op **verwijderen** naast het aangepaste logboek dat u wilt verwijderen.
 
-## <a name="data-collection"></a>Gegevens verzamelen
+## <a name="data-collection"></a>Gegevensverzameling
 Azure Monitor worden ongeveer elke vijf minuten nieuwe vermeldingen van elk aangepast logboek verzameld.  De agent registreert de locatie in elk logboek bestand dat wordt verzameld.  Als de agent gedurende een bepaalde tijd offline gaat, worden er door Azure Monitor gegevens verzameld van waar deze zich voor het laatst heeft verlaten, zelfs als deze vermeldingen zijn gemaakt terwijl de agent offline was.
 
 De volledige inhoud van de logboek vermelding wordt geschreven naar één eigenschap met de naam **RawData**.  Zie [tekst gegevens parseren in azure monitor](../log-query/parse-text.md) voor methoden om elke geïmporteerde logboek vermelding te parseren in meerdere eigenschappen.

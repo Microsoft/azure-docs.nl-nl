@@ -1,5 +1,5 @@
 ---
-title: Probleemoplossings gids voor Azure Attestation
+title: Handleiding voor het oplossen van problemen met Azure Attestation
 description: Probleem oplossing voor veelvoorkomende problemen
 services: attestation
 author: msmbaldwin
@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 46e3521a54f6bfdfbfb25634a09b8c8e0cfdcac0
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: fe347983e2143c7a4bdf00ca0207356c881c66ac
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93343106"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95891279"
 ---
 # <a name="microsoft-azure-attestation-troubleshooting-guide"></a>Gids voor het oplossen van problemen met Microsoft Azure
 
@@ -45,7 +45,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : Microsoft.Azure.Commands.Attestation.SetAzureAttestationPolicy
   ```
 
-**Stappen voor probleemoplossing**
+**Probleemoplossings stappen**
 
 Voor het weer geven van Attestation-beleid/beleids ondertekeners is een Azure AD-gebruiker gemachtigd voor ' acties ':
 - Microsoft.Attestation/attestationProviders/attestation/read
@@ -64,7 +64,7 @@ Voer onderstaande stappen uit om de rollen in Power shell te controleren:
 
 a. Start Power shell en meld u aan bij Azure via de cmdlet Connect-AzAccount
 
-b. De toewijzings instellingen voor de RBAC-rol controleren
+b. De toewijzings instellingen voor Azure-rollen controleren
 
 
   ```powershell
@@ -134,7 +134,7 @@ Zie [voor beelden van Attestation-beleid](/azure/attestation/policy-examples)
 - De opgegeven offerte is ongeldig omdat het apparaat waarop de offerte werd gegenereerd niet voldoet aan de vereisten voor de Azure-basis lijn
 - De opgegeven offerte is ongeldig omdat de TCBInfo of QEID van de PCK Cache Service ongeldig is.
 
-**Stappen voor probleemoplossing**
+**Probleemoplossings stappen**
 
 Microsoft Azure Attestation ondersteunt Attestation van SGX-offertes die zijn gegenereerd door de Intel SDK en open enclave SDK.
 

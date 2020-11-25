@@ -8,12 +8,12 @@ ms.reviewer: jamesbak
 ms.date: 09/09/2020
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: ae92828f08ae4abf9cc28f18872cca27ce747be4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dc1d217dba64c36aa219abbd4d2220a494347689
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89657650"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912753"
 ---
 # <a name="azure-data-lake-storage-query-acceleration"></a>Azure Data Lake Storage-query versnelling
 
@@ -50,7 +50,7 @@ In het volgende diagram ziet u hoe een typische toepassing query versnelling geb
 
 De snelheid van query's optimaliseert de prestaties door de hoeveelheid gegevens die wordt overgedragen en verwerkt door uw toepassing te verminderen.
 
-Als u een geaggregeerde waarde wilt berekenen **, haalt de** toepassing de gegevens meestal op uit een bestand en worden de gegevens vervolgens lokaal verwerkt en gefilterd. Een analyse van de invoer/uitvoer patronen voor analyse-workloads laat zien dat toepassingen doorgaans slechts 20% van de gegevens nodig hebben die ze hebben gelezen om een bepaalde berekening uit te voeren. Deze statistische waarde is waar, zelfs na het Toep assen van technieken zoals het [weghalen van partities](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-optimize-hive-query#hive-partitioning). Dit betekent dat 80% van die gegevens onnodig over het netwerk worden overgedragen, geparseerd en gefilterd op toepassingen. Dit patroon, dat in feite is ontworpen voor het verwijderen van overbodige gegevens, leidt tot een aanzienlijke reken kosten.  
+Als u een geaggregeerde waarde wilt berekenen **, haalt de** toepassing de gegevens meestal op uit een bestand en worden de gegevens vervolgens lokaal verwerkt en gefilterd. Een analyse van de invoer/uitvoer patronen voor analyse-workloads laat zien dat toepassingen doorgaans slechts 20% van de gegevens nodig hebben die ze hebben gelezen om een bepaalde berekening uit te voeren. Deze statistische waarde is waar, zelfs na het Toep assen van technieken zoals het [weghalen van partities](../../hdinsight/hdinsight-hadoop-optimize-hive-query.md#hive-partitioning). Dit betekent dat 80% van die gegevens onnodig over het netwerk worden overgedragen, geparseerd en gefilterd op toepassingen. Dit patroon, dat in feite is ontworpen voor het verwijderen van overbodige gegevens, leidt tot een aanzienlijke reken kosten.  
 
 Hoewel Azure een toonaangevende netwerk bevat, zowel door Voer als latentie, is het onnodig van gegevens over dat netwerk nog steeds kostbaar voor de prestaties van toepassingen. Door de ongewenste gegevens tijdens de opslag aanvraag uit te filteren, elimineert de query versnelling deze kosten.
 
@@ -76,5 +76,3 @@ Ondanks de wijziging van het facturerings model is het prijs model van de query 
 
 - [Gegevens filteren met behulp van Azure Data Lake Storage-query versnelling](data-lake-storage-query-acceleration-how-to.md)
 - [Naslag informatie over SQL-taal voor query versnelling](query-acceleration-sql-reference.md)
-
-

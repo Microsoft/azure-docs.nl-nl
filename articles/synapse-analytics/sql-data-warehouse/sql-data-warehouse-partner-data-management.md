@@ -11,19 +11,19 @@ ms.date: 04/17/2018
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: e029de19e6bdb635dfc4797367de29dfb87e32ce
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: da6387c55200bad3458705cf570f60ca40db1be0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325402"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95900602"
 ---
 # <a name="azure-synapse-analytics-data-management-partners"></a>Azure Synapse Analytics-gegevens beheer partners
 
 In dit artikel worden micro soft-partner bedrijven beschreven met gegevens beheer Programma's en oplossingen die Azure Synapse ondersteunen.
 
 ## <a name="data-management-partners"></a>Gegevens beheer partners
-| Partner | Beschrijving | Website/product koppeling |
+| Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 | ![Aginity](./media/sql-data-warehouse-partner-data-management/aginity-logo.png) |**Aginity**<br>Aginity is een hulp programma voor analyse ontwikkeling waarmee de volledige kracht van het Synapse-platform van micro soft in de handen van analisten en technici. Dankzij de uitgebreide en intuïtieve SQL-ontwikkel omgeving kunnen team leden verbinding maken met meer dan tien toonaangevende analyse platforms, gegevens opnemen in verschillende indelingen en snel complexe bedrijfs berekeningen bouwen om de resultaten te leveren in Business Intelligence en Machine Learning use cases. De volledige toepassing is gebouwd rond een centrale catalogus, waardoor samen werking in het analyse team een werkelijkheid wordt gemaakt, en de geavanceerde beheer mogelijkheden en de verfijnde beveiliging voor een koud belang. |[Product pagina](https://www.aginity.com/databases/microsoft/)<br> |
 | ![Alatie](./media/sql-data-warehouse-partner-data-management/alation-logo.png) |**Alatie**<br>De gegevens catalogus van de alatie verbetert de productiviteit, verhoogt de nauw keurigheid en biedt de vertrouw bare gegevensgestuurde besluit vorming voor analisten. Met de Data Catalog van de toewijzing kunnen iedereen binnen uw organisatie gegevens vinden, begrijpen en beheren. |[Product pagina](https://www.alation.com/product/data-catalog/)<br> |
@@ -34,6 +34,7 @@ In dit artikel worden micro soft-partner bedrijven beschreven met gegevens behee
 | ![Redpoint Global](./media/sql-data-warehouse-partner-data-management/redpoint-global-logo.png) |**RedPoint Gegevensbeheer**<br>Met RedPoint Gegevensbeheer kunnen markt verwerkers al hun gegevens Toep assen om cross-channel-klant afspraken te maken, terwijl ze gestructureerde en ongestructureerde gegevens beheer uitvoeren. Met RedPoint kunt u de waarde van uw gestructureerde en ongestructureerde gegevens maximaliseren om de persoonlijke en contextuele interacties te leveren die nodig zijn om de huidige universeel-Channel-klant te benaderen. Met de interface voor slepen en neerzetten kunt u eenvoudig gegevens beheer processen ontwerpen en uitvoeren. |[Product pagina](https://www.redpointglobal.com/customer-data-management)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/redpoint-global.redpoint-rpdm)<br> |
 | ![Sentry One](./media/sql-data-warehouse-partner-data-management/sql-sentry-logo.png) |**SentryOne (DW Sentry)**<br>Met het Intelligent Data-verplaatsings dashboard en de evenementen kalender, weet u altijd precies wat het effect heeft op uw werk belasting. Is ontworpen om u inzicht te geven in uw query's en taken die worden uitgevoerd om uw gegevens te laden, te maken of te herstellen. u hoeft zich geen zorgen te maken over het grootste deel van uw Azure-resources. |[Product pagina](https://sentryone.com/platform/azure-sql-dw-performance-monitoring/)<br>[Azure Marketplace](https://sentryone.com/platform/azure-sql-dw-performance-monitoring/)<br> |
 | ![SqlDBM](./media/sql-data-warehouse-partner-data-management/sqldbm-logo.png) |**SqlDBM**<br>SqlDBM is een op de cloud gebaseerd hulp programma voor gegevens modellering dat u een eenvoudige en handige manier biedt om uw data base overal op elke browser te ontwikkelen. Alle benodigde database regels en-objecten zoals database sleutels, schema's, indexen, kolom beperkingen en relaties. |[Product pagina](http://sqldbm.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/sqldbm1583438206845.sqldbm-data-modeling-tool?tab=Overview)<br>|
+| ![Tamr](./media/sql-data-warehouse-partner-data-management/tamr-logo.png) |**Tamr**<br>Met Tamr kunnen organisaties Azure-Synapse met gemasterde gegevens leveren, zodat ze het meeste uit de analytische mogelijkheden van Azure Synapse halen. De Cloud-native data Mastering-oplossingen van Tamr maken gebruik van machine learning om gegevens te combi neren, opschonen en categoriseren, met intuïtieve werk stromen voor menselijke feedback om de kloof tussen gegevens en bedrijfs resultaten te beheersen. Tamr kan worden geïntegreerd met de gegevens services van Azure, waaronder Azure Synapse Analytics, Azure Databricks, Azure HDInsight, Azure Data Catalog, Azure Data Lake Storage en Azure Data Factory. Hiermee kunnen gegevens worden gemasterd op schaal met een lagere total cost of ownership door gebruik te maken van de flexibiliteit en schaal van Azure. |[Product pagina](https://www.tamr.com/tamr-partners/microsoft-azure/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/tamrinc.unify_v_2019?tab=Overview) |
 | ![Teleran](./media/sql-data-warehouse-partner-data-management/teleran-logo.jpg) |**Teleran**<br>Met het query besturings element van de Teleran wordt voor komen dat ongeschikte en slecht opgemaakte query's Synapse kunnen bereiken en reken bronnen kunnen worden verspild. Er worden intelligente berichten verzonden naar Analytics-gebruikers, zodat ze hun gegevens efficiënter kunnen gebruiken. Het doel is om goede zakelijke resultaten te garanderen zonder dat onnodig Azure-kosten in beslag nemen. Teleran-gebruiks analyse levert een analyse van de activiteit van gebruikers, toepassingen, query's en gegevens gebruik. U kunt er altijd voor beschikken over de volledige afbeelding van wat er gebeurt. Het biedt u de mogelijkheid om de service te verbeteren, zakelijke productiviteit te verhogen en Synapse verbruiks kosten te optimaliseren. |[Product pagina](https://teleran.com/azure-synapse-optimization-cost-control/)<br>|
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -9,12 +9,12 @@ ms.date: 11/17/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: ffd72ffb02e4875305177cf12fd19f538735b7d6
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 380d2615f62de52474b1d4316dec1dab63e5f0d5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844230"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912328"
 ---
 # <a name="set-access-control-lists-acls-recursively-for-azure-data-lake-storage-gen2"></a>Acl's (toegangs beheer lijsten) recursief instellen voor Azure Data Lake Storage Gen2
 
@@ -30,11 +30,11 @@ ACL-overname is al beschikbaar voor nieuwe onderliggende items die zijn gemaakt 
 
 - De juiste machtigingen om het recursieve ACL-proces uit te voeren. De juiste machtiging bevat een van de volgende opties: 
 
-  - Een [beveiligings-principal](https://docs.microsoft.com/azure/role-based-access-control/overview#security-principal) ingericht Azure Active Directory (AD) waaraan de rol [Storage BLOB data owner](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) is toegewezen in het bereik van de doel container, de bovenliggende resource groep of het abonnement.   
+  - Een [beveiligings-principal](../../role-based-access-control/overview.md#security-principal) ingericht Azure Active Directory (AD) waaraan de rol [Storage BLOB data owner](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner) is toegewezen in het bereik van de doel container, de bovenliggende resource groep of het abonnement.   
 
   - De gebruiker die eigenaar is van de doel container of-map waarop u het recursieve ACL-proces wilt Toep assen. Dit omvat alle onderliggende items in de doel container of-map. 
 
-- Uitleg over hoe Acl's worden toegepast op directory's en bestanden. Zie [toegangs beheer in azure data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
+- Uitleg over hoe Acl's worden toegepast op directory's en bestanden. Zie [toegangs beheer in azure data Lake Storage Gen2](./data-lake-storage-access-control.md). 
 
 Zie de sectie **uw project instellen** in dit artikel voor informatie over de installatie richtlijnen voor Power shell, .NET SDK en python SDK.
 
@@ -50,7 +50,7 @@ Installeer de benodigde bibliotheken.
    echo $PSVersionTable.PSVersion.ToString() 
    ```
     
-   Zie [bestaande Windows Power shell upgraden](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell) voor informatie over het bijwerken van uw versie van Power shell
+   Zie [bestaande Windows Power shell upgraden](/powershell/scripting/install/installing-windows-powershell) voor informatie over het bijwerken van uw versie van Power shell
     
 2. Installeer **AZ. Storage** -module.
 
@@ -58,18 +58,18 @@ Installeer de benodigde bibliotheken.
    Install-Module Az.Storage -Repository PSGallery -Force  
    ```
 
-   Zie [de module Azure PowerShell installeren](https://docs.microsoft.com/powershell/azure/install-az-ps) voor meer informatie over het installeren van Power shell-modules.
+   Zie [de module Azure PowerShell installeren](/powershell/azure/install-az-ps) voor meer informatie over het installeren van Power shell-modules.
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-1. Open de [Azure Cloud shell](https://docs.microsoft.com/azure/cloud-shell/overview)of open een opdracht console toepassing zoals Windows Power shell als u de Azure cli lokaal hebt [geïnstalleerd](https://docs.microsoft.com/cli/azure/install-azure-cli) .
+1. Open de [Azure Cloud shell](../../cloud-shell/overview.md)of open een opdracht console toepassing zoals Windows Power shell als u de Azure cli lokaal hebt [geïnstalleerd](/cli/azure/install-azure-cli) .
 
 2. Controleer of de versie van de Azure CLI die is geïnstalleerd `2.14.0` of hoger is met behulp van de volgende opdracht.
 
    ```azurecli
     az --version
    ```
-   Als uw versie van Azure CLI lager is dan `2.14.0` , installeert u een nieuwere versie. Raadpleeg [De Azure CLI installeren](https://docs.microsoft.com/cli/azure/install-azure-cli).
+   Als uw versie van Azure CLI lager is dan `2.14.0` , installeert u een nieuwere versie. Raadpleeg [De Azure CLI installeren](/cli/azure/install-azure-cli).
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
@@ -189,7 +189,7 @@ $storageAccount = Get-AzStorageAccount -ResourceGroupName "<resource-group-name>
 $ctx = $storageAccount.Context
 ```
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Als u Azure CLI lokaal gebruikt, voert u de aanmeldings opdracht uit.
 
@@ -201,7 +201,7 @@ $ctx = $storageAccount.Context
 
    Als dat niet het geval is, opent u een browser pagina op [https://aka.ms/devicelogin](https://aka.ms/devicelogin) en voert u de autorisatie code in die wordt weer gegeven in uw Terminal. Meld u vervolgens aan met uw account referenties in de browser.
 
-   Zie voor meer informatie over verschillende verificatie methoden [toegang verlenen tot BLOB-of wachtrij gegevens met Azure cli](../common/authorize-data-operations-cli.md).
+   Zie voor meer informatie over verschillende verificatie methoden [toegang verlenen tot BLOB-of wachtrij gegevens met Azure cli](./authorize-data-operations-cli.md).
 
 2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van het opslag account dat als host voor uw statische website gaat.
 
@@ -212,11 +212,11 @@ $ctx = $storageAccount.Context
    Vervang de `<subscription-id>` waarde van de tijdelijke aanduiding door de id van uw abonnement.
 
 > [!NOTE]
-> In het voor beeld in dit artikel wordt de autorisatie Azure Active Directory (AD) weer gegeven. Zie [toegang verlenen aan BLOB-of wachtrij gegevens met Azure cli](../common/authorize-data-operations-cli.md)voor meer informatie over verificatie methoden.
+> In het voor beeld in dit artikel wordt de autorisatie Azure Active Directory (AD) weer gegeven. Zie [toegang verlenen aan BLOB-of wachtrij gegevens met Azure cli](./authorize-data-operations-cli.md)voor meer informatie over verificatie methoden.
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
-Als u de fragmenten in dit artikel wilt gebruiken, moet u een [DataLakeServiceClient](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakeserviceclient) -exemplaar maken dat het opslag account vertegenwoordigt.
+Als u de fragmenten in dit artikel wilt gebruiken, moet u een [DataLakeServiceClient](/dotnet/api/azure.storage.files.datalake.datalakeserviceclient) -exemplaar maken dat het opslag account vertegenwoordigt.
 
 #### <a name="connect-by-using-azure-active-directory-ad"></a>Verbinding maken met behulp van Azure Active Directory (AD)
 
@@ -235,7 +235,7 @@ Haal een client-ID, een client geheim en een Tenant-ID op. Zie voor dit doen [ee
 |[Eigenaar van opslagblobgegevens](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner)|Alle mappen en bestanden in het account.|
 |[Inzender voor Storage Blob-gegevens](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor)|Alleen mappen en bestanden die eigendom zijn van de beveiligingsprincipal.|
 
-In dit voor beeld wordt een [DataLakeServiceClient](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakeserviceclient?) -exemplaar gemaakt met behulp van een client-id, een client geheim en een Tenant-id.  
+In dit voor beeld wordt een [DataLakeServiceClient](/dotnet/api/azure.storage.files.datalake.datalakeserviceclient) -exemplaar gemaakt met behulp van een client-id, een client geheim en een Tenant-id.  
 
 ```cs
 public void GetDataLakeServiceClient(ref DataLakeServiceClient dataLakeServiceClient, 
@@ -256,7 +256,7 @@ public void GetDataLakeServiceClient(ref DataLakeServiceClient dataLakeServiceCl
 
 Deze methode is de eenvoudigste manier om verbinding te maken met een account. 
 
-In dit voor beeld wordt een [DataLakeServiceClient](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakeserviceclient?) -exemplaar gemaakt met behulp van een account sleutel.
+In dit voor beeld wordt een [DataLakeServiceClient](/dotnet/api/azure.storage.files.datalake.datalakeserviceclient) -exemplaar gemaakt met behulp van een account sleutel.
 
 ```cs
 public void GetDataLakeServiceClient(ref DataLakeServiceClient dataLakeServiceClient,
@@ -415,11 +415,11 @@ Set-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $
 > [!NOTE]
 > Als u een **standaard** -ACL-vermelding wilt instellen, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -Permission rwx -DefaultScope`.
 
-Zie het artikel [set-AzDataLakeGen2AclRecursive](https://docs.microsoft.com/powershell/module/az.storage/set-azdatalakegen2aclrecursive) Reference voor een voor beeld van het recursief instellen van acl's in batches door een batch grootte op te geven.
+Zie het artikel [set-AzDataLakeGen2AclRecursive](/powershell/module/az.storage/set-azdatalakegen2aclrecursive) Reference voor een voor beeld van het recursief instellen van acl's in batches door een batch grootte op te geven.
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Stel op recursief een ACL in met behulp van de opdracht [AZ Storage FS Access set-recursief](https://docs.microsoft.com/cli/azure/storage/fs/access#az_storage_fs_access_set_recursive) .
+Stel op recursief een ACL in met behulp van de opdracht [AZ Storage FS Access set-recursief](/cli/azure/storage/fs/access#az_storage_fs_access_set_recursive) .
 
 In dit voor beeld wordt de ACL van een map met de naam ingesteld `my-parent-directory` . Deze vermeldingen geven de machtigingen lezen, schrijven en uitvoeren van de gebruiker die eigenaar is, de groep die eigenaar is, de machtigingen lezen en uitvoeren, en krijgen alle andere geen toegang. De laatste ACL-vermelding in dit voor beeld geeft een specifieke gebruiker met de object-ID ' XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX ' machtigingen voor lezen en uitvoeren.
 
@@ -608,11 +608,11 @@ Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Pat
 > [!NOTE]
 > Als u een **standaard** -ACL-vermelding wilt bijwerken, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission rwx -DefaultScope`.
 
-Zie het artikel Naslag informatie over [Update AzDataLakeGen2AclRecursive](https://docs.microsoft.com/powershell/module/az.storage/update-azdatalakegen2aclrecursive) voor een voor beeld van het recursief bijwerken van acl's in batches door een batch grootte op te geven.
+Zie het artikel Naslag informatie over [Update AzDataLakeGen2AclRecursive](/powershell/module/az.storage/update-azdatalakegen2aclrecursive) voor een voor beeld van het recursief bijwerken van acl's in batches door een batch grootte op te geven.
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Een ACL recursief bijwerken met behulp van de opdracht  [AZ Storage FS Access update-recursieve](https://docs.microsoft.com/cli/azure/storage/fs/access#az_storage_fs_access_update_recursive) . 
+Een ACL recursief bijwerken met behulp van de opdracht  [AZ Storage FS Access update-recursieve](/cli/azure/storage/fs/access#az_storage_fs_access_update_recursive) . 
 
 In dit voor beeld wordt een ACL-vermelding met schrijf machtiging bijgewerkt. 
 
@@ -749,11 +749,11 @@ Remove-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName  -Ac
 > [!NOTE]
 > Als u een **standaard** -ACL-vermelding wilt verwijderen, gebruikt u de para meter **-DefaultScope** wanneer u de opdracht **set-AzDataLakeGen2ItemAclObject** uitvoert. Bijvoorbeeld: `$acl = set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission "---" -DefaultScope`.
 
-Zie het artikel Naslag informatie over [Remove-AzDataLakeGen2AclRecursive](https://docs.microsoft.com/powershell/module/az.storage/remove-azdatalakegen2aclrecursive) om een voor beeld te zien van het recursief verwijderen van acl's in batches door een batch grootte op te geven.
+Zie het artikel Naslag informatie over [Remove-AzDataLakeGen2AclRecursive](/powershell/module/az.storage/remove-azdatalakegen2aclrecursive) om een voor beeld te zien van het recursief verwijderen van acl's in batches door een batch grootte op te geven.
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Verwijder ACL-vermeldingen met behulp van de opdracht [AZ Storage FS Access Remove-recursieve](https://docs.microsoft.com/cli/azure/storage/fs/access#az_storage_fs_access_remove_recursive) . 
+Verwijder ACL-vermeldingen met behulp van de opdracht [AZ Storage FS Access Remove-recursieve](/cli/azure/storage/fs/access#az_storage_fs_access_remove_recursive) . 
 
 In dit voor beeld wordt een ACL-vermelding verwijderd uit de hoofd directory van de container.  
 
@@ -880,9 +880,9 @@ $result
 
 ```
 
-Zie het artikel [set-AzDataLakeGen2AclRecursive](https://docs.microsoft.com/powershell/module/az.storage/set-azdatalakegen2aclrecursive) Reference voor een voor beeld van het recursief instellen van acl's in batches door een batch grootte op te geven.
+Zie het artikel [set-AzDataLakeGen2AclRecursive](/powershell/module/az.storage/set-azdatalakegen2aclrecursive) Reference voor een voor beeld van het recursief instellen van acl's in batches door een batch grootte op te geven.
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als er een fout optreedt, kunt u een vervolg token retour neren door de `--continue-on-failure` para meter in te stellen op `false` . Nadat u de fouten hebt verhelpen, kunt u het proces hervatten vanaf het moment van de fout door de opdracht opnieuw uit te voeren en vervolgens de `--continuation` para meter in te stellen op het vervolg token. 
 
@@ -1005,9 +1005,9 @@ echo "TotalFailureCount: `t`t`t`t`t$($result.TotalFailureCount)"
 echo "FailedEntries:"$($result.FailedEntries | ft) 
 ```
 
-Zie het artikel [set-AzDataLakeGen2AclRecursive](https://docs.microsoft.com/powershell/module/az.storage/set-azdatalakegen2aclrecursive) Reference voor een voor beeld van het recursief instellen van acl's in batches door een batch grootte op te geven.
+Zie het artikel [set-AzDataLakeGen2AclRecursive](/powershell/module/az.storage/set-azdatalakegen2aclrecursive) Reference voor een voor beeld van het recursief instellen van acl's in batches door een batch grootte op te geven.
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Om ervoor te zorgen dat het proces wordt voltooid, stelt u de `--continue-on-failure` para meter in op `true` . 
 
@@ -1115,11 +1115,11 @@ Deze sectie bevat koppelingen naar bibliotheken en code voorbeelden.
 #### <a name="libraries"></a>Bibliotheken
 
 - [PowerShell](https://www.powershellgallery.com/packages/Az.Storage/3.0.0)
-- [Azure-CLI](https://docs.microsoft.com/cli/azure/storage/fs/access)
+- [Azure-CLI](/cli/azure/storage/fs/access)
 - [.NET](https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-net/nuget/v3/index.json)
 - [Java](/java/api/overview/azure/storage-file-datalake-readme)
 - [Python](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Frecursiveaclpr.blob.core.windows.net%2Fprivatedrop%2Fazure_storage_file_datalake-12.1.0b99-py2.py3-none-any.whl%3Fsv%3D2019-02-02%26st%3D2020-08-24T07%253A47%253A01Z%26se%3D2021-08-25T07%253A47%253A00Z%26sr%3Db%26sp%3Dr%26sig%3DH1XYw4FTLJse%252BYQ%252BfamVL21UPVIKRnnh2mfudA%252BfI0I%253D&data=02%7C01%7Cnormesta%40microsoft.com%7C95a5966d938a4902560e08d84912fe32%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637339693209725909&sdata=acv4KWZdzkITw1lP0%2FiA3lZuW7NF5JObjY26IXttfGI%3D&reserved=0)
-- [REST](https://docs.microsoft.com/rest/api/storageservices/datalakestoragegen2/path/update)
+- [REST](/rest/api/storageservices/datalakestoragegen2/path/update)
 
 #### <a name="code-samples"></a>Codevoorbeelden
 
@@ -1127,7 +1127,7 @@ Deze sectie bevat koppelingen naar bibliotheken en code voorbeelden.
 
 - Azure CLI: voor [beeld](https://github.com/Azure/azure-cli/blob/2a55a5350696a3a93a13f364f2104ec8bc82cdd3/src/azure-cli/azure/cli/command_modules/storage/docs/ADLS%20Gen2.md)
 
-- NET: [Leesmij](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Frecursiveaclpr.blob.core.windows.net%2Fprivatedrop%2FREADME%2520for%2520net%3Fsv%3D2019-02-02%26st%3D2020-08-25T23%253A20%253A42Z%26se%3D2021-08-26T23%253A20%253A00Z%26sr%3Db%26sp%3Dr%26sig%3DKrnHvasHoSoVeUyr2g%252FSc2aDVW3De4A%252Fvx0lFWZs494%253D&data=02%7C01%7Cnormesta%40microsoft.com%7Cda902e4fe6c24e6a07d908d8494fd4bd%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637339954503767961&sdata=gd%2B2LphTtDFVb7pZko9rkGO9OG%2FVvmeXprHB9IOEYXE%3D&reserved=0)-voor  |  [beeld](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Frecursiveaclpr.blob.core.windows.net%2Fprivatedrop%2FRecursive-Acl-Sample-Net.zip%3Fsv%3D2019-02-02%26st%3D2020-08-24T07%253A45%253A28Z%26se%3D2021-09-25T07%253A45%253A00Z%26sr%3Db%26sp%3Dr%26sig%3D2GI3f0KaKMZbTi89AgtyGg%252BJePgNSsHKCL68V6I5W3s%253D&data=02%7C01%7Cnormesta%40microsoft.com%7C6eae76c57d224fb6de8908d848525330%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637338865714571853&sdata=%2FWom8iI3DSDMSw%2FfYvAaQ69zbAoqXNTQ39Q9yVMnASA%3D&reserved=0)
+- NET: [Leesmij](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Frecursiveaclpr.blob.core.windows.net%2Fprivatedrop%2FREADME%2520for%2520net%3Fsv%3D2019-02-02%26st%3D2020-08-25T23%253A20%253A42Z%26se%3D2021-08-26T23%253A20%253A00Z%26sr%3Db%26sp%3Dr%26sig%3DKrnHvasHoSoVeUyr2g%2fSc2aDVW3De4A%2fvx0lFWZs494%253D&data=02%7C01%7Cnormesta%40microsoft.com%7Cda902e4fe6c24e6a07d908d8494fd4bd%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637339954503767961&sdata=gd%2B2LphTtDFVb7pZko9rkGO9OG%2FVvmeXprHB9IOEYXE%3D&reserved=0)-voor  |  [beeld](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Frecursiveaclpr.blob.core.windows.net%2Fprivatedrop%2FRecursive-Acl-Sample-Net.zip%3Fsv%3D2019-02-02%26st%3D2020-08-24T07%253A45%253A28Z%26se%3D2021-09-25T07%253A45%253A00Z%26sr%3Db%26sp%3Dr%26sig%3D2GI3f0KaKMZbTi89AgtyGg%252BJePgNSsHKCL68V6I5W3s%253D&data=02%7C01%7Cnormesta%40microsoft.com%7C6eae76c57d224fb6de8908d848525330%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637338865714571853&sdata=%2FWom8iI3DSDMSw%2FfYvAaQ69zbAoqXNTQ39Q9yVMnASA%3D&reserved=0)
 
 - Python: [Leesmij](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Frecursiveaclpr.blob.core.windows.net%2Fprivatedrop%2FREADME%2520for%2520python%3Fsv%3D2019-02-02%26st%3D2020-08-25T23%253A21%253A47Z%26se%3D2021-08-26T23%253A21%253A00Z%26sr%3Db%26sp%3Dr%26sig%3DRq6Bl5lXrtYk79thy8wX7UTbjyd2f%252B6xzVBFFVYbdYg%253D&data=02%7C01%7Cnormesta%40microsoft.com%7Cda902e4fe6c24e6a07d908d8494fd4bd%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637339954503777915&sdata=3e46Lp2miOHj755Gh0odH3M0%2BdTF3loGCCBENrulVTM%3D&reserved=0)-voor  |  [beeld](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control_recursive.py)
 
@@ -1141,7 +1141,7 @@ Een runtime-fout kan verschillende oorzaken hebben (bijvoorbeeld: een storing of
 
 #### <a name="handling-permission-errors-403"></a>Afhandeling van machtigings fouten (403)
 
-Als er een uitzonde ring voor Access Control optreedt tijdens het uitvoeren van een recursieve ACL-proces, heeft uw AD- [beveiligings-principal](https://docs.microsoft.com/azure/role-based-access-control/overview#security-principal) mogelijk onvoldoende machtigingen om een ACL toe te passen op een of meer onderliggende items in de Directory-hiërarchie. Als er een machtigings fout optreedt, wordt het proces gestopt en wordt er een vervolg token gegeven. Los het probleem met de machtiging op en gebruik vervolgens de vervolg token om de resterende gegevensset te verwerken. De mappen en bestanden die al zijn verwerkt, hoeven niet opnieuw te worden verwerkt. U kunt er ook voor kiezen om het recursieve ACL-proces opnieuw te starten. Acl's kunnen opnieuw worden toegepast op items zonder dat dit een negatieve invloed heeft veroorzaakt. 
+Als er een uitzonde ring voor Access Control optreedt tijdens het uitvoeren van een recursieve ACL-proces, heeft uw AD- [beveiligings-principal](../../role-based-access-control/overview.md#security-principal) mogelijk onvoldoende machtigingen om een ACL toe te passen op een of meer onderliggende items in de Directory-hiërarchie. Als er een machtigings fout optreedt, wordt het proces gestopt en wordt er een vervolg token gegeven. Los het probleem met de machtiging op en gebruik vervolgens de vervolg token om de resterende gegevensset te verwerken. De mappen en bestanden die al zijn verwerkt, hoeven niet opnieuw te worden verwerkt. U kunt er ook voor kiezen om het recursieve ACL-proces opnieuw te starten. Acl's kunnen opnieuw worden toegepast op items zonder dat dit een negatieve invloed heeft veroorzaakt. 
 
 #### <a name="credentials"></a>Referenties 
 
@@ -1153,11 +1153,9 @@ Als u de latentie wilt beperken, raden we u aan het recursieve ACL-proces uit te
 
 #### <a name="acl-limits"></a>ACL-limieten
 
-Het maximum aantal Acl's dat u kunt Toep assen op een map of bestand is 32 toegangs-Acl's en standaard-32-Acl's. Zie [Toegangsbeheer in Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control) voor meer informatie.
+Het maximum aantal Acl's dat u kunt Toep assen op een map of bestand is 32 toegangs-Acl's en standaard-32-Acl's. Zie [Toegangsbeheer in Azure Data Lake Storage Gen2](./data-lake-storage-access-control.md) voor meer informatie.
 
 ## <a name="see-also"></a>Zie ook
 
-- [Toegangsbeheer in Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
+- [Toegangsbeheer in Data Lake Storage Gen2](./data-lake-storage-access-control.md)
 - [Bekende problemen](data-lake-storage-known-issues.md)
-
-

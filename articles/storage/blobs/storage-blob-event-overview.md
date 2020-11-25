@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: dineshm
-ms.openlocfilehash: c4c6b5b23a0609a5d68eb72c614ce282ae04a817
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: e67a323e03ae8ac0a0e34df1f7cc1ee4fe0901d3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95519095"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95901499"
 ---
 # <a name="reacting-to-blob-storage-events"></a>Reageren op gebeurtenissen van Blob Storage
 
@@ -29,9 +29,9 @@ Als u Blob Storage-gebeurtenissen wilt proberen, raadpleegt u een van de volgend
 
 |Als u dit hulp programma wilt gebruiken:    |Zie dit artikel: |
 |--|-|
-|Azure Portal    |[Quickstart: Blob Storage-gebeurtenissen routeren naar een webeindpunt met Azure Portal](../../event-grid/blob-event-quickstart-portal.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json)|
-|PowerShell    |[Snelstartgids: opslag gebeurtenissen naar een webeindpunt door sturen met Power shell](./storage-blob-event-quickstart-powershell.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json)|
-|Azure CLI    |[Snelstartgids: opslag gebeurtenissen naar een webeindpunt door sturen met Azure CLI](./storage-blob-event-quickstart.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json)|
+|Azure Portal    |[Quickstart: Blob Storage-gebeurtenissen routeren naar een webeindpunt met Azure Portal](../../event-grid/blob-event-quickstart-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|PowerShell    |[Snelstartgids: opslag gebeurtenissen naar een webeindpunt door sturen met Power shell](./storage-blob-event-quickstart-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Azure CLI    |[Snelstartgids: opslag gebeurtenissen naar een webeindpunt door sturen met Azure CLI](./storage-blob-event-quickstart.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 
 Zie deze artikelen voor meer gedetailleerde voor beelden van het reageren op Blob Storage-gebeurtenissen met behulp van Azure functions:
 
@@ -96,7 +96,7 @@ Toepassingen die Blob Storage-gebeurtenissen verwerken, moeten een aantal aanbev
 > [!div class="checklist"]
 > * Omdat meerdere abonnementen kunnen worden geconfigureerd voor het routeren van gebeurtenissen naar dezelfde gebeurtenis-handler, is het belang rijk om te voor komen dat gebeurtenissen afkomstig zijn uit een bepaalde bron, maar om het onderwerp van het bericht te controleren om ervoor te zorgen dat het afkomstig is van het opslag account dat u verwacht.
 > * Controleer ook of de Event type is ingesteld als een voor bereiding op het proces en ga er niet van uit dat alle gebeurtenissen die u ontvangt, de verwachte typen zijn.
-> * Wanneer berichten na enige vertraging kunnen arriveren, gebruikt u de ETAG-velden om te begrijpen of uw informatie over objecten nog steeds actueel is. Zie voor meer informatie over het gebruik van het ETAG-veld [gelijktijdigheid beheren in Blob Storage](../common/storage-concurrency.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#managing-concurrency-in-blob-storage). 
+> * Wanneer berichten na enige vertraging kunnen arriveren, gebruikt u de ETAG-velden om te begrijpen of uw informatie over objecten nog steeds actueel is. Zie voor meer informatie over het gebruik van het ETAG-veld [gelijktijdigheid beheren in Blob Storage](../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#managing-concurrency-in-blob-storage). 
 > * Wanneer berichten niet in de juiste volg orde arriveren, kunt u de sequencer-velden gebruiken om de volg orde van gebeurtenissen op een bepaald object te begrijpen. Het veld sequencer is een teken reeks waarde die de logische volg orde van gebeurtenissen voor een bepaalde BLOB-naam vertegenwoordigt. U kunt standaard teken reeks vergelijking gebruiken om inzicht te krijgen in de relatieve volg orde van twee gebeurtenissen op dezelfde blobnaam.
 > * Opslag gebeurtenissen garanderen mini maal één keer aan abonnees, wat ervoor zorgt dat alle berichten worden gegenereerd. Als gevolg van nieuwe pogingen of Beschik baarheid van abonnementen, kunnen er af en toe dubbele berichten optreden. Zie [Event grid aflevering van berichten en probeer](../../event-grid/delivery-and-retry.md)het opnieuw.
 > * Gebruik het veld blobType om te begrijpen welk type bewerkingen op de BLOB zijn toegestaan en welke client bibliotheek typen u moet gebruiken voor toegang tot de blob. Geldige waarden zijn ofwel `BlockBlob` of `PageBlob` . 

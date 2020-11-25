@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 06/25/2020
 ms.author: erhopf
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5e861182ee57a0b49d3e62a858fc97dbf0890ea3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48cde51ee9941f705aa848d121c419a8f0c9ad1a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399700"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95013719"
 ---
 # <a name="tutorial-create-a-tenant-model-preview"></a>Zelfstudie: Een tenantmodel maken (preview)
 
@@ -105,7 +105,7 @@ Wanneer uw tenantmodelexemplaar gereed is, implementeert u deze als volgt:
 
 Nu u het model hebt geïmplementeerd, kunt u het gebruiken met de Spraak-SDK. In deze sectie gebruikt u voorbeeldcode om de spraakservice aan te roepen met behulp van Azure Active Directory-verificatie (Azure AD).
 
-Laten we eens kijken naar de code die u gaat gebruiken om de Spraak-SDK aan te roepen in C#. In dit voorbeeld voert u spraakherkenning uit met behulp van uw tenantmodel. In deze gids wordt ervan uitgegaan dat uw platform al is ingesteld. Als u hulp nodig hebt bij het instellen, raadpleegt u [Quickstart: Spraakherkenning, C# (.NET Core)](quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnetcore).
+Laten we eens kijken naar de code die u gaat gebruiken om de Spraak-SDK aan te roepen in C#. In dit voorbeeld voert u spraakherkenning uit met behulp van uw tenantmodel. In deze gids wordt ervan uitgegaan dat uw platform al is ingesteld. Als u hulp nodig hebt bij het instellen, raadpleegt u [Quickstart: Spraakherkenning, C# (.NET Core)](./get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnetcore).
 
 Kopieer deze code naar uw project:
 

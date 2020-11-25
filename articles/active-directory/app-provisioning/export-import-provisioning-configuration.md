@@ -11,11 +11,11 @@ ms.workload: identity
 ms.date: 03/19/2020
 ms.author: kenwith
 ms.openlocfilehash: e34656d6ce515cabe955c101f7b52ac0f2ade8db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88235814"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994805"
 ---
 # <a name="how-to-export-provisioning-configuration-and-roll-back-to-a-known-good-state"></a>Instructies: inrichtings configuratie exporteren en terugdraaien naar een bekende goede staat
 
@@ -32,7 +32,7 @@ De configuratie exporteren:
 
 1. Selecteer **Azure Active Directory** in [Azure Portal](https://portal.azure.com/) in het navigatiepaneel aan de linkerkant.
 1. Selecteer in het deel venster **Azure Active Directory** de optie **bedrijfs toepassingen** en kies uw toepassing.
-1. Selecteer **inrichten**in het navigatie deel venster links. Klik op de pagina inrichtings configuratie op **kenmerk toewijzingen**, **Geef geavanceerde opties weer**en **Controleer vervolgens het schema**. Hiermee gaat u naar de schema-editor.
+1. Selecteer **inrichten** in het navigatie deel venster links. Klik op de pagina inrichtings configuratie op **kenmerk toewijzingen**, **Geef geavanceerde opties weer** en **Controleer vervolgens het schema**. Hiermee gaat u naar de schema-editor.
 1. Klik op downloaden in de opdracht balk boven aan de pagina om uw schema te downloaden.
 
 ### <a name="disaster-recovery---roll-back-to-a-known-good-state"></a>Herstel na nood geval: terugdraaien naar een bekende goede staat

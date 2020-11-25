@@ -7,11 +7,11 @@ ms.custom:
 - MVC
 - fasttrack-edit
 ms.openlocfilehash: 84f04d2f1f8c9b54a1f2a2a13cc97954ac5add90
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92308540"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995315"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Virtuele Hyper-V-machines naar Azure migreren 
 

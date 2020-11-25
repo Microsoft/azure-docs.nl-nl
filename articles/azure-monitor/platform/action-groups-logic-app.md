@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 07/18/2018
 ms.subservice: alerts
 ms.openlocfilehash: f76d28018fdf55314593dabc44ef1e9a1dab9494
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91403123"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995094"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Complexe acties met Azure Monitor waarschuwingen activeren
 
@@ -37,13 +37,13 @@ Het proces is vergelijkbaar als u wilt dat de logische app een andere actie uitv
 
 1.  Selecteer in de Azure Portal **een resource maken** in de linkerbovenhoek.
 
-2.  Zoek en selecteer een **logische app**en selecteer vervolgens **maken**.
+2.  Zoek en selecteer een **logische app** en selecteer vervolgens **maken**.
 
-3.  Geef een **naam**op voor uw logische app, kies een **resource groep**, enzovoort.
+3.  Geef een **naam** op voor uw logische app, kies een **resource groep**, enzovoort.
 
     ![Een logische app maken](media/action-groups-logic-app/create-logic-app-dialog.png "Een logische app maken")
 
-4.  Selecteer **Maken** om de logische app te maken. Een pop-upbericht geeft aan dat de logische app is gemaakt. Selecteer **bron starten** om de **Logic apps Designer**te openen.
+4.  Selecteer **Maken** om de logische app te maken. Een pop-upbericht geeft aan dat de logische app is gemaakt. Selecteer **bron starten** om de **Logic apps Designer** te openen.
 
 5.  Selecteer de trigger: **Wanneer een HTTP-aanvraag wordt ontvangen**.
 
@@ -126,7 +126,7 @@ Het proces is vergelijkbaar als u wilt dat de logische app een andere actie uitv
 
     ![Micro soft teams-actie: een bericht plaatsen](media/action-groups-logic-app/teams-action-post-message.png "Micro soft teams-actie: een bericht plaatsen")
 
-14. Selecteer op de pagina **Logic apps Designer**de optie **Opslaan** om uw logische app op te slaan.
+14. Selecteer op de pagina **Logic apps Designer** de optie **Opslaan** om uw logische app op te slaan.
 
 15. Open uw bestaande actie groep en voeg een actie toe om te verwijzen naar de logische app. Als u geen bestaande actie groep hebt, raadpleegt u [actie groepen maken en beheren in de Azure Portal](./action-groups.md) om er een te maken. Vergeet niet om uw wijzigingen op te slaan.
 

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/21/2016
 ms.author: manuaery
 ms.openlocfilehash: 340b910319cabe3379bdb1bad1c09bc71c17f072
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85507531"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994941"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-shares-on-the-storsimple-virtual-array"></a>Gebruik de StorSimple-apparaatbeheerfunctie om shares te beheren in de virtuele StorSimple-matrix
 
@@ -136,7 +136,7 @@ Voer de volgende stappen uit om een share te verwijderen.
 #### <a name="to-delete-a-share"></a>Een share verwijderen
 
 1. Selecteer in de instelling voor **shares** op de Blade samen vatting van StorSimple-service de virtuele matrix waarop de share die u wilt verwijderen zich bevindt.
-2. **Selecteer** de share en klik op **...** (Klik met de rechter muisknop in deze rij) en selecteer **verwijderen**in het context menu.
+2. **Selecteer** de share en klik op **...** (Klik met de rechter muisknop in deze rij) en selecteer **verwijderen** in het context menu.
    
     ![Share verwijderen](./media/storsimple-virtual-array-manage-shares/share-delete.png)
 3. Controleer de status van de share die u wilt verwijderen. Als de share die u wilt verwijderen niet offline is, moet u deze eerst offline zetten. Volg de stappen in [een share offline halen](#take-a-share-offline).

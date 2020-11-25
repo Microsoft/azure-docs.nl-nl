@@ -4,11 +4,11 @@ description: In dit artikel wordt uitgelegd hoe u een Service Fabric toepassing 
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: acde2f4e51bee29d2eefb0d5fbb54fbe421a41f1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82195864"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996233"
 ---
 # <a name="service-fabric-application-upgrade-tutorial-using-visual-studio"></a>Zelf studie voor de upgrade van toepassingen Service Fabric met Visual Studio
 > [!div class="op_single_selector"]
@@ -22,11 +22,11 @@ ms.locfileid: "82195864"
 Azure Service Fabric vereenvoudigt het proces van het upgraden van Cloud toepassingen door ervoor te zorgen dat alleen gewijzigde services worden bijgewerkt, en dat de status van de toepassing gedurende het upgrade proces wordt bewaakt. Er wordt ook automatisch een back-up van de toepassing naar de vorige versie hersteld wanneer er problemen optreden. Service Fabric toepassings upgrades zijn geen *uitval tijd*, omdat de toepassing zonder downtime kan worden bijgewerkt. In deze zelf studie wordt beschreven hoe u een rolling upgrade van Visual Studio kunt volt ooien.
 
 ## <a name="step-1-build-and-publish-the-visual-objects-sample"></a>Stap 1: het voor beeld van Visual Objects maken en publiceren
-Down load eerst de toepassing [Visual Objects](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Actors/VisualObjects) van github. Vervolgens bouwt en publiceert u de toepassing door met de rechter muisknop te klikken op het toepassings project **VisualObjects**en de opdracht **publiceren** te selecteren in de menu opdracht service Fabric.
+Down load eerst de toepassing [Visual Objects](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Actors/VisualObjects) van github. Vervolgens bouwt en publiceert u de toepassing door met de rechter muisknop te klikken op het toepassings project **VisualObjects** en de opdracht **publiceren** te selecteren in de menu opdracht service Fabric.
 
 ![Context menu voor een Service Fabric toepassing][image1]
 
-Als u **publiceren** selecteert, wordt een pop-upvenster geopend en kunt u het **doel profiel** instellen op **PublishProfiles\Local.xml**. Het venster moet er als volgt uitzien voordat u op **publiceren**klikt.
+Als u **publiceren** selecteert, wordt een pop-upvenster geopend en kunt u het **doel profiel** instellen op **PublishProfiles\Local.xml**. Het venster moet er als volgt uitzien voordat u op **publiceren** klikt.
 
 ![Een Service Fabric-toepassing publiceren][image2]
 
@@ -37,7 +37,7 @@ Nu kunt u op **publiceren** klikken in het dialoog venster. U kunt [service Fabr
 ## <a name="step-2-update-the-visual-objects-sample"></a>Stap 2: het voor beeld van Visual Objects bijwerken
 U zult kunnen merken dat met de versie die is geïmplementeerd in stap 1, de visuele objecten niet draaien. We gaan deze toepassing upgraden naar een waar ook de visuele objecten draaien.
 
-Selecteer het project VisualObjects. ActorService in de VisualObjects-oplossing en open het **VisualObjectActor.cs** -bestand. Ga in dat bestand naar de methode `MoveObject` , commentaar uit `visualObject.Move(false)` en verwijder de opmerking `visualObject.Move(true)` . Deze code wijziging roteert de objecten nadat de service is bijgewerkt.  **Nu kunt u de oplossing bouwen (niet opnieuw samen stellen)**, waardoor de gewijzigde projecten worden gebouwd. Als u *alles opnieuw samen stellen*selecteert, moet u de versies van alle projecten bijwerken.
+Selecteer het project VisualObjects. ActorService in de VisualObjects-oplossing en open het **VisualObjectActor.cs** -bestand. Ga in dat bestand naar de methode `MoveObject` , commentaar uit `visualObject.Move(false)` en verwijder de opmerking `visualObject.Move(true)` . Deze code wijziging roteert de objecten nadat de service is bijgewerkt.  **Nu kunt u de oplossing bouwen (niet opnieuw samen stellen)**, waardoor de gewijzigde projecten worden gebouwd. Als u *alles opnieuw samen stellen* selecteert, moet u de versies van alle projecten bijwerken.
 
 We moeten onze toepassing ook versie. Als u de versie wijzigingen wilt aanbrengen nadat u met de rechter muisknop op het **VisualObjects** -project hebt geklikt, kunt u de optie Visual Studio- **manifest versies bewerken** gebruiken. Als u deze optie selecteert, wordt het dialoog venster voor editie versies als volgt geopend:
 
@@ -54,7 +54,7 @@ Sla de wijzigingen op en controleer nu het vak **de toepassing bijwerken** .
 ## <a name="step-3--upgrade-your-application"></a>Stap 3: een upgrade van uw toepassing uitvoeren
 Raadpleeg de [para meters](service-fabric-application-upgrade-parameters.md) voor de upgrade van de toepassing en het [upgrade proces](service-fabric-application-upgrade.md) om een goed beeld te krijgen van de verschillende para meters voor upgrades, time-outs en status criteria die kunnen worden toegepast. Voor dit scenario is het evaluatie criterium voor service status ingesteld op de standaard instelling (niet-bewaakte modus). U kunt deze instellingen configureren door de **instellingen voor de upgrade configureren** te selecteren en de para meters vervolgens naar wens aan te passen.
 
-Nu gaan we alle instellen om de upgrade van de toepassing te starten door **publiceren**te selecteren. Met deze optie wordt uw toepassing bijgewerkt naar versie 2.0.0, waarin de objecten draaien. Service Fabric werkt één update domein per keer bij (sommige objecten worden eerst bijgewerkt, gevolgd door anderen) en de service blijft toegankelijk tijdens de upgrade. De toegang tot de service kan worden gecontroleerd via uw client (browser).  
+Nu gaan we alle instellen om de upgrade van de toepassing te starten door **publiceren** te selecteren. Met deze optie wordt uw toepassing bijgewerkt naar versie 2.0.0, waarin de objecten draaien. Service Fabric werkt één update domein per keer bij (sommige objecten worden eerst bijgewerkt, gevolgd door anderen) en de service blijft toegankelijk tijdens de upgrade. De toegang tot de service kan worden gecontroleerd via uw client (browser).  
 
 Als de upgrade van de toepassing wordt uitgevoerd, kunt u deze bewaken met Service Fabric Explorer, met behulp van het tabblad **upgrades op voortgang** onder de toepassingen.
 

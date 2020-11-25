@@ -1,20 +1,20 @@
 ---
 title: MFA inschakelen voor VPN-gebruikers met behulp van Azure AD-verificatie
-description: Meer informatie over het inschakelen van Azure Multi-Factor Authentication (MFA) voor VPN-gebruikers met behulp van Azure AD-verificatie.
+description: Meer informatie over het inschakelen van Azure AD Multi-Factor Authentication (MFA) voor VPN-gebruikers met behulp van Azure AD-verificatie.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: alzam
-ms.openlocfilehash: efe01c9e0907fef4d33d2a70b3e479b30c471a7c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e8d90653372b78aad78fad66e4cde21bd2ab81ee
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91267887"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "95995608"
 ---
-# <a name="enable-azure-multi-factor-authentication-mfa-for-vpn-users-by-using-azure-ad-authentication"></a>Azure Multi-Factor Authentication (MFA) inschakelen voor VPN-gebruikers met behulp van Azure AD-verificatie
+# <a name="enable-azure-ad-multi-factor-authentication-mfa-for-vpn-users-by-using-azure-ad-authentication"></a>Azure AD Multi-Factor Authentication (MFA) inschakelen voor VPN-gebruikers met behulp van Azure AD-verificatie
 
 [!INCLUDE [overview](../../includes/vpn-gateway-vwan-openvpn-enable-mfa-overview.md)]
 

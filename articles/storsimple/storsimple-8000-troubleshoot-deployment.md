@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 600934e2d46c1a84a83fa1290db13b3d0d1508f4
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94956888"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995400"
 ---
 # <a name="troubleshoot-storsimple-device-deployment-issues"></a>Problemen met de implementatie van StorSimple-apparaten oplossen
 ## <a name="overview"></a>Overzicht

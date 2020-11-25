@@ -14,11 +14,11 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 21f29135cc3b94e5b8c2dfc99b0f7be26b37d123
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425266"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995196"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Toepassingen migreren naar MSAL.NET
 
@@ -51,7 +51,7 @@ Als u MSAL.NET wilt gebruiken, moet u het NuGet-pakket [micro soft. Identity. cl
 
 ### <a name="scopes-not-resources"></a>Scopes die geen resources zijn
 
-ADAL.NET schaft tokens voor *bronnen*aan, maar MSAL.net verwerft tokens voor *scopes*. Voor een aantal MSAL.NET AcquireToken-onderdrukkingen is een para meter met de naam scopes ( `IEnumerable<string> scopes` ) vereist. Deze para meter is een eenvoudige lijst met teken reeksen die de gewenste machtigingen en benodigde bronnen declareren. Bekende bereiken zijn de [bereiken van de Microsoft Graph](/graph/permissions-reference).
+ADAL.NET schaft tokens voor *bronnen* aan, maar MSAL.net verwerft tokens voor *scopes*. Voor een aantal MSAL.NET AcquireToken-onderdrukkingen is een para meter met de naam scopes ( `IEnumerable<string> scopes` ) vereist. Deze para meter is een eenvoudige lijst met teken reeksen die de gewenste machtigingen en benodigde bronnen declareren. Bekende bereiken zijn de [bereiken van de Microsoft Graph](/graph/permissions-reference).
 
 Het is ook mogelijk in MSAL.NET om toegang te krijgen tot v 1.0-resources. Zie de details in [bereiken voor een v 1.0-toepassing](#scopes-for-a-web-api-accepting-v10-tokens).
 

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
 ms.openlocfilehash: e6acea560c3a02420b15aff84475ab58e642116c
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078252"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995961"
 ---
 # <a name="frequently-asked-questions-for-connected-factory-solution-accelerator"></a>Veelgestelde vragen over de oplossings versneller Connected Factory
 
@@ -146,7 +146,7 @@ Bij het implementeren vanuit [www.azureiotsolutions.com](https://www.azureiotsol
 
 Wanneer u implementeert met behulp van het `build.ps1` script in de GitHub-opslag plaats Connected Factory, stelt u de omgevings variabele `$env:MapApiQueryKey` in het build-venster in op de [sleutel van uw Azure Maps-account](../azure-maps/how-to-manage-account-keys.md). De interactieve toewijzing wordt vervolgens automatisch ingeschakeld.
 
-U kunt na de implementatie ook een Azure Maps account sleutel toevoegen aan uw oplossings versneller. Ga naar de Azure Portal en open de App Service resource in uw verbonden fabrieks implementatie. Ga naar **Toepassings instellingen**, waar u een sectie **Toepassings instellingen**vindt. Stel de **MapApiQueryKey** in op de [sleutel van uw Azure Maps-account](../azure-maps/how-to-manage-account-keys.md). Sla de instellingen op en navigeer vervolgens naar **overzicht** en start de app service opnieuw.
+U kunt na de implementatie ook een Azure Maps account sleutel toevoegen aan uw oplossings versneller. Ga naar de Azure Portal en open de App Service resource in uw verbonden fabrieks implementatie. Ga naar **Toepassings instellingen**, waar u een sectie **Toepassings instellingen** vindt. Stel de **MapApiQueryKey** in op de [sleutel van uw Azure Maps-account](../azure-maps/how-to-manage-account-keys.md). Sla de instellingen op en navigeer vervolgens naar **overzicht** en start de app service opnieuw.
 
 ### <a name="how-do-i-create-an-azure-maps-account"></a>Hoe kan ik een Azure Maps-account maken?
 

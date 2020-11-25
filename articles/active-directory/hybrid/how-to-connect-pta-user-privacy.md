@@ -18,11 +18,11 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 396344ba90aa3850d7d23dc40d6df95f6d1f6c3f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89279513"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996573"
 ---
 # <a name="user-privacy-and-azure-active-directory-pass-through-authentication"></a>Gebruikersprivacy en Pass-through-verificatie van Azure Active Directory
 
@@ -67,7 +67,7 @@ Zie [dit artikel](reference-connect-user-privacy.md)voor meer informatie over ge
 
 ### <a name="delete-authentication-agent-event-logs"></a>Gebeurtenis logboeken voor de verificatie agent verwijderen
 
-Dit product kan ook **Windows-gebeurtenis logboeken**maken. Lees [dit artikel](/windows/win32/wes/windows-event-log)voor meer informatie.
+Dit product kan ook **Windows-gebeurtenis logboeken** maken. Lees [dit artikel](/windows/win32/wes/windows-event-log)voor meer informatie.
 
 Als u logboeken wilt weer geven die betrekking hebben op de Pass-Through-verificatie agent, opent u de **Logboeken** -toepassing op de server en controleert u onder **Application and service Logs\Microsoft\AzureAdConnect\AuthenticationAgent\Admin**.
 
@@ -92,12 +92,12 @@ Voer de volgende stappen uit om dit script te plannen om om de 48 uur uit te voe
 
 1.  Sla het script op in een bestand met de ". PS1-extensie.
 2.  Open **configuratie scherm** en klik op **systeem en beveiliging**.
-3.  Klik onder de kop **systeem beheer** op**taken plannen**.
-4.  Klik in **taak planner**met de rechter muisknop op de**bibliotheek taak planning**en klik op**basis taak maken...**.
+3.  Klik onder de kop **systeem beheer** op **taken plannen**.
+4.  Klik in **taak planner** met de rechter muisknop op de **bibliotheek taak planning** en klik op **basis taak maken...**.
 5.  Voer de naam voor de nieuwe taak in en klik op **volgende**.
-6.  Selecteer**dagelijks**voor de **taak trigger** en klik op **volgende**.
+6.  Selecteer **dagelijks** voor de **taak trigger** en klik op **volgende**.
 7.  Stel het terugkeer patroon in op twee dagen en klik op **volgende**.
-8.  Selecteer**een programma starten**als de actie en klik op **volgende**.
+8.  Selecteer **een programma starten** als de actie en klik op **volgende**.
 9.  Typ '**Power shell**' in het vak voor het programma/script en in het vak '**Voeg argumenten toe (optioneel)**' het volledige pad naar het script dat u eerder hebt gemaakt en klik vervolgens op **volgende**.
 10. In het volgende scherm ziet u een samen vatting van de taak die u gaat maken. Controleer de waarden en klik op **volt ooien** om de taak te maken:
  

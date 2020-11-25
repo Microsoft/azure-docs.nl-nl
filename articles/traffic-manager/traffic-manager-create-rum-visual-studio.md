@@ -13,11 +13,11 @@ ms.date: 03/16/2018
 ms.author: duau
 ms.custom: devx-track-js
 ms.openlocfilehash: c49672ad38ac8cf80214d03870b5876d741e76ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259863"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994873"
 ---
 # <a name="how-to-send-real-user-measurements-to-traffic-manager-with-visual-studio-mobile-center"></a>Real-user-metingen verzenden naar Traffic Manager met Visual Studio Mobile Center
 
@@ -35,7 +35,7 @@ De metingen die u onderneemt en naar Traffic Manager verzendt vanuit uw client t
 Gebruik de volgende procedure om de sleutel RUM te verkrijgen met Azure Portal:
 1. Meld u vanuit een browser aan bij Azure Portal. Als u nog geen account hebt, kunt u zich registreren voor een gratis proefversie van één maand.
 2. Zoek in de zoekbalk van de portal naar de naam van het Traffic Manager-profiel dat u wilt wijzigen, en klik vervolgens in de weergegeven resultaten op het Traffic Manager-profiel.
-3. Klik op **real-User-metingen** onder **instellingen**op de pagina Profiel Traffic Manager.
+3. Klik op **real-User-metingen** onder **instellingen** op de pagina Profiel Traffic Manager.
 4. Klik op **sleutel genereren** om een nieuwe sleutel rum te maken.
         
    ![Real-user-metingen sleutel genereren](./media/traffic-manager-create-rum-visual-studio/generate-rum-key.png)

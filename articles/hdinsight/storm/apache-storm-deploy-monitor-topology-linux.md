@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
 ms.openlocfilehash: 9b190b5847c7412344e2bb09fd4000985816219b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86085732"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995587"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Apache Storm-topologieën implementeren en beheren in Azure HDInsight
 
@@ -44,13 +44,13 @@ U kunt de Data Lake-Hulpprogram Ma's voor Visual Studio gebruiken om C#-of hybri
 
 1. In het venster **een nieuw project maken** selecteert u het zoekvak en voert u in `Storm` . Kies vervolgens **Storm** -voor beeld in de lijst met resultaten en selecteer **volgende**.
 
-1. Voer in het venster **uw nieuwe project configureren** een **project naam**in en ga naar of maak een **locatie** om het nieuwe project in op te slaan. Selecteer vervolgens **Maken**.
+1. Voer in het venster **uw nieuwe project configureren** een **project naam** in en ga naar of maak een **locatie** om het nieuwe project in op te slaan. Selecteer vervolgens **Maken**.
 
     ![Het nieuwe project venster configureren, Visual Studio](./media/apache-storm-deploy-monitor-topology-linux/apache-storm-sample1.png)
 
-1. Klik vanuit **Server Explorer**met de rechter muisknop op **Azure** en selecteer **verbinding maken met Microsoft Azure abonnement...** en voltooi het aanmeldings proces.
+1. Klik vanuit **Server Explorer** met de rechter muisknop op **Azure** en selecteer **verbinding maken met Microsoft Azure abonnement...** en voltooi het aanmeldings proces.
 
-1. Klik vanuit **Solution Explorer**met de rechter muisknop op het project en kies **verzenden naar Storm op HDInsight**.
+1. Klik vanuit **Solution Explorer** met de rechter muisknop op het project en kies **verzenden naar Storm op HDInsight**.
 
     > [!NOTE]  
     > Voer de aanmeldings referenties voor uw Azure-abonnement in als u hierom wordt gevraagd. Als u meer dan één abonnement hebt, meldt u zich aan bij de versie met uw Storm op HDInsight-cluster.
@@ -89,7 +89,7 @@ Wanneer u een topologie verzendt met behulp van Visual Studio, wordt het venster
 ![Topologie bewaken, weergave venster Storm topologieën, Visual Studio](./media/apache-storm-deploy-monitor-topology-linux/visual-studio-monitor.png)
 
 > [!NOTE]  
-> U kunt Storm- **topologieën** ook bekijken vanuit **Server Explorer**. Vouw **Azure**  >  **HDInsight**uit, klik met de rechter muisknop op een storm op HDInsight-cluster en selecteer vervolgens **Storm-topologieën weer geven**.
+> U kunt Storm- **topologieën** ook bekijken vanuit **Server Explorer**. Vouw **Azure**  >  **HDInsight** uit, klik met de rechter muisknop op een storm op HDInsight-cluster en selecteer vervolgens **Storm-topologieën weer geven**.
 
 Selecteer de vorm voor de spouts of bouten om informatie over deze onderdelen weer te geven. Er wordt een knop info met onderdeel informatie weer gegeven voor het geselecteerde item.
 
@@ -205,7 +205,7 @@ De pagina overzicht van Storm-topologie ziet er ongeveer als volgt uit:
 
 In het gedeelte **topologie acties** kunt u de volgende knoppen selecteren om een actie uit te voeren:
 
-| Knop | Beschrijving |
+| Knop | Description |
 | --- | --- |
 | Activate | Hiermee wordt de verwerking van een gedeactiveerde topologie hervat. |
 | Deactivate | Hiermee wordt een actieve topologie onderbroken. |
@@ -226,7 +226,7 @@ Als u een Spout selecteert in de secties **Spouts** of **Bouts** , wordt de volg
 | Spout statistieken of flits statistieken | Statistieken over de Spout of bout. Als u het tijds bestek voor een item in deze sectie wilt instellen, selecteert u de bijbehorende koppeling in de kolom **venster** . |
 | (Alleen voor de flits)<br/>Invoer statistieken *(tijds periode)* | Informatie over de invoer stromen die door de schicht worden gebruikt. |
 | Uitvoer statistieken *(tijds periode)* | Informatie over de stromen die worden verzonden door de Spout of bout. |
-| Profilering en fout opsporing | Besturings elementen voor het profileren en opsporen van fouten in de onderdelen op deze pagina. U kunt de waarde **status/time-out (minuten)** instellen en u kunt knoppen selecteren voor **JStack**, de **werk nemer**en de **heap**opnieuw opstarten. |
+| Profilering en fout opsporing | Besturings elementen voor het profileren en opsporen van fouten in de onderdelen op deze pagina. U kunt de waarde **status/time-out (minuten)** instellen en u kunt knoppen selecteren voor **JStack**, de **werk nemer** en de **heap** opnieuw opstarten. |
 | Uitvoerendeers *(tijd frame)* | Informatie over de instanties van de Spout of bout. Als u een logboek van diagnostische gegevens wilt weer geven die voor deze instantie zijn geproduceerd, selecteert u de poort vermelding voor een specifieke **uitvoerder** . U kunt ook de worker-resources zien die zijn gekoppeld aan een specifieke uitvoerder door de bijbehorende koppeling in de kolom **host** te selecteren. |
 | Fouten | Eventuele fout gegevens voor de Spout of bout. |
 
@@ -249,7 +249,7 @@ De basis-URI voor de REST API op op Linux gebaseerde HDInsight-clusters is besch
 
 U kunt de Fully Qualified Domain Name (FQDN) voor het hoofd knooppunt van het cluster op verschillende manieren vinden:
 
-| FQDN-detectie methode | Beschrijving |
+| FQDN-detectie methode | Description |
 | --- | --- |
 | SSH-sessie | Gebruik de opdracht `headnode -f` van een SSH-sessie naar het cluster. |
 | Ambari-Web | Selecteer op de webpagina van het Ambari-cluster ( `https://CLUSTERNAME.azurehdinsight.net` ) **Services** boven aan de pagina en selecteer vervolgens **Storm**. Selecteer op het tabblad **samen vatting** de optie **Storm-gebruikers interface Server**. De FQDN van het knoop punt dat als host fungeert voor de Storm-gebruikers interface en REST API wordt boven aan de pagina weer gegeven. |
@@ -257,7 +257,7 @@ U kunt de Fully Qualified Domain Name (FQDN) voor het hoofd knooppunt van het cl
 
 ### <a name="authentication"></a>Verificatie
 
-Aanvragen voor de REST API moeten *basis verificatie*gebruiken, dus u moet de naam en het wacht woord van de beheerder voor het HDInsight-cluster gebruiken.
+Aanvragen voor de REST API moeten *basis verificatie* gebruiken, dus u moet de naam en het wacht woord van de beheerder voor het HDInsight-cluster gebruiken.
 
 > [!NOTE]  
 > Omdat basis verificatie wordt verzonden met behulp van Lees bare tekst, moet u *altijd* https gebruiken om de communicatie met het cluster te beveiligen.

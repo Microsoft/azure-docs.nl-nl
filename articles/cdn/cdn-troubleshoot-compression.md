@@ -15,11 +15,11 @@ ms.topic: troubleshooting
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: f49af1488a0c044639a72fc2ea52ba0a47727a24
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89433667"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996148"
 ---
 # <a name="troubleshooting-cdn-file-compression"></a>Problemen met CDN-bestandscompressie oplossen
 Dit artikel helpt u bij het oplossen van problemen met [CDN-bestands compressie](cdn-improve-performance.md).
@@ -30,7 +30,7 @@ Als u op elk moment in dit artikel meer hulp nodig hebt, kunt u contact opnemen 
 Compressie voor uw eind punt is ingeschakeld, maar er worden niet-gecomprimeerde bestanden geretourneerd.
 
 > [!TIP]
-> Als u wilt controleren of uw bestanden worden geretourneerd, moet u een hulp programma gebruiken zoals [Fiddler](https://www.telerik.com/fiddler) of de [ontwikkel hulpprogramma's](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/)van uw browser.  Controleer de HTTP-antwoord headers die zijn geretourneerd met uw CDN-inhoud in de cache.  Als er een header is met de naam `Content-Encoding` met de waarde **gzip**, **bzip2**of **Deflate**, wordt uw inhoud gecomprimeerd.
+> Als u wilt controleren of uw bestanden worden geretourneerd, moet u een hulp programma gebruiken zoals [Fiddler](https://www.telerik.com/fiddler) of de [ontwikkel hulpprogramma's](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/)van uw browser.  Controleer de HTTP-antwoord headers die zijn geretourneerd met uw CDN-inhoud in de cache.  Als er een header is met de naam `Content-Encoding` met de waarde **gzip**, **bzip2** of **Deflate**, wordt uw inhoud gecomprimeerd.
 > 
 > ![Content-Encoding-header](./media/cdn-troubleshoot-compression/cdn-content-header.png)
 > 
@@ -54,7 +54,7 @@ Er zijn verschillende mogelijke oorzaken, zoals:
 Eerst moet u een snelle Sanity-controle uitvoeren op de aanvraag.  U kunt de [ontwikkel hulpprogramma's](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/) van uw browser gebruiken om de aanvragen weer te geven die worden gemaakt.
 
 * Controleer of de aanvraag wordt verzonden naar uw eind punt-URL, `<endpointname>.azureedge.net` en niet uw oorsprong.
-* Controleer of de aanvraag een **Accept-Encoding-** header bevat en of de waarde voor die kop **gzip**, **Deflate**of **bzip2**bevat.
+* Controleer of de aanvraag een **Accept-Encoding-** header bevat en of de waarde voor die kop **gzip**, **Deflate** of **bzip2** bevat.
 
 > [!NOTE]
 > **Azure CDN van Akamai** profielen ondersteunen alleen **gzip** -code ring.
@@ -65,7 +65,7 @@ Eerst moet u een snelle Sanity-controle uitvoeren op de aanvraag.  U kunt de [on
 
 ### <a name="verify-compression-settings-standard-cdn-profiles"></a>Compressie-instellingen controleren (standaard CDN-profielen)
 > [!NOTE]
-> Deze stap is alleen van toepassing als uw CDN-profiel een **Azure CDN standaard is van micro soft**, **Azure CDN Standard van Verizon**of **Azure CDN Standard van Akamai** profile. 
+> Deze stap is alleen van toepassing als uw CDN-profiel een **Azure CDN standaard is van micro soft**, **Azure CDN Standard van Verizon** of **Azure CDN Standard van Akamai** profile. 
 > 
 > 
 
@@ -99,7 +99,7 @@ Ga naar het eind punt in de [Azure Portal](https://portal.azure.com) en klik op 
 Controleer met behulp van de ontwikkel hulpprogramma's van uw browser de antwoord headers om te controleren of het bestand wordt opgeslagen in de regio waarin het wordt aangevraagd.
 
 * Controleer de **Server** reactie-header.  De header moet het indelings **platform (pop/server-id)** hebben, zoals in het volgende voor beeld wordt weer gegeven.
-* Controleer de antwoord header van de **X-cache** .  De koptekst moet **treffer**lezen.  
+* Controleer de antwoord header van de **X-cache** .  De koptekst moet **treffer** lezen.  
 
 ![CDN-antwoord headers](./media/cdn-troubleshoot-compression/cdn-response-headers.png)
 

@@ -7,11 +7,11 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 11/12/2020
 ms.openlocfilehash: 19c9ec39d85bfc56b118498aba62c3752d6d771c
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616923"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996318"
 ---
 # <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Toegang tot Azure Virtual Network resources vanuit Azure Logic Apps met behulp van integratie service omgevingen (ISEs)
 
@@ -65,7 +65,7 @@ Wanneer u logische apps maakt en uitvoert in een ISE, krijgt u dezelfde gebruike
 
   Met zeldzame uitzonde ringen, als er een ISE-connector beschikbaar is voor een on-premises systeem of gegevens bron, kunt u rechtstreeks verbinding maken zonder de [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-connection.md)te gebruiken. Zie voor meer informatie [toegang tot on-premises systemen](#on-premises) verderop in dit onderwerp.
 
-* Beheerde connectors die het **ISE** -label niet weer geven, blijven werken voor Logic apps in een ISE. Deze connectors worden *altijd uitgevoerd in de multi tenant-Logic apps-service* , niet in de ISE.
+* Beheerde connectors die het **ISE** -label niet weer geven, blijven werken voor Logic apps in een ISE. Deze connectors worden *altijd uitgevoerd in de multi tenant-Logic apps-service*, niet in de ISE.
 
 * Aangepaste connectors die u *buiten een ISE* maakt, ongeacht of ze de [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-connection.md)nodig hebben, blijven werken voor logische apps in een ISE. Aangepaste connectors die u *in een ISE* maakt, werken echter niet met de on-premises gegevens gateway. Zie [toegang tot on-premises systemen](#on-premises)voor meer informatie.
 
@@ -99,7 +99,7 @@ Wanneer u uw ISE maakt, kunt u de Developer SKU of Premium SKU selecteren. Dit z
 
   Biedt een voordelige ISE die u kunt gebruiken voor experimenteren, ontwikkelen en testen, maar niet voor productie-of prestatie testen. De Developer SKU bevat ingebouwde triggers en acties, standaard connectors, zakelijke connectors en één [gratis laag](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits) integratie account voor een vaste maandelijkse prijs. Deze SKU bevat echter geen SLA (Service Level Agreement), opties voor het schalen van de capaciteit of redundantie tijdens het recyclen, wat betekent dat u vertragingen of downtime mogelijk ondervindt.
 
-* **Premium**
+* **Ultieme**
 
   Biedt een ISE die u kunt gebruiken voor productie en die SLA-ondersteuning, ingebouwde triggers en acties, standaard connectors, zakelijke connectors, een [standaard-laag](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits) integratie account, opties voor het schalen van de capaciteit en redundantie tijdens het recyclen van een vaste maandelijkse prijs.
 
@@ -117,7 +117,7 @@ Wanneer u uw ISE maakt, kunt u kiezen of u interne of Externe toegangs punten wi
 > [!IMPORTANT]
 > U kunt het toegangs eindpunt alleen selecteren tijdens het maken van ISE. deze optie kan later niet worden gewijzigd.
 
-* **Intern** : met persoonlijke eind punten kunt u aan Logic apps in uw ISE aanroepen waar u invoer en uitvoer van Logic apps *alleen vanuit het virtuele netwerk* weer geven en er toegang toe hebt.
+* **Intern**: met persoonlijke eind punten kunt u aan Logic apps in uw ISE aanroepen waar u invoer en uitvoer van Logic apps *alleen vanuit het virtuele netwerk* weer geven en er toegang toe hebt.
 
   > [!IMPORTANT]
   > Als u deze triggers op basis van webhook moet gebruiken, gebruikt u externe eind punten, *niet* interne eind punten, wanneer u uw ISE maakt:
@@ -134,7 +134,7 @@ Wanneer u uw ISE maakt, kunt u kiezen of u interne of Externe toegangs punten wi
   >
   > Uw client computer kan bijvoorbeeld bestaan in het virtuele netwerk van de ISE of binnen een virtueel netwerk dat is verbonden met het virtuele netwerk van de ISE via peering of een virtueel particulier netwerk. 
 
-* **Extern** : open bare eind punten maken het mogelijk om Logic apps in uw ISE aan te roepen, waar u de invoer en uitvoer van de geschiedenis van Logic apps *van buiten uw virtuele netwerk* kunt bekijken en openen. Als u netwerk beveiligings groepen (Nsg's) gebruikt, moet u ervoor zorgen dat deze zijn ingesteld met regels voor binnenkomende verbindingen zodat de invoer en uitvoer van de uitvoerings geschiedenis toegankelijk zijn. Zie [Enable Access for ISE](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access)voor meer informatie.
+* **Extern**: open bare eind punten maken het mogelijk om Logic apps in uw ISE aan te roepen, waar u de invoer en uitvoer van de geschiedenis van Logic apps *van buiten uw virtuele netwerk* kunt bekijken en openen. Als u netwerk beveiligings groepen (Nsg's) gebruikt, moet u ervoor zorgen dat deze zijn ingesteld met regels voor binnenkomende verbindingen zodat de invoer en uitvoer van de uitvoerings geschiedenis toegankelijk zijn. Zie [Enable Access for ISE](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access)voor meer informatie.
 
 Als u wilt bepalen of uw ISE een intern of extern toegangs punt gebruikt, selecteert u in het menu van uw ISE onder **instellingen** de optie **Eigenschappen** en gaat u naar de eigenschap **Access-eind punt** :
 

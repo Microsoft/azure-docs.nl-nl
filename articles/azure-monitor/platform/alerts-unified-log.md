@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 5/31/2019
 ms.subservice: alerts
 ms.openlocfilehash: 8081c60833c3c02d55ae66ca695ba106dba01450
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91294135"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995077"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Waarschuwingen registreren in Azure Monitor
 
@@ -58,11 +58,11 @@ De [log Analytics](../log-query/get-started-portal.md) query die wordt gebruikt 
 
 #### <a name="query-time-range"></a>Query tijds bereik
 
-Het tijds bereik wordt ingesteld in de definitie van de regel voorwaarde. In werk ruimten en Application Insights, wordt het een **punt**genoemd. In alle andere resource typen wordt het **opheffen van de query tijd bereik**genoemd.
+Het tijds bereik wordt ingesteld in de definitie van de regel voorwaarde. In werk ruimten en Application Insights, wordt het een **punt** genoemd. In alle andere resource typen wordt het **opheffen van de query tijd bereik** genoemd.
 
 Net als bij log Analytics beperkt het tijds bereik de query gegevens tot het opgegeven bereik. Zelfs als de opdracht **geleden** in de query wordt gebruikt, is het tijds bereik van toepassing.
 
-Een query scant bijvoorbeeld 60 minuten, wanneer het tijds bereik 60 minuten is, zelfs als de tekst **geleden (1d)** bevat. Het tijds bereik en de filter tijd voor query's moeten overeenkomen. In het voorbeeld geval wordt de **periode**voor het overschrijven van de  /  **query tijd** op één dag gewijzigd. dit werkt zoals verwacht.
+Een query scant bijvoorbeeld 60 minuten, wanneer het tijds bereik 60 minuten is, zelfs als de tekst **geleden (1d)** bevat. Het tijds bereik en de filter tijd voor query's moeten overeenkomen. In het voorbeeld geval wordt de **periode** voor het overschrijven van de  /  **query tijd** op één dag gewijzigd. dit werkt zoals verwacht.
 
 ### <a name="measure"></a>Measure
 
@@ -74,7 +74,7 @@ Aantal resultaten is de standaard maat eenheid. Ideaal voor het werken met gebeu
 
 Logboek waarschuwingen werken het beste wanneer u gegevens in het logboek probeert te detecteren. Het werkt minder goed wanneer u een gebrek aan gegevens in de logboeken wilt detecteren. Bijvoorbeeld een waarschuwing over de heartbeat van de virtuele machine.
 
-Voor werk ruimten en Application Insights wordt deze aangeroepen **op basis van** het selectie **aantal resultaten**. In alle andere resource typen wordt **meting** met selectie **tabel rijen**genoemd.
+Voor werk ruimten en Application Insights wordt deze aangeroepen **op basis van** het selectie **aantal resultaten**. In alle andere resource typen wordt **meting** met selectie **tabel rijen** genoemd.
 
 > [!NOTE]
 > Aangezien logboeken semi-gestructureerde gegevens zijn, zijn ze inherent meer te laten laten verlichten dan de metrische gegevens. u kunt zich niet op de hoogte brengen wanneer u niet in de logboeken probeert te ontdekken en u kunt overwegen [metrische waarschuwingen](alerts-metric-overview.md)te gebruiken. U kunt gegevens verzenden naar het metrische archief vanuit Logboeken met [metrische waarschuwingen voor logboeken](alerts-metric-logs.md).
@@ -98,7 +98,7 @@ Vervolgens worden de waarschuwings regels gecontroleerd op aanvragen die eindige
 
 #### <a name="calculation-of-measure-based-on-a-numeric-column-such-as-cpu-counter-value"></a>Berekening van een meting op basis van een numerieke kolom (zoals een CPU-item waarde)
 
-Voor werk ruimten en Application Insights wordt deze aangeroepen **op basis van** de **metrische maat eenheid**van de selectie. In alle andere resource typen wordt **meting** genoemd met de selectie van een wille keurige kolom naam.
+Voor werk ruimten en Application Insights wordt deze aangeroepen **op basis van** de **metrische maat eenheid** van de selectie. In alle andere resource typen wordt **meting** genoemd met de selectie van een wille keurige kolom naam.
 
 ### <a name="aggregation-type"></a>Aggregatietype
 
@@ -110,9 +110,9 @@ In werk ruimten en Application Insights wordt het alleen ondersteund in meet typ
 
 ### <a name="aggregation-granularity"></a>Granulariteit aggregatie
 
-Bepaalt het interval dat wordt gebruikt om meerdere records samen te voegen tot één numerieke waarde. Als u bijvoorbeeld **vijf minuten**hebt opgegeven, worden records gegroepeerd met een interval van vijf minuten met behulp van het opgegeven **aggregatie type** .
+Bepaalt het interval dat wordt gebruikt om meerdere records samen te voegen tot één numerieke waarde. Als u bijvoorbeeld **vijf minuten** hebt opgegeven, worden records gegroepeerd met een interval van vijf minuten met behulp van het opgegeven **aggregatie type** .
 
-In werk ruimten en Application Insights wordt het alleen ondersteund in meet type meet **waarde** . Het query resultaat moet een [bin ()](/azure/kusto/query/binfunction) bevatten die het interval in de query resultaten bepaalt. In alle andere resource typen wordt het veld dat deze instelling bepaalt **aggregatie granulatie**genoemd.
+In werk ruimten en Application Insights wordt het alleen ondersteund in meet type meet **waarde** . Het query resultaat moet een [bin ()](/azure/kusto/query/binfunction) bevatten die het interval in de query resultaten bepaalt. In alle andere resource typen wordt het veld dat deze instelling bepaalt **aggregatie granulatie** genoemd.
 
 > [!NOTE]
 > Als [bin ()](/azure/kusto/query/binfunction) kan leiden tot een oneven tijds intervallen, wordt de functie [bin ()](/azure/kusto/query/binfunction) automatisch geconverteerd naar de functie [bin_at ()](/azure/kusto/query/binatfunction) met de juiste tijd tijdens runtime, om ervoor te zorgen dat er resultaten zijn met een vast punt.
@@ -162,7 +162,7 @@ Wanneer u de query hebt gedefinieerd om de resultaten uit te voeren en te evalue
 
 De query resultaten worden omgezet in een getal dat wordt vergeleken met de drempel waarde en de operator.
 
-### <a name="frequency"></a>Frequency
+### <a name="frequency"></a>Frequentie
 
 Het interval waarin de query wordt uitgevoerd. Kan worden ingesteld van 5 minuten tot één dag. Moet gelijk zijn aan of kleiner zijn dan het [tijds bereik](#query-time-range) van de query om logboek records niet te missen.
 
@@ -178,7 +178,7 @@ Als de granulariteit van de regel [**aggregatie**](#aggregation-granularity) bij
 
 Logboek waarschuwingen zijn stateless. Waarschuwingen worden elke keer dat aan de voor waarde wordt voldaan, geactiveerd, zelfs als u deze eerder hebt geactiveerd. Geactiveerde waarschuwingen worden niet opgelost. U kunt [de waarschuwing markeren als gesloten](alerts-managing-alert-states.md). U kunt ook acties dempen om te voor komen dat ze worden geactiveerd voor een bepaalde periode na het starten van een waarschuwings regel.
 
-In werk ruimten en Application Insights heten deze **waarschuwingen onderdrukken**. In alle andere resource typen wordt **demping-acties**genoemd. 
+In werk ruimten en Application Insights heten deze **waarschuwingen onderdrukken**. In alle andere resource typen wordt **demping-acties** genoemd. 
 
 Zie het volgende voor beeld van een waarschuwing:
 

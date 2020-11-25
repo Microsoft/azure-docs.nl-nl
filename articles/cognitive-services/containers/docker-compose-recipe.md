@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 10/29/2020
 ms.author: aahi
 ms.openlocfilehash: cedcf8a3fcd656c4af0ca7493c598791d35d20d9
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130558"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996119"
 ---
 # <a name="use-docker-compose-to-deploy-multiple-containers"></a>Docker Compose gebruiken om meerdere containers te implementeren
 
@@ -39,7 +39,7 @@ Voor deze procedure zijn verschillende hulpprogram ma's vereist die moeten worde
 
 ## <a name="docker-compose-file"></a>Docker-bestand opstellen
 
-Het YAML-bestand definieert alle services die moeten worden geïmplementeerd. Deze services zijn afhankelijk van ofwel een `DockerFile` of een bestaande container installatie kopie. In dit geval gebruiken we twee Preview-voor beelden. Kopieer en plak het volgende YAML-bestand en sla het op als *docker-Samenstel. yaml* . Geef de juiste **apikey** -, **facturerings** -en **waarden endpointuri** -waarden op in het bestand.
+Het YAML-bestand definieert alle services die moeten worden geïmplementeerd. Deze services zijn afhankelijk van ofwel een `DockerFile` of een bestaande container installatie kopie. In dit geval gebruiken we twee Preview-voor beelden. Kopieer en plak het volgende YAML-bestand en sla het op als *docker-Samenstel. yaml*. Geef de juiste **apikey**-, **facturerings**-en **waarden endpointuri** -waarden op in het bestand.
 
 ```yaml
 version: '3.7'

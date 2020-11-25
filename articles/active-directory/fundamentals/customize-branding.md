@@ -14,11 +14,11 @@ ms.reviewer: kexia
 ms.custom: it-pro, seodec18, fasttrack-edit
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bb138ade0f579a7545c0910646b6adfb7d5ac02a
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650220"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996658"
 ---
 # <a name="add-branding-to-your-organizations-azure-active-directory-sign-in-page"></a>Een huis stijl toevoegen aan de Azure Active Directory aanmeldings pagina van uw organisatie
 Gebruik het logo van uw organisatie en aangepaste kleuren schema's om een consistent uiterlijk te geven op uw aanmeldings pagina's van Azure Active Directory (Azure AD). Uw aanmeldings pagina's worden weer gegeven wanneer gebruikers zich aanmelden bij de webtoepassingen van uw organisatie, zoals Microsoft 365, die Azure AD als id-provider gebruikt.

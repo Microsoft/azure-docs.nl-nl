@@ -4,11 +4,11 @@ description: bestand opnemen
 services: cosmos-db
 ms.custom: include file
 ms.openlocfilehash: ad4445cbea6553a7a96299e1276dbe8f3816e166
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504067"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994541"
 ---
 1. Meld u in een nieuw browservenster aan bij [Azure Portal](https://portal.azure.com/).
 
@@ -29,7 +29,7 @@ ms.locfileid: "94504067"
     Accountnaam|Voer een unieke naam in|Voer een unieke naam in om uw Azure Cosmos DB-account te identificeren. Uw account-URI wordt *mongo.cosmos.azure.com* dat aan uw unieke accountnaam wordt toegevoegd.<br><br>De accountnaam moet tussen de 3 en 31 tekens lang zijn en mag alleen kleine letters, cijfers en afbreekstreepjes bevatten.
     API|Azure Cosmos DB voor Mongo DB-API|De API bepaalt het type te maken account. Azure Cosmos DB heeft vijf API's: Core (SQL) voor documentdatabases, Gremlin voor grafiekdatabases, Azure Cosmos DB voor Mongo DB-API voor documentdatabases, Azure Table en Cassandra. Op dit moment moet u voor elke API een afzonderlijk account maken. <br><br>Selecteer **Azure Cosmos DB voor Mongo DB-API** omdat u in deze quickstart een verzameling maakt die met MongoDB werkt.<br><br>[Meer informatie over de Azure Cosmos DB voor MongoDB-API](../articles/cosmos-db/mongodb-introduction.md).|
     Locatie|Selecteer de regio het dichtst in de buurt van uw gebruikers|Selecteer een geografische locatie waar u het Azure Cosmos DB-account wilt hosten. Gebruik de locatie die zich het dichtst bij uw gebruikers bevindt, zodat ze de snelst mogelijke toegang tot de gegevens hebben.|
-    Capaciteitsmodus|Ingerichte doorvoer of serverloos|Selecteer **Ingerichte doorvoer** om een account te maken in de modus [Ingerichte doorvoer](../articles/cosmos-db/set-throughput.md). Selecteer **Serverloos** om een account te maken in de modus [serverloos](../articles/cosmos-db/serverless.md).<br><br>**Opmerking** : Alleen MongoDB API-versie 3.6 wordt ondersteund door serverloze accounts. Als u 3.2 als versie kiest, wordt het account in de ingerichte doorvoermodus gedwongen.
+    Capaciteitsmodus|Ingerichte doorvoer of serverloos|Selecteer **Ingerichte doorvoer** om een account te maken in de modus [Ingerichte doorvoer](../articles/cosmos-db/set-throughput.md). Selecteer **Serverloos** om een account te maken in de modus [serverloos](../articles/cosmos-db/serverless.md).<br><br>**Opmerking**: Alleen MongoDB API-versie 3.6 wordt ondersteund door serverloze accounts. Als u 3.2 als versie kiest, wordt het account in de ingerichte doorvoermodus gedwongen.
 
     Selecteer **Beoordelen en maken**. U kunt de secties **Netwerk** en **Tags** overslaan. 
 

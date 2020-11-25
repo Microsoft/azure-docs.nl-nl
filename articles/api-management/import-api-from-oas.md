@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
 ms.openlocfilehash: 05295efec3d7651c3a77dd5ad6e2c72b57a6c5a3
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146753"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994684"
 ---
 # <a name="import-an-openapi-specification"></a>Een OpenAPI-specificatie importeren
 
@@ -39,11 +39,11 @@ Voltooi de volgende quickstart: [Een Azure API Management-exemplaar maken](get-s
 ## <a name="import-and-publish-a-back-end-api"></a><a name="create-api"> </a>Een back-end-API importeren en publiceren
 
 1. Navigeer naar uw API Management-service in de Azure Portal en selecteer **API's** in het menu.
-2. Selecteer **OpenAPI-specificatie** in de lijst **Een nieuwe API toevoegen** .
+2. Selecteer **OpenAPI-specificatie** in de lijst **Een nieuwe API toevoegen**.
 
     ![OpenAPI-specificatie](./media/import-api-from-oas/oas-api.png)
 3. Voer API-instellingen in. U kunt de waarden instellen tijdens het maken of later configureren door naar het tabblad **Instellingen** te gaan. De instellingen worden beschreven in de zelfstudie [Uw eerste API importeren en publiceren](import-and-publish.md#import-and-publish-a-backend-api).
-4. Selecteer **Maken** .
+4. Selecteer **Maken**.
 
 > [!NOTE]
 > De API-importbeperkingen staan in [een ander artikel](api-management-api-import-restrictions.md).

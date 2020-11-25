@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 2403e3a4bfe7824659a9c34c407e55e6c56e6046
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107722"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994652"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>De implementatie van resources voor uw functie-app in Azure Functions automatiseren
 
@@ -114,7 +114,7 @@ De definitie van het hosting plan varieert, en kan een van de volgende zijn:
 * [Premium-abonnement](#premium)
 * [App Service-plan](#app-service-plan)
 
-### <a name="function-app"></a>Function App
+### <a name="function-app"></a>Functie-app
 
 De functie-app resource wordt gedefinieerd met behulp van een resource van het type **micro soft. web/sites** en de soort **functionapp**:
 

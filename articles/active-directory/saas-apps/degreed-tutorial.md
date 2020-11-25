@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 08/27/2020
 ms.author: jeedes
 ms.openlocfilehash: 96f2c96e7770ec7acc690a1d057fef16db5b88ed
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675975"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994431"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-degreed"></a>Zelfstudie: Azure Active Directory-integratie met Degreed
 
@@ -55,15 +55,15 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Als u de integratie van Degreed in Azure AD wilt configureren, moet u Degreed vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **Degreed** .
+1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **Degreed**.
 1. Selecteer **Degreed** in het resultatenpaneel en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Degreed, met behulp van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Degreed, met behulp van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tot stand is gebracht tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Degreed.
 
 Als u eenmalige aanmelding van Azure AD met Degreed wilt configureren en testen, moet u de volgende bouwstenen voltooien:
@@ -72,15 +72,15 @@ Als u eenmalige aanmelding van Azure AD met Degreed wilt configureren en testen,
     * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
     * **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
 2. **[Eenmalige aanmelding bij Degreed configureren](#configure-degreed-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
-    * **[Testgebruiker maken voor Degreed](#create-degreed-test-user)** : als u een tegenhanger van Britta Simon in Degreed wilt hebben die is gekoppeld aan de weergave van de gebruiker in Azure AD.
+    * **[Testgebruiker maken voor Degreed](#create-degreed-test-user)**: als u een tegenhanger van Britta Simon in Degreed wilt hebben die is gekoppeld aan de weergave van de gebruiker in Azure AD.
 3. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **Degreed** , ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **Degreed**, ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -116,31 +116,31 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
-1. Selecteer bovenaan het scherm **Nieuwe gebruiker** .
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
-   1. Typ **B.Simon** in het veld **Naam** .  
-   1. Voer `<username>@<companydomain>.<extension>` in in het veld **Gebruikersnaam** . Bijvoorbeeld: `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Selecteer **Maken** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer bovenaan het scherm **Nieuwe gebruiker**.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Typ **B.Simon** in het veld **Naam**.  
+   1. Voer `<username>@<companydomain>.<extension>` in in het veld **Gebruikersnaam**. Bijvoorbeeld: `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Degreed.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Degreed** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="configure-degreed-sso"></a>SSO voor Degreed configureren
 

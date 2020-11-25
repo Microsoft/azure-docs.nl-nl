@@ -12,12 +12,12 @@ ms.date: 11/17/2020
 ms.author: aahi
 ms.custom: cog-serv-seo-aug-2020
 keywords: on-premises, docker, container
-ms.openlocfilehash: ad3f73276a2a965032fd2acf368bce4a0c146632
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 9ca5229200b39f0a3c68da152f4d89f842d021ca
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94744169"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95996402"
 ---
 # <a name="install-and-run-docker-containers-for-the-speech-service-apis"></a>Docker-containers voor de speech service-Api's installeren en uitvoeren 
 
@@ -41,10 +41,10 @@ Met spraakcontainers kunnen klanten een spraaktoepassingsarchitectuur maken die 
 
 | Container | Functies | Laatste |
 |--|--|--|
-| Spraak naar tekst | Analyseert sentiment en transcribeert doorlopend realtime spraak of batch audio-opnamen met tussenliggende resultaten.  | 2.6.0 |
-| Custom Speech-naar-tekst | Door gebruik te maken van een aangepast model van de [Custom speech Portal](https://speech.microsoft.com/customspeech), transcribeert doorlopend realtime spraak of batch opnames in tekst met tussenliggende resultaten. | 2.6.0 |
-| Tekst naar spraak | Hiermee wordt tekst geconverteerd naar een spreek spraak met tekst zonder opmaak of een SSML (Speech synthese Markup Language). | 1.8.0 |
-| Aangepaste tekst-naar-spraak | Door gebruik te maken van een aangepast model van de [aangepaste Voice Portal](https://aka.ms/custom-voice-portal), converteert u tekst naar een natuurlijk geluids fragment met de invoer van een tekst zonder opmaak of een SSML (Speech synthese Markup Language). | 1.8.0 |
+| Spraak naar tekst | Analyseert sentiment en transcribeert doorlopend realtime spraak of batch audio-opnamen met tussenliggende resultaten.  | 2.7.0 |
+| Custom Speech-naar-tekst | Door gebruik te maken van een aangepast model van de [Custom speech Portal](https://speech.microsoft.com/customspeech), transcribeert doorlopend realtime spraak of batch opnames in tekst met tussenliggende resultaten. | 2.7.0 |
+| Tekst naar spraak | Hiermee wordt tekst geconverteerd naar een spreek spraak met tekst zonder opmaak of een SSML (Speech synthese Markup Language). | 1.9.0 |
+| Aangepaste tekst-naar-spraak | Door gebruik te maken van een aangepast model van de [aangepaste Voice Portal](https://aka.ms/custom-voice-portal), converteert u tekst naar een natuurlijk geluids fragment met de invoer van een tekst zonder opmaak of een SSML (Speech synthese Markup Language). | 1.9.0 |
 | Spraak Taaldetectie | De taal detecteren die in audio bestanden wordt gesp roken. | 1.0 |
 | Tekst-naar-spraak Neural | Hiermee wordt tekst geconverteerd naar spraak herkenning met behulp van diepe Neural-netwerk technologie, waardoor natuurlijk gesynthesizerde spraak kan worden gebruikt. | 1.3.0 |
 

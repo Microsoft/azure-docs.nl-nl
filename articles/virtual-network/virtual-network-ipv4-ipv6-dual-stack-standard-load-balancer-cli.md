@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: e4676ec54165c94663ec5ad76d4c43d7fabfc717
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 07bd8e19fdd75cc97a9c34152ea5f06f850ef724
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94742246"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95995676"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-in-azure-virtual-network---cli"></a>Een IPv6-toepassing met dubbele stack implementeren in het virtuele netwerk van Azure-CLI
 
@@ -264,7 +264,7 @@ az network vnet create \
 --name dsVNET \
 --resource-group DsResourceGroup01 \
 --location eastus  \
---address-prefixes "10.0.0.0/16" "ace:cab:deca::/48"
+--address-prefixes "10.0.0.0/16" "fd00:db8:deca::/48"
 
 # Create a single dual stack subnet
 
@@ -272,7 +272,7 @@ az network vnet subnet create \
 --name dsSubNET \
 --resource-group DsResourceGroup01 \
 --vnet-name dsVNET \
---address-prefixes "10.0.0.0/24" "ace:cab:deca:deed::/64" \
+--address-prefixes "10.0.0.0/24" "fd00:db8:deca:deed::/64" \
 --network-security-group dsNSG1
 ```
 

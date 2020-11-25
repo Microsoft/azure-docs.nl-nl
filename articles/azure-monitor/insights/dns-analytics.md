@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 03/20/2018
 ms.openlocfilehash: 947b509468857b98b868881bdd48adf67a5d60db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86498998"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994623"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Inzichten over uw DNS-infra structuur verzamelen met de preview-oplossing van DNS-analyse
 
@@ -35,10 +35,10 @@ De volgende tabel beschrijft de verbonden bronnen die worden ondersteund door de
 
 | **Verbonden bron** | **Ondersteuning** | **Beschrijving** |
 | --- | --- | --- |
-| [Windows-agents](../platform/agent-windows.md) | Ja | De oplossing verzamelt DNS-gegevens van Windows-agents. |
-| [Linux-agents](../learn/quick-collect-linux-computer.md) | Nee | De oplossing verzamelt geen DNS-gegevens van direct Linux-agents. |
-| [Beheergroep System Center Operations Manager](../platform/om-agents.md) | Ja | De oplossing verzamelt DNS-gegevens van agents in een verbonden Operations Manager-beheer groep. Een directe verbinding van de Operations Manager agent naar Azure Monitor is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
-| [Azure-opslag account](../platform/resource-logs.md#send-to-log-analytics-workspace) | Nee | Azure Storage wordt niet gebruikt door de oplossing. |
+| [Windows-agents](../platform/agent-windows.md) | Yes | De oplossing verzamelt DNS-gegevens van Windows-agents. |
+| [Linux-agents](../learn/quick-collect-linux-computer.md) | No | De oplossing verzamelt geen DNS-gegevens van direct Linux-agents. |
+| [Beheergroep System Center Operations Manager](../platform/om-agents.md) | Yes | De oplossing verzamelt DNS-gegevens van agents in een verbonden Operations Manager-beheer groep. Een directe verbinding van de Operations Manager agent naar Azure Monitor is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
+| [Azure Storage-account](../platform/resource-logs.md#send-to-log-analytics-workspace) | No | Azure Storage wordt niet gebruikt door de oplossing. |
 
 ### <a name="data-collection-details"></a>Details van gegevens verzameling
 

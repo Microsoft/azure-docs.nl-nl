@@ -14,15 +14,15 @@ ms.author: ryanwi
 ms.reviewer: marsma, jmprieur, lenalepa, sureshja, kkrishna
 ms.custom: aaddev
 ms.openlocfilehash: 0c5b06fd14f526ca90b1b922be281af55ba00116
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077486"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995213"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Procedure: Een Azure Active Directory-gebruiker aanmelden met behulp van het patroon voor multitenant-toepassingen
 
-Als u een SaaS-toepassing (Software as a Service) aan een groot aantal organisaties levert, kunt u uw toepassing zo configureren dat deze aanmeldingen accepteert van elke Azure Active Directory-Tenant (Azure AD). Deze configuratie heet *het maken van uw toepassing met meerdere tenants* . Gebruikers in een Azure AD-Tenant kunnen zich aanmelden bij uw toepassing nadat deze hebben ingestemd om hun account bij uw toepassing te gebruiken.
+Als u een SaaS-toepassing (Software as a Service) aan een groot aantal organisaties levert, kunt u uw toepassing zo configureren dat deze aanmeldingen accepteert van elke Azure Active Directory-Tenant (Azure AD). Deze configuratie heet *het maken van uw toepassing met meerdere tenants*. Gebruikers in een Azure AD-Tenant kunnen zich aanmelden bij uw toepassing nadat deze hebben ingestemd om hun account bij uw toepassing te gebruiken.
 
 Als u een bestaande toepassing hebt met een eigen account systeem of andere soorten aanmeldingen van andere cloud providers ondersteunt, is het toevoegen van Azure AD-aanmelding vanuit een wille keurige Tenant eenvoudig. U hoeft alleen maar uw app te registreren, aanmeldings code toe te voegen via OAuth2, OpenID Connect Connect of SAML en de [knop ' Aanmelden met Microsoft '][AAD-App-Branding] te plaatsen in uw toepassing.
 
@@ -40,7 +40,7 @@ Laten we eens kijken naar elke stap. U kunt ook direct naar het voor beeld gaan 
 
 ## <a name="update-registration-to-be-multi-tenant"></a>Registratie bijwerken naar multi tenant
 
-Web app/API-registraties in azure AD zijn standaard één Tenant. U kunt uw registratie meerdere tenants maken door de optie **ondersteunde account typen** te vinden in het deel venster **verificatie** van de registratie van uw toepassing in de [Azure Portal][AZURE-portal] en in te stellen op **accounts in elke organisatie Directory** .
+Web app/API-registraties in azure AD zijn standaard één Tenant. U kunt uw registratie meerdere tenants maken door de optie **ondersteunde account typen** te vinden in het deel venster **verificatie** van de registratie van uw toepassing in de [Azure Portal][AZURE-portal] en in te stellen op **accounts in elke organisatie Directory**.
 
 Voordat een toepassing kan worden gemaakt met meerdere tenants, moet Azure AD de App-ID-URI van de toepassing globaal uniek zijn. De URI van de app-id is een van de manieren waarop een toepassing wordt geïdentificeerd in protocolberichten. Voor een toepassing met één tenant is het voldoende dat de URI van de app-id uniek is binnen die tenant. Voor een multitenant toepassing moet deze wereldwijd uniek zijn, zodat Azure Active Directory de toepassing in alle tenants kan vinden. Wereldwijde uniekheid wordt afgedwongen door te vereisen dat de URI van de app-id een hostnaam heeft die overeenkomt met een geverifieerd domein van de Azure Active Directory-tenant.
 
@@ -125,11 +125,11 @@ Bepaalde gedelegeerde machtigingen vereisen ook de toestemming van een Tenant be
 
 Als uw toepassing gebruikmaakt van machtigingen waarvoor beheerders toestemming is vereist, moet u een penbeweging hebben, zoals een knop of koppeling, waar de beheerder de actie kan initiëren. De aanvraag die uw toepassing verzendt voor deze actie is het gebruikelijke OAuth2/OpenID Connect Connect-autorisatie verzoek dat ook de `prompt=admin_consent` query teken reeks parameter bevat. Zodra de beheerder toestemming heeft gegeven en de Service-Principal is gemaakt in de Tenant van de klant, hebben volgende aanmeldings aanvragen de `prompt=admin_consent` para meter niet nodig. Omdat de beheerder heeft vastgesteld dat de aangevraagde machtigingen acceptabel zijn, worden er geen andere gebruikers in de Tenant om vanaf dat moment toestemming gevraagd.
 
-Tenantbeheerders kunnen uitschakelen dat normale gebruikers toestemming kunnen geven voor toepassingen. Als dit wordt uitgeschakeld, is er altijd beheerderstoestemming nodig om een toepassing in een tenant te kunnen gebruiken. Als u uw toepassing wilt testen wanneer de toestemming van de eind gebruiker is uitgeschakeld, kunt u de configuratie-switch vinden in de [Azure Portal][AZURE-portal] in de sectie **[gebruikers instellingen](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/UserSettings/menuId/)** onder **bedrijfs toepassingen** .
+Tenantbeheerders kunnen uitschakelen dat normale gebruikers toestemming kunnen geven voor toepassingen. Als dit wordt uitgeschakeld, is er altijd beheerderstoestemming nodig om een toepassing in een tenant te kunnen gebruiken. Als u uw toepassing wilt testen wanneer de toestemming van de eind gebruiker is uitgeschakeld, kunt u de configuratie-switch vinden in de [Azure Portal][AZURE-portal] in de sectie **[gebruikers instellingen](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/UserSettings/menuId/)** onder **bedrijfs toepassingen**.
 
 De `prompt=admin_consent` para meter kan ook worden gebruikt door toepassingen die machtigingen aanvragen waarvoor geen beheerder toestemming nodig is. Een voor beeld van wanneer de toepassing wordt gebruikt, is een ervaring waarbij de Tenant beheerder één keer meldt en er geen andere gebruikers om toestemming wordt gevraagd van dat punt op.
 
-Als een toepassing beheerders toestemming vereist en een beheerder zich aanmeldt zonder de `prompt=admin_consent` para meter die wordt verzonden, wordt de beheerder **alleen van toepassing op hun gebruikers account** . Gewone gebruikers kunnen zich nog steeds niet aanmelden of toestemming geven voor de toepassing. Deze functie is handig als u de Tenant beheerder de mogelijkheid wilt geven om uw toepassing te verkennen voordat u andere gebruikers toegang verleent.
+Als een toepassing beheerders toestemming vereist en een beheerder zich aanmeldt zonder de `prompt=admin_consent` para meter die wordt verzonden, wordt de beheerder **alleen van toepassing op hun gebruikers account**. Gewone gebruikers kunnen zich nog steeds niet aanmelden of toestemming geven voor de toepassing. Deze functie is handig als u de Tenant beheerder de mogelijkheid wilt geven om uw toepassing te verkennen voordat u andere gebruikers toegang verleent.
 
 ### <a name="consent-and-multi-tier-applications"></a>Toestemming en toepassingen met meerdere lagen
 

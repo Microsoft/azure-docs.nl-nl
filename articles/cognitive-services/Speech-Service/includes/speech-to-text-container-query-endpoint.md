@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 08/18/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e920ea3cd91f6275c4cb52dc070b0df60312d525
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: dd1552dda28291112a2412bdf956bc49a0b541d7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92470696"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95996401"
 ---
 De container biedt Api's voor query-eind punten op basis van websockets die worden geopend via de [Speech SDK](../index.yml). De Speech SDK maakt standaard gebruik van online spraak Services. Als u de container wilt gebruiken, moet u de initialisatie methode wijzigen.
 
@@ -29,7 +29,7 @@ Wijzigen van het gebruik van deze Azure-Cloud initialisatie aanroep:
 var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
 ```
 
-Deze aanroep met de container [host](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.fromhost?view=azure-dotnet&preserve-view=true):
+Deze aanroep met de container [host](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.fromhost?preserve-view=true&view=azure-dotnet):
 
 ```csharp
 var config = SpeechConfig.FromHost(
@@ -45,7 +45,7 @@ speech_config = speechsdk.SpeechConfig(
     subscription=speech_key, region=service_region)
 ```
 
-Deze aanroep met het [eind punt](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python&preserve-view=true)van de container gebruiken:
+Deze aanroep met het [eind punt](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-python)van de container gebruiken:
 
 ```python
 speech_config = speechsdk.SpeechConfig(

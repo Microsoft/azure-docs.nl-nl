@@ -8,11 +8,11 @@ keywords: Docker, Kubernetes, azure, AKS, Azure Kubernetes service, containers, 
 manager: gwallace
 ms.custom: devx-track-js, devx-track-azurecli
 ms.openlocfilehash: 9bed61861c80f141270e50b644b32ae42fbe8e77
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748140"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995558"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>GitHub acties & Azure Kubernetes service (preview)
 
@@ -88,31 +88,31 @@ az role assignment create --assignee <ClientId>  --scope <ACRId> --role AcrPush
 > [!IMPORTANT]
 > U moet GitHub-acties hebben ingeschakeld voor uw opslag plaats. Als u GitHub-acties voor uw opslag plaats wilt inschakelen, gaat u naar uw opslag plaats op GitHub, klikt u op het tabblad acties en kiest u acties inschakelen voor deze opslag plaats.
 
-Navigeer naar uw gevorkte opslag plaats en klik op *instellingen* . Klik op *geheimen* in de zijbalk links. Klik op *een nieuw geheim toevoegen* om elk nieuw geheim hieronder toe te voegen:
+Navigeer naar uw gevorkte opslag plaats en klik op *instellingen*. Klik op *geheimen* in de zijbalk links. Klik op *een nieuw geheim toevoegen* om elk nieuw geheim hieronder toe te voegen:
 
-1. *AZURE_CREDENTIALS* : de volledige uitvoer van het maken van de Service-Principal.
-1. *RESOURCE_GROUP* : de resource groep voor uw AKS-cluster, in dit voor beeld *MyResourceGroup* .
-1. *CLUSTER_NAME* : de naam van uw AKS-cluster, in dit voor beeld *MyAKS* .
-1. *CONTAINER_REGISTRY* : de *login server* voor de ACR.
-1. *Host* : de host voor uw dev-ruimte, die de vorm *<MASTER_SPACE>. <APP_NAME>. <* HOST_SUFFIX>, die in dit voor beeld is *dev.bikesharingweb.fedcab0987.Eus.azds.io* .
-1. *IMAGE_PULL_SECRET* : de naam van het geheim dat u wilt gebruiken, bijvoorbeeld *demo-geheim* .
-1. *MASTER_SPACE* : de naam van de bovenliggende ontwikkel ruimte, die in dit voor beeld *dev* is.
-1. *REGISTRY_USERNAME* : de *CLIENTID* van de JSON-uitvoer van de Service-Principal is gemaakt.
-1. *REGISTRY_PASSWORD* : de *CLIENTSECRET* van de JSON-uitvoer van de Service-Principal is gemaakt.
+1. *AZURE_CREDENTIALS*: de volledige uitvoer van het maken van de Service-Principal.
+1. *RESOURCE_GROUP*: de resource groep voor uw AKS-cluster, in dit voor beeld *MyResourceGroup*.
+1. *CLUSTER_NAME*: de naam van uw AKS-cluster, in dit voor beeld *MyAKS*.
+1. *CONTAINER_REGISTRY*: de *login server* voor de ACR.
+1. *Host*: de host voor uw dev-ruimte, die de vorm *<MASTER_SPACE>. <APP_NAME>. <* HOST_SUFFIX>, die in dit voor beeld is *dev.bikesharingweb.fedcab0987.Eus.azds.io*.
+1. *IMAGE_PULL_SECRET*: de naam van het geheim dat u wilt gebruiken, bijvoorbeeld *demo-geheim*.
+1. *MASTER_SPACE*: de naam van de bovenliggende ontwikkel ruimte, die in dit voor beeld *dev* is.
+1. *REGISTRY_USERNAME*: de *CLIENTID* van de JSON-uitvoer van de Service-Principal is gemaakt.
+1. *REGISTRY_PASSWORD*: de *CLIENTSECRET* van de JSON-uitvoer van de Service-Principal is gemaakt.
 
 > [!NOTE]
 > Al deze geheimen worden gebruikt door de GitHub-actie en zijn geconfigureerd in [. github/workflows/Bikes. yml][github-action-yaml].
 
-Indien gewenst kunt u, als u de Master ruimte wilt bijwerken nadat de PR is samengevoegd, het *GATEWAY_HOST* geheim toevoegen, waarmee de formulier *<MASTER_SPACE>. gateway. <* HOST_SUFFIX de>, die in dit voor beeld is *dev.gateway.fedcab0987.Eus.azds.io* . Wanneer u de wijzigingen in de hoofd vertakking in uw Fork samenvoegt, wordt er een andere actie uitgevoerd om uw hele toepassing opnieuw te bouwen en uit te voeren in de hoofd ontwikkelaars ruimte. In dit voor beeld is de hoofd ruimte *dev* . Deze actie is geconfigureerd in [. github/workflows/bikesharing. yml][github-action-bikesharing-yaml].
+Indien gewenst kunt u, als u de Master ruimte wilt bijwerken nadat de PR is samengevoegd, het *GATEWAY_HOST* geheim toevoegen, waarmee de formulier *<MASTER_SPACE>. gateway. <* HOST_SUFFIX de>, die in dit voor beeld is *dev.gateway.fedcab0987.Eus.azds.io*. Wanneer u de wijzigingen in de hoofd vertakking in uw Fork samenvoegt, wordt er een andere actie uitgevoerd om uw hele toepassing opnieuw te bouwen en uit te voeren in de hoofd ontwikkelaars ruimte. In dit voor beeld is de hoofd ruimte *dev*. Deze actie is geconfigureerd in [. github/workflows/bikesharing. yml][github-action-bikesharing-yaml].
 
-Als u de wijzigingen in uw PR wilt uitvoeren in een grandchild ruimte, moet u ook de *MASTER_SPACE* en de geheimen van de *host* bijwerken. Als uw toepassing bijvoorbeeld wordt uitgevoerd in *dev* met een *azureuser1* van een onderliggende ruimte, kan de PR alleen worden uitgevoerd in een onderliggende ruimte van *dev/azureuser1* :
+Als u de wijzigingen in uw PR wilt uitvoeren in een grandchild ruimte, moet u ook de *MASTER_SPACE* en de geheimen van de *host* bijwerken. Als uw toepassing bijvoorbeeld wordt uitgevoerd in *dev* met een *azureuser1* van een onderliggende ruimte, kan de PR alleen worden uitgevoerd in een onderliggende ruimte van *dev/azureuser1*:
 
-* Werk *MASTER_SPACE* bij naar de onderliggende ruimte die u als bovenliggende ruimte wilt, in dit voor beeld *azureuser1* .
-* Werk de *host* bij naar *<GRANDPARENT_SPACE>. <APP_NAME>. <* HOST_SUFFIX>, in dit voor beeld *dev.bikesharingweb.fedcab0987.Eus.azds.io* .
+* Werk *MASTER_SPACE* bij naar de onderliggende ruimte die u als bovenliggende ruimte wilt, in dit voor beeld *azureuser1*.
+* Werk de *host* bij naar *<GRANDPARENT_SPACE>. <APP_NAME>. <* HOST_SUFFIX>, in dit voor beeld *dev.bikesharingweb.fedcab0987.Eus.azds.io*.
 
 ## <a name="create-a-new-branch-for-code-changes"></a>Een nieuwe vertakking maken voor code wijzigingen
 
-Ga naar `BikeSharingApp/` en maak een nieuwe vertakking met de naam *fiets afbeeldingen* .
+Ga naar `BikeSharingApp/` en maak een nieuwe vertakking met de naam *fiets afbeeldingen*.
 
 ```cmd
 cd dev-spaces/samples/BikeSharingApp/
@@ -162,7 +162,7 @@ Nadat de actie is voltooid, ziet u een opmerking met een URL naar uw nieuwe onde
 
 Ga naar de *bikesharingweb* -service door de URL te openen in de opmerking. Selecteer *Aurelia Briggs (klant)* als de gebruiker en selecteer vervolgens een te huur fiets. Controleer of de tijdelijke aanduiding voor de fiets niet meer wordt weer geven.
 
-Als u uw wijzigingen in de *hoofd* vertakking in uw Fork samenvoegt, wordt er een andere actie uitgevoerd om uw hele toepassing opnieuw te bouwen en uit te voeren in de bovenliggende ontwikkel ruimte. In dit voor beeld is de bovenliggende ruimte *dev* . Deze actie is geconfigureerd in [. github/workflows/bikesharing. yml][github-action-bikesharing-yaml].
+Als u uw wijzigingen in de *hoofd* vertakking in uw Fork samenvoegt, wordt er een andere actie uitgevoerd om uw hele toepassing opnieuw te bouwen en uit te voeren in de bovenliggende ontwikkel ruimte. In dit voor beeld is de bovenliggende ruimte *dev*. Deze actie is geconfigureerd in [. github/workflows/bikesharing. yml][github-action-bikesharing-yaml].
 
 ## <a name="clean-up-your-azure-resources"></a>Uw Azure-resources opschonen
 

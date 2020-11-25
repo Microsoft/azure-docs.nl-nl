@@ -10,12 +10,12 @@ ms.date: 07/15/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 07e306c6c428a0e3a3f64a29a2574cb0378bb81f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a74860b7adf4dade5aedc71a4960595cbe55eaf0
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89230225"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95995298"
 ---
 # <a name="enable-and-manage-soft-delete-for-blobs"></a>Zacht verwijderen voor blobs inschakelen en beheren
 
@@ -34,7 +34,7 @@ Schakel de optie voor het voorlopig verwijderen van blobs in uw opslag account i
 1. Ga in het [Azure-portal](https://portal.azure.com/) naar uw opslagaccount.
 1. Zoek de optie **gegevens bescherming** onder **BLOB service**.
 1. Stel de eigenschap **zacht verwijderen voor BLOB** in op *ingeschakeld*.
-1. Geef onder **Bewaar beleid**op hoe lang voorlopig verwijderde blobs worden bewaard door Azure Storage.
+1. Geef onder **Bewaar beleid** op hoe lang voorlopig verwijderde blobs worden bewaard door Azure Storage.
 1. Sla uw wijzigingen op.
 
 ![Scherm opname van Azure Portal met de gegevens bescherming BLOB-service gekozen.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-configuration.png)
@@ -55,7 +55,7 @@ Wanneer u op een zachte verwijderde BLOB of moment opname klikt, ziet u de nieuw
 
 ![Scherm afbeelding van de details van een voorlopig verwijderd object.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-properties.png)
 
-Houd er rekening mee dat het verwijderen van een BLOB ook de verwijdering van alle gekoppelde moment opnamen ongedaan maakt. Als u het verwijderen van tijdelijke verwijderde moment opnamen voor een actieve BLOB ongedaan wilt maken, klikt u op de BLOB en selecteert u **verwijderen van alle moment opnamen ongedaan**maken.
+Houd er rekening mee dat het verwijderen van een BLOB ook de verwijdering van alle gekoppelde moment opnamen ongedaan maakt. Als u het verwijderen van tijdelijke verwijderde moment opnamen voor een actieve BLOB ongedaan wilt maken, klikt u op de BLOB en selecteert u **verwijderen van alle moment opnamen ongedaan** maken.
 
 ![Scherm afbeelding van de details van een voorlopig verwijderde blob.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-undelete-all-snapshots.png)
 
@@ -140,7 +140,7 @@ Als u zacht verwijderen wilt inschakelen, werkt u de service-eigenschappen van e
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_EnableSoftDelete":::
 
-Als u blobs wilt herstellen die per ongeluk zijn verwijderd, roept u verwijderen ongedaan maken op deze blobs. Houd er rekening mee dat bij het aanroepen van **verwijderen ongedaan**maken, zowel op actieve als Soft verwijderde blobs, alle gekoppelde tijdelijke verwijderde moment opnamen worden hersteld als actief. In het volgende voor beeld wordt de verwijdering van alle voorlopig verwijderde en actieve blobs in een container ongedaan gemaakt:
+Als u blobs wilt herstellen die per ongeluk zijn verwijderd, roept u verwijderen ongedaan maken op deze blobs. Houd er rekening mee dat bij het aanroepen van **verwijderen ongedaan** maken, zowel op actieve als Soft verwijderde blobs, alle gekoppelde tijdelijke verwijderde moment opnamen worden hersteld als actief. In het volgende voor beeld wordt de verwijdering van alle voorlopig verwijderde en actieve blobs in een container ongedaan gemaakt:
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_RecoverDeletedBlobs":::
 
@@ -194,5 +194,5 @@ blockBlob.StartCopy(copySource);
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Voorlopig verwijderen voor Blob Storage](soft-delete-overview.md)
+- [Voorlopig verwijderen voor Blob Storage](./soft-delete-blob-overview.md)
 - [BLOB-versie beheer](versioning-overview.md)

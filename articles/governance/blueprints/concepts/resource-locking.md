@@ -4,11 +4,11 @@ description: Meer informatie over de vergrendelings opties in azure blauw drukke
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 01f69cbfebe203407287392c2433181396b541b2
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92095991"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996097"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Meer informatie over het vergren delen van resources in azure-blauw drukken
 
@@ -19,10 +19,10 @@ Het maken van consistente omgevingen op schaal is alleen echt waardevol als er e
 
 ## <a name="locking-modes-and-states"></a>Vergrendelings modi en statussen
 
-Vergrendelings modus is van toepassing op de blauw druk-toewijzing en er zijn drie opties: **niet vergren delen**, **alleen-lezen**of **niet verwijderen**. De vergrendelings modus wordt tijdens de toewijzing van een blauw druk geconfigureerd tijdens de implementatie van artefacten. Een andere vergrendelings modus kan worden ingesteld door de toewijzing van de blauw druk bij te werken.
+Vergrendelings modus is van toepassing op de blauw druk-toewijzing en er zijn drie opties: **niet vergren delen**, **alleen-lezen** of **niet verwijderen**. De vergrendelings modus wordt tijdens de toewijzing van een blauw druk geconfigureerd tijdens de implementatie van artefacten. Een andere vergrendelings modus kan worden ingesteld door de toewijzing van de blauw druk bij te werken.
 Vergrendelings modi kunnen echter niet worden gewijzigd buiten Azure-blauw drukken.
 
-Resources die zijn gemaakt door artefacten in een blauw druk-toewijzing, hebben vier statussen: **niet vergrendeld**, **alleen-lezen**, **niet bewerken/verwijderen**of **kan niet verwijderen**. Elk type artefact kan de status **niet vergrendeld** hebben. De volgende tabel kan worden gebruikt om de status van een resource te bepalen:
+Resources die zijn gemaakt door artefacten in een blauw druk-toewijzing, hebben vier statussen: **niet vergrendeld**, **alleen-lezen**, **niet bewerken/verwijderen** of **kan niet verwijderen**. Elk type artefact kan de status **niet vergrendeld** hebben. De volgende tabel kan worden gebruikt om de status van een resource te bepalen:
 
 |Modus|Bron type voor artefacten|Status|Beschrijving|
 |-|-|-|-|
@@ -109,7 +109,7 @@ De [Eigenschappen](../../../role-based-access-control/deny-assignments.md#deny-a
 
 |Modus |Machtigingen. acties |Machtigingen. intact |Principals [i]. Voert |ExcludePrincipals [i]. Id | DoNotApplyToChildScopes |
 |-|-|-|-|-|-|
-|Alleen-lezen |**\*** |**\*/read**<br />**Micro soft. autorisatie/vergren delen/verwijderen**<br />**Micro soft. Network/virtualNetwork/subnetten/toevoegen/actie** |SystemDefined (iedereen) |blauw druk toewijzen en door de gebruiker gedefinieerd in **excludedPrincipals** |Resource groep- _True_; Resource- _False_ |
+|Alleen-lezen |**\** _ |_ *\* /Read **<br />** micro soft. Authorization/vergren delen/verwijderen/ **<br />** micro soft. netwerk/virtualNetwork/subnets/toevoegen/actie** |SystemDefined (iedereen) |blauw druk toewijzen en door de gebruiker gedefinieerd in **excludedPrincipals** |Resource groep- _True_; Resource- _False_ |
 |Niet verwijderen |**\*/Delete** | **Micro soft. autorisatie/vergren delen/verwijderen**<br />**Micro soft. Network/virtualNetwork/subnetten/toevoegen/actie** |SystemDefined (iedereen) |blauw druk toewijzen en door de gebruiker gedefinieerd in **excludedPrincipals** |Resource groep- _True_; Resource- _False_ |
 
 > [!IMPORTANT]
@@ -117,7 +117,7 @@ De [Eigenschappen](../../../role-based-access-control/deny-assignments.md#deny-a
 
 ## <a name="exclude-a-principal-from-a-deny-assignment"></a>Een principal uitsluiten van een weiger toewijzing
 
-In sommige ontwerp-of beveiligings scenario's kan het nodig zijn om een principal uit te sluiten van de [toewijzing weigeren](../../../role-based-access-control/deny-assignments.md) die door de toewijzing van blauw drukken wordt gemaakt. Deze stap wordt uitgevoerd in REST API door Maxi maal vijf waarden toe te voegen aan de **excludedPrincipals** -matrix **bij het** [maken van de toewijzing](/rest/api/blueprints/assignments/createorupdate). De volgende toewijzings definitie is een voor beeld van een aanvraag tekst die **excludedPrincipals**bevat:
+In sommige ontwerp-of beveiligings scenario's kan het nodig zijn om een principal uit te sluiten van de [toewijzing weigeren](../../../role-based-access-control/deny-assignments.md) die door de toewijzing van blauw drukken wordt gemaakt. Deze stap wordt uitgevoerd in REST API door Maxi maal vijf waarden toe te voegen aan de **excludedPrincipals** -matrix **bij het** [maken van de toewijzing](/rest/api/blueprints/assignments/createorupdate). De volgende toewijzings definitie is een voor beeld van een aanvraag tekst die **excludedPrincipals** bevat:
 
 ```json
 {

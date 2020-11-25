@@ -7,11 +7,11 @@ ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: d9acd322c454002613e21e8591c3e83aeec2d51e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90979385"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995349"
 ---
 # <a name="troubleshoot-problems-enabling-or-viewing-application-insights-profiler"></a>Problemen met het inschakelen of weer geven van Application Insights Profiler oplossen
 
@@ -107,7 +107,7 @@ Wanneer u Profiler configureert, worden er updates uitgevoerd voor de instelling
 
 ### <a name="too-many-active-profiling-sessions"></a>Te veel actieve profilerings sessies
 
-Op dit moment kunt u Profiler inschakelen voor Maxi maal vier Azure-web-apps en implementatie-sleuven die in hetzelfde service plan worden uitgevoerd. Als u meer dan vier web-apps hebt die in één app service-abonnement worden uitgevoerd, kan Profiler een *micro soft. ServiceProfiler. exceptions. TooManyETWSessionException*genereren. Profiler wordt afzonderlijk uitgevoerd voor elke web-app en probeert een Event Tracing for Windowser-sessie (ETW) voor elke app te starten. Maar een beperkt aantal ETW-sessies kan tegelijkertijd actief zijn. Als de Profiler-Webtaak te veel actieve profilerings sessies rapporteert, verplaatst u enkele web-apps naar een ander service plan.
+Op dit moment kunt u Profiler inschakelen voor Maxi maal vier Azure-web-apps en implementatie-sleuven die in hetzelfde service plan worden uitgevoerd. Als u meer dan vier web-apps hebt die in één app service-abonnement worden uitgevoerd, kan Profiler een *micro soft. ServiceProfiler. exceptions. TooManyETWSessionException* genereren. Profiler wordt afzonderlijk uitgevoerd voor elke web-app en probeert een Event Tracing for Windowser-sessie (ETW) voor elke app te starten. Maar een beperkt aantal ETW-sessies kan tegelijkertijd actief zijn. Als de Profiler-Webtaak te veel actieve profilerings sessies rapporteert, verplaatst u enkele web-apps naar een ander service plan.
 
 ### <a name="deployment-error-directory-not-empty-dhomesitewwwrootapp_datajobs"></a>Implementatie fout: de map is niet leeg d: \\ Home \\ site \\ wwwroot \\ App_Data \\ Jobs
 

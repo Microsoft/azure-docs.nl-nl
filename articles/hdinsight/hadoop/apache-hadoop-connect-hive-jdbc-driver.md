@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/20/2020
 ms.openlocfilehash: 183bc416dde941f11bd94cfcff3bf738b35f876f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86207385"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996068"
 ---
 # <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Query uitvoeren op Apache Hive via het JDBC-stuurprogramma in HDInsight
 
@@ -39,7 +39,7 @@ JDBC-verbindingen met een HDInsight-cluster op Azure worden gemaakt via poort 44
 
 Vervang `CLUSTERNAME` door de naam van uw HDInsight-cluster.
 
-U kunt ook de verbinding via de **Ambari-gebruikers interface > Hive > configuraties > Geavanceerd**verkrijgen.
+U kunt ook de verbinding via de **Ambari-gebruikers interface > Hive > configuraties > Geavanceerd** verkrijgen.
 
 ![JDBC ophalen connection string via Ambari](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-get-connection-string-through-ambari.png)
 
@@ -117,7 +117,7 @@ SQuirreL SQL is een JDBC-client die kan worden gebruikt om Hive-query's op afsta
 
     Als u de verbindings alias wilt opslaan, klikt u op de knop **OK** onder aan het dialoog venster **alias toevoegen** .
 
-8. Selecteer in de vervolg keuzelijst **verbinding maken** met de bovenkant van SQuirreL SQL **Hive op HDInsight**. Selecteer **verbinding maken**wanneer u hierom wordt gevraagd.
+8. Selecteer in de vervolg keuzelijst **verbinding maken** met de bovenkant van SQuirreL SQL **Hive op HDInsight**. Selecteer **Verbinding maken** wanneer hierom wordt gevraagd.
 
     ![dialoog venster verbinding met para meters](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-connect-dialog.png)
 

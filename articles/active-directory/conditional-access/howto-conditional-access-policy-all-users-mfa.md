@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6e6185c4bde71285fc163cae2af46f64ba052195
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366204"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994754"
 ---
 # <a name="conditional-access-require-mfa-for-all-users"></a>Voorwaardelijke toegang: MFA vereisen voor alle gebruikers
 
@@ -47,14 +47,14 @@ De volgende stappen helpen u bij het maken van beleid voor voorwaardelijke toega
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
-1. Onder **toewijzingen**selecteert u **gebruikers en groepen**
-   1. Onder **insluiten**selecteert u **alle gebruikers**
-   1. Onder **uitsluiten**selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
+1. Onder **toewijzingen** selecteert u **gebruikers en groepen**
+   1. Onder **insluiten** selecteert u **alle gebruikers**
+   1. Onder **uitsluiten** selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
    1. Selecteer **Gereed**.
 1. Onder **Cloud-apps of acties**  >  **Include**, selecteert u **alle Cloud-apps**.
-   1. Onder **uitsluiten**selecteert u toepassingen waarvoor multi-factor Authentication niet is vereist.
+   1. Onder **uitsluiten** selecteert u toepassingen waarvoor multi-factor Authentication niet is vereist.
 1. Onder **voor waarden**  >  **client-apps (preview)**, onder **Selecteer de client-apps waarop dit beleid van toepassing is om** alle geselecteerde standaard instellingen te behouden en selecteer **gereed**.
-1. Onder **toegangs beheer**  >  **toekennen**selecteert u **toegang verlenen**, **multi-factor Authentication vereisen**en selecteert u **selecteren**.
+1. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang verlenen**, **multi-factor Authentication vereisen** en selecteert u **selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 1. Selecteer **maken** om uw beleid in te stellen.
 
@@ -64,10 +64,10 @@ Organisaties kunnen ervoor kiezen om bekende netwerk locaties die bekend zijn al
 
 In het bovenstaande voor beeld-beleid kan een organisatie ervoor kiezen om geen multi-factor Authentication te vereisen als ze toegang hebben tot een Cloud-app vanuit hun bedrijfs netwerk. In dit geval kan de volgende configuratie aan het beleid worden toegevoegd:
 
-1. Selecteer onder **toewijzingen**locaties **voor voor waarden**  >  **Locations**.
+1. Selecteer onder **toewijzingen** locaties **voor voor waarden**  >  **Locations**.
    1. Configureer **Ja**.
-   1. **Een wille keurige locatie**bevatten.
-   1. **Alle vertrouwde locaties**uitsluiten.
+   1. **Een wille keurige locatie** bevatten.
+   1. **Alle vertrouwde locaties** uitsluiten.
    1. Selecteer **Gereed**.
 1. Selecteer **Gereed**.
 1. **Sla** de wijzigingen in het beleid op.

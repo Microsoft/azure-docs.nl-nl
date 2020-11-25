@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 726507fa6ea0651b23d46424bda669a2d8ad41e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90979897"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996641"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management"></a>Toegang tot een toegangs pakket aanvragen in het beheer van rechten van Azure AD
 
@@ -51,7 +51,7 @@ Zodra u het toegangs pakket hebt gevonden in de portal van mijn toegang, kunt u 
 
 **Vereiste rol:** Aanvrager
 
-1. Zoek het toegangs pakket in de lijst.  Als dat nodig is, kunt u zoeken door een zoek reeks te typen en vervolgens het filter **naam**, **catalogus**of **resources** te selecteren.
+1. Zoek het toegangs pakket in de lijst.  Als dat nodig is, kunt u zoeken door een zoek reeks te typen en vervolgens het filter **naam**, **catalogus** of **resources** te selecteren.
 
     ![Mijn Access-Portal-zoeken naar resources](./media/entitlement-management-request-access/my-access-resource-search.png)
 

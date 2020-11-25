@@ -11,16 +11,16 @@ ms.topic: article
 ms.date: 11/12/2020
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 014c9759756a1da922a5141f064991827d593208
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: a0b7330485d3152a588d43added7d9feaa5c2a14
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630257"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "95994486"
 ---
 # <a name="upload-and-index-your-videos"></a>Uw video's uploaden en indexeren  
 
-Als uw video eenmaal is geüpload, wordt de video door Video Indexer (optioneel) codeert (eventueel beschreven in het artikel). Wanneer u een Video Indexer-account maakt, kunt u kiezen uit een gratis proefversie (waarmee u een bepaald aantal gratis minuten indexering krijgt) of een betaalde optie (zonder quotumlimiet). Bij de gratis proefversie biedt Video Indexer websitegebruikers maximaal 600 minuten aan gratis indexering en API-gebruikers maximaal 2400 minuten gratis indexering. Met de betaalde versie maakt u een Video Indexer-account dat is [gekoppeld aan uw Azure-abonnement en een Azure Media Services-account](connect-to-azure.md). U betaalt voor minuten voor de index. Zie [Media Services prijzen](https://azure.microsoft.com/pricing/details/media-services/)voor meer informatie.
+Als uw video eenmaal is geüpload, wordt de video door Video Indexer (optioneel) codeert (eventueel beschreven in het artikel). Wanneer u een Video Indexer-account maakt, kunt u kiezen uit een gratis proefversie (waarmee u een bepaald aantal gratis minuten indexering krijgt) of een betaalde optie (zonder quotumlimiet). Bij de gratis proefversie biedt Video Indexer websitegebruikers maximaal 600 minuten aan gratis indexering en API-gebruikers maximaal 2400 minuten gratis indexering. Met de betaalde versie maakt u een Video Indexer-account dat is [gekoppeld aan uw Azure-abonnement en een Azure Media Services-account](connect-to-azure.md). U betaalt voor geïndexeerde minuten. Zie [Prijzen van mediaservices](https://azure.microsoft.com/pricing/details/media-services/) voor meer informatie.
 
 Wanneer u video's uploadt met de Video Indexer-API, hebt u de volgende opties voor uploaden: 
 
@@ -74,27 +74,7 @@ Met deze parameter kunt u een ID die is gekoppeld aan de video opgeven. De ID ka
 
 #### <a name="callbackurl"></a>callbackUrl
 
-Een URL die wordt gebruikt om de klant (met een POST-aanvraag) op de hoogte te stellen van de volgende gebeurtenissen:
-
-- Statuswijziging indexering: 
-    - Eigenschappen:    
-    
-        |Naam|Beschrijving|
-        |---|---|
-        |id|De video-ID|
-        |staat|De videostatus|  
-    - Voor beeld: https: \/ /test.com/notifyme?projectName=MyProject&id = 1234abcd&status = verwerkt
-- Personen geïdentificeerd in de video:
-  - Eigenschappen
-    
-      |Naam|Beschrijving|
-      |---|---|
-      |id| De video-ID|
-      |faceId|De gezichts-id die wordt weergegeven in de video-index|
-      |knownPersonId|De persoons-id die uniek is in een gezichtsmodel|
-      |personName|De naam van de persoon|
-        
-    - Voor beeld: https: \/ /test.com/notifyme?projectName=MyProject&id = 1234abcd&FaceId = 12&knownPersonId = CCA84350-89B7-4262-861C-3CAC796542A5&persoons naam = Inigo_Montoya 
+[!INCLUDE [callback url](./includes/callback-url.md)]
 
 ##### <a name="other-considerations"></a>Andere overwegingen
 
@@ -118,7 +98,7 @@ De prijs is afhankelijk van de geselecteerde optie voor indexering.
 
 #### <a name="priority"></a>priority
 
-Video's worden geïndexeerd door Video Indexer op basis van de prioriteit. Gebruik de parameter **priority** voor het specificeren van de indexeringsprioriteit. De volgende waarden zijn geldig: **Laag** , **Normaal** (standaard) en **Hoog**.
+Video's worden geïndexeerd door Video Indexer op basis van de prioriteit. Gebruik de parameter **priority** voor het specificeren van de indexeringsprioriteit. De volgende waarden zijn geldig: **Laag**, **Normaal** (standaard) en **Hoog**.
 
 De parameter **priority** wordt alleen ondersteund voor betaalde accounts.
 

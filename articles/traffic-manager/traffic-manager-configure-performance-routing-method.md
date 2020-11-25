@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: duau
 ms.openlocfilehash: 46d71a38b79f449084f7353527f2dfb05d5b92a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401024"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994907"
 ---
 # <a name="configure-the-performance-traffic-routing-method"></a>De routerings methode voor prestatie verkeer configureren
 
@@ -29,7 +29,7 @@ Met de methode voor het routerings verkeer van prestaties kunt u verkeer naar he
 2. Zoek in de zoekbalk van de portal naar de **Traffic Manager-profielen** en klik vervolgens op de profielnaam waarvoor u de routeringsmethode wilt configureren.
 3. Verifieer in de blade van het **Traffic Manager-profiel** of zowel de cloudservices als websites die u in uw configuratie wilt opnemen aanwezig zijn.
 4. Klik in de sectie **Instellingen** op **Configuratie** en voer in de blade **Configuratie** de volgende configuratie uit:
-    1. Voor de **instellingen voor verkeers routerings methode**voor **routerings methode** selecteert u **prestaties**.
+    1. Voor de **instellingen voor verkeers routerings methode** voor **routerings methode** selecteert u **prestaties**.
     2. Stel de **Controle-instellingen voor het eindpunt** voor alle eindpunten in dit profiel hetzelfde in en doe dit als volgt:
         1. Selecteer het juiste **Protocol** en geef het **Poortnummer** op. 
         2. Typ bij **Pad** een slash */* . Als u eindpunten wilt controleren, moet u een pad en bestandsnaam opgeven. Een slash (/) is een geldige vermelding voor het relatieve pad en impliceert dat het bestand zich in de hoofdmap bevindt (standaard).

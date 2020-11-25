@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5e55526e0a63a0c603e2b62ccb3ac0efed911cff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91295223"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996624"
 ---
 # <a name="azure-ad-connect-sync-understanding-the-default-configuration"></a>Azure AD Connect-synchronisatie: inzicht in de standaardconfiguratie
 In dit artikel worden de out-of-box-configuratie regels uitgelegd. De regels worden gedocumenteerd en hoe deze regels van invloed zijn op de configuratie. U wordt ook begeleid bij de standaard configuratie van Azure AD Connect Sync. Het doel is dat de lezer begrijpt hoe het configuratie model, met de naam declaratief inrichten, in een echt wereld voorbeeld werkt. In dit artikel wordt ervan uitgegaan dat u Azure AD Connect synchronisatie al hebt geïnstalleerd en geconfigureerd met behulp van de installatie wizard.
@@ -96,7 +96,7 @@ Een groeps object moet voldoen aan het volgende om te worden gesynchroniseerd:
   * Als er meer leden zijn voordat synchronisatie de eerste keer wordt gestart, wordt de groep niet gesynchroniseerd.
   * Als het aantal leden groeit vanaf het moment dat de eerste keer werd gemaakt, wordt de synchronisatie van 50.000 leden gestopt, totdat het aantal lidmaatschapen van 50.000 opnieuw is bereikt.
   * Opmerking: het 50.000-lidmaatschaps aantal wordt ook afgedwongen door Azure AD. Het is niet mogelijk om groepen met meer leden te synchroniseren, zelfs niet als u deze regel wijzigt of verwijdert.
-* Als de groep een **distributie groep**is, moet het ook e-mail adres zijn ingeschakeld. Zie [out-of-Box-regels](#contact-out-of-box-rules) voor deze regel afdwingen.
+* Als de groep een **distributie groep** is, moet het ook e-mail adres zijn ingeschakeld. Zie [out-of-Box-regels](#contact-out-of-box-rules) voor deze regel afdwingen.
 
 De volgende groeps objecten zijn **niet** gesynchroniseerd met Azure AD:
 
@@ -148,7 +148,7 @@ Omdat deze regel een out-of-Box-regel is, wordt er een waarschuwing weer gegeven
 
 Een synchronisatie regel heeft vier configuratie secties: beschrijving, bereik filter, regels voor samen voegen en trans formaties.
 
-#### <a name="description"></a>Beschrijving
+#### <a name="description"></a>Description
 De eerste sectie bevat basis informatie, zoals een naam en beschrijving.
 
 ![Tabblad Beschrijving in de editor voor synchronisatie regels](./media/concept-azure-ad-connect-sync-default-configuration/syncruledescription.png)
@@ -190,7 +190,7 @@ Als u deze configuratie in de context wilt opnemen in een Account-Resource-fores
 
 Een trans formatie kan verschillende typen hebben: constante, direct en expressie.
 
-* Met een constante stroom wordt altijd een hardcoded waarde stromen. In het bovenstaande voor beeld wordt altijd de waarde **True** ingesteld in het **accountEnabled**kenmerk met de naam.
+* Met een constante stroom wordt altijd een hardcoded waarde stromen. In het bovenstaande voor beeld wordt altijd de waarde **True** ingesteld in het **accountEnabled** kenmerk met de naam.
 * Met een directe stroom wordt altijd de waarde van het kenmerk in de bron naar het doel kenmerk gestroomd als-is.
 * Het derde stroom type is expressie en biedt meer geavanceerde configuraties.
 
@@ -220,7 +220,7 @@ De prioriteit van synchronisatie regels wordt ingesteld in groepen door de insta
 ### <a name="putting-it-all-together"></a>Alles samenvoegen
 We weten nu voldoende over synchronisatie regels om te begrijpen hoe de configuratie werkt met de verschillende synchronisatie regels. Als u een gebruiker bekijkt en de kenmerken die aan de tekst zijn bijgedragen, worden de regels in de volgende volg orde toegepast:
 
-| Naam | Opmerking |
+| Name | Opmerking |
 |:--- |:--- |
 | Vanuit AD: gebruiker toevoegen |Regel voor het koppelen van connector ruimte-objecten met een omgekeerd. |
 | In vanuit AD: User account ingeschakeld |Kenmerken die vereist zijn voor aanmelding bij Azure AD en Microsoft 365. We willen deze kenmerken van het ingeschakelde account. |
@@ -237,6 +237,6 @@ We weten nu voldoende over synchronisatie regels om te begrijpen hoe de configur
 
 **Overzichts onderwerpen**
 
-* [Azure AD Connect synchronisatie: synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
+* [Azure AD Connect synchroniseren: Synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
 * [Integrating your on-premises identities with Azure Active Directory (Engelstalig)](whatis-hybrid-identity.md)
 

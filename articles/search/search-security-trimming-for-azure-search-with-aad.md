@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 06/04/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 87337cf22bdb388c5873a2811bb9913c3e7f4d4e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019773"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994958"
 ---
 # <a name="security-filters-for-trimming-azure-cognitive-search-results-using-active-directory-identities"></a>Beveiligings filters voor het verkleinen van Azure Cognitive Search-resultaten met behulp van Active Directory-identiteiten
 
@@ -46,7 +46,7 @@ Deze stap integreert uw toepassing met AAD voor het accepteren van aanmeldingen 
 1. Ga naar de app voor het registreren van de [**toepassings registratie Portal**](https://apps.dev.microsoft.com)  >   **Converged app**  >  **een app toevoegen**.
 2. Voer een naam in voor uw toepassing en klik vervolgens op **maken**. 
 3. Selecteer de zojuist geregistreerde toepassing op de pagina mijn toepassingen.
-4. Kies op de pagina Toepassings registratie > **platforms**  >  **platform toevoegen**de optie **Web-API**.
+4. Kies op de pagina Toepassings registratie > **platforms**  >  **platform toevoegen** de optie **Web-API**.
 5. Ga nog steeds op de pagina Toepassings registratie naar > **Microsoft Graph machtigingen**  >  **toevoegen**.
 6. Voeg in machtigingen selecteren de volgende gedelegeerde machtigingen toe en klik vervolgens op **OK**:
 

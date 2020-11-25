@@ -9,11 +9,11 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: 515f5f665e947ff9594cce6dbbaea9b5e0c50ebf
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999715"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995740"
 ---
 # <a name="manage-your-bill-in-an-iot-central-application"></a>Uw factuur beheren in een IoT Central-toepassing
 
@@ -42,7 +42,7 @@ Voer de volgende stappen uit om dit self-service proces te volt ooien:
 
 1. Selecteer de juiste Azure Active Directory en vervolgens het Azure-abonnement dat u wilt gebruiken voor uw toepassing die gebruikmaakt van een betaald abonnement.
 
-1. Nadat u **converteren**hebt geselecteerd, maakt uw toepassing nu gebruik van een betaald abonnement en wordt u gefactureerd.
+1. Nadat u **converteren** hebt geselecteerd, maakt uw toepassing nu gebruik van een betaald abonnement en wordt u gefactureerd.
 
 > [!Note]
 > Standaard wordt u geconverteerd naar een prijs plan van *Standard 2* .
@@ -59,11 +59,11 @@ In het gedeelte prijzen kunt u uw Azure IoT-prijs plan op elk gewenst moment bij
 
 1. Selecteer het **plan** en selecteer vervolgens **Opslaan** om te upgraden of Down graden.
 
-## <a name="view-your-bill"></a>Uw factuur weergeven
+## <a name="view-your-bill"></a>Uw factuur bekijken
 
 1. Selecteer de juiste Azure Active Directory en vervolgens het Azure-abonnement dat u wilt gebruiken voor uw toepassing die gebruikmaakt van een betaald abonnement.
 
-1. Nadat u **converteren**hebt geselecteerd, maakt uw toepassing nu gebruik van een betaald abonnement en wordt u gefactureerd.
+1. Nadat u **converteren** hebt geselecteerd, maakt uw toepassing nu gebruik van een betaald abonnement en wordt u gefactureerd.
 
 > [!Note]
 > Standaard wordt u geconverteerd naar een prijs plan van *Standard 2* .

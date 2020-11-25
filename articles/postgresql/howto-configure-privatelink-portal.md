@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.openlocfilehash: 23b9774f28f915596abafbd8c1f6c38fc4f55748
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636262"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995281"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-portal"></a>Een persoonlijke koppeling maken en beheren voor Azure Database for PostgreSQL-één server met behulp van portal
 
@@ -40,7 +40,7 @@ In deze sectie maakt u een virtueel netwerk en het subnet om de VM te hosten die
     | Naam | Voer *MyVirtualNetwork* in. |
     | Adresruimte | Voer *10.1.0.0/16* in. |
     | Abonnement | Selecteer uw abonnement.|
-    | Resourcegroep | Selecteer **Nieuwe maken** , voer *myResourceGroup* in en selecteer vervolgens **OK**. |
+    | Resourcegroep | Selecteer **Nieuwe maken**, voer *myResourceGroup* in en selecteer vervolgens **OK**. |
     | Locatie | Selecteer **Europa - west**.|
     | Subnet - Naam | Voer *mySubnet* in. |
     | Subnet - adresbereik | Voer *10.1.0.0/24* in. |
@@ -190,9 +190,9 @@ Nadat u **myVm** hebt gemaakt, maakt u hiermee als volgt verbinding via internet
 
 1. Selecteer de knop **Verbinding maken**. Na het selecteren van de knop **Verbinden** wordt **Verbinden met virtuele machine** geopend.
 
-1. Selecteer **RDP-bestand downloaden**. In Azure wordt een *RDP* -bestand (Remote Desktop Protocol) gemaakt en het bestand wordt gedownload naar de computer.
+1. Selecteer **RDP-bestand downloaden**. In Azure wordt een *RDP*-bestand (Remote Desktop Protocol) gemaakt en het bestand wordt gedownload naar de computer.
 
-1. Open het *downloaded.rdp* -bestand.
+1. Open het *downloaded.rdp*-bestand.
 
     1. Selecteer **Verbinding maken** wanneer hierom wordt gevraagd.
 

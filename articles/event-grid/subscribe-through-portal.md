@@ -4,11 +4,11 @@ description: In dit artikel wordt beschreven hoe u Event Grid-abonnementen maakt
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: e80e2243c93ab38187646256f567d6ab73c40100
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91308500"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995060"
 ---
 # <a name="subscribe-to-events-through-portal"></a>Abonneren op gebeurtenissen via de portal
 

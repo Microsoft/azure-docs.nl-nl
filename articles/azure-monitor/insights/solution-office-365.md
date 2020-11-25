@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 03/30/2020
 ms.openlocfilehash: eb20bf4164cb2153f6786dbec04f79453554fa25
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999741"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995859"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Office 365-beheer oplossing in azure (preview-versie)
 
@@ -226,7 +226,7 @@ U kunt de Office 365-beheer oplossing verwijderen met behulp van het proces in [
 
 U wordt gevraagd om referenties. Geef de referenties op voor uw Log Analytics-werk ruimte.
 
-## <a name="data-collection"></a>Gegevens verzamelen
+## <a name="data-collection"></a>Gegevensverzameling
 
 Het kan enkele uren duren voordat gegevens worden verzameld. Zodra het verzamelen begint, verzendt Office 365 een [webhook-melding](/office/office-365-management-api/office-365-management-activity-api-reference#receiving-notifications) met gedetailleerde gegevens om Azure monitor telkens wanneer een record wordt gemaakt. Deze record is binnen een paar minuten na ontvangst beschikbaar in Azure Monitor.
 
@@ -264,7 +264,7 @@ De volgende eigenschappen zijn gebruikelijk voor alle Office 365-records.
 | Eigenschap | Beschrijving |
 |:--- |:--- |
 | Type | *OfficeActivity* |
-| Client | Het IP-adres van het apparaat waarmee de activiteit is uitgevoerd. Het IP-adres wordt weergegeven in de IPv4- of IPv6-adresindeling. |
+| ClientIP | Het IP-adres van het apparaat waarmee de activiteit is uitgevoerd. Het IP-adres wordt weergegeven in de IPv4- of IPv6-adresindeling. |
 | OfficeWorkload | Office 365-service waarnaar de record verwijst.<br><br>AzureActiveDirectory<br>Exchange<br>SharePoint|
 | Bewerking | De naam van de activiteit door de gebruiker of beheerder.  |
 | OrganizationId | De GUID voor de Office 365-Tenant van uw organisatie. Deze waarde is altijd hetzelfde voor uw organisatie, ongeacht de Office 365-service waarin deze zich voordoet. |
@@ -272,7 +272,7 @@ De volgende eigenschappen zijn gebruikelijk voor alle Office 365-records.
 | ResultStatus | Geeft aan of de actie (opgegeven in de eigenschap Operation) al dan niet is gelukt. Mogelijke waarden zijn geslaagd, PartiallySucceeded of mislukt. Voor Exchange-beheer activiteiten is de waarde True of false. |
 | UserId | De UPN (User Principal Name) van de gebruiker die de actie heeft uitgevoerd die heeft geresulteerd in het registreren van de record. bijvoorbeeld my_name@my_domain_name . Houd er rekening mee dat records voor activiteiten die worden uitgevoerd door systeem accounts (zoals SHAREPOINT\system of NTAUTHORITY\SYSTEM) ook worden opgenomen. | 
 | UserKey | Een alternatieve ID voor de gebruiker die in de eigenschap UserId is geïdentificeerd.  Deze eigenschap wordt bijvoorbeeld gevuld met de unieke Pass Port-ID (PUID) voor gebeurtenissen die worden uitgevoerd door gebruikers in share point, OneDrive voor bedrijven en Exchange. Deze eigenschap kan ook dezelfde waarde opgeven als de eigenschap UserID voor gebeurtenissen die optreden in andere services en gebeurtenissen die worden uitgevoerd door systeem accounts|
-| UserType | Het type gebruiker dat de bewerking heeft uitgevoerd.<br><br>Beheerder<br>Toepassing<br>DcAdmin<br>Regelmatig<br>Gereserveerd<br>ServicePrincipal<br>Systeem |
+| UserType | Het type gebruiker dat de bewerking heeft uitgevoerd.<br><br>Administrator<br>Toepassing<br>DcAdmin<br>Regelmatig<br>Gereserveerd<br>ServicePrincipal<br>Systeem |
 
 
 ### <a name="azure-active-directory-base"></a>Azure Active Directory basis
@@ -462,7 +462,7 @@ Deze records worden gemaakt als reactie op Bestands bewerkingen in share point.
 
 De volgende tabel bevat voorbeeld logboek query's voor update records die door deze oplossing zijn verzameld.
 
-| Query’s uitvoeren | Beschrijving |
+| Query | Description |
 | --- | --- |
 |Aantal bewerkingen voor uw Office 365-abonnement |Aantal OfficeActivity &#124;-overzicht () per bewerking |
 |Gebruik van share point-sites|OfficeActivity &#124; waarbij OfficeWorkload = ~ ' share point ' &#124; samenvattings aantal () door de waarde voor SiteUrl \| sorteren op aantal ASC|

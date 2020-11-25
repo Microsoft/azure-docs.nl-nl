@@ -18,11 +18,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e4dcc7ed6076c3bac723d709f50f1b3ab2ce8f58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319925"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996556"
 ---
 # <a name="changing-the-adsync-service-account-password"></a>Het wacht woord voor het ADSync-service account wijzigen
 Als u het wacht woord voor het ADSync-service account wijzigt, kan de synchronisatie service niet goed worden gestart totdat u de versleutelings sleutel hebt verlaten en het wacht woord voor het ADSync-service account opnieuw hebt geïnitialiseerd. 
@@ -122,6 +122,6 @@ Nu de synchronisatie service toegang heeft tot de versleutelings sleutel en alle
 ## <a name="next-steps"></a>Volgende stappen
 **Overzichts onderwerpen**
 
-* [Azure AD Connect synchronisatie: synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
+* [Azure AD Connect synchroniseren: Synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
 
 * [Integrating your on-premises identities with Azure Active Directory (Engelstalig)](whatis-hybrid-identity.md)

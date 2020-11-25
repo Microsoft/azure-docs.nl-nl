@@ -10,17 +10,17 @@ ms.date: 10/15/2020
 ms.author: euang
 ms.reviewer: euang
 ms.openlocfilehash: 94c30cad1e09a01686a9042a6271a152d0f433fd
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738554"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995383"
 ---
 # <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Uitgebreide Apache Spark geschiedenis server gebruiken om fouten op te sporen en op te sporen Apache Spark toepassingen
 
 Dit artikel bevat richt lijnen voor het gebruik van de uitgebreide Apache Spark-geschiedenis server voor het opsporen en diagnosticeren van voltooide en actieve Spark-toepassingen.
 
-De uitbrei ding bevat een tabblad gegevens, het tabblad grafiek en het tabblad diagnose. Gebruik het tabblad **gegevens** om de invoer-en uitvoer gegevens van de Spark-taak te controleren. Op het tabblad **grafiek** ziet u de gegevens stroom en het opnieuw afspelen van de taak grafiek. Het tabblad **diagnose** toont u  **gegevens scheefheid** , **tijds scheefheid** en **gebruiks analyse** .
+De uitbrei ding bevat een tabblad gegevens, het tabblad grafiek en het tabblad diagnose. Gebruik het tabblad **gegevens** om de invoer-en uitvoer gegevens van de Spark-taak te controleren. Op het tabblad **grafiek** ziet u de gegevens stroom en het opnieuw afspelen van de taak grafiek. Het tabblad **diagnose** toont u  **gegevens scheefheid**, **tijds scheefheid** en **gebruiks analyse**.
 
 ## <a name="access-the-apache-spark-history-server"></a>De Apache Spark-geschiedenis server openen
 
@@ -30,7 +30,7 @@ Apache Spark geschiedenis server is de webgebruikersinterface voor voltooide en 
 
 1. [Azure Synapse Analytics](https://web.azuresynapse.net/) openen.
 
-2. Selecteer **monitor** en selecteer vervolgens **Apache Spark toepassingen** .
+2. Selecteer **monitor** en selecteer vervolgens **Apache Spark toepassingen**.
 
     ![Selecteer monitor en selecteer vervolgens Spark-toepassing.](./media/apache-spark-history-server/click-monitor-spark-application.png)
 
@@ -38,13 +38,13 @@ Apache Spark geschiedenis server is de webgebruikersinterface voor voltooide en 
 
     ![Logboek query venster openen.](./media/apache-spark-history-server/open-application-window.png)
 
-4. Selecteer **Spark-geschiedenis server** , waarna de Web-UI van de Spark-geschiedenis server wordt weer gegeven.
+4. Selecteer **Spark-geschiedenis server**, waarna de Web-UI van de Spark-geschiedenis server wordt weer gegeven.
 
     ![Open Spark-geschiedenis server.](./media/apache-spark-history-server/open-spark-history-server.png)
 
 ### <a name="open-the-spark-history-server-web-ui-from-data-node"></a>De Web-UI van de Spark-geschiedenis server van het gegevens knooppunt openen
 
-1. Selecteer vanuit uw Azure Synapse Studio-notebook **Spark-geschiedenis server** in de uitvoer-cel van de taak of in het deel venster status aan de onderkant van het notebook document. Selecteer **Sessiegegevens** .
+1. Selecteer vanuit uw Azure Synapse Studio-notebook **Spark-geschiedenis server** in de uitvoer-cel van de taak of in het deel venster status aan de onderkant van het notebook document. Selecteer **Sessiegegevens**.
 
    ![Spark-geschiedenis server 1 starten](./media/apache-spark-history-server/launch-history-server2.png "Spark-geschiedenis server starten")
 
@@ -56,7 +56,7 @@ Apache Spark geschiedenis server is de webgebruikersinterface voor voltooide en 
 
 Selecteer de taak-ID voor de taak die u wilt weer geven. Selecteer vervolgens **gegevens** in het menu van het hulp programma om de gegevens weergave op te halen. In deze sectie wordt beschreven hoe u verschillende taken kunt uitvoeren op het tabblad gegevens.
 
-* Controleer de **invoer** , **uitvoer** en **tabel bewerkingen** door de tabbladen afzonderlijk te selecteren.
+* Controleer de **invoer**, **uitvoer** en **tabel bewerkingen** door de tabbladen afzonderlijk te selecteren.
 
     ![Gegevens voor de Spark-toepassings tabbladen](./media/apache-spark-history-server/apache-spark-data-tabs.png)
 
@@ -92,7 +92,7 @@ Selecteer de taak-ID voor de taak die u wilt weer geven. Selecteer vervolgens **
 
     ![Gegevens voor Spark-toepassing meer informatie](./media/apache-spark-history-server/sparkui-data-more-info.png)
 
-* Stuur feedback met problemen door **feedback te geven** .
+* Stuur feedback met problemen door **feedback te geven**.
 
     ![Spark-grafiek Geef ons feedback](./media/apache-spark-history-server/sparkui-graph-feedback.png)
 
@@ -102,7 +102,7 @@ Selecteer de taak-ID voor de taak die u wilt weer geven. Selecteer vervolgens **
 
 ### <a name="overview"></a>Overzicht
 
-U ziet een overzicht van uw taak in het gegenereerde taak diagram. In de grafiek worden standaard alle taken weer gegeven. U kunt deze weer gave filteren op **taak-id** .
+U ziet een overzicht van uw taak in het gegenereerde taak diagram. In de grafiek worden standaard alle taken weer gegeven. U kunt deze weer gave filteren op **taak-id**.
 
 ![Taak-ID van Spark-toepassing en taak grafiek](./media/apache-spark-history-server/apache-spark-graph-jobid.png)
 
@@ -120,11 +120,11 @@ Het grafiek knooppunt geeft de kleuren weer die in de heatmap-legenda worden wee
 
 Selecteer **afspelen** om de taak af te spelen. U kunt op elk gewenst moment **stoppen** selecteren om te stoppen. De taak kleuren tonen verschillende statussen bij het afspelen van:
 
-|Kleur|Betekenis|
+|Color|Betekenis|
 |-|-|
 |Green|Geslaagd: de taak is voltooid.|
 |Oranje|Opnieuw geprobeerd: exemplaren van taken die zijn mislukt, maar die geen invloed hebben op het uiteindelijke resultaat van de taak. Deze taken bevatten dubbele of nieuwe instanties die later kunnen slagen.|
-|Blauw|Uitvoeren: de taak wordt uitgevoerd.|
+|Blue|Uitvoeren: de taak wordt uitgevoerd.|
 |Wit|Wachtend of overgeslagen: de taak wacht op het uitvoeren of het stadium is overgeslagen.|
 |Rood|Mislukt: de taak is mislukt.|
 
@@ -157,7 +157,7 @@ Beweeg de muis aanwijzer op het grafiek knooppunt om de knop Info weer te geven 
 
 Op het tabblad taak grafiek worden de knop Info en een klein pictogram weer gegeven als er taken zijn die voldoen aan de volgende voor waarden:
 
-|Conditie|Beschrijving|
+|Conditie|Description|
 |-|-|
 |Gegevens scheef trekken|gegevens lezen grootte > gemiddelde grootte van het lezen van gegevens van alle taken in deze fase * 2 en grootte van gegevens lezen > 10 MB|
 |Tijd verschil|uitvoerings tijd > gemiddelde uitvoerings tijd van alle taken in deze fase * 2 en uitvoerings tijd > 2 minuten|
@@ -184,15 +184,15 @@ In het knoop punt taak grafiek worden de volgende gegevens van elke fase weer ge
 
 ### <a name="provide-feedback"></a>Feedback geven
 
-Stuur feedback met problemen door **feedback te geven** .
+Stuur feedback met problemen door **feedback te geven**.
 
 ![Feedback over Spark-toepassingen en taak grafieken](./media/apache-spark-history-server/sparkui-graph-feedback.png)
 
 ## <a name="explore-the-diagnosis-tab-in-apache-spark-history-server"></a>Het tabblad diagnose in Apache Spark geschiedenis server verkennen
 
-Selecteer een taak-ID om toegang te krijgen tot het tabblad diagnose. Selecteer vervolgens **diagnose** in het menu van het hulp programma om de taak diagnose weer te geven. Het tabblad diagnose bevat **gegevens scheefheid** , **tijds scheefheid** en **gebruiks analyse** .
+Selecteer een taak-ID om toegang te krijgen tot het tabblad diagnose. Selecteer vervolgens **diagnose** in het menu van het hulp programma om de taak diagnose weer te geven. Het tabblad diagnose bevat **gegevens scheefheid**, **tijds scheefheid** en **gebruiks analyse**.
 
-Controleer de **gebruiks analyse** van de **gegevens scheefheid** , het **tijds verschil** en de uitvoerder door de tabbladen respectievelijk te selecteren.
+Controleer de **gebruiks analyse** van de **gegevens scheefheid**, het **tijds verschil** en de uitvoerder door de tabbladen respectievelijk te selecteren.
 
 ![SparkUI-tabblad voor diagnose gegevens](./media/apache-spark-history-server/sparkui-diagnosis-tabs.png)
 
@@ -216,7 +216,7 @@ Op het tabblad **tijd verschil** worden scheefe taken weer gegeven op basis van 
 
 * **Para meters opgeven** : in de eerste sectie worden de para meters weer gegeven, die worden gebruikt voor het detecteren van tijd scheefheid. De standaard criteria voor het detecteren van tijd verschil is: de uitvoerings tijd van de taak is groter dan drie keer na de gemiddelde uitvoerings tijd en de uitvoerings tijd van de taak is langer dan 30 seconden. U kunt de para meters wijzigen op basis van uw behoeften. In de grafiek **scheefe fase** en **scheefheid** worden de bijbehorende fasen en taak gegevens weer gegeven, net als het tabblad **gegevens scheefheid** hierboven.
 
-* Selecteer **tijd scheefheid** en vervolgens gefilterd resultaat wordt weer gegeven in de sectie **scheefe fase** volgens de para meters die zijn ingesteld in **para meters opgeven** . Selecteer één item in de sectie **scheefend stadium** , vervolgens wordt de bijbehorende grafiek geschetst in section3 en worden de taak details weer gegeven in het rechter paneel.
+* Selecteer **tijd scheefheid** en vervolgens gefilterd resultaat wordt weer gegeven in de sectie **scheefe fase** volgens de para meters die zijn ingesteld in **para meters opgeven**. Selecteer één item in de sectie **scheefend stadium** , vervolgens wordt de bijbehorende grafiek geschetst in section3 en worden de taak details weer gegeven in het rechter paneel.
 
     ![de sectie sparkui-diagnose tijd scheef trekken](./media/apache-spark-history-server/sparkui-diagnosis-timeskew-section2.png)
 

@@ -7,11 +7,11 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/31/2020
 ms.openlocfilehash: 1f83f13564a64a0d9d8a5e0144ca95af6a769d6c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76905078"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995043"
 ---
 # <a name="troubleshoot-and-diagnose-workflow-failures-in-azure-logic-apps"></a>Problemen met werkstromen in Azure Logic Apps vaststellen en oplossen
 
@@ -27,7 +27,7 @@ De uitvoering van elke logische app begint met een trigger poging, dus als de tr
 
    ![Trigger status en geschiedenis weer geven](./media/logic-apps-diagnosing-failures/logic-app-trigger-history.png)
 
-1. Controleer de invoer van de trigger om te bevestigen dat ze worden weer gegeven zoals u verwacht. Selecteer onder **invoer koppeling**de koppeling, waarin het deel venster **invoer** wordt weer gegeven.
+1. Controleer de invoer van de trigger om te bevestigen dat ze worden weer gegeven zoals u verwacht. Selecteer onder **invoer koppeling** de koppeling, waarin het deel venster **invoer** wordt weer gegeven.
 
    Trigger invoer bevat de gegevens die de trigger verwacht en vereist om de werk stroom te starten. Door deze invoer te controleren, kunt u bepalen of de trigger invoer juist is en of aan de voor waarde is voldaan, zodat de werk stroom kan door gaan.
 
@@ -35,7 +35,7 @@ De uitvoering van elke logische app begint met een trigger poging, dus als de tr
 
    ![Invoer van triggers controleren op fouten](./media/logic-apps-diagnosing-failures/review-trigger-inputs-for-errors.png)
 
-1. Controleer de triggers-uitvoer, indien van toepassing, om te bevestigen dat ze worden weer gegeven zoals verwacht. Selecteer onder **uitvoer koppeling**de koppeling, waarin het deel venster **uitvoer** wordt weer gegeven.
+1. Controleer de triggers-uitvoer, indien van toepassing, om te bevestigen dat ze worden weer gegeven zoals verwacht. Selecteer onder **uitvoer koppeling** de koppeling, waarin het deel venster **uitvoer** wordt weer gegeven.
 
    Trigger uitvoer bevat de gegevens die door de trigger worden door gegeven aan de volgende stap in uw werk stroom. Door deze uitvoer te bekijken, kunt u bepalen of de juiste of verwachte waarden zijn door gegeven aan de volgende stap in uw werk stroom, bijvoorbeeld:
 
@@ -60,7 +60,7 @@ Telkens wanneer de trigger wordt geactiveerd voor een item of gebeurtenis, maakt
 
 1. Controleer de invoer van de mislukte stap om te controleren of ze worden weer gegeven zoals verwacht.
 
-1. Bekijk de details van elke stap in een specifieke uitvoering. Selecteer onder uitvoerings **geschiedenis**de uitvoering die u wilt onderzoeken.
+1. Bekijk de details van elke stap in een specifieke uitvoering. Selecteer onder uitvoerings **geschiedenis** de uitvoering die u wilt onderzoeken.
 
    ![Uitvoeringsgeschiedenis controleren](./media/logic-apps-diagnosing-failures/logic-app-runs-history.png)
 

@@ -14,11 +14,11 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 320d48535c4792a4d610888c6a7030568ccf16bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89459841"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995179"
 ---
 # <a name="configuration-requirements-and-troubleshooting-tips-for-xamarin-android-with-msalnet"></a>Configuratie vereisten en tips voor probleem oplossing voor Xamarin Android met MSAL.NET
 
@@ -95,7 +95,7 @@ Het *AndroidManifest.xml* bestand moet de volgende waarden bevatten:
 
 Vervang de waarde door de naam van het pakket dat u hebt geregistreerd in het Azure Portal `android:host=` . Vervang de sleutel-hash die u hebt geregistreerd in het Azure Portal voor de `android:path=` waarde. De hash van de hand tekening mag *geen* URL-code ring zijn. Zorg ervoor dat er een voorloop back slash ( `/` ) aan het begin van uw hand tekening-hash wordt weer gegeven.
 
-U kunt ook [de activiteit in code maken in](/xamarin/android/platform/android-manifest#the-basics) plaats van *AndroidManifest.xml*hand matig te bewerken. Als u de activiteit in code wilt maken, maakt u eerst een klasse die het `Activity` kenmerk en het `IntentFilter` kenmerk bevat.
+U kunt ook [de activiteit in code maken in](/xamarin/android/platform/android-manifest#the-basics) plaats van *AndroidManifest.xml* hand matig te bewerken. Als u de activiteit in code wilt maken, maakt u eerst een klasse die het `Activity` kenmerk en het `IntentFilter` kenmerk bevat.
 
 Hier volgt een voor beeld van een klasse die de waarden van het XML-bestand vertegenwoordigt:
 
@@ -140,12 +140,12 @@ Zie voor meer informatie [webbrowsers gebruiken voor MSAL.net](msal-net-web-brow
 - Controleer of Xamarin. Android. support. V4 zich op de meest recente versie bevindt.
 - Zorg ervoor dat alle Xamarin. Android. Support-pakketten de meest recente versie hebben.
 - De toepassing opschonen of opnieuw bouwen.
-- In Visual Studio kunt u het maximum aantal parallelle project builds instellen op **1**. Hiertoe selecteert u **Opties**  >  **projecten en oplossingen**  >  **bouwen en voert**u het  >  **maximum aantal parallelle projecten-builds**uit.
+- In Visual Studio kunt u het maximum aantal parallelle project builds instellen op **1**. Hiertoe selecteert u **Opties**  >  **projecten en oplossingen**  >  **bouwen en voert** u het  >  **maximum aantal parallelle projecten-builds** uit.
 - Als u bouwt vanaf de opdracht regel en de opdracht wordt gebruikt `/m` , verwijdert u dit element uit de opdracht.
 
 ### <a name="error-the-name-authenticationcontinuationhelper-doesnt-exist-in-the-current-context"></a>Fout: de naam AuthenticationContinuationHelper bestaat niet in de huidige context
 
-Als een fout aangeeft dat `AuthenticationContinuationHelper` niet aanwezig is in de huidige context, is het bestand *Android. csproj \* * mogelijk niet goed bijgewerkt met Visual Studio. Soms bevat het bestandspad in het `<HintPath>` element onjuist in `netstandard13` plaats van `monoandroid90` .
+Als een fout aangeeft dat `AuthenticationContinuationHelper` niet aanwezig is in de huidige context, is het bestand *Android. csproj \** mogelijk niet goed bijgewerkt met Visual Studio. Soms bevat het bestandspad in het `<HintPath>` element onjuist in `netstandard13` plaats van `monoandroid90` .
 
 Dit voor beeld bevat een juist bestandspad:
 

@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8aa45294de4ef644c20ef66b7163706dca9759d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91313413"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996522"
 ---
 # <a name="azure-ad-connect-upgrade-from-dirsync"></a>Azure AD Connect: upgraden van DirSync
 Azure AD Connect is de opvolger van DirSync. In dit onderwerp vindt u de manieren voor het upgraden van DirSync. Deze stappen werken niet voor een upgrade van een andere versie van Azure AD Connect of Azure AD Sync.
@@ -187,7 +187,7 @@ Als u de wijzigingen die op het punt staan geëxporteerd te worden naar Azure AD
 U kunt van DirSync overschakelen naar Azure AD wanneer u deze stappen hebt uitgevoerd en blij bent met het resultaat.
 
 ### <a name="uninstall-dirsync-old-server"></a>DirSync verwijderen (oude server)
-* Zoek in **Programma's en onderdelen ** naar **Windows Azure Active Directory-synchronisatie**
+* Zoek in **Programma's en onderdelen** naar **Windows Azure Active Directory-synchronisatie**
 * **Windows Azure Active Directory-synchronisatie** verwijderen
 * Het verwijderen kan tot 15 minuten duren.
 

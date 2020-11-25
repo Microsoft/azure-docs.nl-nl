@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 02/14/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 3417bf0bd4ae1e0aa670f9fbfcc1fbbfeb372972
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8fba8aa577bcb3b5ef44d57c388a1f1de7494782
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77471504"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995609"
 ---
-Als u wilt dat gebruikers wordt gevraagd om een tweede authenticatie factor voordat ze toegang verlenen, kunt u Azure Multi-Factor Authentication (MFA) configureren. U kunt MFA configureren op basis van per gebruiker, of u kunt gebruikmaken van MFA via [voorwaardelijke toegang](../articles/active-directory/conditional-access/overview.md).
+Als u wilt dat gebruikers wordt gevraagd om een tweede authenticatie factor voordat ze toegang verlenen, kunt u Azure AD Multi-Factor Authentication (MFA) configureren. U kunt MFA configureren op basis van per gebruiker, of u kunt gebruikmaken van MFA via [voorwaardelijke toegang](../articles/active-directory/conditional-access/overview.md).
 
 * MFA per gebruiker kan gratis worden ingeschakeld. Als MFA per gebruiker wordt ingeschakeld, wordt de gebruiker gevraagd om een tweede factor verificatie uit te scha kelen voor alle toepassingen die zijn verbonden met de Azure AD-Tenant. Zie [optie 1](#peruser) voor de stappen.
 * Met voorwaardelijke toegang kunt u nauw keuriger bepalen hoe een tweede factor moet worden bevorderd. Het kan de toewijzing van MFA aan alleen VPN toestaan en andere toepassingen uitsluiten die zijn gekoppeld aan de Azure AD-Tenant. Zie [optie 2](#conditional) voor stappen.

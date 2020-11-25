@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 04/18/2019
 ms.author: jeedes
 ms.openlocfilehash: 732362ef7099e93697320d8e47180c1207e8cb32
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92453855"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995893"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Zelfstudie: Integratie van Azure Active Directory met Everbridge
 
@@ -52,7 +52,7 @@ Voer de volgende stappen uit om Everbridge toe te voegen vanuit Azure Marketplac
 
     ![Knop Azure Active Directory](common/select-azuread.png)
 
-2. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+2. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -60,7 +60,7 @@ Voer de volgende stappen uit om Everbridge toe te voegen vanuit Azure Marketplac
 
     ![Knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Voer **Everbridge** in het zoekvak in. Selecteer **Everbridge** in het deelvenster met resultaten en selecteer **Toevoegen** .
+4. Voer **Everbridge** in het zoekvak in. Selecteer **Everbridge** in het deelvenster met resultaten en selecteer **Toevoegen**.
 
      ![Everbridge in de resultatenlijst](common/search-new-app.png)
 
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Everbridge te configureren.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van te toepassing **Everbridge** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van te toepassing **Everbridge** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -100,7 +100,7 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Everbridge te con
     >[!NOTE]
     >Configureer de toepassing als beheerportal *of* als ledenportal op zowel de Azure-portal als de Everbridge-portal.
 
-4. Ga als volgt te werk om de **Everbridge** -toepassing te configureren als **Everbridge-beheerportal** in het gedeelte **Standaard SAML-configuratie** :
+4. Ga als volgt te werk om de **Everbridge**-toepassing te configureren als **Everbridge-beheerportal** in het gedeelte **Standaard SAML-configuratie**:
 
     ![Domein- en URL-gegevens voor eenmalige aanmelding bij Everbridge](common/idp-intiated.png)
 
@@ -111,7 +111,7 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Everbridge te con
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Neem contact op met het [ondersteuningsteam van Everbridge](mailto:support@everbridge.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-5. Ga als volgt te werk om de **Everbridge** -toepassing te configureren als **Everbridge-ledenportal** in het gedeelte **Standaard SAML-configuratie** :
+5. Ga als volgt te werk om de **Everbridge**-toepassing te configureren als **Everbridge-ledenportal** in het gedeelte **Standaard SAML-configuratie**:
 
   * Als u de toepassing in de door IDP geïnitieerde modus wilt configureren, volgt u deze stappen:
 
@@ -144,11 +144,11 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Everbridge te con
 
 ### <a name="configure-everbridge-as-everbridge-manager-portal-single-sign-on"></a>Everbridge configureren als Everbridge-beheerportal voor eenmalige aanmelding
 
-Als u eenmalige aanmelding wilt configureren op **Everbridge** als een **Everbridge-beheerportal** , volgt u deze stappen.
+Als u eenmalige aanmelding wilt configureren op **Everbridge** als een **Everbridge-beheerportal**, volgt u deze stappen.
  
 1. Meld u in een ander browservenster bij Everbridge aan als beheerder.
 
-1. Selecteer in het menu bovenaan het tabblad **Instellingen** . Selecteer onder **Beveiliging** de optie **Eenmalige aanmelding** .
+1. Selecteer in het menu bovenaan het tabblad **Instellingen**. Selecteer onder **Beveiliging** de optie **Eenmalige aanmelding**.
    
      ![Eenmalige aanmelding configureren](./media/everbridge-tutorial/tutorial_everbridge_002.png)
    
@@ -158,23 +158,23 @@ Als u eenmalige aanmelding wilt configureren op **Everbridge** als een **Everbri
    
      c. Klik vervolgens op **Bestand kiezen** om het bestand met metagegevens dat u hebt gedownload uit de Azure-portal te uploaden.
    
-     d. Bij **SAML-identiteitslocatie** selecteert u **Identiteit bevindt zich in het NameIdentfier-element van de Onderwerpinstructie** .
+     d. Bij **SAML-identiteitslocatie** selecteert u **Identiteit bevindt zich in het NameIdentfier-element van de Onderwerpinstructie**.
    
      e. Plak in het vak **Aanmeldings-URL van de id-provider** de waarde van de **Aanmeldings-URL** die u hebt gekopieerd uit de Azure-portal.
    
-     f. Selecteer bij **Door de serviceprovider geïnitieerde aanvraagbinding** de optie **HTTP-omleiding** .
+     f. Selecteer bij **Door de serviceprovider geïnitieerde aanvraagbinding** de optie **HTTP-omleiding**.
 
-     g. Selecteer **Opslaan** .
+     g. Selecteer **Opslaan**.
 
 ### <a name="configure-everbridge-as-everbridge-member-portal-single-sign-on"></a>Everbridge configureren als Everbridge-ledenportal voor eenmalige aanmelding
 
-Als u eenmalige aanmelding wilt configureren op **Everbridge** als een **Everbridge-ledenportal** , stuurt u het gedownloade **XML-bestand met federatieve metagegevens** naar het [Everbridge-ondersteuningsteam](mailto:support@everbridge.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren op **Everbridge** als een **Everbridge-ledenportal**, stuurt u het gedownloade **XML-bestand met federatieve metagegevens** naar het [Everbridge-ondersteuningsteam](mailto:support@everbridge.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Voer de volgende stappen uit om de testgebruiker Britta Simon te maken in de Azure-portal.
 
-1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory** > **Gebruikers** > **Alle gebruikers** .
+1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory** > **Gebruikers** > **Alle gebruikers**.
 
     ![Koppelingen naar Gebruikers en Alle gebruikers](common/users.png)
 
@@ -182,7 +182,7 @@ Voer de volgende stappen uit om de testgebruiker Britta Simon te maken in de Azu
 
     ![De knop Nieuwe gebruiker](common/new-user.png)
 
-3. Volg deze stappen in het dialoogvenster **Gebruiker** .
+3. Volg deze stappen in het dialoogvenster **Gebruiker**.
 
     ![Dialoogvenster Gebruiker](common/user-properties.png)
 
@@ -190,15 +190,15 @@ Voer de volgende stappen uit om de testgebruiker Britta Simon te maken in de Azu
   
     b. Voer in het vak **Gebruikersnaam** `brittasimon@yourcompanydomain.extension` in. Een voorbeeld is BrittaSimon@contoso.com.
 
-    c. Schakel het selectievakje **Wachtwoord weergeven** in. Noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
+    c. Schakel het selectievakje **Wachtwoord weergeven** in. Noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
 
-    d. Selecteer **Maken** .
+    d. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 Geef Britta Simon toestemming voor gebruik van eenmalige aanmelding van Azure door haar toegang te geven tot Everbridge.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** >**Everbridge** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** >**Everbridge**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -206,11 +206,11 @@ Geef Britta Simon toestemming voor gebruik van eenmalige aanmelding van Azure do
 
     ![De koppeling Everbridge in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Selecteer **Gebruiker toevoegen** . Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Selecteer **Gebruiker toevoegen**. Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het dialoogvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -218,7 +218,7 @@ Geef Britta Simon toestemming voor gebruik van eenmalige aanmelding van Azure do
 
 6. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies **Selecteren** onderaan het scherm.
 
-7. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen** .
+7. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
 
 ### <a name="create-an-everbridge-test-user"></a>Een Everbridge-testgebruiker maken
 

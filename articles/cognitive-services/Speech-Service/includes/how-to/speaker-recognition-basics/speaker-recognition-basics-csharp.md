@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 09/28/2020
 ms.author: v-jawe
 ms.custom: references_regions
-ms.openlocfilehash: 5be99ba09032020abf777c80307e347658a6e037
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 2b5a34e8f3e7132a16ad3683b846d57e9ece2cb6
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92470977"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015466"
 ---
 In deze quickstart leert u basispatronen voor het ontwerp van Speaker Recognition met behulp van de Speech SDK, met inbegrip van:
 
@@ -51,7 +51,7 @@ using Microsoft.CognitiveServices.Speech.Audio;
 
 ## <a name="create-a-speech-configuration"></a>Een spraakconfiguratie maken
 
-Als u de Speech-service wilt aanroepen met behulp van de Speech SDK, moet u een [`SpeechConfig`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet&preserve-view=true) maken. In dit voorbeeld maakt u een [`SpeechConfig`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet&preserve-view=true) met behulp van een abonnementssleutel en regio. U schrijft ook wat eenvoudige standaardcode voor gebruik in de rest van dit artikel. U gaat de code voor verschillende aanpassingen wijzigen.
+Als u de Speech-service wilt aanroepen met behulp van de Speech SDK, moet u een [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-dotnet) maken. In dit voorbeeld maakt u een [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-dotnet) met behulp van een abonnementssleutel en regio. U schrijft ook wat eenvoudige standaardcode voor gebruik in de rest van dit artikel. U gaat de code voor verschillende aanpassingen wijzigen.
 
 De regio is ingesteld op `westus`, omdat dit de enige ondersteunde regio voor de service is.
 
@@ -70,7 +70,7 @@ public class Program
 
 ## <a name="text-dependent-verification"></a>Tekstafhankelijke verificatie
 
-Met Speaker Verification wordt bevestigd dat een spreker overeenkomt met een bekende of **geregistreerde** stem. De eerste stap bestaat uit het **registreren** van een spraakprofiel, zodat dit met latere spraaksamples kan worden vergeleken. In dit voorbeeld moet u het profiel registreren door middel van een **tekstafhankelijke** strategie, waarvoor een specifieke wachtwoordzin is vereist voor zowel de registratie als de verificatie. Zie het [referentiemateriaal ](https://docs.microsoft.com/rest/api/speakerrecognition/) voor een lijst met ondersteunde wachtwoordenzinnen.
+Met Speaker Verification wordt bevestigd dat een spreker overeenkomt met een bekende of **geregistreerde** stem. De eerste stap bestaat uit het **registreren** van een spraakprofiel, zodat dit met latere spraaksamples kan worden vergeleken. In dit voorbeeld moet u het profiel registreren door middel van een **tekstafhankelijke** strategie, waarvoor een specifieke wachtwoordzin is vereist voor zowel de registratie als de verificatie. Zie het [referentiemateriaal ](/rest/api/speakerrecognition/) voor een lijst met ondersteunde wachtwoordenzinnen.
 
 Begin met het maken van de volgende functie in uw `Program`-klasse om een spraakprofiel te registreren.
 
@@ -127,7 +127,7 @@ public static async Task SpeakerVerify(SpeechConfig config, VoiceProfile profile
 
 Met deze functie geeft u het `VoiceProfile`-object door dat u zojuist hebt gemaakt om een model te initialiseren waartegen de verificatie moet worden uitgevoerd. `await speakerRecognizer.RecognizeOnceAsync(model)` vraagt u vervolgens de wachtwoordzin opnieuw uit te spreken, maar deze keer wordt de zin gevalideerd tegen uw spraakprofiel en wordt er een vergelijkingsscore geretourneerd. Deze loopt van 0,0 tot 1.0. Het `result`-object retourneert ook `Accept` of `Reject`, op basis van het feit of de wachtwoordzin al dan niet overeenkomt.
 
-Wijzig vervolgens de `Main()`-functie om de nieuwe functies aan te roepen die u hebt gemaakt. Houd er tevens rekening mee dat u een `Dictionary<string, string>` maakt, die als verwijzing via de functieaanroepen moet worden doorgegeven. De reden hiervoor is dat de service geen door de mens leesbare naam met een gemaakt `VoiceProfile` mag opslaan en vanwege privacydoeleinden alleen een id-nummer opslaat. In de `VerificationEnroll`-functie voegt u aan deze woordenlijst een item met de zojuist gemaakte id toe, samen met een tekstnaam. In scenario's voor het ontwikkelen van toepassingen waarbij u een leesbare naam moet weergeven, **moet u deze toewijzing ergens opslaan. Dat kan niet met de service** .
+Wijzig vervolgens de `Main()`-functie om de nieuwe functies aan te roepen die u hebt gemaakt. Houd er tevens rekening mee dat u een `Dictionary<string, string>` maakt, die als verwijzing via de functieaanroepen moet worden doorgegeven. De reden hiervoor is dat de service geen door de mens leesbare naam met een gemaakt `VoiceProfile` mag opslaan en vanwege privacydoeleinden alleen een id-nummer opslaat. In de `VerificationEnroll`-functie voegt u aan deze woordenlijst een item met de zojuist gemaakte id toe, samen met een tekstnaam. In scenario's voor het ontwikkelen van toepassingen waarbij u een leesbare naam moet weergeven, **moet u deze toewijzing ergens opslaan. Dat kan niet met de service**.
 
 ```csharp
 static async Task Main(string[] args)
@@ -144,7 +144,7 @@ static async Task Main(string[] args)
 }
 ```
 
-Voer het script uit en u wordt gevraagd om de volgende zin driemaal voor de registratie uit te spreken en nogmaals ter verificatie: *Mijn stem is mijn paspoort, verifieer mij* . Het resultaat dat wordt geretourneerd, is de vergelijkingsscore. Deze kunt u kunt gebruiken om uw eigen drempelwaarden voor de verificatie te maken.
+Voer het script uit en u wordt gevraagd om de volgende zin driemaal voor de registratie uit te spreken en nogmaals ter verificatie: *Mijn stem is mijn paspoort, verifieer mij*. Het resultaat dat wordt geretourneerd, is de vergelijkingsscore. Deze kunt u kunt gebruiken om uw eigen drempelwaarden voor de verificatie te maken.
 
 ```shell
 Enrolling profile id 87-2cef-4dff-995b-dcefb64e203f.
@@ -230,7 +230,7 @@ Verified voice profile for speaker Your Name, score is 0.849409
 
 ## <a name="speaker-identification"></a>Sprekeridentificatie
 
-Speaker Identification wordt gebruikt om vast te stellen **wie** er spreekt uit een bepaalde groep geregistreerde stemmen. Het proces is vergelijkbaar met **tekstonafhankelijke verificatie** , waarbij het belangrijkste verschil is dat tegelijkertijd verificatie tegen meerdere spraakprofielen kan worden uitgevoerd in plaats van te verifiëren tegen één profiel.
+Speaker Identification wordt gebruikt om vast te stellen **wie** er spreekt uit een bepaalde groep geregistreerde stemmen. Het proces is vergelijkbaar met **tekstonafhankelijke verificatie**, waarbij het belangrijkste verschil is dat tegelijkertijd verificatie tegen meerdere spraakprofielen kan worden uitgevoerd in plaats van te verifiëren tegen één profiel.
 
 Maak een `IdentificationEnroll`-functie om meerdere spraakprofielen te registreren. Het registratieproces voor elk profiel is hetzelfde als het registratieproces voor **tekstonafhankelijke verificatie** en vereist twintig seconden aan audio voor elk profiel. Deze functie accepteert een lijst tekenreeksen, `profileNames`, en maakt een nieuw spraakprofiel voor elke naam in de lijst. De functie retourneert een lijst `VoiceProfile`-objecten, die u in de volgende functie gebruikt om een spreker te identificeren.
 

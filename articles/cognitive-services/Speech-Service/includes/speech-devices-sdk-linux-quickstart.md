@@ -5,18 +5,18 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: trbye
-ms.openlocfilehash: 5766eb821800568b567350e1360ca4cf5403be6d
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 3c093539301f3f4e3309094f0b53a1f0e8393150
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93135638"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95096171"
 ---
-In deze Quick Start leert u hoe u de Speech Devices SDK voor Linux kunt gebruiken om een spraakgestuurd product te maken of dit te gebruiken als [gesprektranscriptie](../conversation-transcription-service.md)apparaat. Momenteel wordt alleen de [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/) ondersteund.
+In deze Quick Start leert u hoe u de Speech Devices SDK voor Linux kunt gebruiken om een spraakgestuurd product te maken of dit te gebruiken als [gesprektranscriptie](../conversation-transcription.md)apparaat. Momenteel wordt alleen de [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/) ondersteund.
 
 De toepassing wordt gebouwd met het Speech SDK-pakket en de Eclipse Java IDE (v4) op 64-bits Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 7/8, CentOS 7/8). De toepassing wordt uitgevoerd op een 64-bit Java 8 runtime-omgeving (JRE).
 
-Voor deze hulplijn is een [Azure Cognitive Services-account](../get-started.md) met een Spraakservice-resource vereist. 
+Voor deze hulplijn is een [Azure Cognitive Services-account](../overview.md#try-the-speech-service-for-free) met een Spraakservice-resource vereist. 
 
 De broncode voor de [voorbeeldtoepassing](https://aka.ms/sdsdk-download-JRE) is opgenomen in de Speech Devices SDK. Deze is ook [beschikbaar op GitHub](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 
@@ -28,7 +28,7 @@ Voor deze snelstart zijn de volgende zaken vereist:
 * [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/)
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * Alleen [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) of [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
-* Een Azure-abonnementssleutel voor de Spraakservice. [Gratis downloaden](../get-started.md).
+* Een Azure-abonnementssleutel voor de Spraakservice. [Gratis downloaden](../overview.md#try-the-speech-service-for-free).
 * Download de nieuwste versie van de [Speech Devices SDK](https://aka.ms/sdsdk-download-JRE) voor Java en pak het zipbestand uit in uw werkmap.
    > [!NOTE]
    > In deze quickstart wordt ervan uitgegaan dat de app is geëxtraheerd naar /home/wcaltest/JRE-Sample-Release
@@ -62,13 +62,13 @@ Zorg ervoor dat deze afhankelijkheden zijn geïnstalleerd voordat u Eclipse star
 
 Gesprektranscriptie is momenteel alleen beschikbaar voor en-US en zh-CN in de regio's 'centralus en 'eastasia'. Voor deze regio's moet u een spraaksleutel hebben om gesprektranscriptie te kunnen gebruiken.
 
-Als u van plan bent om de intenties te gebruiken, hebt u een [Language Understanding Service (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription)-abonnement nodig. Zie [Spraakintenties herkennen met LUIS, C#](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp) voor meer informatie over LUIS en intentieherkenning. Er is een [LUIS-voorbeeldmodel](https://aka.ms/sdsdk-luis) beschikbaar voor deze app.
+Als u van plan bent om de intenties te gebruiken, hebt u een [Language Understanding Service (LUIS)](../../luis/luis-how-to-azure-subscription.md)-abonnement nodig. Zie [Spraakintenties herkennen met LUIS, C#](../how-to-recognize-intents-from-speech-csharp.md) voor meer informatie over LUIS en intentieherkenning. Er is een [LUIS-voorbeeldmodel](https://aka.ms/sdsdk-luis) beschikbaar voor deze app.
 
 ## <a name="create-and-configure-the-project"></a>Het project maken en configureren
 
 1. Start Eclipse.
 
-1. Voer in de **Eclipse IDE Launcher** , in het veld **Werkruimte** , de naam van een nieuwe werkruimtemap in. Selecteer vervolgens **Starten**.
+1. Voer in de **Eclipse IDE Launcher**, in het veld **Werkruimte**, de naam van een nieuwe werkruimtemap in. Selecteer vervolgens **Starten**.
 
    ![Schermopname van het Eclipse-startprogramma.](../media/speech-devices-sdk/eclipse-launcher-linux.png)
 
@@ -111,7 +111,7 @@ Als u van plan bent om de intenties te gebruiken, hebt u een [Language Understan
 
    ![Schermopname van Configuratie starten bewerken](../media/speech-devices-sdk/eclipse-edit-launch-configuration-linux.png)
 
-1. Kopieer de binaire audiobestanden voor uw doelarchitectuur, van **Linux-arm** of **Linux-x64** , naar de locatie van het Java-project, bijvoorbeeld **/home/wcaltest/JRE-Sample-Release**
+1. Kopieer de binaire audiobestanden voor uw doelarchitectuur, van **Linux-arm** of **Linux-x64**, naar de locatie van het Java-project, bijvoorbeeld **/home/wcaltest/JRE-Sample-Release**
 
 1. Selecteer ook in het venster **Configuratie bewerken** de pagina **Omgeving** en **Nieuw**. Het venster **Nieuwe omgevingsvariabele** wordt weergegeven. Voer in het veld **Naam** **LD_LIBRARY_PATH** in en voer in het veld **Waarde** de map met de bestanden *.so in, bijvoorbeeld **/home/wcaltest/JRE-Sample-Release**
 
@@ -143,7 +143,7 @@ Als u van plan bent om de intenties te gebruiken, hebt u een [Language Understan
 1. Het standaardtrefwoord (trefwoord) is 'computer'. U kunt ook een van de andere beschikbare trefwoorden, zoals 'machine' of 'assistent', proberen. De resourcebestanden voor deze alternatieve trefwoorden bevinden zich in de Speech Devices SDK, in de map met trefwoorden. `/home/wcaltest/JRE-Sample-Release/keyword/Computer` bevat bijvoorbeeld de bestanden die worden gebruikt voor het trefwoord 'computer'.
 
    > [!TIP]
-   > U kunt ook [een aangepast trefwoord maken](../speech-devices-sdk-create-kws.md).
+   > U kunt ook [een aangepast trefwoord maken](../custom-keyword-basics.md).
 
     Als u een nieuw trefwoord wilt gebruiken, werkt u de volgende regel in `FunctionsList.java` bij, en kopieert u het trefwoord naar uw app. Ga als volgt te werk als u bijvoorbeeld het trefwoord 'machine' uit het trefwoordpakket `machine.zip` wilt gebruiken:
 
@@ -163,14 +163,14 @@ Als u van plan bent om de intenties te gebruiken, hebt u een [Language Understan
 
    ![Schermopname van een voorbeeld van de Speech Devices SDK-toepassing en de opties.](../media/speech-devices-sdk/java-sample-app-linux.png)
 
-1. Probeer de nieuwe demo voor **gesprektranscriptie**. Begin met transcriberen met **Sessie** > **Start**. Standaard is iedereen een gast. Als u echter stemkarakteristieken van een deelnemer hebt, kunnen ze in `participants.properties` in de projectmap **target/classes** worden geplaatst. Als u de stemkarakteristiek wilt genereren, bekijkt u [Gesprekken transcriberen (SDK)](../how-to-use-conversation-transcription-service.md).
+1. Probeer de nieuwe demo voor **gesprektranscriptie**. Begin met transcriberen met **Sessie** > **Start**. Standaard is iedereen een gast. Als u echter stemkarakteristieken van een deelnemer hebt, kunnen ze in `participants.properties` in de projectmap **target/classes** worden geplaatst. Als u de stemkarakteristiek wilt genereren, bekijkt u [Gesprekken transcriberen (SDK)](../how-to-use-conversation-transcription.md).
 
    ![Schermopname van een demo van de gesprektranscriptietoepassing.](../media/speech-devices-sdk/cts-sample-app-linux.png)
 
 ## <a name="create-and-run-standalone-the-application"></a>De toepassing maken en zelfstandig uitvoeren
 
 1. Klik in **Package Explorer** met de rechtermuisknop op uw project. Kies **Exporteren**. 
-1. Het venster **Exporteren** wordt weergegeven. Vouw **Java** , selecteer **Uitvoerbaar JAR-bestand** en vervolgens **Volgende**.
+1. Het venster **Exporteren** wordt weergegeven. Vouw **Java**, selecteer **Uitvoerbaar JAR-bestand** en vervolgens **Volgende**.
 
    ![Schermopname met het venster Exporteren.](../media/speech-devices-sdk/eclipse-export-linux.png) 
 

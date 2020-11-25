@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 09/28/2020
 ms.author: v-jawe
 ms.custom: references_regions
-ms.openlocfilehash: dd23bf0528a27f599058271decbf1820084c9a43
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 489514068d83f7b2953732415ba066a2d4555df8
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91875425"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015493"
 ---
 In deze quickstart leert u basispatronen voor het ontwerp van Speaker Recognition met behulp van de Speech SDK, met inbegrip van:
 
@@ -47,13 +47,13 @@ Als u de voorbeelden in dit artikel wilt uitvoeren, voegt u boven aan het cpp-be
 
 ## <a name="create-a-speech-configuration"></a>Een spraakconfiguratie maken
 
-Als u de Speech-service wilt aanroepen met behulp van de Speech SDK, moet u een [`SpeechConfig`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig) maken. Deze klasse bevat informatie over uw abonnement, zoals uw sleutel en de bijbehorende regio, het eindpunt, de host of het autorisatietoken.
+Als u de Speech-service wilt aanroepen met behulp van de Speech SDK, moet u een [`SpeechConfig`](/cpp/cognitive-services/speech/speechconfig) maken. Deze klasse bevat informatie over uw abonnement, zoals uw sleutel en de bijbehorende regio, het eindpunt, de host of het autorisatietoken.
 
 :::code language="cpp" source="~/cognitive-services-quickstart-code/cpp/speech/speaker-recognition.cpp" id="get_speech_config":::
 
 ## <a name="text-dependent-verification"></a>Tekstafhankelijke verificatie
 
-Met Speaker Verification wordt bevestigd dat een spreker overeenkomt met een bekende of **geregistreerde** stem. De eerste stap bestaat uit het **registreren** van een spraakprofiel, zodat dit met latere spraaksamples kan worden vergeleken. In dit voorbeeld moet u het profiel registreren door middel van een **tekstafhankelijke** strategie, waarvoor een specifieke wachtwoordzin is vereist voor zowel de registratie als de verificatie. Zie het [referentiemateriaal ](https://docs.microsoft.com/rest/api/speakerrecognition/) voor een lijst met ondersteunde wachtwoordzinnen.
+Met Speaker Verification wordt bevestigd dat een spreker overeenkomt met een bekende of **geregistreerde** stem. De eerste stap bestaat uit het **registreren** van een spraakprofiel, zodat dit met latere spraaksamples kan worden vergeleken. In dit voorbeeld moet u het profiel registreren door middel van een **tekstafhankelijke** strategie, waarvoor een specifieke wachtwoordzin is vereist voor zowel de registratie als de verificatie. Zie het [referentiemateriaal ](/rest/api/speakerrecognition/) voor een lijst met ondersteunde wachtwoordzinnen.
 
 ### <a name="textdependentverification-function"></a>De functie TextDependentVerification
 
@@ -61,7 +61,7 @@ Begin door de functie `TextDependentVerification` te maken.
 
 :::code language="cpp" source="~/cognitive-services-quickstart-code/cpp/speech/speaker-recognition.cpp" id="text_dependent_verification":::
 
-Deze functie maakt een [VoiceProfile](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofile)-object met de methode [CreateProfileAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofileclient#createprofileasync). Houd er rekening mee dat er drie [typen](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace#enum-voiceprofiletype) van `VoiceProfile` zijn:
+Deze functie maakt een [VoiceProfile](/cpp/cognitive-services/speech/voiceprofile)-object met de methode [CreateProfileAsync](/cpp/cognitive-services/speech/voiceprofileclient#createprofileasync). Houd er rekening mee dat er drie [typen](/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace#enum-voiceprofiletype) van `VoiceProfile` zijn:
 
 - TextIndependentIdentification
 - TextDependentVerification
@@ -69,7 +69,7 @@ Deze functie maakt een [VoiceProfile](https://docs.microsoft.com/cpp/cognitive-s
 
 In dit geval geeft u `VoiceProfileType::TextDependentVerification` door aan `CreateProfileAsync`.
 
-Vervolgens roept u twee hulpfuncties aan die u hierna definieert, `AddEnrollmentsToTextDependentProfile` en `SpeakerVerify`. Ten slotte roept u [DeleteProfileAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofileclient#deleteprofileasync) aan om het profiel op te schonen.
+Vervolgens roept u twee hulpfuncties aan die u hierna definieert, `AddEnrollmentsToTextDependentProfile` en `SpeakerVerify`. Ten slotte roept u [DeleteProfileAsync](/cpp/cognitive-services/speech/voiceprofileclient#deleteprofileasync) aan om het profiel op te schonen.
 
 ### <a name="addenrollmentstotextdependentprofile-function"></a>De functie AddEnrollmentsToTextDependentProfile
 
@@ -77,7 +77,7 @@ Definieer de volgende functie om een spraakprofiel in te schrijven.
 
 :::code language="cpp" source="~/cognitive-services-quickstart-code/cpp/speech/speaker-recognition.cpp" id="add_enrollments_dependent":::
 
-In deze functie registreert u audiosamples in een `while`-lus, waarmee het aantal voor de registratie resterende en vereiste samples wordt gevolgd. In elke iteratie vraagt [EnrollProfileAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofileclient#enrollprofileasync) u om de wachtwoordzin in uw microfoon in te spreken en voegt u de sample aan het spraakprofiel toe.
+In deze functie registreert u audiosamples in een `while`-lus, waarmee het aantal voor de registratie resterende en vereiste samples wordt gevolgd. In elke iteratie vraagt [EnrollProfileAsync](/cpp/cognitive-services/speech/voiceprofileclient#enrollprofileasync) u om de wachtwoordzin in uw microfoon in te spreken en voegt u de sample aan het spraakprofiel toe.
 
 ### <a name="speakerverify-function"></a>De functie SpeakerVerify
 
@@ -85,9 +85,9 @@ Definieer `SpeakerVerify` als volgt.
 
 :::code language="cpp" source="~/cognitive-services-quickstart-code/cpp/speech/speaker-recognition.cpp" id="speaker_verify":::
 
-In deze functie maakt u een [SpeakerVerificationModel](https://docs.microsoft.com/cpp/cognitive-services/speech/speakerverificationmodel)-object met de methode [SpeakerVerificationModel::FromProfile](https://docs.microsoft.com/cpp/cognitive-services/speech/speakerverificationmodel#fromprofile), waarbij u het [VoiceProfile](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofile)-object dat u eerder hebt gemaakt, doorgeeft.
+In deze functie maakt u een [SpeakerVerificationModel](/cpp/cognitive-services/speech/speakerverificationmodel)-object met de methode [SpeakerVerificationModel::FromProfile](/cpp/cognitive-services/speech/speakerverificationmodel#fromprofile), waarbij u het [VoiceProfile](/cpp/cognitive-services/speech/voiceprofile)-object dat u eerder hebt gemaakt, doorgeeft.
 
-Vervolgens vraagt [SpeechRecognizer:: RecognizeOnceAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/speechrecognizer#recognizeonceasync) u om de wachtwoordzin opnieuw te spreken, maar deze keer wordt deze gecontroleerd aan de hand van uw spraakprofiel en wordt een vergelijkingsscore van 0,0 -1,0 geretourneerd. Het [SpeakerRecognitionResult](https://docs.microsoft.com/cpp/cognitive-services/speech/speakerrecognitionresult)-object retourneert ook `Accept` of `Reject`, afhankelijk van of de wachtwoordzin overeenkomt.
+Vervolgens vraagt [SpeechRecognizer:: RecognizeOnceAsync](/cpp/cognitive-services/speech/speechrecognizer#recognizeonceasync) u om de wachtwoordzin opnieuw te spreken, maar deze keer wordt deze gecontroleerd aan de hand van uw spraakprofiel en wordt een vergelijkingsscore van 0,0 -1,0 geretourneerd. Het [SpeakerRecognitionResult](/cpp/cognitive-services/speech/speakerrecognitionresult)-object retourneert ook `Accept` of `Reject`, afhankelijk van of de wachtwoordzin overeenkomt.
 
 ## <a name="text-independent-verification"></a>Tekstonafhankelijke verificatie
 
@@ -102,11 +102,11 @@ Begin door de functie `TextIndependentVerification` te maken.
 
 :::code language="cpp" source="~/cognitive-services-quickstart-code/cpp/speech/speaker-recognition.cpp" id="text_independent_verification":::
 
-Net als de functie `TextDependentVerification` maakt deze functie een [VoiceProfile](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofile)-object met de methode [CreateProfileAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofileclient#createprofileasync).
+Net als de functie `TextDependentVerification` maakt deze functie een [VoiceProfile](/cpp/cognitive-services/speech/voiceprofile)-object met de methode [CreateProfileAsync](/cpp/cognitive-services/speech/voiceprofileclient#createprofileasync).
 
 In dit geval geeft u `VoiceProfileType::TextIndependentVerification` door aan `CreateProfileAsync`.
 
-Vervolgens roept u twee hulpfuncties aan: `AddEnrollmentsToTextIndependentProfile`, die u hierna definieert, en `SpeakerVerify`, die u al hebt gedefinieerd. Ten slotte roept u [DeleteProfileAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofileclient#deleteprofileasync) aan om het profiel op te schonen.
+Vervolgens roept u twee hulpfuncties aan: `AddEnrollmentsToTextIndependentProfile`, die u hierna definieert, en `SpeakerVerify`, die u al hebt gedefinieerd. Ten slotte roept u [DeleteProfileAsync](/cpp/cognitive-services/speech/voiceprofileclient#deleteprofileasync) aan om het profiel op te schonen.
 
 ### <a name="addenrollmentstotextindependentprofile"></a>AddEnrollmentsToTextIndependentProfile
 
@@ -114,7 +114,7 @@ Definieer de volgende functie om een spraakprofiel in te schrijven.
 
 :::code language="cpp" source="~/cognitive-services-quickstart-code/cpp/speech/speaker-recognition.cpp" id="add_enrollments_independent":::
 
-In deze functie registreert u audiosamples in een `while`-lus, waarmee het aantal voor de registratie resterende en vereiste seconden audio wordt gevolgd. In elke iteratie vraagt [EnrollProfileAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofileclient#enrollprofileasync) u om in uw microfoon te spreken en voegt de sample aan het spraakprofiel toe.
+In deze functie registreert u audiosamples in een `while`-lus, waarmee het aantal voor de registratie resterende en vereiste seconden audio wordt gevolgd. In elke iteratie vraagt [EnrollProfileAsync](/cpp/cognitive-services/speech/voiceprofileclient#enrollprofileasync) u om in uw microfoon te spreken en voegt de sample aan het spraakprofiel toe.
 
 ## <a name="speaker-identification"></a>Sprekeridentificatie
 
@@ -126,11 +126,11 @@ Begin door de functie `TextIndependentIdentification` te maken.
 
 :::code language="cpp" source="~/cognitive-services-quickstart-code/cpp/speech/speaker-recognition.cpp" id="text_independent_indentification":::
 
-Net als de functies `TextDependentVerification` en `TextIndependentVerification` maakt deze functie een [VoiceProfile](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofile)-object met de methode [CreateProfileAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofileclient#createprofileasync).
+Net als de functies `TextDependentVerification` en `TextIndependentVerification` maakt deze functie een [VoiceProfile](/cpp/cognitive-services/speech/voiceprofile)-object met de methode [CreateProfileAsync](/cpp/cognitive-services/speech/voiceprofileclient#createprofileasync).
 
 In dit geval geeft u `VoiceProfileType::TextIndependentIdentification` door aan `CreateProfileAsync`.
 
-Vervolgens roept u twee hulpfuncties aan: `AddEnrollmentsToTextIndependentProfile`, die u als hebt gedefinieerd, en `SpeakerIdentify`, die u hierna definieert. Ten slotte roept u [DeleteProfileAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofileclient#deleteprofileasync) aan om het profiel op te schonen.
+Vervolgens roept u twee hulpfuncties aan: `AddEnrollmentsToTextIndependentProfile`, die u als hebt gedefinieerd, en `SpeakerIdentify`, die u hierna definieert. Ten slotte roept u [DeleteProfileAsync](/cpp/cognitive-services/speech/voiceprofileclient#deleteprofileasync) aan om het profiel op te schonen.
 
 ### <a name="speakeridentify-function"></a>De functie SpeakerIdentify
 
@@ -138,9 +138,9 @@ Definieer de functie `SpeakerIdentify` als volgt.
 
 :::code language="cpp" source="~/cognitive-services-quickstart-code/cpp/speech/speaker-recognition.cpp" id="speaker_identify":::
 
-In deze functie maakt u een [SpeakerIdentificationModel](https://docs.microsoft.com/cpp/cognitive-services/speech/speakeridentificationmodel)-object met de methode [SpeakerIdentificationModel::FromProfiles](https://docs.microsoft.com/cpp/cognitive-services/speech/speakeridentificationmodel#fromprofiles). `SpeakerIdentificationModel::FromProfiles` accepteert een lijst van [VoiceProfile](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofile)-objecten. In dit geval geeft u alleen het object `VoiceProfile` dat u eerder hebt gemaakt door. Als u wilt, kunt u echter meerdere `VoiceProfile`-objecten doorgeven, die allemaal zijn ingeschreven met audiosamples van een andere stem.
+In deze functie maakt u een [SpeakerIdentificationModel](/cpp/cognitive-services/speech/speakeridentificationmodel)-object met de methode [SpeakerIdentificationModel::FromProfiles](/cpp/cognitive-services/speech/speakeridentificationmodel#fromprofiles). `SpeakerIdentificationModel::FromProfiles` accepteert een lijst van [VoiceProfile](/cpp/cognitive-services/speech/voiceprofile)-objecten. In dit geval geeft u alleen het object `VoiceProfile` dat u eerder hebt gemaakt door. Als u wilt, kunt u echter meerdere `VoiceProfile`-objecten doorgeven, die allemaal zijn ingeschreven met audiosamples van een andere stem.
 
-Vervolgens vraagt [SpeechRecognizer::RecognizeOnceAsync](https://docs.microsoft.com/cpp/cognitive-services/speech/speechrecognizer#recognizeonceasync) u om opnieuw te spreken. Nu vergelijkt deze uw stem met de ingeschreven spraakprofielen en wordt het meest vergelijkbare spraakprofiel geretourneerd.
+Vervolgens vraagt [SpeechRecognizer::RecognizeOnceAsync](/cpp/cognitive-services/speech/speechrecognizer#recognizeonceasync) u om opnieuw te spreken. Nu vergelijkt deze uw stem met de ingeschreven spraakprofielen en wordt het meest vergelijkbare spraakprofiel geretourneerd.
 
 ## <a name="main-function"></a>Hoofdfunctie
 
@@ -148,7 +148,7 @@ Definieer tenslotte de functie `main` als volgt.
 
 :::code language="cpp" source="~/cognitive-services-quickstart-code/cpp/speech/speaker-recognition.cpp" id="main":::
 
-Deze functie roept gewoon de functies aan die u eerder hebt gedefinieerd. Er wordt echter eerst een [VoiceProfileClient](https://docs.microsoft.com/cpp/cognitive-services/speech/voiceprofileclient)-object en een [SpeakerRecognizer](https://docs.microsoft.com/cpp/cognitive-services/speech/speakerrecognizer)-object gemaakt.
+Deze functie roept gewoon de functies aan die u eerder hebt gedefinieerd. Er wordt echter eerst een [VoiceProfileClient](/cpp/cognitive-services/speech/voiceprofileclient)-object en een [SpeakerRecognizer](/cpp/cognitive-services/speech/speakerrecognizer)-object gemaakt.
 
 ```
 auto speech_config = GetSpeechConfig();
@@ -172,4 +172,4 @@ in:
 auto audio_config = Audio::AudioConfig::FromWavFileInput(path/to/your/file.wav);
 ```
 
-Of u vervangt het gebruik van `audio_config` door [Audio::AudioConfig::FromWavFileInput](https://docs.microsoft.com/cpp/cognitive-services/speech/audio-audioconfig#fromwavfileinput). Gemengde invoer is ook mogelijk, met behulp van bijvoorbeeld een microfoon voor de inschrijving en bestanden voor de verificatie.
+Of u vervangt het gebruik van `audio_config` door [Audio::AudioConfig::FromWavFileInput](/cpp/cognitive-services/speech/audio-audioconfig#fromwavfileinput). Gemengde invoer is ook mogelijk, met behulp van bijvoorbeeld een microfoon voor de inschrijving en bestanden voor de verificatie.

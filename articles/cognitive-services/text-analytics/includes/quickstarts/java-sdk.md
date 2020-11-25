@@ -10,18 +10,18 @@ ms.date: 10/07/2020
 ms.custom: devx-track-java
 ms.author: aahi
 ms.reviewer: tasharm, assafi, sumeh
-ms.openlocfilehash: 66881fc03719e83f5354d19d0fde9eb474c17359
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: b7e5ebb9ac4c71d71b19b10763ebbdf57d752d49
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94372003"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980937"
 ---
 <a name="HOLTop"></a>
 
 # <a name="version-31-preview"></a>[Preview van versie 3.1](#tab/version-3-1)
 
-[Referentiedocumentatie](/java/api/overview/azure/ai-textanalytics-readme?view=azure-java-stable) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-java/blob/azure-ai-textanalytics_5.1.0-beta.1/sdk/textanalytics/azure-ai-textanalytics) | [Pakket](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/5.1.0-beta.1) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-java/tree/azure-ai-textanalytics_5.1.0-beta.1/sdk/textanalytics/azure-ai-textanalytics/src/samples/java/com/azure/ai/textanalytics)
+[Referentiedocumentatie](/java/api/overview/azure/ai-textanalytics-readme-pre?view=azure-java-preview) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics) | [Pakket](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/5.1.0-beta.1) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics/src/samples)
 
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
@@ -47,7 +47,7 @@ In dit artikel wordt alleen versie 3.x van de API beschreven.
 
 # <a name="version-31-preview"></a>[Preview van versie 3.1](#tab/version-3-1)
 
-Maak een Maven-project in uw favoriete IDE of ontwikkelomgeving. Voeg vervolgens de volgende afhankelijkheid toe aan het *pom.xml* -bestand van uw project. U kunt de implementatiesyntaxis [voor andere compilatieprogramma's](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/5.1.0-beta.1) online vinden.
+Maak een Maven-project in uw favoriete IDE of ontwikkelomgeving. Voeg vervolgens de volgende afhankelijkheid toe aan het *pom.xml*-bestand van uw project. U kunt de implementatiesyntaxis [voor andere compilatieprogramma's](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/5.1.0-beta.1) online vinden.
 
 ```xml
 <dependencies>
@@ -61,7 +61,7 @@ Maak een Maven-project in uw favoriete IDE of ontwikkelomgeving. Voeg vervolgens
 
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
-Maak een Maven-project in uw favoriete IDE of ontwikkelomgeving. Voeg vervolgens de volgende afhankelijkheid toe aan het *pom.xml* -bestand van uw project. U kunt de implementatiesyntaxis [voor andere compilatieprogramma's](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/5.0.0) online vinden.
+Maak een Maven-project in uw favoriete IDE of ontwikkelomgeving. Voeg vervolgens de volgende afhankelijkheid toe aan het *pom.xml*-bestand van uw project. U kunt de implementatiesyntaxis [voor andere compilatieprogramma's](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/5.0.0) online vinden.
 
 ```xml
 <dependencies>
@@ -225,7 +225,7 @@ Als u sentimentanalyse wilt uitvoeren met meninganalyse, maakt u een nieuwe func
 ```java
 static void sentimentAnalysisWithOpinionMiningExample(TextAnalyticsClient client)
 {
-    // The Document that needs be analyzed.
+    // The document that needs be analyzed.
     String document = "Bad atmosphere. Not close to plenty of restaurants, hotels, and transit! Staff are not friendly and helpful.";
 
     System.out.printf("Document = %s%n", document);
@@ -234,20 +234,26 @@ static void sentimentAnalysisWithOpinionMiningExample(TextAnalyticsClient client
     final DocumentSentiment documentSentiment = client.analyzeSentiment(document, "en", options);
     SentimentConfidenceScores scores = documentSentiment.getConfidenceScores();
     System.out.printf(
-            "\tRecognized document sentiment: %s, positive score: %f, neutral score: %f, negative score: %f.%n",
+            "Recognized document sentiment: %s, positive score: %f, neutral score: %f, negative score: %f.%n",
             documentSentiment.getSentiment(), scores.getPositive(), scores.getNeutral(), scores.getNegative());
 
     documentSentiment.getSentences().forEach(sentenceSentiment -> {
         SentimentConfidenceScores sentenceScores = sentenceSentiment.getConfidenceScores();
-        System.out.printf("\t\tSentence sentiment: %s, positive score: %f, neutral score: %f, negative score: %f.%n",
+        System.out.printf("\tSentence sentiment: %s, positive score: %f, neutral score: %f, negative score: %f.%n",
                 sentenceSentiment.getSentiment(), sentenceScores.getPositive(), sentenceScores.getNeutral(), sentenceScores.getNegative());
         sentenceSentiment.getMinedOpinions().forEach(minedOpinions -> {
             AspectSentiment aspectSentiment = minedOpinions.getAspect();
-            System.out.printf("\t\t\tAspect sentiment: %s, aspect text: %s%n", aspectSentiment.getSentiment(),
+            System.out.printf("\t\tAspect sentiment: %s, aspect text: %s%n", aspectSentiment.getSentiment(),
                     aspectSentiment.getText());
+            SentimentConfidenceScores aspectScores = aspectSentiment.getConfidenceScores();
+            System.out.printf("\t\tAspect positive score: %f, negative score: %f.%n",
+                    aspectScores.getPositive(), aspectScores.getNegative());
             for (OpinionSentiment opinionSentiment : minedOpinions.getOpinions()) {
-                System.out.printf("\t\t\t\t'%s' opinion sentiment because of \"%s\". Is the opinion negated: %s.%n",
+                System.out.printf("\t\t\t'%s' opinion sentiment because of \"%s\". Is the opinion negated: %s.%n",
                         opinionSentiment.getSentiment(), opinionSentiment.getText(), opinionSentiment.isNegated());
+                SentimentConfidenceScores opinionScores = opinionSentiment.getConfidenceScores();
+                System.out.printf("\t\t\tOpinion positive score: %f, negative score: %f.%n",
+                        opinionScores.getPositive(), opinionScores.getNegative());
             }
         });
     });
@@ -257,16 +263,21 @@ static void sentimentAnalysisWithOpinionMiningExample(TextAnalyticsClient client
 ### <a name="output"></a>Uitvoer
 
 ```console
-Text = Bad atmosphere. Not close to plenty of restaurants, hotels, and transit! Staff are not friendly and helpful.
-    Recognized document sentiment: negative, positive score: 0.010000, neutral score: 0.140000, negative score: 0.850000.
-        Sentence sentiment: negative, positive score: 0.000000, neutral score: 0.000000, negative score: 1.000000.
-            Aspect sentiment: negative, aspect text: atmosphere
-                'negative' opinion sentiment because of "bad". Is the opinion negated: false.
-        Sentence sentiment: negative, positive score: 0.020000, neutral score: 0.440000, negative score: 0.540000.
-        Sentence sentiment: negative, positive score: 0.000000, neutral score: 0.000000, negative score: 1.000000.
-            Aspect sentiment: negative, aspect text: Staff
-                'negative' opinion sentiment because of "friendly". Is the opinion negated: true.
-                'negative' opinion sentiment because of "helpful". Is the opinion negated: true.
+Document = Bad atmosphere. Not close to plenty of restaurants, hotels, and transit! Staff are not friendly and helpful.
+Recognized document sentiment: negative, positive score: 0.010000, neutral score: 0.140000, negative score: 0.850000.
+    Sentence sentiment: negative, positive score: 0.000000, neutral score: 0.000000, negative score: 1.000000.
+        Aspect sentiment: negative, aspect text: atmosphere
+        Aspect positive score: 0.010000, negative score: 0.990000.
+            'negative' opinion sentiment because of "bad". Is the opinion negated: false.
+            Opinion positive score: 0.010000, negative score: 0.990000.
+    Sentence sentiment: negative, positive score: 0.020000, neutral score: 0.440000, negative score: 0.540000.
+    Sentence sentiment: negative, positive score: 0.000000, neutral score: 0.000000, negative score: 1.000000.
+        Aspect sentiment: negative, aspect text: Staff
+        Aspect positive score: 0.000000, negative score: 1.000000.
+            'negative' opinion sentiment because of "friendly". Is the opinion negated: true.
+            Opinion positive score: 0.000000, negative score: 1.000000.
+            'negative' opinion sentiment because of "helpful". Is the opinion negated: true.
+            Opinion positive score: 0.000000, negative score: 1.000000.
 
 Process finished with exit code 0
 ```

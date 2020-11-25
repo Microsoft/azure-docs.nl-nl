@@ -13,12 +13,12 @@ ms.author: trbye
 ms.custom: devx-track-csharp, cog-serv-seo-aug-2020
 zone_pivot_groups: programming-languages-set-twenty-five
 keywords: sprekerherkenning, biometrische spraak
-ms.openlocfilehash: b831dfb0ff7989e52fcc2a1ab62ddb6f2e22a5e2
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 57c7ad220ada89e5848cf49b7fb68547bc7ad1cb
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92166332"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95015480"
 ---
 # <a name="get-started-with-speaker-recognition"></a>Aan de slag met Speaker Recognition
 
@@ -40,6 +40,6 @@ ms.locfileid: "92166332"
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Raadpleeg het [referentiemateriaal](https://docs.microsoft.com/rest/api/speakerrecognition/) voor Speaker Recognition voor meer informatie over klassen en functies.
+* Raadpleeg het [referentiemateriaal](/rest/api/speakerrecognition/) voor Speaker Recognition voor meer informatie over klassen en functies.
 
 * Kijk op GitHub voor voorbeelden in [C#](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/dotnet/speaker-recognition) en [C++](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/cpp/windows/speaker-recognition).

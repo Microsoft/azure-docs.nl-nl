@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/25/2020
 ms.author: trrwilson
-ms.openlocfilehash: b05e63dc549fdf1fec4485e27086bb32251b41d8
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: c37637ba1cb5154bbd56f7fd22bbbca62b8c3438
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93135796"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95096107"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -18,7 +18,7 @@ Voordat u aan de slag gaat:
 > [!div class="checklist"]
 > * [Een resource voor de Azure Speech-service maken](../../../../overview.md#try-the-speech-service-for-free)
 > * [Uw ontwikkelomgeving instellen en een leeg project maken](../../../../quickstarts/setup-platform.md)
-> * Een bot maken die verbonden is met het [Direct Line Speech-kanaal](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+> * Een bot maken die verbonden is met het [Direct Line Speech-kanaal](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 > * Ervoor zorgen dat u toegang tot een microfoon hebt voor het vastleggen van audio
 >
   > [!NOTE]
@@ -108,7 +108,7 @@ Vervang de waarden `YOUR_SUBSCRIPTION_KEY` en `YOUR_BOT_REGION` door de werkelij
    > Raadpleeg [de lijst met ondersteunde regio's voor spraakassistenten](~/articles/cognitive-services/speech-service/regions.md#voice-assistants) en zorg ervoor dat uw resources in een van deze regio's worden geïmplementeerd.
 
    > [!NOTE]
-   > Zie de Bot Framework-documentatie voor [het Direct Line Speech-kanaal](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech) voor meer informatie over het configureren van uw bot.
+   > Zie de Bot Framework-documentatie voor [het Direct Line Speech-kanaal](/azure/bot-service/bot-service-channel-connect-directlinespeech) voor meer informatie over het configureren van uw bot.
 
 ## <a name="code-explanation"></a>Uitleg bij de code
 De sleutel en de regio voor het Spraak-abonnement zijn vereist voor het maken van een spraakconfiguratieobject. Het configuratieobject is vereist voor het instantiëren van een spraakherkenningsobject.

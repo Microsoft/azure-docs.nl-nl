@@ -8,14 +8,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/01/2020
 ms.author: pafarley
-ms.openlocfilehash: 346854d5990ac6861bd4eb93914bb1745b90bfa5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a7fc96127d4449cfe0333ba81532d3c5c4ec19fe
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89321558"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95097090"
 ---
-[Referentiedocumentatie](https://docs.microsoft.com/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/mgmt-v2017_04_18/src/main/java/com/microsoft/azure/management/cognitiveservices/v2017_04_18) | [Pakket (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-mgmt-cognitiveservices)
+[Referentiedocumentatie](/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/mgmt-v2017_04_18/src/main/java/com/microsoft/azure/management/cognitiveservices/v2017_04_18) | [Pakket (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-mgmt-cognitiveservices)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -90,7 +90,7 @@ Gebruik deze waarden vervolgens in uw **main**-methode om een **CognitiveService
 
 ## <a name="call-management-methods"></a>Methoden voor aanroepbeheer
 
-Voeg de volgende code toe aan uw**Main**-methode om beschikbare resources weer te geven, maak een voorbeeldresource, vermeld uw eigen resources en verwijder vervolgens de voorbeeldresource. U gaat deze methoden in de volgende stappen definiëren.
+Voeg de volgende code toe aan uw **Main**-methode om beschikbare resources weer te geven, maak een voorbeeldresource, vermeld uw eigen resources en verwijder vervolgens de voorbeeldresource. U gaat deze methoden in de volgende stappen definiëren.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/azure_management_service/quickstart.java?name=snippet_calls)]
 
@@ -126,7 +126,7 @@ Met de volgende methode verwijdert u de opgegeven resource uit de opgegeven reso
 
 ## <a name="see-also"></a>Zie ook
 
-* [Referentiedocumentatie voor Azure Management SDK](https://docs.microsoft.com/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable)
-* [Wat zijn Azure Cognitive Services?](../../Welcome.md)
+* [Referentiedocumentatie voor Azure Management SDK](/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable)
+* [Wat zijn Azure Cognitive Services?](../../what-are-cognitive-services.md)
 * [Aanvragen verifiëren bij Azure Cognitive Services](../../authentication.md)
 * [Een nieuwe resource maken met de Azure-portal](../../cognitive-services-apis-create-account.md)

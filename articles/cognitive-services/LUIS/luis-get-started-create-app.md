@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 10/13/2020
-ms.openlocfilehash: 60151e97c64a3d61044e4b82299573ee59951d46
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 2048079a9b1eb5234d03c6fe57073228bd892d53
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93128148"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95019157"
 ---
 # <a name="quickstart-use-prebuilt-home-automation-app"></a>Snelstart: Een vooraf gemaakte app voor huisautomatisering gebruiken
 
@@ -223,4 +223,4 @@ Om een voorspelling van LUIS te ontvangen in een chatbot of een andere clienttoe
 U kunt het eindpunt aanroepen vanuit code:
 
 > [!div class="nextstepaction"]
-> [Een LUIS-eindpunt aanroepen met behulp van code](luis-get-started-cs-get-intent.md)
+> [Een LUIS-eindpunt aanroepen met behulp van code](./luis-get-started-get-intent-from-rest.md)

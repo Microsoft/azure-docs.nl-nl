@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: e415e0979e7f45531093993b0524a1bb556d339b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 4eb92e499a1381516ae6bbc33383963155df371f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92886531"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95095413"
 ---
 <a name="HOLTop"></a>
 
@@ -28,7 +28,7 @@ ms.locfileid: "92886531"
 * Zodra u een Azure-abonnement hebt, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="Een Computer Vision-resource maken"  target="_blank">maakt u een Computer Vision-resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> in Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
     * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met de Computer Vision-service. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
     * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
-* [Maak omgevingsvariabelen](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) voor de sleutel- en eindpunt-URL, met respectievelijk de namen `COMPUTER_VISION_SUBSCRIPTION_KEY` en `COMPUTER_VISION_ENDPOINT`.
+* [Maak omgevingsvariabelen](../../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) voor de sleutel- en eindpunt-URL, met respectievelijk de namen `COMPUTER_VISION_SUBSCRIPTION_KEY` en `COMPUTER_VISION_ENDPOINT`.
 
 ## <a name="setting-up"></a>Instellen
 
@@ -43,9 +43,9 @@ cd my-app
 
 Uw werkruimte bevat drie mappen:
 
-* **src** : deze map bevat broncode en pakketten. Alle met de opdracht `go get` geïnstalleerde pakketten komen terecht in deze map.
-* **pkg** : deze map bevat de gecompileerde Go-pakketobjecten. Deze bestanden hebben allemaal een `.a`-extensie.
-* **bin** : deze map bevat de binaire uitvoerbare bestanden die worden gemaakt wanneer u `go install` uitvoert.
+* **src**: deze map bevat broncode en pakketten. Alle met de opdracht `go get` geïnstalleerde pakketten komen terecht in deze map.
+* **pkg**: deze map bevat de gecompileerde Go-pakketobjecten. Deze bestanden hebben allemaal een `.a`-extensie.
+* **bin**: deze map bevat de binaire uitvoerbare bestanden die worden gemaakt wanneer u `go install` uitvoert.
 
 > [!TIP]
 > Zie de [documentatie over de taal Go](https://golang.org/doc/code.html#Workspaces) voor meer informatie over de structuur van een Go-werkruimte. Deze handleiding bevat informatie om `$GOPATH` en `$GOROOT` in te stellen.
@@ -90,7 +90,7 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 |Naam|Beschrijving|
 |---|---|
 | [BaseClient](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision#BaseClient) | Deze klasse is nodig voor alle functionaliteit van Computer Vision, zoals het analyseren van afbeeldingen en het lezen van tekst. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om de meeste afbeeldingsbewerkingen uit te voeren.|
-|[ImageAnalysis](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision#ImageAnalysis)| Dit type bevat de resultaten van een **AnalyzeImage** -functieaanroep. Er zijn soortgelijke typen voor elk van de categorie-specifieke functies.|
+|[ImageAnalysis](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision#ImageAnalysis)| Dit type bevat de resultaten van een **AnalyzeImage**-functieaanroep. Er zijn soortgelijke typen voor elk van de categorie-specifieke functies.|
 |[ReadOperationResult](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision#ReadOperationResult)| Dit type bevat de resultaten van een batch-leesbewerking. |
 |[VisualFeatureTypes](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision#VisualFeatureTypes)| Dit type definieert de verschillende soorten afbeeldingsanalyse die kunnen worden uitgevoerd in een standaard analysebewerking. U geeft een set VisualFeatureTypes-waarden op, afhankelijk van uw behoeften. |
 
@@ -105,7 +105,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Com
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
 > [!NOTE]
-> Bij deze stap wordt ervan uitgegaan dat u [omgevingsvariabelen hebt gemaakt](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) voor uw Computer Vision-sleutel en -eindpunt, met de naam `COMPUTER_VISION_SUBSCRIPTION_KEY` respectievelijk `COMPUTER_VISION_ENDPOINT`.
+> Bij deze stap wordt ervan uitgegaan dat u [omgevingsvariabelen hebt gemaakt](../../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) voor uw Computer Vision-sleutel en -eindpunt, met de naam `COMPUTER_VISION_SUBSCRIPTION_KEY` respectievelijk `COMPUTER_VISION_ENDPOINT`.
 
 Maak een `main`-functie en voeg de volgende code toe om een client te instantiëren met uw eindpunt en sleutel.
 
@@ -221,7 +221,7 @@ Definieer de nieuwe functie voor het lezen van tekst, `RecognizeTextReadAPIRemot
 
 ### <a name="get-read-results"></a>Leesresultaten ophalen
 
-Vervolgens haalt u de bewerkings-id op die wordt geretourneerd door de **BatchReadFile** -aanroep en gebruikt u deze met de methode **GetReadOperationResult** om de service te doorzoeken op de resultaten van de bewerking. Met de volgende code wordt de bewerking gecontroleerd met een interval van één seconde totdat de resultaten worden geretourneerd. Vervolgens worden de geëxtraheerde tekstgegevens afgedrukt naar de console.
+Vervolgens haalt u de bewerkings-id op die wordt geretourneerd door de **BatchReadFile**-aanroep en gebruikt u deze met de methode **GetReadOperationResult** om de service te doorzoeken op de resultaten van de bewerking. Met de volgende code wordt de bewerking gecontroleerd met een interval van één seconde totdat de resultaten worden geretourneerd. Vervolgens worden de geëxtraheerde tekstgegevens afgedrukt naar de console.
 
 [!code-go[](~/cognitive-services-quickstart-code/go/ComputerVision/ComputerVisionQuickstart.go?name=snippet_read_response)]
 

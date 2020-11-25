@@ -4,21 +4,21 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/04/2020
 ms.author: travisw
-ms.openlocfilehash: 38e6bae69710dc9e1dbc8789ee9ccb636193c7f7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8ee14b94977b3152e0aab853fa3919a739d0dfdd
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "80671197"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95097663"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u aan de slag gaat, moet u het volgende doen:
 
 > [!div class="checklist"]
-> * [Een resource voor de Azure-spraakservice maken](~/articles/cognitive-services/speech-service/get-started.md)
+> * [Een resource voor de Azure-spraakservice maken](../../../../overview.md#try-the-speech-service-for-free)
 > * [Uw ontwikkelomgeving instellen en een leeg project maken](~/articles/cognitive-services/speech-service/quickstarts/setup-platform.md?tabs=jre&pivots=programming-language-java)
-> * Een bot maken die verbonden is met het [Direct Line Speech-kanaal](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+> * Een bot maken die verbonden is met het [Direct Line Speech-kanaal](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 > * Ervoor zorgen dat u toegang tot een microfoon hebt voor het vastleggen van audio
 
   > [!NOTE]
@@ -115,7 +115,7 @@ Als u logboekregistratie wilt inschakelen, moet u ook het bestand _pom.xml_ bijw
 
 1. Configureer eerst uw `DialogServiceConfig` in de methode `main` en gebruik deze voor het maken van een `DialogServiceConnector`-instantie. Deze instantie maakt verbinding met het Direct Line Speech-kanaal voor de interactie met uw bot. Een `AudioConfig`-instantie wordt ook gebruikt voor het opgeven van de bron voor audio-invoer. In dit voorbeeld wordt de standaardmicrofoon gebruikt met `AudioConfig.fromDefaultMicrophoneInput()`.
 
-   - Vervang de tekenreeks `YourSubscriptionKey` door uw abonnementssleutel, die u kunt ophalen vanaf [deze website](~/articles/cognitive-services/speech-service/get-started.md).
+   - Vervang de tekenreeks `YourSubscriptionKey` door uw abonnementssleutel, die u kunt ophalen vanaf [deze website](../../../../overview.md#try-the-speech-service-for-free).
    - Vervang de tekenreeks `YourServiceRegion` door de [regio](~/articles/cognitive-services/speech-service/regions.md) die aan uw abonnement is gekoppeld.
 
    > [!NOTE]

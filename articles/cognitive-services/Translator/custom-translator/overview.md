@@ -9,16 +9,16 @@ ms.subservice: translator-text
 ms.date: 12/09/2019
 ms.author: swmachan
 ms.topic: overview
-ms.openlocfilehash: 55555d81eb531ae5a4d946fa3f661796b3294897
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 6a7301fd878eb65e4c1dd540275611bcf9348afc
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94365496"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241740"
 ---
 # <a name="what-is-custom-translator"></a>Wat is Custom Translator?
 
-[Custom Translator](https://portal.customtranslator.azure.ai) is een functie van de service Microsoft Translator. Hiermee kunnen vertaalondernemingen, app-ontwikkelaars en aanbieders van taaldiensten aangepaste systemen voor neurale machinevertalingen bouwen. De aangepaste vertaalsystemen integreren naadloos met bestaande toepassingen, werkstromen en websites. [Custom Translator](https://portal.customtranslator.azure.ai/) biedt vergelijkbare mogelijkheden als [Microsoft Translator Hub](https://hub.microsofttranslator.com/) voor statistische machinevertalingen (SMT), maar dan uitsluitend voor systemen voor neurale machinevertalingen (NMT).
+[Custom Translator](https://portal.customtranslator.azure.ai) is een functie van de service Microsoft Translator. Hiermee kunnen vertaalondernemingen, app-ontwikkelaars en aanbieders van taaldiensten aangepaste systemen voor neurale machinevertalingen bouwen. De aangepaste vertaalsystemen integreren naadloos met bestaande toepassingen, werkstromen en websites.
 
 Vertaalsystemen die zijn gebouwd met [Custom Translator](https://portal.customtranslator.azure.ai) zijn beschikbaar via dezelfde [beveiligde](https://cognitive.uservoice.com/knowledgebase/articles/1147537-api-and-customization-confidentiality), krachtige en uiterst schaalbare Microsoft Translator [Text-API V3](../reference/v3-0-translate.md?tabs=curl) in de cloud, die elke dag wordt gebruikt voor miljarden vertalingen.
 

@@ -10,21 +10,21 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 04/04/2020
 ms.author: travisw
-ms.openlocfilehash: fbfc6bf9c50257c2683522913503bf9b29450d94
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: bc27c73fbf9e827ce9a95c8aaaddc82ffb0aec53
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86226417"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95096874"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u aan de slag gaat, moet u het volgende doen:
 
 > [!div class="checklist"]
-> * [Een resource voor de Azure-spraakservice maken](~/articles/cognitive-services/speech-service/get-started.md)
+> * [Een resource voor de Azure-spraakservice maken](../../../../overview.md#try-the-speech-service-for-free)
 > * [Uw ontwikkelomgeving instellen en een leeg project maken](~/articles/cognitive-services/speech-service/quickstarts/setup-platform.md?tabs=android&pivots=programming-language-java)
-> * Een bot maken die verbonden is met het [Direct Line Speech-kanaal](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+> * Een bot maken die verbonden is met het [Direct Line Speech-kanaal](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 > * Ervoor zorgen dat u toegang tot een microfoon hebt voor het vastleggen van audio
 
   > [!NOTE]
@@ -272,4 +272,3 @@ Zodra de toepassing en de bijbehorende activiteiten zijn opgestart, klikt u op d
 ## <a name="next-steps"></a>Volgende stappen
 
 [!INCLUDE [footer](./footer.md)]
-

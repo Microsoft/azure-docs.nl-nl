@@ -8,14 +8,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: d8da5fcffa6ff02bed76973021b8a69c6c250821
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 1b50fbfa0ec4116f7d0b5988e5be70d0db086732
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89321561"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95096116"
 ---
-[Referentiedocumentatie](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Management.CognitiveServices/) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices/tests)
+[Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Management.CognitiveServices/) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices/tests)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -80,7 +80,7 @@ Gebruik deze waarden vervolgens in uw **Main**-methode om een **CognitiveService
 
 ## <a name="call-management-methods"></a>Methoden voor aanroepbeheer
 
-Voeg de volgende code toe aan uw**Main**-methode om beschikbare resources weer te geven, maak een voorbeeldresource, vermeld uw eigen resources en verwijder vervolgens de voorbeeldresource. U gaat deze methoden in de volgende stappen definiëren.
+Voeg de volgende code toe aan uw **Main**-methode om beschikbare resources weer te geven, maak een voorbeeldresource, vermeld uw eigen resources en verwijder vervolgens de voorbeeldresource. U gaat deze methoden in de volgende stappen definiëren.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/azure_management_service/create_delete_resource.cs?name=snippet_calls)]
 
@@ -124,7 +124,7 @@ dotnet run
 
 ## <a name="see-also"></a>Zie ook
 
-* [Referentiedocumentatie voor Azure Management SDK](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet)
-* [Wat zijn Azure Cognitive Services?](../../Welcome.md)
+* [Referentiedocumentatie voor Azure Management SDK](/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet)
+* [Wat zijn Azure Cognitive Services?](../../what-are-cognitive-services.md)
 * [Aanvragen verifiëren bij Azure Cognitive Services](../../authentication.md)
 * [Een nieuwe resource maken met de Azure-portal](../../cognitive-services-apis-create-account.md)

@@ -5,21 +5,21 @@ ms.topic: include
 ms.date: 04/04/2020
 ms.author: travisw
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e2d43290946969643b10d2ecad2f076df208a5d0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ea7ea08fc07a895bc038b27701d7038a5f76c26f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88925399"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95095150"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u aan de slag gaat, moet u het volgende doen:
 
 > [!div class="checklist"]
-> * [Een resource voor de Azure-spraakservice maken](~/articles/cognitive-services/speech-service/get-started.md)
+> * [Een resource voor de Azure-spraakservice maken](../../../../overview.md#try-the-speech-service-for-free)
 > * [Uw ontwikkelomgeving instellen en een leeg project maken](~/articles/cognitive-services/speech-service/quickstarts/setup-platform.md?tabs=uwp&pivots=programming-language-csharp)
-> * Een bot maken die verbonden is met het [Direct Line Speech-kanaal](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+> * Een bot maken die verbonden is met het [Direct Line Speech-kanaal](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 > * Ervoor zorgen dat u toegang tot een microfoon hebt voor het vastleggen van audio
 > 
   > [!NOTE]
@@ -277,7 +277,7 @@ De Ontwerpweergave is bijgewerkt om de gebruikersinterface van de toepassing wee
    > Raadpleeg [de lijst met ondersteunde regio's voor spraakassistenten](~/articles/cognitive-services/speech-service/regions.md#voice-assistants) en zorg ervoor dat uw resources in een van deze regio's worden geïmplementeerd.
 
    > [!NOTE]
-   > Zie de Bot Framework-documentatie voor [het Direct Line Speech-kanaal](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech) voor meer informatie over het configureren van uw bot.
+   > Zie de Bot Framework-documentatie voor [het Direct Line Speech-kanaal](/azure/bot-service/bot-service-channel-connect-directlinespeech) voor meer informatie over het configureren van uw bot.
 
 1. Vervang de tekenreeksen `YourSpeechSubscriptionKey` en `YourServiceRegion` door uw eigen waarden voor uw spraakabonnement en [regio](~/articles/cognitive-services/speech-service/regions.md).
 

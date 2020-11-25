@@ -7,12 +7,12 @@ ms.date: 11/06/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: aeb1e5ee00bd52ebb4bd93dec2f4a1eacb002fb9
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 992fb4422974dad7a48e5fea953ac4530bb52d5c
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94986526"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122595"
 ---
 # <a name="use-properties-in-an-azure-iot-central-solution"></a>Eigenschappen in een Azure IoT Central-oplossing gebruiken
 
@@ -45,7 +45,7 @@ De volgende tabel bevat de configuratie-instellingen voor een eigenschaps mogeli
 | Eenheid            | Een eenheid voor de waarde van de eigenschap, zoals **mph**, **%** of **&deg; C**.                                                                                                                                                              |
 | Eenheid weer geven    | Een weergave-eenheid voor gebruik in dash boards en formulieren.                                                                                                                                                                                    |
 | Opmerking         | Eventuele opmerkingen over de eigenschaps mogelijkheid.                                                                                                                                                                                        |
-| Description     | Een beschrijving van de eigenschaps mogelijkheid.                                                                                                                                                                                          |
+| Beschrijving     | Een beschrijving van de eigenschaps mogelijkheid.                                                                                                                                                                                          |
 
 De eigenschappen kunnen ook worden gedefinieerd in een interface in een sjabloon, zoals hier wordt weer gegeven:
 
@@ -160,11 +160,7 @@ hubClient.getTwin((err, twin) => {
 });
 ```
 
-In dit artikel wordt Node.js gebruikt voor eenvoud. Zie de volgende zelf studies voor meer informatie over de voor beelden van Device Application:
-
-* [Een client toepassing maken en verbinden met uw Azure IoT Central-toepassing (Node.js)](tutorial-connect-device-nodejs.md)
-* [Een client toepassing maken en verbinden met uw Azure IoT Central-toepassing (python)](tutorial-connect-device-python.md)
-* [Een client toepassing maken en verbinden met uw Azure IoT Central-toepassing (Java)](tutorial-connect-device-java.md)
+In dit artikel wordt Node.js gebruikt voor eenvoud. Zie de volgende zelf studie [een client toepassing maken en verbinden met uw Azure IOT Central-toepassing](tutorial-connect-device.md) voor meer informatie over de voor beelden van Device Application.
 
 In de volgende weer gave in azure IoT Central-toepassing worden de eigenschappen weer gegeven die u kunt zien. De weer gave maakt de eigenschap **apparaat model** automatisch een _eigenschap met het kenmerk alleen-lezen_.
 
@@ -214,7 +210,7 @@ Het antwoord bericht moet de `ac` velden en bevatten `av` . Het veld `ad` is opt
 * `av` is het versie nummer dat naar het apparaat wordt verzonden.
 * `ad` is een beschrijving van een optie teken reeks.
 
-| Waarde | Label | Description |
+| Waarde | Label | Beschrijving |
 | ----- | ----- | ----------- |
 | `'ac': 200` | Voltooid | De bewerking voor het wijzigen van de eigenschap is voltooid. |
 | `'ac': 202` of `'ac': 201` | In behandeling | De bewerking voor het wijzigen van de eigenschap is in behandeling of wordt uitgevoerd. |
@@ -236,4 +232,4 @@ In de volgende weer gave worden de Beschrijf bare eigenschappen weer gegeven. Wa
 Nu u hebt geleerd hoe u eigenschappen in uw Azure IoT Central-toepassing kunt gebruiken, raadpleegt u:
 
 * [Nettoladingen](concepts-telemetry-properties-commands.md)
-* [Een client toepassing maken en verbinden met uw Azure IoT Central-toepassing (Node.js)](tutorial-connect-device-nodejs.md)
+* [Een clienttoepassing maken en verbinden met uw Azure IoT Central-toepassing](tutorial-connect-device.md)

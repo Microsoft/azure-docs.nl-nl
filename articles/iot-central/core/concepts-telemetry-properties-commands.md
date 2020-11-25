@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 24fbe347aeb0b47ffd1ba694f761d909ff2950f8
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 5b1bbce68be19c2dbb08f7d69611b719b450a370
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989544"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96121765"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Payloads van telemetrie, eigenschappen en opdrachten
 
@@ -36,7 +36,7 @@ Elk voor beeld toont een fragment van het model van het apparaat dat het type en
 
 Het JSON-bestand dat het model van het apparaat definieert, maakt gebruik van de [Digital-taal versie 2 (DTDL) v2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md).
 
-Zie de [client toepassing maken en verbinden met uw azure IOT Central-toepassing (Node.js)](tutorial-connect-device-nodejs.md) en [een client toepassing maken en verbinden met uw python-zelf studies (Azure IOT Central Application)](tutorial-connect-device-python.md) voor een voor beeld van een apparaatcode dat enkele van deze nettoladingen bevat die in gebruik zijn.
+Zie de zelf studie [een client maken en verbinding maken met uw Azure IOT Central-toepassing](tutorial-connect-device.md) voor een voor beeld van een apparaatcode die enkele van deze nettoladingen bevat die in gebruik zijn.
 
 ## <a name="view-raw-data"></a>Onbewerkte gegevens weergeven
 
@@ -717,7 +717,7 @@ IoT Central verwacht een reactie van het apparaat naar updates van schrijf bare 
 
 `ac` is een numeriek veld dat gebruikmaakt van de waarden in de volgende tabel:
 
-| Waarde | Label | Description |
+| Waarde | Label | Beschrijving |
 | ----- | ----- | ----------- |
 | `'ac': 200` | Voltooid | De bewerking voor het wijzigen van de eigenschap is voltooid. |
 | `'ac': 202`  of `'ac': 201` | In behandeling | De bewerking voor het wijzigen van de eigenschap is in behandeling of wordt uitgevoerd |

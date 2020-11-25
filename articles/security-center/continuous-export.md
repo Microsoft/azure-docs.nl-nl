@@ -8,16 +8,16 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 10/27/2020
 ms.author: memildin
-ms.openlocfilehash: 59cfe7b990523e5cb165d1037291b3c1b1301624
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 43b66a59062a230aa2fba6909172deb5f1740b28
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289243"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122300"
 ---
 # <a name="continuously-export-security-center-data"></a>Security Center-gegevens continu exporteren
 
-Azure Security Center genereert gedetailleerde beveiligings waarschuwingen en aanbevelingen. U kunt deze weer geven in de portal of via programmatische hulpprogram ma's. Mogelijk moet u ook enkele of al deze gegevens exporteren voor het bijhouden met andere controle hulpprogramma's in uw omgeving. 
+Azure Security Center genereert gedetailleerde beveiligings waarschuwingen en aanbevelingen. U kunt deze weer geven in de portal of via programmatische hulpprogram ma's. Mogelijk moet u ook enkele of al deze gegevens exporteren voor bijhouden met andere controle hulpprogramma's in uw omgeving. 
 
 Met **doorlopend exporteren** kunt u volledig aanpassen *wat* wordt geëxporteerd en *waar* het gaat. U kunt deze bijvoorbeeld zodanig configureren dat:
 
@@ -61,7 +61,11 @@ De onderstaande stappen zijn nodig om een doorlopende export naar Log Analytics 
 1. Selecteer op de zijbalk van Security Center de **& instellingen voor prijzen**.
 1. Selecteer het specifieke abonnement waarvoor u de gegevens export wilt configureren.
 1. Selecteer in de zijbalk van de pagina instellingen voor dat abonnement **doorlopend exporteren**.
-    [ ![ Export opties in azure Security Center](media/continuous-export/continuous-export-options-page.png)](media/continuous-export/continuous-export-options-page.png#lightbox) hier ziet u de export opties. Er is een tabblad voor elk beschik bare export doel. 
+
+    :::image type="content" source="./media/continuous-export/continuous-export-options-page.png" alt-text="Opties voor exporteren in Azure Security Center":::
+
+    Hier ziet u de export opties. Er is een tabblad voor elk beschik bare export doel. 
+
 1. Selecteer het gegevens type dat u wilt exporteren en kies uit de filters voor elk type (bijvoorbeeld alleen waarschuwingen met hoge Ernst exporteren).
 1. Als uw selectie een van deze vier aanbevelingen bevat, kunt u desgewenst de evaluaties van beveiligings problemen samen voegen:
     - De conclusies van de evaluatie van beveiligings problemen voor uw SQL-data bases moeten worden hersteld
@@ -163,7 +167,7 @@ Als u de gebeurtenis schema's van de geëxporteerde gegevens typen wilt weer gev
 
 ##  <a name="view-exported-alerts-and-recommendations-in-azure-monitor"></a>Geëxporteerde waarschuwingen en aanbevelingen in Azure Monitor weer geven
 
-In sommige gevallen kunt u ervoor kiezen om de geëxporteerde beveiligings waarschuwingen en/of aanbevelingen in [Azure monitor](../azure-monitor/platform/alerts-overview.md)weer te geven. 
+U kunt er ook voor kiezen om geëxporteerde beveiligings waarschuwingen en/of aanbevelingen in [Azure monitor](../azure-monitor/platform/alerts-overview.md)weer te geven. 
 
 Azure Monitor biedt een uniforme waarschuwings ervaring voor verschillende Azure-waarschuwingen, waaronder diagnostisch logboeken, metrische waarschuwingen en aangepaste waarschuwingen op basis van Log Analytics werkruimte query's.
 
@@ -207,7 +211,7 @@ Meer informatie over de [prijzen van Azure Event hub](https://azure.microsoft.co
 
 ### <a name="does-the-export-include-data-about-the-current-state-of-all-resources"></a>Bevat de export gegevens over de huidige status van alle resources?
 
-Nee. Continue export is gebouwd voor het streamen van **gebeurtenissen** :
+Nee. Continue export is gebouwd voor het streamen van **gebeurtenissen**:
 
 - **Waarschuwingen** die zijn ontvangen voordat de export werd ingeschakeld, worden niet geëxporteerd.
 - **Aanbevelingen** worden verzonden wanneer de nalevings status van een resource wordt gewijzigd. Bijvoorbeeld wanneer een resource in orde verandert in een slechte status. Daarom worden, net als bij waarschuwingen, aanbevelingen voor bronnen waarvan de status niet is gewijzigd sinds u de export hebt ingeschakeld, niet geëxporteerd.

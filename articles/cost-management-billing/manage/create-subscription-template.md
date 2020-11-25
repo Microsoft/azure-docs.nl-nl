@@ -9,12 +9,12 @@ ms.date: 11/17/2020
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 43a1d4c36771d025e7470f61c61caf633a51798b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 8cc27f5870d5289867b9e1e1760425a2015c35dc
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94850917"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886546"
 ---
 # <a name="programmatically-create-azure-subscriptions-with-an-azure-resource-manager-template"></a>Programmatisch Azure-abonnementen maken met een Azure Resource Manager-sjabloon
 

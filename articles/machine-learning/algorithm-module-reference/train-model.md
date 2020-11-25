@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 02/11/2020
-ms.openlocfilehash: e3080836e8b9ed38e99c691c66e71a4620829c90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/25/2020
+ms.openlocfilehash: f9a7623fd27178e8b9c213a1759bb09863d16c72
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890214"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030693"
 ---
 # <a name="train-model-module"></a>Train model-module
 
@@ -40,16 +40,14 @@ In Azure Machine Learning is het maken en gebruiken van een machine learning mod
 3. Nadat de training is voltooid, kunt u het getrainde model met een van de [Score modules](./score-model.md)gebruiken om voor spellingen te doen op nieuwe gegevens.
 
 ## <a name="how-to-use-train-model"></a>Train model gebruiken 
-  
-1.  Configureer in Azure Machine Learning een classificatie model of regressie model.
     
-2. Voeg de module **Train model** toe aan de pijp lijn.  U kunt deze module vinden onder de categorie **machine learning** . Vouw **Train**uit en sleep de module **Train model** naar uw pijp lijn.
+1. Voeg de module **Train model** toe aan de pijp lijn.  U kunt deze module vinden onder de categorie **machine learning** . Vouw **Train** uit en sleep de module **Train model** naar uw pijp lijn.
   
-3.  Koppel de niet-getrainde modus aan de linkerkant. Koppel de trainings gegevensset aan de rechter invoer van **Train model**.
+1.  Koppel de niet-getrainde modus aan de linkerkant. Koppel de trainings gegevensset aan de rechter invoer van **Train model**.
 
     De trainings gegevensset moet een kolom Label bevatten. Alle rijen zonder labels worden genegeerd.
   
-4.  Klik bij **Label kolom**op **kolom bewerken** in het rechter paneel van de module en kies één kolom die de resultaten bevat die het model kan gebruiken voor de training.
+1.  Klik bij **Label kolom** op **kolom bewerken** in het rechter paneel van de module en kies één kolom die de resultaten bevat die het model kan gebruiken voor de training.
   
     - Voor classificatie problemen moet de kolom label **categorische** waarden of **discrete** waarden bevatten. Enkele voor beelden zijn een Ja/Nee-classificatie, een ziekte classificatie code of naam of een inkomsten groep.  Als u een noncategorical-kolom selecteert, wordt er tijdens de training een fout geretourneerd door de module.
   
@@ -62,7 +60,10 @@ In Azure Machine Learning is het maken en gebruiken van een machine learning mod
     > [!TIP] 
     > Als u problemen ondervindt met het gebruik van de kolom kiezer, raadpleegt u het artikel [kolommen in gegevensset selecteren](./select-columns-in-dataset.md) voor tips. Hierin worden enkele algemene scenario's en tips beschreven voor het gebruik van de opties **with Rules** en **op naam** .
   
-5.  Verzend de pijp lijn. Als u veel gegevens hebt, kan dit enige tijd duren.
+1.  Verzend de pijp lijn. Als u veel gegevens hebt, kan dit enige tijd duren.
+
+    > [!IMPORTANT] 
+    > Als u een ID-kolom hebt die de ID van elke rij is, kan het **Train-model** een fout aanraken zoals ' aantal unieke waarden in kolom: ' {COLUMN_NAME} ' groter is dan toegestaan. ' Dit komt doordat de kolom ID de drempel van unieke waarden bereikt, waardoor er onvoldoende geheugen beschikbaar is. De kolom ID bevat meestal een betekenis tijdens de training. U kunt [meta gegevens bewerken](edit-metadata.md) gebruiken om die kolom als **heldere functie** te markeren en deze wordt niet gebruikt in de training. Raadpleeg de [fout code](././designer-error-codes.md) van de Designer voor meer informatie over fouten.
 
 ## <a name="results"></a>Resultaten
 

@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
 ms.openlocfilehash: 43cdb9de111bdea5486e49a56d58d38279b685c7
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996381"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95985540"
 ---
 # <a name="create-interactive-reports-azure-monitor-for-vms-with-workbooks"></a>Interactieve rapporten maken: Azure Monitor voor VM's met werkmappen
 
@@ -26,7 +26,7 @@ Werkmappen zijn handig voor scenario's zoals:
 
 In de volgende tabel ziet u een overzicht van de werkmappen die Azure Monitor voor VM's bevat om aan de slag te gaan.
 
-| Werkmap | Beschrijving | Bereik |
+| Werkmap | Description | Bereik |
 |----------|-------------|-------|
 | Prestaties | Biedt een aanpas bare versie van onze weer gave top N-lijsten en-diagrammen in één werkmap die gebruikmaakt van alle Log Analytics prestatie meter items die u hebt ingeschakeld.| Op schaal |
 | Prestatiemeteritems | Een bovenste N grafiek weergave in een breed scala aan prestatie meter items. | Op schaal |
@@ -44,7 +44,7 @@ In de volgende tabel ziet u een overzicht van de werkmappen die Azure Monitor vo
 
 Een werkmap bestaat uit secties die bestaan uit onafhankelijk Bewerk bare grafieken, tabellen, tekst en invoer besturings elementen. Voor een beter begrip van werkmappen kunt u beginnen met het openen van een sjabloon en het maken van een aangepaste werkmap door lopen. 
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 2. Selecteer **virtual machines**.
 
@@ -58,13 +58,13 @@ Een werkmap bestaat uit secties die bestaan uit onafhankelijk Bewerk bare grafie
 
     Hiermee opent u de werkmap galerie met een aantal vooraf gemaakte werkmappen waarmee u aan de slag kunt.
 
-7. Maak een nieuwe werkmap door **Nieuw**te selecteren.
+7. Maak een nieuwe werkmap door **Nieuw** te selecteren.
 
     ![Scherm opname van werkmap galerie](media/vminsights-workbooks/workbook-gallery-01.png)
 
 ## <a name="editing-workbook-sections"></a>Werkmapsecties bewerken
 
-Werkmappen hebben twee modi: **bewerkings modus**en **Lees modus**. Wanneer een nieuwe werkmap voor het eerst wordt gestart, wordt deze in de **bewerkings modus**geopend. Hierin wordt alle inhoud van de werkmap weer gegeven, inclusief alle stappen en para meters die op een andere manier verborgen zijn. De **Lees modus** toont een vereenvoudigde rapport stijl weergave. Met de Lees modus kunt u de complexiteit die is opgetreden bij het maken van een rapport, opsplitsen, terwijl de onderliggende mechanismen nog maar een paar muis klikken hebben wanneer dat nodig is voor aanpassing.
+Werkmappen hebben twee modi: **bewerkings modus** en **Lees modus**. Wanneer een nieuwe werkmap voor het eerst wordt gestart, wordt deze in de **bewerkings modus** geopend. Hierin wordt alle inhoud van de werkmap weer gegeven, inclusief alle stappen en para meters die op een andere manier verborgen zijn. De **Lees modus** toont een vereenvoudigde rapport stijl weergave. Met de Lees modus kunt u de complexiteit die is opgetreden bij het maken van een rapport, opsplitsen, terwijl de onderliggende mechanismen nog maar een paar muis klikken hebben wanneer dat nodig is voor aanpassing.
 
 ![Scherm afbeelding van de sectie Virtual Machines werkmap in Azure Monitor een nieuwe werkmap weer gegeven in de bewerkings modus met bewerkings besturings elementen gemarkeerd.](media/vminsights-workbooks/workbook-new-workbook-editor-01.png)
 
@@ -114,7 +114,7 @@ Elke sectie heeft zijn eigen geavanceerde instellingen, die toegankelijk zijn vi
 
 De meeste van deze instellingen zijn redelijk intuïtief, maar om **een para meter** te kunnen exporteren, is het beter om een werkmap te onderzoeken die gebruikmaakt van deze functionaliteit.
 
-Een van de vooraf gemaakte werkmappen- **TCP-verkeer**bevat informatie over verbindings gegevens van een virtuele machine.
+Een van de vooraf gemaakte werkmappen- **TCP-verkeer** bevat informatie over verbindings gegevens van een virtuele machine.
 
 De eerste sectie van de werkmap is gebaseerd op logboek query gegevens. De tweede sectie is ook gebaseerd op logboek query gegevens, maar als u een rij in de eerste tabel selecteert, wordt de inhoud van de grafieken interactief bijgewerkt:
 

@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 03/20/2020
 ms.openlocfilehash: 32ad92b333eda8cd429303177dba160f0b58af54
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91445544"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95985795"
 ---
 # <a name="use-the-map-feature-of-azure-monitor-for-vms-to-understand-application-components"></a>De kaart functie van Azure Monitor voor VM's gebruiken om inzicht te krijgen in toepassings onderdelen
 In Azure Monitor voor VM's kunt u gedetecteerde toepassings onderdelen weer geven op virtuele Windows-en Linux-machines (Vm's) die worden uitgevoerd in azure of in uw omgeving. U kunt de virtuele machines op twee manieren bekijken. Een kaart rechtstreeks vanuit een virtuele machine weer geven of een kaart van Azure Monitor weer geven om de onderdelen van verschillende Vm's te bekijken. In dit artikel vindt u meer informatie over deze twee weergave methoden en over het gebruik van de kaart functie. 
@@ -87,8 +87,8 @@ Als de groep bewaakte en niet-bewaakte servers bevat, kunt u de juiste sectie va
 
 Rechtstreeks vanaf een virtuele machine toegang tot Azure Monitor voor VM's:
 
-1. Selecteer **virtual machines**In het Azure Portal. 
-2. Kies een virtuele machine in de lijst. Kies **inzichten**in het gedeelte **bewaking** .  
+1. Selecteer **virtual machines** In het Azure Portal. 
+2. Kies een virtuele machine in de lijst. Kies **inzichten** in het gedeelte **bewaking** .  
 3. Selecteer het tabblad **map** .
 
 De kaart visualiseert de afhankelijkheden van de virtuele machine door het detecteren van actieve proces groepen en processen die actieve netwerk verbindingen hebben gedurende een opgegeven tijds bereik.  

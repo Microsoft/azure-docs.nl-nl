@@ -4,11 +4,11 @@ description: Hierin wordt beschreven hoe u back-ups van virtuele Azure-machines 
 ms.topic: conceptual
 ms.date: 09/11/2019
 ms.openlocfilehash: ded2bc8a71bf564e31f40ca9f0d6c8049188768b
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92094089"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95978366"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Back-ups van virtuele Azure-machines maken en herstellen met Power shell
 
@@ -232,7 +232,7 @@ Zodra u het beveiligings beleid hebt gedefinieerd, moet u het beleid voor een it
 
 In de volgende voor beelden wordt de beveiliging voor het item V2VM ingeschakeld, met behulp van het beleid NewPolicy. De voor beelden zijn afhankelijk van het feit of de virtuele machine is versleuteld en welk type versleuteling.
 
-De beveiliging op **niet-versleutelde Resource Manager-vm's**inschakelen:
+De beveiliging op **niet-versleutelde Resource Manager-vm's** inschakelen:
 
 ```powershell
 $pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy" -VaultId $targetVault.ID

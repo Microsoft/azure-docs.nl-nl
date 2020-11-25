@@ -13,11 +13,11 @@ ms.author: ryanwi
 ms.reviewer: hirsin, jesakowi, jmprieur, marsma
 ms.custom: aaddev, fasttrack-edit, contperfq1, identityplatformtop40
 ms.openlocfilehash: 9c8a911bef5fb92f5bf9aa447e9e810a85317208
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92365847"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95974150"
 ---
 # <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Machtigingen en toestemming in het eindpunt van het Microsoft-identiteitsplatform
 
@@ -42,7 +42,7 @@ Dit geldt ook voor alle resources van derden die zijn geïntegreerd met het micr
 
 Als u deze typen machtigingen definieert, heeft de resource een nauw keurige controle over de gegevens en hoe de API-functionaliteit wordt weer gegeven. Een app van derden kan deze machtigingen aanvragen bij gebruikers en beheerders, die de aanvraag moet goed keuren voordat de app toegang kan krijgen tot gegevens of namens de gebruiker kan handelen. Door de functionaliteit van de resource te segmenteren in kleinere machtigingen sets, kunnen apps van derden worden gebouwd om alleen de specifieke machtigingen aan te vragen die ze nodig hebben om hun functie uit te voeren. Gebruikers en beheerders kunnen precies weten met welke gegevens de app toegang heeft, en ze kunnen er beter op vertrouwen dat ze niet goed werken met kwaad aardige intentie. Ontwikkel aars moeten altijd op het beginsel van de minimale bevoegdheid worden gevraagd, zodat alleen de benodigde machtigingen voor hun toepassingen kunnen worden gebruikt.
 
-In OAuth 2,0 worden deze typen machtigingen *scopes*genoemd. Ze worden ook vaak *machtigingen*genoemd. Een machtiging wordt weer gegeven in het micro soft Identity-platform als een teken reeks waarde. Als u doorgaat met het Microsoft Graph-voor beeld, is de teken reeks waarde voor elke machtiging:
+In OAuth 2,0 worden deze typen machtigingen *scopes* genoemd. Ze worden ook vaak *machtigingen* genoemd. Een machtiging wordt weer gegeven in het micro soft Identity-platform als een teken reeks waarde. Als u doorgaat met het Microsoft Graph-voor beeld, is de teken reeks waarde voor elke machtiging:
 
 * De agenda van een gebruiker lezen met behulp van `Calendars.Read`
 * Schrijven naar de agenda van een gebruiker met behulp van `Calendars.ReadWrite`
@@ -144,7 +144,7 @@ Als uw app toegang vereist tot door de beheerder beperkte bereiken voor organisa
 
 Als de toepassing machtigingen met hoge bevoegdheden heeft aangevraagd en een beheerder deze machtigingen verleent via het eind punt van de beheerder, wordt toestemming verleend voor alle gebruikers in de Tenant.
 
-Als de toepassing toepassings machtigingen aanvraagt en een beheerder deze machtigingen verleent via het door de beheerder toestemmings eindpunt, wordt deze toekenning niet uitgevoerd namens een specifieke gebruiker. In plaats daarvan worden machtigingen *rechtstreeks*verleend aan de client toepassing. Deze typen machtigingen worden alleen gebruikt door daemon-services en andere niet-interactieve toepassingen die op de achtergrond worden uitgevoerd.
+Als de toepassing toepassings machtigingen aanvraagt en een beheerder deze machtigingen verleent via het door de beheerder toestemmings eindpunt, wordt deze toekenning niet uitgevoerd namens een specifieke gebruiker. In plaats daarvan worden machtigingen *rechtstreeks* verleend aan de client toepassing. Deze typen machtigingen worden alleen gebruikt door daemon-services en andere niet-interactieve toepassingen die op de achtergrond worden uitgevoerd.
 
 ## <a name="using-the-admin-consent-endpoint"></a>Het afstemmings eindpunt van de beheerder gebruiken
 

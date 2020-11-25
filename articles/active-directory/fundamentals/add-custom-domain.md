@@ -14,15 +14,15 @@ ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 28847ece3c08e93d14d381b35fc93fb16dad95a1
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370862"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95973895"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Uw aangepaste domein naam toevoegen met behulp van de Azure Active Directory Portal
 
-Elke nieuwe Azure AD-Tenant wordt geleverd met een initiële domein naam, * \<domainname> . onmicrosoft.com*. U kunt de initiële domein naam niet wijzigen of verwijderen, maar de namen van uw organisatie toevoegen. Door aangepaste domein namen toe te voegen, kunt u gebruikers namen maken die bekend zijn bij uw gebruikers, zoals *alain \@ contoso.com*.
+Elke nieuwe Azure AD-Tenant wordt geleverd met een initiële domein naam, *\<domainname> . onmicrosoft.com*. U kunt de initiële domein naam niet wijzigen of verwijderen, maar de namen van uw organisatie toevoegen. Door aangepaste domein namen toe te voegen, kunt u gebruikers namen maken die bekend zijn bij uw gebruikers, zoals *alain \@ contoso.com*.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -54,12 +54,12 @@ Nadat u uw adres lijst hebt gemaakt, kunt u uw aangepaste domein naam toevoegen.
 
     ![Pagina aangepaste domein namen, met weer gegeven aangepast domein toevoegen](media/add-custom-domain/add-custom-domain.png)
 
-1. Voer in **aangepaste domein naam**de nieuwe naam van uw organisatie in, in dit voor beeld *contoso.com*. Selecteer **Domein toevoegen**.
+1. Voer in **aangepaste domein naam** de nieuwe naam van uw organisatie in, in dit voor beeld *contoso.com*. Selecteer **Domein toevoegen**.
 
     ![Pagina aangepaste domein namen, met de pagina aangepaste domein toevoegen](media/add-custom-domain/add-custom-domain-blade.png)
 
     >[!IMPORTANT]
-    >U moet *. com*, *.net*of een andere extensie op het hoogste niveau gebruiken om dit goed te laten werken.
+    >U moet *. com*, *.net* of een andere extensie op het hoogste niveau gebruiken om dit goed te laten werken.
 
     Het niet-geverifieerde domein is toegevoegd. De pagina **contoso.com** wordt weer gegeven met uw DNS-gegevens. Sla deze informatie op. U hebt deze later nodig om een TXT-record te maken om DNS te configureren.
 
@@ -84,7 +84,7 @@ Voer de volgende stappen uit om uw aangepaste domein naam te verifiëren:
 
 1. Zoek en selecteer *Azure Active Directory* op een wille keurige pagina en selecteer vervolgens **aangepaste domein namen**.
 
-1. In **aangepaste domein namen**selecteert u de naam van het aangepaste domein. In dit voor beeld selecteert u **contoso.com**.
+1. In **aangepaste domein namen** selecteert u de naam van het aangepaste domein. In dit voor beeld selecteert u **contoso.com**.
 
     ![Pagina fabrikam-aangepaste domein namen, met Contoso gemarkeerd](media/add-custom-domain/custom-blade-with-contoso-highlighted.png)
 

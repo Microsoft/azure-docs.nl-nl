@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.custom: devx-track-java
 ms.openlocfilehash: 8d11eaa76f2133b9fdc66ba4e6bc91e2cc38c51c
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379533"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95972858"
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java-sdk"></a>Probleem oplossing en Q en A voor Application Insights voor Java SDK
 
@@ -89,7 +89,7 @@ Met behulp van de XML-methode moet u de toepassing opnieuw opstarten wanneer u d
 **Hoe kan ik wijzigen met welke Azure-resource mijn project gegevens verzendt?**
 
 * [Haal de instrumentatie sleutel van de nieuwe resource op.][java]
-* Als u Application Insights aan uw project hebt toegevoegd met behulp van de Azure-toolkit voor Eclipse, klikt u met de rechter muisknop op uw webproject, selecteert u **Azure** , **configureert u Application Insights** en wijzigt u de sleutel.
+* Als u Application Insights aan uw project hebt toegevoegd met behulp van de Azure-toolkit voor Eclipse, klikt u met de rechter muisknop op uw webproject, selecteert u **Azure**, **configureert u Application Insights** en wijzigt u de sleutel.
 * Als u de instrumentatie sleutel als omgevings variabele hebt geconfigureerd, moet u de waarde van de omgevings variabele bijwerken met de nieuwe iKey.
 * Als dat niet het geval is, werkt u de sleutel in ApplicationInsights.xml in de map resources in uw project bij.
 

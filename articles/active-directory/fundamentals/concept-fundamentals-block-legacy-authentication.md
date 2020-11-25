@@ -13,11 +13,11 @@ ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.openlocfilehash: b50c942d2e05d7f5234a17f1cf36137309c7ce97
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89320950"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95973708"
 ---
 # <a name="blocking-legacy-authentication"></a>Verouderde verificatie blok keren
  
@@ -33,7 +33,7 @@ De meeste pogingen om zich aan te melden, zijn tegenwoordig afkomstig van veroud
 Voordat u verouderde verificatie in uw Directory kunt blok keren, moet u eerst begrijpen of uw gebruikers apps hebben die gebruikmaken van verouderde verificatie en hoe dit van invloed is op uw algemene Directory. Aanmeld logboeken van Azure AD kunnen worden gebruikt om te begrijpen of u gebruikmaakt van verouderde verificatie.
 
 1. Navigeer naar het **Azure Portal**  >  **Azure Active Directory**  >  **-Azure Active Directory aanmeldingen**.
-1. Voeg de kolom **client** toepassing toe als deze niet wordt weer gegeven door te klikken op de client-app **Columns**   >  **Client App**.
+1. Voeg de kolom **client** toepassing toe als deze niet wordt weer gegeven door te klikken op de client-app  **Columns**   >  **Client App**.
 1. Filteren op **Client App** > alle **verouderde** opties voor verificatie-clients controleren.
 1. Filteren op **status**  >  **geslaagd**. 
 1. Breid het datum bereik uit, indien nodig, met behulp van het **datum** filter.

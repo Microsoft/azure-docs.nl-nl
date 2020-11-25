@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d526394ac89e2d29b2002004736e8480bb15b954
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89279258"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95973419"
 ---
 # <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect: write-back van apparaat inschakelen
 > [!NOTE]
@@ -94,7 +94,7 @@ Eerste zaken:
 * Het forest waarin de apparaten aanwezig zijn, moet zijn bijgewerkt naar het niveau Windows 2012 R2, zodat het apparaatobject en de bijbehorende kenmerken aanwezig zijn.
 * Als de installatie wizard al wordt uitgevoerd, worden er geen wijzigingen gedetecteerd. In dit geval voltooit u de installatie wizard en voert u deze opnieuw uit.
 * Zorg ervoor dat het account dat u opgeeft in het initialisatie script in feite de juiste gebruiker is die door de Active Directory-connector wordt gebruikt. Voer de volgende stappen uit om dit te controleren:
-  * Open de **synchronisatie service**vanuit het menu Start.
+  * Open de **synchronisatie service** vanuit het menu Start.
   * Open het tabblad **connectors** .
   * Zoek de connector met het type Active Directory Domain Services en selecteer deze.
   * Onder **acties**, selecteert u **Eigenschappen**.

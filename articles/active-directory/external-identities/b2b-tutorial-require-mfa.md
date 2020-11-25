@@ -13,11 +13,11 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1f5f7f823d6c5f5860c2e78fe8cacdd1d788c581
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92892692"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95974116"
 ---
 # <a name="tutorial-enforce-multi-factor-authentication-for-b2b-guest-users"></a>Zelfstudie: Multi-Factor Authentication afdwingen voor B2B-gastgebruikers
 
@@ -47,19 +47,19 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 
 Voor het voltooien van het scenario in deze zelfstudie hebt u het volgende nodig:
 
- - **Toegang tot de Azure AD Premium-editie** , die mogelijkheden voor voorwaardelijk toegangsbeleid bevat. Om MFA af te dwingen, moet u in Azure AD een voorwaardelijk toegangsbeleid maken. Merk op dat MFA-beleid altijd wordt afgedwongen bij uw organisatie, ongeacht of de partner MFA-mogelijkheden heeft. Als u MFA instelt voor uw organisatie, moet u ervoor zorgen dat u over voldoende Azure AD Premium-licenties voor uw gastgebruikers beschikt. 
+ - **Toegang tot de Azure AD Premium-editie**, die mogelijkheden voor voorwaardelijk toegangsbeleid bevat. Om MFA af te dwingen, moet u in Azure AD een voorwaardelijk toegangsbeleid maken. Merk op dat MFA-beleid altijd wordt afgedwongen bij uw organisatie, ongeacht of de partner MFA-mogelijkheden heeft. Als u MFA instelt voor uw organisatie, moet u ervoor zorgen dat u over voldoende Azure AD Premium-licenties voor uw gastgebruikers beschikt. 
  - **Een geldig extern e-mailaccount** dat u aan uw tenant-directory als gastgebruiker kunt toevoegen en voor aanmelding kunt gebruiken. Als u niet weet hoe u een gastaccount kunt maken, bekijkt u dan [Een B2B-gastgebruiker toevoegen in de Azure-portal](add-users-administrator.md).
 
 ## <a name="create-a-test-guest-user-in-azure-ad"></a>Een test-gastgebruiker toevoegen in Azure AD
 
 1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com/).
 2. Selecteer de knop **Azure Active Directory** in het linkerdeelvenster.
-3.  Onder **Beheren** , selecteer **Gebruikers**.
+3.  Onder **Beheren**, selecteer **Gebruikers**.
 4.  Selecteer **Nieuwe gastgebruiker**.
 
     ![Schermopname die toont waar de optie Nieuwe gastgebruiker wordt geselecteerd](media/tutorial-mfa/tutorial-mfa-user-3.png)
 
-5.  Onder **Gebruikersnaam** , voer het e-mailadres van de externe gebruiker in. U kunt optioneel een welkomstbericht toevoegen. 
+5.  Onder **Gebruikersnaam**, voer het e-mailadres van de externe gebruiker in. U kunt optioneel een welkomstbericht toevoegen. 
 
     ![Schermopname die toont waar de uitnodiging voor gastgebruikers moet worden ingevoerd](media/tutorial-mfa/tutorial-mfa-user-4.png)
 
@@ -93,7 +93,7 @@ Voor het voltooien van het scenario in deze zelfstudie hebt u het volgende nodig
 
 13. Selecteer op de pagina **Cloud-apps** de optie **Gereed**.
 14. Selecteer op de pagina **Nieuw** in de sectie **Toegangscontroles** de optie **Verlenen**.
-15. Kies op de pagina **Verlenen** de optie **Toegang verlenen** , selecteer het selectievakje **Multi-factor authentication afdwingen** en kies vervolgens **Selecteren**.
+15. Kies op de pagina **Verlenen** de optie **Toegang verlenen**, selecteer het selectievakje **Multi-factor authentication afdwingen** en kies vervolgens **Selecteren**.
 
     ![Schermopname met de optie Meervoudige verificatie vereisen](media/tutorial-mfa/tutorial-mfa-policy-13.png)
 
@@ -109,7 +109,7 @@ Voor het voltooien van het scenario in deze zelfstudie hebt u het volgende nodig
 
     ![Schermopname waarin is gemarkeerd waar u de optie Wat als moet selecteren op de pagina Voorwaardelijke toegang - Beleid.](media/tutorial-mfa/tutorial-mfa-whatif-1.png)
 
-2.  Selecteer **Gebruiker** , kies uw test-gastgebruiker en kies vervolgens **Selecteren**.
+2.  Selecteer **Gebruiker**, kies uw test-gastgebruiker en kies vervolgens **Selecteren**.
 
     ![Schermopname van een geselecteerde gastgebruiker](media/tutorial-mfa/tutorial-mfa-whatif-2.png)
 
@@ -135,7 +135,7 @@ Voor het voltooien van het scenario in deze zelfstudie hebt u het volgende nodig
 Verwijder de testgebruiker en het testbeleid voor voorwaardelijke toegang als deze niet langer nodig zijn.
 1.  Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com/).
 2.  Selecteer de knop **Azure Active Directory** in het linkerdeelvenster.
-3.  Onder **Beheren** , selecteer **Gebruikers**.
+3.  Onder **Beheren**, selecteer **Gebruikers**.
 4.  Selecteer de testgebruiker en selecteer vervolgens **Gebruiker verwijderen**.
 5.  Selecteer de knop **Azure Active Directory** in het linkerdeelvenster.
 6.  Selecteer onder **Beveiliging** de optie **Voorwaardelijke toegang**.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: 7d92cbc25411f5cc2d528ccf6ecec4539494d380
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84ae5f6adfe2a02f62b5d4b1e776d8b5ac1d731b
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87533271"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95975344"
 ---
 # <a name="roles-permissions-and-security-in-azure-monitor"></a>Rollen, machtigingen en beveiliging in Azure Monitor
 
@@ -68,7 +68,7 @@ Personen aan wie de rol bewakings bijdrage is toegewezen, kunnen alle bewakings 
 > 
 
 ## <a name="monitoring-permissions-and-azure-custom-roles"></a>Bewakings machtigingen en aangepaste Azure-rollen
-Als de bovenstaande ingebouwde rollen niet voldoen aan de exacte behoeften van uw team, kunt u [een aangepaste Azure-rol maken](../../role-based-access-control/custom-roles.md) met gedetailleerde machtigingen. Hieronder vindt u de algemene Azure Monitor RBAC-bewerkingen met de bijbehorende beschrijvingen.
+Als de bovenstaande ingebouwde rollen niet voldoen aan de exacte behoeften van uw team, kunt u [een aangepaste Azure-rol maken](../../role-based-access-control/custom-roles.md) met gedetailleerde machtigingen. Hieronder vindt u de algemene Azure RBAC-bewerkingen voor Azure Monitor met hun beschrijvingen.
 
 | Bewerking | Beschrijving |
 | --- | --- |
@@ -135,7 +135,7 @@ $token = New-AzStorageAccountSASToken -ResourceType Service -Service Blob -Permi
 
 Vervolgens kunt u het token toekennen aan de entiteit die van dat opslag account moet worden gelezen en kunnen alle blobs in dat opslag account worden vermeld en gelezen.
 
-Als u deze machtiging ook wilt beheren met RBAC, kunt u die entiteit de machtiging micro soft. Storage/Storage accounts/listkeys ophalen/Action verlenen voor dat specifieke opslag account. Dit is nodig voor gebruikers die een diagnostische instelling of logboek profiel moeten kunnen instellen om te archiveren naar een opslag account. U kunt bijvoorbeeld de volgende aangepaste Azure-rol maken voor een gebruiker of toepassing die alleen uit één opslag account moet worden gelezen:
+Als u deze machtiging ook met Azure RBAC wilt beheren, kunt u die entiteit de machtiging micro soft. Storage/Storage accounts/listkeys ophalen/Action verlenen voor dat specifieke opslag account. Dit is nodig voor gebruikers die een diagnostische instelling of logboek profiel moeten kunnen instellen om te archiveren naar een opslag account. U kunt bijvoorbeeld de volgende aangepaste Azure-rol maken voor een gebruiker of toepassing die alleen uit één opslag account moet worden gelezen:
 
 ```powershell
 $role = Get-AzRoleDefinition "Reader"
@@ -159,7 +159,7 @@ New-AzRoleDefinition -Role $role
 Een vergelijkbaar patroon kan worden gevolgd door Event hubs, maar eerst moet u een toegewezen listener-autorisatie regel maken. Ga als volgt te werk als u toegang wilt verlenen tot een toepassing die alleen moet Luis teren naar controle-gerelateerde Event hubs:
 
 1. Maak een beleid voor gedeelde toegang op de Event Hub (s) die zijn gemaakt voor streaming-bewakings gegevens met alleen Luister claims. Dit kan in de portal worden uitgevoerd. U kunt bijvoorbeeld het volgende noemen: ' monitoringReadOnly '. Indien mogelijk moet u die sleutel rechtstreeks aan de consument geven en de volgende stap overs Laan.
-2. Als de consument de sleutel ad hoc moet kunnen ophalen, geeft u de gebruiker de Listkeys ophalen actie voor die Event Hub. Dit is ook nodig voor gebruikers die een diagnostische instelling of logboek profiel moeten kunnen instellen om te streamen naar Event hubs. U kunt bijvoorbeeld een RBAC-regel maken:
+2. Als de consument de sleutel ad hoc moet kunnen ophalen, geeft u de gebruiker de Listkeys ophalen actie voor die Event Hub. Dit is ook nodig voor gebruikers die een diagnostische instelling of logboek profiel moeten kunnen instellen om te streamen naar Event hubs. U kunt bijvoorbeeld een Azure RBAC-regel maken:
    
    ```powershell
    $role = Get-AzRoleDefinition "Reader"
@@ -187,6 +187,6 @@ Bewakings gegevens worden vaak naar een opslag account geschreven. U kunt er ook
 Zie [netwerk beveiliging en Azure Storage](../../storage/common/storage-network-security.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Meer informatie over RBAC en machtigingen in Resource Manager](../../role-based-access-control/overview.md)
+* [Meer informatie over Azure RBAC en machtigingen in Resource Manager](../../role-based-access-control/overview.md)
 * [Lees het overzicht van bewaking in azure](../overview.md)
 

@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8bdfb1ca21860f1dc338f85a82caf643f9f7be6d
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92678164"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95973198"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quickstart"></a>Pass-Through-verificatie Azure Active Directory: Quick Start
 
@@ -72,9 +72,9 @@ Zorg ervoor dat aan de volgende vereisten is voldaan.
      | **8080** (optioneel) | Verificatie agenten rapporteren hun status elke tien minuten via poort 8080 als poort 443 niet beschikbaar is. Deze status wordt weergegeven in de Azure AD-portal. Poort 8080 wordt _niet_ gebruikt voor gebruikers aanmeldingen. |
      
      Als met uw firewall regels worden afgedwongen op basis van de herkomst van gebruikers, opent u deze poorten voor verkeer dat afkomstig is van Windows-services die als een netwerkservice worden uitgevoerd.
-   - Als uw firewall of Proxy DNS-White List toestaat, voegt u verbindingen toe aan **\* . msappproxy.net** en **\* . servicebus.Windows.net** . Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
+   - Als uw firewall of Proxy DNS-White List toestaat, voegt u verbindingen toe aan **\* . msappproxy.net** en **\* . servicebus.Windows.net**. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
    - Uw verificatie agenten hebben toegang tot **login.Windows.net** en **login.microsoftonline.com** nodig voor de eerste registratie. Open uw firewall ook voor deze URL's.
-    - Voor validatie van het certificaat kunt u de volgende Url's blok keren: **crl3.Digicert.com:80** , **crl4.Digicert.com:80** , **ocsp.digicert.com:80** , **www \. d-trust.net:80** , **root-C3-Ca2-2009.OCSP.d-Trust.net:80** , **CRL.Microsoft.com:80** , **oneocsp.Microsoft.com:80** en **OCSP.msocsp.com:80** . Omdat deze URL's worden gebruikt voor certificaatvalidatie met andere Microsoft-producten, is het mogelijk dat u deze URL's al hebt gedeblokkeerd.
+    - Voor validatie van het certificaat kunt u de volgende Url's blok keren: **crl3.Digicert.com:80**, **crl4.Digicert.com:80**, **ocsp.digicert.com:80**, **www \. d-trust.net:80**, **root-C3-Ca2-2009.OCSP.d-Trust.net:80**, **CRL.Microsoft.com:80**, **oneocsp.Microsoft.com:80** en **OCSP.msocsp.com:80**. Omdat deze URL's worden gebruikt voor certificaatvalidatie met andere Microsoft-producten, is het mogelijk dat u deze URL's al hebt gedeblokkeerd.
 
 ### <a name="azure-government-cloud-prerequisite"></a>Azure Government Cloud vereiste
 Voordat u Pass-Through-verificatie inschakelt via Azure AD Connect met stap 2, downloadt u de meest recente versie van de PTA-agent van de Azure Portal.  U moet ervoor zorgen dat de agent versie **1.5.1742.0.** of hoger.  Zie [upgrade-verificatie agenten](how-to-connect-pta-upgrade-preview-authentication-agents.md) om uw agent te controleren
@@ -88,11 +88,11 @@ Schakel Pass-Through-verificatie in via [Azure AD Connect](whatis-hybrid-identit
 >[!IMPORTANT]
 >U kunt Pass-Through-verificatie inschakelen op de Azure AD Connect primaire of faserings server. Het wordt ten zeerste aanbevolen dat u deze functie inschakelt op de primaire server. Als u in de toekomst een Azure AD Connect staging-server instelt, **moet** u Pass-Through-verificatie blijven kiezen als aanmeldings optie. Als u een andere optie kiest, wordt Pass-Through-verificatie op de Tenant **uitgeschakeld** en wordt de instelling op de primaire server overschreven.
 
-Als u Azure AD Connect voor de eerste keer installeert, kiest u het [aangepaste installatiepad](how-to-connect-install-custom.md). Op de **aanmeldings** pagina van de gebruiker kiest u **Pass-Through-verificatie** als de **methode sign on** . Als de bewerking is voltooid, wordt een Pass-Through-verificatie agent geïnstalleerd op dezelfde server als Azure AD Connect. Daarnaast is de functie voor Pass-Through-verificatie ingeschakeld voor uw Tenant.
+Als u Azure AD Connect voor de eerste keer installeert, kiest u het [aangepaste installatiepad](how-to-connect-install-custom.md). Op de **aanmeldings** pagina van de gebruiker kiest u **Pass-Through-verificatie** als de **methode sign on**. Als de bewerking is voltooid, wordt een Pass-Through-verificatie agent geïnstalleerd op dezelfde server als Azure AD Connect. Daarnaast is de functie voor Pass-Through-verificatie ingeschakeld voor uw Tenant.
 
 ![Azure AD Connect: aanmelding van gebruiker](./media/how-to-connect-pta-quick-start/sso3.png)
 
-Als u Azure AD Connect al hebt geïnstalleerd met behulp van de [snelle installatie](how-to-connect-install-express.md) of het [aangepaste installatiepad](how-to-connect-install-custom.md) , selecteert u de taak **gebruiker aanmelden wijzigen** op Azure AD Connect en selecteert u **volgende** . Selecteer vervolgens **Pass-Through-verificatie** als de aanmeldings methode. Als de bewerking is voltooid, wordt een Pass-Through-verificatie agent geïnstalleerd op dezelfde server als Azure AD Connect en wordt de functie ingeschakeld op uw Tenant.
+Als u Azure AD Connect al hebt geïnstalleerd met behulp van de [snelle installatie](how-to-connect-install-express.md) of het [aangepaste installatiepad](how-to-connect-install-custom.md) , selecteert u de taak **gebruiker aanmelden wijzigen** op Azure AD Connect en selecteert u **volgende**. Selecteer vervolgens **Pass-Through-verificatie** als de aanmeldings methode. Als de bewerking is voltooid, wordt een Pass-Through-verificatie agent geïnstalleerd op dezelfde server als Azure AD Connect en wordt de functie ingeschakeld op uw Tenant.
 
 ![Azure AD Connect: aanmelding van gebruiker wijzigen](./media/how-to-connect-pta-quick-start/changeusersignin.png)
 
@@ -105,9 +105,9 @@ Volg deze instructies om te controleren of u Pass-Through-verificatie op de juis
 
 1. Meld u aan bij het [Azure Active Directory-beheer centrum](https://aad.portal.azure.com) met de referenties van de globale beheerder voor uw Tenant.
 2. Selecteer **Azure Active Directory** in het linkerdeel venster.
-3. Selecteer **Azure AD Connect** .
-4. Controleer of de functie **Pass-Through-verificatie** wordt weer gegeven als **ingeschakeld** .
-5. Selecteer **Pass-Through-verificatie** . In het deel venster **Pass-Through-verificatie** worden de servers weer gegeven waarop uw verificatie agenten zijn geïnstalleerd.
+3. Selecteer **Azure AD Connect**.
+4. Controleer of de functie **Pass-Through-verificatie** wordt weer gegeven als **ingeschakeld**.
+5. Selecteer **Pass-Through-verificatie**. In het deel venster **Pass-Through-verificatie** worden de servers weer gegeven waarop uw verificatie agenten zijn geïnstalleerd.
 
 ![Azure Active Directory-beheer centrum: Azure AD Connect deel venster](./media/how-to-connect-pta-quick-start/pta7.png)
 
@@ -134,7 +134,7 @@ Volg deze instructies om de verificatie-agent software te downloaden:
 
 1. Als u de meest recente versie van de verificatie agent (versie 1.5.193.0 of hoger) wilt downloaden, meldt u zich aan bij het [Azure Active Directory-beheer centrum](https://aad.portal.azure.com) met de referenties van de globale beheerder van uw Tenant.
 2. Selecteer **Azure Active Directory** in het linkerdeel venster.
-3. Selecteer **Azure AD Connect** , selecteer **Pass-Through-verificatie** en selecteer vervolgens **agent downloaden** .
+3. Selecteer **Azure AD Connect**, selecteer **Pass-Through-verificatie** en selecteer vervolgens **agent downloaden**.
 4. Selecteer de knop **voor waarden accepteren & downloaden** .
 
 ![Azure Active Directory-beheer centrum: knop Verificatie agent downloaden](./media/how-to-connect-pta-quick-start/pta9.png)
@@ -166,7 +166,7 @@ Ten tweede kunt u een script voor installatie zonder toezicht maken en uitvoeren
   ```
 
 >[!IMPORTANT]
->Als er een verificatie agent is geïnstalleerd op een virtuele machine, kunt u de virtuele machine niet klonen om een andere verificatie agent te installeren. Deze methode wordt **niet ondersteund** .
+>Als er een verificatie agent is geïnstalleerd op een virtuele machine, kunt u de virtuele machine niet klonen om een andere verificatie agent te installeren. Deze methode wordt **niet ondersteund**.
 
 ## <a name="step-5-configure-smart-lockout-capability"></a>Stap 5: slimme vergrendelings mogelijkheden configureren
 

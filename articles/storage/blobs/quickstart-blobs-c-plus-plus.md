@@ -7,12 +7,12 @@ ms.date: 10/21/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: ba5dfbaba49be0521e07b2460c9920664790bf1e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 246d2677c784daee4cc6b083cff04b6993ab3818
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378753"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006486"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-c"></a>Quickstart: Azure Blob Storage-clientbibliotheek v12 voor C++
 
@@ -30,14 +30,14 @@ Resources:
 
 - [API-referentiedocumentatie](https://azure.github.io/azure-sdk-for-cpp/storage.html)
 - [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-cpp/tree/master/sdk/storage)
-- [Voorbeelden](/azure/storage/common/storage-samples-c-plus-plus?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+- [Voorbeelden](../common/storage-samples-c-plus-plus.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
 - [Azure-abonnement](https://azure.microsoft.com/free/)
-- [Azure Storage-account](/azure/storage/common/storage-quickstart-create-account)
+- [Azure Storage-account](../common/storage-account-create.md)
 - [C++ compiler](https://azure.github.io/azure-sdk/cpp_implementation.html#supported-platforms)
 - [CMake](https://cmake.org/)
 - [Vcpkg - C en C++ pakketbeheer](https://github.com/microsoft/vcpkg/blob/master/docs/index.md)
@@ -112,7 +112,7 @@ Deze voorbeeldcodefragmenten laten zien hoe u de volgende taken kunt uitvoeren m
 
 Ga als volgt te werk vanuit de projectmap:
 
-1. Open het *BlobQuickstartV12.sln* -oplossingenbestand in Visual Studio
+1. Open het *BlobQuickstartV12.sln*-oplossingenbestand in Visual Studio
 1. Open in Visual Studio het bronbestand *BlobQuickstartV12.cpp*
 1. Alle code in `main` verwijderen die automatisch is gegenereerd
 1. Voeg `#include`-instructies toe

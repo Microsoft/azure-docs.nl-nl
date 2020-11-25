@@ -7,12 +7,12 @@ ms.date: 11/14/2018
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 8c24c5f043d17b5f0e54ca1c2c6cf41a0d3fe9bc
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0bde1b7be15d49d82818f26d07c2ec633dc4526c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "68726354"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95523260"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-ruby"></a>Snelstart: blobs downloaden, uploaden en vermelden met behulp van Ruby
 
@@ -25,7 +25,7 @@ In deze snelstartgids leert u hoe u Ruby kunt gebruiken om blok-bobs te uploaden
 Zorg dat u de volgende aanvullende vereisten hebt geïnstalleerd:
 
 * [Ruby](https://www.ruby-lang.org/en/downloads/)
-* [Azure Storage-bibliotheek voor Ruby](https://docs.microsoft.com/azure/storage/blobs/storage-ruby-how-to-use-blob-storage) met het rubygem-pakket: 
+* [Azure Storage-bibliotheek voor Ruby]() met het rubygem-pakket: 
 
     ```
     gem install azure-storage-blob
@@ -90,7 +90,7 @@ Als eerste moeten verwijzingen worden gemaakt naar objecten die worden gebruikt 
 Wanneer u de Cloud Blob-container hebt, kunt u het blob-object **Block** maken dat verwijst naar de specifieke blob waarin u geïnteresseerd bent, en kunt u bewerkingen uitvoeren zoals uploaden, downloaden en kopiëren.
 
 > [!IMPORTANT]
-> Containernamen moeten uit kleine letters bestaan. Zie [Naming and referencing containers, blobs, and metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Containers, blobs en metagegevens een naam geven en hiernaar verwijzen) voor meer informatie over namen voor blobs en containers.
+> Containernamen moeten uit kleine letters bestaan. Zie [Naming and referencing containers, blobs, and metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Containers, blobs en metagegevens een naam geven en hiernaar verwijzen) voor meer informatie over namen voor blobs en containers.
 
 In dit gedeelte gaat u een exemplaar maken van de Azure-opslagclient, een exemplaar maken van het blob-serviceobject, een nieuwe container maken en vervolgens machtigingen instellen voor de container, zodat de blobs openbaar zijn. De container heeft de naam **quickstartblobs**. 
 
@@ -113,7 +113,7 @@ blob_client.set_container_acl(container_name, "container")
 
 Blob-opslag ondersteunt blok-blobs, toevoeg-blobs en pagina-blobs. Omdat blok-blobs het meest worden gebruikt, worden ze in deze Quick Start gebruikt.  
 
-Als u een bestand naar een blob wilt uploaden, hebt u het volledige pad van het bestand nodig dat u vindt door de naam van de map en de bestandsnaam op uw lokale schijf samen te voegen. Vervolgens kunt u het bestand uploaden naar het opgegeven pad met behulp van de methode**create\_block\_blob()** . 
+Als u een bestand naar een blob wilt uploaden, hebt u het volledige pad van het bestand nodig dat u vindt door de naam van de map en de bestandsnaam op uw lokale schijf samen te voegen. Vervolgens kunt u het bestand uploaden naar het opgegeven pad met behulp van de methode **create\_block\_blob()** . 
 
 Met de voorbeeldcode wordt een lokaal bestand gemaakt voor het uploaden en downloaden, waarmee het bestand dat moet worden geüpload als **file\_path\_to\_file** en de naam van de blob als **local\_file\_name** wordt opgeslagen. In het volgende voorbeeld wordt het bestand geüpload naar de container met de naam **quickstartblobs**.
 
@@ -189,7 +189,7 @@ Zie de volgende aanvullende resources voor Ruby-ontwikkeling met Blob-opslag:
 In deze snelstartgids hebt u geleerd hoe u bestanden overbrengt tussen een lokale schijf en Azure Blob-opslag met behulp van Ruby. Voor meer informatie over het werken met Blob-opslag, gaat u naar de instructies voor Blob-opslag.
 
 > [!div class="nextstepaction"]
-> [Instructies voor bewerkingen in Blob-opslag](./storage-ruby-how-to-use-blob-storage.md)
+> [Instructies voor bewerkingen in Blob-opslag]()
 
 
 Zie [Azure Blob-opslagresources beheren met Storage Explorer](../../vs-azure-tools-storage-explorer-blobs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) voor meer informatie over Storage Explorer en blobs.

@@ -5,12 +5,12 @@ author: spelluru
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 9085ccd272c6634e4be518872cb7e279da6b803c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 749ba3d2947dfd7defdf2549305f2a61c16ba713
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425403"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95803292"
 ---
 # <a name="use-the-azure-portal-to-create-a-service-bus-topic-and-subscriptions-to-the-topic"></a>De Azure-portal gebruiken om een Service Bus-onderwerp en abonnementen te maken voor het onderwerp
 In deze quickstart gebruikt u de Azure-portal om een Service Bus-onderwerp te maken en vervolgens abonnementen op dat onderwerp te maken. 
@@ -36,7 +36,7 @@ In dit artikel hebt u een Service Bus-naamruimte, een onderwerp in de naamruimte
 
 - [.NET](service-bus-dotnet-how-to-use-topics-subscriptions.md)
 - [Java](service-bus-java-how-to-use-topics-subscriptions.md)
-- [JavaScript](service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md)
+- [JavaScript](service-bus-nodejs-how-to-use-topics-subscriptions.md)
 - [Python](service-bus-python-how-to-use-topics-subscriptions.md)
 - [PHP](service-bus-php-how-to-use-topics-subscriptions.md)
 - [Ruby](service-bus-ruby-how-to-use-topics-subscriptions.md)

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/05/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: cb4cac18f887a72c05fe520d6103dc00399cc05e
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.openlocfilehash: 09b120838c27f8fa6b4f7bdf8617ce806f740e3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91829055"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007292"
 ---
 Azure Blob Storage is Microsoft's oplossing voor de opslag van objecten in de cloud. Blob Storage is geoptimaliseerd voor het opslaan van enorme hoeveelheden niet-structureerde gegevens. Ongestructureerde gegevens zijn gegevens die niet voldoen aan een bepaald gegevensmodel of bepaalde definitie, zoals tekst of binaire gegevens.
 
@@ -28,12 +28,12 @@ BLOB Storage is ontworpen voor:
 * De opslag van gegevens voor back-up en herstel, herstel na noodgevallen en archivering.
 * De opslag van gegevens voor analyse door een on-premises of in Azure gehoste service.
 
-Gebruikers of clienttoepassingen hebben, overal ter wereld, toegang tot objecten in Blob Storage via HTTP/HTTPS. Objecten in Blob Storage zijn toegankelijk via de [REST-API van Azure Storage](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.storage), [Azure CLI](https://docs.microsoft.com/cli/azure/storage) of een Azure Storage-clientbibliotheek. Clientbibliotheken zijn beschikbaar voor verschillende talen, waaronder:
+Gebruikers of clienttoepassingen hebben, overal ter wereld, toegang tot objecten in Blob Storage via HTTP/HTTPS. Objecten in Blob Storage zijn toegankelijk via de [REST-API van Azure Storage](/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](/powershell/module/az.storage), [Azure CLI](/cli/azure/storage) of een Azure Storage-clientbibliotheek. Clientbibliotheken zijn beschikbaar voor verschillende talen, waaronder:
 
 * [.NET](/dotnet/api/overview/azure/storage?view=azure-dotnet)
-* [Java](https://docs.microsoft.com/java/api/overview/azure/storage)
+* [Java](/java/api/overview/azure/storage)
 * [Node.js](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage)
-* [Python](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-python)
+* [Python](../articles/storage/blobs/storage-quickstart-blobs-python.md)
 * [Go](https://github.com/azure/azure-storage-blob-go/)
 * [PHP](https://azure.github.io/azure-storage-php/)
 * [Ruby](https://azure.github.io/azure-storage-ruby)
@@ -47,4 +47,4 @@ Blob Storage ondersteunt Azure Data Lake Storage Gen2, de zakelijke oplossing va
 * Hoge consistentie
 * Mogelijkheden voor herstel na noodgevallen
 
-Raadpleeg [Inleiding tot Azure Data Lake Storage Gen2](../articles/storage/data-lake-storage/introduction.md) voor meer informatie over Data Lake Storage Gen2.
+Raadpleeg [Inleiding tot Azure Data Lake Storage Gen2](../articles/storage/blobs/data-lake-storage-introduction.md) voor meer informatie over Data Lake Storage Gen2.

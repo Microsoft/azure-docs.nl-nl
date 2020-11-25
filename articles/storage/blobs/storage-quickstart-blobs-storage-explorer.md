@@ -9,12 +9,12 @@ ms.subservice: blobs
 ms.topic: quickstart
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: f920a937f4b9b51f9babd03ed0fb42dd3c7775d8
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 2477107105b6dbcab96db8d44ac982554dc0c48d
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217786"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95543167"
 ---
 # <a name="quickstart-use-azure-storage-explorer-to-create-a-blob"></a>Quickstart: Azure Storage Explorer gebruiken om een blob te maken
 
@@ -40,7 +40,7 @@ Selecteer **Een Azure-account toevoegen** en klik op **Aanmelden...** . Volg de 
 
 ![Schermopname van Microsoft Azure Storage Explorer - venster Verbinding maken.](media/storage-quickstart-blobs-storage-explorer/connect.png)
 
-Wanneer de verbinding tot stand is gebracht, wordt Azure Storage Explorer geladen en ziet u het tabblad **Explorer** . Deze weergave biedt u inzicht in al uw Azure Storage-accounts, evenals lokale opslag die is geconfigureerd via de [Azure-opslagemulator](../common/storage-use-azurite.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Cosmos DB](../../cosmos-db/storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)-accounts of [Azure Stack](/azure-stack/user/azure-stack-storage-connect-se?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)-omgevingen.
+Wanneer de verbinding tot stand is gebracht, wordt Azure Storage Explorer geladen en ziet u het tabblad **Explorer**. Deze weergave biedt u inzicht in al uw Azure Storage-accounts, evenals lokale opslag die is geconfigureerd via de [Azure-opslagemulator](../common/storage-use-azurite.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Cosmos DB](../../cosmos-db/storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)-accounts of [Azure Stack](/azure-stack/user/azure-stack-storage-connect-se?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)-omgevingen.
 
 ![Het venster Microsoft Azure Storage Explorer - Verbinding maken](media/storage-quickstart-blobs-storage-explorer/mainpage.png)
 
@@ -48,15 +48,15 @@ Wanneer de verbinding tot stand is gebracht, wordt Azure Storage Explorer gelade
 
 Blobs worden altijd naar een container geüpload. Hierdoor kunt u groepen blobs ordenen net zoals u bestanden in mappen op de computer ordent.
 
-Breid het opslagaccount uit dat u hebt gemaakt in de vorige stap, om een container te maken. Selecteer **Blobcontainers** , klik met de rechtermuisknop en selecteer **Blobcontainer maken** . Voer een naam in voor de blobcontainer. Raadpleeg de sectie [Een container maken](storage-quickstart-blobs-dotnet.md#create-a-container) voor een lijst met regels en beperkingen voor namen van blobcontainers. Als u klaar bent, drukt u op **Enter** om de blobcontainer te maken. Als de blobcontainer is gemaakt, wordt deze weergegeven in de map **Blobcontainers** voor het geselecteerde opslagaccount.
+Breid het opslagaccount uit dat u hebt gemaakt in de vorige stap, om een container te maken. Selecteer **Blobcontainers**, klik met de rechtermuisknop en selecteer **Blobcontainer maken**. Voer een naam in voor de blobcontainer. Raadpleeg de sectie [Een container maken](storage-quickstart-blobs-dotnet.md#create-a-container) voor een lijst met regels en beperkingen voor namen van blobcontainers. Als u klaar bent, drukt u op **Enter** om de blobcontainer te maken. Als de blobcontainer is gemaakt, wordt deze weergegeven in de map **Blobcontainers** voor het geselecteerde opslagaccount.
 
 ## <a name="upload-blobs-to-the-container"></a>Blobs uploaden naar de container
 
 Blob-opslag ondersteunt blok-blobs, toevoeg-blobs en pagina-blobs. VHD-bestanden die worden gebruikt voor IaaS-VM's zijn pagina-blobs. Toevoeg-blobs worden gebruikt voor logboekregistratie, bijvoorbeeld wanneer u wilt schrijven naar een bestand en vervolgens meer gegevens wilt blijven toevoegen. De meeste bestanden die zijn opgeslagen in Blob-opslag, zijn blok-blobs.
 
-Selecteer op het containerlint de optie **Uploaden** . Met deze bewerking kunt u een map of bestand uploaden.
+Selecteer op het containerlint de optie **Uploaden**. Met deze bewerking kunt u een map of bestand uploaden.
 
-Kies de bestanden of map die u wilt uploaden. Selecteer het **blobtype** . Acceptabele keuzes zijn **Toevoeg-blob** , **Pagina-blob** of **Blok-blob** .
+Kies de bestanden of map die u wilt uploaden. Selecteer het **blobtype**. Acceptabele keuzes zijn **Toevoeg-blob**, **Pagina-blob** of **Blok-blob**.
 
 Als u een VHD- of VHDX-bestand uploadt, kiest u **VHD-/VHDX-bestanden uploaden als pagina-blobs (aanbevolen)** .
 
@@ -64,7 +64,7 @@ Selecteer in het veld **Uploaden naar map (optioneel)** de naam van een map om d
 
 ![Microsoft Azure Storage Explorer - een blob uploaden](media/storage-quickstart-blobs-storage-explorer/uploadblob.png)
 
-Wanneer u **OK** selecteert, worden de geselecteerde bestanden in een wachtrij geplaatst om te worden geüpload. Elk bestand wordt geüpload. Wanneer het uploaden is voltooid, worden de resultaten weergegeven in het venster **Activiteiten** .
+Wanneer u **OK** selecteert, worden de geselecteerde bestanden in een wachtrij geplaatst om te worden geüpload. Elk bestand wordt geüpload. Wanneer het uploaden is voltooid, worden de resultaten weergegeven in het venster **Activiteiten**.
 
 ## <a name="view-blobs-in-a-container"></a>Blobs in een container weergeven
 
@@ -74,11 +74,11 @@ Selecteer in de toepassing **Azure Storage Explorer** een container in een opsla
 
 ## <a name="download-blobs"></a>Blobs downloaden
 
-Als u blobs wilt downloaden met behulp van **Azure Storage Explorer** , selecteert u een blob en selecteert u vervolgens **Downloaden** op het lint. Er wordt een dialoogvenster geopend waarin u een bestandsnaam kunt invoeren. Selecteer **Opslaan** om het downloaden van een blob naar de lokale locatie te starten.
+Als u blobs wilt downloaden met behulp van **Azure Storage Explorer**, selecteert u een blob en selecteert u vervolgens **Downloaden** op het lint. Er wordt een dialoogvenster geopend waarin u een bestandsnaam kunt invoeren. Selecteer **Opslaan** om het downloaden van een blob naar de lokale locatie te starten.
 
 ## <a name="manage-snapshots"></a>Momentopnamen beheren
 
-Azure Storage Explorer biedt de mogelijkheid om [momentopnamen](storage-blob-snapshots.md) van blobs te maken en te beheren. Als u een momentopname van een blob wilt maken, klikt u met de rechtermuisknop op de blob en selecteert u **Momentopname maken** . Als u een momentopnamen van een blob wilt bekijken, klikt u met de rechtermuisknop op de blob en selecteert u **Momentopname beheren** . Op het huidige tabblad wordt een lijst weergegeven met de momentopnamen voor de blob.
+Azure Storage Explorer biedt de mogelijkheid om [momentopnamen](./snapshots-overview.md) van blobs te maken en te beheren. Als u een momentopname van een blob wilt maken, klikt u met de rechtermuisknop op de blob en selecteert u **Momentopname maken**. Als u een momentopnamen van een blob wilt bekijken, klikt u met de rechtermuisknop op de blob en selecteert u **Momentopname beheren**. Op het huidige tabblad wordt een lijst weergegeven met de momentopnamen voor de blob.
 
 ![Schermopname van een lijst met blobs in Microsoft Azure Storage Explorer.](media/storage-quickstart-blobs-storage-explorer/snapshots.png)
 
@@ -90,13 +90,13 @@ Selecteer **Toevoegen** om nieuw toegangsbeleid toe te voegen en de machtigingen
 
 ## <a name="work-with-shared-access-signatures"></a>Werken met handtekeningen voor gedeelde toegang
 
-Handtekeningen voor gedeelde toegang (Shared Access Signatures) kunnen worden opgehaald via Storage Explorer. Klik met de rechtermuisknop op een opslagaccount, container of blob, en kies **Shared Access Signature ophalen...** . Kies de begin- en verlooptijd, en de machtigingen voor de SAS-URL en selecteer **Maken** . De volledige URL met de querytekenreeks, alsook de querytekenreeks zelf, worden geleverd en kunnen worden gekopieerd in het volgende scherm.
+Handtekeningen voor gedeelde toegang (Shared Access Signatures) kunnen worden opgehaald via Storage Explorer. Klik met de rechtermuisknop op een opslagaccount, container of blob, en kies **Shared Access Signature ophalen...** . Kies de begin- en verlooptijd, en de machtigingen voor de SAS-URL en selecteer **Maken**. De volledige URL met de querytekenreeks, alsook de querytekenreeks zelf, worden geleverd en kunnen worden gekopieerd in het volgende scherm.
 
 ![Microsoft Azure Storage Explorer - lijst met blobs in een container](media/storage-quickstart-blobs-storage-explorer/sharedaccesssignature.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze snelstartgids hebt u geleerd hoe u bestanden overdraagt tussen een lokale schijf en Azure Blob-opslag met behulp van **Azure Storage Explorer** . Voor meer informatie over het werken met Blob-opslag, gaat u naar de instructies voor Blob-opslag.
+In deze snelstartgids hebt u geleerd hoe u bestanden overdraagt tussen een lokale schijf en Azure Blob-opslag met behulp van **Azure Storage Explorer**. Voor meer informatie over het werken met Blob-opslag, gaat u naar de instructies voor Blob-opslag.
 
 > [!div class="nextstepaction"]
-> [Instructies voor bewerkingen in Blob-opslag](storage-how-to-use-blobs-powershell.md)
+> [Instructies voor bewerkingen in Blob-opslag](./storage-quickstart-blobs-powershell.md)

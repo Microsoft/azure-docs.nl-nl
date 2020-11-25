@@ -1,13 +1,12 @@
 ---
-ms.openlocfilehash: 475a468977a976e2e7399c14df9329b31446d404
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: c400856546142353a7294a03fce6bbff1c258cc0
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93134968"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95554184"
 ---
-
-In Azure Active Directory (Azure AD) verwijst de term **app-inrichting** naar het automatisch maken van gebruikersidentiteiten en -rollen in de cloud-toepassingen ( [SaaS](https://azure.microsoft.com/overview/what-is-saas/)) waartoe gebruikers toegang nodig hebben. Naast het maken van gebruikersidentiteiten omvat automatische inrichting het onderhoud en de verwijdering van gebruikersidentiteiten zoals gewijzigde status of rollen. Veelvoorkomende scenario's zijn onder andere het inrichten van een Azure AD-gebruiker in toepassingen als [Dropbox](../articles/active-directory/saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Sales Force](../articles/active-directory/saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../articles/active-directory/saas-apps/servicenow-provisioning-tutorial.md) en meer.
+In Azure Active Directory (Azure AD) verwijst de term **app-inrichting** naar het automatisch maken van gebruikersidentiteiten en -rollen in de cloud-toepassingen ([SaaS](https://azure.microsoft.com/overview/what-is-saas/)) waartoe gebruikers toegang nodig hebben. Naast het maken van gebruikersidentiteiten omvat automatische inrichting het onderhoud en de verwijdering van gebruikersidentiteiten zoals gewijzigde status of rollen. Veelvoorkomende scenario's zijn onder andere het inrichten van een Azure AD-gebruiker in toepassingen als [Dropbox](../articles/active-directory/saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Sales Force](../articles/active-directory/saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../articles/active-directory/saas-apps/servicenow-provisioning-tutorial.md) en meer.
 
 ![Overzichtsdiagram van inrichting](./media/active-directory-app-provisioning/provisioning-overview.png)
 
@@ -46,7 +45,7 @@ Azure AD bevat vooraf geïntegreerde ondersteuning voor veel populaire SaaS-toep
 
    ![Logo van Salesforce](./media/active-directory-app-provisioning/gallery-app-logos.png)
 
-   Als u een nieuwe toepassing wilt aanvragen voor inrichting, kunt u [een aanvraag indienen voor integratie van uw app met onze app-galerie](../articles/active-directory/azuread-dev/howto-app-gallery-listing.md). Voor een aanvraag voor gebruikersinrichting moet de toepassing een SCIM-compatibel eindpunt hebben. Vraag de leverancier van de toepassing de SCIM-standaard te volgen zodat de app snel kan worden geïmplementeerd op ons platform.
+   Als u een nieuwe toepassing wilt aanvragen voor inrichting, kunt u [een aanvraag indienen voor integratie van uw app met onze app-galerie](../articles/active-directory/develop/v2-howto-app-gallery-listing.md). Voor een aanvraag voor gebruikersinrichting moet de toepassing een SCIM-compatibel eindpunt hebben. Vraag de leverancier van de toepassing de SCIM-standaard te volgen zodat de app snel kan worden geïmplementeerd op ons platform.
 
 * **Toepassingen die ondersteuning bieden voor SCIM 2.0**. Zie [Een SCIM-eindpunt bouwen en gebruikersinrichting configureren](../articles/active-directory/app-provisioning/use-scim-to-provision-users-and-groups.md) voor meer informatie over het algemeen verbinden van toepassingen die gebruikmaken van SCIM 2.0-API’s voor gebruikersbeheer.
 
@@ -66,7 +65,7 @@ Toepassingen in de Azure AD-galerie ondersteunen een van de twee inrichtingsmodi
 
 * **Automatisch** houdt in dat er al een Azure AD-inrichtingsconnector is ontwikkeld voor deze toepassing. U moet de zelfstudie voor installatie volgen om het inrichten voor de toepassing in te stellen. App-zelfstudies vindt u in de [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](../articles/active-directory/saas-apps/tutorial-list.md).
 
-In de Azure AD-galerie worden toepassingen die ondersteuning bieden voor automatische inrichting aangeduid met een **Inrichting** -pictogram. Schakel over naar de nieuwe preview-ervaring van de galerie om deze pictogrammen weer te geven (in de banner bovenaan de pagina **Een toepassingspagina toevoegen** selecteert u de koppeling met **Klik hier om de nieuwe en verbeterde app-galerie uit te proberen** ).
+In de Azure AD-galerie worden toepassingen die ondersteuning bieden voor automatische inrichting aangeduid met een **Inrichting**-pictogram. Schakel over naar de nieuwe preview-ervaring van de galerie om deze pictogrammen weer te geven (in de banner bovenaan de pagina **Een toepassingspagina toevoegen** selecteert u de koppeling met **Klik hier om de nieuwe en verbeterde app-galerie uit te proberen**).
 
 ![Inrichting-pictogram in de toepassingsgalerie](./media/active-directory-app-provisioning/browse-gallery.png)
 

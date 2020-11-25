@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: overview
 ms.date: 09/09/2020
 ms.author: raynew
-ms.openlocfilehash: 4d520f51717aa11dba55697d63852b17e0ba9cf0
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: 5261904dd1ee7f280209015d8f756a055dfab57e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90604492"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522938"
 ---
 # <a name="about-the-move-process"></a>Over het verplaatsingsproces
 
@@ -25,8 +25,8 @@ Deze onderdelen worden gebruikt tijdens het verplaatsen tussen regio's.
 
 **Onderdeel** | **Details**
 --- | ---
-**Resource Mover** |  Resource Mover wordt met [Azure-resourceproviders](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types) gecoördineerd om de verplaatsing van resources tussen regio's te organiseren. Resource Mover analyseert bronafhankelijkheden en onderhoudt en beheert de status van resources tijdens het verplaatsingsproces. 
-**Verplaatsingsverzameling** |  Een verplaatsingsverzameling is een object van [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview).<br/><br/> De verplaatsingsverzameling wordt voor elke gekoppelde combinatie van bron- en doelregio's in een abonnement gemaakt tijdens het verplaatsingsproces tussen regio's. De verzameling bevat metagegevens en configuratie-informatie over de resources die u wilt verplaatsen.<br/><br/>Resources die zijn toegevoegd aan een verplaatsingsverzameling moeten zich in hetzelfde abonnement bevinden, maar kunnen zich in verschillende resourcegroepen bevindt. 
+**Resource Mover** |  Resource Mover wordt met [Azure-resourceproviders](../azure-resource-manager/management/resource-providers-and-types.md) gecoördineerd om de verplaatsing van resources tussen regio's te organiseren. Resource Mover analyseert bronafhankelijkheden en onderhoudt en beheert de status van resources tijdens het verplaatsingsproces. 
+**Verplaatsingsverzameling** |  Een verplaatsingsverzameling is een object van [Azure Resource Manager](../azure-resource-manager/management/overview.md).<br/><br/> De verplaatsingsverzameling wordt voor elke gekoppelde combinatie van bron- en doelregio's in een abonnement gemaakt tijdens het verplaatsingsproces tussen regio's. De verzameling bevat metagegevens en configuratie-informatie over de resources die u wilt verplaatsen.<br/><br/>Resources die zijn toegevoegd aan een verplaatsingsverzameling moeten zich in hetzelfde abonnement bevinden, maar kunnen zich in verschillende resourcegroepen bevindt. 
 **Verplaatsingsresource** | Wanneer u een resource aan een verzameling toevoegt, wordt de resource door Resource Mover als een verplaatsingsresource getraceerd.<br/><br/> Resource Mover houdt informatie bij over alle verplaatsingsresources in de verplaatsingsverzameling en onderhoudt een een-op-een-relatie tussen de bron- en de doelresource. 
 **Afhankelijkheden** | Resources die u aan een verzameling toevoegt, worden gevalideerd en er wordt gecontroleerd of resources afhankelijkheden hebben die zich niet in de verplaatsingsverzameling bevinden.<br/><br/> Na het identificeren van afhankelijkheden voor een resource, kunt u deze afhankelijkheden toevoegen aan de verplaatsingsverzameling en ze ook verplaatsen, of u kunt alternatieve, bestaande resources in de doelregio selecteren. Alle afhankelijkheden moeten worden opgelost voordat u met de verplaatsing begint. 
 

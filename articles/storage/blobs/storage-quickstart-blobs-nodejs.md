@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 54bf6265a5b440e5c450d21b192acc2f7024f938
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: ed3a88dbca1788a5c5a265fe91bdd5e88ae1fe36
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91307531"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012762"
 ---
 # <a name="quickstart-manage-blobs-with-javascript-v12-sdk-in-nodejs"></a>Quickstart: Blobs beheren met JavaScript v12 SDK in Node.js
 
@@ -24,7 +24,7 @@ Aanvullende bronnen:
 * [API-referentiedocumentatie](/javascript/api/@azure/storage-blob)
 * [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob)
 * [Pakket (Node Package Manager)](https://www.npmjs.com/package/@azure/storage-blob)
-* [Voorbeelden](https://docs.microsoft.com/azure/storage/common/storage-samples-javascript?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
+* [Voorbeelden](../common/storage-samples-javascript.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -314,6 +314,6 @@ Voor zelfstudies, voorbeelden, quickstarts en andere documentatie gaat u naar:
 > [!div class="nextstepaction"]
 > [Azure voor Java script-ontwikkelaarscentrum](/azure/developer/javascript/)
 
-* Voor meer informatie over het implementeren van een webapp die Azure Blob-opslag gebruikt, zie [Zelfstudie: Afbeeldingsgegevens uploaden in de cloud met Azure Storage](/azure/storage/blobs/storage-upload-process-images?tabs=javascript&preserve-view=true)
+* Voor meer informatie over het implementeren van een webapp die Azure Blob-opslag gebruikt, zie [Zelfstudie: Afbeeldingsgegevens uploaden in de cloud met Azure Storage](./storage-upload-process-images.md?preserve-view=true&tabs=javascript)
 * Als u voorbeeld-apps voor blob-opslag wilt zien, gaat u verder met [Voorbeelden van Azure Blob-opslag-clientbibliotheek v12 JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples).
 * Zie de [Azure Blob-opslag-clientbibliotheek voor JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob)voor meer informatie.

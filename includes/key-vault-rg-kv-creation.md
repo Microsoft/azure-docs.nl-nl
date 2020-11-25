@@ -4,14 +4,14 @@ ms.service: key-vault
 ms.topic: include
 ms.date: 07/20/2020
 ms.author: msmbaldwin
-ms.openlocfilehash: 2917854da679816796a7f7748c3877c062995168
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ccb69b4f0dc6090cc96849b09f7830c05aa77b73
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87512793"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027034"
 ---
-In deze quickstart wordt gebruikgemaakt van een vooraf gemaakte Azure-sleutelkluis. U kunt een sleutelkluis maken met behulp van de stappen in de [quickstart voor Azure CLI](/azure/key-vault/general/quick-create-cli), de [quickstart voor Azure PowerShell](/azure/key-vault/general/quick-create-powershell) of de [quickstart voor de Azure-portal](/azure/key-vault/general/quick-create-portal). 
+In deze quickstart wordt gebruikgemaakt van een vooraf gemaakte Azure-sleutelkluis. U kunt een sleutelkluis maken met behulp van de stappen in de [quickstart voor Azure CLI](../articles/key-vault/general/quick-create-cli.md), de [quickstart voor Azure PowerShell](../articles/key-vault/general/quick-create-powershell.md) of de [quickstart voor de Azure-portal](../articles/key-vault/general/quick-create-portal.md). 
 
 U kunt ook de onderstaande Azure CLI- of Azure PowerShell-opdrachten uitvoeren.
 

@@ -9,11 +9,11 @@ ms.topic: include
 ms.custom: include file
 ms.date: 06/27/2019
 ms.openlocfilehash: a979cd0a4c2ee6466edebadf61e8a98b8f17c9f3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86544806"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013350"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -39,7 +39,7 @@ Raadpleeg voor meer informatie de volgende artikelen:
 
 ### <a name="azure-storage-account"></a>Azure Storage-account
 
-In deze Snelstart gaat u een algemeen Azure Storage-account (en dan met name voor Blob Storage) gebruiken als zowel *bron-* als *doel*gegevensarchieven. Raadpleeg het artikel [Een opslagaccount maken](../articles/storage/common/storage-account-create.md) als u geen Azure Storage-account hebt voor algemene doeleinden en er een wilt maken. 
+In deze Snelstart gaat u een algemeen Azure Storage-account (en dan met name voor Blob Storage) gebruiken als zowel *bron-* als *doel* gegevensarchieven. Raadpleeg het artikel [Een opslagaccount maken](../articles/storage/common/storage-account-create.md) als u geen Azure Storage-account hebt voor algemene doeleinden en er een wilt maken. 
 
 #### <a name="get-the-storage-account-name"></a>De naam van het opslagaccount ophalen
 

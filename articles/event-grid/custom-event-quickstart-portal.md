@@ -4,11 +4,11 @@ description: 'Quickstart: Gebruik Azure Event Grid en Azure Portal om een aangep
 ms.date: 07/07/2020
 ms.topic: quickstart
 ms.openlocfilehash: 592e2d6b7393da8cb55a457b022d6c2358048cfe
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87421039"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013663"
 ---
 # <a name="quickstart-route-custom-events-to-web-endpoint-with-the-azure-portal-and-event-grid"></a>Quickstart: Aangepaste gebeurtenissen routeren naar het webeindpunt met behulp van Azure Portal en Event Grid
 
@@ -29,7 +29,7 @@ Een Event Grid-onderwerp biedt een door de gebruiker gedefinieerd eindpunt waaro
     :::image type="content" source="./media/custom-event-quickstart-portal/select-event-grid-topics.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
 3. Selecteer op de pagina **Event Grid-onderwerpen** de optie **+ Toevoegen** op de werkbalk. 
 
-    :::image type="content" source="./media/custom-event-quickstart-portal/add-event-grid-topic-button.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+    :::image type="content" source="./media/custom-event-quickstart-portal/add-event-grid-topic-button.png" alt-text="De knop Event Grid-onderwerp toevoegen":::
 4. Voer de volgende stappen uit op de pagina **Onderwerp maken**:
     1. Selecteer uw Azure-**abonnement**.
     2. Selecteer een bestaande resourcegroep of selecteer **Nieuwe maken** en geef een **naam** op voor de **resourcegroep**.
@@ -37,18 +37,18 @@ Een Event Grid-onderwerp biedt een door de gebruiker gedefinieerd eindpunt waaro
     4. Selecteer een **locatie** voor het Event Grid-onderwerp.
     5. Selecteer **Controleren en maken** onderaan de pagina. 
 
-        :::image type="content" source="./media/custom-event-quickstart-portal/create-custom-topic.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+        :::image type="content" source="./media/custom-event-quickstart-portal/create-custom-topic.png" alt-text="De pagina Onderwerp maken":::
     6. Selecteer de optie **Maken** op het tabblad **Beoordelen en maken** van de pagina **Onderwerp maken**. 
     
-        :::image type="content" source="./media/custom-event-quickstart-portal/review-create-page.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+        :::image type="content" source="./media/custom-event-quickstart-portal/review-create-page.png" alt-text="Instellingen controleren en maken":::
 5. Typ na het voltooien van de implementatie **Event Grid-onderwerpen** in de zoekbalk en selecteer **Event Grid-onderwerpen** in de vervolgkeuzelijst zoals u dat eerder hebt gedaan. 
 6. Selecteer in de lijst het onderwerp dat u hebt gemaakt. 
 
-    :::image type="content" source="./media/custom-event-quickstart-portal/select-event-grid-topic.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+    :::image type="content" source="./media/custom-event-quickstart-portal/select-event-grid-topic.png" alt-text="Selecteer uw onderwerp in de lijst":::
 
 7. U ziet de pagina **Event Grid-onderwerp** voor uw onderwerp. Laat deze pagina geopend. U gebruikt deze later in de quickstart. 
 
-    :::image type="content" source="./media/custom-event-quickstart-portal/event-grid-topic-home-page.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+    :::image type="content" source="./media/custom-event-quickstart-portal/event-grid-topic-home-page.png" alt-text="Startpagina van Event Grid-onderwerp":::
 
 ## <a name="create-a-message-endpoint"></a>Het eindpunt van een bericht maken
 Voordat u een abonnement voor het aangepaste onderwerp maakt, moet u een eindpunt voor het gebeurtenisbericht maken. Het eindpunt onderneemt normaal gesproken actie op basis van de gebeurtenisgegevens. Ter vereenvoudiging van deze snelstart gaat u een [vooraf gebouwde web-app](https://github.com/Azure-Samples/azure-event-grid-viewer) implementeren waarmee de gebeurtenisberichten worden weergegeven. De geïmplementeerde oplossing omvat een App Service-plan, een App Service-web-app en broncode van GitHub.
@@ -69,16 +69,16 @@ U abonneert u op een Event Grid-onderwerp om Event Grid te laten weten welke geb
 
 1. Selecteer op de pagina **Event Grid-onderwerp** voor uw aangepaste onderwerp **+ Gebeurtenisabonnement** op de werkbalk.
 
-    :::image type="content" source="./media/custom-event-quickstart-portal/new-event-subscription.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+    :::image type="content" source="./media/custom-event-quickstart-portal/new-event-subscription.png" alt-text="Knop voor het toevoegen van een gebeurtenisabonnement":::
 2. Voer op de pagina **Gebeurtenisabonnement maken** de volgende stappen uit:
     1. Voer een **naam** in voor het gebeurtenisabonnement.
     3. Selecteer **Webhook** voor het **eindpunttype**. 
     4. Kies **Een eindpunt selecteren**. 
 
-        :::image type="content" source="./media/custom-event-quickstart-portal/provide-subscription-values.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+        :::image type="content" source="./media/custom-event-quickstart-portal/provide-subscription-values.png" alt-text="Waarden opgeven voor gebeurtenisabonnement":::
     5. Voor het webhookeindpunt geeft u de URL van uw web-app op en voegt u `api/updates` toe aan de URL van de startpagina. Selecteer **Confirm Selection** (Selectie bevestigen).
 
-        :::image type="content" source="./media/custom-event-quickstart-portal/provide-endpoint.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+        :::image type="content" source="./media/custom-event-quickstart-portal/provide-endpoint.png" alt-text="Eindpunt-URL opgeven":::
     6. Selecteer **Maken** als u terug bent op de pagina **Gebeurtenisabonnement maken**.
 
 3. Bekijk opnieuw uw web-app en u zult zien dat er een validatiegebeurtenis voor een abonnement naartoe is verzonden. Selecteer het oogpictogram om de gebeurtenisgegevens uit te breiden. Via Event Grid wordt de validatiegebeurtenis verzonden zodat het eindpunt kan controleren of de gebeurtenisgegevens in aanmerking komen om ontvangen te worden. De web-app bevat code waarmee het abonnement kan worden gevalideerd.
@@ -95,7 +95,7 @@ Het eerste voorbeeld maakt gebruik van Azure CLI. In dit voorbeeld worden de URL
 ### <a name="azure-cli"></a>Azure CLI
 1. Selecteer **Cloud Shell** in Azure Portal. De Cloud Shell wordt geopend in het onderste deelvenster van de webbrowser. 
 
-    :::image type="content" source="./media/custom-event-quickstart-portal/select-cloud-shell.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+    :::image type="content" source="./media/custom-event-quickstart-portal/select-cloud-shell.png" alt-text="Het pictogram voor Cloud Shell selecteren":::
 1. Selecteer **Bash** in de linkerbovenhoek van het Cloud Shell-venster. 
 
     ![Cloud Shell - Bash](./media/custom-event-quickstart-portal/cloud-shell-bash.png)
@@ -125,7 +125,7 @@ In het tweede voorbeeld wordt PowerShell gebruikt om gelijksoortige stappen uit 
 
 1. Selecteer **Cloud Shell** in Azure Portal (of ga naar `https://shell.azure.com/`). De Cloud Shell wordt geopend in het onderste deelvenster van de webbrowser. 
 
-    :::image type="content" source="./media/custom-event-quickstart-portal/select-cloud-shell.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+    :::image type="content" source="./media/custom-event-quickstart-portal/select-cloud-shell.png" alt-text="Het pictogram voor Cloud Shell selecteren":::
 1. Selecteer in de **Cloud Shell** de optie **PowerShell** in de linkerbovenhoek van het Cloud Shell-venster. Zie de voorbeeldafbeelding van een **Cloud Shell**-venster in de sectie Azure CLI.
 2. Stel de volgende variabelen in. Nadat u elke opdracht hebt gekopieerd en geplakt, werkt u de **onderwerpnaam** en **naam van de resourcegroep** bij voordat u de opdracht uitvoert:
 
@@ -178,7 +178,7 @@ In het tweede voorbeeld wordt PowerShell gebruikt om gelijksoortige stappen uit 
 ### <a name="verify-in-the-event-grid-viewer"></a>Controleren in de Event Grid-viewer
 U hebt de gebeurtenis geactiveerd en Event Grid heeft het bericht verzonden naar het eindpunt dat u hebt geconfigureerd toen u zich abonneerde. Bekijk uw web-app om de gebeurtenis te zien die u zojuist hebt verzonden.
 
-:::image type="content" source="./media/custom-event-quickstart-portal/event-grid-viewer-end.png" alt-text="Event Grid-onderwerpen zoeken en selecteren":::
+:::image type="content" source="./media/custom-event-quickstart-portal/event-grid-viewer-end.png" alt-text="Event Grid-viewer":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 Als u verder wilt werken met deze gebeurtenis, schoon dan de resources die u in dit artikel hebt gemaakt, niet op. Verwijder anders de resources die u in dit artikel hebt gemaakt.

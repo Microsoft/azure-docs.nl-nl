@@ -6,11 +6,11 @@ ms.date: 06/29/2020
 ms.topic: quickstart
 ms.author: jgao
 ms.openlocfilehash: c132d8337ccb46824b32ab4a6bcfc73bf5d0818b
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92890391"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95978553"
 ---
 # <a name="quickstart-create-and-deploy-arm-templates-by-using-the-azure-portal"></a>Quickstart: ARM-sjablonen maken en implementeren met behulp van Azure Portal
 
@@ -87,8 +87,8 @@ Azure vereist dat elke Azure-service een unieke naam heeft. De implementatie mis
 
     ![Azure Resource Manager-sjablonen](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-edit-storage-account-template-revised.png)
 
-   - Verwijder de parameter **storageAccountName** , zoals in de vorige schermopname wordt weergegeven.
-   - Voeg een variabele toe met de naam **storageAccountName** , zoals in de vorige schermopname wordt weergegeven:
+   - Verwijder de parameter **storageAccountName**, zoals in de vorige schermopname wordt weergegeven.
+   - Voeg een variabele toe met de naam **storageAccountName**, zoals in de vorige schermopname wordt weergegeven:
 
        ```json
        "storageAccountName": "[concat(uniqueString(subscription().subscriptionId), 'storage')]"

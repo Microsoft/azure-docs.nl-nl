@@ -3,14 +3,14 @@ title: 'Quickstart: Uw eerste functie maken in Azure met behulp van Visual Studi
 description: In deze quickstart leert u hoe u voor een Azure-functie een HTTP-trigger kunt maken en publiceren met behulp van Visual Studio.
 ms.assetid: 82db1177-2295-4e39-bd42-763f6082e796
 ms.topic: quickstart
-ms.date: 03/06/2020
+ms.date: 09/30/2020
 ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, 23113853-34f2-4f
-ms.openlocfilehash: d7cfcd02c5e6c9ff57241288bd79efb45d4ac7ab
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c9ddd6e74e25d8de415e24038e99da9d21dab867
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88213986"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "96014466"
 ---
 # <a name="quickstart-create-your-first-function-in-azure-using-visual-studio"></a>Quickstart: Uw eerste functie maken in Azure met behulp van Visual Studio
 
@@ -74,7 +74,7 @@ Voordat u uw project kunt publiceren, moet u een functie-app in uw Azure-abonnem
 
 2. Ga naar deze URL. U ziet nu in de browser een antwoord op de externe GET-aanvraag dat is geretourneerd met de functie. Dit ziet er ongeveer als volgt uit:
 
-    :::image type="content" source="media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-browser-azure.png" alt-text="Functie-app actief":::
+    :::image type="content" source="media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-browser-azure.png" alt-text="Het antwoord van de functie in de browser":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -88,7 +88,7 @@ U hebt resources gemaakt om deze snelstartgidsen te voltooien. Deze resources ku
 
 1. Selecteer op de pagina Functie-app het tabblad **Overzicht**, en selecteer vervolgens de koppeling onder **Resourcegroep**.
 
-   :::image type="content" source="media/functions-create-your-first-function-visual-studio/functions-app-delete-resource-group.png" alt-text="Functie-app actief":::
+   :::image type="content" source="media/functions-create-your-first-function-visual-studio/functions-app-delete-resource-group.png" alt-text="Selecteer op de pagina Functie-app de resourcegroep die u wilt verwijderen":::
 
 2. Bekijk op de pagina **Resourcegroep** de lijst met opgenomen resources, en controleer of dit de resources zijn die u wilt verwijderen.
  

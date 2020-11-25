@@ -9,11 +9,11 @@ ms.date: 01/27/2020
 ms.author: sngun
 ms.custom: include file
 ms.openlocfilehash: 736ab630b035ae1a668332eb5ab5aa9530ef0e88
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504035"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95972419"
 ---
 1. Meld u in een nieuw browservenster aan bij [Azure Portal](https://portal.azure.com/).
 
@@ -26,7 +26,7 @@ ms.locfileid: "94504035"
    ![Het deelvenster Databases in de Azure-portal](./media/cosmos-db-create-dbaccount-graph/create-nosql-db-databases-json-tutorial-1.png)
    
    > [!TIP]
-   > Als u Azure Cosmos DB niet in de lijst ziet, typt u het in het zoekvak bovenaan de pagina en drukt u op de _Enter_ -toets. 
+   > Als u Azure Cosmos DB niet in de lijst ziet, typt u het in het zoekvak bovenaan de pagina en drukt u op de _Enter_-toets. 
 
 3. Voer op de pagina **Azure Cosmos DB-account maken** de instellingen in voor het nieuwe Azure Cosmos DB-account. 
  

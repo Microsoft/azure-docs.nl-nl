@@ -9,11 +9,11 @@ ms.topic: quickstart
 ms.date: 10/15/2020
 ms.author: cherylmc
 ms.openlocfilehash: 325f39b695d80c14ed7097d071380b937458546c
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150498"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021483"
 ---
 # <a name="quickstart-connect-to-a-vm-securely-through-a-browser-via-private-ip-address"></a>Quickstart: veilig verbinding maken met een VM via een browser door middel van een privé IP-adres
 
@@ -69,47 +69,47 @@ U kunt de volgende voorbeeldwaarden gebruiken bij het maken van deze configurati
 U kunt een bastion-host op verschillende manieren configureren. In de volgende stappen maakt u rechtstreeks vanuit uw VM een bastion-host in Azure Portal. Wanneer u een host vanuit een VM maakt, worden er automatisch verschillende instellingen ingevuld die overeenkomen met de virtuele machine en/of het virtuele netwerk.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Ga naar de VM waarmee u verbinding wilt maken en selecteer **Verbinding maken** .
+1. Ga naar de VM waarmee u verbinding wilt maken en selecteer **Verbinding maken**.
 
    :::image type="content" source="./media/quickstart-host-portal/vm-settings.png" alt-text="Instellingen van virtuele machines" lightbox="./media/quickstart-host-portal/vm-settings.png":::
-1. In de vervolgkeuzelijst selecteert u **Bastion** .
-1. Op de **pagina TestVM | Verbinding maken** selecteer **Bastion gebruiken** .
+1. In de vervolgkeuzelijst selecteert u **Bastion**.
+1. Op de **pagina TestVM | Verbinding maken** selecteer **Bastion gebruiken**.
 
-   :::image type="content" source="./media/quickstart-host-portal/select-bastion.png" alt-text="Instellingen van virtuele machines" border="false":::
+   :::image type="content" source="./media/quickstart-host-portal/select-bastion.png" alt-text="Bastion selecteren" border="false":::
 
 1. Vul op de pagina **Bastion** de volgende instellingsvelden in:
 
-   * **Naam** : Geef de Bastion-host een naam.
-   * **Subnet** : Dit is de adresruimte van het virtuele netwerk waarop de Bastion-resource wordt geïmplementeerd. Het subnet moet worden gemaakt met de naam **AzureBastionSubnet** . U moet een subnet van minimaal /27 of groter (/27, /26, /25, enzovoort) gebruiken.
-   * Selecteer **Subnetconfiguratie beheren** .
-1. Op de pagina **Subnetten** selecteert u **+Subnet** .
+   * **Naam**: Geef de Bastion-host een naam.
+   * **Subnet**: Dit is de adresruimte van het virtuele netwerk waarop de Bastion-resource wordt geïmplementeerd. Het subnet moet worden gemaakt met de naam **AzureBastionSubnet**. U moet een subnet van minimaal /27 of groter (/27, /26, /25, enzovoort) gebruiken.
+   * Selecteer **Subnetconfiguratie beheren**.
+1. Op de pagina **Subnetten** selecteert u **+Subnet**.
 
-   :::image type="content" source="./media/quickstart-host-portal/subnet.png" alt-text="Instellingen van virtuele machines":::
+   :::image type="content" source="./media/quickstart-host-portal/subnet.png" alt-text="+ Subnet":::
     
-1. Op de pagina **Subnet toevoegen** typt u voor **Naam** **AzureBastionSubnet** .
+1. Op de pagina **Subnet toevoegen** typt u voor **Naam** **AzureBastionSubnet**.
    * Kies voor het subnetadresbereik een subnetadres dat zich binnen de adresruimte van uw virtuele netwerk bevindt.
    * Pas geen andere instellingen aan. Selecteer **OK** om de wijzigingen aan het subnet te accepteren en op te slaan.
 
-   :::image type="content" source="./media/quickstart-host-portal/add-subnet.png" alt-text="Instellingen van virtuele machines":::
+   :::image type="content" source="./media/quickstart-host-portal/add-subnet.png" alt-text="Subnet toevoegen":::
 1. Klik op de knop Terug in de browser om terug te gaan naar de pagina **Bastion** en door te gaan met het opgeven van waarden.
-   * **Openbaar IP-adres** : laten staan als **Nieuwe maken** .
-   * **Openbare IP-adresnaam** : De naam van de resource voor het openbare IP-adres.
-   * **Toewijzing** : wordt standaard ingesteld op Statisch. U kunt geen dynamische toewijzing voor Azure Bastion gebruiken.
-   * **Resourcegroep** : Dezelfde resourcegroep als de VM.
+   * **Openbaar IP-adres**: laten staan als **Nieuwe maken**.
+   * **Openbare IP-adresnaam**: De naam van de resource voor het openbare IP-adres.
+   * **Toewijzing**: wordt standaard ingesteld op Statisch. U kunt geen dynamische toewijzing voor Azure Bastion gebruiken.
+   * **Resourcegroep**: Dezelfde resourcegroep als de VM.
 
-   :::image type="content" source="./media/quickstart-host-portal/validate.png" alt-text="Instellingen van virtuele machines":::
+   :::image type="content" source="./media/quickstart-host-portal/validate.png" alt-text="Maak de bastion-host":::
 1. Selecteer **Maken** om de bastion-host te maken. Azure valideert uw instellingen en maakt vervolgens de host. Het duurt ongeveer vijf minuten om de host en de resources te maken en te implementeren.
 
 ## <a name="connect"></a><a name="connect"></a>Verbinding maken
 
 Nadat Bastion in het virtuele netwerk is geïmplementeerd, verschijnt de pagina Verbinding maken.
 
-1. Voer de gebruikersnaam en het wachtwoord voor uw virtuele machine in. Selecteer vervolgens **Verbinding maken** .
+1. Voer de gebruikersnaam en het wachtwoord voor uw virtuele machine in. Selecteer vervolgens **Verbinding maken**.
 
-   :::image type="content" source="./media/quickstart-host-portal/connect-vm.png" alt-text="Instellingen van virtuele machines":::
+   :::image type="content" source="./media/quickstart-host-portal/connect-vm.png" alt-text="Schermopname van het dialoogvenster Verbinding maken met behulp van Azure Bastion.":::
 1. De RDP-verbinding met deze virtuele machine wordt rechtstreeks geopend in Azure Portal (via HTML5) met behulp van poort 443 en de Bastion-service.
 
-   :::image type="content" source="./media/quickstart-host-portal/connected.png" alt-text="Instellingen van virtuele machines":::
+   :::image type="content" source="./media/quickstart-host-portal/connected.png" alt-text="Verbinding maken met RDP":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -117,9 +117,9 @@ Wanneer u klaar bent met het gebruiken van het virtuele netwerk en de virtuele m
 
 1. Voer de naam van uw resourcegroep in het vak **Zoeken** bovenaan de portal in en selecteer het in de zoekresultaten.
 
-1. Selecteer **Resourcegroep verwijderen** .
+1. Selecteer **Resourcegroep verwijderen**.
 
-1. Voer uw resourcegroep in voor **TYP DE NAAM VAN DE RESOURCEGROEP** en selecteer **Verwijderen** .
+1. Voer uw resourcegroep in voor **TYP DE NAAM VAN DE RESOURCEGROEP** en selecteer **Verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

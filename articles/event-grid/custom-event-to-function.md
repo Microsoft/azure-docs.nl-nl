@@ -4,11 +4,11 @@ description: 'Quickstart: Gebruik Azure Event Grid en Azure CLI of de portal om 
 ms.date: 07/07/2020
 ms.topic: quickstart
 ms.openlocfilehash: aea52bcaa94d6f288e86e44e1a0f294796d8e4a3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91324387"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996339"
 ---
 # <a name="quickstart-route-custom-events-to-an-azure-function-with-event-grid"></a>Quickstart: Aangepaste gebeurtenissen routeren naar een Azure-functie met Event Grid
 
@@ -26,7 +26,7 @@ Voordat u zich abonneert op het aangepaste onderwerp, gaan we een functie maken 
         :::image type="content" source="./media/custom-event-to-function/function-event-grid-trigger.png" alt-text="Event Grid-trigger selecteren":::
 3. Voer op de pagina **Nieuwe functie** een naam in voor de functie en selecteer **Functie maken**.
 
-    :::image type="content" source="./media/custom-event-to-function/new-function-page.png" alt-text="Event Grid-trigger selecteren":::
+    :::image type="content" source="./media/custom-event-to-function/new-function-page.png" alt-text="Pagina Nieuwe functie":::
 4. Gebruik de pagina **Code + Test** om de bestaande code voor de functie te bekijken en bij te werken. 
 
 [!INCLUDE [event-grid-register-provider-portal.md](../../includes/event-grid-register-provider-portal.md)]
@@ -88,7 +88,7 @@ U abonneert u op een Event Grid-onderwerp om Event Grid te laten weten welke geb
     
         Batchverwerking biedt u een hoge doorvoer. Voor **Maximum aantal gebeurtenissen per batch** stelt u het maximum aantal gebeurtenissen in dat een abonnement aan een batch toevoegt. Gewenste batchgrootte wordt de bovengrens van de batchgrootte in kilobytes, maar kan worden overschreden als een enkele gebeurtenis groter is dan deze drempelwaarde.
     
-        :::image type="content" source="./media/custom-event-to-function/enable-batching.png" alt-text="Event Grid-trigger selecteren":::
+        :::image type="content" source="./media/custom-event-to-function/enable-batching.png" alt-text="Batchverwerking inschakelen":::
     6. Selecteer **Maken** op de pagina **Gebeurtenisabonnement maken**.
 
 ## <a name="send-an-event-to-your-topic"></a>Een gebeurtenis verzenden naar het onderwerp

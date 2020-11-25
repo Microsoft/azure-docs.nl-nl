@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
 ms.date: 07/21/2020
-ms.openlocfilehash: 0dd150909a56aafdd2005f2d68a12d32a1e8fae4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f0f352e2c803eb1f0638f2f517b97a931ebcc889
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87087778"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996930"
 ---
 # <a name="quickstart-create-an-instance-of-the-azure-database-migration-service-by-using-the-azure-portal"></a>Quickstart: Een Azure Database Migration Service-exemplaar maken met behulp van Azure Portal
 
@@ -62,7 +62,7 @@ Registreer de Microsoft.DataMigration-resourceprovider voordat u uw eerste Datab
 
         Het virtuele netwerk biedt Azure Database Migration Service toegang tot de brondatabase en doelomgeving.
 
-        Zie het artikel [Een virtueel netwerk maken met de Azure-portal](https://aka.ms/vnet) voor meer informatie over het maken van een virtueel netwerk in de Azure-portal.
+        Zie het artikel [Een virtueel netwerk maken met de Azure-portal](../virtual-network/quick-create-portal.md) voor meer informatie over het maken van een virtueel netwerk in de Azure-portal.
 
     - Selecteer Basic: 1 vCore als **prijscategorie**.
 

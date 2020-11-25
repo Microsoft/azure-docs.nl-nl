@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 434f112e78938c94d887423316fccea270059b6b
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 641117414c855a044d3ed55004b6e6ea15b259ac
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92109014"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96004735"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-with-xamarin"></a>Quickstart: Azure Blob Storage-clientbibliotheek v12 met Xamarin
 
@@ -39,8 +39,8 @@ Naslagkoppelingen:
 ## <a name="prerequisites"></a>Vereisten
 
 * Azure-abonnement: [u kunt een gratis abonnement nemen](https://azure.microsoft.com/free/)
-* Azure Storage-account: [maak een opslagaccount](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
-* Visual Studio waarop [Mobile Development voor .NET-workloads](https://docs.microsoft.com/xamarin/get-started/installation/?pivots=windows) geïnstalleerd us of [Visual Studio voor Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
+* Azure Storage-account: [maak een opslagaccount](../common/storage-account-create.md)
+* Visual Studio waarop [Mobile Development voor .NET-workloads](/xamarin/get-started/installation/?pivots=windows) geïnstalleerd us of [Visual Studio voor Mac](/visualstudio/mac/installation?view=vsmac-2019)
 
 ## <a name="setting-up"></a>Instellen
     

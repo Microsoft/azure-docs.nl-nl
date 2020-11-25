@@ -8,12 +8,12 @@ ms.author: chpalm
 ms.date: 10/03/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 6b8145666ab92432d01b2f039685afe5534f0958
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 7c522abd04f4a3e480bb5c3e14e78cc03dbd5d86
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043567"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888637"
 ---
 # <a name="region-availability-and-data-residency"></a>Regiobeschikbaarheid en gegevenslocatie
 
@@ -37,13 +37,13 @@ Er zijn twee soorten Communication Service-gegevens:
 
 ### <a name="identities"></a>Identiteiten
 
-Azure Communication Services onderhoudt een directory met identiteiten, gebruik de [DeleteIdentity](https://docs.microsoft.com/rest/api/communication/communicationidentity/delete)-API om ze te verwijderen. Als u een identiteit verwijdert, worden alle bijbehorende toegangstokens ingetrokken en hun chatberichten verwijderd. Zie voor meer informatie over het verwijderen van een identiteit [deze pagina](../quickstarts/access-tokens.md).
+Azure Communication Services onderhoudt een directory met identiteiten, gebruik de [DeleteIdentity](/rest/api/communication/communicationidentity/delete)-API om ze te verwijderen. Als u een identiteit verwijdert, worden alle bijbehorende toegangstokens ingetrokken en hun chatberichten verwijderd. Zie voor meer informatie over het verwijderen van een identiteit [deze pagina](../quickstarts/access-tokens.md).
 
 - DeleteIdentity
 
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
 
-Door de API’s van Azure Portal of Azure Resource Manager te gebruiken met Communication Services, kunnen persoonlijke gegevens worden gemaakt. [Gebruik deze pagina voor meer informatie over het beheren van persoonlijke gegevens in Azure Resource Manager-systemen.](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-manager-personal-data)
+Door de API’s van Azure Portal of Azure Resource Manager te gebruiken met Communication Services, kunnen persoonlijke gegevens worden gemaakt. [Gebruik deze pagina voor meer informatie over het beheren van persoonlijke gegevens in Azure Resource Manager-systemen.](../../azure-resource-manager/management/resource-manager-personal-data.md)
 
 ### <a name="telephone-number-management"></a>Telefoonnummerbeheer
 
@@ -52,7 +52,7 @@ Azure Communication Services onderhoudt een directory met telefoonnummers die zi
 
 ### <a name="chat"></a>Chat
 
-Chatgesprekken en -berichten worden bewaard totdat ze expliciet worden verwijderd. Een volledig inactief gesprek wordt na 30 dagen automatisch verwijderd. Gebruik [Chat-API’s](https://docs.microsoft.com/rest/api/communication/chat/deletechatmessage/deletechatmessage) om berichten op te halen, weer te geven, bij te werken en te verwijderen.
+Chatgesprekken en -berichten worden bewaard totdat ze expliciet worden verwijderd. Een volledig inactief gesprek wordt na 30 dagen automatisch verwijderd. Gebruik [Chat-API’s](/rest/api/communication/chat/deletechatmessage/deletechatmessage) om berichten op te halen, weer te geven, bij te werken en te verwijderen.
 
 - `Get Thread`
 - `Get Message`
@@ -73,10 +73,10 @@ Audio- en video-communicatie wordt kortstondig verwerkt door de service en er wo
 
 ## <a name="azure-monitor-and-log-analytics"></a>Azure Monitor en Log Analytics
 
-Met Azure Communication Services worden logboekgegevens van Azure Monitor ingevoerd voor een inzicht in de operationele status en het gebruik van de service. Sommige van deze logboeken bevatten Communication Service-identiteiten en telefoonnummers als veldgegevens. Als u mogelijk persoonlijke gegevens wilt verwijderen [gebruikt u deze procedures voor Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/personal-data-mgmt). U kunt ook [de standaard retentieperiode voor Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage) configureren.
+Met Azure Communication Services worden logboekgegevens van Azure Monitor ingevoerd voor een inzicht in de operationele status en het gebruik van de service. Sommige van deze logboeken bevatten Communication Service-identiteiten en telefoonnummers als veldgegevens. Als u mogelijk persoonlijke gegevens wilt verwijderen [gebruikt u deze procedures voor Azure Monitor](../../azure-monitor/platform/personal-data-mgmt.md). U kunt ook [de standaard retentieperiode voor Azure Monitor](../../azure-monitor/platform/manage-cost-storage.md) configureren.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-- [Aanvragen van betrokkenen van Azure voor de AVG en CCPA](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure?view=o365-worldwide&preserve-view=true)
+- [Aanvragen van betrokkenen van Azure voor de AVG en CCPA](/microsoft-365/compliance/gdpr-dsr-azure?preserve-view=true&view=o365-worldwide)
 - [Vertrouwenscentrum van Microsoft](https://www.microsoft.com/trust-center/privacy/data-location)
 - [Interactieve kaart van Azure - Waar zijn mijn klantgegevens?](https://azuredatacentermap.azurewebsites.net/)

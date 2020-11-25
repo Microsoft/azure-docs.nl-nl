@@ -9,12 +9,12 @@ ms.author: mhopkins
 ms.date: 07/24/2020
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: 134408704d54479fbbe0dfb5094f2920fa2e74be
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d212029936bcd257ef5a78eeedc98c2d6e1df514
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91336187"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96012779"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -35,7 +35,7 @@ In deze quickstart leert u hoe u blobs beheert met behulp van JavaScript-code di
 
 ## <a name="setting-up-storage-account-cors-rules"></a>CORS-regels voor het opslagaccount instellen
 
-Voordat uw webtoepassing vanuit de client toegang kan krijgen tot een blob-opslag, moet het account worden geconfigureerd om [cross-origin-resource sharing](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) oftewel CORS in te schakelen.
+Voordat uw webtoepassing vanuit de client toegang kan krijgen tot een blob-opslag, moet het account worden geconfigureerd om [cross-origin-resource sharing](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) oftewel CORS in te schakelen.
 
 Ga terug naar Azure Portal en selecteer uw opslagaccount. Als u een nieuwe CORS-regel wilt definiëren, navigeert u terug naar de sectie **Instellingen** en klikt u op de koppeling **CORS**. Klik vervolgens op de knop **Toevoegen** om het venster **CORS-regel toevoegen** te openen. Voor deze snelstart maakt u een open CORS-regel:
 
@@ -185,7 +185,7 @@ Plak vervolgens de volgende HTML-code in *index. html* na de afsluitende tag `</
 
 Deze code voegt een verwijzing toe naar het scriptbestand en biedt een plaats voor uw eigen JavaScript-code. Voor deze quickstart gebruiken we het scriptbestand *azure-storage-blob.js*, zodat u het kunt openen in VS Code, de inhoud ervan kunt lezen en onderbrekingspunten instellen. In productie moet u het compactere bestand *azure-storage.blob.min.js* gebruiken dat ook is opgegeven in het .zip-bestand.
 
-U vindt meer informatie over elke Blob Storage-functie in de [referentiedocumentatie](https://docs.microsoft.com/javascript/api/%40azure/storage-blob/index). Sommige van de functies in de SDK zijn alleen beschikbaar in node.js, of alleen beschikbaar in de browser.
+U vindt meer informatie over elke Blob Storage-functie in de [referentiedocumentatie](/javascript/api/%40azure/storage-blob/index). Sommige van de functies in de SDK zijn alleen beschikbaar in node.js, of alleen beschikbaar in de browser.
 
 De code in *azure-storage-blob.js* exporteert een globale variabele met de naam `azblob`, die u in uw JavaScript-code gaat gebruiken om toegang te krijgen tot de Blob Storage-API's.
 
@@ -226,7 +226,7 @@ const containerURL = new azblob.ContainerURL(
     azblob.StorageURL.newPipeline(new azblob.AnonymousCredential));
 ```
 
-Deze code gebruikt uw accountgegevens en SAS om een [ContainerURL](https://docs.microsoft.com/javascript/api/@azure/storage-blob/ContainerURL)-instantie te maken. Dit is handig om een opslagcontainer te maken en te bewerken.
+Deze code gebruikt uw accountgegevens en SAS om een [ContainerURL](/javascript/api/@azure/storage-blob/ContainerURL)-instantie te maken. Dit is handig om een opslagcontainer te maken en te bewerken.
 
 ### <a name="create-and-delete-a-storage-container"></a>Een opslagcontainer maken en verwijderen
 
@@ -257,7 +257,7 @@ createContainerButton.addEventListener("click", createContainer);
 deleteContainerButton.addEventListener("click", deleteContainer);
 ```
 
-Deze code roept de ContainerURL-functies [maken](https://docs.microsoft.com/javascript/api/@azure/storage-blob/containerclient#create-containercreateoptions-) en [verwijderen](https://docs.microsoft.com/javascript/api/@azure/storage-blob/containerclient#delete-containerdeletemethodoptions-) aan zonder een [Aborter](https://docs.microsoft.com/javascript/api/@azure/storage-blob/aborter)-instantie te gebruiken. Om deze quickstart eenvoudig te houden, gaat deze code ervan uit dat uw opslagaccount is aangemaakt en ingeschakeld. Gebruik in productiecode een Aborter-instantie om een time-outfunctie toe te voegen.
+Deze code roept de ContainerURL-functies [maken](/javascript/api/@azure/storage-blob/containerclient#create-containercreateoptions-) en [verwijderen](/javascript/api/@azure/storage-blob/containerclient#delete-containerdeletemethodoptions-) aan zonder een [Aborter](/javascript/api/@azure/storage-blob/aborter)-instantie te gebruiken. Om deze quickstart eenvoudig te houden, gaat deze code ervan uit dat uw opslagaccount is aangemaakt en ingeschakeld. Gebruik in productiecode een Aborter-instantie om een time-outfunctie toe te voegen.
 
 ### <a name="list-blobs"></a>Blobs vermelden
 
@@ -293,7 +293,7 @@ const listFiles = async () => {
 listButton.addEventListener("click", listFiles);
 ```
 
-Met deze code wordt de functie [ContainerURL.listBlobFlatSegment](https://docs.microsoft.com/javascript/api/@azure/storage-blob/containerclient#listblobsflat-containerlistblobsoptions-) aan te roepen in een lus om ervoor te zorgen dat alle segmenten worden opgehaald. Voor elk segment doorloopt het de lijst van blobitems die het bevat en werkt het de lijst **Bestanden** bij.
+Met deze code wordt de functie [ContainerURL.listBlobFlatSegment](/javascript/api/@azure/storage-blob/containerclient#listblobsflat-containerlistblobsoptions-) aan te roepen in een lus om ervoor te zorgen dat alle segmenten worden opgehaald. Voor elk segment doorloopt het de lijst van blobitems die het bevat en werkt het de lijst **Bestanden** bij.
 
 ### <a name="upload-blobs"></a>Blobs uploaden
 
@@ -321,7 +321,7 @@ selectButton.addEventListener("click", () => fileInput.click());
 fileInput.addEventListener("change", uploadFiles);
 ```
 
-Deze code verbindt de knop **Bestanden selecteren en uploaden** naar het verborgen `file-input`-element. Met de gebeurtenisknop `click` wordt zo de gebeurtenis bestandsinvoer `click` geactiveerd en wordt de bestandenkiezer weergegeven. Nadat u bestanden hebt geselecteerd en het dialoogvenster hebt gesloten, treedt de gebeurtenis `input` op en wordt de functie `uploadFiles` aangeroepen. Deze functie roept de functie [uploadBrowserDataToBlockBlob](https://docs.microsoft.com/javascript/api/@azure/storage-blob/blockblobclient#uploadbrowserdata-blob---arraybuffer---arraybufferview--blockblobparalleluploadoptions-) (enkel voor de browser) aan te roepen voor elk bestand dat u hebt geselecteerd. Elke aanroep retourneert een Promise die wordt toegevoegd aan een lijst, zodat ze allemaal tegelijk kunnen worden verwacht, waardoor de bestanden parallel worden geüpload.
+Deze code verbindt de knop **Bestanden selecteren en uploaden** naar het verborgen `file-input`-element. Met de gebeurtenisknop `click` wordt zo de gebeurtenis bestandsinvoer `click` geactiveerd en wordt de bestandenkiezer weergegeven. Nadat u bestanden hebt geselecteerd en het dialoogvenster hebt gesloten, treedt de gebeurtenis `input` op en wordt de functie `uploadFiles` aangeroepen. Deze functie roept de functie [uploadBrowserDataToBlockBlob](/javascript/api/@azure/storage-blob/blockblobclient#uploadbrowserdata-blob---arraybuffer---arraybufferview--blockblobparalleluploadoptions-) (enkel voor de browser) aan te roepen voor elk bestand dat u hebt geselecteerd. Elke aanroep retourneert een Promise die wordt toegevoegd aan een lijst, zodat ze allemaal tegelijk kunnen worden verwacht, waardoor de bestanden parallel worden geüpload.
 
 ### <a name="delete-blobs"></a>Blobs verwijderen
 
@@ -349,7 +349,7 @@ const deleteFiles = async () => {
 deleteButton.addEventListener("click", deleteFiles);
 ```
 
-Met deze code wordt de functie [BlobURL.delete](https://docs.microsoft.com/javascript/api/@azure/storage-blob/BlobURL#delete-aborter--iblobdeleteoptions-) aangeroepen om elk bestand te verwijderen dat in de lijst is geselecteerd. Vervolgens wordt de eerder getoonde functie `listFiles` aangeroepen om de inhoud van de **Bestanden**-lijst te vernieuwen.
+Met deze code wordt de functie [BlobURL.delete](/javascript/api/@azure/storage-blob/BlobURL#delete-aborter--iblobdeleteoptions-) aangeroepen om elk bestand te verwijderen dat in de lijst is geselecteerd. Vervolgens wordt de eerder getoonde functie `listFiles` aangeroepen om de inhoud van de **Bestanden**-lijst te vernieuwen.
 
 ### <a name="run-and-test-the-web-application"></a>De webtoepassing uitvoeren en testen
 
@@ -364,4 +364,4 @@ Als u de resources wilt opschonen die tijdens deze quickstart zijn gemaakt, gaat
 In deze quickstart heeft u een eenvoudige website gemaakt die toegang heeft tot blobopslag vanuit JavaScript in een browser. Ga verder met de volgende zelfstudie om te weten hoe u een website zelf kunt hosten in blobopslag:
 
 > [!div class="nextstepaction"]
-> [Een statische website hosten op Blob-opslag](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website-host)
+> [Een statische website hosten op Blob-opslag](./storage-blob-static-website-host.md)

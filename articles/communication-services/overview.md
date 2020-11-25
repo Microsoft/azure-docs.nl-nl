@@ -8,12 +8,12 @@ ms.author: mikben
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 1c79ffb02df4a64b2c506ef0863d9bb2da06db53
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d680df0ec5e18cca4d7a42edf45dbd6a50be1472
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91303366"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888603"
 ---
 # <a name="what-is-azure-communication-services"></a>Wat is Azure Communication Services?
 
@@ -77,9 +77,9 @@ In de volgende resources vindt u meer informatie over de Azure Communication Ser
 
 Er zijn twee andere communicatieproducten van Microsoft die u zou kunnen gebruiken, en die momenteel niet rechtstreeks compatibel zijn met Communication Services:
 
- - [Microsoft Graph Cloud Communication API's](https://docs.microsoft.com/graph/cloud-communications-concept-overview) stellen organisaties in staat om communicatie-ervaringen te bouwen die gekoppeld zijn aan Azure Active Directory-gebruikers met M365-licenties. Dit is ideaal voor toepassingen die zijn gekoppeld aan Azure Active Directory of wanneer u productiviteitservaringen in Microsoft Teams wilt uitbreiden. Er zijn ook API's voor het ontwerpen van toepassingen en aanpassingen in de [Teams-ervaring.](https://docs.microsoft.com/microsoftteams/platform/?view=msteams-client-js-latest&preserve-view=true)
+ - [Microsoft Graph Cloud Communication API's](/graph/cloud-communications-concept-overview) stellen organisaties in staat om communicatie-ervaringen te bouwen die gekoppeld zijn aan Azure Active Directory-gebruikers met M365-licenties. Dit is ideaal voor toepassingen die zijn gekoppeld aan Azure Active Directory of wanneer u productiviteitservaringen in Microsoft Teams wilt uitbreiden. Er zijn ook API's voor het ontwerpen van toepassingen en aanpassingen in de [Teams-ervaring.](/microsoftteams/platform/?preserve-view=true&view=msteams-client-js-latest)
 
- - [Met Azure PlayFab Party](https://docs.microsoft.com/gaming/playfab/features/multiplayer/networking/) kunt u gemakkelijker chat- en gegevenscommunicatie met lage latentie toevoegen aan games. Hoewel u Communication Services kunt gebruiken voor chatten en netwerksystemen, biedt PlayFab een op maat gemaakte optie die gratis is op Xbox.
+ - [Met Azure PlayFab Party](/gaming/playfab/features/multiplayer/networking/) kunt u gemakkelijker chat- en gegevenscommunicatie met lage latentie toevoegen aan games. Hoewel u Communication Services kunt gebruiken voor chatten en netwerksystemen, biedt PlayFab een op maat gemaakte optie die gratis is op Xbox.
 
 
 ## <a name="next-steps"></a>Volgende stappen

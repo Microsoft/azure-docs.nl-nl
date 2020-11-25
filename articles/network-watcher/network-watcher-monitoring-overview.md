@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 04/24/2018
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: 81621a2b63eec804aaa7c74e1d77b06ef1adb79a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c5bf559ec7bf85e92cf21e3d4c493cae1361ea7c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "76844986"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968023"
 ---
 # <a name="what-is-azure-network-watcher"></a>Wat is Azure Network Watcher?
 
@@ -31,7 +31,7 @@ Azure Network Watcher biedt hulpprogramma's voor het controleren, diagnosticeren
 
 Eindpunten kunnen een andere virtuele machine (VM), een volledig gekwalificeerde domeinnaam (FQDN), een uniform resource identifier (URI) of een IPv4-adres zijn. De *verbindingsmonitor* controleert regelmatig de communicatie en informeert u over wijzigingen in bereikbaarheid, latentie en de netwerktopologie tussen de virtuele machine en het eindpunt. U hebt bijvoorbeeld een webserver-VM die communiceert met een databaseserver-VM. Iemand in uw organisatie kan zonder dat u het weet een aangepaste route of netwerkbeveiligingsregel toepassen op de webserver- of databaseserver-VM of het subnet.
 
-Als een eindpunt onbereikbaar wordt, wordt u geïnformeerd over de reden. Mogelijke oorzaken zijn een probleem met de DNS-naamomzetting, de CPU, het geheugen of de firewall binnen het besturingssysteem van een virtuele machine of het hoptype van een aangepaste route of beveiligingsregel voor de virtuele machine of een subnet van de uitgaande verbinding. Meer informatie over [beveiligingsregels](../virtual-network/security-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json#security-rules) en [hoptypen van routes](../virtual-network/virtual-networks-udr-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) in Azure.
+Als een eindpunt onbereikbaar wordt, wordt u geïnformeerd over de reden. Mogelijke oorzaken zijn een probleem met de DNS-naamomzetting, de CPU, het geheugen of de firewall binnen het besturingssysteem van een virtuele machine of het hoptype van een aangepaste route of beveiligingsregel voor de virtuele machine of een subnet van de uitgaande verbinding. Meer informatie over [beveiligingsregels](../virtual-network/network-security-groups-overview.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json#security-rules) en [hoptypen van routes](../virtual-network/virtual-networks-udr-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) in Azure.
 
 De verbindingsmonitor biedt ook de minimale, gemiddelde en maximale latentie waargenomen gedurende een bepaalde periode. Nadat u de latentie voor een verbinding hebt vernomen, kunt u de latentie misschien verminderen door uw Azure-resources te verplaatsen naar andere Azure-regio's. Meer informatie over het bepalen van [relatieve latenties tussen Azure-regio's en internetproviders](#determine-relative-latencies-between-azure-regions-and-internet-service-providers) en het controleren van de communicatie tussen een virtuele machine en een eindpunt met [verbindingsmonitor](connection-monitor.md). Als u liever een verbinding test op een bepaald tijdstip in plaats van in de loop van de tijd (wat u doet met een verbindingsmonitor), gebruikt u in plaats hiervan de functionaliteit voor het [oplossen van verbindingsproblemen](#connection-troubleshoot).
 

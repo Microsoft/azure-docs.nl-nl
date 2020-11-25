@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: eebfa61632bc49d5df35c17ba2d2faca0382001c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 998d49e91d38a1f2fdc2503165ee99635e153027
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91336136"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001895"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -26,7 +26,7 @@ Aanvullende bronnen:
 * [API-referentiedocumentatie](/javascript/api/@azure/storage-blob)
 * [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob)
 * [Package (npm)](https://www.npmjs.com/package/@azure/storage-blob)
-* [Voorbeelden](https://docs.microsoft.com/azure/storage/common/storage-samples-javascript?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
+* [Voorbeelden](../common/storage-samples-javascript.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -66,7 +66,7 @@ In dit gedeelte wordt uitgelegd hoe u een project voorbereidt voor gebruik met d
 
 ### <a name="create-a-cors-rule"></a>Een CORS-regel maken
 
-Voordat uw webtoepassing vanuit de client toegang kan krijgen tot een blob-opslag, moet het account worden geconfigureerd om [cross-origin-resource sharing](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) oftewel CORS in te schakelen.
+Voordat uw webtoepassing vanuit de client toegang kan krijgen tot een blob-opslag, moet het account worden geconfigureerd om [cross-origin-resource sharing](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) oftewel CORS in te schakelen.
 
 Selecteer in de Azure-portal uw opslagaccount. Als u een nieuwe CORS-regel wilt definiëren, gaat u terug naar de sectie **Instellingen** en klikt u op **CORS**. Voor deze snelstart maakt u een open CORS-regel:
 
@@ -76,10 +76,10 @@ In de volgende tabel worden alle CORS-instellingen beschreven en de waarden voor
 
 |Instelling  |Waarde  | Beschrijving |
 |---------|---------|---------|
-| **TOEGESTANE OORSPRONGEN** | **\*** | Accepteert een door komma's gescheiden lijst met domeinen die als acceptabele oorsprongen zijn ingesteld. Als de waarde wordt ingesteld op `*`, hebben alle domeinen toegang tot het opslagaccount. |
+| **TOEGESTANE OORSPRONGEN** | **\** _ | Accepteert een door komma's gescheiden lijst met domeinen die als acceptabele oorsprongen zijn ingesteld. Als de waarde wordt ingesteld op `_`, hebben alle domeinen toegang tot het opslagaccount. |
 | **TOEGESTANE METHODEN** | **DELETE**, **GET**, **HEAD**, **MERGE**, **POST**, **OPTIONS** en **PUT** | Vermeldt de HTTP-bewerkingen die zijn toegestaan om voor het opslagaccount te worden uitgevoerd. Voor deze snelstart selecteert u alle beschikbare opties. |
-| **TOEGESTANE HEADERS** | **\*** | Definieert een lijst met aanvraagheaders (inclusief headers met een voorvoegsel) die door het opslagaccount zijn toegestaan. Als de waarde wordt ingesteld op `*`, hebben alle headers toegang. |
-| **WEERGEGEVEN KOPTEKSTEN** | **\*** | Vermeldt de door het account toegestane antwoordheaders. Als de waarde wordt ingesteld op `*`, kan het account elke header verzenden. |
+| **TOEGESTANE HEADERS** | **\** _ | Definieert een lijst met aanvraagheaders (inclusief headers met een voorvoegsel) die door het opslagaccount zijn toegestaan. Als de waarde wordt ingesteld op `_`, hebben alle headers toegang. |
+| **WEERGEGEVEN KOPTEKSTEN** | **\** _ | Vermeldt de door het account toegestane antwoordheaders. Als de waarde wordt ingesteld op `_`, kan het account elke header verzenden. |
 | **MAXIMUMLEEFTIJD** | **86400** | De maximale periode dat de browser de voorbereidende aanvraag OPTIES in de cache opslaat. De waarde *86400* betekent dat de cache een hele dag in stand blijft. |
 
 Nadat u de velden met de waarden uit deze tabel hebt ingevuld, klikt u op de knop **Opslaan**.

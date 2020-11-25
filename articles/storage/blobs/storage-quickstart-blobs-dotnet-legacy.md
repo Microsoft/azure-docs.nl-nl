@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 434093df3465e363d95fb79342d1854b99583d08
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: effb193e54be7331c9dc2874a4a34ef55442ed30
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091420"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96021738"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v11-for-net"></a>Quickstart: Azure Blob Storage-clientbibliotheek v11 voor .NET
 
@@ -33,7 +33,7 @@ Gebruik de Azure Blob Storage-clientbibliotheek voor .NET voor het volgende:
 
 Aanvullende bronnen:
 
-* [API-referentiedocumentatie](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
+* [API-referentiedocumentatie](/dotnet/api/overview/azure/storage)
 * [Broncode van bibliotheek](https://github.com/Azure/azure-storage-net/tree/master/Blob)
 * [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/)
 * [Voorbeelden](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=blob)
@@ -43,7 +43,7 @@ Aanvullende bronnen:
 ## <a name="prerequisites"></a>Vereisten
 
 * Azure-abonnement: [u kunt een gratis abonnement nemen](https://azure.microsoft.com/free/)
-* Azure Storage-account: [maak een opslagaccount](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
+* Azure Storage-account: [maak een opslagaccount](../common/storage-account-create.md)
 * De huidige versie van de [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturingssysteem. Zorg ervoor dat u de SDK en niet de runtime ophaalt.
 
 ## <a name="setting-up"></a>Instellen
@@ -248,7 +248,7 @@ Maak om de container te maken eerst een instantie van het object [CloudBlobClien
 In dit geval wordt met de code de methode [CreateAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createasync) aangeroepen om de container te maken. Er wordt een GUID-waarde toegevoegd aan de containernaam om ervoor te zorgen dat deze uniek is. In een productieomgeving is het vaak beter om de methode [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexistsasync) te gebruiken om alleen een container te maken als deze nog niet bestaat.
 
 > [!IMPORTANT]
-> Containernamen moeten uit kleine letters bestaan. Zie [Containers, blobs en metagegevens een naam geven en hiernaar verwijderen](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) voor meer informatie over de naamgeving van containers en blobs.
+> Containernamen moeten uit kleine letters bestaan. Zie [Containers, blobs en metagegevens een naam geven en hiernaar verwijderen](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) voor meer informatie over de naamgeving van containers en blobs.
 
 ```csharp
 // Create the CloudBlobClient that represents the 

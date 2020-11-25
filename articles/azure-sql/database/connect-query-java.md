@@ -11,11 +11,11 @@ ms.devlang: java
 ms.date: 06/26/2020
 ms.custom: devx-track-java, devx-track-azurecli
 ms.openlocfilehash: badf6b8887c356c2a7fc7308f6aa15f551e4bb67
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746726"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95972671"
 ---
 # <a name="use-java-and-jdbc-with--azure-sql-database"></a>Java en JDBC gebruiken met Azure SQL Database
 
@@ -230,7 +230,7 @@ Deze Java-code maakt gebruik van de bestanden *application.properties* en *schem
 In dit bestand kunt u zien dat we commentaar hebben gemaakt van methoden voor het invoegen, lezen, bijwerken en verwijderen van gegevens. We gaan deze methoden coderen in de rest van dit artikel en u kunt dan de commentaartekens /* en */ per methode verwijderen.
 
 > [!NOTE]
-> De databasereferenties worden opgeslagen in de eigenschappen *users* en *password* van het bestand *application.properties* . Deze referenties worden gebruikt bij het uitvoeren van `DriverManager.getConnection(properties.getProperty("url"), properties);`, omdat het eigenschappenbestand als argument wordt doorgegeven.
+> De databasereferenties worden opgeslagen in de eigenschappen *users* en *password* van het bestand *application.properties*. Deze referenties worden gebruikt bij het uitvoeren van `DriverManager.getConnection(properties.getProperty("url"), properties);`, omdat het eigenschappenbestand als argument wordt doorgegeven.
 
 U kunt nu deze main-klasse uitvoeren met uw favoriete tool:
 
@@ -315,7 +315,7 @@ public class Todo {
 }
 ```
 
-Deze klasse is een domeinmodel dat is toegewezen aan de tabel `todo` die u eerder hebt gemaakt tijdens het uitvoeren van het script *schema.sql* .
+Deze klasse is een domeinmodel dat is toegewezen aan de tabel `todo` die u eerder hebt gemaakt tijdens het uitvoeren van het script *schema.sql*.
 
 ### <a name="insert-data-into-azure-sql-database"></a>Gegevens invoegen in Azure SQL-database
 
@@ -357,7 +357,7 @@ Als u nu de main-klasse uitvoert, zou dit de volgende uitvoer moeten opleveren:
 
 Laten we de gegevens lezen die u eerder hebt ingevoegd om te controleren of onze code goed werkt.
 
-Voeg in het bestand *src/main/java/DemoApplication.java* , na de methode `insertData`, de volgende methode toe om gegevens te lezen uit de database:
+Voeg in het bestand *src/main/java/DemoApplication.java*, na de methode `insertData`, de volgende methode toe om gegevens te lezen uit de database:
 
 ```java
 private static Todo readData(Connection connection) throws SQLException {
@@ -401,7 +401,7 @@ Als u nu de main-klasse uitvoert, zou dit de volgende uitvoer moeten opleveren:
 
 Laten we de gegevens bijwerken die we eerder hebben ingevoegd.
 
-Voeg in het bestand *src/main/java/DemoApplication.java* , na de methode `readData`, de volgende methode toe om gegevens bij te werken in de database:
+Voeg in het bestand *src/main/java/DemoApplication.java*, na de methode `readData`, de volgende methode toe om gegevens bij te werken in de database:
 
 ```java
 private static void updateData(Todo todo, Connection connection) throws SQLException {
@@ -445,7 +445,7 @@ Als u nu de main-klasse uitvoert, zou dit de volgende uitvoer moeten opleveren:
 
 Laten we ten slotte de gegevens verwijderen die we eerder hebben ingevoegd.
 
-Voeg in het bestand *src/main/java/DemoApplication.java* , na de methode `updateData`, de volgende methode toe om gegevens te verwijderen uit de database:
+Voeg in het bestand *src/main/java/DemoApplication.java*, na de methode `updateData`, de volgende methode toe om gegevens te verwijderen uit de database:
 
 ```java
 private static void deleteData(Todo todo, Connection connection) throws SQLException {

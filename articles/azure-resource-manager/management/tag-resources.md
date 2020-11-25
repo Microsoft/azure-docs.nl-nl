@@ -2,14 +2,14 @@
 title: Label resources, resource groepen en abonnementen voor logische organisatie
 description: Laat zien hoe u Tags toepast om Azure-resources te organiseren voor facturering en beheer.
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 11/20/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3ffcb4a0f2f5dc64b165fcdec03f7c3ced258cc1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e9ef96a712e5ac2ba483170fb8ef9c89115b4f8
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90086756"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95972556"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Tags gebruiken om uw Azure-resources en-beheer hiërarchie te organiseren
 
@@ -240,107 +240,200 @@ Remove-AzTag -ResourceId "/subscriptions/$subscription"
 
 ### <a name="apply-tags"></a>Tags Toep assen
 
-Wanneer labels aan een resource groep of resource worden toegevoegd, kunt u de bestaande Tags overschrijven of nieuwe Tags toevoegen aan bestaande tags.
+Azure CLI biedt twee opdrachten voor het Toep assen van tags- [AZ tag Create](/cli/azure/tag#az_tag_create) en [AZ tag update](/cli/azure/tag#az_tag_update). U moet beschikken over Azure CLI 2.10.0 of hoger. U kunt uw versie controleren met `az version` . Zie [de Azure cli installeren](/cli/azure/install-azure-cli)als u wilt bijwerken of installeren.
 
-Als u de tags voor een resource wilt overschrijven, gebruikt u:
+De **AZ-tag Create** vervangt alle labels voor de resource, resource groep of het abonnement. Wanneer u de opdracht aanroept, geeft u de resource-ID van de entiteit die u wilt labelen door.
 
-```azurecli-interactive
-az resource tag --tags 'Dept=IT' 'Environment=Test' -g examplegroup -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
-```
-
-Gebruik de volgende opdracht om een tag toe te voegen aan de bestaande tags op een resource:
+In het volgende voor beeld wordt een set tags toegepast op een opslag account:
 
 ```azurecli-interactive
-az resource update --set tags.'Status'='Approved' -g examplegroup -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
+resource=$(az resource show -g demoGroup -n demoStorage --resource-type Microsoft.Storage/storageAccounts --query "id" --output tsv)
+az tag create --resource-id $resource --tags Dept=Finance Status=Normal
 ```
 
-Als u de bestaande tags voor een resource groep wilt overschrijven, gebruikt u:
+Wanneer de opdracht is voltooid, ziet u dat de resource twee labels heeft.
+
+```output
+"properties": {
+  "tags": {
+    "Dept": "Finance",
+    "Status": "Normal"
+  }
+},
+```
+
+Als u de opdracht opnieuw uitvoert, maar deze keer met andere tags, ziet u dat de eerdere Tags worden verwijderd.
 
 ```azurecli-interactive
-az group update -n examplegroup --tags 'Environment=Test' 'Dept=IT'
+az tag create --resource-id $resource --tags Team=Compliance Environment=Production
 ```
 
-Als u een tag wilt toevoegen aan de bestaande tags voor een resource groep, gebruikt u:
+```output
+"properties": {
+  "tags": {
+    "Environment": "Production",
+    "Team": "Compliance"
+  }
+},
+```
+
+Gebruik **AZ tag update** om tags toe te voegen aan een resource die al labels heeft. Stel de para meter **--Operation** in om **samen te voegen**.
 
 ```azurecli-interactive
-az group update -n examplegroup --set tags.'Status'='Approved'
+az tag update --resource-id $resource --operation Merge --tags Dept=Finance Status=Normal
 ```
 
-Momenteel heeft Azure CLI geen opdracht voor het Toep assen van tags op abonnementen. U kunt CLI echter gebruiken om een ARM-sjabloon te implementeren waarmee de tags op een abonnement worden toegepast. Zie [labels Toep assen op resource groepen of abonnementen](#apply-tags-to-resource-groups-or-subscriptions).
+U ziet dat de twee nieuwe tags zijn toegevoegd aan de twee bestaande tags.
+
+```output
+"properties": {
+  "tags": {
+    "Dept": "Finance",
+    "Environment": "Production",
+    "Status": "Normal",
+    "Team": "Compliance"
+  }
+},
+```
+
+Elke label naam kan slechts één waarde hebben. Als u een nieuwe waarde voor een tag opgeeft, wordt de oude waarde vervangen, zelfs als u de bewerking merge gebruikt. In het volgende voor beeld wordt de status tag gewijzigd van normaal in groen.
+
+```azurecli-interactive
+az tag update --resource-id $resource --operation Merge --tags Status=Green
+```
+
+```output
+"properties": {
+  "tags": {
+    "Dept": "Finance",
+    "Environment": "Production",
+    "Status": "Green",
+    "Team": "Compliance"
+  }
+},
+```
+
+Wanneer u de para meter **--Operation** instelt op **vervangen**, worden de bestaande tags vervangen door de nieuwe set tags.
+
+```azurecli-interactive
+az tag update --resource-id $resource --operation Replace --tags Project=ECommerce CostCenter=00123 Team=Web
+```
+
+Alleen de nieuwe tags blijven op de resource.
+
+```output
+"properties": {
+  "tags": {
+    "CostCenter": "00123",
+    "Project": "ECommerce",
+    "Team": "Web"
+  }
+},
+```
+
+Dezelfde opdrachten werken ook met resource groepen of-abonnementen. U geeft de id van de resource groep of het abonnement dat u wilt labelen.
+
+Gebruik het volgende om een nieuwe set tags toe te voegen aan een resource groep:
+
+```azurecli-interactive
+group=$(az group show -n demoGroup --query id --output tsv)
+az tag create --resource-id $group --tags Dept=Finance Status=Normal
+```
+
+Als u de tags voor een resource groep wilt bijwerken, gebruikt u:
+
+```azurecli-interactive
+az tag update --resource-id $group --operation Merge --tags CostCenter=00123 Environment=Production
+```
+
+Gebruik het volgende om een nieuwe set tags toe te voegen aan een abonnement:
+
+```azurecli-interactive
+sub=$(az account show --subscription "Demo Subscription" --query id --output tsv)
+az tag create --resource-id /subscriptions/$sub --tags CostCenter=00123 Environment=Dev
+```
+
+Als u de tags voor een abonnement wilt bijwerken, gebruikt u:
+
+```azurecli-interactive
+az tag update --resource-id /subscriptions/$sub --operation Merge --tags Team="Web Apps"
+```
 
 ### <a name="list-tags"></a>Tags weergeven
 
-Als u de bestaande tags voor een resource wilt weer geven, gebruikt u:
+Als u de tags voor een resource, resource groep of abonnement wilt ophalen, gebruikt u de opdracht [AZ Tags List](/cli/azure/tag#az_tag_list) en geeft u de resource-id voor de entiteit door.
+
+Als u de tags voor een resource wilt weer geven, gebruikt u:
 
 ```azurecli-interactive
-az resource show -n examplevnet -g examplegroup --resource-type "Microsoft.Network/virtualNetworks" --query tags
+resource=$(az resource show -g demoGroup -n demoStorage --resource-type Microsoft.Storage/storageAccounts --query "id" --output tsv)
+az tag list --resource-id $resource
 ```
 
-Gebruik het volgende om de bestaande tags van een resourcegroep te bekijken:
+Als u de tags voor een resource groep wilt weer geven, gebruikt u:
 
 ```azurecli-interactive
-az group show -n examplegroup --query tags
+group=$(az group show -n demoGroup --query id --output tsv)
+az tag list --resource-id $group
 ```
 
-Dat script retourneert de volgende indeling:
+Als u de tags voor een abonnement wilt zien, gebruikt u:
 
-```json
-{
-  "Dept"        : "IT",
-  "Environment" : "Test"
-}
+```azurecli-interactive
+sub=$(az account show --subscription "Demo Subscription" --query id --output tsv)
+az tag list --resource-id /subscriptions/$sub
 ```
 
 ### <a name="list-by-tag"></a>Lijst op label
 
-Als u alle resources met een bepaalde tag en waarde wilt ophalen, gebruikt u `az resource list` :
+Als u resources wilt ophalen met een specifieke label naam en-waarde, gebruikt u:
 
 ```azurecli-interactive
-az resource list --tag Dept=Finance
+az resource list --tag CostCenter=00123 --query [].name
 ```
 
-Gebruik de volgende informatie om resource groepen met een specifieke tag op te halen `az group list` :
+Gebruik de volgende informatie om resources te verkrijgen met een specifieke label naam met een wille keurige tag-waarde:
 
 ```azurecli-interactive
-az group list --tag Dept=IT
+az resource list --tag Team --query [].name
+```
+
+Als u resource groepen wilt ophalen met een specifieke label naam en-waarde, gebruikt u:
+
+```azurecli-interactive
+az group list --tag Dept=Finance
+```
+
+### <a name="remove-tags"></a>Tags verwijderen
+
+Als u specifieke tags wilt verwijderen, gebruikt u **AZ tag update** en set **--Operation** om te **verwijderen**. Geef de labels op die u wilt verwijderen.
+
+```azurecli-interactive
+az tag update --resource-id $resource --operation Delete --tags Project=ECommerce Team=Web
+```
+
+De opgegeven labels worden verwijderd.
+
+```output
+"properties": {
+  "tags": {
+    "CostCenter": "00123"
+  }
+},
+```
+
+Als u alle tags wilt verwijderen, gebruikt u de opdracht [AZ tag delete](/cli/azure/tag#az_tag_delete) .
+
+```azurecli-interactive
+az tag delete --resource-id $resource
 ```
 
 ### <a name="handling-spaces"></a>Afhandelings ruimten
 
-Als de namen van tags of waarden spaties bevatten, moet u een paar extra stappen uitvoeren. 
-
-De `--tags` para meters in de Azure cli kunnen een teken reeks accepteren die bestaat uit een matrix met teken reeksen. In het volgende voor beeld worden de tags in een resource groep overschreven waarbij de Tags spaties en afbreek streepjes bevatten: 
+Als de namen van tags of waarden spaties bevatten, plaatst u deze tussen dubbele aanhalings tekens.
 
 ```azurecli-interactive
-TAGS=("Cost Center=Finance-1222" "Location=West US")
-az group update --name examplegroup --tags "${TAGS[@]}"
-```
-
-U kunt dezelfde syntaxis gebruiken wanneer u een resource groep of resources maakt of bijwerkt met behulp van de `--tags` para meter.
-
-Als u de tags wilt bijwerken met behulp van de `--set` para meter, moet u de sleutel en waarde door geven als een teken reeks. In het volgende voor beeld wordt één tag toegevoegd aan een resource groep:
-
-```azurecli-interactive
-TAG="Cost Center='Account-56'"
-az group update --name examplegroup --set tags."$TAG"
-```
-
-In dit geval wordt de tag-waarde gemarkeerd met enkele aanhalings tekens, omdat de waarde een koppel teken heeft.
-
-Mogelijk moet u ook labels Toep assen op een groot aantal resources. In het volgende voor beeld worden alle labels van een resource groep op de bijbehorende resources toegepast wanneer de Tags spaties kunnen bevatten:
-
-```azurecli-interactive
-jsontags=$(az group show --name examplegroup --query tags -o json)
-tags=$(echo $jsontags | tr -d '{}"' | sed 's/: /=/g' | sed "s/\"/'/g" | sed 's/, /,/g' | sed 's/ *$//g' | sed 's/^ *//g')
-origIFS=$IFS
-IFS=','
-read -a tagarr <<< "$tags"
-resourceids=$(az resource list -g examplegroup --query [].id --output tsv)
-for id in $resourceids
-do
-  az resource tag --tags "${tagarr[@]}" --id $id
-done
-IFS=$origIFS
+az tag update --resource-id $group --operation Merge --tags "Cost Center"=Finance-1222 Location="West US"
 ```
 
 ## <a name="templates"></a>Sjablonen
@@ -599,7 +692,7 @@ Labels die worden toegepast op de resource groep of het abonnement, worden niet 
 
 U kunt tags gebruiken om uw factureringsgegevens te groeperen. Als u bijvoorbeeld meerdere VM's voor verschillende organisaties uitvoert, kunt u de tags gebruiken om het gebruiker te groeperen op basis van de kostenplaats. U kunt ook tags gebruiken om de kosten te categoriseren op basis van de runtimeomgeving, zoals de facturering van het gebruik voor VM's die worden uitgevoerd in de productieomgeving.
 
-U kunt informatie over Tags ophalen via de [Azure resource usage-en rate-api's](../../cost-management-billing/manage/usage-rate-card-overview.md) of het bestand met door komma's gescheiden waarden (CSV). U downloadt het gebruiks bestand van de Azure Portal. Zie uw Azure-factuur [en dagelijks gebruiks gegevens downloaden of weer geven](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md)voor meer informatie. Selecteer **versie 2**bij het downloaden van het gebruiks bestand van de Azure-Accountcentrum. Voor services die Tags ondersteunen met facturering, worden de tags weer gegeven in de kolom **Tags** .
+U kunt informatie over Tags ophalen via de [Azure resource usage-en rate-api's](../../cost-management-billing/manage/usage-rate-card-overview.md) of het bestand met door komma's gescheiden waarden (CSV). U downloadt het gebruiks bestand van de Azure Portal. Zie uw Azure-factuur [en dagelijks gebruiks gegevens downloaden of weer geven](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md)voor meer informatie. Selecteer **versie 2** bij het downloaden van het gebruiks bestand van de Azure-Accountcentrum. Voor services die Tags ondersteunen met facturering, worden de tags weer gegeven in de kolom **Tags** .
 
 Zie voor REST API bewerkingen de [Naslag informatie voor Azure billing rest API](/rest/api/billing/).
 

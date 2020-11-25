@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: b0574c41042e172af78365bb273c81729ce204ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b872340c50c800ebe4d4d6c7ca56b3b327bf162
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88749312"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95972641"
 ---
 # <a name="speech-service-supported-regions"></a>Ondersteunde regio's voor spraak Services
 
@@ -27,7 +27,7 @@ De spraak Portal om aangepaste configuraties uit te voeren op uw spraak ervaring
 Houd rekening met de volgende punten bij het overwegen van regio's:
 
 * Als uw toepassing gebruikmaakt van een [spraak-SDK](speech-sdk.md), geeft u de regio-id op, zoals bij het maken van `westus` een spraak configuratie.
-* Als uw toepassing gebruikmaakt van een van de rest- [api's](rest-apis.md)van de speech-service, maakt de regio deel uit van de EINDPUNT-URI die u gebruikt bij het maken van aanvragen.
+* Als uw toepassing gebruikmaakt van een van de rest- [api's](./overview.md#reference-docs)van de speech-service, maakt de regio deel uit van de EINDPUNT-URI die u gebruikt bij het maken van aanvragen.
 * Sleutels die zijn gemaakt voor een regio, zijn alleen geldig in die regio. Als u deze probeert te gebruiken met andere regio's, worden verificatie fouten veroorzaakt.
 
 ## <a name="speech-sdk"></a>Speech-SDK
@@ -38,7 +38,7 @@ In de [Speech SDK](speech-sdk.md)worden regio's opgegeven als een teken reeks (b
 
 De portal voor spraak aanpassing is hier beschikbaar: https://speech.microsoft.com
 
-De speech-service is beschikbaar in deze regio's voor **spraak herkenning**, **tekst naar spraak**en **vertaling**:
+De speech-service is beschikbaar in deze regio's voor **spraak herkenning**, **tekst naar spraak** en **vertaling**:
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-region-identifier.md)]
 
@@ -57,13 +57,13 @@ Beschik bare regio's voor **intentie herkenning** via de Speech SDK zijn de volg
 | Europa        | Europa -west      | `westeurope`         |
 | Noord-Amerika | VS - oost          | `eastus`             |
 | Noord-Amerika | VS - oost 2        | `eastus2`            |
-| Noord-Amerika | South Central US | `southcentralus`     |
+| Noord-Amerika | VS - zuid-centraal | `southcentralus`     |
 | Noord-Amerika | VS - west-centraal  | `westcentralus`      |
 | Noord-Amerika | VS - west          | `westus`             |
-| Noord-Amerika | West US 2        | `westus2`            |
+| Noord-Amerika | VS - west 2        | `westus2`            |
 | Zuid-Amerika | Brazil South     | `brazilsouth`        |
 
-Dit is een subset van de publicatie regio's die worden ondersteund door de [Language Understanding-service (Luis)](/azure/cognitive-services/luis/luis-reference-regions).
+Dit is een subset van de publicatie regio's die worden ondersteund door de [Language Understanding-service (Luis)](../luis/luis-reference-regions.md).
 
 ### <a name="voice-assistants"></a>Spraakassistenten
 

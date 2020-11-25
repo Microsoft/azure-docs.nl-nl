@@ -3,12 +3,12 @@ title: Verbindings problemen oplossen-Azure Event Hubs | Microsoft Docs
 description: Dit artikel bevat informatie over het oplossen van verbindings problemen met Azure Event Hubs.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: b85c0895d1c8f165f494d29013adea014187dd23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8eddc0e8c598e4553b30759d179fecb6ae880829
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87039324"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96012677"
 ---
 # <a name="troubleshoot-connectivity-issues---azure-event-hubs"></a>Verbindings problemen oplossen-Azure Event Hubs
 Er zijn verschillende redenen waarom client toepassingen geen verbinding kunnen maken met een Event Hub. De verbindings problemen die u ondervindt, kunnen permanent of tijdelijk zijn. Als het probleem voortdurend optreedt (permanent), wilt u mogelijk de connection string controleren, de firewall instellingen van uw organisatie, de instellingen van de IP-firewall, de instellingen voor netwerk beveiliging (Service-eind punten, persoonlijke eind punten, enzovoort). Voor tijdelijke problemen voert u een upgrade uit naar de nieuwste versie van de SDK, voert u opdrachten uit om verwijderde pakketten te controleren en netwerk traceringen te verkrijgen, kan u helpen bij het oplossen van de problemen. 
@@ -26,54 +26,7 @@ Controleer of de connection string die u gebruikt juist is. Zie [Connection Stri
 
 Controleer voor Kafka-clients of producer.config-of consumer.config-bestanden juist zijn geconfigureerd. Zie [berichten verzenden en ontvangen met Kafka in Event hubs](event-hubs-quickstart-kafka-enabled-event-hubs.md#send-and-receive-messages-with-kafka-in-event-hubs)voor meer informatie.
 
-### <a name="check-if-the-ports-required-to-communicate-with-event-hubs-are-blocked-by-organizations-firewall"></a>Controleren of de poorten die nodig zijn om te communiceren met Event Hubs worden geblokkeerd door de firewall van de organisatie
-Controleer of de poorten die worden gebruikt bij het communiceren met Azure Event Hubs niet worden geblokkeerd op de firewall van uw organisatie. Zie de volgende tabel voor de uitgaande poorten die u moet openen om te communiceren met Azure Event Hubs. 
-
-| Protocol | Poorten | Details | 
-| -------- | ----- | ------- | 
-| AMQP | 5671 en 5672 | Zie [AMQP protocol Guide (Engelstalig](../service-bus-messaging/service-bus-amqp-protocol-guide.md) ) | 
-| HTTP, HTTPS | 80, 443 |  |
-| Kafka | 9093 | Zie [Event hubs gebruiken in Kafka-toepassingen](event-hubs-for-kafka-ecosystem-overview.md)
-
-Hier volgt een voor beeld van een opdracht waarmee wordt gecontroleerd of de 5671-poort is geblokkeerd.
-
-```powershell
-tnc <yournamespacename>.servicebus.windows.net -port 5671
-```
-
-Op Linux:
-
-```shell
-telnet <yournamespacename>.servicebus.windows.net 5671
-```
-
-### <a name="verify-that-ip-addresses-are-allowed-in-your-corporate-firewall"></a>Controleren of IP-adressen zijn toegestaan in uw bedrijfs firewall
-Wanneer u met Azure werkt, moet u soms specifieke IP-adresbereiken of Url's in uw bedrijfs firewall of-proxy toestaan om toegang te krijgen tot alle Azure-Services die u gebruikt of probeert te gebruiken. Controleer of het verkeer is toegestaan op IP-adressen die worden gebruikt door Event Hubs. Voor IP-adressen die worden gebruikt door Azure Event Hubs: Zie [Azure IP-adresbereiken en service Tags-open bare Cloud](https://www.microsoft.com/download/details.aspx?id=56519).
-
-Controleer ook of het IP-adres voor uw naam ruimte is toegestaan. Voer de volgende stappen uit om de juiste IP-adressen te vinden die u voor uw verbindingen wilt toestaan:
-
-1. Voer de volgende opdracht uit vanaf een opdracht prompt: 
-
-    ```
-    nslookup <YourNamespaceName>.servicebus.windows.net
-    ```
-2. Noteer het IP-adres dat is geretourneerd in `Non-authoritative answer` . Als u de naam ruimte op een ander cluster herstelt, wordt de enige keer dat deze wordt gewijzigd.
-
-Als u de zone redundantie voor uw naam ruimte gebruikt, moet u een aantal extra stappen uitvoeren: 
-
-1. Eerst voert u Nslookup uit op de naam ruimte.
-
-    ```
-    nslookup <yournamespace>.servicebus.windows.net
-    ```
-2. Noteer de naam in de sectie **niet-bindende antwoord** , die een van de volgende indelingen heeft: 
-
-    ```
-    <name>-s1.cloudapp.net
-    <name>-s2.cloudapp.net
-    <name>-s3.cloudapp.net
-    ```
-3. Voer nslookup uit voor elk van deze met achtervoegsels S1, S2 en S3 om de IP-adressen te verkrijgen van alle drie de instanties die in drie beschikbaarheids zones worden uitgevoerd. 
+[!INCLUDE [event-hubs-connectivity](../../includes/event-hubs-connectivity.md)]
 
 ### <a name="verify-that-azureeventgrid-service-tag-is-allowed-in-your-network-security-groups"></a>Controleer of het AzureEventGrid-service label is toegestaan in uw netwerk beveiligings groepen
 Als uw toepassing wordt uitgevoerd in een subnet en er een netwerk beveiligings groep is gekoppeld, moet u controleren of het Internet uitgaand is toegestaan of dat het AzureEventGrid-service label is toegestaan. Zie [service tags voor het virtuele netwerk](../virtual-network/service-tags-overview.md) en zoeken naar `EventHub` .
@@ -91,22 +44,6 @@ Event Hubs naam ruimten zijn standaard toegankelijk vanuit Internet zolang de aa
 De IP-firewall regels worden toegepast op het niveau van de Event Hubs naam ruimte. Daarom gelden de regels voor alle verbindingen van clients die gebruikmaken van elk ondersteund protocol. Een verbindings poging van een IP-adres dat niet overeenkomt met een toegestane IP-regel op de Event Hubs naam ruimte, wordt geweigerd als niet-geautoriseerd. De IP-regel wordt niet vermeld in het antwoord. IP-filter regels worden in volg orde toegepast en de eerste regel die overeenkomt met het IP-adres, bepaalt de accepteren of afwijzen.
 
 Zie [IP-firewall regels voor een Azure Event hubs-naam ruimte configureren](event-hubs-ip-filtering.md)voor meer informatie. Zie [problemen met het netwerk oplossen](#troubleshoot-network-related-issues)om te controleren of er problemen zijn met de IP-filtering, het virtuele netwerk of de certificaat keten.
-
-#### <a name="find-the-ip-addresses-blocked-by-ip-firewall"></a>De IP-adressen zoeken die door IP-firewall worden geblokkeerd
-Schakel Diagnostische logboeken in voor [Event hubs van virtuele netwerk verbindingen](event-hubs-diagnostic-logs.md#event-hubs-virtual-network-connection-event-schema) door de instructies in de [Logboeken voor diagnostische gegevens inschakelen](event-hubs-diagnostic-logs.md#enable-diagnostic-logs)uit te voeren. U ziet het IP-adres voor de verbinding die wordt geweigerd.
-
-```json
-{
-    "SubscriptionId": "0000000-0000-0000-0000-000000000000",
-    "NamespaceName": "namespace-name",
-    "IPAddress": "1.2.3.4",
-    "Action": "Deny Connection",
-    "Reason": "IPAddress doesn't belong to a subnet with Service Endpoint enabled.",
-    "Count": "65",
-    "ResourceId": "/subscriptions/0000000-0000-0000-0000-000000000000/resourcegroups/testrg/providers/microsoft.eventhub/namespaces/namespace-name",
-    "Category": "EventHubVNetConnectionEvent"
-}
-```
 
 ### <a name="check-if-the-namespace-can-be-accessed-using-only-a-private-endpoint"></a>Controleren of de naam ruimte kan worden geopend met alleen een persoonlijk eind punt
 Als de naam ruimte van de Event Hubs zodanig is geconfigureerd dat deze alleen toegankelijk is via een particulier eind punt, controleert u of de client toepassing toegang heeft tot de naam ruimte via het persoonlijke eind punt. 

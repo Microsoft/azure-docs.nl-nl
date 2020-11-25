@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/24/2020
 ms.openlocfilehash: 7c644583e994e51f11bdf7991755a6ea94b01e76
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533475"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012801"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Apache Hadoop clusters in HDInsight beheren door gebruik te maken van de Azure Portal
 
@@ -33,7 +33,7 @@ Meld u aan bij [https://portal.azure.com](https://portal.azure.com).
 
 Op de pagina **HDInsight-clusters** worden uw bestaande clusters weer geven.  Vanuit de portal:
 1. Selecteer **alle services** in het menu links.
-2. Selecteer **HDInsight-clusters** onder **Analytics** .
+2. Selecteer **HDInsight-clusters** onder **Analytics**.
 
 ## <a name="cluster-home-page"></a><a name="homePage"></a> Start pagina van cluster
 
@@ -60,7 +60,7 @@ Selecteer de naam van uw cluster op de pagina [**HDInsight-clusters**](#showClus
     |Toegangsbeheer (IAM)|Roltoewijzingen gebruiken.  Zie [roltoewijzingen gebruiken voor het beheren van toegang tot de resources van uw Azure-abonnement](../role-based-access-control/role-assignments-portal.md).|
     |Tags|Hiermee stelt u sleutel/waarde-paren in om een aangepaste taxonomie van uw Cloud Services te definiëren. U kunt bijvoorbeeld een sleutel met de naam **project** maken en vervolgens een algemene waarde gebruiken voor alle services die aan een specifiek project zijn gekoppeld.|
     |Problemen vaststellen en oplossen|Informatie over probleem oplossing weer geven.|
-    |Snelstartgids|Geeft informatie weer waarmee u aan de slag kunt gaan met HDInsight.|
+    |Snelstart|Geeft informatie weer waarmee u aan de slag kunt gaan met HDInsight.|
     |Hulpprogramma's|Help-informatie voor aan HDInsight gerelateerde hulpprogram ma's.|
 
   - **Menu Instellingen**  
@@ -109,7 +109,7 @@ Ga naar de [Start pagina](#homePage)van het cluster en selecteer Eigenschappen i
 |STATUS|Een van de volgende: afgebroken, geaccepteerde, ClusterStorageProvisioned, AzureVMConfiguration, HDInsightConfiguration, operationeel, actief, fout, verwijderen, verwijderd, out, DeleteQueued, DeleteTimedout, DeleteError, PatchQueued, CertRolloverQueued, ResizeQueued of ClusterCustomization.|
 |REGIO|Azure-locatie. Zie de vervolg keuzelijst **regio** in [prijzen voor HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/)voor een lijst met ondersteunde Azure-locaties.|
 |DATUM GEMAAKT|De datum waarop het cluster is geïmplementeerd.|
-|Besturingssysteem|**Windows** of **Linux** .|
+|Besturingssysteem|**Windows** of **Linux**.|
 |TYPE|Hadoop, HBase, Storm, Spark.|
 |Versie|Zie [HDInsight-versies](hdinsight-component-versioning.md).|
 |Minimale TLS-versie|De TLS-versie.|
@@ -126,7 +126,7 @@ U kunt een HDInsight-cluster verplaatsen naar een andere Azure-resource groep of
 Op de [Start pagina](#homePage)van het cluster:
 
 1. Selecteer **verplaatsen** in het bovenste menu.
-2. Selecteer **verplaatsen naar een andere resource groep** of **verplaatsen naar een ander abonnement** .
+2. Selecteer **verplaatsen naar een andere resource groep** of **verplaatsen naar een ander abonnement**.
 3. Volg de instructies op de pagina Nieuw.
 
 ## <a name="delete-clusters"></a>Clusters verwijderen
@@ -174,12 +174,12 @@ Ambari biedt een intuïtieve, eenvoudig te gebruiken Hadoop Management-webinterf
 
 Op de [Start pagina](#homePage)van het cluster:
 
-1. Selecteer **cluster dashboards** .
+1. Selecteer **cluster dashboards**.
 
     ![Menu van HDInsight Apache Hadoop-cluster](./media/hdinsight-administer-use-portal-linux/hdinsight-azure-portal-cluster-menu2.png)
 
 1. Selecteer **Ambari Home** op de nieuwe pagina.
-1. Voer de gebruikers naam en het wacht woord van het cluster in.  De standaard naam van het cluster is _admin_ .
+1. Voer de gebruikers naam en het wacht woord van het cluster in.  De standaard naam van het cluster is _admin_.
 
 Zie [HDInsight-clusters beheren met de Web-UI van Apache Ambari](hdinsight-hadoop-manage-ambari.md)voor meer informatie.
 
@@ -193,16 +193,16 @@ An HDInsight cluster kan twee gebruikers accounts hebben. Het gebruikers account
 > Het wijzigen van het wacht woord van de cluster gebruiker (admin) kan ertoe leiden dat script acties worden uitgevoerd voor het mislukken van dit cluster. Als er persistente script acties zijn die doel worker-knoop punten hebben, kunnen deze scripts mislukken wanneer u knoop punten aan het cluster toevoegt door grootte van bewerkingen te wijzigen. Zie [HDInsight-clusters aanpassen met behulp van script acties](hdinsight-hadoop-customize-cluster-linux.md)voor meer informatie over script acties.
 
 Op de [Start pagina](#homePage)van het cluster:
-1. Selecteer **SSH +-cluster aanmelding** onder **instellingen** .
-2. Selecteer **Referentie opnieuw instellen** .
+1. Selecteer **SSH +-cluster aanmelding** onder **instellingen**.
+2. Selecteer **Referentie opnieuw instellen**.
 3. Voer in de tekst vakken het nieuwe wacht woord in en bevestig dit.
-4. Selecteer **OK** .
+4. Selecteer **OK**.
 
 Het wacht woord wordt gewijzigd op alle knoop punten in het cluster.
 
 ### <a name="change-the-ssh-user-password-or-public-key"></a>Het wacht woord of de open bare sleutel van de SSH-gebruiker wijzigen
 
-1. Gebruik een tekst editor om de volgende tekst op te slaan als een bestand met de naam **changecredentials.sh** .
+1. Gebruik een tekst editor om de volgende tekst op te slaan als een bestand met de naam **changecredentials.sh**.
 
     > [!IMPORTANT]  
     > U moet een editor gebruiken die LF als regel einde gebruikt. Als de editor gebruikmaakt van CRLF, werkt het script niet.
@@ -215,8 +215,8 @@ Het wacht woord wordt gewijzigd op alle knoop punten in het cluster.
     ```
 
 2. Upload het bestand naar een opslag locatie die toegankelijk is vanaf HDInsight met behulp van een HTTP-of HTTPS-adres. Bijvoorbeeld een openbaar bestands archief zoals OneDrive of Azure Blob-opslag. Sla de URI (HTTP of HTTPS-adres) op in het bestand, omdat deze URI in de volgende stap nodig is.
-3. Selecteer op de [Start pagina](#homePage)van het cluster **script acties** onder **instellingen** .
-4. Selecteer op de pagina **script acties** de optie **Nieuw verzenden** .
+3. Selecteer op de [Start pagina](#homePage)van het cluster **script acties** onder **instellingen**.
+4. Selecteer op de pagina **script acties** de optie **Nieuw verzenden**.
 5. Voer op de pagina **script actie verzenden** de volgende gegevens in:
 
 > [!NOTE]
@@ -228,7 +228,7 @@ Het wacht woord wordt gewijzigd op alle knoop punten in het cluster.
    | Veld | Waarde |
    | --- | --- |
    | Scripttype | Selecteer **-aangepast** in de vervolg keuzelijst.|
-   | Naam |"SSH-referenties wijzigen" |
+   | Name |"SSH-referenties wijzigen" |
    | Bash-script-URI |De URI naar het changecredentials.sh-bestand |
    | Knooppunt type (n): (Head, worker, Nimbus, supervisor of Zookeeper.) |✓ voor alle weer gegeven knooppunt typen |
    | Parameters |Voer de SSH-gebruikers naam en vervolgens het nieuwe wacht woord in. Er moet één spatie tussen de gebruikers naam en het wacht woord zijn. |
@@ -246,7 +246,7 @@ In de Azure Resource Manager modus wordt elk HDInsight-cluster gemaakt met een A
 
 ## <a name="find-the-storage-accounts"></a>De opslag accounts zoeken
 
-HDInsight-clusters gebruiken een Azure Storage account of Azure Data Lake Storage om gegevens op te slaan. Elk HDInsight-cluster kan één standaard Storage-account en een aantal gekoppelde opslag accounts hebben. Als u de opslag accounts wilt weer geven, selecteert u op de [Start pagina](#homePage) van het cluster onder **instellingen** de optie **opslag accounts** .
+HDInsight-clusters gebruiken een Azure Storage account of Azure Data Lake Storage om gegevens op te slaan. Elk HDInsight-cluster kan één standaard Storage-account en een aantal gekoppelde opslag accounts hebben. Als u de opslag accounts wilt weer geven, selecteert u op de [Start pagina](#homePage) van het cluster onder **instellingen** de optie **opslag accounts**.
 
 ## <a name="monitor-jobs"></a>Taken controleren
 

@@ -7,17 +7,17 @@ author: markjbrown
 ms.author: mjbrown
 ms.date: 09/17/2020
 ms.custom: contperfq1
-ms.openlocfilehash: cb6d1cb684f4c2e3f563d5690c804d64c97ff70c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 67abcea1b5d7657ffcd342d4cddb9a96bdd8c63a
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096730"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030880"
 ---
 # <a name="command-line-and-powershell-reference-for-azure-cosmos-db-emulator"></a>Naslag informatie over de opdracht regel en Power shell voor Azure Cosmos DB-emulator
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-De Azure Cosmos-emulator biedt een lokale omgeving die de Azure Cosmos DB-Service voor lokale ontwikkelings doeleinden emuleert. Nadat [de emulator is geïnstalleerd](local-emulator.md), kunt u de emulator beheren met opdracht regel-en Power shell-opdrachten. In dit artikel wordt beschreven hoe u de opdracht regel-en Power shell-opdrachten gebruikt om de emulator te starten en te stoppen, opties te configureren en andere bewerkingen uit te voeren. U moet de opdrachten uitvoeren vanaf de installatie locatie.
+De Azure Cosmos DB-emulator biedt een lokale omgeving die de Azure Cosmos DB-Service voor lokale ontwikkelings doeleinden emuleert. Nadat [de emulator is geïnstalleerd](local-emulator.md), kunt u de emulator beheren met opdracht regel-en Power shell-opdrachten. In dit artikel wordt beschreven hoe u de opdracht regel-en Power shell-opdrachten gebruikt om de emulator te starten en te stoppen, opties te configureren en andere bewerkingen uit te voeren. U moet de opdrachten uitvoeren vanaf de installatie locatie.
 
 ##  <a name="manage-the-emulator-with-command-line-syntax"></a><a id="command-line"></a>De emulator met opdracht regel syntaxis beheren
 
@@ -29,10 +29,10 @@ Typ `Microsoft.Azure.Cosmos.Emulator.exe /?` bij de opdrachtprompt om een lijst 
 
 |**Optie** | **Beschrijving** | **Opdracht**| **Argumenten**|
 |---|---|---|---|
-|[Geen argumenten] | Start de Azure Cosmos-emulator met de standaard instellingen. |Microsoft.Azure.Cosmos.Emulator.exe| |
+|[Geen argumenten] | Start de Azure Cosmos DB Emulator met standaardinstellingen. |Microsoft.Azure.Cosmos.Emulator.exe| |
 |[Help] |Toont de lijst met ondersteunde opdrachtregelargumenten.|Microsoft.Azure.Cosmos.Emulator.exe /? | |
-| GetStatus |Vraagt de status op van Azure Cosmos Emulator. De status wordt aangegeven door de afsluitcode: 1 = starten, 2 = wordt uitgevoerd, 3 = gestopt. Een negatieve afsluitcode geeft aan dat er een fout is opgetreden. Er wordt geen andere uitvoer geproduceerd. | Microsoft.Azure.Cosmos.Emulator.exe /GetStatus| |
-| Afsluiten| Sluit Azure Cosmos Emulator af.| Microsoft.Azure.Cosmos.Emulator.exe /Shutdown | |
+| GetStatus |Downloadt de status van de Azure Cosmos DB Emulator. De status wordt aangegeven door de afsluitcode: 1 = starten, 2 = wordt uitgevoerd, 3 = gestopt. Een negatieve afsluitcode geeft aan dat er een fout is opgetreden. Er wordt geen andere uitvoer geproduceerd. | Microsoft.Azure.Cosmos.Emulator.exe /GetStatus| |
+| Afsluiten| Sluit de Azure Cosmos DB Emulator af.| Microsoft.Azure.Cosmos.Emulator.exe /Shutdown | |
 |DataPath | Specificeert het pad waarin de gegevensbestanden worden opgeslagen. De standaardwaarde is %LocalAppdata%\CosmosDBEmulator. | Microsoft.Azure.Cosmos.Emulator.exe/DataPath =\<datapath\> | \<datapath\>: Een toegankelijk pad |
 |Poort | Specificeert het poortnummer dat moet worden gebruikt voor de emulator. De standaardwaarde is 8081. |Microsoft.Azure.Cosmos.Emulator.exe/Port =\<port\> | \<port\>: Enkel poort nummer |
 | ComputePort | Specificeert het poortnummer dat moet worden gebruikt voor de Compute Interop Gateway-service. De testpoort voor het HTTP-eindpunt de gateway wordt berekend als ComputePort + 79. Daarom moeten ComputePort en ComputePort + 79 open en beschikbaar zijn. De standaardwaarde is 8900. | Microsoft.Azure.Cosmos.Emulator.exe/ComputePort =\<computeport\> | \<computeport\>: Enkel poort nummer |
@@ -127,26 +127,26 @@ De cmdlet zorgt ervoor dat de emulator is gestopt deze wordt verwijderd.
 
 ## <a name="change-the-number-of-default-containers"></a><a id="set-partitioncount"></a>Het aantal standaard containers wijzigen
 
-U kunt standaard maximaal 25 containers met een vaste grootte maken (alleen ondersteund bij gebruik van Azure Cosmos DB-SDK's) of vijf containers van onbeperkte grootte met behulp van Azure Cosmos Emulator. Door de waarde voor **PartitionCount** te wijzigen, kunt u maximaal 250 containers met een vaste grootte maken of vijftig containers van onbeperkte grootte, of een combinatie van de twee die niet groter is dan 250 containers met een vaste grootte (waarbij één container van onbeperkte grootte = vijf containers met een vaste grootte). Het wordt echter afgeraden om de emulator uit te voeren met meer dan 200 containers met een vaste grootte. Vanwege de overhead die hierdoor wordt toegevoegd aan de I/O-bewerkingen van de schijf, ontstaan er dan onvoorspelbare time-outs bij het gebruik van de eindpunt-API's.
+Standaard kunt u Maxi maal 25 containers met een vaste grootte maken (alleen ondersteund met behulp van Azure Cosmos DB Sdk's) of vijf onbeperkte containers met behulp van de Azure Cosmos DB emulator. Door de waarde voor **PartitionCount** te wijzigen, kunt u maximaal 250 containers met een vaste grootte maken of vijftig containers van onbeperkte grootte, of een combinatie van de twee die niet groter is dan 250 containers met een vaste grootte (waarbij één container van onbeperkte grootte = vijf containers met een vaste grootte). Het wordt echter afgeraden om de emulator uit te voeren met meer dan 200 containers met een vaste grootte. Vanwege de overhead die hierdoor wordt toegevoegd aan de I/O-bewerkingen van de schijf, ontstaan er dan onvoorspelbare time-outs bij het gebruik van de eindpunt-API's.
 
 Als u probeert een container te maken nadat het huidige aantal partities is overschreden, genereert de emulator een ServiceUnavailable-uitzondering, met het volgende bericht.
 
 > We ondervinden momenteel hoge vraag in deze regio en kunnen op dit moment niet aan uw aanvraag voldoen. We work continuously to bring more and more capacity online, and encourage you to try again. (Er is momenteel sprake van grote vraag in deze regio en we kunnen uw aanvraag op dit moment niet verwerken. We doen ons best om meer en meer capaciteit online te brengen en adviseren om het nogmaals te proberen.)
 > ActivityId: 12345678-1234-1234-1234-123456789abc
 
-Als u het aantal beschikbare containers voor Azure Cosmos Emulator wilt wijzigen, doet u het volgende:
+Voer de volgende stappen uit om het aantal containers te wijzigen dat beschikbaar is in de Azure Cosmos DB emulator:
 
-1. Verwijder alle lokale Azure Cosmos-emulator gegevens door met de rechter muisknop op het pictogram van de **Azure Cosmos DB emulator** op het systeemvak te klikken en vervolgens op **gegevens opnieuw instellen te klikken...** .
+1. Verwijder alle lokale Azure Cosmos DB Emulator-gegevens door met de rechtermuisknop te klikken op het pictogram van de **Azure Cosmos DB Emulator** pictogram in het systeemvak en vervolgens te klikken op **Gegevens opnieuw instellen...**.
 
 1. Verwijder alle emulator-gegevens in de map `%LOCALAPPDATA%\CosmosDBEmulator`.
 
-1. Sluit alle geopende exemplaren door met de rechtermuisknop te klikken op het pictogram van de **Azure Cosmos DB Emulator** in het systeemvak en vervolgens te klikken op **Afsluiten** . Het afsluiten van alle exemplaren kan een paar minuten duren.
+1. Sluit alle geopende exemplaren door met de rechtermuisknop te klikken op het pictogram van de **Azure Cosmos DB Emulator** in het systeemvak en vervolgens te klikken op **Afsluiten**. Het afsluiten van alle exemplaren kan een paar minuten duren.
 
-1. Installeer de nieuwste versie van [Azure Cosmos Emulator](https://aka.ms/cosmosdb-emulator).
+1. Installeer de nieuwste versie van de [Azure Cosmos DB Emulator](https://aka.ms/cosmosdb-emulator).
 
 1. Start de emulator met de vlag PartitionCount door een waarde < = 250 in te stellen. Bijvoorbeeld: `C:\Program Files\Azure Cosmos DB Emulator> Microsoft.Azure.Cosmos.Emulator.exe /PartitionCount=100`.
  
 ## <a name="next-steps"></a>Volgende stappen
 
-* [De Azure Cosmos-emulator certificaten exporteren voor gebruik met Java-, python-en Node.js-apps](local-emulator-export-ssl-certificates.md)
+* [De Azure Cosmos DB-emulator certificaten exporteren voor gebruik met Java-, python-en Node.js-apps](local-emulator-export-ssl-certificates.md)
 * [Problemen met de emulator oplossen](troubleshoot-local-emulator.md)

@@ -11,12 +11,12 @@ manager: eliotgra
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: e3fce15cdeb1792749224299167b52fc2311d04e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6b33b866a10ad4a44cef14f3c86d8ca1f40c4750
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91318273"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965371"
 ---
 # <a name="provisioning-devices-with-azure-iot-hub-device-provisioning-service"></a>Apparaten inrichten met Azure IoT Hub Device Provisioning Service
 Microsoft Azure biedt een uitgebreide set geïntegreerde openbare cloudservices om tegemoet te komen aan al uw IoT-vragen. IoT Hub Device Provisioning Service (DPS) is een helper-service die zero-touch mogelijk maakt, het Just-In-Time inrichten naar de juiste IoT Hub zonder tussenkomst van de gebruiker. Met DPS kunnen miljoenen apparaten op een veilige en schaalbare manier worden ingericht.
@@ -81,7 +81,7 @@ DPS bevat allerlei functies, waardoor de service ideaal is voor het inrichten va
 
 * Ondersteuning voor **beveiligde attestation** voor identiteiten op basis van zowel X.509 als TPM.
 * **Lijst van registraties** met een volledig overzicht van de apparaten/groepen apparaten die op enige moment kunnen worden geregistreerd. De registratielijst bevat informatie over de gewenste configuratie van het apparaat als dit wordt geregistreerd en de lijst kan op elk gewenst moment worden bijgewerkt.
-* **Meerdere beleidsregels voor toewijzing** om te bepalen hoe apparaten door DPS aan IoT-hubs worden toegewezen ter ondersteuning van uw scenario's: Laagste latentie, gelijkmatig gewogen distributie (standaard) en statische configuratie via de registratielijst. De latentie wordt bepaald met dezelfde methode als voor [Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods#performance).
+* **Meerdere beleidsregels voor toewijzing** om te bepalen hoe apparaten door DPS aan IoT-hubs worden toegewezen ter ondersteuning van uw scenario's: Laagste latentie, gelijkmatig gewogen distributie (standaard) en statische configuratie via de registratielijst. De latentie wordt bepaald met dezelfde methode als voor [Traffic Manager](../traffic-manager/traffic-manager-routing-methods.md#performance).
 * **Controle en logboekregistratie van diagnostische gegevens** om ervoor te zorgen dat alles goed werkt.
 * **Ondersteuning voor meerdere hubs** zorgt ervoor dat DPS apparaten kan toewijzen aan meer dan één IoT-hub. DPS kan communiceren met hubs binnen verschillende Azure-abonnementen.
 * **Ondersteuning voor meerdere regio's** zorgt ervoor dat DPS apparaten kan toewijzen aan IoT-hubs in andere regio's.
@@ -119,7 +119,7 @@ Meer informatie over quotalimieten vindt u hier:
 * [Azure-abonnement en servicelimieten, quota's en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md)
 
 ## <a name="related-azure-components"></a>Gerelateerde Azure-onderdelen
-Met DPS kunnen apparaten met behulp van Azure IoT Hub automatisch worden ingericht. Lees hier meer informatie over [IoT Hub](https://docs.microsoft.com/azure/iot-hub/).
+Met DPS kunnen apparaten met behulp van Azure IoT Hub automatisch worden ingericht. Lees hier meer informatie over [IoT Hub](../iot-hub/index.yml).
 
 ## <a name="next-steps"></a>Volgende stappen
 U hebt nu een algemeen beeld van het inrichten van IoT-apparaten in Azure. De volgende stap is het uitproberen van een compleet IoT-scenario.

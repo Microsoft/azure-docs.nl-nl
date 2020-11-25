@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 03566dccbb453aa06a2b5f86bd02b86d85d61b28
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0fe9b3ddaee41802ced30e1898b46cefa2566771
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91322050"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023187"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Wat is Windows Virtual Desktop?
 
@@ -71,7 +71,7 @@ We bieden ondersteuning voor de volgende besturingssystemen, zorg er dus voor da
 
 Uw infrastructuur heeft de volgende zaken nodig om Windows Virtual Desktop te ondersteunen:
 
-* Een [Azure Active Directory](/azure/active-directory/).
+* Een [Azure Active Directory](../active-directory/index.yml).
 * Een Windows Server Active Directory die gesynchroniseerd is met Azure Active Directory. U kunt dit configureren met behulp van Azure AD Connect (voor hybride organisaties) of Azure AD Domain Services (voor hybride organisaties of cloudorganisaties).
   * Een Windows Server AD die met Azure Active Directory is gesynchroniseerd. De gebruiker wordt verkregen uit Windows Server AD en de virtuele machine van Windows Virtual Desktop wordt gekoppeld aan het Windows Server AD-domein.
   * Een Windows Server AD die met Azure Active Directory is gesynchroniseerd. De gebruiker wordt verkregen uit Windows Server AD en de virtuele machine van Windows Virtual Desktop wordt gekoppeld aan het Azure AD Domain Services-domein.
@@ -85,7 +85,7 @@ Gebruikersvereisten om verbinding te maken met Windows Virtual Desktop:
 
 De virtuele Azure-machines die u maakt voor Windows Virtual Desktop moeten:
 
-* [toegevoegd zijn aan een Standard-domein](../active-directory-domain-services/active-directory-ds-comparison.md) of [toegevoegd zijn aan Hybrid AD](../active-directory/devices/hybrid-azuread-join-plan.md). Virtuele machines kunnen mogen niet toegevoegd zijn aan Azure AD.
+* [toegevoegd zijn aan een Standard-domein](../active-directory-domain-services/compare-identity-solutions.md) of [toegevoegd zijn aan Hybrid AD](../active-directory/devices/hybrid-azuread-join-plan.md). Virtuele machines kunnen mogen niet toegevoegd zijn aan Azure AD.
 * Een van de volgende [ondersteunde installatiekopieën van een besturingssysteem](#supported-virtual-machine-os-images) uitvoeren.
 
 >[!NOTE]
@@ -101,7 +101,7 @@ Zorg ervoor dat uw netwerk aan de volgende vereisten voldoet voor optimale prest
 * Netwerkverkeer kan buiten de grenzen van het land/de regio stromen wanneer virtuele machines die desktops en apps hosten, verbinding maken met de beheerservice.
 * Voor optimale netwerkprestaties raden we aan dat de virtuele machines van de host van de sessie zich in dezelfde Azure-regio bevinden als de beheerservice.
 
-U kunt een typische architectuur van Windows Virtual Desktop voor bedrijven bekijken in onze [documentatie over architectuur](https://docs.microsoft.com/azure/architecture/example-scenario/wvd/windows-virtual-desktop).
+U kunt een typische architectuur van Windows Virtual Desktop voor bedrijven bekijken in onze [documentatie over architectuur](/azure/architecture/example-scenario/wvd/windows-virtual-desktop).
 
 ## <a name="supported-remote-desktop-clients"></a>Ondersteunde Extern bureaublad-clients
 

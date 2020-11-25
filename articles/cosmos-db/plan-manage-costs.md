@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/19/2020
-ms.openlocfilehash: a73d155d20d09573ad5e1b2597678291aea4c92b
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: c7db48a1df61472de8676192f267493232139b6e
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980572"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030812"
 ---
 # <a name="plan-and-manage-costs-for-azure-cosmos-db"></a>Kosten plannen en beheren voor Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -43,7 +43,7 @@ In de volgende scherm afbeelding ziet u de schatting van de door Voer en de kost
 
 Als u van plan bent Azure Cosmos DB te gebruiken in de serverloze modus, moet u een schatting maken van het aantal [aanvraag eenheden](request-units.md) en GB aan opslag dat u per maand kunt gebruiken. U kunt de vereiste hoeveelheid aanvraag eenheden schatten door het aantal database bewerkingen te evalueren dat in een maand zou worden uitgegeven en de hoeveelheid te vermenigvuldigen met de bijbehorende RU-kosten. De volgende tabel geeft een overzicht van de geschatte RU-kosten voor veelvoorkomende database bewerkingen:
 
-| Bewerking | Geschatte kosten | Opmerkingen |
+| Bewerking | Geschatte kosten | Notities |
 | --- | --- | --- |
 | Een item maken | 5 RUs | Gemiddelde kosten voor een 1 KB-item met minder dan 5 eigenschappen om te indexeren |
 | Een item bijwerken | Tien aanvraageenheden | Gemiddelde kosten voor een 1 KB-item met minder dan 5 eigenschappen om te indexeren |
@@ -52,7 +52,7 @@ Als u van plan bent Azure Cosmos DB te gebruiken in de serverloze modus, moet u 
 | Een query uitvoeren | Tien aanvraageenheden | De gemiddelde kosten voor een query die optimaal gebruik maakt van [indexering](index-overview.md) en 100 resultaten of minder levert |
 
 > [!IMPORTANT] 
-> Let op de opmerkingen in de bovenstaande tabel. Voor een nauw keurigere schatting van de werkelijke kosten van uw bewerkingen kunt u de [Azure Cosmos-emulator](local-emulator.md) gebruiken om [de exacte ru-kosten van uw bewerkingen te meten](find-request-unit-charge.md). Hoewel de Azure Cosmos-emulator geen serverloos ondersteunt, wordt een standaard-RU-kosten voor database bewerkingen gerapporteerd en kan deze worden gebruikt voor deze schatting.
+> Let op de opmerkingen in de bovenstaande tabel. Voor een nauw keurigere schatting van de werkelijke kosten van uw bewerkingen kunt u de [Azure Cosmos DB-emulator](local-emulator.md) gebruiken en [de exacte ru-kosten van uw bewerkingen meten](find-request-unit-charge.md). Hoewel de Azure Cosmos DB-emulator geen serverloos ondersteunt, wordt een standaard-RU-kosten voor database bewerkingen gerapporteerd en kan deze worden gebruikt voor deze schatting.
 
 Zodra u het totale aantal aanvraag eenheden en GB aan opslag ruimte hebt berekend dat u in de loop van een maand waarschijnlijk wilt gebruiken, wordt uw kosten raming door de volgende formule geretourneerd: **([aantal aanvraag eenheden]/1.000.000 * $0,25) + ([GB opslag ruimte] * $0,25)**.
 

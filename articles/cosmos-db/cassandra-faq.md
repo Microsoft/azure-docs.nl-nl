@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 08/12/2020
 ms.author: thvankra
-ms.openlocfilehash: 3436a0edf69efc71d3528bffaefd613668426fad
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1368a3174af08f557b6d08f298fba015601d568c
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995813"
+ms.locfileid: "96030829"
 ---
 # <a name="frequently-asked-questions-about-the-cassandra-api-in-azure-cosmos-db"></a>Veelgestelde vragen over de Cassandra-API in Azure Cosmos DB
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -176,7 +176,7 @@ Nee. De Cassandra-API ondersteunt [secundaire indexen](cassandra-secondary-index
 
 ### <a name="can-i-use-the-new-cassandra-api-sdk-locally-with-the-emulator"></a>Kan ik de nieuwe Cassandra-API SDK lokaal met de emulator gebruiken?
 
-Ja, dit wordt ondersteund. Meer informatie over het inschakelen van deze optie vindt u in het artikel [de Azure Cosmos-emulator gebruiken voor lokale ontwikkel-en test doeleinden](local-emulator.md#cassandra-api) .
+Ja, dit wordt ondersteund. Meer informatie over het inschakelen van deze optie vindt u in het artikel [Azure Cosmos DB emulator gebruiken voor lokale ontwikkeling en test doeleinden](local-emulator.md#cassandra-api) .
 
 
 ### <a name="how-can-i-migrate-data-from-apache-cassandra-clusters-to-azure-cosmos-db"></a>Hoe kan ik gegevens van Apache Cassandra-clusters migreren naar Azure Cosmos DB?

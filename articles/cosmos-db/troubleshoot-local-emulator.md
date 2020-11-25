@@ -1,29 +1,29 @@
 ---
-title: Problemen oplossen bij het gebruik van de Azure Cosmos-emulator
-description: Meer informatie over het troubleshot van de service, het oplossen van problemen met certificaten, versleuteling en versie beheer bij het gebruik van de Azure Cosmos-emulator.
+title: Problemen oplossen bij het gebruik van de Azure Cosmos DB-emulator
+description: Meer informatie over hoe u troubleshot service niet beschikbaar, certificaat, versleuteling en versie beheer problemen ondervindt bij het gebruik van de Azure Cosmos DB-emulator.
 ms.service: cosmos-db
 ms.topic: troubleshooting
 author: markjbrown
 ms.author: mjbrown
 ms.date: 09/17/2020
 ms.custom: contperfq1
-ms.openlocfilehash: cf174d45f33c50ce93b45b19c6030cf42cb20983
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 83559cc2ab1ca9597cca405333061e53b6f56aa9
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93081447"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030744"
 ---
-# <a name="troubleshoot-issues-when-using-the-azure-cosmos-emulator"></a>Problemen oplossen bij het gebruik van de Azure Cosmos-emulator
+# <a name="troubleshoot-issues-when-using-the-azure-cosmos-db-emulator"></a>Problemen oplossen bij het gebruik van de Azure Cosmos DB-emulator
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-De Azure Cosmos-emulator biedt een lokale omgeving die de Azure Cosmos DB-Service voor ontwikkelings doeleinden emuleert. Gebruik de tips in dit artikel voor hulp bij het oplossen van problemen die optreden bij het installeren of gebruiken van de Azure Cosmos-emulator. 
+De Azure Cosmos DB Emulator is een lokale omgeving waarin de Azure Cosmos DB-service wordt geëmuleerd voor ontwikkelingsdoeleinden. Gebruik de tips in dit artikel voor hulp bij het oplossen van problemen die optreden bij het installeren of gebruiken van de Azure Cosmos DB-emulator. 
 
-Als u een nieuwe versie van de emulator hebt geïnstalleerd en er fouten optreden, zorg dan dat u uw gegevens opnieuw instelt. U kunt uw gegevens opnieuw instellen door met de rechter muisknop op het pictogram van de Azure Cosmos-emulator in het systeemvak te klikken en vervolgens op gegevens opnieuw instellen te klikken.... Als dat niet het geval is, kunt u de emulator en eventuele oudere versies van de emulator verwijderen, indien gevonden, verwijdert u de map *C:\Program files\Azure Cosmos DB emulator* en installeert u de emulator opnieuw. Zie [De lokale emulator verwijderen](local-emulator.md#uninstall) voor instructies. Als u de gegevens opnieuw instelt, gaat u naar `%LOCALAPPDATA%\CosmosDBEmulator` locatie en verwijdert u de map.
+Als u een nieuwe versie van de emulator hebt geïnstalleerd en er fouten optreden, zorg dan dat u uw gegevens opnieuw instelt. U kunt uw gegevens opnieuw instellen door met de rechter muisknop te klikken op het pictogram Azure Cosmos DB emulator op het systeemvak en vervolgens op gegevens opnieuw instellen te klikken.... Als dat niet het geval is, kunt u de emulator en eventuele oudere versies van de emulator verwijderen, indien gevonden, verwijdert u de map *C:\Program files\Azure Cosmos DB emulator* en installeert u de emulator opnieuw. Zie [De lokale emulator verwijderen](local-emulator.md#uninstall) voor instructies. Als u de gegevens opnieuw instelt, gaat u naar `%LOCALAPPDATA%\CosmosDBEmulator` locatie en verwijdert u de map.
 
 ## <a name="troubleshoot-corrupted-windows-performance-counters"></a>Problemen met beschadigde Windows-prestatie meter items oplossen
 
-* Als de Azure Cosmos-emulator vastloopt, verzamelt u de dump bestanden vanuit `%LOCALAPPDATA%\CrashDumps` de map, comprimeert u deze en opent u een ondersteunings ticket van de [Azure Portal](https://portal.azure.com).
+* Als de Azure Cosmos DB-emulator vastloopt, verzamelt u de dump bestanden vanuit `%LOCALAPPDATA%\CrashDumps` de map, comprimeert u deze en opent u een ondersteunings ticket vanuit de [Azure Portal](https://portal.azure.com).
 
 * Als `Microsoft.Azure.Cosmos.ComputeServiceStartupEntryPoint.exe` vastloopt, kan dit een indicatie zijn dat de prestatiemeteritems beschadigd zijn. Dit probleem kunt u meestal oplossen door de volgende opdracht uit te voeren vanaf een opdrachtprompt met beheerdersrechten:
 
@@ -37,7 +37,7 @@ Als u een nieuwe versie van de emulator hebt geïnstalleerd en er fouten optrede
 
 * Als u het bericht **Service niet beschikbaar** krijgt, is het mogelijk dat de emulator de netwerkstack niet kan initialiseren. Controleer of de veilige Pulse-client of Juniper-netwerkclient is geïnstalleerd. De netwerkfilterstuurprogramma's van deze clients kunnen mogelijk de oorzaak zijn van het probleem. Doorgaans kan het probleem worden opgelost door stuurprogramma's voor netwerkfilters van derden te verwijderen. U kunt de emulator ook starten met/DisableRIO, waarmee de netwerkcommunicatie van de emulator wordt overgezet naar normale Winsock. 
 
-* Als u **de aanvraag ' verboden ' ontvangt, wordt het bericht ': ' verzonden met een verboden versleuteling in het Transit Protocol of de versleuteling. Controleer de mini maal toegestane protocol instelling voor SSL/TLS...** verbindings problemen. Dit kan worden veroorzaakt door algemene wijzigingen in het besturings systeem (bijvoorbeeld insider preview Build 20170) of de instellingen van de browser die TLS 1,3 als standaard inschakelen. Er kan een soort gelijke fout optreden wanneer u de SDK gebruikt om een aanvraag uit te voeren op de Cosmos-emulator, zoals **Microsoft.Azure.Documents.DocumentClientException: er wordt een aanvraag gemaakt met een verboden versleuteling in het Transit Protocol of de versleuteling. Controleer de mini maal toegestane protocol instelling voor SSL/TLS-accounts** . Dit werkt op dit moment zoals verwacht, omdat de Cosmos Emulator alleen het TLS 1.2-protocol accepteert en gebruikt. De aanbevolen oplossing is om de instellingen te wijzigen en standaard te bewerken in TLS 1,2. bijvoorbeeld: in IIS-beheer navigeert u naar "sites"-> "standaard websites" en zoekt u de site bindingen voor poort 8081 en bewerkt u deze om TLS 1,3 uit te scha kelen. Een vergelijkbare bewerking kan worden uitgevoerd voor de webbrowser via de opties in Instellingen.
+* Als u **de aanvraag ' verboden ' ontvangt, wordt het bericht ': ' verzonden met een verboden versleuteling in het Transit Protocol of de versleuteling. Controleer de mini maal toegestane protocol instelling voor SSL/TLS...** verbindings problemen. Dit kan worden veroorzaakt door algemene wijzigingen in het besturings systeem (bijvoorbeeld insider preview Build 20170) of de instellingen van de browser die TLS 1,3 als standaard inschakelen. Er kan een soort gelijke fout optreden wanneer u de SDK gebruikt om een aanvraag uit te voeren op de Cosmos-emulator, zoals **Microsoft.Azure.Documents.DocumentClientException: er wordt een aanvraag gemaakt met een verboden versleuteling in het Transit Protocol of de versleuteling. Controleer de mini maal toegestane protocol instelling voor SSL/TLS-accounts**. Dit werkt op dit moment zoals verwacht, omdat de Cosmos Emulator alleen het TLS 1.2-protocol accepteert en gebruikt. De aanbevolen oplossing is om de instellingen te wijzigen en standaard te bewerken in TLS 1,2. bijvoorbeeld: in IIS-beheer navigeert u naar "sites"-> "standaard websites" en zoekt u de site bindingen voor poort 8081 en bewerkt u deze om TLS 1,3 uit te scha kelen. Een vergelijkbare bewerking kan worden uitgevoerd voor de webbrowser via de opties in Instellingen.
 
 * Als de emulator wordt uitgevoerd en uw computer naar de slaapstand gaat of er besturingssysteemupdates worden uitgevoerd, wordt mogelijk het bericht **Service is momenteel niet beschikbaar** weergegeven. Stel de gegevens van de emulator opnieuw in door met de rechtermuisknop op het pictogram te klikken dat wordt weergegeven in het Windows-systeemvak. Selecteer vervolgens **Reset Data** (Gegevens opnieuw instellen).
 
@@ -51,7 +51,7 @@ Voor het verzamelen van foutopsporingsgegevens, voert u de volgende opdrachten u
    cd /d "%ProgramFiles%\Azure Cosmos DB Emulator"
    ```
 
-1. Sluit de emulator af en Bekijk de systeem balk om te controleren of het programma is afgesloten. Het kan een minuut duren voordat de bewerking is voltooid. U kunt ook **Afsluiten** selecteren in de gebruikers interface van de Azure Cosmos-emulator.
+1. Sluit de emulator af en Bekijk de systeem balk om te controleren of het programma is afgesloten. Het kan een minuut duren voordat de bewerking is voltooid. U kunt ook **Afsluiten** selecteren in de gebruikers interface van de Azure Cosmos DB emulator.
 
    ```bash
    Microsoft.Azure.Cosmos.Emulator.exe /shutdown
@@ -85,5 +85,5 @@ Voor het verzamelen van foutopsporingsgegevens, voert u de volgende opdrachten u
 
 In dit artikel hebt u geleerd hoe u problemen met de lokale emulator kunt oplossen. U kunt nu door gaan met de volgende artikelen:
 
-* [De Azure Cosmos-emulator certificaten exporteren voor gebruik met Java-, python-en Node.js-apps](local-emulator-export-ssl-certificates.md)
+* [De Azure Cosmos DB-emulator certificaten exporteren voor gebruik met Java-, python-en Node.js-apps](local-emulator-export-ssl-certificates.md)
 * [Opdracht regel parameters en Power shell-opdrachten gebruiken om de emulator te beheren](emulator-command-line-parameters.md)

@@ -9,12 +9,12 @@ ms.author: chpalm
 ms.date: 10/10/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: a7e2240e3f74f82186827ec82bb1aa39a5b93f6c
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 028e7f9764cbf75263736471f434e04bc6daca0f
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123831"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886818"
 ---
 # <a name="teams-interoperability"></a>Interoperabiliteit met Teams
 
@@ -35,9 +35,9 @@ De architectuur op hoog niveau voor deze gebruikers-case ziet er als volgt uit:
 
 Hoewel bepaalde Teams-vergaderingsfuncties zoals opgestoken hand, samen-modus en aparte vergaderruimtes alleen beschikbaar zullen zijn voor Teams-gebruikers, heeft uw aangepaste toepassing wel toegang tot de kernfunctionaliteit van de vergadering voor audio, video en scherm delen.
 
-Wanneer een Communication Services-gebruiker deelneemt aan de Teams-vergadering, wordt de weergavenaam die via de Aanroepende clientbibliotheek wordt verschaft, weergegeven voor Teams-gebruikers. De Communication Services-gebruiker wordt anders behandeld als een anonieme gebruiker in Teams. Uw aangepaste toepassing moet rekening houden met gebruikersverificatie en andere veiligheidsmaatregelen om Teams vergaderingen te beveiligen. Houd rekening met de beveiligingsimplicaties van het deel laten nemen van anonieme gebruikers aan vergaderingen, en gebruik de [Beveiligingshandleiding van Teams](https://docs.microsoft.com/microsoftteams/teams-security-guide#addressing-threats-to-teams-meetings) om de mogelijkheden te configureren die beschikbaar zijn voor anonieme gebruikers.
+Wanneer een Communication Services-gebruiker deelneemt aan de Teams-vergadering, wordt de weergavenaam die via de Aanroepende clientbibliotheek wordt verschaft, weergegeven voor Teams-gebruikers. De Communication Services-gebruiker wordt anders behandeld als een anonieme gebruiker in Teams. Uw aangepaste toepassing moet rekening houden met gebruikersverificatie en andere veiligheidsmaatregelen om Teams vergaderingen te beveiligen. Houd rekening met de beveiligingsimplicaties van het deel laten nemen van anonieme gebruikers aan vergaderingen, en gebruik de [Beveiligingshandleiding van Teams](/microsoftteams/teams-security-guide#addressing-threats-to-teams-meetings) om de mogelijkheden te configureren die beschikbaar zijn voor anonieme gebruikers.
 
-Gebruikers van Communication Services kunnen deelnemen aan geplande Teams-vergaderingen, zolang anonieme deelnames zijn ingeschakeld in de [instellingen van vergaderingen](https://docs.microsoft.com/microsoftteams/meeting-settings-in-teams).
+Gebruikers van Communication Services kunnen deelnemen aan geplande Teams-vergaderingen, zolang anonieme deelnames zijn ingeschakeld in de [instellingen van vergaderingen](/microsoftteams/meeting-settings-in-teams).
 
 
 

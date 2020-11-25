@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 11/25/2020
 ms.author: jingwang
-ms.openlocfilehash: 6699178e514f4d25666305f3251e8eaf9d28e6dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f6d6c830eec8e711e700733a90611c353b68439d
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81417458"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030795"
 ---
 # <a name="copy-data-from-concur-using-azure-data-factory-preview"></a>Gegevens kopiëren van concur met behulp van Azure Data Factory (preview-versie)
 
@@ -25,7 +25,7 @@ ms.locfileid: "81417458"
 In dit artikel wordt beschreven hoe u de Kopieer activiteit in Azure Data Factory kunt gebruiken om gegevens uit concur te kopiëren. Het is gebaseerd op het artikel overzicht van de [Kopieer activiteit](copy-activity-overview.md) . Dit geeft een algemeen overzicht van de Kopieer activiteit.
 
 > [!IMPORTANT]
-> Deze connector is momenteel beschikbaar als preview-versie. U kunt het uitproberen en ons feedback geven. Neem contact op met de [ondersteuning van Azure](https://azure.microsoft.com/support/) als u een afhankelijkheid van preview-connectors wilt opnemen in uw oplossing.
+> Deze connector is momenteel beschikbaar in preview. U kunt het uitproberen en ons feedback geven. Neem contact op met de [ondersteuning van Azure](https://azure.microsoft.com/support/) als u een afhankelijkheid van preview-connectors wilt opnemen in uw oplossing.
 
 ## <a name="supported-capabilities"></a>Ondersteunde mogelijkheden
 
@@ -35,8 +35,6 @@ Deze concur-connector wordt ondersteund voor de volgende activiteiten:
 - [Activiteit Lookup](control-flow-lookup-activity.md)
 
 U kunt gegevens van concur kopiëren naar elk ondersteund Sink-gegevens archief. Zie de tabel [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats) voor een lijst met gegevens archieven die worden ondersteund als bron/sinks door de Kopieer activiteit.
-
-Azure Data Factory biedt een ingebouwd stuur programma om connectiviteit mogelijk te maken. u hoeft dus niet hand matig een stuur programma te installeren met behulp van deze connector.
 
 > [!NOTE]
 > Het partner account wordt momenteel niet ondersteund.
@@ -53,15 +51,54 @@ De volgende eigenschappen worden ondersteund voor concur gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **concur** | Ja |
-| clientId | Toepassings client_id geleverd door concur-app-beheer.  | Ja |
-| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de concur-service.  | Ja |
-| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam die u hebt opgegeven in het veld gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
-| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | Nee |
-| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | Nee |
-| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | Nee |
+| type | De eigenschap type moet worden ingesteld op: **concur** | Yes |
+| connectionProperties | Een groep eigenschappen die definieert hoe verbinding moet worden gemaakt met concur. | Yes |
+| **_Onder `connectionProperties` :_* _ | | |
+| authenticationType | Toegestane waarden zijn `OAuth_2.0_Bearer` en `OAuth_2.0` (verouderd). De OAuth 2,0-verificatie optie werkt met de oude concur-API die sinds februari 2017 is afgeschaft. | Yes |
+| host | Het eind punt van de concur-server, bijvoorbeeld `implementation.concursolutions.com` .  | Yes |
+| baseUrl | De basis-URL van de autorisatie-URL van uw concur. | Ja voor `OAuth_2.0_Bearer` verificatie |
+| clientId | De client-ID van de toepassing die is geleverd door concur-app-beheer.  | Yes |
+| clientSecret | Het client geheim dat overeenkomt met de client-ID. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja voor `OAuth_2.0_Bearer` verificatie |
+| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de concur-service. | Yes |
+| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam die u hebt opgegeven in het veld gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes |
+| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | No |
+| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | No |
+| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | No |
 
-**Voorbeeld:**
+_ *Voor beeld:**
+
+```json
+{ 
+    "name": "ConcurLinkedService", 
+    "properties": {
+        "type": "Concur",
+        "typeProperties": {
+            "connectionProperties": {
+                "host":"<host e.g. implementation.concursolutions.com>",
+                "baseUrl": "<base URL for authorization e.g. us-impl.api.concursolutions.com>",
+                "authenticationType": "OAuth_2.0_Bearer",
+                "clientId": "<client id>",
+                "clientSecret": {
+                    "type": "SecureString",
+                    "value": "<client secret>"
+                },
+                "username": "fakeUserName",
+                "password": {
+                    "type": "SecureString",
+                    "value": "<password>"
+                },
+                "useEncryptedEndpoints": true,
+                "useHostVerification": true,
+                "usePeerVerification": true
+            }
+        }
+    }
+} 
+```
+
+**Voor beeld (verouderd):**
+
+Opmerking: het volgende is een verouderd gekoppeld service model zonder `connectionProperties` en verificatie te gebruiken `OAuth_2.0` .
 
 ```json
 {
@@ -88,7 +125,7 @@ Als u gegevens van concur wilt kopiëren, stelt u de eigenschap type van de gege
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ConcurObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ConcurObject** | Yes |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 
@@ -119,7 +156,7 @@ Als u gegevens wilt kopiëren uit concur, stelt u het bron type in de Kopieer ac
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **ConcurSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **ConcurSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM Opportunities where Id = xxx "`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

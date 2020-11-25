@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/01/2020
-ms.openlocfilehash: fa7919f54663387ddef811d02137da6d3ffb9d9b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 4e50560d2f090c99d1f354ebbc11ab2357dd61e8
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94646624"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874726"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-using-the-azure-cli"></a>Quickstart: een Azure Stream Analytics-taak maken via de Azure CLI
 
@@ -155,7 +155,7 @@ Maak op uw lokale machine een bestand met de naam `serialization.json` en voeg e
 Voer vervolgens de cmdlet `az stream-analytics input create` uit. Zorg ervoor dat u de waarde van de `datasource`-variabele vervangt door het pad waar u het JSON-bestand met de taakinvoerdefinitie hebt opgeslagen en de waarde van de `serialization`-variabele door het pad waar u het JSON-bestand voor serialisatie hebt opgeslagen.
 
 ```azurecli
-az stream-analytics input create 
+az stream-analytics input create \
     --resource-group streamanalyticsrg 
     --job-name streamanalyticsjob \
     --name asaiotinput \
@@ -191,7 +191,7 @@ Maak op uw lokale machine een bestand met de naam `datasink.json` en voeg er de 
 Voer vervolgens de cmdlet `az stream-analytics output` uit. Zorg ervoor dat u de waarde van de `datasource`-variabele vervangt door het pad waar u het JSON-bestand met de taakuitvoerdefinitie hebt opgeslagen en de waarde van de `serialization`-variabele door het pad waar u het JSON-bestand voor serialisatie hebt opgeslagen.
 
 ```azurecli
-az stream-analytics output create 
+az stream-analytics output create \
     --resource-group streamanalyticsrg \
     --job-name streamanalyticsjob \
     --name asabloboutput \
@@ -206,7 +206,7 @@ Voeg een transformatie aan uw taak toe met behulp van de cmdlet [az stream-analy
 Voer de cmdlet `az stream-analytics transformation create` uit.
 
 ```azurecli
-az stream-analytics transformation create 
+az stream-analytics transformation create \
     --resource-group streamanalyticsrg \
     --job-name streamanalyticsjob \
     --name Transformation \
@@ -230,7 +230,7 @@ Start de taak met behulp van de cmdlet [az stream-analytics job start](/cli/azur
 Nadat u de volgende cmdlet hebt uitgevoerd, retourneert deze `True` als uitvoer als de taak wordt gestart. In de opslagcontainer wordt een uitvoermap met de getransformeerde gegevens gemaakt.
 
 ```azurecli
-az stream-analytics job start 
+az stream-analytics job start \
     --resource-group streamanalyticsrg \
     --name streamanalyticsjob \
     --output-start-mode JobStartTime

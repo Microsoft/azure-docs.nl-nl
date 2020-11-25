@@ -8,15 +8,15 @@ ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: sql-dw
 ms.date: 05/28/2019
-ms.author: Kevin
+ms.author: pimorano
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 878b272e2a1a0e1d5a00a9c2028a6803b6d95383
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 470892aa46d3f75ce8e17200f7d0549ae14b0e86
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91568962"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023783"
 ---
 # <a name="quickstart-create-and-query-a-synapse-sql-pool-using-the-azure-portal"></a>Quickstart: Een Synapse SQL-pool maken en query uitvoeren met behulp van de Azure-portal
 

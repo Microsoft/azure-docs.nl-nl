@@ -10,18 +10,18 @@ ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
 zone_pivot_groups: acs-plat-azp-net
-ms.openlocfilehash: 8b606108d0e33ba1dd49e37c0f407b0caa350f6b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a93ac3b5d988be33c0f27726a75b1006f990d1da
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91667500"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886110"
 ---
 # <a name="quickstart-create-and-manage-communication-services-resources"></a>Quickstart: Communication Services-resources maken en beheren
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
-Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communication Services-resources kunnen worden ingericht via de Azure Portal of met de .NET beheer-clientbibliotheek. Met de beheer-clientbibliotheek kunt u uw resource en interfaces maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview), de implementatie- en beheerservice van Azure. Alle beschikbare functies in de clientbibliotheken zijn beschikbaar in de Azure Portal. 
+Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communication Services-resources kunnen worden ingericht via de Azure Portal of met de .NET beheer-clientbibliotheek. Met de beheer-clientbibliotheek kunt u uw resource en interfaces maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie- en beheerservice van Azure. Alle beschikbare functies in de clientbibliotheken zijn beschikbaar in de Azure Portal. 
 
 > [!WARNING]
 > Houd er rekening mee dat de beschikbaarheid van Communication Services wordt beperkt tot de Amerikaanse geografie tijdens openbare preview. Houd er ook rekening mee dat communicatie bronnen niet kunnen worden overgedragen naar een ander abonnement tijdens de openbare preview.
@@ -47,8 +47,8 @@ Nadat u naar uw Communication Services-resource hebt genavigeerd, selecteert u *
 Clientbibliotheken voor Communication Services gebruiken verbindingsreeksen om aanvragen voor Communication Services te autoriseren. U hebt verschillende mogelijkheden om uw verbindingsreeks op te slaan:
 
 * Een toepassing die wordt uitgevoerd op het bureaublad of op een apparaat kan de verbindingsreeks opslaan in een bestand **app.config** of **web.config**. Voeg de verbindingsreeks toe aan de sectie **AppSettings** in deze bestanden.
-* Een toepassing die wordt uitgevoerd in een Azure App Service kan de verbindingsreeks opslaan in de [App Service-toepassingsinstellingen](https://docs.microsoft.com/azure/app-service/configure-common). Voeg de verbindingsreeks toe aan de sectie **Verbindingsreeksen** van het tabblad Toepassingsinstellingen in de portal.
-* U kunt uw verbindingsreeks opslaan in [Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault).
+* Een toepassing die wordt uitgevoerd in een Azure App Service kan de verbindingsreeks opslaan in de [App Service-toepassingsinstellingen](../../app-service/configure-common.md). Voeg de verbindingsreeks toe aan de sectie **Verbindingsreeksen** van het tabblad Toepassingsinstellingen in de portal.
+* U kunt uw verbindingsreeks opslaan in [Azure Key Vault](../../data-factory/store-credentials-in-key-vault.md).
 * Als u uw toepassing lokaal uitvoert, wilt u mogelijk uw verbindingsreeks opslaan in een omgevingsvariabele.
 
 ### <a name="store-your-connection-string-in-an-environment-variable"></a>De verbindingsreeks naar een omgevingsvariabele schrijven

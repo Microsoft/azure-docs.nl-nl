@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 11b9c553573d9e6188ba634b4cb966d6a9b850b4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 051f903c0b203045886b80f72d868adc1fa85f73
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90944774"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886095"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -23,11 +23,11 @@ Als u een Azure SignalR Service-resource wilt maken, meldt u zich eerst aan bij 
 
 Voer **Communicatie** in **Zoek in de Marketplace** invoer of in de zoekbalk bovenaan de portal.
 
-:::image type="content" source="../media/create-a-communication-resource/searchbar-communication-portal.png" alt-text="Schermopname van de knop een resource maken in de Azure-portal.":::
+:::image type="content" source="../media/create-a-communication-resource/searchbar-communication-portal.png" alt-text="Schermopname van een zoekopdracht naar Communication Services in de zoekbalk.":::
 
 Selecteer **Communication Services** in de resultaten en selecteer vervolgens **Toevoegen**.
 
-:::image type="content" source="../media/create-a-communication-resource/add-communication-portal.png" alt-text="Schermopname van de knop een resource maken in de Azure-portal.":::
+:::image type="content" source="../media/create-a-communication-resource/add-communication-portal.png" alt-text="Schermopname van het Azure-deelvenster, waarbij u de knop toevoegen markeert.":::
 
 U kunt nu uw Communication Services-resource configureren. Op de eerste pagina van het proces maken, wordt u gevraagd het volgende op te geven:
 
@@ -36,7 +36,7 @@ U kunt nu uw Communication Services-resource configureren. Op de eerste pagina v
 * De naam van de Communication Services-resource
 * De geografie waaraan de resource wordt gekoppeld
 
-In de volgende stap kunt u tags toewijzen aan de resource. Tags kunnen worden gebruikt voor het organiseren van uw Azure-resources. Zie de [documentatie van resource-tagging ](https://docs.microsoft.com/azure/azure-resource-manager/management/tag-resources) voor meer informatie over tags.
+In de volgende stap kunt u tags toewijzen aan de resource. Tags kunnen worden gebruikt voor het organiseren van uw Azure-resources. Zie de [documentatie van resource-tagging ](../../../azure-resource-manager/management/tag-resources.md) voor meer informatie over tags.
 
 Ten slotte kunt u uw configuratie controleren en de resource **Maken**. Houd er rekening mee dat het enkele minuten duurt voordat de implementatie is voltooid.
 

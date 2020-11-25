@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: f33d7efd1c136619767c3eadd93740442ae7239a
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: f0e69e3f62d3b9e4debb5761d877dcdfdd246f60
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762039"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886019"
 ---
 # <a name="chat-concepts"></a>Chatconcepten
 
@@ -120,7 +120,7 @@ Met realtime signalering kunnen uw gebruikers in realtime chatten. Uw services k
 
 ## <a name="using-cognitive-services-with-chat-client-library-to-enable-intelligent-features"></a>Cognitive Services gebruiken met de chat-clientbibliotheek om intelligente functies in te schakelen
 
-U kunt [Azure Cognitive-API’s](https://docs.microsoft.com/azure/cognitive-services/) gebruiken met de chat-clientbibliotheek om intelligente functies aan uw toepassingen toe te voegen. U kunt bijvoorbeeld:
+U kunt [Azure Cognitive-API’s](../../../cognitive-services/index.yml) gebruiken met de chat-clientbibliotheek om intelligente functies aan uw toepassingen toe te voegen. U kunt bijvoorbeeld:
 
 - Gebruikers in staat stellen om met elkaar te chatten in verschillende talen. 
 - Een ondersteuningsagent helpen om tickets te prioriteren door een negatief sentiment van een inkomende kwestie van een klant te detecteren.
@@ -128,9 +128,9 @@ U kunt [Azure Cognitive-API’s](https://docs.microsoft.com/azure/cognitive-serv
 
 Een manier om dit te doen, is door uw vertrouwde service te laten fungeren als een lid van een chatgesprek. Stel dat u vertalingen wilt inschakelen. Deze service is verantwoordelijk voor het luisteren naar de berichten die worden uitgewisseld door andere leden [1], het aanroepen van Cognitive-API's om de inhoud naar de gewenste taal te vertalen [2,3] en het verzenden van het vertaalde resultaat als bericht in het chatgesprek [4]. 
 
-Op deze manier bevat de berichtgeschiedenis zowel de oorspronkelijke als de vertaalde berichten. In de clienttoepassing kunt u logica toevoegen om het oorspronkelijke of vertaalde bericht weer te geven. Raadpleeg [deze quickstart](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-translator) om te begrijpen hoe Cognitive-API’s kunnen worden gebruikt om tekst te vertalen naar verschillende talen. 
+Op deze manier bevat de berichtgeschiedenis zowel de oorspronkelijke als de vertaalde berichten. In de clienttoepassing kunt u logica toevoegen om het oorspronkelijke of vertaalde bericht weer te geven. Raadpleeg [deze quickstart](../../../cognitive-services/translator/quickstart-translator.md) om te begrijpen hoe Cognitive-API’s kunnen worden gebruikt om tekst te vertalen naar verschillende talen. 
 
-:::image type="content" source="../media/chat/cognitive-services.png" alt-text="Diagram van de chatarchitectuur in Communication Services.":::
+:::image type="content" source="../media/chat/cognitive-services.png" alt-text="Diagram waarin de interactie van Cognitive Services met Communication Services wordt weergegeven.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

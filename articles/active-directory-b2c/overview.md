@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 09/19/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7126cd38a9d0f9ed0079a73e1235cb08a99bcbcf
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 29b34041042f00d72b8a9fe86e31bd80f8c77dc2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91396532"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953947"
 ---
 # <a name="what-is-azure-active-directory-b2c"></a>Wat is Azure Active Directory B2C?
 
@@ -79,7 +79,7 @@ WoodGrove Groceries biedt verschillende aanmeldingsopties, afhankelijk van de re
 
 * **Individuele** klanten kunnen zich registreren of aanmelden met individuele accounts, zoals een sociale id-provider of een e-mailadres en wachtwoord.
 * **Zakelijke** klanten kunnen zich registreren of aanmelden met hun bedrijfsreferenties.
-* **Partners** en leveranciers zijn personen die de winkel producten leveren om te verkopen. Partneridentiteit is wordt geleverd door [Azure Active Directory B2B](../active-directory/b2b/what-is-b2b.md).
+* **Partners** en leveranciers zijn personen die de winkel producten leveren om te verkopen. Partneridentiteit is wordt geleverd door [Azure Active Directory B2B](../active-directory/external-identities/what-is-b2b.md).
 
 ![Aanmeldingspagina's voor personen (B2C), bedrijven (B2C) en partners (B2B)](./media/overview/woodgrove-overview.png)
 
@@ -111,7 +111,7 @@ Dit beleid geeft gebruikers de mogelijkheid hun bedrijfsreferenties te gebruiken
 
 De link **Aanmelden met uw leveranciersaccount** maakt gebruik van de samenwerkingsfunctionaliteit van Azure Active Directory B2B. Azure AD B2B is een groep functies in Azure Active Directory voor het beheren van partneridentiteiten. Deze identiteiten kunnen worden gefedereerd van Azure Active Directory voor toegang tot met Azure AD B2C beveiligde toepassingen.
 
-Lees meer over Azure AD B2B in [Wat is gastgebruikerstoegang in Azure Active Directory B2B?](../active-directory/b2b/what-is-b2b.md).
+Lees meer over Azure AD B2B in [Wat is gastgebruikerstoegang in Azure Active Directory B2B?](../active-directory/external-identities/what-is-b2b.md).
 
 <!-- UNCOMMENT WHEN REPO IS UPDATED WITH LATEST DEMO CODE
 ### Sample code

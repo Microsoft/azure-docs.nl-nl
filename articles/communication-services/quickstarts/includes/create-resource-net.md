@@ -4,18 +4,18 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 258908ed1118b0463e8c824cd8c699fb460dfff2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9a9f8fdda1bc853057f3eb858e85b938357397cd
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90944767"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886111"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/dotnet/)
 - De nieuwste versie van [.NET Core-clientbibliotheek](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturings systeem.
-- Download de nieuwste versie van de [clientbibliotheek voor de .NET-identiteit](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet).
+- Download de nieuwste versie van de [clientbibliotheek voor de .NET-identiteit](/dotnet/api/azure.identity?view=azure-dotnet).
 - Download de nieuwste versie van de [clientbibliotheek voor het .NET-beheer](../../concepts/sdk-options.md).
 
 ## <a name="installing-the-client-library"></a>De clientbibliotheek installeren
@@ -44,13 +44,13 @@ Als u wilt communiceren met Azure Communication Services, moet u zichzelf eerst 
 
 ### <a name="option-1-managed-identity"></a>Optie 1: Beheerde identiteit
 
-Als uw code als een service wordt uitgevoerd in Azure, is de eenvoudigste manier om te verifiëren om een beheerde identiteit te verkrijgen van Azure. Meer informatie over [beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+Als uw code als een service wordt uitgevoerd in Azure, is de eenvoudigste manier om te verifiëren om een beheerde identiteit te verkrijgen van Azure. Meer informatie over [beheerde identiteiten](../../../active-directory/managed-identities-azure-resources/overview.md).
 
-[Azure-services die beheerde identiteiten ondersteunen](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)
+[Azure-services die beheerde identiteiten ondersteunen](../../../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)
 
-[Beheerde identiteiten gebruiken voor App Service en Azure Functions](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet)
+[Beheerde identiteiten gebruiken voor App Service en Azure Functions](../../../app-service/overview-managed-identity.md?tabs=dotnet)
 
-#### <a name="system-assigned-managed-identity"></a>[Door het systeem toegewezen beheerde identiteit](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity)
+#### <a name="system-assigned-managed-identity"></a>[Door het systeem toegewezen beheerde identiteit](../../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-system-assigned-identity)
 
 ```csharp
 using Azure.Identity;
@@ -62,7 +62,7 @@ var subscriptionId = "AZURE_SUBSCRIPTION_ID";
 var acsClient = new CommunicationManagementClient(subscriptionId, new ManagedIdentityCredential());
 ```
 
-#### <a name="user-assigned-managed-identity"></a>[Door de gebruiker toegewezen beheerde identiteit](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-user-assigned-identity)
+#### <a name="user-assigned-managed-identity"></a>[Door de gebruiker toegewezen beheerde identiteit](../../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-user-assigned-identity)
 
 De ClientId van de beheerde identiteit die u hebt gemaakt, moet expliciet worden doorgegeven aan de `ManagedIdentityCredential`.
 
@@ -79,7 +79,7 @@ var acsClient = new CommunicationManagementClient(subscriptionId, managedIdentit
 
 ### <a name="option-2-service-principal"></a>Optie 2: Service-principal
 
-In plaats van een beheerde identiteit te gebruiken, kunt u zich bij Azure verifiëren met behulp van een service-principal die u zelf beheert. Kom meer te weten aan de hand van de documentatie over [het maken en beheren van een service-principal in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+In plaats van een beheerde identiteit te gebruiken, kunt u zich bij Azure verifiëren met behulp van een service-principal die u zelf beheert. Kom meer te weten aan de hand van de documentatie over [het maken en beheren van een service-principal in Azure Active Directory](../../../active-directory/develop/howto-create-service-principal-portal.md).
 
 Nadat u de service-principal hebt gemaakt, moet u de volgende informatie in het Azure-portaal:
 
@@ -121,7 +121,7 @@ Wanneer u geverifieerd bent, kunt u uw beheerclient gebruiken voor API-aanroepen
 
 Voor elk van de volgende voorbeelden wijzen we onze Communication Services-resources toe aan een bestaande resourcegroep.
 
-Als u een resourcegroep wilt maken, kunt u dit doen via het [Azure-portaal](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal) of de [Azure Resource Manager-clientbibliotheek](https://github.com/Azure/azure-sdk-for-net/blob/master/doc/mgmt_preview_quickstart.md).
+Als u een resourcegroep wilt maken, kunt u dit doen via het [Azure-portaal](../../../azure-resource-manager/management/manage-resource-groups-portal.md) of de [Azure Resource Manager-clientbibliotheek](https://github.com/Azure/azure-sdk-for-net/blob/master/doc/mgmt_preview_quickstart.md).
 
 ### <a name="create-and-manage-a-communication-services-resource"></a>Een Communication Services-resource maken en beheren
 

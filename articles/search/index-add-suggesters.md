@@ -7,18 +7,24 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/19/2020
+ms.date: 11/24/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 81bcfdf5e63d49280fb798773559310cbd912a26
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4390291eb96c11b8fb7fdb48eb92abaf802b80c0
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013578"
+ms.locfileid: "96030778"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Een suggestie maken om automatisch aanvullen en voorgestelde resultaten in een query in te scha kelen
 
-In azure Cognitive Search wordt ' Search-as-u-type ' ingeschakeld via een **suggestie voor suggesties** die is toegevoegd aan een [zoek index](search-what-is-an-index.md). Een suggestie biedt ondersteuning voor twee ervaring: *automatisch aanvullen*, waarmee een gedeeltelijke invoer voor een volledige termijn query wordt voltooid en *suggesties* die door worden uitgenodigd, worden door middel van een bepaalde overeenkomst. Automatisch aanvullen produceert een query. Suggesties maken een overeenkomend document.
+In azure Cognitive Search is ' zoeken naar het type ' ingeschakeld via een *suggestie*. Een suggestie is een interne gegevens structuur die bestaat uit een verzameling velden. De velden worden extra tokening en het genereren van voorvoegsel reeksen ter ondersteuning van overeenkomsten op gedeeltelijke voor waarden.
+
+Als een suggestie bijvoorbeeld het veld City bevat, worden de resulterende voorvoegsel combinaties ' Sea ', ' seat ', ' seats ' en ' seattl ' gemaakt voor de term ' Seattle '. Voor voegsels worden opgeslagen in omgekeerde indexen, één voor elk veld dat is opgegeven in de verzameling suggesties van velden.
+
+## <a name="typeahead-experiences-in-cognitive-search"></a>Typeahead-ervaringen in Cognitive Search
+
+Een suggestie biedt ondersteuning voor twee ervaring: *automatisch aanvullen*, waarmee een gedeeltelijke invoer voor een volledige termijn query wordt voltooid en *suggesties* die door worden uitgenodigd, worden door middel van een bepaalde overeenkomst. Automatisch aanvullen produceert een query. Suggesties maken een overeenkomend document.
 
 De volgende scherm afbeelding van [het maken van uw eerste app in C#](tutorial-csharp-type-ahead-and-suggestions.md) illustreert beide. Bij automatisch aanvullen wordt een mogelijke term verwacht, waarbij ' TW ' wordt voltooid met ' in '. Suggesties zijn de resultaten van een mini maal zoek opdracht, waarbij een veld zoals de naam van het hotel een overeenkomend Hotel Zoek document uit de index vertegenwoordigt. Voor suggesties kunt u elk veld dat beschrijvende informatie bevat, op elk gewenst Opper vlak weer gegeven.
 
@@ -31,10 +37,6 @@ U kunt deze functies afzonderlijk of samen gebruiken. Als u dit gedrag wilt impl
 + Roep een query voor suggesties ingeschakeld, in de vorm van een suggestie aanvraag of aanvraag voor automatisch aanvullen, met behulp van een van de [hieronder vermelde api's](#how-to-use-a-suggester).
 
 De ondersteuning voor zoeken naar het type wordt ingeschakeld per veld voor teken reeks velden. U kunt zowel typeahead-gedrag in dezelfde Zoek oplossing implementeren als u een vergelijk bare ervaring wilt hebben als de functie die wordt aangegeven in de scherm opname. Beide aanvragen zijn gericht op de verzameling *documenten* van een specifieke index en reacties worden geretourneerd nadat een gebruiker ten minste een invoer teken reeks van drie tekens heeft opgegeven.
-
-## <a name="what-is-a-suggester"></a>Wat is een suggestieer?
-
-Een suggestie is een interne gegevens structuur die ondersteuning biedt voor zoek bewerkingen in het type door het opslaan van voor voegsels voor het vergelijken van gedeeltelijke query's. Net als bij tokened-voor waarden worden voor voegsels opgeslagen in omgekeerde indexen, één voor elk veld dat is opgegeven in de verzameling suggesties van velden.
 
 ## <a name="how-to-create-a-suggester"></a>Een suggestie maken
 

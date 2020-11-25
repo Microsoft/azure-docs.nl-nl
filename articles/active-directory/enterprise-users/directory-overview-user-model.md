@@ -9,17 +9,16 @@ ms.reviewer: krbain
 ms.date: 11/15/2020
 ms.topic: overview
 ms.service: active-directory
-ms.subservice: enterprise-users
 ms.workload: identity
 services: active-directory
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e86d61f71a49a502a91b16761fc9feccea6faafd
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a983c8cf7188fd395f1ff4a58884857144dbfaa3
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650934"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95488926"
 ---
 # <a name="what-is-enterprise-user-management"></a>Wat is Enterprise-gebruikersbeheer?
 

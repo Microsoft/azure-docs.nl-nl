@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 10/15/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: aad4cdfe38ee9dd7530cb8ebe21cded18cb0a1ec
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: d8afa769c90c5cf9450343cda1a65809062468fb
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92128571"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888688"
 ---
 # <a name="communication-services-logs"></a>Logboeken van Communication Services
 
@@ -22,7 +22,7 @@ Azure Communication Services biedt mogelijkheden voor logboekregistratie die u k
 
 ## <a name="enable-diagnostic-logs-in-your-resource"></a>Diagnostische logboeken inschakelen in uw resource
 
-Logboekregistratie is standaard uitgeschakeld wanneer een resource wordt gemaakt. Als u logboekregistratie wilt inschakelen, gaat u naar de blade **Diagnostische instellingen** in het resource-menu onder het gedeelte **Bewaking** . Klik vervolgens op **Diagnostische instelling toevoegen** .
+Logboekregistratie is standaard uitgeschakeld wanneer een resource wordt gemaakt. Als u logboekregistratie wilt inschakelen, gaat u naar de blade **Diagnostische instellingen** in het resource-menu onder het gedeelte **Bewaking**. Klik vervolgens op **Diagnostische instelling toevoegen**.
 
 Selecteer vervolgens het gewenste archiefdoel. Momenteel ondersteunen we opslagaccounts en Log Analytics als archiefdoelen. Sla de diagnostische instellingen op nadat u de typen logboeken hebt geselecteerd die u wilt opnemen.
  
@@ -30,7 +30,7 @@ Nieuwe instellingen worden na ongeveer tien minuten van kracht. Logboeken worden
 
 :::image type="content" source="./media/diagnostic-settings.png" alt-text="Opties voor de diagnostische instellingen van ACS.":::
 
-Zie voor meer informatie over het configureren van diagnostische gegevens het overzicht van [Azure-resourcelogboeken](https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview).
+Zie voor meer informatie over het configureren van diagnostische gegevens het overzicht van [Azure-resourcelogboeken](../../azure-monitor/platform/platform-logs-overview.md).
 
 ## <a name="resource-log-categories"></a>Categorieën van resourcelogboeken
 

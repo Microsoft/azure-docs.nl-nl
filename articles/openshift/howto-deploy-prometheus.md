@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 06/17/2019
 keywords: Prometheus, Aro, open Shift, metrische gegevens, Red Hat
 ms.openlocfilehash: 42ed8c90b35eba57fdc3db1f0ed93d44cf9a5e41
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92218609"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996845"
 ---
 # <a name="deploy-a-standalone-prometheus-instance-in-an-azure-red-hat-openshift-cluster"></a>Een zelfstandig Prometheus-exemplaar in een Azure Red Hat open Shift-cluster implementeren
 
@@ -36,7 +36,7 @@ U gaat een aantal Prometheus-configuratie bestanden lokaal voorbereiden. Maak ee
 
 ## <a name="sign-in-to-the-cluster-by-using-the-oc-tool"></a>Aanmelden bij het cluster met het hulp programma OC
 
-1. Open een webbrowser en ga vervolgens naar de webconsole van uw cluster ( https://openshift .* wille keurige id*. *Region*. azmosa.io).
+1. Open een webbrowser en ga vervolgens naar de webconsole van uw cluster ( https://openshift .*wille keurige id*. *Region*. azmosa.io).
 2. Meld u aan met uw Azure-referenties.
 3. Selecteer uw gebruikers naam in de rechter bovenhoek en selecteer vervolgens **aanmeldings opdracht kopiëren**.
 4. Plak uw gebruikers naam in de terminal die u gaat gebruiken.
@@ -188,7 +188,7 @@ oc process -f prometheus-sdrole.yml | oc apply -f - -n prometheus-project
 
 ## <a name="optional-deploy-example-application"></a>Optioneel: voorbeeld toepassing implementeren
 
-Alles werkt, maar er zijn geen metrische bronnen. Ga naar de Prometheus-URL ( https://prom-prometheus-project.apps .* wille keurige id*. *Region*. azmosa.io/). U kunt deze vinden met de volgende opdracht:
+Alles werkt, maar er zijn geen metrische bronnen. Ga naar de Prometheus-URL ( https://prom-prometheus-project.apps .*wille keurige id*. *Region*. azmosa.io/). U kunt deze vinden met de volgende opdracht:
 
 ```
 oc get route prom -n prometheus-project
@@ -206,7 +206,7 @@ oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=examp
 ```
 De nieuwe toepassingen moeten worden weer gegeven als geldige doelen op de service detectie pagina binnen 30 seconden na de implementatie.
 
-Selecteer **status**  >  **doelen**voor meer informatie.
+Selecteer **status**  >  **doelen** voor meer informatie.
 
 > [!NOTE]
 > Voor elke geslaagde, Prometheus een gegevens punt toevoegen aan de metrische waarde. Selecteer **Prometheus** in de linkerbovenhoek **, Voer in** als de expressie en selecteer vervolgens **uitvoeren**.

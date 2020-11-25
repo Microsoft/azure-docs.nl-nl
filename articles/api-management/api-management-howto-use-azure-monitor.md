@@ -9,11 +9,11 @@ ms.topic: tutorial
 ms.date: 10/14/2020
 ms.author: apimpm
 ms.openlocfilehash: 2317e61111c3ad328e8f112e7d9567f3f5d47990
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379340"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997037"
 ---
 # <a name="tutorial-monitor-published-apis"></a>Zelfstudie: Gepubliceerde API's bewaken
 

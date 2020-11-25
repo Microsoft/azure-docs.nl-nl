@@ -7,11 +7,11 @@ ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
 ms.openlocfilehash: 56d8078347b5de775b30c8db2c9412598070046c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91285363"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998874"
 ---
 # <a name="azure-blob-storage-output-binding-for-azure-functions"></a>Azure Blob Storage-uitvoer binding voor Azure Functions
 
@@ -390,9 +390,9 @@ Raadpleeg het [uitvoer voorbeeld](#example) voor meer informatie.
 
 ---
 
-## <a name="exceptions-and-return-codes"></a>Uitzonde ringen en retour codes
+## <a name="exceptions-and-return-codes"></a>Uitzonderingen en retourcodes
 
-| Binding |  Naslaginformatie |
+| Binding |  Referentie |
 |---|---|
 | Blob | [BLOB-fout codes](/rest/api/storageservices/fileservices/blob-service-error-codes) |
 | BLOB, tabel, wachtrij |  [Opslag fout codes](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |

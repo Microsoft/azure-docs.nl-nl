@@ -10,12 +10,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-java
-ms.openlocfilehash: eca64411ccb61e5dcbac5e988f12096550eaaa2c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 4ec2deaf3149e174cce201d0bbad8a55d156d30f
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100997"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95998329"
 ---
 # <a name="troubleshoot-issues-when-you-use-the-azure-cosmos-db-async-java-sdk-v2-with-sql-api-accounts"></a>Problemen oplossen met de Azure Cosmos DB async Java SDK v2 met SQL API-accounts
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]

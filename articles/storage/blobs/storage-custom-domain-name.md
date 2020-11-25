@@ -9,12 +9,12 @@ ms.date: 01/23/2020
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 5e6289fb4e3b5bb695b79589d544d0ae475f9774
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: dcc6f3bca80cb5860679327226d3e034c3e9b14a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314657"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95996862"
 ---
 # <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Een aangepast domein toewijzen aan een Azure Blob Storage-eindpunt
 
@@ -58,11 +58,11 @@ De hostnaam is de URL van het opslag eindpunt zonder de protocol-id en de afslui
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw opslag account.
 
-2. Selecteer in het menu venster onder **instellingen**de optie **Eigenschappen**.  
+2. Selecteer in het menu venster onder **instellingen** de optie **Eigenschappen**.  
 
 3. Kopieer de waarde van het **eind punt van de primaire BLOB-service** of het **eind punt van de primaire statische website** naar een tekst bestand. 
 
-4. Verwijder de protocol-id (*bijvoorbeeld*https) en de afsluitende slash uit die teken reeks. De volgende tabel bevat voor beelden.
+4. Verwijder de protocol-id (*bijvoorbeeld* https) en de afsluitende slash uit die teken reeks. De volgende tabel bevat voor beelden.
 
    | Type eind punt |  endpoint | hostnaam |
    |------------|-----------------|-------------------|
@@ -79,11 +79,11 @@ Maak een CNAME-record die verwijst naar de hostnaam. Een CNAME-record is een soo
 
 1. Meld u aan bij de website van uw domein registratie service en ga vervolgens naar de pagina voor het beheren van de DNS-instelling.
 
-   Mogelijk vindt u de pagina in een sectie met de naam **domein naam**, **DNS**of **naam server beheer**.
+   Mogelijk vindt u de pagina in een sectie met de naam **domein naam**, **DNS** of **naam server beheer**.
 
 2. Zoek de sectie voor het beheren van CNAME-records. 
 
-   Mogelijk moet u naar een pagina met geavanceerde instellingen gaan en zoeken naar **CNAME**, **alias**of **subdomeinen**.
+   Mogelijk moet u naar een pagina met geavanceerde instellingen gaan en zoeken naar **CNAME**, **alias** of **subdomeinen**.
 
 3. Maak een CNAME-record. Geef als onderdeel van deze record de volgende items op: 
 
@@ -97,7 +97,7 @@ Maak een CNAME-record die verwijst naar de hostnaam. Een CNAME-record is een soo
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw opslag account.
 
-2. Selecteer in het menu venster onder **BLOB-service**de optie **aangepast domein**.  
+2. Selecteer in het menu venster onder **BLOB-service** de optie **aangepast domein**.  
 
    ![optie voor aangepast domein](./media/storage-custom-domain-name/custom-domain-button.png "aangepast domein")
 
@@ -105,7 +105,7 @@ Maak een CNAME-record die verwijst naar de hostnaam. Een CNAME-record is een soo
 
 3. Voer in het tekstvak **domein naam** de naam in van uw aangepaste domein, met inbegrip van het subdomein  
    
-   Als uw domein bijvoorbeeld *contoso.com* is en uw subdomein alias is *www*, voert u in `www.contoso.com` . Als uw subdomein *Foto's*is, voert u in `photos.contoso.com` .
+   Als uw domein bijvoorbeeld *contoso.com* is en uw subdomein alias is *www*, voert u in `www.contoso.com` . Als uw subdomein *Foto's* is, voert u in `photos.contoso.com` .
 
 4. Als u het aangepaste domein wilt registreren, klikt u op de knop **Opslaan** .
 
@@ -144,11 +144,11 @@ De hostnaam is de URL van het opslag eindpunt zonder de protocol-id en de afslui
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw opslag account.
 
-2. Selecteer in het menu venster onder **instellingen**de optie **Eigenschappen**.  
+2. Selecteer in het menu venster onder **instellingen** de optie **Eigenschappen**.  
 
 3. Kopieer de waarde van het **eind punt van de primaire BLOB-service** of het **eind punt van de primaire statische website** naar een tekst bestand. 
 
-4. Verwijder de protocol-id (*bijvoorbeeld*https) en de afsluitende slash uit die teken reeks. De volgende tabel bevat voor beelden.
+4. Verwijder de protocol-id (*bijvoorbeeld* https) en de afsluitende slash uit die teken reeks. De volgende tabel bevat voor beelden.
 
    | Type eind punt |  endpoint | hostnaam |
    |------------|-----------------|-------------------|
@@ -163,11 +163,11 @@ Maak een tijdelijke CNAME-record die verwijst naar de naam van uw host. Een CNAM
 
 1. Meld u aan bij de website van uw domein registratie service en ga vervolgens naar de pagina voor het beheren van de DNS-instelling.
 
-   Mogelijk vindt u de pagina in een sectie met de naam **domein naam**, **DNS**of **naam server beheer**.
+   Mogelijk vindt u de pagina in een sectie met de naam **domein naam**, **DNS** of **naam server beheer**.
 
 2. Zoek de sectie voor het beheren van CNAME-records. 
 
-   Mogelijk moet u naar een pagina met geavanceerde instellingen gaan en zoeken naar **CNAME**, **alias**of **subdomeinen**.
+   Mogelijk moet u naar een pagina met geavanceerde instellingen gaan en zoeken naar **CNAME**, **alias** of **subdomeinen**.
 
 3. Maak een CNAME-record. Geef als onderdeel van deze record de volgende items op: 
 
@@ -189,7 +189,7 @@ Wanneer u uw aangepaste domein vooraf registreert bij Azure, staat u toe dat Azu
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw opslag account.
 
-2. Selecteer in het menu venster onder **BLOB-service**de optie **aangepast domein**.  
+2. Selecteer in het menu venster onder **BLOB-service** de optie **aangepast domein**.  
 
    ![optie voor aangepast domein](./media/storage-custom-domain-name/custom-domain-button.png "aangepast domein")
 
@@ -197,7 +197,7 @@ Wanneer u uw aangepaste domein vooraf registreert bij Azure, staat u toe dat Azu
 
 3. Voer in het tekstvak **domein naam** de naam in van uw aangepaste domein, met inbegrip van het subdomein  
    
-   Als uw domein bijvoorbeeld *contoso.com* is en uw subdomein alias is *www*, voert u in `www.contoso.com` . Als uw subdomein *Foto's*is, voert u in `photos.contoso.com` .
+   Als uw domein bijvoorbeeld *contoso.com* is en uw subdomein alias is *www*, voert u in `www.contoso.com` . Als uw subdomein *Foto's* is, voert u in `photos.contoso.com` .
 
 4. Schakel het selectie vakje **indirecte CNAME-validatie gebruiken** in.
 
@@ -211,11 +211,11 @@ Maak een tijdelijke CNAME-record die verwijst naar de naam van uw host.
 
 1. Meld u aan bij de website van uw domein registratie service en ga vervolgens naar de pagina voor het beheren van de DNS-instelling.
 
-   Mogelijk vindt u de pagina in een sectie met de naam **domein naam**, **DNS**of **naam server beheer**.
+   Mogelijk vindt u de pagina in een sectie met de naam **domein naam**, **DNS** of **naam server beheer**.
 
 2. Zoek de sectie voor het beheren van CNAME-records. 
 
-   Mogelijk moet u naar een pagina met geavanceerde instellingen gaan en zoeken naar **CNAME**, **alias**of **subdomeinen**.
+   Mogelijk moet u naar een pagina met geavanceerde instellingen gaan en zoeken naar **CNAME**, **alias** of **subdomeinen**.
 
 3. Maak een CNAME-record. Geef als onderdeel van deze record de volgende items op: 
 
@@ -239,7 +239,7 @@ Ga als volgt te werk om de aangepaste domein instelling te verwijderen:
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw opslag account.
 
-2. Selecteer in het menu venster onder **BLOB-service**de optie **aangepast domein**.  
+2. Selecteer in het menu venster onder **BLOB-service** de optie **aangepast domein**.  
    Het deel venster **aangepast domein** wordt geopend.
 
 3. Wis de inhoud van het tekstvak met de aangepaste domein naam.
@@ -248,9 +248,9 @@ Ga als volgt te werk om de aangepaste domein instelling te verwijderen:
 
 Nadat het aangepaste domein is verwijderd, ziet u een portal melding dat uw opslag account is bijgewerkt
 
-#### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Als u een aangepaste domein registratie wilt verwijderen, gebruikt u de opdracht [AZ Storage account update](https://docs.microsoft.com/cli/azure/storage/account) CLI en geeft u een lege teken reeks ( `""` ) op voor de `--custom-domain` argument waarde.
+Als u een aangepaste domein registratie wilt verwijderen, gebruikt u de opdracht [AZ Storage account update](/cli/azure/storage/account) CLI en geeft u een lege teken reeks ( `""` ) op voor de `--custom-domain` argument waarde.
 
 * Opdracht indeling:
 
@@ -320,11 +320,11 @@ Ga als volgt te werk om een aangepast domein toe te wijzen en HTTPS-toegang in t
 
 4. Beschrijving Lees de volgende richt lijnen:
 
-   * [SAS-tokens (Shared Access Signature) met Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#shared-access-signatures).
+   * [SAS-tokens (Shared Access Signature) met Azure CDN](../../cdn/cdn-storage-custom-domain-https.md#shared-access-signatures).
 
-   * [Http-naar-https-omleiding met Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection).
+   * [Http-naar-https-omleiding met Azure CDN](../../cdn/cdn-storage-custom-domain-https.md#http-to-https-redirection).
 
-   * [Prijzen en facturering bij het gebruik van Blob Storage met Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection).
+   * [Prijzen en facturering bij het gebruik van Blob Storage met Azure CDN](../../cdn/cdn-storage-custom-domain-https.md#http-to-https-redirection).
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,11 +9,11 @@ ms.date: 01/28/2019
 ms.author: juliako
 ms.custom: include file
 ms.openlocfilehash: 1327ac49920af353d6adbbe592ab4189417e60e8
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95564044"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996888"
 ---
 ## <a name="use-cli-shell"></a>CLI-shell gebruiken
 

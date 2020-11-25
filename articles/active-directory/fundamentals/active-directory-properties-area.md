@@ -14,11 +14,11 @@ ms.reviewer: bpham
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f47ae9b087615a77f6bd4d3f14f1b0052037cba6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89321970"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996748"
 ---
 # <a name="add-your-organizations-privacy-info-using-azure-active-directory"></a>De privacygegevens van uw organisatie toevoegen met behulp van Azure Active Directory
 In dit artikel wordt uitgelegd hoe een Tenant beheerder via de Azure Portal aan privacy gerelateerde informatie kan toevoegen aan de Azure Active Directory van een organisatie (Azure AD).
@@ -34,7 +34,7 @@ U kunt de privacygegevens van uw organisatie toevoegen in het gedeelte **Eigensc
 
 1. Meld u aan bij de Azure Portal als een Tenant beheerder.
 
-2. Selecteer **Azure Active Directory**op de navigatie balk aan de linkerkant en selecteer vervolgens **Eigenschappen**.
+2. Selecteer **Azure Active Directory** op de navigatie balk aan de linkerkant en selecteer vervolgens **Eigenschappen**.
 
     Het gebied **Eigenschappen** wordt weer gegeven.
 
@@ -49,7 +49,7 @@ U kunt de privacygegevens van uw organisatie toevoegen in het gedeelte **Eigensc
     - **URL van privacyverklaring.** Typ de koppeling naar het document van uw organisatie waarin wordt beschreven hoe uw organisatie de privacy van de interne en externe gegevens verhandelt.
 
         >[!Important]
-        >Als u geen van uw eigen privacyverklaring of uw privacy-contact persoon opneemt, wordt in uw externe gasten tekst weer gegeven in het vak **machtigingen controleren** . ** < _de naam van uw organisatie_> geen koppelingen naar de voor waarden die u kunt door geven**. Een gast gebruiker krijgt bijvoorbeeld dit bericht te zien wanneer ze een uitnodiging ontvangen om toegang te krijgen tot een organisatie via B2B-samen werking.
+        >Als u geen van uw eigen privacyverklaring of uw privacy-contact persoon opneemt, wordt in uw externe gasten tekst weer gegeven in het vak **machtigingen controleren** . **< _de naam van uw organisatie_> geen koppelingen naar de voor waarden die u kunt door geven**. Een gast gebruiker krijgt bijvoorbeeld dit bericht te zien wanneer ze een uitnodiging ontvangen om toegang te krijgen tot een organisatie via B2B-samen werking.
 
         ![Het vak Machtigingen voor B2B-samen werking controleren met een bericht](media/active-directory-properties-area/active-directory-no-privacy-statement-or-contact.png)
 

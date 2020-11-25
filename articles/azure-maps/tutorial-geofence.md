@@ -10,11 +10,11 @@ services: azure-maps
 manager: philmea
 ms.custom: mvc
 ms.openlocfilehash: ee32749e2c6f0118507fcfc6d4994a04ea3a6d69
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896797"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997270"
 ---
 # <a name="tutorial-set-up-a-geofence-by-using-azure-maps"></a>Zelfstudie: Een geofence instellen met behulp van Azure Maps
 
@@ -44,7 +44,7 @@ In deze zelfstudie gaat u Geofencing GeoJSON-gegevens uploaden die een `FeatureC
 >[!TIP]
 >U kunt uw geofence-gegevens op elk gewenst moment bijwerken. Zie [Data Upload-API](/rest/api/maps/data/uploadpreview) voor meer informatie.
 
-1. Open de Postman-app. Selecteer rechtsboven **Nieuw** . Selecteer **Collection** (Verzameling) in het venster **Create New** (Nieuwe maken). Geef de verzameling een naam en selecteer **Maken** .
+1. Open de Postman-app. Selecteer rechtsboven **Nieuw**. Selecteer **Collection** (Verzameling) in het venster **Create New** (Nieuwe maken). Geef de verzameling een naam en selecteer **Maken**.
 
 2. Selecteer nogmaals **New** (Nieuw) om de aanvraag te maken. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u in de vorige stap hebt gemaakt en selecteer **Save** (Opslaan).
 
@@ -56,7 +56,7 @@ In deze zelfstudie gaat u Geofencing GeoJSON-gegevens uploaden die een `FeatureC
 
     De parameter `geojson` in het URL-pad geeft de gegevensindeling aan van de gegevens die worden geüpload.
 
-4. Selecteer het tabblad **Hoofdtekst** . Selecteer **raw** (onbewerkt), en selecteer vervolgens **JSON** als invoerindeling. Kopieer de volgende GeoJSON-gegevens en plak ze in het tekstgebied **Body** (Hoofdtekst):
+4. Selecteer het tabblad **Hoofdtekst**. Selecteer **raw** (onbewerkt), en selecteer vervolgens **JSON** als invoerindeling. Kopieer de volgende GeoJSON-gegevens en plak ze in het tekstgebied **Body** (Hoofdtekst):
 
    ```JSON
    {
@@ -144,13 +144,13 @@ In deze zelfstudie gaat u Geofencing GeoJSON-gegevens uploaden die een `FeatureC
    }
    ```
 
-5. Selecteer **Verzenden** en wacht tot het verzoek is verwerkt. Wanneer de aanvraag is voltooid, gaat u naar het tabblad **Kopteksten** van het antwoord. Kopieer de waarde van de **Location** -sleutel (Locatie), de `status URL`.
+5. Selecteer **Verzenden** en wacht tot het verzoek is verwerkt. Wanneer de aanvraag is voltooid, gaat u naar het tabblad **Kopteksten** van het antwoord. Kopieer de waarde van de **Location**-sleutel (Locatie), de `status URL`.
 
     ```http
     https://atlas.microsoft.com/mapData/operations/<operationId>?api-version=1.0
     ```
 
-6. Maak een **GET** HTTP-aanvraag op de `status URL` om de status van de API-aanroep te controleren. U moet uw primaire abonnementssleutel toevoegen aan de URL voor authenticatie. De **GET** -aanvraag moet lijken op de volgende URL:
+6. Maak een **GET** HTTP-aanvraag op de `status URL` om de status van de API-aanroep te controleren. U moet uw primaire abonnementssleutel toevoegen aan de URL voor authenticatie. De **GET**-aanvraag moet lijken op de volgende URL:
 
    ```HTTP
    https://atlas.microsoft.com/mapData/<operationId>/status?api-version=1.0&subscription-key={Subscription-key}
@@ -165,7 +165,7 @@ In deze zelfstudie gaat u Geofencing GeoJSON-gegevens uploaden die een `FeatureC
       }
       ```
 
-8. Als u metagegevens van inhoud wilt ophalen, maakt u een **GET** HTTP-aanvraag op de `resourceLocation` URL die is opgehaald in stap 7. Zorg ervoor dat u uw primaire abonnementssleutel toevoegt aan de URL voor authenticatie. De **GET** -aanvraag moet lijken op de volgende URL:
+8. Als u metagegevens van inhoud wilt ophalen, maakt u een **GET** HTTP-aanvraag op de `resourceLocation` URL die is opgehaald in stap 7. Zorg ervoor dat u uw primaire abonnementssleutel toevoegt aan de URL voor authenticatie. De **GET**-aanvraag moet lijken op de volgende URL:
 
     ```http
    https://atlas.microsoft.com/mapData/metadata/{udid}?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}
@@ -190,9 +190,9 @@ Vervolgens maakt u twee [logische-app](../event-grid/handler-webhooks.md#logic-a
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Selecteer in de linkerbovenhoek van Azure Portal **Een resource maken** .
+2. Selecteer in de linkerbovenhoek van Azure Portal **Een resource maken**.
 
-3. Typ **logische app** in het vak **Marketplace doorzoeken** .
+3. Typ **logische app** in het vak **Marketplace doorzoeken**.
 
 4. Selecteer **Logische app** > **Maken** in de resultaten.
 
@@ -205,23 +205,23 @@ Vervolgens maakt u twee [logische-app](../event-grid/handler-webhooks.md#logic-a
 
     :::image type="content" source="./media/tutorial-geofence/logic-app-create.png" alt-text="Schermopname van logische app maken.":::
 
-6. Selecteer **Controleren + maken** . Controleer uw instellingen en selecteer **Maken** om de implementatie te verzenden. Wanneer de implementatie is voltooid, selecteert u **Naar de resource gaan** . U wordt naar de **Logic App Designer** geleid.
+6. Selecteer **Controleren + maken**. Controleer uw instellingen en selecteer **Maken** om de implementatie te verzenden. Wanneer de implementatie is voltooid, selecteert u **Naar de resource gaan**. U wordt naar de **Logic App Designer** geleid.
 
-7. Selecteer een triggertype. Schuif naar beneden naar de sectie **Beginnen met een algemene trigger** . Selecteer **Wanneer een HTTP-aanvraag wordt ontvangen** .
+7. Selecteer een triggertype. Schuif naar beneden naar de sectie **Beginnen met een algemene trigger**. Selecteer **Wanneer een HTTP-aanvraag wordt ontvangen**.
 
-     :::image type="content" source="./media/tutorial-geofence/logic-app-trigger.png" alt-text="Schermopname van logische app maken.":::
+     :::image type="content" source="./media/tutorial-geofence/logic-app-trigger.png" alt-text="Schermopname van een HTTP-trigger van een logische app maken.":::
 
 8. Selecteer **Opslaan** in de rechterbovenhoek van Logic App Designer. De **HTTP POST-URL** wordt automatisch gegenereerd. Sla de URL op. U hebt deze in de volgende sectie nodig om een gebeurteniseindpunt te maken.
 
-    :::image type="content" source="./media/tutorial-geofence/logic-app-httprequest.png" alt-text="Schermopname van logische app maken.":::
+    :::image type="content" source="./media/tutorial-geofence/logic-app-httprequest.png" alt-text="Schermopname van URL en JSON voor de HTTP-aanvraag van de logische app.":::
 
-9. Selecteer **+ Nieuwe stap** . Nu gaat u een actie kiezen. Typ `outlook.com email` in het zoekvak. Schuif in de lijst **Acties** omlaag en selecteer **Een e-mailbericht verzenden (V2)** .
+9. Selecteer **+ Nieuwe stap**. Nu gaat u een actie kiezen. Typ `outlook.com email` in het zoekvak. Schuif in de lijst **Acties** omlaag en selecteer **Een e-mailbericht verzenden (V2)** .
   
-    :::image type="content" source="./media/tutorial-geofence/logic-app-designer.png" alt-text="Schermopname van logische app maken.":::
+    :::image type="content" source="./media/tutorial-geofence/logic-app-designer.png" alt-text="Schermopname van logische app designer maken.":::
 
 10. Meld u aan bij uw Outlook-account. Zorg ervoor dat u **Ja** selecteert om de logische app toegang te geven tot het account. Vul de velden in voor het verzenden van een e-mail.
 
-    :::image type="content" source="./media/tutorial-geofence/logic-app-email.png" alt-text="Schermopname van logische app maken.":::
+    :::image type="content" source="./media/tutorial-geofence/logic-app-email.png" alt-text="Schermopname van de stap e-mail verzenden maken in logische app.":::
 
     >[!TIP]
     > U kunt de gegevens van een GeoJSON-reactie, zoals `geometryId` of `deviceId`, ophalen in uw e-mailmeldingen. U kunt Logic Apps zo configureren dat de gegevens die door Event Grid worden verzonden, worden gelezen. Zie voor informatie over het configureren van Logic Apps voor het consumeren en doorgeven van gebeurtenisgegevens naar e-mailmeldingen [Zelfstudie: E-mailmeldingen over gebeurtenissen van Azure IoT Hub verzenden met Event Grid en Logic Apps](../event-grid/publish-iot-hub-events-to-logic-apps.md).
@@ -238,23 +238,23 @@ De volgende stappen laten u zien hoe u een gebeurtenisabonnement maakt voor Ente
 
 1. Ga naar uw Azure Maps-account. Selecteer **Abonnementen** op het dashboard. Selecteer de naam van uw abonnement en selecteer **gebeurtenissen** in het instellingenmenu.
 
-    :::image type="content" source="./media/tutorial-geofence/events-tab.png" alt-text="Schermopname van logische app maken.":::
+    :::image type="content" source="./media/tutorial-geofence/events-tab.png" alt-text="Schermopname van navigeren naar gebeurtenissen in uw Azure Maps-account.":::
 
 2. U maakt een gebeurtenisabonnement door **+ Gebeurtenisabonnement** te selecteren op de gebeurtenissenpagina.
 
-    :::image type="content" source="./media/tutorial-geofence/create-event-subscription.png" alt-text="Schermopname van logische app maken.":::
+    :::image type="content" source="./media/tutorial-geofence/create-event-subscription.png" alt-text="Schermopname van een abonnement op Azure Maps-gebeurtenissen maken.":::
 
 3. Voer op de pagina **Gebeurtenisabonnement maken** de volgende waarden in:
     * De **Naam** van het gebeurtenisabonnement.
     * Het **Gebeurtenisschema** moet *Gebeurtenisrasterschema* zijn.
     * De **Naam van het systeemonderwerp** voor dit gebeurtenisabonnement, die in dit geval `Contoso-Construction` is.
     * Kies voor **Filteren op gebeurtenistypen** het gebeurtenistype `Geofence Entered`.
-    * Kies `Web Hook` voor **Eindpunttype** .
+    * Kies `Web Hook` voor **Eindpunttype**.
     * Voor **Eindpunt** kopieert u de HTTP POST-URL voor het Logic App Enter-eindpunt dat u in de vorige sectie hebt gemaakt. Als u bent vergeten deze op te slaan, kunt u teruggaan naar Logic App Designer en de URL kopiëren uit de HTTP-triggerstap.
 
-    :::image type="content" source="./media/tutorial-geofence/events-subscription.png" alt-text="Schermopname van logische app maken.":::
+    :::image type="content" source="./media/tutorial-geofence/events-subscription.png" alt-text="Schermopname van abonnementdetails van Azure Maps-gebeurtenissen.":::
 
-4. Selecteer **Maken** .
+4. Selecteer **Maken**.
 
 Herhaal stap 1-4 voor het Logic App Exit-eindpunt dat u in de vorige sectie hebt gemaakt. Zorg ervoor dat u bij stap 3 `Geofence Exited` kiest als het gebeurtenistype.
 
@@ -264,7 +264,7 @@ Gebruik [Spatial Geofence Get API](/rest/api/maps/spatial/getgeofence) om e-mail
 
 Elk apparaat heeft een `deviceId`. In deze zelfstudie volgt u één apparaat, waarvan de unieke ID `device_1` is.
 
-Het volgende diagram laat de vijf locaties van het apparaat in de loop der tijd zien, te beginnen bij de *Start* -locatie, ergens buiten de geofences. Voor deze zelfstudie wordt de *Start* -locatie niet gedefinieerd, omdat u geen query uitvoert op het apparaat op die locatie.
+Het volgende diagram laat de vijf locaties van het apparaat in de loop der tijd zien, te beginnen bij de *Start*-locatie, ergens buiten de geofences. Voor deze zelfstudie wordt de *Start*-locatie niet gedefinieerd, omdat u geen query uitvoert op het apparaat op die locatie.
 
 Wanneer u een query uitvoert op [Spatial Geofence Get API](/rest/api/maps/spatial/getgeofence) met een apparaatlocatie die aangeeft dat de geofence voor het eerst wordt binnengegaan of verlaten, roept de Event Grid het juiste Logic App-eindpunt aan om een e-mailbericht naar de Operations Manager te sturen.
 
@@ -274,7 +274,7 @@ Elk van de volgende secties verzendt API-aanvragen met behulp van de vijf versch
 
 ### <a name="equipment-location-1-47638237-122132483"></a>Apparaatlocatie 1 (47.638237,-122.132483)
 
-1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 1* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan** .
+1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 1* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan**.
 
 2. Selecteer de HTTP-methode **GET** op het tabblad Builder en voer de volgende URL in. Zorg ervoor dat u `{Azure-Maps-Primary-Subscription-key}` vervangt door uw primaire abonnementssleutel en `{udid}` door de `udid` die u heb opgeslagen in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data).
 
@@ -282,7 +282,7 @@ Elk van de volgende secties verzendt API-aanvragen met behulp van de vijf versch
    https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udid={udid}&lat=47.638237&lon=-122.1324831&searchBuffer=5&isAsync=True&mode=EnterAndExit
    ```
 
-3. Selecteer **Verzenden** . De volgende GeoJSON wordt in het antwoordvenster weergegeven.
+3. Selecteer **Verzenden**. De volgende GeoJSON wordt in het antwoordvenster weergegeven.
 
     ```json
     {
@@ -314,7 +314,7 @@ In het voorgaande GeoJSON-antwoord betekent de negatieve afstand van de geofence
 
 ### <a name="location-2-4763800-122132531"></a>Locatie 2 (47.63800,-122.132531)
 
-1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 2* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan** .
+1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 2* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan**.
 
 2. Selecteer de HTTP-methode **GET** op het tabblad Builder en voer de volgende URL in. Zorg ervoor dat u `{Azure-Maps-Primary-Subscription-key}` vervangt door uw primaire abonnementssleutel en `{udid}` door de `udid` die u heb opgeslagen in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data).
 
@@ -322,7 +322,7 @@ In het voorgaande GeoJSON-antwoord betekent de negatieve afstand van de geofence
    https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63800&lon=-122.132531&searchBuffer=5&isAsync=True&mode=EnterAndExit
    ```
 
-3. Selecteer **Verzenden** . De volgende GeoJSON wordt in het antwoordvenster weergegeven:
+3. Selecteer **Verzenden**. De volgende GeoJSON wordt in het antwoordvenster weergegeven:
 
     ```json
     {
@@ -354,7 +354,7 @@ In het voorgaande GeoJSON-antwoord is het apparaat in de geofence van de hoofdsi
 
 ### <a name="location-3-4763810783315048-12213336020708084"></a>Locatie 3 (47.63810783315048,-122.13336020708084)
 
-1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 3* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan** .
+1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 3* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan**.
 
 2. Selecteer de HTTP-methode **GET** op het tabblad Builder en voer de volgende URL in. Zorg ervoor dat u `{Azure-Maps-Primary-Subscription-key}` vervangt door uw primaire abonnementssleutel en `{udid}` door de `udid` die u heb opgeslagen in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data).
 
@@ -362,7 +362,7 @@ In het voorgaande GeoJSON-antwoord is het apparaat in de geofence van de hoofdsi
       https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udid={udid}&lat=47.63810783315048&lon=-122.13336020708084&searchBuffer=5&isAsync=True&mode=EnterAndExit
       ```
 
-3. Selecteer **Verzenden** . De volgende GeoJSON wordt in het antwoordvenster weergegeven:
+3. Selecteer **Verzenden**. De volgende GeoJSON wordt in het antwoordvenster weergegeven:
 
     ```json
     {
@@ -397,7 +397,7 @@ In het voorgaande GeoJSON-antwoord is het apparaat in de geofence van de hoofdsi
 
 ### <a name="location-4-47637988-1221338344"></a>Locatie 4 (47.637988,-122.1338344)
 
-1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 4* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan** .
+1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 4* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan**.
 
 2. Selecteer de HTTP-methode **GET** op het tabblad Builder en voer de volgende URL in. Zorg ervoor dat u `{Azure-Maps-Primary-Subscription-key}` vervangt door uw primaire abonnementssleutel en `{udid}` door de `udid` die u heb opgeslagen in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data).
 
@@ -405,7 +405,7 @@ In het voorgaande GeoJSON-antwoord is het apparaat in de geofence van de hoofdsi
     https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udid={udid}&lat=47.637988&userTime=2023-01-16&lon=-122.1338344&searchBuffer=5&isAsync=True&mode=EnterAndExit
     ```
 
-3. Selecteer **Verzenden** . De volgende GeoJSON wordt in het antwoordvenster weergegeven:
+3. Selecteer **Verzenden**. De volgende GeoJSON wordt in het antwoordvenster weergegeven:
 
     ```json
     {
@@ -431,7 +431,7 @@ In het voorgaande GeoJSON-antwoord is het apparaat in de geofence van de hoofdsi
 
 ### <a name="location-5-4763799--122134505"></a>Locatie 5 (47.63799, -122.134505)
 
-1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 5* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan** .
+1. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Maak er *Locatie 5* van. Selecteer de verzameling die u hebt gemaakt in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data)en selecteer **Opslaan**.
 
 2. Selecteer de HTTP-methode **GET** op het tabblad Builder en voer de volgende URL in. Zorg ervoor dat u `{Azure-Maps-Primary-Subscription-key}` vervangt door uw primaire abonnementssleutel en `{udid}` door de `udid` die u heb opgeslagen in de sectie [Geofencing GeoJSON-gegevens uploaden](#upload-geofencing-geojson-data).
 
@@ -439,7 +439,7 @@ In het voorgaande GeoJSON-antwoord is het apparaat in de geofence van de hoofdsi
     https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udid={udid}&lat=47.63799&lon=-122.134505&searchBuffer=5&isAsync=True&mode=EnterAndExit
     ```
 
-3. Selecteer **Verzenden** . De volgende GeoJSON wordt in het antwoordvenster weergegeven:
+3. Selecteer **Verzenden**. De volgende GeoJSON wordt in het antwoordvenster weergegeven:
 
     ```json
     {

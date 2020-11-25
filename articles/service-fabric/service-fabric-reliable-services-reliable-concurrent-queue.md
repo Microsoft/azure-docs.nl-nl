@@ -4,11 +4,11 @@ description: ReliableConcurrentQueue is een wachtrij met hoge door Voer waarmee 
 ms.topic: conceptual
 ms.date: 5/1/2017
 ms.openlocfilehash: 423ef3d1898176d7c25c596ad186a9c000108aa4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86257448"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997117"
 ---
 # <a name="introduction-to-reliableconcurrentqueue-in-azure-service-fabric"></a>Inleiding tot ReliableConcurrentQueue in azure Service Fabric
 Betrouw bare, gelijktijdige wachtrij is een asynchrone, transactionele en gerepliceerde wachtrij, die een hoge gelijktijdigheid voor bewerkingen in de wachtrij plaatsen en verwijderen. Het is ontworpen om hoge door Voer en lage latentie te bieden door de strikte FIFO-volg orde die wordt geleverd door een [betrouw bare wachtrij](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1) te verminderen en in plaats daarvan een best mogelijke volg orde te bieden.
@@ -33,7 +33,7 @@ Een voor beeld van een use-case voor ReliableConcurrentQueue is het scenario voo
 * De wachtrij verwacht dat de items in de wachtrij een lage Bewaar periode hebben. Dat wil zeggen dat de items gedurende een lange periode niet in de wachtrij blijven.
 * De wachtrij garandeert geen strikte FIFO-bestelling.
 * De wachtrij leest geen eigen schrijf bewerkingen. Als een item binnen een trans actie in de wachtrij wordt geplaatst, wordt het niet weer gegeven in een dewachtrij binnen dezelfde trans actie.
-* Dewachtrijen zijn niet van elkaar geïsoleerd. Als item *a* wordt verwijderd uit de *txnA*van de trans actie, zelfs als *txnA* niet is doorgevoerd, zou item *a* niet zichtbaar zijn voor een gelijktijdige trans actie *txnB*.  Als *txnA* afbreekt, wordt *A* onmiddellijk zichtbaar voor *txnB* .
+* Dewachtrijen zijn niet van elkaar geïsoleerd. Als item *a* wordt verwijderd uit de *txnA* van de trans actie, zelfs als *txnA* niet is doorgevoerd, zou item *a* niet zichtbaar zijn voor een gelijktijdige trans actie *txnB*.  Als *txnA* afbreekt, wordt *A* onmiddellijk zichtbaar voor *txnB* .
 * *TryPeekAsync* -gedrag kan worden geïmplementeerd met behulp van een *TryDequeueAsync* en de trans actie af te breken. Een voor beeld van dit gedrag vindt u in de sectie programmeer patronen.
 * Aantal is niet-transactioneel. Het kan worden gebruikt om een idee te krijgen van het aantal elementen in de wachtrij, maar dit is een tijdgebonden punt en kan niet worden vertrouwd op.
 * De dure verwerking van items in de wachtrij mag niet worden uitgevoerd terwijl de trans actie actief is, om langlopende trans acties te voor komen die invloed kunnen hebben op de prestaties van het systeem.
@@ -140,7 +140,7 @@ using (var txn = this.StateManager.CreateTransaction())
 
 Stel dat de taken zijn voltooid, dat de taken parallel werden uitgevoerd en dat er geen andere gelijktijdige trans acties zijn die de wachtrij wijzigen. Omdat er geen interferentie kan worden gemaakt over de volg orde van de items in de wachtrij, bevatten de lijsten *dequeue1* en *dequeue2* elk twee items, in een wille keurige volg orde.
 
-Hetzelfde item wordt *niet* weer gegeven in beide lijsten. Als dequeue1 *10*, *30*heeft, is dequeue2 dus *20*, *40*.
+Hetzelfde item wordt *niet* weer gegeven in beide lijsten. Als dequeue1 *10*, *30* heeft, is dequeue2 dus *20*, *40*.
 
 - *Case 3: het ordenen van een wachtrij met een trans actie afbreken*
 

@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 07/12/2019
 ms.author: zhchia
 ms.openlocfilehash: 8ca7654d930247f70d85cbc20fbbeb961223f05f
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359796"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998359"
 ---
 # <a name="tutorial-configure-federated-directory-for-automatic-user-provisioning"></a>Zelfstudie: Federated Directory configureren voor automatische gebruikersinrichting
 

@@ -8,11 +8,11 @@ ms.date: 06/15/2020
 ms.custom: mvc, cli-validate, seodec18, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
 ms.openlocfilehash: 1053eb9772650dce040570bda04addf93df49178
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92743558"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998007"
 ---
 # <a name="tutorial-build-a-php-and-mysql-app-in-azure-app-service"></a>Zelfstudie: een PHP- en MySQL-app bouwen in Azure App Service
 
@@ -107,7 +107,7 @@ composer install
 
 ### <a name="configure-mysql-connection"></a>MySQL-verbinding configureren
 
-Maak een bestand met de naam *.env* in de hoofdmap van de opslagplaats. Kopieer de volgende variabelen in het bestand *.env* . Vervang de tijdelijke aanduiding _&lt;root_password>_ met het wachtwoord van de MySQL-hoofdgebruiker.
+Maak een bestand met de naam *.env* in de hoofdmap van de opslagplaats. Kopieer de volgende variabelen in het bestand *.env*. Vervang de tijdelijke aanduiding _&lt;root_password>_ met het wachtwoord van de MySQL-hoofdgebruiker.
 
 ```txt
 APP_ENV=local
@@ -121,7 +121,7 @@ DB_USERNAME=root
 DB_PASSWORD=<root_password>
 ```
 
-Zie [Laravel-omgeving configureren](https://laravel.com/docs/5.4/configuration#environment-configuration) voor informatie over hoe Laravel het _.env_ -bestand gebruikt.
+Zie [Laravel-omgeving configureren](https://laravel.com/docs/5.4/configuration#environment-configuration) voor informatie over hoe Laravel het _.env_-bestand gebruikt.
 
 ### <a name="run-the-sample-locally"></a>Het voorbeeld lokaal uitvoeren
 
@@ -242,7 +242,7 @@ In deze stap verbindt u de PHP-toepassing met de MySQL-database die u in Azure D
 
 ### <a name="configure-the-database-connection"></a>Verbinding met de database configureren
 
-Maak in de hoofdmap van de opslagplaats een _.env.production_ -bestand en kopieer de volgende variabelen ernaartoe. Vervang de tijdelijke aanduiding &lt;mysql-server-name>_ in zowel *DB_HOST* als *DB_USERNAME* .
+Maak in de hoofdmap van de opslagplaats een _.env.production_-bestand en kopieer de volgende variabelen ernaartoe. Vervang de tijdelijke aanduiding &lt;mysql-server-name>_ in zowel *DB_HOST* als *DB_USERNAME*.
 
 ```
 APP_ENV=production
@@ -260,12 +260,12 @@ MYSQL_SSL=true
 Sla de wijzigingen op.
 
 > [!TIP]
-> Dit bestand is voor het beveiligen van uw MySQL-verbindingsgegevens al uitgesloten van de Git-opslagplaats (zie _.gitignore_ in de hoofdmap van de opslagplaats). Later leert u hoe u omgevingsvariabelen in App Service configureert om verbinding te maken met uw database in Azure Database for MySQL. Met omgevingsvariabelen heeft u het *.env* -bestand in App Service niet nodig.
+> Dit bestand is voor het beveiligen van uw MySQL-verbindingsgegevens al uitgesloten van de Git-opslagplaats (zie _.gitignore_ in de hoofdmap van de opslagplaats). Later leert u hoe u omgevingsvariabelen in App Service configureert om verbinding te maken met uw database in Azure Database for MySQL. Met omgevingsvariabelen heeft u het *.env*-bestand in App Service niet nodig.
 >
 
 ### <a name="configure-tlsssl-certificate"></a>TLS-/SSL-certificaat configureren
 
-Azure Database for MySQL dwingt standaard TLS-verbindingen van clients af. Voor verbinding met uw MySQL-database in Azure moet u het [ _.pem_ -certificaat gebruiken dat is opgegeven door Azure Database for MySQL](../mysql/howto-configure-ssl.md).
+Azure Database for MySQL dwingt standaard TLS-verbindingen van clients af. Voor verbinding met uw MySQL-database in Azure moet u het [ _.pem_-certificaat gebruiken dat is opgegeven door Azure Database for MySQL](../mysql/howto-configure-ssl.md).
 
 Open _config/database.php_ en voeg de parameters `sslmode` en `options` toe aan `connections.mysql`, zoals wordt weergegeven in de volgende code.
 
@@ -402,7 +402,7 @@ U kunt de PHP-methode [getenv](https://www.php.net/manual/en/function.getenv.php
 
 Laravel heeft een toepassingssleutel nodig in App Service. U kunt deze configureren met app-instellingen.
 
-In het lokale terminalvenster gebruikt u `php artisan` voor het genereren van een nieuwe toepassingssleutel zonder deze op te slaan in _.env_ .
+In het lokale terminalvenster gebruikt u `php artisan` voor het genereren van een nieuwe toepassingssleutel zonder deze op te slaan in _.env_.
 
 ```bash
 php artisan key:generate --show
@@ -428,7 +428,7 @@ Stel in de Cloud Shell het pad voor de virtuele toepassing in met behulp van de 
 az resource update --name web --resource-group myResourceGroup --namespace Microsoft.Web --resource-type config --parent sites/<app_name> --set properties.virtualApplications[0].physicalPath="site\wwwroot\public" --api-version 2015-06-01
 ```
 
-Azure App Service wijst standaard het hoofdpad voor de virtuele toepassing ( _/_ ) toe aan de hoofdmap van de geïmplementeerde toepassingsbestanden ( _sites\wwwroot_ ).
+Azure App Service wijst standaard het hoofdpad voor de virtuele toepassing ( _/_ ) toe aan de hoofdmap van de geïmplementeerde toepassingsbestanden (_sites\wwwroot_).
 
 ::: zone-end
 
@@ -498,7 +498,7 @@ remote: Running deployment command...
 
 Blader naar `http://<app-name>.azurewebsites.net` en voeg een paar taken toe aan de lijst.
 
-:::image type="content" source="./media/tutorial-php-mysql-app/php-mysql-in-azure.png" alt-text="Schermopname met een voorbeeld van een PHP-app met de naam Takenlijst.":::
+:::image type="content" source="./media/tutorial-php-mysql-app/php-mysql-in-azure.png" alt-text="Schermopname van nieuw toegevoegde taken in het voorbeeld van de Azure-app met de naam Takenlijst.":::
 
 U voert nu een gegevensgestuurde PHP-app uit in Azure App Service.
 
@@ -550,11 +550,11 @@ Voer in het lokale terminalvenster Laravel-database-migraties uit om de wijzigin
 php artisan migrate
 ```
 
-Op basis van de [Laravel-naamgevingsconventie](https://laravel.com/docs/5.4/eloquent#defining-models) wordt het model `Task` (zie _app/Task.php_ ) standaard toegewezen aan de `tasks`-tabel.
+Op basis van de [Laravel-naamgevingsconventie](https://laravel.com/docs/5.4/eloquent#defining-models) wordt het model `Task` (zie _app/Task.php_) standaard toegewezen aan de `tasks`-tabel.
 
 ### <a name="update-application-logic"></a>Toepassingslogica bijwerken
 
-Open het bestand *routes/web.php* . De toepassing definieert hier de routes en bedrijfslogica.
+Open het bestand *routes/web.php*. De toepassing definieert hier de routes en bedrijfslogica.
 
 Voeg aan het einde van het bestand een route toe met de volgende code:
 
@@ -577,7 +577,7 @@ De bovenstaande code voert een eenvoudige update uit op het gegevensmodel door h
 
 ### <a name="update-the-view"></a>De weergave bijwerken
 
-Open het bestand *resources/views/tasks.blade.php* . Zoek de `<tr>`-openingstag en vervang deze door:
+Open het bestand *resources/views/tasks.blade.php*. Zoek de `<tr>`-openingstag en vervang deze door:
 
 ```html
 <tr class="{{ $task->complete ? 'success' : 'active' }}" >
@@ -669,7 +669,7 @@ Typ `Ctrl`+`C` om op elk gewenst moment te stoppen met logboekstreaming.
 ::: zone-end
 
 > [!TIP]
-> Een PHP-toepassing kan gebruikmaken van de standaard [error_log()](https://php.net/manual/function.error-log.php) voor uitvoer naar de console. De voorbeeldtoepassing hanteert deze benadering in _app/Http/routes.php_ .
+> Een PHP-toepassing kan gebruikmaken van de standaard [error_log()](https://php.net/manual/function.error-log.php) voor uitvoer naar de console. De voorbeeldtoepassing hanteert deze benadering in _app/Http/routes.php_.
 >
 > Als webframework [maakt Laravel gebruik van Monolog](https://laravel.com/docs/5.4/errors) als provider voor logboekregistratie. Als u wilt weten hoe u met Monolog berichten uitvoert naar de console, raadpleegt u [PHP: Met Monolog berichten registreren bij de console (php://out)](https://stackoverflow.com/questions/25787258/php-how-to-use-monolog-to-log-to-console-php-out).
 >

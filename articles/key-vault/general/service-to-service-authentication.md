@@ -9,11 +9,11 @@ ms.date: 09/04/2020
 ms.topic: how-to
 ms.service: key-vault
 ms.openlocfilehash: ac3ee108fc63441b2a9381b9e7624631bdca4e5b
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289833"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998103"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Service-naar-service-verificatie voor het Azure Key Vault met behulp van .NET
 
@@ -65,7 +65,7 @@ Voor lokale ontwikkeling zijn er twee primaire verificatie scenario's: [verifica
 
 Lokale computers bieden geen ondersteuning voor beheerde identiteiten voor Azure-resources. Als gevolg hiervan gebruikt de `Microsoft.Azure.Services.AppAuthentication` bibliotheek uw ontwikkelaars referenties om uit te voeren in uw lokale ontwikkel omgeving. Wanneer de oplossing is geïmplementeerd in azure, gebruikt de bibliotheek een beheerde identiteit om over te scha kelen naar een OAuth 2,0-client referentie toewijzings stroom. Deze aanpak houdt in dat u dezelfde code lokaal en extern kunt testen zonder dat u zich zorgen hoeft te maken.
 
-Voor lokale ontwikkeling worden `AzureServiceTokenProvider` tokens opgehaald met behulp van **Visual Studio** , **Azure Command-Line Interface** (CLI) of **geïntegreerde Azure AD-verificatie**. Elke optie wordt opeenvolgend geprobeerd en de bibliotheek gebruikt de eerste optie die slaagt. Als er geen optie werkt, `AzureServiceTokenProviderException` wordt er een uitzonde ring gegenereerd met gedetailleerde informatie.
+Voor lokale ontwikkeling worden `AzureServiceTokenProvider` tokens opgehaald met behulp van **Visual Studio**, **Azure Command-Line Interface** (CLI) of **geïntegreerde Azure AD-verificatie**. Elke optie wordt opeenvolgend geprobeerd en de bibliotheek gebruikt de eerste optie die slaagt. Als er geen optie werkt, `AzureServiceTokenProviderException` wordt er een uitzonde ring gegenereerd met gedetailleerde informatie.
 
 #### <a name="authenticating-with-visual-studio"></a>Verifiëren met Visual Studio
 
@@ -73,7 +73,7 @@ Verificatie met behulp van Visual Studio:
 
 1. Meld u aan bij Visual Studio en gebruik **hulpprogram ma's** &nbsp; > &nbsp; **Options** om **Opties** te openen.
 
-1. Selecteer **Azure-service verificatie** , kies een account voor lokale ontwikkeling en selecteer **OK**.
+1. Selecteer **Azure-service verificatie**, kies een account voor lokale ontwikkeling en selecteer **OK**.
 
 Als u problemen ondervindt met het gebruik van Visual Studio, zoals fouten met betrekking tot het token provider bestand, moet u de voor gaande stappen zorgvuldig door nemen.
 
@@ -167,7 +167,7 @@ Er zijn drie primaire methoden voor het gebruik van een Service-Principal om uw 
           CertificateStoreLocation={CertificateStore}
     ```
 
-    Vervang *{AppId}* , *{TenantId}* en *{vinger afdruk}* door de waarden die u in stap 1 hebt gegenereerd. Vervang *{CertificateStore}* door *LocalMachine* of *CurrentUser* , op basis van uw implementatie plan.
+    Vervang *{AppId}*, *{TenantId}* en *{vinger afdruk}* door de waarden die u in stap 1 hebt gegenereerd. Vervang *{CertificateStore}* door *LocalMachine* of *CurrentUser*, op basis van uw implementatie plan.
 
 1. Voer de toepassing uit.
 
@@ -185,7 +185,7 @@ Er zijn drie primaire methoden voor het gebruik van een Service-Principal om uw 
     RunAs=App;AppId={AppId};TenantId={TenantId};AppKey={ClientSecret}
     ```
 
-    Vervang _{AppId}_ , _{TenantId}_ en _{ClientSecret}_ door de waarden die u in stap 1 hebt gegenereerd.
+    Vervang _{AppId}_, _{TenantId}_ en _{ClientSecret}_ door de waarden die u in stap 1 hebt gegenereerd.
 
 1. Voer de toepassing uit.
 
@@ -217,7 +217,7 @@ Een client certificaat voor Service-Principal-verificatie gebruiken:
     RunAs=App;AppId={TestAppId};KeyVaultCertificateSecretIdentifier={KeyVaultCertificateSecretIdentifier}
     ```
 
-    Als uw sleutel kluis bijvoorbeeld *myKeyVault* heet en u een certificaat hebt gemaakt met de naam *myCert* , zou de certificaat-id er als volgt uitziet:
+    Als uw sleutel kluis bijvoorbeeld *myKeyVault* heet en u een certificaat hebt gemaakt met de naam *myCert*, zou de certificaat-id er als volgt uitziet:
 
     ```azurecli
     RunAs=App;AppId={TestAppId};KeyVaultCertificateSecretIdentifier=https://myKeyVault.vault.azure.net/secrets/myCert
@@ -262,7 +262,7 @@ Als u het proces wilt beheren, gebruikt u een connection string dat is door gege
 
 #### <a name="azure-cli-is-not-installed-youre-not-logged-in-or-you-dont-have-the-latest-version"></a>Azure CLI is niet geïnstalleerd, u bent niet aangemeld of u hebt niet de nieuwste versie
 
-Voer *AZ account Get-access-token* uit om te zien of er voor Azure cli een token voor u wordt weer gegeven. Als **er geen dergelijk programma wordt gevonden** , installeert u de [nieuwste versie van de Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest). U wordt mogelijk gevraagd u aan te melden.
+Voer *AZ account Get-access-token* uit om te zien of er voor Azure cli een token voor u wordt weer gegeven. Als **er geen dergelijk programma wordt gevonden**, installeert u de [nieuwste versie van de Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest). U wordt mogelijk gevraagd u aan te melden.
 
 #### <a name="azureservicetokenprovider-cant-find-the-path-for-azure-cli"></a>AzureServiceTokenProvider kan het pad voor de Azure CLI niet vinden
 

@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 544aa1a4a859a9c328eb1d36e72d0f9f9ddb55b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ad45d5f0e313c06619fa9c998515e434de957ea
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327898"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997559"
 ---
 # <a name="redirect-hard-coded-links-for-apps-published-with-azure-ad-application-proxy"></a>In code vastgelegde koppelingen omleiden voor apps die zijn gepubliceerd met Azure AD-toepassingsproxy
 
@@ -47,14 +47,14 @@ Deze drie functies zorgen ervoor dat uw koppelingen werken, ongeacht waar uw geb
 > [!NOTE]
 > De laatste optie is alleen voor tenants die om welke reden dan ook geen aangepaste domeinen kunnen gebruiken om dezelfde interne en externe Url's voor hun apps te hebben. Voordat u deze functie inschakelt, moet u controleren of [aangepaste domeinen in Azure AD-toepassingsproxy](application-proxy-configure-custom-domain.md) voor u kunnen werken. 
 > 
-> Als de toepassing die u wilt configureren met koppelings omzetting share point is, raadpleegt u [alternatieve toegangs toewijzingen voor share point 2013 configureren](https://technet.microsoft.com/library/cc263208.aspx) voor een andere benadering voor het toewijzen van koppelingen. 
+> Als de toepassing die u wilt configureren met koppelings omzetting share point is, raadpleegt u [alternatieve toegangs toewijzingen voor share point 2013 configureren](/SharePoint/administration/configure-alternate-access-mappings) voor een andere benadering voor het toewijzen van koppelingen. 
 
  
 ### <a name="option-1-microsoft-edge-integration"></a>Optie 1: integratie met micro soft Edge 
 
 U kunt micro soft Edge gebruiken om uw toepassing en inhoud verder te beveiligen. Als u deze oplossing wilt gebruiken, moet u gebruikers verplichten om toegang te krijgen tot de toepassing via micro soft Edge. Alle interne Url's die zijn gepubliceerd met toepassings proxy, worden herkend door Edge en omgeleid naar de bijbehorende externe URL. Dit zorgt ervoor dat alle hardcoded interne Url's werken, en als een gebruiker naar de browser gaat en rechtstreeks de interne URL typt, werkt deze zelfs als de gebruiker extern is.  
 
-Zie voor meer informatie, inclusief hoe u deze optie configureert, de [webtoegang beheren door gebruik te maken van Edge voor IOS en Android met Microsoft intune](https://docs.microsoft.com/mem/intune/apps/manage-microsoft-edge) documentatie.  
+Zie voor meer informatie, inclusief hoe u deze optie configureert, de [webtoegang beheren door gebruik te maken van Edge voor IOS en Android met Microsoft intune](/mem/intune/apps/manage-microsoft-edge) documentatie.  
 
 ### <a name="option-2-myapps-browser-extension"></a>Optie 2: browser uitbreiding MyApps 
 
@@ -62,7 +62,7 @@ Met de browser uitbreiding MyApps worden alle interne Url's die zijn gepubliceer
 
 Als u deze functie wilt gebruiken, moet de gebruiker de extensie downloaden en zijn aangemeld. Er is geen andere configuratie nodig voor beheerders of gebruikers. 
 
-Raadpleeg de documentatie van de [MyApps-browser uitbreiding](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access#download-and-install-the-my-apps-secure-sign-in-extension) voor meer informatie over het configureren van deze optie.
+Raadpleeg de documentatie van de [MyApps-browser uitbreiding](../user-help/my-apps-portal-end-user-access.md#download-and-install-the-my-apps-secure-sign-in-extension) voor meer informatie over het configureren van deze optie.
 
 ### <a name="option-3-link-translation-setting"></a>Optie 3: instelling voor het omzetten van koppelingen 
 
@@ -152,4 +152,4 @@ We willen dat deze functie geschikt is voor al uw apps. We zoeken meer dan 30 Ta
 ## <a name="next-steps"></a>Volgende stappen
 [Aangepaste domeinen met Azure AD-toepassingsproxy gebruiken](application-proxy-configure-custom-domain.md) om dezelfde interne en externe URL te hebben
 
-[Alternatieve toegangs toewijzingen configureren voor share point 2013](https://technet.microsoft.com/library/cc263208.aspx)
+[Alternatieve toegangs toewijzingen configureren voor share point 2013](/SharePoint/administration/configure-alternate-access-mappings)

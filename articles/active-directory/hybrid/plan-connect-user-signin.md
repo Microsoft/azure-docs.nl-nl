@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3365a58a0c667ca55b74a5120cdd7a78ad0abc79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91299907"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997780"
 ---
 # <a name="azure-ad-connect-user-sign-in-options"></a>Opties voor Azure AD Connect gebruikers aanmelding
 Met Azure Active Directory (Azure AD) Connect kunnen uw gebruikers zich aanmelden bij zowel Cloud-als on-premises resources met behulp van dezelfde wacht woorden. In dit artikel worden de belangrijkste concepten voor elk identiteits model beschreven, waarmee u de identiteit kunt kiezen die u wilt gebruiken om u aan te melden bij Azure AD.
@@ -51,12 +51,12 @@ Voor de meeste organisaties waarmee gebruikers zich alleen willen aanmelden bij 
  
 Zie voor gedetailleerde informatie over het kiezen van een verificatie methode [de juiste verificatie methode voor uw Azure Active Directory hybride identiteits oplossing](./choose-ad-authn.md)
 
-### <a name="password-hash-synchronization"></a>Synchronisatie van wachtwoord-hashes
+### <a name="password-hash-synchronization"></a>Wachtwoord-hashsynchronisatie
 Hashes van wacht woorden van gebruikers worden gesynchroniseerd van on-premises Active Directory naar Azure AD. Wanneer wacht woorden worden gewijzigd of on-premises opnieuw worden ingesteld, worden de nieuwe wacht woord-hashes onmiddellijk gesynchroniseerd met Azure AD, zodat uw gebruikers altijd hetzelfde wacht woord voor cloud resources en on-premises resources kunnen gebruiken. De wacht woorden worden nooit verzonden naar Azure AD of opgeslagen in azure AD als gewone tekst. U kunt wachtwoord hash synchronisatie samen met het terugschrijven van het wacht woord gebruiken om selfservice voor wachtwoord herstel in te scha kelen in azure AD.
 
 Daarnaast kunt u [naadloze SSO](how-to-connect-sso.md) inschakelen voor gebruikers op computers die lid zijn van een domein in het bedrijfs netwerk. Met eenmalige aanmelding hoeven gebruikers alleen een gebruikers naam in te voeren om ze veilig toegang te bieden tot cloud resources.
 
-![Synchronisatie van wachtwoord-hashes](./media/plan-connect-user-signin/passwordhash.png)
+![Wachtwoord-hashsynchronisatie](./media/plan-connect-user-signin/passwordhash.png)
 
 Zie het artikel [wacht woord-hash-synchronisatie](how-to-connect-password-hash-synchronization.md) voor meer informatie.
 

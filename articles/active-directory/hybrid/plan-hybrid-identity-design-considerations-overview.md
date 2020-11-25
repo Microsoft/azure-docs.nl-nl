@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e7f8dd49f3668b8f68753681123a04d21edac46c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "60381456"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997729"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations"></a>Ontwerpoverwegingen voor Azure Active Directory Hybrid Identity
 Apparaten op basis van consumenten maken gebruik van de bedrijfs wereld en SaaS-toepassingen (Software-as-a-Service) in de Cloud zijn gemakkelijk te nemen. Als gevolg hiervan kan het beheer van de toepassings toegang van gebruikers via interne data centers en Cloud platforms lastig zijn.  

@@ -14,11 +14,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 60f23efa4f46849e1fe8b0ebe05cdd83ec16f49e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91294815"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997678"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Problemen met Azure Active Directory naadloze single Sign-On oplossen
 
@@ -28,7 +28,7 @@ In dit artikel vindt u informatie over het oplossen van problemen met bekende pr
 
 - In enkele gevallen kan het inschakelen van naadloze SSO tot wel 30 minuten duren.
 - Als u naadloze SSO op uw Tenant uitschakelt en weer inschakelt, krijgen gebruikers niet de mogelijkheid tot eenmalige aanmelding te zien, en zijn de in de cache geplaatste Kerberos-tickets, die doorgaans 10 uur geldig zijn, verlopen.
-- Als naadloze SSO is geslaagd, is de gebruiker niet in staat om aangemeld te **blijven**selecteren. Vanwege dit gedrag werken [share point-en OneDrive-toewijzings scenario's](https://support.microsoft.com/help/2616712/how-to-configure-and-to-troubleshoot-mapped-network-drives-that-connec) niet.
+- Als naadloze SSO is geslaagd, is de gebruiker niet in staat om aangemeld te **blijven** selecteren. Vanwege dit gedrag werken [share point-en OneDrive-toewijzings scenario's](https://support.microsoft.com/help/2616712/how-to-configure-and-to-troubleshoot-mapped-network-drives-that-connec) niet.
 - Microsoft 365 Win32-clients (Outlook, Word, Excel en andere) met versies 16.0.8730. xxxx en hoger worden ondersteund met behulp van een niet-interactieve stroom. Andere versies worden niet ondersteund. op deze versies voeren gebruikers hun gebruikers namen in, maar geen wacht woorden, om zich aan te melden. Voor OneDrive moet u de [functie voor stil configuratie van onedrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894) activeren voor een stille aanmeldings ervaring.
 - Naadloze SSO werkt niet in de modus voor persoonlijke navigatie op Firefox.
 - Naadloze SSO werkt niet in Internet Explorer wanneer de uitgebreide beveiligde modus is ingeschakeld.

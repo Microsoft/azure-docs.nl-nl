@@ -17,11 +17,11 @@ ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9b2563b238bae310d662220d2c244e863249c9c4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651937"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997508"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Joker tekens voor toepassingen in de Azure Active Directory toepassings proxy
 
@@ -156,7 +156,7 @@ De configuratie implementeert de volgende structuur:
 
 ![Toont de structuur die door de voorbeeld configuratie is geïmplementeerd](./media/application-proxy-wildcard/05.png)
 
-| Color | Beschrijving |
+| Color | Description |
 | ---   | ---         |
 | Blue  | Toepassingen worden expliciet gepubliceerd en zichtbaar in de Azure Portal. |
 | Grijs  | Toepassingen die u via de bovenliggende toepassing kunt openen. |

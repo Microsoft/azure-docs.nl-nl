@@ -8,11 +8,11 @@ ms.date: 07/27/2020
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 91b6134e7c809a8af75aa1cf23523e352e0a1a0e
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150243"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997338"
 ---
 # <a name="networking-considerations-for-an-app-service-environment"></a>Netwerkoverwegingen voor een App Service-omgeving #
 
@@ -25,7 +25,7 @@ ms.locfileid: "92150243"
 
 Alle as, External en ILB hebben een open bare VIP die wordt gebruikt voor inkomend beheer verkeer en als het van-adres bij het maken van aanroepen van de ASE aan Internet. De aanroepen van een ASE die naar Internet gaan, verlaten het VNet via de VIP die is toegewezen voor de ASE. Het open bare IP-adres van deze VIP is het bron-IP-adres voor alle aanroepen van de ASE die naar Internet gaan. Als de apps in uw ASE aanroepen naar resources in uw VNet of via een VPN, is de bron-IP een van de Ip's in het subnet dat wordt gebruikt door uw ASE. Omdat de ASE zich binnen het VNet bevindt, kan het ook toegang krijgen tot bronnen in het VNet zonder extra configuratie. Als het VNet is verbonden met uw on-premises netwerk, hebben apps in uw ASE ook toegang tot resources zonder extra configuratie.
 
-![Externe ASE][1] 
+![Externe ASE][1] 
 
 Als u een externe ASE hebt, is de open bare VIP ook het eind punt waarop uw ASE-apps worden omgezet voor:
 
@@ -106,7 +106,7 @@ Als u de DNS-instelling van het VNet wijzigt waarin uw ASE zich bevindt, moet u 
 
 ## <a name="portal-dependencies"></a>Portal dependencies (Portal-afhankelijkheden) ##
 
-Naast de functionele afhankelijkheden van ASE zijn er enkele extra items die betrekking hebben op de portal-ervaring. Enkele van de mogelijkheden van de Azure Portal zijn afhankelijk van directe toegang tot de _SCM-site_. Voor elke app in Azure App Service zijn er twee Url's. De eerste URL is om toegang te krijgen tot uw app. De tweede URL is om toegang te krijgen tot de SCM-site, die ook wel de _kudu-console_wordt genoemd. Functies die gebruikmaken van de SCM-site zijn onder andere:
+Naast de functionele afhankelijkheden van ASE zijn er enkele extra items die betrekking hebben op de portal-ervaring. Enkele van de mogelijkheden van de Azure Portal zijn afhankelijk van directe toegang tot de _SCM-site_. Voor elke app in Azure App Service zijn er twee Url's. De eerste URL is om toegang te krijgen tot uw app. De tweede URL is om toegang te krijgen tot de SCM-site, die ook wel de _kudu-console_ wordt genoemd. Functies die gebruikmaken van de SCM-site zijn onder andere:
 
 -   WebJobs
 -   Functies
@@ -118,14 +118,14 @@ Naast de functionele afhankelijkheden van ASE zijn er enkele extra items die bet
 
 Wanneer u een ILB-ASE gebruikt, is de SCM-site niet toegankelijk van buiten het VNet. Sommige mogelijkheden werken niet vanuit de app-Portal, omdat ze toegang nodig hebben tot de SCM-site van een app. U kunt rechtstreeks verbinding maken met de SCM-site in plaats van de portal te gebruiken. 
 
-Als uw ILB ASE de domein naam *contoso.appserviceenvironment.net* is en de naam van uw app *testapp*is, wordt de app bereikt op *testapp.contoso.appserviceenvironment.net*. De SCM-site die ermee meegaat, is bereikt op *testapp.scm.contoso.appserviceenvironment.net*.
+Als uw ILB ASE de domein naam *contoso.appserviceenvironment.net* is en de naam van uw app *testapp* is, wordt de app bereikt op *testapp.contoso.appserviceenvironment.net*. De SCM-site die ermee meegaat, is bereikt op *testapp.scm.contoso.appserviceenvironment.net*.
 
 ## <a name="ase-ip-addresses"></a>IP-adressen van ASE ##
 
 Een ASE heeft enkele IP-adressen waarvan u op de hoogte moet zijn. Dit zijn:
 
 - **Openbaar binnenkomend IP-adres**: wordt gebruikt voor app-verkeer in een extern ASE en beheer verkeer in zowel een externe ASE als een ILB-ASE.
-- **Uitgaand openbaar IP-adres**dat wordt gebruikt als het ' van ' IP-adres voor uitgaande verbindingen van de ASE die het VNet verlaten, dat niet wordt gerouteerd naar een VPN-verbinding.
+- **Uitgaand openbaar IP-adres** dat wordt gebruikt als het ' van ' IP-adres voor uitgaande verbindingen van de ASE die het VNet verlaten, dat niet wordt gerouteerd naar een VPN-verbinding.
 - **ILB IP-adres**: het IP-adres van ILB bestaat alleen in een ILB ASE.
 - **Op apps gebaseerde SSL-adressen die zijn toegewezen op basis van een app**: alleen mogelijk met een externe ASE en wanneer SSL op basis van IP is geconfigureerd.
 
@@ -180,9 +180,9 @@ Wanneer rekening wordt gehouden met de inkomende en uitgaande vereisten, moet de
 
 ![Inkomende beveiligingsregels][4]
 
-Met een standaard regel kunnen de IP-adressen in het VNet worden gecommuniceerd met het ASE-subnet. Een andere standaard regel maakt het load balancer, ook wel bekend als de open bare VIP, om te communiceren met de ASE. Als u de standaard regels wilt zien, selecteert u **standaard regels** naast het pictogram **toevoegen** . Als u voor de standaard regels een andere regel voor het weigeren van alle gegevens plaatst, voor komt u verkeer tussen de VIP en de ASE. Als u verkeer wilt voor komen dat zich binnen het VNet bevindt, voegt u uw eigen regel toe om binnenkomende verbindingen toe te staan. Gebruik een bron die gelijk is aan AzureLoadBalancer met een doel van **een en een poort bereik van** **\*** . Omdat de NSG-regel wordt toegepast op het ASE-subnet, hoeft u niet specifiek te zijn in het doel.
+Met een standaard regel kunnen de IP-adressen in het VNet worden gecommuniceerd met het ASE-subnet. Een andere standaard regel maakt het load balancer, ook wel bekend als de open bare VIP, om te communiceren met de ASE. Als u de standaard regels wilt zien, selecteert u **standaard regels** naast het pictogram **toevoegen** . Als u voor de standaard regels een andere regel voor het weigeren van alle gegevens plaatst, voor komt u verkeer tussen de VIP en de ASE. Als u verkeer wilt voor komen dat zich binnen het VNet bevindt, voegt u uw eigen regel toe om binnenkomende verbindingen toe te staan. Gebruik een bron die gelijk is aan AzureLoadBalancer met een doel van **een en een poort bereik van *** *\** _. Omdat de NSG-regel wordt toegepast op het ASE-subnet, hoeft u niet specifiek te zijn in het doel.
 
-Als u een IP-adres aan uw app hebt toegewezen, moet u ervoor zorgen dat de poorten geopend blijven. Selecteer **app service Environment**  >  **IP-adressen**om de poorten weer te geven.  
+Als u een IP-adres aan uw app hebt toegewezen, moet u ervoor zorgen dat de poorten geopend blijven. Selecteer _ *app service Environment** > **IP-adressen** om de poorten weer te geven.  
 
 Alle items die worden weer gegeven in de volgende regels voor uitgaande verbindingen, zijn vereist, met uitzonde ring van het laatste item. Ze bieden netwerk toegang tot de ASE-afhankelijkheden die eerder in dit artikel werden vermeld. Als u ze blokkeert, werkt uw ASE niet meer. Met het laatste item in de lijst kan uw ASE communiceren met andere resources in uw VNet.
 

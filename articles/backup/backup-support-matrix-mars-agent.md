@@ -4,11 +4,11 @@ description: Dit artikel bevat een overzicht van Azure Backup ondersteuning bij 
 ms.date: 08/30/2019
 ms.topic: conceptual
 ms.openlocfilehash: 26a47c2648d1307d2e7da2b25455f3f036cbf32d
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363235"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997236"
 ---
 # <a name="support-matrix-for-backup-with-the-microsoft-azure-recovery-services-mars-agent"></a>Ondersteunings matrix voor back-up met de Microsoft Azure Recovery Services-agent (MARS)
 
@@ -46,7 +46,7 @@ Wanneer u de MARS-agent gebruikt voor het maken van een back-up van gegevens, ne
 Grootte |  Beschik bare ruimte in de cachemap moet ten minste 5 tot 10 procent van de totale grootte van uw back-upgegevens zijn.
 Locatie | De cachemap moet lokaal zijn opgeslagen op de computer waarvan een back-up wordt gemaakt en moet online zijn. De cachemap mag zich niet op een netwerk share, op Verwissel bare media of op een offline volume bevinden.
 Map | De cachemap mag niet worden versleuteld op een ontdubbeld volume of in een gecomprimeerde map, een sparse of een reparsepunt.
-Locatie wijzigingen | U kunt de locatie van de cache wijzigen door de back-upengine ( `net stop bengine` ) te stoppen en de cachemap naar een nieuw station te kopiëren. (Zorg ervoor dat er voldoende ruimte beschikbaar is op het nieuwe station.) Werk vervolgens twee Register vermeldingen onder **HKLM\SOFTWARE\Microsoft\Windows Azure backup** ( **config/ScratchLocation** en **config/CloudBackupProvider/ScratchLocation** ) bij naar de nieuwe locatie en start de engine opnieuw.
+Locatie wijzigingen | U kunt de locatie van de cache wijzigen door de back-upengine ( `net stop bengine` ) te stoppen en de cachemap naar een nieuw station te kopiëren. (Zorg ervoor dat er voldoende ruimte beschikbaar is op het nieuwe station.) Werk vervolgens twee Register vermeldingen onder **HKLM\SOFTWARE\Microsoft\Windows Azure backup** (**config/ScratchLocation** en **config/CloudBackupProvider/ScratchLocation**) bij naar de nieuwe locatie en start de engine opnieuw.
 
 ## <a name="networking-and-access-support"></a>Ondersteuning voor netwerken en toegang
 
@@ -67,7 +67,7 @@ En naar deze IP-adressen:
 
 De toegang tot alle hierboven vermelde Url's en IP-adressen maakt gebruik van het HTTPS-protocol op poort 443.
 
-Bij het maken van back-ups van bestanden en mappen vanaf Azure Vm's met behulp van de MARS-agent moet het virtuele netwerk van Azure ook worden geconfigureerd om toegang toe te staan. Als u netwerkbeveiligingsgroepen (NSG's) gebruikt, gebruikt u de servicetag *AzureBackup* om uitgaande toegang tot Azure Backup toe te staan. Naast de Azure Backup-tag moet u ook connectiviteit voor verificatie en gegevensoverdracht toestaan met behulp van [NSG-regels](../virtual-network/network-security-groups-overview.md#service-tags) voor Azure AD ( *AzureActiveDirectory* ) en Azure Storage ( *Storage* ). In de volgende stappen wordt het proces voor het maken van een regel voor de Azure Backup-tag beschreven:
+Bij het maken van back-ups van bestanden en mappen vanaf Azure Vm's met behulp van de MARS-agent moet het virtuele netwerk van Azure ook worden geconfigureerd om toegang toe te staan. Als u netwerkbeveiligingsgroepen (NSG's) gebruikt, gebruikt u de servicetag *AzureBackup* om uitgaande toegang tot Azure Backup toe te staan. Naast de Azure Backup-tag moet u ook connectiviteit voor verificatie en gegevensoverdracht toestaan met behulp van [NSG-regels](../virtual-network/network-security-groups-overview.md#service-tags) voor Azure AD (*AzureActiveDirectory*) en Azure Storage (*Storage*). In de volgende stappen wordt het proces voor het maken van een regel voor de Azure Backup-tag beschreven:
 
 1. In **Alle services** gaat u naar **Netwerkbeveiligingsgroepen** en selecteert u de netwerkbeveiligingsgroep.
 2. Selecteer de optie **Uitgaande beveiligingsregels** onder **Instellingen**.

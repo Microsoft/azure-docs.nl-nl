@@ -14,11 +14,11 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: de529a8ffb0c72854904717c71dbc322c919f1a8
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370811"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996692"
 ---
 # <a name="add-or-delete-users-using-azure-active-directory"></a>Gebruikers toevoegen of verwijderen met Azure Active Directory
 
@@ -34,7 +34,7 @@ Voer de volgende stappen uit om een nieuwe gebruiker toe te voegen:
 
 1. Zoek en selecteer *Azure Active Directory* op elke pagina.
 
-1. Selecteer **gebruikers**en selecteer vervolgens **nieuwe gebruiker**.
+1. Selecteer **gebruikers** en selecteer vervolgens **nieuwe gebruiker**.
 
     ![Een gebruiker toevoegen via gebruikers: alle gebruikers in azure AD](media/add-users-azure-active-directory/add-user-in-users-all-users.png)
 
@@ -44,7 +44,7 @@ Voer de volgende stappen uit om een nieuwe gebruiker toe te voegen:
 
    - **Gebruikers naam**. Vereist. De gebruikers naam van de nieuwe gebruiker. Bijvoorbeeld `mary@contoso.com`.
 
-     Het domein gedeelte van de gebruikers naam moet ofwel de oorspronkelijke standaard domein naam, * \<yourdomainname> . onmicrosoft.com*of een aangepaste domein naam, zoals *contoso.com*, gebruiken. Zie [uw aangepaste domein naam toevoegen met behulp van de Azure Active Directory-Portal](add-custom-domain.md)voor meer informatie over het maken van een aangepaste domein naam.
+     Het domein gedeelte van de gebruikers naam moet ofwel de oorspronkelijke standaard domein naam, *\<yourdomainname> . onmicrosoft.com* of een aangepaste domein naam, zoals *contoso.com*, gebruiken. Zie [uw aangepaste domein naam toevoegen met behulp van de Azure Active Directory-Portal](add-custom-domain.md)voor meer informatie over het maken van een aangepaste domein naam.
 
    - **Groepen**. U kunt de gebruiker eventueel toevoegen aan een of meer bestaande groepen. U kunt de gebruiker ook op een later tijdstip toevoegen aan groepen. Zie [een basis groep maken en leden toevoegen met Azure Active Directory](active-directory-groups-create-azure-portal.md)voor meer informatie over het toevoegen van gebruikers aan groepen.
 

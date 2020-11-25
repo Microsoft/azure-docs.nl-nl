@@ -15,16 +15,16 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: 3c26a84e32a17cba83b5ca895f146e561072fa62
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90054956"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998189"
 ---
 # <a name="use-storsimple-snapshot-manager-to-view-and-manage-backup-jobs"></a>StorSimple Snapshot Manager gebruiken om back-uptaken weer te geven en te beheren
 
 ## <a name="overview"></a>Overzicht
-Het knoop punt **taken** in het deel venster **bereik** toont de **geplande**, **laatste 24 uur**en **uitvoeren** van back-uptaken die u interactief of met een geconfigureerd beleid hebt gestart. 
+Het knoop punt **taken** in het deel venster **bereik** toont de **geplande**, **laatste 24 uur** en **uitvoeren** van back-uptaken die u interactief of met een geconfigureerd beleid hebt gestart. 
 
 In deze zelf studie wordt uitgelegd hoe u het knoop punt **taken** kunt gebruiken om informatie weer te geven over geplande, recente en momenteel actieve back-uptaken. (De lijst met taken en de bijbehorende informatie wordt weer gegeven in het **resultaten** venster.) Daarnaast kunt u met de rechter muisknop op een vermelde taak klikken en een context menu weer geven met een lijst met beschik bare acties.
 

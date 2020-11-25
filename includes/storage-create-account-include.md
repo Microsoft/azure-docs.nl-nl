@@ -9,11 +9,11 @@ ms.date: 11/20/2018
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 193cd8ff83eeabcf155dba91dd69a6eba72febd6
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95559086"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996804"
 ---
 ## <a name="create-an-azure-storage-account"></a>Een Azure-opslagaccount maken
 

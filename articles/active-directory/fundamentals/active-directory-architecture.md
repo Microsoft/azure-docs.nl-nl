@@ -14,11 +14,11 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 476cf8013f5dc8b5d54efb573cf305d81fc690b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89319148"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996709"
 ---
 # <a name="what-is-the-azure-active-directory-architecture"></a>Wat is de Azure Active Directory architectuur?
 
@@ -39,7 +39,7 @@ In dit artikel worden de volgende elementen van de architectuur besproken:
 
 ### <a name="service-architecture-design"></a>Servicearchitectuurontwerp
 
-De meest voorkomende manier om een toegankelijk en bruikbaar, gegevens systeem te maken, is via onafhankelijke bouw stenen of schaal eenheden. Schaal eenheden van de Azure AD-gegevenslaag worden *partities*genoemd.
+De meest voorkomende manier om een toegankelijk en bruikbaar, gegevens systeem te maken, is via onafhankelijke bouw stenen of schaal eenheden. Schaal eenheden van de Azure AD-gegevenslaag worden *partities* genoemd.
 
 De gegevenslaag heeft meerdere front-end-services die mogelijkheden bieden voor lezen/schrijven. In het onderstaande diagram ziet u hoe de onderdelen van een partitie met één map worden geleverd in geografisch verspreide data centers.
 
@@ -91,8 +91,8 @@ Azure AD-replica's worden opgeslagen in datacenters over de hele wereld. Zie [Az
 Azure AD werkt in data centers met de volgende kenmerken:
 
 * Verificatie, Graph en andere AD-Services bevinden zich achter de Gateway Service. De taakverdeling van deze services wordt via de gateway beheerd. Failover wordt automatisch uitgevoerd als er beschadigde servers worden gedetecteerd met behulp van transactionele status tests. Op basis van deze status tests stuurt de gateway dynamisch verkeer naar gezonde data centers.
-* Voor *Lees bewerkingen*heeft de Directory secundaire replica's en bijbehorende front-end-services in een actief-actief configuratie in meerdere data centers. Als er een fout optreedt in een volledig Data Center, wordt verkeer automatisch doorgestuurd naar een ander Data Center.
- * Voor *schrijf bewerkingen*zal de Directory failover uitvoeren via de primaire (hoofd) replica in data centers via gepland (nieuwe primaire server wordt gesynchroniseerd met oude primaire) of procedures voor nood failover. De duurzaamheid van gegevens wordt bereikt door een door voering te repliceren naar ten minste twee data centers.
+* Voor *Lees bewerkingen* heeft de Directory secundaire replica's en bijbehorende front-end-services in een actief-actief configuratie in meerdere data centers. Als er een fout optreedt in een volledig Data Center, wordt verkeer automatisch doorgestuurd naar een ander Data Center.
+ * Voor *schrijf bewerkingen* zal de Directory failover uitvoeren via de primaire (hoofd) replica in data centers via gepland (nieuwe primaire server wordt gesynchroniseerd met oude primaire) of procedures voor nood failover. De duurzaamheid van gegevens wordt bereikt door een door voering te repliceren naar ten minste twee data centers.
 
 #### <a name="data-consistency"></a>Gegevensconsistentie
 

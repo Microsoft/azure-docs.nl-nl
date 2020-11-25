@@ -13,11 +13,11 @@ ms.author: kenwith
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7fc688ca0981024e5e08c9fb20ecb6704efbd7f2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658771"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997491"
 ---
 # <a name="configure-the-admin-consent-workflow-preview"></a>De beheerder toestemming werk stroom configureren (preview-versie)
 

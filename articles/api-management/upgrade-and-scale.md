@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 626f5b67905e5dd89cf8f12460bc2378451614de
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: c7f0e98b5ea2fdd13b1daa9fd9737998eb6cfaf1
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078303"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "96010211"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Een Azure API Management-exemplaar bijwerken en schalen  
 
@@ -45,9 +45,9 @@ Als u de stappen in dit artikel wilt volgen, moet u het volgende doen:
 
 ## <a name="upgrade-and-scale"></a>Upgraden en de schaal aanpassen  
 
-U kunt kiezen uit vier lagen: **Developer**, **Basic**,  **Standard**en **Premium**. De **Developer** -laag moet worden gebruikt om de service te evalueren; het mag niet worden gebruikt voor productie. De **Developer** -laag heeft geen sla en u kunt deze laag niet schalen (eenheden toevoegen/verwijderen). 
+U kunt kiezen uit vier lagen: **Developer**, **Basic**,  **Standard** en **Premium**. De **Developer** -laag moet worden gebruikt om de service te evalueren; het mag niet worden gebruikt voor productie. De **Developer** -laag heeft geen sla en u kunt deze laag niet schalen (eenheden toevoegen/verwijderen). 
 
-**Basic**, **Standard**en **Premium** zijn productie lagen met sla en kunnen worden geschaald. De laag **basis** is de goedkoopste-laag met een sla en kan Maxi maal twee eenheden worden uitgebreid. de **standaard** laag kan worden geschaald tot Maxi maal vier eenheden. U kunt een wille keurig aantal eenheden toevoegen aan de **Premium** -laag.
+**Basic**, **Standard** en **Premium** zijn productie lagen met sla en kunnen worden geschaald. De laag **basis** is de goedkoopste-laag met een sla en kan Maxi maal twee eenheden worden uitgebreid. de **standaard** laag kan worden geschaald tot Maxi maal vier eenheden. U kunt een wille keurig aantal eenheden toevoegen aan de **Premium** -laag.
 
 Met de **Premium** -laag kunt u één Azure API Management-exemplaar distribueren over een wille keurig aantal gewenste Azure-regio's. Wanneer u voor het eerst een Azure API Management-service maakt, bevat de instantie slechts één eenheid en bevindt deze zich in één Azure-regio. De oorspronkelijke regio wordt aangewezen als de **primaire** regio. Extra regio's kunnen eenvoudig worden toegevoegd. Wanneer u een regio toevoegt, geeft u het aantal eenheden op dat u wilt toewijzen. U kunt bijvoorbeeld één eenheid in de **primaire** regio en vijf eenheden in een andere regio hebben. U kunt het aantal eenheden aanpassen aan het verkeer dat u in elke regio hebt. Zie [een azure API Management service-exemplaar implementeren in meerdere Azure-regio's](api-management-howto-deploy-multi-region.md)voor meer informatie.
 
@@ -78,6 +78,10 @@ U kunt een upgrade en downgrade uitvoeren naar een wille keurige laag. Het bijwe
 
 ## <a name="downtime-during-scaling-up-and-down"></a>Downtime tijdens omhoog en omlaag schalen
 Als u schaalt van of naar de Developer-laag, zal er downtime zijn. Anders is er geen downtime. 
+
+## <a name="compute-isolation"></a>Reken isolatie
+Als uw beveiligings vereisten [reken isolatie](https://docs.microsoft.com/azure/azure-government/azure-secure-isolation-guidance#compute-isolation)bevatten, kunt u de **geïsoleerde** prijs categorie gebruiken. Deze laag zorgt ervoor dat de reken resources van een API Management service-exemplaar de gehele fysieke host verbruiken en het vereiste isolatie niveau bieden dat vereist is voor de ondersteuning van bijvoorbeeld het Amerikaanse Department of IL5-workloads. Als u toegang wilt krijgen tot de geïsoleerde laag, moet u [een ondersteunings ticket maken](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). 
+
 
 
 ## <a name="next-steps"></a>Volgende stappen

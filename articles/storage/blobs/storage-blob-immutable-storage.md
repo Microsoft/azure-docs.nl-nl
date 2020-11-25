@@ -9,12 +9,12 @@ ms.date: 11/13/2020
 ms.author: tamram
 ms.reviewer: hux
 ms.subservice: blobs
-ms.openlocfilehash: 39fdde572e269bb4f5648e91bf85539d02236ff6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: acb2ebb0d7ce70c6b5963a8a6c3e392091e4bb1e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658550"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010058"
 ---
 # <a name="store-business-critical-blob-data-with-immutable-storage"></a>Bedrijfs kritieke blobgegevens opslaan met onveranderlijke opslag
 
@@ -76,7 +76,7 @@ De volgende limieten gelden voor het Bewaar beleid:
 
 ### <a name="allow-protected-append-blobs-writes"></a>Schrijven van beveiligde toevoeg-blobs toestaan
 
-Toevoeg-blobs bestaan uit blokken gegevens en zijn geoptimaliseerd voor bewerkingen voor het toevoegen van gegevens die vereist zijn voor controle-en logboek registratie scenario's. Door middel van toevoeg-blobs kunnen nieuwe blokken alleen worden toegevoegd aan het einde van de blob. Ongeacht de Onveranderbaarheid is het niet toegestaan om bestaande blokken in een toevoeg-BLOB te wijzigen of te verwijderen. Zie [informatie over toevoeg](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-append-blobs)-blobs voor meer informatie over toevoeg-blobs.
+Toevoeg-blobs bestaan uit blokken gegevens en zijn geoptimaliseerd voor bewerkingen voor het toevoegen van gegevens die vereist zijn voor controle-en logboek registratie scenario's. Door middel van toevoeg-blobs kunnen nieuwe blokken alleen worden toegevoegd aan het einde van de blob. Ongeacht de Onveranderbaarheid is het niet toegestaan om bestaande blokken in een toevoeg-BLOB te wijzigen of te verwijderen. Zie [informatie over toevoeg](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-append-blobs)-blobs voor meer informatie over toevoeg-blobs.
 
 Alleen op tijd gebaseerd Bewaar beleid heeft een `allowProtectedAppendWrites` instelling waarmee nieuwe blokken naar een toevoeg-BLOB kunnen worden geschreven terwijl Onveranderbaarheid-beveiliging en-naleving behouden blijven. Als deze instelling is ingeschakeld, kunt u rechtstreeks een toevoeg-Blob in de door beleid beveiligde container maken en nieuwe gegevens blokken toevoegen aan het einde van bestaande toevoeg-blobs met behulp van de *AppendBlock* -API. Alleen nieuwe blokken kunnen worden toegevoegd en bestaande blokken kunnen niet worden gewijzigd of verwijderd. Er wordt nog steeds een tijd-retentie Onveranderbaarheid-beveiliging toegepast, waardoor de toevoeg-BLOB niet kan worden verwijderd totdat de juiste Bewaar periode is verstreken. Het inschakelen van deze instelling heeft geen invloed op het gedrag van de Onveranderbaarheid van blok-blobs of pagina-blobs.
 
@@ -103,7 +103,7 @@ De volgende limieten gelden voor juridische bewaringen:
 
 ## <a name="scenarios"></a>Scenario's
 
-De volgende tabel bevat de typen Blob Storage-bewerkingen die zijn uitgeschakeld voor de verschillende onveranderbare scenario's. Zie de [Azure Blob Service rest API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api) -documentatie voor meer informatie.
+De volgende tabel bevat de typen Blob Storage-bewerkingen die zijn uitgeschakeld voor de verschillende onveranderbare scenario's. Zie de [Azure Blob Service rest API](/rest/api/storageservices/blob-service-rest-api) -documentatie voor meer informatie.
 
 | Scenario | BLOB-status | BLOB-bewerkingen geweigerd | Container-en account beveiliging |
 |--|--|--|--|
@@ -116,7 +116,7 @@ De volgende tabel bevat de typen Blob Storage-bewerkingen die zijn uitgeschakeld
 <sup>2</sup> toevoeg blok is alleen toegestaan voor op tijd gebaseerd Bewaar beleid waarvoor de eigenschap is `allowProtectedAppendWrites` ingeschakeld. Zie de sectie [schrijf bewerkingen voor beveiligde toevoeg-blobs toestaan](#allow-protected-append-blobs-writes) voor meer informatie.
 
 > [!IMPORTANT]
-> Sommige werk belastingen, zoals [SQL back-up naar URL](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-to-url), maken een BLOB en voegen deze vervolgens toe. Als de container een actief Bewaar beleid op basis van tijd of rechts geblokkeerd heeft, zal dit patroon niet slagen.
+> Sommige werk belastingen, zoals [SQL back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url), maken een BLOB en voegen deze vervolgens toe. Als de container een actief Bewaar beleid op basis van tijd of rechts geblokkeerd heeft, zal dit patroon niet slagen.
 
 ## <a name="pricing"></a>Prijzen
 
@@ -170,11 +170,11 @@ Ja. Wanneer een Bewaar beleid op basis van tijd voor het eerst wordt gemaakt, he
 
 **Kan ik zacht verwijderen naast onveranderbaar BLOB-beleid gebruiken?**
 
-Ja, als uw nalevings vereisten toestaan dat zacht verwijderen is ingeschakeld. [Zacht verwijderen voor Azure Blob Storage](storage-blob-soft-delete.md) is van toepassing op alle containers in een opslag account, ongeacht of het Bewaar beleid geldig is of op basis van tijd. We raden u aan om voorlopig verwijderen in te scha kelen voor extra beveiliging voordat onveranderbaar WORM beleid wordt toegepast en bevestigd.
+Ja, als uw nalevings vereisten toestaan dat zacht verwijderen is ingeschakeld. [Zacht verwijderen voor Azure Blob Storage](./soft-delete-blob-overview.md) is van toepassing op alle containers in een opslag account, ongeacht of het Bewaar beleid geldig is of op basis van tijd. We raden u aan om voorlopig verwijderen in te scha kelen voor extra beveiliging voordat onveranderbaar WORM beleid wordt toegepast en bevestigd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Onveranderbaarheid-beleid instellen en beheren voor Blob Storage](storage-blob-immutability-policies-manage.md)
 - [Regels instellen voor het automatisch laag maken en verwijderen van BLOB-gegevens met levenscyclus beheer](storage-lifecycle-management-concepts.md)
-- [Voorlopig verwijderen voor Azure Storage-blobs](../blobs/storage-blob-soft-delete.md)
+- [Voorlopig verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md)
 - [Beveilig abonnementen, resource groepen en resources met Azure Resource Manager sloten](../../azure-resource-manager/management/lock-resources.md).

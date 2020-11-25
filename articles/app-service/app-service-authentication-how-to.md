@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18, devx-track-azurecli
 ms.openlocfilehash: ad83e7ad5e1ffc03bf7c62df9b28512e19a62100
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92739793"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010194"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Geavanceerd gebruik van verificatie en autorisatie in Azure App Service
 
@@ -31,7 +31,7 @@ De Portal configuratie biedt geen mogelijkheid om meerdere aanmeld providers te 
 
 Configureer eerst op de pagina **verificatie/autorisatie** in de Azure Portal elke id-provider die u wilt inschakelen.
 
-Selecteer **anonieme aanvragen toestaan (geen actie)** **wanneer de aanvraag niet is geverifieerd in actie om uit te voeren** .
+Selecteer **anonieme aanvragen toestaan (geen actie)** **wanneer de aanvraag niet is geverifieerd in actie om uit te voeren**.
 
 Voeg op de aanmeldings pagina of in de navigatie balk of op een andere locatie van uw app een aanmeldings koppeling toe aan elk van de providers die u hebt ingeschakeld ( `/.auth/login/<provider>` ). Bijvoorbeeld:
 
@@ -170,21 +170,21 @@ Verzend vanuit uw client code (zoals een mobiele app of een Java script in de br
 
 Wanneer het toegangs token van uw provider (niet het [sessie token](#extend-session-token-expiration-grace-period)) verloopt, moet u de gebruiker opnieuw verifiëren voordat u het token opnieuw gebruikt. U kunt de verval datum van tokens voor komen door een `GET` aanroep naar het `/.auth/refresh` eind punt van uw toepassing te maken. Wanneer wordt aangeroepen App Service de toegangs tokens in de [token opslag](overview-authentication-authorization.md#token-store) voor de geverifieerde gebruiker automatisch vernieuwd. Bij volgende aanvragen voor tokens door uw app-code worden de vernieuwde tokens opgehaald. Het vernieuwen van tokens werkt echter alleen als de token opslag [vernieuwings tokens](https://auth0.com/learn/refresh-tokens/) voor uw provider bevat. De manier om vernieuwings tokens op te halen, wordt door elke provider gedocumenteerd, maar de volgende lijst is een korte samen vatting:
 
-- **Google** : een `access_type=offline` query reeks parameter toevoegen aan de `/.auth/login/google` API-aanroep. Als u de Mobile Apps SDK gebruikt, kunt u de para meter toevoegen aan een van de `LogicAsync` Overloads (Zie [tokens voor Google-vernieuwing](https://developers.google.com/identity/protocols/OpenIDConnect#refresh-tokens)).
-- **Facebook** : biedt geen vernieuwings tokens. Tokens met een lange levens duur verlopen over 60 dagen (Zie het [verloop van Facebook en de uitbrei ding van toegangs tokens](https://developers.facebook.com/docs/facebook-login/access-tokens/expiration-and-extension)).
-- **Twitter** : toegangs tokens verlopen niet (Zie [Veelgestelde vragen over Twitter OAuth](https://developer.twitter.com/en/docs/basics/authentication/FAQ)).
-- **Micro soft-account** : Selecteer het bereik bij het [configureren van verificatie-instellingen voor micro soft-accounts](configure-authentication-provider-microsoft.md) `wl.offline_access` .
-- **Azure Active Directory** : in [https://resources.azure.com](https://resources.azure.com) voert u de volgende stappen uit:
-    1. Selecteer boven aan de pagina **lezen/schrijven** .
-    2. Navigeer in de linkernavigatiebalk naar **abonnementen** > * * _\<subscription\_name_** > **resourceGroups** > * *_ \<resource\_group\_name> _* * > **providers**  >  **micro soft.**  >  **websites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings** . 
-    3. Klik op **Bewerken** .
+- **Google**: een `access_type=offline` query reeks parameter toevoegen aan de `/.auth/login/google` API-aanroep. Als u de Mobile Apps SDK gebruikt, kunt u de para meter toevoegen aan een van de `LogicAsync` Overloads (Zie [tokens voor Google-vernieuwing](https://developers.google.com/identity/protocols/OpenIDConnect#refresh-tokens)).
+- **Facebook**: biedt geen vernieuwings tokens. Tokens met een lange levens duur verlopen over 60 dagen (Zie het [verloop van Facebook en de uitbrei ding van toegangs tokens](https://developers.facebook.com/docs/facebook-login/access-tokens/expiration-and-extension)).
+- **Twitter**: toegangs tokens verlopen niet (Zie [Veelgestelde vragen over Twitter OAuth](https://developer.twitter.com/en/docs/basics/authentication/FAQ)).
+- **Micro soft-account**: Selecteer het bereik bij het [configureren van verificatie-instellingen voor micro soft-accounts](configure-authentication-provider-microsoft.md) `wl.offline_access` .
+- **Azure Active Directory**: in [https://resources.azure.com](https://resources.azure.com) voert u de volgende stappen uit:
+    1. Selecteer boven aan de pagina **lezen/schrijven**.
+    2. Navigeer in de linkernavigatiebalk naar **abonnementen** > * *_\<subscription\_name_** > **resourceGroups** > * *_ \<resource\_group\_name> _* * > **providers**  >  **micro soft.**  >  **websites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings**. 
+    3. Klik op **Bewerken**.
     4. Wijzig de volgende eigenschap. Vervang door _\<app\_id>_ de Azure Active Directory-toepassings-id van de service die u wilt openen.
 
         ```json
         "additionalLoginParams": ["response_type=code id_token", "resource=<app_id>"]
         ```
 
-    5. Klik op **put** . 
+    5. Klik op **put**. 
 
 Zodra uw provider is geconfigureerd, kunt u [het vernieuwings token en de verloop tijd voor het toegangs token vinden](#retrieve-tokens-in-app-code) in de token opslag. 
 
@@ -221,11 +221,11 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ## <a name="limit-the-domain-of-sign-in-accounts"></a>Het domein van aanmeldings accounts beperken
 
-Met zowel het micro soft-account als de Azure Active Directory kunt u zich vanuit meerdere domeinen aanmelden. Micro soft-account staat bijvoorbeeld _Outlook.com_ -, _live.com_ -en _Hotmail.com_ -accounts toe. Azure AD biedt een wille keurig aantal aangepaste domeinen voor de aanmeldings accounts. U kunt uw gebruikers echter ook rechtstreeks naar uw eigen Azure AD-aanmeldings pagina (zoals `contoso.com` ) versnellen. Voer de volgende stappen uit om de domein naam van de aanmeldings accounts voor te stellen.
+Met zowel het micro soft-account als de Azure Active Directory kunt u zich vanuit meerdere domeinen aanmelden. Micro soft-account staat bijvoorbeeld _Outlook.com_-, _live.com_-en _Hotmail.com_ -accounts toe. Azure AD biedt een wille keurig aantal aangepaste domeinen voor de aanmeldings accounts. U kunt uw gebruikers echter ook rechtstreeks naar uw eigen Azure AD-aanmeldings pagina (zoals `contoso.com` ) versnellen. Voer de volgende stappen uit om de domein naam van de aanmeldings accounts voor te stellen.
 
-[https://resources.azure.com](https://resources.azure.com)Ga in naar **abonnementen** > * * _\<subscription\_name_** > **resourceGroups** > * *_ \<resource\_group\_name> _* * > **providers**  >  **micro soft.**  >  **websites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings** . 
+[https://resources.azure.com](https://resources.azure.com)Ga in naar **abonnementen** > * *_\<subscription\_name_** > **resourceGroups** > * *_ \<resource\_group\_name> _* * > **providers**  >  **micro soft.**  >  **websites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings**. 
 
-Klik op **bewerken** , wijzig de volgende eigenschap en klik vervolgens op **put** . Zorg ervoor dat u vervangt door _\<domain\_name>_ het domein dat u wilt.
+Klik op **bewerken**, wijzig de volgende eigenschap en klik vervolgens op **put**. Zorg ervoor dat u vervangt door _\<domain\_name>_ het domein dat u wilt.
 
 ```json
 "additionalLoginParams": ["domain_hint=<domain_name>"]
@@ -247,13 +247,13 @@ Hoewel App Service de eenvoudigste autorisatie aanvraag verkrijgt (dat wil zegge
 
 ### <a name="server-level-windows-apps-only"></a>Server niveau (alleen Windows-apps)
 
-Voor elke Windows-app kunt u autorisatie gedrag van de IIS-webserver definiëren door het *Web.config* -bestand te bewerken. Linux-apps gebruiken IIS niet en kunnen niet worden geconfigureerd via *Web.config* .
+Voor elke Windows-app kunt u autorisatie gedrag van de IIS-webserver definiëren door het *Web.config* -bestand te bewerken. Linux-apps gebruiken IIS niet en kunnen niet worden geconfigureerd via *Web.config*.
 
 1. Ga naar `https://<app-name>.scm.azurewebsites.net/DebugConsole`
 
-1. Ga in de browser Verkenner van uw App Service-bestanden naar *site/wwwroot* . Als een *Web.config* niet bestaat, maakt u het door **+**  >  **nieuw bestand** te selecteren. 
+1. Ga in de browser Verkenner van uw App Service-bestanden naar *site/wwwroot*. Als een *Web.config* niet bestaat, maakt u het door **+**  >  **nieuw bestand** te selecteren. 
 
-1. Selecteer het potlood voor *Web.config* om het te bewerken. Voeg de volgende configuratie code toe en klik op **Opslaan** . Als *Web.config* al bestaat, kunt u het `<authorization>` element gewoon toevoegen met alles. Voeg de accounts toe die u wilt toestaan in het- `<allow>` element.
+1. Selecteer het potlood voor *Web.config* om het te bewerken. Voeg de volgende configuratie code toe en klik op **Opslaan**. Als *Web.config* al bestaat, kunt u het `<authorization>` element gewoon toevoegen met alles. Voeg de accounts toe die u wilt toestaan in het- `<allow>` element.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 04/16/2020
 ms.openlocfilehash: ddd1a6fa2fc25add30664da5b739338e87e7e74f
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547840"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010109"
 ---
 # <a name="use-empty-edge-nodes-on-apache-hadoop-clusters-in-hdinsight"></a>Lege Edge-knoop punten op Apache Hadoop clusters in HDInsight gebruiken
 
@@ -109,9 +109,9 @@ In deze sectie gebruikt u een resource manager-sjabloon om een HDInsight-cluster
     |Resourcegroep|Maak een nieuwe resource groep die wordt gebruikt voor het cluster.|
     |Locatie|Selecteer een locatie voor de resourcegroep.|
     |Clusternaam|Voer een naam in voor het nieuwe cluster dat u wilt maken.|
-    |Gebruikersnaam voor clusteraanmelding|Voer de Hadoop HTTP-gebruikers naam in.  De standaardnaam is **admin** .|
+    |Gebruikersnaam voor clusteraanmelding|Voer de Hadoop HTTP-gebruikers naam in.  De standaardnaam is **admin**.|
     |Wachtwoord voor clusteraanmelding|Voer het Hadoop HTTP-gebruikers wachtwoord in.|
-    |Ssh-gebruikersnaam|Voer de SSH-gebruikers naam in. De standaard naam is **sshuser** .|
+    |Ssh-gebruikersnaam|Voer de SSH-gebruikers naam in. De standaard naam is **sshuser**.|
     |Ssh-wachtwoord|Voer het wacht woord voor SSH-gebruikers in.|
     |Script actie installeren|Behoud de standaard waarde voor dit artikel.|
 
@@ -133,7 +133,7 @@ Het Edge-knoop punt wordt weer gegeven als een toepassing op het Azure Portal.  
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Open het HDInsight-cluster met een Edge-knoop punt.
-3. Selecteer **toepassingen** . Het Edge-knoop punt wordt weer geven.  De standaard naam is **New-de** .
+3. Selecteer **toepassingen**. Het Edge-knoop punt wordt weer geven.  De standaard naam is **New-de**.
 4. Selecteer het Edge-knoop punt. Het SSH-eind punt wordt weer geven.
 
 **Hive op het Edge-knoop punt gebruiken**
@@ -158,8 +158,8 @@ U kunt een Edge-knoop punt verwijderen uit het Azure Portal.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Open het HDInsight-cluster met een Edge-knoop punt.
-3. Selecteer **toepassingen** . Er wordt een lijst met Edge-knoop punten weer geven.  
-4. Klik met de rechter muisknop op het Edge-knoop punt dat u wilt verwijderen en selecteer vervolgens **verwijderen** .
+3. Selecteer **toepassingen**. Er wordt een lijst met Edge-knoop punten weer geven.  
+4. Klik met de rechter muisknop op het Edge-knoop punt dat u wilt verwijderen en selecteer vervolgens **verwijderen**.
 5. Selecteer **Ja** om te bevestigen.
 
 ## <a name="next-steps"></a>Volgende stappen

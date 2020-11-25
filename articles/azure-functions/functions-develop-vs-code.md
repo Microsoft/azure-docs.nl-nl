@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 08/21/2019
 ms.openlocfilehash: c851f5284b87f224932b027fd10ce720327639c2
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167896"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010457"
 ---
 # <a name="develop-azure-functions-by-using-visual-studio-code"></a>Azure Functions ontwikkelen met Visual Studio Code
 
@@ -60,7 +60,7 @@ Andere resources die u nodig hebt, zoals een Azure-opslag account, worden in uw 
 
 Met de functie-extensie kunt u een functie-app-project maken, samen met uw eerste functie. De volgende stappen laten zien hoe u een door HTTP geactiveerde functie maakt in een nieuw functions-project. [Http-trigger](functions-bindings-http-webhook.md) is de eenvoudigste functie trigger sjabloon om te demonstreren.
 
-1. Selecteer in **Azure: functies**het pictogram **functie maken** :
+1. Selecteer in **Azure: functies** het pictogram **functie maken** :
 
     ![Een functie maken](./media/functions-develop-vs-code/create-function.png)
 
@@ -187,7 +187,7 @@ Met Visual Studio code kunt u bindingen toevoegen aan uw function.jsop bestand d
 
 Hieronder volgen enkele voor beelden van prompts voor het definiëren van een nieuwe opslag-uitvoer binding:
 
-| Prompt | Waarde | Beschrijving |
+| Vraag | Waarde | Beschrijving |
 | -------- | ----- | ----------- |
 | **Bindingsrichting selecteren** | `out` | De binding is een uitvoerbinding. |
 | **Binding met richting selecteren** | `Azure Queue Storage` | De binding is een Azure Storage-wachtrijbinding. |
@@ -251,7 +251,7 @@ Met de volgende stappen publiceert u uw project naar een nieuwe functie-app die 
 
 1. Voer de volgende gegevens in om deze informatie op te geven:
 
-    | Prompt | Waarde | Beschrijving |
+    | Vraag | Waarde | Beschrijving |
     | ------ | ----- | ----------- |
     | Functie-app in azure selecteren | Nieuwe functie-app in azure maken | Typ bij de volgende prompt een wereld wijd unieke naam die uw nieuwe functie-app identificeert en selecteer vervolgens ENTER. Geldige tekens voor de naam van en functie-app zijn `a-z`, `0-9` en `-`. |
     | Selecteer een besturings systeem | Windows | De functie-app wordt uitgevoerd in Windows. |
@@ -311,7 +311,7 @@ In deze sectie wordt gebruikgemaakt [van de Azure Storage extensie voor Visual S
 
 Het opslag account connection string instellen:
 
-1. Open in Visual Studio **Cloud Explorer**, vouw **opslag account**  >  **uw opslag account**uit, selecteer **Eigenschappen** en kopieer de waarde van de **primaire verbindings reeks** .
+1. Open in Visual Studio **Cloud Explorer**, vouw **opslag account**  >  **uw opslag account** uit, selecteer **Eigenschappen** en kopieer de waarde van de **primaire verbindings reeks** .
 
 2. Open in uw project de local.settings.jsin het bestand en stel de waarde van de sleutel **AzureWebJobsStorage** in op de Connection String die u hebt gekopieerd.
 
@@ -359,7 +359,7 @@ U kunt instellingen ook publiceren met behulp van de opdracht **Azure functions:
 
 Als het lokale bestand is versleuteld, wordt het gedecodeerd, gepubliceerd en opnieuw versleuteld. Als er instellingen zijn met conflicterende waarden op de twee locaties, wordt u gevraagd om te kiezen hoe u wilt door gaan.
 
-Bekijk bestaande app-instellingen in het gebied **Azure: functions** door uw abonnement, uw functie-app en **Toepassings instellingen**uit te breiden.
+Bekijk bestaande app-instellingen in het gebied **Azure: functions** door uw abonnement, uw functie-app en **Toepassings instellingen** uit te breiden.
 
 ![Instellingen voor de functie-app in Visual Studio code weer geven](./media/functions-develop-vs-code/view-app-settings.png)
 
@@ -373,7 +373,7 @@ Net als bij het uploaden is het lokale bestand versleuteld, wordt het gedecodeer
 
 Wanneer u [functies lokaal uitvoert](#run-functions-locally), worden logboek gegevens naar de Terminal console gestreamd. U kunt ook logboek gegevens ophalen wanneer uw functions-project wordt uitgevoerd in een functie-app in Azure. U kunt verbinding maken met streaming-Logboeken in azure om bijna realtime logboek gegevens te bekijken, of u kunt Application Insights inschakelen voor een uitgebreidere uitleg over hoe de functie-app zich gedraagt.
 
-### <a name="streaming-logs"></a>Streaming-logboeken
+### <a name="streaming-logs"></a>Streaminglogboeken
 
 Wanneer u een toepassing ontwikkelt, is het vaak handig om logboek gegevens in vrijwel realtime weer te geven. U kunt een stroom weer geven van de logboek bestanden die worden gegenereerd door uw functies. Deze uitvoer is een voor beeld van streaming-logboeken voor een aanvraag naar een door HTTP geactiveerde functie:
 
@@ -408,7 +408,7 @@ Nadat u deze stappen hebt voltooid, bevatten de aanroepen van de onderliggende k
 
 De uitbrei ding Azure Functions biedt een handige grafische interface in het gebied voor interactie met uw functie-apps in Azure. Dezelfde functionaliteit is ook beschikbaar als opdrachten in het opdracht palet (F1). Deze Azure Functions-opdrachten zijn beschikbaar:
 
-|Azure Functions opdracht  | Beschrijving  |
+|Azure Functions opdracht  | Description  |
 |---------|---------|
 |**Nieuwe instellingen toevoegen**  |  Hiermee maakt u een nieuwe toepassings instelling in Azure. Zie [Toepassings instellingen publiceren](#publish-application-settings)voor meer informatie. Mogelijk moet u [deze instelling ook downloaden naar de lokale instellingen](#download-settings-from-azure). |
 | **Implementatie bron configureren** | Verbindt uw functie-app in azure met een lokale Git-opslag plaats. Zie [continue implementatie voor Azure functions voor](functions-continuous-deployment.md)meer informatie. |

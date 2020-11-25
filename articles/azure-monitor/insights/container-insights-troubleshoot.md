@@ -4,11 +4,11 @@ description: In dit artikel wordt beschreven hoe u problemen met Azure Monitor v
 ms.topic: conceptual
 ms.date: 07/21/2020
 ms.openlocfilehash: 5727702ff973523ce7ab6400c1c7748e0584acbf
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92890357"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010585"
 ---
 # <a name="troubleshooting-azure-monitor-for-containers"></a>Problemen met Azure Monitor voor containers oplossen
 
@@ -23,9 +23,9 @@ Tijdens het voorbereidings-of bijwerk proces wordt het verlenen van de roltoewij
 U kunt deze rol ook hand matig verlenen via de Azure Portal door de volgende stappen uit te voeren:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Klik in Azure Portal in de linkerbovenhoek op **Alle services** . Typ **Kubernetes** in de lijst met resources. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Selecteer **Azure Kubernetes** .
+2. Klik in Azure Portal in de linkerbovenhoek op **Alle services**. Typ **Kubernetes** in de lijst met resources. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Selecteer **Azure Kubernetes**.
 3. Selecteer in de lijst met Kubernetes-clusters een in de lijst.
-2. Klik in het linkermenu op **toegangs beheer (IAM)** .
+2. Klik in het linkermenu op **toegangs beheer (IAM)**.
 3. Selecteer **+ toevoegen** om een roltoewijzing toe te voegen en selecteer de Publisher-rol **bewaking metrieken** en klik onder het **selectie** vakje **AKS** om de resultaten te filteren op alleen de service-principals van de clusters die in het abonnement zijn gedefinieerd. Selecteer de optie in de lijst die specifiek is voor dat cluster.
 4. Selecteer **Opslaan** om de rol toe te wijzen.
 
@@ -112,7 +112,7 @@ Azure Monitor voor containers agent peulen maakt gebruik van het cAdvisor-eind p
 
 ## <a name="non-azure-kubernetes-cluster-are-not-showing-in-azure-monitor-for-containers"></a>Niet-Azure Kubernetes-cluster wordt niet weer gegeven in Azure Monitor voor containers
 
-Als u het niet-Azure Kubernetes-cluster in Azure Monitor voor containers wilt weer geven, moet u lees toegang hebben op de Log Analytics-werk ruimte die dit inzicht ondersteunt en op de **ContainerInsights ( *werk ruimte* )** van de container Insights-oplossing.
+Als u het niet-Azure Kubernetes-cluster in Azure Monitor voor containers wilt weer geven, moet u lees toegang hebben op de Log Analytics-werk ruimte die dit inzicht ondersteunt en op de **ContainerInsights (*werk ruimte*)** van de container Insights-oplossing.
 
 ## <a name="next-steps"></a>Volgende stappen
 

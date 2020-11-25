@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: maquaran
 ms.openlocfilehash: 329c4b40f11b36de80581d4a1396813bc8de5c73
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097325"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010313"
 ---
 # <a name="going-social-with-azure-cosmos-db"></a>Sociaal met Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-De levens duur van een zeer onderling verbonden samenleving betekent dat u op een bepaald moment deel uitmaakt van een **sociaal netwerk** . U gebruikt sociale netwerken om in contact te blijven met vrienden, collega's, familie of soms om uw passie te delen met mensen met een gemeen schappelijke interesses.
+De levens duur van een zeer onderling verbonden samenleving betekent dat u op een bepaald moment deel uitmaakt van een **sociaal netwerk**. U gebruikt sociale netwerken om in contact te blijven met vrienden, collega's, familie of soms om uw passie te delen met mensen met een gemeen schappelijke interesses.
 
 Als engineers of ontwikkel aars hebt u mogelijk gevraagd hoe deze netwerken uw gegevens opslaan en verbinden. Het is ook mogelijk dat u hebt gewerkt om een nieuw sociaal netwerk te maken of te ontwikkelen voor een specifieke niche-markt. Wanneer de belang rijke vraag zich voordoet: hoe worden al deze gegevens opgeslagen?
 
@@ -172,7 +172,7 @@ Laten we de gebruikers gegevens als voor beeld aannemen:
 
 Door deze informatie te bekijken, kunt u snel detecteren wat essentiële informatie is en wat niet het geval is, dus het maken van een ' ladder ':
 
-:::image type="content" source="./media/social-media-apps/social-media-apps-ladder.png" alt-text="Diagram dat een relatief relationeel model illustreert" border="false":::
+:::image type="content" source="./media/social-media-apps/social-media-apps-ladder.png" alt-text="Diagram van een ladder patroon" border="false":::
 
 De kleinste stap wordt een UserChunk genoemd, de minimale hoeveelheid informatie die een gebruiker identificeert en wordt gebruikt voor het dupliceren van gegevens. Door de gedupliceerde gegevens grootte alleen te beperken tot de gegevens die u wilt weer geven, vermindert u de mogelijkheid van massale updates.
 
@@ -239,9 +239,9 @@ Een andere beschik bare optie is het gebruik van [Azure Cognitive Services](http
 
 ## <a name="a-planet-scale-social-experience"></a>Een planeet met sociale ervaring
 
-Er is een laatste, maar niet minst belang rijk artikel dat moet worden geadresseerd: **schaal baarheid** . Wanneer u een architectuur ontwerpt, moet elk onderdeel zelf worden geschaald. U zult uiteindelijk meer gegevens moeten verwerken of u wilt een grotere geografische dekking hebben. Gelukkig is het uitvoeren van beide taken een kant-en- **klare ervaring** met Cosmos db.
+Er is een laatste, maar niet minst belang rijk artikel dat moet worden geadresseerd: **schaal baarheid**. Wanneer u een architectuur ontwerpt, moet elk onderdeel zelf worden geschaald. U zult uiteindelijk meer gegevens moeten verwerken of u wilt een grotere geografische dekking hebben. Gelukkig is het uitvoeren van beide taken een kant-en- **klare ervaring** met Cosmos db.
 
-Cosmos DB biedt ondersteuning voor dynamische partitionering met een out-of-the-box. Er worden automatisch partities gemaakt op basis van een bepaalde **partitie sleutel** , die wordt gedefinieerd als een kenmerk in uw documenten. Het definiëren van de juiste partitie sleutel moet tijdens de ontwerp fase worden uitgevoerd. Zie [partitioneren in azure Cosmos DB](partitioning-overview.md)voor meer informatie.
+Cosmos DB biedt ondersteuning voor dynamische partitionering met een out-of-the-box. Er worden automatisch partities gemaakt op basis van een bepaalde **partitie sleutel**, die wordt gedefinieerd als een kenmerk in uw documenten. Het definiëren van de juiste partitie sleutel moet tijdens de ontwerp fase worden uitgevoerd. Zie [partitioneren in azure Cosmos DB](partitioning-overview.md)voor meer informatie.
 
 Voor een sociale ervaring moet u de strategie voor partitioneren uitlijnen met de manier waarop u een query uitvoert en schrijft. (Lees bewerkingen binnen dezelfde partitie zijn bijvoorbeeld wenselijk en Vermijd ' HOTS Pots ' door schrijf bewerkingen op meerdere partities te spreiden.) Enkele opties zijn: partities op basis van een tijdelijke sleutel (dag/maand/week), per inhouds categorie, per geografische regio of per gebruiker. Het is allemaal echt afhankelijk van hoe u de gegevens opvraagt en hoe de gegevens in uw sociale ervaring worden weer gegeven.
 
@@ -249,23 +249,23 @@ Cosmos DB worden uw query's (inclusief [aggregaties](https://azure.microsoft.com
 
 Met tijd groeit u uiteindelijk in verkeer en neemt het Resource verbruik (gemeten in [RUs](request-units.md)of aanvraag eenheden) toe. U leest en schrijft vaker als uw gebruikers database groeit. De gebruikers database begint met het maken en lezen van meer inhoud. De mogelijkheid om **uw door voer te schalen** is daarom essentieel. Het is eenvoudig om uw RUs te verg Roten. U kunt dit doen met een paar klikken op de Azure Portal of door [opdrachten uit te geven via de API](/rest/api/cosmos-db/replace-an-offer).
 
-:::image type="content" source="./media/social-media-apps/social-media-apps-scaling.png" alt-text="Diagram dat een relatief relationeel model illustreert":::
+:::image type="content" source="./media/social-media-apps/social-media-apps-scaling.png" alt-text="Omhoog schalen en definiëren van een partitie sleutel":::
 
 Wat gebeurt er als de dingen beter blijven? Stel dat gebruikers uit een andere regio, land of continenten uw platform zien en gaan gebruiken. Wat een geweldig!
 
-Maar wacht eens even! U hebt binnenkort de ervaring met uw platform niet optimaal. Ze zijn zo ver weg in uw operationele regio dat de latentie verschrikkelijke is. U wilt ze natuurlijk niet afsluiten. Als er alleen een eenvoudige manier is om **uw wereld wijde bereik uit te breiden** ? Er is nog!
+Maar wacht eens even! U hebt binnenkort de ervaring met uw platform niet optimaal. Ze zijn zo ver weg in uw operationele regio dat de latentie verschrikkelijke is. U wilt ze natuurlijk niet afsluiten. Als er alleen een eenvoudige manier is om **uw wereld wijde bereik uit te breiden**? Er is nog!
 
 Met Cosmos DB kunt u [uw gegevens wereld wijd](../cosmos-db/tutorial-global-distribution-sql-api.md) en transparant repliceren met een paar muis klikken en automatisch een selectie maken tussen de beschik bare regio's van uw [client code](../cosmos-db/tutorial-global-distribution-sql-api.md). Dit proces houdt ook in dat u [meerdere failover-regio's](high-availability.md)kunt hebben.
 
 Wanneer u uw gegevens wereld wijd repliceert, moet u ervoor zorgen dat uw clients hiervan gebruik kunnen maken. Als u een web-frontend gebruikt of Api's van mobiele clients opent, kunt u [Azure Traffic Manager](https://azure.microsoft.com/services/traffic-manager/) implementeren en uw Azure app service op alle gewenste regio's klonen met behulp van een prestatie configuratie ter ondersteuning van uw uitgebreide wereld wijde dekking. Wanneer uw clients toegang hebben tot uw frontend of Api's, worden ze doorgestuurd naar de dichtstbijzijnde App Service, die op zijn beurt verbinding maakt met de lokale Cosmos DB replica.
 
-:::image type="content" source="./media/social-media-apps/social-media-apps-global-replicate.png" alt-text="Diagram dat een relatief relationeel model illustreert" border="false":::
+:::image type="content" source="./media/social-media-apps/social-media-apps-global-replicate.png" alt-text="Wereld wijde dekking toevoegen aan uw sociale platform" border="false":::
 
 ## <a name="conclusion"></a>Conclusie
 
 In dit artikel wordt een licht niveau in de alternatieven voor het maken van sociale netwerken volledig op Azure uitgeschreven met goedkope Services. het levert resultaten op door het gebruik van een opslag oplossing met meerdere lagen en gegevens distributie genaamd "ladder" te stimuleren.
 
-:::image type="content" source="./media/social-media-apps/social-media-apps-azure-solution.png" alt-text="Diagram dat een relatief relationeel model illustreert" border="false":::
+:::image type="content" source="./media/social-media-apps/social-media-apps-azure-solution.png" alt-text="Diagram van interactie tussen Azure-Services voor sociale netwerken" border="false":::
 
 De waarheid is dat er geen zilver opsommings teken is voor dit soort scenario's. Het is de synergie die is gemaakt door de combi natie van fantastische services waarmee we fantastische ervaringen kunnen bouwen: de snelheid en vrijheid van Azure Cosmos DB om een goede sociale toepassing te bieden, de intelligentie achter een zoek oplossing voor de eerste klasse zoals Azure Cognitive Search, de flexibiliteit van Azure-app Services om niet-neutraal toepassingen te hosten, maar krachtige achtergrond processen en de uitbreid bare Azure Storage en Azure SQL Database voor het opslaan van enorme hoeveel heden gegevens en de analyse kracht van Azure machine Leer hoe u kennis en intelligentie maakt waarmee u feedback kunt geven over uw processen en ons de mogelijkheid biedt de juiste inhoud aan de juiste gebruikers te leveren.
 

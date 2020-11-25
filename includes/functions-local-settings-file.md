@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 04/14/2019
 ms.author: glenga
-ms.openlocfilehash: ca8d8edd334d89e03624793a35c49971ba8161ec
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: d944d1d3e9c72471fab2435430a7d13e1770e807
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94884621"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010454"
 ---
 ## <a name="local-settings-file"></a>Lokale instellingsbestand
 
@@ -46,7 +46,7 @@ Deze instellingen worden ondersteund wanneer u projecten lokaal uitvoert:
 | **`LocalHttpPort`** | Hiermee stelt u de standaardpoort in die wordt gebruikt wanneer de lokale Functions-host wordt uitgevoerd (`func host start` en `func run`). De opdrachtregeloptie `--port` heeft voorrang op deze instelling. |
 | **`CORS`** | Definieert de oorsprong die is toegestaan voor [CORS (Cross-origin-resource delen)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Oorsprongen worden aangeleverd als een door komma's gescheiden lijst zonder spaties. De jokertekenwaarde (\*) wordt ondersteund, waarmee verzoeken van elke oorsprong toegestaan zijn. |
 | **`CORSCredentials`** |  Als deze instelling is ingesteld op `true`, zijn `withCredentials`-verzoeken toegestaan. |
-| **`ConnectionStrings`** | Een verzameling. Gebruik deze verzameling niet voor de verbindingsreeksen die worden gebruikt door uw functiebindingen. Deze verzameling wordt alleen gebruikt door frameworks die doorgaans een verbindingsreeks krijgen van het gedeelte `ConnectionStrings` van een configuratiebestand, bijvoorbeeld [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Verbindingsreeksen in dit object zijn toegevoegd aan de omgeving met het providertype van [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx). Items in deze verzameling worden niet gepubliceerd naar Azure met andere app-instellingen. U moet deze waarden expliciet toevoegen aan de verzameling `Connection strings` van de instellingen van uw functie-app. Als u een [`SqlConnection`](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) maakt in uw functiecode, moet u de verbindingsreekswaarde bewaren met uw andere verbindingen in **Toepassingsinstellingen** in de portal. |
+| **`ConnectionStrings`** | Een verzameling. Gebruik deze verzameling niet voor de verbindingsreeksen die worden gebruikt door uw functiebindingen. Deze verzameling wordt alleen gebruikt door frameworks die doorgaans een verbindingsreeks krijgen van het gedeelte `ConnectionStrings` van een configuratiebestand, bijvoorbeeld [Entity Framework](/ef/ef6/). Verbindingsreeksen in dit object zijn toegevoegd aan de omgeving met het providertype van [System.Data.SqlClient](/dotnet/api/system.data.sqlclient). Items in deze verzameling worden niet gepubliceerd naar Azure met andere app-instellingen. U moet deze waarden expliciet toevoegen aan de verzameling `Connection strings` van de instellingen van uw functie-app. Als u een [`SqlConnection`](/dotnet/api/system.data.sqlclient.sqlconnection) maakt in uw functiecode, moet u de verbindingsreekswaarde bewaren met uw andere verbindingen in **Toepassingsinstellingen** in de portal. |
 
 De volgende toepassingsinstellingen kunnen worden opgenomen in de matrix **`Values`** wanneer deze lokaal wordt uitgevoerd:
 

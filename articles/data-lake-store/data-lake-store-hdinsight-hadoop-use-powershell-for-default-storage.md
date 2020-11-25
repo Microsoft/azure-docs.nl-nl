@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 675f68a36963d19f42cb7c0c5d49ae8c4f0006f2
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92103421"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010534"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-as-default-storage-by-using-powershell"></a>HDInsight-clusters met Azure Data Lake Storage Gen1 als standaard opslag maken met behulp van Power shell
 
@@ -77,7 +77,7 @@ Ga als volgt te werk om een Data Lake Storage Gen1-account te maken:
     New-AzResourceGroup -Name $resourceGroupName -Location "East US 2"
     ```
 
-    De uitvoer ziet er ongeveer als volgt uit:
+    De uitvoer ziet er als volgt uit:
 
     ```output
     ResourceGroupName : hdiadlgrp
@@ -236,7 +236,7 @@ In deze sectie maakt u een HDInsight Hadoop Linux-cluster met Data Lake Storage 
     Nadat de cmdlet is voltooid, ziet u een uitvoer waarin de cluster Details worden weer gegeven.
 
 ## <a name="run-test-jobs-on-the-hdinsight-cluster-to-use-data-lake-storage-gen1"></a>Test taken uitvoeren op het HDInsight-cluster om Data Lake Storage Gen1 te gebruiken
-Nadat u een HDInsight-cluster hebt geconfigureerd, kunt u test taken hierop uitvoeren om ervoor te zorgen dat het toegang tot Data Lake Storage Gen1 kan krijgen. Hiervoor voert u een voor beeld van een Hive-taak uit om een tabel te maken die gebruikmaakt van de voorbeeld gegevens die al beschikbaar zijn in Data Lake Storage Gen1 op * \<cluster root> /example/data/sample.log*.
+Nadat u een HDInsight-cluster hebt geconfigureerd, kunt u test taken hierop uitvoeren om ervoor te zorgen dat het toegang tot Data Lake Storage Gen1 kan krijgen. Hiervoor voert u een voor beeld van een Hive-taak uit om een tabel te maken die gebruikmaakt van de voorbeeld gegevens die al beschikbaar zijn in Data Lake Storage Gen1 op *\<cluster root> /example/data/sample.log*.
 
 In deze sectie maakt u een SSH-verbinding (Secure Shell) in het HDInsight Linux-cluster dat u hebt gemaakt en voert u vervolgens een Hive-query uit.
 

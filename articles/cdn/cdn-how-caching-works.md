@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: allensu
 ms.openlocfilehash: a226682c2580a871e1b2fc4db71f369f3bcc3abb
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778631"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010160"
 ---
 # <a name="how-caching-works"></a>Hoe caching werkt
 
@@ -129,9 +129,9 @@ In de volgende tabel wordt het standaard gedrag voor caching voor de Azure CDN p
 | **Naleven**       | Ja    | Ja   | Nee   | Ja    | Nee   | Ja   | Ja    |
 | **CDN-cache duur** | 2 dagen |7 dagen | Geen | 7 dagen | Geen | 1 dag | 1 jaar |
 
-Nagaan van de **oorsprong** : Hiermee geeft u aan of de ondersteunde cache-instructie headers moeten worden nageleefd als deze bestaan in het HTTP-antwoord van de oorspronkelijke server.
+Nagaan van de **oorsprong**: Hiermee geeft u aan of de ondersteunde cache-instructie headers moeten worden nageleefd als deze bestaan in het HTTP-antwoord van de oorspronkelijke server.
 
-**CDN-cache duur** : Hiermee geeft u de hoeveelheid tijd op waarvoor een resource in de cache wordt opgeslagen op de Azure CDN. Als navraag van de **oorsprong** Ja is en het HTTP-antwoord van de oorspronkelijke server de header van de cache-instructie bevat `Expires` of `Cache-Control: max-age` , Azure CDN gebruikt de duur waarde die door de header is opgegeven. 
+**CDN-cache duur**: Hiermee geeft u de hoeveelheid tijd op waarvoor een resource in de cache wordt opgeslagen op de Azure CDN. Als navraag van de **oorsprong** Ja is en het HTTP-antwoord van de oorspronkelijke server de header van de cache-instructie bevat `Expires` of `Cache-Control: max-age` , Azure CDN gebruikt de duur waarde die door de header is opgegeven. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

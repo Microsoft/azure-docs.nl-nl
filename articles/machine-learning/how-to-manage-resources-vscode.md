@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.custom: how-to
 ms.date: 11/16/2020
 ms.openlocfilehash: f8eb18b190b72381f1a93575eb39b3d19d8d431b
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701412"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010670"
 ---
 # <a name="manage-azure-machine-learning-resources-with-the-vs-code-extension-preview"></a>Azure Machine Learning resources beheren met de extensie VS (preview)
 

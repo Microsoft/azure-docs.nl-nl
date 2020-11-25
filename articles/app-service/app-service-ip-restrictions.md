@@ -8,11 +8,11 @@ ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: e1549dda367105db34272eab8a90c1760dd5bb5c
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576441"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010177"
 ---
 # <a name="set-up-azure-app-service-access-restrictions"></a>Toegangs beperkingen voor Azure App Service instellen
 
@@ -36,7 +36,7 @@ De mogelijkheid om de toegang tot uw web-app vanuit een virtueel Azure-netwerk t
 
 Ga als volgt te werk om een regel voor toegangs beperking toe te voegen aan uw app:
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 
 1. Selecteer **netwerken** in het linkerdeel venster.
 
@@ -65,7 +65,7 @@ Ga als volgt te werk in het deel venster **IP-beperking toevoegen** wanneer u ee
 1. Voer eventueel een naam en beschrijving van de regel in.  
 1. Selecteer in de vervolg keuzelijst **type** het type regel.  
 1. Voer in het vak **prioriteit** een prioriteits waarde in.  
-1. Selecteer in de vervolg keuzelijst **abonnement** , **Virtual Network** en **subnet** de items waarvoor u de toegang wilt beperken.  
+1. Selecteer in de vervolg keuzelijst **abonnement**, **Virtual Network** en **subnet** de items waarvoor u de toegang wilt beperken.  
 
 ### <a name="set-an-ip-address-based-rule"></a>Een op IP-adres gebaseerde regel instellen
 
@@ -112,7 +112,7 @@ U kunt een bestaande toegangs beperkings regel bewerken of verwijderen.
 
 ### <a name="delete-a-rule"></a>Een regel verwijderen
 
-Als u een regel wilt verwijderen, selecteert u op de pagina **toegangs beperkingen** het beletsel teken ( **...** ) naast de regel die u wilt verwijderen en selecteert u vervolgens **verwijderen**.
+Als u een regel wilt verwijderen, selecteert u op de pagina **toegangs beperkingen** het beletsel teken (**...**) naast de regel die u wilt verwijderen en selecteert u vervolgens **verwijderen**.
 
 ![Scherm afbeelding van de pagina toegangs beperkingen, met het beletsel teken ' verwijderen ' naast de toegangs beperkings regel die moet worden verwijderd.](media/app-service-ip-restrictions/access-restrictions-delete.png)
 
@@ -153,7 +153,7 @@ U kunt waarden ook hand matig instellen door een van de volgende handelingen uit
 
 * Gebruik een [Azure rest API](/rest/api/azure/) put-bewerking in de app-configuratie in azure Resource Manager. De locatie voor deze informatie in Azure Resource Manager is:
 
-  management.azure.com/subscriptions/- **abonnements-id** /resourceGroups/ **resource groepen** /providers/Microsoft.web/sites/ **Web-app-naam** /config/Web? API-Version = 2018-02-01
+  management.azure.com/subscriptions/-**abonnements-id**/resourceGroups/**resource groepen**/providers/Microsoft.web/sites/**Web-app-naam**/config/Web? API-Version = 2018-02-01
 
 * Een ARM-sjabloon gebruiken. U kunt bijvoorbeeld resources.azure.com gebruiken en het ipSecurityRestrictions-blok bewerken om de vereiste JSON toe te voegen.
 

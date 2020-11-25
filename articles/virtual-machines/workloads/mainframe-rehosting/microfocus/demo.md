@@ -7,11 +7,11 @@ ms.date: 03/30/2020
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: 7fb72b9a7d0d655f99d1e5cf194f7c6f26976a37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86508046"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95976190"
 ---
 # <a name="set-up-micro-focus-cics-bankdemo-for-micro-focus-enterprise-developer-40-on-azure"></a>Micro Focus CICS BankDemo instellen voor micro focus Enter prise Developer 4,0 op Azure
 
@@ -50,7 +50,7 @@ Nadat u Enter prise Developer 4,0 hebt geïnstalleerd op de VM, moet u het exemp
     - Scripts en Hulpprogram Ma's voor IIS-beheer
     - IIS-beheer service
 
-4. Selecteer **World Wide Web Services**en controleer de volgende opties:
+4. Selecteer **World Wide Web Services** en controleer de volgende opties:
 
      Functies voor het ontwikkelen van toepassingen:
     - .NET-uitbreidbaarheid
@@ -63,12 +63,12 @@ Nadat u Enter prise Developer 4,0 hebt geïnstalleerd op de VM, moet u het exemp
 
 5. Selecteer **Windows Process Activation Service** en alle bijbehorende onderliggende items.
 
-6. Schakel **Microsoft .NET Framework 3.5.1**in voor **functies**en controleer de volgende opties:
+6. Schakel **Microsoft .NET Framework 3.5.1** in voor **functies** en controleer de volgende opties:
 
     - HTTP-activering Windows Communication Foundation
     - Windows Communication Foundation niet-HTTP-activering
 
-7. Schakel **Microsoft .net framework 4,6**in voor **functies**en controleer de volgende opties:
+7. Schakel **Microsoft .net framework 4,6** in voor **functies** en controleer de volgende opties:
 
    - Named pipe-activering
    - TCP-activering
@@ -78,13 +78,13 @@ Nadat u Enter prise Developer 4,0 hebt geïnstalleerd op de VM, moet u het exemp
 
 8. Wanneer u alle opties hebt geselecteerd, klikt u op **volgende** om te installeren.
 
-9. Na de Windows-functies gaat u naar **configuratie scherm \> systeem-en beveiligings \> beheer Programma's**en selecteert u **Services**. Schuif omlaag en controleer of de volgende services worden uitgevoerd en stel deze in op **automatisch**:
+9. Na de Windows-functies gaat u naar **configuratie scherm \> systeem-en beveiligings \> beheer Programma's** en selecteert u **Services**. Schuif omlaag en controleer of de volgende services worden uitgevoerd en stel deze in op **automatisch**:
 
     - **NetTcpPortSharing**
     - **Listener-adapter net. pipe**
     - **Net. TCP listener-adapter**
 
-10. Als u IIS en ondersteuning wilt configureren, gaat u in het menu naar **micro focus Enter prise Developer command prompt (64-bits)** en voert u als **Administrator**uit.
+10. Als u IIS en ondersteuning wilt configureren, gaat u in het menu naar **micro focus Enter prise Developer command prompt (64-bits)** en voert u als **Administrator** uit.
 
 11. Typ **wassetup – i** en druk op **Enter**.
 
@@ -132,7 +132,7 @@ De query moet zonder fouten worden uitgevoerd. Wanneer deze is voltooid, hebt u 
 
 1. Open Visual Studio en meld u aan.
 
-2. Selecteer in het menu **bestand** de optie **project/oplossing openen**, ga naar **C: \\ gebruikers \\ open bare \\ documenten \\ micro focus \\ Enter prise Developer \\ samples \\ mainframe \\ CICS \\ DotNet \\ BankDemo**en selecteer het **SLN** -bestand.
+2. Selecteer in het menu **bestand** de optie **project/oplossing openen**, ga naar **C: \\ gebruikers \\ open bare \\ documenten \\ micro focus \\ Enter prise Developer \\ samples \\ mainframe \\ CICS \\ DotNet \\ BankDemo** en selecteer het **SLN** -bestand.
 
 3. Neem even de tijd om de objecten te onderzoeken. COBOL-Program ma's worden weer gegeven in Solution Explorer met de CBL-extensie samen met CopyBooks (CPY) en JCL.
 
@@ -141,7 +141,7 @@ De query moet zonder fouten worden uitgevoerd. Wanneer deze is voltooid, hebt u 
     > [!NOTE]
     > Het BankDemo-project maakt gebruik van HCOSS (host Compatibility option for SQL Server), die niet wordt gebruikt voor deze demo.
 
-5. Klik in **Solution Explorer**met de rechter muisknop op het project **BankDemo2** en selecteer **Build**.
+5. Klik in **Solution Explorer** met de rechter muisknop op het project **BankDemo2** en selecteer **Build**.
 
     > [!NOTE]
     > Het bouwen op het niveau van de oplossing resulteert in fouten, omdat HCOSS niet is geconfigureerd.
@@ -177,7 +177,7 @@ De query moet zonder fouten worden uitgevoerd. Wanneer deze is voltooid, hebt u 
 
 4. Selecteer **regio definiëren** om een nieuwe CICS-regio te maken met de naam **BANKDEMO**, die wordt gehost in de (lokale) data base.
 
-5. Geef het Database Server exemplaar op, klik op **volgende**en voer vervolgens de naam van de regio in **BANKDEMO**.
+5. Geef het Database Server exemplaar op, klik op **volgende** en voer vervolgens de naam van de regio in **BANKDEMO**.
 
      ![Het dialoog venster regio definiëren](media/07-demo-cics.png)
 
@@ -189,7 +189,7 @@ De query moet zonder fouten worden uitgevoerd. Wanneer deze is voltooid, hebt u 
 
 ## <a name="create-xa-resource-definitions"></a>XA-resource definities maken
 
-1. In het linkerdeel venster van de gebruikers interface van de **Enter prise-server voor .net-beheer** , vouwt u **System**en **XA-resource definities**uit. Met deze instelling wordt gedefinieerd hoe de regio samenwerkt met de Enter prise-server en de toepassings databases.
+1. In het linkerdeel venster van de gebruikers interface van de **Enter prise-server voor .net-beheer** , vouwt u **System** en **XA-resource definities** uit. Met deze instelling wordt gedefinieerd hoe de regio samenwerkt met de Enter prise-server en de toepassings databases.
 
 2. Klik met de rechter muisknop op **XA-resource definities** en selecteer **Server exemplaar toevoegen**.
 
@@ -201,7 +201,7 @@ De query moet zonder fouten worden uitgevoerd. Wanneer deze is voltooid, hebt u 
 
      ![Het scherm nieuwe data base XA-resource definitie](media/09-demo-xa.png)
 
-6. Klik op de weglatings tekens (**...**) om de wizard verbindings reeks te openen. Typ **(lokaal) \\ SQLEXPRESS**voor **Server naam**. Selecteer voor **Aanmelden** **Windows-verificatie**. Typ **BANKDEMO** voor database naam
+6. Klik op de weglatings tekens (**...**) om de wizard verbindings reeks te openen. Typ **(lokaal) \\ SQLEXPRESS** voor **Server naam**. Selecteer voor **Aanmelden** **Windows-verificatie**. Typ **BANKDEMO** voor database naam
 
      ![Scherm verbindings reeks bewerken](media/10-demo-string.png)
 
@@ -212,13 +212,13 @@ De query moet zonder fouten worden uitgevoerd. Wanneer deze is voltooid, hebt u 
 > [!NOTE]
 > De eerste stap is belang rijk: u moet de regio instellen op het gebruik van de XA-resource definitie die u zojuist hebt gemaakt.
 
-1. Ga naar de **BANDEMO CICS-regio** onder de **container regio's**en selecteer vervolgens **regio opstart bestand bewerken** in het deel venster **acties** . Schuif omlaag naar de SQL-eigenschappen en voer **bankdemo** in als de naam van de **XA-resource**, of gebruik de beletsel tekens om deze te selecteren.
+1. Ga naar de **BANDEMO CICS-regio** onder de **container regio's** en selecteer vervolgens **regio opstart bestand bewerken** in het deel venster **acties** . Schuif omlaag naar de SQL-eigenschappen en voer **bankdemo** in als de naam van de **XA-resource**, of gebruik de beletsel tekens om deze te selecteren.
 
 2. Klik op het pictogram **Opslaan** om uw wijzigingen op te slaan.
 
 3. Klik met de rechter muisknop op de **BANKDEMO CICS-regio** in het **console** venster en selecteer **Start/Stop-regio**.
 
-4. Selecteer **Start**in het vak **Start/Stop regio** dat wordt weer gegeven in het middelste deel venster. Na een paar seconden begint de regio.
+4. Selecteer **Start** in het vak **Start/Stop regio** dat wordt weer gegeven in het middelste deel venster. Na een paar seconden begint de regio.
 
      ![Het vak SQL starten/stoppen](media/11-demo-sql.png)
 
@@ -234,13 +234,13 @@ Maak een listener voor de TN3270-sessies die toegang hebben tot de BankDemo-toep
 
 3. Let op de twee eerder gedefinieerde regio's (ESDEMO en JCLDEMO).
 
-4. Als u een nieuwe regio voor BANKDEMO wilt maken, klikt u met de rechter muisknop op **regio's**en selecteert u **regio toevoegen**.
+4. Als u een nieuwe regio voor BANKDEMO wilt maken, klikt u met de rechter muisknop op **regio's** en selecteert u **regio toevoegen**.
 
 5. Selecteer de **BANKDEMO-regio**.
 
-6. Voeg een TN3270-kanaal toe door met de rechter muisknop op **BANKDEMO-regio** te klikken en **kanaal toevoegen**te selecteren.
+6. Voeg een TN3270-kanaal toe door met de rechter muisknop op **BANKDEMO-regio** te klikken en **kanaal toevoegen** te selecteren.
 
-7. Voer bij **naam** **TN3270**in. Voer voor **poort** **9024**in. De ESDEMO-toepassing gebruikt poort 9230, dus u moet een andere poort gebruiken.
+7. Voer bij **naam** **TN3270** in. Voer voor **poort** **9024** in. De ESDEMO-toepassing gebruikt poort 9230, dus u moet een andere poort gebruiken.
 
 8. Als u het bestand wilt opslaan, klikt u op het pictogram **Opslaan** of kiest u **bestand** \> **Opslaan**.
 
@@ -268,7 +268,7 @@ Het laatste wat u moet doen, is het configureren van een 3270-sessie met behulp 
 ![Mainframe weer geven welkomst scherm ](media/14-demo.png)
  ![ -weer gave-Rumba-subsysteem demonstratie scherm](media/15-demo.png)
 
-Gefeliciteerd! U voert nu een CICS-toepassing uit in azure met micro focus Enter prise server.
+Gefeliciteerd U voert nu een CICS-toepassing uit in azure met micro focus Enter prise server.
 
 ## <a name="next-steps"></a>Volgende stappen
 

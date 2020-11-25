@@ -9,11 +9,11 @@ ms.date: 05/26/2020
 ms.author: victorh
 ms.custom: references_regions
 ms.openlocfilehash: 8df24b44d648343c46532eed443717f444bd0058
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397787"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95975629"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Veelgestelde vragen over Application Gateway
 
@@ -168,7 +168,7 @@ Ja. U kunt de verbinding verbreken instellen om leden binnen een back-end-groep 
 
 Ja.
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>Configuratie
 
 ### <a name="is-application-gateway-always-deployed-in-a-virtual-network"></a>Wordt Application Gateway altijd geïmplementeerd in een virtueel netwerk?
 
@@ -434,9 +434,9 @@ Nee, AGIC-invoeg toepassing is een beheerde service, wat betekent dat micro soft
 
 Application Gateway biedt drie logboeken: 
 
-* **ApplicationGatewayAccessLog** : het toegangs logboek bevat elke aanvraag die is verzonden naar het front Application Gateway-front-end. De gegevens omvatten het IP-adres van de beller, de aangevraagde URL, reactie latentie, retour code en bytes in en uit. Het bevat één record per toepassings gateway.
-* **ApplicationGatewayPerformanceLog** : in het prestatie logboek worden prestatie gegevens voor elke toepassings gateway vastgelegd. De informatie omvat de door Voer in bytes, totaal aantal geleverde aanvragen, aantal mislukte aanvragen en een gezonde en slechte back-end van een backend-exemplaar.
-* **ApplicationGatewayFirewallLog** : voor toepassings gateways die u CONFIGUREERT met WAF, bevat het logboek van de firewall aanvragen die zijn geregistreerd via de detectie modus of de modus voor preventie.
+* **ApplicationGatewayAccessLog**: het toegangs logboek bevat elke aanvraag die is verzonden naar het front Application Gateway-front-end. De gegevens omvatten het IP-adres van de beller, de aangevraagde URL, reactie latentie, retour code en bytes in en uit. Het bevat één record per toepassings gateway.
+* **ApplicationGatewayPerformanceLog**: in het prestatie logboek worden prestatie gegevens voor elke toepassings gateway vastgelegd. De informatie omvat de door Voer in bytes, totaal aantal geleverde aanvragen, aantal mislukte aanvragen en een gezonde en slechte back-end van een backend-exemplaar.
+* **ApplicationGatewayFirewallLog**: voor toepassings gateways die u CONFIGUREERT met WAF, bevat het logboek van de firewall aanvragen die zijn geregistreerd via de detectie modus of de modus voor preventie.
 
 Alle logboeken worden elke 60 seconden verzameld. Zie voor meer informatie [back-end status, Diagnostische logboeken en metrische gegevens voor Application Gateway](application-gateway-diagnostics.md).
 

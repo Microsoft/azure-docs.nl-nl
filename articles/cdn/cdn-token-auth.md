@@ -15,11 +15,11 @@ ms.workload: integration
 ms.date: 11/17/2017
 ms.author: mazha
 ms.openlocfilehash: 21ef06f37e6840df08b1477f9c0ff24f6e15d1a3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778009"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95978031"
 ---
 # <a name="securing-azure-cdn-assets-with-token-authentication"></a>Azure CDN-assets beveiligen met token verificatie
 
@@ -29,7 +29,7 @@ ms.locfileid: "92778009"
 
 Token verificatie is een mechanisme waarmee u kunt voor komen dat de Azure-Content Delivery Network (CDN) assets levert aan niet-geautoriseerde clients. Token verificatie wordt doorgaans uitgevoerd om *hotlinking* te voor komen, waarbij een andere website, zoals een berichten bord, uw assets zonder toestemming gebruikt. Hotlinking kan invloed hebben op de leverings kosten van uw inhoud. Door token verificatie in CDN in te scha kelen, worden aanvragen door de CDN Edge-server geverifieerd voordat de CDN de inhoud levert. 
 
-## <a name="how-it-works"></a>Hoe het werkt
+## <a name="how-it-works"></a>Uitleg
 
 Token verificatie verifieert of aanvragen worden gegenereerd door een vertrouwde site door aanvragen te vereisen die een token waarde bevatten die gecodeerde informatie over de aanvrager bevat. Inhoud wordt alleen aan een aanvrager geleverd als de gecodeerde gegevens voldoen aan de vereisten. anders worden aanvragen geweigerd. U kunt de vereisten instellen met behulp van een of meer van de volgende para meters:
 
@@ -80,9 +80,9 @@ Het volgende stroom diagram beschrijft hoe Azure CDN een client aanvraag validee
     
    2. Voer een unieke versleutelings sleutel in het vak **primaire sleutel** in en voer eventueel een back-upsleutel in het vak **back-upsleutel** in.
 
-   3. Selecteer de minimale versleutelings versie voor elke sleutel in de lijst **minimale encryptie versie** en selecteer vervolgens **Update** :
-      - **V2** : geeft aan dat de sleutel kan worden gebruikt voor het genereren van versie 2,0-en 3,0-tokens. Gebruik deze optie alleen als u overstapt van een verouderde versie 2,0-versleutelings sleutel naar een versie 3,0-sleutel.
-      - **V3** : (aanbevolen) geeft aan dat de sleutel alleen kan worden gebruikt voor het genereren van versie 3,0-tokens.
+   3. Selecteer de minimale versleutelings versie voor elke sleutel in de lijst **minimale encryptie versie** en selecteer vervolgens **Update**:
+      - **V2**: geeft aan dat de sleutel kan worden gebruikt voor het genereren van versie 2,0-en 3,0-tokens. Gebruik deze optie alleen als u overstapt van een verouderde versie 2,0-versleutelings sleutel naar een versie 3,0-sleutel.
+      - **V3**: (aanbevolen) geeft aan dat de sleutel alleen kan worden gebruikt voor het genereren van versie 3,0-tokens.
 
       ![Configuratie sleutel voor de CDN-token verificatie](./media/cdn-token-auth/cdn-token-auth-setupkey.png)
     
@@ -164,26 +164,26 @@ Het volgende stroom diagram beschrijft hoe Azure CDN een client aanvraag validee
 
       Nadat het token is gegenereerd, wordt het weer gegeven in het vak **gegenereerde token** . Als u het token wilt gebruiken, voegt u dit toe als een query reeks aan het einde van het bestand in het URL-pad. Bijvoorbeeld `http://www.domain.com/content.mov?a4fbc3710fd3449a7c99986b`.
         
-   8. Test eventueel uw token met het hulp programma voor ontsleutelen zodat u de para meters van uw token kunt weer geven. Plak de token waarde in het vak **te ontsleutelen token** . Selecteer de versleutelings sleutel die u wilt gebruiken in de lijst met te ontsleutelen **sleutel** en selecteer vervolgens **ontsleutelen** .
+   8. Test eventueel uw token met het hulp programma voor ontsleutelen zodat u de para meters van uw token kunt weer geven. Plak de token waarde in het vak **te ontsleutelen token** . Selecteer de versleutelings sleutel die u wilt gebruiken in de lijst met te ontsleutelen **sleutel** en selecteer vervolgens **ontsleutelen**.
 
       Nadat het token is ontsleuteld, worden de bijbehorende para meters weer gegeven in het vak **oorspronkelijke para meters** .
 
-   9. Desgewenst kunt u het type antwoord code aanpassen dat wordt geretourneerd wanneer een aanvraag wordt geweigerd. Selecteer **ingeschakeld** en selecteer vervolgens de antwoord code in de lijst met **antwoord codes** . De naam van de **header** wordt automatisch ingesteld op de **locatie** . Selecteer **Opslaan** om de nieuwe respons code te implementeren. Voor bepaalde antwoord codes moet u ook de URL van uw fout pagina in het vak **header waarde** invoeren. De respons code **403** (verboden) is standaard geselecteerd. 
+   9. Desgewenst kunt u het type antwoord code aanpassen dat wordt geretourneerd wanneer een aanvraag wordt geweigerd. Selecteer **ingeschakeld** en selecteer vervolgens de antwoord code in de lijst met **antwoord codes** . De naam van de **header** wordt automatisch ingesteld op de **locatie**. Selecteer **Opslaan** om de nieuwe respons code te implementeren. Voor bepaalde antwoord codes moet u ook de URL van uw fout pagina in het vak **header waarde** invoeren. De respons code **403** (verboden) is standaard geselecteerd. 
 
-3. Onder **http large** selecteert u **regel engine** . U gebruikt de regel Engine om paden te definiëren om de functie toe te passen, de functie voor token verificatie in te scha kelen en aanvullende mogelijkheden voor token authenticatie in te scha kelen. Zie voor meer informatie [regel engine verwijzing](./cdn-verizon-premium-rules-engine-reference.md).
+3. Onder **http large** selecteert u **regel engine**. U gebruikt de regel Engine om paden te definiëren om de functie toe te passen, de functie voor token verificatie in te scha kelen en aanvullende mogelijkheden voor token authenticatie in te scha kelen. Zie voor meer informatie [regel engine verwijzing](./cdn-verizon-premium-rules-engine-reference.md).
 
    1. Selecteer een bestaande regel of maak een nieuwe regel om het activum of pad te definiëren waarvoor u token verificatie wilt Toep assen. 
-   2. Als u verificatie op basis van tokens voor een regel wilt inschakelen, selecteert u **[token auth](https://docs.vdms.com/cdn/Content/HRE/F/Token-Auth.htm)** in de lijst **onderdelen** en selecteert u **ingeschakeld** . Selecteer **bijwerken** als u een regel bijwerkt of **toevoegen** als u een regel maakt.
+   2. Als u verificatie op basis van tokens voor een regel wilt inschakelen, selecteert u **[token auth](https://docs.vdms.com/cdn/Content/HRE/F/Token-Auth.htm)** in de lijst **onderdelen** en selecteert u **ingeschakeld**. Selecteer **bijwerken** als u een regel bijwerkt of **toevoegen** als u een regel maakt.
         
       ![Voor beeld van token verificatie van de CDN-regels](./media/cdn-token-auth/cdn-rules-engine-enable2.png)
 
-4. In de regel engine kunt u ook aanvullende functies met betrekking tot token authenticatie inschakelen. Als u een van de volgende functies wilt inschakelen, selecteert u deze in de lijst met **onderdelen** en selecteert u **ingeschakeld** .
+4. In de regel engine kunt u ook aanvullende functies met betrekking tot token authenticatie inschakelen. Als u een van de volgende functies wilt inschakelen, selecteert u deze in de lijst met **onderdelen** en selecteert u **ingeschakeld**.
     
-   - **[Weigerings code voor token auth](https://docs.vdms.com/cdn/Content/HRE/F/Token-Auth-Denial-Code.htm)** : bepaalt het type reactie dat wordt geretourneerd naar een gebruiker wanneer een aanvraag wordt geweigerd. De regels die hier zijn ingesteld, overschrijven de antwoord code die is ingesteld in het gedeelte **aangepaste afhandeling** van de op tokens gebaseerde verificatie pagina.
+   - **[Weigerings code voor token auth](https://docs.vdms.com/cdn/Content/HRE/F/Token-Auth-Denial-Code.htm)**: bepaalt het type reactie dat wordt geretourneerd naar een gebruiker wanneer een aanvraag wordt geweigerd. De regels die hier zijn ingesteld, overschrijven de antwoord code die is ingesteld in het gedeelte **aangepaste afhandeling** van de op tokens gebaseerde verificatie pagina.
 
-   - **[Token verificatie negeren URL-Case](https://docs.vdms.com/cdn/Content/HRE/F/Token-Auth-Ignore-URL-Case.htm)** : Hiermee wordt bepaald of de URL die wordt gebruikt om het token te valideren, hoofdletter gevoelig is.
+   - **[Token verificatie negeren URL-Case](https://docs.vdms.com/cdn/Content/HRE/F/Token-Auth-Ignore-URL-Case.htm)**: Hiermee wordt bepaald of de URL die wordt gebruikt om het token te valideren, hoofdletter gevoelig is.
 
-   - **[Token auth para meter](https://docs.vdms.com/cdn/Content/HRE/F/Token-Auth-Parameter.htm)** : de naam van de query teken reeks parameter token verificatie die wordt weer gegeven in de aangevraagde URL. 
+   - **[Token auth para meter](https://docs.vdms.com/cdn/Content/HRE/F/Token-Auth-Parameter.htm)**: de naam van de query teken reeks parameter token verificatie die wordt weer gegeven in de aangevraagde URL. 
         
      ![Voor beeld van verificatie-instellingen voor het engine voor CDN-regels](./media/cdn-token-auth/cdn-rules-engine2.png)
 

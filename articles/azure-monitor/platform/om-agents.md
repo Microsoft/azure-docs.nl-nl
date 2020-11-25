@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 07/24/2020
 ms.openlocfilehash: 2a4f24da51b9e9e78c3df3e7d1437a380306e300
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318348"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95975566"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Operations Manager verbinden met Azure Monitor
 
@@ -53,7 +53,7 @@ Controleer de volgende vereisten voordat u begint.
     - Verenigd Koninkrijk Zuid
     - India - centraal
     - Canada - midden
-    - West US 2
+    - VS - west 2
 
 >[!NOTE]
 >Recente wijzigingen aan Azure-Api's kunnen voor komen dat klanten de integratie tussen hun beheer groep en Azure Monitor voor de eerste keer configureren. Voor klanten die hun beheer groep al hebben geïntegreerd met de service, heeft dit geen invloed op de gebruikers, tenzij u uw bestaande verbinding opnieuw moet configureren.  
@@ -72,15 +72,15 @@ Hieronder vindt u de informatie over de proxy-en firewall configuratie die is ve
 |Resource | Poortnummer| HTTPS-controle overslaan|  
 |---------|------|-----------------------|  
 |**Agent**|||  
-|\*.ods.opinsights.azure.com| 443 |Ja|  
-|\*.oms.opinsights.azure.com| 443|Ja|  
-|\*.blob.core.windows.net| 443|Ja|  
-|\*.azure-automation.net| 443|Ja|  
+|\*.ods.opinsights.azure.com| 443 |Yes|  
+|\*.oms.opinsights.azure.com| 443|Yes|  
+|\*.blob.core.windows.net| 443|Yes|  
+|\*.azure-automation.net| 443|Yes|  
 |**Beheerserver**|||  
 |\*.service.opinsights.azure.com| 443||  
-|\*.blob.core.windows.net| 443| Ja|  
-|\*.ods.opinsights.azure.com| 443| Ja|  
-|*.azure-automation.net | 443| Ja|  
+|\*.blob.core.windows.net| 443| Yes|  
+|\*.ods.opinsights.azure.com| 443| Yes|  
+|*.azure-automation.net | 443| Yes|  
 |**Operations Manager-console naar Azure Monitor**|||  
 |service.systemcenteradvisor.com| 443||  
 |\*.service.opinsights.azure.com| 443||  
@@ -136,7 +136,7 @@ Na het configureren van de integratie met uw Log Analytics-werk ruimte, wordt er
 1. Open de Operations Manager-console en selecteer de werkruimte **Beheer**.
 1. Vouw het knooppunt Operations Management Suite uit en klik op **Verbinding**.
 1. Klik op de koppeling **Computer/Groep toevoegen** onder de kop Acties rechts in het deelvenster.
-1. In het dialoogvenster **Computer zoeken** kunt u zoeken naar computers of groepen die worden bewaakt door Operations Manager. Selecteer computers of groepen met de Operations Manager-beheer server voor onboarding naar Azure Monitor, klik op **toevoegen**en klik vervolgens op **OK**.
+1. In het dialoogvenster **Computer zoeken** kunt u zoeken naar computers of groepen die worden bewaakt door Operations Manager. Selecteer computers of groepen met de Operations Manager-beheer server voor onboarding naar Azure Monitor, klik op **toevoegen** en klik vervolgens op **OK**.
 
 U kunt de computers en groepen die zijn geconfigureerd voor het verzamelen van gegevens bekijken in het knooppunt Beheerde computers onder Operations Management Suite in de werkruimte **Beheer** van de Operations-console. Hier kunt u zo nodig computers en groepen toevoegen of verwijderen.
 

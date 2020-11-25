@@ -8,11 +8,11 @@ ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: d0ac8e0cf187d1a6a329f2c7332c9ec37018d4cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962516"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005228"
 ---
 # <a name="create-a-web-app-in-an-app-service-environment-v1"></a>Een web-app maken in een App Service Environment v1
 
@@ -52,7 +52,7 @@ In deze zelf studie wordt ervan uitgegaan dat u een App Service Environment hebt
     Als u een App Service plan wilt gebruiken dat al in uw App Service Environment bestaat, selecteert u dat plan. Als u een nieuw App Service plan wilt maken, raadpleegt u de volgende sectie in deze zelf studie, [een app service plan maken in een app service Environment](#createplan).
 5. Voer de naam van uw web-app in en klik vervolgens op **maken**. 
    
-    Als uw ASE een externe VIP gebruikt, is de URL van een app in een ASE: [*site naam*]. [*app service Environment*]. p.azurewebsites.net in plaats van [*site*naam]. azurewebsites.net
+    Als uw ASE een externe VIP gebruikt, is de URL van een app in een ASE: [*site naam*]. [*app service Environment*]. p.azurewebsites.net in plaats van [*site* naam]. azurewebsites.net
    
     Als uw ASE een interne VIP gebruikt, is de URL van een app in dat ASE: [*site naam*]. [*subdomein opgegeven tijdens het maken van ASE*]   
     Nadat u uw ASP hebt geselecteerd tijdens het maken van ASE, ziet u de subdomein update onder **naam**
@@ -76,7 +76,7 @@ De volgende instructies laten zien hoe u een App Service plan maakt tijdens het 
     ![Scherm opname van de details van het ASE-systeem na het selecteren van de ASE in de locatie kiezer.][3]
 
 ### <a name="selecting-a-worker-pool"></a>Een werk groep selecteren
-Normaal gesp roken zijn er drie berekenings grootten die beschikbaar zijn voor de selectie van een speciaal prijs plan in Azure App Service en buiten een App Service Environment.  Op een vergelijk bare manier kunt u voor een ASE Maxi maal drie groepen van werk nemers definiëren en de berekenings grootte opgeven die voor die werk groep wordt gebruikt.  Wat het betekent voor tenants van de ASE is dat u in plaats van een prijs plan met een reken grootte voor uw App Service plan selecteert, wat een *werk groep*wordt genoemd.  
+Normaal gesp roken zijn er drie berekenings grootten die beschikbaar zijn voor de selectie van een speciaal prijs plan in Azure App Service en buiten een App Service Environment.  Op een vergelijk bare manier kunt u voor een ASE Maxi maal drie groepen van werk nemers definiëren en de berekenings grootte opgeven die voor die werk groep wordt gebruikt.  Wat het betekent voor tenants van de ASE is dat u in plaats van een prijs plan met een reken grootte voor uw App Service plan selecteert, wat een *werk groep* wordt genoemd.  
 
 De gebruikers interface voor de selectie van werk groepen toont de reken grootte die voor de werk groep wordt gebruikt onder de naam.  De beschik bare hoeveelheid verwijst naar hoeveel reken instanties er beschikbaar zijn voor gebruik in die groep.  De totale pool mag in werkelijkheid meer exemplaren hebben dan dit getal, maar deze waarde verwijst naar gewoon het aantal dat niet in gebruik is.  Als u uw App Service Environment moet aanpassen om meer reken bronnen toe te voegen, raadpleegt u [uw app service Environment configureren](app-service-web-configure-an-app-service-environment.md).
 

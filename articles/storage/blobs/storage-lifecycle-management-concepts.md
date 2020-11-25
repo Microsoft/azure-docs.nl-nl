@@ -9,12 +9,12 @@ ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: yzheng
 ms.custom: devx-track-azurepowershell, references_regions
-ms.openlocfilehash: 85577a428f803e31aa33468496d7efca77933835
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 1b568687ffe646a91544c1bb75d26d552a23f49c
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579308"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96005279"
 ---
 # <a name="optimize-costs-by-automating-azure-blob-storage-access-tiers"></a>Kosten optimaliseren door Azure Blob Storage Access-lagen te automatiseren
 
@@ -39,7 +39,7 @@ Houd rekening met een scenario waarbij gegevens veelvuldig toegankelijk zijn tij
 
 De functie levenscyclus beheer is beschikbaar in alle Azure-regio's voor Algemeen v2-accounts (GPv2), Blob Storage-accounts, Premium Block Blob Storage-accounts en Azure Data Lake Storage Gen2 accounts. In de Azure Portal kunt u een bestaand Algemeen-account (GPv1) upgraden naar een GPv2-account. Zie [overzicht van Azure Storage-account](../common/storage-account-overview.md)voor meer informatie over opslag accounts.
 
-De functie levenscyclus beheer is gratis. Klanten betalen de normale bewerkings kosten voor de API-aanroepen van de [BLOB-laag](https://docs.microsoft.com/rest/api/storageservices/set-blob-tier) . De verwijderings bewerking is gratis. Zie [prijzen voor blok-BLOB](https://azure.microsoft.com/pricing/details/storage/blobs/)voor meer informatie over prijzen.
+De functie levenscyclus beheer is gratis. Klanten betalen de normale bewerkings kosten voor de API-aanroepen van de [BLOB-laag](/rest/api/storageservices/set-blob-tier) . De verwijderings bewerking is gratis. Zie [prijzen voor blok-BLOB](https://azure.microsoft.com/pricing/details/storage/blobs/)voor meer informatie over prijzen.
 
 ## <a name="add-or-remove-a-policy"></a>Een beleid toevoegen of verwijderen
 
@@ -47,13 +47,13 @@ U kunt een beleid toevoegen, bewerken of verwijderen met een van de volgende met
 
 * [Azure-portal](https://portal.azure.com)
 * [Azure PowerShell](https://github.com/Azure/azure-powershell/releases)
-* [Azure-CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
-* [REST-API's](https://docs.microsoft.com/rest/api/storagerp/managementpolicies)
+* [Azure-CLI](/cli/azure/install-azure-cli)
+* [REST-API's](/rest/api/storagerp/managementpolicies)
 
 Een beleid kan volledig worden gelezen of geschreven. Gedeeltelijke updates worden niet ondersteund. 
 
 > [!NOTE]
-> Als u firewall regels inschakelt voor uw opslag account, kunnen aanvragen voor levenscyclus beheer worden geblokkeerd. U kunt deze aanvragen deblokkeren door uitzonde ringen op te geven voor vertrouwde micro soft-Services. Zie de sectie uitzonde ringen in [firewalls en virtuele netwerken configureren](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions)voor meer informatie.
+> Als u firewall regels inschakelt voor uw opslag account, kunnen aanvragen voor levenscyclus beheer worden geblokkeerd. U kunt deze aanvragen deblokkeren door uitzonde ringen op te geven voor vertrouwde micro soft-Services. Zie de sectie uitzonde ringen in [firewalls en virtuele netwerken configureren](../common/storage-network-security.md#exceptions)voor meer informatie.
 
 In dit artikel wordt uitgelegd hoe u beleid beheert met behulp van de portal-en Power shell-methoden.
 
@@ -74,7 +74,7 @@ Er zijn twee manieren om een beleid toe te voegen via de Azure Portal.
 
 1. Selecteer het tabblad **lijst weergave** .
 
-1. Selecteer **een regel toevoegen** en geef uw regel een naam op het **detail** formulier. U kunt ook het **regel bereik** , het **type BLOB** en de **subtype** waarden van BLOB instellen. In het volgende voor beeld wordt het bereik ingesteld op het filteren van blobs. Dit zorgt ervoor dat het tabblad **filter sets** wordt toegevoegd.
+1. Selecteer **een regel toevoegen** en geef uw regel een naam op het **detail** formulier. U kunt ook het **regel bereik**, het **type BLOB** en de **subtype** waarden van BLOB instellen. In het volgende voor beeld wordt het bereik ingesteld op het filteren van blobs. Dit zorgt ervoor dat het tabblad **filter sets** wordt toegevoegd.
 
    :::image type="content" source="media/storage-lifecycle-management-concepts/lifecycle-management-details.png" alt-text="Levenscyclus beheer een pagina met regel Details toevoegen in Azure Portal":::
 
@@ -247,10 +247,10 @@ Elke regel in het beleid heeft verschillende para meters:
 
 | Parameternaam | Parameter type | Notities | Vereist |
 |----------------|----------------|-------|----------|
-| `name`         | Tekenreeks |De naam van een regel kan Maxi maal 256 alfanumerieke tekens bevatten. De regel naam is hoofdletter gevoelig. Het moet uniek zijn binnen een beleid. | Waar |
-| `enabled`      | Boolean-waarde | Een optionele Booleaanse waarde waarmee een regel tijdelijk kan worden uitgeschakeld. De standaard waarde is True als deze niet is ingesteld. | Niet waar | 
-| `type`         | Een Enum-waarde | Het huidige geldige type is `Lifecycle` . | Waar |
-| `definition`   | Een object dat de levenscyclus regel definieert | Elke definitie bestaat uit een set filters en een Actieset. | Waar |
+| `name`         | Tekenreeks |De naam van een regel kan Maxi maal 256 alfanumerieke tekens bevatten. De regel naam is hoofdletter gevoelig. Het moet uniek zijn binnen een beleid. | True |
+| `enabled`      | Booleaans | Een optionele Booleaanse waarde waarmee een regel tijdelijk kan worden uitgeschakeld. De standaard waarde is True als deze niet is ingesteld. | False | 
+| `type`         | Een Enum-waarde | Het huidige geldige type is `Lifecycle` . | True |
+| `definition`   | Een object dat de levenscyclus regel definieert | Elke definitie bestaat uit een set filters en een Actieset. | True |
 
 ## <a name="rules"></a>Regels
 
@@ -317,12 +317,12 @@ Filters omvatten:
 
 | Bestandsnaam | Filtertype | Notities | Is vereist |
 |-------------|-------------|-------|-------------|
-| blobTypes   | Een matrix met vooraf gedefinieerde Enum-waarden. | De huidige versie ondersteunt `blockBlob` en `appendBlob` . Alleen verwijderen wordt ondersteund voor `appendBlob` , set-laag wordt niet ondersteund. | Ja |
-| prefixMatch | Een matrix met teken reeksen voor voor voegsels die moeten worden vergeleken. Elke regel kan Maxi maal 10 voor voegsels definiëren. Een voorvoegsel teken reeks moet beginnen met een container naam. Als u bijvoorbeeld wilt zoeken naar alle blobs onder `https://myaccount.blob.core.windows.net/container1/foo/...` een regel, is de prefixMatch `container1/foo` . | Als u prefixMatch niet definieert, is de regel van toepassing op alle blobs in het opslag account. | Nee |
-| blobIndexMatch | Een matrix met woordenlijst waarden die bestaan uit BLOB-index Tags sleutel en waarden die moeten worden vergeleken. Elke regel kan Maxi maal 10 BLOB-index code voorwaarde definiëren. Als u bijvoorbeeld alle blobs wilt vergelijken met `Project = Contoso` onder `https://myaccount.blob.core.windows.net/` voor een regel, is de blobIndexMatch `{"name": "Project","op": "==","value": "Contoso"}` . | Als u blobIndexMatch niet definieert, is de regel van toepassing op alle blobs in het opslag account. | Nee |
+| blobTypes   | Een matrix met vooraf gedefinieerde Enum-waarden. | De huidige versie ondersteunt `blockBlob` en `appendBlob` . Alleen verwijderen wordt ondersteund voor `appendBlob` , set-laag wordt niet ondersteund. | Yes |
+| prefixMatch | Een matrix met teken reeksen voor voor voegsels die moeten worden vergeleken. Elke regel kan Maxi maal 10 voor voegsels definiëren. Een voorvoegsel teken reeks moet beginnen met een container naam. Als u bijvoorbeeld wilt zoeken naar alle blobs onder `https://myaccount.blob.core.windows.net/container1/foo/...` een regel, is de prefixMatch `container1/foo` . | Als u prefixMatch niet definieert, is de regel van toepassing op alle blobs in het opslag account. | No |
+| blobIndexMatch | Een matrix met woordenlijst waarden die bestaan uit BLOB-index Tags sleutel en waarden die moeten worden vergeleken. Elke regel kan Maxi maal 10 BLOB-index code voorwaarde definiëren. Als u bijvoorbeeld alle blobs wilt vergelijken met `Project = Contoso` onder `https://myaccount.blob.core.windows.net/` voor een regel, is de blobIndexMatch `{"name": "Project","op": "==","value": "Contoso"}` . | Als u blobIndexMatch niet definieert, is de regel van toepassing op alle blobs in het opslag account. | No |
 
 > [!NOTE]
-> BLOB-index bevindt zich in de open bare preview en is beschikbaar in de regio's **Canada-centraal** , **Canada-Oost** , **Frankrijk-centraal** en **Frankrijk-Zuid** . Zie voor meer informatie over deze functie, samen met bekende problemen en beperkingen, [gegevens beheren en zoeken op Azure Blob Storage met Blob-index (preview)](storage-manage-find-blobs.md).
+> BLOB-index bevindt zich in de open bare preview en is beschikbaar in de regio's **Canada-centraal**, **Canada-Oost**, **Frankrijk-centraal** en **Frankrijk-Zuid** . Zie voor meer informatie over deze functie, samen met bekende problemen en beperkingen, [gegevens beheren en zoeken op Azure Blob Storage met Blob-index (preview)](storage-manage-find-blobs.md).
 
 ### <a name="rule-actions"></a>Regel acties
 
@@ -330,7 +330,7 @@ Acties worden toegepast op de gefilterde blobs wanneer wordt voldaan aan de voor
 
 Levenscyclus beheer ondersteunt het trapsgewijs maken en verwijderen van blobs, eerdere BLOB-versies en BLOB-moment opnamen. Definieer ten minste één actie voor elke regel op basis-blobs, eerdere BLOB-versies of BLOB-moment opnamen.
 
-| Bewerking                      | Basis-BLOB                                  | Momentopname      | Versie
+| Actie                      | Basis-BLOB                                  | Momentopname      | Versie
 |-----------------------------|--------------------------------------------|---------------|---------------|
 | tierToCool                  | Ondersteund voor `blockBlob`                  | Ondersteund     | Ondersteund     |
 | enableAutoTierToHotFromCool | Ondersteund voor `blockBlob`                  | Niet ondersteund | Niet ondersteund |
@@ -342,7 +342,7 @@ Levenscyclus beheer ondersteunt het trapsgewijs maken en verwijderen van blobs, 
 
 De uitvoerings voorwaarden zijn gebaseerd op leeftijd. Basis-blobs maken gebruik van de laatst gewijzigd tijd, Blob-versies gebruiken de aanmaak tijd van de versie en de BLOB-moment opnamen maken gebruik van de moment opname voor het bijhouden van leeftijd.
 
-| Voor waarde voor actie uitvoeren               | Waarde voor waarde                          | Beschrijving                                                                      |
+| Voor waarde voor actie uitvoeren               | Waarde voor waarde                          | Description                                                                      |
 |------------------------------------|------------------------------------------|----------------------------------------------------------------------------------|
 | daysAfterModificationGreaterThan   | Geheel getal dat de leeftijd in dagen aangeeft | De voor waarde voor basis-BLOB-acties                                              |
 | daysAfterCreationGreaterThan       | Geheel getal dat de leeftijd in dagen aangeeft | De voor waarde voor de acties voor BLOB-versie-en BLOB-moment opnamen                         |
@@ -450,7 +450,7 @@ Elke tijd voor het bijwerken van laatste toegang wordt als een [andere bewerking
 Sommige gegevens blijven niet actief in de Cloud en worden zelden, indien ooit, geopend. Het volgende levenscyclus beleid is geconfigureerd om gegevens te archiveren zodra deze zijn opgenomen. In dit voor beeld worden blok-blobs in het opslag account in de container `archivecontainer` omgezet in een Archive-laag. De overgang wordt uitgevoerd door op blobs 0 dagen na de laatste wijzigings tijd te handelen:
 
 > [!NOTE] 
-> Het is raadzaam om uw blobs rechtstreeks naar de archief laag te uploaden om efficiënter te zijn. U kunt de header x-MS-Access-tier gebruiken voor [PutBlob](https://docs.microsoft.com/rest/api/storageservices/put-blob) of [putblock List](https://docs.microsoft.com/rest/api/storageservices/put-block-list) met rest versie 2018-11-09 en nieuwere of onze meest recente client bibliotheken voor Blob Storage. 
+> Het is raadzaam om uw blobs rechtstreeks naar de archief laag te uploaden om efficiënter te zijn. U kunt de header x-MS-Access-tier gebruiken voor [PutBlob](/rest/api/storageservices/put-blob) of [putblock List](/rest/api/storageservices/put-block-list) met rest versie 2018-11-09 en nieuwere of onze meest recente client bibliotheken voor Blob Storage. 
 
 ```json
 {
@@ -592,7 +592,7 @@ Wanneer een BLOB wordt verplaatst van de ene toegangs laag naar een andere, vera
 
 Meer informatie over het herstellen van gegevens na onbedoeld verwijderen:
 
-- [Voorlopig verwijderen voor Azure Storage-blobs](../blobs/storage-blob-soft-delete.md)
+- [Voorlopig verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md)
 
 Meer informatie over het beheren en zoeken van gegevens met Blob-index:
 

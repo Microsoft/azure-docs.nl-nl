@@ -10,11 +10,11 @@ ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
 ms.openlocfilehash: 3434953de3460d3eff066768474f03aa0e14165e
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92668596"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004990"
 ---
 # <a name="connect-to-azure-synapse-link-preview-for-azure-cosmos-db"></a>Verbinding maken met Azure Synapse Link (preview) voor Azure Cosmos DB
 
@@ -55,11 +55,11 @@ Vanuit Data Object Explorer kunt u rechtstreeks verbinding maken met een Azure C
 
 Azure Cosmos DB-databases worden weergegeven op het tabblad **Gekoppeld** in het gedeelte **Azure Cosmos DB**. Met Azure Cosmos DB kunt u een container met HTAP onderscheiden van een alleen-OLTP-container, met behulp van de volgende pictogrammen:
 
-**Alleen-OLTP-container** :
+**Alleen-OLTP-container**:
 
 ![Visualisatie waarmee het OLTP-containerpictogram wordt weergegeven.](../media/quickstart-connect-synapse-link-cosmosdb/oltp-container.png)
 
-**Container met HTAP** :
+**Container met HTAP**:
 
 ![Visualisatie waarmee het HTAP-containerpictogram wordt weergegeven.](../media/quickstart-connect-synapse-link-cosmosdb/htap-container.png)
 

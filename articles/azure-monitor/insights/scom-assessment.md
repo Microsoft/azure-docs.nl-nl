@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 06/25/2018
 ms.openlocfilehash: 97d7d21374062462248e1b86f2bde2fef2d25331
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87326049"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004905"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>De omgeving optimaliseren met behulp van System Center Operations Manager-statuscontrole (preview)
 
@@ -77,18 +77,18 @@ Het run as-account moet voldoen aan de volgende vereisten voordat u doorgaat:
 * Als het account geen SQL sysadmin-rechten heeft, voert u het [script](#sql-script-to-grant-granular-permissions-to-the-run-as-account) uit om gedetailleerde machtigingen toe te kennen aan het account op elk SQL Server exemplaar dat als host fungeert voor een of alle operations manager-data bases.
 
 1. Selecteer de **beheer** navigatie knop In de Operations Manager-console.
-2. Klik onder **Run as-configuratie**op **accounts**.
+2. Klik onder **Run as-configuratie** op **accounts**.
 3. Klik in de wizard **Run as-account maken** op de pagina **Inleiding** op **volgende**.
 4. Selecteer op de pagina **algemene eigenschappen** de optie **Windows** in het **Run as-account type:** list.
 5. Typ een weergave naam in het tekstvak **weergave naam** en typ eventueel een beschrijving in het vak **Beschrijving** en klik vervolgens op **volgende**.
 6. Selecteer op de pagina **distributie beveiliging** de optie **veiliger**.
-7. Klik op **Maken**.  
+7. Klik op **Create**.  
 
 Nu het run as-account is gemaakt, moet het worden ingesteld op beheerser vers in de beheer groep en zijn gekoppeld aan een vooraf gedefinieerd run as-profiel zodat werk stromen met de referenties worden uitgevoerd.  
 
-1. Dubbel klik onder **Run as-configuratie**, **accounts**in het resultaten venster op het account dat u eerder hebt gemaakt.
+1. Dubbel klik onder **Run as-configuratie**, **accounts** in het resultaten venster op het account dat u eerder hebt gemaakt.
 2. Klik op het tabblad **distributie** op **toevoegen** voor het vak **geselecteerde computers** en voeg de beheer server toe om het account naar te distribueren.  Klik twee keer op **OK** om uw wijzigingen op te slaan.
-3. Klik onder **Run as-configuratie**op **profielen**.
+3. Klik onder **Run as-configuratie** op **profielen**.
 4. Zoek naar het *SCOM-beoordelings profiel*.
 5. De profiel naam moet: het *Run as-Profiel van micro soft System Center Operations Manager-statuscontrole*.
 6. Klik met de rechter muisknop en werk de eigenschappen bij en voeg het onlangs gemaakte run as-account toe dat u eerder hebt gemaakt.
@@ -152,7 +152,7 @@ De regel voor het uitvoeren van de status controle van micro soft System Center 
 #### <a name="enable-the-rule-for-a-specific-management-server"></a>De regel voor een specifieke beheerserver inschakelen
 
 1. Zoek in de werk ruimte **ontwerpen** van de Operations Manager Operations-console naar de regel *micro soft System Center Operations Manager uitvoerings status controle regel* in het deel venster **regels** .
-2. Selecteer in de zoek resultaten de versie die het tekst *type: beheer server*bevat.
+2. Selecteer in de zoek resultaten de versie die het tekst *type: beheer server* bevat.
 3. Klik met de rechter muisknop op de regel en klik vervolgens op **onderdrukkingen**  >  **voor een specifiek object van klasse: beheer server**.
 4.  Selecteer in de lijst beschik bare beheerser vers de beheer server waarop de regel moet worden uitgevoerd.  Dit moet dezelfde beheer server zijn die u eerder hebt geconfigureerd om het uitvoeren als-account aan te koppelen.
 5.  Zorg ervoor dat u de onderdrukkings waarde wijzigt in **True** voor de **ingeschakelde** parameter waarde.<br><br> ![onderdrukkings parameter](./media/scom-assessment/rule.png)
@@ -164,7 +164,7 @@ De regel voor het uitvoeren van de status controle van micro soft System Center 
 De evaluatie is zo geconfigureerd dat deze standaard elke 10.080 minuten (of zeven dagen) wordt uitgevoerd. U kunt de waarde vervangen door een minimum waarde van 1440 minuten (of één dag). De waarde vertegenwoordigt de minimale tijds hiaat die vereist is tussen de opeenvolgende evaluatie-uitvoeringen. Volg de onderstaande stappen om het interval te overschrijven.
 
 1. Zoek in de werk ruimte **ontwerpen** van de Operations Manager-console naar de regel *micro soft System Center Operations Manager uitvoerings status controle regel* in de sectie **regels** .
-2. Selecteer in de zoek resultaten de versie die het tekst *type: beheer server*bevat.
+2. Selecteer in de zoek resultaten de versie die het tekst *type: beheer server* bevat.
 3. Klik met de rechter muisknop op de regel en klik vervolgens op **onderdrukking van de regel**  >  **voor alle objecten van klasse: beheer server**.
 4. Wijzig de waarde van de para meter **interval** in de gewenste interval waarde. In het onderstaande voor beeld is de waarde ingesteld op 1440 minuten (één dag).<br><br> ![interval parameter](./media/scom-assessment/interval.png)<br>  
 

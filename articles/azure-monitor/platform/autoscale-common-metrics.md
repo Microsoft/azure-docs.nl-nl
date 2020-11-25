@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 12/6/2016
 ms.subservice: autoscale
 ms.openlocfilehash: e1a77fc1b40faca0a339c5e1aaceb71dec8de8bd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327035"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004633"
 ---
 # <a name="azure-monitor-autoscaling-common-metrics"></a>Azure Monitor automatisch schalen van algemene metrische gegevens
 
@@ -153,7 +153,7 @@ U kunt een melding ontvangen over of schalen op basis van deze metrische gegeven
 ## <a name="commonly-used-storage-metrics"></a>Veelgebruikte metrische opslag gegevens
 U kunt schalen op de lengte van de opslag wachtrij. Dit is het aantal berichten in de opslag wachtrij. De lengte van de opslag wachtrij is een speciale metrische waarde en de drempel waarde is het aantal berichten per exemplaar. Als er bijvoorbeeld twee exemplaren zijn en als de drempel waarde is ingesteld op 100, wordt er geschaald wanneer het totale aantal berichten in de wachtrij 200 is. Dit kan 100 berichten per instantie, 120 en 80 of een andere combi natie van Maxi maal 200 of meer zijn.
 
-Configureer deze instelling in de Azure Portal op de Blade **instellingen** . Voor VM-schaal sets kunt u de instelling voor automatisch schalen in het Resource Manager-sjabloon bijwerken om *metrische waarde* als *ApproximateMessageCount* te gebruiken en de id van de opslag wachtrij als *metricResourceUri*door te geven.
+Configureer deze instelling in de Azure Portal op de Blade **instellingen** . Voor VM-schaal sets kunt u de instelling voor automatisch schalen in het Resource Manager-sjabloon bijwerken om *metrische waarde* als *ApproximateMessageCount* te gebruiken en de id van de opslag wachtrij als *metricResourceUri* door te geven.
 
 Met een klassiek opslag account kunt u bijvoorbeeld de instelling voor automatisch schalen metricTrigger:
 
@@ -174,7 +174,7 @@ Voor een (niet-klassiek) opslag account zou het metricTrigger het volgende omvat
 ## <a name="commonly-used-service-bus-metrics"></a>Veelgebruikte Service Bus metrische gegevens
 U kunt schalen op Service Bus wachtrij lengte, het aantal berichten in de Service Bus wachtrij. Service Bus wachtrij lengte is een speciale metrische waarde en de drempel waarde is het aantal berichten per exemplaar. Als er bijvoorbeeld twee exemplaren zijn en als de drempel waarde is ingesteld op 100, wordt er geschaald wanneer het totale aantal berichten in de wachtrij 200 is. Dit kan 100 berichten per instantie, 120 en 80 of een andere combi natie van Maxi maal 200 of meer zijn.
 
-Voor VM-schaal sets kunt u de instelling voor automatisch schalen in het Resource Manager-sjabloon bijwerken om *metrische waarde* als *ApproximateMessageCount* te gebruiken en de id van de opslag wachtrij als *metricResourceUri*door te geven.
+Voor VM-schaal sets kunt u de instelling voor automatisch schalen in het Resource Manager-sjabloon bijwerken om *metrische waarde* als *ApproximateMessageCount* te gebruiken en de id van de opslag wachtrij als *metricResourceUri* door te geven.
 
 ```
 "metricName": "ApproximateMessageCount",

@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/17/2019
 ms.openlocfilehash: f98021d1e94b3796b2aeb6ba2e883e4e1380b8ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504329"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004820"
 ---
 # <a name="apache-phoenix-in-azure-hdinsight"></a>Apache Phoenix in azure HDInsight
 
@@ -37,7 +37,7 @@ Maak een secundaire index met de `CREATE INDEX` opdracht:
 CREATE INDEX ix_purchasetype on SALTEDWEBLOGS (purchasetype, transactiondate) INCLUDE (bookname, quantity);
 ```
 
-Deze aanpak kan leiden tot een aanzienlijke prestatie verhoging voor het uitvoeren van query's met één geïndexeerde waarde. Dit type secundaire index is een **bedekte index**die alle kolommen bevat die in de query zijn opgenomen. Daarom is het opzoeken van de tabel niet vereist en de index voldoet aan de volledige query.
+Deze aanpak kan leiden tot een aanzienlijke prestatie verhoging voor het uitvoeren van query's met één geïndexeerde waarde. Dit type secundaire index is een **bedekte index** die alle kolommen bevat die in de query zijn opgenomen. Daarom is het opzoeken van de tabel niet vereist en de index voldoet aan de volledige query.
 
 ### <a name="views"></a>Weergaven
 

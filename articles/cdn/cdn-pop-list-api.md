@@ -16,17 +16,17 @@ ms.date: 08/22/2019
 ms.author: allensu
 ms.custom: ''
 ms.openlocfilehash: 43b4bcaee447d84efa088e84340ccfc717fe2777
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778313"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005177"
 ---
 # <a name="retrieve-the-current-pop-ip-list-for-azure-cdn"></a>De huidige POP-IP-lijst voor Azure CDN ophalen
 
 ## <a name="retrieve-the-current-verizon-pop-ip-list-for-azure-cdn"></a>De huidige Verizon POP IP-lijst voor Azure CDN ophalen
 
-U kunt de REST API gebruiken om de set IP-adressen op te halen voor de POP-servers (Point of Presence) van Verizon. Deze POP-servers maken aanvragen voor de oorspronkelijke servers die zijn gekoppeld aan de Azure Content Delivery Network (CDN)-eind punten op een Verizon-Profiel ( **Azure CDN Standard van Verizon** of **Azure CDN Premium van Verizon** ). Houd er rekening mee dat deze set IP-adressen verschilt van de IP-adressen die een client zou zien wanneer ze aanvragen indienen bij de Pop's. 
+U kunt de REST API gebruiken om de set IP-adressen op te halen voor de POP-servers (Point of Presence) van Verizon. Deze POP-servers maken aanvragen voor de oorspronkelijke servers die zijn gekoppeld aan de Azure Content Delivery Network (CDN)-eind punten op een Verizon-Profiel (**Azure CDN Standard van Verizon** of **Azure CDN Premium van Verizon**). Houd er rekening mee dat deze set IP-adressen verschilt van de IP-adressen die een client zou zien wanneer ze aanvragen indienen bij de Pop's. 
 
 Zie [Edge nodes-List](/rest/api/cdn/edgenodes/list)(Engelstalig) voor de syntaxis van de rest API bewerking voor het ophalen van de POP-lijst.
 

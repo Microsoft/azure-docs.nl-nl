@@ -2,13 +2,13 @@
 title: Sjabloon functies-datum
 description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om met datums te werken.
 ms.topic: conceptual
-ms.date: 06/22/2020
-ms.openlocfilehash: abdc88ce15279b90f8f9dc05a38a2ae236498f12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/18/2020
+ms.openlocfilehash: 83e601adb649098f7a4e19cb71170b96a3287d9b
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86058041"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96004582"
 ---
 # <a name="date-functions-for-arm-templates"></a>Datum functies voor ARM-sjablonen
 
@@ -16,6 +16,8 @@ Resource Manager biedt de volgende functies voor het werken met datums in uw Azu
 
 * [dateTimeAdd](#datetimeadd)
 * [utcNow](#utcnow)
+
+[!INCLUDE [Bicep preview](../../../includes/resource-manager-bicep-preview.md)]
 
 ## <a name="datetimeadd"></a>dateTimeAdd
 
@@ -25,11 +27,11 @@ Voegt een tijds duur toe aan een basis waarde. ISO 8601-indeling wordt verwacht.
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| base | Ja | tekenreeks | De begin datum/tijd-waarde voor de toevoeging. [ISO 8601-time stamp notatie](https://en.wikipedia.org/wiki/ISO_8601)gebruiken. |
-| duur | Ja | tekenreeks | De tijd waarde die aan de basis moet worden toegevoegd. Dit kan een negatieve waarde zijn. Gebruik de [ISO 8601-duur notatie](https://en.wikipedia.org/wiki/ISO_8601#Durations). |
-| indeling | Nee | tekenreeks | De uitvoer indeling voor het resultaat van de datum en tijd. Als u dit niet opgeeft, wordt de indeling van de basis waarde gebruikt. Gebruik [standaard notatie teken reeksen](/dotnet/standard/base-types/standard-date-and-time-format-strings) of [teken reeksen met aangepaste notaties](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| base | Yes | tekenreeks | De begin datum/tijd-waarde voor de toevoeging. [ISO 8601-time stamp notatie](https://en.wikipedia.org/wiki/ISO_8601)gebruiken. |
+| duur | Yes | tekenreeks | De tijd waarde die aan de basis moet worden toegevoegd. Dit kan een negatieve waarde zijn. Gebruik de [ISO 8601-duur notatie](https://en.wikipedia.org/wiki/ISO_8601#Durations). |
+| indeling | No | tekenreeks | De uitvoer indeling voor het resultaat van de datum en tijd. Als u dit niet opgeeft, wordt de indeling van de basis waarde gebruikt. Gebruik [standaard notatie teken reeksen](/dotnet/standard/base-types/standard-date-and-time-format-strings) of [teken reeksen met aangepaste notaties](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -39,100 +41,142 @@ De waarde voor datum/tijd die het resultaat is van het toevoegen van de waarde d
 
 In de volgende voorbeeld sjabloon ziet u verschillende manieren om tijd waarden toe te voegen.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters":{
-        "baseTime":{
-            "type":"string",
-            "defaultValue": "[utcNow('u')]"
-        }
-    },
-    "variables": {
-        "add3Years": "[dateTimeAdd(parameters('baseTime'), 'P3Y')]",
-        "subtract9Days": "[dateTimeAdd(parameters('baseTime'), '-P9D')]",
-        "add1Hour": "[dateTimeAdd(parameters('baseTime'), 'PT1H')]"
-    },
-    "resources": [],
-    "outputs": {
-        "add3Years": {
-            "value": "[variables('add3Years')]",
-            "type": "string"
-        },
-        "subtract9Days": {
-            "value": "[variables('subtract9Days')]",
-            "type": "string"
-        },
-        "add1Hour": {
-            "value": "[variables('add1Hour')]",
-            "type": "string"
-        },
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "baseTime": {
+      "type": "string",
+      "defaultValue": "[utcNow('u')]"
     }
+  },
+  "variables": {
+    "add3Years": "[dateTimeAdd(parameters('baseTime'), 'P3Y')]",
+    "subtract9Days": "[dateTimeAdd(parameters('baseTime'), '-P9D')]",
+    "add1Hour": "[dateTimeAdd(parameters('baseTime'), 'PT1H')]"
+  },
+  "resources": [],
+  "outputs": {
+    "add3YearsOutput": {
+      "value": "[variables('add3Years')]",
+      "type": "string"
+    },
+    "subtract9DaysOutput": {
+      "value": "[variables('subtract9Days')]",
+      "type": "string"
+    },
+    "add1HourOutput": {
+      "value": "[variables('add1Hour')]",
+      "type": "string"
+    },
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param baseTime string = utcNow('u')
+
+var add3Years = dateTimeAdd(baseTime, 'P3Y')
+var subtract9Days = dateTimeAdd(baseTime, '-P9D')
+var add1Hour = dateTimeAdd(baseTime, 'PT1H')
+
+output add3YearsOutput string = add3Years
+output subtract9DaysOutput string = subtract9Days
+output add1HourOutput string = add1Hour
+```
+
+---
 
 Wanneer de voor gaande sjabloon wordt geïmplementeerd met een basis tijd van `2020-04-07 14:53:14Z` , is de uitvoer:
 
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
-| add3Years | Tekenreeks | 4/7/2023 2:53:14 UUR |
-| subtract9Days | Tekenreeks | 3/29/2020 2:53:14 UUR |
-| add1Hour | Tekenreeks | 4/7/2020 3:53:14 UUR |
+| add3YearsOutput | Tekenreeks | 4/7/2023 2:53:14 UUR |
+| subtract9DaysOutput | Tekenreeks | 3/29/2020 2:53:14 UUR |
+| add1HourOutput | Tekenreeks | 4/7/2020 3:53:14 UUR |
 
 In de volgende voorbeeld sjabloon ziet u hoe u de start tijd voor een Automation-schema kunt instellen.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "omsAutomationAccountName": {
-            "type": "string",
-            "defaultValue": "demoAutomation",
-            "metadata": {
-                "description": "Use an existing Automation account."
-            }
-        },
-        "scheduleName": {
-            "type": "string",
-            "defaultValue": "demoSchedule1",
-            "metadata": {
-                "description": "Name of the new schedule."
-            }
-        },
-        "baseTime":{
-            "type":"string",
-            "defaultValue": "[utcNow('u')]",
-            "metadata": {
-                "description": "Schedule will start one hour from this time."
-            }
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "omsAutomationAccountName": {
+      "type": "string",
+      "defaultValue": "demoAutomation",
+      "metadata": {
+        "description": "Use an existing Automation account."
+      }
     },
-    "variables": {
-        "startTime": "[dateTimeAdd(parameters('baseTime'), 'PT1H')]"
+    "scheduleName": {
+      "type": "string",
+      "defaultValue": "demoSchedule1",
+      "metadata": {
+        "description": "Name of the new schedule."
+      }
     },
-    "resources": [
-        {
-            "name": "[concat(parameters('omsAutomationAccountName'), '/', parameters('scheduleName'))]",
-            "type": "microsoft.automation/automationAccounts/schedules",
-            "apiVersion": "2015-10-31",
-            "location": "eastus2",
-            "tags": {
-            },
-            "properties": {
-                "description": "Demo Scheduler",
-                "startTime": "[variables('startTime')]",
-                "isEnabled": "true",
-                "interval": 1,
-                "frequency": "hour"
-            }
-        }
-    ],
-    "outputs": {
+    "baseTime": {
+      "type": "string",
+      "defaultValue": "[utcNow('u')]",
+      "metadata": {
+        "description": "Schedule will start one hour from this time."
+      }
     }
+  },
+  "variables": {
+    "startTime": "[dateTimeAdd(parameters('baseTime'), 'PT1H')]"
+  },
+  "resources": [
+    ...
+    {
+      "type": "Microsoft.Automation/automationAccounts/schedules",
+      "apiVersion": "2015-10-31",
+      "name": "[concat(parameters('omsAutomationAccountName'), '/', parameters('scheduleName'))]",
+
+      "properties": {
+        "description": "Demo Scheduler",
+        "startTime": "[variables('startTime')]",
+        "interval": 1,
+        "frequency": "Hour"
+      }
+    }
+  ],
+  "outputs": {
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param omsAutomationAccountName string = 'demoAutomation'
+param scheduleName string = 'demSchedule1'
+param baseTime string = utcNow('u')
+
+var startTime = dateTimeAdd(baseTime, 'PT1H')
+
+...
+
+resource scheduler 'Microsoft.Automation/automationAccounts/schedules@2015-10-31' = {
+  name: concat(omsAutomationAccountName, '/', scheduleName)
+  properties: {
+    description: 'Demo Scheduler'
+    startTime: startTime
+    interval: 1
+    frequency: 'Hour'
+  }
+}
+```
+
+---
 
 ## <a name="utcnow"></a>utcNow
 
@@ -142,9 +186,9 @@ Retourneert de huidige (UTC) datum/tijd-waarde in de opgegeven notatie. Als er g
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Beschrijving |
+| Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| indeling |Nee |tekenreeks |De gecodeerde URI-waarde die moet worden geconverteerd naar een teken reeks. Gebruik [standaard notatie teken reeksen](/dotnet/standard/base-types/standard-date-and-time-format-strings) of [teken reeksen met aangepaste notaties](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| indeling |No |tekenreeks |De gecodeerde URI-waarde die moet worden geconverteerd naar een teken reeks. Gebruik [standaard notatie teken reeksen](/dotnet/standard/base-types/standard-date-and-time-format-strings) of [teken reeksen met aangepaste notaties](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
 ### <a name="remarks"></a>Opmerkingen
 
@@ -162,42 +206,58 @@ De huidige UTC-waarde voor datum/tijd.
 
 In de volgende voorbeeld sjabloon ziet u verschillende notaties voor de datum/tijd-waarde.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "utcValue": {
-            "type": "string",
-            "defaultValue": "[utcNow()]"
-        },
-        "utcShortValue": {
-            "type": "string",
-            "defaultValue": "[utcNow('d')]"
-        },
-        "utcCustomValue": {
-            "type": "string",
-            "defaultValue": "[utcNow('M d')]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "utcValue": {
+      "type": "string",
+      "defaultValue": "[utcNow()]"
     },
-    "resources": [
-    ],
-    "outputs": {
-        "utcOutput": {
-            "type": "string",
-            "value": "[parameters('utcValue')]"
-        },
-        "utcShortOutput": {
-            "type": "string",
-            "value": "[parameters('utcShortValue')]"
-        },
-        "utcCustomOutput": {
-            "type": "string",
-            "value": "[parameters('utcCustomValue')]"
-        }
+    "utcShortValue": {
+      "type": "string",
+      "defaultValue": "[utcNow('d')]"
+    },
+    "utcCustomValue": {
+      "type": "string",
+      "defaultValue": "[utcNow('M d')]"
     }
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "utcOutput": {
+      "type": "string",
+      "value": "[parameters('utcValue')]"
+    },
+    "utcShortOutput": {
+      "type": "string",
+      "value": "[parameters('utcShortValue')]"
+    },
+    "utcCustomOutput": {
+      "type": "string",
+      "value": "[parameters('utcCustomValue')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param utcValue string = utcNow()
+param utcShortValue string = utcNow('d')
+param utcCustomValue string = utcNow('M d')
+
+output utcOutput string = utcValue
+output utcShortOutput string = utcShortValue
+output utcCustomOutput string = utcCustomValue
+```
+
+---
 
 De uitvoer van het voor gaande voor beeld varieert per implementatie, maar lijkt op:
 
@@ -209,39 +269,60 @@ De uitvoer van het voor gaande voor beeld varieert per implementatie, maar lijkt
 
 In het volgende voor beeld ziet u hoe u een waarde uit de functie gebruikt wanneer u een tag-waarde instelt.
 
+# <a name="json"></a>[JSON](#tab/json)
+
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "utcShort": {
-            "type": "string",
-            "defaultValue": "[utcNow('d')]"
-        },
-        "rgName": {
-            "type": "string"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "utcShort": {
+      "type": "string",
+      "defaultValue": "[utcNow('d')]"
     },
-    "resources": [
-        {
-            "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2018-05-01",
-            "name": "[parameters('rgName')]",
-            "location": "westeurope",
-            "tags":{
-                "createdDate": "[parameters('utcShort')]"
-            },
-            "properties":{}
-        }
-    ],
-    "outputs": {
-        "utcShort": {
-            "type": "string",
-            "value": "[parameters('utcShort')]"
-        }
+    "rgName": {
+      "type": "string"
     }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/resourceGroups",
+      "apiVersion": "2018-05-01",
+      "name": "[parameters('rgName')]",
+      "location": "westeurope",
+      "tags": {
+        "createdDate": "[parameters('utcShort')]"
+      },
+      "properties": {}
+    }
+  ],
+  "outputs": {
+    "utcShortOutput": {
+      "type": "string",
+      "value": "[parameters('utcShort')]"
+    }
+  }
 }
 ```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param utcShort string = utcNow('d')
+param rgName string
+
+resource myRg 'Microsoft.Resources/resourceGroups@2018-05-01' = {
+  name: rgName
+  location: 'westeurope'
+  tags: {
+    createdDate: utcShort
+  }
+}
+
+output utcShortOutput string = utcShort
+```
+
+---
 
 ## <a name="next-steps"></a>Volgende stappen
 

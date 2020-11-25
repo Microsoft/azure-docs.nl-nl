@@ -7,13 +7,13 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/19/2020
-ms.openlocfilehash: a9636e7227671cd5a8ed31904e6bc27782d3bd6a
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.date: 11/22/2020
+ms.openlocfilehash: 9ca5ea5cdebe297af5081ae6e219935c56ba942e
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93025830"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96004862"
 ---
 # <a name="monitor-data-flows"></a>Gegevens stromen bewaken
 
@@ -81,6 +81,16 @@ U kunt ook gedetailleerde timing voor elke partitie transformatie stap bekijken 
 
 Wanneer u een Sink-transformatie pictogram in de kaart selecteert, wordt in het deel venster met de rechter muisknop een extra gegevens punt weer gegeven met de naam ' verwerkings tijd na de onderkant. Dit is de hoeveelheid tijd die nodig is om uw taak uit te voeren op het Spark-cluster *nadat* uw gegevens zijn geladen, getransformeerd en geschreven. Deze tijd kan bestaan uit het sluiten van verbindings Pools, het afsluiten van Stuur Programma's, het verwijderen van bestanden, het samen voegen van bestanden, enzovoort. Wanneer u acties in uw stroom uitvoert, zoals ' bestanden verplaatsen ' en ' uitvoer naar één bestand ', ziet u waarschijnlijk een toename in de waarde voor de verwerkings tijd.
   
+## <a name="error-rows"></a>Fout rijen
+
+Het inschakelen van de verwerking van fout rijen in uw gegevens stroom sink wordt weer gegeven in de uitvoer van de bewaking. Wanneer u de Sink instelt op ' rapport geslaagd op fout ', wordt in de bewakings uitvoer het aantal geslaagde en mislukte rijen weer gegeven wanneer u op het knoop punt Sink-bewaking klikt.
+
+![De scherm opname bevat fout rijen.](media/data-flow/error-row-2.png "Bewaking in fout rijen geslaagd")
+
+Wanneer u ' rapport fout bij fout ' selecteert, wordt dezelfde uitvoer alleen weer gegeven in de uitvoer tekst voor activiteiten bewaking. Dit komt doordat de activiteit gegevens stroom een fout retourneert voor de uitvoering en de gedetailleerde bewakings weergave niet beschikbaar is.
+
+![De scherm opname bevat fout rijen in de activiteit.](media/data-flow/error-rows-4.png "Fout bij het controleren van een actierij")
+
 ## <a name="monitor-icons"></a>Bewaak pictogrammen
 
 Dit pictogram geeft aan dat de transformatie gegevens al in de cache zijn opgeslagen op het cluster, waardoor de timing en het uitvoerings traject hebben geduurd in het account:

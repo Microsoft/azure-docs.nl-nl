@@ -13,11 +13,11 @@ ms.workload: infrastructure
 ms.date: 02/21/2020
 ms.author: rdhillon
 ms.openlocfilehash: bdf0e87c92a55d0dbb5bbe34334a6de4580cb350
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84708175"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004956"
 ---
 # <a name="create-change-or-delete-service-endpoint-policy-using-the-azure-portal"></a>Service-eindpunt beleid maken, wijzigen of verwijderen met behulp van de Azure Portal
 
@@ -56,7 +56,7 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
 4. Selecteer **+ toevoegen** onder **resources** en voer de volgende informatie in of Selecteer deze in het deel venster **resources toevoegen** .
 
    - Service: alleen **micro soft. Storage** is beschikbaar met service-eindpunt beleid
-   - Bereik: Selecteer één van de **afzonderlijke**accounts, **alle rekeningen in het abonnement** en **alle accounts in de resource groep**
+   - Bereik: Selecteer één van de **afzonderlijke** accounts, **alle rekeningen in het abonnement** en **alle accounts in de resource groep**
    - Abonnement: Selecteer uw abonnement voor het opslag account. Beleids-en opslag accounts kunnen zich in verschillende abonnementen bevindt.
    - Resource groep: Selecteer de resource groep. Vereist als het bereik is ingesteld als ' alle accounts in de resource groep ' of ' Eén account '.  
    - Resource: Selecteer uw Azure Storage Resource onder het geselecteerde abonnement of de resource groep.
@@ -71,14 +71,14 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
    - Sleutel: Selecteer uw sleutel voor het beleid. Bijvoorbeeld: afd     
    - Waarde: Voer een waardepaar in voor de sleutel. Ex: Finance
 
-6. Selecteer **Controleren + maken**. Valideer de gegevens en klik op **maken**. Klik op **vorige**om verdere bewerkingen uit te voeren. 
+6. Selecteer **Controleren + maken**. Valideer de gegevens en klik op **maken**. Klik op **vorige** om verdere bewerkingen uit te voeren. 
 
    ![Definitieve validaties van het service-eindpunt beleid maken](./media/virtual-network-service-endpoint-policies-portal/create-sep-review-create.png)
   
 ## <a name="view-endpoint-policies"></a>Eindpunt beleid weer geven 
 
-1. Begin met het typen van *service-eindpunt beleid*in het vak *alle services* in de portal. Selecteer **service-eindpunt beleid**.
-2. Onder **abonnementen**selecteert u uw abonnement en resource groep, zoals wordt weer gegeven in de volgende afbeelding:
+1. Begin met het typen van *service-eindpunt beleid* in het vak *alle services* in de portal. Selecteer **service-eindpunt beleid**.
+2. Onder **abonnementen** selecteert u uw abonnement en resource groep, zoals wordt weer gegeven in de volgende afbeelding:
 
    ![Beleid weer geven](./media/virtual-network-service-endpoint-policies-portal/sep-view.png)
        
@@ -99,7 +99,7 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
 
 - Voordat u een beleid aan een subnet kunt koppelen, moet u een virtueel netwerk en een subnet maken. Raadpleeg het artikel [een Virtual Network maken](./quick-create-portal.md) voor meer informatie.
 
-- Zodra u het virtuele netwerk en het subnet hebt ingesteld, moet u Virtual Network Service-eind punten voor Azure Storage configureren. Selecteer op de Blade Virtual Network **service-eind punten**en selecteer in het volgende deel venster **micro soft. Storage** en selecteer onder **subnetten** het gewenste VNet of subnet
+- Zodra u het virtuele netwerk en het subnet hebt ingesteld, moet u Virtual Network Service-eind punten voor Azure Storage configureren. Selecteer op de Blade Virtual Network **service-eind punten** en selecteer in het volgende deel venster **micro soft. Storage** en selecteer onder **subnetten** het gewenste VNet of subnet
 
 - Nu kunt u het service-eindpunt beleid selecteren in de vervolg keuzelijst van het bovenstaande deel venster als u al een service-eindpunt beleid hebt gemaakt voordat u het service-eind punt voor het subnet configureert, zoals hieronder wordt weer gegeven
 

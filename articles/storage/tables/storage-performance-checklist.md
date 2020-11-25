@@ -10,11 +10,11 @@ ms.date: 10/10/2019
 ms.subservice: tables
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 71b1f3cfa1df86b417c468d56f67cd7fe8d71d73
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316193"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004701"
 ---
 # <a name="performance-and-scalability-checklist-for-table-storage"></a>Controlelijst voor prestaties en schaalbaarheid van Table-opslag
 
@@ -273,16 +273,16 @@ Batchtransacties worden ook wel entiteitsgroepstransacties genoemd in Azure Stor
 
 #### <a name="upsert"></a>Upsert
 
-Gebruik waar mogelijk de tabelbewerkingen voor **Upsert**. Er zijn twee soorten **Upsert** , die beide efficiënter kunnen zijn dan traditionele bewerkingen voor **invoegen** en **bijwerken** :  
+Gebruik waar mogelijk de tabelbewerkingen voor **Upsert**. Er zijn twee soorten **Upsert**, die beide efficiënter kunnen zijn dan traditionele bewerkingen voor **invoegen** en **bijwerken**:  
 
-- **InsertOrMerge** : Gebruik deze bewerking wanneer u een subset van de eigenschappen van de entiteit wilt uploaden, maar niet zeker weet of de entiteit al bestaat. Als de entiteit bestaat, worden met deze aanroep de eigenschappen die zijn opgenomen in de **Upsert** -bewerking bijgewerkt en blijven alle bestaande eigenschappen ongewijzigd. Als de entiteit niet bestaat, wordt de nieuwe entiteit ingevoegd. Dit is vergelijkbaar met het gebruik van projectie in een query, in zoverre dat u alleen de eigenschappen hoeft te uploaden die worden gewijzigd.
-- **InsertOrReplace** : Gebruik deze bewerking wanneer u een geheel nieuwe entiteit wilt uploaden, maar u niet zeker weet of deze al bestaat. Gebruik deze bewerking wanneer u weet dat de zojuist geüploade entiteit volledig juist is, omdat hiermee de oude entiteit volledig wordt overschreven. U wilt bijvoorbeeld de entiteit bijwerken waarin de huidige locatie van een gebruiker is opgeslagen, ongeacht of de toepassing eerder opgeslagen locatiegegevens van de gebruiker bevat. De nieuwe locatie-entiteit is compleet en u hebt dus geen gegevens nodig van een vorige entiteit.
+- **InsertOrMerge**: Gebruik deze bewerking wanneer u een subset van de eigenschappen van de entiteit wilt uploaden, maar niet zeker weet of de entiteit al bestaat. Als de entiteit bestaat, worden met deze aanroep de eigenschappen die zijn opgenomen in de **Upsert**-bewerking bijgewerkt en blijven alle bestaande eigenschappen ongewijzigd. Als de entiteit niet bestaat, wordt de nieuwe entiteit ingevoegd. Dit is vergelijkbaar met het gebruik van projectie in een query, in zoverre dat u alleen de eigenschappen hoeft te uploaden die worden gewijzigd.
+- **InsertOrReplace**: Gebruik deze bewerking wanneer u een geheel nieuwe entiteit wilt uploaden, maar u niet zeker weet of deze al bestaat. Gebruik deze bewerking wanneer u weet dat de zojuist geüploade entiteit volledig juist is, omdat hiermee de oude entiteit volledig wordt overschreven. U wilt bijvoorbeeld de entiteit bijwerken waarin de huidige locatie van een gebruiker is opgeslagen, ongeacht of de toepassing eerder opgeslagen locatiegegevens van de gebruiker bevat. De nieuwe locatie-entiteit is compleet en u hebt dus geen gegevens nodig van een vorige entiteit.
 
 #### <a name="storing-data-series-in-a-single-entity"></a>Gegevensreeksen opslaan in één entiteit
 
 Soms slaat een toepassing een reeks gegevens op die regelmatig allemaal tegelijk moet worden opgehaald: een toepassing kan bijvoorbeeld het CPU-gebruik in de loop van de tijd volgen om een doorlopende grafiek van de gegevens in de afgelopen 24 uur te tekenen. Een manier is om één tabelentiteit per uur te hebben, waarbij elke entiteit een specifiek uur vertegenwoordigt waarin het CPU-gebruik voor dat uur wordt opgeslagen. Voor het uitzetten van deze gegevens moet de toepassing de entiteiten ophalen die de gegevens van de 24 meest recente uren bevatten.  
 
-Het is ook mogelijk dat uw toepassing het CPU-gebruik voor elk uur opslaat als afzonderlijke eigenschap van één entiteit: uw toepassing kan elk uur bijwerken door via één **InsertOrMerge Upsert** -aanroep de waarde voor het meest recente uur bij te werken. Voor het uitzetten van de gegevens hoeft de toepassing slechts één entiteit op te halen in plaats van 24, waardoor u een efficiënte query krijgt. Zie de sectie met de titel [Querybereik](#query-scope) voor meer informatie over de efficiëntie van query's.
+Het is ook mogelijk dat uw toepassing het CPU-gebruik voor elk uur opslaat als afzonderlijke eigenschap van één entiteit: uw toepassing kan elk uur bijwerken door via één **InsertOrMerge Upsert**-aanroep de waarde voor het meest recente uur bij te werken. Voor het uitzetten van de gegevens hoeft de toepassing slechts één entiteit op te halen in plaats van 24, waardoor u een efficiënte query krijgt. Zie de sectie met de titel [Querybereik](#query-scope) voor meer informatie over de efficiëntie van query's.
 
 #### <a name="storing-structured-data-in-blobs"></a>Gestructureerde gegevens opslaan in blobs
 

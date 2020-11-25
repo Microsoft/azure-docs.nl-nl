@@ -14,11 +14,11 @@ caps.latest.revision: 55
 author: tgore03
 ms.author: tagore
 ms.openlocfilehash: 26225442c72fb209bb1ac4cd2bf4777fb39542fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79534368"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005160"
 ---
 # <a name="azure-cloud-services-definition-workerrole-schema"></a>WorkerRole-schema voor Azure Cloud Services definition
 De rol Azure Worker is een rol die nuttig is voor algemene ontwikkeling en kan achtergrond verwerking uitvoeren voor een webrole.
@@ -112,13 +112,13 @@ Het service definitie bestand bevat deze elementen, zoals beschreven in de volge
 
 [FixedPortRange](#FixedPortRange)
 
-[Bewijzen](#Certificates)
+[Certificaten](#Certificates)
 
 [Certificaat](#Certificate)
 
 [Rusland](#Imports)
 
-[Importeren](#Import)
+[Wederinvoer](#Import)
 
 [Runtime](#Runtime)
 
@@ -249,7 +249,7 @@ Het `FixedPort` element is alleen beschikbaar via de Azure SDK-versie 1,3 of hog
 
 In de volgende tabel worden de kenmerken van het `FixedPort` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
 |poort|int|Vereist. De poort voor het interne eind punt. Dit heeft hetzelfde effect als het instellen van de `FixedPortRange` minimum-en maximum waarde op dezelfde poort.<br /><br /> Mogelijke waarden variëren tussen 1 en 65535, inclusief (Azure SDK-versie 1,7 of hoger).|
 
@@ -263,9 +263,9 @@ Het `FixedPortRange` element is alleen beschikbaar via de Azure SDK-versie 1,3 o
 
 In de volgende tabel worden de kenmerken van het `FixedPortRange` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
-|min|int|Vereist. De minimale poort in het bereik. Mogelijke waarden variëren tussen 1 en 65535, inclusief (Azure SDK-versie 1,7 of hoger).|
+|min.|int|Vereist. De minimale poort in het bereik. Mogelijke waarden variëren tussen 1 en 65535, inclusief (Azure SDK-versie 1,7 of hoger).|
 |max|tekenreeks|Vereist. De maximum poort in het bereik. Mogelijke waarden variëren tussen 1 en 65535, inclusief (Azure SDK-versie 1,7 of hoger).|
 
 ##  <a name="certificates"></a><a name="Certificates"></a> Bewijzen
@@ -295,7 +295,7 @@ Het `Import` element is alleen beschikbaar via de Azure SDK-versie 1,3 of hoger.
 
 In de volgende tabel worden de kenmerken van het `Import` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
 |moduleName|tekenreeks|Vereist. De naam van de module die u wilt importeren. Geldige import modules zijn:<br /><br /> -RemoteAccess<br />- RemoteForwarder<br />-Diagnostische gegevens<br /><br /> Met de modules RemoteAccess en RemoteForwarder kunt u uw rolinstantie voor extern bureau blad-verbindingen configureren. Zie [verbinding met extern bureaublad inschakelen](cloud-services-role-enable-remote-desktop-new-portal.md)voor meer informatie.<br /><br /> Met de module diagnostiek kunt u Diagnostische gegevens verzamelen voor een rolinstantie|
 
@@ -306,7 +306,7 @@ Het `Runtime` element is alleen beschikbaar via de Azure SDK-versie 1,3 of hoger
 
 In de volgende tabel worden de kenmerken van het `Runtime` element beschreven:
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
 |executionContext|tekenreeks|Optioneel. Hiermee geeft u de context waarin het Role proces wordt gestart. De standaard context is `limited` .<br /><br /> -   `limited` : Het proces wordt gestart zonder beheerders bevoegdheden.<br />-   `elevated` : Het proces wordt gestart met Administrator bevoegdheden.|
 
@@ -330,7 +330,7 @@ Het `RoleInstanceValue` element geeft het xPath op waaruit de waarde van de vari
 
 In de volgende tabel worden de kenmerken van het `RoleInstanceValue` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
 |XPath|tekenreeks|Optioneel. Locatiepad van de implementatie-instellingen voor het exemplaar. Zie [Configuration Varia bles with XPath](cloud-services-role-config-xpath.md)(Engelstalig) voor meer informatie.<br /><br /> U moet een kenmerk value of een- `RoleInstanceValue` element bevatten.|
 
@@ -347,9 +347,9 @@ Het `NetFxEntryPoint` element geeft het programma op dat moet worden uitgevoerd 
 
 In de volgende tabel worden de kenmerken van het `NetFxEntryPoint` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
-|assemblyName|tekenreeks|Vereist. Het pad en de bestands naam van de assembly met het toegangs punt. Het pad is relatief ten opzichte van de map ** \\ %ROLEROOT%\Approot** (in ** \\ ** `commandLine` wordt aangenomen dat er geen%ROLEROOT%\Approot is opgegeven). **% ROLEROOT%** is een omgevings variabele die wordt onderhouden door Azure en vertegenwoordigt de locatie van de hoofdmap voor uw rol. De map ** \\ %ROLEROOT%\Approot** vertegenwoordigt de toepassingsmap voor uw rol.|
+|assemblyName|tekenreeks|Vereist. Het pad en de bestands naam van de assembly met het toegangs punt. Het pad is relatief ten opzichte van de map **\\ %ROLEROOT%\Approot** (in **\\** `commandLine` wordt aangenomen dat er geen%ROLEROOT%\Approot is opgegeven). **% ROLEROOT%** is een omgevings variabele die wordt onderhouden door Azure en vertegenwoordigt de locatie van de hoofdmap voor uw rol. De map **\\ %ROLEROOT%\Approot** vertegenwoordigt de toepassingsmap voor uw rol.|
 |targetFrameworkVersion|tekenreeks|Vereist. De versie van .NET Framework waarop de assembly is gebouwd. Bijvoorbeeld `targetFrameworkVersion="v4.0"`.|
 
 ##  <a name="programentrypoint"></a><a name="ProgramEntryPoint"></a> ProgramEntryPoint
@@ -360,7 +360,7 @@ Het `ProgramEntryPoint` element geeft het programma op dat moet worden uitgevoer
 
 In de volgende tabel worden de kenmerken van het `ProgramEntryPoint` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
 |commandLine|tekenreeks|Vereist. Het pad, de bestands naam en eventuele opdracht regel argumenten van het programma dat moet worden uitgevoerd. Het pad is relatief ten opzichte van de map **%ROLEROOT%\Approot** ( **%ROLEROOT%\Approot** niet opgeven bij commandline, wordt aangenomen). **% ROLEROOT%** is een omgevings variabele die wordt onderhouden door Azure en vertegenwoordigt de locatie van de hoofdmap voor uw rol. De map **%ROLEROOT%\Approot** vertegenwoordigt de toepassingsmap voor uw rol.<br /><br /> Als het programma wordt beëindigd, wordt de rol gerecycled en wordt het programma doorgaans ingesteld om te worden uitgevoerd, in plaats van een programma dat zojuist wordt gestart en een eindige taak uitvoert.|
 |setReadyOnProcessStart|booleaans|Vereist. Hiermee geeft u op of de rolinstantie wacht totdat het opdracht regel programma een signaal start. Deze waarde moet worden ingesteld op `true` op dit moment. Het instellen van de waarde op `false` is gereserveerd voor toekomstig gebruik.|
@@ -370,7 +370,7 @@ Het `Startup` element beschrijft een verzameling taken die worden uitgevoerd wan
 
 In de volgende tabel wordt het kenmerk van het `Startup` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
 |priority|int|Alleen voor intern gebruik.|
 
@@ -381,7 +381,7 @@ Het `Task` element is alleen beschikbaar via de Azure SDK-versie 1,3 of hoger.
 
 In de volgende tabel worden de kenmerken van het `Task` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
 |commandLine|tekenreeks|Vereist. Een script, zoals een CMD-bestand, dat de opdrachten bevat die moeten worden uitgevoerd. Opstart opdrachten en batch bestanden moeten worden opgeslagen in ANSI-indeling. Bestands indelingen die een byte volgorde markering instellen aan het begin van het bestand, worden niet goed verwerkt.|
 |executionContext|tekenreeks|Hiermee geeft u de context waarin het script wordt uitgevoerd.<br /><br /> -   `limited` [Standaard]: Voer uit met dezelfde bevoegdheden als voor de rol die het proces host.<br />-   `elevated` – Uitvoeren met beheerders bevoegdheden.|
@@ -399,7 +399,7 @@ Het `Content` element is alleen beschikbaar via de Azure SDK-versie 1,5 of hoger
 
 In de volgende tabel worden de kenmerken van het `Content` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
 |doel|tekenreeks|Vereist. De locatie op de virtuele Azure-machine waarop de inhoud is geplaatst. Deze locatie is relatief ten opzichte van de map **%ROLEROOT%\Approot**.|
 
@@ -412,7 +412,7 @@ Het `SourceDirectory` element is alleen beschikbaar via de Azure SDK-versie 1,5 
 
 In de volgende tabel worden de kenmerken van het `SourceDirectory` element beschreven.
 
-| Kenmerk | Type | Beschrijving |
+| Kenmerk | Type | Description |
 | --------- | ---- | ----------- |
 |leertraject|tekenreeks|Vereist. Relatief of absoluut pad van een lokale map waarvan de inhoud wordt gekopieerd naar de virtuele machine van Azure. De uitbrei ding van omgevings variabelen in het mappad wordt ondersteund.|
 

@@ -8,11 +8,11 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 230e158a970f8c815b1575403c013e30749124c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87462017"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005058"
 ---
 # <a name="tutorial-react-to-blob-storage-events-on-iot-edge-preview"></a>Zelf studie: reageren op Blob Storage gebeurtenissen in IoT Edge (preview-versie)
 Dit artikel laat u zien hoe u de Azure Blob Storage kunt implementeren in IoT-module, die als Event Grid Publisher kan fungeren voor het verzenden van gebeurtenissen bij het maken van een BLOB en het verwijderen van een BLOB naar Event Grid.  
@@ -38,14 +38,14 @@ Er zijn verschillende manieren om modules op een IoT Edge apparaat te implemente
 ### <a name="select-your-iot-edge-device"></a>Uw IoT Edge-apparaat selecteren
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com)
-1. Navigeer naar uw IoT Hub.
+1. Ga naar uw IoT Hub.
 1. Selecteer **IOT Edge** in het menu van het gedeelte **Automatic Device Management** . 
 1. Klik op de ID van het doel apparaat in de lijst met apparaten
 1. Selecteer **modules instellen**. Laat de pagina geopend. U gaat verder met de stappen in de volgende sectie.
 
 ### <a name="configure-a-deployment-manifest"></a>Een implementatie manifest configureren
 
-Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. De Azure Portal bevat een wizard die u helpt bij het maken van een implementatie manifest, in plaats van het JSON-document hand matig te bouwen.  Er zijn drie stappen: **modules toevoegen**, **routes opgeven**en de **implementatie controleren**.
+Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. De Azure Portal bevat een wizard die u helpt bij het maken van een implementatie manifest, in plaats van het JSON-document hand matig te bouwen.  Er zijn drie stappen: **modules toevoegen**, **routes opgeven** en de **implementatie controleren**.
 
 ### <a name="add-modules"></a>Modules toevoegen
 
@@ -55,7 +55,7 @@ Een implementatie manifest is een JSON-document waarin wordt beschreven welke mo
 
    * **Naam**: eventgridmodule
    * **Afbeeldings-URI**: `mcr.microsoft.com/azure-event-grid/iotedge:latest`
-   * **Opties**voor het maken van containers:
+   * **Opties** voor het maken van containers:
 
     ```json
         {
@@ -94,7 +94,7 @@ In deze sectie wordt beschreven hoe u een andere IoT-module implementeert die al
 
    * **Naam**: abonnee
    * **Afbeeldings-URI**: `mcr.microsoft.com/azure-event-grid/iotedge-samplesubscriber:latest`
-   * **Opties**voor het maken van containers: geen
+   * **Opties** voor het maken van containers: geen
 1. Klik op **Opslaan**.
 1. Ga door naar de volgende sectie om de Azure Blob Storage-module toe te voegen
 
@@ -110,7 +110,7 @@ In deze sectie wordt beschreven hoe u de Azure Blob Storage-module implementeert
 
    * **Naam**: azureblobstorageoniotedge
    * **Afbeeldings-URI**: mcr.Microsoft.com/Azure-Blob-Storage:Latest
-   * **Opties**voor het maken van containers:
+   * **Opties** voor het maken van containers:
 
    ```json
        {
@@ -144,7 +144,7 @@ In deze sectie wordt beschreven hoe u de Azure Blob Storage-module implementeert
    - Vervang door `<event grid module name>` de naam van uw event grid-module.
    - Vervangen door `<storage mount>` het besturings systeem van de container.
      - Voor Linux-containers, **mijn volume:/blobroot**
-     - Voor Windows-containers is**mijn volume: C:/BlobRoot**
+     - Voor Windows-containers is **mijn volume: C:/BlobRoot**
 
 5. Klik op **Opslaan**.
 6. Klik op **volgende** om door te gaan naar de sectie routes
@@ -213,7 +213,7 @@ Behoud de standaard routes en selecteer **volgende** om door te gaan naar de sec
        ```
 
        >[!NOTE]
-       > De eigenschap **endpointType** geeft aan dat de abonnee een **webhook**is.  De **endpointUrl** geeft de URL aan waar de abonnee naar gebeurtenissen luistert. Deze URL komt overeen met de Azure function-voor beeld die u eerder hebt geïmplementeerd.
+       > De eigenschap **endpointType** geeft aan dat de abonnee een **webhook** is.  De **endpointUrl** geeft de URL aan waar de abonnee naar gebeurtenissen luistert. Deze URL komt overeen met de Azure function-voor beeld die u eerder hebt geïmplementeerd.
 
     2. Voer de volgende opdracht uit om een abonnement voor het onderwerp te maken. Controleer of u de HTTP-status code ziet `200 OK` .
 
@@ -318,13 +318,13 @@ Behoud de standaard routes en selecteer **volgende** om door te gaan naar de sec
             }
     ```
 
-Gefeliciteerd! U hebt de zelf studie voltooid. De volgende secties bevatten informatie over de gebeurtenis eigenschappen.
+Gefeliciteerd U hebt de zelf studie voltooid. De volgende secties bevatten informatie over de gebeurtenis eigenschappen.
 
 ### <a name="event-properties"></a>Gebeurtenis eigenschappen
 
 Hier ziet u de lijst met ondersteunde gebeurtenis eigenschappen en hun typen en beschrijvingen. 
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | onderwerp | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld kan niet worden geschreven. Event Grid biedt deze waarde. |
 | onderwerp | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
@@ -337,7 +337,7 @@ Hier ziet u de lijst met ondersteunde gebeurtenis eigenschappen en hun typen en 
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | api | tekenreeks | De bewerking die de gebeurtenis heeft geactiveerd. Dit kan een van de volgende waarden zijn: <ul><li>De waarden die zijn toegestaan voor BlobCreated zijn: `PutBlob` en `PutBlockList`</li><li>BlobDeleted: toegestane waarden zijn `DeleteBlob` , `DeleteAfterUpload` en `AutoDelete` . <p>De `DeleteAfterUpload` gebeurtenis wordt gegenereerd wanneer de blob automatisch wordt verwijderd, omdat de gewenste eigenschap deleteAfterUpload is ingesteld op True. </p><p>`AutoDelete` Er wordt een gebeurtenis gegenereerd wanneer de blob automatisch wordt verwijderd, omdat de gewenste eigenschaps waarde voor deleteAfterMinutes is verlopen.</p></li></ul>|
 | clientRequestId | tekenreeks | een aanvraag-ID van de client voor de bewerking van de opslag-API. Deze ID kan worden gebruikt om te correleren Azure Storage Diagnostische logboeken met behulp van het veld ' client-request-id ' in de logboeken, en kan worden verschaft in client aanvragen via de header ' x-MS-Client-Request-id '. Zie [logboek indeling](/rest/api/storageservices/storage-analytics-log-format)voor meer informatie. |
@@ -346,7 +346,7 @@ Het gegevens object heeft de volgende eigenschappen:
 | Invoer | tekenreeks | Het opgegeven inhouds type voor de blob. |
 | contentLength | geheel getal | De grootte van de BLOB in bytes. |
 | blobType | tekenreeks | Het type blob. Geldige waarden zijn ' BlockBlob ' of ' PageBlob '. |
-| url | tekenreeks | Het pad naar de blob. <br>Als de client gebruikmaakt van een BLOB-REST API, heeft de URL deze structuur: * \<storage-account-name\> . \<container-name\> / \<file-name\> blob.core.Windows.net/*. <br>Als de client een Data Lake Storage REST API gebruikt, heeft de URL deze structuur: * \<storage-account-name\> . DFS.core.Windows.net/ \<file-system-name\> / \<file-name\> *. |
+| url | tekenreeks | Het pad naar de blob. <br>Als de client gebruikmaakt van een BLOB-REST API, heeft de URL deze structuur: *\<storage-account-name\> . \<container-name\> / \<file-name\> blob.core.Windows.net/*. <br>Als de client een Data Lake Storage REST API gebruikt, heeft de URL deze structuur: *\<storage-account-name\> . DFS.core.Windows.net/ \<file-system-name\> / \<file-name\>*. |
 
 
 ## <a name="next-steps"></a>Volgende stappen

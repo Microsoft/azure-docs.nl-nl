@@ -7,11 +7,11 @@ ms.date: 03/20/2020
 ms.reviewer: dariac
 ms.custom: seodec18
 ms.openlocfilehash: b7730558e2a660b0cf00a5b6962d1e2275dd472c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90984391"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004336"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Continue implementatie naar Azure App Service
 
@@ -51,7 +51,7 @@ Nadat u een broncode beheer service hebt geautoriseerd, configureert u uw app vo
 
 U kunt de ingebouwde kudu-App Service build-server gebruiken om voortdurend te implementeren vanuit GitHub, bitbucket of Azure opslag plaatsen. 
 
-1. Zoek in het [Azure Portal](https://portal.azure.com)naar **app Services**en selecteer vervolgens de app service die u wilt implementeren. 
+1. Zoek in het [Azure Portal](https://portal.azure.com)naar **app Services** en selecteer vervolgens de app service die u wilt implementeren. 
    
 1. Selecteer op de pagina app het menu **implementatie centrum** in het linkermenu.
    
@@ -60,20 +60,20 @@ U kunt de ingebouwde kudu-App Service build-server gebruiken om voortdurend te i
    > [!NOTE]
    > Als u Azure opslag plaatsen wilt gebruiken, moet u ervoor zorgen dat uw Azure DevOps Services-organisatie is gekoppeld aan uw Azure-abonnement. Zie [een Azure DevOps Services-account instellen zodat het kan worden geïmplementeerd in een web-app](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops&preserve-view=true)voor meer informatie.
    
-1. Voor GitHub of Azure opslag plaatsen selecteert u op de pagina **Build** -provider **app service build-service**en selecteert u vervolgens **door gaan**. Bitbucket maakt altijd gebruik van de App Service build-service.
+1. Voor GitHub of Azure opslag plaatsen selecteert u op de pagina **Build** -provider **app service build-service** en selecteert u vervolgens **door gaan**. Bitbucket maakt altijd gebruik van de App Service build-service.
    
    ![Selecteer App Service build-service en selecteer vervolgens door gaan.](media/app-service-continuous-deployment/choose-kudu.png)
    
 1. Op de pagina **configureren** :
    
-   - Voor GitHub, vervolg keuzelijst en selecteer de **organisatie**, **opslag plaats**en **vertakking** die u continu wilt implementeren.
+   - Voor GitHub, vervolg keuzelijst en selecteer de **organisatie**, **opslag plaats** en **vertakking** die u continu wilt implementeren.
      
      > [!NOTE]
-     > Als u geen opslag plaatsen ziet, moet u mogelijk Azure App Service autoriseren in GitHub. Blader naar de GitHub-opslag plaats en ga naar **instellingen**  >  **toepassingen**  >  **geautoriseerde OAuth-apps**. Selecteer **Azure app service**en selecteer vervolgens **verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
+     > Als u geen opslag plaatsen ziet, moet u mogelijk Azure App Service autoriseren in GitHub. Blader naar de GitHub-opslag plaats en ga naar **instellingen**  >  **toepassingen**  >  **geautoriseerde OAuth-apps**. Selecteer **Azure app service** en selecteer vervolgens **verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
      
-   - Selecteer voor bitbucket het bitbucket- **team**, de **opslag plaats**en de **vertakking** die u continu wilt implementeren.
+   - Selecteer voor bitbucket het bitbucket- **team**, de **opslag plaats** en de **vertakking** die u continu wilt implementeren.
      
-   - Selecteer voor Azure opslag plaatsen de **Azure DevOps-organisatie**, **het project**, de **opslag plaats**en de **vertakking** die u continu wilt implementeren.
+   - Selecteer voor Azure opslag plaatsen de **Azure DevOps-organisatie**, **het project**, de **opslag plaats** en de **vertakking** die u continu wilt implementeren.
      
      > [!NOTE]
      > Als uw Azure DevOps-organisatie niet wordt weergegeven, controleert u of deze is gekoppeld aan uw Azure-abonnement. Zie [een Azure DevOps Services-account instellen zodat het kan worden geïmplementeerd in een web-app](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops&preserve-view=true)voor meer informatie.
@@ -104,30 +104,30 @@ Om Azure App Service continue levering te maken met behulp van Azure-pijp lijnen
 
 #### <a name="github--azure-pipelines"></a>GitHub en Azure-pijp lijnen
 
-1. Zoek in het [Azure Portal](https://portal.azure.com)naar **app Services**en selecteer vervolgens de app service die u wilt implementeren. 
+1. Zoek in het [Azure Portal](https://portal.azure.com)naar **app Services** en selecteer vervolgens de app service die u wilt implementeren. 
    
 1. Selecteer op de pagina app het menu **implementatie centrum** in het linkermenu.
 
-1. Selecteer **github** als broncode beheer provider op de pagina **implementatie centrum** en selecteer **door gaan**. Voor **github**kunt u **account wijzigen** selecteren om het geautoriseerde account te wijzigen.
+1. Selecteer **github** als broncode beheer provider op de pagina **implementatie centrum** en selecteer **door gaan**. Voor **github** kunt u **account wijzigen** selecteren om het geautoriseerde account te wijzigen.
 
     :::image type="content" source="media/app-service-continuous-deployment/deployment-center-src-control.png" alt-text="Scherm afbeelding van de pagina App Service Deployment Center.":::
    
 1. Selecteer op de pagina **Build** -provider **Azure-pijp lijnen (preview)** en selecteer vervolgens **door gaan**.
 
-    :::image type="content" source="media/app-service-continuous-deployment/select-build-provider.png" alt-text="Scherm afbeelding van de pagina App Service Deployment Center.":::
+    :::image type="content" source="media/app-service-continuous-deployment/select-build-provider.png" alt-text="Scherm opname van de pagina Deployment Center met Azure-pijp lijnen (preview) geselecteerd.":::
    
-1. Selecteer op de pagina **configureren** , in de sectie **code** , de **organisatie**, de **opslag plaats**en de **vertakking** die u continu wilt implementeren en selecteer **door gaan**.
+1. Selecteer op de pagina **configureren** , in de sectie **code** , de **organisatie**, de **opslag plaats** en de **vertakking** die u continu wilt implementeren en selecteer **door gaan**.
      
      > [!NOTE]
-     > Als u geen opslag plaatsen ziet, moet u mogelijk Azure App Service autoriseren in GitHub. Blader naar de GitHub-opslag plaats en ga naar **instellingen**  >  **toepassingen**  >  **geautoriseerde OAuth-apps**. Selecteer **Azure app service**en selecteer vervolgens **verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
+     > Als u geen opslag plaatsen ziet, moet u mogelijk Azure App Service autoriseren in GitHub. Blader naar de GitHub-opslag plaats en ga naar **instellingen**  >  **toepassingen**  >  **geautoriseerde OAuth-apps**. Selecteer **Azure app service** en selecteer vervolgens **verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
        
     Geef in de sectie **Build** de Azure DevOps-organisatie, het project, de taal structuur op die door Azure-pijp lijnen moet worden gebruikt om Build-taken uit te voeren, en selecteer vervolgens **door gaan**.
 
-   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Scherm afbeelding van de pagina App Service Deployment Center.":::
+   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Scherm afbeelding van de sectie build met voorbeeld tekst in de velden.":::
 
 1. Nadat u de build-provider hebt geconfigureerd, controleert u de instellingen op de pagina **samen vatting** en selecteert u vervolgens **volt ooien**.
 
-   :::image type="content" source="media/app-service-continuous-deployment/summary.png" alt-text="Scherm afbeelding van de pagina App Service Deployment Center.":::
+   :::image type="content" source="media/app-service-continuous-deployment/summary.png" alt-text="Scherm afbeelding van de pagina implementatie centrum met de knop voor het vernieuwen van gegevens en implementaties.":::
    
 1. Nieuwe door voeringen in de geselecteerde opslag plaats en vertakking worden nu doorlopend geïmplementeerd in uw App Service. U kunt de door voeringen en implementaties volgen op de pagina **implementatie centrum** .
    
@@ -135,30 +135,30 @@ Om Azure App Service continue levering te maken met behulp van Azure-pijp lijnen
 
 #### <a name="azure-repos--azure-pipelines"></a>Azure opslag plaatsen + Azure-pijp lijnen
 
-1. Zoek in het [Azure Portal](https://portal.azure.com)naar **app Services**en selecteer vervolgens de app service die u wilt implementeren. 
+1. Zoek in het [Azure Portal](https://portal.azure.com)naar **app Services** en selecteer vervolgens de app service die u wilt implementeren. 
    
 1. Selecteer op de pagina app het menu **implementatie centrum** in het linkermenu.
 
 1. Selecteer **Azure opslag plaatsen** als broncode beheer provider op de pagina **implementatie centrum** en selecteer **door gaan**.
 
-    :::image type="content" source="media/app-service-continuous-deployment/deployment-center-src-control.png" alt-text="Scherm afbeelding van de pagina App Service Deployment Center.":::
+    :::image type="content" source="media/app-service-continuous-deployment/deployment-center-src-control.png" alt-text="Scherm afbeelding van de pagina Deployment Center met de selecties voor continue implementatie (CI/CD).":::
 
 1. Selecteer op de pagina **Build** -provider **Azure-pijp lijnen (preview)** en selecteer vervolgens **door gaan**.
 
-    :::image type="content" source="media/app-service-continuous-deployment/azure-pipelines.png" alt-text="Scherm afbeelding van de pagina App Service Deployment Center.":::
+    :::image type="content" source="media/app-service-continuous-deployment/azure-pipelines.png" alt-text="Scherm afbeelding van het implementatie centrum met Azure-pijp lijnen (preview).":::
 
-1. Selecteer op de pagina **configureren** , in de sectie **code** , de **organisatie**, de **opslag plaats**en de **vertakking** die u continu wilt implementeren en selecteer **door gaan**.
+1. Selecteer op de pagina **configureren** , in de sectie **code** , de **organisatie**, de **opslag plaats** en de **vertakking** die u continu wilt implementeren en selecteer **door gaan**.
 
    > [!NOTE]
    > Als uw bestaande Azure DevOps-organisatie niet wordt weer gegeven, moet u deze mogelijk koppelen aan uw Azure-abonnement. Zie [uw CD release-pijp lijn definiëren](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps#cd)voor meer informatie.
 
    Geef in de sectie **Build** de Azure DevOps-organisatie, het project, de taal structuur op die door Azure-pijp lijnen moet worden gebruikt om Build-taken uit te voeren, en selecteer vervolgens **door gaan**.
 
-   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Scherm afbeelding van de pagina App Service Deployment Center.":::
+   :::image type="content" source="media/app-service-continuous-deployment/build-configure.png" alt-text="Scherm afbeelding van de sectie build waarin de velden Azure DevOps Organization en project worden weer gegeven die met voor beelden zijn gevuld.":::
 
 1. Nadat u de build-provider hebt geconfigureerd, controleert u de instellingen op de pagina **samen vatting** en selecteert u vervolgens **volt ooien**.  
      
-   :::image type="content" source="media/app-service-continuous-deployment/summary-azure-pipelines.png" alt-text="Scherm afbeelding van de pagina App Service Deployment Center.":::
+   :::image type="content" source="media/app-service-continuous-deployment/summary-azure-pipelines.png" alt-text="Scherm afbeelding met de geselecteerde instellingen op de pagina samen vatting.":::
 
 1. Nieuwe door voeringen in de geselecteerde opslag plaats en vertakking worden nu doorlopend geïmplementeerd in uw App Service. U kunt de door voeringen en implementaties volgen op de pagina **implementatie centrum** .
 

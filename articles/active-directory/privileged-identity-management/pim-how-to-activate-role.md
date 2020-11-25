@@ -15,11 +15,11 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 38992c15c23216aa81cda566a333d8e45f90b17e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369842"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004684"
 ---
 # <a name="activate-my-azure-ad-roles-in-pim"></a>Mijn Microsoft Azure AD-rollen activeren in PIM
 
@@ -48,7 +48,7 @@ Wanneer u een Azure AD-rol wilt aannemen, kunt u activering aanvragen door **mij
 
 1. Open **Azure AD privileged Identity Management**. Zie voor meer informatie over het toevoegen van de Privileged Identity Management tegel aan uw dash board [beginnen met privileged Identity Management](pim-getting-started.md).
 
-1. Selecteer **mijn rollen**en selecteer vervolgens **Azure AD-rollen** om een lijst met uw in aanmerking komende Azure AD-rollen weer te geven.
+1. Selecteer **mijn rollen** en selecteer vervolgens **Azure AD-rollen** om een lijst met uw in aanmerking komende Azure AD-rollen weer te geven.
 
     ![Pagina mijn rollen met rollen die u kunt activeren](./media/pim-how-to-activate-role/my-roles.png)
 

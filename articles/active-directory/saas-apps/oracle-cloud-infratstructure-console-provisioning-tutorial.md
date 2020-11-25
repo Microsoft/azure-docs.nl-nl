@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: Zhchia
 ms.openlocfilehash: 92aeedd25a4a60b49de54aaaa90ee4a31490c444
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359830"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004378"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Zelfstudie: Oracle Cloud Infrastructure-console configureren voor automatische inrichting van gebruikers
 

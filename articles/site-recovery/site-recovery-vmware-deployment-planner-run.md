@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: ramamill
 ms.openlocfilehash: 05d260de726c62c130a58938c2a2c9fa2440a96d
-ms.sourcegitcommit: 7a7b6c7ac0aa9dac678c3dfd4b5bcbc45dc030ca
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93186719"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004718"
 ---
 # <a name="run-the-deployment-planner-for-vmware-disaster-recovery"></a>De Deployment Planner voor nood herstel van VMware uitvoeren
 Dit artikel is de gebruikershandleiding voor de Azure Site Recovery-implementatieplanner voor productie-installaties van het type VMware-naar-Azure.
@@ -86,7 +86,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 |-Port|(Optioneel) Poortnummer om verbinding te maken met de vCenter-/ESXi-host. De standaardpoort is 443.|
 |-Protocol| (Optioneel) Duidt het protocol aan dat 'http' of 'https' is, om verbinding te maken met vCenter. Het standaardprotocol is https.|
 | -StorageAccountName | (Optioneel) De naam van het opslagaccount dat wordt gebruikt om de bereikbare doorvoer te vinden voor gegevensreplicatie van on-premises naar Azure. Het hulpprogramma uploadt testgegevens naar dit opslagaccount om de doorvoer te berekenen. Het opslagaccount moet v1 (GPv1) voor algemene doeleinden zijn. |
-| -StorageAccountKey | (Optioneel) De sleutel die wordt gebruikt voor toegang tot het opslagaccount. Ga naar Azure Portal > Opslagaccounts > < *naam van opslagaccount* > > Instellingen > Toegangssleutels > Key1. |
+| -StorageAccountKey | (Optioneel) De sleutel die wordt gebruikt voor toegang tot het opslagaccount. Ga naar Azure Portal > Opslagaccounts > <*naam van opslagaccount*> > Instellingen > Toegangssleutels > Key1. |
 | -Environment | (optioneel) Dit is uw doelomgeving voor het Azure Storage-account. Dit kan een van de volgende drie waarden zijn: AzureCloud, AzureUSGovernment, AzureChinaCloud. De standaardwaarde is AzureCloud. Gebruik de para meter wanneer uw Azure-doel regio een Azure-Amerikaanse overheid of een Azure-China 21Vianet is. |
 
 
@@ -165,11 +165,11 @@ Nadat de profilering is voltooid, kunt u het hulpprogramma uitvoeren in de modus
 |-Protocol|(Optioneel) Duidt het protocol aan dat 'http' of 'https' is, om verbinding te maken met vCenter. Het standaardprotocol is https.|
 | -DesiredRPO | (Optioneel) Het gewenste beoogde herstelpunt (Recovery Point Objective [RPO]) in minuten. Standaard is dit 15 minuten.|
 | -Bandwidth | De bandbreedte in Mbps. De parameter voor het berekenen van de RPO die voor de opgegeven bandbreedte kan worden bereikt. |
-| -StartDate | (Optioneel) De begindatum en -tijd in de notatie MM-DD-JJJJ:UU:MM (in 24-uursindeling). *Start date* moet worden opgegeven in combi natie met *EndDate* . Het rapport wordt dan gegenereerd voor de geprofileerde gegevens die zijn verzameld tussen StartDate en EndDate. |
-| -EndDate | (Optioneel) De einddatum en -tijd in de notatie MM-DD-JJJJ:UU:MM (in 24 uursindeling). *EndDate* moet worden opgegeven, samen met *start date* . Het rapport wordt dan gegenereerd voor de geprofileerde gegevens die zijn verzameld tussen StartDate en EndDate. |
+| -StartDate | (Optioneel) De begindatum en -tijd in de notatie MM-DD-JJJJ:UU:MM (in 24-uursindeling). *Start date* moet worden opgegeven in combi natie met *EndDate*. Het rapport wordt dan gegenereerd voor de geprofileerde gegevens die zijn verzameld tussen StartDate en EndDate. |
+| -EndDate | (Optioneel) De einddatum en -tijd in de notatie MM-DD-JJJJ:UU:MM (in 24 uursindeling). *EndDate* moet worden opgegeven, samen met *start date*. Het rapport wordt dan gegenereerd voor de geprofileerde gegevens die zijn verzameld tussen StartDate en EndDate. |
 | -GrowthFactor | (Optioneel) De groeifactor, uitgedrukt als een percentage. De standaardwaarde is 30 procent. |
 | -UseManagedDisks | (Optioneel) UseManagedDisks - Ja/Nee. Standaard is Ja. Het aantal virtuele machines dat kan worden ondergebracht in een enkel opslagaccount, wordt berekend afgaande op het feit of de Failover/Test-testfailover van virtuele machines is uitgevoerd op een beheerde schijf in plaats van op een niet-beheerde schijf. |
-|-SubscriptionId |(Optioneel) De abonnement-GUID. Houd er rekening mee dat deze para meter is vereist wanneer u het rapport met kosten ramingen wilt genereren met de nieuwste prijs op basis van uw abonnement, de aanbieding die aan uw abonnement is gekoppeld en voor uw specifieke Azure-doel regio in de **opgegeven valuta** .|
+|-SubscriptionId |(Optioneel) De abonnement-GUID. Houd er rekening mee dat deze para meter is vereist wanneer u het rapport met kosten ramingen wilt genereren met de nieuwste prijs op basis van uw abonnement, de aanbieding die aan uw abonnement is gekoppeld en voor uw specifieke Azure-doel regio in de **opgegeven valuta**.|
 |-TargetRegion|(Optioneel) De Azure-regio waarop de replicatie is gericht. Omdat er voor Azure verschillende kosten per regio worden berekend, moet u voor het genereren van dit rapport deze parameter met een specifieke Azure-doelregio gebruiken.<br>De standaardwaarde is WestUS2, of de laatst gebruikte doelregio.<br>Raadpleeg de lijst met [ondersteunde doelregio's](site-recovery-vmware-deployment-planner-cost-estimation.md#supported-target-regions).|
 |-OfferId|(Optioneel) De aanbieding is gekoppeld aan het vermelde abonnement. De standaardwaarde is MS-AZR-0003P (betalen naar gebruik).|
 |-Currency|(Optioneel) De valuta waarin de kosten in het gegenereerde rapport worden weergegeven. Standaard is Amerikaanse Dollar ($) of de laatst gebruikte valuta.<br>Raadpleeg de lijst met [ondersteunde valuta's](site-recovery-vmware-deployment-planner-cost-estimation.md#supported-currencies).|
@@ -269,7 +269,7 @@ Open een opdrachtregelconsole en ga naar de map met het hulpprogramma voor de Si
 |-Virtualization|Geef het type virtualisatie op (VMware of Hyper-V).|
 | -Directory | (Optioneel) De UNC-directory of de lokale directory waar de geprofileerde gegevens (bestanden die tijdens de profilering zijn gegenereerd) worden opgeslagen. Deze gegevens zijn vereist voor het genereren van het rapport. Als u geen directory opgeeft, wordt de directory 'ProfiledData' gebruikt. |
 | -StorageAccountName | De naam van het opslagaccount dat wordt gebruikt om de bandbreedte te bepalen die wordt gebruikt voor gegevensreplicatie van on-premises naar Azure. Het hulpprogramma uploadt testgegevens naar dit opslagaccount om de gebruikte bandbreedte te bepalen. Het opslagaccount moet v1 (GPv1) voor algemene doeleinden zijn.|
-| -StorageAccountKey | De sleutel die wordt gebruikt voor toegang tot het opslagaccount. Ga naar Azure Portal > Opslagaccounts > < *naam van het opslagaccount* > > Instellingen > Toegangssleutels > Key1 (of primaire toegangssleutel voor klassieke opslagaccount). |
+| -StorageAccountKey | De sleutel die wordt gebruikt voor toegang tot het opslagaccount. Ga naar Azure Portal > Opslagaccounts > <*naam van het opslagaccount*> > Instellingen > Toegangssleutels > Key1 (of primaire toegangssleutel voor klassieke opslagaccount). |
 | -VMListFile | Het bestand met de lijst met virtuele machines die moeten worden geprofileerd voor het berekenen van de gebruikte bandbreedte. Het bestandspad kan absoluut of relatief zijn. Het bestand moet per regel één naam of IP-adres van een virtuele machine bevatten. De namen van de virtuele machines in het bestand moeten identiek zijn met de namen van de virtuele machine op de vCenter-server of vSphere ESXi-host.<br>Het bestand ProfileVMList bevat bijvoorbeeld de volgende virtuele machines:<ul><li>VM_A</li><li>10.150.29.110</li><li>VM_B</li></ul>|
 | -Environment | (optioneel) Dit is uw doelomgeving voor het Azure Storage-account. Dit kan een van de volgende drie waarden zijn: AzureCloud, AzureUSGovernment, AzureChinaCloud. De standaardwaarde is AzureCloud. Gebruik de para meter wanneer uw Azure-doel regio een Azure-Amerikaanse overheid of een Azure-China 21Vianet is. |
 

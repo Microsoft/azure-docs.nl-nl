@@ -5,20 +5,20 @@ author: ginamr
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 11/23/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 8e440d9e1be8508908336a5e9f90394e310c8562
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 2fca6e94f61ff4d21886bf81a56afa032c8773c1
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93335174"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96004446"
 ---
 # <a name="st_intersects-azure-cosmos-db"></a>ST_INTERSECTS (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
- Retourneert een booleaanse expressie die aangeeft of het geojson-object (punt, veelhoek of lines Tring) dat is opgegeven in het eerste argument, de geojson (punt, veelhoek of lines Tring) in het tweede argument INTERSECT.  
+ Retourneert een booleaanse expressie die aangeeft of het geojson-object (Point, veelhoek, multiveelhoek of lines Tring) dat is opgegeven in het eerste argument, de geojson (Point, veelhoek, multiveelhoek of lines Tring) in het tweede argument INTERSECT.  
   
 ## <a name="syntax"></a>Syntaxis
   

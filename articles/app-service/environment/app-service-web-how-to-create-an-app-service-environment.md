@@ -8,11 +8,11 @@ ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 543050bc899c257c4ad5e0d0c399a1de6f0f58f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86220572"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005199"
 ---
 # <a name="how-to-create-an-app-service-environment-v1"></a>Een App Service Environment v1 maken 
 
@@ -28,7 +28,7 @@ Het is belang rijk dat u op de hoogte bent van de dingen die u niet kunt wijzige
 
 * Locatie
 * Abonnement
-* Resource Group
+* Resourcegroep
 * Gebruikte VNet
 * Subnet gebruikt 
 * Grootte van subnet
@@ -36,7 +36,7 @@ Het is belang rijk dat u op de hoogte bent van de dingen die u niet kunt wijzige
 Bij het kiezen van een VNet en het opgeven van een subnet, moet u ervoor zorgen dat het groot genoeg is voor toekomstige groei. 
 
 ### <a name="creating-an-app-service-environment-v1"></a>Een App Service Environment v1 maken
-Als u een app service Environment v1 wilt maken, kunt u in de Azure Marketplace zoeken naar ***app service Environment v1***of door gaan met het **maken van een resource**  ->  **Web en mobiel**  ->  **app service Environment**. Een ASEv1 maken:
+Als u een app service Environment v1 wilt maken, kunt u in de Azure Marketplace zoeken naar ***app service Environment v1** _ of door gaan _ *een resource maken**-> **Web en mobiel**  ->  **app service Environment**. Een ASEv1 maken:
 
 1. Geef de naam van uw ASE op. De naam die u opgeeft voor de ASE wordt gebruikt voor de apps die zijn gemaakt in de ASE. Als de naam van de ASE appsvcenvdemo is, is de naam van het subdomein: *appsvcenvdemo.p.azurewebsites.net*. Als u een app hebt gemaakt met de naam *mytestapp*, is deze beschikbaar op *mytestapp.appsvcenvdemo.p.azurewebsites.net*. U kunt geen witruimte gebruiken in de naam van uw ASE. Als u hoofd letters in de naam gebruikt, wordt de domein naam de totale kleine letters versie van die naam. Als u een ILB gebruikt, wordt uw ASE-naam niet gebruikt in uw subdomein, maar wordt in plaats daarvan expliciet aangegeven tijdens het maken van ASE.
    

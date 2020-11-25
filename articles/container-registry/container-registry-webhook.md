@@ -4,11 +4,11 @@ description: Meer informatie over het gebruik van webhooks om gebeurtenissen te 
 ms.topic: article
 ms.date: 05/24/2019
 ms.openlocfilehash: 1db1098da81e6cf9ecb262c99f705b77af2efd26
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91253391"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004480"
 ---
 # <a name="using-azure-container-registry-webhooks"></a>Azure Container Registry-webhooks gebruiken
 
@@ -23,9 +23,9 @@ Zie [Azure container Registry webhook-schema verwijzing](container-registry-webh
 
 ## <a name="create-webhook---azure-portal"></a>Webhook-Azure Portal maken
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Navigeer naar het container register waarin u een webhook wilt maken.
-1. Onder **Services**selecteert u **webhooks**.
+1. Onder **Services** selecteert u **webhooks**.
 1. Selecteer **toevoegen** op de werk balk van de webhook.
 1. Voltooi het formulier *webhook maken* met de volgende gegevens:
 
@@ -58,7 +58,7 @@ az acr webhook create --registry mycontainerregistry --name myacrwebhook01 --act
 Voordat u de webhook gebruikt, kunt u deze testen met de knop **ping** . Ping verzendt een algemene POST-aanvraag naar het opgegeven eind punt en registreert het antwoord. Met de functie Ping kunt u controleren of u de webhook juist hebt geconfigureerd.
 
 1. Selecteer de webhook die u wilt testen.
-2. Selecteer **ping**in de bovenste werk balk.
+2. Selecteer **ping** in de bovenste werk balk.
 3. Controleer het antwoord van het eind punt in de kolom **HTTP-status** .
 
 ![Gebruikers interface voor het maken van ACR-webhooks in de Azure Portal](./media/container-registry-webhook/webhook-02.png)

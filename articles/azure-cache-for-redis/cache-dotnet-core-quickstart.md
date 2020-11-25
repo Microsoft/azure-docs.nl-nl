@@ -9,11 +9,11 @@ ms.custom: devx-track-csharp, mvc
 ms.topic: quickstart
 ms.date: 06/18/2020
 ms.openlocfilehash: 945d4a3d2bba84bf8f5973fd8dec092c66794c11
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077078"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004293"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-in-net-core"></a>Quickstart: Azure Cache voor Redis in .NET Core gebruiken
 
@@ -29,7 +29,7 @@ In deze quickstart neemt u Azure Cache voor Redis op in een .NET Core-app voor t
 
 [!INCLUDE [redis-cache-access-keys](../../includes/redis-cache-access-keys.md)]
 
-Noteer de **hostnaam** en de **primaire** toegangssleutel. U hebt deze waarden later nodig om het *CacheConnection* -geheim samen te stellen.
+Noteer de **hostnaam** en de **primaire** toegangssleutel. U hebt deze waarden later nodig om het *CacheConnection*-geheim samen te stellen.
 
 
 
@@ -82,7 +82,7 @@ Voer in het opdrachtvenster de volgende opdracht uit om een nieuw geheim met de 
 dotnet user-secrets set CacheConnection "<cache name>.redis.cache.windows.net,abortConnect=false,ssl=true,password=<primary-access-key>"
 ```
 
-Voeg de volgende `using`-instructie toe aan *Program.cs* :
+Voeg de volgende `using`-instructie toe aan *Program.cs*:
 
 ```csharp
 using Microsoft.Extensions.Configuration;
@@ -107,18 +107,18 @@ private static void InitializeConfiguration()
 
 In deze sectie configureert u de consoletoepassing voor het gebruik van de client [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) voor .NET.
 
-Voer in het opdrachtvenster de volgende opdracht uit in de projectmap *Redistest* :
+Voer in het opdrachtvenster de volgende opdracht uit in de projectmap *Redistest*:
 
 ```
 dotnet add package StackExchange.Redis
 ```
 
-Zodra de installatie is voltooid, kan de *StackExchange.Redis* -cacheclient met uw project worden gebruikt.
+Zodra de installatie is voltooid, kan de *StackExchange.Redis*-cacheclient met uw project worden gebruikt.
 
 
 ## <a name="connect-to-the-cache"></a>Verbinding maken met de cache
 
-Voeg de volgende `using`-instructie toe aan *Program.cs* :
+Voeg de volgende `using`-instructie toe aan *Program.cs*:
 
 ```csharp
 using StackExchange.Redis;
@@ -146,7 +146,7 @@ public static ConnectionMultiplexer Connection
 
 Deze benadering om een exemplaar van `ConnectionMultiplexer` in uw toepassing te delen, gebruikt een statische eigenschap die een verbonden exemplaar retourneert. De code biedt een thread-veilige manier om slechts één verbonden exemplaar van `ConnectionMultiplexer` te initialiseren. `abortConnect` is ingesteld op false. Dat betekent dat de aanroep slaagt, zelfs als er geen verbinding is gemaakt met de Azure Cache voor Redis. Een belangrijke functie van `ConnectionMultiplexer` is dat deze de verbinding met de cache automatisch herstelt als het netwerkprobleem of de andere oorzaken zijn opgelost.
 
-De waarde van het *CacheConnection* -geheim kan worden geopend met behulp van de configuratieprovider van Secret Manager geheim en kan worden gebruikt als wachtwoordparameter.
+De waarde van het *CacheConnection*-geheim kan worden geopend met behulp van de configuratieprovider van Secret Manager geheim en kan worden gebruikt als wachtwoordparameter.
 
 ## <a name="executing-cache-commands"></a>Cache-opdrachten uitvoeren
 
@@ -228,13 +228,13 @@ Voer de volgende opdracht uit om het pakket *Newtonsoft.json* toe te voegen aan 
 dotnet add package Newtonsoft.json
 ```
 
-Voeg de volgende `using`-instructie toe aan *Program.cs* :
+Voeg de volgende `using`-instructie toe aan *Program.cs*:
 
 ```csharp
 using Newtonsoft.Json;
 ```
 
-Voeg de volgende `Employee`-klassedefinitie toe aan *Program.cs* :
+Voeg de volgende `Employee`-klassedefinitie toe aan *Program.cs*:
 
 ```csharp
 class Employee

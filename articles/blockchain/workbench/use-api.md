@@ -5,11 +5,11 @@ ms.date: 03/05/2020
 ms.topic: how-to
 ms.reviewer: brendal
 ms.openlocfilehash: 696f1f2f96034f7a044f6a39182774c02804518f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87003063"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004837"
 ---
 # <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>De preview-versie van Azure Block Chain Workbench gebruiken REST API
 
@@ -19,12 +19,12 @@ De preview-versie van Azure Block Chain Workbench REST API biedt ontwikkel aars 
 
 Block Chain Workbench-Api's worden geopend via een eind punt voor uw implementatie. De URL van het API-eind punt ophalen voor uw implementatie:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Selecteer **resource groepen**in het navigatie deel venster aan de linkerkant.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Selecteer **resource groepen** in het navigatie deel venster aan de linkerkant.
 1. Kies de resource groep met de naam van uw geïmplementeerde Block Chain Workbench.
 1. Selecteer de kolomkop **type** om de lijst alfabetisch te sorteren op type.
 1. Er zijn twee resources met het type **app service**. Selecteer de resource van het type **app service** *met* het achtervoegsel-API.
-1. Kopieer in het **overzicht**van app service de **URL** -waarde, die de URL van het API-eind punt vertegenwoordigt naar uw geïmplementeerde Block Chain Workbench.
+1. Kopieer in het **overzicht** van app service de **URL** -waarde, die de URL van het API-eind punt vertegenwoordigt naar uw geïmplementeerde Block Chain Workbench.
 
     ![URL van app Service API-eind punt](media/use-api/app-service-api.png)
 

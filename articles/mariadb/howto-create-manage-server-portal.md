@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.openlocfilehash: ade70c884a3ef01db45273e4789f34b629473661
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537982"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005024"
 ---
 # <a name="manage-an-azure-database-for-mariadb-server-using-the-azure-portal"></a>Een Azure Database for MariaDB-server beheren met behulp van de Azure Portal
 Dit artikel laat u zien hoe u uw Azure Database for MariaDB-servers kunt beheren. Beheer taken zijn onder andere berekening en opslag schalen, beheerders wachtwoord opnieuw instellen en server details weer geven.
@@ -32,7 +32,7 @@ U kunt schalen van Algemeen naar geoptimaliseerd voor geheugen en vice versa. Wi
 
 1. Selecteer uw server in de Azure Portal. Selecteer de **prijs categorie** die u in de sectie **instellingen** bevindt.
 
-2. Selecteer **Algemeen** of **geoptimaliseerd geheugen** , afhankelijk van wat u wilt schalen. 
+2. Selecteer **Algemeen** of **geoptimaliseerd geheugen**, afhankelijk van wat u wilt schalen. 
 
     ![Scherm afbeelding toont de Azure Portal waarvoor de prijs categorie is geselecteerd en de waarde voor geoptimaliseerd geheugen is geselecteerd.](./media/howto-create-manage-server-portal/change-pricing-tier.png)
 

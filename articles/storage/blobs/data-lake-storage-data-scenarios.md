@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/14/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 6e183a1e8cac8eec2806a35603c40a44aadac502
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eea7fb073cdf99ee1f4257f6824375a6502a4fad
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84193510"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95913620"
 ---
 # <a name="using-azure-data-lake-storage-gen2-for-big-data-requirements"></a>Azure Data Lake Storage Gen2 gebruiken voor big data vereisten
 
@@ -27,7 +27,7 @@ Er zijn vier belang rijke fasen in het big data verwerken:
 
 In dit artikel worden de opties en hulpprogram ma's voor elke verwerkings fase gemarkeerd.
 
-Voor een volledige lijst met Azure-Services die u kunt gebruiken met Azure Data Lake Storage Gen2 raadpleegt u [Azure data Lake Storage integreren met Azure-Services](data-lake-storage-integrate-with-azure-services.md)
+Voor een volledige lijst met Azure-Services die u kunt gebruiken met Azure Data Lake Storage Gen2 raadpleegt u [Azure data Lake Storage integreren met Azure-Services](./data-lake-storage-supported-azure-services.md)
 
 ## <a name="ingest-the-data-into-data-lake-storage-gen2"></a>De gegevens opnemen in Data Lake Storage Gen2
 
@@ -54,8 +54,8 @@ Hier volgt een lijst met hulpprogram ma's die u kunt gebruiken om gestreamde geg
 
 |Hulpprogramma | Hulp |
 |---|--|
-|Azure Stream Analytics|[Snelstart: Een Stream Analytics-taak maken via Azure Portal](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-portal) <br> [Uitgaand naar Azure Data Lake Gen2](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-define-outputs#blob-storage-and-azure-data-lake-gen2)|
-|Azure HDInsight Storm | [Schrijven naar Apache Hadoop HDFS van Apache Storm op HDInsight](https://docs.microsoft.com/azure/hdinsight/storm/apache-storm-write-data-lake-store) |
+|Azure Stream Analytics|[Snelstart: Een Stream Analytics-taak maken via Azure Portal](../../stream-analytics/stream-analytics-quick-create-portal.md) <br> [Uitgaand naar Azure Data Lake Gen2](../../stream-analytics/stream-analytics-define-outputs.md)|
+|Azure HDInsight Storm | [Schrijven naar Apache Hadoop HDFS van Apache Storm op HDInsight](../../hdinsight/storm/apache-storm-write-data-lake-store.md) |
 
 ### <a name="relational-data"></a>Relationele gegevens
 
@@ -65,7 +65,7 @@ Hier volgt een lijst met hulpprogram ma's die u kunt gebruiken voor het opnemen 
 
 |Hulpprogramma | Hulp |
 |---|--|
-|Azure Data Factory | [Kopieeractiviteit in Azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-overview) |
+|Azure Data Factory | [Kopieeractiviteit in Azure Data Factory](../../data-factory/copy-activity-overview.md) |
 
 ### <a name="web-server-log-data-upload-using-custom-applications"></a>Webserver logboek gegevens (uploaden met aangepaste toepassingen)
 
@@ -75,8 +75,8 @@ Hier volgt een lijst met hulpprogram ma's die u kunt gebruiken om webserver logb
 
 |Hulpprogramma | Hulp |
 |---|--|
-|Azure Data Factory | [Kopieeractiviteit in Azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-overview)  |
-|Azure CLI|[Azure-CLI](data-lake-storage-directory-file-acl-cli.md)|
+|Azure Data Factory | [Kopieeractiviteit in Azure Data Factory](../../data-factory/copy-activity-overview.md)  |
+|Azure CLI|[Azure CLI](data-lake-storage-directory-file-acl-cli.md)|
 |Azure PowerShell|[Azure PowerShell](data-lake-storage-directory-file-acl-powershell.md)|
 
 Voor het uploaden van webserver-logboek gegevens, en voor het uploaden van andere soorten gegevens (bijvoorbeeld Social gevoel-gegevens), is het een goede benadering om uw eigen aangepaste scripts/toepassingen te schrijven, omdat u hiermee de flexibiliteit hebt om uw gegevens te uploaden die deel uitmaken van uw grotere big data-toepassing. In sommige gevallen kan deze code de vorm hebben van een script of een eenvoudig opdracht regel programma. In andere gevallen kan de code worden gebruikt voor de integratie van big data verwerking in een bedrijfs toepassing of oplossing.
@@ -89,9 +89,9 @@ Hier volgt een lijst met hulpprogram ma's die u kunt gebruiken om gegevens op te
 
 |Hulpprogramma | Hulp |
 |---|--|
-|Apache DistCp | [Gebruik DistCp om gegevens te kopiëren tussen Azure Storage blobs en Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-distcp) |
-|Hulpprogramma AzCopy | [Gegevens overdragen met de AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10) |
-|Azure Data Factory | [Gegevens kopiëren van of naar Azure Data Lake Storage Gen2 met behulp van Azure Data Factory](https://docs.microsoft.com/azure/data-factory/load-azure-data-lake-storage-gen2) |
+|Apache DistCp | [Gebruik DistCp om gegevens te kopiëren tussen Azure Storage blobs en Azure Data Lake Storage Gen2](./data-lake-storage-use-distcp.md) |
+|Hulpprogramma AzCopy | [Gegevens overdragen met de AzCopy](../common/storage-use-azcopy-v10.md) |
+|Azure Data Factory | [Gegevens kopiëren van of naar Azure Data Lake Storage Gen2 met behulp van Azure Data Factory](../../data-factory/load-azure-data-lake-storage-gen2.md) |
 
 ### <a name="data-stored-in-on-premises-or-iaas-hadoop-clusters"></a>Gegevens die zijn opgeslagen in on-premises of IaaS Hadoop-clusters
 
@@ -118,12 +118,12 @@ Hier volgt een lijst met hulpprogram ma's die u kunt gebruiken om taken voor geg
 
 |Hulpprogramma | Hulp |
 |---|--|
-|Azure HDInsight | [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) |
-|Azure Databricks | [Azure Data Lake Storage Gen2](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html)<br><br>[Snelstartgids: gegevens in Azure Data Lake Storage Gen2 analyseren met behulp van Azure Databricks](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-databricks-account?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)<br><br>[Zelfstudie: Gegevens extraheren, transformeren en laden met behulp van Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Azure HDInsight | [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md) |
+|Azure Databricks | [Azure Data Lake Storage Gen2](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html)<br><br>[Snelstartgids: gegevens in Azure Data Lake Storage Gen2 analyseren met behulp van Azure Databricks](./data-lake-storage-quickstart-create-databricks-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)<br><br>[Zelfstudie: Gegevens extraheren, transformeren en laden met behulp van Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 
 ## <a name="visualize-the-data"></a>De gegevens visualiseren
 
-Gebruik de Power BI-connector om visuele weer gaven te maken van gegevens die zijn opgeslagen in Data Lake Storage Gen2. Zie [gegevens analyseren in azure data Lake Storage Gen2 met behulp van Power bi](https://docs.microsoft.com/power-query/connectors/datalakestorage).
+Gebruik de Power BI-connector om visuele weer gaven te maken van gegevens die zijn opgeslagen in Data Lake Storage Gen2. Zie [gegevens analyseren in azure data Lake Storage Gen2 met behulp van Power bi](/power-query/connectors/datalakestorage).
 
 ## <a name="download-the-data"></a>De gegevens downloaden
 
@@ -139,7 +139,7 @@ Hier volgt een lijst met hulpprogram ma's die u kunt gebruiken om gegevens te do
 
 |Hulpprogramma | Hulp |
 |---|--|
-|Azure Data Factory | [Kopieeractiviteit in Azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-overview) |
-|Apache DistCp | [Gebruik DistCp om gegevens te kopiëren tussen Azure Storage blobs en Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-distcp) |
-|Azure Storage Explorer|[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md)|
+|Azure Data Factory | [Kopieeractiviteit in Azure Data Factory](../../data-factory/copy-activity-overview.md) |
+|Apache DistCp | [Gebruik DistCp om gegevens te kopiëren tussen Azure Storage blobs en Azure Data Lake Storage Gen2](./data-lake-storage-use-distcp.md) |
+|Azure Opslagverkenner|[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md)|
 |Hulpprogramma AzCopy|[Gegevens overdragen met AzCopy en Blob Storage](../common/storage-use-azcopy-blobs.md)|

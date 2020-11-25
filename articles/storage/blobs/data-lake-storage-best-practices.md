@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: sachins
-ms.openlocfilehash: e008bad2043d8cd633f0849aefc62c4ed7a7e89d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0efcdfd1b14479edf84dc1892e7e1d9afabd5a81
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86104874"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95913552"
 ---
 # <a name="best-practices-for-using-azure-data-lake-storage-gen2"></a>Aanbevolen procedures voor het gebruik van Azure Data Lake Storage Gen2
 
@@ -21,7 +21,7 @@ In dit artikel vindt u informatie over de aanbevolen procedures en overwegingen 
 
 ## <a name="security-considerations"></a>Beveiligingsoverwegingen
 
-Azure Data Lake Storage Gen2 biedt POSIX-toegangs controles voor Azure Active Directory (Azure AD)-gebruikers,-groepen en-service-principals. Deze toegangs elementen kunnen worden ingesteld op bestaande bestanden en mappen. De toegangs elementen kunnen ook worden gebruikt om standaard machtigingen te maken die automatisch kunnen worden toegepast op nieuwe bestanden of mappen. Meer informatie over Data Lake Storage Gen2 Acl's vindt u [in azure data Lake Storage Gen2 voor toegangs beheer](storage-data-lake-storage-access-control.md).
+Azure Data Lake Storage Gen2 biedt POSIX-toegangs controles voor Azure Active Directory (Azure AD)-gebruikers,-groepen en-service-principals. Deze toegangs elementen kunnen worden ingesteld op bestaande bestanden en mappen. De toegangs elementen kunnen ook worden gebruikt om standaard machtigingen te maken die automatisch kunnen worden toegepast op nieuwe bestanden of mappen. Meer informatie over Data Lake Storage Gen2 Acl's vindt u [in azure data Lake Storage Gen2 voor toegangs beheer](./data-lake-storage-access-control.md).
 
 ### <a name="use-security-groups-versus-individual-users"></a>Beveiligings groepen gebruiken versus afzonderlijke gebruikers
 
@@ -31,7 +31,7 @@ Als aan een beveiligings groep machtigingen zijn toegewezen, moeten er geen upda
 
 ### <a name="security-for-groups"></a>Beveiliging voor groepen
 
-Wanneer u of uw gebruikers toegang nodig hebben tot gegevens in een opslag account waarvoor een hiërarchische naam ruimte is ingeschakeld, kunt u het beste Azure Active Directory-beveiligings groepen gebruiken. Enkele aanbevolen groepen om te beginnen met kunnen **ReadOnlyUsers**, **WriteAccessUsers**en **FullAccessUsers** zijn voor de hoofdmap van de container, en zelfs voor sleutel submappen. Als er andere groepen gebruikers zijn die later kunnen worden toegevoegd, maar die nog niet zijn geïdentificeerd, kunt u overwegen om dummy beveiligings groepen te maken die toegang tot bepaalde mappen hebben. Door gebruik te maken van een beveiligings groep, zorgt u ervoor dat u lange verwerkings tijd kunt voor komen bij het toewijzen van nieuwe machtigingen aan duizenden bestanden.
+Wanneer u of uw gebruikers toegang nodig hebben tot gegevens in een opslag account waarvoor een hiërarchische naam ruimte is ingeschakeld, kunt u het beste Azure Active Directory-beveiligings groepen gebruiken. Enkele aanbevolen groepen om te beginnen met kunnen **ReadOnlyUsers**, **WriteAccessUsers** en **FullAccessUsers** zijn voor de hoofdmap van de container, en zelfs voor sleutel submappen. Als er andere groepen gebruikers zijn die later kunnen worden toegevoegd, maar die nog niet zijn geïdentificeerd, kunt u overwegen om dummy beveiligings groepen te maken die toegang tot bepaalde mappen hebben. Door gebruik te maken van een beveiligings groep, zorgt u ervoor dat u lange verwerkings tijd kunt voor komen bij het toewijzen van nieuwe machtigingen aan duizenden bestanden.
 
 ### <a name="security-for-service-principals"></a>Beveiliging voor service-principals
 
@@ -41,7 +41,7 @@ Azure Active Directory service-principals worden meestal gebruikt door services 
 
 Data Lake Storage Gen2 ondersteunt de mogelijkheid om een firewall in te scha kelen en de toegang alleen te beperken tot Azure-Services. dit wordt aanbevolen om de vector van externe aanvallen te beperken. De firewall kan worden ingeschakeld voor een opslag account in de Azure portal via **firewall**  >  **firewall inschakelen (ingeschakeld)**  >  **toegang tot opties voor Azure-Services toestaan** .
 
-Om toegang te krijgen tot uw opslag account vanuit Azure Databricks, implementeert u Azure Databricks naar uw virtuele netwerk en voegt u dat virtuele netwerk vervolgens toe aan uw firewall. Zie [Azure Storage firewalls en virtuele netwerken configureren](https://docs.microsoft.com/azure/storage/common/storage-network-security).
+Om toegang te krijgen tot uw opslag account vanuit Azure Databricks, implementeert u Azure Databricks naar uw virtuele netwerk en voegt u dat virtuele netwerk vervolgens toe aan uw firewall. Zie [Azure Storage firewalls en virtuele netwerken configureren](../common/storage-network-security.md).
 
 ## <a name="resiliency-considerations"></a>Overwegingen voor tolerantie
 

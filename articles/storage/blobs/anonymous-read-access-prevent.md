@@ -10,12 +10,12 @@ ms.date: 10/09/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
-ms.openlocfilehash: 3d843440adc61b315616a05f223c5a13ebe271ed
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 01a5c696a41b9361c35e7af90f68088acea2944b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930829"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95913773"
 ---
 # <a name="prevent-anonymous-public-read-access-to-containers-and-blobs"></a>Anonieme open bare Lees toegang voor containers en blobs voor komen
 
@@ -39,7 +39,7 @@ Als u anonieme aanvragen wilt bijhouden in een opslag account, gebruikt u Azure 
 
 Volg deze stappen om een metriek te maken waarmee anonieme aanvragen worden bijgehouden:
 
-1. Ga in Azure Portal naar uw opslagaccount. Selecteer **metrische gegevens**onder het gedeelte **bewaking** .
+1. Ga in Azure Portal naar uw opslagaccount. Selecteer **metrische gegevens** onder het gedeelte **bewaking** .
 1. Selecteer **Metrische waarde toevoegen**. Geef in het dialoog venster **metrisch** de volgende waarden op:
     1. Zorg ervoor dat het veld bereik is ingesteld op de naam van het opslag account.
     1. Stel de **metrische naam ruimte** in op *BLOB*. Met deze metriek worden alleen aanvragen voor Blob-opslag gerapporteerd.
@@ -59,7 +59,7 @@ Volg deze stappen om een metriek te maken waarmee anonieme aanvragen worden bijg
 
 Nadat u de metrische gegevens hebt geconfigureerd, worden anonieme aanvragen weer gegeven in de grafiek. De volgende afbeelding toont anonieme aanvragen die zijn samengevoegd in de afgelopen dertig minuten.
 
-:::image type="content" source="media/anonymous-read-access-prevent/metric-anonymous-blob-requests.png" alt-text="Scherm afbeelding die laat zien hoe u metrische gegevens kunt configureren voor het berekenen van BLOB-trans acties":::
+:::image type="content" source="media/anonymous-read-access-prevent/metric-anonymous-blob-requests.png" alt-text="Scherm opname van geaggregeerde anonieme aanvragen op Blob Storage":::
 
 U kunt ook een waarschuwings regel configureren om u op de hoogte te stellen wanneer er een bepaald aantal anonieme aanvragen wordt gedaan voor uw opslag account. Zie [metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/platform/alerts-metric.md)voor meer informatie.
 
@@ -67,9 +67,9 @@ U kunt ook een waarschuwings regel configureren om u op de hoogte te stellen wan
 
 Azure Storage legt vastgelegde gegevens vast over aanvragen voor het opslag account, met inbegrip van de manier waarop een aanvraag is geautoriseerd. U kunt de logboeken analyseren om te bepalen welke containers anonieme aanvragen ontvangen.
 
-Als u aanvragen wilt registreren voor uw Azure Storage-account om anonieme aanvragen te evalueren, kunt u Azure Storage logboek registratie gebruiken in Azure Monitor (preview). Zie [Azure Storage bewaken](../common/monitor-storage.md)voor meer informatie.
+Als u aanvragen wilt registreren voor uw Azure Storage-account om anonieme aanvragen te evalueren, kunt u Azure Storage logboek registratie gebruiken in Azure Monitor (preview). Zie [Azure Storage bewaken](./monitor-blob-storage.md)voor meer informatie.
 
-Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/log-query/get-started-portal.md)voor meer informatie over logboek query's.
+Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over logboek query's.
 
 > [!NOTE]
 > De preview van Azure Storage logboek registratie in Azure Monitor wordt alleen ondersteund in de open bare Azure-Cloud. Overheids Clouds bieden geen ondersteuning voor logboek registratie voor Azure Storage met Azure Monitor.
@@ -83,16 +83,16 @@ Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt ana
 1. Ga in Azure Portal naar uw opslagaccount.
 1. Selecteer in de sectie controle de optie **Diagnostische instellingen (preview)**.
 1. Selecteer **BLOB** om aanvragen te registreren die worden uitgevoerd op Blob Storage.
-1. Selecteer **Diagnostische instelling toevoegen**.
+1. Selecteer **Diagnostische instellingen toevoegen**.
 1. Geef een naam op voor de diagnostische instelling.
-1. Kies onder **categorie Details**in de sectie **logboek** welke typen aanvragen moeten worden geregistreerd. Alle anonieme aanvragen worden Lees aanvragen, dus Selecteer **StorageRead** om anonieme aanvragen vast te leggen.
+1. Kies onder **categorie Details** in de sectie **logboek** welke typen aanvragen moeten worden geregistreerd. Alle anonieme aanvragen worden Lees aanvragen, dus Selecteer **StorageRead** om anonieme aanvragen vast te leggen.
 1. Selecteer onder **doel gegevens** **verzenden naar log Analytics**. Selecteer uw abonnement en de Log Analytics werk ruimte die u eerder hebt gemaakt, zoals wordt weer gegeven in de volgende afbeelding.
 
-    :::image type="content" source="media/anonymous-read-access-prevent/create-diagnostic-setting-logs.png" alt-text="Scherm afbeelding die laat zien hoe u metrische gegevens kunt configureren voor het berekenen van BLOB-trans acties":::
+    :::image type="content" source="media/anonymous-read-access-prevent/create-diagnostic-setting-logs.png" alt-text="Scherm afbeelding die laat zien hoe u een diagnostische instelling voor logboek registratie aanvragen maakt":::
 
 Nadat u de diagnostische instelling hebt gemaakt, worden aanvragen voor het opslag account vervolgens geregistreerd volgens die instelling. Zie voor meer informatie [Diagnostische instelling maken om bron logboeken en metrische gegevens in azure te verzamelen](../../azure-monitor/platform/diagnostic-settings.md).
 
-Zie [bron Logboeken (preview)](../common/monitor-storage-reference.md#resource-logs-preview)voor een verwijzing van velden die beschikbaar zijn in azure Storage-Logboeken in azure monitor.
+Zie [bron Logboeken (preview)](./monitor-blob-storage-reference.md#resource-logs-preview)voor een verwijzing van velden die beschikbaar zijn in azure Storage-Logboeken in azure monitor.
 
 #### <a name="query-logs-for-anonymous-requests"></a>Query logboeken voor anonieme aanvragen
 
@@ -164,7 +164,7 @@ New-AzStorageContainer -Name $containerName -Permission Blob -Context $ctx
 
 ### <a name="check-the-public-access-setting-for-multiple-accounts"></a>Controleer de instelling voor open bare toegang voor meerdere accounts
 
-Als u de instelling voor open bare toegang wilt controleren over een set opslag accounts met optimale prestaties, kunt u de Azure resource Graph Explorer gebruiken in de Azure Portal. Voor meer informatie over het gebruik van de resource Graph Explorer raadpleegt u [Quick Start: uw eerste resource grafiek query uitvoeren met Azure resource Graph Explorer](/azure/governance/resource-graph/first-query-portal).
+Als u de instelling voor open bare toegang wilt controleren over een set opslag accounts met optimale prestaties, kunt u de Azure resource Graph Explorer gebruiken in de Azure Portal. Voor meer informatie over het gebruik van de resource Graph Explorer raadpleegt u [Quick Start: uw eerste resource grafiek query uitvoeren met Azure resource Graph Explorer](../../governance/resource-graph/first-query-portal.md).
 
 Als u de volgende query uitvoert in de resource Graph Explorer, wordt een lijst met opslag accounts geretourneerd en wordt de instelling voor open bare toegang voor elk account weer gegeven:
 
@@ -190,7 +190,7 @@ Voer de volgende stappen uit om een beleid te maken met een controle-effect voor
 1. Selecteer **beleids definitie toevoegen** om een nieuwe beleids definitie te maken.
 1. Selecteer voor het veld **definitie locatie** de knop **meer** om op te geven waar de bron van het controle beleid zich bevindt.
 1. Geef een naam op voor het beleid. U kunt desgewenst een beschrijving en categorie opgeven.
-1. Voeg onder **beleids regel**de volgende beleids definitie toe aan de sectie **policyRule** .
+1. Voeg onder **beleids regel** de volgende beleids definitie toe aan de sectie **policyRule** .
 
     ```json
     {
@@ -244,7 +244,7 @@ Voer de volgende stappen uit om het nalevings rapport in de Azure Portal weer te
 1. Filter de resultaten voor de naam van de beleids toewijzing die u in de vorige stap hebt gemaakt. In het rapport wordt weer gegeven hoeveel resources niet voldoen aan het beleid.
 1. U kunt inzoomen op het rapport voor meer informatie, met inbegrip van een lijst met opslag accounts die niet voldoen aan het beleid.
 
-    :::image type="content" source="media/anonymous-read-access-prevent/compliance-report-policy-portal.png" alt-text="Scherm afbeelding die laat zien hoe u metrische gegevens kunt configureren voor het berekenen van BLOB-trans acties":::
+    :::image type="content" source="media/anonymous-read-access-prevent/compliance-report-policy-portal.png" alt-text="Scherm opname van nalevings rapport voor controle beleid voor open bare BLOB-toegang":::
 
 ## <a name="use-azure-policy-to-enforce-authorized-access"></a>Azure Policy gebruiken om gemachtigde toegang af te dwingen
 
@@ -280,7 +280,7 @@ Nadat u het beleid met het effect deny hebt gemaakt en aan een bereik hebt toege
 
 In de volgende afbeelding ziet u de fout die optreedt wanneer u probeert om een opslag account te maken dat open bare toegang (de standaard waarde voor een nieuw account) toestaat wanneer een beleid met een deny-effect vereist dat open bare toegang niet is toegestaan.
 
-:::image type="content" source="media/anonymous-read-access-prevent/deny-policy-error.png" alt-text="Scherm afbeelding die laat zien hoe u metrische gegevens kunt configureren voor het berekenen van BLOB-trans acties":::
+:::image type="content" source="media/anonymous-read-access-prevent/deny-policy-error.png" alt-text="Scherm opname met de fout die optreedt bij het maken van een opslag account in schending van het beleid":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

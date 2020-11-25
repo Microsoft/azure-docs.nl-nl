@@ -6,20 +6,23 @@ author: euangMS
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.date: 10/16/2020
-ms.author: euang
+ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 6f777b605c5050b7fa4b3b9e3671f3638ad67372
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 8d478b35b702e02f303358972526c091ceb3657e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016255"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95917122"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Bibliotheken voor Apache Spark beheren in azure Synapse Analytics
 
 Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Program ma's of projecten. Als u derden of lokaal gemaakte code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van uw serverloze Apache Spark Pools (preview). Zodra een bibliotheek is geïnstalleerd voor een Spark-groep, is deze beschikbaar voor alle sessies die gebruikmaken van dezelfde groep. 
 
+## <a name="before-you-begin"></a>Voordat u begint
+- Als u bibliotheken wilt installeren en bijwerken, moet u de machtigingen voor de **gegevens eigenaar** van de **Storage BLOB-data bijdrager** of opslag-BLOB hebben voor het primaire Gen2-opslag account dat is gekoppeld aan de Azure Synapse Analytics-werk ruimte.
+  
 ## <a name="default-installation"></a>Standaard installatie
 Apache Spark in azure Synapse Analytics beschikt over een volledige Anacondas-installatie plus extra bibliotheken. De lijst met volledige bibliotheken vindt u op [Apache Spark-versie ondersteuning](apache-spark-version-support.md). 
 
@@ -35,6 +38,7 @@ Wanneer u de bibliotheken hebt geïdentificeerd die u wilt gebruiken voor uw Spa
 > - Als het pakket dat u installeert groot is of veel tijd nodig heeft om te worden geïnstalleerd, is dit van invloed op de start tijd van de Spark-instantie.
 > - Pakketten waarvoor compiler ondersteuning is vereist op het moment van installatie, zoals GCC, worden niet ondersteund.
 > - Pakketten kunnen niet worden gedowngraded, alleen toegevoegd of geüpgraded.
+> - Als u bibliotheken wilt installeren, moet u de machtigingen voor Storage BLOB data contributor of Storage BLOB data owner hebben voor het primaire Gen2-opslag account dat is gekoppeld aan de Synapse-werk ruimte.
 
 ### <a name="requirements-format"></a>Indeling van vereisten
 

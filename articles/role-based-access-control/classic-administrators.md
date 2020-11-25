@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/22/2020
+ms.date: 11/24/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: d61d49fdd90f1f916141ca636e2c2a4dbe0b9bcd
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 935c0bf76e298ab1e2e4d25fab8685ac4ce617db
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657735"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95916160"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Klassieke abonnementsbeheerders van Azure
 
@@ -99,25 +99,25 @@ Zie [Wat zijn de standaard machtigingen voor gebruikers in azure Active Director
 
 Alleen de account beheerder kan de service beheerder voor een abonnement wijzigen. Wanneer u zich aanmeldt voor een Azure-abonnement, is de service beheerder standaard hetzelfde als de account beheerder. De gebruiker met de rol account beheerder heeft geen toegang tot de Azure Portal. De gebruiker met de rol van service beheerder heeft volledige toegang tot de Azure Portal. Als de account beheerder en service beheerder dezelfde gebruiker zijn en u de service beheerder wijzigt in een andere gebruiker, verliest de account beheerder de toegang tot Azure Portal. De account beheerder kan echter altijd het account centrum gebruiken om de service beheerder weer op zichzelf te zetten.
 
-Volg deze stappen om de service beheerder in het **account centrum** te wijzigen.
-
-### <a name="account-center"></a>Accountcentrum
+Volg deze stappen om de service beheerder in de Azure Portal te wijzigen.
 
 1. Zorg ervoor dat uw scenario wordt ondersteund door de [beperkingen voor het wijzigen van de service beheerder](#limitations-for-changing-the-service-administrator)te controleren.
 
-1. Meld u als account beheerder aan bij het [account centrum](https://account.windowsazure.com/subscriptions) .
+1. Meld u als accountbeheerder aan bij de [Azure-portal](https://portal.azure.com).
 
-1. Klik op een abonnement.
+1. Open [Abonnementen](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) en selecteer een abonnement.
 
-1. Klik aan de rechter kant op **abonnements gegevens bewerken**.
+1. Klik in de linkernavigatiebalk op **Eigenschappen**.
 
-    ![Scherm afbeelding met de knop abonnement bewerken in het account centrum](./media/classic-administrators/editsub.png)
+1. Klik op **service beheerder**.
 
-1. Voer in het vak **service beheerder** het e-mail adres van de nieuwe service beheerder in.
+    ![Scherm opname met de eigenschappen van het abonnement in de Azure Portal](./media/classic-administrators/service-admin.png)
 
-    ![Scherm opname van het vak voor het wijzigen van het e-mail adres van de service beheerder](./media/classic-administrators/change-service-admin.png)
+1. Voer op de pagina **Service beheer bewerken** het e-mail adres voor de nieuwe service beheerder in.
 
-1. Klik op het vinkje om de wijziging op te slaan.
+    ![Scherm opname van de pagina Service beheer bewerken](./media/classic-administrators/service-admin-edit.png)
+
+1. Klik op **OK** om de wijziging op te slaan.
 
 ### <a name="limitations-for-changing-the-service-administrator"></a>Beperkingen voor het wijzigen van de service beheerder
 
@@ -138,11 +138,11 @@ De account beheerder is de gebruiker die zich voor het eerst aanmeldt voor het A
 
 Volg deze stappen om de account beheerder weer te geven.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 1. Open [Abonnementen](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) en selecteer een abonnement.
 
-1. Klik op **Eigenschappen**.
+1. Klik in de linkernavigatiebalk op **Eigenschappen**.
 
     De account beheerder van het abonnement wordt weer gegeven in het vak **account beheerder** .
 

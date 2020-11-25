@@ -752,6 +752,8 @@
           href: connector-troubleshoot-guide.md
         - name: Gegevensstromen
           href: data-flow-troubleshoot-guide.md
+        - name: Beveiligings- en toegangsbeheer
+          href: security-and-access-control-troubleshoot-guide.md
         - name: Zelf-hostende Integration Runtimes
           href: self-hosted-integration-runtime-troubleshoot-guide.md
         - name: Azure-SSIS Integration Runtime

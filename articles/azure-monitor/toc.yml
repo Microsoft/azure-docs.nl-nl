@@ -251,6 +251,8 @@
               href: /azure/data-explorer/kusto/query/samples?&pivots=azuremonitor
             - name: Standaardkolommen
               href: platform/log-standard-columns.md
+            - name: Query's controleren
+              href: log-query/query-audit.md
             - name: Query's optimaliseren
               href: log-query/query-optimization.md
             - name: Functions

@@ -35,6 +35,8 @@
           href: claim-sets.md
     - name: Werkstroom
       href: workflow.md
+    - name: Auditlogboeken weergeven
+      href: audit-logs.md
 - name: Referenties
   items:
     - name: Veelgestelde vragen

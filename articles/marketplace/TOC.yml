@@ -125,12 +125,12 @@
       items:
         - name: Een Azure Container-aanbieding plannen
           href: marketplace-containers.md
+        - name: Technische assets voorbereiden
+          href: create-azure-container-technical-assets.md
         - name: Een Azure Container-aanbieding maken en publiceren
           items:
-            - name: Technische assets voorbereiden
-              href: partner-center-portal/create-azure-container-technical-assets.md
             - name: Een Azure Container-aanbieding maken
-              href: partner-center-portal/create-azure-container-offer.md
+              href: create-azure-container-offer.md
     - name: Aanbiedingen voor virtuele Azure-machines
       items:
         - name: Een VM-aanbieding plannen

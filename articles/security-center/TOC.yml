@@ -278,8 +278,6 @@
       items:
         - name: Algemene vragen
           href: faq-general.md
-        - name: Vragen over facturering
-          href: faq-billing.md
         - name: Vragen over machtigingen
           href: faq-permissions.md
         - name: Vragen over gegevensverzameling en agents

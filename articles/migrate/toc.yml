@@ -208,6 +208,10 @@
       items:
         - name: Replicatieproblemen oplossen in agentloze VMware-migratie
           href: troubleshoot-changed-block-tracking-replication.md
+- name: Naslaginformatie
+  items:
+    - name: Azure PowerShell
+      href: /powershell/module/az.migrate/
 - name: Resources
   items:
     - name: Migratie in het Cloud Adoption Framework

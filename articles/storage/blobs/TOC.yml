@@ -1,5 +1,5 @@
 - name: Documentatie voor Azure Blob Storage
-  href: /azure/storage/blobs/
+  href: ./index.yml
 - name: Overzicht
   items:
     - name: Wat is Azure Blob Storage?
@@ -590,7 +590,7 @@
             - name: Toegankelijkheid van Storage Explorer
               href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Blob-opslag in Microsoft Q&A
-          href: 'https://docs.microsoft.com/answers/topics/azure-blob-storage.html'
+          href: /answers/topics/azure-blob-storage.html
         - name: Blob-opslag in Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/azure-blob-storage'
         - name: Prijzen voor blok-blobs
@@ -654,7 +654,7 @@
 - name: Data Lake Storage Gen2
   items:
     - name: Overschakelen naar documentatie van Data Lake Storage Gen1
-      href: /azure/data-lake-store/
+      href: ../../data-lake-store/index.yml
     - name: Overzicht
       items:
         - name: Inleiding tot Data Lake Storage
@@ -666,7 +666,7 @@
     - name: Zelfstudies
       items:
         - name: 'Gegevens uitpakken, transformeren en laden met Azure Databricks'
-          href: ../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+          href: /azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Toegang tot Data Lake Storage-gegevens met Databricks met behulp van Spark
           href: data-lake-storage-use-databricks-spark.md
         - name: 'Gegevens extraheren, transformeren en laden met Apache Hive in Azure HDInsight'
@@ -712,7 +712,7 @@
         - name: Bewaking
           items:
             - name: Blob-opslag bewaken
-              href: ../common/monitor-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+              href: ./monitor-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Transitie van klassieke metrische gegevens
               href: ../common/storage-metrics-migration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Bewaking (klassiek)
@@ -874,7 +874,7 @@
             - name: Toegankelijkheid van Storage Explorer
               href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Microsoft Q&A-vragenpagina
-          href: 'https://docs.microsoft.com/answers/topics/azure-blob-storage.html'
+          href: /answers/topics/azure-blob-storage.html
         - name: Azure Storage op Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
         - name: Prijzen

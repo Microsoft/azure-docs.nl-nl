@@ -24,9 +24,6 @@
     - name: Aanbiedingen voor beheerde service in Azure Marketplace
       displayName: 'azure marketplace, marketplace, managed service, private, plan'
       href: ./concepts/managed-services-offers.md
-    - name: Aanbevolen beveiligingsprocedures
-      displayName: 'mfa, authentication, secure, group'
-      href: ./concepts/recommended-security-practices.md
     - name: Overwegingen voor een Cloud Solution Provider-programma
       displayName: 'csp, aobo, partner'
       href: ./concepts/cloud-solution-provider.md
@@ -38,6 +35,9 @@
       href: ./concepts/managed-applications.md
     - name: Beveiliging
       items:
+        - name: Aanbevolen beveiligingsprocedures
+          displayName: 'mfa, authentication, secure, group'
+          href: ./concepts/recommended-security-practices.md
         - name: Beveiligingsbasislijn
           href: security-baseline.md
 - name: Instructiegidsen

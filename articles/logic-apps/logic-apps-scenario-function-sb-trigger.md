@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 11/08/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 25f761d85ebfd0ac16f182941c5b5c29636066bf
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629730"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000331"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Logische apps aanroepen of activeren met behulp van Azure Functions en Azure Service Bus
 
@@ -50,7 +50,7 @@ Voor dit scenario hebt u een functie voor het uitvoeren van elke logische app di
 
    1. Selecteer in de trigger voor de aanvraag een **voor beeld-nettolading gebruiken om een schema te genereren**.
 
-   1. Voer onder **ENTER of plak een JSON** -voor beeld-nettolading in en selecteer vervolgens **gereed**.
+   1. Voer onder **ENTER of plak een JSON**-voor beeld-nettolading in en selecteer vervolgens **gereed**.
 
       ![Voor beeld-nettolading invoeren](./media/logic-apps-scenario-function-sb-trigger/enter-sample-payload.png)
 

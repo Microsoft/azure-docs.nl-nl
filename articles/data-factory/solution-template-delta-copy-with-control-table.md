@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/24/2018
 ms.openlocfilehash: 255e4085e24ee7520c603f8a00b3e46c23367a77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89442000"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000824"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Delta kopie van een Data Base met een controle tabel
 
@@ -42,7 +42,7 @@ De sjabloon bevat vier activiteiten:
 
 De sjabloon definieert de volgende para meters:
 - *Data_Source_Table_Name* is de tabel in de bron database waaruit u gegevens wilt laden.
-- *Data_Source_WaterMarkColumn* is de naam van de kolom in de bron tabel die wordt gebruikt om nieuwe of bijgewerkte rijen te identificeren. Het type van deze kolom is doorgaans *DateTime*, *int*of soortgelijk.
+- *Data_Source_WaterMarkColumn* is de naam van de kolom in de bron tabel die wordt gebruikt om nieuwe of bijgewerkte rijen te identificeren. Het type van deze kolom is doorgaans *DateTime*, *int* of soortgelijk.
 - *Data_Destination_Container* is het hoofdpad van de locatie waarnaar de gegevens worden gekopieerd in uw doel archief.
 - *Data_Destination_Directory* het mappad is in de hoofdmap van de locatie waarnaar de gegevens worden gekopieerd in uw doel archief.
 - *Data_Destination_Table_Name* is de plek waar de gegevens worden gekopieerd naar in uw doel archief (van toepassing wanneer ' Azure Synapse Analytics (voorheen SQL DW) ' is geselecteerd als de gegevens bestemming).
@@ -52,7 +52,7 @@ De sjabloon definieert de volgende para meters:
 
 ## <a name="how-to-use-this-solution-template"></a>Deze oplossings sjabloon gebruiken
 
-1. Verken de bron tabel die u wilt laden en definieer de kolom met het hoogste water merk die kan worden gebruikt om nieuwe of bijgewerkte rijen te identificeren. Het type van deze kolom kan *DateTime*, *int*of soortgelijk zijn. De waarde van deze kolom neemt toe wanneer er nieuwe rijen worden toegevoegd. In het volgende voor beeld van een bron tabel (data_source_table), kunnen we de kolom *LastModifytime* gebruiken als de kolom met hoge water merken.
+1. Verken de bron tabel die u wilt laden en definieer de kolom met het hoogste water merk die kan worden gebruikt om nieuwe of bijgewerkte rijen te identificeren. Het type van deze kolom kan *DateTime*, *int* of soortgelijk zijn. De waarde van deze kolom neemt toe wanneer er nieuwe rijen worden toegevoegd. In het volgende voor beeld van een bron tabel (data_source_table), kunnen we de kolom *LastModifytime* gebruiken als de kolom met hoge water merken.
 
     ```sql
             PersonID    Name    LastModifytime
@@ -110,15 +110,15 @@ De sjabloon definieert de volgende para meters:
   
     ![De pijp lijn controleren](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable8.png)
 
-9. Selecteer **opgeslagen procedure**. Kies [dbo] voor de naam van de **opgeslagen procedure** **. [ update_watermark]**. Selecteer **para meter importeren**en selecteer vervolgens **dynamische inhoud toevoegen**.  
+9. Selecteer **opgeslagen procedure**. Kies [dbo] voor de naam van de **opgeslagen procedure** **. [ update_watermark]**. Selecteer **para meter importeren** en selecteer vervolgens **dynamische inhoud toevoegen**.  
 
     ![De opgeslagen procedure-activiteit instellen](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable9.png)  
 
-10. Schrijf de inhoud ** \@ {activity (' LookupCurrentWaterMark '). output. FirstRow. NewWatermarkValue}** en selecteer vervolgens **volt ooien**.  
+10. Schrijf de inhoud **\@ {activity (' LookupCurrentWaterMark '). output. FirstRow. NewWatermarkValue}** en selecteer vervolgens **volt ooien**.  
 
     ![De inhoud voor de para meters van de opgeslagen procedure schrijven](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable10.png)       
      
-11. Selecteer **debug**, voer de **para meters**in en selecteer **volt ooien**.
+11. Selecteer **debug**, voer de **para meters** in en selecteer **volt ooien**.
 
     ![Selecteer * * fout opsporing * *](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable11.png)
 
@@ -136,7 +136,7 @@ De sjabloon definieert de volgende para meters:
             VALUES (11, 'newdata','9/11/2017 9:01:00 AM')
     ```
 
-14. Als u de pijp lijn opnieuw wilt uitvoeren, selecteert u **fout opsporing**, voert u de **para meters**in en selecteert u vervolgens **volt ooien**.
+14. Als u de pijp lijn opnieuw wilt uitvoeren, selecteert u **fout opsporing**, voert u de **para meters** in en selecteert u vervolgens **volt ooien**.
 
     U ziet dat alleen nieuwe rijen zijn gekopieerd naar de bestemming.
 

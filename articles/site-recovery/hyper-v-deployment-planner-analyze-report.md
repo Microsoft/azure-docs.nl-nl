@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 10/21/2019
 ms.author: mayg
 ms.openlocfilehash: f230445ecdb046c2b631e89567df71e1d09c3234
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369944"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999226"
 ---
 # <a name="analyze-the-azure-site-recovery-deployment-planner-report"></a>Het rapport van de Azure Site Recovery Deployment Planner analyseren
 In dit artikel worden de werkbladen in het Excel-rapport behandeld dat door de Azure Site Recovery-implementatieplanner voor Hyper-V naar Azure is gegenereerd.

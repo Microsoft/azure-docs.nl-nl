@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/30/2020
 ms.openlocfilehash: dcf3db33818448116da53d8a01d0c62aca7bc1af
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280164"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000076"
 ---
 # <a name="load-data-into-azure-synapse-analytics-by-using-azure-data-factory"></a>Gegevens laden in azure Synapse Analytics met behulp van Azure Data Factory
 
@@ -28,34 +28,34 @@ Het is nu eenvoudiger dan ooit om aan de slag te gaan met Azure Synapse Analytic
 
 Azure Data Factory biedt de volgende voor delen voor het laden van gegevens in azure Synapse Analytics:
 
-* **Eenvoudig in te stellen** : een intu√Øtieve 5-stap wizard zonder scripting vereist.
-* **Ondersteuning voor uitgebreide gegevens opslag** : ingebouwde ondersteuning voor een uitgebreide set on-premises en cloud-gebaseerde gegevens archieven. Zie de tabel met [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats)voor een gedetailleerde lijst.
-* **Beveiligd en compatibel** : gegevens worden overgebracht via https of ExpressRoute. De wereld wijde service aanwezigheid zorgt ervoor dat uw gegevens de geografische grens nooit verlaten.
-* **Onge√´venaarde prestaties met poly base** : poly Base is de meest effici√´nte manier om gegevens te verplaatsen naar Azure Synapse Analytics. Gebruik de functie voor het maken van een staging-blob om hoge belasting snelheden te realiseren van alle typen gegevens archieven, waaronder Azure Blob-opslag en Data Lake Store. (Poly Base biedt standaard ondersteuning voor Azure Blob Storage en Azure Data Lake Store.) Zie [prestaties van Kopieer activiteit](copy-activity-performance.md)voor meer informatie.
+* **Eenvoudig in te stellen**: een intu√Øtieve 5-stap wizard zonder scripting vereist.
+* **Ondersteuning voor uitgebreide gegevens opslag**: ingebouwde ondersteuning voor een uitgebreide set on-premises en cloud-gebaseerde gegevens archieven. Zie de tabel met [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats)voor een gedetailleerde lijst.
+* **Beveiligd en compatibel**: gegevens worden overgebracht via https of ExpressRoute. De wereld wijde service aanwezigheid zorgt ervoor dat uw gegevens de geografische grens nooit verlaten.
+* **Onge√´venaarde prestaties met poly base**: poly Base is de meest effici√´nte manier om gegevens te verplaatsen naar Azure Synapse Analytics. Gebruik de functie voor het maken van een staging-blob om hoge belasting snelheden te realiseren van alle typen gegevens archieven, waaronder Azure Blob-opslag en Data Lake Store. (Poly Base biedt standaard ondersteuning voor Azure Blob Storage en Azure Data Lake Store.) Zie [prestaties van Kopieer activiteit](copy-activity-performance.md)voor meer informatie.
 
-Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√´ren _gegevens van Azure SQL database in azure Synapse Analytics kunt laden_. U kunt vergelijk bare stappen volgen om gegevens te kopi√´ren van andere typen gegevens archieven.
+Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√´ren _gegevens van Azure SQL database in azure Synapse Analytics kunt laden_. U kunt vergelijkbare stappen volgen om gegevens te kopi√´ren vanuit andere typen gegevensarchieven.
 
 > [!NOTE]
 > Zie [gegevens kopi√´ren naar of van Azure Synapse Analytics met behulp van Azure Data Factory](connector-azure-sql-data-warehouse.md)voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Azure-abonnement: als u geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* Azure-abonnement: Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
 * Azure Synapse Analytics: het Data Warehouse bevat de gegevens die worden gekopieerd van de SQL database. Als u geen Azure Synapse Analytics hebt, raadpleegt u de instructies in [Create a Azure Synapse Analytics](../synapse-analytics/sql-data-warehouse/load-data-from-azure-blob-storage-using-copy.md).
-* Azure SQL Database: in deze zelf studie worden gegevens uit de gegevensset Adventure Works LT voor beeld gekopieerd in Azure SQL Database. U kunt deze voorbeeld database in SQL Database maken door de instructies in [een voorbeeld database maken in Azure SQL database](../azure-sql/database/single-database-create-quickstart.md)te volgen.
-* Azure-opslag account: Azure Storage wordt gebruikt als de _faserings_ -Blob in de bulksgewijze Kopieer bewerking. Als u geen Azure Storage-account hebt, raadpleegt u de instructies in [een opslag account maken](../storage/common/storage-account-create.md).
+* Azure SQL Database: In deze zelfstudie worden gegevens uit de voorbeeldgegevensset Adventure Works LT gekopieerd naar Azure SQL Database. U kunt deze voorbeelddatabase maken in SQL Database door de instructies in [Een voorbeelddatabase maken in Azure SQL Database](../azure-sql/database/single-database-create-quickstart.md) te volgen.
+* Azure-opslag account: Azure Storage wordt gebruikt als de _faserings_ -Blob in de bulksgewijze Kopieer bewerking. Als u geen Azure-opslagaccount hebt, raadpleegt u de instructies in [Een opslagaccount maken](../storage/common/storage-account-create.md).
 
 ## <a name="create-a-data-factory"></a>Een gegevensfactory maken
 
-1. Selecteer in het linkermenu **Een resource maken** > **Gegevens en analyses** > **Data factory** :
+1. Selecteer in het linkermenu **Een resource maken** > **Gegevens en analyses** > **Data factory**:
 
 2. Geef op de pagina **nieuw Data Factory** waarden op voor de volgende items:
 
-    * **Naam** : Voer *LoadSQLDWDemo* in als naam. De naam van uw data factory moet * wereld wijd uniek zijn. Als het fout bericht ' Data Factory-naam ' LoadSQLDWDemo ' is niet beschikbaar ' wordt weer gegeven, voert u een andere naam in voor de data factory. U kunt bijvoorbeeld _**de naam**_**ADFTutorialDataFactory**. Probeer de data factory opnieuw te maken. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
-    * **Abonnement** : Selecteer het Azure-abonnement waarin u de Data Factory wilt maken. 
-    * **Resource groep** : Selecteer een bestaande resource groep in de vervolg keuzelijst of selecteer de optie **nieuwe maken** en voer de naam van een resource groep in. Zie [Resourcegroepen gebruiken om Azure-resources te beheren](../azure-resource-manager/management/overview.md) voor meer informatie.  
-    * **Versie** : Selecteer **V2**.
-    * **Locatie** : Selecteer de locatie voor de Data Factory. In de vervolgkeuzelijst worden alleen ondersteunde locaties weergegeven. De gegevens archieven die door data factory worden gebruikt, kunnen zich op andere locaties en regio's bevinden. Deze gegevens archieven bevatten Azure Data Lake Store, Azure Storage, Azure SQL Database, enzovoort.
+    * **Naam**: Voer *LoadSQLDWDemo* in als naam. De naam van uw data factory moet * wereld wijd uniek zijn. Als het fout bericht ' Data Factory-naam ' LoadSQLDWDemo ' is niet beschikbaar ' wordt weer gegeven, voert u een andere naam in voor de data factory. U kunt bijvoorbeeld _**de naam**_**ADFTutorialDataFactory**. Probeer de data factory opnieuw te maken. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
+    * **Abonnement**: Selecteer het Azure-abonnement waarin u de Data Factory wilt maken. 
+    * **Resource groep**: Selecteer een bestaande resource groep in de vervolg keuzelijst of selecteer de optie **nieuwe maken** en voer de naam van een resource groep in. Zie [Resourcegroepen gebruiken om Azure-resources te beheren](../azure-resource-manager/management/overview.md) voor meer informatie.  
+    * **Versie**: Selecteer **V2**.
+    * **Locatie**: Selecteer de locatie voor de Data Factory. In de vervolgkeuzelijst worden alleen ondersteunde locaties weergegeven. De gegevens archieven die door data factory worden gebruikt, kunnen zich op andere locaties en regio's bevinden. Deze gegevens archieven bevatten Azure Data Lake Store, Azure Storage, Azure SQL Database, enzovoort.
 
 3. Selecteer **Maken**.
 4. Nadat het maken is voltooid, gaat u naar uw data factory. U ziet de **Data Factory** start pagina zoals wordt weer gegeven in de volgende afbeelding:
@@ -74,7 +74,7 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
 3. Voer de volgende stappen uit op de pagina **brongegevens archief** :
     >[!TIP]
-    >In deze zelf studie gebruikt u *SQL-verificatie* als verificatie type voor uw bron gegevensopslag, maar u kunt andere ondersteunde verificatie methoden kiezen: *Service-Principal* en *beheerde identiteit* , indien nodig. Raadpleeg de bijbehorende secties in [dit artikel](./connector-azure-sql-database.md#linked-service-properties) voor meer informatie.
+    >In deze zelf studie gebruikt u *SQL-verificatie* als verificatie type voor uw bron gegevensopslag, maar u kunt andere ondersteunde verificatie methoden kiezen:*Service-Principal* en *beheerde identiteit* , indien nodig. Raadpleeg de bijbehorende secties in [dit artikel](./connector-azure-sql-database.md#linked-service-properties) voor meer informatie.
     >Het ook raadzaam om een Azure Key Vault te gebruiken om geheimen voor gegevensarchieven veilig op te slaan. Raadpleeg [dit artikel](./store-credentials-in-key-vault.md) voor gedetailleerde illustraties.
 
     a. Klik op **+ nieuwe verbinding maken**.
@@ -83,7 +83,7 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
     ![Azure SQL DB selecteren](./media/load-azure-sql-data-warehouse/select-azure-sql-db-source.png)
 
-    c. Selecteer op de pagina **nieuwe gekoppelde service** de naam van de server en de data base in de vervolg keuzelijst en geef de gebruikers naam en het wacht woord op. Klik op **verbinding testen** om de instellingen te valideren en selecteer vervolgens **maken**.
+    c. Selecteer op de pagina **nieuwe gekoppelde service** de naam van de server en de data base in de vervolg keuzelijst en geef de gebruikers naam en het wacht woord op. Klik op **Verbinding testen** om de instellingen te valideren en selecteer vervolgens **Maken**.
 
     ![Azure SQL DB configureren](./media/load-azure-sql-data-warehouse/configure-azure-sql-db.png)
 
@@ -97,7 +97,7 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
 6. Voer op de pagina **doel gegevens archief** de volgende stappen uit:
     >[!TIP]
-    >In deze zelf studie gebruikt u *SQL-verificatie* als verificatie type voor uw doel gegevens opslag, maar u kunt andere ondersteunde verificatie methoden kiezen: *Service-Principal* en *beheerde identiteit* , indien nodig. Raadpleeg de bijbehorende secties in [dit artikel](./connector-azure-sql-data-warehouse.md#linked-service-properties) voor meer informatie.
+    >In deze zelf studie gebruikt u *SQL-verificatie* als verificatie type voor uw doel gegevens opslag, maar u kunt andere ondersteunde verificatie methoden kiezen:*Service-Principal* en *beheerde identiteit* , indien nodig. Raadpleeg de bijbehorende secties in [dit artikel](./connector-azure-sql-data-warehouse.md#linked-service-properties) voor meer informatie.
     >Het ook raadzaam om een Azure Key Vault te gebruiken om geheimen voor gegevensarchieven veilig op te slaan. Raadpleeg [dit artikel](./store-credentials-in-key-vault.md) voor gedetailleerde illustraties.
 
     a. Klik op **+ Nieuwe verbinding maken** om een verbinding toe te voegen
@@ -106,7 +106,7 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
     ![Azure Synapse Analytics selecteren](./media/load-azure-sql-data-warehouse/select-azure-sql-dw-sink.png)
 
-    c. Selecteer op de pagina **nieuwe gekoppelde service** de naam van de server en de data base in de vervolg keuzelijst en geef de gebruikers naam en het wacht woord op. Klik op **verbinding testen** om de instellingen te valideren en selecteer vervolgens **maken**.
+    c. Selecteer op de pagina **nieuwe gekoppelde service** de naam van de server en de data base in de vervolg keuzelijst en geef de gebruikers naam en het wacht woord op. Klik op **Verbinding testen** om de instellingen te valideren en selecteer vervolgens **Maken**.
 
     ![Azure Synapse Analytics configureren](./media/load-azure-sql-data-warehouse/configure-azure-sql-dw.png)
 
@@ -122,7 +122,7 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
 9. Voer op de pagina **instellingen** de volgende stappen uit:
 
-    a. Klik in de sectie **faserings instellingen** op **+ Nieuw** voor een nieuwe staging-opslag. De opslag wordt gebruikt voor het faseren van de gegevens voordat deze in azure Synapse Analytics wordt geladen met poly base. Nadat de kopie is voltooid, worden de tussenliggende gegevens in Azure Blob Storage automatisch opgeschoond.
+    a. Klik in de sectie **faserings instellingen** op **+ Nieuw** voor een nieuwe staging-opslag. Het archief wordt gebruikt voor het faseren van de gegevens voordat deze in Azure Synapse Analytics worden geladen met PolyBase. Nadat de kopie is voltooid, worden de tussenliggende gegevens in Azure Blob Storage automatisch opgeschoond.
 
     b. Selecteer uw opslag account op de pagina **nieuwe gekoppelde service** en selecteer **maken** om de gekoppelde service te implementeren.
 
@@ -140,11 +140,11 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
     [![Pijplijnuitvoeringen](./media/load-azure-sql-data-warehouse/pipeline-monitoring.png)](./media/load-azure-sql-data-warehouse/pipeline-monitoring.png#lightbox) controleren
 
-13. Als u wilt terugkeren naar de weer gave pijplijn uitvoeringen, selecteert u de koppeling **alle pijplijn uitvoeringen** bovenaan. Selecteer **Vernieuwen** om de lijst te vernieuwen.
+13. Als u wilt terugkeren naar de weergave met de pijplijnuitvoeringen, selecteert u de koppeling **Alle pijplijnuitvoeringen** bovenaan. Selecteer **Vernieuwen** om de lijst te vernieuwen.
 
     ![Uitvoering van activiteiten controleren](./media/load-azure-sql-data-warehouse/activity-monitoring.png)
 
-14. Als u de uitvoerings Details voor elke Kopieer activiteit wilt bewaken, selecteert u de koppeling **Details** (bril pictogram) onder **activiteit naam** in de weer gave uitvoeringen van activiteit. U kunt details, zoals het volume van de gegevens die uit de bron zijn gekopieerd, bewaken naar de sink, gegevens doorvoer, uitvoerings stappen met de overeenkomstige duur en de gebruikte configuraties.
+14. Als u de uitvoerings Details voor elke Kopieer activiteit wilt bewaken, selecteert u de koppeling **Details** (bril pictogram) onder **activiteit naam** in de weer gave uitvoeringen van activiteit. U kunt details bekijken, zoals het volume van de gegevens die uit de bron zijn gekopieerd naar de sink, de gegevensdoorvoer, de uitvoeringsstappen met de overeenkomstige duur en de gebruikte configuraties.
     ![Details van de uitvoering van de activiteit eerst controleren](./media/load-azure-sql-data-warehouse/monitor-activity-run-details-1.png)
 
     ![Details van uitvoering van activiteit bewaken seconde](./media/load-azure-sql-data-warehouse/monitor-activity-run-details-2.png)

@@ -9,11 +9,11 @@ ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 06/01/2020
 ms.openlocfilehash: c920c9b3b28df7f5bf3bf169ef88ab967f23649e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085374"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001317"
 ---
 # <a name="tutorial-send-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Zelfstudie: Pushmeldingen verzenden naar iOS-apps met Azure Notification Hubs
 
@@ -51,18 +51,18 @@ Genereer het bestand met de aanvraag voor certificaatondertekening dat door Appl
 
 1. Voer op uw Mac het hulpprogramma Sleutelhangertoegang uit. Dit kan worden gestart vanuit de map **Hulpprogramma's** of de map **Overige** in Launchpad.
 
-2. Selecteer **Toegang tot sleutelhanger** , vouw **Certificaatassistent** uit en selecteer vervolgens **Een certificaat bij een certificaatautoriteit aanvragen**.
+2. Selecteer **Toegang tot sleutelhanger**, vouw **Certificaatassistent** uit en selecteer vervolgens **Een certificaat bij een certificaatautoriteit aanvragen**.
 
    :::image type="content" source="media/ios-sdk-get-started/image1.png" alt-text="Schermopname waarin de optie Een certificaat aanvragen in het menu Certificeringsinstantie is gemarkeerd.":::
 
    > [!NOTE]
    > Sleutelhangertoegang selecteert standaard het eerste item in de lijst. Dit kan een probleem zijn als u zich in de categorie **Certificaten** bevindt en **Apple Worldwide Developer Relations Certification Authority** niet het eerste item in de lijst is. Zorg ervoor dat u een item hebt dat geen sleutel is of dat de sleutel **Apple Worldwide Developer Relations Certification Authority** is geselecteerd, voordat u de CSR (Certificate Signing Request) genereert.
 
-3. Selecteer uw **E-mailadres van de gebruiker** , voer uw waarde voor **Algemene naam** in, zorg ervoor dat u **Opgeslagen op schijf** hebt opgegeven en selecteer **Doorgaan**. Laat **E-mailadres van CA** leeg omdat dit niet vereist is.
+3. Selecteer uw **E-mailadres van de gebruiker**, voer uw waarde voor **Algemene naam** in, zorg ervoor dat u **Opgeslagen op schijf** hebt opgegeven en selecteer **Doorgaan**. Laat **E-mailadres van CA** leeg omdat dit niet vereist is.
 
    :::image type="content" source="media/ios-sdk-get-started/image2.png" alt-text="Vereiste certificaatgegevens":::
 
-4. Voer een naam in voor het CSR-bestand in **Opslaan als** , selecteer de locatie in **Waar** en selecteer vervolgens **Opslaan**.
+4. Voer een naam in voor het CSR-bestand in **Opslaan als**, selecteer de locatie in **Waar** en selecteer vervolgens **Opslaan**.
 
    :::image type="content" source="media/ios-sdk-get-started/image3.png" alt-text="Bestandsnaam kiezen":::
 
@@ -82,14 +82,14 @@ Registreer uw app bij Apple en registreer u voor pushmeldingen om pushmeldingen 
 
    :::image type="content" source="media/ios-sdk-get-started/image5.png" alt-text="Pagina Nieuwe id registreren":::
 
-3. Werk de volgende drie waarden voor uw nieuwe app bij en selecteer vervolgens **Doorgaan** :
+3. Werk de volgende drie waarden voor uw nieuwe app bij en selecteer vervolgens **Doorgaan**:
 
-   - **Beschrijving** : Typ een beschrijvende naam voor uw app.
-   - **Bundel-id** : Voer een bundel-id in van het formulier **Organization Identifier.Product Name** zoals genoemd in de [App Distribution Guide](https://help.apple.com/xcode/mac/current/#/dev91fe7130a). De waarden voor **Organization Identifier** en **Product Name** moeten overeenkomen met de organisatie-id en productnaam die u gebruikt wanneer u een Xcode-project gaat maken. In de volgende schermopname wordt de waarde voor **NotificationHubs** als de organisatie-id gebruikt en de waarde voor **GetStarted** als de productnaam. Zorg ervoor dat de waarde voor **Bundel-id** overeenkomt met de waarde in uw Xcode-project, zodat Xcode het juiste publicatieprofiel gebruikt.
+   - **Beschrijving**: Typ een beschrijvende naam voor uw app.
+   - **Bundel-id**: Voer een bundel-id in van het formulier **Organization Identifier.Product Name** zoals genoemd in de [App Distribution Guide](https://help.apple.com/xcode/mac/current/#/dev91fe7130a). De waarden voor **Organization Identifier** en **Product Name** moeten overeenkomen met de organisatie-id en productnaam die u gebruikt wanneer u een Xcode-project gaat maken. In de volgende schermopname wordt de waarde voor **NotificationHubs** als de organisatie-id gebruikt en de waarde voor **GetStarted** als de productnaam. Zorg ervoor dat de waarde voor **Bundel-id** overeenkomt met de waarde in uw Xcode-project, zodat Xcode het juiste publicatieprofiel gebruikt.
 
       :::image type="content" source="media/ios-sdk-get-started/image6.png" alt-text="App-id registreren":::
 
-   - **Pushmeldingen** : Controleer de optie **Pushmeldingen** in het gedeelte **Mogelijkheden**.
+   - **Pushmeldingen**: Controleer de optie **Pushmeldingen** in het gedeelte **Mogelijkheden**.
 
       :::image type="content" source="media/ios-sdk-get-started/image7.png" alt-text="Nieuwe app-id registreren":::
 
@@ -108,7 +108,7 @@ Registreer uw app bij Apple en registreer u voor pushmeldingen om pushmeldingen 
 
 Er is een certificaat vereist om de Notification Hub te kunnen laten werken met **APNs**. Dit kan op een van de volgende twee manieren worden gedaan:
 
-- Maak een **.p12** -bestand dat rechtstreeks kan worden geüpload naar Notification Hubs.
+- Maak een **.p12**-bestand dat rechtstreeks kan worden geüpload naar Notification Hubs.
 
 - Maak een **.p8** dat kan worden gebruikt voor [op tokens gebaseerde verificatie](notification-hubs-push-notification-http2-token-authentication.md) (de nieuwere methode).
 
@@ -129,7 +129,7 @@ De tweede optie heeft een aantal voordelen ten opzichte van het gebruik van cert
    > [!NOTE]
    > In deze zelfstudie wordt een ontwikkelingscertificaat gebruikt. Hetzelfde proces wordt gebruikt bij het registreren van een productiecertificaat. Zorg ervoor dat u hetzelfde certificaattype gebruikt als u meldingen verzendt.
 
-3. Selecteer **Bestand kiezen** , blader naar de locatie waar u het CSR-bestand hebt opgeslagen bij de eerste taak en dubbelklik vervolgens op de naam van het certificaat om het te laden. Selecteer vervolgens **Doorgaan**.
+3. Selecteer **Bestand kiezen**, blader naar de locatie waar u het CSR-bestand hebt opgeslagen bij de eerste taak en dubbelklik vervolgens op de naam van het certificaat om het te laden. Selecteer vervolgens **Doorgaan**.
 
 4. Nadat de portal het certificaat heeft gemaakt, selecteert u de knop **Downloaden**. Sla het certificaat op en onthoud de locatie waar het wordt opgeslagen.
 
@@ -147,7 +147,7 @@ De tweede optie heeft een aantal voordelen ten opzichte van het gebruik van cert
 
    Hoewel de naam in uw certificaat kan afwijken, wordt de naam voorafgegaan door **Apple Development iOS Push Services**.
 
-6. In Sleutelhangertoegang klikt u met de rechtermuisknop op het nieuwe pushcertificaat dat u hebt gemaakt in de categorie **Certificaten**. Selecteer **Exporteren** , geef het bestand een naam, selecteer de indeling **.p12** en klik vervolgens op **Opslaan**.
+6. In Sleutelhangertoegang klikt u met de rechtermuisknop op het nieuwe pushcertificaat dat u hebt gemaakt in de categorie **Certificaten**. Selecteer **Exporteren**, geef het bestand een naam, selecteer de indeling **.p12** en klik vervolgens op **Opslaan**.
 
    :::image type="content" source="media/ios-sdk-get-started/image14.png" alt-text="Certificaat exporteren":::
 
@@ -160,16 +160,16 @@ De tweede optie heeft een aantal voordelen ten opzichte van het gebruik van cert
 
 1. Noteer de volgende details:
 
-   - **App-id-voorvoegsel** (dit is een **Team-id** )
+   - **App-id-voorvoegsel** (dit is een **Team-id**)
    - **Bundel-id**
 
-2. Als u teruggaat naar **Certificaten, id's en profielen** , klikt u op **Sleutels**. Als u al een sleutel voor **APNS** hebt geconfigureerd, kunt u het .p8-certificaat dat u hebt gedownload opnieuw gebruiken nadat het is gemaakt. Als dat het geval is, kunt u de stappen 3 tot 5 negeren.
+2. Als u teruggaat naar **Certificaten, id's en profielen**, klikt u op **Sleutels**. Als u al een sleutel voor **APNS** hebt geconfigureerd, kunt u het .p8-certificaat dat u hebt gedownload opnieuw gebruiken nadat het is gemaakt. Als dat het geval is, kunt u de stappen 3 tot 5 negeren.
 
-3. Klik op de knop **+** (of de knop **Een sleutel maken** ) om een nieuwe sleutel te maken.
+3. Klik op de knop **+** (of de knop **Een sleutel maken**) om een nieuwe sleutel te maken.
 
-4. Geef een geschikte waarde voor **Sleutelnaam** op, selecteer de optie **Apple Push Notifications service (APNS)** en klik vervolgens op **Doorgaan** , gevolgd door **Registreren** op het volgende scherm.
+4. Geef een geschikte waarde voor **Sleutelnaam** op, selecteer de optie **Apple Push Notifications service (APNS)** en klik vervolgens op **Doorgaan**, gevolgd door **Registreren** op het volgende scherm.
 
-5. Klik op **Downloaden** , verplaats het bestand **.p8** (voorafgegaan door `AuthKey_` ) naar een veilige lokale map en klik vervolgens op **Klaar**.
+5. Klik op **Downloaden**, verplaats het bestand **.p8** (voorafgegaan door `AuthKey_` ) naar een veilige lokale map en klik vervolgens op **Klaar**.
 
    > [!IMPORTANT]
    > Zorg ervoor dat uw .p8-bestand op een veilige plaats is opgeslagen (en sla een back-up op). Nadat de sleutel is gedownload, kan deze niet opnieuw worden gedownload omdat de serverkopie wordt verwijderd.
@@ -197,7 +197,7 @@ Aan het einde van deze stappen zou u de volgende informatie moeten hebben voor l
 
 ## <a name="create-a-provisioning-profile"></a>Een inrichtingsprofiel maken
 
-1. Ga terug naar de [iOS Provisioning Portal](https://go.microsoft.com/fwlink/p/?LinkId=272456), selecteer **Certificaten, id's en profielen** , selecteer **Profielen** in het linkermenu en selecteer vervolgens **+** om een nieuw profiel te maken. Het scherm **Een nieuw inrichtingsprofiel registreren** wordt weergegeven.
+1. Ga terug naar de [iOS Provisioning Portal](https://go.microsoft.com/fwlink/p/?LinkId=272456), selecteer **Certificaten, id's en profielen**, selecteer **Profielen** in het linkermenu en selecteer vervolgens **+** om een nieuw profiel te maken. Het scherm **Een nieuw inrichtingsprofiel registreren** wordt weergegeven.
 
 2. Selecteer **Ontwikkeling iOS-app** onder **Ontwikkeling** als het inrichtingsprofieltype en selecteer vervolgens **Doorgaan**.
 
@@ -216,7 +216,7 @@ Aan het einde van deze stappen zou u de volgende informatie moeten hebben voor l
    5. Selecteer **Doorgaan**.
    6. Download het ontwikkelingscertificaat en onthoud de locatie waar het is opgeslagen.
 
-5. Ga terug naar de pagina **Certificaten, id's en profielen** , selecteer **Profielen** in het linkermenu en selecteer vervolgens **+** om een nieuw profiel te maken. Het scherm **Een nieuw inrichtingsprofiel registreren** wordt weergegeven.
+5. Ga terug naar de pagina **Certificaten, id's en profielen**, selecteer **Profielen** in het linkermenu en selecteer vervolgens **+** om een nieuw profiel te maken. Het scherm **Een nieuw inrichtingsprofiel registreren** wordt weergegeven.
 
 6. Selecteer in het venster **Certificaten selecteren** het ontwikkelingscertificaat dat u zojuist hebt gemaakt. Selecteer vervolgens **Doorgaan**.
 
@@ -236,11 +236,11 @@ In dit gedeelte maakt u een Notification Hub en configureert u verificatie met A
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
-2. Selecteer **Alle services** in het menu aan de linkerkant en selecteer **Notification Hubs** in de sectie **Mobiel**. Selecteer het sterpictogram naast de servicenaam om de service toe te voegen aan de sectie **FAVORIETEN** in het menu aan de linkerkant. Nadat u **Notification Hubs** hebt toegevoegd aan **FAVORIETEN** , selecteert u dit.
+2. Selecteer **Alle services** in het menu aan de linkerkant en selecteer **Notification Hubs** in de sectie **Mobiel**. Selecteer het sterpictogram naast de servicenaam om de service toe te voegen aan de sectie **FAVORIETEN** in het menu aan de linkerkant. Nadat u **Notification Hubs** hebt toegevoegd aan **FAVORIETEN**, selecteert u dit.
 
    :::image type="content" source="media/ios-sdk-get-started/image18.png" alt-text="Azure-portal":::
 
-3. Op de **Notification Hubs** -pagina selecteert u **Toevoegen** op de werkbalk.
+3. Op de **Notification Hubs**-pagina selecteert u **Toevoegen** op de werkbalk.
 
    :::image type="content" source="media/ios-sdk-get-started/image19.png" alt-text="Werkbalkknop Toevoegen":::
 

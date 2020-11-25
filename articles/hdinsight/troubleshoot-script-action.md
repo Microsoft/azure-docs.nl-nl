@@ -9,11 +9,11 @@ ms.topic: troubleshooting
 ms.custom: seoapr2020
 ms.date: 04/21/2020
 ms.openlocfilehash: ef9322c17a20ab5bfcf348649a1272dd4f301c5c
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93284473"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000671"
 ---
 # <a name="troubleshoot-script-actions-in-azure-hdinsight"></a>Problemen met script acties in azure HDInsight oplossen
 
@@ -45,13 +45,13 @@ Als het maken van een cluster mislukt vanwege een script fout, worden de logboek
 
     ![Script actie logboeken](./media/troubleshoot-script-action/script-action-logs-in-storage.png)
 
-    In deze map worden de logboeken afzonderlijk geordend voor **hoofd knooppunt** , **worker node** en **Zookeeper node**. Zie de volgende voorbeelden:
+    In deze map worden de logboeken afzonderlijk geordend voor **hoofd knooppunt**, **worker node** en **Zookeeper node**. Zie de volgende voorbeelden:
 
-    * **Hoofd knooppunt** : `<ACTIVE-HEADNODE-NAME>.cloudapp.net`
+    * **Hoofd knooppunt**: `<ACTIVE-HEADNODE-NAME>.cloudapp.net`
 
-    * **Worker-knoop punt** : `<ACTIVE-WORKERNODE-NAME>.cloudapp.net`
+    * **Worker-knoop punt**: `<ACTIVE-WORKERNODE-NAME>.cloudapp.net`
 
-    * **Zookeeper-knoop punt** : `<ACTIVE-ZOOKEEPERNODE-NAME>.cloudapp.net`
+    * **Zookeeper-knoop punt**: `<ACTIVE-ZOOKEEPERNODE-NAME>.cloudapp.net`
 
 * Alle **stdout** en **stderr** van de bijbehorende host worden geüpload naar het opslag account. Er zijn één **uitvoer- \* . txt** en **fouten- \* . txt** voor elke script actie. Het **output-*. txt** -bestand bevat informatie over de URI van het script dat op de host is uitgevoerd. De volgende tekst is een voor beeld van deze informatie:
 
@@ -59,7 +59,7 @@ Als het maken van een cluster mislukt vanwege een script fout, worden de logboek
     'Start downloading script locally: ', u'https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh'
     ```
 
-* Het is mogelijk dat u herhaaldelijk een script actie cluster met dezelfde naam maakt. In dat geval kunt u de relevante logboeken onderscheiden op basis van de naam van de map **date** . De mapstructuur voor een cluster, **mycluster** , die op verschillende datums wordt gemaakt, lijkt bijvoorbeeld op de volgende logboek vermeldingen:
+* Het is mogelijk dat u herhaaldelijk een script actie cluster met dezelfde naam maakt. In dat geval kunt u de relevante logboeken onderscheiden op basis van de naam van de map **date** . De mapstructuur voor een cluster, **mycluster**, die op verschillende datums wordt gemaakt, lijkt bijvoorbeeld op de volgende logboek vermeldingen:
 
     `\STORAGE_ACCOUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\mycluster\2015-10-04` `\STORAGE_ACCOUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\mycluster\2015-10-05`
 

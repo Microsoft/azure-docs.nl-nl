@@ -7,12 +7,12 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 07a274bd4ac227b6260f7891b24dad0eacdfb4f7
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: a71c1a0df1a72e3831fa54a041539f62b38a0aca
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94561507"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95999906"
 ---
 # <a name="create-luis-resources"></a>LUIS-resources maken
 
@@ -29,8 +29,8 @@ Met LUIS kunt u drie typen Azure-resources en één niet-Azure-resource maken:
 
 |Resource|Doel|Cognitieve service `kind`|Cognitieve service `type`|
 |--|--|--|--|
-|Resource ontwerpen|Met kunt u uw toepassingen maken, beheren, trainen, testen en publiceren. [Maak een Luis-ontwerp bron](luis-how-to-azure-subscription.md#create-luis-resources-in-the-azure-portal) als u Luis-apps programmatisch of vanuit de Luis-Portal wilt ontwerpen. U moet [uw Luis-account migreren](luis-migration-authoring.md#what-is-migration) voordat u uw Azure-ontwerp resources aan uw toepassing koppelt. U kunt machtigingen voor de bewerkings resource beheren door personen [de rol Inzender](#contributions-from-other-authors)toe te wijzen. <br><br> Er is één laag beschikbaar voor de LUIS-ontwerp Bron:<br> <ul> <li>**Gratis F0 authoring resource** , waarmee u 1.000.000 gratis bewerkings transacties en 1.000 gratis test eindpunt aanvragen voor het voor Speld kunt. |`LUIS.Authoring`|`Cognitive Services`|
-|Voorspellingsresource| Nadat u uw LUIS-toepassing hebt gepubliceerd, gebruikt u de Voorspellings resource/sleutel om te vragen om een query voor voor spelling-eindpunt aanvragen. Maak een LUIS-Voorspellings bron voordat u de voor spellingen van de client-app voorspelde aanvragen 1.000 overschrijdt die zijn opgegeven door de auteur of de eerste bron. <br><br> Er zijn twee lagen beschikbaar voor de Voorspellings resource:<br><ul> <li> **Gratis F0-Voorspellings resource** , die maandelijks gratis Voorspellings eindpunt aanvragen 10.000 ontvangt.<br> <li> **Standaard S0-Voorspellings resource** , de betaalde laag. [Meer informatie over prijzen.](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/)|`LUIS`|`Cognitive Services`|
+|Resource ontwerpen|Met kunt u uw toepassingen maken, beheren, trainen, testen en publiceren. [Maak een Luis-ontwerp bron](luis-how-to-azure-subscription.md#create-luis-resources-in-the-azure-portal) als u Luis-apps programmatisch of vanuit de Luis-Portal wilt ontwerpen. U moet [uw Luis-account migreren](luis-migration-authoring.md#what-is-migration) voordat u uw Azure-ontwerp resources aan uw toepassing koppelt. U kunt machtigingen voor de bewerkings resource beheren door personen [de rol Inzender](#contributions-from-other-authors)toe te wijzen. <br><br> Er is één laag beschikbaar voor de LUIS-ontwerp Bron:<br> <ul> <li>**Gratis F0 authoring resource**, waarmee u 1.000.000 gratis bewerkings transacties en 1.000 gratis test eindpunt aanvragen voor het voor Speld kunt. |`LUIS.Authoring`|`Cognitive Services`|
+|Voorspellingsresource| Nadat u uw LUIS-toepassing hebt gepubliceerd, gebruikt u de Voorspellings resource/sleutel om te vragen om een query voor voor spelling-eindpunt aanvragen. Maak een LUIS-Voorspellings bron voordat u de voor spellingen van de client-app voorspelde aanvragen 1.000 overschrijdt die zijn opgegeven door de auteur of de eerste bron. <br><br> Er zijn twee lagen beschikbaar voor de Voorspellings resource:<br><ul> <li> **Gratis F0-Voorspellings resource**, die maandelijks gratis Voorspellings eindpunt aanvragen 10.000 ontvangt.<br> <li> **Standaard S0-Voorspellings resource**, de betaalde laag. [Meer informatie over prijzen.](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/)|`LUIS`|`Cognitive Services`|
 |Resource voor starter/proef versie|Met kunt u uw toepassingen maken, beheren, trainen, testen en publiceren. Deze resource wordt standaard gemaakt als u de optie starter resource kiest wanneer u zich voor het eerst aanmeldt bij LUIS. De start sleutel wordt uiteindelijk afgeschaft. Alle LUIS-gebruikers moeten [hun accounts migreren](luis-migration-authoring.md#what-is-migration) en hun Luis-toepassingen koppelen aan een ontwerp bron. In tegens telling tot de ontwerp bron biedt deze resource u geen machtigingen voor toegangs beheer op basis van rollen. <br><br> Net als bij de bewerkings resource biedt de eerste resource u 1.000.000 gratis bewerkings transacties en zijn er Voorspellings eindpunt aanvragen van 1.000 gratis getest.|-|Geen Azure-resource.|
 |[Cognitive Services bron sleutel voor de service](../cognitive-services-apis-create-account-cli.md?tabs=windows#create-a-cognitive-services-resource)|Vraag Voorspellings eindpunt aanvragen die worden gedeeld met LUIS en andere ondersteunde cognitieve Services.|`CognitiveServices`|`Cognitive Services`|
 
@@ -52,7 +52,7 @@ Als u het eigendom van een resource wilt wijzigen, kunt u een van de volgende ac
 * Exporteer de LUIS-app als een bestand en importeer de app vervolgens op een ander abonnement. Exporteren is beschikbaar op de pagina **mijn apps** in de Luis-Portal.
 
 
-## <a name="resource-limits"></a>Bronlimieten
+## <a name="resource-limits"></a>Resourcelimieten
 
 ### <a name="authoring-key-creation-limits"></a>Limieten voor het maken van sleutels ontwerpen
 
@@ -128,7 +128,7 @@ De eigenaar en alle mede werkers hebben toegang tot het schrijven van de app.
 
 Toegang voor het uitvoeren van query's op het Voorspellings eindpunt wordt bepaald door een instelling op de pagina **toepassings gegevens** in de sectie **beheren** .
 
-|[Persoonlijk eind punt](#runtime-security-for-private-apps)|[Openbaar eindpunt](#runtime-security-for-public-apps)|
+|[Privé-eindpunt](#runtime-security-for-private-apps)|[Openbaar eindpunt](#runtime-security-for-public-apps)|
 |:--|:--|
 |Beschikbaar voor eigenaar en mede werkers|Beschikbaar voor eigenaar, mede werkers en anderen die de App-ID kent|
 
@@ -176,7 +176,7 @@ U kunt bepalen wie uw LUIS prediction runtime-eindpunt sleutel kan zien door dez
 
 ### <a name="create-resources-in-the-azure-cli"></a>Resources maken in de Azure CLI
 
-Gebruik de [Azure cli](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) om elke resource afzonderlijk te maken.
+Gebruik de [Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest) om elke resource afzonderlijk te maken.
 
 Resource `kind` :
 
@@ -224,7 +224,7 @@ U kunt een ontwerp bron toewijzen voor één app of voor alle apps in LUIS. Met 
 U kunt deze procedure gebruiken voor het maken van een ontwerp-of Voorspellings bron of het toewijzen van een resource aan een toepassing: 
 
 1. Meld u aan bij de [Luis-Portal](https://www.luis.ai). Selecteer een app in de lijst **Mijn apps**.
-1. Ga naar **beheer**  >  **Azure-resources** :
+1. Ga naar **beheer**  >  **Azure-resources**:
 
     ![Scherm opname van de pagina met Azure-resources.](./media/luis-how-to-azure-subscription/manage-azure-resources-prediction.png)
 

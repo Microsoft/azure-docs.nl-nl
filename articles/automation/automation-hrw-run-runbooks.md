@@ -6,11 +6,11 @@ ms.subservice: process-automation
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2f1c703f2bd2e90e15c566b7e04e8a878c16f6de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91772818"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001266"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Runbooks uitvoeren op een Hybrid Runbook Worker
 
@@ -86,7 +86,7 @@ Gebruik de volgende procedure om een uitvoeren als-account op te geven voor een 
 
 1. Maak een [referentie-element](./shared-resources/credentials.md) met toegang tot lokale bronnen.
 2. Open het Automation-account in de Azure Portal.
-3. Selecteer **Hybrid worker groepen**en selecteer vervolgens de specifieke groep.
+3. Selecteer **Hybrid worker groepen** en selecteer vervolgens de specifieke groep.
 4. Selecteer **alle instellingen**, gevolgd door de instellingen van de **Hybrid worker-groep**.
 5. Wijzig de waarde van **uitvoeren als** van **standaard** in **aangepast**.
 6. Selecteer de referentie en klik op **Opslaan**.
@@ -263,7 +263,7 @@ Als u de GPG sleutel hanger en het sleutel paar wilt maken, gebruikt u het [acco
     sudo su – nxautomation
     ```
 
-2. Wanneer u **nxautomation**gebruikt, genereert u het GPG-sleutel paar. GPG begeleidt u bij de stappen. U moet een naam, e-mail adres, verval tijd en wachtwoordzin opgeven. Vervolgens wacht u tot er voldoende entropie op de computer is om de sleutel te genereren.
+2. Wanneer u **nxautomation** gebruikt, genereert u het GPG-sleutel paar. GPG begeleidt u bij de stappen. U moet een naam, e-mail adres, verval tijd en wachtwoordzin opgeven. Vervolgens wacht u tot er voldoende entropie op de computer is om de sleutel te genereren.
 
     ```bash
     sudo gpg --generate-key
@@ -299,7 +299,7 @@ Nadat u de handtekening validatie hebt geconfigureerd, gebruikt u de volgende GP
 gpg –-clear-sign <runbook name>
 ```
 
-Het ondertekende runbook heet ** <runbook name> . asc**.
+Het ondertekende runbook heet **<runbook name> . asc**.
 
 U kunt nu het ondertekende runbook uploaden naar Azure Automation en dit uitvoeren als een normaal runbook.
 
@@ -307,7 +307,7 @@ U kunt nu het ondertekende runbook uploaden naar Azure Automation en dit uitvoer
 
 [Een Runbook starten in azure Automation](start-runbooks.md) worden verschillende methoden beschreven voor het starten van een runbook. Bij het starten van een runbook op een Hybrid Runbook Worker wordt een optie **uitvoeren op** gebruikt waarmee u de naam van een Hybrid Runbook worker groep kunt opgeven. Wanneer een groep is opgegeven, haalt een van de werk nemers in die groep het runbook op en voert deze uit. Als uw runbook deze optie niet opgeeft, wordt het runbook op de gebruikelijke manier door Azure Automation uitgevoerd.
 
-Wanneer u een runbook in de Azure Portal start, wordt de optie **uitvoeren op** weer gegeven waarvoor u **Azure** of **Hybrid worker**kunt selecteren. Als u **Hybrid worker**selecteert, kunt u de Hybrid Runbook worker groep kiezen in een vervolg keuzelijst.
+Wanneer u een runbook in de Azure Portal start, wordt de optie **uitvoeren op** weer gegeven waarvoor u **Azure** of **Hybrid worker** kunt selecteren. Als u **Hybrid worker** selecteert, kunt u de Hybrid Runbook worker groep kiezen in een vervolg keuzelijst.
 
 Wanneer u een runbook start met behulp van Power shell, gebruikt u de `RunOn` para meter met de cmdlet [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook) . In het volgende voor beeld wordt Windows Power shell gebruikt om een runbook met de naam **test-runbook** te starten voor een Hybrid Runbook worker groep met de naam MyHybridGroup.
 

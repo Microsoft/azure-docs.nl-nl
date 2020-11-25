@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 08/05/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 2502fd4996e739fccd1247ca0f6f5e24617eb666
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 60b0ab502f98868cc5b3ffb254aaf1798ea1d227
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542963"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95999957"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-computer-vision-rest-api-and-curl"></a>Quickstart: Een externe afbeelding analyseren met behulp van de Computer Vision REST API en cURL
 

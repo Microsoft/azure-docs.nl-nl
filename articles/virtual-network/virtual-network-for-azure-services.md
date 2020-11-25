@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 04/06/2020
 ms.author: kumud
 ms.openlocfilehash: 7e53127b51116c87dd8b92ea3cd87ebf1892d38b
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461699"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999685"
 ---
 # <a name="deploy-dedicated-azure-services-into-virtual-networks"></a>Speciale Azure-Services implementeren in virtuele netwerken
 
@@ -44,11 +44,11 @@ Het implementeren van services binnen een virtueel netwerk biedt de volgende mog
 | Netwerk | [Application Gateway-WAF](../application-gateway/application-gateway-ilb-arm.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[VPN Gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Azure Firewall](../firewall/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)  <br/> [Azure Bastion](../bastion/bastion-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Virtuele netwerk apparaten](/windows-server/networking/sdn/manage/use-network-virtual-appliances-on-a-vn)| Ja <br/> Ja <br/> Ja <br/> Ja <br/> Nee
 |Gegevens|[RedisCache](../azure-cache-for-redis/cache-how-to-premium-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Azure SQL Managed Instance](../azure-sql/managed-instance/connectivity-architecture-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)| Ja <br/> Ja <br/> 
 |Analyse | [Azure HDInsight](../hdinsight/hdinsight-extend-hadoop-virtual-network.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Azure Databricks](../azure-databricks/what-is-azure-databricks.md?toc=%2fazure%2fvirtual-network%2ftoc.json) |Geen<sup>2</sup> <br/> Geen<sup>2</sup> <br/> 
-| Identiteit | [Azure Active Directory Domain Services](../active-directory-domain-services/active-directory-ds-getting-started-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json) |Nee <br/>
+| Identiteit | [Azure Active Directory Domain Services](../active-directory-domain-services/active-directory-ds-getting-started-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json) |No <br/>
 | Containers | [Azure Kubernetes Service (AKS)](../aks/concepts-network.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Azure container instance (ACI)](https://www.aka.ms/acivnet)<br/>[Azure container service-engine](https://github.com/Azure/acs-engine) met Azure Virtual Network cni [-invoeg toepassing](https://github.com/Azure/acs-engine/tree/master/examples/vnet)<br/>[Azure Functions](../azure-functions/functions-networking-options.md#virtual-network-integration) |Geen<sup>2</sup><br/> Ja <br/><br/> Nee <br/> Ja
 | Web | [API Management](../api-management/api-management-using-with-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Web-apps](../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[App Service-omgeving](../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Azure Logic Apps](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>|Ja <br/> Ja <br/> Ja <br/> Ja
 | Zone | [Azure Dedicated HSM](../dedicated-hsm/index.yml?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Azure NetApp Files](../azure-netapp-files/azure-netapp-files-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>|Ja <br/> Ja <br/>
-| Azure Spring Cloud | [Implementeren in een virtueel Azure-netwerk (VNet-injectie)](../spring-cloud/spring-cloud-tutorial-deploy-in-azure-virtual-network.md)<br/>| Ja <br/>
+| Azure Spring Cloud | [Implementeren in een virtueel Azure-netwerk (VNet-injectie)](../spring-cloud/spring-cloud-tutorial-deploy-in-azure-virtual-network.md)<br/>| Yes <br/>
 | | |
 
 <sup>1</sup> ' dedicated ' impliceert dat alleen servicespecifieke resources kunnen worden geïmplementeerd in dit subnet en kan niet worden gecombineerd met de virtuele machine van de klant-VMSSs <br/> 

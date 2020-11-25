@@ -4,11 +4,11 @@ description: Overzicht van OpenAPI-ondersteuning in Azure Functions
 ms.topic: conceptual
 ms.date: 03/23/2017
 ms.openlocfilehash: 499d4f685e3802fcc37c8a3050ae367207f192d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87385820"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000199"
 ---
 # <a name="openapi-20-metadata-support-in-azure-functions-preview"></a>OpenAPI 2,0 meta gegevens ondersteunen in Azure Functions (preview-versie)
 OpenAPI 2,0 (voorheen Swagger) meta gegevens ondersteuning in Azure Functions is een preview-functie die u kunt gebruiken om een OpenAPI 2,0-definitie in een functie-app te schrijven. U kunt dat bestand vervolgens hosten met behulp van de functie-app.
@@ -24,7 +24,7 @@ Met [OpenAPI-meta gegevens](https://swagger.io/) kan een functie die als host fu
 >We raden u aan om te beginnen met de [zelf studie](./functions-openapi-definition.md) aan de slag en vervolgens terug te gaan naar dit document voor meer informatie over specifieke functies.
 
 ## <a name="enable-openapi-definition-support"></a><a name="enable"></a>Ondersteuning voor OpenAPI-definitie inschakelen
-U kunt alle OpenAPI-instellingen configureren op de pagina **API-definitie** in de **platform functies**van uw functie-app.
+U kunt alle OpenAPI-instellingen configureren op de pagina **API-definitie** in de **platform functies** van uw functie-app.
 
 > [!NOTE]
 > De functie-API-definitie functie wordt momenteel niet ondersteund voor Beta runtime.

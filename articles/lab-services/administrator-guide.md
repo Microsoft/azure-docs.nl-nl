@@ -4,11 +4,11 @@ description: Deze hand leiding helpt beheerders die Lab-accounts maken en behere
 ms.topic: article
 ms.date: 10/20/2020
 ms.openlocfilehash: 08d2fea719ad67f666ea9da09721dc3f7ab54768
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024633"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999277"
 ---
 # <a name="azure-lab-services---administrator-guide"></a>Azure Lab Services-beheerders handleiding
 IT-beheerders die de cloud resources van een universiteit beheren, zijn normaal gesp roken verantwoordelijk voor het instellen van het lab-account voor hun school. Nadat ze een Lab-account hebben ingesteld, maken beheerders of docenten de Labs die zijn opgenomen in het account. Dit artikel bevat een overzicht op hoog niveau van de betrokken Azure-resources en de richt lijnen voor het maken van deze.

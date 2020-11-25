@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
 ms.openlocfilehash: 3b52cea1d440506caf5b8244c9643719edd8755c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91704277"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999243"
 ---
 # <a name="configure-and-access-azure-database-for-postgresql---single-server-logs-from-the-azure-portal"></a>Azure Database for PostgreSQL-logboeken met één server configureren en gebruiken vanuit de Azure Portal
 
@@ -23,7 +23,7 @@ Voor de stappen in dit artikel moet [Azure database for postgresql server](quick
 ## <a name="configure-logging"></a>Logboek registratie configureren
 De toegang tot de query logboeken en fout logboeken configureren. 
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 2. Selecteer uw Azure Database for PostgreSQL-server.
 
@@ -37,7 +37,7 @@ De toegang tot de query logboeken en fout logboeken configureren.
 
    Nadat u de para meters hebt gewijzigd, selecteert u **Opslaan**. Of u kunt uw wijzigingen negeren. 
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/3-save-discard.png" alt-text="Scherm opname van opties voor Server logboeken":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/3-save-discard.png" alt-text="Scherm opname van opties voor server parameters":::
 
 Op de pagina **server parameters** kunt u teruggaan naar de lijst met Logboeken door de pagina te sluiten.
 
@@ -50,18 +50,18 @@ Nadat de logboek registratie is gestart, kunt u een lijst met beschik bare logbo
 
 3. Selecteer in de sectie **bewaking** in de zijbalk **Server logboeken**. Op de pagina wordt een lijst met uw logboek bestanden weer gegeven.
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/4-server-logs-list.png" alt-text="Scherm opname van opties voor Server logboeken":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/4-server-logs-list.png" alt-text="Scherm opname van de pagina Server logboeken, met de lijst met gemarkeerde logboeken":::
 
    > [!TIP]
    > De naam Conventie van het logboek is **postgresql-jjjj-mm-dd_hh0000. log**. De datum en tijd die in de bestands naam wordt gebruikt, is het tijdstip waarop het logboek is uitgegeven. De logboek bestanden draaien elk uur of 100 MB, afhankelijk van wat het eerste komt.
 
 4. Gebruik, indien nodig, het zoekvak om snel naar een specifiek logboek te beperken, op basis van datum en tijd. De zoek opdracht bevindt zich op de naam van het logboek.
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/5-search.png" alt-text="Scherm opname van opties voor Server logboeken":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/5-search.png" alt-text="Scherm opname van de pagina Server logboeken, met zoekvak en resultaten gemarkeerd":::
 
 5. Als u afzonderlijke logboek bestanden wilt downloaden, selecteert u het pictogram met de pijl-omlaag naast elk logboek bestand in de tabelrij.
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/6-download.png" alt-text="Scherm opname van opties voor Server logboeken":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/6-download.png" alt-text="Scherm opname van de pagina Server logboeken, met pictogram met de pijl-omlaag gemarkeerd":::
 
 ## <a name="next-steps"></a>Volgende stappen
 - Zie [toegangs server Logboeken in cli](howto-configure-server-logs-using-cli.md) voor meer informatie over het programmatisch downloaden van Logboeken.

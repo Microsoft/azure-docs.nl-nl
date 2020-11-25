@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 08/21/2020
 ms.author: victorh
 ms.openlocfilehash: c39401289ffc6f27c292168adaa15c5163a3967b
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93396920"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001283"
 ---
 # <a name="overview-of-tls-termination-and-end-to-end-tls-with-application-gateway"></a>Overzicht van TLS-beëindiging en end-to-end TLS met Application Gateway
 
@@ -124,7 +124,7 @@ In de volgende tabellen worden de verschillen in SNI tussen de v1-en v2-SKU in t
 ### <a name="frontend-tls-connection-client-to-application-gateway"></a>Front-end TLS-verbinding (client naar toepassings gateway)
 
 ---
-Scenario | RIP | v2 |
+Scenario | v1 | v2 |
 | --- | --- | --- |
 | Als de client de SNI-header bevat en alle listeners voor meerdere locaties zijn ingeschakeld met de vlag ' vereisen SNI ' | Het juiste certificaat retour neren en als de site niet bestaat (volgens de server_name), wordt de verbinding opnieuw ingesteld. | Hiermee wordt het juiste certificaat geretourneerd, indien beschikbaar, anders retourneert het certificaat van de eerste HTTPS-listener die is geconfigureerd (in de volg orde)|
 | Als de client geen SNI-header opgeeft en alle headers met meerdere sites zijn ingeschakeld met ' vereisen SNI ' | De verbinding opnieuw instellen | Retourneert het certificaat van de eerste HTTPS-listener die is geconfigureerd (in de volg orde)
@@ -135,7 +135,7 @@ Scenario | RIP | v2 |
 #### <a name="for-probe-traffic"></a>Voor test verkeer
 
 ---
-Scenario | RIP | v2 |
+Scenario | v1 | v2 |
 | --- | --- | --- |
 | SNI-header (server_name) tijdens de TLS-Handshake als FQDN | Stel in als FQDN-adres van de back-endserver. Volgens [RFC 6066](https://tools.ietf.org/html/rfc6066)zijn letterlijke IPv4-en IPv6-adressen niet toegestaan in de SNI-hostnaam. <br> **Opmerking:** FQDN-naam van de back-endserver moet worden omgezet naar het IP-adres van de back-endserver (openbaar of privé) | De SNI-header (server_name) wordt ingesteld als de hostnaam van de aangepaste test die is gekoppeld aan de HTTP-instellingen (indien geconfigureerd), anders dan de hostnaam die wordt vermeld in de HTTP-instellingen, anders dan de FQDN die is vermeld in de back-end-groep. De volg orde van prioriteit is aangepaste test > HTTP-instellingen > back-end-pool. <br> **Opmerking:** Als de hostnamen die zijn geconfigureerd in HTTP-instellingen en aangepaste test verschillend zijn, wordt SNI ingesteld als de hostnaam van de aangepaste test.
 | Als het adres van de back-endadresgroep een IP-adres is (v1) of als de hostnaam van de aangepaste test is geconfigureerd als IP-adres (v2) | SNI (server_name) wordt niet ingesteld. <br> **Opmerking:** In dit geval moet de back-endserver een standaard-terugval certificaat kunnen retour neren. dit moet staan vermeld in HTTP-instellingen onder verificatie certificaat. Als er geen standaard-/terugval certificaat is geconfigureerd op de back-endserver en SNI wordt verwacht, wordt de verbinding mogelijk opnieuw ingesteld door de server en worden er fouten in de test optreden | In de volg orde van prioriteit die eerder is vermeld, als ze een IP-adres hebben als hostname, wordt SNI niet ingesteld op per [RFC 6066](https://tools.ietf.org/html/rfc6066). <br> **Opmerking:** SNI wordt ook niet in v2-tests ingesteld als er geen aangepaste test is geconfigureerd en er geen hostnaam is ingesteld voor HTTP-instellingen of back-end-pool |
@@ -146,7 +146,7 @@ Scenario | RIP | v2 |
 #### <a name="for-live-traffic"></a>Voor live verkeer
 
 ---
-Scenario | RIP | v2 |
+Scenario | v1 | v2 |
 | --- | --- | --- |
 | SNI-header (server_name) tijdens de TLS-Handshake als FQDN | Stel in als FQDN-adres van de back-endserver. Volgens [RFC 6066](https://tools.ietf.org/html/rfc6066)zijn letterlijke IPv4-en IPv6-adressen niet toegestaan in de SNI-hostnaam. <br> **Opmerking:** FQDN-naam van de back-endserver moet worden omgezet naar het IP-adres van de back-endserver (openbaar of privé) | De SNI-header (server_name) wordt ingesteld als de hostnaam van de HTTP-instellingen, anders als de optie *PickHostnameFromBackendAddress* is gekozen of als er geen hostnaam wordt vermeld, wordt deze ingesteld als de FQDN in de configuratie van de back-endserver
 | Als het adres van de back-endadresgroep een IP-adres of hostnaam is niet ingesteld in HTTP-instellingen | SNI wordt niet ingesteld volgens [RFC 6066](https://tools.ietf.org/html/rfc6066) als de vermelding in de back-ENDADRESGROEP geen FQDN-naam is | SNI wordt ingesteld als de hostnaam van de ingevoerde FQDN van de client en de CN van het back-end-certificaat moet overeenkomen met deze hostnaam.

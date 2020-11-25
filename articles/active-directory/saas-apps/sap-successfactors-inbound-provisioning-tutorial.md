@@ -11,11 +11,11 @@ ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
 ms.openlocfilehash: 53707261070e8efbd014614ee700df63a0925ef8
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94352724"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999702"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-active-directory-user-provisioning"></a>Zelfstudie: SuccessFactors to Active Directory User Provisioning configureren 
 Het doel van deze zelfstudie is het laten zien van de stappen die nodig zijn om gebruikers vanuit SuccessFactors Employee Central in te richten in Active Directory (AD) en Azure AD, met optionele write-back van e-mailadressen naar SuccessFactors. 

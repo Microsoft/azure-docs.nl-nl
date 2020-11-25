@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: shsha
 ms.openlocfilehash: 6f2f6aa4380fcf6909957118bf682275350ce68c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86261204"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000263"
 ---
 # <a name="runtocompletion"></a>RunToCompletion
 
@@ -36,7 +36,7 @@ RunToCompletion-semantiek kunnen worden opgegeven als een **ExecutionPolicy** bi
 * **Type:** **RunToCompletion** is momenteel de enige toegestane waarde voor dit kenmerk.
 * **Opnieuw opstarten:** Met dit kenmerk geeft u het beleid voor opnieuw opstarten op dat wordt toegepast op CodePackages die bestaan uit de ServicePackage, bij fout. Een code package die wordt afgesloten met een **afsluit code die niet gelijk** is aan nul, wordt gezien als mislukt. Toegestane waarden voor dit kenmerk zijn **OnFailure** en **nooit** met **OnFailure** de standaard instelling.
 
-Wanneer het beleid voor opnieuw opstarten is ingesteld op **OnFailure**, wordt het opnieuw gestart met een back-up tussen herhaalde fouten als een code package mislukt **(niet-nul afsluit code)**. Wanneer het beleid voor opnieuw opstarten niet is ingesteld op **nooit**, wordt de implementatie status van de DeployedServicePackage als **mislukt** gemarkeerd, maar andere CodePackages zijn toegestaan om door te gaan met de uitvoering. Als alle CodePackages waaruit de ServicePackage wordt uitgevoerd, zijn voltooid **(afsluit code 0)**, wordt de implementatie status van de DeployedServicePackage als **RanToCompletion**gemarkeerd. 
+Wanneer het beleid voor opnieuw opstarten is ingesteld op **OnFailure**, wordt het opnieuw gestart met een back-up tussen herhaalde fouten als een code package mislukt **(niet-nul afsluit code)**. Wanneer het beleid voor opnieuw opstarten niet is ingesteld op **nooit**, wordt de implementatie status van de DeployedServicePackage als **mislukt** gemarkeerd, maar andere CodePackages zijn toegestaan om door te gaan met de uitvoering. Als alle CodePackages waaruit de ServicePackage wordt uitgevoerd, zijn voltooid **(afsluit code 0)**, wordt de implementatie status van de DeployedServicePackage als **RanToCompletion** gemarkeerd. 
 
 ## <a name="complete-example-using-runtocompletion-semantics"></a>Volledig voor beeld met behulp van RunToCompletion-semantiek
 
@@ -78,7 +78,7 @@ In de volgende ServiceManifest.xml wordt een ServicePackage beschreven dat besta
 </ServiceManifest>
 ```
 
-In de volgende ApplicationManifest.xml wordt een toepassing beschreven op basis van de ServiceManifest.xml hierboven beschreven. Hiermee wordt **RunToCompletion** **ExecutionPolicy** voor *WindowsRunToCompletionServicePackage* opgegeven met het beleid voor opnieuw opstarten van **OnFailure**. Bij de activering van *WindowsRunToCompletionServicePackage*wordt het onderdeel CodePackages gestart. *RunToCompletionCodePackage1* moet bij de eerste activering worden afgesloten. *RunToCompletionCodePackage2* kan echter mislukken **(niet-nul afsluit code)**, in dat geval wordt de computer opnieuw opgestart nadat het beleid voor opnieuw opstarten is **OnFailure**.
+In de volgende ApplicationManifest.xml wordt een toepassing beschreven op basis van de ServiceManifest.xml hierboven beschreven. Hiermee wordt **RunToCompletion** **ExecutionPolicy** voor *WindowsRunToCompletionServicePackage* opgegeven met het beleid voor opnieuw opstarten van **OnFailure**. Bij de activering van *WindowsRunToCompletionServicePackage* wordt het onderdeel CodePackages gestart. *RunToCompletionCodePackage1* moet bij de eerste activering worden afgesloten. *RunToCompletionCodePackage2* kan echter mislukken **(niet-nul afsluit code)**, in dat geval wordt de computer opnieuw opgestart nadat het beleid voor opnieuw opstarten is **OnFailure**.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

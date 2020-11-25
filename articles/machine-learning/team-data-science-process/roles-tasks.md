@@ -12,11 +12,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 4bcbbd9378b6ea861c926eed16d2ceed8131b913
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082746"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000960"
 ---
 # <a name="team-data-science-process-roles-and-tasks"></a>Rollen en taken voor team data Science process
 
@@ -46,7 +46,7 @@ Met de veronderstelling dat de data Science-eenheid bestaat uit teams binnen een
    
 3. **Project leider**: beheert de dagelijkse activiteiten van afzonderlijke gegevens wetenschappers op een specifiek data Science-project.
    
-4. **Project individuele mede**werkers: gegevens wetenschappers, bedrijfs analisten, gegevens technici, architecten en anderen die een Data Science-project uitvoeren.
+4. **Project individuele mede** werkers: gegevens wetenschappers, bedrijfs analisten, gegevens technici, architecten en anderen die een Data Science-project uitvoeren.
 
 > [!NOTE]
 > Afhankelijk van de structuur en grootte van een onderneming mag één persoon meer dan één rol spelen of kan meer dan één persoon een rol invullen.
@@ -65,7 +65,7 @@ De groeps beheerder of een aangewezen TDSP systeem beheerder voert de volgende t
 - Maakt een **project sjabloon opslagplaats** in het Azure DevOps-groeps project en zaait deze van de project sjabloon opslagplaats die is ontwikkeld door het micro soft TDSP-team. De micro soft TDSP project-sjabloon opslagplaats biedt:
   - Een **gestandaardiseerde mapstructuur**, inclusief mappen voor gegevens, code en documenten.
   - Een reeks **gestandaardiseerde document sjablonen** die een efficiënt data Science proces kunnen begeleiden.
-- Hiermee maakt u een **opslag plaats voor hulpprogram ma's**en zaait u deze vanuit de bibliotheek met hulp programma die is ontwikkeld door het micro soft TDSP-team. De opslag plaats TDSP van micro soft biedt een aantal nuttige hulpprogram ma's om het werk van een gegevens wetenschapper efficiënter te maken. De micro soft Utility repository bevat hulpprogram ma's voor interactieve gegevens verkenning, analyse, rapportage en basis modellering en-rapportage.
+- Hiermee maakt u een **opslag plaats voor hulpprogram ma's** en zaait u deze vanuit de bibliotheek met hulp programma die is ontwikkeld door het micro soft TDSP-team. De opslag plaats TDSP van micro soft biedt een aantal nuttige hulpprogram ma's om het werk van een gegevens wetenschapper efficiënter te maken. De micro soft Utility repository bevat hulpprogram ma's voor interactieve gegevens verkenning, analyse, rapportage en basis modellering en-rapportage.
 - Hiermee stelt u het **beleid voor beveiligings beheer** in voor het organisatie account.
 
 Zie voor gedetailleerde instructies [groeps beheer taken voor een Data Science-Team](group-manager-tasks.md).

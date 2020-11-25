@@ -11,11 +11,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: df7d2278487c1b098615a14562c498b9187c56eb
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321202"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000025"
 ---
 # <a name="tasks-for-the-team-lead-on-a-team-data-science-process-team"></a>Taken voor de team leider van een team data Science process team
 
@@ -89,7 +89,7 @@ Een apart project maken voor uw team:
    
    ![Selecteer Nieuw project](./media/team-lead-tasks/team-leads-2-create-new-team.png)
    
-1. Voer in het dialoog venster **project maken** de naam van uw team in, zoals *MyTeam* , onder **project naam** en selecteer **Geavanceerd**. 
+1. Voer in het dialoog venster **project maken** de naam van uw team in, zoals *MyTeam*, onder **project naam** en selecteer **Geavanceerd**. 
    
 1. Onder **versie beheer** selecteert u **Git** en klikt u onder **werk item proces** op **Agile**. Selecteer vervolgens **Maken**. 
    
@@ -148,7 +148,7 @@ Als u uw team opslagplaatsen wilt vullen met de inhoud van de groep algemene ops
    
 1. Klik boven aan de pagina **opslag plaatsen** van het project en selecteer de **TeamUtilities** -opslag plaats.
    
-1. Herhaal het import proces om de inhoud van de gemeen schappelijke opslag plaats van de groep, bijvoorbeeld *GroupUtilities* , te importeren in uw **TeamUtilities** -opslag plaats. 
+1. Herhaal het import proces om de inhoud van de gemeen schappelijke opslag plaats van de groep, bijvoorbeeld *GroupUtilities*, te importeren in uw **TeamUtilities** -opslag plaats. 
    
 Elk van uw twee team opslagplaatsen bevat nu de bestanden uit de bijbehorende groeps-algemene opslag plaats. 
 
@@ -188,7 +188,7 @@ Opslag plaatsen klonen:
    
 1. Selecteer op de pagina opslag plaats rechtsboven **klonen** .
    
-1. In het dialoog venster kloon van de **opslag plaats** , onder **opdracht regel** , selecteert u **https** voor een http-verbinding of **SSH** voor een SSH-verbinding en kopieert u de kloon-URL naar het klem bord.
+1. In het dialoog venster kloon van de **opslag plaats** , onder **opdracht regel**, selecteert u **https** voor een http-verbinding of **SSH** voor een SSH-verbinding en kopieert u de kloon-URL naar het klem bord.
    
    ![Kloon-URL kopiëren](./media/team-lead-tasks/clone.png)
    
@@ -296,7 +296,7 @@ Zie [platformen en hulpprogram ma's](platforms-and-tools.md)voor meer informatie
    
 1. Selecteer het opslag account dat u wilt gebruiken of maak een nieuw item onder het geselecteerde abonnement. U kunt kleine letters, cijfers en afbreek streepjes gebruiken voor de naam van de Azure file storage.
    
-1. Om het koppelen en delen van de opslag te vergemakkelijken, drukt u op ENTER of voert u *Y* in om de gegevens van de Azure-bestands opslag op te slaan in een tekst bestand in de huidige map. U kunt dit tekst bestand controleren in uw **TeamTemplate** -opslag plaats, in het ideale geval onder **Docs\DataDictionaries** , zodat alle projecten in uw team er toegang toe hebben. U hebt ook de bestands informatie nodig om uw Azure-bestands opslag te koppelen aan uw Azure-DSVM in de volgende sectie. 
+1. Om het koppelen en delen van de opslag te vergemakkelijken, drukt u op ENTER of voert u *Y* in om de gegevens van de Azure-bestands opslag op te slaan in een tekst bestand in de huidige map. U kunt dit tekst bestand controleren in uw **TeamTemplate** -opslag plaats, in het ideale geval onder **Docs\DataDictionaries**, zodat alle projecten in uw team er toegang toe hebben. U hebt ook de bestands informatie nodig om uw Azure-bestands opslag te koppelen aan uw Azure-DSVM in de volgende sectie. 
    
 ### <a name="mount-azure-file-storage-on-your-local-machine-or-dsvm"></a>Azure File Storage koppelen op uw lokale machine of DSVM
 

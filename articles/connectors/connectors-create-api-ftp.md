@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 12/15/2019
 tags: connectors
 ms.openlocfilehash: f4cad2b658547d56d00efdd5e1496110f8e4a5e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87284010"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999571"
 ---
 # <a name="create-monitor-and-manage-ftp-files-by-using-azure-logic-apps"></a>FTP-bestanden bewaken, maken en beheren met behulp van Azure Logic Apps
 
@@ -29,7 +29,7 @@ U kunt triggers gebruiken die reacties ontvangen van uw FTP-server en de uitvoer
 
 * De FTP-connector ondersteunt alleen expliciete FTP via TLS/SSL (FTPS) en is niet compatibel met impliciete FTPS.
 
-* FTP-acties kunnen standaard bestanden lezen of schrijven die *50 MB of kleiner*zijn. Voor het afhandelen van bestanden die groter zijn dan 50 MB, worden met FTP-bewerkingen [bericht chunks](../logic-apps/logic-apps-handle-large-messages.md)ondersteund. De actie **Bestands inhoud ophalen** maakt impliciet gebruik van Chunking.
+* FTP-acties kunnen standaard bestanden lezen of schrijven die *50 MB of kleiner* zijn. Voor het afhandelen van bestanden die groter zijn dan 50 MB, worden met FTP-bewerkingen [bericht chunks](../logic-apps/logic-apps-handle-large-messages.md)ondersteund. De actie **Bestands inhoud ophalen** maakt impliciet gebruik van Chunking.
 
 * FTP-Triggers bieden geen ondersteuning voor het delen van segmenten. Bij het aanvragen van bestands inhoud selecteren triggers alleen bestanden van 50 MB of kleiner. Als u bestanden groter dan 50 MB wilt ophalen, volgt u dit patroon:
 
@@ -43,7 +43,7 @@ U kunt triggers gebruiken die reacties ontvangen van uw FTP-server en de uitvoer
 
 FTP-triggers worden uitgevoerd door het FTP-bestands systeem te pollen en te zoeken naar een bestand dat sinds de laatste poll is gewijzigd. Met sommige hulpprogram ma's kunt u de tijds tempel behouden wanneer de bestanden worden gewijzigd. In deze gevallen moet u deze functie uitschakelen zodat de trigger kan werken. Hier volgen enkele algemene instellingen:
 
-| SFTP-client | Bewerking |
+| SFTP-client | Actie |
 |-------------|--------|
 | WinSCP | Ga naar **Opties**  >  **voor keuren**  >  **overdracht**  >  **bewerken**  >  **behouden tijds tempel**  >  **uitschakelen** |
 | FileZilla | Ga naar de **overdrachts**  >  **tijds tempels van overgebrachte bestanden**  >  **uitschakelen** |
@@ -73,7 +73,7 @@ Wanneer een trigger een nieuw bestand vindt, controleert de trigger of het nieuw
 
    -of-
 
-   Voor bestaande Logic apps, onder de laatste stap waar u een actie wilt toevoegen, selecteert u **nieuwe stap**en vervolgens **een actie toevoegen**. Voer in het zoekvak `ftp` als uw filter in. Selecteer in de lijst **acties** de gewenste actie.
+   Voor bestaande Logic apps, onder de laatste stap waar u een actie wilt toevoegen, selecteert u **nieuwe stap** en vervolgens **een actie toevoegen**. Voer in het zoekvak `ftp` als uw filter in. Selecteer in de lijst **acties** de gewenste actie.
 
    Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. Selecteer het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen**.
 
@@ -123,7 +123,7 @@ Nu de logische app een trigger heeft, voegt u de acties toe die u wilt uitvoeren
 
 Met de actie **meta gegevens van bestand ophalen** worden de eigenschappen opgehaald voor een bestand op uw FTP-server en de actie **Bestands inhoud ophalen** haalt de bestands inhoud op basis van de informatie over dat bestand op uw FTP-server. U kunt bijvoorbeeld de trigger uit het vorige voor beeld toevoegen en deze acties om de inhoud van het bestand op te halen nadat het bestand is toegevoegd of bewerkt.
 
-1. Selecteer **nieuwe stap**onder de trigger of een andere actie.
+1. Selecteer **nieuwe stap** onder de trigger of een andere actie.
 
 1. Voer in het zoekvak `ftp` als uw filter in. Selecteer in de lijst acties deze actie: **meta gegevens van bestand ophalen**
 
@@ -133,7 +133,7 @@ Met de actie **meta gegevens van bestand ophalen** worden de eigenschappen opgeh
 
    ![FTP-server verbinding maken](./media/connectors-create-api-ftp/create-ftp-connection-action.png)
 
-1. Nadat de actie **meta gegevens van bestand ophalen** wordt weer gegeven, klikt u in het vak **bestand** zodat de lijst met dynamische inhoud wordt weer gegeven. U kunt nu eigenschappen selecteren voor de uitvoer van de vorige stappen. Selecteer in de lijst dynamische inhoud onder **Bestands metagegevens ophalen**de **lijst met bestands-id-** eigenschappen, die verwijst naar de verzameling waar het bestand is toegevoegd of bijgewerkt.
+1. Nadat de actie **meta gegevens van bestand ophalen** wordt weer gegeven, klikt u in het vak **bestand** zodat de lijst met dynamische inhoud wordt weer gegeven. U kunt nu eigenschappen selecteren voor de uitvoer van de vorige stappen. Selecteer in de lijst dynamische inhoud onder **Bestands metagegevens ophalen** de **lijst met bestands-id-** eigenschappen, die verwijst naar de verzameling waar het bestand is toegevoegd of bijgewerkt.
 
    ![Zoek en selecteer de eigenschap lijst met bestands-Id's](./media/connectors-create-api-ftp/select-list-of-files-id-output.png)
 
@@ -145,7 +145,7 @@ Met de actie **meta gegevens van bestand ophalen** worden de eigenschappen opgeh
 
    ![Zoek en selecteer de actie bestands inhoud ophalen](./media/connectors-create-api-ftp/select-get-file-content-ftp-action.png)
 
-1. Nadat de actie **Bestands inhoud ophalen** wordt weer gegeven, klikt u in het vak **bestand** zodat de lijst met dynamische inhoud wordt weer gegeven. U kunt nu eigenschappen selecteren voor de uitvoer van de vorige stappen. Selecteer in de lijst dynamische inhoud onder **Get File meta data**de eigenschap **id** , die verwijst naar het bestand dat is toegevoegd of bijgewerkt.
+1. Nadat de actie **Bestands inhoud ophalen** wordt weer gegeven, klikt u in het vak **bestand** zodat de lijst met dynamische inhoud wordt weer gegeven. U kunt nu eigenschappen selecteren voor de uitvoer van de vorige stappen. Selecteer in de lijst dynamische inhoud onder **Get File meta data** de eigenschap **id** , die verwijst naar het bestand dat is toegevoegd of bijgewerkt.
 
    ![Zoek en selecteer de eigenschap ID](./media/connectors-create-api-ftp/get-file-content-id-output.png)
 
@@ -167,7 +167,7 @@ Als u wilt controleren of uw werk stroom de verwachte inhoud retourneert, voegt 
 
    ![Informatie opgeven over de e-mailactie](./media/connectors-create-api-ftp/selected-send-email-action.png)
 
-1. Sla uw logische app op. Als u de logische app wilt uitvoeren en activeren, selecteert u **uitvoeren**op de werk balk en vervolgens voegt u een bestand toe aan de FTP-map die nu door uw logische app wordt bewaakt.
+1. Sla uw logische app op. Als u de logische app wilt uitvoeren en activeren, selecteert u **uitvoeren** op de werk balk en vervolgens voegt u een bestand toe aan de FTP-map die nu door uw logische app wordt bewaakt.
 
 ## <a name="connector-reference"></a>Connector-verwijzing
 

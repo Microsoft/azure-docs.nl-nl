@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 48a9856c58a815eabcc0b105efcd548e66ddd552
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a4f2b07edc6c290fa030621a4dc400ab50890bba
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80874208"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96001150"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Language Understanding docker-containers configureren 
 
@@ -28,14 +28,14 @@ Deze container bevat de volgende configuratie-instellingen:
 
 |Vereist|Instelling|Doel|
 |--|--|--|
-|Ja|[ApiKey](#apikey-setting)|Wordt gebruikt om facturerings gegevens bij te houden.|
-|Nee|[ApplicationInsights](#applicationinsights-setting)|Hiermee kunt u ondersteuning voor [Azure-toepassing Insights](https://docs.microsoft.com/azure/application-insights) -telemetrie toevoegen aan uw container.|
-|Ja|[Facturering](#billing-setting)|Hiermee geeft u de eindpunt-URI op van de service resource op Azure.|
-|Ja|[Houdt](#eula-setting)| Geeft aan dat u de licentie voor de container hebt geaccepteerd.|
-|Nee|[Fluentd](#fluentd-settings)|Schrijf logboek en, eventueel, metrische gegevens naar een vloeiende server.|
-|Nee|[Http-proxy](#http-proxy-credentials-settings)|Een HTTP-proxy configureren voor het maken van uitgaande aanvragen.|
-|Nee|[Logboekregistratie](#logging-settings)|Biedt ASP.NET Core ondersteuning voor logboek registratie voor uw container. |
-|Ja|[Koppelt](#mount-settings)|Gegevens lezen en schrijven van de hostcomputer naar de container en van de container terug naar de hostcomputer.|
+|Yes|[ApiKey](#apikey-setting)|Wordt gebruikt om facturerings gegevens bij te houden.|
+|No|[ApplicationInsights](#applicationinsights-setting)|Hiermee kunt u ondersteuning voor [Azure-toepassing Insights](/azure/application-insights) -telemetrie toevoegen aan uw container.|
+|Yes|[Facturering](#billing-setting)|Hiermee geeft u de eindpunt-URI op van de service resource op Azure.|
+|Yes|[Houdt](#eula-setting)| Geeft aan dat u de licentie voor de container hebt geaccepteerd.|
+|No|[Fluentd](#fluentd-settings)|Schrijf logboek en, eventueel, metrische gegevens naar een vloeiende server.|
+|No|[Http-proxy](#http-proxy-credentials-settings)|Een HTTP-proxy configureren voor het maken van uitgaande aanvragen.|
+|No|[Logboekregistratie](#logging-settings)|Biedt ASP.NET Core ondersteuning voor logboek registratie voor uw container. |
+|Yes|[Koppelt](#mount-settings)|Gegevens lezen en schrijven van de hostcomputer naar de container en van de container terug naar de hostcomputer.|
 
 > [!IMPORTANT]
 > De [`ApiKey`](#apikey-setting) [`Billing`](#billing-setting) instellingen, en [`Eula`](#eula-setting) worden samen gebruikt en u moet geldige waarden opgeven voor alle drie deze. anders wordt de container niet gestart. Zie [facturering](luis-container-howto.md#billing)voor meer informatie over het gebruik van deze configuratie-instellingen voor het instantiëren van een container.
@@ -64,7 +64,7 @@ Deze instelling bevindt zich op de volgende locaties:
 * Azure Portal: **Cognitive Services** overzicht, met het label `Endpoint`
 * LUIS-portal: **sleutels en eindpunt instellingen** pagina als onderdeel van de EINDPUNT-URI.
 
-| Vereist | Naam | Gegevenstype | Beschrijving |
+| Vereist | Name | Gegevenstype | Beschrijving |
 |----------|------|-----------|-------------|
 | Ja      | `Billing` | tekenreeks | URL van het facturerings eindpunt. Zie [vereiste para meters verzamelen](luis-container-howto.md#gathering-required-parameters)voor meer informatie over het verkrijgen van de facturerings-URI. Zie [Aangepaste subdomeinnamen voor Cognitive Services](../cognitive-services-custom-subdomains.md) voor meer informatie en een volledige lijst met regionale eindpunten. |
 
@@ -94,7 +94,7 @@ De exacte syntaxis van de locatie voor het koppelen van de host varieert, afhank
 
 In de volgende tabel worden de instellingen beschreven die worden ondersteund.
 
-|Vereist| Naam | Gegevenstype | Beschrijving |
+|Vereist| Name | Gegevenstype | Beschrijving |
 |-------|------|-----------|-------------|
 |Ja| `Input` | Tekenreeks | Het doel van de invoer koppeling. De standaardwaarde is `/input`. Dit is de locatie van de LUIS-pakket bestanden. <br><br>Voorbeeld:<br>`--mount type=bind,src=c:\input,target=/input`|
 |Nee| `Output` | Tekenreeks | Het doel van de uitvoer koppeling. De standaardwaarde is `/output`. Dit is de locatie van de logboeken. Dit omvat LUIS-query logboeken en container Logboeken. <br><br>Voorbeeld:<br>`--mount type=bind,src=c:\output,target=/output`|

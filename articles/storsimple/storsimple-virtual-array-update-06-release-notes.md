@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 05/24/2017
 ms.author: alkohli
 ms.openlocfilehash: 24bddb47a32a7b8ad4ea659d52c2d5b2730be9ad
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967020"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000909"
 ---
 # <a name="storsimple-virtual-array-update-06-release-notes"></a>Release opmerkingen bij Update 0,6 StorSimple Virtual array
 
@@ -85,7 +85,7 @@ De volgende tabel bevat een samen vatting van bekende problemen voor de virtuele
 ## <a name="next-step"></a>Volgende stap
 [Installeer Update 0,6](storsimple-virtual-array-install-update-06.md) op uw virtuele StorSimple-matrix.
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 Zoekt u een oudere release-Opmerking? Ga naar:
 
 * [Release opmerkingen bij Update 0,5 StorSimple Virtual array](storsimple-virtual-array-update-05-release-notes.md)

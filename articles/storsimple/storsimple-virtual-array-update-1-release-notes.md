@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: alkohli
 ms.openlocfilehash: 2ec88e4e97d45b27c0226198491b3adec6448496
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94960237"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000892"
 ---
 # <a name="storsimple-virtual-array-update-10-release-notes"></a>Release opmerkingen bij Update 1,0 StorSimple Virtual array
 
@@ -83,7 +83,7 @@ De volgende tabel bevat een samen vatting van bekende problemen voor de virtuele
 ## <a name="next-steps"></a>Volgende stappen
 [Installeer Update 1,0](storsimple-virtual-array-install-update-1.md) op uw virtuele StorSimple-matrix.
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 Zoekt u een oudere release-Opmerking? Ga naar:
 *  [Release opmerkingen bij Update 0,6 StorSimple Virtual array](storsimple-virtual-array-update-06-release-notes.md)
 * [Release opmerkingen bij Update 0,5 StorSimple Virtual array](storsimple-virtual-array-update-05-release-notes.md)

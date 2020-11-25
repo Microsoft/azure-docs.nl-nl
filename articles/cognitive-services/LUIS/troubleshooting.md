@@ -5,18 +5,18 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: troubleshooting
 ms.date: 05/06/2020
-ms.openlocfilehash: 17b070fea422268ec12e0ccd3357ae0549a78916
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: e803fa393d85f7f0b4849aed96356b7a4e77d83f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566262"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96000127"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Veelgestelde vragen (FAQ’s) over Language Understanding
 
 In dit artikel vindt u antwoorden op veelgestelde vragen over Language Understanding (LUIS).
 
-## <a name="whats-new"></a>Nieuwe functies
+## <a name="whats-new"></a>Nieuw
 
 Meer [informatie](whats-new.md) over wat er nieuw is in language UNDERSTANDING (Luis).
 
@@ -108,7 +108,7 @@ Oplossingen omvatten:
 
 * U kunt [de prijs categorie verhogen](luis-how-to-azure-subscription.md#change-the-pricing-tier)als u niet de hoogste laag hebt.
 * Als uw gebruik de hoogste prijs categorie overschrijdt, voegt u meer Language Understanding resources toe met een load balancer. De [Language Understanding-container](luis-container-howto.md) met Kubernetes of docker-opstellen kan u hierbij helpen.
-* U kunt de aanvragen van uw client toepassing gateiseren met een [beleid voor opnieuw proberen](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) dat u zelf implementeert wanneer u deze status code ophaalt.
+* U kunt de aanvragen van uw client toepassing gateiseren met een [beleid voor opnieuw proberen](/azure/architecture/best-practices/transient-faults#general-guidelines) dat u zelf implementeert wanneer u deze status code ophaalt.
 
 ### <a name="my-endpoint-query-returned-unexpected-results-what-should-i-do"></a>Mijn eindpunt query heeft onverwachte resultaten geretourneerd. Wat moet ik doen?
 
@@ -286,7 +286,7 @@ Als u de Azure Bot Service gebruikt en het probleem is dat de **test in Web Chat
 
 #### <a name="resolve-issue-while-debugging-on-local-machine-with-bot-framework"></a>Los het probleem op bij het opsporen van fouten op een lokale computer met bot Framework.
 
-Zie [fouten opsporen in een bot](https://docs.microsoft.com/azure/bot-service/bot-service-debug-bot?view=azure-bot-service-4.0)voor meer informatie over de lokale fout opsporing van een bot.
+Zie [fouten opsporen in een bot](/azure/bot-service/bot-service-debug-bot?view=azure-bot-service-4.0)voor meer informatie over de lokale fout opsporing van een bot.
 
 ## <a name="integrating-luis"></a>LUIS integreren
 
@@ -296,7 +296,7 @@ Als u een LUIS-sjabloon selecteert en de knop **selecteren** in het deel venster
 ![LUIS-sjabloon web-app-bot](./media/luis-faq/web-app-bot-location.png)
 
 ### <a name="what-luis-regions-support-bot-framework-speech-priming"></a>Welke LUIS-regio's ondersteunen bot Framework speech gebeuren?
-[Speech gebeuren](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming) wordt alleen ondersteund voor Luis-apps in het centrale exemplaar (US).
+[Speech gebeuren](/bot-framework/bot-service-manage-speech-priming) wordt alleen ondersteund voor Luis-apps in het centrale exemplaar (US).
 
 ## <a name="api-programming-strategies"></a>API-programmeer strategieën
 
@@ -334,4 +334,4 @@ Video's:
 
 Raadpleeg de volgende bronnen voor meer informatie over LUIS:
 * [Stack Overflow vragen die zijn gelabeld met LUIS](https://stackoverflow.com/questions/tagged/luis)
-* [Micro soft Q&een vraag pagina voor MSDN Language Understanding intelligent Services (LUIS)](https://docs.microsoft.com/answers/topics/azure-language-understanding.html)
+* [Micro soft Q&een vraag pagina voor MSDN Language Understanding intelligent Services (LUIS)](/answers/topics/azure-language-understanding.html)

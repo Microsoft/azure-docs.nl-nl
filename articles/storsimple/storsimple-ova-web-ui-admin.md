@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 12/1/2016
 ms.author: alkohli
 ms.openlocfilehash: 6bea9c9b7807ffb32b6071c968d3186965477009
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85513038"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000926"
 ---
 # <a name="use-the-web-ui-to-administer-your-storsimple-virtual-array"></a>De Web-UI gebruiken voor het beheren van uw virtuele StorSimple-matrix
 ![proces stroom instellen](./media/storsimple-ova-web-ui-admin/manage4.png)
@@ -61,7 +61,7 @@ In sommige gevallen wanneer u het apparaat configureert via de lokale web-UI, wo
 Een logboek pakket bestaat uit alle relevante logboeken die Microsoft Ondersteuning kunnen helpen bij het oplossen van problemen met apparaten. In deze release kan een logboek pakket worden gegenereerd via de lokale webgebruikersinterface.
 
 #### <a name="to-generate-the-log-package"></a>Het logboek pakket genereren
-1. Ga in de lokale web-UI naar **Troubleshooting**  >  **systeem logboeken**voor probleem oplossing.
+1. Ga in de lokale web-UI naar **Troubleshooting**  >  **systeem logboeken** voor probleem oplossing.
    
     ![logboek pakket 1 genereren](./media/storsimple-ova-web-ui-admin/image31.png)
 2. Klik onder aan de pagina op **logboek pakket maken**. Er wordt een pakket van de systeem logboeken gemaakt. Dit kan enkele minuten duren.
@@ -77,7 +77,7 @@ Een logboek pakket bestaat uit alle relevante logboeken die Microsoft Ondersteun
 4. U kunt het gedownloade logboek pakket uitpakken en de logboek bestanden van het systeem weer geven.
 
 ## <a name="shut-down-and-restart-your-device"></a>Sluit het apparaat af en start het opnieuw op
-U kunt het virtuele apparaat afsluiten of opnieuw opstarten met behulp van de lokale webgebruikersinterface. U kunt het beste de volumes of shares offline halen op de host en vervolgens het apparaat. Hierdoor is de kans op gegevens beschadiging beperkt. 
+U kunt uw virtuele apparaat afsluiten of opnieuw starten met de lokale webinterface. U kunt het beste de volumes of shares offline halen op de host en vervolgens het apparaat. Hierdoor is de kans op gegevens beschadiging beperkt. 
 
 #### <a name="to-shut-down-your-virtual-device"></a>Het virtuele apparaat afsluiten
 1. Ga in de lokale webinterface naar **onderhoud**  >  **energie-instellingen**.

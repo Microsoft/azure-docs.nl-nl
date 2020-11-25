@@ -6,11 +6,11 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
 ms.openlocfilehash: 3940f060209ea5ba55957a3673020656d45de9e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776541"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000093"
 ---
 # <a name="edit-qna-pairs-in-your-knowledge-base"></a>QnA-paren in uw Knowledge Base bewerken
 
@@ -60,7 +60,7 @@ Met RTF-bewerking van uw antwoord tekst kunt u de opmaak van een eenvoudige werk
     |--|--|
     |Scha kelen tussen RTF-editor en prijs verlaging. `</>`|CTRL+M|
     |Titel. **B**|AFDELING + LB|
-    |Cursief, aangeduid met een cursieve ** _I_**|CTRL + I|
+    |Cursief, aangeduid met een cursieve **_I_**|CTRL + I|
     |Ongeordende lijst||
     |Geordende lijst||
     |Alineaopmaakprofiel||
@@ -112,7 +112,7 @@ U kunt geen QnA-paren koppelen in de meta gegevens van het antwoord.
 
 ## <a name="add-metadata"></a>Meta gegevens toevoegen
 
-Voeg eerst de **Opties voor**het toevoegen van meta gegevens toe, en selecteer vervolgens **meta gegevens weer geven**. Hiermee wordt de kolom meta gegevens weer gegeven. Selecteer vervolgens het **+** teken om een meta gegevens paar toe te voegen. Dit paar bestaat uit één sleutel en één waarde.
+Voeg eerst de **Opties voor** het toevoegen van meta gegevens toe, en selecteer vervolgens **meta gegevens weer geven**. Hiermee wordt de kolom meta gegevens weer gegeven. Selecteer vervolgens het **+** teken om een meta gegevens paar toe te voegen. Dit paar bestaat uit één sleutel en één waarde.
 
 Meer informatie over meta gegevens vindt u in de QnA Maker portal voor meta gegevens:
 * [Creatie: metagegevens toevoegen aan QnA-paar](../quickstarts/add-question-metadata-portal.md#add-metadata-to-filter-the-answers)

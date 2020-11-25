@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-python
 ms.date: 04/23/2020
 ms.openlocfilehash: 96b2e7deff464f00ced4457a514ac833a90bd42d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87873888"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999889"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Jupyter notebook op uw computer installeren en verbinding maken met Apache Spark op HDInsight
 
@@ -90,7 +90,7 @@ In deze sectie configureert u de Spark Magic die u eerder hebt geïnstalleerd om
     python
     ```
 
-2. De Jupyter-configuratie gegevens worden doorgaans opgeslagen in de basismap van de gebruiker. Voer de volgende opdracht in om de basismap aan te duiden en maak een map met de naam ** \. sparkmagic**.  Het volledige pad wordt gegenereerd.
+2. De Jupyter-configuratie gegevens worden doorgaans opgeslagen in de basismap van de gebruiker. Voer de volgende opdracht in om de basismap aan te duiden en maak een map met de naam **\. sparkmagic**.  Het volledige pad wordt gegenereerd.
 
     ```python
     import os

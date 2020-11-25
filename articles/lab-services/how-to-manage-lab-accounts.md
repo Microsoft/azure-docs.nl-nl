@@ -4,11 +4,11 @@ description: Meer informatie over het maken van een Lab-account, het weer geven 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 33e5e42f65fdd34bb37b12947b5173700ad7970c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91251657"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999498"
 ---
 # <a name="create-and-manage-lab-accounts"></a>Labaccounts maken en beheren
 In Azure Lab Services is een Lab-account een container voor beheerde Lab-typen zoals klassikale Labs. Een beheerder stelt een Lab-account in met Azure Lab Services en biedt toegang tot Lab-eigen aars die in het account Labs kunnen maken. In dit artikel wordt beschreven hoe u een Lab-account maakt, alle Lab-accounts weergeeft of een Lab-account verwijdert.
@@ -34,7 +34,7 @@ In de volgende stappen ziet u hoe u Azure Portal kunt gebruiken om een lab te ma
 5. Selecteer **volgende: Geavanceerd** onder aan de pagina om naar het tabblad **Geavanceerd** te gaan en voer de volgende stappen uit: 
     1. Selecteer een bestaande **Galerie met gedeelde afbeeldingen** of maak er een. U kunt de sjabloon-VM in de galerie met gedeelde afbeeldingen opslaan, zodat deze door anderen opnieuw kan worden gebruikt. Zie [een galerie met gedeelde afbeeldingen gebruiken in Azure Lab Services](how-to-use-shared-image-gallery.md)voor meer informatie over de galerieën met gedeelde afbeeldingen.
     2. Opgeven of **virtuele Windows-machines automatisch** moeten worden afgesloten wanneer gebruikers de verbinding Hiermee verbreken. Geef op hoe lang de virtuele machines moeten wachten totdat de gebruiker opnieuw verbinding maakt voordat deze automatisch wordt afgesloten. 
-    3. Selecteer voor het **virtuele netwerk**van de peer een virtueel netwerk (VNet) voor het lab-netwerk. Labs die in dit account is gemaakt, zijn verbonden met het geselecteerde VNet en hebben toegang tot de resources in het geselecteerde VNet. Zie [verbinding maken met het virtuele netwerk van uw Lab met een virtueel netwerk op hetzelfde niveau](how-to-connect-peer-virtual-network.md)voor meer informatie.    
+    3. Selecteer voor het **virtuele netwerk** van de peer een virtueel netwerk (VNet) voor het lab-netwerk. Labs die in dit account is gemaakt, zijn verbonden met het geselecteerde VNet en hebben toegang tot de resources in het geselecteerde VNet. Zie [verbinding maken met het virtuele netwerk van uw Lab met een virtueel netwerk op hetzelfde niveau](how-to-connect-peer-virtual-network.md)voor meer informatie.    
     8. Geef een **adres bereik** voor vm's op in het lab. Het adres bereik moet in de CIDR-notatie (Classless Inter-Domain Routing) staan (voor beeld: 10.20.0.0/23). Virtuele machines in het lab worden gemaakt in dit adres bereik. Zie [een adres bereik voor vm's in het lab opgeven](how-to-connect-peer-virtual-network.md#specify-an-address-range-for-vms-in-the-lab-account) voor meer informatie.  
 
         > [!NOTE]
@@ -48,9 +48,9 @@ In de volgende stappen ziet u hoe u Azure Portal kunt gebruiken om een lab te ma
 4. Bekijk de samenvattings informatie op deze pagina en selecteer **maken**. 
 
     ![Een Lab-account maken-> Tags](./media/how-to-manage-lab-accounts/create-lab-account-review-create.png)
-5. Wacht tot de implementatie is voltooid, vouw **volgende stappen**uit en selecteer **Ga naar resource** zoals wordt weer gegeven in de volgende afbeelding: 
+5. Wacht tot de implementatie is voltooid, vouw **volgende stappen** uit en selecteer **Ga naar resource** zoals wordt weer gegeven in de volgende afbeelding: 
 
-    U kunt ook het **klok pictogram** op de werk balk (**meldingen**) selecteren, controleren of de implementatie is gelukt en vervolgens **Ga naar resource**selecteren. 
+    U kunt ook het **klok pictogram** op de werk balk (**meldingen**) selecteren, controleren of de implementatie is gelukt en vervolgens **Ga naar resource** selecteren. 
 
     U kunt ook **Vernieuwen** selecteren op de **Lab-accounts**-pagina en het lab-account selecteren dat u hebt gemaakt. 
 
@@ -60,7 +60,7 @@ In de volgende stappen ziet u hoe u Azure Portal kunt gebruiken om een lab te ma
     ![Pagina lab-account](./media/tutorial-setup-lab-account/lab-account-page.png)
 
 ## <a name="view-lab-accounts"></a>Lab-accounts weer geven
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 2. Selecteer **alle resources** in het menu. 
 3. Selecteer een **Lab-account** voor het **type**. 
     U kunt ook filteren op abonnement, resource groep, locaties en tags. 
@@ -84,4 +84,4 @@ Volg de instructies in de vorige sectie waarin Lab-accounts in een lijst worden 
 > U kunt ook de Power shell-module AZ. LabServices (preview) gebruiken voor het beheren van Lab-accounts. Zie de [Introductie pagina AZ. LabServices op github](https://github.com/Azure/azure-devtestlab/tree/master/samples/ClassroomLabs/Modules/Library)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie andere artikelen in de sectie **instructies voor**het  ->  **maken en configureren van Lab-accounts (eigenaar van het lab-account)** van de tabel-of-content (TOC). 
+Zie andere artikelen in de sectie **instructies voor** het  ->  **maken en configureren van Lab-accounts (eigenaar van het lab-account)** van de tabel-of-content (TOC). 

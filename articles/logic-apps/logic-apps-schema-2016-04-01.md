@@ -9,11 +9,11 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 07/25/2016
 ms.openlocfilehash: ccc7df5bfac327fabf05f210764dbe10658b5015
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86520712"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000314"
 ---
 # <a name="schema-updates-for-azure-logic-apps---june-1-2016"></a>Schema-updates voor Azure Logic Apps van 1 juni 2016
 
@@ -112,16 +112,16 @@ Als u een upgrade wilt uitvoeren naar het [meest recente schema](https://schema.
    > [!IMPORTANT]
    > *Zorg ervoor dat* u **opslaan kiest als** u wilt dat alle verbindings verwijzingen geldig blijven in de bijgewerkte logische app.
 
-3. Kies **Opslaan als**in de werk balk Blade bijwerken.
+3. Kies **Opslaan als** in de werk balk Blade bijwerken.
 
-4. Voer de naam en de status van de logica in. Kies **maken**om uw bijgewerkte logische app te implementeren.
+4. Voer de naam en de status van de logica in. Kies **maken** om uw bijgewerkte logische app te implementeren.
 
 5. Controleer of uw bijgewerkte logische app werkt zoals verwacht.
    
    > [!NOTE]
    > Als u een hand matige of aanvraag trigger gebruikt, wordt de call back-URL in uw nieuwe logische app gewijzigd. Test de nieuwe URL om te controleren of de end-to-end-ervaring werkt. Als u eerdere Url's wilt behouden, kunt u de bestaande logische app klonen.
 
-6. *Optioneel* Als u uw vorige logische app wilt overschrijven met de nieuwe schema versie, kiest u in de werk balk **klonen**naast **schema bijwerken**. Deze stap is alleen nodig als u dezelfde resource-ID of de aanvraag-URL van uw logische app wilt blijven gebruiken.
+6. *Optioneel* Als u uw vorige logische app wilt overschrijven met de nieuwe schema versie, kiest u in de werk balk **klonen** naast **schema bijwerken**. Deze stap is alleen nodig als u dezelfde resource-ID of de aanvraag-URL van uw logische app wilt blijven gebruiken.
 
 ## <a name="upgrade-tool-notes"></a>Opmerkingen bij upgrade hulpprogramma
 

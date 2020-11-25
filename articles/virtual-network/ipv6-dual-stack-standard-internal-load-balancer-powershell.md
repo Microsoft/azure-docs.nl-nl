@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/14/2019
 ms.author: kumud
-ms.openlocfilehash: c224332eec31b343bdc53564ef4075a0620ac340
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 759bd94aee98aa04dee56acf0e50ca90cd0541b8
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87289581"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "96000603"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-using-standard-internal-load-balancer-in-azure---powershell-preview"></a>Een IPv6-toepassing met dubbele stack implementeren met behulp van standaard interne Load Balancer in azure-Power shell (preview)
 
@@ -29,7 +29,7 @@ De procedure voor het maken van een intern Load Balancer die geschikt is voor IP
 ```azurepowershell
  $frontendIPv6 = New-AzLoadBalancerFrontendIpConfig `
  -Name "dsLbFrontEnd_v6" `
- -PrivateIpAddress "ace:cab:deca:deed::100" `
+ -PrivateIpAddress "fd00:db8:deca:deed::100" `
  -PrivateIpAddressVersion "IPv6" `
  -Subnet $DsSubnet
 ```
@@ -100,14 +100,14 @@ Maak een virtueel netwerk met behulp van [New-AzVirtualNetwork](/powershell/modu
 # Create dual stack subnet config
 $DsSubnet = New-AzVirtualNetworkSubnetConfig `
   -Name "dsSubnet" `
-  -AddressPrefix "10.0.0.0/24","ace:cab:deca:deed::/64"
+  -AddressPrefix "10.0.0.0/24","fd00:db8:deca:deed::/64"
 
 # Create the virtual network
 $vnet = New-AzVirtualNetwork `
   -ResourceGroupName $rg.ResourceGroupName `
   -Location $rg.Location  `
   -Name "dsVnet" `
-  -AddressPrefix "10.0.0.0/16","ace:cab:deca::/48"  `
+  -AddressPrefix "10.0.0.0/16","fd00:db8:deca::/48"  `
   -Subnet $DsSubnet
 
 #Refresh the fully populated subnet for use in load balancer frontend configuration
@@ -119,7 +119,7 @@ In deze sectie configureert u dual front-end-IP (IPv4 en IPv6) en de back-end-ad
 
 ### <a name="create-front-end-ip"></a>Maak een front-end IP-adres
 
-Maak een front-end-IP-adres met [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig). In het volgende voor beeld worden IPv4-en IPv6-front-end IP-configuraties met de naam *dsLbFrontEnd_v4* en *dsLbFrontEnd_v6*gemaakt:
+Maak een front-end-IP-adres met [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig). In het volgende voor beeld worden IPv4-en IPv6-front-end IP-configuraties met de naam *dsLbFrontEnd_v4* en *dsLbFrontEnd_v6* gemaakt:
 
 ```azurepowershell
 $frontendIPv4 = New-AzLoadBalancerFrontendIpConfig `
@@ -130,7 +130,7 @@ $frontendIPv4 = New-AzLoadBalancerFrontendIpConfig `
 
 $frontendIPv6 = New-AzLoadBalancerFrontendIpConfig `
   -Name "dsLbFrontEnd_v6" `
-  -PrivateIpAddress "ace:cab:deca:deed::100"  `
+  -PrivateIpAddress "fd00:db8:deca:deed::100"  `
   -PrivateIpAddressVersion "IPv6"   `
   -Subnet $DsSubnet
 
@@ -260,18 +260,18 @@ Virtuele Nic's maken met [New-AzNetworkInterface](/powershell/module/az.network/
 ```azurepowershell
 
 # Create the IPv4 configuration for NIC 1
-$Ip4Config=New-AzNetworkInterfaceIpConfig `
-  -Name dsIp4Config `
+$Ip4Config=New-AzNetworkInterfaceIpConfig `
+  -Name dsIp4Config `
   -Subnet $vnet.subnets[0] `
-  -PrivateIpAddressVersion IPv4 `
+  -PrivateIpAddressVersion IPv4 `
   -LoadBalancerBackendAddressPool $backendPoolv4 `
   -PublicIpAddress  $RdpPublicIP_1
 
 # Create the IPv6 configuration
-$Ip6Config=New-AzNetworkInterfaceIpConfig `
-  -Name dsIp6Config `
+$Ip6Config=New-AzNetworkInterfaceIpConfig `
+  -Name dsIp6Config `
   -Subnet $vnet.subnets[0] `
-  -PrivateIpAddressVersion IPv6 `
+  -PrivateIpAddressVersion IPv6 `
   -LoadBalancerBackendAddressPool $backendPoolv6
 
 # Create NIC 1
@@ -283,10 +283,10 @@ $NIC_1 = New-AzNetworkInterface `
   -IpConfiguration $Ip4Config,$Ip6Config
 
 # Create the IPv4 configuration for NIC 2
-$Ip4Config=New-AzNetworkInterfaceIpConfig `
-  -Name dsIp4Config `
+$Ip4Config=New-AzNetworkInterfaceIpConfig `
+  -Name dsIp4Config `
   -Subnet $vnet.subnets[0] `
-  -PrivateIpAddressVersion IPv4 `
+  -PrivateIpAddressVersion IPv4 `
   -LoadBalancerBackendAddressPool $backendPoolv4 `
   -PublicIpAddress  $RdpPublicIP_2
 
@@ -327,7 +327,7 @@ $VM2 = New-AzVM -ResourceGroupName $rg.ResourceGroupName  -Location $rg.Location
 ```
 ## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Virtueel IPv6-netwerk met dubbele stack in Azure Portal weer geven
 U kunt het virtuele IPv6-netwerk met dubbele stack als volgt weer geven in Azure Portal:
-1. Voer in de zoek balk van de portal *dsVnet*in.
+1. Voer in de zoek balk van de portal *dsVnet* in.
 2. Wanneer **dsVnet** wordt weer gegeven in de zoek resultaten, selecteert u dit. Hiermee opent u de **overzichts** pagina van het virtuele netwerk met dubbele stack met de naam *dsVnet*. Het virtuele netwerk met dubbele stack toont de twee Nic's met zowel IPv4-als IPv6-configuraties die zich bevinden in het dubbele stack-subnet met de naam *dsSubnet*.
 
 ![IPv6 dubbele stack Virtual Network met standaard interne Load Balancer](./media/ipv6-dual-stack-standard-internal-load-balancer-powershell/ipv6-dual-stack-virtual-network.png)

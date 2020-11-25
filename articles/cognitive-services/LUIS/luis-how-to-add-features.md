@@ -10,11 +10,11 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
 ms.openlocfilehash: 33435d2367b92f312d41f0e32fdbb3a93d59a9fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540877"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999923"
 ---
 # <a name="use-features-to-boost-signal-of-word-list"></a>Functies gebruiken om het signaal van een woorden lijst te verhogen
 
@@ -26,11 +26,11 @@ Bekijk de [concepten](luis-concept-feature.md) om te begrijpen wanneer en waarom
 
 1. Meld u aan bij de [LUIS-portal](https://www.luis.ai) en selecteer uw **abonnement** en **Ontwerpresource** om de apps weer te geven die aan die ontwerpresource zijn toegewezen.
 1. Open uw app door de naam ervan op **mijn apps** -pagina te selecteren.
-1. Selecteer **Build**en selecteer vervolgens **functies** in het linkerdeel venster van uw app.
+1. Selecteer **Build** en selecteer vervolgens **functies** in het linkerdeel venster van uw app.
 
 1. Selecteer op de pagina **onderdelen** de optie **+ maken**.
 
-1. Voer in het dialoog venster **nieuwe woordgroepen lijst maken** een naam in, bijvoorbeeld `Cities` . Voer in het vak **waarde** voor beelden van de steden in, bijvoorbeeld `Seattle` . U kunt één waarde per keer typen, of een reeks waarden gescheiden door komma's, en vervolgens op **Enter**drukken.
+1. Voer in het dialoog venster **nieuwe woordgroepen lijst maken** een naam in, bijvoorbeeld `Cities` . Voer in het vak **waarde** voor beelden van de steden in, bijvoorbeeld `Seattle` . U kunt één waarde per keer typen, of een reeks waarden gescheiden door komma's, en vervolgens op **Enter** drukken.
 
     > [!div class="mx-imgBorder"]
     > ![Scherm afbeelding van het toevoegen van de functie (woordgroepen lijst) plaatsen](./media/luis-add-features/add-phrase-list-cities.png)

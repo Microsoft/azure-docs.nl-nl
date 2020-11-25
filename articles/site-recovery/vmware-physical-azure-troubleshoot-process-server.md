@@ -8,11 +8,11 @@ ms.topic: troubleshooting
 ms.date: 09/09/2019
 ms.author: raynew
 ms.openlocfilehash: ad1bec66edaa3fcc6049f4911684f6e6d6c3e366
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369400"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999180"
 ---
 # <a name="troubleshoot-the-process-server"></a>Problemen met de proces server oplossen
 
@@ -168,7 +168,7 @@ Controleer of de proces server bezig is met het pushen van gegevens naar Azure.
 
   1. Open taak beheer op de proces server (druk op CTRL + SHIFT + ESC).
   2. Selecteer het tabblad **prestaties** > **Open Broncontrole**.
-  3. Op **Broncontrole** pagina selecteert u het tabblad **netwerk** . Controleer onder **processen met netwerk activiteit**of cbengine.exe actief een grote hoeveelheid gegevens verzendt.
+  3. Op **Broncontrole** pagina selecteert u het tabblad **netwerk** . Controleer onder **processen met netwerk activiteit** of cbengine.exe actief een grote hoeveelheid gegevens verzendt.
 
        ![Scherm afbeelding van een groot aantal volumes onder processen met netwerk activiteit.](./media/vmware-physical-azure-troubleshoot-process-server/cbengine.png)
 
@@ -176,8 +176,8 @@ Controleer of de proces server bezig is met het pushen van gegevens naar Azure.
 
 ## <a name="step-9-check-the-process-server-connection-to-azure-blob-storage"></a>Stap 9: de verbinding tussen de proces server en Azure Blob-opslag controleren
 
-1. Selecteer **cbengine.exe**in Broncontrole.
-2. Controleer onder **TCP-verbindingen**of er verbinding is tussen de proces server en de Azure-opslag.
+1. Selecteer **cbengine.exe** in Broncontrole.
+2. Controleer onder **TCP-verbindingen** of er verbinding is tussen de proces server en de Azure-opslag.
 
   ![Scherm opname van de connectiviteit tussen cbengine.exe en de URL van de Azure Blob Storage.](./media/vmware-physical-azure-troubleshoot-process-server/rmonitor.png)
 
@@ -199,8 +199,8 @@ Als er geen verbinding is tussen de proces server en de URL van de Azure Blob St
 
 ## <a name="step-10-check-the-process-server-connection-to-azure-public-ip-address"></a>Stap 10: de verbinding tussen de proces server en het open bare IP-adres van Azure controleren
 
-1. Open op de proces server in **%ProgramFiles%\Microsoft Azure Recovery Services Agent\Temp**het meest recente bestand CBEngineCurr. errlog.
-2. Zoek in het bestand naar **443**of de verbindings poging voor de teken reeks **is mislukt**.
+1. Open op de proces server in **%ProgramFiles%\Microsoft Azure Recovery Services Agent\Temp** het meest recente bestand CBEngineCurr. errlog.
+2. Zoek in het bestand naar **443** of de verbindings poging voor de teken reeks **is mislukt**.
 
   ![Fouten Logboeken in de map Temp](./media/vmware-physical-azure-troubleshoot-process-server/logdetails1.png)
 
@@ -235,7 +235,7 @@ Controleer of de op IP-adres gebaseerde firewall op de proces server de toegang 
 
     a) zoeken naar **Microsoft Azure backup**.
 
-    b) Open **Microsoft Azure backup**en selecteer Eigenschappen van **actie**  >  **wijzigen**.
+    b) Open **Microsoft Azure backup** en selecteer Eigenschappen van **actie**  >  **wijzigen**.
 
     c) op het tabblad **proxy configuratie** moet het proxy adres gelijk zijn aan het proxy adres dat wordt weer gegeven in de Register instellingen. Als dat niet het geval is, wijzigt u dit in hetzelfde adres.
 

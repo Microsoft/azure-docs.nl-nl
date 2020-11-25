@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 07/06/2016
 ms.custom: seodec18
 ms.openlocfilehash: c1b0ce62905424032c2100a1a032fa43ba97578f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87084854"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999396"
 ---
 # <a name="restore-an-app-in-azure"></a>Een app in Azure herstellen
 In dit artikel wordt beschreven hoe u een app kunt herstellen in [Azure app service](../app-service/overview.md) waarvan u eerder een back-up hebt gemaakt (zie een back-up van [uw app maken in azure](manage-backup.md)). U kunt uw app met de gekoppelde data bases op aanvraag herstellen naar een eerdere status of een nieuwe app maken op basis van een van de back-ups van de oorspronkelijke app. Azure App Service ondersteunt de volgende data bases voor back-up en herstel:
@@ -39,7 +39,7 @@ Herstellen vanuit back-ups is beschikbaar voor apps die worden uitgevoerd in de 
     ![Scherm afbeelding die laat zien waar u de bestemming voor het herstellen van de app kunt opgeven.](./media/web-sites-restore/022ChooseDestination1.png)
    
    > [!WARNING]
-   > Als u **overschrijven**kiest, worden alle bestaande gegevens in uw huidige app gewist en overschreven. Voordat u op **OK**klikt, moet u ervoor zorgen dat deze precies overeenkomt met wat u wilt doen.
+   > Als u **overschrijven** kiest, worden alle bestaande gegevens in uw huidige app gewist en overschreven. Voordat u op **OK** klikt, moet u ervoor zorgen dat deze precies overeenkomt met wat u wilt doen.
    > 
    > 
    

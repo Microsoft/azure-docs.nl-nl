@@ -14,11 +14,11 @@ ms.date: 02/19/2015
 ms.author: gwallace
 ms.custom: devx-track-python
 ms.openlocfilehash: ba93591ade730c4e9c9bdb6a42232e71e10d6469
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87850148"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000433"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-python"></a>Twilio gebruiken voor spraak-en SMS-mogelijkheden in python
 In deze hand leiding wordt gedemonstreerd hoe u veelvoorkomende programmeer taken uitvoert met de Twilio API-service in Azure. De besproken scenario's zijn onder andere het maken van een telefoon oproep en het verzenden van een SMS-bericht (Short Message Service). Zie de sectie [volgende stappen](#NextSteps) voor meer informatie over Twilio en het gebruik van spraak en SMS in uw toepassingen.
@@ -41,21 +41,21 @@ De Twilio-API is een resterende API die spraak-en SMS-functionaliteit biedt voor
 De belangrijkste aspecten van de Twilio-API zijn Twilio-werk woorden en Twilio Markup Language (TwiML).
 
 ### <a name="twilio-verbs"></a><a id="Verbs"></a>Twilio-werk woorden
-De API maakt gebruik van Twilio-werk woorden. de term ** &lt; zeg &gt; ** geeft bijvoorbeeld Twilio aan audibly een bericht te verzenden bij een aanroep.
+De API maakt gebruik van Twilio-werk woorden. de term **&lt; zeg &gt;** geeft bijvoorbeeld Twilio aan audibly een bericht te verzenden bij een aanroep.
 
 Hier volgt een lijst met Twilio-werk woorden. Meer informatie over de andere bewerkingen en mogelijkheden via [documentatie voor Twilio Markup Language][twiml].
 
-* ** &lt; Dial &gt; **: verbindt de beller met een andere telefoon.
-* ** &lt; Verzamelen &gt; **: Hiermee worden numerieke cijfers op het telefoon blok verzameld.
-* ** &lt; Ophangen &gt; **: beëindigt een aanroep.
-* ** &lt; Pause &gt; **: wacht een opgegeven aantal seconden op de achtergrond.
-* ** &lt; Afspelen &gt; **: Hiermee wordt een audio bestand afgespeeld.
-* ** &lt; Wachtrij &gt; **: Voeg het toe aan een wachtrij met bellers.
-* ** &lt; Record &gt; **: registreert de stem van de aanroeper en retourneert een URL van een bestand dat de opname bevat.
-* ** &lt; Omleiden &gt; **: overdracht van de besturing van een aanroep of SMS naar de TWIML op een andere URL.
-* ** &lt; Afwijzen &gt; **: Hiermee wordt een inkomende oproep naar uw Twilio-nummer afgewezen zonder dat u wordt gefactureerd.
-* ** &lt; Zeg &gt; **: Hiermee wordt tekst geconverteerd naar spraak die tijdens een aanroep wordt gemaakt.
-* ** &lt; SMS &gt; **: er wordt een SMS-bericht verzonden.
+* **&lt; Dial &gt;**: verbindt de beller met een andere telefoon.
+* **&lt; Verzamelen &gt;**: Hiermee worden numerieke cijfers op het telefoon blok verzameld.
+* **&lt; Ophangen &gt;**: beëindigt een aanroep.
+* **&lt; Pause &gt;**: wacht een opgegeven aantal seconden op de achtergrond.
+* **&lt; Afspelen &gt;**: Hiermee wordt een audio bestand afgespeeld.
+* **&lt; Wachtrij &gt;**: Voeg het toe aan een wachtrij met bellers.
+* **&lt; Record &gt;**: registreert de stem van de aanroeper en retourneert een URL van een bestand dat de opname bevat.
+* **&lt; Omleiden &gt;**: overdracht van de besturing van een aanroep of SMS naar de TWIML op een andere URL.
+* **&lt; Afwijzen &gt;**: Hiermee wordt een inkomende oproep naar uw Twilio-nummer afgewezen zonder dat u wordt gefactureerd.
+* **&lt; Zeg &gt;**: Hiermee wordt tekst geconverteerd naar spraak die tijdens een aanroep wordt gemaakt.
+* **&lt; SMS &gt;**: er wordt een SMS-bericht verzonden.
 
 ### <a name="twiml"></a><a id="TwiML"></a>TwiML
 TwiML is een reeks op XML gebaseerde instructies op basis van de Twilio-werk woorden die Twilio over het verwerken van een aanroep of SMS.

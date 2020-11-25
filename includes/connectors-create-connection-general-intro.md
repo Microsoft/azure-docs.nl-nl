@@ -5,11 +5,11 @@ author: ecfan
 ms.author: estfan
 ms.date: 06/06/2020
 ms.openlocfilehash: 1113201941ce0757b58e361c08c9d79d7dd374cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84449055"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999570"
 ---
 Wanneer u een trigger of actie toevoegt die voor het eerst verbinding maakt met een service of systeem, vraagt de Logic App Designer u om een *verbinding* te maken door de nodige informatie op te geven die per verbinding varieert, bijvoorbeeld:
 

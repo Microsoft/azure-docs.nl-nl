@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
 ms.openlocfilehash: ad5e91a6dcdb61e09a64e61a27f12148ec28168e
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490573"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000739"
 ---
 # <a name="log-analytics-agent-data-sources-in-azure-monitor"></a>Log Analytics agent-gegevens bronnen in Azure Monitor
 De gegevens die Azure Monitor verzameld van virtuele machines met de [log Analytics](log-analytics-agent.md) -agent, worden gedefinieerd door de gegevens bronnen die u configureert in de [log Analytics-werk ruimte](data-platform-logs.md).   Elke gegevens bron maakt records van een bepaald type met elk type met een eigen set eigenschappen.

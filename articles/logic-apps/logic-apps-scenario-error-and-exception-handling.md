@@ -8,11 +8,11 @@ ms.reviewer: klam, estfan, logicappspm
 ms.topic: article
 ms.date: 07/29/2016
 ms.openlocfilehash: fdf5f25ae6f89ccc06c95ee1be021691dab0047a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322424"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000348"
 ---
 # <a name="scenario-exception-handling-and-error-logging-for-logic-apps"></a>Scenario: Uitzonderingen en foutregistratie voor logische apps afhandelen
 
@@ -396,7 +396,7 @@ Onze oplossing heeft mogelijkheden toegevoegd met [Azure Cosmos DB](https://azur
 
 ### <a name="error-management-portal"></a>Portal voor fout beheer
 
-Als u de fouten wilt weer geven, kunt u een MVC-Web-app maken om de fout records van Cosmos DB weer te geven. De bewerkingen **lijst**, **Details**, **bewerken**en **verwijderen** zijn opgenomen in de huidige versie.
+Als u de fouten wilt weer geven, kunt u een MVC-Web-app maken om de fout records van Cosmos DB weer te geven. De bewerkingen **lijst**, **Details**, **bewerken** en **verwijderen** zijn opgenomen in de huidige versie.
 
 > [!NOTE]
 > Bewerkings bewerking: Cosmos DB vervangt het hele document. De records die worden weer gegeven in de **lijst** -en **detail** weergaven, zijn alleen voor beelden. Dit zijn niet echt patiënten-afspraak records.

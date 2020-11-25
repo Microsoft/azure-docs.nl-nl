@@ -8,11 +8,11 @@ ms.date: 08/05/2020
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 764e0262c8a26511c55740aa1797b5ec9b59cc8e
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150138"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999428"
 ---
 # <a name="integrate-your-app-with-an-azure-virtual-network"></a>Een app integreren met een virtueel Azure-netwerk
 
@@ -24,7 +24,7 @@ Azure App Service heeft twee varianten van de VNet-integratie functie:
 
 ## <a name="enable-vnet-integration"></a>VNet-integratie inschakelen
 
-1. Ga naar de gebruikers interface van het **netwerk** in de app Service Portal. Selecteer onder **VNet-integratie**de optie **Klik hier om te configureren**.
+1. Ga naar de gebruikers interface van het **netwerk** in de app Service Portal. Selecteer onder **VNet-integratie** de optie **Klik hier om te configureren**.
 
 1. Selecteer **VNet toevoegen**.
 
@@ -116,7 +116,7 @@ Als u peering met de regionale VNet-integratie gebruikt, hoeft u geen aanvullend
 
 Als u Gateway-vereiste VNet-integratie met peering gebruikt, moet u enkele extra items configureren. Peering configureren voor gebruik met uw app:
 
-1. Een peering-verbinding toevoegen op het VNet waarmee uw app verbinding maakt. Wanneer u de peering-verbinding toevoegt, schakelt u **toegang tot virtueel netwerk toestaan** in en selecteert u **doorgestuurd verkeer toestaan** en **Gateway doorvoer**toestaan.
+1. Een peering-verbinding toevoegen op het VNet waarmee uw app verbinding maakt. Wanneer u de peering-verbinding toevoegt, schakelt u **toegang tot virtueel netwerk toestaan** in en selecteert u **doorgestuurd verkeer toestaan** en **Gateway doorvoer** toestaan.
 1. Voeg een peering-verbinding toe op het VNet dat wordt gekoppeld aan het VNet waarmee u verbinding hebt. Wanneer u de peering-verbinding op het doel-VNet toevoegt, schakelt u **toegang tot virtueel netwerk toestaan** in en selecteert u **doorgestuurd verkeer toestaan** en **externe gateways toestaan**.
 1. Ga naar de **app service plan**  >  **Network**  >  **VNet Integration** UI in de portal. Selecteer het VNet waarmee uw app verbinding maakt. Voeg onder de sectie route ring het adres bereik toe van het VNet dat is gekoppeld aan het VNet waarmee uw app is verbonden.
 
@@ -137,7 +137,7 @@ De routes die in uw VNet zijn gedefinieerd, worden gebruikt voor het omleiden va
 ### <a name="gateway-required-vnet-integration-certificates"></a>Gateway-vereiste VNet-integratie certificaten
 Als gateway-vereiste VNet-integratie is ingeschakeld, is er een vereiste uitwisseling van certificaten vereist om de beveiliging van de verbinding te garanderen. Naast de certificaten zijn de DNS-configuratie, routes en andere vergelijk bare dingen die het netwerk beschrijven.
 
-Als certificaten of netwerk gegevens zijn gewijzigd, selecteert u **netwerk synchroniseren**. Wanneer u **netwerk synchroniseren**selecteert, zorgt u voor een korte onderbreking in de connectiviteit tussen uw app en uw VNet. Als uw app niet opnieuw wordt gestart, kan het verlies van de connectiviteit ertoe leiden dat uw site niet goed werkt.
+Als certificaten of netwerk gegevens zijn gewijzigd, selecteert u **netwerk synchroniseren**. Wanneer u **netwerk synchroniseren** selecteert, zorgt u voor een korte onderbreking in de connectiviteit tussen uw app en uw VNet. Als uw app niet opnieuw wordt gestart, kan het verlies van de connectiviteit ertoe leiden dat uw site niet goed werkt.
 
 ## <a name="pricing-details"></a>Prijsdetails
 De regionale VNet-integratie functie heeft geen extra kosten voor gebruik buiten de kosten categorie van het App Service plan.

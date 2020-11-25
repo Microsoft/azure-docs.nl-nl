@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
 ms.openlocfilehash: cc04a891bb32ede6c7bb72a339b728642cf343ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86207820"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000518"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Apache Ambari Hive-weergave gebruiken met Apache Hadoop in HDInsight
 
@@ -29,7 +29,7 @@ Een Hadoop-cluster in HDInsight. Zie aan de [slag met HDInsight op Linux](./apac
 
 1. Selecteer uw cluster in de [Azure Portal](https://portal.azure.com/).  Zie een [lijst en clusters weer geven](../hdinsight-administer-use-portal-linux.md#showClusters) voor instructies. Het cluster wordt geopend in een nieuwe portal weergave.
 
-1. Selecteer **Ambari-weer gaven**in **cluster dashboards**. Wanneer u wordt gevraagd om te verifiëren, gebruikt u de account naam en het wacht woord voor de cluster aanmelding (standaard `admin` ) die u hebt opgegeven tijdens het maken van het cluster. U kunt ook naar `https://CLUSTERNAME.azurehdinsight.net/#/main/views` in uw browser navigeren `CLUSTERNAME` , waarbij de naam van uw cluster is.
+1. Selecteer **Ambari-weer gaven** in **cluster dashboards**. Wanneer u wordt gevraagd om te verifiëren, gebruikt u de account naam en het wacht woord voor de cluster aanmelding (standaard `admin` ) die u hebt opgegeven tijdens het maken van het cluster. U kunt ook naar `https://CLUSTERNAME.azurehdinsight.net/#/main/views` in uw browser navigeren `CLUSTERNAME` , waarbij de naam van uw cluster is.
 
 1. Selecteer in de lijst met weer gaven de __Hive-weer gave__.
 
@@ -69,7 +69,7 @@ Een Hadoop-cluster in HDInsight. Zie aan de [slag met HDInsight op Linux](./apac
     |SELECT|Hiermee wordt het aantal rijen geselecteerd waarin de kolom T4 de waarde [ERROR] bevat.|
 
    > [!IMPORTANT]  
-   > De __database__ selectie __standaard__behouden. De voor beelden in dit document gebruiken de standaard database die is opgenomen in HDInsight.
+   > De __database__ selectie __standaard__ behouden. De voor beelden in dit document gebruiken de standaard database die is opgenomen in HDInsight.
 
 1. Als u de query wilt starten, selecteert u onder het werk blad **uitvoeren** . De knop wordt oranje en de tekst verandert in **stoppen**.
 
@@ -129,7 +129,7 @@ Declareer en sla een set Udf's op met behulp van het tabblad **UDF** boven aan d
 
 ![Weer gave van het tabblad Udf's Apache Hive weer geven](./media/apache-hadoop-use-hive-ambari-view/user-defined-functions.png)
 
-Onder aan de **query-editor**wordt de knop **udf's toevoegen** weer gegeven. In deze vermelding wordt een vervolg keuzelijst weer gegeven van de Udf's die in de Hive-weer gave zijn gedefinieerd. Als u een UDF selecteert, worden HiveQL-instructies aan uw query toegevoegd om de UDF in te scha kelen.
+Onder aan de **query-editor** wordt de knop **udf's toevoegen** weer gegeven. In deze vermelding wordt een vervolg keuzelijst weer gegeven van de Udf's die in de Hive-weer gave zijn gedefinieerd. Als u een UDF selecteert, worden HiveQL-instructies aan uw query toegevoegd om de UDF in te scha kelen.
 
 Als u bijvoorbeeld een UDF hebt gedefinieerd met de volgende eigenschappen:
 

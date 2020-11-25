@@ -9,11 +9,11 @@ ms.topic: troubleshooting
 ms.custom: seoapr2020
 ms.date: 04/22/2020
 ms.openlocfilehash: 2e9f6898dba559f557f49cc0ee9ff39644da243f
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287347"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000688"
 ---
 # <a name="troubleshoot-resource-creation-failures-in-azure-hdinsight"></a>Problemen met het maken van resources in azure HDInsight oplossen
 

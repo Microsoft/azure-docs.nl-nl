@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 2/28/2018
 ms.author: gwallace
 ms.openlocfilehash: 8e60ac5065c2f9543a641daf4f62299c00c61fc8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86260182"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000654"
 ---
 # <a name="use-system-health-reports-to-troubleshoot"></a>Systeemstatusrapporten gebruiken om fouten op te lossen
 Azure Service Fabric-onderdelen bieden systeem status rapporten voor alle entiteiten in het cluster direct uit het vak. Met de [Health Store](service-fabric-health-introduction.md#health-store) worden entiteiten gemaakt en verwijderd op basis van de systeem rapporten. Ook worden deze ingedeeld in een-hiërarchie waarin entiteits interacties worden vastgelegd.
@@ -53,7 +53,7 @@ In het rapport wordt de time-out voor globale leases opgegeven als time-to-Live 
 De Failover Manager (FM)-service beheert informatie over de cluster knooppunten. Wanneer FM gegevens verliest en gegevens verlies oploopt, kan niet worden gegarandeerd dat het de meest bijgewerkte informatie over de cluster knooppunten bevat. In dit geval wordt het systeem opnieuw opgebouwd en worden de gegevens van alle knoop punten in het cluster door System.FM verzameld, zodat de status opnieuw kan worden samengesteld. Als gevolg van netwerk-of knooppunt problemen kan het opnieuw samen stellen vastlopen of vastgelopen raken. Dit kan gebeuren met de Failover Manager Master-service (FMM). De FMM is een stateless systeem service waarmee wordt bijgehouden waar alle FMs in het cluster zich bevinden. De primaire FMM is altijd het knoop punt met de ID die het dichtst in de buurt is van 0. Als dat knoop punt wordt verwijderd, wordt een opnieuw opbouwen geactiveerd.
 Wanneer een van de voor gaande voor waarden plaatsvindt, wordt **System.fm** of **System. FMM** door een fouten rapport gemarkeerd. Opnieuw opbouwen kan in een van de twee fasen vastzitten:
 
-* **Wachten op verzen**ding: er wordt gewacht op een antwoord op het broadcast bericht van de andere knoop punten.
+* **Wachten op verzen** ding: er wordt gewacht op een antwoord op het broadcast bericht van de andere knoop punten.
 
   * **Volgende stappen**: onderzoeken of er een probleem is met de netwerk verbinding tussen knoop punten.
 * **Wachten op knoop punten**: FM/FMM heeft al een broadcast-antwoord ontvangen van de andere knoop punten en wacht op een antwoord van specifieke knoop punten. Het status rapport geeft een lijst van de knoop punten waarvoor de FM/FMM wacht op een antwoord.
@@ -116,7 +116,7 @@ HealthEvents          :
 
 
 ### <a name="certificate-expiration"></a>Certificaat verloopt
-**System. FabricNode** meldt een waarschuwing wanneer de certificaten die worden gebruikt door het knoop punt bijna verlopen. Er zijn drie certificaten per knoop punt: **Certificate_cluster**, **Certificate_server**en **Certificate_default_client**. Wanneer de verval datum ten minste twee weken duurt, is de status van het rapport OK. Wanneer de verloop tijd binnen twee weken ligt, is het rapport type een waarschuwing. De TTL van deze gebeurtenissen is oneindig en wordt verwijderd wanneer een knoop punt het cluster verlaat.
+**System. FabricNode** meldt een waarschuwing wanneer de certificaten die worden gebruikt door het knoop punt bijna verlopen. Er zijn drie certificaten per knoop punt: **Certificate_cluster**, **Certificate_server** en **Certificate_default_client**. Wanneer de verval datum ten minste twee weken duurt, is de status van het rapport OK. Wanneer de verloop tijd binnen twee weken ligt, is het rapport type een waarschuwing. De TTL van deze gebeurtenissen is oneindig en wordt verwijderd wanneer een knoop punt het cluster verlaat.
 
 * **SourceId**: System. FabricNode
 * **Eigenschap**: begint met **certificaat** en bevat meer informatie over het certificaat type.
@@ -425,10 +425,10 @@ Deze eigenschap wordt gebruikt om waarschuwingen of fouten aan te geven bij het 
 Deze waarschuwingen worden gegenereerd nadat de actie lokaal is een aantal keer opnieuw geprobeerd (afhankelijk van het beleid). Service Fabric de actie opnieuw wordt uitgevoerd tot een maximum drempel. Nadat de maximum drempel waarde is bereikt, kan deze proberen om de situatie te corrigeren. Deze poging kan ervoor zorgen dat deze waarschuwingen worden gewist, omdat de actie op dit knoop punt wordt weer gegeven. Als een replica bijvoorbeeld niet kan worden geopend op een knoop punt, wordt door Service Fabric een status waarschuwing gegenereerd. Als de replica nog steeds niet kan worden geopend, Service Fabric op zelf herstellen. Bij deze actie is het mogelijk dat u dezelfde bewerking probeert uit te voeren op een ander knoop punt. Deze poging zorgt ervoor dat de waarschuwing voor deze replica wordt gewist. 
 
 * **SourceId**: System. ra
-* **Eigenschap**: **ReplicaOpenStatus**, **ReplicaCloseStatus**en **ReplicaChangeRoleStatus**.
+* **Eigenschap**: **ReplicaOpenStatus**, **ReplicaCloseStatus** en **ReplicaChangeRoleStatus**.
 * **Volgende stappen**: onderzoek de service code of de crash dumps om te bepalen waarom de bewerking mislukt.
 
-In het volgende voor beeld ziet u de status van een replica die wordt gegenereerd `TargetInvocationException` vanuit de open-methode. De beschrijving bevat het punt van de fout, het **IStatefulServiceReplica. Open**, het uitzonderings type **TargetInvocationException**en de stack-tracering.
+In het volgende voor beeld ziet u de status van een replica die wordt gegenereerd `TargetInvocationException` vanuit de open-methode. De beschrijving bevat het punt van de fout, het **IStatefulServiceReplica. Open**, het uitzonderings type **TargetInvocationException** en de stack-tracering.
 
 ```powershell
 PS C:\> Get-ServiceFabricReplicaHealth -PartitionId 337cf1df-6cab-4825-99a9-7595090c0b1b -ReplicaOrInstanceId 131483509874784794
@@ -678,7 +678,7 @@ De **replicatie wachtrij is vol:**
 **System. NamingService** rapporteert de status van de primaire replica wanneer een naamgevings bewerking langer duurt dan acceptabel is. Voor beelden van naamgevings bewerkingen zijn [CreateServiceAsync](/dotnet/api/system.fabric.fabricclient.servicemanagementclient.createserviceasync) of [DeleteServiceAsync](/dotnet/api/system.fabric.fabricclient.servicemanagementclient.deleteserviceasync). Meer methoden vindt u onder FabricClient. Ze kunnen bijvoorbeeld worden gevonden onder [Service Management-methoden](/dotnet/api/system.fabric.fabricclient.servicemanagementclient) of [methoden voor eigenschaps beheer](/dotnet/api/system.fabric.fabricclient.propertymanagementclient).
 
 > [!NOTE]
-> Met de naamgevings service worden service namen omgezet naar een locatie in het cluster. Gebruikers kunnen deze gebruiken om service namen en-eigenschappen te beheren. Het is een Service Fabric gepartitioneerde service. Een van de partities vertegenwoordigt de *eigenaar*van de instantie, die meta gegevens bevat over alle service Fabric namen en services. De namen van de Service Fabric worden toegewezen aan verschillende partities, ook wel partities met de *naam eigenaar* genoemd, waardoor de service uitbreidbaar is. Meer informatie over de [naamgevings service](service-fabric-architecture.md).
+> Met de naamgevings service worden service namen omgezet naar een locatie in het cluster. Gebruikers kunnen deze gebruiken om service namen en-eigenschappen te beheren. Het is een Service Fabric gepartitioneerde service. Een van de partities vertegenwoordigt de *eigenaar* van de instantie, die meta gegevens bevat over alle service Fabric namen en services. De namen van de Service Fabric worden toegewezen aan verschillende partities, ook wel partities met de *naam eigenaar* genoemd, waardoor de service uitbreidbaar is. Meer informatie over de [naamgevings service](service-fabric-architecture.md).
 > 
 > 
 
@@ -794,7 +794,7 @@ System. hosting rapporten als OK als de activering van het service pakket op het
 System. hosting rapporten als OK voor elk code pakket als de activering is geslaagd. Als de activering mislukt, wordt een waarschuwing gerapporteerd zoals geconfigureerd. Als **code package** niet kan worden geactiveerd of beëindigd met een fout die groter is dan de geconfigureerde **CodePackageHealthErrorThreshold**, meldt hosting een fout. Als een service pack meerdere code pakketten bevat, wordt er een activerings rapport voor elk pakket gegenereerd.
 
 * **SourceId**: System. hosting
-* **Eigenschap**: gebruikt het voor voegsel **CodePackageActivation** en bevat de naam van het code pakket en het ingangs punt als *CodePackageActivation: CodePackageName: SetupEntryPoint/entry*Point. Bijvoorbeeld **CodePackageActivation: code: SetupEntryPoint**.
+* **Eigenschap**: gebruikt het voor voegsel **CodePackageActivation** en bevat de naam van het code pakket en het ingangs punt als *CodePackageActivation: CodePackageName: SetupEntryPoint/entry* Point. Bijvoorbeeld **CodePackageActivation: code: SetupEntryPoint**.
 
 ### <a name="service-type-registration"></a>Registratie van Service type
 System. hosting rapporten als OK als het Service type is geregistreerd. Er wordt een fout melding weer gegeven als de registratie niet op tijd is uitgevoerd, zoals is geconfigureerd met behulp van **ServiceTypeRegistrationTimeout**. Als de runtime is gesloten, is het Service type niet meer geregistreerd bij het knoop punt en wordt er een waarschuwing voor het hosten van het hosting rapport gerapporteerd.

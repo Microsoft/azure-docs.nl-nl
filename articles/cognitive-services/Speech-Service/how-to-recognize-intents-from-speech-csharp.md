@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1138a970bf7c52182f13d0fd14d0178a2d0cfeba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93a3adf00203e317be912e3e72de7a3f7ca666c6
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88918788"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96001087"
 ---
 # <a name="how-to-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Intenties herkennen vanuit spraak met de Speech SDK voor C #
 
-De Cognitive Services [Speech SDK](speech-sdk.md) integreert met de [Language Understanding-service (Luis)](https://www.luis.ai/home) om de **intentie**te kunnen herkennen. Een intentie is iets dat de gebruiker wil doen: een vlucht reserveren, de weersverwachting controleren of iemand bellen. De gebruiker kan elke term gebruiken die natuurlijk aanvoelt. Met behulp van machine learning wijst LUIS gebruikers aanvragen toe aan de intenties die u hebt gedefinieerd.
+De Cognitive Services [Speech SDK](speech-sdk.md) integreert met de [Language Understanding-service (Luis)](https://www.luis.ai/home) om de **intentie** te kunnen herkennen. Een intentie is iets dat de gebruiker wil doen: een vlucht reserveren, de weersverwachting controleren of iemand bellen. De gebruiker kan elke term gebruiken die natuurlijk aanvoelt. Met behulp van machine learning wijst LUIS gebruikers aanvragen toe aan de intenties die u hebt gedefinieerd.
 
 > [!NOTE]
 > Een LUIS-toepassing definieert de intenties en entiteiten die u wilt herkennen. Deze toepassing staat los van de C#-toepassing die gebruikmaakt van de Speech-service. In dit artikel verwijst 'app' naar de LUIS-app en 'toepassing' naar de C#-code.
@@ -55,7 +55,7 @@ LUIS maakt gebruik van drie soorten sleutels:
 | Starter   | Hiermee kunt u uw LUIS-toepassing testen met alleen tekst   |
 | Eindpunt  | Hiermee kunt u toegang verlenen tot een bepaalde LUIS-app            |
 
-Voor deze hand leiding hebt u het sleutel type van het eind punt nodig. In deze hand leiding wordt gebruikgemaakt van de voor beeld-app Home Automation LUIS, die u kunt maken door de Snelstartgids voor het [gebruik van vooraf ontwikkelde Home Automation-apps](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app) te volgen. Als u de beschikking hebt over een eigen LUIS-app, kunt u die ook gebruiken.
+Voor deze hand leiding hebt u het sleutel type van het eind punt nodig. In deze hand leiding wordt gebruikgemaakt van de voor beeld-app Home Automation LUIS, die u kunt maken door de Snelstartgids voor het [gebruik van vooraf ontwikkelde Home Automation-apps](../luis/luis-get-started-create-app.md) te volgen. Als u de beschikking hebt over een eigen LUIS-app, kunt u die ook gebruiken.
 
 Wanneer u een LUIS-app maakt, wordt er automatisch een starter-sleutel gegenereerd, zodat u de app kunt testen met tekstquery's. Met deze sleutel wordt de integratie van de spraak service niet ingeschakeld en werkt deze niet met deze hand leiding. Maak een LUIS-resource in het Azure-dashboard en wijs deze toe aan de LUIS-app. U kunt de gratis Subscription-laag voor deze hand leiding gebruiken.
 
@@ -86,7 +86,7 @@ Ga als volgt te werk op de pagina **Keys and Endpoints settings**:
 
 Vervolgens voegt u code toe aan het project.
 
-1. Open het bestand **Program.cs**van **Solution Explorer**.
+1. Open het bestand **Program.cs** van **Solution Explorer**.
 
 1. Vervang het blok met `using` instructies aan het begin van het bestand door de volgende declaraties:
 
@@ -201,4 +201,4 @@ Zoek naar de code in dit artikel in de map **samples/csharp/sharedcontent/consol
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Quickstart: Spraak herkennen met een microfoon](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnetcore)
+> [Quickstart: Spraak herkennen met een microfoon](./get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnetcore)

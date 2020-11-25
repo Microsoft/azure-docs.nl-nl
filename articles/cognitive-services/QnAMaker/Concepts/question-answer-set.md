@@ -6,11 +6,11 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 01/27/2020
 ms.openlocfilehash: c21c82b5fd024598da30f4ac7b1ed01e64561e3b
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576186"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000110"
 ---
 # <a name="question-and-answer-pair-concepts"></a>Concepten van vraag-en antwoord paren
 
@@ -28,8 +28,8 @@ Elk paar wordt vertegenwoordigd door een **id**.
 De **optionele** instellingen voor een paar zijn onder andere:
 
 * **Alternatieve vormen van de vraag** : dit helpt QnA Maker het juiste antwoord te retour neren voor een groter aantal vraag frasen
-* **Meta gegevens** : meta gegevens zijn tags die zijn gekoppeld aan een QnA paar en worden weer gegeven als sleutel-waardeparen. Tags voor meta gegevens worden gebruikt voor het filteren van QnA-paren en het beperken van de set waarover overeenkomende query's worden uitgevoerd.
-* **Vragen over meerdere schakelingen** , gebruikt om door te gaan met een gesprek op meerdere locaties
+* **Meta gegevens**: meta gegevens zijn tags die zijn gekoppeld aan een QnA paar en worden weer gegeven als sleutel-waardeparen. Tags voor meta gegevens worden gebruikt voor het filteren van QnA-paren en het beperken van de set waarover overeenkomende query's worden uitgevoerd.
+* **Vragen over meerdere schakelingen**, gebruikt om door te gaan met een gesprek op meerdere locaties
 
 ![Knowledge Base van QnA Maker](../media/qnamaker-concepts-knowledgebase/knowledgebase.png)
 

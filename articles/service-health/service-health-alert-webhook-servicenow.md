@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 06/10/2019
 ms.custom: devx-track-js
 ms.openlocfilehash: f120e9d950cc349d0331a476dbfbfe9d7e599f0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91307565"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000637"
 ---
 # <a name="send-azure-service-health-alerts-with-servicenow-using-webhooks"></a>Azure service Health-waarschuwingen verzenden met ServiceNow met behulp van webhooks
 
@@ -132,7 +132,7 @@ In dit artikel leest u hoe u Azure service Health Alerts integreert met ServiceN
     })(request, response);
     ```
 
-1.  Schakel op het tabblad Beveiliging het selectie vakje **verificatie vereist** en selecteer **verzenden**in. Met `<secret>` deze instelling wordt deze API beveiligd.
+1.  Schakel op het tabblad Beveiliging het selectie vakje **verificatie vereist** en selecteer **verzenden** in. Met `<secret>` deze instelling wordt deze API beveiligd.
 
     ![Het selectie vakje ' authenticatie vereist ' in ServiceNow](./media/webhook-alerts/servicenow-resource-settings.png)
 
@@ -194,7 +194,7 @@ In dit artikel leest u hoe u Azure service Health Alerts integreert met ServiceN
 1. Ga naar [ServiceNow](https://www.servicenow.com/) om te bevestigen dat de integratie is ingesteld.
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over het [configureren van webhook-meldingen voor bestaande probleem beheersystemen](service-health-alert-webhook-guide.md).
-- Controleer het [webhook-schema](../azure-monitor/platform/activity-log-alerts-webhook.md)van de waarschuwing voor het activiteiten logboek. 
-- Meer informatie over [service status meldingen](./service-notifications.md).
+- Meer informatie over het [configureren van webhookmeldingen voor bestaande problematische beheersystemen](service-health-alert-webhook-guide.md).
+- Bekijk het [webhookschema voor waarschuwingen voor het activiteitenlogboek](../azure-monitor/platform/activity-log-alerts-webhook.md). 
+- Meer informatie over [servicestatusmeldingen](./service-notifications.md).
 - Meer informatie over [actiegroepen](../azure-monitor/platform/action-groups.md).

@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 05/21/2018
 tags: connectors
 ms.openlocfilehash: 52bf42434640dc965999895549b4fa12a139dcce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87284061"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999600"
 ---
 # <a name="find-results-in-bing-search-by-using-azure-logic-apps"></a>Resultaten zoeken in Bing Search met behulp van Azure Logic Apps
 
@@ -52,11 +52,11 @@ Als uw verbinding al bestaat, geeft u de benodigde informatie op voor de trigger
 
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
-   | Zoek query | Ja | <*Zoek woorden*> | Voer de zoek woorden in die u wilt gebruiken. |
-   | Markt | Ja | <*instelling*> | De land instellingen voor zoeken. De standaard instelling is "en-US", maar u kunt een andere waarde selecteren. |
-   | Veilig zoeken | Ja | <*Zoek niveau*> | Het filter niveau voor het uitsluiten van inhoud voor volwassenen. De standaard waarde is ' matig ', maar u selecteert een ander niveau. |
-   | Aantal | Nee | <*resultaten-aantal*> | Retourneert het opgegeven aantal resultaten. De standaard instelling is 20, maar u kunt een andere waarde opgeven. Het werkelijke aantal geretourneerde resultaten kan kleiner zijn dan het opgegeven aantal. |
-   | Offset | Nee | <*Skip-waarde*> | Het aantal resultaten dat moet worden overgeslagen voordat resultaten worden geretourneerd |
+   | Zoek query | Yes | <*Zoek woorden*> | Voer de zoek woorden in die u wilt gebruiken. |
+   | Markt | Yes | <*instelling*> | De land instellingen voor zoeken. De standaard instelling is "en-US", maar u kunt een andere waarde selecteren. |
+   | Veilig zoeken | Yes | <*Zoek niveau*> | Het filter niveau voor het uitsluiten van inhoud voor volwassenen. De standaard waarde is ' matig ', maar u selecteert een ander niveau. |
+   | Aantal | No | <*resultaten-aantal*> | Retourneert het opgegeven aantal resultaten. De standaard instelling is 20, maar u kunt een andere waarde opgeven. Het werkelijke aantal geretourneerde resultaten kan kleiner zijn dan het opgegeven aantal. |
+   | Offset | No | <*Skip-waarde*> | Het aantal resultaten dat moet worden overgeslagen voordat resultaten worden geretourneerd |
    |||||
 
    Bijvoorbeeld:
@@ -65,7 +65,7 @@ Als uw verbinding al bestaat, geeft u de benodigde informatie op voor de trigger
 
 4. Selecteer het interval en de frequentie voor het aantal keren dat u wilt dat de trigger controleert op resultaten.
 
-5. Wanneer u klaar bent, selecteert u op de werk balk ontwerpen de optie **Opslaan**.
+5. Selecteer **Opslaan** op de werkbalk van de ontwerper wanneer u klaar bent.
 
 6. Ga nu verder met het toevoegen van een of meer acties aan uw logische app voor de taken die u wilt uitvoeren met de trigger resultaten.
 
@@ -103,11 +103,11 @@ Selecteer in de lijst acties de gewenste actie.
 
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
-   | Zoek query | Ja | <*Zoek expressie*> | Voer een expressie in voor het uitvoeren van query's op de trigger resultaten. U kunt kiezen uit de velden in de lijst met dynamische inhoud of een expressie maken met de opbouw functie voor expressies. |
-   | Markt | Ja | <*instelling*> | De land instellingen voor zoeken. De standaard instelling is "en-US", maar u kunt een andere waarde selecteren. |
-   | Veilig zoeken | Ja | <*Zoek niveau*> | Het filter niveau voor het uitsluiten van inhoud voor volwassenen. De standaard waarde is ' matig ', maar u selecteert een ander niveau. |
-   | Aantal | Nee | <*resultaten-aantal*> | Retourneert het opgegeven aantal resultaten. De standaard instelling is 20, maar u kunt een andere waarde opgeven. Het werkelijke aantal geretourneerde resultaten kan kleiner zijn dan het opgegeven aantal. |
-   | Offset | Nee | <*Skip-waarde*> | Het aantal resultaten dat moet worden overgeslagen voordat resultaten worden geretourneerd |
+   | Zoek query | Yes | <*Zoek expressie*> | Voer een expressie in voor het uitvoeren van query's op de trigger resultaten. U kunt kiezen uit de velden in de lijst met dynamische inhoud of een expressie maken met de opbouw functie voor expressies. |
+   | Markt | Yes | <*instelling*> | De land instellingen voor zoeken. De standaard instelling is "en-US", maar u kunt een andere waarde selecteren. |
+   | Veilig zoeken | Yes | <*Zoek niveau*> | Het filter niveau voor het uitsluiten van inhoud voor volwassenen. De standaard waarde is ' matig ', maar u selecteert een ander niveau. |
+   | Aantal | No | <*resultaten-aantal*> | Retourneert het opgegeven aantal resultaten. De standaard instelling is 20, maar u kunt een andere waarde opgeven. Het werkelijke aantal geretourneerde resultaten kan kleiner zijn dan het opgegeven aantal. |
+   | Offset | No | <*Skip-waarde*> | Het aantal resultaten dat moet worden overgeslagen voordat resultaten worden geretourneerd |
    |||||
 
    Stel dat u wilt dat de resultaten waarvan de categorie naam het woord ' Tech ' bevat.
@@ -123,7 +123,7 @@ Selecteer in de lijst acties de gewenste actie.
 
       ![Selecteer een functie](./media/connectors-create-api-bing-search/expression-select-function.png)
 
-   3. Selecteer in de lijst met velden de **categorie**die wordt omgezet in een para meter. 
+   3. Selecteer in de lijst met velden de **categorie** die wordt omgezet in een para meter. 
    Voeg een komma toe na de eerste para meter en Voeg na de komma het volgende woord toe: `'tech'` 
 
       ![Selecteer een veld](./media/connectors-create-api-bing-search/expression-select-field.png)
@@ -138,7 +138,7 @@ Selecteer in de lijst acties de gewenste actie.
 
       `"@{contains(triggerBody()?['category'],'tech')}"`
 
-5. Wanneer u klaar bent, selecteert u op de werk balk ontwerpen de optie **Opslaan**.
+5. Selecteer **Opslaan** op de werkbalk van de ontwerper wanneer u klaar bent.
 
 <a name="create-connection"></a>
 
@@ -150,9 +150,9 @@ Selecteer in de lijst acties de gewenste actie.
 
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
-   | Verbindingsnaam | Ja | <*verbindings naam*> | De naam die voor uw verbinding moet worden gemaakt |
-   | API-versie | Ja | <*API-versie*> | De Bing Search API-versie is standaard ingesteld op de huidige versie. U kunt indien nodig een eerdere versie selecteren. |
-   | API-sleutel | Ja | <*API-sleutel*> | De Bing Search-API-sleutel die u eerder hebt verkregen. Als u geen sleutel hebt, kunt u [nu uw API-sleutel](https://azure.microsoft.com/try/cognitive-services/?api=bing-news-search-api)ophalen. |  
+   | Verbindingsnaam | Yes | <*verbindings naam*> | De naam die voor uw verbinding moet worden gemaakt |
+   | API-versie | Yes | <*API-versie*> | De Bing Search API-versie is standaard ingesteld op de huidige versie. U kunt indien nodig een eerdere versie selecteren. |
+   | API-sleutel | Yes | <*API-sleutel*> | De Bing Search-API-sleutel die u eerder hebt verkregen. Als u geen sleutel hebt, kunt u [nu uw API-sleutel](https://azure.microsoft.com/try/cognitive-services/?api=bing-news-search-api)ophalen. |  
    |||||  
 
    Bijvoorbeeld:

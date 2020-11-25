@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.openlocfilehash: 6bdf6015ca5633c77280111a55055a7394cee5bd
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057651"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001368"
 ---
 # <a name="stream-content-with-cdn-integration"></a>Inhoud streamen met CDN-integratie
 

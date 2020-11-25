@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 1d86009d593ef7e594ec2981132bcfb856569c31
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 087073437fe9d6159422799c04ce095c0aae5eca
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317222"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96001249"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Azure Queue Storage-uitvoer bindingen voor Azure Functions
 
@@ -100,6 +100,24 @@ public static void Run(
 }
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+ In het volgende voor beeld ziet u een Java-functie waarmee een wachtrij bericht wordt gemaakt voor wanneer deze wordt geactiveerd door een HTTP-aanvraag.
+
+```java
+@FunctionName("httpToQueue")
+@QueueOutput(name = "item", queueName = "myqueue-items", connection = "MyStorageConnectionAppSetting")
+ public String pushToQueue(
+     @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
+     final String message,
+     @HttpOutput(name = "response") final OutputBinding<String> result) {
+       result.setValue(message + " has been added.");
+       return message;
+ }
+```
+
+Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@QueueOutput` aantekening voor para meters waarvan de waarde wordt geschreven naar de wachtrij opslag.  Het parameter type moet zijn `OutputBinding<T>` , waarbij `T` een systeem eigen Java-type is van een POJO.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 In het volgende voor beeld ziet u een binding van een HTTP-trigger in een *function.jsin* een bestand en een [Java script-functie](functions-reference-node.md) die gebruikmaakt van de binding. De functie maakt een wachtrij-item voor elke ontvangen HTTP-aanvraag.
@@ -149,6 +167,79 @@ module.exports = function(context) {
     context.bindings.myQueueItem = ["message 1","message 2"];
     context.done();
 };
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+De volgende code voorbeelden laten zien hoe u een wachtrij bericht van een door HTTP geactiveerde functie uitvoert. De configuratie sectie met de `type` van `queue` definieert de uitvoer binding.
+
+```json
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "Request",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "Response"
+    },
+    {
+      "type": "queue",
+      "direction": "out",
+      "name": "Msg",
+      "queueName": "outqueue",
+      "connection": "MyStorageConnectionAppSetting"
+    }
+  ]
+}
+```
+
+Met behulp van deze bindings configuratie kan een Power shell-functie een wachtrij bericht maken met `Push-OutputBinding` . In dit voor beeld wordt een bericht gemaakt op basis van een query reeks of hoofd code.
+
+```powershell
+using namespace System.Net
+
+# Input bindings are passed in via param block.
+param($Request, $TriggerMetadata)
+
+# Write to the Azure Functions log stream.
+Write-Host "PowerShell HTTP trigger function processed a request."
+
+# Interact with query parameters or the body of the request.
+$message = $Request.Query.Message
+Push-OutputBinding -Name Msg -Value $message
+Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
+    StatusCode = 200
+    Body = "OK"
+})
+```
+
+Als u meerdere berichten tegelijk wilt verzenden, definieert u een bericht matrix en gebruikt `Push-OutputBinding` u voor het verzenden van berichten naar de wachtrij-uitvoer binding.
+
+```powershell
+using namespace System.Net
+
+# Input bindings are passed in via param block.
+param($Request, $TriggerMetadata)
+
+# Write to the Azure Functions log stream.
+Write-Host "PowerShell HTTP trigger function processed a request."
+
+# Interact with query parameters or the body of the request.
+$message = @("message1", "message2")
+Push-OutputBinding -Name Msg -Value $message
+Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
+    StatusCode = 200
+    Body = "OK"
+})
 ```
 
 # <a name="python"></a>[Python](#tab/python)
@@ -214,24 +305,6 @@ def main(req: func.HttpRequest, msg: func.Out[typing.List[str]]) -> func.HttpRes
     return 'OK'
 ```
 
-# <a name="java"></a>[Java](#tab/java)
-
- In het volgende voor beeld ziet u een Java-functie waarmee een wachtrij bericht wordt gemaakt voor wanneer deze wordt geactiveerd door een HTTP-aanvraag.
-
-```java
-@FunctionName("httpToQueue")
-@QueueOutput(name = "item", queueName = "myqueue-items", connection = "MyStorageConnectionAppSetting")
- public String pushToQueue(
-     @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
-     final String message,
-     @HttpOutput(name = "response") final OutputBinding<String> result) {
-       result.setValue(message + " has been added.");
-       return message;
- }
-```
-
-Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@QueueOutput` aantekening voor para meters waarvan de waarde wordt geschreven naar de wachtrij opslag.  Het parameter type moet zijn `OutputBinding<T>` , waarbij `T` een systeem eigen Java-type is van een POJO.
-
 ---
 
 ## <a name="attributes-and-annotations"></a>Kenmerken en aantekeningen
@@ -270,14 +343,6 @@ U kunt het- `StorageAccount` kenmerk gebruiken om het opslag account op te geven
 
 Kenmerken worden niet ondersteund door C# Script.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-Kenmerken worden niet ondersteund door JavaScript.
-
-# <a name="python"></a>[Python](#tab/python)
-
-Kenmerken worden niet ondersteund door Python.
-
 # <a name="java"></a>[Java](#tab/java)
 
 `QueueOutput`Met de aantekening kunt u een bericht schrijven als de uitvoer van een functie. In het volgende voor beeld ziet u een door HTTP geactiveerde functie waarmee een wachtrij bericht wordt gemaakt.
@@ -308,6 +373,18 @@ public class HttpTriggerQueueOutput {
 |`connection` | Verwijst naar het opslag account connection string. |
 
 De para meter die aan de `QueueOutput` aantekening is gekoppeld, wordt getypt als een [OutputBinding \<T\> ](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/OutputBinding.java) -exemplaar.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Kenmerken worden niet ondersteund door JavaScript.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Kenmerken worden niet ondersteund door Power shell.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Kenmerken worden niet ondersteund door Python.
 
 ---
 
@@ -359,31 +436,35 @@ Schrijf in C#-en C#-script meerdere wachtrij berichten met behulp van een van de
 * `ICollector<T>` of `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue)
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-Het uitvoer wachtrij-item is beschikbaar via `context.bindings.<NAME>` waar `<NAME>` overeenkomt met de naam die is gedefinieerd in *function.jsop*. U kunt een teken reeks of een JSON-serialiseerbaar object gebruiken voor de nettolading van het wachtrij-item.
-
-# <a name="python"></a>[Python](#tab/python)
-
-Er zijn twee opties voor het uitvoeren van een wachtrij bericht van een functie:
-
-- **Retour waarde**: Stel de `name` eigenschap in *function.jsin op* aan `$return` . Met deze configuratie wordt de retour waarde van de functie persistent gemaakt als een wachtrij-opslag bericht.
-
-- Verplicht **: Geef**een waarde door aan de methode [set](/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) van de para meter die is gedeclareerd als een [out](/python/api/azure-functions/azure.functions.out?view=azure-python) -type. De waarde die is door gegeven aan, `set` wordt persistent gemaakt als een wachtrij-opslag bericht.
-
 # <a name="java"></a>[Java](#tab/java)
 
 Er zijn twee opties voor het uitvoeren van een wachtrij bericht van een functie met behulp van de [QueueOutput](/java/api/com.microsoft.azure.functions.annotation.queueoutput) -aantekening:
 
 - **Retour waarde**: door de aantekening toe te passen op de functie zelf, wordt de geretourneerde waarde van de functie persistent gemaakt als een wachtrij bericht.
 
-- Verplicht **: als**u de bericht waarde expliciet wilt instellen, past u de aantekening toe op een specifieke para meter van het type [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding) , waarbij `T` een Pojo of een systeem eigen Java-type is. Met deze configuratie wordt door het door geven van een waarde aan de `setValue` methode de waarde opgeslagen als een wachtrij bericht.
+- **Imperatief**: Als u de berichtwaarde expliciet wilt instellen, past u de aantekening toe op een specifieke parameter van het type [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding), waarbij `T` een POJO of een systeemeigen Java-type is. Met deze configuratie wordt door het door geven van een waarde aan de `setValue` methode de waarde opgeslagen als een wachtrij bericht.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Het uitvoer wachtrij-item is beschikbaar via `context.bindings.<NAME>` waar `<NAME>` overeenkomt met de naam die is gedefinieerd in *function.jsop*. U kunt een teken reeks of een JSON-serialiseerbaar object gebruiken voor de nettolading van het wachtrij-item.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Uitvoer naar het wachtrij bericht is beschikbaar via `Push-OutputBinding` waar u argumenten doorgeeft die overeenkomen met de naam die is opgegeven door de bindings `name` parameter in de *function.jsvoor* het bestand.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Er zijn twee opties voor het uitvoeren van een wachtrij bericht van een functie:
+
+- **Retourwaarde**: stel de eigenschap `name` in *function. json* in op `$return`. Met deze configuratie wordt de retour waarde van de functie persistent gemaakt als een wachtrij-opslag bericht.
+
+- **Imperatief**: geef een waarde door aan de methode [set](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true#set-val--t-----none) voor de parameter die is gedeclareerd als een type [Out](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true). De waarde die is door gegeven aan, `set` wordt persistent gemaakt als een wachtrij-opslag bericht.
 
 ---
 
-## <a name="exceptions-and-return-codes"></a>Uitzonde ringen en retour codes
+## <a name="exceptions-and-return-codes"></a>Uitzonderingen en retourcodes
 
-| Binding |  Naslaginformatie |
+| Binding |  Referentie |
 |---|---|
 | Wachtrij | [Fout codes voor de wachtrij](/rest/api/storageservices/queue-service-error-codes) |
 | BLOB, tabel, wachtrij | [Opslag fout codes](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |

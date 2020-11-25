@@ -5,15 +5,15 @@ services: container-service
 ms.topic: article
 ms.date: 06/03/2019
 ms.openlocfilehash: 58c2c597c7a75c801af91cd735561071250bda2c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89426143"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000569"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Azure CNI-netwerken configureren in azure Kubernetes service (AKS)
 
-AKS-clusters gebruiken standaard [kubenet][kubenet]en er worden voor u een virtueel netwerk en subnet gemaakt. Met *kubenet*krijgen knoop punten een IP-adres uit een subnet van een virtueel netwerk. NAT (Network Address Translation) wordt vervolgens geconfigureerd op de knoop punten en er wordt een IP-adres "verborgen" achter het knoop punt-IP ontvangen. Deze aanpak vermindert het aantal IP-adressen dat u in uw netwerk ruimte moet reserveren voor gebruik.
+AKS-clusters gebruiken standaard [kubenet][kubenet]en er worden voor u een virtueel netwerk en subnet gemaakt. Met *kubenet* krijgen knoop punten een IP-adres uit een subnet van een virtueel netwerk. NAT (Network Address Translation) wordt vervolgens geconfigureerd op de knoop punten en er wordt een IP-adres "verborgen" achter het knoop punt-IP ontvangen. Deze aanpak vermindert het aantal IP-adressen dat u in uw netwerk ruimte moet reserveren voor gebruik.
 
 Met [Azure container Networking interface (cni)][cni-networking]haalt elke pod een IP-adres uit het subnet en kan het rechtstreeks worden geopend. Deze IP-adressen moeten uniek zijn binnen uw netwerk ruimte en moeten vooraf worden gepland. Elk knoop punt heeft een configuratie parameter voor het maximum aantal peulen dat wordt ondersteund. Het equivalente aantal IP-adressen per knoop punt wordt vervolgens vóór dat knoop punt gereserveerd. Deze aanpak vereist meer planning en leidt vaak tot een aflopende IP-adres afvoer of de nood zaak om clusters opnieuw te bouwen in een groter subnet naarmate uw toepassings vereisten groeien.
 
@@ -63,7 +63,7 @@ Het maximum aantal peulen per knoop punt in een AKS-cluster is 250. Het *maximum
 | -- | :--: | :--: | -- |
 | Azure CLI | 110 | 30 | Ja (Maxi maal 250) |
 | Resource Manager-sjabloon | 110 | 30 | Ja (Maxi maal 250) |
-| Portal | 110 | 30 | Nee |
+| Portal | 110 | 30 | No |
 
 ### <a name="configure-maximum---new-clusters"></a>Maximum aantal nieuwe clusters configureren
 
@@ -97,7 +97,7 @@ Wanneer u een AKS-cluster maakt, kunnen de volgende para meters worden geconfigu
 
 **Subnet**: het subnet binnen het virtuele netwerk waar u het cluster wilt implementeren. Als u een nieuw subnet in het virtuele netwerk voor uw cluster wilt maken, selecteert u *nieuwe maken* en volgt u de stappen in de sectie *subnet maken* . Het adres bereik voor hybride connectiviteit mag niet overlappen met andere virtuele netwerken in uw omgeving.
 
-**Adres bereik**van de Kubernetes-service: dit is de set virtuele IP-adressen die Kubernetes toewijst aan interne [Services][services] in uw cluster. U kunt elk persoonlijk adres bereik gebruiken dat voldoet aan de volgende vereisten:
+**Adres bereik** van de Kubernetes-service: dit is de set virtuele IP-adressen die Kubernetes toewijst aan interne [Services][services] in uw cluster. U kunt elk persoonlijk adres bereik gebruiken dat voldoet aan de volgende vereisten:
 
 * Mag zich niet binnen het IP-adres bereik van het virtuele netwerk van uw cluster bevallen
 * Mag niet overlappen met andere virtuele netwerken waarmee de peers van het virtuele cluster netwerk
@@ -171,7 +171,7 @@ De volgende vragen en antwoorden zijn van toepassing op de **Azure cni** -netwer
 
   De volledige lijst met eigenschappen voor het virtuele netwerk en de subnetten die u maakt tijdens het maken van het AKS-cluster kan worden geconfigureerd op de pagina standaard virtuele netwerk configuratie in de Azure Portal.
 
-* *Kan ik een ander subnet gebruiken in mijn cluster-virtueel netwerk voor het* **adres bereik**van de Kubernetes-service?
+* *Kan ik een ander subnet gebruiken in mijn cluster-virtueel netwerk voor het* **adres bereik** van de Kubernetes-service?
 
   Het wordt niet aanbevolen, maar deze configuratie is wel mogelijk. Het adres bereik van de service is een set virtuele IP-adressen (Vip's) die Kubernetes toewijst aan interne services in uw cluster. Azure Networking heeft geen zicht baarheid van het service-IP-bereik van het Kubernetes-cluster. Vanwege het ontbreken van zicht baarheid in het service adres bereik van het cluster is het mogelijk om later een nieuw subnet in het virtuele cluster netwerk te maken dat overlapt met het service adres bereik. Als er sprake is van een dergelijke overlap ping, kan Kubernetes een service toewijzen die al wordt gebruikt door een andere bron in het subnet, waardoor onvoorspelbaar gedrag of fouten optreden. Door ervoor te zorgen dat u een adres bereik gebruikt buiten het virtuele netwerk van het cluster, kunt u dit overlappings risico vermijden.
 

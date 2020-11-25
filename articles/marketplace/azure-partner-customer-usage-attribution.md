@@ -8,12 +8,12 @@ author: vikrambmsft
 ms.author: vikramb
 ms.date: 11/4/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 2c2b7de65e7ac22ebe648ce98633d5ae88818324
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 3728fdd07172f2402ddb1dc7434ddb1993b984b1
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628387"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95999872"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Commerciële Marketplace-partner en toewijzing van klant gebruik
 
@@ -251,11 +251,7 @@ foreach ($deployment in $deployments){
 
 ## <a name="report"></a>Rapport
 
-U kunt het rapport voor de toewijzing van klant gebruik in uw partner Center-dash board ( [https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure) ) vinden. Als u het rapport wilt weer geven, moet u uw partner centrum referenties gebruiken om u aan te melden. Als u problemen ondervindt met een rapport of meldt, maakt u een ondersteunings aanvraag volgens de instructie in het gedeelte ondersteuning verkrijgen.
-
-Kies bijgehouden sjabloon in de keuze lijst van het type partner koppeling om het rapport weer te geven.
-
-![Rapport voor de toewijzing van klant gebruik](media/marketplace-publishers-guide/customer-usage-attribution-report.png)
+U kunt het rapport voor de toewijzing van klant gebruik in uw partner Center-dash board ( [https://partner.microsoft.com/dashboard/partnerinsights/analytics/overview](https://partner.microsoft.com/dashboard/partnerinsights/analytics/overview) ) vinden. Als u het rapport wilt weer geven, moet u uw partner centrum referenties gebruiken om u aan te melden. Als u problemen ondervindt met een rapport of meldt, maakt u een [ondersteunings aanvraag](#get-support).
 
 ## <a name="notify-your-customers"></a>Uw klanten op de hoogte stellen
 

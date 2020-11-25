@@ -11,11 +11,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 9d9b2546553e03d1555cf4c587d699d9a4ea7e51
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321937"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000977"
 ---
 # <a name="project-lead-tasks-in-the-team-data-science-process"></a>Project Lead-taken in het team data Science process
 
@@ -57,7 +57,7 @@ Als u opslag plaatsen wilt klonen en inhoud wilt wijzigen op uw lokale machine o
 
 Een project opslagplaats maken in het **MyTeam** -project van uw team:
 
-1. Ga naar de project **samenvattings** pagina van uw team op *https: \/ / \<server name> / \<organization name> / \<team name>* , bijvoorbeeld **https: \/ /dev.Azure.com/DataScienceUnit/MyTeam** , en selecteer **opslag plaatsen** in de linkernavigatiebalk. 
+1. Ga naar de project **samenvattings** pagina van uw team op *https: \/ / \<server name> / \<organization name> / \<team name>*, bijvoorbeeld **https: \/ /dev.Azure.com/DataScienceUnit/MyTeam**, en selecteer **opslag plaatsen** in de linkernavigatiebalk. 
    
 1. Selecteer de naam van de opslag plaats boven aan de pagina en selecteer vervolgens **nieuwe opslag plaats** in de vervolg keuzelijst.
    

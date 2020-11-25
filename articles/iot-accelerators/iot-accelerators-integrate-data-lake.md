@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: fce4da9cc9577bc9805289473d3df7647b1b0934
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92670925"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000467"
 ---
 # <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>De oplossing voor bewaking op afstand met Azure Data Lake Store integreren
 
@@ -38,7 +38,7 @@ Maak een speciale consumenten groep in de IoT-hub van uw oplossing voor externe 
 > [!NOTE]
 > Consumenten groepen worden gebruikt door toepassingen voor het ophalen van gegevens uit Azure IoT Hub. U moet voor elke vijf uitvoer verbruiker een nieuwe consumenten groep maken. U kunt Maxi maal 32 consumenten groepen maken.
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 
 1. Klik in het Azure Portal op de knop **Cloud shell** .
 
@@ -57,7 +57,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
 Maak een Azure Stream Analytics taak om de gegevens van uw IoT-hub naar uw Azure Data Lake Store te streamen.
 
-1. Klik op **een resource maken** , selecteer Internet of things in Marketplace en klik op **Stream Analytics taak** .
+1. Klik op **een resource maken**, selecteer Internet of things in Marketplace en klik op **Stream Analytics taak**.
 
     ![Nieuwe Stream Analytics taak](./media/iot-accelerators-integrate-data-lake/new-stream-analytics-job.png)
 
@@ -67,7 +67,7 @@ Maak een Azure Stream Analytics taak om de gegevens van uw IoT-hub naar uw Azure
 
 1. Zorg ervoor dat u de hosting omgeving als de standaard- **Cloud** verlaat.
 
-1. Klik op **Create** .
+1. Klik op **Create**.
 
     ![Stream Analytics-taak maken](./media/iot-accelerators-integrate-data-lake/create-stream-analytics-job.png)
 
@@ -75,7 +75,7 @@ Maak een Azure Stream Analytics taak om de gegevens van uw IoT-hub naar uw Azure
 
 1. Ga naar de **taak stream Analytics** in de resource groep voor de oplossing voor externe bewaking.
 
-1. Klik op de pagina overzicht op **invoer** .
+1. Klik op de pagina overzicht op **invoer**.
 
     ![Overzichts pagina](./media/iot-accelerators-integrate-data-lake/stream-analytics-overview.png)
 
@@ -85,13 +85,13 @@ Maak een Azure Stream Analytics taak om de gegevens van uw IoT-hub naar uw Azure
 
 1. Voer op het tabblad Nieuw invoer een invoer alias van **IoTHub** in.
 
-1. Selecteer de Consumer-groep die u eerder hebt gemaakt in de vervolg keuzelijst Consumer groep. Hier gebruiken we **streamanalyticsjob** .
+1. Selecteer de Consumer-groep die u eerder hebt gemaakt in de vervolg keuzelijst Consumer groep. Hier gebruiken we **streamanalyticsjob**.
 
     ![Invoer selecteren](./media/iot-accelerators-integrate-data-lake/stream-analytics-new-input.png)
 
-1. Klik op **Opslaan** .
+1. Klik op **Opslaan**.
 
-1. Klik op de pagina overzicht op **uitvoer** .
+1. Klik op de pagina overzicht op **uitvoer**.
 
     ![Data Lake Store toevoegen](./media/iot-accelerators-integrate-data-lake/stream-analytics-overview-2.png)
 
@@ -107,7 +107,7 @@ Maak een Azure Stream Analytics taak om de gegevens van uw IoT-hub naar uw Azure
 
     ![Mapstructuur opgeven](./media/iot-accelerators-integrate-data-lake/stream-analytics-new-output.png)
 
-1. Klik op **autoriseren** .
+1. Klik op **autoriseren**.
 
     U moet autoriseren met Data Lake Store om de stream Analytics-taak schrijf toegang te geven tot het bestands systeem.
 
@@ -118,13 +118,13 @@ Maak een Azure Stream Analytics taak om de gegevens van uw IoT-hub naar uw Azure
     > [!NOTE]
     > Als er een fout in het pop-upvenster wordt weer geven, opent u een nieuw browser venster in de modus incognito en probeert u het opnieuw.
 
-1. Klik op **Opslaan** .
+1. Klik op **Opslaan**.
 
 ## <a name="edit-the-stream-analytics-query"></a>De Stream Analytics query bewerken
 
 Azure Stream Analytics maakt gebruik van een SQL-achtige query taal om een invoer bron op te geven waarmee gegevens worden gestreamd, de gegevens worden getransformeerd naar wens en uitvoer naar verschillende opslag-of verwerkings bestemmingen.
 
-1. Klik op het tabblad Overzicht op **query bewerken** .
+1. Klik op het tabblad Overzicht op **query bewerken**.
 
     ![Query bewerken](./media/iot-accelerators-integrate-data-lake/stream-analytics-edit-query.png)
 
@@ -141,20 +141,20 @@ Azure Stream Analytics maakt gebruik van een SQL-achtige query taal om een invoe
 
     ![Stream Analytics query](./media/iot-accelerators-integrate-data-lake/stream-analytics-query.png)
 
-1. Klik op **Opslaan** .
+1. Klik op **Opslaan**.
 1. Klik op **Ja** om de wijzigingen te accepteren.
 
 ## <a name="start-the-stream-analytics-job"></a>De Stream Analytics-taak starten
 
-1. Klik op het tabblad Overzicht op **starten** .
+1. Klik op het tabblad Overzicht op **starten**.
 
     ![Stream Analytics taak starten](./media/iot-accelerators-integrate-data-lake/stream-analytics-start.png)
 
-1. Klik op het tabblad Start taak op **aangepast** .
+1. Klik op het tabblad Start taak op **aangepast**.
 
 1. Stel aangepaste tijd in om een paar uur terug te gaan om gegevens op te halen wanneer het streamen van het apparaat is gestart.
 
-1. Klik op **Start** .
+1. Klik op **Start**.
 
     ![Aangepaste datum kiezen](./media/iot-accelerators-integrate-data-lake/stream-analytics-start-custom.png)
 
@@ -168,7 +168,7 @@ Azure Stream Analytics maakt gebruik van een SQL-achtige query taal om een invoe
 
 1. Ga naar uw Data Lake Store.
 
-1. Klik op het tabblad Overzicht op **Data Explorer** .
+1. Klik op het tabblad Overzicht op **Data Explorer**.
 
 1. Zoom in Data Explorer naar de map **/streaming** . U ziet mappen die zijn gemaakt met de indeling JJJJ/MM/DD.
 

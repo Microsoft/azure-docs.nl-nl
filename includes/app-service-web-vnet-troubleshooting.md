@@ -5,16 +5,16 @@ ms.topic: include
 ms.date: 02/27/2020
 ms.author: ccompy
 ms.openlocfilehash: cec44bbabdb7d528c30a8d3396b819f2eb3c5386
-ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93235900"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999427"
 ---
-De functie is eenvoudig in te stellen, maar dit betekent niet dat uw ervaring geen probleem is. Als u problemen ondervindt met het verkrijgen van toegang tot uw gewenste eind punt, kunt u een aantal hulpprogram ma's gebruiken om de connectiviteit vanuit de app-console te testen. Er zijn twee consoles die u kunt gebruiken. De ene is de kudu-console en de andere is de console in de Azure Portal. Als u de kudu-console wilt bereiken vanuit uw app, gaat u naar **hulpprogram ma's**  >  **kudu** . U kunt de Kudo-console ook bereiken op [site naam]. scm. azurewebsites. net. Nadat de website is geladen, gaat u naar het tabblad **debug console** . Als u vanuit uw app naar de door Azure Portal gehoste console wilt gaan, gaat u naar de console **hulpprogram ma's**  >  **Console** .
+De functie is eenvoudig in te stellen, maar dit betekent niet dat uw ervaring geen probleem is. Als u problemen ondervindt met het verkrijgen van toegang tot uw gewenste eind punt, kunt u een aantal hulpprogram ma's gebruiken om de connectiviteit vanuit de app-console te testen. Er zijn twee consoles die u kunt gebruiken. De ene is de kudu-console en de andere is de console in de Azure Portal. Als u de kudu-console wilt bereiken vanuit uw app, gaat u naar **hulpprogram ma's**  >  **kudu**. U kunt de Kudo-console ook bereiken op [site naam]. scm. azurewebsites. net. Nadat de website is geladen, gaat u naar het tabblad **debug console** . Als u vanuit uw app naar de door Azure Portal gehoste console wilt gaan, gaat u naar de console **hulpprogram ma's**  >  **Console**.
 
 #### <a name="tools"></a>Hulpprogramma's
-In systeem eigen Windows-apps werken de hulpprogram ma's **ping** , **nslookup** en **tracert** niet via de-console vanwege beveiligings beperkingen (ze werken in [aangepaste Windows-containers](../articles/app-service/quickstart-custom-container.md)). Als u de void wilt vullen, worden er twee afzonderlijke hulpprogram ma's toegevoegd. We hebben een hulp programma toegevoegd met de naam **nameresolver.exe** om de DNS-functionaliteit te testen. De syntaxis is:
+In systeem eigen Windows-apps werken de hulpprogram ma's **ping**, **nslookup** en **tracert** niet via de-console vanwege beveiligings beperkingen (ze werken in [aangepaste Windows-containers](../articles/app-service/quickstart-custom-container.md)). Als u de void wilt vullen, worden er twee afzonderlijke hulpprogram ma's toegevoegd. We hebben een hulp programma toegevoegd met de naam **nameresolver.exe** om de DNS-functionaliteit te testen. De syntaxis is:
 
 ```console
 nameresolver.exe hostname [optional: DNS Server]
@@ -51,7 +51,7 @@ Als dat niet het geval is, zoekt u eerst naar zaken als:
 **Gateway-vereiste VNet-integratie**
 * Is het punt-naar-site-adres bereik in de RFC 1918-bereiken (10.0.0.0-10.255.255.255/172.16.0.0-172.31.255.255/192.168.0.0-192.168.255.255)?
 * Wordt de gateway in de portal weer gegeven? Als uw gateway niet beschikbaar is, zet u deze terug.
-* Worden certificaten weer gegeven als gesynchroniseerd, of vermoedt u dat de netwerk configuratie is gewijzigd?  Als uw certificaten niet zijn gesynchroniseerd of als u vermoedt dat er een wijziging is aangebracht in de configuratie van uw virtuele netwerk die niet is gesynchroniseerd met uw ASPs, selecteert u **netwerk synchroniseren** .
+* Worden certificaten weer gegeven als gesynchroniseerd, of vermoedt u dat de netwerk configuratie is gewijzigd?  Als uw certificaten niet zijn gesynchroniseerd of als u vermoedt dat er een wijziging is aangebracht in de configuratie van uw virtuele netwerk die niet is gesynchroniseerd met uw ASPs, selecteert u **netwerk synchroniseren**.
 * Als u een VPN-verbinding wilt maken, is de on-premises gateway die is geconfigureerd voor het routeren van verkeer naar Azure? Als u eind punten in uw virtuele netwerk, maar niet on-premises, kunt bereiken, controleert u uw routes.
 * Probeert u een gateway voor samen werking te gebruiken die beide Point-to-site-en ExpressRoute ondersteunt? Gateways voor samen werking worden niet ondersteund met VNet-integratie.
 
@@ -68,13 +68,13 @@ U weet niet welk adres uw app daad werkelijk gebruikt. Dit kan elk adres zijn in
 
 Aanvullende stappen voor fout opsporing zijn onder andere:
 
-* Maak verbinding met een VM in uw virtuele netwerk en probeer uw bronhost: poort te bereiken. Als u wilt testen op TCP-toegang, gebruikt u de Power shell **-opdracht test-NetConnection** . De syntaxis is:
+* Maak verbinding met een VM in uw virtuele netwerk en probeer uw bronhost: poort te bereiken. Als u wilt testen op TCP-toegang, gebruikt u de Power shell **-opdracht test-NetConnection**. De syntaxis is:
 
 ```powershell
 test-netconnection hostname [optional: -Port]
 ```
 
-* Een toepassing op een virtuele machine weer geven en de toegang tot die host en poort testen vanuit de-console vanuit uw app met behulp van **tcpping** .
+* Een toepassing op een virtuele machine weer geven en de toegang tot die host en poort testen vanuit de-console vanuit uw app met behulp van **tcpping**.
 
 #### <a name="on-premises-resources"></a>On-premises resources ####
 

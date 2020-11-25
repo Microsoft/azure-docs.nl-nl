@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 3/8/2019
 ms.openlocfilehash: 99d90e4d93f0e4a70350a5a33a65700c3e14acb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91398320"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000807"
 ---
 # <a name="copy-new-and-changed-files-by-lastmodifieddate-with-azure-data-factory"></a>Nieuwe en gewijzigde bestanden kopiëren met behulp van LastModifiedDate met Azure Data Factory
 
@@ -26,7 +26,7 @@ In dit artikel wordt een oplossings sjabloon beschreven die u kunt gebruiken om 
 
 ## <a name="about-this-solution-template"></a>Over deze oplossings sjabloon
 
-Met deze sjabloon worden eerst de nieuwe en gewijzigde bestanden geselecteerd op basis van de kenmerken **LastModifiedDate**en worden vervolgens die geselecteerde bestanden gekopieerd van de gegevens bron opslag naar het doel archief van de gegevens.
+Met deze sjabloon worden eerst de nieuwe en gewijzigde bestanden geselecteerd op basis van de kenmerken **LastModifiedDate** en worden vervolgens die geselecteerde bestanden gekopieerd van de gegevens bron opslag naar het doel archief van de gegevens.
 
 De sjabloon bevat één activiteit:
 - **Kopiëren** om nieuwe en gewijzigde bestanden alleen door LastModifiedDate te kopiëren van een bestands archief naar een doel archief.
@@ -73,11 +73,11 @@ De sjabloon definieert zes para meters:
 
     ![Bekijk het resultaat](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate7.png)
     
-7. U kunt nu een tumblingvenstertriggers-Windows-trigger toevoegen om deze pijp lijn te automatiseren, zodat de pijp lijn altijd nieuwe en gewijzigde bestanden alleen door LastModifiedDate kan kopiëren.  Selecteer **trigger toevoegen**en selecteer **Nieuw/bewerken**.
+7. U kunt nu een tumblingvenstertriggers-Windows-trigger toevoegen om deze pijp lijn te automatiseren, zodat de pijp lijn altijd nieuwe en gewijzigde bestanden alleen door LastModifiedDate kan kopiëren.  Selecteer **trigger toevoegen** en selecteer **Nieuw/bewerken**.
 
     ![Scherm afbeelding met de optie Nieuw/bewerken menu die wordt weer gegeven wanneer u trigger toevoegen selecteert.](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate8.png)
     
-8. Selecteer **+ Nieuw**in het venster **triggers toevoegen** .
+8. Selecteer **+ Nieuw** in het venster **triggers toevoegen** .
 
 9. Selecteer **tumblingvenstertriggers-venster** voor het trigger type, stel **elke 15 minuten** in als het terugkeer patroon (u kunt wijzigen in een wille keurige interval periode). Selecteer **Ja** voor geactiveerd vak en selecteer vervolgens **OK**.
 
@@ -88,8 +88,8 @@ De sjabloon definieert zes para meters:
     - **Directory_Source**  =  **submap**.  U kunt vervangen door de submap in de gegevens opslag van de bron.
     - **FolderPath_Destination**  =  **destinationfolder**.  U kunt vervangen door de map in het doel gegevens archief.
     - **Directory_Destination**  =  **submap**.  U kunt vervangen door de submap in het doel gegevens archief.
-    - **LastModified_From**  =   ** \@ trigger (). outputs. windowStartTime**.  Het is een systeem variabele van de trigger voor het bepalen van de tijd waarop de pijp lijn de laatste keer is geactiveerd.
-    - **LastModified_To**  =  ** \@ trigger (). outputs. windowEndTime**.  Het is een systeem variabele van de trigger die de tijd bepaalt wanneer de pijp lijn deze keer wordt geactiveerd.
+    - **LastModified_From**  =   **\@ trigger (). outputs. windowStartTime**.  Het is een systeem variabele van de trigger voor het bepalen van de tijd waarop de pijp lijn de laatste keer is geactiveerd.
+    - **LastModified_To**  =  **\@ trigger (). outputs. windowEndTime**.  Het is een systeem variabele van de trigger die de tijd bepaalt wanneer de pijp lijn deze keer wordt geactiveerd.
     
     ![Invoer parameters](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate11.png)
     

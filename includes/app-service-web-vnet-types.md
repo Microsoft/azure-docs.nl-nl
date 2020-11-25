@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 10/01/2020
 ms.author: ccompy
-ms.openlocfilehash: 481bd4f50eb527bcad2ba79b5ba4b9df4b872bfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93b92da999c15255f543abca346fc2bf8840006c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91739902"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999426"
 ---
 * De multi tenant systemen die ondersteuning bieden voor het volledige assortiment prijs abonnementen, behalve geïsoleerd.
 * De App Service Environment, die wordt geïmplementeerd in uw VNet en die ondersteuning biedt voor geïsoleerde prijzen plan-apps.
@@ -38,5 +38,5 @@ Gateway-vereiste VNet-integratie biedt alleen toegang tot bronnen in het doel-VN
 VNet-integratie geeft uw app altijd toegang tot resources in uw VNet, maar verleent geen inkomende persoonlijke toegang aan uw app vanuit het VNet. Toegang via een persoonlijke site verwijst naar het toegankelijk maken van uw app vanuit een particulier netwerk, bijvoorbeeld vanuit een Azure-VNet. VNet-integratie is alleen voor het maken van uitgaande oproepen vanuit uw app naar uw VNet.
 
 <!--Links-->
-[ASEintro]: https://docs.microsoft.com/azure/app-service/environment/intro
-[Networkingfeatures]: https://docs.microsoft.com/azure/app-service/networking-features
+[ASEintro]: ../articles/app-service/environment/intro.md
+[Networkingfeatures]: ../articles/app-service/networking-features.md

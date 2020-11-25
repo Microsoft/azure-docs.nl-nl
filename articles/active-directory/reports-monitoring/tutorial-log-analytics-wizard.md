@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9e6b03a2f9dd0089b1112000804e46f3d214cd3c
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131289"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000756"
 ---
 # <a name="tutorial-configure-the-log-analytics-wizard"></a>Zelfstudie: De wizard Log Analytics configureren
 

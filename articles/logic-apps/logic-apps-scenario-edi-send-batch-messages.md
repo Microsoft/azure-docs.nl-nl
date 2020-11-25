@@ -8,11 +8,11 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 08/19/2018
 ms.openlocfilehash: 6fc0833f70e3e9cd98100f193b52e5a1bfa4d651
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75666666"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000399"
 ---
 # <a name="exchange-edi-messages-as-batches-or-groups-between-trading-partners-in-azure-logic-apps"></a>EDI-berichten uitwisselen als batches of groepen tussen handels partners in Azure Logic Apps
 
@@ -81,7 +81,7 @@ Voor deze batch-ontvanger geeft u de batch modus, naam, release criteria, X12 ov
 
 5. Voeg nu een actie toe die elke batch codeert: 
 
-   1. Kies **nieuwe stap**onder de batch trigger.
+   1. Kies **nieuwe stap** onder de batch trigger.
 
    2. Voer in het zoekvak ' X12 batch ' in als uw filter en selecteer deze actie (wille keurige versie): **batch code ring <*versie*>-X12** 
 
@@ -115,7 +115,7 @@ Voor deze batch-ontvanger geeft u de batch modus, naam, release criteria, X12 ov
 
 Als u er zeker van wilt zijn dat uw batch-ontvanger werkt zoals verwacht, kunt u een HTTP-actie voor test doeleinden toevoegen en een batch bericht verzenden naar de aanvraag van de [bin-service](https://requestbin.com/). 
 
-1. Kies **nieuwe stap**onder de actie X12 coderen. 
+1. Kies **nieuwe stap** onder de actie X12 coderen. 
 
 2. Voer in het zoekvak ' http ' in als uw filter. Selecteer deze actie: **http-http**
     
@@ -127,7 +127,7 @@ Als u er zeker van wilt zijn dat uw batch-ontvanger werkt zoals verwacht, kunt u
    |----------|-------------|
    | **Methode** | Selecteer in deze lijst de optie **post**. | 
    | **Uri** | Genereer een URI voor uw aanvraag-bak en voer deze URI in dit vak in. | 
-   | **Hoofdtekst** | Klik in dit vak en nadat de lijst met dynamische inhoud wordt geopend, selecteert u het token **Body** , dat wordt weer gegeven in de sectie **batch-code ring op overeenkomst naam**. <p>Als u het token **Body** niet ziet, klikt u naast **batch-code ring op overeenkomst naam**op **meer weer geven**. | 
+   | **Hoofdtekst** | Klik in dit vak en nadat de lijst met dynamische inhoud wordt geopend, selecteert u het token **Body** , dat wordt weer gegeven in de sectie **batch-code ring op overeenkomst naam**. <p>Als u het token **Body** niet ziet, klikt u naast **batch-code ring op overeenkomst naam** op **meer weer geven**. | 
    ||| 
 
    ![Details over HTTP-acties opgeven](./media/logic-apps-scenario-EDI-send-batch-messages/batch-receiver-add-http-action-details.png)
@@ -156,7 +156,7 @@ Maak nu een of meer logische apps die berichten verzenden naar de logische app-o
 
 3. Een actie toevoegen voor het verzenden van berichten naar een batch.
 
-   1. Kies **nieuwe stap**onder de actie HTTP-aanvraag.
+   1. Kies **nieuwe stap** onder de actie HTTP-aanvraag.
 
    2. Voer in het zoekvak ' batch ' in als uw filter. 
    Selecteer de lijst **acties** en selecteer deze actie: **een Logic apps werk stroom kiezen met batch trigger: berichten verzenden naar batch**
@@ -167,7 +167,7 @@ Maak nu een of meer logische apps die berichten verzenden naar de logische app-o
 
       ![De logische app voor de batch-ontvanger selecteren](./media/logic-apps-scenario-EDI-send-batch-messages/batch-sender-select-batch-receiver.png)
 
-   4. Selecteer deze actie: **Batch_messages-<*uw-batch-ontvanger* > **
+   4. Selecteer deze actie: **Batch_messages-<*uw-batch-ontvanger* >**
 
       ![Selecteer de actie Batch_messages](./media/logic-apps-scenario-EDI-send-batch-messages/batch-sender-select-batch-messages-action.png)
 

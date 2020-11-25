@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: vs-azure
 ms.date: 01/22/2018
-ms.openlocfilehash: 65309bbd70a6fda2bf725ce96cc5595cd9b55083
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db93262a0f5c6bd75f8c5611c7f33de085e05a82
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569070"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564885"
 ---
 # <a name="tutorial-create-a-data-factory-by-using-visual-studio"></a>Zelfstudie: Een gegevensfactory maken met behulp van Visual Studio
 > [!div class="op_single_selector" title="Tools/SDKs"]
@@ -31,7 +31,7 @@ ms.locfileid: "91569070"
 > [!NOTE]
 > Dit artikel is van toepassing op versie 1 van Data Factory. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [Quickstart: een gegevensfactory maken met Azure Data Factory](../quickstart-create-data-factory-dot-net.md).
 
-In deze zelfstudie leert u hoe u een Azure Data Factory maakt met Visual Studio. U maakt een Visual Studio-project met de Data Factory-projectsjabloon. Daarna definieert u Data Factory-entiteiten (gekoppelde services, gegevenssets en pipeline) in de JSON-indeling en vervolgens publiceert/implementeert u deze entiteiten in de cloud. 
+In deze zelfstudie leert u hoe u een Azure-gegevensfactory maakt met Visual Studio. U maakt een Visual Studio-project met de Data Factory-projectsjabloon. Daarna definieert u Data Factory-entiteiten (gekoppelde services, gegevenssets en pipeline) in de JSON-indeling en vervolgens publiceert/implementeert u deze entiteiten in de cloud. 
 
 De pijplijn in deze zelfstudie heeft één activiteit: **HDInsight Hive-activiteit**. Deze activiteit voert een Hive-script uit op een Azure HDInsight-cluster dat invoergegevens transformeert om uitvoergegevens te produceren. De pijplijn is gepland on één keer per maand tussen de opgegeven begin- en eindtijd te worden uitgevoerd. 
 
@@ -288,7 +288,7 @@ Tot dusver hebt u de gekoppelde service Azure Storage en de invoer- en uitvoerge
 1. Klik in het **Solution Explorer**-venster met de rechtermuisknop op **Dependencies**. Houd de muisaanwijzer op **Add** en klik op **Existing Item**.  
 2. Navigeer naar **C:\ADFGettingStarted** en selecteer de bestanden **partitionweblogs.hql** en **input.log**. Klik vervolgens op **Add**. U hebt deze twee bestanden gemaakt als onderdeel van de vereisten in het [Overzicht van de zelfstudie](data-factory-build-your-first-pipeline.md).
 
-Wanneer u de oplossing in de volgende stap publiceert, wordt het bestand **partitionweblogs.hql** geüpload naar de **script**map in de blobcontainer `adfgetstarted`.   
+Wanneer u de oplossing in de volgende stap publiceert, wordt het bestand **partitionweblogs.hql** geüpload naar de **script** map in de blobcontainer `adfgetstarted`.   
 
 ### <a name="publishdeploy-data-factory-entities"></a>Data Factory-entiteiten publiceren/implementeren
 In deze stap publiceert u de Data Factory-entiteiten (gekoppelde services, gegevenssets en pijplijn) in uw project naar de Azure Data Factory-service. Tijdens het publicatieproces geeft u de naam voor de data factory op. 
@@ -406,7 +406,7 @@ U kunt de toepassing Bewaking en beheer ook gebruiken om uw pijplijnen te bewake
 
 ### <a name="additional-notes"></a>Aanvullende opmerkingen
 - Een gegevensfactory kan één of meer pijplijnen hebben. Een pijplijn kan één of meer activiteiten bevatten. Bijvoorbeeld een kopieeractiviteit om gegevens van een bron- naar een doelgegevensopslagplaats te kopiëren en een HDInsight Hive-activiteit om een Hive-script uit te voeren voor het transformeren van invoergegevens. Zie [Ondersteunde gegevensarchieven](data-factory-data-movement-activities.md#supported-data-stores-and-formats) voor alle bronnen en sinks die worden ondersteund door de kopieerbewerking. Zie [Gekoppelde services berekenen](data-factory-compute-linked-services.md) voor de lijst met compute-services die worden ondersteund door Data Factory.
-- Met gekoppelde services worden gegevensarchieven of compute-services gekoppeld aan een Azure Data Factory. Zie [Ondersteunde gegevensarchieven](data-factory-data-movement-activities.md#supported-data-stores-and-formats) voor alle bronnen en sinks die worden ondersteund door de kopieerbewerking. Zie [Gekoppelde Compute Services](data-factory-compute-linked-services.md) voor de lijst met Compute Services die worden ondersteund door Data Factory en de [transformatieactiviteiten](data-factory-data-transformation-activities.md) die daarop kunnen worden uitgevoerd.
+- Met gekoppelde services worden gegevensarchieven of compute-services gekoppeld aan een Azure-gegevensfactory. Zie [Ondersteunde gegevensarchieven](data-factory-data-movement-activities.md#supported-data-stores-and-formats) voor alle bronnen en sinks die worden ondersteund door de kopieerbewerking. Zie [Gekoppelde Compute Services](data-factory-compute-linked-services.md) voor de lijst met Compute Services die worden ondersteund door Data Factory en de [transformatieactiviteiten](data-factory-data-transformation-activities.md) die daarop kunnen worden uitgevoerd.
 - Zie [Move data from/to Azure Blob](data-factory-azure-blob-connector.md#azure-storage-linked-service) (Gegevens van en naar Azure Blob verplaatsen) voor meer informatie over de JSON-eigenschappen die worden gebruikt in de definitie van de gekoppelde Azure Storage-service.
 - U kunt uw eigen HDInsight-cluster gebruiken in plaats van een on-demand HDInsight-cluster. Zie [Gekoppelde services berekenen](data-factory-compute-linked-services.md) voor meer informatie.
 -  Data Factory maakt voor u een HDInsight-cluster **op basis van Linux** met de eerder vermelde JSON. Zie [Gekoppelde on-demand HDInsight-service](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) voor meer informatie.

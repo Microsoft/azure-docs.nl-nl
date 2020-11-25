@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 07/21/2020
+ms.date: 11/03/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 638ab84658c36536966ef990570684a047521ee6
-ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
+ms.openlocfilehash: 0aace1041eba771a26bed4c85361ea2551c71ba6
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/16/2020
-ms.locfileid: "88257444"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659417"
 ---
 ::: zone target="docs"
 
@@ -66,18 +66,18 @@ Voer de volgende stappen uit als u het apparaat vanuit de VS of Canada retournee
     - Als het trackingnummer niet wordt vermeld, moet u bij het afhalen door UPS extra kosten betalen.
     - In plaats van het ophalen te plannen, kunt u de Data Box Disk ook zelf naar de dichtstbijzijnde inleverlocatie brengen.
 
-### <a name="europe"></a>[Europa](#tab/in-europe)
 
-Voer de volgende stappen uit als u het apparaat vanuit Europa retourneert.
+### <a name="europe-or-uk"></a>[Europa of VK](#tab/in-europe-or-uk)
+
+Voer de volgende stappen uit als u het apparaat retourneert vanuit Europa of het VK.
 
 1. Gebruik het retourlabel in de doorzichtige plastic hoes op de doos. Als het label is beschadigd of verloren is gegaan:
     - Ga naar **Overzicht > Verzendlabel downloaden** en download een retourlabel.
     - Bevestig het label op het apparaat.
 
 2. Verzegel de verpakking en zorg ervoor dat het retourlabel zichtbaar is.
-3. Als u het apparaat in Europa met DHL retourneert, dient u een ophaalverzoek in door op de website van DHL het verzendnummer op te geven.
-4. Ga naar de DHL Express-website voor uw land/regio en kies **Boek een koerier pick-up > Online verzenden**.
-5. Geef het nummer van de luchtvrachtbrief op en klik op **Boek een koerier** om een ophaalmoment te plannen.
+3. Ga naar de DHL Express-website voor het land of de regio, en selecteer **Retournering plannen**. Selecteer bij **Hebt u een retourlabel nodig** de optie **Nee** > **Ik heb een DHL-vrachtbriefnummer**.
+4. Geef het vrachtbriefnummer op en klik op **Retournering plannen** om een ophaalmoment te plannen.
 
 ### <a name="australia"></a>[Australië](#tab/in-australia)
 
@@ -226,7 +226,7 @@ Voer de volgende stappen uit als het apparaat vanuit China retourneert.
 
 Als uAls u Data Box Disk gebruikt in de Amerikaanse overheid, Japan, Singapore, Korea, West-Europa, Zuid-Afrika of India en de bezorgoptie Zelfbeheerde verzending hebt geselecteerd tijdens een bestelling, volgt u deze instructies.
 
-1. Ga naar de blade **Overzicht** van uw bestelling in de Azure-portal. Loop de instructies door die worden weergegeven wanneer u **Ophalen plannen**selecteert. U ziet een autorisatiecode die wordt gebruikt op het moment dat de bestelling wordt bezorgd.
+1. Ga naar de blade **Overzicht** van uw bestelling in de Azure-portal. Loop de instructies door die worden weergegeven wanneer u **Ophalen plannen** selecteert. U ziet een autorisatiecode die wordt gebruikt op het moment dat de bestelling wordt bezorgd.
 
 2. Wanneer u klaar bent om het apparaat terug te sturen, stuurt u een e-mail naar het Azure Data Box-team met de volgende sjabloon.
 

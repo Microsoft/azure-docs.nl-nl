@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 45a6843c5ce55dca7ff72731752f3c1f24a5db6b
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 40929a165e7a3afbbc92a472c352172723745040
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92216654"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94533188"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA met behulp van de verificatiecodestroom
 
-In deze quickstart voert u een codevoorbeeld uit waarin wordt getoond hoe een JavaScript-app met één pagina (SPA) gebruikers van persoonlijke accounts, werkaccounts en schoolaccounts kan aanmelden met behulp van de verificatiecodestroom. In het codevoorbeeld ziet u ook hoe u een toegangstoken krijgt om een web-API aan te roepen, in dit geval de Microsoft Graph API. Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een SPA-toepassing (JavaScript-toepassing met één pagina), en een toegangstoken kunnen verkrijgen om de Microsoft Graph API aan te roepen. Het codevoorbeeld laat zien hoe u een toegangstoken kunt verkrijgen om de Microsoft Graph API of willekeurige web-API aan te roepen. 
+
+Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
 Deze quickstart maakt gebruik van MSAL.js 2.0 met de verificatiecodestroom. Raadpleeg voor een vergelijkbare quickstart die gebruikmaakt van MSAL.js 1.0 met de impliciete stroom [Quickstart: gebruikers aanmelden in JavaScript-apps met één pagina](./quickstart-v2-javascript.md).
 
@@ -57,7 +59,7 @@ Deze quickstart maakt gebruik van MSAL.js 2.0 met de verificatiecodestroom. Raad
 > 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 > 1. Selecteer **Registreren**. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
 > 1. Selecteer in het linkerdeelvenster van de geregistreerde toepassing de optie **Verificatie**.
-> 1. Selecteer **Een platform toevoegen**onder **Platformconfiguraties**. Selecteer **Toepassing met één pagina** in het deelvenster dat wordt geopend.
+> 1. Selecteer **Een platform toevoegen** onder **Platformconfiguraties**. Selecteer **Toepassing met één pagina** in het deelvenster dat wordt geopend.
 > 1. Stel de waarde van **Omleidings-URI** in op `http://localhost:3000/`.
 > 1. Selecteer **Configureren**.
 
@@ -200,4 +202,4 @@ npm install @azure/msal-browser
 Raadpleeg de volgende zelfstudie voor een gedetailleerde stapsgewijze handleiding voor het bouwen van de toepassing die in deze quickstart wordt gebruikt:
 
 > [!div class="nextstepaction"]
-> [Zelfstudie om u aan te melden en MS Graph aan te roepen >](./tutorial-v2-javascript-auth-code.md)
+> [Zelfstudie om u aan te melden en MS Graph aan te roepen](./tutorial-v2-javascript-auth-code.md)

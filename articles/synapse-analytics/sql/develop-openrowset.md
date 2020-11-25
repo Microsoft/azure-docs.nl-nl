@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: b08e834233e1ce12392d940cb0ccc0bef7e96158
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 20003a91726e5ccee7f73d85b7c9a9389801e0ad
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337743"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701752"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>OPENROWSET gebruiken met behulp van serverloze SQL-pool (preview) in Azure Synapse Analytics
 
@@ -84,7 +84,7 @@ OPENROWSET
     FORMAT = 'CSV'
     [ <bulk_options> ] }  
 )  
-WITH ( {'column_name' 'column_type' [ 'column_ordinal'] })  
+WITH ( {'column_name' 'column_type' [ 'column_ordinal' | 'json_path'] })  
 [AS] table_alias(column_alias,...n)
  
 <bulk_options> ::=  
@@ -156,7 +156,7 @@ Met de WITH-component kunt u opgeven welke kolommen u uit bestanden wilt lezen.
     > Kolomnamen in Parquet-bestanden zijn hoofdlettergevoelig. Als u de kolomnaam met een ander hoofdlettergebruik opgeeft dan de kolomnaam in het Parquet-bestand, worden er NULL-waarden geretourneerd voor die kolom.
 
 
-column_name = De naam voor de uitvoerkolom. Als u dit argument opgeeft, wordt deze naam gebruikt in plaats van de kolom in het bronbestand.
+column_name = De naam voor de uitvoerkolom. Als u deze naam opgeeft wordt de kolomnaam in het bronbestand vervangen. Als daarnaast een kolomnaam in het JSON-pad wordt doorgegeven, wordt ook deze kolomnaam vervangen. Als json_path niet is ingesteld, wordt deze automatisch toegevoegd als '$.column_name'. Controleer het gedrag van het argument json_path.
 
 column_type = Het gegevenstype voor de uitvoerkolom. De impliciete conversie van het gegevenstype wordt hier uitgevoerd.
 
@@ -170,6 +170,11 @@ WITH (
     --[population] bigint
 )
 ```
+
+json_path = [expressie van het JSON-pad](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-ver15) naar kolom of geneste eigenschap. De standaard voor [padenmodus](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-ver15#PATHMODE) is lax.
+
+> [!NOTE]
+> In de strikte modus zal de query mislukken en een fout weergeven als het gegeven pad niet bestaat. In de lax-modus zal de query slagen en zal de expressie van het JSON-pad worden geëvalueerd als NULL.
 
 **\<bulk_options>**
 
@@ -359,6 +364,32 @@ WITH (
     [stateName] VARCHAR (50),
     [population] bigint
 ) AS [r]
+```
+
+### <a name="specify-columns-using-json-paths"></a>Kolommen opgeven met behulp van JSON-paden
+
+In het volgende voorbeeld ziet u hoe u [Expressies van JSON-paden](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-ver15) kunt gebruiken in de component WITH. U ziet ook het verschil tussen de strikte en de lax modi: 
+
+```sql
+SELECT 
+    TOP 1 *
+FROM  
+    OPENROWSET(
+        BULK 'https://azureopendatastorage.blob.core.windows.net/censusdatacontainer/release/us_population_county/year=20*/*.parquet',
+        FORMAT='PARQUET'
+    )
+WITH (
+    --lax path mode samples
+    [stateName] VARCHAR (50), -- this one works as column name casing is valid - it targets the same column as the next one
+    [stateName_explicit_path] VARCHAR (50) '$.stateName', -- this one works as column name casing is valid
+    [COUNTYNAME] VARCHAR (50), -- STATEname column will contain NULLs only because of wrong casing - it targets the same column as the next one
+    [countyName_explicit_path] VARCHAR (50) '$.COUNTYNAME', -- STATEname column will contain NULLS only because of wrong casing and default path mode being lax
+
+    --strict path mode samples
+    [population] bigint 'strict $.population' -- this one works as column name casing is valid
+    --,[population2] bigint 'strict $.POPULATION' -- this one fails because of wrong casing and strict path mode
+)
+AS [r]
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -10,16 +10,16 @@ ms.subservice: sql-dw
 ms.date: 08/23/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 4751f3cf213098873b0c53b15df82f57d155787a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 766837cacb4ef2acf874c2872b347b6d35633faa
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313303"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700994"
 ---
 # <a name="source-control-integration-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Integratie van broncodebeheer voor toegewezen SQL-pools in Azure Synapse Analytics
 
-In deze zelfstudie leert u hoe u uw SQL Server Data Tools (SSDT)-databaseproject integreert met broncodebeheer.  Integratie met broncodebeheer is de eerste stap voor het bouwen van een doorlopende integratie- en implementatiepijplijn met de toegewezen SQL-pool in Azure Synapse Analytics.
+In deze zelfstudie leert u hoe u uw SSDT-databaseproject (SQL Server Data Tools) integreert met broncodebeheer.  Integratie met broncodebeheer is de eerste stap voor het bouwen van een doorlopende integratie- en implementatiepijplijn met de toegewezen SQL-pool in Azure Synapse Analytics.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -85,7 +85,7 @@ Voor meer informatie over het verbinden van projecten met Visual Studio, gaat u 
 
    ![Verifiëren](./media/sql-data-warehouse-source-control-integration/10-verify-column-change-pushed.png "Wijzigingen controleren")
 
-4. ( **Optioneel** ) Gebruik schemavergelijking en werk de wijzigingen in uw doel-datawarehouse bij met SSDT om ervoor te zorgen dat de objectdefinities in uw Azure-opslagplaats en lokale opslagplaats overeenkomen met uw datawarehouse.
+4. (**Optioneel**) Gebruik schemavergelijking en werk de wijzigingen in uw doel-datawarehouse bij met SSDT om ervoor te zorgen dat de objectdefinities in uw Azure-opslagplaats en lokale opslagplaats overeenkomen met uw datawarehouse.
 
 ## <a name="next-steps"></a>Volgende stappen
 

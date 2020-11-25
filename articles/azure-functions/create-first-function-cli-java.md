@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-java
 - devx-track-azurecli
-ms.openlocfilehash: 449f0a59cc8428ce8e19535d5cf0417bf4cf7ad0
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 5c8993bdf892ceb7d9886d0d2b97063dedec720c
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424800"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635548"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Quickstart: Een Java-functie maken in Azure vanaf de opdrachtregel
 
@@ -163,11 +163,23 @@ Er worden een functie-app en gerelateerde resources in Azure gemaakt wanneer u u
 > [!TIP]
 > Als u een functie-app wilt maken die wordt uitgevoerd op Linux in plaats van Windows, wijzigt u het `runtime.os`-element in het pom.xml-bestand van `windows` in `linux`. Het uitvoeren van Linux in een verbruiksplan wordt ondersteund in [deze regio's](https://github.com/Azure/azure-functions-host/wiki/Linux-Consumption-Regions). U kunt apps die worden uitgevoerd op Linux en apps die worden uitgevoerd in Windows niet dezelfde resourcegroep gebruiken.
 
-1. Voordat u de implementeren kunt starten moet u de Azure CLI-opdracht [az login](/cli/azure/authenticate-azure-cli) gebruiken om u aan te melden bij uw Azure-abonnement. 
+1. Voordat u kunt implementeren, meldt u zich aan bij uw Azure-abonnement met behulp van Azure CLI of Azure PowerShell. 
 
+    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
     ```azurecli
     az login
     ```
+
+    Met de opdracht [az login](/cli/azure/reference-index#az-login) meldt u zich aan bij uw Azure-account.
+
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell) 
+    ```azurepowershell
+    Connect-AzAccount
+    ```
+
+    Met de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) meldt u zich aan bij uw Azure-account.
+
+    ---
 
 1. Gebruik de volgende opdracht om uw project te implementeren in een nieuwe functie-app.
 

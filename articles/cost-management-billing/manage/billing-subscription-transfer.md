@@ -8,15 +8,15 @@ tags: billing,top-support-issue
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 10/05/2020
+ms.date: 11/11/2020
 ms.author: banders
 ms.custom: contperfq1
-ms.openlocfilehash: 1ce461f50a6775bf7884fedc4cfa4dc7cb41bb8c
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: ab71a7fa3d3f92ecf3e1f73835e41fa7170130e6
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408139"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636602"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Eigendom van de facturering van een Azure-abonnement overdragen aan een ander account
 
@@ -24,7 +24,7 @@ Dit artikel beschrijft de stappen die nodig zijn om het eigendom van de facturer
 
 Zie [Uw Azure-abonnement overzetten naar een andere aanbieding](switch-azure-offer.md) als het abonnement uw eigendom moet blijven maar u het type abonnement wilt wijzigen. Zie [Ingebouwde rollen van Azure](../../role-based-access-control/built-in-roles.md) als u wilt bepalen wie toegang hebben tot resources in het abonnement.
 
-Als u een EA-klant (Enterprise Agreement) bent, kan uw ondernemingsbeheerder het eigendom van de facturering voor uw abonnementen overdragen naar andere accounts. Zie [Accounteigenaar wijzigen](ea-portal-administration.md#change-account-owner) voor meer informatie.
+Als u een EA-klant (Enterprise Agreement) bent, kan uw ondernemingsbeheerder het eigendom van de facturering voor uw abonnementen overdragen naar andere accounts. Raadpleeg [Het Azure-abonnement of de accounteigenaar wijzigen](ea-portal-administration.md#change-azure-subscription-or-account-ownership) voor meer informatie.
 
 Alleen de factureringsbeheerder van een account kan het eigendom van een abonnement overdragen.
 

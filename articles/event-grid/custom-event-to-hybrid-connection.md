@@ -4,12 +4,12 @@ description: 'Zelfstudie: Gebruik Azure Event Grid en Azure CLI om een onderwerp
 ms.date: 07/07/2020
 ms.topic: tutorial
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 77633a717478ff143c3b084adc0b69019abb203f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c709d77827551860cc917c3c84c5a849d9fdc512
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87832090"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566823"
 ---
 # <a name="tutorial-route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Zelfstudie: Aangepaste gebeurtenissen naar Azure Relay Hybrid Connections routeren met behulp van Azure CLI en Event Grid
 
@@ -17,12 +17,11 @@ Azure Event Grid is een gebeurtenisservice voor de cloud. Azure Relay Hybrid Con
 
 ## <a name="prerequisites"></a>Vereisten
 
-In dit artikel wordt ervan uitgegaan dat u al een hybride verbinding en een listener-toepassing hebt. Zie [Aan de slag met Relay Hybrid Connections - .NET](../azure-relay/relay-hybrid-connections-dotnet-get-started.md) of [Aan de slag met Relay Hybrid Connections - knooppunt](../azure-relay/relay-hybrid-connections-node-get-started.md) als u wilt beginnen met hybride verbindingen.
+- In dit artikel wordt ervan uitgegaan dat u al een hybride verbinding en een listener-toepassing hebt. Zie [Aan de slag met Relay Hybrid Connections - .NET](../azure-relay/relay-hybrid-connections-dotnet-get-started.md) of [Aan de slag met Relay Hybrid Connections - knooppunt](../azure-relay/relay-hybrid-connections-node-get-started.md) als u wilt beginnen met hybride verbindingen.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-> [!NOTE]
-> Als u werkt met Azure CLI op uw lokale computer, gebruikt u Azure CLI versie 2.0.56 of hoger. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor instructies over het installeren van de meest recente versie van Azure CLI.
+- Voor dit artikel is versie 2.0.56 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: f501b9f4215b9eeb48aa8bc80d492d55cf940404
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c88aea6aff942cdcf5cbc022df8f07cfe0d4cce
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397382"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701276"
 ---
 # <a name="tutorial-index-json-blobs-from-azure-storage-using-rest"></a>Zelfstudie: JSON-blobs vanuit Azure Storage indexeren met behulp van REST
 
@@ -76,11 +76,11 @@ Maak, indien mogelijk, beide in dezelfde regio en resourcegroep voor nabijheid e
 
 1. Nadat de container is gemaakt, opent u deze en selecteert u **Uploaden** op de opdrachtbalk.
 
-   :::image type="content" source="media/search-semi-structured-data/upload-command-bar.png" alt-text="Een opslagaccount maken" border="false":::
+   :::image type="content" source="media/search-semi-structured-data/upload-command-bar.png" alt-text="Uploaden op de opdrachtbalk" border="false":::
 
 1. Navigeer naar de map met de voorbeeldbestanden. Selecteer deze allemaal en klik vervolgens op **Uploaden**.
 
-   :::image type="content" source="media/search-semi-structured-data/clinicalupload.png" alt-text="Een opslagaccount maken" border="false":::
+   :::image type="content" source="media/search-semi-structured-data/clinicalupload.png" alt-text="Bestanden uploaden" border="false":::
 
 Nadat de upload is voltooid, worden de bestanden weergegeven in hun eigen submap in de gegevenscontainer.
 
@@ -98,19 +98,19 @@ REST-aanroepen hebben voor elke aanvraag de service-URL en een toegangssleutel n
 
 1. Haal onder **Instellingen** > **Sleutels** een beheersleutel op voor volledige rechten op de service. Er zijn twee uitwisselbare beheersleutels die voor bedrijfscontinuïteit worden verstrekt voor het geval u een moet overschakelen. U kunt de primaire of secundaire sleutel gebruiken op aanvragen voor het toevoegen, wijzigen en verwijderen van objecten.
 
-:::image type="content" source="media/search-get-started-postman/get-url-key.png" alt-text="Een opslagaccount maken" border="false":::
+:::image type="content" source="media/search-get-started-rest/get-url-key.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen" border="false":::
 
 Voor alle aanvragen is een API-sleutel vereist op elke aanvraag die naar uw service wordt verzonden. Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
 ## <a name="2---set-up-postman"></a>2 - Postman instellen
 
-Start Postman en stel een HTTP-aanvraag in. Als u niet bekend bent met dit hulpprogramma, raadpleegt u [REST API's van Azure Cognitive Search verkennen in Postman](search-get-started-postman.md).
+Start Postman en stel een HTTP-aanvraag in. Als u niet bekend bent met dit hulpprogramma, raadpleegt u [REST API's van Azure Cognitive Search verkennen](search-get-started-rest.md).
 
 De aanvraagmethoden voor elke aanroep in deze zelfstudie zijn **POST** en **GET**. U maakt drie API-aanroepen naar uw zoekservice om een gegevensbron, een index en een indexeerfunctie te maken. De gegevensbron bevat een verwijzing naar uw opslagaccount en uw JSON-gegevens. Uw zoekservice maakt de verbinding tijdens het laden van de gegevens.
 
 Stel bij Headers de optie Inhoudstype in op `application/json` en stel `api-key` in op de API-sleutel voor beheerders van uw Azure Cognitive Search-service. Zodra u de headers hebt ingesteld, kunt u ze gebruiken voor elke aanvraag in deze oefening.
 
-  :::image type="content" source="media/search-get-started-postman/postman-url.png" alt-text="Een opslagaccount maken" border="false":::
+  :::image type="content" source="media/search-get-started-rest/postman-url.png" alt-text="URL en header voor Postman-aanvraag" border="false":::
 
 Met behulp van URI's moet een API-versie worden opgegeven en elke aanroep moet **201 - Gemaakt** retourneren. De algemeen beschikbare API-versie voor het gebruik van JSON-matrices is `2020-06-30`.
 
@@ -315,11 +315,11 @@ Zodra het eerste document is geladen, kunt u meteen beginnen met zoeken.
 
 1. Voeg de queryparameter `$select` toe om de resultaten te beperken tot een kleiner aantal velden: `https://[service name].search.windows.net/indexes/clinical-trials-json-index/docs?search=*&$select=Gender,metadata_storage_size&api-version=2020-06-30&$count=true`.  Voor deze query komen 100 documenten overeen, maar standaard worden met Azure Cognitive Search niet meer dan 50 documenten in de resultaten geretourneerd.
 
-   :::image type="content" source="media/search-semi-structured-data/lastquery.png" alt-text="Een opslagaccount maken" border="false":::
+   :::image type="content" source="media/search-semi-structured-data/lastquery.png" alt-text="Geparameteriseerde query" border="false":::
 
 1. Een voorbeeld van een complexere query omvat `$filter=MinimumAge ge 30 and MaximumAge lt 75`. Deze retourneert alleen resultaten als de parameter MinimumAge groter is dan of gelijk is aan 30 en als MaximumAge kleiner is dan 75. Vervang de `$select`-expressie door de `$filter`-expressie.
 
-   :::image type="content" source="media/search-semi-structured-data/metadatashort.png" alt-text="Een opslagaccount maken" border="false":::
+   :::image type="content" source="media/search-semi-structured-data/metadatashort.png" alt-text="Semi-gestructureerde zoekopdracht" border="false":::
 
 U kunt logische operators (AND, OR, NOT) en vergelijkingsoperators (eq, ne, gt, lt, ge en le) gebruiken. Tekenreeksvergelijkingen zijn hoofdlettergevoelig. Zie [Een eenvoudige query maken](search-query-simple-examples.md) voor meer informatie en voorbeelden.
 

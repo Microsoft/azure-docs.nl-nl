@@ -3,17 +3,17 @@ title: Nieuwe functies in Windows Virtual Desktop - Azure
 description: Nieuwe functies en productupdates voor Windows Virtual Desktop.
 author: Heidilohr
 ms.topic: overview
-ms.date: 10/01/2020
+ms.date: 11/11/2020
 ms.author: helohr
 ms.reviewer: thhickli; darank
 manager: lizross
 ms.custom: references_regions
-ms.openlocfilehash: 0191d6ad74a9b6349f5d1724f9483607dce2d926
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c82312b40955b392243bf616ee991c0108a13fb5
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91630011"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94537387"
 ---
 # <a name="whats-new-in-windows-virtual-desktop"></a>Nieuwe functies in Windows Virtual Desktop
 
@@ -25,6 +25,48 @@ Windows Virtual Desktop wordt regelmatig bijgewerkt. In dit artikel vindt u meer
 - Opgeloste fouten
 
 Dit artikel wordt maandelijks bijgewerkt. Controleer hier regelmatig of er nieuwe updates beschikbaar zijn.
+
+## <a name="october-2020"></a>Oktober 2020
+
+Dit is gewijzigd in oktober 2020:
+
+### <a name="improved-performance"></a>Verbeterde prestaties
+
+- De prestaties zijn geoptimaliseerd door de latentie van de verbinding in de volgende Azure-geografieën te verlagen:
+    - Zwitserland
+    - Canada
+
+U kunt nu de [Experience Estimator](https://azure.microsoft.com/services/virtual-desktop/assessment/) gebruiken om de kwaliteit van de gebruikerservaring in deze gebieden te schatten.
+
+### <a name="azure-government-cloud-availability"></a>Beschikbaarheid van Azure Government Cloud
+
+De Azure Government Cloud is nu algemeen beschikbaar. Lees voor meer informatie [onze blogpost](https://azure.microsoft.com/updates/windows-virtual-desktop-is-now-generally-available-in-the-azure-government-cloud/).
+
+### <a name="windows-virtual-desktop-azure-portal-updates"></a>Updates van de Azure Portal binnen Windows Virtual Desktop
+
+Er zijn enkele updates voor de Azure Portal binnen Windows Virtual Desktop:
+
+- Er is een resourceID-fout opgelost waardoor gebruikers het tabblad 'Sessies' niet konden openen.
+- De gebruikersinterface is gestroomlijnd op het tabblad 'Sessiehosts'.
+- De instellingen 'Standaardinstellingen', 'Bruikbaarheid' en 'Standaardinstellingen herstellen' onder 'RDP-eigenschappen' zijn gerepareerd.
+- De verwijderfuncties zijn op alle tabbladen consistent gemaakt.
+- De portal valideert nu app-namen in de werkstroom 'Een app toevoegen'.
+- Er is een probleem opgelost waarbij het exporteren van gegevens van de sessie-host niet werd uitgelijnd in de kolommen.
+- Er is een probleem opgelost waarbij de portal geen gebruikerssessies kon ophalen.
+- Er is een probleem opgelost met het ophalen van de sessiehost. Dit probleem kwam voor wanneer de virtuele machine gemaakt was in een andere resourcegroep.
+- Het tabblad 'Sessiehost' is bijgewerkt en bevat nu een lijst met zowel actieve sessies als sessies waarvan de verbinding verbroken is.
+- Het tabblad 'Toepassingen' bevat nu pagina's.
+- Er is een probleem opgelost waarbij de tekst 'Vereist opdrachtregel' niet correct werd weergegeven op het tabblad 'Toepassingslijst'.
+- Er is een probleem opgelost waarbij de portal geen hostgroepen of virtuele machines kon implementeren als de Duitse taalversie van de Shared Image Gallery werd gebruikt.
+
+### <a name="client-updates-for-october-2020"></a>Clientupdates van oktober 2020
+
+We hebben nieuwe versies van de clients uitgebracht. Zie voor meer informatie de volgende artikelen:
+
+- [Windows](/windows-server/remote/remote-desktop-services/clients/windowsdesktop-whatsnew)
+- [iOS](/windows-server/remote/remote-desktop-services/clients/ios-whatsnew)
+
+Zie voor meer informatie over de andere clients [Clientupdates](#client-updates).
 
 ## <a name="september-2020"></a>September 2020
 
@@ -68,7 +110,7 @@ Dit is gewijzigd in augustus 2020:
 
 - Azure Advisor maakt nu deel uit van Windows Virtual Desktop. Wanneer u via de Azure-portal toegang hebt tot Windows Virtual Desktop, ziet u aanbevelingen voor het optimaliseren van uw Windows Virtual Desktop-omgeving. Zie [Azure Advisor](azure-advisor.md) voor meer informatie.
 
-- Azure CLI ondersteunt nu Windows Virtual Desktop (`az desktopvirtualization`) om u te helpen bij het automatiseren van Windows Virtual Destkop-implementaties. Bekijk [desktopvirtualization](/cli/azure/ext/desktopvirtualization/?view=azure-cli-latest) voor een lijst met extensie-opdrachten.
+- Azure CLI ondersteunt nu Windows Virtual Desktop (`az desktopvirtualization`) om u te helpen bij het automatiseren van Windows Virtual Destkop-implementaties. Bekijk [desktopvirtualization](/cli/azure/ext/desktopvirtualization/?view=azure-cli-latest&preserve-view=true) voor een lijst met extensie-opdrachten.
 
 - We hebben onze implementatiesjablonen bijgewerkt zodat ze volledig compatibel zijn met de Azure Resource Manager-interfaces voor Windows Virtual Desktop. U kunt de sjablonen vinden op [GitHub](https://github.com/Azure/RDS-Templates/tree/master/ARM-wvd-templates).
 
@@ -140,7 +182,7 @@ In deze update zijn nieuwe AzWvd-cmdlets toegevoegd aan de Azure PowerShell AZ-m
 
 Volg de instructies in [De PowerShell-module instellen voor Windows Virtual Desktop](powershell-module.md) om de module te installeren.
 
-U kunt ook een lijst met beschikbare opdrachten bekijken in de [AzWvd PowerShell-referentie](/powershell/module/az.desktopvirtualization/?view=azps-4.2.0#desktopvirtualization).
+U kunt ook een lijst met beschikbare opdrachten bekijken in de [AzWvd PowerShell-referentie](/powershell/module/az.desktopvirtualization/?view=azps-4.2.0#desktopvirtualization&preserve-view=true).
 
 Lees [onze blogpost](https://techcommunity.microsoft.com/t5/itops-talk-blog/windows-virtual-desktop-spring-update-enters-public-preview/ba-p/1340245) voor meer informatie over de nieuwe functies.
 

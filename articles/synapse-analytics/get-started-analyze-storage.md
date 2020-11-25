@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 2a22174fb23a4f0f7bebd58e276a6778e986ce9e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: fabfdce72202f79e2ac5bad08d124df7ce2de542
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322924"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592580"
 ---
 # <a name="analyze-data-in-a-storage-account"></a>Gegevens analyseren in een opslagaccount
 
@@ -36,16 +36,16 @@ Voer de volgende code uit in een notebook. Er wordt een CSV-bestand en een Parqu
 %%pyspark
 df = spark.sql("SELECT * FROM nyctaxi.passengercountstats")
 df = df.repartition(1) # This ensure we'll get a single file during write()
-df.write.mode("overwrite").csv("/NYCTaxi/PassengerCountStats.csv")
-df.write.mode("overwrite").parquet("/NYCTaxi/PassengerCountStats.parquet")
+df.write.mode("overwrite").csv("/NYCTaxi/PassengerCountStats_csvformat")
+df.write.mode("overwrite").parquet("/NYCTaxi/PassengerCountStats_parquetformat")
 ```
 
 ### <a name="analyze-data-in-a-storage-account"></a>Gegevens analyseren in een opslagaccount
 
 1. Ga in Synapse Studio naar de hub **Gegevens** en selecteer vervolgens **Gekoppeld**.
 1. Navigeer naar **Opslagaccounts** > **myworkspace (Primary - contosolake)** .
-1. Selecteer **users (Primary)** . De map **NYCTaxi** moet worden weergegeven. Hierin ziet u twee mappen, **PassengerCountStats.csv** en **PassengerCountStats.parquet**.
-1. Open de map **PassengerCountStats.parquet**. U ziet nu een Parquet-bestand met een naam als `part-00000-2638e00c-0790-496b-a523-578da9a15019-c000.snappy.parquet`.
+1. Selecteer **users (Primary)** . De map **NYCTaxi** moet worden weergegeven. Hierin ziet u twee mappen, **PassengerCountStats_csvformat** en **PassengerCountStats_parquetformat**.
+1. Open de map **PassengerCountStats_parquetformat**. U ziet nu een Parquet-bestand met een naam als `part-00000-2638e00c-0790-496b-a523-578da9a15019-c000.snappy.parquet`.
 1. Klik met de rechtermuisknop op **.parquet** en selecteer vervolgens **Nieuwe notebook**. Er wordt een notebook gemaakt met een cel als deze:
 
     ```py

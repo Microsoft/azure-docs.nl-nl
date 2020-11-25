@@ -8,12 +8,12 @@ ms.author: delegenz
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: ac7cee2c1d72b4102fb397aa8093c2d38686fc88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90d60a20bb464936d04662b0b9286bd7aaac9e74
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397263"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700168"
 ---
 # <a name="tutorial-create-a-custom-analyzer-for-phone-numbers"></a>Zelfstudie: Een aangepaste analyse voor telefoonnummers maken
 
@@ -59,9 +59,9 @@ Voor elke aanvraag moet u het volgende doen:
 
 1. Vervang `<YOUR-ADMIN-API-KEY>` door de primaire of de secundaire sleutel van uw zoekservice.
 
-  :::image type="content" source="media/search-get-started-postman/postman-url.png" alt-text="URL en header voor Postman-aanvraag" border="false":::
+  :::image type="content" source="media/search-get-started-rest/postman-url.png" alt-text="URL en header voor Postman-aanvraag" border="false":::
 
-Als u niet bekend bent met Postman, raadpleegt u [REST API's van Azure Cognitive Search verkennen in Postman](search-get-started-postman.md).
+Raadpleeg [REST API's van Azure Cognitive Search verkennen](search-get-started-rest.md) als u niet bekend bent met Postman.
 
 ## <a name="3---create-an-initial-index"></a>3 - Een initiële index maken
 
@@ -239,11 +239,11 @@ Analyses bestaan uit drie onderdelen:
 
 In het onderstaande diagram kunt u zien hoe deze drie onderdelen samenwerken om een zin te tokeniseren:
 
-  :::image type="content" source="media/tutorial-create-custom-analyzer/analyzers-explained.png" alt-text="URL en header voor Postman-aanvraag":::
+  :::image type="content" source="media/tutorial-create-custom-analyzer/analyzers-explained.png" alt-text="Diagram van het analyseproces om een zin te tokeniseren":::
 
 Deze tokens worden vervolgens opgeslagen in een omgekeerde index, waardoor snelle zoekopdrachten in volledige tekst mogelijk zijn.  Met een omgekeerde index kunt u zoeken in volledige tekst toestaan door alle unieke termen die zijn geëxtraheerd tijdens de lexicale analyse, toe te wijzen aan de documenten waarin ze voorkomen. In het onderstaande diagram ziet u een voorbeeld:
 
-  :::image type="content" source="media/tutorial-create-custom-analyzer/inverted-index-explained.png" alt-text="URL en header voor Postman-aanvraag":::
+  :::image type="content" source="media/tutorial-create-custom-analyzer/inverted-index-explained.png" alt-text="Voorbeeld van een omgekeerde index":::
 
 Elke zoekopdracht komt neer op het zoeken naar de termen die in de omgekeerde index zijn opgeslagen. Wanneer een gebruiker een query opgeeft:
 
@@ -251,7 +251,7 @@ Elke zoekopdracht komt neer op het zoeken naar de termen die in de omgekeerde in
 1. De omgekeerde index wordt vervolgens gescand op documenten die overeenkomende termen bevatten.
 1. Ten slotte worden de opgehaalde documenten gerangschikt met behulp van het [vergelijkbaarheidsalgoritme](index-ranking-similarity.md).
 
-  :::image type="content" source="media/tutorial-create-custom-analyzer/query-architecture-explained.png" alt-text="URL en header voor Postman-aanvraag":::
+  :::image type="content" source="media/tutorial-create-custom-analyzer/query-architecture-explained.png" alt-text="Diagram van het rangschikken van vergelijkbaarheid in het analyseproces":::
 
 Als de querytermen niet overeenkomen met de termen in de omgekeerde index, worden er geen resultaten geretourneerd. Voor meer informatie over hoe query's werken, raadpleegt u dit artikel over [zoeken in volledige tekst](search-lucene-query-architecture.md).
 

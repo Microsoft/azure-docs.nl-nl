@@ -6,12 +6,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/23/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: fb158b713bea588e9de94e13ac194ec0a4d0020a
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 4d399dc9298c51906d62dabbc36650bf21f94af8
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92058145"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542827"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-nodejs"></a>Zelfstudie: Een web-app-bot met Language Understanding in Node.js gebruiken
 
@@ -381,12 +381,12 @@ Stel de bot een vraag voor de intentie Vlucht boeken.
 
 1. Voer in de Bot Framework-emulator `Book a flight from Seattle to Berlin tomorrow` in en ontvang hetzelfde antwoord voor de basisbot wat u hebt ontvangen bij **Testen in webgesprek**.
 
-    [![Antwoord van de basisbot in de emulator](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png)](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png#lightbox)
+    [![Schermopname van de Bot Framework Emulator.](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png)](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png#lightbox)
 
 1. Selecteer **Ja**. De bot reageert met een overzicht van de bijbehorende acties.
 1. Selecteer in het logboek van de Bot Framework-emulator de regel die `<- trace LuisV3 Trace` bevat. Hiermee wordt het JSON-antwoord van LUIS voor de intentie en entiteiten van de uiting weergegeven.
 
-    [![Antwoord van de basisbot in de emulator](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png)](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png#lightbox)
+    [![Schermopname van de Bot Framework Emulator, met in het rechterpaneel de JSON.code.](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png)](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png#lightbox)
 
 [!INCLUDE [Bot Information](../../../includes/cognitive-services-qnamaker-luis-bot-info.md)]
 

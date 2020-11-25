@@ -6,15 +6,15 @@ ms.reviewer: baolcsva
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.topic: conceptual
-ms.date: 10/05/2020
+ms.date: 11/11/2020
 ms.author: banders
 ms.custom: contperfq1
-ms.openlocfilehash: 3222c934998febe79c36121ca816f949b78d374e
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: dc725839d018c281dc784f5f83b256e62d70884d
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94411555"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635412"
 ---
 # <a name="azure-enterprise-transfers"></a>Azure Enterprise-overdrachten
 
@@ -98,9 +98,9 @@ Er is geen downtime tijdens de overdracht van accounts en inschrijvingen. Indien
 
 Als u een ondernemingsabonnement wilt overzetten naar een afzonderlijk abonnement dat wordt betaald naar gebruik, moet u een nieuwe ondersteuningsaanvraag maken in de Azure Enterprise-portal. Ga naar het gedeelte **Help en ondersteuning** en selecteer **+ Nieuwe ondersteuningsaanvraag** om een ondersteuningsaanvraag te maken.
 
-## <a name="change-account-owner"></a>Accounteigenaar wijzigen
+## <a name="change-azure-subscription-or-account-ownership"></a>Het Azure-abonnement of de accounteigenaar wijzigen
 
-In Azure EA Portal kunnen abonnementen worden overdragen van de ene accounteigenaar naar de andere. Zie [Accounteigenaar wijzigen](ea-portal-administration.md#change-account-owner) voor meer informatie.
+In Azure EA Portal kunnen abonnementen worden overdragen van de ene accounteigenaar naar de andere. Raadpleeg [Het Azure-abonnement of de accounteigenaar wijzigen](ea-portal-administration.md#change-azure-subscription-or-account-ownership) voor meer informatie.
 
 ## <a name="subscription-transfer-effects"></a>Gevolgen van een abonnementsoverdracht
 

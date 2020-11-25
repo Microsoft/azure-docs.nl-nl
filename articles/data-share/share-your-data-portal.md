@@ -5,22 +5,29 @@ author: joannapea
 ms.author: joanpo
 ms.service: data-share
 ms.topic: quickstart
-ms.date: 08/19/2020
-ms.openlocfilehash: 41598c04af78d4366435259357d8f897ac178942
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 10/30/2020
+ms.openlocfilehash: 1442720fdf48aaa7da76e181b168a04306ff3e33
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89489932"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94577495"
 ---
 # <a name="quickstart-share-data-using-azure-data-share-in-the-azure-portal"></a>Quickstart: Gegevens delen met Azure Data Share in Azure Portal
 
-In deze quickstart leert u hoe u een nieuwe Azure Data Share instelt met behulp van Azure Portal.
+In deze quickstart leert u hoe u een nieuwe Azure Data Share instelt om gegevens uit het opslagaccount te delen met behulp van Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Azure-abonnement: Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+* Azure-abonnement: Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+* Het e-mailadres voor Azure van de ontvanger (de e-mailalias werkt niet).
+* Als de bron-Azure-gegevensopslag zich in een ander Azure-abonnement bevindt dan de opslag die u gebruikt om een Data Share-resource te maken, registreert u de [resourceprovider Microsoft.DataShare](concepts-roles-permissions.md#resource-provider-registration) in het abonnement waarin de Azure-gegevensopslag zich bevindt. 
 
+### <a name="share-from-a-storage-account"></a>Delen vanuit een opslagaccount
+
+* Een Azure Storage-account: U kunt een gratis [Azure Storage-account](../storage/common/storage-account-create.md) aanmaken als u nog niet een hebt
+* Machtiging om naar het opslagaccount te schrijven, aanwezig in *Microsoft.Storage/storageAccounts/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**.
+* Machtiging om roltoewijzing toe te voegen aan het opslagaccount, aanwezig in *Microsoft.Authorization/role assignments/write*. Deze machtiging maakt onderdeel uit van de rol **Eigenaar**. 
 
 ## <a name="create-a-data-share-account"></a>Een Data Share-account maken
 
@@ -67,7 +74,7 @@ Maak een Azure Data Share-resource in een Azure-resourcegroep.
 
    ![Gegevenssets toevoegen aan de share](./media/datasets.png "Gegevenssets")
 
-1. Selecteer het type gegevensset dat u wilt toevoegen. Welke lijst met typen gegevensset wordt weergegeven, is afhankelijk van het type share (momentopname of in-place) dat u in de vorige stap hebt geselecteerd. Als u deelt vanuit een Azure SQL Database of Azure Synapse Analytics, wordt u om SQL-referenties gevraagd. Voer de verificatie uit met behulp van de gebruiker die u hebt gemaakt als onderdeel van de vereisten.
+1. Selecteer het type gegevensset dat u wilt toevoegen. Welke lijst met typen gegevensset wordt weergegeven, is afhankelijk van het type share (momentopname of in-place) dat u in de vorige stap hebt geselecteerd. 
 
    ![AddDatasets](./media/add-datasets.png "Gegevenssets toevoegen")    
 

@@ -7,12 +7,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 006c995217ced91690798ae68f04e3b6c3148228
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 27594ff4d7673038e9de38c5969a615be60aeadf
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131952"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844690"
 ---
 # <a name="create-an-additional-azure-subscription"></a>Een extra Azure-abonnement maken:
 
@@ -73,7 +73,11 @@ U hebt de volgende machtigingen nodig voor het maken van abonnementen:
 
 ## <a name="create-an-additional-azure-subscription-programmatically"></a>Programmatisch een extra Azure-abonnement maken
 
-U kunt ook programmatisch extra abonnementen maken. Zie [Programmatisch Azure-abonnementen maken](programmatically-create-subscription.md) voor meer informatie.
+U kunt ook programmatisch extra abonnementen maken. Zie voor meer informatie:
+
+- [Programmatisch EA-abonnementen maken met de nieuwste API](programmatically-create-subscription-enterprise-agreement.md)
+- [Programmatisch MCA-abonnementen maken met de nieuwste API](programmatically-create-subscription-microsoft-customer-agreement.md)
+- [Programmatisch MPA-abonnementen maken met de nieuwste API](Programmatically-create-subscription-microsoft-customer-agreement.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

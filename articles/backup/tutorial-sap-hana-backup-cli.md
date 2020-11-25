@@ -1,15 +1,15 @@
 ---
-title: 'Zelfstudie: back-ups van de SAP HANA-database in Azure maken met behulp van CLI'
+title: 'Zelfstudie: back-ups van de SAP HANA-database in Azure maken met behulp van Azure CLI'
 description: In deze zelfstudie ontdekt u hoe u een back-up maakt van SAP HANA-databases die op een virtuele Azure-machine worden uitgevoerd, naar een Azure Backup Recovery Services-kluis met behulp van Azure CLI.
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f11e01c6af18cac956d58b9c692d7b57c8fe653a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41869ac4dfc0d3964fb48463e5f142b8391e2d94
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324957"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579249"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Zelfstudie: Back-ups maken van SAP HANA-databases in een virtuele Azure-machine met behulp van Azure CLI
 
@@ -26,9 +26,9 @@ In dit document wordt ervan uitgegaan dat er al een SAP HANA-database is geïnst
 
 Bekijk de [scenario's die we momenteel ondersteunen](./sap-hana-backup-support-matrix.md#scenario-support) voor SAP HANA.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u de CLI lokaal wilt installeren en gebruiken, moet u Azure CLI-versie xx.xxx.x of hoger gebruiken. Voer `az --version` uit om de CLI-versie te bepalen. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli).
+ - Voor deze zelfstudie is versie 2.0.30 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-recovery-services-vault"></a>Een Recovery Services-kluis maken
 

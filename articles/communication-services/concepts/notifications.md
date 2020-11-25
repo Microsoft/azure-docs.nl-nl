@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 3e68e65a5c2ed73a8fb6d8e5d01c645e05ca5157
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: b368048e5ea34ebfc073b1ae239cbb40724ae393
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320705"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684369"
 ---
 # <a name="communication-services-notifications"></a>Communication Services-meldingen
 
@@ -36,7 +36,7 @@ Lees meer over [verwerking van gebeurtenissen in Azure Communication Services](.
 
 U kunt een Azure Notification Hub verbinden met uw Communication Services-resource om automatisch pushmeldingen naar het mobiele apparaat van een gebruiker te verzenden wanneer ze een inkomende oproep ontvangen. U gebruikt deze pushmeldingen om uw toepassing te activeren vanaf de achtergrond en de gebruikersinterface weer te geven waarmee de gebruiker de oproep kan aannemen of weigeren. 
 
-:::image type="content" source="./media/notifications/acs-anh-int.png" alt-text="Diagram waarin wordt getoond hoe communicatie services worden geïntegreerd met Event Grid.":::
+:::image type="content" source="./media/notifications/acs-anh-int.png" alt-text="Diagram waarin wordt getoond hoe Communication Services integreert met de Azure Notification Hub.":::
 
 Communication Services maakt gebruik van Azure Notification Hub als een doorgeefservice om te communiceren met de verschillende platformspecifieke services voor pushmeldingen met behulp van de API [Direct Send](https://docs.microsoft.com/rest/api/notificationhubs/direct-send). Hiermee kunt u uw bestaande Azure Notification Hub-resources en -configuraties hergebruiken om betrouwbare oproepmeldingen met lage latentie aan te bieden in uw toepassingen.
 
@@ -53,7 +53,8 @@ Als u pushmeldingen wilt aanbieden met behulp van Notification Hubs, [maak dan e
 Zodra uw Notification Hub is geconfigureerd, kunt u deze koppelen met uw Communication Services-resource door een verbindingsreeks voor de hub op te geven met behulp van de Azure Resource Manager-client of via de Azure-portal. De verbindingsreeks moet machtigingen voor 'Verzenden' bevatten. We raden u aan om een ander toegangsbeleid te maken met machtigingen voor 'Verzenden' specifiek voor uw hub. Meer informatie over het [beveiligings- en toegangsbeleid van Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-security)
 
 > [!IMPORTANT]
-> Als u VOIP-meldingen van Apple Push Notification Service wilt inschakelen, moet u de naam van uw Notification Hub instellen als de bundel-ID van de toepassing met het achtervoegsel `.voip`. Zie [APNS VOIP gebruiken via Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/voip-apns).
+> Dit is alleen toepasbaar in de verificatiemodus voor tokens. De verificatiemodus voor certificaten wordt momenteel niet ondersteund.  
+Als u APNS VOIP-meldingen wilt inschakelen, moet u de waarde van de bundel-id instellen wanneer u de Notification Hub configureert als de bundel-id voor de toepassing met het achtervoegsel `.voip`. Raadpleeg [APNS VOIP gebruiken via Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/voip-apns) voor meer details.
 
 #### <a name="using-the-azure-resource-manager-client-to-configure-the-notification-hub"></a>De Azure Resource Manager-client gebruiken om de Notification Hub te configureren
 
@@ -73,7 +74,7 @@ armclient POST /subscriptions/<sub_id>/resourceGroups/<resource_group>/providers
 
 Navigeer in het portaal naar uw Azure Communication Services-resource. Selecteer in de Communication Services-resource push meldingen in het menu links van de pagina Communication Services en koppel de Notification Hub die u eerder hebt ingericht. U moet uw verbindingsreeks en resource-ID hier opgeven:
 
-:::image type="content" source="./media/notifications/acs-anh-portal-int.png" alt-text="Diagram waarin wordt getoond hoe communicatie services worden geïntegreerd met Event Grid.":::
+:::image type="content" source="./media/notifications/acs-anh-portal-int.png" alt-text="Schermopname met de instellingen voor pushmeldingen in het Azure-portaal.":::
 
 > [!NOTE]
 > Als de Azure Notification Hub-verbindingsreeks wordt bijgewerkt, moet de Azure Communication Services-resource ook worden bijgewerkt.

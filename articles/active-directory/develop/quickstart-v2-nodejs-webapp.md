@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, devx-track-js
-ms.openlocfilehash: 34baa054104a6cf2c78864cc2827b16c1eedb084
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 5cde4b539262c9e20bbcf2e7dd8c8e9de38035c3
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91613302"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594246"
 ---
 # <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Quickstart: Aanmelden met OpenID Connect bij een Node.js-webtoepassing toevoegen
 
-In deze quickstart leert u hoe u OpenID Connect-verificatie kunt instellen in een webtoepassing die is gebouwd met behulp van Node.js met Express. Het voorbeeld is ontworpen om te worden uitgevoerd op elk platform.
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe u OpenID Connect-verificatie kunt instellen in een webtoepassing die is gebouwd met behulp van Node.js met Express. Het voorbeeld is ontworpen om te worden uitgevoerd op elk platform.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -57,7 +57,7 @@ In deze quickstart leert u hoe u OpenID Connect-verificatie kunt instellen in ee
 
 1. Selecteer op de pagina **Certificaten en geheimen** in de sectie **Clientgeheimen** de optie **Nieuw clientgeheim**.
     - Voer een beschrijving in (bijvoorbeeld app-geheim).
-    - Selecteer een sleutelduur van**1 jaar, 2 jaar** of **Verloopt nooit**.
+    - Selecteer een sleutelduur van **1 jaar, 2 jaar** of **Verloopt nooit**.
     - Wanneer u op de knop **Toevoegen** klikt, wordt de sleutelwaarde weergegeven. Kopieer de sleutelwaarde en sla hem op een veilige plek op.
 
     U hebt deze sleutel later nodig om de toepassing te configureren. Deze sleutelwaarde wordt niet opnieuw weergegeven en kan niet op een andere manier worden opgehaald. Noteer de waarde daarom zodra deze wordt weergegeven in Azure Portal.

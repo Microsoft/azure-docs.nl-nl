@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: 68ccd21af585d853592ab8cce24f251d810a4160
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 773cf5cc6755a4f094eb676992364eea07a795ea
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90889205"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94654657"
 ---
 # <a name="what-is-azure-sentinel"></a>Wat is Azure Sentinel?
 
@@ -29,11 +29,11 @@ Microsoft Azure Sentinel is een schaalbaar, cloudeigen oplossing voor **Security
 
 Met Azure Sentinel hebt u overzicht over de hele onderneming, waardoor u zich niet meer druk hoeft te maken over steeds geavanceerdere aanvallen, toenemende hoeveelheden waarschuwingen en de lange duur voordat oplossingen worden gevonden.
 
-- **Verzamel gegevens op cloudschaal** voor alle gebruikers, apparaten, toepassingen en infrastructuur, zowel on-premises als in meerdere clouds. 
+- **Verzamel gegevens op cloudschaal** voor alle gebruikers, apparaten, toepassingen en infrastructuur, zowel on-premises als in meerdere clouds. 
 
-- **Detecteer bedreigingen die eerder niet werden gedetecteerd** en beperk het aantal fout-positieven met de analyses en ongeëvenaarde bedreigingsinformatie van Microsoft. 
+- **Detecteer bedreigingen die eerder niet werden gedetecteerd** en beperk het aantal fout-positieven met de analyses en ongeëvenaarde bedreigingsinformatie van Microsoft. 
 
-- **Onderzoek bedreigingen met kunstmatige intelligentie** en spoor verdachte activiteiten op schaal op met gebruik van de cyberbeveiliging waar Microsoft al jaren aan werkt. 
+- **Onderzoek bedreigingen met kunstmatige intelligentie** en spoor verdachte activiteiten op schaal op met gebruik van de cyberbeveiliging waar Microsoft al jaren aan werkt. 
 
 - **Reageer snel op incidenten** met ingebouwde indeling en automatisering van algemene taken.
 
@@ -51,7 +51,7 @@ U moet eerst [verbinding maken met uw beveiligingsbronnen](connect-data-sources.
 
 ## <a name="workbooks"></a>Werkmappen
 
-Nadat u  [uw gegevensbronnen hebt verbonden](quickstart-onboard.md)  met Azure Sentinel, kunt u de gegevens bewaken met behulp van de integratie van Azure Sentinel met Azure Monitor Workbooks, waarmee u veelzijdige, aangepaste werkmappen kunt maken. Hoewel werkmappen anders worden weergegeven in Azure-Sentinel, kan het handig zijn om te zien hoe u [interactieve rapporten kunt maken met Azure Monitor Workbooks](../azure-monitor/platform/workbooks-overview.md). Met Azure Sentinel kunt u aangepaste werkmappen maken voor uw gegevens. Daarnaast bevat dit ingebouwde werkmapsjablonen, zodat u snel inzicht kunt krijgen in uw gegevens zodra u verbinding maakt met een gegevensbron.
+Nadat u [uw gegevensbronnen hebt verbonden](quickstart-onboard.md) met Azure Sentinel, kunt u de gegevens bewaken met behulp van de integratie van Azure Sentinel met Azure Monitor Workbooks, waarmee u veelzijdige, aangepaste werkmappen kunt maken. Hoewel werkmappen anders worden weergegeven in Azure-Sentinel, kan het handig zijn om te zien hoe u [interactieve rapporten kunt maken met Azure Monitor Workbooks](../azure-monitor/platform/workbooks-overview.md). Met Azure Sentinel kunt u aangepaste werkmappen maken voor uw gegevens. Daarnaast bevat dit ingebouwde werkmapsjablonen, zodat u snel inzicht kunt krijgen in uw gegevens zodra u verbinding maakt met een gegevensbron.
 
 ![Dashboards](./media/tutorial-monitor-data/access-workbooks.png)
 
@@ -64,7 +64,7 @@ Om de ruis te verminderen en het aantal waarschuwingen te beperken dat u moet be
 
 ## <a name="security-automation--orchestration"></a>Beveiligingsautomatisering en -indeling
 
-Automatiseer uw algemene taken en [vereenvoudig de beveiligingsindeling met playbooks](tutorial-respond-threats-playbook.md) die kunnen worden geïntegreerd met Azure-services en uw bestaande hulpprogramma's. De automatiserings- en indelingsoplossing van Azure Sentinel is ontworpen op basis van Azure Logic Apps en biedt een zeer uitbreidbare architectuur waarmee automatisering kan worden geschaald op basis van nieuwe technologieën en bedreigingen. Als u playbooks wilt maken met Azure Logic Apps, kunt u kiezen uit een steeds groter wordende galerie met ingebouwde playbooks. Dit zijn onder andere [meer dan 200 connectors](https://docs.microsoft.com/azure/connectors/apis-list) voor services zoals Azure-functies. Met de connectors kunt u elke aangepaste logica toepassen in code, ServiceNow, Jira, Zendesk, HTTP-aanvragen, Microsoft Teams, Slack, Windows Defender ATP en Cloud App Security.
+Automatiseer uw algemene taken en [vereenvoudig de beveiligingsindeling met playbooks](tutorial-respond-threats-playbook.md) die kunnen worden geïntegreerd met Azure-services en uw bestaande hulpprogramma's. De automatiserings- en indelingsoplossing van Azure Sentinel is ontworpen op basis van Azure Logic Apps en biedt een zeer uitbreidbare architectuur waarmee automatisering kan worden geschaald op basis van nieuwe technologieën en bedreigingen. Als u playbooks wilt maken met Azure Logic Apps, kunt u kiezen uit een steeds groter wordende galerie met ingebouwde playbooks. Dit zijn onder andere [meer dan 200 connectors](../connectors/apis-list.md) voor services zoals Azure-functies. Met de connectors kunt u elke aangepaste logica toepassen in code, ServiceNow, Jira, Zendesk, HTTP-aanvragen, Microsoft Teams, Slack, Windows Defender ATP en Cloud App Security.
 
 Als u bijvoorbeeld het ServiceNow-ticketsysteem gebruikt, kunt u de meegeleverde hulpprogramma's gebruiken om met Azure Logic Apps uw werkstromen te automatiseren en een ticket in ServiceNow te openen telkens wanneer een bepaalde gebeurtenis wordt gedetecteerd.
 

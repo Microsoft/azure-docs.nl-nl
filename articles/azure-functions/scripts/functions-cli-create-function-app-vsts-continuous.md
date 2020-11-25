@@ -4,12 +4,12 @@ description: Een functie-app maken en functiecode implementeren vanuit Azure Dev
 ms.date: 07/03/2018
 ms.topic: sample
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 773a08646f7a69e1ed828621bad48a6c6729eb88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 25e0f43a851bbf7658847aa52cc9ee778941f718
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498518"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565208"
 ---
 # <a name="create-a-function-in-azure-that-is-deployed-from-azure-devops"></a>Een functie in Azure maken die wordt geïmplementeerd vanuit Azure DevOps
 
@@ -22,9 +22,9 @@ Voor het voltooien van dit onderwerp hebt u het volgende nodig:
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u de Azure CLI liever lokaal gebruikt, moet u versie 2.0 of hoger installeren en gebruiken. Voer `az --version` uit om te bepalen welke versie van Azure CLI u hebt. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren]( /cli/azure/install-azure-cli). 
+ - Voor deze zelfstudie is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd. 
 
 ## <a name="sample-script"></a>Voorbeeldscript
 

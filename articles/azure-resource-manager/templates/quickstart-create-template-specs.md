@@ -2,15 +2,15 @@
 title: Sjabloonspecificatie maken en implementeren
 description: Meer informatie over het maken van ene sjabloonspecificatie op basis van een ARM-sjabloon. Implementeer de sjabloonspecificatie vervolgens naar een resourcegroep in uw abonnement.
 author: tfitzmac
-ms.date: 11/10/2020
+ms.date: 11/17/2020
 ms.topic: quickstart
 ms.author: tomfitz
-ms.openlocfilehash: 96ef5796aac1d0ee02e6bbafc40b7d3bcdea4e2f
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 8439b1de5a69b3e5bfc22e10f089938da921c1cb
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506359"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94747499"
 ---
 # <a name="quickstart-create-and-deploy-template-spec-preview"></a>Quickstart: Sjabloonspecificatie maken en implementeren (preview)
 
@@ -21,9 +21,7 @@ In deze quickstart wordt uitgelegd hoe u een Azure Resource Manager-sjabloon (AR
 Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 
 > [!NOTE]
-> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Als u deze functie wilt gebruiken, moet u zich [inschrijven op de wachtlijst](https://aka.ms/templateSpecOnboarding).
->
-> Als u na de wachtlijst wordt goedgekeurd, ontvangt u instructies om de preview-versie van de PowerShell-module en de preview-versie van de CLI te installeren.
+> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Als u deze wilt gebruiken, moet u de nieuwste versie van PowerShell of Azure CLI installeren. Gebruik voor Azure PowerShell de [versie 5.0.0 of hoger](/powershell/azure/install-az-ps). Gebruik voor Azure CLI de [versie 2.14.2 of hoger](/cli/azure/install-azure-cli).
 
 ## <a name="create-template-spec"></a>Sjabloonspecificatie maken
 

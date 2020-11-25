@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 10/22/2020
 ms.custom: contperfq1
-ms.openlocfilehash: f9a5197b982958fe0a0ff21c4b442142beb38882
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 0062caff7d8d25b263a9b1202f61691c056469af
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422464"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701079"
 ---
 # <a name="what-is-azure-cognitive-search"></a>Wat is Azure Cognitive Search?
 
@@ -80,7 +80,7 @@ Met het pullmodel worden gegevens opgehaald uit bronnen op Azure en verzonden na
 
 Nadat u een index hebt gevuld, kunt u [zoekquery’s verzenden](search-query-overview.md) naar het service-eindpunt met behulp van eenvoudige HTTP-aanvragen met [REST API](/rest/api/searchservice/Search-Documents) of de [.NET SDK](/dotnet/api/azure.search.documents.searchclient.search).
 
-Volg [Uw eerste zoek-app maken](tutorial-csharp-create-first-app.md) om een webpagina te maken en uit te breiden die gebruikersinvoer verzamelt en de resultaten verwerkt. U kun ook [Postman voor interactieve REST](search-get-started-postman.md)-aanroepen gebruiken of de in Azure-portal ingebouwde [Search Explorer](search-explorer.md) om een query uit te voeren op een bestaande index.
+Volg [Uw eerste zoek-app maken](tutorial-csharp-create-first-app.md) om een webpagina te maken en uit te breiden die gebruikersinvoer verzamelt en de resultaten verwerkt. U kun ook [Postman of Visual Studio Code](search-get-started-rest.md) voor interactieve REST-aanroepen gebruiken of de in Azure Portal ingebouwde [Search Explorer](search-explorer.md) om een query uit te voeren op een bestaande index.
 
 ## <a name="how-it-compares"></a>Vergelijking
 

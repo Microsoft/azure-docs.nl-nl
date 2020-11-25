@@ -7,28 +7,34 @@ author: luiscabrer
 ms.author: luisca
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 07/15/2020
-ms.openlocfilehash: 84defa0704c44bb0ed4564195725f7dd1c42312c
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 11/17/2020
+ms.openlocfilehash: 21f0d141567f17c470732088c6a93a2ae7ed3c67
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92788057"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94738047"
 ---
 # <a name="tutorial-use-rest-and-ai-to-generate-searchable-content-from-azure-blobs"></a>Zelfstudie: REST en AI gebruiken voor het genereren van doorzoekbare inhoud van Azure-blobs
 
-Als u ongestructureerde tekst of afbeeldingen in Azure Blob-opslag hebt, kunt u met een [AI-verrijkingspijplijn](cognitive-search-concept-intro.md) informatie extraheren en nieuwe inhoud maken die nuttig is voor zoekopdrachten in volledige tekst of kennisanalyse. Hoewel een pijplijn installatiekopieën kan verwerken, wordt in deze REST-zelfstudie aandacht besteed aan tekst, het toepassen van taaldetectie en de verwerking van natuurlijke taal om nieuwe velden te maken die u in query's, facetten en filters kunt gebruiken.
+Als u ongestructureerde tekst of afbeeldingen in Azure Blob-opslag hebt, kunt u met een [AI-verrijkingspijplijn](cognitive-search-concept-intro.md) informatie extraheren en nieuwe inhoud maken van blobs die nuttig zijn voor zoekopdrachten in volledige tekst of kennisanalyse. Hoewel een pijplijn installatiekopieën kan verwerken, wordt in deze REST-zelfstudie aandacht besteed aan tekst, het toepassen van taaldetectie en de verwerking van natuurlijke taal om nieuwe velden te maken die u in query's, facetten en filters kunt gebruiken.
 
 Deze zelfstudie maakt gebruik van Postman en de [REST API's zoeken](/rest/api/searchservice/) om de volgende taken uit te voeren:
 
 > [!div class="checklist"]
-> * Begin met hele documenten (ongestructureerde tekst) zoals PDF, HTML, DOCX en PPTX in Azure Blob-opslag.
-> * Definieer een pijplijn die tekst extraheert, taal detecteert, entiteiten herkent en sleutelzinnen detecteert.
-> * Definieer een index voor het opslaan van de uitvoer (onbewerkte inhoud, plus pijplijn gegenereerde naam/waardeparen).
-> * Voer de pijplijn uit om transformaties en analyses te starten en om de index te maken en te laden.
+> * Services en een Postman-verzameling instellen.
+> * Definieer een verrijkingspijplijn die tekst extraheert, taal detecteert, entiteiten herkent en sleutelzinnen detecteert.
+> * Maak een index voor het opslaan van de uitvoer (onbewerkte inhoud en pijplijn gegenereerde paren van namen en waarden).
+> * Voer de pijplijn uit om transformaties en analyses uit te voeren en om de index te laden.
 > * Bekijk de resultaten met zoeken in volledige tekst en een uitgebreide query-syntaxis.
 
 Als u geen abonnement op Azure hebt, opent u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
+
+## <a name="overview"></a>Overzicht
+
+Deze zelfstudie maakt gebruik van C# en de Azure Cognitive Search REST API's om een gegevensbron, index, indexeerfunctie en vaardighedenset te maken. U begint met hele documenten (ongestructureerde tekst) zoals PDF, HTML, DOCX en PPTX in Azure Blob-opslag. U voert deze vervolgens uit met een vaardigheden om entiteiten, sleutelzinnen en andere tekst uit de inhoudsbestanden te extraheren.
+
+Deze vaardighedenset maakt gebruik van ingebouwde vaardigheden op basis van Cognitive Services-API's. Stappen in de pijplijn omvatten taaldetectie voor tekst, sleutelzinextractie en entiteitsherkenning (organisaties). Nieuwe informatie wordt opgeslagen in nieuwe velden die u kunt gebruiken voor query's, facetten en filters.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -43,7 +49,9 @@ Als u geen abonnement op Azure hebt, opent u een [gratis account](https://azure.
 
 1. Open deze [OneDrive-map](https://1drv.ms/f/s!As7Oy81M_gVPa-LCb5lC_3hbS-4) en klik in de linkerbovenhoek op **Downloaden** om de bestanden naar uw computer te kopiëren. 
 
-1. Klik met de rechtermuisknop op het zip-bestand en selecteer **Alles extraheren** . Er zijn 14 bestanden van verschillende typen. U gebruikt 7 voor deze oefening.
+1. Klik met de rechtermuisknop op het zip-bestand en selecteer **Alles extraheren**. Er zijn 14 bestanden van verschillende typen. U gebruikt 7 voor deze oefening.
+
+U kunt eventueel ook de broncode (een Postman-verzamelingsbestand) voor deze zelfstudie downloaden. U vindt de broncode op [https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/Tutorial](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/Tutorial).
 
 ## <a name="1---create-services"></a>1- Services maken
 
@@ -53,7 +61,7 @@ Maak, indien mogelijk, beide in dezelfde regio en resourcegroep voor nabijheid e
 
 ### <a name="start-with-azure-storage"></a>Aan de slag met Azure Storage
 
-1. [Meld u aan bij de Azure-portal](https://portal.azure.com/) en klik op **En resourcegroepen maken** .
+1. [Meld u aan bij de Azure-portal](https://portal.azure.com/) en klik op **En resourcegroepen maken**.
 
 1. Zoek naar *Opslagaccount* en selecteer de aanbieding van het Microsoft-opslagaccount.
 
@@ -61,21 +69,21 @@ Maak, indien mogelijk, beide in dezelfde regio en resourcegroep voor nabijheid e
 
 1. Op het tabblad Basisinstellingen zijn de volgende items vereist. Accepteer de standaardwaarden voor alle andere.
 
-   + **Resourcegroep** . Selecteer een bestaande naam of maak een nieuwe, maar gebruik dezelfde groep voor alle services, zodat u ze gezamenlijk kunt beheren.
+   + **Resourcegroep**. Selecteer een bestaande naam of maak een nieuwe, maar gebruik dezelfde groep voor alle services, zodat u ze gezamenlijk kunt beheren.
 
-   + **Naam van opslagaccount** . Als u denkt dat u mogelijk meerdere resources van hetzelfde type hebt, gebruikt u de naam om op type en regio te onderscheiden, bijvoorbeeld *blobstoragewestus* . 
+   + **Naam van opslagaccount**. Als u denkt dat u mogelijk meerdere resources van hetzelfde type hebt, gebruikt u de naam om op type en regio te onderscheiden, bijvoorbeeld *blobstoragewestus*. 
 
-   + **Locatie** . Kies indien mogelijk dezelfde locatie die wordt gebruikt voor Azure Cognitive Search en Cognitive Services. Een enkele locatie vermindert bandbreedtekosten aanzienlijk.
+   + **Locatie**. Kies indien mogelijk dezelfde locatie die wordt gebruikt voor Azure Cognitive Search en Cognitive Services. Een enkele locatie vermindert bandbreedtekosten aanzienlijk.
 
-   + **Soort account** . Kies de standaardinstelling *StorageV2 (algemeen gebruik v2)* .
+   + **Soort account**. Kies de standaardinstelling *StorageV2 (algemeen gebruik v2)* .
 
 1. Klik vervolgens op **Beoordelen en maken** om de service te maken.
 
 1. Zodra de app is gemaakt, klikt u op **Ga naar de resource** om de pagina Overzicht te openen.
 
-1. Klik op **Blobs** -service.
+1. Klik op **Blobs**-service.
 
-1. Klik op **En container** om een container te maken en geef deze de naam *cog-search-demo* .
+1. Klik op **En container** om een container te maken en geef deze de naam *cog-search-demo*.
 
 1. Selecteer *cog-search-demo* en klik vervolgens op **Uploaden** om de map te openen waar u de downloadbestanden hebt opgeslagen. Selecteer alle niet-afbeeldingsbestanden. U moet 7 bestanden hebben. Klik op **OK** om deze te uploaden.
 
@@ -107,7 +115,7 @@ Het derde onderdeel is Azure Cognitive Search, dat u kunt [maken in de portal](s
 
 Net als bij Azure Blob-opslag duurt het even om de toegangssleutel te verzamelen. Daarnaast moet u, wanneer u begint met het structureren van aanvragen, het eindpunt en de beheer-API-sleutel opgeven die worden gebruikt om elke aanvraag te verifiëren.
 
-### <a name="get-an-admin-api-key-and-url-for-azure-cognitive-search"></a>Een beheer-API-sleutel en URL voor Azure Cognitive Search ophalen
+### <a name="copy-an-admin-api-key-and-url-for-azure-cognitive-search"></a>Een beheer-API-sleutel en URL voor Azure Cognitive Search kopiëren
 
 1. [Meld u aan bij de Azure-portal](https://portal.azure.com/) en haal op de pagina **Overzicht** de naam van uw zoekservice op. U kunt uw servicenaam bevestigen door de URL van het eindpunt te controleren. Als uw eindpunt-URL `https://mydemo.search.windows.net` is, wordt uw service naam `mydemo`.
 
@@ -121,17 +129,17 @@ Voor alle aanvragen is een API-sleutel vereist in de header die naar uw service 
 
 ## <a name="2---set-up-postman"></a>2 - Postman instellen
 
-Start Postman en stel een HTTP-aanvraag in. Als u niet bekend bent met dit hulpprogramma, raadpleegt u [REST API's van Azure Cognitive Search verkennen in Postman](search-get-started-postman.md).
+Start Postman en stel een HTTP-aanvraag in. Als u niet bekend bent met dit hulpprogramma, raadpleegt u [REST API's van Azure Cognitive Search verkennen](search-get-started-rest.md).
 
-De aanvraagmethoden in deze zelfstudie zijn **POST** , **PUT** en **GET** . U gebruikt de methoden om vier API-aanroepen uit te voeren naar uw zoekservice: voor het maken van een gegevensbron, een vaardighedenset, een index en een indexeerfunctie.
+De aanvraagmethoden in deze zelfstudie zijn **POST**, **PUT** en **GET**. U gebruikt de methoden om vier API-aanroepen uit te voeren naar uw zoekservice: voor het maken van een gegevensbron, een vaardighedenset, een index en een indexeerfunctie.
 
 Stel bij Headers de optie Inhoudstype in op `application/json` en stel `api-key` in op de API-sleutel voor beheerders van uw Azure Cognitive Search-service. Zodra u de headers hebt ingesteld, kunt u ze gebruiken voor elke aanvraag in deze oefening.
 
-  ![URL en header voor Postman-aanvraag](media/search-get-started-postman/postman-url.png "URL en header voor Postman-aanvraag")
+  ![URL en header voor Postman-aanvraag](media/search-get-started-rest/postman-url.png "URL en header voor Postman-aanvraag")
 
 ## <a name="3---create-the-pipeline"></a>3: Maak de pijplijn
 
-In Azure Cognitive Search treedt AI-verwerking op tijdens het indexeren (of gegevensopname). In dit deel van het scenario worden vier objecten gemaakt: gegevensbron, indexdefinitie, vaardighedenset, indexeerfunctie. 
+In Azure Cognitive Search treedt verrijking op tijdens het indexeren (of gegevensopname). In dit deel van het scenario worden vier objecten gemaakt: gegevensbron, indexdefinitie, vaardighedenset, indexeerfunctie. 
 
 ### <a name="step-1-create-a-data-source"></a>Stap 1: Een gegevensbron maken
 
@@ -350,7 +358,7 @@ Een [Indexeerfunctie](/rest/api/searchservice/create-indexer) voert de pijplijn 
 
     ```json
     {
-      "name":"cog-search-demo-idxr",    
+      "name":"cog-search-demo-idxr",
       "dataSourceName" : "cog-search-demo-ds",
       "targetIndexName" : "cog-search-demo-idx",
       "skillsetName" : "cog-search-demo-ss",

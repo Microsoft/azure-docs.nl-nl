@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: spelluru
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: efb00d35d2b12e6b6a577483257debf4e797c0a0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9a47548fb1f94ac7fe9b561e798b010fa9176e9e
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88934035"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566296"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-cli"></a>Quickstart: Een event hub maken met behulp van Azure CLI
 
@@ -18,22 +18,15 @@ Azure Event Hubs is een big data-platform voor het streamen van gegevens en een 
 
 In deze snelstart maakt u een Event Hub met behulp van Azure CLI.
 
-## <a name="prerequisites"></a>Vereisten
-U hebt een Azure-abonnement nodig om deze snelstart te voltooien. Als u nog geen abonnement hebt, [maakt u een gratis account][] voordat u begint.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u ervoor kiest om de Azure CLI lokaal te installeren en te gebruiken, moet u voor deze zelfstudie de Azure CLI 2.0.4 of hoger uitvoeren. Voer `az --version` uit om uw versie te controleren. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren]( /cli/azure/install-azure-cli).
+- Voor dit artikel is versie 2.0.4 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
+## <a name="set-the-subscription-context"></a>De abonnementscontext instellen
 
 De volgende stappen zijn niet vereist als u opdrachten in Cloud Shell uitvoert. Als u de CLI lokaal uitvoert, moet u de volgende stappen uitvoeren om u aan te melden bij Azure en uw huidige abonnement in te stellen:
-
-Voer de volgende opdracht uit om u aan te melden bij Azure:
-
-```azurecli-interactive
-az login
-```
 
 Stel de context van het huidige abonnement in. Vervang `MyAzureSub` door de naam van het Azure-abonnement dat u wilt gebruiken:
 
@@ -79,7 +72,7 @@ In dit artikel hebt u een resourcegroep, een Event Hubs-naamruimte en een Event 
 - [C (alleen verzenden)](event-hubs-c-getstarted-send.md)
 - [Apache Storm (alleen ontvangen)](event-hubs-storm-getstarted-receive.md)
 
-[maakt u een gratis account]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[create a free account]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [Install the Azure CLI]: /cli/azure/install-azure-cli
 [az group create]: /cli/azure/group#az_group_create
 [fully qualified domain name]: https://wikipedia.org/wiki/Fully_qualified_domain_name

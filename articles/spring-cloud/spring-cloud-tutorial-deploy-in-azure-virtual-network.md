@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/21/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: e0fc50647e926ea919f70b888f3efc303713fe1e
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 6e2df9168b880e565ea9b70c82c2c0c1b55b4db8
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92631186"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94737240"
 ---
 # <a name="tutorial-deploy-azure-spring-cloud-in-azure-virtual-network-vnet-injection"></a>Zelfstudie: Azure Spring Cloud implementeren in een virtueel Azure-netwerk (VNet-injectie)
 
@@ -27,22 +27,23 @@ De implementatie maakt het volgende mogelijk:
 * Klanten kunnen de inkomende en uitgaande netwerkcommunicatie voor Azure Spring Cloud beheren
 
 ## <a name="prerequisites"></a>Vereisten
-U moet de Azure Spring Cloud-resourceprovider `Microsoft.AppPlatform` registreren volgens de instructies voor het [registreren van een resourceprovider in Azure Portal](../azure-resource-manager/management/resource-providers-and-types.md#azure-portal) of door de volgende Azure CLI-opdracht uit te voeren:
+U moet de Azure Spring Cloud-resourceproviders *Microsoft.AppPlatform* en *Microsoft.ContainerService* registreren volgens de instructies voor het [registreren van een resourceprovider in Azure Portal](../azure-resource-manager/management/resource-providers-and-types.md#azure-portal) of door de volgende Azure CLI-opdracht uit te voeren:
 
 ```azurecli
 az provider register --namespace Microsoft.AppPlatform
+az provider register --namespace Microsoft.ContainerService
 ```
 ## <a name="virtual-network-requirements"></a>Vereisten voor het virtuele netwerk
 Het virtuele netwerk waarnaar u het Azure Spring Cloud-service-exemplaar implementeert, moet voldoen aan de volgende vereisten:
 
-* **Locatie** : Het virtuele netwerk moet zich op dezelfde locatie bevinden als het Azure Spring Cloud-service-exemplaar.
-* **Abonnement** : Het virtuele netwerk moet zich in hetzelfde abonnement bevinden als het Azure Spring Cloud-service-exemplaar.
-* **Subnetten** : Het virtuele netwerk moet twee subnetten bevatten die zijn toegewezen aan een Azure Spring Cloud-service-exemplaar: 
+* **Locatie**: Het virtuele netwerk moet zich op dezelfde locatie bevinden als het Azure Spring Cloud-service-exemplaar.
+* **Abonnement**: Het virtuele netwerk moet zich in hetzelfde abonnement bevinden als het Azure Spring Cloud-service-exemplaar.
+* **Subnetten**: Het virtuele netwerk moet twee subnetten bevatten die zijn toegewezen aan een Azure Spring Cloud-service-exemplaar: 
     * Een voor de runtime van de service
     * Een voor uw Spring Boot-microservicetoepassingen. 
     * Er is een een-op-een-relatie tussen deze subnetten en een Azure Spring Cloud-service-exemplaar. U moet een nieuw subnet gebruiken voor elk service-exemplaar dat u implementeert en elk subnet kan slechts één service-exemplaar bevatten.
-* **Adresruimte** : Eén CIDR-blok maximaal /28 voor het subnet van de serviceruntime en een ander CIDR-blok maximaal /24 voor het subnet van de Spring Boot-microservicetoepassingen.
-* **Routeringstabel** : Aan de subnetten mag geen bestaande routeringstabel zijn gekoppeld.
+* **Adresruimte**: Eén CIDR-blok maximaal /28 voor het subnet van de serviceruntime en een ander CIDR-blok maximaal /24 voor het subnet van de Spring Boot-microservicetoepassingen.
+* **Routeringstabel**: Aan de subnetten mag geen bestaande routeringstabel zijn gekoppeld.
 
 In de volgende procedures wordt de installatie van het virtuele netwerk voor het Azure Spring Cloud-exemplaar beschreven.
 

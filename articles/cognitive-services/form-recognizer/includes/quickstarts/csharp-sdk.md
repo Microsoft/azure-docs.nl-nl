@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/06/2020
 ms.author: pafarley
-ms.openlocfilehash: d425853b04a1d6f3b1f818e63154eadd1c7b3a2d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 86803e1d7ef77467fd870221c0bc2c1c006ae479
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94680867"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94816572"
 ---
 > [!IMPORTANT]
 > De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud.
@@ -145,6 +145,9 @@ Maak onder **Hoofd** een nieuwe methode met de naam `AuthenticateClient`. U zult
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_auth)]
 
+Herhaal de bovenstaande stappen voor een nieuwe methode om een trainingsclient te verifiëren.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_auth_training)]
 
 ## <a name="get-assets-for-testing"></a>Assets voor testen ophalen 
 

@@ -8,14 +8,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 08/20/2020
+ms.date: 11/17/2020
 ms.author: banders
-ms.openlocfilehash: 550be6c10402398b62af307281660b93981a0df3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: cad3082981bcfc699bc230badf44e2ffc2e1bed3
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91308959"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94744422"
 ---
 # <a name="reactivate-a-disabled-azure-subscription"></a>Een uitgeschakeld Azure-abonnement opnieuw activeren
 
@@ -54,6 +54,10 @@ Als u de accountbeheerder bent en een afzonderlijk abonnement met tarieven voor 
     ![Schermopname met koppelingen voor opnieuw activeren in het rechterdeelvenster](./media/subscription-disabled/reactivate-sub.png)
 
 Voor andere abonnementstypen [neemt u contact op met de ondersteuning](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) om uw abonnement opnieuw te activeren.
+
+## <a name="after-reactivation"></a>Na het opnieuw activeren
+
+Nadat uw abonnement opnieuw is geactiveerd, kan er vertraging optreden bij het maken of beheren van resources. Als de vertraging langer duurt dan 30 minuten, neemt u contact op met [ondersteuning voor Azure-facturering](https://go.microsoft.com/fwlink/?linkid=2083458) voor hulp. De meeste Azure-resources worden automatisch hervat en vereisen geen actie. We raden u echter aan om uw Azure-serviceresources te controleren en de resources die niet automatisch worden hervat, opnieuw te starten.
 
 ## <a name="need-help-contact-us"></a>Hulp nodig? Neem contact met ons op.
 

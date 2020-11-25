@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 10/22/2020
 ms.author: amikuma
 ms.custom: aaddev, scenarios:getting-started, languages:js, devx-track-js
-ms.openlocfilehash: e223b5ae072a323ad56ed396c06580fea9b8b7ab
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 52e6c70b76b83c73059dc887eaefe8403befac13
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335244"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594229"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-node-web-app-using-the-auth-code-flow"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een Node.js-web-app met behulp van de verificatiecodestroom
 
-In deze quickstart voert u een codevoorbeeld uit waarin wordt getoond hoe een Node.js-web-app gebruikers van persoonlijke accounts, werkaccounts en schoolaccounts kan aanmelden met behulp van de verificatiecodestroom. In het codevoorbeeld ziet u ook hoe u een toegangstoken krijgt om een web-API aan te roepen, in dit geval de Microsoft Graph API. Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een Node.js-web-app met behulp van de autorisatiecodestroom. Het codevoorbeeld laat zien hoe u een toegangstoken kunt verkrijgen om Microsoft Graph API aan te roepen. 
+
+Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
 In deze quickstart wordt de Microsoft Authentication Library voor Node.js (MSAL Node) gebruikt met de verificatiecodestroom.
 
@@ -65,7 +67,7 @@ In deze quickstart wordt de Microsoft Authentication Library voor Node.js (MSAL 
 > [!div renderon="docs"]
 > #### <a name="step-3-configure-your-node-app"></a>Stap 3: De Node-app configureren
 >
-> Pak het project uit en open de map *ms-identity-node-main* en open vervolgens het *index.js* -bestand.
+> Pak het project uit en open de map *ms-identity-node-main* en open vervolgens het *index.js*-bestand.
 > Stel de `clientID` in met de **Toepassings-id (client)** .
 > Stel de `clientSecret` in met de **Waarde** van het **Clientgeheim**.
 >

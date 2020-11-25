@@ -1,6 +1,6 @@
 ---
 title: Zelfstudie - Virtuele machines beheren met de CLI
-description: In deze zelfstudie leert u hoe u de Azure CLI gebruikt voor het beheren van virtuele Azure-machines door RBAC, beleid, vergrendelingen en tags toe te passen.
+description: In deze zelfstudie leert u hoe u Azure CLI gebruikt voor het beheren van virtuele Azure-machines door Azure-RBAC, beleid, vergrendelingen en tags toe te passen.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: tfitzmac
@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 09/30/2019
 ms.author: tomfitz
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 867349a321f2909d8e568be7e482a5517ddb50b9
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 565315ad78a2994f44973c4fdcd4519ab9e03ea8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517951"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831783"
 ---
 # <a name="tutorial-learn-about-linux-virtual-machine-management-with-azure-cli"></a>Zelfstudie: Meer informatie over het beheren van virtuele Linux-machines met Azure CLI
 
@@ -41,7 +41,7 @@ az group create --name myResourceGroup --location "East US"
 
 De resourcegroep is momenteel leeg.
 
-## <a name="role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer
+## <a name="azure-role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer voor Azure
 
 U wilt er zeker van zijn dat gebruikers in uw organisatie het juiste toegangsniveau tot deze resources hebben. U wilt gebruikers geen onbeperkte toegang verlenen, maar u moet er ook voor zorgen dat ze hun werk kunnen doen. Met [Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](../../role-based-access-control/overview.md) kunt u beheren welke gebruikers gemachtigd zijn specifieke acties binnen een bepaald bereik uit te voeren.
 

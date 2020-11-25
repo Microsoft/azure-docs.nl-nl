@@ -11,11 +11,11 @@ ms.date: 10/26/2020
 ms.author: banders
 ms.custom: contentperfq2
 ms.openlocfilehash: c4a9a981017becd0d9343d9c287a4fe9341d7c43
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92678126"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006146"
 ---
 # <a name="tutorial-review-your-individual-azure-subscription-bill"></a>Zelfstudie: De factuur van uw individuele Azure-abonnement controleren
 
@@ -49,19 +49,19 @@ Het moet meer dan 30 dagen geleden zijn dat u zich geabonneerd hebt op Azure. Az
 
 De eerste stap voor het vergelijken van gebruik en kosten is het downloaden van uw factuur- en gebruiksbestanden. In het uitgebreide CSV-gebruiksbestand worden uw kosten weergegeven per factureringsperiode en dagelijks gebruik. Het bevat geen belastinginformatie. Als u de bestanden wilt downloaden, moet u een accountbeheerder zijn of de rol van eigenaar hebben.
 
-Typ in de Azure-portal *abonnementen* in het zoekvak en klik vervolgens op **Abonnementen** .
+Typ in de Azure-portal *abonnementen* in het zoekvak en klik vervolgens op **Abonnementen**.
 
 [![Ga naar Abonnementen](./media/review-individual-bill/navigate-subscriptions.png)](./media/review-individual-bill/navigate-subscriptions.png#lightbox)
 
 Klik in de lijst met abonnementen op het abonnement.
 
-Klik onder **Facturering** op **Facturen** .
+Klik onder **Facturering** op **Facturen**.
 
 Zoek in de lijst met facturen naar de factuur die u wilt downloaden en klik vervolgens op het downloadsymbool. Mogelijk moet u de periode wijzigen om oudere facturen weer te geven. Het kan enkele minuten duren voordat het bestand met gebruiksgegevens en de factuur zijn gegenereerd.
 
 ![Schermopname van de factureringsperioden, de downloadoptie en de totale kosten voor elke factureringsperiode](./media/review-individual-bill/download-invoice.png)
 
-Klik in het venster Gebruik + kosten downloaden op **CSV-bestand downloaden** en **Factuur downloaden** .
+Klik in het venster Gebruik + kosten downloaden op **CSV-bestand downloaden** en **Factuur downloaden**.
 
 ![Schermopname met de pagina voor factuur en gebruik downloaden](./media/review-individual-bill/usageandinvoice.png)
 
@@ -77,7 +77,7 @@ Vervolgens controleert u de kosten. De factuur bevat waarden voor belastingen en
 
 ![Voorbeeld van Azure-factuur](./media/review-individual-bill/invoice-usage-charge.png)
 
-Open het CSV-bestand met gebruiksgegevens dat u hebt gedownload. Tel aan het einde van het bestand de waarde op voor alle items in de kolom *Cost* .
+Open het CSV-bestand met gebruiksgegevens dat u hebt gedownload. Tel aan het einde van het bestand de waarde op voor alle items in de kolom *Cost*.
 
 ![Voorbeeld van gebruiksbestand met opgetelde kosten](./media/review-individual-bill/usage-file-usage-charges.png)
 
@@ -98,7 +98,7 @@ Uw gebruikskosten worden weergegeven op meterniveau. De volgende termen betekene
 |Tarief | EffectivePrice|
 | Waarde | Kosten |
 
-In het gedeelte **Gebruikskosten** van uw factuur ziet u de totale waarde (kosten) voor elke meter die tijdens uw factureringsperiode is verbruikt. In de volgende afbeelding ziet u bijvoorbeeld gebruikskosten voor de Azure Storage-service voor de resource *P10 Disks* .
+In het gedeelte **Gebruikskosten** van uw factuur ziet u de totale waarde (kosten) voor elke meter die tijdens uw factureringsperiode is verbruikt. In de volgende afbeelding ziet u bijvoorbeeld gebruikskosten voor de Azure Storage-service voor de resource *P10 Disks*.
 
 ![Factuur gebruikskosten](./media/review-individual-bill/invoice-usage-charges.png)
 
@@ -110,7 +110,7 @@ De opgetelde waarde voor *Cost* moet exact overeenkomen met het bedrag bij *Gebr
 
 ## <a name="compare-billed-charges-and-usage-in-cost-analysis"></a>Gefactureerde kosten en gebruik vergelijken in kostenanalyse
 
-Een kostenanalyse in de Azure-portal kan ook helpen om uw kosten te controleren. Als u een beknopt overzicht wilt van het gefactureerde gebruik en de bijbehorende kosten, selecteert u uw abonnement op de pagina Abonnementen in de Azure-portal. Klik vervolgens op **Kostenanalyse** en klik daarna in de lijst met weergaven op **Factuurgegevens** .
+Een kostenanalyse in de Azure-portal kan ook helpen om uw kosten te controleren. Als u een beknopt overzicht wilt van het gefactureerde gebruik en de bijbehorende kosten, selecteert u uw abonnement op de pagina Abonnementen in de Azure-portal. Klik vervolgens op **Kostenanalyse** en klik daarna in de lijst met weergaven op **Factuurgegevens**.
 
 ![Voorbeeld met selectie van Factuurgegevens](./media/review-individual-bill/cost-analysis-select-invoice-details.png)
 
@@ -157,7 +157,7 @@ In het CSV-gebruiksbestand kunt u de meters zien die zijn gebruikt voor het bere
 
 <a name="payment"></a>
 
-Als u een creditcard hebt ingesteld als uw betalingswijze, wordt het bedrag automatisch binnen 10 dagen na het einde van de factureringsperiode in rekening gebracht. Op uw creditcardoverzicht wordt het regelitem weergegeven als **MSFT Azure** .
+Als u een creditcard hebt ingesteld als uw betalingswijze, wordt het bedrag automatisch binnen 10 dagen na het einde van de factureringsperiode in rekening gebracht. Op uw creditcardoverzicht wordt het regelitem weergegeven als **MSFT Azure**.
 
 Zie [Een creditcard toevoegen, bijwerken of verwijderen voor Azure](../manage/change-credit-card.md) als u de creditcard die wordt gebruikt, wilt wijzigen.
 

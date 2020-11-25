@@ -1,20 +1,20 @@
 ---
 title: 'Zelfstudie: De Go-extensie voor Visual Studio Code instellen (preview)'
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het instellen van de Visual Studio Code Azure Machine Learning-extensie.
+description: Meer informatie over het installeren en uitvoeren van trainingsscripts met de Azure Machine Learning Visual Studio Code-extensie.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 07/09/2020
-ms.openlocfilehash: 48fb2ce3672634af202500ccb256e7730933fff8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/16/2020
+ms.openlocfilehash: f485c12bf82dde798a77175a3fab4d76488150c3
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86199761"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701198"
 ---
 # <a name="set-up-azure-machine-learning-visual-studio-code-extension-preview"></a>Azure Machine Learning Visual Studio Code-extensie (preview) instellen
 

@@ -12,12 +12,12 @@ ms.date: 09/15/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperfq2
-ms.openlocfilehash: 0ec70963dd7f464ae4e72c3bf79e06ebfb5238fc
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: 5e2f323f705a891f06cee1d25779351d02a91572
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616175"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695262"
 ---
 # <a name="tutorial---build-a-scim-endpoint-and-configure-user-provisioning-with-azure-ad"></a>Zelfstudie: een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD
 
@@ -154,6 +154,7 @@ Volgens de [SCIM 2.0-protocolspecificatie](http://www.simplecloud.info/#Specific
 * Biedt ondersteuning voor het uitvoeren van query's op gebruikers of groepen, volgens sectie [3.4.2 van het SCIM-protocol](https://tools.ietf.org/html/rfc7644#section-3.4.2).  Gebruikers worden standaard opgehaald op basis van `id` en query’s worden uitgevoerd op basis van `username` en de `externalId`. Groepen worden opgehaald door query’s uit te voeren op basis van `displayName`.  
 * Biedt ondersteuning voor het uitvoeren van query's op de gebruiker op basis van de id en beheerder, volgens sectie 3.4.2 van het SCIM-protocol.  
 * Ondersteunt het opvragen van groepen op basis van id en lid, volgens sectie 3.4.2 van het SCIM-protocol.  
+* Biedt ondersteuning voor het filter [excludedAttributes=members](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#get-group) wanneer u een query uitvoert op de groepsresource, volgens sectie 3.4.2.5 van het SCIM-protocol.
 * Hiermee wordt één Bearer-token geaccepteerd voor verificatie en autorisatie van Azure AD voor uw toepassing.
 * Ondersteunt het voorlopig verwijderen van een gebruiker `active=false` en het herstellen van de gebruiker `active=true` (het gebruikersobject moet worden geretourneerd in een aanvraag, ongeacht of de gebruiker wel of niet actief is). De enige keer dat een gebruiker niet wordt geretourneerd, is wanneer deze permanent wordt verwijderd uit de toepassing. 
 
@@ -762,11 +763,11 @@ De open source .NET core [referentiecode](https://aka.ms/SCIMReferenceCode) die 
 
 De oplossing bestaat uit twee projecten _Microsoft.SCIM_ en _Microsoft.SCIM.WebHostSample_.
 
-Het _Microsoft.SCIM_ -project is de bibliotheek waarin de onderdelen van de webservice worden gedefinieerd die voldoen aan de SCIM-specificatie. Het declareert de interface _Microsoft.SCIM.IProvider_ , aanvragen worden omgezet in aanroepen naar de methoden van de provider, die vervolgens kunnen worden geprogrammeerd om te werken in een identiteitsopslag.
+Het _Microsoft.SCIM_-project is de bibliotheek waarin de onderdelen van de webservice worden gedefinieerd die voldoen aan de SCIM-specificatie. Het declareert de interface _Microsoft.SCIM.IProvider_, aanvragen worden omgezet in aanroepen naar de methoden van de provider, die vervolgens kunnen worden geprogrammeerd om te werken in een identiteitsopslag.
 
 ![Uitsplitsing: Een aanvraag die is omgezet in aanroepen naar de methoden van de provider](media/use-scim-to-provision-users-and-groups/scim-figure-3.png)
 
-Het _Microsoft.SCIM.WebHostSample_ -project is een Visual Studio ASP.NET Core-webtoepassing, op basis van een _leeg_ sjabloon. Hiermee kan de voorbeeldcode worden geïmplementeerd als standalone, gehost in containers of in Internet Information Services. Het implementeert ook de _Microsoft.SCIM.IProvider_ -interface waarbij klassen in het geheugen worden bewaard als een voorbeeld van een identiteitsopslag.
+Het _Microsoft.SCIM.WebHostSample_-project is een Visual Studio ASP.NET Core-webtoepassing, op basis van een _leeg_ sjabloon. Hiermee kan de voorbeeldcode worden geïmplementeerd als standalone, gehost in containers of in Internet Information Services. Het implementeert ook de _Microsoft.SCIM.IProvider_-interface waarbij klassen in het geheugen worden bewaard als een voorbeeld van een identiteitsopslag.
 
 ```csharp
     public class Startup
@@ -809,7 +810,7 @@ Gebruik de volgende link voor meer informatie over HTTPS in ASP.NET Core: [HTTPS
 
 Aanvragen van Azure Active Directory bevatten een OAuth 2.0 Bearer-token. Alle services die de aanvraag ontvangen, moeten de uitgever verifiëren als Azure Active Directory voor de verwachte Azure Active Directory-tenant.
 
-In het token wordt de uitgever geïdentificeerd aan de hand van een ISS-claim, zoals `"iss":"https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/"`. In dit voorbeeld is het basisadres van de claimwaarde `https://sts.windows.net`, Azure Active Directory, als de uitgever geïdentificeerd, terwijl het relatief adressegment, _cbb1a5ac-f33b-45fa-9bf5-f37db0fed422_ , een unieke id is van de Azure Active Directory Tenant waarvoor het token is uitgegeven.
+In het token wordt de uitgever geïdentificeerd aan de hand van een ISS-claim, zoals `"iss":"https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/"`. In dit voorbeeld is het basisadres van de claimwaarde `https://sts.windows.net`, Azure Active Directory, als de uitgever geïdentificeerd, terwijl het relatief adressegment, _cbb1a5ac-f33b-45fa-9bf5-f37db0fed422_, een unieke id is van de Azure Active Directory Tenant waarvoor het token is uitgegeven.
 
 Het doel van het token is de toepassingssjabloon-ID voor de toepassing in de galerie. Elk van de toepassingen die in één tenant zijn geregistreerd, kan dezelfde `iss`-claim ontvangen met SCIM-aanvragen. De toepassingssjabloon-ID voor alle aangepaste apps is _8adf8e6e-67b2-4cf2-A259-e3dc5476c621_. Het token dat is gegenereerd door de Azure AD-inrichtingsservice mag alleen worden gebruikt voor het testen. Het mag niet worden gebruikt in productie-omgevingen.
 
@@ -1148,8 +1149,8 @@ Toepassingen die ondersteuning bieden voor het SCIM-profiel dat in dit artikel w
 7. Voer in het veld **Tenant-URL** de URL in van het SCIM-eindpunt van de toepassing. Voorbeeld: `https://api.contoso.com/scim/`
 8. Als het SCIM-eindpunt een OAuth Bearer-token van een andere uitgever dan Azure AD vereist, kopieert u het vereiste OAuth Bearer-token naar het optionele veld **Geheime token**. Als dit veld leeg blijft, voegt Azure AD aan elke aanvraag een OAuth Bearer-token toe dat is uitgegeven door Azure AD. Apps die gebruikmaken van Azure AD als id-provider kunnen dit door Azure AD uitgegeven token valideren. 
    > [!NOTE]
-   > Het wordt * *_niet_* aanbevolen om dit veld leeg te laten en te vertrouwen op een token dat door Azure AD wordt gegenereerd. Deze optie is voornamelijk beschikbaar voor testdoeleinden.
-9. Selecteer *Verbinding testen* * om Azure Active Directory verbinding te laten maken met het SCIM-eindpunt. Als de poging mislukt, wordt er informatie over de fout weergegeven.  
+   > Het wordt **_niet_* aanbevolen om dit veld leeg te laten en te vertrouwen op een token dat door Azure AD wordt gegenereerd. Deze optie is voornamelijk beschikbaar voor testdoeleinden.
+9. Selecteer *Verbinding testen** om Azure Active Directory verbinding te laten maken met het SCIM-eindpunt. Als de poging mislukt, wordt er informatie over de fout weergegeven.  
 
     > [!NOTE]
     > **Verbinding testen** voert een query uit op het SCIM-eindpunt voor een gebruiker die niet bestaat, met behulp van een willekeurige GUID als de overeenkomende eigenschap die is geselecteerd in de Azure AD-configuratie. Het verwachte juiste antwoord is HTTP 200 OK met een leeg SCIM ListResponse-bericht.

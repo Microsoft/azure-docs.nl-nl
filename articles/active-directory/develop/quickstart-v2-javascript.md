@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 1f5281ead3c0487b6052859df3b33fa6ddaaf45a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f2a01c4e4d364494d271fa676bca5bfac2677395
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91613319"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592744"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA
 
-In deze quickstart gebruikt u een codevoorbeeld om te leren hoe een Javascript-toepassing met één pagina (SPA) gebruikers van persoonlijke Microsoft-accounts, werkaccounts en schoolaccounts kan aanmelden. Een JavaScript-SPA-verificatie kan ook een toegangstoken krijgen om de Microsoft Graph API of een web-API aan te roepen. Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld en de Microsoft Graph API kan worden aangeroepen met een SPA-toepassing (JavaScript-toepassing met één pagina). Het codevoorbeeld laat ook zien hoe u een toegangstoken kunt verkrijgen om de Microsoft Graph API of willekeurige web-API aan te roepen.
+
+Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -56,7 +58,7 @@ In deze quickstart gebruikt u een codevoorbeeld om te leren hoe een Javascript-t
 > 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 > 1. Selecteer **Registreren**. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
 > 1. Voor deze quickstart moet de [Impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld. Selecteer in het linkerdeelvenster van de geregistreerde toepassing de optie **Verificatie**.
-> 1. Selecteer **Een platform toevoegen**onder **Platformconfiguraties**. Er opent een venster aan de linkerkant. Selecteer daar de regio **Webtoepassingen**.
+> 1. Selecteer **Een platform toevoegen** onder **Platformconfiguraties**. Er opent een venster aan de linkerkant. Selecteer daar de regio **Webtoepassingen**.
 > 1. Stel links de waarde van **Omleidings-URI** in op `http://localhost:3000/`. Selecteer vervolgens **Toegangstoken** en **Id-token**.
 > 1. Selecteer **Configureren**.
 
@@ -74,10 +76,10 @@ In deze quickstart gebruikt u een codevoorbeeld om te leren hoe een Javascript-t
 > [!div renderon="docs"]
 > Als u het project wilt uitvoeren met een webserver met behulp van Node.js, [downloadt u de kernprojectbestanden](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip).
 
-> [!div renderon="portal"]
+> [!div renderon="portal" class="sxs-lookup"]
 > Het project uitvoeren met een webserver met behulp van Node.js
 
-> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [!div renderon="portal" id="autoupdate" class="sxs-lookup nextstepaction"]
 > [Het codevoorbeeld downloaden](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip)
 
 > [!div renderon="docs"]
@@ -102,7 +104,7 @@ In deze quickstart gebruikt u een codevoorbeeld om te leren hoe een Javascript-t
 >
 >```
 
-> [!div renderon="portal"]
+> [!div class="sxs-lookup" renderon="portal"]
 > > [!NOTE]
 > > `Enter_the_Supported_Account_Info_Here`
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/27/2020
 ms.author: memildin
-ms.openlocfilehash: c0333f9faeae99ee83beda381f77f4f95b0a9192
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 79dcc645ecff00b3189dc90dcf34e042a78ed318
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636114"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94949323"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -445,7 +445,7 @@ Nadat de functie voor beveiligingsbeleid voor pods (preview) is afgeschaft, moet
 E-mailmeldingen met betrekking tot beveiligingswaarschuwingen zijn als volgt verbeterd: 
 
 - De mogelijkheid voor het verzenden van e-mailmeldingen over waarschuwingen voor alle ernstniveaus is toegevoegd
-- De mogelijkheid om gebruikers op de hoogte te stellen van verschillende RBAC-rollen in het abonnement is toegevoegd
+- De mogelijkheid om gebruikers op de hoogte te stellen van verschillende Azure-rollen in het abonnement is toegevoegd
 - We informeren abonnementseigenaren standaard proactief over waarschuwingen met een hoge urgentie (die een hoge waarschijnlijkheid hebben een echte inbreuk te zijn)
 - Het telefoonnummerveld is verwijderd van de configuratiepagina voor e-mailmeldingen
 

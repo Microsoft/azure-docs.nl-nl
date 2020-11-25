@@ -1,7 +1,7 @@
 ---
 title: 'Zelfstudie: Autoprijzen voorspellen met de ontwerpfunctie'
 titleSuffix: Azure Machine Learning
-description: Ontdek hoe u een machine learning-model traint, een score geeft en implementeert aan de hand van een slepen-en-neerzetteninterface. Deze zelfstudie is deel 1 van een tweedelige serie over het voorspellen van autoprijzen aan de hand van lineaire regressie.
+description: Train het machine learning-model om de prijzen van auto's te voorspellen met behulp van lineaire regressie. Deze zelfstudie is deel één van een serie van twee.
 author: peterclu
 ms.author: peterlu
 services: machine-learning
@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 09/28/2020
 ms.custom: designer
-ms.openlocfilehash: d9422cfb9bd8e5539f1a9b43d6fb7b137778f3d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0475e7a7b9bb40e77fe23362ff098350037bdd30
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91404915"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94555254"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer"></a>Zelfstudie: Autoprijzen voorspellen met de ontwerpfunctie
 
@@ -221,7 +221,7 @@ Train het model door hiervoor een gegevensset te gebruiken waarin de prijs een v
     > [!IMPORTANT]
     > Controleer of de linkeruitvoerpoort van **Split Data** inderdaad aan **Train Model** wordt gekoppeld. De linkerpoort bevat de trainingsset. De rechterpoort bevat de testset.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png"alt-text="Selecteer-kolom":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png"alt-text="Schermopname met de juiste configuratie van de module Train Model. De module Linear Regression wordt gekoppeld aan de linkerpoort van de module Train Model en de module Split Data wordt gekoppeld aan de rechterpoort van Train Model.":::
 
 1. Selecteer de module **Train Model**.
 
@@ -236,7 +236,7 @@ Train het model door hiervoor een gegevensset te gebruiken waarin de prijs een v
 
     Uw pijplijn ziet er als volgt uit:
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png"alt-text="Selecteer-kolom":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png"alt-text="Schermopname met de juiste configuratie van de pijplijn nadat de module Train Model is toegevoegd.":::
 
 ### <a name="add-the-score-model-module"></a>De module Score Model toevoegen
 
@@ -256,7 +256,7 @@ Gebruik de module **Evaluate Model** om te evalueren hoe goed uw model heeft ges
 
     De uiteindelijke pijplijn ziet er als volgt uit:
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png"alt-text="Selecteer-kolom":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png"alt-text="Schermopname met de juiste configuratie van de pijplijn.":::
 
 ## <a name="submit-the-pipeline"></a>De pijplijn indienen
 
@@ -285,7 +285,7 @@ Nadat de uitvoering is voltooid, kunt u de resultaten van de pijplijnuitvoering 
 
     Hier ziet u de voorspelde prijzen en de daadwerkelijke prijzen van de testgegevens.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png"alt-text="Selecteer-kolom":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png"alt-text="Schermopname van de uitvoervisualisatie, waarin de kolom Gescoorde label is gemarkeerd":::
 
 ### <a name="evaluate-models"></a>Modellen evalueren
 

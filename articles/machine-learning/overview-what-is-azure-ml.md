@@ -1,6 +1,6 @@
 ---
 title: Wat is Azure Machine Learning?
-description: Overzicht van Azure Machine Learning, een geïntegreerde end-to-end gegevenswetenschapoplossing die professionele gegevenswetenschappers in staat stelt geavanceerde analyseapplicaties te ontwikkelen, hiermee te experimenteren en deze op cloudschaal te implementeren.
+description: Azure Machine Learning is een geïntegreerde Data Science-oplossing voor datawetenschappers en MLops om ML-toepassingen te modelleren en te implementeren op cloudschaal.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 4dcc1d755f4fe11dda69f84466d3e958ca981ddf
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: af38f68a9709b21989ba787fb5b2c623e07dc440
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316285"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541280"
 ---
 # <a name="what-is-azure-machine-learning"></a>Wat is Azure Machine Learning?
 
@@ -111,10 +111,10 @@ Zie [Volgende stappen](#next-steps) om aan de slag te gaan met Azure Machine Lea
 
 Azure Machine Learning werkt met andere services op het Azure-platform en kan ook worden geïntegreerd met opensource-tools zoals Git en MLFlow.
 
-+ Rekendoelen zoals __Azure Kubernetes Service__ , __Azure Container Instances__ , __Azure Databricks__ , __Azure Data Lake Analytics__ en __Azure HDInsight__. Zie [Wat zijn rekendoelen?](concept-compute-target.md) voor meer informatie over rekendoelen.
++ Rekendoelen zoals __Azure Kubernetes Service__, __Azure Container Instances__, __Azure Databricks__, __Azure Data Lake Analytics__ en __Azure HDInsight__. Zie [Wat zijn rekendoelen?](concept-compute-target.md) voor meer informatie over rekendoelen.
 + __Azure Event Grid__. Zie [Consume Azure Machine Learning events](./how-to-use-event-grid.md) (Azure Machine Learning-gebeurtenissen gebruiken) voor meer informatie.
 + __Azure Monitor__. Zie [Monitoring Azure Machine Learning](monitor-azure-machine-learning.md) (Azure Machine Learning bewaken) voor meer informatie.
-+ Gegevensarchieven zoals __Azure Storage-accounts__ , __Azure Data Lake Storage__ , __Azure SQL Database__ , __Azure Database for PostgreSQL__ en __Azure Open Datasets__. Zie [Access data in Azure storage services](how-to-access-data.md) (Toegang tot gegevens in Azure-opslagservices) en [Gegevenssets maken met Azure Open Datasets](how-to-create-register-datasets.md) voor meer informatie.
++ Gegevensarchieven zoals __Azure Storage-accounts__, __Azure Data Lake Storage__, __Azure SQL Database__, __Azure Database for PostgreSQL__ en __Azure Open Datasets__. Zie [Access data in Azure storage services](how-to-access-data.md) (Toegang tot gegevens in Azure-opslagservices) en [Gegevenssets maken met Azure Open Datasets](how-to-create-register-datasets.md) voor meer informatie.
 + __Virtuele netwerken van Azure__. Zie [Overzicht van isolatie van virtueel netwerk en privacy](how-to-network-security-overview.md).
 + __Azure Pipelines__. Zie [Machine Learning-modellen trainen en implementeren](/azure/devops/pipelines/targets/azure-machine-learning) voor meer informatie.
 + __Logboeken van Git-opslagplaats__. Zie [Git-integratie](concept-train-model-git-integration.md) voor meer informatie.

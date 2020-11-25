@@ -1,15 +1,15 @@
 ---
 title: Uw resources organiseren met beheergroepen - Azure Governance
 description: Informatie over de managementgroepen, hoe hun machtigingen werken en hoe u ze gebruikt.
-ms.date: 09/22/2020
+ms.date: 11/17/2020
 ms.topic: overview
 ms.custom: contperfq1
-ms.openlocfilehash: be3369369f28930fd1ecad295a4dad4d14e75cd3
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: c48361e7f3d67c6d3eec40d5acb47917f7835db5
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951873"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699590"
 ---
 # <a name="what-are-azure-management-groups"></a>Wat zijn Azure-beheergroepen?
 
@@ -150,7 +150,7 @@ Roldefinities kunnen overal binnen de hiërarchie van de beheergroep worden toeg
 
 Laten we bijvoorbeeld eens kijken naar een kleine sectie van een hiërarchie voor een besturingselement.
 
-:::image type="complex" source="./media/subtree.png" alt-text="Diagram van een voorbeeld van een hiërarchie voor beheergroepen." border="false":::
+:::image type="complex" source="./media/subtree.png" alt-text="Diagram van een subset van het voorbeeld van een hiërarchie voor beheergroepen." border="false":::
    Het diagram is gericht op de hoofdbeheergroep met onderliggende IT- en Marketingbeheergroepen. De IT-beheergroep heeft één onderliggende beheergroep met de naam Productie terwijl de Marketingbeheergroep twee onderliggende abonnementen van de gratis proefversie heeft.
 :::image-end:::
 
@@ -171,7 +171,11 @@ Er bestaan beperkingen wanneer u aangepaste rollen gebruikt voor beheergroepen.
  - U kunt slechts één beheergroep definiëren in het toewijsbare bereik van een nieuwe rol. Deze beperking bestaat om het aantal situaties te verminderen waarin de koppeling tussen roldefinities en roltoewijzingen wordt verbroken. Deze situatie treedt op wanneer een abonnement of beheergroep met een roltoewijzing wordt verplaatst naar een andere bovenliggende site die niet over de roldefinitie beschikt.  
  - Resourceprovider-gegevensvlakacties kunnen niet worden gedefinieerd in de aangepaste rollen van een beheergroep. Deze beperking bestaat omdat er een latentieprobleem is met het bijwerken van de gegevensvlak-resourceproviders.
    Er wordt aan dit latentieprobleem gewerkt en deze acties worden uitgeschakeld in de roldefinitie om risico's te beperken.
- - De Azure Resource Manager valideert niet het bestaan van de beheergroep in het toewijsbare bereik van de roldefinitie. Als er een typfout of een onjuiste beheergroep-id staat, wordt de roldefinitie toch gemaakt.  
+ - De Azure Resource Manager valideert niet het bestaan van de beheergroep in het toewijsbare bereik van de roldefinitie. Als er een typfout of een onjuiste beheergroep-id staat, wordt de roldefinitie toch gemaakt.
+
+> [!IMPORTANT]
+> Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads.
+> Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="moving-management-groups-and-subscriptions"></a>Beheergroepen en abonnementen verplaatsen 
 
@@ -194,7 +198,7 @@ Als de rol Eigenaar van het abonnement wordt overgenomen van de huidige beheergr
 
 Beheergroepen worden ondersteund door het [Azure-activiteitenlogboek](../../azure-monitor/platform/platform-logs-overview.md). U kunt op dezelfde centrale locatie als andere Azure-resources zoeken naar alle gebeurtenissen die in een beheergroep plaatsvinden. Zo kunt u alle gewijzigde rol- of beleidstoewijzingen binnen een bepaalde beheergroep bekijken.
 
-:::image type="content" source="./media/al-mg.png" alt-text="Diagram van een voorbeeld van een hiërarchie voor beheergroepen." border="false":::
+:::image type="content" source="./media/al-mg.png" alt-text="Schermopname van activiteitenlogboeken en bewerkingen met betrekking tot de geselecteerde beheergroep." border="false":::
 
 Bij het uitvoeren van query's op beheergroepen buiten de Azure-portal, ziet het doelbereik voor beheergroepen er als volgt uit: **/ providers/Microsoft.Management/managementGroups/{yourMgID}** .
 

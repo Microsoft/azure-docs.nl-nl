@@ -1,6 +1,6 @@
 ---
-title: Een quickstart voor het laden van gegevens in SQL-pools met de kopieeractiviteit
-description: Azure Synapse Analytics gebruiken om gegevens te laden in een SQL-pool
+title: 'Snelstart: gegevens laden in een toegewezen SQL-pool met de kopieeractiviteit'
+description: Gebruik de kopieeractiviteitspijplijn in Azure Synapse Analytics om gegevens te laden in een toegewezen SQL-pool.
 services: synapse-analytics
 ms.author: jingwang
 author: linda33wj
@@ -10,18 +10,18 @@ ms.service: synapse-analytics
 ms.topic: quickstart
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: 12b5530ccf154220b11f9d1286d629caf2209475
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 542fde3ac951bf60d999361dc114491515fb9528
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280757"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94735242"
 ---
-# <a name="quickstart-load-data-into-sql-pool-using-copy-activity"></a>Quickstart: Gegevens laden in een SQL-pool met de kopieeractiviteit
+# <a name="quickstart-load-data-into-dedicated-sql-pool-using-the-copy-activity"></a>Quickstart: Gegevens laden in een toegewezen SQL-pool met de kopieeractiviteit
 
-Azure Synapse Analytics biedt diverse analyse-engines waarmee u uw gegevens kunt opnemen, transformeren, modelleren en analyseren. Een SQL-pool biedt op T-SQL gebaseerde reken- en opslagmogelijkheden. Nadat u een SQL-pool in uw Synapse-werkruimte hebt gemaakt, kunnen gegevens worden geladen, gemodelleerd, verwerkt en geleverd voor een snellere analyse.
+Azure Synapse Analytics biedt diverse analyse-engines waarmee u uw gegevens kunt opnemen, transformeren, modelleren en analyseren. Een toegewezen SQL-pool biedt op T-SQL gebaseerde reken- en opslagmogelijkheden. Nadat u een toegewezen SQL-pool in uw Synapse-werkruimte hebt gemaakt, kunnen gegevens worden geladen, gemodelleerd, verwerkt en geleverd voor een snellere analyse.
 
-In deze quickstart leert u hoe u *gegevens laadt vanuit Azure SQL Database naar Azure Synapse Analytics*. U kunt vergelijkbare stappen volgen om gegevens te kopiëren vanuit andere typen gegevensarchieven. De vergelijkbare stroom geldt ook voor het kopiëren van gegevens tussen andere bronnen en een sink.
+In deze quickstart leert u hoe u *gegevens laadt vanuit Azure SQL Database naar Azure Synapse Analytics*. U kunt vergelijkbare stappen volgen om gegevens te kopiëren vanuit andere typen gegevensarchieven. Deze vergelijkbare stroom geldt ook voor het kopiëren van gegevens tussen andere bronnen en sinks.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -29,13 +29,13 @@ In deze quickstart leert u hoe u *gegevens laadt vanuit Azure SQL Database naar 
 * Azure Synapse-werkruimte: Maak een Synapse-werkruimte met behulp van de Azure Portal. Volg hierbij de instructies in [Quickstart: Een Synapse-werkruimte maken](quickstart-create-workspace.md).
 * Azure SQL Database: In deze zelfstudie worden gegevens uit de voorbeeldgegevensset Adventure Works LT gekopieerd naar Azure SQL Database. U kunt deze voorbeelddatabase maken in SQL Database door de instructies in [Een voorbeelddatabase maken in Azure SQL Database](../azure-sql/database/single-database-create-quickstart.md) te volgen. U kunt ook andere gegevensarchieven gebruiken door vergelijkbare stappen te volgen.
 * Azure Storage-account: Azure Storage wordt gebruikt als *faseringsgebied* in de kopieerbewerking. Als u geen Azure-opslagaccount hebt, raadpleegt u de instructies in [Een opslagaccount maken](../storage/common/storage-account-create.md).
-* Azure Synapse Analytics: U gebruikt een SQL-pool als sinkgegevens archief. Als u geen exemplaar van Azure Synapse Analytics hebt, raadpleegt u het artikel [Een SQL-pool maken](quickstart-create-sql-pool-portal.md) om er een te maken.
+* Azure Synapse Analytics: U gebruikt een toegewezen SQL-pool als sink-gegevensarchief. Als u geen exemplaar van Azure Synapse Analytics hebt, raadpleegt u het artikel [Een toegewezen SQL-pool maken](quickstart-create-sql-pool-portal.md) om er een te maken.
 
 ### <a name="navigate-to-the-synapse-studio"></a>Ga naar Synapse Studio
 
-Wanneer uw Azure Synapse-werkruimte is gemaakt, kunt u Synapse Studio op twee manieren openen:
+Wanneer uw Synapse-werkruimte is gemaakt, kunt u Synapse Studio op twee manieren openen:
 
-* Open de Synapse-werkruimte in de [Azure-portal](https://ms.portal.azure.com/#home). Selecteer bovenaan de sectie Overzicht de optie **Synapse Studio starten**.
+* Open de Synapse-werkruimte in de [Azure-portal](https://ms.portal.azure.com/#home). Selecteer **Openen** op de kaart 'Open Synapse Studio' onder 'Aan de slag'.
 * Open [Azure Synapse Analytics](https://web.azuresynapse.net/) en meld u aan bij uw werkruimte.
 
 In deze quickstart wordt de werkruimte met de naam 'adftest2020' als voorbeeld gebruikt. Er wordt automatisch naar de startpagina van Synapse Studio genavigeerd.
@@ -44,7 +44,7 @@ In deze quickstart wordt de werkruimte met de naam 'adftest2020' als voorbeeld g
 
 ## <a name="create-linked-services"></a>Gekoppelde services maken
 
-In Azure Synapse Analytics definieert u de verbindingsgegevens voor andere services in een gekoppelde service. In deze sectie maakt u de volgende twee soorten gekoppelde services: Gekoppelde services voor Azure SQL Database en voor Azure Data Lake Storage Gen2.
+In Azure Synapse Analytics definieert u de verbindingsgegevens voor andere services in een gekoppelde service. In deze sectie maakt u de volgende twee soorten gekoppelde services: Gekoppelde services voor Azure SQL Database en voor Azure Data Lake Storage Gen2 (ADLS Gen2).
 
 1. Selecteer het tabblad **Beheren** in het linkernavigatievenster op de startpagina van Synapse Studio.
 1. Klik onder Externe verbindingen op Gekoppelde services.
@@ -66,7 +66,7 @@ In Azure Synapse Analytics definieert u de verbindingsgegevens voor andere servi
  
 ## <a name="create-a-pipeline"></a>Een pijplijn maken
 
-Een pijplijn bevat de logische stroom voor het uitvoeren van een reeks activiteiten. In deze sectie maakt u een pijplijn met een kopieeractiviteit waarmee gegevens uit Azure SQL Database worden opgenomen in een SQL-pool.
+Een pijplijn bevat de logische stroom voor het uitvoeren van een reeks activiteiten. In deze sectie maakt u een pijplijn met een kopieeractiviteit waarmee gegevens uit Azure SQL Database worden opgenomen in een toegewezen SQL-pool.
 
 1. Ga naar het tabblad **Integreren**. Klik op het pluspictogram naast de kop Pijplijnen en selecteer Pijplijn.
 
@@ -83,8 +83,8 @@ Een pijplijn bevat de logische stroom voor het uitvoeren van een reeks activitei
 
    ![De eigenschappen van de brongegevensset instellen](media/quickstart-copy-activity-load-sql-pool/source-dataset-properties.png)
 1. Als u klaar bent, klikt u op **OK**.
-1. Klik op de kopieeractiviteit en ga naar het tabblad Sink. Selecteer **Nieuw** om een nieuwe sinkgegevensset te maken.
-1. Selecteer **SQL Analytics-pool** als uw gegevensarchief en klik vervolgens op **Doorgaan**.
+1. Selecteer de kopieeractiviteit en ga naar het tabblad 'Sink'. Selecteer **Nieuw** om een nieuwe sinkgegevensset te maken.
+1. Selecteer **Toegewezen SQL-pool van Azure Synapse** als uw gegevensarchief en klik vervolgens op **Doorgaan**.
 1. Selecteer in het deelvenster **Eigenschappen instellen** de SQL Analytics-pool die u in de vorige stap hebt gemaakt. Als u naar een bestaande tabel schrijft, selecteert u deze onder *Tabelnaam* in de vervolgkeuzelijst. Als dat niet het geval is, vinkt u 'Bewerken' een en voert u de nieuwe tabelnaam in. Als u klaar bent, klikt u op **OK**.
 1. Schakel voor de instellingen van de sinkgegevensset **Automatisch tabel maken** in het veld Tabeloptie in.
 
@@ -122,7 +122,7 @@ In deze sectie moet u de pijplijn die u in de vorige stap heeft gepubliceerd, ha
    ![Activiteitsgegevens](media/quickstart-copy-activity-load-sql-pool/activity-details.png)
 
 1. Als u wilt terugkeren naar de weergave met de pijplijnuitvoeringen, selecteert u de koppeling **Alle pijplijnuitvoeringen** bovenaan. Selecteer **Vernieuwen** om de lijst te vernieuwen.
-1. Controleer of uw gegevens correct zijn geschreven in de SQL-pool.
+1. Controleer of uw gegevens correct zijn geschreven in de toegewezen SQL-pool.
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -1,22 +1,22 @@
 ---
 title: Informatie over naleving van regelgeving met Azure Security Benchmark
 description: Informatie over het ingebouwde initiatief voor naleving van regelgeving in Azure Security Benchmark. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: c4f009b24889f3c855e9cb612fed7bdc1342e313
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 1f5a81f430b536155626dfff1b74167146fdbbe5
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311463"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94699422"
 ---
 # <a name="details-of-the-azure-security-benchmark-regulatory-compliance-built-in-initiative"></a>Informatie over het ingebouwde initiatief voor naleving van regelgeving in Azure Security Benchmark
 
 Het volgende artikel beschrijft hoe de definitie van het ingebouwde initiatief voor naleving van regelgeving in Azure Policy wordt toegewezen aan **nalevingsdomeinen** en **beheeropties** in Azure Security Benchmark.
 Zie [Azure Security Benchmark](../../../security/benchmarks/overview.md)voor meer informatie over deze nalevingsstandaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
 
-De volgende toewijzingen zijn aan de beheeropties van **Azure Security Benchmark** . Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities** .
+De volgende toewijzingen zijn aan de beheeropties van **Azure Security Benchmark**. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
 Zoek vervolgens het ingebouwde initiatief voor naleving van **Azure Security Benchmark**
 
 Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdrukvoorbeeld van Azure Security Benchmark](../../blueprints/samples/azure-security-benchmark.md).
@@ -29,7 +29,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>Resources beschermen met behulp van netwerkbeveiligingsgroepen of Azure Firewall op uw virtueel netwerk
 
-**Id** : Azure Benchmark 1.1 **Eigendom** : Klant
+**Id**: Azure Benchmark 1.1 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -58,7 +58,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>De configuratie en het verkeer van VNet's, Subnets en NIC's controleren en vastleggen
 
-**Id** : Azure Security Benchmark 1.2 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 1.2 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -66,7 +66,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="protect-critical-web-applications"></a>Kritieke webtoepassingen beschermen
 
-**Id** : Azure Security Benchmark 1.3 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 1.3 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -80,7 +80,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="deny-communications-with-known-malicious-ip-addresses"></a>Communicatie met gekende schadelijke IP-adressen weigeren
 
-**Id** : Azure Security Benchmark 1.4 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 1.4 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -91,7 +91,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="record-network-packets-and-flow-logs"></a>Netwerkpakketten en stroomlogboeken vastleggen
 
-**Id** : Azure Security Benchmark 1.5 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 1.5 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -99,7 +99,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>Geautomatiseerde hulpprogramma's gebruiken om de configuraties van netwerkresources te controleren en wijzigingen te detecteren
 
-**Id** : Azure Security Benchmark 1.11 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 1.11 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -115,7 +115,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="configure-central-security-log-management"></a>Centraal beheer van beveiligingslogboeken configureren
 
-**Id** : Azure Security Benchmark 2.2 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 2.2 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -128,7 +128,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="enable-audit-logging-for-azure-resources"></a>Auditlogboekregistratie voor Azure-resources inschakelen
 
-**Id** : Azure Security Benchmark 2.3 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 2.3 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -150,7 +150,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="collect-security-logs-from-operating-systems"></a>Beveiligingslogboeken van besturingssystemen verzamelen
 
-**Id** : Azure Security Benchmark 2.4 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 2.4 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -161,7 +161,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="configure-security-log-storage-retention"></a>De retentie voor de opslag van beveiligingslogboeken configureren
 
-**Id** : Azure Security Benchmark 2.5 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 2.5 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -169,7 +169,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="enable-alerts-for-anomalous-activity"></a>Waarschuwingen voor afwijkende activiteiten inschakelen
 
-**Id** : Azure Security Benchmark 2.7 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 2.7 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -178,7 +178,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="centralize-anti-malware-logging"></a>Antimalware-logboekregistratie centraliseren
 
-**Id** : Azure Security Benchmark 2.8 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 2.8 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -190,7 +190,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="maintain-an-inventory-of-administrative-accounts"></a>Een inventaris van beheerdersaccounts onderhouden
 
-**Id** : Azure Security Benchmark 3.1 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 3.1 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -201,7 +201,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="use-dedicated-administrative-accounts"></a>Specifieke beheerdersaccounts gebruiken
 
-**Id** : Azure Security Benchmark 3.3 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 3.3 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -213,7 +213,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>Meervoudige verificatie gebruiken voor alle op Azure Active Directory gebaseerde toegang
 
-**Id** : Azure Security Benchmark 3.5 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 3.5 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -223,7 +223,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="use-azure-active-directory"></a>Azure Active Directory gebruiken
 
-**Id** : Azure Security Benchmark 3.9 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 3.9 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -232,7 +232,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="regularly-review-and-reconcile-user-access"></a>Regelmatig gebruikerstoegang beoordelen en afstemmen
 
-**Id** : Azure Security Benchmark 3.10 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 3.10 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -246,7 +246,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="maintain-an-inventory-of-sensitive-information"></a>Een inventaris van gevoelige gegevens onderhouden
 
-**Id** : Azure Security Benchmark 4.1 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 4.1 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -254,7 +254,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="encrypt-all-sensitive-information-in-transit"></a>Alle gevoelige gegevens versleutelen tijdens overdracht
 
-**Id** : Azure Security Benchmark 4.4 **Eigendom** : Gedeeld
+**Id**: Azure Security Benchmark 4.4 **Eigendom**: Gedeeld
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -274,7 +274,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="use-an-active-discovery-tool-to-identify-sensitive-data"></a>Een hulpprogramma voor actieve detectie gebruiken om gevoelige gegevens te identificeren
 
-**Id** : Azure Security Benchmark 4.5 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 4.5 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -284,7 +284,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="use-azure-rbac-to-control-access-to-resources"></a>Azure RBAC gebruiken om toegang tot resources te beheren
 
-**Id** : Azure Security Benchmark 4.6 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 4.6 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -293,7 +293,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="encrypt-sensitive-information-at-rest"></a>Gevoelige gegevens 'at rest' versleutelen
 
-**Id** : Azure Security Benchmark 4.8 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 4.8 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -307,7 +307,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="log-and-alert-on-changes-to-critical-azure-resources"></a>Wijzigingen aan kritieke Azure-resources vastleggen en melden
 
-**Id** : Azure Security Benchmark 4.9 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 4.9 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -317,7 +317,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="run-automated-vulnerability-scanning-tools"></a>Geautomatiseerde hulpprogramma's voor het scannen op beveiligingsproblemen uitvoeren
 
-**Id** : Azure Security Benchmark 5.1 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 5.1 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -327,7 +327,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="deploy-automated-operating-system-patch-management-solution"></a>Geautomatiseerde oplossingen implementeren voor patchbeheer van besturingssystemen
 
-**Id** : Azure Security Benchmark 5.2 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 5.2 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -336,7 +336,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="deploy-automated-third-party-software-patch-management-solution"></a>Geautomatiseerde oplossing implementeren voor patchbeheer van software van derden
 
-**Id** : Azure Security Benchmark 5.3 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 5.3 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -352,21 +352,21 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>Een proces voor risicobeoordeling gebruiken om het herstel van ontdekte beveiligingsproblemen te prioriteren
 
-**Id** : Azure Security Benchmark 5.5 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 5.5 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Beveiligingsproblemen in beveiligingsconfiguraties voor containers moeten worden verholpen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe8cbc669-f12d-49eb-93e7-9273119e9933) |Beveiligingsproblemen in de beveiligingsconfiguratie op computers waarop Docker is geïnstalleerd, controleren en als aanbevelingen weergeven in Azure Security Center. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ContainerBenchmark_Audit.json) |
 |[Beveiligingsproblemen in de beveiligingsconfiguratie op uw computers moeten worden hersteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe1e5fd5d-3e4c-4ce1-8661-7d1873ae6b15) |Servers die niet voldoen aan de geconfigureerde basislijn, worden als aanbevelingen bewaakt door Azure Security Center |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_OSVulnerabilities_Audit.json) |
 |[Beveiligingsproblemen in de beveiligingsconfiguratie van virtuele-machineschaalsets moeten worden hersteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3c735d8a-a4ba-4a3a-b7cf-db7754cf57f4) |Controleer op beveiligingsproblemen van besturingssystemen op uw virtuele-machineschaalsets om de schaalsets te beveiligen tegen aanvallen. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VmssOSVulnerabilities_Audit.json) |
-|[Beveiligingsproblemen in uw SQL-databases moeten worden opgelost](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Bewaken van de scanresultaten en aanbevelingen van de beveiligingsevaluatie over het herstellen van beveiligingsproblemen in een database. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
+|[Beveiligingsproblemen in uw SQL-databases moeten worden opgelost](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Bewaken van de scanresultaten en aanbevelingen van de beveiligingsevaluatie over het herstellen van beveiligingsproblemen in een database. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
 |[Beveiligingsproblemen moeten worden opgelost met een oplossing voor evaluatie van beveiligingsproblemen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F760a85ff-6162-42b3-8d70-698e268f648c) |Hiermee worden beveiligingsproblemen die door de oplossing voor evaluatie van beveiligingsproblemen zijn gedetecteerd en virtuele machines zonder oplossing voor evaluatie van beveiligingsproblemen bewaakt als aanbevelingen in Azure Security Center. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VMVulnerabilities_Audit.json) |
 
 ## <a name="inventory-and-asset-management"></a>Inventarisatie en Asset Management
 
 ### <a name="use-only-approved-applications"></a>Enkel goedgekeurde toepassingen gebruiken
 
-**Id** : Azure Security Benchmark 6.8 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 6.8 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -374,7 +374,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="use-only-approved-azure-services"></a>Enkel goedgekeurde Azure-services gebruiken
 
-**Id** : Azure Security Benchmark 6.9 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 6.9 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -383,7 +383,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="implement-approved-application-list"></a>Lijst met goedgekeurde toepassingen implementeren
 
-**Id** : Azure Security Benchmark 6.10 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 6.10 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -393,7 +393,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="maintain-secure-operating-system-configurations"></a>Veilige configuraties houden voor besturingssystemen
 
-**Id** : Azure Security Benchmark 7.4 **Eigendom** : Gedeeld
+**Id**: Azure Security Benchmark 7.4 **Eigendom**: Gedeeld
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -403,7 +403,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="implement-automated-configuration-monitoring-for-operating-systems"></a>Geautomatiseerde configuratiecontrole voor besturingssystemen implementeren
 
-**Id** : Azure Security Benchmark 7.10 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 7.10 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -413,15 +413,15 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="manage-azure-secrets-securely"></a>Azure-geheimen veilig beheren
 
-**Id** : Azure Security Benchmark 7.11 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 7.11 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Key Vault-objecten moeten kunnen worden hersteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Met dit beleid wordt gecontroleerd of de sleutelkluisobjecten niet kunnen worden hersteld. De functie voor Voorlopig verwijderen helpt bij het effectief vasthouden van de resources voor een bepaalde bewaarperiode (90 dagen), zelfs na het VERWIJDEREN van een bewerking, terwijl het erop lijkt dat het object is verwijderd. Als Beveiliging opschonen is ingeschakeld, kan een kluis of een object in de verwijderde status pas worden verwijderd als de bewaarperiode van 90 dagen is verstreken. Deze kluizen en objecten kunnen nog steeds worden hersteld, waardoor klanten er zeker van zijn dat het bewaarbeleid wordt gevolgd. |Controle, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
+|[Beveiliging tegen leegmaken moet zijn ingeschakeld voor de sleutelkluis](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Kwaadwillende verwijdering van een sleutelkluis kan leiden tot permanent gegevensverlies. Een kwaadwillende insider in uw organisatie kan toegang krijgen en wellicht sleutelkluizen verwijderen en leegmaken. Beveiliging tegen leegmaken beschermt u tegen aanvallen van insiders door een verplichte bewaarperiode tijdens voorlopige verwijdering af te dwingen voor sleutelkluizen. Gedurende de periode van voorlopige verwijdering kan niemand binnen uw organisatie of Microsoft uw sleutelkluizen leegmaken. |Controleren, Weigeren, Uitgeschakeld |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
 
 ### <a name="manage-identities-securely-and-automatically"></a>Identiteiten veilig en automatisch beheren 
 
-**Id** : Azure Security Benchmark 7.12 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 7.12 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -433,7 +433,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="use-centrally-managed-anti-malware-software"></a>Centraal beheerde antimalwaresoftware gebruiken
 
-**Id** : Azure Security Benchmark 8.1 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 8.1 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -442,7 +442,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="ensure-anti-malware-software-and-signatures-are-updated"></a>Zorgen dat antimalwaresoftware en handtekeningen worden bijgewerkt
 
-**Id** : Azure Security Benchmark 8.3 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 8.3 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -452,7 +452,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="ensure-regular-automated-back-ups"></a>Regelmatige geautomatiseerde back-ups verzekeren
 
-**Id** : Azure Security Benchmark 9.1 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 9.1 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -464,7 +464,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>Complete back-ups van het systeem uitvoeren en back-ups maken van door klant beheerde sleutels
 
-**Id** : Azure Security Benchmark 9.2 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 9.2 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -476,17 +476,17 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="ensure-protection-of-backups-and-customer-managed-keys"></a>Bescherming van back-upbestanden en door de klant beheerde sleutels garanderen
 
-**Id** : Azure Security Benchmark 9.4 **Eigendom** : Klant
+**Id**: Azure Security Benchmark 9.4 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Key Vault-objecten moeten kunnen worden hersteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Met dit beleid wordt gecontroleerd of de sleutelkluisobjecten niet kunnen worden hersteld. De functie voor Voorlopig verwijderen helpt bij het effectief vasthouden van de resources voor een bepaalde bewaarperiode (90 dagen), zelfs na het VERWIJDEREN van een bewerking, terwijl het erop lijkt dat het object is verwijderd. Als Beveiliging opschonen is ingeschakeld, kan een kluis of een object in de verwijderde status pas worden verwijderd als de bewaarperiode van 90 dagen is verstreken. Deze kluizen en objecten kunnen nog steeds worden hersteld, waardoor klanten er zeker van zijn dat het bewaarbeleid wordt gevolgd. |Controle, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
+|[Beveiliging tegen leegmaken moet zijn ingeschakeld voor de sleutelkluis](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Kwaadwillende verwijdering van een sleutelkluis kan leiden tot permanent gegevensverlies. Een kwaadwillende insider in uw organisatie kan toegang krijgen en wellicht sleutelkluizen verwijderen en leegmaken. Beveiliging tegen leegmaken beschermt u tegen aanvallen van insiders door een verplichte bewaarperiode tijdens voorlopige verwijdering af te dwingen voor sleutelkluizen. Gedurende de periode van voorlopige verwijdering kan niemand binnen uw organisatie of Microsoft uw sleutelkluizen leegmaken. |Controleren, Weigeren, Uitgeschakeld |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
 
 ## <a name="incident-response"></a>Reageren op incidenten
 
 ### <a name="provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>Contactgegevens opgeven en waarschuwingsmeldingen configureren voor beveiligingsincidenten
 
-**Id** : Azure  Benchmark 10.4 **Eigendom** : Klant
+**Id**: Azure  Benchmark 10.4 **Eigendom**: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|

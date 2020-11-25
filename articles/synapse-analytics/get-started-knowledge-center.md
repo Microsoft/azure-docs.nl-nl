@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
-ms.date: 09/15/2020
-ms.openlocfilehash: 461fabd0dd9948e8967ac61919f77e3e23a981b9
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.date: 11/16/2020
+ms.openlocfilehash: 57213e228359fd6c201d501d3bb75f7267054277
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331954"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685423"
 ---
 # <a name="explore-the-synapse-knowledge-center"></a>Het Synapse Knowledge Center verkennen
 
@@ -25,7 +25,7 @@ In deze zelfstudie leert u hoe u het Synapse Studio Knowledge Center gebruikt.
 
 Er zijn twee manieren om het Knowledge Center te vinden in Synapse Studio:
 
-  1. Klik in de Home-hub onder Handige links op de eerste link met de naam **Knowledge Center**.
+  1. Klik in de Home-hub rechtsboven op de pagina op **Learn**.
   2. Klik in de menubalk bovenaan op **?** en vervolgens op **Knowledge Center**.
 
 Kies een van beide methoden en open het **Knowledge Center**.

@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: Cofense-ontvanger synchronisatie configureren voor automatische gebruikers inrichting met Azure Active Directory | Microsoft Docs'
-description: Informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts van Azure AD naar Cofense-ontvanger synchronisatie.
+title: 'Zelfstudie: Cofense Recipient Sync configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikersaccounts van Azure AD voor Cofense Recipient Sync.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -15,75 +15,75 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/11/2020
 ms.author: Zhchia
-ms.openlocfilehash: 69a9b9401f25893ec94b282f52730d92d372268d
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: b12a595c9b59b40ee6982f123baddaa818dd87ef
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94355699"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94836271"
 ---
-# <a name="tutorial-configure-cofense-recipient-sync-for-automatic-user-provisioning"></a>Zelf studie: Cofense-ontvanger synchronisatie configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-cofense-recipient-sync-for-automatic-user-provisioning"></a>Zelfstudie: Cofense Recipient Sync configureren voor automatische inrichting van gebruikers
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel Cofense als Azure Active Directory van ontvanger (Azure AD) om het automatisch inrichten van gebruikers te configureren. Wanneer de configuratie is geconfigureerd, worden gebruikers door Azure AD automatisch ingericht en ongedaan [gemaakt met behulp van](https://cofense.com/) de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel Cofense Recipient Sync als Azure AD (Azure Active Directory) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt in Azure AD de inrichting en het ongedaan maken van de inrichting van gebruikers automatisch uitgevoerd in [Cofense Recipient Sync](https://cofense.com/) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
-> * Gebruikers maken in Cofense van ontvanger synchroniseren
-> * Gebruikers verwijderen in Cofense wanneer ze geen toegang meer nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en Cofense-ontvanger synchronisatie
+> * Gebruikers maken in Cofense Recipient Sync
+> * Gebruikers verwijderen uit Cofense Recipient Sync wanneer ze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en Cofense Recipient Sync
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-Tenant](../develop/quickstart-create-new-tenant.md) 
-* Een gebruikers account in azure AD met [toestemming](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld toepassings beheerder, Cloud toepassings beheerder, eigenaar van de toepassing of globale beheerder). 
-* Een standaard operator account in Cofense PhishMe.
+* [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
+* Een gebruikersaccount in Azure AD met [machtigingen](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder). 
+* Een standaard operatoraccount in Cofense PhishMe.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en Cofense-ontvanger synchronisatie](../app-provisioning/customize-application-attributes.md). 
+3. Bepaal welke gegevens u wilt [toewijzen tussen Azure AD en Cofense Recipient Sync](../app-provisioning/customize-application-attributes.md). 
 
-## <a name="step-2-configure-cofense-recipient-sync-to-support-provisioning-with-azure-ad"></a>Stap 2. Synchronisatie van Cofense-ontvangers configureren voor ondersteuning van inrichting met Azure AD
+## <a name="step-2-configure-cofense-recipient-sync-to-support-provisioning-with-azure-ad"></a>Stap 2. Cofense Recipient Sync configureren om ondersteuning te bieden voor inrichting met Azure AD
 
-1. Meld u aan bij Cofense PhishMe. Navigeer naar **ontvangers > synchronisatie** van de ontvanger. 
-2. Accepteer de voor waarden en klik vervolgens op **aan de slag**.
+1. Meld u aan bij Cofense PhishMe. Navigeer naar **Ontvangers > Recipient Sync**. 
+2. Accepteer de voorwaarden en klik vervolgens op **Aan de slag**.
 
-    ![Recepient Sync TNC](media/cofense-provisioning-tutorial/recipient-sync-toc.png)
+    ![Recipient Sync tnc](media/cofense-provisioning-tutorial/recipient-sync-toc.png)
 
-3. Kopieer de waarden uit de velden **URL** en **token** .
+3. Kopieer de waarden in de velden **URL** en **Token**.
 
-    ![Recepient-synchronisatie](media/cofense-provisioning-tutorial/recipient-sync-getting-started.png)
+    ![Recipient Sync](media/cofense-provisioning-tutorial/recipient-sync-getting-started.png)
 
 
-## <a name="step-3-add-cofense-recipient-sync-from-the-azure-ad-application-gallery"></a>Stap 3. Synchronisatie van Cofense-ontvangers toevoegen vanuit de Azure AD-toepassings galerie
+## <a name="step-3-add-cofense-recipient-sync-from-the-azure-ad-application-gallery"></a>Stap 3. Cofense Recipient Sync toevoegen vanuit de Azure AD-toepassingsgalerie
 
-Voeg Cofense van de Azure AD-toepassings galerie toe om de inrichting van de Cofense van de ontvanger te starten. Als u eerder de Cofense van ontvanger hebt ingesteld voor SSO, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
+Voeg Cofense Recipient Sync toe vanuit de galerie met Azure AD-toepassingen om te beginnen met het inrichten voor Cofense Recipient Sync. Als u Cofense Recipient Sync eerder hebt ingesteld voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
 
 Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) wordt beschreven. 
 
-* Wanneer u gebruikers en groepen toewijst aan Cofense, moet u een andere rol dan de **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
+* Wanneer u gebruikers en groepen toewijst aan Cofense Recipient Sync, moet u een andere rol dan **Standaardtoegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) opgeven. 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-cofense-recipient-sync"></a>Stap 5. Automatische gebruikers inrichting configureren voor synchronisatie van Cofense-ontvangers 
+## <a name="step-5-configure-automatic-user-provisioning-to-cofense-recipient-sync"></a>Stap 5. Automatische gebruikersinrichting configureren voor Cofense Recipient Sync 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers in Cofense te maken, bij te werken en uit te scha kelen op basis van de gebruiker in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers in Cofense Recipient Sync te maken, bij te werken en uit te schakelen op basis van gebruikers in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-cofense-recipient-sync-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor synchronisatie van Cofense-ontvangers in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-cofense-recipient-sync-in-azure-ad"></a>Automatische inrichting van gebruikers configureren voor Cofense Recipient Sync in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst toepassingen de optie **synchronisatie van ontvanger van Cofense**.
+2. Selecteer **Cofense Recipient Sync** in de lijst met toepassingen.
 
-    ![De koppeling Cofense in de lijst met toepassingen](common/all-applications.png)
+    ![De koppeling naar Cofense in de lijst met toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
@@ -91,11 +91,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Tabblad inrichten automatisch](common/provisioning-automatic.png)
+    ![De inrichtingsmodus ingesteld op Automatisch](common/provisioning-automatic.png)
 
-5. In het gedeelte **beheerders referenties** voert u de **scim 2,0-basis-URL en de scim-verificatie token** waarde in die u eerder uit stap 2 hebt opgehaald. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met Cofense-ontvanger synchronisatie. Als de verbinding mislukt, zorg er dan voor dat uw Cofense-account voor de synchronisatie van de ontvanger beheerders machtigingen heeft en probeer het opnieuw.
+5. In de sectie **Referenties voor beheerder** voert u de waarde voor de **basis-URL en het toegangstoken voor SCIM 2.0** in die u in stap 2 hebt opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Cofense Recipient Sync. Als de verbinding mislukt, controleert u of het Cofense Recipient Sync-account beheerdersmachtigingen heeft. Probeer het vervolgens opnieuw.
 
-    ![URL-token van Tenant](common/provisioning-testconnection-tenanturltoken.png)
+    ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 
 6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
 
@@ -103,37 +103,37 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **synchronisatie Azure Active Directory gebruikers naar Cofense** van de ontvanger.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Cofense Recipient Sync**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Cofense ontvanger Sync in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Cofense-ontvanger synchronisatie voor update bewerkingen.  Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzing** de gebruikerskenmerken die vanuit Azure AD zijn gesynchroniseerd met Cofense Recipient Sync. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Cofense Recipient Sync te vinden voor updatebewerkingen.  Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-   |Kenmerk|Type|
-   |---|---|
+   |Kenmerk|Type|Ondersteund voor filteren|
+   |---|---|---|
+   |externalId|Tekenreeks|&check;|
    |userName|Tekenreeks|
-   |externalId|Tekenreeks|
    |actief|Booleaans|
    |displayName|Tekenreeks|
-   |naam. opgemaakt|Tekenreeks|
+   |name.formatted|Tekenreeks|
    |name.givenName|Tekenreeks|
    |name.familyName|Tekenreeks|
-   |naam. honorificSuffix|Tekenreeks|
-   |phoneNumbers [type EQ "werk]. waarde|Tekenreeks|
-   |phoneNumbers [type EQ "Home"]. waarde|Tekenreeks|
-   |phoneNumbers [type EQ "other"]. waarde|Tekenreeks|
-   |phoneNumbers [type EQ "semafoon"]. waarde|Tekenreeks|
-   |phoneNumbers [type EQ "Mobile"]. waarde|Tekenreeks|
-   |phoneNumbers [type EQ "fax"]. waarde|Tekenreeks|
-   |adressen [type EQ "other"]. Format|Tekenreeks|
-   |adressen [type EQ "werk]. opgemaakt|Tekenreeks|
-   |adressen [type EQ "werk]. streetAddress|Tekenreeks|
-   |adressen [type EQ "werk]. locatie|Tekenreeks|
-   |adressen [type EQ "werk]. regio|Tekenreeks|
-   |adressen [type EQ "werk]. post code|Tekenreeks|
-   |adressen [type EQ "werk]. land|Tekenreeks|
+   |name.honorificSuffix|Tekenreeks|
+   |phoneNumbers[type eq"work"].value|Tekenreeks|
+   |phoneNumbers[type eq"home"].value|Tekenreeks|
+   |phoneNumbers[type eq"other"].value|Tekenreeks|
+   |phoneNumbers[type eq"pager"].value|Tekenreeks|
+   |phoneNumbers[type eq"mobile"].value|Tekenreeks|
+   |phoneNumbers[type eq"fax"].value|Tekenreeks|
+   |addresses[type eq"other"].formatted|Tekenreeks|
+   |addresses[type eq"work"].formatted|Tekenreeks|
+   |addresses[type eq"work"].streetAddress|Tekenreeks|
+   |addresses[type eq"work"].locality|Tekenreeks|
+   |addresses[type eq"work"].region|Tekenreeks|
+   |addresses[type eq"work"].postalCode|Tekenreeks|
+   |addresses[type eq"work"].country|Tekenreeks|
    |title|Tekenreeks|
    |emails[type eq "work"].value|Tekenreeks|
-   |e-mail berichten [type EQ "Home"]. waarde|Tekenreeks|
-   |e-mail berichten [type EQ "Overig"]. waarde|Tekenreeks|
+   |emails[type eq "home"].value|Tekenreeks|
+   |emails[type eq "other"].value|Tekenreeks|
    |preferredLanguage|Tekenreeks|
    |nickName|Tekenreeks|
    |userType|Tekenreeks|
@@ -142,17 +142,17 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Naslaginformatie|
-   |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: costCenter|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: deling|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: organisatie|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Tekenreeks|
 
 10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. Als u de Azure AD-inrichtings service voor de synchronisatie van Cofense-ontvangers wilt inschakelen, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+11. Wijzig in de sectie **Instellingen** de **Inrichtingsstatus** in **Aan** om de Azure AD-inrichtingsservice in te schakelen voor Cofense Recipient Sync.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-12. Definieer de gebruikers en/of groepen die u wilt inrichten voor de synchronisatie van de Cofense-ontvanger door de gewenste waarden in het **bereik** in het gedeelte **instellingen** te kiezen.
+12. Definieer de gebruikers en/of groepen die u wilt toevoegen aan Cofense Recipient Sync, door in de sectie **Instellingen** de gewenste waarden te kiezen bij **Bereik**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 

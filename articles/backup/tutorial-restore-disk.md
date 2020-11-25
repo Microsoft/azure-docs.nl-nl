@@ -4,12 +4,12 @@ description: Leer hoe u een schijf kunt herstellen en een herstel-VM maken in Az
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 2d8ce7ab6d5a3ab244d0292ffe52847f18ea8795
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 45e171e064cbd8be5418e20784e6034830d27fe9
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746754"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566670"
 ---
 # <a name="restore-a-vm-with-azure-cli"></a>Een VM herstellen met Azure CLI
 
@@ -23,13 +23,11 @@ Azure Backup maakt herstelpunten die worden opgeslagen in geografisch redundante
 
 Zie [Back up and restore Azure VMs with PowerShell](backup-azure-vms-automation.md#restore-an-azure-vm) (Back-ups maken en Azure-VM’s herstellen met PowerShell) voor meer informatie over het gebruik van PowerShell om een schijf te herstellen en een herstelde VM te maken.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.0.18 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren]( /cli/azure/install-azure-cli).
+ - Voor deze zelfstudie is versie 2.0.18 of hoger Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-## <a name="prerequisites"></a>Vereisten
-
-Deze zelfstudie vereist een Linux-VM die met Azure Backup is beschermd. Om het per ongeluk verwijderen van een VM en het herstelproces te simuleren, maakt u een VM op basis van een schijf in een herstelpunt. Zie [Een back-up van een virtuele machine maken in Azure met de CLI](quick-backup-vm-cli.md) als u een Linux-VM nodig hebt die is beschermd met Azure Backup.
+ - Deze zelfstudie vereist een Linux-VM die met Azure Backup is beschermd. Om het per ongeluk verwijderen van een VM en het herstelproces te simuleren, maakt u een VM op basis van een schijf in een herstelpunt. Zie [Een back-up van een virtuele machine maken in Azure met de CLI](quick-backup-vm-cli.md) als u een Linux-VM nodig hebt die is beschermd met Azure Backup.
 
 ## <a name="backup-overview"></a>Overzicht van Backup
 
@@ -88,7 +86,7 @@ Als de VM waarvan een back-up is gemaakt, beheerde schijven bevat, en als het de
     ```
 
     > [!WARNING]
-    > Als _ *target-resource-group* * niet is opgegeven, worden de beheerde schijven als niet-beheerde schijven hersteld in het opgegeven opslagaccount. Dit heeft aanzienlijke gevolgen voor de hersteltijd, omdat de tijd die nodig is om de schijven te herstellen, alleen afhankelijk is van het opgegeven opslagaccount. U kunt alleen profiteren van direct herstellen wanneer de parameter target-resource-group is opgegeven. Als het de bedoeling is dat beheerde schijven worden hersteld als niet-beheerd, geeft u de parameter **target-resource-group** niet op, en geeft u in plaats hiervan de parameter **restore-as-unmanaged-disk** op, zoals hieronder wordt weergegeven. Deze parameter is beschikbaar vanaf Az-versie 3.4.0.
+    > Als _ *target-resource-group** niet is opgegeven, worden de beheerde schijven als niet-beheerde schijven hersteld in het opgegeven opslagaccount. Dit heeft aanzienlijke gevolgen voor de hersteltijd, omdat de tijd die nodig is om de schijven te herstellen, alleen afhankelijk is van het opgegeven opslagaccount. U kunt alleen profiteren van direct herstellen wanneer de parameter target-resource-group is opgegeven. Als het de bedoeling is dat beheerde schijven worden hersteld als niet-beheerd, geeft u de parameter **target-resource-group** niet op, en geeft u in plaats hiervan de parameter **restore-as-unmanaged-disk** op, zoals hieronder wordt weergegeven. Deze parameter is beschikbaar vanaf Az-versie 3.4.0.
 
     ```azurecli-interactive
     az backup restore restore-disks \
@@ -154,7 +152,7 @@ az backup job list \
     --output table
 ```
 
-De uitvoer is vergelijkbaar met het volgende voorbeeld, waarin u kunt zien dat de hersteltaak wordt uitgevoerd ( *InProgress* ):
+De uitvoer is vergelijkbaar met het volgende voorbeeld, waarin u kunt zien dat de hersteltaak wordt uitgevoerd (*InProgress*):
 
 ```output
 Name      Operation        Status      Item Name    Start Time UTC       Duration

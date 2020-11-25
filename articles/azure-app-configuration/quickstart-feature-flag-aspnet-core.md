@@ -7,12 +7,12 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 09/28/2020
 ms.author: lcozzens
-ms.openlocfilehash: 866f1c404df2de87c2b3ce58b791ceb5257fca1b
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 88481346f22176b8e307b53774b42d753838f90b
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92074444"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94554819"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Quickstart: functievlaggen toevoegen aan een ASP.NET Core-app
 
@@ -106,9 +106,9 @@ dotnet new mvc --no-https --output TestFeatureFlags
 
     ---
 
-    Door de voorgaande wijziging is de [configuratieprovider voor App Configuration](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration) geregistreerd bij de .NET Core-Configuratie-API.
+    Door de voorgaande wijziging is de [configuratieprovider voor App Configuration](https://go.microsoft.com/fwlink/?linkid=2074664) geregistreerd bij de .NET Core-Configuratie-API.
 
-1. Voeg in*Startup.cs* verwijzingen toe naar functiebeheer van .NET Core:
+1. Voeg in *Startup.cs* verwijzingen toe naar functiebeheer van .NET Core:
 
     ```csharp
     using Microsoft.FeatureManagement;
@@ -181,36 +181,9 @@ dotnet new mvc --no-https --output TestFeatureFlags
 
     Met de voorgaande code kan de `<feature>` Tag Helper worden gebruikt in de *.cshtml*-bestanden van het project.
 
-1. Vervang in *Views/Shared/_Layout.cshtml* de `<nav>`streepjescode onder `<body>` > `<header>` door de volgende opmaak:
+1. Open *_Layout.cshtml* in de map *Weergaven*\\*Gedeeld*. Zoek de streepjescode `<nav>` onder `<body>` > `<header>`. Voeg een nieuwe tag `<feature>` in tussen de navigatiebalkitems *Start* en *Privacy*, zoals wordt weergegeven in de gemarkeerde regels hieronder.
 
-    ```cshtml
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TestFeatureFlags</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <feature name="Beta">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Beta" asp-action="Index">Beta</a>
-                    </li>
-                    </feature>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    ```
-
-    In de vorige opmaak ziet u de `<feature>` Tag Helper rondom het lijstitem *Bèta* .
+    :::code language="html" source="../../includes/azure-app-configuration-navbar.md" range="15-38" highlight="13-17":::
 
 1. Maak een map *Views/Beta* en een *Index.cshtml*-bestand met de volgende opmaak:
 
@@ -246,13 +219,15 @@ dotnet new mvc --no-https --output TestFeatureFlags
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Alle resources** en selecteer de instantie van het App Configuration-archief dat u in de quickstart hebt gemaakt.
 
-1. Selecteer **Functiebeheer** en wijzig de status van de sleutel *Beta* in **Aan**:
+1. Selecteer **Functiebeheer**. 
+
+1. Schakel de vlag *Bèta* in door het selectievakje onder **Ingeschakeld** aan te vinken.
 
 1. Ga terug naar de opdrachtshell. Annuleer het actieve `dotnet`-proces door op <kbd>CTRL + C</kbd>te drukken. Start de app opnieuw op met `dotnet run`.
 
 1. Vernieuw de browserpagina om de nieuwe configuratie-instellingen te zien.
 
-    :::image type="content" source="media/quickstarts/aspnet-core-feature-flag-local-after.png" alt-text="Lokale snelstart-app voor wijziging" border="true":::
+    :::image type="content" source="media/quickstarts/aspnet-core-feature-flag-local-after.png" alt-text="Lokale snelstart-app na wijziging" border="true":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -260,7 +235,7 @@ dotnet new mvc --no-https --output TestFeatureFlags
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u een nieuw App Configuration-archief gemaakt en dit gebruikt om functies in een ASP.NET Core-web-app te beheren via de [functiebeheerbibliotheken](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration).
+In deze quickstart hebt u een nieuw App Configuration-archief gemaakt en dit gebruikt om functies in een ASP.NET Core-web-app te beheren via de [functiebeheerbibliotheken](https://go.microsoft.com/fwlink/?linkid=2074664).
 
 * Meer informatie over [functiebeheer](./concept-feature-management.md).
 * [Functievlaggen beheren](./manage-feature-flags.md).

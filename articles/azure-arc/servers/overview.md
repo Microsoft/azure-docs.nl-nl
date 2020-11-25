@@ -2,14 +2,14 @@
 title: Overzicht van servers met Azure Arc
 description: Lees meer informatie over het gebruik van Azure Arc voor servers om servers te beheren die buiten Azure worden gehost alsof het Azure-resources zijn.
 keywords: azure automation, DSC, powershell, configuratie van gewenste status, updatebeheer, bijhouden van wijzigingen, inventaris, runbooks, python, grafisch, hybride
-ms.date: 11/04/2020
+ms.date: 11/12/2020
 ms.topic: overview
-ms.openlocfilehash: b9d38b2395d922e3e2a7daec654cd73de7267ee1
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 2df970f7c94f1e306243aba1480ee7023b8f76c1
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360578"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578719"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Wat zijn servers met Azure Arc?
 
@@ -44,7 +44,16 @@ Aanmeldingsgegevens die zijn verzameld en opgeslagen in een Log Analytics-werkru
 
 Zie de pagina met [Azure-producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc) voor een definitieve lijst met ondersteunde regio's voor servers met Azure Arc.
 
-In de meeste gevallen moet de locatie die u selecteert bij het maken van het installatiescript de Azure-regio zijn die geografisch het dichtst bij de locatie van uw machine ligt. Data-at-rest wordt opgeslagen in de Azure-geografie die de door u opgegeven regio bevat. Dit kan ook van invloed zijn op welke regio u kiest als u gegevenslocatievereisten hebt. Als de Azure-regio waaraan uw machine is gekoppeld, wordt getroffen door een storing, heeft dit geen invloed op de gekoppelde machine, maar beheerbewerkingen die gebruikmaken van Azure kunnen mogelijk niet worden voltooid. Als u meerdere locaties hebt die een geografisch redundante service ondersteunen, kunt u bij een regionale storing het beste de machines in elke locatie aan een andere Azure-regio koppelen.
+In de meeste gevallen moet de locatie die u selecteert bij het maken van het installatiescript de Azure-regio zijn die geografisch het dichtst bij de locatie van uw machine ligt. Data-at-rest worden opgeslagen in de Azure-geografie die de door u opgegeven regio bevat. Dit kan ook van invloed zijn op welke regio u kiest als u gegevenslocatievereisten hebt. Als de Azure-regio waaraan uw machine is gekoppeld, wordt getroffen door een storing, heeft dit geen invloed op de gekoppelde machine, maar beheerbewerkingen die gebruikmaken van Azure kunnen mogelijk niet worden voltooid. Als u meerdere locaties hebt die een geografisch redundante service ondersteunen, kunt u bij een regionale storing het beste de machines in elke locatie aan een andere Azure-regio koppelen.
+
+De volgende metagegevens over de verbonden machine worden verzameld en opgeslagen in de regio waarin de Azure Arc-machine is geconfigureerd:
+
+- Naam en versie van besturingssysteem
+- Computernaam
+- Volledig gekwalificeerde domeinnaam (FQDN) van de computer
+- Versie van Connected Machine-agent
+
+Als de machine bijvoorbeeld is geregistreerd bij Azure Arc in de regio VS - oost, worden deze gegevens opgeslagen in deze VS-regio.
 
 ### <a name="agent-status"></a>Agenstatus
 

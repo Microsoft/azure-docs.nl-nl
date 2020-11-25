@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 06/22/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 61c21aed76cfaac5621b234b32c90877ef6faa9f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e364578cdec8696688cf19e14fd0529f1ca3fbb3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966318"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842614"
 ---
 # <a name="bringing-and-creating-linux-images-in-azure"></a>Eigen inux-installatiekopieën gebruiken en maken in Azure
 
@@ -83,7 +83,7 @@ Beheerde installatiekopieën kunnen worden gebruikt voor ontwikkelings -en testo
 - Wereldwijde replicatie van installatiekopieën.
 - Versiebeheer en groepering van installatiekopieën voor eenvoudiger beheer.
 - Uiterst beschikbare installatiekopieën met zone-redundante opslag (ZRS), in regio’s die beschikbaarheidszones ondersteunen. ZRS biedt betere flexibiliteit tegen zonegebonden fouten.
-- U kunt delen tussen meerdere abonnementen en zelfs tussen Active Directory (AD)-tenants met behulp van RBAC.
+- U kunt delen tussen meerdere abonnementen en zelfs tussen AD-tenants (Active Directory) met behulp van Azure-RBAC.
 - Het schalen van uw implementaties met replica's van installatiekopieën in elke regio.
 
 Op hoog niveau maakt u een SIG en bestaat deze uit:

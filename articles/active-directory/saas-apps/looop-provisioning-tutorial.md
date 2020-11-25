@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: 889972f7d94ab960354982275d45bdc5d5726d6e
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 528003ac482da6f254bf437321c70c389d23844b
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94356821"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835013"
 ---
 # <a name="tutorial-configure-looop-for-automatic-user-provisioning"></a>Zelfstudie: Looop configureren voor automatische inrichting van gebruikers
 
@@ -79,7 +79,7 @@ Als u Looop wilt configureren voor automatische inrichting van gebruikers met Az
 
 3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** boven in het deelvenster.
 
-    ![The New application button](common/add-new-app.png)
+    ![De knop Nieuwe toepassing](common/add-new-app.png)
 
 4. Voer in het zoekvak **Looop** in en selecteer **Looop** in het resultatenpaneel. 
 
@@ -113,13 +113,13 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Schermopname van de opties voor Beheren, met de optie Inrichten gemarkeerd.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
     ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Voer in de sectie **Beheerdersreferenties** bij **Tenant-URL** in: `https://<organisation_domain>.looop.co/scim/v2`. Bijvoorbeeld `https://demo.looop.co/scim/v2`. Voer de waarde die u eerder hebt opgehaald uit Looop en opgeslagen, in bij **Token voor geheim**. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Looop. Als de verbinding mislukt, controleert u of het Looop-account beheerdersmachtigingen heeft. Probeer het vervolgens opnieuw.
+5. Voer onder de sectie **Referenties voor beheerder** `https://<organisation_domain>.looop.co/scim/v2` in bij **Tenant-URL**. Bijvoorbeeld `https://demo.looop.co/scim/v2`. Voer de waarde die u eerder hebt opgehaald uit Looop en opgeslagen, in bij **Token voor geheim**. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Looop. Als de verbinding mislukt, controleert u of het Looop-account beheerdersmachtigingen heeft. Probeer het vervolgens opnieuw.
 
     ![Tenant-URL + token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -135,7 +135,23 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 9. Controleer in de sectie **Kenmerktoewijzing** de gebruikerskenmerken die vanuit Azure AD zijn gesynchroniseerd met Looop. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikersaccounts in Looop te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Gebruikerskenmerken in Looop](media/looop-provisioning-tutorial/userattributes.png)
+   |Kenmerk|Type|Ondersteund voor filteren|
+   |---|---|---|
+   |userName|Tekenreeks|&check;|
+   |actief|Booleaans|
+   |emails[type eq "work"].value|Tekenreeks|
+   |name.givenName|Tekenreeks|
+   |name.familyName|Tekenreeks|
+   |externalId|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:area|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:custom_1|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:custom_2|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:custom_3|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:department|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:employee_id|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:location|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:position|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:Looop:2.0:User:startAt|Tekenreeks|
 
 10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Meta Networks Connector**.
 
@@ -143,7 +159,12 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die zijn gesynchroniseerd vanuit Azure AD naar Meta Networks Connector. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in Meta Networks Connector te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Groepskenmerken in Looop](media/looop-provisioning-tutorial/groupattributes.png)
+    |Kenmerk|Type|Ondersteund voor filteren|
+    |---|---|---|
+    |displayName|Tekenreeks|&check;|
+    |leden|Naslaginformatie|
+    |externalId|Tekenreeks|
+
 
 10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

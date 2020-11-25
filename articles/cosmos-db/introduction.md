@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: overview
 ms.date: 10/23/2020
-ms.openlocfilehash: eb2212d618d45187779b328c7ba164bbacc980a4
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 012df825f38d292d0b0549701ad90334e3e30bb0
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93088680"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94637010"
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Welkom bij Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -55,7 +55,7 @@ Gegarandeerde bedrijfscontinuïteit, 99,999% beschikbaarheid en beveiliging op b
 - Azure Cosmos DB biedt een uitgebreid pakket [SLA's](https://azure.microsoft.com/support/legal/sla/cosmos-db), inclusief toonaangevende beschikbaarheid wereldwijd.
 - Eenvoudig gegevens naar elke Azure-regio distribueren met automatische gegevensreplicatie. Profiteer van geen downtime met schrijfbewerkingen in meerdere regio's of RPO 0 bij het gebruik van Sterke consistentie.
 - Profiteer van versleuteling in rust op bedrijfsniveau met zelfbeheerde sleutels.
-- Op rollen gebaseerd toegangsbeheer houdt uw gegevens veilig en biedt nauwkeurig afgestemd beheer.
+- Op rollen gebaseerd toegangsbeheer in Azure houdt uw gegevens veilig en biedt nauwkeurig afgestemd beheer.
 
 ### <a name="fully-managed-and-cost-effective"></a>Volledig beheerd en rendabel
 

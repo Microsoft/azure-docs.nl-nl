@@ -1,6 +1,6 @@
 ---
 title: Gegevens kopiëren met behulp van het hulpprogramma Azure Copy Data
-description: Maak een Azure data factory aan en gebruik vervolgens het hulpprogramma Copy Data om gegevens vanuit de ene locatie in Azure Blob Storage te kopiëren naar een andere locatie.
+description: Maak een Azure-gegevensfactory aan en gebruik vervolgens het hulpprogramma Copy Data om gegevens vanuit de ene locatie in Azure Blob Storage te kopiëren naar een andere locatie.
 services: data-factory
 documentationcenter: ''
 author: dearandyxu
@@ -10,13 +10,13 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: quickstart
-ms.date: 06/10/2020
-ms.openlocfilehash: 756c62aa070f05c4b66de0cde6c7df59d9b1d09a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 11/09/2020
+ms.openlocfilehash: 282917a6bbf7edb962a87ad87810adde56206d97
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "84735185"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564715"
 ---
 # <a name="quickstart-use-the-copy-data-tool-to-copy-data"></a>Quickstart: Het hulpprogramma Copy Data gebruiken om gegevens te kopiëren
 
@@ -37,7 +37,7 @@ In deze snelstart gebruikt u Azure Portal voor het maken van een data factory. G
 
 1. Start de webbrowser **Microsoft Edge** of **Google Chrome**. Op dit moment wordt de Data Factory-gebruikersinterface alleen ondersteund in de webbrowsers Microsoft Edge en Google Chrome.
 1. Ga naar de [Azure Portal](https://portal.azure.com). 
-1. Selecteer in de Azure-portal **Een resource maken** > **Analyse** > **Data Factory**:
+1. Selecteer in Azure Portal **Een resource maken** > **Integratie** > **Data Factory**:
 
     ![Nieuwe data factory maken](./media/doc-common-process/new-azure-data-factory-menu.png)
 

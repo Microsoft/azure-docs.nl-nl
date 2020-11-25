@@ -5,26 +5,34 @@ author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 10/29/2020
+ms.date: 11/17/2020
 ms.reviewer: andalmia
 ms.author: banders
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3ffdeb0add8622e1b9f28f9603dc146b78f742cd
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 68d890386d53b4115c773b128f8678bac9579e53
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043295"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844332"
 ---
 # <a name="programmatically-create-azure-subscriptions-with-preview-apis"></a>Programmatisch Azure-abonnementen maken met preview-API's
 
-Dit artikel helpt u programmatisch Azure-abonnementen te maken met behulp van onze oudere preview-API. We hebben een [nieuwere API-versie](programmatically-create-subscription.md) uitgebracht. U kunt de informatie in dit artikel gebruiken als u de meest recente versie niet wilt gebruiken. In dit artikel leert u hoe u via programmatisch abonnementen kunt maken met behulp van Azure Resource Manager.
+Dit artikel helpt u programmatisch Azure-abonnementen te maken met behulp van onze oudere preview-API. In dit artikel leert u hoe u via programmatisch abonnementen kunt maken met behulp van Azure Resource Manager.
+
+Er zijn nieuwe artikelen over de nieuwste API-versie voor gebruik met verschillende abonnementstypen voor een Azure-overeenkomst:
+
+- [Programmatisch EA-abonnementen maken met de nieuwste API](programmatically-create-subscription-enterprise-agreement.md)
+- [Programmatisch MCA-abonnementen maken met de nieuwste API](programmatically-create-subscription-microsoft-customer-agreement.md)
+- [Programmatisch MPA-abonnementen maken met de nieuwste API](Programmatically-create-subscription-microsoft-customer-agreement.md)
+
+U kunt de informatie in dit artikel echter nog steeds gebruiken, als u niet de meest recente API-versie wilt gebruiken.
 
 Azure-klanten met een facturerings account voor de volgende overeenkomsttypen kunnen programmatisch abonnementen maken:
 
-- [Enterprise Agreement (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/)
-- [Microsoft-klantovereenkomst (MCA)](https://azure.microsoft.com/pricing/purchase-options/microsoft-customer-agreement/)
-- [Microsoft Partner-overeenkomst (MPA)](https://www.microsoft.com/licensing/news/introducing-microsoft-partner-agreement)
+- Enterprise Agreement
+- Microsoft-klantovereenkomst (MCA)
+- Microsoft Partner-overeenkomst (MPA)
 
 Wanneer u programmatisch een Azure-abonnement maakt, wordt het abonnement beheerd op basis van de overeenkomst waaronder u Azure-services van Microsoft of een geautoriseerde wederverkoper hebt verkregen. Zie de [Juridische informatie van Microsoft Azure](https://azure.microsoft.com/support/legal/) voor meer informatie.
 
@@ -506,7 +514,7 @@ Gebruik eigenschap `description` om de reseller te identificeren die aan het abo
 
 In het volgende voorbeeld wordt een abonnement met de naam *Dev Team subscription* voor *Fabrikam toys* gemaakt en wordt reseller *Wingtip* aan het abonnement gekoppeld. 
 
-Voer de volgende aanvraag uit en vervang `<customerId>` door de `id` die u tijdens de tweede stap (```/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx```) hebt gekopieerd. Geef de optionele *resellerId* , die in de tweede stap is gekopieerd, door aan de aanvraagparameters van de API.
+Voer de volgende aanvraag uit en vervang `<customerId>` door de `id` die u tijdens de tweede stap (```/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx```) hebt gekopieerd. Geef de optionele *resellerId*, die in de tweede stap is gekopieerd, door aan de aanvraagparameters van de API.
 
 ```json
 POST https://management.azure.com<customerId>/providers/Microsoft.Subscription/createSubscription?api-version=2018-11-01-preview

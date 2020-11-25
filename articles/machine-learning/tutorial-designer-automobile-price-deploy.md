@@ -1,21 +1,21 @@
 ---
 title: 'Zelfstudie: ML-modellen implementeren met de ontwerpfunctie'
 titleSuffix: Azure Machine Learning
-description: In deze zelfstudie wordt uitgelegd hoe u een predictive analytics-oplossing bouwt in de Azure Machine Learning-ontwerpfunctie. Ontdek hoe u een machine learning-model traint, een score geeft en implementeert met behulp van slepen-en-neerzettenmodules.
+description: Bouw een predictive analytics-oplossing in de Azure Machine Learning-ontwerpfunctie. Ontdek hoe u een machine learning-model traint, een score geeft en implementeert met behulp van slepen-en-neerzettenmodules.
 author: peterclu
 ms.author: peterlu
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 06/28/2020
+ms.date: 11/13/2020
 ms.custom: designer
-ms.openlocfilehash: 95e5b3ac568cfa370fd1e49fad990b681aef46d9
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 5a5d166e36b2870ceb081c1c6d2635e01ab43a4d
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311516"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592546"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer"></a>Zelfstudie: Een Machine Learning-model implementeren met de ontwerpfunctie
 
@@ -40,7 +40,7 @@ Voor het implementeren van uw pijplijn moet u de trainingspijplijn eerst convert
 
 ### <a name="create-a-real-time-inference-pipeline"></a>Een realtime deductiepijplijn maken
 
-1. Selecteer boven het pijplijncanvas **Deductiepijplijn maken** > **Realtime deductiepijplijn** .
+1. Selecteer boven het pijplijncanvas **Deductiepijplijn maken** > **Realtime deductiepijplijn**.
 
     :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/tutorial2-create-inference-pipeline.png"alt-text="Schermopname waarin wordt weergegeven waar de knop pijplijn maken zich bevindt":::
 
@@ -50,7 +50,7 @@ Voor het implementeren van uw pijplijn moet u de trainingspijplijn eerst convert
 
     Wanneer u **Deductiepijplijn maken** selecteert, gebeuren er verschillende dingen:
     
-    * Het getrainde model wordt opgeslagen als een **Gegevensset** module in het palet van de module. U vindt deze onder **Mijn gegevenssets** .
+    * Het getrainde model wordt opgeslagen als een **Gegevensset** module in het palet van de module. U vindt deze onder **Mijn gegevenssets**.
     * Trainingsmodules zoals **Model trainen** en **Gegevens splitsen** worden verwijderd.
     * Het opgeslagen getrainde model wordt weer toegevoegd aan de pijplijn.
     * De modules **Webservice-invoer** en **Webservice-uitvoer** worden toegevoegd. Deze modules laten zien waar gebruikersgegevens de pijplijn binnenkomen en waar gegevens worden geretourneerd.
@@ -63,7 +63,7 @@ Voor het implementeren van uw pijplijn moet u de trainingspijplijn eerst convert
 
     Als dit de eerste keer is dat u de pijplijn uitvoert, kan het maximaal 20 minuten duren voor uw pijplijn helemaal is uitgevoerd. De standaardrekeninstellingen hebben een minimale knooppuntgrootte van 0, wat betekent dat de ontwerpfunctie na inactiviteit resources moet toewijzen. Herhaalde pijplijnuitvoeringen kosten minder tijd, omdat de rekenresources al zijn toegewezen. Bovendien gebruikt de ontwerpfunctie in de cache opgeslagen resultaten voor elke module om de efficiëntie verder te verbeteren.
 
-1. Selecteer **Implementeren** .
+1. Selecteer **Implementeren**.
 
 ## <a name="create-an-inferencing-cluster"></a>Een deductiecluster maken
 
@@ -77,14 +77,14 @@ In het dialoogvenster dat wordt weergegeven kunt u willekeurige Azure Kubernetes
    
 1. Configureer een nieuwe Kubernetes Service in het deelvenster Deductiecluster.
 
-1. Geef *aks-compute* op als **Compute-naam** .
+1. Geef *aks-compute* op als **Compute-naam**.
     
-1. Selecteer een regio in de buurt die beschikbaar is voor de **Regio** .
+1. Selecteer een regio in de buurt die beschikbaar is voor de **Regio**.
 
-1. Selecteer **Maken** .
+1. Selecteer **Maken**.
 
     > [!NOTE]
-    > Het duurt ongeveer 15 minuten om een AKS-service te maken. U kunt de inrichtingsstatus bekijken op de pagina **Deductieclusters** .
+    > Het duurt ongeveer 15 minuten om een AKS-service te maken. U kunt de inrichtingsstatus bekijken op de pagina **Deductieclusters**.
     >
 
 ## <a name="deploy-the-real-time-endpoint"></a>Het realtime-eindpunt implementeren
@@ -93,13 +93,13 @@ Wanneer de inrichting van uw AKS-service is voltooid, gaat u terug naar de realt
 
 1. Selecteer **Implementeren** boven het canvas.
 
-1. Selecteer **Nieuw realtime-eindpunt implementeren** . 
+1. Selecteer **Nieuw realtime-eindpunt implementeren**. 
 
 1. Selecteer de AKS-cluster die u hebt gemaakt.
 
-1. Selecteer **Implementeren** .
+1. Selecteer **Implementeren**.
     
-    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png"alt-text="Schermopname waarin wordt weergegeven waar de knop pijplijn maken zich bevindt":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png"alt-text="Schermopname waarin het instellen van een nieuw realtime-eindpunt wordt weergegeven":::
 
     Nadat de implementatie is voltooid, wordt een melding boven het canvas weergegeven. Dit kan enkele minuten duren.
 
@@ -112,6 +112,8 @@ Nadat de implementatie is voltooid, kunt u uw realtime-eindpunt bekijken door na
 1. Op het tabblad **Details** kunt u meer informatie zien, zoals de REST URI, status en tags.
 
 1. Op het tabblad **Gebruiken** kunt u beveiligingssleutels vinden en verificatiemethoden instellen.
+
+1. Op het tabblad **Implementatielogboeken** vindt u de gedetailleerde implementatielogboeken van uw realtime-eindpunt. 
 
 Zie [Een Azure Machine Learning-model gebruiken dat als een webservice is geïmplementeerd](how-to-consume-web-service.md) voor meer informatie over het gebruiken van uw webservice
 

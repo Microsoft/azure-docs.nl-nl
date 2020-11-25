@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/15/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: d6f72231e84650a17850932979b43c21dd045f30
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e73f11ec178c067941ee33e02f37c96605460ee0
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89069320"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658584"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>Zelfstudie: Azure Firewall implementeren en configureren met de Azure-portal
 
@@ -28,7 +28,7 @@ Netwerkverkeer is onderhevig aan de geconfigureerde firewallregels wanneer u het
 
 Voor deze zelfstudie maakt u een vereenvoudigd VNet met twee subnetten voor eenvoudige implementatie.
 
-Voor productie-implementaties wordt een [hub en spoke-model](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) aanbevolen, waarbij de firewall zich in een eigen VNet bevindt. De werkbelastingservers bevinden zich in gepeerde VNets in dezelfde regio met een of meer subnetten.
+Voor productie-implementaties wordt een [hub en spoke-model](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) aanbevolen, waarbij de firewall zich in een eigen VNet bevindt. De werkbelastingservers bevinden zich in gepeerde VNets in dezelfde regio met een of meer subnetten.
 
 * **AzureFirewallSubnet** – De firewall bevindt zich in dit subnet.
 * **Workload-SN** – De workloadserver bevindt zich in dit subnet. Het netwerkverkeer van dit subnet gaat via de firewall.
@@ -226,8 +226,8 @@ Met deze regel kunt u een extern bureaublad via de firewall verbinden met de vir
 5. Onder **Regels** typt u bij **Naam** de naam **rdp-nat**.
 6. Bij **Protocol** selecteert u **TCP**.
 7. Selecteer **IP-adres** bij **Brontype**.
-8. Typ bij **Bron** **\*** .
-9. Bij **Doeladressen** typt u het openbare IP-adres van de firewall.
+8. Typ * *\** _ bij **Bron**.
+9. Typ bij _*Doeladressen** het openbare IP-adres van de firewall.
 10. Typ bij **Doelpoorten** **3389**.
 11. Bij **Omgezet adres** typt u het privé-IP-adres voor **Srv-work**.
 12. Bij **Vertaalde poort** typt u **3389**.
@@ -272,4 +272,4 @@ U kunt de firewall-resources voor de volgende zelfstudie bewaren. Als u ze niet 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: Azure Firewall-logboeken bewaken](./tutorial-diagnostics.md)
+> [Zelfstudie: Azure Firewall-logboeken bewaken](./firewall-diagnostics.md)

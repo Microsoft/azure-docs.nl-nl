@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2230784eedd044acd95b3087793ba664b544f76a
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: b558e34d3f5d224515eee669dfa7b8f2c6bbb3cd
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505067"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541008"
 ---
 # <a name="quickstart-create-a-dedicated-sql-pool-preview-using-the-azure-portal"></a>Quickstart: Een toegewezen SQL-pool (preview) maken met behulp van de Azure Portal
 
@@ -48,7 +48,7 @@ Meld u aan bij [Azure Portal](https://portal.azure.com/)
 
     | Instelling | Voorgestelde waarde | Beschrijving |
     | :------ | :-------------- | :---------- |
-    | **naam van de toegewezen SQL-pool** | Een geldige naam | De naam van de toegewezen SQL-pool. |
+    | **Naam van de toegewezen SQL-pool** | Een geldige naam | De naam van de toegewezen SQL-pool. |
     | **Prestatieniveau** | DW100c | Stel in op de kleinste grootte om de kosten voor deze snelstart te verlagen |
 
   
@@ -73,7 +73,6 @@ Meld u aan bij [Azure Portal](https://portal.azure.com/)
 
 8. Als u nadat het inrichten is voltooid weer naar de werkruimte gaat, wordt hier een nieuwe vermelding voor de zojuist gemaakte toegewezen SQL-pool weergegeven.
  ![Stroom voor het maken van SQL-pool - resource-inrichting.](media/quickstart-create-sql-pool/create-sql-pool-studio-27.png)
-
 
 
 Nadat de toegewezen SQL-pool is gemaakt, is deze beschikbaar in de werkruimte voor het laden van gegevens, het verwerken van stromen, het lezen vanuit de lake, enzovoort.

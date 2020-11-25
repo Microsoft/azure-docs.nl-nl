@@ -2,27 +2,27 @@
 title: Inleiding
 description: Meer informatie over de functies en voordelen van Azure VMware Solution voor het implementeren en beheren van VMware-workloads in Azure.
 ms.topic: overview
-ms.date: 05/04/2020
-ms.openlocfilehash: 1875f535a5ca3e346362409c143da82cb8c07a12
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.date: 11/11/2020
+ms.openlocfilehash: 57edfc5786dfc95070b66eb9c8e2e038bafdcd35
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94488584"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94534650"
 ---
 # <a name="what-is-azure-vmware-solution"></a>Wat is Azure VMware Solution?
 
-Met Azure VMware Solution beschikt u over privéclouds in Azure. De privécloud bevat vSphere-clusters, gebouwd op basis van een toegewezen bare-metal Azure-infrastructuur. U kunt privécloudclusters schalen van 3 naar 16 hosts, met de mogelijkheid om meerdere clusters in één privécloud te hebben. Alle privéclouds zijn ingericht met vCenter Server, vSAN, vSphere en NSX-T. U kunt workloads migreren uit uw on-premises omgevingen, nieuwe virtuele machines maken of implementeren en Azure-services gebruiken vanuit uw privéclouds.
+Azure VMware Solution voorziet u van privéclouds die vSphere-clusters bevatten. Deze clusters zijn gebouwd op basis van een toegewezen bare-metal Azure-infrastructuur. Bij de initiële implementatie zijn er minimaal drie hosts. Extra hosts kunnen één voor één worden toegevoegd, tot een maximum van 16 hosts per cluster.  Alle ingerichte privéclouds beschikken over vCenter Server, vSAN, vSphere en NSX-T. U kunt workloads migreren vanuit uw on-premises omgevingen, nieuwe virtuele machines (VM's) implementeren en Azure-services gebruiken vanuit uw privéclouds.
 
-Azure VMware Solution is een VMware-gevalideerde oplossing met voortdurende validatie van en testen op verbeteringen en upgrades. De infrastructuur en software van de privécloud worden beheerd en onderhouden door Microsoft, zodat u zich kunt richten op het ontwikkelen en uitvoeren van workloads in uw privéclouds.
+Azure VMware Solution is een VMware-gevalideerde oplossing met voortdurende validatie van en testen op verbeteringen en upgrades. Microsoft beheert en onderhoudt de infrastructuur en software voor privéclouds. Zo kunt u zich richten op het ontwikkelen en uitvoeren van werkbelastingen in uw privéclouds. 
 
-In het volgende diagram wordt de verdeling weergegeven tussen privéclouds en VNets in Azure, Azure-services en on-premises omgevingen. Netwerktoegang van privéclouds naar Azure-services of VNets biedt SLA-gestuurde integratie van Azure-service-eindpunten. Privécloud-toegang vanuit on-premises omgevingen maakt gebruik van ExpressRoute Global Reach voor een privé- en beveiligde verbinding.
+In het diagram wordt de verdeling weergegeven tussen privéclouds en VNets in Azure, Azure-services en on-premises omgevingen. Netwerktoegang van privéclouds naar Azure-services of VNets biedt SLA-gestuurde integratie van Azure-service-eindpunten. ExpressRoute Global Reach verbindt uw on-premises omgeving verbindt met uw Azure VMware Solution-privécloud. 
 
 ![Afbeelding van nabijheid van Azure VMware Solution-privécloud ten opzichte van Azure en on-premises](./media/adjacency-overview-drawing-final.png)
 
 ## <a name="hosts-clusters-and-private-clouds"></a>Hosts, clusters en privéclouds
 
-Azure VMware Solution-privéclouds en -clusters zijn opgebouwd uit een bare-metal, hypergeconvergeerde Azure-infrastructuurhost. De high-end-hosts hebben 576 GB RAM en dubbele Intel 18-core, 2,3GHz-processors. De HE hosts hebben twee vSAN-schijfgroepen met een totale raw vSAN-capaciteitslaag van 15,36 TB (SSD) en een cachelaag van 3,2 TB (NVMe).
+Azure VMware Solution-privéclouds en -clusters zijn opgebouwd uit een bare-metal, hypergeconvergeerde Azure-infrastructuurhost. De high-end-hosts hebben 576 GB RAM en dubbele Intel 18-core, 2,3GHz-processors. De HE-hosts hebben twee vSAN-schijfgroepen met een raw vSAN-capaciteitslaag van 15,36 TB (SSD) en een vSAN-cachelaag van 3,2 TB (NVMe).
 
 Nieuwe privéclouds worden geïmplementeerd via Azure Portal of Azure CLI.
 
@@ -30,21 +30,30 @@ Nieuwe privéclouds worden geïmplementeerd via Azure Portal of Azure CLI.
 
 [!INCLUDE [avs-networking-description](includes/azure-vmware-solution-networking-description.md)]
 
-Voor meer informatie over netwerken en interconnectiviteit raadpleegt u het artikel [Networking-concepten](concepts-networking.md).
+Zie voor meer informatie [Concepten voor netwerken](concepts-networking.md).
 
 ## <a name="access-and-security"></a>Toegang en beveiliging
 
-Voor verbeterde beveiliging maken Azure VMware Solution-privéclouds gebruik van op vSphere-rollen gebaseerd toegangsbeheer. vSphere SSO LDAP-mogelijkheden kunnen worden geïntegreerd met Azure Active Directory. Zie het artikel [Toegang en identiteitsconcepten](concepts-identity.md) voor meer informatie over identiteit en bevoegdheden.
+Azure VMware Solution-privéclouds maken gebruik van op vSphere-rollen gebaseerd toegangsbeheer voor verbeterde beveiliging. U kunt vSphere SSO LDAP-mogelijkheden integreren met Azure Active Directory. Zie voor meer informatie [Concepten voor toegang en identiteiten](concepts-identity.md).  
 
-vSAN data-at-rest encryptie is standaard ingeschakeld en wordt gebruikt om vSAN-datastorebeveiliging te bieden. Dit wordt gedetailleerd beschreven in het artikel [Opslagconcepten](concepts-storage.md).
+De encryptie 'vSAN data-at-rest' is standaard ingeschakeld en wordt gebruikt om vSAN-datastorebeveiliging te bieden. Zie voor meer informatie [Concepten voor opslag](concepts-storage.md).
 
 ## <a name="host-and-software-lifecycle-maintenance"></a>Onderhoud van de levenscyclus van host en software
 
-Regelmatige upgrades van de Azure VMware Solution-privécloud en VMware-software zorgen ervoor dat de nieuwste beveiligings-, stabiliteits- en functiesets worden uitgevoerd in uw privéclouds. Meer informatie over platformonderhoud en -upgrades vindt u in het artikel [Upgradeconcepten](concepts-upgrades.md).
+Regelmatige upgrades van de Azure VMware Solution-privécloud en VMware-software zorgen ervoor dat de nieuwste beveiligings-, stabiliteits- en functiesets worden uitgevoerd in uw privéclouds. Zie voor meer informatie [Updates en upgrades voor privéclouds](concepts-upgrades.md).
 
 ## <a name="monitoring-your-private-cloud"></a>De privécloud bewaken
 
-Zodra de Azure VMware Solution is geïmplementeerd in uw abonnement, worden [Azure Monitor-logboeken](../azure-monitor/overview.md) automatisch gegenereerd. Daarnaast kunt u logboeken verzamelen op elke virtuele machine in uw privécloud. U kunt [de MMA-agent downloaden en installeren](../azure-monitor/platform/log-analytics-agent.md#installation-options) op virtuele machines met Linux en Windows die worden uitgevoerd in uw Azure VMware Solution-privéclouds. U kunt ook de [Azure Diagnostics-extensie](../azure-monitor/platform/diagnostics-extension-overview.md) inschakelen. U kunt zelfs dezelfde query's uitvoeren die normaal gesproken op uw virtuele machines worden uitgevoerd. Zie [Overzicht Azure Monitor-logboeken](../azure-monitor/platform/data-platform-logs.md) voor meer informatie over het maken van query's. Het bewaken van patronen in de Azure VMware Solution is vergelijkbaar met Azure Virtual Machines binnen het IaaS-platform. Zie [Virtuele machines van Azure bewaken met Azure Monitor](../azure-monitor/insights/monitor-vm-azure.md) voor meer informatie en uitleg.
+Zodra de Azure VMware Solution is geïmplementeerd in uw abonnement, worden [Azure Monitor-logboeken](../azure-monitor/overview.md) automatisch gegenereerd. 
+
+In uw privécloud kunt u:
+- Logboeken op al uw VM's verzamelen.
+- [De MMA-agent downloaden en installeren](../azure-monitor/platform/log-analytics-agent.md#installation-options) op Linux- en Windows-VM's.
+- De [Azure Diagnostics-extensie](../azure-monitor/platform/diagnostics-extension-overview.md) inschakelen.
+- [Nieuwe query's maken en uitvoeren](../azure-monitor/platform/data-platform-logs.md#log-queries).
+- Dezelfde query's uitvoeren die doorgaans worden uitgevoerd op uw VM's.
+
+Bewaken dat de patronen in de Azure VMware Solution vergelijkbaar zijn met Azure VM's binnen het IaaS-platform. Zie voor meer informatie en uitleg [VM's van Azure bewaken met Azure Monitor](../azure-monitor/insights/monitor-vm-azure.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

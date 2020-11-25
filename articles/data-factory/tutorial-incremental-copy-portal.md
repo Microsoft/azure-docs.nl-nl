@@ -1,6 +1,6 @@
 ---
 title: Een tabel incrementeel kopiëren met behulp van de Azure-portal
-description: In deze zelfstudie maakt u een data factory in Azure met een pijplijn waarmee deltagegevens uit een tabel in een Azure SQL Database worden geladen naar Azure-blobopslag.
+description: In deze zelfstudie maakt u een Azure-gegevensfactory met een pijplijn waarmee deltagegevens uit een tabel in een Azure SQL Database worden geladen naar Azure Blob Storage.
 services: data-factory
 author: dearandyxu
 ms.author: yexu
@@ -10,19 +10,19 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-dt-2019
-ms.date: 06/10/2020
-ms.openlocfilehash: 6567651f76ff19a8105158b243de7582256e0375
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/09/2020
+ms.openlocfilehash: 6dba148f0cde81905bc66f7750ff5e04edc948aa
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320911"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566386"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-the-azure-portal"></a>Incrementeel gegevens uit een Azure SQL-database laden in Azure Blob Storage met de Azure-portal
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-In deze zelfstudie maakt u een data factory in Azure met een pijplijn waarmee deltagegevens uit een tabel in een Azure SQL Database worden geladen naar Azure-blobopslag.
+In deze zelfstudie maakt u een Azure-gegevensfactory met een pijplijn waarmee deltagegevens uit een tabel in een Azure SQL Database worden geladen naar Azure Blob Storage.
 
 In deze zelfstudie voert u de volgende stappen uit:
 
@@ -153,7 +153,7 @@ END
 ## <a name="create-a-data-factory"></a>Een gegevensfactory maken
 
 1. Start de webbrowser **Microsoft Edge** of **Google Chrome**. Op dit moment wordt de Data Factory-gebruikersinterface alleen ondersteund in de webbrowsers Microsoft Edge en Google Chrome.
-2. Selecteer in het linkermenu **Een resource maken** > **Analyse** > **Data Factory**:
+2. Selecteer in het linkermenu **Een resource maken** > **Integratie** > **Data Factory**:
 
    ![Selectie van Data Factory in het deelvenster Nieuw](./media/doc-common-process/new-azure-data-factory-menu.png)
 

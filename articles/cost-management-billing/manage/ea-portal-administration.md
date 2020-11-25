@@ -3,18 +3,18 @@ title: Beheer van Azure EA Portal
 description: In dit artikel worden de algemene taken beschreven die een beheerder in Azure EA Portal uitvoert.
 author: bandersmsft
 ms.author: banders
-ms.date: 10/27/2020
+ms.date: 11/13/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
 ms.custom: contperfq1
-ms.openlocfilehash: e83af5baa4ca38a8e81dffa8bb81ab3da64e1e95
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: edcc94050880544a6c2de54ff27f833f1c60f99f
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94411019"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94683642"
 ---
 # <a name="azure-ea-portal-administration"></a>Beheer van Azure EA Portal
 
@@ -135,28 +135,20 @@ Eigendom van het account controleren:
    De status wordt gewijzigd van **In behandeling** in **Begin-/einddatum**. De Begin-/einddatum is de datum waarop de gebruiker zich voor het eerst heeft aangemeld en de einddatum van de overeenkomst.
 1. Zodra het pop-upbericht **Waarschuwing** wordt weergegeven, moet de accounteigenaar **Doorgaan** selecteren om het account te activeren wanneer deze zich voor de eerste keer bij de Azure Enterprise-portal aanmeldt.
 
-## <a name="change-account-owner"></a>Accounteigenaar wijzigen
+## <a name="change-azure-subscription-or-account-ownership"></a>Het Azure-abonnement of de accounteigenaar wijzigen
 
-Ondernemingsbeheerders kunnen de Azure Enterprise-portal gebruiken om het eigendom van het abonnementsaccount in een inschrijving over te dragen. Met deze actie worden alle abonnementen verplaatst van een brongebruikersaccount naar een doelgebruikersaccount.
+Ondernemingsbeheerders kunnen de Azure Enterprise-portal gebruiken om het eigendom over te dragen van geselecteerde of alle abonnementen in een inschrijving.
 
-Houd rekening met deze belangrijke informatie als u accounts gaat overdragen:
+Zodra u een eigenaarsoverdracht van het abonnement of een account hebt voltooid, wordt de eigenaar van het account door Microsoft bijgewerkt.
 
-- U kunt de volgende overdrachten uitvoeren:
-  - Van een werk- of schoolaccount naar een ander werk- of schoolaccount.
-  - Van een Microsoft-account naar een werk- of schoolaccount.
-  - Van een Microsoft-account naar een ander Microsoft-account.
+Voordat u een eigenaarsoverdracht uitvoert, dient u deze beleidsmaatregelen op Azure-rollen gebaseerd toegangsbeheer (Azure RBAC) te begrijpen:
 
-    Het doelaccount moet een geldig Azure Commerce-account zijn om als geldig doel voor overdrachten te fungeren. Voor nieuwe accounts wordt u gevraagd een Azure Commerce-account te maken wanneer u zich aanmeldt bij de Azure Enterprise-portal. Voor bestaande accounts moet u eerst een nieuw Azure-abonnement maken voordat het account kan worden overgedragen.
-
-- U kunt geen overdracht uitvoeren van een werk- of schoolaccount naar een Microsoft-account.
-
-- Zodra u een abonnementsoverdracht hebt voltooid, wordt de eigenaar van het account door Microsoft bijgewerkt.
-
-Krijg inzicht in deze beleidsmaatregelen voor op rollen gebaseerd toegangsbeheer (RBAC):
-
-- Wanneer u abonnementsoverdrachten tussen twee organisatie-id's in dezelfde tenant uitvoert, blijven het RBAC-beleid en de bestaande servicebeheerders- en co-beheerdersrollen bewaard.
-- Andere abonnementsoverdrachten leiden ertoe dat uw RBAC-beleid en de roltoewijzingen verloren gaan.
+- Wanneer u een eigenaarsoverdracht van het abonnement of een account uitvoert tussen twee organisatie-id's in dezelfde tenant, blijven het Azure RBAC-beleid, de bestaande servicebeheerders en co-beheerdersrollen bewaard.
+- Cross-tenant-eigenaarsoverdrachten van het abonnement of een account leiden ertoe dat uw Azure RBAC-beleid en de roltoewijzingen verloren gaan.
 - Beleidsregels en beheerdersrollen kunnen niet worden overgedragen naar andere mappen. Servicebeheerders worden bijgewerkt naar eigenaar van het doelaccount.
+- Als u wilt voorkomen dat het RBAC-beleid en de roltoewijzingen verloren gaan bij het overdragen van het abonnement tussen tenants, moet u ervoor zorgen dat de **Verplaats abonnementen naar de Azure AD-tenant van de ontvanger** selectievakje van de ontvanger **niet wordt aangevinkt**. Hiermee blijven de services, RBAC-rollen en het beleid van de huidige Azure AD-tenant behouden en wordt alleen het eigendom van de facturering voor het account overgedragen.  
+    :::image type="content" source="./media/ea-portal-administration/unselected-checkbox-move-subscriptions-to-recipients-tenant.png" alt-text="Afbeelding waarin het selectievakje voor het verplaatsen van abonnementen naar de Azure AD-tenant niet is aangevinkt" lightbox="./media/ea-portal-administration/unselected-checkbox-move-subscriptions-to-recipients-tenant.png" :::
+
 
 Voordat u de accounteigenaar wijzigt:
 
@@ -168,26 +160,25 @@ Accounteigendom overdragen voor alle abonnementen:
 1. Meld u aan bij de Azure Enterprise-portal.
 1. Selecteer in het navigatiegedeelte aan de linkerkant de optie **Beheren**.
 1. Selecteer het tabblad **Account** en plaats de muisaanwijzer op een account.
-1. Selecteer aan de rechterkant het pictogram voor het wijzigen van de accounteigenaar. Het pictogram lijkt op een persoon.
-1. Kies een geschikt account en selecteer **Volgende**.
+1. Selecteer aan de rechterkant het pictogram voor het wijzigen van de accounteigenaar. Het pictogram lijkt op een persoon.  
+    ![Afbeelding van het symbool Accounteigenaar wijzigen](./media/ea-portal-administration/create-ea-create-sub-transfer-account-ownership-of-sub.png)
+1. Kies het doelaccount waarnaar u wilt overdragen en selecteer dan **Volgende**.
+1. Als u het eigendom van het account wilt overdragen tussen Azure AD-tenants, zet u een vinkje in het selectievakje **Verplaats abonnementen naar de Azure AD-tenant van de ontvanger**.  
+    :::image type="content" source="./media/ea-portal-administration/selected-checkbox-move-subscriptions-to-recipients-tenant.png" alt-text="Afbeelding waarin het selectievakje voor het verplaatsen van abonnementen naar de Azure AD-tenant is aangevinkt" lightbox="./media/ea-portal-administration/selected-checkbox-move-subscriptions-to-recipients-tenant.png" :::
 1. Bevestig de overdracht en selecteer **Verzenden**.
-
-![Afbeelding van het symbool Accounteigenaar wijzigen](./media/ea-portal-administration/create-ea-create-sub-transfer-account-ownership-of-sub.png)
 
 Accounteigendom overdragen voor één abonnementen:
 
 1. Meld u aan bij de Azure Enterprise-portal.
 1. Selecteer in het navigatiegedeelte aan de linkerkant de optie **Beheren**.
 1. Selecteer het tabblad **Account** en plaats de muisaanwijzer op een account.
-1. Selecteer aan de rechterkant het pictogram voor abonnementsoverdracht. Het pictogram lijkt op een pagina.
-1. Kies een geschikt abonnement en selecteer **Volgende**.
+1. Selecteer aan de rechterkant het pictogram voor abonnementsoverdracht. Het pictogram lijkt op een pagina.  
+    ![Afbeelding met het symbool Abonnementen overdragen](./media/ea-portal-administration/ea-transfer-subscriptions.png)
+1. Kies het doelaccount waarnaar u het abonnement wilt overdragen en selecteer dan **Volgende**.
+1. Als u het eigendom van het abonnement wilt overdragen tussen Azure AD-tenants, zet u een vinkje in het selectievakje **Verplaats abonnementen naar de Azure AD-tenant van de ontvanger**.  
+    :::image type="content" source="./media/ea-portal-administration/selected-checkbox-move-subscriptions-to-recipients-tenant.png" alt-text="Afbeelding waarin het selectievakje voor het verplaatsen van abonnementen naar de Azure AD-tenant is aangevinkt" lightbox="./media/ea-portal-administration/selected-checkbox-move-subscriptions-to-recipients-tenant.png" :::
 1. Bevestig de overdracht en selecteer **Verzenden**.
 
-![Afbeelding met het symbool Abonnementen overdragen](./media/ea-portal-administration/ea-transfer-subscriptions.png)
-
-Bekijk deze video over gebruikersbeheer in de Azure Enterprise-portal:
-
-> [!VIDEO https://www.youtube.com/embed/621jVkvmwm8]
 
 ## <a name="associate-an-account-to-a-department"></a>Een account aan een afdeling koppelen
 

@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 02/28/2019
 ms.author: amberb
 ms.openlocfilehash: 4917bcd1ef0e20d4c8f00d4cedb4697fbccb09c0
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92670428"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014279"
 ---
 Controleer het type overeenkomst om te bepalen of u toegang hebt tot een factureringsaccount voor een Microsoft-klantovereenkomst.
  
-1. Ga naar de Azure-portal om te controleren of u toegang hebt tot het factureringsaccount. Zoek en selecteer **Kostenbeheer en facturering** .
+1. Ga naar de Azure-portal om te controleren of u toegang hebt tot het factureringsaccount. Zoek en selecteer **Kostenbeheer en facturering**.
 
    ![Schermopname van een zoekopdracht in Azure Portal naar kostenbeheer en facturering.](./media/billing-check-mca/billing-search-cost-management-billing.png)
  

@@ -15,24 +15,22 @@ ms.workload: infrastructure-services
 ms.date: 06/11/2020
 ms.author: allensu
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7d4467e557105100fc32940c05fa349722689867
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ec054d55432ad2680314b4ff91a067d37b629d4
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88054354"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734324"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-azure-cli-and-test-the-nat-service"></a>Zelfstudie: Een NAT-gateway maken met behulp van de Azure CLI en de NAT-service testen
 
 In deze zelfstudie maakt u een NAT-gateway om uitgaande connectiviteit te bieden voor virtuele machines in Azure. Als u de NAT-gateway wilt testen, implementeert u een virtuele bron- en doelmachine. U gaat de NAT-gateway testen door uitgaande verbindingen te maken met een openbaar IP-adres. Deze verbindingen zijn afkomstig van de bron naar de virtuele doelmachine. In deze zelfstudie worden de bron en het doel in twee verschillende virtuele netwerken in dezelfde resourcegroep geïmplementeerd om het eenvoudiger te maken.
 
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-U kunt deze zelfstudie met behulp van Azure Cloud Shell voltooien of de betreffende opdrachten lokaal uitvoeren.  Als u Azure Cloud Shell niet hebt gebruikt, moet u zich nu [aanmelden](https://shell.azure.com).
-
-Als u ervoor kiest om deze opdrachten lokaal uit te voeren, moet u CLI installeren.  Voor deze zelfstudie moet u Azure CLI versie 2.0.71 of hoger uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren]( /cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
-
+- Voor dit artikel is versie 2.0.71 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
@@ -76,7 +74,7 @@ U kunt een of meer openbare IP-resources, openbare IP-voorvoegsels of beide met 
 ### <a name="create-a-nat-gateway-resource"></a>Een NAT-gatewayresource maken
 
 In deze sectie wordt beschreven hoe u de volgende onderdelen van de NAT-service met de NAT-gatewayresource kunt maken en configureren:
-  - Een openbare IP-adresgroep en een openbaar IP-voorvoegsel die moeten worden gebruikt voor uitgaande stromen die worden omgezet door de NAT-gatewayresource.
+  - Een openbare IP-adresgroep en een openbaar IP-voorvoegsel die moeten worden gebruikt voor uitgaande stromen die worden vertaald door de NAT-gatewayresource.
   - Wijzig de time-out voor inactiviteit van de standaardwaarde van 4 minuten naar 10 minuten.
 
 Maak met [az network nat gateway create](https://docs.microsoft.com/cli/azure/network/nat?view=azure-cli-latest) een globaal Azure NAT-gateway met de naam **myNATgateway**. De opdracht gebruikt zowel het openbare IP-adres **myPublicIP** als het openbare IP-voorvoegsel **myPublicIPprefix**. De opdracht verandert ook de time-out voor inactiviteit in 10 minuten.
@@ -205,9 +203,9 @@ Maak de virtuele machine met [az vm create](/cli/azure/vm#az-vm-create).  U gene
 
 Hoewel de opdracht direct een resultaat retourneert, kan het een paar minuten duren voordat de VM is geïmplementeerd.
 
-## <a name="prepare-destination-for-outbound-traffic"></a>Bestemming voorbereiden voor uitgaand verkeer
+## <a name="prepare-destination-for-outbound-traffic"></a>Doel voorbereiden voor uitgaand verkeer
 
-We gaan nu een bestemming maken voor het uitgaande verkeer dat door de NAT-service is omgezet, zodat u het kunt testen.
+We gaan nu een doel maken voor het uitgaande verkeer dat door de NAT-service is vertaald, zodat u het kunt testen.
 
 ### <a name="configure-virtual-network-for-destination"></a>Virtueel netwerk configureren voor bestemming
 
@@ -413,7 +411,7 @@ U kunt ook een reeks aanvragen genereren met **hey**. Vervang nogmaals **\<ip-ad
 hey -n 100 -c 10 -t 30 --disable-keepalive http://<ip-address-destination>/100k
 ```
 
-Met deze opdracht worden 100 aanvragen gegenereerd, 10 gelijktijdig, met een time-out van 30 seconden. De TCP-verbinding wordt niet opnieuw gebruikt.  Met elke aanvraag wordt 100 kB opgehaald.  Aan het einde van de uitvoering zal **hey** een aantal statistieken rapporteren over de juiste werking van de NAT-service.
+Met deze opdracht worden 100 aanvragen gegenereerd, 10 gelijktijdig, met een time-out van 30 seconden. De TCP-verbinding wordt niet opnieuw gebruikt.  Elke aanvraag zal 100 KB ophalen.  Aan het einde van de uitvoering zal **hey** een aantal statistieken rapporteren over de juiste werking van de NAT-service.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

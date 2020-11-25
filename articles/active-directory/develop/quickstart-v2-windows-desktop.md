@@ -11,16 +11,18 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 5af55c16ae17b30d2079b332c236c325f3bed4df
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 25c5e6445bb5d673db1cfb755f320302a9e9c5b5
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91613268"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94561859"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Quickstart: Een token verkrijgen en Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
-In deze quickstart leert u hoe u een .NET-toepassing (WPF) voor Windows-bureaublad schrijft waarmee privé-, werk- en schoolaccounts kunnen worden aangemeld, een toegangstoken kan worden opgehaald en de Microsoft Graph API kan worden aangeroepen. (Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.)
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een WPF-toepassing (.NET voor Windows-desktop), en een toegangstoken kunnen verkrijgen om de Microsoft Graph API aan te roepen. 
+
+Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
 > [!div renderon="docs"]
 > ## <a name="prerequisites"></a>Vereisten
@@ -70,7 +72,7 @@ In deze quickstart leert u hoe u een .NET-toepassing (WPF) voor Windows-bureaubl
 
 > [!div class="sxs-lookup" renderon="portal"]
 > Voer het project uit met Visual Studio 2019.
-> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [!div renderon="portal" id="autoupdate" class="sxs-lookup nextstepaction"]
 > [Het codevoorbeeld downloaden](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2/archive/msal3x.zip)
 
 > [!div class="sxs-lookup" renderon="portal"]

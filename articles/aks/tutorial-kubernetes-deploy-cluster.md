@@ -5,12 +5,12 @@ services: container-service
 ms.topic: tutorial
 ms.date: 09/30/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 55af44f498492136b2ae03c7e23fce3676aa8e22
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 0e034ebede39a3fd9046ced9716323d0c7d874df
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747090"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684067"
 ---
 # <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Zelfstudie: Een AKS-cluster (Azure Kubernetes Service) implementeren
 
@@ -31,9 +31,9 @@ Voor deze zelfstudie moet u Azure CLI versie 2.0.53 of hoger uitvoeren. Voer `az
 
 ## <a name="create-a-kubernetes-cluster"></a>Een Kubernetes-cluster maken
 
-AKS-clusters kunnen gebruikmaken van op rollen gebaseerd toegangsbeheer (RBAC) van Kubernetes. Met deze vorm van toegangsbeheer kunt u de toegang tot resources definiëren op basis van rollen die zijn toegewezen aan gebruikers. Machtigingen worden gecombineerd als aan een gebruiker meerdere rollen zijn toegewezen, en machtigingen kunnen gelden voor één enkele naamruimte of voor een heel cluster. Standaard schakelt de Azure CLI automatisch RBAC in wanneer u een AKS-cluster maakt.
+AKS-clusters kunnen gebruikmaken van Kubernetes-RBAC (op rollen gebaseerd toegangsbeheer voor Kubernetes). Met deze vorm van toegangsbeheer kunt u de toegang tot resources definiëren op basis van rollen die zijn toegewezen aan gebruikers. Machtigingen worden gecombineerd als aan een gebruiker meerdere rollen zijn toegewezen, en machtigingen kunnen gelden voor één enkele naamruimte of voor een heel cluster. Standaard wordt Kubernetes-RBAC automatisch ingeschakeld in Azure CLI wanneer u een AKS-cluster maakt.
 
-Maak een AKS-cluster met behulp van [az aks create][]. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluste* gemaakt in de resourcegroep met de naam *myResourceGroup* . Deze resourcegroep is gemaakt in de [vorige zelfstudie][aks-tutorial-prepare-acr] in de regio *eastus* . In het volgende voorbeeld wordt er geen regio opgegeven zodat het AKS-cluster ook wordt gemaakt in de regio *eastus* . Zie [Quota’s, groottebeperkingen voor virtuele machines en beschikbaarheid in regio’s in Azure Kubernetes Service (AKS)][quotas-skus-regions] voor meer informatie over resourcelimieten en beschikbaarheid van regio's voor AKS.
+Maak een AKS-cluster met behulp van [az aks create][]. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluste* gemaakt in de resourcegroep met de naam *myResourceGroup*. Deze resourcegroep is gemaakt in de [vorige zelfstudie][aks-tutorial-prepare-acr] in de regio *eastus*. In het volgende voorbeeld wordt er geen regio opgegeven zodat het AKS-cluster ook wordt gemaakt in de regio *eastus*. Zie [Quota’s, groottebeperkingen voor virtuele machines en beschikbaarheid in regio’s in Azure Kubernetes Service (AKS)][quotas-skus-regions] voor meer informatie over resourcelimieten en beschikbaarheid van regio's voor AKS.
 
 Aangezien u geen service-principal van Azure Active Directory hebt opgegeven, wordt er automatisch een gemaakt. Een AKS-cluster heeft een service-principal nodig om met andere Azure-resources te kunnen communiceren. Hier is aan deze service-principal [het recht verleend om installatiekopieën op te halen][container-registry-integration] uit de ACR-instantie (Azure Container Registry) die u in de vorige zelfstudie hebt gemaakt. Als u het beheer wilt vereenvoudigen, kunt ook een [beheerde identiteit](use-managed-identity.md) gebruiken in plaats van een service-principal.
 

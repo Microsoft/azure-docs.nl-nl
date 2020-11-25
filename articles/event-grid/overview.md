@@ -3,12 +3,12 @@ title: Wat is Azure Event Grid?
 description: Gebeurtenisgegevens vanaf een bron naar handlers verzenden met Azure Event Grid. Op gebeurtenissen gebaseerde toepassingen ontwikkelen en integreren met Azure-services.
 ms.topic: overview
 ms.date: 09/24/2020
-ms.openlocfilehash: 73d218058c5f95d8c2d2324f1a0e1e77b24f1364
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a4f614a22fdfa7d2272c70751f56f19145a10fa6
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91326492"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94576679"
 ---
 # <a name="what-is-azure-event-grid"></a>Wat is Azure Event Grid?
 
@@ -78,7 +78,7 @@ Hier volgt een aantal essentiële functies van Azure Event Grid:
 * **Distributie**: abonneer verschillende eindpunten op dezelfde gebeurtenis om kopieën van de gebeurtenis te verzenden naar zoveel plaatsen als nodig is.
 * **Betrouwbaarheid**: probeer 24 uur lang opnieuw met exponentieel uitstel om er zeker van te zijn dat gebeurtenissen worden bezorgd.
 * **Betalen per gebeurtenis**: betaal alleen voor het bedrag waarvoor u Event Grid gebruikt.
-* **Hoge doorvoer**: maak workloads met een hoog volume in Event Grid met ondersteuning voor miljoenen gebeurtenissen per seconde.
+* **Hoge doorvoer**: bouw workloads voor hoge volumes in Event Grid.
 * **Ingebouwde gebeurtenissen**: ga snel aan de slag met voor resources gedefinieerde ingebouwde gebeurtenissen.
 * **Aangepaste gebeurtenissen**: gebruik Event Grid om aangepaste gebeurtenissen op een betrouwbare manier te routeren, filteren en af te leveren.
 

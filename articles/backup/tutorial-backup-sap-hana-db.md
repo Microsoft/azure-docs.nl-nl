@@ -3,12 +3,12 @@ title: 'Zelfstudie: back-ups maken van SAP HANA-databases in virtuele Azure-mach
 description: In deze zelfstudie ontdekt u hoe u een back-up naar een Azure Backup Recovery Services-kluis maakt van SAP HANA-databases die op een virtuele Azure-machine worden uitgevoerd.
 ms.topic: tutorial
 ms.date: 02/24/2020
-ms.openlocfilehash: 8de567b9f895ea0b3fa4a0f85a8bbad8bf82588f
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 31a0a773096ec0f69e87bfd4a05f8ba98185e6cf
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173767"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94695211"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Zelfstudie: Een back-up maken van SAP HANA-databases in een Azure-VM
 
@@ -107,9 +107,10 @@ Door het script vóór registratie uit te voeren, worden de volgende functies ui
 * De uitgaande netwerkverbinding met Azure Backup-servers en afhankelijke services zoals Azure Active Directory en Azure Storage wordt gecontroleerd.
 * Er worden logboeken vastgelegd in uw HANA-systeem met behulp van de gebruikerssleutel die wordt vermeld als onderdeel van de [vereisten](#prerequisites). De gebruikerssleutel wordt gebruikt om een back-upgebruiker (AZUREWLBACKUPHANAUSER) in het HANA-systeem te maken, en **de gebruikerssleutel kan worden verwijderd nadat het script vóór registratie is uitgevoerd**.
 * Deze vereiste rollen en machtigingen worden aan AZUREWLBACKUPHANAUSER toegewezen:
-  * DATABASE ADMIN (in het geval van MDC) en BACKUP ADMIN (in het geval van SDC): om nieuwe databases te maken tijdens de herstelbewerking.
+  * Voor MDC: DATABASE ADMIN en BACKUP ADMIN (vanaf HANA 2.0 SPS05 en hoger): om nieuwe databases te maken tijdens herstel.
+  * Voor SDC: BACK-UPBEHEERDER: voor het maken van nieuwe databases tijdens herstel.
   * CATALOG READ: om de back-upcatalogus te lezen.
-  * SAP_INTERNAL_HANA_SUPPORT: voor toegang tot een aantal privétabellen.
+  * SAP_INTERNAL_HANA_SUPPORT: voor toegang tot een aantal privétabellen. Alleen vereist voor dit SDC-en MDC-versies beneden HANA 2.0 SPS04 Rev 46. Dit is niet vereist voor HANA 2.0 SPS04 Rev 46 en hoger, omdat we nu de vereiste gegevens uit openbare tabellen ophalen met de oplossing van het HANA-team.
 * Het script voegt een sleutel toe aan **hdbuserstore** voor AZUREWLBACKUPHANAUSER, zodat de HANA-back-upinvoegtoepassing alle bewerkingen (databasequery's, herstelbewerkingen, back-ups configureren en uitvoeren) kan verwerken.
 
 >[!NOTE]
@@ -226,11 +227,16 @@ Geef als volgt de beleidsinstellingen op:
    ![Beleid voor differentiële back-ups](./media/tutorial-backup-sap-hana-db/differential-backup-policy.png)
 
    >[!NOTE]
-   >Incrementele back-ups worden momenteel niet ondersteund.
+   >Incrementele back-ups zijn nu beschikbaar in openbare preview. U kunt kiezen voor een differentieel of een incrementele dagelijkse back-up, maar niet voor beide.
    >
+7. In **Beleid voor een incrementele back-up** selecteert u **Inschakelen** om de frequentie- en bewaarinstellingen te openen.
+    * U kunt maximaal één incrementele back-up per dag activeren.
+    * Incrementele back-ups kunnen maximaal 180 dagen worden bewaard. Als dat voor u te kort is, moet u volledige back-ups gebruiken.
 
-7. Selecteer **OK** om het beleid op te slaan en terug te gaan naar het hoofdmenu **Back-upbeleid**.
-8. Selecteer **Logboekback-up** als u een back-upbeleid voor een transactielogboek wilt toevoegen;
+    ![Beleid voor incrementele back-ups](./media/backup-azure-sap-hana-database/incremental-backup-policy.png)
+
+8. Selecteer **OK** om het beleid op te slaan en terug te gaan naar het hoofdmenu **Back-upbeleid**.
+9. Selecteer **Logboekback-up** als u een back-upbeleid voor een transactielogboek wilt toevoegen;
    * standaard is **Logboekback-up** ingesteld op **Inschakelen**. Dit kan niet worden uitgeschakeld omdat SAP HANA alle logboekback-ups beheert.
    * We hebben **2 uur** als back-upschema ingesteld, en een bewaarperiode van **15 dagen**.
 
@@ -240,8 +246,8 @@ Geef als volgt de beleidsinstellingen op:
    > De stroom van logboekback-ups begint pas nadat één volledige back-up is voltooid.
    >
 
-9. Selecteer **OK** om het beleid op te slaan en terug te gaan naar het hoofdmenu **Back-upbeleid**.
-10. Zodra u het back-upbeleid hebt gedefinieerd, selecteert u **OK**.
+10. Selecteer **OK** om het beleid op te slaan en terug te gaan naar het hoofdmenu **Back-upbeleid**.
+11. Zodra u het back-upbeleid hebt gedefinieerd, selecteert u **OK**.
 
 U hebt nu back-up(s) voor uw SAP HANA-database(s) geconfigureerd.
 

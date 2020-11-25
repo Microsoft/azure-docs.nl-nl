@@ -1,6 +1,6 @@
 ---
 title: Incrementeel gegevens kopiëren met behulp van Wijzigingen bijhouden met behulp van de Azure-portal
-description: In deze zelfstudie maakt u een Azure data factory met een pijplijn die gewijzigde gegevens laadt op basis van informatie over wijzigingen in de brondatabase in Azure SQL Database naar een Azure blob storage.
+description: In deze zelfstudie maakt u een Azure-gegevensfactory met een pijplijn die gewijzigde gegevens laadt op basis van informatie over wijzigingen bijhouden in de brondatabase in Azure SQL Database naar een Azure-blobopslag.
 services: data-factory
 ms.author: yexu
 author: dearandyxu
@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/12/2018
-ms.openlocfilehash: 78b9d3f30ebc8f74433f04c4474121682c4a3f36
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c5f87e693d2592f830ec785f2163c232915544d1
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542016"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94561128"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information-using-the-azure-portal"></a>Incrementeel gegevens kopiëren van Azure SQL Database naar Azure Blob Storage met behulp van technologie voor bijhouden van wijzigingen met behulp van de Azure-portal
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-In deze zelfstudie maakt u een Azure data factory met een pijplijn die gewijzigde gegevens laadt op basis van informatie over **wijzigingen** in de brondatabase in Azure SQL Database naar een Azure blob storage.  
+In deze zelfstudie maakt u een Azure-gegevensfactory met een pijplijn die gewijzigde gegevens laadt op basis van informatie over **wijzigingen bijhouden** in de brondatabase in Azure SQL Database naar een Azure-blobopslag.  
 
 In deze zelfstudie voert u de volgende stappen uit:
 
@@ -264,7 +264,7 @@ In deze stap maakt u een gegevensset die de gegevens voorstelt die worden gekopi
 4. Ga naar het tabblad **Connection**  in het venster Properties en voer de volgende stappen uit:
 
     1. Selecteer **AzureStorageLinkedService** bij **Linked service**.
-    2. Voer **adftutorial/incchgtracking** in voor het **map**gedeelte van het **bestandspad**.
+    2. Voer **adftutorial/incchgtracking** in voor het **map** gedeelte van het **bestandspad**.
     3. Voer **\@CONCAT('Incremental-', pipeline().RunId, '.txt')** in voor het **file**-gedeelte van het **filePath**.  
 
        ![Sink-gegevensset - verbinding](./media/tutorial-incremental-copy-change-tracking-feature-portal/sink-dataset-connection.png)

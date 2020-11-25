@@ -5,12 +5,12 @@ services: container-service
 ms.topic: overview
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: ee709868cd7e78afbcc480913c4e4c8fd2acf832
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 75f4602be15ef2487272ed5790d92c4c884c551f
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167182"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681547"
 ---
 # <a name="azure-kubernetes-service-aks"></a>Azure Kubernetes Service (AKS)
 
@@ -26,11 +26,11 @@ Om aan de slag te gaan, voert u de AKS-quickstart uit [in de Azure-portal][aks-p
 
 ## <a name="access-security-and-monitoring"></a>Toegang, beveiliging en bewaking
 
-Voor verbeterde beveiliging en verbeterd beheer laat AKS u integreren met Azure Active Directory en gebruikmaken van Kubernetes RBAC (op rollen gebaseerd toegangsbeheer). U kunt ook de status van uw cluster en resources bewaken.
+Voor verbeterde beveiliging en verbeterd beheer laat AKS u integreren met Azure Active Directory en gebruikmaken van Kubernetes-RBAC (op rollen gebaseerd toegangsbeheer voor Kubernetes). U kunt ook de status van uw cluster en resources bewaken.
 
 ### <a name="identity-and-security-management"></a>Identiteits- en beveiligingsbeheer
 
-Om de toegang tot clusterresources te beperken, ondersteunt AKS [op Kubernetes-rollen gebaseerd toegangsbeheer (RBAC)][kubernetes-rbac]. Met RBAC kunt u de toegang instellen tot Kubernetes-resources en -naamruimten en kunt u de machtigingen voor deze bronnen instellen. U kunt een AKS-cluster ook configureren om te worden geïntegreerd met Azure Active Directory (AD). Met Azure AD-integratie kan Kubernetes-toegang worden geconfigureerd op basis van bestaande identiteiten en groepslidmaatschap. Aan uw bestaande Azure AD-gebruikers en -groepen kan toegang tot AKS-resources worden verleend met een geïntegreerde ervaring voor eenmalige aanmelding.
+Om de toegang tot clusterresources te beperken ondersteunt AKS [Kubernetes-RBAC (op rollen gebaseerd toegangsbeheer voor Kubernetes)][kubernetes-rbac]. Met Kubernetes-RBAC kunt u de toegang instellen tot Kubernetes-resources en -naamruimten, en kunt u de machtigingen voor deze resources instellen. U kunt een AKS-cluster ook configureren om te worden geïntegreerd met Azure Active Directory (AD). Met Azure AD-integratie kan Kubernetes-toegang worden geconfigureerd op basis van bestaande identiteiten en groepslidmaatschap. Aan uw bestaande Azure AD-gebruikers en -groepen kan toegang tot AKS-resources worden verleend met een geïntegreerde ervaring voor eenmalige aanmelding.
 
 Zie [Toegangs- en identiteitsopties voor AKS][concepts-identity] voor meer informatie over identiteit.
 
@@ -146,7 +146,7 @@ Meer informatie over het implementeren en beheren van AKS vindt u in de snelstar
 [aks-master-logs]: view-master-logs.md
 [aks-supported versions]: supported-kubernetes-versions.md
 [concepts-clusters-workloads]: concepts-clusters-workloads.md
-[kubernetes-rbac]: concepts-identity.md#kubernetes-role-based-access-control-rbac
+[kubernetes-rbac]: concepts-identity.md#kubernetes-role-based-access-control-kubernetes-rbac
 [concepts-identity]: concepts-identity.md
 [concepts-storage]: concepts-storage.md
 [conf-com-node]: ../confidential-computing/confidential-nodes-aks-overview.md

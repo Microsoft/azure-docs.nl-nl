@@ -7,13 +7,13 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 08/02/2020
-ms.openlocfilehash: 1745a2bf83cb704c8cc73e9d3bf0eba8245329b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/18/2020
+ms.openlocfilehash: 6af9b8f97d622ae10cfdbcaa8ca50abb42ec7332
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88924262"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889049"
 ---
 # <a name="create-a-knowledge-store-using-rest-and-postman"></a>Een kennisarchief maken met behulp van REST en Postman
 
@@ -84,7 +84,7 @@ Ga naar de Azure Cognitive Search-service en selecteer het tabblad **Sleutels** 
 | `index-name` | Laat deze staan op **hotel-reviews-ix**. | 
 | `search-service-name` | De naam van de Azure Cognitive Search-service. De URL is `https://{{search-service-name}}.search.windows.net`. | 
 | `skillset-name` | Laat deze staan op **hotel-reviews-ss**. | 
-| `storage-account-name` | De naam van het opslagaccount. | 
+| `storage-account-name` | Naam van het Azure-opslagaccount. | 
 | `storage-connection-string` | Selecteer in het opslagaccount op het tabblad **Toegangssleutels** de **key1** >  **-verbindingstekenreeks**. | 
 | `storage-container-name` | Laat deze staan op **hotel-reviews**. | 
 

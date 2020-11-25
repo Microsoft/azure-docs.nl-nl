@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: ae4281350efc96fab6c4e2898cbcddf83bf29cd8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ecf4229c95ff9103cd27fd161fdd19c9e7a0f76b
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93073099"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636959"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Door Azure Cosmos DB Cassandra API ondersteunde Apache Cassandra-functies 
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -86,17 +86,24 @@ Azure Cosmos DB Cassandra-API ondersteunt de volgende CQL-functies:
 | writetime | Ja |
 | cast | Nee |
 
-\* Cassandra-API biedt ondersteuning voor token als een projectie/selector, en staat token(pk) alleen toe aan de linkerkant van een WHERE-component. `WHERE token(pk) > 1024` wordt bijvoorbeeld ondersteund, maar `WHERE token(pk) > token(100)` wordt niet ondersteund.
+> [!NOTE]
+> \* Cassandra-API biedt ondersteuning voor token als een projectie/selector, en staat token(pk) alleen toe aan de linkerkant van een WHERE-component. `WHERE token(pk) > 1024` wordt bijvoorbeeld ondersteund, maar `WHERE token(pk) > token(100)` wordt **niet** ondersteund.
+
 
 
 Statistische functies:
 
 |Opdracht  |Ondersteund |
 |---------|---------|
-| min | Ja |
-| max | Ja |
 | gemiddeld | Ja |
 | count | Ja |
+| min | Ja |
+| max | Ja |
+| sum | Ja |
+
+> [!NOTE]
+> Statistische functies werken in gewone kolommen, maar aggregaties in clusterkolommen worden **niet** ondersteund.
+
 
 Blob-conversiefuncties:
  
@@ -260,7 +267,7 @@ Azure Cosmos DB Cassandra-API biedt een keuze aan consistentie voor leesbewerkin
 
 ## <a name="permission-and-role-management"></a>Machtigings- en rolbeheer
 
-Azure Cosmos DB biedt op rollen gebaseerd toegangsbeheer (RBAC) voor inrichten, wisselen van sleutels, weergeven van metrische gegevens, en wachtwoorden voor lezen/schrijven en wachtwoorden met het kenmerk alleen-lezen die kunnen worden verkregen via de [Azure-portal](https://portal.azure.com). Azure Cosmos DB biedt geen ondersteuning voor rollen voor CRUD-activiteiten.
+Azure Cosmos DB biedt Azure-RBAC (op rollen gebaseerd toegangsbeheer voor Azure) voor inrichten, wisselen van sleutels, weergeven van metrische gegevens, en wachtwoorden voor lezen/schrijven, en wachtwoorden met het kenmerk alleen-lezen die kunnen worden verkregen via [Azure Portal](https://portal.azure.com). Azure Cosmos DB biedt geen ondersteuning voor rollen voor CRUD-activiteiten.
 
 ## <a name="keyspace-and-table-options"></a>Opties voor Keyspace en tabel
 

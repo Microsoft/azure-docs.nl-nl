@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4, azuread-video-2020
-ms.openlocfilehash: d46dfba9d9dedea57b6be872a6853bc522a0bc8c
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: f0a91a4d3b479d1243907951481e5a10f7085bbc
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145248"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837427"
 ---
 # <a name="what-is-conditional-access"></a>Wat is voorwaardelijke toegang?
 
@@ -80,7 +80,7 @@ Veel organisaties hebben [algemene toegangsproblemen waarbij het beleid voor voo
 - Multi-Factor Authentication vereisen voor gebruikers met beheerdersrollen
 - Multi-Factor Authentication vereisen voor Azure-beheertaken
 - Aanmeldingen blokkeren voor gebruikers die verouderde verificatieprotocollen gebruiken
-- Vertrouwde locaties voor registratie van Azure-Multi-Factor Authentication vereisen
+- Vertrouwde locaties voor registratie van Azure AD Multi-Factor Authentication vereisen
 - Toegang vanaf specifieke locaties blokkeren of verlenen
 - Riskant aanmeldingsgedrag blokkeren
 - Door de organisatie beheerde apparaten vereisen voor specifieke toepassingen

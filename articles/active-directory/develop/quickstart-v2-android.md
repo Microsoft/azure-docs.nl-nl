@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 10/15/2019
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:Android
-ms.openlocfilehash: e8f60a3f39e770c1b09668a6d76e025b07ebbd6d
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: e0f3cd034838d5a9ccb1a5ccdc2567933b2e1dd6
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91893506"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94562199"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Snelstart: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Android-app
 
-Deze quickstart maakt gebruik van een codevoorbeeld die laat zien hoe een Android-toepassing persoonlijke, werk- en schoolaccounts kan aanmelden met behulp van het Microsoft identity platform, en vervolgens een toegangstoken kan ophalen en de Microsoft Graph API kan aanroepen. (Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.)
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een Android-toepassing, en een toegangstoken kunnen verkrijgen om de Microsoft Graph API aan te roepen. 
+
+Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
 Toepassingen moeten worden voorgesteld door een app-object in Azure Active Directory, zodat het Microsoft identity platform uw toepassing van tokens kan voorzien.
 

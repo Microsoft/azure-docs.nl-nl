@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 07/02/2020
 ms.author: memildin
-ms.openlocfilehash: 2edaf6dd139ed4612b91d3a19c3d1398d5afdec1
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 446abd8cca14c0c1c27458ef86cee4400252e3b0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340356"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965201"
 ---
 # <a name="permissions-in-azure-security-center"></a>Machtigingen in Azure Security Center
 
@@ -56,7 +56,7 @@ In de volgende tabel worden rollen en toegestane acties in Security Center verme
 >
 
 ## <a name="next-steps"></a>Volgende stappen
-In dit artikel wordt uitgelegd hoe Security Center toegangsbeheer op basis van rollen gebruikt om machtigingen aan gebruikers toe te wijzen en de toegestane acties voor elke rol aan te geven. Nu u bekend bent met de roltoewijzingen die nodig zijn voor het bewaken van de beveiligingsstatus van uw abonnement, het bewerken van beveiligingsbeleid en het toepassen van aanbevelingen, kunt u het volgende gaan leren:
+In dit artikel wordt uitgelegd hoe Security Center Azure-RBAC gebruikt om machtigingen aan gebruikers toe te wijzen en de toegestane acties voor elke rol aan te geven. Nu u bekend bent met de roltoewijzingen die nodig zijn voor het bewaken van de beveiligingsstatus van uw abonnement, het bewerken van beveiligingsbeleid en het toepassen van aanbevelingen, kunt u het volgende gaan leren:
 
 - [Beveiligingsbeleid instellen in Security Center](tutorial-security-policy.md)
 - [Aanbevelingen voor beveiliging beheren in Security Center](security-center-recommendations.md)

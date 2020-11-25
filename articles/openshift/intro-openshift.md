@@ -5,14 +5,14 @@ author: jimzim
 ms.author: jzim
 ms.service: container-service
 ms.topic: overview
-ms.date: 04/24/2020
+ms.date: 11/13/2020
 ms.custom: mvc
-ms.openlocfilehash: a3bdc3673474b778aa7c1003e48e215bac6d05bf
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 1bf3141876ee56ee1361f19a67689ca3b2f4f89a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "82628517"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685287"
 ---
 # <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
 
@@ -28,11 +28,15 @@ Voltooi de zelfstudie [Een Azure Red Hat OpenShift-cluster maken](tutorial-creat
 
 ## <a name="access-security-and-monitoring"></a>Toegang, beveiliging en bewaking
 
-Voor verbeterde beveiliging en verbeterd beheer laat Azure Red Hat OpenShift u integreren met Azure Active Directory (Azure AD) en gebruikmaken van Kubernetes RBAC (op rollen gebaseerd toegangsbeheer). U kunt ook de status van uw cluster en resources bewaken.
+Voor verbeterde beveiliging en verbeterd beheer laat Azure Red Hat OpenShift u integreren met Azure AD (Azure Active Directory) en gebruikmaken van Kubernetes-RBAC (op rollen gebaseerd toegangsbeheer voor Kubernetes). U kunt ook de status van uw cluster en resources bewaken.
 
 ## <a name="cluster-and-node"></a>Cluster en knooppunt
 
 Azure Red Hat open Shift-knooppunten worden uitgevoerd op virtuele machines van Azure. U kunt opslag met knooppunten en pods verbinden en clusteronderdelen bijwerken.
+
+## <a name="service-level-agreement"></a>Service Level Agreement
+
+Azure Red Hat OpenShift biedt een Service Level Agreement om een beschikbaarheid van de service te garanderen van 99,95%. Raadpleeg de [Azure Red Hat OpenShift SLA](https://azure.microsoft.com/en-au/support/legal/sla/openshift/v1_0/) voor meer details.
 
 ## <a name="next-steps"></a>Volgende stappen
 

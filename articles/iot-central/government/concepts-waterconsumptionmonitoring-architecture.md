@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 57dfec33beef6a9b5a6a3cd8edc43cae32d62e33
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: df402064f2aa26e29ef72c0f73f8f5aa761506e2
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123008"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873556"
 ---
 # <a name="water-consumption-monitoring-reference-architecture"></a>Referentiearchitectuur voor de bewaking van waterverbruik 
 
@@ -41,10 +41,10 @@ Azure IoT Central is een IoT-app-platform, waarmee u snel aan de slag kunt met u
 Nadat u uw slimme waterapparaten hebt aangesloten op IoT Central, kunt u het apparaat instructies geven en bedienen, beschikt u over een bewakings- en waarschuwingssysteem, een gebruikersinterface met ingebouwde RBAC, configureerbare dashboards om inzichten te verkrijgen en mogelijkheden om uit te breiden. 
 
 
-## <a name="extensibility-and-integrations"></a>Uitbreidbaarheid en integraties 
+## <a name="extensibility-and-integrations"></a>Uitbreidbaarheid en integraties
 U kunt uw IoT-toepassing uitbreiden in IoT Central, en optioneel:
 * uw IoT-gegevens voor geavanceerde analyses transformeren en integreren, bijvoorbeeld voor het trainen van machine-learningmodellen, door middel van continue gegevensexport vanuit de IoT Central-toepassing
-* werkstromen in andere systemen automatiseren door acties te activeren met behulp van Microsoft Flow of webhooks van de IoT Central-toepassing
+* werkstromen in andere systemen automatiseren door acties te activeren met behulp van Power Automate of webhooks van de IoT Central-toepassing
 * programmatisch toegang krijgen tot uw IoT-toepassing in IoT Central via IoT Central-API's
 
 ## <a name="business-applications"></a>Zakelijke toepassingen 

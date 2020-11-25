@@ -13,18 +13,18 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: b171688fa4dbff8d05b3ba03e4e4bd29028983be
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 1b15330d368a93ac4ba176df129df212a259f3e2
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92016141"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94561893"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Quickstart: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een iOS- of macOS-app
 
-Deze quickstart bevat een codevoorbeeld die u laat zien hoe een systeemeigen iOS-of macOS-toepassing persoonlijke, werk- en schoolaccounts kan aanmelden, een toegangstoken kan ophalen en de Microsoft Graph API kan aanroepen met behulp van het Microsoft identity platform.
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een systeemeigen iOS- of macOS-toepassing, en een toegangstoken kunnen verkrijgen om de Microsoft Graph API aan te roepen.
 
-Deze quickstart is van toepassing op iOS- en macOS-apps. Sommige stappen zijn alleen vereist voor iOS-apps. Bij deze stappen wordt vermeld dat ze alleen voor iOS zijn bedoeld.
+De quickstart is van toepassing op iOS- en macOS-apps. Sommige stappen zijn alleen nodig voor iOS-apps en worden als zodanig aangeduid.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -62,9 +62,9 @@ Deze quickstart is van toepassing op iOS- en macOS-apps. Sommige stappen zijn al
 >      - Sla de overige configuratieopties op deze pagina over.
 >      - Selecteer `Register`.
 > 1. Selecteer `Authentication` > `Add Platform` > `iOS` in de sectie **Beheren**.
->      - Voer de ***bundel-id*** voor uw toepassing in. De bundel-id is een unieke tekenreeks en een unieke identificatie voor uw toepassing, bijvoorbeeld `com.<yourname>.identitysample.MSALMacOS`. Noteer de waarde die u gebruikt.
+>      - Voer de **_bundel-id_* _ voor uw toepassing in. De bundel-id is een unieke tekenreeks en een unieke identificatie voor uw toepassing, bijvoorbeeld `com.<yourname>.identitysample.MSALMacOS`. Noteer de waarde die u gebruikt.
 >      - De iOS-configuratie is ook van toepassing op macOS-toepassingen.
-> 1. Selecteer `Configure` en sla de details van de ***MSAL-configuratie*** op voor later gebruik verderop in deze quickstart.
+> 1. Selecteer `Configure` en sla de details van de _*_MSAL-configuratie_*_ op voor later gebruik verderop in deze quickstart.
 > [!div renderon="portal" class="sxs-lookup"]
 >
 > #### <a name="step-1-configure-your-application"></a>Stap 1: Uw toepassing configureren
@@ -101,7 +101,7 @@ Navigeer in een terminalvenster naar de map met het gedownloade codevoorbeeld en
 >#### <a name="step-4-configure-your-project"></a>Stap 4: Het project configureren
 > Als u hierboven optie 1 hebt geselecteerd, kunt u deze stappen overslaan.
 > 1. Pak het zip-bestand uit en open het project in XCode.
-> 1. Bewerk **ViewController.swift** en vervang de regel die begint met 'let kClientID' door het volgende codefragment. Vergeet niet om de waarde voor `kClientID` bij te werken met de client-id die u eerder in deze quickstart hebt opgeslagen tijdens het registreren van uw app in de portal:
+> 1. Bewerk _ *ViewController.swift** en vervang de regel die begint met 'let kClientID' door het volgende codefragment. Vergeet niet om de waarde voor `kClientID` bij te werken met de client-id die u eerder in deze quickstart hebt opgeslagen tijdens het registreren van uw app in de portal:
 >    ```swift
 >    let kClientID = "Enter_the_Application_Id_Here"
 >    ```
@@ -117,7 +117,7 @@ Navigeer in een terminalvenster naar de map met het gedownloade codevoorbeeld en
 >     ```
 > 1. Open de projectinstellingen. Voer in de sectie **Identiteit** de **bundel-id** in die u hebt ingevoerd in de portal.
 > 1. Klik met de rechtermuisknop op **Info.plist** en selecteer **Openen als** > **Broncode**.
-> 1. Vervang onder het dict-hoofdknooppunt `Enter_the_bundle_Id_Here` door de ***bundel-id*** die u hebt gebruikt in de portal.
+> 1. Vervang onder het dict-hoofdknooppunt `Enter_the_bundle_Id_Here` door de **_bundel-id_* _ die u hebt gebruikt in de portal.
 >
 >    ```xml
 >    <key>CFBundleURLTypes</key>
@@ -179,7 +179,7 @@ self.applicationContext = try MSALPublicClientApplication(configuration: msalCon
 
 > |Waar: | Beschrijving |
 > |---------|---------|
-> | `clientId` | De toepassings-id van de toepassing die is geregistreerd in *portal.azure.com* |
+> | `clientId` | De toepassings-id van de toepassing die is geregistreerd in _portal.azure.com* |
 > | `authority` | Het Microsoft identity platform-eindpunt. In de meeste gevallen is dit `https://login.microsoftonline.com/common` |
 > | `redirectUri` | De omleidings-URI van de toepassing. U kunt 'nil' doorgeven om de standaardwaarde te gebruiken, of uw aangepaste omleidings-URI gebruiken. |
 
@@ -213,7 +213,7 @@ Uw app moet ook het volgende bevatten in uw `AppDelegate`. Hiermee kan de tokenr
     }
  ```
 
-Ten slotte moet uw app een `LSApplicationQueriesSchemes`-vermelding bevatten in ***info.plist*** naast de `CFBundleURLTypes`. In het voorbeeld is deze vermelding al opgenomen.
+Ten slotte moet de app een `LSApplicationQueriesSchemes`-vermelding bevatten in ***info.plist** _ naast de `CFBundleURLTypes`. In het voorbeeld is deze vermelding al opgenomen.
 
    ```xml
    <key>LSApplicationQueriesSchemes</key>
@@ -231,7 +231,7 @@ MSAL biedt twee methoden voor het verkrijgen van tokens: `acquireToken` en `acqu
 
 In sommige situaties moeten gebruikers communiceren met Microsoft identity platform. In dergelijke gevallen kunnen eindgebruikers verplicht zijn om hun account te selecteren, hun referenties in te voeren of toestemming te geven voor de machtigingen van uw app. Bijvoorbeeld:
 
-* De eerste keer dat gebruikers zich aanmelden bij de toepassing
+_De eerste keer dat gebruikers zich aanmelden bij de toepassing
 * Als gebruiker hun wachtwoord opnieuw instellen, moeten ze hun referenties invoeren
 * Wanneer via de toepassing voor het eerst toegang wordt aangevraagd tot een resource
 * Wanneer MFA of ander beleid voor voorwaardelijke toegang is vereist
@@ -274,4 +274,3 @@ Ga naar de stapsgewijze zelfstudie waarin u een iOS- of macOS-app bouwt die een 
 
 > [!div class="nextstepaction"]
 > [Zelfstudie: Gebruikers aanmelden en Microsoft Graph aanroepen vanuit een iOS- of macOS-app](tutorial-v2-ios.md)
-

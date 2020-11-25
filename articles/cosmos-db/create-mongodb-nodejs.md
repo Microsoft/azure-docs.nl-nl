@@ -9,12 +9,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 05/21/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: e60b43e9d90846d3787d61fc745b4ce3acbf160f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 5c0de1ccf4b6d2db44b1e315e73a84dd712b3f6c
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099008"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564018"
 ---
 # <a name="quickstart-migrate-an-existing-mongodb-nodejs-web-app-to-azure-cosmos-db"></a>Quickstart: Een bestaande MongoDB Node.js-web-app migreren naar Azure Cosmos DB 
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -31,12 +31,17 @@ ms.locfileid: "93099008"
 In deze quickstart maakt en beheert u een Azure Cosmos DB voor MongoDB API-account met behulp van de Azure Cloud Shell en met een MEAN-app (MongoDB, Express, Angular en Node.js) die is gekloond van GitHub. Azure Cosmos DB is een databaseservice met meerdere modellen waarmee u snel document-, tabel-, sleutelwaarde- en grafiekdatabases kunt maken en er query's op kunt uitvoeren met globale distributie en horizontale schaalmogelijkheden.
 
 ## <a name="prerequisites"></a>Vereisten
-- Een Azure-account met een actief abonnement. [Maak er gratis een](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Of [probeer Azure Cosmos DB gratis](https://azure.microsoft.com/try/cosmosdb/) zonder Azure-abonnement. U kunt ook de [Azure Cosmos DB Emulator](https://aka.ms/cosmosdb-emulator) gebruiken met de verbindingsreeks `.mongodb://localhost:C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==@localhost:10255/admin?ssl=true`.
-- [Node.js](https://nodejs.org/) en u moet bekend zijn met de basisbegrippen van Node.js.
-- [Git](https://git-scm.com/downloads).
-- Als u Azure Cloud Shell niet wilt gebruiken, kunt u [Azure CLI 2.0+](/cli/azure/install-azure-cli) gebruiken.
 
-[!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
+- Een Azure-account met een actief abonnement. [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] Of [probeer Azure Cosmos DB gratis](https://azure.microsoft.com/try/cosmosdb/) zonder Azure-abonnement. U kunt ook de [Azure Cosmos DB Emulator](https://aka.ms/cosmosdb-emulator) gebruiken met de verbindingsreeks `.mongodb://localhost:C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==@localhost:10255/admin?ssl=true`.
+
+- [Node.js](https://nodejs.org/) en u moet bekend zijn met de basisbegrippen van Node.js.
+
+- [Git](https://git-scm.com/downloads).
+
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+- Voor dit artikel is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+
 
 ## <a name="clone-the-sample-application"></a>De voorbeeldtoepassing klonen
 
@@ -75,8 +80,6 @@ Er wordt een poging gedaan om de toepassing te verbinden met een MongoDB-bron, w
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor dit onderwerp gebruikmaken van Azure CLI versie 2.0 of hoger. Voer `az --version` uit om de versie te bekijken. Als u Azure CLI 2.0 wilt installeren of upgraden, raadpleegt u [Azure CLI installeren]. 
-
 Als u een geïnstalleerde Azure CLI gebruikt, meldt u zich aan bij uw Azure-abonnement met de opdracht [az login](/cli/azure/reference-index#az-login) en volgt u de instructies op het scherm. U kunt deze stap overslaan als u de Azure Cloud Shell gebruikt.
 
 ```azurecli
@@ -95,7 +98,7 @@ Maak een [resourcegroep](../azure-resource-manager/management/overview.md) met d
 
 In het volgende voorbeeld wordt een resourcegroep gemaakt in de regio Europa - west. Kies een unieke naam voor de resourcegroep.
 
-Als u van Azure Cloud Shell gebruikmaakt, selecteert u **Uitproberen** , volgt u de aanwijzingen op het scherm om u aan te melden en kopieert u de opdracht naar de opdrachtprompt.
+Als u van Azure Cloud Shell gebruikmaakt, selecteert u **Uitproberen**, volgt u de aanwijzingen op het scherm om u aan te melden en kopieert u de opdracht naar de opdrachtprompt.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location "West Europe"

@@ -4,12 +4,12 @@ description: Lees hoe u een serverloze Python-functie-app maakt en een bestaande
 ms.topic: sample
 ms.date: 03/01/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 63ab9ba3219dc600187e73bbf124d62d3f51317a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bdcaeaca7c063f0532167077bba63f7e52a3d491
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498205"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565055"
 ---
 # <a name="mount-a-file-share-to-a-python-function-app-using-azure-cli"></a>Een bestandsshare koppelen aan een Python-functie-app met behulp van Azure CLI
 
@@ -20,9 +20,9 @@ Met dit voorbeeldscript voor Azure Functions maakt u een functie-app en een shar
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor dit artikel gebruikmaken van Azure CLI versie 2.0 of hoger. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren]( /cli/azure/install-azure-cli). De voorbeelden zijn geschreven voor de Bash shell en moeten worden aangepast om te worden uitgevoerd vanaf een Windows-opdrachtprompt. 
+ - Voor deze zelfstudie is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd. 
 
 ## <a name="sample-script"></a>Voorbeeldscript
 

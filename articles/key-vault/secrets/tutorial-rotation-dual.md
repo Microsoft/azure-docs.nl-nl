@@ -10,12 +10,12 @@ ms.subservice: secrets
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.author: jalichwa
-ms.openlocfilehash: 5da31d45e068f414c8afa38bcb46cdf1f790a9e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a061cf493fba99c518448acd9c4bf4bd5949eb98
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843274"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831805"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-with-two-sets-of-authentication-credentials"></a>Het rouleren van een geheim voor resources met twee sets verificatiereferenties automatiseren
 
@@ -67,8 +67,6 @@ akvrotationstorage2    akvrotation      eastus      Microsoft.Storage/storageAcc
 ```
 
 ## <a name="create-and-deploy-storage-account-key-rotation-function"></a>De functie voor het rouleren van opslagaccountsleutels maken en implementeren
-> [!IMPORTANT]
-> Voor de onderstaande sjabloon moeten Key Vault, Azure Storage Account en Azure Function zich in dezelfde resourcegroep bevinden
 
 Maak vervolgens een functie-app met een door het systeem beheerde identiteit, naast de andere vereiste onderdelen, en implementeer functies voor het rouleren van opslagaccountsleutels
 
@@ -85,13 +83,15 @@ Deze onderdelen en configuratie zijn vereist voor de roulatiefunctie van functie
    [![Afbeelding met een knop met het label Implementeren naar Azure.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FFunction%2Fazuredeploy.json)
 
 1. Selecteer in de lijst **Resourcegroep** de optie **akvrotation**.
-1. Typ in **Naam van opslagaccount** de naam van het opslagaccount met de toegangssleutels die u wilt rouleren
-1. Typ in **Naam voor Key Vault** de naam van de sleutelkluis
-1. Typ in **Naam van de functie-app** de naam van de functie-app
-1. Typ in **Geheime naam** de naam van het geheim waarin de toegangssleutels moeten worden opgeslagen
-1. Typ in **Opslagplaats-URL** de GitHub-locatie van de functiecode ( **https://github.com/jlichwa/KeyVault-Rotation-StorageAccountKey-PowerShell.git** )
+1. Voer, in **Storage-account RG**, de naam van de resourcegroep in waar uw opslagaccount zich bevindt. Behoud de standaardwaarde **[resourceGroup().name]** als uw opslagaccount al bestaat in dezelfde resourcegroep waar u de functie voor sleutelrotatie implementeert.
+1. Typ, in **Naam van opslagaccount**, de naam van het opslagaccount met de toegangssleutels die u wilt rouleren.
+1. In **Key Vault RG** voert u de naam van de resourcegroep in waarin uw sleutelkluis zich bevindt. Behoud de standaardwaarde **[resourceGroup().name]** als uw sleutelkluis al bestaat in dezelfde resourcegroep waar u de functie voor sleutelrotatie implementeert.
+1. Voer in **Key Vault-naam** de naam van de sleutelkluis invoeren.
+1. Voer in **Naam van de functie-app** de naam van de functie-app in.
+1. Typ, in **Geheime naam**, de naam van het geheim waarin de toegangssleutels zouden worden opgeslagen.
+1. Typ, in **Opslagplaats-URL**, de GitHub-locatie van de functiecode ( **https://github.com/jlichwa/KeyVault-Rotation-StorageAccountKey-PowerShell.git** ).
 1. Selecteer **Beoordelen en maken**.
-1. Selecteer **Maken**
+1. Selecteer **Maken**.
 
    ![Het eerste opslagaccount controleren en maken](../media/secrets/rotation-dual/dual-rotation-2.png)
 

@@ -7,12 +7,12 @@ ms.custom: subject-armqs
 ms.author: mathoma
 ms.date: 06/29/2020
 ms.service: virtual-machines-sql
-ms.openlocfilehash: b57303a1c9fdba2bea8637bef6c148622087a8d3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9d0dd8ee1b99ddd2abf4fad154c70315a3d33c83
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789774"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556417"
 ---
 # <a name="quickstart-create-sql-server-vm-using-an-arm-template"></a>Quickstart: SQL Server-VM maken met behulp van een ARM-sjabloon
 
@@ -20,7 +20,7 @@ Gebruik deze ARM-sjabloon (Azure Resource Manager) om een SQL-server te implemen
 
 [!INCLUDE [About Azure Resource Manager](../../../../includes/resource-manager-quickstart-introduction.md)]
 
-Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure** . De sjabloon wordt in Azure Portal geopend.
+Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
 [![Implementeren in Azure](../../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-sql-vm-new-storage%2fazuredeploy.json)
 
@@ -45,39 +45,39 @@ Er worden vijf Azure-resources gedefinieerd in de sjabloon:
 - [Microsoft.Network/networkSecurityGroups](/azure/templates/microsoft.network/networksecuritygroups): Hiermee maakt u een netwerkbeveiligingsgroep. 
 - [Microsoft.Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces): Configureert de netwerkinterface. 
 - [Microsoft.Compute/virtualMachines](/azure/templates/microsoft.compute/virtualmachines): Maakt een virtuele machine in Azure. 
-- [Microsoft.SqlVirtualMachine/SqlVirtualMachines](/azure/templates/microsoft.sqlvirtualmachine/sqlvirtualmachines): registreert de virtuele machine bij de resourceprovider van de SQL-VM. 
+- [Microsoft.SqlVirtualMachine/SqlVirtualMachines](/azure/templates/microsoft.sqlvirtualmachine/sqlvirtualmachines): registreert de virtuele machine bij de SQL IaaS-agentextensie. 
 
 Meer SQL Server op Azure VM-sjablonen vindt u in de [galerie met quickstart-sjablonen](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Sqlvirtualmachine&pageNumber=1&sort=Popular).
 
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 
-1. Selecteer de volgende afbeelding om u aan te melden bij Azure en een sjabloon te openen. Met de sjabloon wordt een virtuele machine gemaakt waarop de beoogde SQL Server-versie is geïnstalleerd en die is geregistreerd bij de resourceprovider van de SQL-VM. 
+1. Selecteer de volgende afbeelding om u aan te melden bij Azure en een sjabloon te openen. Met de sjabloon wordt een virtuele machine gemaakt waarop de beoogde SQL Server-versie is geïnstalleerd en die is geregistreerd bij de SQL IaaS-agentextensie. 
 
    [![Implementeren in Azure](../../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-sql-vm-new-storage%2fazuredeploy.json)
 
 2. Typ of selecteer de volgende waarden.
 
-    * **Abonnement** : Selecteer een Azure-abonnement.
-    * **Resourcegroep** : De voorbereide resourcegroep voor uw SQL Server-VM. 
-    * **Regio** : Selecteer een regio.  Bijvoorbeeld **VS - centraal** .
-    * **Naam van virtuele machine** : Voer een naam in voor de SQL Server-VM. 
-    * **Grootte van de virtuele machine** : Kies de juiste grootte voor uw virtuele machine in de vervolgkeuzelijst.
-    * **Naam bestaand virtueel netwerk** : Voer de naam in van het voorbereide virtuele netwerk voor uw SQL Server-VM. 
-    * **Bestaande Vnet-resourcegroep** : Voer de resourcegroep in waar het virtuele netwerk is voorbereid. 
-    * **Naam bestaand subnet** : De naam van het voorbereide subnet. 
-    * **Aanbieding voor installatiekopie** : Kies de SQL Server- en Windows Server-installatiekopie die het beste bij uw bedrijfsbehoeften past. 
-    * **SQL Sku** : Kies de editie van SQL Server SKU die het beste bij uw bedrijfsbehoeften past. 
-    * **Gebruikersnaam van beheerder** : De gebruikersnaam voor de beheerder van de virtuele machine. 
-    * **Wachtwoord voor beheerder** : Het wachtwoord dat wordt gebruikt door het VM-beheerdersaccount. 
-    * **Type werkbelasting voor opslag** :  Het type opslag voor de werkbelasting die het beste bij uw bedrijf past. 
-    * **Aantal SQL-gegevensschijven** :  Het aantal schijven dat SQL Server gebruikt voor gegevensbestanden.  
-    * **Gegevenspad** :  Het pad voor de SQL Server-gegevensbestanden. 
-    * **Aantal SQL-logboekschijven** :  Het aantal schijven dat SQL Server gebruikt voor logboekbestanden. 
-    * **Pad naar logboek** :  Het pad naar de SQL Server-logboekbestanden. 
-    * **Locatie** :  De locatie voor alle resources; deze waarde moet de standaardinstelling van `[resourceGroup().location]` blijven. 
+    * **Abonnement**: Selecteer een Azure-abonnement.
+    * **Resourcegroep**: De voorbereide resourcegroep voor uw SQL Server-VM. 
+    * **Regio**: Selecteer een regio.  Bijvoorbeeld **VS - centraal**.
+    * **Naam van virtuele machine**: Voer een naam in voor de SQL Server-VM. 
+    * **Grootte van de virtuele machine**: Kies de juiste grootte voor uw virtuele machine in de vervolgkeuzelijst.
+    * **Naam bestaand virtueel netwerk**: Voer de naam in van het voorbereide virtuele netwerk voor uw SQL Server-VM. 
+    * **Bestaande Vnet-resourcegroep**: Voer de resourcegroep in waar het virtuele netwerk is voorbereid. 
+    * **Naam bestaand subnet**: De naam van het voorbereide subnet. 
+    * **Aanbieding voor installatiekopie**: Kies de SQL Server- en Windows Server-installatiekopie die het beste bij uw bedrijfsbehoeften past. 
+    * **SQL Sku**: Kies de editie van SQL Server SKU die het beste bij uw bedrijfsbehoeften past. 
+    * **Gebruikersnaam van beheerder**: De gebruikersnaam voor de beheerder van de virtuele machine. 
+    * **Wachtwoord voor beheerder**: Het wachtwoord dat wordt gebruikt door het VM-beheerdersaccount. 
+    * **Type werkbelasting voor opslag**:  Het type opslag voor de werkbelasting die het beste bij uw bedrijf past. 
+    * **Aantal SQL-gegevensschijven**:  Het aantal schijven dat SQL Server gebruikt voor gegevensbestanden.  
+    * **Gegevenspad**:  Het pad voor de SQL Server-gegevensbestanden. 
+    * **Aantal SQL-logboekschijven**:  Het aantal schijven dat SQL Server gebruikt voor logboekbestanden. 
+    * **Pad naar logboek**:  Het pad naar de SQL Server-logboekbestanden. 
+    * **Locatie**:  De locatie voor alle resources; deze waarde moet de standaardinstelling van `[resourceGroup().location]` blijven. 
 
-3. Selecteer **Controleren + maken** . Nadat de SQL Server-VM is geïmplementeerd, ontvangt u een melding.
+3. Selecteer **Controleren + maken**. Nadat de SQL Server-VM is geïmplementeerd, ontvangt u een melding.
 
 Voor het implementeren van de sjabloon wordt de Azure-portal gebruikt. Naast Azure Portal kunt u ook Azure PowerShell, Azure CLI en REST API gebruiken. Zie [Sjablonen implementeren](../../../azure-resource-manager/templates/deploy-powershell.md) voor meer informatie over andere implementatiemethoden.
 

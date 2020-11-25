@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 08/12/2020
 ms.author: komammas
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: f4c71cffe00faa6dd8cc440c59f94b8c2d60f712
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c66c14d42c3d14fc4171f6fdfaf2e7f75a531507
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88185108"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886903"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>Zelfstudie: Python-scripts uitvoeren via Azure Data Factory met behulp van Azure Batch
 
@@ -33,7 +33,7 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 ## <a name="prerequisites"></a>Vereisten
 
 * Een geïnstalleerde [Python](https://www.python.org/downloads/)-distributie voor lokaal testen.
-* Het [Azure](https://pypi.org/project/azure/) `pip`-pakket.
+* Het `pip`-pakket [azure-storage-blob](https://pypi.org/project/azure-storage-blob/).
 * De [iris.csv-gegevensset](https://www.kaggle.com/uciml/iris/version/2#Iris.csv)
 * Een Azure Batch-account en een gekoppeld Azure Storage-account. Zie [Een Batch-account maken](quick-create-portal.md#create-a-batch-account) voor meer informatie over het maken en koppelen van Batch-accounts aan opslagaccounts.
 * Een Azure Data Factory-account. Zie [Een data factory maken](../data-factory/quickstart-create-data-factory-portal.md#create-a-data-factory) voor meer informatie over het maken van een data factory via de Azure-portal.
@@ -55,9 +55,9 @@ In deze sectie gebruikt u Batch Explorer om de batch-pool te maken die wordt geb
 1. Maak een pool door **Pools** aan de linkerkant te selecteren en klik vervolgens op de knop **Toevoegen** boven het zoekformulier. 
     1. Kies een id en weergavenaam. In dit voorbeeld gebruiken we `custom-activity-pool`.
     1. Stel het schaaltype in op **Vaste grootte** en stel het toegewezen aantal knooppunten in op 2.
-    1. Onder **Gegevenswetenschap**selecteert u **Dsvm Windows** als besturingssysteem.
+    1. Onder **Gegevenswetenschap** selecteert u **Dsvm Windows** als besturingssysteem.
     1. Kies `Standard_f2s_v2` als de grootte van de virtuele machine.
-    1. Schakel de begintaak in en voeg de opdracht `cmd /c "pip install pandas"`toe. De gebruikers-id kan blijven als standaard **Pool-gebruiker**.
+    1. Schakel de begintaak in en voeg de opdracht `cmd /c "pip install azure-storage-blob pandas"`toe. De gebruikers-id kan blijven als standaard **Pool-gebruiker**.
     1. Selecteer **OK**.
 
 ## <a name="create-blob-containers"></a>Blob-containers maken
@@ -75,17 +75,17 @@ Het volgende Python-script laadt de `iris.csv` gegevensset uit uw `input` contai
 
 ``` python
 # Load libraries
-from azure.storage.blob import BlockBlobService
+from azure.storage.blob import BlobServiceClient
 import pandas as pd
 
 # Define parameters
-storageAccountName = "<storage-account-name>"
+storageAccountURL = "<storage-account-url>"
 storageKey         = "<storage-account-key>"
 containerName      = "output"
 
 # Establish connection with the blob storage account
-blobService = BlockBlobService(account_name=storageAccountName,
-                               account_key=storageKey
+blob_service_client = BlockBlobService(account_url=storageAccountURL,
+                               credential=storageKey
                                )
 
 # Load iris dataset from the task node
@@ -98,10 +98,12 @@ df = df[df['Species'] == "setosa"]
 df.to_csv("iris_setosa.csv", index = False)
 
 # Upload iris dataset
-blobService.create_blob_from_path(containerName, "iris_setosa.csv", "iris_setosa.csv")
+container_client = blob_service_client.get_container_client(containerName)
+with open("iris_setosa.csv", "rb") as data:
+    blob_client = container_client.upload_blob(name="iris_setosa.csv", data=data)
 ```
 
-Sla het script op als `main.py` en uploadt dit script naar de **Azure Storage**-container. Zorg ervoor dat u de functionaliteit lokaal test en valideert voordat u deze uploadt naar uw blob-container:
+Sla het script op als `main.py` en uploadt dit script naar de **Azure Storage** `input`-container. Zorg ervoor dat u de functionaliteit lokaal test en valideert voordat u deze uploadt naar uw blob-container:
 
 ``` bash
 python main.py
@@ -125,7 +127,7 @@ In deze sectie maakt en valideert u een pijplijn met behulp van uw Python-script
 
     ![Voeg op het tabblad Azure Batch het Batch-account toe dat in de vorige stappen is gemaakt en test vervolgens de verbinding](./media/run-python-batch-azure-data-factory/integrate-pipeline-with-azure-batch.png)
 
-1. Voer de opdracht **in op het tabblad**Instellingen`python main.py`.
+1. Voer de opdracht **in op het tabblad** Instellingen`python main.py`.
 1. Voeg voor de **Resource gekoppelde service** het opslagaccount toe dat in de vorige stappen is gemaakt. Test de verbinding om er zeker van te zijn dat deze is geslaagd.
 1. Selecteer in het pad **Map** de naam van de **Azure Blob Storage**-container die het Python-script en de bijbehorende invoer bevat. Hiermee worden de geselecteerde bestanden van de container naar de exemplaren voor het groepsknooppunt gedownload voordat het Python-script wordt uitgevoerd.
 

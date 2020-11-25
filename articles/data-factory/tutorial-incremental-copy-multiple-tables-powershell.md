@@ -1,6 +1,6 @@
 ---
 title: Meerdere tabellen incrementeel kopiëren met behulp van PowerShell
-description: In deze zelfstudie maakt u een Azure Data Factory met een pijplijn waarmee wijzigingsgegevens uit meerdere tabellen van een SQL Server-database naar Azure SQL Database worden gekopieerd.
+description: In deze zelfstudie maakt u een Azure-gegevensfactory met een pijplijn waarmee wijzigingsgegevens uit meerdere tabellen van een SQL Server-database naar Azure SQL Database worden gekopieerd.
 services: data-factory
 ms.author: yexu
 author: dearandyxu
@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: be98ff2a31e3216088fb9197fab477d9b1088f26
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 54dea3ba7bbc3339b7b044b476c321fd95138ac2
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92634093"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566415"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-azure-sql-database-using-powershell"></a>Incrementeel gegevens uit meerdere tabellen in SQL Server naar Azure SQL Database kopiëren met behulp van PowerShell
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-In deze zelfstudie maakt u een Azure Data Factory met een pijplijn waarmee wijzigingsgegevens uit meerdere tabellen van een SQL Server-database naar Azure SQL Database worden gekopieerd.    
+In deze zelfstudie maakt u een Azure-gegevensfactory met een pijplijn waarmee wijzigingsgegevens uit meerdere tabellen van een SQL Server-database naar Azure SQL Database worden gekopieerd.    
 
 In deze zelfstudie voert u de volgende stappen uit:
 
@@ -42,15 +42,15 @@ In deze zelfstudie voert u de volgende stappen uit:
 ## <a name="overview"></a>Overzicht
 Dit zijn de belangrijke stappen voor het maken van deze oplossing: 
 
-1. **Selecteer de grenswaardekolom** .
+1. **Selecteer de grenswaardekolom**.
 
     Selecteer één kolom in elke tabel van de brongegevensopslag, die kan worden gebruikt om de nieuwe of bijgewerkte records voor elke uitvoering te segmenteren. Normaal gesproken nemen de gegevens in deze geselecteerde kolom (bijvoorbeeld, last_modify_time of id) toe wanneer de rijen worden gemaakt of bijgewerkt. De maximale waarde in deze kolom wordt gebruikt als grenswaarde.
 
-2. **Bereid een gegevensopslag voor om de grenswaarde in op te slaan** .
+2. **Bereid een gegevensopslag voor om de grenswaarde in op te slaan**.
 
     In deze zelfstudie slaat u de grenswaarde op in een SQL-database.
 
-3. **Maak een pijplijn met de volgende activiteiten** :
+3. **Maak een pijplijn met de volgende activiteiten**:
     
     a. Maak een ForEach-activiteit die door een lijst met namen van gegevensbrontabellen loopt, die als parameter is doorgegeven aan de pijplijn. Voor elke brontabel roept deze de volgende activiteiten voor het laden van de deltagegevens voor deze tabel op.
 
@@ -69,14 +69,14 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **SQL Server** . In deze zelfstudie gebruikt u een SQL Server-database als een brongegevensopslag. 
-* **Azure SQL-database** . U gebruikt een database in Azure SQL Database als de sink-gegevensopslag. Als u geen SQL-database hebt, raadpleegt u het artikel [Een Azure SQL Database maken](../azure-sql/database/single-database-create-quickstart.md) voor de stappen voor het maken van een database. 
+* **SQL Server**. In deze zelfstudie gebruikt u een SQL Server-database als een brongegevensopslag. 
+* **Azure SQL-database**. U gebruikt een database in Azure SQL Database als de sink-gegevensopslag. Als u geen SQL-database hebt, raadpleegt u het artikel [Een Azure SQL Database maken](../azure-sql/database/single-database-create-quickstart.md) voor de stappen voor het maken van een database. 
 
 ### <a name="create-source-tables-in-your-sql-server-database"></a>Brontabellen maken in uw SQL Server-database
 
 1. Open [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) en maak verbinding met de SQL Server-database.
 
-2. In **Server Explorer (SSMS)** of in het deelvenster **Verbindingen (Azure Data Studio)** klikt u met de rechtermuisknop op de database en kiest u **Nieuwe query** .
+2. In **Server Explorer (SSMS)** of in het deelvenster **Verbindingen (Azure Data Studio)** klikt u met de rechtermuisknop op de database en kiest u **Nieuwe query**.
 
 3. Voer de volgende SQL-opdracht uit op uw database om tabellen te maken met de naam `customer_table` en `project_table`:
 
@@ -115,7 +115,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 1. Open [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) en maak verbinding met de SQL Server-database.
 
-2. In **Server Explorer (SSMS)** of in het deelvenster **Verbindingen (Azure Data Studio)** klikt u met de rechtermuisknop op de database en kiest u **Nieuwe query** .
+2. In **Server Explorer (SSMS)** of in het deelvenster **Verbindingen (Azure Data Studio)** klikt u met de rechtermuisknop op de database en kiest u **Nieuwe query**.
 
 3. Voer de volgende SQL-opdracht uit op uw database om tabellen te maken met de naam `customer_table` en `project_table`:  
 
@@ -283,7 +283,7 @@ Houd rekening met de volgende punten:
 
 * Als u Data Factory-exemplaren wilt maken, moet het gebruikersaccount waarmee u zich bij Azure aanmeldt, lid zijn van de rollen Inzender of Eigenaar, of moet dit een beheerder van het Azure-abonnement zijn.
 
-* Voor een lijst met Azure-regio's waarin Data Factory momenteel beschikbaar is, selecteert u op de volgende pagina de regio's waarin u geïnteresseerd bent, vouwt u vervolgens **Analytics** uit en gaat u naar **Data Factory** : [Beschikbare producten per regio](https://azure.microsoft.com/global-infrastructure/services/). De gegevensarchieven (Azure Storage, SQL Database, SQL Managed Instance, enzovoort) en rekenprocessen (Azure HDInsight, enzovoort) die worden gebruikt in de data factory, kunnen zich in andere regio's bevinden.
+* Voor een lijst met Azure-regio's waarin Data Factory momenteel beschikbaar is, selecteert u op de volgende pagina de regio's waarin u geïnteresseerd bent, vouwt u vervolgens **Analytics** uit en gaat u naar **Data Factory**: [Beschikbare producten per regio](https://azure.microsoft.com/global-infrastructure/services/). De gegevensarchieven (Azure Storage, SQL Database, SQL Managed Instance, enzovoort) en rekenprocessen (Azure HDInsight, enzovoort) die worden gebruikt in de data factory, kunnen zich in andere regio's bevinden.
 
 [!INCLUDE [data-factory-create-install-integration-runtime](../../includes/data-factory-create-install-integration-runtime.md)]
 
@@ -357,7 +357,7 @@ In deze stap gaat u uw SQL Server-database aan de data factory koppelen.
     Set-Location 'C:\ADFTutorials\IncCopyMultiTableTutorial'
     ```
 
-3. Voer de cmdlet **Set-AzDataFactoryV2LinkedService** uit om de gekoppelde service AzureStorageLinkedService te maken. In het volgende voorbeeld geeft u de waarden door voor de parameters *ResourceGroupName* en *DataFactoryName* : 
+3. Voer de cmdlet **Set-AzDataFactoryV2LinkedService** uit om de gekoppelde service AzureStorageLinkedService te maken. In het volgende voorbeeld geeft u de waarden door voor de parameters *ResourceGroupName* en *DataFactoryName*: 
 
     ```powershell
     Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SqlServerLinkedService" -File ".\SqlServerLinkedService.json"
@@ -804,7 +804,7 @@ In deze pijplijn wordt een lijst met tabelnamen gebruikt als parameter. De **For
         ]
     }
     ```
-2. Voer de pijplijn IncrementalCopyPipeline uit met behulp van de cmdlet **Invoke-AzDataFactoryV2Pipeline** . Vervang tijdelijke aanduidingen door de namen van uw eigen resourcegroep en data factory.
+2. Voer de pijplijn IncrementalCopyPipeline uit met behulp van de cmdlet **Invoke-AzDataFactoryV2Pipeline**. Vervang tijdelijke aanduidingen door de namen van uw eigen resourcegroep en data factory.
 
     ```powershell
     $RunId = Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -ResourceGroup $resourceGroupName -dataFactoryName $dataFactoryName -ParameterFile ".\Parameters.json"        
@@ -814,7 +814,7 @@ In deze pijplijn wordt een lijst met tabelnamen gebruikt als parameter. De **For
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Selecteer **Alle services** , zoek met het trefwoord *gegevensfactory's* en selecteer **Gegevensfactory's** . 
+2. Selecteer **Alle services**, zoek met het trefwoord *gegevensfactory's* en selecteer **Gegevensfactory's**. 
 
 3. Zoek naar uw data factory in de lijst met data factory’s, en selecteer deze om de pagina **Data Factory** te openen. 
 
@@ -823,12 +823,12 @@ In deze pijplijn wordt een lijst met tabelnamen gebruikt als parameter. De **For
 5. Selecteer op de pagina **Aan de slag** de optie **Controleren** aan de linkerkant. 
 ![Schermafbeelding toont de pagina Aan de slag voor Azure Data Factory.](media/doc-common-process/get-started-page-monitor-button.png)    
 
-6. U kunt alle pijplijnactiviteiten en hun status zien. Let erop dat in het volgende voorbeeld de status van de pijplijnactiviteit **Geslaagd** is. U kunt parameters controleren die zijn doorgegeven aan de pijplijn door de koppeling in de kolom **Parameters** te selecteren. Als er een fout is opgetreden, ziet u een koppeling in de kolom **Fout** .
+6. U kunt alle pijplijnactiviteiten en hun status zien. Let erop dat in het volgende voorbeeld de status van de pijplijnactiviteit **Geslaagd** is. U kunt parameters controleren die zijn doorgegeven aan de pijplijn door de koppeling in de kolom **Parameters** te selecteren. Als er een fout is opgetreden, ziet u een koppeling in de kolom **Fout**.
 
     ![Schermopname van pijplijnuitvoeringen voor een data factory, inclusief uw pijplijn.](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-pipeline-runs-4.png)    
 7. Wanneer u de koppeling in de kolom **Acties** selecteert, ziet u alle uitvoeringen van activiteiten voor de pijplijn. 
 
-8. Als u wilt terugkeren naar de weergave **Pijplijnuitvoeringen** , selecteert u **Alle pijplijnuitvoeringen** bovenaan. 
+8. Als u wilt terugkeren naar de weergave **Pijplijnuitvoeringen**, selecteert u **Alle pijplijnuitvoeringen** bovenaan. 
 
 ## <a name="review-the-results"></a>De resultaten bekijken
 

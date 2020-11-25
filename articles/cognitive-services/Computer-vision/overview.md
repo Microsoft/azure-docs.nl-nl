@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: overview
-ms.date: 09/11/2020
+ms.date: 11/13/2020
 ms.author: pafarley
 ms.custom:
 - seodec18
 - cog-serv-seo-aug-2020
 keywords: computer vision, computer vision-toepassingen, computer vision-service
-ms.openlocfilehash: fa00265f3c591578f9970b77770fbf7290d87510
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: aeaa10870b8b40b907da1d1660e77ebf0271c300
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90907075"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94629747"
 ---
 # <a name="what-is-computer-vision"></a>Wat is Computer Vision?
 
@@ -27,19 +27,19 @@ ms.locfileid: "90907075"
 
 De Computer Vision-service van Azure geeft u toegang tot geavanceerde algoritmen waarmee afbeeldingen worden verwerkt en informatie wordt geretourneerd op basis van de visuele kenmerken waarin u geïnteresseerd bent. Met Computer Vision kunt u bijvoorbeeld bepalen of een afbeelding inhoud voor volwassenen bevat, specifieke merken of objecten zoeken, of gezichten van mensen zoeken.
 
-U kunt Computer Vision-toepassingen maken met behulp van een clientbibliotheek-SDK of door de REST API rechtstreeks aan te roepen. Deze pagina laat grosso modo zien wat u kunt doen met Computer Vision.
+U kunt Computer Vision-toepassingen maken met behulp van een [clientbibliotheek-SDK](./quickstarts-sdk/client-library.md) of door de [REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) rechtstreeks aan te roepen. Deze pagina laat grosso modo zien wat u kunt doen met Computer Vision.
+
+## <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
+
+Computer Vision bevat mogelijkheden voor [Optical Character Recognition (OCR)](concept-recognizing-text.md). U kunt de nieuwe Read-API gebruiken om gedrukte en handgeschreven tekst uit afbeeldingen en documenten te extraheren. De API maakt gebruik van de nieuwste modellen en werkt met tekst op verschillende oppervlakken en achtergronden. Waaronder recepten, posters, visitekaartjes, brieven en whiteboards. De twee OCR-API's bieden ondersteuning voor het extraheren van gedrukte tekst in [diverse talen](./language-support.md). Volg een [snelstart](./quickstarts-sdk/client-library.md) om aan de slag te gaan.
 
 ## <a name="computer-vision-for-digital-asset-management"></a>Computer Vision voor beheer van digitale assets
 
 Met Computer Vision kunt u tal van DAM-scenario's (Digitaal Asset Management) ondersteunen. DAM is het bedrijfsproces voor het organiseren, opslaan en ophalen van geavanceerde media-assets en het beheren van digitale rechten en machtigingen. Het is bijvoorbeeld mogelijk dat een bedrijf afbeeldingen wil groeperen en identificeren op basis van zichtbare logo's, gezichten, objecten, kleuren, enzovoort. U kunt ook automatisch [bijschriften voor afbeeldingen genereren](./Tutorials/storage-lab-tutorial.md) en trefwoorden toevoegen zodat ze zoekbaar zijn. Zie de handleiding [Knowledge Mining Solution Accelerator](https://github.com/Azure-Samples/azure-search-knowledge-mining) (Oplossingsverbetering voor kennisanalyse) op GitHub voor een alles-in-eenoplossing met Cognitive Services, Azure Cognitive Search en intelligente rapportage. Zie de opslagplaats voor [Computer Vision Solution Templates](https://github.com/Azure-Samples/Cognitive-Services-Vision-Solution-Templates) (Oplossingssjablonen van Computer Vision) voor andere DAM-voorbeelden.
 
-## <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
-
-Computer Vision bevat mogelijkheden voor [Optical Character Recognition (OCR)](concept-recognizing-text.md). U kunt de nieuwe Read-API gebruiken om gedrukte en handgeschreven tekst uit afbeeldingen en documenten te extraheren. De API maakt gebruik van de nieuwste modellen en werkt met tekst op verschillende oppervlakken en achtergronden. Waaronder recepten, posters, visitekaartjes, brieven en whiteboards. De twee OCR-API's bieden ondersteuning voor het extraheren van gedrukte tekst in [diverse talen](./language-support.md). Volg een [snelstart](#next-steps) om aan de slag te gaan.
-
 ## <a name="analyze-images-for-insight"></a>Analyseren van afbeeldingen voor inzicht
 
-U kunt afbeeldingen analyseren om inzicht te krijgen in de visuele kenmerken en eigenschappen van die afbeeldingen. Alle functies in de onderstaande tabel worden geleverd door de [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) API. Volg een [snelstart](#next-steps) om aan de slag te gaan.
+U kunt afbeeldingen analyseren om inzicht te krijgen in de visuele kenmerken en eigenschappen van die afbeeldingen. Alle functies in de onderstaande tabel worden geleverd door de [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) API. Volg een [snelstart](./quickstarts-sdk/client-library.md) om aan de slag te gaan.
 
 
 ### <a name="tag-visual-features"></a>Visuele kenmerken taggen
@@ -113,8 +113,6 @@ Zoals geldt voor alle Cognitive Services, dienen ontwikkelaars die de Computer V
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Aan de slag met Computer Vision door een quickstart te volgen:
+Ga aan de slag met Computer Vision door de quickstart-gids te volgen in de ontwikkelingstaal van uw voorkeur:
 
-- [Snelstart: Computer Vision .NET-clientbibliotheek](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
-- [Snelstart: Computer Vision-clientbibliotheek voor Python](./quickstarts-sdk/client-library.md?pivots=programming-language-python)
-- [Snelstart: Computer Vision-clientbibliotheek voor Java](./quickstarts-sdk/client-library.md?pivots=programming-language-java)
+- [Quickstart: Computer Vision-clientbibliotheek](./quickstarts-sdk/client-library.md)

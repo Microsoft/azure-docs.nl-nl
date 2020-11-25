@@ -1,23 +1,23 @@
 ---
-title: Overzicht van Azure Stream Analytics
-description: Lees over Stream Analytics, een beheerde service waarmee u streaminggegevens van het Internet of Things (IoT) in realtime kun analyseren.
+title: Inleiding tot Azure Stream Analytics
+description: Lees over Azure Stream Analytics, een beheerde service waarmee u streaminggegevens van IoT (Internet of Things) in realtime kunt analyseren.
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: overview
 ms.custom: mvc, contperfq2
-ms.date: 11/03/2020
-ms.openlocfilehash: d81858db3f4d09b834a9199804a6f2631828496b
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 11/12/2020
+ms.openlocfilehash: 0022e19e23b7808cd78da988fd3fdef2d537acf5
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342229"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579433"
 ---
-# <a name="what-is-azure-stream-analytics"></a>Wat is Azure Stream Analytics?
+# <a name="welcome-to-azure-stream-analytics"></a>Welkom bij Azure Stream Analytics
 
-Azure Stream Analytics is een realtime engine voor het analyseren en verwerken van complexe gebeurtenissen. Het is ontworpen om grote volumes van snelle streaminggegevens van verschillende bronnen tegelijkertijd te analyseren en verwerken. U kunt patronen en verbanden identificeren in informatie die wordt verkregen uit verschillende invoerbronnen waaronder apparaten, sensoren, clickstreams, socialemediafeeds en toepassingen. Deze patronen kunnen worden gebruikt als trigger voor acties of om werkstromen op te starten, bijvoorbeeld om waarschuwingen te maken, informatie door te sturen naar een rapportagetool of om getransformeerde gegevens op te slaan voor later. Daarnaast is Stream Analytics beschikbaar in Azure IoT Edge-runtime, zodat het ook gegevens op IoT-apparaten kan verwerken. 
+Azure Stream Analytics is een realtime engine voor het analyseren en verwerken van complexe gebeurtenissen. Het is ontworpen om grote volumes van snelle streaminggegevens van verschillende bronnen tegelijkertijd te analyseren en verwerken. U kunt patronen en verbanden identificeren in informatie die wordt verkregen uit verschillende invoerbronnen waaronder apparaten, sensoren, clickstreams, socialemediafeeds en toepassingen. Deze patronen kunnen worden gebruikt als trigger voor acties of om werkstromen op te starten, bijvoorbeeld om waarschuwingen te maken, informatie door te sturen naar een rapportagetool of om getransformeerde gegevens op te slaan voor later. Daarnaast is Stream Analytics beschikbaar in Azure IoT Edge-runtime, zodat het ook gegevens op IoT-apparaten kan verwerken.
 
 De volgende scenario's zijn voorbeelden van wanneer u Azure Stream Analytics kunt gebruiken:
 
@@ -26,6 +26,11 @@ De volgende scenario's zijn voorbeelden van wanneer u Azure Stream Analytics kun
 * Georuimtelijke analyses voor fleetmanagement en zelfrijdende auto’s
 * Op afstand bewaken en predictief onderhoud van hoogwaardige middelen
 * Realtime analyse van Point of Sale-gegevens voor voorraadbeheer en anomaliedetectie
+
+U kunt Azure Stream Analytics uitproberen met een gratis Azure-abonnement.
+
+> [!div class="nextstepaction"]
+> [Azure Stream Analytics uitproberen](https://azure.microsoft.com/services/stream-analytics/)
 
 ## <a name="how-does-stream-analytics-work"></a>Hoe werkt Stream Analytics?
 
@@ -102,7 +107,7 @@ Stream Analytics verwerkt miljoenen gebeurtenissen per seconde en kan resultaten
 
 U hebt nu een overzicht van Azure Stream Analytics. Hierna kunt u zich verder in de materie verdiepen en uw eerste Stream Analytics-taak maken:
 
-* [Een Stream Analytics-taak maken via Azure Portal](stream-analytics-quick-create-portal.md).
-* [Create a Stream Analytics job by using Azure PowerShell](stream-analytics-quick-create-powershell.md) (Een Stream Analytics-taak maken met behulp van Azure PowerShell).
-* [Create a Stream Analytics job by using Visual Studio](stream-analytics-quick-create-vs.md) (Een Stream Analytics-taak maken met behulp van Visual Studio).
-* [Create a Stream Analytics job by using Visual Studio Code](quick-create-visual-studio-code.md) (Een Stream Analytics-taak maken met behulp van Visual Studio).
+* [Een Stream Analytics-taak maken met behulp van Azure Portal](stream-analytics-quick-create-portal.md)
+* [Een Stream Analytics-taak maken met behulp van Azure PowerShell](stream-analytics-quick-create-powershell.md)
+* [Een Stream Analytics-taak maken met behulp van Visual Studio](stream-analytics-quick-create-vs.md)
+* [Een Stream Analytics-taak maken met behulp van Visual Studio Code](quick-create-visual-studio-code.md)

@@ -5,12 +5,12 @@ author: MSEvanhi
 ms.topic: tutorial
 ms.date: 06/24/2020
 ms.author: evanhi
-ms.openlocfilehash: 541d140716e52b4fe1db4bc999682914a380a5f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 23ae69f49d37a210dd9fa1bfeedeca6c1b461e20
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85368104"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888858"
 ---
 # <a name="quickstart-create-a-custom-provider-and-deploy-custom-resources"></a>Quickstart: Een aangepaste provider maken en aangepaste resources implementeren
 
@@ -23,8 +23,11 @@ In deze quickstart maakt u uw eigen resourceprovider en implementeert u aangepas
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-- Voor de [custom-providers](/cli/azure/ext/custom-providers/custom-providers/resource-provider)-opdrachten is een uitbreiding vereist. Zie [Extensies gebruiken met Azure CLI](/cli/azure/azure-cli-extensions-overview) voor meer informatie.
-- Azure CLI-voorbeelden gebruiken `az rest` voor `REST`-aanvragen. Ga voor meer informatie naar [az rest](/cli/azure/reference-index#az-rest).
+Bereid uw omgeving voor op Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Azure CLI-voorbeelden gebruiken `az rest` voor `REST`-aanvragen. Ga voor meer informatie naar [az rest](/cli/azure/reference-index#az-rest).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -33,8 +36,6 @@ In deze quickstart maakt u uw eigen resourceprovider en implementeert u aangepas
 - Nadat de **ARMClient** is geïnstalleerd, kunt u gebruiksgegevens weergeven met behulp van een PowerShell-opdrachtprompt door het volgende te typen: `armclient.exe`. Of ga naar de [ARMClient-wiki](https://github.com/projectkudu/ARMClient/wiki).
 
 ---
-
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="deploy-custom-provider"></a>Aangepaste provider implementeren
 

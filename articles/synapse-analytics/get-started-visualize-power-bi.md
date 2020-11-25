@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: business-intelligence
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: c5c41b98d52a4b8182fb162c3bfa9a08c0df5e15
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: b72d083216b7cd0ae7a588bfd721d8981829bfc7
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171841"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844364"
 ---
 # <a name="visualize-data-with-power-bi"></a>Gegevens visualiseren met Power BI
 
@@ -37,13 +37,9 @@ U kunt een Power BI-werkruimte koppelen aan uw Azure Synapse-werkruimte. Zo kunt
 ### <a name="link-your-azure-synapse-workspace-to-your-new-power-bi-workspace"></a>Uw Azure Synapse-werkruimte koppelen aan uw nieuwe Power BI-werkruimte
 
 1. Ga in Synapse Studio naar **Beheren** > **Gekoppelde services**.
-1. Selecteer **Nieuw** > **Verbinding maken met Power BI** en stel deze velden in:
-
-    |Instelling | Voorgestelde waarde | 
-    |---|---|
-    |**Naam**|**NYCTaxiWorkspace1**|
-    |**Werkruimtenaam**|**NYCTaxiWorkspace1**|
-
+1. Selecteer **Nieuw** > **Verbinding maken met Power BI**
+1. Stel **Naam** in op **NYCTaxiWorkspace1**
+1. Stel **Werkruimtenaam** in op **NYCTaxiWorkspace1**
 1. Selecteer **Maken**.
 
 ### <a name="create-a-power-bi-dataset-that-uses-data-in-your-azure-synapse-workspace"></a>Een Power BI-gegevensset maken die gebruikmaakt van gegevens in uw Azure Synapse-werkruimte
@@ -86,11 +82,7 @@ U kunt een Power BI-werkruimte koppelen aan uw Azure Synapse-werkruimte. Zo kunt
     * Onder **NYCTaxiWorkspace1Power** > **Power BI-rapporten**, een nieuw rapport met de naam **PassengerAnalysis**.
 1. Selecteer het rapport **PassengerAnalysis**. Het rapport wordt geopend en u kunt het rechtstreeks in Synapse Studio bewerken.
 
-## <a name="monitor-activities"></a>Activiteiten controleren
 
-1. Ga in Synapse Studio naar de hub **bewaken**.
-1. Op deze locatie ziet u een geschiedenis van alle activiteiten die worden uitgevoerd in de werkruimte en welke nu actief zijn.
-1. Bestudeer de **Pijplijnuitvoeringen**, **Apache Spark-toepassingen** en **SQL-aanvragen** om te zien wat u al hebt gedaan in de werkruimte.
 
 ## <a name="next-steps"></a>Volgende stappen
 

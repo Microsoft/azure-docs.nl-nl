@@ -1,158 +1,151 @@
 ---
-title: Gegevensverzameling in Azure Security Center | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u een Log Analytics-agent installeert en hoe u een Log Analytics-werkruimte instelt waarin de verzamelde gegevens worden opgeslagen.
+title: Automatisch agents implementeren voor Azure Security Center | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u automatische inrichting van de Log Analytics-agent en andere agents die door Azure Security Center worden gebruikt, kunt instellen.
 services: security-center
 author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: quickstart
-ms.date: 10/08/2020
+ms.date: 11/15/2020
 ms.author: memildin
-ms.openlocfilehash: 68df6d6707ebe4f1a4b75a8005e746e2c1eba864
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 7d96b03598f90b45b7ecf88027be7408d8f161ea
+ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341580"
+ms.lasthandoff: 11/16/2020
+ms.locfileid: "94638764"
 ---
-# <a name="data-collection-in-azure-security-center"></a>Gegevensverzameling in Azure Security Center
-Security Center verzamelt gegevens van uw virtuele Azure-machines (VM's), virtuele-machineschaalsets, IaaS-containers en niet-Azure-computers (waaronder on-premises computers) om deze te bewaken op beveiligingsproblemen en bedreigingen. De gegevens worden verzameld met behulp van de Log Analytics-agent, die verschillende configuraties en gebeurtenislogboeken met betrekking tot beveiliging van de machine leest en de gegevens kopieert naar uw werkruimte voor analyse. Voorbeelden van dergelijke gegevens zijn: besturingssysteemtype en -versie, besturingssysteemlogboeken (Windows-gebeurtenislogboeken), actieve processen, computernaam, IP-adressen en aangemelde gebruiker.
+# <a name="auto-provisioning-agents-and-extensions-from-azure-security-center"></a>Automatische inrichting van agents en extensies van Azure Security Center
+
+Security Center verzamelt gegevens van uw virtuele Azure-machines (VM's), virtuele-machineschaalsets, IaaS-containers en niet-Azure-computers (waaronder on-premises computers) om deze te bewaken op beveiligingsproblemen en bedreigingen. 
 
 Het verzamelen van gegevens is vereist om inzicht te krijgen in ontbrekende updates, onjuist geconfigureerde beveiligingsinstellingen voor het besturingssysteem, eindpuntbeveiligingsstatus, beveiliging van de status en beveiliging tegen bedreigingen. Het verzamelen van gegevens is alleen nodig voor rekenresources (VM's, virtuele-machineschaalsets, IaaS-containers en niet-Azure-computers). U kunt profiteren van Azure Security Center, zelfs als u geen agents inricht. U hebt echter beperkte beveiliging en de mogelijkheden die hierboven worden vermeld, worden niet ondersteund.  
 
-In dit artikel wordt beschreven hoe u een Log Analytics-agent installeert en hoe u een Log Analytics-werkruimte instelt waarin de verzamelde gegevens worden opgeslagen. Beide bewerkingen zijn vereist om gegevensverzameling mogelijk te maken. Wanneer u gegevens opslaat in Log Analytics, ongeacht of u een nieuwe of bestaande werkruimte gebruikt, kunnen er extra kosten in rekening worden gebracht voor gegevensopslag. Zie de pagina [prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
+Gegevens worden verzameld met:
+
+- De **Log Analytics-agent**, die verschillende configuraties en gebeurtenislogboeken met betrekking tot beveiliging van de machine leest en de gegevens kopieert naar uw werkruimte voor analyse. Voorbeelden van dergelijke gegevens zijn: besturingssysteemtype en -versie, besturingssysteemlogboeken (Windows-gebeurtenislogboeken), actieve processen, computernaam, IP-adressen en aangemelde gebruiker.
+- **Beveiligingsextensies**, zoals de [Azure Policy-invoegtoepassing voor Kubernetes](../governance/policy/concepts/policy-for-kubernetes.md), waarmee ook gegevens over gespecialiseerde resourcetypen aan Security Center kunnen worden verstrekt.
 
 > [!TIP]
-> Zie [Ondersteunde platforms in Azure Security Center](security-center-os-coverage.md) voor een lijst met ondersteunde platforms.
+> Naarmate Security Center is gegroeid, is het ook mogelijk om meer typen resources te bewaken. Het aantal extensies is ook gegroeid. Automatische inrichting is nu uitgebreid, zodat meer resourcetypen kunnen worden ondersteund door gebruik te maken van de mogelijkheden van Azure Policy.
 
-## <a name="enable-automatic-provisioning-of-the-log-analytics-agent"></a>Automatische inrichting van de Log Analytics-agent inschakelen <a name="auto-provision-mma"></a>
-
-> [!NOTE]
-> Gebruikers van Azure Sentinel: houd er rekening mee dat de verzameling van beveiligingsgebeurtenissen binnen de context van één werkruimte kan worden geconfigureerd vanuit Azure Security Center of Azure Sentinel, maar niet beide. Als u van plan bent om Azure Sentinel toe te voegen aan een werkruimte die al Azure Defender-waarschuwingen van Azure Security Center ontvangt en is ingesteld op het verzamelen van beveiligingsgebeurtenissen, hebt u twee opties:
-> - Laat de verzameling van beveiligingsgebeurtenissen in Azure Security Center ongewijzigd. U kunt deze gebeurtenissen in Azure Sentinel en in Azure Defender doorzoeken en analyseren. U kunt echter niet de verbindingsstatus van de connector controleren of de configuratie ervan wijzigen in Azure Sentinel. Als dit belangrijk voor u is, kunt u de tweede optie overwegen.
->
-> - [Schakel de verzameling van beveiligingsgebeurtenissen uit](#data-collection-tier) in Azure Security Center en voeg vervolgens de connector voor beveiligingsgebeurtenissen toe aan Azure-Sentinel. Net zoals bij de eerste optie, kunt u gebeurtenissen in Azure Sentinel en Azure Defender/ASC opvragen en analyseren, maar u kunt nu de verbindingsstatus van de connector bewaken of de configuratie ervan wijzigen in (en alleen in) Azure Sentinel.
+:::image type="content" source="./media/security-center-enable-data-collection/auto-provisioning-options.png" alt-text="Pagina-instellingen voor de automatisch inrichting van Security Center":::
 
 
-Als u de gegevens van de machines wilt verzamelen, moet de Log Analytics-agent zijn geïnstalleerd. Installatie van de agent kan automatisch worden uitgevoerd (aanbevolen) of u kunt de agent handmatig installeren. Automatische inrichting is standaard uitgeschakeld.
+## <a name="why-use-auto-provisioning"></a>Wat is het nut van automatische inrichting?
+Elk van de agents en extensies die op deze pagina worden beschreven *kunnen* handmatig worden geïnstalleerd. (Zie [Handmatige installatie van de Log Analytics-agent](#manual-agent).) Maar met **automatische inrichting** vermindert u de overhead voor beheer doordat alle vereiste agents en extensies op bestaande en nieuwe machines worden geïnstalleerd, waardoor een snellere beveiligingsdekking voor alle ondersteunde resources wordt gerealiseerd. 
 
-Als automatisch inrichten aan staat, implementeert Security Center de Log Analytics-agent op alle ondersteunde Azure-VM's en op nieuwe VM's. Automatische inrichting wordt aanbevolen, maar u kunt de agent handmatig installeren als dat nodig is (Zie [Handmatige installatie van de Log Analytics-agent](#manual-agent)).
+Het is raadzaam om automatische inrichting in te schakelen, maar het is standaard uitgeschakeld.
 
-Als de agent is geïmplementeerd op uw machines, kan Security Center extra aanbevelingen doen met betrekking tot de updatestatus van het systeem, de beveiligingsconfiguraties van het besturingssysteem en de eindpuntbeveiliging. Ook kan Security Center aanvullende beveiligingswaarschuwingen genereren.
+## <a name="how-does-auto-provisioning-work"></a>Hoe werkt automatische inrichting?
+De instellingen voor automatische inrichting van Security Center hebben een wisselknop voor elk type ondersteunde extensie. Wanneer u automatisch inrichten van een extensie inschakelt, wijst u het juiste beleid **Implementeren indien niet aanwezig** toe om ervoor te zorgen dat de extensie wordt ingericht op alle bestaande en toekomstige resources van dat type.
+
+> [!TIP]
+> Meer informatie over effecten van Azure Policy, zoals Implementeren indien niet aanwezig, vindt u in [Inzicht in de effecten van Azure Policy](../governance/policy/concepts/effects.md).
+
+## <a name="enable-auto-provisioning-of-the-log-analytics-agent"></a>Automatische inrichting van de Log Analytics-agent <a name="auto-provision-mma"></a> inschakelen
+Als automatisch inrichten aan staat voor de Log Analytics-agent, implementeert Security Center de agent op alle ondersteunde Azure-VM's en op alle nieuwe VM's die nog worden gemaakt. Zie [Ondersteunde platforms in Azure Security Center](security-center-os-coverage.md) voor een lijst met ondersteunde platforms.
 
 Automatische inrichting van de Log Analytics-agent inschakelen:
 
 1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
 1. Selecteer het betreffende abonnement.
-1. Stel op de pagina **Gegevensverzameling** **Automatische inrichting** in op **Aan**.
-1. Selecteer **Opslaan**.
+1. Stel op de pagina **Automatisch inrichten** de status van de agent in op **Aan**.
+1. Definieer in het deelvenster met de configuratieopties de werkruimte die gebruikt moet worden.
 
-    :::image type="content" source="./media/security-center-enable-data-collection/enable-automatic-provisioning.png" alt-text="Automatische inrichting van de Log Analytics-agent inschakelen":::
+    :::image type="content" source="./media/security-center-enable-data-collection/log-analytics-agent-deploy-options.png" alt-text="Configuratieopties voor het automatisch inrichten van Log Analytics-agents op VM's" lightbox="./media/security-center-enable-data-collection/log-analytics-agent-deploy-options.png":::
 
-    >[!TIP]
-    > Als een werkruimte moet worden ingericht, kan de installatie van de agent tot wel 25 minuten duren.
+    - **Azure-VM's verbinden met de door Security Center gemaakte standaard werkruimte(n)** : Security Center maakt een nieuwe resourcegroep en standaardwerkruimte op die geolocatie en verbindt de agent met die werkruimte. Als een abonnement VM's op meerdere geolocaties bevat, maakt Security Center meerdere werkruimten zodat er wordt voldaan aan de vereisten met betrekking tot de gegevensprivacy.
 
+        De naamconventie voor de werkruimte en de resourcegroep is: 
+        - Werkruimte: DefaultWorkspace-[abonnements-id]-[geolocatie] 
+        - Resourcegroep: DefaultResourceGroup-[geo] 
 
-## <a name="workspace-configuration"></a>Werkruimteconfiguratie
-Gegevens die worden verzameld door Security Center worden opgeslagen in een of meer werkruimten van Log Analytics. Uw gegevens kunnen worden verzameld van Azure-VM's die zijn opgeslagen in werkruimten die zijn gemaakt door Security Center of in een bestaande werkruimte die u hebt gemaakt. 
+        Security Center schakelt automatisch een Security Center-oplossing voor de werkruimte in volgens de prijscategorie voor het abonnement. 
 
-De configuratie van een werkruimte wordt per abonnement ingesteld, en verschillende abonnementen kunnen dezelfde werkruimte gebruiken.
+        > [!TIP]
+        > Bij vragen over standaard werkruimten zie:
+        >
+        > - [Word ik gefactureerd voor Azure Monitor-logboeken in de werkruimten die door Security Center zijn gemaakt?](faq-data-collection-agents.md#am-i-billed-for-azure-monitor-logs-on-the-workspaces-created-by-security-center)
+        > - [Waar wordt de standaard Log Analytics-werkruimte gemaakt?](faq-data-collection-agents.md#where-is-the-default-log-analytics-workspace-created)
+        > - [Kan ik de standaard werkruimten verwijderen die zijn gemaakt door Security Center?](faq-data-collection-agents.md#can-i-delete-the-default-workspaces-created-by-security-center)
 
-### <a name="using-a-workspace-created-by-security-center"></a>Door Security Center gemaakte werkruimte gebruiken
+    - **Azure VM's verbinden met een andere werkruimte**: selecteer in de vervolgkeuzelijst de werkruimte waarin verzamelde gegevens moeten worden opgeslagen. De vervolgkeuzelijst bevat alle werkruimten in al uw abonnementen. U kunt deze optie gebruiken om gegevens te verzamelen van virtuele machines die worden uitgevoerd in verschillende abonnementen, en deze allemaal op te slaan in uw geselecteerde werkruimte.  
 
-Security Center kan automatisch een standaardwerkruimte maken waarin de gegevens worden opgeslagen. 
+        Als u al een bestaande Log Analytics-werkruimte hebt, wilt u mogelijk dezelfde werkruimte gebruiken (vereist lees- en schrijfmachtigingen voor de werkruimte). Deze optie is handig als u een centrale werkruimte gebruikt in uw organisatie en u deze ook wilt gebruiken voor het verzamelen van beveiligingsgegevens. Meer informatie vindt u in [Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor](../azure-monitor/platform/manage-access.md).
 
-Door Security Center gemaakte werkruimte selecteren:
+        Als voor uw werkruimte al een Security- of SecurityCenterFree-oplossing is ingeschakeld, wordt de prijs automatisch ingesteld. Als dat niet het geval is, installeert u een Security Center-oplossing in de werkruimte:
 
-1. Onder **Configuratie van de standaardwerkruimte** selecteert u Werkruimten gebruiken die zijn gemaakt door Security Center.
-    :::image type="content" source="./media/security-center-enable-data-collection/workspace-selection.png" alt-text="Automatische inrichting van de Log Analytics-agent inschakelen"::: 
+        1. Open **Prijzen en instellingen** vanuit het menu van Security Center.
+        1. Selecteer de werkruimte waarmee u verbinding wilt maken met de agents.
+        1. Selecteer **Azure Defender aan** of **Azure Defender uit**.
 
-1. Klik op **Opslaan**.<br>
-    Security Center maakt een nieuwe resourcegroep en standaardwerkruimte in die geolocatie en verbindt de agent met die werkruimte. De naamconventie voor de werkruimte en de resourcegroep is:<br>
-   **Werkruimte: Standaardwerkruimte-[abonnement-ID]-[geo]<br> Resourcegroep: Standaardresourcegroep-[geo]**
+1. Selecteer in de configuratie van de **Windows-beveiligingsgebeurtenissen** de hoeveelheid onbewerkte gebeurtenisgegevens die moet worden opgeslagen:
+    - **Geen** : opslag voor beveiligingsgebeurtenissen uitschakelen. Dit is de standaardinstelling.
+    - **Minimaal**: een kleine set gebeurtenissen voor als u het gebeurtenisvolume wilt minimaliseren.
+    - **Algemeen**: een set gebeurtenissen die voldoet voor de meeste klanten en een volledige audittrail biedt.
+    - **Alle gebeurtenissen**: voor klanten die willen controleren of alle gebeurtenissen zijn opgeslagen.
 
-   Als een abonnement VM's van meerdere geolocaties bevat, maakt Security Center meerdere werkruimten. Er worden meerdere werkruimten gemaakt om te voldoen aan de privacyregels voor gegevens.
-1. Security Center schakelt automatisch een Security Center-oplossing voor de werkruimte in volgens de prijscategorie voor het abonnement. 
+    > [!TIP]
+    > Zie [Instellen van de beveiligingsgebeurtenisoptie op het niveau van de werkruimte](#setting-the-security-event-option-at-the-workspace-level) als u deze opties wilt instellen op het niveau van de werkruimte.
+    > 
+    > Zie [Windows-beveiligingsgebeurtenisopties voor de Log Analytics-agent](#data-collection-tier) voor meer informatie over deze opties.
 
-> [!NOTE]
-> De Log Analytics-prijscategorie van door Security Center gemaakte werkruimten heeft geen invloed op de facturering voor Security Center. De facturering voor Security Center is altijd gebaseerd op uw Security Center-beveiligingsbeleid en de oplossingen die in een werkruimte zijn geïnstalleerd. Voor abonnementen zonder Azure Defender schakelt Azure Security Center de *SecurityCenterFree*-oplossing in voor de standaardwerkruimte. Voor abonnementen met Azure Defender schakelt Azure Security Center de *Security*-oplossing in voor de standaardwerkruimte.
-> Voor het opslaan van gegevens in Log Analytics worden mogelijk extra kosten voor gegevensopslag in rekening gebracht. Zie de pagina [prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
+1. Selecteer **Toepassen** in het configuratievenster.
 
-Zie [Bestaande Log Analytics-klanten](./faq-azure-monitor-logs.md)voor meer informatie over bestaande Log Analytics-accounts.
+1. Selecteer **Opslaan**. Als een werkruimte moet worden ingericht, kan de installatie van de agent tot wel 25 minuten duren.
 
-### <a name="using-an-existing-workspace"></a>Een bestaande werkruimte gebruiken
+1. U wordt gevraagd of u de bewaakte VM's die eerder waren verbonden met een standaardwerkruimte, opnieuw wilt configureren:
 
-Als u al een bestaande Log Analytics-werkruimte hebt, wilt u mogelijk dezelfde werkruimte gebruiken.
+    :::image type="content" source="./media/security-center-enable-data-collection/reconfigure-monitored-vm.png" alt-text="Opties bekijken voor het opnieuw configureren van bewaakte VM's":::
 
-Als u uw bestaande Log Analytics-werkruimte wilt gebruiken, moet u lees- en schrijfmachtigingen hebben voor de werkruimte.
-
-> [!NOTE]
-> Oplossingen die zijn ingeschakeld voor de geselecteerde werkruimte worden toegepast op Azure-VM's die daarmee zijn verbonden. Voor betaalde oplossingen kan dit extra kosten met zich meebrengen. Zorg er met het oog op de gegevensprivacy voor dat de geselecteerde werkruimte zich in de juiste geografische regio bevindt.
-> Voor het opslaan van gegevens in Log Analytics worden mogelijk extra kosten voor gegevensopslag in rekening gebracht. Zie de pagina [prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
-
-Een bestaande Log Analytics-werkruimte selecteren:
-
-1. Selecteer onder **Configuratie van de standaardwerkruimte** **Een andere werkruimte gebruiken**.
-    :::image type="content" source="./media/security-center-enable-data-collection/use-another-workspace.png" alt-text="Automatische inrichting van de Log Analytics-agent inschakelen"::: 
-
-2. Selecteer in de vervolgkeuzelijst een werkruimte om de verzamelde gegevens op te slaan.
-
-   > [!NOTE]
-   > In het vervolgkeuzemenu zijn alle werkruimten voor al uw abonnementen beschikbaar. Zie [Werkruimteselectie voor meerdere abonnementen](security-center-enable-data-collection.md#cross-subscription-workspace-selection) voor meer informatie. U moet gemachtigd zijn om toegang te krijgen tot de werkruimte.
-   >
-   >
-
-3. Selecteer **Opslaan**.
-4. Nadat u **Opslaan** hebt geselecteerd, wordt u gevraagd of u de bewaakte VM's die eerder waren verbonden met een standaardwerkruimte, opnieuw wilt configureren.
-
-   - Selecteer **Nee** als u wilt dat de nieuwe werkruimte-instellingen alleen worden toegepast op nieuwe VM's. De nieuwe werkruimte-instellingen zijn alleen van toepassing op nieuwe agentinstallaties: nieuw gedetecteerde VM's waarop de Log Analytics-agent niet is geïnstalleerd.
-   - Selecteer **Ja** als u wilt dat de nieuwe werkruimte-instellingen worden toegepast op alle VM's. Daarnaast wordt elke VM die is verbonden met een door Security Center gemaakte werkruimte opnieuw verbonden met de nieuwe doelwerkruimte.
+    - **Nee**: uw nieuwe werkruimte-instellingen worden alleen toegepast op nieuw gedetecteerde VM's waarop de Log Analytics-agent niet is geïnstalleerd.
+    - **Ja**: uw nieuwe werkruimte-instellingen worden toegepast op alle VM's, en elke VM die momenteel is verbonden met een werkruimte die met Security Center is gemaakt, wordt opnieuw verbonden met de nieuwe doelwerkruimte.
 
    > [!NOTE]
-   > Als u Ja selecteert, moet u de werkruimte(n) die zijn gemaakt door Security Center pas verwijderen als alle VM's opnieuw zijn verbonden met de nieuwe doelwerkruimte. Deze bewerking mislukt als een werkruimte te vroeg wordt verwijderd.
-   >
-   >
-
-   - Als u de bewerking wilt annuleren, selecteert u **Annuleren**.
-
-     ![Opties bekijken voor het opnieuw configureren van bewaakte VM's][3]
-
-5. Selecteer of Azure Defender moet worden ingeschakeld voor de werkruimte.
-
-    Stel de prijscategorie voor de werkruimte in als u een bestaande werkruimte wilt gebruiken. Hiermee wordt een Security Center-oplossing geïnstalleerd in de werkruimte als deze nog niet aanwezig is.
-
-    1. Selecteer in het hoofdmenu van Security Center de optie **Prijzen en instellingen**.
-     
-    1. Selecteer de werkruimte waarmee u verbinding wilt maken met de agent.
-
-    1. Selecteer **Azure Defender aan** of **Azure Defender uit**.
-
-   
-   >[!NOTE]
-   >Als voor de werkruimte al een **Security**- of **SecurityCenterFree**-oplossing is ingeschakeld, wordt de prijs automatisch ingesteld. 
+   > Als u **Ja** selecteert, moet u de werkruimten die zijn gemaakt door Security Center pas verwijderen als alle VM's opnieuw zijn verbonden met de nieuwe doelwerkruimte. Deze bewerking mislukt als een werkruimte te vroeg wordt verwijderd.
 
 
-## <a name="cross-subscription-workspace-selection"></a>Werkruimteselectie voor meerdere abonnementen
-Wanneer u een werkruimte selecteert voor het opslaan van uw gegevens, kunt u kiezen uit alle werkruimten die in al uw abonnementen beschikbaar zijn. Het voordeel hiervan is dat u gegevens kunt verzamelen van virtuele machines die in verschillende abonnementen worden uitgevoerd en deze kunt opslaan in de werkruimte van uw keuze. Deze optie is handig als u een centrale werkruimte gebruikt in uw organisatie en u deze ook wilt gebruiken voor het verzamelen van beveiligingsgegevens. Zie [Werkruimtetoegang beheren](../azure-monitor/platform/manage-access.md) voor meer informatie over het beheren van werkruimten.
+## <a name="enable-auto-provisioning-of-extensions"></a>Automatische inrichting van extensies inschakelen
+
+Voor het inschakelen van de automatische inrichting van een extensie anders dan de Log Analytics-agent, gaat u als volgt te werk: 
+
+1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center in Azure Portal.
+1. Selecteer het betreffende abonnement.
+1. Selecteer **Automatische inrichting**.
+1. Als u automatisch inrichten inschakelt voor de Microsoft Dependency-agent, moet u ervoor zorgen dat de Log Analytics-agent ook op automatisch implementeren is ingesteld. 
+1. Zet voor de relevante extensie de wisselknop voor de status op **Aan**.
+
+    :::image type="content" source="./media/security-center-enable-data-collection/toggle-kubernetes-add-on.png" alt-text="Stel de wisselknop zo in dat automatische inrichting is ingeschakeld voor de Policy-invoegtoepassing K8s":::
+
+1. Selecteer **Opslaan**. Het Azure-beleid wordt toegewezen en er wordt een hersteltaak gemaakt.
+
+    |Extensie  |Beleid  |
+    |---------|---------|
+    |Policy-invoegtoepassing voor Kubernetes|[Azure Policy-invoegtoepassing implementeren op Azure Kubernetes Service-clusters](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fa8eff44f-8c92-45c3-a3fb-9880802d67a7)|
+    |Microsoft Dependency Agent (preview) (Windows-VM's)|[Dependency Agent implementeren voor Windows-VM's](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f1c210e94-a481-4beb-95fa-1571b434fb04)         |
+    |Microsoft Dependency Agent (preview) (Linux-VM's)|[Dependency Agent implementeren voor Linux-VM's](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da21710-ce6f-4e06-8cdb-5cc4c93ffbee)|
 
 
 
-## <a name="data-collection-tier"></a>Laag voor gegevensverzameling
-Het selecteren van een laag voor gegevensverzameling in Azure Security Center heeft alleen invloed op de opslag van beveiligingsgebeurtenissen in de Log Analytics-werkruimte. De Log Analytics-agent blijft de beveiligingsgebeurtenissen verzamelen en analyseren die Azure Security Center nodig heeft om u te beschermen tegen bedreigingen, ongeacht welke laag van beveiligingsgebeurtenissen u opslaat in uw Log Analytics-werkruimte. Als u ervoor kiest om beveiligingsgebeurtenissen op te slaan in uw werkruimte, kunt u gebeurtenissen vanuit die werkruimte onderzoeken, zoeken en controleren. 
-> [!NOTE]
-> Voor het opslaan van gegevens in Log Analytics worden mogelijk extra kosten voor gegevensopslag in rekening gebracht. Zie de pagina [prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
+## <a name="windows-security-event-options-for-the-log-analytics-agent"></a>Windows-beveiligingsgebeurtenisopties voor de Log Analytics-agent <a name="data-collection-tier"></a> 
 
-U kunt het juiste filterbeleid voor uw abonnementen en werkruimten kiezen uit vier sets gebeurtenissen die in uw werkruimte kunnen worden opgeslagen: 
-- **Geen** : opslag voor beveiligingsgebeurtenissen uitschakelen. Dit is de standaardinstelling.
-- **Minimaal**: een kleine set gebeurtenissen voor klanten die het gebeurtenisvolume willen minimaliseren.
-- **Algemeen**: dit is een set gebeurtenissen die voldoet voor de meeste klanten en waarmee ze over een volledig auditlogboek beschikken.
-- **Alle gebeurtenissen**: voor klanten die willen controleren of alle gebeurtenissen zijn opgeslagen.
+Het selecteren van een laag voor gegevensverzameling in Azure Security Center heeft alleen invloed op de *opslag* van beveiligingsgebeurtenissen in de Log Analytics-werkruimte. De Log Analytics-agent blijft de beveiligingsgebeurtenissen verzamelen en analyseren die Security Center nodig heeft om u te beschermen tegen bedreigingen, ongeacht welk niveau beveiligingsgebeurtenissen u opslaat in uw Log Analytics-werkruimte. Als u ervoor kiest om beveiligingsgebeurtenissen op te slaan, kunt u gebeurtenissen vanuit die werkruimte onderzoeken, zoeken en controleren.
 
-Deze beveiligingsgebeurtenissensets zijn alleen beschikbaar met Azure Defender. Bekijk de pagina [Prijzen](security-center-pricing.md) voor meer informatie over de tariefopties van Security Center.
+### <a name="requirements"></a>Vereisten 
+Azure Defender is vereist voor het opslaan van gegevens van Windows-beveiligingsgebeurtenissen. [Meer informatie over Azure Defender](azure-defender.md).
 
+Voor het opslaan van gegevens in Log Analytics worden mogelijk extra kosten voor gegevensopslag in rekening gebracht. Zie de pagina [prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
+
+### <a name="information-for-azure-sentinel-users"></a>Informatie voor Azure Sentinel-gebruikers 
+Gebruikers van Azure Sentinel: houd er rekening mee dat de verzameling van beveiligingsgebeurtenissen binnen de context van één werkruimte kan worden geconfigureerd vanuit Azure Security Center of Azure Sentinel, maar niet beide. Als u van plan bent om Azure Sentinel toe te voegen aan een werkruimte die al Azure Defender-waarschuwingen van Azure Security Center ontvangt en is ingesteld op het verzamelen van beveiligingsgebeurtenissen, hebt u twee opties:
+- Laat de verzameling van beveiligingsgebeurtenissen in Azure Security Center ongewijzigd. U kunt deze gebeurtenissen in Azure Sentinel en in Azure Defender doorzoeken en analyseren. U kunt echter niet de verbindingsstatus van de connector controleren of de configuratie ervan wijzigen in Azure Sentinel. Als dit belangrijk voor u is, kunt u de tweede optie overwegen.
+- Schakel het verzamelen van beveiligingsgebeurtenissen in Azure Security Center uit (door **Windows-beveiligingsgebeurtenissen** in te stellen op **Geen** in de configuratie van uw Log Analytics-agent). Voeg vervolgens de connector voor beveiligingsgebeurtenissen toe aan Azure Sentinel. Net zoals bij de eerste optie, kunt u gebeurtenissen in Azure Sentinel en Azure Defender/ASC opvragen en analyseren, maar u kunt nu de verbindingsstatus van de connector bewaken of de configuratie ervan wijzigen in (en alleen in) Azure Sentinel.
+
+### <a name="what-event-types-are-stored-for-common-and-minimal"></a>Welke gebeurtenistypen worden er opgeslagen voor 'Algemeen' en 'Minimaal'?
 Deze sets zijn ontworpen om typische scenario's te ondersteunen. Controleer welke set aan uw behoeften voldoet voordat u deze implementeert.
 
-Bij het bepalen van de gebeurtenissen die worden opgenomen in de gebeurtenissets **Algemeen** en **Minimaal** hebben we samengewerkt met klanten en industriestandaards gebruikt om de ongefilterde frequentie van elke gebeurtenis en het gebruik ervan te weten te komen. Bij dit proces hebben we de volgende richtlijnen gebruikt:
+Bij het bepalen van de gebeurtenissen voor de opties **Algemeen** en **Minimaal** hebben we samengewerkt met klanten, en industriestandaards gebruikt om de ongefilterde frequentie van elke gebeurtenis en het gebruik ervan te weten te komen. Bij dit proces hebben we de volgende richtlijnen gebruikt:
 
 - **Minimaal**: ervoor zorgen dat deze set alleen gebeurtenissen bevat die kunnen wijzen op een geslaagde inbraak, en belangrijke gebeurtenissen met een zeer laag volume. Deze set bevat bijvoorbeeld geslaagde en mislukte aanmeldingspogingen van gebruikers (gebeurtenis-id's 4624 en 4625), maar geen afmeldingen; die zijn belangrijk voor de controle, maar zijn niet belangrijk voor detectie en hebben een betrekkelijk hoog volume. Het grootste deel van het gegevensvolume van deze set bestaat uit de aanmeldingsgebeurtenissen en de procesaanmaakgebeurtenis (gebeurtenis-id 4688).
 - **Algemeen**: een volledig auditlogboek bieden in deze set. Deze set bevat bijvoorbeeld zowel aanmeldingen als afmeldingen van gebruikers (gebeurtenis-ID 4634). Hierin zijn controleacties opgenomen zoals wijzigingen van beveiligingsgroep, belangrijke Kerberos-bewerkingen voor domeincontrollers, en andere gebeurtenissen die worden aanbevolen door brancheorganisaties.
@@ -179,63 +172,20 @@ Hier volgt een volledige uitsplitsing van de gebeurtenis-id's van Security en Ap
 > - Als u Windows-filterplatform [gebeurtenis-id 5156](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=5156) wilt verzamelen, moet u [	Filterplatform-verbinding controleren](/windows/security/threat-protection/auditing/audit-filtering-platform-connection) inschakelen (Auditpol / set / subcategory:"Filtering Platform Connection" /Success:Enable)
 >
 
-Uw filterbeleid kiezen:
-1. Selecteer op de pagina **Gegevensverzameling** uw filterbeleid onder **Aanvullende onbewerkte gegevens opslaan - Windows-beveiligingsgebeurtenissen**.
- 
-1. Selecteer **Opslaan**.
-    :::image type="content" source="./media/security-center-enable-data-collection/data-collection-tiers.png" alt-text="Automatische inrichting van de Log Analytics-agent inschakelen":::
+### <a name="setting-the-security-event-option-at-the-workspace-level"></a>De beveiligingsgebeurtenisoptie op het niveau van de werkruimte instellen
 
-### <a name="automatic-provisioning-in-cases-of-a-pre-existing-agent-installation"></a>Automatische inrichting in het geval van een reeds bestaande agentinstallatie <a name="preexisting"></a> 
+U kunt het niveau beveiligingsgebeurtenisgegevens definiëren dat moet worden opgeslagen op het niveau van de werkruimte.
 
-In de volgende use-cases wordt aangegeven hoe automatische inrichting werkt in gevallen waarin er al een agent of extensie is geïnstalleerd. 
+1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center in Azure Portal.
+1. Selecteer de relevante werkruimte. De enige gebeurtenissen voor het verzamelen van gegevens voor een werkruimte zijn de Windows-beveiligingsgebeurtenissen die op deze pagina worden beschreven.
 
-- Log Analytics agent is geïnstalleerd op de computer, maar niet als een extensie (directe agent)<br>
-Als de Log Analytics-agent rechtstreeks op de VM is geïnstalleerd (niet als een Azure-extensie), installeert Security Center de Log Analytics-agentextensie, en wordt de Log Analytics-agent mogelijk bijgewerkt naar de nieuwste versie.
-De geïnstalleerde agent blijft rapporteren aan de reeds geconfigureerde werkruimte(n), en rapporteert bovendien aan de in Security Center geconfigureerde werkruimte (multihoming wordt ondersteund op Windows-machines).
-Als de geconfigureerde werkruimte een gebruikerswerkruimte is (niet de standaardwerkruimte van Security Center), moet u de oplossing 'security/securityFree' erin installeren voor Security Center kan beginnen met het verwerken van gebeurtenissen van VM's en computers aan die werkruimte kunnen gaan rapporteren.<br>
-<br>
-Voor Linux-machines wordt Agent-multihoming nog niet ondersteund. Als er een bestaande agentinstallatie wordt gedetecteerd, treedt er geen automatische inrichting op en wordt de configuratie van de machine niet gewijzigd.
-<br>
-Voor bestaande machines op abonnementen die vóór 17 maart 2019 bij Security Center zijn geönboard, wordt de Log Analytics-agentextensie niet geïnstalleerd wanneer een bestaande agent wordt gedetecteerd, en de machine wordt niet beïnvloed. Zie voor deze machines de aanbeveling 'Resolve monitoring agent health issues on your machines' (Agentstatusproblemen op uw machines oplossen) om de agentinstallatieproblemen op deze machines op te lossen.
+    :::image type="content" source="media/security-center-enable-data-collection/event-collection-workspace.png" alt-text="Instellen welke gegevens van de beveiligingsgebeurtenis in een werkruimte moeten worden opgeslagen":::
 
-  
-- System Center Operations Manager-agent is geïnstalleerd op de machine<br>
-Security Center installeert de Log Analytics-agentextensie naast de bestaande Operations Manager. De bestaande Operations Manager-agent blijft normaal aan de Operations Manager-server rapporteren. De Operations Manager-agent en Log Analytics-agent hebben gemeenschappelijke runtime-bibliotheken, die tijdens dit proces worden bijgewerkt naar de nieuwste versie. Als Operations Manager-agent versie 2012 is geïnstalleerd, schakel automatische inrichting dan **niet** in.<br>
+1. Selecteer de hoeveelheid onbewerkte gebeurtenisgegevens die moeten worden opgeslagen en selecteer **Opslaan**.
 
-- Er is een reeds bestaande VM-extensie aanwezig<br>
-    - Wanneer de bewakingsagent is geïnstalleerd als een extensie, staat de extensieconfiguratie slechts rapportage aan één werkruimte toe. Security Center overschrijft bestaande verbindingen met gebruikerswerkruimten niet. Security Center slaat beveiligingsgegevens van de VM op in de reeds verbonden werkruimte, mits de oplossing 'security' of 'securityFree' erop is geïnstalleerd. Tijdens die proces kan Security Center de extensie upgraden naar de nieuwste versie.  
-    - Als u wilt zien naar welke werkruimte de bestaande extensie gegevens verzendt, voert u de test uit om de [verbinding met Azure Security Center te valideren](/archive/blogs/yuridiogenes/validating-connectivity-with-azure-security-center). U kunt ook Log Analytics-werkruimten openen, een werkruimte selecteren, de VM selecteren en kijken naar de verbinding met de Log Analytics-agent. 
-    - Als u een omgeving hebt waarin de Log Analytics-agent is geïnstalleerd op clientwerkstations en rapporteert aan een bestaande Log Analytics-werkruimte, kunt u de lijst met [door Azure Security Center ondersteunde besturingssystemen](security-center-os-coverage.md) bekijken om u ervan te verzekeren dat uw besturingssysteem wordt ondersteund. Zie [bestaande Log Analytics-klanten](./faq-azure-monitor-logs.md)voor meer informatie.
- 
-### <a name="turn-off-automatic-provisioning"></a>Automatische inrichting uitschakelen <a name="offprovisioning"></a>
-Automatische inrichting van de Log Analytics-agent uitschakelen:
-
-1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center in de portal.
-2. Selecteer het betreffende abonnement.
-
-    :::image type="content" source="./media/security-center-enable-data-collection/select-subscription.png" alt-text="Automatische inrichting van de Log Analytics-agent inschakelen":::
-
-3. Selecteer **Gegevensverzameling**.
-4. Selecteer **Uit** onder **Automatische inrichting** om automatische inrichting uit te schakelen.
-5. Selecteer **Opslaan**. 
-
-
-Als automatisch inrichten is uitgeschakeld, wordt de sectie Configuratie van de standaardwerkruimte niet weergegeven.
-
-Als u automatische inrichting uitschakelt nadat het aan heeft gestaan, worden er geen agents meer ingericht op nieuwe VM's.
-
- 
-> [!NOTE]
->  Wanneer u automatische inrichting uitschakelt, wordt de Log Analytics-agent niet verwijderd van Azure-VM's waarop de agent al is ingericht. Zie voor meer informatie over het verwijderen van de OMS-extensie [Hoe kan ik OMS-extensies die door Security Center zijn geïnstalleerd, verwijderen?](faq-data-collection-agents.md#remove-oms).
->
-    
 ## <a name="manual-agent-provisioning"></a>Handmatige agentinrichting <a name="manual-agent"></a>
  
-Er zijn verschillende manieren om de Log Analytics-agent handmatig te installeren. Wanneer u handmatig installeert, zorg er dan voor dat u automatische inrichting uitschakelt.
-
-### <a name="operations-management-suite-vm-extension-deployment"></a>Implementatie van VM-extensie van Operations Management Suite 
-
-U kunt de Log Analytics-agent handmatig installeren, zodat Security Center beveiligingsgegevens van uw VM's kan verzamelen en aanbevelingen en waarschuwingen geven.
+De Log Analytics-agent handmatig installeren:
 
 1. Schakel automatische inrichting uit.
 
@@ -245,33 +195,71 @@ U kunt de Log Analytics-agent handmatig installeren, zodat Security Center bevei
 
     1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
 
-    1. Stel de werkruimte in waar u de agent gaat installeren. Zorg ervoor dat de werkruimte tot hetzelfde abonnement behoort dat u in Security Center gebruikt en dat u voor de werkruimte lees- en schrijfmachtigingen hebt.
+    1. Stel de werkruimte in waar u de agent gaat installeren. Zorg ervoor dat de werkruimte tot hetzelfde abonnement behoort dat u in Security Center gebruikt, en dat u voor de werkruimte lees- en schrijfmachtigingen hebt.
 
-    1. Zet Azure Defender aan en selecteer **Opslaan**.
+    1. Selecteer **Azure Defender aan** en **Opslaan**.
 
        >[!NOTE]
        >Als voor de werkruimte al een **Security**- of **SecurityCenterFree**-oplossing is ingeschakeld, wordt de prijs automatisch ingesteld. 
 
-1. Als u de agents op nieuwe VM's wilt implementeren met behulp van een Resource Manager-sjabloon, installeert u de Log Analytics agent:
+1. Als u agents op nieuwe VM's wilt implementeren met behulp van een Resource Manager-sjabloon, installeert u de Log Analytics-agent:
 
    - [De Log Analytics-agent voor Windows installeren](../virtual-machines/extensions/oms-windows.md)
    - [De Log Analytics-agent voor Linux installeren](../virtual-machines/extensions/oms-linux.md)
 
-1. Als u de extensies op bestaande VM's wilt implementeren, volgt u de instructies in [Gegevens over Azure Virtual Machines verzamelen](../azure-monitor/learn/quick-collect-azurevm.md).
+1. Als u agents wilt implementeren op uw bestaande VM's, volgt u de instructies in [Gegevens verzamelen over Azure Virtual Machines](../azure-monitor/learn/quick-collect-azurevm.md) (de sectie **Gebeurtenis- en prestatiegegevens verzamelen** is optioneel).
 
-   > [!NOTE]
-   > De sectie **Gebeurtenis- en prestatiegegevens verzamelen** is optioneel.
-   >
-
-1. Als u PowerShell wilt gebruiken om de extensie te implementeren, gebruikt u de instructies in de documentatie voor virtual machines:
+1. Als u PowerShell wilt gebruiken om de agents te implementeren, gebruikt u de instructies in de documentatie voor virtuele machines:
 
     - [Voor Windows-machines](../virtual-machines/extensions/oms-windows.md?toc=%252fazure%252fazure-monitor%252ftoc.json#powershell-deployment)
     - [Voor Linux-machines](../virtual-machines/extensions/oms-linux.md?toc=%252fazure%252fazure-monitor%252ftoc.json#azure-cli-deployment)
 
+> [!TIP]
+> Voor instructies over het onboarden van Security Center met behulp van PowerShell raadpleegt u [Het onboarden van Azure Security Center automatiseren met PowerShell](security-center-powershell-onboarding.md).
+
+
+## <a name="automatic-provisioning-in-cases-of-a-pre-existing-agent-installation"></a>Automatische inrichting in het geval van een reeds bestaande agentinstallatie <a name="preexisting"></a> 
+
+In de volgende use-cases wordt aangegeven hoe automatische inrichting werkt in gevallen waarin er al een agent of extensie is geïnstalleerd. 
+
+- **Log Analytics-agent is geïnstalleerd op de computer, maar niet als een extensie (directe agent)** : als de Log Analytics-agent rechtstreeks op de VM is geïnstalleerd (niet als een Azure-extensie), installeert Security Center de Log Analytics-agentextensie, en wordt de Log Analytics-agent mogelijk bijgewerkt naar de nieuwste versie.
+De geïnstalleerde agent blijft rapporteren aan de reeds geconfigureerde werkruimte(n), en rapporteert bovendien aan de in Security Center geconfigureerde werkruimte (multihoming wordt ondersteund op Windows-machines).
+Als de geconfigureerde werkruimte een gebruikerswerkruimte is (niet de standaardwerkruimte van Security Center), moet u de oplossing 'security/securityFree' erin installeren voor Security Center kan beginnen met het verwerken van gebeurtenissen van VM's en computers aan die werkruimte kunnen gaan rapporteren.
+
+    Voor Linux-machines wordt Agent-multihoming nog niet ondersteund. Als er een bestaande agentinstallatie wordt gedetecteerd, treedt er geen automatische inrichting op en wordt de configuratie van de machine niet gewijzigd.
+
+    Voor bestaande machines op abonnementen die vóór 17 maart 2019 aan Security Center zijn toegevoegd, wordt de Log Analytics-agentextensie niet geïnstalleerd wanneer een bestaande agent wordt gedetecteerd, en de machine wordt niet beïnvloed. Zie voor deze machines de aanbeveling 'Resolve monitoring agent health issues on your machines' (Agentstatusproblemen op uw machines oplossen) om de agentinstallatieproblemen op deze machines op te lossen.
+  
+- **System Center Operations Manager-agent is geïnstalleerd op de machine**: Security Center installeert de Log Analytics-agentextensie naast de bestaande Operations Manager. De bestaande Operations Manager-agent blijft normaal aan de Operations Manager-server rapporteren. De Operations Manager-agent en Log Analytics-agent hebben gemeenschappelijke runtime-bibliotheken, die tijdens dit proces worden bijgewerkt naar de nieuwste versie. Als Operations Manager-agent versie 2012 is geïnstalleerd, schakel automatische inrichting dan **niet** in.
+
+- **Er is een reeds bestaande VM-extensie aanwezig**:
+    - Wanneer de bewakingsagent is geïnstalleerd als een extensie, staat de extensieconfiguratie slechts rapportage aan één werkruimte toe. Security Center overschrijft bestaande verbindingen met gebruikerswerkruimten niet. Security Center slaat beveiligingsgegevens van de VM op in de reeds verbonden werkruimte, mits de oplossing 'security' of 'securityFree' erop is geïnstalleerd. Tijdens die proces kan Security Center de extensie upgraden naar de nieuwste versie.  
+    - Als u wilt zien naar welke werkruimte de bestaande extensie gegevens verzendt, voert u de test uit om de [verbinding met Azure Security Center te valideren](/archive/blogs/yuridiogenes/validating-connectivity-with-azure-security-center). U kunt ook Log Analytics-werkruimten openen, een werkruimte selecteren, de VM selecteren en kijken naar de verbinding met de Log Analytics-agent. 
+    - Als u een omgeving hebt waarin de Log Analytics-agent is geïnstalleerd op clientwerkstations en rapporteert aan een bestaande Log Analytics-werkruimte, kunt u de lijst met [door Azure Security Center ondersteunde besturingssystemen](security-center-os-coverage.md) bekijken om u ervan te verzekeren dat uw besturingssysteem wordt ondersteund. Zie [bestaande Log Analytics-klanten](./faq-azure-monitor-logs.md)voor meer informatie.
+ 
+
+## <a name="disable-auto-provisioning"></a>Automatische inrichting <a name="offprovisioning"></a> uitschakelen
+
+Wanneer u automatische inrichting uitschakelt, worden er geen agents ingericht op nieuwe VM's.
+
+Automatische inrichting van een agent uitschakelen:
+
+1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center in de portal.
+1. Selecteer het betreffende abonnement.
+1. Selecteer **Automatische inrichting**.
+1. Zet voor de relevante agent de wisselknop voor de status op **Aan**.
+
+    :::image type="content" source="./media/security-center-enable-data-collection/agent-toggles.png" alt-text="Een wisselknop om automatische inrichting per agenttype in of uit te schakelen":::
+
+1. Selecteer **Opslaan**. Als automatische inrichting is uitgeschakeld, wordt de sectie Configuratie van de standaardwerkruimte niet weergegeven:
+
+    :::image type="content" source="./media/security-center-enable-data-collection/empty-configuration-column.png" alt-text="Als automatische inrichting is uitgeschakeld, is de configuratiecel leeg":::
 
 
 > [!NOTE]
-> Voor instructies over het onboarden van Security Center met behulp van PowerShell raadpleegt u [Het onboarden van Azure Security Center automatiseren met PowerShell](security-center-powershell-onboarding.md).
+>  Wanneer u automatische inrichting uitschakelt, wordt de Log Analytics-agent niet verwijderd van Azure-VM's waarop de agent al is ingericht. Zie voor meer informatie over het verwijderen van de OMS-extensie [Hoe kan ik OMS-extensies die door Security Center zijn geïnstalleerd, verwijderen?](faq-data-collection-agents.md#remove-oms).
+>
+
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
@@ -287,16 +275,13 @@ U kunt de Log Analytics-agent handmatig installeren, zodat Security Center bevei
     Zie [Problemen met de agentstatus controleren](security-center-troubleshooting-guide.md#mon-agent) voor meer informatie over de redenen waarom Security Center VM's en computers die zijn geïnitialiseerd voor automatische inrichting niet afdoende kan bewaken.
 
 
+
+
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel werd uitgelegd hoe het verzamelen van gegevens en automatisch inrichten in Security Center werkt. Zie de volgende pagina's voor meer informatie over het Security Center:
 
 - [Azure Security Center FAQ](faq-general.md): raadpleeg veelgestelde vragen over het gebruik van de service.
 - [Beveiligingsstatus bewaken in Azure Security Center](security-center-monitoring.md): meer informatie over het bewaken van de status van uw Azure-resources.
 
+In dit artikel wordt beschreven hoe u een Log Analytics-agent installeert en hoe u een Log Analytics-werkruimte instelt waarin de verzamelde gegevens worden opgeslagen. Beide bewerkingen zijn vereist om gegevensverzameling mogelijk te maken. Wanneer u gegevens opslaat in Log Analytics, ongeacht of u een nieuwe of bestaande werkruimte gebruikt, kunnen er extra kosten in rekening worden gebracht voor gegevensopslag. Zie de pagina [prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
 
-
-<!--Image references-->
-[3]: ./media/security-center-enable-data-collection/reconfigure-monitored-vm.png
-[9]: ./media/security-center-enable-data-collection/pricing-tier.png
-[11]: ./media/security-center-enable-data-collection/log-analytics.png
-[12]: ./media/security-center-enable-data-collection/log-analytics2.png

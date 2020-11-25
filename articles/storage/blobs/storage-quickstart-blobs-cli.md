@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 08/17/2020
 ms.author: tamram
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 55cbf0a304bbf13d47fefad0981c0143c101bbb0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c9797024315a8fdc744d08863a42fba0b0b16420
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88520767"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660335"
 ---
 # <a name="quickstart-create-download-and-list-blobs-with-azure-cli"></a>Quickstart: Blobs maken, downloaden, uploaden en weergeven met Azure CLI
 
@@ -27,19 +27,9 @@ Azure CLI is de nieuwe opdrachtregel van Azure voor het beheren van Azure-resour
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment-h3.md)]
 
-## <a name="install-the-azure-cli-locally"></a>De Azure CLI lokaal installeren
-
-Als u ervoor kiest om de Azure CLI lokaal te installeren en te gebruiken, moet u voor deze quickstart versie 2.0.46 of hoger van de Azure CLI uitvoeren. Voer `az --version` uit om uw versie te bepalen. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli).
-
-Als u de Azure CLI lokaal uitvoert, moet u zich aanmelden en verifiëren. Deze stap is niet nodig als u Azure Cloud Shell gebruikt. Als u zich bij Azure CLI wilt aanmelden, voert u `az login` uit en verifieert u zich in het browservenster:
-
-```azurecli
-az login
-```
-
-Zie [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli) voor meer informatie over verificatie met Azure CLI.
+- Voor dit artikel is versie 2.0.46 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="authorize-access-to-blob-storage"></a>Toegang tot Blob Storage autoriseren
 

@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: 211ce85fdbf918171ecfc7964bbcdfa2ef245990
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 83f38797e406ff7e62503f59ef979b9ce4f07f97
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790709"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917933"
 ---
 # <a name="what-is-azure-sql-managed-instance"></a>Wat is Azure SQL Managed Instance?
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -33,7 +33,7 @@ In de volgende grafiek worden de belangrijkste functies van SQL Managed Instance
 
 ![Belangrijke functies](./media/sql-managed-instance-paas-overview/key-features.png)
 
-Azure SQL Managed Instance is ontworpen voor klanten die een groot aantal apps willen migreren van een on-premises of IaaS, zelfgebouwde of ISV-omgeving naar een volledig beheerde PaaS-cloudomgeving, met zo weinig mogelijk migratie-inspanningen. Met behulp van de volledig geautomatiseerde [Azure Data Migration Service](../../dms/tutorial-sql-server-to-managed-instance.md#create-an-azure-database-migration-service-instance) kunnen klanten hun bestaande SQL Server-instantie naar SQL Managed Instance overzetten, wat compatibiliteit biedt met SQL Server en volledige isolatie van klantinstanties met systeemeigen VNet-ondersteuning.  Met Software Assurance kan Contoso haar bestaande licenties inwisselen tegen kortingstarieven op SQL Managed Instance met behulp van [Azure Hybrid Benefit voor SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/). SQL Managed Instance is de beste migratiebestemming in de Cloud voor SQL Server-instanties die hoge beveiliging en een groot programmeerbaarheidsoppervlak nodig hebben.
+Azure SQL Managed Instance is ontworpen voor klanten die een groot aantal apps willen migreren van een on-premises of IaaS, zelfgebouwde of ISV-omgeving naar een volledig beheerde PaaS-cloudomgeving, met zo weinig mogelijk migratie-inspanningen. Met behulp van de volledig geautomatiseerde [Azure Data Migration Service](../../dms/tutorial-sql-server-to-managed-instance.md#create-an-azure-database-migration-service-instance) kunnen klanten hun bestaande SQL Server-instantie naar SQL Managed Instance overzetten, wat compatibiliteit biedt met SQL Server en volledige isolatie van klantinstanties met systeemeigen VNet-ondersteuning. Voor meer informatie over opties en hulpprogramma's voor migratie, raadpleegt u [Migratieoverzicht: SQL Server naar Azure SQL Managed Instance](../migration-guides/managed-instance/sql-server-to-managed-instance-overview.md).</br> Met Software Assurance kan Contoso haar bestaande licenties inwisselen tegen kortingstarieven op SQL Managed Instance met behulp van [Azure Hybrid Benefit voor SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/). SQL Managed Instance is de beste migratiebestemming in de Cloud voor SQL Server-instanties die hoge beveiliging en een groot programmeerbaarheidsoppervlak nodig hebben.
 
 ## <a name="key-features-and-capabilities"></a>Belangrijkste functies en mogelijkheden
 
@@ -49,7 +49,7 @@ SQL Managed Instance combineert de beste functies die beschikbaar zijn in Azure 
 |Geïsoleerde omgeving ([VNet-integratie](connectivity-architecture-overview.md), single tenant service, toegewijde rekenkracht en opslag) <br>[TDE (Transparent Data Encryption)](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql)<br>[Azure Active Directory (Azure AD)-verificatie](../database/authentication-aad-overview.md), ondersteuning voor eenmalige aanmelding <br> <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">Azure AD-server-principals (aanmeldingen)</a>  <br>Voldoet aan dezelfde nalevingsnormen als Azure SQL Database <br>[SQL-controle](auditing-configure.md) <br>[Advanced Threat Protection](threat-detection-configure.md) |Azure Resource Manager-API voor het automatiseren van het inrichten en schalen van services <br>Azure-portaalfunctionaliteit om handmatig services in te richten en te schalen <br>Data Migration Service
 
 > [!IMPORTANT]
-> Azure SQL Managed Instanced is gecertificeerd volgens een aantal nalevingsnormen. Raadpleeg voor meer informatie [Microsoft Azure Compliance-aanbiedingen](https://servicetrust.microsoft.com/ViewPage/MSComplianceGuideV3?command=Download&downloadType=Document&downloadId=44bbae63-bf4d-4e3b-9d3d-c96fb25ec363&tab=7027ead0-3d6b-11e9-b9e1-290b1eb4cdeb&docTab=7027ead0-3d6b-11e9-b9e1-290b1eb4cdeb_FAQ_and_White_Papers), waar u de meest recente lijst met nalevingscertificeringen voor SQL Managed Instance vindt onder **SQL Database** .
+> Azure SQL Managed Instanced is gecertificeerd volgens een aantal nalevingsnormen. Raadpleeg voor meer informatie [Microsoft Azure Compliance-aanbiedingen](https://servicetrust.microsoft.com/ViewPage/MSComplianceGuideV3?command=Download&downloadType=Document&downloadId=44bbae63-bf4d-4e3b-9d3d-c96fb25ec363&tab=7027ead0-3d6b-11e9-b9e1-290b1eb4cdeb&docTab=7027ead0-3d6b-11e9-b9e1-290b1eb4cdeb_FAQ_and_White_Papers), waar u de meest recente lijst met nalevingscertificeringen voor SQL Managed Instance vindt onder **SQL Database**.
 
 In de volgende tabel worden de belangrijkste functies van SQL Managed Instance beschreven:
 
@@ -76,8 +76,8 @@ Het op [vCore gebaseerde aankoopmodel](../database/service-tiers-vcore.md) voor 
 
 In het vCore-model kunt u kiezen tussen generaties van hardware.
 
-- Logische **Gen4** -CPU's zijn gebaseerd op Intel® E5-2673 v3 (Haswell) 2,4 GHz-processors, gekoppelde SSD, fysieke kernen, 7 GB RAM per kern en rekengrootten tussen 8 en 24 vCores.
-- Logische **GEN5** -CPU's zijn gebaseerd op Intel® E5-2673 v4 (Broadwell) 2,3 GHz, Intel® SP-8160 (Skylake) en Intel® 8272CL (Cascade Lake) 2,5 GHz-processors, snelle NVMe SSD, hyper-threaded logische kern en rekengrootten tussen 4 en 80 kernen.
+- Logische **Gen4**-CPU's zijn gebaseerd op Intel® E5-2673 v3 (Haswell) 2,4 GHz-processors, gekoppelde SSD, fysieke kernen, 7 GB RAM per kern en rekengrootten tussen 8 en 24 vCores.
+- Logische **GEN5**-CPU's zijn gebaseerd op Intel® E5-2673 v4 (Broadwell) 2,3 GHz, Intel® SP-8160 (Skylake) en Intel® 8272CL (Cascade Lake) 2,5 GHz-processors, snelle NVMe SSD, hyper-threaded logische kern en rekengrootten tussen 4 en 80 kernen.
 
 Meer informatie over het verschil tussen hardwaregeneraties in [SQL Managed Instance-resourcelimieten](resource-limits.md#hardware-generation-characteristics).
 
@@ -85,8 +85,8 @@ Meer informatie over het verschil tussen hardwaregeneraties in [SQL Managed Inst
 
 SQL Managed Instance is beschikbaar in twee servicelagen:
 
-- **Algemeen doel** : Ontworpen voor toepassingen met typische prestatie- en I/O-latentievereisten.
-- **Bedrijfskritiek** : Ontworpen voor toepassingen met lage I/O-latentievereisten en minimale gevolgen van onderliggende onderhoudsbewerkingen op de werkbelasting.
+- **Algemeen doel**: Ontworpen voor toepassingen met typische prestatie- en I/O-latentievereisten.
+- **Bedrijfskritiek**: Ontworpen voor toepassingen met lage I/O-latentievereisten en minimale gevolgen van onderliggende onderhoudsbewerkingen op de werkbelasting.
 
 Beide servicelagen garanderen een beschikbaarheid van 99,99% en bieden u de mogelijkheid om de opslaggrootte en de rekencapaciteit onafhankelijk te selecteren. Zie [Hoge beschikbaarheid en Azure SQL Managed Instance](../database/high-availability-sla.md)voor meer informatie over de architectuur voor hoge beschikbaarheid van Azure SQL Managed Instance.
 
@@ -156,9 +156,9 @@ Migratie van een versleutelde database naar SQL Managed Instance wordt ondersteu
 
 ## <a name="azure-active-directory-integration"></a>Integratie van Azure Active Directory
 
-SQL Managed Instance ondersteunt traditionele aanmeldingen met SQL Server-database-engine en aanmeldingen die zijn geïntegreerd met Azure AD. Azure AD server-principals (aanmeldingen) ( **openbare preview** ) zijn een Azure-cloudversie van on-premises database-aanmeldingen die u in uw on-premises omgeving gebruikt. Met Azure AD-server-principals (aanmeldingen) kunt u gebruikers en groepen van uw Azure AD-tenant opgeven als echte instantie-principals, waardoor elke bewerking op instantieniveau kan worden uitgevoerd, inclusief query's tussen databases binnen hetzelfde beheerde exemplaar.
+SQL Managed Instance ondersteunt traditionele aanmeldingen met SQL Server-database-engine en aanmeldingen die zijn geïntegreerd met Azure AD. Azure AD server-principals (aanmeldingen) (**openbare preview**) zijn een Azure-cloudversie van on-premises database-aanmeldingen die u in uw on-premises omgeving gebruikt. Met Azure AD-server-principals (aanmeldingen) kunt u gebruikers en groepen van uw Azure AD-tenant opgeven als echte instantie-principals, waardoor elke bewerking op instantieniveau kan worden uitgevoerd, inclusief query's tussen databases binnen hetzelfde beheerde exemplaar.
 
-Er bestaat een nieuwe syntaxis voor het maken van Azure AD-server-principals (aanmeldingen) **VANUIT EXTERNE PROVIDER** . Voor meer informatie over de syntaxis raadpleegt u <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">AANMELDING MAKEN</a> en leest u het artikel [Een Azure Active Directory-beheerder inrichten voor SQL Managed Instance](../database/authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance).
+Er bestaat een nieuwe syntaxis voor het maken van Azure AD-server-principals (aanmeldingen) **VANUIT EXTERNE PROVIDER**. Voor meer informatie over de syntaxis raadpleegt u <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">AANMELDING MAKEN</a> en leest u het artikel [Een Azure Active Directory-beheerder inrichten voor SQL Managed Instance](../database/authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance).
 
 ### <a name="azure-active-directory-integration-and-multi-factor-authentication"></a>Azure Active Directory-integratie en meervoudige verificatie
 
@@ -168,10 +168,10 @@ Dankzij [Azure Active Directory-integratie](../database/authentication-aad-overv
 
 Verificatie van SQL Managed Instance verwijst naar hoe gebruikers hun identiteit bewijzen wanneer ze verbinding maken met de database. SQL Managed Instance ondersteunt twee typen verificatie:  
 
-- **SQL-verificatie** :
+- **SQL-verificatie**:
 
   Bij deze verificatiemethode wordt een combinatie van gebruikersnaam en wachtwoord gebruikt.
-- **Azure Active Directory-verificatie** :
+- **Azure Active Directory-verificatie**:
 
   Deze verificatiemethode gebruikt identiteiten die worden beheerd in Azure Active Directory. Deze methode wordt ondersteund voor beheerde en geïntegreerde domeinen. Gebruik [waar mogelijk](/sql/relational-databases/security/choose-an-authentication-mode) Active Directory-verificatie (geïntegreerde beveiliging).
 
@@ -181,14 +181,14 @@ Autorisatie verwijst naar wat een gebruiker kan doen binnen een database in Azur
 
 ## <a name="database-migration"></a>Databasemigratie
 
-SQL Managed Instance streeft naar gebruikersscenario's met massale databasemigratie van on-premises of IaaS-database-implementaties. SQL Managed Instance ondersteunt diverse opties voor databasemigratie:
+SQL Managed Instance streeft naar gebruikersscenario's met massale databasemigratie van on-premises of IaaS-database-implementaties. SQL Managed Instance biedt ondersteuning voor verschillende opties voor databasemigratie. Deze opties worden besproken in de migratiehandleidingen. Raadpleeg [Migratieoverzicht: SQL Server naar Azure SQL Managed Instance](../migration-guides/managed-instance/sql-server-to-managed-instance-overview.md) voor meer informatie.
 
 ### <a name="backup-and-restore"></a>Back-ups en herstellen  
 
 De benadering voor de migratie maakt gebruik van SQL-back-ups naar Azure Blob-opslag. Back-ups die zijn opgeslagen in een Azure Storage-blob, kunnen rechtstreeks worden hersteld in een beheerde instantie met behulp van de [T-SQL RESTORE-opdracht](/sql/t-sql/statements/restore-statements-transact-sql?preserve-view=true&view=azuresqldb-mi-current).
 
 - Zie [Een back-upbestand herstellen naar een beheerde instantie](restore-sample-database-quickstart.md)voor een snelstartgids waarin wordt getoond hoe u de Wide World Importers herstelt, het standaard back-upbestand van de database. In deze snelstartgids ziet u dat u een back-upbestand moet uploaden naar Azure Blob-opslag en het kunt beveiligen met behulp van een sleutel voor Shared Access Signature (SAS).
-- Zie [Systeemeigen HERSTEL vanaf URL](migrate-to-instance-from-sql-server.md#native-restore-from-url) voor meer informatie over herstel vanaf een URL.
+- Zie [Systeemeigen HERSTEL vanaf URL](../migration-guides/managed-instance/sql-server-to-managed-instance-guide.md#backup-and-restore) voor meer informatie over herstel vanaf een URL.
 
 > [!IMPORTANT]
 > Back-ups vanaf een beheerde instantie kunnen alleen worden hersteld naar een andere beheerde instantie. Ze kunnen niet worden hersteld naar een SQL Server-instantie of Azure SQL Database.

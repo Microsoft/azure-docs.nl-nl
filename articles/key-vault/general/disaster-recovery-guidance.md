@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/28/2020
 ms.author: sudbalas
-ms.openlocfilehash: 3cc4bdc0fabd9d1e209634a88bed1bf063db917c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aea5f0428fe55c0dae3734e196008cbc26a974b9
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91597873"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94576215"
 ---
 # <a name="azure-key-vault-availability-and-redundancy"></a>Beschikbaarheid en redundantie in Azure Key Vault
 
@@ -23,7 +23,7 @@ Azure Key Vault bevat meerdere lagen van redundantie om ervoor te zorgen dat uw 
 > [!NOTE]
 > Deze informatie is van toepassing op kluizen. Voor beheerde HSM-groepen wordt een ander model voor hoge beschikbaarheid en herstel na noodgevallen gebruikt. Raadpleeg de [documentatie over herstel na noodgevallen voor beheerde HSM's](../managed-hsm/disaster-recovery-guide.md) voor meer informatie.
 
-De inhoud van uw sleutelkluis wordt gerepliceerd binnen de regio en naar een secundaire regio op ten minste 150 mijl afstand, maar binnen dezelfde geografische locatie voor het behoud van de hoge duurzaamheid van uw sleutels en geheimen. Raadpleeg het document [Azure-gekoppelde regio's](../../best-practices-availability-paired-regions.md) voor meer informatie over specifieke regioparen.
+De inhoud van uw sleutelkluis wordt gerepliceerd binnen de regio en naar een secundaire regio op minstens 150 mijl afstand, maar binnen dezelfde geografische locatie voor het behoud van de hoge duurzaamheid van uw sleutels en geheimen. Raadpleeg [Azure-gekoppelde regio's](../../best-practices-availability-paired-regions.md) voor meer informatie over specifieke regioparen. De uitzondering op het model voor gekoppelde regio's is Brazilië - zuid, waarmee alleen de optie voor het behoud van gegevens in Brazilië - zuid wordt toegestaan. Brazilië - zuid maakt gebruik van LRS (lokaal redundante opslag) om uw gegevens drie keer te repliceren binnen één locatie/regio.   
 
 Als afzonderlijke onderdelen van de sleutelkluis-service niet meer werken, nemen alternatieve onderdelen in de regio het over om uw aanvraag te verwerken om ervoor te zorgen dat de functionaliteit niet wordt verminderd. U hoeft geen actie te ondernemen om dit proces te starten. Dit gebeurt automatisch en is transparant voor u.
 

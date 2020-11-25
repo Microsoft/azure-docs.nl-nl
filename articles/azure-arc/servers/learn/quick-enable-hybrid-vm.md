@@ -2,13 +2,13 @@
 title: Een hybride machine verbinden met servers met Azure Arc
 description: Meer informatie over het verbinden en registreren van uw hybride machine met Azure Arc-servers.
 ms.topic: quickstart
-ms.date: 09/23/2020
-ms.openlocfilehash: b57f30821a105a99041d8187716b75096116ea8e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.date: 11/12/2020
+ms.openlocfilehash: 3779d95ac138e83b1d953f744e07ae553890a5d7
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91327881"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94576752"
 ---
 # <a name="quickstart-connect-hybrid-machine-with-azure-arc-enabled-servers"></a>Quickstart: Een hybride machine verbinden met servers met Azure Arc
 
@@ -42,34 +42,40 @@ Servers voor Azure Arc zijn afhankelijk van de volgende Azure-resourceproviders 
 Registreer deze met behulp van de volgende opdrachten:
 
 ```azurecli-interactive
-az account set --subscription "{Your Subscription Name}"
-az provider register --namespace 'Microsoft.HybridCompute'
-az provider register --namespace 'Microsoft.GuestConfiguration'
+az account set --subscription "{Your Subscription Name}"
+az provider register --namespace 'Microsoft.HybridCompute'
+az provider register --namespace 'Microsoft.GuestConfiguration'
 ```
 
 ## <a name="generate-installation-script"></a>Het installatiescript genereren
 
 Het script voor het automatiseren van downloaden, installeren en tot stand brengen van de verbinding met Azure Arc, is beschikbaar via Azure Portal. Ga als volgt te werk om het proces te voltooien:
 
-1. Start de Azure Arc-service in Azure Portal door op **Alle services** te klikken en dan **Machines - Azure Arc** te zoeken en te selecteren.
+1. Start de Azure Arc-service in de Azure Portal. Dit doet u door op **Alle services** te klikken en vervolgens **Servers - Azure Arc** te zoeken en te selecteren.
 
     :::image type="content" source="./media/quick-enable-hybrid-vm/search-machines.png" alt-text="Arc-servers zoeken in Alle services" border="false":::
 
-1. Selecteer op de pagina **Machines - Azure Arc** de optie **Toevoegen**, linksboven of de optie **Machine maken - Azure Arc** onder in het middelste deelvenster.
+1. Selecteer, op de pagina **Servers - Azure Arc** de optie **Toevoegen** in de linkerbovenhoek.
 
-1. Selecteer op de pagina **Een methode selecteren** de tegel **Machines toevoegen met interactief script** en selecteer vervolgens **Script genereren**.
+1. Selecteer, op de pagina **Een methode selecteren**, de tegel **Servers toevoegen met interactief script** en selecteer vervolgens **Script genereren**.
 
-1. Selecteer op de pagina **Script genereren** het abonnement en de resourcegroep waarin u de machine wilt beheren binnen Azure. Selecteer een Azure-locatie waar de metagegevens van de machine worden opgeslagen.
+1. Selecteer op de pagina **Script genereren** het abonnement en de resourcegroep waarin u de machine wilt beheren binnen Azure. Selecteer een Azure-locatie waar de metagegevens van de machine worden opgeslagen. Deze locatie kan hetzelfde zijn als, of verschillen van, de locatie van de resourcegroep.
 
-1. Selecteer op de pagina **Script genereren** in de vervolgkeuzelijst **Besturingssysteem** het besturingssysteem waarop het script zal worden uitgevoerd.
+1. Controleer de informatie op de pagina **Vereisten** en selecteer daarna **Volgende: Resourcegegevens**.
 
-1. Als de machine communiceert via een proxyserver om verbinding te maken met internet, selecteert u **Volgende: Proxy Server**.
+1. Geef, op de pagina **Resourcegegevens**, het volgende op:
 
-1. Geef op het tabblad **Proxyserver** het IP-adres van de proxyserver of de naam en het poortnummer op die de machine zal gebruiken om met de proxyserver te communiceren. Voer de waarde in de indeling `http://<proxyURL>:<proxyport>` in.
+    1. Selecteer in de vervolgkeuzelijst **Resourcegroep**, de resourcegroep van waaruit de machine wordt beheerd.
+    1. Selecteer in de vervolg keuzelijst **Regio**, de Azure-regio om de metagegevens van de server op te slaan.
+    1. Selecteer in de vervolgkeuzelijst **Besturingssysteem**, het besturingssysteem waarop het script zal worden uitgevoerd.
+    1. Als de machine communiceert door middel van een proxyserver, geeft u het volgende op: het IP-adres van de proxyserver, of de naam en het poortnummer die de machine zal gebruiken om met de proxyserver te communiceren. Voer de waarde in de indeling `http://<proxyURL>:<proxyport>` in.
+    1. Selecteer **Volgende: Tags**.
 
-1. Selecteer **Controleren en genereren**.
+1. Controleer, op de pagina **Tags**, de standaard **Fysieke locatiecodes** die worden voorgesteld. Voer vervolgens een waarde in, of geef één of meer **Aangepaste codes** op om uw standaarden te ondersteunen.
 
-1. Bekijk op het tabblad **Controleren en genereren** de overzichtsgegevens en selecteer vervolgens **Downloaden**. Als u nog wijzigingen wilt aanbrengen, selecteert u **Vorige**.
+1. Selecteer **Volgende: Het script downloaden en uitvoeren**.
+
+1. Bekijk, op de pagina **Het script downloaden en uitvoeren**, de overzichtsgegevens. Selecteer vervolgens **Downloaden**. Als u nog wijzigingen wilt aanbrengen, selecteert u **Vorige**.
 
 ## <a name="install-the-agent-using-the-script"></a>De agent installeren met behulp van het script
 
@@ -99,7 +105,7 @@ Het script voor het automatiseren van downloaden, installeren en tot stand breng
 
 Nadat u de agent hebt geïnstalleerd en geconfigureerd om verbinding te maken met Azure Arc-servers, gaat u naar Azure Portal om te controleren of de server verbinding heeft gemaakt. Bekijk uw machine in [Azure Portal](https://aka.ms/hybridmachineportal).
 
-:::image type="content" source="./media/quick-enable-hybrid-vm/enabled-machine.png" alt-text="Arc-servers zoeken in Alle services" border="false":::
+:::image type="content" source="./media/quick-enable-hybrid-vm/enabled-machine.png" alt-text="Een geslaagde machineverbinding" border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

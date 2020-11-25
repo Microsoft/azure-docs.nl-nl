@@ -1,15 +1,15 @@
 ---
 title: Details van naleving van regelgeving voor HIPAA HITRUST 9.2
 description: Details van het ingebouwde initiatief voor naleving van regelgeving voor HIPAA HITRUST 9.2. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 499ecccd6d9a98b69e9e36f72fbf87d65d242f6d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: c177abaea8dd6d38814e39aef7cdfd63981a6856
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92310654"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94694256"
 ---
 # <a name="details-of-the-hipaa-hitrust-92-regulatory-compliance-built-in-initiative"></a>Details van het ingebouwde initiatief voor naleving van regelgeving voor HIPAA HITRUST 9.2
 
@@ -86,7 +86,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-facilitates-information-sharing-by-enabling-authorized-users-to-determine-a-business-partners-access-when-discretion-is-allowed-as-defined-by-the-organization-and-by-employing-manual-processes-or-automated-mechanisms-to-assist-users-in-making-information-sharingcollaboration-decisions"></a>De organisatie faciliteert het delen van informatie door geautoriseerde gebruikers in staat te stellen de toegang van een zakenpartner te bepalen wanneer discretie is toegestaan, zoals gedefinieerd door de organisatie en door gebruik te maken van handmatige processen of geautomatiseerde mechanismen om gebruikers te helpen bij het nemen van beslissingen in verband met delen van of samenwerken aan gegevens.
 
-**Id**: **Eigendom** van 1149.01c2System.9 - 01.c: Niet van toepassing
+**Id**: **Eigendom** van 1149.01c2System.9 - 01.c: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -94,7 +94,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-access-control-system-for-the-system-components-storing-processing-or-transmitting-covered-information-is-set-with-a-default-quotdeny-allquot-setting"></a>Het toegangsbeheersysteem voor de systeemonderdelen die gedekte informatie opslaan, verwerken of verzenden, wordt ingesteld met de standaardinstelling &quot;deny-all&quot;.
 
-**Id**: **Eigendom** van 1150.01c2System.10 - 01.c: Niet van toepassing
+**Id**: **Eigendom** van 1150.01c2System.10 - 01.c: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -144,7 +144,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="remote-access-by-vendors-and-business-partners-eg-for-remote-maintenance-is-disableddeactivated-when-not-in-use"></a>Externe toegang door leveranciers en zakelijke partners (bijvoorbeeld voor onderhoud op afstand) wordt uitgeschakeld/gedeactiveerd wanneer deze niet wordt gebruikt.
 
-**Id**: **Eigendom** van 1117.01j1Organizational.23 - 01.j: Niet van toepassing
+**Id**: **Eigendom** van 1117.01j1Organizational.23 - 01.j: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -160,7 +160,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="network-equipment-is-checked-for-unanticipated-dial-up-capabilities"></a>Netwerkapparatuur wordt gecontroleerd op onverwachte inbelmogelijkheden.
 
-**Id**: **Eigendom** van 1119.01j2Organizational.3 - 01.j: Niet van toepassing
+**Id**: **Eigendom** van 1119.01j2Organizational.3 - 01.j: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -176,7 +176,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="if-encryption-is-not-used-for-dial-up-connections-the-cio-or-hisher-designated-representative-provides-specific-written-authorization"></a>Als er geen versleuteling wordt gebruikt voor inbelverbindingen, geeft de CIO of zijn/haar aangewezen vertegenwoordiger specifieke schriftelijke toestemming.
 
-**Id**: **Eigendom** van 1173.01j1Organizational.6 - 01.j: Niet van toepassing
+**Id**: **Eigendom** van 1173.01j1Organizational.6 - 01.j: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -184,7 +184,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-protects-wireless-access-to-systems-containing-sensitive-information-by-authenticating-both-users-and-devices"></a>De organisatie beschermt draadloze toegang tot systemen met gevoelige informatie door zowel gebruikers als apparaten te verifiëren.
 
-**Id**: **Eigendom** van 1174.01j1Organizational.7 - 01.j: Niet van toepassing
+**Id**: **Eigendom** van 1174.01j1Organizational.7 - 01.j: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -200,7 +200,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-requires-a-callback-capability-with-re-authentication-to-verify-dial-up-connections-from-authorized-locations"></a>De organisatie vereist een terugbelmogelijkheid met herverificatie om inbelverbindingen vanaf geautoriseerde locaties te controleren.
 
-**Id**: **Eigendom** van 1176.01j2Organizational.5 - 01.j: Niet van toepassing
+**Id**: **Eigendom** van 1176.01j2Organizational.5 - 01.j: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -322,7 +322,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="networks-are-segregated-from-production-level-networks-when-migrating-physical-servers-applications-or-data-to-virtualized-servers"></a>Netwerken worden gescheiden van netwerken op productieniveau bij het migreren van fysieke servers, toepassingen of gegevens naar gevirtualiseerde servers.
 
-**Id**: **Eigendom** van 0894.01m2Organizational.7 - 01.m: Niet van toepassing
+**Id**: **Eigendom** van 0894.01m2Organizational.7 - 01.m: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -459,7 +459,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="non-organizational-users-all-information-system-users-other-than-organizational-users-such-as-patients-customers-contractors-or-foreign-nationals-or-processes-acting-on-behalf-of-non-organizational-users-determined-to-need-access-to-information-residing-on-the-organizations-information-systems-are-uniquely-identified-and-authenticated"></a>Niet-organisatiegebruikers (alle gebruikers van het informatiesysteem die niet tot de organisatie behoren, zoals patiënten, klanten, contractanten of vreemdelingen) of processen die namens niet-organisatiegebruikers handelen, waarvan is bepaald dat ze toegang moeten hebben tot informatie die zich op de informatiesystemen van de organisatie bevindt, worden uniek geïdentificeerd en geverifieerd.
 
-**Id**: **Eigendom** van 11110.01q1Organizational.6 - 01.q: Niet van toepassing
+**Id**: **Eigendom** van 11110.01q1Organizational.6 - 01.q: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -483,7 +483,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-requires-that-electronic-signatures-unique-to-one-individual-cannot-be-reused-by-or-reassigned-to-anyone-else"></a>De organisatie vereist dat elektronische handtekeningen, die uniek zijn voor elke persoon, niet opnieuw kunnen worden gebruikt of kunnen worden toegewezen aan iemand anders.
 
-**Id**: **Eigendom** van 11208.01q1Organizational.8 - 01.q: Niet van toepassing
+**Id**: **Eigendom** van 11208.01q1Organizational.8 - 01.q: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -491,7 +491,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="electronic-signatures-and-handwritten-signatures-executed-to-electronic-records-shall-be-linked-to-their-respective-electronic-records"></a>Elektronische handtekeningen en handgeschreven handtekeningen die worden uitgevoerd op elektronische records, worden gekoppeld aan hun respectieve elektronische records.
 
-**Id**: **Eigendom** van 11210.01q2Organizational.10 - 01.q: Niet van toepassing
+**Id**: **Eigendom** van 11210.01q2Organizational.10 - 01.q: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -499,7 +499,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="signed-electronic-records-shall-contain-information-associated-with-the-signing-in-human-readable-format"></a>Ondertekende elektronische records bevatten informatie die is gekoppeld aan de ondertekening in een voor mensen leesbare vorm.
 
-**Id**: **Eigendom** van 11211.01q2Organizational.11 - 01.q: Niet van toepassing
+**Id**: **Eigendom** van 11211.01q2Organizational.11 - 01.q: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -541,7 +541,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="remote-access-connections-between-the-organization-and-external-parties-are-encrypted"></a>Externe toegangsverbindingen tussen de organisatie en externe partijen worden versleuteld.
 
-**Id**: **Eigendom** van 1402.05i1Organizational.45 - 05.i: Niet van toepassing
+**Id**: **Eigendom** van 1402.05i1Organizational.45 - 05.i: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -591,7 +591,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="a-secure-audit-record-is-created-for-all-activities-on-the-system-create-read-update-delete-involving-covered-information"></a>Er wordt een beveiligd controlerecord gemaakt voor elke activiteit in het systeem (maken, lezen, bijwerken, verwijderen) met betrekking tot gedekte informatie.
 
-**Id**: **Eigendom** van 1202.09aa1System.1 - 09.aa: Niet van toepassing
+**Id**: **Eigendom** van 1202.09aa1System.1 - 09.aa: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -658,7 +658,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="all-disclosures-of-covered-information-within-or-outside-of-the-organization-are-logged-including-type-of-disclosure-datetime-of-the-event-recipient-and-sender"></a>Elke openbaarmaking van gedekte informatie binnen of buiten de organisatie wordt geregistreerd, inclusief het type openbaarmaking, de datum/tijd van de gebeurtenis, de ontvanger en de afzender.
 
-**Id**: **Eigendom** van 1210.09aa3System.3 - 09.aa: Niet van toepassing
+**Id**: **Eigendom** van 1210.09aa3System.3 - 09.aa: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -667,7 +667,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-verifies-every-ninety-90-days-for-each-extract-of-covered-information-recorded-that-the-data-is-erased-or-its-use-is-still-required"></a>De organisatie verifieert elke negentig (90) dagen voor elk geregistreerd uittreksel van gedekte informatie of de gegevens zijn gewist en of het gebruik ervan nog steeds is vereist.
 
-**Id**: **Eigendom** van 1211.09aa3System.4 - 09.aa: Niet van toepassing
+**Id**: **Eigendom** van 1211.09aa3System.4 - 09.aa: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -891,7 +891,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="when-the-backup-service-is-delivered-by-the-third-party-the-service-level-agreement-includes-the-detailed-protections-to-control-confidentiality-integrity-and-availability-of-the-backup-information"></a>Wanneer de back-upservice wordt geleverd door derden, bevat de SLA (service level agreement) gedetailleerde beveiligingsmaatregelen voor de bewaking van de vertrouwelijkheid, integriteit en beschikbaarheid van de back-upgegevens.
 
-**Id**: **Eigendom** van 1620.09l1Organizational.8 - 09.l: Niet van toepassing
+**Id**: **Eigendom** van 1620.09l1Organizational.8 - 09.l: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -915,7 +915,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="covered-information-is-backed-up-in-an-encrypted-format-to-ensure-confidentiality"></a>Er wordt een back-up van de gedekte gegevens gemaakt in een versleutelde indeling om geheimhouding te garanderen.
 
-**Id**: **Eigendom** van 1623.09l2Organizational.4 - 09.l: Niet van toepassing
+**Id**: **Eigendom** van 1623.09l2Organizational.4 - 09.l: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -939,7 +939,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-ensures-a-current-retrievable-copy-of-covered-information-is-available-before-movement-of-servers"></a>De organisatie garandeert dat er een actuele, ophaalbare kopie van de gedekte informatie beschikbaar is voordat de servers worden verplaatst.
 
-**Id**: **Eigendom** van 1626.09l3Organizational.5 - 09.l: Niet van toepassing
+**Id**: **Eigendom** van 1626.09l3Organizational.5 - 09.l: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -955,7 +955,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="workforce-members-roles-and-responsibilities-in-the-data-backup-process-are-identified-and-communicated-to-the-workforce-in-particular-bring-your-own-device-byod-users-are-required-to-perform-backups-of-organizational-andor-client-data-on-their-devices"></a>De rollen en verantwoordelijkheden van personeelsleden in het gegevensback-upproces worden geïdentificeerd en gecommuniceerd naar het personeelsbestand. Met name BYOD-gebruikers (Bring Your Own Device) moeten back-ups maken van organisatie- en/of klantgegevens op hun apparaten.
 
-**Id**: **Eigendom** van 1699.09l1Organizational.10 - 09.l: Niet van toepassing
+**Id**: **Eigendom** van 1699.09l1Organizational.10 - 09.l: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1009,7 +1009,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-builds-a-firewall-configuration-that-restricts-connections-between-un-trusted-networks-and-any-system-components-in-the-covered-information-environment-and-any-changes-to-the-firewall-configuration-are-updated-in-the-network-diagram"></a>De organisatie bouwt een firewallconfiguratie op waarmee verbindingen tussen niet-vertrouwde netwerken en systeem onderdelen in de gedekte informatieomgeving worden beperkt. Eventuele wijzigingen in de configuratie van de firewall worden bijgewerkt in het netwerkdiagram.
 
-**Id**: **Eigendom** van 0863.09m2Organizational.910 - 09.m: Niet van toepassing
+**Id**: **Eigendom** van 0863.09m2Organizational.910 - 09.m: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1017,7 +1017,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="usage-restrictions-and-implementation-guidance-are-formally-defined-for-voip-including-the-authorization-and-monitoring-of-the-service"></a>Beperkingen ten aanzien van het gebruik en richtlijnen voor de implementatie zijn formeel gedefinieerd voor VoIP, met inbegrip van de autorisatie en bewaking van de service.
 
-**Id**: **Eigendom** van 0864.09m2Organizational.12 - 09.m: Niet van toepassing
+**Id**: **Eigendom** van 0864.09m2Organizational.12 - 09.m: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1025,7 +1025,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-i-authorizes-connections-from-the-information-system-to-other-information-systems-outside-of-the-organization-through-the-use-of-interconnection-security-agreements-or-other-formal-agreement-ii-documents-each-connection-the-interface-characteristics-security-requirements-and-the-nature-of-the-information-communicated-iii-employs-a-deny-all-permit-by-exception-policy-for-allowing-connections-from-the-information-system-to-other-information-systems-outside-of-the-organization-and-iv-applies-a-default-deny-rule-that-drops-all-traffic-via-host-based-firewalls-or-port-filtering-tools-on-its-endpoints-workstations-servers-etc-except-those-services-and-ports-that-are-explicitly-allowed"></a>De organisatie (i) machtigt verbindingen van het informatiesysteem naar andere informatiesystemen buiten de organisatie door middel van het gebruik van beveiligingsafspraken over onderlinge verbindingen of andere formele afspraken; (ii) documenteert alle verbindingen, de kenmerken van de interface, beveiligingsvereisten en de aard van de gegevens die worden verstrekt; (iii) maakt gebruik van een beleid op basis van alles weigeren, bij uitzondering toestaan voor het toestaan van verbindingen van het informatiesysteem met andere informatiesystemen buiten de organisatie; en (iv) past de regel om standaard te weigeren toe waarmee al het verkeer via host-firewalls of poortfilterprogramma's op de eindpunten (werkstations, servers, enzovoort) wordt verwijderd, met uitzondering van de services en poorten die expliciet zijn toegestaan.
 
-**Id**: **Eigendom** van 0865.09m2Organizational.13 - 09.m: Niet van toepassing
+**Id**: **Eigendom** van 0865.09m2Organizational.13 - 09.m: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1041,7 +1041,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="wireless-access-points-are-placed-in-secure-areas-and-shut-down-when-not-in-use-eg-nights-weekends"></a>Draadloze toegangspunten worden in beveiligde gebieden geplaatst en afgesloten wanneer ze niet worden gebruikt (bijvoorbeeld 's nachts en in het weekend).
 
-**Id**: **Eigendom** van 0867.09m3Organizational.17 - 09.m: Niet van toepassing
+**Id**: **Eigendom** van 0867.09m3Organizational.17 - 09.m: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1049,7 +1049,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-builds-a-firewall-configuration-to-restrict-inbound-and-outbound-traffic-to-that-which-is-necessary-for-the-covered-data-environment"></a>De organisatie bouwt een firewallconfiguratie om inkomend en uitgaand verkeer te beperken tot wat nodig is voor de omgeving met gedekte gegevens.
 
-**Id**: **Eigendom** van 0868.09m3Organizational.18 - 09.m: Niet van toepassing
+**Id**: **Eigendom** van 0868.09m3Organizational.18 - 09.m: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1108,7 +1108,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-reviews-and-updates-the-interconnection-security-agreements-on-an-ongoing-basis-verifying-enforcement-of-security-requirements"></a>De organisatie moet overeenkomsten voor beveiliging van interconnectiveit doorlopend beoordelen en bijwerken om ervoor te zorgen dat steeds aan de beveiligingsvereisten wordt voldaan.
 
-**Id**: **Eigendom** van 0885.09n2Organizational.3 - 09.n: Niet van toepassing
+**Id**: **Eigendom** van 0885.09n2Organizational.3 - 09.n: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1132,7 +1132,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-contract-with-the-externaloutsourced-service-provider-includes-the-specification-that-the-service-provider-is-responsible-for-the-protection-of-covered-information-shared"></a>Het contract met de externe/uitbestede serviceprovider bevat de specificatie dat de serviceprovider verantwoordelijk is voor de bescherming van gedekte informatie die wordt gedeeld.
 
-**Id**: **Eigendom** van 0888.09n2Organizational.6 - 09.n: Niet van toepassing
+**Id**: **Eigendom** van 0888.09n2Organizational.6 - 09.n: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1142,7 +1142,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-based-on-the-data-classification-level-registers-media-including-laptops-prior-to-use-places-reasonable-restrictions-on-how-such-media-be-used-and-provides-an-appropriate-level-of-physical-and-logical-protection-including-encryption-for-media-containing-covered-information-until-properly-destroyed-or-sanitized"></a>De organisatie registreert media (met inbegrip van laptops) voordat ze worden gebruikt, plaatst redelijke beperkingen voor de manier waarop dergelijke media worden gebruikt en biedt een passend niveau van fysieke en logische beveiliging (inclusief versleuteling) voor media die gedekte informatie bevatten voordat ze juist worden vernietigd of opgeschoond. Dit gebeurt op basis van het niveau van de gegevensclassificatie.
 
-**Id**: **Eigendom** van 0301.09o1Organizational.123 - 09.o: Niet van toepassing
+**Id**: **Eigendom** van 0301.09o1Organizational.123 - 09.o: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1150,7 +1150,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-protects-and-controls-media-containing-sensitive-information-during-transport-outside-of-controlled-areas"></a>De organisatie beveiligt en beheert media met gevoelige informatie tijdens transport buiten gecontroleerde gebieden.
 
-**Id**: **Eigendom** van 0302.09o2Organizational.1 - 09.o: Niet van toepassing
+**Id**: **Eigendom** van 0302.09o2Organizational.1 - 09.o: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1158,7 +1158,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="digital-and-non-digital-media-requiring-restricted-use-and-the-specific-safeguards-used-to-restrict-their-use-are-identified"></a>Digitale en niet-digitale media waarvoor beperkt gebruik vereist is en de specifieke veiligheidsvoorzieningen die worden gebruikt om het gebruik te beperken, worden geïdentificeerd.
 
-**Id**: **Eigendom** van 0303.09o2Organizational.2 - 09.o: Niet van toepassing
+**Id**: **Eigendom** van 0303.09o2Organizational.2 - 09.o: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1166,7 +1166,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-restricts-the-use-of-writable-removable-media-and-personally-owned-removable-media-in-organizational-systems"></a>De organisatie beperkt het gebruik van schrijfbare, verwisselbare media en persoonlijke verwisselbare in organisatiesystemen.
 
-**Id**: **Eigendom** van 0304.09o3Organizational.1 - 09.o: Niet van toepassing
+**Id**: **Eigendom** van 0304.09o3Organizational.1 - 09.o: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1234,7 +1234,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-limits-the-use-of-organization-controlled-portable-storage-media-by-authorized-individuals-on-external-information-systems"></a>De organisatie beperkt het gebruik van door de organisatie beheerde, draagbare opslagmedia door geautoriseerde personen op externe informatiesystemen.
 
-**Id**: **Eigendom** van 0915.09s2Organizational.2 - 09.s: Niet van toepassing
+**Id**: **Eigendom** van 0915.09s2Organizational.2 - 09.s: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1242,7 +1242,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-information-system-prohibits-remote-activation-of-collaborative-computing-devices-and-provides-an-explicit-indication-of-use-to-users-physically-present-at-the-devices"></a>Het informatiesysteem verbiedt externe activering van samenwerkende rekenapparaten en geeft een expliciete indicatie van het gebruik aan gebruikers die fysiek bij de apparaten aanwezig zijn.
 
-**Id**: **Eigendom** van 0916.09s2Organizational.4 - 09.s: Niet van toepassing
+**Id**: **Eigendom** van 0916.09s2Organizational.4 - 09.s: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1268,7 +1268,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="data-involved-in-electronic-commerce-and-online-transactions-is-checked-to-determine-if-it-contains-covered-information"></a>Gegevens die zijn betrokken bij elektronische handel en onlinetransacties, worden gecontroleerd om te bepalen of deze gedekte informatie bevatten.
 
-**Id**: **Eigendom** van 0943.09y1Organizational.1 - 09.y: Niet van toepassing
+**Id**: **Eigendom** van 0943.09y1Organizational.1 - 09.y: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1276,7 +1276,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="protocols-used-to-communicate-between-all-involved-parties-are-secured-using-cryptographic-techniques-eg-ssl"></a>Protocollen die worden gebruikt voor de communicatie tussen alle betrokken partijen, worden beveiligd met behulp van cryptografische technieken (bijvoorbeeld SSL).
 
-**Id**: **Eigendom** van 0945.09y1Organizational.3 - 09.y: Niet van toepassing
+**Id**: **Eigendom** van 0945.09y1Organizational.3 - 09.y: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1284,7 +1284,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-requires-the-use-of-encryption-between-and-the-use-of-electronic-signatures-by-each-of-the-parties-involved-in-the-transaction"></a>De organisatie vereist het gebruik van versleuteling tussen, en het gebruik van elektronische handtekeningen door, alle bij de transactie betrokken partijen.
 
-**Id**: **Eigendom** van 0946.09y2Organizational.14 - 09.y: Niet van toepassing
+**Id**: **Eigendom** van 0946.09y2Organizational.14 - 09.y: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1292,7 +1292,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-organization-ensures-the-storage-of-the-transaction-details-are-located-outside-of-any-publicly-accessible-environments-eg-on-a-storage-platform-existing-on-the-organizations-intranet-and-not-retained-and-exposed-on-a-storage-medium-directly-accessible-from-the-internet"></a>De organisatie zorgt ervoor dat de opslag van de transactiegegevens zich buiten een openbaar toegankelijke omgeving bevindt (bijvoorbeeld op een opslagplatform op het intranet van de organisatie) en niet wordt bewaard en beschikbaar wordt gesteld op een opslagmedium dat rechtstreeks toegankelijk is op internet.
 
-**Id**: **Eigendom** van 0947.09y2Organizational.2 - 09.y: Niet van toepassing
+**Id**: **Eigendom** van 0947.09y2Organizational.2 - 09.y: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1300,7 +1300,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="where-a-trusted-authority-is-used-eg-for-the-purposes-of-issuing-and-maintaining-digital-signatures-andor-digital-certificates-security-is-integrated-and-embedded-throughout-the-entire-end-to-end-certificatesignature-management-process"></a>Wanneer een vertrouwde instantie wordt gebruikt (bijvoorbeeld om digitale handtekeningen en/of digitale certificaten te verlenen en te onderhouden), wordt de beveiliging geïntegreerd en ingesloten in het volledige end-to-end-proces voor het beheren van certificaten en handtekeningen.
 
-**Id**: **Eigendom** van 0948.09y2Organizational.3 - 09.y: Niet van toepassing
+**Id**: **Eigendom** van 0948.09y2Organizational.3 - 09.y: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1308,7 +1308,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="the-protocols-used-for-communications-are-enhanced-to-address-any-new-vulnerability-and-the-updated-versions-of-the-protocols-are-adopted-as-soon-as-possible"></a>De protocollen die worden gebruikt voor communicatie zijn verbeterd om nieuwe beveiligingsproblemen op te lossen en de bijgewerkte versies van de protocollen worden zo snel mogelijk overgenomen.
 
-**Id**: **Eigendom** van 0949.09y2Organizational.5 - 09.y: Niet van toepassing
+**Id**: **Eigendom** van 0949.09y2Organizational.5 - 09.y: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1392,7 +1392,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 ### <a name="where-development-is-outsourced-change-control-procedures-to-address-security-are-included-in-the-contracts-and-specifically-require-the-developer-to-track-security-flaws-and-flaw-resolution-within-the-system-component-or-service-and-report-findings-to-organization-defined-personnel-or-roles"></a>Wanneer de ontwikkeling wordt uitbesteed, zijn de wijzigingsbeheerprocedures voor de beveiliging opgenomen in de contract(en) en moet de ontwikkelaar de beveiligingsproblemen en de oplossing van fouten in het systeem, het onderdeel of de service traceren en de resultaten rapporteren aan medewerkers of rollen die door de organisatie zijn gedefinieerd.
 
-**Id**: **Eigendom** van 0640.10k2Organizational.1012 - 10.k: Niet van toepassing
+**Id**: **Eigendom** van 0640.10k2Organizational.1012 - 10.k: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1442,7 +1442,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 |[Beveiligingsproblemen in beveiligingsconfiguraties voor containers moeten worden verholpen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe8cbc669-f12d-49eb-93e7-9273119e9933) |Beveiligingsproblemen in de beveiligingsconfiguratie op computers waarop Docker is geïnstalleerd, controleren en als aanbevelingen weergeven in Azure Security Center. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ContainerBenchmark_Audit.json) |
 |[Beveiligingsproblemen in de beveiligingsconfiguratie op uw computers moeten worden hersteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe1e5fd5d-3e4c-4ce1-8661-7d1873ae6b15) |Servers die niet voldoen aan de geconfigureerde basislijn, worden als aanbevelingen bewaakt door Azure Security Center |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_OSVulnerabilities_Audit.json) |
 |[Beveiligingsproblemen in de beveiligingsconfiguratie van virtuele-machineschaalsets moeten worden hersteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3c735d8a-a4ba-4a3a-b7cf-db7754cf57f4) |Controleer op beveiligingsproblemen van besturingssystemen op uw virtuele-machineschaalsets om de schaalsets te beveiligen tegen aanvallen. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VmssOSVulnerabilities_Audit.json) |
-|[Beveiligingsproblemen in uw SQL-databases moeten worden opgelost](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Bewaken van de scanresultaten en aanbevelingen van de beveiligingsevaluatie over het herstellen van beveiligingsproblemen in een database. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
+|[Beveiligingsproblemen in uw SQL-databases moeten worden opgelost](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Bewaken van de scanresultaten en aanbevelingen van de beveiligingsevaluatie over het herstellen van beveiligingsproblemen in een database. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
 |[Beveiligingsproblemen moeten worden opgelost met een oplossing voor evaluatie van beveiligingsproblemen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F760a85ff-6162-42b3-8d70-698e268f648c) |Hiermee worden beveiligingsproblemen die door de oplossing voor evaluatie van beveiligingsproblemen zijn gedetecteerd en virtuele machines zonder oplossing voor evaluatie van beveiligingsproblemen bewaakt als aanbevelingen in Azure Security Center. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VMVulnerabilities_Audit.json) |
 |[Evaluatie van beveiligingsproblemen moet zijn ingeschakeld voor SQL Managed Instance](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1b7aa243-30e4-4c9e-bca8-d0d3022b634a) |Controleer elke SQL Managed Instance waarvoor geen terugkerende evaluatie van beveiligingsproblemen is ingeschakeld. Met een evaluatie van beveiligingsproblemen kunt u potentiële beveiligingsproblemen van de database detecteren, bijhouden en herstellen. |AuditIfNotExists, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/VulnerabilityAssessmentOnManagedInstance_Audit.json) |
 |[De evaluatie van beveiligingsproblemen moet worden ingeschakeld op uw SQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fef2a8f2a-b3d9-49cd-a8a8-9a3aaaf647d9) |Controleer Azure SQL-servers waarvoor geen terugkerende evaluatie van beveiligingsproblemen is ingeschakeld. Met een evaluatie van beveiligingsproblemen kunt u potentiële beveiligingsproblemen van de database detecteren, bijhouden en herstellen. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/VulnerabilityAssessmentOnServer_Audit.json) |
@@ -1502,7 +1502,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Beveiligingsproblemen in uw SQL-databases moeten worden opgelost](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Bewaken van de scanresultaten en aanbevelingen van de beveiligingsevaluatie over het herstellen van beveiligingsproblemen in een database. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
+|[Beveiligingsproblemen in uw SQL-databases moeten worden opgelost](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Bewaken van de scanresultaten en aanbevelingen van de beveiligingsevaluatie over het herstellen van beveiligingsproblemen in een database. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
 
 ### <a name="vulnerability-scanning-tools-include-the-capability-to-readily-update-the-information-system-vulnerabilities-scanned"></a>Hulpprogramma's voor scans op beveiligingsproblemen bevatten onder andere de mogelijkheid om de gescande beveiligingsproblemen in het informatiesysteem te kunnen bijwerken.
 
@@ -1544,7 +1544,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Key Vault-objecten moeten kunnen worden hersteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Met dit beleid wordt gecontroleerd of de sleutelkluisobjecten niet kunnen worden hersteld. De functie voor Voorlopig verwijderen helpt bij het effectief vasthouden van de resources voor een bepaalde bewaarperiode (90 dagen), zelfs na het VERWIJDEREN van een bewerking, terwijl het erop lijkt dat het object is verwijderd. Als Beveiliging opschonen is ingeschakeld, kan een kluis of een object in de verwijderde status pas worden verwijderd als de bewaarperiode van 90 dagen is verstreken. Deze kluizen en objecten kunnen nog steeds worden hersteld, waardoor klanten er zeker van zijn dat het bewaarbeleid wordt gevolgd. |Controle, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
+|[Beveiliging tegen leegmaken moet zijn ingeschakeld voor de sleutelkluis](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Kwaadwillende verwijdering van een sleutelkluis kan leiden tot permanent gegevensverlies. Een kwaadwillende insider in uw organisatie kan toegang krijgen en wellicht sleutelkluizen verwijderen en leegmaken. Beveiliging tegen leegmaken beschermt u tegen aanvallen van insiders door een verplichte bewaarperiode tijdens voorlopige verwijdering af te dwingen voor sleutelkluizen. Gedurende de periode van voorlopige verwijdering kan niemand binnen uw organisatie of Microsoft uw sleutelkluizen leegmaken. |Controleren, Weigeren, Uitgeschakeld |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
 
 ### <a name="business-impact-analysis-are-used-to-evaluate-the-consequences-of-disasters-security-failures-loss-of-service-and-service-availability"></a>Bedrijfsimpactanalyse wordt gebruikt om de gevolgen van rampen, beveiligingsfouten, verlies van service en beschikbaarheid van service te evalueren.
 

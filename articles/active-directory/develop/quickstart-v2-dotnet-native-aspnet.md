@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 10/05/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 786f566b121d5f0d5d64e7b8b269c7cdfab9e4a6
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 6874794dcf33d77d0b03f2a5713bdf42a40d6891
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91825066"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560907"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-thats-protected-by-microsoft-identity-platform"></a>Quickstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform
 
-In deze quickstart maakt u een web-API beschikbaar en beveiligt u deze zodat alleen geverifieerde gebruikers er toegang toe hebben. Dit artikel laat zien hoe u een ASP.NET-web-API beschikbaar maakt, zodat deze tokens kan accepteren die worden uitgegeven door persoonlijke accounts, zoals outlook.com en live.com, en door werk- en schoolaccounts van bedrijven of organisaties die zijn geïntegreerd met het Microsoft-identiteitsplatform.
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe u een ASP.NET-web-API kunt beveiligen door de toegang tot bijbehorende resources te beperken tot alleen geautoriseerde accounts. Het voorbeeld biedt ondersteuning voor de autorisatie van persoonlijke Microsoft-accounts en accounts in elke willekeurige Azure AD-organisatie (Azure Active Directory).
 
 In dit artikel wordt ook een WPF-app (Windows Presentation Foundation) gebruikt om te laten zien hoe u een toegangstoken kunt aanvragen om toegang te krijgen tot een web-API.
 

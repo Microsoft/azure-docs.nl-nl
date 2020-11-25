@@ -1,17 +1,17 @@
 ---
 title: Een serverloze functie-app maken met behulp van de Azure CLI
-description: Een functie-app maken voor uitvoering zonder server in Azure met behulp van de Azure CLI
+description: Maak een functie-app voor serverloze uitvoering in Azure met behulp van Azure CLI.
 ms.assetid: 0e221db6-ee2d-4e16-9bf6-a456cd05b6e7
 ms.topic: sample
 ms.date: 07/03/2018
 ms.author: glenga
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: f94048014f18c584637b9863bb59982f9143661e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5fa6b5a25b07585e3c0ea07fb4a361ab82a9815
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498239"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565089"
 ---
 # <a name="create-a-function-app-for-serverless-code-execution"></a>Een functie-app maken voor uitvoering van code zonder server 
 
@@ -19,9 +19,9 @@ Met dit voorbeeldscript voor Azure Functions maakt u een functie-app die een con
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor dit artikel gebruikmaken van Azure CLI versie 2.0 of hoger. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren]( /cli/azure/install-azure-cli). 
+ - Voor deze zelfstudie is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd. 
 
 ## <a name="sample-script"></a>Voorbeeldscript
 

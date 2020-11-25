@@ -1,23 +1,25 @@
 ---
 title: 'Zelfstudie: Gebruikers aanmelden en een beveiligde API aanroepen vanuit een Blazor WebAssembly-app'
 titleSuffix: Microsoft identity platform
-description: In deze zelfstudie meldt u gebruikers aan en roept u een beveiligde API aan met behulp van het Microsoft-identiteitsplatform in een Blazor WebAssembly-app.
+description: In deze zelfstudie meldt u gebruikers aan en roept u een beveiligde API aan met behulp van het Microsoft-identiteitsplatform in een Blazor WASM-app (WebAssembly).
 author: knicholasa
 ms.author: nichola
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: ba3607c522191644ec0cc63db118de285d297c48
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: f967b10d729c9c5486bbca9b643f48aaf558687c
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92221486"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94628064"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Zelfstudie: Gebruikers aanmelden en een beveiligde API aanroepen vanuit een Blazor WebAssembly-app
 
-[Blazor WebAssembly](/aspnet/core/blazor#blazor-webassembly) is een app-framework met één pagina voor het bouwen van interactieve web-apps aan de clientzijde met .NET. In deze zelfstudie maakt u een app waarmee gebruikers worden aangemeld en gegevens van een beveiligde API worden opgehaald uit een Blazor WASM-app (WebAssembly), met behulp van het [Microsoft-identiteitsplatform](https://docs.microsoft.com/azure/active-directory/develop/).
+Blazor WASM (WebAssembly) is een app-framework met één pagina voor het bouwen van interactieve web-apps aan de clientzijde met .NET. In deze zelfstudie leert u hoe u verificatie kunt implementeren en gegevens kunt ophalen uit Microsoft Graph in een Blazor WASM-app, met behulp van het Microsoft-identiteitsplatform en door de app te registreren in Azure AD (Azure Active Directory).
+
+We hebben ook een [zelfstudie voor Blazor Server](tutorial-blazor-server.md). 
 
 In deze zelfstudie leert u het volgende:
 
@@ -85,10 +87,10 @@ Voeg eerst de `Mail.Read` API-machtiging toe aan de app-registratie, zodat in Az
 1. Selecteer uw app onder **App-registraties** in het Azure-portaal.
 1. Selecteer onder **Beheren** de optie **API-machtigingen**.
 1. Selecteer **Een machtiging toevoegen** > **Microsoft Graph**.
-1. Selecteer **Gedelegeerde machtigingen** , zoek en selecteer vervolgens de machtiging **Mail.Read**.
+1. Selecteer **Gedelegeerde machtigingen**, zoek en selecteer vervolgens de machtiging **Mail.Read**.
 1. Selecteer **Machtigingen toevoegen**.
 
-Voeg vervolgens het volgende toe aan het *.csproj* -bestand van uw project in de **ItemGroup** netstandard2.1. Hierdoor kunt u in de volgende stap de aangepaste HttpClient maken.
+Voeg vervolgens het volgende toe aan het *.csproj*-bestand van uw project in de **ItemGroup** netstandard2.1. Hierdoor kunt u in de volgende stap de aangepaste HttpClient maken.
 
 ```xml
 <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.7" />
@@ -239,5 +241,5 @@ Nadat u toestemming hebt gegeven, gaat u naar de pagina "Gegevens ophalen" om ee
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Best practices en aanbevelingen voor het Microsoft-identiteitsplatform](./identity-platform-integration-checklist.md)
-- [Inleiding tot ASP.NET Core Blazor](/aspnet/core/blazor)
+> [!div class="nextstepaction"]
+> [Best practices en aanbevelingen voor het Microsoft-identiteitsplatform](./identity-platform-integration-checklist.md)

@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 2afe53ade9106fa5e1ebb9ec43492a86bd9fc213
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 1c4cc7f5440aca27be085c238179cd0ab20b226a
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127315"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874046"
 ---
 # <a name="water-quality-monitoring-reference-architecture"></a>Referentiearchitectuur voor de bewaking van waterkwaliteit 
 
@@ -41,10 +41,10 @@ Apparaten die worden gebruikt in slimme-waterapparatuur zijn over het algemeen v
 Azure IoT Central is een IoT-app-platform, waarmee u snel aan de slag kunt met uw IoT-oplossing. U kunt uw oplossing voorzien van een merk, aanpassen en integreren met services van derden.
 Nadat u uw slimme waterapparaten hebt aangesloten op IoT Central, kunt u het apparaat instructies geven en bedienen, beschikt u over een bewakings- en waarschuwingssysteem, een gebruikersinterface met ingebouwde RBAC, configureerbare dashboards om inzichten te verkrijgen en mogelijkheden om uit te breiden. 
 
-## <a name="extensibility-and-integrations"></a>Uitbreidbaarheid en integraties 
+## <a name="extensibility-and-integrations"></a>Uitbreidbaarheid en integraties
 U kunt uw IoT-toepassing uitbreiden in IoT Central, en optioneel:
 * uw IoT-gegevens voor geavanceerde analyses transformeren en integreren, bijvoorbeeld voor het trainen van machine-learningmodellen, door middel van continue gegevensexport vanuit de IoT Central-toepassing
-* werkstromen in andere systemen automatiseren door acties te activeren met behulp van Microsoft Flow of webhooks van de IoT Central-toepassing
+* werkstromen in andere systemen automatiseren door acties te activeren met behulp van Power Automate of webhooks van de IoT Central-toepassing
 * programmatisch toegang krijgen tot uw IoT-toepassing in IoT Central via IoT Central-API's
 
 ## <a name="business-applications"></a>Zakelijke toepassingen 

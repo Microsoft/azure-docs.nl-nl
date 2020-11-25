@@ -6,23 +6,28 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 09/22/2020
+ms.date: 11/12/2020
 ms.custom: references_regions
-ms.openlocfilehash: 7f71cacee86edd5b3f054f0996893c2148c626eb
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 4c1284c13d1516ac4061319287adb64ab7e14ff5
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422668"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579467"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
 Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan deze pagina om up-to-date te blijven over de service.
 
+## <a name="november-2020"></a>November 2020
+
+|Functie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Categorie | Beschrijving | Beschikbaarheid  |
+|------------------------------|----------|-------------|---------------|
+|[versleuteling via door de klant beheerde sleutels voor indexeerfuncties, gegevensbronnen en vaardighedensets](search-security-manage-encryption-keys.md) | Beveiliging | Deze toevoeging breidt door de klant beheerde versleuteling uit naar het volledige activabereik dat is gemaakt en beheerd met een zoekservice. Zoals u weet voegt CMK-ondersteuning een extra versleutelingslaag toe bovenop de basisversleuteling die wordt uitgevoerd en beheerd met Microsoft. | Algemeen beschikbaar via REST API-versie = 2020-06-30 |  
+
 ## <a name="september-2020"></a>September 2020
 
 Maak een identiteit voor een zoekservice in Azure Active Directory en gebruik vervolgens Azure RBAC-machtigingen om de identiteit alleen-lezenmachtigingen voor Azure-gegevensbronnen te verlenen. Kies desgewenst de mogelijkheid [Vertrouwde service-uitzondering](search-indexer-howto-access-trusted-service-exception.md) als IP-regels geen optie zijn.
-
 
 |Functie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Categorie | Beschrijving | Beschikbaarheid  |
 |------------------------------|----------|-------------|---------------|

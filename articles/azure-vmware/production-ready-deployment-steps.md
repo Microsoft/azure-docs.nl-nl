@@ -3,12 +3,12 @@ title: De implementatie van Azure VMware Solution plannen
 description: In dit artikel vindt u een overzicht van de implementatiewerkstroom voor Azure VMware Solution.  Het uiteindelijke resultaat is een omgeving die gereed is om virtuele machines te maken en te migreren.
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 9b6d04e1e7a60bf812ca2b1e370c5075d306c432
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 08a15e6f8cad4068415cec3353544829f2218fb0
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287047"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888977"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>De implementatie van Azure VMware Solution plannen
 
@@ -38,6 +38,9 @@ Bepaal de regio waarin u de Azure VMware Solution wilt implementeren.  Zie de[Gi
 ## <a name="resource-name"></a>Resourcenaam
 
 Definieer de naam van de resource die u tijdens de implementatie wilt gebruiken.  De resourcenaam is een gemakkelijke en beschrijvende naam voor uw Azure VMware Solution-privécloud.
+
+>[!IMPORTANT]
+>De naam mag maximaal 40 tekens lang zijn. Als de naam deze limiet overschrijdt, kunt u geen openbare IP-adressen maken voor gebruik met de privécloud. 
 
 ## <a name="size-hosts"></a>Omvang van hosts
 
@@ -89,14 +92,6 @@ Denk hierbij aan het volgende:
 
 - Als u van plan bent om netwerken van on-premises uit te breiden, moeten die netwerken verbinding maken met een [vSphere Distributed Switch (vDS)](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-B15C6A13-797E-4BCB-B9D9-5CBC5A60C3A6.html) in uw on-premises VMware-omgeving.  
 - Als het netwerk/de netwerken die u wilt uitbreiden zich op een [vSphere Standard Switch](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-350344DE-483A-42ED-B0E2-C811EE927D59.html) bevinden, dan kunnen ze niet worden uitgebreid.
-
-## <a name="expressroute-global-reach-peering-network"></a>ExpressRoute Global Reach-peeringnetwerk
-
-Identificeer een adresblok van een `/29` CIDR-netwerk, zoals vereist voor ExpressRoute Global Reach-peering. Houd er rekening mee dat alle gemaakte IP-segmenten uniek moeten zijn binnen uw configuratie in Azure VMware Solution en on-premises. De IP-adressen in dit segment worden gebruikt aan elk uiteinde van de ExpressRoute Global Reach-verbinding om het Azure VMware Solution ExpressRoute-circuit te verbinden met het on-premises ExpressRoute-circuit. 
-
-**Voorbeeld:** 10.1.0.0/29
-
-:::image type="content" source="media/pre-deployment/expressroute-global-reach-ip-diagram.png" alt-text="Identificeren - ExpressRoute Global Reach-peeringnetwerk" border="false":::
 
 ## <a name="azure-virtual-network-to-attach-azure-vmware-solution"></a>Azure Virtual Network om Azure VMware Solution toe te voegen
 

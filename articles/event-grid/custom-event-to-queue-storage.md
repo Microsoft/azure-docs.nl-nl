@@ -4,12 +4,12 @@ description: 'Quickstart: Gebruik Azure Event Grid en Azure CLI om een onderwerp
 ms.date: 07/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e2c017b95493000b3c206aa7b2398bbf7ef464ee
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4de7aa1c111b5b21a27b155474ae10f78feba083
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87497338"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566313"
 ---
 # <a name="quickstart-route-custom-events-to-azure-queue-storage-with-azure-cli-and-event-grid"></a>Quickstart: Aangepaste gebeurtenissen naar Azure Queue Storage routeren met behulp van Azure CLI en Event Grid
 
@@ -17,12 +17,11 @@ Azure Event Grid is een gebeurtenisservice voor de cloud. Azure Queue Storage is
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u Azure CLI of Azure PowerShell op uw lokale computer gebruikt in plaats van Cloud Shell in de Microsoft Azure-portal, zorgt u ervoor dat u de volgende versie van Azure CLI en Azure PowerShell hebt. 
+- Voor dit artikel is versie 2.0.56 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-- Azure CLI versie 2.0.56 of hoger. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor instructies over het installeren van de meest recente versie van Azure CLI. 
-- Azure PowerShell versie 1.1.0 of hoger. Download de nieuwste versie van Azure PowerShell op uw Windows-computer vanuit [Azure-downloads - opdrachtregelprogramma's](https://azure.microsoft.com/downloads/). 
+- Als u Azure PowerShell op de lokale computer gebruikt in plaats van Cloud Shell in Azure Portal, zorgt u ervoor dat u beschikt over Azure PowerShell-versie 1.1.0 of hoger. Download de nieuwste versie van Azure PowerShell op uw Windows-computer vanuit [Azure-downloads - opdrachtregelprogramma's](https://azure.microsoft.com/downloads/). 
 
 Dit artikel bevat opdrachten voor het gebruik van Azure CLI. 
 

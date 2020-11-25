@@ -1,6 +1,6 @@
 ---
 title: What is Azure Machine Learning-studio?
-description: Azure Machine Learning Studio is een webportal voor Azure Machine Learning-werkruimten. In de studio worden geen-code en code-eerst ervaringen gecombineerd voor het maken van een allesomvattend datawetenschapsplatform.
+description: Studio is een webportal voor Azure Machine Learning-werkruimten. In de studio worden geen-code en code-eerst ervaringen gecombineerd voor een allesomvattend datawetenschapsplatform.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -8,12 +8,12 @@ ms.topic: overview
 author: peterclu
 ms.author: peterlu
 ms.date: 08/24/2020
-ms.openlocfilehash: 345c925d3b1350dfc2ea69d65d8d14688c6930b9
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 018a0e3a244d1f0e36ce638d646ab05861c10e38
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310163"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565905"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>What is Azure Machine Learning-studio?
 
@@ -103,3 +103,4 @@ Ga naar de [studio](https://ml.azure.com)of leer meer over de verschillende ontw
   + [Jupyter-notebooks gebruiken in een rekenproces om modellen te trainen en te implementeren](tutorial-1st-experiment-sdk-setup.md)
   + [Geautomatiseerde machine learning gebruiken voor het trainen en implementeren van modellen](tutorial-first-experiment-automated-ml.md)  
   + [De ontwerpfunctie gebruiken om modellen te trainen en implementeren](tutorial-designer-automobile-price-train-score.md)
+  + [Studio gebruiken in een beveiligd virtueel netwerk](how-to-enable-studio-virtual-network.md)

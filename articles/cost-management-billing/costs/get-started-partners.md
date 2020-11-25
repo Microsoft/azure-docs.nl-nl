@@ -3,18 +3,18 @@ title: Aan de slag met Azure Cost Management voor partners
 description: In dit artikel wordt uitgelegd hoe partners Azure Cost Management-functies gebruiken en hoe ze toegang tot Cost Management voor hun klanten mogelijk maken.
 author: bandersmsft
 ms.author: banders
-ms.date: 08/04/2020
+ms.date: 11/16/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: aparnag
 ms.custom: secdec18
-ms.openlocfilehash: 0076c70f64ec5cea8b92cb2b9ed27de05406316d
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: d2b90db18a31fff4190be4f84625ad52fcaae578
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91827582"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94657309"
 ---
 # <a name="get-started-with-azure-cost-management-for-partners"></a>Aan de slag met Azure Cost Management voor partners
 
@@ -126,15 +126,15 @@ Ongeacht het beleid kunnen globale beheerders en beheerdersagenten van de provid
 
 U moet lid zijn van de groep **beheerdersagent** om het beleid weer te geven en bij te werken. Gebruik de volgende informatie om het beleid in te schakelen waarmee klanten Azure-gebruikskosten kunnen weergeven.
 
-Meld u aan bij de partner-tenant in de Azure-portal en selecteer **Cost Management + Facturering**. Selecteer het relevante factureringsbereik in het gebied voor het factureringsbereik en selecteer vervolgens **Klanten**. De lijst met klanten is gekoppeld aan de factureringsrekening.
+Meld u aan bij de *partner-tenant* in Azure Portal en selecteer **Kostenbeheer en facturering**. Selecteer het relevante factureringsbereik in het gebied voor het factureringsbereik en selecteer vervolgens **Klanten**. De lijst met klanten is gekoppeld aan de factureringsrekening. *Als u zich per ongeluk aanmeldt bij de tenant van de klant, wordt de lijst **Klanten** niet weergegeven.*
 
 Selecteer in de lijst met klanten de klant waarvoor u de kosten wilt weergeven.
 
 [![Klanten selecteren in Cost Management](./media/get-started-partners/customer-list.png)](./media/get-started-partners/customer-list.png#lightbox)
 
-Selecteer **Beleid**onder **Instellingen**.
+Selecteer **Beleid** onder **Instellingen**.
 
-Het huidige beleid voor het berekenen van de kosten wordt weergegeven voor **Azure-gebruiks**kosten die zijn gekoppeld aan de abonnementen voor de geselecteerde klant.
+Het huidige beleid voor het berekenen van de kosten wordt weergegeven voor **Azure-gebruiks** kosten die zijn gekoppeld aan de abonnementen voor de geselecteerde klant.
 ![Beleid waarmee klanten Betalen per gebruik-kosten kunnen weergeven](./media/get-started-partners/cost-management-billing-policies.png)
 
 Wanneer het beleid is ingesteld op **Nee**, is Azure Cost Management niet beschikbaar voor abonnementsgebruikers die zijn gekoppeld aan de klant. Tenzij deze is ingeschakeld door een partner, wordt het beleid voor kostenzichtbaarheid standaard uitgeschakeld voor alle gebruikers van het abonnement.
@@ -188,7 +188,7 @@ De volgende gegevensvelden zijn te vinden in detailbestanden voor gebruik en Cos
 | costCenter | Kostenplaats die aan het abonnement is gekoppeld. | N.v.t. |
 | billingPeriodStartDate | Begindatum van de factureringsperiode, zoals op de factuur wordt weergegeven. | N.v.t. |
 | billingPeriodEndDate | Einddatum van de factureringsperiode, zoals op de factuur wordt weergegeven. | N.v.t. |
-| servicePeriodStartDate | De begindatum voor de beoordelingsperiode wanneer het serviceverbruik is beoordeeld op kosten. De prijzen voor Azure-Services worden bepaald voor de beoordelingsperiode. | ChargeStartDate in partnercentrum. De begindatum van de factureringscyclus, met uitzondering van de datum van voorheen niet-gefactureerde ongebruikte gegevens van een eerdere factureringscyclus. De tijd is altijd het begin van de dag, 0:00. |
+| servicePeriodStartDate | De begindatum voor de beoordelingsperiode wanneer het serviceverbruik is beoordeeld op kosten. De prijzen voor Azure-Services worden bepaald voor de beoordelingsperiode. | ChargeStartDate in partnercentrum.  De begindatum van de factureringscyclus, met uitzondering van de datum van voorheen niet-gefactureerde ongebruikte gegevens van een eerdere factureringscyclus. De tijd is altijd het begin van de dag, 0:00. |
 | servicePeriodEndDate | De begindatum voor de periode wanneer het serviceverbruik is beoordeeld op kosten. De prijzen voor Azure-Services worden bepaald voor de beoordelingsperiode. | N.v.t. |
 | date | Voor Azure-verbruiksgegevens wordt de datum van gebruik weergegeven als geclassificeerd. Voor een gereserveerde instantie wordt de aangeschafte datum weergegeven. Voor terugkerende kosten en eenmalige kosten, zoals Marketplace en ondersteuning, wordt de aankoopdatum weer gegeven. | N.v.t. |
 | productID | Id voor het product dat de transitorische kosten per verbruik of aankoop heeft. Het is de aaneengeschakelde sleutel van productID en SKuID, zoals wordt weergegeven in het partnercentrum. | De id van het product. |

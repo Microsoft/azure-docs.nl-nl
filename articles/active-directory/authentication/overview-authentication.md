@@ -11,19 +11,19 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01751caba2b14f899588deba083a8c59c41d13ba
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 92ac495381f63e01d64c9a3d02777dca37ebb343
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964006"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837988"
 ---
 # <a name="what-is-azure-active-directory-authentication"></a>Wat is Azure Active Directory-verificatie?
 
 Een van de belangrijkste functies van een identiteitsplatform is het *verifiëren* van referenties wanneer een gebruiker zich bij een apparaat, toepassing of service aanmeldt. In Azure Active Directory (Azure AD) betreft verificatie meer dan alleen de controle van een gebruikersnaam en wachtwoord. Voor een betere beveiliging en minder behoefte aan hulp van een helpdesk, omvat Azure AD-verificatie de volgende onderdelen:
 
 * Self-service voor wachtwoord opnieuw instellen
-* Azure Multi-Factor Authentication
+* Azure AD Multi-Factor Authentication
 * Hybride integratie om wachtwoordwijzigingen terug te schrijven naar de on-premises omgeving
 * Hybride integratie om beveiligingsbeleid voor wachtwoorden af te dwingen voor een on-premises omgeving
 * Verificatie zonder wachtwoord
@@ -32,7 +32,7 @@ Een van de belangrijkste functies van een identiteitsplatform is het *verifiëre
 
 Azure AD helpt de identiteit van gebruikers beschermen en hun aanmeldervaring vereenvoudigen. Met behulp van functies zoals een self-service voor wachtwoordherstel kunnen gebruikers wachtwoorden via een webbrowser bijwerken of wijzigen, vanaf elk apparaat. Deze functie is met name handig wanneer gebruikers hun wachtwoord zijn vergeten of als hun account is vergrendeld. Zonder te hoeven wachten op ondersteuning van een helpdesk of beheerder kunnen gebruikers zelf de blokkering opheffen en verdergaan met hun werk.
 
-Met behulp van Azure Multi-Factor Authentication kunnen gebruikers een extra verificatiemethode kiezen tijdens het aanmelden, zoals worden gebeld of een melding krijgen via een mobiele app. Dankzij deze mogelijkheid is er geen vaste vorm van secundaire verificatie meer vereist, zoals een hardwaretoken. Als gebruikers momenteel niet één vorm van aanvullende verificatie hebben, kunnen ze een andere methode kiezen en doorgaan met hun werk.
+Met Azure AD Multi-Factor Authentication kunnen gebruikers een extra verificatiemethode kiezen tijdens het aanmelden, zoals worden gebeld of een melding krijgen via een mobiele app. Dankzij deze mogelijkheid is er geen vaste vorm van secundaire verificatie meer vereist, zoals een hardwaretoken. Als gebruikers momenteel niet één vorm van aanvullende verificatie hebben, kunnen ze een andere methode kiezen en doorgaan met hun werk.
 
 ![Gebruikte verificatiemethoden op het aanmeldscherm](media/concept-authentication-methods/overview-login.png)
 
@@ -50,7 +50,7 @@ De self-service voor wachtwoordherstel werkt in de volgende scenario's:
 
 Wanneer gebruikers hun wachtwoord bijwerken of opnieuw instellen met behulp van de self-service voor wachtwoordherstel, kan dat wachtwoord ook worden teruggeschreven naar een on-premises Active Directory-omgeving. Door het kunnen terugschrijven van wachtwoorden kunnen gebruikers direct gebruikmaken van hun bijgewerkte referenties met on-premises apparaten en toepassingen.
 
-## <a name="azure-multi-factor-authentication"></a>Azure Multi-Factor Authentication
+## <a name="azure-ad-multi-factor-authentication"></a>Azure AD Multi-Factor Authentication
 
 Meervoudige verificatie is een proces waarbij gebruikers tijdens het aanmeldproces om een aanvullende vorm van identificatie wordt gevraagd, zoals het invoeren van een code op hun mobiele telefoon of het uitvoeren van een vingerafdrukscan.
 
@@ -58,13 +58,13 @@ Als u alleen een wachtwoord gebruikt om gebruikers te verifiëren, is dit een on
 
 ![Conceptafbeelding van de verschillende vormen van meervoudige verificatie](./media/concept-mfa-howitworks/methods.png)
 
-Azure Multi-Factor Authentication werkt door twee van de volgende verificatiemethoden te vereisen:
+Azure AD Multi-Factor Authentication werkt door twee van de volgende verificatiemethoden te vereisen:
 
 * Iets dat u weet, zoals een wachtwoord.
 * Iets dat u hebt, zoals een vertrouwd apparaat dat niet eenvoudig kan worden gedupliceerd, zoals een telefoon of hardwaresleutel.
 * Iets dat u bent: biometrische gegevens zoals een vingerafdruk of gezichtsscan.
 
-Gebruikers kunnen zichzelf registreren voor zowel de self-service voor wachtwoordherstel als Azure Multi-Factor Authentication. Dit gebeurt in één stap, voor een eenvoudigere onboardingervaring. Beheerders kunnen definiëren welke vormen van secundaire verificatie kunnen worden gebruikt. Azure Multi-Factor Authentication kan ook vereist zijn wanneer gebruikers een self-service voor wachtwoordherstel uitvoeren om dat proces nog verder te beveiligen.
+Gebruikers kunnen zich registreren voor zowel de self-service voor wachtwoordherstel als Azure AD Multi-Factor Authentication. Dit gebeurt in één stap, voor een eenvoudigere onboardingervaring. Beheerders kunnen definiëren welke vormen van secundaire verificatie kunnen worden gebruikt. Azure AD Multi-Factor Authentication kan ook vereist zijn wanneer gebruikers een self-service voor wachtwoordherstel uitvoeren om dit proces nog verder te beveiligen.
 
 ## <a name="password-protection"></a>Wachtwoordbeveiliging
 
@@ -76,7 +76,7 @@ Voor hybride beveiliging kunt u Azure AD-wachtwoordbeveiliging integreren in een
 
 ## <a name="passwordless-authentication"></a>Verificatie zonder wachtwoord
 
-Het einddoel voor veel omgevingen is het verwijderen van het gebruik van wachtwoorden als onderdelen van aanmeldingen. Functies zoals Azure-wachtwoordbeveiliging of Azure Multi-Factor Authentication helpen de beveiliging verbeteren, maar een gebruikersnaam en wachtwoord blijven een zwakke vorm van verificatie die kan worden blootgesteld of worden aangevallen.
+Het einddoel voor veel omgevingen is het verwijderen van het gebruik van wachtwoorden als onderdelen van aanmeldingen. Functies zoals Azure-wachtwoordbeveiliging of Azure AD Multi-Factor Authentication helpen de beveiliging verbeteren, maar een gebruikersnaam en wachtwoord blijven een zwakke vorm van verificatie die kan worden blootgesteld of worden aangevallen.
 
 ![Beveiliging versus gemak met het verificatieproces op weg naar een leven zonder wachtwoorden](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
 
@@ -86,11 +86,11 @@ Azure AD biedt verschillende manieren om verificatie via het systeem uit te voer
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de [zelfstudie voor self-service voor wachtwoordherstel (SSPR)][tutorial-sspr] en [Azure Multi-Factor Authentication][tutorial-azure-mfa] om aan de slag te gaan.
+Zie de [zelfstudie voor SSPR (self-service voor wachtwoordherstel)][tutorial-sspr] en [Azure AD Multi-Factor Authentication][tutorial-azure-mfa] om aan de slag te gaan.
 
 Zie [Zo werkt de self-service voor wachtwoordherstel van Azure AD][concept-sspr] voor meer informatie over concepten voor de self-service voor het opnieuw instellen van wachtwoorden.
 
-Zie [Zo werkt Azure Multi-Factor Authentication][concept-mfa] voor meer informatie over concepten voor meervoudige verificatie.
+Zie [Werking van Azure AD Multi-Factor Authentication][concept-mfa] voor meer informatie over concepten voor meervoudige verificatie.
 
 <!-- INTERNAL LINKS -->
 [tutorial-sspr]: tutorial-enable-sspr.md

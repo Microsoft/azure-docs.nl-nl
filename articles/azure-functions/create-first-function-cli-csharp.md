@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-csharp
 - devx-track-azurecli
-ms.openlocfilehash: 036629bd72f8219c2d7b1877dd1672291ed3d98a
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: b87408669dbb9268d6e3cd47b410b888ef1a19c2
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424803"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94637146"
 ---
 # <a name="quickstart-create-a-c-function-in-azure-from-the-command-line"></a>Quickstart: Een C#-functie maken in Azure vanaf de opdrachtregel
 
@@ -28,6 +28,8 @@ Er is ook een [Versie op basis van Visual Studio Code](create-first-function-vs-
 Voordat u begint, moet u het volgende hebben:
 
 + Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
+
++ De [.NET Core SDK 3.1](https://www.microsoft.com/net/download)
 
 + De [Azure Functions Core Tools](functions-run-local.md#v2), versie 3.x.
 
@@ -49,6 +51,8 @@ Controleer uw vereisten. Deze zijn afhankelijk van de vraag of u Azure CLI of Az
 
 + Voer `az login` uit om u aan te melden bij Azure en te controleren of u een actief abonnement hebt.
 
++ Voer `dotnet --list-sdks` uit om te controleren of .NET Core SDK-versie 3.1.x is geïnstalleerd
+
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
 + Voer in een terminal- of opdrachtvenster `func --version` uit om te controleren of de Azure Functions Core Tools versie 3.x zijn.
@@ -56,6 +60,8 @@ Controleer uw vereisten. Deze zijn afhankelijk van de vraag of u Azure CLI of Az
 + Voer `(Get-Module -ListAvailable Az).Version` uit en controleer of u versie 5.0 of hoger gebruikt. 
 
 + Voer `Connect-AzAccount` uit om u aan te melden bij Azure en te controleren of u een actief abonnement hebt.
+
++ Voer `dotnet --list-sdks` uit om te controleren of .NET Core SDK-versie 3.1.x is geïnstalleerd
 
 ---
 

@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 09/22/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: dc0cdca2355403bc8f5409d9a6ca7f4ae89caf25
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: aa0a001f9c35202939eeb4a7752803b998a3acf7
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90943824"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94562012"
 ---
 # <a name="quickstart-protect-an-aspnet-core-web-api-with-microsoft-identity-platform"></a>Quickstart: Een ASP.NET Core Web-API beveiligen met het microsoft-identiteitsplatform
 
-In deze Snelstart gebruikt u een codevoorbeeld om te leren hoe u een ASP.NET Core Web-API kunt beveiligen, zodat deze alleen kan worden geopend door geautoriseerde accounts. Accounts kunnen persoonlijke accounts zijn (hotmail.com, outlook.com en andere) en werk- en schoolaccounts in elk Azure Active Directory-geval (Azure AD).
+In deze quickstart downloadt u een ASP.NET Core-web-API-codevoorbeeld en bekijkt u de bijbehorende code die de toegang tot resources beperkt tot alleen geautoriseerde accounts. Het voorbeeld biedt ondersteuning voor de autorisatie van persoonlijke Microsoft-accounts en accounts in elke willekeurige Azure AD-organisatie (Azure Active Directory).
 
 > [!div renderon="docs"]
 > ## <a name="prerequisites"></a>Vereisten
@@ -42,7 +42,7 @@ In deze Snelstart gebruikt u een codevoorbeeld om te leren hoe u een ASP.NET Cor
 > 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 > 1. Selecteer **Registreren**.
 > 1. Selecteer onder **Beheren** **Een API beschikbaar maken**.
-> 1. Selecteer **Een scope toevoegen** en selecteer **Opslaan en doorgaan** om de standaard **Toepassings-ID-URI**te accepteren.
+> 1. Selecteer **Een scope toevoegen** en selecteer **Opslaan en doorgaan** om de standaard **Toepassings-ID-URI** te accepteren.
 > 1. Voer in het deelvenster **Een bereik toevoegen** de volgende waarden in:
 >    - **Naam van bereik**: `access_as_user`
 >    - **Wie kan toestemming verlenen?** : **Beheerders en gebruikers**
@@ -74,7 +74,7 @@ In deze Snelstart gebruikt u een codevoorbeeld om te leren hoe u een ASP.NET Cor
 >
 >    - Vervang `Enter_the_Application_Id_here`met de **Toepassings(client)-ID** voor de toepassing die is geregistreerd in de Azure-portal. U vindt de **toepassings-id (client-id)** op de pagina **Overzicht** van de app.
 >    - Vervang `Enter_the_Tenant_Info_Here` door een van de volgende opties:
->       - Als uw toepassing **Accounts alleen in deze organisatiemap** ondersteunt, vervangt u deze waarde door de **Map (tenant)-ID**  (een GUID) of  **tenantnaam** (bijvoorbeeld, `contoso.onmicrosoft.com`). U vindt de **Directory (Tenant)-ID** op de pagina **Overzicht**van de apps.
+>       - Als uw toepassing **Accounts alleen in deze organisatiemap** ondersteunt, vervangt u deze waarde door de **Map (tenant)-ID**  (een GUID) of  **tenantnaam** (bijvoorbeeld, `contoso.onmicrosoft.com`). U vindt de **Directory (Tenant)-ID** op de pagina **Overzicht** van de apps.
 >       - Als uw toepassing **Accounts in elke organisatiemap** ondersteunt, vervang deze waarde dan door `organizations`
 >       - Als uw toepassing **Alle Microsoft-accountgebruikers** ondersteunt, vervang deze waarde dan door `common`
 >

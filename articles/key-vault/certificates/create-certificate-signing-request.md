@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.author: sebansal
-ms.openlocfilehash: a85656909df5538f9f57e05d79ae768623d7eba6
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: c8f11f17c9e110509dcbcda291194f9b8d928c50
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289605"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658958"
 ---
 # <a name="creating-and-merging-csr-in-key-vault"></a>CSR in Key Vault maken en samenvoegen
 
@@ -25,7 +25,15 @@ Zie [Azure Key Vault-certificaten](./about-certificates.md) voor meer algemene i
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-## <a name="adding-certificate-in-key-vault-issued-by-a-non-trusted-ca"></a>Een certificaat toevoegen aan Key Vault dat is uitgegeven door een niet-vertrouwde certificeringsinstantie
+## <a name="adding-certificate-in-key-vault-issued-by-partnered-ca"></a>Een certificaat toevoegen aan Key Vault dat is uitgegeven door een partnercertificeringsinstantie
+Key Vault is een partnerschap aangegaan met de volgende twee certificeringsinstanties om het maken van certificaten te vereenvoudigen. 
+
+|Provider|Certificaattype|Configuratie-installatie  
+|--------------|----------------------|------------------|  
+|DigiCert|Key Vault biedt OV- of EV SSL-certificaten met DigiCert| [Integratiehandleiding](./how-to-integrate-certificate-authority.md)
+|GlobalSign|Key Vault biedt OV- of EV SSL-certificaten met GlobalSign| [Integratiehandleiding](https://support.globalsign.com/digital-certificates/digital-certificate-installation/generating-and-importing-certificate-microsoft-azure-key-vault)
+
+## <a name="adding-certificate-in-key-vault-issued-by-non-partnered-ca"></a>Een certificaat toevoegen aan Key Vault dat is uitgegeven door een niet-partnercertificeringsinstantie
 
 De volgende stappen helpen u bij het maken van een certificaat van certificeringsinstanties die niet zijn gekoppeld aan Key Vault (GoDaddy is bijvoorbeeld is geen vertrouwde sleutelkluis-CA) 
 

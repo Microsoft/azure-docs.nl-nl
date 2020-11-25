@@ -3,18 +3,18 @@ title: Beheeropties voor blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde ser
 description: Toewijzing van beheeropties voor blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde services. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
 ms.date: 11/05/2020
 ms.topic: sample
-ms.openlocfilehash: bb1cfbc09e8a6209b9e6d0cb2970dc66ee05ba6d
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: c79159fca9d619b727ef651bf42044182144ab35
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420339"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842512"
 ---
 # <a name="control-mapping-of-the-iso-27001-shared-services-blueprint-sample"></a>Toewijzing van beheeropties voor blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde services
 
 Het volgende artikel bevat details over de manier waarop het blauwdrukvoorbeeld voor Azure Blueprints ISO 27001 conforme gedeelde services wordt toegewezen aan de ISO 27001-beheeropties. Zie [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html) voor meer informatie over de beheeropties.
 
-De volgende toewijzingen zijn voor de **ISO 27001:2013** -beheeropties. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifieke beheeroptie te gaan. Veel van de toegewezen beheeropties worden geïmplementeerd met een [Azure Policy](../../../policy/overview.md)-initiatief. Als u het complete initiatief wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**. Zoek en selecteer vervolgens het ingebouwde beleidsinitiatief **\[Preview\] ISO 27001:2013-beheeropties controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten**.
+De volgende toewijzingen zijn voor de **ISO 27001:2013**-beheeropties. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifieke beheeroptie te gaan. Veel van de toegewezen beheeropties worden geïmplementeerd met een [Azure Policy](../../../policy/overview.md)-initiatief. Als u het complete initiatief wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**. Zoek en selecteer vervolgens het ingebouwde beleidsinitiatief **\[Preview\] ISO 27001:2013-beheeropties controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten**.
 
 > [!IMPORTANT]
 > Elke beheeroptie hieronder is gekoppeld aan een of meer [Azure Policy](../../../policy/overview.md)-definities. Met deze beleidsregels kunt u de [compliance beoordelen](../../../policy/how-to/get-compliance-data.md) met de beheeroptie. Er is echter vaak geen één-op-één- of volledige overeenkomst tussen een beheeroptie en een of meer beleidsregels. Als zodanig verwijst de term **Conform** in Azure Policy alleen naar de beleidsregels zelf. Dit garandeert niet dat u volledig conform bent met alle vereisten van een beheeroptie. Daarnaast bevat de compliance standaard beheeropties die op dit moment nog niet worden beschreven door Azure Policy-definities. Daarom is compliance in Azure Policy slechts een gedeeltelijke weergave van uw algemene compliancestatus. De koppelingen tussen de beheeropties en Azure Policy definities voor dit blauwdrukvoorbeeld voor compliance kunnen na verloop van tijd veranderen. Als u de wijzigingsgeschiedenis wilt bekijken, raadpleegt u de [GitHub Commit-geschiedenis](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/iso27001-shared/control-mapping.md).
@@ -82,7 +82,7 @@ Met [Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](../../../../role
 
 ## <a name="a942-secure-log-on-procedures"></a>A.9.4.2 Beveiligde aanmeldingsprocedures
 
-Met deze blauwdruk worden drie Azure Policy-definities toegewezen voor het controleren van accounts waarvoor meervoudige verificatie niet is ingeschakeld. Azure MFA biedt extra beveiliging door een tweede vorm van verificatie te vereisen en voorziet in sterke verificatie. Door accounts te controleren waarvoor geen meervoudige verificatie is ingeschakeld, kunt u accounts identificeren waarvoor het waarschijnlijker is dat deze worden gecompromitteerd.
+Met deze blauwdruk worden drie Azure Policy-definities toegewezen voor het controleren van accounts waarvoor meervoudige verificatie niet is ingeschakeld. Azure AD Multi-Factor Authentication biedt extra beveiliging door een tweede vorm van verificatie te vereisen en voorziet in sterke verificatie. Door accounts te controleren waarvoor geen meervoudige verificatie is ingeschakeld, kunt u accounts identificeren waarvoor het waarschijnlijker is dat deze worden gecompromitteerd.
 
 - MFA moet zijn ingeschakeld voor accounts met eigenaarsmachtigingen voor uw abonnement
 - MFA moet zijn ingeschakeld voor accounts met leesmachtigingen voor uw abonnement

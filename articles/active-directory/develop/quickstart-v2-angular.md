@@ -12,16 +12,16 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: janutter
-ms.openlocfilehash: 4179807b349504d1ac0932f8d0816603f83afae4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 643e3bcd50258e2b5e7f52646f231485f950d677
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91613421"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515542"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-an-angular-single-page-application"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een Angular-toepassing met één pagina
 
-In deze quickstart gebruikt u een codevoorbeeld om te leren hoe een Angular-toepassing met één pagina (SPA) gebruikers kan aanmelden met persoonlijke Microsoft-accounts, werkaccounts of schoolaccounts. Een Angular-SPA-verificatie kan ook een toegangstoken krijgen om de Microsoft Graph API of een web-API aan te roepen.
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een SPA-toepassing (hoektoepassing met één pagina), en een toegangstoken kunnen verkrijgen om de Microsoft Graph API aan te roepen. Het codevoorbeeld laat zien hoe u een toegangstoken kunt verkrijgen om de Microsoft Graph API of willekeurige web-API aan te roepen.
 
 ## <a name="prerequisites"></a>Vereisten
 

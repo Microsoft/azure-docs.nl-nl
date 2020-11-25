@@ -10,12 +10,12 @@ ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
 ms.custom: has-adal-ref
-ms.openlocfilehash: a430bb41f88bfec1299d52d8237c9534b28acc5d
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: fb8aad52eeaef2366afe28aa71059b7f8f780501
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093375"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843295"
 ---
 # <a name="use-multi-factor-aad-authentication-with-synapse-sql-ssms-support-for-mfa"></a>Multi-Factor Authentication van AAD gebruiken met Synapse SQL (SSMS-ondersteuning voor MFA)
 
@@ -40,11 +40,11 @@ Er zijn ook twee niet-interactieve verificatiemodellen, die kunnen worden gebrui
 - `Active Directory - Password`
 - `Active Directory - Integrated`
 
-De interactieve methode die ook ondersteuning biedt voor Multi-Factor Authentication (MFA) van Azure is:
+De interactieve methode die ook ondersteuning biedt voor Azure AD MFA (Multi-Factor Authentication) is:
 
 - `Active Directory - Universal with MFA`
 
-Azure MFA helpt bij het bewaken van de toegang tot uw gegevens en toepassingen en komt tegemoet aan de wensen van gebruikers die een eenvoudige aanmeldprocedure willen. Azure MFA biedt krachtige verificatie met een scala aan gebruikersvriendelijke verificatieopties (zoals telefoonoproepen, sms-berichten, smartcards met pincode of melding in mobiele app), zodat gebruikers de gewenste methode kunnen kiezen. Bij interactieve MFA met Azure AD kunnen er pop-upvensters worden weergegeven voor validatie.
+Azure AD MFA helpt bij het bewaken van de toegang tot uw gegevens en toepassingen en komt tegemoet aan de wensen van gebruikers die een eenvoudige aanmeldprocedure willen. Azure MFA biedt krachtige verificatie met een scala aan gebruikersvriendelijke verificatieopties (zoals telefoonoproepen, sms-berichten, smartcards met pincode of melding in mobiele app), zodat gebruikers de gewenste methode kunnen kiezen. Bij interactieve MFA met Azure AD kunnen er pop-upvensters worden weergegeven voor validatie.
 
 Zie [Multi-Factor Authentication](../../active-directory/authentication//concept-mfa-howitworks.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)voor een beschrijving van Multi-Factor Authentication.
 

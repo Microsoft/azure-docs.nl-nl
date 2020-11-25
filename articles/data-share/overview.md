@@ -5,13 +5,13 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: overview
-ms.date: 07/30/2020
-ms.openlocfilehash: e80ea37409f7b5beb48ba7b8e96aeeda9a5836e5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 10/30/2020
+ms.openlocfilehash: b9fb5d6537d2c8dffef397c56128dd4891c939b7
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89433429"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578124"
 ---
 # <a name="what-is-azure-data-share"></a>Wat is Azure Data Share?
 
@@ -45,7 +45,7 @@ Gegevensproviders kunnen hun gegevensgebruiker incrementele updates voor de met 
 
 ![stroom gegevensshare](media/data-share-flow.png)
 
-Wanneer een gegevensgebruiker een gegevensshare accepteert, dan kan hij de gegevens ontvangen in een gegevensarchief naar keuze. Als de gegevensprovider bijvoorbeeld gegevens deelt met Azure Blob Storage, kan de gegevensgebruiker deze gegevens in Azure Data Lake Store ontvangen. En als de gegevensprovider gegevens deelt vanuit een Azure Synapse Analytics (voorheen SQL Data Warehouse), dan kan de gegevensgebruiker kiezen of hij de gegevens wil ontvangen in een Azure Data Lake Store, een Azure SQL Database of een Azure Synapse Analytics. Wanneer er gedeeld wordt vanuit SQL-gebaseerde bronnen, dan kan de gegevensgebruiker ook kiezen of hij gegevens ontvangt in parquet of csv. 
+Wanneer een gegevensgebruiker een gegevensshare accepteert, dan kan hij de gegevens ontvangen in een gegevensarchief naar keuze. Als de gegevensprovider bijvoorbeeld gegevens deelt met Azure Blob Storage, kan de gegevensgebruiker deze gegevens in Azure Data Lake Store ontvangen. En als de gegevensprovider gegevens deelt vanuit een Azure Synapse Analytics, kan de gegevensgebruiker kiezen om de gegevens te ontvangen in een Azure Data Lake Store, een Azure SQL Database of een Azure Synapse Analytics. Wanneer er gedeeld wordt vanuit SQL-gebaseerde bronnen, dan kan de gegevensgebruiker ook kiezen of hij gegevens ontvangt in parquet of csv. 
 
 Met delen op locatie kunnen gegevensproviders gegevens delen waar deze zich bevinden zonder de gegevens te kopiëren. Nadat de machtiging voor delen is verleend via de uitnodigingsstroom, wordt een symbolische link gemaakt tussen de brongegevensopslag van de gegevensprovider en de doelgegevensopslag van de gegevensgebruiker. De gegevensgebruiker kan de gegevens in real time lezen en doorzoeken met behulp van zijn eigen gegevensopslag. Wijzigingen in de brongegevensopslag worden onmiddellijk beschikbaar voor de gegevensgebruiker. Delen op locatie is momenteel in preview voor Azure Data Explorer.
 
@@ -73,9 +73,7 @@ Azure Data Share stelt gegevensgebruikers in staat om:
 
 * Gegevens die met u zijn gedeeld te accepteren in een [ondersteunde gegevensopslag](supported-data-stores.md).
 
-* Een volledige of incrementele momentopname opvragen van een gegevensshare die een organisatie met u heeft gedeeld
-
-* Abonneren op een gegevensshare om de meest recente kopie van de gegevens te ontvangen via incrementele momentopnames
+* Toegang krijgen tot in-place gegevens of een volledige momentopname van gedeelde gegevens activeren
 
 Alle belangrijke mogelijkheden die hierboven worden vermeld, worden ondersteund via het Azure-portal of REST API's. Raadpleeg onze referentiedocumentatie voor meer informatie over het gebruik van Azure Data Share via REST API's. 
 

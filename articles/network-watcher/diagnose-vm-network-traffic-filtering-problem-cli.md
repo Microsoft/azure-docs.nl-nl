@@ -18,22 +18,24 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: kumud
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 871c4fc69daac9d5f515fdf3e4ec0ca1de6fbe08
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0a483bc6097c4dd76ed67e93e4313ad8c25cbc08
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91295954"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542351"
 ---
 # <a name="quickstart-diagnose-a-virtual-machine-network-traffic-filter-problem---azure-cli"></a>Quickstart: Diagnose uitvoeren voor een probleem met netwerkverkeersfilters op een virtuele machine - Azure CLI
 
 In deze snelstart implementeert u een VM (virtuele machine) en controleert u vervolgens de communicatie naar een IP-adres en URL, en vanaf een IP-adres. U stelt de oorzaak van mislukte communicatie vast en leert hoe u dit probleem kunt oplossen.
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Als u ervoor kiest om de Azure CLI lokaal te installeren en te gebruiken, moet u voor deze quickstart versie 2.0.28 of hoger van de Azure CLI uitvoeren. Voer `az --version` uit om na te gaan welke versie er is geïnstalleerd. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli). Nadat u de Azure CLI-versie hebt gecontroleerd, voert u `az login` uit om een verbinding met Azure te maken. De Azure CLI-opdrachten in deze quickstart zijn zo opgemaakt dat ze kunnen worden uitgevoerd in een Bash-shell.
+- Voor deze quickstart is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd. 
+
+- De Azure CLI-opdrachten in deze quickstart zijn zo opgemaakt dat ze kunnen worden uitgevoerd in een Bash-shell.
 
 ## <a name="create-a-vm"></a>Een virtuele machine maken
 
@@ -134,7 +136,7 @@ az network nic list-effective-nsg \
 
 De geretourneerde uitvoer bevat de volgende tekst voor de regel **AllowInternetOutbound** op basis waarvan uitgaand verkeer naar www.bing.com was toegestaan in een vorige stap onder [IP-stroomverificatie gebruiken](#use-ip-flow-verify):
 
-```
+```console
 {
  "access": "Allow",
  "additionalProperties": {},
@@ -175,7 +177,7 @@ In de vorige uitvoer ziet u dat **destinationAddressPrefix** **Internet** is. He
 
 Toen u de opdracht `az network watcher test-ip-flow` in [IP-stroomverificatie gebruiken](#use-ip-flow-verify) uitvoerde om uitgaande communicatie van 172.131.0.100 te testen, bleek uit de uitvoer dat communicatie wordt geweigerd op basis van de regel **DefaultOutboundDenyAll**. De regel **DefaultOutboundDenyAll** is gelijk aan de regel **DenyAllOutBound** die wordt weergegeven in de volgende uitvoer via de opdracht `az network nic list-effective-nsg`:
 
-```
+```console
 {
  "access": "Deny",
  "additionalProperties": {},
@@ -208,7 +210,7 @@ In de regel wordt **0.0.0.0/0** vermeld als **destinationAddressPrefix**. Op bas
 
 Toen u de opdracht `az network watcher test-ip-flow` in [IP-stroomverificatie gebruiken](#use-ip-flow-verify) uitvoerde om binnenkomende communicatie van 172.131.0.100 te testen, bleek uit de uitvoer dat communicatie wordt geweigerd op basis van de regel **DefaultInboundDenyAll**. De regel **DefaultInboundDenyAll** is gelijk aan de regel **DenyAllInBound** die wordt weergegeven in de volgende uitvoer via de opdracht `az network nic list-effective-nsg`:
 
-```
+```console
 {
  "access": "Deny",
  "additionalProperties": {},

@@ -12,12 +12,12 @@ ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 02/14/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 67e90667df2b62ec2c37d865fe431a2be6f81b9e
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 9c75ccaa05457f13697d1a26dbc8fd2f6720a751
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876563"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94517849"
 ---
 # <a name="quickstart-set-up-push-notifications-in-a-notification-hub"></a>Quickstart: Pushmeldingen instellen in een notification hub
 
@@ -67,11 +67,11 @@ Als u deze stappen hebt voltooid, ziet u een waarschuwing die aangeeft dat de no
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
+U hebt de **API-sleutel** voor uw Google Firebase Cloud Messaging-project (FCM) nodig.
 
-- Voor Notification Hubs is versie 2.0.67 of hoger van de Azure-CLI vereist. Voer [az version](/cli/azure/reference-index?#az_version) uit om de geïnstalleerde versie en afhankelijke bibliotheken te vinden. Voer [az upgrade](/cli/azure/reference-index?#az_upgrade) uit om te upgraden naar de nieuwste versie.
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-h3.md)]
 
-- U hebt de **API-sleutel** voor uw Google Firebase Cloud Messaging-project (FCM) nodig.
+- Voor dit artikel is versie 2.0.67 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ### <a name="set-up-push-notifications-for-google-fcm"></a>Pushmeldingen instellen voor Google FCM
 

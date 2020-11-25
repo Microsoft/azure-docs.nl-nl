@@ -6,14 +6,14 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 09/08/2020
-ms.custom: devx-track-java
+ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 55e47b09ac4a6256a125a75c8a0f856e867e7c0e
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 0802f09cfb03f837fb7080620da776e79b37c9ed
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337768"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94845081"
 ---
 # <a name="quickstart-set-up-azure-spring-cloud-configuration-server"></a>Quickstart: Azure Spring Cloud-configuratieserver instellen
 
@@ -57,9 +57,19 @@ Met de volgende procedure stelt u de configuratieserver in met behulp van de Azu
 
 2. Stel in de sectie **Standaardopslagplaats** **URI** in op https://github.com/Azure-Samples/piggymetrics-config.
 
-3. Selecteer **Toepassen** om uw wijzigingen op te slaan.
+3. Klik op **Valideren**.
 
-    ![Schermopname van ASC-portal](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
+    ![Ga naar de configuratieserver](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
+
+4. Wanneer de validatie is voltooid, klikt u op **Toepassen** om de wijzigingen op te slaan.
+
+    ![Configuratieserver valideren](media/spring-cloud-quickstart-launch-app-portal/validate-complete.png)
+
+5. Het bijwerken van de configuratie kan enkele minuten duren.
+ 
+    ![Configuratieserver bijwerken](media/spring-cloud-quickstart-launch-app-portal/updating-config.png) 
+
+6. U ontvangt een melding wanneer de configuratie is voltooid.
 
 #### <a name="cli"></a>[CLI](#tab/Azure-CLI)
 

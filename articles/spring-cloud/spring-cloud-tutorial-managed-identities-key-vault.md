@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/08/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: b3505f8bf31c2e700ce1cc57e106c33a13e0aa9b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: fc44dd6cf91d687f47afadf1c3378956d838bc9d
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92737171"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579501"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-spring-cloud-app"></a>Zelfstudie: Een beheerde identiteit gebruiken om Key Vault te koppelen met een Azure Spring Cloud-app
 
@@ -77,6 +77,8 @@ Gebruik `az keyvault set-policy` om uw app de juiste toegang te verlenen tot Key
 ```azurecli
 az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENTITY} --secret-permissions set get list
 ```
+> [!NOTE]
+> Gebruik `az keyvault delete-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENTITY}` om de toegang voor uw app te verwijderen, nadat de met het systeem toegewezen beheerde identiteit is uitgeschakeld.
 
 ## <a name="build-a-sample-spring-boot-app-with-spring-boot-starter"></a>Een voorbeeld van een Spring Boot-app bouwen met een Spring Boot-starter
 Deze app heeft toegang om geheimen uit Azure Key Vault op te halen. De starter-app gebruiken: [Spring Boot-starter Azure Key Vault-geheimen](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-keyvault-secrets).  Azure Key Vault is als een exemplaar van Spring **PropertySource** toegevoegd.  Geheimen die in Azure Key Vault zijn opgeslagen, kunnen eenvoudig worden geopend en gebruikt, net als elke externe configuratie-eigenschap, zoals eigenschappen in bestanden. 
@@ -167,7 +169,7 @@ Deze app heeft toegang om geheimen uit Azure Key Vault op te halen. De starter-a
 
 ## <a name="build-sample-spring-boot-app-with-java-sdk"></a>Voorbeeld van Spring Boot-app bouwen met Java SDK
 
-Met dit voorbeeld kunt u geheimen van Azure Key Vault instellen en ophalen. De [Azure Key Vault Secret-clientbibliotheek voor Java](/java/api/overview/azure/security-keyvault-secrets-readme?preserve-view=true&view=azure-java-stablelibrary) biedt ondersteuning voor Azure Active Directory-tokenverificatie in de Azure SDK. Deze bevat een reeks **TokenCredential** -implementaties die kunnen worden gebruikt om Azure SDK-clients te bouwen ter ondersteuning van AAD-tokenverificatie.
+Met dit voorbeeld kunt u geheimen van Azure Key Vault instellen en ophalen. De [Azure Key Vault Secret-clientbibliotheek voor Java](/java/api/overview/azure/security-keyvault-secrets-readme?preserve-view=true&view=azure-java-stablelibrary) biedt ondersteuning voor Azure Active Directory-tokenverificatie in de Azure SDK. Deze bevat een reeks **TokenCredential**-implementaties die kunnen worden gebruikt om Azure SDK-clients te bouwen ter ondersteuning van AAD-tokenverificatie.
 
 Met de Azure Key Vault Secret-clientbibliotheek kunt u op een veilige manier tokens, wachtwoorden, API-sleutels en andere geheimen opslaan en de toegang daartoe beheren. De bibliotheek biedt bewerkingen voor het maken, ophalen, bijwerken, verwijderen, opschonen, het maken en herstellen van back-ups en het weergeven van de geheimen en de bijbehorende versies.
 
@@ -184,7 +186,7 @@ Met de Azure Key Vault Secret-clientbibliotheek kunt u op een veilige manier tok
     vim src/main/resources/application.properties
     ```
 
-    Als u beheerde identiteit voor Azure Spring Cloud-apps wilt gebruiken, voegt u eigenschappen met de volgende inhoud toe aan *src/main/resources/application.properties* .
+    Als u beheerde identiteit voor Azure Spring Cloud-apps wilt gebruiken, voegt u eigenschappen met de volgende inhoud toe aan *src/main/resources/application.properties*.
 
     ```
     azure.keyvault.enabled=true

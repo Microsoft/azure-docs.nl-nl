@@ -3,17 +3,17 @@ title: Azure Defender voor SQL - de voordelen en functies
 description: Meer informatie over de voordelen en functies van Azure Defender voor SQL.
 author: memildin
 ms.author: memildin
-ms.date: 9/22/2020
+ms.date: 11/17/2020
 ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 220f9fffd6c0f9b959230964a9ec79f4e209bd54
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: b4f046339c027a5ae66f7f7510d8d2b311abd6df
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372525"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94693457"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Inleiding tot Azure Defender voor SQL
 
@@ -25,7 +25,7 @@ Azure Defender voor SQL bevat twee Azure Defender-abonnementen die het [gegevens
 |----|:----|
 |Releasestatus:|**Azure Defender voor Azure SQL-databaseservers** - algemeen beschikbaar<br>**Azure Defender voor SQL-servers op computers** - preview<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
 |Prijzen:|De twee abonnementen die **Azure Defender voor SQL** vormen, worden gefactureerd zoals wordt weergegeven op [de pagina met prijzen](security-center-pricing.md)|
-|Beveiligde SQL-versies:|Azure SQL Database <br>Azure SQL Managed Instance<br>Azure Synapse Analytics (voorheen SQL DW)<br>SQL Server (alle ondersteunde versies)|
+|Beveiligde SQL-versies:|Azure SQL Database <br>Azure SQL Managed Instance<br>Toegewezen SQL-pool in Azure Synapse (voorheen SQL DW)<br>SQL Server (alle ondersteunde versies)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov|
 |||
 
@@ -36,7 +36,7 @@ Azure Defender voor SQL bevat twee Azure Defender-abonnementen die het [gegevens
 - **Azure Defender voor Azure SQL-databaseservers** beveiligt:
   - [Azure SQL Database](../azure-sql/database/sql-database-paas-overview.md)
   - [Azure SQL Managed Instance](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md)
-  - [Azure Synapse Analytics](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md)
+  - [Toegewezen SQL-pool in Azure Synapse](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md#dedicated-sql-pool-in-azure-synapse)
 
 - **Azure Defender voor SQL-servers op computers (preview)** breidt de beveiliging voor uw systeemeigen Azure SQL-servers uit om hybride omgevingen volledig te ondersteunen en SQL-servers (alle ondersteunde versies) die worden gehost in Azure, andere cloudomgevingen en zelfs on-premises machines te beveiligen
 
@@ -55,8 +55,8 @@ Deze twee abonnementen bevatten functionaliteit voor het identificeren en beperk
 Beveiligingswaarschuwingen worden geactiveerd in het geval van:
 
 - **Potentiële SQL-injectieaanvallen** - inclusief beveiligingsproblemen die worden gedetecteerd bij het genereren van een mislukte SQL-instructie in de database
-- **Afwijkende databasetoegangs- en querypatronen** , bijvoorbeeld een abnormaal groot aantal mislukte aanmeldingspogingen met andere referenties (een poging tot een brute-force aanval)
-- **Verdachte databaseactiviteit** , bijvoorbeeld een wijziging in de opslagbestemming voor het exporteren van een SQL-import- en-exportbewerking
+- **Afwijkende databasetoegangs- en querypatronen**, bijvoorbeeld een abnormaal groot aantal mislukte aanmeldingspogingen met andere referenties (een poging tot een brute-force aanval)
+- **Verdachte databaseactiviteit**, bijvoorbeeld een wijziging in de opslagbestemming voor het exporteren van een SQL-import- en-exportbewerking
 
 Waarschuwingen bevatten details over het incident waardoor ze zijn geactiveerd evenals aanbevelingen voor het onderzoeken en oplossen van bedreigingen.
 

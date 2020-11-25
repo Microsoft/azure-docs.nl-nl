@@ -15,12 +15,12 @@ ms.date: 03/02/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ce3819ff1f9b0c61f7738f90ff17c2798fe888b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2b78562bc3590bdf5b15e4061ba23e1284b07c16
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88642109"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94835489"
 ---
 # <a name="centralize-application-management-with-azure-ad"></a>Toepassingsbeheer centraliseren met Microsoft Azure AD
 
@@ -42,8 +42,8 @@ U hoeft geen wachtwoorden meer te beheren. Beveilig de toegang tot alle resource
 
 |Functie  | Beschrijving | Aanbeveling |
 |---------|---------|---------|
-|Eenmalige aanmelding|Op standaarden gebaseerde federatieve SSO met betrouwbare industriële standaarden.|Gebruik altijd [SAML/OIDC](https://docs.microsoft.com/azure/active-directory/manage-apps/isv-choose-multi-tenant-federation) om SSO in te schakelen wanneer uw toepassing dit ondersteunt.|
-|Mijn apps|Bied uw gebruikers een eenvoudige hub voor de detectie van en toegang tot al hun toepassingen. Stel hen in staat om productiever te zijn met selfservice mogelijkheden, zoals het aanvragen van toegang tot apps en groepen, of het beheren van toegang tot resources namens anderen.| Implementeer [Mijn apps](https://docs.microsoft.com/azure/active-directory/manage-apps/access-panel-deployment-plan) in uw organisatie wanneer u uw apps hebt geïntegreerd met Azure AD voor SSO.|
+|Eenmalige aanmelding|Op standaarden gebaseerde federatieve SSO met betrouwbare industriële standaarden.|Gebruik altijd [SAML/OIDC](../develop/v2-howto-app-gallery-listing.md) om SSO in te schakelen wanneer uw toepassing dit ondersteunt.|
+|Mijn apps|Bied uw gebruikers een eenvoudige hub voor de detectie van en toegang tot al hun toepassingen. Stel hen in staat om productiever te zijn met selfservice mogelijkheden, zoals het aanvragen van toegang tot apps en groepen, of het beheren van toegang tot resources namens anderen.| Implementeer [Mijn apps](./access-panel-deployment-plan.md) in uw organisatie wanneer u uw apps hebt geïntegreerd met Azure AD voor SSO.|
 
 ## <a name="scenario-2-automate-provisioning-and-deprovisioning"></a>Scenario 2: Inrichting en het ongedaan maken van de inrichting automatiseren 
 
@@ -53,7 +53,7 @@ Voor de meeste toepassingen moet een gebruiker in de toepassing zijn ingericht v
 
 |Functie  |Beschrijving|Aanbeveling |
 |---------|---------|---------|
-|SCIM-inrichting|[SCIM](https://aka.ms/SCIMOverview) is een industriële best practice voor het automatiseren van de gebruikersinrichting. Elke toepassing die compatibel is met SCIM, kan worden geïntegreerd met Azure AD. U kunt automatisch gebruikersaccounts maken, bijwerken en verwijderen zonder CSV-bestanden, aangepaste scripts of on-premises oplossingen te moeten onderhouden.|Bekijk de groeiende lijst met [vooraf geïntegreerde](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list) apps in de galerie met Azure AD-apps|
+|SCIM-inrichting|[SCIM](https://aka.ms/SCIMOverview) is een industriële best practice voor het automatiseren van de gebruikersinrichting. Elke toepassing die compatibel is met SCIM, kan worden geïntegreerd met Azure AD. U kunt automatisch gebruikersaccounts maken, bijwerken en verwijderen zonder CSV-bestanden, aangepaste scripts of on-premises oplossingen te moeten onderhouden.|Bekijk de groeiende lijst met [vooraf geïntegreerde](../saas-apps/tutorial-list.md) apps in de galerie met Azure AD-apps|
 |Microsoft Graph|Maak gebruik van het volle potentieel van de gegevens waarmee Azure AD uw toepassing kan verrijken met de gegevens die de toepassing nodig heeft.|Maak gebruik van [Microsoft Graph](https://developer.microsoft.com/graph/) om gegevens op te halen uit het Microsoft-ecosysteem. |
 
 
@@ -62,18 +62,18 @@ Identiteit is de spil voor beveiliging. Als een identiteit wordt gecompromitteer
 
 |Functie  |Beschrijving| Aanbeveling |
 |---------|---------| ---------|
-|Azure MFA|Azure Multi-Factor Authentication (MFA) is een Microsoft-oplossing voor verificatie in twee stappen. Met behulp van door een beheerder goedgekeurde verificatiemethoden, helpt Azure MFA met het beveiligen van de toegang tot uw gegevens en toepassingen, terwijl tegelijkertijd aan de behoefte aan een eenvoudige aanmeldingsprocedure wordt voldaan.| [Schakel MFA](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/all-your-creds-are-belong-to-us/ba-p/855124) in voor uw gebruikers.  |
-|Voorwaardelijke toegang|Met voorwaardelijke toegang kunt u geautomatiseerde beslissingen voor toegangsbeheer implementeren voor wie toegang heeft tot uw cloud-apps op basis van voorwaarden.| Bekijk de [standaardinstellingen voor beveiliging](https://docs.microsoft.com/azure/active-directory/fundamentals/concept-fundamentals-security-defaults) en de [algemene beleidsinstellingen](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-policy-common) die klanten gebruiken. | 
-|Identiteitsbeveiliging|Identity Protection maakt gebruik van de informatie die Microsoft heeft verkregen dankzij zijn positie in organisaties met Azure AD, in de consumentenwereld met Microsoft-accounts en in gaming met Xbox om uw gebruikers te beschermen. Microsoft analyseert 6.500.000.000.000 signalen per dag om bedreigingen te identificeren en klanten ertegen te beveiligen.|Schakel het [standaardbeleid voor identiteitsbeveiliging](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-policies) in dat door onze service wordt geleverd. | 
+|Azure AD MFA|Azure AD MFA (Multi-Factor Authentication) is een Microsoft-oplossing voor verificatie in twee stappen. Met behulp van door een beheerder goedgekeurde verificatiemethoden, helpt Azure AD MFA met het beveiligen van de toegang tot uw gegevens en toepassingen, terwijl tegelijkertijd aan de behoefte aan een eenvoudige aanmeldingsprocedure wordt voldaan.| [Schakel MFA](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/all-your-creds-are-belong-to-us/ba-p/855124) in voor uw gebruikers.  |
+|Voorwaardelijke toegang|Met voorwaardelijke toegang kunt u geautomatiseerde beslissingen voor toegangsbeheer implementeren voor wie toegang heeft tot uw cloud-apps op basis van voorwaarden.| Bekijk de [standaardinstellingen voor beveiliging](../fundamentals/concept-fundamentals-security-defaults.md) en de [algemene beleidsinstellingen](../conditional-access/concept-conditional-access-policy-common.md) die klanten gebruiken. | 
+|Identiteitsbeveiliging|Identity Protection maakt gebruik van de informatie die Microsoft heeft verkregen dankzij zijn positie in organisaties met Azure AD, in de consumentenwereld met Microsoft-accounts en in gaming met Xbox om uw gebruikers te beschermen. Microsoft analyseert 6.500.000.000.000 signalen per dag om bedreigingen te identificeren en klanten ertegen te beveiligen.|Schakel het [standaardbeleid voor identiteitsbeveiliging](../identity-protection/concept-identity-protection-policies.md) in dat door onze service wordt geleverd. | 
 
 ## <a name="scenario-4-govern-access-to-your-applications"></a>Scenario 4: Toegang tot uw toepassingen beheren
 Met Identity Governance kunnen organisaties een balans vinden tussen productiviteit: hoe snel hebben personen toegang tot de toepassingen die ze nodig hebben, bijvoorbeeld wanneer ze deel gaan uitmaken van mijn organisatie? En veiligheid: hoe moet de toegang in de loop van de tijd worden aangepast, bijvoorbeeld als gevolg van wijzigingen in de werknemersstatus van die persoon? 
 
 |Functie  |Beschrijving|Aanbeveling |
 |---------|---------| ---------|
-|ELM|Rechtenbeheer van Azure AD kan gebruikers binnen en buiten uw organisatie helpen de toegang tot hun toepassingen op efficiëntere wijze te beheren.| Sta niet-beheerders toe om de toegang tot hun toepassingen te beheren met [toegangspakketten](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-access-package-first).|
-|Toegangsbeoordelingen|De toegang van gebruikers tot apps kan regelmatig worden herzien om te controleren of nog steeds enkel de juiste mensen toegang hebben.| [Beoordeel de toegang](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview) tot uw meest gevoelige toepassingen. |
-|Log Analytics|Genereer rapporten over wie toegang heeft tot welke toepassingen en sla ze op in het SIEM-hulpprogramma van uw voorkeur, om gegevens tussen gegevensbronnen en in de loop van de tijd naast elkaar te leggen.| Schakel [logboekanalyse](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-analyze-activity-logs-log-analytics) in en stel waarschuwingen in voor kritieke gebeurtenissen met betrekking tot uw toepassingen. |
+|ELM|Rechtenbeheer van Azure AD kan gebruikers binnen en buiten uw organisatie helpen de toegang tot hun toepassingen op efficiëntere wijze te beheren.| Sta niet-beheerders toe om de toegang tot hun toepassingen te beheren met [toegangspakketten](../governance/entitlement-management-access-package-first.md).|
+|Toegangsbeoordelingen|De toegang van gebruikers tot apps kan regelmatig worden herzien om te controleren of nog steeds enkel de juiste mensen toegang hebben.| [Beoordeel de toegang](../governance/access-reviews-overview.md) tot uw meest gevoelige toepassingen. |
+|Log Analytics|Genereer rapporten over wie toegang heeft tot welke toepassingen en sla ze op in het SIEM-hulpprogramma van uw voorkeur, om gegevens tussen gegevensbronnen en in de loop van de tijd naast elkaar te leggen.| Schakel [logboekanalyse](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md) in en stel waarschuwingen in voor kritieke gebeurtenissen met betrekking tot uw toepassingen. |
 
 
 ## <a name="scenario-5-hybrid-secure-access"></a>Scenario 5: Hybride beveiligde toegang
@@ -81,14 +81,14 @@ Identiteit kan alleen uw besturingsvlak zijn als deze kan worden gekoppeld aan a
 
 |Functie  |Beschrijving|Aanbeveling |
 |---------|---------|---------|
-|Toepassingsproxy|De huidige werknemer wil overal, op elke plek en op elk apparaat productief kunnen zijn. Hij of zij moet toegang hebben tot SaaS-apps in de cloud en zakelijke apps on-premises. Azure AD-toepassingsproxy maakt deze robuuste toegang mogelijk zonder kostbare en complexe VPN's (virtuele particuliere netwerken) of DMZ's (gedemilitariseerde zones).|Stel [externe toegang](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) in voor uw on-premises apps. |
-|F5, Akamai, Zscaler|Met uw bestaande netwerk- en bezorgingscontroller kunt u eenvoudig verouderde toepassingen beveiligen die nog essentieel zijn voor uw bedrijfsprocessen, maar die u niet kon beveiligen voordat u met Azure AD werkte. Waarschijnlijk hebt u al alles wat u nodig hebt om deze toepassingen te beveiligen.| Gebruikt u Akamai, Citrix, F5 of Zscaler? Bekijk onze [vooraf samengestelde oplossingen](https://docs.microsoft.com/azure/active-directory/manage-apps/secure-hybrid-access). | 
+|Toepassingsproxy|De huidige werknemer wil overal, op elke plek en op elk apparaat productief kunnen zijn. Hij of zij moet toegang hebben tot SaaS-apps in de cloud en zakelijke apps on-premises. Azure AD-toepassingsproxy maakt deze robuuste toegang mogelijk zonder kostbare en complexe VPN's (virtuele particuliere netwerken) of DMZ's (gedemilitariseerde zones).|Stel [externe toegang](./application-proxy.md) in voor uw on-premises apps. |
+|F5, Akamai, Zscaler|Met uw bestaande netwerk- en bezorgingscontroller kunt u eenvoudig verouderde toepassingen beveiligen die nog essentieel zijn voor uw bedrijfsprocessen, maar die u niet kon beveiligen voordat u met Azure AD werkte. Waarschijnlijk hebt u al alles wat u nodig hebt om deze toepassingen te beveiligen.| Gebruikt u Akamai, Citrix, F5 of Zscaler? Bekijk onze [vooraf samengestelde oplossingen](./secure-hybrid-access.md). | 
 
 ## <a name="related-articles"></a>Verwante artikelen:
 
-- [Toepassingsbeheer](https://docs.microsoft.com/azure/active-directory/manage-apps/index)
-- [Toepassingsinrichting](https://docs.microsoft.com/azure/active-directory/app-provisioning/user-provisioning)
-- [Hybride beveiligde toegang](https://docs.microsoft.com/azure/active-directory/manage-apps/secure-hybrid-access)
-- [Identiteitsbeheer](https://docs.microsoft.com/azure/active-directory/governance/identity-governance-overview)
-- [Microsoft-identiteitsplatform](https://docs.microsoft.com/azure/active-directory/develop/v2-overview)
-- [Identiteitsbeveiliging](https://docs.microsoft.com/azure/active-directory/conditional-access/index)
+- [Toepassingsbeheer](./index.yml)
+- [Toepassingsinrichting](../app-provisioning/user-provisioning.md)
+- [Hybride beveiligde toegang](./secure-hybrid-access.md)
+- [Identiteitsbeheer](../governance/identity-governance-overview.md)
+- [Microsoft-identiteitsplatform](../develop/v2-overview.md)
+- [Identiteitsbeveiliging](../conditional-access/index.yml)

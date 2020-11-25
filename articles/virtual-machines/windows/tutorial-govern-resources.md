@@ -1,6 +1,6 @@
 ---
 title: Zelfstudie - Virtuele machines beheren met PowerShell
-description: In deze zelfstudie leert u hoe u Azure PowerShell gebruikt voor het beheren van virtuele Azure-machines door RBAC, beleid, vergrendelingen en tags toe te passen
+description: In deze zelfstudie leert u hoe u Azure PowerShell gebruikt voor het beheren van virtuele Azure-machines door Azure-RBAC, beleid, vergrendelingen en tags toe te passen
 author: tfitzmac
 ms.service: virtual-machines-windows
 ms.workload: infrastructure
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/05/2018
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: 723eaeb6eb8946473b31b447e817a0a3b696f1cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 393606eb4211131b2b530e3900746e5024321aa3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87926566"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844247"
 ---
 # <a name="tutorial-learn-about-windows-virtual-machine-management-with-azure-powershell"></a>Zelfstudie: Meer informatie over het beheren van virtuele Windows-machines met Azure PowerShell
 
@@ -39,7 +39,7 @@ New-AzResourceGroup -Name myResourceGroup -Location EastUS
 
 De resourcegroep is momenteel leeg.
 
-## <a name="role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer
+## <a name="azure-role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer voor Azure
 
 U wilt er zeker van zijn dat gebruikers in uw organisatie het juiste toegangsniveau tot deze resources hebben. U wilt gebruikers geen onbeperkte toegang verlenen, maar u moet er ook voor zorgen dat ze hun werk kunnen doen. Met [Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](../../role-based-access-control/overview.md) kunt u beheren welke gebruikers gemachtigd zijn specifieke acties binnen een bepaald bereik uit te voeren.
 

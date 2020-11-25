@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 10/16/2020
+ms.date: 11/11/2020
 ms.author: aahi
-ms.openlocfilehash: 3bc2d339ade7dade3cf3be6e63e150c77d3c44b4
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 87e6ad488438ae28467f6e904fbb57f7ca5448ff
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94366754"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94518172"
 ---
 # <a name="how-to-detect-sentiment-using-the-text-analytics-api"></a>Procedure: Sentiment detecteren met behulp van de Text Analytics API
 
@@ -40,7 +40,7 @@ Sentimentanalyse ondersteunt een breed scala aan talen, met meer in preview-vers
 
 In Sentimentanalyse v3 worden sentimentlabels toegepast op tekst, die worden geretourneerd op zins- en documentniveau. Elk label heeft ook een betrouwbaarheidsscore. 
 
-De labels zijn *positief* , *negatief* en *neutraal*. Op documentniveau kan ook het *gemengde* sentimentlabel worden geretourneerd. Het sentiment van het document wordt hieronder bepaald:
+De labels zijn *positief*, *negatief* en *neutraal*. Op documentniveau kan ook het *gemengde* sentimentlabel worden geretourneerd. Het sentiment van het document wordt hieronder bepaald:
 
 | Sentiment in zin                                                                            | Geretourneerd documentlabel |
 |-----------------------------------------------------------------------------------------------|-------------------------|
@@ -78,9 +78,9 @@ De documenten mogen niet meer dan 5.120 tekens per document bevatten. Een verzam
 
 Maak een POST-aanvraag. Gebruik [Postman](text-analytics-how-to-call-api.md) of de **API-testconsole** in de volgende referentiekoppelingen om snel een aanvraag te structureren en verzenden. 
 
-#### <a name="version-31-preview1"></a>[Versie 3.1-preview.1](#tab/version-3-1)
+#### <a name="version-31-preview2"></a>[Versie 3.1-preview.2](#tab/version-3-1)
 
-[Referentie voor Sentimentanalyse v3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/Sentiment)
+[Referentie voor Sentimentanalyse v3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-2/operations/Sentiment)
 
 #### <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
@@ -93,15 +93,15 @@ Maak een POST-aanvraag. Gebruik [Postman](text-analytics-how-to-call-api.md) of 
 Stel het HTTPS-eindpunt voor sentimentanalyse in met behulp van een Text Analytics-resource in Azure of een geïnstantieerde [Text Analytics-container](text-analytics-how-to-install-containers.md). In de aanvraag moet u de juiste URL opnemen voor de versie die u wilt gebruiken. Bijvoorbeeld:
 
 > [!NOTE]
-> U vindt de sleutel en het eindpunt voor uw Text Analytics-resource in Azure Portal. U vindt deze op de **Quickstart** -pagina van de resource, onder **Resourcebeheer**. 
+> U vindt de sleutel en het eindpunt voor uw Text Analytics-resource in Azure Portal. U vindt deze op de **Quickstart**-pagina van de resource, onder **Resourcebeheer**. 
 
-#### <a name="version-31-preview1"></a>[Versie 3.1-preview.1](#tab/version-3-1)
+#### <a name="version-31-preview2"></a>[Versie 3.1-preview.2](#tab/version-3-1)
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/sentiment`
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/sentiment`
 
 Als u meninganalyseresultaten wenst, moet u de parameter `opinionMining=true` toevoegen. Bijvoorbeeld:
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/sentiment?opinionMining=true`
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/sentiment?opinionMining=true`
 
 Deze parameter is standaard ingesteld op `false`. 
 
@@ -142,7 +142,7 @@ Sentimentanalyse retourneert een sentimentlabel en een betrouwbaarheidsscore voo
 
 Uitvoer wordt onmiddellijk geretourneerd. U kunt de resultaten streamen naar een toepassing die JSON accepteert of de uitvoer op het lokale systeem opslaan als een bestand. Vervolgens importeert u de uitvoerput in een toepassing waarin u de gegevens kunt sorteren, doorzoeken en bewerken. Vanwege meertalige en Emoji-ondersteuning kan het antwoord tekstverschuivingen bevatten. Zie [Verschuivingen verwerken](../concepts/text-offsets.md) voor meer informatie.
 
-#### <a name="version-31-preview1"></a>[Versie 3.1-preview.1](#tab/version-3-1)
+#### <a name="version-31-preview2"></a>[Versie 3.1-preview.2](#tab/version-3-1)
 
 ### <a name="sentiment-analysis-v31-example-response"></a>Voorbeeld van antwoord van Sentimentanalyse v3.1
 

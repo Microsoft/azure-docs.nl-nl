@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/16/2020
 ms.author: sebansal
-ms.openlocfilehash: 2d981e902f829eb0fa8283b6a38ae376a780bcc9
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 591d71e8cd6af2801540f5a1a41ad88b1f538e81
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289752"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844485"
 ---
 # <a name="tutorial-configure-certificate-auto-rotation-in-key-vault"></a>Zelfstudie: Automatische rotatie van certificaten in Key Vault configureren
 
@@ -41,7 +41,7 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
 
 ## <a name="create-a-vault"></a>Een kluis maken
 
-Maak een sleutelkluis of selecteer een bestaande kluis om bewerkingen in uit te voeren (raadpleeg [Stappen om een sleutelkluis te maken](../secrets/quick-create-portal.md)). In het voorbeeld is de naam van de sleutelkluis **Voorbeeldkluis**.
+Maak een Azure-sleutelkluis met [Azure Portal](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) of [Azure PowerShell](../general/quick-create-powershell.md). In het voorbeeld is de naam van de sleutelkluis **Voorbeeldkluis**.
 
 ![Uitvoer nadat de sleutelkluis is gemaakt](../media/certificates/tutorial-import-cert/vault-properties.png)
 

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: bf8fe68c28457fd01704762e537fe259a96a6bce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d6fb23d7325347a1b27165d3e9bc3bf33797682
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87116227"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95994350"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>De gegevens stroom van het wacht woord voor de resource-eigenaar configureren in Azure Active Directory B2C met behulp van een aangepast beleid
 
@@ -60,7 +60,7 @@ Voer de stappen in aan de [slag met aangepast beleid in azure Active Directory B
     </ClaimsSchema>
     ```
 
-3. Voeg na **ClaimsSchema**een **ClaimsTransformations** -element en de onderliggende elementen toe aan het **BuildingBlocks** -element:
+3. Voeg na **ClaimsSchema** een **ClaimsTransformations** -element en de onderliggende elementen toe aan het **BuildingBlocks** -element:
 
     ```xml
     <ClaimsTransformations>
@@ -219,7 +219,7 @@ Voer de stappen in aan de [slag met aangepast beleid in azure Active Directory B
     ```
 
 7. Selecteer op de pagina **aangepaste beleids regels** in uw Azure AD B2C-Tenant de optie **beleid uploaden**.
-8. Schakel **het beleid overschrijven als dit bestaat**in en selecteer vervolgens het *TrustFrameworkExtensions.xml* bestand.
+8. Schakel **het beleid overschrijven als dit bestaat** in en selecteer vervolgens het *TrustFrameworkExtensions.xml* bestand.
 9. Klik op **Uploaden**.
 
 ## <a name="create-a-relying-party-file"></a>Een Relying Party-bestand maken
@@ -240,14 +240,14 @@ Werk vervolgens het Relying Party bestand bij dat de door u gemaakte gebruikers 
     ```
 
 5. Selecteer op de pagina **aangepaste beleids regels** in uw Azure AD B2C-Tenant de optie **beleid uploaden**.
-6. Schakel **het beleid overschrijven als dit bestaat**in en selecteer vervolgens het *ROPC_Auth.xml* bestand.
+6. Schakel **het beleid overschrijven als dit bestaat** in en selecteer vervolgens het *ROPC_Auth.xml* bestand.
 7. Klik op **Uploaden**.
 
 ## <a name="test-the-policy"></a>Het beleid testen
 
 Gebruik uw favoriete API-ontwikkelings toepassing om een API-aanroep te genereren en Bekijk het antwoord op fout opsporing van uw beleid. Maak een aanroep zoals dit voor beeld met de volgende informatie als hoofd tekst van de POST-aanvraag:
 
-`https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/B2C_1_ROPC_Auth/oauth2/v2.0/token`
+`https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/B2C_1A_ROPC_Auth/oauth2/v2.0/token`
 
 - Vervang `<tenant-name>` door de naam van uw Azure AD B2C-tenant.
 - Vervang door `B2C_1A_ROPC_Auth` de volledige naam van het beleid voor wachtwoord referenties van uw resource-eigenaar.
@@ -269,7 +269,7 @@ Gebruik uw favoriete API-ontwikkelings toepassing om een API-aanroep te generere
 De werkelijke POST-aanvraag ziet er ongeveer uit als in het volgende voor beeld:
 
 ```https
-POST /<tenant-name>.onmicrosoft.com/oauth2/v2.0/token?B2C_1_ROPC_Auth HTTP/1.1
+POST /<tenant-name>.onmicrosoft.com/oauth2/v2.0/token?B2C_1A_ROPC_Auth HTTP/1.1
 Host: <tenant-name>.b2clogin.com
 Content-Type: application/x-www-form-urlencoded
 
@@ -292,7 +292,7 @@ Een geslaagde reactie met offline toegang lijkt op het volgende voor beeld:
 
 Een POST-aanroep maken zoals deze wordt weer gegeven. Gebruik de informatie in de volgende tabel als hoofd tekst van de aanvraag:
 
-`https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/B2C_1_ROPC_Auth/oauth2/v2.0/token`
+`https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/B2C_1A_ROPC_Auth/oauth2/v2.0/token`
 
 - Vervang `<tenant-name>` door de naam van uw Azure AD B2C-tenant.
 - Vervang door `B2C_1A_ROPC_Auth` de volledige naam van het beleid voor wachtwoord referenties van uw resource-eigenaar.

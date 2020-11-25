@@ -5,14 +5,14 @@ ms.subservice: B2C
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: mimart
-ms.openlocfilehash: f941f67105227b3973386b015344d5fa787c3485
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8d8ffe8c1802a5cf67b7dc2b0fb071b572d76e8
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84317791"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994351"
 ---
-Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](https://aka.ms/b2cappregtraining).
+Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](../articles/active-directory-b2c/app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 
@@ -25,7 +25,7 @@ Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuw
 1. Noteer de **Toepassings-id (client)** voor gebruik in een latere stap.
 1. Selecteer **Verificatie** onder **Beheren**.
 1. Selecteer **De nieuwe ervaring proberen** (indien weergegeven).
-1. Onder **standaard client type**selecteert u **Ja** om de toepassing als een open bare client te behandelen. Deze instelling is vereist voor de ROPC-stroom.
+1. Onder **standaard client type** selecteert u **Ja** om de toepassing als een open bare client te behandelen. Deze instelling is vereist voor de ROPC-stroom.
 1. Selecteer **Opslaan**.
 1. Selecteer in het menu links de optie **manifest** om de manifest editor te openen. 
 1. Stel het kenmerk **oauth2AllowImplicitFlow** in op *True*:

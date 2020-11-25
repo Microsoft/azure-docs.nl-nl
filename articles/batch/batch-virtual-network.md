@@ -5,11 +5,11 @@ ms.topic: how-to
 ms.date: 06/26/2020
 ms.custom: seodec18
 ms.openlocfilehash: cb5cda16cd9405f0cbe91a3f88be7dc3f582d21b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86142766"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993415"
 ---
 # <a name="create-an-azure-batch-pool-in-a-virtual-network"></a>Een Azure Batch groep maken in een virtueel netwerk
 
@@ -35,15 +35,15 @@ Als u wilt toestaan dat reken knooppunten veilig communiceren met andere virtuel
 
 ## <a name="create-a-pool-with-a-vnet-in-the-azure-portal"></a>Een pool maken met een VNet in de Azure Portal
 
-Wanneer u uw VNet hebt gemaakt en hieraan een subnet hebt toegewezen, kunt u een batch-pool met dat VNet maken. Volg deze stappen om een groep te maken op basis van de Azure Portal: 
+Wanneer u uw VNet hebt gemaakt en hieraan een subnet hebt toegewezen, kunt u een batch-pool met dat VNet maken. Volg deze stappen om een groep te maken op basis van de Azure Portal: 
 
 1. Ga in Azure Portal naar uw Batch-account. Dit account moet zich in hetzelfde abonnement en dezelfde regio bevinden als de resource groep die het VNet bevat dat u wilt gebruiken.
 2. Selecteer in het venster **instellingen** aan de linkerkant de menu opdracht **groepen** .
 3. Selecteer in het venster **groepen** de optie **toevoegen**.
 4. Selecteer in het venster **groep toevoegen** de optie die u wilt gebruiken in de vervolg keuzelijst **afbeeldings type** .
 5. Selecteer de juiste **Uitgever/aanbieding/SKU** voor uw aangepaste installatie kopie.
-6. Geef de overige vereiste instellingen op, zoals de **knooppunt grootte**, het **doel toegewezen knoop punten**en **knoop punten met lage prioriteit**, evenals de gewenste optionele instellingen.
-7. Selecteer in **Virtual Network**het virtuele netwerk en het subnet dat u wilt gebruiken.
+6. Geef de overige vereiste instellingen op, zoals de **knooppunt grootte**, het **doel toegewezen knoop punten** en **knoop punten met lage prioriteit**, evenals de gewenste optionele instellingen.
+7. Selecteer in **Virtual Network** het virtuele netwerk en het subnet dat u wilt gebruiken.
 
    ![Groep toevoegen met virtueel netwerk](./media/batch-virtual-network/add-vnet-pool.png)
 

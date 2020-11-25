@@ -8,22 +8,41 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: 43ee7272066dbd89e7c0053d51ba039b83fb494f
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 2977946b2e1f37aa356ee075d2caac237170df0f
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363813"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "95993328"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>De Text Analytics aanroepen REST API
 
-Aanroepen naar de **Text Analytics-API** zijn http post/Get-aanroepen, die u in elke taal kunt formuleren. In dit artikel gebruiken we REST en [postman](https://www.postman.com/downloads/) om de belangrijkste concepten te demonstreren.
+In dit artikel gebruiken we de Text Analytics REST API en [postman](https://www.postman.com/downloads/) om de belangrijkste concepten te demonstreren. De API biedt verschillende synchrone en asynchrone eind punten voor het gebruik van de functies van de service. 
 
-Elke aanvraag moet uw toegangs sleutel en een HTTP-eind punt bevatten. Met het eind punt geeft u de regio op die u hebt gekozen tijdens de registratie, de service-URL en een resource die wordt gebruikt in de aanvraag: `sentiment` , `keyphrases` , en `languages` `entities` . 
+## <a name="using-the-api-asynchronously"></a>De API asynchroon gebruiken
 
-Intrekken dat Text Analytics stateless is, zodat er geen gegevensassets zijn om te beheren. Uw tekst wordt geüpload, geanalyseerd na ontvangst en de resultaten worden direct naar de aanroepende toepassing geretourneerd.
+Vanaf v 3.1-Preview. 3 biedt de Text Analytics-API twee asynchrone eind punten: 
+
+* `/analyze`Met het eind punt voor Text Analytics kunt u dezelfde set tekst documenten met meerdere tekst analyse functies in één API-aanroep analyseren. Voor het gebruik van meerdere functies moet u echter voor elke bewerking afzonderlijke API-aanroepen maken. Houd rekening met deze mogelijkheid wanneer u grote sets documenten wilt analyseren met meer dan één Text Analytics-functie.
+
+* Het `/health` eind punt voor Text Analytics status, waarmee relevante medische gegevens uit klinische documenten kunnen worden opgehaald en gelabeld.  
+
+Zie de onderstaande tabel om te zien welke functies asynchroon kunnen worden gebruikt. Houd er rekening mee dat er slechts enkele functies kunnen worden aangeroepen vanuit het `/analyze` eind punt. 
+
+| Functie | Synchroon | Asynchroon |
+|--|--|--|
+| Taaldetectie | ✔ |  |
+| Sentimentanalyse | ✔ |  |
+| Meninganalyse | ✔ |  |
+| Sleuteltermextractie | ✔ | ✔* |
+| Herkenning van benoemde entiteiten (inclusief PII en PHI) | ✔ | ✔* |
+| Text Analytics voor status (container) | ✔ |  |
+| Text Analytics voor status (API) |  | ✔  |
+
+`*` -Wordt asynchroon aangeroepen door het `/analyze` eind punt.
+
 
 [!INCLUDE [text-analytics-api-references](../includes/text-analytics-api-references.md)]
 
@@ -31,15 +50,24 @@ Intrekken dat Text Analytics stateless is, zodat er geen gegevensassets zijn om 
 
 ## <a name="prerequisites"></a>Vereisten
 
-[!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
+
+> [!NOTE]
+> Als u de eind punten wilt gebruiken, hebt u een Text Analytics resource met een [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) Standard (S) nodig `/analyze` `/health` .
+
+1.  Ga eerst naar de [Azure Portal](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) en maak een nieuwe Text Analytics resource als u er nog geen hebt. Kies de prijs categorie Standard (S) als u de `/analyze` eind punten wilt gebruiken `/health` .
+
+2.  Selecteer de regio die u wilt gebruiken voor het eind punt.
+
+3.  Maak de Text Analytics resource en ga naar de Blade sleutels en eind punt aan de linkerkant van de pagina. Kopieer de sleutel die u later wilt gebruiken wanneer u de Api's aanroept. U voegt dit later toe als waarde voor de `Ocp-Apim-Subscription-Key` koptekst.
+
 
 <a name="json-schema"></a>
 
-## <a name="json-schema-definition"></a>Definitie van JSON-schema
+## <a name="api-request-format"></a>Indeling van API-aanvraag
 
-De invoer moet JSON zijn in ongestructureerde tekst. XML wordt niet ondersteund. Het schema is eenvoudig, bestaande uit de elementen die in de volgende lijst worden beschreven. 
+#### <a name="synchronous"></a>[Synchroon](#tab/synchronous)
 
-U kunt op dit moment dezelfde documenten verzenden voor alle Text Analytics bewerkingen: sentiment, sleutel woord groep, taal detectie en entiteits identificatie. (Het schema is waarschijnlijk in de toekomst afhankelijk van elke analyse.)
+De indeling voor API-aanvragen is hetzelfde voor alle synchrone bewerkingen. Documenten worden in een JSON-object ingediend als onbewerkte ongestructureerde tekst. XML wordt niet ondersteund. Het JSON-schema bestaat uit de elementen die hieronder worden beschreven.
 
 | Element | Geldige waarden | Vereist? | Gebruik |
 |---------|--------------|-----------|-------|
@@ -47,8 +75,7 @@ U kunt op dit moment dezelfde documenten verzenden voor alle Text Analytics bewe
 |`text` | Ongestructureerde onbewerkte tekst, Maxi maal 5.120 tekens. | Vereist | Voor taal detectie kan tekst in elke taal worden weer gegeven. Voor sentiment analyse, extractie van sleutel zinnen en Entiteits-ID moet de tekst in een [ondersteunde taal](../language-support.md)worden gesteld. |
 |`language` | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) -code van 2 tekens voor een [ondersteunde taal](../language-support.md) | Varieert | Vereist voor sentiment analyse, extractie van sleutel zinnen en entiteits koppeling; optioneel voor taal detectie. Er is geen fout als u deze uitsluit, maar de analyse verzwakt. De taal code moet overeenkomen met de `text` die u opgeeft. |
 
-Zie [Text Analytics overzicht > gegevens limieten](../overview.md#data-limits)voor meer informatie over limieten. 
-
+Hier volgt een voor beeld van een API-aanvraag voor de synchrone Text Analytics-eind punten. 
 
 ```json
 {
@@ -57,71 +84,265 @@ Zie [Text Analytics overzicht > gegevens limieten](../overview.md#data-limits)vo
       "language": "en",
       "id": "1",
       "text": "Sample text to be sent to the text analytics api."
-    },
-    {
-      "language": "en",
-      "id": "2",
-      "text": "It's incredibly sunny outside! I'm so happy."
-    },
-    {
-      "language": "en",
-      "id": "3",
-      "text": "Pike place market is my favorite Seattle attraction."
     }
   ]
 }
 ```
 
+#### <a name="analyze"></a>[Analyseren](#tab/analyze)
 
-## <a name="set-up-a-request-in-postman"></a>Een aanvraag instellen in postman
+> [!NOTE]
+> Met de nieuwste Prerelease van de Text Analytics-client bibliotheek kunt u asynchrone analyse bewerkingen aanroepen met behulp van een client object. U kunt voor beelden vinden op GitHub:
+* [C#](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics)
+* [Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/)
+* [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics)
 
-De service accepteert een aanvraag met een grootte van Maxi maal 1 MB. Als u Postman (of een ander web-API-test hulpprogramma) gebruikt, stelt u het eind punt in om de resource op te vragen die u wilt gebruiken en geeft u de toegangs sleutel op in een aanvraag header. Voor elke bewerking moet u de juiste resource toevoegen aan het eind punt. 
+Met het `/analyze` eind punt kunt u kiezen welke van de ondersteunde Text Analytics functies die u in één API-aanroep wilt gebruiken. Dit eind punt ondersteunt momenteel:
 
-1. In postman:
+* sleuteltermextractie 
+* Herkenning van benoemde entiteiten (inclusief PII en PHI)
 
-   + Kies **bericht** als aanvraag type.
-   + Plak het eind punt dat u hebt gekopieerd van de portal pagina.
-   + Voeg een resource toe.
+| Element | Geldige waarden | Vereist? | Gebruik |
+|---------|--------------|-----------|-------|
+|`displayName` | Tekenreeks | Optioneel | Wordt gebruikt als de weergave naam voor de unieke id voor de taak.|
+|`analysisInput` | Bevat onderstaand `documents` veld | Vereist | Bevat de informatie voor de documenten die u wilt verzenden. |
+|`documents` | Bevat de `id` `text` velden en onder | Vereist | Bevat informatie voor elk document dat wordt verzonden en de onbewerkte tekst van het document. |
+|`id` | Tekenreeks | Vereist | De Id's die u opgeeft, worden gebruikt voor het structureren van de uitvoer. |
+|`text` | Ongestructureerde onbewerkte tekst, Maxi maal 125.000 tekens. | Vereist | Moet in de Engelse taal worden gesteld. Dit is de enige taal die momenteel wordt ondersteund. |
+|`tasks` | Bevat de volgende Text Analytics functies: `entityRecognitionTasks` , `keyPhraseExtractionTasks` of `entityRecognitionPiiTasks` . | Vereist | Een of meer van de Text Analytics functies die u wilt gebruiken. Houd er rekening mee dat `entityRecognitionPiiTasks` een optionele `domain` para meter heeft die kan worden ingesteld op `pii` of `phi` . Als u geen waarde opgeeft, wordt het systeem standaard ingesteld op `pii` . |
+|`parameters` | Bevat de `model-version` `stringIndexType` velden en onder | Vereist | Dit veld is opgenomen in de bovenstaande functie taken die u kiest. Ze bevatten informatie over de model versie die u wilt gebruiken en het index type. |
+|`model-version` | Tekenreeks | Vereist | Geef op welke versie van het model moet worden aangeroepen dat u wilt gebruiken.  |
+|`stringIndexType` | Tekenreeks | Vereist | Geef de tekst decoder op die overeenkomt met uw programmeer omgeving.  Typen die worden ondersteund zijn `textElement_v8` (standaard), `unicodeCodePoint` , `utf16CodeUnit` . Raadpleeg het [artikel over verschuivingen van tekst](../concepts/text-offsets.md#offsets-in-api-version-31-preview) voor meer informatie.  |
+|`domain` | Tekenreeks | Optioneel | Is alleen van toepassing als een para meter voor de `entityRecognitionPiiTasks` taak en kan worden ingesteld op `pii` of `phi` . De standaard instelling is `pii` als niet opgegeven.  |
 
-   Resource-eind punten zijn als volgt (uw regio kan variëren):
+```json
+{
+    "displayName": "My Job",
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "doc1",
+                "text": "It's incredibly sunny outside! I'm so happy"
+            },
+            {
+                "id": "doc2",
+                "text": "Pike place market is my favorite Seattle attraction."
+            }
+        ]
+    },
+    "tasks": {
+        "entityRecognitionTasks": [
+            {
+                "parameters": {
+                    "model-version": "latest",
+                    "stringIndexType": "TextElements_v8"
+                }
+            }
+        ],
+        "keyPhraseExtractionTasks": [{
+            "parameters": {
+                "model-version": "latest"
+            }
+        }],
+        "entityRecognitionPiiTasks": [{
+            "parameters": {
+                "model-version": "latest"
+            }
+        }]
+    }
+}
 
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v3.0/sentiment`
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v3.0/keyPhrases`
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v3.0/languages`
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v3.0/entities/recognition/general`
+```
 
-2. Stel de drie aanvraag headers in:
+#### <a name="text-analytics-for-health"></a>[Text Analytics voor status](#tab/health)
 
-   + `Ocp-Apim-Subscription-Key`: uw toegangs sleutel, verkregen van Azure Portal.
-   + `Content-Type`: Application/JSON.
-   + `Accept`: Application/JSON.
+De indeling voor API-aanvragen voor de Text Analytics voor de status-gehoste API is hetzelfde als voor de bijbehorende container. Documenten worden in een JSON-object ingediend als onbewerkte ongestructureerde tekst. XML wordt niet ondersteund. Het JSON-schema bestaat uit de elementen die hieronder worden beschreven.  Vul het [Cognitive Services aanvraag formulier](https://aka.ms/csgate) in om toegang tot de Text Analytics voor de open bare preview van de status aan te vragen. U wordt niet gefactureerd voor Text Analytics voor het status gebruik. 
 
-   Uw aanvraag moet er ongeveer uitzien als de volgende scherm afbeelding, uitgaande van een **/keyPhrases** -resource.
+| Element | Geldige waarden | Vereist? | Gebruik |
+|---------|--------------|-----------|-------|
+|`id` |Het gegevens type is teken reeks, maar in oefen document-Id's zijn meestal gehele getallen. | Vereist | Het systeem gebruikt de Id's die u opgeeft om de uitvoer te structureren. |
+|`text` | Ongestructureerde onbewerkte tekst, Maxi maal 5.120 tekens. | Vereist | Houd er rekening mee dat er op dit moment alleen Engelse tekst wordt ondersteund. |
+|`language` | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) -code van 2 tekens voor een [ondersteunde taal](../language-support.md) | Vereist | `en`Wordt momenteel alleen ondersteund. |
 
-   ![Scherm opname van aanvraag met eind punt en kopteksten](../media/postman-request-keyphrase-1.png)
+Hier volgt een voor beeld van een API-aanvraag voor de Text Analytics voor status eindpunten. 
 
-4. Klik op **hoofd tekst** en kies **RAW** voor de indeling.
+```json
+example.json
 
-   ![Scherm opname van aanvraag met hoofdtekst instellingen](../media/postman-request-body-raw.png)
+{
+  "documents": [
+    {
+      "language": "en",
+      "id": "1",
+      "text": "Subject was administered 100mg remdesivir intravenously over a period of 120 min"
+    }
+  ]
+}
+```
 
-5. Plak een aantal JSON-documenten in een indeling die geldig is voor de beoogde analyse. Zie de volgende onderwerpen voor meer informatie over een bepaalde analyse:
+---
 
-  + [Taaldetectie](text-analytics-how-to-language-detection.md)  
-  + [Sleuteltermextractie](text-analytics-how-to-keyword-extraction.md)  
-  + [Sentimentanalyse](text-analytics-how-to-sentiment-analysis.md)  
-  + [Herkenning van entiteiten](text-analytics-how-to-entity-linking.md)  
+>[!TIP]
+> Zie het artikel [gegevens-en frequentie limieten](../concepts/data-limits.md) voor informatie over de tarieven en grootte limieten voor het verzenden van gegevens naar de Text Analytics-API.
 
 
-6. Klik op **verzenden** om de aanvraag in te dienen. Zie de sectie [gegevens limieten](../overview.md#data-limits) in het overzicht voor informatie over het aantal aanvragen dat u per minuut en seconde kunt verzenden.
+## <a name="set-up-a-request"></a>Een aanvraag instellen 
 
-   In postman wordt het antwoord in het volgende venster weer gegeven als één JSON-document met een item voor elke document-ID die in de aanvraag is opgenomen.
+Voeg in Postman (of een ander web API-test hulpprogramma) het eind punt toe voor de functie die u wilt gebruiken. Gebruik de onderstaande tabel om de juiste eindpunt indeling te vinden en vervang door `<your-text-analytics-resource>` het resource-eind punt. Bijvoorbeeld:
 
-## <a name="see-also"></a>Zie ook 
+`https://my-resource.cognitiveservices.azure.com/text/analytics/v3.0/languages`
 
- [Overzicht van Text Analytics](../overview.md)  
- [Veelgestelde vragen](../text-analytics-resource-faq.md)
+#### <a name="synchronous"></a>[Synchroon](#tab/synchronous)
 
-## <a name="next-steps"></a>Volgende stappen
+| Functie | Soort aanvraag | Resource-eind punten |
+|--|--|--|
+| Taaldetectie | POST | `<your-text-analytics-resource>/text/analytics/v3.0/languages` |
+| Sentimentanalyse | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
+| Opinie analyse | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment?opinionMining=true` |
+| Sleuteltermextractie | POST | `<your-text-analytics-resource>/text/analytics/v3.0/keyPhrases` |
+| Herkenning van benoemde entiteiten-algemeen | POST | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/general` |
+| Herkenning van benoemde entiteiten-PII | POST | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/pii` |
+| Herkenning van benoemde entiteiten-PHI | POST |  `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/pii?domain=phi` |
 
-> [!div class="nextstepaction"]
-> [Taal detecteren](text-analytics-how-to-language-detection.md)
+#### <a name="analyze"></a>[Analyseren](#tab/analyze)
+
+| Functie | Soort aanvraag | Resource-eind punten |
+|--|--|--|
+| Analyse taak verzenden | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze` |
+| Status en resultaten van de analyse ophalen | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze/jobs/<Operation-Location>` |
+
+#### <a name="text-analytics-for-health"></a>[Text Analytics voor status](#tab/health)
+
+| Functie | Soort aanvraag | Resource-eind punten |
+|--|--|--|
+| Text Analytics verzenden voor status taak  | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs` |
+| Taak status en-resultaten ophalen | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs/<Operation-Location>` |
+| Taak annuleren | DELETE | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs/<Operation-Location>` |
+
+--- 
+
+Nadat u uw eind punt hebt, in Postman (of een ander web-API-test programma):
+
+1. Kies het aanvraag type voor de functie die u wilt gebruiken.
+2. Plak het eind punt van de juiste bewerking die u wilt uit de bovenstaande tabel.
+3. Stel de drie aanvraag headers in:
+
+   + `Ocp-Apim-Subscription-Key`: uw toegangs sleutel, verkregen van Azure Portal
+   + `Content-Type`: toepassing/JSON
+   + `Accept`: toepassing/JSON
+
+    Als u postman gebruikt, moet uw aanvraag er ongeveer uitzien als de volgende scherm afbeelding, uitgaande van een `/keyPhrases` eind punt.
+    
+    ![Scherm opname van aanvraag met eind punt en kopteksten](../media/postman-request-keyphrase-1.png)
+    
+4. Kies **RAW** voor de indeling van de **hoofd tekst**
+    
+    ![Scherm opname van aanvraag met hoofdtekst instellingen](../media/postman-request-body-raw.png)
+
+5. Plak een aantal JSON-documenten in een geldige indeling. Gebruik de voor beelden in de sectie **indeling van API-aanvraag** hierboven en zie de onderstaande onderwerpen voor meer informatie en voor beelden:
+
+      + [Taaldetectie](text-analytics-how-to-language-detection.md)
+      + [Sleuteltermextractie](text-analytics-how-to-keyword-extraction.md)
+      + [Sentimentanalyse](text-analytics-how-to-sentiment-analysis.md)
+      + [Herkenning van entiteiten](text-analytics-how-to-entity-linking.md)
+
+## <a name="send-the-request"></a>De aanvraag verzenden
+
+Verzend de API-aanvraag. Als u de aanroep naar een synchroon eind punt hebt gemaakt, wordt het antwoord onmiddellijk weer gegeven als één JSON-document met een item voor elke document-ID die in de aanvraag is opgegeven.
+
+Als u de asynchrone `/analyze` of eind punten hebt aangeroepen `/health` , controleert u of u een 202-respons code hebt ontvangen. u moet het antwoord ophalen om de resultaten weer te geven:
+
+1. Zoek in de API-reactie de `Operation-Location` uit de header, waarmee de taak wordt geïdentificeerd die u naar de API hebt verzonden. 
+2. Maak een GET-aanvraag voor het eind punt dat u hebt gebruikt. Raadpleeg de [bovenstaande tabel](#set-up-a-request) voor de indeling van het eind punt en lees de [API-referentie documentatie](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/AnalyzeStatus). Bijvoorbeeld:
+
+    `https://my-resource.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/analyze/jobs/<Operation-Location>`
+
+3. Voeg het `Operation-Location` toe aan de aanvraag.
+
+4. Het antwoord is één JSON-document met een item voor elke document-ID die in de aanvraag is gegeven.
+
+## <a name="example-api-responses"></a>Voor beeld van API-antwoorden
+ 
+# <a name="synchronous"></a>[Synchroon](#tab/synchronous)
+
+De synchrone eindpunt reacties variëren, afhankelijk van het eind punt dat u gebruikt. Raadpleeg de volgende artikelen voor voorbeeld reacties.
+
++ [Taaldetectie](text-analytics-how-to-language-detection.md#step-3-view-the-results)
++ [Sleuteltermextractie](text-analytics-how-to-keyword-extraction.md#step-3-view-results)
++ [Sentimentanalyse](text-analytics-how-to-sentiment-analysis.md#view-the-results)
++ [Herkenning van entiteiten](text-analytics-how-to-entity-linking.md#view-results)
+
+# <a name="analyze"></a>[Analyseren](#tab/analyze)
+
+Als dit lukt, wordt de GET-aanvraag voor het `/analyze` eind punt een object geretourneerd dat de toegewezen taken bevat. Bijvoorbeeld `keyPhraseExtractionTasks`. Deze taken bevatten het antwoord object van de juiste Text Analytics-functie. Raadpleeg de volgende artikelen voor meer informatie.
+
++ [Sleuteltermextractie](text-analytics-how-to-keyword-extraction.md#step-3-view-results)
++ [Herkenning van entiteiten](text-analytics-how-to-entity-linking.md#view-results)
+
+
+```json
+{
+  "displayName": "My Analyze Job",
+  "jobId": "dbec96a8-ea22-4ad1-8c99-280b211eb59e_637408224000000000",
+  "lastUpdateDateTime": "2020-11-13T04:01:14Z",
+  "createdDateTime": "2020-11-13T04:01:13Z",
+  "expirationDateTime": "2020-11-14T04:01:13Z",
+  "status": "running",
+  "errors": [],
+  "tasks": {
+      "details": {
+          "name": "My Analyze Job",
+          "lastUpdateDateTime": "2020-11-13T04:01:14Z"
+      },
+      "completed": 1,
+      "failed": 0,
+      "inProgress": 2,
+      "total": 3,
+      "keyPhraseExtractionTasks": [
+          {
+              "name": "My Analyze Job",
+              "lastUpdateDateTime": "2020-11-13T04:01:14.3763516Z",
+              "results": {
+                  "inTerminalState": true,
+                  "documents": [
+                      {
+                          "id": "doc1",
+                          "keyPhrases": [
+                              "sunny outside"
+                          ],
+                          "warnings": []
+                      },
+                      {
+                          "id": "doc2",
+                          "keyPhrases": [
+                              "favorite Seattle attraction",
+                              "Pike place market"
+                          ],
+                          "warnings": []
+                      }
+                  ],
+                  "errors": [],
+                  "modelVersion": "2020-07-01"
+              }
+          }
+      ]
+  }
+}
+```
+
+# <a name="text-analytics-for-health"></a>[Text Analytics voor status](#tab/health)
+
+Zie het volgende artikel voor meer informatie over de Text Analytics voor status asynchroon API-antwoord:
+
++ [Text Analytics voor status](text-analytics-for-health.md#hosted-asynchronous-web-api-response)
+
+
+--- 
+
+## <a name="see-also"></a>Zie ook
+
+* [Overzicht van Text Analytics](../overview.md)
+* [Veelgestelde vragen](../text-analytics-resource-faq.md)</br>
+* [Text Analytics-productpagina](//go.microsoft.com/fwlink/?LinkID=759712)
+* [De Text Analytics-clientbibliotheek gebruiken](../quickstarts/text-analytics-sdk.md)
+* [Nieuwe functies](../whats-new.md)

@@ -16,11 +16,11 @@ ms.date: 01/23/2017
 ms.author: mazha
 ms.custom: devx-track-js
 ms.openlocfilehash: f5d5c7a6e1f6993b19f38db2ae846b213a1d553e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316751"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993362"
 ---
 # <a name="get-started-with-azure-cdn-development"></a>Aan de slag met Azure CDN-ontwikkeling
 > [!div class="op_single_selector"]
@@ -49,7 +49,7 @@ Maak een map voor het opslaan van uw toepassing.  Vanuit een-console met de Node
 npm init
 ```
 
-Vervolgens wordt er een reeks vragen weer gegeven om uw project te initialiseren.  Voor **ingangs punt**gebruikt deze zelf studie *app.js*.  In het volgende voor beeld ziet u de andere opties.
+Vervolgens wordt er een reeks vragen weer gegeven om uw project te initialiseren.  Voor **ingangs punt** gebruikt deze zelf studie *app.js*.  In het volgende voor beeld ziet u de andere opties.
 
 ![NPM init-uitvoer](./media/cdn-app-dev-node/cdn-npm-init.png)
 
@@ -91,7 +91,7 @@ Als *app.js* in onze editor hebt geopend, krijgen we de basis structuur van ons 
     var msRestAzure = require('ms-rest-azure');
     var cdnManagementClient = require('azure-arm-cdn');
     ```
-2. We moeten enkele constanten definiëren die door de methoden worden gebruikt.  Voeg het volgende toe.  Zorg ervoor dat u de tijdelijke aanduidingen, inclusief de ** &lt; punt haken &gt; **, vervangt door uw eigen waarden, indien nodig.
+2. We moeten enkele constanten definiëren die door de methoden worden gebruikt.  Voeg het volgende toe.  Zorg ervoor dat u de tijdelijke aanduidingen, inclusief de **&lt; punt haken &gt;**, vervangt door uw eigen waarden, indien nodig.
    
     ``` javascript
     //Tenant app constants
@@ -124,7 +124,7 @@ Als *app.js* in onze editor hebt geopend, krijgen we de basis structuur van ons 
     var cdnClient = new cdnManagementClient(credentials, subscriptionId);
     ```
    
-    Zorg ervoor dat u de items tussen ** &lt; punt haken &gt; ** vervangt door de juiste gegevens.  Voor `<redirect URI>` gebruikt u de omleidings-URI die u hebt ingevoerd bij het registreren van de toepassing in azure AD.
+    Zorg ervoor dat u de items tussen **&lt; punt haken &gt;** vervangt door de juiste gegevens.  Voor `<redirect URI>` gebruikt u de omleidings-URI die u hebt ingevoerd bij het registreren van de toepassing in azure AD.
 4. In onze Node.js-console toepassing worden enkele opdracht regel parameters toegepast.  Laten we eens controleren of er ten minste één para meter is door gegeven.
    
    ```javascript

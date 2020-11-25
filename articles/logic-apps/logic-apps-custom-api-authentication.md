@@ -7,11 +7,11 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/22/2017
 ms.openlocfilehash: 5e0dcd478c6eb6696a0e07d35d4dccddac68ac1c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80656239"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993173"
 ---
 # <a name="increase-security-for-calls-to-custom-apis-from-azure-logic-apps"></a>Verbeter de beveiliging van aanroepen naar aangepaste Api's van Azure Logic Apps
 
@@ -53,14 +53,14 @@ Uw logische app maakt gebruik van deze Azure AD-toepassings identiteit om te ver
    > [!TIP]
    > Als u wilt scha kelen tussen directory's, kiest u uw profiel en selecteert u een andere map. Of kies **overzicht**  >  **Switch Directory**.
 
-3. Kies in het menu Directory onder **beheren**de optie **app-registraties**  >  **nieuwe toepassing registreren**.
+3. Kies in het menu Directory onder **beheren** de optie **app-registraties**  >  **nieuwe toepassing registreren**.
 
    > [!TIP]
    > De lijst met app-registraties bevat standaard alle app-registraties in uw Directory. Als u alleen uw app-registraties wilt weer geven, gaat u naar het zoekvak en selecteert u **mijn apps**. 
 
    ![Nieuwe app-registratie maken](./media/logic-apps-custom-api-authentication/new-app-registration-azure-portal.png)
 
-4. Geef de identiteit van uw toepassing een naam, laat het **toepassings type** ingesteld op **Web app/API**, geef een unieke teken reeks op die is opgemaakt als een domein voor de **aanmeldings-URL**en kies **maken**.
+4. Geef de identiteit van uw toepassing een naam, laat het **toepassings type** ingesteld op **Web app/API**, geef een unieke teken reeks op die is opgemaakt als een domein voor de **aanmeldings-URL** en kies **maken**.
 
    ![Geef een naam en aanmeldings-URL op voor de toepassings-id](./media/logic-apps-custom-api-authentication/logic-app-identity-azure-portal.png)
 
@@ -74,13 +74,13 @@ Uw logische app maakt gebruik van deze Azure AD-toepassings identiteit om te ver
 
 6. Als uw toepassings-id-instellingen niet worden weer gegeven, kiest u **instellingen** of **alle instellingen**.
 
-7. Kies **sleutels**onder **API-toegang**. Geef onder **Beschrijving**een naam op voor de sleutel. Selecteer onder **verloopt**een duur voor de sleutel.
+7. Kies **sleutels** onder **API-toegang**. Geef onder **Beschrijving** een naam op voor de sleutel. Selecteer onder **verloopt** een duur voor de sleutel.
 
    De sleutel die u maakt, fungeert als het geheim of het wacht woord van de toepassings-id voor uw logische app.
 
    ![Sleutel maken voor de logische app-identiteit](./media/logic-apps-custom-api-authentication/create-logic-app-identity-key-secret-password.png)
 
-8. Kies **Opslaan**op de werk balk. Onder **waarde**wordt uw sleutel nu weer gegeven. 
+8. Kies **Opslaan** op de werk balk. Onder **waarde** wordt uw sleutel nu weer gegeven. 
 **Zorg ervoor dat u de sleutel kopieert en opslaat** voor later gebruik omdat de sleutel verborgen is wanneer u de pagina **sleutels** verlaat.
 
    Wanneer u uw logische app in deel 3 configureert, geeft u deze sleutel op als ' geheim ' of wacht woord.
@@ -103,7 +103,7 @@ U kunt deze taak uitvoeren via Azure Resource Manager met Power shell. Voer in P
 
 1. `New-AzADApplication -DisplayName "MyLogicAppID" -HomePage "http://mydomain.tld" -IdentifierUris "http://mydomain.tld" -Password $SecurePassword`
 
-1. Zorg ervoor dat u de **Tenant-id** (GUID voor uw Azure AD-Tenant), de **toepassings-id**en het wacht woord die u hebt gebruikt, kopieert.
+1. Zorg ervoor dat u de **Tenant-id** (GUID voor uw Azure AD-Tenant), de **toepassings-id** en het wacht woord die u hebt gebruikt, kopieert.
 
 Meer informatie over het [maken van een service-principal met Power shell voor toegang tot resources](../active-directory/develop/howto-authenticate-service-principal-powershell.md).
 
@@ -115,7 +115,7 @@ Als uw web-app of API-app al is geïmplementeerd, kunt u verificatie inschakelen
 
 1. Zoek en selecteer uw web-app of API-app in de [Azure Portal](https://portal.azure.com "https://portal.azure.com"). 
 
-2. Kies onder **instellingen**de optie **verificatie/autorisatie**. Schakel onder **app service verificatie**de optie verificatie **in**. Kies **Azure Active Directory**bij **verificatie providers**.
+2. Kies onder **instellingen** de optie **verificatie/autorisatie**. Schakel onder **app service verificatie** de optie verificatie **in**. Kies **Azure Active Directory** bij **verificatie providers**.
 
    ![Verificatie inschakelen](./media/logic-apps-custom-api-authentication/custom-web-api-app-authentication.png)
 
@@ -129,13 +129,13 @@ Nu moet u de client-ID en Tenant-ID vinden voor de toepassings identiteit die is
 
 **De client-ID en Tenant-ID van de toepassings identiteit zoeken voor uw web-app of API-app in de Azure Portal**
 
-1. Kies **Azure Active Directory**bij **verificatie providers**. 
+1. Kies **Azure Active Directory** bij **verificatie providers**. 
 
    ![Azure Active Directory kiezen](./media/logic-apps-custom-api-authentication/custom-api-app-identity-client-id-tenant-id.png)
 
 2. Stel op de pagina **instellingen Azure Active Directory** de **beheer modus** in op **Geavanceerd**.
 
-3. Kopieer de **client-id**en sla de GUID op voor gebruik in deel 3.
+3. Kopieer de **client-id** en sla de GUID op voor gebruik in deel 3.
 
    > [!TIP] 
    > Als de URL van de **client-id** en de **certificaat verlener** niet worden weer gegeven, vernieuwt u de Azure Portal en herhaalt u stap 1.
@@ -199,11 +199,11 @@ Open de definitie van de logische app in de code weergave, ga naar de **http-** 
 
 | Eigenschap | Vereist | Beschrijving | 
 | -------- | -------- | ----------- | 
-| tenant | Ja | De GUID voor de Azure AD-Tenant | 
-| gericht | Ja | De GUID voor de doel resource waartoe u toegang wilt krijgen, wat de client-ID is van de toepassings identiteit voor uw web-app of API-app | 
-| clientId | Ja | De GUID voor de client die toegang vraagt, de client-ID van de toepassings identiteit voor uw logische app | 
-| geheim | Ja | De sleutel of het wacht woord van de toepassings-id voor de client die het toegangs token aanvraagt | 
-| type | Ja | Het verificatie type. De waarde is voor ActiveDirectoryOAuth-verificatie `ActiveDirectoryOAuth` . | 
+| tenant | Yes | De GUID voor de Azure AD-Tenant | 
+| gericht | Yes | De GUID voor de doel resource waartoe u toegang wilt krijgen, wat de client-ID is van de toepassings identiteit voor uw web-app of API-app | 
+| clientId | Yes | De GUID voor de client die toegang vraagt, de client-ID van de toepassings identiteit voor uw logische app | 
+| geheim | Yes | De sleutel of het wacht woord van de toepassings-id voor de client die het toegangs token aanvraagt | 
+| type | Yes | Het verificatie type. De waarde is voor ActiveDirectoryOAuth-verificatie `ActiveDirectoryOAuth` . | 
 |||| 
 
 Bijvoorbeeld:
@@ -251,8 +251,8 @@ Neem de volgende eigenschappen op in de sectie **autorisatie** :
 | Eigenschap | Vereist | Beschrijving |
 | -------- | -------- | ----------- |
 | `type` | Ja | Het verificatie type. Voor TLS/SSL-client certificaten moet de waarde zijn `ClientCertificate` . |
-| `password` | Nee | Het wacht woord voor toegang tot het client certificaat (PFX-bestand) |
-| `pfx` | Ja | De met base64 gecodeerde inhoud van het client certificaat (PFX-bestand) |
+| `password` | No | Het wacht woord voor toegang tot het client certificaat (PFX-bestand) |
+| `pfx` | Yes | De met base64 gecodeerde inhoud van het client certificaat (PFX-bestand) |
 ||||
 
 <a name="basic"></a>
@@ -273,9 +273,9 @@ Neem de volgende eigenschappen op in de sectie **autorisatie** :
 
 | Eigenschap | Vereist | Beschrijving | 
 | -------- | -------- | ----------- | 
-| type | Ja | Het verificatie type dat u wilt gebruiken. Voor basis verificatie moet de waarde zijn `Basic` . | 
-| gebruikersnaam | Ja | De gebruikers naam die u wilt gebruiken voor verificatie | 
-| wachtwoord | Ja | Het wacht woord dat u wilt gebruiken voor verificatie | 
+| type | Yes | Het verificatie type dat u wilt gebruiken. Voor basis verificatie moet de waarde zijn `Basic` . | 
+| gebruikersnaam | Yes | De gebruikers naam die u wilt gebruiken voor verificatie | 
+| wachtwoord | Yes | Het wacht woord dat u wilt gebruiken voor verificatie | 
 |||| 
 
 <a name="azure-ad-code"></a>

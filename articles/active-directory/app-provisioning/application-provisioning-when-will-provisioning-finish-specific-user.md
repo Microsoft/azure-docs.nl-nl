@@ -12,11 +12,11 @@ ms.date: 09/03/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.openlocfilehash: 307a97b71fe453c89617a86a88063e60fcf28fa3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88235057"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994006"
 ---
 # <a name="check-the-status-of-user-provisioning"></a>De status van het inrichten van gebruikers controleren
 
@@ -59,7 +59,7 @@ Wanneer u automatische gebruikers inrichting met een toepassing gebruikt, worden
 
 Hoe lang het duurt voordat een bepaalde gebruiker is ingericht, hangt voornamelijk af van de vraag of uw inrichtings taak een eerste cyclus of een incrementele cyclus uitvoert.
 
-- Voor de **eerste cyclus**is de tijd van de taak afhankelijk van veel factoren, zoals het aantal gebruikers en groepen in het bereik voor inrichting en het totale aantal gebruikers en de groep in het bron systeem. De eerste synchronisatie tussen Azure AD en een app kan van 20 minuten tot enkele uren duren, afhankelijk van de grootte van de Azure AD-adres lijst en het aantal gebruikers in het bereik dat moet worden ingericht. Verderop in deze sectie vindt u een uitgebreide lijst met factoren die van invloed zijn op de prestaties van de initiële cyclus.
+- Voor de **eerste cyclus** is de tijd van de taak afhankelijk van veel factoren, zoals het aantal gebruikers en groepen in het bereik voor inrichting en het totale aantal gebruikers en de groep in het bron systeem. De eerste synchronisatie tussen Azure AD en een app kan van 20 minuten tot enkele uren duren, afhankelijk van de grootte van de Azure AD-adres lijst en het aantal gebruikers in het bereik dat moet worden ingericht. Verderop in deze sectie vindt u een uitgebreide lijst met factoren die van invloed zijn op de prestaties van de initiële cyclus.
 
 - Voor **incrementele cycli** na de eerste cyclus zijn taak tijden korter (bijvoorbeeld binnen tien minuten), omdat de inrichtings service water merken opslaat die de status van beide systemen na de eerste cyclus vertegenwoordigen, waardoor de prestaties van volgende synchronisaties worden verbeterd. De tijd van de taak is afhankelijk van het aantal wijzigingen dat is gedetecteerd in die inrichtings cyclus. Als er minder dan 5.000 gebruikers-of groepslid maatschappen worden gewijzigd, kan de taak binnen één incrementele inrichtings cyclus worden voltooid. 
 
@@ -82,7 +82,7 @@ Voor de configuratie **synchronisatie alleen gebruiker en groepen toegewezen**, 
 - Minimale minuten = 0,01 x [aantal toegewezen gebruikers, groepen en groeps leden]
 - Maxi maal minuten = 0,08 x [aantal toegewezen gebruikers, groepen en groeps leden]
 
-Samen vatting van factoren die van invloed zijn op de tijd die nodig is om een **eerste cyclus**te volt ooien:
+Samen vatting van factoren die van invloed zijn op de tijd die nodig is om een **eerste cyclus** te volt ooien:
 
 - Het totale aantal gebruikers en groepen in het bereik voor inrichting.
 

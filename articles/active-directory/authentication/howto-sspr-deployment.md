@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 06c37eaf63b79b171e5a21d807262cfb359d416c
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94838074"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994159"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Een Azure Active Directory self-service voor het opnieuw instellen van wacht woorden plannen
 
@@ -254,7 +254,7 @@ Hoewel SSPR doorgaans geen gebruikers problemen maakt, is het belang rijk om ond
 
 Om het succes van uw ondersteunings team in te scha kelen, kunt u een veelgestelde vragen maken op basis van vragen die u van uw gebruikers ontvangt. Enkele voorbeelden:
 
-| Scenario's| Beschrijving |
+| Scenario's| Description |
 | - | - |
 | De gebruiker heeft geen geregistreerde verificatie methoden beschikbaar| Een gebruiker probeert het wacht woord opnieuw in te stellen, maar heeft geen van de authenticatie methoden die ze beschikbaar hebben (voor beeld: ze hebben hun mobiele telefoon thuis verlaten en kunnen geen toegang krijgen tot e-mail) |
 | De gebruiker ontvangt geen tekst of gesprek op hun kantoor of mobiele telefoon| Een gebruiker probeert zijn identiteit te verifiëren via tekst of gesprek, maar ontvangt geen tekst/oproep. |

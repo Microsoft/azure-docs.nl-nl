@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 04/26/2018
 ms.custom: amqp, devx-track-js
 ms.openlocfilehash: 9de3f45a9d62a9d131583c133440ac8a311a468d
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151422"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993318"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-nodejs"></a>Aan de slag met IoT Hub module-identiteit en-module dubbele (Node.js)
 
@@ -193,7 +193,7 @@ In deze sectie maakt u een Node.js-app op uw gesimuleerde apparaat die de module
     });
     ```
 
-4. Voer dit nu uit met behulp van het twin.jsvan het opdracht **knooppunt **.
+4. Voer dit nu uit met behulp van het twin.jsvan het opdracht **knooppunt**.
 
    ```cmd/sh
    F:\temp\module_twin>node twin.js

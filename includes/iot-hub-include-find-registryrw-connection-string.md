@@ -9,23 +9,23 @@ ms.date: 08/07/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 3386cb51a8a728576f6615002d6154d89ca662c1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "68883767"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993300"
 ---
 <!-- This tells how to get the connection string for the registryReadWrite shared access policy of your IoT hub -->
 
 Voer de volgende stappen uit om de IoT Hub connection string voor het **registryReadWrite** -beleid op te halen:
 
-1. Selecteer **resource groepen**In het [Azure Portal](https://portal.azure.com). Selecteer de resource groep waar uw hub zich bevindt en selecteer vervolgens uw hub in de lijst met resources.
+1. Selecteer **resource groepen** In het [Azure Portal](https://portal.azure.com). Selecteer de resource groep waar uw hub zich bevindt en selecteer vervolgens uw hub in de lijst met resources.
 
 2. Selecteer in het linkerdeel venster van uw hub het beleid voor **gedeelde toegang**.
 
 3. Selecteer in de lijst met beleids regels het **registryReadWrite** -beleid.
 
-4. Onder **gedeelde toegangs sleutels**selecteert u het Kopieer pictogram voor de **verbindings reeks--primaire sleutel** en slaat u de waarde op.
+4. Onder **gedeelde toegangs sleutels** selecteert u het Kopieer pictogram voor de **verbindings reeks--primaire sleutel** en slaat u de waarde op.
 
     ![Het ophalen van de verbindingsreeks](./media/iot-hub-include-find-registryrw-connection-string/iot-hub-get-connection-vs2019.png)
 

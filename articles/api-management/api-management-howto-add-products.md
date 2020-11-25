@@ -7,11 +7,11 @@ ms.topic: tutorial
 ms.date: 09/30/2020
 ms.author: apimpm
 ms.openlocfilehash: 2f298f240d8aa7a38b42a8c78ee3c90fe3423d10
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91630554"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993547"
 ---
 # <a name="tutorial-create-and-publish-a-product"></a>Zelfstudie: Een product maken en publiceren  
 
@@ -38,7 +38,7 @@ In deze zelfstudie leert u het volgende:
 1. Selecteer in het linkernavigatievenster **Products** (Producten) >  **+ Add** (Toevoegen).
 1.  Voer in het venster **Add product** (Product toevoegen) de waarden in die in de volgende tabel worden beschreven om uw product te maken.
 
-    :::image type="content" source="media/api-management-howto-add-products/02-create-publish-product-01.png" alt-text="API Management-producten in portal":::
+    :::image type="content" source="media/api-management-howto-add-products/02-create-publish-product-01.png" alt-text="Product toevoegen in de portal":::
 
     | Naam                     | Beschrijving                                                                                                                                                                                                                                                                                                             |
     |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -80,7 +80,7 @@ Ontwikkelaars moeten zich eerst abonneren op een product om toegang tot de API t
 1. Selecteer **+ Toevoegen**.
 1. Selecteer een of meer API's en vervolgens **Select** (Selecteren).
 
-:::image type="content" source="media/api-management-howto-add-products/02-create-publish-product-02.png" alt-text="API Management-producten in portal":::
+:::image type="content" source="media/api-management-howto-add-products/02-create-publish-product-02.png" alt-text="API toevoegen aan bestaand product":::
 
 > [!TIP]
 > U kunt het abonnement van een gebruiker op een product maken of bijwerken met aangepaste abonnementssleutels via een [REST API](/rest/api/apimanagement/2019-12-01/subscription/createorupdate) of een PowerShell-opdracht.

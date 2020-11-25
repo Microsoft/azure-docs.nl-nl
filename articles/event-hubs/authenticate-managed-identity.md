@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: c6b43cc48663be28d12fa788d92286be6f47ef08
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92359880"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993530"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Een beheerde identiteit verifiëren met Azure Active Directory om toegang te krijgen tot Event Hubs bronnen
 Azure Event Hubs ondersteunt Azure Active Directory (Azure AD)-verificatie met [beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md). Beheerde identiteiten voor Azure-resources kunnen toegang tot Event Hubs resources toestaan met behulp van Azure AD-referenties van toepassingen die worden uitgevoerd in azure Virtual Machines (Vm's), functie-apps, Virtual Machine Scale Sets en andere services. Door beheerde identiteiten voor Azure-resources te gebruiken in combi natie met Azure AD-verificatie kunt u voor komen dat referenties worden opgeslagen in uw toepassingen die in de cloud worden uitgevoerd.
@@ -72,7 +72,7 @@ Zodra u de rol hebt toegewezen, heeft de webtoepassing toegang tot de Event Hubs
 3. Zorg ervoor dat SendReceive. aspx is ingesteld als het standaard document voor de web-app. 
 3. De **identiteit** voor de web-app inschakelen. 
 4. Wijs deze identiteit toe aan de **Event hubs rol gegevens eigenaar** op het niveau van de naam ruimte of het event hub niveau. 
-5. Voer de webtoepassing uit, voer de naam van de naam ruimte en Event Hub naam, een bericht in en selecteer **verzenden**. Selecteer **ontvangen**om de gebeurtenis te ontvangen. 
+5. Voer de webtoepassing uit, voer de naam van de naam ruimte en Event Hub naam, een bericht in en selecteer **verzenden**. Selecteer **ontvangen** om de gebeurtenis te ontvangen. 
 
 #### <a name="azuremessagingeventhubs-latest"></a>[Azure. Messa ging. Event hubs (meest recent)](#tab/latest)
 U kunt nu de webtoepassing starten en uw browser naar de aspx-voorbeeld pagina wijzen. U kunt de voor beeld-webtoepassing vinden waarmee gegevens worden verzonden en ontvangen van Event Hubs-resources in de [github opslag plaats](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp).

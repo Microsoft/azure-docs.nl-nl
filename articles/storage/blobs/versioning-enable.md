@@ -10,12 +10,12 @@ ms.date: 11/17/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 64ab86836989030c36ad2e8ad054c364b382af0b
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 5802070bf9b495c0e866d160d6661349369a444e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95248013"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95993738"
 ---
 # <a name="enable-and-manage-blob-versioning"></a>BLOB-versie beheer inschakelen en beheren
 
@@ -27,7 +27,7 @@ In dit artikel wordt beschreven hoe u BLOB-versie beheer in-of uitschakelt voor 
 
 ## <a name="enable-blob-versioning"></a>Blobversiebeheer inschakelen
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 BLOB-versie beheer inschakelen in de Azure Portal:
 
@@ -90,4 +90,4 @@ In het volgende code voorbeeld ziet u hoe de versie van de blobs wordt weer gege
 ## <a name="next-steps"></a>Volgende stappen
 
 - [BLOB-versie beheer](versioning-overview.md)
-- [Voorlopig verwijderen voor Azure Storage-blobs](soft-delete-overview.md)
+- [Voorlopig verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md)

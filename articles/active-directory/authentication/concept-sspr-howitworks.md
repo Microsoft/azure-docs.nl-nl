@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8fa1c2627917bfe386c488470f6a78db4c51f2ec
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363671"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994261"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>How it works: Azure AD self-service password reset (Hoe het werkt: selfservice voor wachtwoordherstel in Azure AD)
 
@@ -106,7 +106,7 @@ De volgende verificatie methoden zijn beschikbaar voor SSPR:
 
 * Meldingen via mobiele app
 * Code van mobiele app
-* Email
+* E-mail
 * Mobiele telefoon
 * Zakelijke telefoon
 * Beveiligingsvragen
@@ -182,7 +182,7 @@ Bekijk het volgende voorbeeld scenario:
 
 * Er zijn vier beheerders in een omgeving.
 * Beheerder *een* wacht woord opnieuw instellen met behulp van SSPR.
-* Beheerders *B*, *C*en *D* ontvangen een e-mail bericht met een waarschuwing voor het opnieuw instellen van het wacht woord.
+* Beheerders *B*, *C* en *D* ontvangen een e-mail bericht met een waarschuwing voor het opnieuw instellen van het wacht woord.
 
 ## <a name="on-premises-integration"></a>On-premises integratie
 

@@ -6,11 +6,11 @@ services: container-service
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.openlocfilehash: c0c1f587b4e52607e9466300f976a52874c9e5ad
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93125628"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993700"
 ---
 # <a name="best-practices-for-advanced-scheduler-features-in-azure-kubernetes-service-aks"></a>Best practices voor geavanceerde planningsfuncties in Azure Kubernetes Service (AKS)
 
@@ -36,7 +36,7 @@ De Kubernetes scheduler kan taints en verdragen gebruiken om te beperken welke w
 * Een **Taint** wordt toegepast op een knoop punt dat aangeeft dat alleen een specifiek peul kan worden gepland.
 * Vervolgens wordt er een **verdragen** toegepast op een pod waarmee de Taint van een knoop punt kunnen worden *toegestaan* .
 
-Wanneer u een pod implementeert in een AKS-cluster, plant Kubernetes alleen een Peul schema op knoop punten waar een rechts punt wordt afgestemd op de Taint. Stel dat u een knooppunt groep hebt in uw AKS-cluster voor knoop punten met GPU-ondersteuning. U definieert de naam, zoals *GPU* , vervolgens een waarde voor het plannen. Als u deze waarde instelt op geen *schema* , kan de Kubernetes scheduler geen peul plannen op het knoop punt als de pod niet de juiste verdragen definieert.
+Wanneer u een pod implementeert in een AKS-cluster, plant Kubernetes alleen een Peul schema op knoop punten waar een rechts punt wordt afgestemd op de Taint. Stel dat u een knooppunt groep hebt in uw AKS-cluster voor knoop punten met GPU-ondersteuning. U definieert de naam, zoals *GPU*, vervolgens een waarde voor het plannen. Als u deze waarde instelt op geen *schema*, kan de Kubernetes scheduler geen peul plannen op het knoop punt als de pod niet de juiste verdragen definieert.
 
 ```console
 kubectl taint node aks-nodepool1 sku=gpu:NoSchedule
@@ -79,15 +79,15 @@ Wanneer u een groep van een knoop punt bijwerkt in AKS, volgen taints en toleran
 
 - **Standaard clusters die gebruikmaken van schaal sets voor virtuele machines**
   - U kunt [een nodepool][taint-node-pool] van de AKS-API Taint, zodat er nieuwe knoop punten worden weer gegeven die API hebben opgegeven taints.
-  - We gaan ervan uit dat u een cluster met twee knoop punten *Knooppunt1* en *Knooppunt2* . U werkt de knooppunt groep bij.
-  - Er worden twee extra knoop punten gemaakt, *Knooppunt3* en *Knooppunt4* , en de taints worden respectievelijk door gegeven.
+  - We gaan ervan uit dat u een cluster met twee knoop punten *Knooppunt1* en *Knooppunt2*. U werkt de knooppunt groep bij.
+  - Er worden twee extra knoop punten gemaakt, *Knooppunt3* en *Knooppunt4*, en de taints worden respectievelijk door gegeven.
   - De oorspronkelijke *Knooppunt1* en *Knooppunt2* worden verwijderd.
 
 - **Clusters zonder ondersteuning voor schaal sets voor virtuele machines**
-  - We gaan ervan uit dat u een cluster met twee knoop punten hebt, *Knooppunt1* en *Knooppunt2* . Wanneer u een upgrade uitvoert, wordt er een extra knoop punt ( *Knooppunt3* ) gemaakt.
-  - De taints van *Knooppunt1* worden toegepast op *Knooppunt3* , waarna *Knooppunt1* wordt verwijderd.
-  - Er wordt een ander nieuw knoop punt gemaakt (met de naam *Knooppunt1* , omdat de vorige *Knooppunt1* is verwijderd) en de *Knooppunt2* taints worden toegepast op de nieuwe *Knooppunt1* . *Knooppunt2* wordt vervolgens verwijderd.
-  - In essentie *Knooppunt1* wordt *Knooppunt3* en *Knooppunt2* wordt *Knooppunt1* .
+  - We gaan ervan uit dat u een cluster met twee knoop punten hebt, *Knooppunt1* en *Knooppunt2*. Wanneer u een upgrade uitvoert, wordt er een extra knoop punt (*Knooppunt3*) gemaakt.
+  - De taints van *Knooppunt1* worden toegepast op *Knooppunt3*, waarna *Knooppunt1* wordt verwijderd.
+  - Er wordt een ander nieuw knoop punt gemaakt (met de naam *Knooppunt1*, omdat de vorige *Knooppunt1* is verwijderd) en de *Knooppunt2* taints worden toegepast op de nieuwe *Knooppunt1*. *Knooppunt2* wordt vervolgens verwijderd.
+  - In essentie *Knooppunt1* wordt *Knooppunt3* en *Knooppunt2* wordt *Knooppunt1*.
 
 Wanneer u een knooppunt groep in AKS schaalt, worden taints en verdragen niet door het ontwerp getransporteerd.
 
@@ -131,9 +131,9 @@ Zie voor meer informatie over het gebruik van knooppunt selecties de optie [peul
 
 ### <a name="node-affinity"></a>Knooppunt affiniteit
 
-Een knooppunt selectie is een eenvoudige manier om een Peul toe te wijzen aan een bepaald knoop punt. Meer flexibiliteit is beschikbaar met behulp van de *node-affiniteit* . Met knooppunt affiniteit definieert u wat er gebeurt als de pod niet met een knoop punt kan worden gevonden. U kunt *vereisen* dat Kubernetes scheduler overeenkomt met een pod met een gelabelde host. U kunt ook de voor *keur* geven aan een overeenkomst, maar toestaan dat de pod op een andere host wordt gepland als er geen overeenkomst beschikbaar is.
+Een knooppunt selectie is een eenvoudige manier om een Peul toe te wijzen aan een bepaald knoop punt. Meer flexibiliteit is beschikbaar met behulp van de *node-affiniteit*. Met knooppunt affiniteit definieert u wat er gebeurt als de pod niet met een knoop punt kan worden gevonden. U kunt *vereisen* dat Kubernetes scheduler overeenkomt met een pod met een gelabelde host. U kunt ook de voor *keur* geven aan een overeenkomst, maar toestaan dat de pod op een andere host wordt gepland als er geen overeenkomst beschikbaar is.
 
-In het volgende voor beeld wordt de affiniteit van het knoop punt ingesteld op *requiredDuringSchedulingIgnoredDuringExecution* . Voor deze affiniteit is het Kubernetes-schema vereist om een knoop punt met een overeenkomend label te gebruiken. Als er geen knoop punt beschikbaar is, moet de pod wachten tot de planning is voltooid. Als u wilt toestaan dat de pod op een ander knoop punt wordt gepland, kunt u in plaats daarvan de waarde instellen op *preferredDuringSchedulingIgnoreDuringExecution* :
+In het volgende voor beeld wordt de affiniteit van het knoop punt ingesteld op *requiredDuringSchedulingIgnoredDuringExecution*. Voor deze affiniteit is het Kubernetes-schema vereist om een knoop punt met een overeenkomend label te gebruiken. Als er geen knoop punt beschikbaar is, moet de pod wachten tot de planning is voltooid. Als u wilt toestaan dat de pod op een ander knoop punt wordt gepland, kunt u in plaats daarvan de waarde instellen op *preferredDuringSchedulingIgnoreDuringExecution*:
 
 ```yaml
 kind: Pod

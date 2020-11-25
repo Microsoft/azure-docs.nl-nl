@@ -4,11 +4,11 @@ description: Voeg implementatie-of build markeringen toe aan uw grafieken met me
 ms.topic: conceptual
 ms.date: 08/14/2020
 ms.openlocfilehash: 58f6603687838713fafbf4cd5cc3f100e22b7401
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91758180"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993717"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Aantekeningen op metrische grafieken in Application Insights
 
@@ -42,14 +42,14 @@ Maak een afzonderlijke API-sleutel voor elk van de release sjablonen van Azure p
 
 1. Open of maak in een afzonderlijk browser venster de release sjabloon waarmee de implementaties van uw Azure-pijp lijnen worden beheerd.
    
-1. Selecteer **taak toevoegen**en selecteer vervolgens de taak **aantekening van de Application Insights release** in het menu.
+1. Selecteer **taak toevoegen** en selecteer vervolgens de taak **aantekening van de Application Insights release** in het menu.
    
    ![Selecteer taak toevoegen en selecteer aantekening van Application Insights versie.](./media/annotations/3-add-task.png)
 
    > [!NOTE]
    > De taak release annotatie ondersteunt momenteel alleen op Windows gebaseerde agents. het kan niet worden uitgevoerd op Linux-, macOS-of andere typen agents.
    
-1. Plak onder **toepassings-id**de Application Insights-id die u hebt gekopieerd via het tabblad **API-toegang** .
+1. Plak onder **toepassings-id** de Application Insights-id die u hebt gekopieerd via het tabblad **API-toegang** .
    
    ![De Application Insights-ID plakken](./media/annotations/4-paste-app-id.png)
    
@@ -57,13 +57,13 @@ Maak een afzonderlijke API-sleutel voor elk van de release sjablonen van Azure p
    
    ![Op het tabblad API-toegang selecteert u API-sleutel maken.](./media/annotations/5-create-api-key.png)
    
-1. Typ een beschrijving in het venster **API-sleutel maken** , selecteer **aantekeningen schrijven**en selecteer vervolgens **sleutel genereren**. Kopieer de nieuwe sleutel.
+1. Typ een beschrijving in het venster **API-sleutel maken** , selecteer **aantekeningen schrijven** en selecteer vervolgens **sleutel genereren**. Kopieer de nieuwe sleutel.
    
    ![Typ een beschrijving in het venster API-sleutel maken, selecteer aantekeningen schrijven en selecteer vervolgens sleutel genereren.](./media/annotations/6-create-api-key.png)
    
 1. Selecteer in het venster release-sjabloon, op het tabblad **variabelen** , de optie **toevoegen** om een definitie van een variabele te maken voor de nieuwe API-sleutel.
 
-1. Plak onder **naam**, Enter `ApiKey` en onder **waarde**de API-sleutel die u hebt gekopieerd op het tabblad **API-toegang** .
+1. Plak onder **naam**, Enter `ApiKey` en onder **waarde** de API-sleutel die u hebt gekopieerd op het tabblad **API-toegang** .
    
    ![Ga naar het tabblad Azure DevOps-variabelen, selecteer toevoegen, noem de variabele ApiKey en plak de API-sleutel onder waarde.](./media/annotations/7-paste-api-key.png)
    
@@ -89,7 +89,7 @@ In elke werkmap query op basis van een logboek waarbij de visualisatie tijd op d
 
 ![Scherm afbeelding van het deel venster werkmappen met een query op basis van een tijd reeks-logboeken met annotaties](./media/annotations/workbooks-annotations.png)
 
-Ga naar **Geavanceerde instellingen** en selecteer **aantekeningen weer geven**om aantekeningen in uw werkmap in te scha kelen.
+Ga naar **Geavanceerde instellingen** en selecteer **aantekeningen weer geven** om aantekeningen in uw werkmap in te scha kelen.
 
 ![Scherm opname van het menu Geavanceerde instellingen met de woorden Toon aantekeningen gemarkeerd met een vinkje naast de instelling om deze in te scha kelen.](./media/annotations/workbook-show-annotations.png)
 

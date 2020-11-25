@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 46c27fa2073ea1178fdf01ea3cbf96fe86954a6a
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 3fc2475569765116d46a175629f25d9d49634942
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95255121"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993943"
 ---
 Dit artikel bevat een overzicht van de versies en functies van Azure Active Directory Connect Provisioning agent die is uitgebracht. Het Azure AD-team werkt de inrichtings agent regel matig bij met nieuwe functies en functionaliteit. De inrichtings agent wordt automatisch bijgewerkt wanneer er een nieuwe versie wordt uitgebracht. 
 
@@ -14,12 +14,12 @@ Micro soft biedt direct ondersteuning voor de nieuwste versie van de agent en é
 
 ### <a name="release-status"></a>Status van de release
 
-Van november XX, 2020: uitgebracht voor downloaden
+23 november 2020: uitgebracht voor downloaden
 
 ### <a name="new-features-and-improvements"></a>Nieuwe functies en verbeteringen
 
 * Ondersteuning voor [gMSA](../articles/active-directory/cloud-provisioning/how-to-prerequisites.md#group-managed-service-accounts)
-* Ondersteuning voor groepen tot een grootte van 1500 leden (tijdens Delta synchronisatie)
+* Ondersteuning voor groepen tot een grootte van minder dan 1500 leden tijdens incrementele of Delta synchronisatie cyclus. Dit is van toepassing wanneer u het filter groeps bereik gebruikt
 * Ondersteuning voor grote groepen met een grootte van Maxi maal 15.000
 * Verbeteringen van de initiële synchronisatie
 * Geavanceerde uitgebreide logboek registratie

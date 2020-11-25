@@ -4,11 +4,11 @@ description: In dit artikel vindt u informatie over het oplossen van problemen m
 ms.topic: troubleshooting
 ms.date: 07/15/2019
 ms.openlocfilehash: 4ae4142652d9d38d5bf384e5a10d6eeb7e3cc608
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900375"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993836"
 ---
 # <a name="troubleshoot-the-microsoft-azure-recovery-services-mars-agent"></a>Problemen met de Microsoft Azure Recovery Services-agent (MARS) oplossen
 
@@ -41,7 +41,7 @@ U wordt aangeraden het volgende te controleren voordat u begint met het oplossen
 
 | Oorzaak | Aanbevolen acties |
 | ---     | ---    |
-| **De kluis referenties zijn niet geldig** <br/> <br/> Kluis referentie bestanden zijn mogelijk beschadigd, zijn mogelijk verlopen of hebben een andere bestands extensie dan *. vaultCredentials* . (Het is bijvoorbeeld mogelijk dat ze meer dan 48 uur vóór de registratie tijd hebben gedownload.)| [Down load nieuwe referenties](backup-azure-file-folder-backup-faq.md#where-can-i-download-the-vault-credentials-file) van de Recovery Services kluis op de Azure Portal. Voer vervolgens de volgende stappen uit: <ul><li> Als u MARS al hebt geïnstalleerd en geregistreerd, opent u de MMC-console Microsoft Azure Backup Agent. Selecteer vervolgens **server registreren** in het deel venster **acties** om de registratie met de nieuwe referenties te volt ooien. <br/> <li> Als de nieuwe installatie mislukt, probeert u opnieuw te installeren met de nieuwe referenties.</ul> **Opmerking** : als er meerdere kluis referentie bestanden zijn gedownload, is alleen het meest recente bestand geldig voor de volgende 48 uur. U wordt aangeraden een nieuw kluis referentie bestand te downloaden.
+| **De kluis referenties zijn niet geldig** <br/> <br/> Kluis referentie bestanden zijn mogelijk beschadigd, zijn mogelijk verlopen of hebben een andere bestands extensie dan *. vaultCredentials*. (Het is bijvoorbeeld mogelijk dat ze meer dan 48 uur vóór de registratie tijd hebben gedownload.)| [Down load nieuwe referenties](backup-azure-file-folder-backup-faq.md#where-can-i-download-the-vault-credentials-file) van de Recovery Services kluis op de Azure Portal. Voer vervolgens de volgende stappen uit: <ul><li> Als u MARS al hebt geïnstalleerd en geregistreerd, opent u de MMC-console Microsoft Azure Backup Agent. Selecteer vervolgens **server registreren** in het deel venster **acties** om de registratie met de nieuwe referenties te volt ooien. <br/> <li> Als de nieuwe installatie mislukt, probeert u opnieuw te installeren met de nieuwe referenties.</ul> **Opmerking**: als er meerdere kluis referentie bestanden zijn gedownload, is alleen het meest recente bestand geldig voor de volgende 48 uur. U wordt aangeraden een nieuw kluis referentie bestand te downloaden.
 | **De registratie van Proxy Server/firewall is geblokkeerd** <br/>of <br/>**Geen Internet verbinding** <br/><br/> Als uw computer of proxy server beperkte internet connectiviteit heeft en u geen toegang hebt tot de benodigde Url's, mislukt de registratie.| Voer de volgende stappen uit:<br/> <ul><li> Werk samen met uw IT-team om te controleren of het systeem verbinding heeft met internet.<li> Als u geen proxy server hebt, moet u ervoor zorgen dat de proxy optie niet is geselecteerd bij het registreren van de agent. [Controleer de proxy-instellingen](#verifying-proxy-settings-for-windows).<li> Als u een firewall/proxy server hebt, moet u samen werken met uw netwerk team om ervoor te zorgen dat deze Url's en IP-adressen toegang hebben:<br/> <br> **URL's**<br> `www.msftncsi.com` <br> .Microsoft.com <br> .WindowsAzure.com <br> .microsoftonline.com <br> .windows.net <br>**IP-adressen**<br>  20.190.128.0/18 <br>  40.126.0.0/18 <br/></ul></ul>Probeer de registratie opnieuw uit te voeren nadat u de voor gaande stappen voor probleem oplossing hebt door lopen.<br></br> Als uw verbinding via Azure ExpressRoute is, controleert u of de instellingen zijn geconfigureerd zoals beschreven in [ondersteuning voor Azure ExpressRoute](backup-support-matrix-mars-agent.md#azure-expressroute-support).
 | **Registratie wordt geblokkeerd door antivirus software** | Als er antivirus software op de server is geïnstalleerd, voegt u de benodigde uitsluitings regels toe aan de antivirus scan voor deze bestanden en mappen: <br/><ul> <li> CBengine.exe <li> CSC.exe<li> De map Scratch. De standaard locatie is C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch. <li> De bin-map in C:\Program Files\Microsoft Azure Recovery Services Agent\Bin.
 
@@ -57,7 +57,7 @@ U wordt aangeraden het volgende te controleren voordat u begint met het oplossen
 1. Voer `psexec -i -s "c:\Program Files\Internet Explorer\iexplore.exe"` uit vanaf een opdracht prompt met verhoogde bevoegdheid.
 
    Met deze opdracht wordt Internet Explorer geopend.
-1. Ga naar **hulpprogram ma's**  >  **Internet opties**  >  **verbindingen**  >  **LAN-instellingen** .
+1. Ga naar **hulpprogram ma's**  >  **Internet opties**  >  **verbindingen**  >  **LAN-instellingen**.
 1. Controleer de proxy-instellingen voor het systeem account.
 1. Als er geen proxy is geconfigureerd en er proxy Details worden opgegeven, verwijdert u de details.
 1. Als er een proxy is geconfigureerd en de proxy Details onjuist zijn, controleert u of de **Proxy-IP** en **poort** gegevens juist zijn.
@@ -73,7 +73,7 @@ U wordt aangeraden het volgende te controleren voordat u begint met het oplossen
 
 | Fout  | Mogelijke oorzaak | Aanbevolen acties |
 | ---     | ---     | ---    |
-| <br /><ul><li>De Microsoft Azure Recovery-Service agent kan geen verbinding maken met Microsoft Azure Backup. (ID: 100050) Controleer uw netwerk instellingen en zorg ervoor dat u verbinding kunt maken met internet.<li>(407) proxy-verificatie vereist. |De verbinding wordt geblokkeerd door een proxy. |  <ul><li>Ga in Internet Explorer naar **extra**  >  **Internet opties**  >  **beveiliging**  >  **Internet** . Selecteer **aangepast niveau** en schuif omlaag naar de sectie voor het **downloaden van bestanden** . Selecteer **Inschakelen** .<p>Mogelijk moet u ook [url's en IP-adressen](install-mars-agent.md#verify-internet-access) toevoegen aan uw vertrouwde sites in Internet Explorer.<li>Wijzig de instellingen voor het gebruik van een proxy server. Geef vervolgens de proxyserver gegevens op.<li> Als uw computer beperkte internet toegang heeft, moet u ervoor zorgen dat de firewall-instellingen op de computer of de proxy deze [url's en IP-adressen](install-mars-agent.md#verify-internet-access)toestaan. <li>Als er antivirus software op de server is geïnstalleerd, sluit u deze bestanden uit via de antivirus scan: <ul><li>CBEngine.exe (in plaats van dpmra.exe).<li>CSC.exe (gerelateerd aan .NET Framework). Er is een CSC.exe voor elke .NET Framework versie die op de server is geïnstalleerd. Sluit CSC.exe-bestanden uit voor alle versies van .NET Framework op de betreffende server. <li>De Scratch-map of cache locatie. <br>De standaard locatie voor de Scratch-map of het pad naar de cache is C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch.<li>De bin-map in C:\Program Files\Microsoft Azure Recovery Services Agent\Bin.
+| <br /><ul><li>De Microsoft Azure Recovery-Service agent kan geen verbinding maken met Microsoft Azure Backup. (ID: 100050) Controleer uw netwerk instellingen en zorg ervoor dat u verbinding kunt maken met internet.<li>(407) proxy-verificatie vereist. |De verbinding wordt geblokkeerd door een proxy. |  <ul><li>Ga in Internet Explorer naar **extra**  >  **Internet opties**  >  **beveiliging**  >  **Internet**. Selecteer **aangepast niveau** en schuif omlaag naar de sectie voor het **downloaden van bestanden** . Selecteer **Inschakelen**.<p>Mogelijk moet u ook [url's en IP-adressen](install-mars-agent.md#verify-internet-access) toevoegen aan uw vertrouwde sites in Internet Explorer.<li>Wijzig de instellingen voor het gebruik van een proxy server. Geef vervolgens de proxyserver gegevens op.<li> Als uw computer beperkte internet toegang heeft, moet u ervoor zorgen dat de firewall-instellingen op de computer of de proxy deze [url's en IP-adressen](install-mars-agent.md#verify-internet-access)toestaan. <li>Als er antivirus software op de server is geïnstalleerd, sluit u deze bestanden uit via de antivirus scan: <ul><li>CBEngine.exe (in plaats van dpmra.exe).<li>CSC.exe (gerelateerd aan .NET Framework). Er is een CSC.exe voor elke .NET Framework versie die op de server is geïnstalleerd. Sluit CSC.exe-bestanden uit voor alle versies van .NET Framework op de betreffende server. <li>De Scratch-map of cache locatie. <br>De standaard locatie voor de Scratch-map of het pad naar de cache is C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch.<li>De bin-map in C:\Program Files\Microsoft Azure Recovery Services Agent\Bin.
 
 ## <a name="the-specified-vault-credential-file-cannot-be-used-as-it-is-not-downloaded-from-the-vault-associated-with-this-server"></a>Het opgegeven kluis referentie bestand kan niet worden gebruikt omdat het niet wordt gedownload vanuit de kluis die is gekoppeld aan deze server
 
@@ -117,13 +117,13 @@ U wordt aangeraden het volgende te controleren voordat u begint met het oplossen
 
 | Fout  | Mogelijke oorzaken | Aanbevolen acties |
 |---------|---------|---------|
-|<br />De activering is niet voltooid. De huidige bewerking is mislukt vanwege een interne service fout [0x1FC07]. Probeer de bewerking na enige tijd opnieuw. Neem contact op met Microsoft Ondersteuning als het probleem zich blijft voordoen.     | <li> De map Scratch bevindt zich op een volume dat niet genoeg ruimte heeft. <li> De Scratch-map is onjuist verplaatst. <li> Het bestand OnlineBackup. KEK ontbreekt.         | <li>Voer een upgrade uit naar de [meest recente versie](https://aka.ms/azurebackup_agent) van de Mars-agent.<li>Verplaats de Scratch-map of cache locatie naar een volume met een vrije ruimte tussen 5% en 10% van de totale grootte van de back-upgegevens. Raadpleeg de stappen in [Veelgestelde vragen over het maken van back-ups van bestanden en mappen](./backup-azure-file-folder-backup-faq.md#manage-the-backup-cache-folder)om de cache locatie correct te verplaatsen.<li> Zorg ervoor dat het bestand OnlineBackup. KEK aanwezig is. <br>*De standaard locatie voor de Scratch-map of het pad naar de cache is C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch* .        |
+|<br />De activering is niet voltooid. De huidige bewerking is mislukt vanwege een interne service fout [0x1FC07]. Probeer de bewerking na enige tijd opnieuw. Neem contact op met Microsoft Ondersteuning als het probleem zich blijft voordoen.     | <li> De map Scratch bevindt zich op een volume dat niet genoeg ruimte heeft. <li> De Scratch-map is onjuist verplaatst. <li> Het bestand OnlineBackup. KEK ontbreekt.         | <li>Voer een upgrade uit naar de [meest recente versie](https://aka.ms/azurebackup_agent) van de Mars-agent.<li>Verplaats de Scratch-map of cache locatie naar een volume met een vrije ruimte tussen 5% en 10% van de totale grootte van de back-upgegevens. Raadpleeg de stappen in [Veelgestelde vragen over het maken van back-ups van bestanden en mappen](./backup-azure-file-folder-backup-faq.md#manage-the-backup-cache-folder)om de cache locatie correct te verplaatsen.<li> Zorg ervoor dat het bestand OnlineBackup. KEK aanwezig is. <br>*De standaard locatie voor de Scratch-map of het pad naar de cache is C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch*.        |
 
 ## <a name="encryption-passphrase-not-correctly-configured"></a>Wachtwoordzin voor versleuteling niet correct geconfigureerd
 
 | Fout  | Mogelijke oorzaken | Aanbevolen acties |
 |---------|---------|---------|
-| <br />Fout 34506. De wachtwoordzin voor versleuteling die op deze computer is opgeslagen, is niet op de juiste wijze geconfigureerd.    | <li> De map Scratch bevindt zich op een volume dat niet genoeg ruimte heeft. <li> De Scratch-map is onjuist verplaatst. <li> Het bestand OnlineBackup. KEK ontbreekt.        | <li>Voer een upgrade uit naar de [meest recente versie](https://aka.ms/azurebackup_agent) van de Mars-agent.<li>Verplaats de Scratch-map of cache locatie naar een volume met een vrije ruimte tussen 5% en 10% van de totale grootte van de back-upgegevens. Raadpleeg de stappen in [Veelgestelde vragen over het maken van back-ups van bestanden en mappen](./backup-azure-file-folder-backup-faq.md#manage-the-backup-cache-folder)om de cache locatie correct te verplaatsen.<li> Zorg ervoor dat het bestand OnlineBackup. KEK aanwezig is. <br>*De standaard locatie voor de Scratch-map of het pad naar de cache is C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch* .         |
+| <br />Fout 34506. De wachtwoordzin voor versleuteling die op deze computer is opgeslagen, is niet op de juiste wijze geconfigureerd.    | <li> De map Scratch bevindt zich op een volume dat niet genoeg ruimte heeft. <li> De Scratch-map is onjuist verplaatst. <li> Het bestand OnlineBackup. KEK ontbreekt.        | <li>Voer een upgrade uit naar de [meest recente versie](https://aka.ms/azurebackup_agent) van de Mars-agent.<li>Verplaats de Scratch-map of cache locatie naar een volume met een vrije ruimte tussen 5% en 10% van de totale grootte van de back-upgegevens. Raadpleeg de stappen in [Veelgestelde vragen over het maken van back-ups van bestanden en mappen](./backup-azure-file-folder-backup-faq.md#manage-the-backup-cache-folder)om de cache locatie correct te verplaatsen.<li> Zorg ervoor dat het bestand OnlineBackup. KEK aanwezig is. <br>*De standaard locatie voor de Scratch-map of het pad naar de cache is C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch*.         |
 
 ## <a name="backups-dont-run-according-to-schedule"></a>Back-ups worden niet volgens schema uitgevoerd
 
@@ -131,11 +131,11 @@ Als geplande back-ups niet automatisch worden geactiveerd, maar hand matige back
 
 - Zorg ervoor dat het back-upschema van Windows Server geen conflict veroorzaakt met het back-upschema voor Azure-bestanden en-mappen.
 
-- Zorg ervoor dat de online back-upstatus is ingesteld op **inschakelen** . Voer de volgende stappen uit om de status te controleren:
+- Zorg ervoor dat de online back-upstatus is ingesteld op **inschakelen**. Voer de volgende stappen uit om de status te controleren:
 
-  1. In taak planner vouwt u **micro soft** uit en selecteert u **Online Backup** .
+  1. In taak planner vouwt u **micro soft** uit en selecteert u **Online Backup**.
   1. Dubbel klik op **micro soft-OnlineBackup** en ga naar het tabblad **Triggers** .
-  1. Controleer of de status is ingesteld op **ingeschakeld** . Als dat niet het geval is, selecteert u **bewerken** , selecteert u **ingeschakeld** en selecteert u **OK** .
+  1. Controleer of de status is ingesteld op **ingeschakeld**. Als dat niet het geval is, selecteert u **bewerken**, selecteert u **ingeschakeld** en selecteert u **OK**.
 
 - Zorg ervoor dat het gebruikers account dat is geselecteerd voor het uitvoeren van de taak, de groep **systeem** of **lokale beheerders** op de server is. Als u het gebruikers account wilt controleren, gaat u naar het tabblad **Algemeen** en controleert u de **beveiligings** opties.
 
@@ -173,7 +173,7 @@ De huidige bewerking is mislukt vanwege een interne service fout "resource niet 
 
 ## <a name="job-could-not-be-started-as-another-job-was-in-progress"></a>De taak kan niet worden gestart omdat een andere taak werd uitgevoerd
 
-Als u een waarschuwings bericht ziet in de taak geschiedenis van de **Mars-console** , met de tekst ' de taak  >  **Job history** kan niet worden gestart omdat er een andere taak werd uitgevoerd ', kan dit worden veroorzaakt door een dubbel exemplaar van de taak die wordt geactiveerd door de taak planner.
+Als u een waarschuwings bericht ziet in de taak geschiedenis van de **Mars-console**, met de tekst ' de taak  >  **Job history** kan niet worden gestart omdat er een andere taak werd uitgevoerd ', kan dit worden veroorzaakt door een dubbel exemplaar van de taak die wordt geactiveerd door de taak planner.
 
 ![De taak kan niet worden gestart omdat een andere taak werd uitgevoerd](./media/backup-azure-mars-troubleshoot/job-could-not-be-started.png)
 
@@ -182,11 +182,11 @@ Ga als volgt te werk om het probleem op te lossen:
 1. Start de module taak planner door *taskschd. msc* te typen in het venster uitvoeren
 1. Navigeer in het linkerdeel venster naar de **bibliotheek** van  ->  **micro soft**  ->  **OnlineBackup** voor de taak planner.
 1. Voor elke taak in deze bibliotheek dubbelklikt u op de taak om eigenschappen te openen en voert u de volgende stappen uit:
-    1. Schakel over naar het tabblad **Instellingen** .
+    1. Schakel over naar het tabblad **Instellingen**.
 
          ![Tabblad Instellingen](./media/backup-azure-mars-troubleshoot/settings-tab.png)
 
-    1. Wijzig de optie voor **als de taak al wordt uitgevoerd, de volgende regel van toepassing** is. Kies **geen nieuw exemplaar starten** .
+    1. Wijzig de optie voor **als de taak al wordt uitgevoerd, de volgende regel van toepassing** is. Kies **geen nieuw exemplaar starten**.
 
          ![Wijzig de regel zodat deze geen nieuw exemplaar start](./media/backup-azure-mars-troubleshoot/change-rule.png)
 
@@ -196,23 +196,23 @@ Het herstel volume kan ook na enkele minuten niet worden gekoppeld Azure Backup.
 
 1. Annuleer het koppel proces als het enkele minuten actief is.
 
-2. Controleer of u de meest recente versie van de back-upagent hebt. Als u de versie wilt controleren, selecteert u in het deel venster **acties** van de Mars-console de optie **About Microsoft Azure Recovery Services agent** . Controleer of het **versie** nummer gelijk is aan of hoger is dan de versie die in [dit artikel](https://go.microsoft.com/fwlink/?linkid=229525)wordt vermeld. Selecteer deze koppeling om [de nieuwste versie te downloaden](https://go.microsoft.com/fwLink/?LinkID=288905).
+2. Controleer of u de meest recente versie van de back-upagent hebt. Als u de versie wilt controleren, selecteert u in het deel venster **acties** van de Mars-console de optie **About Microsoft Azure Recovery Services agent**. Controleer of het **versie** nummer gelijk is aan of hoger is dan de versie die in [dit artikel](https://go.microsoft.com/fwlink/?linkid=229525)wordt vermeld. Selecteer deze koppeling om [de nieuwste versie te downloaden](https://go.microsoft.com/fwLink/?LinkID=288905).
 
-3. Ga naar **Apparaatbeheer** -  >  **Opslag controllers** en zoek **micro soft iSCSI-initiator** . Als u het zoekt, gaat u rechtstreeks naar stap 7.
+3. Ga naar **Apparaatbeheer**-  >  **Opslag controllers** en zoek **micro soft iSCSI-initiator**. Als u het zoekt, gaat u rechtstreeks naar stap 7.
 
-4. Als u de micro soft iSCSI initiator-service niet kunt vinden, kunt u een vermelding vinden onder **Apparaatbeheer**  >  **Opslag controllers** met de naam **Onbekend apparaat** met hardware-id **ROOT\ISCSIPRT** .
+4. Als u de micro soft iSCSI initiator-service niet kunt vinden, kunt u een vermelding vinden onder **Apparaatbeheer**  >  **Opslag controllers** met de naam **Onbekend apparaat** met hardware-id **ROOT\ISCSIPRT**.
 
-5. Klik met de rechter muisknop op **Onbekend apparaat** en selecteer **update stuur programma software** .
+5. Klik met de rechter muisknop op **Onbekend apparaat** en selecteer **update stuur programma software**.
 
-6. Werk het stuur programma bij door de optie te selecteren om  **automatisch te zoeken naar bijgewerkte stuur programma-software** . Deze update moet het **onbekende apparaat** wijzigen in **micro soft iSCSI-initiator** :
+6. Werk het stuur programma bij door de optie te selecteren om  **automatisch te zoeken naar bijgewerkte stuur programma-software**. Deze update moet het **onbekende apparaat** wijzigen in **micro soft iSCSI-initiator**:
 
     ![Scherm opname van Azure Backup Apparaatbeheer, waarbij opslag controllers zijn gemarkeerd](./media/backup-azure-restore-windows-server/UnknowniSCSIDevice.png)
 
-7. Ga naar **Task Manager** de  >  micro soft iSCSI-initiator service **(lokaal)** voor taak beheer  >  **Microsoft iSCSI Initiator Service** :
+7. Ga naar **Task Manager** de  >  micro soft iSCSI-initiator service **(lokaal)** voor taak beheer  >  **Microsoft iSCSI Initiator Service**:
 
     ![Scherm opname van Azure Backup taak beheer, met Services (lokaal) gemarkeerd](./media/backup-azure-restore-windows-server/MicrosoftInitiatorServiceRunning.png)
 
-8. Start de micro soft iSCSI initiator-service opnieuw. Als u dit wilt doen, klikt u met de rechter muisknop op de service en selecteert u **stoppen** . Klik nogmaals met de rechter muisknop en selecteer **starten** .
+8. Start de micro soft iSCSI initiator-service opnieuw. Als u dit wilt doen, klikt u met de rechter muisknop op de service en selecteert u **stoppen**. Klik nogmaals met de rechter muisknop en selecteer **starten**.
 
 9. Herstel opnieuw proberen met behulp van [direct terugzetten](backup-instant-restore-capability.md).
 

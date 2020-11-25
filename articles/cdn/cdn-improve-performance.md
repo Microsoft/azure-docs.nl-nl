@@ -15,11 +15,11 @@ ms.topic: how-to
 ms.date: 02/28/2018
 ms.author: allensu
 ms.openlocfilehash: ceed62d466627d6a23554229bd6f4b96c674c7e9
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148757"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993666"
 ---
 # <a name="improve-performance-by-compressing-files-in-azure-cdn"></a>De prestaties verbeteren door bestanden in Azure CDN te comprimeren
 Bestands compressie is een eenvoudige en efficiënte methode om de snelheid van de bestands overdracht te verbeteren en de prestaties van de pagina belasting te verhogen door de grootte van een bestand te verkleinen voordat het wordt verzonden vanaf de-server. Bestands compressie kan de bandbreedte kosten verlagen en biedt uw gebruikers een meer reactie tijd.
@@ -42,7 +42,7 @@ De standaard-en Premium-CDN-laag bieden dezelfde compressie functionaliteit, maa
 
 ### <a name="standard-cdn-profiles"></a>Standaard CDN-profielen 
 > [!NOTE]
-> Deze sectie is van toepassing op **Azure CDN Standard van micro soft**, **Azure CDN Standard van Verizon**en **Azure CDN Standard van Akamai** Profiles.
+> Deze sectie is van toepassing op **Azure CDN Standard van micro soft**, **Azure CDN Standard van Verizon** en **Azure CDN Standard van Akamai** Profiles.
 > 
 > 
 
@@ -88,7 +88,7 @@ De standaard-en Premium-CDN-laag bieden dezelfde compressie functionaliteit, maa
     De compressie opties worden weer gegeven.
 
     ![Opties voor compressie van CDN-bestand](./media/cdn-file-compression/cdn-compress-files.png)
-3. Schakel compressie in door **compressie ingeschakeld**te selecteren. Voer in het vak **Bestands typen** de MIME-typen in die u wilt comprimeren als een door komma's gescheiden lijst (geen spaties).
+3. Schakel compressie in door **compressie ingeschakeld** te selecteren. Voer in het vak **Bestands typen** de MIME-typen in die u wilt comprimeren als een door komma's gescheiden lijst (geen spaties).
 
    > [!TIP]
    > Hoewel het mogelijk is, wordt het niet aanbevolen compressie toe te passen op gecomprimeerde indelingen. Bijvoorbeeld: ZIP, MP3, MP4 of JPG.
@@ -151,7 +151,7 @@ In de volgende tabellen wordt Azure CDN compressie gedrag voor elk scenario besc
 | Gecomprimeerde |Niet in cache |Gecomprimeerde | |
 
 ### <a name="compression-is-enabled-and-file-is-eligible-for-compression"></a>Compressie is ingeschakeld en het bestand komt in aanmerking voor compressie
-| Door de client aangevraagde indeling (via Accept-Encoding header) | Cache-bestands indeling | CDN-antwoord naar de client | Opmerkingen |
+| Door de client aangevraagde indeling (via Accept-Encoding header) | Cache-bestands indeling | CDN-antwoord naar de client | Notities |
 | --- | --- | --- | --- |
 | Gecomprimeerd |Gecomprimeerd |Gecomprimeerd |CDN transcodeert tussen ondersteunde indelingen. |
 | Gecomprimeerd |Gecomprimeerde |Gecomprimeerd |CDN voert een compressie uit. |

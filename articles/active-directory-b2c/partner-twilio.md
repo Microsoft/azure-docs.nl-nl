@@ -12,11 +12,11 @@ ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 953653a758577ed3d48ca2d81403b4cb363ea294
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259065"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994040"
 ---
 # <a name="integrating-twilio-verify-app-with-azure-active-directory-b2c"></a>De Twilio-verificatie-app integreren met Azure Active Directory B2C
 
@@ -90,7 +90,7 @@ De volgende onderdelen vormen een Twilio-oplossing:
 
 6. Zoek het Twilio REST API technische profiel **aangepaste SMS-inschrijven**. Werk de  `ServiceURL`   met uw Twilio-AccountSID en het van-nummer bij naar uw aangeschafte telefoon nummer.
 
-7. Zoek de Twilio-REST API Technical Profiles, **TwilioRestAPI-verify-stap 1-4**   en **TwilioRestAPI-step2**en werk de  `ServiceURL`   met uw Twilio AccountSID bij.
+7. Zoek de Twilio-REST API Technical Profiles, **TwilioRestAPI-verify-stap 1-4**   en **TwilioRestAPI-step2** en werk de  `ServiceURL`   met uw Twilio AccountSID bij.
 
 ## <a name="integrate-with-azure-ad-b2c"></a>Integreren met Azure AD B2C
 
@@ -104,9 +104,9 @@ Voeg de beleids bestanden toe aan Azure AD B2C:
 
 4. Navigeer naar **Azure AD B2C**  >  **Identity experience Framework**-  >  **beleids sleutels**.
 
-5. Voeg een nieuwe sleutel toe met de naam **B2cRestTwilioClientId**. Selecteer **hand matig**en geef de waarde van de Twilio AccountSID op.
+5. Voeg een nieuwe sleutel toe met de naam **B2cRestTwilioClientId**. Selecteer **hand matig** en geef de waarde van de Twilio AccountSID op.
 
-6. Voeg een nieuwe sleutel toe met de naam **B2cRestTwilioClientSecret**. Selecteer **hand matig**en geef de waarde van het TWILIO-verificatie token op.
+6. Voeg een nieuwe sleutel toe met de naam **B2cRestTwilioClientSecret**. Selecteer **hand matig** en geef de waarde van het TWILIO-verificatie token op.
 
 7. Upload alle beleids bestanden naar uw Tenant.
 

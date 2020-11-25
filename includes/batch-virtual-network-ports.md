@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.date: 06/16/2020
 ms.author: jenhayes
 ms.custom: include file
-ms.openlocfilehash: 3e4bca058f554f60dfa5c237633d1fecf06dfea7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4f17fbfad1e7e550b3a1e95c93e4b061d0f1c3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87507447"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993416"
 ---
 ### <a name="general-requirements"></a>Algemene vereisten
 
@@ -69,7 +69,7 @@ Configureer binnenkomend verkeer op poort 3389 (Windows) of 22 (Linux) alleen al
 
 | IP-adressen van bron | Bronservicetag | Bronpoorten | Doel | Doelpoorten | Protocol | Bewerking |
 | --- | --- | --- | --- | --- | --- | --- |
-| N.v.t. | `BatchNodeManagement` [Servicetag](../articles/virtual-network/security-overview.md#service-tags) (bij gebruik van een regionale variant in dezelfde regio als uw Batch-account) | * | Alle | 29876-29877 | TCP | Toestaan |
+| N.v.t. | `BatchNodeManagement` [Servicetag](../articles/virtual-network/network-security-groups-overview.md#service-tags) (bij gebruik van een regionale variant in dezelfde regio als uw Batch-account) | * | Alle | 29876-29877 | TCP | Toestaan |
 | IP-adressen van gebruikersbronnen voor het op afstand verkrijgen van toegang tot rekenknooppunten en/of het subnet van rekenknooppunten voor Linux-taken voor meerdere exemplaren, indien nodig. | N.v.t. | * | Alle | 3389 (Windows), 22 (Linux) | TCP | Toestaan |
 
 > [!WARNING]
@@ -79,7 +79,7 @@ Configureer binnenkomend verkeer op poort 3389 (Windows) of 22 (Linux) alleen al
 
 | Bron | Bronpoorten | Doel | Doelservicetag | Doelpoorten | Protocol | Bewerking |
 | --- | --- | --- | --- | --- | --- | --- |
-| Alle | * | [Servicetag](../articles/virtual-network/security-overview.md#service-tags) | `Storage` (bij gebruik van een regionale variant in dezelfde regio als uw Batch-account) | 443 | TCP | Toestaan |
+| Alle | * | [Servicetag](../articles/virtual-network/network-security-groups-overview.md#service-tags) | `Storage` (bij gebruik van een regionale variant in dezelfde regio als uw Batch-account) | 443 | TCP | Toestaan |
 
 ### <a name="pools-in-the-cloud-services-configuration"></a>Pools die zijn gemaakt in de Cloud Services-configuratie
 

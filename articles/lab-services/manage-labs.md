@@ -4,11 +4,11 @@ description: Meer informatie over het weer geven van alle Labs in een Lab-accoun
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: cc097e97430462e36a33b982a7394a20c308eab5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85443482"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993615"
 ---
 # <a name="manage-labs-in-a-lab-account"></a>Labs beheren in een labaccount
 Dit artikel laat u zien hoe een eigenaar van een Lab-account of-beheerder alle Labs in een Lab-account kan weer geven en een lab in het lab-account kan verwijderen. 
@@ -37,4 +37,4 @@ Volg de instructies in de vorige sectie om een lijst met de Labs in het lab-acco
     ![Verwijderen van Lab bevestigen](./media/how-to-manage-lab-accounts/confirm-lab-delete.png)
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie andere artikelen in de sectie **instructies voor**het  ->  **maken en configureren van Lab-accounts (eigenaar van het lab-account)** van de tabel-of-content (TOC). 
+Zie andere artikelen in de sectie **instructies voor** het  ->  **maken en configureren van Lab-accounts (eigenaar van het lab-account)** van de tabel-of-content (TOC). 

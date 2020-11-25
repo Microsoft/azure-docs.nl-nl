@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.openlocfilehash: 748566cf5b25157fcb8a2938a3f4bd307c930874
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895126"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993211"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-hana"></a>Zelfstudie: Azure Active Directory-integratie met SAP HANA
 
@@ -60,7 +60,7 @@ Voor het configureren van de integratie van SAP HANA met Azure AD moet u SAP HAN
 
 **Als u SAP HANA vanuit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -84,10 +84,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Voor het configureren en testen van eenmalige aanmelding via Azure AD bij SAP HANA moet u de volgende bouwstenen uitvoeren:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor SAP HANA configureren](#configure-sap-hana-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+2. **[Eenmalige aanmelding voor SAP HANA configureren](#configure-sap-hana-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[De testgebruiker voor SAP HANA maken](#create-sap-hana-test-user)** : als u een equivalent van Britta Simon in SAP HANA wilt hebben dat gekoppeld is aan de Azure AD-weergave van de gebruiker.
+5. **[De testgebruiker voor SAP HANA maken](#create-sap-hana-test-user)**: als u een equivalent van Britta Simon in SAP HANA wilt hebben dat gekoppeld is aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -96,7 +96,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van Azure AD-eenmalige aanmelding met SAP HANA moet u de volgende stappen uitvoeren:
 
-1. Selecteer in [Azure Portal](https://portal.azure.com/) op de pagina voor integratie van de **SAP HANA** -toepassing **Eenmalige aanmelding**.
+1. Selecteer in [Azure Portal](https://portal.azure.com/) op de pagina voor integratie van de **SAP HANA**-toepassing **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -156,7 +156,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met SAP HANA moet u de v
 
     ![Schermopname van het deelvenster Add Identity Provider Info, waarin de vakken Metadata en Name zijn gemarkeerd.](./media/saphana-tutorial/sap2.png)
 
-    b. Als de inhoud van het XML-document geldig is, wordt bij het parseren de informatie geëxtraheerd die nodig is voor de velden **Onderwerp, Entiteits-id en Verlener** in het schermgedeelte **Algemene gegevens**. Er wordt ook informatie uitgepakt die nodig is voor de URL-velden in het schermgedeelte **Bestemming** , bijvoorbeeld de **basis-URL en de URL voor eenmalige aanmelding(*)**.
+    b. Als de inhoud van het XML-document geldig is, wordt bij het parseren de informatie geëxtraheerd die nodig is voor de velden **Onderwerp, Entiteits-id en Verlener** in het schermgedeelte **Algemene gegevens**. Er wordt ook informatie uitgepakt die nodig is voor de URL-velden in het schermgedeelte **Bestemming**, bijvoorbeeld de **basis-URL en de URL voor eenmalige aanmelding(*)**.
 
     ![Instellingen voor het toevoegen van een id-provider](./media/saphana-tutorial/sap3.png)
 
@@ -177,7 +177,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met SAP HANA moet u de v
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -247,7 +247,7 @@ Als de gebruiker handmatig moet maken, voert u de volgende stappen uit:
    > [!Note]
    > Als het selectievakje bij **Willekeurig** niet is ingeschakeld, moet de gebruikersnaam in HANA exact overeenkomen met de naam van de gebruiker in de UPN voor het domeinachtervoegsel. (BrittaSimon@contoso.com wordt bijvoorbeeld BrittaSimon in HANA.)
 
-5. Voor testdoeleinden wijst u alle **XS** -rollen toe aan de gebruiker.
+5. Voor testdoeleinden wijst u alle **XS**-rollen toe aan de gebruiker.
 
     ![Rollen toewijzen](./media/saphana-tutorial/sap6.png)
 

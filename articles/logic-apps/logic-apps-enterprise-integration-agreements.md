@@ -9,11 +9,11 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
 ms.openlocfilehash: c8cbfb619c9eed325161503f705bf5c4c0746265
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82612330"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95992933"
 ---
 # <a name="create-and-manage-trading-partner-agreements-in-azure-logic-apps"></a>Handelspartner-overeenkomsten maken en beheren in Azure Logic Apps
 
@@ -40,31 +40,31 @@ Zie [Exchange RosettaNet-berichten](../logic-apps/logic-apps-enterprise-integrat
 
 ## <a name="create-agreements"></a>Overeenkomsten maken
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 Selecteer in het hoofd menu van Azure **alle services**. Voer in het zoekvak ' Integration ' in als uw filter. Selecteer in de resultaten deze resource: **integratie accounts**
 
    ![Uw integratie account zoeken](./media/logic-apps-enterprise-integration-agreements/find-integration-accounts.png)
 
-1. Onder **integratie accounts**selecteert u het integratie account waar u de overeenkomst wilt maken.
+1. Onder **integratie accounts** selecteert u het integratie account waar u de overeenkomst wilt maken.
 
    ![Het integratie account selecteren waar de overeenkomst moet worden gemaakt](./media/logic-apps-enterprise-integration-agreements/select-integration-account.png)
 
-1. Kies in het rechterdeel venster onder **onderdelen**de tegel **overeenkomsten** .
+1. Kies in het rechterdeel venster onder **onderdelen** de tegel **overeenkomsten** .
 
    ![Kies ' overeenkomsten '](./media/logic-apps-enterprise-integration-agreements/agreement-1.png)
 
-1. Klik onder **overeenkomsten**op **toevoegen**. Geef in het deel venster **toevoegen** informatie op over uw overeenkomst, bijvoorbeeld:
+1. Klik onder **overeenkomsten** op **toevoegen**. Geef in het deel venster **toevoegen** informatie op over uw overeenkomst, bijvoorbeeld:
 
    ![Kies toevoegen](./media/logic-apps-enterprise-integration-agreements/agreement-2.png)
 
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
    | **Naam** | Ja | <*overeenkomst-naam*> | De naam voor uw overeenkomst |
-   | **Type overeenkomst** | Ja | **AS2**, **X12**of **EDIFACT** | Het protocol type voor uw overeenkomst. Wanneer u een overeenkomst bestand maakt, moet de inhoud in dat bestand overeenkomen met het overeenkomst type. | |  
-   | **Host-partner** | Ja | <*host-partner naam*> | De host-partner vertegenwoordigt de organisatie die de overeenkomst specificeert |
-   | **Host-id** | Ja | <*host-partner-id*> | De id van de host-partner |
-   | **Gast partner** | Ja | <*gast-partner naam*> | De gast partner vertegenwoordigt de organisatie die zakendoet met de host-partner |
-   | **Gast identiteit** | Ja | <*gast-partner-id*> | De id van de gast partner |
+   | **Type overeenkomst** | Yes | **AS2**, **X12** of **EDIFACT** | Het protocol type voor uw overeenkomst. Wanneer u een overeenkomst bestand maakt, moet de inhoud in dat bestand overeenkomen met het overeenkomst type. | |  
+   | **Host-partner** | Yes | <*host-partner naam*> | De host-partner vertegenwoordigt de organisatie die de overeenkomst specificeert |
+   | **Host-id** | Yes | <*host-partner-id*> | De id van de host-partner |
+   | **Gast partner** | Yes | <*gast-partner naam*> | De gast partner vertegenwoordigt de organisatie die zakendoet met de host-partner |
+   | **Gast identiteit** | Yes | <*gast-partner-id*> | De id van de gast partner |
    | **Instellingen voor ontvangen** | Varieert | Varieert | Met deze eigenschappen geeft u op hoe de host-partner alle inkomende berichten van de gast partner in de overeenkomst ontvangt. Zie voor meer informatie het betreffende type overeenkomst: <p>- [AS2-bericht instellingen](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [EDIFACT-bericht instellingen](logic-apps-enterprise-integration-edifact.md) <br>- [X12-bericht instellingen](logic-apps-enterprise-integration-x12.md) |
    | **Instellingen verzenden** | Varieert | Varieert | Met deze eigenschappen geeft u op hoe de host-partner alle uitgaande berichten naar de gast partner in de overeenkomst verzendt. Zie voor meer informatie het betreffende type overeenkomst: <p>- [AS2-bericht instellingen](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [EDIFACT-bericht instellingen](logic-apps-enterprise-integration-edifact.md) <br>- [X12-bericht instellingen](logic-apps-enterprise-integration-x12.md) |
    |||||
@@ -77,7 +77,7 @@ Selecteer in het hoofd menu van Azure **alle services**. Voer in het zoekvak ' I
    >
    > Als deze waarden voor uw partner veranderen, moet u er ook voor zorgen dat u de overeenkomst bijwerkt.
 
-1. Wanneer u klaar bent met het maken van de overeenkomst, kiest u **OK**op de pagina **toevoegen** en gaat u terug naar uw integratie account.
+1. Wanneer u klaar bent met het maken van de overeenkomst, kiest u **OK** op de pagina **toevoegen** en gaat u terug naar uw integratie account.
 
    In de lijst met **overeenkomsten** wordt nu uw nieuwe overeenkomst weer gegeven.
 
@@ -87,11 +87,11 @@ Selecteer in het hoofd menu van Azure **alle services**. Voer in het zoekvak ' I
 
 1. Voer in het zoekvak ' Integration ' in als uw filter. Selecteer in de resultaten deze resource: **integratie accounts**
 
-1. Onder **integratie accounts**selecteert u het integratie account met de overeenkomst die u wilt bewerken.
+1. Onder **integratie accounts** selecteert u het integratie account met de overeenkomst die u wilt bewerken.
 
-1. Kies in het rechterdeel venster onder **onderdelen**de tegel **overeenkomsten** .
+1. Kies in het rechterdeel venster onder **onderdelen** de tegel **overeenkomsten** .
 
-1. Onder **overeenkomsten**selecteert u uw overeenkomst en kiest u **bewerken**.
+1. Onder **overeenkomsten** selecteert u uw overeenkomst en kiest u **bewerken**.
 
 1. Breng uw wijzigingen aan en sla deze op.
 
@@ -101,11 +101,11 @@ Selecteer in het hoofd menu van Azure **alle services**. Voer in het zoekvak ' I
 
 1. Voer in het zoekvak ' Integration ' in als uw filter. Selecteer in de resultaten deze resource: **integratie accounts**
 
-1. Onder **integratie accounts**selecteert u het integratie account met de overeenkomst die u wilt verwijderen.
+1. Onder **integratie accounts** selecteert u het integratie account met de overeenkomst die u wilt verwijderen.
 
-1. Kies in het rechterdeel venster onder **onderdelen**de tegel **overeenkomsten** .
+1. Kies in het rechterdeel venster onder **onderdelen** de tegel **overeenkomsten** .
 
-1. Onder **overeenkomsten**selecteert u uw overeenkomst en kiest u **verwijderen**.
+1. Onder **overeenkomsten** selecteert u uw overeenkomst en kiest u **verwijderen**.
 
 1. Bevestig dat u de geselecteerde overeenkomst wilt verwijderen.
 

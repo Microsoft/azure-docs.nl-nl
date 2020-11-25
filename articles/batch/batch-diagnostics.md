@@ -5,11 +5,11 @@ ms.topic: how-to
 ms.date: 10/08/2020
 ms.custom: seodec18
 ms.openlocfilehash: fe2697c73f2a5f3f0b33cfb598f11f39420ed723
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108096"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994108"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Metrische batches, waarschuwingen en logboeken voor diagnostische evaluatie en bewaking
 
@@ -33,7 +33,7 @@ Azure Portal op de pagina **overzicht** van het account worden standaard de metr
 
 De metrische gegevens van een batch-account weer geven in de Azure Portal:
 
-1. Selecteer in het Azure Portal **alle services**  >  **batch-accounts**en selecteer vervolgens de naam van uw batch-account.
+1. Selecteer in het Azure Portal **alle services**  >  **batch-accounts** en selecteer vervolgens de naam van uw batch-account.
 2. Selecteer **Metrische gegevens** onder **Bewaking**.
 3. Selecteer **metrische gegevens toevoegen** en kies vervolgens een waarde in de vervolg keuzelijst.
 4. Selecteer een **aggregatie** optie voor de metriek. Gebruik de **gemiddelde** aggregatie voor metrische gegevens op basis van tellers (zoals ' toegewezen aantal kernen ' of ' aantal knoop punten met lage prioriteit '). Voor metrische gegevens op basis van gebeurtenissen (zoals ' pool formaat wijzigen voltooid ') gebruikt u de aggregatie **aantal**'.
@@ -62,8 +62,8 @@ U kunt bijvoorbeeld een waarschuwing voor metrische gegevens configureren wannee
 Een waarschuwing voor metrische gegevens configureren in de Azure Portal:
 
 1. Selecteer **Alle services** > **Batch-accounts** en selecteer vervolgens de naam van uw Batch-account.
-2. Onder **bewaking**selecteert u **waarschuwingen**en selecteert u **nieuwe waarschuwings regel**.
-3. Klik op **voor waarde selecteren**en kies vervolgens een metriek. Bevestig de waarden voor de **grafiek periode**, het **type drempel waarde**, de **operator**en het **aggregatie type**en voer een **drempel waarde**in. Selecteer vervolgens **Done**.
+2. Onder **bewaking** selecteert u **waarschuwingen** en selecteert u **nieuwe waarschuwings regel**.
+3. Klik op **voor waarde selecteren** en kies vervolgens een metriek. Bevestig de waarden voor de **grafiek periode**, het **type drempel waarde**, de **operator** en het **aggregatie type** en voer een **drempel waarde** in. Selecteer vervolgens **Done**.
 4. Voeg een actie groep toe aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
 5. Voer in de sectie **Details van waarschuwings regel** een naam en **Beschrijving** voor de **waarschuwings regel** in en selecteer de **Ernst**
 6. Selecteer **Waarschuwingsregel maken**.
@@ -97,12 +97,12 @@ U kunt ook het volgende doen:
 
 Volg de onderstaande stappen om een nieuwe diagnostische instelling te maken in de Azure Portal.
 
-1. Selecteer in het Azure Portal **alle services**  >  **batch-accounts**en selecteer vervolgens de naam van uw batch-account.
+1. Selecteer in het Azure Portal **alle services**  >  **batch-accounts** en selecteer vervolgens de naam van uw batch-account.
 2. Selecteer **Diagnostische instellingen** onder **Controle**.
-3. Selecteer in **Diagnostische instellingen**de optie **Diagnostische instelling toevoegen**.
+3. Selecteer in **Diagnostische instellingen** de optie **Diagnostische instelling toevoegen**.
 4. Voer een naam in voor de instelling.
-5. Selecteer een bestemming: **verzenden naar log Analytics**, **archiveren naar een opslag account**of **streamen naar een event hub**. Als u een opslag account selecteert, kunt u eventueel een Bewaar beleid instellen. Als u niet een aantal dagen opgeeft voor retentie, worden gegevens bewaard tijdens de levens duur van het opslag account.
-6. Selecteer **ServiceLog**, **AllMetrics**of beide.
+5. Selecteer een bestemming: **verzenden naar log Analytics**, **archiveren naar een opslag account** of **streamen naar een event hub**. Als u een opslag account selecteert, kunt u eventueel een Bewaar beleid instellen. Als u niet een aantal dagen opgeeft voor retentie, worden gegevens bewaard tijdens de levens duur van het opslag account.
+6. Selecteer **ServiceLog**, **AllMetrics** of beide.
 7. Selecteer **Opslaan** om de diagnostische instelling te maken.
 
 U kunt ook [verzameling via Azure monitor in de Azure Portal inschakelen](../azure-monitor/platform/diagnostic-settings.md) om Diagnostische instellingen te configureren, met behulp van een [Resource Manager-sjabloon](../azure-monitor/samples/resource-manager-diagnostic-settings.md)of met Azure POWERSHELL of de Azure cli. Zie [overzicht van Azure platform-logboeken](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie.

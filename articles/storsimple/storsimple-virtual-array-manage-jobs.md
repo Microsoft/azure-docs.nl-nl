@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/11/2016
 ms.author: alkohli
 ms.openlocfilehash: d806d8a04dc1bd8547808d20c77bfec310f7dd06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85507480"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95992989"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-view-jobs-for-the-storsimple-virtual-array"></a>De StorSimple Apparaatbeheer-service gebruiken om taken voor de virtuele StorSimple-matrix weer te geven
 ## <a name="overview"></a>Overzicht
@@ -32,8 +32,8 @@ U kunt snel de taken vinden waarin u geïnteresseerd bent door te filteren op ve
 * **Tijds bereik** : taken kunnen worden gefilterd op basis van het datum-en tijds bereik.
 * **Apparaten** : taken worden gestart op een specifiek apparaat dat is verbonden met uw service. De gefilterde taken worden vervolgens getabeld op basis van de volgende kenmerken:
   
-  * **Naam** : de naam van de taak kan **alle**, **Backup**, **Clone**, **failover**, **updates downloaden**of **updates installeren**.
-  * **Status** : taken kunnen **allemaal**, **in uitvoering**, **geslaagd**of **mislukt**zijn of zijn **geannuleerd**.
+  * **Naam** : de naam van de taak kan **alle**, **Backup**, **Clone**, **failover**, **updates downloaden** of **updates installeren**.
+  * **Status** : taken kunnen **allemaal**, **in uitvoering**, **geslaagd** of **mislukt** zijn of zijn **geannuleerd**.
   * **Entiteit** : de taken kunnen worden gekoppeld aan een volume, share of apparaat.
   * **Apparaat** : de naam van het apparaat waarop de taak is gestart.
   * **Gestart op** : de tijd waarop de taak is gestart.

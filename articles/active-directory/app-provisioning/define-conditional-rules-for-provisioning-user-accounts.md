@@ -11,11 +11,11 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: kenwith
 ms.openlocfilehash: 1765c6a7d19a11730567acd5e41deebc0a20cec2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88235805"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993989"
 ---
 # <a name="attribute-based-application-provisioning-with-scoping-filters"></a>Toewijzing van toepassingen op basis van kenmerken met bereik filters
 In dit artikel wordt uitgelegd hoe u bereik filters gebruikt voor het definiëren van op kenmerken gebaseerde regels die bepalen welke gebruikers worden ingericht voor een toepassing.
@@ -72,7 +72,7 @@ Bereik filters worden geconfigureerd als onderdeel van de kenmerk toewijzingen v
 
 6. Selecteer **filter bereik toevoegen**.
 
-7. Definieer een-component door een bron **kenmerk naam**, een **operator**en een **kenmerk waarde** op te geven die moet overeenkomen. De volgende Opera tors worden ondersteund:
+7. Definieer een-component door een bron **kenmerk naam**, een **operator** en een **kenmerk waarde** op te geven die moet overeenkomen. De volgende Opera tors worden ondersteund:
 
    a. **Is gelijk aan**. -Component retourneert ' True ' als het geëvalueerde kenmerk precies overeenkomt met de waarde van de invoer teken reeks (hoofdletter gevoelig).
 
@@ -103,7 +103,7 @@ Bereik filters worden geconfigureerd als onderdeel van de kenmerk toewijzingen v
 
 9. Herhaal desgewenst stap 7-8 om meer scoping-componenten toe te voegen.
 
-10. Voeg in **filter titel bereik**een naam toe voor het filter bereik.
+10. Voeg in **filter titel bereik** een naam toe voor het filter bereik.
 
 11. Selecteer **OK**.
 
@@ -125,8 +125,8 @@ Bereik filters worden geconfigureerd als onderdeel van de kenmerk toewijzingen v
 
 ## <a name="related-articles"></a>Verwante artikelen:
 * [Gebruikers inrichten en het ongedaan maken van de inrichting van SaaS-toepassingen automatiseren](../app-provisioning/user-provisioning.md)
-* [Kenmerk toewijzingen voor gebruikers inrichting aanpassen](../app-provisioning/customize-application-attributes.md)
+* [Kenmerktoewijzingen aanpassen voor het inrichten van gebruikers](../app-provisioning/customize-application-attributes.md)
 * [Expressies schrijven voor kenmerktoewijzingen](functions-for-customizing-application-data.md)
-* [Meldingen voor het inrichten van accounts](../app-provisioning/user-provisioning.md)
+* [Meldingen over accountinrichting](../app-provisioning/user-provisioning.md)
 * [Gebruik SCIM om automatische inrichting van gebruikers en groepen in te scha kelen van Azure Active Directory naar toepassingen](../app-provisioning/use-scim-to-provision-users-and-groups.md)
 * [Lijst met handleidingen voor het integreren van SaaS-apps](../saas-apps/tutorial-list.md)

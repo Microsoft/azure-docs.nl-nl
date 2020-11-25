@@ -5,11 +5,11 @@ services: container-service
 ms.topic: article
 ms.date: 04/08/2020
 ms.openlocfilehash: 39c2fe177d0a6d913d7bf2b2baf44af3c69c0868
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900086"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006930"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Meerdere knooppuntgroepen maken en beheren voor een cluster in Azure Kubernetes Service (AKS)
 
@@ -93,7 +93,7 @@ Als u de status van de knooppunt groepen wilt weer geven, gebruikt u de opdracht
 az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
 ```
 
-In de volgende voorbeeld uitvoer ziet u dat *mynodepool* is gemaakt met drie knoop punten in de knooppunt groep. Wanneer het AKS-cluster in de vorige stap is gemaakt, is een standaard *nodepool1* gemaakt met het aantal knoop punten *2* .
+In de volgende voorbeeld uitvoer ziet u dat *mynodepool* is gemaakt met drie knoop punten in de knooppunt groep. Wanneer het AKS-cluster in de vorige stap is gemaakt, is een standaard *nodepool1* gemaakt met het aantal knoop punten *2*.
 
 ```output
 [
@@ -172,7 +172,7 @@ az aks nodepool upgrade \
     --no-wait
 ```
 
-Vermeld opnieuw de status van uw knooppunt groepen met de opdracht [AZ AKS node pool List][az-aks-nodepool-list] . In het volgende voor beeld ziet u dat *mynodepool* zich in de *upgrade* status bevindt op *KUBERNETES_VERSION* :
+Vermeld opnieuw de status van uw knooppunt groepen met de opdracht [AZ AKS node pool List][az-aks-nodepool-list] . In het volgende voor beeld ziet u dat *mynodepool* zich in de *upgrade* status bevindt op *KUBERNETES_VERSION*:
 
 ```azurecli
 az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -214,7 +214,7 @@ Als best practice moet u alle knooppunt groepen in een AKS-cluster upgraden naar
 ## <a name="upgrade-a-cluster-control-plane-with-multiple-node-pools"></a>Een cluster besturings vlak upgraden met meerdere knooppunt groepen
 
 > [!NOTE]
-> Kubernetes maakt gebruik van het standaard versie beheer schema van [semantische versie](https://semver.org/) . Het versie nummer wordt weer gegeven als *x. y. z* , waarbij *x* de primaire versie is, *y* de secundaire versie en *z* de versie van de patch. In versie *1.12.6* is bijvoorbeeld 1 de primaire versie, 12 de secundaire versie en 6 de versie van de patch. De Kubernetes-versie van het besturings vlak en de eerste knooppunt groep worden ingesteld tijdens het maken van het cluster. Voor alle extra knooppunt groepen wordt de Kubernetes-versie ingesteld wanneer ze aan het cluster worden toegevoegd. De Kubernetes-versies kunnen verschillen tussen de knooppunt Pools en tussen een knooppunt groep en het besturings vlak.
+> Kubernetes maakt gebruik van het standaard versie beheer schema van [semantische versie](https://semver.org/) . Het versie nummer wordt weer gegeven als *x. y. z*, waarbij *x* de primaire versie is, *y* de secundaire versie en *z* de versie van de patch. In versie *1.12.6* is bijvoorbeeld 1 de primaire versie, 12 de secundaire versie en 6 de versie van de patch. De Kubernetes-versie van het besturings vlak en de eerste knooppunt groep worden ingesteld tijdens het maken van het cluster. Voor alle extra knooppunt groepen wordt de Kubernetes-versie ingesteld wanneer ze aan het cluster worden toegevoegd. De Kubernetes-versies kunnen verschillen tussen de knooppunt Pools en tussen een knooppunt groep en het besturings vlak.
 
 Een AKS-cluster heeft twee cluster resource objecten waaraan Kubernetes-versies zijn gekoppeld.
 
@@ -367,7 +367,7 @@ az aks nodepool add \
     --no-wait
 ```
 
-In de volgende voorbeeld uitvoer van de opdracht [AZ AKS node pool List][az-aks-nodepool-list] wordt aangegeven dat *Gpunodepool* knoop punten *maakt* met de opgegeven *VmSize* :
+In de volgende voorbeeld uitvoer van de opdracht [AZ AKS node pool List][az-aks-nodepool-list] wordt aangegeven dat *Gpunodepool* knoop punten *maakt* met de opgegeven *VmSize*:
 
 ```azurecli
 az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -425,7 +425,7 @@ az aks nodepool add \
 > [!NOTE]
 > Een Taint kan alleen worden ingesteld voor knooppunt groepen tijdens het maken van een knooppunt groep.
 
-In de volgende voorbeeld uitvoer van de opdracht [AZ AKS nodepool List][az-aks-nodepool-list] ziet u dat *Taintnp* knoop punten *maakt* met de opgegeven *nodeTaints* :
+In de volgende voorbeeld uitvoer van de opdracht [AZ AKS nodepool List][az-aks-nodepool-list] ziet u dat *Taintnp* knoop punten *maakt* met de opgegeven *nodeTaints*:
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -510,7 +510,7 @@ Events:
   Normal  Started    4m40s  kubelet             Started container
 ```
 
-Alleen een van de peulen waarvoor deze tolerantie is toegepast, kan worden gepland op knoop punten in *taintnp* . Elk ander pod zou worden gepland in de *nodepool1* -knooppunt groep. Als u extra knooppunt groepen maakt, kunt u extra taints en toleranties gebruiken om te beperken wat er op deze knooppunt bronnen kan worden gepland.
+Alleen een van de peulen waarvoor deze tolerantie is toegepast, kan worden gepland op knoop punten in *taintnp*. Elk ander pod zou worden gepland in de *nodepool1* -knooppunt groep. Als u extra knooppunt groepen maakt, kunt u extra taints en toleranties gebruiken om te beperken wat er op deze knooppunt bronnen kan worden gepland.
 
 ### <a name="setting-nodepool-labels"></a>Nodepool-labels instellen
 
@@ -531,7 +531,7 @@ az aks nodepool add \
 > [!NOTE]
 > Label kan alleen worden ingesteld voor knooppunt groepen tijdens het maken van een knooppunt groep. Labels moeten ook een sleutel-waardepaar zijn en een [geldige syntaxis][kubernetes-label-syntax]hebben.
 
-In de volgende voorbeeld uitvoer van de opdracht [AZ AKS nodepool List][az-aks-nodepool-list] ziet u dat *Labelnp* knoop punten *maakt* met de opgegeven *nodeLabels* :
+In de volgende voorbeeld uitvoer van de opdracht [AZ AKS nodepool List][az-aks-nodepool-list] ziet u dat *Labelnp* knoop punten *maakt* met de opgegeven *nodeLabels*:
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -577,9 +577,9 @@ az aks nodepool add \
 ```
 
 > [!NOTE]
-> U kunt ook de `--tags` para meter gebruiken bij het gebruik van [AZ AKS nodepool update][az-aks-nodepool-update] opdracht en tijdens het maken van het cluster. Tijdens het maken van het cluster `--tags` past de para meter de tag toe op de eerste knooppunt groep die met het cluster is gemaakt. Alle label namen moeten voldoen aan de beperkingen in [Tags gebruiken om uw Azure-resources te organiseren][tag-limitation]. Als u een knooppunt groep met de para meter bijwerkt `--tags` , worden alle bestaande label waarden bijgewerkt en worden nieuwe labels toegevoegd. Als uw knooppunt groep bijvoorbeeld *Dept = it* en *CostCenter = 9999* heeft voor Tags en u deze hebt bijgewerkt met *team = dev* en *CostCenter = 111* voor labels, hebt u nodepool *Dept = it* , *CostCenter = 111* en *team = dev* for Tags.
+> U kunt ook de `--tags` para meter gebruiken bij het gebruik van [AZ AKS nodepool update][az-aks-nodepool-update] opdracht en tijdens het maken van het cluster. Tijdens het maken van het cluster `--tags` past de para meter de tag toe op de eerste knooppunt groep die met het cluster is gemaakt. Alle label namen moeten voldoen aan de beperkingen in [Tags gebruiken om uw Azure-resources te organiseren][tag-limitation]. Als u een knooppunt groep met de para meter bijwerkt `--tags` , worden alle bestaande label waarden bijgewerkt en worden nieuwe labels toegevoegd. Als uw knooppunt groep bijvoorbeeld *Dept = it* en *CostCenter = 9999* heeft voor Tags en u deze hebt bijgewerkt met *team = dev* en *CostCenter = 111* voor labels, hebt u nodepool *Dept = it*, *CostCenter = 111* en *team = dev* for Tags.
 
-In de volgende voorbeeld uitvoer van de opdracht [AZ AKS nodepool List][az-aks-nodepool-list] ziet u dat *Tagnodepool* knoop punten *maakt* met de opgegeven *tag* :
+In de volgende voorbeeld uitvoer van de opdracht [AZ AKS nodepool List][az-aks-nodepool-list] ziet u dat *Tagnodepool* knoop punten *maakt* met de opgegeven *tag*:
 
 ```azurecli
 az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -613,8 +613,8 @@ Wanneer u een Azure Resource Manager sjabloon gebruikt om resources te maken en 
 Maak een sjabloon, zoals `aks-agentpools.json` en plak het volgende voor beeld-manifest. Met deze voorbeeld sjabloon worden de volgende instellingen geconfigureerd:
 
 * Hiermee werkt u de *Linux* -knooppunt groep met de naam *myagentpool* bij om drie knoop punten uit te voeren.
-* Hiermee stelt u de knoop punten in de knooppunt groep in op het uitvoeren van Kubernetes-versie *1.15.7* .
-* Hiermee definieert u de knooppunt grootte als *Standard_DS2_v2* .
+* Hiermee stelt u de knoop punten in de knooppunt groep in op het uitvoeren van Kubernetes-versie *1.15.7*.
+* Hiermee definieert u de knooppunt grootte als *Standard_DS2_v2*.
 
 Bewerk deze waarden als u wilt dat er knooppunt groepen worden bijgewerkt, toegevoegd of verwijderd:
 

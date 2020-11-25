@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
 ms.openlocfilehash: 962bb7a4484f28d52ffd4f0cae985140ec2f0d28
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792919"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006027"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Gegevensoverdracht voor grote gegevenssets met gemiddelde tot grote netwerkbandbreedte
  
@@ -27,9 +27,9 @@ Grote gegevens sets verwijzen naar de grootte in de volg orde van TBs naar PBs. 
 
 ## <a name="recommended-options"></a>Aanbevolen opties
 
-De opties die in dit scenario worden aanbevolen, zijn afhankelijk van het feit of u een gemiddelde netwerk bandbreedte of hoge netwerk bandbreedte hebt.
+De opties die worden aanbevolen in dit scenario, zijn afhankelijk van of u beschikt over de gemiddelde netwerkbandbreedte of de hoge netwerkbandbreedte.
 
-### <a name="moderate-network-bandwidth-100-mbps---1-gbps"></a>Gemiddelde netwerk bandbreedte (100 Mbps-1 Gbps)
+### <a name="moderate-network-bandwidth-100-mbps---1-gbps"></a>Gemiddelde netwerkbandbreedte (100 Mbps - 1 Gbps)
 
 Met een gemiddelde netwerk bandbreedte moet u de tijd voor gegevens overdracht via het netwerk projecteren.
 
@@ -39,20 +39,20 @@ Gebruik de volgende tabel om de tijd te schatten en op basis van die te kiezen t
 
 - Als de netwerk overdracht te langzaam wordt geprojecteerd, moet u een fysiek apparaat gebruiken. De aanbevolen opties in dit geval zijn de apparaten voor offline overdracht van Azure Data Box serie of Azure import/export met uw eigen schijven.
 
-    - **Azure data Box-serie voor offline overdrachten** : gebruik apparaten van door micro soft geleverde data Box apparaten om grote hoeveel heden gegevens naar Azure te verplaatsen wanneer u beperkt bent door tijd, netwerk beschikbaarheid of kosten. On-premises gegevens kopiëren met behulp van hulpprogram ma's zoals Robocopy. Afhankelijk van de grootte van de gegevens die u wilt overdragen, kunt u kiezen uit Data Box Disk, Data Box of Data Box Heavy.
-    - **Azure import/export** : gebruik Azure import/export-service door uw eigen schijf stations te verzenden om grote hoeveel heden gegevens veilig te importeren naar Azure Blob-opslag en Azure files. Deze service kan ook worden gebruikt om gegevens over te dragen van Azure Blob-opslag naar schijf stations en te verzenden naar uw on-premises sites.
+    - **Azure data Box-serie voor offline overdrachten** : gebruik apparaten van door micro soft geleverde data Box apparaten om grote hoeveel heden gegevens naar Azure te verplaatsen wanneer u beperkt bent door tijd, netwerk beschikbaarheid of kosten. On-premises gegevens kopiëren met behulp van hulpprogramma's zoals Robocopy. Afhankelijk van de grootte van de gegevens die u wilt overdragen, kunt u kiezen uit Data Box Disk, Data Box of Data Box Heavy.
+    - **Azure import/export** : gebruik Azure import/export-service door uw eigen schijf stations te verzenden om grote hoeveel heden gegevens veilig te importeren naar Azure Blob-opslag en Azure files. Deze service kan ook worden gebruikt om gegevens over te dragen van Azure Blob-opslag naar schijfstations en te verzenden naar uw on-premises-locaties.
 
 - Als de netwerk overdracht redelijk wordt geprojecteerd, kunt u een van de volgende hulpprogram ma's gebruiken die worden beschreven in [hoge netwerk bandbreedte](#high-network-bandwidth).
 
 
-### <a name="high-network-bandwidth-1-gbps---100-gbps"></a>Hoge netwerk bandbreedte (1 Gbps-100 Gbps)
+### <a name="high-network-bandwidth-1-gbps---100-gbps"></a>Hoge netwerkbandbreedte (1 Gbps - 100 Gbps)
 
 Als de beschik bare netwerk bandbreedte hoog is, gebruikt u een van de volgende hulpprogram ma's.
 
-- **AzCopy** : gebruik dit opdracht regel programma om eenvoudig gegevens te kopiëren van en naar Azure-blobs,-bestanden en-tabel opslag met optimale prestaties. AzCopy ondersteunt gelijktijdigheid en parallellisme, en de mogelijkheid om Kopieer bewerkingen te hervatten wanneer deze worden onderbroken.
+- **AzCopy** : gebruik dit opdracht regel programma om eenvoudig gegevens te kopiëren van en naar Azure-blobs,-bestanden en-tabel opslag met optimale prestaties. AzCopy biedt ondersteuning voor gelijktijdigheid en parallellisme, en de mogelijkheid om kopieerbewerkingen te hervatten als deze worden onderbroken.
 - **Azure Storage rest api's/sdk's** : wanneer u een toepassing bouwt, kunt u de toepassing ontwikkelen tegen Azure Storage rest api's en de Azure-sdk's gebruiken die in meerdere talen worden aangeboden.
-- **Azure data Box-familie voor online overdrachten** : Data Box Edge en data Box gateway zijn online netwerk apparaten waarmee gegevens kunnen worden verplaatst van en naar Azure. Gebruik Data Box Edge fysiek apparaat wanneer er een continue opname en voor verwerking van de gegevens nodig zijn voordat u deze uploadt. Data Box Gateway is een virtuele versie van het apparaat met dezelfde mogelijkheden voor gegevens overdracht. In elk geval wordt de gegevens overdracht beheerd door het apparaat.
-- **Azure Data Factory** -Data Factory moet worden gebruikt voor het uitschalen van een overdrachts bewerking en als er sprake is van indelings-en bewakings mogelijkheden voor bedrijfs kwaliteit. Gebruik Data Factory om regel matig bestanden over te dragen tussen meerdere Azure-Services, on-premises of een combi natie van beide. met Data Factory kunt u gegevensgestuurde werk stromen (pijp lijnen genoemd) maken en plannen die gegevens uit verschillende gegevens archieven opnemen en gegevens verplaatsing en gegevens transformatie automatiseren.
+- **Azure data Box-familie voor online overdrachten** : Data Box Edge en data Box gateway zijn online netwerk apparaten waarmee gegevens kunnen worden verplaatst van en naar Azure. Gebruik een fysiek Data Box Edge-apparaat wanneer continue opname en vooraf verwerken van de gegevens vóór de upload, even belangrijk zijn. Data Box Gateway is een virtuele versie van het apparaat met dezelfde mogelijkheden voor gegevensoverdracht. De gegevensoverdracht wordt altijd beheerd met het apparaat.
+- **Azure Data Factory** -Data Factory moet worden gebruikt voor het uitschalen van een overdrachts bewerking en als er sprake is van indelings-en bewakings mogelijkheden voor bedrijfs kwaliteit. Gebruik Data Factory om regelmatig bestanden over te brengen tussen verschillende Azure-services, on-premises, of een combinatie van deze twee. Met Data Factory kunt u gegevensgestuurde werkstromen (pijplijnen genoemd) maken en plannen die gegevens uit verschillende gegevensarchieven opnemen, en die de verplaatsing en transformatie van gegevens automatiseren.
 
 ## <a name="comparison-of-key-capabilities"></a>Vergelijking van de belangrijkste mogelijkheden
 
@@ -88,7 +88,7 @@ Als u online gegevens overdracht gebruikt, gebruikt u de tabel in de volgende se
 |    **Gegevenstype**              |    Azure-blobs, Azure Files, Azure-tabellen    |    Azure-blobs, Azure Files, Azure-tabellen    |    Azure-blobs, Azure Files                           |   Ondersteunt 70 en data connectors voor gegevens archieven en-indelingen    |
 |    **Vorm factor**            |    Opdrachtregelprogramma's                        |    Programmatische interface                    |    Micro soft levert een virtueel <br>of fysiek apparaat     |    Service in Azure Portal                                            |
 |    **Eerste eenmalige installatie** |    Probleem               |    Matig                       |    Eenvoudig (<30 minuten) tot gemiddeld (1-2 uur)            |    Dergaan                                                          |
-|    **Vooraf verwerkte gegevens**          |    Nee                                        |    Nee                                        |    Ja (met Edge Compute)                               |    Ja                                                                |
+|    **Vooraf verwerkte gegevens**          |    Nee                                        |    Nee                                        |    Ja (met Edge Compute)                               |    Yes                                                                |
 |    **Overdracht van andere Clouds**   |    Nee                                        |    Nee                                        |    Nee                                                    |    Ja                                                                |
 |    **Gebruikers type**                    |    IT-professionals of dev                                       |    Dev                                       |    IT pro                                                |    IT pro                                                             |
 |    **Prijzen**                      |    Er zijn gratis kosten voor het uitbrengen van gegevens van toepassing         |    Er zijn gratis kosten voor het uitbrengen van gegevens van toepassing         |    [Prijzen](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                                               |    [Prijzen](https://azure.microsoft.com/pricing/details/data-factory/)                                                            |

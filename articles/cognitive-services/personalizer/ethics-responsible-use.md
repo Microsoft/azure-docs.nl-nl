@@ -9,11 +9,11 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.openlocfilehash: 602da28f0c235fb0e797a493bc1160631c042a9d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87132718"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005976"
 ---
 # <a name="guidelines-for-responsible-implementation-of-personalizer"></a>Richt lijnen voor de verantwoordelijke implementatie van Personaler
 
@@ -73,7 +73,7 @@ Het personaliseren van inhoud is afhankelijk van nuttige informatie over de inho
 
 Houd rekening met het effect van deze functies:
 
-* **Demografische**gegevens van gebruikers: functies met betrekking tot geslacht, geslacht, leeftijd, race, religion: deze functies zijn mogelijk niet toegestaan in bepaalde toepassingen om wettelijke redenen en kunnen niet worden gepersonaliseerd om ze te personaliseren, omdat de personalisatie generalisaties en bias zou door geven. Een voor beeld van deze bias-doorgifte is een taak boeking voor engineering die niet wordt weer gegeven voor doel groepen op basis van oude of geslachte producten.
+* **Demografische** gegevens van gebruikers: functies met betrekking tot geslacht, geslacht, leeftijd, race, religion: deze functies zijn mogelijk niet toegestaan in bepaalde toepassingen om wettelijke redenen en kunnen niet worden gepersonaliseerd om ze te personaliseren, omdat de personalisatie generalisaties en bias zou door geven. Een voor beeld van deze bias-doorgifte is een taak boeking voor engineering die niet wordt weer gegeven voor doel groepen op basis van oude of geslachte producten.
 * **Land informatie**: in veel locaties van de wereld kunnen locatie gegevens (zoals een post code, post code of groeps naam) in hoge mate worden gecorreleerd met inkomsten, race-en Religion.
 * **Gebruikers perceptie van verdeling**: zelfs in gevallen waarin uw toepassing geluids beslissingen maakt, moet u rekening houden met het effect van gebruikers die zien dat de inhoud die in uw toepassing wordt weer gegeven, verandert in een manier die is afgestemd op functies die discriminerend zijn.
 * **Onbedoelde afwijking in functies**: er zijn soorten bias die kunnen worden geïntroduceerd met behulp van functies die alleen van invloed zijn op een subset van de populatie. Dit vereist extra aandacht als er functies worden gegenereerd algorithmically, zoals wanneer u afbeeldings analyse gebruikt om items in een afbeelding of tekst analyse te extra heren om entiteiten in tekst te detecteren. Let op de kenmerken van de services die u gebruikt om deze functies te maken.
@@ -152,7 +152,7 @@ Hier volgen de ontwerp gebieden voor de verantwoordelijke implementaties van AI.
 ### <a name="security-and-privacy"></a>Beveiliging en privacy
 *AI-systemen moeten veilig zijn en de privacy eerbiedigen*. Bij het gebruik van Personaler:
 
-* *Informeer gebruikers vooraf over de verzamelde gegevens en de wijze waarop deze worden gebruikt en verschaf vóór*de voorafgaande toestemming, volgens uw lokale en industriële voor Schriften.
+* *Informeer gebruikers vooraf over de verzamelde gegevens en de wijze waarop deze worden gebruikt en verschaf vóór* de voorafgaande toestemming, volgens uw lokale en industriële voor Schriften.
 * *Beveilig gebruikers besturings elementen voor privacy.* Voor toepassingen waarin persoonlijke gegevens worden opgeslagen, kunt u een gemakkelijk te vinden knop bieden voor functies zoals:
    * `Show me all you know about me`
    * `Forget my last interaction`

@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 10/09/2018
 ms.author: mikhegn
 ms.openlocfilehash: 4e96a732cffd70b0a5c24e7ebafe214297a72720
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75644627"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006044"
 ---
 # <a name="how-to-parameterize-configuration-files-in-service-fabric"></a>Configuratie bestanden in Service Fabric para meters
 
@@ -20,7 +20,7 @@ In dit artikel leest u hoe u een configuratie bestand in Service Fabric kunt par
 
 In dit voor beeld overschrijft u een configuratie waarde met behulp van para meters in de implementatie van uw toepassing.
 
-1. Open het * \<MyService>\PackageRoot\Config\Settings.xml* -bestand in uw service project.
+1. Open het *\<MyService>\PackageRoot\Config\Settings.xml* -bestand in uw service project.
 1. Stel een naam en waarde voor de configuratie parameter in, bijvoorbeeld cache grootte gelijk aan 25, door het volgende XML-bestand toe te voegen:
 
    ```xml
@@ -30,7 +30,7 @@ In dit voor beeld overschrijft u een configuratie waarde met behulp van para met
    ```
 
 1. Sla het bestand op en sluit het.
-1. Open het * \<MyApplication>\ApplicationPackageRoot\ApplicationManifest.xml* -bestand.
+1. Open het *\<MyApplication>\ApplicationPackageRoot\ApplicationManifest.xml* -bestand.
 1. In het ApplicationManifest.xml bestand declareert u een para meter en standaard waarde in het- `Parameters` element.  Het is aan te bevelen de naam van de service (bijvoorbeeld "MyService") in de parameter naam te vinden.
 
    ```xml

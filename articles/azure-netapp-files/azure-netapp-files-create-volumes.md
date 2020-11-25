@@ -15,11 +15,11 @@ ms.topic: how-to
 ms.date: 09/24/2020
 ms.author: b-juche
 ms.openlocfilehash: e88cf0c063b3ba42dadd72c19c23be8fcf919b86
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930727"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006607"
 ---
 # <a name="create-an-nfs-volume-for-azure-netapp-files"></a>Een NFS-volume maken voor Azure NetApp Files
 
@@ -56,7 +56,7 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
 
     ![Navigeren naar volumes](../media/azure-netapp-files/azure-netapp-files-navigate-to-volumes.png) 
 
-2.  Klik in het venster een volume maken op **maken**en geef informatie op over de volgende velden op het tabblad basis beginselen:   
+2.  Klik in het venster een volume maken op **maken** en geef informatie op over de volgende velden op het tabblad basis beginselen:   
     * **Volume naam**      
         Geef de naam op voor het volume dat u wilt maken.   
 
@@ -106,7 +106,7 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
 
         Het bestandspad moet uniek zijn binnen elk abonnement en elke regio. 
 
-    * Selecteer de NFS-versie (**NFSv3** of**NFSv4.1**) voor het volume.  
+    * Selecteer de NFS-versie (**NFSv3** of **NFSv4.1**) voor het volume.  
 
     * Als u NFSv 4.1 gebruikt, geeft u aan of u **Kerberos** -versleuteling wilt inschakelen voor het volume.  
 

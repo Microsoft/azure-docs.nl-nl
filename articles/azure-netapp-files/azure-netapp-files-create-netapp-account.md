@@ -15,11 +15,11 @@ ms.topic: how-to
 ms.date: 03/28/2018
 ms.author: b-juche
 ms.openlocfilehash: e5e0c43aa8c4fbf0db89065e0fab93ee174a4ede
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85483666"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006590"
 ---
 # <a name="create-a-netapp-account"></a>Een NetApp-account maken
 Als u een NetApp-account maakt, kunt u een capaciteitspool instellen en vervolgens een volume maken. U gebruikt de Azure NetApp Files-blade om een nieuw NetApp-account te maken.
@@ -31,7 +31,7 @@ U moet uw abonnement ook hebben geregistreerd voor het gebruik van de NetApp-res
 
 ## <a name="steps"></a>Stappen 
 
-1. Meld u aan bij Azure Portal. 
+1. Meld u aan bij de Azure-portal. 
 2. Verkrijg toegang tot de Azure NetApp Files-blade via een van de volgende methoden:  
    * Zoek naar **Azure NetApp Files** in het zoekvak van de Azure-portal.  
    * Klik in de navigatie op **Alle services** en filter vervolgens op Azure NetApp Files.  
@@ -54,7 +54,7 @@ U moet uw abonnement ook hebben geregistreerd voor het gebruik van de NetApp-res
      ![Nieuw NetApp-account](../media/azure-netapp-files/azure-netapp-files-new-netapp-account.png)
 
 
-5. Klik op **Maken**.     
+5. Klik op **Create**.     
    Het NetApp-account dat u hebt gemaakt, verschijnt nu in de Azure NetApp Files-blade. 
 
 > [!NOTE] 

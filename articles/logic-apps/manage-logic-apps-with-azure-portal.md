@@ -10,11 +10,11 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 07/20/2020
 ms.openlocfilehash: d50f577a7170982be004cc8957114f79675fbc6e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87078626"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006095"
 ---
 # <a name="manage-logic-apps-in-the-azure-portal"></a>Logische apps beheren in de Azure Portal
 
@@ -34,7 +34,7 @@ Voer de volgende stappen uit om uw logische app te zoeken en te openen:
 
 1. Meld u met uw Azure-account aan bij [Azure Portal](https://portal.azure.com).
 
-1. Voer in de zoek balk van Azure het `logic apps` selectie vakje **Logic apps**in.
+1. Voer in de zoek balk van Azure het `logic apps` selectie vakje **Logic apps** in.
 
    ![Scherm opname van Azure Portal menu, met Logic Apps doorzocht en geselecteerd in de zoek balk.](./media/manage-logic-apps-with-azure-portal/find-select-logic-apps.png)
 
@@ -50,16 +50,16 @@ Voer de volgende stappen uit om uw logische app te zoeken en te openen:
 
 1. [Zoek en open uw logische app](#find-logic-app)In de Azure Portal.
 
-1. Selecteer in het menu van de logische app onder **instellingen**de optie **Eigenschappen**.
+1. Selecteer in het menu van de logische app onder **instellingen** de optie **Eigenschappen**.
 
 1. In het deel venster **Eigenschappen** kunt u de volgende informatie over uw logische app bekijken en kopiëren:
 
    * **Naam**
-   * **Resource-ID**
+   * **Resource-id**
    * **Resourcegroep**
    * **Locatie**
    * **Type** 
-   * **Subscription Name**
+   * **Abonnements naam**
    * **Abonnements-id**
    * **Toegangs eindpunt**
    * **Uitgaande IP-adressen voor runtime**
@@ -96,7 +96,7 @@ Het uitschakelen van uw logische app heeft gevolgen voor uw workflowexemplaren e
 
 1. [Zoek en open uw logische app](#find-logic-app)In de Azure Portal.
 
-1. Selecteer **overzicht**in het menu van de logische app. Kies uit de volgende opties:
+1. Selecteer **overzicht** in het menu van de logische app. Kies uit de volgende opties:
 
    * Selecteer **Uitschakelen** op de werkbalk.
 
@@ -104,7 +104,7 @@ Het uitschakelen van uw logische app heeft gevolgen voor uw workflowexemplaren e
 
      Als uw logische app al is uitgeschakeld, ziet u alleen de optie **inschakelen** .
 
-   * Selecteer **inschakelen**op de werk balk.
+   * Selecteer **inschakelen** op de werk balk.
 
      ![Scherm afbeelding van de werk balk van de logische app, met de knop inschakelen geselecteerd.](./media/manage-logic-apps-with-azure-portal/enable-single-logic-app.png)
 
@@ -156,7 +156,7 @@ Het verwijderen van uw logische app heeft invloed op uw werk stroom exemplaren o
 
 1. [Zoek en open uw logische app](#find-logic-app)In de Azure Portal.
 
-1. Selecteer **overzicht**in het menu van de logische app. Selecteer **verwijderen**op de werk balk van de logische app.
+1. Selecteer **overzicht** in het menu van de logische app. Selecteer **verwijderen** op de werk balk van de logische app.
 
    ![Scherm afbeelding van de werk balk van de logische app, met de knop verwijderen geselecteerd.](./media/manage-logic-apps-with-azure-portal/delete-single-logic-app.png)
 
@@ -194,7 +194,7 @@ U kunt de Azure Portal gebruiken voor versie beheer van uw logische apps. U kunt
 
 1. Zoek in de Azure Portal [de logische app die u wilt beheren](#find-logic-app).
 
-1. Selecteer in het menu van de logische app onder **ontwikkelingsprogram ma's**de optie **versies**.
+1. Selecteer in het menu van de logische app onder **ontwikkelingsprogram ma's** de optie **versies**.
 
    ![Scherm afbeelding van de logische app in Azure Portal, waarin de pagina met de selectie van versies wordt weer gegeven onder ontwikkelingsprogram ma's.](./media/manage-logic-apps-with-azure-portal/logic-apps-menu-versions.png)
 
@@ -214,11 +214,11 @@ U kunt de Azure Portal gebruiken voor versie beheer van uw logische apps. U kunt
 
    ![Scherm afbeelding van de versie geschiedenis van de logische app, met de knop voor het promoten van een vorige versie.](./media/manage-logic-apps-with-azure-portal/promote-button.png)
 
-1. Bewerk op de pagina **Logic apps Designer** die wordt geopend, de versie die u wilt promo veren als dat nodig is. U kunt scha kelen tussen de **Designer** -en **code weergave** modus. U kunt ook **para meters**, **sjablonen**en **connectors**bijwerken.
+1. Bewerk op de pagina **Logic apps Designer** die wordt geopend, de versie die u wilt promo veren als dat nodig is. U kunt scha kelen tussen de **Designer** -en **code weergave** modus. U kunt ook **para meters**, **sjablonen** en **connectors** bijwerken.
 
    ![Scherm opname van Logic Apps Designer, met de knop om een vorige versie van een logische app te promoten.](./media/manage-logic-apps-with-azure-portal/promote-page.png)
 
-1. Selecteer **Opslaan**om de updates op te slaan en de promotie van de vorige versie te volt ooien. (Als u de wijzigingen wilt annuleren, selecteert u **verwijderen**.) 
+1. Selecteer **Opslaan** om de updates op te slaan en de promotie van de vorige versie te volt ooien. (Als u de wijzigingen wilt annuleren, selecteert u **verwijderen**.) 
 
    Wanneer u de [versie geschiedenis van de logische app opnieuw bekijkt](#find-version-history) , wordt de gepromoveerde versie boven aan de lijst weer gegeven en heeft deze een nieuwe id.
 

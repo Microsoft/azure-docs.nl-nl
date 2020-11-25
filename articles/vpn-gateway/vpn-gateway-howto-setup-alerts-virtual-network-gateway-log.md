@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 11/18/2020
 ms.author: alzam
 ms.openlocfilehash: 1f10799ab32b6cb26a8b3b5b343f65b960d71357
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94889096"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006998"
 ---
 # <a name="set-up-alerts-on-resource-log-events-from-vpn-gateway"></a>Waarschuwingen instellen voor resource logboek gebeurtenissen van VPN Gateway
 
@@ -20,7 +20,7 @@ Dit artikel helpt u bij het instellen van waarschuwingen op basis van bron logbo
 
 De volgende bron logboeken zijn beschikbaar in Azure:
 
-|***Naam** _ | _*_Beschrijvingen_*_ |
+|***Naam** _ | _*_Description_*_ |
 |---        | ---               |
 |GatewayDiagnosticLog | Bevat bron logboeken voor gateway configuratie gebeurtenissen, primaire wijzigingen en onderhouds gebeurtenissen |
 |TunnelDiagnosticLog | Bevat status wijzigings gebeurtenissen voor de tunnel. Tunnel Connect/Disconnect-gebeurtenissen hebben een samenvattings reden voor de status wijziging, indien van toepassing |

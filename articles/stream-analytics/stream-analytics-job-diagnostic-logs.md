@@ -9,11 +9,11 @@ ms.topic: troubleshooting
 ms.custom: contperfq1
 ms.date: 06/18/2020
 ms.openlocfilehash: 0e7777cba93706baea815521757b495209431ce6
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124014"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006469"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-resource-logs"></a>Problemen met Azure Stream Analytics oplossen met behulp van resource logboeken
 
@@ -38,7 +38,7 @@ Stream Analytics biedt twee typen logboeken:
 
 Activiteiten logboeken zijn standaard ingeschakeld en geven inzichten op hoog niveau in bewerkingen die worden uitgevoerd door uw Stream Analytics-taak. Informatie die aanwezig is in activiteiten logboeken kan de hoofd oorzaak van de problemen die invloed hebben op uw taak vinden. Voer de volgende stappen uit om activiteiten Logboeken in Stream Analytics te gebruiken:
 
-1. Meld u aan bij de Azure Portal en selecteer het **activiteiten logboek** in het **overzicht** .
+1. Meld u aan bij de Azure Portal en selecteer het **activiteiten logboek** in het **overzicht**.
 
    ![Stream Analytics activiteiten logboek](./media/stream-analytics-job-diagnostic-logs/stream-analytics-menu.png)
 
@@ -62,11 +62,11 @@ Het inschakelen van bron logboeken en het verzenden van deze naar Azure Monitor 
 
 1.  Maak een Log Analytics-werk ruimte als u er nog geen hebt. Het is raadzaam om uw Log Analytics-werk ruimte in dezelfde regio als uw Stream Analytics-taak te hebben.
 
-2.  Meld u aan bij de Azure Portal en navigeer naar uw Stream Analytics-taak. Onder **bewaking** selecteert u **Diagnostische logboeken** . Selecteer vervolgens **Diagnostische gegevens inschakelen** .
+2.  Meld u aan bij de Azure Portal en navigeer naar uw Stream Analytics-taak. Onder **bewaking** selecteert u **Diagnostische logboeken**. Selecteer vervolgens **Diagnostische gegevens inschakelen**.
 
     ![Blade navigatie naar resource logboeken](./media/stream-analytics-job-diagnostic-logs/diagnostic-logs-monitoring.png)  
 
-2.  Geef een **naam** op in de naam van de **Diagnostische instellingen** en schakel de selectie vakjes in voor **uitvoering** en **ontwerp** onder **logboek** en **AllMetrics** onder **metrische gegevens** . Selecteer vervolgens **verzenden naar log Analytics** en kies uw werk ruimte. Klik op **Opslaan** .
+2.  Geef een **naam** op in de naam van de **Diagnostische instellingen** en schakel de selectie vakjes in voor **uitvoering** en **ontwerp** onder **logboek** en **AllMetrics** onder **metrische gegevens**. Selecteer vervolgens **verzenden naar log Analytics** en kies uw werk ruimte. Klik op **Opslaan**.
 
     ![Instellingen voor bronnen logboeken](./media/stream-analytics-job-diagnostic-logs/logs-setup.png)
 
@@ -82,9 +82,9 @@ Het inschakelen van bron logboeken en het verzenden van deze naar Azure Monitor 
 
 Azure Stream Analytics worden twee categorieën resource logboeken vastgelegd:
 
-* **Ontwerpen** : legt logboek gebeurtenissen vast die verband houden met het ontwerpen van taken, zoals het maken van een taak, het toevoegen en verwijderen van invoer en uitvoer, het toevoegen en bijwerken van de query, en het starten of stoppen van de taak.
+* **Ontwerpen**: legt logboek gebeurtenissen vast die verband houden met het ontwerpen van taken, zoals het maken van een taak, het toevoegen en verwijderen van invoer en uitvoer, het toevoegen en bijwerken van de query, en het starten of stoppen van de taak.
 
-* **Uitvoering** : legt gebeurtenissen vast die tijdens de uitvoering van de taak optreden.
+* **Uitvoering**: legt gebeurtenissen vast die tijdens de uitvoering van de taak optreden.
     * Connectiviteitsfouten
     * Gegevens verwerkings fouten, waaronder:
         * Gebeurtenissen die niet voldoen aan de definitie van de query (niet-overeenkomende veld typen en waarden, ontbrekende velden, enzovoort)
@@ -98,11 +98,11 @@ Alle logboeken worden opgeslagen in JSON-indeling. Elke vermelding heeft de volg
 Naam | Beschrijving
 ------- | -------
 tijd | Tijds tempel (in UTC) van het logboek.
-resourceId | De ID van de resource waarop de bewerking plaatsvond, in hoofd letters. Het bevat de abonnements-ID, de resource groep en de taak naam. Bijvoorbeeld **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/My-Resource-Group/providers/Microsoft. STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB** .
-category | De categorie van het logboek, de **uitvoering** of het **ontwerp** .
-operationName | De naam van de bewerking die is geregistreerd. Bijvoorbeeld **Send events: SQL output schrijf fout naar mysqloutput** .
-status | De status van de bewerking. Bijvoorbeeld **mislukt** of **geslaagd** .
-niveau | Logboek niveau. Bijvoorbeeld: **fout** , **waarschuwing** of **informatief** .
+resourceId | De ID van de resource waarop de bewerking plaatsvond, in hoofd letters. Het bevat de abonnements-ID, de resource groep en de taak naam. Bijvoorbeeld **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/My-Resource-Group/providers/Microsoft. STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
+category | De categorie van het logboek, de **uitvoering** of het **ontwerp**.
+operationName | De naam van de bewerking die is geregistreerd. Bijvoorbeeld **Send events: SQL output schrijf fout naar mysqloutput**.
+status | De status van de bewerking. Bijvoorbeeld **mislukt** of **geslaagd**.
+niveau | Logboek niveau. Bijvoorbeeld: **fout**, **waarschuwing** of **informatief**.
 properties | Logboek vermelding-specifieke details, geserialiseerd als een JSON-teken reeks. Zie de volgende secties in dit artikel voor meer informatie.
 
 ### <a name="execution-log-properties-schema"></a>Schema voor eigenschappen van uitvoerings logboek
@@ -117,16 +117,16 @@ Naam | Beschrijving
 ------- | -------
 Bron | De naam van de taak invoer of uitvoer waar de fout is opgetreden.
 Bericht | Het bericht dat is gekoppeld aan de fout.
-Type | Type fout. Bijvoorbeeld, **DataConversionError** , **CsvParserError** of **ServiceBusPropertyColumnMissingError** .
+Type | Type fout. Bijvoorbeeld, **DataConversionError**, **CsvParserError** of **ServiceBusPropertyColumnMissingError**.
 Gegevens | Bevat gegevens die handig zijn om de oorzaak van de fout nauw keurig te vinden. Onderhevig aan afkap ping, afhankelijk van de grootte.
 
 Afhankelijk van de waarde van **operationname** , hebben gegevens fouten het volgende schema:
 
 * Er treden **gebeurtenissen** op tijdens het lezen van gebeurtenissen. Ze treden op wanneer de gegevens bij de invoer niet voldoen aan het query schema om een van de volgende redenen:
 
-   * *Niet-overeenkomend type tijdens gebeurtenis (de) serialiseren* : identificeert het veld dat de fout veroorzaakt.
+   * *Niet-overeenkomend type tijdens gebeurtenis (de) serialiseren*: identificeert het veld dat de fout veroorzaakt.
 
-   * *Kan een gebeurtenis niet lezen, ongeldige serialisatie* : bevat informatie over de locatie in de invoer gegevens waar de fout is opgetreden. Bevat de BLOB-naam voor BLOB-invoer, offset en een voor beeld van de gegevens.
+   * *Kan een gebeurtenis niet lezen, ongeldige serialisatie*: bevat informatie over de locatie in de invoer gegevens waar de fout is opgetreden. Bevat de BLOB-naam voor BLOB-invoer, offset en een voor beeld van de gegevens.
 
 * **Verzenden van gebeurtenissen** vindt plaats tijdens schrijf bewerkingen. Ze identificeren de streaming-gebeurtenis die de fout heeft veroorzaakt.
 
@@ -138,7 +138,7 @@ Naam | Beschrijving
 -------- | --------
 Fout | Beschrijving Fout gegevens. Normaal gesp roken is dit uitzonderings gegevens als deze beschikbaar zijn.
 Bericht| Logboek bericht.
-Type | Type bericht. Wordt toegewezen aan interne categorisatie van fouten. Bijvoorbeeld **JobValidationError** of **BlobOutputAdapterInitializationFailure** .
+Type | Type bericht. Wordt toegewezen aan interne categorisatie van fouten. Bijvoorbeeld **JobValidationError** of **BlobOutputAdapterInitializationFailure**.
 Correlatie-id | GUID die de uitvoering van de taak op unieke wijze identificeert. Alle vermeldingen in het uitvoerings logboek vanaf het moment dat de taak wordt gestart totdat de taak stopt met dezelfde **correlatie-ID-** waarde.
 
 ## <a name="next-steps"></a>Volgende stappen

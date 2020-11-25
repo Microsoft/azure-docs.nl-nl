@@ -12,11 +12,11 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/14/2020
 ms.openlocfilehash: 66a17b61fef652160dc6d4a02bf330adbf0c7362
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425693"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006816"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Opzoek activiteit in Azure Data Factory
 
@@ -58,8 +58,8 @@ De opzoek activiteit kan Maxi maal 5000 rijen opleveren. Als de resultatenset me
 
 Naam | Beschrijving | Type | Vereist?
 ---- | ----------- | ---- | --------
-sets | Bevat de referentie voor de gegevensset voor de zoek actie. Details ophalen uit de sectie **Eigenschappen van gegevensset** in elk bijbehorend connector artikel. | Sleutel/waarde-paar | Ja
-source | Bevat eigenschappen van een gegevensset, hetzelfde als de bron van de Kopieer activiteit. Details ophalen uit de sectie **Eigenschappen van Kopieer activiteit** in elk bijbehorende connector-artikel. | Sleutel/waarde-paar | Ja
+sets | Bevat de referentie voor de gegevensset voor de zoek actie. Details ophalen uit de sectie **Eigenschappen van gegevensset** in elk bijbehorend connector artikel. | Sleutel/waarde-paar | Yes
+source | Bevat eigenschappen van een gegevensset, hetzelfde als de bron van de Kopieer activiteit. Details ophalen uit de sectie **Eigenschappen van Kopieer activiteit** in elk bijbehorende connector-artikel. | Sleutel/waarde-paar | Yes
 firstRowOnly | Geeft aan of alleen de eerste rij of alle rijen worden geretourneerd. | Booleaans | Nee. De standaardwaarde is `true`.
 
 > [!NOTE]
@@ -85,7 +85,7 @@ Het Zoek resultaat wordt geretourneerd in de `output` sectie van het resultaat v
     }
     ```
 
-* **Wanneer `firstRowOnly` is ingesteld op `false` **, is de uitvoer indeling zoals in de volgende code wordt weer gegeven. Een `count` veld geeft aan hoeveel records er worden geretourneerd. Gedetailleerde waarden worden weer gegeven onder een vaste `value` matrix. In een dergelijk geval wordt de opzoek activiteit gevolgd door een [foreach-activiteit](control-flow-for-each-activity.md). U geeft de `value` matrix door aan het veld foreach-activiteit met `items` behulp van het patroon van `@activity('MyLookupActivity').output.value` . Als u elementen in de `value` matrix wilt openen, gebruikt u de volgende syntaxis: `@{activity('lookupActivity').output.value[zero based index].propertyname}` . Een voorbeeld is `@{activity('lookupActivity').output.value[0].schema}`.
+* **Wanneer `firstRowOnly` is ingesteld op `false`**, is de uitvoer indeling zoals in de volgende code wordt weer gegeven. Een `count` veld geeft aan hoeveel records er worden geretourneerd. Gedetailleerde waarden worden weer gegeven onder een vaste `value` matrix. In een dergelijk geval wordt de opzoek activiteit gevolgd door een [foreach-activiteit](control-flow-for-each-activity.md). U geeft de `value` matrix door aan het veld foreach-activiteit met `items` behulp van het patroon van `@activity('MyLookupActivity').output.value` . Als u elementen in de `value` matrix wilt openen, gebruikt u de volgende syntaxis: `@{activity('lookupActivity').output.value[zero based index].propertyname}` . Een voorbeeld is `@{activity('lookupActivity').output.value[0].schema}`.
 
     ```json
     {

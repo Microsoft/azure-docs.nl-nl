@@ -9,11 +9,11 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/22/2020
 ms.openlocfilehash: b0df55e59bd519a816c4022f2434edfcd4460780
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570771"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006520"
 ---
 # <a name="exchange-edifact-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>EDIFACT-berichten voor B2B Enterprise-integratie in Azure Logic Apps uitwisselen met Enterprise Integration Pack
 
@@ -36,7 +36,7 @@ Nadat u [een integratie account hebt gemaakt](../logic-apps/logic-apps-enterpris
 
 ## <a name="create-an-edifact-agreement"></a>Een EDIFACT-overeenkomst maken 
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com "Azure Portal"). 
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com "Azure Portal"). 
 
 2. Selecteer in het hoofd menu van Azure **alle services**. Voer in het zoekvak ' Integration ' in en selecteer vervolgens **integratie accounts**.
 
@@ -45,7 +45,7 @@ Nadat u [een integratie account hebt gemaakt](../logic-apps/logic-apps-enterpris
    > [!TIP]
    > Als **alle services** niet worden weer gegeven, moet u het menu mogelijk eerst uitbreiden. Selecteer boven in het samengevouwen menu de optie **Tekstlabels weer geven**.
 
-3. Onder **integratie accounts**selecteert u het integratie account waar u de overeenkomst wilt maken.
+3. Onder **integratie accounts** selecteert u het integratie account waar u de overeenkomst wilt maken.
 
    ![Integratie account selecteren waar de overeenkomst moet worden gemaakt](./media/logic-apps-enterprise-integration-edifact/edifact-1-4.png)
 
@@ -57,13 +57,13 @@ Nadat u [een integratie account hebt gemaakt](../logic-apps/logic-apps-enterpris
 
    ![Kies toevoegen](./media/logic-apps-enterprise-integration-edifact/edifact-agreement-2.png)
 
-6. Voer onder **toevoegen**een **naam** in voor uw overeenkomst. Selecteer voor **type overeenkomst**de optie **EDIFACT**. Selecteer de **host-partner**, de **identiteit**van de host, de **gast partner**en de **gast identiteit** voor uw overeenkomst.
+6. Voer onder **toevoegen** een **naam** in voor uw overeenkomst. Selecteer voor **type overeenkomst** de optie **EDIFACT**. Selecteer de **host-partner**, de **identiteit** van de host, de **gast partner** en de **gast identiteit** voor uw overeenkomst.
 
    ![Details van overeenkomst opgeven](./media/logic-apps-enterprise-integration-edifact/edifact-1.png)
 
    | Eigenschap | Beschrijving |
    | --- | --- |
-   | Naam |Naam van de overeenkomst |
+   | Name |Naam van de overeenkomst |
    | Type overeenkomst | Moet EDIFACT zijn |
    | Host-partner |Een overeenkomst heeft zowel een host-als een gast partner nodig. De host-partner vertegenwoordigt de organisatie die de overeenkomst configureert. |
    | Host-id |Een id voor de host-partner |
@@ -81,14 +81,14 @@ Nu u de eigenschappen van de overeenkomst hebt ingesteld, kunt u configureren ho
 > De EDIFACT-connector ondersteunt alleen UTF-8-tekens.
 > Als uw uitvoer onverwachte tekens bevat, controleert u of uw EDIFACT-berichten gebruikmaken van de UTF-8-tekenset.
 
-1. Onder **toevoegen**selecteert u **instellingen voor ontvangen**.
+1. Onder **toevoegen** selecteert u **instellingen voor ontvangen**.
 Configureer deze eigenschappen op basis van uw overeenkomst met de partner die berichten met u uitwisselt. Zie voor beschrijvingen van eigenschappen de tabellen in deze sectie.
 
    **Ontvangst-instellingen** zijn ingedeeld in de volgende secties: Id's, bevestiging, Schema's, controle nummers, validatie en interne instellingen.
 
    ![Instellingen voor het ontvangen van berichten configureren](./media/logic-apps-enterprise-integration-edifact/edifact-2.png)  
 
-2. Wanneer u klaar bent, slaat u de instellingen op door **OK**te kiezen.
+2. Wanneer u klaar bent, slaat u de instellingen op door **OK** te kiezen.
 
 U bent nu klaar om inkomende berichten af te handelen die overeenkomen met de geselecteerde instellingen.
 
@@ -155,14 +155,14 @@ Wanneer u elke validatie rij voltooit, wordt er automatisch een andere toegevoeg
 
 U kunt configureren hoe deze overeenkomst uitgaande berichten identificeert en verwerkt die u via deze overeenkomst naar uw partners verzendt.
 
-1.  Onder **toevoegen**selecteert u **instellingen verzenden**.
+1.  Onder **toevoegen** selecteert u **instellingen verzenden**.
 Configureer deze eigenschappen op basis van uw overeenkomst met uw partner die berichten met u uitwisselt. Zie voor beschrijvingen van eigenschappen de tabellen in deze sectie.
 
     De **instellingen voor verzenden** zijn ingedeeld in de volgende secties: Id's, bevestiging, Schema's, enveloppen, teken sets en scheidings tekens, controle nummers en validaties.
 
     ![Instellingen voor verzenden configureren](./media/logic-apps-enterprise-integration-edifact/edifact-3.png)    
 
-2. Wanneer u klaar bent, slaat u de instellingen op door **OK**te kiezen.
+2. Wanneer u klaar bent, slaat u de instellingen op door **OK** te kiezen.
 
 Uw overeenkomst is nu klaar voor het afhandelen van uitgaande berichten die voldoen aan de geselecteerde instellingen.
 
@@ -202,7 +202,7 @@ Uw overeenkomst is nu klaar voor het afhandelen van uitgaande berichten die vold
 | UNB10 (communicatie overeenkomst) |Voer een alfanumerieke waarde in met mini maal één teken en Maxi maal 40 tekens. |
 | UNB11 (test indicator) |Schakel dit selectie vakje in om aan te geven dat het gegenereerde uitwisseling test gegevens is |
 | UNA segment Toep assen (advies voor service teken reeks) |Schakel dit selectie vakje in om een UNA-segment te genereren voor het verzenden van de uitwisseling. |
-| UNG segmenten Toep assen (koptekst functie groep) |Schakel dit selectie vakje in om Groepeer segmenten in de kop van de functionele groep te maken in de berichten die naar de gast partner worden verzonden. De volgende waarden worden gebruikt om de UNG-segmenten te maken: <p>Voer voor **UNG1**een alfanumerieke waarde in met mini maal één teken en Maxi maal zes tekens. <p>Voer voor **Ung 2.1**een alfanumerieke waarde in met mini maal één teken en maxi maal 35 tekens. <p>Voer voor **Ung 2.2**een alfanumerieke waarde in met een maximum van vier tekens. <p>Voer voor **ung 3.1**een alfanumerieke waarde in met mini maal één teken en maxi maal 35 tekens. <p>Voer voor **ung 3.2**een alfanumerieke waarde in met een maximum van vier tekens. <p>Voer voor **UNG6**een alfanumerieke waarde in met mini maal één en Maxi maal drie tekens. <p>Voer voor **ung 7.1**een alfanumerieke waarde in met mini maal één teken en Maxi maal drie tekens. <p>Voer voor **ung 7.2**een alfanumerieke waarde in met mini maal één teken en Maxi maal drie tekens. <p>Voer voor **ung 7.3**een alfanumerieke waarde in met mini maal 1 teken en Maxi maal 6 tekens. <p>Voer voor **UNG8**een alfanumerieke waarde in met mini maal één teken en Maxi maal 14 tekens. |
+| UNG segmenten Toep assen (koptekst functie groep) |Schakel dit selectie vakje in om Groepeer segmenten in de kop van de functionele groep te maken in de berichten die naar de gast partner worden verzonden. De volgende waarden worden gebruikt om de UNG-segmenten te maken: <p>Voer voor **UNG1** een alfanumerieke waarde in met mini maal één teken en Maxi maal zes tekens. <p>Voer voor **Ung 2.1** een alfanumerieke waarde in met mini maal één teken en maxi maal 35 tekens. <p>Voer voor **Ung 2.2** een alfanumerieke waarde in met een maximum van vier tekens. <p>Voer voor **ung 3.1** een alfanumerieke waarde in met mini maal één teken en maxi maal 35 tekens. <p>Voer voor **ung 3.2** een alfanumerieke waarde in met een maximum van vier tekens. <p>Voer voor **UNG6** een alfanumerieke waarde in met mini maal één en Maxi maal drie tekens. <p>Voer voor **ung 7.1** een alfanumerieke waarde in met mini maal één teken en Maxi maal drie tekens. <p>Voer voor **ung 7.2** een alfanumerieke waarde in met mini maal één teken en Maxi maal drie tekens. <p>Voer voor **ung 7.3** een alfanumerieke waarde in met mini maal 1 teken en Maxi maal 6 tekens. <p>Voer voor **UNG8** een alfanumerieke waarde in met mini maal één teken en Maxi maal 14 tekens. |
 
 ### <a name="character-sets-and-separators"></a>Teken sets en scheidings tekens
 
@@ -245,7 +245,7 @@ Wanneer u elke validatie rij voltooit, wordt er automatisch een andere toegevoeg
 
     De zojuist toegevoegde overeenkomst wordt nu weer gegeven in de lijst met **overeenkomsten** .
 
-2.  U kunt uw overeenkomsten ook bekijken in het overzicht van het integratie account. Kies **overzicht**in het menu integratie account en selecteer vervolgens de tegel **overeenkomsten** . 
+2.  U kunt uw overeenkomsten ook bekijken in het overzicht van het integratie account. Kies **overzicht** in het menu integratie account en selecteer vervolgens de tegel **overeenkomsten** . 
 
     ![Scherm opname van de tegel overeenkomsten.](./media/logic-apps-enterprise-integration-edifact/edifact-4.png)   
 

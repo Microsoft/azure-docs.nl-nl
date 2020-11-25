@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.date: 05/14/2018
 ms.author: hrasheed
 ms.openlocfilehash: ca84cb6cdd6b47976eadbc5298701a46fe677426
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547823"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007134"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Een HDInsight-toepassing publiceren in azure Marketplace
 U kunt een Azure HDInsight-toepassing installeren op een HDInsight-cluster op basis van Linux. In dit artikel leert u hoe u een HDInsight-toepassing publiceert in azure Marketplace. Zie [een aanbieding publiceren in azure Marketplace](../marketplace/overview.md)voor algemene informatie over publiceren in azure Marketplace.
@@ -63,7 +63,7 @@ Wanneer een toepassing op een cluster wordt geïnstalleerd (op een bestaand clus
   > * Een koppel teken, voor de Lees baarheid.
   > * Een unieke teken reeks functie, met de naam van de toepassing als de para meter.
   > 
-  > In de lijst met persistente script acties wordt het vorige voor beeld weer gegeven als **tint-installeren-v0-4wkahss55hlas** . Bekijk een voor beeld van een [JSON-nettolading](https://raw.githubusercontent.com/hdinsight/Iaas-Applications/master/Hue/azuredeploy.json).
+  > In de lijst met persistente script acties wordt het vorige voor beeld weer gegeven als **tint-installeren-v0-4wkahss55hlas**. Bekijk een voor beeld van een [JSON-nettolading](https://raw.githubusercontent.com/hdinsight/Iaas-Applications/master/Hue/azuredeploy.json).
   > 
 
 Het installatie script moet de volgende kenmerken hebben:
@@ -88,9 +88,9 @@ Een HDInsight-toepassing publiceren:
 
 1. Meld u aan bij [Azure Publishing](https://publish.windowsazure.com/).
 2. Selecteer **oplossingen sjablonen** in het linkermenu.
-3. Voer een titel in en selecteer vervolgens **een nieuwe oplossings sjabloon maken** .
-4. Als u uw organisatie nog niet hebt geregistreerd, selecteert u **ontwikkelaars centrum-account maken en lid worden van het Azure-programma** .  Zie [een micro soft-ontwikkelaars account maken](../marketplace/overview.md)voor meer informatie.
-5. Selecteer **enkele topologieën definiëren om aan de slag te gaan** . Een oplossings sjabloon is een ' Parent ' van alle topologieën. U kunt meerdere topologieën definiëren in één aanbieding of oplossings sjabloon. Wanneer een aanbieding naar fase ring wordt gepusht, wordt deze met alle topologieën gepusht. 
+3. Voer een titel in en selecteer vervolgens **een nieuwe oplossings sjabloon maken**.
+4. Als u uw organisatie nog niet hebt geregistreerd, selecteert u **ontwikkelaars centrum-account maken en lid worden van het Azure-programma**.  Zie [een micro soft-ontwikkelaars account maken](../marketplace/overview.md)voor meer informatie.
+5. Selecteer **enkele topologieën definiëren om aan de slag te gaan**. Een oplossings sjabloon is een ' Parent ' van alle topologieën. U kunt meerdere topologieën definiëren in één aanbieding of oplossings sjabloon. Wanneer een aanbieding naar fase ring wordt gepusht, wordt deze met alle topologieën gepusht. 
 6. Voer een topologie naam in en selecteer deze **+** .
 7. Voer een nieuwe versie in en selecteer **+** .
 8. Upload het zip-bestand dat u hebt gemaakt tijdens het inpakken van de toepassing.  

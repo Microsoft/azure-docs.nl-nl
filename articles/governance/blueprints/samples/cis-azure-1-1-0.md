@@ -4,11 +4,11 @@ description: Overzicht van blauwdrukvoorbeeld voor CIS Microsoft Azure Foundatio
 ms.date: 10/14/2020
 ms.topic: sample
 ms.openlocfilehash: 6c09e539e192db8422b25079264b9f4e8965d994
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92054607"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005602"
 ---
 # <a name="cis-microsoft-azure-foundations-benchmark-blueprint-sample"></a>Blauwdrukvoorbeeld voor CIS Microsoft Azure Foundations Benchmark
 

@@ -9,16 +9,16 @@ ms.reviewer: dineshm
 ms.date: 09/04/2020
 ms.subservice: blobs
 ms.custom: devx-track-js
-ms.openlocfilehash: 952d0acb00a25fe7d84738825cbad017e5b18029
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: b9eb65311951706863c3b18c5fc91bae8c41c7dc
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91892690"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96007338"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Een statische website hosten in Azure Storage
 
-U kunt statische inhoud (HTML-, CSS-, java script-en afbeeldings bestanden) rechtstreeks vanuit een opslag container met de naam *$Web*verwerken. Door uw inhoud in Azure Storage te hosten, kunt u serverloze architecturen gebruiken die [Azure functions](/azure/azure-functions/functions-overview) en andere PaaS-Services (platform as a Service) bevatten. Azure Storage statische website-hosting is een uitstekende optie in gevallen waarin u geen webserver nodig hebt om inhoud te renderen.
+U kunt statische inhoud (HTML-, CSS-, java script-en afbeeldings bestanden) rechtstreeks vanuit een opslag container met de naam *$Web* verwerken. Door uw inhoud in Azure Storage te hosten, kunt u serverloze architecturen gebruiken die [Azure functions](../../azure-functions/functions-overview.md) en andere PaaS-Services (platform as a Service) bevatten. Azure Storage statische website-hosting is een uitstekende optie in gevallen waarin u geen webserver nodig hebt om inhoud te renderen.
 
 [App service statische web apps](https://azure.microsoft.com/services/app-service/static/) is een geweldig alternatief voor het Azure Storage van statische website-hosting en is ook geschikt in gevallen waarin u geen webserver nodig hebt om inhoud te renderen. App Service statische Web Apps bieden u een volledig beheerde werk stroom voor continue integratie en doorlopende levering (CI/CD) van GitHub-bron tot wereld wijde implementatie.
 
@@ -46,7 +46,7 @@ Bestanden in de **$Web** -container zijn hoofdletter gevoelig, worden aangeboden
 U kunt elk van deze hulpprogram ma's gebruiken om inhoud te uploaden naar de container **$Web** :
 
 > [!div class="checklist"]
-> * [Azure-CLI](storage-blob-static-website-how-to.md?tabs=azure-cli)
+> * [Azure CLI](storage-blob-static-website-how-to.md?tabs=azure-cli)
 > * [Azure PowerShell-module](storage-blob-static-website-how-to.md?tabs=azure-powershell)
 > * [AzCopy](../common/storage-use-azcopy-v10.md)
 > * [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/)
@@ -60,7 +60,7 @@ Gebruikers kunnen site-inhoud vanuit een browser weer geven met behulp van de op
 Als de server een 404-fout retourneert en u geen fout document hebt opgegeven toen u de website inschakelde, wordt een standaard-404-pagina naar de gebruiker geretourneerd.
 
 > [!NOTE]
-> [CORS-ondersteuning (cross-Origin Resource Sharing) voor Azure Storage](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) wordt niet ondersteund met een statische website.
+> [CORS-ondersteuning (cross-Origin Resource Sharing) voor Azure Storage](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) wordt niet ondersteund met een statische website.
 
 ### <a name="regional-codes"></a>Regionale codes
 
@@ -103,13 +103,13 @@ Als het opslag account is geconfigureerd voor het [vereisen van beveiligde overd
 
 ## <a name="adding-http-headers"></a>HTTP-headers toevoegen
 
-Het is niet mogelijk om headers als onderdeel van de functie statische website te configureren. U kunt Azure CDN echter gebruiken om koptekst waarden toe te voegen en te toevoegen (of te overschrijven). Zie de [Naslag informatie voor de standaard regels-engine voor Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-standard-rules-engine-reference).
+Het is niet mogelijk om headers als onderdeel van de functie statische website te configureren. U kunt Azure CDN echter gebruiken om koptekst waarden toe te voegen en te toevoegen (of te overschrijven). Zie de [Naslag informatie voor de standaard regels-engine voor Azure CDN](../../cdn/cdn-standard-rules-engine-reference.md).
 
-Als u headers wilt gebruiken voor het beheren van de cache, raadpleegt u [beheer Azure CDN caching met cache regels](https://docs.microsoft.com/azure/cdn/cdn-caching-rules).
+Als u headers wilt gebruiken voor het beheren van de cache, raadpleegt u [beheer Azure CDN caching met cache regels](../../cdn/cdn-caching-rules.md).
 
 ## <a name="multi-region-website-hosting"></a>Hosting van websites met meerdere regio's
 
-Als u van plan bent om een website in meerdere locaties te hosten, raden we u aan om een [Content Delivery Network](https://docs.microsoft.com/azure/cdn/) te gebruiken voor regionale caching. Gebruik de [voor deur van Azure](https://docs.microsoft.com/azure/frontdoor/) als u in elke regio verschillende inhoud wilt aanbieden. Het biedt ook mogelijkheden voor failover. [Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/) wordt niet aanbevolen als u van plan bent een aangepast domein te gebruiken. Problemen kunnen zich voordoen als gevolg van de manier waarop Azure Storage aangepaste domein namen verifieert.
+Als u van plan bent om een website in meerdere locaties te hosten, raden we u aan om een [Content Delivery Network](../../cdn/index.yml) te gebruiken voor regionale caching. Gebruik de [voor deur van Azure](../../frontdoor/index.yml) als u in elke regio verschillende inhoud wilt aanbieden. Het biedt ook mogelijkheden voor failover. [Azure Traffic Manager](../../traffic-manager/index.yml) wordt niet aanbevolen als u van plan bent een aangepast domein te gebruiken. Problemen kunnen zich voordoen als gevolg van de manier waarop Azure Storage aangepaste domein namen verifieert.
 
 
 ## <a name="pricing"></a>Prijzen
@@ -126,7 +126,7 @@ Zie [metrische gegevens inschakelen op de pagina's van een statische website](st
 
 * [Een statische website hosten in Azure Storage](storage-blob-static-website-how-to.md)
 * [Een aangepast domein toewijzen aan een Azure Blob Storage-eindpunt](storage-custom-domain-name.md)
-* [Azure Functions](/azure/azure-functions/functions-overview)
-* [Azure App Service](/azure/app-service/overview)
-* [Uw eerste serverloze web-app bouwen](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)
+* [Azure Functions](../../azure-functions/functions-overview.md)
+* [Azure App Service](../../app-service/overview.md)
+* [Uw eerste serverloze web-app bouwen](/azure/functions/tutorial-static-website-serverless-api-with-database)
 * [Zelfstudie: Uw domein hosten in Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)

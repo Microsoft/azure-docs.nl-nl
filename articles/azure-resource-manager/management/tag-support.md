@@ -4,11 +4,11 @@ description: Hier wordt weer gegeven welke Azure-resource typen tags ondersteune
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.openlocfilehash: fb81ed303cf27add3a033021f017c03f4b9e9750
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427765"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005721"
 ---
 # <a name="tag-support-for-azure-resources"></a>Ondersteuning voor labels voor Azure-resources
 In dit artikel wordt beschreven of een resource type [labels](tag-resources.md)ondersteunt. De kolom met de naam **ondersteunt labels** geeft aan of het resource type een eigenschap voor de tag heeft. De kolom label **in het kosten rapport** geeft aan of dit resource type de tag doorgeeft aan het kosten rapport. U kunt kosten op labels weer geven in de [Cost Management kosten analyse](../../cost-management-billing/costs/group-filter.md) en de gegevens voor de [factuur en dagelijks gebruik van Azure](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md).
@@ -847,7 +847,7 @@ Ga naar de naam ruimte van een resource provider:
 > | ReservationTransactions | Nee | Nee |
 > | Tags | Nee | Nee |
 > | tenants | Nee | Nee |
-> | Voorwaarden | Nee | Nee |
+> | Termen | Nee | Nee |
 > | UsageDetails | Nee | Nee |
 
 ## <a name="microsoftcontainerinstance"></a>Micro soft. ContainerInstance
@@ -934,7 +934,7 @@ Ga naar de naam ruimte van een resource provider:
 > | ExternalSubscriptions/query | Nee | Nee |
 > | Prognose | Nee | Nee |
 > | Inzichten | Nee | Nee |
-> | Query’s uitvoeren | Nee | Nee |
+> | Query | Nee | Nee |
 > | registreren | Nee | Nee |
 > | Reportconfigs | Nee | Nee |
 > | Rapporten | Nee | Nee |

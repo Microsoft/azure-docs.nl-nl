@@ -11,11 +11,11 @@ ms.workload: identity
 ms.date: 10/14/2020
 ms.author: chmutali
 ms.openlocfilehash: d39e00a80ab167936a749c73867b4343e6ed9d76
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358810"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006435"
 ---
 # <a name="tutorial-configure-attribute-write-back-from-azure-ad-to-sap-successfactors"></a>Zelfstudie: Write-back van kenmerken van Azure AD naar SAP SuccessFactors configureren
 Het doel van deze zelfstudie is om de stappen te laten zien voor write-back van kenmerken van Azure AD naar SAP SuccessFactors Employee Central. 

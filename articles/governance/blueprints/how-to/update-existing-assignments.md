@@ -4,11 +4,11 @@ description: Meer informatie over het mechanisme voor het bijwerken van een best
 ms.date: 08/27/2020
 ms.topic: how-to
 ms.openlocfilehash: ddaac8110885d817bc96745965c1af7e522b1919
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89651378"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007185"
 ---
 # <a name="how-to-update-an-existing-blueprint-assignment"></a>Een bestaande blauw druk-toewijzing bijwerken
 
@@ -32,11 +32,11 @@ Wanneer een blauw druk is toegewezen, kan de toewijzing worden bijgewerkt. Er zi
 
 1. Bekijk op de pagina bijgewerkte toewijzings Details de nieuwe status. In dit voor beeld hebben we **vergren deling** toegevoegd aan de toewijzing.
 
-   :::image type="content" source="../media/update-existing-assignments/updated-assignment.png" alt-text="Scherm afbeelding van de toewijzings pagina blauw drukken met de knop Update toewijzing gemarkeerd." border="false":::
+   :::image type="content" source="../media/update-existing-assignments/updated-assignment.png" alt-text="Scherm opname van een bijgewerkte blauw druk-toewijzing waarin de vergrendelings modus is gewijzigd." border="false":::
 
 1. Bekijk details over andere **toewijzings bewerkingen** met behulp van de vervolg keuzelijst. De tabel met **beheerde resources** die worden bijgewerkt op basis van de geselecteerde toewijzings bewerking.
 
-   :::image type="content" source="../media/update-existing-assignments/assignment-operations.png" alt-text="Scherm afbeelding van de toewijzings pagina blauw drukken met de knop Update toewijzing gemarkeerd." border="false":::
+   :::image type="content" source="../media/update-existing-assignments/assignment-operations.png" alt-text="Scherm afbeelding van een bijgewerkte blauw druk-toewijzing met de toewijzings bewerkingen en hun status." border="false":::
 
 ## <a name="rules-for-updating-assignments"></a>Regels voor het bijwerken van toewijzingen
 
@@ -50,7 +50,7 @@ De implementatie van de bijgewerkte toewijzingen volgt enkele belang rijke regel
     De eerder geïmplementeerde beleids toewijzingen blijven aanwezig.
   - Als het artefact voor beleids toewijzing van de blauw druk wordt verwijderd, blijven geïmplementeerde beleids toewijzingen aanwezig.
 - Azure Resource Manager-sjablonen (ARM-sjablonen)
-  - De sjabloon wordt als een **put**verwerkt door Resource Manager. Raadpleeg de documentatie voor elke opgenomen resource als elk resource type deze actie anders verwerkt, om de impact van deze actie te bepalen wanneer deze wordt uitgevoerd door blauw drukken.
+  - De sjabloon wordt als een **put** verwerkt door Resource Manager. Raadpleeg de documentatie voor elke opgenomen resource als elk resource type deze actie anders verwerkt, om de impact van deze actie te bepalen wanneer deze wordt uitgevoerd door blauw drukken.
 
 ## <a name="possible-errors-on-updating-assignments"></a>Mogelijke fouten bij het bijwerken van toewijzingen
 

@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 10/22/2020
+ms.date: 11/23/2020
 ms.author: aahi
 ms.custom: seodec18
-ms.openlocfilehash: 5094bd4aa5ac68c24f284cfb74e410fbdf089af7
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 0539f37fe15f68d8bfd47bf426333f9d5c67c37d
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677174"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96006866"
 ---
 # <a name="configure-read-ocr-docker-containers"></a>Lees de OCR docker-containers configureren
 
@@ -33,12 +33,12 @@ De container heeft ook de volgende container-specifieke configuratie-instellinge
 
 |Vereist|Instelling|Doel|
 |--|--|--|
-|Nee|ReadEngineConfig:ResultExpirationPeriod| v 2.0-containers. Verloop tijd van resultaat in uren. De standaard waarde is 48 uur. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. Als `resultExpirationPeriod=1` het systeem bijvoorbeeld het herkennings resultaat 1 uur na het proces wist. Als het `resultExpirationPeriod=0` systeem het herkennings resultaat verwijdert nadat het resultaat is opgehaald.|
-|Nee|Cache: redis| v 2.0-containers. Hiermee wordt redis-opslag voor het opslaan van resultaten ingeschakeld. Een cache is *vereist* als meerdere Lees containers achter een Load Balancer worden geplaatst.|
-|Nee|Wachtrij: RabbitMQ|v 2.0-containers. Hiermee schakelt u RabbitMQ in voor het verzenden van taken. De instelling is handig wanneer meerdere Lees containers achter een load balancer worden geplaatst.|
-|Nee|Wachtrij: Azure: QueueVisibilityTimeoutInMilliseconds | alleen containers voor v3. x. De tijd dat een bericht onzichtbaar moet zijn wanneer een andere werk nemer het verwerkt. |
-|Nee|Opslag::D ocumentStore:: MongoDB|v 2.0-containers. Hiermee wordt MongoDB ingeschakeld voor permanente resultaat opslag. |
-|Nee|Opslag: ObjectStore: AzureBlob: Connections Tring| alleen containers voor v3. x. Azure Blob-opslag connection string. |
+|No|ReadEngineConfig:ResultExpirationPeriod| v 2.0-containers. Verloop tijd van resultaat in uren. De standaard waarde is 48 uur. De instelling geeft aan wanneer het systeem herkennings resultaten moet wissen. Als `resultExpirationPeriod=1` het systeem bijvoorbeeld het herkennings resultaat 1 uur na het proces wist. Als het `resultExpirationPeriod=0` systeem het herkennings resultaat verwijdert nadat het resultaat is opgehaald.|
+|No|Cache: redis| v 2.0-containers. Hiermee wordt redis-opslag voor het opslaan van resultaten ingeschakeld. Een cache is *vereist* als meerdere Lees containers achter een Load Balancer worden geplaatst.|
+|No|Wachtrij: RabbitMQ|v 2.0-containers. Hiermee schakelt u RabbitMQ in voor het verzenden van taken. De instelling is handig wanneer meerdere Lees containers achter een load balancer worden geplaatst.|
+|No|Wachtrij: Azure: QueueVisibilityTimeoutInMilliseconds | alleen containers voor v3. x. De tijd dat een bericht onzichtbaar moet zijn wanneer een andere werk nemer het verwerkt. |
+|No|Opslag::D ocumentStore:: MongoDB|v 2.0-containers. Hiermee wordt MongoDB ingeschakeld voor permanente resultaat opslag. |
+|No|Opslag: ObjectStore: AzureBlob: Connections Tring| alleen containers voor v3. x. Azure Blob-opslag connection string. |
 
 ## <a name="apikey-configuration-setting"></a>Configuratie-instelling ApiKey
 
@@ -62,7 +62,7 @@ Deze instelling bevindt zich op de volgende locatie:
 
 Vergeet niet om de `vision/v1.0` route ring toe te voegen aan de URI van het eind punt, zoals wordt weer gegeven in de volgende tabel. 
 
-|Vereist| Naam | Gegevenstype | Beschrijving |
+|Vereist| Name | Gegevenstype | Beschrijving |
 |--|------|-----------|-------------|
 |Ja| `Billing` | Tekenreeks | URL van het facturerings eindpunt<br><br>Voorbeeld:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
 
@@ -90,7 +90,7 @@ De Computer Vision-containers gebruiken geen invoer-of uitvoer koppelingen om tr
 
 De exacte syntaxis van de locatie voor het koppelen van de host varieert, afhankelijk van het besturings systeem van de host. Daarnaast is de koppel locatie van de [hostcomputer](computer-vision-how-to-install-containers.md#the-host-computer)mogelijk niet toegankelijk als gevolg van een conflict tussen de machtigingen die worden gebruikt door het docker-service account en de machtigingen voor het koppelen van de host-locatie. 
 
-|Optioneel| Naam | Gegevenstype | Beschrijving |
+|Optioneel| Name | Gegevenstype | Beschrijving |
 |-------|------|-----------|-------------|
 |Niet toegestaan| `Input` | Tekenreeks | Computer Vision containers gebruiken deze niet.|
 |Optioneel| `Output` | Tekenreeks | Het doel van de uitvoer koppeling. De standaardwaarde is `/output`. Dit is de locatie van de logboeken. Dit omvat container Logboeken. <br><br>Voorbeeld:<br>`--mount type=bind,src=c:\output,target=/output`|
@@ -99,10 +99,10 @@ De exacte syntaxis van de locatie voor het koppelen van de host varieert, afhank
 
 De volgende voor beelden gebruiken de configuratie-instellingen om te laten zien hoe u-opdrachten schrijft en gebruikt `docker run` .  Als de container eenmaal wordt uitgevoerd, blijft deze actief totdat u deze [stopt](computer-vision-how-to-install-containers.md#stop-the-container) .
 
-* **Regel voortzettings teken** : de docker-opdrachten in de volgende secties gebruiken de back slash, `\` , als een regel voortzettings teken. Vervang of verwijder dit op basis van de vereisten van uw host-besturings systeem. 
-* **Argument volgorde** : Wijzig de volg orde van de argumenten niet, tenzij u bekend bent met docker-containers.
+* **Regel voortzettings teken**: de docker-opdrachten in de volgende secties gebruiken de back slash, `\` , als een regel voortzettings teken. Vervang of verwijder dit op basis van de vereisten van uw host-besturings systeem. 
+* **Argument volgorde**: Wijzig de volg orde van de argumenten niet, tenzij u bekend bent met docker-containers.
 
-Vervang { _argument_name_ } door uw eigen waarden:
+Vervang {_argument_name_} door uw eigen waarden:
 
 | Tijdelijke aanduiding | Waarde | Notatie of voor beeld |
 |-------------|-------|---|
@@ -120,13 +120,13 @@ Vervang { _argument_name_ } door uw eigen waarden:
 De volgende docker-voor beelden zijn voor de Lees-container.
 
 
-# <a name="version-31-preview"></a>[Versie 3.1-preview](#tab/version-3-1)
+# <a name="version-32-preview"></a>[Versie 3,2-Preview](#tab/version-3-2)
 
 ### <a name="basic-example"></a>Basis voorbeeld
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
-mcr.microsoft.com/azure-cognitive-services/vision/read:3.1-preview \
+mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.1 \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
@@ -137,7 +137,7 @@ ApiKey={API_KEY}
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
-mcr.microsoft.com/azure-cognitive-services/vision/read:3.1-preview \
+mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.1 \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}

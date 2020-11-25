@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 87b922cb9655588a22c739d26c9ce9e49d35781a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75465562"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007117"
 ---
 # <a name="service-fabric-testability-scenarios-service-communication"></a>Service Fabric scenario's voor testen: Service communicatie
 Micro Services en service-georiënteerde architecturale modellen worden op natuurlijke wijze in azure Service Fabric. In deze typen gedistribueerde architecturen zijn onderdelen van micro service-toepassingen meestal samengesteld uit meerdere services die met elkaar moeten worden gecommuniceerd. In de eenvoudigste gevallen beschikt u over het algemeen over ten minste een stateless webservice en een stateful gegevens opslag service die moet communiceren.

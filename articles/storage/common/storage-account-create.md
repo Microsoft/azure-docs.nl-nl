@@ -1,5 +1,5 @@
 ---
-title: Een opslagaccount maken
+title: Create a storage account
 titleSuffix: Azure Storage
 description: Meer informatie over het maken van een opslag account voor het opslaan van blobs, bestanden, wacht rijen en tabellen. Een Azure-opslag account biedt een unieke naam ruimte in Microsoft Azure voor het lezen en schrijven van uw gegevens.
 services: storage
@@ -11,13 +11,13 @@ ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
 ms.openlocfilehash: b7faec5023abe37802d8b08980f216934d70a6ac
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92784351"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005539"
 ---
-# <a name="create-a-storage-account"></a>Een opslagaccount maken
+# <a name="create-a-storage-account"></a>Create a storage account
 
 Een Azure-opslag account bevat al uw Azure Storage gegevens objecten: blobs, bestanden, wacht rijen, tabellen en schijven. Het opslag account biedt een unieke naam ruimte voor uw Azure Storage gegevens die overal ter wereld toegankelijk zijn via HTTP of HTTPS. Gegevens in uw Azure Storage-account zijn duurzaam en Maxi maal beschikbaar, veilig en zeer schaalbaar.
 
@@ -102,11 +102,11 @@ N.v.t.
 
 ---
 
-## <a name="create-a-storage-account"></a>Een opslagaccount maken
+## <a name="create-a-storage-account"></a>Create a storage account
 
-Elk opslagaccount moet behoren tot een Azure-resourcegroep. Een resourcegroep is een logische container voor het groeperen van uw Azure-services. Wanneer u een opslagaccount maakt, kunt u een nieuwe resourcegroep maken of een bestaande resourcegroep gebruiken. In dit artikel wordt beschreven hoe u een nieuwe resource groep maakt.
+Elk opslagaccount moet behoren tot een Azure-resourcegroep. Een resourcegroep is een logische container voor het groeperen van uw Azure-services. Wanneer u een opslagaccount maakt, kunt u een nieuwe resourcegroep maken of een bestaande resourcegroep gebruiken. In dit artikel wordt beschreven hoe u een nieuwe resourcegroep maakt.
 
-Een v2-opslagaccount **voor algemeen gebruik** biedt toegang tot alle services van Azure Storage: blobs, bestanden, wachtrijen, tabellen en schijven. De stappen die hier worden beschreven, maken een v2-opslag account voor algemeen gebruik, maar de stappen voor het maken van elk type opslag account zijn vergelijkbaar. Zie [Azure-opslagaccountoverzicht](storage-account-overview.md) voor meer informatie over typen opslagaccounts en andere opslagaccountinstellingen.
+Een **v2-** opslag account voor algemeen gebruik biedt toegang tot alle Azure Storage services: blobs, bestanden, wacht rijen, tabellen en schijven. Met de stappen die hier worden uiteengezet, maakt u een v2-opslagaccount voor algemeen gebruik, maar de stappen voor het maken van een ander soort opslagaccount zijn vergelijkbaar. Zie [Azure-opslagaccountoverzicht](storage-account-overview.md) voor meer informatie over typen opslagaccounts en andere opslagaccountinstellingen.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -236,7 +236,7 @@ Als u een opslag account verwijdert, wordt het hele account verwijderd, inclusie
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
 1. Navigeer naar het opslag account in de [Azure Portal](https://portal.azure.com).
-1. Klik op **Verwijderen** .
+1. Klik op **Verwijderen**.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

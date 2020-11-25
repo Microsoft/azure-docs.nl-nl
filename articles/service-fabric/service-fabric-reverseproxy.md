@@ -7,11 +7,11 @@ ms.date: 11/03/2017
 ms.author: bharatn
 ms.custom: devx-track-csharp
 ms.openlocfilehash: fd8e6dd712801de49971c1ef27cea664d73a4cb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89012769"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005908"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Reverse proxy in azure Service Fabric
 Met omgekeerde proxy die in azure Service Fabric is ingebouwd, kunnen micro services die worden uitgevoerd in een Service Fabric cluster worden gedetecteerd en gecommuniceerd met andere services met http-eind punten.

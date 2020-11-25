@@ -6,20 +6,28 @@ author: kromerm
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 04/20/2020
+ms.date: 11/22/2020
 ms.author: makromer
-ms.openlocfilehash: 3f8ac2d1434019548b01d8468015a543d89d0fba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49d11dfe3d42d99c610fae9fa64079a5fd87501f
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85254409"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96006781"
 ---
 # <a name="handle-sql-truncation-error-rows-in-data-factory-mapping-data-flows"></a>Afgebroken SQL-rijen in Data Factory gegevens stromen toewijzen
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-Een veelvoorkomend scenario in Data Factory bij het gebruik van toewijzings gegevens stromen is het schrijven van uw getransformeerde gegevens naar een data base in Azure SQL Database. In dit scenario wordt een veelvoorkomende fout voorwaarde die u moet voor komen tegen mogelijke kolom afkap ping. Volg deze stappen voor het vastleggen van kolommen die niet in een doel reeks kolom passen, zodat uw gegevens stroom in deze scenario's kan worden voortgezet.
+Een veelvoorkomend scenario in Data Factory bij het gebruik van toewijzings gegevens stromen is het schrijven van uw getransformeerde gegevens naar een data base in Azure SQL Database. In dit scenario wordt een veelvoorkomende fout voorwaarde die u moet voor komen tegen mogelijke kolom afkap ping.
+
+Er zijn twee primaire methoden voor het afhandelen van fouten bij het schrijven van gegevens naar uw data base-sink in ADF-gegevens stromen:
+
+* Stel de verwerking van de Sink- [fout rijen](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-database#error-row-handling) in op ' door gaan bij fout ' bij het verwerken van database gegevens. Dit is een geautomatiseerde catch-all-methode waarvoor geen aangepaste logica in uw gegevens stroom nodig is.
+* U kunt ook de volgende stappen uitvoeren om de logboek registratie van kolommen die niet in een doel reeks kolom passen, toe te voegen, zodat uw gegevens stroom kan door gaan.
+
+> [!NOTE]
+> Bij het inschakelen van de verwerking van automatische fout rijen, in tegens telling tot de onderstaande methode voor het schrijven van uw eigen fout bij het afhandelen van fouten, is er een kleine prestatie vermindering die wordt gemaakt door en extra stap die wordt uitgevoerd door ADF om een bewerking met twee fasen uit te voeren om fouten te ondervangen.
 
 ## <a name="scenario"></a>Scenario
 
@@ -49,6 +57,10 @@ In deze video wordt een voor beeld gegeven van het instellen van een logische ri
 4. De voltooide gegevens stroom wordt hieronder weer gegeven. We kunnen nu fout rijen opsplitsen om te voor komen dat er fouten in de SQL-afkap ping ontstaan en deze vermeldingen in een logboek bestand plaatsen. Ondertussen kunnen voltooide rijen naar de doel database blijven schrijven.
 
     ![gegevens stroom volt ooien](media/data-flow/error2.png)
+
+5. Als u de optie voor het verwerken van de fout rijen in de Sink-trans formatie kiest en ' uitvoer fout rijen ' hebt ingesteld, genereert de ADF automatisch een CSV-bestands uitvoer van uw rijgegevens en de door het stuur programma gemelde fout berichten. U hoeft die logica niet hand matig toe te voegen aan uw gegevens stroom met deze alternatieve optie. Er wordt een kleine prestatie vermindering in rekening gebracht met deze optie, zodat ADF een twee fasen-methodologie kan implementeren om fouten te onderscheppen en deze te registreren.
+
+    ![gegevens stroom volt ooien met fout rijen](media/data-flow/error-row-3.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

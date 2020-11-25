@@ -6,14 +6,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 04/01/2020
+ms.date: 11/23/2020
 ms.author: aahi
-ms.openlocfilehash: a441f677687789729b96011f8bf98606418ca659
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 4697be519eee96778eecdf37f7b358a88ad886c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677202"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006901"
 ---
 > [!NOTE]
 > De vereisten en aanbevelingen zijn gebaseerd op benchmarks met één aanvraag per seconde, met behulp van een afbeelding van 8 MB van een gescande zakelijke brief met 29 regels en een totaal van 803 tekens.
@@ -23,7 +23,7 @@ In de volgende tabel wordt de minimale en aanbevolen toewijzing van resources vo
 | Container | Minimum | Aanbevolen |
 |-----------|---------|-------------|
 | Lees 2,0-Preview | 1 kern geheugen van 8 GB |  8 kernen, 16 GB geheugen |
-| Read 3.1-preview | 8 kernen, 16 GB geheugen | 8 kernen, 24 GB geheugen |
+| Lees 3,2-Preview | 8 kernen, 16 GB geheugen | 8 kernen, 24 GB geheugen |
 
 * Elke kern moet ten minste 2,6 gigahertz (GHz) of sneller zijn.
 

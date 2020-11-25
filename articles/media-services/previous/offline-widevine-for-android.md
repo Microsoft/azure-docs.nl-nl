@@ -16,11 +16,11 @@ ms.date: 04/16/2019
 ms.author: willzhan
 ms.reviewer: dwgeo
 ms.openlocfilehash: 4b3b2b8c39b5b2552b5ce9f508bacd1ea86b2638
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89269587"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006355"
 ---
 # <a name="offline-widevine-streaming-for-android"></a>Offline Widevine-streaming voor Android
 
@@ -131,7 +131,7 @@ Ontwikkel aars moeten tijdens de ontwikkeling van een toepassing verwijzen naar 
 
 ### <a name="working-with-older-android-devices"></a>Werken met oudere Android-apparaten
 
-Voor sommige oudere Android-apparaten moet u waarden instellen voor de volgende **policy_overrides** eigenschappen (gedefinieerd in [Widevine-licentie sjabloon](media-services-widevine-license-template-overview.md): **rental_duration_seconds**, **playback_duration_seconds**en **license_duration_seconds**. U kunt ze ook instellen op nul, wat betekent oneindig/onbeperkte duur.  
+Voor sommige oudere Android-apparaten moet u waarden instellen voor de volgende **policy_overrides** eigenschappen (gedefinieerd in [Widevine-licentie sjabloon](media-services-widevine-license-template-overview.md): **rental_duration_seconds**, **playback_duration_seconds** en **license_duration_seconds**. U kunt ze ook instellen op nul, wat betekent oneindig/onbeperkte duur.  
 
 De waarden moeten worden ingesteld om te voor komen dat er een geheeltallige overloop fout optreedt. Zie en voor meer uitleg over het probleem https://github.com/google/ExoPlayer/issues/3150 https://github.com/google/ExoPlayer/issues/3112 . <br/>Als u de waarden niet expliciet instelt, worden zeer grote waarden voor  **PlaybackDurationRemaining** en **LicenseDurationRemaining** toegewezen, (bijvoorbeeld 9223372036854775807, de maximale positieve waarde voor een 64-bits geheel getal). Als gevolg hiervan wordt de Widevine-licentie verouderd en daarom wordt de ontsleuteling niet uitgevoerd. 
 

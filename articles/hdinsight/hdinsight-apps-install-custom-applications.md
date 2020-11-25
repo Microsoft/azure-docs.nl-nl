@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.date: 11/29/2019
 ms.openlocfilehash: d110f4ee0248b6ea069c6033dd69840eec1a18f3
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741604"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007151"
 ---
 # <a name="install-custom-apache-hadoop-applications-on-azure-hdinsight"></a>Aangepaste Apache Hadoop-toepassingen installeren in azure HDInsight
 
@@ -49,9 +49,9 @@ De bestanden die nodig zijn voor het implementeren van deze toepassing (Hue):
 
 1. Voer de naam in van het cluster waarop u de toepassing wilt installeren. Dit cluster moet een bestaand cluster zijn.
 
-1. Schakel het selectie vakje in **als ik ga akkoord met de bovenstaande voor waarden** .
+1. Schakel het selectie vakje in **als ik ga akkoord met de bovenstaande voor waarden**.
 
-1. Selecteer **Aankoop** .
+1. Selecteer **Aankoop**.
 
 U kunt de installatiestatus zien op de tegel die is vastgemaakt aan het portaldashboard en de portalmelding. (Klik op het belpictogram boven aan de portal.)  Het duurt ongeveer 10 minuten om de toepassing te installeren.
 
@@ -79,7 +79,7 @@ Voor **tint** kunt u de volgende stappen uitvoeren:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het cluster waarop u de toepassing hebt geïnstalleerd.
-1. Selecteer in het menu **instellingen** de optie **toepassingen** .
+1. Selecteer in het menu **instellingen** de optie **toepassingen**.
 1. Selecteer **kleur Toon** in de lijst om de eigenschappen weer te geven.  
 1. Selecteer de koppeling naar de webpagina om de website te valideren.
 
@@ -127,8 +127,8 @@ Als de installatie van een toepassing is mislukt, kunt u de fout berichten en fo
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het cluster waarop u de toepassing hebt geïnstalleerd.
-1. Selecteer in het menu **instellingen** de optie **toepassingen** .
-1. Klik met de rechter muisknop op de toepassing die u wilt verwijderen en selecteer vervolgens **verwijderen** .
+1. Selecteer in het menu **instellingen** de optie **toepassingen**.
+1. Klik met de rechter muisknop op de toepassing die u wilt verwijderen en selecteer vervolgens **verwijderen**.
 1. Selecteer **Ja** om te bevestigen.
 
 ### <a name="azure-cli"></a>Azure CLI

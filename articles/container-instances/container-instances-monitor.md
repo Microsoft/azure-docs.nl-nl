@@ -4,11 +4,11 @@ description: Het gebruik van reken resources zoals CPU en geheugen door uw conta
 ms.topic: article
 ms.date: 04/24/2019
 ms.openlocfilehash: b10c370b599233d00b2b4a65268f6c61a11cbd5c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90526694"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007253"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Containerresources in Azure Container Instances bewaken
 
@@ -31,7 +31,7 @@ Azure Monitor biedt de volgende [metrische gegevens voor Azure container instanc
 
 * **Geheugen gebruik** -in bytes.
 
-* **Netwerk bytes ontvangen per seconde** en **verzonden bytes per seconde**van het netwerk. 
+* **Netwerk bytes ontvangen per seconde** en **verzonden bytes per seconde** van het netwerk. 
 
 ## <a name="get-metrics---azure-portal"></a>Metrische gegevens ophalen - Azure Portal
 

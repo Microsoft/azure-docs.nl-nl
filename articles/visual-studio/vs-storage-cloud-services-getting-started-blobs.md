@@ -13,24 +13,24 @@ ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 670aef4f6f866788ef7a1a4502de242e765f5cc6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89e0d6873ebfd8f8396c36185730c57a66af0dd9
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89017648"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96007024"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-cloud-services-projects"></a>Aan de slag met aan Azure Blob Storage en Visual Studio verbonden services (cloudserviceprojecten)
 [!INCLUDE [storage-try-azure-tools-blobs](../../includes/storage-try-azure-tools-blobs.md)]
 
 ## <a name="overview"></a>Overzicht
-In dit artikel wordt beschreven hoe u aan de slag gaat met Azure Blob Storage nadat u een Azure Storage-account hebt gemaakt of ernaar hebt verwezen met behulp van het dialoog venster **verbonden services toevoegen** in een Visual Studio-Cloud Services-project. We laten u zien hoe u toegang krijgt tot BLOB-containers en hoe u veelvoorkomende taken kunt uitvoeren, zoals het uploaden, vermelden en downloaden van blobs. De voor beelden zijn geschreven in C \# en gebruiken de [Microsoft Azure Storage-client bibliotheek voor .net](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+In dit artikel wordt beschreven hoe u aan de slag gaat met Azure Blob Storage nadat u een Azure Storage-account hebt gemaakt of ernaar hebt verwezen met behulp van het dialoog venster **verbonden services toevoegen** in een Visual Studio-Cloud Services-project. We laten u zien hoe u toegang krijgt tot BLOB-containers en hoe u veelvoorkomende taken kunt uitvoeren, zoals het uploaden, vermelden en downloaden van blobs. De voor beelden zijn geschreven in C \# en gebruiken de [Microsoft Azure Storage-client bibliotheek voor .net](/previous-versions/azure/dn261237(v=azure.100)).
 
 Azure Blob Storage is een service voor het opslaan van grote hoeveel heden ongestructureerde gegevens die overal ter wereld toegankelijk zijn via HTTP of HTTPS. Eén Blob kan elke grootte hebben. Blobs kunnen dingen zijn zoals afbeeldingen, audio-en video bestanden, onbewerkte gegevens en document bestanden.
 
 Net zoals bestanden Live in mappen, opslag-blobs in containers. Nadat u een opslag hebt gemaakt, maakt u een of meer containers in de opslag ruimte. In een opslag met de naam ' Plakboek ' kunt u bijvoorbeeld containers maken in de opslag met de naam "installatie kopieën" om afbeeldingen op te slaan en een andere met de naam "audio" om audio bestanden op te slaan. Nadat u de containers hebt gemaakt, kunt u er afzonderlijke BLOB-bestanden naar uploaden.
 
-* Zie [aan de slag met Azure Blob Storage met .net](../storage/blobs/storage-dotnet-how-to-use-blobs.md)voor meer informatie over het programmatisch manipuleren van blobs.
+* Zie [aan de slag met Azure Blob Storage met .net](../storage/blobs/storage-quickstart-blobs-dotnet.md)voor meer informatie over het programmatisch manipuleren van blobs.
 * Zie [opslag documentatie](https://azure.microsoft.com/documentation/services/storage/)voor algemene informatie over Azure Storage.
 * Zie [Cloud Services-documentatie](https://azure.microsoft.com/documentation/services/cloud-services/)voor algemene informatie over Azure Cloud Services.
 * Zie [ASP.net](https://www.asp.net)voor meer informatie over het Program meren van ASP.NET-toepassingen.
@@ -73,7 +73,7 @@ Als u toegang wilt krijgen tot blobs in Cloud service projecten, moet u de volge
 
 ## <a name="create-a-container-in-code"></a>Een container maken in code
 > [!NOTE]
-> Sommige Api's die aanroepen naar Azure Storage in ASP.NET, zijn asynchroon. Zie [asynchrone programmering met async en wacht](https://msdn.microsoft.com/library/hh191443.aspx) op voor meer informatie. In de code in het volgende voor beeld wordt ervan uitgegaan dat u asynchrone programmeer methoden gebruikt.
+> Sommige Api's die aanroepen naar Azure Storage in ASP.NET, zijn asynchroon. Zie [asynchrone programmering met async en wacht](/previous-versions/hh191443(v=vs.140)) op voor meer informatie. In de code in het volgende voor beeld wordt ervan uitgegaan dat u asynchrone programmeer methoden gebruikt.
 > 
 > 
 
@@ -113,7 +113,7 @@ using (var fileStream = System.IO.File.OpenRead(@"path\myfile"))
 }
 ```
 
-## <a name="list-the-blobs-in-a-container"></a>De blobs in een container in een lijst weergeven
+## <a name="list-the-blobs-in-a-container"></a>Blobs in een container vermelden
 Als u een lijst van de blobs in een container wilt weergeven, moet u eerst een containerverwijzing ophalen. Vervolgens kunt u de methode **ListBlobs** van de container gebruiken voor het ophalen van de blobs en/of de mappen hierin. Om toegang te krijgen tot de uitgebreide set eigenschappen en methoden voor een geretourneerde **IListBlobItem**, moet u deze converteren naar een **CloudBlockBlob**-, **CloudPageBlob**-of **CloudBlobDirectory** -object. Als het type onbekend is, kunt u typecontrole gebruiken om te bepalen waarnaar het moet worden gecast. De volgende code toont hoe de URI van elk item in de **photos**-container wordt opgehaald en uitgevoerd:
 
 ```csharp
@@ -188,7 +188,7 @@ Block blob of length 399751: https://<accountname>.blob.core.windows.net/photos/
 Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/photo1.jpg
 ```
 
-Zie [CloudBlobContainer. ListBlobs](https://msdn.microsoft.com/library/azure/dd135734.aspx)voor meer informatie.
+Zie [CloudBlobContainer. ListBlobs](/rest/api/storageservices/List-Blobs)voor meer informatie.
 
 ## <a name="download-blobs"></a>Blobs downloaden
 Om blobs te downloaden, moet u eerst een blobverwijzing ophalen en vervolgens de methode **DownloadToStream** aanroepen. In het volgende voorbeeld wordt de methode **DownloadToStream** gebruikt om de blobinhoud over te dragen naar een stroomobject, dat u vervolgens persistent kunt maken in een lokaal bestand.
@@ -270,4 +270,3 @@ async public static Task ListBlobsSegmentedInFlatListing(CloudBlobContainer cont
 
 ## <a name="next-steps"></a>Volgende stappen
 [!INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
-

@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.date: 03/24/2020
 ms.custom: seodec18
 ms.openlocfilehash: ba216e41672e1d19e552b3f82a2ea65da7d3a435
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124574"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007083"
 ---
 # <a name="get-started-using-azure-stream-analytics-real-time-fraud-detection"></a>Aan de slag met Azure Stream Analytics: fraude detectie in realtime
 
@@ -41,7 +41,7 @@ Zorg ervoor dat u het volgende hebt voordat u begint:
 * De oproep-event generator-app, [TelcoGenerator.zip](https://download.microsoft.com/download/8/B/D/8BD50991-8D54-4F59-AB83-3354B69C8A7E/TelcoGenerator.zip), die kan worden gedownload van het micro soft Download centrum. Pak dit pakket uit in een map op uw computer. Als u de bron code wilt zien en de app in een fout opsporingsprogramma wilt uitvoeren, kunt u de app-bron code ophalen van [github](https://aka.ms/azure-stream-analytics-telcogenerator). 
 
     >[!NOTE]
-    >Het gedownloade zip-bestand kan door Windows worden geblokkeerd. Als u deze niet kunt uitpakken, klikt u met de rechter muisknop op het bestand en selecteert u **Eigenschappen** . Als het bericht ' dit bestand is afkomstig van een andere computer en kan worden geblokkeerd om deze computer te beveiligen ' wordt weer gegeven, selecteert u de optie **deblokkeren** en klikt u vervolgens op **Toep assen** .
+    >Het gedownloade zip-bestand kan door Windows worden geblokkeerd. Als u deze niet kunt uitpakken, klikt u met de rechter muisknop op het bestand en selecteert u **Eigenschappen**. Als het bericht ' dit bestand is afkomstig van een andere computer en kan worden geblokkeerd om deze computer te beveiligen ' wordt weer gegeven, selecteert u de optie **deblokkeren** en klikt u vervolgens op **Toep assen**.
 
 Als u de resultaten van de streaming Analytics-taak wilt bekijken, hebt u ook een hulp programma nodig om de inhoud van een Azure Blob Storage-container weer te geven. Als u Visual Studio gebruikt, kunt u [Azure-Hulpprogram ma's voor Visual Studio](/visualstudio/azure/vs-azure-tools-storage-resources-server-explorer-browse-manage) of [Visual Studio Cloud Explorer](/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer)gebruiken. U kunt ook zelfstandige hulpprogram ma's installeren, zoals [Azure Storage Explorer](https://storageexplorer.com/) of [Cerulean](https://www.cerebrata.com/products/cerulean/features/azure-storage). 
 
@@ -57,7 +57,7 @@ In deze procedure maakt u eerst een Event Hub naam ruimte en voegt u vervolgens 
 
 1. Meld u aan bij de Azure Portal en klik op **een resource maken** in de linkerbovenhoek van het scherm.
 
-2. Selecteer **Alle services** in het menu aan de linkerkant en selecteer de **ster (`*`)** naast **Event Hubs** in de categorie **Analyse** . Controleer of **Event Hubs** is toegevoegd aan **FAVORIETEN** in het navigatiemenu aan de linkerkant. 
+2. Selecteer **Alle services** in het menu aan de linkerkant en selecteer de **ster (`*`)** naast **Event Hubs** in de categorie **Analyse**. Controleer of **Event Hubs** is toegevoegd aan **FAVORIETEN** in het navigatiemenu aan de linkerkant. 
 
    ![Zoeken naar Event Hubs](./media/stream-analytics-real-time-fraud-detection/select-event-hubs-menu.png)
 
@@ -67,13 +67,13 @@ In deze procedure maakt u eerst een Event Hub naam ruimte en voegt u vervolgens 
 
 4. Voer in het deel venster **naam ruimte maken** een naam in voor de naam ruimte, zoals `<yourname>-eh-ns-demo` . U kunt een wille keurige naam voor de naam ruimte gebruiken, maar de naam moet geldig zijn voor een URL en moet uniek zijn binnen Azure. 
     
-5. Selecteer een abonnement en maak of kies een resource groep en klik vervolgens op **maken** .
+5. Selecteer een abonnement en maak of kies een resource groep en klik vervolgens op **maken**.
 
     <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-namespace-new-portal.png" alt="Create event hub namespace in Azure portal" width="300px"/>
 
 6. Wanneer de implementatie van de naam ruimte is voltooid, zoekt u de Event Hub naam ruimte in de lijst met Azure-resources. 
 
-7. Klik op de nieuwe naam ruimte en klik in het deel venster naam ruimte op **Event hub** .
+7. Klik op de nieuwe naam ruimte en klik in het deel venster naam ruimte op **Event hub**.
 
    ![De knop Event hub toevoegen voor het maken van een nieuwe Event Hub](./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-button-new-portal.png)    
  
@@ -81,7 +81,7 @@ In deze procedure maakt u eerst een Event Hub naam ruimte en voegt u vervolgens 
 
     <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-new-portal.png" alt="Name event hub in Azure portal" width="400px"/>
     
-9. Klik op **Create** .
+9. Klik op **Create**.
 
 ### <a name="grant-access-to-the-event-hub-and-get-a-connection-string"></a>Toegang verlenen tot de event hub en een verbindingsreeks ophalen
 
@@ -89,16 +89,16 @@ Voordat een proces gegevens naar een Event Hub kan verzenden, moet de Event Hub 
 
 1. Klik in het deel venster gebeurtenis naam ruimte op **Event hubs** en klik vervolgens op de naam van uw nieuwe event hub.
 
-2. Klik in het deel venster Event hub op **beleid voor gedeelde toegang** en klik vervolgens op **+ &nbsp; toevoegen** .
+2. Klik in het deel venster Event hub op **beleid voor gedeelde toegang** en klik vervolgens op **+ &nbsp; toevoegen**.
 
     > [!NOTE]
     > Zorg ervoor dat u werkt met de Event Hub, niet de Event Hub naam ruimte.
 
-3. Voeg een beleid toe `asa-policy-manage-demo` met de naam en voor **claim** , selecteer **beheren** .
+3. Voeg een beleid toe `asa-policy-manage-demo` met de naam en voor **claim**, selecteer **beheren**.
 
     <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-shared-access-policy-manage-new-portal.png" alt="Create shared access policy for Stream Analytics" width="300px"/>
  
-4. Klik op **Create** .
+4. Klik op **Create**.
 
 5. Nadat het beleid is geïmplementeerd, klikt u erop in de lijst met beleid voor gedeelde toegang.
 
@@ -178,7 +178,7 @@ Nu u een stroom van oproep gebeurtenissen hebt, kunt u een Stream Analytics taak
 
 ### <a name="create-the-job"></a>De taak maken 
 
-1. Klik in de Azure Portal op **een resource maken**  >  **Internet of Things**  >  **Stream Analytics taak** .
+1. Klik in de Azure Portal op **een resource maken**  >  **Internet of Things**  >  **Stream Analytics taak**.
 
 2. Noem de taak `asa_frauddetection_job_demo` , geef een abonnement, resource groep en locatie op.
 
@@ -186,7 +186,7 @@ Nu u een stroom van oproep gebeurtenissen hebt, kunt u een Stream Analytics taak
 
     <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sa-job-new-portal.png" alt="Create Stream Analytics job in portal" width="300px"/>
 
-3. Klik op **Create** .
+3. Klik op **Create**.
 
     De taak wordt gemaakt en er worden taak details weer gegeven in de portal. Er wordt nog niets uitgevoerd, maar u moet de taak configureren voordat deze kan worden gestart.
 
@@ -197,7 +197,7 @@ Nu u een stroom van oproep gebeurtenissen hebt, kunt u een Stream Analytics taak
 
    ![Invoervak onder topologie in het deel venster streaming Analytics-taak](./media/stream-analytics-real-time-fraud-detection/stream-analytics-sa-job-input-box-new-portal.png)
  
-3. Klik op **stroom invoer toevoegen** en selecteer **Event hub** . Vul vervolgens de nieuwe invoer pagina in met de volgende gegevens:
+3. Klik op **stroom invoer toevoegen** en selecteer **Event hub**. Vul vervolgens de nieuwe invoer pagina in met de volgende gegevens:
 
    |**Instelling**  |**Voorgestelde waarde**  |**Beschrijving**  |
    |---------|---------|---------|
@@ -211,7 +211,7 @@ Nu u een stroom van oproep gebeurtenissen hebt, kunt u een Stream Analytics taak
     <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sa-input-new-portal.png" alt="Create Stream Analytics input in portal" width="300px"/>
 
 
-4. Klik op **Create** .
+4. Klik op **Create**.
 
 ## <a name="create-queries-to-transform-real-time-data"></a>Query's maken om real-time gegevens te transformeren
 
@@ -230,12 +230,12 @@ De TelcoGenerator-app stuurt gespreks records naar het Event Hub en uw Stream An
 1. Zorg ervoor dat de TelcoGenerator-app wordt uitgevoerd en dat er oproep records worden geproduceerd.
 2. Ga in de portal terug naar het deel venster streaming Analytics-taak. (Als u het deel venster hebt gesloten, zoekt u `asa_frauddetection_job_demo` in het deel venster **alle resources** .)
 3. Klik op het **query** -vak. In Azure worden de invoer en uitvoer weer gegeven die zijn geconfigureerd voor de taak en kunt u een query maken waarmee u de invoer stroom kunt transformeren wanneer deze naar de uitvoer wordt verzonden.
-4. Klik in het **query** deel venster op de punten naast de `CallStream` invoer en selecteer vervolgens **voorbeeld gegevens uit invoer** .
+4. Klik in het **query** deel venster op de punten naast de `CallStream` invoer en selecteer vervolgens **voorbeeld gegevens uit invoer**.
 
    ![Menu opties voor het gebruik van voorbeeld gegevens voor de stream Analytics-taak vermelding, waarbij ' voorbeeld gegevens van invoer ' is geselecteerd](./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sample-data-from-input.png)
 
 
-5. Stel **minuten** in op 3 en klik vervolgens op **OK** . 
+5. Stel **minuten** in op 3 en klik vervolgens op **OK**. 
     
    ![Opties voor het bemonsteren van de invoer stroom met drie minuten geselecteerd](./media/stream-analytics-real-time-fraud-detection/stream-analytics-input-create-sample-data.png)
 
@@ -263,7 +263,7 @@ Als u elke gebeurtenis wilt archiveren, kunt u een Pass-Through-query gebruiken 
 
     In deze query `CallStream` is de alias die u hebt opgegeven tijdens het maken van de invoer. Als u een andere alias hebt gebruikt, gebruikt u die naam in plaats daarvan.
 
-2. Klik op **testen** .
+2. Klik op **testen**.
 
     Met de Stream Analytics taak wordt de query uitgevoerd op basis van de voorbeeld gegevens en wordt de uitvoer onder aan het venster weer gegeven. De resultaten geven aan dat de Event hub en de streaming Analytics-taak correct zijn geconfigureerd. (Zoals vermeld, maakt u later een uitvoer Sink waarmee de query gegevens kan schrijven.)
 
@@ -359,7 +359,7 @@ Als u een bestaand Blob Storage-account hebt, kunt u dat gebruiken. Voor deze ze
 
 ### <a name="create-an-azure-blob-storage-account"></a>Een Azure Blob Storage-account maken
 
-1. Selecteer in de linkerbovenhoek in Azure Portal **Een resource maken** > **Storage** > **Storage-account** . Vul de taak pagina voor het opslag account in met de **naam** die is ingesteld op ' asaehstorage ', de **locatie** die is ingesteld op ' vs-Oost ', de **resource groep** die is ingesteld op ' ASA-eh-NS-RG ' (host het opslag account in dezelfde resource groep als de streaming-taak voor betere prestaties). De overige instellingen kunnen op de standaardwaarden blijven staan.  
+1. Selecteer in de linkerbovenhoek in Azure Portal **Een resource maken** > **Storage** > **Storage-account**. Vul de taak pagina voor het opslag account in met de **naam** die is ingesteld op ' asaehstorage ', de **locatie** die is ingesteld op ' vs-Oost ', de **resource groep** die is ingesteld op ' ASA-eh-NS-RG ' (host het opslag account in dezelfde resource groep als de streaming-taak voor betere prestaties). De overige instellingen kunnen op de standaardwaarden blijven staan.  
 
    ![Opslag account maken in Azure Portal](./media/stream-analytics-real-time-fraud-detection/stream-analytics-storage-account-create.png)
 
@@ -367,7 +367,7 @@ Als u een bestaand Blob Storage-account hebt, kunt u dat gebruiken. Voor deze ze
 
 3. Klik in de sectie **taak topologie** op het vak **uitvoer** .
 
-4. Klik in het deel venster **uitvoer** op **toevoegen** en selecteer **Blob Storage** . Vul vervolgens de pagina nieuwe uitvoer in met de volgende informatie:
+4. Klik in het deel venster **uitvoer** op **toevoegen** en selecteer **Blob Storage**. Vul vervolgens de pagina nieuwe uitvoer in met de volgende informatie:
 
    |**Instelling**  |**Voorgestelde waarde**  |**Beschrijving**  |
    |---------|---------|---------|
@@ -379,7 +379,7 @@ Als u een bestaand Blob Storage-account hebt, kunt u dat gebruiken. Voor deze ze
     <br/>
     <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-output-blob-storage-new-console.png" alt="Create blob output for Stream Analytics job" width="300px"/>
     
-5. Klik op **Opslaan** . 
+5. Klik op **Opslaan**. 
 
 
 ## <a name="start-the-streaming-analytics-job"></a>De streaming Analytics-taak starten
@@ -388,7 +388,7 @@ De taak is nu geconfigureerd. U hebt een invoer (de Event Hub) opgegeven, een tr
 
 1. Zorg ervoor dat de TelcoGenerator-app wordt uitgevoerd.
 
-2. Klik in het deel venster taak op **starten** . Selecteer **nu** bij begin tijd van taak uitvoer in het deel venster **taak starten** . 
+2. Klik in het deel venster taak op **starten**. Selecteer **nu** bij begin tijd van taak uitvoer in het deel venster **taak starten** . 
 
    ![De Stream Analytics-taak starten](./media/stream-analytics-real-time-fraud-detection/stream-analytics-sa-job-start.png)
 
@@ -407,7 +407,7 @@ Wanneer u de inhoud van een bestand in Blob Storage bekijkt, ziet u ongeveer het
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Er zijn aanvullende artikelen die door gaan met het scenario voor fraude detectie en de resources gebruiken die u in deze zelf studie hebt gemaakt. Als u wilt door gaan, raadpleegt u de suggesties in de **volgende stappen** .
+Er zijn aanvullende artikelen die door gaan met het scenario voor fraude detectie en de resources gebruiken die u in deze zelf studie hebt gemaakt. Als u wilt door gaan, raadpleegt u de suggesties in de **volgende stappen**.
 
 Als u echter klaar bent en u de resources die u hebt gemaakt, niet nodig hebt, kunt u ze verwijderen zodat u geen onnodige Azure-kosten in rekening brengt. In dat geval wordt u aangeraden om het volgende te doen:
 

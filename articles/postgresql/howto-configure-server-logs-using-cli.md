@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.date: 5/6/2019
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 71dac0b6ea2202e712280607a73e860ae68bdb73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91704868"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005585"
 ---
 # <a name="configure-and-access-server-logs-by-using-azure-cli"></a>Server logboeken configureren en openen met behulp van Azure CLI
 U kunt de fouten logboeken van de PostgreSQL-server downloaden met behulp van de opdracht regel interface (Azure CLI). Toegang tot transactie Logboeken wordt echter niet ondersteund. 
@@ -26,7 +26,7 @@ Als u deze hand leiding wilt door lopen, hebt u het volgende nodig:
 ## <a name="configure-logging"></a>Logboek registratie configureren
 U kunt de server configureren voor toegang tot de query logboeken en fout Logboeken. Fout logboeken kunnen automatische vacuüm-, verbindings-en controlepunt gegevens hebben.
 1. Logboekregistratie inschakelen.
-2. Als u query logboek registratie wilt inschakelen, geeft u de instructie update **Log \_ ** en **Log \_ min \_ duration \_ **op.
+2. Als u query logboek registratie wilt inschakelen, geeft u de instructie update **Log \_** en **Log \_ min \_ duration \_** op.
 3. Bewaar periode bijwerken.
 
 Zie [para meters voor Server configuratie aanpassen](howto-configure-server-parameters-using-cli.md)voor meer informatie.

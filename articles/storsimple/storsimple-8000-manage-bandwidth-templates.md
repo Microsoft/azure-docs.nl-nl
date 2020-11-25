@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/29/2017
 ms.author: alkohli
 ms.openlocfilehash: 56170ffbbfe14248bcfd1f94549a3565873f8646
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514018"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005891"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-storsimple-bandwidth-templates"></a>De StorSimple Apparaatbeheer-service gebruiken voor het beheren van StorSimple-bandbreedte sjablonen
 
@@ -73,7 +73,7 @@ Voer de volgende stappen uit om een nieuwe bandbreedte sjabloon te maken.
            > [!NOTE]
            > Overlappende schema's zijn niet toegestaan. Als de begin-en eind tijd resulteren in een overlappende planning, wordt er een fout bericht weer gegeven.
 
-        4. Geef het **bandbreedte aantal**op. Dit is de band breedte in megabits per seconde (Mbps) die door uw StorSimple-apparaat wordt gebruikt in bewerkingen met betrekking tot de Cloud (zowel uploads als down Loads). Geef voor dit veld een waarde op tussen 1 en 1000.
+        4. Geef het **bandbreedte aantal** op. Dit is de band breedte in megabits per seconde (Mbps) die door uw StorSimple-apparaat wordt gebruikt in bewerkingen met betrekking tot de Cloud (zowel uploads als down Loads). Geef voor dit veld een waarde op tussen 1 en 1000.
 
             ![Bandbreedte schema definiëren](./media/storsimple-8000-manage-bandwidth-templates/addbwtemp2.png)
          
@@ -89,8 +89,8 @@ Voer de volgende stappen uit om een bandbreedte sjabloon te bewerken.
 ### <a name="to-edit-a-bandwidth-template"></a>Een bandbreedte sjabloon bewerken
 
 1. Ga naar de StorSimple-Apparaatbeheer service en klik op **bandbreedte sjablonen**.
-2. Selecteer in de lijst met band breedte sjablonen de sjabloon die u wilt verwijderen. Klik met de rechter muisknop en selecteer **verwijderen**in het context menu.
-3. Klik op **OK**als u om bevestiging wordt gevraagd. Hiermee verwijdert u de sjabloon voor de band breedte. 
+2. Selecteer in de lijst met band breedte sjablonen de sjabloon die u wilt verwijderen. Klik met de rechter muisknop en selecteer **verwijderen** in het context menu.
+3. Klik op **OK** als u om bevestiging wordt gevraagd. Hiermee verwijdert u de sjabloon voor de band breedte. 
 4. De lijst met bandbreedte sjablonen wordt bijgewerkt om het verwijderen weer te geven.
 
 > [!NOTE]
@@ -104,7 +104,7 @@ Voer de volgende stappen uit om een bandbreedte sjabloon te verwijderen.
 
 1. Ga naar de StorSimple-Apparaatbeheer service en klik op **bandbreedte sjablonen**.
 2. Selecteer in de lijst met band breedte sjablonen de sjabloon die u wilt verwijderen. Klik met de rechter muisknop en selecteer verwijderen in het context menu.
-3. Klik op **OK**als u om bevestiging wordt gevraagd. Hiermee verwijdert u de sjabloon voor de band breedte.
+3. Klik op **OK** als u om bevestiging wordt gevraagd. Hiermee verwijdert u de sjabloon voor de band breedte.
 4. De lijst met bandbreedte sjablonen wordt bijgewerkt om het verwijderen weer te geven.
 
 Als de sjabloon wordt gebruikt door een of meer volumes, is het niet toegestaan om deze te verwijderen. Er wordt een fout bericht weer gegeven waarin wordt aangegeven dat de sjabloon wordt gebruikt. Er wordt een dialoog venster met een fout bericht weer gegeven waarin u wordt geadviseerd dat alle verwijzingen naar de sjabloon moeten worden verwijderd.
